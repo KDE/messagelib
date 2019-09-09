@@ -29,14 +29,6 @@ public Q_SLOTS:
     void initTestCase();
 
 private Q_SLOTS:
-    void test_parseEncapsulatedMessage();
-    void test_parsePlainMessage();
-    void test_missingContentTypeHeader();
-    void test_inlinePGPDecryption();
-    void test_inlinePGPSigned();
-    void test_HTML();
-    void test_HTMLasText();
-    void test_HTMLOnly();
     void test_HTMLOnlyText();
     void test_HTMLExternal();
     void test_Alternative();

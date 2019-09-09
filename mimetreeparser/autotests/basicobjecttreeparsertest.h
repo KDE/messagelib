@@ -43,6 +43,14 @@ private Q_SLOTS:
     void testMemoryHole();
     void testRenderedTree();
     void testRenderedTree_data();
+    void testParsePlainMessage();
+    void testParseEncapsulatedMessage();
+    void testMissingContentTypeHeader();
+    void testInlinePGPDecryption();
+    void testInlinePGPSigned();
+    void testHTML();
+    void testHTMLasText();
+    void testHTMLOnly();
 };
 
 #endif // MIMETREEPARSER_TESTS_OBJECTTREEPARSERTEST_H

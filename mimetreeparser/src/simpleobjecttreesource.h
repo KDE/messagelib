@@ -44,6 +44,8 @@ public:
     void setDecryptMessage(bool decryptMessage);
 
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
+
+    void setPreferredMode(MimeTreeParser::Util::HtmlMode mode);
     MimeTreeParser::Util::HtmlMode preferredMode() const override;
 
     const QTextCodec *overrideCodec() override;

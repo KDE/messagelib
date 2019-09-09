@@ -397,5 +397,199 @@ void ObjectTreeParserTest::testRenderedTree()
     testSource.setDecryptMessage(true);
     otp.parseObjectTree(originalMessage.data());
 
+
     testMessagePartTree(otp.parsedPart(), mailFileName);
+}
+
+void ObjectTreeParserTest::testParsePlainMessage()
+{
+    KMime::Message::Ptr msg(new KMime::Message());
+    QByteArray content(
+        "From: Thomas McGuire <dontspamme@gmx.net>\n"
+        "Subject: Plain Message Test\n"
+        "Date: Wed, 5 Aug 2009 10:58:27 +0200\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain;\n"
+        "  charset=\"iso-8859-15\"\n"
+        "\n"
+        "This is the message text.\n");
+    msg->setContent(content);
+    msg->parse();
+
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Plain Message Test");
+    QCOMPARE(msg->contents().size(), 0);
+
+    // Parse the message
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource);
+    otp.parseObjectTree(msg.data());
+
+    // Check that the textual content and the charset have the expected values
+    QCOMPARE(otp.plainTextContent(), QStringLiteral("This is the message text.\n"));
+    QVERIFY(otp.htmlContent().isEmpty());
+    QCOMPARE(otp.plainTextContentCharset().toLower(), QByteArray("iso-8859-15"));
+
+    // Check that the message was not modified in any way
+    QCOMPARE(msg->encodedContent().constData(), content.constData());
+
+    // Test that the charset of messages without an explicit charset declaration
+    // is correct
+    content
+        = "From: Thomas McGuire <dontspamme@gmx.net>\n"
+          "Subject: Plain Message Test\n"
+          "Date: Wed, 5 Aug 2009 10:58:27 +0200\n"
+          "MIME-Version: 1.0\n"
+          "Content-Type: text/plain;\n"
+          "\n"
+          "This is the message text.\n";
+    msg->setContent(content);
+    msg->parse();
+    ObjectTreeParser otp2(&testSource);
+    otp2.parseObjectTree(msg.data());
+    QCOMPARE(otp2.plainTextContentCharset().constData(), msg->defaultCharset().constData());
+}
+
+void ObjectTreeParserTest::testParseEncapsulatedMessage()
+{
+    KMime::Message::Ptr msg
+        = readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Fwd: Test with attachment");
+    QCOMPARE(msg->contents().size(), 2);
+
+    // Parse the message
+    SimpleObjectTreeSource testSource;
+    NodeHelper nodeHelper;
+    ObjectTreeParser otp(&testSource, &nodeHelper);
+    otp.parseObjectTree(msg.data());
+
+    // Check that the OTP didn't modify the message in weird ways
+    QCOMPARE(msg->contents().size(), 2);
+    QCOMPARE(msg->contents().at(0)->contents().size(), 0);
+    QCOMPARE(msg->contents().at(1)->contents().size(), 1);
+    QCOMPARE(msg->contents().at(1)->contents().first()->contents().size(), 2);
+    QCOMPARE(msg->contents().at(1)->contents().first()->contents().at(0)->contents().size(), 0);
+    QCOMPARE(msg->contents().at(1)->contents().first()->contents().at(1)->contents().size(), 0);
+
+    // Check that the textual content and the charset have the expected values
+    QCOMPARE(otp.plainTextContent(), QStringLiteral("This is the first encapsulating message.\n"));
+    QCOMPARE(otp.plainTextContentCharset().toLower(), QByteArray("iso-8859-15"));
+    QVERIFY(otp.htmlContent().isEmpty());
+
+    // Check that the objecttreeparser did process the encapsulated message
+    KMime::Message::Ptr encapsulated = msg->contents().at(1)->bodyAsMessage();
+    QVERIFY(encapsulated.data());
+    QVERIFY(nodeHelper.nodeProcessed(encapsulated.data()));
+    QVERIFY(nodeHelper.nodeProcessed(encapsulated->contents().at(0)));
+    QVERIFY(nodeHelper.nodeProcessed(encapsulated->contents().at(1)));
+    QVERIFY(nodeHelper.partMetaData(msg->contents().at(1)).isEncapsulatedRfc822Message);
+}
+
+void ObjectTreeParserTest::testMissingContentTypeHeader()
+{
+    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("no-content-type.mbox"));
+    QCOMPARE(msg->subject()->as7BitString(
+                 false).constData(), "Simple Mail Without Content-Type Header");
+    QCOMPARE(msg->contents().size(), 0);
+
+    NodeHelper nodeHelper;
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource, &nodeHelper);
+    otp.parseObjectTree(msg.data());
+
+    QCOMPARE(otp.plainTextContent().toLatin1().data(), "asdfasdf");
+    QVERIFY(otp.htmlContent().isEmpty());
+}
+
+void ObjectTreeParserTest::testInlinePGPDecryption()
+{
+    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("inlinepgpencrypted.mbox"));
+
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "inlinepgpencrypted");
+    QCOMPARE(msg->contents().size(), 0);
+
+    NodeHelper nodeHelper;
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource, &nodeHelper);
+
+    testSource.setDecryptMessage(true);
+    otp.parseObjectTree(msg.data());
+
+    QCOMPARE(otp.plainTextContent().toLatin1().data(), "some random text");
+
+    // This test is only a workaround, till we can set the memento to the proper node of the mail.
+    KMime::Content *content = new KMime::Content;
+    QVERIFY(nodeHelper.bodyPartMemento(content, "decryptverify-attachment:?place=0"));
+
+    QVERIFY(otp.htmlContent().isEmpty());
+}
+
+void ObjectTreeParserTest::testInlinePGPSigned()
+{
+    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("openpgp-inline-signed.mbox"));
+
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "test");
+    QCOMPARE(msg->contents().size(), 0);
+
+    NodeHelper nodeHelper;
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource, &nodeHelper);
+
+    testSource.setDecryptMessage(true);
+    otp.parseObjectTree(msg.data());
+
+    // This test is only a workaround, till we can set the memento to the proper node of the mail.
+    QVERIFY(nodeHelper.bodyPartMemento(nullptr, "verification-attachment:?place=0"));
+}
+
+void ObjectTreeParserTest::testHTML()
+{
+    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("html.mbox"));
+
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->contents().size(), 2);
+
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource);
+
+    otp.parseObjectTree(msg.data());
+
+    QCOMPARE(otp.plainTextContent().toLatin1().data(), "Some HTML text");
+    QVERIFY(otp.htmlContent().contains(QLatin1String(
+                                           "Some <span style=\" font-weight:600;\">HTML</span> text")));
+    QCOMPARE(otp.htmlContentCharset().data(), "windows-1252");
+}
+
+void ObjectTreeParserTest::testHTMLasText()
+{
+    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("html.mbox"));
+
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->contents().size(), 2);
+
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource);
+
+    testSource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
+    otp.parseObjectTree(msg.data());
+
+    QCOMPARE(otp.htmlContent().toLatin1().constData(), "");
+    QCOMPARE(otp.htmlContentCharset().constData(), "");
+    QCOMPARE(otp.plainTextContent().toLatin1().constData(), "Some HTML text");
+    QCOMPARE(otp.plainTextContentCharset().constData(), "windows-1252");
+}
+
+void ObjectTreeParserTest::testHTMLOnly()
+{
+    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("htmlonly.mbox"));
+
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->contents().size(), 0);
+
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource);
+
+    otp.parseObjectTree(msg.data());
+
+    QVERIFY(otp.plainTextContent().isEmpty());
+    QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
 }
