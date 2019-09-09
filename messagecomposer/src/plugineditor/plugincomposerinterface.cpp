@@ -24,3 +24,13 @@ PluginComposerInterface::PluginComposerInterface()
 {
 
 }
+
+ComposerViewBase *PluginComposerInterface::composerViewBase() const
+{
+    return mComposerViewBase;
+}
+
+void PluginComposerInterface::setComposerViewBase(ComposerViewBase *composerViewBase)
+{
+    mComposerViewBase = composerViewBase;
+}

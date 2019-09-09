@@ -21,8 +21,9 @@
 #define PLUGINCOMPOSERINTERFACE_H
 
 #include "messagecomposer_export.h"
-
+#include <QObject>
 namespace MessageComposer {
+class ComposerViewBase;
 /**
  * @brief The PluginComposerInterface class
  * @author Laurent Montel <montel@kde.org>
@@ -31,6 +32,11 @@ class MESSAGECOMPOSER_EXPORT PluginComposerInterface
 {
 public:
     PluginComposerInterface();
+    Q_REQUIRED_RESULT ComposerViewBase *composerViewBase() const;
+    void setComposerViewBase(ComposerViewBase *composerViewBase);
+
+private:
+    ComposerViewBase *mComposerViewBase = nullptr;
 };
 }
 #endif // PLUGINCOMPOSERINTERFACE_H
