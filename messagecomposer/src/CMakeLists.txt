@@ -101,6 +101,7 @@ set(messagecomposer_plugineditor_SRCS
     plugineditor/plugineditor.cpp
     plugineditor/plugineditorinterface.cpp
     plugineditor/pluginactiontype.cpp
+    plugineditor/plugincomposerinterface.cpp
     )
 
 set(messagecomposer_plugineditorcheckbeforesend_SRCS
@@ -233,6 +234,7 @@ ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
     PluginEditor
     PluginActionType
     PluginEditorInterface
+    PluginComposerInterface
     PluginEditorManager
     REQUIRED_HEADERS MessageComposer_plugineditor_HEADERS
     PREFIX MessageComposer

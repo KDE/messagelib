@@ -32,6 +32,7 @@ class RichTextEditor;
 namespace MessageComposer {
 class PluginEditorInterfacePrivate;
 class PluginEditor;
+class PluginComposerInterface;
 /**
  * @brief The PluginEditorInterface class
  * @author Laurent Montel <montel@kde.org>
@@ -54,6 +55,9 @@ public:
 
     void setStatusBarWidget(QWidget *w);
     Q_REQUIRED_RESULT QWidget *statusBarWidget() const;
+
+    Q_REQUIRED_RESULT MessageComposer::PluginComposerInterface *composerInterface() const;
+    void setComposerInterface(MessageComposer::PluginComposerInterface *w);
 
 Q_SIGNALS:
     void emitPluginActivated(MessageComposer::PluginEditorInterface *interface);

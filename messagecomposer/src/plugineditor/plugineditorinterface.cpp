@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "plugincomposerinterface.h"
 #include "plugineditorinterface.h"
 
 using namespace MessageComposer;
@@ -31,6 +32,7 @@ public:
     PluginActionType mActionType;
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;
+    MessageComposer::PluginComposerInterface *mComposerInterface = nullptr;
     PluginEditor *plugin = nullptr;
     QWidget *statusBarWidget = nullptr;
     bool mSelectedText = false;
@@ -85,4 +87,14 @@ void PluginEditorInterface::setStatusBarWidget(QWidget *w)
 QWidget *PluginEditorInterface::statusBarWidget() const
 {
     return d->statusBarWidget;
+}
+
+PluginComposerInterface *PluginEditorInterface::composerInterface() const
+{
+    return d->mComposerInterface;
+}
+
+void PluginEditorInterface::setComposerInterface(PluginComposerInterface *w)
+{
+    d->mComposerInterface = w;
 }
