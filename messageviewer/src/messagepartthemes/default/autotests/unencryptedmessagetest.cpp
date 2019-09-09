@@ -61,12 +61,14 @@ void UnencryptedMessageTest::testNotDecrypted()
 
     MimeTreeParser::NodeHelper nodeHelper;
     BufferedHtmlWriter testWriter;
-    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     emptySource.setAllowDecryption(false);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
+
+    testWriter.begin();
+    emptySource.render(otp.parsedPart(), false);
     testWriter.end();
 
     if (decryptMessage) {
@@ -86,11 +88,13 @@ void UnencryptedMessageTest::testSMimeAutoCertImport()
 
     MimeTreeParser::NodeHelper nodeHelper;
     BufferedHtmlWriter testWriter;
-    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
+
+    testWriter.begin();
+    emptySource.render(otp.parsedPart(), false);
     testWriter.end();
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "");

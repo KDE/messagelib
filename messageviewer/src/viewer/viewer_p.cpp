@@ -925,9 +925,6 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     }
 
     KMime::Message *message = dynamic_cast<KMime::Message *>(content);
-    if (message) {
-        htmlWriter()->write(writeMessageHeader(message, hasVCard ? vCardContent : nullptr, true));
-    }
 
     // Pass control to the OTP now, which does the real work
     mNodeHelper->setNodeUnprocessed(mMessage.data(), true);
@@ -936,6 +933,12 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     //TODO: needs to end up in renderer: mMessage.data() != content /* show only single node */);
     otp.setAllowAsync(!mPrinting);
     otp.parseObjectTree(content, mMessage.data() != content /* parse/show only single node */);
+
+    if (message) {
+        htmlWriter()->write(writeMessageHeader(message, hasVCard ? vCardContent : nullptr, true));
+    }
+
+    otpSource.render(otp.parsedPart(), mMessage.data() != content /* parse/show only single node */);
 
     // TODO: Setting the signature state to nodehelper is not enough, it should actually
     // be added to the store, so that the message list correctly displays the signature state

@@ -50,7 +50,6 @@ public:
 
     const QTextCodec *overrideCodec() override;
 
-    void render(const MessagePartPtr &msgPart, bool showOnlyOneMimePart) override;
 
 private:
     std::unique_ptr<SimpleObjectTreeSourcePrivate> d;

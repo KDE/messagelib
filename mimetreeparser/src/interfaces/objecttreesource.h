@@ -66,9 +66,6 @@ public:
     virtual bool autoImportKeys() const = 0;
 
     virtual const BodyPartFormatterFactory *bodyPartFormatterFactory() = 0;
-
-    virtual void render(const MessagePartPtr &msgPart, bool showOnlyOneMimePart) = 0;
-
 private:
     Q_DISABLE_COPY(ObjectTreeSource)
 };

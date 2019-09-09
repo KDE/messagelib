@@ -325,11 +325,12 @@ void RenderTest::testRender()
     connect(&nodeHelper, &MimeTreeParser::NodeHelper::update, &loop, &QEventLoop::quit);
     otp.setAllowAsync(bAsync);
 
-    fileWriter.begin();
-    fileWriter.write(cssHelper.htmlHead(false));
 
     otp.parseObjectTree(msg.data());
 
+    fileWriter.begin();
+    fileWriter.write(cssHelper.htmlHead(false));
+    testSource.render(otp.parsedPart(), false);
     fileWriter.write(QStringLiteral("</body></html>"));
     fileWriter.end();
 
@@ -342,11 +343,11 @@ void RenderTest::testRender()
         MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
         otp.setAllowAsync(bAsync);
 
-        fileWriter.begin();
-        fileWriter.write(cssHelper.htmlHead(false));
-
         otp.parseObjectTree(msg.data());
 
+        fileWriter.begin();
+        fileWriter.write(cssHelper.htmlHead(false));
+        testSource.render(otp.parsedPart(), false);
         fileWriter.write(QStringLiteral("</body></html>"));
         fileWriter.end();
 

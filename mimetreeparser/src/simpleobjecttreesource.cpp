@@ -81,9 +81,3 @@ void SimpleObjectTreeSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, co
     Q_UNUSED(mode);
     Q_UNUSED(availableModes);
 }
-
-void SimpleObjectTreeSource::render(const MessagePart::Ptr &msgPart, bool showOnlyOneMimePart)
-{
-    Q_UNUSED(msgPart);
-    Q_UNUSED(showOnlyOneMimePart);
-}

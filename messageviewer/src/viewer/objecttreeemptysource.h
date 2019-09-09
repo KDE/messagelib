@@ -48,7 +48,7 @@ public:
     bool autoImportKeys() const override;
 
     const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override;
-    void render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart) override;
+    void render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart);
 
     virtual const AttachmentStrategy *attachmentStrategy() const;
     virtual HtmlWriter *htmlWriter() const;

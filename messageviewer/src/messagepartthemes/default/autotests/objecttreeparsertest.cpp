@@ -44,13 +44,15 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
     QCOMPARE(msg->contents().size(), 0);
 
     BufferedHtmlWriter testWriter;
-    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
 
     emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
     otp.parseObjectTree(msg.data());
+
+    testWriter.begin();
+    emptySource.render(otp.parsedPart(), false);
     testWriter.end();
 
     QVERIFY(otp.plainTextContent().isEmpty());
@@ -68,12 +70,14 @@ void ObjectTreeParserTester::test_HTMLExternal()
 
     {
         BufferedHtmlWriter testWriter;
-        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         otp.parseObjectTree(msg.data());
+
+        testWriter.begin();
+        emptySource.render(otp.parsedPart(), false);
         testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());
@@ -83,13 +87,15 @@ void ObjectTreeParserTester::test_HTMLExternal()
     }
     {
         BufferedHtmlWriter testWriter;
-        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setHtmlLoadExternal(true);
         otp.parseObjectTree(msg.data());
+
+        testWriter.begin();
+        emptySource.render(otp.parsedPart(), false);
         testWriter.end();
 
         QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
@@ -104,13 +110,15 @@ void ObjectTreeParserTester::test_Alternative()
     QCOMPARE(msg->contents().size(), 2);
     {
         BufferedHtmlWriter testWriter;
-        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
         otp.parseObjectTree(msg.data());
+
+        testWriter.begin();
+        emptySource.render(otp.parsedPart(), false);
         testWriter.end();
 
         QVERIFY(otp.htmlContent().isEmpty());
@@ -121,13 +129,15 @@ void ObjectTreeParserTester::test_Alternative()
 
     {
         BufferedHtmlWriter testWriter;
-        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setPreferredMode(MimeTreeParser::Util::MultipartHtml);
         otp.parseObjectTree(msg.data());
+
+        testWriter.begin();
+        emptySource.render(otp.parsedPart(), false);
         testWriter.end();
 
         QVERIFY(otp.plainTextContent().contains(QLatin1String(
@@ -141,13 +151,15 @@ void ObjectTreeParserTester::test_Alternative()
     QCOMPARE(msg->contents().size(), 1);
     {
         BufferedHtmlWriter testWriter;
-        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
         otp.parseObjectTree(msg.data());
+
+        testWriter.begin();
+        emptySource.render(otp.parsedPart(), false);
         testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());
@@ -164,6 +176,9 @@ void ObjectTreeParserTester::test_Alternative()
 
         emptySource.setPreferredMode(MimeTreeParser::Util::MultipartHtml);
         otp.parseObjectTree(msg.data());
+
+        testWriter.begin();
+        emptySource.render(otp.parsedPart(), false);
         testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());

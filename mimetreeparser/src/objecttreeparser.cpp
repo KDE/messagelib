@@ -154,8 +154,6 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node, bool parseOnlySingl
             }
             setPlainTextContent(mp->text());
         }
-
-        mSource->render(mParsedPart, parseOnlySingleNode);
     }
 }
 

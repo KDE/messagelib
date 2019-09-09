@@ -74,13 +74,14 @@ void ShowOnlyMimePartTest::testDrawFrame()
 
     MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
 
-    fileWriter.begin();
-    fileWriter.write(cssHelper.htmlHead(false));
 
     QVERIFY(msg->contents().size() > content);
 
     otp.parseObjectTree(msg->contents().at(content), showOnlyMimePart);
 
+    fileWriter.begin();
+    fileWriter.write(cssHelper.htmlHead(false));
+    testSource.render(otp.parsedPart(), showOnlyMimePart);
     fileWriter.write(QStringLiteral("</body></html>"));
     fileWriter.end();
 
@@ -121,13 +122,13 @@ void ShowOnlyMimePartTest::testRelated()
 
     MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
 
-    fileWriter.begin();
-    fileWriter.write(cssHelper.htmlHead(false));
-
     QVERIFY(msg->contents().size() > content);
 
     otp.parseObjectTree(msg->contents().at(content), showOnlyMimePart);
 
+    fileWriter.begin();
+    fileWriter.write(cssHelper.htmlHead(false));
+    testSource.render(otp.parsedPart(), showOnlyMimePart);
     fileWriter.write(QStringLiteral("</body></html>"));
     fileWriter.end();
 
