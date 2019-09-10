@@ -31,7 +31,7 @@ class ComposerViewBase;
 class MESSAGECOMPOSER_EXPORT PluginComposerInterface
 {
 public:
-    PluginComposerIn^terface();
+    PluginComposerInterface();
     void setComposerViewBase(ComposerViewBase *composerViewBase);
 
     Q_REQUIRED_RESULT QString subject() const;
