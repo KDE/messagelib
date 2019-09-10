@@ -23,3 +23,48 @@ PluginAttachmentInterface::PluginAttachmentInterface()
 {
 
 }
+
+PluginAttachmentInterface::~PluginAttachmentInterface()
+{
+
+}
+
+QStringList PluginAttachmentInterface::fileNames() const
+{
+    return mFileNames;
+}
+
+void PluginAttachmentInterface::setFileNames(const QStringList &fileName)
+{
+    mFileNames = fileName;
+}
+
+int PluginAttachmentInterface::count() const
+{
+    return mCount;
+}
+
+void PluginAttachmentInterface::setCount(int count)
+{
+    mCount = count;
+}
+
+QStringList PluginAttachmentInterface::namesAndSize() const
+{
+    return mNamesAndSize;
+}
+
+void PluginAttachmentInterface::setNamesAndSize(const QStringList &nameAndSize)
+{
+    mNamesAndSize = nameAndSize;
+}
+
+QStringList PluginAttachmentInterface::names() const
+{
+    return mNames;
+}
+
+void PluginAttachmentInterface::setNames(const QStringList &name)
+{
+    mNames = name;
+}

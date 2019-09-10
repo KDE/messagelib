@@ -39,7 +39,8 @@ public:
     Q_REQUIRED_RESULT QString subject() const;
     Q_REQUIRED_RESULT QString to() const;
     Q_REQUIRED_RESULT QString cc() const;
-    Q_REQUIRED_RESULT PluginAttachmentInterface attachments() const;
+    Q_REQUIRED_RESULT QString from() const;
+    Q_REQUIRED_RESULT PluginAttachmentInterface attachments();
 private:
     //Make it as private as we don't want that plugin has too many action on composer
     Q_REQUIRED_RESULT ComposerViewBase *composerViewBase() const;

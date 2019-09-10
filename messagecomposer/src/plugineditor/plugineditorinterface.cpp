@@ -29,6 +29,11 @@ public:
     {
     }
 
+    ~PluginEditorInterfacePrivate()
+    {
+        delete mComposerInterface;
+    }
+
     PluginActionType mActionType;
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;

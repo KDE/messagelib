@@ -8,6 +8,7 @@ if(BUILD_TESTING)
     add_subdirectory( imagescaling/tests )
     add_subdirectory( composer-ng/autotests )
     add_subdirectory( statusbarwidget/autotests )
+    add_subdirectory( plugineditor/autotests )
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)

@@ -19,6 +19,8 @@
 
 #include "plugincomposerinterface.h"
 #include "composer/composerviewbase.h"
+#include <MessageComposer/AttachmentModel>
+#include <KFormat>
 using namespace MessageComposer;
 
 PluginComposerInterface::PluginComposerInterface()
@@ -63,7 +65,31 @@ QString PluginComposerInterface::cc() const
     return {};
 }
 
-MessageComposer::PluginAttachmentInterface PluginComposerInterface::attachments() const
+QString PluginComposerInterface::from() const
 {
+    if (mComposerViewBase) {
+        return mComposerViewBase->from();
+    }
     return {};
+}
+
+MessageComposer::PluginAttachmentInterface PluginComposerInterface::attachments()
+{
+    MessageComposer::PluginAttachmentInterface attachmentInterface;
+    if (mComposerViewBase) {
+        attachmentInterface.setCount(mComposerViewBase->attachmentModel()->attachments().count());
+        QStringList fileNames;
+        QStringList nameAndSize;
+        QStringList names;
+
+        for (const MessageCore::AttachmentPart::Ptr &attachment : mComposerViewBase->attachmentModel()->attachments()) {
+            fileNames.append(attachment->fileName());
+            names.append(attachment->name());
+            nameAndSize.append(QStringLiteral("%1 (%2)").arg(attachment->name()).arg(KFormat().formatByteSize(attachment->size())));
+        }
+        attachmentInterface.setNames(names);
+        attachmentInterface.setNamesAndSize(nameAndSize);
+        attachmentInterface.setFileNames(fileNames);
+    }
+    return attachmentInterface;
 }

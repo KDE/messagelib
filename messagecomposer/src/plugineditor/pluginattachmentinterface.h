@@ -34,6 +34,25 @@ class MESSAGECOMPOSER_EXPORT PluginAttachmentInterface
 {
 public:
     PluginAttachmentInterface();
+    ~PluginAttachmentInterface();
+
+    Q_REQUIRED_RESULT QStringList fileNames() const;
+    void setFileNames(const QStringList &fileName);
+
+    Q_REQUIRED_RESULT int count() const;
+    void setCount(int count);
+
+    Q_REQUIRED_RESULT QStringList namesAndSize() const;
+    void setNamesAndSize(const QStringList &nameAndSize);
+
+    Q_REQUIRED_RESULT QStringList names() const;
+    void setNames(const QStringList &name);
+
+private:
+    QStringList mFileNames;
+    QStringList mNamesAndSize;
+    QStringList mNames;
+    int mCount = 0;
 };
 }
 #endif // PLUGINATTACHMENTINTERFACE_H

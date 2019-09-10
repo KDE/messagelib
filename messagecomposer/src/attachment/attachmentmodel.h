@@ -98,7 +98,7 @@ public:
     Q_REQUIRED_RESULT bool updateAttachment(MessageCore::AttachmentPart::Ptr part);
     Q_REQUIRED_RESULT bool replaceAttachment(MessageCore::AttachmentPart::Ptr oldPart, MessageCore::AttachmentPart::Ptr newPart);
     Q_REQUIRED_RESULT bool removeAttachment(const MessageCore::AttachmentPart::Ptr &part);
-    MessageCore::AttachmentPart::List attachments() const;
+    Q_REQUIRED_RESULT MessageCore::AttachmentPart::List attachments() const;
 
     Q_REQUIRED_RESULT Qt::ItemFlags flags(const QModelIndex &index) const override;
     Q_REQUIRED_RESULT QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
