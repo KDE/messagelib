@@ -21,10 +21,10 @@
 #define PLUGINCOMPOSERINTERFACE_H
 
 #include "messagecomposer_export.h"
+#include "pluginattachmentinterface.h"
 #include <QObject>
 namespace MessageComposer {
 class ComposerViewBase;
-class PluginAttachmentInterface;
 /**
  * @brief The PluginComposerInterface class
  * @author Laurent Montel <montel@kde.org>
@@ -39,11 +39,11 @@ public:
     Q_REQUIRED_RESULT QString subject() const;
     Q_REQUIRED_RESULT QString to() const;
     Q_REQUIRED_RESULT QString cc() const;
+    Q_REQUIRED_RESULT PluginAttachmentInterface attachments() const;
 private:
     //Make it as private as we don't want that plugin has too many action on composer
     Q_REQUIRED_RESULT ComposerViewBase *composerViewBase() const;
     ComposerViewBase *mComposerViewBase = nullptr;
-    PluginAttachmentInterface *mAttachmentInterface = nullptr;
 };
 }
 #endif // PLUGINCOMPOSERINTERFACE_H

@@ -17,19 +17,16 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pluginattachmentinterface.h"
 #include "plugincomposerinterface.h"
 #include "composer/composerviewbase.h"
 using namespace MessageComposer;
 
 PluginComposerInterface::PluginComposerInterface()
 {
-    mAttachmentInterface = new PluginAttachmentInterface;
 }
 
 PluginComposerInterface::~PluginComposerInterface()
 {
-    delete mAttachmentInterface;
 }
 
 ComposerViewBase *PluginComposerInterface::composerViewBase() const
@@ -63,5 +60,10 @@ QString PluginComposerInterface::cc() const
     if (mComposerViewBase) {
         return mComposerViewBase->cc();
     }
+    return {};
+}
+
+MessageComposer::PluginAttachmentInterface PluginComposerInterface::attachments() const
+{
     return {};
 }
