@@ -337,18 +337,24 @@ void RecipientsEditor::slotCalculateTotal()
                     d->mSkipTotal = true;
                     Recipient::Ptr recipient = rec->recipient();
                     const auto split = KEmailAddress::splitAddressList(recipient->email());
+                    bool maximumElementFound = false;
                     for (int i = 1 /* sic! */; i < split.count(); ++i) {
-                        addRecipient(split[i], rec->recipientType());
+                        maximumElementFound = addRecipient(split[i], rec->recipientType());
+                        if (maximumElementFound) {
+                            break;
+                        }
                     }
                     recipient->setEmail(split[0]);
                     rec->setData(recipient);
                     setFocusBottom(); // focus next empty entry
                     d->mSkipTotal = false;
+                    if (maximumElementFound) {
+                        return;
+                    }
                 }
             }
         }
     }
-
     // We always want at least one empty line
     if (empty == 0) {
         addData();
@@ -362,7 +368,6 @@ void RecipientsEditor::slotCalculateTotal()
             }
         }
     }
-
     // update the side widget
     d->mSideWidget->setTotal(count, lines().count());
 }
