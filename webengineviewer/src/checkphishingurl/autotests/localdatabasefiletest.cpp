@@ -60,7 +60,7 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
     QFETCH(QByteArray, resultHash);
     QFETCH(bool, found);
     WebEngineViewer::CreateDatabaseFileJob databasejob;
-    const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl") + QStringLiteral("/correctBinary.db");
+    const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/correctBinary.db");
     qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
 

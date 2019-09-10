@@ -60,7 +60,7 @@ int main(int argc, char **argv)
     }
 
     KMime::Message *msg = new KMime::Message;
-    if (parser.positionalArguments().count() == 0) {
+    if (parser.positionalArguments().isEmpty()) {
         QByteArray mail = "From: dfaure@example.com\n"
                           "To: kde@example.com\n"
                           "Sender: dfaure@example.com\n"

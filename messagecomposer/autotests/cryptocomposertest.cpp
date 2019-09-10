@@ -433,7 +433,7 @@ void CryptoComposerTest::testOpenPGPInline()
     composer = nullptr;
 
     if (sign && !encrypt) {
-        data += QLatin1String("\n");
+        data += QLatin1Char('\n');
     }
     //qDebug() << "message:" << message->encodedContent();
     ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(),

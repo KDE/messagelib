@@ -577,7 +577,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                                                                                     "0x")
                                                                                 + metaData.keyId)));
         } else {
-            keyWithWithoutURL = QStringLiteral("0x") + QString::fromUtf8(metaData.keyId);
+            keyWithWithoutURL = QLatin1String("0x") + QString::fromUtf8(metaData.keyId);
         }
         block.setProperty("keyWithWithoutURL", keyWithWithoutURL);
     }

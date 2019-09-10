@@ -26,7 +26,7 @@ using namespace TemplateParser;
 QString DefaultTemplates::defaultNewMessage()
 {
     return
-        QStringLiteral("%REM=\"") + i18n("Default new message template") + QStringLiteral("\"%-\n") + QStringLiteral("%BLANK");
+        QLatin1String("%REM=\"") + i18n("Default new message template") + QLatin1String("\"%-\n") + QLatin1String("%BLANK");
 }
 
 QString DefaultTemplates::defaultReply()

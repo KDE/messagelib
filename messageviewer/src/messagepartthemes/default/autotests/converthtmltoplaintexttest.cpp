@@ -51,7 +51,7 @@ void ConvertHtmlToPlainTextTest::shouldReturnNotEmptyStringIfInputTextIsNotEmpty
     convert.setHtmlString(str);
     const QString result = convert.generatePlainText();
     QVERIFY(!result.isEmpty());
-    QCOMPARE(result, QString(str + QLatin1String("\n")));
+    QCOMPARE(result, QString(str + QLatin1Char('\n')));
 }
 
 void ConvertHtmlToPlainTextTest::shouldConvertToPlainText_data()

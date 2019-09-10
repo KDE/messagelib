@@ -64,12 +64,12 @@ void CryptoHelperTest::testPGPBlockType()
             name = QStringLiteral("PRIVATE KEY BLOCK");
             break;
         }
-        QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1String("\n") + blockText;
+        QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText;
         QList<Block> blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 1);
         QCOMPARE(blocks[0].type(), UnknownBlock);
 
-        text += QLatin1String("\n-----END PGP ") + name + QLatin1String("\n");
+        text += QLatin1String("\n-----END PGP ") + name + QLatin1Char('\n');
         blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 2);
         QCOMPARE(blocks[1].text(), text.toLatin1());
@@ -102,7 +102,7 @@ void CryptoHelperTest::testDeterminePGPBlockType()
             name = QStringLiteral("PRIVATE KEY BLOCK");
             break;
         }
-        const QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1String("\n") + blockText + QLatin1String("\n");
+        const QString text = QLatin1String("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText + QLatin1Char('\n');
         const Block block = Block(text.toLatin1());
         QCOMPARE(block.text(), text.toLatin1());
         QCOMPARE(block.type(), static_cast<PGPBlockType>(i));

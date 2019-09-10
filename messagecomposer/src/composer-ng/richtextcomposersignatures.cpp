@@ -176,7 +176,7 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
                                 QTextCursor::MoveAnchor, 4);
             additionalMove = 4;
         } else if (newSig.rawText().isEmpty()
-                   && text.mid(currentMatch - 1, 1) == QLatin1String("\n")) {
+                   && text.mid(currentMatch - 1, 1) == QLatin1Char('\n')) {
             cursor.movePosition(QTextCursor::PreviousCharacter,
                                 QTextCursor::MoveAnchor, 1);
             additionalMove = 1;
