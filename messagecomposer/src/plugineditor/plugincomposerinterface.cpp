@@ -17,13 +17,19 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "pluginattachmentinterface.h"
 #include "plugincomposerinterface.h"
 #include "composer/composerviewbase.h"
 using namespace MessageComposer;
 
 PluginComposerInterface::PluginComposerInterface()
 {
+    mAttachmentInterface = new PluginAttachmentInterface;
+}
 
+PluginComposerInterface::~PluginComposerInterface()
+{
+    delete mAttachmentInterface;
 }
 
 ComposerViewBase *PluginComposerInterface::composerViewBase() const

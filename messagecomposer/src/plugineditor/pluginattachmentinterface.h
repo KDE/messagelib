@@ -17,33 +17,23 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PLUGINCOMPOSERINTERFACE_H
-#define PLUGINCOMPOSERINTERFACE_H
+
+#ifndef PLUGINATTACHMENTINTERFACE_H
+#define PLUGINATTACHMENTINTERFACE_H
 
 #include "messagecomposer_export.h"
 #include <QObject>
+
 namespace MessageComposer {
 class ComposerViewBase;
-class PluginAttachmentInterface;
 /**
- * @brief The PluginComposerInterface class
+ * @brief The PluginAttachmentInterface class
  * @author Laurent Montel <montel@kde.org>
  */
-class MESSAGECOMPOSER_EXPORT PluginComposerInterface
+class MESSAGECOMPOSER_EXPORT PluginAttachmentInterface
 {
 public:
-    PluginComposerInterface();
-    ~PluginComposerInterface();
-    void setComposerViewBase(ComposerViewBase *composerViewBase);
-
-    Q_REQUIRED_RESULT QString subject() const;
-    Q_REQUIRED_RESULT QString to() const;
-    Q_REQUIRED_RESULT QString cc() const;
-private:
-    //Make it as private as we don't want that plugin has too many action on composer
-    Q_REQUIRED_RESULT ComposerViewBase *composerViewBase() const;
-    ComposerViewBase *mComposerViewBase = nullptr;
-    PluginAttachmentInterface *mAttachmentInterface = nullptr;
+    PluginAttachmentInterface();
 };
 }
-#endif // PLUGINCOMPOSERINTERFACE_H
+#endif // PLUGINATTACHMENTINTERFACE_H
