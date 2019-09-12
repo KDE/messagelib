@@ -470,21 +470,30 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
     const QUrl startUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral(
                                                             "kfiledialog:///savemessage")),
                                                    fileClass);
+    QUrl localUrl;
+    localUrl.setPath(startUrl.path() + QLatin1Char('/') + fileName);
     QFileDialog::Options opt;
     if (appendMessages) {
         opt |= QFileDialog::DontConfirmOverwrite;
     }
-    QString localFile = startUrl.toLocalFile() + QLatin1Char('/') + fileName;
-    QString saveFileName
-        = QFileDialog::getSaveFileName(parent,
-                                       i18np("Save Message", "Save Messages",
-                                             retrievedMsgs.count()), localFile, filter, nullptr,
-                                       opt);
-
-    if (!saveFileName.isEmpty()) {
-        const QString localFileName = saveFileName;
-        if (!appendMessages) {
-            QFile::remove(localFileName);
+    QUrl dirUrl = QFileDialog::getSaveFileUrl(parent, i18np("Save Message", "Save Messages",
+                                                            retrievedMsgs.count()), localUrl, filter, nullptr,
+                                              opt);
+    if (!dirUrl.isEmpty()) {
+        QFile file;
+        QTemporaryFile tf;
+        QString localFileName;
+        if (dirUrl.isLocalFile()) {
+            // save directly
+            file.setFileName(dirUrl.toLocalFile());
+            localFileName = file.fileName();
+            if (!appendMessages) {
+                QFile::remove(localFileName);
+            }
+        } else {
+            // tmp file for upload
+            tf.open();
+            localFileName = tf.fileName();
         }
 
         KMBox::MBox mbox;
@@ -509,10 +518,29 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
                                i18n("Error saving message"));
             return false;
         }
-        QUrl localUrl = QUrl::fromLocalFile(saveFileName);
+        QUrl localUrl = QUrl::fromLocalFile(localFileName);
         if (localUrl.isLocalFile()) {
             KRecentDirs::add(fileClass, localUrl.adjusted(
                                  QUrl::RemoveFilename | QUrl::StripTrailingSlash).path());
+        }
+
+        if (!dirUrl.isLocalFile()) {
+            // QTemporaryFile::fileName() is only defined while the file is open
+            QString tfName = tf.fileName();
+            tf.close();
+            auto job = KIO::file_copy(QUrl::fromLocalFile(tfName), dirUrl);
+            KJobWidgets::setWindow(job, parent);
+            if (!job->exec()) {
+                KMessageBox::error(parent,
+                                   xi18nc("1 = file name, 2 = error string",
+                                          "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</qt>",
+                                          url.toDisplayString(),
+                                          job->errorString()),
+                                   i18n("Error saving message"));
+                return false;
+            }
+        } else {
+            file.close();
         }
         url = localUrl;
     }
