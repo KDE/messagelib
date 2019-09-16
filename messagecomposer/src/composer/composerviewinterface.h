@@ -17,42 +17,35 @@
    Boston, MA 02110-1301, USA.
 */
 
-
-#ifndef PLUGINATTACHMENTINTERFACE_H
-#define PLUGINATTACHMENTINTERFACE_H
-
+#ifndef COMPOSERVIEWINTERFACE_H
+#define COMPOSERVIEWINTERFACE_H
 #include "messagecomposer_export.h"
-#include <QObject>
+#include <MessageComposer/ComposerAttachmentInterface>
+#include <QString>
 
 namespace MessageComposer {
 class ComposerViewBase;
 /**
- * @brief The PluginAttachmentInterface class
+ * @brief The ComposerViewInterface class
  * @author Laurent Montel <montel@kde.org>
  */
-class MESSAGECOMPOSER_EXPORT PluginAttachmentInterface
+class MESSAGECOMPOSER_EXPORT ComposerViewInterface
 {
 public:
-    PluginAttachmentInterface();
-    ~PluginAttachmentInterface();
+    explicit ComposerViewInterface(ComposerViewBase *composerView);
+    ~ComposerViewInterface();
 
-    Q_REQUIRED_RESULT QStringList fileNames() const;
-    void setFileNames(const QStringList &fileName);
+    Q_REQUIRED_RESULT QString subject() const;
+    Q_REQUIRED_RESULT QString to() const;
+    Q_REQUIRED_RESULT QString cc() const;
+    Q_REQUIRED_RESULT QString from() const;
 
-    Q_REQUIRED_RESULT int count() const;
-    void setCount(int count);
+    Q_REQUIRED_RESULT MessageComposer::ComposerAttachmentInterface attachments();
 
-    Q_REQUIRED_RESULT QStringList namesAndSize() const;
-    void setNamesAndSize(const QStringList &nameAndSize);
-
-    Q_REQUIRED_RESULT QStringList names() const;
-    void setNames(const QStringList &name);
-
+    Q_REQUIRED_RESULT QString convertVariableToString(const QString &originalText);
 private:
-    QStringList mFileNames;
-    QStringList mNamesAndSize;
-    QStringList mNames;
-    int mCount = 0;
+    ComposerViewBase *mComposerView = nullptr;
 };
 }
-#endif // PLUGINATTACHMENTINTERFACE_H
+
+#endif // COMPOSERVIEWINTERFACE_H

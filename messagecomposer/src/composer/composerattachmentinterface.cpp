@@ -17,54 +17,54 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pluginattachmentinterface.h"
+#include "composerattachmentinterface.h"
 using namespace MessageComposer;
-PluginAttachmentInterface::PluginAttachmentInterface()
+ComposerAttachmentInterface::ComposerAttachmentInterface()
 {
 
 }
 
-PluginAttachmentInterface::~PluginAttachmentInterface()
+ComposerAttachmentInterface::~ComposerAttachmentInterface()
 {
 
 }
 
-QStringList PluginAttachmentInterface::fileNames() const
+QStringList ComposerAttachmentInterface::fileNames() const
 {
     return mFileNames;
 }
 
-void PluginAttachmentInterface::setFileNames(const QStringList &fileName)
+void ComposerAttachmentInterface::setFileNames(const QStringList &fileName)
 {
     mFileNames = fileName;
 }
 
-int PluginAttachmentInterface::count() const
+int ComposerAttachmentInterface::count() const
 {
     return mCount;
 }
 
-void PluginAttachmentInterface::setCount(int count)
+void ComposerAttachmentInterface::setCount(int count)
 {
     mCount = count;
 }
 
-QStringList PluginAttachmentInterface::namesAndSize() const
+QStringList ComposerAttachmentInterface::namesAndSize() const
 {
     return mNamesAndSize;
 }
 
-void PluginAttachmentInterface::setNamesAndSize(const QStringList &nameAndSize)
+void ComposerAttachmentInterface::setNamesAndSize(const QStringList &nameAndSize)
 {
     mNamesAndSize = nameAndSize;
 }
 
-QStringList PluginAttachmentInterface::names() const
+QStringList ComposerAttachmentInterface::names() const
 {
     return mNames;
 }
 
-void PluginAttachmentInterface::setNames(const QStringList &name)
+void ComposerAttachmentInterface::setNames(const QStringList &name)
 {
     mNames = name;
 }

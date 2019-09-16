@@ -19,6 +19,8 @@
 
 #include "plugincomposerinterface.h"
 #include "composer/composerviewbase.h"
+#include "composer/composerviewinterface.h"
+#include "composer/composerattachmentinterface.h"
 #include <MessageComposer/AttachmentModel>
 #include <KFormat>
 using namespace MessageComposer;
@@ -29,67 +31,36 @@ PluginComposerInterface::PluginComposerInterface()
 
 PluginComposerInterface::~PluginComposerInterface()
 {
-}
-
-ComposerViewBase *PluginComposerInterface::composerViewBase() const
-{
-    return mComposerViewBase;
+    delete mComposerViewInterface;
 }
 
 void PluginComposerInterface::setComposerViewBase(ComposerViewBase *composerViewBase)
 {
-    mComposerViewBase = composerViewBase;
+    delete mComposerViewInterface;
+    mComposerViewInterface = new MessageComposer::ComposerViewInterface(composerViewBase);
 }
 
 QString PluginComposerInterface::subject() const
 {
-    if (mComposerViewBase) {
-        return mComposerViewBase->subject();
-    }
-    return {};
+    return mComposerViewInterface->subject();
 }
 
 QString PluginComposerInterface::to() const
 {
-    if (mComposerViewBase) {
-        return mComposerViewBase->to();
-    }
-    return {};
+    return mComposerViewInterface->to();
 }
 
 QString PluginComposerInterface::cc() const
 {
-    if (mComposerViewBase) {
-        return mComposerViewBase->cc();
-    }
-    return {};
+    return mComposerViewInterface->cc();
 }
 
 QString PluginComposerInterface::from() const
 {
-    if (mComposerViewBase) {
-        return mComposerViewBase->from();
-    }
-    return {};
+    return mComposerViewInterface->from();
 }
 
-MessageComposer::PluginAttachmentInterface PluginComposerInterface::attachments()
+MessageComposer::ComposerAttachmentInterface PluginComposerInterface::attachments()
 {
-    MessageComposer::PluginAttachmentInterface attachmentInterface;
-    if (mComposerViewBase) {
-        attachmentInterface.setCount(mComposerViewBase->attachmentModel()->attachments().count());
-        QStringList fileNames;
-        QStringList nameAndSize;
-        QStringList names;
-
-        for (const MessageCore::AttachmentPart::Ptr &attachment : mComposerViewBase->attachmentModel()->attachments()) {
-            fileNames.append(attachment->fileName());
-            names.append(attachment->name());
-            nameAndSize.append(QStringLiteral("%1 (%2)").arg(attachment->name()).arg(KFormat().formatByteSize(attachment->size())));
-        }
-        attachmentInterface.setNames(names);
-        attachmentInterface.setNamesAndSize(nameAndSize);
-        attachmentInterface.setFileNames(fileNames);
-    }
-    return attachmentInterface;
+    return mComposerViewInterface->attachments();
 }

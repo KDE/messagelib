@@ -17,33 +17,42 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PLUGINCOMPOSERINTERFACE_H
-#define PLUGINCOMPOSERINTERFACE_H
+
+#ifndef COMPOSERATTACHMENTINTERFACE_H
+#define COMPOSERATTACHMENTINTERFACE_H
 
 #include "messagecomposer_export.h"
-#include <MessageComposer/ComposerAttachmentInterface>
 #include <QObject>
+
 namespace MessageComposer {
 class ComposerViewBase;
-class ComposerViewInterface;
 /**
- * @brief The PluginComposerInterface class
+ * @brief The ComposerAttachmentInterface class
  * @author Laurent Montel <montel@kde.org>
  */
-class MESSAGECOMPOSER_EXPORT PluginComposerInterface
+class MESSAGECOMPOSER_EXPORT ComposerAttachmentInterface
 {
 public:
-    PluginComposerInterface();
-    ~PluginComposerInterface();
-    void setComposerViewBase(ComposerViewBase *composerViewBase);
+    ComposerAttachmentInterface();
+    ~ComposerAttachmentInterface();
 
-    Q_REQUIRED_RESULT QString subject() const;
-    Q_REQUIRED_RESULT QString to() const;
-    Q_REQUIRED_RESULT QString cc() const;
-    Q_REQUIRED_RESULT QString from() const;
-    Q_REQUIRED_RESULT ComposerAttachmentInterface attachments();
+    Q_REQUIRED_RESULT QStringList fileNames() const;
+    void setFileNames(const QStringList &fileName);
+
+    Q_REQUIRED_RESULT int count() const;
+    void setCount(int count);
+
+    Q_REQUIRED_RESULT QStringList namesAndSize() const;
+    void setNamesAndSize(const QStringList &nameAndSize);
+
+    Q_REQUIRED_RESULT QStringList names() const;
+    void setNames(const QStringList &name);
+
 private:
-    MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
+    QStringList mFileNames;
+    QStringList mNamesAndSize;
+    QStringList mNames;
+    int mCount = 0;
 };
 }
-#endif // PLUGINCOMPOSERINTERFACE_H
+#endif // COMPOSERATTACHMENTINTERFACE_H

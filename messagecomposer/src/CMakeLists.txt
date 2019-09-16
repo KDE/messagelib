@@ -9,6 +9,7 @@ if(BUILD_TESTING)
     add_subdirectory( composer-ng/autotests )
     add_subdirectory( statusbarwidget/autotests )
     add_subdirectory( plugineditor/autotests )
+    add_subdirectory( composer/autotests )
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
@@ -45,6 +46,8 @@ set( messagecomposer_composer_src
     composer/composerlineedit.cpp
     composer/composerviewbase.cpp
     composer/keyresolver.cpp
+    composer/composerviewinterface.cpp
+    composer/composerattachmentinterface.cpp
     )
 
 set( messagecomposer_recipient_src
@@ -103,7 +106,6 @@ set(messagecomposer_plugineditor_SRCS
     plugineditor/plugineditorinterface.cpp
     plugineditor/pluginactiontype.cpp
     plugineditor/plugincomposerinterface.cpp
-    plugineditor/pluginattachmentinterface.cpp
     )
 
 set(messagecomposer_plugineditorcheckbeforesend_SRCS
@@ -237,7 +239,6 @@ ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
     PluginActionType
     PluginEditorInterface
     PluginComposerInterface
-    PluginAttachmentInterface
     PluginEditorManager
     REQUIRED_HEADERS MessageComposer_plugineditor_HEADERS
     PREFIX MessageComposer
@@ -305,6 +306,8 @@ ecm_generate_headers(MessageComposer_Camelcasecomposer_HEADERS
     Composer
     ComposerLineEdit
     ComposerViewBase
+    ComposerViewInterface
+    ComposerAttachmentInterface
     SignatureController
     REQUIRED_HEADERS MessageComposer_composer_HEADERS
     PREFIX MessageComposer

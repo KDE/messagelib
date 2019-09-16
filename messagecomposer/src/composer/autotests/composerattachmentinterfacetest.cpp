@@ -17,19 +17,23 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PLUGINATTACHMENTINTERFACETEST_H
-#define PLUGINATTACHMENTINTERFACETEST_H
+#include "composerattachmentinterfacetest.h"
+#include "composer/composerattachmentinterface.h"
+#include <QTest>
 
-#include <QObject>
+QTEST_GUILESS_MAIN(ComposerAttachmentInterfaceTest)
 
-class PluginAttachmentInterfaceTest : public QObject
+ComposerAttachmentInterfaceTest::ComposerAttachmentInterfaceTest(QObject *parent)
+    : QObject(parent)
 {
-    Q_OBJECT
-public:
-    explicit PluginAttachmentInterfaceTest(QObject *parent = nullptr);
-    ~PluginAttachmentInterfaceTest() = default;
-private Q_SLOTS:
-    void shouldHaveDefaultValues();
-};
 
-#endif // PLUGINATTACHMENTINTERFACETEST_H
+}
+
+void ComposerAttachmentInterfaceTest::shouldHaveDefaultValues()
+{
+    MessageComposer::ComposerAttachmentInterface interface;
+    QCOMPARE(interface.count(), 0);
+    QVERIFY(interface.namesAndSize().isEmpty());
+    QVERIFY(interface.fileNames().isEmpty());
+    QVERIFY(interface.names().isEmpty());
+}
