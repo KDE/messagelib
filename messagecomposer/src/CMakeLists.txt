@@ -60,6 +60,10 @@ set( messagecomposer_recipient_src
     recipient/distributionlistdialog.cpp
     )
 
+set( messagecomposer_snippet_src
+    snippet/convertvariablesjob.cpp
+    )
+
 set( messagecomposer_imagescaling_src
     imagescaling/imagescaling.cpp
     imagescaling/imagescalingwidget.cpp
@@ -137,6 +141,7 @@ set(messagecomposer_plugineditorgrammar_SRCS
     )
 
 set( messagecomposer_src
+    ${messagecomposer_snippet_src}
     ${messagecomposer_statusbarwidget_src}
     ${messagecomposer_plugineditorconverttext_SRCS}
     ${messagecomposer_plugineditorinit_SRCS}
