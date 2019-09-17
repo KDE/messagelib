@@ -90,3 +90,30 @@ QString ComposerViewInterface::convertVariableToString(const QString &originalTe
 {
     return {};
 }
+
+QString ComposerViewInterface::shortDate() const
+{
+    return QDate::currentDate().toString(Qt::SystemLocaleShortDate);
+}
+
+QString ComposerViewInterface::longDate() const
+{
+    return QDate::currentDate().toString(Qt::SystemLocaleLongDate);
+}
+
+QString ComposerViewInterface::shortTime() const
+{
+   return QTime::currentTime().toString(Qt::SystemLocaleShortDate);
+}
+
+QString ComposerViewInterface::longTime() const
+{
+    return QTime::currentTime().toString(Qt::SystemLocaleLongDate);
+}
+
+QString ComposerViewInterface::insertDayOfWeek() const
+{
+    const QDateTime date = QDateTime::currentDateTime().toLocalTime();
+    const QString str = QLocale().dayName(date.date().dayOfWeek(), QLocale::LongFormat);
+    return str;
+}

@@ -42,6 +42,12 @@ public:
     Q_REQUIRED_RESULT QString cc() const;
     Q_REQUIRED_RESULT QString from() const;
     Q_REQUIRED_RESULT ComposerAttachmentInterface attachments();
+    Q_REQUIRED_RESULT QString shortDate() const;
+    Q_REQUIRED_RESULT QString longDate() const;
+    Q_REQUIRED_RESULT QString shortTime() const;
+    Q_REQUIRED_RESULT QString longTime() const;
+    Q_REQUIRED_RESULT QString insertDayOfWeek() const;
+
 private:
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };

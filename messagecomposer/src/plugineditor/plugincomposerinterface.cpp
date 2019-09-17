@@ -64,3 +64,28 @@ MessageComposer::ComposerAttachmentInterface PluginComposerInterface::attachment
 {
     return mComposerViewInterface->attachments();
 }
+
+QString PluginComposerInterface::shortDate() const
+{
+    return mComposerViewInterface->shortDate();
+}
+
+QString PluginComposerInterface::longDate() const
+{
+    return mComposerViewInterface->longDate();
+}
+
+QString PluginComposerInterface::shortTime() const
+{
+   return mComposerViewInterface->shortTime();
+}
+
+QString PluginComposerInterface::longTime() const
+{
+    return mComposerViewInterface->longTime();
+}
+
+QString PluginComposerInterface::insertDayOfWeek() const
+{
+    return mComposerViewInterface->insertDayOfWeek();
+}
