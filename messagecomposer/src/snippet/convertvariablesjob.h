@@ -35,6 +35,9 @@ public:
     void setText(const QString &str);
     Q_REQUIRED_RESULT QString text() const;
 
+Q_SIGNALS:
+    void textConverted(const QString &str);
+
 private:
     QString mText;
 };

@@ -18,6 +18,7 @@
 */
 
 #include "convertvariablesjob.h"
+#include "messagecomposer_debug.h"
 
 using namespace MessageComposer;
 ConvertVariablesJob::ConvertVariablesJob(QObject *parent)
@@ -38,6 +39,11 @@ void ConvertVariablesJob::setText(const QString &str)
 
 void ConvertVariablesJob::start()
 {
+    if (mText.isEmpty()) {
+        Q_EMIT textConverted(QString());
+        deleteLater();
+        return;
+    }
     //TODO
 }
 
