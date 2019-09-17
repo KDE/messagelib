@@ -24,6 +24,7 @@
 #include <QObject>
 #include "messagecomposer_export.h"
 namespace MessageComposer {
+class ComposerViewInterface;
 class MESSAGECOMPOSER_EXPORT ConvertVariablesJob : public QObject
 {
     Q_OBJECT
@@ -35,11 +36,16 @@ public:
     void setText(const QString &str);
     Q_REQUIRED_RESULT QString text() const;
 
+    MessageComposer::ComposerViewInterface *composerViewInterface() const;
+    void setComposerViewInterface(MessageComposer::ComposerViewInterface *composerViewInterface);
+
 Q_SIGNALS:
     void textConverted(const QString &str);
 
 private:
+    void convertVariables();
     QString mText;
+    MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };
 }
 #endif // CONVERTVARIABLESJOB_H

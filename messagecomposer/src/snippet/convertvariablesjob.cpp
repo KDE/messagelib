@@ -19,6 +19,7 @@
 
 #include "convertvariablesjob.h"
 #include "messagecomposer_debug.h"
+#include "composer/composerviewinterface.h"
 
 using namespace MessageComposer;
 ConvertVariablesJob::ConvertVariablesJob(QObject *parent)
@@ -29,7 +30,7 @@ ConvertVariablesJob::ConvertVariablesJob(QObject *parent)
 
 ConvertVariablesJob::~ConvertVariablesJob()
 {
-
+    delete mComposerViewInterface;
 }
 
 void ConvertVariablesJob::setText(const QString &str)
@@ -39,15 +40,47 @@ void ConvertVariablesJob::setText(const QString &str)
 
 void ConvertVariablesJob::start()
 {
-    if (mText.isEmpty()) {
+    if (mText.isEmpty() || !mComposerViewInterface) {
         Q_EMIT textConverted(QString());
         deleteLater();
         return;
     }
-    //TODO
+    //TODO replace string.
 }
 
 QString ConvertVariablesJob::text() const
 {
     return mText;
+}
+
+MessageComposer::ComposerViewInterface *ConvertVariablesJob::composerViewInterface() const
+{
+    return mComposerViewInterface;
+}
+
+void ConvertVariablesJob::setComposerViewInterface(MessageComposer::ComposerViewInterface *composerViewInterface)
+{
+    mComposerViewInterface = composerViewInterface;
+}
+
+void ConvertVariablesJob::convertVariables()
+{
+    QString result;
+    const int tmpl_len = mText.length();
+    for (int i = 0; i < tmpl_len; ++i) {
+        QChar c = mText[i];
+        if (c == QLatin1Char('%')) {
+            const QString cmd = mText.mid(i + 1);
+            if (cmd.startsWith(QLatin1String("CCADDR"))) {
+                i += strlen("CCADDR");
+                const QString str = mComposerViewInterface->cc();
+                result.append(str);
+            } else {
+                result.append(c);
+            }
+        } else {
+            result.append(c);
+        }
+    }
+    Q_EMIT textConverted(result);
 }
