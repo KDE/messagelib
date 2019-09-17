@@ -45,7 +45,8 @@ void ConvertVariablesJob::start()
         deleteLater();
         return;
     }
-    //TODO replace string.
+    Q_EMIT textConverted(convertVariables());
+    deleteLater();
 }
 
 QString ConvertVariablesJob::text() const
@@ -63,7 +64,7 @@ void ConvertVariablesJob::setComposerViewInterface(MessageComposer::ComposerView
     mComposerViewInterface = composerViewInterface;
 }
 
-void ConvertVariablesJob::convertVariables()
+QString ConvertVariablesJob::convertVariables() const
 {
     QString result;
     const int tmpl_len = mText.length();
@@ -82,5 +83,5 @@ void ConvertVariablesJob::convertVariables()
             result.append(c);
         }
     }
-    Q_EMIT textConverted(result);
+    return result;
 }

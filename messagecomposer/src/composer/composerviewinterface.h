@@ -42,7 +42,6 @@ public:
 
     Q_REQUIRED_RESULT MessageComposer::ComposerAttachmentInterface attachments();
 
-    Q_REQUIRED_RESULT QString convertVariableToString(const QString &originalText);
     Q_REQUIRED_RESULT QString shortDate() const;
     Q_REQUIRED_RESULT QString longDate() const;
     Q_REQUIRED_RESULT QString shortTime() const;

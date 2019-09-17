@@ -86,11 +86,6 @@ MessageComposer::ComposerAttachmentInterface ComposerViewInterface::attachments(
     return attachmentInterface;
 }
 
-QString ComposerViewInterface::convertVariableToString(const QString &originalText)
-{
-    return {};
-}
-
 QString ComposerViewInterface::shortDate() const
 {
     return QDate::currentDate().toString(Qt::SystemLocaleShortDate);

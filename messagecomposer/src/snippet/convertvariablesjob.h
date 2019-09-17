@@ -38,12 +38,12 @@ public:
 
     MessageComposer::ComposerViewInterface *composerViewInterface() const;
     void setComposerViewInterface(MessageComposer::ComposerViewInterface *composerViewInterface);
+    Q_REQUIRED_RESULT QString convertVariables() const;
 
 Q_SIGNALS:
     void textConverted(const QString &str);
 
 private:
-    void convertVariables();
     QString mText;
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };
