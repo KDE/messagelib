@@ -22,10 +22,10 @@
 #define CONVERTVARIABLESJOB_H
 
 #include <QObject>
-#include "messagecomposer_export.h"
+#include "messagecomposer_private_export.h"
 namespace MessageComposer {
 class ComposerViewInterface;
-class MESSAGECOMPOSER_EXPORT ConvertVariablesJob : public QObject
+class MESSAGECOMPOSER_TESTS_EXPORT ConvertVariablesJob : public QObject
 {
     Q_OBJECT
 public:
