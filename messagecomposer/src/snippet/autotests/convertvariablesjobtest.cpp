@@ -27,3 +27,11 @@ ConvertVariablesJobTest::ConvertVariablesJobTest(QObject *parent)
 {
 
 }
+
+void ConvertVariablesJobTest::shouldHaveDefaultValues()
+{
+    MessageComposer::ConvertVariablesJob job;
+    QVERIFY(job.text().isEmpty());
+    QVERIFY(!job.composerViewInterface());
+    QVERIFY(!job.canStart());
+}

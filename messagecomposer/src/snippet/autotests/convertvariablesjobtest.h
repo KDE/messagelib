@@ -28,6 +28,8 @@ class ConvertVariablesJobTest : public QObject
 public:
     explicit ConvertVariablesJobTest(QObject *parent = nullptr);
     ~ConvertVariablesJobTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
 
 #endif // CONVERTVARIABLESJOBTEST_H

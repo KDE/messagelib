@@ -38,9 +38,17 @@ void ConvertVariablesJob::setText(const QString &str)
     mText = str;
 }
 
-void ConvertVariablesJob::start()
+bool ConvertVariablesJob::canStart() const
 {
     if (mText.isEmpty() || !mComposerViewInterface) {
+        return false;
+    }
+    return true;
+}
+
+void ConvertVariablesJob::start()
+{
+    if (!canStart()) {
         Q_EMIT textConverted(QString());
         deleteLater();
         return;
