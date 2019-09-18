@@ -20,6 +20,8 @@
 #include "convertvariablesjobtest.h"
 #include "snippet/convertvariablesjob.h"
 #include <QTest>
+#include "composer/composerviewbase.h"
+#include "composer/composerviewinterface.h"
 QTEST_GUILESS_MAIN(ConvertVariablesJobTest)
 
 ConvertVariablesJobTest::ConvertVariablesJobTest(QObject *parent)
@@ -34,4 +36,16 @@ void ConvertVariablesJobTest::shouldHaveDefaultValues()
     QVERIFY(job.text().isEmpty());
     QVERIFY(!job.composerViewInterface());
     QVERIFY(!job.canStart());
+}
+
+void ConvertVariablesJobTest::shouldCanStart()
+{
+    MessageComposer::ConvertVariablesJob job;
+    QVERIFY(!job.canStart());
+    job.setText(QStringLiteral("bla"));
+    QVERIFY(!job.canStart());
+    MessageComposer::ComposerViewBase b;
+    MessageComposer::ComposerViewInterface *interface = new MessageComposer::ComposerViewInterface(&b);
+    job.setComposerViewInterface(interface);
+    QVERIFY(job.canStart());
 }

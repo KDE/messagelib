@@ -84,6 +84,10 @@ QString ConvertVariablesJob::convertVariables() const
                 i += strlen("CCADDR");
                 const QString str = mComposerViewInterface->cc();
                 result.append(str);
+            } else if (cmd.startsWith(QLatin1String("FULLSUBJECT"))) {
+                i += strlen("FULLSUBJECT");
+                const QString str = mComposerViewInterface->subject();
+                result.append(str);
             } else {
                 result.append(c);
             }

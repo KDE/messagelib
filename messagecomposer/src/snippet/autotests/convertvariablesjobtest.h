@@ -30,6 +30,7 @@ public:
     ~ConvertVariablesJobTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldCanStart();
 };
 
 #endif // CONVERTVARIABLESJOBTEST_H
