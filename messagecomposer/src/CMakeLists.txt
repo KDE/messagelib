@@ -10,6 +10,7 @@ if(BUILD_TESTING)
     add_subdirectory( statusbarwidget/autotests )
     add_subdirectory( plugineditor/autotests )
     add_subdirectory( composer/autotests )
+    add_subdirectory( snippet/autotests )
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
