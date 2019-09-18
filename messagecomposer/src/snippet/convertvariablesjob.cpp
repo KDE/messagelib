@@ -77,7 +77,7 @@ QString ConvertVariablesJob::convertVariables() const
     QString result;
     const int tmpl_len = mText.length();
     for (int i = 0; i < tmpl_len; ++i) {
-        QChar c = mText[i];
+        const QChar c = mText[i];
         if (c == QLatin1Char('%')) {
             const QString cmd = mText.mid(i + 1);
             if (cmd.startsWith(QLatin1String("CCADDR"))) {
