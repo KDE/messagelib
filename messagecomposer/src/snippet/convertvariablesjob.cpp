@@ -100,6 +100,22 @@ QString ConvertVariablesJob::convertVariables() const
                 i += strlen("DOW");
                 const QString str = mComposerViewInterface->insertDayOfWeek();
                 result.append(str);
+            } else if (cmd.startsWith(QLatin1String("DATE"))) {
+                i += strlen("DATE");
+                const QString str = mComposerViewInterface->longDate();
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("SHORTDATE"))) {
+                i += strlen("SHORTDATE");
+                const QString str = mComposerViewInterface->shortDate();
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("TIME"))) {
+                i += strlen("TIME");
+                const QString str = mComposerViewInterface->shortTime();
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("TIMELONG"))) {
+                i += strlen("TIMELONG");
+                const QString str = mComposerViewInterface->longTime();
+                result.append(str);
             } else {
                 result.append(c);
             }
