@@ -804,7 +804,7 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
         if (!icon.isEmpty()) {
             drag->setPixmap(QIcon::fromTheme(icon).pixmap(16, 16));
         }
-        drag->start();
+        drag->exec();
         return true;
     } else
 #endif

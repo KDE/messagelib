@@ -204,8 +204,7 @@ Pane::~Pane()
 
 void Pane::Private::addActivateTabAction(int i)
 {
-    QString actionname;
-    actionname.sprintf("activate_tab_%02d", i);
+    const QString actionname = QString::asprintf("activate_tab_%02d", i);
     QAction *action = new QAction(i18n("Activate Tab %1", i), q);
     mXmlGuiClient->actionCollection()->addAction(actionname, action);
     mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(QStringLiteral("Alt+%1").arg(i)));

@@ -24,7 +24,7 @@
 
 #include <QObject>
 #include <QTimer>
-#include <QTime>
+#include <QElapsedTimer>
 class KProcess;
 
 namespace MessageViewer {
@@ -76,7 +76,7 @@ private:
     QUrl mUrl;
     QString mMimeType;
     QTimer mTimer;
-    QTime mEditTime;
+    QElapsedTimer mEditTime;
 
     KProcess *mEditor = nullptr;
     QWidget *mParentWidget = nullptr;

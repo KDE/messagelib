@@ -35,7 +35,7 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldHaveDefaultValue()
 
     QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
-    QCOMPARE(mainLayout->margin(), 0);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
     QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
     QVERIFY(mLineEdit);

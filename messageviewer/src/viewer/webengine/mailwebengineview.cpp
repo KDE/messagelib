@@ -250,7 +250,7 @@ void MailWebEngineView::forwardWheelEvent(QWheelEvent *e)
         d->mWebViewAccessKey->wheelEvent(e);
     }
     if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
-        const int numDegrees = e->delta() / 8;
+        const int numDegrees = e->angleDelta().y() / 8;
         const int numSteps = numDegrees / 15;
         Q_EMIT wheelZoomChanged(numSteps);
         e->accept();
