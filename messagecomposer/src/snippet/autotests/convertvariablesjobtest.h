@@ -31,6 +31,9 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldCanStart();
+    void shouldConvertVariables();
+    void shouldConvertVariables_data();
+
 };
 
 #endif // CONVERTVARIABLESJOBTEST_H

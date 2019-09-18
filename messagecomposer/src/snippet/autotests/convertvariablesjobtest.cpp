@@ -49,3 +49,23 @@ void ConvertVariablesJobTest::shouldCanStart()
     job.setComposerViewInterface(interface);
     QVERIFY(job.canStart());
 }
+
+void ConvertVariablesJobTest::shouldConvertVariables()
+{
+    QFETCH(QString, original);
+    QFETCH(QString, expected);
+    MessageComposer::ComposerViewBase b;
+    MessageComposer::ComposerViewInterface *interface = new MessageComposer::ComposerViewInterface(&b);
+    MessageComposer::ConvertVariablesJob job;
+    job.setComposerViewInterface(interface);
+    job.setText(original);
+    QCOMPARE(job.convertVariables(), expected);
+}
+
+void ConvertVariablesJobTest::shouldConvertVariables_data()
+{
+    QTest::addColumn<QString>("original");
+    QTest::addColumn<QString>("expected");
+    QTest::newRow("empty") << QString() << QString();
+    QTest::newRow("novariable") << QStringLiteral("bla bli blo") << QStringLiteral("bla bli blo");
+}
