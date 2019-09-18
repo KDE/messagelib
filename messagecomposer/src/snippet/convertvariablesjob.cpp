@@ -88,6 +88,18 @@ QString ConvertVariablesJob::convertVariables() const
                 i += strlen("FULLSUBJECT");
                 const QString str = mComposerViewInterface->subject();
                 result.append(str);
+            } else if (cmd.startsWith(QLatin1String("TOADDR"))) {
+                i += strlen("TOADDR");
+                const QString str = mComposerViewInterface->to();
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("FROMADDR"))) {
+                i += strlen("FROMADDR");
+                const QString str = mComposerViewInterface->from();
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("DOW"))) {
+                i += strlen("DOW");
+                const QString str = mComposerViewInterface->insertDayOfWeek();
+                result.append(str);
             } else {
                 result.append(c);
             }
