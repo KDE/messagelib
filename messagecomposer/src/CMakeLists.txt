@@ -62,7 +62,7 @@ set( messagecomposer_recipient_src
     )
 
 set( messagecomposer_snippet_src
-    snippet/convertvariablesjob.cpp
+    snippet/convertsnippetvariablesjob.cpp
     )
 
 set( messagecomposer_imagescaling_src
@@ -237,6 +237,14 @@ ecm_generate_headers(MessageComposer_Camelstatusbarwidget_HEADERS
     REQUIRED_HEADERS MessageComposer_statusbarwidget_HEADERS
     PREFIX MessageComposer
     RELATIVE statusbarwidget
+    )
+
+ecm_generate_headers(MessageComposer_Camelsnippet_HEADERS
+    HEADER_NAMES
+    ConvertSnippetVariablesJob
+    REQUIRED_HEADERS MessageComposer_snippet_HEADERS
+    PREFIX MessageComposer
+    RELATIVE snippet
     )
 
 ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
@@ -432,6 +440,7 @@ ecm_generate_pri_file(BASE_NAME MessageComposer
 
 
 install(FILES
+    ${MessageComposer_Camelsnippet_HEADERS}
     ${MessageComposer_Camelplugineditorconverttext_HEADERS}
     ${MessageComposer_Camelplugineditorinit_HEADERS}
     ${MessageComposer_Camelplugineditorcheckbeforesend_HEADERS}
@@ -456,6 +465,7 @@ install(FILES
 
 install(FILES
     ${MessageComposer_HEADERS}
+    ${MessageComposer_snippet_HEADERS}
     ${MessageComposer_plugineditorconverttext_HEADERS}
     ${MessageComposer_plugineditorinit_HEADERS}
     ${MessageComposer_statusbarwidget_HEADERS}

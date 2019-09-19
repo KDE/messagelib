@@ -17,28 +17,28 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "convertvariablesjob.h"
+#include "convertsnippetvariablesjob.h"
 #include "messagecomposer_debug.h"
 #include "composer/composerviewinterface.h"
 
 using namespace MessageComposer;
-ConvertVariablesJob::ConvertVariablesJob(QObject *parent)
+ConvertSnippetVariablesJob::ConvertSnippetVariablesJob(QObject *parent)
     : QObject(parent)
 {
 
 }
 
-ConvertVariablesJob::~ConvertVariablesJob()
+ConvertSnippetVariablesJob::~ConvertSnippetVariablesJob()
 {
     delete mComposerViewInterface;
 }
 
-void ConvertVariablesJob::setText(const QString &str)
+void ConvertSnippetVariablesJob::setText(const QString &str)
 {
     mText = str;
 }
 
-bool ConvertVariablesJob::canStart() const
+bool ConvertSnippetVariablesJob::canStart() const
 {
     if (mText.isEmpty() || !mComposerViewInterface) {
         return false;
@@ -46,7 +46,7 @@ bool ConvertVariablesJob::canStart() const
     return true;
 }
 
-void ConvertVariablesJob::start()
+void ConvertSnippetVariablesJob::start()
 {
     if (!canStart()) {
         Q_EMIT textConverted(QString());
@@ -57,22 +57,22 @@ void ConvertVariablesJob::start()
     deleteLater();
 }
 
-QString ConvertVariablesJob::text() const
+QString ConvertSnippetVariablesJob::text() const
 {
     return mText;
 }
 
-MessageComposer::ComposerViewInterface *ConvertVariablesJob::composerViewInterface() const
+MessageComposer::ComposerViewInterface *ConvertSnippetVariablesJob::composerViewInterface() const
 {
     return mComposerViewInterface;
 }
 
-void ConvertVariablesJob::setComposerViewInterface(MessageComposer::ComposerViewInterface *composerViewInterface)
+void ConvertSnippetVariablesJob::setComposerViewInterface(MessageComposer::ComposerViewInterface *composerViewInterface)
 {
     mComposerViewInterface = composerViewInterface;
 }
 
-QString ConvertVariablesJob::convertVariables() const
+QString ConvertSnippetVariablesJob::convertVariables() const
 {
     QString result;
     const int tmpl_len = mText.length();

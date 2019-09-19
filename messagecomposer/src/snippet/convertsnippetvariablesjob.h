@@ -18,19 +18,19 @@
 */
 
 
-#ifndef CONVERTVARIABLESJOB_H
-#define CONVERTVARIABLESJOB_H
+#ifndef CONVERTSNIPPETVARIABLESJOB_H
+#define CONVERTSNIPPETVARIABLESJOB_H
 
 #include <QObject>
-#include "messagecomposer_private_export.h"
+#include "messagecomposer_export.h"
 namespace MessageComposer {
 class ComposerViewInterface;
-class MESSAGECOMPOSER_TESTS_EXPORT ConvertVariablesJob : public QObject
+class MESSAGECOMPOSER_EXPORT ConvertSnippetVariablesJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit ConvertVariablesJob(QObject *parent = nullptr);
-    ~ConvertVariablesJob();
+    explicit ConvertSnippetVariablesJob(QObject *parent = nullptr);
+    ~ConvertSnippetVariablesJob();
     void start();
 
     void setText(const QString &str);

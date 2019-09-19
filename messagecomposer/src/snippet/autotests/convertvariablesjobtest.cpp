@@ -18,7 +18,7 @@
 */
 
 #include "convertvariablesjobtest.h"
-#include "snippet/convertvariablesjob.h"
+#include "snippet/convertsnippetvariablesjob.h"
 #include <QTest>
 #include "composer/composerviewbase.h"
 #include "composer/composerviewinterface.h"
@@ -32,7 +32,7 @@ ConvertVariablesJobTest::ConvertVariablesJobTest(QObject *parent)
 
 void ConvertVariablesJobTest::shouldHaveDefaultValues()
 {
-    MessageComposer::ConvertVariablesJob job;
+    MessageComposer::ConvertSnippetVariablesJob job;
     QVERIFY(job.text().isEmpty());
     QVERIFY(!job.composerViewInterface());
     QVERIFY(!job.canStart());
@@ -40,7 +40,7 @@ void ConvertVariablesJobTest::shouldHaveDefaultValues()
 
 void ConvertVariablesJobTest::shouldCanStart()
 {
-    MessageComposer::ConvertVariablesJob job;
+    MessageComposer::ConvertSnippetVariablesJob job;
     QVERIFY(!job.canStart());
     job.setText(QStringLiteral("bla"));
     QVERIFY(!job.canStart());
@@ -56,7 +56,7 @@ void ConvertVariablesJobTest::shouldConvertVariables()
     QFETCH(QString, expected);
     MessageComposer::ComposerViewBase b;
     MessageComposer::ComposerViewInterface *interface = new MessageComposer::ComposerViewInterface(&b);
-    MessageComposer::ConvertVariablesJob job;
+    MessageComposer::ConvertSnippetVariablesJob job;
     job.setComposerViewInterface(interface);
     b.setSubject(QStringLiteral("Subject!!!!"));
     b.setFrom(QStringLiteral("from!!"));
