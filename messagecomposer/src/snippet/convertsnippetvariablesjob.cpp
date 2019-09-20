@@ -116,6 +116,22 @@ QString ConvertSnippetVariablesJob::convertVariables() const
                 i += strlen("TIMELONG");
                 const QString str = mComposerViewInterface->longTime();
                 result.append(str);
+            } else if (cmd.startsWith(QLatin1String("ATTACHMENTCOUNT"))) {
+                i += strlen("ATTACHMENTCOUNT");
+                const QString str = QString::number(mComposerViewInterface->attachments().count());
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("ATTACHMENTNAMES"))) {
+                i += strlen("ATTACHMENTNAMES");
+                const QString str = mComposerViewInterface->attachments().names().join(QLatin1Char(','));
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("ATTACHMENTFILENAMES"))) {
+                i += strlen("ATTACHMENTFILENAMES");
+                const QString str = mComposerViewInterface->attachments().fileNames().join(QLatin1Char(','));
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("ATTACHMENTNAMESANDSIZES"))) {
+                i += strlen("ATTACHMENTNAMESANDSIZES");
+                const QString str = mComposerViewInterface->attachments().namesAndSize().join(QLatin1Char(','));
+                result.append(str);
             } else {
                 result.append(c);
             }
