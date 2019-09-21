@@ -33,7 +33,6 @@ using namespace MessageViewer;
 #include "PimCommon/PimUtil"
 #include <kiconloader.h>
 #include <KLocalizedString>
-#include <kwindowsystem.h>
 #include <QTabWidget>
 #include <QApplication>
 
@@ -84,11 +83,6 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     shortcut->setKey(Qt::Key_W + Qt::CTRL);
     connect(shortcut, &QShortcut::activated, this, &MailSourceWebEngineViewer::close);
 
-    KWindowSystem::setIcons(winId(),
-                            qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop),
-                                                      IconSize(KIconLoader::Desktop)),
-                            qApp->windowIcon().pixmap(IconSize(KIconLoader::Small),
-                                                      IconSize(KIconLoader::Small)));
     mRawBrowser->textBrowser()->setFocus();
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &MailSourceWebEngineViewer::reject);

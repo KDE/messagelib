@@ -269,7 +269,6 @@ target_link_libraries(KF5MessageViewer
     KF5::I18n
     KF5::KIOFileWidgets
     KF5::KIOWidgets
-    KF5::WindowSystem
     KF5::XmlGui
     Grantlee5::TextDocument
     Grantlee5::Templates
