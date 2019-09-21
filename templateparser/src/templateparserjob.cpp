@@ -24,6 +24,7 @@
 #include "customtemplates_kfg.h"
 #include "templatesconfiguration_kfg.h"
 #include "templatesconfiguration.h"
+#include "templatesutil.h"
 
 #include <MessageCore/ImageCollector>
 #include <MessageCore/StringUtil>
@@ -179,87 +180,6 @@ int TemplateParserJob::parseQuotes(const QString &prefix, const QString &str, QS
     }
 
     return len;
-}
-
-QString TemplateParserJob::getFirstName(const QString &str)
-{
-    // simple logic:
-    // if there is ',' in name, than format is 'Last, First'
-    // else format is 'First Last'
-    // last resort -- return 'name' from 'name@domain'
-    int sep_pos;
-    QString res;
-    if ((sep_pos = str.indexOf(QLatin1Char('@'))) > 0) {
-        int i;
-        for (i = (sep_pos - 1); i >= 0; --i) {
-            QChar c = str[i];
-            if (c.isLetterOrNumber()) {
-                res.prepend(c);
-            } else {
-                break;
-            }
-        }
-    } else if ((sep_pos = str.indexOf(QLatin1Char(','))) > 0) {
-        int i;
-        bool begin = false;
-        const int strLength(str.length());
-        for (i = sep_pos; i < strLength; ++i) {
-            QChar c = str[i];
-            if (c.isLetterOrNumber()) {
-                begin = true;
-                res.append(c);
-            } else if (begin) {
-                break;
-            }
-        }
-    } else {
-        int i;
-        const int strLength(str.length());
-        for (i = 0; i < strLength; ++i) {
-            QChar c = str[i];
-            if (c.isLetterOrNumber()) {
-                res.append(c);
-            } else {
-                break;
-            }
-        }
-    }
-    return res;
-}
-
-QString TemplateParserJob::getLastName(const QString &str)
-{
-    // simple logic:
-    // if there is ',' in name, than format is 'Last, First'
-    // else format is 'First Last'
-    int sep_pos;
-    QString res;
-    if ((sep_pos = str.indexOf(QLatin1Char(','))) > 0) {
-        int i;
-        for (i = sep_pos; i >= 0; --i) {
-            QChar c = str[i];
-            if (c.isLetterOrNumber()) {
-                res.prepend(c);
-            } else {
-                break;
-            }
-        }
-    } else {
-        if ((sep_pos = str.indexOf(QLatin1Char(' '))) > 0) {
-            bool begin = false;
-            const int strLength(str.length());
-            for (int i = sep_pos; i < strLength; ++i) {
-                QChar c = str[i];
-                if (c.isLetterOrNumber()) {
-                    begin = true;
-                    res.append(c);
-                } else if (begin) {
-                    break;
-                }
-            }
-        }
-    }
-    return res;
 }
 
 void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg, qint64 afolder)
@@ -638,15 +558,15 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CCFNAME";
                 i += strlen("CCFNAME");
                 const QString str = d->mMsg->cc()->displayString();
-                plainBody.append(getFirstName(str));
-                const QString body = plainToHtml(getFirstName(str));
+                plainBody.append(TemplateParser::Util::getFirstNameFromEmail(str));
+                const QString body = plainToHtml(TemplateParser::Util::getFirstNameFromEmail(str));
                 htmlBody.append(body);
             } else if (cmd.startsWith(QLatin1String("CCLNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CCLNAME";
                 i += strlen("CCLNAME");
                 const QString str = d->mMsg->cc()->displayString();
-                plainBody.append(getLastName(str));
-                const QString body = plainToHtml(getLastName(str));
+                plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
+                const QString body = plainToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                 htmlBody.append(body);
             } else if (cmd.startsWith(QLatin1String("TOADDR"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOADDR";
@@ -666,15 +586,15 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOFNAME";
                 i += strlen("TOFNAME");
                 const QString str = d->mMsg->to()->displayString();
-                plainBody.append(getFirstName(str));
-                const QString body = plainToHtml(getFirstName(str));
+                plainBody.append(TemplateParser::Util::getFirstNameFromEmail(str));
+                const QString body = plainToHtml(TemplateParser::Util::getFirstNameFromEmail(str));
                 htmlBody.append(body);
             } else if (cmd.startsWith(QLatin1String("TOLNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOLNAME";
                 i += strlen("TOLNAME");
                 const QString str = d->mMsg->to()->displayString();
-                plainBody.append(getLastName(str));
-                const QString body = plainToHtml(getLastName(str));
+                plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
+                const QString body = plainToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                 htmlBody.append(body);
             } else if (cmd.startsWith(QLatin1String("TOLIST"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOLIST";
@@ -701,15 +621,15 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMFNAME";
                 i += strlen("FROMFNAME");
                 const QString str = d->mMsg->from()->displayString();
-                plainBody.append(getFirstName(str));
-                const QString body = plainToHtml(getFirstName(str));
+                plainBody.append(TemplateParser::Util::getFirstNameFromEmail(str));
+                const QString body = plainToHtml(TemplateParser::Util::getFirstNameFromEmail(str));
                 htmlBody.append(body);
             } else if (cmd.startsWith(QLatin1String("FROMLNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMLNAME";
                 i += strlen("FROMLNAME");
                 const QString str = d->mMsg->from()->displayString();
-                plainBody.append(getLastName(str));
-                const QString body = plainToHtml(getLastName(str));
+                plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
+                const QString body = plainToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                 htmlBody.append(body);
             } else if (cmd.startsWith(QLatin1String("FULLSUBJECT")) || cmd.startsWith(QLatin1String("FULLSUBJ"))) {
                 if (cmd.startsWith(QLatin1String("FULLSUBJ"))) {
@@ -803,8 +723,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("OCCFNAME");
                 if (d->mOrigMsg) {
                     const QString str = d->mOrigMsg->cc()->displayString();
-                    plainBody.append(getFirstName(str));
-                    const QString body = plainToHtml(getFirstName(str));
+                    plainBody.append(TemplateParser::Util::getFirstNameFromEmail(str));
+                    const QString body = plainToHtml(TemplateParser::Util::getFirstNameFromEmail(str));
                     htmlBody.append(body);
                 }
             } else if (cmd.startsWith(QLatin1String("OCCLNAME"))) {
@@ -812,8 +732,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("OCCLNAME");
                 if (d->mOrigMsg) {
                     const QString str = d->mOrigMsg->cc()->displayString();
-                    plainBody.append(getLastName(str));
-                    const QString body = plainToHtml(getLastName(str));
+                    plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
+                    const QString body = plainToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                     htmlBody.append(body);
                 }
             } else if (cmd.startsWith(QLatin1String("OTOADDR"))) {
@@ -839,8 +759,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("OTOFNAME");
                 if (d->mOrigMsg) {
                     const QString str = d->mOrigMsg->to()->displayString();
-                    plainBody.append(getFirstName(str));
-                    const QString body = plainToHtml(getFirstName(str));
+                    plainBody.append(TemplateParser::Util::getFirstNameFromEmail(str));
+                    const QString body = plainToHtml(TemplateParser::Util::getFirstNameFromEmail(str));
                     htmlBody.append(body);
                 }
             } else if (cmd.startsWith(QLatin1String("OTOLNAME"))) {
@@ -848,8 +768,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("OTOLNAME");
                 if (d->mOrigMsg) {
                     const QString str = d->mOrigMsg->to()->displayString();
-                    plainBody.append(getLastName(str));
-                    const QString body = plainToHtml(getLastName(str));
+                    plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
+                    const QString body = plainToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                     htmlBody.append(body);
                 }
             } else if (cmd.startsWith(QLatin1String("OTOLIST"))) {
@@ -893,8 +813,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("OFROMFNAME");
                 if (d->mOrigMsg) {
                     const QString str = d->mOrigMsg->from()->displayString();
-                    plainBody.append(getFirstName(str));
-                    const QString body = plainToHtml(getFirstName(str));
+                    plainBody.append(TemplateParser::Util::getFirstNameFromEmail(str));
+                    const QString body = plainToHtml(TemplateParser::Util::getFirstNameFromEmail(str));
                     htmlBody.append(body);
                 }
             } else if (cmd.startsWith(QLatin1String("OFROMLNAME"))) {
@@ -902,8 +822,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("OFROMLNAME");
                 if (d->mOrigMsg) {
                     const QString str = d->mOrigMsg->from()->displayString();
-                    plainBody.append(getLastName(str));
-                    const QString body = plainToHtml(getLastName(str));
+                    plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
+                    const QString body = plainToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                     htmlBody.append(body);
                 }
             } else if (cmd.startsWith(QLatin1String("OFULLSUBJECT")) || cmd.startsWith(QLatin1String("OFULLSUBJ"))) {

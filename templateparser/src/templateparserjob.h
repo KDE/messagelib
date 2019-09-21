@@ -227,9 +227,6 @@ private:
 
     QString pipe(const QString &cmd, const QString &buf);
 
-    QString getFirstName(const QString &str);
-    QString getLastName(const QString &str);
-
     /**
      * Called by processWithTemplate(). This adds the completely processed body to
      * the message.

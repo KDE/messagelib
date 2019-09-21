@@ -20,7 +20,7 @@
 #include "convertsnippetvariablesjob.h"
 #include "messagecomposer_debug.h"
 #include "composer/composerviewinterface.h"
-
+#include <TemplateParser/TemplatesUtil>
 using namespace MessageComposer;
 ConvertSnippetVariablesJob::ConvertSnippetVariablesJob(QObject *parent)
     : QObject(parent)
@@ -92,6 +92,14 @@ QString ConvertSnippetVariablesJob::convertVariables() const
                 i += strlen("TOADDR");
                 const QString str = mComposerViewInterface->to();
                 result.append(str);
+            } else if (cmd.startsWith(QLatin1String("TOFNAME"))) {
+                i += strlen("TOFNAME");
+                const QString str = TemplateParser::Util::getFirstNameFromEmail(mComposerViewInterface->to());
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("TOLNAME"))) {
+                i += strlen("TOLNAME");
+                const QString str = TemplateParser::Util::getLastNameFromEmail(mComposerViewInterface->to());
+                result.append(str);
             } else if (cmd.startsWith(QLatin1String("FROMADDR"))) {
                 i += strlen("FROMADDR");
                 const QString str = mComposerViewInterface->from();
@@ -142,83 +150,3 @@ QString ConvertSnippetVariablesJob::convertVariables() const
     return result;
 }
 
-QString ConvertSnippetVariablesJob::getFirstName(const QString &str)
-{
-    // simple logic:
-    // if there is ',' in name, than format is 'Last, First'
-    // else format is 'First Last'
-    // last resort -- return 'name' from 'name@domain'
-    int sep_pos;
-    QString res;
-    if ((sep_pos = str.indexOf(QLatin1Char('@'))) > 0) {
-        int i;
-        for (i = (sep_pos - 1); i >= 0; --i) {
-            QChar c = str[i];
-            if (c.isLetterOrNumber()) {
-                res.prepend(c);
-            } else {
-                break;
-            }
-        }
-    } else if ((sep_pos = str.indexOf(QLatin1Char(','))) > 0) {
-        int i;
-        bool begin = false;
-        const int strLength(str.length());
-        for (i = sep_pos; i < strLength; ++i) {
-            QChar c = str[i];
-            if (c.isLetterOrNumber()) {
-                begin = true;
-                res.append(c);
-            } else if (begin) {
-                break;
-            }
-        }
-    } else {
-        int i;
-        const int strLength(str.length());
-        for (i = 0; i < strLength; ++i) {
-            QChar c = str[i];
-            if (c.isLetterOrNumber()) {
-                res.append(c);
-            } else {
-                break;
-            }
-        }
-    }
-    return res;
-}
-
-QString ConvertSnippetVariablesJob::getLastName(const QString &str)
-{
-    // simple logic:
-    // if there is ',' in name, than format is 'Last, First'
-    // else format is 'First Last'
-    int sep_pos;
-    QString res;
-    if ((sep_pos = str.indexOf(QLatin1Char(','))) > 0) {
-        int i;
-        for (i = sep_pos; i >= 0; --i) {
-            QChar c = str[i];
-            if (c.isLetterOrNumber()) {
-                res.prepend(c);
-            } else {
-                break;
-            }
-        }
-    } else {
-        if ((sep_pos = str.indexOf(QLatin1Char(' '))) > 0) {
-            bool begin = false;
-            const int strLength(str.length());
-            for (int i = sep_pos; i < strLength; ++i) {
-                QChar c = str[i];
-                if (c.isLetterOrNumber()) {
-                    begin = true;
-                    res.append(c);
-                } else if (begin) {
-                    break;
-                }
-            }
-        }
-    }
-    return res;
-}

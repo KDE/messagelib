@@ -45,8 +45,6 @@ Q_SIGNALS:
     void textConverted(const QString &str);
 
 private:
-    Q_REQUIRED_RESULT QString getFirstName(const QString &str);
-    Q_REQUIRED_RESULT QString getLastName(const QString &str);
     QString mText;
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };
