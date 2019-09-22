@@ -21,12 +21,10 @@
 using namespace MessageComposer;
 ComposerAttachmentInterface::ComposerAttachmentInterface()
 {
-
 }
 
 ComposerAttachmentInterface::~ComposerAttachmentInterface()
 {
-
 }
 
 QStringList ComposerAttachmentInterface::fileNames() const

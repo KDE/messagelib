@@ -317,7 +317,6 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
         }
 #endif
 
-
         s = s.mid(endIndex + 7).trimmed();
     }
 

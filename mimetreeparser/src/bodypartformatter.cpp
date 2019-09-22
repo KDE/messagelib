@@ -54,7 +54,6 @@
 
 #include <KMime/Content>
 
-
 using namespace MimeTreeParser;
 
 namespace {

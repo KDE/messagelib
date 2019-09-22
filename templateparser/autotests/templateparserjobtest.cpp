@@ -84,7 +84,6 @@ void TemplateParserJobTest::test_convertedHtml()
     const QString referenceData = QString::fromLatin1(referenceRawData);
     QVERIFY(!referenceData.isEmpty());
 
-
     TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
@@ -161,7 +160,6 @@ void TemplateParserJobTest::test_replyHtml()
 
     QCOMPARE(convertedHtmlContent, referenceData);
 }
-
 
 void TemplateParserJobTest::test_replyPlain_data()
 {
@@ -366,13 +364,12 @@ void TemplateParserJobTest::test_forwardedAttachments()
         referenceMsg->parse();
 
         QCOMPARE(msg->contents().size(), referenceMsg->contents().size());
-        for (int i=1; i < msg->contents().size(); i++) {
+        for (int i = 1; i < msg->contents().size(); i++) {
             QCOMPARE(msg->contents()[i]->encodedContent(), referenceMsg->contents()[i]->encodedContent());
         }
     } else {
         QCOMPARE(msg->contents().size(), 0);
     }
-
 }
 
 void TemplateParserJobTest::test_processWithTemplatesForBody_data()
@@ -384,17 +381,17 @@ void TemplateParserJobTest::test_processWithTemplatesForBody_data()
 
     QTest::newRow("%OTEXT-plain") << "%OTEXT" << "Original text.\nLine two." << "Original text.\nLine two." << "";
     QTest::newRow("%OTEXT-encrypted") << "%OTEXT" << "-----BEGIN PGP MESSAGE-----\nVersion: GnuPG v1.4.12 (GNU/Linux)\n"
-                                           "\n"
-                                           "hQEMAwzOQ1qnzNo7AQgA1345CrnOBTGf2eo4ABR6wkOdasI9SELRBKA1fNkFcq+Z\n"
-                                           "Qg0gWB5RLapU+VFRc5hK1zPOZ1dY6j3+uPHO4RhjfUgfiZ8T7oaWav15yP+07u21\n"
-                                           "EI9W9sk+eQU9GZSOayURucmZa/mbBz9hrsmePpORxD+C3uNTYa6ePTFlQP6wEZOI\n"
-                                           "7E53DrtJnF0EzIsCBIVep6CyuYfuSSwQ5gMgyPzfBqiGHNw96w2i/eayErc6lquL\n"
-                                           "JPFhIcMMq8w9Yo9+vXCAbkns6dtBAzlnAzuV86VFUZ/MnHTlCNk2yHyGLP6BS6hG\n"
-                                           "kFEUmgdHrGRizdz1sjo1tSmOLu+Gyjlv1Ir/Sqr8etJQAeTq3heKslAfhtotAMMt\n"
-                                           "R3tk228Su13Q3CAP/rktAyuGMDFtH8klW09zFdsZBDu8svE6d9e2nZ541NGspFVI\n"
-                                           "6XTZHUMMdlgnTBcu3aPc0ow=\n"
-                                           "=0xtc\n"
-                                           "-----END PGP MESSAGE-----" << "Crypted line.\nCrypted line two." << "";
+                                                     "\n"
+                                                     "hQEMAwzOQ1qnzNo7AQgA1345CrnOBTGf2eo4ABR6wkOdasI9SELRBKA1fNkFcq+Z\n"
+                                                     "Qg0gWB5RLapU+VFRc5hK1zPOZ1dY6j3+uPHO4RhjfUgfiZ8T7oaWav15yP+07u21\n"
+                                                     "EI9W9sk+eQU9GZSOayURucmZa/mbBz9hrsmePpORxD+C3uNTYa6ePTFlQP6wEZOI\n"
+                                                     "7E53DrtJnF0EzIsCBIVep6CyuYfuSSwQ5gMgyPzfBqiGHNw96w2i/eayErc6lquL\n"
+                                                     "JPFhIcMMq8w9Yo9+vXCAbkns6dtBAzlnAzuV86VFUZ/MnHTlCNk2yHyGLP6BS6hG\n"
+                                                     "kFEUmgdHrGRizdz1sjo1tSmOLu+Gyjlv1Ir/Sqr8etJQAeTq3heKslAfhtotAMMt\n"
+                                                     "R3tk228Su13Q3CAP/rktAyuGMDFtH8klW09zFdsZBDu8svE6d9e2nZ541NGspFVI\n"
+                                                     "6XTZHUMMdlgnTBcu3aPc0ow=\n"
+                                                     "=0xtc\n"
+                                                     "-----END PGP MESSAGE-----" << "Crypted line.\nCrypted line two." << "";
     QTest::newRow("%QUOTE") << "%QUOTE" << "Quoted text.\nLine two." << "> Quoted text.\n> Line two." << "";
 }
 

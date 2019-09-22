@@ -26,7 +26,6 @@ QTEST_GUILESS_MAIN(ComposerAttachmentInterfaceTest)
 ComposerAttachmentInterfaceTest::ComposerAttachmentInterfaceTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void ComposerAttachmentInterfaceTest::shouldHaveDefaultValues()

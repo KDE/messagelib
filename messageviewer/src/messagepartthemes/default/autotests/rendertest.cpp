@@ -325,7 +325,6 @@ void RenderTest::testRender()
     connect(&nodeHelper, &MimeTreeParser::NodeHelper::update, &loop, &QEventLoop::quit);
     otp.setAllowAsync(bAsync);
 
-
     otp.parseObjectTree(msg.data());
 
     fileWriter.begin();

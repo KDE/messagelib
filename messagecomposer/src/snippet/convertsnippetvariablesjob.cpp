@@ -25,7 +25,6 @@ using namespace MessageComposer;
 ConvertSnippetVariablesJob::ConvertSnippetVariablesJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 ConvertSnippetVariablesJob::~ConvertSnippetVariablesJob()
@@ -149,4 +148,3 @@ QString ConvertSnippetVariablesJob::convertVariables() const
     }
     return result;
 }
-

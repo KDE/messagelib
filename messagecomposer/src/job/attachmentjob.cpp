@@ -22,7 +22,6 @@
 
 #include "job/attachmentjob.h"
 
-
 #include "contentjobbase_p.h"
 #include "part/globalpart.h"
 #include "job/singlepartjob.h"

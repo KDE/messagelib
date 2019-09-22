@@ -22,7 +22,6 @@
 #include <grantlee/exception.h>
 #include <grantlee/parser.h>
 
-
 using namespace MessageViewer;
 
 CallbackTag::CallbackTag(const QString &name, QObject *parent)

@@ -264,7 +264,7 @@ private:
     QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
     QMap<KMime::Message::Content *, QList<KMime::Content *> > mExtraContents;
     AttachmentTemporaryFilesDirs *mAttachmentFilesDir = nullptr;
-    QMap<const KMime::Content *, QVector<MessagePartPtr>> mHeaderOverwrite;
+    QMap<const KMime::Content *, QVector<MessagePartPtr> > mHeaderOverwrite;
 
     friend class NodeHelperTest;
 };

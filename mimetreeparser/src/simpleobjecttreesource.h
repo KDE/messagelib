@@ -50,7 +50,6 @@ public:
 
     const QTextCodec *overrideCodec() override;
 
-
 private:
     std::unique_ptr<SimpleObjectTreeSourcePrivate> d;
 };

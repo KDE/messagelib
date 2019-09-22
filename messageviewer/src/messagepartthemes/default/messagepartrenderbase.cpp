@@ -29,7 +29,6 @@
 
 #include "messagepartrendererbase.h"
 
-
 using namespace MessageViewer;
 
 RenderContext::~RenderContext() = default;

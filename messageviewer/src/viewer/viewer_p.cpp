@@ -1475,7 +1475,6 @@ void ViewerPrivate::createWidgets()
     mColorBar->setObjectName(QStringLiteral("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
-
     mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(readerBox);
     mShowNextMessageWidget->setObjectName(QStringLiteral("shownextmessagewidget"));
     readerBoxVBoxLayout->addWidget(mShowNextMessageWidget);

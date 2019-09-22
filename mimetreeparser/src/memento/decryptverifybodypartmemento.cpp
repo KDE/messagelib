@@ -20,7 +20,6 @@
 
 #include <QGpgME/DecryptVerifyJob>
 
-
 using namespace QGpgME;
 using namespace GpgME;
 using namespace MimeTreeParser;

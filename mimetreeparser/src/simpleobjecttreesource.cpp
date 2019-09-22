@@ -65,7 +65,6 @@ void SimpleObjectTreeSource::setPreferredMode(MimeTreeParser::Util::HtmlMode mod
     d->mPreferredMode = mode;
 }
 
-
 MimeTreeParser::Util::HtmlMode SimpleObjectTreeSource::preferredMode() const
 {
     return d->mPreferredMode;

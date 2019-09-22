@@ -26,13 +26,11 @@ QTEST_MAIN(ShowNextMessageWidgetTest)
 ShowNextMessageWidgetTest::ShowNextMessageWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void ShowNextMessageWidgetTest::shouldHaveDefaultValue()
 {
     MessageViewer::ShowNextMessageWidget w;
-
 
     QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);

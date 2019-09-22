@@ -504,7 +504,7 @@ bool NodeHelper::hasMailHeader(const char *header, const KMime::Content *message
     return message->hasHeader(header);
 }
 
-KMime::Headers::Base const * NodeHelper::mailHeaderAsBase(const char *header, const KMime::Content *message) const
+KMime::Headers::Base const *NodeHelper::mailHeaderAsBase(const char *header, const KMime::Content *message) const
 {
     if (mHeaderOverwrite.contains(message)) {
         foreach (const auto messagePart, mHeaderOverwrite.value(message)) {
@@ -516,7 +516,7 @@ KMime::Headers::Base const * NodeHelper::mailHeaderAsBase(const char *header, co
     return message->headerByType(header);
 }
 
-KMime::Headers::Generics::AddressList const * NodeHelper::mailHeaderAsAddressList(const char *header, const KMime::Content *message) const
+KMime::Headers::Generics::AddressList const *NodeHelper::mailHeaderAsAddressList(const char *header, const KMime::Content *message) const
 {
     /* works without this is maybe faster ?
     if(strcmp(header, "to") == 0) {

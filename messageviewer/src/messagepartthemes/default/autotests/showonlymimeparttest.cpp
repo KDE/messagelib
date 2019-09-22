@@ -74,7 +74,6 @@ void ShowOnlyMimePartTest::testDrawFrame()
 
     MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
 
-
     QVERIFY(msg->contents().size() > content);
 
     otp.parseObjectTree(msg->contents().at(content), showOnlyMimePart);

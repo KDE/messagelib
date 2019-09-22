@@ -369,7 +369,7 @@ void ObjectTreeParserTest::testMemoryHole()
     QCOMPARE(nodeHelper.mailHeaderAsBase("message-id", originalMessage.data())->asUnicodeString(), QStringLiteral("<myhiddenreference@me>"));
     QCOMPARE(nodeHelper.mailHeaderAsBase("references", originalMessage.data())->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
     QCOMPARE(nodeHelper.mailHeaderAsBase("in-reply-to", originalMessage.data())->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
-    QCOMPARE(nodeHelper.dateHeader(originalMessage.data()), QDateTime(QDate(2018, 1, 2), QTime(3,4,5)));
+    QCOMPARE(nodeHelper.dateHeader(originalMessage.data()), QDateTime(QDate(2018, 1, 2), QTime(3, 4, 5)));
 }
 
 void ObjectTreeParserTest::testRenderedTree_data()
@@ -384,7 +384,6 @@ void ObjectTreeParserTest::testRenderedTree_data()
         }
         QTest::newRow(file.toLatin1().constData()) << file;
     }
- 
 }
 
 void ObjectTreeParserTest::testRenderedTree()
@@ -396,7 +395,6 @@ void ObjectTreeParserTest::testRenderedTree()
     ObjectTreeParser otp(&testSource, &nodeHelper);
     testSource.setDecryptMessage(true);
     otp.parseObjectTree(originalMessage.data());
-
 
     testMessagePartTree(otp.parsedPart(), mailFileName);
 }

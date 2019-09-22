@@ -30,7 +30,6 @@ ShowNextMessageWidget::ShowNextMessageWidget(QWidget *parent)
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins(0, 0, 0, 0);
 
-
     mPreviousMessage = new QPushButton(i18n("Previous Message"), this);
     mPreviousMessage->setObjectName(QStringLiteral("previous_message"));
     mPreviousMessage->setEnabled(false);
@@ -48,7 +47,6 @@ ShowNextMessageWidget::ShowNextMessageWidget(QWidget *parent)
 
 ShowNextMessageWidget::~ShowNextMessageWidget()
 {
-
 }
 
 void ShowNextMessageWidget::updateButton(bool hasPreviousMessage, bool hasNextMessage)

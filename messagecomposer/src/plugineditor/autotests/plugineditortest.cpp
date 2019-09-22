@@ -25,7 +25,6 @@ QTEST_GUILESS_MAIN(PluginEditorTest)
 PluginEditorTest::PluginEditorTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void PluginEditorTest::shouldHaveDefaultValues()

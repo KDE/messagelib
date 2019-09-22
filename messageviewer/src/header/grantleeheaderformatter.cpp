@@ -147,12 +147,15 @@ inline QVariant TypeAccessor<QDateTime &>::lookUp(const QDateTime &object, const
 class Q_DECL_HIDDEN HeaderFormatter
 {
 public:
-    virtual ~HeaderFormatter(){}
+    virtual ~HeaderFormatter()
+    {
+    }
+
     virtual QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) = 0;
     virtual QString i18nName() = 0;
 };
 
-class DefaultHeaderFormatter: public HeaderFormatter
+class DefaultHeaderFormatter : public HeaderFormatter
 {
 public:
     DefaultHeaderFormatter(const QByteArray &h)
@@ -160,7 +163,8 @@ public:
     {
     }
 
-    QString i18nName() override {
+    QString i18nName() override
+    {
         if (header == "list-id") {
             return i18n("List-Id:");
         } else {
@@ -168,21 +172,25 @@ public:
         }
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override {
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
+    {
         return nodeHelper->mailHeaderAsBase(header.constData(), message)->asUnicodeString();
     }
+
 private:
     QByteArray header;
 };
 
-class SubjectFormatter: public HeaderFormatter
+class SubjectFormatter : public HeaderFormatter
 {
 public:
-    QString i18nName() override {
+    QString i18nName() override
+    {
         return i18n("Subject:");
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override {
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
+    {
         KTextToHTML::Options flags = KTextToHTML::PreserveSpaces;
         // TODO: somehow, we need to get settings from format method.
         //if (showEmoticons) {
@@ -194,30 +202,31 @@ public:
     }
 };
 
-class DateFormatter: public HeaderFormatter
+class DateFormatter : public HeaderFormatter
 {
 public:
-    QString i18nName() override {
+    QString i18nName() override
+    {
         return i18n("Date:");
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override {
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
+    {
         const auto value = nodeHelper->dateHeader(message);
         return value;
     }
 };
 
-
-
-class AddressHeaderFormatter: public HeaderFormatter
+class AddressHeaderFormatter : public HeaderFormatter
 {
 public:
     AddressHeaderFormatter(const QByteArray &h)
-    : header(h)
+        : header(h)
     {
     }
 
-    QString i18nName() override {
+    QString i18nName() override
+    {
         if (header == "to") {
             return i18n("To:");
         } else if (header == "reply-To") {
@@ -241,7 +250,8 @@ public:
         }
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override {
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
+    {
         const auto value = nodeHelper->mailHeaderAsAddressList(header.constData(), message);
         return QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(value));
     }
@@ -281,12 +291,13 @@ public:
         delete engine;
     }
 
-    void registerHeaderFormatter(const QByteArray &header, QSharedPointer<HeaderFormatter> formatter) {
+    void registerHeaderFormatter(const QByteArray &header, QSharedPointer<HeaderFormatter> formatter)
+    {
         headerFormatter[header] = formatter;
     }
 
     QSharedPointer<Grantlee::FileSystemTemplateLoader> templateLoader;
-    QMap<QByteArray, QSharedPointer<HeaderFormatter>> headerFormatter;
+    QMap<QByteArray, QSharedPointer<HeaderFormatter> > headerFormatter;
     Grantlee::Engine *engine = nullptr;
     MessageViewer::HeaderStyleUtil headerStyleUtil;
     int iconSize;
@@ -356,25 +367,25 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     defaultHeaders << "to" << "reply-To" << "reply-From" << "cc" << "bcc" << "from" << "sender" << "resent-From" << "resent-To" << "subject" << "organization" << "list-id" << "date";
 
     for (const auto &header: defaultHeaders) {
-            QSharedPointer<HeaderFormatter> formatter;
-            if (d->headerFormatter.contains(header)) {
-                formatter = d->headerFormatter.value(header);
-            } else {
-                formatter = QSharedPointer<HeaderFormatter>(new DefaultHeaderFormatter(header));
-            }
-            const auto i18nName = formatter->i18nName();
-            const auto objectName = QString::fromUtf8(header).remove(QLatin1Char('-'));
-            if (nodeHelper->hasMailHeader(header.constData(), message)) {
-                const auto value = formatter->format(message, nodeHelper);
-                headerObject.insert(objectName, value);
-            }
-            if (!i18nName.isEmpty()) {
-                headerObject.insert(objectName+QStringLiteral("i18n"), i18nName);
-            }
+        QSharedPointer<HeaderFormatter> formatter;
+        if (d->headerFormatter.contains(header)) {
+            formatter = d->headerFormatter.value(header);
+        } else {
+            formatter = QSharedPointer<HeaderFormatter>(new DefaultHeaderFormatter(header));
+        }
+        const auto i18nName = formatter->i18nName();
+        const auto objectName = QString::fromUtf8(header).remove(QLatin1Char('-'));
+        if (nodeHelper->hasMailHeader(header.constData(), message)) {
+            const auto value = formatter->format(message, nodeHelper);
+            headerObject.insert(objectName, value);
+        }
+        if (!i18nName.isEmpty()) {
+            headerObject.insert(objectName+QStringLiteral("i18n"), i18nName);
+        }
     }
 
     if (!nodeHelper->hasMailHeader("subject", message)) {
-         headerObject.insert(QStringLiteral("subject"), i18n("No Subject"));
+        headerObject.insert(QStringLiteral("subject"), i18n("No Subject"));
     }
 
     const QString spamHtml = d->headerStyleUtil.spamStatus(message);

@@ -386,7 +386,6 @@ Q_SIGNALS:
     void showNextMessage();
     void showPreviousMessage();
 
-
 private:
     void initialize();
 

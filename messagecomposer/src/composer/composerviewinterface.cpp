@@ -25,12 +25,10 @@ using namespace MessageComposer;
 ComposerViewInterface::ComposerViewInterface(ComposerViewBase *composerView)
     : mComposerView(composerView)
 {
-
 }
 
 ComposerViewInterface::~ComposerViewInterface()
 {
-
 }
 
 QString ComposerViewInterface::subject() const
@@ -98,7 +96,7 @@ QString ComposerViewInterface::longDate() const
 
 QString ComposerViewInterface::shortTime() const
 {
-   return QTime::currentTime().toString(Qt::SystemLocaleShortDate);
+    return QTime::currentTime().toString(Qt::SystemLocaleShortDate);
 }
 
 QString ComposerViewInterface::longTime() const

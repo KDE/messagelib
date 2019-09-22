@@ -368,7 +368,7 @@ public:
 
     void setMementoName(const QByteArray &name);
     QByteArray mementoName() const;
-    
+
     QByteArray mDecryptedData;
 
     QString plaintextContent() const override;
@@ -380,7 +380,7 @@ public:
     const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > &decryptRecipients() const;
 
     bool hasHeader(const char *header) const override;
-    KMime::Headers::Base* header(const char* header) const override;
+    KMime::Headers::Base *header(const char *header) const override;
 private:
     /** Handles the decryption of a given content
      * returns true if the decryption was successful

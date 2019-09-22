@@ -33,7 +33,6 @@ private Q_SLOTS:
     void shouldCanStart();
     void shouldConvertVariables();
     void shouldConvertVariables_data();
-
 };
 
 #endif // CONVERTVARIABLESJOBTEST_H

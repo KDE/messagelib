@@ -215,7 +215,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                 int num = renameNumbering[file] + 1;
                 int dotIdx = file.lastIndexOf(QLatin1Char('.'));
                 file.insert((dotIdx >= 0) ? dotIdx : file.length(), QLatin1Char(
-                                       '_') + QString::number(num));
+                                '_') + QString::number(num));
             }
             curUrl = curUrl.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash);
             curUrl.setPath(curUrl.path() + QLatin1Char('/') + file);

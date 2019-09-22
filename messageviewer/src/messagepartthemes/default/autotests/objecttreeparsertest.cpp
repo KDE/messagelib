@@ -35,7 +35,6 @@ void ObjectTreeParserTester::initTestCase()
     Test::setupEnv();
 }
 
-
 void ObjectTreeParserTester::test_HTMLOnlyText()
 {
     KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("htmlonly.mbox"));

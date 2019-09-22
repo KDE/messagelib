@@ -269,7 +269,7 @@ bool MessagePart::hasHeader(const char *header) const
     return false;
 }
 
-KMime::Headers::Base * MimeTreeParser::MessagePart::header(const char* header) const
+KMime::Headers::Base *MimeTreeParser::MessagePart::header(const char *header) const
 {
     Q_UNUSED(header);
     return nullptr;
@@ -360,7 +360,7 @@ void TextMessagePart::parseContent()
                 EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(mOtp, QString(), cryptProto, fromAddress, nullptr));
                 mp->setDecryptMessage(decryptMessage());
                 mp->setIsEncrypted(true);
-                mp->setMementoName(mp->mementoName() + "-" + nodeHelper()->asHREF(content(), QString::number(blockIndex)).toLocal8Bit() );
+                mp->setMementoName(mp->mementoName() + "-" + nodeHelper()->asHREF(content(), QString::number(blockIndex)).toLocal8Bit());
                 appendSubPart(mp);
                 if (!decryptMessage()) {
                     continue;
@@ -371,7 +371,7 @@ void TextMessagePart::parseContent()
                 }
             } else if (block.type() == ClearsignedBlock) {
                 SignedMessagePart::Ptr mp(new SignedMessagePart(mOtp, QString(), cryptProto, fromAddress, nullptr));
-                mp->setMementoName(mp->mementoName() + "-" + nodeHelper()->asHREF(content(), QString::number(blockIndex)).toLocal8Bit() );
+                mp->setMementoName(mp->mementoName() + "-" + nodeHelper()->asHREF(content(), QString::number(blockIndex)).toLocal8Bit());
                 appendSubPart(mp);
                 mp->startVerification(block.text(), aCodec);
             } else {
@@ -735,7 +735,7 @@ QByteArray SignedMessagePart::mementoName() const
     return mMementoName;
 }
 
-void SignedMessagePart::setMementoName(const QByteArray& name)
+void SignedMessagePart::setMementoName(const QByteArray &name)
 {
     mMementoName = name;
 }
@@ -1037,16 +1037,16 @@ QString SignedMessagePart::fromAddress() const
     return mFromAddress;
 }
 
-bool SignedMessagePart::hasHeader(const char* header) const
+bool SignedMessagePart::hasHeader(const char *header) const
 {
-        const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
-        if (extraContent) {
-            return extraContent->hasHeader(header);
-        }
-        return false;
+    const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
+    if (extraContent) {
+        return extraContent->hasHeader(header);
+    }
+    return false;
 }
 
-KMime::Headers::Base * SignedMessagePart::header(const char* header) const
+KMime::Headers::Base *SignedMessagePart::header(const char *header) const
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {
@@ -1120,7 +1120,7 @@ QByteArray EncryptedMessagePart::mementoName() const
     return mMementoName;
 }
 
-void EncryptedMessagePart::setMementoName(const QByteArray& name)
+void EncryptedMessagePart::setMementoName(const QByteArray &name)
 {
     mMementoName = name;
 }
@@ -1388,16 +1388,16 @@ const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > &E
     return mDecryptRecipients;
 }
 
-bool EncryptedMessagePart::hasHeader(const char* header) const
+bool EncryptedMessagePart::hasHeader(const char *header) const
 {
-        const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
-        if (extraContent) {
-            return extraContent->hasHeader(header);
-        }
-        return false;
+    const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
+    if (extraContent) {
+        return extraContent->hasHeader(header);
+    }
+    return false;
 }
 
-KMime::Headers::Base * EncryptedMessagePart::header(const char* header) const
+KMime::Headers::Base *EncryptedMessagePart::header(const char *header) const
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {

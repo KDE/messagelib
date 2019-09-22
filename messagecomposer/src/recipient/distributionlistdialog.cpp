@@ -110,7 +110,6 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-
     QWidget *topFrame = new QWidget(this);
     mainLayout->addWidget(topFrame);
 
@@ -124,7 +123,6 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DistributionListDialog::reject);
 
     mainLayout->addWidget(buttonBox);
-
 
     QBoxLayout *topLayout = new QVBoxLayout(topFrame);
     topLayout->setContentsMargins(0, 0, 0, 0);

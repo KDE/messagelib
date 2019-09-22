@@ -79,7 +79,6 @@ static const struct {
     { CSSHelperBase::Warning, "inlineMessageWarning" },
     { CSSHelperBase::Error, "inlineMessageError" }
 };
-
 }
 
 CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
@@ -524,7 +523,8 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
     QString inlineMessageCss;
     for (const auto &msgStyle : inlineMessageStyles) {
         const auto c = cInlineMessage[msgStyle.type];
-        inlineMessageCss += QStringLiteral(R"(
+        inlineMessageCss += QStringLiteral(
+            R"(
             div.%1 {
                 border: 1px solid rgba(%2, %3, %4) ! important;
                 border-radius: 2px;
@@ -764,7 +764,7 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "  position: absolute;\n"
                        "  margin-left:-10px;\n"
                        "}\n\n").arg(extraCommonCss(headerFont), inlineMessageCss.join(QLatin1String(", ")))
-                        .arg(mForegroundColor.red()).arg(mForegroundColor.green()).arg(mForegroundColor.blue());
+        .arg(mForegroundColor.red()).arg(mForegroundColor.green()).arg(mForegroundColor.blue());
 }
 
 void CSSHelperBase::setBodyFont(const QFont &font)

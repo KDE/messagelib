@@ -46,7 +46,8 @@ class WebEngineViewer::WebHitTestPrivate
 {
 public:
     WebHitTestPrivate(const QPoint &pos, const QPoint &zoomedPos)
-        : m_zoomedPos(zoomedPos), m_pos(pos)
+        : m_zoomedPos(zoomedPos)
+        , m_pos(pos)
     {
     }
 
@@ -134,4 +135,3 @@ void WebHitTest::handleHitTest(const QVariant &result)
     Q_EMIT finished(webHitResult);
     deleteLater();
 }
-

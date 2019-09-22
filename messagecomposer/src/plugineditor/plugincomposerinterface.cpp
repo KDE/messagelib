@@ -77,7 +77,7 @@ QString PluginComposerInterface::longDate() const
 
 QString PluginComposerInterface::shortTime() const
 {
-   return mComposerViewInterface->shortTime();
+    return mComposerViewInterface->shortTime();
 }
 
 QString PluginComposerInterface::longTime() const

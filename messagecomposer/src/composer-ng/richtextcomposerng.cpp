@@ -161,8 +161,8 @@ MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextCom
 
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
-    bool wasConverted =
-            convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
+    bool wasConverted
+        = convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
     if (composerControler()->isFormattingUsed()) {
         if (!wasConverted) {
             if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {

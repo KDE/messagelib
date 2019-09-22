@@ -129,7 +129,8 @@ enum Result {
 class KeyResolver
 {
 public:
-    KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, int encrKeyNearExpiryThresholdDays, int signKeyNearExpiryThresholdDays, int encrRootCertNearExpiryThresholdDays, int signRootCertNearExpiryThresholdDays, int encrChainCertNearExpiryThresholdDays, int signChainCertNearExpiryThresholdDays);
+    KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, int encrKeyNearExpiryThresholdDays, int signKeyNearExpiryThresholdDays, int encrRootCertNearExpiryThresholdDays, int signRootCertNearExpiryThresholdDays, int encrChainCertNearExpiryThresholdDays,
+                int signChainCertNearExpiryThresholdDays);
 
     ~KeyResolver();
 

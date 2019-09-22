@@ -23,7 +23,6 @@
 
 #include <QDialog>
 
-
 namespace MessageList {
 namespace Core {
 class Manager;

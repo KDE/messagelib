@@ -27,7 +27,6 @@ QTEST_GUILESS_MAIN(ConvertVariablesJobTest)
 ConvertVariablesJobTest::ConvertVariablesJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void ConvertVariablesJobTest::shouldHaveDefaultValues()

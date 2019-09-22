@@ -24,7 +24,6 @@
 #include "templateparser_export.h"
 #include <TemplateParser/TemplatesCommandMenu>
 
-
 namespace TemplateParser {
 /**
  * @brief The TemplatesInsertCommandPushButton class

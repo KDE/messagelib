@@ -38,6 +38,7 @@ public:
     {
         return QStringLiteral("TestBodyPartURLHandler");
     }
+
     void testPath(const QString &path) const
     {
         QCOMPARE(path, mPath);
