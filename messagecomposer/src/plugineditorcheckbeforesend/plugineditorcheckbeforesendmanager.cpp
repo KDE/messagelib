@@ -60,7 +60,7 @@ public:
 
     void loadPlugin(PluginEditorCheckBeforeSendInfo *item);
     QVector<PluginEditorCheckBeforeSend *> pluginsList() const;
-    bool initializePlugins();
+    void initializePlugins();
     QVector<PluginEditorCheckBeforeSendInfo> mPluginList;
     QString configPrefixSettingKey() const;
     QString configGroupName() const;
@@ -86,7 +86,7 @@ QVector<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pl
     return mPluginDataList;
 }
 
-bool PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
+void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 {
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
         return md.serviceTypes().contains(QLatin1String("KMailEditor/PluginCheckBeforeSend"));
@@ -124,7 +124,6 @@ bool PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
     for (QVector<PluginEditorCheckBeforeSendInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
-    return true;
 }
 
 void PluginEditorCheckBeforeSendManagerPrivate::loadPlugin(PluginEditorCheckBeforeSendInfo *item)

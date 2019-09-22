@@ -59,12 +59,12 @@ public:
     }
 
     void loadPlugin(PluginEditorConvertTextInfo *item);
-    QVector<PluginEditorConvertText *> pluginsList() const;
-    bool initializePlugins();
+    Q_REQUIRED_RESULT QVector<PluginEditorConvertText *> pluginsList() const;
+    void initializePlugins();
     QVector<PluginEditorConvertTextInfo> mPluginList;
-    QString configPrefixSettingKey() const;
-    QString configGroupName() const;
-    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     PluginEditorConvertText *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
@@ -86,7 +86,7 @@ QVector<PimCommon::PluginUtilData> PluginEditorConvertTextManagerPrivate::plugin
     return mPluginDataList;
 }
 
-bool PluginEditorConvertTextManagerPrivate::initializePlugins()
+void PluginEditorConvertTextManagerPrivate::initializePlugins()
 {
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
         return md.serviceTypes().contains(QLatin1String("KMailEditor/PluginEditorConvertText"));
@@ -124,7 +124,6 @@ bool PluginEditorConvertTextManagerPrivate::initializePlugins()
     for (QVector<PluginEditorConvertTextInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
-    return true;
 }
 
 void PluginEditorConvertTextManagerPrivate::loadPlugin(PluginEditorConvertTextInfo *item)

@@ -61,11 +61,11 @@ public:
 
     void loadPlugin(PluginEditorGrammarInfo *item);
     QVector<PimCommon::CustomToolsPlugin *> pluginsList() const;
-    bool initializePlugins();
+    void initializePlugins();
     QVector<PluginEditorGrammarInfo> mPluginList;
-    QString configPrefixSettingKey() const;
-    QString configGroupName() const;
-    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
@@ -87,7 +87,7 @@ QVector<PimCommon::PluginUtilData> PluginEditorGrammarManagerPrivate::pluginsDat
     return mPluginDataList;
 }
 
-bool PluginEditorGrammarManagerPrivate::initializePlugins()
+void PluginEditorGrammarManagerPrivate::initializePlugins()
 {
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
         return md.serviceTypes().contains(QLatin1String("KMailEditor/PluginEditorGrammar"));
@@ -125,7 +125,6 @@ bool PluginEditorGrammarManagerPrivate::initializePlugins()
     for (QVector<PluginEditorGrammarInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
-    return true;
 }
 
 void PluginEditorGrammarManagerPrivate::loadPlugin(PluginEditorGrammarInfo *item)

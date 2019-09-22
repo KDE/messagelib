@@ -61,12 +61,12 @@ public:
     }
 
     void loadPlugin(PluginEditorInfo *item);
-    QVector<PluginEditor *> pluginsList() const;
-    QVector<PimCommon::PluginUtilData> pluginDataList() const;
-    bool initializePlugins();
+    Q_REQUIRED_RESULT QVector<PluginEditor *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginDataList() const;
+    void initializePlugins();
 
-    QString configGroupName() const;
-    QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     PluginEditor *pluginFromIdentifier(const QString &id);
 private:
     QVector<PluginEditorInfo> mPluginList;
@@ -74,7 +74,7 @@ private:
     PluginEditorManager *q;
 };
 
-bool PluginEditorManagerPrivate::initializePlugins()
+void PluginEditorManagerPrivate::initializePlugins()
 {
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
         return md.serviceTypes().contains(QLatin1String("KMailEditor/Plugin"));
@@ -118,7 +118,6 @@ bool PluginEditorManagerPrivate::initializePlugins()
     for (QVector<PluginEditorInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
-    return true;
 }
 
 void PluginEditorManagerPrivate::loadPlugin(PluginEditorInfo *item)
