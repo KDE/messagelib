@@ -184,7 +184,6 @@ void AttachmentControllerBase::Private::compressJobResult(KJob *job)
 
     Q_ASSERT(dynamic_cast<AttachmentCompressJob *>(job));
     AttachmentCompressJob *ajob = static_cast<AttachmentCompressJob *>(job);
-    //AttachmentPart *originalPart = const_cast<AttachmentPart*>( ajob->originalPart() );
     AttachmentPart::Ptr originalPart = ajob->originalPart();
     AttachmentPart::Ptr compressedPart = ajob->compressedPart();
 
