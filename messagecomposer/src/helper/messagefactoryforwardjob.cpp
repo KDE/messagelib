@@ -26,9 +26,6 @@ using namespace MessageComposer;
 
 MessageFactoryForwardJob::MessageFactoryForwardJob(QObject *parent)
     : QObject(parent)
-    , mMsg(nullptr)
-    , mOrigMsg(nullptr)
-    , mIdentityManager(nullptr)
 {
 }
 

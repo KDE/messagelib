@@ -55,8 +55,8 @@ private:
 
     QString mSelection;
     QString mTemplate;
-    KMime::Message::Ptr mMsg;
-    KMime::Message::Ptr mOrigMsg;
+    KMime::Message::Ptr mMsg = nullptr;
+    KMime::Message::Ptr mOrigMsg = nullptr;
     Akonadi::Collection mCollection;
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
