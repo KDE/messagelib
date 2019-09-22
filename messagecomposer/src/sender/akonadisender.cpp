@@ -75,12 +75,11 @@ class MessageComposer::AkonadiSenderPrivate
 {
 public:
     AkonadiSenderPrivate()
-        : mCustomTransportId(-1)
     {
     }
 
     QSet<KJob *> mPendingJobs;
-    int mCustomTransportId;
+    int mCustomTransportId = -1;
 };
 
 AkonadiSender::AkonadiSender(QObject *parent)

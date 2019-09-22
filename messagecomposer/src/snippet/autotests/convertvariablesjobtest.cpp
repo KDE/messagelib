@@ -62,7 +62,7 @@ void ConvertVariablesJobTest::shouldConvertVariables()
     //TOOD add CC/BCC/TO
 
     job.setText(original);
-    QCOMPARE(job.convertVariables(), expected);
+    QCOMPARE(job.convertVariables(interface, original), expected);
 }
 
 void ConvertVariablesJobTest::shouldConvertVariables_data()

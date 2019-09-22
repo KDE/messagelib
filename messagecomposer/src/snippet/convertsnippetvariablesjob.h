@@ -37,7 +37,7 @@ public:
 
     MessageComposer::ComposerViewInterface *composerViewInterface() const;
     void setComposerViewInterface(MessageComposer::ComposerViewInterface *composerViewInterface);
-    Q_REQUIRED_RESULT QString convertVariables() const;
+    static Q_REQUIRED_RESULT QString convertVariables(MessageComposer::ComposerViewInterface *composerView, const QString &text);
 
     Q_REQUIRED_RESULT bool canStart() const;
 Q_SIGNALS:
