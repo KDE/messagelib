@@ -48,6 +48,7 @@ public:
     Q_REQUIRED_RESULT QString longTime() const;
     Q_REQUIRED_RESULT QString insertDayOfWeek() const;
 
+    Q_REQUIRED_RESULT QString convertVariable(const QString &variableName) const;
 private:
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };

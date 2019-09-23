@@ -22,6 +22,7 @@
 #include "composer/composerviewinterface.h"
 #include "composer/composerattachmentinterface.h"
 #include <MessageComposer/AttachmentModel>
+#include <MessageComposer/ConvertSnippetVariablesJob>
 #include <KFormat>
 using namespace MessageComposer;
 
@@ -88,4 +89,9 @@ QString PluginComposerInterface::longTime() const
 QString PluginComposerInterface::insertDayOfWeek() const
 {
     return mComposerViewInterface->insertDayOfWeek();
+}
+
+QString PluginComposerInterface::convertVariable(const QString &variableName) const
+{
+    return MessageComposer::ConvertSnippetVariablesJob::convertVariables(mComposerViewInterface, variableName);
 }
