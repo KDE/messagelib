@@ -31,5 +31,19 @@ ConvertSnippetVariablesUtilTest::ConvertSnippetVariablesUtilTest(QObject *parent
 
 void ConvertSnippetVariablesUtilTest::shouldTranslateVariables()
 {
-
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::CcAddr), QStringLiteral("%CCADDR"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::FullSubject), QStringLiteral("%FULLSUBJECT"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::ToAddr), QStringLiteral("%TOADDR"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::ToFname), QStringLiteral("%TOFNAME"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::ToLname), QStringLiteral("%TOLNAME"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::FromAddr), QStringLiteral("%FROMADDR"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::Dow), QStringLiteral("%DOW"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::AttachmentName), QStringLiteral("%ATTACHMENTNAMES"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::Date), QStringLiteral("%DATE"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::ShortDate), QStringLiteral("%SHORTDATE"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::Time), QStringLiteral("%TIME"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::TimeLong), QStringLiteral("%TIMELONG"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::AttachmentCount), QStringLiteral("%ATTACHMENTCOUNT"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::AttachmentFilenames), QStringLiteral("%ATTACHMENTFILENAMES"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::AttachmentNamesAndSizes), QStringLiteral("%ATTACHMENTNAMESANDSIZES"));
 }

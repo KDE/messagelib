@@ -64,6 +64,7 @@ set( messagecomposer_recipient_src
 set( messagecomposer_snippet_src
     snippet/convertsnippetvariablesjob.cpp
     snippet/convertsnippetvariablesutil.cpp
+    snippet/convertsnippetvariablemenu.cpp
     )
 
 set( messagecomposer_imagescaling_src
@@ -244,6 +245,7 @@ ecm_generate_headers(MessageComposer_Camelsnippet_HEADERS
     HEADER_NAMES
     ConvertSnippetVariablesJob
     ConvertSnippetVariablesUtil
+    ConvertSnippetVariableMenu
     REQUIRED_HEADERS MessageComposer_snippet_HEADERS
     PREFIX MessageComposer
     RELATIVE snippet

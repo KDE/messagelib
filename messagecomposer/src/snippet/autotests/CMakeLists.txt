@@ -7,3 +7,4 @@ endmacro()
 
 add_composer_snippet_unittest(convertvariablesjobtest.cpp)
 add_composer_snippet_unittest(convertsnippetvariablesutiltest.cpp)
+add_composer_snippet_unittest(convertsnippetvariablemenutest.cpp)
