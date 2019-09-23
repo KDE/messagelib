@@ -6,4 +6,4 @@ macro(add_composer_snippet_unittest _source)
 endmacro()
 
 add_composer_snippet_unittest(convertvariablesjobtest.cpp)
-
+add_composer_snippet_unittest(convertsnippetvariablesutiltest.cpp)
