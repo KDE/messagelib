@@ -34,7 +34,6 @@ public:
     QMenu *menu() const;
 
 Q_SIGNALS:
-    void insertText(const QString &str);
     void insertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);
 private:
     void initializeMenu();

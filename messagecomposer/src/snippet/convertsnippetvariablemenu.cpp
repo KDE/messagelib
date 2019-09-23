@@ -37,9 +37,6 @@ ConvertSnippetVariableMenu::~ConvertSnippetVariableMenu()
 
 void ConvertSnippetVariableMenu::initializeMenu()
 {
-//    connect(this, &ConvertSnippetVariableMenu::insertVariable, this, [this](MessageComposer::ConvertSnippetVariablesUtil::VariableType type) {
-//        Q_EMIT insertText(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(type));
-//    });
     mMenu = new QMenu(mParentWidget);
     mMenu->setFocusPolicy(Qt::NoFocus);
 
