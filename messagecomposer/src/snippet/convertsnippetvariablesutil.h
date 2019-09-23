@@ -26,11 +26,15 @@ namespace MessageComposer {
 namespace ConvertSnippetVariablesUtil {
 enum VariableType {
     CcAddr,
+    CcLname,
+    CcFname,
     FullSubject,
     ToAddr,
     ToFname,
     ToLname,
     FromAddr,
+    FromLname,
+    FromFname,
     Dow,
     AttachmentName,
     Date,

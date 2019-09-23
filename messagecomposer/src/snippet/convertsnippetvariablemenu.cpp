@@ -41,21 +41,41 @@ void ConvertSnippetVariableMenu::initializeMenu()
     mMenu->setFocusPolicy(Qt::NoFocus);
 
     QMenu *toMenuVariable = new QMenu(i18n("To"), mMenu);
-    toMenuVariable->addAction(i18n("Emails"), this, [this]() {
+    toMenuVariable->addAction(i18n("To Field Address"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToAddr);
+    });
+    toMenuVariable->addAction(i18n("To Field Last Name"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToLname);
+    });
+    toMenuVariable->addAction(i18n("To Field First Name"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToFname);
     });
     mMenu->addMenu(toMenuVariable);
 
     QMenu *fromMenuVariable = new QMenu(i18n("From"), mMenu);
-    fromMenuVariable->addAction(i18n("Emails"), this, [this]() {
+    fromMenuVariable->addAction(i18n("From Field Address"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromAddr);
+    });
+    fromMenuVariable->addAction(i18n("From Field Last Name"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromLname);
+    });
+    fromMenuVariable->addAction(i18n("From Field First Name"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromFname);
     });
     mMenu->addMenu(fromMenuVariable);
 
-    QMenu *ccMenuVariable = new QMenu(i18n("Cc"), mMenu);
-    ccMenuVariable->addAction(i18n("Emails"), this, [this]() {
+    QMenu *ccMenuVariable = new QMenu(i18n("CC"), mMenu);
+    ccMenuVariable->addAction(i18n("CC Field Address"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcAddr);
     });
+    ccMenuVariable->addAction(i18n("CC Field Last Name"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcLname);
+    });
+    ccMenuVariable->addAction(i18n("CC Field First Name"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcFname);
+    });
+
+
     mMenu->addMenu(ccMenuVariable);
 
     QMenu *attachmentMenuVariable = new QMenu(i18n("Attachment"), mMenu);
