@@ -91,7 +91,7 @@ QString PluginComposerInterface::insertDayOfWeek() const
     return mComposerViewInterface->insertDayOfWeek();
 }
 
-QString PluginComposerInterface::convertVariable(const QString &variableName) const
+QString PluginComposerInterface::convertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const
 {
-    return MessageComposer::ConvertSnippetVariablesJob::convertVariables(mComposerViewInterface, variableName);
+    return MessageComposer::ConvertSnippetVariablesJob::convertVariables(mComposerViewInterface, MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(type));
 }

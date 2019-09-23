@@ -28,3 +28,8 @@ ConvertSnippetVariablesUtilTest::ConvertSnippetVariablesUtilTest(QObject *parent
 {
 
 }
+
+void ConvertSnippetVariablesUtilTest::shouldTranslateVariables()
+{
+
+}

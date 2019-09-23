@@ -24,7 +24,25 @@
 
 namespace MessageComposer {
 namespace ConvertSnippetVariablesUtil {
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString snippetVariableFromEnum();
+enum VariableType {
+    CcAddr,
+    FullSubject,
+    ToAddr,
+    ToFname,
+    ToLname,
+    FromAddr,
+    Dow,
+    AttachmentName,
+    Date,
+    ShortDate,
+    Time,
+    TimeLong,
+    AttachmentCount,
+    AttachmentFilenames,
+    AttachmentNamesAndSizes,
+};
+
+Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);
 }
 }
 #endif // CONVERTSNIPPETVARIABLESUTIL_H

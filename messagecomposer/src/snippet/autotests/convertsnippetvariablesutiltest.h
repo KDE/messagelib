@@ -28,6 +28,8 @@ class ConvertSnippetVariablesUtilTest : public QObject
 public:
     explicit ConvertSnippetVariablesUtilTest(QObject *parent = nullptr);
     ~ConvertSnippetVariablesUtilTest() = default;
+private Q_SLOTS:
+    void shouldTranslateVariables();
 };
 
 #endif // CONVERTSNIPPETVARIABLESUTILTEST_H

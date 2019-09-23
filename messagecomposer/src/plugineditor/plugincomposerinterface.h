@@ -22,6 +22,7 @@
 
 #include "messagecomposer_export.h"
 #include <MessageComposer/ComposerAttachmentInterface>
+#include <MessageComposer/ConvertSnippetVariablesUtil>
 #include <QObject>
 namespace MessageComposer {
 class ComposerViewBase;
@@ -48,7 +49,7 @@ public:
     Q_REQUIRED_RESULT QString longTime() const;
     Q_REQUIRED_RESULT QString insertDayOfWeek() const;
 
-    Q_REQUIRED_RESULT QString convertVariable(const QString &variableName) const;
+    Q_REQUIRED_RESULT QString convertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const;
 private:
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };
