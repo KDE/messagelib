@@ -36,8 +36,8 @@ public:
     ~PluginEditor();
     void setOrder(int order);
     Q_REQUIRED_RESULT int order() const;
-    void setCanProcessKeyEvent(bool b);
-    Q_REQUIRED_RESULT bool canProcessKeyEvent() const;
+
+    virtual Q_REQUIRED_RESULT bool canProcessKeyEvent() const;
 private:
     PluginEditorPrivate *const d;
 };
