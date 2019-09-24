@@ -41,6 +41,7 @@ public:
     PluginEditor *plugin = nullptr;
     QWidget *statusBarWidget = nullptr;
     bool mSelectedText = false;
+    bool mCanProcessKeyEvent = false;
 };
 
 PluginEditorInterface::PluginEditorInterface(QObject *parent)
@@ -102,4 +103,20 @@ PluginComposerInterface *PluginEditorInterface::composerInterface() const
 void PluginEditorInterface::setComposerInterface(PluginComposerInterface *w)
 {
     d->mComposerInterface = w;
+}
+
+void PluginEditorInterface::setCanProcessKeyEvent(bool b)
+{
+    d->mCanProcessKeyEvent = b;
+}
+
+bool PluginEditorInterface::canProcessKeyEvent() const
+{
+    return d->mCanProcessKeyEvent;
+}
+
+bool PluginEditorInterface::processProcessKeyEvent(QKeyEvent *event)
+{
+    Q_UNUSED(event);
+    return false;
 }
