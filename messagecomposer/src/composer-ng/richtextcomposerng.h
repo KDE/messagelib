@@ -58,8 +58,10 @@ public:
 
     Q_REQUIRED_RESULT virtual MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus convertPlainText(MessageComposer::TextPart *textPart);
 
-private:
+protected:
     bool processModifyText(QKeyEvent *event) override;
+
+private:
     RichTextComposerNgPrivate *const d;
 };
 }
