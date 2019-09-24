@@ -84,7 +84,7 @@ static bool isSpecial(const QTextCharFormat &charFormat)
            || charFormat.isListFormat() || charFormat.isTableFormat() || charFormat.isTableCellFormat();
 }
 
-bool RichTextComposerNg::processAutoCorrection(QKeyEvent *e)
+bool RichTextComposerNg::processModifyText(QKeyEvent *e)
 {
     if (d->autoCorrection && d->autoCorrection->isEnabledAutoCorrection()) {
         if ((e->key() == Qt::Key_Space) || (e->key() == Qt::Key_Enter) || (e->key() == Qt::Key_Return)) {
