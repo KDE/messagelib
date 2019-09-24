@@ -60,9 +60,6 @@ public:
     Q_REQUIRED_RESULT MessageComposer::PluginComposerInterface *composerInterface() const;
     void setComposerInterface(MessageComposer::PluginComposerInterface *w);
 
-    void setCanProcessKeyEvent(bool b);
-    Q_REQUIRED_RESULT bool canProcessKeyEvent() const;
-
     virtual bool processProcessKeyEvent(QKeyEvent *event);
 
 Q_SIGNALS:

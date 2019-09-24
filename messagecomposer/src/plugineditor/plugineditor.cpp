@@ -29,6 +29,7 @@ public:
     }
 
     int order = 0;
+    bool mCanProcessKeyEvent = false;
 };
 
 PluginEditor::PluginEditor(QObject *parent)
@@ -50,4 +51,14 @@ void PluginEditor::setOrder(int order)
 int PluginEditor::order() const
 {
     return d->order;
+}
+
+void PluginEditor::setCanProcessKeyEvent(bool b)
+{
+    d->mCanProcessKeyEvent = b;
+}
+
+bool PluginEditor::canProcessKeyEvent() const
+{
+    return d->mCanProcessKeyEvent;
 }
