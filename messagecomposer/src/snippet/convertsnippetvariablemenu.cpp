@@ -85,6 +85,9 @@ void ConvertSnippetVariableMenu::initializeMenu()
     attachmentMenuVariable->addAction(i18n("Names"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentName);
     });
+    attachmentMenuVariable->addAction(i18n("Filenames"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentFilenames);
+    });
     attachmentMenuVariable->addAction(i18n("Names and Sizes"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentNamesAndSizes);
     });
