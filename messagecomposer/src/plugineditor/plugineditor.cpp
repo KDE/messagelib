@@ -29,7 +29,6 @@ public:
     }
 
     int order = 0;
-    KActionCollection *actionCollection = nullptr;
 };
 
 PluginEditor::PluginEditor(QObject *parent)
@@ -56,14 +55,4 @@ int PluginEditor::order() const
 bool PluginEditor::canProcessKeyEvent() const
 {
     return false;
-}
-
-KActionCollection *PluginEditor::actionCollection() const
-{
-    return d->actionCollection;
-}
-
-void PluginEditor::setActionCollection(KActionCollection *actionCollection)
-{
-    d->actionCollection = actionCollection;
 }
