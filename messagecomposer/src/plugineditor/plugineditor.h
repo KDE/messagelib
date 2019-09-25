@@ -22,6 +22,7 @@
 #include <QObject>
 #include "messagecomposer_export.h"
 #include <PimCommon/AbstractGenericPlugin>
+class KActionCollection;
 namespace MessageComposer {
 class PluginEditorPrivate;
 /**
@@ -36,6 +37,10 @@ public:
     ~PluginEditor();
     void setOrder(int order);
     Q_REQUIRED_RESULT int order() const;
+
+    Q_REQUIRED_RESULT KActionCollection *actionCollection() const;
+    void setActionCollection(KActionCollection *actionCollection);
+
 
     virtual Q_REQUIRED_RESULT bool canProcessKeyEvent() const;
 private:
