@@ -102,12 +102,12 @@ void MessageList::Util::deleteConfig(const QString &collectionId)
 
 QColor MessageList::Util::unreadDefaultMessageColor()
 {
-    return KColorScheme(QPalette::Active, KColorScheme::Complementary).decoration(KColorScheme::FocusColor).color();
+    return KColorScheme(QPalette::Active).foreground(KColorScheme::ActiveText).color();
 }
 
 QColor MessageList::Util::importantDefaultMessageColor()
 {
-    return KColorScheme(QPalette::Active).foreground(KColorScheme::NegativeText).color();
+    return KColorScheme(QPalette::Active).foreground(KColorScheme::NeutralText).color();
 }
 
 QColor MessageList::Util::todoDefaultMessageColor()
