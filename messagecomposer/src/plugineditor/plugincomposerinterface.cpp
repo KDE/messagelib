@@ -95,3 +95,8 @@ QString PluginComposerInterface::convertVariable(MessageComposer::ConvertSnippet
 {
     return MessageComposer::ConvertSnippetVariablesJob::convertVariables(mComposerViewInterface, MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(type));
 }
+
+QString PluginComposerInterface::convertText(const QString &str) const
+{
+    return MessageComposer::ConvertSnippetVariablesJob::convertVariables(mComposerViewInterface, str);
+}

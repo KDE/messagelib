@@ -50,6 +50,7 @@ public:
     Q_REQUIRED_RESULT QString insertDayOfWeek() const;
 
     Q_REQUIRED_RESULT QString convertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const;
+    Q_REQUIRED_RESULT QString convertText(const QString &str) const;
 private:
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };
