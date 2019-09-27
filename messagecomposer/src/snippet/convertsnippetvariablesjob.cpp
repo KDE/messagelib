@@ -83,6 +83,14 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                 i += strlen("CCADDR");
                 const QString str = composerView->cc();
                 result.append(str);
+            } else if (cmd.startsWith(QLatin1String("CCFNAME"))) {
+                i += strlen("CCFNAME");
+                const QString str = TemplateParser::Util::getFirstNameFromEmail(composerView->cc());
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("CCLNAME"))) {
+                i += strlen("CCLNAME");
+                const QString str = TemplateParser::Util::getLastNameFromEmail(composerView->cc());
+                result.append(str);
             } else if (cmd.startsWith(QLatin1String("FULLSUBJECT"))) {
                 i += strlen("FULLSUBJECT");
                 const QString str = composerView->subject();
@@ -102,6 +110,14 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
             } else if (cmd.startsWith(QLatin1String("FROMADDR"))) {
                 i += strlen("FROMADDR");
                 const QString str = composerView->from();
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("FROMFNAME"))) {
+                i += strlen("FROMFNAME");
+                const QString str = TemplateParser::Util::getFirstNameFromEmail(composerView->from());
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("FROMLNAME"))) {
+                i += strlen("FROMLNAME");
+                const QString str = TemplateParser::Util::getLastNameFromEmail(composerView->from());
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("DOW"))) {
                 i += strlen("DOW");
