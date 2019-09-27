@@ -73,7 +73,7 @@ QString HeaderStyleUtil::dateString(const QDateTime &dateTime, HeaderStyleUtilDa
         return i18nc("Unknown date", "Unknown");
     }
 
-    const time_t unixTime = dateTime.toTime_t();
+    const time_t unixTime = dateTime.toSecsSinceEpoch();
     switch (dateFormat) {
     case ShortDate:
         return KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, unixTime);
