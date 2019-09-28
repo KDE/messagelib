@@ -156,14 +156,20 @@ void MessageFactoryNG::createReplyAsync()
         } else if (!m_mailingListAddresses.isEmpty()) {
             toList = (KMime::Types::Mailbox::List() << m_mailingListAddresses.at(0));
         } else {
-            // doesn't seem to be a mailing list, reply to From: address
-            toList = m_origMsg->from()->mailboxes();
+            // Doesn't seem to be a mailing list.
+            auto originalFromList = m_origMsg->from()->mailboxes();
+            auto originalToList = m_origMsg->to()->mailboxes();
 
-            if (m_identityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(toList))) {
-                // sender seems to be one of our own identities, so we assume that this
-                // is a reply to a "sent" mail where the users wants to add additional
-                // information for the recipient.
-                toList = m_origMsg->to()->mailboxes();
+            if (m_identityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalFromList))
+                && !m_identityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalToList))
+            ) {
+                // Sender seems to be one of our own identities and recipient is not,
+                // so we assume that this is a reply to a "sent" mail where the user
+                // wants to add additional information for the recipient.
+                toList = originalToList;
+            } else {
+                // "Normal" case:  reply to sender.
+                toList = originalFromList;
             }
 
             replyAll = false;

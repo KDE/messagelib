@@ -58,6 +58,7 @@ endmacro()
 add_messagecomposer_test( utiltest.cpp )
 add_messagecomposer_test( messagefactoryngtest.cpp )
 add_messagecomposer_test( plugineditorcheckbeforesendparamstest.cpp )
+add_messagecomposer_test( replystrategytest.cpp )
 
 # Non-content jobs.
 add_messagecomposer_test( skeletonmessagejobtest.cpp )
