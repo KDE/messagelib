@@ -191,6 +191,10 @@ void ReplyStrategyTest::testReply_data()
         << defaultAddress << only(friend1Address) << only(friend2Address)
         << nobody << nobody << QString()
         << (int)ReplySmart << defaultAddress << only(friend1Address) << nobody;
+    QTest::newRow("ReplySmart, from default identity with Reply-To to someone")
+        << defaultAddress << only(friend1Address) << only(friend2Address)
+        << only(replyAddress) << nobody << QString()
+        << (int)ReplySmart << defaultAddress << only(friend1Address) << nobody;
 
     // If the original message was from one of the user's identities to another
     // identity (i.e., between two of the user's mail accounts), a smart reply
@@ -200,13 +204,17 @@ void ReplyStrategyTest::testReply_data()
         << nobody << nobody << QString()
         << (int)ReplySmart << nondefaultAddress << only(defaultAddress) << nobody;
 
-    // Smart replies prefer the Mail-Followup-To address to Reply-To or List-Post.
+    // If the original message appears to be from a mailing list, smart replies
+    // go to the Mail-Followup-To, Reply-To, or List-Post addresses, in that
+    // order of preference.
     QTest::newRow("ReplySmart, from list with Mail-Followup-To")
         << friend1Address << only(defaultAddress) << only(friend2Address)
         << only(replyAddress) << only(followupAddress) << listAddress
         << (int)ReplySmart << defaultAddress << only(followupAddress) << nobody;
-
-    // In the absence of Mail-Followup-To, smart replies prefer List-Post to From.
+    QTest::newRow("ReplySmart, from list with Reply-To")
+        << friend1Address << only(defaultAddress) << only(friend2Address)
+        << only(replyAddress) << nobody << listAddress
+        << (int)ReplySmart << defaultAddress << only(replyAddress) << nobody;
     QTest::newRow("ReplySmart, from list with List-Post")
         << friend1Address << only(nondefaultAddress) << only(friend2Address)
         << nobody << nobody << listAddress

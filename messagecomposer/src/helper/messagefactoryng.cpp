@@ -147,14 +147,12 @@ void MessageFactoryNG::createReplyAsync()
     {
         if (auto hdr = m_origMsg->headerByType("Mail-Followup-To")) {
             toList << KMime::Types::Mailbox::listFrom7BitString(hdr->as7BitString(false));
-        } else if (!replyToList.isEmpty()) {
-            toList = replyToList;
-            // use the ReplyAll template only when it's a reply to a mailing list
-            if (m_mailingListAddresses.isEmpty()) {
-                replyAll = false;
-            }
         } else if (!m_mailingListAddresses.isEmpty()) {
-            toList = (KMime::Types::Mailbox::List() << m_mailingListAddresses.at(0));
+            if (replyToList.isEmpty()) {
+                toList = (KMime::Types::Mailbox::List() << m_mailingListAddresses.at(0));
+            } else {
+                toList = replyToList;
+            }
         } else {
             // Doesn't seem to be a mailing list.
             auto originalFromList = m_origMsg->from()->mailboxes();
@@ -169,7 +167,11 @@ void MessageFactoryNG::createReplyAsync()
                 toList = originalToList;
             } else {
                 // "Normal" case:  reply to sender.
-                toList = originalFromList;
+                if (replyToList.isEmpty()) {
+                    toList = originalFromList;
+                } else {
+                    toList = replyToList;
+                }
             }
 
             replyAll = false;
