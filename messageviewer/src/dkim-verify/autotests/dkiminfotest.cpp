@@ -37,4 +37,6 @@ void DKIMInfoTest::shouldHaveDefaultValue()
     QVERIFY(info.domain().isEmpty());
     QVERIFY(info.selector().isEmpty());
     QVERIFY(info.bodyHash().isEmpty());
+    QVERIFY(info.listSignedHeader().isEmpty());
+    QVERIFY(info.query().isEmpty());
 }

@@ -22,6 +22,7 @@
 
 #include "messageviewer_private_export.h"
 #include <QString>
+#include <QStringList>
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMInfo
 {
@@ -46,12 +47,45 @@ public:
 
     Q_REQUIRED_RESULT bool isValid() const;
 
+    Q_REQUIRED_RESULT QStringList listSignedHeader() const;
+    void setListSignedHeader(const QStringList &listSignedHeader);
+
+    Q_REQUIRED_RESULT QString signingAlgorithm() const;
+    void setSigningAlgorithm(const QString &signingAlgorithm);
+
+    Q_REQUIRED_RESULT QString signatureTimeStamp() const;
+    void setSignatureTimeStamp(const QString &signatureTimeStamp);
+
+    Q_REQUIRED_RESULT QString query() const;
+    void setQuery(const QString &query);
+
+    Q_REQUIRED_RESULT QString expireTime() const;
+    void setExpireTime(const QString &expireTime);
+
+    Q_REQUIRED_RESULT QString signature() const;
+    void setSignature(const QString &signature);
+
+    Q_REQUIRED_RESULT QString userAgent() const;
+    void setUserAgent(const QString &userAgent);
+
+    Q_REQUIRED_RESULT QString bodyLenghtCount() const;
+    void setBodyLenghtCount(const QString &bodyLenghtCount);
+
 private:
     QString mVersion;
     QString mHashingAlgorithm;
+    QString mSigningAlgorithm;
     QString mDomain;
     QString mSelector;
     QString mBodyHash;
+    QString mSignatureTimeStamp;
+    QString mExpireTime;
+    QString mQuery;
+    QString mSignature;
+    QString mUserAgent;
+    QString mBodyLenghtCount;
+    QStringList mListSignedHeader;
+
 };
 }
 

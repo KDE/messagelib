@@ -24,6 +24,10 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 
+namespace {
+static const char myConfigGroupName[] = "DKIMManagerKeyDialog";
+}
+
 using namespace MessageViewer;
 DKIMManagerKeyDialog::DKIMManagerKeyDialog(QWidget *parent)
     : QDialog(parent)
@@ -50,7 +54,7 @@ DKIMManagerKeyDialog::~DKIMManagerKeyDialog()
 
 void DKIMManagerKeyDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "DKIMManagerKeyDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -59,7 +63,7 @@ void DKIMManagerKeyDialog::readConfig()
 
 void DKIMManagerKeyDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "DKIMManagerKeyDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }

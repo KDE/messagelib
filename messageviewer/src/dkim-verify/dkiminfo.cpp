@@ -41,13 +41,27 @@ void DKIMInfo::parseDKIM(const QString &header)
         if (elem.startsWith(QLatin1String("v="))) {
             mVersion = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("a="))) {
+            mSigningAlgorithm = elem.right(elem.length() - 2);
+        } else if (elem.startsWith(QLatin1String("t="))) {
+            mSignatureTimeStamp = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("c="))) {
+
+        } else if (elem.startsWith(QLatin1String("l="))) {
+            mBodyLenghtCount = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("i="))) {
+            mUserAgent = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("q="))) {
+            mQuery = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("d="))) {
+            mDomain = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("s="))) {
+            mSelector = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("b="))) {
+            mSignature = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("h="))) {
+            //mListSignedHeader = elem.right(elem.length() - 2);
+            //TODO parse elements.
+            //mHashingAlgorithm = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("hb="))) {
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << " Unknown element type" << elem;
@@ -111,4 +125,84 @@ bool DKIMInfo::isValid() const
     //TODO verify
 
     return !mSelector.isEmpty() && !mDomain.isEmpty() && !mBodyHash.isEmpty() && !mHashingAlgorithm.isEmpty();
+}
+
+QStringList DKIMInfo::listSignedHeader() const
+{
+    return mListSignedHeader;
+}
+
+void DKIMInfo::setListSignedHeader(const QStringList &listSignedHeader)
+{
+    mListSignedHeader = listSignedHeader;
+}
+
+QString DKIMInfo::signingAlgorithm() const
+{
+    return mSigningAlgorithm;
+}
+
+void DKIMInfo::setSigningAlgorithm(const QString &signingAlgorithm)
+{
+    mSigningAlgorithm = signingAlgorithm;
+}
+
+QString DKIMInfo::signatureTimeStamp() const
+{
+    return mSignatureTimeStamp;
+}
+
+void DKIMInfo::setSignatureTimeStamp(const QString &signatureTimeStamp)
+{
+    mSignatureTimeStamp = signatureTimeStamp;
+}
+
+QString DKIMInfo::query() const
+{
+    return mQuery;
+}
+
+void DKIMInfo::setQuery(const QString &query)
+{
+    mQuery = query;
+}
+
+QString DKIMInfo::expireTime() const
+{
+    return mExpireTime;
+}
+
+void DKIMInfo::setExpireTime(const QString &expireTime)
+{
+    mExpireTime = expireTime;
+}
+
+QString DKIMInfo::signature() const
+{
+    return mSignature;
+}
+
+void DKIMInfo::setSignature(const QString &signature)
+{
+    mSignature = signature;
+}
+
+QString DKIMInfo::userAgent() const
+{
+    return mUserAgent;
+}
+
+void DKIMInfo::setUserAgent(const QString &userAgent)
+{
+    mUserAgent = userAgent;
+}
+
+QString DKIMInfo::bodyLenghtCount() const
+{
+    return mBodyLenghtCount;
+}
+
+void DKIMInfo::setBodyLenghtCount(const QString &bodyLenghtCount)
+{
+    mBodyLenghtCount = bodyLenghtCount;
 }
