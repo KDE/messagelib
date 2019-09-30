@@ -94,9 +94,9 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     Q_REQUIRED_RESULT bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
 
-    Q_REQUIRED_RESULT bool addAttachment(MessageCore::AttachmentPart::Ptr part);
-    Q_REQUIRED_RESULT bool updateAttachment(MessageCore::AttachmentPart::Ptr part);
-    Q_REQUIRED_RESULT bool replaceAttachment(MessageCore::AttachmentPart::Ptr oldPart, MessageCore::AttachmentPart::Ptr newPart);
+    Q_REQUIRED_RESULT bool addAttachment(const MessageCore::AttachmentPart::Ptr &part);
+    Q_REQUIRED_RESULT bool updateAttachment(const MessageCore::AttachmentPart::Ptr &part);
+    Q_REQUIRED_RESULT bool replaceAttachment(const MessageCore::AttachmentPart::Ptr &oldPart, const MessageCore::AttachmentPart::Ptr &newPart);
     Q_REQUIRED_RESULT bool removeAttachment(const MessageCore::AttachmentPart::Ptr &part);
     Q_REQUIRED_RESULT MessageCore::AttachmentPart::List attachments() const;
 

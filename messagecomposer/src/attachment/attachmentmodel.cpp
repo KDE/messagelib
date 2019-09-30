@@ -369,7 +369,7 @@ bool AttachmentModel::setData(const QModelIndex &index, const QVariant &value, i
     return true;
 }
 
-bool AttachmentModel::addAttachment(AttachmentPart::Ptr part)
+bool AttachmentModel::addAttachment(const AttachmentPart::Ptr &part)
 {
     Q_ASSERT(!d->parts.contains(part));
 
@@ -379,7 +379,7 @@ bool AttachmentModel::addAttachment(AttachmentPart::Ptr part)
     return true;
 }
 
-bool AttachmentModel::updateAttachment(AttachmentPart::Ptr part)
+bool AttachmentModel::updateAttachment(const AttachmentPart::Ptr &part)
 {
     int idx = d->parts.indexOf(part);
     if (idx == -1) {
@@ -391,7 +391,7 @@ bool AttachmentModel::updateAttachment(AttachmentPart::Ptr part)
     return true;
 }
 
-bool AttachmentModel::replaceAttachment(AttachmentPart::Ptr oldPart, AttachmentPart::Ptr newPart)
+bool AttachmentModel::replaceAttachment(const AttachmentPart::Ptr &oldPart, const AttachmentPart::Ptr &newPart)
 {
     Q_ASSERT(oldPart != newPart);
 
