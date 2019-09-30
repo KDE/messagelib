@@ -34,9 +34,9 @@ void DKIMManagerKeyWidgetTest::shouldHaveDefaultValue()
 
     QVBoxLayout *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
-    QCOMPARE(mainLayout->margin(), 0);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
     QTreeWidget *mTreeWidget = w.findChild<QTreeWidget *>(QStringLiteral("treewidget"));
     QVERIFY(mTreeWidget);
-    //TODO verify that it's empty
+    QCOMPARE(mTreeWidget->topLevelItemCount(), 0);
 }

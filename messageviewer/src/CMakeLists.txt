@@ -47,7 +47,9 @@ add_subdirectory(about)
 add_subdirectory(messageviewerheaderplugins)
 
 if (DKIM_CHECKER_BUILD)
-    add_subdirectory(dkim-verify)
+    if (BUILD_TESTING)
+        add_subdirectory(dkim-verify/autotests)
+    endif()
     set(dkim_verify_SRCS
         dkim-verify/dkiminfo.cpp
         dkim-verify/dkimmanagerkey.cpp

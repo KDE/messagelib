@@ -31,7 +31,7 @@ public:
     ~DKIMCheckSignatureJob();
     void start();
 
-    bool canStart() const;
+    Q_REQUIRED_RESULT bool canStart() const;
 };
 }
 
