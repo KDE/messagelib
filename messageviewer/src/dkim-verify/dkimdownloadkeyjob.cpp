@@ -37,6 +37,7 @@ void DKIMDownloadKeyJob::start()
         return;
     }
     //TODO
+    deleteLater();
 }
 
 bool DKIMDownloadKeyJob::canStart() const
