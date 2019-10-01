@@ -21,6 +21,8 @@
 #include "messagecomposer_debug.h"
 #include "composer/composerviewinterface.h"
 #include <TemplateParser/TemplatesUtil>
+#include <KEmailAddress>
+#include <KMime/Types>
 using namespace MessageComposer;
 ConvertSnippetVariablesJob::ConvertSnippetVariablesJob(QObject *parent)
     : QObject(parent)
@@ -85,11 +87,11 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("CCFNAME"))) {
                 i += strlen("CCFNAME");
-                const QString str = TemplateParser::Util::getFirstNameFromEmail(composerView->cc());
+                const QString str = getFirstNameFromEmail(composerView->cc());
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("CCLNAME"))) {
                 i += strlen("CCLNAME");
-                const QString str = TemplateParser::Util::getLastNameFromEmail(composerView->cc());
+                const QString str = getLastNameFromEmail(composerView->cc());
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("FULLSUBJECT"))) {
                 i += strlen("FULLSUBJECT");
@@ -101,11 +103,11 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("TOFNAME"))) {
                 i += strlen("TOFNAME");
-                const QString str = TemplateParser::Util::getFirstNameFromEmail(composerView->to());
+                const QString str = getFirstNameFromEmail(composerView->to());
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("TOLNAME"))) {
                 i += strlen("TOLNAME");
-                const QString str = TemplateParser::Util::getLastNameFromEmail(composerView->to());
+                const QString str = getLastNameFromEmail(composerView->to());
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("FROMADDR"))) {
                 i += strlen("FROMADDR");
@@ -113,11 +115,11 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("FROMFNAME"))) {
                 i += strlen("FROMFNAME");
-                const QString str = TemplateParser::Util::getFirstNameFromEmail(composerView->from());
+                const QString str = getFirstNameFromEmail(composerView->from());
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("FROMLNAME"))) {
                 i += strlen("FROMLNAME");
-                const QString str = TemplateParser::Util::getLastNameFromEmail(composerView->from());
+                const QString str = getLastNameFromEmail(composerView->from());
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("DOW"))) {
                 i += strlen("DOW");
@@ -163,4 +165,38 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
         }
     }
     return result;
+}
+
+QString ConvertSnippetVariablesJob::getFirstNameFromEmail(QString address)
+{
+    const QStringList lst = address.split(QStringLiteral(", "));
+    QStringList resultName;
+    for (const QString &str : lst) {
+        KMime::Types::Mailbox address;
+        address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
+        const QString firstName = TemplateParser::Util::getLastNameFromEmail(address.name());
+        if (!firstName.isEmpty()) {
+            resultName << firstName;
+        }
+    }
+
+    const QString str = resultName.isEmpty() ? QString() : resultName.join(QStringLiteral(", "));
+    return str;
+}
+
+QString ConvertSnippetVariablesJob::getLastNameFromEmail(QString address)
+{
+    const QStringList lst = address.split(QStringLiteral(", "));
+    QStringList resultName;
+    for (const QString &str : lst) {
+        KMime::Types::Mailbox address;
+        address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
+        const QString lastName = TemplateParser::Util::getLastNameFromEmail(address.name());
+        if (!lastName.isEmpty()) {
+            resultName << lastName;
+        }
+    }
+
+    const QString str = resultName.isEmpty() ? QString() : resultName.join(QStringLiteral(", "));
+    return str;
 }

@@ -44,6 +44,8 @@ Q_SIGNALS:
     void textConverted(const QString &str);
 
 private:
+    static QString getFirstNameFromEmail(QString address);
+    static QString getLastNameFromEmail(QString address);
     QString mText;
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };
