@@ -318,6 +318,15 @@ ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     PREFIX MessageViewer
     RELATIVE scamdetection
     )
+if (DKIM_CHECKER_BUILD)
+ecm_generate_headers(MessageViewer_Cameldkimverify_HEADERS
+    HEADER_NAMES
+    DKIMManagerKey
+    REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
+    PREFIX MessageViewer
+    RELATIVE dkim-verify
+    )
+endif()
 
 
 ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
@@ -446,6 +455,19 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
     LIB_NAME KF5MessageViewer
     DEPS "PimCommon MessageCore AkonadiCore AkonadiMime Contacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
     )
+if (DKIM_CHECKER_BUILD)
+    install(FILES
+        ${MessageViewer_Cameldkimverify_HEADERS}
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
+        COMPONENT Devel
+        )
+
+    install(FILES
+        ${MessageViewer_dkimverify_HEADERS}
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer
+        COMPONENT Devel
+        )
+endif()
 
 
 install(FILES

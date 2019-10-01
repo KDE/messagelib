@@ -21,9 +21,9 @@
 #define DKIMMANAGERKEY_H
 
 #include <QObject>
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMManagerKey : public QObject
+class MESSAGEVIEWER_EXPORT DKIMManagerKey : public QObject
 {
     Q_OBJECT
 public:

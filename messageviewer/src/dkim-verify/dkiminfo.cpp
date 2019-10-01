@@ -45,7 +45,9 @@ void DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("t="))) {
             mSignatureTimeStamp = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("c="))) {
-
+            //TODO
+        } else if (elem.startsWith(QLatin1String("bh="))) {
+            mBodyHash = elem.right(elem.length() - 3);
         } else if (elem.startsWith(QLatin1String("l="))) {
             mBodyLenghtCount = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("i="))) {
