@@ -26,7 +26,6 @@ QTEST_GUILESS_MAIN(ConvertSnippetVariablesUtilTest)
 ConvertSnippetVariablesUtilTest::ConvertSnippetVariablesUtilTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void ConvertSnippetVariablesUtilTest::shouldTranslateVariables()

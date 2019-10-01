@@ -75,7 +75,6 @@ void ConvertSnippetVariableMenu::initializeMenu()
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcFname);
     });
 
-
     mMenu->addMenu(ccMenuVariable);
 
     QMenu *attachmentMenuVariable = new QMenu(i18n("Attachment"), mMenu);

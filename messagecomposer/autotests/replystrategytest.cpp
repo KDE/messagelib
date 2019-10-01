@@ -32,7 +32,6 @@
 #include <MessageComposer/InfoPart>
 #include <MessageComposer/TextPart>
 
-
 const auto defaultAddress {QStringLiteral("default@example.org")};
 const auto nondefaultAddress {QStringLiteral("nondefault@example.com")};
 const auto friend1Address {QStringLiteral("friend1@example.net")};
@@ -41,7 +40,6 @@ const auto replyAddress {QStringLiteral("reply@example.com")};
 const auto followupAddress {QStringLiteral("followup@example.org")};
 const auto listAddress {QStringLiteral("list@example.com")};
 const QStringList nobody {};
-
 
 static inline const QStringList only(const QString &address)
 {
@@ -53,9 +51,7 @@ static inline const QStringList both(const QString &address1, const QString &add
     return QStringList {address1, address2};
 }
 
-
 using namespace MessageComposer;
-
 
 static KMime::Message::Ptr basicMessage(const QString &fromAddress, const QStringList &toAddresses)
 {
@@ -69,14 +65,13 @@ static KMime::Message::Ptr basicMessage(const QString &fromAddress, const QStrin
     return composer.resultMessages().first();
 }
 
-
 #define COMPARE_ADDRESSES(actual, expected) \
     if (!compareAddresses(actual, expected)) { \
         QFAIL(qPrintable(QStringLiteral("%1 is \"%2\"") \
-            .arg(QString::fromLatin1(#actual), actual->displayString()))); \
+                         .arg(QString::fromLatin1(#actual), actual->displayString()))); \
         return; \
     }
-    
+
 template<class T>
 bool compareAddresses(const T *actual, const QStringList &expected)
 {
@@ -92,13 +87,11 @@ bool compareAddresses(const T *actual, const QStringList &expected)
     return true;
 }
 
-
 ReplyStrategyTest::ReplyStrategyTest(QObject *parent)
     : QObject(parent)
 {
     QStandardPaths::setTestModeEnabled(true);
 }
-
 
 ReplyStrategyTest::~ReplyStrategyTest()
 {
@@ -107,13 +100,12 @@ ReplyStrategyTest::~ReplyStrategyTest()
     QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
 }
 
-
 void ReplyStrategyTest::initTestCase()
 {
     QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
-        + QDir::separator() + QStringLiteral("emailidentities"));
+                  + QDir::separator() + QStringLiteral("emailidentities"));
     QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
-        + QDir::separator() + QStringLiteral("emaildefaults"));
+                  + QDir::separator() + QStringLiteral("emaildefaults"));
 
     mIdentityManager = new KIdentityManagement::IdentityManager;
 
@@ -131,12 +123,10 @@ void ReplyStrategyTest::initTestCase()
     mIdentityManager->commit();
 }
 
-
 void ReplyStrategyTest::cleanupTestCase()
 {
     delete mIdentityManager;
 }
-
 
 KMime::Message::Ptr ReplyStrategyTest::makeReply(const KMime::Message::Ptr &original, const ReplyStrategy strategy)
 {
@@ -150,10 +140,9 @@ KMime::Message::Ptr ReplyStrategyTest::makeReply(const KMime::Message::Ptr &orig
         QVERIFY(spy.wait());
         QCOMPARE(spy.count(), 1);
         result = spy.at(0).at(0).value<MessageFactoryNG::MessageReply>().msg;
-    }();
+    } ();
     return result;
 }
-
 
 void ReplyStrategyTest::testReply_data()
 {
@@ -305,7 +294,7 @@ void ReplyStrategyTest::testReply_data()
         << only(listAddress) << nobody << listAddress
         << (int)ReplyAuthor << defaultAddress << only(friend1Address) << nobody;
 
-    // If Reply-To contains List-Post, ReplyAuthor uses the other reply 
+    // If Reply-To contains List-Post, ReplyAuthor uses the other reply
     // addresses, because the mailing list didn't completely munge Reply-To.
     QTest::newRow("ReplyAuthor, from list that lightly munges Reply-To")
         << friend1Address << only(defaultAddress) << only(friend2Address)
@@ -315,12 +304,11 @@ void ReplyStrategyTest::testReply_data()
     // Reply to None
     // -------------
     // ReplyNone ignores all possible headers and does not choose a To address.
-    QTest::newRow("ReplyNone") 
+    QTest::newRow("ReplyNone")
         << friend1Address << only(defaultAddress) << only(friend2Address)
         << only(replyAddress) << only(followupAddress) << listAddress
         << (int)ReplyNone << defaultAddress << nobody << nobody;
 }
-
 
 void ReplyStrategyTest::testReply()
 {
@@ -334,7 +322,7 @@ void ReplyStrategyTest::testReply()
     QFETCH(const QString, rFrom);
     QFETCH(const QStringList, rTo);
     QFETCH(const QStringList, rCc);
-    
+
     auto original {basicMessage(oFrom, oTo)};
     if (!oCc.isEmpty()) {
         auto cc {new KMime::Headers::Cc};
@@ -360,13 +348,12 @@ void ReplyStrategyTest::testReply()
         listPost->from7BitString("<mailto:" + oLP.toLatin1() + ">");
         original->setHeader(listPost);
     }
-    
+
     if (auto reply = makeReply(original, (ReplyStrategy)strategy)) {
         COMPARE_ADDRESSES(reply->from(), only(rFrom));
         COMPARE_ADDRESSES(reply->to(), rTo);
         COMPARE_ADDRESSES(reply->cc(), rCc);
     }
 }
-
 
 QTEST_MAIN(ReplyStrategyTest)

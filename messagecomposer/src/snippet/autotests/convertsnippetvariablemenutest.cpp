@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "convertsnippetvariablemenutest.h"
 #include "snippet/convertsnippetvariablemenu.h"
 #include <QTest>
@@ -26,7 +25,6 @@ QTEST_MAIN(ConvertSnippetVariableMenuTest)
 ConvertSnippetVariableMenuTest::ConvertSnippetVariableMenuTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void ConvertSnippetVariableMenuTest::shouldHaveDefaultValues()

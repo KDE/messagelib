@@ -160,7 +160,7 @@ void MessageFactoryNG::createReplyAsync()
 
             if (m_identityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalFromList))
                 && !m_identityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalToList))
-            ) {
+                ) {
                 // Sender seems to be one of our own identities and recipient is not,
                 // so we assume that this is a reply to a "sent" mail where the user
                 // wants to add additional information for the recipient.

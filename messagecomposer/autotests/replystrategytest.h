@@ -20,7 +20,6 @@
 #ifndef REPLYSTRATEGY_TEST_H
 #define REPLYSTRATEGY_TEST_H
 
-
 #include <KMime/Message>
 
 #include <QObject>
@@ -45,10 +44,10 @@ private Q_SLOTS:
 
     void testReply_data();
     void testReply();
-    
+
 private:
-    KMime::Message::Ptr makeReply(const KMime::Message::Ptr& original, const MessageComposer::ReplyStrategy strategy);
-    
+    KMime::Message::Ptr makeReply(const KMime::Message::Ptr &original, const MessageComposer::ReplyStrategy strategy);
+
     KIdentityManagement::IdentityManager *mIdentityManager;
 };
 
