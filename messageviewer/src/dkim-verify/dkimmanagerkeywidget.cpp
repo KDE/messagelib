@@ -42,6 +42,7 @@ DKIMManagerKeyWidget::~DKIMManagerKeyWidget()
 
 void DKIMManagerKeyWidget::loadKeys()
 {
+    //DKIMManagerKey::self()->loadKeys();
     //TODO
 }
 

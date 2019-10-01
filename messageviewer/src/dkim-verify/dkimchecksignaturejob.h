@@ -27,6 +27,13 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckSignatureJob : public QObject
 {
     Q_OBJECT
 public:
+    enum class DKIMStatus {
+        Unknown,
+        Valid,
+        Invalid,
+        EmailNotSigned
+    };
+
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
     ~DKIMCheckSignatureJob();
     void start();

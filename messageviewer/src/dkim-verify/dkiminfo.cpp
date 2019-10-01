@@ -28,12 +28,11 @@ DKIMInfo::DKIMInfo()
 {
 }
 
-void DKIMInfo::parseDKIM(const QString &header)
+bool DKIMInfo::parseDKIM(const QString &header)
 {
     if (header.isEmpty()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Error: trying to parse empty header";
-        //TODO error ?
-        return;
+        return false;
     }
     const QStringList items = header.split(QLatin1Char(';'));
     for (int i = 0; i < items.count(); ++i) {
@@ -69,7 +68,7 @@ void DKIMInfo::parseDKIM(const QString &header)
             qCWarning(MESSAGEVIEWER_LOG) << " Unknown element type" << elem;
         }
     }
-    //TODO
+    return true;
 }
 
 QString DKIMInfo::version() const
