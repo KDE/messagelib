@@ -235,7 +235,7 @@ static QString check_x_ml_name(const KMime::Message::Ptr &message, QByteArray &h
     return header;
 }
 
-static const MagicDetectorFunc magic_detector[] = {
+static const MagicDetectorFunc magic_detectors[] = {
     check_list_id,
     check_list_post,
     check_sender,
@@ -246,8 +246,6 @@ static const MagicDetectorFunc magic_detector[] = {
     check_x_loop,
     check_x_ml_name
 };
-
-static const int num_detectors = sizeof(magic_detector) / sizeof(magic_detector[0]);
 
 static QStringList headerToAddress(const QString &header)
 {
@@ -355,8 +353,8 @@ QString MailingList::name(const KMime::Message::Ptr &message, QByteArray &header
         return QString();
     }
 
-    for (int i = 0; i < num_detectors; ++i) {
-        mailingList = magic_detector[i](message, headerName, headerValue);
+    for (const MagicDetectorFunc &detector : magic_detectors) {
+        mailingList = detector(message, headerName, headerValue);
         if (!mailingList.isNull()) {
             return mailingList;
         }
