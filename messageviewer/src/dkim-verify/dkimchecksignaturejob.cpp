@@ -45,3 +45,13 @@ bool DKIMCheckSignatureJob::canStart() const
     //TODO
     return false;
 }
+
+QString DKIMCheckSignatureJob::dkimValue() const
+{
+    return mDkimValue;
+}
+
+void DKIMCheckSignatureJob::setDkimValue(const QString &dkimValue)
+{
+    mDkimValue = dkimValue;
+}

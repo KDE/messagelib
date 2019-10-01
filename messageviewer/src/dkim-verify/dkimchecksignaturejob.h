@@ -39,6 +39,12 @@ public:
     void start();
 
     Q_REQUIRED_RESULT bool canStart() const;
+
+    Q_REQUIRED_RESULT QString dkimValue() const;
+    void setDkimValue(const QString &dkimValue);
+
+private:
+    QString mDkimValue;
 };
 }
 
