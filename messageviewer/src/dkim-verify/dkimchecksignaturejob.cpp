@@ -18,6 +18,7 @@
 */
 
 #include "dkimchecksignaturejob.h"
+#include "dkiminfo.h"
 #include "messageviewer_debug.h"
 using namespace MessageViewer;
 DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)
@@ -31,19 +32,25 @@ DKIMCheckSignatureJob::~DKIMCheckSignatureJob()
 
 void DKIMCheckSignatureJob::start()
 {
-    if (!canStart()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start job";
+    if (mDkimValue.isEmpty()) {
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned);
         deleteLater();
         return;
     }
+    DKIMInfo info;
+    if (!info.parseDKIM(mDkimValue)) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to parse header" << mDkimValue;
+        deleteLater();
+        return;
+    }
+    checkSignature(info);
     //TODO
     deleteLater();
 }
 
-bool DKIMCheckSignatureJob::canStart() const
+void DKIMCheckSignatureJob::checkSignature(const DKIMInfo &info)
 {
     //TODO
-    return false;
 }
 
 QString DKIMCheckSignatureJob::dkimValue() const

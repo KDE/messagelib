@@ -23,6 +23,7 @@
 #include <QObject>
 #include "messageviewer_private_export.h"
 namespace MessageViewer {
+class DKIMInfo;
 class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckSignatureJob : public QObject
 {
     Q_OBJECT
@@ -38,13 +39,13 @@ public:
     ~DKIMCheckSignatureJob();
     void start();
 
-    Q_REQUIRED_RESULT bool canStart() const;
-
     Q_REQUIRED_RESULT QString dkimValue() const;
     void setDkimValue(const QString &dkimValue);
-
+Q_SIGNALS:
+    void result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
 private:
     QString mDkimValue;
+    void checkSignature(const MessageViewer::DKIMInfo &info);
 };
 }
 

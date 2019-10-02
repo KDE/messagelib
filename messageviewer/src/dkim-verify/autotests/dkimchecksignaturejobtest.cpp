@@ -18,10 +18,17 @@
 */
 
 #include "dkimchecksignaturejobtest.h"
+#include "dkim-verify/dkimchecksignaturejob.h"
 #include <QTest>
 QTEST_MAIN(DKIMCheckSignatureJobTest)
 
 DKIMCheckSignatureJobTest::DKIMCheckSignatureJobTest(QObject *parent)
     : QObject(parent)
 {
+}
+
+void DKIMCheckSignatureJobTest::shouldHaveDefaultValues()
+{
+    MessageViewer::DKIMCheckSignatureJob job;
+    QVERIFY(job.dkimValue().isEmpty());
 }

@@ -28,6 +28,8 @@ class DKIMCheckSignatureJobTest : public QObject
 public:
     explicit DKIMCheckSignatureJobTest(QObject *parent = nullptr);
     ~DKIMCheckSignatureJobTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
 
 #endif // DKIMCHECKSIGNATUREJOBTEST_H
