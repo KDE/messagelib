@@ -50,7 +50,7 @@ void DKIMCheckSignatureJob::start()
 
 void DKIMCheckSignatureJob::checkSignature(const DKIMInfo &info)
 {
-    //TODO
+    //TODO check if info is valid
 }
 
 QString DKIMCheckSignatureJob::dkimValue() const
