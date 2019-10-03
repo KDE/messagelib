@@ -322,6 +322,8 @@ if (DKIM_CHECKER_BUILD)
 ecm_generate_headers(MessageViewer_Cameldkimverify_HEADERS
     HEADER_NAMES
     DKIMManagerKey
+    DKIMCheckSignatureJob
+    DKIMInfo
     REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
     PREFIX MessageViewer
     RELATIVE dkim-verify

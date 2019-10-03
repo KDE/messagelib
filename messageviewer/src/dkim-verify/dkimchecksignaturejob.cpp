@@ -47,11 +47,37 @@ void DKIMCheckSignatureJob::start()
         deleteLater();
         return;
     }
-    checkSignature(info);
+    const MessageViewer::DKIMCheckSignatureJob::DKIMStatus status = checkSignature(info);
+    if (status != MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid) {
+        Q_EMIT result(status);
+        deleteLater();
+        return;
+    }
+    //ComputeBodyHash now.
+    switch (info.bodyCanonization()) {
+    case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
+        //Return ?
+        break;
+    case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
+        break;
+    case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
+        break;
+    }
+    //Compute Hash Header
+    switch (info.headerCanonization()) {
+    case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
+        //Return ?
+        break;
+    case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
+        break;
+    case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
+        break;
+    }
+
     deleteLater();
 }
 
-void DKIMCheckSignatureJob::checkSignature(const DKIMInfo &info)
+MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSignature(const DKIMInfo &info)
 {
     const qint64 currentDate = QDateTime::currentSecsSinceEpoch();
     if (info.expireTime() != -1 && info.expireTime() < currentDate) {
@@ -62,25 +88,32 @@ void DKIMCheckSignatureJob::checkSignature(const DKIMInfo &info)
     }
     if (info.signature().isEmpty()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Signature doesn't exist";
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
-        return;
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::MissingSignature;
+        return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
     if (!info.listSignedHeader().contains(QLatin1String("from"))) {
         qCWarning(MESSAGEVIEWER_LOG) << "From is not include in headers list";
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
-        return;
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::MissingFrom;
+        return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
     if (info.domain().isEmpty()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Domain is not defined.";
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
-        return;
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::DomainNotExist;
+        return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
     if (info.query() != QLatin1String("dns/txt")) {
         qCWarning(MESSAGEVIEWER_LOG) << "Query is incorrect: " << info.query();
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidQueryMethod;
+        return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
     //Add more test
     //TODO check if info is valid
+    return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+}
+
+DKIMCheckSignatureJob::DKIMError DKIMCheckSignatureJob::error() const
+{
+    return mError;
 }
 
 QString DKIMCheckSignatureJob::warningFound() const

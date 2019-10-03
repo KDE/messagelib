@@ -21,10 +21,10 @@
 #define DKIMCHECKSIGNATUREJOB_H
 
 #include <QObject>
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 namespace MessageViewer {
 class DKIMInfo;
-class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckSignatureJob : public QObject
+class MESSAGEVIEWER_EXPORT DKIMCheckSignatureJob : public QObject
 {
     Q_OBJECT
 public:
@@ -36,8 +36,12 @@ public:
     };
 
     enum class DKIMError {
-        Unknown,
+        Any,
         CorruptedBodyHash,
+        DomainNotExist,
+        MissingFrom,
+        MissingSignature,
+        InvalidQueryMethod,
         //TODO add more
     };
 
@@ -53,14 +57,17 @@ public:
 
     Q_REQUIRED_RESULT QString warningFound() const;
     void setWarningFound(const QString &warningFound);
+    Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::DKIMStatus checkSignature(const MessageViewer::DKIMInfo &info);
+
+    Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMError error() const;
 
 Q_SIGNALS:
     void result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
 
 private:
-    void checkSignature(const MessageViewer::DKIMInfo &info);
     QString mDkimValue;
     QString mWarningFound;
+    DKIMCheckSignatureJob::DKIMError mError = DKIMCheckSignatureJob::DKIMError::Any;
     DKIMCheckSignatureJob::DKIMStatus mStatus = DKIMCheckSignatureJob::DKIMStatus::Unknown;
 };
 }

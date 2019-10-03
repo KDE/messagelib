@@ -21,8 +21,9 @@
 #define DKIMDOWNLOADKEYJOB_H
 
 #include <QObject>
+#include "messageviewer_export.h"
 namespace MessageViewer {
-class DKIMDownloadKeyJob : public QObject
+class MESSAGEVIEWER_EXPORT DKIMDownloadKeyJob : public QObject
 {
     Q_OBJECT
 public:
@@ -36,6 +37,8 @@ public:
 Q_SIGNALS:
     void success();
     void error(const QString &err);
+private:
+    QString mUrl; //TODO ?
 };
 }
 

@@ -20,12 +20,12 @@
 #ifndef DKIMINFO_H
 #define DKIMINFO_H
 
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 #include <QString>
 #include <QStringList>
 #include <QObject>
 namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMInfo
+class MESSAGEVIEWER_EXPORT DKIMInfo
 {
 public:
     DKIMInfo();
@@ -111,5 +111,5 @@ private:
 };
 }
 Q_DECLARE_METATYPE(MessageViewer::DKIMInfo)
-MESSAGEVIEWER_TESTS_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMInfo &t);
+MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMInfo &t);
 #endif // DKIMINFO_H
