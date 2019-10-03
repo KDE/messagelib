@@ -35,6 +35,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         return false;
     }
     const QStringList items = header.split(QLatin1Char(';'));
+    bool foundCanonizations = false;
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QLatin1String("v="))) {
@@ -46,6 +47,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("c="))) {
             //Parse header/body canonicalization (example c=relaxed/simple) only relaxed and simple.
             parseCanonicalization(elem.right(elem.length() - 2));
+            foundCanonizations = true;
         } else if (elem.startsWith(QLatin1String("bh="))) {
             mBodyHash = elem.right(elem.length() - 3);
         } else if (elem.startsWith(QLatin1String("l="))) {
@@ -63,18 +65,49 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("h="))) {
             mListSignedHeader = elem.right(elem.length() - 2).split(QLatin1Char(':'));
         } else if (elem.startsWith(QLatin1String("hb="))) {
+
         } else if (elem.startsWith(QLatin1String("x="))) {
             mExpireTime = elem.right(elem.length() - 2);
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << " Unknown element type" << elem;
         }
     }
+    if (!foundCanonizations) { //Default
+        mHeaderCanonization = Simple;
+        mBodyCanonization = Simple;
+    }
     return true;
 }
 
 void DKIMInfo::parseCanonicalization(const QString &str)
 {
-    //TODO default is "simple/simple" optional!
+    if (!str.isEmpty()) {
+        const QStringList canonicalizations = str.split(QLatin1Char('/'));
+        if (canonicalizations.count() >= 1) {
+            if (canonicalizations.at(0) == QLatin1String("relaxed")) {
+                mHeaderCanonization = DKIMInfo::Relaxed;
+            } else if (canonicalizations.at(0) == QLatin1String("simple")) {
+                mHeaderCanonization = DKIMInfo::Simple;
+            } else {
+                qCWarning(MESSAGEVIEWER_LOG) << "canonicalizations for header unknown " << canonicalizations.at(0);
+                return;
+            }
+            if (canonicalizations.count() == 1) {
+                mBodyCanonization = DKIMInfo::Simple;
+            } else if (canonicalizations.count() == 2) {
+                if (canonicalizations.at(1) == QLatin1String("relaxed")) {
+                    mBodyCanonization = DKIMInfo::Relaxed;
+                } else if (canonicalizations.at(1) == QLatin1String("simple")) {
+                    mBodyCanonization = DKIMInfo::Simple;
+                } else {
+                    qCWarning(MESSAGEVIEWER_LOG) << "canonicalizations for body unknown " << canonicalizations.at(1);
+                    return;
+                }
+            } else {
+                qCWarning(MESSAGEVIEWER_LOG) << " Problem during parsing canonicalizations " << str;
+            }
+        }
+    }
 }
 
 DKIMInfo::CanonicalizationType DKIMInfo::bodyCanonization() const
