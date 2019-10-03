@@ -73,6 +73,7 @@ public:
 
 private:
     QString mVersion;
+    void parseCanonicalization(const QString &str);
     QString mHashingAlgorithm;
     QString mSigningAlgorithm;
     QString mDomain;
@@ -84,8 +85,7 @@ private:
     QString mSignature;
     QString mUserAgent;
     QString mBodyLenghtCount;
-    QStringList mListSignedHeader;
-
+    QStringList mListSignedHeader;    
 };
 }
 

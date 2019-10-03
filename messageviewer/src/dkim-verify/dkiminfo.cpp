@@ -44,7 +44,8 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("t="))) {
             mSignatureTimeStamp = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("c="))) {
-            //TODO
+            //Parse header/body canonicalization (example c=relaxed/simple) only relaxed and simple.
+            parseCanonicalization(elem.right(elem.length() - 2));
         } else if (elem.startsWith(QLatin1String("bh="))) {
             mBodyHash = elem.right(elem.length() - 3);
         } else if (elem.startsWith(QLatin1String("l="))) {
@@ -60,15 +61,20 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("b="))) {
             mSignature = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("h="))) {
-            //mListSignedHeader = elem.right(elem.length() - 2);
-            //TODO parse elements.
-            //mHashingAlgorithm = elem.right(elem.length() - 2);
+            mListSignedHeader = elem.right(elem.length() - 2).split(QLatin1Char(':'));
         } else if (elem.startsWith(QLatin1String("hb="))) {
+        } else if (elem.startsWith(QLatin1String("x="))) {
+            mExpireTime = elem.right(elem.length() - 2);
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << " Unknown element type" << elem;
         }
     }
     return true;
+}
+
+void DKIMInfo::parseCanonicalization(const QString &str)
+{
+
 }
 
 QString DKIMInfo::version() const
