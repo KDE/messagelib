@@ -24,6 +24,12 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
     switch (type) {
     case CcAddr:
         return QLatin1String("%CCADDR");
+    case CcLname:
+        return QLatin1String("%CCLNAME");
+    case CcFname:
+        return QLatin1String("%CCFNAME");
+    case CcName:
+        return QLatin1String("%CCNAME");
     case FullSubject:
         return QLatin1String("%FULLSUBJECT");
     case ToAddr:
@@ -32,16 +38,16 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
         return QLatin1String("%TOFNAME");
     case ToLname:
         return QLatin1String("%TOLNAME");
+    case ToName:
+        return QLatin1String("%TONAME");
     case FromAddr:
         return QLatin1String("%FROMADDR");
     case FromLname:
         return QLatin1String("%FROMLNAME");
     case FromFname:
         return QLatin1String("%FROMFNAME");
-    case CcLname:
-        return QLatin1String("%CCLNAME");
-    case CcFname:
-        return QLatin1String("%CCFNAME");
+    case FromName:
+        return QLatin1String("%FROMNAME");
     case Dow:
         return QLatin1String("%DOW");
     case Date:

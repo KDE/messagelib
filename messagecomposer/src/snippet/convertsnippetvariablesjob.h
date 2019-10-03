@@ -46,6 +46,7 @@ Q_SIGNALS:
 private:
     static QString getFirstNameFromEmail(QString address);
     static QString getLastNameFromEmail(QString address);
+    static QString getNameFromEmail(QString address);
     QString mText;
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };

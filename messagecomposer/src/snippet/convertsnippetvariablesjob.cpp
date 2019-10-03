@@ -93,6 +93,10 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                 i += strlen("CCLNAME");
                 const QString str = getLastNameFromEmail(composerView->cc());
                 result.append(str);
+            } else if (cmd.startsWith(QLatin1String("CCNAME"))) {
+                i += strlen("CCNAME");
+                const QString str = getNameFromEmail(composerView->cc());
+                result.append(str);
             } else if (cmd.startsWith(QLatin1String("FULLSUBJECT"))) {
                 i += strlen("FULLSUBJECT");
                 const QString str = composerView->subject();
@@ -109,6 +113,10 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                 i += strlen("TOLNAME");
                 const QString str = getLastNameFromEmail(composerView->to());
                 result.append(str);
+            } else if (cmd.startsWith(QLatin1String("TONAME"))) {
+                i += strlen("TONAME");
+                const QString str = getNameFromEmail(composerView->to());
+                result.append(str);
             } else if (cmd.startsWith(QLatin1String("FROMADDR"))) {
                 i += strlen("FROMADDR");
                 const QString str = composerView->from();
@@ -120,6 +128,10 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
             } else if (cmd.startsWith(QLatin1String("FROMLNAME"))) {
                 i += strlen("FROMLNAME");
                 const QString str = getLastNameFromEmail(composerView->from());
+                result.append(str);
+            } else if (cmd.startsWith(QLatin1String("FROMNAME"))) {
+                i += strlen("FROMNAME");
+                const QString str = getNameFromEmail(composerView->from());
                 result.append(str);
             } else if (cmd.startsWith(QLatin1String("DOW"))) {
                 i += strlen("DOW");
@@ -165,6 +177,23 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
         }
     }
     return result;
+}
+
+QString ConvertSnippetVariablesJob::getNameFromEmail(QString address)
+{
+    const QStringList lst = address.split(QStringLiteral(", "));
+    QStringList resultName;
+    for (const QString &str : lst) {
+        KMime::Types::Mailbox address;
+        address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
+        const QString firstName = address.name();
+        if (!firstName.isEmpty()) {
+            resultName << firstName;
+        }
+    }
+
+    const QString str = resultName.isEmpty() ? QString() : resultName.join(QStringLiteral(", "));
+    return str;
 }
 
 QString ConvertSnippetVariablesJob::getFirstNameFromEmail(QString address)

@@ -50,6 +50,9 @@ void ConvertSnippetVariableMenu::initializeMenu()
     toMenuVariable->addAction(i18n("To Field First Name"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToFname);
     });
+    toMenuVariable->addAction(i18n("To Field Name"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToName);
+    });
     mMenu->addMenu(toMenuVariable);
 
     QMenu *fromMenuVariable = new QMenu(i18n("From"), mMenu);
@@ -62,6 +65,9 @@ void ConvertSnippetVariableMenu::initializeMenu()
     fromMenuVariable->addAction(i18n("From Field First Name"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromFname);
     });
+    fromMenuVariable->addAction(i18n("From Field Name"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromName);
+    });
     mMenu->addMenu(fromMenuVariable);
 
     QMenu *ccMenuVariable = new QMenu(i18n("CC"), mMenu);
@@ -73,6 +79,9 @@ void ConvertSnippetVariableMenu::initializeMenu()
     });
     ccMenuVariable->addAction(i18n("CC Field First Name"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcFname);
+    });
+    ccMenuVariable->addAction(i18n("CC Field Name"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcName);
     });
 
     mMenu->addMenu(ccMenuVariable);
