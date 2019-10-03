@@ -20,6 +20,9 @@
 #include "dkimchecksignaturejob.h"
 #include "dkiminfo.h"
 #include "messageviewer_debug.h"
+#include <KLocalizedString>
+#include <QDateTime>
+
 using namespace MessageViewer;
 DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)
     : QObject(parent)
@@ -44,13 +47,45 @@ void DKIMCheckSignatureJob::start()
         return;
     }
     checkSignature(info);
-    //TODO
     deleteLater();
 }
 
 void DKIMCheckSignatureJob::checkSignature(const DKIMInfo &info)
 {
+    const qint64 currentDate = QDateTime::currentSecsSinceEpoch();
+    if (info.expireTime() != -1 && info.expireTime() < currentDate) {
+        mWarningFound = i18n("Signature Expired");
+    }
+    if (info.signatureTimeStamp() != -1 && info.signatureTimeStamp() > currentDate) {
+        mWarningFound += i18n("Signature created in the future");
+    }
+    if (info.signature().isEmpty()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Signature doesn't exist";
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        return;
+    }
+    //Add more test
     //TODO check if info is valid
+}
+
+QString DKIMCheckSignatureJob::warningFound() const
+{
+    return mWarningFound;
+}
+
+void DKIMCheckSignatureJob::setWarningFound(const QString &warningFound)
+{
+    mWarningFound = warningFound;
+}
+
+DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::status() const
+{
+    return mStatus;
+}
+
+void DKIMCheckSignatureJob::setStatus(const DKIMCheckSignatureJob::DKIMStatus &status)
+{
+    mStatus = status;
 }
 
 QString DKIMCheckSignatureJob::dkimValue() const

@@ -34,16 +34,19 @@ bool DKIMInfo::parseDKIM(const QString &header)
         qCWarning(MESSAGEVIEWER_LOG) << "Error: trying to parse empty header";
         return false;
     }
-    const QStringList items = header.split(QLatin1Char(';'));
+    const QStringList items = header.split(QLatin1String("; "));
     bool foundCanonizations = false;
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QLatin1String("v="))) {
-            mVersion = elem.right(elem.length() - 2);
+            mVersion = elem.right(elem.length() - 2).toInt();
+            if (mVersion != 1) {
+                qCWarning(MESSAGEVIEWER_LOG) << "Version is not correct " << mVersion;
+            }
         } else if (elem.startsWith(QLatin1String("a="))) {
             mSigningAlgorithm = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("t="))) {
-            mSignatureTimeStamp = elem.right(elem.length() - 2);
+            mSignatureTimeStamp = elem.right(elem.length() - 2).toLong();
         } else if (elem.startsWith(QLatin1String("c="))) {
             //Parse header/body canonicalization (example c=relaxed/simple) only relaxed and simple.
             parseCanonicalization(elem.right(elem.length() - 2));
@@ -64,10 +67,8 @@ bool DKIMInfo::parseDKIM(const QString &header)
             mSignature = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("h="))) {
             mListSignedHeader = elem.right(elem.length() - 2).split(QLatin1Char(':'));
-        } else if (elem.startsWith(QLatin1String("hb="))) {
-
         } else if (elem.startsWith(QLatin1String("x="))) {
-            mExpireTime = elem.right(elem.length() - 2);
+            mExpireTime = elem.right(elem.length() - 2).toLong();
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << " Unknown element type" << elem;
         }
@@ -76,6 +77,9 @@ bool DKIMInfo::parseDKIM(const QString &header)
         mHeaderCanonization = Simple;
         mBodyCanonization = Simple;
     }
+    if (mVersion == -1) {
+        mVersion = 1;
+    }
     return true;
 }
 
@@ -83,6 +87,7 @@ void DKIMInfo::parseCanonicalization(const QString &str)
 {
     if (!str.isEmpty()) {
         const QStringList canonicalizations = str.split(QLatin1Char('/'));
+        //qDebug() << " canonicalizations "<< canonicalizations;
         if (canonicalizations.count() >= 1) {
             if (canonicalizations.at(0) == QLatin1String("relaxed")) {
                 mHeaderCanonization = DKIMInfo::Relaxed;
@@ -90,6 +95,7 @@ void DKIMInfo::parseCanonicalization(const QString &str)
                 mHeaderCanonization = DKIMInfo::Simple;
             } else {
                 qCWarning(MESSAGEVIEWER_LOG) << "canonicalizations for header unknown " << canonicalizations.at(0);
+                mHeaderCanonization = DKIMInfo::Unknown;
                 return;
             }
             if (canonicalizations.count() == 1) {
@@ -101,10 +107,13 @@ void DKIMInfo::parseCanonicalization(const QString &str)
                     mBodyCanonization = DKIMInfo::Simple;
                 } else {
                     qCWarning(MESSAGEVIEWER_LOG) << "canonicalizations for body unknown " << canonicalizations.at(1);
+                    mBodyCanonization = DKIMInfo::Unknown;
                     return;
                 }
             } else {
                 qCWarning(MESSAGEVIEWER_LOG) << " Problem during parsing canonicalizations " << str;
+                mHeaderCanonization = DKIMInfo::Unknown;
+                mBodyCanonization = DKIMInfo::Unknown;
             }
         }
     }
@@ -120,6 +129,25 @@ void DKIMInfo::setBodyCanonization(const CanonicalizationType &bodyCanonization)
     mBodyCanonization = bodyCanonization;
 }
 
+bool DKIMInfo::operator==(const DKIMInfo &other) const
+{
+    return mVersion == other.version() &&
+            mHashingAlgorithm == other.hashingAlgorithm() &&
+            mSigningAlgorithm == other.signingAlgorithm() &&
+            mDomain == other.domain() &&
+            mSelector == other.selector() &&
+            mBodyHash == other.bodyHash() &&
+            mSignatureTimeStamp == other.signatureTimeStamp() &&
+            mExpireTime == other.expireTime() &&
+            mQuery == other.query() &&
+            mSignature == other.signature() &&
+            mUserAgent == other.userAgent() &&
+            mBodyLenghtCount == other.bodyLenghtCount() &&
+            mListSignedHeader == other.listSignedHeader() &&
+            mHeaderCanonization == other.headerCanonization() &&
+            mBodyCanonization == other.bodyCanonization();
+}
+
 DKIMInfo::CanonicalizationType DKIMInfo::headerCanonization() const
 {
     return mHeaderCanonization;
@@ -130,12 +158,12 @@ void DKIMInfo::setHeaderCanonization(const CanonicalizationType &headerCanonizat
     mHeaderCanonization = headerCanonization;
 }
 
-QString DKIMInfo::version() const
+int DKIMInfo::version() const
 {
     return mVersion;
 }
 
-void DKIMInfo::setVersion(const QString &version)
+void DKIMInfo::setVersion(int version)
 {
     mVersion = version;
 }
@@ -182,7 +210,9 @@ void DKIMInfo::setBodyHash(const QString &bodyHash)
 
 bool DKIMInfo::isValid() const
 {
-    //TODO verify
+    if (mBodyCanonization == DKIMInfo::Unknown || mHeaderCanonization == DKIMInfo::Unknown) {
+        return false;
+    }
 
     return !mSelector.isEmpty() && !mDomain.isEmpty() && !mBodyHash.isEmpty() && !mHashingAlgorithm.isEmpty();
 }
@@ -207,12 +237,12 @@ void DKIMInfo::setSigningAlgorithm(const QString &signingAlgorithm)
     mSigningAlgorithm = signingAlgorithm;
 }
 
-QString DKIMInfo::signatureTimeStamp() const
+qint64 DKIMInfo::signatureTimeStamp() const
 {
     return mSignatureTimeStamp;
 }
 
-void DKIMInfo::setSignatureTimeStamp(const QString &signatureTimeStamp)
+void DKIMInfo::setSignatureTimeStamp(qint64 signatureTimeStamp)
 {
     mSignatureTimeStamp = signatureTimeStamp;
 }
@@ -227,12 +257,12 @@ void DKIMInfo::setQuery(const QString &query)
     mQuery = query;
 }
 
-QString DKIMInfo::expireTime() const
+qint64 DKIMInfo::expireTime() const
 {
     return mExpireTime;
 }
 
-void DKIMInfo::setExpireTime(const QString &expireTime)
+void DKIMInfo::setExpireTime(qint64 expireTime)
 {
     mExpireTime = expireTime;
 }
@@ -265,4 +295,24 @@ QString DKIMInfo::bodyLenghtCount() const
 void DKIMInfo::setBodyLenghtCount(const QString &bodyLenghtCount)
 {
     mBodyLenghtCount = bodyLenghtCount;
+}
+
+QDebug operator <<(QDebug d, const DKIMInfo &t)
+{
+    d << "mVersion " << t.version();
+    d << "mHashingAlgorithm " << t.hashingAlgorithm();
+    d << "mSigningAlgorithm " << t.signingAlgorithm();
+    d << "mDomain " << t.domain();
+    d << "mSelector " << t.selector();
+    d << "mBodyHash " << t.bodyHash();
+    d << "mSignatureTimeStamp " << t.signatureTimeStamp();
+    d << "mExpireTime " << t.expireTime();
+    d << "mQuery " << t.query();
+    d << "mSignature " << t.signature();
+    d << "mUserAgent " << t.userAgent();
+    d << "mBodyLenghtCount " << t.bodyLenghtCount();
+    d << "mListSignedHeader " << t.listSignedHeader();
+    d << "mHeaderCanonization " << t.headerCanonization();
+    d << "mBodyCanonization " << t.bodyCanonization();
+    return d;
 }

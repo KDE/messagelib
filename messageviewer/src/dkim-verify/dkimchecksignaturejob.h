@@ -35,17 +35,33 @@ public:
         EmailNotSigned
     };
 
+    enum class DKIMError {
+        Unknown,
+        CorruptedBodyHash,
+        //TODO add more
+    };
+
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
     ~DKIMCheckSignatureJob();
     void start();
 
     Q_REQUIRED_RESULT QString dkimValue() const;
     void setDkimValue(const QString &dkimValue);
+
+    Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMStatus status() const;
+    void setStatus(const DKIMCheckSignatureJob::DKIMStatus &status);
+
+    Q_REQUIRED_RESULT QString warningFound() const;
+    void setWarningFound(const QString &warningFound);
+
 Q_SIGNALS:
     void result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
+
 private:
-    QString mDkimValue;
     void checkSignature(const MessageViewer::DKIMInfo &info);
+    QString mDkimValue;
+    QString mWarningFound;
+    DKIMCheckSignatureJob::DKIMStatus mStatus = DKIMCheckSignatureJob::DKIMStatus::Unknown;
 };
 }
 

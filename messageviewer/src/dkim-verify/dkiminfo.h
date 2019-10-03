@@ -23,6 +23,7 @@
 #include "messageviewer_private_export.h"
 #include <QString>
 #include <QStringList>
+#include <QObject>
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMInfo
 {
@@ -36,8 +37,9 @@ public:
     };
 
     Q_REQUIRED_RESULT bool parseDKIM(const QString &header);
-    Q_REQUIRED_RESULT QString version() const;
-    void setVersion(const QString &version);
+
+    Q_REQUIRED_RESULT int version() const;
+    void setVersion(int version);
 
     Q_REQUIRED_RESULT QString hashingAlgorithm() const;
     void setHashingAlgorithm(const QString &hashingAlgorithm);
@@ -59,14 +61,14 @@ public:
     Q_REQUIRED_RESULT QString signingAlgorithm() const;
     void setSigningAlgorithm(const QString &signingAlgorithm);
 
-    Q_REQUIRED_RESULT QString signatureTimeStamp() const;
-    void setSignatureTimeStamp(const QString &signatureTimeStamp);
+    Q_REQUIRED_RESULT qint64 signatureTimeStamp() const;
+    void setSignatureTimeStamp(qint64 signatureTimeStamp);
 
     Q_REQUIRED_RESULT QString query() const;
     void setQuery(const QString &query);
 
-    Q_REQUIRED_RESULT QString expireTime() const;
-    void setExpireTime(const QString &expireTime);
+    Q_REQUIRED_RESULT qint64 expireTime() const;
+    void setExpireTime(qint64 expireTime);
 
     Q_REQUIRED_RESULT QString signature() const;
     void setSignature(const QString &signature);
@@ -83,24 +85,26 @@ public:
     Q_REQUIRED_RESULT CanonicalizationType bodyCanonization() const;
     void setBodyCanonization(const CanonicalizationType &bodyCanonization);
 
+    Q_REQUIRED_RESULT bool operator==(const DKIMInfo &other) const;
 private:
     void parseCanonicalization(const QString &str);
-    QString mVersion;
     QString mHashingAlgorithm;
     QString mSigningAlgorithm;
     QString mDomain;
     QString mSelector;
     QString mBodyHash;
-    QString mSignatureTimeStamp;
-    QString mExpireTime;
     QString mQuery;
     QString mSignature;
     QString mUserAgent;
     QString mBodyLenghtCount;
     QStringList mListSignedHeader;
+    qint64 mSignatureTimeStamp = -1;
+    qint64 mExpireTime = -1;
+    int mVersion = -1;
     CanonicalizationType mHeaderCanonization = Unknown;
     CanonicalizationType mBodyCanonization = Unknown;
 };
 }
-
+Q_DECLARE_METATYPE(MessageViewer::DKIMInfo)
+MESSAGEVIEWER_TESTS_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMInfo &t);
 #endif // DKIMINFO_H

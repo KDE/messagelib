@@ -28,7 +28,10 @@ class DKIMInfoTest : public QObject
 public:
     explicit DKIMInfoTest(QObject *parent = nullptr);
     ~DKIMInfoTest() = default;
+
 private Q_SLOTS:
+    void shouldTestExtractDkimInfo();
+    void shouldTestExtractDkimInfo_data();
     void shouldHaveDefaultValue();
 };
 
