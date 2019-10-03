@@ -29,6 +29,12 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMInfo
 public:
     DKIMInfo();
 
+    enum CanonicalizationType {
+        Unknown,
+        Simple,
+        Relaxed,
+    };
+
     Q_REQUIRED_RESULT bool parseDKIM(const QString &header);
     Q_REQUIRED_RESULT QString version() const;
     void setVersion(const QString &version);
@@ -71,9 +77,15 @@ public:
     Q_REQUIRED_RESULT QString bodyLenghtCount() const;
     void setBodyLenghtCount(const QString &bodyLenghtCount);
 
+    Q_REQUIRED_RESULT CanonicalizationType headerCanonization() const;
+    void setHeaderCanonization(const CanonicalizationType &headerCanonization);
+
+    Q_REQUIRED_RESULT CanonicalizationType bodyCanonization() const;
+    void setBodyCanonization(const CanonicalizationType &bodyCanonization);
+
 private:
-    QString mVersion;
     void parseCanonicalization(const QString &str);
+    QString mVersion;
     QString mHashingAlgorithm;
     QString mSigningAlgorithm;
     QString mDomain;
@@ -85,7 +97,9 @@ private:
     QString mSignature;
     QString mUserAgent;
     QString mBodyLenghtCount;
-    QStringList mListSignedHeader;    
+    QStringList mListSignedHeader;
+    CanonicalizationType mHeaderCanonization = Unknown;
+    CanonicalizationType mBodyCanonization = Unknown;
 };
 }
 

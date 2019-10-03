@@ -34,6 +34,7 @@ void DKIMInfoTest::shouldHaveDefaultValue()
     QVERIFY(info.version().isEmpty());
 
     QVERIFY(info.hashingAlgorithm().isEmpty());
+    QVERIFY(info.signingAlgorithm().isEmpty());
     QVERIFY(info.domain().isEmpty());
     QVERIFY(info.selector().isEmpty());
     QVERIFY(info.bodyHash().isEmpty());
@@ -44,4 +45,6 @@ void DKIMInfoTest::shouldHaveDefaultValue()
     QVERIFY(info.signature().isEmpty());
     QVERIFY(info.userAgent().isEmpty());
     QVERIFY(info.bodyLenghtCount().isEmpty());
+    QCOMPARE(info.headerCanonization(), MessageViewer::DKIMInfo::Unknown);
+    QCOMPARE(info.bodyCanonization(), MessageViewer::DKIMInfo::Unknown);
 }

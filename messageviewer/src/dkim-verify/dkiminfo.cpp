@@ -74,7 +74,27 @@ bool DKIMInfo::parseDKIM(const QString &header)
 
 void DKIMInfo::parseCanonicalization(const QString &str)
 {
+    //TODO default is "simple/simple" optional!
+}
 
+DKIMInfo::CanonicalizationType DKIMInfo::bodyCanonization() const
+{
+    return mBodyCanonization;
+}
+
+void DKIMInfo::setBodyCanonization(const CanonicalizationType &bodyCanonization)
+{
+    mBodyCanonization = bodyCanonization;
+}
+
+DKIMInfo::CanonicalizationType DKIMInfo::headerCanonization() const
+{
+    return mHeaderCanonization;
+}
+
+void DKIMInfo::setHeaderCanonization(const CanonicalizationType &headerCanonization)
+{
+    mHeaderCanonization = headerCanonization;
 }
 
 QString DKIMInfo::version() const
