@@ -86,6 +86,10 @@ public:
     void setBodyCanonization(const CanonicalizationType &bodyCanonization);
 
     Q_REQUIRED_RESULT bool operator==(const DKIMInfo &other) const;
+
+    Q_REQUIRED_RESULT QStringList copiedHeaderField() const;
+    void setCopiedHeaderField(const QStringList &copiedHeaderField);
+
 private:
     void parseCanonicalization(const QString &str);
     QString mHashingAlgorithm;
@@ -98,6 +102,7 @@ private:
     QString mUserAgent;
     QString mBodyLenghtCount;
     QStringList mListSignedHeader;
+    QStringList mCopiedHeaderField; //Default is empty
     qint64 mSignatureTimeStamp = -1;
     qint64 mExpireTime = -1;
     int mVersion = -1;

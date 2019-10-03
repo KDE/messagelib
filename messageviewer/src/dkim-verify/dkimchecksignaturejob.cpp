@@ -22,6 +22,7 @@
 #include "messageviewer_debug.h"
 #include <KLocalizedString>
 #include <QDateTime>
+//see https://tools.ietf.org/html/rfc6376
 
 using namespace MessageViewer;
 DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)
@@ -63,6 +64,20 @@ void DKIMCheckSignatureJob::checkSignature(const DKIMInfo &info)
         qCWarning(MESSAGEVIEWER_LOG) << "Signature doesn't exist";
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         return;
+    }
+    if (!info.listSignedHeader().contains(QLatin1String("from"))) {
+        qCWarning(MESSAGEVIEWER_LOG) << "From is not include in headers list";
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        return;
+    }
+    if (info.domain().isEmpty()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Domain is not defined.";
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        return;
+    }
+    if (info.query() != QLatin1String("dns/txt")) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Query is incorrect: " << info.query();
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
     }
     //Add more test
     //TODO check if info is valid

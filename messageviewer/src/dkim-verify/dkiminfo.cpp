@@ -59,6 +59,9 @@ bool DKIMInfo::parseDKIM(const QString &header)
             mUserAgent = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("q="))) {
             mQuery = elem.right(elem.length() - 2);
+            if (mQuery != QLatin1String("dns/txt")) {
+                qCWarning(MESSAGEVIEWER_LOG) << "Query is not correct and not supported " << mQuery;
+            }
         } else if (elem.startsWith(QLatin1String("d="))) {
             mDomain = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("s="))) {
@@ -69,6 +72,8 @@ bool DKIMInfo::parseDKIM(const QString &header)
             mListSignedHeader = elem.right(elem.length() - 2).split(QLatin1Char(':'));
         } else if (elem.startsWith(QLatin1String("x="))) {
             mExpireTime = elem.right(elem.length() - 2).toLong();
+        } else if (elem.startsWith(QLatin1String("z="))) {
+            mCopiedHeaderField = elem.right(elem.length() - 2).split(QLatin1Char(':'));
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << " Unknown element type" << elem;
         }
@@ -79,6 +84,9 @@ bool DKIMInfo::parseDKIM(const QString &header)
     }
     if (mVersion == -1) {
         mVersion = 1;
+    }
+    if (mQuery.isEmpty()) {
+        mQuery = QLatin1String("dns/txt");
     }
     return true;
 }
@@ -117,6 +125,16 @@ void DKIMInfo::parseCanonicalization(const QString &str)
             }
         }
     }
+}
+
+QStringList DKIMInfo::copiedHeaderField() const
+{
+    return mCopiedHeaderField;
+}
+
+void DKIMInfo::setCopiedHeaderField(const QStringList &copiedHeaderField)
+{
+    mCopiedHeaderField = copiedHeaderField;
 }
 
 DKIMInfo::CanonicalizationType DKIMInfo::bodyCanonization() const

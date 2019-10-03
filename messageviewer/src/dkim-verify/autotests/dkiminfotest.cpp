@@ -48,6 +48,7 @@ void DKIMInfoTest::shouldHaveDefaultValue()
     QVERIFY(info.bodyLenghtCount().isEmpty());
     QCOMPARE(info.headerCanonization(), MessageViewer::DKIMInfo::Unknown);
     QCOMPARE(info.bodyCanonization(), MessageViewer::DKIMInfo::Unknown);
+    QVERIFY(info.copiedHeaderField().isEmpty());
 }
 
 void DKIMInfoTest::shouldTestExtractDkimInfo_data()
@@ -58,6 +59,7 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     QTest::addRow("empty") << QString() << MessageViewer::DKIMInfo() << false;
     QString val = QStringLiteral("a=rsa-sha1; q=dns; d=example.com; i=user@eng.example.com; s=jun2005.eng; c=relaxed/simple; t=1117574938; x=1118006938; h=from:to:subject:date; b=dzdVyOfAKCdLXdJOc9G2q8LoXSlEniSbav+yuU4zGeeruD00lszZVoG4ZHRNiYzR");
     MessageViewer::DKIMInfo info1;
+    info1.setVersion(1);
     info1.setQuery(QStringLiteral("dns"));
     info1.setDomain(QStringLiteral("example.com"));
     info1.setSigningAlgorithm(QStringLiteral("rsa-sha1"));
@@ -76,6 +78,7 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
                          "IH06PzqCuU/NwLas3SdAvd3VbTCObAb38KXeXkO7meeyCoR+kDsFzHpSAUg7+IRkeDR+RmarFjXwZAtoX3OMsB8euEprhS9fgGupxCWxwu6VGKJgt3Yu3/cI=");
     MessageViewer::DKIMInfo info2;
     info2.setVersion(1);
+    info2.setQuery(QStringLiteral("dns/txt"));
     info2.setDomain(QStringLiteral("example.com"));
     info2.setSigningAlgorithm(QStringLiteral("rsa-sha256"));
     info2.setBodyCanonization(MessageViewer::DKIMInfo::Relaxed);
