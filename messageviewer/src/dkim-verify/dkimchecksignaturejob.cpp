@@ -44,6 +44,7 @@ void DKIMCheckSignatureJob::start()
     DKIMInfo info;
     if (!info.parseDKIM(mDkimValue)) {
         qCWarning(MESSAGEVIEWER_LOG) << "Impossible to parse header" << mDkimValue;
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         deleteLater();
         return;
     }
