@@ -20,6 +20,7 @@
 #include "dkimchecksignaturejob.h"
 #include "dkimdownloadkeyjob.h"
 #include "dkiminfo.h"
+#include "dkimkeyrecord.h"
 #include "messageviewer_debug.h"
 #include <KLocalizedString>
 #include <QDateTime>
@@ -37,50 +38,94 @@ DKIMCheckSignatureJob::~DKIMCheckSignatureJob()
 
 void DKIMCheckSignatureJob::start()
 {
+    if (!mMessage) {
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        deleteLater();
+        return;
+    }
+    if (auto hrd = mMessage->headerByType("DKIM-Signature")) {
+        mDkimValue = hrd->asUnicodeString();
+    }
     if (mDkimValue.isEmpty()) {
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned);
         deleteLater();
         return;
     }
-    DKIMInfo info;
-    if (!info.parseDKIM(mDkimValue)) {
+    if (!mDkimInfo.parseDKIM(mDkimValue)) {
         qCWarning(MESSAGEVIEWER_LOG) << "Impossible to parse header" << mDkimValue;
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         deleteLater();
         return;
     }
-    const MessageViewer::DKIMCheckSignatureJob::DKIMStatus status = checkSignature(info);
+    const MessageViewer::DKIMCheckSignatureJob::DKIMStatus status = checkSignature(mDkimInfo);
     if (status != MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid) {
         Q_EMIT result(status);
         deleteLater();
         return;
     }
     //ComputeBodyHash now.
-    switch (info.bodyCanonization()) {
+    QString bodyCanonizationResult;
+    switch (mDkimInfo.bodyCanonization()) {
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidBodyCanonicalization;
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         deleteLater();
         return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
+        bodyCanonizationResult = bodyCanonizationSimple();
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
+        bodyCanonizationResult = bodyCanonizationRelaxed();
         break;
     }
+
+    if (mDkimInfo.bodyLenghtCount() != -1) { //Verify it.
+        if (mDkimInfo.bodyLenghtCount() < bodyCanonizationResult.length()) {
+            //TODO
+        } else if (mDkimInfo.bodyLenghtCount() > bodyCanonizationResult.length()) {
+            //TODO
+        }
+        // truncated body to the length specified in the "l=" tag
+        // TODO
+    }
+
     //Compute Hash Header
-    switch (info.headerCanonization()) {
+    QString headerCanonizationResult;
+    switch (mDkimInfo.headerCanonization()) {
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidHeaderCanonicalization;
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         deleteLater();
         return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
+        headerCanonizationResult = headerCanonizationSimple();
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
+        headerCanonizationResult = headerCanonizationRelaxed();
         break;
     }
 
-    downloadKey(info);
+    downloadKey(mDkimInfo);
+}
+
+QString DKIMCheckSignatureJob::bodyCanonizationSimple() const
+{
+    return {};
+}
+
+QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
+{
+    return {};
+}
+
+QString DKIMCheckSignatureJob::headerCanonizationSimple() const
+{
+    return {};
+}
+
+QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
+{
+    return {};
 }
 
 void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
@@ -91,21 +136,52 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
     connect(job, &DKIMDownloadKeyJob::error, this, [this](){
         deleteLater();
     });
-    connect(job, &DKIMDownloadKeyJob::error, this, &DKIMCheckSignatureJob::slotDownloadKeyDone);
+    connect(job, &DKIMDownloadKeyJob::success, this, &DKIMCheckSignatureJob::slotDownloadKeyDone);
     if (!job->start()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start downloadkey";
         deleteLater();
     }
 }
 
-void DKIMCheckSignatureJob::slotDownloadKeyDone()
+void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst)
 {
-    //TODO
+    if (lst.count() != 1) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Key result has more that 1 element";
+        deleteLater();
+        return;
+    }
+    parseDKIMKeyRecord(QString::fromLocal8Bit(lst.at(0)));
 }
 
-void DKIMCheckSignatureJob::parseDKIMKeyRecord()
+void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str)
+{
+    if (!mDkimKeyecord.parseKey(str)) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to parse key record " << str;
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        deleteLater();
+        return;
+    }
+
+    //TODO check keyrecord if it's valid against signature
+
+
+    verifyRSASignature();
+}
+
+void DKIMCheckSignatureJob::verifyRSASignature()
 {
     //TODO
+    deleteLater();
+}
+
+KMime::Message::Ptr DKIMCheckSignatureJob::message() const
+{
+    return mMessage;
+}
+
+void DKIMCheckSignatureJob::setMessage(const KMime::Message::Ptr &message)
+{
+    mMessage = message;
 }
 
 MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSignature(const DKIMInfo &info)
@@ -182,9 +258,4 @@ void DKIMCheckSignatureJob::setStatus(const DKIMCheckSignatureJob::DKIMStatus &s
 QString DKIMCheckSignatureJob::dkimValue() const
 {
     return mDkimValue;
-}
-
-void DKIMCheckSignatureJob::setDkimValue(const QString &dkimValue)
-{
-    mDkimValue = dkimValue;
 }

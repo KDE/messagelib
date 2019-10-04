@@ -21,9 +21,12 @@
 #define DKIMCHECKSIGNATUREJOB_H
 
 #include <QObject>
+#include "dkimkeyrecord.h"
+#include "dkiminfo.h"
 #include "messageviewer_export.h"
+#include <KMime/Message>
+
 namespace MessageViewer {
-class DKIMInfo;
 class MESSAGEVIEWER_EXPORT DKIMCheckSignatureJob : public QObject
 {
     Q_OBJECT
@@ -55,7 +58,6 @@ public:
     void start();
 
     Q_REQUIRED_RESULT QString dkimValue() const;
-    void setDkimValue(const QString &dkimValue);
 
     Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMStatus status() const;
     void setStatus(const DKIMCheckSignatureJob::DKIMStatus &status);
@@ -66,14 +68,24 @@ public:
 
     Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMError error() const;
 
+    Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
+    void setMessage(const KMime::Message::Ptr &message);
+
 Q_SIGNALS:
     void result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
 
 private:
     void downloadKey(const DKIMInfo &info);
-    void slotDownloadKeyDone();
-    void parseDKIMKeyRecord();
-    //TODO add message ?
+    void slotDownloadKeyDone(const QList<QByteArray> &lst);
+    void parseDKIMKeyRecord(const QString &str);
+    QString headerCanonizationSimple() const;
+    QString headerCanonizationRelaxed() const;
+    QString bodyCanonizationRelaxed() const;
+    QString bodyCanonizationSimple() const;
+    void verifyRSASignature();
+    KMime::Message::Ptr mMessage;
+    DKIMInfo mDkimInfo;
+    DKIMKeyRecord mDkimKeyecord;
     QString mDkimValue;
     QString mWarningFound;
     DKIMCheckSignatureJob::DKIMError mError = DKIMCheckSignatureJob::DKIMError::Any;

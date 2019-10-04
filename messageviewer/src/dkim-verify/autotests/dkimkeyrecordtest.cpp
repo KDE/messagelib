@@ -30,4 +30,8 @@ void DKIMKeyRecordTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMKeyRecord key;
     QVERIFY(key.version().isEmpty());
+    QVERIFY(key.keyType().isEmpty());
+    QVERIFY(key.publicKey().isEmpty());
+    QVERIFY(key.note().isEmpty());
+    QVERIFY(key.service().isEmpty());
 }

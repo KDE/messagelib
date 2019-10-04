@@ -94,11 +94,11 @@ void DKIMDownloadKeyJob::resolvDnsDone()
 
     // Handle the results.
     const auto records = mDnsLookup->textRecords();
+    QList<QByteArray> textRecordResult;
     for (const QDnsTextRecord &record : records) {
-        qDebug() << " record " << record.values();
-        //TODO
+        textRecordResult << record.values();
     }
 
-    Q_EMIT success();
+    Q_EMIT success(textRecordResult);
     deleteLater();
 }

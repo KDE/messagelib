@@ -47,7 +47,8 @@ public:
 
 Q_SIGNALS:
     void error();
-    void success();
+    void success(const QList<QByteArray> &);
+
 private:
     void resolvDnsDone();
     QString mDomainName;

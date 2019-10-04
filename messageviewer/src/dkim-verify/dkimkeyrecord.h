@@ -34,8 +34,24 @@ public:
     Q_REQUIRED_RESULT QString version() const;
     void setVersion(const QString &version);
 
+    Q_REQUIRED_RESULT QString keyType() const;
+    void setKeyType(const QString &keyType);
+
+    Q_REQUIRED_RESULT QString note() const;
+    void setNote(const QString &note);
+
+    Q_REQUIRED_RESULT QString publicKey() const;
+    void setPublicKey(const QString &publicKey);
+
+    Q_REQUIRED_RESULT QString service() const;
+    void setService(const QString &service);
+
 private:
     QString mVersion;
+    QString mKeyType;
+    QString mNote;
+    QString mPublicKey;
+    QString mService;
 };
 }
 

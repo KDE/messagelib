@@ -37,9 +37,29 @@ bool DKIMKeyRecord::parseKey(const QString &key)
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QLatin1String("v="))) {
             mVersion = elem.right(elem.length() - 2);
+        } else if (elem.startsWith(QLatin1String("h="))) {
+            //TODO
+        } else if (elem.startsWith(QLatin1String("k="))) { //Key type (rsa by default)
+            mKeyType = elem.right(elem.length() - 2);
+        } else if (elem.startsWith(QLatin1String("n="))) { //Notes (optional empty by default)
+            mNote = elem.right(elem.length() - 2);
+        } else if (elem.startsWith(QLatin1String("p="))) { //Public key
+            mPublicKey = elem.right(elem.length() - 2);
+        } else if (elem.startsWith(QLatin1String("s="))) { //Service Default is "*"
+            mService = elem.right(elem.length() - 2); //TODO split it
+        } else if (elem.startsWith(QLatin1String("t="))) { //Flag
+            //TODO
         }
     }
-    //TODO
+    if (mVersion.isEmpty()) { //It's optional
+        mVersion = QStringLiteral("DKIM1");
+    }
+    if (mKeyType.isEmpty()) { //Rsa by default
+        mKeyType = QStringLiteral("rsa");
+    }
+    if (mService.isEmpty()) { //Rsa by default
+        mKeyType = QLatin1Char('*');
+    }
     return false;
 }
 
@@ -51,4 +71,44 @@ QString DKIMKeyRecord::version() const
 void DKIMKeyRecord::setVersion(const QString &version)
 {
     mVersion = version;
+}
+
+QString DKIMKeyRecord::keyType() const
+{
+    return mKeyType;
+}
+
+void DKIMKeyRecord::setKeyType(const QString &keyType)
+{
+    mKeyType = keyType;
+}
+
+QString DKIMKeyRecord::note() const
+{
+    return mNote;
+}
+
+void DKIMKeyRecord::setNote(const QString &note)
+{
+    mNote = note;
+}
+
+QString DKIMKeyRecord::publicKey() const
+{
+    return mPublicKey;
+}
+
+void DKIMKeyRecord::setPublicKey(const QString &publicKey)
+{
+    mPublicKey = publicKey;
+}
+
+QString DKIMKeyRecord::service() const
+{
+    return mService;
+}
+
+void DKIMKeyRecord::setService(const QString &service)
+{
+    mService = service;
 }
