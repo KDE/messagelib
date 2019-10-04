@@ -34,11 +34,21 @@ public:
 
     Q_REQUIRED_RESULT bool canStart() const;
 
+    Q_REQUIRED_RESULT QString domainName() const;
+    void setDomainName(const QString &domainName);
+
+    Q_REQUIRED_RESULT QString selectorName() const;
+    void setSelectorName(const QString &selectorName);
+
+    QString resolvDnsValue() const;
+
 Q_SIGNALS:
     void success();
     void error(const QString &err);
+
 private:
-    QString mUrl; //TODO ?
+    QString mDomainName;
+    QString mSelectorName;
 };
 }
 

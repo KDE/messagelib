@@ -111,6 +111,19 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidQueryMethod;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
+
+    if (info.hashingAlgorithm().isEmpty()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "body header algorithm is empty";
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidBodyHashAlgorithm;
+        return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+
+    }
+    if (info.signingAlgorithm().isEmpty()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "signature algorithm is empty";
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidSignAlgorithm;
+        return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+    }
+
     //Add more test
     //TODO check if info is valid
     return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;

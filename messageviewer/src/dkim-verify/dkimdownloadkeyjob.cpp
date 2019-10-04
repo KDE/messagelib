@@ -42,6 +42,30 @@ void DKIMDownloadKeyJob::start()
 
 bool DKIMDownloadKeyJob::canStart() const
 {
-    //TODO
-    return false;
+    return !mDomainName.isEmpty() && !mSelectorName.isEmpty();
+}
+
+QString DKIMDownloadKeyJob::domainName() const
+{
+    return mDomainName;
+}
+
+void DKIMDownloadKeyJob::setDomainName(const QString &domainName)
+{
+    mDomainName = domainName;
+}
+
+QString DKIMDownloadKeyJob::selectorName() const
+{
+    return mSelectorName;
+}
+
+void DKIMDownloadKeyJob::setSelectorName(const QString &selectorName)
+{
+    mSelectorName = selectorName;
+}
+
+QString DKIMDownloadKeyJob::resolvDnsValue() const
+{
+    return mSelectorName + QLatin1String("._domainkey.") + mDomainName;
 }

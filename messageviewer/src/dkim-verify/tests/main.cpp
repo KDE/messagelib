@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2018-2019 Laurent Montel <montel@kde.org>
+   Copyright (C) 2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -17,21 +17,28 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef DKIMDOWNLOADKEYJOBTEST_H
-#define DKIMDOWNLOADKEYJOBTEST_H
-
-#include <QObject>
-
-class DKIMDownloadKeyJobTest : public QObject
+#include <QStandardPaths>
+#include <QCoreApplication>
+#include <QCommandLineParser>
+#include "lookupkey.h"
+int main(int argc, char **argv)
 {
-    Q_OBJECT
-public:
-    explicit DKIMDownloadKeyJobTest(QObject *parent = nullptr);
-    ~DKIMDownloadKeyJobTest() = default;
-private Q_SLOTS:
-    void shouldHaveDefaultValues();
-    void shouldTestCanStart();
-    void shouldVerifyResolveDns();
-};
+    QCoreApplication app(argc, argv);
+    QStandardPaths::setTestModeEnabled(true);
+    QCommandLineParser parser;
+    parser.addVersionOption();
+    parser.addHelpOption();
+    parser.addPositionalArgument(
+        QStringLiteral("server address"), QStringLiteral("add specific server address"));
+    parser.process(app);
 
-#endif // DKIMDOWNLOADKEYJOBTEST_H
+    if (!parser.positionalArguments().isEmpty()) {
+        for (const QString &str : parser.positionalArguments()) {
+            LookUpKey *d = new LookUpKey();
+            d->lookUpServer(str);
+        }
+    }
+
+    app.exec();
+    return 0;
+}

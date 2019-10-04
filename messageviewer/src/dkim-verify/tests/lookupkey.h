@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2018-2019 Laurent Montel <montel@kde.org>
+   Copyright (C) 2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -17,21 +17,22 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef DKIMDOWNLOADKEYJOBTEST_H
-#define DKIMDOWNLOADKEYJOBTEST_H
+
+#ifndef LOOKUPKEY_H
+#define LOOKUPKEY_H
 
 #include <QObject>
-
-class DKIMDownloadKeyJobTest : public QObject
+class QDnsLookup;
+class LookUpKey : public QObject
 {
     Q_OBJECT
 public:
-    explicit DKIMDownloadKeyJobTest(QObject *parent = nullptr);
-    ~DKIMDownloadKeyJobTest() = default;
-private Q_SLOTS:
-    void shouldHaveDefaultValues();
-    void shouldTestCanStart();
-    void shouldVerifyResolveDns();
+    explicit LookUpKey(QObject *parent = nullptr);
+    ~LookUpKey() = default;
+    void lookUpServer(const QString &addr);
+private:
+    void handleServers();
+    QDnsLookup *mDnsLookup = nullptr;
 };
 
-#endif // DKIMDOWNLOADKEYJOBTEST_H
+#endif // LOOKUPKEY_H

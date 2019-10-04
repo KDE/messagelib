@@ -44,6 +44,9 @@ public:
         InvalidQueryMethod,
         InvalidHeaderCanonicalization,
         InvalidBodyCanonicalization,
+        InvalidBodyHashAlgorithm,
+        InvalidSignAlgorithm,
+
         //TODO add more
     };
 
