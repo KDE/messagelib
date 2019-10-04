@@ -92,6 +92,7 @@ public:
 
 private:
     void parseCanonicalization(const QString &str);
+    void parseAlgorithm(const QString &str);
     QString mHashingAlgorithm;
     QString mSigningAlgorithm;
     QString mDomain;

@@ -62,7 +62,8 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info1.setVersion(1);
     info1.setQuery(QStringLiteral("dns"));
     info1.setDomain(QStringLiteral("example.com"));
-    info1.setSigningAlgorithm(QStringLiteral("rsa-sha1"));
+    info1.setSigningAlgorithm(QStringLiteral("rsa"));
+    info1.setHashingAlgorithm(QStringLiteral("sha1"));
     info1.setBodyCanonization(MessageViewer::DKIMInfo::Simple);
     info1.setHeaderCanonization(MessageViewer::DKIMInfo::Relaxed);
     info1.setSignatureTimeStamp(1117574938);
@@ -80,7 +81,8 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info2.setVersion(1);
     info2.setQuery(QStringLiteral("dns/txt"));
     info2.setDomain(QStringLiteral("example.com"));
-    info2.setSigningAlgorithm(QStringLiteral("rsa-sha256"));
+    info2.setSigningAlgorithm(QStringLiteral("rsa"));
+    info2.setHashingAlgorithm(QStringLiteral("sha256"));
     info2.setBodyCanonization(MessageViewer::DKIMInfo::Relaxed);
     info2.setHeaderCanonization(MessageViewer::DKIMInfo::Relaxed);
     info2.setSignatureTimeStamp(1569945303);

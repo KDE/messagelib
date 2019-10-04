@@ -44,7 +44,8 @@ bool DKIMInfo::parseDKIM(const QString &header)
                 qCWarning(MESSAGEVIEWER_LOG) << "Version is not correct " << mVersion;
             }
         } else if (elem.startsWith(QLatin1String("a="))) {
-            mSigningAlgorithm = elem.right(elem.length() - 2);
+            //Parse it as "algorithm.signature-algorithm.hash
+            parseAlgorithm(elem.right(elem.length() - 2));
         } else if (elem.startsWith(QLatin1String("t="))) {
             mSignatureTimeStamp = elem.right(elem.length() - 2).toLong();
         } else if (elem.startsWith(QLatin1String("c="))) {
@@ -89,6 +90,20 @@ bool DKIMInfo::parseDKIM(const QString &header)
         mQuery = QLatin1String("dns/txt");
     }
     return true;
+}
+
+void DKIMInfo::parseAlgorithm(const QString &str)
+{
+    // currently only "rsa-sha1" or "rsa-sha256"
+    //FIXME
+    const QStringList lst = str.split(QLatin1Char('-'));
+    if (lst.count() != 2) {
+        qCWarning(MESSAGEVIEWER_LOG) << "algorithm is invalid " << str;
+        //Error
+    } else {
+        mSigningAlgorithm = lst.at(0);
+        mHashingAlgorithm = lst.at(1);
+    }
 }
 
 void DKIMInfo::parseCanonicalization(const QString &str)
