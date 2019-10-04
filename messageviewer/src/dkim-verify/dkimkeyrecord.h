@@ -31,6 +31,12 @@ class MESSAGEVIEWER_EXPORT DKIMKeyRecord
 public:
     DKIMKeyRecord();
     Q_REQUIRED_RESULT bool parseKey(const QString &key);
+
+    Q_REQUIRED_RESULT QString version() const;
+    void setVersion(const QString &version);
+
+private:
+    QString mVersion;
 };
 }
 

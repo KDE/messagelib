@@ -26,3 +26,9 @@ DKIMKeyRecordTest::DKIMKeyRecordTest(QObject *parent)
 {
 
 }
+
+void DKIMKeyRecordTest::shouldHaveDefaultValues()
+{
+    MessageViewer::DKIMKeyRecord key;
+    QVERIFY(key.version().isEmpty());
+}

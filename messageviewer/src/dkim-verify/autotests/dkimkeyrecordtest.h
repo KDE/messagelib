@@ -28,6 +28,8 @@ class DKIMKeyRecordTest : public QObject
 public:
     explicit DKIMKeyRecordTest(QObject *parent = nullptr);
     ~DKIMKeyRecordTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
 
 #endif // DKIMKEYRECORDTEST_H
