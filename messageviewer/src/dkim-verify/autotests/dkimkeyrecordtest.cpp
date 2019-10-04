@@ -24,7 +24,6 @@ QTEST_GUILESS_MAIN(DKIMKeyRecordTest)
 DKIMKeyRecordTest::DKIMKeyRecordTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMKeyRecordTest::shouldHaveDefaultValues()

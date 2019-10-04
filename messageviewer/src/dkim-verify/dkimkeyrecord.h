@@ -20,7 +20,6 @@
 #ifndef DKIMKEYRECORD_H
 #define DKIMKEYRECORD_H
 
-
 #include "messageviewer_export.h"
 #include <QString>
 #include <QStringList>

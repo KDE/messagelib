@@ -142,7 +142,6 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
         qCWarning(MESSAGEVIEWER_LOG) << "body header algorithm is empty";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidBodyHashAlgorithm;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-
     }
     if (info.signingAlgorithm().isEmpty()) {
         qCWarning(MESSAGEVIEWER_LOG) << "signature algorithm is empty";

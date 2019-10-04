@@ -24,7 +24,6 @@ using namespace MessageViewer;
 
 DKIMKeyRecord::DKIMKeyRecord()
 {
-
 }
 
 bool DKIMKeyRecord::parseKey(const QString &key)
@@ -49,7 +48,7 @@ QString DKIMKeyRecord::version() const
     return mVersion;
 }
 
-void DKIMKeyRecord::setVersion(const QString& version)
+void DKIMKeyRecord::setVersion(const QString &version)
 {
     mVersion = version;
 }

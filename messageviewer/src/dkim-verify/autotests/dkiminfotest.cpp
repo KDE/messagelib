@@ -99,7 +99,6 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
                                            QStringLiteral("list-id"), QStringLiteral("from"), QStringLiteral("from"),
                                            QStringLiteral("date"), QStringLiteral("date")}));
     QTest::addRow("test2") << val << info2 << true;
-
 }
 
 void DKIMInfoTest::shouldTestExtractDkimInfo()
@@ -117,5 +116,4 @@ void DKIMInfoTest::shouldTestExtractDkimInfo()
         }
         QVERIFY(isEqual);
     }
-
 }
