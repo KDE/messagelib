@@ -57,8 +57,10 @@ void DKIMCheckSignatureJob::start()
     //ComputeBodyHash now.
     switch (info.bodyCanonization()) {
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
-        //Return ?
-        break;
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidBodyCanonicalization;
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        deleteLater();
+        return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
@@ -67,8 +69,10 @@ void DKIMCheckSignatureJob::start()
     //Compute Hash Header
     switch (info.headerCanonization()) {
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
-        //Return ?
-        break;
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidHeaderCanonicalization;
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        deleteLater();
+        return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:

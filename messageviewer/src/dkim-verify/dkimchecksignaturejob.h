@@ -42,6 +42,8 @@ public:
         MissingFrom,
         MissingSignature,
         InvalidQueryMethod,
+        InvalidHeaderCanonicalization,
+        InvalidBodyCanonicalization,
         //TODO add more
     };
 
@@ -65,6 +67,7 @@ Q_SIGNALS:
     void result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
 
 private:
+    //TODO add message ?
     QString mDkimValue;
     QString mWarningFound;
     DKIMCheckSignatureJob::DKIMError mError = DKIMCheckSignatureJob::DKIMError::Any;
