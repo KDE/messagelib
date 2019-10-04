@@ -88,10 +88,24 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
     DKIMDownloadKeyJob *job = new DKIMDownloadKeyJob(this);
     job->setDomainName(info.domain());
     job->setSelectorName(info.selector());
+    connect(job, &DKIMDownloadKeyJob::error, this, [this](){
+        deleteLater();
+    });
+    connect(job, &DKIMDownloadKeyJob::error, this, &DKIMCheckSignatureJob::slotDownloadKeyDone);
     if (!job->start()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start downloadkey";
         deleteLater();
     }
+}
+
+void DKIMCheckSignatureJob::slotDownloadKeyDone()
+{
+    //TODO
+}
+
+void DKIMCheckSignatureJob::parseDKIMKeyRecord()
+{
+    //TODO
 }
 
 MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSignature(const DKIMInfo &info)

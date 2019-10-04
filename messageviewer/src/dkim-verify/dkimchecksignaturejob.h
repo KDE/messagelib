@@ -71,6 +71,8 @@ Q_SIGNALS:
 
 private:
     void downloadKey(const DKIMInfo &info);
+    void slotDownloadKeyDone();
+    void parseDKIMKeyRecord();
     //TODO add message ?
     QString mDkimValue;
     QString mWarningFound;

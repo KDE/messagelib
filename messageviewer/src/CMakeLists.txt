@@ -61,6 +61,7 @@ if (DKIM_CHECKER_BUILD)
         dkim-verify/dkimcheckauthenticationstatusjob.cpp
         dkim-verify/dkimauthenticationstatusinfo.cpp
         dkim-verify/dkimutil.cpp
+        dkim-verify/dkimkeyrecord.cpp
         )
 endif()
 
