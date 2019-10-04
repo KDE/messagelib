@@ -19,6 +19,8 @@
 
 #include "dkimdownloadkeyjob.h"
 #include "messageviewer_debug.h"
+
+#include <QDnsLookup>
 using namespace MessageViewer;
 DKIMDownloadKeyJob::DKIMDownloadKeyJob(QObject *parent)
     : QObject(parent)
@@ -29,15 +31,20 @@ DKIMDownloadKeyJob::~DKIMDownloadKeyJob()
 {
 }
 
-void DKIMDownloadKeyJob::start()
+bool DKIMDownloadKeyJob::start()
 {
     if (!canStart()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start download public keys";
         deleteLater();
-        return;
+        return false;
     }
-    //TODO
-    deleteLater();
+    mDnsLookup = new QDnsLookup(this);
+    connect(mDnsLookup, &QDnsLookup::finished,
+            this, &DKIMDownloadKeyJob::resolvDnsDone);
+
+    mDnsLookup->setType(QDnsLookup::TXT);
+    mDnsLookup->setName(resolvDnsValue());
+    return true;
 }
 
 bool DKIMDownloadKeyJob::canStart() const
@@ -68,4 +75,30 @@ void DKIMDownloadKeyJob::setSelectorName(const QString &selectorName)
 QString DKIMDownloadKeyJob::resolvDnsValue() const
 {
     return mSelectorName + QLatin1String("._domainkey.") + mDomainName;
+}
+
+QDnsLookup *DKIMDownloadKeyJob::dnsLookup() const
+{
+    return mDnsLookup;
+}
+
+void DKIMDownloadKeyJob::resolvDnsDone()
+{
+    // Check the lookup succeeded.
+    if (mDnsLookup->error() != QDnsLookup::NoError) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Error during resolving: " << mDnsLookup->errorString();
+        Q_EMIT error();
+        deleteLater();
+        return;
+    }
+
+    // Handle the results.
+    const auto records = mDnsLookup->textRecords();
+    for (const QDnsTextRecord &record : records) {
+        qDebug() << " record " << record.values();
+        //TODO
+    }
+
+    Q_EMIT success();
+    deleteLater();
 }

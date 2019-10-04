@@ -33,6 +33,7 @@ void DKIMDownloadKeyJobTest::shouldHaveDefaultValues()
     QVERIFY(job.domainName().isEmpty());
     QVERIFY(job.selectorName().isEmpty());
     QVERIFY(!job.canStart());
+    QVERIFY(!job.dnsLookup());
 }
 
 void DKIMDownloadKeyJobTest::shouldTestCanStart()

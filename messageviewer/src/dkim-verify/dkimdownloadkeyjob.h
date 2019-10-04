@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
+class QDnsLookup;
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT DKIMDownloadKeyJob : public QObject
 {
@@ -30,7 +31,7 @@ public:
     explicit DKIMDownloadKeyJob(QObject *parent = nullptr);
     ~DKIMDownloadKeyJob();
 
-    void start();
+    bool start();
 
     Q_REQUIRED_RESULT bool canStart() const;
 
@@ -40,15 +41,18 @@ public:
     Q_REQUIRED_RESULT QString selectorName() const;
     void setSelectorName(const QString &selectorName);
 
-    QString resolvDnsValue() const;
+    Q_REQUIRED_RESULT QString resolvDnsValue() const;
+
+    QDnsLookup *dnsLookup() const;
 
 Q_SIGNALS:
+    void error();
     void success();
-    void error(const QString &err);
-
 private:
+    void resolvDnsDone();
     QString mDomainName;
     QString mSelectorName;
+    QDnsLookup *mDnsLookup = nullptr;
 };
 }
 

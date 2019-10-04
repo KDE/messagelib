@@ -18,6 +18,7 @@
 */
 
 #include "dkimchecksignaturejob.h"
+#include "dkimdownloadkeyjob.h"
 #include "dkiminfo.h"
 #include "messageviewer_debug.h"
 #include <KLocalizedString>
@@ -79,7 +80,18 @@ void DKIMCheckSignatureJob::start()
         break;
     }
 
-    deleteLater();
+    downloadKey(info);
+}
+
+void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
+{
+    DKIMDownloadKeyJob *job = new DKIMDownloadKeyJob(this);
+    job->setDomainName(info.domain());
+    job->setSelectorName(info.selector());
+    if (!job->start()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start downloadkey";
+        deleteLater();
+    }
 }
 
 MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSignature(const DKIMInfo &info)

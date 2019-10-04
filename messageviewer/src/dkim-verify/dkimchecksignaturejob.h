@@ -70,6 +70,7 @@ Q_SIGNALS:
     void result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
 
 private:
+    void downloadKey(const DKIMInfo &info);
     //TODO add message ?
     QString mDkimValue;
     QString mWarningFound;
