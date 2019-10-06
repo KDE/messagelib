@@ -173,7 +173,7 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
 void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst)
 {
     if (lst.count() != 1) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Key result has more that 1 element";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Key result has more that 1 element" << lst;
         deleteLater();
         return;
     }
