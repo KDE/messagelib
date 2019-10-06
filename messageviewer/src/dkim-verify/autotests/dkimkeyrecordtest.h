@@ -30,6 +30,9 @@ public:
     ~DKIMKeyRecordTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldTestExtractDkimKeyRecord();
+    void shouldTestExtractDkimKeyRecord_data();
+
 };
 
 #endif // DKIMKEYRECORDTEST_H

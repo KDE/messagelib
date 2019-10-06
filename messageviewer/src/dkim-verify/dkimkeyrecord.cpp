@@ -148,6 +148,16 @@ void DKIMKeyRecord::setFlags(const QStringList &flags)
     mFlags = flags;
 }
 
+bool DKIMKeyRecord::operator==(const DKIMKeyRecord &other) const
+{
+    return mVersion == other.version() &&
+            mNote == other.note() &&
+            mPublicKey == other.publicKey() &&
+            mService == other.service() &&
+            mHashAlgorithm == other.hashAlgorithm() &&
+            mFlags == other.flags();
+}
+
 QStringList DKIMKeyRecord::hashAlgorithm() const
 {
     return mHashAlgorithm;
@@ -156,4 +166,16 @@ QStringList DKIMKeyRecord::hashAlgorithm() const
 void DKIMKeyRecord::setHashAlgorithm(const QStringList &hashAlgorithm)
 {
     mHashAlgorithm = hashAlgorithm;
+}
+
+QDebug operator <<(QDebug d, const DKIMKeyRecord &t)
+{
+    d << "mVersion " << t.version();
+    d << "mKeyType " << t.keyType();
+    d << "mNote " << t.note();
+    d << "mPublicKey " << t.publicKey();
+    d << "mService " << t.service();
+    d << "mHashAlgorithm " << t.hashAlgorithm();
+    d << "mFlags " << t.flags();
+    return d;
 }

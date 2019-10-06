@@ -37,3 +37,28 @@ void DKIMKeyRecordTest::shouldHaveDefaultValues()
     QVERIFY(key.hashAlgorithm().isEmpty());
     QVERIFY(key.flags().isEmpty());
 }
+
+void DKIMKeyRecordTest::shouldTestExtractDkimKeyRecord()
+{
+    QFETCH(QString, dkimstr);
+    QFETCH(MessageViewer::DKIMKeyRecord, dkiminforesult);
+    QFETCH(bool, isValid);
+    MessageViewer::DKIMKeyRecord info;
+    QCOMPARE(info.parseKey(dkimstr), isValid);
+    if (isValid) {
+        const bool isEqual = (info == dkiminforesult);
+        if (!isEqual) {
+            qDebug() << " info" << info;
+            qDebug() << " dkiminforesult" << dkiminforesult;
+        }
+        QVERIFY(isEqual);
+    }
+}
+
+void DKIMKeyRecordTest::shouldTestExtractDkimKeyRecord_data()
+{
+    QTest::addColumn<QString>("dkimstr");
+    QTest::addColumn<MessageViewer::DKIMKeyRecord>("dkiminforesult");
+    QTest::addColumn<bool>("isValid");
+    QTest::addRow("empty") << QString() << MessageViewer::DKIMKeyRecord() << false;
+}

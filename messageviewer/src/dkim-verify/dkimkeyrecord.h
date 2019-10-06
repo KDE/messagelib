@@ -52,6 +52,7 @@ public:
     Q_REQUIRED_RESULT QStringList flags() const;
     void setFlags(const QStringList &flags);
 
+    Q_REQUIRED_RESULT bool operator==(const DKIMKeyRecord &other) const;
 private:
     QString mVersion;
     QString mKeyType;
@@ -62,5 +63,7 @@ private:
     QStringList mFlags;
 };
 }
+Q_DECLARE_METATYPE(MessageViewer::DKIMKeyRecord)
+MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMKeyRecord &t);
 
 #endif // DKIMKEYRECORD_H
