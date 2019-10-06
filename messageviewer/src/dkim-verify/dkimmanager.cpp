@@ -18,7 +18,7 @@
 */
 
 #include "dkimmanager.h"
-
+#include "dkimchecksignaturejob.h"
 using namespace MessageViewer;
 DKIMManager::DKIMManager(QObject *parent)
     : QObject(parent)
@@ -29,4 +29,18 @@ DKIMManager::DKIMManager(QObject *parent)
 DKIMManager::~DKIMManager()
 {
 
+}
+
+DKIMManager *DKIMManager::self()
+{
+    static DKIMManager s_self;
+    return &s_self;
+}
+
+void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
+{
+    DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
+    job->setMessage(message);
+    job->start();
+    //TODO add signal/slot return messageId ?
 }

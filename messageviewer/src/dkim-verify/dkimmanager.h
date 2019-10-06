@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
+#include <KMime/Message>
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT DKIMManager : public QObject
 {
@@ -29,6 +30,9 @@ class MESSAGEVIEWER_EXPORT DKIMManager : public QObject
 public:
     explicit DKIMManager(QObject *parent = nullptr);
     ~DKIMManager();
+    static DKIMManager *self();
+
+    void checkDKim(const KMime::Message::Ptr &message);
 };
 }
 
