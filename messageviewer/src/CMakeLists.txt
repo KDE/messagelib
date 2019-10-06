@@ -62,6 +62,7 @@ if (DKIM_CHECKER_BUILD)
         dkim-verify/dkimauthenticationstatusinfo.cpp
         dkim-verify/dkimutil.cpp
         dkim-verify/dkimkeyrecord.cpp
+        dkim-verify/dkimmanager.cpp
         )
 endif()
 
@@ -320,16 +321,18 @@ ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     PREFIX MessageViewer
     RELATIVE scamdetection
     )
+
 if (DKIM_CHECKER_BUILD)
-ecm_generate_headers(MessageViewer_Cameldkimverify_HEADERS
-    HEADER_NAMES
-    DKIMManagerKey
-    DKIMCheckSignatureJob
-    DKIMInfo
-    REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
-    PREFIX MessageViewer
-    RELATIVE dkim-verify
-    )
+    ecm_generate_headers(MessageViewer_Cameldkimverify_HEADERS
+        HEADER_NAMES
+        DKIMManagerKey
+        DKIMCheckSignatureJob
+        DKIMManager
+        DKIMInfo
+        REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
+        PREFIX MessageViewer
+        RELATIVE dkim-verify
+        )
 endif()
 
 
