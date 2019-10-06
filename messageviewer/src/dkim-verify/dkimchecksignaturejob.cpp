@@ -57,6 +57,7 @@ void DKIMCheckSignatureJob::start()
         deleteLater();
         return;
     }
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMCheckSignatureJob::start";
     const MessageViewer::DKIMCheckSignatureJob::DKIMStatus status = checkSignature(mDkimInfo);
     if (status != MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid) {
         Q_EMIT result(status);
@@ -104,6 +105,7 @@ void DKIMCheckSignatureJob::start()
         headerCanonizationResult = headerCanonizationRelaxed();
         break;
     }
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMCheckSignatureJob::start22";
 
     downloadKey(mDkimInfo);
 }
@@ -162,6 +164,8 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
         deleteLater();
     });
     connect(job, &DKIMDownloadKeyJob::success, this, &DKIMCheckSignatureJob::slotDownloadKeyDone);
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "downloadKey";
+
     if (!job->start()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start downloadkey";
         deleteLater();
@@ -170,6 +174,7 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
 
 void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst)
 {
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "download key done";
     if (lst.count() != 1) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Key result has more that 1 element";
         deleteLater();
