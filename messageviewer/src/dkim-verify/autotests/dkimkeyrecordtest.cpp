@@ -34,4 +34,6 @@ void DKIMKeyRecordTest::shouldHaveDefaultValues()
     QVERIFY(key.publicKey().isEmpty());
     QVERIFY(key.note().isEmpty());
     QVERIFY(key.service().isEmpty());
+    QVERIFY(key.hashAlgorithm().isEmpty());
+    QVERIFY(key.flags().isEmpty());
 }

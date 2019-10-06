@@ -46,12 +46,20 @@ public:
     Q_REQUIRED_RESULT QString service() const;
     void setService(const QString &service);
 
+    Q_REQUIRED_RESULT QStringList hashAlgorithm() const;
+    void setHashAlgorithm(const QStringList &hashAlgorithm);
+
+    Q_REQUIRED_RESULT QStringList flags() const;
+    void setFlags(const QStringList &flags);
+
 private:
     QString mVersion;
     QString mKeyType;
     QString mNote;
     QString mPublicKey;
     QString mService;
+    QStringList mHashAlgorithm;
+    QStringList mFlags;
 };
 }
 
