@@ -57,7 +57,7 @@ void DKIMCheckSignatureJob::start()
         deleteLater();
         return;
     }
-    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMCheckSignatureJob::start";
+
     const MessageViewer::DKIMCheckSignatureJob::DKIMStatus status = checkSignature(mDkimInfo);
     if (status != MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid) {
         Q_EMIT result(status);
@@ -105,7 +105,6 @@ void DKIMCheckSignatureJob::start()
         headerCanonizationResult = headerCanonizationRelaxed();
         break;
     }
-    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMCheckSignatureJob::start22";
 
     downloadKey(mDkimInfo);
 }
@@ -191,7 +190,7 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str)
     }
 
     if (mDkimKeyRecord.keyType() != QLatin1String("rsa")) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord key type is unknown " << mDkimKeyRecord.keyType();
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord key type is unknown " << mDkimKeyRecord.keyType() << " str " << str;
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         deleteLater();
         return;

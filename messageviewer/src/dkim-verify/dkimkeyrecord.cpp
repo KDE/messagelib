@@ -83,7 +83,7 @@ bool DKIMKeyRecord::parseKey(const QString &key)
         mKeyType = QStringLiteral("rsa");
     }
     if (mService.isEmpty()) {
-        mKeyType = QLatin1Char('*');
+        mService = QLatin1Char('*');
     }
     return true;
 }
