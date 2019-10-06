@@ -110,27 +110,47 @@ void DKIMCheckSignatureJob::start()
 
 QString DKIMCheckSignatureJob::bodyCanonizationSimple() const
 {
+    /*
+     * canonicalize the body using the simple algorithm
+     * specified in Section 3.4.3 of RFC 6376
+     */
+
     return {};
 }
 
 QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
 {
+    /*
+     * canonicalize the body using the relaxed algorithm
+     * specified in Section 3.4.4 of RFC 6376
+     */
+
     return {};
 }
 
 QString DKIMCheckSignatureJob::headerCanonizationSimple() const
 {
+    QString headers;
     for (const QString &header : mDkimInfo.listSignedHeader()) {
         if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
-            //TODO
+            headers += hrd->asUnicodeString();
         }
     }
-    return {};
+    return headers;
 }
 
 QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
 {
-    return {};
+    // Convert header field name (not the header field values) to lowercase
+    //TODO
+    QString headers;
+    for (const QString &header : mDkimInfo.listSignedHeader()) {
+        if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
+            //headers += hrd->asUnicodeString();
+            //TODO
+        }
+    }
+    return headers;
 }
 
 void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
