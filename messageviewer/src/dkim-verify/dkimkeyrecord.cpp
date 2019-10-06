@@ -85,7 +85,7 @@ bool DKIMKeyRecord::parseKey(const QString &key)
     if (mService.isEmpty()) {
         mKeyType = QLatin1Char('*');
     }
-    return false;
+    return true;
 }
 
 QString DKIMKeyRecord::version() const
