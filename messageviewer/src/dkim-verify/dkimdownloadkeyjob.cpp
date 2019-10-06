@@ -45,6 +45,7 @@ bool DKIMDownloadKeyJob::start()
 
     mDnsLookup->setType(QDnsLookup::TXT);
     mDnsLookup->setName(resolvDnsValue());
+    mDnsLookup->lookup();
     return true;
 }
 
