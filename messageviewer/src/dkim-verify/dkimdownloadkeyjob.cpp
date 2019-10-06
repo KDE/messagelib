@@ -38,7 +38,6 @@ bool DKIMDownloadKeyJob::start()
         deleteLater();
         return false;
     }
-    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMDownloadKeyJob::start";
     mDnsLookup = new QDnsLookup(this);
     connect(mDnsLookup, &QDnsLookup::finished,
             this, &DKIMDownloadKeyJob::resolvDnsDone);
@@ -88,7 +87,6 @@ QDnsLookup *DKIMDownloadKeyJob::dnsLookup() const
 
 void DKIMDownloadKeyJob::resolvDnsDone()
 {
-    qDebug() << " void DKIMDownloadKeyJob::resolvDnsDone()";
     // Check the lookup succeeded.
     if (mDnsLookup->error() != QDnsLookup::NoError) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error during resolving: " << mDnsLookup->errorString();
