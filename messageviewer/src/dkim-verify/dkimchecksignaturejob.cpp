@@ -120,6 +120,11 @@ QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
 
 QString DKIMCheckSignatureJob::headerCanonizationSimple() const
 {
+    for (const QString &header : mDkimInfo.listSignedHeader()) {
+        if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
+            //TODO
+        }
+    }
     return {};
 }
 
@@ -169,6 +174,14 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str)
         return;
     }
 
+    if (mDkimKeyRecord.flags().contains(QLatin1String("s"))) {
+        //                  s  Any DKIM-Signature header fields using the "i=" tag MUST have
+        //                     the same domain value on the right-hand side of the "@" in the
+        //                     "i=" tag and the value of the "d=" tag.  That is, the "i="
+        //                     domain MUST NOT be a subdomain of "d=".  Use of this flag is
+        //                     RECOMMENDED unless subdomaining is required.
+        //TODO
+    }
 
     verifyRSASignature();
 }
