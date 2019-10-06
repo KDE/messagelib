@@ -18,7 +18,7 @@
 */
 
 #include "dkimdownloadkeyjob.h"
-#include "messageviewer_debug.h"
+#include "messageviewer_dkimcheckerdebug.h"
 
 #include <QDnsLookup>
 using namespace MessageViewer;
@@ -34,7 +34,7 @@ DKIMDownloadKeyJob::~DKIMDownloadKeyJob()
 bool DKIMDownloadKeyJob::start()
 {
     if (!canStart()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start download public keys";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start download public keys";
         deleteLater();
         return false;
     }
@@ -86,7 +86,7 @@ void DKIMDownloadKeyJob::resolvDnsDone()
 {
     // Check the lookup succeeded.
     if (mDnsLookup->error() != QDnsLookup::NoError) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Error during resolving: " << mDnsLookup->errorString();
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error during resolving: " << mDnsLookup->errorString();
         Q_EMIT error();
         deleteLater();
         return;

@@ -18,7 +18,7 @@
 */
 
 #include "dkimkeyrecord.h"
-#include "messageviewer_debug.h"
+#include "messageviewer_dkimcheckerdebug.h"
 
 using namespace MessageViewer;
 
@@ -29,7 +29,7 @@ DKIMKeyRecord::DKIMKeyRecord()
 bool DKIMKeyRecord::parseKey(const QString &key)
 {
     if (key.isEmpty()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Error: trying to parse empty key";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: trying to parse empty key";
         return false;
     }
     const QStringList items = key.split(QLatin1String("; "));

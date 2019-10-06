@@ -18,7 +18,7 @@
 */
 
 #include "dkiminfo.h"
-#include "messageviewer_debug.h"
+#include "messageviewer_dkimcheckerdebug.h"
 
 #include <QStringList>
 #include "messageviewer_debug.h"
@@ -31,7 +31,7 @@ DKIMInfo::DKIMInfo()
 bool DKIMInfo::parseDKIM(const QString &header)
 {
     if (header.isEmpty()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Error: trying to parse empty header";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: trying to parse empty header";
         return false;
     }
     const QStringList items = header.split(QLatin1String("; "));
@@ -41,7 +41,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         if (elem.startsWith(QLatin1String("v="))) {
             mVersion = elem.right(elem.length() - 2).toInt();
             if (mVersion != 1) {
-                qCWarning(MESSAGEVIEWER_LOG) << "Version is not correct " << mVersion;
+                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Version is not correct " << mVersion;
             }
         } else if (elem.startsWith(QLatin1String("a="))) {
             //Parse it as "algorithm.signature-algorithm.hash
@@ -61,7 +61,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("q="))) {
             mQuery = elem.right(elem.length() - 2);
             if (mQuery != QLatin1String("dns/txt")) {
-                qCWarning(MESSAGEVIEWER_LOG) << "Query is not correct and not supported " << mQuery;
+                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Query is not correct and not supported " << mQuery;
             }
         } else if (elem.startsWith(QLatin1String("d="))) {
             mDomain = elem.right(elem.length() - 2);
@@ -76,7 +76,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("z="))) {
             mCopiedHeaderField = elem.right(elem.length() - 2).split(QLatin1Char(':'));
         } else {
-            qCWarning(MESSAGEVIEWER_LOG) << " Unknown element type" << elem;
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Unknown element type" << elem;
         }
     }
     if (!foundCanonizations) { //Default
@@ -98,7 +98,7 @@ void DKIMInfo::parseAlgorithm(const QString &str)
     //FIXME
     const QStringList lst = str.split(QLatin1Char('-'));
     if (lst.count() != 2) {
-        qCWarning(MESSAGEVIEWER_LOG) << "algorithm is invalid " << str;
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "algorithm is invalid " << str;
         //Error
     } else {
         mSigningAlgorithm = lst.at(0);
@@ -117,7 +117,7 @@ void DKIMInfo::parseCanonicalization(const QString &str)
             } else if (canonicalizations.at(0) == QLatin1String("simple")) {
                 mHeaderCanonization = DKIMInfo::Simple;
             } else {
-                qCWarning(MESSAGEVIEWER_LOG) << "canonicalizations for header unknown " << canonicalizations.at(0);
+                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "canonicalizations for header unknown " << canonicalizations.at(0);
                 mHeaderCanonization = DKIMInfo::Unknown;
                 return;
             }
@@ -129,12 +129,12 @@ void DKIMInfo::parseCanonicalization(const QString &str)
                 } else if (canonicalizations.at(1) == QLatin1String("simple")) {
                     mBodyCanonization = DKIMInfo::Simple;
                 } else {
-                    qCWarning(MESSAGEVIEWER_LOG) << "canonicalizations for body unknown " << canonicalizations.at(1);
+                    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "canonicalizations for body unknown " << canonicalizations.at(1);
                     mBodyCanonization = DKIMInfo::Unknown;
                     return;
                 }
             } else {
-                qCWarning(MESSAGEVIEWER_LOG) << " Problem during parsing canonicalizations " << str;
+                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Problem during parsing canonicalizations " << str;
                 mHeaderCanonization = DKIMInfo::Unknown;
                 mBodyCanonization = DKIMInfo::Unknown;
             }

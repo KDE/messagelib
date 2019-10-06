@@ -6,3 +6,4 @@ org.kde.pim.messageviewer messagelib (messageviewer) IDENTIFIER [MESSAGEVIEWER_L
 org.kde.pim.templateparser messagelib (templateparser) IDENTIFIER [MIMETREEPARSER_LOG]
 org.kde.pim.mimetreeparser messagelib (mimetreeparser) IDENTIFIER [TEMPLATEPARSER_LOG]
 org.kde.pim.webengineviewer messagelib (webengineviewer) IDENTIFIER [WEBENGINEVIEWER_LOG]
+org.kde.pim.messageviewer_dkimchecker messagelib (messageviewer) IDENTIFIER [MESSAGEVIEWER_DKIMCHECKER_LOG]

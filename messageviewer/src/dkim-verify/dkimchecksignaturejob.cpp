@@ -21,7 +21,7 @@
 #include "dkimdownloadkeyjob.h"
 #include "dkiminfo.h"
 #include "dkimkeyrecord.h"
-#include "messageviewer_debug.h"
+#include "messageviewer_dkimcheckerdebug.h"
 #include <KLocalizedString>
 #include <QDateTime>
 //see https://tools.ietf.org/html/rfc6376
@@ -52,7 +52,7 @@ void DKIMCheckSignatureJob::start()
         return;
     }
     if (!mDkimInfo.parseDKIM(mDkimValue)) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to parse header" << mDkimValue;
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse header" << mDkimValue;
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         deleteLater();
         return;
@@ -163,7 +163,7 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
     });
     connect(job, &DKIMDownloadKeyJob::success, this, &DKIMCheckSignatureJob::slotDownloadKeyDone);
     if (!job->start()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start downloadkey";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start downloadkey";
         deleteLater();
     }
 }
@@ -171,7 +171,7 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
 void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst)
 {
     if (lst.count() != 1) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Key result has more that 1 element";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Key result has more that 1 element";
         deleteLater();
         return;
     }
@@ -181,14 +181,14 @@ void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst)
 void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str)
 {
     if (!mDkimKeyRecord.parseKey(str)) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to parse key record " << str;
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse key record " << str;
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         deleteLater();
         return;
     }
 
     if (mDkimKeyRecord.keyType() != QLatin1String("rsa")) {
-        qCWarning(MESSAGEVIEWER_LOG) << "mDkimKeyRecord key type is unknown " << mDkimKeyRecord.keyType();
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord key type is unknown " << mDkimKeyRecord.keyType();
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         deleteLater();
         return;
@@ -232,33 +232,33 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
         mWarningFound += i18n("Signature created in the future");
     }
     if (info.signature().isEmpty()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Signature doesn't exist";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature doesn't exist";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::MissingSignature;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
-    if (!info.listSignedHeader().contains(QLatin1String("from"))) {
-        qCWarning(MESSAGEVIEWER_LOG) << "From is not include in headers list";
+    if (!info.listSignedHeader().contains(QLatin1String("from"), Qt::CaseInsensitive)) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "From is not include in headers list";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::MissingFrom;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
     if (info.domain().isEmpty()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Domain is not defined.";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Domain is not defined.";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::DomainNotExist;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
     if (info.query() != QLatin1String("dns/txt")) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Query is incorrect: " << info.query();
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Query is incorrect: " << info.query();
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidQueryMethod;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
 
     if (info.hashingAlgorithm().isEmpty()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "body header algorithm is empty";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "body header algorithm is empty";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidBodyHashAlgorithm;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
     if (info.signingAlgorithm().isEmpty()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "signature algorithm is empty";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "signature algorithm is empty";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidSignAlgorithm;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
