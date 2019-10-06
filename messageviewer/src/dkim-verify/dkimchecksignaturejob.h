@@ -85,7 +85,7 @@ private:
     void verifyRSASignature();
     KMime::Message::Ptr mMessage;
     DKIMInfo mDkimInfo;
-    DKIMKeyRecord mDkimKeyecord;
+    DKIMKeyRecord mDkimKeyRecord;
     QString mDkimValue;
     QString mWarningFound;
     DKIMCheckSignatureJob::DKIMError mError = DKIMCheckSignatureJob::DKIMError::Any;

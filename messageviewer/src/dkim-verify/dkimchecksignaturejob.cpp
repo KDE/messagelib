@@ -155,14 +155,19 @@ void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst)
 
 void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str)
 {
-    if (!mDkimKeyecord.parseKey(str)) {
+    if (!mDkimKeyRecord.parseKey(str)) {
         qCWarning(MESSAGEVIEWER_LOG) << "Impossible to parse key record " << str;
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         deleteLater();
         return;
     }
 
-    //TODO check keyrecord if it's valid against signature
+    if (mDkimKeyRecord.keyType() != QLatin1String("rsa")) {
+        qCWarning(MESSAGEVIEWER_LOG) << "mDkimKeyRecord key type is unknown " << mDkimKeyRecord.keyType();
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        deleteLater();
+        return;
+    }
 
 
     verifyRSASignature();
