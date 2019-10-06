@@ -149,6 +149,10 @@
 #include <grantleetheme/grantleethememanager.h>
 #include <grantleetheme/grantleetheme.h>
 
+#ifdef USE_DKIM_CHECKER
+#include "dkim-verify/dkimmanager.h"
+#endif
+
 using namespace boost;
 using namespace MailTransport;
 using namespace MessageViewer;
@@ -1301,6 +1305,9 @@ void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message, MimeT
 #ifndef QT_NO_TREEVIEW
     mMimePartTree->setRoot(mNodeHelper->messageWithExtraContent(message.data()));
     update(updateMode);
+#endif
+#ifdef USE_DKIM_CHECKER
+    MessageViewer::DKIMManager::self()->checkDKim(mMessage);
 #endif
 }
 

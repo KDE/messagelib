@@ -15,6 +15,11 @@ else()
     set(EXCHANGE_COMPATIBLE_INVITATIONS false)
 endif()
 
+if (DKIM_CHECKER_BUILD)
+    set(USE_DKIM_CHECKER 1)
+endif()
+
+
 configure_file(settings/messageviewer.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/messageviewer.kcfg)
 include(CheckIncludeFiles)
 find_package(Inotify)
