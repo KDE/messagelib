@@ -28,6 +28,7 @@ LookUpKey::LookUpKey(QObject *parent)
 void LookUpKey::lookUpServer(const QString &addr)
 {
     // Create a DNS lookup.
+    mAddress = addr;
     mDnsLookup = new QDnsLookup(this);
     connect(mDnsLookup, &QDnsLookup::finished,
             this, &LookUpKey::handleServers);
@@ -49,6 +50,7 @@ void LookUpKey::handleServers()
 
     // Handle the results.
     const auto records = mDnsLookup->textRecords();
+    qDebug() <<" resolve address " << mAddress;
     for (const QDnsTextRecord &record : records) {
         qDebug() << " record " << record.values();
     }

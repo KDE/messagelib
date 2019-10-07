@@ -32,6 +32,7 @@ public:
 private:
     void handleServers();
     QDnsLookup *mDnsLookup = nullptr;
+    QString mAddress;
 };
 
 #endif // LOOKUPKEY_H
