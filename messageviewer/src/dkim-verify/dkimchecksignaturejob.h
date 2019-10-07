@@ -49,6 +49,7 @@ public:
         InvalidBodyCanonicalization,
         InvalidBodyHashAlgorithm,
         InvalidSignAlgorithm,
+        PublicKeyWasRevoked,
 
         //TODO add more
     };

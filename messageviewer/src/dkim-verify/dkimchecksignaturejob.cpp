@@ -204,6 +204,15 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str)
         //                     RECOMMENDED unless subdomaining is required.
         //TODO
     }
+    if (mDkimKeyRecord.publicKey().isEmpty()) {
+        // empty value means that this public key has been revoked
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord public key is empty. It was revoked ";
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyWasRevoked;
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        deleteLater();
+        return;
+
+    }
 
     verifyRSASignature();
 }
