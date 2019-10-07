@@ -172,12 +172,19 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
 
 void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst)
 {
+    QByteArray ba;
     if (lst.count() != 1) {
+        for (const QByteArray &b : lst) {
+            ba += b;
+        }
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Key result has more that 1 element" << lst;
-        deleteLater();
-        return;
+        //deleteLater();
+        //return;
+    } else {
+        ba = lst.at(0);
     }
-    parseDKIMKeyRecord(QString::fromLocal8Bit(lst.at(0)));
+    qDebug() << " ba" << ba;
+    parseDKIMKeyRecord(QString::fromLocal8Bit(ba));
 }
 
 void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str)
