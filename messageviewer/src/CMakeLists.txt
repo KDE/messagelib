@@ -68,6 +68,7 @@ if (DKIM_CHECKER_BUILD)
         dkim-verify/dkimutil.cpp
         dkim-verify/dkimkeyrecord.cpp
         dkim-verify/dkimmanager.cpp
+        dkim-verify/dkimresultattribute.cpp
         )
 endif()
 

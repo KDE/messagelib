@@ -20,6 +20,7 @@
 #include "dkimchecksignaturejob.h"
 #include "dkimdownloadkeyjob.h"
 #include "dkiminfo.h"
+#include "dkimutil.h"
 #include "dkimkeyrecord.h"
 #include "messageviewer_dkimcheckerdebug.h"
 #include <KLocalizedString>
@@ -79,6 +80,7 @@ void DKIMCheckSignatureJob::start()
         bodyCanonizationResult = bodyCanonizationRelaxed();
         break;
     }
+    qDebug() << " bodyCanonizationResult "<< bodyCanonizationResult;
 
     if (mDkimInfo.bodyLenghtCount() != -1) { //Verify it.
         if (mDkimInfo.bodyLenghtCount() < bodyCanonizationResult.length()) {
@@ -106,6 +108,7 @@ void DKIMCheckSignatureJob::start()
         break;
     }
 
+    qDebug() << " headerCanonizationResult" << headerCanonizationResult;
     downloadKey(mDkimInfo);
 }
 
@@ -115,8 +118,18 @@ QString DKIMCheckSignatureJob::bodyCanonizationSimple() const
      * canonicalize the body using the simple algorithm
      * specified in Section 3.4.3 of RFC 6376
      */
+    //    The "simple" body canonicalization algorithm ignores all empty lines
+    //       at the end of the message body.  An empty line is a line of zero
+    //       length after removal of the line terminator.  If there is no body or
+    //       no trailing CRLF on the message body, a CRLF is added.  It makes no
+    //       other changes to the message body.  In more formal terms, the
+    //       "simple" body canonicalization algorithm converts "*CRLF" at the end
+    //       of the body to a single "CRLF".
 
-    return {};
+    //       Note that a completely empty or missing body is canonicalized as a
+    //       single "CRLF"; that is, the canonicalized length will be 2 octets.
+
+    return MessageViewer::DKIMUtil::bodyCanonizationSimple(QString::fromLatin1(mMessage->body()));
 }
 
 QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
@@ -125,8 +138,23 @@ QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
      * canonicalize the body using the relaxed algorithm
      * specified in Section 3.4.4 of RFC 6376
      */
+    /*
+        a.  Reduce whitespace:
 
-    return {};
+            *  Ignore all whitespace at the end of lines.  Implementations
+                MUST NOT remove the CRLF at the end of the line.
+
+            *  Reduce all sequences of WSP within a line to a single SP
+                character.
+
+        b.  Ignore all empty lines at the end of the message body.  "Empty
+            line" is defined in Section 3.4.3.  If the body is non-empty but
+            does not end with a CRLF, a CRLF is added.  (For email, this is
+            only possible when using extensions to SMTP or non-SMTP transport
+            mechanisms.)
+        */
+
+    return MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString::fromLatin1(mMessage->body()));
 }
 
 QString DKIMCheckSignatureJob::headerCanonizationSimple() const

@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2018-2019 Laurent Montel <montel@kde.org>
+   Copyright (C) 2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -16,17 +16,30 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
+#ifndef DKIMRESULTATTRIBUTE_H
+#define DKIMRESULTATTRIBUTE_H
 
-#ifndef DKIMUTIL_H
-#define DKIMUTIL_H
-#include <QString>
-#include "messageviewer_private_export.h"
+#include <AkonadiCore/attribute.h>
 namespace MessageViewer {
-namespace DKIMUtil
+class DKIMResultAttributePrivate;
+
+class DKIMResultAttribute : public Akonadi::Attribute
 {
-MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationRelaxed(QString body);
-MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationSimple(QString body);
-}
+public:
+    DKIMResultAttribute();
+    ~DKIMResultAttribute();
+    Q_REQUIRED_RESULT DKIMResultAttribute *clone() const override;
+    Q_REQUIRED_RESULT QByteArray type() const override;
+    Q_REQUIRED_RESULT QByteArray serialized() const override;
+    void deserialize(const QByteArray &data) override;
+
+
+    Q_REQUIRED_RESULT bool operator==(const DKIMResultAttribute &other) const;
+
+private:
+    friend class DKIMResultAttributePrivate;
+    DKIMResultAttributePrivate *const d;
+};
 }
 
-#endif // DKIMUTIL_H
+#endif // DKIMRESULTATTRIBUTE_H
