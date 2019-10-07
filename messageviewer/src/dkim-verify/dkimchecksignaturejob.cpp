@@ -170,13 +170,35 @@ QString DKIMCheckSignatureJob::headerCanonizationSimple() const
 
 QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
 {
+//    The "relaxed" header canonicalization algorithm MUST apply the
+//       following steps in order:
+
+//       o  Convert all header field names (not the header field values) to
+//          lowercase.  For example, convert "SUBJect: AbC" to "subject: AbC".
+
+//       o  Unfold all header field continuation lines as described in
+//          [RFC5322]; in particular, lines with terminators embedded in
+//          continued header field values (that is, CRLF sequences followed by
+//          WSP) MUST be interpreted without the CRLF.  Implementations MUST
+//          NOT remove the CRLF at the end of the header field value.
+
+//       o  Convert all sequences of one or more WSP characters to a single SP
+//          character.  WSP characters here include those before and after a
+//          line folding boundary.
+
+//       o  Delete all WSP characters at the end of each unfolded header field
+//          value.
+
+//       o  Delete any WSP characters remaining before and after the colon
+//          separating the header field name from the header field value.  The
+//          colon separator MUST be retained.
+
     // Convert header field name (not the header field values) to lowercase
     //TODO
     QString headers;
     for (const QString &header : mDkimInfo.listSignedHeader()) {
         if (auto hrd = mMessage->headerByType(header.toLower().toLatin1().constData())) {
             //headers += hrd->asUnicodeString();
-            //TODO
         }
     }
     return headers;
