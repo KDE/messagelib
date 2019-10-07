@@ -102,6 +102,6 @@ void DKIMDownloadKeyJob::resolvDnsDone()
         textRecordResult << record.values();
     }
 
-    Q_EMIT success(textRecordResult);
+    Q_EMIT success(textRecordResult, mDomainName, mSelectorName);
     deleteLater();
 }

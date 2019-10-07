@@ -23,6 +23,7 @@ using namespace MessageViewer;
 DKIMManagerKey::DKIMManagerKey(QObject *parent)
     : QObject(parent)
 {
+    loadKeys();
 }
 
 DKIMManagerKey::~DKIMManagerKey()
@@ -35,6 +36,23 @@ DKIMManagerKey *DKIMManagerKey::self()
     return &s_self;
 }
 
+void DKIMManagerKey::addKey(const KeyInfo &key)
+{
+    if (!mKeys.contains(key)) {
+        mKeys.append(key);
+    }
+}
+
+void DKIMManagerKey::removeKey(const QString &key)
+{
+    //TODO
+}
+
+QVector<KeyInfo> DKIMManagerKey::keys() const
+{
+    return mKeys;
+}
+
 void DKIMManagerKey::loadKeys()
 {
     //TODO
@@ -43,4 +61,11 @@ void DKIMManagerKey::loadKeys()
 void DKIMManagerKey::saveKeys()
 {
     //TODO
+}
+
+bool KeyInfo::operator ==(const KeyInfo &other) const
+{
+    return keyValue == other.keyValue &&
+            selector == other.selector &&
+            domain == other.domain;
 }

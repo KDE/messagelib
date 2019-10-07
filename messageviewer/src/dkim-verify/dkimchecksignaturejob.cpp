@@ -220,7 +220,7 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
     }
 }
 
-void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst)
+void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst, const QString &domain, const QString &selector)
 {
     QByteArray ba;
     if (lst.count() != 1) {
@@ -231,10 +231,10 @@ void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst)
     } else {
         ba = lst.at(0);
     }
-    parseDKIMKeyRecord(QString::fromLocal8Bit(ba));
+    parseDKIMKeyRecord(QString::fromLocal8Bit(ba), domain, selector);
 }
 
-void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str)
+void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector)
 {
     if (!mDkimKeyRecord.parseKey(str)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse key record " << str;
@@ -267,6 +267,8 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str)
         return;
 
     }
+
+    Q_EMIT storeKey(str, domain, selector);
 
     verifyRSASignature();
 }

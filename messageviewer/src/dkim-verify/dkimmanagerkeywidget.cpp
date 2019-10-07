@@ -45,8 +45,13 @@ DKIMManagerKeyWidget::~DKIMManagerKeyWidget()
 
 void DKIMManagerKeyWidget::loadKeys()
 {
-    //DKIMManagerKey::self()->loadKeys();
-    //TODO
+    const QVector<MessageViewer::KeyInfo> lst = DKIMManagerKey::self()->keys();
+    for (const MessageViewer::KeyInfo &key : lst) {
+        QTreeWidgetItem *item = new QTreeWidgetItem(mTreeWidget);
+        item->setText(0, key.domain);
+        item->setText(1, key.selector);
+        item->setText(2, key.keyValue);
+    }
 }
 
 void DKIMManagerKeyWidget::saveKeys()

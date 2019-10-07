@@ -31,7 +31,7 @@ public:
     explicit DKIMDownloadKeyJob(QObject *parent = nullptr);
     ~DKIMDownloadKeyJob();
 
-    bool start();
+    Q_REQUIRED_RESULT bool start();
 
     Q_REQUIRED_RESULT bool canStart() const;
 
@@ -47,7 +47,7 @@ public:
 
 Q_SIGNALS:
     void error();
-    void success(const QList<QByteArray> &);
+    void success(const QList<QByteArray> &, const QString &domain, const QString &selector);
 
 private:
     void resolvDnsDone();

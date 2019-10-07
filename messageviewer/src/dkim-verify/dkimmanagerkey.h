@@ -22,7 +22,14 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
+#include <QVector>
 namespace MessageViewer {
+struct MESSAGEVIEWER_EXPORT KeyInfo {
+    QString keyValue;
+    QString selector;
+    QString domain;
+    Q_REQUIRED_RESULT bool operator ==(const KeyInfo &) const;
+};
 class MESSAGEVIEWER_EXPORT DKIMManagerKey : public QObject
 {
     Q_OBJECT
@@ -34,7 +41,15 @@ public:
 
     void loadKeys();
     void saveKeys();
+
+    void addKey(const KeyInfo &key);
+    void removeKey(const QString &key);
+
+    Q_REQUIRED_RESULT QVector<KeyInfo> keys() const;
+
+private:
+    QVector<KeyInfo> mKeys;
 };
 }
-
+Q_DECLARE_TYPEINFO(MessageViewer::KeyInfo, Q_MOVABLE_TYPE);
 #endif // DKIMMANAGERKEY_H

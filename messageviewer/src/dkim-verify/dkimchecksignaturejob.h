@@ -74,11 +74,12 @@ public:
 
 Q_SIGNALS:
     void result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
+    void storeKey(const QString &key, const QString &domain, const QString &selector);
 
 private:
     void downloadKey(const DKIMInfo &info);
-    void slotDownloadKeyDone(const QList<QByteArray> &lst);
-    void parseDKIMKeyRecord(const QString &str);
+    void slotDownloadKeyDone(const QList<QByteArray> &lst, const QString &domain, const QString &selector);
+    void parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector);
     QString headerCanonizationSimple() const;
     QString headerCanonizationRelaxed() const;
     QString bodyCanonizationRelaxed() const;

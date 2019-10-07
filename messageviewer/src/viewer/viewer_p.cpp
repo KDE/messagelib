@@ -1307,7 +1307,9 @@ void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message, MimeT
     update(updateMode);
 #endif
 #ifdef USE_DKIM_CHECKER
-    MessageViewer::DKIMManager::self()->checkDKim(mMessage);
+    if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
+        MessageViewer::DKIMManager::self()->checkDKim(mMessage);
+    }
 #endif
 }
 

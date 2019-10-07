@@ -74,12 +74,7 @@ void DKIMManagerKeyDialog::loadKeys()
     mManagerWidget->loadKeys();
 }
 
-void DKIMManagerKeyDialog::saveKeys()
-{
-    mManagerWidget->saveKeys();
-}
-
 void DKIMManagerKeyDialog::slotAccept()
 {
-    saveKeys();
+    mManagerWidget->saveKeys();
 }

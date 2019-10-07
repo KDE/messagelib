@@ -250,5 +250,17 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       </entry>
     </group>
 
+    <group name="DKIM">
+      <entry name="EnabledDkim" type="bool">
+        <default>false</default>
+      </entry>
+      <entry name="SaveDkimResult" type="bool">
+        <default>false</default>
+      </entry>
+      <entry name="SaveKey" type="bool">
+        <default>false</default>
+      </entry>
+    </group>
+
 </kcfg>
 

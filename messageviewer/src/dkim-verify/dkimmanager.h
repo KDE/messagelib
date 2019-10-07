@@ -33,6 +33,9 @@ public:
     static DKIMManager *self();
 
     void checkDKim(const KMime::Message::Ptr &message);
+
+private:
+    void storeKey(const QString &key, const QString &domain, const QString &selector);
 };
 }
 
