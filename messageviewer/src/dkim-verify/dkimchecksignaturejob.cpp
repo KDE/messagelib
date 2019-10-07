@@ -146,7 +146,7 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
     //TODO
     QString headers;
     for (const QString &header : mDkimInfo.listSignedHeader()) {
-        if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
+        if (auto hrd = mMessage->headerByType(header.toLower().toLatin1().constData())) {
             //headers += hrd->asUnicodeString();
             //TODO
         }
@@ -178,12 +178,9 @@ void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst)
             ba += b;
         }
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Key result has more that 1 element" << lst;
-        //deleteLater();
-        //return;
     } else {
         ba = lst.at(0);
     }
-    qDebug() << " ba" << ba;
     parseDKIMKeyRecord(QString::fromLocal8Bit(ba));
 }
 

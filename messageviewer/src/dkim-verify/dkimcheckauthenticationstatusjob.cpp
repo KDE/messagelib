@@ -46,3 +46,13 @@ bool DKIMCheckAuthenticationStatusJob::canStart() const
     //TODO
     return false;
 }
+
+KMime::Message::Ptr DKIMCheckAuthenticationStatusJob::message() const
+{
+    return mMessage;
+}
+
+void DKIMCheckAuthenticationStatusJob::setMessage(const KMime::Message::Ptr &message)
+{
+    mMessage = message;
+}

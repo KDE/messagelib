@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "messageviewer_private_export.h"
+#include <KMime/Message>
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckAuthenticationStatusJob : public QObject
 {
@@ -33,6 +34,11 @@ public:
     void start();
 
     Q_REQUIRED_RESULT bool canStart() const;
+    Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
+    void setMessage(const KMime::Message::Ptr &message);
+
+private:
+    KMime::Message::Ptr mMessage;
 };
 }
 

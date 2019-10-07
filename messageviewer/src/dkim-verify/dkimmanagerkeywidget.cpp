@@ -22,6 +22,7 @@
 
 #include <QTreeWidget>
 #include <QVBoxLayout>
+#include <KLocalizedString>
 
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
@@ -33,7 +34,9 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
 
     mTreeWidget = new QTreeWidget(this);
     mTreeWidget->setObjectName(QStringLiteral("treewidget"));
+    mTreeWidget->setHeaderLabels({i18n("SDID"), i18n("Selector"), i18n("DKIM Key")});
     mainLayout->addWidget(mTreeWidget);
+    //TODO add remove keys
 }
 
 DKIMManagerKeyWidget::~DKIMManagerKeyWidget()
