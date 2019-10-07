@@ -90,6 +90,28 @@ MessageFactoryNG::~MessageFactoryNG()
 {
 }
 
+// Return the addresses to use when replying to the author of msg.
+// See <https://cr.yp.to/proto/replyto.html>.
+static KMime::Types::Mailbox::List authorMailboxes(
+    const KMime::Message::Ptr &msg,
+    KMime::Types::Mailbox::List mailingLists)
+{
+    if (auto mrt = msg->headerByType("Mail-Reply-To")) {
+        return KMime::Types::Mailbox::listFrom7BitString(mrt->as7BitString(false));
+    }
+    if (auto rt = msg->replyTo(false)) {
+        // Did a mailing list munge Reply-To?
+        auto mboxes = rt->mailboxes();
+        for (const auto &list : mailingLists) {
+            mboxes.removeAll(list);
+        }
+        if (!mboxes.isEmpty()) {
+            return mboxes;
+        }
+    }
+    return msg->from(true)->mailboxes();
+}
+
 void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll)
 {
     applyCharset(msg);
@@ -167,11 +189,7 @@ void MessageFactoryNG::createReplyAsync()
                 toList = originalToList;
             } else {
                 // "Normal" case:  reply to sender.
-                if (replyToList.isEmpty()) {
-                    toList = originalFromList;
-                } else {
-                    toList = replyToList;
-                }
+                toList = authorMailboxes(m_origMsg, m_mailingListAddresses);
             }
 
             replyAll = false;
@@ -308,30 +326,7 @@ void MessageFactoryNG::createReplyAsync()
         break;
     }
     case MessageComposer::ReplyAuthor:
-        if (!replyToList.isEmpty()) {
-            KMime::Types::Mailbox::List recipients = replyToList;
-
-            // strip the mailing list post address from the list of Reply-To
-            // addresses since we want to reply in private
-            for (const KMime::Types::Mailbox &mailbox : qAsConst(m_mailingListAddresses)) {
-                foreach (const KMime::Types::Mailbox &recipient, recipients) { //Don't use for(...:...)
-                    if (mailbox == recipient) {
-                        recipients.removeAll(recipient);
-                    }
-                }
-            }
-
-            if (!recipients.isEmpty()) {
-                toList = recipients;
-            } else {
-                // there was only the mailing list post address in the Reply-To header,
-                // so use the From address instead
-                toList = m_origMsg->from()->mailboxes();
-            }
-        } else if (!m_origMsg->from()->asUnicodeString().isEmpty()) {
-            toList = m_origMsg->from()->mailboxes();
-        }
-
+        toList = authorMailboxes(m_origMsg, m_mailingListAddresses);
         replyAll = false;
         break;
     case MessageComposer::ReplyNone:
