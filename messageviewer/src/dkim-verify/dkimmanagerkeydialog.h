@@ -21,11 +21,11 @@
 #define DKIMMANAGERKEYDIALOG_H
 
 #include <QDialog>
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 
 namespace MessageViewer {
 class DKIMManagerKeyWidget;
-class MESSAGEVIEWER_TESTS_EXPORT DKIMManagerKeyDialog : public QDialog
+class MESSAGEVIEWER_EXPORT DKIMManagerKeyDialog : public QDialog
 {
     Q_OBJECT
 public:

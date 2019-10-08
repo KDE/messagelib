@@ -20,10 +20,10 @@
 #define DKIMMANAGERKEYWIDGET_H
 
 #include <QWidget>
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 class QTreeWidget;
 namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMManagerKeyWidget : public QWidget
+class MESSAGEVIEWER_EXPORT DKIMManagerKeyWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -32,7 +32,9 @@ public:
 
     void loadKeys();
     void saveKeys();
+    void resetKeys();
 private:
+    void customContextMenuRequested(const QPoint &);
     QTreeWidget *mTreeWidget = nullptr;
 };
 }

@@ -55,6 +55,7 @@ public:
     Q_REQUIRED_RESULT QVector<KeyInfo> keys() const;
 
     void saveKeys();
+    Q_REQUIRED_RESULT QString keyValue(const QString &selector, const QString &domain);
 private:
     QVector<KeyInfo> mKeys;
 };

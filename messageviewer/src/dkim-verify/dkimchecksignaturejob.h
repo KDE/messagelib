@@ -53,6 +53,11 @@ public:
 
         //TODO add more
     };
+    enum class DKIMWarning {
+        Any,
+        SignatureExpired,
+        SignatureCreatedInFuture,
+    };
 
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
     ~DKIMCheckSignatureJob();
@@ -63,8 +68,6 @@ public:
     Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMStatus status() const;
     void setStatus(const DKIMCheckSignatureJob::DKIMStatus &status);
 
-    Q_REQUIRED_RESULT QString warningFound() const;
-    void setWarningFound(const QString &warningFound);
     Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::DKIMStatus checkSignature(const MessageViewer::DKIMInfo &info);
 
     Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMError error() const;
@@ -72,14 +75,17 @@ public:
     Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr &message);
 
+    Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMWarning warning() const;
+    void setWarning(const DKIMWarning &warning);
+
 Q_SIGNALS:
-    void result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
+    void result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status, MessageViewer::DKIMCheckSignatureJob::DKIMError error, MessageViewer::DKIMCheckSignatureJob::DKIMWarning warning);
     void storeKey(const QString &key, const QString &domain, const QString &selector);
 
 private:
     void downloadKey(const DKIMInfo &info);
     void slotDownloadKeyDone(const QList<QByteArray> &lst, const QString &domain, const QString &selector);
-    void parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector);
+    void parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue = true);
     QString headerCanonizationSimple() const;
     QString headerCanonizationRelaxed() const;
     QString bodyCanonizationRelaxed() const;
@@ -89,8 +95,8 @@ private:
     DKIMInfo mDkimInfo;
     DKIMKeyRecord mDkimKeyRecord;
     QString mDkimValue;
-    QString mWarningFound;
     DKIMCheckSignatureJob::DKIMError mError = DKIMCheckSignatureJob::DKIMError::Any;
+    DKIMCheckSignatureJob::DKIMWarning mWarning = DKIMCheckSignatureJob::DKIMWarning::Any;
     DKIMCheckSignatureJob::DKIMStatus mStatus = DKIMCheckSignatureJob::DKIMStatus::Unknown;
 };
 }

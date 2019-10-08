@@ -335,6 +335,8 @@ if (DKIM_CHECKER_BUILD)
         DKIMManagerKey
         DKIMCheckSignatureJob
         DKIMManager
+        DKIMManagerKeyWidget
+        DKIMManagerKeyDialog
         DKIMInfo
         REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
         PREFIX MessageViewer

@@ -41,6 +41,16 @@ DKIMManagerKey *DKIMManagerKey::self()
     return &s_self;
 }
 
+QString DKIMManagerKey::keyValue(const QString &selector, const QString &domain)
+{
+    for (const KeyInfo &keyInfo : mKeys) {
+        if (keyInfo.selector == selector && keyInfo.domain == domain) {
+            return keyInfo.keyValue;
+        }
+    }
+    return {};
+}
+
 void DKIMManagerKey::addKey(const KeyInfo &key)
 {
     if (!mKeys.contains(key)) {
@@ -50,7 +60,12 @@ void DKIMManagerKey::addKey(const KeyInfo &key)
 
 void DKIMManagerKey::removeKey(const QString &key)
 {
-    //TODO
+    for (const KeyInfo &keyInfo : mKeys) {
+        if (keyInfo.keyValue == key) {
+            mKeys.removeAll(keyInfo);
+            break;
+        }
+    }
 }
 
 QVector<KeyInfo> DKIMManagerKey::keys() const

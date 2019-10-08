@@ -23,6 +23,7 @@
 #include <QTreeWidget>
 #include <QVBoxLayout>
 #include <KLocalizedString>
+#include <QMenu>
 
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
@@ -34,23 +35,41 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
 
     mTreeWidget = new QTreeWidget(this);
     mTreeWidget->setObjectName(QStringLiteral("treewidget"));
+    mTreeWidget->setRootIsDecorated(false);
     mTreeWidget->setHeaderLabels({i18n("SDID"), i18n("Selector"), i18n("DKIM Key")});
     mainLayout->addWidget(mTreeWidget);
-    //TODO add remove keys
+    mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
+    mTreeWidget->setAlternatingRowColors(true);
+    connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManagerKeyWidget::customContextMenuRequested);
 }
 
 DKIMManagerKeyWidget::~DKIMManagerKeyWidget()
 {
 }
 
+void DKIMManagerKeyWidget::customContextMenuRequested(const QPoint &)
+{
+    QTreeWidgetItem *item = mTreeWidget->currentItem();
+    if (!item) {
+        return;
+    }
+    QMenu menu(this);
+    menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Key"), this, [this, item]() {
+        delete item;
+    });
+    menu.exec(QCursor::pos());
+}
+
 void DKIMManagerKeyWidget::loadKeys()
 {
+    mTreeWidget->clear();
     const QVector<MessageViewer::KeyInfo> lst = DKIMManagerKey::self()->keys();
     for (const MessageViewer::KeyInfo &key : lst) {
         QTreeWidgetItem *item = new QTreeWidgetItem(mTreeWidget);
         item->setText(0, key.domain);
         item->setText(1, key.selector);
         item->setText(2, key.keyValue);
+        item->setToolTip(2, key.keyValue);
     }
 }
 
@@ -63,4 +82,9 @@ void DKIMManagerKeyWidget::saveKeys()
         lst.append(info);
     }
     DKIMManagerKey::self()->saveKeys(lst);
+}
+
+void DKIMManagerKeyWidget::resetKeys()
+{
+    loadKeys();
 }

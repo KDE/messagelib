@@ -19,11 +19,12 @@
 
 #include "dkimchecksignaturejob.h"
 #include "dkimdownloadkeyjob.h"
+#include "dkimmanagerkey.h"
 #include "dkiminfo.h"
 #include "dkimutil.h"
 #include "dkimkeyrecord.h"
 #include "messageviewer_dkimcheckerdebug.h"
-#include <KLocalizedString>
+#include "settings/messageviewersettings.h"
 #include <QDateTime>
 //see https://tools.ietf.org/html/rfc6376
 
@@ -40,7 +41,7 @@ DKIMCheckSignatureJob::~DKIMCheckSignatureJob()
 void DKIMCheckSignatureJob::start()
 {
     if (!mMessage) {
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid, mError, mWarning);
         deleteLater();
         return;
     }
@@ -48,20 +49,20 @@ void DKIMCheckSignatureJob::start()
         mDkimValue = hrd->asUnicodeString();
     }
     if (mDkimValue.isEmpty()) {
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned);
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned, mError, mWarning);
         deleteLater();
         return;
     }
     if (!mDkimInfo.parseDKIM(mDkimValue)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse header" << mDkimValue;
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid, mError, mWarning);
         deleteLater();
         return;
     }
 
     const MessageViewer::DKIMCheckSignatureJob::DKIMStatus status = checkSignature(mDkimInfo);
     if (status != MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid) {
-        Q_EMIT result(status);
+        Q_EMIT result(status, mError, mWarning);
         deleteLater();
         return;
     }
@@ -70,7 +71,7 @@ void DKIMCheckSignatureJob::start()
     switch (mDkimInfo.bodyCanonization()) {
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidBodyCanonicalization;
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid, mError, mWarning);
         deleteLater();
         return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
@@ -97,7 +98,7 @@ void DKIMCheckSignatureJob::start()
     switch (mDkimInfo.headerCanonization()) {
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidHeaderCanonicalization;
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid, mError, mWarning);
         deleteLater();
         return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
@@ -109,7 +110,14 @@ void DKIMCheckSignatureJob::start()
     }
 
     qDebug() << " headerCanonizationResult" << headerCanonizationResult;
-    downloadKey(mDkimInfo);
+    if (MessageViewer::MessageViewerSettings::self()->saveKey()) {
+        const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
+        if (keyValue.isEmpty()) {
+            downloadKey(mDkimInfo);
+        } else {
+            parseDKIMKeyRecord(keyValue, mDkimInfo.domain(), mDkimInfo.selector(), false);
+        }
+    }
 }
 
 QString DKIMCheckSignatureJob::bodyCanonizationSimple() const
@@ -231,21 +239,21 @@ void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst, co
     } else {
         ba = lst.at(0);
     }
-    parseDKIMKeyRecord(QString::fromLocal8Bit(ba), domain, selector);
+    parseDKIMKeyRecord(QString::fromLocal8Bit(ba), domain, selector, true);
 }
 
-void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector)
+void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue)
 {
     if (!mDkimKeyRecord.parseKey(str)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse key record " << str;
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid, mError, mWarning);
         deleteLater();
         return;
     }
 
     if (mDkimKeyRecord.keyType() != QLatin1String("rsa")) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord key type is unknown " << mDkimKeyRecord.keyType() << " str " << str;
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid, mError, mWarning);
         deleteLater();
         return;
     }
@@ -262,12 +270,14 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
         // empty value means that this public key has been revoked
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord public key is empty. It was revoked ";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyWasRevoked;
-        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid, mError, mWarning);
         deleteLater();
         return;
     }
 
-    Q_EMIT storeKey(str, domain, selector);
+    if (storeKeyValue) {
+        Q_EMIT storeKey(str, domain, selector);
+    }
 
     verifyRSASignature();
 }
@@ -276,6 +286,16 @@ void DKIMCheckSignatureJob::verifyRSASignature()
 {
     //TODO
     deleteLater();
+}
+
+DKIMCheckSignatureJob::DKIMWarning DKIMCheckSignatureJob::warning() const
+{
+    return mWarning;
+}
+
+void DKIMCheckSignatureJob::setWarning(const DKIMCheckSignatureJob::DKIMWarning &warning)
+{
+    mWarning = warning;
 }
 
 KMime::Message::Ptr DKIMCheckSignatureJob::message() const
@@ -292,10 +312,10 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
 {
     const qint64 currentDate = QDateTime::currentSecsSinceEpoch();
     if (info.expireTime() != -1 && info.expireTime() < currentDate) {
-        mWarningFound = i18n("Signature Expired");
+        mWarning = DKIMCheckSignatureJob::DKIMWarning::SignatureExpired;
     }
     if (info.signatureTimeStamp() != -1 && info.signatureTimeStamp() > currentDate) {
-        mWarningFound += i18n("Signature created in the future");
+        mWarning = DKIMCheckSignatureJob::DKIMWarning::SignatureCreatedInFuture;
     }
     if (info.signature().isEmpty()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature doesn't exist";
@@ -337,16 +357,6 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
 DKIMCheckSignatureJob::DKIMError DKIMCheckSignatureJob::error() const
 {
     return mError;
-}
-
-QString DKIMCheckSignatureJob::warningFound() const
-{
-    return mWarningFound;
-}
-
-void DKIMCheckSignatureJob::setWarningFound(const QString &warningFound)
-{
-    mWarningFound = warningFound;
 }
 
 DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::status() const
