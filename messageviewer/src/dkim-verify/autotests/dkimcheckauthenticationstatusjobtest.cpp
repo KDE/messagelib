@@ -18,6 +18,7 @@
 */
 
 #include "dkimcheckauthenticationstatusjobtest.h"
+#include "dkim-verify/dkimcheckauthenticationstatusjob.h"
 #include <QTest>
 
 QTEST_MAIN(DKIMCheckAuthenticationStatusJobTest)
@@ -25,4 +26,10 @@ QTEST_MAIN(DKIMCheckAuthenticationStatusJobTest)
 DKIMCheckAuthenticationStatusJobTest::DKIMCheckAuthenticationStatusJobTest(QObject *parent)
     : QObject(parent)
 {
+}
+
+void DKIMCheckAuthenticationStatusJobTest::shouldHaveDefaultValues()
+{
+    MessageViewer::DKIMCheckAuthenticationStatusJob job;
+    QVERIFY(job.authenticationResult().isEmpty());
 }

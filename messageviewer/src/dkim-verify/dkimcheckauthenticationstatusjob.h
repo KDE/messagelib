@@ -37,8 +37,12 @@ public:
     Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr &message);
 
+    Q_REQUIRED_RESULT QString authenticationResult() const;
+    void setAuthenticationResult(const QString &authenticationResult);
+
 private:
     KMime::Message::Ptr mMessage;
+    QString mAuthenticationResult;
 };
 }
 

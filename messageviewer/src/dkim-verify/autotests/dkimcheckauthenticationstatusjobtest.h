@@ -28,6 +28,8 @@ class DKIMCheckAuthenticationStatusJobTest : public QObject
 public:
     explicit DKIMCheckAuthenticationStatusJobTest(QObject *parent = nullptr);
     ~DKIMCheckAuthenticationStatusJobTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
 
 #endif // DKIMCHECKAUTHENTICATIONSTATUSJOBTEST_H

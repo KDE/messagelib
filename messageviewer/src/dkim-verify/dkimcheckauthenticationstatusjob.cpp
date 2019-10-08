@@ -37,6 +37,14 @@ void DKIMCheckAuthenticationStatusJob::start()
         deleteLater();
         return;
     }
+    if (auto hrd = mMessage->headerByType("Authentication-Results")) {
+        mAuthenticationResult = hrd->asUnicodeString();
+    }
+    if (mAuthenticationResult.isEmpty()) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Authencation result is empty";
+        deleteLater();
+        return;
+    }
     //TODO
     deleteLater();
 }
@@ -55,4 +63,14 @@ KMime::Message::Ptr DKIMCheckAuthenticationStatusJob::message() const
 void DKIMCheckAuthenticationStatusJob::setMessage(const KMime::Message::Ptr &message)
 {
     mMessage = message;
+}
+
+QString DKIMCheckAuthenticationStatusJob::authenticationResult() const
+{
+    return mAuthenticationResult;
+}
+
+void DKIMCheckAuthenticationStatusJob::setAuthenticationResult(const QString &authenticationResult)
+{
+    mAuthenticationResult = authenticationResult;
 }
