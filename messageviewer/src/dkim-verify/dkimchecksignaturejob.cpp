@@ -265,7 +265,6 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid);
         deleteLater();
         return;
-
     }
 
     Q_EMIT storeKey(str, domain, selector);

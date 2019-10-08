@@ -25,5 +25,4 @@ QTEST_GUILESS_MAIN(DKIMUtilTest)
 DKIMUtilTest::DKIMUtilTest(QObject *parent)
     : QObject(parent)
 {
-
 }

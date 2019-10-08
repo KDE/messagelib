@@ -22,8 +22,7 @@
 #include <QString>
 #include "messageviewer_private_export.h"
 namespace MessageViewer {
-namespace DKIMUtil
-{
+namespace DKIMUtil {
 MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationRelaxed(QString body);
 MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationSimple(QString body);
 }

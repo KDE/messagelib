@@ -150,12 +150,12 @@ void DKIMKeyRecord::setFlags(const QStringList &flags)
 
 bool DKIMKeyRecord::operator==(const DKIMKeyRecord &other) const
 {
-    return mVersion == other.version() &&
-            mNote == other.note() &&
-            mPublicKey == other.publicKey() &&
-            mService == other.service() &&
-            mHashAlgorithm == other.hashAlgorithm() &&
-            mFlags == other.flags();
+    return mVersion == other.version()
+           && mNote == other.note()
+           && mPublicKey == other.publicKey()
+           && mService == other.service()
+           && mHashAlgorithm == other.hashAlgorithm()
+           && mFlags == other.flags();
 }
 
 QStringList DKIMKeyRecord::hashAlgorithm() const

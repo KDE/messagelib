@@ -62,7 +62,7 @@ void DKIMManagerKey::loadKeys()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig();
     const QStringList keyGroups
-            = config->groupList().filter(QRegularExpression(QStringLiteral("KDIM Key Record #\\d+")));
+        = config->groupList().filter(QRegularExpression(QStringLiteral("KDIM Key Record #\\d+")));
 
     mKeys.clear();
     for (const QString &groupName : keyGroups) {
@@ -78,7 +78,7 @@ void DKIMManagerKey::saveKeys()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig();
     const QStringList filterGroups
-            = config->groupList().filter(QRegularExpression(QStringLiteral("KDIM Key Record #\\d+")));
+        = config->groupList().filter(QRegularExpression(QStringLiteral("KDIM Key Record #\\d+")));
 
     for (const QString &group : filterGroups) {
         config->deleteGroup(group);
@@ -101,7 +101,7 @@ void DKIMManagerKey::saveKeys(const QVector<MessageViewer::KeyInfo> &lst)
 
 bool KeyInfo::operator ==(const KeyInfo &other) const
 {
-    return keyValue == other.keyValue &&
-            selector == other.selector &&
-            domain == other.domain;
+    return keyValue == other.keyValue
+           && selector == other.selector
+           && domain == other.domain;
 }

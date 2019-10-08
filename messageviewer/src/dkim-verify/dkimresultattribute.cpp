@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "dkimresultattribute.h"
 #include <QDataStream>
 
@@ -28,13 +27,13 @@ public:
     DKIMResultAttributePrivate()
     {
     }
+
     //TODO
 };
 
 DKIMResultAttribute::DKIMResultAttribute()
     : d(new DKIMResultAttributePrivate)
 {
-
 }
 
 DKIMResultAttribute::~DKIMResultAttribute()
@@ -61,7 +60,6 @@ QByteArray DKIMResultAttribute::serialized() const
     QDataStream s(&result, QIODevice::WriteOnly);
     //TODO
     return result;
-
 }
 
 void DKIMResultAttribute::deserialize(const QByteArray &data)

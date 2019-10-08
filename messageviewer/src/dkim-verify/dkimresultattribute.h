@@ -33,7 +33,6 @@ public:
     Q_REQUIRED_RESULT QByteArray serialized() const override;
     void deserialize(const QByteArray &data) override;
 
-
     Q_REQUIRED_RESULT bool operator==(const DKIMResultAttribute &other) const;
 
 private:
