@@ -46,6 +46,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
 
   <group name="Security">
     <entry name="CheckPhishingUrl" type="Bool">
+       <label>Check if url can be a phishing</label>
        <default>false</default>
     </entry>
   </group>
