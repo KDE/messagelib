@@ -57,12 +57,15 @@ void DKIMManagerKeyWidget::customContextMenuRequested(const QPoint &)
     menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Key"), this, [this, item]() {
         delete item;
     });
+    menu.addSeparator();
+    menu.addAction(i18n("Delete All"), this, [this]() {
+        mTreeWidget->clear();
+    });
     menu.exec(QCursor::pos());
 }
 
 void DKIMManagerKeyWidget::loadKeys()
 {
-    mTreeWidget->clear();
     const QVector<MessageViewer::KeyInfo> lst = DKIMManagerKey::self()->keys();
     for (const MessageViewer::KeyInfo &key : lst) {
         QTreeWidgetItem *item = new QTreeWidgetItem(mTreeWidget);
@@ -76,7 +79,7 @@ void DKIMManagerKeyWidget::loadKeys()
 void DKIMManagerKeyWidget::saveKeys()
 {
     QVector<MessageViewer::KeyInfo> lst;
-    for (int i = 0; i < mTreeWidget->topLevelItemCount(); ++i) {
+    for (int i = 0, total = mTreeWidget->topLevelItemCount(); i < total; ++i) {
         QTreeWidgetItem *item = mTreeWidget->topLevelItem(i);
         const MessageViewer::KeyInfo info {item->text(2), item->text(1), item->text(0)};
         lst.append(info);
@@ -86,5 +89,6 @@ void DKIMManagerKeyWidget::saveKeys()
 
 void DKIMManagerKeyWidget::resetKeys()
 {
+    mTreeWidget->clear();
     loadKeys();
 }
