@@ -25,6 +25,11 @@
 #include <QVector>
 namespace MessageViewer {
 struct MESSAGEVIEWER_EXPORT KeyInfo {
+    KeyInfo(const QString &key, const QString &sel, const QString &dom)
+        : keyValue(key),
+          selector(sel),
+          domain(dom)
+    {}
     QString keyValue;
     QString selector;
     QString domain;

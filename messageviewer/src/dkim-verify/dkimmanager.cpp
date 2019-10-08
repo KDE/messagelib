@@ -48,10 +48,7 @@ void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
 void DKIMManager::storeKey(const QString &key, const QString &domain, const QString &selector)
 {
     if (MessageViewer::MessageViewerSettings::self()->saveKey()) {
-        MessageViewer::KeyInfo info;
-        info.keyValue = key;
-        info.domain = domain;
-        info.selector = selector;
+        const MessageViewer::KeyInfo info {key, selector, domain};
         MessageViewer::DKIMManagerKey::self()->addKey(info);
     }
 }
