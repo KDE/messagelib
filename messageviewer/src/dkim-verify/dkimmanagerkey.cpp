@@ -19,6 +19,11 @@
 
 #include "dkimmanagerkey.h"
 
+#include <KSharedConfig>
+#include <KConfig>
+#include <QRegularExpression>
+#include <KConfigGroup>
+
 using namespace MessageViewer;
 DKIMManagerKey::DKIMManagerKey(QObject *parent)
     : QObject(parent)
@@ -55,12 +60,43 @@ QVector<KeyInfo> DKIMManagerKey::keys() const
 
 void DKIMManagerKey::loadKeys()
 {
-    //TODO
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig();
+    const QStringList keyGroups
+            = config->groupList().filter(QRegularExpression(QStringLiteral("KDIM Key Record #\\d+")));
+
+    mKeys.clear();
+    for (const QString &groupName : keyGroups) {
+        KConfigGroup group = config->group(groupName);
+        const QString selector = group.readEntry(QLatin1String("Selector"), QString());
+        const QString domain = group.readEntry(QLatin1String("Domain"), QString());
+        const QString key = group.readEntry(QLatin1String("Key"), QString());
+        mKeys.append(KeyInfo{key, selector, domain});
+    }
 }
 
 void DKIMManagerKey::saveKeys()
 {
-    //TODO
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig();
+    const QStringList filterGroups
+            = config->groupList().filter(QRegularExpression(QStringLiteral("KDIM Key Record #\\d+")));
+
+    for (const QString &group : filterGroups) {
+        config->deleteGroup(group);
+    }
+    for (int i = 0, total = mKeys.count(); i < total; ++i) {
+        const QString groupName = QStringLiteral("KDIM Key Record #%1").arg(i);
+        KConfigGroup group = config->group(groupName);
+        const KeyInfo &info = mKeys.at(i);
+        group.writeEntry(QLatin1String("Selector"), info.selector);
+        group.writeEntry(QLatin1String("Domain"), info.domain);
+        group.writeEntry(QLatin1String("Key"), info.keyValue);
+    }
+}
+
+void DKIMManagerKey::saveKeys(const QVector<MessageViewer::KeyInfo> &lst)
+{
+    mKeys = lst;
+    saveKeys();
 }
 
 bool KeyInfo::operator ==(const KeyInfo &other) const

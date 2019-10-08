@@ -45,13 +45,14 @@ public:
     static DKIMManagerKey *self();
 
     void loadKeys();
-    void saveKeys();
+    void saveKeys(const QVector<KeyInfo> &lst);
 
     void addKey(const KeyInfo &key);
     void removeKey(const QString &key);
 
     Q_REQUIRED_RESULT QVector<KeyInfo> keys() const;
 
+    void saveKeys();
 private:
     QVector<KeyInfo> mKeys;
 };
