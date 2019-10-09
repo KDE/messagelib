@@ -46,6 +46,7 @@
 #include <KEmailAddress>
 #include <KIconLoader>
 #include <KLocalizedString>
+#include <QRegularExpression>
 
 #include <QUrl>
 
@@ -256,7 +257,6 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
     }
     int httpPos = str.indexOf(QLatin1String("\"http:"), Qt::CaseInsensitive);
     int httpsPos = str.indexOf(QLatin1String("\"https:"), Qt::CaseInsensitive);
-
     while (httpPos >= 0 || httpsPos >= 0) {
         // pos = index of next occurrence of "http: or "https: whichever comes first
         int pos = (httpPos < httpsPos)
@@ -285,6 +285,10 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
         } else {
             httpsPos = str.indexOf(QLatin1String("\"https:"), httpsPos + 7, Qt::CaseInsensitive);
         }
+    }
+    if (str.indexOf(QRegularExpression(QLatin1String("<img.*src=http:/"), QRegularExpression::CaseInsensitiveOption))
+            || str.indexOf(QRegularExpression(QLatin1String("<img.*src=https:/"), QRegularExpression::CaseInsensitiveOption))) {
+        return true;
     }
     return false;
 }
