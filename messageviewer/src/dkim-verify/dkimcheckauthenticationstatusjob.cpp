@@ -52,7 +52,7 @@ void DKIMCheckAuthenticationStatusJob::start()
 bool DKIMCheckAuthenticationStatusJob::canStart() const
 {
     //TODO
-    return false;
+    return (mMessage != nullptr);
 }
 
 KMime::Message::Ptr DKIMCheckAuthenticationStatusJob::message() const

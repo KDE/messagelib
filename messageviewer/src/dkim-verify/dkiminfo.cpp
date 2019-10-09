@@ -55,7 +55,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("bh="))) {
             mBodyHash = elem.right(elem.length() - 3);
         } else if (elem.startsWith(QLatin1String("l="))) {
-            mBodyLenghtCount = elem.right(elem.length() - 2);
+            mBodyLenghtCount = elem.right(elem.length() - 2).toInt();
         } else if (elem.startsWith(QLatin1String("i="))) {
             mUserAgent = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("q="))) {
@@ -320,12 +320,12 @@ void DKIMInfo::setUserAgent(const QString &userAgent)
     mUserAgent = userAgent;
 }
 
-QString DKIMInfo::bodyLenghtCount() const
+int DKIMInfo::bodyLenghtCount() const
 {
     return mBodyLenghtCount;
 }
 
-void DKIMInfo::setBodyLenghtCount(const QString &bodyLenghtCount)
+void DKIMInfo::setBodyLenghtCount(int bodyLenghtCount)
 {
     mBodyLenghtCount = bodyLenghtCount;
 }

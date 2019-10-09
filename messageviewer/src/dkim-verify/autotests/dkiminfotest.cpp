@@ -45,7 +45,7 @@ void DKIMInfoTest::shouldHaveDefaultValue()
     QCOMPARE(info.expireTime(), -1);
     QVERIFY(info.signature().isEmpty());
     QVERIFY(info.userAgent().isEmpty());
-    QVERIFY(info.bodyLenghtCount().isEmpty());
+    QCOMPARE(info.bodyLenghtCount(), -1);
     QCOMPARE(info.headerCanonization(), MessageViewer::DKIMInfo::Unknown);
     QCOMPARE(info.bodyCanonization(), MessageViewer::DKIMInfo::Unknown);
     QVERIFY(info.copiedHeaderField().isEmpty());

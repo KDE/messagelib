@@ -50,6 +50,7 @@ public:
         InvalidBodyHashAlgorithm,
         InvalidSignAlgorithm,
         PublicKeyWasRevoked,
+        SignatureTooLarge,
 
         //TODO add more
     };
@@ -57,6 +58,7 @@ public:
         Any,
         SignatureExpired,
         SignatureCreatedInFuture,
+        SignatureTooSmall
     };
 
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);

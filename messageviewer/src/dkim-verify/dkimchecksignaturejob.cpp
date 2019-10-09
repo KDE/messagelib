@@ -85,12 +85,16 @@ void DKIMCheckSignatureJob::start()
 
     if (mDkimInfo.bodyLenghtCount() != -1) { //Verify it.
         if (mDkimInfo.bodyLenghtCount() < bodyCanonizationResult.length()) {
-            //TODO
+            // lenght tag exceeds body size
+            mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::SignatureTooLarge;
+            Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid, mError, mWarning);
+            deleteLater();
+            return;
         } else if (mDkimInfo.bodyLenghtCount() > bodyCanonizationResult.length()) {
-            //TODO
+            mWarning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::SignatureTooSmall;
         }
         // truncated body to the length specified in the "l=" tag
-        // TODO
+        bodyCanonizationResult = bodyCanonizationResult.left(mDkimInfo.bodyLenghtCount());
     }
 
     //Compute Hash Header
