@@ -221,10 +221,11 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
 
     // Convert header field name (not the header field values) to lowercase
     //TODO
+    QStringList lst;
     QString headers;
     for (const QString &header : mDkimInfo.listSignedHeader()) {
         if (auto hrd = mMessage->headerByType(header.toLower().toLatin1().constData())) {
-            //headers += hrd->asUnicodeString();
+            lst << header.toLower() + QStringLiteral(": ") + hrd->asUnicodeString();
         }
     }
     return headers;
