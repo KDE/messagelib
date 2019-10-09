@@ -95,7 +95,7 @@ void DKIMCheckSignatureJob::start()
 
     }
 
-    qDebug() << " bodyCanonizationResult "<< bodyCanonizationResult << resultHash.toBase64();
+    qDebug() << " bodyCanonizationResult "<< bodyCanonizationResult << resultHash.toBase64() << " algorithm " << mDkimInfo.hashingAlgorithm();
 
     if (mDkimInfo.bodyLenghtCount() != -1) { //Verify it.
         if (mDkimInfo.bodyLenghtCount() < bodyCanonizationResult.length()) {

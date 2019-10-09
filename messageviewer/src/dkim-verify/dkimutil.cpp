@@ -18,7 +18,7 @@
 */
 
 #include "dkimutil.h"
-
+#include <QDebug>
 #include <QRegularExpression>
 
 QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
@@ -43,12 +43,16 @@ QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
             mechanisms.)
         */
 
+    qDebug() << " before " << body;
     body.replace(QRegularExpression(QLatin1String("[ \t]+\r\n/g")), QLatin1String("\r\n"));
+    qDebug() << " before1 " << body;
     body.replace(QRegularExpression(QLatin1String("[ \t]+/g")), QString());
+    qDebug() << " before2 " << body;
     body.replace(QRegularExpression(QLatin1String("((\r\n)+)?$")), QLatin1String("\r\n"));
     if (body == QLatin1String("\r\n")) {
         body.clear();
     }
+    qDebug() << "after " << body;
     return body;
 }
 
