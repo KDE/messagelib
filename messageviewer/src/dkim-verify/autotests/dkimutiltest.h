@@ -28,6 +28,8 @@ class DKIMUtilTest : public QObject
 public:
     explicit DKIMUtilTest(QObject *parent = nullptr);
     ~DKIMUtilTest() = default;
+private Q_SLOTS:
+    void shouldTestBodyCanonizationRelaxed();
 };
 
 #endif // DKIMUTILTEST_H

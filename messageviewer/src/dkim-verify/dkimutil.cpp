@@ -20,6 +20,7 @@
 #include "dkimutil.h"
 #include <QDebug>
 #include <QRegularExpression>
+#include <QCryptographicHash>
 
 QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
 {
@@ -43,16 +44,13 @@ QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
             mechanisms.)
         */
 
-    qDebug() << " before " << body;
+    body.replace(QLatin1String("\n"), QLatin1String("\r\n"));
     body.replace(QRegularExpression(QLatin1String("[ \t]+\r\n/g")), QLatin1String("\r\n"));
-    qDebug() << " before1 " << body;
     body.replace(QRegularExpression(QLatin1String("[ \t]+/g")), QString());
-    qDebug() << " before2 " << body;
-    body.replace(QRegularExpression(QLatin1String("((\r\n)+)?$")), QLatin1String("\r\n"));
+    body.replace(QRegularExpression(QLatin1String("((\r\n)+?)$")), QLatin1String("\r\n"));
     if (body == QLatin1String("\r\n")) {
         body.clear();
     }
-    qDebug() << "after " << body;
     return body;
 }
 
@@ -69,4 +67,9 @@ QString MessageViewer::DKIMUtil::bodyCanonizationSimple(QString body)
     //       Note that a completely empty or missing body is canonicalized as a
     //       single "CRLF"; that is, the canonicalized length will be 2 octets.
     return body.replace(QRegularExpression(QLatin1String("((\r\n)+)?$")), QLatin1String("\r\n"));
+}
+
+QByteArray MessageViewer::DKIMUtil::generateHash(const QByteArray &body, QCryptographicHash::Algorithm algo)
+{
+  return QCryptographicHash::hash(body, algo).toBase64();
 }

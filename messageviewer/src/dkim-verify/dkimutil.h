@@ -20,11 +20,13 @@
 #ifndef DKIMUTIL_H
 #define DKIMUTIL_H
 #include <QString>
+#include <QCryptographicHash>
 #include "messageviewer_private_export.h"
 namespace MessageViewer {
 namespace DKIMUtil {
 MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationRelaxed(QString body);
 MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationSimple(QString body);
+MESSAGEVIEWER_TESTS_EXPORT QByteArray generateHash(const QByteArray &body, QCryptographicHash::Algorithm algo);
 }
 }
 
