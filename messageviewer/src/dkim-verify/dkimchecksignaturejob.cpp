@@ -26,6 +26,7 @@
 #include "messageviewer_dkimcheckerdebug.h"
 #include "settings/messageviewersettings.h"
 #include <QDateTime>
+#include <QCryptographicHash>
 //see https://tools.ietf.org/html/rfc6376
 
 using namespace MessageViewer;
@@ -81,7 +82,20 @@ void DKIMCheckSignatureJob::start()
         bodyCanonizationResult = bodyCanonizationRelaxed();
         break;
     }
-    qDebug() << " bodyCanonizationResult "<< bodyCanonizationResult;
+    QByteArray resultHash;
+    if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha1")) {
+        resultHash = QCryptographicHash::hash(bodyCanonizationResult.toLatin1(), QCryptographicHash::Sha1);
+    } else if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha256")) {
+        resultHash = QCryptographicHash::hash(bodyCanonizationResult.toLatin1(), QCryptographicHash::Sha256);
+    } else {
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InsupportedHashAlgorithm;
+        Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid, mError, mWarning);
+        deleteLater();
+        return;
+
+    }
+
+    qDebug() << " bodyCanonizationResult "<< bodyCanonizationResult << resultHash.toBase64();
 
     if (mDkimInfo.bodyLenghtCount() != -1) { //Verify it.
         if (mDkimInfo.bodyLenghtCount() < bodyCanonizationResult.length()) {
