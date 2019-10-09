@@ -32,26 +32,27 @@ MailWebEnginePage::MailWebEnginePage(QObject *parent)
 
 void MailWebEnginePage::initialize()
 {
-    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, false);
-    settings()->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, false);
-    settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, false);
-    settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, false);
-    settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::HyperlinkAuditingEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::AutoLoadIconsForPage, false);
-    settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
+    const bool enableElement = false;
+    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::PluginsEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, enableElement);
+    settings()->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, enableElement);
+    settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, enableElement);
+    settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, enableElement);
+    settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::HyperlinkAuditingEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::AutoLoadIconsForPage, enableElement);
+    settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, enableElement);
 
-    settings()->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, false);
+    settings()->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, enableElement);
+    settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, enableElement);
 #if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 13, 0)
-    settings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, enableElement);
 #endif
     profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
     profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
