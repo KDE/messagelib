@@ -52,6 +52,11 @@ add_subdirectory(about)
 add_subdirectory(messageviewerheaderplugins)
 
 if (DKIM_CHECKER_BUILD)
+    find_package(Qca-qt5 2.1.0)
+    set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
+                       URL "https:/download.kde.org/stable/qca-qt5" TYPE OPTIONAL
+                       PURPOSE "Needed for most of the algorithms of the checksum tool")
+
     if (BUILD_TESTING)
         add_subdirectory(dkim-verify/autotests)
 	add_subdirectory(dkim-verify/tests)

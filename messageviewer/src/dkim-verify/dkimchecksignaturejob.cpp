@@ -179,7 +179,6 @@ QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
             only possible when using extensions to SMTP or non-SMTP transport
             mechanisms.)
         */
-
     return MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString::fromUtf8(mMessage->body()));
 }
 
@@ -188,7 +187,7 @@ QString DKIMCheckSignatureJob::headerCanonizationSimple() const
     QString headers;
     for (const QString &header : mDkimInfo.listSignedHeader()) {
         if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
-            headers += hrd->asUnicodeString();
+            headers += MessageViewer::DKIMUtil::headerCanonizationSimple(header, hrd->asUnicodeString());
         }
     }
     return headers;
@@ -219,13 +218,13 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
 //          separating the header field name from the header field value.  The
 //          colon separator MUST be retained.
 
-    // Convert header field name (not the header field values) to lowercase
-    //TODO
-    QStringList lst;
     QString headers;
     for (const QString &header : mDkimInfo.listSignedHeader()) {
-        if (auto hrd = mMessage->headerByType(header.toLower().toLatin1().constData())) {
-            lst << header.toLower() + QStringLiteral(": ") + hrd->asUnicodeString();
+        if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
+            if (!headers.isEmpty()) {
+                headers += QLatin1String("\r\n");
+            }
+            headers += MessageViewer::DKIMUtil::headerCanonizationRelaxed(header, hrd->asUnicodeString());
         }
     }
     return headers;

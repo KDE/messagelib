@@ -73,3 +73,43 @@ QByteArray MessageViewer::DKIMUtil::generateHash(const QByteArray &body, QCrypto
 {
   return QCryptographicHash::hash(body, algo).toBase64();
 }
+
+QString MessageViewer::DKIMUtil::headerCanonizationSimple(const QString &headerName, const QString &headerValue)
+{
+    //TODO verify it
+    return headerName + QLatin1Char(':') + headerValue;
+}
+
+QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &headerName, const QString &headerValue)
+{
+    //    The "relaxed" header canonicalization algorithm MUST apply the
+    //       following steps in order:
+
+    //       o  Convert all header field names (not the header field values) to
+    //          lowercase.  For example, convert "SUBJect: AbC" to "subject: AbC".
+
+    //       o  Unfold all header field continuation lines as described in
+    //          [RFC5322]; in particular, lines with terminators embedded in
+    //          continued header field values (that is, CRLF sequences followed by
+    //          WSP) MUST be interpreted without the CRLF.  Implementations MUST
+    //          NOT remove the CRLF at the end of the header field value.
+
+    //       o  Convert all sequences of one or more WSP characters to a single SP
+    //          character.  WSP characters here include those before and after a
+    //          line folding boundary.
+
+    //       o  Delete all WSP characters at the end of each unfolded header field
+    //          value.
+
+    //       o  Delete any WSP characters remaining before and after the colon
+    //          separating the header field name from the header field value.  The
+    //          colon separator MUST be retained.
+    QString newHeaderName = headerName.toLower();
+    QString newHeaderValue = headerValue;
+    newHeaderValue.replace(QRegularExpression(QStringLiteral("\r\n[ \t]+")), QStringLiteral(" "));
+    newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]+")), QStringLiteral(" "));
+    newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]+\r\n")), QStringLiteral("\r\n"));
+    //Perhaps remove tab after headername and before value name
+    //newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]*:[ \t]")), QStringLiteral(":"));
+    return newHeaderName + QLatin1Char(':') + newHeaderValue;
+}

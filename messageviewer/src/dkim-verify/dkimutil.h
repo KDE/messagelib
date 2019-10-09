@@ -27,6 +27,8 @@ namespace DKIMUtil {
 MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationRelaxed(QString body);
 MESSAGEVIEWER_TESTS_EXPORT QString bodyCanonizationSimple(QString body);
 MESSAGEVIEWER_TESTS_EXPORT QByteArray generateHash(const QByteArray &body, QCryptographicHash::Algorithm algo);
+MESSAGEVIEWER_TESTS_EXPORT QString headerCanonizationSimple(const QString &headerName, const QString &headerValue);
+MESSAGEVIEWER_TESTS_EXPORT QString headerCanonizationRelaxed(const QString &headerName, const QString &headerValue);
 }
 }
 
