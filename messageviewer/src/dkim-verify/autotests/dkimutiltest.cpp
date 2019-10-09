@@ -29,8 +29,16 @@ DKIMUtilTest::DKIMUtilTest(QObject *parent)
 
 void DKIMUtilTest::shouldTestBodyCanonizationRelaxed()
 {
-    QString ba = QStringLiteral("-- \nLaurent Montel | laurent.montel@kdab.com | KDE/Qt Senior Software Engineer \nKDAB (France) S.A.S., a KDAB Group company\nTel: France +33 (0)4 90 84 08 53, http://www.kdab.fr\nKDAB - The Qt, C++ and OpenGL Experts\n\n\n");
-    QString result = MessageViewer::DKIMUtil::bodyCanonizationRelaxed(ba);
+    {
+        QString ba = QStringLiteral("-- \nLaurent Montel | laurent.montel@kdab.com | KDE/Qt Senior Software Engineer \nKDAB (France) S.A.S., a KDAB Group company\nTel: France +33 (0)4 90 84 08 53, http://www.kdab.fr\nKDAB - The Qt, C++ and OpenGL Experts\n\n\n");
+        QString result = MessageViewer::DKIMUtil::bodyCanonizationRelaxed(ba);
 
-    QCOMPARE(MessageViewer::DKIMUtil::generateHash(result.toUtf8(), QCryptographicHash::Sha256), "jnEyWN7LwPIBgES0mElYDek3lmyrRtSwUjDR2Ge08Xw=");
+        QCOMPARE(MessageViewer::DKIMUtil::generateHash(result.toUtf8(), QCryptographicHash::Sha256), "jnEyWN7LwPIBgES0mElYDek3lmyrRtSwUjDR2Ge08Xw=");
+    }
+    {
+        QString ba = QStringLiteral("Bla bla\n\nbli\t\tblo\nTest\n\n\n\n\n");
+        QString result = MessageViewer::DKIMUtil::bodyCanonizationRelaxed(ba);
+
+        QCOMPARE(MessageViewer::DKIMUtil::generateHash(result.toUtf8(), QCryptographicHash::Sha256), "DrwZwEC82qsIhJtHlq76T00vAUcrSrHbJh8wY5GTAws=");
+    }
 }
