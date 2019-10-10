@@ -31,6 +31,8 @@ class MESSAGEVIEWER_EXPORT DKIMCheckSignatureJob : public QObject
 {
     Q_OBJECT
 public:
+
+
     enum class DKIMStatus {
         Unknown,
         Valid,
@@ -62,6 +64,12 @@ public:
         SignatureTooSmall
     };
 
+    struct CheckSignatureResult {
+        DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
+        DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
+        DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
+    };
+
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
     ~DKIMCheckSignatureJob();
     void start();
@@ -82,7 +90,7 @@ public:
     void setWarning(const DKIMWarning &warning);
 
 Q_SIGNALS:
-    void result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status, MessageViewer::DKIMCheckSignatureJob::DKIMError error, MessageViewer::DKIMCheckSignatureJob::DKIMWarning warning);
+    void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void storeKey(const QString &key, const QString &domain, const QString &selector);
 
 private:
@@ -94,6 +102,7 @@ private:
     QString bodyCanonizationRelaxed() const;
     QString bodyCanonizationSimple() const;
     void verifyRSASignature();
+    MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult();
     KMime::Message::Ptr mMessage;
     DKIMInfo mDkimInfo;
     DKIMKeyRecord mDkimKeyRecord;

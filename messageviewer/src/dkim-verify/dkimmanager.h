@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
+#include "dkimchecksignaturejob.h"
 #include <KMime/Message>
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT DKIMManager : public QObject
@@ -36,6 +37,7 @@ public:
 
 private:
     void storeKey(const QString &key, const QString &domain, const QString &selector);
+    void slotResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 };
 }
 

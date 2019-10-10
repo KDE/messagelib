@@ -18,7 +18,7 @@
 */
 
 #include "dkimmanager.h"
-#include "dkimchecksignaturejob.h"
+
 #include "dkimmanagerkey.h"
 #include "settings/messageviewersettings.h"
 using namespace MessageViewer;
@@ -41,6 +41,7 @@ void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
 {
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
+    connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotResult);
     job->setMessage(message);
     job->start();
 }
@@ -51,4 +52,10 @@ void DKIMManager::storeKey(const QString &key, const QString &domain, const QStr
         const MessageViewer::KeyInfo info {key, selector, domain};
         MessageViewer::DKIMManagerKey::self()->addKey(info);
     }
+}
+
+void DKIMManager::slotResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
+{
+    //TODO
+    qDebug() << "result : status " << (int) checkResult.status << " error : " << (int)checkResult.error << " warning " << (int)checkResult.warning;
 }
