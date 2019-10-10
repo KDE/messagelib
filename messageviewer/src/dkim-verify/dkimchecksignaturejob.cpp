@@ -323,6 +323,7 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
 
 void DKIMCheckSignatureJob::verifyRSASignature()
 {
+    qDebug() << " void DKIMCheckSignatureJob::verifyRSASignature() not implemented yet";
     //TODO
     deleteLater();
 }
