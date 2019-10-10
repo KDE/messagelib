@@ -260,6 +260,10 @@ add_library(KF5::MessageViewer ALIAS KF5MessageViewer)
 
 target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer>;${Inotify_INCLUDE_DIRS}")
 
+if (DKIM_CHECKER_BUILD)
+    set(OPTIONAL_PRIVATE qca-qt5)
+endif()
+
 target_link_libraries(KF5MessageViewer
     PUBLIC
     KF5::MessageCore
@@ -292,7 +296,10 @@ target_link_libraries(KF5MessageViewer
     Qt5::PrintSupport
     QGpgme
     ${Inotify_LIBRARIES}
+    ${OPTIONAL_PRIVATE}
     )
+
+set(OPTIONAL_PRIVATE qca-qt5)
 
 set_target_properties(KF5MessageViewer PROPERTIES
     VERSION ${MESSAGEVIEWER_VERSION_STRING}

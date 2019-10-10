@@ -27,6 +27,7 @@
 #include "settings/messageviewersettings.h"
 #include <QDateTime>
 #include <QCryptographicHash>
+#include <Qca-qt5/QtCrypto/qca_publickey.h>
 //see https://tools.ietf.org/html/rfc6376
 
 using namespace MessageViewer;
@@ -323,6 +324,13 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
 
 void DKIMCheckSignatureJob::verifyRSASignature()
 {
+//    QCA::ConvertResult conversionResult;
+//    QCA::PublicKey publicKey = QCA::PublicKey::fromDER(mDkimKeyRecord.publicKey().toLocal8Bit(), &conversionResult);
+//    if (QCA::ConvertGood != conversionResult)
+//    {
+//        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Public key read failed";
+
+//    }
     qDebug() << " void DKIMCheckSignatureJob::verifyRSASignature() not implemented yet";
     //TODO
     deleteLater();
