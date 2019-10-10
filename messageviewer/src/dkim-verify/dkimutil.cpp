@@ -71,7 +71,7 @@ QString MessageViewer::DKIMUtil::bodyCanonizationSimple(QString body)
 
 QByteArray MessageViewer::DKIMUtil::generateHash(const QByteArray &body, QCryptographicHash::Algorithm algo)
 {
-  return QCryptographicHash::hash(body, algo).toBase64();
+    return QCryptographicHash::hash(body, algo).toBase64();
 }
 
 QString MessageViewer::DKIMUtil::headerCanonizationSimple(const QString &headerName, const QString &headerValue)

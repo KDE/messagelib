@@ -92,7 +92,6 @@ void DKIMCheckSignatureJob::start()
         Q_EMIT result(MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid, mError, mWarning);
         deleteLater();
         return;
-
     }
 
     qDebug() << " bodyCanonizationResult "<< bodyCanonizationResult << resultHash.toBase64() << " algorithm " << mDkimInfo.hashingAlgorithm() << mDkimInfo.bodyHash();
