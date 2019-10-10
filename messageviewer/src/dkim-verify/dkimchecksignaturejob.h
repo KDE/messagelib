@@ -90,6 +90,10 @@ public:
     Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMWarning warning() const;
     void setWarning(const DKIMWarning &warning);
 
+    Q_REQUIRED_RESULT QString headerCanonizationResult() const;
+
+    Q_REQUIRED_RESULT QString bodyCanonizationResult() const;
+
 Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void storeKey(const QString &key, const QString &domain, const QString &selector);
@@ -108,6 +112,8 @@ private:
     DKIMInfo mDkimInfo;
     DKIMKeyRecord mDkimKeyRecord;
     QString mDkimValue;
+    QString mHeaderCanonizationResult;
+    QString mBodyCanonizationResult;
     DKIMCheckSignatureJob::DKIMError mError = DKIMCheckSignatureJob::DKIMError::Any;
     DKIMCheckSignatureJob::DKIMWarning mWarning = DKIMCheckSignatureJob::DKIMWarning::Any;
     DKIMCheckSignatureJob::DKIMStatus mStatus = DKIMCheckSignatureJob::DKIMStatus::Unknown;

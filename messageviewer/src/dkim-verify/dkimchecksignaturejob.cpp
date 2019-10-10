@@ -49,6 +49,16 @@ MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob
     return result;
 }
 
+QString DKIMCheckSignatureJob::bodyCanonizationResult() const
+{
+    return mBodyCanonizationResult;
+}
+
+QString DKIMCheckSignatureJob::headerCanonizationResult() const
+{
+    return mHeaderCanonizationResult;
+}
+
 
 void DKIMCheckSignatureJob::start()
 {
@@ -84,7 +94,6 @@ void DKIMCheckSignatureJob::start()
         return;
     }
     //ComputeBodyHash now.
-    QString bodyCanonizationResult;
     switch (mDkimInfo.bodyCanonization()) {
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidBodyCanonicalization;
@@ -93,17 +102,17 @@ void DKIMCheckSignatureJob::start()
         deleteLater();
         return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
-        bodyCanonizationResult = bodyCanonizationSimple();
+        mBodyCanonizationResult = bodyCanonizationSimple();
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
-        bodyCanonizationResult = bodyCanonizationRelaxed();
+        mBodyCanonizationResult = bodyCanonizationRelaxed();
         break;
     }
     QByteArray resultHash;
     if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha1")) {
-        resultHash = MessageViewer::DKIMUtil::generateHash(bodyCanonizationResult.toLatin1(), QCryptographicHash::Sha1);
+        resultHash = MessageViewer::DKIMUtil::generateHash(mBodyCanonizationResult.toLatin1(), QCryptographicHash::Sha1);
     } else if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha256")) {
-        resultHash = MessageViewer::DKIMUtil::generateHash(bodyCanonizationResult.toLatin1(), QCryptographicHash::Sha256);
+        resultHash = MessageViewer::DKIMUtil::generateHash(mBodyCanonizationResult.toLatin1(), QCryptographicHash::Sha256);
     } else {
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InsupportedHashAlgorithm;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
@@ -112,25 +121,24 @@ void DKIMCheckSignatureJob::start()
         return;
     }
 
-    qDebug() << " bodyCanonizationResult "<< bodyCanonizationResult << resultHash.toBase64() << " algorithm " << mDkimInfo.hashingAlgorithm() << mDkimInfo.bodyHash();
+    qDebug() << " bodyCanonizationResult "<< mBodyCanonizationResult << resultHash.toBase64() << " algorithm " << mDkimInfo.hashingAlgorithm() << mDkimInfo.bodyHash();
 
     if (mDkimInfo.bodyLenghtCount() != -1) { //Verify it.
-        if (mDkimInfo.bodyLenghtCount() < bodyCanonizationResult.length()) {
+        if (mDkimInfo.bodyLenghtCount() < mBodyCanonizationResult.length()) {
             // lenght tag exceeds body size
             mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::SignatureTooLarge;
             mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
             Q_EMIT result(createCheckResult());
             deleteLater();
             return;
-        } else if (mDkimInfo.bodyLenghtCount() > bodyCanonizationResult.length()) {
+        } else if (mDkimInfo.bodyLenghtCount() > mBodyCanonizationResult.length()) {
             mWarning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::SignatureTooSmall;
         }
         // truncated body to the length specified in the "l=" tag
-        bodyCanonizationResult = bodyCanonizationResult.left(mDkimInfo.bodyLenghtCount());
+        mBodyCanonizationResult = mBodyCanonizationResult.left(mDkimInfo.bodyLenghtCount());
     }
 
     //Compute Hash Header
-    QString headerCanonizationResult;
     switch (mDkimInfo.headerCanonization()) {
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidHeaderCanonicalization;
@@ -139,14 +147,14 @@ void DKIMCheckSignatureJob::start()
         deleteLater();
         return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
-        headerCanonizationResult = headerCanonizationSimple();
+        mHeaderCanonizationResult = headerCanonizationSimple();
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
-        headerCanonizationResult = headerCanonizationRelaxed();
+        mHeaderCanonizationResult = headerCanonizationRelaxed();
         break;
     }
 
-    qDebug() << " headerCanonizationResult" << headerCanonizationResult;
+    qDebug() << " headerCanonizationResult" << mBodyCanonizationResult;
     if (MessageViewer::MessageViewerSettings::self()->saveKey()) {
         const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
         if (keyValue.isEmpty()) {
@@ -350,8 +358,9 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     }
 
     if (publicKey.canVerify()) {
+        qDebug() << " publicKey.canVerify()"  << publicKey.canVerify();
         //Verify it
-        if ( publicKey.validSignature( mDkimInfo.bodyHash().toLocal8Bit() ) )
+        if ( publicKey.validSignature( mHeaderCanonizationResult.toLocal8Bit() ) )
         {
             // then signature is valid
         }

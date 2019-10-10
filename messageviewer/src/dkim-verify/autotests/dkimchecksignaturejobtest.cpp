@@ -31,6 +31,8 @@ void DKIMCheckSignatureJobTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMCheckSignatureJob job;
     QVERIFY(job.dkimValue().isEmpty());
+    QVERIFY(job.headerCanonizationResult().isEmpty());
+    QVERIFY(job.bodyCanonizationResult().isEmpty());
     QCOMPARE(job.status(), MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Unknown);
     QCOMPARE(job.error(), MessageViewer::DKIMCheckSignatureJob::DKIMError::Any);
     QCOMPARE(job.warning(), MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any);

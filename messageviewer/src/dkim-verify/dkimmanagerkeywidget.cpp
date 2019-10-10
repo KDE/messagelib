@@ -50,14 +50,13 @@ DKIMManagerKeyWidget::~DKIMManagerKeyWidget()
 void DKIMManagerKeyWidget::customContextMenuRequested(const QPoint &)
 {
     QTreeWidgetItem *item = mTreeWidget->currentItem();
-    if (!item) {
-        return;
-    }
     QMenu menu(this);
-    menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Key"), this, [this, item]() {
-        delete item;
-    });
-    menu.addSeparator();
+    if (item) {
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Key"), this, [this, item]() {
+            delete item;
+        });
+        menu.addSeparator();
+    }
     menu.addAction(i18n("Delete All"), this, [this]() {
         mTreeWidget->clear();
     });
