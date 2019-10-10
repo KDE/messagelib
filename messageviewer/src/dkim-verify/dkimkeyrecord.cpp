@@ -28,11 +28,13 @@ DKIMKeyRecord::DKIMKeyRecord()
 
 bool DKIMKeyRecord::parseKey(const QString &key)
 {
-    if (key.isEmpty()) {
+    QString newKey = key;
+    if (newKey.isEmpty()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: trying to parse empty key";
         return false;
     }
-    const QStringList items = key.split(QLatin1String("; "));
+    newKey.replace(QLatin1String("; "), QLatin1String(";"));
+    const QStringList items = newKey.split(QLatin1Char(';'));
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QLatin1String("v="))) {

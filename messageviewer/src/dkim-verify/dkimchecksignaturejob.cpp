@@ -281,6 +281,7 @@ void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst, co
 
 void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue)
 {
+    qDebug() << "void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue) " << str;
     if (!mDkimKeyRecord.parseKey(str)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse key record " << str;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
@@ -324,15 +325,45 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
 
 void DKIMCheckSignatureJob::verifyRSASignature()
 {
-//    QCA::ConvertResult conversionResult;
-//    QCA::PublicKey publicKey = QCA::PublicKey::fromDER(mDkimKeyRecord.publicKey().toLocal8Bit(), &conversionResult);
-//    if (QCA::ConvertGood != conversionResult)
-//    {
-//        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Public key read failed";
-
-//    }
+    QCA::ConvertResult conversionResult;
+    qDebug() << "mDkimKeyRecord.publicKey() " <<mDkimKeyRecord.publicKey().toLocal8Bit().toBase64();
+    QCA::PublicKey publicKey = QCA::RSAPublicKey::fromDER(QCA::base64ToArray(mDkimKeyRecord.publicKey()), &conversionResult);
+    if (QCA::ConvertGood != conversionResult)
+    {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Public key read failed" << conversionResult;
+    } else {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Success loading public key";
+    }
+    QCA::RSAPublicKey rsaPublicKey = publicKey.toRSA();
+    qDebug() << "publicKey.modulus" << rsaPublicKey.n().toString();
+    qDebug() << "publicKey.exposant" << rsaPublicKey.e().toString();
     qDebug() << " void DKIMCheckSignatureJob::verifyRSASignature() not implemented yet";
     //TODO
+
+    if (rsaPublicKey.e().toString().toLong() * 4 < 1024) {
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyTooSmall;
+        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+        Q_EMIT result(createCheckResult());
+        deleteLater();
+    } else if (rsaPublicKey.e().toString().toLong() * 4 < 2048) {
+        //TODO
+    }
+
+    if (publicKey.canVerify()) {
+        //Verify it
+        if ( publicKey.validSignature( mDkimInfo.bodyHash().toLocal8Bit() ) )
+        {
+            // then signature is valid
+        }
+        else
+        {
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature invalid";
+            // then signature is invalid
+        }
+
+    } else {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to verify signature";
+    }
     deleteLater();
 }
 

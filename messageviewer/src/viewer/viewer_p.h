@@ -22,7 +22,7 @@
 #define MAILVIEWER_P_H
 
 #include "messageviewer_private_export.h"
-
+#include "config-messageviewer.h"
 #include <MimeTreeParser/NodeHelper>
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer
 #include "PimCommon/ShareServiceUrlManager"
@@ -70,7 +70,11 @@ class ShareServiceUrlManager;
 namespace MimeTreeParser {
 class ObjectTreeParser;
 }
-
+#ifdef USE_DKIM_CHECKER
+namespace QCA {
+class Initializer;
+}
+#endif
 namespace WebEngineViewer {
 class WebHitTestResult;
 class FindBarWebEngineView;
@@ -705,6 +709,10 @@ public:
     QList<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
     WebEngineViewer::LocalDataBaseManager *mPhishingDatabase = nullptr;
     MessageViewer::ShowNextMessageWidget *mShowNextMessageWidget = nullptr;
+#ifdef USE_DKIM_CHECKER
+    QCA::Initializer *mQcaInitializer = nullptr;
+#endif
+
 };
 }
 

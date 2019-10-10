@@ -38,7 +38,7 @@
 #include <Gravatar/GravatarCache>
 #include <gravatar/gravatarsettings.h>
 #include "job/modifymessagedisplayformatjob.h"
-#include "config-messageviewer.h"
+
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KContacts/VCardConverter>
 #include "htmlwriter/webengineembedpart.h"
@@ -151,6 +151,7 @@
 
 #ifdef USE_DKIM_CHECKER
 #include "dkim-verify/dkimmanager.h"
+#include <QtCrypto>
 #endif
 
 using namespace boost;
@@ -192,6 +193,10 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
                                     + QByteArray::number(reinterpret_cast<quintptr>(this)), this))
     , mPreviouslyViewedItem(-1)
 {
+    //TODO move in managerkey I think
+#ifdef USE_DKIM_CHECKER
+    mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
+#endif
     mMimePartTree = nullptr;
     if (!mainWindow) {
         mMainWindow = aParent;
@@ -268,6 +273,9 @@ ViewerPrivate::~ViewerPrivate()
     mNodeHelper->forceCleanTempFiles();
     qDeleteAll(mListMailSourceViewer);
     delete mNodeHelper;
+#ifdef USE_DKIM_CHECKER
+    delete mQcaInitializer;
+#endif
 }
 
 //-----------------------------------------------------------------------------

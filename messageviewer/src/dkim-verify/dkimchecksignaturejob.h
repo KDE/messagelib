@@ -54,6 +54,7 @@ public:
         PublicKeyWasRevoked,
         SignatureTooLarge,
         InsupportedHashAlgorithm,
+        PublicKeyTooSmall,
 
         //TODO add more
     };
