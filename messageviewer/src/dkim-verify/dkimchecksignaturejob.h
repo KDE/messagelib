@@ -103,12 +103,12 @@ private:
     void downloadKey(const DKIMInfo &info);
     void slotDownloadKeyDone(const QList<QByteArray> &lst, const QString &domain, const QString &selector);
     void parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue = true);
-    QString headerCanonizationSimple() const;
-    QString headerCanonizationRelaxed() const;
-    QString bodyCanonizationRelaxed() const;
-    QString bodyCanonizationSimple() const;
+    Q_REQUIRED_RESULT QString headerCanonizationSimple() const;
+    Q_REQUIRED_RESULT QString headerCanonizationRelaxed() const;
+    Q_REQUIRED_RESULT QString bodyCanonizationRelaxed() const;
+    Q_REQUIRED_RESULT QString bodyCanonizationSimple() const;
+    Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult();
     void verifyRSASignature();
-    MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult();
     KMime::Message::Ptr mMessage;
     DKIMInfo mDkimInfo;
     DKIMKeyRecord mDkimKeyRecord;

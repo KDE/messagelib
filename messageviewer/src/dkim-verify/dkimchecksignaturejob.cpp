@@ -64,7 +64,6 @@ void DKIMCheckSignatureJob::start()
 {
     if (!mMessage) {
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-        createCheckResult();
         Q_EMIT result(createCheckResult());
         deleteLater();
         return;
