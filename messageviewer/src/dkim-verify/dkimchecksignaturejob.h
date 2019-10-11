@@ -25,6 +25,7 @@
 #include "dkiminfo.h"
 #include "messageviewer_export.h"
 #include <KMime/Message>
+#include <AkonadiCore/Item>
 
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT DKIMCheckSignatureJob : public QObject
@@ -70,6 +71,7 @@ public:
         DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
         DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
+        Akonadi::Item item;
     };
 
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
@@ -95,6 +97,9 @@ public:
 
     Q_REQUIRED_RESULT QString bodyCanonizationResult() const;
 
+    Q_REQUIRED_RESULT Akonadi::Item item() const;
+    void setItem(const Akonadi::Item &item);
+
 Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void storeKey(const QString &key, const QString &domain, const QString &selector);
@@ -110,6 +115,7 @@ private:
     Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult();
     void verifyRSASignature();
     KMime::Message::Ptr mMessage;
+    Akonadi::Item mMessageItem;
     DKIMInfo mDkimInfo;
     DKIMKeyRecord mDkimKeyRecord;
     QString mDkimValue;

@@ -20,6 +20,8 @@
 #include "dkimmanager.h"
 
 #include "dkimmanagerkey.h"
+#include "dkimresultattribute.h"
+#include "dkimstoreresultjob.h"
 #include "settings/messageviewersettings.h"
 using namespace MessageViewer;
 DKIMManager::DKIMManager(QObject *parent)
@@ -35,6 +37,26 @@ DKIMManager *DKIMManager::self()
 {
     static DKIMManager s_self;
     return &s_self;
+}
+
+void DKIMManager::checkDKim(const Akonadi::Item &item)
+{
+    //TODO check if we already have result
+    if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
+        if (item.hasAttribute<MessageViewer::DKIMResultAttribute>()) {
+            const MessageViewer::DKIMResultAttribute *const attr
+                    = item.attribute<MessageViewer::DKIMResultAttribute>();
+            if (attr /*&& TODO */) {
+                //return;
+                //TODO return result !
+            }
+        }
+    }
+    DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
+    connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
+    connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotResult);
+    job->setItem(item);
+    job->start();
 }
 
 void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
@@ -56,6 +78,11 @@ void DKIMManager::storeKey(const QString &key, const QString &domain, const QStr
 
 void DKIMManager::slotResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
+    if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
+        DKIMStoreResultJob *job = new DKIMStoreResultJob(this);
+        job->start();
+    }
+    //TODO implement
     //TODO
     qDebug() << "result : status " << (int) checkResult.status << " error : " << (int)checkResult.error << " warning " << (int)checkResult.warning;
 }

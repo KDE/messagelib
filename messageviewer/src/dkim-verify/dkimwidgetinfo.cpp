@@ -19,6 +19,7 @@
 
 #include "dkimwidgetinfo.h"
 #include <QHBoxLayout>
+#include <QLabel>
 using namespace MessageViewer;
 DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     : QWidget(parent)
@@ -26,6 +27,10 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(0, 0, 0, 0);
+
+    mLabel = new QLabel(this);
+    mLabel->setObjectName(QStringLiteral("label"));
+    mainLayout->addWidget(mLabel);
 }
 
 DKIMWidgetInfo::~DKIMWidgetInfo()

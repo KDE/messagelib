@@ -17,22 +17,19 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef DKIMWIDGETINFO_H
-#define DKIMWIDGETINFO_H
+#ifndef DKIMSTORERESULTJOBTEST_H
+#define DKIMSTORERESULTJOBTEST_H
 
-#include <QWidget>
-#include "messageviewer_private_export.h"
-class QLabel;
-namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMWidgetInfo : public QWidget
+#include <QObject>
+
+class DKIMStoreResultJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit DKIMWidgetInfo(QWidget *parent = nullptr);
-    ~DKIMWidgetInfo();
-private:
-    QLabel *mLabel = nullptr;
+    explicit DKIMStoreResultJobTest(QObject *parent = nullptr);
+    ~DKIMStoreResultJobTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
-}
 
-#endif // DKIMWIDGETINFO_H
+#endif // DKIMSTORERESULTJOBTEST_H

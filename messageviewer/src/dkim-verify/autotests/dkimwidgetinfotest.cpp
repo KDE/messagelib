@@ -21,6 +21,7 @@
 #include "dkimwidgetinfotest.h"
 #include "dkim-verify/dkimwidgetinfo.h"
 #include <QHBoxLayout>
+#include <QLabel>
 #include <QTest>
 
 QTEST_MAIN(DKIMWidgetInfoTest)
@@ -37,4 +38,7 @@ void DKIMWidgetInfoTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
+    QLabel *mLabel = w.findChild<QLabel *>(QStringLiteral("label"));
+    QVERIFY(mLabel);
+    QVERIFY(mLabel->text().isEmpty());
 }

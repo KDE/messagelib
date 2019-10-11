@@ -24,6 +24,7 @@
 #include "messageviewer_export.h"
 #include "dkimchecksignaturejob.h"
 #include <KMime/Message>
+#include <AkonadiCore/Item>
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT DKIMManager : public QObject
 {
@@ -34,6 +35,7 @@ public:
     static DKIMManager *self();
 
     void checkDKim(const KMime::Message::Ptr &message);
+    void checkDKim(const Akonadi::Item &item);
 
 private:
     void storeKey(const QString &key, const QString &domain, const QString &selector);

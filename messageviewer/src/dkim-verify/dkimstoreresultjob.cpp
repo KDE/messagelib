@@ -17,22 +17,46 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef DKIMWIDGETINFO_H
-#define DKIMWIDGETINFO_H
+#include "dkimstoreresultjob.h"
+#include "messageviewer_dkimcheckerdebug.h"
 
-#include <QWidget>
-#include "messageviewer_private_export.h"
-class QLabel;
-namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMWidgetInfo : public QWidget
+using namespace MessageViewer;
+DKIMStoreResultJob::DKIMStoreResultJob(QObject *parent)
+    : QObject(parent)
 {
-    Q_OBJECT
-public:
-    explicit DKIMWidgetInfo(QWidget *parent = nullptr);
-    ~DKIMWidgetInfo();
-private:
-    QLabel *mLabel = nullptr;
-};
+
 }
 
-#endif // DKIMWIDGETINFO_H
+DKIMStoreResultJob::~DKIMStoreResultJob()
+{
+
+}
+
+void DKIMStoreResultJob::start()
+{
+    if (!canStart()) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to store dkim result";
+        deleteLater();
+        return;
+    }
+
+}
+
+bool DKIMStoreResultJob::canStart() const
+{
+    if (mMessageItem.isValid()) {
+        //TODO
+    }
+    //TODO
+    return false;
+}
+
+Akonadi::Item DKIMStoreResultJob::messageItem() const
+{
+    return mMessageItem;
+}
+
+void DKIMStoreResultJob::setMessageItem(const Akonadi::Item &messageItem)
+{
+    mMessageItem = messageItem;
+}

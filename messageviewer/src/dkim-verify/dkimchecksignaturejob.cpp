@@ -46,6 +46,7 @@ MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob
     result.error = mError;
     result.warning = mWarning;
     result.status = mStatus;
+    result.item = mMessageItem;
     return result;
 }
 
@@ -63,6 +64,17 @@ QString DKIMCheckSignatureJob::headerCanonizationResult() const
 void DKIMCheckSignatureJob::start()
 {
     if (!mMessage) {
+        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+        Q_EMIT result(createCheckResult());
+        deleteLater();
+        return;
+    }
+    if (mMessageItem.isValid() && !mMessage) {
+        if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
+            mMessage = mMessageItem.payload<KMime::Message::Ptr>();
+        }
+    } else {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Item has not a message";
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
         Q_EMIT result(createCheckResult());
         deleteLater();
@@ -382,6 +394,16 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     //Success!
 
     deleteLater();
+}
+
+Akonadi::Item DKIMCheckSignatureJob::item() const
+{
+    return mMessageItem;
+}
+
+void DKIMCheckSignatureJob::setItem(const Akonadi::Item &item)
+{
+    mMessageItem = item;
 }
 
 DKIMCheckSignatureJob::DKIMWarning DKIMCheckSignatureJob::warning() const

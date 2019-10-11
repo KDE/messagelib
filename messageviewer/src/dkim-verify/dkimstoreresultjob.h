@@ -17,22 +17,31 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef DKIMWIDGETINFO_H
-#define DKIMWIDGETINFO_H
+#ifndef DKIMSTORERESULTJOB_H
+#define DKIMSTORERESULTJOB_H
 
-#include <QWidget>
+#include <QObject>
 #include "messageviewer_private_export.h"
-class QLabel;
+#include <AkonadiCore/Item>
+
 namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMWidgetInfo : public QWidget
+class MESSAGEVIEWER_TESTS_EXPORT DKIMStoreResultJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit DKIMWidgetInfo(QWidget *parent = nullptr);
-    ~DKIMWidgetInfo();
+    explicit DKIMStoreResultJob(QObject *parent = nullptr);
+    ~DKIMStoreResultJob();
+
+    void start();
+    Q_REQUIRED_RESULT bool canStart() const;
+
+    Q_REQUIRED_RESULT Akonadi::Item messageItem() const;
+    void setMessageItem(const Akonadi::Item &messageItem);
+
 private:
-    QLabel *mLabel = nullptr;
+    Akonadi::Item mMessageItem;
+    //TODO add result
 };
 }
 
-#endif // DKIMWIDGETINFO_H
+#endif // DKIMSTORERESULTJOB_H
