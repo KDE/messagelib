@@ -60,3 +60,8 @@ void DKIMStoreResultJob::setMessageItem(const Akonadi::Item &messageItem)
 {
     mMessageItem = messageItem;
 }
+
+void DKIMStoreResultJob::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
+{
+    mResult = checkResult;
+}

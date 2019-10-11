@@ -80,9 +80,9 @@ void DKIMManager::slotResult(const DKIMCheckSignatureJob::CheckSignatureResult &
 {
     if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
         DKIMStoreResultJob *job = new DKIMStoreResultJob(this);
+        job->setResult(checkResult);
         job->start();
     }
-    //TODO implement
-    //TODO
     qDebug() << "result : status " << (int) checkResult.status << " error : " << (int)checkResult.error << " warning " << (int)checkResult.warning;
+    Q_EMIT result(checkResult);
 }

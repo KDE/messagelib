@@ -37,6 +37,9 @@ public:
     void checkDKim(const KMime::Message::Ptr &message);
     void checkDKim(const Akonadi::Item &item);
 
+Q_SIGNALS:
+    void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+
 private:
     void storeKey(const QString &key, const QString &domain, const QString &selector);
     void slotResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
