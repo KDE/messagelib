@@ -19,6 +19,7 @@
 
 #include "dkimwidgetinfo.h"
 #include <QHBoxLayout>
+#include <KLocalizedString>
 #include <QLabel>
 using namespace MessageViewer;
 DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
@@ -36,4 +37,88 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
 DKIMWidgetInfo::~DKIMWidgetInfo()
 {
 
+}
+
+void DKIMWidgetInfo::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
+{
+    mResult = checkResult;
+    updateInfo();
+}
+
+void DKIMWidgetInfo::updateInfo()
+{
+    switch (mResult.status) {
+    case DKIMCheckSignatureJob::DKIMStatus::Unknown:
+        mLabel->setText(i18n("Unknown"));
+        break;
+    case DKIMCheckSignatureJob::DKIMStatus::Valid:
+        mLabel->setText(i18n("KDIM: valid"));
+        break;
+    case DKIMCheckSignatureJob::DKIMStatus::Invalid:
+        mLabel->setText(i18n("KDIM: invalid"));
+        break;
+    case DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned:
+        mLabel->setText(i18n("KDIM: Unsigned"));
+        break;
+    }
+    updateToolTip();
+}
+
+void DKIMWidgetInfo::updateToolTip()
+{
+    QString tooltip;
+    if (mResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid) {
+        switch(mResult.error) {
+        case DKIMCheckSignatureJob::DKIMError::Any:
+            break;
+        case DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash:
+            tooltip = i18n("Body Hash was corrupted.");
+            break;
+        case DKIMCheckSignatureJob::DKIMError::DomainNotExist:
+            break;
+        case DKIMCheckSignatureJob::DKIMError::MissingFrom:
+            tooltip = i18n("Missing header From.");
+            break;
+        case DKIMCheckSignatureJob::DKIMError::MissingSignature:
+            tooltip = i18n("Missing signature.");
+            break;
+        case DKIMCheckSignatureJob::DKIMError::InvalidQueryMethod:
+            break;
+        case DKIMCheckSignatureJob::DKIMError::InvalidHeaderCanonicalization:
+            break;
+        case DKIMCheckSignatureJob::DKIMError::InvalidBodyCanonicalization:
+            break;
+        case DKIMCheckSignatureJob::DKIMError::InvalidBodyHashAlgorithm:
+            break;
+        case DKIMCheckSignatureJob::DKIMError::InvalidSignAlgorithm:
+            break;
+        case DKIMCheckSignatureJob::DKIMError::PublicKeyWasRevoked:
+            tooltip = i18n("The public key was revoked.");
+            break;
+        case DKIMCheckSignatureJob::DKIMError::SignatureTooLarge:
+            break;
+        case DKIMCheckSignatureJob::DKIMError::InsupportedHashAlgorithm:
+            tooltip = i18n("Hash Algorithm is insupported.");
+            break;
+        case DKIMCheckSignatureJob::DKIMError::PublicKeyTooSmall:
+            break;
+        case DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature:
+            break;
+        }
+    }
+
+    switch(mResult.warning) {
+    case DKIMCheckSignatureJob::DKIMWarning::Any:
+        break;
+    case DKIMCheckSignatureJob::DKIMWarning::SignatureExpired:
+        tooltip = i18n("Signature expired");
+        break;
+    case DKIMCheckSignatureJob::DKIMWarning::SignatureCreatedInFuture:
+        tooltip = i18n("Signature created in the future");
+        break;
+    case DKIMCheckSignatureJob::DKIMWarning::SignatureTooSmall:
+        tooltip = i18n("Signature too small");
+        break;
+    }
+    mLabel->setToolTip(tooltip);
 }
