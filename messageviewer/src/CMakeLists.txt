@@ -74,6 +74,7 @@ if (DKIM_CHECKER_BUILD)
         dkim-verify/dkimkeyrecord.cpp
         dkim-verify/dkimmanager.cpp
         dkim-verify/dkimresultattribute.cpp
+        dkim-verify/dkimwidgetinfo.cpp
         )
 endif()
 

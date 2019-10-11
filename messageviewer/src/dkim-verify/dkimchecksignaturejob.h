@@ -55,6 +55,7 @@ public:
         SignatureTooLarge,
         InsupportedHashAlgorithm,
         PublicKeyTooSmall,
+        ImpossibleToVerifySignature,
 
         //TODO add more
     };

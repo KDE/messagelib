@@ -345,14 +345,15 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     QCA::RSAPublicKey rsaPublicKey = publicKey.toRSA();
     qDebug() << "publicKey.modulus" << rsaPublicKey.n().toString();
     qDebug() << "publicKey.exposant" << rsaPublicKey.e().toString();
+
     qDebug() << " void DKIMCheckSignatureJob::verifyRSASignature() not implemented yet";
-    //TODO
 
     if (rsaPublicKey.e().toString().toLong() * 4 < 1024) {
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyTooSmall;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
         Q_EMIT result(createCheckResult());
         deleteLater();
+        return;
     } else if (rsaPublicKey.e().toString().toLong() * 4 < 2048) {
         //TODO
     }
@@ -372,7 +373,15 @@ void DKIMCheckSignatureJob::verifyRSASignature()
 
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to verify signature";
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;
+        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+        Q_EMIT result(createCheckResult());
+        deleteLater();
+        return;
     }
+
+    //Success!
+
     deleteLater();
 }
 
