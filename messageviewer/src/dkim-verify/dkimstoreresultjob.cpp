@@ -18,18 +18,18 @@
 */
 
 #include "dkimstoreresultjob.h"
+#include "dkimresultattribute.h"
 #include "messageviewer_dkimcheckerdebug.h"
+#include <AkonadiCore/ItemModifyJob>
 
 using namespace MessageViewer;
 DKIMStoreResultJob::DKIMStoreResultJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DKIMStoreResultJob::~DKIMStoreResultJob()
 {
-
 }
 
 void DKIMStoreResultJob::start()
@@ -39,15 +39,27 @@ void DKIMStoreResultJob::start()
         deleteLater();
         return;
     }
+    MessageViewer::DKIMResultAttribute *attr = mMessageItem.attribute<MessageViewer::DKIMResultAttribute>(Akonadi::Item::AddIfMissing);
+    //TODO
+    Akonadi::ItemModifyJob *modify = new Akonadi::ItemModifyJob(mMessageItem);
+    modify->setIgnorePayload(true);
+    modify->disableRevisionCheck();
+    connect(modify, &KJob::result, this, &DKIMStoreResultJob::slotModifyItemDone);
+}
 
+void DKIMStoreResultJob::slotModifyItemDone(KJob *job)
+{
+    if (job->error()) {
+        qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMStoreResultJob: modify item failed " << job->errorString();
+    }
+    deleteLater();
 }
 
 bool DKIMStoreResultJob::canStart() const
 {
     if (mMessageItem.isValid()) {
-        //TODO
+        return true;
     }
-    //TODO
     return false;
 }
 

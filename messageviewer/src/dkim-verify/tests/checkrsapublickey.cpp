@@ -37,17 +37,13 @@ CheckRSAPublicKey::CheckRSAPublicKey(QObject *parent)
     //ba = QByteArray::fromBase64(ba);
     qDebug() << " ba " << ba;
 
-
     QCA::PublicKey publicKey = QCA::RSAPublicKey::fromDER(QByteArray::fromBase64(ba), &conversionResult);
-    if (conversionResult != QCA::ConvertGood)
-    {
+    if (conversionResult != QCA::ConvertGood) {
         qDebug() << "Public key read failed" << conversionResult;
-
     } else {
         qDebug() << "Public key read success";
     }
 }
-
 
 int main(int argc, char **argv)
 {

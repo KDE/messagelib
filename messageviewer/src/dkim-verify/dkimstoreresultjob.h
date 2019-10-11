@@ -24,7 +24,7 @@
 #include "messageviewer_private_export.h"
 #include <AkonadiCore/Item>
 #include <MessageViewer/DKIMCheckSignatureJob>
-
+class KJob;
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMStoreResultJob : public QObject
 {
@@ -42,6 +42,7 @@ public:
     void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
 private:
+    void slotModifyItemDone(KJob *job);
     Akonadi::Item mMessageItem;
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;
 };

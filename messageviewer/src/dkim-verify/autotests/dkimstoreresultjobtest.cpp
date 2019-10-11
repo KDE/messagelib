@@ -24,7 +24,6 @@ QTEST_GUILESS_MAIN(DKIMStoreResultJobTest)
 DKIMStoreResultJobTest::DKIMStoreResultJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMStoreResultJobTest::shouldHaveDefaultValues()

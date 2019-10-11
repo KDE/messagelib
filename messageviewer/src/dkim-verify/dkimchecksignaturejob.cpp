@@ -60,7 +60,6 @@ QString DKIMCheckSignatureJob::headerCanonizationResult() const
     return mHeaderCanonizationResult;
 }
 
-
 void DKIMCheckSignatureJob::start()
 {
     if (!mMessage) {
@@ -347,8 +346,7 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     QCA::ConvertResult conversionResult;
     qDebug() << "mDkimKeyRecord.publicKey() " <<mDkimKeyRecord.publicKey().toLocal8Bit().toBase64();
     QCA::PublicKey publicKey = QCA::RSAPublicKey::fromDER(QCA::base64ToArray(mDkimKeyRecord.publicKey()), &conversionResult);
-    if (QCA::ConvertGood != conversionResult)
-    {
+    if (QCA::ConvertGood != conversionResult) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Public key read failed" << conversionResult;
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Success loading public key";
@@ -372,16 +370,12 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     if (publicKey.canVerify()) {
         qDebug() << " publicKey.canVerify()"  << publicKey.canVerify();
         //Verify it
-        if ( publicKey.validSignature( mHeaderCanonizationResult.toLocal8Bit() ) )
-        {
+        if (publicKey.validSignature(mHeaderCanonizationResult.toLocal8Bit())) {
             // then signature is valid
-        }
-        else
-        {
+        } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature invalid";
             // then signature is invalid
         }
-
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to verify signature";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;

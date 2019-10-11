@@ -36,7 +36,6 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
 
 DKIMWidgetInfo::~DKIMWidgetInfo()
 {
-
 }
 
 void DKIMWidgetInfo::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
@@ -68,7 +67,7 @@ void DKIMWidgetInfo::updateToolTip()
 {
     QString tooltip;
     if (mResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid) {
-        switch(mResult.error) {
+        switch (mResult.error) {
         case DKIMCheckSignatureJob::DKIMError::Any:
             break;
         case DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash:
@@ -107,7 +106,7 @@ void DKIMWidgetInfo::updateToolTip()
         }
     }
 
-    switch(mResult.warning) {
+    switch (mResult.warning) {
     case DKIMCheckSignatureJob::DKIMWarning::Any:
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureExpired:

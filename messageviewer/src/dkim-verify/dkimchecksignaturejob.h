@@ -33,7 +33,6 @@ class MESSAGEVIEWER_EXPORT DKIMCheckSignatureJob : public QObject
     Q_OBJECT
 public:
 
-
     enum class DKIMStatus {
         Unknown,
         Valid,

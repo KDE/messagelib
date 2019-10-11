@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "dkimwidgetinfotest.h"
 #include "dkim-verify/dkimwidgetinfo.h"
 #include <QHBoxLayout>
@@ -28,7 +27,6 @@ QTEST_MAIN(DKIMWidgetInfoTest)
 DKIMWidgetInfoTest::DKIMWidgetInfoTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMWidgetInfoTest::shouldHaveDefaultValues()

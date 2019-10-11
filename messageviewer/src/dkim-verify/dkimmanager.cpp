@@ -41,14 +41,15 @@ DKIMManager *DKIMManager::self()
 
 void DKIMManager::checkDKim(const Akonadi::Item &item)
 {
-    //TODO check if we already have result
     if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
         if (item.hasAttribute<MessageViewer::DKIMResultAttribute>()) {
             const MessageViewer::DKIMResultAttribute *const attr
-                    = item.attribute<MessageViewer::DKIMResultAttribute>();
-            if (attr /*&& TODO */) {
-                //return;
-                //TODO return result !
+                = item.attribute<MessageViewer::DKIMResultAttribute>();
+            if (attr) {
+                DKIMCheckSignatureJob::CheckSignatureResult checkResult;
+                //TODO
+                Q_EMIT result(checkResult);
+                return;
             }
         }
     }
@@ -83,6 +84,6 @@ void DKIMManager::slotResult(const DKIMCheckSignatureJob::CheckSignatureResult &
         job->setResult(checkResult);
         job->start();
     }
-    qDebug() << "result : status " << (int) checkResult.status << " error : " << (int)checkResult.error << " warning " << (int)checkResult.warning;
+    qDebug() << "result : status " << (int)checkResult.status << " error : " << (int)checkResult.error << " warning " << (int)checkResult.warning;
     Q_EMIT result(checkResult);
 }
