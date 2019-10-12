@@ -76,8 +76,8 @@ public:
     Q_REQUIRED_RESULT QString userAgent() const;
     void setUserAgent(const QString &userAgent);
 
-    Q_REQUIRED_RESULT int bodyLenghtCount() const;
-    void setBodyLenghtCount(int bodyLenghtCount);
+    Q_REQUIRED_RESULT int bodyLengthCount() const;
+    void setBodyLengthCount(int bodyLengthCount);
 
     Q_REQUIRED_RESULT CanonicalizationType headerCanonization() const;
     void setHeaderCanonization(const CanonicalizationType &headerCanonization);
@@ -106,7 +106,7 @@ private:
     qint64 mSignatureTimeStamp = -1;
     qint64 mExpireTime = -1;
     int mVersion = -1;
-    int mBodyLenghtCount = -1;
+    int mBodyLengthCount = -1;
     CanonicalizationType mHeaderCanonization = Unknown;
     CanonicalizationType mBodyCanonization = Unknown;
 };

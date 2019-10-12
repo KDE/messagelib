@@ -55,7 +55,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("bh="))) {
             mBodyHash = elem.right(elem.length() - 3);
         } else if (elem.startsWith(QLatin1String("l="))) {
-            mBodyLenghtCount = elem.right(elem.length() - 2).toInt();
+            mBodyLengthCount = elem.right(elem.length() - 2).toInt();
         } else if (elem.startsWith(QLatin1String("i="))) {
             mUserAgent = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("q="))) {
@@ -175,7 +175,7 @@ bool DKIMInfo::operator==(const DKIMInfo &other) const
            && mQuery == other.query()
            && mSignature == other.signature()
            && mUserAgent == other.userAgent()
-           && mBodyLenghtCount == other.bodyLenghtCount()
+           && mBodyLengthCount == other.bodyLengthCount()
            && mListSignedHeader == other.listSignedHeader()
            && mHeaderCanonization == other.headerCanonization()
            && mBodyCanonization == other.bodyCanonization();
@@ -320,14 +320,14 @@ void DKIMInfo::setUserAgent(const QString &userAgent)
     mUserAgent = userAgent;
 }
 
-int DKIMInfo::bodyLenghtCount() const
+int DKIMInfo::bodyLengthCount() const
 {
-    return mBodyLenghtCount;
+    return mBodyLengthCount;
 }
 
-void DKIMInfo::setBodyLenghtCount(int bodyLenghtCount)
+void DKIMInfo::setBodyLengthCount(int bodyLengthCount)
 {
-    mBodyLenghtCount = bodyLenghtCount;
+    mBodyLengthCount = bodyLengthCount;
 }
 
 QDebug operator <<(QDebug d, const DKIMInfo &t)
@@ -343,7 +343,7 @@ QDebug operator <<(QDebug d, const DKIMInfo &t)
     d << "mQuery " << t.query();
     d << "mSignature " << t.signature();
     d << "mUserAgent " << t.userAgent();
-    d << "mBodyLenghtCount " << t.bodyLenghtCount();
+    d << "mBodyLengthCount " << t.bodyLengthCount();
     d << "mListSignedHeader " << t.listSignedHeader();
     d << "mHeaderCanonization " << t.headerCanonization();
     d << "mBodyCanonization " << t.bodyCanonization();

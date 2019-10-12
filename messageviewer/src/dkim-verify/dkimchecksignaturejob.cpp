@@ -133,19 +133,19 @@ void DKIMCheckSignatureJob::start()
 
     qDebug() << " bodyCanonizationResult "<< mBodyCanonizationResult << resultHash.toBase64() << " algorithm " << mDkimInfo.hashingAlgorithm() << mDkimInfo.bodyHash();
 
-    if (mDkimInfo.bodyLenghtCount() != -1) { //Verify it.
-        if (mDkimInfo.bodyLenghtCount() < mBodyCanonizationResult.length()) {
-            // lenght tag exceeds body size
+    if (mDkimInfo.bodyLengthCount() != -1) { //Verify it.
+        if (mDkimInfo.bodyLengthCount() < mBodyCanonizationResult.length()) {
+            // length tag exceeds body size
             mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::SignatureTooLarge;
             mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
             Q_EMIT result(createCheckResult());
             deleteLater();
             return;
-        } else if (mDkimInfo.bodyLenghtCount() > mBodyCanonizationResult.length()) {
+        } else if (mDkimInfo.bodyLengthCount() > mBodyCanonizationResult.length()) {
             mWarning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::SignatureTooSmall;
         }
         // truncated body to the length specified in the "l=" tag
-        mBodyCanonizationResult = mBodyCanonizationResult.left(mDkimInfo.bodyLenghtCount());
+        mBodyCanonizationResult = mBodyCanonizationResult.left(mDkimInfo.bodyLengthCount());
     }
 
     //Compute Hash Header
@@ -353,7 +353,7 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     }
     QCA::RSAPublicKey rsaPublicKey = publicKey.toRSA();
     qDebug() << "publicKey.modulus" << rsaPublicKey.n().toString();
-    qDebug() << "publicKey.exposant" << rsaPublicKey.e().toString();
+    qDebug() << "publicKey.exponent" << rsaPublicKey.e().toString();
 
     qDebug() << " void DKIMCheckSignatureJob::verifyRSASignature() not implemented yet";
 

@@ -82,8 +82,8 @@ QStringList UrlHashing::generatePathsToCheck(const QString &str, const QString &
     if (str.isEmpty()) {
         return pathToCheck;
     }
-    const int strLenght(str.length());
-    for (int i = 0; i < strLenght; ++i) {
+    const int strLength(str.length());
+    for (int i = 0; i < strLength; ++i) {
         //We check 5 element => 4 here and host if necessary
         if (pathToCheck.count() == 4) {
             break;
@@ -111,9 +111,9 @@ QStringList UrlHashing::generateHostsToCheck(const QString &str)
     if (str.isEmpty()) {
         return hostToCheck;
     }
-    const int strLenght(str.length());
+    const int strLength(str.length());
     bool lastElement = true;
-    for (int i = (strLenght - 1); i > 0; --i) {
+    for (int i = (strLength - 1); i > 0; --i) {
         //We need to check just 5 element => 4 splits hosts + current host
         if (hostToCheck.count() == 4) {
             break;
@@ -122,7 +122,7 @@ QStringList UrlHashing::generateHostsToCheck(const QString &str)
             if (lastElement) {
                 lastElement = false;
             } else {
-                hostToCheck << str.right(strLenght - i - 1);
+                hostToCheck << str.right(strLength - i - 1);
             }
         }
     }

@@ -41,7 +41,7 @@ void DKIMCheckAuthenticationStatusJob::start()
         mAuthenticationResult = hrd->asUnicodeString();
     }
     if (mAuthenticationResult.isEmpty()) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Authencation result is empty";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Authentication result is empty";
         deleteLater();
         return;
     }

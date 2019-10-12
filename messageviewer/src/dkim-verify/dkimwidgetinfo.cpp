@@ -97,7 +97,7 @@ void DKIMWidgetInfo::updateToolTip()
         case DKIMCheckSignatureJob::DKIMError::SignatureTooLarge:
             break;
         case DKIMCheckSignatureJob::DKIMError::InsupportedHashAlgorithm:
-            tooltip = i18n("Hash Algorithm is insupported.");
+            tooltip = i18n("Hash Algorithm is unsupported.");
             break;
         case DKIMCheckSignatureJob::DKIMError::PublicKeyTooSmall:
             break;
