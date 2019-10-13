@@ -46,7 +46,7 @@ public:
     QDnsLookup *dnsLookup() const;
 
 Q_SIGNALS:
-    void error();
+    void error(const QString &error);
     void success(const QList<QByteArray> &, const QString &domain, const QString &selector);
 
 private:

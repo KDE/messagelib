@@ -272,7 +272,8 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
     DKIMDownloadKeyJob *job = new DKIMDownloadKeyJob(this);
     job->setDomainName(info.domain());
     job->setSelectorName(info.selector());
-    connect(job, &DKIMDownloadKeyJob::error, this, [this](){
+    connect(job, &DKIMDownloadKeyJob::error, this, [this](const QString &errorString) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start downloadkey: error returned: " << errorString;
         deleteLater();
     });
     connect(job, &DKIMDownloadKeyJob::success, this, &DKIMCheckSignatureJob::slotDownloadKeyDone);

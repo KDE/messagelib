@@ -90,7 +90,7 @@ void DKIMDownloadKeyJob::resolvDnsDone()
     // Check the lookup succeeded.
     if (mDnsLookup->error() != QDnsLookup::NoError) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error during resolving: " << mDnsLookup->errorString();
-        Q_EMIT error();
+        Q_EMIT error(mDnsLookup->errorString());
         deleteLater();
         return;
     }
