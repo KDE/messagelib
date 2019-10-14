@@ -47,7 +47,10 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
                 = item.attribute<MessageViewer::DKIMResultAttribute>();
             if (attr) {
                 DKIMCheckSignatureJob::CheckSignatureResult checkResult;
-                //TODO
+                checkResult.item = item;
+                checkResult.error = static_cast<DKIMCheckSignatureJob::DKIMError>(attr->error());
+                checkResult.warning = static_cast<DKIMCheckSignatureJob::DKIMWarning>(attr->warning());
+                checkResult.status = static_cast<DKIMCheckSignatureJob::DKIMStatus>(attr->status());
                 Q_EMIT result(checkResult);
                 return;
             }
