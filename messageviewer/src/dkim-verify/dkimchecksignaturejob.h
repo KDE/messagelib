@@ -67,17 +67,21 @@ public:
     };
 
     struct CheckSignatureResult {
-        bool isValid() const {
-            return (status != DKIMCheckSignatureJob::DKIMStatus::Unknown);
-        }
-        Q_REQUIRED_RESULT bool operator==(const CheckSignatureResult &other) const {
-            return error == other.error &&
-                    warning == other.warning &&
-                    status == other.status &&
-                    item == other.item;
+        bool isValid() const
+        {
+            return status != DKIMCheckSignatureJob::DKIMStatus::Unknown;
         }
 
-        Q_REQUIRED_RESULT bool operator!=(const CheckSignatureResult &other) const {
+        Q_REQUIRED_RESULT bool operator==(const CheckSignatureResult &other) const
+        {
+            return error == other.error
+                   && warning == other.warning
+                   && status == other.status
+                   && item == other.item;
+        }
+
+        Q_REQUIRED_RESULT bool operator!=(const CheckSignatureResult &other) const
+        {
             return !CheckSignatureResult::operator==(other);
         }
 

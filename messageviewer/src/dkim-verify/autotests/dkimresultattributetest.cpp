@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "dkimresultattributetest.h"
 #include "dkim-verify/dkimresultattribute.h"
 #include <QTest>
@@ -26,7 +25,6 @@ QTEST_GUILESS_MAIN(DKIMResultAttributeTest)
 DKIMResultAttributeTest::DKIMResultAttributeTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMResultAttributeTest::shouldHaveDefaultValues()
@@ -51,7 +49,6 @@ void DKIMResultAttributeTest::shouldCloneAttribute()
     QCOMPARE(attr.warning(), cloneAttr->warning());
     QCOMPARE(attr.status(), cloneAttr->status());
     delete cloneAttr;
-
 }
 
 void DKIMResultAttributeTest::shouldHaveType()
