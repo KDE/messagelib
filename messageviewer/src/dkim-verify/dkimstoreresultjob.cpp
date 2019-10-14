@@ -40,7 +40,9 @@ void DKIMStoreResultJob::start()
         return;
     }
     MessageViewer::DKIMResultAttribute *attr = mMessageItem.attribute<MessageViewer::DKIMResultAttribute>(Akonadi::Item::AddIfMissing);
-    //TODO
+    attr->setError(static_cast<int>(mResult.error));
+    attr->setWarning(static_cast<int>(mResult.warning));
+    attr->setStatus(static_cast<int>(mResult.status));
     Akonadi::ItemModifyJob *modify = new Akonadi::ItemModifyJob(mMessageItem);
     modify->setIgnorePayload(true);
     modify->disableRevisionCheck();
