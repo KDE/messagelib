@@ -23,10 +23,12 @@
 #include "dkimresultattribute.h"
 #include "dkimstoreresultjob.h"
 #include "settings/messageviewersettings.h"
+#include <AkonadiCore/AttributeFactory>
 using namespace MessageViewer;
 DKIMManager::DKIMManager(QObject *parent)
     : QObject(parent)
 {
+    Akonadi::AttributeFactory::registerAttribute<MessageViewer::DKIMResultAttribute>();
 }
 
 DKIMManager::~DKIMManager()
@@ -51,6 +53,7 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
                 checkResult.error = static_cast<DKIMCheckSignatureJob::DKIMError>(attr->error());
                 checkResult.warning = static_cast<DKIMCheckSignatureJob::DKIMWarning>(attr->warning());
                 checkResult.status = static_cast<DKIMCheckSignatureJob::DKIMStatus>(attr->status());
+                qDebug() << "result : status " << (int)checkResult.status << " error : " << (int)checkResult.error << " warning " << (int)checkResult.warning;
                 Q_EMIT result(checkResult);
                 return;
             }
