@@ -67,6 +67,9 @@ public:
     };
 
     struct CheckSignatureResult {
+        bool isValid() const {
+            return (status != DKIMCheckSignatureJob::DKIMStatus::Unknown);
+        }
         DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
         DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;

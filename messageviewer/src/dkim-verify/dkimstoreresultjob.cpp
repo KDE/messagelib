@@ -57,7 +57,7 @@ void DKIMStoreResultJob::slotModifyItemDone(KJob *job)
 
 bool DKIMStoreResultJob::canStart() const
 {
-    if (mMessageItem.isValid()) {
+    if (mMessageItem.isValid() && mResult.isValid()) {
         return true;
     }
     return false;
