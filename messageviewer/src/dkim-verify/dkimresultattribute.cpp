@@ -27,8 +27,9 @@ public:
     DKIMResultAttributePrivate()
     {
     }
-
-    //TODO
+    int error = -1;
+    int warning = -1;
+    int status = -1;
 };
 
 DKIMResultAttribute::DKIMResultAttribute()
@@ -50,7 +51,9 @@ QByteArray DKIMResultAttribute::type() const
 DKIMResultAttribute *DKIMResultAttribute::clone() const
 {
     DKIMResultAttribute *attr = new DKIMResultAttribute();
-    //TODO
+    attr->setWarning(warning());
+    attr->setStatus(status());
+    attr->setError(error());
     return attr;
 }
 
@@ -58,18 +61,59 @@ QByteArray DKIMResultAttribute::serialized() const
 {
     QByteArray result;
     QDataStream s(&result, QIODevice::WriteOnly);
-    //TODO
+    s << status();
+    s << warning();
+    s << error();
     return result;
 }
 
 void DKIMResultAttribute::deserialize(const QByteArray &data)
 {
     QDataStream s(data);
-    //TODO
+    int stat = -1;
+    s >> stat;
+    d->status = stat;
+    int warn = -1;
+    s >> warn;
+    d->warning = warn;
+    int err = -1;
+    s >> err;
+    d->error = err;
 }
 
 bool DKIMResultAttribute::operator==(const DKIMResultAttribute &other) const
 {
-    //TODO
-    return true;
+    return d->error == other.error() &&
+            d->warning == other.warning() &&
+            d->status == other.status();
+}
+
+void DKIMResultAttribute::setError(int err)
+{
+    d->error = err;
+}
+
+int DKIMResultAttribute::error() const
+{
+    return d->error;
+}
+
+void DKIMResultAttribute::setWarning(int err)
+{
+    d->warning = err;
+}
+
+int DKIMResultAttribute::warning() const
+{
+    return d->warning;
+}
+
+void DKIMResultAttribute::setStatus(int err)
+{
+    d->status = err;
+}
+
+int DKIMResultAttribute::status() const
+{
+    return d->status;
 }

@@ -20,10 +20,11 @@
 #define DKIMRESULTATTRIBUTE_H
 
 #include <AkonadiCore/attribute.h>
+#include "messageviewer_private_export.h"
 namespace MessageViewer {
 class DKIMResultAttributePrivate;
 
-class DKIMResultAttribute : public Akonadi::Attribute
+class MESSAGEVIEWER_TESTS_EXPORT DKIMResultAttribute : public Akonadi::Attribute
 {
 public:
     DKIMResultAttribute();
@@ -34,6 +35,15 @@ public:
     void deserialize(const QByteArray &data) override;
 
     Q_REQUIRED_RESULT bool operator==(const DKIMResultAttribute &other) const;
+
+    void setError(int err);
+    Q_REQUIRED_RESULT int error() const;
+
+    void setWarning(int err);
+    Q_REQUIRED_RESULT int warning() const;
+
+    void setStatus(int err);
+    Q_REQUIRED_RESULT int status() const;
 
 private:
     friend class DKIMResultAttributePrivate;
