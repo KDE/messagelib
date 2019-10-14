@@ -70,6 +70,17 @@ public:
         bool isValid() const {
             return (status != DKIMCheckSignatureJob::DKIMStatus::Unknown);
         }
+        Q_REQUIRED_RESULT bool operator==(const CheckSignatureResult &other) const {
+            return error == other.error &&
+                    warning == other.warning &&
+                    status == other.status &&
+                    item == other.item;
+        }
+
+        Q_REQUIRED_RESULT bool operator!=(const CheckSignatureResult &other) const {
+            return !CheckSignatureResult::operator==(other);
+        }
+
         DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
         DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;

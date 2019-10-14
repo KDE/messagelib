@@ -40,8 +40,10 @@ DKIMWidgetInfo::~DKIMWidgetInfo()
 
 void DKIMWidgetInfo::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
-    mResult = checkResult;
-    updateInfo();
+    if (mResult != checkResult) {
+        mResult = checkResult;
+        updateInfo();
+    }
 }
 
 void DKIMWidgetInfo::updateInfo()
