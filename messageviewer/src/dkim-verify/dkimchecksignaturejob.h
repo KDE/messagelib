@@ -33,37 +33,37 @@ class MESSAGEVIEWER_EXPORT DKIMCheckSignatureJob : public QObject
     Q_OBJECT
 public:
 
-    enum class DKIMStatus {
-        Unknown,
-        Valid,
-        Invalid,
-        EmailNotSigned
+    enum class DKIMStatus : int {
+        Unknown = 0,
+        Valid = 1,
+        Invalid = 2,
+        EmailNotSigned = 3
     };
 
-    enum class DKIMError {
-        Any,
-        CorruptedBodyHash,
-        DomainNotExist,
-        MissingFrom,
-        MissingSignature,
-        InvalidQueryMethod,
-        InvalidHeaderCanonicalization,
-        InvalidBodyCanonicalization,
-        InvalidBodyHashAlgorithm,
-        InvalidSignAlgorithm,
-        PublicKeyWasRevoked,
-        SignatureTooLarge,
-        InsupportedHashAlgorithm,
-        PublicKeyTooSmall,
-        ImpossibleToVerifySignature,
+    enum class DKIMError : int {
+        Any = 0,
+        CorruptedBodyHash = 1,
+        DomainNotExist = 2,
+        MissingFrom = 3,
+        MissingSignature = 4,
+        InvalidQueryMethod = 5,
+        InvalidHeaderCanonicalization = 6,
+        InvalidBodyCanonicalization = 7,
+        InvalidBodyHashAlgorithm = 8,
+        InvalidSignAlgorithm = 9,
+        PublicKeyWasRevoked = 10,
+        SignatureTooLarge = 11,
+        InsupportedHashAlgorithm = 12,
+        PublicKeyTooSmall = 13,
+        ImpossibleToVerifySignature = 14,
 
         //TODO add more
     };
-    enum class DKIMWarning {
-        Any,
-        SignatureExpired,
-        SignatureCreatedInFuture,
-        SignatureTooSmall
+    enum class DKIMWarning : int {
+        Any = 0,
+        SignatureExpired = 1,
+        SignatureCreatedInFuture = 2,
+        SignatureTooSmall = 3
     };
 
     struct CheckSignatureResult {
