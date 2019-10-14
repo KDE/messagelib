@@ -21,7 +21,7 @@
 #define DKIMCHECKSIGNATUREJOB_H
 
 #include <QObject>
-#include "dkimkeyrecord.h"
+#include <MessageViewer/DKIMKeyRecord>
 #include "dkiminfo.h"
 #include "messageviewer_export.h"
 #include <KMime/Message>

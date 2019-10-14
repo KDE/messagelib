@@ -351,7 +351,9 @@ if (DKIM_CHECKER_BUILD)
         DKIMManager
         DKIMManagerKeyWidget
         DKIMManagerKeyDialog
+        DKIMKeyRecord
         DKIMInfo
+        DKIMWidgetInfo
         REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
         PREFIX MessageViewer
         RELATIVE dkim-verify

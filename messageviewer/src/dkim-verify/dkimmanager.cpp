@@ -66,6 +66,11 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
     job->start();
 }
 
+void DKIMManager::clearInfoWidget()
+{
+    Q_EMIT clearInfo();
+}
+
 void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
 {
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);

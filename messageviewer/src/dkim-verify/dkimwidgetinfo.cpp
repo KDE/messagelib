@@ -18,6 +18,7 @@
 */
 
 #include "dkimwidgetinfo.h"
+#include "dkimmanager.h"
 #include <QHBoxLayout>
 #include <KLocalizedString>
 #include <QLabel>
@@ -32,6 +33,8 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     mLabel = new QLabel(this);
     mLabel->setObjectName(QStringLiteral("label"));
     mainLayout->addWidget(mLabel);
+    connect(DKIMManager::self(), &DKIMManager::result, this, &DKIMWidgetInfo::setResult);
+    connect(DKIMManager::self(), &DKIMManager::clearInfo, this, &DKIMWidgetInfo::clear);
 }
 
 DKIMWidgetInfo::~DKIMWidgetInfo()
@@ -44,6 +47,11 @@ void DKIMWidgetInfo::setResult(const DKIMCheckSignatureJob::CheckSignatureResult
         mResult = checkResult;
         updateInfo();
     }
+}
+
+void DKIMWidgetInfo::clear()
+{
+    mLabel->clear();
 }
 
 void DKIMWidgetInfo::updateInfo()

@@ -22,16 +22,17 @@
 
 #include <QWidget>
 #include "dkimchecksignaturejob.h"
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 class QLabel;
 namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMWidgetInfo : public QWidget
+class MESSAGEVIEWER_EXPORT DKIMWidgetInfo : public QWidget
 {
     Q_OBJECT
 public:
     explicit DKIMWidgetInfo(QWidget *parent = nullptr);
     ~DKIMWidgetInfo();
     void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    void clear();
 private:
     void updateInfo();
     void updateToolTip();
