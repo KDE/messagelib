@@ -18,8 +18,10 @@
 */
 
 #include "dkiminfo.h"
+#include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
 
+#include <QRegularExpressionMatch>
 #include <QStringList>
 #include "messageviewer_debug.h"
 using namespace MessageViewer;
@@ -70,7 +72,8 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("b="))) {
             mSignature = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("h="))) {
-            mListSignedHeader = elem.right(elem.length() - 2).split(QLatin1Char(':'));
+            const QString str = MessageViewer::DKIMUtil::cleanString(elem.right(elem.length() - 2));
+            mListSignedHeader = str.split(QLatin1Char(':'));
         } else if (elem.startsWith(QLatin1String("x="))) {
             mExpireTime = elem.right(elem.length() - 2).toLong();
         } else if (elem.startsWith(QLatin1String("z="))) {

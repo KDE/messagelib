@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2018-2019 Laurent Montel <montel@kde.org>
+   Copyright (C) 2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -17,24 +17,22 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "dkimchecksignaturejobtest.h"
+#ifndef CHECKSIGNATURE_H
+#define CHECKSIGNATURE_H
+
+#include <QObject>
 #include "dkim-verify/dkimchecksignaturejob.h"
-#include <QTest>
-QTEST_MAIN(DKIMCheckSignatureJobTest)
+#include <QtCrypto>
 
-DKIMCheckSignatureJobTest::DKIMCheckSignatureJobTest(QObject *parent)
-    : QObject(parent)
+class CheckSignature : public QObject
 {
-}
+    Q_OBJECT
+public:
+    explicit CheckSignature(const QString &fileName, QObject *parent = nullptr);
+    ~CheckSignature();
+private:
+    void slotResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    QCA::Initializer *mQcaInitializer = nullptr;
+};
 
-void DKIMCheckSignatureJobTest::shouldHaveDefaultValues()
-{
-    MessageViewer::DKIMCheckSignatureJob job;
-    QVERIFY(job.dkimValue().isEmpty());
-    QVERIFY(job.headerCanonizationResult().isEmpty());
-    QVERIFY(job.bodyCanonizationResult().isEmpty());
-    QCOMPARE(job.status(), MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Unknown);
-    QCOMPARE(job.error(), MessageViewer::DKIMCheckSignatureJob::DKIMError::Any);
-    QCOMPARE(job.warning(), MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any);
-    QVERIFY(!job.saveKey());
-}
+#endif // CHECKSIGNATURE_H

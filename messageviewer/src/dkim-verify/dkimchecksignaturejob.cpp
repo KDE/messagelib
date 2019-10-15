@@ -24,7 +24,6 @@
 #include "dkimutil.h"
 #include "dkimkeyrecord.h"
 #include "messageviewer_dkimcheckerdebug.h"
-#include "settings/messageviewersettings.h"
 #include <QDateTime>
 #include <QCryptographicHash>
 #include <Qca-qt5/QtCrypto/qca_publickey.h>
@@ -72,6 +71,8 @@ void DKIMCheckSignatureJob::start()
         if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
             mMessage = mMessageItem.payload<KMime::Message::Ptr>();
         }
+    } else if (mMessage) {
+        //Nothing
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Item has not a message";
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
@@ -164,14 +165,16 @@ void DKIMCheckSignatureJob::start()
         break;
     }
 
-    qDebug() << " headerCanonizationResult" << mBodyCanonizationResult;
-    if (MessageViewer::MessageViewerSettings::self()->saveKey()) {
+    qDebug() << " headerCanonizationResult" << mHeaderCanonizationResult;
+    if (mSaveKey) {
         const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
         if (keyValue.isEmpty()) {
             downloadKey(mDkimInfo);
         } else {
             parseDKIMKeyRecord(keyValue, mDkimInfo.domain(), mDkimInfo.selector(), false);
         }
+    } else {
+        downloadKey(mDkimInfo);
     }
 }
 
@@ -257,7 +260,9 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
 
     QString headers;
     for (const QString &header : mDkimInfo.listSignedHeader()) {
+        qDebug() << "header " << header;
         if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
+            qDebug() << "header.toLatin1()  " << header.toLatin1();
             if (!headers.isEmpty()) {
                 headers += QLatin1String("\r\n");
             }
@@ -356,8 +361,6 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     qDebug() << "publicKey.modulus" << rsaPublicKey.n().toString();
     qDebug() << "publicKey.exponent" << rsaPublicKey.e().toString();
 
-    qDebug() << " void DKIMCheckSignatureJob::verifyRSASignature() not implemented yet";
-
     if (rsaPublicKey.e().toString().toLong() * 4 < 1024) {
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyTooSmall;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
@@ -376,6 +379,11 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature invalid";
             // then signature is invalid
+            mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;
+            mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+            Q_EMIT result(createCheckResult());
+            deleteLater();
+            return;
         }
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to verify signature";
@@ -385,10 +393,20 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         deleteLater();
         return;
     }
-
     //Success!
-
+    mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+    Q_EMIT result(createCheckResult());
     deleteLater();
+}
+
+bool DKIMCheckSignatureJob::saveKey() const
+{
+    return mSaveKey;
+}
+
+void DKIMCheckSignatureJob::setSaveKey(bool saveKey)
+{
+    mSaveKey = saveKey;
 }
 
 Akonadi::Item DKIMCheckSignatureJob::item() const

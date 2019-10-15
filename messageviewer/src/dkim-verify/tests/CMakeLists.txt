@@ -11,3 +11,11 @@ target_link_libraries(dkimtest_checkrsapublickey
         Qt5::Network
         qca-qt5
 )
+
+set(dkimtest_checksignature_SRCS checksignature.cpp)
+add_executable(dkimtest_checksignature ${dkimtest_checksignature_SRCS})
+target_link_libraries(dkimtest_checksignature
+        Qt5::Network
+        KF5::MessageViewer
+        qca-qt5
+)

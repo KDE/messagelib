@@ -62,6 +62,7 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotResult);
+    job->setSaveKey(MessageViewer::MessageViewerSettings::self()->saveKey());
     job->setItem(item);
     job->start();
 }
@@ -95,6 +96,6 @@ void DKIMManager::slotResult(const DKIMCheckSignatureJob::CheckSignatureResult &
         job->setResult(checkResult);
         job->start();
     }
-    qDebug() << "result : status " << (int)checkResult.status << " error : " << (int)checkResult.error << " warning " << (int)checkResult.warning;
+    qDebug() << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
     Q_EMIT result(checkResult);
 }

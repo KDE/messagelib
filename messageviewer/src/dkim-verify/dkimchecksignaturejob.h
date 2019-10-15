@@ -21,9 +21,9 @@
 #define DKIMCHECKSIGNATUREJOB_H
 
 #include <QObject>
-#include <MessageViewer/DKIMKeyRecord>
-#include "dkiminfo.h"
 #include "messageviewer_export.h"
+#include <MessageViewer/DKIMKeyRecord>
+#include <MessageViewer/DKIMInfo>
 #include <KMime/Message>
 #include <AkonadiCore/Item>
 
@@ -39,6 +39,7 @@ public:
         Invalid = 2,
         EmailNotSigned = 3
     };
+    Q_ENUM(DKIMStatus)
 
     enum class DKIMError : int {
         Any = 0,
@@ -57,14 +58,17 @@ public:
         PublicKeyTooSmall = 13,
         ImpossibleToVerifySignature = 14,
 
+
         //TODO add more
     };
+    Q_ENUM(DKIMError)
     enum class DKIMWarning : int {
         Any = 0,
         SignatureExpired = 1,
         SignatureCreatedInFuture = 2,
         SignatureTooSmall = 3
     };
+    Q_ENUM(DKIMWarning)
 
     struct CheckSignatureResult {
         bool isValid() const
@@ -117,6 +121,9 @@ public:
     Q_REQUIRED_RESULT Akonadi::Item item() const;
     void setItem(const Akonadi::Item &item);
 
+    Q_REQUIRED_RESULT bool saveKey() const;
+    void setSaveKey(bool saveKey);
+
 Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void storeKey(const QString &key, const QString &domain, const QString &selector);
@@ -141,6 +148,7 @@ private:
     DKIMCheckSignatureJob::DKIMError mError = DKIMCheckSignatureJob::DKIMError::Any;
     DKIMCheckSignatureJob::DKIMWarning mWarning = DKIMCheckSignatureJob::DKIMWarning::Any;
     DKIMCheckSignatureJob::DKIMStatus mStatus = DKIMCheckSignatureJob::DKIMStatus::Unknown;
+    bool mSaveKey = false;
 };
 }
 

@@ -113,3 +113,14 @@ QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &header
     //newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]*:[ \t]")), QStringLiteral(":"));
     return newHeaderName + QLatin1Char(':') + newHeaderValue;
 }
+
+QString MessageViewer::DKIMUtil::cleanString(QString str)
+{
+    //Move as static ?
+    // WSP help pattern as specified in Section 2.8 of RFC 6376
+    const QString pattWSP = QStringLiteral("[ \t]");
+    // FWS help pattern as specified in Section 2.8 of RFC 6376
+    const QString pattFWS = QStringLiteral("(?:") + pattWSP + QStringLiteral("*(?:\r\n)?") + pattWSP + QStringLiteral("+)");
+    str.replace(QRegularExpression(pattFWS), QString());
+    return str;
+}
