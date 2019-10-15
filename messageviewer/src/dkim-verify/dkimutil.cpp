@@ -76,7 +76,7 @@ QByteArray MessageViewer::DKIMUtil::generateHash(const QByteArray &body, QCrypto
 
 QString MessageViewer::DKIMUtil::headerCanonizationSimple(const QString &headerName, const QString &headerValue)
 {
-    //TODO verify it
+    //TODO verify it lower it ?
     return headerName + QLatin1Char(':') + headerValue;
 }
 

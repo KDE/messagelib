@@ -165,7 +165,40 @@ void DKIMCheckSignatureJob::start()
         break;
     }
 
+    //    In hash step 2, the Signer/Verifier MUST pass the following to the
+    //       hash algorithm in the indicated order.
+
+    //       1.  The header fields specified by the "h=" tag, in the order
+    //           specified in that tag, and canonicalized using the header
+    //           canonicalization algorithm specified in the "c=" tag.  Each
+    //           header field MUST be terminated with a single CRLF.
+
+    //       2.  The DKIM-Signature header field that exists (verifying) or will
+    //           be inserted (signing) in the message, with the value of the "b="
+    //           tag (including all surrounding whitespace) deleted (i.e., treated
+    //           as the empty string), canonicalized using the header
+    //           canonicalization algorithm specified in the "c=" tag, and without
+    //           a trailing CRLF.
+    // add DKIM-Signature header to the hash input
+    // with the value of the "b=" tag (including all surrounding whitespace) deleted
+
     qDebug() << " headerCanonizationResult" << mHeaderCanonizationResult;
+    //Add dkim-signature as lowercase
+
+    QString dkimValue = mDkimValue;
+    dkimValue = dkimValue.left(dkimValue.indexOf(QLatin1String("b=")) + 2);
+    switch (mDkimInfo.headerCanonization()) {
+    case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
+        return;
+    case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
+        mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationSimple(QLatin1String("dkim-signature"), dkimValue);
+        break;
+    case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
+        mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationRelaxed(QLatin1String("dkim-signature"), dkimValue);
+        break;
+    }
+
+    qDebug() << " headerCanonizationResult after " << mHeaderCanonizationResult;
     if (mSaveKey) {
         const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
         if (keyValue.isEmpty()) {
@@ -259,8 +292,13 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
 //          colon separator MUST be retained.
 
     QString headers;
+    QStringList headerAlreadyAdded; //Add support for multi headers
     for (const QString &header : mDkimInfo.listSignedHeader()) {
+        if (headerAlreadyAdded.contains(header)) {
+            continue;
+        }
         if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
+            headerAlreadyAdded << header;
             if (!headers.isEmpty()) {
                 headers += QLatin1String("\r\n");
             }
@@ -372,8 +410,10 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     if (publicKey.canVerify()) {
         qDebug() << " publicKey.canVerify()"  << publicKey.canVerify();
         //Verify it
-        if (publicKey.validSignature(mHeaderCanonizationResult.toLocal8Bit())) {
+        publicKey.update(mHeaderCanonizationResult.toLocal8Bit().toBase64());
+        if (publicKey.validSignature(mDkimInfo.bodyHash().toLocal8Bit().toBase64())) {
             // then signature is valid
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature VALIDE !!!!!!!!!!";
         } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature invalid";
             // then signature is invalid
