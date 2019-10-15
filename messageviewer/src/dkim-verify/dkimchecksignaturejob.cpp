@@ -260,9 +260,7 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
 
     QString headers;
     for (const QString &header : mDkimInfo.listSignedHeader()) {
-        qDebug() << "header " << header;
         if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
-            qDebug() << "header.toLatin1()  " << header.toLatin1();
             if (!headers.isEmpty()) {
                 headers += QLatin1String("\r\n");
             }
