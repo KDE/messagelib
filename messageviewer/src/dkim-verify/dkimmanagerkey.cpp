@@ -43,7 +43,7 @@ DKIMManagerKey *DKIMManagerKey::self()
 
 QString DKIMManagerKey::keyValue(const QString &selector, const QString &domain)
 {
-    for (const KeyInfo &keyInfo : mKeys) {
+    for (const KeyInfo &keyInfo : qAsConst(mKeys)) {
         if (keyInfo.selector == selector && keyInfo.domain == domain) {
             return keyInfo.keyValue;
         }
@@ -60,7 +60,7 @@ void DKIMManagerKey::addKey(const KeyInfo &key)
 
 void DKIMManagerKey::removeKey(const QString &key)
 {
-    for (const KeyInfo &keyInfo : mKeys) {
+    for (const KeyInfo &keyInfo : qAsConst(mKeys)) {
         if (keyInfo.keyValue == key) {
             mKeys.removeAll(keyInfo);
             break;
