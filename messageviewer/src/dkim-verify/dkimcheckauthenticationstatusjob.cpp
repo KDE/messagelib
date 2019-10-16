@@ -20,7 +20,7 @@
 #include "dkimcheckauthenticationstatusjob.h"
 #include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
-
+//see https://tools.ietf.org/html/rfc7601
 DKIMCheckAuthenticationStatusJob::DKIMCheckAuthenticationStatusJob(QObject *parent)
     : QObject(parent)
 {
