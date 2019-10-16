@@ -84,6 +84,7 @@ void DKIMWidgetInfo::updateToolTip()
             tooltip = i18n("Body Hash was corrupted.");
             break;
         case DKIMCheckSignatureJob::DKIMError::DomainNotExist:
+            tooltip = i18n("The domain doesn't exist.");
             break;
         case DKIMCheckSignatureJob::DKIMError::MissingFrom:
             tooltip = i18n("Missing header From.");
@@ -92,12 +93,14 @@ void DKIMWidgetInfo::updateToolTip()
             tooltip = i18n("Missing signature.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidQueryMethod:
+            tooltip = i18n("Invalid query method.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidHeaderCanonicalization:
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidBodyCanonicalization:
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidBodyHashAlgorithm:
+            tooltip = i18n("Unknow Body Hash Algorithm.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidSignAlgorithm:
             break;

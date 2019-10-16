@@ -119,20 +119,7 @@ void DKIMCheckSignatureJob::start()
         mBodyCanonizationResult = bodyCanonizationRelaxed();
         break;
     }
-    QByteArray resultHash;
-    if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha1")) {
-        resultHash = MessageViewer::DKIMUtil::generateHash(mBodyCanonizationResult.toLatin1(), QCryptographicHash::Sha1);
-    } else if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha256")) {
-        resultHash = MessageViewer::DKIMUtil::generateHash(mBodyCanonizationResult.toLatin1(), QCryptographicHash::Sha256);
-    } else {
-        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InsupportedHashAlgorithm;
-        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-        Q_EMIT result(createCheckResult());
-        deleteLater();
-        return;
-    }
-
-    qDebug() << " bodyCanonizationResult "<< mBodyCanonizationResult << resultHash.toBase64() << " algorithm " << mDkimInfo.hashingAlgorithm() << mDkimInfo.bodyHash();
+    //qDebug() << " bodyCanonizationResult "<< mBodyCanonizationResult << " algorithm " << mDkimInfo.hashingAlgorithm() << mDkimInfo.bodyHash();
 
     if (mDkimInfo.bodyLengthCount() != -1) { //Verify it.
         if (mDkimInfo.bodyLengthCount() < mBodyCanonizationResult.length()) {
@@ -149,9 +136,22 @@ void DKIMCheckSignatureJob::start()
         mBodyCanonizationResult = mBodyCanonizationResult.left(mDkimInfo.bodyLengthCount());
     }
 
+    QByteArray resultHash;
+    if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha1")) {
+        resultHash = MessageViewer::DKIMUtil::generateHash(mBodyCanonizationResult.toLatin1(), QCryptographicHash::Sha1);
+    } else if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha256")) {
+        resultHash = MessageViewer::DKIMUtil::generateHash(mBodyCanonizationResult.toLatin1(), QCryptographicHash::Sha256);
+    } else {
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InsupportedHashAlgorithm;
+        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+        Q_EMIT result(createCheckResult());
+        deleteLater();
+        return;
+    }
 
     // compare body hash
-    if (mBodyCanonizationResult != mDkimInfo.bodyHash()) {
+    qDebug() << "resultHash "  << resultHash << "mDkimInfo.bodyHash()" << mDkimInfo.bodyHash();
+    if (resultHash != mDkimInfo.bodyHash().toLatin1()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Corrupted body hash";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
@@ -529,6 +529,9 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
 
+    if (info.hashingAlgorithm() == QLatin1String("sha1")) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "hash algorithm is not secure sha1";
+    }
     //Add more test
     //TODO check if info is valid
     return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;

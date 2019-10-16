@@ -92,9 +92,11 @@ void DKIMManager::storeKey(const QString &key, const QString &domain, const QStr
 void DKIMManager::slotResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
     if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
-        DKIMStoreResultJob *job = new DKIMStoreResultJob(this);
-        job->setResult(checkResult);
-        job->start();
+        if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid) {
+            DKIMStoreResultJob *job = new DKIMStoreResultJob(this);
+            job->setResult(checkResult);
+            job->start();
+        }
     }
     qDebug() << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
     Q_EMIT result(checkResult);
