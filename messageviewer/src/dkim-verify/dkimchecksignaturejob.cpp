@@ -531,6 +531,7 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
 
     if (info.hashingAlgorithm() == QLatin1String("sha1")) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "hash algorithm is not secure sha1";
+        mWarning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe;
     }
     //Add more test
     //TODO check if info is valid

@@ -66,7 +66,8 @@ public:
         Any = 0,
         SignatureExpired = 1,
         SignatureCreatedInFuture = 2,
-        SignatureTooSmall = 3
+        SignatureTooSmall = 3,
+        HashAlgorithmUnsafe = 4,
     };
     Q_ENUM(DKIMWarning)
 

@@ -131,6 +131,9 @@ void DKIMWidgetInfo::updateToolTip()
     case DKIMCheckSignatureJob::DKIMWarning::SignatureTooSmall:
         tooltip = i18n("Signature too small");
         break;
+    case DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe:
+        tooltip = i18n("Hash Algorithm unsafe (sha1)");
+        break;
     }
     mLabel->setToolTip(tooltip);
 }
