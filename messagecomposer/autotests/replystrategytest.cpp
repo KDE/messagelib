@@ -261,26 +261,69 @@ void ReplyStrategyTest::testReply_data()
     QTest::newRow("ReplyAll, with multiple To addresses in original")
         << friend1Address << both(friend2Address, nondefaultAddress) << only(defaultAddress)
         << nobody << nobody << QString() << nobody
-        << (int)ReplyAll << nondefaultAddress << only(friend1Address) << only(friend2Address);
+        << (int)ReplyAll << nondefaultAddress << both(friend1Address, friend2Address) << nobody;
     QTest::newRow("ReplyAll, with Reply-To in original")
         << friend1Address << only(defaultAddress) << only(friend2Address)
         << only(replyAddress) << nobody << QString() << nobody
         << (int)ReplyAll << defaultAddress << only(replyAddress) << only(friend2Address);
+    QTest::newRow("ReplyAll, with Mail-Reply-To in original")
+        << friend1Address << only(defaultAddress) << only(friend2Address)
+        << only(replyAddress) << nobody << QString() << only(mailReplyAddress)
+        << (int)ReplyAll << defaultAddress << only(mailReplyAddress) << only(friend2Address);
+
+    // If the original message was _from_ the user _to_ another person (the
+    // reverse of the usual direction), reply to all goes to the other person.
+    // Therefore Mail-Reply-To and Reply-To are ignored.
+    // The reply is assumed to add to the original message.
+    QTest::newRow("ReplyAll, from default identity to someone")
+        << defaultAddress << only(friend1Address) << only(friend2Address)
+        << only(replyAddress) << nobody << QString() << only(mailReplyAddress)
+        << (int)ReplyAll << defaultAddress << only(friend1Address) << only(friend2Address);
+
+    // If the original message was from one of the user's identities to another
+    // identity (i.e., between two of the user's mail accounts), reply to all
+    // goes back to the sending identity.
+    QTest::newRow("ReplyAll, between identities")
+        << defaultAddress << only(nondefaultAddress) << only(friend2Address)
+        << nobody << nobody << QString() << nobody
+        << (int)ReplyAll << nondefaultAddress << only(defaultAddress) << only(friend2Address);
 
     // If the original passed through a mailing list, ReplyAll replies to the
-    // list, preferring Mail-Followup-To over List-Post as the list address.
+    // list.
     // It CCs the author, using Mail-Reply-To, Reply-To, or From (in that order).
     QTest::newRow("ReplyAll, from list with List-Post")
         << friend1Address << only(nondefaultAddress) << only(friend2Address)
         << nobody << nobody << listAddress << nobody
         << (int)ReplyAll << nondefaultAddress << only(listAddress) << both(friend1Address, friend2Address);
+    QTest::newRow("ReplyAll, from list with Reply-To")
+        << friend1Address << only(defaultAddress) << only(friend2Address)
+        << only(replyAddress) << nobody << listAddress  << nobody
+        << (int)ReplyAll << defaultAddress << only(listAddress) << both(replyAddress, friend2Address);
+    QTest::newRow("ReplyAll, from list with Mail-Reply-To")
+        << friend1Address << only(defaultAddress) << only(friend2Address)
+        << only(replyAddress) << nobody << listAddress  << only(mailReplyAddress)
+        << (int)ReplyAll << defaultAddress << only(listAddress) << both(mailReplyAddress, friend2Address);
 
     // If Reply-To is the same as List-Post, ReplyAll ignores it and uses
-    // From, because the mailing list munged Reply-To.
+    // From for the author's address, because the mailing list munged Reply-To.
     QTest::newRow("ReplyAll, from list that munges Reply-To")
         << friend1Address << only(defaultAddress) << nobody
         << only(listAddress) << nobody << listAddress << nobody
         << (int)ReplyAll << defaultAddress << only(listAddress) << only(friend1Address);
+
+    // If Reply-To contains List-Post, ReplyAll uses the other reply
+    // addresses, because the mailing list didn't completely munge Reply-To.
+    QTest::newRow("ReplyAll, from list that lightly munges Reply-To")
+        << friend1Address << only(defaultAddress) << nobody
+        << both(replyAddress, listAddress) << nobody << listAddress << nobody
+        << (int)ReplyAll << defaultAddress << only(listAddress) << only(replyAddress);
+
+    // If Mail-Followup-To header is present, use it for To and ignore other
+    // headers.  Cc is empty.
+    QTest::newRow("ReplyAll, from list with Reply-To and Mail-Followup-To")
+        << friend1Address << only(defaultAddress) << only(friend2Address)
+        << only(replyAddress) << only(followupAddress) << listAddress  << only(mailReplyAddress)
+        << (int)ReplyAll << defaultAddress << only(followupAddress) << nobody;
 
     // Reply to Author
     // ---------------
