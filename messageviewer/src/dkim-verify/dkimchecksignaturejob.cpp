@@ -419,10 +419,16 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     }
 
     if (publicKey.canVerify()) {
+
+        if (publicKey.verifyMessage(mHeaderCanonizationResult.toLatin1(), mDkimInfo.signature().toLatin1(), QCA::EMSA3_SHA256)) {
+            qDebug() << " OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK";
+        }
+
         qDebug() << " publicKey.canVerify()"  << publicKey.canVerify();
         //Verify it
-        publicKey.update(mHeaderCanonizationResult.toLocal8Bit().toBase64());
-        if (publicKey.validSignature(mDkimInfo.signature().toLocal8Bit().toBase64())) {
+        publicKey.startVerify( QCA::EMSA3_SHA256 );
+        publicKey.update(mHeaderCanonizationResult.toLatin1());
+        if (publicKey.validSignature(mDkimInfo.signature().toLatin1())) {
             // then signature is valid
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature VALIDE !!!!!!!!!!";
         } else {
