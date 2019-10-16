@@ -55,7 +55,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
             parseCanonicalization(elem.right(elem.length() - 2));
             foundCanonizations = true;
         } else if (elem.startsWith(QLatin1String("bh="))) {
-            mBodyHash = elem.right(elem.length() - 3);
+            mBodyHash = elem.right(elem.length() - 3).replace(QStringLiteral(" "), QString());
         } else if (elem.startsWith(QLatin1String("l="))) {
             mBodyLengthCount = elem.right(elem.length() - 2).toInt();
         } else if (elem.startsWith(QLatin1String("i="))) {

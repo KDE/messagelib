@@ -422,7 +422,7 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         qDebug() << " publicKey.canVerify()"  << publicKey.canVerify();
         //Verify it
         publicKey.update(mHeaderCanonizationResult.toLocal8Bit().toBase64());
-        if (publicKey.validSignature(mDkimInfo.bodyHash().toLocal8Bit().toBase64())) {
+        if (publicKey.validSignature(mDkimInfo.signature().toLocal8Bit().toBase64())) {
             // then signature is valid
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature VALIDE !!!!!!!!!!";
         } else {
