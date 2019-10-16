@@ -405,8 +405,8 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Success loading public key";
     }
     QCA::RSAPublicKey rsaPublicKey = publicKey.toRSA();
-    qDebug() << "publicKey.modulus" << rsaPublicKey.n().toString();
-    qDebug() << "publicKey.exponent" << rsaPublicKey.e().toString();
+    //qDebug() << "publicKey.modulus" << rsaPublicKey.n().toString();
+    //qDebug() << "publicKey.exponent" << rsaPublicKey.e().toString();
 
     if (rsaPublicKey.e().toString().toLong() * 4 < 1024) {
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyTooSmall;
