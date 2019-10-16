@@ -149,6 +149,17 @@ void DKIMCheckSignatureJob::start()
         mBodyCanonizationResult = mBodyCanonizationResult.left(mDkimInfo.bodyLengthCount());
     }
 
+
+    // compare body hash
+    if (mBodyCanonizationResult != mDkimInfo.bodyHash()) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Corrupted body hash";
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash;
+        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+        Q_EMIT result(createCheckResult());
+        deleteLater();
+        return;
+    }
+
     //Compute Hash Header
     switch (mDkimInfo.headerCanonization()) {
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
