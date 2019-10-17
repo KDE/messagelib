@@ -435,8 +435,20 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         //TODO
     }
 
+
     if (publicKey.canVerify()) {
-        if (publicKey.verifyMessage(mHeaderCanonizationResult.toLatin1(), mDkimInfo.signature().toLatin1(), QCA::EMSA3_SHA256)) {
+        qDebug() << "mHeaderCanonizationResult " << mHeaderCanonizationResult << " mDkimInfo.signature() " << mDkimInfo.signature();
+        QCA::SecureArray sec = QCA::base64ToArray(mHeaderCanonizationResult);
+        if (publicKey.verifyMessage(sec, QCA::base64ToArray(mDkimInfo.signature()), QCA::EMSA3_SHA256)) {
+            qDebug() << " OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK";
+        }
+        if (publicKey.verifyMessage(sec, QCA::base64ToArray(mDkimInfo.signature()), QCA::EMSA3_SHA1)) {
+            qDebug() << " OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK";
+        }
+        if (publicKey.verifyMessage(sec, QCA::base64ToArray(mDkimInfo.signature()), QCA::EMSA1_SHA1)) {
+            qDebug() << " OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK";
+        }
+        if (publicKey.verifyMessage(sec, QCA::base64ToArray(mDkimInfo.signature()), QCA::EMSA3_MD5)) {
             qDebug() << " OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK";
         }
 
