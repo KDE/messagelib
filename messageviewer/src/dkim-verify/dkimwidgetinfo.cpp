@@ -96,18 +96,22 @@ void DKIMWidgetInfo::updateToolTip()
             tooltip = i18n("Invalid query method.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidHeaderCanonicalization:
+            tooltip = i18n("Invalid header^ canonolization.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidBodyCanonicalization:
+            tooltip = i18n("Invalid body canonolization.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidBodyHashAlgorithm:
             tooltip = i18n("Unknown Body Hash Algorithm.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidSignAlgorithm:
+            tooltip = i18n("Signature algorithm is invalid.");
             break;
         case DKIMCheckSignatureJob::DKIMError::PublicKeyWasRevoked:
             tooltip = i18n("The public key was revoked.");
             break;
         case DKIMCheckSignatureJob::DKIMError::SignatureTooLarge:
+            tooltip = i18n("Signature is too large.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InsupportedHashAlgorithm:
             tooltip = i18n("Hash Algorithm is unsupported.");
@@ -115,6 +119,7 @@ void DKIMWidgetInfo::updateToolTip()
         case DKIMCheckSignatureJob::DKIMError::PublicKeyTooSmall:
             break;
         case DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature:
+            tooltip = i18n("Impossible to verify signature.");
             break;
         case DKIMCheckSignatureJob::DKIMError::DomainI:
 
