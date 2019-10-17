@@ -58,8 +58,7 @@ public:
         PublicKeyTooSmall = 13,
         ImpossibleToVerifySignature = 14,
         DomainI = 15,
-
-        //TODO add more
+        TestKeyMode = 16,
     };
     Q_ENUM(DKIMError)
     enum class DKIMWarning : int {

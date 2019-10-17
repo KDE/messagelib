@@ -387,12 +387,12 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
     }
     // check that the testing flag is not set
     if (mDkimKeyRecord.flags().contains(QLatin1String("y"))) {
-        //                  s  Any DKIM-Signature header fields using the "i=" tag MUST have
-        //                     the same domain value on the right-hand side of the "@" in the
-        //                     "i=" tag and the value of the "d=" tag.  That is, the "i="
-        //                     domain MUST NOT be a subdomain of "d=".  Use of this flag is
-        //                     RECOMMENDED unless subdomaining is required.
-        //TODO
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Testing mode!";
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::TestKeyMode;
+        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+        Q_EMIT result(createCheckResult());
+        deleteLater();
+        return;
     }
     if (mDkimKeyRecord.publicKey().isEmpty()) {
         // empty value means that this public key has been revoked

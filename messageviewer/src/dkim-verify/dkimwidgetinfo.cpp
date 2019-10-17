@@ -122,7 +122,10 @@ void DKIMWidgetInfo::updateToolTip()
             tooltip = i18n("Impossible to verify signature.");
             break;
         case DKIMCheckSignatureJob::DKIMError::DomainI:
-
+            tooltip = i18n("AUID must be in the same domain as SDID (s-flag set in key record).");
+            break;
+        case DKIMCheckSignatureJob::DKIMError::TestKeyMode:
+            tooltip = i18n("The signing domain is only testing DKIM.");
             break;
         }
     }
