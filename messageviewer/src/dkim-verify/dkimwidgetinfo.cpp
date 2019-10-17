@@ -100,7 +100,7 @@ void DKIMWidgetInfo::updateToolTip()
         case DKIMCheckSignatureJob::DKIMError::InvalidBodyCanonicalization:
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidBodyHashAlgorithm:
-            tooltip = i18n("Unknow Body Hash Algorithm.");
+            tooltip = i18n("Unknown Body Hash Algorithm.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidSignAlgorithm:
             break;
