@@ -287,7 +287,7 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
         }
     }
     if (str.indexOf(QRegularExpression(QLatin1String("<img.*src=http:/"), QRegularExpression::CaseInsensitiveOption))
-            || str.indexOf(QRegularExpression(QLatin1String("<img.*src=https:/"), QRegularExpression::CaseInsensitiveOption))) {
+        || str.indexOf(QRegularExpression(QLatin1String("<img.*src=https:/"), QRegularExpression::CaseInsensitiveOption))) {
         return true;
     }
     return false;

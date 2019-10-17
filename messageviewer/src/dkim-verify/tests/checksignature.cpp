@@ -46,14 +46,12 @@ CheckSignature::CheckSignature(const QString &fileName, QObject *parent)
 
 CheckSignature::~CheckSignature()
 {
-
 }
 
 void CheckSignature::slotResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
     qDebug() << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
 }
-
 
 int main(int argc, char **argv)
 {

@@ -372,20 +372,18 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
     // if s flag is set in DKIM key record
     // AUID must be from the same domain as SDID (and not a subdomain)
     if (mDkimKeyRecord.flags().contains(QLatin1String("s"))) {
+        //                  s  Any DKIM-Signature header fields using the "i=" tag MUST have
+        //                     the same domain value on the right-hand side of the "@" in the
+        //                     "i=" tag and the value of the "d=" tag.  That is, the "i="
+        //                     domain MUST NOT be a subdomain of "d=".  Use of this flag is
+        //                     RECOMMENDED unless subdomaining is required.
         if (mDkimInfo.iDomain() != mDkimInfo.domain()) {
             mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
             mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::DomainI;
             Q_EMIT result(createCheckResult());
             deleteLater();
             return;
-
         }
-        //                  s  Any DKIM-Signature header fields using the "i=" tag MUST have
-        //                     the same domain value on the right-hand side of the "@" in the
-        //                     "i=" tag and the value of the "d=" tag.  That is, the "i="
-        //                     domain MUST NOT be a subdomain of "d=".  Use of this flag is
-        //                     RECOMMENDED unless subdomaining is required.
-        //TODO
     }
     // check that the testing flag is not set
     if (mDkimKeyRecord.flags().contains(QLatin1String("y"))) {
@@ -438,14 +436,13 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     }
 
     if (publicKey.canVerify()) {
-
         if (publicKey.verifyMessage(mHeaderCanonizationResult.toLatin1(), mDkimInfo.signature().toLatin1(), QCA::EMSA3_SHA256)) {
             qDebug() << " OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK";
         }
 
         qDebug() << " publicKey.canVerify()"  << publicKey.canVerify();
         //Verify it
-        publicKey.startVerify( QCA::EMSA3_SHA256 );
+        publicKey.startVerify(QCA::EMSA3_SHA256);
         publicKey.update(mHeaderCanonizationResult.toLatin1());
         if (publicKey.validSignature(mDkimInfo.signature().toLatin1())) {
             // then signature is valid

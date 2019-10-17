@@ -104,7 +104,8 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
                                            QStringLiteral("date"), QStringLiteral("date")}));
     QTest::addRow("test2") << val << info2 << true;
 
-    val = QStringLiteral("v=1; a=rsa-sha1; c=relaxed; d=abonnement.radins.com; h=message-id:list-unsubscribe:from:to:reply-to:content-type:subject:content-transfer-encoding:mime-version:date; s=selector1; bh=vyAg5eFfq019WlDt9csu4bJMC54=; b=ABKgPqPe/MOGdgR2TJuiVNTLugsL8q/+ky/JxOxwZxnsPbtFnyJ+Y7Gk8bfcBL9myKPNqe7bU6Uy4IiNptn+v34rhVApm6ccoc44UXe/2A5D+6CPJHjFyf/ggjgF/BtQGYoMeQwj2+F4+QRxHSPldAcWqLCwlcRN25nPgiSAvWg=");
+    val = QStringLiteral(
+        "v=1; a=rsa-sha1; c=relaxed; d=abonnement.radins.com; h=message-id:list-unsubscribe:from:to:reply-to:content-type:subject:content-transfer-encoding:mime-version:date; s=selector1; bh=vyAg5eFfq019WlDt9csu4bJMC54=; b=ABKgPqPe/MOGdgR2TJuiVNTLugsL8q/+ky/JxOxwZxnsPbtFnyJ+Y7Gk8bfcBL9myKPNqe7bU6Uy4IiNptn+v34rhVApm6ccoc44UXe/2A5D+6CPJHjFyf/ggjgF/BtQGYoMeQwj2+F4+QRxHSPldAcWqLCwlcRN25nPgiSAvWg=");
     MessageViewer::DKIMInfo info3;
     info3.setVersion(1);
     info3.setQuery(QStringLiteral("dns/txt"));

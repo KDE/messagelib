@@ -202,7 +202,7 @@ bool DKIMInfo::operator==(const DKIMInfo &other) const
            && mListSignedHeader == other.listSignedHeader()
            && mHeaderCanonization == other.headerCanonization()
            && mBodyCanonization == other.bodyCanonization()
-            && mIDomain == other.iDomain();
+           && mIDomain == other.iDomain();
 }
 
 DKIMInfo::CanonicalizationType DKIMInfo::headerCanonization() const

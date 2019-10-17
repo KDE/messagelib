@@ -712,7 +712,6 @@ public:
 #ifdef USE_DKIM_CHECKER
     QCA::Initializer *mQcaInitializer = nullptr;
 #endif
-
 };
 }
 

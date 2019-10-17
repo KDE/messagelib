@@ -59,7 +59,6 @@ public:
         ImpossibleToVerifySignature = 14,
         DomainI = 15,
 
-
         //TODO add more
     };
     Q_ENUM(DKIMError)
