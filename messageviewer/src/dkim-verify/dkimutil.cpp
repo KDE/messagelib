@@ -111,6 +111,13 @@ QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &header
     newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]+\r\n")), QStringLiteral("\r\n"));
     //Perhaps remove tab after headername and before value name
     //newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]*:[ \t]")), QStringLiteral(":"));
+    if (newHeaderName == QLatin1String("date")) { //KMime remove (UTC)
+        if (!newHeaderValue.endsWith(QLatin1String(" (UTC)"))) {
+            newHeaderValue += QLatin1String(" (UTC)");
+        }
+    } else if (newHeaderName == QLatin1String("content-type")) {
+        newHeaderValue.remove(QLatin1Char('"'));
+    }
     return newHeaderName + QLatin1Char(':') + newHeaderValue;
 }
 
