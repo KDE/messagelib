@@ -73,6 +73,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
             mSignature = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("h="))) {
             const QString str = MessageViewer::DKIMUtil::cleanString(elem.right(elem.length() - 2));
+            qDebug() << " str************************ " << str;
             mListSignedHeader = str.split(QLatin1Char(':'));
         } else if (elem.startsWith(QLatin1String("x="))) {
             mExpireTime = elem.right(elem.length() - 2).toLong();

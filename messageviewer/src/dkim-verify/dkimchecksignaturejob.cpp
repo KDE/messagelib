@@ -305,18 +305,26 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
     QString headers;
     QStringList headerAlreadyAdded; //Add support for multi headers
     for (const QString &header : mDkimInfo.listSignedHeader()) {
+        qDebug() << " header" << header;
         if (headerAlreadyAdded.contains(header)) {
             continue;
         }
         if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
             QString str;
             if (header == QLatin1String("date")) {
-                //qDebug() << " t " << mMessage->head();
-                //qDebug() << " t " << t.toTimeSpec(Qt::UTC);
-                //qDebug() << " t " << mMessage->headerByType(header.toLatin1().constData())->asUnicodeString();
-                //qDebug() << " t " << mMessage->headerByType(header.toLatin1().constData())->as7BitString();
-                str = hrd->asUnicodeString() + QLatin1String(" (UTC)");
-                //qDebug() << " str " << str;
+                QByteArray headers = mMessage->head();
+                int index = headers.indexOf("Date: ");
+                if (index != -1) {
+                    index += 5;
+                    const int end = headers.indexOf("\n", index);
+                    if (end != -1) {
+                        str = QString::fromLatin1(headers.mid(index, (end - index)));
+                        if (str.startsWith(QLatin1Char(' '))) {
+                            str = str.right(str.length() - 1);
+                        }
+                    }
+                }
+                qDebug() << " str " << str;
             } else {
                 str = hrd->asUnicodeString();
             }
@@ -425,7 +433,7 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
 void DKIMCheckSignatureJob::verifyRSASignature()
 {
     QCA::ConvertResult conversionResult;
-    qDebug() << "mDkimKeyRecord.publicKey() " <<mDkimKeyRecord.publicKey() << " QCA::base64ToArray(mDkimKeyRecord.publicKey() " <<QCA::base64ToArray(mDkimKeyRecord.publicKey());
+    //qDebug() << "mDkimKeyRecord.publicKey() " <<mDkimKeyRecord.publicKey() << " QCA::base64ToArray(mDkimKeyRecord.publicKey() " <<QCA::base64ToArray(mDkimKeyRecord.publicKey());
     QCA::PublicKey publicKey = QCA::RSAPublicKey::fromDER(QCA::base64ToArray(mDkimKeyRecord.publicKey()), &conversionResult);
     if (QCA::ConvertGood != conversionResult) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Public key read failed" << conversionResult;
