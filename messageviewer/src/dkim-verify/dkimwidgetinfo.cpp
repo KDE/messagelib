@@ -22,6 +22,7 @@
 #include <QHBoxLayout>
 #include <KLocalizedString>
 #include <QLabel>
+#include <KColorScheme>
 using namespace MessageViewer;
 DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     : QWidget(parent)
@@ -31,6 +32,7 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     mainLayout->setContentsMargins(0, 0, 0, 0);
 
     mLabel = new QLabel(this);
+    mLabel->setAutoFillBackground(true);
     mLabel->setObjectName(QStringLiteral("label"));
     mainLayout->addWidget(mLabel);
     connect(DKIMManager::self(), &DKIMManager::result, this, &DKIMWidgetInfo::setResult);
@@ -52,22 +54,35 @@ void DKIMWidgetInfo::setResult(const DKIMCheckSignatureJob::CheckSignatureResult
 void DKIMWidgetInfo::clear()
 {
     mLabel->clear();
+    mLabel->setToolTip(QString());
+    QPalette pal = mLabel->palette();
+    pal.setColor(backgroundRole(), palette().window().color());
+    mLabel->setPalette(pal);
 }
 
 void DKIMWidgetInfo::updateInfo()
 {
+    QPalette pal = mLabel->palette();
     switch (mResult.status) {
     case DKIMCheckSignatureJob::DKIMStatus::Unknown:
+        pal.setColor(backgroundRole(), palette().window().color());
+        mLabel->setPalette(pal);
         mLabel->setText(i18n("Unknown"));
         break;
     case DKIMCheckSignatureJob::DKIMStatus::Valid:
         mLabel->setText(i18n("KDIM: valid"));
+        pal.setColor(backgroundRole(), KColorScheme(QPalette::Active).background(KColorScheme::PositiveBackground).color());
+        mLabel->setPalette(pal);
         break;
     case DKIMCheckSignatureJob::DKIMStatus::Invalid:
+        pal.setColor(backgroundRole(), KColorScheme(QPalette::Active).background(KColorScheme::NegativeBackground).color());
+        mLabel->setPalette(pal);
         mLabel->setText(i18n("KDIM: invalid"));
         break;
     case DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned:
         mLabel->setText(i18n("KDIM: Unsigned"));
+        pal.setColor(backgroundRole(), palette().window().color());
+        mLabel->setPalette(pal);
         break;
     }
     updateToolTip();
