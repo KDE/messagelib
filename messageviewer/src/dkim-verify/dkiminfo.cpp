@@ -59,7 +59,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("l="))) {
             mBodyLengthCount = elem.right(elem.length() - 2).toInt();
         } else if (elem.startsWith(QLatin1String("i="))) {
-            mUserAgent = elem.right(elem.length() - 2);
+            mAgentOrUserIdentifier = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("q="))) {
             mQuery = elem.right(elem.length() - 2);
             if (mQuery != QLatin1String("dns/txt")) {
@@ -92,6 +92,16 @@ bool DKIMInfo::parseDKIM(const QString &header)
     if (mQuery.isEmpty()) {
         mQuery = QLatin1String("dns/txt");
     }
+    if (mAgentOrUserIdentifier.isEmpty()) {
+        mAgentOrUserIdentifier = QLatin1Char('@') + mDomain;
+        mIDomain = mDomain;
+    } else {
+        const QStringList lst = mAgentOrUserIdentifier.split(QLatin1Char('@'));
+        if (lst.count() == 2) {
+            mAgentOrUserIdentifier = lst.at(0);
+            mIDomain = lst.at(1);
+        }
+    }
     return true;
 }
 
@@ -107,6 +117,16 @@ void DKIMInfo::parseAlgorithm(const QString &str)
         mSigningAlgorithm = lst.at(0);
         mHashingAlgorithm = lst.at(1);
     }
+}
+
+QString DKIMInfo::iDomain() const
+{
+    return mIDomain;
+}
+
+void DKIMInfo::setIDomain(const QString &iDomain)
+{
+    mIDomain = iDomain;
 }
 
 void DKIMInfo::parseCanonicalization(const QString &str)
@@ -177,11 +197,12 @@ bool DKIMInfo::operator==(const DKIMInfo &other) const
            && mExpireTime == other.expireTime()
            && mQuery == other.query()
            && mSignature == other.signature()
-           && mUserAgent == other.userAgent()
+           && mAgentOrUserIdentifier == other.agentOrUserIdentifier()
            && mBodyLengthCount == other.bodyLengthCount()
            && mListSignedHeader == other.listSignedHeader()
            && mHeaderCanonization == other.headerCanonization()
-           && mBodyCanonization == other.bodyCanonization();
+           && mBodyCanonization == other.bodyCanonization()
+            && mIDomain == other.iDomain();
 }
 
 DKIMInfo::CanonicalizationType DKIMInfo::headerCanonization() const
@@ -313,14 +334,14 @@ void DKIMInfo::setSignature(const QString &signature)
     mSignature = signature;
 }
 
-QString DKIMInfo::userAgent() const
+QString DKIMInfo::agentOrUserIdentifier() const
 {
-    return mUserAgent;
+    return mAgentOrUserIdentifier;
 }
 
-void DKIMInfo::setUserAgent(const QString &userAgent)
+void DKIMInfo::setAgentOrUserIdentifier(const QString &userAgent)
 {
-    mUserAgent = userAgent;
+    mAgentOrUserIdentifier = userAgent;
 }
 
 int DKIMInfo::bodyLengthCount() const
@@ -345,10 +366,11 @@ QDebug operator <<(QDebug d, const DKIMInfo &t)
     d << "mExpireTime " << t.expireTime();
     d << "mQuery " << t.query();
     d << "mSignature " << t.signature();
-    d << "mUserAgent " << t.userAgent();
+    d << "mAgentOrUserIdentifier " << t.agentOrUserIdentifier();
     d << "mBodyLengthCount " << t.bodyLengthCount();
     d << "mListSignedHeader " << t.listSignedHeader();
     d << "mHeaderCanonization " << t.headerCanonization();
     d << "mBodyCanonization " << t.bodyCanonization();
+    d << "mIdomain " << t.iDomain();
     return d;
 }

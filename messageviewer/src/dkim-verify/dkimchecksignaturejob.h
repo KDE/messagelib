@@ -57,6 +57,7 @@ public:
         InsupportedHashAlgorithm = 12,
         PublicKeyTooSmall = 13,
         ImpossibleToVerifySignature = 14,
+        DomainI = 15,
 
 
         //TODO add more

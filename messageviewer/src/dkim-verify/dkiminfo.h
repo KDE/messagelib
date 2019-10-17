@@ -73,8 +73,8 @@ public:
     Q_REQUIRED_RESULT QString signature() const;
     void setSignature(const QString &signature);
 
-    Q_REQUIRED_RESULT QString userAgent() const;
-    void setUserAgent(const QString &userAgent);
+    Q_REQUIRED_RESULT QString agentOrUserIdentifier() const;
+    void setAgentOrUserIdentifier(const QString &agentOrUserIdentifier);
 
     Q_REQUIRED_RESULT int bodyLengthCount() const;
     void setBodyLengthCount(int bodyLengthCount);
@@ -90,6 +90,9 @@ public:
     Q_REQUIRED_RESULT QStringList copiedHeaderField() const;
     void setCopiedHeaderField(const QStringList &copiedHeaderField);
 
+    Q_REQUIRED_RESULT QString iDomain() const;
+    void setIDomain(const QString &iDomain);
+
 private:
     void parseCanonicalization(const QString &str);
     void parseAlgorithm(const QString &str);
@@ -100,7 +103,8 @@ private:
     QString mBodyHash;
     QString mQuery;
     QString mSignature;
-    QString mUserAgent;
+    QString mAgentOrUserIdentifier;
+    QString mIDomain;
     QStringList mListSignedHeader;
     QStringList mCopiedHeaderField; //Default is empty
     qint64 mSignatureTimeStamp = -1;

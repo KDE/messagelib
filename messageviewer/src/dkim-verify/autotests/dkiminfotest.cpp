@@ -44,11 +44,12 @@ void DKIMInfoTest::shouldHaveDefaultValue()
     QCOMPARE(info.signatureTimeStamp(), -1);
     QCOMPARE(info.expireTime(), -1);
     QVERIFY(info.signature().isEmpty());
-    QVERIFY(info.userAgent().isEmpty());
+    QVERIFY(info.agentOrUserIdentifier().isEmpty());
     QCOMPARE(info.bodyLengthCount(), -1);
     QCOMPARE(info.headerCanonization(), MessageViewer::DKIMInfo::Unknown);
     QCOMPARE(info.bodyCanonization(), MessageViewer::DKIMInfo::Unknown);
     QVERIFY(info.copiedHeaderField().isEmpty());
+    QVERIFY(info.iDomain().isEmpty());
 }
 
 void DKIMInfoTest::shouldTestExtractDkimInfo_data()
@@ -69,7 +70,8 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info1.setSignatureTimeStamp(1117574938);
     info1.setExpireTime(1118006938);
     info1.setSelector(QStringLiteral("jun2005.eng"));
-    info1.setUserAgent(QStringLiteral("user@eng.example.com"));
+    info1.setAgentOrUserIdentifier(QStringLiteral("user"));
+    info1.setIDomain(QStringLiteral("eng.example.com"));
     info1.setSignature(QStringLiteral("dzdVyOfAKCdLXdJOc9G2q8LoXSlEniSbav+yuU4zGeeruD00lszZVoG4ZHRNiYzR"));
     info1.setListSignedHeader(QStringList({QStringLiteral("from"), QStringLiteral("to"), QStringLiteral("subject"), QStringLiteral("date")}));
     QTest::addRow("test1") << val << info1 << true;
@@ -81,6 +83,8 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info2.setVersion(1);
     info2.setQuery(QStringLiteral("dns/txt"));
     info2.setDomain(QStringLiteral("example.com"));
+    info2.setIDomain(QStringLiteral("example.com"));
+    info2.setAgentOrUserIdentifier(QStringLiteral("@example.com"));
     info2.setSigningAlgorithm(QStringLiteral("rsa"));
     info2.setHashingAlgorithm(QStringLiteral("sha256"));
     info2.setBodyCanonization(MessageViewer::DKIMInfo::Relaxed);
@@ -105,6 +109,8 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info3.setVersion(1);
     info3.setQuery(QStringLiteral("dns/txt"));
     info3.setDomain(QStringLiteral("abonnement.radins.com"));
+    info3.setIDomain(QStringLiteral("abonnement.radins.com"));
+    info3.setAgentOrUserIdentifier(QStringLiteral("@abonnement.radins.com"));
     info3.setSigningAlgorithm(QStringLiteral("rsa"));
     info3.setHashingAlgorithm(QStringLiteral("sha1"));
     info3.setBodyCanonization(MessageViewer::DKIMInfo::Simple);

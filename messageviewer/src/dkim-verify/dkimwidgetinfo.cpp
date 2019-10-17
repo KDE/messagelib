@@ -116,6 +116,9 @@ void DKIMWidgetInfo::updateToolTip()
             break;
         case DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature:
             break;
+        case DKIMCheckSignatureJob::DKIMError::DomainI:
+
+            break;
         }
     }
 
