@@ -111,10 +111,10 @@ void DKIMWidgetInfo::updateToolTip()
             tooltip = i18n("Invalid query method.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidHeaderCanonicalization:
-            tooltip = i18n("Invalid header^ canonolization.");
+            tooltip = i18n("Invalid header canonicalization.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidBodyCanonicalization:
-            tooltip = i18n("Invalid body canonolization.");
+            tooltip = i18n("Invalid body canonicalization.");
             break;
         case DKIMCheckSignatureJob::DKIMError::InvalidBodyHashAlgorithm:
             tooltip = i18n("Unknown Body Hash Algorithm.");
