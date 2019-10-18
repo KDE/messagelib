@@ -503,7 +503,7 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         //TODO
     }
     if (rsaPublicKey.canVerify()) {
-        qDebug() << "mHeaderCanonizationResult " << mHeaderCanonizationResult << " mDkimInfo.signature() " << mDkimInfo.signature().replace(QLatin1Char(' '), QString());
+        //qDebug() << "mHeaderCanonizationResult " << mHeaderCanonizationResult << " mDkimInfo.signature() " << mDkimInfo.signature().replace(QLatin1Char(' '), QString());
         const QString s = mDkimInfo.signature().replace(QLatin1Char(' '), QString());
         //qDebug() << " s base 64" << s.toLocal8Bit().toBase64();
         QCA::SecureArray sec = mHeaderCanonizationResult.toLatin1();
