@@ -1,0 +1,188 @@
+From null@kde.org Sat Aug 24 17:33:32 2019
+Return-Path: <kde-commits-bounces@kde.org>
+Delivered-To: kde@famillemontel.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 24 Aug 2019 19:33:49 +0200
+Received: from unknown (HELO output15.mail.ovh.net) (10.108.117.206)
+  by mail742.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 24 Aug 2019 19:33:49 +0200
+Received: from vr51.mail.ovh.net (unknown [10.101.8.51])
+	by out15.mail.ovh.net (Postfix) with ESMTP id 46G53J6BNFz6D8gd
+	for <kde@famillemontel.org>; Sat, 24 Aug 2019 17:33:48 +0000 (UTC)
+Received: from in20.mail.ovh.net (unknown [10.101.4.20])
+	by vr51.mail.ovh.net (Postfix) with ESMTP id 46G53C54GQzYFgf6
+	for <kde@famillemontel.org>; Sat, 24 Aug 2019 17:33:43 +0000 (UTC)
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=kde-commits-bounces@kde.org; receiver=<UNKNOWN> 
+Authentication-Results: in20.mail.ovh.net;
+	dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="pXHd1xHj";
+	dkim=pass (1024-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="HPphw8I7";
+	dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in20.mail.ovh.net (Postfix) with ESMTPS id 46G53C3zcGz59nL8
+	for <kde@famillemontel.org>; Sat, 24 Aug 2019 17:33:43 +0000 (UTC)
+Received: from letterbox.kde.org (localhost.kde.org [127.0.0.1])
+	by letterbox.kde.org (Postfix) with ESMTP id 0CDB82814FB;
+	Sat, 24 Aug 2019 18:33:43 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kde.org; s=lists;
+	t=1566668023; bh=GuaFu5z+mmU6OQesA2h1EXnfGtqEynF8C5YIsBl9bV0=;
+	h=From:To:Subject:Date:List-Id:List-Unsubscribe:List-Post:List-Help:
+	 List-Subscribe:From;
+	b=pXHd1xHjXisPW6UBfGTnh2Qte6eCZcRO6nwPlQmOO6KYlIox/RMPSZ/CKPb1RS97I
+	 lKG3AHRTXe03yzrYWtp6rTDXw3rjc9yRHJb4jjJoCd+qhKitMqKprvcMn7157rPiuV
+	 IeDt7oVePMeoJ+OZwa4Bt22jCekgdLUaWOBKJvMv+bvORIbZ9jPXlViF50sagDSHaa
+	 dtFLuLc4XMYwUtU/Qj0i9Dq6UNjOsv+af3WNHMwHg9W/OC/GKRyNiD2MFsgVp5PwhN
+	 +AlEdKyQcxvAbVQEC+JTGaxr+9ZPql/HPHgB9W4V+fsEGoLERsdxIw9oa3Xm4vIdeg
+	 6T177CiPy8zIA==
+X-Original-To: kde-commits@kde.org
+Delivered-To: kde-commits@localhost
+Received: from bluemchen.kde.org (bluemchen.kde.org [IPv6:2001:470:142:8::100])
+ by letterbox.kde.org (Postfix) with ESMTPS id 143B92814FB
+ for <kde-commits@kde.org>; Sat, 24 Aug 2019 18:33:34 +0100 (BST)
+Authentication-Results: letterbox.kde.org;
+ dmarc=none (p=none dis=none) header.from=kde.org
+Authentication-Results: letterbox.kde.org; spf=pass smtp.mailfrom=null@kde.org
+Authentication-Results: letterbox.kde.org; dkim=pass (1024-bit key;
+ unprotected) header.d=kde.org header.i=@kde.org header.b="HPphw8I7"; 
+ dkim-atps=neutral
+Received: from code.kde.org (code.kde.org [IPv6:2a01:4f8:171:2687::4])
+ by bluemchen.kde.org (Postfix) with ESMTPS id 4E922203D6
+ for <kde-commits@kde.org>; Sat, 24 Aug 2019 13:33:33 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kde.org; s=transact;
+ t=1566668013; bh=GuaFu5z+mmU6OQesA2h1EXnfGtqEynF8C5YIsBl9bV0=;
+ h=From:To:Subject:Date:From;
+ b=HPphw8I7HzXzutAEXxZnKuzLH3zLQUOtaj/zaZEY5lHqa/Yb5jUUTglitPXRN2w9T
+ v3xSyh93hTSeLSkkfjw10KvtU35tHP49Zolo/5kwo86FLMptaOOroC5RPlwD8uhWZi
+ Jfr2muLq7SmJqxT34Vtm5SzsvjAPXsMWTUi5cW5g=
+Received: from svn by code.kde.org with local (Exim 4.86_2)
+ (envelope-from <null@kde.org>) id 1i1Zuu-0005wK-D8
+ for kde-commits@kde.org; Sat, 24 Aug 2019 17:33:32 +0000
+From: =?utf-8?q?Antoni=20Bella=20P=C3=A9rez?= <null@kde.org>
+To: kde-commits@kde.org
+Subject: l10n-kf5/ca/messages/www
+X-Commit-Directories: (0) trunk/l10n-kf5/ca/messages/www
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Message-Id: <E1i1Zuu-0005wK-D8@code.kde.org>
+Date: Sat, 24 Aug 2019 17:33:32 +0000
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-BeenThere: kde-commits@kde.org
+X-Mailman-Version: 2.1.26
+Precedence: list
+List-Id: Notification of KDE commits <kde-commits.kde.org>
+List-Unsubscribe: <https://mail.kde.org/mailman/options/kde-commits>,
+ <mailto:kde-commits-request@kde.org?subject=unsubscribe>
+List-Post: <mailto:kde-commits@kde.org>
+List-Help: <mailto:kde-commits-request@kde.org?subject=help>
+List-Subscribe: <https://mail.kde.org/mailman/listinfo/kde-commits>,
+ <mailto:kde-commits-request@kde.org?subject=subscribe>
+Reply-To: kde-commits@kde.org
+Errors-To: kde-commits-bounces@kde.org
+Sender: "kde-commits" <kde-commits-bounces@kde.org>
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 8428205230410539987
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: 0
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgeduvddrudehtddguddujecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecu
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: OK
+
+SVN commit 1550342 by bellaperez:
+
+doc_www: Catalan Works
+  * Updates, fixes from custom pology rules and start the last new translations
+
+ M  +3 -3      docs_krita_org_KritaFAQ.po  
+ M  +6 -6      docs_krita_org_contributors_manual___krita_manual_conventions.po  
+ M  +3 -3      docs_krita_org_general_concepts___colors___bit_depth.po  
+ M  +3 -3      docs_krita_org_general_concepts___colors___color_mixing.po  
+ M  +8 -8      docs_krita_org_general_concepts___colors___scene_linear_painting.po  
+ M  +3 -3      docs_krita_org_general_concepts___projection___axonometric.po  
+ M  +3 -3      docs_krita_org_general_concepts___projection___perspective.po  
+ M  +3 -3      docs_krita_org_reference_manual___brushes___brush_engines___clone_engine.po  
+ M  +3 -3      docs_krita_org_reference_manual___brushes___brush_engines___color_smudge_engine.po  
+ M  +4 -4      docs_krita_org_reference_manual___brushes___brush_engines___spray_brush_engine.po  
+ M  +3 -3      docs_krita_org_reference_manual___brushes___brush_settings___locked_brush_settings.po  
+ M  +3 -3      docs_krita_org_reference_manual___dockers___animation_curve.po  
+ M  +4 -4      docs_krita_org_reference_manual___dockers___artistic_color_selector.po  
+ M  +4 -4      docs_krita_org_reference_manual___dockers___brush_preset_docker.po  
+ M  +3 -3      docs_krita_org_reference_manual___dockers___compositions.po  
+ M  +3 -3      docs_krita_org_reference_manual___dockers___gamut_mask_docker.po  
+ M  +4 -4      docs_krita_org_reference_manual___dockers___layers.po  
+ M  +3 -3      docs_krita_org_reference_manual___dockers___overview.po  
+ M  +4 -4      docs_krita_org_reference_manual___dockers___palette_docker.po  
+ M  +4 -4      docs_krita_org_reference_manual___dockers___pattern_docker.po  
+ M  +4 -4      docs_krita_org_reference_manual___dockers___timeline.po  
+ M  +3 -3      docs_krita_org_reference_manual___dockers___undo_history.po  
+ M  +3 -3      docs_krita_org_reference_manual___instant_preview.po  
+ M  +4 -4      docs_krita_org_reference_manual___layers_and_masks___selection_masks.po  
+ M  +4 -4      docs_krita_org_reference_manual___layers_and_masks___split_alpha.po  
+ M  +3 -3      docs_krita_org_reference_manual___main_menu___settings_menu.po  
+ M  +3 -3      docs_krita_org_reference_manual___main_menu___view_menu.po  
+ M  +3 -3      docs_krita_org_reference_manual___popup-palette.po  
+ M  +3 -3      docs_krita_org_reference_manual___preferences___author_settings.po  
+ M  +3 -3      docs_krita_org_reference_manual___preferences___python_plugin_manager.po  
+ M  +4 -4      docs_krita_org_reference_manual___resource_management.po  
+ M  +4 -4      docs_krita_org_reference_manual___resource_management___resource_gradients.po  
+ M  +3 -3      docs_krita_org_reference_manual___split_layer.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___assistant.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___calligraphy.po  
+ M  +6 -6      docs_krita_org_reference_manual___tools___colorize_mask.po  
+ M  +5 -5      docs_krita_org_reference_manual___tools___contiguous_select.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___dyna.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___ellipse.po  
+ M  +5 -5      docs_krita_org_reference_manual___tools___elliptical_select.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___fill.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___freehand_brush.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___freehand_path.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___gradient_draw.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___gradient_edit.po  
+ M  +4 -4      docs_krita_org_reference_manual___tools___grid_tool.po  
+ M  +4 -4      docs_krita_org_reference_manual___tools___line.po  
+ M  +4 -4      docs_krita_org_reference_manual___tools___measure.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___move.po  
+ M  +4 -4      docs_krita_org_reference_manual___tools___multibrush.po  
+ M  +5 -5      docs_krita_org_reference_manual___tools___outline_select.po  
+ M  +5 -5      docs_krita_org_reference_manual___tools___pan.po  
+ M  +5 -5      docs_krita_org_reference_manual___tools___path.po  
+ M  +5 -5      docs_krita_org_reference_manual___tools___path_select.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___pattern_edit.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___perspective_grid.po  
+ M  +4 -4      docs_krita_org_reference_manual___tools___polygon.po  
+ M  +5 -5      docs_krita_org_reference_manual___tools___polygonal_select.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___polyline.po  
+ M  +4 -4      docs_krita_org_reference_manual___tools___rectangle.po  
+ M  +5 -5      docs_krita_org_reference_manual___tools___rectangular_select.po  
+ M  +4 -4      docs_krita_org_reference_manual___tools___reference_images_tool.po  
+ M  +11 -11    docs_krita_org_reference_manual___tools___shape_edit.po  
+ M  +4 -4      docs_krita_org_reference_manual___tools___shape_selection.po  
+ M  +5 -5      docs_krita_org_reference_manual___tools___similar_select.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___smart_patch.po  
+ M  +6 -6      docs_krita_org_reference_manual___tools___text.po  
+ M  +3 -3      docs_krita_org_reference_manual___tools___transform.po  
+ M  +6 -6      docs_krita_org_reference_manual___tools___zoom.po  
+ M  +8 -7      docs_krita_org_tutorials___common_workflows.po  
+ M  +12 -12    docs_krita_org_tutorials___flat-coloring.po  
+ M  +90 -7     docs_krita_org_tutorials___inking.po  
+ A             docs_krita_org_tutorials___krita-brush-tips.po  
+ A             docs_krita_org_tutorials___krita-brush-tips___animated_brushes.po  
+ A             docs_krita_org_tutorials___krita-brush-tips___bokeh-brush.po  
+ A             docs_krita_org_tutorials___krita-brush-tips___caustics.po  
+ A             docs_krita_org_tutorials___krita-brush-tips___fur.po  
+ A             docs_krita_org_tutorials___krita-brush-tips___hair.po  
+ A             docs_krita_org_tutorials___krita-brush-tips___outline.po  
+ A             docs_krita_org_tutorials___krita-brush-tips___rainbow-brush.po  
+ A             docs_krita_org_tutorials___krita-brush-tips___sculpt-paint-brush.po  
+ M  +6 -6      docs_krita_org_tutorials___making_an_azalea_with_the_transformation_masks.po  
+ M  +4 -4      docs_krita_org_user_manual___animation.po  
+ M  +5 -5      docs_krita_org_user_manual___getting_started___navigation.po  
+ M  +3 -3      docs_krita_org_user_manual___getting_started___starting_krita.po  
+ M  +6 -6      docs_krita_org_user_manual___introduction_from_other_software___introduction_from_photoshop.po  
+ M  +5 -5      docs_krita_org_user_manual___introduction_from_other_software___introduction_from_sai.po  
+ M  +3 -2      docs_krita_org_user_manual___python_scripting___krita_python_plugin_howto.po  
+ M  +11 -11    docs_krita_org_user_manual___selections.po  
+ M  +3 -3      docs_krita_org_user_manual___vector_graphics.po  
+
+
+http://websvn.kde.org/?view=rev&revision=1550342
+

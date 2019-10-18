@@ -20,7 +20,6 @@
 #include "dkimheaderparser.h"
 
 #include <QChar>
-#include <KCodecs>
 #include <QDebug>
 
 using namespace MessageViewer;
@@ -75,12 +74,14 @@ MessageViewer::DKIMHeaderParser::Header *DKIMHeaderParser::extractHeader(const Q
     header->headerName = QString::fromLatin1(QByteArray::fromRawData(rawType, rawTypeLen)).toLower();
     if (folded) {
         const auto unfoldedBody = unfoldHeader(head.constData() + startOfFieldBody, endOfFieldBody - startOfFieldBody);
-        const QString str = KCodecs::decodeRFC2047String(unfoldedBody, &header->codec, QByteArrayLiteral("ISO-8859-1"));
-        header->HeaderValue = str;
+        //qDebug() << " unfoldedBody" << unfoldedBody;
+        //const QString str = KCodecs::decodeRFC2047String(unfoldedBody, &header->codec, QByteArrayLiteral("ISO-8859-1"));
+        header->HeaderValue = QString::fromLatin1(unfoldedBody);
     } else {
-        QByteArray ba = QByteArray::fromRawData(head.constData() + startOfFieldBody, endOfFieldBody - startOfFieldBody);
-        const QString str = KCodecs::decodeRFC2047String(ba, &header->codec, QByteArrayLiteral("ISO-8859-1"));
-        header->HeaderValue = str;
+        const QByteArray ba = QByteArray::fromRawData(head.constData() + startOfFieldBody, endOfFieldBody - startOfFieldBody);
+        //qDebug() << " unfoldedBody ba" << ba;
+        //const QString str = KCodecs::decodeRFC2047String(ba, &header->codec, QByteArrayLiteral("ISO-8859-1"));
+        header->HeaderValue = QString::fromLatin1(ba);
     }
     return header;
 }
@@ -204,11 +205,10 @@ int DKIMHeaderParser::findHeaderLineEnd(const QByteArray &src, int &dataBegin, b
 QString DKIMHeaderParser::headerType(const QString &str)
 {
     for (int i = mListHeaders.count() -1; i >= 0; --i) {
-        qDebug() << " mListHeaders.at(i)->headerName" <<mListHeaders.at(i)->headerName;
         if (mListHeaders.at(i)->headerName == str) {
             DKIMHeaderParser::Header *header = mListHeaders.takeAt(i);
             const QString headerValue = header->HeaderValue;
-            delete header;
+            delete header; //Delete it as we want to use one time each header.
             return headerValue;
         }
     }

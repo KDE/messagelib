@@ -24,7 +24,7 @@
 #include <QVBoxLayout>
 #include <KLocalizedString>
 #include <QMenu>
-
+#include <KTreeWidgetSearchLine>
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     : QWidget(parent)
@@ -33,13 +33,20 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins(0, 0, 0, 0);
 
+
     mTreeWidget = new QTreeWidget(this);
     mTreeWidget->setObjectName(QStringLiteral("treewidget"));
     mTreeWidget->setRootIsDecorated(false);
     mTreeWidget->setHeaderLabels({i18n("SDID"), i18n("Selector"), i18n("DKIM Key")});
-    mainLayout->addWidget(mTreeWidget);
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     mTreeWidget->setAlternatingRowColors(true);
+
+    KTreeWidgetSearchLine *searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
+    searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
+    searchLineEdit->setClearButtonEnabled(true);
+    mainLayout->addWidget(searchLineEdit);
+
+    mainLayout->addWidget(mTreeWidget);
     connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManagerKeyWidget::customContextMenuRequested);
 }
 

@@ -33,4 +33,5 @@ void DKIMHeaderParserTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMHeaderParser parser;
     QVERIFY(parser.head().isEmpty());
+    QVERIFY(parser.headerType(QStringLiteral("bla")).isEmpty());
 }

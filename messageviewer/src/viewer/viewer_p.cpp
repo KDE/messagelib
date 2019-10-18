@@ -1314,11 +1314,6 @@ void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message, MimeT
     mMimePartTree->setRoot(mNodeHelper->messageWithExtraContent(message.data()));
     update(updateMode);
 #endif
-#ifdef USE_DKIM_CHECKER
-    if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
-        MessageViewer::DKIMManager::self()->checkDKim(mMessage);
-    }
-#endif
 }
 
 void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode)
@@ -1340,6 +1335,11 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
         }
         return;
     }
+#ifdef USE_DKIM_CHECKER
+    if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
+        MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
+    }
+#endif
 
     setMessageInternal(mMessageItem.payload<KMime::Message::Ptr>(), updateMode);
 }

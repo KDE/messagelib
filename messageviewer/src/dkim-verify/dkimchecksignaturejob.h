@@ -151,5 +151,5 @@ private:
     bool mSaveKey = false;
 };
 }
-
+Q_DECLARE_METATYPE(MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult)
 #endif // DKIMCHECKSIGNATUREJOB_H

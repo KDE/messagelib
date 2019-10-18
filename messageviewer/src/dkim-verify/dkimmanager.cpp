@@ -18,7 +18,7 @@
 */
 
 #include "dkimmanager.h"
-
+#include "messageviewer_dkimcheckerdebug.h"
 #include "dkimmanagerkey.h"
 #include "dkimresultattribute.h"
 #include "dkimstoreresultjob.h"
@@ -45,6 +45,7 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
 {
     if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
         if (item.hasAttribute<MessageViewer::DKIMResultAttribute>()) {
+            qDebug() << " HAS ATTRIBUTE";
             const MessageViewer::DKIMResultAttribute *const attr
                 = item.attribute<MessageViewer::DKIMResultAttribute>();
             if (attr) {
@@ -53,7 +54,7 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
                 checkResult.error = static_cast<DKIMCheckSignatureJob::DKIMError>(attr->error());
                 checkResult.warning = static_cast<DKIMCheckSignatureJob::DKIMWarning>(attr->warning());
                 checkResult.status = static_cast<DKIMCheckSignatureJob::DKIMStatus>(attr->status());
-                qDebug() << "result : status " << (int)checkResult.status << " error : " << (int)checkResult.error << " warning " << (int)checkResult.warning;
+                qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
                 Q_EMIT result(checkResult);
                 return;
             }
@@ -77,6 +78,7 @@ void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotResult);
+    job->setSaveKey(MessageViewer::MessageViewerSettings::self()->saveKey());
     job->setMessage(message);
     job->start();
 }
@@ -98,6 +100,6 @@ void DKIMManager::slotResult(const DKIMCheckSignatureJob::CheckSignatureResult &
             job->start();
         }
     }
-    qDebug() << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
     Q_EMIT result(checkResult);
 }

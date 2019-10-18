@@ -22,7 +22,6 @@
 
 #include <QObject>
 #include "messageviewer_private_export.h"
-#include <AkonadiCore/Item>
 #include <MessageViewer/DKIMCheckSignatureJob>
 class KJob;
 namespace MessageViewer {
@@ -36,14 +35,10 @@ public:
     void start();
     Q_REQUIRED_RESULT bool canStart() const;
 
-    Q_REQUIRED_RESULT Akonadi::Item messageItem() const;
-    void setMessageItem(const Akonadi::Item &messageItem);
-
     void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
 private:
     void slotModifyItemDone(KJob *job);
-    Akonadi::Item mMessageItem;
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;
 };
 }

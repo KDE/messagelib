@@ -47,6 +47,7 @@ void DKIMManagerKeyDialogTest::shouldHaveDefaultValue()
     MessageViewer::DKIMManagerKeyWidget *w = dlg.findChild<MessageViewer::DKIMManagerKeyWidget *>(QStringLiteral("managerWidget"));
     QVERIFY(w);
 
+
     QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Close});

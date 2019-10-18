@@ -25,6 +25,16 @@ if(Inotify_FOUND)
 else()
     set(HAVE_SYS_INOTIFY_H 0)
 endif()
+
+find_package(Qca-qt5 2.1.0)
+set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
+                   URL "https:/download.kde.org/stable/qca-qt5" TYPE OPTIONAL
+                   PURPOSE "Needed for kdim support.")
+
+if (${Qca-qt5_FOUND})
+    set(USE_DKIM_CHECKER 1)
+endif()
+
 configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h)
 
 # target_include_directories does not handle empty include paths
@@ -46,13 +56,7 @@ add_subdirectory(kconf_update)
 add_subdirectory(about)
 add_subdirectory(messageviewerheaderplugins)
 
-find_package(Qca-qt5 2.1.0)
-set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
-                   URL "https:/download.kde.org/stable/qca-qt5" TYPE OPTIONAL
-                   PURPOSE "Needed for kdim support.")
-
 if (${Qca-qt5_FOUND})
-    set(USE_DKIM_CHECKER 1)
     if (BUILD_TESTING)
         add_subdirectory(dkim-verify/autotests)
 	add_subdirectory(dkim-verify/tests)
@@ -240,7 +244,6 @@ set(libmessageviewer_SRCS
 qt5_add_resources(libmessageviewer_SRCS messagepartthemes.qrc)
 
 ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer)
-#temporary
 ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_dkimcheckerdebug.h IDENTIFIER MESSAGEVIEWER_DKIMCHECKER_LOG CATEGORY_NAME org.kde.pim.messageviewer_dkimchecker)
 kconfig_add_kcfg_files(libmessageviewer_SRCS
     settings/globalsettings_messageviewer.kcfgc

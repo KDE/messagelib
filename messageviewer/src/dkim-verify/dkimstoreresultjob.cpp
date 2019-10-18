@@ -39,11 +39,11 @@ void DKIMStoreResultJob::start()
         deleteLater();
         return;
     }
-    MessageViewer::DKIMResultAttribute *attr = mMessageItem.attribute<MessageViewer::DKIMResultAttribute>(Akonadi::Item::AddIfMissing);
+    MessageViewer::DKIMResultAttribute *attr = mResult.item.attribute<MessageViewer::DKIMResultAttribute>(Akonadi::Item::AddIfMissing);
     attr->setError(static_cast<int>(mResult.error));
     attr->setWarning(static_cast<int>(mResult.warning));
     attr->setStatus(static_cast<int>(mResult.status));
-    Akonadi::ItemModifyJob *modify = new Akonadi::ItemModifyJob(mMessageItem);
+    Akonadi::ItemModifyJob *modify = new Akonadi::ItemModifyJob(mResult.item);
     modify->setIgnorePayload(true);
     modify->disableRevisionCheck();
     connect(modify, &KJob::result, this, &DKIMStoreResultJob::slotModifyItemDone);
@@ -59,20 +59,10 @@ void DKIMStoreResultJob::slotModifyItemDone(KJob *job)
 
 bool DKIMStoreResultJob::canStart() const
 {
-    if (mMessageItem.isValid() && mResult.isValid()) {
+    if (mResult.item.isValid() && mResult.isValid()) {
         return true;
     }
     return false;
-}
-
-Akonadi::Item DKIMStoreResultJob::messageItem() const
-{
-    return mMessageItem;
-}
-
-void DKIMStoreResultJob::setMessageItem(const Akonadi::Item &messageItem)
-{
-    mMessageItem = messageItem;
 }
 
 void DKIMStoreResultJob::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)

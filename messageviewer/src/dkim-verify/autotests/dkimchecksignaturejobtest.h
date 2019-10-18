@@ -21,7 +21,7 @@
 #define DKIMCHECKSIGNATUREJOBTEST_H
 
 #include <QObject>
-
+#include <QtCrypto>
 class DKIMCheckSignatureJobTest : public QObject
 {
     Q_OBJECT
@@ -32,6 +32,10 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldTestMail();
     void shouldTestMail_data();
+    void initTestCase();
+    void cleanupTestCase();
+private:
+    QCA::Initializer *mQcaInitializer = nullptr;
 };
 
 #endif // DKIMCHECKSIGNATUREJOBTEST_H

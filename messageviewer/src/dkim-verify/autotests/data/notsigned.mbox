@@ -1,0 +1,545 @@
+From richard@weickelt.de Wed Sep 25 08:38:59 2019
+Return-Path: <development-bounces@qt-project.org>
+Delivered-To: kde@famillemontel.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 25 Sep 2019 10:39:27 +0200
+Received: from unknown (HELO output45.mail.ovh.net) (10.108.115.181)
+  by mail666.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 25 Sep 2019 10:39:27 +0200
+Received: from vr43.mail.ovh.net (unknown [10.101.8.43])
+	by out45.mail.ovh.net (Postfix) with ESMTP id 46dWgy6slcz5XRk8l
+	for <kde@famillemontel.org>; Wed, 25 Sep 2019 08:39:26 +0000 (UTC)
+Received: from in19.mail.ovh.net (unknown [10.101.4.19])
+	by vr43.mail.ovh.net (Postfix) with ESMTP id 46dWgy5ktrzd36cV
+	for <kde@famillemontel.org>; Wed, 25 Sep 2019 08:39:26 +0000 (UTC)
+Received-SPF: Softfail (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=development-bounces@qt-project.org; receiver=<UNKNOWN> 
+Authentication-Results: in19.mail.ovh.net; dkim=none; dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in19.mail.ovh.net (Postfix) with ESMTPS id 46dWgy5FfGz3RrNR
+	for <kde@famillemontel.org>; Wed, 25 Sep 2019 08:39:26 +0000 (UTC)
+Received: from mx.qt-project.org (mx.qt-project.org [193.209.87.4])
+	by letterbox.kde.org (Postfix) with ESMTPS id 9C5A4282B85
+	for <montel@kde.org>; Wed, 25 Sep 2019 09:39:19 +0100 (BST)
+Authentication-Results: letterbox.kde.org; dmarc=none (p=none dis=none) header.from=weickelt.de
+Authentication-Results: letterbox.kde.org; spf=pass smtp.mailfrom=development-bounces@qt-project.org
+Received: by mx.qt-project.org (Postfix, from userid 110)
+	id 475BD408F1; Wed, 25 Sep 2019 10:39:11 +0200 (CEST)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on mx.qt-project.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=4.0 tests=BAYES_00,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
+	version=3.4.0
+Received: from mx.qt-project.org (localhost [127.0.0.1])
+	by mx.qt-project.org (Postfix) with ESMTP id 2E80B40F3F;
+	Wed, 25 Sep 2019 10:39:02 +0200 (CEST)
+X-Original-To: development@qt-project.org
+Delivered-To: development@qt-project.org
+Received: by mx.qt-project.org (Postfix, from userid 110)
+ id 25ABF4116E; Wed, 25 Sep 2019 10:39:01 +0200 (CEST)
+Received: from dd18702.kasserver.com (dd18702.kasserver.com [85.13.139.38])
+ by mx.qt-project.org (Postfix) with ESMTPS id E94CD4031F
+ for <development@qt-project.org>; Wed, 25 Sep 2019 10:38:59 +0200 (CEST)
+Received: from dd18702.kasserver.com (dd0802.kasserver.com [85.13.143.1])
+ by dd18702.kasserver.com (Postfix) with ESMTPSA id 7FCEE3021A4;
+ Wed, 25 Sep 2019 10:38:59 +0200 (CEST)
+MIME-Version: 1.0
+X-SenderIP: 192.91.60.15
+User-Agent: ALL-INKL Webmail 2.11
+In-Reply-To: <HE1PR0201MB232908E17E69D3A50EAA8DAB9DB60@HE1PR0201MB2329.eurprd02.prod.outlook.com>
+References: <20190909141331.C89AD3001A3@dd18702.kasserver.com><HE1PR0201MB232908E17E69D3A50EAA8DAB9DB60@HE1PR0201MB2329.eurprd02.prod.outlook.com>
+From: "Richard Weickelt" <richard@weickelt.de>
+To: development@qt-project.org, jani.heikkinen@qt.io
+Message-Id: <20190925083859.7FCEE3021A4@dd18702.kasserver.com>
+Date: Wed, 25 Sep 2019 10:38:59 +0200 (CEST)
+Subject: Re: [Development] Where to find development snapshots of Qt
+X-BeenThere: development@qt-project.org
+X-Mailman-Version: 2.1.18
+Precedence: list
+List-Id: List for developers _of_ Qt <development.qt-project.org>
+List-Unsubscribe: <https://lists.qt-project.org/options/development>,
+ <mailto:development-request@qt-project.org?subject=unsubscribe>
+List-Archive: <http://lists.qt-project.org/pipermail/development/>
+List-Post: <mailto:development@qt-project.org>
+List-Help: <mailto:development-request@qt-project.org?subject=help>
+List-Subscribe: <https://lists.qt-project.org/listinfo/development>,
+ <mailto:development-request@qt-project.org?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: development-bounces@qt-project.org
+Sender: "Development" <development-bounces@qt-project.org>
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 2863726414626201299
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: 0
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedufedrfedvgddtiecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecu
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: OK
+
+PiBZb3UgY2FuIGRvd25sb2FkIHNuYXBzaG90IHZpYSBvbmxpbmUgaW5zdGFsbGVyLiBBdCB0aGUg
+bW9tZW50IHdlIGRvbid0IHB1Ymxpc2gKPiBzZXBhcmF0ZSBzcmMgcGFja2FnZXMgdG8gZG93bmxv
+YWQucXQuaW8KClRoYW5rcywgYnV0IEkgY2FuJ3Qgc2VlIGFueSBRdCBzbmFwc2hvdHMgaW4gdGhl
+IG9ubGluZSBpbnN0YWxsZXIuIFNvbWUgb2YgdGhlICJwcmV2aWV3IiBwYWNrYWdlcyB0aGVyZSBh
+cmUgZXZlbiBvdXRkYXRlZC4KVGhpcyBpcyB3aGF0IEkgc2VlOiBodHRwczovL3Bhc3RlYm9hcmQu
+Y28vSXoxNkV4cC5wbmcKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18KRGV2ZWxvcG1lbnQgbWFpbGluZyBsaXN0CkRldmVsb3BtZW50QHF0LXByb2plY3Qub3Jn
+Cmh0dHBzOi8vbGlzdHMucXQtcHJvamVjdC5vcmcvbGlzdGluZm8vZGV2ZWxvcG1lbnQK
+
+From richard@weickelt.de Wed Sep 25 08:30:23 2019
+Return-Path: <development-bounces@qt-project.org>
+Delivered-To: kde@famillemontel.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 25 Sep 2019 10:37:56 +0200
+Received: from unknown (HELO output52.mail.ovh.net) (10.108.97.180)
+  by mail663.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 25 Sep 2019 10:37:56 +0200
+Received: from vr18.mail.ovh.net (unknown [10.101.8.18])
+	by out52.mail.ovh.net (Postfix) with ESMTP id 46dWfD06Stz5T5pT6
+	for <kde@famillemontel.org>; Wed, 25 Sep 2019 08:37:56 +0000 (UTC)
+Received: from in19.mail.ovh.net (unknown [10.101.4.19])
+	by vr18.mail.ovh.net (Postfix) with ESMTP id 46dWf66MXdzclGvB
+	for <kde@famillemontel.org>; Wed, 25 Sep 2019 08:37:50 +0000 (UTC)
+Received-SPF: Softfail (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=development-bounces@qt-project.org; receiver=<UNKNOWN> 
+Authentication-Results: in19.mail.ovh.net; dkim=none; dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in19.mail.ovh.net (Postfix) with ESMTPS id 46dWf65W0Cz3RrMY
+	for <kde@famillemontel.org>; Wed, 25 Sep 2019 08:37:50 +0000 (UTC)
+Received: from mx.qt-project.org (mx.qt-project.org [193.209.87.4])
+	by letterbox.kde.org (Postfix) with ESMTPS id 23525282B81
+	for <montel@kde.org>; Wed, 25 Sep 2019 09:37:43 +0100 (BST)
+Authentication-Results: letterbox.kde.org; dmarc=none (p=none dis=none) header.from=weickelt.de
+Authentication-Results: letterbox.kde.org; spf=pass smtp.mailfrom=development-bounces@qt-project.org
+Received: by mx.qt-project.org (Postfix, from userid 110)
+	id CABE74116F; Wed, 25 Sep 2019 10:30:39 +0200 (CEST)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on mx.qt-project.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=4.0 tests=BAYES_00,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
+	version=3.4.0
+Received: from mx.qt-project.org (localhost [127.0.0.1])
+	by mx.qt-project.org (Postfix) with ESMTP id D23A540B01;
+	Wed, 25 Sep 2019 10:30:29 +0200 (CEST)
+X-Original-To: development@qt-project.org
+Delivered-To: development@qt-project.org
+Received: by mx.qt-project.org (Postfix, from userid 110)
+ id BB90540B15; Wed, 25 Sep 2019 10:30:28 +0200 (CEST)
+Received: from dd18702.kasserver.com (dd18702.kasserver.com [85.13.139.38])
+ by mx.qt-project.org (Postfix) with ESMTPS id 4BE9E409E3
+ for <development@qt-project.org>; Wed, 25 Sep 2019 10:30:24 +0200 (CEST)
+Received: from dd18702.kasserver.com (dd0802.kasserver.com [85.13.143.1])
+ by dd18702.kasserver.com (Postfix) with ESMTPSA id A519730050F;
+ Wed, 25 Sep 2019 10:30:23 +0200 (CEST)
+MIME-Version: 1.0
+X-SenderIP: 192.91.60.15
+User-Agent: ALL-INKL Webmail 2.11
+In-Reply-To: <278551568077197@iva8-bad53723c646.qloud-c.yandex.net>
+References: <20190909141331.C89AD3001A3@dd18702.kasserver.com><278551568077197@iva8-bad53723c646.qloud-c.yandex.net>
+From: "Richard Weickelt" <richard@weickelt.de>
+To: development@qt-project.org, annulen@yandex.ru
+Message-Id: <20190925083023.A519730050F@dd18702.kasserver.com>
+Date: Wed, 25 Sep 2019 10:30:23 +0200 (CEST)
+Subject: Re: [Development] Where to find development snapshots of Qt
+X-BeenThere: development@qt-project.org
+X-Mailman-Version: 2.1.18
+Precedence: list
+List-Id: List for developers _of_ Qt <development.qt-project.org>
+List-Unsubscribe: <https://lists.qt-project.org/options/development>,
+ <mailto:development-request@qt-project.org?subject=unsubscribe>
+List-Archive: <http://lists.qt-project.org/pipermail/development/>
+List-Post: <mailto:development@qt-project.org>
+List-Help: <mailto:development-request@qt-project.org?subject=help>
+List-Subscribe: <https://lists.qt-project.org/listinfo/development>,
+ <mailto:development-request@qt-project.org?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: development-bounces@qt-project.org
+Sender: "Development" <development-bounces@qt-project.org>
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 2836704818668478163
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: 0
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedufedrfedvgddthecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecu
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: OK
+
+Cj4gSSBndWVzcyB0aGF0IGJ1aWxkaW5nIFFicyBpbiBDb2luIGlzIHRoZSBvbmx5IHdheSB0byBi
+dWlsZCBhZ2FpbnN0IHVucmVsZWFzZWQKPiBRdCB2ZXJzaW9ucy4KCkhvdyBtdWNoIGVmZm9ydCB3
+b3VsZCB0aGF0IGJlIHRvIHNldCB1cCBhbmQgdG8gbWFpbnRhaW4gZm9yIGFuIGV4dGVybmFsCmNv
+bnRyaWJ1dG9yPyBBbnkgZXhwZXJpZW5jZXM/CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fXwpEZXZlbG9wbWVudCBtYWlsaW5nIGxpc3QKRGV2ZWxvcG1lbnRA
+cXQtcHJvamVjdC5vcmcKaHR0cHM6Ly9saXN0cy5xdC1wcm9qZWN0Lm9yZy9saXN0aW5mby9kZXZl
+bG9wbWVudAo=
+
+From jani.heikkinen@qt.io Tue Sep 10 07:04:58 2019
+Return-Path: <development-bounces@qt-project.org>
+Delivered-To: kde@famillemontel.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 10 Sep 2019 09:13:00 +0200
+Received: from unknown (HELO output2.mail.ovh.net) (10.108.117.208)
+  by mail748.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 10 Sep 2019 09:13:00 +0200
+Received: from vr44.mail.ovh.net (unknown [10.101.8.44])
+	by out2.mail.ovh.net (Postfix) with ESMTP id 46SGT852Q2z7fGmQ
+	for <kde@famillemontel.org>; Tue, 10 Sep 2019 07:13:00 +0000 (UTC)
+Received: from in67.mail.ovh.net (unknown [10.101.4.67])
+	by vr44.mail.ovh.net (Postfix) with ESMTP id 46SGT33wJFzZftwm
+	for <kde@famillemontel.org>; Tue, 10 Sep 2019 07:12:55 +0000 (UTC)
+Received-SPF: Softfail (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=development-bounces@qt-project.org; receiver=<UNKNOWN> 
+Authentication-Results: in67.mail.ovh.net;
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=qt.io header.i=@qt.io header.b="hBs1rkGj";
+	dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in67.mail.ovh.net (Postfix) with ESMTPS id 46SGT32xw5zNfDhW
+	for <kde@famillemontel.org>; Tue, 10 Sep 2019 07:12:55 +0000 (UTC)
+Received: from mx.qt-project.org (mx.qt-project.org [193.209.87.4])
+	by letterbox.kde.org (Postfix) with ESMTPS id F1B422842B0
+	for <montel@kde.org>; Tue, 10 Sep 2019 08:12:33 +0100 (BST)
+Authentication-Results: letterbox.kde.org; dmarc=none (p=none dis=none) header.from=qt.io
+Authentication-Results: letterbox.kde.org; spf=pass smtp.mailfrom=development-bounces@qt-project.org
+Authentication-Results: letterbox.kde.org;
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=qt.io header.i=@qt.io header.b="hBs1rkGj";
+	dkim-atps=neutral
+Received: by mx.qt-project.org (Postfix, from userid 110)
+	id E02AE48857; Tue, 10 Sep 2019 09:05:14 +0200 (CEST)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on mx.qt-project.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.9 required=4.0 tests=BAYES_00,FORGED_SPF_HELO,
+	MAILING_LIST_MULTI,SPF_HELO_PASS,URIBL_BLOCKED autolearn=unavailable
+	autolearn_force=no version=3.4.0
+Received: from mx.qt-project.org (localhost [127.0.0.1])
+	by mx.qt-project.org (Postfix) with ESMTP id 8C4BD487B3;
+	Tue, 10 Sep 2019 09:05:04 +0200 (CEST)
+X-Original-To: development@qt-project.org
+Delivered-To: development@qt-project.org
+Received: by mx.qt-project.org (Postfix, from userid 110)
+ id 6FC96487D2; Tue, 10 Sep 2019 09:05:02 +0200 (CEST)
+Received: from EUR04-DB3-obe.outbound.protection.outlook.com
+ (mail-eopbgr60117.outbound.protection.outlook.com [40.107.6.117])
+ by mx.qt-project.org (Postfix) with ESMTPS id 0B6C0487A2
+ for <development@qt-project.org>; Tue, 10 Sep 2019 09:05:00 +0200 (CEST)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ELF097YxBCc5nIqxSRyUULROvLl66BxlgAWzsygBQfTo9X6969gLxiBwUUDUskLiG6UPMu1QHYGliZZ3nDaxwqkk1slPaYv6CmAV3+zqKyD9Oa2GrUuHnbNQRNCqkWDTKyu4qENgQjJq5+lDN1Q1wq/f6fCyW3gDxBMsm+Eu4X8pLNahvRVfzLaGyrJQY/q3s0al7tiEoPG7Pp7/UKSr6//oZkQIyeB5KDk/s+DkWmHH39xwsJCf3UeyqV1h/StQml85v+GK2yQ9fKE/pEv7ASyiVQncO/nBrc/Dv6wBrMHCS83SO0GhggVjd2fHT29lcUEDPSUxrnsRsYi92LQ5nA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OsoslGRQjstz1I3vzioPb5Ba5ZM1hO6I29atdo0PVjo=;
+ b=VZ54Wm7WNxZIFUH+lgzpJ/NZajSyleDpL4txZqzlGl6FWaeMH1Vv4g6tkB9JLRq0kHzTlLEYkuGQ4jv1oIkVz1pLfHs9qckmh+Hv9X5Ey5+HPhsf379r0GG0aMK19xRDt7QjtAiDw+ZqiVcX8ZPi8J2/WuULx9axWNvoViBoTwKhEXem88WGBY3o/q4WM0lVF0zW6WU9BRj5u6HQXQG4W1p7xpU2pJnJ3gWCkg35eMYKkQoLNRlVMYzKvj8s8gWeFXyN5axvyAcN5YI8MgHD7HbPvM8XvGz2CQKxxImvrrZmjlec08dFwflrBKzspypPNUvcqRXf1zir1UNEXM81IQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=qt.io; dmarc=pass action=none header.from=qt.io; dkim=pass
+ header.d=qt.io; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qt.io; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OsoslGRQjstz1I3vzioPb5Ba5ZM1hO6I29atdo0PVjo=;
+ b=hBs1rkGjkkjl8WwUPaTH2FO941gc+4R0cG0WpZU3AbwSWxofSWABifD9V7j0XIf1diOafwgDaG0aaPgvigNjiYyErGWXt/1WopitLviK+ihSTOs3ys72YGJzV9wdVKXAmyUZ3XfG6z9SgjPYhHCP4rQe0p1BmQ8GCjrYJNHcipk=
+Received: from HE1PR0201MB2329.eurprd02.prod.outlook.com (10.168.146.7) by
+ HE1PR0201MB2299.eurprd02.prod.outlook.com (10.168.150.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.15; Tue, 10 Sep 2019 07:04:58 +0000
+Received: from HE1PR0201MB2329.eurprd02.prod.outlook.com
+ ([fe80::95bb:9763:3e48:bf1a]) by HE1PR0201MB2329.eurprd02.prod.outlook.com
+ ([fe80::95bb:9763:3e48:bf1a%8]) with mapi id 15.20.2241.018; Tue, 10 Sep 2019
+ 07:04:58 +0000
+From: Jani Heikkinen <jani.heikkinen@qt.io>
+To: Richard Weickelt <richard@weickelt.de>, "development@qt-project.org"
+ <development@qt-project.org>
+Thread-Topic: [Development] Where to find development snapshots of Qt
+Thread-Index: AQHVZxkdPHYHTHMt10mSGw/i/E/qFackfXDw
+Date: Tue, 10 Sep 2019 07:04:58 +0000
+Message-ID: <HE1PR0201MB232908E17E69D3A50EAA8DAB9DB60@HE1PR0201MB2329.eurprd02.prod.outlook.com>
+References: <20190909141331.C89AD3001A3@dd18702.kasserver.com>
+In-Reply-To: <20190909141331.C89AD3001A3@dd18702.kasserver.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=jani.heikkinen@qt.io; 
+x-originating-ip: [192.89.120.62]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b25d34b7-b4b2-4b1c-07d9-08d735bd30eb
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:HE1PR0201MB2299; 
+x-ms-traffictypediagnostic: HE1PR0201MB2299:
+x-ms-exchange-purlcount: 3
+x-microsoft-antispam-prvs: <HE1PR0201MB2299BC66712970624E64B99E9DB60@HE1PR0201MB2299.eurprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 01565FED4C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(396003)(39850400004)(136003)(346002)(376002)(366004)(189003)(13464003)(199004)(2906002)(66066001)(316002)(486006)(66946007)(66556008)(2501003)(66476007)(86362001)(6506007)(102836004)(76116006)(66446008)(64756008)(11346002)(476003)(7696005)(71200400001)(71190400001)(44832011)(5660300002)(99286004)(186003)(110136005)(52536014)(14454004)(26005)(8936002)(478600001)(8676002)(14444005)(256004)(55016002)(6306002)(53936002)(6246003)(446003)(6436002)(33656002)(966005)(25786009)(9686003)(74316002)(3846002)(6116002)(81156014)(76176011)(305945005)(229853002)(81166006)(7736002)(37363001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:HE1PR0201MB2299;
+ H:HE1PR0201MB2329.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: qt.io does not designate permitted
+ sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: E1UHC6Y15HPGviZpvidPKKErLokX9JdHJGkjnZtfEJ/6XEsIHFr1PI1Xz0Akn9vZVaUDQBrqbNCatM1JiraK7CcXyv4SKzAo5lBbVWGqlt16Q/qGKdWm2ZLqhMHUUr85M7BqPRWbfNLoXejaEzyb+sqg4kHQd0NwXHaasBvC8z8Yy3ye16ZRw9nLqC4lCEs6TEWfJ02ONiEHItUXWlXHxU2ZeSG1Mqn6SHbicDZ5pGJPyPGOcktTccH7KpgpSfSUX7LGu3XTZ980MzotC7pfRJqcobYXwOOIDHKbMEqJFnONU8CsKGL0Gq4jWAUY/wilsP9MoTtdtsvQgW8ufnWdu27ydPpHVysAUQqbOlnT/xZobZRP1NbA/U/5z2m/o0Muu5hlucInDwM7rRFL68Xya8bO1aoa023AqV8wpG3mfpM=
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: qt.io
+X-MS-Exchange-CrossTenant-Network-Message-Id: b25d34b7-b4b2-4b1c-07d9-08d735bd30eb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Sep 2019 07:04:58.0995 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 20d0b167-794d-448a-9d01-aaeccc1124ac
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: /F1/xO8TZqfQA8VVVTK5xtPP5ZIlEUiuWTzBvBKghCWvZ+UL6brhTcum4S3q3bJua7x8imwgst9nzc7Rqjyv/w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0201MB2299
+Subject: Re: [Development] Where to find development snapshots of Qt
+X-BeenThere: development@qt-project.org
+X-Mailman-Version: 2.1.18
+Precedence: list
+List-Id: List for developers _of_ Qt <development.qt-project.org>
+List-Unsubscribe: <https://lists.qt-project.org/options/development>,
+ <mailto:development-request@qt-project.org?subject=unsubscribe>
+List-Archive: <http://lists.qt-project.org/pipermail/development/>
+List-Post: <mailto:development@qt-project.org>
+List-Help: <mailto:development-request@qt-project.org?subject=help>
+List-Subscribe: <https://lists.qt-project.org/listinfo/development>,
+ <mailto:development-request@qt-project.org?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: development-bounces@qt-project.org
+Sender: "Development" <development-bounces@qt-project.org>
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 5545901470216920787
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: -100
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgeduvddrudekjedguddufecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: OK
+
+SGkhDQoNCllvdSBjYW4gZG93bmxvYWQgc25hcHNob3QgdmlhIG9ubGluZSBpbnN0YWxsZXIuIEF0
+IHRoZSBtb21lbnQgd2UgZG9uJ3QgcHVibGlzaCBzZXBhcmF0ZSBzcmMgcGFja2FnZXMgdG8gZG93
+bmxvYWQucXQuaW8NCg0KYnIsDQpKYW5pDQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0N
+Cj4gRnJvbTogRGV2ZWxvcG1lbnQgPGRldmVsb3BtZW50LWJvdW5jZXNAcXQtcHJvamVjdC5vcmc+
+IE9uIEJlaGFsZiBPZg0KPiBSaWNoYXJkIFdlaWNrZWx0DQo+IFNlbnQ6IG1hYW5hbnRhaSA5LiBz
+eXlza3V1dGEgMjAxOSAxNy4xNA0KPiBUbzogZGV2ZWxvcG1lbnRAcXQtcHJvamVjdC5vcmcNCj4g
+U3ViamVjdDogW0RldmVsb3BtZW50XSBXaGVyZSB0byBmaW5kIGRldmVsb3BtZW50IHNuYXBzaG90
+cyBvZiBRdA0KPiANCj4gSGVsbG8sDQo+IA0KPiBJIHdvdWxkIGxpa2UgdG8gYnVpbGQgYW5kIHRl
+c3QgUWJzIGFnYWluc3QgZGV2ZWxvcG1lbnQgc25hcHNob3RzIG9mIFF0IGluDQo+IG9yZGVyIHRv
+IHByZXZlbnQgZGlzYXN0ZXJzIGxpa2UgaHR0cHM6Ly9idWdyZXBvcnRzLnF0LmlvL2Jyb3dzZS9R
+QlMtMTQ5Mg0KPiBmcm9tIGhhcHBlbmluZyBhZ2Fpbi4NCj4gDQo+IEFyZSB0aGVyZSBhbnkgc25h
+cHNob3RzIG9mIHRoZSBRdCBTREsgYXZhaWxhYmxlIGluIHNvbWUgZm9ybT8gU29tZXRoaW5nDQo+
+IGxpa2UgdGhlIDd6IHBhY2thZ2VzIHVzZWQgYnkgdGhlIGluc3RhbGxlciB0b29sIHdvdWxkIGJl
+IHBlcmZlY3QuIEkgY2hlY2tlZA0KPiBkb3dubG9hZC5xdC5pbyBhbmQgaXQgbG9va3MgbGlrZSBz
+bmFwc2hvdHMgaGF2ZSBiZWVuIHB1Ymxpc2hlZCBhdCBzb21lDQo+IHBvaW50IGluIHRoZSBwYXN0
+LCBidXQgaXQgaXMgaGFyZCB0byBzZWUgdGhyb3VnaCB0aGVyZS4gUXRDcmVhdG9yIHB1Ymxpc2hl
+cw0KPiBkYWlseSBidWlsZHMuIEkgZm91bmQNCj4gaHR0cHM6Ly93aWtpLnF0LmlvL0hvd190b19n
+ZXRfc25hcHNob3RfdmlhX29ubGluZV9pbnN0YWxsZXIgYnV0IGRvZXMgdGhhdA0KPiBhcHBseSB0
+byBjb21tZXJjaWFsIGN1c3RvbWVycyBvbmx5Pw0KPiANCj4gVGhhbmtzDQo+IFJpY2hhcmQNCj4g
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18NCj4gRGV2ZWxv
+cG1lbnQgbWFpbGluZyBsaXN0DQo+IERldmVsb3BtZW50QHF0LXByb2plY3Qub3JnDQo+IGh0dHBz
+Oi8vbGlzdHMucXQtcHJvamVjdC5vcmcvbGlzdGluZm8vZGV2ZWxvcG1lbnQNCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkRldmVsb3BtZW50IG1haWxpbmcg
+bGlzdApEZXZlbG9wbWVudEBxdC1wcm9qZWN0Lm9yZwpodHRwczovL2xpc3RzLnF0LXByb2plY3Qu
+b3JnL2xpc3RpbmZvL2RldmVsb3BtZW50Cg==
+
+From annulen@yandex.ru Tue Sep 10 00:59:57 2019
+Return-Path: <development-bounces@qt-project.org>
+Delivered-To: kde@famillemontel.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 10 Sep 2019 03:08:00 +0200
+Received: from unknown (HELO output19.mail.ovh.net) (10.108.115.124)
+  by mail743.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 10 Sep 2019 03:08:00 +0200
+Received: from vr3.mail.ovh.net (unknown [10.101.8.3])
+	by out19.mail.ovh.net (Postfix) with ESMTP id 46S6N01rkKz7ZKDD
+	for <kde@famillemontel.org>; Tue, 10 Sep 2019 01:08:00 +0000 (UTC)
+Received: from in33.mail.ovh.net (unknown [10.101.4.33])
+	by vr3.mail.ovh.net (Postfix) with ESMTP id 46S6Mv1BXsz3Tq8F
+	for <kde@famillemontel.org>; Tue, 10 Sep 2019 01:07:55 +0000 (UTC)
+Received-SPF: Softfail (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=development-bounces@qt-project.org; receiver=<UNKNOWN> 
+Authentication-Results: in33.mail.ovh.net;
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=yandex.ru header.i=@yandex.ru header.b="TsYSu856";
+	dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in33.mail.ovh.net (Postfix) with ESMTPS id 46S6Mt6fffzNltK1
+	for <kde@famillemontel.org>; Tue, 10 Sep 2019 01:07:54 +0000 (UTC)
+Received: from mx.qt-project.org (mx.qt-project.org [193.209.87.4])
+	by letterbox.kde.org (Postfix) with ESMTPS id EDBE6284376
+	for <montel@kde.org>; Tue, 10 Sep 2019 02:07:40 +0100 (BST)
+Authentication-Results: letterbox.kde.org; dmarc=fail (p=none dis=none) header.from=yandex.ru
+Authentication-Results: letterbox.kde.org; spf=pass smtp.mailfrom=development-bounces@qt-project.org
+Authentication-Results: letterbox.kde.org;
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=yandex.ru header.i=@yandex.ru header.b="TsYSu856";
+	dkim-atps=neutral
+Received: by mx.qt-project.org (Postfix, from userid 110)
+	id 9DD7F4885A; Tue, 10 Sep 2019 03:00:10 +0200 (CEST)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on mx.qt-project.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=4.0 tests=BAYES_00,FREEMAIL_FROM,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,URIBL_BLOCKED autolearn=unavailable
+	autolearn_force=no version=3.4.0
+Received: from mx.qt-project.org (localhost [127.0.0.1])
+	by mx.qt-project.org (Postfix) with ESMTP id E2029487C1;
+	Tue, 10 Sep 2019 03:00:00 +0200 (CEST)
+X-Original-To: development@qt-project.org
+Delivered-To: development@qt-project.org
+Received: by mx.qt-project.org (Postfix, from userid 110)
+ id E6860487C7; Tue, 10 Sep 2019 02:59:59 +0200 (CEST)
+Received: from forward501p.mail.yandex.net (forward501p.mail.yandex.net
+ [77.88.28.111])
+ by mx.qt-project.org (Postfix) with ESMTPS id 98AD3487BE
+ for <development@qt-project.org>; Tue, 10 Sep 2019 02:59:58 +0200 (CEST)
+Received: from mxback24j.mail.yandex.net (mxback24j.mail.yandex.net
+ [IPv6:2a02:6b8:0:1619::224])
+ by forward501p.mail.yandex.net (Yandex) with ESMTP id EEF4B35000DF;
+ Tue, 10 Sep 2019 03:59:57 +0300 (MSK)
+Received: from localhost (localhost [::1])
+ by mxback24j.mail.yandex.net (nwsmtp/Yandex) with ESMTP id zsDgeJm66v-xvc4bdGm;
+ Tue, 10 Sep 2019 03:59:57 +0300
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail;
+ t=1568077197; bh=PIFEos4nahCsno0HlS0z0ywKAlFq0OWfU6BqE+bmUcQ=;
+ h=References:Date:Message-Id:Subject:In-Reply-To:To:From;
+ b=TsYSu856MXdjawqrtnjBkxYE55WVJSp26SGClHSy0Pbwie0/2foKL5e1faHuNgSZM
+ GXAectB6SJ1EAZbCtBXMNEJuaet8KVueV2y+j8Xz7TRhdhMpIK/Unn7yi775NFlUid
+ T7YT3aAlY0v2D/4WQUdi21SkOCgeRClYp1vQO8Jg=
+Authentication-Results: mxback24j.mail.yandex.net;
+ dkim=pass header.i=@yandex.ru
+Received: by iva8-bad53723c646.qloud-c.yandex.net with HTTP;
+ Tue, 10 Sep 2019 03:59:57 +0300
+From: Konstantin Tokarev <annulen@yandex.ru>
+To: Richard Weickelt <richard@weickelt.de>,
+ "development@qt-project.org" <development@qt-project.org>
+In-Reply-To: <20190909141331.C89AD3001A3@dd18702.kasserver.com>
+References: <20190909141331.C89AD3001A3@dd18702.kasserver.com>
+MIME-Version: 1.0
+X-Mailer: Yamail [ http://yandex.ru ] 5.0
+Date: Tue, 10 Sep 2019 03:59:57 +0300
+Message-Id: <278551568077197@iva8-bad53723c646.qloud-c.yandex.net>
+Subject: Re: [Development] Where to find development snapshots of Qt
+X-BeenThere: development@qt-project.org
+X-Mailman-Version: 2.1.18
+Precedence: list
+List-Id: List for developers _of_ Qt <development.qt-project.org>
+List-Unsubscribe: <https://lists.qt-project.org/options/development>,
+ <mailto:development-request@qt-project.org?subject=unsubscribe>
+List-Archive: <http://lists.qt-project.org/pipermail/development/>
+List-Post: <mailto:development@qt-project.org>
+List-Help: <mailto:development-request@qt-project.org?subject=help>
+List-Subscribe: <https://lists.qt-project.org/listinfo/development>,
+ <mailto:development-request@qt-project.org?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: development-bounces@qt-project.org
+Sender: "Development" <development-bounces@qt-project.org>
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 17828343552986095315
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: -100
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgeduvddrudekjedggedtucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuqfggjfdpvefjgfevmfevgfenuceurghilhhouhhtmecuhedttdenucesvcftvggtihhpihgvnhhtshculddquddttddm
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: OK
+
+CgowOS4wOS4yMDE5LCAxNzoxNSwgIlJpY2hhcmQgV2VpY2tlbHQiIDxyaWNoYXJkQHdlaWNrZWx0
+LmRlPjoKPiBIZWxsbywKPgo+IEkgd291bGQgbGlrZSB0byBidWlsZCBhbmQgdGVzdCBRYnMgYWdh
+aW5zdCBkZXZlbG9wbWVudCBzbmFwc2hvdHMgb2YgUXQgaW4gb3JkZXIgdG8gcHJldmVudCBkaXNh
+c3RlcnMgbGlrZSBodHRwczovL2J1Z3JlcG9ydHMucXQuaW8vYnJvd3NlL1FCUy0xNDkyIGZyb20g
+aGFwcGVuaW5nIGFnYWluLgo+Cj4gQXJlIHRoZXJlIGFueSBzbmFwc2hvdHMgb2YgdGhlIFF0IFNE
+SyBhdmFpbGFibGUgaW4gc29tZSBmb3JtPyBTb21ldGhpbmcgbGlrZSB0aGUgN3ogcGFja2FnZXMg
+dXNlZCBieSB0aGUgaW5zdGFsbGVyIHRvb2wgd291bGQgYmUgcGVyZmVjdC4gSSBjaGVja2VkIGRv
+d25sb2FkLnF0LmlvIGFuZCBpdCBsb29rcyBsaWtlIHNuYXBzaG90cyBoYXZlIGJlZW4gcHVibGlz
+aGVkIGF0IHNvbWUgcG9pbnQgaW4gdGhlIHBhc3QsIGJ1dCBpdCBpcyBoYXJkIHRvIHNlZSB0aHJv
+dWdoIHRoZXJlLiBRdENyZWF0b3IgcHVibGlzaGVzIGRhaWx5IGJ1aWxkcy4gSSBmb3VuZCBodHRw
+czovL3dpa2kucXQuaW8vSG93X3RvX2dldF9zbmFwc2hvdF92aWFfb25saW5lX2luc3RhbGxlciBi
+dXQgZG9lcyB0aGF0IGFwcGx5IHRvIGNvbW1lcmNpYWwgY3VzdG9tZXJzIG9ubHk/CgpJIGd1ZXNz
+IHRoYXQgYnVpbGRpbmcgUWJzIGluIENvaW4gaXMgdGhlIG9ubHkgd2F5IHRvIGJ1aWxkIGFnYWlu
+c3QgdW5yZWxlYXNlZCBRdCB2ZXJzaW9ucy4KCi0tIApSZWdhcmRzLApLb25zdGFudGluCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpEZXZlbG9wbWVudCBt
+YWlsaW5nIGxpc3QKRGV2ZWxvcG1lbnRAcXQtcHJvamVjdC5vcmcKaHR0cHM6Ly9saXN0cy5xdC1w
+cm9qZWN0Lm9yZy9saXN0aW5mby9kZXZlbG9wbWVudAo=
+
+From richard@weickelt.de Mon Sep 09 14:13:31 2019
+Return-Path: <development-bounces@qt-project.org>
+Delivered-To: kde@famillemontel.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 9 Sep 2019 16:14:08 +0200
+Received: from unknown (HELO output5.mail.ovh.net) (10.108.115.250)
+  by mail747.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 9 Sep 2019 16:14:08 +0200
+Received: from vr29.mail.ovh.net (unknown [10.101.8.29])
+	by out5.mail.ovh.net (Postfix) with ESMTP id 46RqsX4jMPz5bX8H
+	for <kde@famillemontel.org>; Mon,  9 Sep 2019 14:14:08 +0000 (UTC)
+Received: from in65.mail.ovh.net (unknown [10.101.4.65])
+	by vr29.mail.ovh.net (Postfix) with ESMTP id 46RqsR46dNzcf2W4
+	for <kde@famillemontel.org>; Mon,  9 Sep 2019 14:14:03 +0000 (UTC)
+Received-SPF: Softfail (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=development-bounces@qt-project.org; receiver=<UNKNOWN> 
+Authentication-Results: in65.mail.ovh.net; dkim=none; dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in65.mail.ovh.net (Postfix) with ESMTPS id 46RqsR3fNHzNc2Cn
+	for <kde@famillemontel.org>; Mon,  9 Sep 2019 14:14:03 +0000 (UTC)
+Received: from mx.qt-project.org (mx.qt-project.org [193.209.87.4])
+	by letterbox.kde.org (Postfix) with ESMTPS id 392B7284377
+	for <montel@kde.org>; Mon,  9 Sep 2019 15:13:55 +0100 (BST)
+Authentication-Results: letterbox.kde.org; dmarc=none (p=none dis=none) header.from=weickelt.de
+Authentication-Results: letterbox.kde.org; spf=pass smtp.mailfrom=development-bounces@qt-project.org
+Received: by mx.qt-project.org (Postfix, from userid 110)
+	id CD21248800; Mon,  9 Sep 2019 16:13:49 +0200 (CEST)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on mx.qt-project.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=4.0 tests=BAYES_00,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
+	version=3.4.0
+Received: from mx.qt-project.org (localhost [127.0.0.1])
+	by mx.qt-project.org (Postfix) with ESMTP id E8251416D9;
+	Mon,  9 Sep 2019 16:13:36 +0200 (CEST)
+X-Original-To: development@qt-project.org
+Delivered-To: development@qt-project.org
+Received: by mx.qt-project.org (Postfix, from userid 110)
+ id BC0B9417DF; Mon,  9 Sep 2019 16:13:34 +0200 (CEST)
+Received: from dd18702.kasserver.com (dd18702.kasserver.com [85.13.139.38])
+ by mx.qt-project.org (Postfix) with ESMTPS id 79E39416BF
+ for <development@qt-project.org>; Mon,  9 Sep 2019 16:13:32 +0200 (CEST)
+Received: from dd18702.kasserver.com (dd0803.kasserver.com [85.13.146.34])
+ by dd18702.kasserver.com (Postfix) with ESMTPSA id C89AD3001A3
+ for <development@qt-project.org>; Mon,  9 Sep 2019 16:13:31 +0200 (CEST)
+MIME-Version: 1.0
+X-SenderIP: 77.18.56.221
+User-Agent: ALL-INKL Webmail 2.11 mobile
+From: "Richard Weickelt" <richard@weickelt.de>
+To: development@qt-project.org
+Message-Id: <20190909141331.C89AD3001A3@dd18702.kasserver.com>
+Date: Mon,  9 Sep 2019 16:13:31 +0200 (CEST)
+Subject: [Development] Where to find development snapshots of Qt
+X-BeenThere: development@qt-project.org
+X-Mailman-Version: 2.1.18
+Precedence: list
+List-Id: List for developers _of_ Qt <development.qt-project.org>
+List-Unsubscribe: <https://lists.qt-project.org/options/development>,
+ <mailto:development-request@qt-project.org?subject=unsubscribe>
+List-Archive: <http://lists.qt-project.org/pipermail/development/>
+List-Post: <mailto:development@qt-project.org>
+List-Help: <mailto:development-request@qt-project.org?subject=help>
+List-Subscribe: <https://lists.qt-project.org/listinfo/development>,
+ <mailto:development-request@qt-project.org?subject=subscribe>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: development-bounces@qt-project.org
+Sender: "Development" <development-bounces@qt-project.org>
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 6785517264687242963
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: 0
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgeduvddrudekiedgjedvucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuqfggjfdpvefjgfevmfevgfenuceurghilhhouhhtmecuhedttdenuc
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: OK
+
+SGVsbG8sCgpJIHdvdWxkIGxpa2UgdG8gYnVpbGQgYW5kIHRlc3QgUWJzIGFnYWluc3QgZGV2ZWxv
+cG1lbnQgc25hcHNob3RzIG9mIFF0IGluIG9yZGVyIHRvIHByZXZlbnQgZGlzYXN0ZXJzIGxpa2Ug
+aHR0cHM6Ly9idWdyZXBvcnRzLnF0LmlvL2Jyb3dzZS9RQlMtMTQ5MiBmcm9tIGhhcHBlbmluZyBh
+Z2Fpbi4KCkFyZSB0aGVyZSBhbnkgc25hcHNob3RzIG9mIHRoZSBRdCBTREsgYXZhaWxhYmxlIGlu
+IHNvbWUgZm9ybT8gU29tZXRoaW5nIGxpa2UgdGhlIDd6IHBhY2thZ2VzIHVzZWQgYnkgdGhlIGlu
+c3RhbGxlciB0b29sIHdvdWxkIGJlIHBlcmZlY3QuIEkgY2hlY2tlZCBkb3dubG9hZC5xdC5pbyBh
+bmQgaXQgbG9va3MgbGlrZSBzbmFwc2hvdHMgaGF2ZSBiZWVuIHB1Ymxpc2hlZCBhdCBzb21lIHBv
+aW50IGluIHRoZSBwYXN0LCBidXQgaXQgaXMgaGFyZCB0byBzZWUgdGhyb3VnaCB0aGVyZS4gUXRD
+cmVhdG9yIHB1Ymxpc2hlcyBkYWlseSBidWlsZHMuIEkgZm91bmQgaHR0cHM6Ly93aWtpLnF0Lmlv
+L0hvd190b19nZXRfc25hcHNob3RfdmlhX29ubGluZV9pbnN0YWxsZXIgYnV0IGRvZXMgdGhhdCBh
+cHBseSB0byBjb21tZXJjaWFsIGN1c3RvbWVycyBvbmx5PwoKVGhhbmtzClJpY2hhcmQKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KRGV2ZWxvcG1lbnQgbWFp
+bGluZyBsaXN0CkRldmVsb3BtZW50QHF0LXByb2plY3Qub3JnCmh0dHBzOi8vbGlzdHMucXQtcHJv
+amVjdC5vcmcvbGlzdGluZm8vZGV2ZWxvcG1lbnQK
+

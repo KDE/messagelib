@@ -19,12 +19,25 @@
 
 #include "dkimchecksignaturejobtest.h"
 #include "dkim-verify/dkimchecksignaturejob.h"
+#include <QSignalSpy>
 #include <QTest>
+#include <QTimer>
 QTEST_MAIN(DKIMCheckSignatureJobTest)
 
 DKIMCheckSignatureJobTest::DKIMCheckSignatureJobTest(QObject *parent)
     : QObject(parent)
 {
+}
+
+void DKIMCheckSignatureJobTest::initTestCase()
+{
+    mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
+    qRegisterMetaType<MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult>();
+}
+
+void DKIMCheckSignatureJobTest::cleanupTestCase()
+{
+    delete mQcaInitializer;
 }
 
 void DKIMCheckSignatureJobTest::shouldHaveDefaultValues()
@@ -42,10 +55,46 @@ void DKIMCheckSignatureJobTest::shouldHaveDefaultValues()
 void DKIMCheckSignatureJobTest::shouldTestMail_data()
 {
     QTest::addColumn<QString>("fileName");
-    QTest::addRow("test1") << QStringLiteral("foo");
+    QTest::addColumn<MessageViewer::DKIMCheckSignatureJob::DKIMError>("dkimerror");
+    QTest::addColumn<MessageViewer::DKIMCheckSignatureJob::DKIMWarning>("dkimwarning");
+    QTest::addColumn<MessageViewer::DKIMCheckSignatureJob::DKIMStatus>("dkimstatus");
+    QTest::addRow("dkim2") << QStringLiteral("dkim2.mbox")
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+
+    QTest::addRow("notsigned") << QStringLiteral("notsigned.mbox")
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
+
+
+    QTest::addRow("broken1") << QStringLiteral("broken1.mbox")
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
 }
 
 void DKIMCheckSignatureJobTest::shouldTestMail()
 {
     QFETCH(QString, fileName);
+    QFETCH(MessageViewer::DKIMCheckSignatureJob::DKIMError, dkimerror);
+    QFETCH(MessageViewer::DKIMCheckSignatureJob::DKIMWarning, dkimwarning);
+    QFETCH(MessageViewer::DKIMCheckSignatureJob::DKIMStatus, dkimstatus);
+    KMime::Message *msg = new KMime::Message;
+    QFile file(QStringLiteral(DKIM_DATA_DIR "/") + fileName);
+    QVERIFY(file.open(QIODevice::ReadOnly));
+    msg->setContent(file.readAll());
+    msg->parse();
+    MessageViewer::DKIMCheckSignatureJob *job = new MessageViewer::DKIMCheckSignatureJob();
+    job->setMessage(KMime::Message::Ptr(msg));
+    job->setSaveKey(false);
+    QSignalSpy dkimSignatureSpy(job, &MessageViewer::DKIMCheckSignatureJob::result);
+    QTimer::singleShot(10, job, &MessageViewer::DKIMCheckSignatureJob::start);
+    QVERIFY(dkimSignatureSpy.wait());
+    QCOMPARE(dkimSignatureSpy.count(), 1);
+    const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult info = dkimSignatureSpy.at(0).at(0).value<MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult>();
+    QCOMPARE(info.warning, dkimwarning);
+    QCOMPARE(info.error, dkimerror);
+    QCOMPARE(info.status, dkimstatus);
 }

@@ -62,12 +62,12 @@ QString DKIMCheckSignatureJob::headerCanonizationResult() const
 
 void DKIMCheckSignatureJob::start()
 {
-    if (!mMessage) {
-        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-        Q_EMIT result(createCheckResult());
-        deleteLater();
-        return;
-    }
+//    if (!mMessage) {
+//        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+//        Q_EMIT result(createCheckResult());
+//        deleteLater();
+//        return;
+//    }
     if (mMessageItem.isValid() && !mMessage) {
         if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
             mMessage = mMessageItem.payload<KMime::Message::Ptr>();
@@ -503,7 +503,7 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         //TODO
     }
     if (rsaPublicKey.canVerify()) {
-        //qDebug() << "mHeaderCanonizationResult " << mHeaderCanonizationResult << " mDkimInfo.signature() " << mDkimInfo.signature().replace(QLatin1Char(' '), QString());
+        qDebug() << "mHeaderCanonizationResult " << mHeaderCanonizationResult << " mDkimInfo.signature() " << mDkimInfo.signature().replace(QLatin1Char(' '), QString());
         const QString s = mDkimInfo.signature().replace(QLatin1Char(' '), QString());
         //qDebug() << " s base 64" << s.toLocal8Bit().toBase64();
         QCA::SecureArray sec = mHeaderCanonizationResult.toLatin1();

@@ -46,6 +46,7 @@ CheckSignature::CheckSignature(const QString &fileName, QObject *parent)
 
 CheckSignature::~CheckSignature()
 {
+    delete mQcaInitializer;
 }
 
 void CheckSignature::slotResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult)

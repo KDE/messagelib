@@ -1,0 +1,92 @@
+From bugzilla_noreply@kde.org Thu Oct 17 09:10:12 2019
+Return-Path: <bugzilla_noreply@kde.org>
+Delivered-To: kde@famillemontel.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 17 Oct 2019 11:11:19 +0200
+Received: from unknown (HELO output51.mail.ovh.net) (10.108.97.200)
+  by mail104.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 17 Oct 2019 11:11:19 +0200
+Received: from vr13.mail.ovh.net (unknown [10.101.8.13])
+	by out51.mail.ovh.net (Postfix) with ESMTP id 46v3LX3g65zBDlRNg
+	for <kde@famillemontel.org>; Thu, 17 Oct 2019 09:11:16 +0000 (UTC)
+Received: from in70.mail.ovh.net (unknown [10.101.4.70])
+	by vr13.mail.ovh.net (Postfix) with ESMTP id 46v3LX2bGmzwPGt
+	for <kde@famillemontel.org>; Thu, 17 Oct 2019 09:11:16 +0000 (UTC)
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=bugzilla_noreply@kde.org; receiver=<UNKNOWN> 
+Authentication-Results: in70.mail.ovh.net;
+	dkim=pass (1024-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="EZ6wCZ9n";
+	dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in70.mail.ovh.net (Postfix) with ESMTPS id 46v3LX1XxTzVqdbq
+	for <kde@famillemontel.org>; Thu, 17 Oct 2019 09:11:16 +0000 (UTC)
+Received: from bluemchen.kde.org (bluemchen.kde.org [IPv6:2001:470:142:8::100])
+	by letterbox.kde.org (Postfix) with ESMTPS id E2D93282897
+	for <montel@kde.org>; Thu, 17 Oct 2019 10:11:08 +0100 (BST)
+Authentication-Results: letterbox.kde.org; dmarc=none (p=none dis=none) header.from=kde.org
+Authentication-Results: letterbox.kde.org; spf=pass smtp.mailfrom=bugzilla_noreply@kde.org
+Authentication-Results: letterbox.kde.org;
+	dkim=pass (1024-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="EZ6wCZ9n";
+	dkim-atps=neutral
+Received: from komaci.kde.org (komaci.kde.org [IPv6:2a01:4f8:171:c9a::4])
+	by bluemchen.kde.org (Postfix) with ESMTPS id C066720F09
+	for <montel@kde.org>; Thu, 17 Oct 2019 05:10:13 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kde.org; s=transact;
+	t=1571303413; bh=HKAXj47vQzqGPsUNjYlOO672cnUBx1pgpWeK3+TYB5M=;
+	h=From:To:Subject:Date:In-Reply-To:References:From;
+	b=EZ6wCZ9nJz0kyZUF5G91y68bRVzTWOFBTCK0A/3tdQgkIVHt7d3DkAZX4vzwm23D+
+	 RmleLr64RQeV5xQRaRlWvR60nXgcQBEncB9ddP1mrRmKxgbvdEm4JI3ISmcuQ0hVRe
+	 YJmQj4yUBHOtn+oWRormU5FETRNnjFBhhcb2Ylsw=
+Received: from www-data by komaci.kde.org with local (Exim 4.90_1)
+	(envelope-from <bugzilla_noreply@kde.org>)
+	id 1iL1nQ-0006wt-SP
+	for montel@kde.org; Thu, 17 Oct 2019 09:10:12 +0000
+From: "Leandro Lucarella" <bugzilla_noreply@kde.org>
+To: montel@kde.org
+Subject: [kdepim] [Bug 413078] Can't change name of akonadi EWS resource
+ (sort of)
+Date: Thu, 17 Oct 2019 09:10:12 +0000
+Reply-To: bug-control@kde.org
+X-Bugzilla-Reason: None
+X-Bugzilla-Type: changed
+X-Bugzilla-Watch-Reason: AssignedTo kdepim-bugs@kde.org
+X-Bugzilla-Product: kdepim
+X-Bugzilla-Component: general
+X-Bugzilla-Version: unspecified
+X-Bugzilla-Keywords: 
+X-Bugzilla-Severity: minor
+X-Bugzilla-Who: leandro.lucarella@quoscient.io
+X-Bugzilla-Status: UNCONFIRMED
+X-Bugzilla-Resolution: 
+X-Bugzilla-Priority: NOR
+X-Bugzilla-Assigned-To: kdepim-bugs@kde.org
+X-Bugzilla-Target-Milestone: ---
+X-Bugzilla-Flags: 
+X-Bugzilla-Changed-Fields: attachments.created
+Message-ID: <bug-413078-5146-NNgivgOjnR@http.bugs.kde.org/>
+In-Reply-To: <bug-413078-5146@http.bugs.kde.org/>
+References: <bug-413078-5146@http.bugs.kde.org/>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-Bugzilla-URL: http://bugs.kde.org/
+Auto-Submitted: auto-generated
+MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 3473401216784747731
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: 0
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedufedrjeejgddufecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecu
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: OK
+
+https://bugs.kde.org/show_bug.cgi?id=3D413078
+
+--- Comment #2 from Leandro Lucarella <leandro.lucarella@quoscient.io> ---
+Created attachment 123268
+  --> https://bugs.kde.org/attachment.cgi?id=3D123268&action=3Dedit
+KMail accounts view
+
+--=20
+You are receiving this mail because:
+You are watching the assignee of the bug.=
+
