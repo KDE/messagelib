@@ -508,9 +508,7 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         //qDebug() << " s base 64" << s.toLocal8Bit().toBase64();
         QCA::SecureArray sec = mHeaderCanonizationResult.toLatin1();
         const QByteArray ba = QCA::base64ToArray(s);
-        if (rsaPublicKey.verifyMessage(sec, ba, QCA::EMSA3_SHA256, QCA::DERSequence)) {
-            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature VALIDE !!!!!!!!!!";
-        } else {
+        if (!rsaPublicKey.verifyMessage(sec, ba, QCA::EMSA3_SHA256, QCA::DERSequence)) {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature invalid";
             // then signature is invalid
             mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;
