@@ -48,5 +48,4 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
 void DKIMCheckSignatureJobTest::shouldTestMail()
 {
     QFETCH(QString, fileName);
-
 }

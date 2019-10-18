@@ -27,7 +27,6 @@ using namespace MessageViewer;
 
 DKIMHeaderParser::DKIMHeaderParser()
 {
-
 }
 
 DKIMHeaderParser::~DKIMHeaderParser()
@@ -51,12 +50,10 @@ void DKIMHeaderParser::parse()
             break;
         }
     }
-
 }
 
 MessageViewer::DKIMHeaderParser::Header *DKIMHeaderParser::extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody)
 {
-
     int startOfFieldBody = head.indexOf(':', headerStart);
     if (startOfFieldBody < 0) {
         return nullptr;
@@ -67,7 +64,7 @@ MessageViewer::DKIMHeaderParser::Header *DKIMHeaderParser::extractHeader(const Q
     const size_t rawTypeLen = startOfFieldBody - headerStart;
 
     startOfFieldBody++; //skip the ':'
-    if (startOfFieldBody < head.size() - 1 &&  head[startOfFieldBody] == ' ') { // skip the space after the ':', if there's any
+    if (startOfFieldBody < head.size() - 1 && head[startOfFieldBody] == ' ') {  // skip the space after the ':', if there's any
         startOfFieldBody++;
     }
 
@@ -113,12 +110,12 @@ QByteArray DKIMHeaderParser::unfoldHeader(const char *header, size_t headerSize)
         while (foldEnd <= end - 1) {
             if (QChar::isSpace(*foldEnd)) {
                 ++foldEnd;
-            } else if (foldEnd && *(foldEnd - 1) == '\n' &&
-                       *foldEnd == '=' && foldEnd + 2 < (header + headerSize - 1) &&
-                       ((*(foldEnd + 1) == '0' &&
-                         *(foldEnd + 2) == '9') ||
-                        (*(foldEnd + 1) == '2' &&
-                         *(foldEnd + 2) == '0'))) {
+            } else if (foldEnd && *(foldEnd - 1) == '\n'
+                       && *foldEnd == '=' && foldEnd + 2 < (header + headerSize - 1)
+                       && ((*(foldEnd + 1) == '0'
+                            && *(foldEnd + 2) == '9')
+                           || (*(foldEnd + 1) == '2'
+                               && *(foldEnd + 2) == '0'))) {
                 // bug #86302: malformed header continuation starting with =09/=20
                 foldEnd += 3;
             } else {
@@ -170,9 +167,8 @@ int DKIMHeaderParser::findHeaderLineEnd(const QByteArray &src, int &dataBegin, b
     // If the first line contains nothing, but the next line starts with a space
     // or a tab, that means a stupid mail client has made the first header field line
     // entirely empty, and has folded the rest to the next line(s).
-    if (src.at(end) == '\n' && end + 1 < len &&
-            (src[end + 1] == ' ' || src[end + 1] == '\t')) {
-
+    if (src.at(end) == '\n' && end + 1 < len
+        && (src[end + 1] == ' ' || src[end + 1] == '\t')) {
         // Skip \n and first whitespace
         dataBegin += 2;
         end += 2;
@@ -184,10 +180,10 @@ int DKIMHeaderParser::findHeaderLineEnd(const QByteArray &src, int &dataBegin, b
             if (end == -1 || end == len) {
                 // end of string
                 break;
-            } else if (src[end + 1] == ' ' || src[end + 1] == '\t' ||
-                       (src[end + 1] == '=' && end + 3 <= len &&
-                        ((src[end + 2] == '0' && src[end + 3] == '9') ||
-                         (src[end + 2] == '2' && src[end + 3] == '0')))) {
+            } else if (src[end + 1] == ' ' || src[end + 1] == '\t'
+                       || (src[end + 1] == '=' && end + 3 <= len
+                           && ((src[end + 2] == '0' && src[end + 3] == '9')
+                               || (src[end + 2] == '2' && src[end + 3] == '0')))) {
                 // next line is header continuation or starts with =09/=20 (bug #86302)
                 if (folded) {
                     *folded = true;
@@ -207,7 +203,7 @@ int DKIMHeaderParser::findHeaderLineEnd(const QByteArray &src, int &dataBegin, b
 
 QString DKIMHeaderParser::headerType(const QString &str)
 {
-    for (int i = mListHeaders.count() -1; i >=0; --i) {
+    for (int i = mListHeaders.count() -1; i >= 0; --i) {
         qDebug() << " mListHeaders.at(i)->headerName" <<mListHeaders.at(i)->headerName;
         if (mListHeaders.at(i)->headerName == str) {
             DKIMHeaderParser::Header *header = mListHeaders.takeAt(i);
