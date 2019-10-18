@@ -311,20 +311,43 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
         }
         if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
             QString str;
+            const QByteArray Allheaders = mMessage->head();
+            qDebug() << " all headers " << Allheaders;
             if (header == QLatin1String("date")) {
-                QByteArray headers = mMessage->head();
-                int index = headers.indexOf("Date: ");
-                if (index != -1) {
-                    index += 5;
-                    const int end = headers.indexOf("\n", index);
-                    if (end != -1) {
-                        str = QString::fromLatin1(headers.mid(index, (end - index)));
-                        if (str.startsWith(QLatin1Char(' '))) {
-                            str = str.right(str.length() - 1);
-                        }
+                int index = Allheaders.indexOf("Date:");
+                if (index == -1) {
+                    index = Allheaders.indexOf("date:");
+                    if (index == -1) {
+                        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to find \'date:\'";
+                        continue;
                     }
                 }
-                qDebug() << " str " << str;
+                index += 5;
+                const int end = Allheaders.indexOf("\n", index);
+                if (end != -1) {
+                    str = QString::fromLatin1(Allheaders.mid(index, (end - index)));
+                    if (str.startsWith(QLatin1Char(' '))) {
+                        str = str.right(str.length() - 1);
+                    }
+                }
+            } else if (header == QLatin1String("from:")) {
+                int index = Allheaders.indexOf("from:");
+                if (index == -1) {
+                    index = Allheaders.indexOf("From:");
+                    if (index == -1) {
+                        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to find \'from:\'";
+                        continue;
+                    }
+                }
+                index += 5;
+                const int end = Allheaders.indexOf("\n", index);
+                if (end != -1) {
+                    str = QString::fromLatin1(Allheaders.mid(index, (end - index)));
+                    if (str.startsWith(QLatin1Char(' '))) {
+                        str = str.right(str.length() - 1);
+                    }
+                }
+                qDebug() <<" FROM !!!!!!!!!!!!!!!!!!!" << str;
             } else {
                 str = hrd->asUnicodeString();
             }
