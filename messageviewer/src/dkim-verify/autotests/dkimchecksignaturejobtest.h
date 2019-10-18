@@ -30,6 +30,8 @@ public:
     ~DKIMCheckSignatureJobTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldTestMail();
+    void shouldTestMail_data();
 };
 
 #endif // DKIMCHECKSIGNATUREJOBTEST_H

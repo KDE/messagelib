@@ -38,3 +38,15 @@ void DKIMCheckSignatureJobTest::shouldHaveDefaultValues()
     QCOMPARE(job.warning(), MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any);
     QVERIFY(!job.saveKey());
 }
+
+void DKIMCheckSignatureJobTest::shouldTestMail_data()
+{
+    QTest::addColumn<QString>("fileName");
+    QTest::addRow("test1") << QStringLiteral("foo");
+}
+
+void DKIMCheckSignatureJobTest::shouldTestMail()
+{
+    QFETCH(QString, fileName);
+
+}
