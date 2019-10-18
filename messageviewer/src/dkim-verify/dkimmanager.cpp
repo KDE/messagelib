@@ -45,7 +45,6 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
 {
     if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
         if (item.hasAttribute<MessageViewer::DKIMResultAttribute>()) {
-            qDebug() << " HAS ATTRIBUTE";
             const MessageViewer::DKIMResultAttribute *const attr
                 = item.attribute<MessageViewer::DKIMResultAttribute>();
             if (attr) {
