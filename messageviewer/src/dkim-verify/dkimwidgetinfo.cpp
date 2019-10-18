@@ -80,7 +80,7 @@ void DKIMWidgetInfo::updateInfo()
         mLabel->setText(i18n("KDIM: invalid"));
         break;
     case DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned:
-        mLabel->setText(i18n("KDIM: Unsigned"));
+        mLabel->setText(i18n("KDIM: Not signed"));
         pal.setColor(backgroundRole(), palette().window().color());
         mLabel->setPalette(pal);
         break;

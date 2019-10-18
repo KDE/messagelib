@@ -24,6 +24,7 @@
 #include "dkimutil.h"
 #include "dkimkeyrecord.h"
 #include "messageviewer_dkimcheckerdebug.h"
+#include "dkimheaderparser.h"
 #include <QDateTime>
 #include <QCryptographicHash>
 #include <Qca-qt5/QtCrypto/qca_publickey.h>
@@ -269,9 +270,17 @@ QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
 QString DKIMCheckSignatureJob::headerCanonizationSimple() const
 {
     QString headers;
+    DKIMHeaderParser parser;
+    parser.setHead(mMessage->head());
+    parser.parse();
+
     for (const QString &header : mDkimInfo.listSignedHeader()) {
-        if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
-            headers += MessageViewer::DKIMUtil::headerCanonizationSimple(header, hrd->asUnicodeString());
+        const QString str = parser.headerType(header.toLower());
+        if (!str.isEmpty()) {
+            if (!headers.isEmpty()) {
+                headers += QLatin1String("\r\n");
+            }
+            headers += MessageViewer::DKIMUtil::headerCanonizationSimple(header, str);
         }
     }
     return headers;
@@ -303,8 +312,24 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
 //          colon separator MUST be retained.
 
     QString headers;
-    QStringList headerAlreadyAdded; //Add support for multi headers
+    DKIMHeaderParser parser;
+    parser.setHead(mMessage->head());
+    parser.parse();
     for (const QString &header : mDkimInfo.listSignedHeader()) {
+#if 1
+        const QString str = parser.headerType(header.toLower());
+//        qDebug() << " str " << str << " header search " << header;
+//        auto hrd = mMessage->headerByType(header.toLatin1().constData());
+//        if (hrd) {
+//            qDebug() << " hrd " << hrd->asUnicodeString();
+//        }
+        if (!str.isEmpty()) {
+            if (!headers.isEmpty()) {
+                headers += QLatin1String("\r\n");
+            }
+            headers += MessageViewer::DKIMUtil::headerCanonizationRelaxed(header, str);
+        }
+#else
         qDebug() << " header" << header;
         if (headerAlreadyAdded.contains(header)) {
             continue;
@@ -312,7 +337,7 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
         if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
             QString str;
             const QByteArray Allheaders = mMessage->head();
-            qDebug() << " all headers " << Allheaders;
+            //qDebug() << " all headers " << Allheaders;
             if (header == QLatin1String("date")) {
                 int index = Allheaders.indexOf("Date:");
                 if (index == -1) {
@@ -357,6 +382,7 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
             }
             headers += MessageViewer::DKIMUtil::headerCanonizationRelaxed(header, str);
         }
+#endif
     }
     return headers;
 }

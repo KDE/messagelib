@@ -15,11 +15,6 @@ else()
     set(EXCHANGE_COMPATIBLE_INVITATIONS false)
 endif()
 
-if (DKIM_CHECKER_BUILD)
-    set(USE_DKIM_CHECKER 1)
-endif()
-
-
 configure_file(settings/messageviewer.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/messageviewer.kcfg)
 include(CheckIncludeFiles)
 find_package(Inotify)
@@ -51,12 +46,13 @@ add_subdirectory(kconf_update)
 add_subdirectory(about)
 add_subdirectory(messageviewerheaderplugins)
 
-if (DKIM_CHECKER_BUILD)
-    find_package(Qca-qt5 2.1.0)
-    set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
-                       URL "https:/download.kde.org/stable/qca-qt5" TYPE OPTIONAL
-                       PURPOSE "Needed for most of the algorithms of the checksum tool")
+find_package(Qca-qt5 2.1.0)
+set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
+                   URL "https:/download.kde.org/stable/qca-qt5" TYPE OPTIONAL
+                   PURPOSE "Needed for kdim support.")
 
+if (${Qca-qt5_FOUND})
+    set(USE_DKIM_CHECKER 1)
     if (BUILD_TESTING)
         add_subdirectory(dkim-verify/autotests)
 	add_subdirectory(dkim-verify/tests)
@@ -76,6 +72,7 @@ if (DKIM_CHECKER_BUILD)
         dkim-verify/dkimresultattribute.cpp
         dkim-verify/dkimwidgetinfo.cpp
         dkim-verify/dkimstoreresultjob.cpp
+        dkim-verify/dkimheaderparser.cpp
         )
 endif()
 
@@ -262,7 +259,7 @@ add_library(KF5::MessageViewer ALIAS KF5MessageViewer)
 
 target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer>;${Inotify_INCLUDE_DIRS}")
 
-if (DKIM_CHECKER_BUILD)
+if (${Qca-qt5_FOUND})
     set(OPTIONAL_PRIVATE qca-qt5)
 endif()
 
@@ -343,7 +340,7 @@ ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     RELATIVE scamdetection
     )
 
-if (DKIM_CHECKER_BUILD)
+if (${Qca-qt5_FOUND})
     ecm_generate_headers(MessageViewer_Cameldkimverify_HEADERS
         HEADER_NAMES
         DKIMManagerKey
@@ -487,7 +484,7 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
     LIB_NAME KF5MessageViewer
     DEPS "PimCommon MessageCore AkonadiCore AkonadiMime Contacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
     )
-if (DKIM_CHECKER_BUILD)
+if (${Qca-qt5_FOUND})
     install(FILES
         ${MessageViewer_Cameldkimverify_HEADERS}
         DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
