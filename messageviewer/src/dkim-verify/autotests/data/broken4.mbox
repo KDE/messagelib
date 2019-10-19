@@ -1,0 +1,543 @@
+From null@kde.org Sat Oct 19 09:21:16 2019
+Return-Path: <kde-commits-bounces@kde.org>
+Delivered-To: kde@famillemontel.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 19 Oct 2019 11:21:32 +0200
+Received: from unknown (HELO output40.mail.ovh.net) (10.108.97.95)
+  by mail702.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 19 Oct 2019 11:21:32 +0200
+Received: from vr40.mail.ovh.net (unknown [10.101.8.40])
+	by out40.mail.ovh.net (Postfix) with ESMTP id 46wHTR62z5z5sYkkF
+	for <kde@famillemontel.org>; Sat, 19 Oct 2019 09:21:31 +0000 (UTC)
+Received: from in19.mail.ovh.net (unknown [10.101.4.19])
+	by vr40.mail.ovh.net (Postfix) with ESMTP id 46wHTR4fB9zdnD1C
+	for <kde@famillemontel.org>; Sat, 19 Oct 2019 09:21:31 +0000 (UTC)
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=kde-commits-bounces@kde.org; receiver=<UNKNOWN> 
+Authentication-Results: in19.mail.ovh.net;
+	dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="g33SgtiL";
+	dkim=pass (1024-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="mDNtySei";
+	dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in19.mail.ovh.net (Postfix) with ESMTPS id 46wHTR3Hl0z3RrMt
+	for <kde@famillemontel.org>; Sat, 19 Oct 2019 09:21:31 +0000 (UTC)
+Received: from letterbox.kde.org (localhost.kde.org [127.0.0.1])
+	by letterbox.kde.org (Postfix) with ESMTP id 3C73D285172;
+	Sat, 19 Oct 2019 10:21:27 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kde.org; s=lists;
+	t=1571476890; bh=yQz75hU2II2cxjkcUTp4JEuHd2STPdE4Tvy42GQtpZQ=;
+	h=From:To:Subject:Date:List-Id:List-Unsubscribe:List-Post:List-Help:
+	 List-Subscribe:From;
+	b=g33SgtiLY93oJeZb8CIJfhJJvH18bbg/Dj8F3B64PXte3Yie5Z389EQCnD87Ybv8h
+	 ynRfWH0BgBeAFCZmSBfEzvJaePXN8G5lWpkRy9//Kb4F/Qbk5v9rrbLq4+Opis1vsN
+	 A+KsaoseAoXpQpQjV6V1O1VQXKAxdwE9g3Ro0uGdPqmS2j55Tuir5WwPERqOlo233/
+	 TagL0xD1daGfonvh++Iskb8rT8aQS7xjiT+keUjf+VNkR6yn+oDHxr8vJc0MxkVqEv
+	 bE2dDcHC3gu44IyR8bb/16eRerYn9+ceuegGhU4eRSethpuN/7n+X2pbTQe85sHrdW
+	 RZe5n15CWWFtA==
+X-Original-To: kde-commits@kde.org
+Delivered-To: kde-commits@localhost
+Received: from bluemchen.kde.org (bluemchen.kde.org [209.51.188.41])
+ by letterbox.kde.org (Postfix) with ESMTPS id 82397282E3A
+ for <kde-commits@kde.org>; Sat, 19 Oct 2019 10:21:18 +0100 (BST)
+Authentication-Results: letterbox.kde.org;
+ dmarc=none (p=none dis=none) header.from=kde.org
+Authentication-Results: letterbox.kde.org; spf=pass smtp.mailfrom=null@kde.org
+Authentication-Results: letterbox.kde.org; dkim=pass (1024-bit key;
+ unprotected) header.d=kde.org header.i=@kde.org header.b="mDNtySei"; 
+ dkim-atps=neutral
+Received: from code.kde.org (code.kde.org [IPv6:2a01:4f8:171:2687::4])
+ by bluemchen.kde.org (Postfix) with ESMTPS id 95F41201A5
+ for <kde-commits@kde.org>; Sat, 19 Oct 2019 05:21:17 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kde.org; s=transact;
+ t=1571476877; bh=yQz75hU2II2cxjkcUTp4JEuHd2STPdE4Tvy42GQtpZQ=;
+ h=From:To:Subject:Date:From;
+ b=mDNtySein7ePhCkMlWmARaRuUMmeluwcZb+w5qz1/YcjoQnTIeV0Ha+/YvzQlu1Zq
+ tiwQ4K54DEDGwHXFaR7aLoCHiios2pG3LJP9LKh9NsDdfV3GpXt+y8yMfo4MnxRqfq
+ EHuVOBLygtivWhdJ95N4GURZ0o+vANoyCMAqQx2A=
+Received: from svn by code.kde.org with local (Exim 4.86_2)
+ (envelope-from <null@kde.org>) id 1iLkvE-0007QZ-MT
+ for kde-commits@kde.org; Sat, 19 Oct 2019 09:21:16 +0000
+From: =?utf-8?q?Josep=20Ma=2E=20Ferrer?= <null@kde.org>
+To: kde-commits@kde.org
+Subject: l10n-kf5/ca/messages
+X-Commit-Directories: (0) trunk/l10n-kf5/ca/messages/calligra
+ trunk/l10n-kf5/ca/messages/extragear-edu
+ trunk/l10n-kf5/ca/messages/kde-workspace
+ trunk/l10n-kf5/ca/messages/kdemultimedia trunk/l10n-kf5/ca/messages/pim
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Message-Id: <E1iLkvE-0007QZ-MT@code.kde.org>
+Date: Sat, 19 Oct 2019 09:21:16 +0000
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-BeenThere: kde-commits@kde.org
+X-Mailman-Version: 2.1.26
+Precedence: list
+List-Id: Notification of KDE commits <kde-commits.kde.org>
+List-Unsubscribe: <https://mail.kde.org/mailman/options/kde-commits>,
+ <mailto:kde-commits-request@kde.org?subject=unsubscribe>
+List-Post: <mailto:kde-commits@kde.org>
+List-Help: <mailto:kde-commits-request@kde.org?subject=help>
+List-Subscribe: <https://mail.kde.org/mailman/listinfo/kde-commits>,
+ <mailto:kde-commits-request@kde.org?subject=subscribe>
+Reply-To: kde-commits@kde.org
+Errors-To: kde-commits-bounces@kde.org
+Sender: "kde-commits" <kde-commits-bounces@kde.org>
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 15391896152501887955
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: 0
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedufedrkedtgddugeehucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuqfggjfdpvefjgfevmfevgfenuceurghilhhouhhtmecuhedttdenuc
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: OK
+
+SVN commit 1554037 by jferrer:
+
+Updated translations
+
+ M  +2 -2      calligra/calligraplanlibs.po  
+ M  +31 -37    extragear-edu/kstars.po  
+ M  +6 -5      kde-workspace/kde-cli-tools._desktop_.po  
+ M  +5 -5      kdemultimedia/kdenlive.po  
+ M  +8 -8      pim/kalarm.po  
+ M  +6 -6      pim/libmessageviewer.po  
+
+
+--- trunk/l10n-kf5/ca/messages/calligra/calligraplanlibs.po #1554036:1554037
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: calligraplanlibs\n"
+ "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+ "POT-Creation-Date: 2019-10-19 02:34+0200\n"
+-"PO-Revision-Date: 2019-10-18 16:36+0100\n"
++"PO-Revision-Date: 2019-10-19 11:14+0100\n"
+ "Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
+ "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+ "Language: ca\n"
+@@ -7117,7 +7117,7 @@
+ "afegiu-la al projecte"
+ 
+ #: ui/kpttaskeditor.cpp:516
+-#, fuzzy, kde-kuit-format
++#, kde-kuit-format
+ #| msgctxt "@info:whatsthis"
+ #| msgid ""
+ #| "<title>Task Modules</title><para>Task Modules are a group of tasks that "
+--- trunk/l10n-kf5/ca/messages/extragear-edu/kstars.po #1554036:1554037
+@@ -12,7 +12,7 @@
+ "Project-Id-Version: kstars\n"
+ "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+ "POT-Creation-Date: 2019-10-19 02:36+0200\n"
+-"PO-Revision-Date: 2019-10-17 16:18+0100\n"
++"PO-Revision-Date: 2019-10-19 11:17+0100\n"
+ "Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
+ "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+ "Language: ca\n"
+@@ -5799,7 +5799,7 @@
+ #: ekos/align/align.cpp:4727
+ #, kde-format
+ msgid "Capture error. Aborting..."
+-msgstr "Error en la captura. S'està interrompent..."
++msgstr "Error en la captura. S'interromp..."
+ 
+ #: ekos/align/align.cpp:4733 ekos/capture/capture.cpp:2228
+ #, kde-format
+@@ -10369,7 +10369,7 @@
+ #: ekos/capture/capture.cpp:3290 ekos/capture/capture.cpp:3324
+ #, kde-format
+ msgid "Autofocus failed. Aborting exposure..."
+-msgstr "Ha fallat l'enfocament automàtic. S'està interrompent l'exposició..."
++msgstr "Ha fallat l'enfocament automàtic. S'interromp l'exposició..."
+ 
+ #: ekos/capture/capture.cpp:3311 ekos/capture/capture.cpp:3312
+ #: ekos/capture/capture.cpp:3325
+@@ -10525,7 +10525,7 @@
+ #: ekos/capture/capture.cpp:4755
+ #, kde-format
+ msgid "Autoguiding stopped. Aborting..."
+-msgstr "S'ha aturat el guiatge automàtic. S'està interrompent..."
++msgstr "S'ha aturat el guiatge automàtic. S'interromp..."
+ 
+ #: ekos/capture/capture.cpp:4771
+ #, kde-format
+@@ -10593,8 +10593,7 @@
+ #: ekos/capture/capture.cpp:5213
+ #, kde-format
+ msgid "Unparking dust cap failed, aborting..."
+-msgstr ""
+-"El desaparcament de la tapa per la pols ha fallat. S'està interrompent..."
++msgstr "El desaparcament de la tapa per la pols ha fallat. S'interromp..."
+ 
+ #: ekos/capture/capture.cpp:5227 ekos/capture/capture.cpp:5610
+ #, kde-format
+@@ -10604,7 +10603,7 @@
+ #: ekos/capture/capture.cpp:5367 ekos/capture/capture.cpp:5507
+ #, kde-format
+ msgid "Parking dust cap failed, aborting..."
+-msgstr "L'aparcament de la tapa per la pols ha fallat. S'està interrompent..."
++msgstr "L'aparcament de la tapa per la pols ha fallat. S'interromp..."
+ 
+ #: ekos/capture/capture.cpp:5381 ekos/capture/capture.cpp:5521
+ #, kde-format
+@@ -10648,8 +10647,7 @@
+ #: ekos/capture/capture.cpp:5596
+ #, kde-format
+ msgid "UnParking dust cap failed, aborting..."
+-msgstr ""
+-"El desaparcament de la tapa per la pols ha fallat. S'està interrompent..."
++msgstr "El desaparcament de la tapa per la pols ha fallat. S'interromp..."
+ 
+ #: ekos/capture/capture.cpp:5632
+ #, kde-format
+@@ -10660,7 +10658,7 @@
+ #: ekos/capture/capture.cpp:5637
+ #, kde-format
+ msgid "Parking mount failed, aborting..."
+-msgstr "Ha fallat l'aparcament de la muntura. S'està interrompent..."
++msgstr "Ha fallat l'aparcament de la muntura. S'interromp..."
+ 
+ #: ekos/capture/capture.cpp:5652 ekos/scheduler/scheduler.cpp:5525
+ #, kde-format
+@@ -10675,7 +10673,7 @@
+ #: ekos/capture/capture.cpp:5671
+ #, kde-format
+ msgid "Parking dome failed, aborting..."
+-msgstr "Ha fallat l'aparcament de la cúpula. S'està interrompent..."
++msgstr "Ha fallat l'aparcament de la cúpula. S'interromp..."
+ 
+ #: ekos/capture/capture.cpp:5686 ekos/scheduler/scheduler.cpp:5767
+ #, kde-format
+@@ -10724,7 +10722,7 @@
+ #: ekos/capture/capture.cpp:5887
+ #, kde-format
+ msgid "An empty image is received, aborting..."
+-msgstr "S'ha rebut una imatge buida, s'està interrompent..."
++msgstr "S'ha rebut una imatge buida, s'interromp..."
+ 
+ #: ekos/capture/capture.cpp:5899
+ #, kde-format
+@@ -10818,7 +10816,7 @@
+ #: ekos/capture/capture.cpp:6521 ekos/focus/focus.cpp:2988
+ #, kde-format
+ msgid "Exposure timeout. Aborting..."
+-msgstr "S'ha excedit el temps d'exposició. S'està interrompent..."
++msgstr "S'ha excedit el temps d'exposició. S'interromp..."
+ 
+ #: ekos/capture/capture.cpp:6526 ekos/focus/focus.cpp:3000
+ #: ekos/guide/guide.cpp:1220
+@@ -12092,7 +12090,7 @@
+ #: ekos/focus/focus.cpp:1268
+ #, kde-format
+ msgid "No reliable star is detected. Aborting..."
+-msgstr "No s'ha detectat cap estrella fiable. S'està interrompent..."
++msgstr "No s'ha detectat cap estrella fiable. S'interromp..."
+ 
+ #: ekos/focus/focus.cpp:1313
+ #, kde-format
+@@ -12245,7 +12243,7 @@
+ #: ekos/focus/focus.cpp:2602
+ #, kde-format
+ msgid "No star was selected. Aborting..."
+-msgstr "No s'ha seleccionat cap estrella. S'està interrompent..."
++msgstr "No s'ha seleccionat cap estrella. S'interromp..."
+ 
+ #: ekos/focus/focus.cpp:2739
+ #, kde-format
+@@ -12253,16 +12251,16 @@
+ msgstr "Enquadrat de l'enfocament"
+ 
+ #: ekos/focus/focus.cpp:3014
+-#, fuzzy, kde-format
++#, kde-format
+ #| msgid "Exposure timeout. Aborting..."
+ msgid "Exposure failure. Aborting..."
+-msgstr "S'ha excedit el temps d'exposició. S'està interrompent..."
++msgstr "Fallada de l'exposició. S'interromp..."
+ 
+ #: ekos/focus/focus.cpp:3026
+-#, fuzzy, kde-format
++#, kde-format
+ #| msgid "Exposure failed. Restarting exposure..."
+ msgid "Exposure failure. Restarting exposure..."
+-msgstr "Ha fallat l'exposició. Es reinicia l'exposició..."
++msgstr "Fallada de l'exposició. Es reinicia l'exposició..."
+ 
+ #: ekos/focus/focus.cpp:3232
+ #, kde-format
+@@ -13211,18 +13209,17 @@
+ #: ekos/guide/guide.cpp:1210
+ #, kde-format
+ msgid "Exposure timeout. Aborting Autoguide."
+-msgstr ""
+-"S'ha excedit el temps d'exposició. S'està interrompent el guiatge automàtic."
++msgstr "S'ha excedit el temps d'exposició. S'interromp el guiatge automàtic."
+ 
+ #: ekos/guide/guide.cpp:1212
+ #, kde-format
+ msgid "Exposure timeout. Aborting Dithering."
+-msgstr "S'ha excedit el temps d'exposició. S'està interrompent el tramat."
++msgstr "S'ha excedit el temps d'exposició. S'interromp el tramat."
+ 
+ #: ekos/guide/guide.cpp:1214
+ #, kde-format
+ msgid "Exposure timeout. Aborting Calibration."
+-msgstr "S'ha excedit el temps d'exposició. S'està interrompent el calibratge."
++msgstr "S'ha excedit el temps d'exposició. S'interromp el calibratge."
+ 
+ #: ekos/guide/guide.cpp:1401
+ #, kde-format
+@@ -13238,7 +13235,7 @@
+ #: ekos/guide/guide.cpp:1452
+ #, kde-format
+ msgid "The CCD does not support Rapid Guiding. Aborting..."
+-msgstr "El CCD no permet el guiatge ràpid. S'està interrompent..."
++msgstr "El CCD no permet el guiatge ràpid. S'interromp..."
+ 
+ #: ekos/guide/guide.cpp:1571
+ #, kde-format
+@@ -13259,12 +13256,12 @@
+ #: ekos/guide/guide.cpp:1672
+ #, kde-format
+ msgid "Mount is parking. Aborting guide..."
+-msgstr "S'està aparcant la muntura. S'està interrompent el guiatge..."
++msgstr "S'està aparcant la muntura. S'interromp el guiatge..."
+ 
+ #: ekos/guide/guide.cpp:1674
+ #, kde-format
+ msgid "Mount is slewing. Aborting guide..."
+-msgstr "S'està orientant la muntura. S'està interrompent el guiatge..."
++msgstr "S'està orientant la muntura. S'interromp el guiatge..."
+ 
+ #: ekos/guide/guide.cpp:1803
+ #, kde-format
+@@ -14184,8 +14181,7 @@
+ #: ekos/guide/internalguide/guider.cpp:449
+ #, kde-format
+ msgid "Lost track of the guide star. Aborting guiding..."
+-msgstr ""
+-"S'ha perdut la traça de l'estrella guia. S'està interrompent el guiatge..."
++msgstr "S'ha perdut la traça de l'estrella guia. S'interromp el guiatge..."
+ 
+ #: ekos/guide/internalguide/guider.cpp:521
+ #, kde-format
+@@ -14483,14 +14479,12 @@
+ #: ekos/guide/internalguide/internalguider.cpp:1114
+ #, kde-format
+ msgid "Lost track of phase shift. Aborting guiding..."
+-msgstr ""
+-"S'ha perdut la traça del desfasament. S'està interrompent el guiatge..."
++msgstr "S'ha perdut la traça del desfasament. S'interromp el guiatge..."
+ 
+ #: ekos/guide/internalguide/internalguider.cpp:1320
+ #, kde-format
+ msgid "Failed to find any suitable guide stars. Aborting..."
+-msgstr ""
+-"Ha fallat en trobar qualsevol estrella guia adequada. S'està interrompent..."
++msgstr "Ha fallat en trobar qualsevol estrella guia adequada. S'interromp..."
+ 
+ #: ekos/guide/internalguide/rcalibration.cpp:227
+ #, kde-format
+@@ -15865,13 +15859,13 @@
+ msgstr "L'obturador està tancant-se..."
+ 
+ #: ekos/observatory/observatory.cpp:632
+-#, fuzzy, kde-format
++#, kde-format
+ #| msgctxt ""
+ #| "%1 magnitude of object, %2 type of sky object (planet, asteroid etc), %3 "
+ #| "name of a constellation"
+ #| msgid "%1 mag %2 in %3"
+ msgid "%1 = %2 @ %3"
+-msgstr "%1 mag %2 a %3"
++msgstr "%1 = %2 @ %3"
+ 
+ #: ekos/observatory/observatory.cpp:667
+ #, kde-format
+@@ -18576,12 +18570,12 @@
+ #: ekos/scheduler/scheduler.cpp:3106
+ #, kde-format
+ msgid "Startup script failed, aborting..."
+-msgstr "L'script d'inici ha fallat. S'està interrompent..."
++msgstr "L'script d'inici ha fallat. S'interromp..."
+ 
+ #: ekos/scheduler/scheduler.cpp:3111
+ #, kde-format
+ msgid "Shutdown script failed, aborting..."
+-msgstr "L'script de tancament ha fallat. S'està interrompent..."
++msgstr "L'script de tancament ha fallat. S'interromp..."
+ 
+ #: ekos/scheduler/scheduler.cpp:3172
+ #, kde-format
+@@ -18591,7 +18585,7 @@
+ #: ekos/scheduler/scheduler.cpp:3174
+ #, kde-format
+ msgid "Shutdown procedure failed, aborting..."
+-msgstr "El procediment de tancament ha fallat. S'està interrompent..."
++msgstr "El procediment de tancament ha fallat. S'interromp..."
+ 
+ #: ekos/scheduler/scheduler.cpp:3274
+ #, kde-format
+--- trunk/l10n-kf5/ca/messages/kde-workspace/kde-cli-tools._desktop_.po #1554036:1554037
+@@ -7,7 +7,7 @@
+ # Sebastià Pla i Sanz <sps@sastia.com>, 2000, 2004, 2005, 2006.
+ # Antoni Bella Pérez <antonibella5@yahoo.com>, 2002, 2003, 2012, 2014, 2016.
+ # Albert Astals Cid <aacid@kde.org>, 2004, 2005.
+-# Josep Ma. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
++# Josep Ma. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2019.
+ # Robert Millan <rmh@aybabtu.com>, 2009.
+ msgid ""
+ msgstr ""
+@@ -14,8 +14,8 @@
+ "Project-Id-Version: kde-cli-tools desktop files\n"
+ "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+ "POT-Creation-Date: 2019-10-19 01:37+0000\n"
+-"PO-Revision-Date: 2016-07-23 07:38+0100\n"
+-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
++"PO-Revision-Date: 2019-10-19 11:18+0100\n"
++"Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
+ "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+ "Language: ca\n"
+ "MIME-Version: 1.0\n"
+@@ -45,9 +45,10 @@
+ #: keditfiletype/org.kde.keditfiletype.desktop:2
+ msgctxt "Name"
+ msgid "keditfiletype"
+-msgstr ""
++msgstr "keditfiletype"
+ 
+ #: keditfiletype/org.kde.keditfiletype.desktop:3
+ msgctxt "GenericName"
+ msgid "File Type Editor"
+-msgstr ""
++msgstr "Editor pels tipus de fitxer"
++
+--- trunk/l10n-kf5/ca/messages/kdemultimedia/kdenlive.po #1554036:1554037
+@@ -10,7 +10,7 @@
+ "Project-Id-Version: kdenlive\n"
+ "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+ "POT-Creation-Date: 2019-10-19 03:07+0200\n"
+-"PO-Revision-Date: 2019-10-17 16:43+0100\n"
++"PO-Revision-Date: 2019-10-19 11:18+0100\n"
+ "Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
+ "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+ "Language: ca\n"
+@@ -10743,10 +10743,10 @@
+ msgstr "Elimina el marcador"
+ 
+ #: src/monitor/view/SceneToolBar.qml:74
+-#, fuzzy, kde-format
++#, kde-format
+ #| msgid "Timeline Toolbar"
+ msgid "Move Toolbar"
+-msgstr "Barra d'eines de la línia de temps"
++msgstr "Barra d'eines de moviments"
+ 
+ #: src/profiles/profileinfo.cpp:88
+ #, kde-format
+@@ -12408,10 +12408,10 @@
+ msgstr "Elimina"
+ 
+ #: src/timeline2/view/qml/ClipMenu.qml:112
+-#, fuzzy, kde-format
++#, kde-format
+ #| msgid "Extract"
+ msgid "Extract Clip"
+-msgstr "Extreu"
++msgstr "Extreu un clip"
+ 
+ #: src/timeline2/view/qml/ClipMenu.qml:133
+ #, kde-format
+--- trunk/l10n-kf5/ca/messages/pim/kalarm.po #1554036:1554037
+@@ -4,7 +4,7 @@
+ # Antoni Bella Pérez <antonibella5@yahoo.com>, 2003, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2019.
+ # Sebastià Pla i Sanz <sps@sastia.com>, 2004, 2006.
+ # Albert Astals Cid <aacid@kde.org>, 2004, 2005.
+-# Josep Ma. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2018.
++# Josep Ma. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2018, 2019.
+ # Manuel Tortosa Moreno <manutortosa@chakra-project.org>, 2009, 2010, 2011.
+ msgid ""
+ msgstr ""
+@@ -11,14 +11,14 @@
+ "Project-Id-Version: kalarm\n"
+ "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+ "POT-Creation-Date: 2019-10-19 03:16+0200\n"
+-"PO-Revision-Date: 2019-07-22 16:38+0200\n"
+-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
++"PO-Revision-Date: 2019-10-19 11:19+0100\n"
++"Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
+ "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+ "Language: ca\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+-"X-Generator: Lokalize 19.07.70\n"
++"X-Generator: Lokalize 2.0\n"
+ "Plural-Forms: nplurals=2; plural=n != 1;\n"
+ "X-Accelerator-Marker: &\n"
+ 
+@@ -6258,19 +6258,19 @@
+ msgstr "Ha fallat en actualitzar el calendari «%1»."
+ 
+ #: resources/resourcebase.cpp:103
+-#, fuzzy, kde-format
++#, kde-format
+ #| msgctxt "@info"
+ #| msgid "Calendar Files"
+ msgctxt "@info"
+ msgid "KAlarm Calendar File"
+-msgstr "Fitxers de calendari"
++msgstr "Fitxer de calendari del KAlarm"
+ 
+ #: resources/resourcebase.cpp:103
+-#, fuzzy, kde-format
++#, kde-format
+ #| msgid "Path to KAlarm directory."
+ msgctxt "@info"
+ msgid "KAlarm Calendar Directory"
+-msgstr "Camí al directori del KAlarm."
++msgstr "Directori de calendari del KAlarm"
+ 
+ #: resources/resourcebase.cpp:104
+ #, kde-format
+--- trunk/l10n-kf5/ca/messages/pim/libmessageviewer.po #1554036:1554037
+@@ -13,7 +13,7 @@
+ "Project-Id-Version: libmessageviewer\n"
+ "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+ "POT-Creation-Date: 2019-10-19 03:22+0200\n"
+-"PO-Revision-Date: 2019-10-18 17:06+0100\n"
++"PO-Revision-Date: 2019-10-19 11:20+0100\n"
+ "Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
+ "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+ "Language: ca\n"
+@@ -335,10 +335,10 @@
+ msgstr "KDIM: no vàlid"
+ 
+ #: dkim-verify/dkimwidgetinfo.cpp:83
+-#, fuzzy, kde-format
++#, kde-format
+ #| msgid "KDIM: Unsigned"
+ msgid "KDIM: Not signed"
+-msgstr "KDIM: Sense signar"
++msgstr "KDIM: No està signat"
+ 
+ #: dkim-verify/dkimwidgetinfo.cpp:99
+ #, kde-format
+@@ -366,16 +366,16 @@
+ msgstr "Mètode no vàlid de consulta."
+ 
+ #: dkim-verify/dkimwidgetinfo.cpp:114
+-#, fuzzy, kde-format
++#, kde-format
+ #| msgid "Invalid header^ canonolization."
+ msgid "Invalid header canonicalization."
+ msgstr "Canonització no vàlida de capçalera."
+ 
+ #: dkim-verify/dkimwidgetinfo.cpp:117
+-#, fuzzy, kde-format
++#, kde-format
+ #| msgid "Invalid body canonolization."
+ msgid "Invalid body canonicalization."
+-msgstr "Canonització no vàlida de cos."
++msgstr "Canonització no vàlida del cos."
+ 
+ #: dkim-verify/dkimwidgetinfo.cpp:120
+ #, kde-format
+

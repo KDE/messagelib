@@ -83,6 +83,12 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
                            << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
                            << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe
                            << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+
+    QTest::addRow("broken4") << QStringLiteral("broken4.mbox")
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+
 }
 
 void DKIMCheckSignatureJobTest::shouldTestMail()
