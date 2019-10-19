@@ -1,0 +1,145 @@
+From vkrause@kde.org Sat Sep 28 11:01:11 2019
+Return-Path: <kde-core-devel-bounces@kde.org>
+Delivered-To: foo@kde.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 28 Sep 2019 13:03:24 +0200
+Received: from unknown (HELO output40.mail.ovh.net) (10.108.115.221)
+  by mail150.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 28 Sep 2019 13:03:24 +0200
+Received: from vr3.mail.ovh.net (unknown [10.101.8.3])
+	by out40.mail.ovh.net (Postfix) with ESMTP id 46gQkg6Rxxz5Wv5Q4
+	for <kde@foo.org>; Sat, 28 Sep 2019 11:03:23 +0000 (UTC)
+Received: from in15.mail.ovh.net (unknown [10.101.4.15])
+	by vr3.mail.ovh.net (Postfix) with ESMTP id 46gQkZ5Y57z3Tq8F
+	for <kde@foo.org>; Sat, 28 Sep 2019 11:03:18 +0000 (UTC)
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=kde-core-devel-bounces@kde.org; receiver=<UNKNOWN> 
+Authentication-Results: in15.mail.ovh.net;
+	dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="AZC7Txn9";
+	dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in15.mail.ovh.net (Postfix) with ESMTPS id 46gQkZ4fkYzbbc5
+	for <kde@foo.org>; Sat, 28 Sep 2019 11:03:18 +0000 (UTC)
+Received: from letterbox.kde.org (localhost.kde.org [127.0.0.1])
+	by letterbox.kde.org (Postfix) with ESMTP id 180CE282888;
+	Sat, 28 Sep 2019 12:03:15 +0100 (BST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kde.org; s=lists;
+	t=1569668598; bh=e3aLUQVG3OwflY76Gaqfzg4t6H5c3VfoCUirVPzjbqQ=;
+	h=From:To:Subject:Date:List-Id:List-Unsubscribe:List-Post:List-Help:
+	 List-Subscribe:From;
+	b=AZC7Txn9fee0QS5lbe1KxcVfHNCAfr3zpAjC8SS4MNwxV4FsPesBQtBSNEDQT1ykY
+	 aa//8yZ1klapQZUooKnK6dR8H9TibuYHT120EwT2/2wukxAKqgsV5VgeOdY9cOm7Rb
+	 TxuPRf7W1VfGfHO7STBN2GgHJrVBlKx4qC4ox0SXBLw/kRpb0OmAAen8+hR3V3Du3n
+	 LaisSebkcOIrP/tO8fpyr/Aj8jXDj1r8FnfwYjRsmdvAB3bHfcGiYOJ/nRXktelrsL
+	 Yi2trW2gzLA3hKw5WKcmOb+jNAzLmqT4tazpRwA+v+wPWQL99EqUZ6sbJYds7Os2C4
+	 xYf+jIRI9Cs0A==
+X-Original-To: kde-core-devel@kde.org
+Delivered-To: kde-core-devel@localhost
+Received: from h2670809.stratoserver.net (deltatauchi.de [85.214.75.115])
+ by letterbox.kde.org (Postfix) with ESMTP id 9711E280983
+ for <kde-core-devel@kde.org>; Sat, 28 Sep 2019 12:03:02 +0100 (BST)
+Authentication-Results: letterbox.kde.org;
+ dmarc=none (p=none dis=none) header.from=kde.org
+Authentication-Results: letterbox.kde.org;
+ spf=fail smtp.mailfrom=vkrause@kde.org
+Received: from localhost (localhost [127.0.0.1])
+ by h2670809.stratoserver.net (Postfix) with ESMTP id 4817F1BAA0062
+ for <kde-core-devel@kde.org>; Sat, 28 Sep 2019 13:03:02 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at h2670809.stratoserver.net
+Received: from h2670809.stratoserver.net ([127.0.0.1])
+ by localhost (h2670809.stratoserver.net [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 9EDsv0ClM2G3 for <kde-core-devel@kde.org>;
+ Sat, 28 Sep 2019 13:03:00 +0200 (CEST)
+Received: from vkpc5.localnet (ip5b407612.dynamic.kabel-deutschland.de
+ [91.64.118.18])
+ by h2670809.stratoserver.net (Postfix) with ESMTPSA id E86B71BAA0060
+ for <kde-core-devel@kde.org>; Sat, 28 Sep 2019 13:03:00 +0200 (CEST)
+From: Volker Krause <vkrause@kde.org>
+To: kde-core-devel@kde.org
+Subject: ELF Dissector in kdereview
+Date: Sat, 28 Sep 2019 13:01:11 +0200
+Message-ID: <2690504.e9J7NaK4W3@vkpc5>
+Organization: KDE
+X-Face: rgzmh}R?iq<z7H#sc'l86vzjJ"{\d6`}N5x*9!HFBn`A^tnU?<Q%ruT(jt5PG1$td=GDXe
+ XsXW(lVZ%Z0.2|w-)y[+@HI})\pNZEMi/UY_D";
+ tt:5C'5&O9_xAqO!$HA8Ks-5}uMz%`D "2{s`Mt$}N]I`0UI=0;
+ '4v"!]XgBET9Q%cB?\vr#1=5X3,[a3k@083{n9H0m~Ey5_5xOb; @06MoJe"3/Rfe[eki
+MIME-Version: 1.0
+Content-Type: multipart/signed; boundary="nextPart3014338.aeNJFYEL58";
+ micalg="pgp-sha1"; protocol="application/pgp-signature"
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-BeenThere: kde-core-devel@kde.org
+X-Mailman-Version: 2.1.26
+Precedence: list
+List-Id: KDE Core Development <kde-core-devel.kde.org>
+List-Unsubscribe: <https://mail.kde.org/mailman/options/kde-core-devel>,
+ <mailto:kde-core-devel-request@kde.org?subject=unsubscribe>
+List-Post: <mailto:kde-core-devel@kde.org>
+List-Help: <mailto:kde-core-devel-request@kde.org?subject=help>
+List-Subscribe: <https://mail.kde.org/mailman/listinfo/kde-core-devel>,
+ <mailto:kde-core-devel-request@kde.org?subject=subscribe>
+Errors-To: kde-core-devel-bounces@kde.org
+Sender: "kde-core-devel" <kde-core-devel-bounces@kde.org>
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 4464756084874685907
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: 0
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedufedrfeekgdefhecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecu
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: OK
+
+--nextPart3014338.aeNJFYEL58
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="us-ascii"
+
+Hi,
+
+ELF Dissector has been moved to kdereview for the usual review process.
+
+https://phabricator.kde.org/source/elf-dissector/
+
+ELF Dissector is a static analysis tool for ELF libraries and executables, for 
+doing things like inspecting forward and backward dependencies (on a library 
+or symbol level), identifying load-time performance bottlenecks such as 
+expensive static constructors or excessive relocations, or size profiling of 
+ELF files.
+
+ELF Dissector has been living in playground for more than 6 years because I 
+was sloppy following the right process. Since it's in active use by a number 
+of people, is actively maintained and remains relevant and useful I think it's 
+time to finally rectify this :)
+
+Regarding its final destination, extragear/sdk looks like the obvious 
+candidate, as its such a niche tool that being part of the KDE Application 
+bundle is probably hard to argue. Once KDE Applications and the "release 
+service" are sufficiently decoupled, I'd of course be more than happy to have 
+it covered by the automatic release process.
+
+Regarding distribution, there is one annoying aspect, its dependency on semi-
+public binutils API for accessing the C++ symbol demangling AST. That works on 
+conventional Linux distributions, but I failed to make it work as a Flatpak 
+due to that.
+
+Regarding portability, this currently only builds on ELF-based systems, 
+although theoretically this could be useful on a Windows host used for 
+embedded Linux development too. It's not impossible to make this work 
+eventually I think, but it's probably quite some work.
+
+Thanks,
+Volker
+--nextPart3014338.aeNJFYEL58
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iF0EABECAB0WIQQAnu3FVHA48KjZ07R/lszWTRLSRwUCXY89dwAKCRB/lszWTRLS
+R4ZwAJ4gsHVMhioBz0FXRUOprXyPl4zF8QCeOI9ExepM6mg3ceTg5KjRtEA/3y8=
+=ld+E
+-----END PGP SIGNATURE-----
+
+--nextPart3014338.aeNJFYEL58--
+
+
+
+

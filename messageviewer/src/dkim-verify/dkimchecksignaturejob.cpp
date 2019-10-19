@@ -27,6 +27,7 @@
 #include "dkimheaderparser.h"
 #include <QDateTime>
 #include <QCryptographicHash>
+#include <QFile>
 #include <Qca-qt5/QtCrypto/qca_publickey.h>
 //see https://tools.ietf.org/html/rfc6376
 
@@ -62,12 +63,6 @@ QString DKIMCheckSignatureJob::headerCanonizationResult() const
 
 void DKIMCheckSignatureJob::start()
 {
-//    if (!mMessage) {
-//        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-//        Q_EMIT result(createCheckResult());
-//        deleteLater();
-//        return;
-//    }
     if (mMessageItem.isValid() && !mMessage) {
         if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
             mMessage = mMessageItem.payload<KMime::Message::Ptr>();
@@ -136,6 +131,16 @@ void DKIMCheckSignatureJob::start()
         // truncated body to the length specified in the "l=" tag
         mBodyCanonizationResult = mBodyCanonizationResult.left(mDkimInfo.bodyLengthCount());
     }
+    if (mBodyCanonizationResult.startsWith(QLatin1Literal("\r\n"))) { //Remove it from start
+        mBodyCanonizationResult = mBodyCanonizationResult.right(mBodyCanonizationResult.length() -2 );
+    }
+#if 0
+    QFile caFile(QStringLiteral("/tmp/bodycanon-kmail.txt"));
+    caFile.open(QIODevice::WriteOnly | QIODevice::Text);
+    QTextStream outStream(&caFile);
+    outStream << mBodyCanonizationResult;
+    caFile.close();
+#endif
 
     QByteArray resultHash;
     if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha1")) {
@@ -194,7 +199,6 @@ void DKIMCheckSignatureJob::start()
     // add DKIM-Signature header to the hash input
     // with the value of the "b=" tag (including all surrounding whitespace) deleted
 
-    qDebug() << " headerCanonizationResult" << mHeaderCanonizationResult;
     //Add dkim-signature as lowercase
 
     QString dkimValue = mDkimValue;
@@ -210,7 +214,6 @@ void DKIMCheckSignatureJob::start()
         break;
     }
 
-    qDebug() << " headerCanonizationResult after " << mHeaderCanonizationResult;
     if (mSaveKey) {
         const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
         if (keyValue.isEmpty()) {
@@ -264,7 +267,9 @@ QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
             only possible when using extensions to SMTP or non-SMTP transport
             mechanisms.)
         */
-    return MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString::fromUtf8(mMessage->body()));
+    //qDebug() << "mMessage->body() " << mMessage->encodedBody();
+    const QString returnValue = MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString::fromUtf8(mMessage->encodedBody()));
+    return returnValue;
 }
 
 QString DKIMCheckSignatureJob::headerCanonizationSimple() const
