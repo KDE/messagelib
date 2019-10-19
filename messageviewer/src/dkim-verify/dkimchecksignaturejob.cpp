@@ -243,7 +243,7 @@ QString DKIMCheckSignatureJob::bodyCanonizationSimple() const
     //       Note that a completely empty or missing body is canonicalized as a
     //       single "CRLF"; that is, the canonicalized length will be 2 octets.
 
-    return MessageViewer::DKIMUtil::bodyCanonizationSimple(QString::fromLatin1(mMessage->body()));
+    return MessageViewer::DKIMUtil::bodyCanonizationSimple(QString::fromLatin1(mMessage->encodedBody()));
 }
 
 QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
@@ -267,7 +267,6 @@ QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
             only possible when using extensions to SMTP or non-SMTP transport
             mechanisms.)
         */
-    //qDebug() << "mMessage->body() " << mMessage->encodedBody();
     const QString returnValue = MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString::fromUtf8(mMessage->encodedBody()));
     return returnValue;
 }
@@ -513,7 +512,14 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         //qDebug() << " s base 64" << s.toLocal8Bit().toBase64();
         QCA::SecureArray sec = mHeaderCanonizationResult.toLatin1();
         const QByteArray ba = QCA::base64ToArray(s);
-        if (!rsaPublicKey.verifyMessage(sec, ba, QCA::EMSA3_SHA256, QCA::DERSequence)) {
+        QCA::SignatureAlgorithm sigAlg;
+        //TODO replace by enum !
+        if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha1")) {
+            sigAlg = QCA::EMSA3_SHA1;
+        } else if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha256")) {
+            sigAlg = QCA::EMSA3_SHA256;
+        }
+        if (!rsaPublicKey.verifyMessage(sec, ba, sigAlg, QCA::DERSequence)) {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature invalid";
             // then signature is invalid
             mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;

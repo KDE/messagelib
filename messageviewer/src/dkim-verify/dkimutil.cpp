@@ -66,7 +66,15 @@ QString MessageViewer::DKIMUtil::bodyCanonizationSimple(QString body)
 
     //       Note that a completely empty or missing body is canonicalized as a
     //       single "CRLF"; that is, the canonicalized length will be 2 octets.
-    return body.replace(QRegularExpression(QLatin1String("((\r\n)+)?$")), QLatin1String("\r\n"));
+    body.replace(QLatin1String("\n"), QLatin1String("\r\n"));
+    body.replace(QRegularExpression(QLatin1String("((\r\n)+)?$")), QLatin1String("\r\n"));
+    if (body.endsWith(QLatin1Literal("\r\n"))) { //Remove it from start
+        body.chop(2);
+    }
+    if (body.isEmpty()) {
+        body = QLatin1String("\r\n");
+    }
+    return body;
 }
 
 QByteArray MessageViewer::DKIMUtil::generateHash(const QByteArray &body, QCryptographicHash::Algorithm algo)
@@ -111,8 +119,10 @@ QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &header
     newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]+\r\n")), QStringLiteral("\r\n"));
     //Perhaps remove tab after headername and before value name
     //newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]*:[ \t]")), QStringLiteral(":"));
-    if (newHeaderName == QLatin1String("content-type")) {
-        newHeaderValue.remove(QLatin1Char('"'));
+    if (newHeaderName == QLatin1String("content-type")) { //Remove quote in charset
+        if (newHeaderValue.contains(QLatin1String("charset=\""))) {
+            newHeaderValue.remove(QLatin1Char('"'));
+        }
     }
     return newHeaderName + QLatin1Char(':') + newHeaderValue;
 }

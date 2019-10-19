@@ -1,0 +1,559 @@
+From newsletter@abonnement.radins.com Mon Oct 14 16:01:00 2019
+Return-Path: <giys2mjugezdonznguytgmbtg44a@abonnement.radins.com>
+Delivered-To: kde@kde.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 14 Oct 2019 18:01:21 +0200
+Received: from unknown (HELO output31.mail.ovh.net) (10.108.97.187)
+  by mail666.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 14 Oct 2019 18:01:21 +0200
+Received: from vr19.mail.ovh.net (unknown [10.101.8.19])
+	by out31.mail.ovh.net (Postfix) with ESMTP id 46sNb25LJNz5nbPF0
+	for <kde@kde.org>; Mon, 14 Oct 2019 16:01:18 +0000 (UTC)
+Received: from in76.mail.ovh.net (unknown [10.101.4.76])
+	by vr19.mail.ovh.net (Postfix) with ESMTP id 46sNZx4L27zgN5Y9
+	for <kde@kde.org>; Mon, 14 Oct 2019 16:01:13 +0000 (UTC)
+Received-SPF: Permerror (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=giys2mjugezdonznguytgmbtg44a@abonnement.radins.com; receiver=<UNKNOWN> 
+Authentication-Results: in76.mail.ovh.net;
+	dkim=pass (1024-bit key; unprotected) header.d=abonnement.radins.com header.i=@abonnement.radins.com header.b="ABKgPqPe";
+	dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in76.mail.ovh.net (Postfix) with ESMTPS id 46sNZx3ff0zQpHvY
+	for <kde@kde.org>; Mon, 14 Oct 2019 16:01:13 +0000 (UTC)
+Received: from regiesmtp52.odiso.net (regiesmtp52.odiso.net [89.248.209.112])
+	by letterbox.kde.org (Postfix) with ESMTP id 0B3FD2814A0
+	for <montel@kde.org>; Mon, 14 Oct 2019 17:01:05 +0100 (BST)
+Authentication-Results: letterbox.kde.org; dmarc=pass (p=none dis=none) header.from=abonnement.radins.com
+Authentication-Results: letterbox.kde.org; spf=fail smtp.mailfrom=giys2mjugezdonznguytgmbtg44a@abonnement.radins.com
+Authentication-Results: letterbox.kde.org;
+	dkim=pass (1024-bit key; unprotected) header.d=abonnement.radins.com header.i=@abonnement.radins.com header.b="ABKgPqPe";
+	dkim-atps=neutral
+Message-Id: <1571068860.giys2mjugezdonznguytgmbtg44a@abonnement.radins.com>
+Feedback-Id: 52401:21
+Dkim-Signature: v=1; a=rsa-sha1; c=relaxed; d=abonnement.radins.com; h=message-id:list-unsubscribe:from:to:reply-to:content-type:subject:content-transfer-encoding:mime-version:date; s=selector1; bh=vyAg5eFfq019WlDt9csu4bJMC54=; b=ABKgPqPe/MOGdgR2TJuiVNTLugsL8q/+ky/JxOxwZxnsPbtFnyJ+Y7Gk8bfcBL9myKPNqe7bU6Uy4IiNptn+v34rhVApm6ccoc44UXe/2A5D+6CPJHjFyf/ggjgF/BtQGYoMeQwj2+F4+QRxHSPldAcWqLCwlcRN25nPgiSAvWg=
+List-Unsubscribe: <mailto:giys2mjugezdonznguytgmbtg44a@lu.radins.com>
+Precedence: bulk
+From: "=?UTF-8?Q?Radins=2Ecom?=" <newsletter@abonnement.radins.com>
+To: montel@kde.org
+Reply-To: julie@radins.com
+Content-Type: multipart/alternative; boundary="_----------=_15710688602465317"
+Subject: =?UTF-8?Q?Vous_nous_manquez_!?=
+Content-Transfer-Encoding: binary
+MIME-Version: 1.0
+Date: Mon, 14 Oct 2019 18:01:00 +0200
+X-Mailer: Mindbaz
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 11225503549443338195
+X-VR-SPAMSTATE: MCE
+X-VR-SPAMSCORE: 17
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedufedrjedugdeljecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecundfotefknffkpffiucdludejmd
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: MCE
+
+This is a multi-part message in MIME format.
+
+--_----------=_15710688602465317
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+
+=0D
+
+Que devenez-vous ?	Consulter en ligne
+Radins.com
+Bonjour robert,
+Vous semblez ne plus vous int=C3=A9resser =C3=A0 nos newsletters...
+
+Que vous arrive t'il ? Vous ne voulez plus faire d'=C3=A9conomies ?=20
+
+Expliquez-nous ce qui ne va pas afin que l'on am=C3=A9liore notre service. =
+Votre avis nous est tr=C3=A8s important !
+  DONNER MON AVIS  =E2=86=92=20
+Cet email a =C3=A9t=C3=A9 envoy=C3=A9 =C3=A0 l'adresse antoine.aillard@m6.f=
+r par Radins.com
+G=C3=A9rer mes abonnements Newsletter
+Exp=C3=A9diteur : M6 Web,89 Avenue du G=C3=A9n=C3=A9ral de Gaulle, 92575 Ne=
+uilly Sur Seine Cedex - Soci=C3=A9t=C3=A9 =C3=A9ditrice du site Radins.com.=
+ Conform=C3=A9ment =C3=A0 la loi Informatiques et Libert=C3=A9s du 6 janvie=
+r 1978, vous b=C3=A9n=C3=A9ficiez d'un droit d'acc=C3=A8s, de rectification=
+ et de suppression des donn=C3=A9es personnelles qui vous concernent.
+Vous pouvez exercer ces droits aupr=C3=A8s de M6 WEB =C3=A0 l'adresse suiva=
+nte : Service juridique, 89 avenue Charles De Gaulle, 92 575 Neuilly Cedex,=
+ =C3=A0 laquelle vous pouvez =C3=A9galement exercer un droit d'opposition =
+=C3=A0 recevoir des offres commerciales. Vous pouvez =C3=A9galement nous co=
+ntacter par courrier =C3=A9lectronique =C3=A0 l=E2=80=99adresse suivante : =
+julie@radins.com=0D
+=0D
+
+--_----------=_15710688602465317
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+
+<!-- THIS EMAIL WAS BUILT AND TESTED WITH LITMUS http://litmus.com -->=0D
+<!-- IT WAS RELEASED UNDER THE MIT LICENSE https://opensource.org/licenses/=
+MIT -->=0D
+<!-- QUESTIONS? TWEET US @LITMUSAPP -->=0D
+<!DOCTYPE html>=0D
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"=
+><head>=0D
+    <meta charset=3D"utf-8"> <!-- utf-8 works for most cases -->=0D
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width"> <!-- Forcing =
+initial-scale shouldn't be necessary -->=0D
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <!-- Use th=
+e latest (edge) version of IE rendering engine -->=0D
+    <meta name=3D"x-apple-disable-message-reformatting">  <!-- Disable auto=
+-scale in iOS 10 Mail entirely -->=0D
+    <title>Radins</title> <!-- The title tag shows in email notifications, =
+like Android 4.4. -->=0D
+=0D
+    <!-- Web Font / @font-face : BEGIN -->=0D
+    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely r=
+emoved. -->=0D
+=0D
+    <!-- Desktop Outlook chokes on web font references and defaults to Time=
+s New Roman, so we force a safe fallback font. -->=0D
+    <!--[if mso]>=0D
+        <style>=0D
+            * {=0D
+                font-family: Arial, sans-serif !important;=0D
+            }=0D
+        </style>=0D
+    <![endif]-->=0D
+=0D
+    <!-- All other clients get the webfont reference; some will render the =
+font and others will silently fail to the fallbacks. More on that here: htt=
+p://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->=0D
+    <!--[if !mso]><!-->=0D
+        <link href=3D"https://fonts.googleapis.com/css?family=3DMontserrat:=
+300,500" rel=3D"stylesheet">=0D
+    <!--<![endif]-->=0D
+=0D
+    <!-- Web Font / @font-face : END -->=0D
+=0D
+    <!-- CSS Reset -->=0D
+    <style>=0D
+=0D
+        /* What it does: Remove spaces around the email design added by som=
+e email clients. */=0D
+        /* Beware: It can remove the padding / margin and add a background =
+color to the compose a reply window. */=0D
+        html,=0D
+        body {=0D
+            margin: 0 auto !important;=0D
+            padding: 0 !important;=0D
+            height: 100% !important;=0D
+            width: 100% !important;=0D
+        }=0D
+=0D
+        /* What it does: Stops email clients resizing small text. */=0D
+        * {=0D
+            -ms-text-size-adjust: 100%;=0D
+            -webkit-text-size-adjust: 100%;=0D
+        }=0D
+=0D
+        /* What it does: Centers email on Android 4.4 */=0D
+        div[style*=3D"margin: 16px 0"] {=0D
+            margin:0 !important;=0D
+        }=0D
+=0D
+        /* What it does: Stops Outlook from adding extra spacing to tables.=
+ */=0D
+        table,=0D
+        td {=0D
+            mso-table-lspace: 0pt !important;=0D
+            mso-table-rspace: 0pt !important;=0D
+        }=0D
+=0D
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail tab=
+le alignment bug. Applies table-layout to the first 2 tables then removes f=
+or anything nested deeper. */=0D
+        table {=0D
+            border-spacing: 0 !important;=0D
+            border-collapse: collapse !important;=0D
+            table-layout: fixed !important;=0D
+            margin: 0 auto !important;=0D
+        }=0D
+        table table table {=0D
+            table-layout: auto;=0D
+        }=0D
+=0D
+        /* What it does: Uses a better rendering method when resizing image=
+s in IE. */=0D
+        img {=0D
+            -ms-interpolation-mode:bicubic;=0D
+        }=0D
+=0D
+        /* What it does: A work-around for email clients meddling in trigge=
+red links. */=0D
+        *[x-apple-data-detectors],  /* iOS */=0D
+        .x-gmail-data-detectors,    /* Gmail */=0D
+        .x-gmail-data-detectors *,=0D
+        .aBn {=0D
+            border-bottom: 0 !important;=0D
+            cursor: default !important;=0D
+            color: inherit !important;=0D
+            text-decoration: none !important;=0D
+            font-size: inherit !important;=0D
+            font-family: inherit !important;=0D
+            font-weight: inherit !important;=0D
+            line-height: inherit !important;=0D
+        }=0D
+=0D
+        /* What it does: Prevents Gmail from displaying an download button =
+on large, non-linked images. */=0D
+        .a6S {=0D
+            display: none !important;=0D
+            opacity: 0.01 !important;=0D
+        }=0D
+        /* If the above doesn't work, add a .g-img class to any image in qu=
+estion. */=0D
+        img.g-img + div {=0D
+            display:none !important;=0D
+           }=0D
+=0D
+        /* What it does: Prevents underlining the button text in Windows 10=
+ */=0D
+        .button-link {=0D
+            text-decoration: none !important;=0D
+        }=0D
+=0D
+        /* What it does: Removes right gutter in Gmail iOS app: https://git=
+hub.com/TedGoas/Cerberus/issues/89  */=0D
+        /* Create one of these media queries for each additional viewport s=
+ize you'd like to fix */=0D
+        /* Thanks to Eric Lepetit @ericlepetitsf) for help troubleshooting =
+*/=0D
+        @media only screen and (min-device-width: 375px) and (max-device-wi=
+dth: 413px) { /* iPhone 6 and 6+ */=0D
+            .email-container {=0D
+                min-width: 375px !important;=0D
+            }=0D
+        }=0D
+=0D
+    </style>=0D
+=0D
+    <!-- Progressive Enhancements -->=0D
+    <style>=0D
+=0D
+        /* What it does: Hover styles for buttons */=0D
+        .button-td,=0D
+        .button-a {=0D
+            transition: all 100ms ease-in;=0D
+        }=0D
+        .button-td:hover,=0D
+        .button-a:hover {=0D
+            background: #555555 !important;=0D
+            border-color: #555555 !important;=0D
+        }=0D
+=0D
+        /* Media Queries */=0D
+        @media screen and (max-width: 480px) {=0D
+=0D
+            /* What it does: Forces elements to resize to the full width of=
+ their container. Useful for resizing images beyond their max-width. */=0D
+            .fluid {=0D
+                width: 100% !important;=0D
+                max-width: 100% !important;=0D
+                height: auto !important;=0D
+                margin-left: auto !important;=0D
+                margin-right: auto !important;=0D
+            }=0D
+=0D
+            /* What it does: Forces table cells into full-width rows. */=0D
+            .stack-column,=0D
+            .stack-column-center {=0D
+                display: block !important;=0D
+                width: 100% !important;=0D
+                max-width: 100% !important;=0D
+                direction: ltr !important;=0D
+            }=0D
+            /* And center justify these ones. */=0D
+            .stack-column-center {=0D
+                text-align: center !important;=0D
+            }=0D
+=0D
+            /* What it does: Generic utility class for centering. Useful fo=
+r images, buttons, and nested tables. */=0D
+            .center-on-narrow {=0D
+                text-align: center !important;=0D
+                display: block !important;=0D
+                margin-left: auto !important;=0D
+                margin-right: auto !important;=0D
+                float: none !important;=0D
+            }=0D
+            table.center-on-narrow {=0D
+                display: inline-block !important;=0D
+            }=0D
+=0D
+            /* What it does: Adjust typography on small screens to improve =
+readability */=0D
+            .email-container p {=0D
+                font-size: 17px !important;=0D
+                line-height: 22px !important;=0D
+            }=0D
+            .email-container p.small {=0D
+                font-size: 14px !important;=0D
+                line-height: 18px !important;=0D
+            }=0D
+            img[class=3D"lmFluidImage" ]{=0D
+                width: 100% !important;=0D
+                height: auto !important;=0D
+            }=0D
+        }=0D
+=0D
+    </style>=0D
+=0D
+    <!-- What it does: Makes background images in 72ppi Outlook render at c=
+orrect size. -->=0D
+    <!--[if gte mso 9]>=0D
+    <xml>=0D
+        <o:OfficeDocumentSettings>=0D
+            <o:AllowPNG/>=0D
+            <o:PixelsPerInch>96</o:PixelsPerInch>=0D
+        </o:OfficeDocumentSettings>=0D
+    </xml>=0D
+    <![endif]-->=0D
+=0D
+</head>=0D
+<body width=3D"100%" bgcolor=3D"#F1F1F1" style=3D"margin: 0; mso-line-heigh=
+t-rule: exactly;"><A href=3D"http://t.radins.com/t/?u=3Dac6f67f9e6ac22d8c73=
+3ed2fedcc900e&p=3DsBRohlognbIxTjawbxAL7NGt8AxlxxprCzosVUKdz5GTh1IYiF2pfpo4Y=
+WrSj6b9ZT8CJOYLr6Hazl8wHbGjPg" style=3D"text-decoration:none"><img src=3D"h=
+ttp://t.radins.com/o/?t=3Dm-f85q-m5imx" width=3D"1" height=3D"1" alt=3D""/>=
+ =0D
+<img src=3D"http://beacon.krxd.net/usermatch.gif?partner=3Doxygem&partner_u=
+id=3DOSD.mujxfz_dx_afj_yrb_tqq" width=3D"1" height=3D"1"/></A>  =0D
+    <center style=3D"width: 100%; background: #F1F1F1; text-align: left;">=
+=0D
+=0D
+        <!-- Visually Hidden Preheader Text : BEGIN -->=0D
+        <div style=3D"display:none;font-size:1px;line-height:1px;max-height=
+:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans=
+-serif;">=0D
+            Que devenez-vous ? Que se passe t'il ?=0D
+        </div>=0D
+        <!-- Visually Hidden Preheader Text : END -->=0D
+=0D
+        <!--=0D
+            Set the email width. Defined in two places:=0D
+            1. max-width for all clients except Desktop Windows Outlook, al=
+lowing the email to squish on narrow but never go wider than 680px.=0D
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.=
+=0D
+            Note: The Fluid and Responsive templates have a different width=
+ (600px). The hybrid grid is more "fragile", and I've found that 680px is a=
+ good width. Change with caution.=0D
+        -->=0D
+        <div style=3D"max-width: 680px; margin: auto;" class=3D"email-conta=
+iner">=0D
+            <!--[if mso]>=0D
+            <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" width=3D"680" align=3D"center">=0D
+            <tr>=0D
+            <td>=0D
+            <![endif]-->=0D
+=0D
+            <!-- Email Body : BEGIN -->=0D
+            <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" align=3D"center" width=3D"100%" style=3D"max-width: 680px;" =
+class=3D"email-container">=0D
+=0D
+                 <!-- FOOTER : BEGIN -->=0D
+                <tr mc:repeatable=3D"module-7">=0D
+                    <td bgcolor=3D"#f1f1f1">=0D
+                        <table role=3D"presentation" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" width=3D"100%">=0D
+                            <tr>=0D
+                                <td style=3D"padding: 5px 0px 5px 0px; font=
+-family: sans-serif; font-size: 11px; line-height: 14px; color: #999999; te=
+xt-align: left; font-weight:normal;">=0D
+                                    <span style=3D"margin: 0;" mc:edit=3D"p=
+-13" mc:hideable=3D"p-13">Que devenez-vous ?</span>=0D
+                                </td>=0D
+=0D
+                                <td style=3D"padding: 5px 0px 5px 0px; font=
+-family: sans-serif; font-size: 11px; line-height: 14px; color: #999999; te=
+xt-align: right; font-weight:normal;">=0D
+                                    <span style=3D"margin: 0;" mc:edit=3D"p=
+-13" mc:hideable=3D"p-13"><a href=3D"http://t.radins.com/c/?t=3D2576b24-m-9=
+w8fq-f85q-m5imx" style=3D"color:#999999;text-decoration:none;">Consulter en=
+ ligne</a></span>=0D
+                                </td>=0D
+                            </tr>=0D
+=0D
+                        </table>=0D
+                    </td>=0D
+                </tr>=0D
+                <!-- FOOTER : END -->=0D
+=0D
+=0D
+               =0D
+=0D
+                <!-- HEADER : BEGIN -->=0D
+                <tr mc:repeatable=3D"module-1">=0D
+                    <td bgcolor=3D"#fe570e">=0D
+                        <table role=3D"presentation" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" width=3D"100%">=0D
+                            <tbody><tr>=0D
+                                <td style=3D"padding: 18px 40px 18px 40px; =
+text-align: center;">=0D
+                                    <img src=3D"https://img.radins.com/emai=
+ling/Edito/panel/logo-radins.jpg" width=3D"171" height=3D"50" alt=3D"Radins=
+.com" border=3D"0" style=3D"height: auto; font-family: sans-serif; font-siz=
+e: 15px; line-height: 20px; color: #555555;" mc:edit=3D"img-0" mc:hideable=
+=3D"img-0">=0D
+                                </td>=0D
+                            </tr>=0D
+                        </table>=0D
+                    </td>=0D
+                </tr>=0D
+                <!-- HEADER : END -->=0D
+=0D
+=0D
+                <!-- INTRO : BEGIN -->=0D
+                <tr mc:repeatable=3D"module-3">=0D
+                    <td bgcolor=3D"#ffffff">=0D
+                        <table role=3D"presentation" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" width=3D"100%">                        =0D
+                            =0D
+                            <tr>=0D
+                                <td style=3D"padding: 20px 40px 20px 40px; =
+text-align: left;">=0D
+                                    <h1 style=3D"margin: 0; font-family: 'M=
+ontserrat', sans-serif; font-size: 20px; line-height: 26px; color: #333333;=
+ font-weight: bold;" mc:edit=3D"h1-1" mc:hideable=3D"h1-1">Bonjour,</h1>=0D
+                                </td>=0D
+                            </tr>=0D
+                            <tr>=0D
+                                <td style=3D"padding: 0px 40px 20px 40px; f=
+ont-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;=
+ text-align: left; font-weight:normal;">=0D
+                                    <p style=3D"margin: 0;" mc:edit=3D"p-2"=
+ mc:hideable=3D"p-2">=0D
+                                    Vous semblez ne plus vous int=C3=A9ress=
+er =C3=A0 nos newsletters...<br><br> Que vous arrive t'il ? Vous ne voulez =
+plus faire d'=C3=A9conomies ? <br><br>Expliquez-nous ce qui ne va pas afin =
+que l'on am=C3=A9liore notre service. Votre avis nous est tr=C3=A8s importa=
+nt !=0D
+                                    =0D
+                                    </p>=0D
+                                </td>=0D
+                            </tr>=0D
+                            <tr>=0D
+                                <td valign=3D"middle" align=3D"left" style=
+=3D"text-align: center; padding: 0px 40px 20px 40px;">=0D
+=0D
+                                    <!-- Button : BEGIN -->=0D
+                                    <table role=3D"presentation" align=3D"l=
+eft" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"center-on-na=
+rrow">=0D
+                                        <tr>=0D
+                                            <td style=3D"border-radius: 50p=
+x; background: #fe570e; text-align: center;" class=3D"button-td">=0D
+                                                <a href=3D"http://t.radins.=
+com/c/?t=3D2576b24-m-9w8f0-f85q-m5imx" style=3D"background: #fe570e; border=
+: 15px solid #fe570e; font-family: 'Montserrat', sans-serif; font-size: 14p=
+x; line-height: 1.1; text-align: center; text-decoration: none; display: bl=
+ock; border-radius: 50px; font-weight: bold;" class=3D"button-a" mc:edit=3D=
+"a-1" mc:hideable=3D"a-1" target=3D"_blank">=0D
+                                                    <span style=3D"color:#f=
+fffff;" class=3D"button-link">&nbsp;&nbsp;DONNER MON AVIS&nbsp;<span style=
+=3D"font-size:14px;font-weight:bold;">&nbsp;&rarr;</span>&nbsp; </span>=0D
+                                                </a>=0D
+                                            </td>=0D
+                                        </tr>=0D
+                                    </table>=0D
+                                    <!-- Button : END -->=0D
+=0D
+                                </td>=0D
+                            </tr>=0D
+=0D
+                        </table>=0D
+                    </td>=0D
+                </tr>=0D
+                <!-- INTRO : END -->=0D
+=0D
+                <!-- CTA : BEGIN -->=0D
+                <tr mc:repeatable=3D"module-5">=0D
+                    <td bgcolor=3D"#d6d6d6">=0D
+                        <table role=3D"presentation" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" width=3D"100%">=0D
+                            <tr>=0D
+                                <td style=3D"padding: 0px 40px 3px 40px; fo=
+nt-family: sans-serif; font-size: 17px; line-height: 23px; text-align: cent=
+er; font-weight:normal;">=0D
+                                </td>=0D
+                            </tr>=0D
+=0D
+                        </table>=0D
+                    </td>=0D
+                </tr>=0D
+                <!-- CTA : END -->=0D
+=0D
+                <!-- FOOTER : BEGIN -->=0D
+                <tr mc:repeatable=3D"module-7">=0D
+                    <td bgcolor=3D"#f1f1f1">=0D
+                        <table role=3D"presentation" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" width=3D"100%">=0D
+                            <tr>=0D
+                                <td style=3D"padding: 40px 40px 10px 40px; =
+font-family: sans-serif; font-size: 12px; line-height: 18px; color: #666666=
+; text-align: center; font-weight:normal;">=0D
+                                    <p style=3D"margin: 0;" mc:edit=3D"p-10=
+" mc:hideable=3D"p-10">Cet email a =C3=A9t=C3=A9 envoy=C3=A9 =C3=A0 l'adres=
+se <strong>montel@kde.org</strong> par Radins.com</p>=0D
+                                </td>=0D
+                            </tr>=0D
+                            <tr>=0D
+                                <td style=3D"padding: 0px 40px 10px 40px; f=
+ont-family: sans-serif; font-size: 12px; line-height: 18px; color: #666666;=
+ text-align: center; font-weight:normal;">=0D
+                                    <p style=3D"margin: 0;" mc:edit=3D"p-12=
+" mc:hideable=3D"p-12"><a href=3D"http://t.radins.com/c/?t=3D2576b24-m-9w8f=
+i-f85q-m5imx" style=3D"color: #666666;">G=C3=A9rer mes abonnements Newslett=
+er</a></p>=0D
+                                </td>=0D
+                            </tr>=0D
+                            <tr>=0D
+                                <td style=3D"padding: 0px 10px 40px 10px; f=
+ont-family: sans-serif; font-size: 11px; line-height: 14px; color: #999999;=
+ text-align: center; font-weight:normal;">=0D
+                                    <span style=3D"margin: 0;" mc:edit=3D"p=
+-13" mc:hideable=3D"p-13">Exp=C3=A9diteur : M6 Web,89 Avenue du G=C3=A9n=C3=
+=A9ral de Gaulle, 92575 Neuilly Sur Seine Cedex - Soci=C3=A9t=C3=A9 =C3=A9d=
+itrice du site Radins.com. Conform=C3=A9ment =C3=A0 la loi Informatiques et=
+ Libert=C3=A9s du 6 janvier 1978, vous b=C3=A9n=C3=A9ficiez d'un droit d'ac=
+c=C3=A8s, de rectification et de suppression des donn=C3=A9es personnelles =
+qui vous concernent.<br>Vous pouvez exercer ces droits aupr=C3=A8s de M6 WE=
+B =C3=A0 l'adresse suivante : Service juridique, 89 avenue Charles De Gaull=
+e, 92 575 Neuilly Cedex, =C3=A0 laquelle vous pouvez =C3=A9galement exercer=
+ un droit d'opposition =C3=A0 recevoir des offres commerciales. Vous pouvez=
+ =C3=A9galement nous contacter par courrier =C3=A9lectronique =C3=A0 l=E2=
+=80=99adresse suivante : julie@radins.com</span>=0D
+                                </td>=0D
+                            </tr>=0D
+=0D
+                        </table>=0D
+                    </td>=0D
+                </tr>=0D
+                <!-- FOOTER : END -->=0D
+=0D
+            </tbody></table>=0D
+            <!-- Email Body : END -->=0D
+=0D
+            <!--[if mso]>=0D
+            </td>=0D
+            </tr>=0D
+            </table>=0D
+            <![endif]-->=0D
+        </div>=0D
+=0D
+    </center>=0D
+=0D
+=0D
+  </body></html>=
+
+--_----------=_15710688602465317--
+
