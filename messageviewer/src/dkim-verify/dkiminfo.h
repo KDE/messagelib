@@ -27,6 +27,7 @@
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT DKIMInfo
 {
+    Q_GADGET
 public:
     DKIMInfo();
 
@@ -35,14 +36,21 @@ public:
         Simple,
         Relaxed,
     };
+    enum class HashingAlgorithmType {
+        Any,
+        Sha1,
+        Sha256,
+        Unknown,
+    };
+    Q_ENUM(HashingAlgorithmType)
 
     Q_REQUIRED_RESULT bool parseDKIM(const QString &header);
 
     Q_REQUIRED_RESULT int version() const;
     void setVersion(int version);
 
-    Q_REQUIRED_RESULT QString hashingAlgorithm() const;
-    void setHashingAlgorithm(const QString &hashingAlgorithm);
+    Q_REQUIRED_RESULT HashingAlgorithmType hashingAlgorithm() const;
+    void setHashingAlgorithm(DKIMInfo::HashingAlgorithmType type);
 
     Q_REQUIRED_RESULT QString domain() const;
     void setDomain(const QString &domain);
@@ -96,7 +104,7 @@ public:
 private:
     void parseCanonicalization(const QString &str);
     void parseAlgorithm(const QString &str);
-    QString mHashingAlgorithm;
+    HashingAlgorithmType mHashingAlgorithm = HashingAlgorithmType::Any;
     QString mSigningAlgorithm;
     QString mDomain;
     QString mSelector;

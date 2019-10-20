@@ -34,7 +34,7 @@ void DKIMInfoTest::shouldHaveDefaultValue()
     MessageViewer::DKIMInfo info;
     QCOMPARE(info.version(), -1);
 
-    QVERIFY(info.hashingAlgorithm().isEmpty());
+    QCOMPARE(info.hashingAlgorithm(), MessageViewer::DKIMInfo::HashingAlgorithmType::Any);
     QVERIFY(info.signingAlgorithm().isEmpty());
     QVERIFY(info.domain().isEmpty());
     QVERIFY(info.selector().isEmpty());
@@ -64,7 +64,7 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info1.setQuery(QStringLiteral("dns"));
     info1.setDomain(QStringLiteral("example.com"));
     info1.setSigningAlgorithm(QStringLiteral("rsa"));
-    info1.setHashingAlgorithm(QStringLiteral("sha1"));
+    info1.setHashingAlgorithm(MessageViewer::DKIMInfo::HashingAlgorithmType::Sha1);
     info1.setBodyCanonization(MessageViewer::DKIMInfo::Simple);
     info1.setHeaderCanonization(MessageViewer::DKIMInfo::Relaxed);
     info1.setSignatureTimeStamp(1117574938);
@@ -86,7 +86,7 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info2.setIDomain(QStringLiteral("example.com"));
     info2.setAgentOrUserIdentifier(QStringLiteral("@example.com"));
     info2.setSigningAlgorithm(QStringLiteral("rsa"));
-    info2.setHashingAlgorithm(QStringLiteral("sha256"));
+    info2.setHashingAlgorithm(MessageViewer::DKIMInfo::HashingAlgorithmType::Sha256);
     info2.setBodyCanonization(MessageViewer::DKIMInfo::Relaxed);
     info2.setHeaderCanonization(MessageViewer::DKIMInfo::Relaxed);
     info2.setSignatureTimeStamp(1569945303);
@@ -113,7 +113,7 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info3.setIDomain(QStringLiteral("abonnement.radins.com"));
     info3.setAgentOrUserIdentifier(QStringLiteral("@abonnement.radins.com"));
     info3.setSigningAlgorithm(QStringLiteral("rsa"));
-    info3.setHashingAlgorithm(QStringLiteral("sha1"));
+    info3.setHashingAlgorithm(MessageViewer::DKIMInfo::HashingAlgorithmType::Sha1);
     info3.setBodyCanonization(MessageViewer::DKIMInfo::Simple);
     info3.setHeaderCanonization(MessageViewer::DKIMInfo::Relaxed);
     info3.setSelector(QStringLiteral("selector1"));

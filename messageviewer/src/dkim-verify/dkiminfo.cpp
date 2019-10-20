@@ -115,7 +115,14 @@ void DKIMInfo::parseAlgorithm(const QString &str)
         //Error
     } else {
         mSigningAlgorithm = lst.at(0);
-        mHashingAlgorithm = lst.at(1);
+        const QString hashStr = lst.at(1);
+        if (hashStr == QLatin1String("sha1")) {
+            mHashingAlgorithm = HashingAlgorithmType::Sha1;
+        } else if (hashStr == QLatin1String("sha256")) {
+            mHashingAlgorithm = HashingAlgorithmType::Sha256;
+        } else {
+            mHashingAlgorithm = HashingAlgorithmType::Unknown;
+        }
     }
 }
 
@@ -225,12 +232,12 @@ void DKIMInfo::setVersion(int version)
     mVersion = version;
 }
 
-QString DKIMInfo::hashingAlgorithm() const
+DKIMInfo::HashingAlgorithmType DKIMInfo::hashingAlgorithm() const
 {
     return mHashingAlgorithm;
 }
 
-void DKIMInfo::setHashingAlgorithm(const QString &hashingAlgorithm)
+void DKIMInfo::setHashingAlgorithm( DKIMInfo::HashingAlgorithmType hashingAlgorithm)
 {
     mHashingAlgorithm = hashingAlgorithm;
 }
@@ -271,7 +278,8 @@ bool DKIMInfo::isValid() const
         return false;
     }
 
-    return !mSelector.isEmpty() && !mDomain.isEmpty() && !mBodyHash.isEmpty() && !mHashingAlgorithm.isEmpty();
+    return !mSelector.isEmpty() && !mDomain.isEmpty() && !mBodyHash.isEmpty()
+            && ((mHashingAlgorithm == HashingAlgorithmType::Sha1) || mHashingAlgorithm == HashingAlgorithmType::Sha256);
 }
 
 QStringList DKIMInfo::listSignedHeader() const

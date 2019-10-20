@@ -143,11 +143,15 @@ void DKIMCheckSignatureJob::start()
 #endif
 
     QByteArray resultHash;
-    if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha1")) {
+    switch (mDkimInfo.hashingAlgorithm()) {
+    case DKIMInfo::HashingAlgorithmType::Sha1:
         resultHash = MessageViewer::DKIMUtil::generateHash(mBodyCanonizationResult.toLatin1(), QCryptographicHash::Sha1);
-    } else if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha256")) {
+        break;
+    case DKIMInfo::HashingAlgorithmType::Sha256:
         resultHash = MessageViewer::DKIMUtil::generateHash(mBodyCanonizationResult.toLatin1(), QCryptographicHash::Sha256);
-    } else {
+        break;
+    case DKIMInfo::HashingAlgorithmType::Any:
+    case DKIMInfo::HashingAlgorithmType::Unknown:
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InsupportedHashAlgorithm;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
         Q_EMIT result(createCheckResult());
@@ -514,10 +518,17 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         const QByteArray ba = QCA::base64ToArray(s);
         QCA::SignatureAlgorithm sigAlg;
         //TODO replace by enum !
-        if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha1")) {
+        switch(mDkimInfo.hashingAlgorithm()) {
+        case DKIMInfo::HashingAlgorithmType::Sha1:
             sigAlg = QCA::EMSA3_SHA1;
-        } else if (mDkimInfo.hashingAlgorithm() == QLatin1String("sha256")) {
+            break;
+        case DKIMInfo::HashingAlgorithmType::Sha256:
             sigAlg = QCA::EMSA3_SHA256;
+            break;
+        case DKIMInfo::HashingAlgorithmType::Any:
+        case DKIMInfo::HashingAlgorithmType::Unknown:
+            //Error !
+            break;
         }
         if (!rsaPublicKey.verifyMessage(sec, ba, sigAlg, QCA::DERSequence)) {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature invalid";
@@ -611,7 +622,7 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
 
-    if (info.hashingAlgorithm().isEmpty()) {
+    if ((info.hashingAlgorithm() == MessageViewer::DKIMInfo::HashingAlgorithmType::Any) || (info.hashingAlgorithm() == MessageViewer::DKIMInfo::HashingAlgorithmType::Unknown)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "body header algorithm is empty";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidBodyHashAlgorithm;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
@@ -622,7 +633,7 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
 
-    if (info.hashingAlgorithm() == QLatin1String("sha1")) {
+    if (info.hashingAlgorithm() == DKIMInfo::HashingAlgorithmType::Sha1) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "hash algorithm is not secure sha1";
         mWarning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe;
     }
