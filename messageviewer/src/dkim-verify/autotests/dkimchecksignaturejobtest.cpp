@@ -58,36 +58,43 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
     QTest::addColumn<MessageViewer::DKIMCheckSignatureJob::DKIMError>("dkimerror");
     QTest::addColumn<MessageViewer::DKIMCheckSignatureJob::DKIMWarning>("dkimwarning");
     QTest::addColumn<MessageViewer::DKIMCheckSignatureJob::DKIMStatus>("dkimstatus");
+    QTest::addColumn<QString>("dkimdomain");
     QTest::addRow("dkim2") << QStringLiteral("dkim2.mbox")
                            << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
                            << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                           << QStringLiteral("kde.org");
 
     QTest::addRow("notsigned") << QStringLiteral("notsigned.mbox")
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
+                               << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                               << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
+                               << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned
+                               << QString();
 
 
     QTest::addRow("broken1") << QStringLiteral("broken1.mbox")
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                             << QStringLiteral("kde.org");
 
     QTest::addRow("broken2") << QStringLiteral("broken2.mbox")
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                             << QStringLiteral("kde.org");
 
     QTest::addRow("broken3") << QStringLiteral("broken3.mbox")
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                             << QStringLiteral("abonnement.radins.com");
 
     QTest::addRow("broken4") << QStringLiteral("broken4.mbox")
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                             << QStringLiteral("kde.org");
 
 }
 
@@ -97,6 +104,7 @@ void DKIMCheckSignatureJobTest::shouldTestMail()
     QFETCH(MessageViewer::DKIMCheckSignatureJob::DKIMError, dkimerror);
     QFETCH(MessageViewer::DKIMCheckSignatureJob::DKIMWarning, dkimwarning);
     QFETCH(MessageViewer::DKIMCheckSignatureJob::DKIMStatus, dkimstatus);
+    QFETCH(QString, dkimdomain);
     KMime::Message *msg = new KMime::Message;
     QFile file(QStringLiteral(DKIM_DATA_DIR "/") + fileName);
     QVERIFY(file.open(QIODevice::ReadOnly));
@@ -113,4 +121,5 @@ void DKIMCheckSignatureJobTest::shouldTestMail()
     QCOMPARE(info.warning, dkimwarning);
     QCOMPARE(info.error, dkimerror);
     QCOMPARE(info.status, dkimstatus);
+    QCOMPARE(info.signedBy, dkimdomain);
 }
