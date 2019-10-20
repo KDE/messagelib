@@ -152,6 +152,9 @@ void DKIMWidgetInfo::updateToolTip()
         case DKIMCheckSignatureJob::DKIMError::TestKeyMode:
             tooltip = i18n("The signing domain is only testing DKIM.");
             break;
+        case DKIMCheckSignatureJob::DKIMError::ImpossibleToDownloadKey:
+            tooltip = i18n("Impossible to download key.");
+            break;
         }
     }
 

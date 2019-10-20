@@ -59,6 +59,8 @@ public:
         ImpossibleToVerifySignature = 14,
         DomainI = 15,
         TestKeyMode = 16,
+        ImpossibleToDownloadKey = 17,
+
     };
     Q_ENUM(DKIMError)
     enum class DKIMWarning : int {

@@ -78,6 +78,7 @@ if (${Qca-qt5_FOUND})
         dkim-verify/dkimstoreresultjob.cpp
         dkim-verify/dkimheaderparser.cpp
         dkim-verify/dkimcheckpolicy.cpp
+        dkim-verify/dmarcrecordjob.cpp
         )
 endif()
 

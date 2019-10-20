@@ -19,3 +19,11 @@ target_link_libraries(dkimtest_checksignature
         KF5::MessageViewer
         qca-qt5
 )
+
+set(dkimtest_dmarclookupkey_SRCS dmarclookupkey.cpp)
+add_executable(dkimtest_dmarclookupkey ${dkimtest_dmarclookupkey_SRCS})
+target_link_libraries(dkimtest_dmarclookupkey
+        Qt5::Network
+        KF5::MessageViewer
+        qca-qt5
+)

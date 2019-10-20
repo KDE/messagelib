@@ -350,12 +350,18 @@ void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
     job->setSelectorName(info.selector());
     connect(job, &DKIMDownloadKeyJob::error, this, [this](const QString &errorString) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start downloadkey: error returned: " << errorString;
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToDownloadKey;
+        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+        Q_EMIT result(createCheckResult());
         deleteLater();
     });
     connect(job, &DKIMDownloadKeyJob::success, this, &DKIMCheckSignatureJob::slotDownloadKeyDone);
 
     if (!job->start()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start downloadkey";
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToDownloadKey;
+        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+        Q_EMIT result(createCheckResult());
         deleteLater();
     }
 }
