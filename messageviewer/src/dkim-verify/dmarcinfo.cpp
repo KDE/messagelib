@@ -18,6 +18,7 @@
 */
 
 #include "dmarcinfo.h"
+#include "messageviewer_dkimcheckerdebug.h"
 
 using namespace MessageViewer;
 DMARCInfo::DMARCInfo()
@@ -25,8 +26,18 @@ DMARCInfo::DMARCInfo()
 
 }
 
-bool DMARCInfo::parseDMARC(const QString &info)
+bool DMARCInfo::parseDMARC(const QString &key)
 {
+    if (key.isEmpty()) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: key empty";
+        return false;
+    }
+    const QStringList items = key.split(QLatin1String("; "));
+    for (int i = 0; i < items.count(); ++i) {
+        const QString elem = items.at(i).trimmed();
+        //TODO
+    }
     //TODO
     return false;
 }
+

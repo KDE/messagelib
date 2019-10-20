@@ -27,7 +27,8 @@ class MESSAGEVIEWER_EXPORT DMARCInfo
 {
 public:
     DMARCInfo();
-    Q_REQUIRED_RESULT bool parseDMARC(const QString &info);
+    Q_REQUIRED_RESULT bool parseDMARC(const QString &key);
+
 };
 }
 
