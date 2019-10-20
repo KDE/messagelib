@@ -36,8 +36,13 @@ public:
 private:
     void updateInfo();
     void updateToolTip();
+    void initColors();
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;
     QLabel *mLabel = nullptr;
+    QColor mWarningColor;
+    QColor mErrorColor;
+    QColor mOkColor;
+    QColor mDefaultColor;
 };
 }
 

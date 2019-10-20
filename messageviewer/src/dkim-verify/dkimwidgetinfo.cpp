@@ -37,10 +37,20 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     mainLayout->addWidget(mLabel);
     connect(DKIMManager::self(), &DKIMManager::result, this, &DKIMWidgetInfo::setResult);
     connect(DKIMManager::self(), &DKIMManager::clearInfo, this, &DKIMWidgetInfo::clear);
+    initColors();
 }
 
 DKIMWidgetInfo::~DKIMWidgetInfo()
 {
+}
+
+void DKIMWidgetInfo::initColors()
+{
+    const KColorScheme colorScheme {QPalette::Active};
+    mWarningColor = colorScheme.background(KColorScheme::NeutralBackground).color();
+    mErrorColor = colorScheme.background(KColorScheme::NegativeBackground).color();
+    mOkColor = colorScheme.background(KColorScheme::PositiveBackground).color();
+    mDefaultColor = palette().window().color();
 }
 
 void DKIMWidgetInfo::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
@@ -56,7 +66,7 @@ void DKIMWidgetInfo::clear()
     mLabel->clear();
     mLabel->setToolTip(QString());
     QPalette pal = mLabel->palette();
-    pal.setColor(backgroundRole(), palette().window().color());
+    pal.setColor(backgroundRole(), mDefaultColor);
     mLabel->setPalette(pal);
 }
 
@@ -65,23 +75,23 @@ void DKIMWidgetInfo::updateInfo()
     QPalette pal = mLabel->palette();
     switch (mResult.status) {
     case DKIMCheckSignatureJob::DKIMStatus::Unknown:
-        pal.setColor(backgroundRole(), palette().window().color());
+        pal.setColor(backgroundRole(), mDefaultColor);
         mLabel->setPalette(pal);
         mLabel->setText(i18n("Unknown"));
         break;
     case DKIMCheckSignatureJob::DKIMStatus::Valid:
         mLabel->setText(i18n("KDIM: valid"));
-        pal.setColor(backgroundRole(), KColorScheme(QPalette::Active).background(KColorScheme::PositiveBackground).color());
+        pal.setColor(backgroundRole(), (mResult.warning != DKIMCheckSignatureJob::DKIMWarning::Any) ? mWarningColor : mOkColor);
         mLabel->setPalette(pal);
         break;
     case DKIMCheckSignatureJob::DKIMStatus::Invalid:
-        pal.setColor(backgroundRole(), KColorScheme(QPalette::Active).background(KColorScheme::NegativeBackground).color());
+        pal.setColor(backgroundRole(), mErrorColor);
         mLabel->setPalette(pal);
         mLabel->setText(i18n("KDIM: invalid"));
         break;
     case DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned:
         mLabel->setText(i18n("KDIM: Not signed"));
-        pal.setColor(backgroundRole(), palette().window().color());
+        pal.setColor(backgroundRole(), mDefaultColor);
         mLabel->setPalette(pal);
         break;
     }
