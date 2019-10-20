@@ -48,6 +48,7 @@ MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob
     result.warning = mWarning;
     result.status = mStatus;
     result.item = mMessageItem;
+    result.signedBy = mDkimInfo.domain();
     return result;
 }
 

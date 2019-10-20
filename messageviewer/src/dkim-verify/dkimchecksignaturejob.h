@@ -93,6 +93,7 @@ public:
         DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
         Akonadi::Item item;
+        QString signedBy;
     };
 
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
