@@ -38,7 +38,6 @@
 
 #include "messagelist_debug.h"
 #include <QIcon>
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <QMenu>
 #include <KXMLGUIClient>
@@ -505,9 +504,9 @@ void Widget::viewStartDragRequest()
     // Set pixmap
     QPixmap pixmap;
     if (selection.size() == 1) {
-        pixmap = QPixmap(DesktopIcon(QStringLiteral("mail-message"), KIconLoader::SizeSmall));
+        pixmap = QIcon::fromTheme(QStringLiteral("mail-message")).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize));
     } else {
-        pixmap = QPixmap(DesktopIcon(QStringLiteral("document-multiple"), KIconLoader::SizeSmall));
+        pixmap = QIcon::fromTheme(QStringLiteral("document-multiple")).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize));
     }
 
     // Calculate hotspot (as in Konqueror)

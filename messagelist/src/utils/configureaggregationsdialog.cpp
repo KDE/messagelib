@@ -32,7 +32,6 @@
 #include <QMap>
 
 #include <KLocalizedString>
-#include <KIconLoader>
 #include <QIcon>
 #include <KConfig>
 #include <QFileDialog>
@@ -129,7 +128,6 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
 
     d->mNewAggregationButton = new QPushButton(i18n("New Aggregation"), base);
     d->mNewAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
-    d->mNewAggregationButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mNewAggregationButton, 0, 1);
 
     connect(d->mNewAggregationButton, &QPushButton::clicked, this, [this]() {
@@ -138,7 +136,6 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
 
     d->mCloneAggregationButton = new QPushButton(i18n("Clone Aggregation"), base);
     d->mCloneAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
-    d->mCloneAggregationButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mCloneAggregationButton, 1, 1);
 
     connect(d->mCloneAggregationButton, &QPushButton::clicked, this, [this]() {
@@ -170,7 +167,6 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
 
     d->mDeleteAggregationButton = new QPushButton(i18n("Delete Aggregation"), base);
     d->mDeleteAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
-    d->mDeleteAggregationButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mDeleteAggregationButton, 6, 1);
 
     connect(d->mDeleteAggregationButton, &QPushButton::clicked, this, [this]() {

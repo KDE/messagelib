@@ -51,9 +51,7 @@ target_link_libraries(KF5TemplateParser
     KF5::IdentityManagement
     KF5::MessageCore
     KF5::XmlGui
-    KF5::IconThemes
     KF5::Completion
-    KF5::Libkleo
     KF5::I18n
     KF5::SonnetUi
     KF5::SyntaxHighlighting

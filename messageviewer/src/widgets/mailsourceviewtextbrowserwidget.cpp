@@ -48,7 +48,6 @@
 #include <KStandardAction>
 #include <QAction>
 #include <QIcon>
-#include <KIconTheme>
 
 #include <QShortcut>
 #include <QVBoxLayout>
@@ -148,9 +147,6 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
         popup->addSeparator();
         popup->addAction(KStandardAction::find(this, &MailSourceViewTextBrowser::findText, this));
         //Code from KTextBrowser
-        KIconTheme::assignIconsToContextMenu(isReadOnly() ? KIconTheme::ReadOnlyText
-                                             : KIconTheme::TextEditor,
-                                             popup->actions());
         if (mTextToSpeechInterface->isReady()) {
             popup->addSeparator();
             popup->addAction(QIcon::fromTheme(QStringLiteral(

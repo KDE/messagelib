@@ -34,7 +34,6 @@
 
 #include <KMessageBox>
 #include <KLocalizedString>
-#include <KIconLoader>
 #include <KConfigGroup>
 #include <QIcon>
 #include <KConfig>
@@ -125,7 +124,6 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
 
     d->mNewThemeButton = new QPushButton(i18n("New Theme"), base);
     d->mNewThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
-    d->mNewThemeButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mNewThemeButton, 0, 1);
 
     connect(d->mNewThemeButton, &QPushButton::clicked, this, [this]() {
@@ -134,7 +132,6 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
 
     d->mCloneThemeButton = new QPushButton(i18n("Clone Theme"), base);
     d->mCloneThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
-    d->mCloneThemeButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mCloneThemeButton, 1, 1);
 
     connect(d->mCloneThemeButton, &QPushButton::clicked, this, [this]() {
@@ -166,7 +163,6 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
 
     d->mDeleteThemeButton = new QPushButton(i18n("Delete Theme"), base);
     d->mDeleteThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
-    d->mDeleteThemeButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mDeleteThemeButton, 6, 1);
 
     connect(d->mDeleteThemeButton, &QPushButton::clicked, this, [this]() {
