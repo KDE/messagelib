@@ -30,7 +30,7 @@
 #include <QFile>
 #include <Qca-qt5/QtCrypto/qca_publickey.h>
 //see https://tools.ietf.org/html/rfc6376
-
+//#define DEBUG_SIGNATURE_KDIM 1
 using namespace MessageViewer;
 DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)
     : QObject(parent)
@@ -134,7 +134,7 @@ void DKIMCheckSignatureJob::start()
     if (mBodyCanonizationResult.startsWith(QLatin1Literal("\r\n"))) { //Remove it from start
         mBodyCanonizationResult = mBodyCanonizationResult.right(mBodyCanonizationResult.length() -2 );
     }
-#if 0
+#ifdef DEBUG_SIGNATURE_KDIM
     QFile caFile(QStringLiteral("/tmp/bodycanon-kmail.txt"));
     caFile.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream outStream(&caFile);
@@ -217,6 +217,13 @@ void DKIMCheckSignatureJob::start()
         mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationRelaxed(QLatin1String("dkim-signature"), dkimValue);
         break;
     }
+#ifdef DEBUG_SIGNATURE_KDIM
+    QFile headerFile(QStringLiteral("/tmp/headercanon-kmail.txt"));
+    headerFile.open(QIODevice::WriteOnly | QIODevice::Text);
+    QTextStream outHeaderStream(&headerFile);
+    outHeaderStream << mHeaderCanonizationResult;
+    headerFile.close();
+#endif
 
     if (mSaveKey) {
         const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
