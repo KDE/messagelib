@@ -332,73 +332,13 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
     parser.setHead(mMessage->head());
     parser.parse();
     for (const QString &header : mDkimInfo.listSignedHeader()) {
-#if 1
         const QString str = parser.headerType(header.toLower());
-//        qDebug() << " str " << str << " header search " << header;
-//        auto hrd = mMessage->headerByType(header.toLatin1().constData());
-//        if (hrd) {
-//            qDebug() << " hrd " << hrd->asUnicodeString();
-//        }
         if (!str.isEmpty()) {
             if (!headers.isEmpty()) {
                 headers += QLatin1String("\r\n");
             }
             headers += MessageViewer::DKIMUtil::headerCanonizationRelaxed(header, str);
         }
-#else
-        qDebug() << " header" << header;
-        if (headerAlreadyAdded.contains(header)) {
-            continue;
-        }
-        if (auto hrd = mMessage->headerByType(header.toLatin1().constData())) {
-            QString str;
-            const QByteArray Allheaders = mMessage->head();
-            //qDebug() << " all headers " << Allheaders;
-            if (header == QLatin1String("date")) {
-                int index = Allheaders.indexOf("Date:");
-                if (index == -1) {
-                    index = Allheaders.indexOf("date:");
-                    if (index == -1) {
-                        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to find \'date:\'";
-                        continue;
-                    }
-                }
-                index += 5;
-                const int end = Allheaders.indexOf("\n", index);
-                if (end != -1) {
-                    str = QString::fromLatin1(Allheaders.mid(index, (end - index)));
-                    if (str.startsWith(QLatin1Char(' '))) {
-                        str = str.right(str.length() - 1);
-                    }
-                }
-            } else if (header == QLatin1String("from:")) {
-                int index = Allheaders.indexOf("from:");
-                if (index == -1) {
-                    index = Allheaders.indexOf("From:");
-                    if (index == -1) {
-                        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to find \'from:\'";
-                        continue;
-                    }
-                }
-                index += 5;
-                const int end = Allheaders.indexOf("\n", index);
-                if (end != -1) {
-                    str = QString::fromLatin1(Allheaders.mid(index, (end - index)));
-                    if (str.startsWith(QLatin1Char(' '))) {
-                        str = str.right(str.length() - 1);
-                    }
-                }
-                qDebug() <<" FROM !!!!!!!!!!!!!!!!!!!" << str;
-            } else {
-                str = hrd->asUnicodeString();
-            }
-            headerAlreadyAdded << header;
-            if (!headers.isEmpty()) {
-                headers += QLatin1String("\r\n");
-            }
-            headers += MessageViewer::DKIMUtil::headerCanonizationRelaxed(header, str);
-        }
-#endif
     }
     return headers;
 }
