@@ -278,7 +278,7 @@ QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
             only possible when using extensions to SMTP or non-SMTP transport
             mechanisms.)
         */
-    const QString returnValue = MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString::fromUtf8(mMessage->encodedBody()));
+    const QString returnValue = MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString::fromLatin1(mMessage->encodedBody()));
     return returnValue;
 }
 
