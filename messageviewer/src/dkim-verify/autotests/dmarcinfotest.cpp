@@ -27,3 +27,13 @@ DMARCInfoTest::DMARCInfoTest(QObject *parent)
 {
 
 }
+
+void DMARCInfoTest::shouldHaveDefaultValues()
+{
+    MessageViewer::DMARCInfo info;
+    QVERIFY(info.version().isEmpty());
+    QVERIFY(info.adkim().isEmpty());
+    QVERIFY(info.policy().isEmpty());
+    QCOMPARE(info.percentage(), -1);
+    QVERIFY(info.subDomainPolicy().isEmpty());
+}

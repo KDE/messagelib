@@ -37,7 +37,7 @@ DMARCRecordJob::~DMARCRecordJob()
 bool DMARCRecordJob::start()
 {
     if (!canStart()) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start download public keys";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start download dmarc key.";
         deleteLater();
         return false;
     }
@@ -54,7 +54,7 @@ bool DMARCRecordJob::start()
 QString DMARCRecordJob::resolvDnsValue() const
 {
     const QString name = QLatin1String("_dmarc.") + mDomainName;
-    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMDownloadKeyJob::resolvDnsValue" << name;
+    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DMARCRecordJob::resolvDnsValue" << name;
     return name;
 }
 

@@ -28,6 +28,8 @@ class DMARCInfoTest : public QObject
 public:
     explicit DMARCInfoTest(QObject *parent = nullptr);
     ~DMARCInfoTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
 
 #endif // DMARCINFOTEST_H
