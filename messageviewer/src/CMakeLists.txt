@@ -29,7 +29,7 @@ endif()
 find_package(Qca-qt5 2.1.0)
 set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
                    URL "https:/download.kde.org/stable/qca-qt5" TYPE OPTIONAL
-                   PURPOSE "Needed for kdim support.")
+                   PURPOSE "Needed for dkim support.")
 
 if (${Qca-qt5_FOUND})
     set(USE_DKIM_CHECKER 1)

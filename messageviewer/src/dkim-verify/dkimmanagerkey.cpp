@@ -77,7 +77,7 @@ void DKIMManagerKey::loadKeys()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig();
     const QStringList keyGroups
-        = config->groupList().filter(QRegularExpression(QStringLiteral("KDIM Key Record #\\d+")));
+        = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Key Record #\\d+")));
 
     mKeys.clear();
     for (const QString &groupName : keyGroups) {
@@ -93,13 +93,13 @@ void DKIMManagerKey::saveKeys()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig();
     const QStringList filterGroups
-        = config->groupList().filter(QRegularExpression(QStringLiteral("KDIM Key Record #\\d+")));
+        = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Key Record #\\d+")));
 
     for (const QString &group : filterGroups) {
         config->deleteGroup(group);
     }
     for (int i = 0, total = mKeys.count(); i < total; ++i) {
-        const QString groupName = QStringLiteral("KDIM Key Record #%1").arg(i);
+        const QString groupName = QStringLiteral("DKIM Key Record #%1").arg(i);
         KConfigGroup group = config->group(groupName);
         const KeyInfo &info = mKeys.at(i);
         group.writeEntry(QLatin1String("Selector"), info.selector);
