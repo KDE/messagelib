@@ -105,8 +105,11 @@ bool DMARCInfo::parseDMARC(const QString &key)
             mSubDomainPolicy = elem.right(elem.length() - 3);
         }
     }
-    //TODO
-    return false;
+    if (mAdkim.isEmpty() && mVersion == QLatin1String("DMARC1")) {
+        mAdkim = QLatin1Char('r');
+    }
+
+    return true;
 }
 
 QString DMARCInfo::version() const
