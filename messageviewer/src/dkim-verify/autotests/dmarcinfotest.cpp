@@ -62,4 +62,15 @@ void DMARCInfoTest::shouldTestExtractDkimKeyRecord_data()
     QTest::addColumn<MessageViewer::DMARCInfo>("dkiminfo");
     QTest::addColumn<bool>("isValid");
     QTest::addRow("empty") << QString() << MessageViewer::DMARCInfo() << false;
+    MessageViewer::DMARCInfo info;
+    info.setVersion(QStringLiteral("DMARC1"));
+    info.setAdkim(QStringLiteral("r"));
+    info.setPolicy(QStringLiteral("reject"));
+    QTest::addRow("google.com") << QStringLiteral("v=DMARC1; p=reject; rua=mailto:mailauth-reports@google.com") << info << true;
+
+    MessageViewer::DMARCInfo info2;
+    info2.setVersion(QStringLiteral("DMARC1"));
+    info2.setAdkim(QStringLiteral("r"));
+    info2.setPolicy(QStringLiteral("reject"));
+    QTest::addRow("yahoo.com") << QStringLiteral("v=DMARC1; p=reject; pct=100; rua=mailto:dmarc_y_rua@yahoo.com;") << info2 << true;
 }
