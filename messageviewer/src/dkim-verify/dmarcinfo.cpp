@@ -162,3 +162,21 @@ void DMARCInfo::setSubDomainPolicy(const QString &subDomainPolicy)
     mSubDomainPolicy = subDomainPolicy;
 }
 
+bool DMARCInfo::operator==(const DMARCInfo &other) const
+{
+    return mVersion == other.version() &&
+            mAdkim == other.adkim() &&
+            mPolicy == other.policy() &&
+            mSubDomainPolicy == other.subDomainPolicy() &&
+            mPercentage == other.percentage();
+}
+
+QDebug operator <<(QDebug d, const DMARCInfo &t)
+{
+    d << " mVersion " << t.version();
+    d << " mAdkim " << t.adkim();
+    d << " mPolicy " << t.policy();
+    d << " mSubDomainPolicy " << t.subDomainPolicy();
+    d << " mPercentage " << t.percentage();
+    return d;
+}

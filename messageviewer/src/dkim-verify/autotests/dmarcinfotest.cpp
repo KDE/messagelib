@@ -37,3 +37,29 @@ void DMARCInfoTest::shouldHaveDefaultValues()
     QCOMPARE(info.percentage(), -1);
     QVERIFY(info.subDomainPolicy().isEmpty());
 }
+
+
+void DMARCInfoTest::shouldTestExtractDkimKeyRecord()
+{
+    QFETCH(QString, dkimstr);
+    QFETCH(MessageViewer::DMARCInfo, dkiminfo);
+    QFETCH(bool, isValid);
+    MessageViewer::DMARCInfo info;
+    QCOMPARE(info.parseDMARC(dkimstr), isValid);
+    if (isValid) {
+        const bool isEqual = (info == dkiminfo);
+        if (!isEqual) {
+            qDebug() << " info" << info;
+            qDebug() << " dkiminforesult" << dkiminfo;
+        }
+        QVERIFY(isEqual);
+    }
+}
+
+void DMARCInfoTest::shouldTestExtractDkimKeyRecord_data()
+{
+    QTest::addColumn<QString>("dkimstr");
+    QTest::addColumn<MessageViewer::DMARCInfo>("dkiminfo");
+    QTest::addColumn<bool>("isValid");
+    QTest::addRow("empty") << QString() << MessageViewer::DMARCInfo() << false;
+}

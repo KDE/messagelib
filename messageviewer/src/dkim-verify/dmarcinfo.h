@@ -22,6 +22,7 @@
 
 #include "messageviewer_export.h"
 #include <QObject>
+#include <QDebug>
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT DMARCInfo
 {
@@ -44,6 +45,8 @@ public:
     Q_REQUIRED_RESULT QString subDomainPolicy() const;
     void setSubDomainPolicy(const QString &subDomainPolicy);
 
+    Q_REQUIRED_RESULT bool operator==(const DMARCInfo &other) const;
+
 private:
     QString mVersion;
     QString mAdkim;
@@ -52,5 +55,6 @@ private:
     int mPercentage = -1;
 };
 }
-
+Q_DECLARE_METATYPE(MessageViewer::DMARCInfo)
+MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DMARCInfo &t);
 #endif // DMARCINFO_H

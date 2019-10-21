@@ -30,6 +30,8 @@ public:
     ~DMARCInfoTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldTestExtractDkimKeyRecord_data();
+    void shouldTestExtractDkimKeyRecord();
 };
 
 #endif // DMARCINFOTEST_H
