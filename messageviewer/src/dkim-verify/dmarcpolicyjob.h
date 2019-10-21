@@ -30,6 +30,9 @@ class MESSAGEVIEWER_TESTS_EXPORT DMARCPolicyJob : public QObject
 public:
     explicit DMARCPolicyJob(QObject *parent = nullptr);
     ~DMARCPolicyJob();
+
+    Q_REQUIRED_RESULT bool canStart() const;
+    void start();
 };
 }
 

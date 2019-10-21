@@ -31,3 +31,14 @@ DMARCPolicyJob::~DMARCPolicyJob()
 {
 
 }
+
+bool DMARCPolicyJob::canStart() const
+{
+    //TODO
+    return false;
+}
+
+void DMARCPolicyJob::start()
+{
+
+}
