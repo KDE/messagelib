@@ -68,6 +68,32 @@ bool DMARCPolicyJob::start()
 
 void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName)
 {
+    QByteArray ba;
+    if (lst.count() != 1) {
+        for (const QByteArray &b : lst) {
+            ba += b;
+        }
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DMARCPolicyJob Key result has more that 1 element" << lst;
+    } else {
+        ba = lst.at(0);
+    }
+
+    DMARCInfo info;
+    if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
+        //TODO check if valid
+        if (info.version() != QLatin1String("DMARC1")) {
+            //Invalid
+        } else if (info.policy().isEmpty()) {
+            //Invalid
+        } else if (info.percentage() > 100 || info.percentage() < 0) {
+            //Invalid
+        } else {
+            //Valid send info.
+        }
+    } else {
+        //TODO
+    }
+
 
     qDebug() << "domainName: " << domainName << " lst " << lst;
     //Parse result

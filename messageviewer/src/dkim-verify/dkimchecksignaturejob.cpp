@@ -161,7 +161,7 @@ void DKIMCheckSignatureJob::start()
     }
 
     // compare body hash
-    qDebug() << "resultHash "  << resultHash << "mDkimInfo.bodyHash()" << mDkimInfo.bodyHash();
+    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "resultHash "  << resultHash << "mDkimInfo.bodyHash()" << mDkimInfo.bodyHash();
     if (resultHash != mDkimInfo.bodyHash().toLatin1()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Corrupted body hash";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash;
