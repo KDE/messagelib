@@ -18,6 +18,9 @@
 */
 
 #include "dmarcpolicyjob.h"
+#include "dmarcrecordjob.h"
+#include "dmarcinfo.h"
+#include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
 
 DMARCPolicyJob::DMARCPolicyJob(QObject *parent)
@@ -31,10 +34,57 @@ DMARCPolicyJob::~DMARCPolicyJob()
 
 bool DMARCPolicyJob::canStart() const
 {
-    //TODO
-    return false;
+    return !mEmailAddress.isEmpty();
 }
 
-void DMARCPolicyJob::start()
+bool DMARCPolicyJob::start()
 {
+    if (!canStart()) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Impossible to start DMARCPolicyJob";
+        deleteLater();
+        //TODO emit result
+        //Q_EMIT ... //TODO
+        return false;
+    }
+
+    const QString emailDomainStr = emailDomain();
+    DMARCRecordJob *job = new DMARCRecordJob(this);
+    //TODO ???
+    connect(job, &MessageViewer::DMARCRecordJob::success, this, &DMARCPolicyJob::slotCheckDomain);
+
+    connect(job, &MessageViewer::DMARCRecordJob::error, this, [](const QString &err, const QString &domainName) {
+        qDebug() << "error: " << err << " domain " << domainName;
+    });
+
+    job->setDomainName(emailDomainStr);
+    if (!job->start()) {
+        //TODO emit result
+        deleteLater();
+        return false;
+    }
+    return true;
+}
+
+
+void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName)
+{
+
+    qDebug() << "domainName: " << domainName << " lst " << lst;
+    //Parse result
+}
+
+QString DMARCPolicyJob::emailDomain() const
+{
+    //TODO
+    return {};
+}
+
+QString DMARCPolicyJob::emailAddress() const
+{
+    return mEmailAddress;
+}
+
+void DMARCPolicyJob::setEmailAddress(const QString &emailAddress)
+{
+    mEmailAddress = emailAddress;
 }

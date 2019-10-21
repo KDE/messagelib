@@ -21,6 +21,7 @@
 #define DMARCPOLICYJOB_H
 
 #include <QObject>
+#include "dmarcinfo.h"
 #include "messageviewer_private_export.h"
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DMARCPolicyJob : public QObject
@@ -31,8 +32,18 @@ public:
     ~DMARCPolicyJob();
 
     Q_REQUIRED_RESULT bool canStart() const;
-    void start();
+    Q_REQUIRED_RESULT bool start();
+
+    Q_REQUIRED_RESULT QString emailAddress() const;
+    void setEmailAddress(const QString &emailAddress);
+
+Q_SIGNALS:
+    void result(const MessageViewer::DMARCInfo &info);
+
+private:
+    void slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName);
+    Q_REQUIRED_RESULT QString emailDomain() const;
+    QString mEmailAddress;
 };
 }
-
 #endif // DMARCPOLICYJOB_H

@@ -20,12 +20,12 @@
 #ifndef DKIMKEYRECORD_H
 #define DKIMKEYRECORD_H
 
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 #include <QString>
 #include <QStringList>
 #include <QObject>
 namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMKeyRecord
+class MESSAGEVIEWER_EXPORT DKIMKeyRecord
 {
 public:
     DKIMKeyRecord();

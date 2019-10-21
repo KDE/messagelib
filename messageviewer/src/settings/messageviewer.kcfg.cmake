@@ -261,6 +261,12 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <entry name="SaveKey" type="bool">
         <default>false</default>
       </entry>
+      <entry name="CheckIfEmailShouldBeSigned" type="bool">
+        <default>false</default>
+      </entry>
+      <entry name="UseDMarc" type="bool">
+        <default>false</default>
+      </entry>
     </group>
 
 </kcfg>
