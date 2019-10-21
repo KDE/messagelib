@@ -20,6 +20,7 @@
 #include "dmarcpolicyjob.h"
 #include "dmarcrecordjob.h"
 #include "dmarcinfo.h"
+#include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
 
@@ -41,32 +42,28 @@ bool DMARCPolicyJob::start()
 {
     if (!canStart()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Impossible to start DMARCPolicyJob";
+        Q_EMIT result({});
         deleteLater();
-        //TODO emit result
-        //Q_EMIT ... //TODO
         return false;
     }
 
     const QString emailDomainStr = emailDomain();
     DMARCRecordJob *job = new DMARCRecordJob(this);
-    //TODO ???
+    job->setDomainName(emailDomainStr);
     connect(job, &MessageViewer::DMARCRecordJob::success, this, &DMARCPolicyJob::slotCheckDomain);
-
     connect(job, &MessageViewer::DMARCRecordJob::error, this, [](const QString &err, const QString &domainName) {
         qDebug() << "error: " << err << " domain " << domainName;
+        //TODO Q_EMIT here too !
     });
-
-    job->setDomainName(emailDomainStr);
     if (!job->start()) {
-        //TODO emit result
+        Q_EMIT result({});
         deleteLater();
         return false;
     }
     return true;
 }
 
-
-void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName)
+QByteArray DMARCPolicyJob::generateDMARCFromList(const QList<QByteArray> &lst) const
 {
     QByteArray ba;
     if (lst.count() != 1) {
@@ -77,21 +74,76 @@ void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString
     } else {
         ba = lst.at(0);
     }
+    return ba;
+}
+
+void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QString &domainName)
+{
+    const QByteArray ba = generateDMARCFromList(lst);
+    DMARCInfo info;
+    if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
+        if ((info.version() != QLatin1String("DMARC1")) ||  info.policy().isEmpty() || (info.percentage() > 100 || info.percentage() < 0)) {
+            Q_EMIT result({});
+            deleteLater();
+            return;
+        } else {
+            DMARCPolicyJob::DMARCResult val;
+            val.mAdkim = info.adkim();
+            val.mPercentage = info.percentage();
+            val.mPolicy = info.subDomainPolicy().isEmpty() ? info.policy() : info.subDomainPolicy();
+            //TODO verify it !
+            val.mDomain = domainName;
+            val.mSource = domainName;
+            Q_EMIT result(val);
+            deleteLater();
+            return;
+        }
+    }
+    Q_EMIT result(DMARCResult());
+}
+
+void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName)
+{
+    const QByteArray ba = generateDMARCFromList(lst);
 
     DMARCInfo info;
     if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
-        //TODO check if valid
-        if (info.version() != QLatin1String("DMARC1")) {
+        if ((info.version() != QLatin1String("DMARC1")) ||  info.policy().isEmpty() || (info.percentage() > 100 || info.percentage() < 0)) {
             //Invalid
-        } else if (info.policy().isEmpty()) {
-            //Invalid
-        } else if (info.percentage() > 100 || info.percentage() < 0) {
-            //Invalid
+            //Check subdomain
+            const QString subDomain = emailSubDomain(domainName);
+            if (subDomain != domainName) {
+                DMARCRecordJob *job = new DMARCRecordJob(this);
+                job->setDomainName(subDomain);
+                connect(job, &MessageViewer::DMARCRecordJob::success, this, &DMARCPolicyJob::slotCheckSubDomain);
+                connect(job, &MessageViewer::DMARCRecordJob::error, this, [](const QString &err, const QString &domainName) {
+                    qDebug() << "error: " << err << " domain " << domainName;
+                    //TODO Q_EMIT here too
+                });
+                if (!job->start()) {
+                    deleteLater();
+                    Q_EMIT result({});
+                    return;
+                }
+            } else {
+                //Invalid
+                Q_EMIT result({});
+                deleteLater();
+                return;
+            }
         } else {
-            //Valid send info.
+            DMARCPolicyJob::DMARCResult val;
+            val.mAdkim = info.adkim();
+            val.mPercentage = info.percentage();
+            val.mPolicy = info.policy();
+            val.mDomain = domainName;
+            val.mSource = domainName;
+            Q_EMIT result(val);
+            deleteLater();
+            return;
         }
     } else {
-        //TODO
+        //TODO check subdomain
     }
 
 
@@ -101,8 +153,12 @@ void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString
 
 QString DMARCPolicyJob::emailDomain() const
 {
-    //TODO
-    return {};
+    return MessageViewer::DKIMUtil::emailDomain(mEmailAddress);
+}
+
+QString DMARCPolicyJob::emailSubDomain(const QString &domainName) const
+{
+    return MessageViewer::DKIMUtil::emailSubDomain(domainName);
 }
 
 QString DMARCPolicyJob::emailAddress() const

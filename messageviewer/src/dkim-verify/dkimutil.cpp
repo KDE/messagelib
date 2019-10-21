@@ -137,3 +137,22 @@ QString MessageViewer::DKIMUtil::cleanString(QString str)
     str.replace(QRegularExpression(pattFWS), QString());
     return str;
 }
+
+QString MessageViewer::DKIMUtil::emailDomain(const QString &emailDomain)
+{
+    return emailDomain.right(emailDomain.length() - emailDomain.indexOf(QLatin1Char('@')) - 1);
+}
+
+QString MessageViewer::DKIMUtil::emailSubDomain(const QString &emailDomain)
+{
+    int dotNumber = 0;
+    for (int i = emailDomain.length() - 1; i >= 0; --i) {
+        if (emailDomain.at(i) == QLatin1Char('.')) {
+            dotNumber++;
+            if (dotNumber == 2) {
+                return emailDomain.right(emailDomain.length() - i - 1);
+            }
+        }
+    }
+    return emailDomain;
+}

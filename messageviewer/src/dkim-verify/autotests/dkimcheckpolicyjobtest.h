@@ -17,21 +17,19 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef DKIMUTILTEST_H
-#define DKIMUTILTEST_H
+#ifndef DKIMCHECKPOLICYJOBTEST_H
+#define DKIMCHECKPOLICYJOBTEST_H
 
 #include <QObject>
 
-class DKIMUtilTest : public QObject
+class DKIMCheckPolicyJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit DKIMUtilTest(QObject *parent = nullptr);
-    ~DKIMUtilTest() = default;
+    explicit DKIMCheckPolicyJobTest(QObject *parent = nullptr);
+    ~DKIMCheckPolicyJobTest() = default;
 private Q_SLOTS:
-    void shouldTestBodyCanonizationRelaxed();
-    void shouldVerifyEmailDomain();
-    void shouldVerifySubEmailDomain();
+    void shouldHaveDefaultValues();
 };
 
-#endif // DKIMUTILTEST_H
+#endif // DKIMCHECKPOLICYJOBTEST_H

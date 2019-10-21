@@ -28,6 +28,25 @@ class MESSAGEVIEWER_TESTS_EXPORT DMARCPolicyJob : public QObject
 {
     Q_OBJECT
 public:
+    struct DMARCResult {
+        bool isValid() const {
+            return !mAdkim.isEmpty() && !mPolicy.isEmpty() && !mDomain.isEmpty() && !mSource.isEmpty() && (mPercentage != -1);
+        }
+        //        Q_REQUIRED_RESULT bool operator==(const CheckSignatureResult &other) const
+        //        {
+        //        }
+
+        //        Q_REQUIRED_RESULT bool operator!=(const CheckSignatureResult &other) const
+        //        {
+        //        }
+        QString mAdkim;
+        QString mPolicy;
+        QString mDomain;
+        QString mSource;
+        int mPercentage = -1;
+    };
+
+
     explicit DMARCPolicyJob(QObject *parent = nullptr);
     ~DMARCPolicyJob();
 
@@ -38,11 +57,14 @@ public:
     void setEmailAddress(const QString &emailAddress);
 
 Q_SIGNALS:
-    void result(const MessageViewer::DMARCInfo &info);
+    void result(const MessageViewer::DMARCPolicyJob::DMARCResult &value);
 
 private:
     void slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName);
+    void slotCheckSubDomain(const QList<QByteArray> &lst, const QString &domainName);
+    Q_REQUIRED_RESULT QByteArray generateDMARCFromList(const QList<QByteArray> &lst) const;
     Q_REQUIRED_RESULT QString emailDomain() const;
+    Q_REQUIRED_RESULT QString emailSubDomain(const QString &domainName) const;
     QString mEmailAddress;
 };
 }

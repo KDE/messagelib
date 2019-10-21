@@ -42,3 +42,30 @@ void DKIMUtilTest::shouldTestBodyCanonizationRelaxed()
         QCOMPARE(MessageViewer::DKIMUtil::generateHash(result.toUtf8(), QCryptographicHash::Sha256), "DrwZwEC82qsIhJtHlq76T00vAUcrSrHbJh8wY5GTAws=");
     }
 }
+
+void DKIMUtilTest::shouldVerifyEmailDomain()
+{
+    QCOMPARE(MessageViewer::DKIMUtil::emailDomain(QStringLiteral("foo@kde.org")), QStringLiteral("kde.org"));
+    QCOMPARE(MessageViewer::DKIMUtil::emailDomain(QStringLiteral("foo@blo.bli.kde.org")), QStringLiteral("blo.bli.kde.org"));
+}
+
+void DKIMUtilTest::shouldVerifySubEmailDomain()
+{
+    {
+        const QString email = QStringLiteral("goo@kde.org");
+        const QString domainName = MessageViewer::DKIMUtil::emailDomain(email);
+        QCOMPARE(MessageViewer::DKIMUtil::emailSubDomain(domainName), QStringLiteral("kde.org"));
+    }
+    {
+        const QString email = QStringLiteral("goo@bla.bli.kde.org");
+        const QString domainName = MessageViewer::DKIMUtil::emailDomain(email);
+        QCOMPARE(MessageViewer::DKIMUtil::emailSubDomain(domainName), QStringLiteral("kde.org"));
+    }
+    {
+        const QString email = QStringLiteral("goo@bli.kde.org");
+        const QString domainName = MessageViewer::DKIMUtil::emailDomain(email);
+        QCOMPARE(MessageViewer::DKIMUtil::emailSubDomain(domainName), QStringLiteral("kde.org"));
+    }
+
+}
+

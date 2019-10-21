@@ -22,6 +22,7 @@
 #include "dkimmanagerkey.h"
 #include "dkimresultattribute.h"
 #include "dkimstoreresultjob.h"
+#include "dkimcheckpolicyjob.h"
 #include "settings/messageviewersettings.h"
 #include <AkonadiCore/AttributeFactory>
 using namespace MessageViewer;
@@ -61,7 +62,7 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
     }
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
-    connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotResult);
+    connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotCheckSignatureResult);
     job->setSaveKey(MessageViewer::MessageViewerSettings::self()->saveKey());
     job->setItem(item);
     job->start();
@@ -76,7 +77,7 @@ void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
 {
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
-    connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotResult);
+    connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotCheckSignatureResult);
     job->setSaveKey(MessageViewer::MessageViewerSettings::self()->saveKey());
     job->setMessage(message);
     job->start();
@@ -90,7 +91,7 @@ void DKIMManager::storeKey(const QString &key, const QString &domain, const QStr
     }
 }
 
-void DKIMManager::slotResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
+void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
     if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
         if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid) {
@@ -101,4 +102,20 @@ void DKIMManager::slotResult(const DKIMCheckSignatureJob::CheckSignatureResult &
     }
     qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
     Q_EMIT result(checkResult);
+}
+
+void DKIMManager::slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
+{
+    if (MessageViewer::MessageViewerSettings::self()->checkIfEmailShouldBeSigned()) {
+        DKIMCheckPolicyJob *job = new DKIMCheckPolicyJob(this);
+        connect(job, &DKIMCheckPolicyJob::result, this, &DKIMManager::storeResult);
+        job->setCheckResult(checkResult);
+        //TODO add message from
+        if (!job->start()) {
+            storeResult(checkResult);
+            //TODO Store or not ?
+        }
+    } else {
+        storeResult(checkResult);
+    }
 }

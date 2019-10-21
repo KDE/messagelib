@@ -17,36 +17,37 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef DKIMMANAGER_H
-#define DKIMMANAGER_H
+#ifndef DKIMCHECKPOLICYJOB_H
+#define DKIMCHECKPOLICYJOB_H
 
 #include <QObject>
-#include "messageviewer_export.h"
 #include "dkimchecksignaturejob.h"
-#include <KMime/Message>
-#include <AkonadiCore/Item>
+#include "dmarcpolicyjob.h"
+#include "messageviewer_export.h"
 namespace MessageViewer {
-class MESSAGEVIEWER_EXPORT DKIMManager : public QObject
+class MESSAGEVIEWER_EXPORT DKIMCheckPolicyJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit DKIMManager(QObject *parent = nullptr);
-    ~DKIMManager();
-    static DKIMManager *self();
+    explicit DKIMCheckPolicyJob(QObject *parent = nullptr);
+    ~DKIMCheckPolicyJob();
+    Q_REQUIRED_RESULT bool canStart() const;
+    Q_REQUIRED_RESULT bool start();
 
-    void checkDKim(const KMime::Message::Ptr &message);
-    void checkDKim(const Akonadi::Item &item);
+    Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult checkResult() const;
+    void setCheckResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
-    void clearInfoWidget();
+    Q_REQUIRED_RESULT QString emailAddress() const;
+    void setEmailAddress(const QString &emailAddress);
 
 Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
-    void clearInfo();
+
 private:
-    void storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
-    void storeKey(const QString &key, const QString &domain, const QString &selector);
-    void slotCheckSignatureResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    void dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value);
+    MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mCheckResult;
+    QString mEmailAddress;
 };
 }
 
-#endif // DKIMMANAGER_H
+#endif // DKIMCHECKPOLICYJOB_H
