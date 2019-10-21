@@ -27,12 +27,10 @@
 DMarcLookUpKey::DMarcLookUpKey(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DMarcLookUpKey::~DMarcLookUpKey()
 {
-
 }
 
 void DMarcLookUpKey::lookUpDomain(const QString &domain)
@@ -40,10 +38,10 @@ void DMarcLookUpKey::lookUpDomain(const QString &domain)
     MessageViewer::DMARCRecordJob *job = new MessageViewer::DMARCRecordJob(this);
     job->setDomainName(domain);
     connect(job, &MessageViewer::DMARCRecordJob::success, this, [](const QList<QByteArray> &lst, const QString &domainName) {
-       qDebug() << "domainName: " << domainName << " lst " << lst;
+        qDebug() << "domainName: " << domainName << " lst " << lst;
     });
     connect(job, &MessageViewer::DMARCRecordJob::error, this, [](const QString &err, const QString &domainName) {
-       qDebug() << "error: " << err << " domain " << domainName;
+        qDebug() << "error: " << err << " domain " << domainName;
     });
     job->start();
 }

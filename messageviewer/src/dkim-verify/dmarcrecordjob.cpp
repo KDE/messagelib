@@ -26,12 +26,10 @@ using namespace MessageViewer;
 DMARCRecordJob::DMARCRecordJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DMARCRecordJob::~DMARCRecordJob()
 {
-
 }
 
 bool DMARCRecordJob::start()

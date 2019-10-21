@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "dkimheaderparsertest.h"
 #include "dkim-verify/dkimheaderparser.h"
 #include <QTest>
@@ -26,7 +25,6 @@ QTEST_GUILESS_MAIN(DKIMHeaderParserTest)
 DKIMHeaderParserTest::DKIMHeaderParserTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMHeaderParserTest::shouldHaveDefaultValues()

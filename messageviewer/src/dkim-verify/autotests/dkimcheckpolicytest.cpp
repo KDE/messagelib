@@ -23,5 +23,4 @@ QTEST_GUILESS_MAIN(DKIMCheckPolicyTest)
 DKIMCheckPolicyTest::DKIMCheckPolicyTest(QObject *parent)
     : QObject(parent)
 {
-
 }

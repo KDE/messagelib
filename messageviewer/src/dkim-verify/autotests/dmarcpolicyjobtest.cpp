@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "dmarcpolicyjobtest.h"
 #include "dkim-verify/dmarcpolicyjob.h"
 #include <QTest>
@@ -26,7 +25,6 @@ QTEST_GUILESS_MAIN(DMARCPolicyJobTest)
 DMARCPolicyJobTest::DMARCPolicyJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DMARCPolicyJobTest::shouldHaveDefaultValues()

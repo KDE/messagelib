@@ -42,7 +42,6 @@ void DKIMManagerKeyWidgetTest::shouldHaveDefaultValue()
     QVERIFY(searchLineEdit->isClearButtonEnabled());
     mainLayout->addWidget(searchLineEdit);
 
-
     QTreeWidget *mTreeWidget = w.findChild<QTreeWidget *>(QStringLiteral("treewidget"));
     QVERIFY(mTreeWidget);
     QCOMPARE(mTreeWidget->topLevelItemCount(), 0);

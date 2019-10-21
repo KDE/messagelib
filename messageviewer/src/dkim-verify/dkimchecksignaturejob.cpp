@@ -133,7 +133,7 @@ void DKIMCheckSignatureJob::start()
         mBodyCanonizationResult = mBodyCanonizationResult.left(mDkimInfo.bodyLengthCount());
     }
     if (mBodyCanonizationResult.startsWith(QLatin1Literal("\r\n"))) { //Remove it from start
-        mBodyCanonizationResult = mBodyCanonizationResult.right(mBodyCanonizationResult.length() -2 );
+        mBodyCanonizationResult = mBodyCanonizationResult.right(mBodyCanonizationResult.length() -2);
     }
 #ifdef DEBUG_SIGNATURE_KDIM
     QFile caFile(QStringLiteral("/tmp/bodycanon-kmail.txt"));
@@ -472,7 +472,7 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         const QByteArray ba = QCA::base64ToArray(s);
         QCA::SignatureAlgorithm sigAlg;
         //TODO replace by enum !
-        switch(mDkimInfo.hashingAlgorithm()) {
+        switch (mDkimInfo.hashingAlgorithm()) {
         case DKIMInfo::HashingAlgorithmType::Sha1:
             sigAlg = QCA::EMSA3_SHA1;
             break;

@@ -71,7 +71,6 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
                                << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned
                                << QString();
 
-
     QTest::addRow("broken1") << QStringLiteral("broken1.mbox")
                              << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
                              << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
@@ -95,7 +94,6 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
                              << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
                              << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
                              << QStringLiteral("kde.org");
-
 }
 
 void DKIMCheckSignatureJobTest::shouldTestMail()

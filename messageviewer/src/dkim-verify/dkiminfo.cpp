@@ -237,7 +237,7 @@ DKIMInfo::HashingAlgorithmType DKIMInfo::hashingAlgorithm() const
     return mHashingAlgorithm;
 }
 
-void DKIMInfo::setHashingAlgorithm( DKIMInfo::HashingAlgorithmType hashingAlgorithm)
+void DKIMInfo::setHashingAlgorithm(DKIMInfo::HashingAlgorithmType hashingAlgorithm)
 {
     mHashingAlgorithm = hashingAlgorithm;
 }
@@ -279,7 +279,7 @@ bool DKIMInfo::isValid() const
     }
 
     return !mSelector.isEmpty() && !mDomain.isEmpty() && !mBodyHash.isEmpty()
-            && ((mHashingAlgorithm == HashingAlgorithmType::Sha1) || mHashingAlgorithm == HashingAlgorithmType::Sha256);
+           && ((mHashingAlgorithm == HashingAlgorithmType::Sha1) || mHashingAlgorithm == HashingAlgorithmType::Sha256);
 }
 
 QStringList DKIMInfo::listSignedHeader() const

@@ -33,7 +33,6 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins(0, 0, 0, 0);
 
-
     mTreeWidget = new QTreeWidget(this);
     mTreeWidget->setObjectName(QStringLiteral("treewidget"));
     mTreeWidget->setRootIsDecorated(false);

@@ -25,7 +25,6 @@ QTEST_GUILESS_MAIN(DMARCRecordJobTest)
 DMARCRecordJobTest::DMARCRecordJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DMARCRecordJobTest::shouldHaveDefaultValues()

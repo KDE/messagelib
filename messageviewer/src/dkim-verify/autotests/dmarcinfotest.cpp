@@ -25,7 +25,6 @@ QTEST_GUILESS_MAIN(DMARCInfoTest)
 DMARCInfoTest::DMARCInfoTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DMARCInfoTest::shouldHaveDefaultValues()
@@ -37,7 +36,6 @@ void DMARCInfoTest::shouldHaveDefaultValues()
     QCOMPARE(info.percentage(), -1);
     QVERIFY(info.subDomainPolicy().isEmpty());
 }
-
 
 void DMARCInfoTest::shouldTestExtractDkimKeyRecord()
 {

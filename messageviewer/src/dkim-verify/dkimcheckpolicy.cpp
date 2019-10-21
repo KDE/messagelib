@@ -23,5 +23,4 @@ using namespace MessageViewer;
 
 DKIMCheckPolicy::DKIMCheckPolicy()
 {
-
 }

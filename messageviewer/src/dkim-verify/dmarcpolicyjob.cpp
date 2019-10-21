@@ -17,19 +17,16 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "dmarcpolicyjob.h"
 using namespace MessageViewer;
 
 DMARCPolicyJob::DMARCPolicyJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DMARCPolicyJob::~DMARCPolicyJob()
 {
-
 }
 
 bool DMARCPolicyJob::canStart() const
@@ -40,5 +37,4 @@ bool DMARCPolicyJob::canStart() const
 
 void DMARCPolicyJob::start()
 {
-
 }
