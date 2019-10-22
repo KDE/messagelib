@@ -71,4 +71,11 @@ void DMARCInfoTest::shouldTestExtractDkimKeyRecord_data()
     info2.setAdkim(QStringLiteral("r"));
     info2.setPolicy(QStringLiteral("reject"));
     QTest::addRow("yahoo.com") << QStringLiteral("v=DMARC1; p=reject; pct=100; rua=mailto:dmarc_y_rua@yahoo.com;") << info2 << true;
+
+    MessageViewer::DMARCInfo info3;
+    info3.setVersion(QStringLiteral("DMARC1"));
+    info3.setAdkim(QStringLiteral("r"));
+    info3.setPolicy(QStringLiteral("none"));
+    info3.setSubDomainPolicy(QStringLiteral("none"));
+    QTest::addRow("intel.com") << QStringLiteral("v=DMARC1;p=none;sp=none;fo=1;rua=mailto:dmarc.notification@intel.com") << info3 << true;
 }

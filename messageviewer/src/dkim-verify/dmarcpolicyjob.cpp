@@ -153,8 +153,6 @@ void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString
         //Check subdomain
         checkSubDomain(domainName);
     }
-    qDebug() << "domainName: " << domainName << " lst " << lst;
-    //Parse result
 }
 
 QString DMARCPolicyJob::emailDomain() const

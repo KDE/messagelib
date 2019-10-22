@@ -24,3 +24,8 @@ using namespace MessageViewer;
 DKIMCheckPolicy::DKIMCheckPolicy()
 {
 }
+
+int DKIMCheckPolicy::rsaSha1Policy() const
+{
+    return MessageViewer::MessageViewerSettings::policyRsaSha1();
+}

@@ -33,7 +33,6 @@ DKIMCheckPolicyJob::~DKIMCheckPolicyJob()
 
 bool DKIMCheckPolicyJob::canStart() const
 {
-    //TODO verify it !
     return !mEmailAddress.isEmpty();
 }
 
@@ -57,19 +56,22 @@ bool DKIMCheckPolicyJob::start()
         }
     } else {
         //Verify list
+        //TODO
+        Q_EMIT result(mCheckResult);
+        deleteLater();
     }
-
-    //TODO
     return true;
 }
 
 void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value)
 {
-    if (mCheckResult.status == DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned) {
-        mCheckResult.status = DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
-        //TODO verify it.
-        qDebug() << " void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value)"<<value.mDomain << "value " << value.mSource;
-        mCheckResult.signedBy = value.mSource;
+    if (value.isValid()) {
+        if (mCheckResult.status == DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned) {
+            mCheckResult.status = DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
+            //qDebug() << " void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value)"<<value.mDomain << "value " << value.mSource;
+            //TODO verify it.
+            mCheckResult.signedBy = value.mSource;
+        }
     }
     Q_EMIT result(mCheckResult);
     deleteLater();

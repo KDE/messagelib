@@ -24,6 +24,7 @@
 #include "messageviewer_export.h"
 #include <MessageViewer/DKIMKeyRecord>
 #include <MessageViewer/DKIMInfo>
+#include <MessageViewer/DKIMCheckPolicy>
 #include <KMime/Message>
 #include <AkonadiCore/Item>
 
@@ -61,6 +62,7 @@ public:
         DomainI = 15,
         TestKeyMode = 16,
         ImpossibleToDownloadKey = 17,
+        HashAlgorithmUnsafeSha1 = 18,
     };
     Q_ENUM(DKIMError)
     enum class DKIMWarning : int {
@@ -129,6 +131,9 @@ public:
     Q_REQUIRED_RESULT bool saveKey() const;
     void setSaveKey(bool saveKey);
 
+    Q_REQUIRED_RESULT DKIMCheckPolicy policy() const;
+    void setPolicy(const DKIMCheckPolicy &policy);
+
 Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void storeKey(const QString &key, const QString &domain, const QString &selector);
@@ -143,6 +148,7 @@ private:
     Q_REQUIRED_RESULT QString bodyCanonizationSimple() const;
     Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult();
     void verifyRSASignature();
+    DKIMCheckPolicy mPolicy;
     KMime::Message::Ptr mMessage;
     Akonadi::Item mMessageItem;
     QString mFromEmail;

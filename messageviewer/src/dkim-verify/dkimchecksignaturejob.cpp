@@ -478,7 +478,6 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         QCA::SecureArray sec = mHeaderCanonizationResult.toLatin1();
         const QByteArray ba = QCA::base64ToArray(s);
         QCA::SignatureAlgorithm sigAlg;
-        //TODO replace by enum !
         switch (mDkimInfo.hashingAlgorithm()) {
         case DKIMInfo::HashingAlgorithmType::Sha1:
             sigAlg = QCA::EMSA3_SHA1;
@@ -511,6 +510,16 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid;
     Q_EMIT result(createCheckResult());
     deleteLater();
+}
+
+DKIMCheckPolicy DKIMCheckSignatureJob::policy() const
+{
+    return mPolicy;
+}
+
+void DKIMCheckSignatureJob::setPolicy(const DKIMCheckPolicy &policy)
+{
+    mPolicy = policy;
 }
 
 bool DKIMCheckSignatureJob::saveKey() const
@@ -595,8 +604,16 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
     }
 
     if (info.hashingAlgorithm() == DKIMInfo::HashingAlgorithmType::Sha1) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "hash algorithm is not secure sha1";
-        mWarning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe;
+        if (mPolicy.rsaSha1Policy() == MessageViewer::MessageViewerSettings::EnumPolicyRsaSha1::Nothing) {
+            //nothing
+        } else if (mPolicy.rsaSha1Policy() == MessageViewer::MessageViewerSettings::EnumPolicyRsaSha1::Warning) {
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "hash algorithm is not secure sha1 : Error";
+            mWarning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe;
+        } else if (mPolicy.rsaSha1Policy() == MessageViewer::MessageViewerSettings::EnumPolicyRsaSha1::Error) {
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "hash algorithm is not secure sha1: Error";
+            mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::HashAlgorithmUnsafeSha1;
+            return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+        }
     }
     //Add more test
     //TODO check if info is valid

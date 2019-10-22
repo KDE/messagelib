@@ -160,6 +160,9 @@ void DKIMWidgetInfo::updateToolTip()
         case DKIMCheckSignatureJob::DKIMError::ImpossibleToDownloadKey:
             tooltip = i18n("Impossible to download key.");
             break;
+        case DKIMCheckSignatureJob::DKIMError::HashAlgorithmUnsafeSha1:
+            tooltip = i18n("Hash Algorithm unsafe (sha1)");
+            break;
         }
     }
 

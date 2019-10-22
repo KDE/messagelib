@@ -359,6 +359,7 @@ if (${Qca-qt5_FOUND})
         DKIMKeyRecord
         DKIMInfo
         DKIMWidgetInfo
+        DKIMCheckPolicy
         REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
         PREFIX MessageViewer
         RELATIVE dkim-verify

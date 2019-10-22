@@ -31,7 +31,7 @@ public:
     struct DMARCResult {
         bool isValid() const
         {
-            return !mAdkim.isEmpty() && !mPolicy.isEmpty() && !mDomain.isEmpty() && !mSource.isEmpty() && (mPercentage != -1);
+            return !mAdkim.isEmpty() && !mPolicy.isEmpty() && !mDomain.isEmpty() && !mSource.isEmpty();
         }
 
         Q_REQUIRED_RESULT bool operator==(const DMARCPolicyJob::DMARCResult &other) const

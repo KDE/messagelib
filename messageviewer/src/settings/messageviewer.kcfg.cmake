@@ -267,6 +267,14 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <entry name="UseDMarc" type="bool">
         <default>false</default>
       </entry>
+      <entry name="PolicyRsaSha1" type="Enum">
+        <choices>
+          <choice name="Nothing"/>
+          <choice name="Warning"/>
+          <choice name="Error"/>
+        </choices>
+	<default>Warning</default>
+      </entry>
     </group>
 
 </kcfg>

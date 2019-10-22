@@ -21,20 +21,15 @@
 #define DKIMCHECKPOLICY_H
 
 #include "messageviewer_export.h"
+#include <messageviewer/messageviewersettings.h>
 #include <QObject>
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT DKIMCheckPolicy
 {
-    Q_GADGET
 public:
-    enum class PolicyType {
-        Any = 0,
-        Warning = 1,
-        Error = 2,
-    };
-    Q_ENUM(PolicyType)
-
     DKIMCheckPolicy();
+
+    Q_REQUIRED_RESULT int rsaSha1Policy() const;
 };
 }
 

@@ -108,7 +108,8 @@ void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult 
 
 void DKIMManager::slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
-    if (MessageViewer::MessageViewerSettings::self()->checkIfEmailShouldBeSigned()) {
+    if (MessageViewer::MessageViewerSettings::self()->checkIfEmailShouldBeSigned() &&
+            (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned)) {
         DKIMCheckPolicyJob *job = new DKIMCheckPolicyJob(this);
         connect(job, &DKIMCheckPolicyJob::result, this, &DKIMManager::storeResult);
         job->setCheckResult(checkResult);
