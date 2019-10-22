@@ -32,13 +32,15 @@ public:
         bool isValid() const {
             return !mAdkim.isEmpty() && !mPolicy.isEmpty() && !mDomain.isEmpty() && !mSource.isEmpty() && (mPercentage != -1);
         }
-        //        Q_REQUIRED_RESULT bool operator==(const CheckSignatureResult &other) const
-        //        {
-        //        }
+        Q_REQUIRED_RESULT bool operator==(const DMARCPolicyJob::DMARCResult &other) const
+        {
+            return mAdkim == other.mAdkim && mPolicy == other.mPolicy && mDomain == other.mDomain && mSource == other.mSource && mPercentage == other.mPercentage;
+        }
 
-        //        Q_REQUIRED_RESULT bool operator!=(const CheckSignatureResult &other) const
-        //        {
-        //        }
+        Q_REQUIRED_RESULT bool operator!=(const DMARCPolicyJob::DMARCResult &other) const
+        {
+            return !DMARCResult::operator==(other);
+        }
         QString mAdkim;
         QString mPolicy;
         QString mDomain;
@@ -60,6 +62,7 @@ Q_SIGNALS:
     void result(const MessageViewer::DMARCPolicyJob::DMARCResult &value);
 
 private:
+    void checkSubDomain(const QString &domainName);
     void slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName);
     void slotCheckSubDomain(const QList<QByteArray> &lst, const QString &domainName);
     Q_REQUIRED_RESULT QByteArray generateDMARCFromList(const QList<QByteArray> &lst) const;

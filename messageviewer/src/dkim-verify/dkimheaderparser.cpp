@@ -75,12 +75,10 @@ MessageViewer::DKIMHeaderParser::Header *DKIMHeaderParser::extractHeader(const Q
     if (folded) {
         const auto unfoldedBody = unfoldHeader(head.constData() + startOfFieldBody, endOfFieldBody - startOfFieldBody);
         //qDebug() << " unfoldedBody" << unfoldedBody;
-        //const QString str = KCodecs::decodeRFC2047String(unfoldedBody, &header->codec, QByteArrayLiteral("ISO-8859-1"));
         header->HeaderValue = QString::fromLatin1(unfoldedBody);
     } else {
         const QByteArray ba = QByteArray::fromRawData(head.constData() + startOfFieldBody, endOfFieldBody - startOfFieldBody);
         //qDebug() << " unfoldedBody ba" << ba;
-        //const QString str = KCodecs::decodeRFC2047String(ba, &header->codec, QByteArrayLiteral("ISO-8859-1"));
         header->HeaderValue = QString::fromLatin1(ba);
     }
     return header;
