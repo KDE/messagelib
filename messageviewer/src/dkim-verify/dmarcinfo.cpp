@@ -31,7 +31,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: key empty";
         return false;
     }
-    const QStringList items = key.split(QLatin1String("; "));
+    const QStringList items = key.split(QLatin1String(";"));
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QLatin1String("v="))) {

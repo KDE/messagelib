@@ -94,6 +94,11 @@ void DKIMWidgetInfo::updateInfo()
         pal.setColor(backgroundRole(), mDefaultColor);
         mLabel->setPalette(pal);
         break;
+    case DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned:
+        mLabel->setText(i18n("DKIM: Should Be Signed by %1", mResult.signedBy));
+        pal.setColor(backgroundRole(), mErrorColor);
+        mLabel->setPalette(pal);
+        break;
     }
     updateToolTip();
 }

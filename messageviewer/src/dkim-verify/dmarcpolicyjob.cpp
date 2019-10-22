@@ -41,7 +41,7 @@ bool DMARCPolicyJob::canStart() const
 bool DMARCPolicyJob::start()
 {
     if (!canStart()) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Impossible to start DMARCPolicyJob";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Impossible to start DMARCPolicyJob" << mEmailAddress;
         Q_EMIT result({});
         deleteLater();
         return false;
@@ -131,10 +131,10 @@ void DMARCPolicyJob::checkSubDomain(const QString &domainName)
 void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString &domainName)
 {
     const QByteArray ba = generateDMARCFromList(lst);
-
     DMARCInfo info;
     if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
-        if ((info.version() != QLatin1String("DMARC1")) ||  info.policy().isEmpty() || (info.percentage() > 100 || info.percentage() < 0)) {
+        if ((info.version() != QLatin1String("DMARC1")) ||  info.policy().isEmpty()
+                || (info.percentage() != -1 && (info.percentage() > 100 || info.percentage() < 0))) {
             //Invalid
             //Check subdomain
             checkSubDomain(domainName);

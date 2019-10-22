@@ -42,17 +42,17 @@ bool DKIMCheckPolicyJob::canStart() const
 bool DKIMCheckPolicyJob::start()
 {
     if (!canStart()) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start dmarcpolicyjob";
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start DKIMCheckPolicyJob" << mEmailAddress;
         Q_EMIT result(mCheckResult);
         deleteLater();
         return false;
     }
     if (MessageViewer::MessageViewerSettings::self()->useDMarc()) {
         DMARCPolicyJob *job = new DMARCPolicyJob(this);
-        connect(job, &DMARCPolicyJob::result, this, &DKIMCheckPolicyJob::dmarcPolicyResult);
         job->setEmailAddress(mEmailAddress);
+        connect(job, &DMARCPolicyJob::result, this, &DKIMCheckPolicyJob::dmarcPolicyResult);
         if (!job->start()) {
-            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start dmarcpolicyjob";
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start DKIMCheckPolicyJob" << mEmailAddress;
             Q_EMIT result(mCheckResult);
             deleteLater();
             return false;
@@ -67,7 +67,14 @@ bool DKIMCheckPolicyJob::start()
 
 void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value)
 {
-    //TODO
+    if (mCheckResult.status == DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned) {
+        mCheckResult.status = DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
+        //TODO verify it.
+        qDebug() << " void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value)"<<value.mDomain << "value " << value.mSource;
+        mCheckResult.signedBy = value.mSource;
+    }
+    Q_EMIT result(mCheckResult);
+    deleteLater();
 }
 
 MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckPolicyJob::checkResult() const

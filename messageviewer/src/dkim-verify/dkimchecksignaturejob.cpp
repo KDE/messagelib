@@ -82,14 +82,15 @@ void DKIMCheckSignatureJob::start()
     if (auto hrd = mMessage->headerByType("DKIM-Signature")) {
         mDkimValue = hrd->asUnicodeString();
     }
+    //Store mFromEmail before looking at mDkimValue value. Otherwise we can return a from empty
+    if (auto hrd = mMessage->from(false)) {
+        mFromEmail = KEmailAddress::extractEmailAddress(hrd->asUnicodeString());
+    }
     if (mDkimValue.isEmpty()) {
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
         Q_EMIT result(createCheckResult());
         deleteLater();
         return;
-    }
-    if (auto hrd = mMessage->from(false)) {
-        mFromEmail = KEmailAddress::extractEmailAddress(hrd->asUnicodeString());
     }
     qDebug() << "mFromEmail " << mFromEmail;
     if (!mDkimInfo.parseDKIM(mDkimValue)) {

@@ -94,7 +94,9 @@ void DKIMManager::storeKey(const QString &key, const QString &domain, const QStr
 void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
     if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
-        if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid) {
+        if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid ||
+                checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid ||
+                checkResult.status == DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned) {
             DKIMStoreResultJob *job = new DKIMStoreResultJob(this);
             job->setResult(checkResult);
             job->start();
