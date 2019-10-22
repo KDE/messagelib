@@ -36,7 +36,9 @@ bool DKIMInfo::parseDKIM(const QString &header)
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: trying to parse empty header";
         return false;
     }
-    const QStringList items = header.split(QLatin1String("; "));
+    QString newHeaders = header;
+    newHeaders.replace(QLatin1String("; "), QLatin1String(";"));
+    const QStringList items = newHeaders.split(QLatin1Char(';'));
     bool foundCanonizations = false;
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
@@ -66,9 +68,9 @@ bool DKIMInfo::parseDKIM(const QString &header)
                 qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Query is not correct and not supported " << mQuery;
             }
         } else if (elem.startsWith(QLatin1String("d="))) {
-            mDomain = elem.right(elem.length() - 2);
+            mDomain = elem.right(elem.length() - 2).trimmed();
         } else if (elem.startsWith(QLatin1String("s="))) {
-            mSelector = elem.right(elem.length() - 2);
+            mSelector = elem.right(elem.length() - 2).trimmed();
         } else if (elem.startsWith(QLatin1String("b="))) {
             mSignature = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("h="))) {

@@ -235,6 +235,7 @@ void DKIMCheckSignatureJob::start()
 
     if (mSaveKey) {
         const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
+        qDebug() << " mDkimInfo.selector() " << mDkimInfo.selector() << "mDkimInfo.domain()  " << mDkimInfo.domain() << keyValue;
         if (keyValue.isEmpty()) {
             downloadKey(mDkimInfo);
         } else {
@@ -397,7 +398,6 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
         deleteLater();
         return;
     }
-
     if (mDkimKeyRecord.keyType() != QLatin1String("rsa")) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord key type is unknown " << mDkimKeyRecord.keyType() << " str " << str;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
@@ -442,6 +442,7 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
     }
 
     if (storeKeyValue) {
+        qDebug() << " Store key ********************************************************" << domain << " selector " << selector;
         Q_EMIT storeKey(str, domain, selector);
     }
 

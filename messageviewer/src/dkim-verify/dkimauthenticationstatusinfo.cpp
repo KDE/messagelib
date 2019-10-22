@@ -24,6 +24,13 @@ DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
 {
 }
 
+bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
+{
+    //TODO
+    return false;
+}
+
+
 QString DKIMAuthenticationStatusInfo::authservId() const
 {
     return mAuthservId;
