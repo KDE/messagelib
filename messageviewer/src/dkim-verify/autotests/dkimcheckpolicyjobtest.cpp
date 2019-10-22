@@ -25,7 +25,6 @@ QTEST_GUILESS_MAIN(DKIMCheckPolicyJobTest)
 DKIMCheckPolicyJobTest::DKIMCheckPolicyJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMCheckPolicyJobTest::shouldHaveDefaultValues()

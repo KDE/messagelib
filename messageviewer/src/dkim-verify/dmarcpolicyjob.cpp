@@ -83,7 +83,7 @@ void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QStr
     const QByteArray ba = generateDMARCFromList(lst);
     DMARCInfo info;
     if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
-        if ((info.version() != QLatin1String("DMARC1")) ||  info.policy().isEmpty() || (info.percentage() > 100 || info.percentage() < 0)) {
+        if ((info.version() != QLatin1String("DMARC1")) || info.policy().isEmpty() || (info.percentage() > 100 || info.percentage() < 0)) {
             Q_EMIT result({});
             deleteLater();
             return;
@@ -133,8 +133,8 @@ void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString
     const QByteArray ba = generateDMARCFromList(lst);
     DMARCInfo info;
     if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
-        if ((info.version() != QLatin1String("DMARC1")) ||  info.policy().isEmpty()
-                || (info.percentage() != -1 && (info.percentage() > 100 || info.percentage() < 0))) {
+        if ((info.version() != QLatin1String("DMARC1")) || info.policy().isEmpty()
+            || (info.percentage() != -1 && (info.percentage() > 100 || info.percentage() < 0))) {
             //Invalid
             //Check subdomain
             checkSubDomain(domainName);

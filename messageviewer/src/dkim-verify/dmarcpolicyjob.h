@@ -29,9 +29,11 @@ class MESSAGEVIEWER_TESTS_EXPORT DMARCPolicyJob : public QObject
     Q_OBJECT
 public:
     struct DMARCResult {
-        bool isValid() const {
+        bool isValid() const
+        {
             return !mAdkim.isEmpty() && !mPolicy.isEmpty() && !mDomain.isEmpty() && !mSource.isEmpty() && (mPercentage != -1);
         }
+
         Q_REQUIRED_RESULT bool operator==(const DMARCPolicyJob::DMARCResult &other) const
         {
             return mAdkim == other.mAdkim && mPolicy == other.mPolicy && mDomain == other.mDomain && mSource == other.mSource && mPercentage == other.mPercentage;
@@ -41,13 +43,13 @@ public:
         {
             return !DMARCResult::operator==(other);
         }
+
         QString mAdkim;
         QString mPolicy;
         QString mDomain;
         QString mSource;
         int mPercentage = -1;
     };
-
 
     explicit DMARCPolicyJob(QObject *parent = nullptr);
     ~DMARCPolicyJob();

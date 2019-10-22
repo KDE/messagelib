@@ -25,12 +25,10 @@ using namespace MessageViewer;
 DKIMCheckPolicyJob::DKIMCheckPolicyJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DKIMCheckPolicyJob::~DKIMCheckPolicyJob()
 {
-
 }
 
 bool DKIMCheckPolicyJob::canStart() const

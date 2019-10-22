@@ -66,6 +66,4 @@ void DKIMUtilTest::shouldVerifySubEmailDomain()
         const QString domainName = MessageViewer::DKIMUtil::emailDomain(email);
         QCOMPARE(MessageViewer::DKIMUtil::emailSubDomain(domainName), QStringLiteral("kde.org"));
     }
-
 }
-

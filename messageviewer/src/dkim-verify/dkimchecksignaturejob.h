@@ -84,7 +84,7 @@ public:
                    && warning == other.warning
                    && status == other.status
                    && item == other.item
-                    && fromEmail == other.fromEmail;
+                   && fromEmail == other.fromEmail;
         }
 
         Q_REQUIRED_RESULT bool operator!=(const CheckSignatureResult &other) const
