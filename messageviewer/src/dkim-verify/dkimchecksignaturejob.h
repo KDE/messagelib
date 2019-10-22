@@ -82,7 +82,8 @@ public:
             return error == other.error
                    && warning == other.warning
                    && status == other.status
-                   && item == other.item;
+                   && item == other.item
+                    && fromEmail == other.fromEmail;
         }
 
         Q_REQUIRED_RESULT bool operator!=(const CheckSignatureResult &other) const
@@ -95,6 +96,7 @@ public:
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
         Akonadi::Item item;
         QString signedBy;
+        QString fromEmail;
     };
 
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
@@ -142,6 +144,7 @@ private:
     void verifyRSASignature();
     KMime::Message::Ptr mMessage;
     Akonadi::Item mMessageItem;
+    QString mFromEmail;
     DKIMInfo mDkimInfo;
     DKIMKeyRecord mDkimKeyRecord;
     QString mDkimValue;

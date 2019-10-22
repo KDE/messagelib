@@ -25,6 +25,7 @@
 #include "dkimkeyrecord.h"
 #include "messageviewer_dkimcheckerdebug.h"
 #include "dkimheaderparser.h"
+#include <KEmailAddress>
 #include <QDateTime>
 #include <QCryptographicHash>
 #include <QFile>
@@ -49,6 +50,7 @@ MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob
     result.status = mStatus;
     result.item = mMessageItem;
     result.signedBy = mDkimInfo.domain();
+    result.fromEmail = mFromEmail;
     return result;
 }
 
@@ -86,6 +88,10 @@ void DKIMCheckSignatureJob::start()
         deleteLater();
         return;
     }
+    if (auto hrd = mMessage->from(false)) {
+        mFromEmail = KEmailAddress::extractEmailAddress(hrd->asUnicodeString());
+    }
+    qDebug() << "mFromEmail " << mFromEmail;
     if (!mDkimInfo.parseDKIM(mDkimValue)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse header" << mDkimValue;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;

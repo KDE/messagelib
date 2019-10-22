@@ -110,7 +110,7 @@ void DKIMManager::slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSig
         DKIMCheckPolicyJob *job = new DKIMCheckPolicyJob(this);
         connect(job, &DKIMCheckPolicyJob::result, this, &DKIMManager::storeResult);
         job->setCheckResult(checkResult);
-        //TODO add message from
+        job->setEmailAddress(checkResult.fromEmail);
         if (!job->start()) {
             storeResult(checkResult);
             //TODO Store or not ?
