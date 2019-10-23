@@ -100,7 +100,6 @@ bool DKIMInfo::parseDKIM(const QString &header)
     } else {
         const QStringList lst = mAgentOrUserIdentifier.split(QLatin1Char('@'));
         if (lst.count() == 2) {
-            mAgentOrUserIdentifier = lst.at(0);
             if (mAgentOrUserIdentifier.isEmpty()) {
                 mAgentOrUserIdentifier = QLatin1Char('@') + mDomain;
             }

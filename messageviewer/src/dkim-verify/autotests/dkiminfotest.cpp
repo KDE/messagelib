@@ -70,7 +70,7 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info1.setSignatureTimeStamp(1117574938);
     info1.setExpireTime(1118006938);
     info1.setSelector(QStringLiteral("jun2005.eng"));
-    info1.setAgentOrUserIdentifier(QStringLiteral("user"));
+    info1.setAgentOrUserIdentifier(QStringLiteral("user@eng.example.com"));
     info1.setIDomain(QStringLiteral("eng.example.com"));
     info1.setSignature(QStringLiteral("dzdVyOfAKCdLXdJOc9G2q8LoXSlEniSbav+yuU4zGeeruD00lszZVoG4ZHRNiYzR"));
     info1.setListSignedHeader(QStringList({QStringLiteral("from"), QStringLiteral("to"), QStringLiteral("subject"), QStringLiteral("date")}));
