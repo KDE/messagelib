@@ -30,7 +30,6 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
     return false;
 }
 
-
 QString DKIMAuthenticationStatusInfo::authservId() const
 {
     return mAuthservId;

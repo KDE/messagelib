@@ -65,7 +65,6 @@ bool DKIMKeyRecord::parseKey(const QString &key)
             //                  text; OPTIONAL, default is no flags set).  Unrecognized flags MUST
             //                  be ignored.  The defined flags are as follows:
 
-
             //TODO a option for disable "y" when we want.
 
             //                  y  This domain is testing DKIM.  Verifiers MUST NOT treat messages
