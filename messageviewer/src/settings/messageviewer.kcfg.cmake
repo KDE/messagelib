@@ -275,6 +275,9 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
         </choices>
 	<default>Warning</default>
       </entry>
+      <entry name="VerifySignatureWhenOnlyTest" type="bool">
+        <default>false</default>
+      </entry>
     </group>
 
 </kcfg>

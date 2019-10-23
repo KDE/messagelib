@@ -30,6 +30,7 @@ public:
     DKIMCheckPolicy();
 
     Q_REQUIRED_RESULT int rsaSha1Policy() const;
+    Q_REQUIRED_RESULT bool verifySignatureWhenOnlyTest() const;
 };
 }
 

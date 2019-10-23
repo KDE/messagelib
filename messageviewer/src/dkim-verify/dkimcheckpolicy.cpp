@@ -29,3 +29,8 @@ int DKIMCheckPolicy::rsaSha1Policy() const
 {
     return MessageViewer::MessageViewerSettings::policyRsaSha1();
 }
+
+bool DKIMCheckPolicy::verifySignatureWhenOnlyTest() const
+{
+    return MessageViewer::MessageViewerSettings::verifySignatureWhenOnlyTest();
+}

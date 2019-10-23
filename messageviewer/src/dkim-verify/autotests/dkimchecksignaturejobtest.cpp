@@ -101,6 +101,13 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
                              << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
                              << QStringLiteral("kde.org")
                              << QStringLiteral("null@kde.org");
+
+    QTest::addRow("broken5") << QStringLiteral("broken5.mbox")
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                             << QStringLiteral("kde.org")
+                             << QStringLiteral("noreply@phabricator.kde.org");
 }
 
 void DKIMCheckSignatureJobTest::shouldTestMail()

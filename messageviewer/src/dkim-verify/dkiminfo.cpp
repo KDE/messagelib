@@ -99,9 +99,11 @@ bool DKIMInfo::parseDKIM(const QString &header)
         mIDomain = mDomain;
     } else {
         const QStringList lst = mAgentOrUserIdentifier.split(QLatin1Char('@'));
-        //TODO verify if we need @ or not
         if (lst.count() == 2) {
             mAgentOrUserIdentifier = lst.at(0);
+            if (mAgentOrUserIdentifier.isEmpty()) {
+                mAgentOrUserIdentifier = QLatin1Char('@') + mDomain;
+            }
             mIDomain = lst.at(1);
         }
     }

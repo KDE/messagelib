@@ -1,0 +1,126 @@
+From noreply@phabricator.kde.org Thu Oct 17 06:58:22 2019
+Return-Path: <noreply@phabricator.kde.org>
+Delivered-To: kde@kde.org
+Received: from localhost (HELO queue) (127.0.0.1)
+	by localhost with SMTP; 17 Oct 2019 08:58:39 +0200
+Received: from unknown (HELO output31.mail.ovh.net) (10.108.117.233)
+  by mail675.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 17 Oct 2019 08:58:39 +0200
+Received: from vr21.mail.ovh.net (unknown [10.101.8.21])
+	by out31.mail.ovh.net (Postfix) with ESMTP id 46v0PS4kvLz5r2LLr
+	for <kde@kde.org>; Thu, 17 Oct 2019 06:58:36 +0000 (UTC)
+Received: from in23.mail.ovh.net (unknown [10.101.4.23])
+	by vr21.mail.ovh.net (Postfix) with ESMTP id 46v0PM42CMzgL1dh
+	for <kde@kde.org>; Thu, 17 Oct 2019 06:58:31 +0000 (UTC)
+Received-SPF: None (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=noreply@phabricator.kde.org; receiver=<UNKNOWN> 
+Authentication-Results: in23.mail.ovh.net;
+	dkim=pass (1024-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="EQaIu1sW";
+	dkim-atps=neutral
+Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
+	by in23.mail.ovh.net (Postfix) with ESMTPS id 46v0PM2Z48zQj4s
+	for <kde@kde.org>; Thu, 17 Oct 2019 06:58:31 +0000 (UTC)
+Received: from bluemchen.kde.org (bluemchen.kde.org [209.51.188.41])
+	by letterbox.kde.org (Postfix) with ESMTPS id 09B17280593
+	for <montel@kde.org>; Thu, 17 Oct 2019 07:58:24 +0100 (BST)
+Authentication-Results: letterbox.kde.org; dmarc=none (p=none dis=none) header.from=phabricator.kde.org
+Authentication-Results: letterbox.kde.org; spf=none smtp.mailfrom=noreply@phabricator.kde.org
+Authentication-Results: letterbox.kde.org;
+	dkim=pass (1024-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="EQaIu1sW";
+	dkim-atps=neutral
+Received: from code.kde.org (code.kde.org [IPv6:2a01:4f8:171:2687::4])
+	by bluemchen.kde.org (Postfix) with ESMTPS id 28764201A5
+	for <montel@kde.org>; Thu, 17 Oct 2019 02:58:23 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kde.org; s=transact;
+	t=1571295503; i=@kde.org;
+	bh=vvEuLcN1zPQyGm5EGCXPZjqL+vQWppCvnJORtUGApuc=;
+	h=Date:To:From:Subject:In-Reply-To:References:From;
+	b=EQaIu1sWai9YJKsYfQWu+IHIH9GIZBNN3a0/AvMTsaSVYHMk1rlKh1yAMPe09GsWF
+	 XYdXJfWxnl2Vfb2W4w1VDBXjTXSQduakkSXA2DzPwGt7XpOkOsNK+IUCvykMh8P7s2
+	 JysdedOy18TwXvG2VP6Jx/44lhvt6UbrFfuFWREg=
+Received: from [127.0.0.1] (helo=localhost.localdomain)
+	by code.kde.org with esmtp (Exim 4.86_2)
+	(envelope-from <noreply@phabricator.kde.org>)
+	id 1iKzjq-00035a-7T
+	for montel@kde.org; Thu, 17 Oct 2019 06:58:22 +0000
+Date: Thu, 17 Oct 2019 06:58:22 +0000
+To: montel@kde.org
+From: Laurent Montel <noreply@phabricator.kde.org>
+Reply-to: COMMIT3797556+public+7b2815e2dc936145@phabricator.kde.org
+Subject: R94:acd8d80c7cb1: GIT_SILENT: coding style
+Message-ID: <fd0a847c371bbca27a50e3445663f0b7@localhost.localdomain>
+X-Priority: 3
+X-Mailer: PHPMailer 5.1 (phpmailer.sourceforge.net)
+X-Phabricator-Sent-This-Message: Yes
+X-Mail-Transport-Agent: MetaMTA
+X-Auto-Response-Suppress: All
+X-Phabricator-Mail-Tags: <audit-commit>
+X-Herald-Rules: none
+X-Phabricator-To: <PHID-USER-3o5m4hlr5zhnshtzmnzz>
+Precedence: bulk
+Thread-Topic: PHID-CMIT-776k5xtrxyiutly6uw5o
+X-Phabricator-Mail-ID: 2209098
+X-Phabricator-Send-Attempt: shtgccjj2jkhq4qg
+In-Reply-To: <diffusion-audit-PHID-CMIT-776k5xtrxyiutly6uw5o@phabricator.kde.org>
+References: <diffusion-audit-PHID-CMIT-776k5xtrxyiutly6uw5o@phabricator.kde.org>
+Thread-Index: YTE2ZTE2ZGEwYzVlNGNkZjRlZmRmYjU2OGJiIF2oEQ4=
+X-Phabricator-Stamps: actor(@mlaurent) application(Diffusion) monogram(R94:acd8d80c7cb16303c486bb3f3bce9946e8d48fb5) object-type(CMIT) phid(PHID-CMIT-776k5xtrxyiutly6uw5o) via(daemon)
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="b1_fd0a847c371bbca27a50e3445663f0b7"
+X-Scanned-By: MIMEDefang 2.83 on 46.43.1.242
+X-Ovh-Remote: 46.43.1.242 (letterbox.kde.org)
+X-Ovh-Tracer-Id: 1231453024715264211
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: 0
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedufedrjeeigdduudefucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuqfggjfdpvefjgfevmfevgfenuceurghilhhouhhtmecuhedttdenuc
+X-Ovh-Spam-Status: OK
+X-Ovh-Spam-Reason: vr: OK; dkim: disabled; spf: disabled
+X-Ovh-Message-Type: OK
+
+
+--b1_fd0a847c371bbca27a50e3445663f0b7
+Content-Type: text/plain; charset = "utf-8"
+Content-Transfer-Encoding: base64
+
+bWxhdXJlbnQgY29tbWl0dGVkIFI5NDphY2Q4ZDgwYzdjYjE6IEdJVF9TSUxFTlQ6IGNvZGluZyBz
+dHlsZSAoYXV0aG9yZWQgYnkgbWxhdXJlbnQpLgoKCiAgR0lUX1NJTEVOVDogY29kaW5nIHN0eWxl
+CgpCUkFOQ0hFUwogIG1hc3RlcgoKQUZGRUNURUQgRklMRVMKICAvbWVzc2FnZXZpZXdlci9zcmMv
+ZGtpbS12ZXJpZnkvYXV0b3Rlc3RzL2RraW1pbmZvdGVzdC5jcHAKICAvbWVzc2FnZXZpZXdlci9z
+cmMvZGtpbS12ZXJpZnkvZGtpbWNoZWNrc2lnbmF0dXJlam9iLmNwcAogIC9tZXNzYWdldmlld2Vy
+L3NyYy9ka2ltLXZlcmlmeS9ka2ltY2hlY2tzaWduYXR1cmVqb2IuaAogIC9tZXNzYWdldmlld2Vy
+L3NyYy9ka2ltLXZlcmlmeS9ka2ltaW5mby5jcHAKICAvbWVzc2FnZXZpZXdlci9zcmMvZGtpbS12
+ZXJpZnkvdGVzdHMvY2hlY2tzaWduYXR1cmUuY3BwCiAgL21lc3NhZ2V2aWV3ZXIvc3JjL21lc3Nh
+Z2VwYXJ0dGhlbWVzL2RlZmF1bHQvZGVmYXVsdHJlbmRlcmVyLmNwcAogIC9tZXNzYWdldmlld2Vy
+L3NyYy92aWV3ZXIvdmlld2VyX3AuaAoKVVNFUlMKICBtbGF1cmVudCAoQXV0aG9yKQoKQ09NTUlU
+CiAgaHR0cHM6Ly9waGFicmljYXRvci5rZGUub3JnL1I5NDphY2Q4ZDgwYzdjYjEKClRvOiBtbGF1
+cmVudAo=
+
+
+--b1_fd0a847c371bbca27a50e3445663f0b7
+Content-Type: text/html; charset = "utf-8"
+Content-Transfer-Encoding: base64
+
+PHRhYmxlPjx0cj48dGQgc3R5bGU9IiI+bWxhdXJlbnQgY29tbWl0dGVkIFI5NDphY2Q4ZDgwYzdj
+YjE6IEdJVF9TSUxFTlQ6IGNvZGluZyBzdHlsZSAoYXV0aG9yZWQgYnkgbWxhdXJlbnQpLgo8L3Rk
+PjwvdHI+PC90YWJsZT48YnIgLz48ZGl2PjxkaXY+PHA+R0lUX1NJTEVOVDogY29kaW5nIHN0eWxl
+PC9wPjwvZGl2PjwvZGl2PjxiciAvPjxkaXY+PHN0cm9uZz5CUkFOQ0hFUzwvc3Ryb25nPjxkaXY+
+PGRpdj5tYXN0ZXI8L2Rpdj48L2Rpdj48L2Rpdj48YnIgLz48ZGl2PjxzdHJvbmc+QUZGRUNURUQg
+RklMRVM8L3N0cm9uZz48ZGl2PjxkaXY+L21lc3NhZ2V2aWV3ZXIvc3JjL2RraW0tdmVyaWZ5L2F1
+dG90ZXN0cy9ka2ltaW5mb3Rlc3QuY3BwPGJyIC8+Ci9tZXNzYWdldmlld2VyL3NyYy9ka2ltLXZl
+cmlmeS9ka2ltY2hlY2tzaWduYXR1cmVqb2IuY3BwPGJyIC8+Ci9tZXNzYWdldmlld2VyL3NyYy9k
+a2ltLXZlcmlmeS9ka2ltY2hlY2tzaWduYXR1cmVqb2IuaDxiciAvPgovbWVzc2FnZXZpZXdlci9z
+cmMvZGtpbS12ZXJpZnkvZGtpbWluZm8uY3BwPGJyIC8+Ci9tZXNzYWdldmlld2VyL3NyYy9ka2lt
+LXZlcmlmeS90ZXN0cy9jaGVja3NpZ25hdHVyZS5jcHA8YnIgLz4KL21lc3NhZ2V2aWV3ZXIvc3Jj
+L21lc3NhZ2VwYXJ0dGhlbWVzL2RlZmF1bHQvZGVmYXVsdHJlbmRlcmVyLmNwcDxiciAvPgovbWVz
+c2FnZXZpZXdlci9zcmMvdmlld2VyL3ZpZXdlcl9wLmg8L2Rpdj48L2Rpdj48L2Rpdj48YnIgLz48
+ZGl2PjxzdHJvbmc+VVNFUlM8L3N0cm9uZz48ZGl2PjxkaXY+bWxhdXJlbnQgKEF1dGhvcik8L2Rp
+dj48L2Rpdj48L2Rpdj48YnIgLz48ZGl2PjxzdHJvbmc+Q09NTUlUPC9zdHJvbmc+PGRpdj48YSBo
+cmVmPSJodHRwczovL3BoYWJyaWNhdG9yLmtkZS5vcmcvUjk0OmFjZDhkODBjN2NiMSI+aHR0cHM6
+Ly9waGFicmljYXRvci5rZGUub3JnL1I5NDphY2Q4ZDgwYzdjYjE8L2E+PC9kaXY+PC9kaXY+PGJy
+IC8+PGRpdj48c3Ryb25nPlRvOiA8L3N0cm9uZz5tbGF1cmVudDxiciAvPjwvZGl2Pg==
+
+
+
+--b1_fd0a847c371bbca27a50e3445663f0b7--
+
+
+

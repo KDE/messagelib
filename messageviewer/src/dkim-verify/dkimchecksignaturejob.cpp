@@ -424,12 +424,14 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
     }
     // check that the testing flag is not set
     if (mDkimKeyRecord.flags().contains(QLatin1String("y"))) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Testing mode!";
-        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::TestKeyMode;
-        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-        Q_EMIT result(createCheckResult());
-        deleteLater();
-        return;
+        if (!mPolicy.verifySignatureWhenOnlyTest()) {
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Testing mode!";
+            mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::TestKeyMode;
+            mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+            Q_EMIT result(createCheckResult());
+            deleteLater();
+            return;
+        }
     }
     if (mDkimKeyRecord.publicKey().isEmpty()) {
         // empty value means that this public key has been revoked
@@ -616,7 +618,7 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
         }
     }
 
-    if (!info.iDomain().endsWith(info.domain())) {
+    if (!info.agentOrUserIdentifier().endsWith(info.iDomain())) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "AUID is not in a subdomain of SDID";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::IDomainError;
         return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
