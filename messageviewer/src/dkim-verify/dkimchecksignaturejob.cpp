@@ -92,7 +92,7 @@ void DKIMCheckSignatureJob::start()
         deleteLater();
         return;
     }
-    qDebug() << "mFromEmail " << mFromEmail;
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mFromEmail " << mFromEmail;
     if (!mDkimInfo.parseDKIM(mDkimValue)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse header" << mDkimValue;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
@@ -235,7 +235,7 @@ void DKIMCheckSignatureJob::start()
 
     if (mSaveKey) {
         const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
-        qDebug() << " mDkimInfo.selector() " << mDkimInfo.selector() << "mDkimInfo.domain()  " << mDkimInfo.domain() << keyValue;
+        //qDebug() << " mDkimInfo.selector() " << mDkimInfo.selector() << "mDkimInfo.domain()  " << mDkimInfo.domain() << keyValue;
         if (keyValue.isEmpty()) {
             downloadKey(mDkimInfo);
         } else {
