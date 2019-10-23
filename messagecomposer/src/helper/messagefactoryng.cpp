@@ -228,7 +228,7 @@ void MessageFactoryNG::createReplyAsync()
         if (auto hdr = m_origMsg->headerByType("Mail-Followup-To")) {
             toList = KMime::Types::Mailbox::listFrom7BitString(hdr->as7BitString(false));
         } else {
-            auto ccList = stripMyAddressesFromAddressList(m_origMsg->cc(false)->mailboxes(), m_identityManager);
+            auto ccList = stripMyAddressesFromAddressList(m_origMsg->cc()->mailboxes(), m_identityManager);
 
             if (!m_mailingListAddresses.isEmpty()) {
                 toList = stripMyAddressesFromAddressList(m_origMsg->to()->mailboxes(), m_identityManager);
