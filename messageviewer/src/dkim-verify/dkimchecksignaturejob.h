@@ -63,6 +63,7 @@ public:
         TestKeyMode = 16,
         ImpossibleToDownloadKey = 17,
         HashAlgorithmUnsafeSha1 = 18,
+        IDomainError = 19,
     };
     Q_ENUM(DKIMError)
     enum class DKIMWarning : int {

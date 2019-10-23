@@ -442,7 +442,6 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
     }
 
     if (storeKeyValue) {
-        qDebug() << " Store key ********************************************************" << domain << " selector " << selector;
         Q_EMIT storeKey(str, domain, selector);
     }
 
@@ -615,6 +614,12 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
             mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::HashAlgorithmUnsafeSha1;
             return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
         }
+    }
+
+    if (!info.iDomain().endsWith(info.domain())) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "AUID is not in a subdomain of SDID";
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::IDomainError;
+        return MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
     }
     //Add more test
     //TODO check if info is valid

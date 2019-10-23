@@ -163,6 +163,9 @@ void DKIMWidgetInfo::updateToolTip()
         case DKIMCheckSignatureJob::DKIMError::HashAlgorithmUnsafeSha1:
             tooltip = i18n("Hash Algorithm unsafe (sha1)");
             break;
+        case DKIMCheckSignatureJob::DKIMError::IDomainError:
+            tooltip = i18n("AUID is not in a subdomain of SDID");
+            break;
         }
     }
 
