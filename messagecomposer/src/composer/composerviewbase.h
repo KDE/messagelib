@@ -25,6 +25,7 @@
 #include "messagecomposer/messagesender.h"
 #include "MessageComposer/Recipient"
 #include <AkonadiCore/collection.h>
+#include <AkonadiCore/Item>
 #include <KMime/Message>
 
 #include <QObject>
@@ -245,7 +246,7 @@ Q_SIGNALS:
     /**
     * Message sending completed successfully.
     */
-    void sentSuccessfully();
+    void sentSuccessfully(Akonadi::Item::Id id);
     /**
     * Message sending failed with given error message.
     */

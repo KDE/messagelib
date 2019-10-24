@@ -1021,7 +1021,7 @@ void ComposerViewBase::slotQueueResult(KJob *job)
 
     if (m_pendingQueueJobs == 0) {
         addFollowupReminder(qjob->message()->messageID(false)->asUnicodeString());
-        Q_EMIT sentSuccessfully();
+        Q_EMIT sentSuccessfully(-1);
     }
 }
 
@@ -1354,11 +1354,13 @@ void ComposerViewBase::slotCreateItemResult(KJob *job)
         return;
     }
 
+    Akonadi::Item::Id id = -1;
     if (mSendLaterInfo) {
         Akonadi::ItemCreateJob *createJob = static_cast<Akonadi::ItemCreateJob *>(job);
         const Akonadi::Item item = createJob->item();
         if (item.isValid()) {
-            mSendLaterInfo->setItemId(item.id());
+            id = item.id();
+            mSendLaterInfo->setItemId(id);
             SendLater::SendLaterUtil::writeSendLaterInfo(SendLater::SendLaterUtil::defaultConfig(), mSendLaterInfo);
             delete mSendLaterInfo;
             mSendLaterInfo = nullptr;
@@ -1366,7 +1368,7 @@ void ComposerViewBase::slotCreateItemResult(KJob *job)
     }
 
     if (m_pendingQueueJobs == 0) {
-        Q_EMIT sentSuccessfully();
+        Q_EMIT sentSuccessfully(id);
     }
 }
 
