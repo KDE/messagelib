@@ -382,7 +382,7 @@ public:
     * Appends an Item to this item's child list.
     * The Model is used for beginInsertRows()/endInsertRows() calls.
     */
-    Q_REQUIRED_RESULT int appendChildItem(Model *model, Item *child);
+    int appendChildItem(Model *model, Item *child);
 
     /**
     * Appends a child item without inserting it via the model.

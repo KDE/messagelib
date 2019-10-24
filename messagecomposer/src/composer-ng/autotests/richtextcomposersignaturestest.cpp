@@ -50,12 +50,12 @@ void RichTextComposerSignaturesTest::shouldCleanSignature()
     richtextComposerNg.insertSignature(signature1, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
     composerSignature->cleanWhitespace(signature2);
 
-    composerSignature->replaceSignature(signature1, signature2);
+    QVERIFY( !composerSignature->replaceSignature(signature1, signature2));
     QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nbla Bla "));
 
     for (int i = 0; i < 10; i++) {
-        composerSignature->replaceSignature(signature2, signature1);
-        composerSignature->replaceSignature(signature1, signature2);
+        QVERIFY( !composerSignature->replaceSignature(signature2, signature1));
+        QVERIFY( !composerSignature->replaceSignature(signature1, signature2));
     }
     QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nbla Bla "));
 }
@@ -81,13 +81,13 @@ void RichTextComposerSignaturesTest::shouldReplaceSignatureWhenText()
     richtextComposerNg.insertSignature(signature1, KIdentityManagement::Signature::End, KIdentityManagement::Signature::AddSeparator);
     composerSignature->cleanWhitespace(signature2);
 
-    composerSignature->replaceSignature(signature1, signature2);
+    QVERIFY( !composerSignature->replaceSignature(signature1, signature2));
     const QString result = QStringLiteral("foo\nbla\nfoo--\nbla Bla ");
     QCOMPARE(richtextComposerNg.toPlainText(), result);
 
     for (int i = 0; i < 10; i++) {
-        composerSignature->replaceSignature(signature2, signature1);
-        composerSignature->replaceSignature(signature1, signature2);
+        QVERIFY( !composerSignature->replaceSignature(signature2, signature1));
+        QVERIFY( !composerSignature->replaceSignature(signature1, signature2));
     }
     QCOMPARE(richtextComposerNg.toPlainText(), result);
 }
