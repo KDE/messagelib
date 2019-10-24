@@ -49,7 +49,8 @@ public:
     enum SaveIn {
         SaveInNone,
         SaveInDrafts,
-        SaveInTemplates
+        SaveInTemplates,
+        SaveInOutbox,
     };
     /**
        Send given message.

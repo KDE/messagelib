@@ -1318,11 +1318,20 @@ void ComposerViewBase::slotSaveMessage(KJob *job)
 Akonadi::Collection ComposerViewBase::defaultSpecialTarget() const
 {
     Akonadi::Collection target;
-    if (mSaveIn == MessageComposer::MessageSender::SaveInTemplates) {
-        target = Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates);
-    } else {
+    switch(mSaveIn) {
+    case MessageComposer::MessageSender::SaveInNone:
+        break;
+    case MessageComposer::MessageSender::SaveInDrafts:
         target = Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Drafts);
+        break;
+    case MessageComposer::MessageSender::SaveInTemplates:
+        target = Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates);
+        break;
+    case MessageComposer::MessageSender::SaveInOutbox:
+        target = Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Outbox);
+        break;
     }
+
     return target;
 }
 
