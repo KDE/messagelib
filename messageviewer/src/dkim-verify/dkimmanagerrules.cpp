@@ -35,3 +35,24 @@ DKIMManagerRules *DKIMManagerRules::self()
     static DKIMManagerRules s_self;
     return &s_self;
 }
+
+QVector<DKIMRule> DKIMManagerRules::rules() const
+{
+    return mRules;
+}
+
+void DKIMManagerRules::loadRules()
+{
+    //TODO
+}
+
+void DKIMManagerRules::saveRules(const QVector<DKIMRule> &lst)
+{
+    mRules = lst;
+    save();
+}
+
+void DKIMManagerRules::save()
+{
+
+}

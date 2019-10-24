@@ -30,4 +30,5 @@ DKIMManagerRulesTest::DKIMManagerRulesTest(QObject *parent)
 void DKIMManagerRulesTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMManagerRules r;
+    QVERIFY(r.rules().isEmpty());
 }

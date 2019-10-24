@@ -112,7 +112,6 @@ bool DKIMInfo::parseDKIM(const QString &header)
 void DKIMInfo::parseAlgorithm(const QString &str)
 {
     // currently only "rsa-sha1" or "rsa-sha256"
-    //FIXME
     const QStringList lst = str.split(QLatin1Char('-'));
     if (lst.count() != 2) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "algorithm is invalid " << str;
