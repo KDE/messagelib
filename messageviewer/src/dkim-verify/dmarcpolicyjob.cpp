@@ -52,7 +52,7 @@ bool DMARCPolicyJob::start()
     job->setDomainName(emailDomainStr);
     connect(job, &MessageViewer::DMARCRecordJob::success, this, &DMARCPolicyJob::slotCheckDomain);
     connect(job, &MessageViewer::DMARCRecordJob::error, this, [this](const QString &err, const QString &domainName) {
-        qDebug() << "error: " << err << " domain " << domainName;
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "error: " << err << " domain " << domainName;
         //Verify subdomain ?
         checkSubDomain(domainName);
     });

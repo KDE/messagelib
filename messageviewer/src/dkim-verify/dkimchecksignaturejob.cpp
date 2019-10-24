@@ -618,7 +618,7 @@ MessageViewer::DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::checkSig
         }
     }
 
-    qDebug() << "info.agentOrUserIdentifier() " << info.agentOrUserIdentifier() << " info.iDomain() " << info.iDomain();
+    //qDebug() << "info.agentOrUserIdentifier() " << info.agentOrUserIdentifier() << " info.iDomain() " << info.iDomain();
     if (!info.agentOrUserIdentifier().endsWith(info.iDomain())) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "AUID is not in a subdomain of SDID";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::IDomainError;
