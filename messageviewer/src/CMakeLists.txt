@@ -82,6 +82,7 @@ if (${Qca-qt5_FOUND})
         dkim-verify/dmarcinfo.cpp
         dkim-verify/dmarcpolicyjob.cpp
         dkim-verify/dkimcheckpolicyjob.cpp
+        dkim-verify/dkimrule.cpp
         )
 endif()
 
