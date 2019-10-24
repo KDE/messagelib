@@ -17,21 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "dkimruletest.h"
-#include "dkim-verify/dkimrule.h"
+#include "dkimmanagerrulestest.h"
+#include "dkim-verify/dkimmanagerrules.h"
 #include <QTest>
-QTEST_GUILESS_MAIN(DKIMRuleTest)
-DKIMRuleTest::DKIMRuleTest(QObject *parent)
+QTEST_GUILESS_MAIN(DKIMManagerRulesTest)
+DKIMManagerRulesTest::DKIMManagerRulesTest(QObject *parent)
     : QObject(parent)
 {
 
 }
 
-void DKIMRuleTest::shouldHaveDefaultValues()
+void DKIMManagerRulesTest::shouldHaveDefaultValues()
 {
-    MessageViewer::DKIMRule rule;
-    QVERIFY(rule.domain().isEmpty());
-    QVERIFY(rule.signedDomainIdentifier().isEmpty());
-    QVERIFY(rule.from().isEmpty());
-    QVERIFY(rule.enabled());
+    MessageViewer::DKIMManagerRules r;
 }

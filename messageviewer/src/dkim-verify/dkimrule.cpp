@@ -23,3 +23,52 @@ DKIMRule::DKIMRule()
 {
 
 }
+
+QString DKIMRule::domain() const
+{
+    return mDomain;
+}
+
+void DKIMRule::setDomain(const QString &domain)
+{
+    mDomain = domain;
+}
+
+QStringList DKIMRule::signedDomainIdentifier() const
+{
+    return mSignedDomainIdentifier;
+}
+
+void DKIMRule::setSignedDomainIdentifier(const QStringList &signedDomainIdentifier)
+{
+    mSignedDomainIdentifier = signedDomainIdentifier;
+}
+
+QString DKIMRule::from() const
+{
+    return mFrom;
+}
+
+void DKIMRule::setFrom(const QString &from)
+{
+    mFrom = from;
+}
+
+bool DKIMRule::enabled() const
+{
+    return mEnabled;
+}
+
+void DKIMRule::setEnabled(bool enabled)
+{
+    mEnabled = enabled;
+}
+
+QDebug operator <<(QDebug d, const DKIMRule &t)
+{
+    d << "mDomain: " << t.domain();
+    d << "mSignedDomainIdentifier: " << t.signedDomainIdentifier();
+    d << "mFrom: " << t.from();
+    d << "mEnabled: " << t.enabled();
+    return d;
+}

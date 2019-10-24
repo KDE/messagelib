@@ -17,37 +17,21 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef DKIMRULE_H
-#define DKIMRULE_H
-#include "messageviewer_export.h"
-#include <QDebug>
+#ifndef DKIMMANAGERRULES_H
+#define DKIMMANAGERRULES_H
+
 #include <QObject>
+#include "messageviewer_export.h"
+#include <QVector>
 namespace MessageViewer {
-class MESSAGEVIEWER_EXPORT DKIMRule
+class MESSAGEVIEWER_EXPORT DKIMManagerRules : public QObject
 {
+    Q_OBJECT
 public:
-    DKIMRule();
-    Q_REQUIRED_RESULT QString domain() const;
-    void setDomain(const QString &domain);
-
-    Q_REQUIRED_RESULT  QStringList signedDomainIdentifier() const;
-    void setSignedDomainIdentifier(const QStringList &signedDomainIdentifier);
-
-    Q_REQUIRED_RESULT  QString from() const;
-    void setFrom(const QString &from);
-
-    Q_REQUIRED_RESULT bool enabled() const;
-    void setEnabled(bool enabled);
-
-private:
-    QStringList mSignedDomainIdentifier;
-    QString mDomain;
-    QString mFrom;
-    bool mEnabled = true;
+    explicit DKIMManagerRules(QObject *parent = nullptr);
+    ~DKIMManagerRules();
+    static DKIMManagerRules *self();
 };
 }
-Q_DECLARE_METATYPE(MessageViewer::DKIMRule)
-Q_DECLARE_TYPEINFO(MessageViewer::DKIMRule, Q_MOVABLE_TYPE);
-MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMRule &t);
 
-#endif // DKIMRULE_H
+#endif // DKIMMANAGERRULES_H
