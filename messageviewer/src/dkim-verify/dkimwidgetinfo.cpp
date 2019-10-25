@@ -80,7 +80,7 @@ void DKIMWidgetInfo::updateInfo()
         mLabel->setText(i18n("Unknown"));
         break;
     case DKIMCheckSignatureJob::DKIMStatus::Valid:
-        mLabel->setText(i18n("DKIM: valid (Signed by %1)", mResult.signedBy));
+        mLabel->setText(i18n("DKIM: valid (signed by %1)", mResult.signedBy));
         pal.setColor(backgroundRole(), (mResult.warning != DKIMCheckSignatureJob::DKIMWarning::Any) ? mWarningColor : mOkColor);
         mLabel->setPalette(pal);
         break;
