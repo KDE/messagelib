@@ -39,6 +39,8 @@ public:
     Q_REQUIRED_RESULT bool enabled() const;
     void setEnabled(bool enabled);
 
+    Q_REQUIRED_RESULT bool isValid() const;
+
 private:
     QStringList mSignedDomainIdentifier;
     QString mDomain;

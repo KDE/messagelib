@@ -64,6 +64,12 @@ void DKIMRule::setEnabled(bool enabled)
     mEnabled = enabled;
 }
 
+bool DKIMRule::isValid() const
+{
+    //TODO improve it ?
+    return !mDomain.isEmpty() && !mFrom.isEmpty();
+}
+
 QDebug operator <<(QDebug d, const DKIMRule &t)
 {
     d << "mDomain: " << t.domain();
