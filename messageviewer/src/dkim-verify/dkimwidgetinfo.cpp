@@ -166,6 +166,9 @@ void DKIMWidgetInfo::updateToolTip()
         case DKIMCheckSignatureJob::DKIMError::IDomainError:
             tooltip = i18n("AUID is not in a subdomain of SDID");
             break;
+        case DKIMCheckSignatureJob::DKIMError::PublicKeyConversionError:
+            tooltip = i18n("Problem during converting public key");
+            break;
         }
     }
 

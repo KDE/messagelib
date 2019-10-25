@@ -31,7 +31,7 @@
 #include <QFile>
 #include <Qca-qt5/QtCrypto/qca_publickey.h>
 //see https://tools.ietf.org/html/rfc6376
-//#define DEBUG_SIGNATURE_DKIM 1
+#define DEBUG_SIGNATURE_DKIM 1
 using namespace MessageViewer;
 DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)
     : QObject(parent)
@@ -178,19 +178,39 @@ void DKIMCheckSignatureJob::start()
         return;
     }
 
-    //Compute Hash Header
-    switch (mDkimInfo.headerCanonization()) {
-    case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
+    if (mDkimInfo.headerCanonization() == MessageViewer::DKIMInfo::CanonicalizationType::Unknown) {
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::InvalidHeaderCanonicalization;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
         Q_EMIT result(createCheckResult());
         deleteLater();
         return;
+    }
+
+    computeHeaderCanonization(true);
+    if (mSaveKey) {
+        const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
+        //qDebug() << " mDkimInfo.selector() " << mDkimInfo.selector() << "mDkimInfo.domain()  " << mDkimInfo.domain() << keyValue;
+        if (keyValue.isEmpty()) {
+            downloadKey(mDkimInfo);
+        } else {
+            parseDKIMKeyRecord(keyValue, mDkimInfo.domain(), mDkimInfo.selector(), false);
+        }
+    } else {
+        downloadKey(mDkimInfo);
+    }
+}
+
+void DKIMCheckSignatureJob::computeHeaderCanonization(bool removeQuoteOnContentType)
+{
+    //Compute Hash Header
+    switch (mDkimInfo.headerCanonization()) {
+    case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
+        return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
         mHeaderCanonizationResult = headerCanonizationSimple();
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
-        mHeaderCanonizationResult = headerCanonizationRelaxed();
+        mHeaderCanonizationResult = headerCanonizationRelaxed(removeQuoteOnContentType);
         break;
     }
 
@@ -222,28 +242,16 @@ void DKIMCheckSignatureJob::start()
         mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationSimple(QLatin1String("dkim-signature"), dkimValue);
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
-        mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationRelaxed(QLatin1String("dkim-signature"), dkimValue);
+        mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationRelaxed(QLatin1String("dkim-signature"), dkimValue, removeQuoteOnContentType);
         break;
     }
 #ifdef DEBUG_SIGNATURE_DKIM
-    QFile headerFile(QStringLiteral("/tmp/headercanon-kmail.txt"));
+    QFile headerFile(QStringLiteral("/tmp/headercanon-kmail-%1.txt").arg(removeQuoteOnContentType ? QLatin1String("removequote") : QLatin1String("withquote")));
     headerFile.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream outHeaderStream(&headerFile);
     outHeaderStream << mHeaderCanonizationResult;
     headerFile.close();
 #endif
-
-    if (mSaveKey) {
-        const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
-        //qDebug() << " mDkimInfo.selector() " << mDkimInfo.selector() << "mDkimInfo.domain()  " << mDkimInfo.domain() << keyValue;
-        if (keyValue.isEmpty()) {
-            downloadKey(mDkimInfo);
-        } else {
-            parseDKIMKeyRecord(keyValue, mDkimInfo.domain(), mDkimInfo.selector(), false);
-        }
-    } else {
-        downloadKey(mDkimInfo);
-    }
 }
 
 QString DKIMCheckSignatureJob::bodyCanonizationSimple() const
@@ -310,7 +318,7 @@ QString DKIMCheckSignatureJob::headerCanonizationSimple() const
     return headers;
 }
 
-QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
+QString DKIMCheckSignatureJob::headerCanonizationRelaxed(bool removeQuoteOnContentType) const
 {
 //    The "relaxed" header canonicalization algorithm MUST apply the
 //       following steps in order:
@@ -345,7 +353,7 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed() const
             if (!headers.isEmpty()) {
                 headers += QLatin1String("\r\n");
             }
-            headers += MessageViewer::DKIMUtil::headerCanonizationRelaxed(header, str);
+            headers += MessageViewer::DKIMUtil::headerCanonizationRelaxed(header, str, removeQuoteOnContentType);
         }
     }
     return headers;
@@ -456,7 +464,12 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     //qDebug() << "mDkimKeyRecord.publicKey() " <<mDkimKeyRecord.publicKey() << " QCA::base64ToArray(mDkimKeyRecord.publicKey() " <<QCA::base64ToArray(mDkimKeyRecord.publicKey());
     QCA::PublicKey publicKey = QCA::RSAPublicKey::fromDER(QCA::base64ToArray(mDkimKeyRecord.publicKey()), &conversionResult);
     if (QCA::ConvertGood != conversionResult) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Public key read failed" << conversionResult;
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Public key read failed" << conversionResult << " public key" <<mDkimKeyRecord.publicKey();
+        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyConversionError;
+        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+        Q_EMIT result(createCheckResult());
+        deleteLater();
+        return;
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Success loading public key";
     }
@@ -473,12 +486,12 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     } else if (rsaPublicKey.e().toString().toLong() * 4 < 2048) {
         //TODO
     }
+    //qDebug() << "mHeaderCanonizationResult " << mHeaderCanonizationResult << " mDkimInfo.signature() " << mDkimInfo.signature();
     if (rsaPublicKey.canVerify()) {
-        //qDebug() << "mHeaderCanonizationResult " << mHeaderCanonizationResult << " mDkimInfo.signature() " << mDkimInfo.signature().replace(QLatin1Char(' '), QString());
-        const QString s = mDkimInfo.signature().replace(QLatin1Char(' '), QString());
-        //qDebug() << " s base 64" << s.toLocal8Bit().toBase64();
+        const QString s = mDkimInfo.signature().remove(QLatin1Char(' '));
         QCA::SecureArray sec = mHeaderCanonizationResult.toLatin1();
         const QByteArray ba = QCA::base64ToArray(s);
+        //qDebug() << " s base ba" << ba;
         QCA::SignatureAlgorithm sigAlg;
         switch (mDkimInfo.hashingAlgorithm()) {
         case DKIMInfo::HashingAlgorithmType::Sha1:
@@ -493,13 +506,17 @@ void DKIMCheckSignatureJob::verifyRSASignature()
             break;
         }
         if (!rsaPublicKey.verifyMessage(sec, ba, sigAlg, QCA::DERSequence)) {
-            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature invalid";
-            // then signature is invalid
-            mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;
-            mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-            Q_EMIT result(createCheckResult());
-            deleteLater();
-            return;
+            computeHeaderCanonization(false);
+            const QCA::SecureArray secWithoutQuote = mHeaderCanonizationResult.toLatin1();
+            if (!rsaPublicKey.verifyMessage(secWithoutQuote, ba, sigAlg, QCA::DERSequence)) {
+                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature invalid";
+                // then signature is invalid
+                mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;
+                mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+                Q_EMIT result(createCheckResult());
+                deleteLater();
+                return;
+            }
         }
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to verify signature";

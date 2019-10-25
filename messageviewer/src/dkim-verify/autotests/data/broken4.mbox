@@ -1,24 +1,14 @@
 From null@kde.org Sat Oct 19 09:21:16 2019
 Return-Path: <kde-commits-bounces@kde.org>
-Delivered-To: kde@famillemontel.org
 Received: from localhost (HELO queue) (127.0.0.1)
 	by localhost with SMTP; 19 Oct 2019 11:21:32 +0200
 Received: from unknown (HELO output40.mail.ovh.net) (10.108.97.95)
   by mail702.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 19 Oct 2019 11:21:32 +0200
-Received: from vr40.mail.ovh.net (unknown [10.101.8.40])
-	by out40.mail.ovh.net (Postfix) with ESMTP id 46wHTR62z5z5sYkkF
-	for <kde@famillemontel.org>; Sat, 19 Oct 2019 09:21:31 +0000 (UTC)
-Received: from in19.mail.ovh.net (unknown [10.101.4.19])
-	by vr40.mail.ovh.net (Postfix) with ESMTP id 46wHTR4fB9zdnD1C
-	for <kde@famillemontel.org>; Sat, 19 Oct 2019 09:21:31 +0000 (UTC)
 Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=kde-commits-bounces@kde.org; receiver=<UNKNOWN> 
 Authentication-Results: in19.mail.ovh.net;
 	dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="g33SgtiL";
 	dkim=pass (1024-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="mDNtySei";
 	dkim-atps=neutral
-Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
-	by in19.mail.ovh.net (Postfix) with ESMTPS id 46wHTR3Hl0z3RrMt
-	for <kde@famillemontel.org>; Sat, 19 Oct 2019 09:21:31 +0000 (UTC)
 Received: from letterbox.kde.org (localhost.kde.org [127.0.0.1])
 	by letterbox.kde.org (Postfix) with ESMTP id 3C73D285172;
 	Sat, 19 Oct 2019 10:21:27 +0100 (BST)

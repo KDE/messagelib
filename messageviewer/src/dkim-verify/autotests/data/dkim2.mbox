@@ -1,23 +1,13 @@
 From bugzilla_noreply@kde.org Thu Oct 17 09:10:12 2019
 Return-Path: <bugzilla_noreply@kde.org>
-Delivered-To: kde@famillemontel.org
 Received: from localhost (HELO queue) (127.0.0.1)
 	by localhost with SMTP; 17 Oct 2019 11:11:19 +0200
 Received: from unknown (HELO output51.mail.ovh.net) (10.108.97.200)
   by mail104.ha.ovh.net with AES256-GCM-SHA384 encrypted SMTP; 17 Oct 2019 11:11:19 +0200
-Received: from vr13.mail.ovh.net (unknown [10.101.8.13])
-	by out51.mail.ovh.net (Postfix) with ESMTP id 46v3LX3g65zBDlRNg
-	for <kde@famillemontel.org>; Thu, 17 Oct 2019 09:11:16 +0000 (UTC)
-Received: from in70.mail.ovh.net (unknown [10.101.4.70])
-	by vr13.mail.ovh.net (Postfix) with ESMTP id 46v3LX2bGmzwPGt
-	for <kde@famillemontel.org>; Thu, 17 Oct 2019 09:11:16 +0000 (UTC)
 Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=46.43.1.242; helo=letterbox.kde.org; envelope-from=bugzilla_noreply@kde.org; receiver=<UNKNOWN> 
 Authentication-Results: in70.mail.ovh.net;
 	dkim=pass (1024-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b="EZ6wCZ9n";
 	dkim-atps=neutral
-Received: from letterbox.kde.org (letterbox.kde.org [46.43.1.242])
-	by in70.mail.ovh.net (Postfix) with ESMTPS id 46v3LX1XxTzVqdbq
-	for <kde@famillemontel.org>; Thu, 17 Oct 2019 09:11:16 +0000 (UTC)
 Received: from bluemchen.kde.org (bluemchen.kde.org [IPv6:2001:470:142:8::100])
 	by letterbox.kde.org (Postfix) with ESMTPS id E2D93282897
 	for <montel@kde.org>; Thu, 17 Oct 2019 10:11:08 +0100 (BST)

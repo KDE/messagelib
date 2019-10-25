@@ -88,7 +88,7 @@ QString MessageViewer::DKIMUtil::headerCanonizationSimple(const QString &headerN
     return headerName + QLatin1Char(':') + headerValue;
 }
 
-QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &headerName, const QString &headerValue)
+QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &headerName, const QString &headerValue, bool removeQuoteOnContentType)
 {
     //    The "relaxed" header canonicalization algorithm MUST apply the
     //       following steps in order:
@@ -119,7 +119,7 @@ QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &header
     newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]+\r\n")), QStringLiteral("\r\n"));
     //Perhaps remove tab after headername and before value name
     //newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]*:[ \t]")), QStringLiteral(":"));
-    if (newHeaderName == QLatin1String("content-type")) { //Remove quote in charset
+    if (newHeaderName == QLatin1String("content-type") && removeQuoteOnContentType) { //Remove quote in charset
         if (newHeaderValue.contains(QLatin1String("charset=\""))) {
             newHeaderValue.remove(QLatin1Char('"'));
         }

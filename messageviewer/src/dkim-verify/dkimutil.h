@@ -28,7 +28,7 @@ MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString bodyCanonizationRelaxed(QSt
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString bodyCanonizationSimple(QString body);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QByteArray generateHash(const QByteArray &body, QCryptographicHash::Algorithm algo);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString headerCanonizationSimple(const QString &headerName, const QString &headerValue);
-MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString headerCanonizationRelaxed(const QString &headerName, const QString &headerValue);
+MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString headerCanonizationRelaxed(const QString &headerName, const QString &headerValue, bool removeQuoteOnContentType);
 MESSAGEVIEWER_TESTS_EXPORT QString cleanString(QString str);
 MESSAGEVIEWER_TESTS_EXPORT QString emailDomain(const QString &emailDomain);
 MESSAGEVIEWER_TESTS_EXPORT QString emailSubDomain(const QString &emailDomain);

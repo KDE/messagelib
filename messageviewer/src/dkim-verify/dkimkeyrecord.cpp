@@ -47,7 +47,7 @@ bool DKIMKeyRecord::parseKey(const QString &key)
         } else if (elem.startsWith(QLatin1String("n="))) { //Notes (optional empty by default)
             mNote = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("p="))) { //Public key
-            mPublicKey = elem.right(elem.length() - 2);
+            mPublicKey = elem.right(elem.length() - 2).remove(QLatin1Char(' '));
         } else if (elem.startsWith(QLatin1String("s="))) { //Service Default is "*"
             //Service Type (plain-text; OPTIONAL; default is "*").  A colon-
             //separated list of service types to which this record applies.

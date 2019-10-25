@@ -64,6 +64,7 @@ public:
         ImpossibleToDownloadKey = 17,
         HashAlgorithmUnsafeSha1 = 18,
         IDomainError = 19,
+        PublicKeyConversionError = 20,
     };
     Q_ENUM(DKIMError)
     enum class DKIMWarning : int {
@@ -144,11 +145,12 @@ private:
     void slotDownloadKeyDone(const QList<QByteArray> &lst, const QString &domain, const QString &selector);
     void parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue = true);
     Q_REQUIRED_RESULT QString headerCanonizationSimple() const;
-    Q_REQUIRED_RESULT QString headerCanonizationRelaxed() const;
+    Q_REQUIRED_RESULT QString headerCanonizationRelaxed(bool removeQuoteOnContentType) const;
     Q_REQUIRED_RESULT QString bodyCanonizationRelaxed() const;
     Q_REQUIRED_RESULT QString bodyCanonizationSimple() const;
     Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult();
     void verifyRSASignature();
+    void computeHeaderCanonization(bool removeQuoteOnContentType);
     DKIMCheckPolicy mPolicy;
     KMime::Message::Ptr mMessage;
     Akonadi::Item mMessageItem;
