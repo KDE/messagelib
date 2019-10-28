@@ -26,8 +26,6 @@
 
 #undef I18N_NOOP
 #define I18N_NOOP(t) nullptr, t
-#undef I18N_NOOP2
-#define I18N_NOOP2(c, t) c, t
 
 using namespace TemplateParser;
 
@@ -159,7 +157,7 @@ static const InsertCommand originalCommands[] = {
     },
 
     {
-        I18N_NOOP2("Template value for subject of the message", "Subject"),
+        I18NC_NOOP("Template value for subject of the message", "Subject"),
         TemplatesCommandMenu::COFullSubject
     },
 
@@ -287,7 +285,7 @@ static const InsertCommand currentCommands[] = {
     },
 
     {
-        I18N_NOOP2("Template subject command.", "Subject"),
+        I18NC_NOOP("Template subject command.", "Subject"),
         TemplatesCommandMenu::CFullSubject
     },
 
@@ -330,7 +328,7 @@ static const int extCommandsCount
 
 static const InsertCommand miscCommands[] = {
     {
-        I18N_NOOP2("Inserts user signature, also known as footer, into message", "Signature"),
+        I18NC_NOOP("Inserts user signature, also known as footer, into message", "Signature"),
         TemplatesCommandMenu::CSignature
     },
 
@@ -340,7 +338,7 @@ static const InsertCommand miscCommands[] = {
     },
 
     {
-        I18N_NOOP2("All characters, up to and including the next newline, "
+        I18NC_NOOP("All characters, up to and including the next newline, "
                    "are discarded without performing any macro expansion",
                    "Discard to Next Line"),
         TemplatesCommandMenu::CDnl
