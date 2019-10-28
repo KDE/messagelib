@@ -47,7 +47,7 @@ private:
     QColor mErrorColor;
     QColor mOkColor;
     QColor mDefaultColor;
-    Akonadi::Item::Id mCurrentItemId;
+    Akonadi::Item::Id mCurrentItemId = -1;
 };
 }
 

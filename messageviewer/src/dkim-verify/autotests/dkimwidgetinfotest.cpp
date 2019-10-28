@@ -39,4 +39,6 @@ void DKIMWidgetInfoTest::shouldHaveDefaultValues()
     QLabel *mLabel = w.findChild<QLabel *>(QStringLiteral("label"));
     QVERIFY(mLabel);
     QVERIFY(mLabel->text().isEmpty());
+
+    QCOMPARE(w.currentItemId(), -1);
 }
