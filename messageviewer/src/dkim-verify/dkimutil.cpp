@@ -124,6 +124,8 @@ QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &header
             newHeaderValue.remove(QLatin1Char('"'));
         }
     }
+    //Remove extra space.
+    newHeaderValue = newHeaderValue.trimmed();
     return newHeaderName + QLatin1Char(':') + newHeaderValue;
 }
 
