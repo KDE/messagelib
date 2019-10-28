@@ -33,6 +33,10 @@ public:
     ~DKIMWidgetInfo();
     void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void clear();
+
+    Q_REQUIRED_RESULT Akonadi::Item::Id currentItemId() const;
+    void setCurrentItemId(const Akonadi::Item::Id &currentItemId);
+
 private:
     void updateInfo();
     void updateToolTip();
@@ -43,6 +47,7 @@ private:
     QColor mErrorColor;
     QColor mOkColor;
     QColor mDefaultColor;
+    Akonadi::Item::Id mCurrentItemId;
 };
 }
 

@@ -35,7 +35,6 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     mLabel->setAutoFillBackground(true);
     mLabel->setObjectName(QStringLiteral("label"));
     mainLayout->addWidget(mLabel);
-    //TODO make sure that it's the correct akonadi::item!
     connect(DKIMManager::self(), &DKIMManager::result, this, &DKIMWidgetInfo::setResult);
     connect(DKIMManager::self(), &DKIMManager::clearInfo, this, &DKIMWidgetInfo::clear);
     initColors();
@@ -54,11 +53,23 @@ void DKIMWidgetInfo::initColors()
     mDefaultColor = palette().window().color();
 }
 
+Akonadi::Item::Id DKIMWidgetInfo::currentItemId() const
+{
+    return mCurrentItemId;
+}
+
+void DKIMWidgetInfo::setCurrentItemId(const Akonadi::Item::Id &currentItemId)
+{
+    mCurrentItemId = currentItemId;
+}
+
 void DKIMWidgetInfo::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
-    if (mResult != checkResult) {
-        mResult = checkResult;
-        updateInfo();
+    if (mCurrentItemId == checkResult.item.id()) {
+        if (mResult != checkResult) {
+            mResult = checkResult;
+            updateInfo();
+        }
     }
 }
 
