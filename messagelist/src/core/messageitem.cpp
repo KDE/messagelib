@@ -32,6 +32,7 @@
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <QPointer>
+#include <QIcon>
 #include "messagelist_debug.h"
 using namespace MessageList::Core;
 
@@ -200,7 +201,7 @@ void MessageItemPrivate::fillTagList(const Akonadi::Tag::List &taglist)
                 symbol = attr->iconName();
             }
         }
-        auto messageListTag = new MessageItem::Tag(SmallIcon(symbol), tag.name(), tag.url().url());
+        auto messageListTag = new MessageItem::Tag(QIcon::fromTheme(symbol).pixmap(KIconLoader::SizeSmall), tag.name(), tag.url().url());
 
         if (attr) {
             messageListTag->setTextColor(attr->textColor());

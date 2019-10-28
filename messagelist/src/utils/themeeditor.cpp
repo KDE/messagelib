@@ -209,9 +209,9 @@ ThemePreviewDelegate::ThemePreviewDelegate(QAbstractItemView *parent)
     mSampleMessageItem->setEncryptionState(MessageItem::FullyEncrypted);
 
     QList< MessageItem::Tag * > list;
-    list.append(new MessageItem::Tag(SmallIcon(QStringLiteral("feed-subscribe")), i18n("Sample Tag 1"), QString()));
-    list.append(new MessageItem::Tag(SmallIcon(QStringLiteral("feed-subscribe")), i18n("Sample Tag 2"), QString()));
-    list.append(new MessageItem::Tag(SmallIcon(QStringLiteral("feed-subscribe")), i18n("Sample Tag 3"), QString()));
+    list.append(new MessageItem::Tag(QIcon::fromTheme(QStringLiteral("feed-subscribe")).pixmap(KIconLoader::SizeSmall), i18n("Sample Tag 1"), QString()));
+    list.append(new MessageItem::Tag(QIcon::fromTheme(QStringLiteral("feed-subscribe")).pixmap(KIconLoader::SizeSmall), i18n("Sample Tag 2"), QString()));
+    list.append(new MessageItem::Tag(QIcon::fromTheme(QStringLiteral("feed-subscribe")).pixmap(KIconLoader::SizeSmall), i18n("Sample Tag 3"), QString()));
     mSampleMessageItem->setFakeTags(list);
 
     mRowMapper->createModelInvariantIndex(0, mSampleMessageItem);
