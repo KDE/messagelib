@@ -71,7 +71,7 @@
 #include <AkonadiCore/ItemModifyJob>
 #include <AkonadiCore/ItemCreateJob>
 #include <messageflags.h>
-
+#include <Akonadi/KMime/SpecialMailCollections>
 #include <mailtransportakonadi/errorattribute.h>
 
 //Qt includes
@@ -94,7 +94,6 @@
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
 #include <Akonadi/KMime/MessageStatus>
-#include <Akonadi/KMime/SpecialMailCollections>
 #include <AkonadiCore/attributefactory.h>
 #include <Akonadi/KMime/MessageParts>
 
@@ -1336,8 +1335,16 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
         return;
     }
 #ifdef USE_DKIM_CHECKER
+    //TODO disable it when we are in outbox/trash etc.
     if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
-        MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
+        if ((Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::SentMail) != mMessageItem.parentCollection()) &&
+                (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Outbox) != mMessageItem.parentCollection()) &&
+                (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates) != mMessageItem.parentCollection()) &&
+                (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Drafts) != mMessageItem.parentCollection())) {
+            MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
+        }  else {
+            MessageViewer::DKIMManager::self()->clearInfoWidget();
+        }
     }
 #endif
 

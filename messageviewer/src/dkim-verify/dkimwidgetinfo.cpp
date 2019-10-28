@@ -35,6 +35,7 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     mLabel->setAutoFillBackground(true);
     mLabel->setObjectName(QStringLiteral("label"));
     mainLayout->addWidget(mLabel);
+    //TODO make sure that it's the correct akonadi::item!
     connect(DKIMManager::self(), &DKIMManager::result, this, &DKIMWidgetInfo::setResult);
     connect(DKIMManager::self(), &DKIMManager::clearInfo, this, &DKIMWidgetInfo::clear);
     initColors();
