@@ -596,7 +596,6 @@ Q_SIGNALS:
 private:
     QString attachmentHtml() const;
 
-    Akonadi::Relation relatedNoteRelation() const;
     void addHelpTextAction(QAction *act, const QString &text);
     void readGravatarConfig();
 
