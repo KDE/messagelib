@@ -143,12 +143,13 @@
 #include <viewerplugins/viewerplugininterface.h>
 #include <WebEngineViewer/ZoomActionMenu>
 #include <kpimtextedit/texttospeechwidget.h>
-#include <widgets/mailtrackingwarningwidget.h>
+#include "widgets/mailtrackingwarningwidget.h"
 
 #include <grantleetheme/grantleethememanager.h>
 #include <grantleetheme/grantleetheme.h>
 
 #ifdef USE_DKIM_CHECKER
+#include "dkim-verify/dkimwidgetinfo.h"
 #include "dkim-verify/dkimmanager.h"
 #include <QtCrypto>
 #endif
@@ -193,13 +194,14 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     , mPreviouslyViewedItem(-1)
 {
     //TODO move in managerkey I think
-#ifdef USE_DKIM_CHECKER
-    mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
-#endif
     mMimePartTree = nullptr;
     if (!mainWindow) {
         mMainWindow = aParent;
     }
+#ifdef USE_DKIM_CHECKER
+    mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
+    mDkimWidgetInfo = new MessageViewer::DKIMWidgetInfo(mMainWindow);
+#endif
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::MessageDisplayFormatAttribute>();
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::ScamAttribute>();
@@ -1335,15 +1337,15 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
         return;
     }
 #ifdef USE_DKIM_CHECKER
-    //TODO disable it when we are in outbox/trash etc.
     if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
         if ((Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::SentMail) != mMessageItem.parentCollection()) &&
                 (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Outbox) != mMessageItem.parentCollection()) &&
                 (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates) != mMessageItem.parentCollection()) &&
                 (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Drafts) != mMessageItem.parentCollection())) {
+            mDkimWidgetInfo->setCurrentItemId(mMessageItem.id());
             MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
         }  else {
-            MessageViewer::DKIMManager::self()->clearInfoWidget();
+            mDkimWidgetInfo->clear();
         }
     }
 #endif

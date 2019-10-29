@@ -74,6 +74,9 @@ class ObjectTreeParser;
 namespace QCA {
 class Initializer;
 }
+namespace MessageViewer {
+class DKIMWidgetInfo;
+}
 #endif
 namespace WebEngineViewer {
 class WebHitTestResult;
@@ -709,6 +712,7 @@ public:
     MessageViewer::ShowNextMessageWidget *mShowNextMessageWidget = nullptr;
 #ifdef USE_DKIM_CHECKER
     QCA::Initializer *mQcaInitializer = nullptr;
+    MessageViewer::DKIMWidgetInfo *mDkimWidgetInfo = nullptr;
 #endif
 };
 }

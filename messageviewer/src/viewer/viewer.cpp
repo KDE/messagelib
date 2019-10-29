@@ -35,7 +35,7 @@
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "widgets/zoomactionmenu.h"
-
+#include "dkim-verify/dkimwidgetinfo.h"
 #include <Akonadi/KMime/MessageParts>
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
@@ -746,4 +746,12 @@ void Viewer::setWebViewZoomFactor(qreal factor)
     Q_D(Viewer);
     d->setWebViewZoomFactor(factor);
 }
+
+#ifdef USE_DKIM_CHECKER
+MessageViewer::DKIMWidgetInfo *Viewer::dkimWidgetInfo()
+{
+    Q_D(Viewer);
+    return d->mDkimWidgetInfo;
+}
+#endif
 }

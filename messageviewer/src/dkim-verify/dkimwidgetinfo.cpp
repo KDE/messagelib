@@ -80,6 +80,7 @@ void DKIMWidgetInfo::clear()
     QPalette pal = mLabel->palette();
     pal.setColor(backgroundRole(), mDefaultColor);
     mLabel->setPalette(pal);
+    mCurrentItemId = -1;
 }
 
 void DKIMWidgetInfo::updateInfo()
