@@ -531,6 +531,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
         }
     }
     // Compose each message and prepare it for queueing, sending, or storing
+
     foreach (MessageComposer::Composer *composer, m_composers) {
         fillGlobalPart(composer->globalPart());
         m_editor->fillComposerTextPart(composer->textPart());
@@ -929,7 +930,7 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
         qCDebug(MESSAGECOMPOSER_LOG) << "UserCancelledError.";
         Q_EMIT failed(i18n("Job cancelled by the user"));
     } else {
-        qCDebug(MESSAGECOMPOSER_LOG) << "other Error.";
+        qCDebug(MESSAGECOMPOSER_LOG) << "other Error." << composer->error();
         QString msg;
         if (composer->error() == MessageComposer::Composer::BugError) {
             msg = i18n("Could not compose message: %1 \n Please report this bug.", job->errorString());
