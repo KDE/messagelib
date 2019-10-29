@@ -53,7 +53,7 @@ bool DMARCPolicyJob::start()
     connect(job, &MessageViewer::DMARCRecordJob::success, this, &DMARCPolicyJob::slotCheckDomain);
     connect(job, &MessageViewer::DMARCRecordJob::error, this, [this](const QString &err, const QString &domainName) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "error: " << err << " domain " << domainName;
-        //Verify subdomain ?
+        //Verify subdomain
         checkSubDomain(domainName);
     });
     if (!job->start()) {
@@ -116,8 +116,8 @@ void DMARCPolicyJob::checkSubDomain(const QString &domainName)
             deleteLater();
         });
         if (!job->start()) {
-            deleteLater();
             Q_EMIT result({});
+            deleteLater();
             return;
         }
     } else {

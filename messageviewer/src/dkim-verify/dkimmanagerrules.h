@@ -24,6 +24,7 @@
 #include "messageviewer_export.h"
 #include <MessageViewer/DKIMRule>
 #include <QVector>
+#include <KSharedConfig>
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT DKIMManagerRules : public QObject
 {
@@ -40,6 +41,7 @@ public:
 
 private:
     void save();
+    QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
     QVector<DKIMRule> mRules;
 };
 }

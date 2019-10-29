@@ -60,7 +60,7 @@ void DMARCRecordJob::resolvDnsDone()
 {
     // Check the lookup succeeded.
     if (mDnsLookup->error() != QDnsLookup::NoError) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error during resolving: " << mDnsLookup->errorString();
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error during resolving: " << mDnsLookup->errorString() << " mDnsLookup->error() " << mDnsLookup->error();
         Q_EMIT error(mDnsLookup->errorString(), mDomainName);
         deleteLater();
         return;

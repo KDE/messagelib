@@ -45,14 +45,18 @@ QVector<DKIMRule> DKIMManagerRules::rules() const
     return mRules;
 }
 
+QStringList DKIMManagerRules::ruleGroups(const KSharedConfig::Ptr &config) const
+{
+    return config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Rule #\\d+")));
+}
+
 void DKIMManagerRules::loadRules()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig();
-    const QStringList keyGroups
-        = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Rule #\\d+")));
+    const QStringList rulesGroups = ruleGroups(config);
 
     mRules.clear();
-    for (const QString &groupName : keyGroups) {
+    for (const QString &groupName : rulesGroups) {
         KConfigGroup group = config->group(groupName);
         const QStringList signedDomainIdentifier = group.readEntry(QLatin1String("SignedDomainIdentifier"), QStringList());
         const QString from = group.readEntry(QLatin1String("From"), QString());
@@ -76,14 +80,13 @@ void DKIMManagerRules::saveRules(const QVector<DKIMRule> &lst)
 void DKIMManagerRules::save()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig();
-    const QStringList filterGroups
-        = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Rule #\\d+")));
+    const QStringList rulesGroups = ruleGroups(config);
 
-    for (const QString &group : filterGroups) {
+    for (const QString &group : rulesGroups) {
         config->deleteGroup(group);
     }
     for (int i = 0, total = mRules.count(); i < total; ++i) {
-        const QString groupName = QStringLiteral("DKIM Key Record #%1").arg(i);
+        const QString groupName = QStringLiteral("DKIM Rule #%1").arg(i);
         KConfigGroup group = config->group(groupName);
         const DKIMRule &rule = mRules.at(i);
 
