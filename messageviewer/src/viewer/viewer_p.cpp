@@ -1259,6 +1259,9 @@ void ViewerPrivate::printPreviewMessage(const Akonadi::Item &message)
 
 void ViewerPrivate::resetStateForNewMessage()
 {
+#ifdef USE_DKIM_CHECKER
+    mDkimWidgetInfo->clear();
+#endif
     mHtmlLoadExtOverride = false;
     mClickedUrl.clear();
     mImageUrl.clear();
