@@ -62,11 +62,15 @@ void DKIMManagerRules::loadRules()
         const QString from = group.readEntry(QLatin1String("From"), QString());
         const QString domain = group.readEntry(QLatin1String("Domain"), QString());
         const bool enabled = group.readEntry(QLatin1String("Enabled"), true);
+        const int ruleType = group.readEntry(QLatin1String("RuleType"), 0);
+        const QString listId = group.readEntry(QLatin1String("List-Id"), QString());
         DKIMRule rule;
         rule.setEnabled(enabled);
         rule.setDomain(domain);
         rule.setFrom(from);
+        rule.setListId(listId);
         rule.setSignedDomainIdentifier(signedDomainIdentifier);
+        rule.setRuleType(static_cast<DKIMRule::RuleType>(ruleType));
         mRules.append(rule);
     }
 }
@@ -94,6 +98,7 @@ void DKIMManagerRules::save()
         group.writeEntry(QLatin1String("From"), rule.from());
         group.writeEntry(QLatin1String("Domain"), rule.domain());
         group.writeEntry(QLatin1String("Enabled"), rule.enabled());
+        group.writeEntry(QLatin1String("RuleType"), static_cast<int>(rule.ruleType()));
+        group.writeEntry(QLatin1String("List-Id"), rule.listId());
     }
-
 }

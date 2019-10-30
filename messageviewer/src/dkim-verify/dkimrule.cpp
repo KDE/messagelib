@@ -80,6 +80,16 @@ void DKIMRule::setRuleType(const RuleType &ruleType)
     mRuleType = ruleType;
 }
 
+QString DKIMRule::listId() const
+{
+    return mListId;
+}
+
+void DKIMRule::setListId(const QString &listId)
+{
+    mListId = listId;
+}
+
 QDebug operator <<(QDebug d, const DKIMRule &t)
 {
     d << "mDomain: " << t.domain();
@@ -87,5 +97,6 @@ QDebug operator <<(QDebug d, const DKIMRule &t)
     d << "mFrom: " << t.from();
     d << "mEnabled: " << t.enabled();
     d << "mRuleType " << t.ruleType();
+    d << "mListId " << t.listId();
     return d;
 }

@@ -28,10 +28,10 @@ class MESSAGEVIEWER_EXPORT DKIMRule
     Q_GADGET
 public:
     enum class RuleType {
-        Unknown,
-        MustBeSigned,
-        CanBeSigned,
-        IgnoreEmailNotSigned,
+        Unknown = 0,
+        MustBeSigned = 1,
+        CanBeSigned = 2,
+        IgnoreEmailNotSigned = 3,
     };
     Q_ENUM(RuleType)
 
@@ -53,10 +53,14 @@ public:
     Q_REQUIRED_RESULT RuleType ruleType() const;
     void setRuleType(const RuleType &ruleType);
 
+    Q_REQUIRED_RESULT QString listId() const;
+    void setListId(const QString &listId);
+
 private:
     QStringList mSignedDomainIdentifier;
     QString mDomain;
     QString mFrom;
+    QString mListId;
     RuleType mRuleType = DKIMRule::RuleType::Unknown;
     bool mEnabled = true;
 };
