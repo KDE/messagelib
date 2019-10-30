@@ -68,7 +68,7 @@ QString MessageViewer::DKIMUtil::bodyCanonizationSimple(QString body)
     //       single "CRLF"; that is, the canonicalized length will be 2 octets.
     body.replace(QLatin1String("\n"), QLatin1String("\r\n"));
     body.replace(QRegularExpression(QLatin1String("((\r\n)+)?$")), QLatin1String("\r\n"));
-    if (body.endsWith(QLatin1Literal("\r\n"))) { //Remove it from start
+    if (body.endsWith(QLatin1String("\r\n"))) { //Remove it from start
         body.chop(2);
     }
     if (body.isEmpty()) {

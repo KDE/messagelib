@@ -139,7 +139,7 @@ void DKIMCheckSignatureJob::start()
         // truncated body to the length specified in the "l=" tag
         mBodyCanonizationResult = mBodyCanonizationResult.left(mDkimInfo.bodyLengthCount());
     }
-    if (mBodyCanonizationResult.startsWith(QLatin1Literal("\r\n"))) { //Remove it from start
+    if (mBodyCanonizationResult.startsWith(QLatin1String("\r\n"))) { //Remove it from start
         mBodyCanonizationResult = mBodyCanonizationResult.right(mBodyCanonizationResult.length() -2);
     }
 #ifdef DEBUG_SIGNATURE_DKIM
