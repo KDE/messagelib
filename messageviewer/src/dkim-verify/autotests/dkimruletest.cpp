@@ -34,4 +34,5 @@ void DKIMRuleTest::shouldHaveDefaultValues()
     QVERIFY(rule.signedDomainIdentifier().isEmpty());
     QVERIFY(rule.from().isEmpty());
     QVERIFY(rule.enabled());
+    QCOMPARE(rule.ruleType(), MessageViewer::DKIMRule::RuleType::Unknown);
 }

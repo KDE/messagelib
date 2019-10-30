@@ -25,7 +25,16 @@
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT DKIMRule
 {
+    Q_GADGET
 public:
+    enum class RuleType {
+        Unknown,
+        MustBeSigned,
+        CanBeSigned,
+        IgnoreEmailNotSigned,
+    };
+    Q_ENUM(RuleType)
+
     DKIMRule();
     Q_REQUIRED_RESULT QString domain() const;
     void setDomain(const QString &domain);
@@ -41,10 +50,14 @@ public:
 
     Q_REQUIRED_RESULT bool isValid() const;
 
+    Q_REQUIRED_RESULT RuleType ruleType() const;
+    void setRuleType(const RuleType &ruleType);
+
 private:
     QStringList mSignedDomainIdentifier;
     QString mDomain;
     QString mFrom;
+    RuleType mRuleType = DKIMRule::RuleType::Unknown;
     bool mEnabled = true;
 };
 }

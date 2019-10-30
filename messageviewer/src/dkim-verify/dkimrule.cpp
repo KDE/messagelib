@@ -67,7 +67,17 @@ void DKIMRule::setEnabled(bool enabled)
 bool DKIMRule::isValid() const
 {
     //TODO improve it ?
-    return !mDomain.isEmpty() && !mFrom.isEmpty();
+    return !mDomain.isEmpty() && !mFrom.isEmpty() && (mRuleType != DKIMRule::RuleType::Unknown);
+}
+
+DKIMRule::RuleType DKIMRule::ruleType() const
+{
+    return mRuleType;
+}
+
+void DKIMRule::setRuleType(const RuleType &ruleType)
+{
+    mRuleType = ruleType;
 }
 
 QDebug operator <<(QDebug d, const DKIMRule &t)
@@ -76,5 +86,6 @@ QDebug operator <<(QDebug d, const DKIMRule &t)
     d << "mSignedDomainIdentifier: " << t.signedDomainIdentifier();
     d << "mFrom: " << t.from();
     d << "mEnabled: " << t.enabled();
+    d << "mRuleType " << t.ruleType();
     return d;
 }
