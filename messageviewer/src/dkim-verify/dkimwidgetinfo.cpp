@@ -160,6 +160,7 @@ void DKIMWidgetInfo::updateToolTip()
             tooltip = i18n("Hash Algorithm is unsupported.");
             break;
         case DKIMCheckSignatureJob::DKIMError::PublicKeyTooSmall:
+            tooltip = i18n("Public key is too small.");
             break;
         case DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature:
             tooltip = i18n("Impossible to verify signature.");
@@ -189,16 +190,16 @@ void DKIMWidgetInfo::updateToolTip()
     case DKIMCheckSignatureJob::DKIMWarning::Any:
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureExpired:
-        tooltip = i18n("Signature expired");
+        tooltip += QLatin1Char('\n') + i18n("Signature expired");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureCreatedInFuture:
-        tooltip = i18n("Signature created in the future");
+        tooltip += QLatin1Char('\n') + i18n("Signature created in the future");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureTooSmall:
-        tooltip = i18n("Signature too small");
+        tooltip += QLatin1Char('\n') + i18n("Signature too small");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe:
-        tooltip = i18n("Hash Algorithm unsafe (sha1)");
+        tooltip += QLatin1Char('\n') + i18n("Hash Algorithm unsafe (sha1)");
         break;
     }
     mLabel->setToolTip(tooltip);
