@@ -102,6 +102,10 @@ void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult 
             job->start();
         }
     }
+    //TODO Use rule!
+
+    //TODO generate rule !
+
     qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
     Q_EMIT result(checkResult);
 }
@@ -116,7 +120,6 @@ void DKIMManager::slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSig
         job->setEmailAddress(checkResult.fromEmail);
         if (!job->start()) {
             storeResult(checkResult);
-            //TODO Store or not ?
         }
     } else {
         storeResult(checkResult);

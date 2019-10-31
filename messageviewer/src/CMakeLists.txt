@@ -84,6 +84,7 @@ if (${Qca-qt5_FOUND})
         dkim-verify/dkimcheckpolicyjob.cpp
         dkim-verify/dkimrule.cpp
         dkim-verify/dkimmanagerrules.cpp
+        dkim-verify/dkimgeneraterulejob.cpp
         )
 endif()
 
