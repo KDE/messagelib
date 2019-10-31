@@ -53,6 +53,11 @@ void DKIMWidgetInfo::initColors()
     mDefaultColor = palette().window().color();
 }
 
+MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMWidgetInfo::result() const
+{
+    return mResult;
+}
+
 Akonadi::Item::Id DKIMWidgetInfo::currentItemId() const
 {
     return mCurrentItemId;
@@ -81,6 +86,7 @@ void DKIMWidgetInfo::clear()
     pal.setColor(backgroundRole(), mDefaultColor);
     mLabel->setPalette(pal);
     mCurrentItemId = -1;
+    mResult = {};
 }
 
 void DKIMWidgetInfo::updateInfo()
@@ -190,16 +196,16 @@ void DKIMWidgetInfo::updateToolTip()
     case DKIMCheckSignatureJob::DKIMWarning::Any:
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureExpired:
-        tooltip += QLatin1Char('\n') + i18n("Signature expired");
+        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Signature expired");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureCreatedInFuture:
-        tooltip += QLatin1Char('\n') + i18n("Signature created in the future");
+        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))  + i18n("Signature created in the future");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureTooSmall:
-        tooltip += QLatin1Char('\n') + i18n("Signature too small");
+        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Signature too small");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe:
-        tooltip += QLatin1Char('\n') + i18n("Hash Algorithm unsafe (sha1)");
+        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Hash Algorithm unsafe (sha1)");
         break;
     }
     mLabel->setToolTip(tooltip);

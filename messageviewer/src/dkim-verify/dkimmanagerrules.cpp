@@ -26,7 +26,7 @@ using namespace MessageViewer;
 DKIMManagerRules::DKIMManagerRules(QObject *parent)
     : QObject(parent)
 {
-
+    loadRules();
 }
 
 DKIMManagerRules::~DKIMManagerRules()

@@ -30,6 +30,7 @@ public:
     ~DKIMWidgetInfoTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldClearWidget();
 };
 
 #endif // DKIMWIDGETINFOTEST_H

@@ -37,6 +37,8 @@ public:
     Q_REQUIRED_RESULT Akonadi::Item::Id currentItemId() const;
     void setCurrentItemId(const Akonadi::Item::Id &currentItemId);
 
+    Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result() const;
+
 private:
     void updateInfo();
     void updateToolTip();

@@ -22,6 +22,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QTest>
+#include <MessageViewer/DKIMCheckSignatureJob>
 
 QTEST_MAIN(DKIMWidgetInfoTest)
 DKIMWidgetInfoTest::DKIMWidgetInfoTest(QObject *parent)
@@ -32,7 +33,8 @@ DKIMWidgetInfoTest::DKIMWidgetInfoTest(QObject *parent)
 void DKIMWidgetInfoTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMWidgetInfo w;
-    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+
+    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
@@ -42,3 +44,21 @@ void DKIMWidgetInfoTest::shouldHaveDefaultValues()
 
     QCOMPARE(w.currentItemId(), -1);
 }
+
+void DKIMWidgetInfoTest::shouldClearWidget()
+{
+    MessageViewer::DKIMWidgetInfo w;
+    QLabel *mLabel = w.findChild<QLabel *>(QStringLiteral("label"));
+    MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result;
+    result.fromEmail = QStringLiteral("bla");
+    result.signedBy = QStringLiteral("bli");
+    result.status = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
+    result.error = MessageViewer::DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash;
+    result.warning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe;
+    w.setResult(result);
+    QVERIFY(!mLabel->text().isEmpty());
+    w.clear();
+    QVERIFY(mLabel->text().isEmpty());
+    QCOMPARE(w.result(), {});
+}
+

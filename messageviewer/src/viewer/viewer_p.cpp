@@ -1340,15 +1340,17 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
         return;
     }
 #ifdef USE_DKIM_CHECKER
-    if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
-        if ((Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::SentMail) != mMessageItem.parentCollection()) &&
-                (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Outbox) != mMessageItem.parentCollection()) &&
-                (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates) != mMessageItem.parentCollection()) &&
-                (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Drafts) != mMessageItem.parentCollection())) {
-            mDkimWidgetInfo->setCurrentItemId(mMessageItem.id());
-            MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
-        }  else {
-            mDkimWidgetInfo->clear();
+    if (!mPrinting) {
+        if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
+            if ((Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::SentMail) != mMessageItem.parentCollection()) &&
+                    (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Outbox) != mMessageItem.parentCollection()) &&
+                    (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates) != mMessageItem.parentCollection()) &&
+                    (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Drafts) != mMessageItem.parentCollection())) {
+                mDkimWidgetInfo->setCurrentItemId(mMessageItem.id());
+                MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
+            }  else {
+                mDkimWidgetInfo->clear();
+            }
         }
     }
 #endif
