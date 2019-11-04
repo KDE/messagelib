@@ -52,7 +52,7 @@ QStringList DKIMManagerRules::ruleGroups(const KSharedConfig::Ptr &config) const
 
 void DKIMManagerRules::loadRules()
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig();
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(QStringLiteral("dkimsettingsrc"), KConfig::NoGlobals);
     const QStringList rulesGroups = ruleGroups(config);
 
     mRules.clear();
@@ -83,7 +83,7 @@ void DKIMManagerRules::saveRules(const QVector<DKIMRule> &lst)
 
 void DKIMManagerRules::save()
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig();
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(QStringLiteral("dkimsettingsrc"), KConfig::NoGlobals);
     const QStringList rulesGroups = ruleGroups(config);
 
     for (const QString &group : rulesGroups) {
