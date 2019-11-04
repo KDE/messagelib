@@ -25,6 +25,8 @@
 #include <KLocalizedString>
 #include <QMenu>
 #include <KTreeWidgetSearchLine>
+#include <KMessageBox>
+
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     : QWidget(parent)
@@ -59,14 +61,22 @@ void DKIMManagerKeyWidget::customContextMenuRequested(const QPoint &)
     QMenu menu(this);
     if (item) {
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Key"), this, [this, item]() {
-            delete item;
+            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete this key?"), i18n("Delete Key"))) {
+                delete item;
+            }
         });
         menu.addSeparator();
     }
-    menu.addAction(i18n("Delete All"), this, [this]() {
-        mTreeWidget->clear();
-    });
-    menu.exec(QCursor::pos());
+    if (mTreeWidget->topLevelItemCount() > 0) {
+        menu.addAction(i18n("Delete All"), this, [this]() {
+            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete all rules?"), i18n("Delete Rules"))) {
+                mTreeWidget->clear();
+            }
+        });
+    }
+    if (!menu.isEmpty()) {
+        menu.exec(QCursor::pos());
+    }
 }
 
 void DKIMManagerKeyWidget::loadKeys()
