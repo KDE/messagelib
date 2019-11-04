@@ -398,7 +398,7 @@ void DKIMCheckSignatureJob::slotDownloadKeyDone(const QList<QByteArray> &lst, co
 
 void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue)
 {
-    //qDebug() << "void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue) " << str;
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue) key:" << str;
     if (!mDkimKeyRecord.parseKey(str)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse key record " << str;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
