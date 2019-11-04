@@ -55,10 +55,16 @@ bool DKIMCheckPolicyJob::start()
             return false;
         }
     } else {
-        //Verify list
-        //TODO
-        Q_EMIT result(mCheckResult);
-        deleteLater();
+        if (MessageViewer::MessageViewerSettings::self()->useDefaultRules()) {
+            //TODO
+            Q_EMIT result(mCheckResult);
+            deleteLater();
+        } else {
+            //Verify list
+            //TODO
+            Q_EMIT result(mCheckResult);
+            deleteLater();
+        }
     }
     return true;
 }

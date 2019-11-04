@@ -34,8 +34,11 @@ DKIMGenerateRuleJob::~DKIMGenerateRuleJob()
 
 bool DKIMGenerateRuleJob::canStart() const
 {
-    //TODO
-    return false;
+    if (!mRule.isValid()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Rule is not valid";
+        return false;
+    }
+    return true;
 }
 
 bool DKIMGenerateRuleJob::start()
