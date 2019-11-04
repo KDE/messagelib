@@ -44,6 +44,7 @@ Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
 private:
+    void compareWithDefaultRules();
     void dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value);
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mCheckResult;
     QString mEmailAddress;

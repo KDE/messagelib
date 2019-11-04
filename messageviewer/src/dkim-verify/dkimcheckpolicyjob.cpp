@@ -19,6 +19,7 @@
 
 #include "dkimcheckpolicyjob.h"
 #include "dmarcpolicyjob.h"
+#include "dkim-verify/dkimmanagerrules.h"
 #include "settings/messageviewersettings.h"
 #include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
@@ -56,17 +57,21 @@ bool DKIMCheckPolicyJob::start()
         }
     } else {
         if (MessageViewer::MessageViewerSettings::self()->useDefaultRules()) {
-            //TODO
-            Q_EMIT result(mCheckResult);
-            deleteLater();
+            compareWithDefaultRules();
         } else {
-            //Verify list
-            //TODO
             Q_EMIT result(mCheckResult);
             deleteLater();
         }
     }
     return true;
+}
+
+
+void DKIMCheckPolicyJob::compareWithDefaultRules()
+{
+    //TODO
+    Q_EMIT result(mCheckResult);
+    deleteLater();
 }
 
 void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value)
