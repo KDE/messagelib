@@ -207,7 +207,7 @@ void ComposerPrivate::composeStep2()
         QMutableListIterator<AttachmentPart::Ptr> iter(attachmentParts);
         while (iter.hasNext()) {
             AttachmentPart::Ptr part = iter.next();
-            qCDebug(MESSAGECOMPOSER_LOG) << "Checking attachment crypto policy..." << part->isSigned() << part->isEncrypted();
+            qCDebug(MESSAGECOMPOSER_LOG) << "Checking attachment crypto policy... signed: " << part->isSigned() << " isEncrypted : " << part->isEncrypted();
             if (!noCrypto && !autoSaving && (sign != part->isSigned() || encrypt != part->isEncrypted())) {    // different policy
                 qCDebug(MESSAGECOMPOSER_LOG) << "got attachment with different crypto policy!";
                 lateAttachmentParts.append(part);
@@ -366,14 +366,14 @@ void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime:
     multiJob->appendSubjob(tJob);
     multiJob->setExtraContent(headers);
 
-    qCDebug(MESSAGECOMPOSER_LOG) << "attachment encr key size:" << keys.size() << recipients;
+    qCDebug(MESSAGECOMPOSER_LOG) << "attachment encr key size:" << keys.size() << " recipients: " << recipients;
 
     // operate correctly on each attachment that has a different crypto policy than body.
     for (const AttachmentPart::Ptr &attachment : qAsConst(parts)) {
         AttachmentJob *attachJob = new AttachmentJob(attachment, q);
 
         qCDebug(MESSAGECOMPOSER_LOG) << "got a late attachment";
-        if (attachment->isSigned()) {
+        if (attachment->isSigned() && format) {
             qCDebug(MESSAGECOMPOSER_LOG) << "adding signjob for late attachment";
             SignJob *sJob = new SignJob(q);
             sJob->setContent(nullptr);
@@ -395,7 +395,7 @@ void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime:
                 qCDebug(MESSAGECOMPOSER_LOG) << "Just signing late attachment";
                 multiJob->appendSubjob(sJob);
             }
-        } else if (attachment->isEncrypted()) {  // only encryption
+        } else if (attachment->isEncrypted() && format) {  // only encryption
             qCDebug(MESSAGECOMPOSER_LOG) << "just encrypting late attachment";
             EncryptJob *eJob = new EncryptJob(q);
             eJob->setCryptoMessageFormat(format);
