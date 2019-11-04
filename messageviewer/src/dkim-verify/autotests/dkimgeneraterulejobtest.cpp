@@ -27,3 +27,10 @@ DKIMGenerateRuleJobTest::DKIMGenerateRuleJobTest(QObject *parent)
 {
 
 }
+
+void DKIMGenerateRuleJobTest::shouldHaveDefaultValues()
+{
+    MessageViewer::DKIMGenerateRuleJob job;
+    QVERIFY(!job.canStart());
+    QVERIFY(!job.rule().isValid());
+}

@@ -49,3 +49,13 @@ bool DKIMGenerateRuleJob::start()
     deleteLater();
     return true;
 }
+
+DKIMRule DKIMGenerateRuleJob::rule() const
+{
+    return mRule;
+}
+
+void DKIMGenerateRuleJob::setRule(const DKIMRule &rule)
+{
+    mRule = rule;
+}

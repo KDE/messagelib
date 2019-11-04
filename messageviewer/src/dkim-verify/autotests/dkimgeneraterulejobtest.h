@@ -28,6 +28,8 @@ class DKIMGenerateRuleJobTest : public QObject
 public:
     explicit DKIMGenerateRuleJobTest(QObject *parent = nullptr);
     ~DKIMGenerateRuleJobTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
 
 #endif // DKIMGENERATERULEJOBTEST_H

@@ -21,6 +21,7 @@
 #define DKIMGENERATERULEJOB_H
 
 #include <QObject>
+#include "dkimrule.h"
 #include "messageviewer_private_export.h"
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMGenerateRuleJob : public QObject
@@ -33,6 +34,11 @@ public:
     Q_REQUIRED_RESULT bool canStart() const;
     Q_REQUIRED_RESULT bool start();
 
+    Q_REQUIRED_RESULT DKIMRule rule() const;
+    void setRule(const DKIMRule &rule);
+
+private:
+    DKIMRule mRule;
 };
 }
 #endif // DKIMGENERATERULEJOB_H
