@@ -72,7 +72,7 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
     const QVector<DKIMRule> rules = DKIMManagerRules::self()->rules();
     for (const DKIMRule &rule : rules) {
         if (rule.enabled()) {
-            if (rule.from() == mEmailAddress) {
+            if (rule.from() == mEmailAddress || rule.from() == QLatin1Char('*')) {
                 //Check SDID
                 if (mCheckResult.signedBy == rule.domain()) {
                     //check rule
