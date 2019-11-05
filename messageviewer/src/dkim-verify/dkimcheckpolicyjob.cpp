@@ -75,7 +75,18 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
             if (rule.from() == mEmailAddress || rule.from() == QLatin1Char('*')) {
                 //Check SDID
                 if (mCheckResult.signedBy == rule.domain()) {
-                    //check rule
+                    switch (rule.ruleType()) {
+                    case DKIMRule::RuleType::Unknown:
+                        // Invalid rule !
+                        break;
+                    case DKIMRule::RuleType::MustBeSigned:
+                        break;
+                    case DKIMRule::RuleType::CanBeSigned:
+                        break;
+                    case DKIMRule::RuleType::IgnoreEmailNotSigned:
+                        break;
+                    }
+                    break;
                 }
             }
         }
