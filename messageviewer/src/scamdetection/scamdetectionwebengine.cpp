@@ -219,9 +219,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
     if (foundScam) {
         d->mDetails.prepend(QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>"));
         d->mDetails += QLatin1String("</ul>");
-        if (foundScam) {
-            Q_EMIT messageMayBeAScam();
-        }
+        Q_EMIT messageMayBeAScam();
     }
     Q_EMIT resultScanDetection(foundScam);
 }
