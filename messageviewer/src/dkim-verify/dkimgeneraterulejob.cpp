@@ -48,9 +48,15 @@ bool DKIMGenerateRuleJob::start()
         qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start DKIMGenerateRuleJob";
         return false;
     }
+    verifyAndGenerateRule();
     //TODO
     deleteLater();
     return true;
+}
+
+void DKIMGenerateRuleJob::verifyAndGenerateRule()
+{
+    //TODO
 }
 
 DKIMRule DKIMGenerateRuleJob::rule() const

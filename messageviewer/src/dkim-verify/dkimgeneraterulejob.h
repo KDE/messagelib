@@ -38,6 +38,7 @@ public:
     void setRule(const DKIMRule &rule);
 
 private:
+    void verifyAndGenerateRule();
     DKIMRule mRule;
 };
 }
