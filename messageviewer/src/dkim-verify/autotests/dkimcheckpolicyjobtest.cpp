@@ -32,4 +32,5 @@ void DKIMCheckPolicyJobTest::shouldHaveDefaultValues()
     MessageViewer::DKIMCheckPolicyJob job;
     QVERIFY(job.emailAddress().isEmpty());
     QVERIFY(!job.canStart());
+    QVERIFY(!job.checkResult().isValid());
 }
