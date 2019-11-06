@@ -34,8 +34,8 @@ public:
     Q_REQUIRED_RESULT bool canStart() const;
     Q_REQUIRED_RESULT bool start();
 
-    Q_REQUIRED_RESULT DKIMCheckSignatureJob::CheckSignatureResult rule() const;
-    void setRule(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    Q_REQUIRED_RESULT DKIMCheckSignatureJob::CheckSignatureResult result() const;
+    void setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
 private:
     void verifyAndGenerateRule();

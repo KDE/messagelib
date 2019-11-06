@@ -109,7 +109,7 @@ void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult 
         if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
             //TODO generate rule !
             DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
-            job->setRule(checkResult);
+            job->setResult(checkResult);
             if (!job->start()) {
                 qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start autogenerate rule";
             }

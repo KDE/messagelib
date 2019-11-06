@@ -58,12 +58,12 @@ void DKIMGenerateRuleJob::verifyAndGenerateRule()
     deleteLater();
 }
 
-DKIMCheckSignatureJob::CheckSignatureResult DKIMGenerateRuleJob::rule() const
+DKIMCheckSignatureJob::CheckSignatureResult DKIMGenerateRuleJob::result() const
 {
     return mResult;
 }
 
-void DKIMGenerateRuleJob::setRule(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
+void DKIMGenerateRuleJob::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
     mResult = checkResult;
 }

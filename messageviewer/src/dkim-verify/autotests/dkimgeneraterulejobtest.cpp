@@ -32,5 +32,5 @@ void DKIMGenerateRuleJobTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMGenerateRuleJob job;
     QVERIFY(!job.canStart());
-    QVERIFY(!job.rule().isValid());
+    QVERIFY(!job.result().isValid());
 }
