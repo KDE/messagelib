@@ -19,12 +19,13 @@
 
 #include "dkimmanagerrulestest.h"
 #include "dkim-verify/dkimmanagerrules.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(DKIMManagerRulesTest)
 DKIMManagerRulesTest::DKIMManagerRulesTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMManagerRulesTest::shouldHaveDefaultValues()

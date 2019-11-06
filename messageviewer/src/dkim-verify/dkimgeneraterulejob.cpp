@@ -18,6 +18,7 @@
 */
 
 #include "dkimgeneraterulejob.h"
+#include "dkimmanagerrules.h"
 #include "messageviewer_debug.h"
 using namespace MessageViewer;
 
@@ -54,6 +55,14 @@ bool DKIMGenerateRuleJob::start()
 
 void DKIMGenerateRuleJob::verifyAndGenerateRule()
 {
+    DKIMRule rule;
+    rule.setEnabled(true);
+    rule.setFrom(mResult.fromEmail);
+    //rule.setDomain();
+    //rule.setListId();
+    //rule.setSignedDomainIdentifier();
+    rule.setRuleType(DKIMRule::RuleType::MustBeSigned);
+    DKIMManagerRules::self()->
     //TODO
     deleteLater();
 }

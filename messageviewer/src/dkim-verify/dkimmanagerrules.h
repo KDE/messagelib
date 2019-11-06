@@ -34,6 +34,8 @@ public:
     ~DKIMManagerRules();
     static DKIMManagerRules *self();
 
+    void addRule(const DKIMRule &rule);
+
     Q_REQUIRED_RESULT QVector<DKIMRule> rules() const;
 
     void loadRules();

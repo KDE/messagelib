@@ -40,6 +40,13 @@ DKIMManagerRules *DKIMManagerRules::self()
     return &s_self;
 }
 
+void DKIMManagerRules::addRule(const DKIMRule &rule)
+{
+    //TODO verify if we don't have duplicate element
+    mRules.append(rule);
+    save();
+}
+
 QVector<DKIMRule> DKIMManagerRules::rules() const
 {
     return mRules;
