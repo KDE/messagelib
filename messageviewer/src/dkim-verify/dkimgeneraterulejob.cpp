@@ -49,14 +49,13 @@ bool DKIMGenerateRuleJob::start()
         return false;
     }
     verifyAndGenerateRule();
-    //TODO
-    deleteLater();
     return true;
 }
 
 void DKIMGenerateRuleJob::verifyAndGenerateRule()
 {
     //TODO
+    deleteLater();
 }
 
 DKIMCheckSignatureJob::CheckSignatureResult DKIMGenerateRuleJob::rule() const
