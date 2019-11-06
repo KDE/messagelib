@@ -34,7 +34,7 @@ DKIMGenerateRuleJob::~DKIMGenerateRuleJob()
 
 bool DKIMGenerateRuleJob::canStart() const
 {
-    if (!mRule.isValid()) {
+    if (!mResult.isValid()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Rule is not valid";
         return false;
     }
@@ -59,12 +59,12 @@ void DKIMGenerateRuleJob::verifyAndGenerateRule()
     //TODO
 }
 
-DKIMRule DKIMGenerateRuleJob::rule() const
+DKIMCheckSignatureJob::CheckSignatureResult DKIMGenerateRuleJob::rule() const
 {
-    return mRule;
+    return mResult;
 }
 
-void DKIMGenerateRuleJob::setRule(const DKIMRule &rule)
+void DKIMGenerateRuleJob::setRule(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
-    mRule = rule;
+    mResult = checkResult;
 }

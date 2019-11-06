@@ -23,6 +23,7 @@
 #include "dkimresultattribute.h"
 #include "dkimstoreresultjob.h"
 #include "dkimcheckpolicyjob.h"
+#include "dkimgeneraterulejob.h"
 #include "settings/messageviewersettings.h"
 #include <AkonadiCore/AttributeFactory>
 using namespace MessageViewer;
@@ -104,7 +105,16 @@ void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult 
     }
     //TODO Use rule!
 
-    //TODO generate rule !
+    if (MessageViewer::MessageViewerSettings::self()->autogenerateRule()) {
+        if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
+            //TODO generate rule !
+            DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
+            job->setRule(checkResult);
+            if (!job->start()) {
+                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start autogenerate rule";
+            }
+        }
+    }
 
     qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
     Q_EMIT result(checkResult);
