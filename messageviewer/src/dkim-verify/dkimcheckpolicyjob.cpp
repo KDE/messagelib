@@ -80,10 +80,13 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
                         // Invalid rule !
                         break;
                     case DKIMRule::RuleType::MustBeSigned:
+                        mCheckResult.status = DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
                         break;
                     case DKIMRule::RuleType::CanBeSigned:
+                        //Show a warning ?
                         break;
                     case DKIMRule::RuleType::IgnoreEmailNotSigned:
+                        //Nothing !
                         break;
                     }
                     break;
@@ -91,7 +94,6 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
             }
         }
     }
-    //TODO
     Q_EMIT result(mCheckResult);
     deleteLater();
 }
