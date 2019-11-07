@@ -33,6 +33,7 @@ DKIMManagerKey::DKIMManagerKey(QObject *parent)
 
 DKIMManagerKey::~DKIMManagerKey()
 {
+    saveKeys();
 }
 
 DKIMManagerKey *DKIMManagerKey::self()

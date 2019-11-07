@@ -187,7 +187,7 @@ void DKIMCheckSignatureJob::start()
     }
 
     computeHeaderCanonization(true);
-    if (mSaveKey) {
+    if (mPolicy.saveKey()) {
         const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
         //qDebug() << " mDkimInfo.selector() " << mDkimInfo.selector() << "mDkimInfo.domain()  " << mDkimInfo.domain() << keyValue;
         if (keyValue.isEmpty()) {
@@ -539,16 +539,6 @@ DKIMCheckPolicy DKIMCheckSignatureJob::policy() const
 void DKIMCheckSignatureJob::setPolicy(const DKIMCheckPolicy &policy)
 {
     mPolicy = policy;
-}
-
-bool DKIMCheckSignatureJob::saveKey() const
-{
-    return mSaveKey;
-}
-
-void DKIMCheckSignatureJob::setSaveKey(bool saveKey)
-{
-    mSaveKey = saveKey;
 }
 
 Akonadi::Item DKIMCheckSignatureJob::item() const

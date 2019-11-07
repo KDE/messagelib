@@ -45,7 +45,7 @@ bool DKIMCheckPolicyJob::start()
         deleteLater();
         return false;
     }
-    if (MessageViewer::MessageViewerSettings::self()->useDMarc()) {
+    if (mPolicy.useDMarc()) {
         DMARCPolicyJob *job = new DMARCPolicyJob(this);
         job->setEmailAddress(mEmailAddress);
         connect(job, &DMARCPolicyJob::result, this, &DKIMCheckPolicyJob::dmarcPolicyResult);
@@ -56,7 +56,7 @@ bool DKIMCheckPolicyJob::start()
             return false;
         }
     } else {
-        if (MessageViewer::MessageViewerSettings::self()->useDefaultRules()) {
+        if (mPolicy.useDefaultRules()) {
             compareWithDefaultRules();
         } else {
             Q_EMIT result(mCheckResult);
@@ -130,4 +130,14 @@ QString DKIMCheckPolicyJob::emailAddress() const
 void DKIMCheckPolicyJob::setEmailAddress(const QString &emailAddress)
 {
     mEmailAddress = emailAddress;
+}
+
+DKIMCheckPolicy DKIMCheckPolicyJob::policy() const
+{
+    return mPolicy;
+}
+
+void DKIMCheckPolicyJob::setPolicy(const DKIMCheckPolicy &policy)
+{
+    mPolicy = policy;
 }

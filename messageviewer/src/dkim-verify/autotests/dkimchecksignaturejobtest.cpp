@@ -49,7 +49,6 @@ void DKIMCheckSignatureJobTest::shouldHaveDefaultValues()
     QCOMPARE(job.status(), MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Unknown);
     QCOMPARE(job.error(), MessageViewer::DKIMCheckSignatureJob::DKIMError::Any);
     QCOMPARE(job.warning(), MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any);
-    QVERIFY(!job.saveKey());
 }
 
 void DKIMCheckSignatureJobTest::shouldTestMail_data()
@@ -148,7 +147,9 @@ void DKIMCheckSignatureJobTest::shouldTestMail()
     msg->parse();
     MessageViewer::DKIMCheckSignatureJob *job = new MessageViewer::DKIMCheckSignatureJob();
     job->setMessage(KMime::Message::Ptr(msg));
-    job->setSaveKey(false);
+    MessageViewer::DKIMCheckPolicy pol;
+    pol.setSaveKey(false);
+    job->setPolicy(pol);
     QSignalSpy dkimSignatureSpy(job, &MessageViewer::DKIMCheckSignatureJob::result);
     QTimer::singleShot(10, job, &MessageViewer::DKIMCheckSignatureJob::start);
     QVERIFY(dkimSignatureSpy.wait());

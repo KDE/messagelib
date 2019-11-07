@@ -130,9 +130,6 @@ public:
     Q_REQUIRED_RESULT Akonadi::Item item() const;
     void setItem(const Akonadi::Item &item);
 
-    Q_REQUIRED_RESULT bool saveKey() const;
-    void setSaveKey(bool saveKey);
-
     Q_REQUIRED_RESULT DKIMCheckPolicy policy() const;
     void setPolicy(const DKIMCheckPolicy &policy);
 
@@ -163,7 +160,6 @@ private:
     DKIMCheckSignatureJob::DKIMError mError = DKIMCheckSignatureJob::DKIMError::Any;
     DKIMCheckSignatureJob::DKIMWarning mWarning = DKIMCheckSignatureJob::DKIMWarning::Any;
     DKIMCheckSignatureJob::DKIMStatus mStatus = DKIMCheckSignatureJob::DKIMStatus::Unknown;
-    bool mSaveKey = false;
 };
 }
 Q_DECLARE_METATYPE(MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult)

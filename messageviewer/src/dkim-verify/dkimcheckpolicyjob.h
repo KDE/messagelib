@@ -40,6 +40,9 @@ public:
     Q_REQUIRED_RESULT QString emailAddress() const;
     void setEmailAddress(const QString &emailAddress);
 
+    Q_REQUIRED_RESULT DKIMCheckPolicy policy() const;
+    void setPolicy(const DKIMCheckPolicy &policy);
+
 Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
@@ -48,6 +51,7 @@ private:
     void dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value);
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mCheckResult;
     QString mEmailAddress;
+    DKIMCheckPolicy mPolicy;
 };
 }
 

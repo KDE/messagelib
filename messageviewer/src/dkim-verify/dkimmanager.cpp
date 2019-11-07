@@ -64,7 +64,6 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotCheckSignatureResult);
-    job->setSaveKey(mCheckPolicy.saveKey());
     job->setItem(item);
     job->setPolicy(mCheckPolicy);
     job->start();
@@ -80,7 +79,7 @@ void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotCheckSignatureResult);
-    job->setSaveKey(mCheckPolicy.saveKey());
+    job->setPolicy(mCheckPolicy);
     job->setMessage(message);
     job->start();
 }
@@ -104,8 +103,6 @@ void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult 
             job->start();
         }
     }
-    //TODO Use rule!
-
     if (mCheckPolicy.autogenerateRule()) {
         if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
             //TODO generate rule !

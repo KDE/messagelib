@@ -31,7 +31,7 @@ DKIMManagerRules::DKIMManagerRules(QObject *parent)
 
 DKIMManagerRules::~DKIMManagerRules()
 {
-
+    save();
 }
 
 DKIMManagerRules *DKIMManagerRules::self()

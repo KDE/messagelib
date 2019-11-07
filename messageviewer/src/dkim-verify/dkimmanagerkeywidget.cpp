@@ -24,6 +24,8 @@
 #include <QVBoxLayout>
 #include <KLocalizedString>
 #include <QMenu>
+#include <QClipboard>
+#include <QApplication>
 #include <KTreeWidgetSearchLine>
 #include <KMessageBox>
 
@@ -60,6 +62,10 @@ void DKIMManagerKeyWidget::customContextMenuRequested(const QPoint &)
     QTreeWidgetItem *item = mTreeWidget->currentItem();
     QMenu menu(this);
     if (item) {
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [this, item]() {
+            QApplication::clipboard()->setText(item->text(2));
+        });
+        menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Key"), this, [this, item]() {
             if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete this key?"), i18n("Delete Key"))) {
                 delete item;
