@@ -28,6 +28,9 @@ class DKIMCheckPolicyTest : public QObject
 public:
     explicit DKIMCheckPolicyTest(QObject *parent = nullptr);
     ~DKIMCheckPolicyTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
+    void shouldAssignValues();
 };
 
 #endif // DKIMCHECKPOLICYTEST_H

@@ -31,13 +31,37 @@ public:
 
     Q_REQUIRED_RESULT int rsaSha1Policy() const;
     Q_REQUIRED_RESULT bool verifySignatureWhenOnlyTest() const;
-    void setRsaSha1Policy(bool rsaSha1Policy);
+    void setRsaSha1Policy(int rsaSha1Policy);
 
     void setVerifySignatureWhenOnlyTest(bool verifySignatureWhenOnlyTest);
 
+    Q_REQUIRED_RESULT bool saveDkimResult() const;
+    void setSaveDkimResult(bool saveDkimResult);
+
+    Q_REQUIRED_RESULT bool saveKey() const;
+    void setSaveKey(bool saveKey);
+
+    Q_REQUIRED_RESULT bool autogenerateRule() const;
+    void setAutogenerateRule(bool autogenerateRule);
+
+    Q_REQUIRED_RESULT bool checkIfEmailShouldBeSigned() const;
+    void setCheckIfEmailShouldBeSigned(bool checkIfEmailShouldBeSigned);
+
+    Q_REQUIRED_RESULT bool useDMarc() const;
+    void setUseDMarc(bool useDMarc);
+
+    Q_REQUIRED_RESULT bool useDefaultRules() const;
+    void setUseDefaultRules(bool useDefaultRules);
+
 private:
-    bool mRsaSha1Policy = false;
+    int mRsaSha1Policy = -1;
     bool mVerifySignatureWhenOnlyTest = false;
+    bool mSaveDkimResult = false;
+    bool mSaveKey = false;
+    bool mAutogenerateRule = false;
+    bool mCheckIfEmailShouldBeSigned = false;
+    bool mUseDMarc = false;
+    bool mUseDefaultRules = false;
 };
 }
 

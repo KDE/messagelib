@@ -17,10 +17,58 @@
    Boston, MA 02110-1301, USA.
 */
 #include "dkimcheckpolicytest.h"
+#include "dkim-verify/dkimcheckpolicy.h"
 #include <QTest>
-QTEST_GUILESS_MAIN(DKIMCheckPolicyTest)
+#include <QStandardPaths>
+QTEST_MAIN(DKIMCheckPolicyTest)
 
 DKIMCheckPolicyTest::DKIMCheckPolicyTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
+
+void DKIMCheckPolicyTest::shouldHaveDefaultValues()
+{
+    MessageViewer::DKIMCheckPolicy pol;
+    QVERIFY(!pol.verifySignatureWhenOnlyTest());
+    QVERIFY(!pol.saveDkimResult());
+    QVERIFY(!pol.saveKey());
+    QVERIFY(!pol.autogenerateRule());
+    QVERIFY(!pol.checkIfEmailShouldBeSigned());
+    QVERIFY(!pol.useDMarc());
+    QVERIFY(!pol.useDefaultRules());
+    QCOMPARE(pol.rsaSha1Policy(), 1);
+}
+
+void DKIMCheckPolicyTest::shouldAssignValues()
+{
+    MessageViewer::DKIMCheckPolicy pol;
+    int mRsaSha1Policy = 7;
+    pol.setRsaSha1Policy(mRsaSha1Policy);
+    bool mVerifySignatureWhenOnlyTest = true;
+    pol.setVerifySignatureWhenOnlyTest(mVerifySignatureWhenOnlyTest);
+    bool mSaveDkimResult = true;
+    pol.setSaveDkimResult(mSaveDkimResult);
+    bool mSaveKey = true;
+    pol.setSaveKey(mSaveKey);
+    bool mAutogenerateRule = true;
+    pol.setAutogenerateRule(mAutogenerateRule);
+    bool mCheckIfEmailShouldBeSigned = true;
+    pol.setCheckIfEmailShouldBeSigned(mCheckIfEmailShouldBeSigned);
+    bool mUseDMarc = true;
+    pol.setUseDMarc(mUseDMarc);
+    bool mUseDefaultRules = true;
+    pol.setUseDefaultRules(mUseDefaultRules);
+
+    QCOMPARE(pol.verifySignatureWhenOnlyTest(), mVerifySignatureWhenOnlyTest);
+    QCOMPARE(pol.saveDkimResult(), mSaveDkimResult);
+    QCOMPARE(pol.saveKey(), mSaveKey);
+    QCOMPARE(pol.autogenerateRule(), mAutogenerateRule);
+    QCOMPARE(pol.checkIfEmailShouldBeSigned(), mCheckIfEmailShouldBeSigned);
+    QCOMPARE(pol.useDMarc(), mUseDMarc);
+    QCOMPARE(pol.useDefaultRules(), mUseDefaultRules);
+    QCOMPARE(pol.rsaSha1Policy(), mRsaSha1Policy);
+
+}
+

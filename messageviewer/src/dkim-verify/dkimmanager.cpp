@@ -45,7 +45,7 @@ DKIMManager *DKIMManager::self()
 
 void DKIMManager::checkDKim(const Akonadi::Item &item)
 {
-    if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
+    if (mCheckPolicy.saveDkimResult()) {
         if (item.hasAttribute<MessageViewer::DKIMResultAttribute>()) {
             const MessageViewer::DKIMResultAttribute *const attr
                 = item.attribute<MessageViewer::DKIMResultAttribute>();
@@ -64,7 +64,7 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotCheckSignatureResult);
-    job->setSaveKey(MessageViewer::MessageViewerSettings::self()->saveKey());
+    job->setSaveKey(mCheckPolicy.saveKey());
     job->setItem(item);
     job->setPolicy(mCheckPolicy);
     job->start();
@@ -80,14 +80,14 @@ void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotCheckSignatureResult);
-    job->setSaveKey(MessageViewer::MessageViewerSettings::self()->saveKey());
+    job->setSaveKey(mCheckPolicy.saveKey());
     job->setMessage(message);
     job->start();
 }
 
 void DKIMManager::storeKey(const QString &key, const QString &domain, const QString &selector)
 {
-    if (MessageViewer::MessageViewerSettings::self()->saveKey()) {
+    if (mCheckPolicy.saveKey()) {
         const MessageViewer::KeyInfo info {key, selector, domain};
         MessageViewer::DKIMManagerKey::self()->addKey(info);
     }
@@ -95,7 +95,7 @@ void DKIMManager::storeKey(const QString &key, const QString &domain, const QStr
 
 void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
-    if (MessageViewer::MessageViewerSettings::self()->saveDkimResult()) {
+    if (mCheckPolicy.saveDkimResult()) {
         if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid
             || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid
             || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned) {
@@ -106,7 +106,7 @@ void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult 
     }
     //TODO Use rule!
 
-    if (MessageViewer::MessageViewerSettings::self()->autogenerateRule()) {
+    if (mCheckPolicy.autogenerateRule()) {
         if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
             //TODO generate rule !
             DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
@@ -123,7 +123,7 @@ void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult 
 
 void DKIMManager::slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
-    if (MessageViewer::MessageViewerSettings::self()->checkIfEmailShouldBeSigned()
+    if (mCheckPolicy.checkIfEmailShouldBeSigned()
         && (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned)) {
         DKIMCheckPolicyJob *job = new DKIMCheckPolicyJob(this);
         connect(job, &DKIMCheckPolicyJob::result, this, &DKIMManager::storeResult);
