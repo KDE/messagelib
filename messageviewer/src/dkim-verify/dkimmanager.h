@@ -39,6 +39,8 @@ public:
 
     void clearInfoWidget();
 
+    Q_REQUIRED_RESULT DKIMCheckPolicy policy() const;
+    void setPolicy(const DKIMCheckPolicy &policy);
 Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void clearInfo();
@@ -46,6 +48,7 @@ private:
     void storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void storeKey(const QString &key, const QString &domain, const QString &selector);
     void slotCheckSignatureResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    DKIMCheckPolicy mCheckPolicy;
 };
 }
 

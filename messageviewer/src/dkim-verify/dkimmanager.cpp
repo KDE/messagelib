@@ -66,6 +66,7 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotCheckSignatureResult);
     job->setSaveKey(MessageViewer::MessageViewerSettings::self()->saveKey());
     job->setItem(item);
+    job->setPolicy(mCheckPolicy);
     job->start();
 }
 
@@ -134,4 +135,14 @@ void DKIMManager::slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSig
     } else {
         storeResult(checkResult);
     }
+}
+
+DKIMCheckPolicy DKIMManager::policy() const
+{
+    return mCheckPolicy;
+}
+
+void DKIMManager::setPolicy(const DKIMCheckPolicy &policy)
+{
+    mCheckPolicy = policy;
 }
