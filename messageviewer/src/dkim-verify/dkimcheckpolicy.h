@@ -31,6 +31,13 @@ public:
 
     Q_REQUIRED_RESULT int rsaSha1Policy() const;
     Q_REQUIRED_RESULT bool verifySignatureWhenOnlyTest() const;
+    void setRsaSha1Policy(bool rsaSha1Policy);
+
+    void setVerifySignatureWhenOnlyTest(bool verifySignatureWhenOnlyTest);
+
+private:
+    bool mRsaSha1Policy = false;
+    bool mVerifySignatureWhenOnlyTest = false;
 };
 }
 

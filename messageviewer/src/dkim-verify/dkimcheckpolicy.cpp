@@ -23,14 +23,26 @@ using namespace MessageViewer;
 
 DKIMCheckPolicy::DKIMCheckPolicy()
 {
+    mRsaSha1Policy = MessageViewer::MessageViewerSettings::policyRsaSha1();
+    mVerifySignatureWhenOnlyTest = MessageViewer::MessageViewerSettings::verifySignatureWhenOnlyTest();
 }
 
 int DKIMCheckPolicy::rsaSha1Policy() const
 {
-    return MessageViewer::MessageViewerSettings::policyRsaSha1();
+    return mRsaSha1Policy;
 }
 
 bool DKIMCheckPolicy::verifySignatureWhenOnlyTest() const
 {
-    return MessageViewer::MessageViewerSettings::verifySignatureWhenOnlyTest();
+    return mVerifySignatureWhenOnlyTest;
+}
+
+void DKIMCheckPolicy::setRsaSha1Policy(bool rsaSha1Policy)
+{
+    mRsaSha1Policy = rsaSha1Policy;
+}
+
+void DKIMCheckPolicy::setVerifySignatureWhenOnlyTest(bool verifySignatureWhenOnlyTest)
+{
+    mVerifySignatureWhenOnlyTest = verifySignatureWhenOnlyTest;
 }
