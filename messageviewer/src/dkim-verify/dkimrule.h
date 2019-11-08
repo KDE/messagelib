@@ -56,6 +56,8 @@ public:
     Q_REQUIRED_RESULT QString listId() const;
     void setListId(const QString &listId);
 
+    Q_REQUIRED_RESULT bool operator==(const DKIMRule &other) const;
+
 private:
     QStringList mSignedDomainIdentifier;
     QString mDomain;

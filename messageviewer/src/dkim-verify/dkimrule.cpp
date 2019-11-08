@@ -90,6 +90,19 @@ void DKIMRule::setListId(const QString &listId)
     mListId = listId;
 }
 
+bool DKIMRule::operator==(const DKIMRule &other) const
+{
+    if (other.domain() == mDomain &&
+            other.signedDomainIdentifier() == mSignedDomainIdentifier &&
+            other.from() == mFrom &&
+            other.listId() == mListId &&
+            other.ruleType() == mRuleType &&
+            other.enabled() == mEnabled) {
+        return true;
+    }
+    return false;
+}
+
 QDebug operator <<(QDebug d, const DKIMRule &t)
 {
     d << "mDomain: " << t.domain();

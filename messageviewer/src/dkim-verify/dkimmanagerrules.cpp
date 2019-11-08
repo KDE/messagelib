@@ -42,9 +42,10 @@ DKIMManagerRules *DKIMManagerRules::self()
 
 void DKIMManagerRules::addRule(const DKIMRule &rule)
 {
-    //TODO verify if we don't have duplicate element
-    mRules.append(rule);
-    save();
+    if (!mRules.contains(rule)) {
+        mRules.append(rule);
+        save();
+    }
 }
 
 QVector<DKIMRule> DKIMManagerRules::rules() const
