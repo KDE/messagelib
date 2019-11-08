@@ -18,6 +18,7 @@
 */
 
 #include "dkimcheckauthenticationstatusjob.h"
+#include "dkimauthenticationstatusinfo.h"
 #include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
 //see https://tools.ietf.org/html/rfc7601
@@ -35,6 +36,7 @@ void DKIMCheckAuthenticationStatusJob::start()
     if (!canStart()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start job";
         deleteLater();
+        Q_EMIT result();
         return;
     }
     if (auto hrd = mMessage->headerByType("Authentication-Results")) {
@@ -43,9 +45,19 @@ void DKIMCheckAuthenticationStatusJob::start()
     if (mAuthenticationResult.isEmpty()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Authentication result is empty";
         deleteLater();
+        Q_EMIT result();
         return;
     }
+    DKIMAuthenticationStatusInfo info;
+    if (!info.parseAuthenticationStatus(mAuthenticationResult)) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse authentication status header";
+        Q_EMIT result();
+        deleteLater();
+        return;
+    }
+
     //TODO
+    Q_EMIT result();
     deleteLater();
 }
 

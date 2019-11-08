@@ -18,7 +18,7 @@
 */
 
 #include "dkimauthenticationstatusinfo.h"
-
+#include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
 DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
 {
@@ -26,8 +26,12 @@ DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
 
 bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
 {
+    if (key.isEmpty()) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Key is empty";
+        return false;
+    }
     //TODO
-    return false;
+    return true;
 }
 
 QString DKIMAuthenticationStatusInfo::authservId() const

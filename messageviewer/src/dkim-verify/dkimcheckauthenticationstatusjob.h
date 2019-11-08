@@ -40,6 +40,10 @@ public:
     Q_REQUIRED_RESULT QString authenticationResult() const;
     void setAuthenticationResult(const QString &authenticationResult);
 
+Q_SIGNALS:
+    //TODO implement
+    void result();
+
 private:
     KMime::Message::Ptr mMessage;
     QString mAuthenticationResult;
