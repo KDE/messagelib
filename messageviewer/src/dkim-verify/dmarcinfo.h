@@ -24,6 +24,10 @@
 #include <QObject>
 #include <QDebug>
 namespace MessageViewer {
+/**
+ * @brief The DMARCInfo class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DMARCInfo
 {
 public:

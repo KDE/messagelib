@@ -29,6 +29,10 @@
 #include <AkonadiCore/Item>
 
 namespace MessageViewer {
+/**
+ * @brief The DKIMCheckSignatureJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMCheckSignatureJob : public QObject
 {
     Q_OBJECT

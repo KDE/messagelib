@@ -23,6 +23,10 @@
 #include "messageviewer_export.h"
 class QTreeWidget;
 namespace MessageViewer {
+/**
+ * @brief The DKIMManagerKeyWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMManagerKeyWidget : public QWidget
 {
     Q_OBJECT

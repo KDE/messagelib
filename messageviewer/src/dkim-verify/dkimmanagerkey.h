@@ -24,6 +24,10 @@
 #include "messageviewer_export.h"
 #include <QVector>
 namespace MessageViewer {
+/**
+ * @brief The KeyInfo struct
+ * @author Laurent Montel <montel@kde.org>
+ */
 struct MESSAGEVIEWER_EXPORT KeyInfo {
     KeyInfo()
     {
@@ -41,6 +45,11 @@ struct MESSAGEVIEWER_EXPORT KeyInfo {
     QString domain;
     Q_REQUIRED_RESULT bool operator ==(const KeyInfo &) const;
 };
+
+/**
+ * @brief The DKIMManagerKey class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMManagerKey : public QObject
 {
     Q_OBJECT

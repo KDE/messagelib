@@ -25,6 +25,10 @@
 #include "dmarcpolicyjob.h"
 #include "messageviewer_export.h"
 namespace MessageViewer {
+/**
+ * @brief The DKIMCheckPolicyJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMCheckPolicyJob : public QObject
 {
     Q_OBJECT

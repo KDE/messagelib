@@ -24,6 +24,10 @@
 #include "messageviewer_export.h"
 class QDnsLookup;
 namespace MessageViewer {
+/**
+ * @brief The DKIMDownloadKeyJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMDownloadKeyJob : public QObject
 {
     Q_OBJECT

@@ -24,6 +24,10 @@
 #include <messageviewer/messageviewersettings.h>
 #include <QObject>
 namespace MessageViewer {
+/**
+ * @brief The DKIMCheckPolicy class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMCheckPolicy
 {
 public:

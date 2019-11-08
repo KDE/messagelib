@@ -25,6 +25,10 @@
 #include "messageviewer_export.h"
 class QLabel;
 namespace MessageViewer {
+/**
+ * @brief The DKIMWidgetInfo class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMWidgetInfo : public QWidget
 {
     Q_OBJECT

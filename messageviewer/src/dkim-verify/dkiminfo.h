@@ -25,6 +25,10 @@
 #include <QStringList>
 #include <QObject>
 namespace MessageViewer {
+/**
+ * @brief The DKIMInfo class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMInfo
 {
     Q_GADGET

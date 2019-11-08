@@ -25,6 +25,10 @@
 
 namespace MessageViewer {
 class DKIMManagerKeyWidget;
+/**
+ * @brief The DKIMManagerKeyDialog class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMManagerKeyDialog : public QDialog
 {
     Q_OBJECT

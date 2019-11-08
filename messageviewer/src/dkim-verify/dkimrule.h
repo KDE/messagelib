@@ -23,6 +23,10 @@
 #include <QDebug>
 #include <QObject>
 namespace MessageViewer {
+/**
+ * @brief The DKIMRule class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMRule
 {
     Q_GADGET

@@ -26,6 +26,10 @@
 #include <KMime/Message>
 #include <AkonadiCore/Item>
 namespace MessageViewer {
+/**
+ * @brief The DKIMManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMManager : public QObject
 {
     Q_OBJECT
