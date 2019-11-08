@@ -38,11 +38,16 @@ public:
 
     Q_REQUIRED_RESULT QVector<DKIMRule> rules() const;
 
-    void loadRules();
     void saveRules(const QVector<DKIMRule> &lst);
 
+    void clear();
+
+    void importRules(const QString &fileName);
+    void exportRules(const QString &fileName);
+
 private:
-    void save();
+    void loadRules(const QString &fileName = QString());
+    void save(const QString &fileName = QString());
     QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
     QVector<DKIMRule> mRules;
 };

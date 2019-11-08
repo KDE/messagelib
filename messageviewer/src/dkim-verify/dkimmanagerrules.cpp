@@ -58,9 +58,9 @@ QStringList DKIMManagerRules::ruleGroups(const KSharedConfig::Ptr &config) const
     return config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Rule #\\d+")));
 }
 
-void DKIMManagerRules::loadRules()
+void DKIMManagerRules::loadRules(const QString &fileName)
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(QStringLiteral("dkimsettingsrc"), KConfig::NoGlobals);
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(fileName.isEmpty() ? QStringLiteral("dkimsettingsrc") : fileName, KConfig::NoGlobals);
     const QStringList rulesGroups = ruleGroups(config);
 
     mRules.clear();
@@ -89,9 +89,25 @@ void DKIMManagerRules::saveRules(const QVector<DKIMRule> &lst)
     save();
 }
 
-void DKIMManagerRules::save()
+void DKIMManagerRules::clear()
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(QStringLiteral("dkimsettingsrc"), KConfig::NoGlobals);
+    mRules.clear();
+    save();
+}
+
+void DKIMManagerRules::importRules(const QString &fileName)
+{
+    loadRules(fileName);
+}
+
+void DKIMManagerRules::exportRules(const QString &fileName)
+{
+    save(fileName);
+}
+
+void DKIMManagerRules::save(const QString &fileName)
+{
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(fileName.isEmpty() ? QStringLiteral("dkimsettingsrc") : fileName, KConfig::NoGlobals);
     const QStringList rulesGroups = ruleGroups(config);
 
     for (const QString &group : rulesGroups) {
