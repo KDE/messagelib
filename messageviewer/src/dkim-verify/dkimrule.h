@@ -43,10 +43,10 @@ public:
     Q_REQUIRED_RESULT QString domain() const;
     void setDomain(const QString &domain);
 
-    Q_REQUIRED_RESULT  QStringList signedDomainIdentifier() const;
+    Q_REQUIRED_RESULT QStringList signedDomainIdentifier() const;
     void setSignedDomainIdentifier(const QStringList &signedDomainIdentifier);
 
-    Q_REQUIRED_RESULT  QString from() const;
+    Q_REQUIRED_RESULT QString from() const;
     void setFrom(const QString &from);
 
     Q_REQUIRED_RESULT bool enabled() const;

@@ -69,6 +69,4 @@ void DKIMCheckPolicyTest::shouldAssignValues()
     QCOMPARE(pol.useDMarc(), mUseDMarc);
     QCOMPARE(pol.useDefaultRules(), mUseDefaultRules);
     QCOMPARE(pol.rsaSha1Policy(), mRsaSha1Policy);
-
 }
-

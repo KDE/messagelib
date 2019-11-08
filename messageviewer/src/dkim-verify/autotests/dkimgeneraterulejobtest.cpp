@@ -25,7 +25,6 @@ QTEST_GUILESS_MAIN(DKIMGenerateRuleJobTest)
 DKIMGenerateRuleJobTest::DKIMGenerateRuleJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMGenerateRuleJobTest::shouldHaveDefaultValues()

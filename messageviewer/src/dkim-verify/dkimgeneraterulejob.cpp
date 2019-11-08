@@ -25,12 +25,10 @@ using namespace MessageViewer;
 DKIMGenerateRuleJob::DKIMGenerateRuleJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DKIMGenerateRuleJob::~DKIMGenerateRuleJob()
 {
-
 }
 
 bool DKIMGenerateRuleJob::canStart() const

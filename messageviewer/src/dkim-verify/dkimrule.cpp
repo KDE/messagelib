@@ -21,7 +21,6 @@
 using namespace MessageViewer;
 DKIMRule::DKIMRule()
 {
-
 }
 
 QString DKIMRule::domain() const
@@ -92,12 +91,12 @@ void DKIMRule::setListId(const QString &listId)
 
 bool DKIMRule::operator==(const DKIMRule &other) const
 {
-    if (other.domain() == mDomain &&
-            other.signedDomainIdentifier() == mSignedDomainIdentifier &&
-            other.from() == mFrom &&
-            other.listId() == mListId &&
-            other.ruleType() == mRuleType &&
-            other.enabled() == mEnabled) {
+    if (other.domain() == mDomain
+        && other.signedDomainIdentifier() == mSignedDomainIdentifier
+        && other.from() == mFrom
+        && other.listId() == mListId
+        && other.ruleType() == mRuleType
+        && other.enabled() == mEnabled) {
         return true;
     }
     return false;

@@ -31,6 +31,8 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldParseKey();
+    void shouldParseKey_data();
 };
 
 #endif // DKIMAUTHENTICATIONSTATUSINFOTEST_H

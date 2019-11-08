@@ -24,7 +24,6 @@ QTEST_GUILESS_MAIN(DKIMRuleTest)
 DKIMRuleTest::DKIMRuleTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMRuleTest::shouldHaveDefaultValues()

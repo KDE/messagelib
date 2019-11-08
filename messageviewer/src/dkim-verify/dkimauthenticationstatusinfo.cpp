@@ -30,8 +30,23 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Key is empty";
         return false;
     }
+
+    // 1) get AuthservId and AuthVersion
+
+    // 2) ...
+
     //TODO
     return true;
+}
+
+QString DKIMAuthenticationStatusInfo::authVersion() const
+{
+    return mAuthVersion;
+}
+
+void DKIMAuthenticationStatusInfo::setAuthVersion(const QString &authVersion)
+{
+    mAuthVersion = authVersion;
 }
 
 QString DKIMAuthenticationStatusInfo::authservId() const

@@ -66,7 +66,6 @@ bool DKIMCheckPolicyJob::start()
     return true;
 }
 
-
 void DKIMCheckPolicyJob::compareWithDefaultRules()
 {
     const QVector<DKIMRule> rules = DKIMManagerRules::self()->rules();

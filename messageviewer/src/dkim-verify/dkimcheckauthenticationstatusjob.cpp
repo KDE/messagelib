@@ -39,15 +39,6 @@ void DKIMCheckAuthenticationStatusJob::start()
         Q_EMIT result({});
         return;
     }
-    if (auto hrd = mMessage->headerByType("Authentication-Results")) {
-        mAuthenticationResult = hrd->asUnicodeString();
-    }
-    if (mAuthenticationResult.isEmpty()) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Authentication result is empty";
-        deleteLater();
-        Q_EMIT result({});
-        return;
-    }
     DKIMAuthenticationStatusInfo info;
     if (!info.parseAuthenticationStatus(mAuthenticationResult)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse authentication status header";
@@ -62,18 +53,7 @@ void DKIMCheckAuthenticationStatusJob::start()
 
 bool DKIMCheckAuthenticationStatusJob::canStart() const
 {
-    //TODO
-    return mMessage != nullptr;
-}
-
-KMime::Message::Ptr DKIMCheckAuthenticationStatusJob::message() const
-{
-    return mMessage;
-}
-
-void DKIMCheckAuthenticationStatusJob::setMessage(const KMime::Message::Ptr &message)
-{
-    mMessage = message;
+    return !mAuthenticationResult.isEmpty();
 }
 
 QString DKIMCheckAuthenticationStatusJob::authenticationResult() const

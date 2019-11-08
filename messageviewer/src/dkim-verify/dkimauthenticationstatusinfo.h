@@ -33,8 +33,13 @@ public:
     void setAuthservId(const QString &authservId);
 
     Q_REQUIRED_RESULT bool parseAuthenticationStatus(const QString &key);
+
+    Q_REQUIRED_RESULT QString authVersion() const;
+    void setAuthVersion(const QString &authVersion);
+
 private:
     QString mAuthservId;
+    QString mAuthVersion;
 };
 }
 

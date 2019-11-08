@@ -87,7 +87,6 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
                              << QStringLiteral("null@kde.org")
                              << curPath;
 
-
     QTest::addRow("broken2") << QStringLiteral("broken2.mbox")
                              << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
                              << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
@@ -95,7 +94,6 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
                              << QStringLiteral("kde.org")
                              << QStringLiteral("vkrause@kde.org")
                              << curPath;
-
 
     QTest::addRow("broken3") << QStringLiteral("broken3.mbox")
                              << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
@@ -105,7 +103,6 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
                              << QStringLiteral("newsletter@abonnement.radins.com")
                              << curPath;
 
-
     QTest::addRow("broken4") << QStringLiteral("broken4.mbox")
                              << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
                              << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
@@ -113,7 +110,6 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
                              << QStringLiteral("kde.org")
                              << QStringLiteral("null@kde.org")
                              << curPath;
-
 
     QTest::addRow("broken5") << QStringLiteral("broken5.mbox")
                              << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any

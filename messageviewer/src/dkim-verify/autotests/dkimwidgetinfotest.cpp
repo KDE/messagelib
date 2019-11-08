@@ -61,4 +61,3 @@ void DKIMWidgetInfoTest::shouldClearWidget()
     QVERIFY(mLabel->text().isEmpty());
     QCOMPARE(w.result(), {});
 }
-
