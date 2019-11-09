@@ -56,11 +56,10 @@ void DKIMGenerateRuleJob::verifyAndGenerateRule()
     DKIMRule rule;
     rule.setEnabled(true);
     rule.setFrom(mResult.fromEmail);
-    //rule.setDomain();
+    rule.setDomain(mResult.signedBy); //TODO verify ?
     //rule.setListId();
     //rule.setSignedDomainIdentifier();
     rule.setRuleType(DKIMRule::RuleType::MustBeSigned);
-    DKIMManagerRules::self()->
     //TODO
     deleteLater();
 }
