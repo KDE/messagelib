@@ -58,9 +58,8 @@ void DKIMGenerateRuleJob::verifyAndGenerateRule()
     rule.setFrom(mResult.fromEmail);
     rule.setDomain(mResult.signedBy); //TODO verify ?
     //rule.setListId();
-    //rule.setSignedDomainIdentifier();
+    rule.setSignedDomainIdentifier(QStringList() << mResult.signedBy); //TODO verify
     rule.setRuleType(DKIMRule::RuleType::MustBeSigned);
-    //TODO
     deleteLater();
 }
 
