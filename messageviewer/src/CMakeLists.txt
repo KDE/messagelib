@@ -309,8 +309,6 @@ target_link_libraries(KF5MessageViewer
     ${OPTIONAL_PRIVATE}
     )
 
-set(OPTIONAL_PRIVATE qca-qt5)
-
 set_target_properties(KF5MessageViewer PROPERTIES
     VERSION ${MESSAGEVIEWER_VERSION_STRING}
     SOVERSION ${MESSAGEVIEWER_SOVERSION}
