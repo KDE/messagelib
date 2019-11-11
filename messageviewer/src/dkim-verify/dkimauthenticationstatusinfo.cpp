@@ -19,16 +19,27 @@
 
 #include "dkimauthenticationstatusinfo.h"
 #include "messageviewer_dkimcheckerdebug.h"
+
+#include <QRegularExpressionMatch>
 using namespace MessageViewer;
+//see https://tools.ietf.org/html/rfc7601
 DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
 {
 }
 
 bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
 {
+    // https://tools.ietf.org/html/rfc7601#section-2.2
+    // authres-header = "Authentication-Results:" [CFWS] authserv-id
+    //                                            [ CFWS authres-version ]
+    //                                            ( no-result / 1*resinfo ) [CFWS] CRLF
+
     // 1) extract AuthservId and AuthVersion
+    QRegularExpressionMatch match;
+    const int index = key.indexOf(QRegularExpression(QStringLiteral("todo defined!")), 0, &match);
+    if (index != -1) {
 
-
+    }
 
     // 2) extract methodspec
 
