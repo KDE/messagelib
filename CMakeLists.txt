@@ -11,13 +11,13 @@ option(MIMETREEPARSER_ONLY_BUILD "Build only mimetreeparser" FALSE)
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 option(KDEPIM_RUN_AKONADI_TEST "Enable autotest based on Akonadi." TRUE)
 
-set(KF5_MIN_VERSION "5.63.0")
+set(KF5_MIN_VERSION "5.64.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
 set(AKONADIMIME_LIB_VERSION "5.12.80")
 
-set(QT_REQUIRED_VERSION "5.11.0")
+set(QT_REQUIRED_VERSION "5.12.0")
 
 set(AKONADI_VERSION "5.12.80")
 set(GRANTLEETHEME_LIB_VERSION "5.12.80")
