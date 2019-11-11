@@ -50,6 +50,16 @@ void DKIMAuthenticationStatusInfo::setAuthVersion(const QString &authVersion)
     mAuthVersion = authVersion;
 }
 
+QString DKIMAuthenticationStatusInfo::reasonSpec() const
+{
+    return mReasonSpec;
+}
+
+void DKIMAuthenticationStatusInfo::setReasonSpec(const QString &reasonSpec)
+{
+    mReasonSpec = reasonSpec;
+}
+
 QString DKIMAuthenticationStatusInfo::authservId() const
 {
     return mAuthservId;

@@ -37,9 +37,13 @@ public:
     Q_REQUIRED_RESULT QString authVersion() const;
     void setAuthVersion(const QString &authVersion);
 
+    Q_REQUIRED_RESULT QString reasonSpec() const;
+    void setReasonSpec(const QString &reasonSpec);
+
 private:
     QString mAuthservId;
     QString mAuthVersion;
+    QString mReasonSpec;
 };
 }
 
