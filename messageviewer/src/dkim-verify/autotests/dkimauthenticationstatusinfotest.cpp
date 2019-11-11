@@ -33,6 +33,7 @@ void DKIMAuthenticationStatusInfoTest::shouldHaveDefaultValue()
     MessageViewer::DKIMAuthenticationStatusInfo info;
     QVERIFY(info.authservId().isEmpty());
     QVERIFY(info.authVersion().isEmpty());
+    QVERIFY(info.reasonSpec().isEmpty());
 }
 
 void DKIMAuthenticationStatusInfoTest::shouldParseKey()
@@ -52,5 +53,5 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<bool>("success");
 
-    QTest::addRow("empty") << QString() << QString() << false;
+    QTest::addRow("empty") << QString() << QString() << true;
 }

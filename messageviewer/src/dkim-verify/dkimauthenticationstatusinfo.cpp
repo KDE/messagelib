@@ -26,14 +26,15 @@ DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
 
 bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
 {
-    if (key.isEmpty()) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Key is empty";
-        return false;
-    }
+    // 1) extract AuthservId and AuthVersion
 
-    // 1) get AuthservId and AuthVersion
 
-    // 2) ...
+
+    // 2) extract methodspec
+
+    // 3) extract reasonspec (optional)
+
+    // 4) extract propspec (optional)
 
     //TODO
     return true;
@@ -47,6 +48,16 @@ QString DKIMAuthenticationStatusInfo::authVersion() const
 void DKIMAuthenticationStatusInfo::setAuthVersion(const QString &authVersion)
 {
     mAuthVersion = authVersion;
+}
+
+QString DKIMAuthenticationStatusInfo::reasonSpec() const
+{
+    return mReasonSpec;
+}
+
+void DKIMAuthenticationStatusInfo::setReasonSpec(const QString &reasonSpec)
+{
+    mReasonSpec = reasonSpec;
 }
 
 QString DKIMAuthenticationStatusInfo::authservId() const
