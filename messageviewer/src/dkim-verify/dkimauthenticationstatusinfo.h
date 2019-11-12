@@ -22,29 +22,46 @@
 
 #include "messageviewer_private_export.h"
 #include <QString>
-
+#include <QDebug>
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMAuthenticationStatusInfo
 {
 public:
     DKIMAuthenticationStatusInfo();
 
+    struct AuthStatusInfo {
+        QString method;
+        QString result;
+        //TODO add more
+        bool operator==(const AuthStatusInfo &other) const;
+    };
+
     Q_REQUIRED_RESULT QString authservId() const;
     void setAuthservId(const QString &authservId);
 
     Q_REQUIRED_RESULT bool parseAuthenticationStatus(const QString &key);
 
-    Q_REQUIRED_RESULT QString authVersion() const;
-    void setAuthVersion(const QString &authVersion);
+    Q_REQUIRED_RESULT int authVersion() const;
+    void setAuthVersion(int authVersion);
 
     Q_REQUIRED_RESULT QString reasonSpec() const;
     void setReasonSpec(const QString &reasonSpec);
 
+    Q_REQUIRED_RESULT bool operator==(const DKIMAuthenticationStatusInfo &other) const;
+
+    Q_REQUIRED_RESULT QList<AuthStatusInfo> listAuthStatusInfo() const;
+    void setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo);
+
 private:
+    AuthStatusInfo parseAuthResultInfo(QString &valueKey);
+    QList<AuthStatusInfo> mListAuthStatusInfo;
     QString mAuthservId;
-    QString mAuthVersion;
     QString mReasonSpec;
+    int mAuthVersion = -1;
 };
 }
+
+Q_DECLARE_METATYPE(MessageViewer::DKIMAuthenticationStatusInfo)
+MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMAuthenticationStatusInfo &t);
 
 #endif // DKIMAUTHENTICATIONSTATUSINFO_H

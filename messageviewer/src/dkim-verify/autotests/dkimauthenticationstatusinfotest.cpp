@@ -32,26 +32,49 @@ void DKIMAuthenticationStatusInfoTest::shouldHaveDefaultValue()
 {
     MessageViewer::DKIMAuthenticationStatusInfo info;
     QVERIFY(info.authservId().isEmpty());
-    QVERIFY(info.authVersion().isEmpty());
+    QCOMPARE(info.authVersion(), -1);
     QVERIFY(info.reasonSpec().isEmpty());
+    QVERIFY(info.listAuthStatusInfo().isEmpty());
 }
 
 void DKIMAuthenticationStatusInfoTest::shouldParseKey()
 {
     QFETCH(QString, key);
-    QFETCH(QString, result);
+    QFETCH(MessageViewer::DKIMAuthenticationStatusInfo, result);
     QFETCH(bool, success);
     MessageViewer::DKIMAuthenticationStatusInfo info;
     const bool val = info.parseAuthenticationStatus(key);
     QCOMPARE(val, success);
-    //TODO test result.
+    const bool compareResult = result == info;
+    if (!compareResult) {
+        qDebug() << "parse info " << info;
+        qDebug() << "expected " << result;
+    }
+    QVERIFY(compareResult);
 }
 
 void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
 {
     QTest::addColumn<QString>("key");
-    QTest::addColumn<QString>("result");
+    QTest::addColumn<MessageViewer::DKIMAuthenticationStatusInfo>("result");
     QTest::addColumn<bool>("success");
 
-    QTest::addRow("empty") << QString() << QString() << true;
+    QTest::addRow("empty") << QString() << MessageViewer::DKIMAuthenticationStatusInfo() << false;
+    {
+        MessageViewer::DKIMAuthenticationStatusInfo info;
+        info.setAuthVersion(1);
+        info.setAuthservId(QStringLiteral("in68.mail.ovh.net"));
+        QTest::addRow("test1") << QStringLiteral("in68.mail.ovh.net; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"GMG2ucPx\"; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"I3t3p7Up\"; dkim-atps=neutral")
+                               << info
+                               << true;
+    }
+    {
+        MessageViewer::DKIMAuthenticationStatusInfo info;
+        info.setAuthVersion(1);
+        info.setAuthservId(QStringLiteral("example.org"));
+
+        QTest::addRow("none") << QStringLiteral("example.org 1; none")
+                               << info
+                               << false;
+    }
 }
