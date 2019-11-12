@@ -60,18 +60,25 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
         //no result
         return false;
     }
+    while (!valueKey.isEmpty()) {
+        mListAuthStatusInfo.append(parseAuthResultInfo(valueKey));
+    }
 
+    return true;
+}
 
-
-
+DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parseAuthResultInfo(QString &valueKey)
+{
     // 2) extract methodspec
 
     // 3) extract reasonspec (optional)
 
     // 4) extract propspec (optional)
-
-    return true;
+    valueKey = QString();
+    return {};
+    //TODO
 }
+
 
 int DKIMAuthenticationStatusInfo::authVersion() const
 {

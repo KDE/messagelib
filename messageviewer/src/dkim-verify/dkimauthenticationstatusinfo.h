@@ -53,6 +53,7 @@ public:
     void setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo);
 
 private:
+    AuthStatusInfo parseAuthResultInfo(QString &valueKey);
     QList<AuthStatusInfo> mListAuthStatusInfo;
     QString mAuthservId;
     QString mReasonSpec;
