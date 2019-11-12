@@ -77,6 +77,7 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
                     switch (rule.ruleType()) {
                     case DKIMRule::RuleType::Unknown:
                         // Invalid rule !
+                        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid rule found " << rule;
                         break;
                     case DKIMRule::RuleType::MustBeSigned:
                         mCheckResult.status = DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
