@@ -29,6 +29,12 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMAuthenticationStatusInfo
 public:
     DKIMAuthenticationStatusInfo();
 
+    struct AuthStatusInfo {
+        QString method;
+        QString result;
+        //TODO add more
+    };
+
     Q_REQUIRED_RESULT QString authservId() const;
     void setAuthservId(const QString &authservId);
 
@@ -43,6 +49,7 @@ public:
     Q_REQUIRED_RESULT bool operator==(const DKIMAuthenticationStatusInfo &other) const;
 
 private:
+    QList<AuthStatusInfo> mListAuthStatusInfo;
     QString mAuthservId;
     QString mReasonSpec;
     int mAuthVersion = -1;
