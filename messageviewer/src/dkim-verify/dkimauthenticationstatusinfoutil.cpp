@@ -23,21 +23,6 @@
 #include "dkimauthenticationstatusinfoutil.h"
 
 /*
-// quoted-string as specified in Section 3.2.4 of RFC 5322
-let quoted_string_p = "(?:" + CFWS_op +
-        "\"(?:" + FWS_op + qcontent_p + ")*" + FWS_op + "\"" +
-        CFWS_op + ")";
-let quoted_string_cp = "(?:" + CFWS_op +
-        "\"((?:" + FWS_op + qcontent_p + ")*)" + FWS_op + "\"" +
-        CFWS_op + ")";
-// local-part as specified in Section 3.4.1 of RFC 5322
-// Note: obs-local-part is not included, so this pattern matches less then specified!
-let local_part_p = "(?:" + dot_atom_p + "|" + quoted_string_p + ")";
-// token as specified in Section 5.1 of RFC 2045.
-let token_p = "[^ \\x00-\\x1F\\x7F()<>@,;:\\\\\"/[\\]?=]+";
-// "value" as specified in Section 5.1 of RFC 2045.
-let value_p = "(?:" + token_p + "|" + quoted_string_p + ")";
-let value_cp = "(?:(" + token_p + ")|" + quoted_string_cp + ")";
 // domain-name as specified in Section 3.5 of RFC 6376 [DKIM].
 let domain_name_p = "(?:" + sub_domain_p + "(?:\\." + sub_domain_p + ")+)";
 */
@@ -162,4 +147,45 @@ QString MessageViewer::DKIMAuthenticationStatusInfoUtil::qcontent_p()
 {
     // qcontent as specified in Section 3.2.4 of RFC 5322
     return QStringLiteral("(?:%1|%2)").arg(qtext_p()).arg(quotedPair_p());
+}
+
+QString MessageViewer::DKIMAuthenticationStatusInfoUtil::quotedString_p()
+{
+    // quoted-string as specified in Section 3.2.4 of RFC 5322
+    return QStringLiteral("(?:%1\"(?:%2%3)*%2\"%1)").arg(cfws_op()).arg(fws_op()).arg(qcontent_p());
+}
+
+QString MessageViewer::DKIMAuthenticationStatusInfoUtil::quotedString_cp()
+{
+    return QStringLiteral("(?:%1\"((?:%2%3)*)%2\"%1)").arg(cfws_op()).arg(fws_op()).arg(qcontent_p());
+}
+
+QString MessageViewer::DKIMAuthenticationStatusInfoUtil::localPart_p()
+{
+    // local-part as specified in Section 3.4.1 of RFC 5322
+    // Note: obs-local-part is not included, so this pattern matches less then specified!
+    return QStringLiteral("(?:%1|%2))").arg(dotAtom_p()).arg(quotedString_p());
+}
+
+QString MessageViewer::DKIMAuthenticationStatusInfoUtil::token_p()
+{
+    // token as specified in Section 5.1 of RFC 2045.
+    return QStringLiteral("[^ \\x00-\\x1F\\x7F()<>@,;:\\\\\"/[\\]?=]+");
+}
+
+QString MessageViewer::DKIMAuthenticationStatusInfoUtil::value_p()
+{
+    // "value" as specified in Section 5.1 of RFC 2045.
+    return QStringLiteral("(?:%1|%2)").arg(token_p()).arg(quotedString_p());
+}
+
+QString MessageViewer::DKIMAuthenticationStatusInfoUtil::value_cp()
+{
+    return QStringLiteral("(?:(%1)|%2)").arg(token_p()).arg(quotedString_cp());
+}
+
+QString MessageViewer::DKIMAuthenticationStatusInfoUtil::domainName_p()
+{
+    // domain-name as specified in Section 3.5 of RFC 6376 [DKIM].
+    return QStringLiteral("(?:%1(?:\\.%1)+)").arg(subDomain_p());
 }
