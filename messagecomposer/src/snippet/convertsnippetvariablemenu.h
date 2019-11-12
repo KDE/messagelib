@@ -25,6 +25,10 @@
 #include <MessageComposer/ConvertSnippetVariablesUtil>
 class QMenu;
 namespace MessageComposer {
+/**
+ * @brief The ConvertSnippetVariableMenu class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT ConvertSnippetVariableMenu : public QObject
 {
     Q_OBJECT

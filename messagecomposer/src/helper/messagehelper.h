@@ -17,8 +17,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#ifndef KMAIL_MESSAGE_HELPER_H
-#define KMAIL_MESSAGE_HELPER_H
+#ifndef MESSAGECOMPOSER_MESSAGE_HELPER_H
+#define MESSAGECOMPOSER_MESSAGE_HELPER_H
 
 #include "messagecomposer_export.h"
 

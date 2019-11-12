@@ -18,8 +18,8 @@
   02110-1301, USA.
 */
 
-#ifndef COMPOSER_VIEW_BASE_H
-#define COMPOSER_VIEW_BASE_H
+#ifndef MESSAGECOMPOSER_COMPOSER_VIEW_BASE_H
+#define MESSAGECOMPOSER_COMPOSER_VIEW_BASE_H
 
 #include "messagecomposer_export.h"
 #include "messagecomposer/messagesender.h"

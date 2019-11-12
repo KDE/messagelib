@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef RICHTEXTCOMPOSERNG_H
-#define RICHTEXTCOMPOSERNG_H
+#ifndef MESSAGECOMPOSER_RICHTEXTCOMPOSERNG_H
+#define MESSAGECOMPOSER_RICHTEXTCOMPOSERNG_H
 
 #include "messagecomposer_export.h"
 #include <kpimtextedit/richtextcomposer.h>
@@ -65,4 +65,4 @@ private:
     RichTextComposerNgPrivate *const d;
 };
 }
-#endif // RICHTEXTCOMPOSERNG_H
+#endif

@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef MESSAGEFACTORYREPLYJOB_H
-#define MESSAGEFACTORYREPLYJOB_H
+#ifndef MESSAGECOMPOSER_MESSAGEFACTORYREPLYJOB_H
+#define MESSAGECOMPOSER_MESSAGEFACTORYREPLYJOB_H
 
 #include <QObject>
 #include <KMime/Message>
@@ -63,4 +63,4 @@ private:
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
 }
-#endif // MESSAGEFACTORYREPLYJOB_H
+#endif

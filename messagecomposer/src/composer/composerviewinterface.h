@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef COMPOSERVIEWINTERFACE_H
-#define COMPOSERVIEWINTERFACE_H
+#ifndef MESSAGECOMPOSER_COMPOSERVIEWINTERFACE_H
+#define MESSAGECOMPOSER_COMPOSERVIEWINTERFACE_H
 #include "messagecomposer_export.h"
 #include <MessageComposer/ComposerAttachmentInterface>
 #include <QString>

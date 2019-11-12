@@ -22,8 +22,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef MESSAGECOMPSER_SIGNATURECONTROLLER_H
-#define MESSAGECOMPSER_SIGNATURECONTROLLER_H
+#ifndef MESSAGECOMPOSER_SIGNATURECONTROLLER_H
+#define MESSAGECOMPOSER_SIGNATURECONTROLLER_H
 
 #include "messagecomposer_export.h"
 #include <QObject>

@@ -34,8 +34,8 @@
     your version.
 */
 
-#ifndef KLEO_KEYRESOLVER_H
-#define KLEO_KEYRESOLVER_H
+#ifndef MESSAGECOMPOSER_KLEO_KEYRESOLVER_H
+#define MESSAGECOMPOSER_KLEO_KEYRESOLVER_H
 
 #include "messagecomposer_export.h"
 #include <Libkleo/KeyApprovalDialog>
@@ -312,4 +312,4 @@ private:
 };
 } // namespace Kleo
 
-#endif // KLEO_KEYRESOLVER_H
+#endif
