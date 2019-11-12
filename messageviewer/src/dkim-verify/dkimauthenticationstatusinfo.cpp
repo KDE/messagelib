@@ -18,6 +18,7 @@
 */
 
 #include "dkimauthenticationstatusinfo.h"
+#include "dkimauthenticationstatusinfoutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
 
 #include <QRegularExpressionMatch>
@@ -29,6 +30,7 @@ DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
 
 bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
 {
+    QString valueKey = key;
     // https://tools.ietf.org/html/rfc7601#section-2.2
     // authres-header = "Authentication-Results:" [CFWS] authserv-id
     //                                            [ CFWS authres-version ]
@@ -36,8 +38,11 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
 
     // 1) extract AuthservId and AuthVersion
     QRegularExpressionMatch match;
-    const int index = key.indexOf(QRegularExpression(QStringLiteral("todo defined!")), 0, &match);
+    const int index = valueKey.indexOf(QRegularExpression(DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String("(?:") + DKIMAuthenticationStatusInfoUtil::cfws_p() + QLatin1String("([0-9]+)") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String(" )?")), 0, &match);
     if (index != -1) {
+        //TODO remove value from valueKey
+    } else {
+        return false;
     }
 
     // 2) extract methodspec
