@@ -32,6 +32,8 @@ public:
     struct AuthStatusInfo {
         QString method;
         QString result;
+        QString reason;
+        int methodVersion = -1;
         //TODO add more
         bool operator==(const AuthStatusInfo &other) const;
     };

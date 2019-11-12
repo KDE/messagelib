@@ -55,7 +55,8 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
         return false;
     }
     // check if message authentication was performed
-    index = valueKey.indexOf(QRegularExpression(DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String(";") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("?none")), 0, &match);
+    const QString authResultStr = DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String(";") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("?none");
+    index = valueKey.indexOf(QRegularExpression(authResultStr), 0, &match);
     if (index != -1) {
         //no result
         return false;
@@ -69,14 +70,45 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
 
 DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parseAuthResultInfo(QString &valueKey)
 {
+    DKIMAuthenticationStatusInfo::AuthStatusInfo authStatusInfo;
     // 2) extract methodspec
+    const QString methodVersionp = DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('/') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("([0-9]+)");
+    const QString method_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1String(")(?:") + methodVersionp + QLatin1String(")?");
+    QString Keyword_result_p = QLatin1String("none|pass|fail|softfail|policy|neutral|temperror|permerror");
+    // older SPF specs (e.g. RFC 4408) use mixed case
+    Keyword_result_p += QLatin1String("|None|Pass|Fail|SoftFail|Neutral|TempError|PermError");
+    const QString result_p = QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + Keyword_result_p + QLatin1Char(')');
+    const QString methodspec_p = QLatin1Char(';') + DKIMAuthenticationStatusInfoUtil::cfws_op() + method_p + DKIMAuthenticationStatusInfoUtil::cfws_op() + result_p;
+
+    qDebug() << "methodspec_p " << methodspec_p;
+    QRegularExpressionMatch match;
+    const int index = valueKey.indexOf(QRegularExpression(methodspec_p), 0, &match);
+    if (index == -1) {
+        valueKey = QString(); //remove it !
+        qDebug() << " not found !!!!!!!!!!!!!!!!!!";
+        //no result
+        return authStatusInfo;
+    }
+    qDebug() << " match" << match.captured(0) << match.captured(1) << match.capturedTexts();
+    authStatusInfo.method = match.captured(1);
+
+    if (!match.captured(2).isEmpty()) {
+        authStatusInfo.methodVersion = match.captured(2).toInt();
+    }
+    authStatusInfo.result = match.captured(3);
+
+    //TODO remove extra text
 
     // 3) extract reasonspec (optional)
+    const QString reasonspec_p = QLatin1String("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + DKIMAuthenticationStatusInfoUtil::value_cp();
+
 
     // 4) extract propspec (optional)
-    valueKey = QString();
-    return {};
-    //TODO
+    const QString pvalue_p = DKIMAuthenticationStatusInfoUtil::value_p() + QLatin1String("|(?:(?:") + DKIMAuthenticationStatusInfoUtil::localPart_p() + QLatin1String("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + QLatin1Char(')');
+
+
+    valueKey = QString(); //remove it !
+    return authStatusInfo;
 }
 
 
@@ -134,7 +166,7 @@ QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
     d << "mReasonSpec: " << t.reasonSpec();
     d << "mAuthVersion: " << t.authVersion();
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo & info : t.listAuthStatusInfo()) {
-        d << "mListAuthStatusInfo: " << info.method << " : " << info.result;
+        d << "mListAuthStatusInfo: " << info.method << " : " << info.result << " : " << info.methodVersion << " : " << info.reason;
     }
     return d;
 }
@@ -142,5 +174,7 @@ QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
 bool DKIMAuthenticationStatusInfo::AuthStatusInfo::operator==(const DKIMAuthenticationStatusInfo::AuthStatusInfo &other) const
 {
     return other.method == method
-            && other.result == result;
+            && other.result == result
+            && other.methodVersion == methodVersion
+            && other.reason == reason;
 }
