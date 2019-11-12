@@ -41,7 +41,7 @@ QString MessageViewer::DKIMAuthenticationStatusInfoUtil::vchar_p()
 QString MessageViewer::DKIMAuthenticationStatusInfoUtil::letDig_p()
 {
     // Let-dig  as specified in Section 4.1.2 of RFC 5321 [SMTP].
-     return QStringLiteral("[A-Za-z0-9]");
+    return QStringLiteral("[A-Za-z0-9]");
 }
 
 QString MessageViewer::DKIMAuthenticationStatusInfoUtil::ldhStr_p()
@@ -54,7 +54,6 @@ QString MessageViewer::DKIMAuthenticationStatusInfoUtil::keyword_p()
 {
     // "Keyword" as specified in Section 4.1.2 of RFC 5321 [SMTP].
     return DKIMAuthenticationStatusInfoUtil::ldhStr_p();
-
 }
 
 QString MessageViewer::DKIMAuthenticationStatusInfoUtil::subDomain_p()
@@ -109,7 +108,7 @@ QString MessageViewer::DKIMAuthenticationStatusInfoUtil::comment_p()
 QString MessageViewer::DKIMAuthenticationStatusInfoUtil::cfws_p()
 {
     // CFWS as specified in Section 3.2.2 of RFC 5322 [MAIL]
-    return  QStringLiteral("(?:(?:(?:%1%2)+%1)|%3)").arg(fws_op()).arg(comment_p()).arg(fws_p());
+    return QStringLiteral("(?:(?:(?:%1%2)+%1)|%3)").arg(fws_op()).arg(comment_p()).arg(fws_p());
 }
 
 QString MessageViewer::DKIMAuthenticationStatusInfoUtil::cfws_op()

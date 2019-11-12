@@ -24,5 +24,4 @@ QTEST_GUILESS_MAIN(DKIMAuthenticationStatusInfoUtilTest)
 DKIMAuthenticationStatusInfoUtilTest::DKIMAuthenticationStatusInfoUtilTest(QObject *parent)
     : QObject(parent)
 {
-
 }

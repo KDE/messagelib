@@ -38,7 +38,6 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
     QRegularExpressionMatch match;
     const int index = key.indexOf(QRegularExpression(QStringLiteral("todo defined!")), 0, &match);
     if (index != -1) {
-
     }
 
     // 2) extract methodspec
