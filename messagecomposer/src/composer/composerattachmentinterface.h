@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef COMPOSERATTACHMENTINTERFACE_H
-#define COMPOSERATTACHMENTINTERFACE_H
+#ifndef MESSAGECOMPOSER_COMPOSERATTACHMENTINTERFACE_H
+#define MESSAGECOMPOSER_COMPOSERATTACHMENTINTERFACE_H
 
 #include "messagecomposer_export.h"
 #include <QObject>
@@ -54,4 +54,4 @@ private:
     int mCount = 0;
 };
 }
-#endif // COMPOSERATTACHMENTINTERFACE_H
+#endif

@@ -24,6 +24,10 @@
 #include "messagecomposer_export.h"
 namespace MessageComposer {
 class ComposerViewInterface;
+/**
+ * @brief The ConvertSnippetVariablesJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT ConvertSnippetVariablesJob : public QObject
 {
     Q_OBJECT

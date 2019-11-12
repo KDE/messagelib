@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef RICHTEXTCOMPOSERSIGNATURES_H
-#define RICHTEXTCOMPOSERSIGNATURES_H
+#ifndef MESSAGECOMPOSER_RICHTEXTCOMPOSERSIGNATURES_H
+#define MESSAGECOMPOSER_RICHTEXTCOMPOSERSIGNATURES_H
 
 #include <QObject>
 #include "messagecomposer_export.h"
@@ -47,4 +47,4 @@ private:
     RichTextComposerSignaturesPrivate *const d;
 };
 }
-#endif // RICHTEXTCOMPOSERSIGNATURES_H
+#endif
