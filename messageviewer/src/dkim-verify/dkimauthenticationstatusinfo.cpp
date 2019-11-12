@@ -38,12 +38,31 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
 
     // 1) extract AuthservId and AuthVersion
     QRegularExpressionMatch match;
-    const int index = valueKey.indexOf(QRegularExpression(DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String("(?:") + DKIMAuthenticationStatusInfoUtil::cfws_p() + QLatin1String("([0-9]+)") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String(" )?")), 0, &match);
+    const QString regStr = DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String("(?:") + DKIMAuthenticationStatusInfoUtil::cfws_p() + QLatin1String("([0-9]+)") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String(" )?");
+    //qDebug() << " regStr" << regStr;
+    int index = valueKey.indexOf(QRegularExpression(regStr), 0, &match);
     if (index != -1) {
-        //TODO remove value from valueKey
+        mAuthservId = match.captured(1);
+        if (!match.captured(2).isEmpty()) {
+            mAuthVersion = match.captured(2).toInt();
+        } else {
+            mAuthVersion = 1;
+        }
+        valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length()));
+        qDebug() << " match.captured(0)"<<match.captured(0)<<"match.captured(1)" <<match.captured(1) << match.captured(2);
+        qDebug() << " valueKey" << valueKey;
     } else {
         return false;
     }
+    // check if message authentication was performed
+    index = valueKey.indexOf(QRegularExpression(DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String(";") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("?none")), 0, &match);
+    if (index != -1) {
+        //no result
+        return false;
+    }
+
+
+
 
     // 2) extract methodspec
 
@@ -51,16 +70,15 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
 
     // 4) extract propspec (optional)
 
-    //TODO
     return true;
 }
 
-QString DKIMAuthenticationStatusInfo::authVersion() const
+int DKIMAuthenticationStatusInfo::authVersion() const
 {
     return mAuthVersion;
 }
 
-void DKIMAuthenticationStatusInfo::setAuthVersion(const QString &authVersion)
+void DKIMAuthenticationStatusInfo::setAuthVersion(int authVersion)
 {
     mAuthVersion = authVersion;
 }
@@ -75,6 +93,11 @@ void DKIMAuthenticationStatusInfo::setReasonSpec(const QString &reasonSpec)
     mReasonSpec = reasonSpec;
 }
 
+bool DKIMAuthenticationStatusInfo::operator==(const DKIMAuthenticationStatusInfo &other) const
+{
+    return mAuthservId == other.authservId() && mAuthVersion == other.authVersion() && mReasonSpec == other.reasonSpec();
+}
+
 QString DKIMAuthenticationStatusInfo::authservId() const
 {
     return mAuthservId;
@@ -83,4 +106,12 @@ QString DKIMAuthenticationStatusInfo::authservId() const
 void DKIMAuthenticationStatusInfo::setAuthservId(const QString &authservId)
 {
     mAuthservId = authservId;
+}
+
+QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
+{
+    d << "mAuthservId: " << t.authservId();
+    d << "mReasonSpec: " << t.reasonSpec();
+    d << "mAuthVersion: " << t.authVersion();
+    return d;
 }
