@@ -34,6 +34,7 @@ void DKIMAuthenticationStatusInfoTest::shouldHaveDefaultValue()
     QVERIFY(info.authservId().isEmpty());
     QCOMPARE(info.authVersion(), -1);
     QVERIFY(info.reasonSpec().isEmpty());
+    QVERIFY(info.listAuthStatusInfo().isEmpty());
 }
 
 void DKIMAuthenticationStatusInfoTest::shouldParseKey()

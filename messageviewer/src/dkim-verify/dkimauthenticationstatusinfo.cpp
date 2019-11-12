@@ -95,7 +95,20 @@ void DKIMAuthenticationStatusInfo::setReasonSpec(const QString &reasonSpec)
 
 bool DKIMAuthenticationStatusInfo::operator==(const DKIMAuthenticationStatusInfo &other) const
 {
-    return mAuthservId == other.authservId() && mAuthVersion == other.authVersion() && mReasonSpec == other.reasonSpec();
+    return mAuthservId == other.authservId()
+            && mAuthVersion == other.authVersion()
+            && mReasonSpec == other.reasonSpec()
+            && mListAuthStatusInfo == other.listAuthStatusInfo();
+}
+
+QList<DKIMAuthenticationStatusInfo::AuthStatusInfo> DKIMAuthenticationStatusInfo::listAuthStatusInfo() const
+{
+    return mListAuthStatusInfo;
+}
+
+void DKIMAuthenticationStatusInfo::setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo)
+{
+    mListAuthStatusInfo = listAuthStatusInfo;
 }
 
 QString DKIMAuthenticationStatusInfo::authservId() const
@@ -113,5 +126,14 @@ QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
     d << "mAuthservId: " << t.authservId();
     d << "mReasonSpec: " << t.reasonSpec();
     d << "mAuthVersion: " << t.authVersion();
+    for (const DKIMAuthenticationStatusInfo::AuthStatusInfo & info : t.listAuthStatusInfo()) {
+        d << "mListAuthStatusInfo: " << info.method << " : " << info.result;
+    }
     return d;
+}
+
+bool DKIMAuthenticationStatusInfo::AuthStatusInfo::operator==(const DKIMAuthenticationStatusInfo::AuthStatusInfo &other) const
+{
+    return other.method == method
+            && other.result == result;
 }

@@ -33,6 +33,7 @@ public:
         QString method;
         QString result;
         //TODO add more
+        bool operator==(const AuthStatusInfo &other) const;
     };
 
     Q_REQUIRED_RESULT QString authservId() const;
@@ -47,6 +48,9 @@ public:
     void setReasonSpec(const QString &reasonSpec);
 
     Q_REQUIRED_RESULT bool operator==(const DKIMAuthenticationStatusInfo &other) const;
+
+    Q_REQUIRED_RESULT QList<AuthStatusInfo> listAuthStatusInfo() const;
+    void setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo);
 
 private:
     QList<AuthStatusInfo> mListAuthStatusInfo;
