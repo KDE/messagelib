@@ -1342,13 +1342,13 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
 #ifdef USE_DKIM_CHECKER
     if (!mPrinting) {
         if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
-            if ((Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::SentMail) != mMessageItem.parentCollection()) &&
-                    (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Outbox) != mMessageItem.parentCollection()) &&
-                    (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates) != mMessageItem.parentCollection()) &&
-                    (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Drafts) != mMessageItem.parentCollection())) {
+            if ((Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::SentMail) != mMessageItem.parentCollection())
+                && (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Outbox) != mMessageItem.parentCollection())
+                && (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates) != mMessageItem.parentCollection())
+                && (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Drafts) != mMessageItem.parentCollection())) {
                 mDkimWidgetInfo->setCurrentItemId(mMessageItem.id());
                 MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
-            }  else {
+            } else {
                 mDkimWidgetInfo->clear();
             }
         }
