@@ -36,6 +36,7 @@ public:
         int methodVersion = -1;
         //TODO add more
         bool operator==(const AuthStatusInfo &other) const;
+        bool isValid() const;
     };
 
     Q_REQUIRED_RESULT QString authservId() const;
