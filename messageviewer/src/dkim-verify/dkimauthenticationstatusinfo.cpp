@@ -49,8 +49,8 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
             mAuthVersion = 1;
         }
         valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length()));
-        qDebug() << " match.captured(0)"<<match.captured(0)<<"match.captured(1)" <<match.captured(1) << match.captured(2);
-        qDebug() << " valueKey" << valueKey;
+        //qDebug() << " match.captured(0)"<<match.captured(0)<<"match.captured(1)" <<match.captured(1) << match.captured(2);
+        //qDebug() << " valueKey" << valueKey;
     } else {
         return false;
     }
