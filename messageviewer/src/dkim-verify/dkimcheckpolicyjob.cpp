@@ -73,23 +73,25 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
         if (rule.enabled()) {
             if (rule.from() == mEmailAddress || rule.from() == QLatin1Char('*')) {
                 //Check SDID
-                if (mCheckResult.signedBy == rule.domain()) {
-                    switch (rule.ruleType()) {
-                    case DKIMRule::RuleType::Unknown:
-                        // Invalid rule !
-                        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid rule found " << rule;
-                        break;
-                    case DKIMRule::RuleType::MustBeSigned:
-                        mCheckResult.status = DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
-                        break;
-                    case DKIMRule::RuleType::CanBeSigned:
-                        //Show a warning ?
-                        break;
-                    case DKIMRule::RuleType::IgnoreEmailNotSigned:
-                        //Nothing !
+                for (const QString &ssid : rule.signedDomainIdentifier()) {
+                    if (mCheckResult.signedBy == ssid) {
+                        switch (rule.ruleType()) {
+                        case DKIMRule::RuleType::Unknown:
+                            // Invalid rule !
+                            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid rule found " << rule;
+                            break;
+                        case DKIMRule::RuleType::MustBeSigned:
+                            mCheckResult.status = DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
+                            break;
+                        case DKIMRule::RuleType::CanBeSigned:
+                            //Show a warning ?
+                            break;
+                        case DKIMRule::RuleType::IgnoreEmailNotSigned:
+                            //Nothing !
+                            break;
+                        }
                         break;
                     }
-                    break;
                 }
             }
         }
