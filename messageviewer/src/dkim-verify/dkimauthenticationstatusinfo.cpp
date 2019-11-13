@@ -107,7 +107,8 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     const QString reasonspec_p = QLatin1String("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + DKIMAuthenticationStatusInfoUtil::value_cp();
     index = valueKey.indexOf(QRegularExpression(reasonspec_p), 0, &match);
     if (index != -1) {
-        qDebug() << " reason " << match.capturedTexts();
+        //qDebug() << " reason " << match.capturedTexts();
+        authStatusInfo.reason = match.captured(2);
         valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
     }
 
@@ -115,8 +116,21 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     // 4) extract propspec (optional)
     const QString pvalue_p = DKIMAuthenticationStatusInfoUtil::value_p() + QLatin1String("|(?:(?:") + DKIMAuthenticationStatusInfoUtil::localPart_p() + QLatin1String("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + QLatin1Char(')');
 
+    const QString property_p = QLatin1String("mailfrom|rcptto") + QLatin1Char('|') + DKIMAuthenticationStatusInfoUtil::keyword_p();
+    const QString propspec_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op() +
+            QLatin1Char('(') + property_p + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + pvalue_p + QLatin1Char(')');
 
-    valueKey = QString(); //remove it !
+    qDebug() << "propspec_p " << propspec_p;
+    const QRegularExpression reg(propspec_p);
+    if (!reg.isValid()) {
+        qDebug() << " reg error : " << reg.errorString();
+    } else {
+        index = valueKey.indexOf(reg, 0, &match);
+        while(index != -1) {
+            qDebug() << " reason " << match.capturedTexts();
+            valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
+        }
+    }
     return authStatusInfo;
 }
 
