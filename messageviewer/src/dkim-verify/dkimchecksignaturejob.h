@@ -81,24 +81,11 @@ public:
     Q_ENUM(DKIMWarning)
 
     struct CheckSignatureResult {
-        bool isValid() const
-        {
-            return status != DKIMCheckSignatureJob::DKIMStatus::Unknown;
-        }
+        Q_REQUIRED_RESULT bool isValid() const;
 
-        Q_REQUIRED_RESULT bool operator==(const CheckSignatureResult &other) const
-        {
-            return error == other.error
-                   && warning == other.warning
-                   && status == other.status
-                   && item == other.item
-                   && fromEmail == other.fromEmail;
-        }
+        Q_REQUIRED_RESULT bool operator==(const CheckSignatureResult &other) const;
 
-        Q_REQUIRED_RESULT bool operator!=(const CheckSignatureResult &other) const
-        {
-            return !CheckSignatureResult::operator==(other);
-        }
+        Q_REQUIRED_RESULT bool operator!=(const CheckSignatureResult &other) const;
 
         DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
         DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;

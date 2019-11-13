@@ -655,3 +655,22 @@ QString DKIMCheckSignatureJob::dkimValue() const
 {
     return mDkimValue;
 }
+
+bool DKIMCheckSignatureJob::CheckSignatureResult::isValid() const
+{
+    return status != DKIMCheckSignatureJob::DKIMStatus::Unknown;
+}
+
+bool DKIMCheckSignatureJob::CheckSignatureResult::operator==(const DKIMCheckSignatureJob::CheckSignatureResult &other) const
+{
+    return error == other.error
+            && warning == other.warning
+            && status == other.status
+            && item == other.item
+            && fromEmail == other.fromEmail;
+}
+
+bool DKIMCheckSignatureJob::CheckSignatureResult::operator!=(const DKIMCheckSignatureJob::CheckSignatureResult &other) const
+{
+    return !CheckSignatureResult::operator==(other);
+}
