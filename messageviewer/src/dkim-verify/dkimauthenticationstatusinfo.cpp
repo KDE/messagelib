@@ -108,9 +108,8 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     index = valueKey.indexOf(QRegularExpression(reasonspec_p), 0, &match);
     if (index != -1) {
         qDebug() << " reason " << match.capturedTexts();
+        valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
     }
-
-
 
 
     // 4) extract propspec (optional)
