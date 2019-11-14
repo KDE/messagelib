@@ -31,6 +31,7 @@ DKIMCheckPolicy::DKIMCheckPolicy()
     mCheckIfEmailShouldBeSigned = MessageViewer::MessageViewerSettings::checkIfEmailShouldBeSigned();
     mUseDMarc = MessageViewer::MessageViewerSettings::useDMarc();
     mUseDefaultRules = MessageViewer::MessageViewerSettings::useDefaultRules();
+    mUseAuthenticationResults = MessageViewer::MessageViewerSettings::useAuthenticationResults();
 }
 
 int DKIMCheckPolicy::rsaSha1Policy() const
@@ -111,4 +112,14 @@ bool DKIMCheckPolicy::useDefaultRules() const
 void DKIMCheckPolicy::setUseDefaultRules(bool useDefaultRules)
 {
     mUseDefaultRules = useDefaultRules;
+}
+
+bool DKIMCheckPolicy::useAuthenticationResults() const
+{
+    return mUseAuthenticationResults;
+}
+
+void DKIMCheckPolicy::setUseAuthenticationResults(bool useAuthenticationResults)
+{
+    mUseAuthenticationResults = useAuthenticationResults;
 }
