@@ -94,6 +94,9 @@ void DKIMManager::storeKey(const QString &key, const QString &domain, const QStr
 
 void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
+    if (mCheckPolicy.useAuthenticationResults()) {
+        //TODO use authentication result;
+    }
     if (mCheckPolicy.saveDkimResult()) {
         if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid
             || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid
@@ -105,7 +108,6 @@ void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult 
     }
     if (mCheckPolicy.autogenerateRule()) {
         if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
-            //TODO generate rule !
             DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
             job->setResult(checkResult);
             if (!job->start()) {

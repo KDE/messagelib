@@ -57,6 +57,9 @@ public:
     Q_REQUIRED_RESULT bool useDefaultRules() const;
     void setUseDefaultRules(bool useDefaultRules);
 
+    Q_REQUIRED_RESULT bool useAuthenticationResults() const;
+    void setUseAuthenticationResults(bool useAuthenticationResults);
+
 private:
     int mRsaSha1Policy = -1;
     bool mVerifySignatureWhenOnlyTest = false;
@@ -66,6 +69,7 @@ private:
     bool mCheckIfEmailShouldBeSigned = false;
     bool mUseDMarc = false;
     bool mUseDefaultRules = false;
+    bool mUseAuthenticationResults = false;
 };
 }
 
