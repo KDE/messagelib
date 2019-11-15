@@ -47,9 +47,8 @@ bool DMARCPolicyJob::start()
         return false;
     }
 
-    const QString emailDomainStr = emailDomain();
     DMARCRecordJob *job = new DMARCRecordJob(this);
-    job->setDomainName(emailDomainStr);
+    job->setDomainName(emailDomain());
     connect(job, &MessageViewer::DMARCRecordJob::success, this, &DMARCPolicyJob::slotCheckDomain);
     connect(job, &MessageViewer::DMARCRecordJob::error, this, [this](const QString &err, const QString &domainName) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "error: " << err << " domain " << domainName;
