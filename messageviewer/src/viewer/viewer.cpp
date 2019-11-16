@@ -35,7 +35,9 @@
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "widgets/zoomactionmenu.h"
+#ifdef USE_DKIM_CHECKER
 #include "dkim-verify/dkimwidgetinfo.h"
+#endif
 #include <Akonadi/KMime/MessageParts>
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
