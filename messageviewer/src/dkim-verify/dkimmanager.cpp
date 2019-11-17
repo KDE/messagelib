@@ -24,6 +24,7 @@
 #include "dkimstoreresultjob.h"
 #include "dkimcheckpolicyjob.h"
 #include "dkimgeneraterulejob.h"
+#include "dkimcheckauthenticationstatusjob.h"
 #include "settings/messageviewersettings.h"
 #include <AkonadiCore/AttributeFactory>
 using namespace MessageViewer;
@@ -96,6 +97,13 @@ void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult 
 {
     if (mCheckPolicy.useAuthenticationResults()) {
         //TODO use authentication result;
+        //Check each authentication result header.
+        //TODO
+#if 0
+        DKIMCheckAuthenticationStatusJob *job = new  DKIMCheckAuthenticationStatusJob(job);
+        job->setAuthenticationResult(QStringLiteral("...."));
+        connect(job, &DKIMCheckAuthenticationStatusJob::result, this, &DKIMManager::slotCheckAuthenticationStatusResult);
+#endif
     }
     if (mCheckPolicy.saveDkimResult()) {
         if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid

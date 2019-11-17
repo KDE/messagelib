@@ -65,7 +65,6 @@ void DKIMRule::setEnabled(bool enabled)
 
 bool DKIMRule::isValid() const
 {
-    //TODO improve it ?
     return !mDomain.isEmpty() && !mFrom.isEmpty() && (mRuleType != DKIMRule::RuleType::Unknown);
 }
 
