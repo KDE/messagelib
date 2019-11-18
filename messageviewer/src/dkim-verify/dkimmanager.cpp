@@ -93,6 +93,11 @@ void DKIMManager::storeKey(const QString &key, const QString &domain, const QStr
     }
 }
 
+void DKIMManager::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info)
+{
+    //TODO
+}
+
 void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
     if (mCheckPolicy.useAuthenticationResults()) {
@@ -103,6 +108,7 @@ void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult 
         DKIMCheckAuthenticationStatusJob *job = new  DKIMCheckAuthenticationStatusJob(job);
         job->setAuthenticationResult(QStringLiteral("...."));
         connect(job, &DKIMCheckAuthenticationStatusJob::result, this, &DKIMManager::slotCheckAuthenticationStatusResult);
+        job->start();
 #endif
     }
     if (mCheckPolicy.saveDkimResult()) {
