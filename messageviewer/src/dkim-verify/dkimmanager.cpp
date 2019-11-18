@@ -62,6 +62,9 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
             }
         }
     }
+
+    //TODO verify authentication result first!
+
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotCheckSignatureResult);
