@@ -26,6 +26,7 @@
 #include <KMime/Message>
 #include <AkonadiCore/Item>
 namespace MessageViewer {
+class DKIMAuthenticationStatusInfo;
 /**
  * @brief The DKIMManager class
  * @author Laurent Montel <montel@kde.org>
@@ -52,6 +53,7 @@ private:
     void storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void storeKey(const QString &key, const QString &domain, const QString &selector);
     void slotCheckSignatureResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    void slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info);
     DKIMCheckPolicy mCheckPolicy;
 };
 }
