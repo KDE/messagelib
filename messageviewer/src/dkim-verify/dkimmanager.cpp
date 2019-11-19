@@ -63,8 +63,22 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
         }
     }
 
-    //TODO verify authentication result first!
+    if (mCheckPolicy.useAuthenticationResults()) {
+#if 0
+        DKIMCheckAuthenticationStatusJob *job = new  DKIMCheckAuthenticationStatusJob(job);
+        job->setItem(item);
+        job->setAuthenticationResult(QStringLiteral("...."));
+        connect(job, &DKIMCheckAuthenticationStatusJob::result, this, &DKIMManager::slotCheckAuthenticationStatusResult);
+        job->start();
+#endif
+    } else {
+        checkSignature(item);
+    }
 
+}
+
+void DKIMManager::checkSignature(const Akonadi::Item &item)
+{
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotCheckSignatureResult);
@@ -80,6 +94,10 @@ void DKIMManager::clearInfoWidget()
 
 void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
 {
+    //TODO
+    if (mCheckPolicy.useAuthenticationResults()) {
+        //TODO ?
+    }
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMManager::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMManager::slotCheckSignatureResult);
@@ -96,24 +114,14 @@ void DKIMManager::storeKey(const QString &key, const QString &domain, const QStr
     }
 }
 
-void DKIMManager::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info)
+void DKIMManager::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info, const Akonadi::Item &item)
 {
-    //TODO
+    //TODO check info !
+    checkSignature(item);
 }
 
 void DKIMManager::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
-    if (mCheckPolicy.useAuthenticationResults()) {
-        //TODO use authentication result;
-        //Check each authentication result header.
-        //TODO
-#if 0
-        DKIMCheckAuthenticationStatusJob *job = new  DKIMCheckAuthenticationStatusJob(job);
-        job->setAuthenticationResult(QStringLiteral("...."));
-        connect(job, &DKIMCheckAuthenticationStatusJob::result, this, &DKIMManager::slotCheckAuthenticationStatusResult);
-        job->start();
-#endif
-    }
     if (mCheckPolicy.saveDkimResult()) {
         if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid
             || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid
