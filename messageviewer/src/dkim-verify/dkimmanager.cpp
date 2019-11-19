@@ -74,7 +74,6 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
     } else {
         checkSignature(item);
     }
-
 }
 
 void DKIMManager::checkSignature(const Akonadi::Item &item)
@@ -94,7 +93,6 @@ void DKIMManager::clearInfoWidget()
 
 void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
 {
-    //TODO
     if (mCheckPolicy.useAuthenticationResults()) {
         //TODO ?
     }
@@ -116,7 +114,7 @@ void DKIMManager::storeKey(const QString &key, const QString &domain, const QStr
 
 void DKIMManager::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info, const Akonadi::Item &item)
 {
-    //TODO check info !
+    //TODO check info ! if auth is ok not necessary to checkSignature
     checkSignature(item);
 }
 
