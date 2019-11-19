@@ -36,18 +36,18 @@ void DKIMCheckAuthenticationStatusJob::start()
     if (!canStart()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start job";
         deleteLater();
-        Q_EMIT result({});
+        Q_EMIT result({}, mItem);
         return;
     }
     DKIMAuthenticationStatusInfo info;
     if (!info.parseAuthenticationStatus(mAuthenticationResult)) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse authentication status header";
-        Q_EMIT result({});
+        Q_EMIT result({}, mItem);
         deleteLater();
         return;
     }
 
-    Q_EMIT result(info);
+    Q_EMIT result(info, mItem);
     deleteLater();
 }
 
@@ -64,4 +64,14 @@ QString DKIMCheckAuthenticationStatusJob::authenticationResult() const
 void DKIMCheckAuthenticationStatusJob::setAuthenticationResult(const QString &authenticationResult)
 {
     mAuthenticationResult = authenticationResult;
+}
+
+Akonadi::Item DKIMCheckAuthenticationStatusJob::item() const
+{
+    return mItem;
+}
+
+void DKIMCheckAuthenticationStatusJob::setItem(const Akonadi::Item &item)
+{
+    mItem = item;
 }

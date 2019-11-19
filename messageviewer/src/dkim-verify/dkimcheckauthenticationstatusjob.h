@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "messageviewer_private_export.h"
+#include <AkonadiCore/Item>
 namespace MessageViewer {
 class DKIMAuthenticationStatusInfo;
 class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckAuthenticationStatusJob : public QObject
@@ -38,11 +39,15 @@ public:
     Q_REQUIRED_RESULT QString authenticationResult() const;
     void setAuthenticationResult(const QString &authenticationResult);
 
+    Q_REQUIRED_RESULT Akonadi::Item item() const;
+    void setItem(const Akonadi::Item &item);
+
 Q_SIGNALS:
-    void result(const MessageViewer::DKIMAuthenticationStatusInfo &info);
+    void result(const MessageViewer::DKIMAuthenticationStatusInfo &info, const Akonadi::Item &item);
 
 private:
     QString mAuthenticationResult;
+    Akonadi::Item mItem;
 };
 }
 
