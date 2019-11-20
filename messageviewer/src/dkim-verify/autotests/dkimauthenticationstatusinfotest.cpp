@@ -74,8 +74,8 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         info.setAuthservId(QStringLiteral("example.org"));
 
         QTest::addRow("none") << QStringLiteral("example.org 1; none")
-                               << info
-                               << false;
+                              << info
+                              << false;
     }
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
@@ -84,6 +84,5 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         QTest::addRow("reason") << QStringLiteral("example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" header.i=@newyork.example.com")
                                 << info
                                 << true;
-
     }
 }

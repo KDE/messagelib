@@ -664,10 +664,10 @@ bool DKIMCheckSignatureJob::CheckSignatureResult::isValid() const
 bool DKIMCheckSignatureJob::CheckSignatureResult::operator==(const DKIMCheckSignatureJob::CheckSignatureResult &other) const
 {
     return error == other.error
-            && warning == other.warning
-            && status == other.status
-            && item == other.item
-            && fromEmail == other.fromEmail;
+           && warning == other.warning
+           && status == other.status
+           && item == other.item
+           && fromEmail == other.fromEmail;
 }
 
 bool DKIMCheckSignatureJob::CheckSignatureResult::operator!=(const DKIMCheckSignatureJob::CheckSignatureResult &other) const

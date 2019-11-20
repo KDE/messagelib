@@ -112,13 +112,12 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
         valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
     }
 
-
     // 4) extract propspec (optional)
     const QString pvalue_p = DKIMAuthenticationStatusInfoUtil::value_p() + QLatin1String("|(?:(?:") + DKIMAuthenticationStatusInfoUtil::localPart_p() + QLatin1String("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + QLatin1Char(')');
 
     const QString property_p = QLatin1String("mailfrom|rcptto") + QLatin1Char('|') + DKIMAuthenticationStatusInfoUtil::keyword_p();
-    const QString propspec_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op() +
-            QLatin1Char('(') + property_p + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + pvalue_p + QLatin1Char(')');
+    const QString propspec_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op()
+                               +QLatin1Char('(') + property_p + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + pvalue_p + QLatin1Char(')');
 
     qDebug() << "propspec_p " << propspec_p;
     const QRegularExpression reg(propspec_p);
@@ -126,14 +125,13 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
         qDebug() << " reg error : " << reg.errorString();
     } else {
         index = valueKey.indexOf(reg, 0, &match);
-        while(index != -1) {
+        while (index != -1) {
             qDebug() << " reason " << match.capturedTexts();
             valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
         }
     }
     return authStatusInfo;
 }
-
 
 int DKIMAuthenticationStatusInfo::authVersion() const
 {
@@ -158,9 +156,9 @@ void DKIMAuthenticationStatusInfo::setReasonSpec(const QString &reasonSpec)
 bool DKIMAuthenticationStatusInfo::operator==(const DKIMAuthenticationStatusInfo &other) const
 {
     return mAuthservId == other.authservId()
-            && mAuthVersion == other.authVersion()
-            && mReasonSpec == other.reasonSpec()
-            && mListAuthStatusInfo == other.listAuthStatusInfo();
+           && mAuthVersion == other.authVersion()
+           && mReasonSpec == other.reasonSpec()
+           && mListAuthStatusInfo == other.listAuthStatusInfo();
 }
 
 QList<DKIMAuthenticationStatusInfo::AuthStatusInfo> DKIMAuthenticationStatusInfo::listAuthStatusInfo() const
@@ -188,7 +186,7 @@ QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
     d << "mAuthservId: " << t.authservId();
     d << "mReasonSpec: " << t.reasonSpec();
     d << "mAuthVersion: " << t.authVersion();
-    for (const DKIMAuthenticationStatusInfo::AuthStatusInfo & info : t.listAuthStatusInfo()) {
+    for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : t.listAuthStatusInfo()) {
         d << "mListAuthStatusInfo: " << info.method << " : " << info.result << " : " << info.methodVersion << " : " << info.reason;
     }
     return d;
@@ -197,9 +195,9 @@ QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
 bool DKIMAuthenticationStatusInfo::AuthStatusInfo::operator==(const DKIMAuthenticationStatusInfo::AuthStatusInfo &other) const
 {
     return other.method == method
-            && other.result == result
-            && other.methodVersion == methodVersion
-            && other.reason == reason;
+           && other.result == result
+           && other.methodVersion == methodVersion
+           && other.reason == reason;
 }
 
 bool DKIMAuthenticationStatusInfo::AuthStatusInfo::isValid() const
