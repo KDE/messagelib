@@ -42,9 +42,9 @@ private:
         QString HeaderValue;
         QByteArray codec;
     };
-    int findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded);
+    Q_REQUIRED_RESULT int findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded);
     MessageViewer::DKIMHeaderParser::Header *extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
-    QByteArray unfoldHeader(const char *header, size_t headerSize);
+    Q_REQUIRED_RESULT QByteArray unfoldHeader(const char *header, size_t headerSize);
     QByteArray mHead;
     QList<DKIMHeaderParser::Header *> mListHeaders;
 };
