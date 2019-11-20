@@ -70,6 +70,8 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
         job->setAuthenticationResult(QStringLiteral("...."));
         connect(job, &DKIMCheckAuthenticationStatusJob::result, this, &DKIMManager::slotCheckAuthenticationStatusResult);
         job->start();
+#else
+        checkSignature(item);
 #endif
     } else {
         checkSignature(item);
