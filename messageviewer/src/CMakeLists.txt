@@ -92,10 +92,15 @@ endif()
 if(DEBUG_SIGNATURE)
     add_definitions(-DDEBUG_SIGNATURE)
 endif()
-
-set(libmessageviewer_conversationviewer_SRCS
-    conversationview/conversationviewwidget.cpp
-    )
+if (MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW)
+    set(libmessageviewer_conversationviewer_SRCS
+        conversationview/conversationviewwidget.cpp
+        )
+    if (BUILD_TESTING)
+        add_subdirectory(conversationview/autotests)
+        add_subdirectory(conversationview/tests)
+    endif()
+endif()
 
 set(libmessageviewer_mailviewer_SRCS
     viewer/webengine/mailwebengineview.cpp
@@ -135,6 +140,7 @@ set(libmessageviewer_widgets_SRCS
     widgets/mailtrackingdetailsdialog.cpp
     widgets/shownextmessagewidget.cpp
     )
+
 
 set(libmessageviewer_widgets_webengine_SRCS
     widgets/mailsourcewebengineviewer.cpp
