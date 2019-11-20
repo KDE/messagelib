@@ -93,6 +93,10 @@ if(DEBUG_SIGNATURE)
     add_definitions(-DDEBUG_SIGNATURE)
 endif()
 
+set(libmessageviewer_conversationviewer_SRCS
+    conversationview/conversationviewwidget.cpp
+    )
+
 set(libmessageviewer_mailviewer_SRCS
     viewer/webengine/mailwebengineview.cpp
     viewer/webengine/mailwebenginepage.cpp
@@ -177,13 +181,9 @@ set(libmessageviewer_utils_SRCS
     utils/mimetype.cpp
     )
 
-set(libmessageviewer_htmlwriter_webengine_SRCS
+set(libmessageviewer_htmlwriter_SRCS
     htmlwriter/webengineparthtmlwriter.cpp
     htmlwriter/webengineembedpart.cpp
-    )
-
-set(libmessageviewer_htmlwriter_SRCS
-    ${libmessageviewer_htmlwriter_webengine_SRCS}
     htmlwriter/bufferedhtmlwriter.cpp
     htmlwriter/filehtmlwriter.cpp
     )
@@ -229,6 +229,7 @@ set(libmessageviewer_interfaces_SRCS
     )
 
 set(libmessageviewer_SRCS
+    ${libmessageviewer_conversationviewer_SRCS}
     ${dkim_verify_SRCS}
     ${libmessageviewer_messagepartthemes_default_SRCS}
     ${libmessageviewer_htmlwriter_SRCS}
