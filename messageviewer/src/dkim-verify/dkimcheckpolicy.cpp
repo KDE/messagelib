@@ -64,12 +64,12 @@ void DKIMCheckPolicy::setSaveDkimResult(bool saveDkimResult)
     mSaveDkimResult = saveDkimResult;
 }
 
-bool DKIMCheckPolicy::saveKey() const
+int DKIMCheckPolicy::saveKey() const
 {
     return mSaveKey;
 }
 
-void DKIMCheckPolicy::setSaveKey(bool saveKey)
+void DKIMCheckPolicy::setSaveKey(int saveKey)
 {
     mSaveKey = saveKey;
 }

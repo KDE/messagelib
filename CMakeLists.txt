@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-set(PIM_VERSION "5.12.81")
+set(PIM_VERSION "5.13.41")
 
 if (POLICY CMP0053)
     cmake_policy(SET CMP0053 NEW)

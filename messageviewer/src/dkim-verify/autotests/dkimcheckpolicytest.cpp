@@ -33,7 +33,7 @@ void DKIMCheckPolicyTest::shouldHaveDefaultValues()
     MessageViewer::DKIMCheckPolicy pol;
     QVERIFY(!pol.verifySignatureWhenOnlyTest());
     QVERIFY(!pol.saveDkimResult());
-    QVERIFY(!pol.saveKey());
+    QCOMPARE(pol.saveKey(), -1);
     QVERIFY(!pol.autogenerateRule());
     QVERIFY(!pol.checkIfEmailShouldBeSigned());
     QVERIFY(!pol.useDMarc());
@@ -50,7 +50,7 @@ void DKIMCheckPolicyTest::shouldAssignValues()
     pol.setVerifySignatureWhenOnlyTest(mVerifySignatureWhenOnlyTest);
     bool mSaveDkimResult = true;
     pol.setSaveDkimResult(mSaveDkimResult);
-    bool mSaveKey = true;
+    int mSaveKey = 8;
     pol.setSaveKey(mSaveKey);
     bool mAutogenerateRule = true;
     pol.setAutogenerateRule(mAutogenerateRule);

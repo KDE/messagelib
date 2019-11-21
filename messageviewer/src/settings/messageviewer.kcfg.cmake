@@ -258,8 +258,13 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <entry name="SaveDkimResult" type="bool">
         <default>false</default>
       </entry>
-      <entry name="SaveKey" type="bool">
-        <default>false</default>
+      <entry name="SaveKey" type="Enum">
+        <choices>
+          <choice name="NotSaving"/>
+          <choice name="Save"/>
+          <choice name="SaveAndCompare"/>
+        </choices>
+        <default>NotSaving</default>
       </entry>
       <entry name="CheckIfEmailShouldBeSigned" type="bool">
         <default>false</default>

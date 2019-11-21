@@ -54,6 +54,7 @@ private:
     void storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void storeKey(const QString &key, const QString &domain, const QString &selector);
     void slotCheckSignatureResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    void storeInKeyManager(const QString &key, const QString &domain, const QString &selector, bool verify);
     void slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info, const Akonadi::Item &item);
     DKIMCheckPolicy mCheckPolicy;
 };

@@ -42,8 +42,8 @@ public:
     Q_REQUIRED_RESULT bool saveDkimResult() const;
     void setSaveDkimResult(bool saveDkimResult);
 
-    Q_REQUIRED_RESULT bool saveKey() const;
-    void setSaveKey(bool saveKey);
+    Q_REQUIRED_RESULT int saveKey() const;
+    void setSaveKey(int saveKey);
 
     Q_REQUIRED_RESULT bool autogenerateRule() const;
     void setAutogenerateRule(bool autogenerateRule);
@@ -64,7 +64,7 @@ private:
     int mRsaSha1Policy = -1;
     bool mVerifySignatureWhenOnlyTest = false;
     bool mSaveDkimResult = false;
-    bool mSaveKey = false;
+    int mSaveKey = -1;
     bool mAutogenerateRule = false;
     bool mCheckIfEmailShouldBeSigned = false;
     bool mUseDMarc = false;

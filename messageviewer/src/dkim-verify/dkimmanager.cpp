@@ -27,6 +27,8 @@
 #include "dkimcheckauthenticationstatusjob.h"
 #include "settings/messageviewersettings.h"
 #include <AkonadiCore/AttributeFactory>
+#include <KMessageBox>
+#include <KLocalizedString>
 using namespace MessageViewer;
 DKIMManager::DKIMManager(QObject *parent)
     : QObject(parent)
@@ -108,10 +110,31 @@ void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
 
 void DKIMManager::storeKey(const QString &key, const QString &domain, const QString &selector)
 {
-    if (mCheckPolicy.saveKey()) {
-        const MessageViewer::KeyInfo info {key, selector, domain};
-        MessageViewer::DKIMManagerKey::self()->addKey(info);
+    switch(mCheckPolicy.saveKey()) {
+    case MessageViewer::MessageViewerSettings::EnumSaveKey::NotSaving:
+        //Nothing
+        break;
+    case MessageViewer::MessageViewerSettings::EnumSaveKey::Save:
+        storeInKeyManager(key, selector, domain, false);
+        break;
+    case MessageViewer::MessageViewerSettings::EnumSaveKey::SaveAndCompare:
+        storeInKeyManager(key, selector, domain, true);
+        break;
     }
+}
+
+void DKIMManager::storeInKeyManager(const QString &key, const QString &domain, const QString &selector, bool verify)
+{
+    const MessageViewer::KeyInfo info {key, selector, domain};
+    if (verify) {
+        const QString keyStored = MessageViewer::DKIMManagerKey::self()->keyValue(selector, domain);
+        if (keyStored != key) {
+            if (KMessageBox::No == KMessageBox::warningYesNo(nullptr, i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"), i18n("Key Changed"))) {
+                return;
+            }
+        }
+    }
+    MessageViewer::DKIMManagerKey::self()->addKey(info);
 }
 
 void DKIMManager::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info, const Akonadi::Item &item)
