@@ -147,7 +147,7 @@ void DKIMHeaderParser::setHead(const QByteArray &head)
 int DKIMHeaderParser::findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded)
 {
     int end = dataBegin;
-    int len = src.length() - 1;
+    const int len = src.length() - 1;
 
     if (folded) {
         *folded = false;
