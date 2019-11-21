@@ -128,9 +128,11 @@ void DKIMManager::storeInKeyManager(const QString &key, const QString &domain, c
     const MessageViewer::KeyInfo info {key, selector, domain};
     if (verify) {
         const QString keyStored = MessageViewer::DKIMManagerKey::self()->keyValue(selector, domain);
-        if (keyStored != key) {
-            if (KMessageBox::No == KMessageBox::warningYesNo(nullptr, i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"), i18n("Key Changed"))) {
-                return;
+        if (!keyStored.isEmpty()) {
+            if (keyStored != key) {
+                if (KMessageBox::No == KMessageBox::warningYesNo(nullptr, i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"), i18n("Key Changed"))) {
+                    return;
+                }
             }
         }
     }
