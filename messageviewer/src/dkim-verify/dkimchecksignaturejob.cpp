@@ -187,7 +187,7 @@ void DKIMCheckSignatureJob::start()
     }
 
     computeHeaderCanonization(true);
-    if (mPolicy.saveKey()) {
+    if (mPolicy.saveKey() == MessageViewer::MessageViewerSettings::EnumSaveKey::Save) {
         const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
         //qDebug() << " mDkimInfo.selector() " << mDkimInfo.selector() << "mDkimInfo.domain()  " << mDkimInfo.domain() << keyValue;
         if (keyValue.isEmpty()) {
