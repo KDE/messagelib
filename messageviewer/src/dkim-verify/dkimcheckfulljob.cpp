@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "dkimcheckauthenticationstatusjob.h"
 #include "dkimcheckfulljob.h"
 #include "dkimcheckpolicyjob.h"
 #include "dkimchecksignaturejob.h"
@@ -51,42 +52,63 @@ void DKIMCheckFullJob::setPolicy(const DKIMCheckPolicy &policy)
 
 void DKIMCheckFullJob::startCheckFullInfo(const Akonadi::Item &item)
 {
+    if (!item.isValid()) {
+        deleteLater();
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid item";
+        return;
+    }
+    mAkonadiItem = item;
+    if (mAkonadiItem.isValid()) {
+        if (mAkonadiItem.hasPayload<KMime::Message::Ptr>()) {
+            mMessage = mAkonadiItem.payload<KMime::Message::Ptr>();
+        }
+    }
+    if (!mMessage) {
+        deleteLater();
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid message";
+        return;
+    }
+    checkAuthenticationResults();
+}
+
+void DKIMCheckFullJob::checkAuthenticationResults()
+{
     if (mCheckPolicy.useAuthenticationResults()) {
 #if 0
-        DKIMCheckAuthenticationStatusJob *job = new  DKIMCheckAuthenticationStatusJob(job);
-        job->setItem(item);
-        job->setAuthenticationResult(QStringLiteral("...."));
-        connect(job, &DKIMCheckAuthenticationStatusJob::result, this, &DKIMManager::slotCheckAuthenticationStatusResult);
+        DKIMCheckAuthenticationStatusJob *job = new  DKIMCheckAuthenticationStatusJob(this);
+        mHeaderParser.setHead(mMessage->head());
+        mHeaderParser.parse();
+        job->setHeaderParser(mHeaderParser);
+        connect(job, &DKIMCheckAuthenticationStatusJob::result, this, &DKIMCheckFullJob::slotCheckAuthenticationStatusResult);
         job->start();
 #else
-        checkSignature(item);
+        checkSignature();
 #endif
     } else {
-        checkSignature(item);
+        checkSignature();
     }
 }
 
-void DKIMCheckFullJob::checkSignature(const Akonadi::Item &item)
+void DKIMCheckFullJob::checkSignature()
 {
-    DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
+    DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);    
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMCheckFullJob::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMCheckFullJob::slotCheckSignatureResult);
-    job->setItem(item);
+    job->setMessage(mMessage);
+    job->setHeaderParser(mHeaderParser);
     job->setPolicy(mCheckPolicy);
     job->start();
 }
 
 void DKIMCheckFullJob::startCheckFullInfo(const KMime::Message::Ptr &message)
 {
-    if (mCheckPolicy.useAuthenticationResults()) {
-        //TODO ?
+    mMessage = message;
+    if (!mMessage) {
+        deleteLater();
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid message";
+        return;
     }
-    DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
-    connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMCheckFullJob::storeKey);
-    connect(job, &DKIMCheckSignatureJob::result, this, &DKIMCheckFullJob::slotCheckSignatureResult);
-    job->setPolicy(mCheckPolicy);
-    job->setMessage(message);
-    job->start();
+    checkAuthenticationResults();
 }
 
 void DKIMCheckFullJob::storeKey(const QString &key, const QString &domain, const QString &selector)
@@ -120,10 +142,10 @@ void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &doma
     MessageViewer::DKIMManagerKey::self()->addKey(info);
 }
 
-void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info, const Akonadi::Item &item)
+void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info)
 {
     //TODO check info ! if auth is ok not necessary to checkSignature
-    checkSignature(item);
+    checkSignature();
 }
 
 void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
@@ -133,6 +155,7 @@ void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureRe
             || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid
             || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned) {
             DKIMStoreResultJob *job = new DKIMStoreResultJob(this);
+            job->setItem(mAkonadiItem);
             job->setResult(checkResult);
             job->start();
         }
@@ -148,7 +171,7 @@ void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureRe
     }
 
     qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
-    Q_EMIT result(checkResult);
+    Q_EMIT result(checkResult, mAkonadiItem.id());
     deleteLater();
 }
 

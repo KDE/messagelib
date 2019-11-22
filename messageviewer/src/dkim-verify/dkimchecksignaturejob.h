@@ -27,7 +27,6 @@
 #include <MessageViewer/DKIMCheckPolicy>
 #include <MessageViewer/DKIMHeaderParser>
 #include <KMime/Message>
-#include <AkonadiCore/Item>
 
 namespace MessageViewer {
 /**
@@ -91,7 +90,6 @@ public:
         DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
         DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
-        Akonadi::Item item;
         QString signedBy;
         QString fromEmail;
     };
@@ -119,9 +117,6 @@ public:
 
     Q_REQUIRED_RESULT QString bodyCanonizationResult() const;
 
-    Q_REQUIRED_RESULT Akonadi::Item item() const;
-    void setItem(const Akonadi::Item &item);
-
     Q_REQUIRED_RESULT DKIMCheckPolicy policy() const;
     void setPolicy(const DKIMCheckPolicy &policy);
 
@@ -145,7 +140,6 @@ private:
     DKIMCheckPolicy mPolicy;
     DKIMHeaderParser mHeaderParser;
     KMime::Message::Ptr mMessage;
-    Akonadi::Item mMessageItem;
     QString mFromEmail;
     DKIMInfo mDkimInfo;
     DKIMKeyRecord mDkimKeyRecord;

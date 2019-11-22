@@ -47,7 +47,6 @@ MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob
     result.error = mError;
     result.warning = mWarning;
     result.status = mStatus;
-    result.item = mMessageItem;
     result.signedBy = mDkimInfo.domain();
     result.fromEmail = mFromEmail;
     return result;
@@ -65,13 +64,7 @@ QString DKIMCheckSignatureJob::headerCanonizationResult() const
 
 void DKIMCheckSignatureJob::start()
 {
-    if (mMessageItem.isValid() && !mMessage) {
-        if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
-            mMessage = mMessageItem.payload<KMime::Message::Ptr>();
-        }
-    } else if (mMessage) {
-        //Nothing
-    } else {
+    if (!mMessage) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Item has not a message";
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
         Q_EMIT result(createCheckResult());
@@ -548,16 +541,6 @@ void DKIMCheckSignatureJob::setPolicy(const DKIMCheckPolicy &policy)
     mPolicy = policy;
 }
 
-Akonadi::Item DKIMCheckSignatureJob::item() const
-{
-    return mMessageItem;
-}
-
-void DKIMCheckSignatureJob::setItem(const Akonadi::Item &item)
-{
-    mMessageItem = item;
-}
-
 DKIMCheckSignatureJob::DKIMWarning DKIMCheckSignatureJob::warning() const
 {
     return mWarning;
@@ -673,7 +656,6 @@ bool DKIMCheckSignatureJob::CheckSignatureResult::operator==(const DKIMCheckSign
     return error == other.error
            && warning == other.warning
            && status == other.status
-           && item == other.item
            && fromEmail == other.fromEmail;
 }
 

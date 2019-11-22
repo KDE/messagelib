@@ -31,5 +31,5 @@ DKIMCheckAuthenticationStatusJobTest::DKIMCheckAuthenticationStatusJobTest(QObje
 void DKIMCheckAuthenticationStatusJobTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMCheckAuthenticationStatusJob job;
-    QVERIFY(job.authenticationResult().isEmpty());
+    //TODO
 }

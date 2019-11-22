@@ -23,6 +23,7 @@
 #include <QWidget>
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_export.h"
+#include <AkonadiCore/Item>
 class QLabel;
 namespace MessageViewer {
 /**
@@ -35,7 +36,7 @@ class MESSAGEVIEWER_EXPORT DKIMWidgetInfo : public QWidget
 public:
     explicit DKIMWidgetInfo(QWidget *parent = nullptr);
     ~DKIMWidgetInfo();
-    void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id);
     void clear();
 
     Q_REQUIRED_RESULT Akonadi::Item::Id currentItemId() const;
