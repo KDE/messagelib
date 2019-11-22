@@ -44,7 +44,7 @@ void DKIMCheckAuthenticationStatusJob::start()
     const QString strAuthenticationHeader = QStringLiteral("Authentication-Results");
     QString str = mHeaderParser.headerType(strAuthenticationHeader);
     DKIMAuthenticationStatusInfo info;
-    while(!str.isEmpty()) {
+    while (!str.isEmpty()) {
         if (!info.parseAuthenticationStatus(str)) {
             break;
         }

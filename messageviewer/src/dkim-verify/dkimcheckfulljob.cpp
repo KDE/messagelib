@@ -32,12 +32,10 @@ using namespace MessageViewer;
 DKIMCheckFullJob::DKIMCheckFullJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DKIMCheckFullJob::~DKIMCheckFullJob()
 {
-
 }
 
 DKIMCheckPolicy DKIMCheckFullJob::policy() const
@@ -91,7 +89,7 @@ void DKIMCheckFullJob::checkAuthenticationResults()
 
 void DKIMCheckFullJob::checkSignature()
 {
-    DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);    
+    DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMCheckFullJob::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMCheckFullJob::slotCheckSignatureResult);
     job->setMessage(mMessage);
@@ -190,4 +188,3 @@ void DKIMCheckFullJob::slotCheckSignatureResult(const DKIMCheckSignatureJob::Che
         storeResult(checkResult);
     }
 }
-

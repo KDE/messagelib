@@ -25,7 +25,6 @@ QTEST_MAIN(DKIMCheckFullJobTest)
 DKIMCheckFullJobTest::DKIMCheckFullJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMCheckFullJobTest::shouldHaveDefaultValues()
