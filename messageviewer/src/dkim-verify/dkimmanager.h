@@ -47,7 +47,7 @@ public:
     Q_REQUIRED_RESULT DKIMCheckPolicy policy() const;
     void setPolicy(const DKIMCheckPolicy &policy);
 Q_SIGNALS:
-    void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id);
     void clearInfo();
 private:
     void checkFullInfo(const Akonadi::Item &item);

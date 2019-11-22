@@ -55,7 +55,7 @@ void DKIMWidgetInfoTest::shouldClearWidget()
     result.status = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
     result.error = MessageViewer::DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash;
     result.warning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe;
-    w.setResult(result);
+    w.setResult(result, -1);
     QVERIFY(!mLabel->text().isEmpty());
     w.clear();
     QVERIFY(mLabel->text().isEmpty());

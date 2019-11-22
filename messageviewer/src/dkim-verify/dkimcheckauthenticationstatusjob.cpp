@@ -20,6 +20,7 @@
 #include "dkimcheckauthenticationstatusjob.h"
 #include "dkimauthenticationstatusinfo.h"
 #include "messageviewer_dkimcheckerdebug.h"
+#include <KMime/Message>
 using namespace MessageViewer;
 //see https://tools.ietf.org/html/rfc7601
 DKIMCheckAuthenticationStatusJob::DKIMCheckAuthenticationStatusJob(QObject *parent)
@@ -33,46 +34,32 @@ DKIMCheckAuthenticationStatusJob::~DKIMCheckAuthenticationStatusJob()
 
 void DKIMCheckAuthenticationStatusJob::start()
 {
-    //TODO we need to parse all headers! not just one !
     if (!canStart()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start job";
         deleteLater();
-        Q_EMIT result({}, mItem);
-        return;
-    }
-    DKIMAuthenticationStatusInfo info;
-    if (!info.parseAuthenticationStatus(mAuthenticationResult)) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to parse authentication status header";
-        Q_EMIT result({}, mItem);
-        deleteLater();
+        Q_EMIT result({});
         return;
     }
 
-    Q_EMIT result(info, mItem);
+    const QString strAuthenticationHeader = QStringLiteral("Authentication-Results");
+    QString str = mHeaderParser.headerType(strAuthenticationHeader);
+    DKIMAuthenticationStatusInfo info;
+    while(!str.isEmpty()) {
+        if (!info.parseAuthenticationStatus(str)) {
+            break;
+        }
+        str = mHeaderParser.headerType(strAuthenticationHeader);
+    }
+    Q_EMIT result(info);
     deleteLater();
 }
 
 bool DKIMCheckAuthenticationStatusJob::canStart() const
 {
-    return !mAuthenticationResult.isEmpty();
+    return mHeaderParser.wasAlreadyParsed();
 }
 
-QString DKIMCheckAuthenticationStatusJob::authenticationResult() const
+void DKIMCheckAuthenticationStatusJob::setHeaderParser(const DKIMHeaderParser &headerParser)
 {
-    return mAuthenticationResult;
-}
-
-void DKIMCheckAuthenticationStatusJob::setAuthenticationResult(const QString &authenticationResult)
-{
-    mAuthenticationResult = authenticationResult;
-}
-
-Akonadi::Item DKIMCheckAuthenticationStatusJob::item() const
-{
-    return mItem;
-}
-
-void DKIMCheckAuthenticationStatusJob::setItem(const Akonadi::Item &item)
-{
-    mItem = item;
+    mHeaderParser = headerParser;
 }

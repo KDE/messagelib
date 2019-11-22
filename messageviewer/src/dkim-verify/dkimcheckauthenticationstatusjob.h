@@ -21,6 +21,7 @@
 #define DKIMCHECKAUTHENTICATIONSTATUSJOB_H
 
 #include <QObject>
+#include "dkimheaderparser.h"
 #include "messageviewer_private_export.h"
 #include <AkonadiCore/Item>
 namespace MessageViewer {
@@ -36,18 +37,12 @@ public:
 
     Q_REQUIRED_RESULT bool canStart() const;
 
-    Q_REQUIRED_RESULT QString authenticationResult() const;
-    void setAuthenticationResult(const QString &authenticationResult);
-
-    Q_REQUIRED_RESULT Akonadi::Item item() const;
-    void setItem(const Akonadi::Item &item);
+    void setHeaderParser(const DKIMHeaderParser &headerParser);
 
 Q_SIGNALS:
-    void result(const MessageViewer::DKIMAuthenticationStatusInfo &info, const Akonadi::Item &item);
-
+    void result(const MessageViewer::DKIMAuthenticationStatusInfo &info);
 private:
-    QString mAuthenticationResult;
-    Akonadi::Item mItem;
+    DKIMHeaderParser mHeaderParser;
 };
 }
 

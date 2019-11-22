@@ -68,9 +68,9 @@ void DKIMWidgetInfo::setCurrentItemId(const Akonadi::Item::Id &currentItemId)
     mCurrentItemId = currentItemId;
 }
 
-void DKIMWidgetInfo::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
+void DKIMWidgetInfo::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id)
 {
-    if (mCurrentItemId == checkResult.item.id()) {
+    if (mCurrentItemId == id) {
         if (mResult != checkResult) {
             mResult = checkResult;
             updateInfo();
