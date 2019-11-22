@@ -25,6 +25,7 @@
 #include <MessageViewer/DKIMKeyRecord>
 #include <MessageViewer/DKIMInfo>
 #include <MessageViewer/DKIMCheckPolicy>
+#include <MessageViewer/DKIMHeaderParser>
 #include <KMime/Message>
 #include <AkonadiCore/Item>
 
@@ -140,6 +141,7 @@ private:
     void verifyRSASignature();
     void computeHeaderCanonization(bool removeQuoteOnContentType);
     DKIMCheckPolicy mPolicy;
+    DKIMHeaderParser mHeaderParser;
     KMime::Message::Ptr mMessage;
     Akonadi::Item mMessageItem;
     QString mFromEmail;

@@ -20,12 +20,16 @@
 #ifndef DKIMHEADERPARSER_H
 #define DKIMHEADERPARSER_H
 
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 
 #include <QByteArray>
 #include <QList>
 namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMHeaderParser
+/**
+ * @brief The DKIMHeaderParser class
+ * @author Laurent Montel <montel@kde.org>
+ */
+class MESSAGEVIEWER_EXPORT DKIMHeaderParser
 {
 public:
     DKIMHeaderParser();

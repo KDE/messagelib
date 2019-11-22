@@ -24,7 +24,6 @@
 #include "dkimutil.h"
 #include "dkimkeyrecord.h"
 #include "messageviewer_dkimcheckerdebug.h"
-#include "dkimheaderparser.h"
 #include <KEmailAddress>
 #include <QDateTime>
 #include <QCryptographicHash>
@@ -185,6 +184,10 @@ void DKIMCheckSignatureJob::start()
         deleteLater();
         return;
     }
+    //Parse message header
+    mHeaderParser.setHead(mMessage->head());
+    mHeaderParser.parse();
+
 
     computeHeaderCanonization(true);
     if (mPolicy.saveKey()) {
@@ -302,9 +305,8 @@ QString DKIMCheckSignatureJob::bodyCanonizationRelaxed() const
 QString DKIMCheckSignatureJob::headerCanonizationSimple() const
 {
     QString headers;
-    DKIMHeaderParser parser;
-    parser.setHead(mMessage->head());
-    parser.parse();
+
+    DKIMHeaderParser parser = mHeaderParser;
 
     for (const QString &header : mDkimInfo.listSignedHeader()) {
         const QString str = parser.headerType(header.toLower());
@@ -344,9 +346,7 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed(bool removeQuoteOnConte
 //          colon separator MUST be retained.
 
     QString headers;
-    DKIMHeaderParser parser;
-    parser.setHead(mMessage->head());
-    parser.parse();
+    DKIMHeaderParser parser = mHeaderParser;
     for (const QString &header : mDkimInfo.listSignedHeader()) {
         const QString str = parser.headerType(header.toLower());
         if (!str.isEmpty()) {
