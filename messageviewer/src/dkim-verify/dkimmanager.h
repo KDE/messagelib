@@ -50,11 +50,7 @@ Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void clearInfo();
 private:
-    void checkSignature(const Akonadi::Item &item);
-    void storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
-    void storeKey(const QString &key, const QString &domain, const QString &selector);
-    void slotCheckSignatureResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
-    void slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info, const Akonadi::Item &item);
+    void checkFullInfo(const Akonadi::Item &item);
     DKIMCheckPolicy mCheckPolicy;
 };
 }

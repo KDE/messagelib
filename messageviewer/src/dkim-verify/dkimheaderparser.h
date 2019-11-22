@@ -23,7 +23,7 @@
 #include "messageviewer_export.h"
 
 #include <QByteArray>
-#include <QList>
+#include <QVector>
 namespace MessageViewer {
 /**
  * @brief The DKIMHeaderParser class
@@ -53,7 +53,7 @@ private:
     MessageViewer::DKIMHeaderParser::Header extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
     Q_REQUIRED_RESULT QByteArray unfoldHeader(const char *header, size_t headerSize);
     QByteArray mHead;
-    QList<DKIMHeaderParser::Header> mListHeaders;
+    QVector<DKIMHeaderParser::Header> mListHeaders;
 };
 }
 #endif // DKIMHEADERPARSER_H

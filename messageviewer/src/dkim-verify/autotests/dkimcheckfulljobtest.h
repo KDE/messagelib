@@ -28,6 +28,8 @@ class DKIMCheckFullJobTest : public QObject
 public:
     explicit DKIMCheckFullJobTest(QObject *parent = nullptr);
     ~DKIMCheckFullJobTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
 
 #endif // DKIMCHECKFULLJOBTEST_H

@@ -18,10 +18,18 @@
 */
 
 #include "dkimcheckfulljobtest.h"
+#include "dkim-verify/dkimcheckfulljob.h"
+
 #include <QTest>
 QTEST_MAIN(DKIMCheckFullJobTest)
 DKIMCheckFullJobTest::DKIMCheckFullJobTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void DKIMCheckFullJobTest::shouldHaveDefaultValues()
+{
+    MessageViewer::DKIMCheckFullJob job;
+    //TODO
 }
