@@ -36,13 +36,16 @@ private:
         QString headerName;
         QString headerValue;
         QByteArray codec;
-        Q_REQUIRED_RESULT bool isValid() const {
+        Q_REQUIRED_RESULT bool isValid() const
+        {
             return !headerName.isEmpty();
         }
-        Q_REQUIRED_RESULT bool operator==(const Header &other) const {
+
+        Q_REQUIRED_RESULT bool operator==(const Header &other) const
+        {
             return other.headerName == headerName
-                    && other.headerValue == headerValue
-                    && other.codec == codec;
+                   && other.headerValue == headerValue
+                   && other.codec == codec;
         }
     };
 public:

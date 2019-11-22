@@ -183,7 +183,6 @@ void DKIMCheckSignatureJob::start()
         mHeaderParser.parse();
     }
 
-
     computeHeaderCanonization(true);
     if (mPolicy.saveKey()) {
         const QString keyValue = MessageViewer::DKIMManagerKey::self()->keyValue(mDkimInfo.selector(), mDkimInfo.domain());
