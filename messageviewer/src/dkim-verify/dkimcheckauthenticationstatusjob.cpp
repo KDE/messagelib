@@ -33,6 +33,7 @@ DKIMCheckAuthenticationStatusJob::~DKIMCheckAuthenticationStatusJob()
 
 void DKIMCheckAuthenticationStatusJob::start()
 {
+    //TODO we need to parse all headers! not just one !
     if (!canStart()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start job";
         deleteLater();
