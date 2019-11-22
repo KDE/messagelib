@@ -21,8 +21,11 @@
 #define DKIMCHECKFULLJOB_H
 
 #include <QObject>
+#include "dkimauthenticationstatusinfo.h"
+#include "dkimchecksignaturejob.h"
 #include "messageviewer_private_export.h"
-#include <QObject>
+#include <MessageViewer/DKIMCheckPolicy>
+#include <AkonadiCore/Item>
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckFullJob : public QObject
 {
@@ -31,8 +34,25 @@ public:
     explicit DKIMCheckFullJob(QObject *parent = nullptr);
     ~DKIMCheckFullJob();
 
-    Q_REQUIRED_RESULT bool canStart() const;
-    Q_REQUIRED_RESULT bool start();
+    void startCheckFullInfo(const KMime::Message::Ptr &message);
+    void startCheckFullInfo(const Akonadi::Item &item);
+
+    Q_REQUIRED_RESULT DKIMCheckPolicy policy() const;
+    void setPolicy(const DKIMCheckPolicy &policy);
+
+Q_SIGNALS:
+    void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+
+private:
+    void slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    void slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info, const Akonadi::Item &item);
+    void checkFullInfo(const Akonadi::Item &item);
+    void checkSignature(const Akonadi::Item &item);
+    void checkDKim(const KMime::Message::Ptr &message);
+    void storeKey(const QString &key, const QString &domain, const QString &selector);
+    void storeInKeyManager(const QString &key, const QString &domain, const QString &selector, bool verify);
+    void storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    DKIMCheckPolicy mCheckPolicy;
 };
 }
 #endif // DKIMCHECKFULLJOB_H
