@@ -30,6 +30,8 @@ public:
     ~DKIMHeaderParserTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldChangeWasAlreadyParsedBoolean();
+    void shouldAssignElement();
 };
 
 #endif // DKIMHEADERPARSERTEST_H

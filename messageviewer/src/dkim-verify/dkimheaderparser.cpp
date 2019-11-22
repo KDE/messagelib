@@ -35,6 +35,7 @@ DKIMHeaderParser::~DKIMHeaderParser()
 
 void DKIMHeaderParser::parse()
 {
+    mWasAlreadyParsed = true;
     if (mHead.isEmpty()) {
         return;
     }
@@ -133,6 +134,28 @@ QByteArray DKIMHeaderParser::unfoldHeader(const char *header, size_t headerSize)
         result.append(pos, end - pos);
     }
     return result;
+}
+
+QVector<DKIMHeaderParser::Header> DKIMHeaderParser::listHeaders() const
+{
+    return mListHeaders;
+}
+
+bool DKIMHeaderParser::wasAlreadyParsed() const
+{
+    return mWasAlreadyParsed;
+}
+
+void DKIMHeaderParser::setWasAlreadyParsed(bool wasAlreadyParsed)
+{
+    mWasAlreadyParsed = wasAlreadyParsed;
+}
+
+bool DKIMHeaderParser::operator==(const DKIMHeaderParser &other) const
+{
+    return other.head() == mHead
+            && other.listHeaders() == mListHeaders
+            && other.wasAlreadyParsed() == mWasAlreadyParsed;
 }
 
 QByteArray DKIMHeaderParser::head() const

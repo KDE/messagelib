@@ -185,8 +185,10 @@ void DKIMCheckSignatureJob::start()
         return;
     }
     //Parse message header
-    mHeaderParser.setHead(mMessage->head());
-    mHeaderParser.parse();
+    if (!mHeaderParser.wasAlreadyParsed()) {
+        mHeaderParser.setHead(mMessage->head());
+        mHeaderParser.parse();
+    }
 
 
     computeHeaderCanonization(true);
@@ -255,6 +257,11 @@ void DKIMCheckSignatureJob::computeHeaderCanonization(bool removeQuoteOnContentT
     outHeaderStream << mHeaderCanonizationResult;
     headerFile.close();
 #endif
+}
+
+void DKIMCheckSignatureJob::setHeaderParser(const DKIMHeaderParser &headerParser)
+{
+    mHeaderParser = headerParser;
 }
 
 QString DKIMCheckSignatureJob::bodyCanonizationSimple() const
