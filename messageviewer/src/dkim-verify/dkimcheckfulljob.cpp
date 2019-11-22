@@ -91,15 +91,32 @@ void DKIMCheckFullJob::startCheckFullInfo(const KMime::Message::Ptr &message)
 
 void DKIMCheckFullJob::storeKey(const QString &key, const QString &domain, const QString &selector)
 {
-   if (mCheckPolicy.saveKey()) {
-	storeInKeyManager(key, selector, domain, false);
+    switch(mCheckPolicy.saveKey()) {
+    case MessageViewer::MessageViewerSettings::EnumSaveKey::NotSaving:
+        //Nothing
+        break;
+    case MessageViewer::MessageViewerSettings::EnumSaveKey::Save:
+        storeInKeyManager(key, selector, domain, false);
+        break;
+    case MessageViewer::MessageViewerSettings::EnumSaveKey::SaveAndCompare:
+        storeInKeyManager(key, selector, domain, true);
+        break;
     }
 }
 
 void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &domain, const QString &selector, bool verify)
 {
     const MessageViewer::KeyInfo info {key, selector, domain};
-    Q_UNUSED(verify);
+    if (verify) {
+        const QString keyStored = MessageViewer::DKIMManagerKey::self()->keyValue(selector, domain);
+        if (!keyStored.isEmpty()) {
+            if (keyStored != key) {
+                if (KMessageBox::No == KMessageBox::warningYesNo(nullptr, i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"), i18n("Key Changed"))) {
+                    return;
+                }
+            }
+        }
+    }
     MessageViewer::DKIMManagerKey::self()->addKey(info);
 }
 
