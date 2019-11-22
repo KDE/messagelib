@@ -30,7 +30,7 @@ DKIMHeaderParser::DKIMHeaderParser()
 
 DKIMHeaderParser::~DKIMHeaderParser()
 {
-    qDeleteAll(mListHeaders);
+    mListHeaders.clear();
 }
 
 void DKIMHeaderParser::parse()
@@ -42,7 +42,8 @@ void DKIMHeaderParser::parse()
     while (cursor < mHead.size()) {
         const int headerStart = cursor;
         int endOfFieldBody;
-        if (auto header = extractHeader(mHead, headerStart, endOfFieldBody)) {
+        const MessageViewer::DKIMHeaderParser::Header header = extractHeader(mHead, headerStart, endOfFieldBody);
+        if (header.isValid()) {
             mListHeaders << header;
             cursor = endOfFieldBody + 1;
         } else {
@@ -51,14 +52,14 @@ void DKIMHeaderParser::parse()
     }
 }
 
-MessageViewer::DKIMHeaderParser::Header *DKIMHeaderParser::extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody)
+MessageViewer::DKIMHeaderParser::Header DKIMHeaderParser::extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody)
 {
     int startOfFieldBody = head.indexOf(':', headerStart);
     if (startOfFieldBody < 0) {
-        return nullptr;
+        return {};
     }
 
-    MessageViewer::DKIMHeaderParser::Header *header = new MessageViewer::DKIMHeaderParser::Header;
+    MessageViewer::DKIMHeaderParser::Header header;
     const char *rawType = head.constData() + headerStart;
     const size_t rawTypeLen = startOfFieldBody - headerStart;
 
@@ -71,15 +72,15 @@ MessageViewer::DKIMHeaderParser::Header *DKIMHeaderParser::extractHeader(const Q
     endOfFieldBody = findHeaderLineEnd(head, startOfFieldBody, &folded);
 
     //Store it as lowercase
-    header->headerName = QString::fromLatin1(QByteArray::fromRawData(rawType, rawTypeLen)).toLower();
+    header.headerName = QString::fromLatin1(QByteArray::fromRawData(rawType, rawTypeLen)).toLower();
     if (folded) {
         const auto unfoldedBody = unfoldHeader(head.constData() + startOfFieldBody, endOfFieldBody - startOfFieldBody);
         //qDebug() << " unfoldedBody" << unfoldedBody;
-        header->HeaderValue = QString::fromLatin1(unfoldedBody);
+        header.headerValue = QString::fromLatin1(unfoldedBody);
     } else {
         const QByteArray ba = QByteArray::fromRawData(head.constData() + startOfFieldBody, endOfFieldBody - startOfFieldBody);
         //qDebug() << " unfoldedBody ba" << ba;
-        header->HeaderValue = QString::fromLatin1(ba);
+        header.headerValue = QString::fromLatin1(ba);
     }
     return header;
 }
@@ -203,10 +204,9 @@ int DKIMHeaderParser::findHeaderLineEnd(const QByteArray &src, int &dataBegin, b
 QString DKIMHeaderParser::headerType(const QString &str)
 {
     for (int i = mListHeaders.count() -1; i >= 0; --i) {
-        if (mListHeaders.at(i)->headerName == str) {
-            DKIMHeaderParser::Header *header = mListHeaders.takeAt(i);
-            const QString headerValue = header->HeaderValue;
-            delete header; //Delete it as we want to use one time each header.
+        if (mListHeaders.at(i).headerName == str) {
+            DKIMHeaderParser::Header header = mListHeaders.takeAt(i);
+            const QString headerValue = header.headerValue;
             return headerValue;
         }
     }

@@ -39,14 +39,17 @@ public:
 private:
     struct Header {
         QString headerName;
-        QString HeaderValue;
+        QString headerValue;
         QByteArray codec;
+        Q_REQUIRED_RESULT bool isValid() const {
+            return !headerName.isEmpty();
+        }
     };
     Q_REQUIRED_RESULT int findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded);
-    MessageViewer::DKIMHeaderParser::Header *extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
+    MessageViewer::DKIMHeaderParser::Header extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
     Q_REQUIRED_RESULT QByteArray unfoldHeader(const char *header, size_t headerSize);
     QByteArray mHead;
-    QList<DKIMHeaderParser::Header *> mListHeaders;
+    QList<DKIMHeaderParser::Header> mListHeaders;
 };
 }
 #endif // DKIMHEADERPARSER_H
