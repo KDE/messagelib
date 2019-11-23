@@ -30,6 +30,9 @@ public:
     ~DKIMCheckAuthenticationStatusJobTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldTestMail();
+    void shouldTestMail_data();
+    void initTestCase();
 };
 
 #endif // DKIMCHECKAUTHENTICATIONSTATUSJOBTEST_H

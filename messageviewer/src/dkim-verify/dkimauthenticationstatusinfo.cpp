@@ -161,12 +161,12 @@ bool DKIMAuthenticationStatusInfo::operator==(const DKIMAuthenticationStatusInfo
            && mListAuthStatusInfo == other.listAuthStatusInfo();
 }
 
-QList<DKIMAuthenticationStatusInfo::AuthStatusInfo> DKIMAuthenticationStatusInfo::listAuthStatusInfo() const
+QVector<DKIMAuthenticationStatusInfo::AuthStatusInfo> DKIMAuthenticationStatusInfo::listAuthStatusInfo() const
 {
     return mListAuthStatusInfo;
 }
 
-void DKIMAuthenticationStatusInfo::setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo)
+void DKIMAuthenticationStatusInfo::setListAuthStatusInfo(const QVector<AuthStatusInfo> &listAuthStatusInfo)
 {
     mListAuthStatusInfo = listAuthStatusInfo;
 }
@@ -185,9 +185,9 @@ QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
 {
     d << "mAuthservId: " << t.authservId();
     d << "mReasonSpec: " << t.reasonSpec();
-    d << "mAuthVersion: " << t.authVersion();
+    d << "mAuthVersion: " << t.authVersion() << endl;
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : t.listAuthStatusInfo()) {
-        d << "mListAuthStatusInfo: " << info.method << " : " << info.result << " : " << info.methodVersion << " : " << info.reason;
+        d << "mListAuthStatusInfo: " << info.method << " : " << info.result << " : " << info.methodVersion << " : " << info.reason << endl;
     }
     return d;
 }
