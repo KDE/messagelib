@@ -64,6 +64,14 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
         info.setAuthservId(QStringLiteral("in68.mail.ovh.net"));
+        QVector<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
+        MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
+        MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
+        prop.type = QLatin1String("b");
+        prop.value = QLatin1String("kde.org");
+        property.header.append(prop);
+        lst.append(property);
+        info.setListAuthStatusInfo(lst);
         QTest::addRow("test1") << QStringLiteral("in68.mail.ovh.net; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"GMG2ucPx\"; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"I3t3p7Up\"; dkim-atps=neutral")
                                << info
                                << true;
