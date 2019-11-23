@@ -18,6 +18,7 @@
 */
 
 #include "dkimrule.h"
+
 using namespace MessageViewer;
 DKIMRule::DKIMRule()
 {

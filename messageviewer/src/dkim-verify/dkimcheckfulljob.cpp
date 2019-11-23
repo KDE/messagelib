@@ -56,10 +56,8 @@ void DKIMCheckFullJob::startCheckFullInfo(const Akonadi::Item &item)
         return;
     }
     mAkonadiItem = item;
-    if (mAkonadiItem.isValid()) {
-        if (mAkonadiItem.hasPayload<KMime::Message::Ptr>()) {
-            mMessage = mAkonadiItem.payload<KMime::Message::Ptr>();
-        }
+    if (mAkonadiItem.hasPayload<KMime::Message::Ptr>()) {
+        mMessage = mAkonadiItem.payload<KMime::Message::Ptr>();
     }
     if (!mMessage) {
         deleteLater();

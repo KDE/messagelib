@@ -23,7 +23,6 @@
 
 #include <QRegularExpressionMatch>
 #include <QStringList>
-#include "messageviewer_debug.h"
 using namespace MessageViewer;
 
 DKIMInfo::DKIMInfo()

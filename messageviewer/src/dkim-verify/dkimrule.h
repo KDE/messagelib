@@ -22,6 +22,7 @@
 #include "messageviewer_export.h"
 #include <QDebug>
 #include <QObject>
+
 namespace MessageViewer {
 /**
  * @brief The DKIMRule class
