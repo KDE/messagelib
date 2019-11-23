@@ -30,13 +30,27 @@ public:
     DKIMAuthenticationStatusInfo();
 
     struct AuthStatusInfo {
+        struct Property {
+            QString type;
+            QString value;
+            Q_REQUIRED_RESULT bool isValid() const {
+                return !type.isEmpty() && !value.isEmpty();
+            }
+        };
+
         QString method;
         QString result;
         QString reason;
         int methodVersion = -1;
-        //TODO add more
-        bool operator==(const AuthStatusInfo &other) const;
-        bool isValid() const;
+
+        //Add Properties
+        Property smtp;
+        Property header;
+        Property body;
+        Property policy;
+
+        Q_REQUIRED_RESULT bool operator==(const AuthStatusInfo &other) const;
+        Q_REQUIRED_RESULT bool isValid() const;
     };
 
     Q_REQUIRED_RESULT QString authservId() const;
