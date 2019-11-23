@@ -97,6 +97,8 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
 
     if (!match.captured(2).isEmpty()) {
         authStatusInfo.methodVersion = match.captured(2).toInt();
+    } else {
+        authStatusInfo.methodVersion = 1;
     }
     authStatusInfo.result = match.captured(3);
 
