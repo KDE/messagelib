@@ -19,7 +19,11 @@
 
 #include "dkimcheckauthenticationstatusjobtest.h"
 #include "dkim-verify/dkimcheckauthenticationstatusjob.h"
+#include "dkim-verify/dkimauthenticationstatusinfo.h"
+#include <QSignalSpy>
 #include <QTest>
+#include <QTimer>
+#include <KMime/Message>
 
 QTEST_MAIN(DKIMCheckAuthenticationStatusJobTest)
 
@@ -28,8 +32,44 @@ DKIMCheckAuthenticationStatusJobTest::DKIMCheckAuthenticationStatusJobTest(QObje
 {
 }
 
+void DKIMCheckAuthenticationStatusJobTest::initTestCase()
+{
+    qRegisterMetaType<MessageViewer::DKIMAuthenticationStatusInfo>();
+}
+
+
 void DKIMCheckAuthenticationStatusJobTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMCheckAuthenticationStatusJob job;
-    //TODO
+    QVERIFY(!job.canStart());
+}
+
+void DKIMCheckAuthenticationStatusJobTest::shouldTestMail_data()
+{
+    QTest::addColumn<QString>("fileName");
+    QTest::addColumn<QString>("currentPath");
+    const QString curPath = QStringLiteral(DKIM_DATA_DIR "/");
+
+    QTest::addRow("dkim2") << QStringLiteral("dkim2.mbox")
+                           << curPath;
+}
+
+void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()
+{
+    QFETCH(QString, fileName);
+    QFETCH(QString, currentPath);
+    KMime::Message *msg = new KMime::Message;
+    QFile file(currentPath + fileName);
+    QVERIFY(file.open(QIODevice::ReadOnly));
+    msg->setContent(file.readAll());
+    msg->parse();
+
+    MessageViewer::DKIMCheckAuthenticationStatusJob *job = new  MessageViewer::DKIMCheckAuthenticationStatusJob(this);
+    MessageViewer::DKIMHeaderParser mHeaderParser;
+    mHeaderParser.setHead(msg->head());
+    mHeaderParser.parse();
+    job->setHeaderParser(mHeaderParser);
+    QSignalSpy dkimSignatureSpy(job, &MessageViewer::DKIMCheckAuthenticationStatusJob::result);
+    QTimer::singleShot(10, job, &MessageViewer::DKIMCheckAuthenticationStatusJob::start);
+    QVERIFY(dkimSignatureSpy.wait());
 }

@@ -52,19 +52,19 @@ public:
 
     Q_REQUIRED_RESULT bool operator==(const DKIMAuthenticationStatusInfo &other) const;
 
-    Q_REQUIRED_RESULT QList<AuthStatusInfo> listAuthStatusInfo() const;
-    void setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo);
+    Q_REQUIRED_RESULT QVector<AuthStatusInfo> listAuthStatusInfo() const;
+    void setListAuthStatusInfo(const QVector<AuthStatusInfo> &listAuthStatusInfo);
 
 private:
     AuthStatusInfo parseAuthResultInfo(QString &valueKey);
-    QList<AuthStatusInfo> mListAuthStatusInfo;
+    QVector<AuthStatusInfo> mListAuthStatusInfo;
     QString mAuthservId;
     QString mReasonSpec;
     int mAuthVersion = -1;
 };
 }
-
 Q_DECLARE_METATYPE(MessageViewer::DKIMAuthenticationStatusInfo)
+Q_DECLARE_TYPEINFO(MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo, Q_MOVABLE_TYPE);
 MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMAuthenticationStatusInfo &t);
 
 #endif // DKIMAUTHENTICATIONSTATUSINFO_H

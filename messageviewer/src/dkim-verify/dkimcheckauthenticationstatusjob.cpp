@@ -41,7 +41,7 @@ void DKIMCheckAuthenticationStatusJob::start()
         return;
     }
 
-    const QString strAuthenticationHeader = QStringLiteral("Authentication-Results");
+    const QString strAuthenticationHeader = QStringLiteral("authentication-results");
     QString str = mHeaderParser.headerType(strAuthenticationHeader);
     DKIMAuthenticationStatusInfo info;
     while (!str.isEmpty()) {
@@ -50,6 +50,8 @@ void DKIMCheckAuthenticationStatusJob::start()
         }
         str = mHeaderParser.headerType(strAuthenticationHeader);
     }
+
+    qDebug() << "result info: " << info;
     Q_EMIT result(info);
     deleteLater();
 }
