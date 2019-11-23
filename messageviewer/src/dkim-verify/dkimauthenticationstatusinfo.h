@@ -44,10 +44,10 @@ public:
         int methodVersion = -1;
 
         //Add Properties
-        Property smtp;
-        Property header;
-        Property body;
-        Property policy;
+        QVector<Property> smtp;
+        QVector<Property> header;
+        QVector<Property> body;
+        QVector<Property> policy;
 
         Q_REQUIRED_RESULT bool operator==(const AuthStatusInfo &other) const;
         Q_REQUIRED_RESULT bool isValid() const;

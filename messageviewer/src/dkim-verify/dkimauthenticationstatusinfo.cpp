@@ -133,20 +133,28 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
             const QString &captured1 = match.captured(1);
             if (captured1 == QLatin1String("header")) {
                 qDebug() << " header type found ";
-                authStatusInfo.header.type = match.captured(2);
-                authStatusInfo.header.value = match.captured(3);
+                AuthStatusInfo::Property prop;
+                prop.type = match.captured(2);
+                prop.value = match.captured(3);
+                authStatusInfo.header.append(prop);
             } else if (captured1 == QLatin1String("smtp")) {
                 qDebug() << " smtp type found ";
-                authStatusInfo.smtp.type = match.captured(2);
-                authStatusInfo.smtp.value = match.captured(3);
+                AuthStatusInfo::Property prop;
+                prop.type = match.captured(2);
+                prop.value = match.captured(3);
+                authStatusInfo.smtp.append(prop);
             } else if (captured1 == QLatin1String("body")) {
                 qDebug() << " body type found ";
-                authStatusInfo.body.type = match.captured(2);
-                authStatusInfo.body.value = match.captured(3);
+                AuthStatusInfo::Property prop;
+                prop.type = match.captured(2);
+                prop.value = match.captured(3);
+                authStatusInfo.body.append(prop);
             } else if (captured1 == QLatin1String("policy")) {
                 qDebug() << " policy type found ";
-                authStatusInfo.policy.type = match.captured(2);
-                authStatusInfo.policy.value = match.captured(3);
+                AuthStatusInfo::Property prop;
+                prop.type = match.captured(2);
+                prop.value = match.captured(3);
+                authStatusInfo.policy.append(prop);
             } else {
                 qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Unknow type found " << captured1;
             }
@@ -212,17 +220,25 @@ QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : t.listAuthStatusInfo()) {
         d << "mListAuthStatusInfo: " << info.method << " : " << info.result << " : " << info.methodVersion << " : " << info.reason << endl;
         d << "Property:" << endl;
-        if (info.smtp.isValid()) {
-            d << "    smtp " << info.smtp.type << " : " << info.smtp.value << endl;
+        if (!info.smtp.isEmpty()) {
+            for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.smtp) {
+                d << "    smtp " << prop.type << " : " << prop.value << endl;
+            }
         }
-        if (info.header.isValid()) {
-            d << "    header " << info.header.type << " : " << info.header.value << endl;
+        if (!info.header.isEmpty()) {
+            for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.header) {
+                d << "    header " << prop.type << " : " << prop.value << endl;
+            }
         }
-        if (info.body.isValid()) {
-            d << "    body " << info.body.type << " : " << info.body.value << endl;
+        if (!info.body.isEmpty()) {
+            for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.body) {
+                d << "    body " << prop.type << " : " << prop.value << endl;
+            }
         }
-        if (info.policy.isValid()) {
-            d << "    policy " << info.policy.type << " : " << info.policy.value << endl;
+        if (!info.policy.isEmpty()) {
+            for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.policy) {
+                d << "    policy " << prop.type << " : " << prop.value << endl;
+            }
         }
     }
     return d;
