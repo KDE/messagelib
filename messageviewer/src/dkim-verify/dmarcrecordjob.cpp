@@ -21,6 +21,7 @@
 #include "messageviewer_dkimcheckerdebug.h"
 
 #include <QDnsLookup>
+
 using namespace MessageViewer;
 //see https://tools.ietf.org/html/rfc7489
 DMARCRecordJob::DMARCRecordJob(QObject *parent)

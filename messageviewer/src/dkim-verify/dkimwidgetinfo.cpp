@@ -19,10 +19,12 @@
 
 #include "dkimwidgetinfo.h"
 #include "dkimmanager.h"
-#include <QHBoxLayout>
 #include <KLocalizedString>
-#include <QLabel>
 #include <KColorScheme>
+
+#include <QLabel>
+#include <QHBoxLayout>
+
 using namespace MessageViewer;
 DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     : QWidget(parent)

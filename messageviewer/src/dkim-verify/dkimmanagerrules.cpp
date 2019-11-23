@@ -22,6 +22,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QRegularExpression>
+
 using namespace MessageViewer;
 DKIMManagerRules::DKIMManagerRules(QObject *parent)
     : QObject(parent)

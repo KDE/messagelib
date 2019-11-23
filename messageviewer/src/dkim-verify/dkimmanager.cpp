@@ -23,6 +23,7 @@
 #include "dkimcheckfulljob.h"
 #include "settings/messageviewersettings.h"
 #include <AkonadiCore/AttributeFactory>
+
 using namespace MessageViewer;
 DKIMManager::DKIMManager(QObject *parent)
     : QObject(parent)

@@ -21,8 +21,8 @@
 
 #include <KSharedConfig>
 #include <KConfig>
-#include <QRegularExpression>
 #include <KConfigGroup>
+#include <QRegularExpression>
 
 using namespace MessageViewer;
 DKIMManagerKey::DKIMManagerKey(QObject *parent)

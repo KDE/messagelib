@@ -25,6 +25,7 @@
 #include "dkimchecksignaturejob.h"
 #include <KMime/Message>
 #include <AkonadiCore/Item>
+
 namespace MessageViewer {
 class DKIMAuthenticationStatusInfo;
 /**
@@ -49,6 +50,7 @@ public:
 Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id);
     void clearInfo();
+
 private:
     void checkFullInfo(const Akonadi::Item &item);
     DKIMCheckPolicy mCheckPolicy;

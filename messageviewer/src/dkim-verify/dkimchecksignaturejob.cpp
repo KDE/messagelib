@@ -24,11 +24,13 @@
 #include "dkimutil.h"
 #include "dkimkeyrecord.h"
 #include "messageviewer_dkimcheckerdebug.h"
+
 #include <KEmailAddress>
 #include <QDateTime>
 #include <QCryptographicHash>
 #include <QFile>
 #include <qca_publickey.h>
+
 //see https://tools.ietf.org/html/rfc6376
 //#define DEBUG_SIGNATURE_DKIM 1
 using namespace MessageViewer;
