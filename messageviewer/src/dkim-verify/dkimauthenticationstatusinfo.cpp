@@ -117,17 +117,38 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
 
     const QString property_p = QLatin1String("mailfrom|rcptto") + QLatin1Char('|') + DKIMAuthenticationStatusInfoUtil::keyword_p();
     const QString propspec_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op()
-                               +QLatin1Char('(') + property_p + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + pvalue_p + QLatin1Char(')');
+                               +QLatin1Char('(') + property_p + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + pvalue_p/*+ QLatin1Char(')')*/;
 
-    qDebug() << "propspec_p " << propspec_p;
+    //qDebug() << "propspec_p " << propspec_p;
     const QRegularExpression reg(propspec_p);
     if (!reg.isValid()) {
-        qDebug() << " reg error : " << reg.errorString();
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " reg error : " << reg.errorString();
     } else {
         index = valueKey.indexOf(reg, 0, &match);
         while (index != -1) {
-            qDebug() << " reason " << match.capturedTexts();
+            qDebug() << " propspec " << match.capturedTexts();
             valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
+            const QString &captured1 = match.captured(1);
+            if (captured1 == QLatin1String("header")) {
+                qDebug() << " header type found ";
+                authStatusInfo.header.type = match.captured(2);
+                authStatusInfo.header.value = match.captured(3);
+            } else if (captured1 == QLatin1String("smtp")) {
+                qDebug() << " smtp type found ";
+                authStatusInfo.smtp.type = match.captured(2);
+                authStatusInfo.smtp.value = match.captured(3);
+            } else if (captured1 == QLatin1String("body")) {
+                qDebug() << " body type found ";
+                authStatusInfo.body.type = match.captured(2);
+                authStatusInfo.body.value = match.captured(3);
+            } else if (captured1 == QLatin1String("policy")) {
+                qDebug() << " policy type found ";
+                authStatusInfo.policy.type = match.captured(2);
+                authStatusInfo.policy.value = match.captured(3);
+            } else {
+                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Unknow type found " << captured1;
+            }
+            index = valueKey.indexOf(reg, 0, &match);
         }
     }
     return authStatusInfo;
@@ -188,6 +209,19 @@ QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
     d << "mAuthVersion: " << t.authVersion() << endl;
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : t.listAuthStatusInfo()) {
         d << "mListAuthStatusInfo: " << info.method << " : " << info.result << " : " << info.methodVersion << " : " << info.reason << endl;
+        d << "Property:" << endl;
+        if (info.smtp.isValid()) {
+            d << "    smtp " << info.smtp.type << " : " << info.smtp.value << endl;
+        }
+        if (info.header.isValid()) {
+            d << "    header " << info.header.type << " : " << info.header.value << endl;
+        }
+        if (info.body.isValid()) {
+            d << "    body " << info.body.type << " : " << info.body.value << endl;
+        }
+        if (info.policy.isValid()) {
+            d << "    policy " << info.policy.type << " : " << info.policy.value << endl;
+        }
     }
     return d;
 }
