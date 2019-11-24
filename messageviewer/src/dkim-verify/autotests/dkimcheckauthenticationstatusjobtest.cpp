@@ -54,6 +54,8 @@ void DKIMCheckAuthenticationStatusJobTest::shouldTestMail_data()
                            << curPath;
     QTest::addRow("notsigned") << QStringLiteral("notsigned.mbox")
                            << curPath;
+    QTest::addRow("broken1") << QStringLiteral("broken1.mbox")
+                           << curPath;
 }
 
 void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()
