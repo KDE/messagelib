@@ -21,6 +21,7 @@
 */
 
 #include "dkimauthenticationstatusinfoconverter.h"
+#include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
 
 DKIMAuthenticationStatusInfoConverter::DKIMAuthenticationStatusInfoConverter()
@@ -45,6 +46,22 @@ void DKIMAuthenticationStatusInfoConverter::setStatusInfo(const MessageViewer::D
 
 DKIMCheckSignatureJob::CheckSignatureResult DKIMAuthenticationStatusInfoConverter::convert() const
 {
+    const QVector<DKIMAuthenticationStatusInfo::AuthStatusInfo> lstInfo = mStatusInfo.listAuthStatusInfo();
+    for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : lstInfo) {
+        const QString &infoResult = info.result;
+        if (infoResult == QLatin1String("none")) {
+
+        } else if (infoResult == QLatin1String("pass")) {
+        } else if (infoResult == QLatin1String("fail")) {
+        } else if (infoResult == QLatin1String("policy")) {
+        } else if (infoResult == QLatin1String("neutral")) {
+        } else if (infoResult == QLatin1String("permerror")) {
+        } else if (infoResult == QLatin1String("temperror")) {
+        } else {
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid result type " << infoResult;
+        }
+    }
+
     return {};
 }
 
