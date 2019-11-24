@@ -113,7 +113,6 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         property2.methodVersion = 1;
         lst.append(property2);
 
-
         info.setListAuthStatusInfo(lst);
         QTest::addRow("test1") << QStringLiteral("in68.mail.ovh.net; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"GMG2ucPx\"; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"I3t3p7Up\"; dkim-atps=neutral")
                                << info
