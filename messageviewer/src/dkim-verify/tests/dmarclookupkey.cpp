@@ -43,7 +43,9 @@ void DMarcLookUpKey::lookUpDomain(const QString &domain)
     connect(job, &MessageViewer::DMARCRecordJob::error, this, [](const QString &err, const QString &domainName) {
         qDebug() << "error: " << err << " domain " << domainName;
     });
-    job->start();
+    if (!job->start()) {
+        qWarning() << " impossible to start job";
+    }
 }
 
 int main(int argc, char **argv)
