@@ -123,6 +123,7 @@ void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &doma
 
 void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info)
 {
+    //TODO convert DKIMAuthenticationStatusInfo to CheckSignatureResult
     //TODO check info ! if auth is ok not necessary to checkSignature
     checkSignature();
 }

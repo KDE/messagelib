@@ -87,6 +87,7 @@ if (${Qca-qt5_FOUND})
         dkim-verify/dkimgeneraterulejob.cpp
         dkim-verify/dkimauthenticationstatusinfoutil.cpp
 	dkim-verify/dkimcheckfulljob.cpp
+        dkim-verify/dkimauthenticationstatusinfoconverter.cpp
         )
 endif()
 
