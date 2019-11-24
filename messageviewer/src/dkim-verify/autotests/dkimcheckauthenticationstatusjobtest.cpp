@@ -37,7 +37,6 @@ void DKIMCheckAuthenticationStatusJobTest::initTestCase()
     qRegisterMetaType<MessageViewer::DKIMAuthenticationStatusInfo>();
 }
 
-
 void DKIMCheckAuthenticationStatusJobTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMCheckAuthenticationStatusJob job;
@@ -53,9 +52,9 @@ void DKIMCheckAuthenticationStatusJobTest::shouldTestMail_data()
     QTest::addRow("dkim2") << QStringLiteral("dkim2.mbox")
                            << curPath;
     QTest::addRow("notsigned") << QStringLiteral("notsigned.mbox")
-                           << curPath;
+                               << curPath;
     QTest::addRow("broken1") << QStringLiteral("broken1.mbox")
-                           << curPath;
+                             << curPath;
 }
 
 void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()

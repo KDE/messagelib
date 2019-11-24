@@ -26,12 +26,10 @@ using namespace MessageViewer;
 
 DKIMAuthenticationStatusInfoConverter::DKIMAuthenticationStatusInfoConverter()
 {
-
 }
 
 DKIMAuthenticationStatusInfoConverter::~DKIMAuthenticationStatusInfoConverter()
 {
-
 }
 
 MessageViewer::DKIMAuthenticationStatusInfo DKIMAuthenticationStatusInfoConverter::statusInfo() const
@@ -50,7 +48,6 @@ DKIMCheckSignatureJob::CheckSignatureResult DKIMAuthenticationStatusInfoConverte
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : lstInfo) {
         const QString &infoResult = info.result;
         if (infoResult == QLatin1String("none")) {
-
         } else if (infoResult == QLatin1String("pass")) {
         } else if (infoResult == QLatin1String("fail")) {
         } else if (infoResult == QLatin1String("policy")) {
@@ -64,4 +61,3 @@ DKIMCheckSignatureJob::CheckSignatureResult DKIMAuthenticationStatusInfoConverte
 
     return {};
 }
-

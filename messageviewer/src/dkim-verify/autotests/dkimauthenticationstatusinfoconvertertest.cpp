@@ -20,7 +20,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "dkimauthenticationstatusinfoconvertertest.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(DKIMAuthenticationStatusInfoConverterTest)
@@ -28,5 +27,4 @@ QTEST_GUILESS_MAIN(DKIMAuthenticationStatusInfoConverterTest)
 DKIMAuthenticationStatusInfoConverterTest::DKIMAuthenticationStatusInfoConverterTest(QObject *parent)
     : QObject(parent)
 {
-
 }

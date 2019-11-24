@@ -33,12 +33,15 @@ public:
         struct Property {
             QString type;
             QString value;
-            Q_REQUIRED_RESULT bool isValid() const {
+            Q_REQUIRED_RESULT bool isValid() const
+            {
                 return !type.isEmpty() && !value.isEmpty();
             }
-            Q_REQUIRED_RESULT bool operator==(const Property &other) const {
+
+            Q_REQUIRED_RESULT bool operator==(const Property &other) const
+            {
                 return other.type == type
-                        && other.value == value;
+                       && other.value == value;
             }
         };
 
