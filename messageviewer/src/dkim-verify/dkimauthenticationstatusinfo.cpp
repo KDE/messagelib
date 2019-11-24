@@ -128,29 +128,29 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     } else {
         index = valueKey.indexOf(reg, 0, &match);
         while (index != -1) {
-            qDebug() << " propspec " << match.capturedTexts();
+            //qDebug() << " propspec " << match.capturedTexts();
             valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
             const QString &captured1 = match.captured(1);
             if (captured1 == QLatin1String("header")) {
-                qDebug() << " header type found ";
+                //qDebug() << " header type found ";
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);
                 authStatusInfo.header.append(prop);
             } else if (captured1 == QLatin1String("smtp")) {
-                qDebug() << " smtp type found ";
+                //qDebug() << " smtp type found ";
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);
                 authStatusInfo.smtp.append(prop);
             } else if (captured1 == QLatin1String("body")) {
-                qDebug() << " body type found ";
+                //qDebug() << " body type found ";
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);
                 authStatusInfo.body.append(prop);
             } else if (captured1 == QLatin1String("policy")) {
-                qDebug() << " policy type found ";
+                //qDebug() << " policy type found ";
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);
@@ -249,7 +249,11 @@ bool DKIMAuthenticationStatusInfo::AuthStatusInfo::operator==(const DKIMAuthenti
     return other.method == method
            && other.result == result
            && other.methodVersion == methodVersion
-           && other.reason == reason;
+           && other.reason == reason
+            && other.policy == policy
+            && other.smtp == smtp
+            && other.header == header
+            && other.body == body;
 }
 
 bool DKIMAuthenticationStatusInfo::AuthStatusInfo::isValid() const
