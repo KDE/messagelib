@@ -65,7 +65,7 @@ public:
 private:
 
     Q_REQUIRED_RESULT int findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded);
-    MessageViewer::DKIMHeaderParser::Header extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
+    Q_REQUIRED_RESULT MessageViewer::DKIMHeaderParser::Header extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
     Q_REQUIRED_RESULT QByteArray unfoldHeader(const char *header, size_t headerSize);
     QByteArray mHead;
     QVector<DKIMHeaderParser::Header> mListHeaders;

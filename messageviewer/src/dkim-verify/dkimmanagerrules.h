@@ -52,7 +52,7 @@ public:
 private:
     void loadRules(const QString &fileName = QString());
     void save(const QString &fileName = QString());
-    QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
+    Q_REQUIRED_RESULT QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
     QVector<DKIMRule> mRules;
 };
 }

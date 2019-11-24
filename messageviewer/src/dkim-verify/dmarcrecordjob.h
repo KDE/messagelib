@@ -44,7 +44,7 @@ Q_SIGNALS:
 
 private:
     void resolvDnsDone();
-    QString resolvDnsValue() const;
+    Q_REQUIRED_RESULT QString resolvDnsValue() const;
     QString mDomainName;
     QDnsLookup *mDnsLookup = nullptr;
 };
