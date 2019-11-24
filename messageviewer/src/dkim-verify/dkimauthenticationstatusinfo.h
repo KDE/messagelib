@@ -36,6 +36,10 @@ public:
             Q_REQUIRED_RESULT bool isValid() const {
                 return !type.isEmpty() && !value.isEmpty();
             }
+            Q_REQUIRED_RESULT bool operator==(const Property &other) const {
+                return other.type == type
+                        && other.value == value;
+            }
         };
 
         QString method;
