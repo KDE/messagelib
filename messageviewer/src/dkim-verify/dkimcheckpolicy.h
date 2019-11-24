@@ -62,9 +62,9 @@ public:
 
 private:
     int mRsaSha1Policy = -1;
+    int mSaveKey = -1;
     bool mVerifySignatureWhenOnlyTest = false;
     bool mSaveDkimResult = false;
-    int mSaveKey = -1;
     bool mAutogenerateRule = false;
     bool mCheckIfEmailShouldBeSigned = false;
     bool mUseDMarc = false;
