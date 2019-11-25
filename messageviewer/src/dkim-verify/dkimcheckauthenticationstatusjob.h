@@ -39,10 +39,14 @@ public:
 
     void setHeaderParser(const DKIMHeaderParser &headerParser);
 
+    Q_REQUIRED_RESULT bool useRelaxedParsing() const;
+    void setUseRelaxedParsing(bool useRelaxedParsing);
+
 Q_SIGNALS:
     void result(const MessageViewer::DKIMAuthenticationStatusInfo &info);
 private:
     DKIMHeaderParser mHeaderParser;
+    bool mUseRelaxedParsing = false;
 };
 }
 

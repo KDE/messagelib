@@ -41,9 +41,10 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey()
 {
     QFETCH(QString, key);
     QFETCH(MessageViewer::DKIMAuthenticationStatusInfo, result);
+    QFETCH(bool, relaxingParsing);
     QFETCH(bool, success);
     MessageViewer::DKIMAuthenticationStatusInfo info;
-    const bool val = info.parseAuthenticationStatus(key);
+    const bool val = info.parseAuthenticationStatus(key, relaxingParsing);
     QCOMPARE(val, success);
     const bool compareResult = result == info;
     if (!compareResult) {
@@ -57,9 +58,10 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
 {
     QTest::addColumn<QString>("key");
     QTest::addColumn<MessageViewer::DKIMAuthenticationStatusInfo>("result");
+    QTest::addColumn<bool>("relaxingParsing");
     QTest::addColumn<bool>("success");
 
-    QTest::addRow("empty") << QString() << MessageViewer::DKIMAuthenticationStatusInfo() << false;
+    QTest::addRow("empty") << QString() << MessageViewer::DKIMAuthenticationStatusInfo() << false << false;
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
@@ -123,6 +125,7 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         info.setListAuthStatusInfo(lst);
         QTest::addRow("test1") << QStringLiteral("in68.mail.ovh.net; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"GMG2ucPx\"; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"I3t3p7Up\"; dkim-atps=neutral")
                                << info
+                               << false
                                << true;
     }
     {
@@ -132,9 +135,9 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
 
         QTest::addRow("none") << QStringLiteral("example.org 1; none;")
                               << info
+                              << false
                               << false;
     }
-    //It will failed! Fix it
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
@@ -142,6 +145,7 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
 
         QTest::addRow("none2") << QStringLiteral("example.org 1; none")
                               << info
+                              << false
                               << false;
     }
     {
@@ -184,6 +188,7 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
 
         QTest::addRow("reason") << QStringLiteral("example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" header.i=@newyork.example.com;")
                                 << info
+                                << false
                                 << true;
     }
 
@@ -228,6 +233,32 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
 
         QTest::addRow("reason2") << QStringLiteral("example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" header.i=@newyork.example.com")
                                 << info
+                                << true
+                                << true;
+    }
+    {
+        MessageViewer::DKIMAuthenticationStatusInfo info;
+        info.setAuthVersion(1);
+        info.setAuthservId(QStringLiteral("letterbox.kde.org"));
+        QVector<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
+        {
+            MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
+            property.method = QStringLiteral("dmarc");
+            property.result = QStringLiteral("pass");
+            property.methodVersion = 1;
+            {
+                MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
+                prop.type = QLatin1String("from");
+                prop.value = QLatin1String("gmail.com");
+                property.header.append(prop);
+            }
+            lst.append(property);
+        }
+        info.setListAuthStatusInfo(lst);
+
+        QTest::addRow("gmails") << QStringLiteral("letterbox.kde.org; dmarc=pass (p=none dis=none) header.from=gmail.com\r\n")
+                                << info
+                                << true
                                 << true;
     }
 }

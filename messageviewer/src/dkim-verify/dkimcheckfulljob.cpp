@@ -23,6 +23,7 @@
 #include "dkimchecksignaturejob.h"
 #include "dkimgeneraterulejob.h"
 #include "dkimmanagerkey.h"
+#include "dkimauthenticationstatusinfoconverter.h"
 #include "dkimstoreresultjob.h"
 #include "messageviewer_dkimcheckerdebug.h"
 #include <KMessageBox>
@@ -70,16 +71,13 @@ void DKIMCheckFullJob::startCheckFullInfo(const Akonadi::Item &item)
 void DKIMCheckFullJob::checkAuthenticationResults()
 {
     if (mCheckPolicy.useAuthenticationResults()) {
-#if 0
         DKIMCheckAuthenticationStatusJob *job = new  DKIMCheckAuthenticationStatusJob(this);
         mHeaderParser.setHead(mMessage->head());
         mHeaderParser.parse();
         job->setHeaderParser(mHeaderParser);
+        job->setUseRelaxedParsing(mCheckPolicy.useRelaxedParsing());
         connect(job, &DKIMCheckAuthenticationStatusJob::result, this, &DKIMCheckFullJob::slotCheckAuthenticationStatusResult);
         job->start();
-#else
-        checkSignature();
-#endif
     } else {
         checkSignature();
     }
@@ -123,6 +121,13 @@ void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &doma
 
 void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info)
 {
+    DKIMAuthenticationStatusInfoConverter converter;
+    converter.setStatusInfo(info);
+    const QVector<DKIMCheckSignatureJob::CheckSignatureResult> lst = converter.convert();
+    for (const DKIMCheckSignatureJob::CheckSignatureResult &result : lst) {
+        //TODO verify it.
+    }
+    //TODO implement info !
     //TODO convert DKIMAuthenticationStatusInfo to CheckSignatureResult
     //TODO check info ! if auth is ok not necessary to checkSignature
     checkSignature();
