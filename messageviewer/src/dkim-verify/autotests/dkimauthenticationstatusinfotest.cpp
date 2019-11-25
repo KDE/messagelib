@@ -130,7 +130,17 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         info.setAuthVersion(1);
         info.setAuthservId(QStringLiteral("example.org"));
 
-        QTest::addRow("none") << QStringLiteral("example.org 1; none")
+        QTest::addRow("none") << QStringLiteral("example.org 1; none;")
+                              << info
+                              << false;
+    }
+    //It will failed! Fix it
+    {
+        MessageViewer::DKIMAuthenticationStatusInfo info;
+        info.setAuthVersion(1);
+        info.setAuthservId(QStringLiteral("example.org"));
+
+        QTest::addRow("none2") << QStringLiteral("example.org 1; none")
                               << info
                               << false;
     }
@@ -173,6 +183,50 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
 
 
         QTest::addRow("reason") << QStringLiteral("example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" header.i=@newyork.example.com;")
+                                << info
+                                << true;
+    }
+
+    //It will failed. Fix it
+    {
+        MessageViewer::DKIMAuthenticationStatusInfo info;
+        info.setAuthVersion(1);
+        info.setAuthservId(QStringLiteral("example.com"));
+
+        QVector<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
+        {
+            MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
+            property.method = QStringLiteral("dkim");
+            property.result = QStringLiteral("pass");
+            property.reason = QStringLiteral("good signature");
+            property.methodVersion = 1;
+            {
+                MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
+                prop.type = QLatin1String("i");
+                prop.value = QLatin1String("@mail-router.example.net");
+                property.header.append(prop);
+            }
+            lst.append(property);
+        }
+        {
+            MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property2;
+            property2.method = QStringLiteral("dkim");
+            property2.result = QStringLiteral("fail");
+            property2.reason = QStringLiteral("bad signature");
+            property2.methodVersion = 1;
+
+            {
+                MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
+                prop.type = QLatin1String("i");
+                prop.value = QLatin1String("@newyork.example.com");
+                property2.header.append(prop);
+            }
+            lst.append(property2);
+        }
+        info.setListAuthStatusInfo(lst);
+
+
+        QTest::addRow("reason2") << QStringLiteral("example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" header.i=@newyork.example.com")
                                 << info
                                 << true;
     }

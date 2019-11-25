@@ -55,7 +55,7 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
         return false;
     }
     // check if message authentication was performed
-    const QString authResultStr = DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String(";") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("?none");
+    const QString authResultStr = DKIMAuthenticationStatusInfoUtil::regexMatchO(DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String(";") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("?none"));
     //qDebug() << "authResultStr "<<authResultStr;
     index = valueKey.indexOf(QRegularExpression(authResultStr), 0, &match);
     if (index != -1) {
@@ -107,7 +107,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     //TODO remove extra text
 
     // 3) extract reasonspec (optional)
-    const QString reasonspec_p = QLatin1String("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + DKIMAuthenticationStatusInfoUtil::value_cp();
+    const QString reasonspec_p = DKIMAuthenticationStatusInfoUtil::regexMatchO(QLatin1String("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + DKIMAuthenticationStatusInfoUtil::value_cp());
     index = valueKey.indexOf(QRegularExpression(reasonspec_p), 0, &match);
     if (index != -1) {
         //qDebug() << " reason " << match.capturedTexts();
