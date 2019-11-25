@@ -45,7 +45,7 @@ void DKIMCheckAuthenticationStatusJob::start()
     QString str = mHeaderParser.headerType(strAuthenticationHeader);
     DKIMAuthenticationStatusInfo info;
     while (!str.isEmpty()) {
-        if (!info.parseAuthenticationStatus(str)) {
+        if (!info.parseAuthenticationStatus(str, mUseRelaxedParsing)) {
             break;
         }
         str = mHeaderParser.headerType(strAuthenticationHeader);
@@ -64,4 +64,14 @@ bool DKIMCheckAuthenticationStatusJob::canStart() const
 void DKIMCheckAuthenticationStatusJob::setHeaderParser(const DKIMHeaderParser &headerParser)
 {
     mHeaderParser = headerParser;
+}
+
+bool DKIMCheckAuthenticationStatusJob::useRelaxedParsing() const
+{
+    return mUseRelaxedParsing;
+}
+
+void DKIMCheckAuthenticationStatusJob::setUseRelaxedParsing(bool useRelaxedParsing)
+{
+    mUseRelaxedParsing = useRelaxedParsing;
 }

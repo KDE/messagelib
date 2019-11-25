@@ -41,26 +41,29 @@ void DKIMCheckAuthenticationStatusJobTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMCheckAuthenticationStatusJob job;
     QVERIFY(!job.canStart());
+    QVERIFY(!job.useRelaxedParsing());
 }
 
 void DKIMCheckAuthenticationStatusJobTest::shouldTestMail_data()
 {
     QTest::addColumn<QString>("fileName");
     QTest::addColumn<QString>("currentPath");
+    QTest::addColumn<bool>("relaxedParsing");
     const QString curPath = QStringLiteral(DKIM_DATA_DIR "/");
 
     QTest::addRow("dkim2") << QStringLiteral("dkim2.mbox")
-                           << curPath;
+                           << curPath << false;
     QTest::addRow("notsigned") << QStringLiteral("notsigned.mbox")
-                               << curPath;
+                               << curPath << false;
     QTest::addRow("broken1") << QStringLiteral("broken1.mbox")
-                             << curPath;
+                             << curPath << false;
 }
 
 void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()
 {
     QFETCH(QString, fileName);
     QFETCH(QString, currentPath);
+    QFETCH(bool, relaxedParsing);
     KMime::Message *msg = new KMime::Message;
     QFile file(currentPath + fileName);
     QVERIFY(file.open(QIODevice::ReadOnly));
@@ -72,6 +75,7 @@ void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()
     mHeaderParser.setHead(msg->head());
     mHeaderParser.parse();
     job->setHeaderParser(mHeaderParser);
+    job->setUseRelaxedParsing(relaxedParsing);
     QSignalSpy dkimSignatureSpy(job, &MessageViewer::DKIMCheckAuthenticationStatusJob::result);
     QTimer::singleShot(10, job, &MessageViewer::DKIMCheckAuthenticationStatusJob::start);
     QVERIFY(dkimSignatureSpy.wait());

@@ -32,6 +32,7 @@ DKIMCheckPolicy::DKIMCheckPolicy()
     mUseDMarc = MessageViewer::MessageViewerSettings::useDMarc();
     mUseDefaultRules = MessageViewer::MessageViewerSettings::useDefaultRules();
     mUseAuthenticationResults = MessageViewer::MessageViewerSettings::useAuthenticationResults();
+    mUseRelaxedParsing = MessageViewer::MessageViewerSettings::useRelaxedParsingAuthenticationResults();
 }
 
 int DKIMCheckPolicy::rsaSha1Policy() const
@@ -122,4 +123,14 @@ bool DKIMCheckPolicy::useAuthenticationResults() const
 void DKIMCheckPolicy::setUseAuthenticationResults(bool useAuthenticationResults)
 {
     mUseAuthenticationResults = useAuthenticationResults;
+}
+
+bool DKIMCheckPolicy::useRelaxedParsing() const
+{
+    return mUseRelaxedParsing;
+}
+
+void DKIMCheckPolicy::setUseRelaxedParsing(bool useRelaxedParsing)
+{
+    mUseRelaxedParsing = useRelaxedParsing;
 }

@@ -28,9 +28,13 @@ DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
 {
 }
 
-bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
+bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key, bool relaxingParsing)
 {
     QString valueKey = key;
+    //kmime remove extra \r\n but we need it for regexp at the end.
+    if (!valueKey.endsWith(QLatin1String("\r\n"))) {
+        valueKey += QLatin1String("\r\n");
+    }
     // https://tools.ietf.org/html/rfc7601#section-2.2
     // authres-header = "Authentication-Results:" [CFWS] authserv-id
     //                                            [ CFWS authres-version ]
@@ -64,7 +68,7 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
     }
     while (!valueKey.isEmpty()) {
         //qDebug() << "valueKey LOOP" << valueKey;
-        const AuthStatusInfo resultInfo = parseAuthResultInfo(valueKey);
+        const AuthStatusInfo resultInfo = parseAuthResultInfo(valueKey, relaxingParsing);
         if (resultInfo.isValid()) {
             mListAuthStatusInfo.append(resultInfo);
         }
@@ -72,7 +76,7 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
     return true;
 }
 
-DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parseAuthResultInfo(QString &valueKey)
+DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parseAuthResultInfo(QString &valueKey, bool relaxingParsing)
 {
     DKIMAuthenticationStatusInfo::AuthStatusInfo authStatusInfo;
     // 2) extract methodspec
@@ -115,11 +119,17 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
         valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
     }
     // 4) extract propspec (optional)
-    const QString pvalue_p = DKIMAuthenticationStatusInfoUtil::value_p() + QLatin1String("|(?:(?:") + DKIMAuthenticationStatusInfoUtil::localPart_p() + QLatin1String("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + QLatin1Char(')');
+    QString pvalue_p = DKIMAuthenticationStatusInfoUtil::value_p() + QLatin1String("|(?:(?:") + DKIMAuthenticationStatusInfoUtil::localPart_p() + QLatin1String("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + QLatin1Char(')');
+    if (relaxingParsing) {
+        //Allow "/" in the header.b (or other) property, even if it is not in a quoted-string
+        pvalue_p += QStringLiteral("|[^ \\x00-\\x1F\\x7F()<>@,;:\\\\\"[\\]?=]+");
+    }
 
     const QString property_p = QLatin1String("mailfrom|rcptto") + QLatin1Char('|') + DKIMAuthenticationStatusInfoUtil::keyword_p();
-    const QString propspec_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op()
-                               +QLatin1Char('(') + property_p + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + pvalue_p /*+ QLatin1Char(')')*/;
+    const QString propspec_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1Char(')')
+            + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op()
+            + QLatin1Char('(') + property_p + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=')
+            + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + pvalue_p /*+ QLatin1Char(')')*/;
 
     //qDebug() << "propspec_p " << propspec_p;
 

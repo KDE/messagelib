@@ -63,7 +63,7 @@ public:
     Q_REQUIRED_RESULT QString authservId() const;
     void setAuthservId(const QString &authservId);
 
-    Q_REQUIRED_RESULT bool parseAuthenticationStatus(const QString &key);
+    Q_REQUIRED_RESULT bool parseAuthenticationStatus(const QString &key, bool relaxingParsing);
 
     Q_REQUIRED_RESULT int authVersion() const;
     void setAuthVersion(int authVersion);
@@ -77,7 +77,7 @@ public:
     void setListAuthStatusInfo(const QVector<AuthStatusInfo> &listAuthStatusInfo);
 
 private:
-    Q_REQUIRED_RESULT AuthStatusInfo parseAuthResultInfo(QString &valueKey);
+    Q_REQUIRED_RESULT AuthStatusInfo parseAuthResultInfo(QString &valueKey, bool relaxingParsing);
     QVector<AuthStatusInfo> mListAuthStatusInfo;
     QString mAuthservId;
     QString mReasonSpec;
