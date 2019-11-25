@@ -77,7 +77,7 @@ public:
     void setListAuthStatusInfo(const QVector<AuthStatusInfo> &listAuthStatusInfo);
 
 private:
-    AuthStatusInfo parseAuthResultInfo(QString &valueKey);
+    Q_REQUIRED_RESULT AuthStatusInfo parseAuthResultInfo(QString &valueKey);
     QVector<AuthStatusInfo> mListAuthStatusInfo;
     QString mAuthservId;
     QString mReasonSpec;

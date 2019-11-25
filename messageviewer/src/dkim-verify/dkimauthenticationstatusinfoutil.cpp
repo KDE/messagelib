@@ -188,3 +188,22 @@ QString MessageViewer::DKIMAuthenticationStatusInfoUtil::domainName_p()
     // domain-name as specified in Section 3.5 of RFC 6376 [DKIM].
     return QStringLiteral("(?:%1(?:\\.%1)+)").arg(subDomain_p());
 }
+
+// Tries to matches a pattern to the beginning of str.
+//  Adds CFWS_op to the beginning of pattern.
+//  pattern must be followed by string end, ";" or CFWS_p.
+// If match is found, removes it from str.
+QString MessageViewer::DKIMAuthenticationStatusInfoUtil::regexMatchO(const QString &regularExpressionStr)
+{
+    const QString regexp = (QStringLiteral("^")
+                            + DKIMAuthenticationStatusInfoUtil::cfws_op()
+                            + QStringLiteral("(?:")
+                            + regularExpressionStr
+                            + QStringLiteral(")")
+                            + QStringLiteral("(?:(?:")
+                            + DKIMAuthenticationStatusInfoUtil::cfws_op()
+                            + QStringLiteral("\r\n$)|(?=;)|(?=")
+                            + DKIMAuthenticationStatusInfoUtil::cfws_p()
+                            + QStringLiteral("))"));
+    return regexp;
+}

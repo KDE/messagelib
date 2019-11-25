@@ -56,18 +56,19 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key)
     }
     // check if message authentication was performed
     const QString authResultStr = DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String(";") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("?none");
+    //qDebug() << "authResultStr "<<authResultStr;
     index = valueKey.indexOf(QRegularExpression(authResultStr), 0, &match);
     if (index != -1) {
         //no result
         return false;
     }
     while (!valueKey.isEmpty()) {
+        //qDebug() << "valueKey LOOP" << valueKey;
         const AuthStatusInfo resultInfo = parseAuthResultInfo(valueKey);
         if (resultInfo.isValid()) {
             mListAuthStatusInfo.append(resultInfo);
         }
     }
-
     return true;
 }
 
@@ -113,7 +114,6 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
         authStatusInfo.reason = match.captured(2);
         valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
     }
-
     // 4) extract propspec (optional)
     const QString pvalue_p = DKIMAuthenticationStatusInfoUtil::value_p() + QLatin1String("|(?:(?:") + DKIMAuthenticationStatusInfoUtil::localPart_p() + QLatin1String("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + QLatin1Char(')');
 
@@ -122,7 +122,10 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
                                +QLatin1Char('(') + property_p + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + pvalue_p /*+ QLatin1Char(')')*/;
 
     //qDebug() << "propspec_p " << propspec_p;
-    const QRegularExpression reg(propspec_p);
+
+    const QString regexp = DKIMAuthenticationStatusInfoUtil::regexMatchO(propspec_p);
+
+    const QRegularExpression reg(regexp);
     if (!reg.isValid()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " reg error : " << reg.errorString();
     } else {
@@ -130,6 +133,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
         while (index != -1) {
             //qDebug() << " propspec " << match.capturedTexts();
             valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
+            //qDebug() << " value KEy " << valueKey;
             const QString &captured1 = match.captured(1);
             if (captured1 == QLatin1String("header")) {
                 //qDebug() << " header type found ";
