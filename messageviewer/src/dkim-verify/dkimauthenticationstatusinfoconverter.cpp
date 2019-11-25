@@ -50,14 +50,16 @@ QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInf
         DKIMCheckSignatureJob::CheckSignatureResult convertedResult;
         const QString &infoResult = info.result;
         if (infoResult == QLatin1String("none")) {
+            convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
         } else if (infoResult == QLatin1String("pass")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Valid;
-        } else if (infoResult == QLatin1String("fail")) {
-        } else if (infoResult == QLatin1String("policy")) {
-        } else if (infoResult == QLatin1String("neutral")) {
-        } else if (infoResult == QLatin1String("permerror")) {
+        } else if (infoResult == QLatin1String("fail") ||
+                   infoResult == QLatin1String("policy") ||
+                   infoResult == QLatin1String("neutral") ||
+                   infoResult == QLatin1String("permerror")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
         } else if (infoResult == QLatin1String("temperror")) {
+            convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
         } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid result type " << infoResult;
         }
