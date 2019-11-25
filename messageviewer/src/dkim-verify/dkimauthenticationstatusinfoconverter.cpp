@@ -42,22 +42,26 @@ void DKIMAuthenticationStatusInfoConverter::setStatusInfo(const MessageViewer::D
     mStatusInfo = statusInfo;
 }
 
-DKIMCheckSignatureJob::CheckSignatureResult DKIMAuthenticationStatusInfoConverter::convert() const
+QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInfoConverter::convert() const
 {
+    QVector<DKIMCheckSignatureJob::CheckSignatureResult> lstResult;
     const QVector<DKIMAuthenticationStatusInfo::AuthStatusInfo> lstInfo = mStatusInfo.listAuthStatusInfo();
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : lstInfo) {
+        DKIMCheckSignatureJob::CheckSignatureResult convertedResult;
         const QString &infoResult = info.result;
         if (infoResult == QLatin1String("none")) {
         } else if (infoResult == QLatin1String("pass")) {
+            convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Valid;
         } else if (infoResult == QLatin1String("fail")) {
         } else if (infoResult == QLatin1String("policy")) {
         } else if (infoResult == QLatin1String("neutral")) {
         } else if (infoResult == QLatin1String("permerror")) {
+            convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
         } else if (infoResult == QLatin1String("temperror")) {
         } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid result type " << infoResult;
         }
     }
 
-    return {};
+    return lstResult;
 }
