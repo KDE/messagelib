@@ -108,7 +108,6 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     authStatusInfo.result = match.captured(3);
 
     valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
-    //TODO remove extra text
 
     // 3) extract reasonspec (optional)
     const QString reasonspec_p = DKIMAuthenticationStatusInfoUtil::regexMatchO(QLatin1String("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + DKIMAuthenticationStatusInfoUtil::value_cp());
@@ -134,7 +133,6 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     //qDebug() << "propspec_p " << propspec_p;
 
     const QString regexp = DKIMAuthenticationStatusInfoUtil::regexMatchO(propspec_p);
-
     const QRegularExpression reg(regexp);
     if (!reg.isValid()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " reg error : " << reg.errorString();
@@ -145,26 +143,23 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
             valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
             //qDebug() << " value KEy " << valueKey;
             const QString &captured1 = match.captured(1);
+            //qDebug() << " captured1 " << captured1;
             if (captured1 == QLatin1String("header")) {
-                //qDebug() << " header type found ";
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);
                 authStatusInfo.header.append(prop);
             } else if (captured1 == QLatin1String("smtp")) {
-                //qDebug() << " smtp type found ";
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);
                 authStatusInfo.smtp.append(prop);
             } else if (captured1 == QLatin1String("body")) {
-                //qDebug() << " body type found ";
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);
                 authStatusInfo.body.append(prop);
             } else if (captured1 == QLatin1String("policy")) {
-                //qDebug() << " policy type found ";
                 AuthStatusInfo::Property prop;
                 prop.type = match.captured(2);
                 prop.value = match.captured(3);

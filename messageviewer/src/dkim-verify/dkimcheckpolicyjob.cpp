@@ -74,7 +74,7 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
             if (rule.from() == mEmailAddress || rule.from() == QLatin1Char('*')) {
                 //Check SDID
                 for (const QString &ssid : rule.signedDomainIdentifier()) {
-                    if (mCheckResult.signedBy == ssid) {
+                    if (mCheckResult.sdid == ssid) {
                         switch (rule.ruleType()) {
                         case DKIMRule::RuleType::Unknown:
                             // Invalid rule !
@@ -107,7 +107,7 @@ void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::
             mCheckResult.status = DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
             //qDebug() << " void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value)"<<value.mDomain << "value " << value.mSource;
             //TODO verify it.
-            mCheckResult.signedBy = value.mSource;
+            mCheckResult.sdid = value.mSource;
         }
     }
     Q_EMIT result(mCheckResult);

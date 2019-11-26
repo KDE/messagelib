@@ -90,7 +90,8 @@ public:
         DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
         DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
-        QString signedBy;
+        QString sdid; //Signing Domain Identifier
+        QString auid; //DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
         QString fromEmail;
     };
 
@@ -151,5 +152,6 @@ private:
     DKIMCheckSignatureJob::DKIMStatus mStatus = DKIMCheckSignatureJob::DKIMStatus::Unknown;
 };
 }
+MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &t);
 Q_DECLARE_METATYPE(MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult)
 #endif // DKIMCHECKSIGNATUREJOB_H
