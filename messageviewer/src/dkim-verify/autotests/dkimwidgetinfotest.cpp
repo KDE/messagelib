@@ -51,7 +51,7 @@ void DKIMWidgetInfoTest::shouldClearWidget()
     QLabel *mLabel = w.findChild<QLabel *>(QStringLiteral("label"));
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result;
     result.fromEmail = QStringLiteral("bla");
-    result.signedBy = QStringLiteral("bli");
+    result.sdid = QStringLiteral("bli");
     result.status = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
     result.error = MessageViewer::DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash;
     result.warning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe;

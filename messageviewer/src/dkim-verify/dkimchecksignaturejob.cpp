@@ -49,7 +49,7 @@ MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob
     result.error = mError;
     result.warning = mWarning;
     result.status = mStatus;
-    result.signedBy = mDkimInfo.domain();
+    result.sdid = mDkimInfo.domain();
     result.fromEmail = mFromEmail;
     return result;
 }
@@ -657,10 +657,23 @@ bool DKIMCheckSignatureJob::CheckSignatureResult::operator==(const DKIMCheckSign
     return error == other.error
            && warning == other.warning
            && status == other.status
-           && fromEmail == other.fromEmail;
+           && fromEmail == other.fromEmail
+            && auid == other.auid
+            && sdid == other.sdid;
 }
 
 bool DKIMCheckSignatureJob::CheckSignatureResult::operator!=(const DKIMCheckSignatureJob::CheckSignatureResult &other) const
 {
     return !CheckSignatureResult::operator==(other);
+}
+
+QDebug operator <<(QDebug d, const DKIMCheckSignatureJob::CheckSignatureResult &t)
+{
+    d << "error " << t.error;
+    d << "warning " << t.warning;
+    d << "status " << t.status;
+    d << "signedBy " << t.sdid;
+    d << "fromEmail " << t.fromEmail;
+    d << "auid " << t.auid;
+    return d;
 }

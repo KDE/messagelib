@@ -70,6 +70,7 @@ void DKIMCheckFullJob::startCheckFullInfo(const Akonadi::Item &item)
 
 void DKIMCheckFullJob::checkAuthenticationResults()
 {
+    qDebug() << " void DKIMCheckFullJob::checkAuthenticationResults()" << mCheckPolicy.useAuthenticationResults();
     if (mCheckPolicy.useAuthenticationResults()) {
         DKIMCheckAuthenticationStatusJob *job = new  DKIMCheckAuthenticationStatusJob(this);
         mHeaderParser.setHead(mMessage->head());
@@ -138,10 +139,12 @@ void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &doma
 
 void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info)
 {
+    qDebug() << "info " << info;
     DKIMAuthenticationStatusInfoConverter converter;
     converter.setStatusInfo(info);
     const QVector<DKIMCheckSignatureJob::CheckSignatureResult> lst = converter.convert();
     for (const DKIMCheckSignatureJob::CheckSignatureResult &result : lst) {
+        qDebug() << " lst" << result;
         //TODO verify it.
     }
     //TODO implement info !

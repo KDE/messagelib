@@ -154,6 +154,6 @@ void DKIMCheckSignatureJobTest::shouldTestMail()
     QCOMPARE(info.warning, dkimwarning);
     QCOMPARE(info.error, dkimerror);
     QCOMPARE(info.status, dkimstatus);
-    QCOMPARE(info.signedBy, dkimdomain);
+    QCOMPARE(info.sdid, dkimdomain);
     QCOMPARE(info.fromEmail, fromEmail);
 }

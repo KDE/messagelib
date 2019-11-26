@@ -21,6 +21,7 @@
 */
 
 #include "dkimauthenticationstatusinfoconverter.h"
+#include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
 
@@ -53,6 +54,24 @@ QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInf
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
         } else if (infoResult == QLatin1String("pass")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Valid;
+            QString sdid;
+            QString auid;
+            for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.header) {
+                if (prop.type == QLatin1String("d")) {
+                    sdid = prop.value;
+                } else if (prop.type == QLatin1String("i")) {
+                    auid = prop.value;
+                }
+            }
+            if (!auid.isEmpty() || !sdid.isEmpty()) {
+                if (sdid.isEmpty()) {
+                    sdid = MessageViewer::DKIMUtil::emailDomain(auid);
+                } else if (auid.isEmpty()) {
+                    auid = QLatin1Char('@') + sdid;
+                }
+                convertedResult.sdid = sdid;
+                convertedResult.auid = auid;
+            }
         } else if (infoResult == QLatin1String("fail") ||
                    infoResult == QLatin1String("policy") ||
                    infoResult == QLatin1String("neutral") ||
@@ -62,7 +81,9 @@ QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInf
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
         } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid result type " << infoResult;
+            continue;
         }
+        lstResult.append(convertedResult);
     }
 
     return lstResult;

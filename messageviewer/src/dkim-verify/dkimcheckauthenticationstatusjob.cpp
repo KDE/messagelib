@@ -51,7 +51,7 @@ void DKIMCheckAuthenticationStatusJob::start()
         str = mHeaderParser.headerType(strAuthenticationHeader);
     }
 
-    qDebug() << "result info: " << info;
+    //qDebug() << "result info: " << info;
     Q_EMIT result(info);
     deleteLater();
 }
