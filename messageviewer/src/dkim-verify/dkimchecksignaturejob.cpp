@@ -50,6 +50,7 @@ MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob
     result.warning = mWarning;
     result.status = mStatus;
     result.sdid = mDkimInfo.domain();
+    result.auid = mDkimInfo.agentOrUserIdentifier();
     result.fromEmail = mFromEmail;
     return result;
 }
