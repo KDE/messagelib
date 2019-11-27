@@ -68,7 +68,7 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
     connect(mUi->mDuplicate, &QPushButton::clicked, this, &CustomTemplates::slotDuplicateClicked);
     connect(mUi->mList, &QTreeWidget::currentItemChanged, this, &CustomTemplates::slotListSelectionChanged);
     connect(mUi->mList, &QTreeWidget::itemChanged, this, &CustomTemplates::slotItemChanged);
-    connect(mUi->mType, qOverload<int>(&KComboBox::activated), this, &CustomTemplates::slotTypeActivated);
+    connect(mUi->mType, qOverload<int>(&QComboBox::activated), this, &CustomTemplates::slotTypeActivated);
 
     connect(mUi->mKeySequenceWidget, &KKeySequenceWidget::keySequenceChanged, this, &CustomTemplates::slotShortcutChanged);
 

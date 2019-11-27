@@ -30,7 +30,6 @@
 
 class QLineEdit;
 class QActionGroup;
-class KComboBox;
 class QMenu;
 
 namespace Akonadi {

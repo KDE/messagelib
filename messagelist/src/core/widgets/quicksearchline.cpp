@@ -25,10 +25,9 @@
 
 #include "searchlinestatus.h"
 #include <KLocalizedString>
-#include <KComboBox>
 
 #include <QPushButton>
-
+#include <QComboBox>
 #include <QHBoxLayout>
 #include <QStandardPaths>
 
@@ -61,7 +60,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     hbox->addWidget(mSearchEdit);
 
     // The status filter button. Will be populated later, as populateStatusFilterCombo() is virtual
-    mTagFilterCombo = new KComboBox(this);
+    mTagFilterCombo = new QComboBox(this);
     mTagFilterCombo->setMaximumWidth(300);
     mTagFilterCombo->setMaximumWidth(200);
     mTagFilterCombo->hide();
@@ -117,7 +116,7 @@ void QuickSearchLine::focusQuickSearch(const QString &selectedText)
     mSearchEdit->setFocus();
 }
 
-KComboBox *QuickSearchLine::tagFilterComboBox() const
+QComboBox *QuickSearchLine::tagFilterComboBox() const
 {
     return mTagFilterCombo;
 }

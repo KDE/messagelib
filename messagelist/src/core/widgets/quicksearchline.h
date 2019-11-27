@@ -25,7 +25,7 @@
 #include "messagelist_export.h"
 #include <Akonadi/KMime/MessageStatus>
 
-class KComboBox;
+class QComboBox;
 class QToolButton;
 namespace MessageList {
 namespace Core {
@@ -57,7 +57,7 @@ public:
 
     void focusQuickSearch(const QString &selectedText);
 
-    Q_REQUIRED_RESULT KComboBox *tagFilterComboBox() const;
+    Q_REQUIRED_RESULT QComboBox *tagFilterComboBox() const;
     Q_REQUIRED_RESULT SearchLineStatus *searchEdit() const;
     Q_REQUIRED_RESULT QToolButton *openFullSearchButton() const;
     void resetFilter();
@@ -86,7 +86,7 @@ private Q_SLOTS:
     void slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst);
 private:
     SearchLineStatus *mSearchEdit = nullptr;
-    KComboBox *mTagFilterCombo = nullptr;
+    QComboBox *mTagFilterCombo = nullptr;
     QList<Akonadi::MessageStatus> mLstStatus;
 };
 }

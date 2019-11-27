@@ -43,7 +43,7 @@
 #include <QVariant>
 
 #include <QAction>
-#include <KComboBox>
+#include <QComboBox>
 #include "messagelist_debug.h"
 #include <KLocalizedString>
 #include <QMenu>
@@ -206,9 +206,9 @@ void Widget::populateStatusFilterCombo()
         return;
     }
     d->mStatusFilterComboPopulationInProgress = true;
-    KComboBox *tagFilterComboBox = d->quickSearchLine->tagFilterComboBox();
+    QComboBox *tagFilterComboBox = d->quickSearchLine->tagFilterComboBox();
     d->mCurrentStatusFilterIndex = (tagFilterComboBox->currentIndex() != -1) ? tagFilterComboBox->currentIndex() : 0;
-    disconnect(tagFilterComboBox, qOverload<int>(&KComboBox::currentIndexChanged), this, &Widget::statusSelected);
+    disconnect(tagFilterComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &Widget::statusSelected);
 
     tagFilterComboBox->clear();
 
@@ -223,7 +223,7 @@ void Widget::addMessageTagItem(const QPixmap &icon, const QString &text, const Q
 void Widget::setCurrentStatusFilterItem()
 {
     d->quickSearchLine->updateComboboxVisibility();
-    connect(d->quickSearchLine->tagFilterComboBox(), qOverload<int>(&KComboBox::currentIndexChanged),
+    connect(d->quickSearchLine->tagFilterComboBox(), qOverload<int>(&QComboBox::currentIndexChanged),
             this, &Widget::statusSelected);
     d->quickSearchLine->tagFilterComboBox()->setCurrentIndex(d->mCurrentStatusFilterIndex >= d->quickSearchLine->tagFilterComboBox()->count() ? 0 : d->mCurrentStatusFilterIndex);
     d->mStatusFilterComboPopulationInProgress = false;

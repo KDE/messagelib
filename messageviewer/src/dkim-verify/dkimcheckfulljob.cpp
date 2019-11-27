@@ -70,7 +70,6 @@ void DKIMCheckFullJob::startCheckFullInfo(const Akonadi::Item &item)
 
 void DKIMCheckFullJob::checkAuthenticationResults()
 {
-    qDebug() << " void DKIMCheckFullJob::checkAuthenticationResults()" << mCheckPolicy.useAuthenticationResults();
     if (mCheckPolicy.useAuthenticationResults()) {
         DKIMCheckAuthenticationStatusJob *job = new  DKIMCheckAuthenticationStatusJob(this);
         mHeaderParser.setHead(mMessage->head());
