@@ -122,7 +122,7 @@ void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &doma
 
 void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info)
 {
-    qDebug() << "info " << info;
+    //qDebug() << "info " << info;
     DKIMAuthenticationStatusInfoConverter converter;
     converter.setStatusInfo(info);
     const QVector<DKIMCheckSignatureJob::CheckSignatureResult> lst = converter.convert();
@@ -130,9 +130,10 @@ void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::
         qDebug() << " lst" << result;
         //TODO verify it.
     }
-    //TODO implement info !
-    //TODO convert DKIMAuthenticationStatusInfo to CheckSignatureResult
     //TODO check info ! if auth is ok not necessary to checkSignature
+    if (mCheckPolicy.useOnlyAuthenticationResults()) {
+        //Don't check signature if not necessary.
+    }
     checkSignature();
 }
 
