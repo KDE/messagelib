@@ -63,7 +63,7 @@ public:
 
     void composeFinalStep(KMime::Content *headers, KMime::Content *content);
 
-    QList<QPair<QStringList, std::vector<GpgME::Key> > > encData;
+    QVector<QPair<QStringList, std::vector<GpgME::Key> > > encData;
     std::vector<GpgME::Key> signers;
     AttachmentPart::List attachmentParts;
     // attachments with different sign/encrypt settings from
@@ -552,7 +552,7 @@ void Composer::setSigningKeys(std::vector<GpgME::Key> &signers)
     d->signers = signers;
 }
 
-void Composer::setEncryptionKeys(const QList<QPair<QStringList, std::vector<GpgME::Key> > > &encData)
+void Composer::setEncryptionKeys(const QVector<QPair<QStringList, std::vector<GpgME::Key> > > &encData)
 {
     Q_D(Composer);
 

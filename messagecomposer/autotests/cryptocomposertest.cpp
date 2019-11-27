@@ -365,7 +365,7 @@ void CryptoComposerTest::testBCCEncrypt()
     std::vector< GpgME::Key > skeys;
     skeys.push_back(keys[2]);
 
-    QList<QPair<QStringList, std::vector<GpgME::Key> > > encKeys;
+    QVector<QPair<QStringList, std::vector<GpgME::Key> > > encKeys;
     encKeys.append(QPair<QStringList, std::vector<GpgME::Key> >(primRecipients, pkeys));
     encKeys.append(QPair<QStringList, std::vector<GpgME::Key> >(secondRecipients, skeys));
 
@@ -556,7 +556,7 @@ void CryptoComposerTest::fillComposerCryptoData(Composer *composer)
     QStringList recipients;
     recipients << QString::fromLocal8Bit("you@you.you");
 
-    QList<QPair<QStringList, std::vector<GpgME::Key> > > encKeys;
+    QVector<QPair<QStringList, std::vector<GpgME::Key> > > encKeys;
     encKeys.append(QPair<QStringList, std::vector<GpgME::Key> >(recipients, keys));
 
     composer->setEncryptionKeys(encKeys);
@@ -576,7 +576,7 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys(true);
     QStringList recipients;
     recipients << QString::fromLocal8Bit("you@you.you");
-    QList<QPair<QStringList, std::vector<GpgME::Key> > > encKeys;
+    QVector<QPair<QStringList, std::vector<GpgME::Key> > > encKeys;
     encKeys.append(QPair<QStringList, std::vector<GpgME::Key> >(recipients, keys));
     composer->setEncryptionKeys(encKeys);
     composer->setSigningKeys(keys);

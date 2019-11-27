@@ -758,7 +758,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
                 std::vector<Kleo::KeyResolver::SplitInfo> encData = keyResolver->encryptionItems(concreteFormat);
                 std::vector<Kleo::KeyResolver::SplitInfo>::iterator it;
                 std::vector<Kleo::KeyResolver::SplitInfo>::iterator end(encData.end());
-                QList<QPair<QStringList, std::vector<GpgME::Key> > > data;
+                QVector<QPair<QStringList, std::vector<GpgME::Key> > > data;
                 data.reserve(encData.size());
                 for (it = encData.begin(); it != end; ++it) {
                     QPair<QStringList, std::vector<GpgME::Key> > p(it->recipients, it->keys);
