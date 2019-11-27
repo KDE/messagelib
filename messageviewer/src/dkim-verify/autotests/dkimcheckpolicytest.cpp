@@ -33,7 +33,7 @@ void DKIMCheckPolicyTest::shouldHaveDefaultValues()
     MessageViewer::DKIMCheckPolicy pol;
     QVERIFY(!pol.verifySignatureWhenOnlyTest());
     QVERIFY(!pol.saveDkimResult());
-    QCOMPARE(pol.saveKey(), -1);
+    QCOMPARE(pol.saveKey(), 0);
     QVERIFY(!pol.autogenerateRule());
     QVERIFY(!pol.checkIfEmailShouldBeSigned());
     QVERIFY(!pol.useDMarc());
