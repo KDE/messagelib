@@ -1692,7 +1692,7 @@ void ComposerViewBase::setCryptoOptions(bool sign, bool encrypt, Kleo::CryptoMes
     m_neverEncrypt = neverEncryptDrafts;
 }
 
-void ComposerViewBase::setCharsets(const QList< QByteArray > &charsets)
+void ComposerViewBase::setCharsets(const QVector< QByteArray > &charsets)
 {
     m_charsets = charsets;
 }

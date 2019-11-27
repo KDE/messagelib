@@ -21,7 +21,7 @@
 */
 
 #include "job/attachmentjob.h"
-
+#include <QVector>
 #include "contentjobbase_p.h"
 #include "part/globalpart.h"
 #include "job/singlepartjob.h"

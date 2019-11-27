@@ -965,7 +965,7 @@ public:
     * The returned descriptors are pairs in that the first item is the localized description
     * of the option value and the second item is the integer option value itself.
     */
-    static QList< QPair< QString, int > > enumerateGroupHeaderBackgroundStyles();
+    static QVector< QPair< QString, int > > enumerateGroupHeaderBackgroundStyles();
 
     /**
     * Returns the currently set ViewHeaderPolicy
@@ -994,7 +994,7 @@ public:
     * The returned descriptors are pairs in that the first item is the localized description
     * of the option value and the second item is the integer option value itself.
     */
-    static QList< QPair< QString, int > > enumerateViewHeaderPolicyOptions();
+    static QVector<QPair<QString, int> > enumerateViewHeaderPolicyOptions();
 
     inline const QPixmap *pixmap(ThemeIcon icon) const
     {

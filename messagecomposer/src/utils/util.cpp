@@ -226,7 +226,7 @@ bool MessageComposer::Util::makeMultiMime(Kleo::CryptoMessageFormat format, bool
     }
 }
 
-QByteArray MessageComposer::Util::selectCharset(const QList<QByteArray> &charsets, const QString &text)
+QByteArray MessageComposer::Util::selectCharset(const QVector<QByteArray> &charsets, const QString &text)
 {
     for (const QByteArray &name : charsets) {
         // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because

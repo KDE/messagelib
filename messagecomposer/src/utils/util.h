@@ -36,7 +36,7 @@ class Content;
 
 namespace MessageComposer {
 namespace Util {
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QByteArray selectCharset(const QList<QByteArray> &charsets, const QString &text);
+Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QByteArray selectCharset(const QVector<QByteArray> &charsets, const QString &text);
 
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QStringList AttachmentKeywords();
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString cleanedUpHeaderString(const QString &s);

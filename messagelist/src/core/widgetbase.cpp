@@ -579,7 +579,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
 
     QActionGroup *grp;
     QAction *act;
-    QList< QPair< QString, int > > options;
+    QVector< QPair< QString, int > > options;
 
     grp = new QActionGroup(menu);
 

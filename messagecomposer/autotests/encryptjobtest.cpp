@@ -53,7 +53,7 @@ void EncryptJobTest::initTestCase()
 void EncryptJobTest::testContentDirect()
 {
     MessageComposer::Composer *composer = new MessageComposer::Composer;
-    QList<QByteArray> charsets;
+    QVector<QByteArray> charsets;
     charsets << "us-ascii";
     composer->globalPart()->setCharsets(charsets);
     MessageComposer::TextPart *part = new MessageComposer::TextPart(this);
@@ -87,7 +87,7 @@ void EncryptJobTest::testContentDirect()
 void EncryptJobTest::testContentChained()
 {
     MessageComposer::Composer *composer = new MessageComposer::Composer;
-    QList<QByteArray> charsets;
+    QVector<QByteArray> charsets;
     charsets << "us-ascii";
     composer->globalPart()->setCharsets(charsets);
     MessageComposer::TextPart *part = new MessageComposer::TextPart(this);

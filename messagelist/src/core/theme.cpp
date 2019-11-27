@@ -1062,7 +1062,7 @@ void Theme::setGroupHeaderBackgroundStyle(Theme::GroupHeaderBackgroundStyle grou
     mGroupHeaderBackgroundStyle = groupHeaderBackgroundStyle;
 }
 
-QList<QPair<QString, int> > Theme::enumerateViewHeaderPolicyOptions()
+QVector<QPair<QString, int> > Theme::enumerateViewHeaderPolicyOptions()
 {
     return { {
         i18n("Never Show"), NeverShowHeader
@@ -1072,7 +1072,7 @@ QList<QPair<QString, int> > Theme::enumerateViewHeaderPolicyOptions()
         } };
 }
 
-QList<QPair<QString, int> > Theme::enumerateGroupHeaderBackgroundStyles()
+QVector<QPair<QString, int> > Theme::enumerateGroupHeaderBackgroundStyles()
 {
     return { {
         i18n("Plain Rectangles"), PlainRect

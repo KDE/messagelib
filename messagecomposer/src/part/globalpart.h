@@ -45,8 +45,8 @@ public:
 
     Q_REQUIRED_RESULT bool isFallbackCharsetEnabled() const;
     void setFallbackCharsetEnabled(bool enabled);
-    Q_REQUIRED_RESULT QList<QByteArray> charsets(bool forceFallback = false) const;
-    void setCharsets(const QList<QByteArray> &charsets);
+    Q_REQUIRED_RESULT QVector<QByteArray> charsets(bool forceFallback = false) const;
+    void setCharsets(const QVector<QByteArray> &charsets);
 
     Q_REQUIRED_RESULT bool is8BitAllowed() const;
     void set8BitAllowed(bool allowed);

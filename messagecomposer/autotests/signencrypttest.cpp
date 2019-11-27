@@ -61,7 +61,7 @@ void SignEncryptTest::testContent()
     QVERIFY(sJob);
     QVERIFY(eJob);
 
-    QList<QByteArray> charsets;
+    QVector<QByteArray> charsets;
     charsets << "us-ascii";
     composer->globalPart()->setCharsets(charsets);
     MessageComposer::TextPart *part = new MessageComposer::TextPart(this);

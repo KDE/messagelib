@@ -28,7 +28,7 @@ public:
     {
     }
 
-    QList<QByteArray> charsets;
+    QVector<QByteArray> charsets;
     QWidget *parentWidgetForGui = nullptr;
     bool guiEnabled = true;
     bool fallbackCharsetEnabled = false;
@@ -78,9 +78,9 @@ void GlobalPart::setFallbackCharsetEnabled(bool enabled)
     d->fallbackCharsetEnabled = enabled;
 }
 
-QList<QByteArray> GlobalPart::charsets(bool forceFallback) const
+QVector<QByteArray> GlobalPart::charsets(bool forceFallback) const
 {
-    QList<QByteArray> ret = d->charsets;
+    QVector<QByteArray> ret = d->charsets;
     if (d->fallbackCharsetEnabled || forceFallback) {
         ret << "us-ascii";
         ret << "utf-8";
@@ -88,7 +88,7 @@ QList<QByteArray> GlobalPart::charsets(bool forceFallback) const
     return ret;
 }
 
-void GlobalPart::setCharsets(const QList<QByteArray> &charsets)
+void GlobalPart::setCharsets(const QVector<QByteArray> &charsets)
 {
     d->charsets = charsets;
 }

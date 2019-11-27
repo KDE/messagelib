@@ -54,7 +54,7 @@ void MainTextJobTest::testPlainText()
 {
     Composer *composer = new Composer;
     composer->globalPart()->setGuiEnabled(false);
-    QList<QByteArray> charsets;
+    QVector<QByteArray> charsets;
     charsets << "us-ascii" << "utf-8";
     composer->globalPart()->setCharsets(charsets);
     TextPart *textPart = new TextPart;
@@ -104,7 +104,7 @@ void MainTextJobTest::testCustomCharset()
     Composer *composer = new Composer;
     composer->globalPart()->setGuiEnabled(false);
     QByteArray charset("iso-8859-2");
-    composer->globalPart()->setCharsets(QList<QByteArray>() << charset);
+    composer->globalPart()->setCharsets(QVector<QByteArray>() << charset);
     TextPart *textPart = new TextPart;
     QString data = QStringLiteral("şi el o să se-nchidă cu o frunză de pelin");
     textPart->setWrappedPlainText(data);
@@ -142,7 +142,7 @@ void MainTextJobTest::testBadCharset()
     Composer *composer = new Composer;
     composer->globalPart()->setGuiEnabled(false);
     QByteArray charset("us-ascii");   // Cannot handle Romanian chars.
-    composer->globalPart()->setCharsets(QList<QByteArray>() << charset);
+    composer->globalPart()->setCharsets(QVector<QByteArray>() << charset);
     TextPart *textPart = new TextPart;
     QString data = QStringLiteral("el a plâns peste ţară cu lacrima limbii noastre");
     textPart->setWrappedPlainText(data);

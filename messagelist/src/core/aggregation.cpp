@@ -186,7 +186,7 @@ void Aggregation::save(QDataStream &stream) const
     stream << (int)mFillViewStrategy;
 }
 
-QList< QPair< QString, int > > Aggregation::enumerateGroupingOptions()
+QVector< QPair< QString, int > > Aggregation::enumerateGroupingOptions()
 {
     return { {
         i18nc("No grouping of messages", "None"), NoGrouping
@@ -208,9 +208,9 @@ QList< QPair< QString, int > > Aggregation::enumerateGroupingOptions()
         } };
 }
 
-QList< QPair< QString, int > > Aggregation::enumerateGroupExpandPolicyOptions(Grouping g)
+QVector< QPair< QString, int > > Aggregation::enumerateGroupExpandPolicyOptions(Grouping g)
 {
-    QList< QPair< QString, int > > ret;
+    QVector< QPair< QString, int > > ret;
     if (g == NoGrouping) {
         return ret;
     }
@@ -222,7 +222,7 @@ QList< QPair< QString, int > > Aggregation::enumerateGroupExpandPolicyOptions(Gr
     return ret;
 }
 
-QList< QPair< QString, int > > Aggregation::enumerateThreadingOptions()
+QVector< QPair< QString, int > > Aggregation::enumerateThreadingOptions()
 {
     return { {
         i18nc("No threading of messages", "None"), NoThreading
@@ -238,9 +238,9 @@ QList< QPair< QString, int > > Aggregation::enumerateThreadingOptions()
         } };
 }
 
-QList< QPair< QString, int > > Aggregation::enumerateThreadLeaderOptions(Grouping g, Threading t)
+QVector< QPair< QString, int > > Aggregation::enumerateThreadLeaderOptions(Grouping g, Threading t)
 {
-    QList< QPair< QString, int > > ret;
+    QVector< QPair< QString, int > > ret;
     if (t == NoThreading) {
         return ret;
     }
@@ -252,7 +252,7 @@ QList< QPair< QString, int > > Aggregation::enumerateThreadLeaderOptions(Groupin
     return ret;
 }
 
-QList< QPair< QString, int > > Aggregation::enumerateThreadExpandPolicyOptions(Threading t)
+QVector< QPair< QString, int > > Aggregation::enumerateThreadExpandPolicyOptions(Threading t)
 {
     if (t == NoThreading) {
         return {};
@@ -272,7 +272,7 @@ QList< QPair< QString, int > > Aggregation::enumerateThreadExpandPolicyOptions(T
         } };
 }
 
-QList< QPair< QString, int > > Aggregation::enumerateFillViewStrategyOptions()
+QVector< QPair< QString, int > > Aggregation::enumerateFillViewStrategyOptions()
 {
     return { {
         i18n("Favor Interactivity"), FavorInteractivity

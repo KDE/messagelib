@@ -962,7 +962,7 @@ void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
         } else if (!codec->canEncode(body)) {     // charset can't encode body, fall back to preferred
             const QStringList charsets = MessageComposer::MessageComposerSettings::preferredCharsets();
 
-            QList<QByteArray> chars;
+            QVector<QByteArray> chars;
             chars.reserve(charsets.count());
             for (const QString &charset : charsets) {
                 chars << charset.toLatin1();
