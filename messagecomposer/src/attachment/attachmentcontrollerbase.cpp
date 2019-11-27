@@ -898,18 +898,6 @@ void AttachmentControllerBase::attachDirectory(const QUrl &url)
     }
 }
 
-void AttachmentControllerBase::attachFiles(const QList<QUrl> &urls, const QString &encoding)
-{
-    const int numberOfFiles(urls.count());
-    for (int i = 0; i < numberOfFiles; ++i) {
-        auto url = urls.at(i);
-        QUrlQuery query(url);
-        query.addQueryItem(QStringLiteral("charset"), encoding);
-        url.setQuery(query.toString());
-        addAttachment(url);
-    }
-}
-
 void AttachmentControllerBase::showAttachVcard()
 {
     QPointer<Akonadi::EmailAddressSelectionDialog> dlg = new Akonadi::EmailAddressSelectionDialog(d->wParent);
