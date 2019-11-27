@@ -24,7 +24,7 @@
 #include "kmime/kmime_header_parsing.h"
 
 #include <QStringList>
-
+#include <QVector>
 class QUrl;
 
 namespace KMime {
@@ -49,7 +49,7 @@ namespace StringUtil {
 /**
    * Parses a mailto: url and extracts the information in the QMap (field name as key).
    */
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QList<QPair<QString, QString> > parseMailtoUrl(const QUrl &url);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url);
 
 /**
    * Strips the signature blocks from a message text. "-- " is considered as a signature block separator.

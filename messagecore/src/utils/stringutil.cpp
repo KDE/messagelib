@@ -172,9 +172,9 @@ static bool flushPart(QString &msg, QStringList &textParts, const QString &inden
     return appendEmptyLine;
 }
 
-QList<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
+QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
 {
-    QList<QPair<QString, QString> > values;
+    QVector<QPair<QString, QString> > values;
     if (url.scheme() != QLatin1String("mailto")) {
         return values;
     }

@@ -381,7 +381,7 @@ void StringUtilTest::test_parseMailtoUrlExtra()
 {
     const QByteArray ba("mailto:someone@example.com?subject=This%20is%20the%20subject&cc=someone_else@example.com&body=This%20is%20the%20body");
     QUrl url = QUrl(QUrl::fromPercentEncoding(ba));
-    QList<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(url);
+    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(url);
     QCOMPARE(data.size(), 4);
     for (int i = 0; i < 4; ++i) {
         if (data.at(i).first == QLatin1String("to")) {
@@ -400,7 +400,7 @@ void StringUtilTest::test_parseMailToBug366981()
 {
     const QString ba(QStringLiteral("mailto:test@test.com?subject=test&body=line1%0D%0Aline2"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
-    QList<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 3);
     for (int i = 0; i < 3; ++i) {
         if (data.at(i).first == QLatin1String("to")) {
@@ -420,7 +420,7 @@ void StringUtilTest::test_parseDuplicateQueryItems()
 {
     const QString ba(QStringLiteral("mailto:test@test.com?subject=test&body=line1%0D%0Aline2&cc=someone_else@example.com&cc=someone_else2@example.com"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
-    QList<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+    QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(values.size(), 5);
     int valueCC = 0;
     for (int i = 0; i < values.size(); ++i) {
@@ -446,7 +446,7 @@ void StringUtilTest::test_parseMAilToBug402378()
     const QString ba(QStringLiteral(
                          "mailto:?body=infotbm.com https://www.infotbm.com/fr/routes/id=-0.624162|44.849958&type=address/datetime=20181226T143038&id=stop_area:TBT:SA:HTLEV&time_type=arrival&type=stop_area/0&subject=Votre itineraire avec TBM"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
-    QList<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 6);
     QCOMPARE(data.at(0).first, QLatin1String("body"));
     QCOMPARE(data.at(0).second, QLatin1String(
@@ -470,7 +470,7 @@ void StringUtilTest::test_parseMailToBug406208()
                        "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
         qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
-        QList<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+        QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(data.size(), 2);
         QCOMPARE(data.at(0).first, QLatin1String("body"));
         QCOMPARE(data.at(0).second, QLatin1String(
@@ -483,7 +483,7 @@ void StringUtilTest::test_parseMailToBug406208()
                        "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428%20%23%23bla&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
         qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
-        QList<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+        QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(data.size(), 2);
         QCOMPARE(data.at(0).first, QLatin1String("body"));
         QCOMPARE(data.at(0).second, QLatin1String(
@@ -498,7 +498,7 @@ void StringUtilTest::test_parseMailToBug832795()
     const QString ba(QStringLiteral(
                          "mailto:832795@bugs.debian.org?In-Reply-To=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3E&subject=Re%3A%20kmail%3A%20unescaping%20mailto%3A%20links%20broken&body=On%20Thu%2C%2028%20Jul%202016References=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3Ebody=On%20Thu%2C%2028%20Jul%202016%2023%3A39%3A03%20%2B0200%20Dominik%20George%20%3Cnik%40naturalnet.de%3E%20wrote%3A%0A%3E%20Package%3A%20kmail%0A%3E%20Version%3A%204%3A16.04.3-1%0A"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
-    QList<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 4);
     QCOMPARE(data.at(0).first, QLatin1String("to"));
     QCOMPARE(data.at(0).second, QLatin1String("832795@bugs.debian.org"));
