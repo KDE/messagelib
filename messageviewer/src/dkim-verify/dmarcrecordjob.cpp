@@ -70,6 +70,7 @@ void DMARCRecordJob::resolvDnsDone()
     // Handle the results.
     const auto records = mDnsLookup->textRecords();
     QList<QByteArray> textRecordResult;
+    textRecordResult.reserve(records.count());
     for (const QDnsTextRecord &record : records) {
         textRecordResult << record.values();
     }
