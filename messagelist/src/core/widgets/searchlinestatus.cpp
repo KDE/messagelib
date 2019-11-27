@@ -138,7 +138,7 @@ void SearchLineStatus::slotToggledLockAction()
 
 void SearchLineStatus::updateFilters()
 {
-    QList<Akonadi::MessageStatus> lstStatus;
+    QVector<Akonadi::MessageStatus> lstStatus;
 
     for (QAction *act : qAsConst(mFilterListActions)) {
         if (act->isChecked()) {

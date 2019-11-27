@@ -23,7 +23,7 @@
 
 class QDataStream;
 
-#include <QList>
+#include <QVector>
 #include <QPair>
 #include <QString>
 

@@ -611,9 +611,9 @@ QVector<qlonglong> Widget::selectionAsMessageItemListId(bool includeCollapsedChi
     return lstMiPtr;
 }
 
-QList<Akonadi::Item::Id> Widget::selectionAsListMessageId(bool includeCollapsedChildren) const
+QVector<Akonadi::Item::Id> Widget::selectionAsListMessageId(bool includeCollapsedChildren) const
 {
-    QList<qlonglong> lstMiPtr;
+    QVector<qlonglong> lstMiPtr;
     const QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return lstMiPtr;
@@ -644,7 +644,7 @@ MessageList::Core::QuickSearchLine::SearchOptions Widget::currentOptions() const
     return view()->currentOptions();
 }
 
-QList<Akonadi::MessageStatus> Widget::currentFilterStatus() const
+QVector<Akonadi::MessageStatus> Widget::currentFilterStatus() const
 {
     return view()->currentFilterStatus();
 }

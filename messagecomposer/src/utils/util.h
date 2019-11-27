@@ -66,7 +66,7 @@ MESSAGECOMPOSER_EXPORT void addLinkInformation(const KMime::Message::Ptr &messag
    * @param status Will contain the status (replied or forwarded) that linked the message to the original message.
    * @returns Whether the mail contains valid link information or not.
    */
-Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status);
+Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool getLinkInformation(const KMime::Message::Ptr &msg, QVector<Akonadi::Item::Id> &id, QVector<Akonadi::MessageStatus> &status);
 
 /**
    * Returns whether the item represents a valid KMime::Message that is not

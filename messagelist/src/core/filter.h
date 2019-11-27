@@ -54,7 +54,7 @@ public:
     /**
     * Returns the currently set status mask
     */
-    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> status() const
+    Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> status() const
     {
         return mStatus;
     }
@@ -62,7 +62,7 @@ public:
     /**
     * Sets the status mask for this filter.
     */
-    void setStatus(const QList<Akonadi::MessageStatus> &lstStatus)
+    void setStatus(const QVector<Akonadi::MessageStatus> &lstStatus)
     {
         mStatus = lstStatus;
     }
@@ -118,7 +118,7 @@ Q_SIGNALS:
 
 private:
     bool containString(const QString &searchInString) const;
-    QList<Akonadi::MessageStatus> mStatus;    ///< Messages must match these statuses, if non 0
+    QVector<Akonadi::MessageStatus> mStatus;    ///< Messages must match these statuses, if non 0
     QString mSearchString;             ///< Messages must match this search string, if not empty
     QString mTagId;                    ///< Messages must have this tag, if not empty. Contains a tag url.
     Akonadi::Collection mCurrentFolder;

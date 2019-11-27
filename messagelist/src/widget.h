@@ -235,7 +235,7 @@ public:
     */
 
     QVector<qlonglong> selectionAsMessageItemListId(bool includeCollapsedChildren) const;
-    QList<Akonadi::Item::Id> selectionAsListMessageId(bool includeCollapsedChildren) const;
+    QVector<Akonadi::Item::Id> selectionAsListMessageId(bool includeCollapsedChildren) const;
 
     /**
     * Returns the Akonadi::Item bound to the current StorageModel that
@@ -252,7 +252,7 @@ public:
     /**
     * Returns the Akonadi::MessageStatus in the current quicksearch field.
     */
-    QList<Akonadi::MessageStatus> currentFilterStatus() const;
+    QVector<Akonadi::MessageStatus> currentFilterStatus() const;
 
     /**
     * Returns the search term in the current quicksearch field.

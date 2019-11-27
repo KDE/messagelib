@@ -337,7 +337,7 @@ public:
     /**
     * Returns the Akonadi::MessageStatus in the current quicksearch field.
     */
-    QList<Akonadi::MessageStatus> currentFilterStatus() const;
+    QVector<Akonadi::MessageStatus> currentFilterStatus() const;
 
     /**
     * Returns the search term in the current quicksearch field.

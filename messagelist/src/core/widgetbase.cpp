@@ -239,12 +239,12 @@ MessageList::Core::QuickSearchLine::SearchOptions Widget::currentOptions() const
     return d->quickSearchLine->searchOptions();
 }
 
-QList<Akonadi::MessageStatus> Widget::currentFilterStatus() const
+QVector<Akonadi::MessageStatus> Widget::currentFilterStatus() const
 {
     if (d->mFilter) {
         return d->mFilter->status();
     }
-    return QList<Akonadi::MessageStatus>();
+    return QVector<Akonadi::MessageStatus>();
 }
 
 QString Widget::currentFilterSearchString() const

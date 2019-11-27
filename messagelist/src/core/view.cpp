@@ -2691,7 +2691,7 @@ void View::focusQuickSearch(const QString &selectedText)
     d->mWidget->focusQuickSearch(selectedText);
 }
 
-QList<Akonadi::MessageStatus> View::currentFilterStatus() const
+QVector<Akonadi::MessageStatus> View::currentFilterStatus() const
 {
     return d->mWidget->currentFilterStatus();
 }

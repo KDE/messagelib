@@ -61,7 +61,7 @@ public:
     Q_REQUIRED_RESULT SearchLineStatus *searchEdit() const;
     Q_REQUIRED_RESULT QToolButton *openFullSearchButton() const;
     void resetFilter();
-    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> status() const;
+    Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> status() const;
 
     void updateComboboxVisibility();
 
@@ -83,11 +83,11 @@ protected:
 private Q_SLOTS:
     void slotSearchEditTextEdited(const QString &text);
     void slotClearButtonClicked();
-    void slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst);
+    void slotFilterActionChanged(const QVector<Akonadi::MessageStatus> &lst);
 private:
     SearchLineStatus *mSearchEdit = nullptr;
     QComboBox *mTagFilterCombo = nullptr;
-    QList<Akonadi::MessageStatus> mLstStatus;
+    QVector<Akonadi::MessageStatus> mLstStatus;
 };
 }
 }

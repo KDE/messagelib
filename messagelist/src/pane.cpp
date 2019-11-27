@@ -901,11 +901,11 @@ Akonadi::Item::List Pane::selectionAsMessageItemList(bool includeCollapsedChildr
     return w->selectionAsMessageItemList(includeCollapsedChildren);
 }
 
-QList<Akonadi::Item::Id> Pane::selectionAsListMessageId(bool includeCollapsedChildren) const
+QVector<Akonadi::Item::Id> Pane::selectionAsListMessageId(bool includeCollapsedChildren) const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
     if (w == nullptr) {
-        return QList<Akonadi::Item::Id>();
+        return QVector<Akonadi::Item::Id>();
     }
     return w->selectionAsListMessageId(includeCollapsedChildren);
 }
@@ -953,11 +953,11 @@ void Pane::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSetR
     }
 }
 
-QList<Akonadi::MessageStatus> Pane::currentFilterStatus() const
+QVector<Akonadi::MessageStatus> Pane::currentFilterStatus() const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
     if (w == nullptr) {
-        return QList<Akonadi::MessageStatus>();
+        return QVector<Akonadi::MessageStatus>();
     }
     return w->currentFilterStatus();
 }

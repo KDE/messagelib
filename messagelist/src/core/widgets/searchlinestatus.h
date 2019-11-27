@@ -45,7 +45,7 @@ public:
     void slotClearHistory();
     void clearFilterButtonClicked();
 Q_SIGNALS:
-    void filterActionChanged(const QList<Akonadi::MessageStatus> &lst);
+    void filterActionChanged(const QVector<Akonadi::MessageStatus> &lst);
     void searchOptionChanged();
     void clearButtonClicked();
     void forceLostFocus();
