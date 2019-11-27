@@ -279,6 +279,9 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <entry name="UseRelaxedParsingAuthenticationResults" type="bool">
         <default>false</default>
       </entry>
+      <entry name="UseOnlyAuthenticationResults" type="bool">
+        <default>false</default>
+      </entry>
 
       <entry name="PolicyRsaSha1" type="Enum">
         <choices>

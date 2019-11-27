@@ -63,6 +63,9 @@ public:
     Q_REQUIRED_RESULT bool useRelaxedParsing() const;
     void setUseRelaxedParsing(bool useRelaxedParsing);
 
+    Q_REQUIRED_RESULT bool useOnlyAuthenticationResults() const;
+    void setUseOnlyAuthenticationResults(bool useOnlyAuthenticationResults);
+
 private:
     int mRsaSha1Policy = -1;
     bool mVerifySignatureWhenOnlyTest = false;
@@ -74,6 +77,7 @@ private:
     bool mUseDefaultRules = false;
     bool mUseAuthenticationResults = false;
     bool mUseRelaxedParsing = false;
+    bool mUseOnlyAuthenticationResults = false;
 };
 }
 
