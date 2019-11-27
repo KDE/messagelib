@@ -40,6 +40,7 @@ void DKIMCheckPolicyTest::shouldHaveDefaultValues()
     QVERIFY(!pol.useDefaultRules());
     QCOMPARE(pol.rsaSha1Policy(), 1);
     QVERIFY(!pol.useRelaxedParsing());
+    QVERIFY(!pol.useOnlyAuthenticationResults());
 }
 
 void DKIMCheckPolicyTest::shouldAssignValues()
@@ -63,6 +64,8 @@ void DKIMCheckPolicyTest::shouldAssignValues()
     pol.setUseDefaultRules(mUseDefaultRules);
     bool mRelaxedParsing = true;
     pol.setUseRelaxedParsing(mRelaxedParsing);
+    bool mUseOnlyAuthenticationResults = true;
+    pol.setUseOnlyAuthenticationResults(mUseOnlyAuthenticationResults);
 
     QCOMPARE(pol.verifySignatureWhenOnlyTest(), mVerifySignatureWhenOnlyTest);
     QCOMPARE(pol.saveDkimResult(), mSaveDkimResult);
@@ -73,4 +76,5 @@ void DKIMCheckPolicyTest::shouldAssignValues()
     QCOMPARE(pol.useDefaultRules(), mUseDefaultRules);
     QCOMPARE(pol.rsaSha1Policy(), mRsaSha1Policy);
     QCOMPARE(pol.useRelaxedParsing(), mRelaxedParsing);
+    QCOMPARE(pol.useOnlyAuthenticationResults(), mUseOnlyAuthenticationResults);
 }

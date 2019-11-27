@@ -57,9 +57,9 @@ QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInf
             QString sdid;
             QString auid;
             for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.header) {
-                if (prop.type == QLatin1String("d")) {
+                if (prop.type == QLatin1Char('d')) {
                     sdid = prop.value;
-                } else if (prop.type == QLatin1String("i")) {
+                } else if (prop.type == QLatin1Char('i')) {
                     auid = prop.value;
                 }
             }
