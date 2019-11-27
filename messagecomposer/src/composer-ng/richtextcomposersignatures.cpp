@@ -34,7 +34,7 @@ public:
     }
 
     void cleanWhitespaceHelper(const QRegExp &regExp, const QString &newText, const KIdentityManagement::Signature &sig);
-    QList<QPair<int, int> > signaturePositions(const KIdentityManagement::Signature &sig) const;
+    QVector<QPair<int, int> > signaturePositions(const KIdentityManagement::Signature &sig) const;
     RichTextComposerNg *richTextComposer = nullptr;
 };
 
@@ -74,7 +74,7 @@ void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitesp
         }
         // Skip text inside signatures
         bool insideSignature = false;
-        const QList< QPair<int, int> > sigPositions = signaturePositions(sig);
+        const QVector< QPair<int, int> > sigPositions = signaturePositions(sig);
         for (const QPair<int, int> &position : sigPositions) {
             if (cursor.position() >= position.first
                 && cursor.position() <= position.second) {
@@ -117,10 +117,10 @@ void RichTextComposerSignatures::cleanWhitespace(const KIdentityManagement::Sign
     cursor.endEditBlock();
 }
 
-QList< QPair<int, int> >
+QVector< QPair<int, int> >
 RichTextComposerSignatures::RichTextComposerSignaturesPrivate::signaturePositions(const KIdentityManagement::Signature &sig) const
 {
-    QList< QPair<int, int> > signaturePositions;
+    QVector< QPair<int, int> > signaturePositions;
     if (!sig.rawText().isEmpty()) {
         QString sigText = sig.toPlainText();
 
