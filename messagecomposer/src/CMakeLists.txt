@@ -206,7 +206,6 @@ target_link_libraries(KF5MessageComposer
     KF5::LibkdepimAkonadi
     KF5::KIOCore
     KF5::I18n
-    KF5::Completion     # for KComboBox
     KF5::KIOWidgets     # for KIO::JobUiDelegate
     KF5::KIOFileWidgets # for KEncodingDialog
     KF5::XmlGui         # for KActionCollection

@@ -30,7 +30,7 @@ using namespace MessageComposer;
 using namespace KPIM;
 
 RecipientComboBox::RecipientComboBox(QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
 {
 }
 
@@ -39,7 +39,7 @@ void RecipientComboBox::keyPressEvent(QKeyEvent *ev)
     if (ev->key() == Qt::Key_Right) {
         Q_EMIT rightPressed();
     } else {
-        KComboBox::keyPressEvent(ev);
+        QComboBox::keyPressEvent(ev);
     }
 }
 

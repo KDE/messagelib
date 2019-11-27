@@ -28,10 +28,10 @@
 #include <Libkdepim/MultiplyingLine>
 #include <MessageComposer/ComposerLineEdit>
 
-#include <KComboBox>
+#include <QComboBox>
 
 namespace MessageComposer {
-class RecipientComboBox : public KComboBox
+class RecipientComboBox : public QComboBox
 {
     Q_OBJECT
 public:
