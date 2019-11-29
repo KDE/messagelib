@@ -208,13 +208,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
- </customwidgets>
  <tabstops>
   <tabstop>kcfg_AccessKeyEnabled</tabstop>
   <tabstop>kcfg_ShrinkQuotes</tabstop>
