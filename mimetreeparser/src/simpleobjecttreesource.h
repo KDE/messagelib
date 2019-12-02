@@ -37,16 +37,16 @@ public:
     SimpleObjectTreeSource();
     ~SimpleObjectTreeSource() override;
 
-    bool autoImportKeys() const override;
+    Q_REQUIRED_RESULT bool autoImportKeys() const override;
 
     const BodyPartFormatterFactory *bodyPartFormatterFactory() override;
-    bool decryptMessage() const override;
+    Q_REQUIRED_RESULT bool decryptMessage() const override;
     void setDecryptMessage(bool decryptMessage);
 
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
 
     void setPreferredMode(MimeTreeParser::Util::HtmlMode mode);
-    MimeTreeParser::Util::HtmlMode preferredMode() const override;
+    Q_REQUIRED_RESULT MimeTreeParser::Util::HtmlMode preferredMode() const override;
 
     const QTextCodec *overrideCodec() override;
 
