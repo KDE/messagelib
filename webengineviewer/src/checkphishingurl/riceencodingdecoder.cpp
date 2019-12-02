@@ -38,17 +38,17 @@ RiceEncodingDecoder::~RiceEncodingDecoder()
 {
 }
 
-QList<quint32> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &riceDeltaEncoding)
+QVector<quint32> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
     bool ok;
-    QList<quint32> list;
+    QVector<quint32> list;
     if (riceDeltaEncoding.firstValue.isEmpty()) {
         return list;
     }
     quint64 firstValue = riceDeltaEncoding.firstValue.toInt(&ok);
     if (!ok) {
         qCWarning(WEBENGINEVIEWER_LOG) << "First value is not a int value " << riceDeltaEncoding.firstValue;
-        return QList<quint32>();
+        return QVector<quint32>();
     }
     list.reserve(riceDeltaEncoding.numberEntries + 1);
     list << firstValue;
@@ -62,7 +62,7 @@ QList<quint32> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncodin
         quint32 offset;
         bool result = decoder.nextValue(&offset);
         if (!result) {
-            return QList<quint32>();
+            return QVector<quint32>();
         }
         lastValue += offset;
 #if 0
@@ -77,9 +77,9 @@ QList<quint32> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncodin
     return list;
 }
 
-QList<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
+QVector<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
-    QList<quint32> list;
+    QVector<quint32> list;
     bool ok = false;
     quint64 firstValue = riceDeltaEncoding.firstValue.toInt(&ok);
     if (!ok) {
@@ -96,7 +96,7 @@ QList<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncodin
         quint32 offset;
         bool result = decoder.nextValue(&offset);
         if (!result) {
-            return QList<quint32>();
+            return QVector<quint32>();
         }
 
         lastValue += offset;
@@ -116,7 +116,7 @@ QList<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncodin
 
     // This flipping is done so that when the vector is interpreted as a string,
     // the bytes are in the correct order.
-    QList<quint32> newList;
+    QVector<quint32> newList;
     newList.reserve(list.count());
     const int listCount(list.count());
     for (int i = 0; i < listCount; ++i) {

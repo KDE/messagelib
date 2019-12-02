@@ -29,6 +29,7 @@
 #include <QWebEngineView>
 #include <QToolTip>
 #include <QDebug>
+#include <QVector>
 using namespace WebEngineViewer;
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
@@ -267,7 +268,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         anchorList << WebEngineViewer::WebEngineAccessKeyAnchor(var);
     }
 
-    QList<QChar> unusedKeys;
+    QVector<QChar> unusedKeys;
     unusedKeys.reserve(10 + ('Z' - 'A' + 1));
     for (char c = 'A'; c <= 'Z'; ++c) {
         unusedKeys << QLatin1Char(c);

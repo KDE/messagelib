@@ -22,6 +22,7 @@
 
 #include "webengineviewer_private_export.h"
 #include "updatedatabaseinfo.h"
+#include <QVector>
 namespace WebEngineViewer {
 //https://developers.google.com/safe-browsing/v4/compression
 class RiceDecoder
@@ -60,8 +61,8 @@ public:
     RiceEncodingDecoder();
     ~RiceEncodingDecoder();
 
-    static QList<quint32> decodeRiceIndiceDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
-    static QList<quint32> decodeRiceHashesDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
+    static QVector<quint32> decodeRiceIndiceDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
+    static QVector<quint32> decodeRiceHashesDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
 };
 }
 
