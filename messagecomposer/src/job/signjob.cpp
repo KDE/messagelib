@@ -26,6 +26,7 @@
 #include <Libkleo/Enum>
 #include <QGpgME/Protocol>
 #include <QGpgME/SignJob>
+#include <QVector>
 
 #include "messagecomposer_debug.h"
 #include <kmime/kmime_headers.h>
@@ -170,9 +171,9 @@ void SignJob::process()
             && !d->content->contentType(false)) {
             QByteArray body = d->content->encodedBody();
             bool changed = false;
-            QList<QByteArray> search;
+            QVector<QByteArray> search;
             search.reserve(3);
-            QList<QByteArray> replacements;
+            QVector<QByteArray> replacements;
             replacements.reserve(3);
             search << "From "
                    << "from "
