@@ -171,8 +171,9 @@ void SignJob::process()
             QByteArray body = d->content->encodedBody();
             bool changed = false;
             QList<QByteArray> search;
+            search.reserve(3);
             QList<QByteArray> replacements;
-
+            replacements.reserve(3);
             search << "From "
                    << "from "
                    << "-";

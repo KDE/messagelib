@@ -44,10 +44,10 @@ PGPBlockType Block::determineType() const
     }
 }
 
-QList<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg)
+QVector<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg)
 {
     PGPBlockType pgpBlock = NoPgpBlock;
-    QList<Block> blocks;
+    QVector<Block> blocks;
     int start = -1;   // start of the current PGP block
     int lastEnd = -1; // end of the last PGP block
     const int length = msg.length();

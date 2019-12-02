@@ -19,7 +19,7 @@
 #define MIMETREEPARSER_CRYPTOHELPER_H
 
 #include <QByteArray>
-#include <QList>
+#include <QVector>
 
 namespace MimeTreeParser {
 enum PGPBlockType {
@@ -51,7 +51,7 @@ public:
 /** Parses the given message and splits it into OpenPGP blocks and
     Non-OpenPGP blocks.
 */
-QList<Block> prepareMessageForDecryption(const QByteArray &msg);
+QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
 } // namespace MimeTreeParser
 
 Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_MOVABLE_TYPE);
