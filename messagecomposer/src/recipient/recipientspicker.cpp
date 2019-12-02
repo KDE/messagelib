@@ -27,9 +27,9 @@
 #include <kcontacts/contactgroup.h>
 #include <Libkdepim/LdapSearchDialog>
 
-#include <kconfiggroup.h>
+#include <KConfigGroup>
 #include <KLocalizedString>
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <QLineEdit>
 #include <QPushButton>
 #include "messagecomposer_debug.h"

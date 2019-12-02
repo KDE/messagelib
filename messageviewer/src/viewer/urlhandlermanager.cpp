@@ -59,7 +59,7 @@
 #include <KRun>
 #include <KIconLoader>
 #include <KLocalizedString>
-#include <kmessagebox.h>
+#include <KMessageBox>
 
 #include <QMenu>
 #include <QIcon>

@@ -33,8 +33,8 @@
 
 #include "antispamconfig.h"
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <KConfig>
+#include <KConfigGroup>
 
 using namespace MessageViewer;
 

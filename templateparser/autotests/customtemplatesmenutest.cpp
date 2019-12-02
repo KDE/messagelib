@@ -17,7 +17,7 @@
 
 #include "customtemplatesmenutest.h"
 #include "customtemplatesmenu.h"
-#include <kactioncollection.h>
+#include <KActionCollection>
 #include <QTest>
 
 CustomTemplatesMenuTest::CustomTemplatesMenuTest(QObject *parent)

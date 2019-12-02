@@ -53,9 +53,9 @@
 
 #include <KMime/Message>
 #include <KFileWidget>
-#include <kcharsets.h>
+#include <KCharsets>
 #include <KLocalizedString>
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <QFileDialog>
 #include <ktoolinvocation.h>
 #include <KJobWidgets>

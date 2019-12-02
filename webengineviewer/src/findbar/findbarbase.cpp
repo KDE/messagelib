@@ -22,7 +22,7 @@
 
 #include <QIcon>
 #include <KLocalizedString>
-#include <klineedit.h>
+#include <KLineEdit>
 #include <KColorScheme>
 
 #include <QHBoxLayout>

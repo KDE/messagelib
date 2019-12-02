@@ -31,7 +31,7 @@ using namespace MessageViewer;
 #include <KSyntaxHighlighting/Theme>
 
 #include "PimCommon/PimUtil"
-#include <kiconloader.h>
+#include <KIconLoader>
 #include <KLocalizedString>
 #include <QTabWidget>
 #include <QApplication>

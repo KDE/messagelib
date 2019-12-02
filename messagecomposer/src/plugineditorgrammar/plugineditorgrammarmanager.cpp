@@ -24,7 +24,7 @@
 #include <QFileInfo>
 #include <QSet>
 #include <KPluginLoader>
-#include <kpluginmetadata.h>
+#include <KPluginMetaData>
 #include <KPluginFactory>
 
 using namespace MessageComposer;

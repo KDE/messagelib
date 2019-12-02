@@ -33,7 +33,7 @@
 #include <QPushButton>
 #include <QFormLayout>
 #include <QLineEdit>
-#include <kdatecombobox.h>
+#include <KDateComboBox>
 using namespace MessageComposer;
 class MessageComposer::FollowUpReminderSelectDateDialogPrivate
 {

@@ -40,7 +40,7 @@
 #include "helper/messagehelper.h"
 #include <KLocalizedString>
 #include "messagecomposer_debug.h"
-#include <kcharsets.h>
+#include <KCharsets>
 #include <QTextCodec>
 #include <KCharsets>
 

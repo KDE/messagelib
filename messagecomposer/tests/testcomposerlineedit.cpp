@@ -20,7 +20,7 @@
 #include <QWidget>
 #include <QVBoxLayout>
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 #include <QApplication>
 #include <QCommandLineParser>
 #include "composer/composerlineedit.h"

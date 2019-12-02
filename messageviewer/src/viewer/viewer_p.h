@@ -35,7 +35,7 @@
 #include <kio/job.h>
 #include <KMime/Message>
 #include <kservice.h>
-#include <ksharedconfig.h>
+#include <KSharedConfig>
 #include <QPointer>
 #include <QUrl>
 #include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>

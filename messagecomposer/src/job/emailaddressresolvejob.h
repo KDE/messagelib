@@ -26,7 +26,7 @@
 
 #include "messagecomposer_export.h"
 
-#include <kjob.h>
+#include <KJob>
 
 #include <QStringList>
 

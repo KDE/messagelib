@@ -20,7 +20,7 @@
 #include "attachmentdialog.h"
 
 #include <QDialog>
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <KConfigGroup>

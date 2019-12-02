@@ -23,7 +23,7 @@
 #include <QTest>
 #include <QStandardPaths>
 #include <KConfig>
-#include <kconfiggroup.h>
+#include <KConfigGroup>
 
 CheckPhishingUrlCacheTest::CheckPhishingUrlCacheTest(QObject *parent)
     : QObject(parent)

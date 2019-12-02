@@ -23,7 +23,7 @@
 #ifndef DISTRIBUTIONLISTEXPANDJOB_H
 #define DISTRIBUTIONLISTEXPANDJOB_H
 
-#include <kjob.h>
+#include <KJob>
 #include <QStringList>
 namespace MessageComposer {
 /**

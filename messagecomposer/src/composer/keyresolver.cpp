@@ -55,7 +55,7 @@
 #include <Akonadi/Contact/ContactSearchJob>
 #include <KLocalizedString>
 #include "messagecomposer_debug.h"
-#include <kmessagebox.h>
+#include <KMessageBox>
 
 #include <QStringList>
 #include <QPointer>

@@ -22,7 +22,7 @@
 #include "messageviewer_debug.h"
 
 #include <KSharedConfig>
-#include <kpluginmetadata.h>
+#include <KPluginMetaData>
 #include <KPluginLoader>
 #include <KPluginFactory>
 #include <QFileInfo>

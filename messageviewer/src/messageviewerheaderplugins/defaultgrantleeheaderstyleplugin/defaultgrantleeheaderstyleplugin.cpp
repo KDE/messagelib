@@ -22,7 +22,7 @@
 #include "globalsettings_base.h"
 #include <messageviewer/grantleeheaderstyle.h>
 #include "defaultgrantleeheaderstrategy.h"
-#include <kpluginfactory.h>
+#include <KPluginFactory>
 using namespace MessageViewer;
 
 K_PLUGIN_CLASS_WITH_JSON(DefaultGrantleeHeaderStylePlugin,

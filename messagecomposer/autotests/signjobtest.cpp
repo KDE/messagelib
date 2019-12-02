@@ -28,7 +28,7 @@
 #include <kmime/kmime_content.h>
 
 #include <Libkleo/Enum>
-#include <kjob.h>
+#include <KJob>
 
 #include <MessageComposer/Composer>
 #include <MessageComposer/SignJob>

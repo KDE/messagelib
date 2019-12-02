@@ -17,8 +17,8 @@
 
 #include "mailinglist.h"
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <KConfig>
+#include <KConfigGroup>
 #include <QUrl>
 #include "messagecore_debug.h"
 

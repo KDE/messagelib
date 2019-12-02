@@ -36,8 +36,8 @@
 #include "MessageCore/MessageCoreSettings"
 #include <MessageCore/MessageCoreUtil>
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <KConfig>
+#include <KConfigGroup>
 #include <KColorScheme>
 #include <QApplication>
 

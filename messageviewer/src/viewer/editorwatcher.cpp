@@ -22,10 +22,10 @@
 #include "messageviewer_debug.h"
 
 #include <KLocalizedString>
-#include <kmessagebox.h>
-#include <kopenwithdialog.h>
-#include <kprocess.h>
-#include <kmimetypetrader.h>
+#include <KMessageBox>
+#include <KOpenWithDialog>
+#include <KProcess>
+#include <KMimeTypeTrader>
 #include <KIO/DesktopExecParser>
 
 #include <QSocketNotifier>

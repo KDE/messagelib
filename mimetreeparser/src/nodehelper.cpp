@@ -30,7 +30,7 @@
 
 #include <QTemporaryFile>
 #include <KLocalizedString>
-#include <kcharsets.h>
+#include <KCharsets>
 
 #include <QUrl>
 #include <QDir>

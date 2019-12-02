@@ -38,7 +38,7 @@
 #include "MessageCore/MessageCoreSettings"
 
 #include <KLocalizedString>
-#include <kconfiggroup.h>
+#include <KConfigGroup>
 
 #include <KSharedConfig>
 #include <QMouseEvent>

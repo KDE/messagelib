@@ -38,7 +38,7 @@
 #include "settings/messagecomposersettings.h"
 
 #include "messagecomposer_debug.h"
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 using namespace MessageComposer;
 using MessageCore::AttachmentPart;

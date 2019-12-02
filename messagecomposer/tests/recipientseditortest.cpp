@@ -27,7 +27,7 @@
 
 #include <QDebug>
 
-#include <kmessagebox.h>
+#include <KMessageBox>
 
 #include <QPushButton>
 #include <QLabel>

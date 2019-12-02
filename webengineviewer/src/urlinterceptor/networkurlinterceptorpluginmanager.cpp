@@ -26,7 +26,7 @@
 #include <QFileInfo>
 #include <QVariant>
 #include <QSet>
-#include <kpluginmetadata.h>
+#include <KPluginMetaData>
 
 using namespace WebEngineViewer;
 

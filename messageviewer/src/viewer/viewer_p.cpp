@@ -64,7 +64,7 @@
 #include <QTemporaryDir>
 #include <KToggleAction>
 #include <QIcon>
-#include <kfileitemactions.h>
+#include <KFileItemActions>
 #include <KLocalizedString>
 #include <QMimeData>
 #include <KEmailAddress>
