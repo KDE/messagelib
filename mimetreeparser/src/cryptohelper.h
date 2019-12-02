@@ -36,6 +36,7 @@ enum PGPBlockType {
 class Block
 {
 public:
+    Block();
     Block(const QByteArray &m);
 
     Block(const QByteArray &m, PGPBlockType t);
