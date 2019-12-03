@@ -82,8 +82,7 @@ int AttachmentDialog::exec()
                                                                                 QMessageBox::Question, text,
                                                                                 QStringList(),
                                                                                 i18n(
-                                                                                    "Do not ask again"), &again,
-                                                                                nullptr);
+                                                                                    "Do not ask again"), &again, KMessageBox::Option());
 
     if (ret == QDialogButtonBox::Cancel) {
         return Cancel;

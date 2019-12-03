@@ -35,7 +35,7 @@ FindBarSourceView::~FindBarSourceView()
 
 void FindBarSourceView::searchText(bool backward, bool isAutoSearch)
 {
-    QTextDocument::FindFlags searchOptions = nullptr;
+    QTextDocument::FindFlags searchOptions = {};
     if (backward) {
         searchOptions |= QTextDocument::FindBackward;
     }
@@ -73,7 +73,7 @@ void FindBarSourceView::updateHighLight(bool)
 
 void FindBarSourceView::updateSensitivity(bool)
 {
-    QTextDocument::FindFlags searchOptions = nullptr;
+    QTextDocument::FindFlags searchOptions = {};
     if (mCaseSensitiveAct->isChecked()) {
         searchOptions |= QTextDocument::FindCaseSensitively;
     }
