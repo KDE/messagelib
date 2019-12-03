@@ -1593,34 +1593,34 @@ void ViewerPrivate::createActions()
     // attachment style
     KActionMenu *attachmentMenu = new KActionMenu(i18nc("View->", "&Attachments"), this);
     ac->addAction(QStringLiteral("view_attachments"), attachmentMenu);
-    addHelpTextAction(attachmentMenu, i18n("Choose display style of attachments"));
+    MessageViewer::Util::addHelpTextAction(attachmentMenu, i18n("Choose display style of attachments"));
 
     QActionGroup *group = new QActionGroup(this);
     KToggleAction *raction = new KToggleAction(i18nc("View->attachments->", "&As Icons"), this);
     ac->addAction(QStringLiteral("view_attachments_as_icons"), raction);
     connect(raction, &QAction::triggered, this, &ViewerPrivate::slotIconicAttachments);
-    addHelpTextAction(raction, i18n("Show all attachments as icons. Click to see them."));
+    MessageViewer::Util::addHelpTextAction(raction, i18n("Show all attachments as icons. Click to see them."));
     group->addAction(raction);
     attachmentMenu->addAction(raction);
 
     raction = new KToggleAction(i18nc("View->attachments->", "&Smart"), this);
     ac->addAction(QStringLiteral("view_attachments_smart"), raction);
     connect(raction, &QAction::triggered, this, &ViewerPrivate::slotSmartAttachments);
-    addHelpTextAction(raction, i18n("Show attachments as suggested by sender."));
+    MessageViewer::Util::addHelpTextAction(raction, i18n("Show attachments as suggested by sender."));
     group->addAction(raction);
     attachmentMenu->addAction(raction);
 
     raction = new KToggleAction(i18nc("View->attachments->", "&Inline"), this);
     ac->addAction(QStringLiteral("view_attachments_inline"), raction);
     connect(raction, &QAction::triggered, this, &ViewerPrivate::slotInlineAttachments);
-    addHelpTextAction(raction, i18n("Show all attachments inline (if possible)"));
+    MessageViewer::Util::addHelpTextAction(raction, i18n("Show all attachments inline (if possible)"));
     group->addAction(raction);
     attachmentMenu->addAction(raction);
 
     raction = new KToggleAction(i18nc("View->attachments->", "&Hide"), this);
     ac->addAction(QStringLiteral("view_attachments_hide"), raction);
     connect(raction, &QAction::triggered, this, &ViewerPrivate::slotHideAttachments);
-    addHelpTextAction(raction, i18n("Do not show attachments in the message viewer"));
+    MessageViewer::Util::addHelpTextAction(raction, i18n("Do not show attachments in the message viewer"));
     group->addAction(raction);
     attachmentMenu->addAction(raction);
 
@@ -1629,7 +1629,7 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("view_attachments_headeronly"), mHeaderOnlyAttachmentsAction);
     connect(mHeaderOnlyAttachmentsAction, &QAction::triggered,
             this, &ViewerPrivate::slotHeaderOnlyAttachments);
-    addHelpTextAction(mHeaderOnlyAttachmentsAction,
+    MessageViewer::Util::addHelpTextAction(mHeaderOnlyAttachmentsAction,
                       i18n("Show Attachments only in the header of the mail"));
     group->addAction(mHeaderOnlyAttachmentsAction);
     attachmentMenu->addAction(mHeaderOnlyAttachmentsAction);
@@ -1751,7 +1751,7 @@ void ViewerPrivate::createActions()
     ac->setDefaultShortcut(mToggleDisplayModeAction, QKeySequence(Qt::SHIFT + Qt::Key_H));
     connect(mToggleDisplayModeAction, &QAction::triggered,
             this, &ViewerPrivate::slotToggleHtmlMode);
-    addHelpTextAction(mToggleDisplayModeAction,
+    MessageViewer::Util::addHelpTextAction(mToggleDisplayModeAction,
                       i18n("Toggle display mode between HTML and plain text"));
 
     // Load external reference
@@ -1761,7 +1761,7 @@ void ViewerPrivate::createActions()
                            QKeySequence(Qt::SHIFT + Qt::CTRL + Qt::Key_R));
     connect(loadExternalReferenceAction, &QAction::triggered,
             this, &ViewerPrivate::slotLoadExternalReference);
-    addHelpTextAction(loadExternalReferenceAction,
+    MessageViewer::Util::addHelpTextAction(loadExternalReferenceAction,
                       i18n("Load external references from the Internet for this message."));
 
     mSpeakTextAction = new QAction(i18n("Speak Text"), this);
@@ -3123,13 +3123,6 @@ void ViewerPrivate::slotMailTrackingFound(const MessageViewer::BlockMailTracking
 void ViewerPrivate::slotFormSubmittedForbidden()
 {
     mSubmittedFormWarning->showWarning();
-}
-
-void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)
-{
-    act->setStatusTip(text);
-    act->setToolTip(text);
-    act->setWhatsThis(text);
 }
 
 void ViewerPrivate::slotRefreshMessage(const Akonadi::Item &item)

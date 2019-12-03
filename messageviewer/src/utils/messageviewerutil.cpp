@@ -578,3 +578,12 @@ bool Util::excludeExtraHeader(const QString &s)
     }
     return false;
 }
+
+void Util::addHelpTextAction(QAction *act, const QString &text)
+{
+    act->setStatusTip(text);
+    act->setToolTip(text);
+    if (act->whatsThis().isEmpty()) {
+        act->setWhatsThis(text);
+    }
+}

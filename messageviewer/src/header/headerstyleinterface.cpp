@@ -20,7 +20,7 @@
 #include "headerstyle.h"
 #include "headerstyleinterface.h"
 #include "headerstyleplugin.h"
-
+#include "utils/messageviewerutil_p.h"
 #include <KActionMenu>
 #include <QAction>
 #include <KToggleAction>
@@ -43,11 +43,7 @@ QList<KToggleAction *> HeaderStyleInterface::action() const
 
 void HeaderStyleInterface::addHelpTextAction(QAction *act, const QString &text)
 {
-    act->setStatusTip(text);
-    act->setToolTip(text);
-    if (act->whatsThis().isEmpty()) {
-        act->setWhatsThis(text);
-    }
+    MessageViewer::Util::addHelpTextAction(act, text);
 }
 
 void HeaderStyleInterface::addActionToMenu(KActionMenu *menu, QActionGroup *actionGroup)

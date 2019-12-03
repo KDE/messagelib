@@ -599,7 +599,6 @@ Q_SIGNALS:
 private:
     QString attachmentHtml() const;
 
-    void addHelpTextAction(QAction *act, const QString &text);
     void readGravatarConfig();
 
     void replyMessageToAuthor(KMime::Content *atmNode);

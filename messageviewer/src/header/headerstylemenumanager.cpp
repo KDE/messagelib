@@ -24,6 +24,7 @@
 #include "header/headerstyle.h"
 #include "header/headerstrategy.h"
 #include "messageviewer_debug.h"
+#include "utils/messageviewerutil_p.h"
 #include "messageviewer/messageviewersettings.h"
 
 #include <KActionMenu>
@@ -43,22 +44,12 @@ public:
     void readSettings();
     void writeSettings(const QString &pluginName);
     void initialize(KActionCollection *ac);
-    void addHelpTextAction(QAction *act, const QString &text);
     void setPluginName(const QString &pluginName);
     QHash<QString, MessageViewer::HeaderStyleInterface *> lstInterface;
     QActionGroup *group = nullptr;
     KActionMenu *headerMenu = nullptr;
     HeaderStyleMenuManager *q = nullptr;
 };
-
-void HeaderStyleMenuManagerPrivate::addHelpTextAction(QAction *act, const QString &text)
-{
-    act->setStatusTip(text);
-    act->setToolTip(text);
-    if (act->whatsThis().isEmpty()) {
-        act->setWhatsThis(text);
-    }
-}
 
 void HeaderStyleMenuManagerPrivate::setPluginName(const QString &pluginName)
 {
@@ -138,7 +129,7 @@ void HeaderStyleMenuManagerPrivate::initialize(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("view_headers"), headerMenu);
     }
-    addHelpTextAction(headerMenu, i18n("Choose display style of message headers"));
+    MessageViewer::Util::addHelpTextAction(headerMenu, i18n("Choose display style of message headers"));
     group = new QActionGroup(q);
 
     const QVector<MessageViewer::HeaderStylePlugin *> lstPlugin

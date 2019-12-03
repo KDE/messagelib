@@ -18,6 +18,7 @@
 */
 
 #include "viewerplugininterface.h"
+#include "utils/messageviewerutil_p.h"
 #include <QAction>
 using namespace MessageViewer;
 
@@ -105,11 +106,7 @@ void ViewerPluginInterface::refreshActionList(KActionCollection *ac)
 
 void ViewerPluginInterface::addHelpTextAction(QAction *act, const QString &text)
 {
-    act->setStatusTip(text);
-    act->setToolTip(text);
-    if (act->whatsThis().isEmpty()) {
-        act->setWhatsThis(text);
-    }
+    MessageViewer::Util::addHelpTextAction(act, text);
 }
 
 void ViewerPluginInterface::slotActivatePlugin()
