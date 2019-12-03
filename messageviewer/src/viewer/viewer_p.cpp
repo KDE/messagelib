@@ -193,12 +193,12 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
                                     + QByteArray::number(reinterpret_cast<quintptr>(this)), this))
     , mPreviouslyViewedItem(-1)
 {
-    //TODO move in managerkey I think
     mMimePartTree = nullptr;
     if (!mainWindow) {
         mMainWindow = aParent;
     }
 #ifdef USE_DKIM_CHECKER
+    //TODO move in managerkey I think
     mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
     mDkimWidgetInfo = new MessageViewer::DKIMWidgetInfo(mMainWindow);
 #endif
@@ -541,14 +541,14 @@ void ViewerPrivate::slotOpenWithActionCurrentContent(QAction *act)
     if (!mCurrentContent) {
         return;
     }
-    KService::Ptr app = act->data().value<KService::Ptr>();
+    const KService::Ptr app = act->data().value<KService::Ptr>();
     attachmentOpenWith(mCurrentContent, app);
 }
 
 void ViewerPrivate::slotOpenWithAction(QAction *act)
 {
-    KService::Ptr app = act->data().value<KService::Ptr>();
-    auto contents = selectedContents();
+    const KService::Ptr app = act->data().value<KService::Ptr>();
+    const auto contents = selectedContents();
     if (contents.count() == 1) {
         attachmentOpenWith(contents.first(), app);
     }
@@ -709,7 +709,7 @@ KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
                                                      QStringLiteral("Application"));
 }
 
-KMime::Content::List ViewerPrivate::selectedContents()
+KMime::Content::List ViewerPrivate::selectedContents() const
 {
     return mMimePartTree->selectedContents();
 }
@@ -758,7 +758,7 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
 
 void ViewerPrivate::attachmentOpen(KMime::Content *node)
 {
-    KService::Ptr offer = getServiceOffer(node);
+    const KService::Ptr offer = getServiceOffer(node);
     if (!offer) {
         qCDebug(MESSAGEVIEWER_LOG) << "got no offer";
         return;
