@@ -210,7 +210,7 @@ public:
 
     /** Returns message part from given URL or null if invalid. The URL's path is a KMime::ContentIndex path, or an index for the extra nodes,
     followed by : and the ContentIndex path. */
-    KMime::Content *nodeFromUrl(const QUrl &url) const;
+    Q_REQUIRED_RESULT KMime::Content *nodeFromUrl(const QUrl &url) const;
 
     /** Open the attachment pointed to the node.
     * @param node the node
@@ -224,7 +224,7 @@ public:
     * @param node the node
     * @param showWarning whether some warning should be shown
     */
-    bool deleteAttachment(KMime::Content *node, bool showWarning = true);
+    Q_REQUIRED_RESULT bool deleteAttachment(KMime::Content *node, bool showWarning = true);
 
     void attachmentProperties(KMime::Content *node);
     void attachmentCopy(const KMime::Content::List &contents);
@@ -240,9 +240,9 @@ public:
     */
     void prepareHandleAttachment(KMime::Content *node);
 
-    QString createAtmFileLink(const QString &atmFileName) const;
-    KService::Ptr getServiceOffer(KMime::Content *content);
-    KMime::Content::List selectedContents() const;
+    Q_REQUIRED_RESULT QString createAtmFileLink(const QString &atmFileName) const;
+    Q_REQUIRED_RESULT KService::Ptr getServiceOffer(KMime::Content *content);
+    Q_REQUIRED_RESULT KMime::Content::List selectedContents() const;
     void attachmentOpenWith(KMime::Content *node, const KService::Ptr &offer = KService::Ptr());
     void attachmentOpen(KMime::Content *node);
 
@@ -257,9 +257,9 @@ public:
 
     Viewer *viewer() const;
 
-    Akonadi::Item messageItem() const;
+    Q_REQUIRED_RESULT Akonadi::Item messageItem() const;
 
-    KMime::Message::Ptr message() const;
+    Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
 
     /** Returns whether the message should be decrypted. */
     bool decryptMessage() const;
@@ -281,7 +281,7 @@ public:
 
     /** Creates a nice mail header depending on the current selected
     header style. */
-    QString writeMessageHeader(KMime::Message *aMsg, KMime::Content *vCardNode = nullptr, bool topLevel = false);
+    Q_REQUIRED_RESULT QString writeMessageHeader(KMime::Message *aMsg, KMime::Content *vCardNode = nullptr, bool topLevel = false);
 
     /** show window containing information about a vCard. */
     void showVCard(KMime::Content *msgPart);
@@ -309,14 +309,14 @@ public:
     /** Get selected override character encoding.
       @return The encoding selected by the user or an empty string if auto-detection
       is selected. */
-    QString overrideEncoding() const;
+    Q_REQUIRED_RESULT QString overrideEncoding() const;
 
     /** Set the override character encoding. */
     void setOverrideEncoding(const QString &encoding);
 
     /** Set printing mode */
     void setPrinting(bool enable);
-    bool printingMode() const;
+    Q_REQUIRED_RESULT bool printingMode() const;
 
     /** Print message. */
     void printMessage(const Akonadi::Item &msg);
@@ -364,7 +364,7 @@ public:
       @return The override codec or 0 if auto-detection is selected. */
     const QTextCodec *overrideCodec() const;
 
-    QString renderAttachments(KMime::Content *node, const QColor &bgColor) const;
+    Q_REQUIRED_RESULT QString renderAttachments(KMime::Content *node, const QColor &bgColor) const;
 
     KMime::Content *findContentByType(KMime::Content *content, const QByteArray &type); //TODO(Andras) move to MimeTreeParser::NodeHelper
 
@@ -376,19 +376,19 @@ public:
       if you want to preserve the current view. */
     void saveRelativePosition();
 
-    bool htmlMail() const;
-    bool htmlLoadExternal() const;
+    Q_REQUIRED_RESULT bool htmlMail() const;
+    Q_REQUIRED_RESULT bool htmlLoadExternal() const;
 
-    bool htmlMailGlobalSetting() const;
+    Q_REQUIRED_RESULT bool htmlMailGlobalSetting() const;
 
     /** Get the html override setting */
-    Viewer::DisplayFormatMessage displayFormatMessageOverwrite() const;
+    Q_REQUIRED_RESULT Viewer::DisplayFormatMessage displayFormatMessageOverwrite() const;
 
     /** Override default html mail setting */
     void setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage format);
 
     /** Get the load external references override setting */
-    bool htmlLoadExtOverride() const;
+    Q_REQUIRED_RESULT bool htmlLoadExtOverride() const;
 
     /** Default behavior for loading external references.
      *  Use this for specifying the external reference loading behavior as
@@ -408,7 +408,7 @@ public:
     void setDecryptMessageOverwrite(bool overwrite = true);
 
     /** Show signature details. */
-    bool showSignatureDetails() const;
+    Q_REQUIRED_RESULT bool showSignatureDetails() const;
 
     /** Show signature details. */
     void setShowSignatureDetails(bool showDetails = true);
@@ -416,7 +416,7 @@ public:
     /* show or hide encryption details */
     void setShowEncryptionDetails(bool showEncDetails);
 
-    bool showEncryptionDetails() const;
+    Q_REQUIRED_RESULT bool showEncryptionDetails() const;
 
     void scrollToAttachment(KMime::Content *node);
     void setUseFixedFont(bool useFixedFont);
@@ -430,19 +430,19 @@ public:
 
     void showOpenAttachmentFolderWidget(const QList<QUrl> &urls);
 
-    bool mimePartTreeIsEmpty() const;
+    Q_REQUIRED_RESULT bool mimePartTreeIsEmpty() const;
 
     void setPluginName(const QString &pluginName);
 
-    QList<QAction *> viewerPluginActionList(
+    Q_REQUIRED_RESULT QList<QAction *> viewerPluginActionList(
         MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
-    QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void setPrintElementBackground(bool printElementBackground);
-    bool showEmoticons() const;
+    Q_REQUIRED_RESULT bool showEmoticons() const;
     void checkPhishingUrl();
     void executeRunner(const QUrl &url);
-    QUrl imageUrl() const;
+    Q_REQUIRED_RESULT QUrl imageUrl() const;
     Q_REQUIRED_RESULT qreal webViewZoomFactor() const;
     void setWebViewZoomFactor(qreal factor);
     void recreateCssHelper();
@@ -597,7 +597,7 @@ Q_SIGNALS:
     void showNextMessage();
     void showPreviousMessage();
 private:
-    QString attachmentHtml() const;
+    Q_REQUIRED_RESULT QString attachmentHtml() const;
 
     void readGravatarConfig();
 
