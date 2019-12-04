@@ -262,7 +262,7 @@ public:
     Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
 
     /** Returns whether the message should be decrypted. */
-    bool decryptMessage() const;
+    Q_REQUIRED_RESULT bool decryptMessage() const;
 
     /** Display a generic HTML splash page instead of a message. */
     void displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain = QByteArray());
@@ -659,11 +659,8 @@ public:
     KToggleAction *mToggleMimePartTreeAction = nullptr;
     QAction *mSpeakTextAction = nullptr;
     QAction *mCopyImageLocation = nullptr;
-    QUrl mHoveredUrl;
     QUrl mClickedUrl;
     QUrl mImageUrl;
-    QPoint mLastClickPosition;
-    bool mCanStartDrag = false;
     HtmlWriter *mHtmlWriter = nullptr;
     /** Used only to be able to connect and disconnect finished() signal
       in printMsg() and slotPrintMsg() since mHtmlWriter points only to abstract non-QObject class. */
