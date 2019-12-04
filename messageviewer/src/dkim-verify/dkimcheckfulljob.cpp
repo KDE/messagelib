@@ -107,7 +107,7 @@ void DKIMCheckFullJob::startCheckFullInfo(const KMime::Message::Ptr &message)
 
 void DKIMCheckFullJob::storeKey(const QString &key, const QString &domain, const QString &selector)
 {
-    switch(mCheckPolicy.saveKey()) {
+    switch (mCheckPolicy.saveKey()) {
     case MessageViewer::MessageViewerSettings::EnumSaveKey::NotSaving:
         //Nothing
         break;

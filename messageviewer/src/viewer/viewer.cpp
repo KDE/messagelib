@@ -755,5 +755,6 @@ MessageViewer::DKIMWidgetInfo *Viewer::dkimWidgetInfo()
     Q_D(Viewer);
     return d->mDkimWidgetInfo;
 }
+
 #endif
 }

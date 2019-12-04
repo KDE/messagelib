@@ -22,10 +22,8 @@ using namespace MessageViewer;
 ConversationViewWidget::ConversationViewWidget(QWidget *parent)
     : QWidget(parent)
 {
-
 }
 
 ConversationViewWidget::~ConversationViewWidget()
 {
-
 }

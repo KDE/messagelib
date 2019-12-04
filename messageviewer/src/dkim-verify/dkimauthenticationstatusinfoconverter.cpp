@@ -72,10 +72,10 @@ QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInf
                 convertedResult.sdid = sdid;
                 convertedResult.auid = auid;
             }
-        } else if (infoResult == QLatin1String("fail") ||
-                   infoResult == QLatin1String("policy") ||
-                   infoResult == QLatin1String("neutral") ||
-                   infoResult == QLatin1String("permerror")) {
+        } else if (infoResult == QLatin1String("fail")
+                   || infoResult == QLatin1String("policy")
+                   || infoResult == QLatin1String("neutral")
+                   || infoResult == QLatin1String("permerror")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
         } else if (infoResult == QLatin1String("temperror")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;

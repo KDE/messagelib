@@ -126,9 +126,9 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
 
     const QString property_p = QLatin1String("mailfrom|rcptto") + QLatin1Char('|') + DKIMAuthenticationStatusInfoUtil::keyword_p();
     const QString propspec_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1Char(')')
-            + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op()
-            + QLatin1Char('(') + property_p + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=')
-            + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + pvalue_p /*+ QLatin1Char(')')*/;
+                               + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op()
+                               + QLatin1Char('(') + property_p + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=')
+                               + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + pvalue_p /*+ QLatin1Char(')')*/;
 
     //qDebug() << "propspec_p " << propspec_p;
 

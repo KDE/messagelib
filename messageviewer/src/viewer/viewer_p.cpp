@@ -213,7 +213,6 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     mUpdateReaderWinTimer.setObjectName(QStringLiteral("mUpdateReaderWinTimer"));
     mResizeTimer.setObjectName(QStringLiteral("mResizeTimer"));
 
-
     createWidgets();
     createActions();
     initHtmlWidget();
@@ -1618,7 +1617,7 @@ void ViewerPrivate::createActions()
     connect(mHeaderOnlyAttachmentsAction, &QAction::triggered,
             this, &ViewerPrivate::slotHeaderOnlyAttachments);
     MessageViewer::Util::addHelpTextAction(mHeaderOnlyAttachmentsAction,
-                      i18n("Show Attachments only in the header of the mail"));
+                                           i18n("Show Attachments only in the header of the mail"));
     group->addAction(mHeaderOnlyAttachmentsAction);
     attachmentMenu->addAction(mHeaderOnlyAttachmentsAction);
 
@@ -1740,7 +1739,7 @@ void ViewerPrivate::createActions()
     connect(mToggleDisplayModeAction, &QAction::triggered,
             this, &ViewerPrivate::slotToggleHtmlMode);
     MessageViewer::Util::addHelpTextAction(mToggleDisplayModeAction,
-                      i18n("Toggle display mode between HTML and plain text"));
+                                           i18n("Toggle display mode between HTML and plain text"));
 
     // Load external reference
     QAction *loadExternalReferenceAction = new QAction(i18n("Load external references"), this);
@@ -1750,7 +1749,7 @@ void ViewerPrivate::createActions()
     connect(loadExternalReferenceAction, &QAction::triggered,
             this, &ViewerPrivate::slotLoadExternalReference);
     MessageViewer::Util::addHelpTextAction(loadExternalReferenceAction,
-                      i18n("Load external references from the Internet for this message."));
+                                           i18n("Load external references from the Internet for this message."));
 
     mSpeakTextAction = new QAction(i18n("Speak Text"), this);
     mSpeakTextAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
