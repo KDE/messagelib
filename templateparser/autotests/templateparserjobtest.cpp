@@ -472,6 +472,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     //Header doesn't exist => don't add value
     QTest::newRow("%OHEADER=\"SSS\"") << "%HEADER=\"SSS\"" << fileName << "" << false;
     QTest::newRow("%OHEADER=\"To\"") << "%OHEADER=\"To\"" << fileName << "kde <foo@yoohoo.org>" << false;
+    QTest::newRow("%HEADER( To )") << "%HEADER( To )" << fileName << "kde <foo@yoohoo.org>" << false;
     //Unknown command
     QTest::newRow("unknown command") << "%GGGGG" << fileName << "%GGGGG" << false;
 

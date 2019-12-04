@@ -694,7 +694,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     i += strlen("HEADER( ");
                 } else {
                     i += re.matchedLength();
-                    const QString hdr = re.cap(1);
+                    const QString hdr = re.cap(1).trimmed();
                     QString str;
                     if (auto hrdMsgOrigin = d->mOrigMsg->headerByType(hdr.toLocal8Bit().constData())) {
                         str = hrdMsgOrigin->asUnicodeString();
