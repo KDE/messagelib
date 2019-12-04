@@ -1550,7 +1550,6 @@ QString TemplateParserJob::plainToHtml(const QString &body)
     return str;
 }
 
-//TODO implement this function using a DOM tree parser
 void TemplateParserJob::makeValidHtml(QString &body)
 {
     QRegExp regEx;
