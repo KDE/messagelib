@@ -611,9 +611,9 @@ private:
     void applyZoomValue(qreal factor, bool saveConfig = true);
     void slotZoomChanged(qreal zoom);
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
-    bool mHtmlMailGlobalSetting;
-    bool mHtmlLoadExternalDefaultSetting;
-    bool mHtmlLoadExtOverride;
+    bool mHtmlMailGlobalSetting = false;
+    bool mHtmlLoadExternalDefaultSetting = false;
+    bool mHtmlLoadExtOverride = false;
 public:
     KMime::Message::Ptr mMessage; //the current message, if it was set manually
     Akonadi::Item mMessageItem; //the message item from Akonadi
@@ -635,11 +635,11 @@ public:
 
     /// This is true if the viewer currently is displaying a message. Can be false, for example when
     /// the splash/busy page is displayed.
-    bool mMsgDisplay;
+    bool mMsgDisplay = true;
 
     CSSHelper *mCSSHelper = nullptr;
     bool mUseFixedFont;
-    bool mPrinting;
+    bool mPrinting = false;
     QWidget *mMainWindow = nullptr;
     KActionCollection *mActionCollection = nullptr;
     QAction *mCopyAction = nullptr;
@@ -667,7 +667,7 @@ public:
     QUrl mClickedUrl;
     QUrl mImageUrl;
     QPoint mLastClickPosition;
-    bool mCanStartDrag;
+    bool mCanStartDrag = false;
     HtmlWriter *mHtmlWriter = nullptr;
     /** Used only to be able to connect and disconnect finished() signal
       in printMsg() and slotPrintMsg() since mHtmlWriter points only to abstract non-QObject class. */
@@ -678,7 +678,7 @@ public:
     bool mShowSignatureDetails = false;
     bool mShowEncryptionDetails = false;
     bool mForceEmoticons = true;
-    int mRecursionCountForDisplayMessage;
+    int mRecursionCountForDisplayMessage = 0;
     KMime::Content *mCurrentContent = nullptr;
     KMime::Content *mMessagePartNode = nullptr;
     QString mMessagePath;

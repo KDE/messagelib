@@ -182,18 +182,13 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     : QObject(aParent)
     , mNodeHelper(new MimeTreeParser::NodeHelper)
     , mOldGlobalOverrideEncoding(QStringLiteral("---"))
-    , mMsgDisplay(true)
-    , mCSSHelper(nullptr)
     , mMainWindow(mainWindow)
     , mActionCollection(actionCollection)
-    , mCanStartDrag(false)
-    , mRecursionCountForDisplayMessage(0)
     , q(aParent)
     , mSession(new Akonadi::Session("MessageViewer-"
                                     + QByteArray::number(reinterpret_cast<quintptr>(this)), this))
     , mPreviouslyViewedItem(-1)
 {
-    mMimePartTree = nullptr;
     if (!mainWindow) {
         mMainWindow = aParent;
     }
@@ -214,15 +209,10 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     mShareServiceManager = new PimCommon::ShareServiceUrlManager(this);
 
     mDisplayFormatMessageOverwrite = MessageViewer::Viewer::UseGlobalSetting;
-    mHtmlLoadExtOverride = false;
-
-    mHtmlLoadExternalDefaultSetting = false;
-    mHtmlMailGlobalSetting = false;
 
     mUpdateReaderWinTimer.setObjectName(QStringLiteral("mUpdateReaderWinTimer"));
     mResizeTimer.setObjectName(QStringLiteral("mResizeTimer"));
 
-    mPrinting = false;
 
     createWidgets();
     createActions();
@@ -530,7 +520,7 @@ void ViewerPrivate::slotOpenWithDialogCurrentContent()
 
 void ViewerPrivate::slotOpenWithDialog()
 {
-    auto contents = selectedContents();
+    const auto contents = selectedContents();
     if (contents.count() == 1) {
         attachmentOpenWith(contents.first());
     }
@@ -803,10 +793,10 @@ KMime::Message::Ptr ViewerPrivate::message() const
 
 bool ViewerPrivate::decryptMessage() const
 {
-    if (!MessageViewer::MessageViewerSettings::self()->alwaysDecrypt()) {
-        return mDecrytMessageOverwrite;
-    } else {
+    if (MessageViewer::MessageViewerSettings::self()->alwaysDecrypt()) {
         return true;
+    } else {
+        return mDecrytMessageOverwrite;
     }
 }
 
@@ -2003,7 +1993,7 @@ const QTextCodec *ViewerPrivate::codecForName(const QByteArray &_str)
     if (_str.isEmpty()) {
         return nullptr;
     }
-    QByteArray codec = _str.toLower();
+    const QByteArray codec = _str.toLower();
     return KCharsets::charsets()->codecForName(QLatin1String(codec));
 }
 
