@@ -473,6 +473,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("%OHEADER=\"SSS\"") << "%HEADER=\"SSS\"" << fileName << "" << false;
     QTest::newRow("%OHEADER=\"To\"") << "%OHEADER=\"To\"" << fileName << "kde <foo@yoohoo.org>" << false;
     QTest::newRow("%HEADER( To )") << "%HEADER( To )" << fileName << "kde <foo@yoohoo.org>" << false;
+    QTest::newRow("%HEADER( To ) second test ") << "foo %HEADER( To )" << fileName << "foo kde <foo@yoohoo.org>" << false;
     //Unknown command
     QTest::newRow("unknown command") << "%GGGGG" << fileName << "%GGGGG" << false;
 
