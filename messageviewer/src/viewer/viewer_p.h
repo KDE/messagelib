@@ -451,9 +451,6 @@ private Q_SLOTS:
     void slotMessageMayBeAScam();
     void slotMessageIsNotAScam();
     void slotAddToWhiteList();
-    void slotFormSubmittedForbidden();
-    void slotMailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &blacklist);
-
     void slotItemChanged(const Akonadi::Item &item, const QSet<QByteArray> &partIdentifiers);
     void slotItemMoved(const Akonadi::Item &, const Akonadi::Collection &, const Akonadi::Collection &);
 

@@ -1022,10 +1022,8 @@ void ViewerPrivate::initHtmlWidget()
             this, &ViewerPrivate::slotWheelZoomChanged);
     connect(mViewer, &MailWebEngineView::messageMayBeAScam, this,
             &ViewerPrivate::slotMessageMayBeAScam);
-    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, this,
-            &ViewerPrivate::slotFormSubmittedForbidden);
-    connect(mViewer, &MailWebEngineView::mailTrackingFound, this,
-            &ViewerPrivate::slotMailTrackingFound);
+    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, mSubmittedFormWarning, &SubmittedFormWarningWidget::showWarning);
+    connect(mViewer, &MailWebEngineView::mailTrackingFound, mMailTrackingWarning, &MailTrackingWarningWidget::addTracker);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer,
             &MailWebEngineView::slotShowDetails);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this,
@@ -3094,16 +3092,6 @@ void ViewerPrivate::slotAddToWhiteList()
             MessageViewer::MessageViewerSettings::self()->save();
         }
     }
-}
-
-void ViewerPrivate::slotMailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &blacklist)
-{
-    mMailTrackingWarning->addTracker(blacklist);
-}
-
-void ViewerPrivate::slotFormSubmittedForbidden()
-{
-    mSubmittedFormWarning->showWarning();
 }
 
 void ViewerPrivate::slotRefreshMessage(const Akonadi::Item &item)
