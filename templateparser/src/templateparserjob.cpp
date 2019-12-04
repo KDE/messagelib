@@ -48,6 +48,7 @@
 #include <QFileInfo>
 #include <QTextCodec>
 #include <QLocale>
+#include <QRegularExpression>
 
 namespace {
 Q_DECL_CONSTEXPR inline int pipeTimeout()
@@ -686,15 +687,14 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
             } else if (cmd.startsWith(QLatin1String("HEADER( "))) {
                 // insert specified content of header from current message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADER(";
-                QRegExp re = QRegExp(QLatin1String("^HEADER\\((.+)\\)"));
-                re.setMinimal(true);
-                int res = re.indexIn(cmd);
+                QRegularExpressionMatch match;
+                const int res = cmd.indexOf(QRegularExpression(QLatin1String("^HEADER\\((.+)\\)")), 0, &match);
                 if (res != 0) {
                     // something wrong
                     i += strlen("HEADER( ");
                 } else {
-                    i += re.matchedLength();
-                    const QString hdr = re.cap(1).trimmed();
+                    i += match.capturedLength(1) + 10; //lenght of HEADER(<space> + <space>)
+                    const QString hdr = match.captured(1).trimmed();
                     QString str;
                     if (auto hrdMsgOrigin = d->mOrigMsg->headerByType(hdr.toLocal8Bit().constData())) {
                         str = hrdMsgOrigin->asUnicodeString();
