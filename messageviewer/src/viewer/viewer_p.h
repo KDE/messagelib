@@ -368,10 +368,6 @@ public:
 
     KMime::Content *findContentByType(KMime::Content *content, const QByteArray &type); //TODO(Andras) move to MimeTreeParser::NodeHelper
 
-    /** Return a QTextCodec for the specified charset.
-    * This function is a bit more tolerant, than QTextCodec::codecForName */
-    static const QTextCodec *codecForName(const QByteArray &_str); //TODO(Andras) move to a utility class?
-
     /** Saves the relative position of the scroll view. Call this before calling update()
       if you want to preserve the current view. */
     void saveRelativePosition();

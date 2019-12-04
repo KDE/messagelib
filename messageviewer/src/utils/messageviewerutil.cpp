@@ -587,3 +587,12 @@ void Util::addHelpTextAction(QAction *act, const QString &text)
         act->setWhatsThis(text);
     }
 }
+
+const QTextCodec *Util::codecForName(const QByteArray &_str)
+{
+    if (_str.isEmpty()) {
+        return nullptr;
+    }
+    const QByteArray codec = _str.toLower();
+    return KCharsets::charsets()->codecForName(QLatin1String(codec));
+}

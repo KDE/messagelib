@@ -1888,7 +1888,7 @@ const QTextCodec *ViewerPrivate::overrideCodec() const
     if (mOverrideEncoding.isEmpty() || mOverrideEncoding == QLatin1String("Auto")) { // Auto
         return nullptr;
     } else {
-        return ViewerPrivate::codecForName(mOverrideEncoding.toLatin1());
+        return MessageViewer::Util::codecForName(mOverrideEncoding.toLatin1());
     }
 }
 
@@ -1988,15 +1988,6 @@ KMime::Content *ViewerPrivate::findContentByType(KMime::Content *content, const 
 }
 
 //-----------------------------------------------------------------------------
-const QTextCodec *ViewerPrivate::codecForName(const QByteArray &_str)
-{
-    if (_str.isEmpty()) {
-        return nullptr;
-    }
-    const QByteArray codec = _str.toLower();
-    return KCharsets::charsets()->codecForName(QLatin1String(codec));
-}
-
 void ViewerPrivate::update(MimeTreeParser::UpdateMode updateMode)
 {
     // Avoid flicker, somewhat of a cludge
