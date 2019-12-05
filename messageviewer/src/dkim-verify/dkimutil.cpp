@@ -158,3 +158,8 @@ QString MessageViewer::DKIMUtil::emailSubDomain(const QString &emailDomain)
     }
     return emailDomain;
 }
+
+QString MessageViewer::DKIMUtil::defaultConfigFileName()
+{
+    return QStringLiteral("dkimsettingsrc");
+}

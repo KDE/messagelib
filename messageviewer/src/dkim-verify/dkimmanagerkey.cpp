@@ -18,7 +18,7 @@
 */
 
 #include "dkimmanagerkey.h"
-
+#include "dkimutil.h"
 #include <KSharedConfig>
 #include <KConfig>
 #include <KConfigGroup>
@@ -84,7 +84,7 @@ QVector<KeyInfo> DKIMManagerKey::keys() const
 
 void DKIMManagerKey::loadKeys()
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(QStringLiteral("dkimsettingsrc"), KConfig::NoGlobals);
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
     const QStringList keyGroups
         = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Key Record #\\d+")));
 
@@ -100,7 +100,7 @@ void DKIMManagerKey::loadKeys()
 
 void DKIMManagerKey::saveKeys()
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(QStringLiteral("dkimsettingsrc"), KConfig::NoGlobals);
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
     const QStringList filterGroups
         = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Key Record #\\d+")));
 

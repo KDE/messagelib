@@ -18,7 +18,7 @@
 */
 
 #include "dkimmanagerrules.h"
-
+#include "dkimutil.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QRegularExpression>
@@ -61,7 +61,7 @@ QStringList DKIMManagerRules::ruleGroups(const KSharedConfig::Ptr &config) const
 
 void DKIMManagerRules::loadRules(const QString &fileName)
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(fileName.isEmpty() ? QStringLiteral("dkimsettingsrc") : fileName, KConfig::NoGlobals);
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(fileName.isEmpty() ? MessageViewer::DKIMUtil::defaultConfigFileName() : fileName, KConfig::NoGlobals);
     const QStringList rulesGroups = ruleGroups(config);
 
     mRules.clear();
@@ -108,7 +108,7 @@ void DKIMManagerRules::exportRules(const QString &fileName)
 
 void DKIMManagerRules::save(const QString &fileName)
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(fileName.isEmpty() ? QStringLiteral("dkimsettingsrc") : fileName, KConfig::NoGlobals);
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(fileName.isEmpty() ? MessageViewer::DKIMUtil::defaultConfigFileName() : fileName, KConfig::NoGlobals);
     const QStringList rulesGroups = ruleGroups(config);
 
     for (const QString &group : rulesGroups) {
