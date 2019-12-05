@@ -868,15 +868,9 @@ void ViewerPrivate::displayMessage()
         }
 
         htmlWriter()->write(QStringLiteral(
-                                "<div style=\"background:%1;color:%2;border:1px solid %3\">%4</div>").arg(
-                                mBackgroundError.
-                                name(),
-                                mForegroundError
-                                .
-                                name(),
-                                mForegroundError
-                                .
-                                name(), attr->message().toHtmlEscaped()));
+                                "<div style=\"background:%1;color:%2;border:1px solid %2\">%3</div>").arg(
+                                mBackgroundError.name(),
+                                mForegroundError.name(), attr->message().toHtmlEscaped()));
         htmlWriter()->write(QStringLiteral("<p></p>"));
     }
 
