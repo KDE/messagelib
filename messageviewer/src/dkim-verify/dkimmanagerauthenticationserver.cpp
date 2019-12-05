@@ -18,6 +18,10 @@
 */
 
 #include "dkimmanagerauthenticationserver.h"
+#include "dkimutil.h"
+#include <KConfigGroup>
+#include <KSharedConfig>
+
 using namespace MessageViewer;
 
 DKIMManagerAuthenticationServer::DKIMManagerAuthenticationServer(QObject *parent)
@@ -28,7 +32,7 @@ DKIMManagerAuthenticationServer::DKIMManagerAuthenticationServer(QObject *parent
 
 DKIMManagerAuthenticationServer::~DKIMManagerAuthenticationServer()
 {
-
+    save();
 }
 
 
@@ -36,4 +40,24 @@ DKIMManagerAuthenticationServer *DKIMManagerAuthenticationServer::self()
 {
     static DKIMManagerAuthenticationServer s_self;
     return &s_self;
+}
+
+QStringList DKIMManagerAuthenticationServer::serverList() const
+{
+    return mServerList;
+}
+
+void DKIMManagerAuthenticationServer::setServerList(const QStringList &serverList)
+{
+    mServerList = serverList;
+}
+
+void DKIMManagerAuthenticationServer::load()
+{
+    //TODO
+}
+
+void DKIMManagerAuthenticationServer::save()
+{
+    //TODO
 }

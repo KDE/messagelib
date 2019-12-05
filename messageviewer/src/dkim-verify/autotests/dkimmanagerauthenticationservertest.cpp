@@ -20,15 +20,17 @@
 #include "dkimmanagerauthenticationservertest.h"
 #include "dkim-verify/dkimmanagerauthenticationserver.h"
 #include <QTest>
+#include <QStandardPaths>
 QTEST_GUILESS_MAIN(DKIMManagerAuthenticationServerTest)
 
 DKIMManagerAuthenticationServerTest::DKIMManagerAuthenticationServerTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMManagerAuthenticationServerTest::shouldHaveDefaultValue()
 {
-    //TODO
+    MessageViewer::DKIMManagerAuthenticationServer w;
+    QVERIFY(w.serverList().isEmpty());
 }

@@ -31,6 +31,14 @@ public:
     explicit DKIMManagerAuthenticationServer(QObject *parent = nullptr);
     ~DKIMManagerAuthenticationServer();
     static DKIMManagerAuthenticationServer *self();
+
+    Q_REQUIRED_RESULT QStringList serverList() const;
+    void setServerList(const QStringList &serverList);
+
+private:
+    void load();
+    void save();
+    QStringList mServerList;
 };
 }
 
