@@ -71,9 +71,6 @@ namespace MimeTreeParser {
 class ObjectTreeParser;
 }
 #ifdef USE_DKIM_CHECKER
-namespace QCA {
-class Initializer;
-}
 namespace MessageViewer {
 class DKIMWidgetInfo;
 }
@@ -711,7 +708,6 @@ public:
     WebEngineViewer::LocalDataBaseManager *mPhishingDatabase = nullptr;
     MessageViewer::ShowNextMessageWidget *mShowNextMessageWidget = nullptr;
 #ifdef USE_DKIM_CHECKER
-    QCA::Initializer *mQcaInitializer = nullptr;
     MessageViewer::DKIMWidgetInfo *mDkimWidgetInfo = nullptr;
 #endif
 };
