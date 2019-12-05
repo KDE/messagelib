@@ -317,7 +317,7 @@ public:
     */
     void removeMessageLoadedHandler(AbstractMessageLoadedHandler *handler);
 
-    QString selectedText() const;
+    Q_REQUIRED_RESULT QString selectedText() const;
 
     void setExternalWindow(bool b);
 
@@ -325,14 +325,14 @@ public:
     bool mimePartTreeIsEmpty() const;
 
     void showOpenAttachmentFolderWidget(const QList<QUrl> &urls);
-    QList<QAction *> viewerPluginActionList(
+    Q_REQUIRED_RESULT QList<QAction *> viewerPluginActionList(
         MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
-    QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void runJavaScript(const QString &code);
     void setPrintElementBackground(bool printElementBackground);
 
-    bool printingMode() const;
+    Q_REQUIRED_RESULT bool printingMode() const;
 
     Q_REQUIRED_RESULT bool showSignatureDetails() const;
     void setShowSignatureDetails(bool showDetails);
@@ -420,7 +420,7 @@ protected:
     void closeEvent(QCloseEvent *) override;
     void resizeEvent(QResizeEvent *) override;
     /** Watch for palette changes */
-    bool event(QEvent *e) override;
+    Q_REQUIRED_RESULT bool event(QEvent *e) override;
     void changeEvent(QEvent *event) override;
 
     ViewerPrivate *const d_ptr;
