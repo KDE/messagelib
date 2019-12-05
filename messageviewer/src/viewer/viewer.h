@@ -90,8 +90,6 @@ private:
     Private *const d;
 };
 
-//TODO(Andras) once only those methods are public that really need to be public, probably export the whole class instead of just some methods
-
 /**
  * This is the main widget for the viewer.
  * See the documentation of ViewerPrivate for implementation details.
