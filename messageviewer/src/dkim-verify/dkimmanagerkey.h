@@ -22,7 +22,13 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
+#include "config-messageviewer.h"
 #include <QVector>
+#ifdef USE_DKIM_CHECKER
+namespace QCA {
+class Initializer;
+}
+#endif
 namespace MessageViewer {
 /**
  * @brief The KeyInfo struct
@@ -71,6 +77,9 @@ public:
     Q_REQUIRED_RESULT QString keyValue(const QString &selector, const QString &domain);
 private:
     QVector<KeyInfo> mKeys;
+#ifdef USE_DKIM_CHECKER
+    QCA::Initializer *mQcaInitializer = nullptr;
+#endif
 };
 }
 Q_DECLARE_TYPEINFO(MessageViewer::KeyInfo, Q_MOVABLE_TYPE);

@@ -151,7 +151,6 @@
 #ifdef USE_DKIM_CHECKER
 #include "dkim-verify/dkimwidgetinfo.h"
 #include "dkim-verify/dkimmanager.h"
-#include <QtCrypto>
 #endif
 
 using namespace boost;
@@ -193,8 +192,6 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
         mMainWindow = aParent;
     }
 #ifdef USE_DKIM_CHECKER
-    //TODO move in managerkey I think
-    mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
     mDkimWidgetInfo = new MessageViewer::DKIMWidgetInfo(mMainWindow);
 #endif
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
@@ -263,9 +260,6 @@ ViewerPrivate::~ViewerPrivate()
     mNodeHelper->forceCleanTempFiles();
     qDeleteAll(mListMailSourceViewer);
     delete mNodeHelper;
-#ifdef USE_DKIM_CHECKER
-    delete mQcaInitializer;
-#endif
 }
 
 //-----------------------------------------------------------------------------
