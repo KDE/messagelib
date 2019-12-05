@@ -88,6 +88,7 @@ if (${Qca-qt5_FOUND})
         dkim-verify/dkimauthenticationstatusinfoutil.cpp
 	dkim-verify/dkimcheckfulljob.cpp
         dkim-verify/dkimauthenticationstatusinfoconverter.cpp
+        dkim-verify/dkimmanagerauthenticationserver.cpp
         )
 endif()
 
@@ -374,6 +375,7 @@ if (${Qca-qt5_FOUND})
         DKIMManagerRules
         DKIMRule
         DKIMHeaderParser
+        DKIMManagerAuthenticationServer
         REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
         PREFIX MessageViewer
         RELATIVE dkim-verify
