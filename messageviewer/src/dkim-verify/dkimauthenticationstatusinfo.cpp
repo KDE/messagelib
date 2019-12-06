@@ -52,7 +52,7 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key,
         } else {
             mAuthVersion = 1;
         }
-        valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length()));
+        valueKey = valueKey.right(valueKey.length() - (index + match.capturedLength(0)));
         //qDebug() << " match.captured(0)"<<match.captured(0)<<"match.captured(1)" <<match.captured(1) << match.captured(2);
         //qDebug() << " valueKey" << valueKey;
     } else {
@@ -107,7 +107,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     }
     authStatusInfo.result = match.captured(3);
 
-    valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
+    valueKey = valueKey.right(valueKey.length() - (index + match.capturedLength(0))); // Improve it!
 
     // 3) extract reasonspec (optional)
     const QString reasonspec_p = DKIMAuthenticationStatusInfoUtil::regexMatchO(QLatin1String("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + DKIMAuthenticationStatusInfoUtil::value_cp());
@@ -115,7 +115,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     if (index != -1) {
         //qDebug() << " reason " << match.capturedTexts();
         authStatusInfo.reason = match.captured(2);
-        valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
+        valueKey = valueKey.right(valueKey.length() - (index + match.capturedLength(0))); // Improve it!
     }
     // 4) extract propspec (optional)
     QString pvalue_p = DKIMAuthenticationStatusInfoUtil::value_p() + QLatin1String("|(?:(?:") + DKIMAuthenticationStatusInfoUtil::localPart_p() + QLatin1String("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + QLatin1Char(')');
@@ -140,7 +140,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
         index = valueKey.indexOf(reg, 0, &match);
         while (index != -1) {
             //qDebug() << " propspec " << match.capturedTexts();
-            valueKey = valueKey.right(valueKey.length() - (index + match.captured(0).length())); // Improve it!
+            valueKey = valueKey.right(valueKey.length() - (index + match.capturedLength(0))); // Improve it!
             //qDebug() << " value KEy " << valueKey;
             const QString &captured1 = match.captured(1);
             //qDebug() << " captured1 " << captured1;
