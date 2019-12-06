@@ -38,6 +38,7 @@ QTEST_MAIN(ObjectTreeParserTest)
 void ObjectTreeParserTest::initTestCase()
 {
     Test::setupEnv();
+    qputenv("TZ", "GMT");
 }
 
 QString stringifyMessagePartTree(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
