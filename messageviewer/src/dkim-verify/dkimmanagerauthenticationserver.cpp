@@ -23,18 +23,18 @@
 #include <KSharedConfig>
 
 using namespace MessageViewer;
-
+namespace {
+static const char myConfigGroupName[] = "AuthenticationServer";
+}
 DKIMManagerAuthenticationServer::DKIMManagerAuthenticationServer(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DKIMManagerAuthenticationServer::~DKIMManagerAuthenticationServer()
 {
     save();
 }
-
 
 DKIMManagerAuthenticationServer *DKIMManagerAuthenticationServer::self()
 {
@@ -55,13 +55,13 @@ void DKIMManagerAuthenticationServer::setServerList(const QStringList &serverLis
 void DKIMManagerAuthenticationServer::load()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, "AuthenticationServer");
+    KConfigGroup grp(config, myConfigGroupName);
     mServerList = grp.readEntry("ServerList", QStringList());
 }
 
 void DKIMManagerAuthenticationServer::save()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, "AuthenticationServer");
+    KConfigGroup grp(config, myConfigGroupName);
     grp.writeEntry("ServerList", mServerList);
 }
