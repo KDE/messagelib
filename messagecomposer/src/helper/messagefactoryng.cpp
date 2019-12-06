@@ -42,7 +42,6 @@
 #include "messagecomposer_debug.h"
 #include <KCharsets>
 #include <QTextCodec>
-#include <KCharsets>
 
 using namespace MessageComposer;
 

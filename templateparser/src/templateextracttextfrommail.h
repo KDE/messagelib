@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef TEMPLATEWEBENGINEVIEW_H
-#define TEMPLATEWEBENGINEVIEW_H
+#ifndef TEMPLATEEXTRACTTEXTFROMMAIL_H
+#define TEMPLATEEXTRACTTEXTFROMMAIL_H
 
 #include "templateparser_export.h"
 #include <QObject>
@@ -50,4 +50,4 @@ private:
     TemplateWebEnginePage *mPage = nullptr;
 };
 }
-#endif // TEMPLATEWEBENGINEVIEW_H
+#endif // TEMPLATEEXTRACTTEXTFROMMAIL_H

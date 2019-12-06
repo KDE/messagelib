@@ -39,7 +39,6 @@
 #include <string>
 #include <sstream>
 #include <algorithm>
-#include <KCharsets>
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <QFileDevice>
@@ -785,7 +784,7 @@ KMime::Content *NodeHelper::fromHREF(const KMime::Message::Ptr &mMessage, const 
 QString NodeHelper::fixEncoding(const QString &encoding)
 {
     QString returnEncoding = encoding;
-    // According to http://www.iana.org/assignments/character-sets, uppercase is
+    // According to https://www.iana.org/assignments/character-sets, uppercase is
     // preferred in MIME headers
     const QString returnEncodingToUpper = returnEncoding.toUpper();
     if (returnEncodingToUpper.contains(QLatin1String("ISO "))) {

@@ -39,7 +39,6 @@
 #include <QVBoxLayout>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
-#include <KConfigGroup>
 
 using namespace MessageComposer;
 
