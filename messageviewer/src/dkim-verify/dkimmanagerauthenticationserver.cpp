@@ -54,10 +54,14 @@ void DKIMManagerAuthenticationServer::setServerList(const QStringList &serverLis
 
 void DKIMManagerAuthenticationServer::load()
 {
-    //TODO
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
+    KConfigGroup grp(config, "AuthenticationServer");
+    mServerList = grp.readEntry("ServerList", QStringList());
 }
 
 void DKIMManagerAuthenticationServer::save()
 {
-    //TODO
+    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
+    KConfigGroup grp(config, "AuthenticationServer");
+    grp.writeEntry("ServerList", mServerList);
 }
