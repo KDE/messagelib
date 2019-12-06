@@ -693,7 +693,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     // something wrong
                     i += strlen("HEADER( ");
                 } else {
-                    i += match.capturedLength(1) + 10; //lenght of HEADER(<space> + <space>)
+                    i += match.capturedLength(0); //lenght of HEADER(<space> + <space>)
                     const QString hdr = match.captured(1).trimmed();
                     QString str;
                     if (auto hrdMsgOrigin = d->mOrigMsg->headerByType(hdr.toLocal8Bit().constData())) {
