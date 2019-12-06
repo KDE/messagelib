@@ -37,9 +37,9 @@ void RiceEncodingDecoderTest::shouldDecodeRiceIndices_data()
     QTest::addColumn<int>("riceParameter");
     QTest::addColumn<int>("numberEntries");
     QTest::addColumn<QByteArray>("encodingData");
-    QTest::addColumn<QList<quint32> >("result");
-    QTest::newRow("empty") << QByteArray() << 0 << 0 << QByteArray() << QList<quint32>();
-    QList<quint32> result;
+    QTest::addColumn<QVector<quint32> >("result");
+    QTest::newRow("empty") << QByteArray() << 0 << 0 << QByteArray() << QVector<quint32>();
+    QVector<quint32> result;
     result << 3;
     QTest::newRow("zero value") << QByteArray("3") << 2 << 0 << QByteArray() << result;
 
