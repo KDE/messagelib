@@ -1417,8 +1417,7 @@ void ViewerPrivate::adjustLayout()
 #ifndef QT_NO_TREEVIEW
     const int mimeH = MessageViewer::MessageViewerSettings::self()->mimePaneHeight();
     const int messageH = MessageViewer::MessageViewerSettings::self()->messagePaneHeight();
-    QList<int> splitterSizes;
-    splitterSizes << messageH << mimeH;
+    const QList<int> splitterSizes{messageH, mimeH};
 
     mSplitter->addWidget(mMimePartTree);
     mSplitter->setSizes(splitterSizes);
@@ -1523,7 +1522,7 @@ void ViewerPrivate::createWidgets()
     mViewerPluginToolManager->setPluginName(QStringLiteral("messageviewer"));
     mViewerPluginToolManager->setServiceTypeName(QStringLiteral("MessageViewer/ViewerPlugin"));
     if (!mViewerPluginToolManager->initializePluginList()) {
-        qCDebug(MESSAGEVIEWER_LOG) << " Impossible to initialize plugins";
+        qCWarning(MESSAGEVIEWER_LOG) << " Impossible to initialize plugins";
     }
     mViewerPluginToolManager->createView();
     connect(mViewerPluginToolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this,
@@ -1899,13 +1898,13 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
     KMime::Content *child = MessageCore::NodeHelper::firstChild(node);
 
     if (child) {
-        QString subHtml = renderAttachments(child, nextColor(bgColor));
+        const QString subHtml = renderAttachments(child, nextColor(bgColor));
         if (!subHtml.isEmpty()) {
             QString margin;
             if (node != mMessage.data() || headerStylePlugin()->hasMargin()) {
                 margin = QStringLiteral("padding:2px; margin:2px; ");
             }
-            QString align = headerStylePlugin()->alignment();
+            const QString align = headerStylePlugin()->alignment();
             const QByteArray mediaTypeLower = node->contentType()->mediaType().toLower();
             const bool result
                 = (mediaTypeLower == "message" || mediaTypeLower == "multipart"
@@ -2331,7 +2330,7 @@ void ViewerPrivate::slotPrintPreview()
         return;
     }
     //Need to delay
-    QTimer::singleShot(1 * 1000, this, &ViewerPrivate::slotDelayPrintPreview);
+    QTimer::singleShot(1000, this, &ViewerPrivate::slotDelayPrintPreview); //1 second
 }
 
 void ViewerPrivate::slotDelayPrintPreview()
@@ -2343,7 +2342,7 @@ void ViewerPrivate::slotDelayPrintPreview()
     connect(dialog, &QPrintPreviewDialog::paintRequested, this, [=](QPrinter *printing) {
         QApplication::setOverrideCursor(Qt::WaitCursor);
 
-        mViewer->execPrintPreviewPage(printing, 10*1000);
+        mViewer->execPrintPreviewPage(printing, 10000); // 10 seconds
         QApplication::restoreOverrideCursor();
     });
 
