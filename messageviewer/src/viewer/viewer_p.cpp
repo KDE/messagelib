@@ -151,6 +151,7 @@
 #ifdef USE_DKIM_CHECKER
 #include "dkim-verify/dkimwidgetinfo.h"
 #include "dkim-verify/dkimmanager.h"
+#include "dkim-verify/dkimresultattribute.h"
 #endif
 
 using namespace boost;
@@ -251,6 +252,9 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     fs.fetchAttribute<MailTransport::ErrorAttribute>();
     fs.fetchAttribute<MessageViewer::MessageDisplayFormatAttribute>();
     fs.fetchAttribute<MessageViewer::ScamAttribute>();
+#ifdef USE_DKIM_CHECKER
+    fs.fetchAttribute<MessageViewer::DKIMResultAttribute>();
+#endif
     mMonitor.setItemFetchScope(fs);
     connect(&mMonitor, &Akonadi::Monitor::itemChanged,
             this, &ViewerPrivate::slotItemChanged);
