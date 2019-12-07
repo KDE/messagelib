@@ -34,7 +34,7 @@
 #include <AkonadiCore/session.h>
 #include <kio/job.h>
 #include <KMime/Message>
-#include <kservice.h>
+#include <KService>
 #include <KSharedConfig>
 #include <QPointer>
 #include <QUrl>
