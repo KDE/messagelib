@@ -365,7 +365,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
         return true;
     }
 
-    QList<KMime::Content *> extraNodes = mNodeHelper->extraContents(mMessage.data());
+    const QList<KMime::Content *> extraNodes = mNodeHelper->extraContents(mMessage.data());
     if (extraNodes.contains(node->topLevel())) {
         KMessageBox::error(mMainWindow,
                            i18n(
@@ -669,7 +669,7 @@ QString ViewerPrivate::createAtmFileLink(const QString &atmFileName) const
                QFile::encodeName(linkName).constData()) == 0) {
         return linkName; // success
     }
-    return QString();
+    return {};
 }
 
 KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
@@ -1109,6 +1109,7 @@ void ViewerPrivate::readConfig()
     applyZoomValue(MessageViewer::MessageViewerSettings::self()->zoomFactor(), false);
 }
 
+//TODO move outside viewer_p.cpp
 void ViewerPrivate::readGravatarConfig()
 {
     Gravatar::GravatarCache::self()->setMaximumSize(
