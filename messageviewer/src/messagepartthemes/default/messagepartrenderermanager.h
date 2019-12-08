@@ -48,8 +48,8 @@ public:
     ~MessagePartRendererManager();
     static MessagePartRendererManager *self();
 
-    Grantlee::Template loadByName(const QString &name);
-    Grantlee::Context createContext();
+    Q_REQUIRED_RESULT Grantlee::Template loadByName(const QString &name);
+    Q_REQUIRED_RESULT Grantlee::Context createContext();
 private:
     void initializeRenderer();
     GrantleeTheme::Engine *m_engine = nullptr;

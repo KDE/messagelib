@@ -67,8 +67,8 @@ public:
     ~AttachmentMarkBlock() override;
 
 protected:
-    QString enterString() const override;
-    QString exitString() const override;
+    Q_REQUIRED_RESULT QString enterString() const override;
+    Q_REQUIRED_RESULT QString exitString() const override;
 
 private:
     void internalEnter();

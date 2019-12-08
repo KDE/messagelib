@@ -39,7 +39,7 @@ public:
     explicit ScamCheckShortUrl(QObject *parent = nullptr);
     ~ScamCheckShortUrl();
 
-    static bool isShortUrl(const QUrl &url);
+    static Q_REQUIRED_RESULT bool isShortUrl(const QUrl &url);
 
     void expandedUrl(const QUrl &url);
 
