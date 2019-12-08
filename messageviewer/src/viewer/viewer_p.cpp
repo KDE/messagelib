@@ -35,8 +35,7 @@
 #include "messageviewer/headerstyle.h"
 #include "messageviewer/headerstrategy.h"
 #include "kpimtextedit/slidecontainer.h"
-#include <Gravatar/GravatarCache>
-#include <gravatar/gravatarsettings.h>
+
 #include "job/modifymessagedisplayformatjob.h"
 
 #include "viewerplugins/viewerplugintoolmanager.h"
@@ -1081,7 +1080,7 @@ void ViewerPrivate::readConfig()
 
     mHtmlMailGlobalSetting = MessageViewer::MessageViewerSettings::self()->htmlMail();
 
-    readGravatarConfig();
+    MessageViewer::Util::readGravatarConfig();
     if (mHeaderStyleMenuManager) {
         mHeaderStyleMenuManager->readConfig();
     }
@@ -1107,16 +1106,6 @@ void ViewerPrivate::readConfig()
     }
     mColorBar->update();
     applyZoomValue(MessageViewer::MessageViewerSettings::self()->zoomFactor(), false);
-}
-
-//TODO move outside viewer_p.cpp
-void ViewerPrivate::readGravatarConfig()
-{
-    Gravatar::GravatarCache::self()->setMaximumSize(
-        Gravatar::GravatarSettings::self()->gravatarCacheSize());
-    if (!Gravatar::GravatarSettings::self()->gravatarSupportEnabled()) {
-        Gravatar::GravatarCache::self()->clear();
-    }
 }
 
 void ViewerPrivate::recreateCssHelper()

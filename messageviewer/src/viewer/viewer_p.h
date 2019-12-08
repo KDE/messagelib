@@ -589,8 +589,6 @@ Q_SIGNALS:
 private:
     Q_REQUIRED_RESULT QString attachmentHtml() const;
 
-    void readGravatarConfig();
-
     void replyMessageToAuthor(KMime::Content *atmNode);
     void replyMessageToAll(KMime::Content *atmNode);
     bool urlIsAMalwareButContinue();

@@ -47,6 +47,9 @@
 
 #include "PimCommon/RenameFileDialog"
 
+#include <Gravatar/GravatarCache>
+#include <gravatar/gravatarsettings.h>
+
 #include <AkonadiCore/item.h>
 
 #include <kmbox/mbox.h>
@@ -595,4 +598,13 @@ const QTextCodec *Util::codecForName(const QByteArray &_str)
     }
     const QByteArray codec = _str.toLower();
     return KCharsets::charsets()->codecForName(QLatin1String(codec));
+}
+
+void Util::readGravatarConfig()
+{
+    Gravatar::GravatarCache::self()->setMaximumSize(
+        Gravatar::GravatarSettings::self()->gravatarCacheSize());
+    if (!Gravatar::GravatarSettings::self()->gravatarSupportEnabled()) {
+        Gravatar::GravatarCache::self()->clear();
+    }
 }

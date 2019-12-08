@@ -55,6 +55,7 @@ Q_REQUIRED_RESULT KMime::Content::List allContents(const KMime::Content *message
 Q_REQUIRED_RESULT bool saveContents(QWidget *parent, const KMime::Content::List &contents, QList<QUrl> &urlList);
 Q_REQUIRED_RESULT bool saveContent(QWidget *parent, KMime::Content *content, const QUrl &url);
 void addHelpTextAction(QAction *act, const QString &text);
+void readGravatarConfig();
 }
 }
 #endif
