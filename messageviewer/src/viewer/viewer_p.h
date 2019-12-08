@@ -38,6 +38,7 @@
 #include <KSharedConfig>
 #include <QPointer>
 #include <QUrl>
+#include <QVector>
 #include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>
 
 #include <QObject>
@@ -237,7 +238,6 @@ public:
     */
     void prepareHandleAttachment(KMime::Content *node);
 
-    Q_REQUIRED_RESULT QString createAtmFileLink(const QString &atmFileName) const;
     Q_REQUIRED_RESULT KService::Ptr getServiceOffer(KMime::Content *content);
     Q_REQUIRED_RESULT KMime::Content::List selectedContents() const;
     void attachmentOpenWith(KMime::Content *node, const KService::Ptr &offer = KService::Ptr());
@@ -626,7 +626,7 @@ public:
     bool mMsgDisplay = true;
 
     CSSHelper *mCSSHelper = nullptr;
-    bool mUseFixedFont;
+    bool mUseFixedFont = false;
     bool mPrinting = false;
     QWidget *mMainWindow = nullptr;
     KActionCollection *mActionCollection = nullptr;
@@ -691,7 +691,7 @@ public:
     MessageViewer::ViewerPluginToolManager *mViewerPluginToolManager = nullptr;
     WebEngineViewer::ZoomActionMenu *mZoomActionMenu = nullptr;
     QPrinter *mCurrentPrinter = nullptr;
-    QList<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
+    QVector<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
     WebEngineViewer::LocalDataBaseManager *mPhishingDatabase = nullptr;
     MessageViewer::ShowNextMessageWidget *mShowNextMessageWidget = nullptr;
 #ifdef USE_DKIM_CHECKER

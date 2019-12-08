@@ -87,13 +87,6 @@ void PrintingSettings::doLoadFromGlobalSettings()
 void PrintingSettings::doResetToDefaultsOther()
 {
     const bool bUseDefaults = MessageViewer::MessageViewerSettings::self()->useDefaults(true);
-    loadWidget(d->mPrintingUi->mPrintEmptySelectedText,
-               MessageViewer::MessageViewerSettings::self()->printSelectedTextItem());
-    loadWidget(d->mPrintingUi->respectExpandCollapseSettings,
-               MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettingsItem());
-    loadWidget(d->mPrintingUi->printBackgroundColorAndImages,
-               MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
-    loadWidget(d->mPrintingUi->alwaysShowEncryptionSignatureDetail,
-               MessageViewer::MessageViewerSettings::self()->alwaysShowEncryptionSignatureDetailsItem());
+    doLoadFromGlobalSettings();
     MessageViewer::MessageViewerSettings::self()->useDefaults(bUseDefaults);
 }

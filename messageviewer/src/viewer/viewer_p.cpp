@@ -649,28 +649,6 @@ void ViewerPrivate::prepareHandleAttachment(KMime::Content *node)
     mCurrentContent = node;
 }
 
-QString ViewerPrivate::createAtmFileLink(const QString &atmFileName) const
-{
-    QFileInfo atmFileInfo(atmFileName);
-
-    // tempfile name is /TMP/attachmentsRANDOM/atmFileInfo.fileName()"
-    const QString tmpPath = QDir::tempPath() + QLatin1String("/attachments");
-    QDir().mkpath(tmpPath);
-    QTemporaryDir *linkDir = new QTemporaryDir(tmpPath);
-    QString linkPath = linkDir->path() + QLatin1Char('/') + atmFileInfo.fileName();
-    QFile *linkFile = new QFile(linkPath);
-    linkFile->open(QIODevice::ReadWrite);
-    const QString linkName = linkFile->fileName();
-    delete linkFile;
-    delete linkDir;
-
-    if (::link(QFile::encodeName(atmFileName).constData(),
-               QFile::encodeName(linkName).constData()) == 0) {
-        return linkName; // success
-    }
-    return {};
-}
-
 KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
 {
     const QString fileName = mNodeHelper->writeNodeToTempFile(content);
@@ -1839,6 +1817,8 @@ KToggleAction *ViewerPrivate::actionForAttachmentStrategy(
         actionName = QStringLiteral("view_attachments_hide");
     } else if (as == AttachmentStrategy::headerOnly()) {
         actionName = QStringLiteral("view_attachments_headeronly");
+    } else {
+        qCWarning(MESSAGEVIEWER_LOG) << "actionForAttachmentStrategy invalid attachment type";
     }
 
     if (actionName.isEmpty()) {
