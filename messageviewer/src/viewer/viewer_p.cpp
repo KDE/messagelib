@@ -299,7 +299,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
         KMime::Message::Ptr m(new KMime::Message);
         m->setContent(node->parent()->bodyAsMessage()->encodedContent());
         m->parse();
-        atmViewMsg(m);
+        attachmentViewMessage(m);
         return;
     }
     // determine the MIME type of the attachment
@@ -1373,7 +1373,7 @@ void ViewerPrivate::showHideMimeTree()
 #endif
 }
 
-void ViewerPrivate::atmViewMsg(const KMime::Message::Ptr &message)
+void ViewerPrivate::attachmentViewMessage(const KMime::Message::Ptr &message)
 {
     Q_ASSERT(message);
     Q_EMIT showMessage(message, overrideEncoding());
@@ -2273,7 +2273,7 @@ void ViewerPrivate::attachmentView(KMime::Content *atmNode)
     if (atmNode) {
         const bool isEncapsulatedMessage = atmNode->parent() && atmNode->parent()->bodyIsMessage();
         if (isEncapsulatedMessage) {
-            atmViewMsg(atmNode->parent()->bodyAsMessage());
+            attachmentViewMessage(atmNode->parent()->bodyAsMessage());
         } else if ((qstricmp(atmNode->contentType()->mediaType().constData(), "text") == 0)
                    && ((qstricmp(atmNode->contentType()->subType().constData(), "x-vcard") == 0)
                        || (qstricmp(atmNode->contentType()->subType().constData(),

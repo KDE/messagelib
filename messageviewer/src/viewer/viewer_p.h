@@ -345,7 +345,7 @@ public:
     void showHideMimeTree();
 
     /** View message part of type message/RFC822 in extra viewer window. */
-    void atmViewMsg(const KMime::Message::Ptr &message);
+    void attachmentViewMessage(const KMime::Message::Ptr &message);
 
     void adjustLayout();
     void createWidgets();
