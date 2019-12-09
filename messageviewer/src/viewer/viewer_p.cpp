@@ -467,10 +467,8 @@ void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTyp
         }
         //qCDebug(MESSAGEVIEWER_LOG) << offers.count() << "offers" << topMenu << menu;
 
-        KService::List::ConstIterator it = offers.constBegin();
-        KService::List::ConstIterator end = offers.constEnd();
-        for (; it != end; ++it) {
-            QAction *act = MessageViewer::Util::createAppAction(*it,
+        for (const KService::Ptr &ser : offers) {
+            QAction *act = MessageViewer::Util::createAppAction(ser,
                                                                 // no submenu -> prefix single offer
                                                                 menu == topMenu, actionGroup, menu);
             menu->addAction(act);
