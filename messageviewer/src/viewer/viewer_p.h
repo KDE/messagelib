@@ -677,7 +677,7 @@ public:
     Akonadi::Session *mSession = nullptr;
     Akonadi::Monitor mMonitor;
     QSet<AbstractMessageLoadedHandler *> mMessageLoadedHandlers;
-    Akonadi::Item::Id mPreviouslyViewedItem;
+    Akonadi::Item::Id mPreviouslyViewedItemId;
 
     MessageViewer::ScamDetectionWarningWidget *mScamDetectionWarning = nullptr;
     MessageViewer::OpenAttachmentFolderWidget *mOpenAttachmentFolderWidget = nullptr;

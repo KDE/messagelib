@@ -186,7 +186,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     , q(aParent)
     , mSession(new Akonadi::Session("MessageViewer-"
                                     + QByteArray::number(reinterpret_cast<quintptr>(this)), this))
-    , mPreviouslyViewedItem(-1)
+    , mPreviouslyViewedItemId(-1)
 {
     if (!mainWindow) {
         mMainWindow = aParent;
@@ -2936,11 +2936,11 @@ void ViewerPrivate::slotMessageRendered()
     * some asynchronous mementos are involved in rendering. Therefor we
     * have to make sure we execute the MessageLoadedHandlers only once.
     */
-    if (mMessageItem.id() == mPreviouslyViewedItem) {
+    if (mMessageItem.id() == mPreviouslyViewedItemId) {
         return;
     }
 
-    mPreviouslyViewedItem = mMessageItem.id();
+    mPreviouslyViewedItemId = mMessageItem.id();
 
     for (AbstractMessageLoadedHandler *handler : qAsConst(mMessageLoadedHandlers)) {
         handler->setItem(mMessageItem);
