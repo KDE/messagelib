@@ -27,16 +27,16 @@ class QMenu;
 
 namespace MessageList {
 namespace Util {
-QString messageSortingConfigName();
-QString messageSortDirectionConfigName();
-QString groupSortingConfigName();
-QString groupSortDirectionConfigName();
-QString messageUniqueIdConfigName();
-QString storageModelSortOrderGroup();
-QString storageModelThemesGroup();
-QString storageModelAggregationsGroup();
-QString setForStorageModelConfigName();
-QString storageModelSelectedMessageGroup();
+Q_REQUIRED_RESULT QString messageSortingConfigName();
+Q_REQUIRED_RESULT QString messageSortDirectionConfigName();
+Q_REQUIRED_RESULT QString groupSortingConfigName();
+Q_REQUIRED_RESULT QString groupSortDirectionConfigName();
+Q_REQUIRED_RESULT QString messageUniqueIdConfigName();
+Q_REQUIRED_RESULT QString storageModelSortOrderGroup();
+Q_REQUIRED_RESULT QString storageModelThemesGroup();
+Q_REQUIRED_RESULT QString storageModelAggregationsGroup();
+Q_REQUIRED_RESULT QString setForStorageModelConfigName();
+Q_REQUIRED_RESULT QString storageModelSelectedMessageGroup();
 void fillViewMenu(QMenu *menu, QObject *receiver);
 }
 }

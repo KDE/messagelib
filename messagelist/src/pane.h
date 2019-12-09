@@ -81,7 +81,7 @@ public:
     * Returns the current message for the list as Akonadi::Item.
     * May return an invalid Item if there is no current message or no current folder.
     */
-    Akonadi::Item currentItem() const;
+    Q_REQUIRED_RESULT Akonadi::Item currentItem() const;
 
     /**
     * Returns the current message for the list as KMime::Message::Ptr.
@@ -100,7 +100,7 @@ public:
     * to the main even loop. Don't store it for any longer. If you need to reference
     * this set of messages at a later stage then take a look at createPersistentSet().
     */
-    QList<KMime::Message::Ptr > selectionAsMessageList(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT QList<KMime::Message::Ptr > selectionAsMessageList(bool includeCollapsedChildren = true) const;
 
     /**
     * Returns the currently selected Items (bound to current StorageModel).
@@ -113,7 +113,7 @@ public:
     * to the main even loop. Don't store it for any longer. If you need to reference
     * this set of messages at a later stage then take a look at createPersistentSet().
     */
-    Akonadi::Item::List selectionAsMessageItemList(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT Akonadi::Item::List selectionAsMessageItemList(bool includeCollapsedChildren = true) const;
 
     /**
     * Returns the currently selected Items id(bound to current StorageModel).
@@ -126,9 +126,9 @@ public:
     * to the main even loop. Don't store it for any longer. If you need to reference
     * this set of messages at a later stage then take a look at createPersistentSet().
     */
-    QVector<qlonglong> selectionAsMessageItemListId(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT QVector<qlonglong> selectionAsMessageItemListId(bool includeCollapsedChildren = true) const;
 
-    QVector<Akonadi::Item::Id> selectionAsListMessageId(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT QVector<Akonadi::Item::Id> selectionAsListMessageId(bool includeCollapsedChildren = true) const;
 
     /**
     * Returns the Akonadi::Item bound to the current StorageModel that
@@ -140,7 +140,7 @@ public:
     * to the main even loop. Don't store it for any longer. If you need to reference
     * this set of messages at a later stage then take a look at createPersistentSet().
     */
-    Akonadi::Item::List currentThreadAsMessageList() const;
+    Q_REQUIRED_RESULT Akonadi::Item::List currentThreadAsMessageList() const;
 
     /**
     * Selects the next message item in the view.
@@ -155,7 +155,7 @@ public:
     * If loop is true then the "next" algorithm will restart from the beginning
     * of the list if the end is reached, otherwise it will just stop returning false.
     */
-    bool selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop);
+    Q_REQUIRED_RESULT bool selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop);
 
     /**
     * Selects the previous message item in the view.
@@ -170,7 +170,7 @@ public:
     * If loop is true then the "previous" algorithm will restart from the end
     * of the list if the beginning is reached, otherwise it will just stop returning false.
     */
-    bool selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop);
+    Q_REQUIRED_RESULT bool selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop);
 
     /**
     * Focuses the next message item in the view without actually selecting it.
@@ -182,7 +182,7 @@ public:
     * If loop is true then the "next" algorithm will restart from the beginning
     * of the list if the end is reached, otherwise it will just stop returning false.
     */
-    bool focusNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop);
+    Q_REQUIRED_RESULT bool focusNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop);
 
     /**
     * Focuses the previous message item in the view without actually selecting it.
@@ -194,7 +194,7 @@ public:
     * If loop is true then the "previous" algorithm will restart from the end
     * of the list if the beginning is reached, otherwise it will just stop returning false.
     */
-    bool focusPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop);
+    Q_REQUIRED_RESULT bool focusPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop);
 
     /**
     * Selects the currently focused message item. May do nothing if the
@@ -219,7 +219,7 @@ public:
     *
     * The function returns true if a message was selected and false otherwise.
     */
-    bool selectFirstMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem);
+    Q_REQUIRED_RESULT bool selectFirstMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem);
 
     /**
     * Selects the last message item in the view that matches the specified Core::MessageTypeFilter.
@@ -228,7 +228,7 @@ public:
     *
     * The function returns true if a message was selected and false otherwise.
     */
-    bool selectLastMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem);
+    Q_REQUIRED_RESULT bool selectLastMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem);
 
     /**
     * If expand is true then it expands the current thread, otherwise
@@ -258,23 +258,23 @@ public:
     /**
     * Returns the Akonadi::MessageStatus in the current quicksearch field.
     */
-    QVector<Akonadi::MessageStatus> currentFilterStatus() const;
+    Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> currentFilterStatus() const;
 
     /**
     * Returns the search term in the current quicksearch field.
     */
-    QString currentFilterSearchString() const;
+    Q_REQUIRED_RESULT QString currentFilterSearchString() const;
 
     /**
     * Returns true if the current Aggregation is threaded, false otherwise
     * (or if there is no current Aggregation).
     */
-    bool isThreaded() const;
+    Q_REQUIRED_RESULT bool isThreaded() const;
 
     /**
     * Fast function that determines if the selection is empty
     */
-    bool selectionEmpty() const;
+    Q_REQUIRED_RESULT bool selectionEmpty() const;
     /**
     * Fills the lists of the selected message serial numbers and of the selected+visible ones.
     * Returns true if the returned stats are valid (there is a current folder after all)
@@ -284,7 +284,7 @@ public:
     * If includeCollapsedChildren is true then the children of the selected but
     * collapsed items are also included in the stats
     */
-    bool getSelectionStats(Akonadi::Item::List &selectedItems, Akonadi::Item::List &selectedVisibleItems, bool *allSelectedBelongToSameThread, bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT bool getSelectionStats(Akonadi::Item::List &selectedItems, Akonadi::Item::List &selectedVisibleItems, bool *allSelectedBelongToSameThread, bool includeCollapsedChildren = true) const;
     /**
     * Deletes the persistent set pointed by the specified reference.
     * If the set does not exist anymore, nothing happens.
@@ -302,17 +302,17 @@ public:
     /**
     * Return Akonadi::Item from messageItemReference
     */
-    Akonadi::Item::List itemListFromPersistentSet(MessageList::Core::MessageItemSetReference ref);
+    Q_REQUIRED_RESULT Akonadi::Item::List itemListFromPersistentSet(MessageList::Core::MessageItemSetReference ref);
 
     /**
     * Return a persistent set from current selection
     */
-    MessageList::Core::MessageItemSetReference selectionAsPersistentSet(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT MessageList::Core::MessageItemSetReference selectionAsPersistentSet(bool includeCollapsedChildren = true) const;
 
     /**
     * Return a persistent set from current thread
     */
-    MessageList::Core::MessageItemSetReference currentThreadAsPersistentSet() const;
+    Q_REQUIRED_RESULT MessageList::Core::MessageItemSetReference currentThreadAsPersistentSet() const;
     /**
     * Sets the focus on the view of the currently active tab.
     */
@@ -369,7 +369,7 @@ public:
 
     Core::QuickSearchLine::SearchOptions currentOptions() const;
 
-    Akonadi::Collection currentFolder() const;
+    Q_REQUIRED_RESULT Akonadi::Collection currentFolder() const;
 
 public Q_SLOTS:
     /**
