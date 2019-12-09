@@ -539,7 +539,7 @@ void ViewerPrivate::slotOpenWithAction(QAction *act)
 
 void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &name, const QPoint &globalPos)
 {
-    Q_UNUSED(name);
+    Q_UNUSED(name)
     prepareHandleAttachment(node);
     bool deletedAttachment = false;
     if (node->contentType(false)) {
@@ -2364,7 +2364,7 @@ void ViewerPrivate::slotPrintMessage()
 
 void ViewerPrivate::slotHandlePagePrinted(bool result)
 {
-    Q_UNUSED(result);
+    Q_UNUSED(result)
     delete mCurrentPrinter;
     mCurrentPrinter = nullptr;
     Q_EMIT printingFinished();
