@@ -50,6 +50,7 @@ if(BUILD_TESTING)
     add_subdirectory(messagepartthemes/default/autotests)
     add_subdirectory(widgets/autotests/)
     add_subdirectory(utils/autotests)
+    add_subdirectory(viewer/renderer/autotests)
 endif()
 add_subdirectory(pics)
 add_subdirectory(kconf_update)
@@ -91,6 +92,10 @@ if (${Qca-qt5_FOUND})
         dkim-verify/dkimmanagerauthenticationserver.cpp
         )
 endif()
+
+set(messageviewer_renderer_SRCS
+    viewer/renderer/messageviewerrenderer.cpp
+    )
 
 if(DEBUG_SIGNATURE)
     add_definitions(-DDEBUG_SIGNATURE)
@@ -238,6 +243,7 @@ set(libmessageviewer_interfaces_SRCS
     )
 
 set(libmessageviewer_SRCS
+    ${messageviewer_renderer_SRCS}
     ${libmessageviewer_conversationviewer_SRCS}
     ${dkim_verify_SRCS}
     ${libmessageviewer_messagepartthemes_default_SRCS}
