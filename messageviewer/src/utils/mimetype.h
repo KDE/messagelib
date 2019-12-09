@@ -34,24 +34,6 @@ namespace MessageViewer {
  * various places.
  */
 namespace Util {
-/**
-     * Finds the filename of an icon based on the given mimetype or filenames.
-     *
-     * Always use this functions when looking up icon names for mime types, don't use
-     * KMimeType directly.
-     *
-     * Uses the IconNameCache internally to speed things up.
-     *
-     * @param mimeType The primary mime type used to find the icon, e.g. "application/zip". Alias
-     *                 mimetypes are resolved.
-     * @param iconSize Size of the requested icon, e.g. KIconLoader::Desktop
-     * @param fallbackFileName1 When the icon is not found by the given mime type, use the file
-     *                              name extensions of these file names to look the icon up.
-     *                              Example: "test.zip"
-     * @param fallbackFileName2 Fallback for @p fallbackFileName1.
-     * @return the full file name of the icon file
-     */
-Q_REQUIRED_RESULT QString MESSAGEVIEWER_EXPORT iconPathForMimetype(const QString &mimeType, int iconSize, const QString &fallbackFileName1 = QString(), const QString &fallbackFileName2 = QString());
 
 Q_REQUIRED_RESULT QString MESSAGEVIEWER_EXPORT iconPathForContent(KMime::Content *node, int iconSize);
 
