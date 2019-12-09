@@ -660,7 +660,8 @@ bool DKIMCheckSignatureJob::CheckSignatureResult::operator==(const DKIMCheckSign
            && status == other.status
            && fromEmail == other.fromEmail
            && auid == other.auid
-           && sdid == other.sdid;
+           && sdid == other.sdid
+            && errorStr == other.errorStr;
 }
 
 bool DKIMCheckSignatureJob::CheckSignatureResult::operator!=(const DKIMCheckSignatureJob::CheckSignatureResult &other) const

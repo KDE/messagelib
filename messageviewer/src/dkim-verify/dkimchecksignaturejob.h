@@ -93,6 +93,7 @@ public:
         QString sdid; //Signing Domain Identifier
         QString auid; //DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
         QString fromEmail;
+        QString errorStr; //Use when we convert authentication result value
     };
 
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
