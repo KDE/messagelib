@@ -41,7 +41,7 @@ public:
     void hideAndClear();
 private:
     void slotShowDetails(const QString &content);
-    QString generateDetails() const;
+    Q_REQUIRED_RESULT QString generateDetails() const;
 
     struct blackListFound {
         QString url;

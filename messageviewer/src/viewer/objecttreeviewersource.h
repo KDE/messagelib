@@ -35,23 +35,23 @@ class MailViewerSource : public MessageViewer::EmptySource
 public:
     explicit MailViewerSource(ViewerPrivate *viewer);
     ~MailViewerSource() override;
-    bool decryptMessage() const override;
-    bool htmlLoadExternal() const override;
+    Q_REQUIRED_RESULT bool decryptMessage() const override;
+    Q_REQUIRED_RESULT bool htmlLoadExternal() const override;
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
-    MimeTreeParser::Util::HtmlMode preferredMode() const override;
-    int levelQuote() const override;
+    Q_REQUIRED_RESULT MimeTreeParser::Util::HtmlMode preferredMode() const override;
+    Q_REQUIRED_RESULT int levelQuote() const override;
     const QTextCodec *overrideCodec() override;
-    QString createMessageHeader(KMime::Message *message) override;
+    Q_REQUIRED_RESULT QString createMessageHeader(KMime::Message *message) override;
     const AttachmentStrategy *attachmentStrategy() const override;
     HtmlWriter *htmlWriter() const override;
     CSSHelperBase *cssHelper() const override;
 
-    bool autoImportKeys() const override;
-    bool showSignatureDetails() const override;
-    bool showEncryptionDetails() const override;
-    bool showEmoticons() const override;
-    bool showExpandQuotesMark() const override;
-    bool isPrinting() const override;
+    Q_REQUIRED_RESULT bool autoImportKeys() const override;
+    Q_REQUIRED_RESULT bool showSignatureDetails() const override;
+    Q_REQUIRED_RESULT bool showEncryptionDetails() const override;
+    Q_REQUIRED_RESULT bool showEmoticons() const override;
+    Q_REQUIRED_RESULT bool showExpandQuotesMark() const override;
+    Q_REQUIRED_RESULT bool isPrinting() const override;
 private:
     ViewerPrivate *mViewer = nullptr;
 };

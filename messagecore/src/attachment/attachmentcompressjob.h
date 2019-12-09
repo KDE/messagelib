@@ -75,7 +75,7 @@ public:
     /**
      * Returns whether the compressed part is larger than the original part.
      */
-    bool isCompressedPartLarger() const;
+    Q_REQUIRED_RESULT bool isCompressedPartLarger() const;
 
 private:
     //@cond PRIVATE
