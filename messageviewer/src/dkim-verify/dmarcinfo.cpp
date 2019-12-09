@@ -33,7 +33,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
     }
     QString cleanKey = key;
     cleanKey.replace(QLatin1String("; "), QLatin1String(";"));
-    const QStringList items = cleanKey.split(QLatin1Char(';'));
+    const QStringList items = cleanKey.split(QLatin1Char(';'), QString::SkipEmptyParts);
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QLatin1String("v="))) {
