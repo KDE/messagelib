@@ -37,7 +37,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
     }
     QString newHeaders = header;
     newHeaders.replace(QLatin1String("; "), QLatin1String(";"));
-    const QStringList items = newHeaders.split(QLatin1Char(';'));
+    const QStringList items = newHeaders.split(QLatin1Char(';'), QString::SkipEmptyParts);
     bool foundCanonizations = false;
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
@@ -80,7 +80,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("z="))) {
             mCopiedHeaderField = elem.right(elem.length() - 2).split(QLatin1Char(':'));
         } else {
-            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Unknown element type" << elem;
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Unknown element type" << elem << " : items : " << items;
         }
     }
     if (!foundCanonizations) { //Default
