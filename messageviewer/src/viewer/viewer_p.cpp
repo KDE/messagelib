@@ -41,7 +41,6 @@
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KContacts/VCardConverter>
 #include "htmlwriter/webengineembedpart.h"
-#include <PimCommon/NetworkUtil>
 #include <unistd.h> // link()
 //KDE includes
 #include <QHBoxLayout>
@@ -1978,8 +1977,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
 
 void ViewerPrivate::checkPhishingUrl()
 {
-    if (!PimCommon::NetworkUtil::self()->lowBandwidth()
-        && MessageViewer::MessageViewerSettings::self()->checkPhishingUrl()
+    if (MessageViewer::MessageViewerSettings::self()->checkPhishingUrl()
         && (mClickedUrl.scheme() != QLatin1String("mailto"))) {
         mPhishingDatabase->checkUrl(mClickedUrl);
     } else {

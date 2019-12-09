@@ -21,7 +21,6 @@
 #include "messageviewer_debug.h"
 #include "Gravatar/GravatarResolvUrlJob"
 #include "gravatarsettings.h"
-#include "PimCommon/NetworkUtil"
 #include "settings/messageviewersettings.h"
 #include <Akonadi/Contact/ContactSearchJob>
 #include <kio/transferjob.h>
@@ -106,21 +105,19 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
             }
         }
     }
-    if (!PimCommon::NetworkUtil::self()->lowBandwidth()) {
-        if (mPhoto.isEmpty() && mPhoto.url().isEmpty()) {
-            // No url, no photo => search gravatar
-            if (Gravatar::GravatarSettings::self()->gravatarSupportEnabled()) {
-                Gravatar::GravatarResolvUrlJob *job = new Gravatar::GravatarResolvUrlJob(this);
-                job->setEmail(mEmailAddress);
-                job->setUseDefaultPixmap(
-                    Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
-                if (job->canStart()) {
-                    connect(job, &Gravatar::GravatarResolvUrlJob::finished, this,
-                            &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
-                    job->start();
-                } else {
-                    job->deleteLater();
-                }
+    if (mPhoto.isEmpty() && mPhoto.url().isEmpty()) {
+        // No url, no photo => search gravatar
+        if (Gravatar::GravatarSettings::self()->gravatarSupportEnabled()) {
+            Gravatar::GravatarResolvUrlJob *job = new Gravatar::GravatarResolvUrlJob(this);
+            job->setEmail(mEmailAddress);
+            job->setUseDefaultPixmap(
+                        Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
+            if (job->canStart()) {
+                connect(job, &Gravatar::GravatarResolvUrlJob::finished, this,
+                        &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
+                job->start();
+            } else {
+                job->deleteLater();
             }
         }
     }
