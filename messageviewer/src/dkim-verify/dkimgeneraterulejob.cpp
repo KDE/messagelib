@@ -57,7 +57,6 @@ void DKIMGenerateRuleJob::verifyAndGenerateRule()
     rule.setEnabled(true);
     rule.setFrom(mResult.fromEmail);
     //TODO add Domain when we create a rule from base domain.
-    //rule.setDomain(mResult.signedBy); //TODO verify ?
     rule.setSignedDomainIdentifier(QStringList() << mResult.sdid);
     rule.setRuleType(DKIMRule::RuleType::MustBeSigned);
     deleteLater();

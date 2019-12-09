@@ -587,7 +587,8 @@ Q_SIGNALS:
     void showNextMessage();
     void showPreviousMessage();
 private:
-    Q_REQUIRED_RESULT QString attachmentHtml() const;
+    Q_REQUIRED_RESULT QString attachmentHtml();
+    void initializeColorFromScheme();
 
     void replyMessageToAuthor(KMime::Content *atmNode);
     void replyMessageToAll(KMime::Content *atmNode);
@@ -670,6 +671,7 @@ public:
 
     QColor mForegroundError;
     QColor mBackgroundError;
+    QColor mBackgroundAttachment;
 
     Viewer *const q;
     Akonadi::Session *mSession = nullptr;

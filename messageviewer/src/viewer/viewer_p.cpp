@@ -842,11 +842,7 @@ void ViewerPrivate::displayMessage()
         //TODO: Insert link to clear error so that message might be resent
         const ErrorAttribute *const attr = mMessageItem.attribute<ErrorAttribute>();
         Q_ASSERT(attr);
-        if (!mForegroundError.isValid()) {
-            const KColorScheme scheme = KColorScheme(QPalette::Active, KColorScheme::View);
-            mForegroundError = scheme.foreground(KColorScheme::NegativeText).color();
-            mBackgroundError = scheme.background(KColorScheme::NegativeBackground).color();
-        }
+        initializeColorFromScheme();
 
         htmlWriter()->write(QStringLiteral(
                                 "<div style=\"background:%1;color:%2;border:1px solid %2\">%3</div>").arg(
@@ -2396,11 +2392,20 @@ HeaderStylePlugin *ViewerPrivate::headerStylePlugin() const
     return mHeaderStylePlugin;
 }
 
-QString ViewerPrivate::attachmentHtml() const
+void ViewerPrivate::initializeColorFromScheme()
 {
-    const QColor background
-        = KColorScheme(QPalette::Active, KColorScheme::View).background().color();
-    QString html = renderAttachments(mMessage.data(), background);
+    if (!mForegroundError.isValid()) {
+        const KColorScheme scheme = KColorScheme(QPalette::Active, KColorScheme::View);
+        mForegroundError = scheme.foreground(KColorScheme::NegativeText).color();
+        mBackgroundError = scheme.background(KColorScheme::NegativeBackground).color();
+        mBackgroundAttachment = scheme.background().color();
+    }
+}
+
+QString ViewerPrivate::attachmentHtml()
+{
+    initializeColorFromScheme();
+    QString html = renderAttachments(mMessage.data(), mBackgroundAttachment);
     if (!html.isEmpty()) {
         const bool isFancyTheme = (headerStylePlugin()->name() == QLatin1String("fancy"));
         if (isFancyTheme) {
