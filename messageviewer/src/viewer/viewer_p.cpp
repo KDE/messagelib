@@ -856,7 +856,7 @@ void ViewerPrivate::displayMessage()
 #endif
     mColorBar->update();
 
-    htmlWriter()->write(QStringLiteral("</body></html>"));
+    htmlWriter()->write(cssHelper()->endBodyHtml());
     connect(mViewer, &MailWebEngineView::loadFinished, this,
             &ViewerPrivate::executeCustomScriptsAfterLoading, Qt::UniqueConnection);
     connect(

@@ -151,3 +151,8 @@ QString CSSHelper::htmlHead(bool fixed) const
         +QLatin1String("</style></head>\n"
                        "<body>\n");
 }
+
+QString CSSHelper::endBodyHtml() const
+{
+    return QStringLiteral("</body></html>");
+}
