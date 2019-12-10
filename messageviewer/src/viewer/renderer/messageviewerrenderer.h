@@ -26,11 +26,17 @@
 #include "messageviewer_private_export.h"
 
 namespace MessageViewer {
+class CSSHelper;
 class MESSAGEVIEWER_TESTS_EXPORT MessageViewerRenderer
 {
 public:
     MessageViewerRenderer();
     ~MessageViewerRenderer();
+
+    CSSHelper *cssHelper() const;
+
+private:
+    CSSHelper *mCSSHelper = nullptr;
 };
 }
 

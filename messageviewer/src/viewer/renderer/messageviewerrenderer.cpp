@@ -21,7 +21,7 @@
 */
 
 #include "messageviewerrenderer.h"
-
+#include "viewer/csshelper.h"
 using namespace MessageViewer;
 MessageViewerRenderer::MessageViewerRenderer()
 {
@@ -30,5 +30,10 @@ MessageViewerRenderer::MessageViewerRenderer()
 
 MessageViewerRenderer::~MessageViewerRenderer()
 {
+    delete mCSSHelper;
+}
 
+CSSHelper *MessageViewerRenderer::cssHelper() const
+{
+    return mCSSHelper;
 }

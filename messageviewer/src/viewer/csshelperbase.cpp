@@ -82,9 +82,7 @@ static const struct {
 }
 
 CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
-    : mRecycleQuoteColors(false)
-    , mShrinkQuotes(false)
-    , mPaintDevice(pd)
+    : mPaintDevice(pd)
 {
     recalculatePGPColors();
     const QString imgSrcShow = QStringLiteral("quicklistClosed.png");
@@ -442,7 +440,7 @@ QString CSSHelperBase::defaultScreenHeaderFont() const
     const QString headerFont = QStringLiteral("  font-family: \"%1\" ! important;\n"
                                               "  font-size: %2px ! important;\n")
                                .arg(mBodyFont.family())
-                               .arg(pointsToPixel(this->mPaintDevice, mBodyFont.pointSize()));
+                               .arg(pointsToPixel(mPaintDevice, mBodyFont.pointSize()));
     return headerFont;
 }
 

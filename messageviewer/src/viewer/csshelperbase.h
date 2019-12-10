@@ -110,8 +110,8 @@ protected:
     QFont mFixedPrintFont;
     QFont mQuoteFont;
     QColor mQuoteColor[3];
-    bool mRecycleQuoteColors;
-    bool mShrinkQuotes;
+    bool mRecycleQuoteColors = false;
+    bool mShrinkQuotes = false;
     bool mUseBrowserColor = false;
     QColor mForegroundColor;
     QColor mLinkColor;
