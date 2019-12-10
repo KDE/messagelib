@@ -20,36 +20,12 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "messageviewerrenderer.h"
-#include "viewer/csshelper.h"
-using namespace MessageViewer;
-MessageViewerRenderer::MessageViewerRenderer()
+#include "messageviewerrenderertest.h"
+#include <QTest>
+QTEST_MAIN(MessageViewerRendererTest)
+
+MessageViewerRendererTest::MessageViewerRendererTest(QObject *parent)
+    : QObject(parent)
 {
 
-}
-
-MessageViewerRenderer::~MessageViewerRenderer()
-{
-    delete mCSSHelper;
-}
-
-CSSHelper *MessageViewerRenderer::cssHelper() const
-{
-    return mCSSHelper;
-}
-
-QWidget *MessageViewerRenderer::currentWidget() const
-{
-    return mCurrentWidget;
-}
-
-void MessageViewerRenderer::setCurrentWidget(QWidget *currentWidget)
-{
-    mCurrentWidget = currentWidget;
-}
-
-void MessageViewerRenderer::recreateCssHelper()
-{
-    delete mCSSHelper;
-    mCSSHelper = new CSSHelper(mCurrentWidget);
 }
