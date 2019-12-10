@@ -87,6 +87,7 @@ class AttachmentStrategy;
 class HeaderStylePlugin;
 class HtmlWriter;
 class CSSHelper;
+class MessageViewerRenderer;
 class MailWebEngineView;
 class WebEnginePartHtmlWriter;
 class HtmlStatusBar;
@@ -626,7 +627,6 @@ public:
     /// the splash/busy page is displayed.
     bool mMsgDisplay = true;
 
-    CSSHelper *mCSSHelper = nullptr;
     bool mUseFixedFont = false;
     bool mPrinting = false;
     QWidget *mMainWindow = nullptr;
@@ -699,6 +699,7 @@ public:
 #ifdef USE_DKIM_CHECKER
     MessageViewer::DKIMWidgetInfo *mDkimWidgetInfo = nullptr;
 #endif
+    MessageViewer::MessageViewerRenderer *mMessageViewerRenderer = nullptr;
 };
 }
 

@@ -24,6 +24,7 @@
 
 #include "messageviewer_debug.h"
 #include "utils/mimetype.h"
+#include "viewer/renderer/messageviewerrenderer.h"
 #include "viewer/objecttreeemptysource.h"
 #include "viewer/objecttreeviewersource.h"
 #include "messagedisplayformatattribute.h"
@@ -190,6 +191,8 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     if (!mainWindow) {
         mMainWindow = aParent;
     }
+    mMessageViewerRenderer = new MessageViewerRenderer;
+
 #ifdef USE_DKIM_CHECKER
     mDkimWidgetInfo = new MessageViewer::DKIMWidgetInfo(mMainWindow);
 #endif
@@ -258,7 +261,6 @@ ViewerPrivate::~ViewerPrivate()
     mHtmlWriter = nullptr;
     delete mViewer;
     mViewer = nullptr;
-    delete mCSSHelper;
     mNodeHelper->forceCleanTempFiles();
     qDeleteAll(mListMailSourceViewer);
     delete mNodeHelper;
@@ -739,7 +741,7 @@ HtmlWriter *ViewerPrivate::htmlWriter() const
 
 CSSHelper *ViewerPrivate::cssHelper() const
 {
-    return mCSSHelper;
+    return mMessageViewerRenderer->cssHelper();
 }
 
 MimeTreeParser::NodeHelper *ViewerPrivate::nodeHelper() const
@@ -1034,6 +1036,7 @@ void ViewerPrivate::slotWheelZoomChanged(int numSteps)
 
 void ViewerPrivate::readConfig()
 {
+    mMessageViewerRenderer->setCurrentWidget(mViewer);
     recreateCssHelper();
 
     mForceEmoticons = MessageViewer::MessageViewerSettings::self()->showEmoticons();
@@ -1081,8 +1084,7 @@ void ViewerPrivate::readConfig()
 
 void ViewerPrivate::recreateCssHelper()
 {
-    delete mCSSHelper;
-    mCSSHelper = new CSSHelper(mViewer);
+    mMessageViewerRenderer->recreateCssHelper();
 }
 
 void ViewerPrivate::hasMultiMessages(bool messages)
