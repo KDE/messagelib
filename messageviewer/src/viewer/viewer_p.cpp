@@ -1503,7 +1503,7 @@ void ViewerPrivate::createWidgets()
 
 void ViewerPrivate::slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin)
 {
-    mCSSHelper->setHeaderPlugin(plugin);
+    cssHelper()->setHeaderPlugin(plugin);
     mHeaderStylePlugin = plugin;
     update(MimeTreeParser::Force);
 }
