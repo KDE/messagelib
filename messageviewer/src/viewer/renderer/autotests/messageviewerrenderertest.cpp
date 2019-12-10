@@ -21,6 +21,7 @@
 */
 
 #include "messageviewerrenderertest.h"
+#include "viewer/renderer/messageviewerrenderer.h"
 #include <QTest>
 QTEST_MAIN(MessageViewerRendererTest)
 
@@ -28,4 +29,11 @@ MessageViewerRendererTest::MessageViewerRendererTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void MessageViewerRendererTest::shouldHaveDefaultValue()
+{
+    MessageViewer::MessageViewerRenderer w;
+    QVERIFY(!w.currentWidget());
+    QVERIFY(!w.cssHelper());
 }

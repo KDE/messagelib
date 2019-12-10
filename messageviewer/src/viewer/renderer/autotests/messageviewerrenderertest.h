@@ -31,6 +31,8 @@ class MessageViewerRendererTest : public QObject
 public:
     explicit MessageViewerRendererTest(QObject *parent = nullptr);
     ~MessageViewerRendererTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // MESSAGEVIEWERRENDERERTEST_H
