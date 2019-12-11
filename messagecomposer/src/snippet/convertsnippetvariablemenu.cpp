@@ -123,6 +123,7 @@ void ConvertSnippetVariableMenu::initializeMenu()
     miscVariable->addAction(i18n("Subject"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FullSubject);
     });
+    //Add more variables!
     mMenu->addMenu(miscVariable);
 }
 

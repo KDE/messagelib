@@ -72,4 +72,5 @@ void ConvertVariablesJobTest::shouldConvertVariables_data()
     QTest::newRow("empty") << QString() << QString();
     QTest::newRow("novariable") << QStringLiteral("bla bli blo") << QStringLiteral("bla bli blo");
     QTest::newRow("subject") << QStringLiteral("bla bli blo %FULLSUBJECT") << QStringLiteral("bla bli blo Subject!!!!");
+    //TODO add more autotests !
 }
