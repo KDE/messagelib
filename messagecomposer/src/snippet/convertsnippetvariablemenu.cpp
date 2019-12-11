@@ -40,67 +40,68 @@ void ConvertSnippetVariableMenu::initializeMenu()
     mMenu = new QMenu(mParentWidget);
     mMenu->setFocusPolicy(Qt::NoFocus);
 
-    QMenu *toMenuVariable = new QMenu(i18n("To"), mMenu);
-    toMenuVariable->addAction(i18n("To Field Address"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToAddr);
-    });
-    toMenuVariable->addAction(i18n("To Field Last Name"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToLname);
-    });
-    toMenuVariable->addAction(i18n("To Field First Name"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToFname);
-    });
-    toMenuVariable->addAction(i18n("To Field Name"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToName);
-    });
-    mMenu->addMenu(toMenuVariable);
+    if (!mOnlyMenuForCustomizeAttachmentFileName) {
+        QMenu *toMenuVariable = new QMenu(i18n("To"), mMenu);
+        toMenuVariable->addAction(i18n("To Field Address"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToAddr);
+        });
+        toMenuVariable->addAction(i18n("To Field Last Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToLname);
+        });
+        toMenuVariable->addAction(i18n("To Field First Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToFname);
+        });
+        toMenuVariable->addAction(i18n("To Field Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToName);
+        });
+        mMenu->addMenu(toMenuVariable);
 
-    QMenu *fromMenuVariable = new QMenu(i18n("From"), mMenu);
-    fromMenuVariable->addAction(i18n("From Field Address"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromAddr);
-    });
-    fromMenuVariable->addAction(i18n("From Field Last Name"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromLname);
-    });
-    fromMenuVariable->addAction(i18n("From Field First Name"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromFname);
-    });
-    fromMenuVariable->addAction(i18n("From Field Name"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromName);
-    });
-    mMenu->addMenu(fromMenuVariable);
+        QMenu *fromMenuVariable = new QMenu(i18n("From"), mMenu);
+        fromMenuVariable->addAction(i18n("From Field Address"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromAddr);
+        });
+        fromMenuVariable->addAction(i18n("From Field Last Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromLname);
+        });
+        fromMenuVariable->addAction(i18n("From Field First Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromFname);
+        });
+        fromMenuVariable->addAction(i18n("From Field Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromName);
+        });
+        mMenu->addMenu(fromMenuVariable);
 
-    QMenu *ccMenuVariable = new QMenu(i18n("CC"), mMenu);
-    ccMenuVariable->addAction(i18n("CC Field Address"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcAddr);
-    });
-    ccMenuVariable->addAction(i18n("CC Field Last Name"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcLname);
-    });
-    ccMenuVariable->addAction(i18n("CC Field First Name"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcFname);
-    });
-    ccMenuVariable->addAction(i18n("CC Field Name"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcName);
-    });
+        QMenu *ccMenuVariable = new QMenu(i18n("CC"), mMenu);
+        ccMenuVariable->addAction(i18n("CC Field Address"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcAddr);
+        });
+        ccMenuVariable->addAction(i18n("CC Field Last Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcLname);
+        });
+        ccMenuVariable->addAction(i18n("CC Field First Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcFname);
+        });
+        ccMenuVariable->addAction(i18n("CC Field Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcName);
+        });
 
-    mMenu->addMenu(ccMenuVariable);
+        mMenu->addMenu(ccMenuVariable);
 
-    QMenu *attachmentMenuVariable = new QMenu(i18n("Attachment"), mMenu);
-    attachmentMenuVariable->addAction(i18n("Number Of Attachments"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentCount);
-    });
-    attachmentMenuVariable->addAction(i18n("Names"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentName);
-    });
-    attachmentMenuVariable->addAction(i18n("Filenames"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentFilenames);
-    });
-    attachmentMenuVariable->addAction(i18n("Names and Sizes"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentNamesAndSizes);
-    });
-    mMenu->addMenu(attachmentMenuVariable);
-
+        QMenu *attachmentMenuVariable = new QMenu(i18n("Attachment"), mMenu);
+        attachmentMenuVariable->addAction(i18n("Number Of Attachments"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentCount);
+        });
+        attachmentMenuVariable->addAction(i18n("Names"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentName);
+        });
+        attachmentMenuVariable->addAction(i18n("Filenames"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentFilenames);
+        });
+        attachmentMenuVariable->addAction(i18n("Names and Sizes"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentNamesAndSizes);
+        });
+        mMenu->addMenu(attachmentMenuVariable);
+    }
     QMenu *dateTimeMenuVariable = new QMenu(i18n("Date/Time"), mMenu);
     dateTimeMenuVariable->addAction(i18n("Day Of Week"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Dow);
