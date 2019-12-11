@@ -1339,7 +1339,7 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
 
         parseContent(node);
 
-        htmlWriter()->write(QStringLiteral("</body></html>"));
+        htmlWriter()->write(cssHelper()->endBodyHtml());
         htmlWriter()->end();
     }
 }
