@@ -31,4 +31,5 @@ void ConvertSnippetVariableMenuTest::shouldHaveDefaultValues()
 {
     MessageComposer::ConvertSnippetVariableMenu w(nullptr);
     QVERIFY(w.menu());
+    QVERIFY(!w.onlyMenuForCustomizeAttachmentFileName());
 }

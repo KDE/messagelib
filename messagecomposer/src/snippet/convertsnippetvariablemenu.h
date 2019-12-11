@@ -37,10 +37,14 @@ public:
     ~ConvertSnippetVariableMenu();
     QMenu *menu() const;
 
+    Q_REQUIRED_RESULT bool onlyMenuForCustomizeAttachmentFileName() const;
+    void setOnlyMenuForCustomizeAttachmentFileName(bool onlyMenuForCustomizeAttachmentFileName);
+
 Q_SIGNALS:
     void insertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);
 private:
     void initializeMenu();
+    bool mOnlyMenuForCustomizeAttachmentFileName = false;
     QWidget *mParentWidget = nullptr;
     QMenu *mMenu = nullptr;
 };

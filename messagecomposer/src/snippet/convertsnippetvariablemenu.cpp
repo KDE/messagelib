@@ -163,6 +163,16 @@ void ConvertSnippetVariableMenu::initializeMenu()
     mMenu->addMenu(miscVariable);
 }
 
+bool ConvertSnippetVariableMenu::onlyMenuForCustomizeAttachmentFileName() const
+{
+    return mOnlyMenuForCustomizeAttachmentFileName;
+}
+
+void ConvertSnippetVariableMenu::setOnlyMenuForCustomizeAttachmentFileName(bool onlyMenuForCustomizeAttachmentFileName)
+{
+    mOnlyMenuForCustomizeAttachmentFileName = onlyMenuForCustomizeAttachmentFileName;
+}
+
 QMenu *ConvertSnippetVariableMenu::menu() const
 {
     return mMenu;
