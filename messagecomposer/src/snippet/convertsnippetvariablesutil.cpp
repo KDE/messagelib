@@ -90,7 +90,6 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
         return QLatin1String("%DAYOFWEEKNAMELONG"); //(Monday-Sunday)
     case YearLastMonth:
         return QLatin1String("%YEARLASTMONTH"); //january 2020 will how 2019-12
-
     }
     return {};
 }

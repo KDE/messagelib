@@ -22,6 +22,7 @@
 #include "composer/composerviewinterface.h"
 #include <TemplateParser/TemplatesUtil>
 #include <KEmailAddress>
+#include <QDate>
 #include <KMime/Types>
 using namespace MessageComposer;
 ConvertSnippetVariablesJob::ConvertSnippetVariablesJob(QObject *parent)
@@ -169,6 +170,54 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                 i += strlen("ATTACHMENTNAMESANDSIZES");
                 const QString str = composerView->attachments().namesAndSize().join(QLatin1Char(','));
                 result.append(str);
+            } else if (cmd.startsWith(QLatin1String("YEAR"))) {
+                i += strlen("YEAR");
+                const QDate date = QDate::currentDate();
+                result.append(QString::number(date.year()));
+            } else if (cmd.startsWith(QLatin1String("LASTYEAR"))) {
+                i += strlen("LASTYEAR");
+                const QDate date = QDate::currentDate();
+                result.append(QString::number(date.year() - 1));
+            } else if (cmd.startsWith(QLatin1String("NEXTYEAR"))) {
+                i += strlen("NEXTYEAR");
+                const QDate date = QDate::currentDate();
+                result.append(QString::number(date.year() - 2));
+            } else if (cmd.startsWith(QLatin1String("MONTHNUMBER"))) {
+                i += strlen("MONTHNUMBER");
+                const QDate date = QDate::currentDate();
+                result.append(QString::number(date.month()));
+            } else if (cmd.startsWith(QLatin1String("DAYOFMONTH"))) {
+                i += strlen("DAYOFMONTH");
+                const QDate date = QDate::currentDate();
+                result.append(QString::number(date.daysInMonth()));
+            } else if (cmd.startsWith(QLatin1String("WEEKNUMBER"))) {
+                i += strlen("WEEKNUMBER");
+                const QDate date = QDate::currentDate();
+                result.append(QString::number(date.weekNumber()));
+            } else if (cmd.startsWith(QLatin1String("MONTHNAMESHORT"))) {
+                i += strlen("MONTHNAMESHORT");
+                const QDate date = QDate::currentDate();
+                result.append(date.toString(QStringLiteral("MMM")));
+            } else if (cmd.startsWith(QLatin1String("MONTHNAMELONG"))) {
+                i += strlen("MONTHNAMELONG");
+                const QDate date = QDate::currentDate();
+                result.append(date.toString(QStringLiteral("MMMM")));
+            } else if (cmd.startsWith(QLatin1String("DAYOFWEEK"))) {
+                i += strlen("DAYOFWEEK");
+                const QDate date = QDate::currentDate();
+                result.append(date.dayOfWeek());
+            } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMESHORT"))) {
+                i += strlen("DAYOFWEEKNAMESHORT");
+                const QDate date = QDate::currentDate();
+                result.append(date.toString(QStringLiteral("ddd")));
+            } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMELONG"))) {
+                i += strlen("DAYOFWEEKNAMELONG");
+                const QDate date = QDate::currentDate();
+                result.append(date.toString(QStringLiteral("dddd")));
+            } else if (cmd.startsWith(QLatin1String("YEARLASTMONTH"))) {
+                i += strlen("YEARLASTMONTH");
+                const QDate date = QDate::currentDate().addMonths(-1);
+                result.append(date.toString(QStringLiteral("yyyy-MMM")));
             } else {
                 result.append(c);
             }
