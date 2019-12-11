@@ -2218,7 +2218,7 @@ void ViewerPrivate::updateReaderWin()
             mMimePartTree->hide();
 #endif
             htmlWriter()->begin();
-            htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont) + QLatin1String("</body></html>"));
+            htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont) + cssHelper()->endBodyHtml());
             htmlWriter()->end();
         }
     }
