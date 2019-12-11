@@ -117,6 +117,42 @@ void ConvertSnippetVariableMenu::initializeMenu()
     dateTimeMenuVariable->addAction(i18n("Time (%1)", QTime::currentTime().toString(Qt::SystemLocaleLongDate)), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::TimeLong);
     });
+    dateTimeMenuVariable->addAction(i18n("Year"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Year);
+    });
+    dateTimeMenuVariable->addAction(i18n("Last Year"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::LastYear);
+    });
+    dateTimeMenuVariable->addAction(i18n("Next Year"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::NextYear);
+    });
+    dateTimeMenuVariable->addAction(i18n("Month Number"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::MonthNumber);
+    });
+    dateTimeMenuVariable->addAction(i18n("Day Of Month"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayOfMonth);
+    });
+    dateTimeMenuVariable->addAction(i18n("Week Number"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::WeekNumber);
+    });
+    dateTimeMenuVariable->addAction(i18n("Month Name Short"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::MonthNameShort);
+    });
+    dateTimeMenuVariable->addAction(i18n("Month Name Long"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::MonthNameLong);
+    });
+    dateTimeMenuVariable->addAction(i18n("Day Of Week"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayOfWeek);
+    });
+    dateTimeMenuVariable->addAction(i18n("Day Of Week Name Short"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayOfWeekNameShort);
+    });
+    dateTimeMenuVariable->addAction(i18n("Day Of Week Name Long"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayOfWeekNameLong);
+    });
+    dateTimeMenuVariable->addAction(i18n("Year Last Month"), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::YearLastMonth);
+    });
     mMenu->addMenu(dateTimeMenuVariable);
 
     QMenu *miscVariable = new QMenu(i18n("Misc"), mMenu);
