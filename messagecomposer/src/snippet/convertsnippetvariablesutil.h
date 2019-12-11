@@ -47,6 +47,18 @@ enum VariableType {
     AttachmentCount,
     AttachmentFilenames,
     AttachmentNamesAndSizes,
+    Year,
+    LastYear,
+    NextYear,
+    MonthNumber,
+    DayOfMonth,
+    WeekNumber,
+    MonthNameShort,
+    MonthNameLong,
+    DayOfWeek,
+    DayOfWeekNameShort,
+    DayOfWeekNameLong,
+    YearLastMonth
 };
 
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);

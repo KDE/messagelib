@@ -66,6 +66,31 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
         return QLatin1String("%ATTACHMENTFILENAMES");
     case AttachmentNamesAndSizes:
         return QLatin1String("%ATTACHMENTNAMESANDSIZES");
+    case Year:
+        return QLatin1String("%YEAR");
+    case LastYear:
+        return QLatin1String("%LASTYEAR");
+    case NextYear:
+        return QLatin1String("%NEXTYEAR");
+    case MonthNumber:
+        return QLatin1String("%MONTHNUMBER"); //1-12
+    case DayOfMonth:
+        return QLatin1String("%DAYOFMONTH"); //1-31
+    case WeekNumber:
+        return QLatin1String("%WEEKNUMBER"); //1-52
+    case MonthNameShort:
+        return QLatin1String("%MONTHNAMESHORT"); //(Jan-Dec)
+    case MonthNameLong:
+        return QLatin1String("%MONTHNAMELONG"); //(January-December)
+    case DayOfWeek:
+        return QLatin1String("%DAYOFWEEK"); //(1-7)
+    case DayOfWeekNameShort:
+        return QLatin1String("%DAYOFWEEKNAMESHORT"); //(Mon-Sun)
+    case DayOfWeekNameLong:
+        return QLatin1String("%DAYOFWEEKNAMELONG"); //(Monday-Sunday)
+    case YearLastMonth:
+        return QLatin1String("%YEARLASTMONTH"); //january 2020 will how 2019-12
+
     }
     return {};
 }
