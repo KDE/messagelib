@@ -59,17 +59,7 @@ public:
     Private(View *owner, Widget *parent)
         : q(owner)
         , mWidget(parent)
-        , mModel(nullptr)
         , mDelegate(new Delegate(owner))
-        , mAggregation(nullptr)
-        , mTheme(nullptr)
-        , mNeedToApplyThemeColumns(false)
-        , mLastCurrentItem(nullptr)
-        , mSaveThemeColumnStateOnSectionResize(true)
-        , mSaveThemeColumnStateTimer(nullptr)
-        , mApplyThemeColumnsTimer(nullptr)
-        , mLastViewportWidth(-1)
-        , mIgnoreUpdateGeometries(false)
     {
     }
 
@@ -85,14 +75,14 @@ public:
 
     const Aggregation *mAggregation = nullptr;          ///< The Aggregation we're using now, shallow pointer
     Theme *mTheme = nullptr;                            ///< The Theme we're using now, shallow pointer
-    bool mNeedToApplyThemeColumns;            ///< Flag signaling a pending application of theme columns
+    bool mNeedToApplyThemeColumns = false;            ///< Flag signaling a pending application of theme columns
     Item *mLastCurrentItem = nullptr;
     QPoint mMousePressPosition;
-    bool mSaveThemeColumnStateOnSectionResize;      ///< This is used to filter out programmatic column resizes in slotSectionResized().
+    bool mSaveThemeColumnStateOnSectionResize = true;      ///< This is used to filter out programmatic column resizes in slotSectionResized().
     QTimer *mSaveThemeColumnStateTimer = nullptr;             ///< Used to trigger a delayed "save theme state"
     QTimer *mApplyThemeColumnsTimer = nullptr;                ///< Used to trigger a delayed "apply theme columns"
-    int mLastViewportWidth;
-    bool mIgnoreUpdateGeometries;                   ///< Shall we ignore the "update geometries" calls ?
+    int mLastViewportWidth = -1;
+    bool mIgnoreUpdateGeometries = false;                   ///< Shall we ignore the "update geometries" calls ?
 };
 
 View::View(Widget *pParent)
