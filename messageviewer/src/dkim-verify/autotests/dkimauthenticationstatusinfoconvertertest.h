@@ -31,6 +31,8 @@ class DKIMAuthenticationStatusInfoConverterTest : public QObject
 public:
     explicit DKIMAuthenticationStatusInfoConverterTest(QObject *parent = nullptr);
     ~DKIMAuthenticationStatusInfoConverterTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
 
 #endif // DKIMAUTHENTICATIONSTATUSINFOCONVERTERTEST_H

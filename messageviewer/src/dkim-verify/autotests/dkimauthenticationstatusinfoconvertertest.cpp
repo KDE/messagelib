@@ -21,10 +21,17 @@
 */
 
 #include "dkimauthenticationstatusinfoconvertertest.h"
+#include "dkim-verify/dkimauthenticationstatusinfoconverter.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(DKIMAuthenticationStatusInfoConverterTest)
 
 DKIMAuthenticationStatusInfoConverterTest::DKIMAuthenticationStatusInfoConverterTest(QObject *parent)
     : QObject(parent)
 {
+}
+
+void DKIMAuthenticationStatusInfoConverterTest::shouldHaveDefaultValues()
+{
+    MessageViewer::DKIMAuthenticationStatusInfoConverter status;
+    QVERIFY(status.convert().isEmpty());
 }
