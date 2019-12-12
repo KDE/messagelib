@@ -93,7 +93,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     int index = valueKey.indexOf(QRegularExpression(methodspec_p), 0, &match);
     if (index == -1) {
         valueKey = QString(); //remove it !
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "methodspec not found ";
+        qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "methodspec not found ";
         //no result
         return authStatusInfo;
     }
