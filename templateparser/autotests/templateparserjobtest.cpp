@@ -55,7 +55,7 @@ void TemplateParserJobTest::test_convertedHtml_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("plain*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << QString(dir.path() + QLatin1Char('/') + file + QLatin1String(".html"));
     }
 }
@@ -109,7 +109,7 @@ void TemplateParserJobTest::test_replyHtml_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".html.reply");
         if (!QFile::exists(expectedFile)) {
             continue;
@@ -168,7 +168,7 @@ void TemplateParserJobTest::test_replyPlain_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".plain.reply");
         if (!QFile::exists(expectedFile)) {
             continue;
@@ -218,7 +218,7 @@ void TemplateParserJobTest::test_forwardPlain_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".plain.reply");
         if (!QFile::exists(expectedFile)) {
             continue;
@@ -268,7 +268,7 @@ void TemplateParserJobTest::test_forwardHtml_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".html.reply");
         if (!QFile::exists(expectedFile)) {
             continue;
@@ -322,7 +322,7 @@ void TemplateParserJobTest::test_forwardedAttachments_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html.reply"))) {
             continue;
         }
