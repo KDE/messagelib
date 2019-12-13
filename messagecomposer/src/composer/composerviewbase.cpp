@@ -946,13 +946,16 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
 void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
 {
     KConfig *config = MessageComposer::MessageComposerSettings::self()->config();
-    foreach (const QByteArray &address, msg->to()->addresses()) {
+    const QVector<QByteArray> toAddresses = msg->to()->addresses();
+    for (const QByteArray &address : toAddresses) {
         KPIM::RecentAddresses::self(config)->add(QLatin1String(address));
     }
-    foreach (const QByteArray &address, msg->cc()->addresses()) {
+    const QVector<QByteArray> ccAddresses = msg->cc()->addresses();
+    for (const QByteArray &address : ccAddresses) {
         KPIM::RecentAddresses::self(config)->add(QLatin1String(address));
     }
-    foreach (const QByteArray &address, msg->bcc()->addresses()) {
+    const QVector<QByteArray> bccAddresses = msg->bcc()->addresses();
+    for (const QByteArray &address : bccAddresses) {
         KPIM::RecentAddresses::self(config)->add(QLatin1String(address));
     }
 }
