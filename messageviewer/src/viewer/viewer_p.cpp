@@ -2605,7 +2605,9 @@ void ViewerPrivate::slotHandleAttachment(int choice)
     }
     switch (choice) {
     case Viewer::Delete:
-        deleteAttachment(mCurrentContent);
+        if (!deleteAttachment(mCurrentContent)) {
+            qCWarning(MESSAGEVIEWER_LOG) << "Impossible to delete attachment";
+        }
         break;
     case Viewer::Properties:
         attachmentProperties(mCurrentContent);
