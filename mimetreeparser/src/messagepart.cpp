@@ -198,7 +198,8 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 {
     auto subMessagePart = mOtp->parseObjectTreeInternal(node, onlyOneMimePart);
     d->mRoot = subMessagePart->isRoot();
-    foreach (const auto &part, subMessagePart->subParts()) {
+    const QVector<MessagePart::Ptr> subParts = subMessagePart->subParts();
+    for (const auto &part : subParts) {
         appendSubPart(part);
     }
 }

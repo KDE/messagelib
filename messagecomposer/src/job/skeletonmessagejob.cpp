@@ -185,7 +185,8 @@ void SkeletonMessageJobPrivate::doStart()
     }
     // Extras
 
-    foreach (KMime::Headers::Base *extra, infoPart->extraHeaders()) {
+    const KMime::Headers::Base::List extraHeaders = infoPart->extraHeaders();
+    for (KMime::Headers::Base *extra : extraHeaders) {
         message->setHeader(extra);
     }
 

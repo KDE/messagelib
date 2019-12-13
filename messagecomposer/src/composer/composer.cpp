@@ -232,7 +232,8 @@ void ComposerPrivate::composeStep2()
     }
 
     if (encrypt) {
-        foreach (ContentJobBase *eJob, createEncryptJobs(mainJob, false)) {
+        const auto lstJob = createEncryptJobs(mainJob, false);
+        for (ContentJobBase *eJob : lstJob) {
             QObject::connect(eJob, SIGNAL(finished(KJob*)), q, SLOT(contentJobFinished(KJob*)));
             q->addSubjob(eJob);
             mainJob = eJob;         //start only last EncryptJob
