@@ -33,7 +33,7 @@
 
 #include <MessageCore/NodeHelper>
 
-#include <QtTest>
+#include <QTest>
 #include <stdlib.h>
 #include <gpgme++/keylistresult.h>
 
