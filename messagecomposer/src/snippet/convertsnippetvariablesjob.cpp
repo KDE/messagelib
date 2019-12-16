@@ -170,10 +170,6 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                 i += strlen("ATTACHMENTNAMESANDSIZES");
                 const QString str = composerView->attachments().namesAndSize().join(QLatin1Char(','));
                 result.append(str);
-            } else if (cmd.startsWith(QLatin1String("YEAR"))) {
-                i += strlen("YEAR");
-                const QDate date = QDate::currentDate();
-                result.append(QString::number(date.year()));
             } else if (cmd.startsWith(QLatin1String("LASTYEAR"))) {
                 i += strlen("LASTYEAR");
                 const QDate date = QDate::currentDate();
@@ -202,10 +198,6 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                 i += strlen("MONTHNAMELONG");
                 const QDate date = QDate::currentDate();
                 result.append(date.toString(QStringLiteral("MMMM")));
-            } else if (cmd.startsWith(QLatin1String("DAYOFWEEK"))) {
-                i += strlen("DAYOFWEEK");
-                const QDate date = QDate::currentDate();
-                result.append(date.dayOfWeek());
             } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMESHORT"))) {
                 i += strlen("DAYOFWEEKNAMESHORT");
                 const QDate date = QDate::currentDate();
@@ -218,6 +210,14 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                 i += strlen("YEARLASTMONTH");
                 const QDate date = QDate::currentDate().addMonths(-1);
                 result.append(date.toString(QStringLiteral("yyyy-MMM")));
+            } else if (cmd.startsWith(QLatin1String("YEAR"))) {
+                i += strlen("YEAR");
+                const QDate date = QDate::currentDate();
+                result.append(QString::number(date.year()));
+            } else if (cmd.startsWith(QLatin1String("DAYOFWEEK"))) {
+                i += strlen("DAYOFWEEK");
+                const QDate date = QDate::currentDate();
+                result.append(date.dayOfWeek());
             } else {
                 result.append(c);
             }
