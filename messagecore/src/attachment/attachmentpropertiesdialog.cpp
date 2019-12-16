@@ -134,7 +134,7 @@ void AttachmentPropertiesDialog::Private::mimeTypeChanged(const QString &type)
     if (mimeType.isValid()) {
         pix = KIconLoader::global()->loadMimeTypeIcon(mimeType.iconName(), KIconLoader::Desktop);
     } else {
-        pix = QIcon::fromTheme(QStringLiteral("unknown")).pixmap(IconSize(KIconLoader::Desktop), IconSize(KIconLoader::Desktop));
+        pix = QIcon::fromTheme(QStringLiteral("unknown")).pixmap(q->style()->pixelMetric(QStyle::PM_MessageBoxIconSize));
     }
     if (mReadOnly) {
         uiReadOnly->mimeIcon->setPixmap(pix);
