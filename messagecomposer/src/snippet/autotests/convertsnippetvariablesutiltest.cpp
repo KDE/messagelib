@@ -52,4 +52,17 @@ void ConvertSnippetVariablesUtilTest::shouldTranslateVariables()
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::AttachmentCount), QStringLiteral("%ATTACHMENTCOUNT"));
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::AttachmentFilenames), QStringLiteral("%ATTACHMENTFILENAMES"));
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::AttachmentNamesAndSizes), QStringLiteral("%ATTACHMENTNAMESANDSIZES"));
+
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::Year), QStringLiteral("%YEAR"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::LastYear), QStringLiteral("%LASTYEAR"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::NextYear), QStringLiteral("%NEXTYEAR"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::MonthNumber), QStringLiteral("%MONTHNUMBER"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::DayOfMonth), QStringLiteral("%DAYOFMONTH"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::WeekNumber), QStringLiteral("%WEEKNUMBER"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::MonthNameShort), QStringLiteral("%MONTHNAMESHORT"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::MonthNameLong), QStringLiteral("%MONTHNAMELONG"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::DayOfWeek), QStringLiteral("%DAYOFWEEK"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::DayOfWeekNameShort), QStringLiteral("%DAYOFWEEKNAMESHORT"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::DayOfWeekNameLong), QStringLiteral("%DAYOFWEEKNAMELONG"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::YearLastMonth), QStringLiteral("%YEARLASTMONTH"));
 }
