@@ -217,7 +217,7 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
             } else if (cmd.startsWith(QLatin1String("DAYOFWEEK"))) {
                 i += strlen("DAYOFWEEK");
                 const QDate date = QDate::currentDate();
-                result.append(date.dayOfWeek());
+                result.append(QString::number(date.dayOfWeek()));
             } else {
                 result.append(c);
             }
