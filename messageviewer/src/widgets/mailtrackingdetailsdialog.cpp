@@ -30,7 +30,7 @@ using namespace MessageViewer;
 MailTrackingDetailsDialog::MailTrackingDetailsDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Details"));
+    setWindowTitle(i18nc("@title:window", "Details"));
     setAttribute(Qt::WA_DeleteOnClose);
     setModal(false);
 

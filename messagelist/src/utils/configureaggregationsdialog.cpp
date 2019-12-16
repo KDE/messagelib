@@ -108,7 +108,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ConfigureAggregationsDialog::reject);
-    setWindowTitle(i18n("Customize Message Aggregation Modes"));
+    setWindowTitle(i18nc("@title:window", "Customize Message Aggregation Modes"));
 
     QWidget *base = new QWidget(this);
     mainLayout->addWidget(base);

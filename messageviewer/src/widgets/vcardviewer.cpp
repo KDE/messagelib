@@ -41,7 +41,7 @@ using namespace MessageViewer;
 VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("vCard Viewer"));
+    setWindowTitle(i18nc("@title:window", "vCard Viewer"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     QPushButton *user1Button = new QPushButton;

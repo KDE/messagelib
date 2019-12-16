@@ -1331,7 +1331,7 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
                 windowTitle = node->contentDescription()->asUnicodeString();
             }
             if (!windowTitle.isEmpty()) {
-                mMainWindow->setWindowTitle(i18n("View Attachment: %1", windowTitle));
+                mMainWindow->setWindowTitle(i18nc("@title:window", "View Attachment: %1", windowTitle));
             }
         }
 
@@ -2173,7 +2173,7 @@ void ViewerPrivate::slotShowMessageSource()
 
     QPointer<MailSourceWebEngineViewer> viewer = new MailSourceWebEngineViewer; // deletes itself upon close
     mListMailSourceViewer.append(viewer);
-    viewer->setWindowTitle(i18n("Message as Plain Text"));
+    viewer->setWindowTitle(i18nc("@title:window", "Message as Plain Text"));
     const QString rawMessage = QString::fromLatin1(mMessage->encodedContent());
     viewer->setRawSource(rawMessage);
     viewer->setDisplayedSource(mViewer->page());
@@ -2354,7 +2354,7 @@ void ViewerPrivate::slotPrintMessage()
     }
     mCurrentPrinter = new QPrinter();
     QPointer<QPrintDialog> dialog = new QPrintDialog(mCurrentPrinter, mMainWindow);
-    dialog->setWindowTitle(i18n("Print Document"));
+    dialog->setWindowTitle(i18nc("@title:window", "Print Document"));
     if (dialog->exec() != QDialog::Accepted) {
         slotHandlePagePrinted(false);
         delete dialog;

@@ -40,7 +40,7 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
                   filenameText);
 
     dialog = new QDialog(parent);
-    dialog->setWindowTitle(i18n("Open Attachment?"));
+    dialog->setWindowTitle(i18nc("@title:window", "Open Attachment?"));
     dialog->setObjectName(QStringLiteral("attachmentSaveOpen"));
     mButtonBox = new QDialogButtonBox(QDialogButtonBox::Cancel, dialog);
     QPushButton *user1Button = new QPushButton;

@@ -319,7 +319,7 @@ AttachmentPropertiesDialog::AttachmentPropertiesDialog(const AttachmentPart::Ptr
     , d(new Private(this))
 {
     d->init(part, readOnly);
-    setWindowTitle(i18n("Attachment Properties"));
+    setWindowTitle(i18nc("@title:window", "Attachment Properties"));
 }
 
 AttachmentPropertiesDialog::AttachmentPropertiesDialog(const KMime::Content *content, QWidget *parent)
@@ -334,7 +334,7 @@ AttachmentPropertiesDialog::AttachmentPropertiesDialog(const KMime::Content *con
 
     const AttachmentPart::Ptr part = job->attachmentPart();
     d->init(part, true);
-    setWindowTitle(i18n("Attachment Properties"));
+    setWindowTitle(i18nc("@title:window", "Attachment Properties"));
 }
 
 AttachmentPropertiesDialog::~AttachmentPropertiesDialog()

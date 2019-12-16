@@ -44,7 +44,7 @@ using namespace MessageViewer;
 ScamDetectionDetailsDialog::ScamDetectionDetailsDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Details"));
+    setWindowTitle(i18nc("@title:window", "Details"));
     setAttribute(Qt::WA_DeleteOnClose);
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 

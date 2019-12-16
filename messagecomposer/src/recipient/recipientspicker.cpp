@@ -46,7 +46,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     : QDialog(parent)
 {
     setObjectName(QStringLiteral("RecipientsPicker"));
-    setWindowTitle(i18n("Select Recipient"));
+    setWindowTitle(i18nc("@title:window", "Select Recipient"));
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 

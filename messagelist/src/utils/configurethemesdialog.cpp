@@ -103,7 +103,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ConfigureThemesDialog::reject);
-    setWindowTitle(i18n("Customize Themes"));
+    setWindowTitle(i18nc("@title:window", "Customize Themes"));
 
     QWidget *base = new QWidget(this);
     mainLayout->addWidget(base);
