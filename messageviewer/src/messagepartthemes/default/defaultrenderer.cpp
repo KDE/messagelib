@@ -286,8 +286,8 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
             httpsPos = str.indexOf(QLatin1String("\"https:"), httpsPos + 7, Qt::CaseInsensitive);
         }
     }
-    if (str.indexOf(QRegularExpression(QLatin1String("<img.*src=http:/"), QRegularExpression::CaseInsensitiveOption))
-        || str.indexOf(QRegularExpression(QLatin1String("<img.*src=https:/"), QRegularExpression::CaseInsensitiveOption))) {
+    if (str.contains(QRegularExpression(QLatin1String("<img.*src=http:/"), QRegularExpression::CaseInsensitiveOption))
+        || str.contains(QRegularExpression(QLatin1String("<img.*src=https:/"), QRegularExpression::CaseInsensitiveOption))) {
         return true;
     }
     return false;
