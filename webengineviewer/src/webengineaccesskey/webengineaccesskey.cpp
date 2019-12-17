@@ -67,7 +67,7 @@ public:
     void makeAccessKeyLabel(QChar accessKey, const WebEngineViewer::WebEngineAccessKeyAnchor &element);
     bool checkForAccessKey(QKeyEvent *event);
     QList<QLabel *> mAccessKeyLabels;
-    QHash<QChar, WebEngineViewer::WebEngineAccessKeyAnchor> mAccessKeyNodes;
+    QMultiHash<QChar, WebEngineViewer::WebEngineAccessKeyAnchor> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
     QWebEngineView *mWebEngine = nullptr;
     AccessKeyState mAccessKeyActivated = NotActivated;
@@ -141,7 +141,7 @@ bool WebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
     QChar key = text.at(0).toUpper();
     bool handled = false;
     if (mAccessKeyNodes.contains(key)) {
-        WebEngineViewer::WebEngineAccessKeyAnchor element = mAccessKeyNodes[key];
+        WebEngineViewer::WebEngineAccessKeyAnchor element = mAccessKeyNodes.value(key);
         if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
             const QString linkKey(linkElementKey(element, mWebEngine->url()));
             if (!linkKey.isEmpty()) {
@@ -173,7 +173,7 @@ void WebEngineAccessKeyPrivate::makeAccessKeyLabel(QChar accessKey, const WebEng
     point.setX(point.x() - label->width() / 2);
     label->move(point);
     mAccessKeyLabels.append(label);
-    mAccessKeyNodes.insertMulti(accessKey, element);
+    mAccessKeyNodes.insert(accessKey, element);
 }
 
 WebEngineAccessKey::WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)
