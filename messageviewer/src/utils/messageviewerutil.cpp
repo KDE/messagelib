@@ -75,6 +75,55 @@
 #include <QRegularExpression>
 
 using namespace MessageViewer;
+/** Checks whether @p str contains external references. To be precise,
+    we only check whether @p str contains 'xxx="http[s]:' where xxx is
+    not href. Obfuscated external references are ignored on purpose.
+*/
+
+bool Util::containsExternalReferences(const QString &str, const QString &extraHead)
+{
+    const bool hasBaseInHeader = extraHead.contains(QLatin1String(
+                                                        "<base href=\""), Qt::CaseInsensitive);
+    if (hasBaseInHeader && (str.contains(QLatin1String("href=\"/"), Qt::CaseInsensitive)
+                            || str.contains(QLatin1String("<img src=\"/"), Qt::CaseInsensitive))) {
+        return true;
+    }
+    int httpPos = str.indexOf(QLatin1String("\"http:"), Qt::CaseInsensitive);
+    int httpsPos = str.indexOf(QLatin1String("\"https:"), Qt::CaseInsensitive);
+    while (httpPos >= 0 || httpsPos >= 0) {
+        // pos = index of next occurrence of "http: or "https: whichever comes first
+        int pos = (httpPos < httpsPos)
+                ? ((httpPos >= 0) ? httpPos : httpsPos)
+                : ((httpsPos >= 0) ? httpsPos : httpPos);
+        // look backwards for "href"
+        if (pos > 5) {
+            int hrefPos = str.lastIndexOf(QLatin1String("href"), pos - 5, Qt::CaseInsensitive);
+            // if no 'href' is found or the distance between 'href' and '"http[s]:'
+            // is larger than 7 (7 is the distance in 'href = "http[s]:') then
+            // we assume that we have found an external reference
+            if ((hrefPos == -1) || (pos - hrefPos > 7)) {
+                // HTML messages created by KMail itself for now contain the following:
+                // <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+                // Make sure not to show an external references warning for this string
+                int dtdPos = str.indexOf(QLatin1String(
+                                             "http://www.w3.org/TR/html4/loose.dtd"), pos + 1);
+                if (dtdPos != (pos + 1)) {
+                    return true;
+                }
+            }
+        }
+        // find next occurrence of "http: or "https:
+        if (pos == httpPos) {
+            httpPos = str.indexOf(QLatin1String("\"http:"), httpPos + 6, Qt::CaseInsensitive);
+        } else {
+            httpsPos = str.indexOf(QLatin1String("\"https:"), httpsPos + 7, Qt::CaseInsensitive);
+        }
+    }
+    const bool containsReg = str.contains(QRegularExpression(QLatin1String("<img.*src=\"?https?:/.*>"), QRegularExpression::CaseInsensitiveOption));
+    //qDebug() << " str.contains  " << containsReg;
+
+    return containsReg;
+}
 
 bool Util::checkOverwrite(const QUrl &url, QWidget *w)
 {
@@ -608,3 +657,4 @@ void Util::readGravatarConfig()
         Gravatar::GravatarCache::self()->clear();
     }
 }
+
