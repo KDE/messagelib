@@ -58,6 +58,7 @@ namespace MessageViewer {
  */
 namespace Util {
 // return true if we should proceed, false if we should abort
+Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool containsExternalReferences(const QString &str, const QString &extraHead);
 Q_REQUIRED_RESULT bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);

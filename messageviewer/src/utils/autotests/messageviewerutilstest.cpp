@@ -44,3 +44,32 @@ void MessageViewerUtilsTest::shouldExcludeHeader()
     QFETCH(bool, exclude);
     QCOMPARE(MessageViewer::Util::excludeExtraHeader(header), exclude);
 }
+
+void MessageViewerUtilsTest::shouldContainsExternalReferences_data()
+{
+    QTest::addColumn<QString>("filename");
+    QTest::addColumn<QString>("extraHead");
+    QTest::addColumn<bool>("hasExternalReference");
+    QTest::newRow("noimage.txt") << QStringLiteral("noimage.txt") << QString() << false;
+    QTest::newRow("image.txt") << QStringLiteral("image.txt") << QString() << true;
+    QTest::newRow("image2.txt") << QStringLiteral("image2.txt") << QString() << true;
+    QTest::newRow("noimage2.txt") << QStringLiteral("noimage2.txt") << QString() << false;
+    QTest::newRow("noimage3.txt") << QStringLiteral("noimage3.txt") << QString() << false;
+}
+
+void MessageViewerUtilsTest::shouldContainsExternalReferences()
+{
+    QFETCH(QString, filename);
+    QFETCH(QString, extraHead);
+    QFETCH(bool, hasExternalReference);
+    const QString curPath = QStringLiteral(MESSAGEVIEWER_UTIL_DATA_DIR "/");
+    QFile file(curPath + filename);
+    QVERIFY(file.open(QIODevice::ReadOnly));
+    const QString html = QString::fromLatin1(file.readAll());
+
+    QEXPECT_FAIL("noimage3.txt", "Need to Investigate it", Continue);
+    QEXPECT_FAIL("noimage2.txt", "Need to Investigate it", Continue);
+    QCOMPARE(MessageViewer::Util::containsExternalReferences(html, extraHead), hasExternalReference);
+}
+
+
