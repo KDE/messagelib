@@ -93,8 +93,8 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
     while (httpPos >= 0 || httpsPos >= 0) {
         // pos = index of next occurrence of "http: or "https: whichever comes first
         int pos = (httpPos < httpsPos)
-                ? ((httpPos >= 0) ? httpPos : httpsPos)
-                : ((httpsPos >= 0) ? httpsPos : httpPos);
+                  ? ((httpPos >= 0) ? httpPos : httpsPos)
+                  : ((httpsPos >= 0) ? httpsPos : httpPos);
         // look backwards for "href"
         if (pos > 5) {
             int hrefPos = str.lastIndexOf(QLatin1String("href"), pos - 5, Qt::CaseInsensitive);
@@ -657,4 +657,3 @@ void Util::readGravatarConfig()
         Gravatar::GravatarCache::self()->clear();
     }
 }
-

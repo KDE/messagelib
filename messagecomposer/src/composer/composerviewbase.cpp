@@ -1275,19 +1275,17 @@ void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageCo
     Akonadi::MessageFlags::copyMessageFlags(*message, item);
 
     if (!identity.isNull()) {   // we have a valid identity
-        switch(saveIn) {
-        case MessageComposer::MessageSender::SaveInTemplates: {
+        switch (saveIn) {
+        case MessageComposer::MessageSender::SaveInTemplates:
             if (!identity.templates().isEmpty()) {   // the user has specified a custom templates collection
                 target = Akonadi::Collection(identity.templates().toLongLong());
             }
             break;
-        }
-        case MessageComposer::MessageSender::SaveInDrafts: {
+        case MessageComposer::MessageSender::SaveInDrafts:
             if (!identity.drafts().isEmpty()) {   // the user has specified a custom drafts collection
                 target = Akonadi::Collection(identity.drafts().toLongLong());
             }
             break;
-        }
         case MessageComposer::MessageSender::SaveInOutbox: //We don't define save outbox in identity
             target = Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Outbox);
             break;
@@ -1329,7 +1327,7 @@ void ComposerViewBase::slotSaveMessage(KJob *job)
 Akonadi::Collection ComposerViewBase::defaultSpecialTarget() const
 {
     Akonadi::Collection target;
-    switch(mSaveIn) {
+    switch (mSaveIn) {
     case MessageComposer::MessageSender::SaveInNone:
         break;
     case MessageComposer::MessageSender::SaveInDrafts:

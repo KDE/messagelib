@@ -25,7 +25,6 @@
 using namespace MessageViewer;
 MessageViewerRenderer::MessageViewerRenderer()
 {
-
 }
 
 MessageViewerRenderer::~MessageViewerRenderer()

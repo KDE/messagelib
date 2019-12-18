@@ -71,5 +71,3 @@ void MessageViewerUtilsTest::shouldContainsExternalReferences()
     QEXPECT_FAIL("noimage2.txt", "Need to Investigate it", Continue);
     QCOMPARE(MessageViewer::Util::containsExternalReferences(html, extraHead), hasExternalReference);
 }
-
-

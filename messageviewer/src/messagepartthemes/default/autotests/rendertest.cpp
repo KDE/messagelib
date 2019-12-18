@@ -39,6 +39,7 @@ void RenderTest::initTestCase()
 {
     Test::setupEnv();
 }
+
 #ifndef Q_OS_WIN
 void initLocale()
 {

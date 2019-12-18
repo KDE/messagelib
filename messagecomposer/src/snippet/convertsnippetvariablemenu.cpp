@@ -31,7 +31,6 @@ ConvertSnippetVariableMenu::ConvertSnippetVariableMenu(bool onlyMenuForCustomize
     initializeMenu(onlyMenuForCustomizeAttachmentFileName);
 }
 
-
 ConvertSnippetVariableMenu::~ConvertSnippetVariableMenu()
 {
 }

@@ -28,7 +28,6 @@ QTEST_MAIN(MessageViewerRendererTest)
 MessageViewerRendererTest::MessageViewerRendererTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void MessageViewerRendererTest::shouldHaveDefaultValue()

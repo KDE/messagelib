@@ -111,7 +111,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
             Gravatar::GravatarResolvUrlJob *job = new Gravatar::GravatarResolvUrlJob(this);
             job->setEmail(mEmailAddress);
             job->setUseDefaultPixmap(
-                        Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
+                Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
             if (job->canStart()) {
                 connect(job, &Gravatar::GravatarResolvUrlJob::finished, this,
                         &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);

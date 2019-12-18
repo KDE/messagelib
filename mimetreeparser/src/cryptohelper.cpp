@@ -128,7 +128,6 @@ QVector<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg
 
 Block::Block()
 {
-
 }
 
 Block::Block(const QByteArray &m)

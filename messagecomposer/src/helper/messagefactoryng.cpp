@@ -92,8 +92,7 @@ MessageFactoryNG::~MessageFactoryNG()
 // Return the addresses to use when replying to the author of msg.
 // See <https://cr.yp.to/proto/replyto.html>.
 static KMime::Types::Mailbox::List authorMailboxes(
-    const KMime::Message::Ptr &msg,
-    KMime::Types::Mailbox::List mailingLists)
+    const KMime::Message::Ptr &msg, KMime::Types::Mailbox::List mailingLists)
 {
     if (auto mrt = msg->headerByType("Mail-Reply-To")) {
         return KMime::Types::Mailbox::listFrom7BitString(mrt->as7BitString(false));
