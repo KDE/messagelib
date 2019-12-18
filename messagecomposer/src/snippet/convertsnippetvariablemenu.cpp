@@ -104,24 +104,26 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
         mMenu->addMenu(attachmentMenuVariable);
     }
     QMenu *dateTimeMenuVariable = new QMenu(i18n("Date/Time"), mMenu);
-    dateTimeMenuVariable->addAction(i18n("Day Of Week"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Dow);
-    });
-    dateTimeMenuVariable->addAction(i18n("Date (%1)", QDate::currentDate().toString(Qt::SystemLocaleShortDate)), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ShortDate);
-    });
-    dateTimeMenuVariable->addAction(i18n("Date (%1)", QDate::currentDate().toString(Qt::SystemLocaleLongDate)), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Date);
-    });
-    dateTimeMenuVariable->addAction(i18n("Time (%1)", QTime::currentTime().toString(Qt::SystemLocaleShortDate)), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Time);
-    });
-    dateTimeMenuVariable->addAction(i18n("Time (%1)", QTime::currentTime().toString(Qt::SystemLocaleLongDate)), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::TimeLong);
-    });
-    dateTimeMenuVariable->addAction(i18n("Year"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Year);
-    });
+    if (!onlyMenuForCustomizeAttachmentFileName) {
+        dateTimeMenuVariable->addAction(i18n("Day Of Week"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Dow);
+        });
+        dateTimeMenuVariable->addAction(i18n("Date (%1)", QDate::currentDate().toString(Qt::SystemLocaleShortDate)), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ShortDate);
+        });
+        dateTimeMenuVariable->addAction(i18n("Date (%1)", QDate::currentDate().toString(Qt::SystemLocaleLongDate)), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Date);
+        });
+        dateTimeMenuVariable->addAction(i18n("Time (%1)", QTime::currentTime().toString(Qt::SystemLocaleShortDate)), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Time);
+        });
+        dateTimeMenuVariable->addAction(i18n("Time (%1)", QTime::currentTime().toString(Qt::SystemLocaleLongDate)), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::TimeLong);
+        });
+        dateTimeMenuVariable->addAction(i18n("Year"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Year);
+        });
+    }
     dateTimeMenuVariable->addAction(i18n("Last Year"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::LastYear);
     });
