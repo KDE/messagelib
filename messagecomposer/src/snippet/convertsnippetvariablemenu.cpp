@@ -28,19 +28,27 @@ ConvertSnippetVariableMenu::ConvertSnippetVariableMenu(QWidget *parentWidget, QO
     : QObject(parent)
     , mParentWidget(parentWidget)
 {
-    initializeMenu();
+    initializeMenu(false);
 }
+
+ConvertSnippetVariableMenu::ConvertSnippetVariableMenu(bool onlyMenuForCustomizeAttachmentFileName, QWidget *parentWidget, QObject *parent)
+    : QObject(parent)
+    , mParentWidget(parentWidget)
+{
+    initializeMenu(onlyMenuForCustomizeAttachmentFileName);
+}
+
 
 ConvertSnippetVariableMenu::~ConvertSnippetVariableMenu()
 {
 }
 
-void ConvertSnippetVariableMenu::initializeMenu()
+void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachmentFileName)
 {
     mMenu = new QMenu(mParentWidget);
     mMenu->setFocusPolicy(Qt::NoFocus);
 
-    if (!mOnlyMenuForCustomizeAttachmentFileName) {
+    if (!onlyMenuForCustomizeAttachmentFileName) {
         QMenu *toMenuVariable = new QMenu(i18n("To"), mMenu);
         toMenuVariable->addAction(i18n("To Field Address"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToAddr);
@@ -162,16 +170,6 @@ void ConvertSnippetVariableMenu::initializeMenu()
     });
     //Add more variables!
     mMenu->addMenu(miscVariable);
-}
-
-bool ConvertSnippetVariableMenu::onlyMenuForCustomizeAttachmentFileName() const
-{
-    return mOnlyMenuForCustomizeAttachmentFileName;
-}
-
-void ConvertSnippetVariableMenu::setOnlyMenuForCustomizeAttachmentFileName(bool onlyMenuForCustomizeAttachmentFileName)
-{
-    mOnlyMenuForCustomizeAttachmentFileName = onlyMenuForCustomizeAttachmentFileName;
 }
 
 QMenu *ConvertSnippetVariableMenu::menu() const
