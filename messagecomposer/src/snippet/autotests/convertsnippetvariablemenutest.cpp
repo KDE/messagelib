@@ -29,6 +29,6 @@ ConvertSnippetVariableMenuTest::ConvertSnippetVariableMenuTest(QObject *parent)
 
 void ConvertSnippetVariableMenuTest::shouldHaveDefaultValues()
 {
-    MessageComposer::ConvertSnippetVariableMenu w(nullptr);
+    MessageComposer::ConvertSnippetVariableMenu w(true, nullptr);
     QVERIFY(w.menu());
 }

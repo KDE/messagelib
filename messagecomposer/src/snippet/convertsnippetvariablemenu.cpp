@@ -24,13 +24,6 @@
 #include <QTime>
 #include <QLocale>
 using namespace MessageComposer;
-ConvertSnippetVariableMenu::ConvertSnippetVariableMenu(QWidget *parentWidget, QObject *parent)
-    : QObject(parent)
-    , mParentWidget(parentWidget)
-{
-    initializeMenu(false);
-}
-
 ConvertSnippetVariableMenu::ConvertSnippetVariableMenu(bool onlyMenuForCustomizeAttachmentFileName, QWidget *parentWidget, QObject *parent)
     : QObject(parent)
     , mParentWidget(parentWidget)
@@ -164,12 +157,14 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
     });
     mMenu->addMenu(dateTimeMenuVariable);
 
-    QMenu *miscVariable = new QMenu(i18n("Misc"), mMenu);
-    miscVariable->addAction(i18n("Subject"), this, [this]() {
-        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FullSubject);
-    });
-    //Add more variables!
-    mMenu->addMenu(miscVariable);
+    if (!onlyMenuForCustomizeAttachmentFileName) {
+        QMenu *miscVariable = new QMenu(i18n("Misc"), mMenu);
+        miscVariable->addAction(i18n("Subject"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FullSubject);
+        });
+        //Add more variables!
+        mMenu->addMenu(miscVariable);
+    }
 }
 
 QMenu *ConvertSnippetVariableMenu::menu() const
