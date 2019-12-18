@@ -48,6 +48,7 @@ Q_SIGNALS:
     void textConverted(const QString &str);
 
 private:
+    static Q_REQUIRED_RESULT QString convertVariables(const QString &cmd, int &i, QChar c);
     static QString getFirstNameFromEmail(QString address);
     static QString getLastNameFromEmail(QString address);
     static QString getNameFromEmail(QString address);

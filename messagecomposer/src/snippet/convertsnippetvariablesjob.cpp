@@ -74,6 +74,63 @@ void ConvertSnippetVariablesJob::setComposerViewInterface(MessageComposer::Compo
     mComposerViewInterface = composerViewInterface;
 }
 
+QString ConvertSnippetVariablesJob::convertVariables(const QString &cmd, int &i, QChar c)
+{
+    QString result;
+    if (cmd.startsWith(QLatin1String("LASTYEAR"))) {
+        i += strlen("LASTYEAR");
+        const QDate date = QDate::currentDate();
+        result.append(QString::number(date.year() - 1));
+    } else if (cmd.startsWith(QLatin1String("NEXTYEAR"))) {
+        i += strlen("NEXTYEAR");
+        const QDate date = QDate::currentDate();
+        result.append(QString::number(date.year() - 2));
+    } else if (cmd.startsWith(QLatin1String("MONTHNUMBER"))) {
+        i += strlen("MONTHNUMBER");
+        const QDate date = QDate::currentDate();
+        result.append(QString::number(date.month()));
+    } else if (cmd.startsWith(QLatin1String("DAYOFMONTH"))) {
+        i += strlen("DAYOFMONTH");
+        const QDate date = QDate::currentDate();
+        result.append(QString::number(date.daysInMonth()));
+    } else if (cmd.startsWith(QLatin1String("WEEKNUMBER"))) {
+        i += strlen("WEEKNUMBER");
+        const QDate date = QDate::currentDate();
+        result.append(QString::number(date.weekNumber()));
+    } else if (cmd.startsWith(QLatin1String("MONTHNAMESHORT"))) {
+        i += strlen("MONTHNAMESHORT");
+        const QDate date = QDate::currentDate();
+        result.append(date.toString(QStringLiteral("MMM")));
+    } else if (cmd.startsWith(QLatin1String("MONTHNAMELONG"))) {
+        i += strlen("MONTHNAMELONG");
+        const QDate date = QDate::currentDate();
+        result.append(date.toString(QStringLiteral("MMMM")));
+    } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMESHORT"))) {
+        i += strlen("DAYOFWEEKNAMESHORT");
+        const QDate date = QDate::currentDate();
+        result.append(date.toString(QStringLiteral("ddd")));
+    } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMELONG"))) {
+        i += strlen("DAYOFWEEKNAMELONG");
+        const QDate date = QDate::currentDate();
+        result.append(date.toString(QStringLiteral("dddd")));
+    } else if (cmd.startsWith(QLatin1String("YEARLASTMONTH"))) {
+        i += strlen("YEARLASTMONTH");
+        const QDate date = QDate::currentDate().addMonths(-1);
+        result.append(date.toString(QStringLiteral("yyyy-MMM")));
+    } else if (cmd.startsWith(QLatin1String("YEAR"))) {
+        i += strlen("YEAR");
+        const QDate date = QDate::currentDate();
+        result.append(QString::number(date.year()));
+    } else if (cmd.startsWith(QLatin1String("DAYOFWEEK"))) {
+        i += strlen("DAYOFWEEK");
+        const QDate date = QDate::currentDate();
+        result.append(QString::number(date.dayOfWeek()));
+    } else {
+        result.append(c);
+    }
+    return result;
+}
+
 QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerViewInterface *composerView, const QString &text)
 {
     QString result;
@@ -82,144 +139,100 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
         const QChar c = text[i];
         if (c == QLatin1Char('%')) {
             const QString cmd = text.mid(i + 1);
-            if (cmd.startsWith(QLatin1String("CCADDR"))) {
-                i += strlen("CCADDR");
-                const QString str = composerView->cc();
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("CCFNAME"))) {
-                i += strlen("CCFNAME");
-                const QString str = getFirstNameFromEmail(composerView->cc());
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("CCLNAME"))) {
-                i += strlen("CCLNAME");
-                const QString str = getLastNameFromEmail(composerView->cc());
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("CCNAME"))) {
-                i += strlen("CCNAME");
-                const QString str = getNameFromEmail(composerView->cc());
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("FULLSUBJECT"))) {
-                i += strlen("FULLSUBJECT");
-                const QString str = composerView->subject();
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("TOADDR"))) {
-                i += strlen("TOADDR");
-                const QString str = composerView->to();
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("TOFNAME"))) {
-                i += strlen("TOFNAME");
-                const QString str = getFirstNameFromEmail(composerView->to());
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("TOLNAME"))) {
-                i += strlen("TOLNAME");
-                const QString str = getLastNameFromEmail(composerView->to());
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("TONAME"))) {
-                i += strlen("TONAME");
-                const QString str = getNameFromEmail(composerView->to());
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("FROMADDR"))) {
-                i += strlen("FROMADDR");
-                const QString str = composerView->from();
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("FROMFNAME"))) {
-                i += strlen("FROMFNAME");
-                const QString str = getFirstNameFromEmail(composerView->from());
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("FROMLNAME"))) {
-                i += strlen("FROMLNAME");
-                const QString str = getLastNameFromEmail(composerView->from());
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("FROMNAME"))) {
-                i += strlen("FROMNAME");
-                const QString str = getNameFromEmail(composerView->from());
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("DOW"))) {
-                i += strlen("DOW");
-                const QString str = composerView->insertDayOfWeek();
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("DATE"))) {
-                i += strlen("DATE");
-                const QString str = composerView->longDate();
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("SHORTDATE"))) {
-                i += strlen("SHORTDATE");
-                const QString str = composerView->shortDate();
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("TIME"))) {
-                i += strlen("TIME");
-                const QString str = composerView->shortTime();
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("TIMELONG"))) {
-                i += strlen("TIMELONG");
-                const QString str = composerView->longTime();
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("ATTACHMENTCOUNT"))) {
-                i += strlen("ATTACHMENTCOUNT");
-                const QString str = QString::number(composerView->attachments().count());
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("ATTACHMENTNAMES"))) {
-                i += strlen("ATTACHMENTNAMES");
-                const QString str = composerView->attachments().names().join(QLatin1Char(','));
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("ATTACHMENTFILENAMES"))) {
-                i += strlen("ATTACHMENTFILENAMES");
-                const QString str = composerView->attachments().fileNames().join(QLatin1Char(','));
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("ATTACHMENTNAMESANDSIZES"))) {
-                i += strlen("ATTACHMENTNAMESANDSIZES");
-                const QString str = composerView->attachments().namesAndSize().join(QLatin1Char(','));
-                result.append(str);
-            } else if (cmd.startsWith(QLatin1String("LASTYEAR"))) {
-                i += strlen("LASTYEAR");
-                const QDate date = QDate::currentDate();
-                result.append(QString::number(date.year() - 1));
-            } else if (cmd.startsWith(QLatin1String("NEXTYEAR"))) {
-                i += strlen("NEXTYEAR");
-                const QDate date = QDate::currentDate();
-                result.append(QString::number(date.year() - 2));
-            } else if (cmd.startsWith(QLatin1String("MONTHNUMBER"))) {
-                i += strlen("MONTHNUMBER");
-                const QDate date = QDate::currentDate();
-                result.append(QString::number(date.month()));
-            } else if (cmd.startsWith(QLatin1String("DAYOFMONTH"))) {
-                i += strlen("DAYOFMONTH");
-                const QDate date = QDate::currentDate();
-                result.append(QString::number(date.daysInMonth()));
-            } else if (cmd.startsWith(QLatin1String("WEEKNUMBER"))) {
-                i += strlen("WEEKNUMBER");
-                const QDate date = QDate::currentDate();
-                result.append(QString::number(date.weekNumber()));
-            } else if (cmd.startsWith(QLatin1String("MONTHNAMESHORT"))) {
-                i += strlen("MONTHNAMESHORT");
-                const QDate date = QDate::currentDate();
-                result.append(date.toString(QStringLiteral("MMM")));
-            } else if (cmd.startsWith(QLatin1String("MONTHNAMELONG"))) {
-                i += strlen("MONTHNAMELONG");
-                const QDate date = QDate::currentDate();
-                result.append(date.toString(QStringLiteral("MMMM")));
-            } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMESHORT"))) {
-                i += strlen("DAYOFWEEKNAMESHORT");
-                const QDate date = QDate::currentDate();
-                result.append(date.toString(QStringLiteral("ddd")));
-            } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMELONG"))) {
-                i += strlen("DAYOFWEEKNAMELONG");
-                const QDate date = QDate::currentDate();
-                result.append(date.toString(QStringLiteral("dddd")));
-            } else if (cmd.startsWith(QLatin1String("YEARLASTMONTH"))) {
-                i += strlen("YEARLASTMONTH");
-                const QDate date = QDate::currentDate().addMonths(-1);
-                result.append(date.toString(QStringLiteral("yyyy-MMM")));
-            } else if (cmd.startsWith(QLatin1String("YEAR"))) {
-                i += strlen("YEAR");
-                const QDate date = QDate::currentDate();
-                result.append(QString::number(date.year()));
-            } else if (cmd.startsWith(QLatin1String("DAYOFWEEK"))) {
-                i += strlen("DAYOFWEEK");
-                const QDate date = QDate::currentDate();
-                result.append(QString::number(date.dayOfWeek()));
+            if (composerView) {
+                if (cmd.startsWith(QLatin1String("CCADDR"))) {
+                    i += strlen("CCADDR");
+                    const QString str = composerView->cc();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("CCFNAME"))) {
+                    i += strlen("CCFNAME");
+                    const QString str = getFirstNameFromEmail(composerView->cc());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("CCLNAME"))) {
+                    i += strlen("CCLNAME");
+                    const QString str = getLastNameFromEmail(composerView->cc());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("CCNAME"))) {
+                    i += strlen("CCNAME");
+                    const QString str = getNameFromEmail(composerView->cc());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("FULLSUBJECT"))) {
+                    i += strlen("FULLSUBJECT");
+                    const QString str = composerView->subject();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("TOADDR"))) {
+                    i += strlen("TOADDR");
+                    const QString str = composerView->to();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("TOFNAME"))) {
+                    i += strlen("TOFNAME");
+                    const QString str = getFirstNameFromEmail(composerView->to());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("TOLNAME"))) {
+                    i += strlen("TOLNAME");
+                    const QString str = getLastNameFromEmail(composerView->to());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("TONAME"))) {
+                    i += strlen("TONAME");
+                    const QString str = getNameFromEmail(composerView->to());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("FROMADDR"))) {
+                    i += strlen("FROMADDR");
+                    const QString str = composerView->from();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("FROMFNAME"))) {
+                    i += strlen("FROMFNAME");
+                    const QString str = getFirstNameFromEmail(composerView->from());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("FROMLNAME"))) {
+                    i += strlen("FROMLNAME");
+                    const QString str = getLastNameFromEmail(composerView->from());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("FROMNAME"))) {
+                    i += strlen("FROMNAME");
+                    const QString str = getNameFromEmail(composerView->from());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("DOW"))) {
+                    i += strlen("DOW");
+                    const QString str = composerView->insertDayOfWeek();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("DATE"))) {
+                    i += strlen("DATE");
+                    const QString str = composerView->longDate();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("SHORTDATE"))) {
+                    i += strlen("SHORTDATE");
+                    const QString str = composerView->shortDate();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("TIME"))) {
+                    i += strlen("TIME");
+                    const QString str = composerView->shortTime();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("TIMELONG"))) {
+                    i += strlen("TIMELONG");
+                    const QString str = composerView->longTime();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("ATTACHMENTCOUNT"))) {
+                    i += strlen("ATTACHMENTCOUNT");
+                    const QString str = QString::number(composerView->attachments().count());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("ATTACHMENTNAMES"))) {
+                    i += strlen("ATTACHMENTNAMES");
+                    const QString str = composerView->attachments().names().join(QLatin1Char(','));
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("ATTACHMENTFILENAMES"))) {
+                    i += strlen("ATTACHMENTFILENAMES");
+                    const QString str = composerView->attachments().fileNames().join(QLatin1Char(','));
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("ATTACHMENTNAMESANDSIZES"))) {
+                    i += strlen("ATTACHMENTNAMESANDSIZES");
+                    const QString str = composerView->attachments().namesAndSize().join(QLatin1Char(','));
+                    result.append(str);
+                } else {
+                    result.append(convertVariables(cmd, i, c));
+                }
             } else {
-                result.append(c);
+                result.append(convertVariables(cmd, i, c));
             }
         } else {
             result.append(c);
