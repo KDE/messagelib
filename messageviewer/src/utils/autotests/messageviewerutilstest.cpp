@@ -66,9 +66,6 @@ void MessageViewerUtilsTest::shouldContainsExternalReferences()
     QFile file(curPath + filename);
     QVERIFY(file.open(QIODevice::ReadOnly));
     const QString html = QString::fromLatin1(file.readAll());
-
-    QEXPECT_FAIL("noimage3.txt", "Need to Investigate it", Continue);
-    QEXPECT_FAIL("noimage2.txt", "Need to Investigate it", Continue);
     QCOMPARE(MessageViewer::Util::containsExternalReferences(html, extraHead), hasExternalReference);
 }
 

@@ -117,11 +117,30 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
         }
     }
     QRegularExpressionMatch rmatch;
-    const bool containsReg = str.contains(QRegularExpression(QLatin1String("<img.*src=\"?https?:/.*>"), QRegularExpression::CaseInsensitiveOption), &rmatch);
 
-    //qDebug() << " str.contains  " << containsReg << rmatch.captured(0);
-
-    return containsReg;
+    const int startImgIndex = str.indexOf(QLatin1String("<img "));
+    QString newStringImg;
+    if (startImgIndex != -1) {
+        for (int i = startImgIndex, total = str.length(); i < total; ++i) {
+            const QChar charStr = str.at(i);
+            if (charStr == QLatin1Char('>')) {
+                newStringImg += charStr;
+                break;
+            } else {
+                newStringImg += charStr;
+            }
+        }
+        if (!newStringImg.isEmpty()) {
+            const bool containsReg2 = newStringImg.contains(QRegularExpression(QLatin1String("<img.*src=\"https?:/.*\".*>"), QRegularExpression::CaseInsensitiveOption), &rmatch);
+            if (!containsReg2) {
+                const bool containsReg = newStringImg.contains(QRegularExpression(QLatin1String("<img.*src=https?:/.*>"), QRegularExpression::CaseInsensitiveOption), &rmatch);
+                return containsReg;
+            } else {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 bool Util::checkOverwrite(const QUrl &url, QWidget *w)
