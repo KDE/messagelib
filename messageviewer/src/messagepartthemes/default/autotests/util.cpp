@@ -21,7 +21,6 @@
 #include <QFile>
 #include <QProcess>
 #include <QTest>
-
 KMime::Message::Ptr MessageViewer::Test::readAndParseMail(const QString &mailFile)
 {
     QFile file(QStringLiteral(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);

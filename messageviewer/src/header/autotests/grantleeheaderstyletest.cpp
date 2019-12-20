@@ -26,7 +26,7 @@
 
 #include <QFile>
 #include <QProcess>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QStringList>
 #include <QStandardPaths>
 #include <QTest>
@@ -44,11 +44,11 @@ void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString
     header += QStringLiteral("\n</body>\n</html>\n");
 
     header.replace(QStringLiteral("file://") + style.theme().absolutePath(), QStringLiteral("file://PATHTOSTYLE"));
-    header.replace(QRegExp(QStringLiteral("[\t ]+")), QStringLiteral(" "));
-    header.replace(QRegExp(QStringLiteral("[\t ]*\n+[\t ]*")), QStringLiteral("\n"));
-    header.replace(QRegExp(QStringLiteral("([\n\t ])\\1+")), QStringLiteral("\\1"));
-    header.replace(QRegExp(QStringLiteral(">\n+[\t ]*")), QStringLiteral(">"));
-    header.replace(QRegExp(QStringLiteral("[\t ]*\n+[\t ]*<")), QStringLiteral("<"));
+    header.replace(QRegularExpression(QStringLiteral("[\t ]+")), QStringLiteral(" "));
+    header.replace(QRegularExpression(QStringLiteral("[\t ]*\n+[\t ]*")), QStringLiteral("\n"));
+    header.replace(QRegularExpression(QStringLiteral("([\n\t ])\\1+")), QStringLiteral("\\1"));
+    header.replace(QRegularExpression(QStringLiteral(">\n+[\t ]*")), QStringLiteral(">"));
+    header.replace(QRegularExpression(QStringLiteral("[\t ]*\n+[\t ]*<")), QStringLiteral("<"));
     header.replace(QLatin1String("&nbsp;"), QLatin1String("NBSP_ENTITY_PLACEHOLDER")); // xmlling chokes on &nbsp;
 
     QString outName = name + QStringLiteral(".out.html");
