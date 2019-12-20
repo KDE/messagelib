@@ -640,10 +640,10 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
     QString datetime = rdir->date()->asUnicodeString();
 
     QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
-    rx.indexIn(QString::fromLatin1(rdir->head()));
+    QVERIFY(rx.indexIn(QString::fromLatin1(rdir->head())) != -1);
 
     QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
-    rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxmessageid.indexIn(QString::fromLatin1(rdir->head())) != -1);
     QString baseline = QString::fromLatin1("From: me@me.me\n"
                                            "Cc: cc@cc.cc\n"
                                            "Bcc: bcc@bcc.bcc\n"
@@ -684,13 +684,12 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
 
     QString datetime = rdir->date()->asUnicodeString();
 
-    QString msgId = MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), QString());
 
     QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
-    rx.indexIn(QString::fromLatin1(rdir->head()));
+    QVERIFY(rx.indexIn(QString::fromLatin1(rdir->head())) != -1);
 
     QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
-    rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxmessageid.indexIn(QString::fromLatin1(rdir->head())) != -1);
     //qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
     QString baseline = QString::fromLatin1("From: me@me.me\n"
                                            "Cc: cc@cc.cc\n"
@@ -731,10 +730,10 @@ void MessageFactoryTest::testCreateRedirect()
     QString datetime = rdir->date()->asUnicodeString();
 
     QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
-    rx.indexIn(QString::fromLatin1(rdir->head()));
+    QVERIFY(rx.indexIn(QString::fromLatin1(rdir->head())) != -1);
 
     QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
-    rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxmessageid.indexIn(QString::fromLatin1(rdir->head())) != -1);
     QString baseline = QString::fromLatin1("From: me@me.me\n"
                                            "Cc: cc@cc.cc\n"
                                            "Bcc: bcc@bcc.bcc\n"
@@ -772,10 +771,10 @@ void MessageFactoryTest::testCreateResend()
     QString datetime = rdir->date()->asUnicodeString();
 
     QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
-    rx.indexIn(QString::fromLatin1(rdir->head()));
+    QCOMPARE(rx.indexIn(QString::fromLatin1(rdir->head())), -1);
 
     QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
-    rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxmessageid.indexIn(QString::fromLatin1(rdir->head())) != -1);
 
     QString baseline = QString::fromLatin1("From: me@me.me\n"
                                            "To: %1\n"
