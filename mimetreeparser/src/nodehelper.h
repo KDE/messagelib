@@ -31,6 +31,7 @@
 #include <QList>
 #include <QMap>
 #include <QSet>
+#include <QVector>
 
 class QUrl;
 class QTextCodec;
@@ -94,7 +95,7 @@ public:
     void cleanExtraContent(KMime::Content *topLevelNode);
 
     /** Get the extra nodes attached to the @param topLevelNode and all sub-nodes of @param topLevelNode */
-    QList<KMime::Content *> extraContents(KMime::Content *topLevelNode) const;
+    QVector<KMime::Content *> extraContents(KMime::Content *topLevelNode) const;
 
     /** Return a modified message (node tree) starting from @param topLevelNode that has the original nodes and the extra nodes.
         The caller has the responsibility to delete the new message.
@@ -262,7 +263,7 @@ private:
     QMap<KMime::Content *, const QTextCodec *> mOverrideCodecs;
     QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *> > mBodyPartMementoMap;
     QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
-    QMap<KMime::Message::Content *, QList<KMime::Content *> > mExtraContents;
+    QMap<KMime::Message::Content *, QVector<KMime::Content *> > mExtraContents;
     AttachmentTemporaryFilesDirs *mAttachmentFilesDir = nullptr;
     QMap<const KMime::Content *, QVector<MessagePartPtr> > mHeaderOverwrite;
 

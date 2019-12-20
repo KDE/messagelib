@@ -22,7 +22,7 @@
 #define MESSAGEVIEWER_TESTS_SETUPENV_H
 
 #include <gpgme++/key.h>
-
+#include <QVector>
 #include <MimeTreeParser/BodyPartFormatterFactory>
 #include <MimeTreeParser/ObjectTreeSource>
 

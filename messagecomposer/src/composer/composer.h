@@ -25,6 +25,7 @@
 
 #include "messagecomposer_export.h"
 #include <QStringList>
+#include <QVector>
 
 #include <kmime/kmime_message.h>
 
@@ -50,7 +51,7 @@ public:
     explicit Composer(QObject *parent = nullptr);
     ~Composer() override;
 
-    QList<KMime::Message::Ptr> resultMessages() const;
+    QVector<KMime::Message::Ptr> resultMessages() const;
 
     Q_REQUIRED_RESULT GlobalPart *globalPart() const;
     Q_REQUIRED_RESULT InfoPart *infoPart() const;

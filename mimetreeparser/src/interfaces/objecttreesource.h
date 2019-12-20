@@ -24,7 +24,7 @@
 #include <MimeTreeParser/Util>
 
 #include <KMime/Message>
-
+#include <QVector>
 #include <QSharedPointer>
 class QTextCodec;
 

@@ -365,7 +365,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
         return true;
     }
 
-    const QList<KMime::Content *> extraNodes = mNodeHelper->extraContents(mMessage.data());
+    const QVector<KMime::Content *> extraNodes = mNodeHelper->extraContents(mMessage.data());
     if (extraNodes.contains(node->topLevel())) {
         KMessageBox::error(mMainWindow,
                            i18n(

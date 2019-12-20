@@ -29,6 +29,7 @@
 #include <KMime/Message>
 
 #include <QObject>
+#include <QVector>
 #include <QUrl>
 #include <Libkleo/Enum>
 
@@ -293,7 +294,7 @@ private:
     enum RecipientExpansion {
         UseExpandedRecipients, UseUnExpandedRecipients
     };
-    QList< MessageComposer::Composer * > generateCryptoMessages(bool &wasCanceled);
+    QVector< MessageComposer::Composer * > generateCryptoMessages(bool &wasCanceled);
     void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
     void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
     void queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer);
@@ -343,7 +344,7 @@ private:
     // List of active composer jobs. For example, saving as draft, autosaving and printing
     // all create a composer, which is added to this list as long as it is active.
     // Used mainly to prevent closing the window if a composer is active
-    QList< MessageComposer::Composer * > m_composers;
+    QVector< MessageComposer::Composer * > m_composers;
 
     bool m_sign = false;
     bool m_encrypt = false;

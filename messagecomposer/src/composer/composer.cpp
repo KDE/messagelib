@@ -69,7 +69,7 @@ public:
     // attachments with different sign/encrypt settings from
     // main message body. added at the end of the process
     AttachmentPart::List lateAttachmentParts;
-    QList<KMime::Message::Ptr> resultMessages;
+    QVector<KMime::Message::Ptr> resultMessages;
 
     Kleo::CryptoMessageFormat format;
 
@@ -456,12 +456,12 @@ Composer::~Composer()
 {
 }
 
-QList<KMime::Message::Ptr> Composer::resultMessages() const
+QVector<KMime::Message::Ptr> Composer::resultMessages() const
 {
     Q_D(const Composer);
     Q_ASSERT(d->finished);
     Q_ASSERT(!error());
-    QList<KMime::Message::Ptr> results = d->resultMessages;
+    QVector<KMime::Message::Ptr> results = d->resultMessages;
     return results;
 }
 

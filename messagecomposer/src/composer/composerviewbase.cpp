@@ -621,7 +621,7 @@ inline bool showKeyApprovalDialog()
 }
 } // nameless namespace
 
-QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
+QVector< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
 {
     const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
 
@@ -655,7 +655,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
     }
     if (keyResolver->setEncryptToSelfKeys(encryptToSelfKeys) != Kleo::Ok) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Failed to set encryptoToSelf keys!";
-        return QList< MessageComposer::Composer * >();
+        return QVector< MessageComposer::Composer * >();
     }
 
     //Add signingkeys from id to keyResolver
@@ -667,7 +667,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
     }
     if (keyResolver->setSigningKeys(signKeys) != Kleo::Ok) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Failed to set signing keys!";
-        return QList< MessageComposer::Composer * >();
+        return QVector< MessageComposer::Composer * >();
     }
 
     if (m_attachmentModel) {
@@ -703,7 +703,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
             Q_EMIT failed(QString());
         }
         wasCanceled = canceled;
-        return QList< MessageComposer::Composer *>();
+        return QVector< MessageComposer::Composer *>();
     }
 
     canceled = false;
@@ -718,27 +718,27 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
         }
 
         wasCanceled = canceled;
-        return QList< MessageComposer::Composer *>();
+        return QVector< MessageComposer::Composer *>();
     }
 
     //No encryption or signing is needed
     if (!signSomething && !encryptSomething) {
-        return QList< MessageComposer::Composer * >() << new MessageComposer::Composer();
+        return QVector< MessageComposer::Composer * >() << new MessageComposer::Composer();
     }
 
     const Kleo::Result kpgpResult = keyResolver->resolveAllKeys(signSomething, encryptSomething);
     if (kpgpResult == Kleo::Canceled) {
         qCDebug(MESSAGECOMPOSER_LOG) << "resolveAllKeys: one key resolution canceled by user";
-        return QList< MessageComposer::Composer *>();
+        return QVector< MessageComposer::Composer *>();
     } else if (kpgpResult != Kleo::Ok) {
         // TODO handle failure
         qCDebug(MESSAGECOMPOSER_LOG) << "resolveAllKeys: failed to resolve keys! oh noes";
         Q_EMIT failed(i18n("Failed to resolve keys. Please report a bug."));
-        return QList< MessageComposer::Composer *>();
+        return QVector< MessageComposer::Composer *>();
     }
     qCDebug(MESSAGECOMPOSER_LOG) << "done resolving keys:";
 
-    QList< MessageComposer::Composer * > composers;
+    QVector< MessageComposer::Composer * > composers;
 
     if (encryptSomething || signSomething) {
         Kleo::CryptoMessageFormat concreteFormat = Kleo::AutoFormat;

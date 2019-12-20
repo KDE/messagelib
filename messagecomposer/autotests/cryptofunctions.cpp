@@ -193,7 +193,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
         otp.parseObjectTree(resultMessage.data());
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
 
-        QList< KMime::Content * > extra = nh->extraContents(resultMessage.data());
+        QVector< KMime::Content * > extra = nh->extraContents(resultMessage.data());
         QCOMPARE(extra.size(), 1);
         QCOMPARE(nh->signatureState(extra[ 0 ]), MimeTreeParser::KMMsgFullySigned);
     } else if (f & Kleo::InlineOpenPGPFormat) {
@@ -214,7 +214,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
         otp.parseObjectTree(resultMessage.data());
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
 
-        QList< KMime::Content * > extra = nh->extraContents(resultMessage.data());
+        QVector< KMime::Content * > extra = nh->extraContents(resultMessage.data());
         QCOMPARE(extra.size(), 1);
         QCOMPARE(nh->signatureState(extra[ 0 ]), MimeTreeParser::KMMsgFullySigned);
     }

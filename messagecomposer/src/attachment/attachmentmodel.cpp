@@ -52,7 +52,7 @@ public:
     ~Private();
 
     AttachmentPart::List parts;
-    QList<QTemporaryDir *> tempDirs;
+    QVector<QTemporaryDir *> tempDirs;
     AttachmentModel *const q;
     bool modified = false;
     bool encryptEnabled = false;
