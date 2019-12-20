@@ -2405,11 +2405,7 @@ QString ViewerPrivate::attachmentHtml()
     initializeColorFromScheme();
     QString html = renderAttachments(mMessage.data(), mBackgroundAttachment);
     if (!html.isEmpty()) {
-        const bool isFancyTheme = (headerStylePlugin()->name() == QLatin1String("fancy"));
-        if (isFancyTheme) {
-            html.prepend(QStringLiteral("<div style=\"float:left;\">%1&nbsp;</div>").arg(i18n(
-                                                                                             "Attachments:")));
-        }
+        html.prepend(headerStylePlugin()->attachmentHtml());
     }
     return html;
 }

@@ -67,6 +67,11 @@ bool HeaderStylePlugin::isEnabled() const
     return d->mIsEnabled;
 }
 
+QString HeaderStylePlugin::attachmentHtml() const
+{
+    return {};
+}
+
 bool HeaderStylePlugin::hasConfigureDialog() const
 {
     return false;
