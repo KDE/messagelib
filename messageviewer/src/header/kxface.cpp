@@ -27,7 +27,7 @@
 
 #include <QBuffer>
 #include <QImage>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QString>
 
 #include <stdlib.h>
@@ -150,8 +150,8 @@ QString KXFace::fromImage(const QImage &image)
             tmp[i - 1] = t;
         }
     }
-    tmp.replace(QRegExp(QLatin1String("(\\w{12})")), QStringLiteral("\\1\n"));
-    tmp.replace(QRegExp(QLatin1String("(\\w{4})")), QStringLiteral("0x\\1,"));
+    tmp.replace(QRegularExpression(QLatin1String("(\\w{12})")), QStringLiteral("\\1\n"));
+    tmp.replace(QRegularExpression(QLatin1String("(\\w{4})")), QStringLiteral("0x\\1,"));
     len = tmp.length();
     char *fbuf = (char *)malloc(len + 1);
     strncpy(fbuf, tmp.toLatin1().constData(), len);
