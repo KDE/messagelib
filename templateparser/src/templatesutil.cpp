@@ -21,6 +21,7 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QRegularExpression>
 #include <QStringList>
 using namespace TemplateParser;
 
@@ -210,7 +211,7 @@ QString TemplateParser::Util::removeSpaceAtBegin(const QString &selection)
 {
     QString content = selection;
     // Remove blank lines at the beginning:
-    const int firstNonWS = content.indexOf(QRegExp(QLatin1String("\\S")));
+    const int firstNonWS = content.indexOf(QRegularExpression(QLatin1String("\\S")));
     const int lineStart = content.lastIndexOf(QLatin1Char('\n'), firstNonWS);
     if (lineStart >= 0) {
         content.remove(0, lineStart);
