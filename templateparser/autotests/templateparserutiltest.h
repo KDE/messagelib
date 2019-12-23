@@ -29,7 +29,8 @@ public:
     ~TemplateParserUtilTest() = default;
 
 private Q_SLOTS:
-    void shouldHaveDefaultValues();
+    void shouldRemoveSpaceAtBegin_data();
+    void shouldRemoveSpaceAtBegin();
 };
 
 #endif // TEMPLATEPARSERUTILTEST_H
