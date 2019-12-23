@@ -100,11 +100,11 @@ void RichTextComposerSignatures::cleanWhitespace(const KIdentityManagement::Sign
 
     // Squeeze tabs and spaces
     d->cleanWhitespaceHelper(QRegExp(QLatin1String("[\t ]+")),
-                             QString(QLatin1Char(' ')), sig);
+                             QStringLiteral(" "), sig);
 
     // Remove trailing whitespace
     d->cleanWhitespaceHelper(QRegExp(QLatin1String("[\t ][\n]")),
-                             QString(QLatin1Char('\n')), sig);
+                             QStringLiteral("\n"), sig);
 
     // Single space lines
     d->cleanWhitespaceHelper(QRegExp(QLatin1String("[\n]{3,}")),
