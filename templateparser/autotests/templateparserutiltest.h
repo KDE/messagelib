@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2011-2019 Montel Laurent <montel@kde.org>
+  Copyright (c) 2019 Montel Laurent <montel@kde.org>
 
   This program is free software; you can redistribute it and/or modify it
   under the terms of the GNU General Public License as published by
@@ -16,19 +16,20 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef TEMPLATEPARSER_TEMPLATESUTIL_P_H
-#define TEMPLATEPARSER_TEMPLATESUTIL_P_H
+#ifndef TEMPLATEPARSERUTILTEST_H
+#define TEMPLATEPARSERUTILTEST_H
 
-#include "templateparser_private_export.h"
-#include <QString>
-class QString;
-class QStringList;
-namespace TemplateParser {
-namespace Util {
-Q_REQUIRED_RESULT QStringList keywords();
-Q_REQUIRED_RESULT QStringList keywordsWithArgs();
-TEMPLATEPARSER_TESTS_EXPORT Q_REQUIRED_RESULT QString removeSpaceAtBegin(const QString &selection);
-}
-}
+#include <QObject>
 
-#endif
+class TemplateParserUtilTest : public QObject
+{
+    Q_OBJECT
+public:
+    explicit TemplateParserUtilTest(QObject *parent = nullptr);
+    ~TemplateParserUtilTest() = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
+};
+
+#endif // TEMPLATEPARSERUTILTEST_H

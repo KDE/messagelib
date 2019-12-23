@@ -25,6 +25,7 @@
 #include "templatesconfiguration_kfg.h"
 #include "templatesconfiguration.h"
 #include "templatesutil.h"
+#include "templatesutil_p.h"
 
 #include <MessageCore/ImageCollector>
 #include <MessageCore/StringUtil>
@@ -1477,13 +1478,7 @@ QString TemplateParserJob::htmlMessageText(bool aStripSignature, AllowSelection 
 
 QString TemplateParserJob::quotedPlainText(const QString &selection) const
 {
-    QString content = selection;
-    // Remove blank lines at the beginning:
-    const int firstNonWS = content.indexOf(QRegExp(QLatin1String("\\S")));
-    const int lineStart = content.lastIndexOf(QLatin1Char('\n'), firstNonWS);
-    if (lineStart >= 0) {
-        content.remove(0, lineStart);
-    }
+    QString content = TemplateParser::Util::removeSpaceAtBegin(selection);
 
     const QString indentStr
         = MessageCore::StringUtil::formatQuotePrefix(d->mQuoteString, d->mOrigMsg->from()->displayString());

@@ -204,3 +204,16 @@ QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
     }
     return res;
 }
+
+
+QString TemplateParser::Util::removeSpaceAtBegin(const QString &selection)
+{
+    QString content = selection;
+    // Remove blank lines at the beginning:
+    const int firstNonWS = content.indexOf(QRegExp(QLatin1String("\\S")));
+    const int lineStart = content.lastIndexOf(QLatin1Char('\n'), firstNonWS);
+    if (lineStart >= 0) {
+        content.remove(0, lineStart);
+    }
+    return content;
+}
