@@ -256,6 +256,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
 
 ViewerPrivate::~ViewerPrivate()
 {
+    delete mMessageViewerRenderer;
     MessageViewer::MessageViewerSettings::self()->save();
     delete mHtmlWriter;
     mHtmlWriter = nullptr;
