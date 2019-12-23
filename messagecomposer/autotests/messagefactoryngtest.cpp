@@ -44,7 +44,8 @@
 #include "globalsettings_templateparser.h"
 
 #include <KCharsets>
-
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QDateTime>
 #include <QDir>
 #include <QLocale>
@@ -639,11 +640,14 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 
     QString datetime = rdir->date()->asUnicodeString();
 
-    QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
-    QVERIFY(rx.indexIn(QString::fromLatin1(rdir->head())) != -1);
+    const QRegularExpression rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
+    const QRegularExpressionMatch rxMatch = rx.match(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxMatch.hasMatch());
 
-    QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
-    QVERIFY(rxmessageid.indexIn(QString::fromLatin1(rdir->head())) != -1);
+    const QRegularExpression rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
+    const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxmessageidMatch.hasMatch());
+
     QString baseline = QString::fromLatin1("From: me@me.me\n"
                                            "Cc: cc@cc.cc\n"
                                            "Bcc: bcc@bcc.bcc\n"
@@ -665,7 +669,7 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
                                            "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
                                            "\n"
                                            "All happy families are alike; each unhappy family is unhappy in its own way.");
-    baseline = baseline.arg(datetime).arg(rxmessageid.cap(1)).arg(rx.cap(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
+    baseline = baseline.arg(datetime).arg(rxmessageidMatch.captured(1)).arg(rxMatch.captured(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
@@ -684,12 +688,14 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
 
     QString datetime = rdir->date()->asUnicodeString();
 
+    const QRegularExpression rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
+    const QRegularExpressionMatch rxMatch = rx.match(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxMatch.hasMatch());
 
-    QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
-    QVERIFY(rx.indexIn(QString::fromLatin1(rdir->head())) != -1);
+    const QRegularExpression rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
+    const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxmessageidMatch.hasMatch());
 
-    QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
-    QVERIFY(rxmessageid.indexIn(QString::fromLatin1(rdir->head())) != -1);
     //qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
     QString baseline = QString::fromLatin1("From: me@me.me\n"
                                            "Cc: cc@cc.cc\n"
@@ -711,7 +717,7 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
                                            "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
                                            "\n"
                                            "All happy families are alike; each unhappy family is unhappy in its own way.");
-    baseline = baseline.arg(datetime).arg(rxmessageid.cap(1)).arg(rx.cap(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
+    baseline = baseline.arg(datetime).arg(rxmessageidMatch.captured(1)).arg(rxMatch.captured(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
@@ -729,11 +735,15 @@ void MessageFactoryTest::testCreateRedirect()
 
     QString datetime = rdir->date()->asUnicodeString();
 
-    QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
-    QVERIFY(rx.indexIn(QString::fromLatin1(rdir->head())) != -1);
+    const QRegularExpression rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
+    const QRegularExpressionMatch rxMatch = rx.match(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxMatch.hasMatch());
 
-    QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
-    QVERIFY(rxmessageid.indexIn(QString::fromLatin1(rdir->head())) != -1);
+    const QRegularExpression rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
+    const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxmessageidMatch.hasMatch());
+
+
     QString baseline = QString::fromLatin1("From: me@me.me\n"
                                            "Cc: cc@cc.cc\n"
                                            "Bcc: bcc@bcc.bcc\n"
@@ -753,7 +763,7 @@ void MessageFactoryTest::testCreateRedirect()
                                            "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
                                            "\n"
                                            "All happy families are alike; each unhappy family is unhappy in its own way.");
-    baseline = baseline.arg(datetime).arg(rxmessageid.cap(1)).arg(rx.cap(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
+    baseline = baseline.arg(datetime).arg(rxmessageidMatch.captured(1)).arg(rxMatch.captured(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
@@ -770,11 +780,14 @@ void MessageFactoryTest::testCreateResend()
 
     QString datetime = rdir->date()->asUnicodeString();
 
-    QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
-    QCOMPARE(rx.indexIn(QString::fromLatin1(rdir->head())), -1);
 
-    QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
-    QVERIFY(rxmessageid.indexIn(QString::fromLatin1(rdir->head())) != -1);
+    const QRegularExpression rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
+    const QRegularExpressionMatch rxMatch = rx.match(QString::fromLatin1(rdir->head()));
+    QVERIFY(!rxMatch.hasMatch());
+
+    const QRegularExpression rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
+    const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
+    QVERIFY(rxmessageidMatch.hasMatch());
 
     QString baseline = QString::fromLatin1("From: me@me.me\n"
                                            "To: %1\n"
@@ -790,7 +803,7 @@ void MessageFactoryTest::testCreateResend()
                                            "Content-Type: text/plain; charset=\"us-ascii\"\n"
                                            "\n"
                                            "All happy families are alike; each unhappy family is unhappy in its own way.");
-    baseline = baseline.arg(msg->to()->asUnicodeString()).arg(datetime).arg(rxmessageid.cap(1));
+    baseline = baseline.arg(msg->to()->asUnicodeString()).arg(datetime).arg(rxmessageidMatch.captured(1));
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
