@@ -743,7 +743,6 @@ void MessageFactoryTest::testCreateRedirect()
     const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxmessageidMatch.hasMatch());
 
-
     QString baseline = QString::fromLatin1("From: me@me.me\n"
                                            "Cc: cc@cc.cc\n"
                                            "Bcc: bcc@bcc.bcc\n"
@@ -779,7 +778,6 @@ void MessageFactoryTest::testCreateResend()
     KMime::Message::Ptr rdir = factory.createResend();
 
     QString datetime = rdir->date()->asUnicodeString();
-
 
     const QRegularExpression rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
     const QRegularExpressionMatch rxMatch = rx.match(QString::fromLatin1(rdir->head()));

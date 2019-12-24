@@ -206,7 +206,6 @@ QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
     return res;
 }
 
-
 QString TemplateParser::Util::removeSpaceAtBegin(const QString &selection)
 {
     QString content = selection;

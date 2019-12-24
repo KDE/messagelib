@@ -16,7 +16,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "templateparserutiltest.h"
 #include "templatesutil_p.h"
 #include <QTest>
@@ -24,7 +23,6 @@ QTEST_GUILESS_MAIN(TemplateParserUtilTest)
 TemplateParserUtilTest::TemplateParserUtilTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void TemplateParserUtilTest::shouldRemoveSpaceAtBegin_data()
