@@ -19,14 +19,33 @@
 
 
 #include "dkimviewermenu.h"
+#include <QMenu>
+#include <KLocalizedString>
+
 using namespace MessageViewer;
 DKIMViewerMenu::DKIMViewerMenu(QObject *parent)
     : QObject(parent)
 {
-
+    initialize();
 }
 
 DKIMViewerMenu::~DKIMViewerMenu()
 {
+    delete mMenu;
+}
 
+QMenu *DKIMViewerMenu::menu() const
+{
+    return mMenu;
+}
+
+void DKIMViewerMenu::initialize()
+{
+    mMenu = new QMenu;
+    QAction *checkSignature = mMenu->addAction(i18n("Recheck DKIM Signature"));
+    connect(checkSignature, &QAction::triggered, this, &DKIMViewerMenu::recheckSignature);
+
+    QAction *updateDKIMKey = mMenu->addAction(i18n("Update DKIM key"));
+    connect(updateDKIMKey, &QAction::triggered, this, &DKIMViewerMenu::updateDKimKey);
+    //TODO add more
 }

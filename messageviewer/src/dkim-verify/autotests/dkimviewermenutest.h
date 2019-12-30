@@ -28,6 +28,8 @@ class DKIMViewerMenuTest : public QObject
 public:
     explicit DKIMViewerMenuTest(QObject *parent = nullptr);
     ~DKIMViewerMenuTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
 
 #endif // DKIMVIEWERMENUTEST_H

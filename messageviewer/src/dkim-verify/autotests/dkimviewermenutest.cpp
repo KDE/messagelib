@@ -18,10 +18,17 @@
 */
 
 #include "dkimviewermenutest.h"
+#include "dkim-verify/dkimviewermenu.h"
 #include <QTest>
 QTEST_MAIN(DKIMViewerMenuTest)
 DKIMViewerMenuTest::DKIMViewerMenuTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void DKIMViewerMenuTest::shouldHaveDefaultValues()
+{
+    MessageViewer::DKIMViewerMenu menu;
+    QVERIFY(menu.menu());
 }

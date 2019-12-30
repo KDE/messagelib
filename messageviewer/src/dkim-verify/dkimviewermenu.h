@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "messageviewer_private_export.h"
+class QMenu;
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMViewerMenu : public QObject
 {
@@ -29,6 +30,15 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMViewerMenu : public QObject
 public:
     explicit DKIMViewerMenu(QObject *parent = nullptr);
     ~DKIMViewerMenu();
+    QMenu *menu() const;
+
+Q_SIGNALS:
+    void recheckSignature();
+    void updateDKimKey();
+
+private:
+    void initialize();
+    QMenu *mMenu = nullptr;
 };
 }
 
