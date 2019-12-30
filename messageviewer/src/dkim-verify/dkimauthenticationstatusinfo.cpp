@@ -22,6 +22,13 @@
 #include "messageviewer_dkimcheckerdebug.h"
 
 #include <QRegularExpressionMatch>
+auto returnEndLine() {
+#if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
+     return endl;
+#else
+     return Qt::endl;
+#endif
+}
 using namespace MessageViewer;
 //see https://tools.ietf.org/html/rfc7601
 DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
@@ -225,28 +232,28 @@ QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
 {
     d << "mAuthservId: " << t.authservId();
     d << "mReasonSpec: " << t.reasonSpec();
-    d << "mAuthVersion: " << t.authVersion() << endl;
+    d << "mAuthVersion: " << t.authVersion() << returnEndLine();
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : t.listAuthStatusInfo()) {
-        d << "mListAuthStatusInfo: " << info.method << " : " << info.result << " : " << info.methodVersion << " : " << info.reason << endl;
-        d << "Property:" << endl;
+        d << "mListAuthStatusInfo: " << info.method << " : " << info.result << " : " << info.methodVersion << " : " << info.reason << returnEndLine();
+        d << "Property:" << returnEndLine();
         if (!info.smtp.isEmpty()) {
             for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.smtp) {
-                d << "    smtp " << prop.type << " : " << prop.value << endl;
+                d << "    smtp " << prop.type << " : " << prop.value << returnEndLine();
             }
         }
         if (!info.header.isEmpty()) {
             for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.header) {
-                d << "    header " << prop.type << " : " << prop.value << endl;
+                d << "    header " << prop.type << " : " << prop.value << returnEndLine();
             }
         }
         if (!info.body.isEmpty()) {
             for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.body) {
-                d << "    body " << prop.type << " : " << prop.value << endl;
+                d << "    body " << prop.type << " : " << prop.value << returnEndLine();
             }
         }
         if (!info.policy.isEmpty()) {
             for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.policy) {
-                d << "    policy " << prop.type << " : " << prop.value << endl;
+                d << "    policy " << prop.type << " : " << prop.value << returnEndLine();
             }
         }
     }

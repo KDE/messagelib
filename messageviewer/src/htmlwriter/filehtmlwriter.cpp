@@ -82,7 +82,13 @@ QIODevice *FileHtmlWriter::device() const
 
 void FileHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
 {
-    *stream() << "<!-- embedPart(contentID=" << contentId << ", url=" << url << ") -->" << endl;
+    *stream() << "<!-- embedPart(contentID=" << contentId << ", url=" << url << ") -->"
+             #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
+              << endl
+             #else
+              << Qt::endl
+             #endif
+                 ;
 }
 
 void FileHtmlWriter::extraHead(const QString &)
