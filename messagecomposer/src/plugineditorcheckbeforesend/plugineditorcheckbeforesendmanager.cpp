@@ -59,12 +59,12 @@ public:
     }
 
     void loadPlugin(PluginEditorCheckBeforeSendInfo *item);
-    QVector<PluginEditorCheckBeforeSend *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<PluginEditorCheckBeforeSend *> pluginsList() const;
     void initializePlugins();
-    QVector<PluginEditorCheckBeforeSendInfo> mPluginList;
-    QString configPrefixSettingKey() const;
-    QString configGroupName() const;
-    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QVector<PluginEditorCheckBeforeSendInfo> mPluginList;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;

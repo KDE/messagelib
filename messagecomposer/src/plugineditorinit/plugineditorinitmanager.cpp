@@ -59,7 +59,7 @@ public:
     }
 
     void loadPlugin(PluginEditorInitInfo *item);
-    QVector<PluginEditorInit *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<PluginEditorInit *> pluginsList() const;
     void initializePlugins();
     QVector<PluginEditorInitInfo> mPluginList;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
