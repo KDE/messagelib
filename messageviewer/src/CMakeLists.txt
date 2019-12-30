@@ -90,6 +90,7 @@ if (${Qca-qt5_FOUND})
 	dkim-verify/dkimcheckfulljob.cpp
         dkim-verify/dkimauthenticationstatusinfoconverter.cpp
         dkim-verify/dkimmanagerauthenticationserver.cpp
+        dkim-verify/dkimviewermenu.cpp
         )
 endif()
 
