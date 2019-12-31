@@ -74,6 +74,7 @@ class ObjectTreeParser;
 #ifdef USE_DKIM_CHECKER
 namespace MessageViewer {
 class DKIMWidgetInfo;
+class DKIMViewerMenu;
 }
 #endif
 namespace WebEngineViewer {
@@ -442,7 +443,9 @@ public:
     void recreateCssHelper();
     void hasMultiMessages(bool messages);
     void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
-
+#ifdef USE_DKIM_CHECKER
+    MessageViewer::DKIMViewerMenu *dkimViewerMenu();
+#endif
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
     void slotModifyItemDone(KJob *job);
@@ -698,6 +701,7 @@ public:
     MessageViewer::ShowNextMessageWidget *mShowNextMessageWidget = nullptr;
 #ifdef USE_DKIM_CHECKER
     MessageViewer::DKIMWidgetInfo *mDkimWidgetInfo = nullptr;
+    MessageViewer::DKIMViewerMenu *mDkimViewerMenu = nullptr;
 #endif
     MessageViewer::MessageViewerRenderer *mMessageViewerRenderer = nullptr;
 };

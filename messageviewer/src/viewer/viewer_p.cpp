@@ -3104,3 +3104,14 @@ void ViewerPrivate::updateShowMultiMessagesButton(bool enablePreviousButton, boo
 {
     mShowNextMessageWidget->updateButton(enablePreviousButton, enableNextButton);
 }
+
+#ifdef USE_DKIM_CHECKER
+DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
+{
+    if (!mDkimViewerMenu) {
+        mDkimViewerMenu = new MessageViewer::DKIMViewerMenu(this);
+        //TODO
+    }
+    return mDkimViewerMenu;
+}
+#endif
