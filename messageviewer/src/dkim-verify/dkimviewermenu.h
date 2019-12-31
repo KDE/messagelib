@@ -21,10 +21,10 @@
 #define DKIMVIEWERMENU_H
 
 #include <QObject>
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 class QMenu;
 namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMViewerMenu : public QObject
+class MESSAGEVIEWER_EXPORT DKIMViewerMenu : public QObject
 {
     Q_OBJECT
 public:

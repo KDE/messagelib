@@ -383,6 +383,7 @@ if (${Qca-qt5_FOUND})
         DKIMRule
         DKIMHeaderParser
         DKIMManagerAuthenticationServer
+        DKIMViewerMenu
         REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
         PREFIX MessageViewer
         RELATIVE dkim-verify

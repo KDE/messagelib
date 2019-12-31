@@ -151,6 +151,7 @@
 #include "dkim-verify/dkimwidgetinfo.h"
 #include "dkim-verify/dkimmanager.h"
 #include "dkim-verify/dkimresultattribute.h"
+#include "dkim-verify/dkimviewermenu.h"
 #endif
 
 using namespace boost;
