@@ -662,9 +662,7 @@ void AttachmentControllerBase::showContextMenu()
         menu.addAction(d->editWithContextAction);
         menu.addAction(d->editContextAction);
     }
-    if (numberOfParts > 0) {
-        menu.addAction(d->removeContextAction);
-    }
+    menu.addSeparator();
     if (numberOfParts == 1) {
         if (!d->selectedParts.first()->url().isEmpty()) {
             menu.addAction(d->reloadAttachmentAction);
@@ -672,15 +670,19 @@ void AttachmentControllerBase::showContextMenu()
         menu.addAction(d->saveAsContextAction);
         menu.addSeparator();
         menu.addAction(d->propertiesContextAction);
+        menu.addSeparator();
     }
 
+    if (numberOfParts > 0) {
+        menu.addAction(d->removeContextAction);
+        menu.addSeparator();
+    }
     const int nbAttachment = d->model->rowCount();
     if (nbAttachment != numberOfParts) {
-        menu.addSeparator();
         menu.addAction(d->selectAllAction);
+        menu.addSeparator();
     }
     if (numberOfParts == 0) {
-        menu.addSeparator();
         menu.addAction(d->addContextAction);
     }
 
