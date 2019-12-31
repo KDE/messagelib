@@ -3110,7 +3110,12 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
 {
     if (!mDkimViewerMenu) {
         mDkimViewerMenu = new MessageViewer::DKIMViewerMenu(this);
-        //TODO
+        connect(mDkimViewerMenu, &DKIMViewerMenu::recheckSignature, this, [this]() {
+           //TODO
+        });
+        connect(mDkimViewerMenu, &DKIMViewerMenu::updateDKimKey, this, [this]() {
+           //TODO
+        });
     }
     return mDkimViewerMenu;
 }

@@ -47,5 +47,4 @@ void DKIMViewerMenu::initialize()
 
     QAction *updateDKIMKey = mMenu->addAction(i18n("Update DKIM key"));
     connect(updateDKIMKey, &QAction::triggered, this, &DKIMViewerMenu::updateDKimKey);
-    //TODO add more
 }

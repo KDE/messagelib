@@ -664,6 +664,12 @@ HeaderStylePlugin *Viewer::headerStylePlugin() const
     return d->mHeaderStylePlugin;
 }
 
+DKIMViewerMenu *Viewer::dkimViewerMenu()
+{
+    Q_D(Viewer);
+    return d->dkimViewerMenu();
+}
+
 void Viewer::setPluginName(const QString &pluginName)
 {
     Q_D(Viewer);

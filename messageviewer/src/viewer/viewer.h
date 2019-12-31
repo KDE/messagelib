@@ -54,6 +54,7 @@ namespace MessageViewer {
 class WebHitTestResult;
 #ifdef USE_DKIM_CHECKER
 class DKIMWidgetInfo;
+class DKIMViewerMenu;
 #endif
 class AttachmentStrategy;
 class HeaderStylePlugin;
@@ -285,6 +286,8 @@ public:
     Q_REQUIRED_RESULT KToggleAction *disableEmoticonAction() const;
     Q_REQUIRED_RESULT KActionMenu *shareServiceUrlMenu() const;
     Q_REQUIRED_RESULT HeaderStylePlugin *headerStylePlugin() const;
+    Q_REQUIRED_RESULT MessageViewer::DKIMViewerMenu *dkimViewerMenu();
+
     void setPluginName(const QString &pluginName);
 
     void writeConfig(bool withSync = true);
