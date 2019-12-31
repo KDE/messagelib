@@ -41,7 +41,7 @@ QMenu *DKIMViewerMenu::menu() const
 
 void DKIMViewerMenu::initialize()
 {
-    mMenu = new QMenu;
+    mMenu = new QMenu(i18n("DKIM"));
     QAction *checkSignature = mMenu->addAction(i18n("Recheck DKIM Signature"));
     connect(checkSignature, &QAction::triggered, this, &DKIMViewerMenu::recheckSignature);
 

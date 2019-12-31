@@ -1286,21 +1286,30 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
 #ifdef USE_DKIM_CHECKER
     if (!mPrinting) {
         if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
-            const Akonadi::Collection parentCollection = mMessageItem.parentCollection();
-            if ((Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::SentMail) != parentCollection)
-                && (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Outbox) != parentCollection)
-                && (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates) != parentCollection)
-                && (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Drafts) != parentCollection)) {
+            if (messageIsInSpecialFolder()) {
+                mDkimWidgetInfo->clear();
+            } else {
                 mDkimWidgetInfo->setCurrentItemId(mMessageItem.id());
                 MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
-            } else {
-                mDkimWidgetInfo->clear();
             }
         }
     }
 #endif
 
     setMessageInternal(mMessageItem.payload<KMime::Message::Ptr>(), updateMode);
+}
+
+bool ViewerPrivate::messageIsInSpecialFolder() const
+{
+    const Akonadi::Collection parentCollection = mMessageItem.parentCollection();
+    if ((Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::SentMail) != parentCollection)
+        && (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Outbox) != parentCollection)
+        && (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates) != parentCollection)
+        && (Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Drafts) != parentCollection)) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 void ViewerPrivate::setMessage(const KMime::Message::Ptr &aMsg, MimeTreeParser::UpdateMode updateMode)
@@ -3108,15 +3117,20 @@ void ViewerPrivate::updateShowMultiMessagesButton(bool enablePreviousButton, boo
 #ifdef USE_DKIM_CHECKER
 DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
 {
-    if (!mDkimViewerMenu) {
-        mDkimViewerMenu = new MessageViewer::DKIMViewerMenu(this);
-        connect(mDkimViewerMenu, &DKIMViewerMenu::recheckSignature, this, [this]() {
-           //TODO
-        });
-        connect(mDkimViewerMenu, &DKIMViewerMenu::updateDKimKey, this, [this]() {
-           //TODO
-        });
+    if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
+        if (!messageIsInSpecialFolder()) {
+            if (!mDkimViewerMenu) {
+                mDkimViewerMenu = new MessageViewer::DKIMViewerMenu(this);
+                connect(mDkimViewerMenu, &DKIMViewerMenu::recheckSignature, this, [this]() {
+                    MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
+                });
+                connect(mDkimViewerMenu, &DKIMViewerMenu::updateDKimKey, this, [this]() {
+                    //TODO
+                });
+            }
+            return mDkimViewerMenu;
+        }
     }
-    return mDkimViewerMenu;
+    return nullptr;
 }
 #endif

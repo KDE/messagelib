@@ -596,7 +596,8 @@ private:
 
     void replyMessageToAuthor(KMime::Content *atmNode);
     void replyMessageToAll(KMime::Content *atmNode);
-    bool urlIsAMalwareButContinue();
+    Q_REQUIRED_RESULT bool urlIsAMalwareButContinue();
+    Q_REQUIRED_RESULT bool messageIsInSpecialFolder() const;
 
     void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 

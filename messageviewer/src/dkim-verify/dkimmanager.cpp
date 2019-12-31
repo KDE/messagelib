@@ -56,6 +56,11 @@ void DKIMManager::setPolicy(const DKIMCheckPolicy &policy)
     mCheckPolicy = policy;
 }
 
+void DKIMManager::recheckDKim(const Akonadi::Item &item)
+{
+    checkFullInfo(item);
+}
+
 void DKIMManager::checkDKim(const Akonadi::Item &item)
 {
     if (mCheckPolicy.saveDkimResult()) {
