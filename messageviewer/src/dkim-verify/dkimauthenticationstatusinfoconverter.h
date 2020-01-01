@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2019 Laurent Montel <montel@kde.org>
+   Copyright (C) 2019-2020 Laurent Montel <montel@kde.org>
 
    Code based on ARHParser.jsm from dkim_verifier (Copyright (c) Philippe Lieser)
    (This software is licensed under the terms of the MIT License.)
