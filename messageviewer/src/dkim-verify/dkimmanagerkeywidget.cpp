@@ -21,6 +21,7 @@
 #include "dkimmanagerkey.h"
 
 #include <QTreeWidget>
+#include <QHeaderView>
 #include <QVBoxLayout>
 #include <KLocalizedString>
 #include <QMenu>
@@ -55,6 +56,16 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
 
 DKIMManagerKeyWidget::~DKIMManagerKeyWidget()
 {
+}
+
+QByteArray DKIMManagerKeyWidget::saveHeaders() const
+{
+    return mTreeWidget->header()->saveState();
+}
+
+void DKIMManagerKeyWidget::restoreHeaders(const QByteArray &header)
+{
+    mTreeWidget->header()->restoreState(header);
 }
 
 void DKIMManagerKeyWidget::customContextMenuRequested(const QPoint &)

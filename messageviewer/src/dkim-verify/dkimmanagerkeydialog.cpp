@@ -56,6 +56,7 @@ DKIMManagerKeyDialog::~DKIMManagerKeyDialog()
 void DKIMManagerKeyDialog::readConfig()
 {
     KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    mManagerWidget->restoreHeaders(group.readEntry("Header", QByteArray()));
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -65,6 +66,7 @@ void DKIMManagerKeyDialog::readConfig()
 void DKIMManagerKeyDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    group.writeEntry("Header", mManagerWidget->saveHeaders());
     group.writeEntry("Size", size());
     group.sync();
 }
