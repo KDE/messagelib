@@ -37,6 +37,7 @@
 #include "messageviewer/headerstrategy.h"
 #include "kpimtextedit/slidecontainer.h"
 
+
 #include "job/modifymessagedisplayformatjob.h"
 
 #include "viewerplugins/viewerplugintoolmanager.h"
@@ -152,6 +153,7 @@
 #include "dkim-verify/dkimmanager.h"
 #include "dkim-verify/dkimresultattribute.h"
 #include "dkim-verify/dkimviewermenu.h"
+#include "dkim-verify/dkimmanagerulesdialog.h"
 #endif
 
 using namespace boost;
@@ -3126,6 +3128,11 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
                 });
                 connect(mDkimViewerMenu, &DKIMViewerMenu::updateDKimKey, this, [this]() {
                     //TODO
+                });
+                connect(mDkimViewerMenu, &DKIMViewerMenu::showDkimRules, this, [this]() {
+                    QPointer<DKIMManageRulesDialog> dlg = new DKIMManageRulesDialog(viewer());
+                    dlg->exec();
+                    delete dlg;
                 });
             }
             return mDkimViewerMenu;
