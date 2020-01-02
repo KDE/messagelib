@@ -87,10 +87,15 @@ if (${Qca-qt5_FOUND})
         dkim-verify/dkimmanagerrules.cpp
         dkim-verify/dkimgeneraterulejob.cpp
         dkim-verify/dkimauthenticationstatusinfoutil.cpp
-	dkim-verify/dkimcheckfulljob.cpp
+        dkim-verify/dkimcheckfulljob.cpp
         dkim-verify/dkimauthenticationstatusinfoconverter.cpp
         dkim-verify/dkimmanagerauthenticationserver.cpp
         dkim-verify/dkimviewermenu.cpp
+        dkim-verify/dkimmanagerulescombobox.cpp
+        dkim-verify/dkimmanagerulesdialog.cpp
+        dkim-verify/dkimmanageruleswidget.cpp
+        dkim-verify/dkimruledialog.cpp
+        dkim-verify/dkimrulewidget.cpp
         )
 endif()
 
@@ -384,6 +389,8 @@ if (${Qca-qt5_FOUND})
         DKIMHeaderParser
         DKIMManagerAuthenticationServer
         DKIMViewerMenu
+        DKIMManageRulesDialog
+        DKIMManageRulesWidget
         REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
         PREFIX MessageViewer
         RELATIVE dkim-verify
