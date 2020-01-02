@@ -270,4 +270,19 @@ void NodeHelperTest::testFromAsString()
     QCOMPARE(helper.fromAsString(encSubExtra), encSender);
 }
 
+void NodeHelperTest::shouldTestExtractAttachmentIndex_data()
+{
+    QTest::addColumn<QString>("path");
+    QTest::addColumn<QString>("extractedPath");
+    QTest::newRow("empty") << QString() << QString();
+}
+
+void NodeHelperTest::shouldTestExtractAttachmentIndex()
+{
+    QFETCH(QString, path);
+    QFETCH(QString, extractedPath);
+    NodeHelper helper;
+    QCOMPARE(extractedPath, helper.extractAttachmentIndex(path));
+}
+
 QTEST_GUILESS_MAIN(NodeHelperTest)

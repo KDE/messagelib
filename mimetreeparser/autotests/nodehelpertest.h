@@ -37,6 +37,8 @@ private Q_SLOTS:
     void testHREF();
     void testCreateTempDir();
     void testFromAsString();
+    void shouldTestExtractAttachmentIndex_data();
+    void shouldTestExtractAttachmentIndex();
 };
 }
 #endif

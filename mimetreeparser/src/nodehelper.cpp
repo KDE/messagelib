@@ -767,18 +767,27 @@ KMime::Content *NodeHelper::fromHREF(const KMime::Message::Ptr &mMessage, const 
         return contentFromIndex(mMessage.data(), url.adjusted(QUrl::StripTrailingSlash).path());
     } else {
         const QString path = url.toLocalFile();
-        // extract from /<path>/qttestn28554.index.2.3:0:2/unnamed -> "2.3:0:2"
-        // start of the index is something that is not a number followed by a dot: \D.
-        // index is only made of numbers,"." and ":": ([0-9.:]+)
-        // index is the last part of the folder name: /
-        const QRegExp rIndex(QStringLiteral("\\D\\.([e0-9.:]+)/"));
-
-        //search the occurrence at most at the end
-        if (rIndex.lastIndexIn(path) != -1) {
-            return contentFromIndex(mMessage.data(), rIndex.cap(1));
+        const QString extractedPath = extractAttachmentIndex(path);
+        if (!extractedPath.isEmpty()) {
+            return contentFromIndex(mMessage.data(), extractedPath);
         }
         return mMessage.data();
     }
+}
+
+QString NodeHelper::extractAttachmentIndex(const QString &path) const
+{
+    // extract from /<path>/qttestn28554.index.2.3:0:2/unnamed -> "2.3:0:2"
+    // start of the index is something that is not a number followed by a dot: \D.
+    // index is only made of numbers,"." and ":": ([0-9.:]+)
+    // index is the last part of the folder name: /
+    const QRegExp rIndex(QStringLiteral("\\D\\.([e0-9.:]+)/"));
+
+    //search the occurrence at most at the end
+    if (rIndex.lastIndexIn(path) != -1) {
+        return rIndex.cap(1);
+    }
+    return QString();
 }
 
 QString NodeHelper::fixEncoding(const QString &encoding)

@@ -229,6 +229,7 @@ public:
      */
     QVector<KMime::Content *> attachmentsOfExtraContents() const;
 
+    Q_REQUIRED_RESULT QString extractAttachmentIndex(const QString &path) const;
 Q_SIGNALS:
     void update(MimeTreeParser::UpdateMode);
 
