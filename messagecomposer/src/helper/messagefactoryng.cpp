@@ -377,12 +377,12 @@ void MessageFactoryNG::createForwardAsync()
     job->start();
 }
 
-QPair< KMime::Message::Ptr, QList< KMime::Content * > > MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
+QPair< KMime::Message::Ptr, QVector< KMime::Content * > > MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
 {
     // create forwarded message with original message as attachment
     // remove headers that shouldn't be forwarded
     KMime::Message::Ptr msg(new KMime::Message);
-    QList< KMime::Content * > attachments;
+    QVector< KMime::Content * > attachments;
 
     const int numberOfItems(items.count());
     if (numberOfItems >= 2) {
@@ -415,7 +415,7 @@ QPair< KMime::Message::Ptr, QList< KMime::Content * > > MessageFactoryNG::create
     applyCharset(msg);
 
     //msg->assemble();
-    return QPair< KMime::Message::Ptr, QList< KMime::Content * > >(msg, QList< KMime::Content * >() << attachments);
+    return QPair< KMime::Message::Ptr, QVector< KMime::Content * > >(msg, QVector< KMime::Content * >() << attachments);
 }
 
 KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg)

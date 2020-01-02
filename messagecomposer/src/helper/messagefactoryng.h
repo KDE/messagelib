@@ -27,7 +27,7 @@
 
 #include <Item>
 #include <Collection>
-
+#include <QVector>
 #include <Akonadi/KMime/MessageStatus>
 
 namespace KIdentityManagement {
@@ -90,7 +90,7 @@ public:
     * If no list is passed, use the original message passed in the MessageFactoryNG
     *  constructor.
     */
-    Q_REQUIRED_RESULT QPair< KMime::Message::Ptr, QList< KMime::Content * > > createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
+    Q_REQUIRED_RESULT QPair< KMime::Message::Ptr, QVector< KMime::Content * > > createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
 
     /** Create a new message that is a redirect to this message, filling all
     required header fields with the proper values. The returned message
