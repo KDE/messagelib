@@ -35,6 +35,7 @@
 #include <QUrl>
 #include <QDir>
 #include <QTextCodec>
+#include <QRegularExpressionMatch>
 
 #include <string>
 #include <sstream>
@@ -781,11 +782,11 @@ QString NodeHelper::extractAttachmentIndex(const QString &path) const
     // start of the index is something that is not a number followed by a dot: \D.
     // index is only made of numbers,"." and ":": ([0-9.:]+)
     // index is the last part of the folder name: /
-    const QRegExp rIndex(QStringLiteral("\\D\\.([e0-9.:]+)/"));
-
-    //search the occurrence at most at the end
-    if (rIndex.lastIndexIn(path) != -1) {
-        return rIndex.cap(1);
+    const QRegularExpression re(QStringLiteral("\\D\\.([e0-9.:]+)/"));
+    QRegularExpressionMatch rmatch;
+    path.lastIndexOf(re, -1, &rmatch);
+    if (rmatch.hasMatch()) {
+        return rmatch.captured(1);
     }
     return QString();
 }
