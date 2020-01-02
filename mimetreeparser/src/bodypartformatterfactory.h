@@ -59,7 +59,7 @@ public:
      *  The candidates are ordered by priority, with the catch-call
      *  formatter coming last.
      */
-    QVector<const Interface::BodyPartFormatter *> formattersForType(const QString &mimeType) const;
+    Q_REQUIRED_RESULT QVector<const Interface::BodyPartFormatter *> formattersForType(const QString &mimeType) const;
 
 protected:
     void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority);

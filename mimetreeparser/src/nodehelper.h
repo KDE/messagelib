@@ -59,21 +59,21 @@ public:
 
     void setNodeProcessed(KMime::Content *node, bool recurse);
     void setNodeUnprocessed(KMime::Content *node, bool recurse);
-    bool nodeProcessed(KMime::Content *node) const;
+    Q_REQUIRED_RESULT bool nodeProcessed(KMime::Content *node) const;
     void clear();
     void forceCleanTempFiles();
 
     void setEncryptionState(const KMime::Content *node, const KMMsgEncryptionState state);
-    KMMsgEncryptionState encryptionState(const KMime::Content *node) const;
+    Q_REQUIRED_RESULT KMMsgEncryptionState encryptionState(const KMime::Content *node) const;
 
     void setSignatureState(const KMime::Content *node, const KMMsgSignatureState state);
-    KMMsgSignatureState signatureState(const KMime::Content *node) const;
+    Q_REQUIRED_RESULT KMMsgSignatureState signatureState(const KMime::Content *node) const;
 
-    KMMsgSignatureState overallSignatureState(KMime::Content *node) const;
-    KMMsgEncryptionState overallEncryptionState(KMime::Content *node) const;
+    Q_REQUIRED_RESULT KMMsgSignatureState overallSignatureState(KMime::Content *node) const;
+    Q_REQUIRED_RESULT KMMsgEncryptionState overallEncryptionState(KMime::Content *node) const;
 
     void setPartMetaData(KMime::Content *node, const PartMetaData &metaData);
-    PartMetaData partMetaData(KMime::Content *node);
+    Q_REQUIRED_RESULT PartMetaData partMetaData(KMime::Content *node);
 
     /**
      *  Set the 'Content-Type' by mime-magic from the contents of the body.
@@ -84,10 +84,10 @@ public:
 
     void clearOverrideHeaders();
     void registerOverrideHeader(KMime::Content *message, MessagePartPtr);
-    bool hasMailHeader(const char *header, const KMime::Content *message) const;
+    Q_REQUIRED_RESULT bool hasMailHeader(const char *header, const KMime::Content *message) const;
     KMime::Headers::Base const *mailHeaderAsBase(const char *header, const KMime::Content *message) const;
     KMime::Headers::Generics::AddressList const *mailHeaderAsAddressList(const char *header, const KMime::Content *message) const;
-    QDateTime dateHeader(KMime::Content *message) const;
+    Q_REQUIRED_RESULT QDateTime dateHeader(KMime::Content *message) const;
 
     /** Attach an extra node to an existing node */
     void attachExtraContent(KMime::Content *topLevelNode, KMime::Content *content);
@@ -95,7 +95,7 @@ public:
     void cleanExtraContent(KMime::Content *topLevelNode);
 
     /** Get the extra nodes attached to the @param topLevelNode and all sub-nodes of @param topLevelNode */
-    QVector<KMime::Content *> extraContents(KMime::Content *topLevelNode) const;
+    Q_REQUIRED_RESULT QVector<KMime::Content *> extraContents(KMime::Content *topLevelNode) const;
 
     /** Return a modified message (node tree) starting from @param topLevelNode that has the original nodes and the extra nodes.
         The caller has the responsibility to delete the new message.
@@ -114,33 +114,33 @@ public:
 
     // A flag to remember if the node was embedded. This is useful for attachment nodes, the reader
     // needs to know if they were displayed inline or not.
-    bool isNodeDisplayedEmbedded(KMime::Content *node) const;
+    Q_REQUIRED_RESULT bool isNodeDisplayedEmbedded(KMime::Content *node) const;
     void setNodeDisplayedEmbedded(KMime::Content *node, bool displayedEmbedded);
 
     // Same as above, but this time determines if the node was hidden or not
-    bool isNodeDisplayedHidden(KMime::Content *node) const;
+    Q_REQUIRED_RESULT bool isNodeDisplayedHidden(KMime::Content *node) const;
     void setNodeDisplayedHidden(KMime::Content *node, bool displayedHidden);
 
     /**
      * Writes the given message part to a temporary file and returns the
      * name of this file or QString() if writing failed.
      */
-    QString writeNodeToTempFile(KMime::Content *node);
+    Q_REQUIRED_RESULT QString writeNodeToTempFile(KMime::Content *node);
 
-    QString writeFileToTempFile(KMime::Content *node, const QString &filename);
+    Q_REQUIRED_RESULT QString writeFileToTempFile(KMime::Content *node, const QString &filename);
 
     /**
      * Returns the temporary file path and name where this node was saved, or an empty url
      * if it wasn't saved yet with writeNodeToTempFile()
      */
-    QUrl tempFileUrlFromNode(const KMime::Content *node);
+    Q_REQUIRED_RESULT QUrl tempFileUrlFromNode(const KMime::Content *node);
 
     /**
      * Creates a temporary dir for saving attachments, etc.
      * Will be automatically deleted when another message is viewed.
      * @param param Optional part of the directory name.
      */
-    QString createTempDir(const QString &param = QString());
+    Q_REQUIRED_RESULT QString createTempDir(const QString &param = QString());
 
     /**
      * Cleanup the attachment temp files
@@ -154,19 +154,19 @@ public:
 
     // Get a href in the form attachment:<nodeId>?place=<place>, used by ObjectTreeParser and
     // UrlHandlerManager.
-    QString asHREF(const KMime::Content *node, const QString &place) const;
+    Q_REQUIRED_RESULT QString asHREF(const KMime::Content *node, const QString &place) const;
     KMime::Content *fromHREF(const KMime::Message::Ptr &mMessage, const QUrl &href) const;
 
     /**
      * @return true if this node is a child or an encapsulated message
      */
-    static bool isInEncapsulatedMessage(KMime::Content *node);
+    Q_REQUIRED_RESULT static bool isInEncapsulatedMessage(KMime::Content *node);
 
     /**
      * Returns the charset for the given node. If no charset is specified
      * for the node, the defaultCharset() is returned.
      */
-    static QByteArray charset(KMime::Content *node);
+    Q_REQUIRED_RESULT static QByteArray charset(KMime::Content *node);
 
     /**
      * Return a QTextCodec for the specified charset.
@@ -179,14 +179,14 @@ public:
      * content disposition header, or if that one is empty, the name from the
      * content type header.
      */
-    static QString fileName(const KMime::Content *node);
+    Q_REQUIRED_RESULT static QString fileName(const KMime::Content *node);
 
     /**
      * Fixes an encoding received by a KDE function and returns the proper,
      * MIME-compliant encoding name instead.
      * @see encodingForName
      */
-    static QString fixEncoding(const QString &encoding);   //TODO(Andras) move to a utility class?
+    Q_REQUIRED_RESULT static QString fixEncoding(const QString &encoding);   //TODO(Andras) move to a utility class?
 
     /**
      * Drop-in replacement for KCharsets::encodingForName(). The problem with
@@ -194,15 +194,15 @@ public:
      * like "ISO 8859-15" instead of valid encoding names like "ISO-8859-15".
      * This function fixes this by replacing whitespace with a hyphen.
      */
-    static QString encodingForName(const QString &descriptiveName);   //TODO(Andras) move to a utility class?
+    Q_REQUIRED_RESULT static QString encodingForName(const QString &descriptiveName);   //TODO(Andras) move to a utility class?
 
     /**
      * Return a list of the supported encodings
      * @param usAscii if true, US-Ascii encoding will be prepended to the list.
      */
-    static QStringList supportedEncodings(bool usAscii);   //TODO(Andras) move to a utility class?
+    static Q_REQUIRED_RESULT QStringList supportedEncodings(bool usAscii);   //TODO(Andras) move to a utility class?
 
-    QString fromAsString(KMime::Content *node) const;
+    Q_REQUIRED_RESULT QString fromAsString(KMime::Content *node) const;
 
     KMime::Content *decryptedNodeForContent(KMime::Content *content) const;
 
@@ -245,7 +245,7 @@ private:
 
         Used internally for robust indexing.
     **/
-    QString persistentIndex(const KMime::Content *node) const;
+    Q_REQUIRED_RESULT QString persistentIndex(const KMime::Content *node) const;
 
     /** Translates the persistentIndex into a node back
 

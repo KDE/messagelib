@@ -71,13 +71,13 @@ public:
     {
     }
 
-    KMMsgSignatureState inlineSignatureState() const;
+    Q_REQUIRED_RESULT KMMsgSignatureState inlineSignatureState() const;
     void setInlineSignatureState(KMMsgSignatureState state);
 
-    KMMsgEncryptionState inlineEncryptionState() const;
+    Q_REQUIRED_RESULT KMMsgEncryptionState inlineEncryptionState() const;
     void setInlineEncryptionState(KMMsgEncryptionState state);
 
-    bool neverDisplayInline() const;
+    Q_REQUIRED_RESULT bool neverDisplayInline() const;
     void setNeverDisplayInline(bool display);
 
     void adjustCryptoStatesOfNode(const KMime::Content *node) const;

@@ -41,9 +41,9 @@ public:
 
     Block(const QByteArray &m, PGPBlockType t);
 
-    QByteArray text() const;
-    PGPBlockType type() const;
-    PGPBlockType determineType() const;
+    Q_REQUIRED_RESULT QByteArray text() const;
+    Q_REQUIRED_RESULT PGPBlockType type() const;
+    Q_REQUIRED_RESULT PGPBlockType determineType() const;
 
     QByteArray msg;
     PGPBlockType mType;
