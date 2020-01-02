@@ -42,7 +42,7 @@ void DKIMRuleWidgetTest::shouldHaveDefaultValues()
     QCheckBox *mEnabled = w.findChild<QCheckBox *>(QStringLiteral("enabled"));
     QVERIFY(mEnabled);
     QVERIFY(!mEnabled->text().isEmpty());
-    QVERIFY(!mEnabled->isChecked());
+    QVERIFY(mEnabled->isChecked());
 
     QLineEdit *mDomain = w.findChild<QLineEdit *>(QStringLiteral("domain"));
     QVERIFY(mDomain);

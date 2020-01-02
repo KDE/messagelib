@@ -33,6 +33,7 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
 
     mEnabled = new QCheckBox(i18n("Enabled"), this);
     mEnabled->setObjectName(QStringLiteral("enabled"));
+    mEnabled->setChecked(true);
     layout->addWidget(mEnabled);
 
     mDomain = new QLineEdit(this);
