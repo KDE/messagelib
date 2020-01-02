@@ -37,8 +37,6 @@ public:
 private:
     void slotAccepted();
     void writeConfig();
-    void slotImport();
-    void slotExport();
     void readConfig();
     DKIMRuleWidget *mRuleWidget = nullptr;
 };

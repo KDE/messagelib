@@ -19,13 +19,11 @@
 
 #include "dkimruledialog.h"
 #include "dkimrulewidget.h"
-#include <MessageViewer/DKIMManagerRules>
 
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
-#include <QFileDialog>
 #include <QPushButton>
 #include <QVBoxLayout>
 
@@ -49,13 +47,6 @@ DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     mainLayout->addWidget(buttonBox);
 
-    QPushButton *importButton = new QPushButton(i18n("Import..."), this);
-    buttonBox->addButton(importButton, QDialogButtonBox::ActionRole);
-    connect(importButton, &QPushButton::clicked, this, &DKIMRuleDialog::slotImport);
-    QPushButton *exportButton = new QPushButton(i18n("Export..."), this);
-    buttonBox->addButton(exportButton, QDialogButtonBox::ActionRole);
-    connect(exportButton, &QPushButton::clicked, this, &DKIMRuleDialog::slotExport);
-
     connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMRuleDialog::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMRuleDialog::reject);
     readConfig();
@@ -69,22 +60,6 @@ DKIMRuleDialog::~DKIMRuleDialog()
 void DKIMRuleDialog::slotAccepted()
 {
     accept();
-}
-
-void DKIMRuleDialog::slotExport()
-{
-    const QString fileName = QFileDialog::getSaveFileName(this, i18n("Export Rules"));
-    if (!fileName.isEmpty()) {
-        MessageViewer::DKIMManagerRules::self()->exportRules(fileName);
-    }
-}
-
-void DKIMRuleDialog::slotImport()
-{
-    const QString fileName = QFileDialog::getOpenFileName(this, i18n("Import Rules"));
-    if (!fileName.isEmpty()) {
-        MessageViewer::DKIMManagerRules::self()->importRules(fileName);
-    }
 }
 
 void DKIMRuleDialog::readConfig()

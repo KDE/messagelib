@@ -38,6 +38,8 @@ private:
     void slotAccepted();
     void readConfig();
     void writeConfig();
+    void slotImport();
+    void slotExport();
     DKIMManageRulesWidget *mRulesWidget = nullptr;
 };
 }
