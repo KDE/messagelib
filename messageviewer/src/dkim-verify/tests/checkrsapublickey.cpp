@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 //                QStringLiteral("server address"), QStringLiteral("add specific server address"));
     parser.process(app);
 
-    CheckRSAPublicKey *w = new CheckRSAPublicKey;
+    (void)new CheckRSAPublicKey;
 
     app.exec();
     return 0;

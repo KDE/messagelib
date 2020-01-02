@@ -70,7 +70,7 @@ int main(int argc, char **argv)
     if (!parser.positionalArguments().isEmpty()) {
         filename = parser.positionalArguments().at(0);
     }
-    CheckSignature *w = new CheckSignature(filename);
+    (void)new CheckSignature(filename);
 
     app.exec();
     return 0;
