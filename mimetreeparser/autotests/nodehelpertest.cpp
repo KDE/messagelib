@@ -275,6 +275,10 @@ void NodeHelperTest::shouldTestExtractAttachmentIndex_data()
     QTest::addColumn<QString>("path");
     QTest::addColumn<QString>("extractedPath");
     QTest::newRow("empty") << QString() << QString();
+    QTest::newRow("test1") << QStringLiteral("/bla/qttestn28554.index.2.3:0:2/unnamed") << QStringLiteral("2.3:0:2");
+    QTest::newRow("test2") << QStringLiteral("/bla/qttestn28554.dd.2.3:0:2/unnamed") << QStringLiteral("2.3:0:2");
+    QTest::newRow("test3") << QStringLiteral("/bla/qttestn28554.dd.2.3:0/unnamed") << QStringLiteral("2.3:0");
+    QTest::newRow("test4") << QStringLiteral("/bla/qttestn28554.dd.2.3:0:2:4/unnamed") << QStringLiteral("2.3:0:2:4");
 }
 
 void NodeHelperTest::shouldTestExtractAttachmentIndex()
