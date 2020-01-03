@@ -88,7 +88,7 @@ if (NOT ${MIMETREEPARSER_ONLY_BUILD})
    find_package(KF5SyntaxHighlighting ${KF5_MIN_VERSION} CONFIG REQUIRED)
    find_package(KF5DBusAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
-   find_package(Grantlee5 "5.1" CONFIG REQUIRED)
+   find_package(Grantlee5 "5.2" CONFIG REQUIRED) #Use KF5_VERSION in the future
 
    find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
    find_package(KF5AkonadiMime ${AKONADIMIME_LIB_VERSION} CONFIG REQUIRED)
