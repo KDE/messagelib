@@ -69,6 +69,8 @@ public:
     void saveSettings();
     Q_REQUIRED_RESULT QByteArray saveHeaders() const;
     void restoreHeaders(const QByteArray &header);
+
+    void addRule();
 private:
     void customContextMenuRequested(const QPoint &);
     QTreeWidget *mTreeWidget = nullptr;

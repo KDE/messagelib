@@ -120,18 +120,23 @@ void DKIMManageRulesWidget::restoreHeaders(const QByteArray &header)
     mTreeWidget->header()->restoreState(header);
 }
 
+void DKIMManageRulesWidget::addRule()
+{
+    QPointer<DKIMRuleDialog> dlg = new DKIMRuleDialog(this);
+    if (dlg->exec()) {
+        DKIMManageRulesWidgetItem *item = new DKIMManageRulesWidgetItem(mTreeWidget);
+        item->setRule(dlg->rule());
+    }
+    delete dlg;
+}
+
 void DKIMManageRulesWidget::customContextMenuRequested(const QPoint &pos)
 {
     Q_UNUSED(pos);
     QTreeWidgetItem *item = mTreeWidget->currentItem();
     QMenu menu(this);
     menu.addAction(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Add..."), this, [this]() {
-        QPointer<DKIMRuleDialog> dlg = new DKIMRuleDialog(this);
-        if (dlg->exec()) {
-            DKIMManageRulesWidgetItem *item = new DKIMManageRulesWidgetItem(mTreeWidget);
-            item->setRule(dlg->rule());
-        }
-        delete dlg;
+        addRule();
     });
     DKIMManageRulesWidgetItem *rulesItem = dynamic_cast<DKIMManageRulesWidgetItem *>(item);
     if (rulesItem) {

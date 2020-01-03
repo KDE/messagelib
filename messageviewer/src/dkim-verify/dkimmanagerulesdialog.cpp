@@ -49,9 +49,14 @@ DKIMManageRulesDialog::DKIMManageRulesDialog(QWidget *parent)
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     mainLayout->addWidget(buttonBox);
 
+    QPushButton *addButton = new QPushButton(i18n("Add Rule..."), this);
+    buttonBox->addButton(addButton, QDialogButtonBox::ActionRole);
+    connect(addButton, &QPushButton::clicked, mRulesWidget, &DKIMManageRulesWidget::addRule);
+
     QPushButton *importButton = new QPushButton(i18n("Import..."), this);
     buttonBox->addButton(importButton, QDialogButtonBox::ActionRole);
     connect(importButton, &QPushButton::clicked, this, &DKIMManageRulesDialog::slotImport);
+
     QPushButton *exportButton = new QPushButton(i18n("Export..."), this);
     buttonBox->addButton(exportButton, QDialogButtonBox::ActionRole);
     connect(exportButton, &QPushButton::clicked, this, &DKIMManageRulesDialog::slotExport);
