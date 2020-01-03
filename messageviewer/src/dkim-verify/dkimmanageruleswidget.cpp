@@ -125,7 +125,10 @@ void DKIMManageRulesWidget::addRule()
     QPointer<DKIMRuleDialog> dlg = new DKIMRuleDialog(this);
     if (dlg->exec()) {
         DKIMManageRulesWidgetItem *item = new DKIMManageRulesWidgetItem(mTreeWidget);
-        item->setRule(dlg->rule());
+        const MessageViewer::DKIMRule rule = dlg->rule();
+        if (rule.isValid()) {
+            item->setRule(rule);
+        }
     }
     delete dlg;
 }
@@ -144,7 +147,10 @@ void DKIMManageRulesWidget::customContextMenuRequested(const QPoint &pos)
             QPointer<DKIMRuleDialog> dlg = new DKIMRuleDialog(this);
             dlg->loadRule(rulesItem->rule());
             if (dlg->exec()) {
-                rulesItem->setRule(dlg->rule());
+                const MessageViewer::DKIMRule rule = dlg->rule();
+                if (rule.isValid()) {
+                    rulesItem->setRule(rule);
+                }
             }
             delete dlg;
         });
