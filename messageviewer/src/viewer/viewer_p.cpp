@@ -3126,7 +3126,7 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
                 connect(mDkimViewerMenu, &DKIMViewerMenu::recheckSignature, this, [this]() {
                     MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
                 });
-                connect(mDkimViewerMenu, &DKIMViewerMenu::updateDKimKey, this, [this]() {
+                connect(mDkimViewerMenu, &DKIMViewerMenu::updateDkimKey, this, [this]() {
                     //TODO
                 });
                 connect(mDkimViewerMenu, &DKIMViewerMenu::showDkimRules, this, [this]() {

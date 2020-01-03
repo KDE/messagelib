@@ -34,7 +34,7 @@ public:
 
 Q_SIGNALS:
     void recheckSignature();
-    void updateDKimKey();
+    void updateDkimKey();
     void showDkimRules();
 
 private:
