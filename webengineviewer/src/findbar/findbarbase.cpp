@@ -147,6 +147,7 @@ void FindBarBase::autoSearch(const QString &str)
             slotSearchText();
         });
     } else {
+        mStatus->clear();
         clearSelections();
     }
 }
