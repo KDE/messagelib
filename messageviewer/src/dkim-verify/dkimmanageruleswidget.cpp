@@ -124,9 +124,9 @@ void DKIMManageRulesWidget::addRule()
 {
     QPointer<DKIMRuleDialog> dlg = new DKIMRuleDialog(this);
     if (dlg->exec()) {
-        DKIMManageRulesWidgetItem *item = new DKIMManageRulesWidgetItem(mTreeWidget);
         const MessageViewer::DKIMRule rule = dlg->rule();
         if (rule.isValid()) {
+            DKIMManageRulesWidgetItem *item = new DKIMManageRulesWidgetItem(mTreeWidget);
             item->setRule(rule);
         }
     }
