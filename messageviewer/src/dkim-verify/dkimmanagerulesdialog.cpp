@@ -24,6 +24,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QFileDialog>
@@ -81,6 +82,10 @@ void DKIMManageRulesDialog::slotAccepted()
 
 void DKIMManageRulesDialog::slotExport()
 {
+    if (MessageViewer::DKIMManagerRules::self()->isEmpty()) {
+        KMessageBox::error(this, i18n("Any rules found"), i18n("Export Rules"));
+        return;
+    }
     const QString fileName = QFileDialog::getSaveFileName(this, i18n("Export Rules"));
     if (!fileName.isEmpty()) {
         MessageViewer::DKIMManagerRules::self()->exportRules(fileName);
