@@ -30,6 +30,8 @@ public:
     ~DKIMManagerRulesTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldAddRules();
+    void shouldClearRules();
 };
 
 #endif // DKIMMANAGERRULESTEST_H

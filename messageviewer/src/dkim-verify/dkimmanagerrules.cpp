@@ -49,6 +49,11 @@ void DKIMManagerRules::addRule(const DKIMRule &rule)
     }
 }
 
+bool DKIMManagerRules::isEmpty() const
+{
+    return mRules.isEmpty();
+}
+
 QVector<DKIMRule> DKIMManagerRules::rules() const
 {
     return mRules;

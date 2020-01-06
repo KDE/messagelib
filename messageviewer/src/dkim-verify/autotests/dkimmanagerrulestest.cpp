@@ -32,4 +32,31 @@ void DKIMManagerRulesTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMManagerRules r;
     QVERIFY(r.rules().isEmpty());
+    QVERIFY(r.isEmpty());
+}
+
+void DKIMManagerRulesTest::shouldAddRules()
+{
+    MessageViewer::DKIMManagerRules r;
+    QVERIFY(r.isEmpty());
+    MessageViewer::DKIMRule rule;
+    rule.setDomain(QStringLiteral("bla"));
+    rule.setFrom(QStringLiteral("foo"));
+    rule.setRuleType(MessageViewer::DKIMRule::RuleType::MustBeSigned);
+    r.addRule(rule);
+    QVERIFY(!r.isEmpty());
+}
+
+void DKIMManagerRulesTest::shouldClearRules()
+{
+    MessageViewer::DKIMManagerRules r;
+    QVERIFY(r.isEmpty());
+    MessageViewer::DKIMRule rule;
+    rule.setDomain(QStringLiteral("bla"));
+    rule.setFrom(QStringLiteral("foo"));
+    rule.setRuleType(MessageViewer::DKIMRule::RuleType::MustBeSigned);
+    r.addRule(rule);
+    QVERIFY(!r.isEmpty());
+    r.clear();
+    QVERIFY(r.isEmpty());
 }
