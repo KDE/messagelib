@@ -37,10 +37,12 @@ ConvertSnippetVariableMenu::~ConvertSnippetVariableMenu()
 
 void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachmentFileName)
 {
-    mMenu = new QMenu(mParentWidget);
-    mMenu->setFocusPolicy(Qt::NoFocus);
 
+    QMenu *dateTimeMenuVariable = nullptr;
     if (!onlyMenuForCustomizeAttachmentFileName) {
+        mMenu = new QMenu(mParentWidget);
+        mMenu->setFocusPolicy(Qt::NoFocus);
+
         QMenu *toMenuVariable = new QMenu(i18n("To"), mMenu);
         toMenuVariable->addAction(i18n("To Field Address"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToAddr);
@@ -101,9 +103,7 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentNamesAndSizes);
         });
         mMenu->addMenu(attachmentMenuVariable);
-    }
-    QMenu *dateTimeMenuVariable = new QMenu(i18n("Date/Time"), mMenu);
-    if (!onlyMenuForCustomizeAttachmentFileName) {
+        dateTimeMenuVariable = new QMenu(i18n("Date/Time"), mMenu);
         dateTimeMenuVariable->addAction(i18n("Day Of Week"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Dow);
         });
@@ -122,7 +122,11 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
         dateTimeMenuVariable->addAction(i18n("Year"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Year);
         });
+    } else {
+        dateTimeMenuVariable = new QMenu(i18n("Date/Time"), mParentWidget);
+        mMenu = dateTimeMenuVariable;
     }
+
     dateTimeMenuVariable->addAction(i18n("Last Year"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::LastYear);
     });
@@ -156,9 +160,8 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
     dateTimeMenuVariable->addAction(i18n("Year Last Month"), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::YearLastMonth);
     });
-    mMenu->addMenu(dateTimeMenuVariable);
-
     if (!onlyMenuForCustomizeAttachmentFileName) {
+        mMenu->addMenu(dateTimeMenuVariable);
         QMenu *miscVariable = new QMenu(i18n("Misc"), mMenu);
         miscVariable->addAction(i18n("Subject"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FullSubject);
