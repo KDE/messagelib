@@ -47,6 +47,7 @@
 #include <QLineEdit>
 #include <QMenu>
 #include <QPainter>
+#include <QVector>
 
 #include <KLocalizedString>
 #include "messagelist_debug.h"
@@ -368,7 +369,7 @@ void View::applyThemeColumns()
     // all saved then the total hint is equal to the total saved width.
 
     int totalVisibleWidthHint = 0;
-    QList< int > lColumnSizeHints;
+    QVector< int > lColumnSizeHints;
     for (const auto col : qAsConst(columns)) {
         if (col->currentlyVisible() || (idx == 0)) {
             //qCDebug(MESSAGELIST_LOG) << "Column " << idx << " will be visible";
@@ -393,7 +394,7 @@ void View::applyThemeColumns()
     // Now compute somewhat "proportional" widths.
     idx = 0;
 
-    QList< double > lColumnWidths;
+    QVector< double > lColumnWidths;
     lColumnWidths.reserve(columns.count());
     int totalVisibleWidth = 0;
     for (const auto col : qAsConst(columns)) {

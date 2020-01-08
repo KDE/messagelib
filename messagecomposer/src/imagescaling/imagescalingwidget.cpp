@@ -28,6 +28,7 @@
 #include <QComboBox>
 #include <QImageWriter>
 #include <QWhatsThis>
+#include <QVector>
 
 using namespace MessageComposer;
 class MessageComposer::ImageScalingWidgetPrivate
@@ -168,7 +169,7 @@ void ImageScalingWidget::slotComboboxChanged(int index)
 
 void ImageScalingWidget::initComboBox(QComboBox *combo)
 {
-    const QList<int> size = { 240, 320, 512, 640, 800, 1024, 1600, 2048 };
+    const QVector<int> size = { 240, 320, 512, 640, 800, 1024, 1600, 2048 };
     for (int val : size) {
         combo->addItem(QString::number(val), val);
     }
