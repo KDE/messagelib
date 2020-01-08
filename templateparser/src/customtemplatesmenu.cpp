@@ -26,6 +26,7 @@
 #include <QIcon>
 #include <KLocalizedString>
 #include <QMenu>
+#include <QVector>
 
 using namespace TemplateParser;
 class TemplateParser::CustomTemplatesMenuPrivate
@@ -45,7 +46,7 @@ public:
     KActionCollection *mOwnerActionCollection = nullptr;
 
     QStringList mCustomTemplates;
-    QList<QAction *> mCustomTemplateActions;
+    QVector<QAction *> mCustomTemplateActions;
 
     // Custom template actions menu
     KActionMenu *mCustomReplyActionMenu = nullptr;

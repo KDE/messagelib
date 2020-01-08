@@ -66,7 +66,7 @@ public:
 
     void makeAccessKeyLabel(QChar accessKey, const WebEngineViewer::WebEngineAccessKeyAnchor &element);
     bool checkForAccessKey(QKeyEvent *event);
-    QList<QLabel *> mAccessKeyLabels;
+    QVector<QLabel *> mAccessKeyLabels;
     QMultiHash<QChar, WebEngineViewer::WebEngineAccessKeyAnchor> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
     QWebEngineView *mWebEngine = nullptr;

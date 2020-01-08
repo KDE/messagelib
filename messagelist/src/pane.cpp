@@ -35,6 +35,7 @@
 #include <QMouseEvent>
 #include <QHeaderView>
 #include <QRegularExpression>
+#include <QVector>
 
 #include "storagemodel.h"
 #include "core/widgets/quicksearchline.h"
@@ -697,7 +698,7 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
     QAction *action = menu.exec(q->mapToGlobal(pos));
 
     if (action == allOther) {   // Close all other tabs
-        QList<Widget *> widgets;
+        QVector<Widget *> widgets;
         const int index = q->indexOf(w);
 
         for (int i = 0; i < q->count(); ++i) {
