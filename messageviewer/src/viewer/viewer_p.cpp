@@ -3135,6 +3135,7 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
                     delete dlg;
                 });
             }
+            mDkimViewerMenu->setEnableUpdateDkimKeyMenu(MessageViewer::MessageViewerSettings::saveKey() == MessageViewer::MessageViewerSettings::EnumSaveKey::Save);
             return mDkimViewerMenu;
         }
     }

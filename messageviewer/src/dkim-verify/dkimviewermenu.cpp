@@ -39,14 +39,19 @@ QMenu *DKIMViewerMenu::menu() const
     return mMenu;
 }
 
+void DKIMViewerMenu::setEnableUpdateDkimKeyMenu(bool enabled)
+{
+    mUpdateDKIMKey->setEnabled(enabled);
+}
+
 void DKIMViewerMenu::initialize()
 {
     mMenu = new QMenu(i18n("DKIM"));
     QAction *checkSignature = mMenu->addAction(i18n("Recheck DKIM Signature"));
     connect(checkSignature, &QAction::triggered, this, &DKIMViewerMenu::recheckSignature);
 
-    QAction *updateDKIMKey = mMenu->addAction(i18n("Update DKIM key"));
-    connect(updateDKIMKey, &QAction::triggered, this, &DKIMViewerMenu::updateDkimKey);
+    mUpdateDKIMKey = mMenu->addAction(i18n("Update DKIM key"));
+    connect(mUpdateDKIMKey, &QAction::triggered, this, &DKIMViewerMenu::updateDkimKey);
 
     QAction *manageDKIMRuleDKIMKey = mMenu->addAction(i18n("Rules..."));
     connect(manageDKIMRuleDKIMKey, &QAction::triggered, this, &DKIMViewerMenu::showDkimRules);
