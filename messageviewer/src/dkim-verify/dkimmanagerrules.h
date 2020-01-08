@@ -46,12 +46,12 @@ public:
 
     void clear();
 
-    void importRules(const QString &fileName);
+    Q_REQUIRED_RESULT int importRules(const QString &fileName);
     void exportRules(const QString &fileName);
 
     Q_REQUIRED_RESULT bool isEmpty() const;
 private:
-    void loadRules(const QString &fileName = QString());
+    Q_REQUIRED_RESULT int loadRules(const QString &fileName = QString());
     void save(const QString &fileName = QString());
     Q_REQUIRED_RESULT QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
     QVector<DKIMRule> mRules;

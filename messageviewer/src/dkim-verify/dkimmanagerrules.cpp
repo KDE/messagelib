@@ -27,7 +27,7 @@ using namespace MessageViewer;
 DKIMManagerRules::DKIMManagerRules(QObject *parent)
     : QObject(parent)
 {
-    loadRules();
+    (void)loadRules();
 }
 
 DKIMManagerRules::~DKIMManagerRules()
@@ -64,12 +64,15 @@ QStringList DKIMManagerRules::ruleGroups(const KSharedConfig::Ptr &config) const
     return config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Rule #\\d+")));
 }
 
-void DKIMManagerRules::loadRules(const QString &fileName)
+int DKIMManagerRules::loadRules(const QString &fileName)
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(fileName.isEmpty() ? MessageViewer::DKIMUtil::defaultConfigFileName() : fileName, KConfig::NoGlobals);
     const QStringList rulesGroups = ruleGroups(config);
 
-    mRules.clear();
+    if (fileName.isEmpty()) {
+        mRules.clear();
+    }
+    int numberOfRulesAdded = 0;
     for (const QString &groupName : rulesGroups) {
         KConfigGroup group = config->group(groupName);
         const QStringList signedDomainIdentifier = group.readEntry(QLatin1String("SignedDomainIdentifier"), QStringList());
@@ -85,8 +88,12 @@ void DKIMManagerRules::loadRules(const QString &fileName)
         rule.setListId(listId);
         rule.setSignedDomainIdentifier(signedDomainIdentifier);
         rule.setRuleType(static_cast<DKIMRule::RuleType>(ruleType));
-        mRules.append(rule);
+        if (rule.isValid()) {
+            numberOfRulesAdded++;
+            mRules.append(rule);
+        }
     }
+    return numberOfRulesAdded;
 }
 
 void DKIMManagerRules::saveRules(const QVector<DKIMRule> &lst)
@@ -101,9 +108,9 @@ void DKIMManagerRules::clear()
     save();
 }
 
-void DKIMManagerRules::importRules(const QString &fileName)
+int DKIMManagerRules::importRules(const QString &fileName)
 {
-    loadRules(fileName);
+    return loadRules(fileName);
 }
 
 void DKIMManagerRules::exportRules(const QString &fileName)

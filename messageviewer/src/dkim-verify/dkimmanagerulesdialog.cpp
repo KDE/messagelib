@@ -96,7 +96,9 @@ void DKIMManageRulesDialog::slotImport()
 {
     const QString fileName = QFileDialog::getOpenFileName(this, i18n("Import Rules"));
     if (!fileName.isEmpty()) {
-        MessageViewer::DKIMManagerRules::self()->importRules(fileName);
+        if (MessageViewer::DKIMManagerRules::self()->importRules(fileName) == 0) {
+            KMessageBox::error(this, i18n("No rules imported."), i18n("Import Rules"));
+        }
     }
 }
 
