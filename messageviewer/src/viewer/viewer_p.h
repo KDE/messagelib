@@ -596,6 +596,7 @@ private:
 
     void replyMessageToAuthor(KMime::Content *atmNode);
     void replyMessageToAll(KMime::Content *atmNode);
+    void replyMessage(KMime::Content *atmNode, bool replyToAll);
     Q_REQUIRED_RESULT bool urlIsAMalwareButContinue();
     Q_REQUIRED_RESULT bool messageIsInSpecialFolder() const;
 

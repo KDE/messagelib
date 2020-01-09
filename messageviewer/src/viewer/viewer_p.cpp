@@ -2670,20 +2670,20 @@ void ViewerPrivate::slotHandleAttachment(int choice)
 
 void ViewerPrivate::replyMessageToAuthor(KMime::Content *atmNode)
 {
-    if (atmNode) {
-        const bool isEncapsulatedMessage = atmNode->parent() && atmNode->parent()->bodyIsMessage();
-        if (isEncapsulatedMessage) {
-            Q_EMIT replyMessageTo(atmNode->parent()->bodyAsMessage(), false);
-        }
-    }
+    replyMessage(atmNode, false);
 }
 
 void ViewerPrivate::replyMessageToAll(KMime::Content *atmNode)
 {
+    replyMessage(atmNode, true);
+}
+
+void ViewerPrivate::replyMessage(KMime::Content *atmNode, bool replyToAll)
+{
     if (atmNode) {
         const bool isEncapsulatedMessage = atmNode->parent() && atmNode->parent()->bodyIsMessage();
         if (isEncapsulatedMessage) {
-            Q_EMIT replyMessageTo(atmNode->parent()->bodyAsMessage(), true);
+            Q_EMIT replyMessageTo(atmNode->parent()->bodyAsMessage(), replyToAll);
         }
     }
 }
@@ -2775,7 +2775,6 @@ void ViewerPrivate::saveRelativePosition()
     }
 }
 
-//TODO(Andras) inline them
 bool ViewerPrivate::htmlMail() const
 {
     if (mDisplayFormatMessageOverwrite == Viewer::UseGlobalSetting) {
@@ -2802,10 +2801,12 @@ bool ViewerPrivate::htmlLoadExternal() const
 
 void ViewerPrivate::setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage format)
 {
-    mDisplayFormatMessageOverwrite = format;
-    // keep toggle display mode action state in sync.
-    if (mToggleDisplayModeAction) {
-        mToggleDisplayModeAction->setChecked(htmlMail());
+    if (mDisplayFormatMessageOverwrite != format) {
+        mDisplayFormatMessageOverwrite = format;
+        // keep toggle display mode action state in sync.
+        if (mToggleDisplayModeAction) {
+            mToggleDisplayModeAction->setChecked(htmlMail());
+        }
     }
 }
 
@@ -2890,9 +2891,11 @@ void ViewerPrivate::scrollToAttachment(KMime::Content *node)
 
 void ViewerPrivate::setUseFixedFont(bool useFixedFont)
 {
-    mUseFixedFont = useFixedFont;
-    if (mToggleFixFontAction) {
-        mToggleFixFontAction->setChecked(mUseFixedFont);
+    if (mUseFixedFont != useFixedFont) {
+        mUseFixedFont = useFixedFont;
+        if (mToggleFixFontAction) {
+            mToggleFixFontAction->setChecked(mUseFixedFont);
+        }
     }
 }
 
