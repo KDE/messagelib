@@ -44,7 +44,7 @@ public:
 class MessageViewer::MessageViewerConfigureSettingsPluginManagerPrivate
 {
 public:
-    MessageViewerConfigureSettingsPluginManagerPrivate(MessageViewerConfigureSettingsPluginManager *qq)
+    explicit MessageViewerConfigureSettingsPluginManagerPrivate(MessageViewerConfigureSettingsPluginManager *qq)
         : q(qq)
     {
     }

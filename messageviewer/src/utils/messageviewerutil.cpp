@@ -339,9 +339,9 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
             }
             // save
             if (result != PimCommon::RenameFileDialog::RENAMEFILE_IGNOREALL) {
-                const bool result = saveContent(parent, content, curUrl);
-                if (!result) {
-                    globalResult = result;
+                const bool resultSave = saveContent(parent, content, curUrl);
+                if (!resultSave) {
+                    globalResult = resultSave;
                 } else {
                     urlList.append(curUrl);
                 }
@@ -591,7 +591,7 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
                                i18n("Error saving message"));
             return false;
         }
-        QUrl localUrl = QUrl::fromLocalFile(localFileName);
+        localUrl = QUrl::fromLocalFile(localFileName);
         if (localUrl.isLocalFile()) {
             KRecentDirs::add(fileClass, localUrl.adjusted(
                                  QUrl::RemoveFilename | QUrl::StripTrailingSlash).path());

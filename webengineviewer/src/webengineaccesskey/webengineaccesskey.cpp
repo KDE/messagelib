@@ -282,13 +282,13 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
             if (a) {
                 const QKeySequence shortCut = a->shortcut();
                 if (!shortCut.isEmpty()) {
-                    auto lst = unusedKeys;
+                    auto lstUnusedKeys = unusedKeys;
                     for (QChar c : qAsConst(unusedKeys)) {
                         if (shortCut.matches(QKeySequence(c)) != QKeySequence::NoMatch) {
-                            lst.removeOne(c);
+                            lstUnusedKeys.removeOne(c);
                         }
                     }
-                    unusedKeys = lst;
+                    unusedKeys = lstUnusedKeys;
                 }
             }
         }

@@ -89,9 +89,9 @@ int AttachmentDialog::exec()
     } else {
         if (again) {
             KConfigGroup::WriteConfigFlags flags = KConfig::Persistent;
-            KConfigGroup cg(KSharedConfig::openConfig().data(), "Notification Messages");
-            cg.writeEntry(dontAskName, static_cast<int>(ret), flags);
-            cg.sync();
+            KConfigGroup configGroup(KSharedConfig::openConfig().data(), "Notification Messages");
+            configGroup.writeEntry(dontAskName, static_cast<int>(ret), flags);
+            configGroup.sync();
         }
         return ret;
     }

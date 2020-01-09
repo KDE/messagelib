@@ -314,7 +314,7 @@ void RenderTest::testRender()
     QFETCH(bool, showSignatureDetails);
     QFETCH(QString, asyncFileName);
 
-    const QString htmlFileName = outFileName + QStringLiteral(".html");
+    //const QString htmlFileName = outFileName + QStringLiteral(".html");
     const bool bAsync = !asyncFileName.isEmpty();
 
     // load input mail

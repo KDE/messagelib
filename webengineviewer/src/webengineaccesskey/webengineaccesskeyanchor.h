@@ -27,7 +27,7 @@ namespace WebEngineViewer {
 class WebEngineAccessKeyAnchor
 {
 public:
-    WebEngineAccessKeyAnchor(const QVariant &result);
+    explicit WebEngineAccessKeyAnchor(const QVariant &result);
     WebEngineAccessKeyAnchor();
     Q_REQUIRED_RESULT QRect boundingRect() const;
 

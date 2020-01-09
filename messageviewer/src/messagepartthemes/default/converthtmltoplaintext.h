@@ -35,7 +35,7 @@ public:
     void setHtmlString(const QString &htmlString);
 
 private:
-    void toCleanPlainText(QString &text);
+    static void toCleanPlainText(QString &text);
     QString mHtmlString;
 };
 }

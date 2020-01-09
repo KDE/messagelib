@@ -33,7 +33,7 @@ using namespace WebEngineViewer;
 class WebEngineViewer::WebEngineViewPrivate
 {
 public:
-    WebEngineViewPrivate(WebEngineView *q)
+    explicit WebEngineViewPrivate(WebEngineView *q)
         : mSavedRelativePosition(-1)
         , mCurrentWidget(nullptr)
         , mWebEngineNavigatorInterceptor(nullptr)
