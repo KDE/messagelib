@@ -84,11 +84,11 @@ void FileHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
 {
     *stream() << "<!-- embedPart(contentID=" << contentId << ", url=" << url << ") -->"
              #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-              << endl
+        << endl
              #else
-              << Qt::endl
+        << Qt::endl
              #endif
-                 ;
+    ;
 }
 
 void FileHtmlWriter::extraHead(const QString &)

@@ -24,7 +24,6 @@ QTEST_MAIN(DKIMViewerMenuTest)
 DKIMViewerMenuTest::DKIMViewerMenuTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMViewerMenuTest::shouldHaveDefaultValues()

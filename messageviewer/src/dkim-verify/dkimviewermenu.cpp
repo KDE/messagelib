@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "dkimviewermenu.h"
 #include <QMenu>
 #include <KLocalizedString>

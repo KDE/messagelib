@@ -37,7 +37,6 @@
 #include "messageviewer/headerstrategy.h"
 #include "kpimtextedit/slidecontainer.h"
 
-
 #include "job/modifymessagedisplayformatjob.h"
 
 #include "viewerplugins/viewerplugintoolmanager.h"
@@ -3144,4 +3143,5 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
     }
     return nullptr;
 }
+
 #endif

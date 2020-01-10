@@ -62,7 +62,6 @@ DKIMManageRulesDialog::DKIMManageRulesDialog(QWidget *parent)
     buttonBox->addButton(exportButton, QDialogButtonBox::ActionRole);
     connect(exportButton, &QPushButton::clicked, this, &DKIMManageRulesDialog::slotExport);
 
-
     connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMManageRulesDialog::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMManageRulesDialog::reject);
     mRulesWidget->loadSettings();
