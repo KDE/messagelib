@@ -35,4 +35,5 @@ void DKIMRuleTest::shouldHaveDefaultValues()
     QVERIFY(rule.listId().isEmpty());
     QVERIFY(rule.enabled());
     QCOMPARE(rule.ruleType(), MessageViewer::DKIMRule::RuleType::Unknown);
+    QCOMPARE(rule.priority(), 1000);
 }

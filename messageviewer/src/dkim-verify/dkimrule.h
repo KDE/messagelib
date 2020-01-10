@@ -63,12 +63,16 @@ public:
 
     Q_REQUIRED_RESULT bool operator==(const DKIMRule &other) const;
 
+    Q_REQUIRED_RESULT int priority() const;
+    void setPriority(int priority);
+
 private:
     QStringList mSignedDomainIdentifier;
     QString mDomain;
     QString mFrom;
     QString mListId;
     RuleType mRuleType = DKIMRule::RuleType::Unknown;
+    int mPriority = 1000;
     bool mEnabled = true;
 };
 }

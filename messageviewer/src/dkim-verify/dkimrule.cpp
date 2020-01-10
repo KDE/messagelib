@@ -96,10 +96,21 @@ bool DKIMRule::operator==(const DKIMRule &other) const
         && other.from() == mFrom
         && other.listId() == mListId
         && other.ruleType() == mRuleType
-        && other.enabled() == mEnabled) {
+        && other.enabled() == mEnabled
+        && other.priority() == mPriority) {
         return true;
     }
     return false;
+}
+
+int DKIMRule::priority() const
+{
+    return mPriority;
+}
+
+void DKIMRule::setPriority(int priority)
+{
+    mPriority = priority;
 }
 
 QDebug operator <<(QDebug d, const DKIMRule &t)
@@ -110,5 +121,6 @@ QDebug operator <<(QDebug d, const DKIMRule &t)
     d << "mEnabled: " << t.enabled();
     d << "mRuleType " << t.ruleType();
     d << "mListId " << t.listId();
+    d << "mPriority " << t.priority();
     return d;
 }
