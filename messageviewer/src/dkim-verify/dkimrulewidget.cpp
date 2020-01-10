@@ -68,6 +68,7 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     mPriority->setObjectName(QStringLiteral("priority"));
     mPriority->setValidator(validator);
     mPriority->setClearButtonEnabled(true);
+    mPriority->setText(QString::number(1000)); //Default Value
     layout->addRow(i18n("Priority:"), mPriority);
 }
 

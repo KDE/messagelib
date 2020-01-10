@@ -69,6 +69,6 @@ void DKIMRuleWidgetTest::shouldHaveDefaultValues()
 
     QLineEdit *mPriority = w.findChild<QLineEdit *>(QStringLiteral("priority"));
     QVERIFY(mPriority);
-    QVERIFY(mPriority->text().isEmpty());
+    QCOMPARE(mPriority->text(), QStringLiteral("1000"));
     QVERIFY(mPriority->isClearButtonEnabled());
 }
