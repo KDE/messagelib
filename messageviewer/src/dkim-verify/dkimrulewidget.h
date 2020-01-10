@@ -40,6 +40,7 @@ private:
     QLineEdit *mSignatureDomainIdentifier = nullptr;
     QLineEdit *mFrom = nullptr;
     QLineEdit *mListId = nullptr;
+    QLineEdit *mPriority = nullptr;
     DKIMManageRulesComboBox *mRuleType = nullptr;
 };
 }

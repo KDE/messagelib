@@ -81,6 +81,7 @@ int DKIMManagerRules::loadRules(const QString &fileName)
         const bool enabled = group.readEntry(QLatin1String("Enabled"), true);
         const int ruleType = group.readEntry(QLatin1String("RuleType"), 0);
         const QString listId = group.readEntry(QLatin1String("List-Id"), QString());
+        const int priority = group.readEntry(QLatin1String("Priority"), 1000);
         DKIMRule rule;
         rule.setEnabled(enabled);
         rule.setDomain(domain);
@@ -88,6 +89,7 @@ int DKIMManagerRules::loadRules(const QString &fileName)
         rule.setListId(listId);
         rule.setSignedDomainIdentifier(signedDomainIdentifier);
         rule.setRuleType(static_cast<DKIMRule::RuleType>(ruleType));
+        rule.setPriority(priority);
         if (rule.isValid()) {
             numberOfRulesAdded++;
             mRules.append(rule);
@@ -137,5 +139,6 @@ void DKIMManagerRules::save(const QString &fileName)
         group.writeEntry(QLatin1String("Enabled"), rule.enabled());
         group.writeEntry(QLatin1String("RuleType"), static_cast<int>(rule.ruleType()));
         group.writeEntry(QLatin1String("List-Id"), rule.listId());
+        group.writeEntry(QLatin1String("Priority"), rule.priority());
     }
 }

@@ -66,4 +66,9 @@ void DKIMRuleWidgetTest::shouldHaveDefaultValues()
 
     MessageViewer::DKIMManageRulesComboBox *mRuleType = w.findChild<MessageViewer::DKIMManageRulesComboBox *>(QStringLiteral("ruletype"));
     QVERIFY(mRuleType);
+
+    QLineEdit *mPriority = w.findChild<QLineEdit *>(QStringLiteral("priority"));
+    QVERIFY(mPriority);
+    QVERIFY(mPriority->text().isEmpty());
+    QVERIFY(mPriority->isClearButtonEnabled());
 }

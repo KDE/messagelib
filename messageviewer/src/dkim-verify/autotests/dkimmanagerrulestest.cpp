@@ -60,3 +60,5 @@ void DKIMManagerRulesTest::shouldClearRules()
     r.clear();
     QVERIFY(r.isEmpty());
 }
+
+//TODO add save/load support

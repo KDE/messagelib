@@ -23,6 +23,8 @@
 #include <QCheckBox>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <QIntValidator>
+
 using namespace MessageViewer;
 DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     : QWidget(parent)
@@ -60,6 +62,13 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     mRuleType = new DKIMManageRulesComboBox(this);
     mRuleType->setObjectName(QStringLiteral("ruletype"));
     layout->addRow(i18n("Rule:"), mRuleType);
+
+    QIntValidator *validator = new QIntValidator(1, 9999, this);
+    mPriority = new QLineEdit(this);
+    mPriority->setObjectName(QStringLiteral("priority"));
+    mPriority->setValidator(validator);
+    mPriority->setClearButtonEnabled(true);
+    layout->addRow(i18n("Priority:"), mPriority);
 }
 
 DKIMRuleWidget::~DKIMRuleWidget()
@@ -74,6 +83,7 @@ void DKIMRuleWidget::loadRule(const MessageViewer::DKIMRule &rule)
     mFrom->setText(rule.from());
     mListId->setText(rule.listId());
     mRuleType->setRuleType(rule.ruleType());
+    mPriority->setText(QString::number(rule.priority()));
 }
 
 MessageViewer::DKIMRule DKIMRuleWidget::rule() const
@@ -85,5 +95,6 @@ MessageViewer::DKIMRule DKIMRuleWidget::rule() const
     rule.setFrom(mFrom->text());
     rule.setListId(mListId->text());
     rule.setRuleType(mRuleType->ruleType());
+    rule.setPriority(mPriority->text().toInt());
     return rule;
 }
