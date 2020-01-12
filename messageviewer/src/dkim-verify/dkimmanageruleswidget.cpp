@@ -164,7 +164,7 @@ void DKIMManageRulesWidget::customContextMenuRequested(const QPoint &pos)
     if (mTreeWidget->topLevelItemCount() > 0) {
         menu.addSeparator();
         menu.addAction(i18n("Delete All"), this, [this]() {
-            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to all rules?"), i18n("Delete Rules"))) {
+            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete all the rules?"), i18n("Delete Rules"))) {
                 mTreeWidget->clear();
             }
         });
