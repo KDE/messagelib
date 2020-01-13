@@ -45,7 +45,7 @@ public:
     void unregisterHandler(const Interface::BodyPartURLHandler *handler);
 
 private:
-    QVector<const Interface::BodyPartURLHandler *> handlersForPart(KMime::Content *node) const;
+    Q_REQUIRED_RESULT QVector<const Interface::BodyPartURLHandler *> handlersForPart(KMime::Content *node) const;
 
     typedef QHash<QByteArray, QVector<const Interface::BodyPartURLHandler *> > BodyPartHandlerList;
     BodyPartHandlerList mHandlers;

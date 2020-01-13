@@ -52,21 +52,20 @@ public:
     void render(const MimeTreeParser::EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const MimeTreeParser::AlternativeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const MimeTreeParser::CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) override;
+    Q_REQUIRED_RESULT bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) override;
     using RenderContext::renderWithFactory;
     void renderFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
 
-    bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
-    MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
-    bool showEmoticons() const override;
-    bool isPrinting() const override;
-    bool htmlLoadExternal() const override;
-    bool showExpandQuotesMark() const override;
-    bool showOnlyOneMimePart() const override;
-    bool showSignatureDetails() const override;
-    bool showEncryptionDetails() const override;
-    int levelQuote() const override;
-
+    Q_REQUIRED_RESULT bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
+    Q_REQUIRED_RESULT MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
+    Q_REQUIRED_RESULT bool showEmoticons() const override;
+    Q_REQUIRED_RESULT bool isPrinting() const override;
+    Q_REQUIRED_RESULT bool htmlLoadExternal() const override;
+    Q_REQUIRED_RESULT bool showExpandQuotesMark() const override;
+    Q_REQUIRED_RESULT bool showOnlyOneMimePart() const override;
+    Q_REQUIRED_RESULT bool showSignatureDetails() const override;
+    Q_REQUIRED_RESULT bool showEncryptionDetails() const override;
+    Q_REQUIRED_RESULT int levelQuote() const override;
     MimeTreeParser::MessagePart::Ptr mMsgPart;
     CSSHelperBase *mCSSHelper = nullptr;
     const MessagePartRendererFactory *mRendererFactory = nullptr;

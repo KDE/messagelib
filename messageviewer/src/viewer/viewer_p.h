@@ -23,7 +23,6 @@
 
 #include "messageviewer_private_export.h"
 #include "config-messageviewer.h"
-#include <MimeTreeParser/NodeHelper>
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer
 #include <PimCommon/ShareServiceUrlManager>
 #include "messageviewer/viewerplugininterface.h"
@@ -65,6 +64,7 @@ class TextToSpeechWidget;
 
 namespace MimeTreeParser {
 class ObjectTreeParser;
+class NodeHelper;
 }
 #ifdef USE_DKIM_CHECKER
 namespace MessageViewer {

@@ -48,7 +48,7 @@ private:
         QString fileName;
         int size;
 
-        bool operator <(const Entry &other) const;
+        Q_REQUIRED_RESULT bool operator <(const Entry &other) const;
     };
 
     mutable QMap<Entry, QString> mCachedEntries;

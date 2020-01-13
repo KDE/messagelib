@@ -80,13 +80,13 @@ public:
       * @return a string to be shown in the status bar while hovering
       * over this link.
       */
-    virtual QString statusBarMessage(const QUrl &url, MessageViewer::ViewerPrivate *w) const = 0;
+    virtual Q_REQUIRED_RESULT QString statusBarMessage(const QUrl &url, MessageViewer::ViewerPrivate *w) const = 0;
 
     /**
      * Called when shift-clicking the link in the reader.
      * @return true if the click was handled by this URLHandler, false otherwise
      */
-    virtual bool handleShiftClick(const QUrl &url, MessageViewer::ViewerPrivate *window) const
+    virtual Q_REQUIRED_RESULT bool handleShiftClick(const QUrl &url, MessageViewer::ViewerPrivate *window) const
     {
         Q_UNUSED(url);
         Q_UNUSED(window);
@@ -96,7 +96,7 @@ public:
     /**
      * @return should return true if this URLHandler will handle the drag
      */
-    virtual bool willHandleDrag(const QUrl &url, MessageViewer::ViewerPrivate *window) const
+    virtual Q_REQUIRED_RESULT bool willHandleDrag(const QUrl &url, MessageViewer::ViewerPrivate *window) const
     {
         Q_UNUSED(url);
         Q_UNUSED(window);
@@ -108,7 +108,7 @@ public:
      * If the drag is handled, you should create a drag object.
      * @return true if the click was handled by this URLHandler, false otherwise
      */
-    virtual bool handleDrag(const QUrl &url, MessageViewer::ViewerPrivate *window) const
+    virtual Q_REQUIRED_RESULT bool handleDrag(const QUrl &url, MessageViewer::ViewerPrivate *window) const
     {
         Q_UNUSED(url);
         Q_UNUSED(window);
