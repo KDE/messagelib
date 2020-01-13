@@ -82,9 +82,6 @@ public:
     //
     virtual QString format(KMime::Message *message) const = 0;
 
-    void setMessagePath(const QString &path);
-    Q_REQUIRED_RESULT QString messagePath() const;
-
     void setHeaderStrategy(const HeaderStrategy *strategy);
     Q_REQUIRED_RESULT const HeaderStrategy *headerStrategy() const;
 

@@ -48,7 +48,6 @@ public:
     }
 
     GrantleeTheme::Theme mTheme;
-    QString mMessagePath;
     const HeaderStrategy *mStrategy = nullptr;
     QString mVCardName;
     QString mCollectionName;
@@ -81,16 +80,6 @@ void HeaderStyle::setAttachmentHtml(const QString &html)
 QString HeaderStyle::attachmentHtml() const
 {
     return d->mAttachmentHtml;
-}
-
-void HeaderStyle::setMessagePath(const QString &path)
-{
-    d->mMessagePath = path;
-}
-
-QString HeaderStyle::messagePath() const
-{
-    return d->mMessagePath;
 }
 
 void HeaderStyle::setHeaderStrategy(const HeaderStrategy *strategy)

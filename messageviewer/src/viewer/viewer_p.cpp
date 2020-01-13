@@ -946,7 +946,6 @@ QString ViewerPrivate::writeMessageHeader(KMime::Message *aMsg, KMime::Content *
     headerStylePlugin()->headerStyle()->setAllowAsync(true);
     headerStylePlugin()->headerStyle()->setSourceObject(this);
     headerStylePlugin()->headerStyle()->setNodeHelper(mNodeHelper);
-    headerStylePlugin()->headerStyle()->setMessagePath(mMessagePath);
     headerStylePlugin()->headerStyle()->setAttachmentHtml(attachmentHtml());
     if (mMessageItem.isValid()) {
         Akonadi::MessageStatus status;
