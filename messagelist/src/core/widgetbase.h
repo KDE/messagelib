@@ -135,7 +135,7 @@ public:
 public Q_SLOTS:
 
     /**
-    * This is called to setup the status filter's KComboBox.
+    * This is called to setup the status filter's QComboBox.
     */
     void populateStatusFilterCombo();
 
