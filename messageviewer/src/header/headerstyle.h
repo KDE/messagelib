@@ -108,8 +108,6 @@ public:
 
     void setTheme(const GrantleeTheme::Theme &theme);
     Q_REQUIRED_RESULT GrantleeTheme::Theme theme() const;
-    void setCollectionName(const QString &name);
-    Q_REQUIRED_RESULT QString collectionName() const;
 
     Q_REQUIRED_RESULT bool readOnlyMessage() const;
     void setReadOnlyMessage(bool readOnlyMessage);

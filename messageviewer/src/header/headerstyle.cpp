@@ -50,7 +50,6 @@ public:
     GrantleeTheme::Theme mTheme;
     const HeaderStrategy *mStrategy = nullptr;
     QString mVCardName;
-    QString mCollectionName;
     QString mAttachmentHtml;
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     QObject *mSourceObject = nullptr;
@@ -170,16 +169,6 @@ void HeaderStyle::setTheme(const GrantleeTheme::Theme &theme)
 GrantleeTheme::Theme HeaderStyle::theme() const
 {
     return d->mTheme;
-}
-
-void HeaderStyle::setCollectionName(const QString &name)
-{
-    d->mCollectionName = name;
-}
-
-QString HeaderStyle::collectionName() const
-{
-    return d->mCollectionName;
 }
 
 bool HeaderStyle::readOnlyMessage() const

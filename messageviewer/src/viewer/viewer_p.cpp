@@ -952,10 +952,7 @@ QString ViewerPrivate::writeMessageHeader(KMime::Message *aMsg, KMime::Content *
         status.setStatusFromFlags(mMessageItem.flags());
 
         headerStylePlugin()->headerStyle()->setMessageStatus(status);
-        headerStylePlugin()->headerStyle()->setCollectionName(
-            mMessageItem.parentCollection().displayName());
     } else {
-        headerStylePlugin()->headerStyle()->setCollectionName(QString());
         headerStylePlugin()->headerStyle()->setReadOnlyMessage(true);
     }
 
