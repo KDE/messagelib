@@ -55,7 +55,7 @@ private:
         Begun,
         Queued,
         Ended
-    } mState;
+    } mState = Ended;
     QTemporaryFile *mTempFile = nullptr;
 };
 }

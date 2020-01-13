@@ -33,7 +33,6 @@ using namespace MessageViewer;
 WebEnginePartHtmlWriter::WebEnginePartHtmlWriter(MailWebEngineView *view, QObject *parent)
     : QObject(parent)
     , mHtmlView(view)
-    , mState(Ended)
 {
     assert(view);
 }
