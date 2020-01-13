@@ -23,7 +23,7 @@
 
 #include <QString>
 #include <QByteArray>
-
+class QTemporaryFile;
 namespace MessageViewer {
 class MailWebEngineView;
 }
@@ -56,6 +56,7 @@ private:
         Queued,
         Ended
     } mState;
+    QTemporaryFile *mTempFile = nullptr;
 };
 }
 #endif // WEBENGINEPARTHTMLWRITER_H

@@ -25,6 +25,8 @@
 
 #include <cassert>
 #include <QByteArray>
+#include <QTemporaryFile>
+#include <QDir>
 
 using namespace MessageViewer;
 
@@ -38,6 +40,7 @@ WebEnginePartHtmlWriter::WebEnginePartHtmlWriter(MailWebEngineView *view, QObjec
 
 WebEnginePartHtmlWriter::~WebEnginePartHtmlWriter()
 {
+    delete mTempFile;
 }
 
 void WebEnginePartHtmlWriter::begin()
@@ -46,6 +49,8 @@ void WebEnginePartHtmlWriter::begin()
         qCWarning(MESSAGEVIEWER_LOG) << "begin() called on non-ended session!";
         reset();
     }
+
+    delete mTempFile;
 
     BufferedHtmlWriter::begin();
     MessageViewer::WebEngineEmbedPart::self()->clear();
@@ -63,8 +68,19 @@ void WebEnginePartHtmlWriter::end()
         mExtraHead.clear();
     }
     // see QWebEnginePage::setHtml()
-    mHtmlView->setContent(data(), QStringLiteral("text/html;charset=UTF-8"), QUrl(QStringLiteral("file:///")));
+    //mHtmlView->setContent(data(), QStringLiteral("text/html;charset=UTF-8"), QUrl(QStringLiteral("file:///")));
+
+    mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX")+ QLatin1String(".html"));
+    mTempFile->open();
+    QTextStream stream(mTempFile);
+    stream.setCodec("UTF-8");
+    stream << data();
+
+    //Bug 387061
+    mHtmlView->load(QUrl::fromLocalFile(mTempFile->fileName()));
+    //qDebug() << " tempFile.fileName()" << mTempFile->fileName();
     mHtmlView->show();
+    mTempFile->close();
     clear();
 
     mHtmlView->setUpdatesEnabled(true);
