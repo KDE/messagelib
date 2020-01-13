@@ -59,6 +59,7 @@ void DKIMManageRulesWidgetItem::updateInfo()
     setText(ColumnType::ListId, mRule.listId());
     setText(ColumnType::From, mRule.from());
     setText(ColumnType::SDid, mRule.signedDomainIdentifier().join(QLatin1Char(' ')));
+    setText(ColumnType::Priority, QString::number(mRule.priority()));
     mRuleTypeCombobox->setRuleType(mRule.ruleType());
 }
 
@@ -72,7 +73,7 @@ DKIMManageRulesWidget::DKIMManageRulesWidget(QWidget *parent)
     mTreeWidget = new QTreeWidget(this);
     mTreeWidget->setObjectName(QStringLiteral("treewidget"));
     mTreeWidget->setRootIsDecorated(false);
-    mTreeWidget->setHeaderLabels({i18n("Active"), i18n("Domain"), i18n("List-ID"), i18n("From"), i18n("SDID"), i18n("Rule type")});
+    mTreeWidget->setHeaderLabels({i18n("Active"), i18n("Domain"), i18n("List-ID"), i18n("From"), i18n("SDID"), i18n("Rule type"), i18n("Priority")});
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     mTreeWidget->setAlternatingRowColors(true);
 

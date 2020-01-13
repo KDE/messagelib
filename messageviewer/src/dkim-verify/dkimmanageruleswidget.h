@@ -41,6 +41,7 @@ public:
         From = 3,
         SDid = 4,
         RuleType = 5,
+        Priority = 6,
     };
 
     explicit DKIMManageRulesWidgetItem(QTreeWidget *parent = nullptr);
