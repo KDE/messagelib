@@ -73,6 +73,7 @@ public:
 
     void addRule();
 private:
+    void modifyRule(DKIMManageRulesWidgetItem *rulesItem);
     void customContextMenuRequested(const QPoint &);
     QTreeWidget *mTreeWidget = nullptr;
 };
