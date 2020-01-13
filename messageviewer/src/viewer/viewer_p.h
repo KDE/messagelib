@@ -25,9 +25,9 @@
 #include "config-messageviewer.h"
 #include <MimeTreeParser/NodeHelper>
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer
-#include "PimCommon/ShareServiceUrlManager"
+#include <PimCommon/ShareServiceUrlManager>
 #include "messageviewer/viewerplugininterface.h"
-#include <WebEngineViewer/CheckPhishingUrlJob>
+#include <WebEngineViewer/CheckPhishingUrlUtil>
 
 #include <AkonadiCore/item.h>
 #include <AkonadiCore/monitor.h>
@@ -35,11 +35,9 @@
 #include <kio/job.h>
 #include <KMime/Message>
 #include <KService>
-#include <KSharedConfig>
 #include <QPointer>
 #include <QUrl>
 #include <QVector>
-#include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>
 
 #include <QObject>
 #include <QTimer>
@@ -63,9 +61,6 @@ class QPrinter;
 namespace KPIMTextEdit {
 class SlideContainer;
 class TextToSpeechWidget;
-}
-namespace PimCommon {
-class ShareServiceUrlManager;
 }
 
 namespace MimeTreeParser {
@@ -97,7 +92,6 @@ class MimePartTreeView;
 class OpenAttachmentFolderWidget;
 class HeaderStyleMenuManager;
 class ViewerPluginToolManager;
-class ViewerPluginInterface;
 class SubmittedFormWarningWidget;
 class MailSourceWebEngineViewer;
 class MailTrackingWarningWidget;
