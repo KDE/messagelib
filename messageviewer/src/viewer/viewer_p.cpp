@@ -935,28 +935,27 @@ QString ViewerPrivate::writeMessageHeader(KMime::Message *aMsg, KMime::Content *
         qCCritical(MESSAGEVIEWER_LOG) << "trying to writeMessageHeader() without a header style set!";
         return {};
     }
-    QString href;
+    HeaderStyle *style = headerStylePlugin()->headerStyle();
     if (vCardNode) {
-        href = mNodeHelper->asHREF(vCardNode, QStringLiteral("body"));
+        style->setVCardName(mNodeHelper->asHREF(vCardNode, QStringLiteral("body")));
     }
-    headerStylePlugin()->headerStyle()->setHeaderStrategy(headerStylePlugin()->headerStrategy());
-    headerStylePlugin()->headerStyle()->setVCardName(href);
-    headerStylePlugin()->headerStyle()->setPrinting(mPrinting);
-    headerStylePlugin()->headerStyle()->setTopLevel(topLevel);
-    headerStylePlugin()->headerStyle()->setAllowAsync(true);
-    headerStylePlugin()->headerStyle()->setSourceObject(this);
-    headerStylePlugin()->headerStyle()->setNodeHelper(mNodeHelper);
-    headerStylePlugin()->headerStyle()->setAttachmentHtml(attachmentHtml());
+    style->setHeaderStrategy(headerStylePlugin()->headerStrategy());
+    style->setPrinting(mPrinting);
+    style->setTopLevel(topLevel);
+    style->setAllowAsync(true);
+    style->setSourceObject(this);
+    style->setNodeHelper(mNodeHelper);
+    style->setAttachmentHtml(attachmentHtml());
     if (mMessageItem.isValid()) {
         Akonadi::MessageStatus status;
         status.setStatusFromFlags(mMessageItem.flags());
 
-        headerStylePlugin()->headerStyle()->setMessageStatus(status);
+        style->setMessageStatus(status);
     } else {
-        headerStylePlugin()->headerStyle()->setReadOnlyMessage(true);
+        style->setReadOnlyMessage(true);
     }
 
-    return headerStylePlugin()->headerStyle()->format(aMsg);
+    return style->format(aMsg);
 }
 
 void ViewerPrivate::showVCard(KMime::Content *msgPart)
