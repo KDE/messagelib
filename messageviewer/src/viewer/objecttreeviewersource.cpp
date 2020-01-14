@@ -102,7 +102,7 @@ const QTextCodec *MailViewerSource::overrideCodec()
 
 QString MailViewerSource::createMessageHeader(KMime::Message *message)
 {
-    return mViewer->writeMessageHeader(message);
+    return mViewer->writeMessageHeader(message, nullptr, false);
 }
 
 const AttachmentStrategy *MailViewerSource::attachmentStrategy() const
