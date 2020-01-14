@@ -48,8 +48,10 @@ MessageViewer::DKIMRule DKIMManageRulesWidgetItem::rule() const
 
 void DKIMManageRulesWidgetItem::setRule(const MessageViewer::DKIMRule &rule)
 {
-    mRule = rule;
-    updateInfo();
+    if (mRule != rule) {
+        mRule = rule;
+        updateInfo();
+    }
 }
 
 void DKIMManageRulesWidgetItem::updateInfo()

@@ -103,6 +103,11 @@ bool DKIMRule::operator==(const DKIMRule &other) const
     return false;
 }
 
+bool DKIMRule::operator!=(const DKIMRule &other) const
+{
+    return !operator==(other);
+}
+
 int DKIMRule::priority() const
 {
     return mPriority;

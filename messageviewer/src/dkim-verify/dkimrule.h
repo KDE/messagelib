@@ -62,6 +62,7 @@ public:
     void setListId(const QString &listId);
 
     Q_REQUIRED_RESULT bool operator==(const DKIMRule &other) const;
+    Q_REQUIRED_RESULT bool operator!=(const DKIMRule &other) const;
 
     Q_REQUIRED_RESULT int priority() const;
     void setPriority(int priority);
