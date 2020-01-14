@@ -145,6 +145,20 @@ void DKIMManageRulesWidget::addRule()
     delete dlg;
 }
 
+void DKIMManageRulesWidget::duplicateRule(DKIMManageRulesWidgetItem *rulesItem)
+{
+    QPointer<DKIMRuleDialog> dlg = new DKIMRuleDialog(this);
+    dlg->loadRule(rulesItem->rule());
+    if (dlg->exec()) {
+        const MessageViewer::DKIMRule rule = dlg->rule();
+        if (rule.isValid()) {
+            DKIMManageRulesWidgetItem *item = new DKIMManageRulesWidgetItem(mTreeWidget);
+            item->setRule(rule);
+        }
+    }
+    delete dlg;
+}
+
 void DKIMManageRulesWidget::modifyRule(DKIMManageRulesWidgetItem *rulesItem)
 {
     QPointer<DKIMRuleDialog> dlg = new DKIMRuleDialog(this);
@@ -170,6 +184,10 @@ void DKIMManageRulesWidget::customContextMenuRequested(const QPoint &pos)
     if (rulesItem) {
         menu.addAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18n("Modify..."), this, [this, rulesItem]() {
             modifyRule(rulesItem);
+        });
+        menu.addSeparator();
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-duplicate")), i18n("Duplicate Rule"), this, [this, rulesItem]() {
+            duplicateRule(rulesItem);
         });
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {

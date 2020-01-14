@@ -74,6 +74,7 @@ public:
 private:
     void modifyRule(DKIMManageRulesWidgetItem *rulesItem);
     void customContextMenuRequested(const QPoint &);
+    void duplicateRule(DKIMManageRulesWidgetItem *rulesItem);
     QTreeWidget *mTreeWidget = nullptr;
 };
 }
