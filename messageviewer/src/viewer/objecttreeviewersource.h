@@ -21,7 +21,6 @@
 #define MAILVIEWER_OBJECTTREEVIEWERSOURCE_H
 
 #include "objecttreeemptysource.h"
-#include <QVector>
 class QString;
 
 namespace MessageViewer {

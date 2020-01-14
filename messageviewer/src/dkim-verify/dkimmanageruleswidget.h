@@ -23,7 +23,6 @@
 #include <MessageViewer/DKIMRule>
 #include <QTreeWidgetItem>
 #include <QWidget>
-#include <QComboBox>
 class QTreeWidget;
 namespace MessageViewer {
 class DKIMManageRulesComboBox;

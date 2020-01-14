@@ -44,7 +44,6 @@
 
 #include <QMimeDatabase>
 #include <QJsonArray>
-#include <QJsonObject>
 #include <algorithm>
 
 using namespace MessageViewer;

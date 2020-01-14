@@ -27,7 +27,6 @@
 #include <AkonadiCore/Item>
 
 namespace MessageViewer {
-class DKIMAuthenticationStatusInfo;
 /**
  * @brief The DKIMManager class
  * @author Laurent Montel <montel@kde.org>

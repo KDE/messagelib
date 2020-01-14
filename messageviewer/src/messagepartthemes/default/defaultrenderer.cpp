@@ -46,7 +46,6 @@
 #include <KEmailAddress>
 #include <KIconLoader>
 #include <KLocalizedString>
-#include <QRegularExpression>
 
 #include <QUrl>
 

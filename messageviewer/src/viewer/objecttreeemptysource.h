@@ -22,7 +22,6 @@
 
 #include <MimeTreeParser/ObjectTreeSource>
 #include "messageviewer_export.h"
-#include <QVector>
 class QString;
 
 namespace MessageViewer {

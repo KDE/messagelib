@@ -35,7 +35,6 @@
 
 #include <MimeTreeParser/Util>
 #include "messageviewer/messageviewerutil.h"
-#include <QVector>
 #include <QLabel>
 class QMouseEvent;
 

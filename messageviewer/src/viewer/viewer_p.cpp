@@ -75,7 +75,6 @@
 
 //Qt includes
 #include <QClipboard>
-#include <QFileInfo>
 #include <QItemSelectionModel>
 #include <QSplitter>
 #include <QTreeView>
