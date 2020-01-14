@@ -64,7 +64,7 @@ private Q_SLOTS:
 
     void slotGravatarResolvUrlFinished(Gravatar::GravatarResolvUrlJob *);
 private:
-    bool searchPhoto(const KContacts::AddresseeList &list);
+    Q_REQUIRED_RESULT bool searchPhoto(const KContacts::AddresseeList &list);
     KContacts::Picture mPhoto;
     QPixmap mGravatarPixmap;
     QImage mImageFromUrl;

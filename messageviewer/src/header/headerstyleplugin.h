@@ -45,23 +45,23 @@ public:
     virtual HeaderStyle *headerStyle() const = 0;
     virtual HeaderStrategy *headerStrategy() const = 0;
     virtual HeaderStyleInterface *createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent = nullptr) = 0;
-    virtual QString name() const = 0;
-    virtual bool hasMargin() const;
-    virtual QString alignment() const;
-    virtual int elidedTextSize() const;
+    virtual Q_REQUIRED_RESULT QString name() const = 0;
+    virtual Q_REQUIRED_RESULT bool hasMargin() const;
+    virtual Q_REQUIRED_RESULT QString alignment() const;
+    virtual Q_REQUIRED_RESULT int elidedTextSize() const;
 
     void setIsEnabled(bool enabled);
-    bool isEnabled() const;
+    Q_REQUIRED_RESULT bool isEnabled() const;
 
-    virtual QString attachmentHtml() const;
+    virtual Q_REQUIRED_RESULT QString attachmentHtml() const;
 
-    virtual bool hasConfigureDialog() const;
+    virtual Q_REQUIRED_RESULT bool hasConfigureDialog() const;
 
-    virtual void showConfigureDialog(QWidget *parent);
+    virtual Q_REQUIRED_RESULT void showConfigureDialog(QWidget *parent);
 
-    virtual QString extraScreenCss(const QString &headerFont) const;
-    virtual QString extraPrintCss(const QString &headerFont) const;
-    virtual QString extraCommonCss(const QString &headerFont) const;
+    virtual Q_REQUIRED_RESULT QString extraScreenCss(const QString &headerFont) const;
+    virtual Q_REQUIRED_RESULT QString extraPrintCss(const QString &headerFont) const;
+    virtual Q_REQUIRED_RESULT QString extraCommonCss(const QString &headerFont) const;
 
 private:
     HeaderStylePluginPrivate *const d;

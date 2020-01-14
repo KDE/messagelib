@@ -70,7 +70,7 @@ public:
 
     void setLinkHovered(const QUrl &url);
     void setViewer(MessageViewer::ViewerPrivate *viewer);
-    bool execPrintPreviewPage(QPrinter *printer, int timeout);
+    Q_REQUIRED_RESULT bool execPrintPreviewPage(QPrinter *printer, int timeout);
     void readConfig();
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);

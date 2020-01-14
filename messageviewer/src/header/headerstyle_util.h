@@ -86,8 +86,8 @@ public:
     Q_REQUIRED_RESULT xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
 private:
     void updateXFaceSettings(QImage photo, xfaceSettings &settings) const;
-    QString drawSpamMeter(SpamError spamError, double percent, double confidence, const QString &filterHeader, const QString &confidenceHeader) const;
-    QString imgToDataUrl(const QImage &image) const;
+    Q_REQUIRED_RESULT QString drawSpamMeter(SpamError spamError, double percent, double confidence, const QString &filterHeader, const QString &confidenceHeader) const;
+    Q_REQUIRED_RESULT QString imgToDataUrl(const QImage &image) const;
 };
 }
 
