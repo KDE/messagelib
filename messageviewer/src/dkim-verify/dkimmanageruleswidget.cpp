@@ -20,6 +20,7 @@
 #include "dkimmanagerulescombobox.h"
 #include "dkimmanageruleswidget.h"
 #include "dkimruledialog.h"
+#include "messageviewer_dkimcheckerdebug.h"
 #include <MessageViewer/DKIMManagerRules>
 #include <QVBoxLayout>
 #include <QHeaderView>
@@ -137,6 +138,8 @@ void DKIMManageRulesWidget::addRule()
         if (rule.isValid()) {
             DKIMManageRulesWidgetItem *item = new DKIMManageRulesWidgetItem(mTreeWidget);
             item->setRule(rule);
+        } else {
+            qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Rule is not valid";
         }
     }
     delete dlg;

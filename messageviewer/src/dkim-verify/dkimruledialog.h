@@ -23,6 +23,7 @@
 #include "messageviewer_private_export.h"
 #include <QDialog>
 #include <MessageViewer/DKIMRule>
+class QPushButton;
 namespace MessageViewer {
 class DKIMRuleWidget;
 class MESSAGEVIEWER_TESTS_EXPORT DKIMRuleDialog : public QDialog
@@ -39,6 +40,7 @@ private:
     void writeConfig();
     void readConfig();
     DKIMRuleWidget *mRuleWidget = nullptr;
+    QPushButton *mOkButton = nullptr;
 };
 }
 

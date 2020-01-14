@@ -42,6 +42,7 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     mDomain->setObjectName(QStringLiteral("domain"));
     mDomain->setClearButtonEnabled(true);
     layout->addRow(i18n("Domain:"), mDomain);
+    connect(mDomain, &QLineEdit::textChanged, this, &DKIMRuleWidget::updateOkButton);
 
     mListId = new QLineEdit(this);
     mListId->setObjectName(QStringLiteral("listid"));
@@ -53,6 +54,7 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     mFrom->setClearButtonEnabled(true);
     layout->addRow(i18n("From:"), mFrom);
     mFrom->setPlaceholderText(i18n("Use '*' to specify all emails from domain"));
+    connect(mFrom, &QLineEdit::textChanged, this, &DKIMRuleWidget::updateOkButton);
 
     mSignatureDomainIdentifier = new QLineEdit(this);
     mSignatureDomainIdentifier->setObjectName(QStringLiteral("signaturedomainidentifier"));
@@ -74,6 +76,11 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
 
 DKIMRuleWidget::~DKIMRuleWidget()
 {
+}
+
+void DKIMRuleWidget::updateOkButton()
+{
+    Q_EMIT updateOkButtonRequested(!mFrom->text().trimmed().isEmpty() && !mDomain->text().trimmed().isEmpty());
 }
 
 void DKIMRuleWidget::loadRule(const MessageViewer::DKIMRule &rule)

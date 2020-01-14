@@ -47,6 +47,13 @@ DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     mainLayout->addWidget(buttonBox);
 
+    mOkButton = buttonBox->button(QDialogButtonBox::Ok);
+    mOkButton->setEnabled(false);
+
+    connect(mRuleWidget, &DKIMRuleWidget::updateOkButtonRequested, this, [this](bool enabled) {
+        mOkButton->setEnabled(enabled);
+    });
+
     connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMRuleDialog::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMRuleDialog::reject);
     readConfig();

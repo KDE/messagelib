@@ -34,7 +34,12 @@ public:
     ~DKIMRuleWidget();
     void loadRule(const MessageViewer::DKIMRule &rule);
     Q_REQUIRED_RESULT MessageViewer::DKIMRule rule() const;
+
+Q_SIGNALS:
+    void updateOkButtonRequested(bool enabled);
+
 private:
+    void updateOkButton();
     QCheckBox *mEnabled = nullptr;
     QLineEdit *mDomain = nullptr;
     QLineEdit *mSignatureDomainIdentifier = nullptr;
