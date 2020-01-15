@@ -36,7 +36,7 @@ public:
     Q_REQUIRED_RESULT MessageViewer::DKIMAuthenticationStatusInfo statusInfo() const;
     void setStatusInfo(const MessageViewer::DKIMAuthenticationStatusInfo &statusInfo);
 
-    QVector<DKIMCheckSignatureJob::CheckSignatureResult> convert() const;
+    Q_REQUIRED_RESULT QVector<DKIMCheckSignatureJob::CheckSignatureResult> convert() const;
 
 private:
     MessageViewer::DKIMAuthenticationStatusInfo mStatusInfo;
