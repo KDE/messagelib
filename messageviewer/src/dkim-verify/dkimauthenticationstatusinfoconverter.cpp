@@ -50,6 +50,7 @@ QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInf
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : lstInfo) {
         DKIMCheckSignatureJob::CheckSignatureResult convertedResult;
         const QString &method = info.method;
+        convertedResult.authenticationResult.methodStr = method;
         qDebug() << " method" << method;
         const QString &infoResult = info.result;
         if (infoResult == QLatin1String("none")) {

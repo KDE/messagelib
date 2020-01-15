@@ -162,5 +162,6 @@ private:
 };
 }
 MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &t);
+MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult::AuthenticationResult &t);
 Q_DECLARE_METATYPE(MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult)
 #endif // DKIMCHECKSIGNATUREJOB_H

@@ -677,5 +677,13 @@ QDebug operator <<(QDebug d, const DKIMCheckSignatureJob::CheckSignatureResult &
     d << "signedBy " << t.sdid;
     d << "fromEmail " << t.fromEmail;
     d << "auid " << t.auid;
+    d << "authenticationResult " << t.authenticationResult;
+    return d;
+}
+
+QDebug operator <<(QDebug d, const DKIMCheckSignatureJob::CheckSignatureResult::AuthenticationResult &t)
+{
+    d << "method " << t.methodStr;
+    d << "errorStr " << t.errorStr;
     return d;
 }
