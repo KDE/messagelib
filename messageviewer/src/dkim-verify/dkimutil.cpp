@@ -189,6 +189,16 @@ QString MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(Message
 
 MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod MessageViewer::DKIMUtil::convertAuthenticationMethodToString(const QString &str)
 {
-    //TODO
-    return {};
+    if (str == QLatin1String("dkim")) {
+        return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkim;
+    } else if (str == QLatin1String("spf")) {
+        return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Spf;
+    } else if (str == QLatin1String("dmarc")) {
+        return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc;
+    } else if (str == QLatin1String("dkim-atps")) {
+        return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps;
+    } else {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Undefined type " << str;
+        return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown;
+    }
 }
