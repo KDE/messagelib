@@ -63,7 +63,7 @@ public:
     /**
      * Returns the original part of the compressed attachment.
      */
-    const AttachmentPart::Ptr originalPart() const;
+    Q_REQUIRED_RESULT const AttachmentPart::Ptr originalPart() const;
 
     /**
      * Returns the compressed part of the attachment.

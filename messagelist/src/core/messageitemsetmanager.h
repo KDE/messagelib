@@ -52,12 +52,12 @@ private:
 
 public:
     void clearAllSets();
-    int setCount() const;
+    Q_REQUIRED_RESULT int setCount() const;
     void removeSet(MessageItemSetReference ref);
     void removeMessageItemFromAllSets(MessageItem *mi);
-    QList< MessageItem * > messageItems(MessageItemSetReference ref);
-    MessageItemSetReference createSet();
-    bool addMessageItem(MessageItemSetReference ref, MessageItem *mi);
+    Q_REQUIRED_RESULT QList< MessageItem * > messageItems(MessageItemSetReference ref);
+    Q_REQUIRED_RESULT MessageItemSetReference createSet();
+    Q_REQUIRED_RESULT bool addMessageItem(MessageItemSetReference ref, MessageItem *mi);
 };
 } // namespace Core
 } // namespace MessageList

@@ -119,7 +119,7 @@ public:
     * Returns true if the view is currently loading, that is
     * it's in the first (possibly lengthy) job batch after attaching to a StorageModel.
     */
-    bool isLoading() const;
+    Q_REQUIRED_RESULT bool isLoading() const;
 
     /**
     * Returns the message item that is at the _current_ storage row index
@@ -176,7 +176,7 @@ public:
     * while manipulating the view) so be sure to call deletePersistentSet()
     * when you no longer need it.
     */
-    MessageItemSetReference createPersistentSet(const QList< MessageItem * > &items);
+    Q_REQUIRED_RESULT MessageItemSetReference createPersistentSet(const QList< MessageItem * > &items);
 
     /**
     * Returns the list of MessageItems that are still existing in the
@@ -185,7 +185,7 @@ public:
     * but may contain less (even 0) if these MessageItem object were removed
     * from the view for some reason.
     */
-    QList< MessageItem * > persistentSetCurrentMessageItemList(MessageItemSetReference ref);
+    Q_REQUIRED_RESULT QList< MessageItem * > persistentSetCurrentMessageItemList(MessageItemSetReference ref);
 
     /**
     * Deletes the persistent set pointed by the specified reference.
