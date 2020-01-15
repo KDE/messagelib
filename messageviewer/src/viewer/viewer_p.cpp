@@ -3123,7 +3123,7 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
                     MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
                 });
                 connect(mDkimViewerMenu, &DKIMViewerMenu::updateDkimKey, this, [this]() {
-                    //TODO
+                    qWarning() <<" Unimplemented yet updateDkimKey";
                 });
                 connect(mDkimViewerMenu, &DKIMViewerMenu::showDkimRules, this, [this]() {
                     QPointer<DKIMManageRulesDialog> dlg = new DKIMManageRulesDialog(viewer());
