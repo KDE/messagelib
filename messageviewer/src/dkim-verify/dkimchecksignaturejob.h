@@ -94,6 +94,7 @@ public:
         QString auid; //DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
         QString fromEmail;
         QString errorStr; //Use when we convert authentication result value
+        QString methodStr; //Use when we convert authentication method value : Use enum ?
     };
 
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
