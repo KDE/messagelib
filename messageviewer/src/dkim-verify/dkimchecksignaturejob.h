@@ -95,11 +95,9 @@ public:
         QString fromEmail;
 
         struct AuthenticationResult {
-            QString errorStr; //Use when we convert authentication result value
-            QString methodStr; //Use when we convert authentication method value : Use enum ?
-            Q_REQUIRED_RESULT bool operator==(const AuthenticationResult &other) const {
-                return errorStr == other.errorStr && methodStr == other.methodStr;
-            }
+            QString errorStr;
+            QString methodStr; // Use enum ?
+            Q_REQUIRED_RESULT bool operator==(const AuthenticationResult &other) const;
         };
         AuthenticationResult authenticationResult;
     };

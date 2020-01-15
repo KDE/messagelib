@@ -687,3 +687,8 @@ QDebug operator <<(QDebug d, const DKIMCheckSignatureJob::CheckSignatureResult::
     d << "errorStr " << t.errorStr;
     return d;
 }
+
+bool DKIMCheckSignatureJob::CheckSignatureResult::AuthenticationResult::operator==(const DKIMCheckSignatureJob::CheckSignatureResult::AuthenticationResult &other) const
+{
+    return errorStr == other.errorStr && methodStr == other.methodStr;
+}

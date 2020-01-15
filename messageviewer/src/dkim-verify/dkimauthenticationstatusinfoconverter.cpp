@@ -51,7 +51,6 @@ QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInf
         DKIMCheckSignatureJob::CheckSignatureResult convertedResult;
         const QString &method = info.method;
         convertedResult.authenticationResult.methodStr = method;
-        qDebug() << " method" << method;
         const QString &infoResult = info.result;
         if (infoResult == QLatin1String("none")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
