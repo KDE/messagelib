@@ -1678,10 +1678,10 @@ void View::deletePersistentSet(MessageItemSetReference ref)
     d->mModel->deletePersistentSet(ref);
 }
 
-void View::markMessageItemsAsAboutToBeRemoved(QList<MessageItem *> &items, bool bMark)
+void View::markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items, bool bMark)
 {
     if (!bMark) {
-        for (const auto mi : qAsConst(items)) {
+        for (const auto mi : items) {
             if (mi->isValid()) {   // hasn't been removed in the meantime
                 mi->setAboutToBeRemoved(false);
             }
@@ -1812,7 +1812,7 @@ void View::markMessageItemsAsAboutToBeRemoved(QList<MessageItem *> &items, bool 
 
     // Now mark messages as about to be removed.
 
-    for (const auto mi : qAsConst(items)) {
+    for (const auto mi : items) {
         mi->setAboutToBeRemoved(true);
         QModelIndex idx = d->mModel->index(mi, 0);
         Q_ASSERT(idx.isValid());

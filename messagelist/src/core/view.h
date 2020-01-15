@@ -216,7 +216,7 @@ public:
     * If bMark is false then this function clears the "about to be removed" state
     * for the specified MessageItems.
     */
-    void markMessageItemsAsAboutToBeRemoved(QList< MessageItem * > &items, bool bMark);
+    void markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items, bool bMark);
 
     /**
     * Returns true if the current Aggregation is threaded, false otherwise
