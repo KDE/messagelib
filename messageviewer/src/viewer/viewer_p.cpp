@@ -2542,10 +2542,6 @@ void ViewerPrivate::slotAttachmentProperties()
 {
     const auto contents = selectedContents();
 
-    if (contents.isEmpty()) {
-        return;
-    }
-
     for (KMime::Content *content : contents) {
         attachmentProperties(content);
     }
