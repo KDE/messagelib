@@ -80,6 +80,16 @@ public:
     };
     Q_ENUM(DKIMWarning)
 
+    enum class AuthenticationMethod : int {
+        Unknown = 0,
+        Dkim = 1,
+        Spf = 2,
+        Dmarc = 3,
+        Dkimatps = 4,
+    };
+    Q_ENUM(AuthenticationMethod)
+
+
     struct CheckSignatureResult {
         Q_REQUIRED_RESULT bool isValid() const;
 
@@ -95,6 +105,7 @@ public:
         QString fromEmail;
 
         struct AuthenticationResult {
+
             QString errorStr;
             QString methodStr; // Use enum ?
             Q_REQUIRED_RESULT bool operator==(const AuthenticationResult &other) const;

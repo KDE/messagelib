@@ -21,6 +21,7 @@
 #define DKIMUTIL_H
 #include <QString>
 #include <QCryptographicHash>
+#include "dkimchecksignaturejob.h"
 #include "messageviewer_private_export.h"
 namespace MessageViewer {
 namespace DKIMUtil {
@@ -33,6 +34,8 @@ MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString cleanString(QString str);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString emailDomain(const QString &emailDomain);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString emailSubDomain(const QString &emailDomain);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString defaultConfigFileName();
+MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString convertAuthenticationMethodEnumToString(DKIMCheckSignatureJob::AuthenticationMethod);
+MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT DKIMCheckSignatureJob::AuthenticationMethod convertAuthenticationMethodToString(const QString &str);
 }
 }
 

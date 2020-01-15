@@ -18,6 +18,7 @@
 */
 
 #include "dkimutil.h"
+#include "messageviewer_dkimcheckerdebug.h"
 #include <QRegularExpression>
 #include <QCryptographicHash>
 
@@ -161,4 +162,33 @@ QString MessageViewer::DKIMUtil::emailSubDomain(const QString &emailDomain)
 QString MessageViewer::DKIMUtil::defaultConfigFileName()
 {
     return QStringLiteral("dkimsettingsrc");
+}
+
+QString MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod method)
+{
+    QString methodStr;
+    switch (method) {
+    case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown:
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Undefined type";
+        break;
+    case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
+        methodStr = QStringLiteral("dkim");
+        break;
+    case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Spf:
+        methodStr = QStringLiteral("spf");
+        break;
+    case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
+        methodStr = QStringLiteral("dmarc");
+        break;
+    case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps:
+        methodStr = QStringLiteral("dkim-atps");
+        break;
+    }
+    return methodStr;
+}
+
+MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod MessageViewer::DKIMUtil::convertAuthenticationMethodToString(const QString &str)
+{
+    //TODO
+    return {};
 }
