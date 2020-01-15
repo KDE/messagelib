@@ -80,12 +80,12 @@ QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInf
                    || infoResult == QLatin1String("permerror")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
             if (!info.reason.isEmpty()) {
-                convertedResult.errorStr = info.reason;
+                convertedResult.authenticationResult.errorStr = info.reason;
             }
         } else if (infoResult == QLatin1String("temperror")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
             if (!info.reason.isEmpty()) {
-                convertedResult.errorStr = info.reason;
+                convertedResult.authenticationResult.errorStr = info.reason;
             }
         } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid result type " << infoResult;
