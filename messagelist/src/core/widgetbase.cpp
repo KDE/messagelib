@@ -1038,7 +1038,7 @@ void Widget::viewSelectionChanged()
 {
 }
 
-void Widget::viewMessageListContextPopupRequest(const QList< MessageItem * > &, const QPoint &)
+void Widget::viewMessageListContextPopupRequest(const QVector< MessageItem * > &, const QPoint &)
 {
 }
 

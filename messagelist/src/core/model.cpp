@@ -4559,8 +4559,8 @@ Qt::ItemFlags Model::flags(const QModelIndex &index) const
 
 QMimeData *MessageList::Core::Model::mimeData(const QModelIndexList &indexes) const
 {
-    QList< MessageItem * > msgs;
-    for (const QModelIndex &idx : qAsConst(indexes)) {
+    QVector< MessageItem * > msgs;
+    for (const QModelIndex &idx : indexes) {
         if (idx.isValid()) {
             Item *item = static_cast<Item *>(idx.internalPointer());
             if (item->type() == MessageList::Core::Item::Message) {
@@ -4594,7 +4594,7 @@ MessageItem *Model::messageItemByStorageRow(int row) const
     return static_cast< MessageItem * >(idx);
 }
 
-MessageItemSetReference Model::createPersistentSet(const QList<MessageItem *> &items)
+MessageItemSetReference Model::createPersistentSet(const QVector<MessageItem *> &items)
 {
     if (!d->mPersistentSetManager) {
         d->mPersistentSetManager = new MessageItemSetManager();
@@ -4608,7 +4608,7 @@ MessageItemSetReference Model::createPersistentSet(const QList<MessageItem *> &i
     return ref;
 }
 
-QList< MessageItem * > Model::persistentSetCurrentMessageItemList(MessageItemSetReference ref)
+QList<MessageItem *> Model::persistentSetCurrentMessageItemList(MessageItemSetReference ref)
 {
     if (d->mPersistentSetManager) {
         return d->mPersistentSetManager->messageItems(ref);

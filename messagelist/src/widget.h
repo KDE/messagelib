@@ -28,7 +28,7 @@
 #include <AkonadiCore/Item>
 
 #include <messagelist_export.h>
-
+#include <QVector>
 class KXMLGUIClient;
 class QWidget;
 
@@ -207,7 +207,7 @@ public:
     * to the main even loop. Don't store it for any longer. If you need to reference
     * this set of messages at a later stage then take a look at createPersistentSet().
     */
-    Q_REQUIRED_RESULT QList<KMime::Message::Ptr > selectionAsMessageList(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT QVector<KMime::Message::Ptr> selectionAsMessageList(bool includeCollapsedChildren = true) const;
 
     /**
     * Returns the currently selected Items (bound to current StorageModel).
@@ -338,7 +338,7 @@ protected:
     /**
     * Reimplemented from MessageList::Core::Widget
     */
-    void viewMessageListContextPopupRequest(const QList< MessageList::Core::MessageItem * > &selectedItems, const QPoint &globalPos) override;
+    void viewMessageListContextPopupRequest(const QVector<Core::MessageItem *> &selectedItems, const QPoint &globalPos) override;
 
     /**
     * Reimplemented from MessageList::Core::Widget

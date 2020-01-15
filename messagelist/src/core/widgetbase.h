@@ -182,7 +182,7 @@ protected:
     /**
     * This is called by View when a message is right clicked.
     */
-    virtual void viewMessageListContextPopupRequest(const QList< MessageItem * > &selectedItems, const QPoint &globalPos);
+    virtual void viewMessageListContextPopupRequest(const QVector<MessageItem *> &selectedItems, const QPoint &globalPos);
 
     /**
     * This is called by View when a group header is right clicked.

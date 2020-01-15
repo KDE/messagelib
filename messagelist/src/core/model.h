@@ -24,6 +24,7 @@
 #include <QAbstractItemModel>
 #include <QList>
 #include <QHash>
+#include <QVector>
 #include <QMultiHash>
 
 #include <core/enums.h>
@@ -176,7 +177,7 @@ public:
     * while manipulating the view) so be sure to call deletePersistentSet()
     * when you no longer need it.
     */
-    Q_REQUIRED_RESULT MessageItemSetReference createPersistentSet(const QList< MessageItem * > &items);
+    Q_REQUIRED_RESULT MessageItemSetReference createPersistentSet(const QVector< MessageItem * > &items);
 
     /**
     * Returns the list of MessageItems that are still existing in the
@@ -185,7 +186,7 @@ public:
     * but may contain less (even 0) if these MessageItem object were removed
     * from the view for some reason.
     */
-    Q_REQUIRED_RESULT QList< MessageItem * > persistentSetCurrentMessageItemList(MessageItemSetReference ref);
+    Q_REQUIRED_RESULT QList<MessageItem *> persistentSetCurrentMessageItemList(MessageItemSetReference ref);
 
     /**
     * Deletes the persistent set pointed by the specified reference.

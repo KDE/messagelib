@@ -23,6 +23,7 @@
 #include <messagelist/view.h>
 #include <QHash>
 #include <QTabWidget>
+#include <QVector>
 
 #include <kmime/kmime_message.h>
 #include <collection.h>
@@ -100,7 +101,7 @@ public:
     * to the main even loop. Don't store it for any longer. If you need to reference
     * this set of messages at a later stage then take a look at createPersistentSet().
     */
-    Q_REQUIRED_RESULT QList<KMime::Message::Ptr > selectionAsMessageList(bool includeCollapsedChildren = true) const;
+    Q_REQUIRED_RESULT QVector<KMime::Message::Ptr> selectionAsMessageList(bool includeCollapsedChildren = true) const;
 
     /**
     * Returns the currently selected Items (bound to current StorageModel).

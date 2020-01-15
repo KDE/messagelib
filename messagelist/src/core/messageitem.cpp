@@ -583,7 +583,7 @@ QString MessageItem::accessibleText(const Theme *theme, int columnIndex)
     return rowsTexts.join(QLatin1Char(' '));
 }
 
-void MessageItem::subTreeToList(QList< MessageItem * > &list)
+void MessageItem::subTreeToList(QVector< MessageItem * > &list)
 {
     list.append(this);
     const auto childList = childItems();

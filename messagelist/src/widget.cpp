@@ -306,7 +306,7 @@ void Widget::viewSelectionChanged()
     }
 }
 
-void Widget::viewMessageListContextPopupRequest(const QList< MessageList::Core::MessageItem * > &selectedItems, const QPoint &globalPos)
+void Widget::viewMessageListContextPopupRequest(const QVector< MessageList::Core::MessageItem * > &selectedItems, const QPoint &globalPos)
 {
     Q_UNUSED(selectedItems);
 
@@ -468,7 +468,7 @@ void Widget::viewStartDragRequest()
         return;    // no folder here
     }
 
-    const QList<Core::MessageItem *> selection = view()->selectionAsMessageItemList();
+    const QVector<Core::MessageItem *> selection = view()->selectionAsMessageItemList();
     if (selection.isEmpty()) {
         return;
     }
@@ -525,7 +525,7 @@ void Widget::viewStartDragRequest()
 Item::List Widget::Private::selectionAsItems() const
 {
     Item::List res;
-    const QList<Core::MessageItem *> selection = q->view()->selectionAsMessageItemList();
+    const QVector<Core::MessageItem *> selection = q->view()->selectionAsMessageItemList();
     res.reserve(selection.count());
 
     for (Core::MessageItem *mi : qAsConst(selection)) {
@@ -569,10 +569,10 @@ KMime::Message::Ptr Widget::currentMessage() const
     return d->messageForRow(mi->currentModelIndexRow());
 }
 
-QList<KMime::Message::Ptr > Widget::selectionAsMessageList(bool includeCollapsedChildren) const
+QVector<KMime::Message::Ptr > Widget::selectionAsMessageList(bool includeCollapsedChildren) const
 {
-    QList<KMime::Message::Ptr> lstMiPtr;
-    const QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    QVector<KMime::Message::Ptr> lstMiPtr;
+    const QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return lstMiPtr;
     }
@@ -586,7 +586,7 @@ QList<KMime::Message::Ptr > Widget::selectionAsMessageList(bool includeCollapsed
 Akonadi::Item::List Widget::selectionAsMessageItemList(bool includeCollapsedChildren) const
 {
     Akonadi::Item::List lstMiPtr;
-    const QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    const QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return lstMiPtr;
     }
@@ -600,7 +600,7 @@ Akonadi::Item::List Widget::selectionAsMessageItemList(bool includeCollapsedChil
 QVector<qlonglong> Widget::selectionAsMessageItemListId(bool includeCollapsedChildren) const
 {
     QVector<qlonglong> lstMiPtr;
-    const QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    const QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return lstMiPtr;
     }
@@ -614,7 +614,7 @@ QVector<qlonglong> Widget::selectionAsMessageItemListId(bool includeCollapsedChi
 QVector<Akonadi::Item::Id> Widget::selectionAsListMessageId(bool includeCollapsedChildren) const
 {
     QVector<qlonglong> lstMiPtr;
-    const QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    const QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return lstMiPtr;
     }
@@ -628,7 +628,7 @@ QVector<Akonadi::Item::Id> Widget::selectionAsListMessageId(bool includeCollapse
 Akonadi::Item::List Widget::currentThreadAsMessageList() const
 {
     Akonadi::Item::List lstMiPtr;
-    const QList<Core::MessageItem *> lstMi = view()->currentThreadAsMessageItemList();
+    const QVector<Core::MessageItem *> lstMi = view()->currentThreadAsMessageItemList();
     if (lstMi.isEmpty()) {
         return lstMiPtr;
     }
@@ -674,7 +674,7 @@ bool Widget::getSelectionStats(
     selectedItems.clear();
     selectedVisibleItems.clear();
 
-    const QList< Core::MessageItem * > selected = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    const QVector< Core::MessageItem * > selected = view()->selectionAsMessageItemList(includeCollapsedChildren);
 
     Core::MessageItem *topmost = nullptr;
 
@@ -725,7 +725,7 @@ Akonadi::Item::List Widget::itemListFromPersistentSet(MessageList::Core::Message
 
 MessageList::Core::MessageItemSetReference Widget::selectionAsPersistentSet(bool includeCollapsedChildren) const
 {
-    QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return -1;
     }
@@ -734,7 +734,7 @@ MessageList::Core::MessageItemSetReference Widget::selectionAsPersistentSet(bool
 
 MessageList::Core::MessageItemSetReference Widget::currentThreadAsPersistentSet() const
 {
-    QList<Core::MessageItem *> lstMi = view()->currentThreadAsMessageItemList();
+    QVector<Core::MessageItem *> lstMi = view()->currentThreadAsMessageItemList();
     if (lstMi.isEmpty()) {
         return -1;
     }

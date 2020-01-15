@@ -890,9 +890,9 @@ bool View::selectionEmpty() const
     return selectionModel()->selectedRows().isEmpty();
 }
 
-QList< MessageItem * > View::selectionAsMessageItemList(bool includeCollapsedChildren) const
+QVector< MessageItem * > View::selectionAsMessageItemList(bool includeCollapsedChildren) const
 {
-    QList< MessageItem * > selectedMessages;
+    QVector< MessageItem * > selectedMessages;
 
     QModelIndexList lSelected = selectionModel()->selectedRows();
     if (lSelected.isEmpty()) {
@@ -933,9 +933,9 @@ QList< MessageItem * > View::selectionAsMessageItemList(bool includeCollapsedChi
     return selectedMessages;
 }
 
-QList<MessageItem *> View::currentThreadAsMessageItemList() const
+QVector<MessageItem *> View::currentThreadAsMessageItemList() const
 {
-    QList<MessageItem *> currentThread;
+    QVector<MessageItem *> currentThread;
 
     MessageItem *msg = currentMessageItem();
     if (!msg) {
@@ -1087,10 +1087,10 @@ void View::setAllGroupsExpanded(bool expand)
     }
 }
 
-void View::selectMessageItems(const QList< MessageItem * > &list)
+void View::selectMessageItems(const QVector< MessageItem * > &list)
 {
     QItemSelection selection;
-    for (const auto mi : qAsConst(list)) {
+    for (const auto mi : list) {
         Q_ASSERT(mi);
         QModelIndex idx = d->mModel->index(mi, 0);
         Q_ASSERT(idx.isValid());
@@ -1663,7 +1663,7 @@ void View::modelFinishedLoading()
     // nothing here for now :)
 }
 
-MessageItemSetReference View::createPersistentSet(const QList< MessageItem * > &items)
+MessageItemSetReference View::createPersistentSet(const QVector<MessageItem *> &items)
 {
     return d->mModel->createPersistentSet(items);
 }

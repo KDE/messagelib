@@ -404,7 +404,7 @@ int StorageModel::rowCount(const QModelIndex &parent) const
     return 0; // this model is flat.
 }
 
-QMimeData *StorageModel::mimeData(const QList< MessageList::Core::MessageItem * > &items) const
+QMimeData *StorageModel::mimeData(const QVector< MessageList::Core::MessageItem * > &items) const
 {
     QMimeData *data = new QMimeData();
     QList<QUrl> urls;

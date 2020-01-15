@@ -884,11 +884,11 @@ KMime::Message::Ptr Pane::currentMessage() const
     return w->currentMessage();
 }
 
-QList<KMime::Message::Ptr > Pane::selectionAsMessageList(bool includeCollapsedChildren) const
+QVector<KMime::Message::Ptr > Pane::selectionAsMessageList(bool includeCollapsedChildren) const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
     if (w == nullptr) {
-        return QList<KMime::Message::Ptr>();
+        return QVector<KMime::Message::Ptr>();
     }
     return w->selectionAsMessageList(includeCollapsedChildren);
 }

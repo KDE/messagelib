@@ -24,6 +24,7 @@
 #include <QTreeView>
 #include <QList>
 #include <QPoint>
+#include <QVector>
 
 #include <messagelist/enums.h>
 #include <messagelist/quicksearchline.h>
@@ -158,7 +159,7 @@ public:
     * to the main even loop. Don't store it for any longer. If you need to reference
     * this set of messages at a later stage then take a look at createPersistentSet().
     */
-    QList< MessageItem * > selectionAsMessageItemList(bool includeCollapsedChildren = true) const;
+    QVector<MessageItem *> selectionAsMessageItemList(bool includeCollapsedChildren = true) const;
 
     /**
     * Returns the MessageItems bound to the current StorageModel that
@@ -170,7 +171,7 @@ public:
     * to the main even loop. Don't store it for any longer. If you need to reference
     * this set of messages at a later stage then take a look at createPersistentSet().
     */
-    QList< MessageItem * > currentThreadAsMessageItemList() const;
+    QVector< MessageItem * > currentThreadAsMessageItemList() const;
 
     /**
     * Fast function that determines if the selection is empty
@@ -181,7 +182,7 @@ public:
     * Selects the specified MessageItems. The current selection is NOT removed.
     * Use clearSelection() for that purpose.
     */
-    void selectMessageItems(const QList< MessageItem * > &list);
+    void selectMessageItems(const QVector<MessageItem *> &list);
 
     /**
     * Creates a persistent set for the specified MessageItems and
@@ -193,7 +194,7 @@ public:
     * while manipulating the view) so be sure to call deletePersistentSet()
     * when you no longer need it.
     */
-    MessageItemSetReference createPersistentSet(const QList< MessageItem * > &items);
+    MessageItemSetReference createPersistentSet(const QVector< MessageItem * > &items);
 
     /**
     * Returns the list of MessageItems that are still existing in the
