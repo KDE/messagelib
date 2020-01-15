@@ -121,14 +121,15 @@ void DKIMCheckSignatureJob::start()
     //qDebug() << " bodyCanonizationResult "<< mBodyCanonizationResult << " algorithm " << mDkimInfo.hashingAlgorithm() << mDkimInfo.bodyHash();
 
     if (mDkimInfo.bodyLengthCount() != -1) { //Verify it.
-        if (mDkimInfo.bodyLengthCount() < mBodyCanonizationResult.length()) {
+        if (mDkimInfo.bodyLengthCount() > mBodyCanonizationResult.length()) {
             // length tag exceeds body size
+            qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << " mDkimInfo.bodyLengthCount() " << mDkimInfo.bodyLengthCount() << " mBodyCanonizationResult.length() " << mBodyCanonizationResult.length();
             mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::SignatureTooLarge;
             mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
             Q_EMIT result(createCheckResult());
             deleteLater();
             return;
-        } else if (mDkimInfo.bodyLengthCount() > mBodyCanonizationResult.length()) {
+        } else if (mDkimInfo.bodyLengthCount() < mBodyCanonizationResult.length()) {
             mWarning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::SignatureTooSmall;
         }
         // truncated body to the length specified in the "l=" tag
