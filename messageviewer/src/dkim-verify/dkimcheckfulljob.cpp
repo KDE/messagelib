@@ -142,11 +142,10 @@ void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::
     DKIMAuthenticationStatusInfoConverter converter;
     converter.setStatusInfo(info);
     //TODO Convert to CheckSignatureAuthenticationResult + add this list to CheckSignatureResult directly
-    const QVector<DKIMCheckSignatureJob::CheckSignatureResult> lst = converter.convert();
-    for (const DKIMCheckSignatureJob::CheckSignatureResult &result : lst) {
-        qDebug() << " lst" << result;
-        //TODO verify it.
-    }
+    const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> lst = converter.convert();
+    qDebug() << "  lst " << lst;
+    //TODO use it.
+
     //TODO check info ! if auth is ok not necessary to checkSignature
     if (mCheckPolicy.useOnlyAuthenticationResults()) {
         //Don't check signature if not necessary.

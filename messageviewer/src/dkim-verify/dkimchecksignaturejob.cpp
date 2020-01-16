@@ -662,7 +662,7 @@ bool DKIMCheckSignatureJob::CheckSignatureResult::operator==(const DKIMCheckSign
            && fromEmail == other.fromEmail
            && auid == other.auid
            && sdid == other.sdid
-           && authenticationResult == other.authenticationResult;
+           && listSignatureAuthenticationResult == other.listSignatureAuthenticationResult;
 }
 
 bool DKIMCheckSignatureJob::CheckSignatureResult::operator!=(const DKIMCheckSignatureJob::CheckSignatureResult &other) const
@@ -678,18 +678,25 @@ QDebug operator <<(QDebug d, const DKIMCheckSignatureJob::CheckSignatureResult &
     d << "signedBy " << t.sdid;
     d << "fromEmail " << t.fromEmail;
     d << "auid " << t.auid;
-    d << "authenticationResult " << t.authenticationResult;
+    d << "authenticationResult " << t.listSignatureAuthenticationResult;
     return d;
 }
 
-QDebug operator <<(QDebug d, const DKIMCheckSignatureJob::CheckSignatureResult::AuthenticationResult &t)
+QDebug operator <<(QDebug d, const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &t)
 {
     d << "method " << t.method;
     d << "errorStr " << t.errorStr;
+    d << "status " << t.status;
+    d << "sdid " << t.sdid;
+    d << "auid " << t.auid;
     return d;
 }
 
-bool DKIMCheckSignatureJob::CheckSignatureResult::AuthenticationResult::operator==(const DKIMCheckSignatureJob::CheckSignatureResult::AuthenticationResult &other) const
+bool DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult::operator==(const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &other) const
 {
-    return errorStr == other.errorStr && method == other.method;
+    return errorStr == other.errorStr &&
+            method == other.method &&
+            status == other.status &&
+            sdid == other.sdid &&
+            auid == other.auid;
 }

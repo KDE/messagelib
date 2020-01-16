@@ -43,13 +43,13 @@ void DKIMAuthenticationStatusInfoConverter::setStatusInfo(const MessageViewer::D
     mStatusInfo = statusInfo;
 }
 
-QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInfoConverter::convert() const
+QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthenticationStatusInfoConverter::convert() const
 {
-    QVector<DKIMCheckSignatureJob::CheckSignatureResult> lstResult;
+    QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> lstResult;
     const QVector<DKIMAuthenticationStatusInfo::AuthStatusInfo> lstInfo = mStatusInfo.listAuthStatusInfo();
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : lstInfo) {
-        DKIMCheckSignatureJob::CheckSignatureResult convertedResult;
-        convertedResult.authenticationResult.method = MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(info.method);
+        DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult convertedResult;
+        convertedResult.method = MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(info.method);
         const QString &infoResult = info.result;
         if (infoResult == QLatin1String("none")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
@@ -79,12 +79,12 @@ QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInf
                    || infoResult == QLatin1String("permerror")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
             if (!info.reason.isEmpty()) {
-                convertedResult.authenticationResult.errorStr = info.reason;
+                convertedResult.errorStr = info.reason;
             }
         } else if (infoResult == QLatin1String("temperror")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
             if (!info.reason.isEmpty()) {
-                convertedResult.authenticationResult.errorStr = info.reason;
+                convertedResult.errorStr = info.reason;
             }
         } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid result type " << infoResult;

@@ -90,6 +90,15 @@ public:
     Q_ENUM(AuthenticationMethod)
 
 
+    struct DKIMCheckSignatureAuthenticationResult {
+        QString errorStr;
+        AuthenticationMethod method = AuthenticationMethod::Unknown;
+        DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
+        QString sdid; //Signing Domain Identifier
+        QString auid; //DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
+        Q_REQUIRED_RESULT bool operator==(const DKIMCheckSignatureAuthenticationResult &other) const;
+    };
+
     struct CheckSignatureResult {
         Q_REQUIRED_RESULT bool isValid() const;
 
@@ -104,13 +113,7 @@ public:
         QString auid; //DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
         QString fromEmail;
 
-        //Authentication result values.
-        struct AuthenticationResult {
-            QString errorStr;
-            AuthenticationMethod method = AuthenticationMethod::Unknown;
-            Q_REQUIRED_RESULT bool operator==(const AuthenticationResult &other) const;
-        };
-        AuthenticationResult authenticationResult;
+        QVector<DKIMCheckSignatureAuthenticationResult> listSignatureAuthenticationResult;
     };
 
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
@@ -171,6 +174,7 @@ private:
 };
 }
 MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &t);
-MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult::AuthenticationResult &t);
+MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &t);
 Q_DECLARE_METATYPE(MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult)
+Q_DECLARE_TYPEINFO(MessageViewer::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult, Q_MOVABLE_TYPE);
 #endif // DKIMCHECKSIGNATUREJOB_H
