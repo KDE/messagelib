@@ -32,6 +32,8 @@ private Q_SLOTS:
     void shouldTestBodyCanonizationRelaxed();
     void shouldVerifyEmailDomain();
     void shouldVerifySubEmailDomain();
+    void shouldConvertAuthenticationMethodEnumToString();
+    void shouldConvertAuthenticationMethodToString();
 };
 
 #endif // DKIMUTILTEST_H

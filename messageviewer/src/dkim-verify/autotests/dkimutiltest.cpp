@@ -67,3 +67,22 @@ void DKIMUtilTest::shouldVerifySubEmailDomain()
         QCOMPARE(MessageViewer::DKIMUtil::emailSubDomain(domainName), QStringLiteral("kde.org"));
     }
 }
+
+void DKIMUtilTest::shouldConvertAuthenticationMethodEnumToString()
+{
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown), QString());
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkim), QStringLiteral("dkim"));
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Spf), QStringLiteral("spf"));
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc), QStringLiteral("dmarc"));
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps), QStringLiteral("dkim-atps"));
+}
+
+void DKIMUtilTest::shouldConvertAuthenticationMethodToString()
+{
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QStringLiteral("dkim")), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkim);
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QStringLiteral("spf")), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Spf);
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QStringLiteral("dmarc")), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc);
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QStringLiteral("dkim-atps")), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps);
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QStringLiteral("sdfsdf")), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown);
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QString()), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown);
+}

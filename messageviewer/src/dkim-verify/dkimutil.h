@@ -35,7 +35,7 @@ MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString emailDomain(const QString &
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString emailSubDomain(const QString &emailDomain);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString defaultConfigFileName();
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString convertAuthenticationMethodEnumToString(DKIMCheckSignatureJob::AuthenticationMethod);
-MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT DKIMCheckSignatureJob::AuthenticationMethod convertAuthenticationMethodToString(const QString &str);
+MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT DKIMCheckSignatureJob::AuthenticationMethod convertAuthenticationMethodStringToEnum(const QString &str);
 }
 }
 

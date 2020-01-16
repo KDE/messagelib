@@ -187,7 +187,7 @@ QString MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(Message
     return methodStr;
 }
 
-MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod MessageViewer::DKIMUtil::convertAuthenticationMethodToString(const QString &str)
+MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(const QString &str)
 {
     if (str == QLatin1String("dkim")) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkim;
