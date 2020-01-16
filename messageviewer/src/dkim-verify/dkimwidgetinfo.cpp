@@ -210,5 +210,6 @@ void DKIMWidgetInfo::updateToolTip()
         tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Hash Algorithm unsafe (sha1)");
         break;
     }
+
     mLabel->setToolTip(tooltip);
 }

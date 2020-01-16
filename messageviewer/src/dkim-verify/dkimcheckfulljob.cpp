@@ -141,6 +141,7 @@ void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::
     //qDebug() << "info " << info;
     DKIMAuthenticationStatusInfoConverter converter;
     converter.setStatusInfo(info);
+    //TODO Convert to CheckSignatureAuthenticationResult + add this list to CheckSignatureResult directly
     const QVector<DKIMCheckSignatureJob::CheckSignatureResult> lst = converter.convert();
     for (const DKIMCheckSignatureJob::CheckSignatureResult &result : lst) {
         qDebug() << " lst" << result;
