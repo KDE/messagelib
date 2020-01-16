@@ -104,10 +104,10 @@ public:
         QString auid; //DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
         QString fromEmail;
 
+        //Authentication result values.
         struct AuthenticationResult {
-
             QString errorStr;
-            QString methodStr; // Use enum ?
+            AuthenticationMethod method = AuthenticationMethod::Unknown;
             Q_REQUIRED_RESULT bool operator==(const AuthenticationResult &other) const;
         };
         AuthenticationResult authenticationResult;

@@ -49,8 +49,7 @@ QVector<DKIMCheckSignatureJob::CheckSignatureResult> DKIMAuthenticationStatusInf
     const QVector<DKIMAuthenticationStatusInfo::AuthStatusInfo> lstInfo = mStatusInfo.listAuthStatusInfo();
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : lstInfo) {
         DKIMCheckSignatureJob::CheckSignatureResult convertedResult;
-        const QString &method = info.method;
-        convertedResult.authenticationResult.methodStr = method;
+        convertedResult.authenticationResult.method = MessageViewer::DKIMUtil::convertAuthenticationMethodToString(info.method);
         const QString &infoResult = info.result;
         if (infoResult == QLatin1String("none")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
