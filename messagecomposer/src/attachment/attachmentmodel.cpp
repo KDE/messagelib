@@ -372,9 +372,11 @@ bool AttachmentModel::setData(const QModelIndex &index, const QVariant &value, i
 void AttachmentModel::addAttachment(const AttachmentPart::Ptr &part)
 {
     Q_ASSERT(!d->parts.contains(part));
-    for (const AttachmentPart::Ptr &partElement : qAsConst(d->parts)) {
-        if (partElement->url() == part->url()) {
-            return;
+    if (!part->url().isEmpty()) {
+        for (const AttachmentPart::Ptr &partElement : qAsConst(d->parts)) {
+            if (partElement->url() == part->url()) {
+                return;
+            }
         }
     }
 
