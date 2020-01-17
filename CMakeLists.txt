@@ -13,7 +13,7 @@ option(KDEPIM_RUN_AKONADI_TEST "Enable autotest based on Akonadi." TRUE)
 
 option(MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW "Experimental conversationview (in progress)" FALSE)
 
-set(KF5_MIN_VERSION "5.65.0")
+set(KF5_MIN_VERSION "5.66.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
