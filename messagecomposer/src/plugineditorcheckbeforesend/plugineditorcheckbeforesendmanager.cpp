@@ -61,7 +61,7 @@ public:
     void loadPlugin(PluginEditorCheckBeforeSendInfo *item);
     Q_REQUIRED_RESULT QVector<PluginEditorCheckBeforeSend *> pluginsList() const;
     void initializePlugins();
-    Q_REQUIRED_RESULT QVector<PluginEditorCheckBeforeSendInfo> mPluginList;
+    QVector<PluginEditorCheckBeforeSendInfo> mPluginList;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
