@@ -23,6 +23,7 @@
 #include <QCheckBox>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <QSpinBox>
 #include <QTest>
 
 QTEST_MAIN(DKIMRuleWidgetTest)
@@ -67,8 +68,7 @@ void DKIMRuleWidgetTest::shouldHaveDefaultValues()
     MessageViewer::DKIMManageRulesComboBox *mRuleType = w.findChild<MessageViewer::DKIMManageRulesComboBox *>(QStringLiteral("ruletype"));
     QVERIFY(mRuleType);
 
-    QLineEdit *mPriority = w.findChild<QLineEdit *>(QStringLiteral("priority"));
+    QSpinBox *mPriority = w.findChild<QSpinBox *>(QStringLiteral("priority"));
     QVERIFY(mPriority);
-    QCOMPARE(mPriority->text(), QStringLiteral("1000"));
-    QVERIFY(mPriority->isClearButtonEnabled());
+    QCOMPARE(mPriority->value(), 1000);
 }

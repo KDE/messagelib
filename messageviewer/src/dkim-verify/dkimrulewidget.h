@@ -24,6 +24,7 @@
 #include <MessageViewer/DKIMRule>
 class QCheckBox;
 class QLineEdit;
+class QSpinBox;
 namespace MessageViewer {
 class DKIMManageRulesComboBox;
 class MESSAGEVIEWER_TESTS_EXPORT DKIMRuleWidget : public QWidget
@@ -45,7 +46,7 @@ private:
     QLineEdit *mSignatureDomainIdentifier = nullptr;
     QLineEdit *mFrom = nullptr;
     QLineEdit *mListId = nullptr;
-    QLineEdit *mPriority = nullptr;
+    QSpinBox *mPriority = nullptr;
     DKIMManageRulesComboBox *mRuleType = nullptr;
 };
 }
