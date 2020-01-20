@@ -83,8 +83,9 @@ void DKIMCheckFullJob::checkAuthenticationResults()
     }
 }
 
-void DKIMCheckFullJob::checkSignature()
+void DKIMCheckFullJob::checkSignature(const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst)
 {
+    //TODO store lst;
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMCheckFullJob::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMCheckFullJob::slotCheckSignatureResult);
@@ -150,7 +151,7 @@ void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::
     if (mCheckPolicy.useOnlyAuthenticationResults()) {
         //Don't check signature if not necessary.
     }
-    checkSignature();
+    checkSignature(lst);
 }
 
 void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)

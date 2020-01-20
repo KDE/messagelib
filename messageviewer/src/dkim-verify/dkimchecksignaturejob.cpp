@@ -52,6 +52,7 @@ MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob
     result.sdid = mDkimInfo.domain();
     result.auid = mDkimInfo.agentOrUserIdentifier();
     result.fromEmail = mFromEmail;
+    //TODO result.listSignatureAuthenticationResult =
     return result;
 }
 
@@ -699,4 +700,10 @@ bool DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult::operator==(c
             status == other.status &&
             sdid == other.sdid &&
             auid == other.auid;
+}
+
+bool DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult::isValid() const
+{
+    //TODO improve it
+    return (method != AuthenticationMethod::Unknown);
 }

@@ -97,6 +97,7 @@ public:
         QString sdid; //Signing Domain Identifier
         QString auid; //DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
         Q_REQUIRED_RESULT bool operator==(const DKIMCheckSignatureAuthenticationResult &other) const;
+        Q_REQUIRED_RESULT bool isValid() const;
     };
 
     struct CheckSignatureResult {
