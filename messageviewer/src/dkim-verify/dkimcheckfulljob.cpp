@@ -92,6 +92,7 @@ void DKIMCheckFullJob::checkSignature(const QVector<DKIMCheckSignatureJob::DKIMC
     job->setMessage(mMessage);
     job->setHeaderParser(mHeaderParser);
     job->setPolicy(mCheckPolicy);
+    job->setCheckSignatureAuthenticationResult(lst);
     job->start();
 }
 

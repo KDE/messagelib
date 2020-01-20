@@ -145,6 +145,8 @@ public:
 
     void setHeaderParser(const DKIMHeaderParser &headerParser);
 
+    void setCheckSignatureAuthenticationResult(const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst);
+
 Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void storeKey(const QString &key, const QString &domain, const QString &selector);
@@ -160,6 +162,7 @@ private:
     Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult();
     void verifyRSASignature();
     void computeHeaderCanonization(bool removeQuoteOnContentType);
+    QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> mCheckSignatureAuthenticationResult;
     DKIMCheckPolicy mPolicy;
     DKIMHeaderParser mHeaderParser;
     KMime::Message::Ptr mMessage;

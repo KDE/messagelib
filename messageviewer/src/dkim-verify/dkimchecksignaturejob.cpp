@@ -52,7 +52,7 @@ MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob
     result.sdid = mDkimInfo.domain();
     result.auid = mDkimInfo.agentOrUserIdentifier();
     result.fromEmail = mFromEmail;
-    //TODO result.listSignatureAuthenticationResult =
+    result.listSignatureAuthenticationResult = mCheckSignatureAuthenticationResult;
     return result;
 }
 
@@ -259,6 +259,11 @@ void DKIMCheckSignatureJob::computeHeaderCanonization(bool removeQuoteOnContentT
 void DKIMCheckSignatureJob::setHeaderParser(const DKIMHeaderParser &headerParser)
 {
     mHeaderParser = headerParser;
+}
+
+void DKIMCheckSignatureJob::setCheckSignatureAuthenticationResult(const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst)
+{
+    mCheckSignatureAuthenticationResult = lst;
 }
 
 QString DKIMCheckSignatureJob::bodyCanonizationSimple() const
