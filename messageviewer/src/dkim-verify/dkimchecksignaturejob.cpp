@@ -678,23 +678,23 @@ bool DKIMCheckSignatureJob::CheckSignatureResult::operator!=(const DKIMCheckSign
 
 QDebug operator <<(QDebug d, const DKIMCheckSignatureJob::CheckSignatureResult &t)
 {
-    d << "error " << t.error;
-    d << "warning " << t.warning;
-    d << "status " << t.status;
-    d << "signedBy " << t.sdid;
-    d << "fromEmail " << t.fromEmail;
-    d << "auid " << t.auid;
-    d << "authenticationResult " << t.listSignatureAuthenticationResult;
+    d << " error " << t.error;
+    d << " warning " << t.warning;
+    d << " status " << t.status;
+    d << " signedBy " << t.sdid;
+    d << " fromEmail " << t.fromEmail;
+    d << " auid " << t.auid;
+    d << " authenticationResult " << t.listSignatureAuthenticationResult;
     return d;
 }
 
 QDebug operator <<(QDebug d, const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &t)
 {
-    d << "method " << t.method;
-    d << "errorStr " << t.errorStr;
-    d << "status " << t.status;
-    d << "sdid " << t.sdid;
-    d << "auid " << t.auid;
+    d << " method " << t.method;
+    d << " errorStr " << t.errorStr;
+    d << " status " << t.status;
+    d << " sdid " << t.sdid;
+    d << " auid " << t.auid;
     return d;
 }
 

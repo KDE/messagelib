@@ -211,5 +211,7 @@ void DKIMWidgetInfo::updateToolTip()
         break;
     }
 
+    qDebug() << "mResult . authenticatio " << mResult.listSignatureAuthenticationResult;
+
     mLabel->setToolTip(tooltip);
 }
