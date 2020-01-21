@@ -69,7 +69,7 @@ void ScamCheckShortUrl::loadLongUrlServices()
             return;
         }
         const QMap<QString, QVariant> response = json.toVariant().toMap();
-        sSupportedServices = response.uniqueKeys();
+        sSupportedServices = response.keys();
     } else {
         qCDebug(MESSAGEVIEWER_LOG) << " json file \'longurlServices.json\' not found";
     }
