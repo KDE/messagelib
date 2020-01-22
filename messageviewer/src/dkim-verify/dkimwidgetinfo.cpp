@@ -215,13 +215,42 @@ void DKIMWidgetInfo::updateToolTip()
     for (const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &result : qAsConst(mResult.listSignatureAuthenticationResult)) {
         switch (result.status) {
         case DKIMCheckSignatureJob::DKIMStatus::Valid:
-            tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                    + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
-            break;
-            //TODO add more
+            switch(result.method) {
+            case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
+                break;
+            }
+            case DKIMCheckSignatureJob::AuthenticationMethod::Dkim: {
+                tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                        + i18n("%1: Valid (Signed by %2)", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
+                               result.sdid);
+                break;
+            }
+            case DKIMCheckSignatureJob::AuthenticationMethod::Spf: {
+                tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                        + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                break;
+            }
+            case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc: {
+                tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                        + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                break;
+            }
+            case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
+                tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                        + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                break;
+            }
+            default:
+                ;
+            }
         default:
+            //TODO
             ;
         }
+    }
+    if (mResult.listSignatureAuthenticationResult.isEmpty()) {
+        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                + i18n("Not Signed");
     }
     qDebug() << "mResult . authenticatio " << mResult.listSignatureAuthenticationResult;
 
