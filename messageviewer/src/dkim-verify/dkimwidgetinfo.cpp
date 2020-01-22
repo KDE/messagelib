@@ -19,6 +19,7 @@
 
 #include "dkimwidgetinfo.h"
 #include "dkimmanager.h"
+#include "dkimutil.h"
 #include <KLocalizedString>
 #include <KColorScheme>
 
@@ -211,6 +212,17 @@ void DKIMWidgetInfo::updateToolTip()
         break;
     }
 
+    for (const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &result : qAsConst(mResult.listSignatureAuthenticationResult)) {
+        switch (result.status) {
+        case DKIMCheckSignatureJob::DKIMStatus::Valid:
+            tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                    + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+            break;
+            //TODO add more
+        default:
+            ;
+        }
+    }
     qDebug() << "mResult . authenticatio " << mResult.listSignatureAuthenticationResult;
 
     mLabel->setToolTip(tooltip);
