@@ -88,9 +88,7 @@ QVector<PimCommon::PluginUtilData> PluginEditorInitManagerPrivate::pluginsDataLi
 
 void PluginEditorInitManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QLatin1String("KMailEditor/PluginEditorInit"));
-    });
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail/plugineditorinit"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 

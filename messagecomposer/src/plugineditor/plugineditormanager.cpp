@@ -76,9 +76,7 @@ private:
 
 void PluginEditorManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QLatin1String("KMailEditor/Plugin"));
-    });
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail/plugineditor"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 

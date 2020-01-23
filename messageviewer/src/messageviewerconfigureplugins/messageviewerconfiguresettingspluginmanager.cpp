@@ -87,10 +87,7 @@ QString MessageViewerConfigureSettingsPluginManagerPrivate::configPrefixSettingK
 void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
 {
     const QVector<KPluginMetaData> plugins
-        = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](
-                                         const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QLatin1String("MessageViewerConfigureSettingsPlugin/Plugin"));
-    });
+        = KPluginLoader::findPlugins(QStringLiteral("messageviewer/configuresettings"));
 
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();

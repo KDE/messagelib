@@ -9,7 +9,7 @@ kconfig_add_kcfg_files(messageviewer_defaultgrantleeheaderstyleplugin_SRCS
 )
 
 kcoreaddons_add_plugin(messageviewer_defaultgrantleeheaderstyleplugin JSON messageviewer_defaultgrantleeheaderstyleplugin.json SOURCES
-    ${messageviewer_defaultgrantleeheaderstyleplugin_SRCS} INSTALL_NAMESPACE messageviewer)
+    ${messageviewer_defaultgrantleeheaderstyleplugin_SRCS} INSTALL_NAMESPACE messageviewer/headerstyle)
 
 target_link_libraries(messageviewer_defaultgrantleeheaderstyleplugin
   KF5::MessageViewer

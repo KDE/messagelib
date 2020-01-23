@@ -88,10 +88,7 @@ QString HeaderStylePluginManagerPrivate::configPrefixSettingKey() const
 void HeaderStylePluginManagerPrivate::initializePluginList()
 {
     const QVector<KPluginMetaData> plugins
-        = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](
-                                         const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QLatin1String("MessageViewerHeaderStyle/Plugin"));
-    });
+        = KPluginLoader::findPlugins(QStringLiteral("messageviewer/headerstyle"));
 
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();

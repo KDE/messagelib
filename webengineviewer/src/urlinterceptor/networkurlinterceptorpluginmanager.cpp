@@ -90,9 +90,7 @@ QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pl
 
 void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("webengineviewer"), [](const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QLatin1String("WebEngineViewer/UrlInterceptor"));
-    });
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("webengineviewer/urlinterceptor"));
 
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();

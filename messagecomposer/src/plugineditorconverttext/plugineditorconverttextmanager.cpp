@@ -88,9 +88,7 @@ QVector<PimCommon::PluginUtilData> PluginEditorConvertTextManagerPrivate::plugin
 
 void PluginEditorConvertTextManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QLatin1String("KMailEditor/PluginEditorConvertText"));
-    });
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail/plugineditorconverttext"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
