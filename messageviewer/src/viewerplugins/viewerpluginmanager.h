@@ -42,17 +42,15 @@ public:
     Q_REQUIRED_RESULT QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
 
-    void setServiceTypeName(const QString &serviceName);
-    Q_REQUIRED_RESULT QString serviceTypeName() const;
-
-    void setPluginName(const QString &pluginName);
-    Q_REQUIRED_RESULT QString pluginName() const;
-
     Q_REQUIRED_RESULT bool initializePluginList();
 
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT MessageViewer::ViewerPlugin *pluginFromIdentifier(const QString &id);
+    Q_REQUIRED_RESULT QString pluginDirectory() const;
+    void setPluginDirectory(const QString &directory);
+    Q_REQUIRED_RESULT void setPluginName(const QString &pluginName);
+    Q_REQUIRED_RESULT QString pluginName() const;
 private:
     Q_DISABLE_COPY(ViewerPluginManager)
     ViewerPluginManagerPrivate *const d;

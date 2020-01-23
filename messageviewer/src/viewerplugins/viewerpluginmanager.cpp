@@ -57,8 +57,9 @@ public:
     QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
     QVector<PimCommon::PluginUtilData> pluginDataList() const;
 
-    QString serviceTypeName;
+    QString pluginDirectory;
     QString pluginName;
+
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
     ViewerPlugin *pluginFromIdentifier(const QString &id);
@@ -90,15 +91,12 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     if (!mPluginList.isEmpty()) {
         return true;
     }
-    if (serviceTypeName.isEmpty() || pluginName.isEmpty()) {
+    if (pluginDirectory.isEmpty()) {
         return false;
     }
 
-    static const QString s_serviceTypeName = serviceTypeName;
     QVector<KPluginMetaData> plugins
-        = KPluginLoader::findPlugins(pluginName, [](const KPluginMetaData &md) {
-        return md.serviceTypes().contains(s_serviceTypeName);
-    });
+        = KPluginLoader::findPlugins(pluginDirectory);
 
     // We need common plugin to avoid to duplicate code between akregator/kmail
     plugins
@@ -213,24 +211,14 @@ QVector<MessageViewer::ViewerPlugin *> ViewerPluginManager::pluginsList() const
     return d->pluginsList();
 }
 
-void ViewerPluginManager::setServiceTypeName(const QString &serviceName)
+void ViewerPluginManager::setPluginDirectory(const QString &directory)
 {
-    d->serviceTypeName = serviceName;
+    d->pluginDirectory = directory;
 }
 
-QString ViewerPluginManager::serviceTypeName() const
+QString ViewerPluginManager::pluginDirectory() const
 {
-    return d->serviceTypeName;
-}
-
-void ViewerPluginManager::setPluginName(const QString &pluginName)
-{
-    d->pluginName = pluginName;
-}
-
-QString ViewerPluginManager::pluginName() const
-{
-    return d->pluginName;
+    return d->pluginDirectory;
 }
 
 QVector<PimCommon::PluginUtilData> ViewerPluginManager::pluginsDataList() const
@@ -252,3 +240,14 @@ MessageViewer::ViewerPlugin *ViewerPluginManager::pluginFromIdentifier(const QSt
 {
     return d->pluginFromIdentifier(id);
 }
+
+void ViewerPluginManager::setPluginName(const QString &pluginName)
+{
+    d->pluginName = pluginName;
+}
+
+QString ViewerPluginManager::pluginName() const
+{
+    return d->pluginName;
+}
+

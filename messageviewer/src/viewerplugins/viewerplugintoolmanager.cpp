@@ -35,10 +35,9 @@ public:
     {
     }
 
-    void setServiceTypeName(const QString &serviceName);
-    QString serviceTypeName() const;
     void setPluginName(const QString &pluginName);
-    QString pluginName() const;
+    Q_REQUIRED_RESULT QString pluginDirectory() const;
+    Q_REQUIRED_RESULT QString pluginName() const;
     void createView();
     void refreshActionList();
     void closeAllTools();
@@ -49,16 +48,17 @@ public:
     KActionCollection *mActionCollection = nullptr;
     QWidget *mParentWidget = nullptr;
     ViewerPluginToolManager *q = nullptr;
+    void setPluginDirectory(const QString &directory);
 };
 
-void ViewerPluginToolManagerPrivate::setServiceTypeName(const QString &serviceName)
+void ViewerPluginToolManagerPrivate::setPluginDirectory(const QString &directory)
 {
-    MessageViewer::ViewerPluginManager::self()->setServiceTypeName(serviceName);
+    MessageViewer::ViewerPluginManager::self()->setPluginDirectory(directory);
 }
 
-QString ViewerPluginToolManagerPrivate::serviceTypeName() const
+QString ViewerPluginToolManagerPrivate::pluginDirectory() const
 {
-    return MessageViewer::ViewerPluginManager::self()->serviceTypeName();
+    return MessageViewer::ViewerPluginManager::self()->pluginDirectory();
 }
 
 void ViewerPluginToolManagerPrivate::setPluginName(const QString &pluginName)
@@ -161,14 +161,14 @@ void ViewerPluginToolManager::setActionCollection(KActionCollection *ac)
     d->setActionCollection(ac);
 }
 
-void ViewerPluginToolManager::setServiceTypeName(const QString &serviceName)
+void ViewerPluginToolManager::setPluginDirectory(const QString &directory)
 {
-    d->setServiceTypeName(serviceName);
+    d->setPluginDirectory(directory);
 }
 
-QString ViewerPluginToolManager::serviceTypeName() const
+QString ViewerPluginToolManager::pluginDirectory() const
 {
-    return d->serviceTypeName();
+    return d->pluginDirectory();
 }
 
 void ViewerPluginToolManager::setPluginName(const QString &pluginName)

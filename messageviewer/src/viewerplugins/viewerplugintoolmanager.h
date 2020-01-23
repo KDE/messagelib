@@ -45,9 +45,6 @@ public:
     void createView();
     void setActionCollection(KActionCollection *ac);
 
-    void setServiceTypeName(const QString &serviceName);
-    Q_REQUIRED_RESULT QString serviceTypeName() const;
-
     void setPluginName(const QString &pluginName);
     Q_REQUIRED_RESULT QString pluginName() const;
     Q_REQUIRED_RESULT bool initializePluginList();
@@ -59,6 +56,9 @@ public:
      * @brief refreshActionList Refresh the list of action menu.
      */
     void refreshActionList();
+
+    void setPluginDirectory(const QString &directory);
+    Q_REQUIRED_RESULT QString pluginDirectory() const;
 Q_SIGNALS:
     void activatePlugin(MessageViewer::ViewerPluginInterface *);
 

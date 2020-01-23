@@ -51,7 +51,7 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
             &ViewerPluginTest::slotActivatePlugin);
 
     toolManager->setPluginName(QStringLiteral("messageviewer"));
-    toolManager->setServiceTypeName(QStringLiteral("MessageViewer/ViewerPlugin"));
+    toolManager->setPluginDirectory(QStringLiteral("messageviewer/viewerplugin"));
     if (!toolManager->initializePluginList()) {
         qDebug() << " Impossible to initialize plugins";
     }
