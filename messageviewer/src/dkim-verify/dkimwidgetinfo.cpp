@@ -214,6 +214,21 @@ void DKIMWidgetInfo::updateToolTip()
 
     for (const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &result : qAsConst(mResult.listSignatureAuthenticationResult)) {
         switch (result.status) {
+        case DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned:
+            switch(result.method) {
+            case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
+                break;
+            }
+            case DKIMCheckSignatureJob::AuthenticationMethod::Spf:
+            case DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
+            case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
+            case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
+                tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                        + i18n("%1: None", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                break;
+            }
+            }
+            break;
         case DKIMCheckSignatureJob::DKIMStatus::Valid:
             switch(result.method) {
             case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
@@ -243,6 +258,7 @@ void DKIMWidgetInfo::updateToolTip()
             default:
                 ;
             }
+            break;
         default:
             //TODO
             ;
