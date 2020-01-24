@@ -49,7 +49,7 @@ public:
     Q_REQUIRED_RESULT MessageViewer::ViewerPlugin *pluginFromIdentifier(const QString &id);
     Q_REQUIRED_RESULT QString pluginDirectory() const;
     void setPluginDirectory(const QString &directory);
-    Q_REQUIRED_RESULT void setPluginName(const QString &pluginName);
+    void setPluginName(const QString &pluginName);
     Q_REQUIRED_RESULT QString pluginName() const;
 private:
     Q_DISABLE_COPY(ViewerPluginManager)
