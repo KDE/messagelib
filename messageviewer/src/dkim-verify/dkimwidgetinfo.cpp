@@ -215,6 +215,10 @@ void DKIMWidgetInfo::updateToolTip()
 
     for (const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &result : qAsConst(mResult.listSignatureAuthenticationResult)) {
         switch (result.status) {
+        case DKIMCheckSignatureJob::DKIMStatus::Unknown:
+        case DKIMCheckSignatureJob::DKIMStatus::Invalid:
+        case DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned:
+            break;
         case DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned:
             switch(result.method) {
             case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
@@ -258,9 +262,6 @@ void DKIMWidgetInfo::updateToolTip()
             }
             }
             break;
-        default:
-            //TODO
-            ;
         }
     }
     if (mResult.listSignatureAuthenticationResult.isEmpty()) {
