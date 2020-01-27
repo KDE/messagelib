@@ -20,6 +20,7 @@
 #include "dkimwidgetinfo.h"
 #include "dkimmanager.h"
 #include "dkimutil.h"
+#include "messageviewer_dkimcheckerdebug.h"
 #include <KLocalizedString>
 #include <KColorScheme>
 
@@ -268,7 +269,8 @@ void DKIMWidgetInfo::updateToolTip()
         tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
                 + i18n("Not Signed");
     }
-    qDebug() << "mResult . authenticatio " << mResult.listSignatureAuthenticationResult;
+    //TODO remove duplicate info.
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mResult.authentication " << mResult.listSignatureAuthenticationResult;
 
     mLabel->setToolTip(tooltip);
 }
