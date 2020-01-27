@@ -256,8 +256,6 @@ void DKIMWidgetInfo::updateToolTip()
                         + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
                 break;
             }
-            default:
-                ;
             }
             break;
         default:
