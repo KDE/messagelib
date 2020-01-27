@@ -40,11 +40,10 @@ void MessageFactoryReplyJob::start()
     parser->setIdentityManager(mIdentityManager);
     parser->setCharsets(MessageComposerSettings::self()->preferredCharsets());
     parser->setWordWrap(MessageComposerSettings::wordWrap(), MessageComposerSettings::lineWrapWidth());
-#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
+    //Laurent Bug QTBUG-81574 . I created a fix, just waiting that Qt guys review it
     if (MessageComposer::MessageComposerSettings::quoteSelectionOnly()) {
         parser->setSelection(mSelection);
     }
-#endif
     parser->setAllowDecryption(true);
     if (!mTemplate.isEmpty()) {
         parser->process(mTemplate, mOrigMsg);
