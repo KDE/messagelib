@@ -23,6 +23,7 @@
 #include "messagecomposer_export.h"
 
 class QComboBox;
+class QAbstractButton;
 namespace Ui {
 class ImageScalingWidget;
 }
@@ -54,6 +55,8 @@ private Q_SLOTS:
     void slotHelpLinkClicked(const QString &);
 
 private:
+    void slotRecipientFilterAbstractClicked(QAbstractButton *button);
+    void slotSourceFilterAbstractButtonClicked(QAbstractButton *button);
     void updateFilterSourceTypeSettings();
     void initComboBox(QComboBox *combo);
     void initWriteImageFormat();
