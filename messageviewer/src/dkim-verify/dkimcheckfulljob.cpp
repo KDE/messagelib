@@ -168,11 +168,13 @@ void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureRe
         }
     }
     if (mCheckPolicy.autogenerateRule()) {
-        if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
-            DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
-            job->setResult(checkResult);
-            if (!job->start()) {
-                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start autogenerate rule";
+        if (mCheckPolicy.autogenerateRuleOnlyIfSenderInSDID()) {
+            if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
+                DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
+                job->setResult(checkResult);
+                if (!job->start()) {
+                    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start autogenerate rule";
+                }
             }
         }
     }

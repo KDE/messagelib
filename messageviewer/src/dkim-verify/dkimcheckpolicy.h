@@ -66,6 +66,9 @@ public:
     Q_REQUIRED_RESULT bool useOnlyAuthenticationResults() const;
     void setUseOnlyAuthenticationResults(bool useOnlyAuthenticationResults);
 
+    Q_REQUIRED_RESULT bool autogenerateRuleOnlyIfSenderInSDID() const;
+    void setAutogenerateRuleOnlyIfSenderInSDID(bool autogenerateRuleOnlyIfSenderInSDID);
+
 private:
     int mRsaSha1Policy = -1;
     int mSaveKey = -1;
@@ -78,6 +81,7 @@ private:
     bool mUseAuthenticationResults = false;
     bool mUseRelaxedParsing = false;
     bool mUseOnlyAuthenticationResults = false;
+    bool mAutogenerateRuleOnlyIfSenderInSDID = false;
 };
 }
 
