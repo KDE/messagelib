@@ -85,7 +85,6 @@ void DKIMCheckFullJob::checkAuthenticationResults()
 
 void DKIMCheckFullJob::checkSignature(const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst)
 {
-    //TODO store lst;
     DKIMCheckSignatureJob *job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMCheckFullJob::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMCheckFullJob::slotCheckSignatureResult);
@@ -169,6 +168,15 @@ void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureRe
     }
     if (mCheckPolicy.autogenerateRule()) {
         if (mCheckPolicy.autogenerateRuleOnlyIfSenderInSDID()) {
+            //Check value SDID !
+            if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
+                DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
+                job->setResult(checkResult);
+                if (!job->start()) {
+                    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start autogenerate rule";
+                }
+            }
+        } else {
             if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
                 DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
                 job->setResult(checkResult);
