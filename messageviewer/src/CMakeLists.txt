@@ -31,9 +31,6 @@ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Qt Cryptographic Architec
                    URL "https:/download.kde.org/stable/qca-qt5" TYPE REQUIRED
                    PURPOSE "Needed for dkim support.")
 
-if (${Qca-qt5_FOUND})
-    set(USE_DKIM_CHECKER 1)
-endif()
 
 configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h)
 

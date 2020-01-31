@@ -52,10 +52,8 @@ class WebHitTestResult;
 
 namespace MessageViewer {
 class WebHitTestResult;
-#ifdef USE_DKIM_CHECKER
 class DKIMWidgetInfo;
 class DKIMViewerMenu;
-#endif
 class AttachmentStrategy;
 class HeaderStylePlugin;
 class CSSHelper;
@@ -348,9 +346,7 @@ public:
 
     void hasMultiMessages(bool messages);
     void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
-#ifdef USE_DKIM_CHECKER
     MessageViewer::DKIMWidgetInfo *dkimWidgetInfo();
-#endif
 
 Q_SIGNALS:
     void moveMessageToTrash();

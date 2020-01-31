@@ -146,13 +146,11 @@
 #include <grantleetheme/grantleethememanager.h>
 #include <grantleetheme/grantleetheme.h>
 
-#ifdef USE_DKIM_CHECKER
 #include "dkim-verify/dkimwidgetinfo.h"
 #include "dkim-verify/dkimmanager.h"
 #include "dkim-verify/dkimresultattribute.h"
 #include "dkim-verify/dkimviewermenu.h"
 #include "dkim-verify/dkimmanagerulesdialog.h"
-#endif
 
 using namespace boost;
 using namespace MailTransport;
@@ -194,9 +192,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     }
     mMessageViewerRenderer = new MessageViewerRenderer;
 
-#ifdef USE_DKIM_CHECKER
     mDkimWidgetInfo = new MessageViewer::DKIMWidgetInfo(mMainWindow);
-#endif
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::MessageDisplayFormatAttribute>();
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::ScamAttribute>();
@@ -243,9 +239,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     fs.fetchAttribute<MailTransport::ErrorAttribute>();
     fs.fetchAttribute<MessageViewer::MessageDisplayFormatAttribute>();
     fs.fetchAttribute<MessageViewer::ScamAttribute>();
-#ifdef USE_DKIM_CHECKER
     fs.fetchAttribute<MessageViewer::DKIMResultAttribute>();
-#endif
     mMonitor.setItemFetchScope(fs);
     connect(&mMonitor, &Akonadi::Monitor::itemChanged,
             this, &ViewerPrivate::slotItemChanged);
@@ -1198,9 +1192,7 @@ void ViewerPrivate::printPreviewMessage(const Akonadi::Item &message)
 
 void ViewerPrivate::resetStateForNewMessage()
 {
-#ifdef USE_DKIM_CHECKER
     mDkimWidgetInfo->clear();
-#endif
     mHtmlLoadExtOverride = false;
     mClickedUrl.clear();
     mImageUrl.clear();
@@ -1278,7 +1270,6 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
         }
         return;
     }
-#ifdef USE_DKIM_CHECKER
     if (!mPrinting) {
         if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
             if (messageIsInSpecialFolder()) {
@@ -1289,7 +1280,6 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
             }
         }
     }
-#endif
 
     setMessageInternal(mMessageItem.payload<KMime::Message::Ptr>(), updateMode);
 }
@@ -3108,7 +3098,6 @@ void ViewerPrivate::updateShowMultiMessagesButton(bool enablePreviousButton, boo
     mShowNextMessageWidget->updateButton(enablePreviousButton, enableNextButton);
 }
 
-#ifdef USE_DKIM_CHECKER
 DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
 {
     if (MessageViewer::MessageViewerSettings::self()->enabledDkim()) {
@@ -3133,5 +3122,3 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
     }
     return nullptr;
 }
-
-#endif

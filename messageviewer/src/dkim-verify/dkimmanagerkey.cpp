@@ -23,24 +23,18 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <QRegularExpression>
-#ifdef USE_DKIM_CHECKER
 #include <QtCrypto>
-#endif
 using namespace MessageViewer;
 DKIMManagerKey::DKIMManagerKey(QObject *parent)
     : QObject(parent)
 {
-#ifdef USE_DKIM_CHECKER
     mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
-#endif
     loadKeys();
 }
 
 DKIMManagerKey::~DKIMManagerKey()
 {
-#ifdef USE_DKIM_CHECKER
     delete mQcaInitializer;
-#endif
     saveKeys();
 }
 
