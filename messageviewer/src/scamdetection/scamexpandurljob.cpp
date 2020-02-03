@@ -51,6 +51,9 @@ ScamExpandUrlJob::ScamExpandUrlJob(QObject *parent)
     , d(new ScamExpandUrlJobPrivate)
 {
     d->mNetworkAccessManager = new QNetworkAccessManager(this);
+    d->mNetworkAccessManager->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
+    d->mNetworkAccessManager->setStrictTransportSecurityEnabled(true);
+    d->mNetworkAccessManager->enableStrictTransportSecurityStore(true);
 
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this,
             &ScamExpandUrlJob::slotExpandFinished);

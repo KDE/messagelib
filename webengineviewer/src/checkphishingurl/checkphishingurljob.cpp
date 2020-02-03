@@ -46,6 +46,10 @@ CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
     , d(new WebEngineViewer::CheckPhishingUrlJobPrivate)
 {
     d->mNetworkAccessManager = new QNetworkAccessManager(this);
+    d->mNetworkAccessManager->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
+    d->mNetworkAccessManager->setStrictTransportSecurityEnabled(true);
+    d->mNetworkAccessManager->enableStrictTransportSecurityStore(true);
+
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CheckPhishingUrlJob::slotCheckUrlFinished);
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CheckPhishingUrlJob::slotSslErrors);
 }

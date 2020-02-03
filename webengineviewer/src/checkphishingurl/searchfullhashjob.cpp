@@ -50,6 +50,10 @@ SearchFullHashJob::SearchFullHashJob(QObject *parent)
     , d(new SearchFullHashJobPrivate)
 {
     d->mNetworkAccessManager = new QNetworkAccessManager(this);
+    d->mNetworkAccessManager->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
+    d->mNetworkAccessManager->setStrictTransportSecurityEnabled(true);
+    d->mNetworkAccessManager->enableStrictTransportSecurityStore(true);
+
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &SearchFullHashJob::slotCheckUrlFinished);
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &SearchFullHashJob::slotSslErrors);
 }
