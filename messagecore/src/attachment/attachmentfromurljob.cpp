@@ -75,6 +75,7 @@ void AttachmentFromUrlJob::Private::transferJobResult(KJob *job)
     qCDebug(MESSAGECORE_LOG) << "Mimetype is" << mimeTypeName;
 
     QString fileName = q->url().fileName();
+    fileName.replace(QLatin1Char('\n'), QLatin1Char('_'));
     if (fileName.isEmpty()) {
         QMimeDatabase db;
         const auto mimeType = db.mimeTypeForName(mimeTypeName);
