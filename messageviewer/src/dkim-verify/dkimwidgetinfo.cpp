@@ -211,6 +211,9 @@ void DKIMWidgetInfo::updateToolTip()
     case DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe:
         tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Hash Algorithm unsafe (sha1)");
         break;
+    case DKIMCheckSignatureJob::DKIMWarning::PublicRsaKeyTooSmall:
+        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Public Key too small");
+        break;
     }
 
     for (const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &result : qAsConst(mResult.listSignatureAuthenticationResult)) {

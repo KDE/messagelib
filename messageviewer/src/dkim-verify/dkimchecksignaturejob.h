@@ -77,6 +77,7 @@ public:
         SignatureCreatedInFuture = 2,
         SignatureTooSmall = 3,
         HashAlgorithmUnsafe = 4,
+        PublicRsaKeyTooSmall = 5,
     };
     Q_ENUM(DKIMWarning)
 

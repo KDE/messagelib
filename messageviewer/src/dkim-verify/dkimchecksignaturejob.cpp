@@ -487,11 +487,20 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     //qDebug() << "publicKey.exponent" << rsaPublicKey.e().toString();
 
     if (rsaPublicKey.e().toString().toLong() * 4 < 1024) {
-        mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyTooSmall;
-        mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
-        Q_EMIT result(createCheckResult());
-        deleteLater();
-        return;
+        const int publicRsaTooSmallPolicyValue = mPolicy.publicRsaTooSmallPolicy();
+        if (publicRsaTooSmallPolicyValue == MessageViewer::MessageViewerSettings::EnumPublicRsaTooSmall::Nothing) {
+            ; //Nothing
+        } else if (publicRsaTooSmallPolicyValue == MessageViewer::MessageViewerSettings::EnumPublicRsaTooSmall::Warning) {
+            mWarning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::PublicRsaKeyTooSmall;
+        } else if (publicRsaTooSmallPolicyValue == MessageViewer::MessageViewerSettings::EnumPublicRsaTooSmall::Error) {
+            mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyTooSmall;
+            mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+            Q_EMIT result(createCheckResult());
+            deleteLater();
+            return;
+        }
+
+
     } else if (rsaPublicKey.e().toString().toLong() * 4 < 2048) {
         //TODO
     }
