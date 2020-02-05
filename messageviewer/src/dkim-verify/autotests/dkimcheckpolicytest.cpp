@@ -41,6 +41,7 @@ void DKIMCheckPolicyTest::shouldHaveDefaultValues()
     QCOMPARE(pol.rsaSha1Policy(), 1);
     QVERIFY(!pol.useRelaxedParsing());
     QVERIFY(!pol.useOnlyAuthenticationResults());
+    QCOMPARE(pol.publicRsaTooSmallPolicy(), 1);
 }
 
 void DKIMCheckPolicyTest::shouldAssignValues()

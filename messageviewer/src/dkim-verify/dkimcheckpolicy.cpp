@@ -35,6 +35,7 @@ DKIMCheckPolicy::DKIMCheckPolicy()
     mUseRelaxedParsing = MessageViewer::MessageViewerSettings::useRelaxedParsingAuthenticationResults();
     mUseOnlyAuthenticationResults = MessageViewer::MessageViewerSettings::useOnlyAuthenticationResults();
     mAutogenerateRuleOnlyIfSenderInSDID = MessageViewer::MessageViewerSettings::autogenerateRuleOnlyIfSenderOnSDID();
+    mPublicRsaTooSmallPolicy = MessageViewer::MessageViewerSettings::publicRsaTooSmall();
 }
 
 int DKIMCheckPolicy::rsaSha1Policy() const
@@ -155,4 +156,14 @@ bool DKIMCheckPolicy::autogenerateRuleOnlyIfSenderInSDID() const
 void DKIMCheckPolicy::setAutogenerateRuleOnlyIfSenderInSDID(bool autogenerateRuleOnlyIfSenderInSDID)
 {
     mAutogenerateRuleOnlyIfSenderInSDID = autogenerateRuleOnlyIfSenderInSDID;
+}
+
+int DKIMCheckPolicy::publicRsaTooSmallPolicy() const
+{
+    return mPublicRsaTooSmallPolicy;
+}
+
+void DKIMCheckPolicy::setPublicRsaTooSmallPolicy(int publicRsaTooSmallPolicy)
+{
+    mPublicRsaTooSmallPolicy = publicRsaTooSmallPolicy;
 }

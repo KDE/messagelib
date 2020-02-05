@@ -69,9 +69,13 @@ public:
     Q_REQUIRED_RESULT bool autogenerateRuleOnlyIfSenderInSDID() const;
     void setAutogenerateRuleOnlyIfSenderInSDID(bool autogenerateRuleOnlyIfSenderInSDID);
 
+    Q_REQUIRED_RESULT int publicRsaTooSmallPolicy() const;
+    void setPublicRsaTooSmallPolicy(int publicRsaTooSmallPolicy);
+
 private:
     int mRsaSha1Policy = -1;
     int mSaveKey = -1;
+    int mPublicRsaTooSmallPolicy = -1;
     bool mVerifySignatureWhenOnlyTest = false;
     bool mSaveDkimResult = false;
     bool mAutogenerateRule = false;
