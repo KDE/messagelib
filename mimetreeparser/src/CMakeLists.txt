@@ -99,11 +99,6 @@ install(FILES
     COMPONENT Devel
     )
 
-ecm_generate_pri_file(BASE_NAME MimeTreeParser
-    LIB_NAME KF5MimeTreeParser
-    FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
-    )
-
 install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
@@ -149,4 +144,9 @@ set_target_properties(KF5MimeTreeParser PROPERTIES
     )
 
 target_include_directories(KF5MimeTreeParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser/;${KDE_INSTALL_INCLUDEDIR_KF5}/mimetreeparser>")
+
+ecm_generate_pri_file(BASE_NAME MimeTreeParser
+    LIB_NAME KF5MimeTreeParser
+    FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
+    )
 
