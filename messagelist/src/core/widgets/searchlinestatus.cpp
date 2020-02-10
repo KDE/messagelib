@@ -38,12 +38,6 @@ static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";
 using namespace MessageList::Core;
 SearchLineStatus::SearchLineStatus(QWidget *parent)
     : QLineEdit(parent)
-    , mLocked(false)
-    , mHasFilter(false)
-    , mLockAction(nullptr)
-    , mFiltersAction(nullptr)
-    , mFilterMenu(nullptr)
-    , mContainsOutboundMessages(false)
 {
     mCompleter = new QCompleter(this);
     mCompleterListModel = new QStringListModel(this);
@@ -73,7 +67,7 @@ void SearchLineStatus::keyPressEvent(QKeyEvent *e)
         } else {
             Q_EMIT forceLostFocus();
         }
-    } else if (e->key() == Qt::Key_Q && (e->modifiers() & (Qt::ShiftModifier | Qt::AltModifier))) {
+    } else if (e->key() == Qt::Key_Q && (e->modifiers().testFlag(Qt::ShiftModifier) &&  e->modifiers().testFlag(Qt::AltModifier))) {
         mLockAction->trigger();
     } else {
         QLineEdit::keyPressEvent(e);

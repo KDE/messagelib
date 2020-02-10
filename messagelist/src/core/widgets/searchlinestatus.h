@@ -71,8 +71,8 @@ private:
     void changeSearchAgainstFromOrToText();
     void slotClear();
 
-    bool mLocked;
-    bool mHasFilter;
+    bool mLocked = false;
+    bool mHasFilter = false;
     QIcon mWithoutFilter;
     QIcon mWithFilter;
     QAction *mLockAction = nullptr;
@@ -80,15 +80,15 @@ private:
     QMenu *mFilterMenu = nullptr;
     QCompleter *mCompleter = nullptr;
     QList<QAction *> mFilterListActions;
-    QAction *mSearchEveryWhereAction;
-    QAction *mSearchAgainstBodyAction;
-    QAction *mSearchAgainstSubjectAction;
-    QAction *mSearchAgainstFromOrToAction;
-    QAction *mSearchAgainstBccAction;
-    QStringListModel *mCompleterListModel;
+    QAction *mSearchEveryWhereAction = nullptr;
+    QAction *mSearchAgainstBodyAction = nullptr;
+    QAction *mSearchAgainstSubjectAction = nullptr;
+    QAction *mSearchAgainstFromOrToAction = nullptr;
+    QAction *mSearchAgainstBccAction = nullptr;
+    QStringListModel *mCompleterListModel = nullptr;
     QStringList mListCompetion;
     QString mColorName;
-    bool mContainsOutboundMessages;
+    bool mContainsOutboundMessages = false;
 };
 }
 }
