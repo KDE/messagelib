@@ -38,12 +38,6 @@ static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";
 using namespace MessageList::Core;
 SearchLineStatus::SearchLineStatus(QWidget *parent)
     : QLineEdit(parent)
-    , mLocked(false)
-    , mHasFilter(false)
-    , mLockAction(nullptr)
-    , mFiltersAction(nullptr)
-    , mFilterMenu(nullptr)
-    , mContainsOutboundMessages(false)
 {
     mCompleter = new QCompleter(this);
     mCompleterListModel = new QStringListModel(this);
