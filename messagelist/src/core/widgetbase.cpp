@@ -208,7 +208,11 @@ void Widget::populateStatusFilterCombo()
     d->mStatusFilterComboPopulationInProgress = true;
     QComboBox *tagFilterComboBox = d->quickSearchLine->tagFilterComboBox();
     d->mCurrentStatusFilterIndex = (tagFilterComboBox->currentIndex() != -1) ? tagFilterComboBox->currentIndex() : 0;
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     disconnect(tagFilterComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &Widget::statusSelected);
+#else
+    disconnect(tagFilterComboBox, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &Widget::statusSelected);
+#endif
 
     tagFilterComboBox->clear();
 
@@ -223,8 +227,11 @@ void Widget::addMessageTagItem(const QPixmap &icon, const QString &text, const Q
 void Widget::setCurrentStatusFilterItem()
 {
     d->quickSearchLine->updateComboboxVisibility();
-    connect(d->quickSearchLine->tagFilterComboBox(), qOverload<int>(&QComboBox::currentIndexChanged),
-            this, &Widget::statusSelected);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+    connect(d->quickSearchLine->tagFilterComboBox(), qOverload<int>(&QComboBox::currentIndexChanged), this, &Widget::statusSelected);
+#else
+    connect(d->quickSearchLine->tagFilterComboBox(), qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &Widget::statusSelected);
+#endif
     d->quickSearchLine->tagFilterComboBox()->setCurrentIndex(d->mCurrentStatusFilterIndex >= d->quickSearchLine->tagFilterComboBox()->count() ? 0 : d->mCurrentStatusFilterIndex);
     d->mStatusFilterComboPopulationInProgress = false;
 }

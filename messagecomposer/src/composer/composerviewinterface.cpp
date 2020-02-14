@@ -86,22 +86,26 @@ MessageComposer::ComposerAttachmentInterface ComposerViewInterface::attachments(
 
 QString ComposerViewInterface::shortDate() const
 {
-    return QDate::currentDate().toString(Qt::SystemLocaleShortDate);
+    QLocale locale;
+    return locale.toString(QDate::currentDate(), QLocale::ShortFormat);
 }
 
 QString ComposerViewInterface::longDate() const
 {
-    return QDate::currentDate().toString(Qt::SystemLocaleLongDate);
+    QLocale locale;
+    return locale.toString(QDate::currentDate(), QLocale::LongFormat);
 }
 
 QString ComposerViewInterface::shortTime() const
 {
-    return QTime::currentTime().toString(Qt::SystemLocaleShortDate);
+    QLocale locale;
+    return locale.toString(QTime::currentTime(), QLocale::ShortFormat);
 }
 
 QString ComposerViewInterface::longTime() const
 {
-    return QTime::currentTime().toString(Qt::SystemLocaleLongDate);
+    QLocale locale;
+    return locale.toString(QTime::currentTime(), QLocale::LongFormat);
 }
 
 QString ComposerViewInterface::insertDayOfWeek() const

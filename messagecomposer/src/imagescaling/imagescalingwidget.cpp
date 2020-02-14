@@ -73,10 +73,26 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
     connect(d->ui->skipImageSizeLower, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->imageSize, qOverload<int>(&QSpinBox::valueChanged), this, &ImageScalingWidget::changed);
     connect(d->ui->pattern, &KLineEdit::textChanged, this, &ImageScalingWidget::changed);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->ui->CBMaximumWidth, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+#else
+    connect(d->ui->CBMaximumWidth, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+#endif
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->ui->CBMaximumHeight, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+#else
+    connect(d->ui->CBMaximumHeight, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+#endif
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->ui->CBMinimumWidth, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+#else
+    connect(d->ui->CBMinimumWidth, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+#endif
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->ui->CBMinimumHeight, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+#else
+    connect(d->ui->CBMinimumHeight, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+#endif
     connect(d->ui->WriteToImageFormat, qOverload<int>(&QComboBox::activated), this, &ImageScalingWidget::changed);
     connect(d->ui->renameResizedImage, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->renameResizedImage, &QCheckBox::clicked, d->ui->renameResizedImagePattern, &KLineEdit::setEnabled);

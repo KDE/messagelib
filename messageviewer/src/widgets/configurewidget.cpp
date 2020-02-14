@@ -65,9 +65,13 @@ ConfigureWidget::ConfigureWidget(QWidget *parent)
         MessageViewer::MessageViewerSettings::self()->shrinkQuotesItem()->whatsThis());
     d->mSettingsUi->kcfg_ShowExpandQuotesMark->setWhatsThis(
         MessageViewer::MessageViewerSettings::self()->showExpandQuotesMarkItem()->whatsThis());
-
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->mSettingsUi->overrideCharacterEncoding, qOverload<int>(&QComboBox::currentIndexChanged), this,
             &ConfigureWidget::settingsChanged);
+#else
+    connect(d->mSettingsUi->overrideCharacterEncoding, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this,
+            &ConfigureWidget::settingsChanged);
+#endif
 }
 
 ConfigureWidget::~ConfigureWidget()

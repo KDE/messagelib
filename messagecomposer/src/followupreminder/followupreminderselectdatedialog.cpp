@@ -89,7 +89,11 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     formLayout->addRow(i18n("Store ToDo in:"), d->mCollectionCombobox);
 
     connect(d->mDateComboBox->lineEdit(), &QLineEdit::textChanged, this, &FollowUpReminderSelectDateDialog::slotDateChanged);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->mCollectionCombobox, qOverload<int>(&Akonadi::CollectionComboBox::currentIndexChanged), this, &FollowUpReminderSelectDateDialog::updateOkButton);
+#else
+    connect(d->mCollectionCombobox, qOverload<int, const QString &>(&Akonadi::CollectionComboBox::currentIndexChanged), this, &FollowUpReminderSelectDateDialog::updateOkButton);
+#endif
     updateOkButton();
 }
 
