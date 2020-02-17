@@ -157,9 +157,12 @@ Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
 Grantlee::Context MessagePartRendererManager::createContext()
 {
     Grantlee::Context c;
-    m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
 
-    c.setLocalizer(m_engine->localizer());
+    // careful, m_engine->localizer() is actually a factory function!
+    auto localizer = m_engine->localizer();
+    localizer->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
+    c.setLocalizer(localizer);
+
     c.insert(QStringLiteral("global"), m_globalContext);
     return c;
 }
