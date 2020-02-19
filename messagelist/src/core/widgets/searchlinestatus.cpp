@@ -210,7 +210,7 @@ void SearchLineStatus::createMenuSearch()
                        i18nc("@action:inmenu Status of a message", "Forwarded"),
                        Akonadi::MessageStatus::statusForwarded().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("emblem-important")),
+    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-mark-important")),
                        i18nc("@action:inmenu Status of a message", "Important"),
                        Akonadi::MessageStatus::statusImportant().toQInt32());
 

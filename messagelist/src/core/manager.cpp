@@ -666,7 +666,7 @@ void Manager::createDefaultThemes()
     add_theme_simple_icon_column(s, i18n("Read/Unread"), QStringLiteral("mail-mark-unread-new"), Theme::ContentItem::ReadStateIcon, false, SortOrder::SortMessagesByUnreadStatus);
     add_theme_simple_icon_column(s, i18n("Replied"), QStringLiteral("mail-replied"), Theme::ContentItem::RepliedStateIcon, false, SortOrder::NoMessageSorting);
     add_theme_simple_icon_column(s, i18nc("Message importance indication", "Important"), QStringLiteral(
-                                     "emblem-important"), Theme::ContentItem::ImportantStateIcon, false, SortOrder::SortMessagesByImportantStatus);
+                                     "mail-mark-important"), Theme::ContentItem::ImportantStateIcon, false, SortOrder::SortMessagesByImportantStatus);
     add_theme_simple_icon_column(s, i18n("Action Item"), QStringLiteral("mail-task"), Theme::ContentItem::ActionItemStateIcon, false, SortOrder::SortMessagesByActionItemStatus);
     add_theme_simple_icon_column(s, i18n("Spam/Ham"), QStringLiteral("mail-mark-junk"), Theme::ContentItem::SpamHamStateIcon, false, SortOrder::NoMessageSorting);
     add_theme_simple_icon_column(s, i18n("Watched/Ignored"), QStringLiteral("mail-thread-watch"), Theme::ContentItem::WatchedIgnoredStateIcon, false, SortOrder::NoMessageSorting);
