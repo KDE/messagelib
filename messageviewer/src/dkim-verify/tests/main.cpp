@@ -33,7 +33,8 @@ int main(int argc, char **argv)
     parser.process(app);
 
     if (!parser.positionalArguments().isEmpty()) {
-        for (const QString &str : parser.positionalArguments()) {
+        const QStringList lst = parser.positionalArguments();
+        for (const QString &str : lst) {
             LookUpKey *d = new LookUpKey();
             d->lookUpServer(str);
         }
