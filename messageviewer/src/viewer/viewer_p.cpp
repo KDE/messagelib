@@ -116,6 +116,7 @@
 #include "header/headerstylemenumanager.h"
 #include "widgets/submittedformwarningwidget.h"
 #include <WebEngineViewer/LocalDataBaseManager>
+#include <WebEngineViewer/WebEngineExportPdfPageJob>
 
 #include <MimeTreeParser/BodyPart>
 #include "interfaces/htmlwriter.h"
@@ -2308,10 +2309,19 @@ void ViewerPrivate::slotDelayPrintPreview()
     dialog->open(this, SIGNAL(printingFinished()));
 }
 
+void ViewerPrivate::slotExportToPdf()
+{
+    WebEngineViewer::WebEngineExportPdfPageJob *job
+        = new WebEngineViewer::WebEngineExportPdfPageJob(this);
+    job->setEngineView(mViewer);
+    job->start();
+    //TODO
+}
+
 void ViewerPrivate::slotOpenInBrowser()
 {
     WebEngineViewer::WebEngineExportHtmlPageJob *job
-        = new WebEngineViewer::WebEngineExportHtmlPageJob;
+        = new WebEngineViewer::WebEngineExportHtmlPageJob(this);
     job->setEngineView(mViewer);
     connect(job, &WebEngineViewer::WebEngineExportHtmlPageJob::failed, this,
             &ViewerPrivate::slotExportHtmlPageFailed);

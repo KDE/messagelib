@@ -19,6 +19,8 @@
 
 #include "webengineexportpdfpagejob.h"
 #include "webengineviewer_debug.h"
+#include <QWebEngineView>
+
 using namespace WebEngineViewer;
 WebEngineExportPdfPageJob::WebEngineExportPdfPageJob(QObject *parent)
     : QObject(parent)
@@ -33,10 +35,12 @@ WebEngineExportPdfPageJob::~WebEngineExportPdfPageJob()
 
 void WebEngineExportPdfPageJob::start()
 {
-    if (!mWebEngineView) {
-        qCWarning(WEBENGINEVIEWER_LOG) << "webengineview not defined! It's a bug";
+    if (!canStart()) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "webengineview not defined or path is not defined.! It's a bug";
         return;
     }
+    mWebEngineView->page()->printToPdf(mPdfPath);
+    //TODO deleteLater
 }
 
 QWebEngineView *WebEngineExportPdfPageJob::engineView() const
@@ -47,4 +51,19 @@ QWebEngineView *WebEngineExportPdfPageJob::engineView() const
 void WebEngineExportPdfPageJob::setEngineView(QWebEngineView *engineView)
 {
     mWebEngineView = engineView;
+}
+
+QString WebEngineExportPdfPageJob::pdfPath() const
+{
+    return mPdfPath;
+}
+
+void WebEngineExportPdfPageJob::setPdfPath(const QString &pdfPath)
+{
+    mPdfPath = pdfPath;
+}
+
+bool WebEngineExportPdfPageJob::canStart() const
+{
+    return mWebEngineView && !mPdfPath.isEmpty();
 }
