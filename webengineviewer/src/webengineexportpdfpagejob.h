@@ -44,7 +44,12 @@ public:
 
     Q_REQUIRED_RESULT bool canStart() const;
 
+Q_SIGNALS:
+    void exportPdfFailed();
+    void exportToPdfSuccess();
+
 private:
+    void slotPdfPrintingFinished(const QString &filePath, bool success);
     QString mPdfPath;
     QWebEngineView *mWebEngineView = nullptr;
 };

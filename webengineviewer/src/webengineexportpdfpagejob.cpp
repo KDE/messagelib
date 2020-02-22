@@ -37,10 +37,22 @@ void WebEngineExportPdfPageJob::start()
 {
     if (!canStart()) {
         qCWarning(WEBENGINEVIEWER_LOG) << "webengineview not defined or path is not defined.! It's a bug";
+        deleteLater();
         return;
     }
+    connect(mWebEngineView->page(), &QWebEnginePage::pdfPrintingFinished, this, &WebEngineExportPdfPageJob::slotPdfPrintingFinished);
     mWebEngineView->page()->printToPdf(mPdfPath);
-    //TODO deleteLater
+}
+
+void WebEngineExportPdfPageJob::slotPdfPrintingFinished(const QString &filePath, bool success)
+{
+    if (success) {
+        Q_EMIT exportToPdfSuccess();
+    } else {
+        qCWarning(WEBENGINEVIEWER_LOG) << "Failed to export to pdf to " << filePath;
+        Q_EMIT exportPdfFailed();
+    }
+    deleteLater();
 }
 
 QWebEngineView *WebEngineExportPdfPageJob::engineView() const

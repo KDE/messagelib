@@ -41,7 +41,6 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 
 WebEngineExportHtmlPageJob::WebEngineExportHtmlPageJob(QObject *parent)
     : QObject(parent)
-    , mEngineView(nullptr)
 {
 }
 
