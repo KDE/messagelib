@@ -23,6 +23,7 @@ set(libwebengineviewer_webengine_SRCS
     webenginemanagescript.cpp
     webengineexporthtmlpagejob.cpp
     webenginenavigationrequestinterceptor.cpp
+    webengineexportpdfpagejob.cpp
     )
 
 set(libwebengineviewer_checkphishingurl_SRCS
@@ -169,6 +170,7 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_misc_HEADERS
     WebEngineScript
     WebEngineManageScript
     WebEngineExportHtmlPageJob
+    WebEngineExportPdfPageJob
     REQUIRED_HEADERS WebEngineViewer_webengine_misc_HEADERS
     PREFIX WebEngineViewer
     RELATIVE
