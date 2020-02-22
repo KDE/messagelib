@@ -279,6 +279,8 @@ public:
 
     void saveMainFrameScreenshotInFile(const QString &filename);
 
+    void exportToPdf(const QString &fileName);
+
 private:
     /** HTML initialization. */
     void initHtmlWidget();
@@ -471,7 +473,6 @@ private Q_SLOTS:
     void slotExportHtmlPageSuccess(const QString &filename);
     void slotHandlePagePrinted(bool result);
     void slotToggleEmoticons();
-    void slotExportToPdf();
 
 public Q_SLOTS:
     /** An URL has been activate with a click. */

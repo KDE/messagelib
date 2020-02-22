@@ -348,6 +348,8 @@ public:
     void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
     MessageViewer::DKIMWidgetInfo *dkimWidgetInfo();
 
+    void exportToPdf(const QString &fileName);
+
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);

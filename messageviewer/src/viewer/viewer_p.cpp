@@ -2309,13 +2309,13 @@ void ViewerPrivate::slotDelayPrintPreview()
     dialog->open(this, SIGNAL(printingFinished()));
 }
 
-void ViewerPrivate::slotExportToPdf()
+void ViewerPrivate::exportToPdf(const QString &fileName)
 {
     WebEngineViewer::WebEngineExportPdfPageJob *job
         = new WebEngineViewer::WebEngineExportPdfPageJob(this);
     job->setEngineView(mViewer);
+    job->setPdfPath(fileName);
     job->start();
-    //TODO
 }
 
 void ViewerPrivate::slotOpenInBrowser()

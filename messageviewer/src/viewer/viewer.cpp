@@ -758,4 +758,10 @@ MessageViewer::DKIMWidgetInfo *Viewer::dkimWidgetInfo()
     Q_D(Viewer);
     return d->mDkimWidgetInfo;
 }
+
+void Viewer::exportToPdf(const QString &fileName)
+{
+    Q_D(Viewer);
+    d->exportToPdf(fileName);
+}
 }
