@@ -24,9 +24,17 @@ set(templateparser_LIB_SRCS
     templateparseremailaddressrequesterinterfacewidget.cpp
     templateconvertcommandjob.cpp
     )
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    ecm_qt_declare_logging_category(templateparser_LIB_SRCS HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser)
+else()
+    ecm_qt_declare_logging_category(templateparser_LIB_SRCS HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser
+        DESCRIPTION "messagelib (templateparser)"
+        OLD_CATEGORY_NAMES log_templateparser
+        EXPORT MESSAGELIB
+    )
+endif()
 
 
-ecm_qt_declare_logging_category(templateparser_LIB_SRCS HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser)
 
 kconfig_add_kcfg_files(templateparser_LIB_SRCS settings/templatesconfiguration_kfg.kcfgc)
 

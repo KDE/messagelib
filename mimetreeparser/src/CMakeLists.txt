@@ -110,7 +110,16 @@ set(libmimetreeparser_SRCS
     ${mimetreeparser_temporaryfile_SRCS}
     )
 
-ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser)
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser)
+else()
+    ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser
+        DESCRIPTION "messagelib (mimetreeparser)"
+        OLD_CATEGORY_NAMES log_mimetreeparser
+        EXPORT MESSAGELIB
+    )
+endif()
+
 
 add_library(KF5MimeTreeParser
     ${libmimetreeparser_SRCS}

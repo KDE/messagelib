@@ -4,8 +4,8 @@ ecm_add_test(webengineembedparttest.cpp  ../webengineembedpart.cpp
     LINK_LIBRARIES Qt5::Test Qt5::Core
     )
 
-set(webengineparthtmlwritertestdebug_SRCS)
-ecm_qt_declare_logging_category(webengineparthtmlwritertestdebug_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer)
+#set(webengineparthtmlwritertestdebug_SRCS)
+#ecm_qt_declare_logging_category(webengineparthtmlwritertestdebug_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer)
 
 
 #ecm_add_test(webengineparthtmlwritertest.cpp  ../webengineembedpart.cpp ../webengineparthtmlwriter.cpp ${webengineparthtmlwritertestdebug_SRCS}

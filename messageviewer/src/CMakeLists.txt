@@ -271,8 +271,22 @@ set(libmessageviewer_SRCS
 
 qt5_add_resources(libmessageviewer_SRCS messagepartthemes.qrc)
 
-ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer)
-ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_dkimcheckerdebug.h IDENTIFIER MESSAGEVIEWER_DKIMCHECKER_LOG CATEGORY_NAME org.kde.pim.messageviewer_dkimchecker)
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer)
+    ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_dkimcheckerdebug.h IDENTIFIER MESSAGEVIEWER_DKIMCHECKER_LOG CATEGORY_NAME org.kde.pim.messageviewer_dkimchecker)
+else()
+    ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
+        DESCRIPTION "messagelib (messageviewer)"
+        OLD_CATEGORY_NAMES log_messageviewer
+        EXPORT MESSAGELIB
+    )
+    ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_dkimcheckerdebug.h IDENTIFIER MESSAGEVIEWER_DKIMCHECKER_LOG CATEGORY_NAME org.kde.pim.messageviewer_dkimchecker
+        DESCRIPTION "messagelib (messageviewer dkim support)"
+        EXPORT MESSAGELIB
+    )
+endif()
+
+
 kconfig_add_kcfg_files(libmessageviewer_SRCS
     settings/globalsettings_messageviewer.kcfgc
     )

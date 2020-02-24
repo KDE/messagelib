@@ -1,5 +1,12 @@
 set(testwebengineviewer_webengine_common_SRCS)
-ecm_qt_declare_logging_category(testwebengineviewer_webengine_common_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer)
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    ecm_qt_declare_logging_category(testwebengineviewer_webengine_common_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer)
+else()
+    ecm_qt_declare_logging_category(testwebengineviewer_webengine_common_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer
+        DESCRIPTION "messagelib (webengineviewer)"
+        EXPORT MESSAGELIB
+    )
+endif()
 add_definitions( -DCHECKPHISHINGURL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
 ecm_add_test(checkphishingurljobtest.cpp  ../checkphishingurljob.cpp ../updatedatabaseinfo.cpp ../checkphishingurlutil.cpp ${testwebengineviewer_webengine_common_SRCS}
