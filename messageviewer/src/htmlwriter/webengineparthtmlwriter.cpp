@@ -72,6 +72,7 @@ void WebEnginePartHtmlWriter::end()
     mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX")+ QLatin1String(".html"));
     mTempFile->open();
     QTextStream stream(mTempFile);
+    //TODO we need to change codec when mail use different codec.
     stream.setCodec("UTF-8");
     stream << data();
 
