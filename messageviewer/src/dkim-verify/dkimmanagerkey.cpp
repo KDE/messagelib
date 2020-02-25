@@ -105,9 +105,9 @@ void DKIMManagerKey::saveKeys()
         const QString groupName = QStringLiteral("DKIM Key Record #%1").arg(i);
         KConfigGroup group = config->group(groupName);
         const KeyInfo &info = mKeys.at(i);
-        group.writeEntry(QLatin1String("Selector"), info.selector);
-        group.writeEntry(QLatin1String("Domain"), info.domain);
-        group.writeEntry(QLatin1String("Key"), info.keyValue);
+        group.writeEntry(QStringLiteral("Selector"), info.selector);
+        group.writeEntry(QStringLiteral("Domain"), info.domain);
+        group.writeEntry(QStringLiteral("Key"), info.keyValue);
     }
 }
 

@@ -23,73 +23,73 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
 {
     switch (type) {
     case CcAddr:
-        return QLatin1String("%CCADDR");
+        return QStringLiteral("%CCADDR");
     case CcLname:
-        return QLatin1String("%CCLNAME");
+        return QStringLiteral("%CCLNAME");
     case CcFname:
-        return QLatin1String("%CCFNAME");
+        return QStringLiteral("%CCFNAME");
     case CcName:
-        return QLatin1String("%CCNAME");
+        return QStringLiteral("%CCNAME");
     case FullSubject:
-        return QLatin1String("%FULLSUBJECT");
+        return QStringLiteral("%FULLSUBJECT");
     case ToAddr:
-        return QLatin1String("%TOADDR");
+        return QStringLiteral("%TOADDR");
     case ToFname:
-        return QLatin1String("%TOFNAME");
+        return QStringLiteral("%TOFNAME");
     case ToLname:
-        return QLatin1String("%TOLNAME");
+        return QStringLiteral("%TOLNAME");
     case ToName:
-        return QLatin1String("%TONAME");
+        return QStringLiteral("%TONAME");
     case FromAddr:
-        return QLatin1String("%FROMADDR");
+        return QStringLiteral("%FROMADDR");
     case FromLname:
-        return QLatin1String("%FROMLNAME");
+        return QStringLiteral("%FROMLNAME");
     case FromFname:
-        return QLatin1String("%FROMFNAME");
+        return QStringLiteral("%FROMFNAME");
     case FromName:
-        return QLatin1String("%FROMNAME");
+        return QStringLiteral("%FROMNAME");
     case Dow:
-        return QLatin1String("%DOW");
+        return QStringLiteral("%DOW");
     case Date:
-        return QLatin1String("%DATE");
+        return QStringLiteral("%DATE");
     case ShortDate:
-        return QLatin1String("%SHORTDATE");
+        return QStringLiteral("%SHORTDATE");
     case Time:
-        return QLatin1String("%TIME");
+        return QStringLiteral("%TIME");
     case TimeLong:
-        return QLatin1String("%TIMELONG");
+        return QStringLiteral("%TIMELONG");
     case AttachmentCount:
-        return QLatin1String("%ATTACHMENTCOUNT");
+        return QStringLiteral("%ATTACHMENTCOUNT");
     case AttachmentName:
-        return QLatin1String("%ATTACHMENTNAMES");
+        return QStringLiteral("%ATTACHMENTNAMES");
     case AttachmentFilenames:
-        return QLatin1String("%ATTACHMENTFILENAMES");
+        return QStringLiteral("%ATTACHMENTFILENAMES");
     case AttachmentNamesAndSizes:
-        return QLatin1String("%ATTACHMENTNAMESANDSIZES");
+        return QStringLiteral("%ATTACHMENTNAMESANDSIZES");
     case Year:
-        return QLatin1String("%YEAR");
+        return QStringLiteral("%YEAR");
     case LastYear:
-        return QLatin1String("%LASTYEAR");
+        return QStringLiteral("%LASTYEAR");
     case NextYear:
-        return QLatin1String("%NEXTYEAR");
+        return QStringLiteral("%NEXTYEAR");
     case MonthNumber:
-        return QLatin1String("%MONTHNUMBER"); //1-12
+        return QStringLiteral("%MONTHNUMBER"); //1-12
     case DayOfMonth:
-        return QLatin1String("%DAYOFMONTH"); //1-31
+        return QStringLiteral("%DAYOFMONTH"); //1-31
     case WeekNumber:
-        return QLatin1String("%WEEKNUMBER"); //1-52
+        return QStringLiteral("%WEEKNUMBER"); //1-52
     case MonthNameShort:
-        return QLatin1String("%MONTHNAMESHORT"); //(Jan-Dec)
+        return QStringLiteral("%MONTHNAMESHORT"); //(Jan-Dec)
     case MonthNameLong:
-        return QLatin1String("%MONTHNAMELONG"); //(January-December)
+        return QStringLiteral("%MONTHNAMELONG"); //(January-December)
     case DayOfWeek:
-        return QLatin1String("%DAYOFWEEK"); //(1-7)
+        return QStringLiteral("%DAYOFWEEK"); //(1-7)
     case DayOfWeekNameShort:
-        return QLatin1String("%DAYOFWEEKNAMESHORT"); //(Mon-Sun)
+        return QStringLiteral("%DAYOFWEEKNAMESHORT"); //(Mon-Sun)
     case DayOfWeekNameLong:
-        return QLatin1String("%DAYOFWEEKNAMELONG"); //(Monday-Sunday)
+        return QStringLiteral("%DAYOFWEEKNAMELONG"); //(Monday-Sunday)
     case YearLastMonth:
-        return QLatin1String("%YEARLASTMONTH"); //january 2020 will how 2019-12
+        return QStringLiteral("%YEARLASTMONTH"); //january 2020 will how 2019-12
     }
     return {};
 }

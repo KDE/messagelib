@@ -189,7 +189,7 @@ DKIMInfo::CanonicalizationType DKIMInfo::bodyCanonization() const
     return mBodyCanonization;
 }
 
-void DKIMInfo::setBodyCanonization(const CanonicalizationType &bodyCanonization)
+void DKIMInfo::setBodyCanonization(CanonicalizationType bodyCanonization)
 {
     mBodyCanonization = bodyCanonization;
 }
@@ -219,7 +219,7 @@ DKIMInfo::CanonicalizationType DKIMInfo::headerCanonization() const
     return mHeaderCanonization;
 }
 
-void DKIMInfo::setHeaderCanonization(const CanonicalizationType &headerCanonization)
+void DKIMInfo::setHeaderCanonization(CanonicalizationType headerCanonization)
 {
     mHeaderCanonization = headerCanonization;
 }

@@ -92,10 +92,10 @@ public:
     void setBodyLengthCount(int bodyLengthCount);
 
     Q_REQUIRED_RESULT CanonicalizationType headerCanonization() const;
-    void setHeaderCanonization(const CanonicalizationType &headerCanonization);
+    void setHeaderCanonization(CanonicalizationType headerCanonization);
 
     Q_REQUIRED_RESULT CanonicalizationType bodyCanonization() const;
-    void setBodyCanonization(const CanonicalizationType &bodyCanonization);
+    void setBodyCanonization(CanonicalizationType bodyCanonization);
 
     Q_REQUIRED_RESULT bool operator==(const DKIMInfo &other) const;
 

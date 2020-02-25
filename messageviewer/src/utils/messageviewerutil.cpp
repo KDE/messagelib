@@ -134,9 +134,9 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
             }
         }
         if (!newStringImg.isEmpty()) {
-            const bool containsReg2 = newStringImg.contains(QRegularExpression(QLatin1String("<img.*src=\"https?:/.*\".*>"), QRegularExpression::CaseInsensitiveOption), &rmatch);
+            const bool containsReg2 = newStringImg.contains(QRegularExpression(QStringLiteral("<img.*src=\"https?:/.*\".*>"), QRegularExpression::CaseInsensitiveOption), &rmatch);
             if (!containsReg2) {
-                const bool containsReg = newStringImg.contains(QRegularExpression(QLatin1String("<img.*src=https?:/.*>"), QRegularExpression::CaseInsensitiveOption), &rmatch);
+                const bool containsReg = newStringImg.contains(QRegularExpression(QStringLiteral("<img.*src=https?:/.*>"), QRegularExpression::CaseInsensitiveOption), &rmatch);
                 return containsReg;
             } else {
                 return true;

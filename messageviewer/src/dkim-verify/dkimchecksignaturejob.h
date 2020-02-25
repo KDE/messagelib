@@ -125,7 +125,7 @@ public:
     Q_REQUIRED_RESULT QString dkimValue() const;
 
     Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMStatus status() const;
-    void setStatus(const DKIMCheckSignatureJob::DKIMStatus &status);
+    void setStatus(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
 
     Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::DKIMStatus checkSignature(const MessageViewer::DKIMInfo &info);
 
@@ -135,7 +135,7 @@ public:
     void setMessage(const KMime::Message::Ptr &message);
 
     Q_REQUIRED_RESULT DKIMCheckSignatureJob::DKIMWarning warning() const;
-    void setWarning(const DKIMWarning &warning);
+    void setWarning(MessageViewer::DKIMCheckSignatureJob::DKIMWarning warning);
 
     Q_REQUIRED_RESULT QString headerCanonizationResult() const;
 

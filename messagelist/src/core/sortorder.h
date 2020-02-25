@@ -176,7 +176,7 @@ public:
      *                     will be based on that old sort order, i.e. the message sorting and
      *                     message sort direction is adopted.
      */
-    static SortOrder defaultForAggregation(const Aggregation *aggregation, const SortOrder &oldSortOrder);
+    static SortOrder defaultForAggregation(const Aggregation *aggregation, SortOrder oldSortOrder);
 
     /**
     * Returns true if the ms parameter specifies a valid MessageSorting option.

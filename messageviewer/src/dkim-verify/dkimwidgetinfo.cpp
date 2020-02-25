@@ -67,7 +67,7 @@ Akonadi::Item::Id DKIMWidgetInfo::currentItemId() const
     return mCurrentItemId;
 }
 
-void DKIMWidgetInfo::setCurrentItemId(const Akonadi::Item::Id &currentItemId)
+void DKIMWidgetInfo::setCurrentItemId(Akonadi::Item::Id currentItemId)
 {
     mCurrentItemId = currentItemId;
 }

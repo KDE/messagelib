@@ -74,7 +74,7 @@ DKIMRule::RuleType DKIMRule::ruleType() const
     return mRuleType;
 }
 
-void DKIMRule::setRuleType(const RuleType &ruleType)
+void DKIMRule::setRuleType(RuleType ruleType)
 {
     mRuleType = ruleType;
 }

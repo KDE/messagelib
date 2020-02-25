@@ -278,7 +278,7 @@ public:
         QVector<QByteArray> addressHeaders;
         addressHeaders << "to" << "reply-To" << "reply-From" << "cc" << "bcc" << "from" << "sender" << "resent-From" << "resent-To";
 
-        for (const auto &header: addressHeaders) {
+        for (const auto &header: qAsConst(addressHeaders)) {
             registerHeaderFormatter(header, QSharedPointer<HeaderFormatter>(new AddressHeaderFormatter(header)));
         }
 
@@ -366,7 +366,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     QVector<QByteArray> defaultHeaders;
     defaultHeaders << "to" << "reply-To" << "reply-From" << "cc" << "bcc" << "from" << "sender" << "resent-From" << "resent-To" << "subject" << "organization" << "list-id" << "date";
 
-    for (const auto &header: defaultHeaders) {
+    for (const auto &header: qAsConst(defaultHeaders)) {
         QSharedPointer<HeaderFormatter> formatter;
         if (d->headerFormatter.contains(header)) {
             formatter = d->headerFormatter.value(header);

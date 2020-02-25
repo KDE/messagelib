@@ -194,7 +194,7 @@ bool SortOrder::validForAggregation(const Aggregation *aggregation) const
            && groupSortingOk && groupSortDirectionOk;
 }
 
-SortOrder SortOrder::defaultForAggregation(const Aggregation *aggregation, const SortOrder &oldSortOrder)
+SortOrder SortOrder::defaultForAggregation(const Aggregation *aggregation, SortOrder oldSortOrder)
 {
     SortOrder newSortOrder;
 

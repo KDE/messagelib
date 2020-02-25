@@ -564,7 +564,7 @@ DKIMCheckSignatureJob::DKIMWarning DKIMCheckSignatureJob::warning() const
     return mWarning;
 }
 
-void DKIMCheckSignatureJob::setWarning(const DKIMCheckSignatureJob::DKIMWarning &warning)
+void DKIMCheckSignatureJob::setWarning(DKIMCheckSignatureJob::DKIMWarning warning)
 {
     mWarning = warning;
 }
@@ -654,7 +654,7 @@ DKIMCheckSignatureJob::DKIMStatus DKIMCheckSignatureJob::status() const
     return mStatus;
 }
 
-void DKIMCheckSignatureJob::setStatus(const DKIMCheckSignatureJob::DKIMStatus &status)
+void DKIMCheckSignatureJob::setStatus(DKIMCheckSignatureJob::DKIMStatus status)
 {
     mStatus = status;
 }

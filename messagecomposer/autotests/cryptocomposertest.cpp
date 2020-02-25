@@ -351,7 +351,7 @@ void CryptoComposerTest::testBCCEncrypt()
     Composer *composer = new Composer;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
     fillComposerData(composer, data);
-    composer->infoPart()->setBcc(QStringList(QLatin1String("bcc@bcc.org")));
+    composer->infoPart()->setBcc(QStringList(QStringLiteral("bcc@bcc.org")));
 
     std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys();
 
@@ -543,7 +543,7 @@ void CryptoComposerTest::fillComposerData(Composer *composer, const QString &dat
 {
     composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
-    composer->infoPart()->setTo(QStringList(QLatin1String("you@you.you")));
+    composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
     composer->textPart()->setWrappedPlainText(data);
 }
 

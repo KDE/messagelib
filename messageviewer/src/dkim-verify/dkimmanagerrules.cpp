@@ -75,13 +75,13 @@ int DKIMManagerRules::loadRules(const QString &fileName)
     int numberOfRulesAdded = 0;
     for (const QString &groupName : rulesGroups) {
         KConfigGroup group = config->group(groupName);
-        const QStringList signedDomainIdentifier = group.readEntry(QLatin1String("SignedDomainIdentifier"), QStringList());
-        const QString from = group.readEntry(QLatin1String("From"), QString());
-        const QString domain = group.readEntry(QLatin1String("Domain"), QString());
-        const bool enabled = group.readEntry(QLatin1String("Enabled"), true);
-        const int ruleType = group.readEntry(QLatin1String("RuleType"), 0);
-        const QString listId = group.readEntry(QLatin1String("List-Id"), QString());
-        const int priority = group.readEntry(QLatin1String("Priority"), 1000);
+        const QStringList signedDomainIdentifier = group.readEntry(QStringLiteral("SignedDomainIdentifier"), QStringList());
+        const QString from = group.readEntry(QStringLiteral("From"), QString());
+        const QString domain = group.readEntry(QStringLiteral("Domain"), QString());
+        const bool enabled = group.readEntry(QStringLiteral("Enabled"), true);
+        const int ruleType = group.readEntry(QStringLiteral("RuleType"), 0);
+        const QString listId = group.readEntry(QStringLiteral("List-Id"), QString());
+        const int priority = group.readEntry(QStringLiteral("Priority"), 1000);
         DKIMRule rule;
         rule.setEnabled(enabled);
         rule.setDomain(domain);
@@ -133,12 +133,12 @@ void DKIMManagerRules::save(const QString &fileName)
         KConfigGroup group = config->group(groupName);
         const DKIMRule &rule = mRules.at(i);
 
-        group.writeEntry(QLatin1String("SignedDomainIdentifier"), rule.signedDomainIdentifier());
-        group.writeEntry(QLatin1String("From"), rule.from());
-        group.writeEntry(QLatin1String("Domain"), rule.domain());
-        group.writeEntry(QLatin1String("Enabled"), rule.enabled());
-        group.writeEntry(QLatin1String("RuleType"), static_cast<int>(rule.ruleType()));
-        group.writeEntry(QLatin1String("List-Id"), rule.listId());
-        group.writeEntry(QLatin1String("Priority"), rule.priority());
+        group.writeEntry(QStringLiteral("SignedDomainIdentifier"), rule.signedDomainIdentifier());
+        group.writeEntry(QStringLiteral("From"), rule.from());
+        group.writeEntry(QStringLiteral("Domain"), rule.domain());
+        group.writeEntry(QStringLiteral("Enabled"), rule.enabled());
+        group.writeEntry(QStringLiteral("RuleType"), static_cast<int>(rule.ruleType()));
+        group.writeEntry(QStringLiteral("List-Id"), rule.listId());
+        group.writeEntry(QStringLiteral("Priority"), rule.priority());
     }
 }

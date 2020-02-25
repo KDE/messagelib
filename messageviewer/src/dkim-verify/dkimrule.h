@@ -56,7 +56,7 @@ public:
     Q_REQUIRED_RESULT bool isValid() const;
 
     Q_REQUIRED_RESULT RuleType ruleType() const;
-    void setRuleType(const RuleType &ruleType);
+    void setRuleType(MessageViewer::DKIMRule::RuleType ruleType);
 
     Q_REQUIRED_RESULT QString listId() const;
     void setListId(const QString &listId);
