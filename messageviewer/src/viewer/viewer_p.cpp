@@ -896,7 +896,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     //TODO: needs to end up in renderer: mMessage.data() != content /* show only single node */);
     otp.setAllowAsync(!mPrinting);
     otp.parseObjectTree(content, mMessage.data() != content /* parse/show only single node */);
-
+    htmlWriter()->setCodec(otp.plainTextContentCharset());
     if (message) {
         htmlWriter()->write(writeMessageHeader(message, hasVCard ? vCardContent : nullptr, true));
     }
@@ -1336,6 +1336,7 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
         htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont));
 
         parseContent(node);
+
 
         htmlWriter()->write(cssHelper()->endBodyHtml());
         htmlWriter()->end();
