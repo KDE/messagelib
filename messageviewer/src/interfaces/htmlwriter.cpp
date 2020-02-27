@@ -65,3 +65,13 @@ QTextStream *HtmlWriter::stream() const
 {
     return m_stream.get();
 }
+
+void HtmlWriter::setCodec(const QByteArray &codec)
+{
+    mCodec = codec;
+}
+
+QByteArray HtmlWriter::codec() const
+{
+    return mCodec;
+}

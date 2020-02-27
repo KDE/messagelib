@@ -37,8 +37,7 @@
 
 #include <qglobal.h>
 #include <memory>
-
-class QByteArray;
+#include <QByteArray>
 class QIODevice;
 class QString;
 class QTextStream;
@@ -96,8 +95,11 @@ public:
 
     virtual void extraHead(const QString &str) = 0;
 
+    void setCodec(const QByteArray &codec);
+    Q_REQUIRED_RESULT QByteArray codec() const;
 private:
     Q_DISABLE_COPY(HtmlWriter)
+    QByteArray mCodec = QByteArrayLiteral("UTF-8");
     mutable std::unique_ptr<QTextStream> m_stream;
 };
 }

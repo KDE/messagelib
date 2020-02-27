@@ -73,6 +73,7 @@ void WebEnginePartHtmlWriter::end()
     mTempFile->open();
     QTextStream stream(mTempFile);
     //TODO we need to change codec when mail use different codec.
+    //stream.setCodec(codec().constData());
     stream.setCodec("UTF-8");
     stream << data();
 
