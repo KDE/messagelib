@@ -1,13 +1,18 @@
 {% if not block.isPrinting %}
 {% if not block.htmlMail or not block.loadExternal and block.containsExternalReferences %}
-    <div class="inlineMessageError">
-        {% if not block.htmlMail %}
+    {% if not block.htmlMail %}
+        <div class="inlineMessageWarning">
+            <div style="float:left; padding-right:10px;">{% icon "dialog-xml-editor" large %}</div>
             {% i18n_var "<b>Note:</b> This is an HTML message. For security reasons, only the raw HTML code is shown. If you trust the sender of this message then you can activate formatted HTML display for this message <a href='kmail:showHTML'>by clicking here</a>." as msg %}
-        {% elif not block.loadExternal and block.containsExternalReferences %}
+            {{ msg|safe }}
+        </div>
+    {% elif not block.loadExternal and block.containsExternalReferences %}
+        <div class="inlineMessageError">
+            <div style="float:left; padding-right:10px;">{% icon "network-wireless" large %}</div>
             {% i18n_var "<b>Note:</b> This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded. If you trust the sender of this message then you can load the external references for this message <a href='kmail:loadExternal'>by clicking here</a>." as msg %}
-        {% endif %}
-        {{ msg|safe }}
-    </div>
+            {{ msg|safe }}
+        </div>
+    {% endif %}
     <br />
     <br />
 {% endif %}
