@@ -40,7 +40,6 @@ void MessageFactoryReplyJob::start()
     parser->setIdentityManager(mIdentityManager);
     parser->setCharsets(MessageComposerSettings::self()->preferredCharsets());
     parser->setWordWrap(MessageComposerSettings::wordWrap(), MessageComposerSettings::lineWrapWidth());
-    //Laurent Bug QTBUG-81574 . I created a fix, just waiting that Qt guys review it
     if (MessageComposer::MessageComposerSettings::quoteSelectionOnly()) {
         parser->setSelection(mSelection);
     }
