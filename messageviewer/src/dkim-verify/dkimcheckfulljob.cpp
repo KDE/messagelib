@@ -144,7 +144,7 @@ void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::
     converter.setStatusInfo(info);
     //TODO Convert to CheckSignatureAuthenticationResult + add this list to CheckSignatureResult directly
     const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> lst = converter.convert();
-    qDebug() << "  lst " << lst;
+    //qDebug() << "  lst " << lst;
     //TODO use it.
 
     //TODO check info ! if auth is ok not necessary to checkSignature
@@ -168,6 +168,7 @@ void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureRe
     }
     if (mCheckPolicy.autogenerateRule()) {
         if (mCheckPolicy.autogenerateRuleOnlyIfSenderInSDID()) {
+            //TODO
             //Check value SDID !
             if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
                 DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);

@@ -216,60 +216,62 @@ void DKIMWidgetInfo::updateToolTip()
         break;
     }
 
-    for (const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &result : qAsConst(mResult.listSignatureAuthenticationResult)) {
-        switch (result.status) {
-        case DKIMCheckSignatureJob::DKIMStatus::Unknown:
-        case DKIMCheckSignatureJob::DKIMStatus::Invalid:
-        case DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned:
-            break;
-        case DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned:
-            switch(result.method) {
-            case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
+    if (mResult.status != DKIMCheckSignatureJob::DKIMStatus::Invalid) {
+        for (const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &result : qAsConst(mResult.listSignatureAuthenticationResult)) {
+            switch (result.status) {
+            case DKIMCheckSignatureJob::DKIMStatus::Unknown:
+            case DKIMCheckSignatureJob::DKIMStatus::Invalid:
+            case DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned:
+                break;
+            case DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned:
+                switch(result.method) {
+                case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
+                    break;
+                }
+                case DKIMCheckSignatureJob::AuthenticationMethod::Spf:
+                case DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
+                case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
+                case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
+                    tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                            + i18n("%1: None", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    break;
+                }
+                }
+                break;
+            case DKIMCheckSignatureJob::DKIMStatus::Valid:
+                switch(result.method) {
+                case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
+                    break;
+                }
+                case DKIMCheckSignatureJob::AuthenticationMethod::Dkim: {
+                    tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                            + i18n("%1: Valid (Signed by %2)", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
+                                   result.sdid);
+                    break;
+                }
+                case DKIMCheckSignatureJob::AuthenticationMethod::Spf: {
+                    tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                            + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    break;
+                }
+                case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc: {
+                    tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                            + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    break;
+                }
+                case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
+                    tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                            + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    break;
+                }
+                }
                 break;
             }
-            case DKIMCheckSignatureJob::AuthenticationMethod::Spf:
-            case DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
-            case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
-            case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
-                tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                        + i18n("%1: None", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
-                break;
-            }
-            }
-            break;
-        case DKIMCheckSignatureJob::DKIMStatus::Valid:
-            switch(result.method) {
-            case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
-                break;
-            }
-            case DKIMCheckSignatureJob::AuthenticationMethod::Dkim: {
-                tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                        + i18n("%1: Valid (Signed by %2)", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
-                               result.sdid);
-                break;
-            }
-            case DKIMCheckSignatureJob::AuthenticationMethod::Spf: {
-                tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                        + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
-                break;
-            }
-            case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc: {
-                tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                        + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
-                break;
-            }
-            case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
-                tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                        + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
-                break;
-            }
-            }
-            break;
         }
-    }
-    if (mResult.listSignatureAuthenticationResult.isEmpty()) {
-        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                + i18n("Not Signed");
+        if (mResult.listSignatureAuthenticationResult.isEmpty()) {
+            tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
+                    + i18n("Not Signed");
+        }
     }
     //TODO remove duplicate info.
     qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mResult.authentication " << mResult.listSignatureAuthenticationResult;
