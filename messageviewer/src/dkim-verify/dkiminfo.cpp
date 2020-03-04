@@ -37,7 +37,11 @@ bool DKIMInfo::parseDKIM(const QString &header)
     }
     QString newHeaders = header;
     newHeaders.replace(QLatin1String("; "), QLatin1String(";"));
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     const QStringList items = newHeaders.split(QLatin1Char(';'), QString::SkipEmptyParts);
+#else
+    const QStringList items = newHeaders.split(QLatin1Char(';'), Qt::SkipEmptyParts);
+#endif
     bool foundCanonizations = false;
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();

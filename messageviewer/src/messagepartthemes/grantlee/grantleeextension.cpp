@@ -40,7 +40,11 @@ void CallbackTag::render(Grantlee::OutputStream *stream, Grantlee::Context *cont
 
 Grantlee::Node *CallbackTagFactory::getNode(const QString &tagContent, Grantlee::Parser *parser) const
 {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     auto expr = tagContent.split(QLatin1Char(' '), QString::SkipEmptyParts);
+#else
+    auto expr = tagContent.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+#endif
     if (expr.size() != 2) {
         return nullptr;
     }

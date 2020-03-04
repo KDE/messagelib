@@ -141,7 +141,11 @@ void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptio
         newStr.remove(newStr.length() - 1, 1);
         mSearchList = QStringList() << newStr;
     } else {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         const QStringList searchListTmp = mSearchString.split(QLatin1Char(' '), QString::SkipEmptyParts);
+#else
+        const QStringList searchListTmp = mSearchString.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+#endif
         mSearchList.clear();
         newStr.clear();
         for (const QString &text : searchListTmp) {

@@ -734,7 +734,11 @@ KMime::Content *NodeHelper::contentFromIndex(KMime::Content *node, const QString
 {
     KMime::Content *c = node->topLevel();
     if (c) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         const QStringList pathParts = persistentIndex.split(QLatin1Char(':'), QString::SkipEmptyParts);
+#else
+        const QStringList pathParts = persistentIndex.split(QLatin1Char(':'), Qt::SkipEmptyParts);
+#endif
         const int pathPartsSize(pathParts.size());
         for (int i = 0; i < pathPartsSize; ++i) {
             const QString &path = pathParts[i];

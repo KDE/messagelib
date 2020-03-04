@@ -385,8 +385,16 @@ bool MessageComposer::Util::getLinkInformation(const KMime::Message::Ptr &msg, Q
         return false;
     }
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     const QStringList messages = hrdLinkMsg->asUnicodeString().split(QLatin1Char(','), QString::SkipEmptyParts);
+#else
+    const QStringList messages = hrdLinkMsg->asUnicodeString().split(QLatin1Char(','), Qt::SkipEmptyParts);
+#endif
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     const QStringList types = hrdLinkType->asUnicodeString().split(QLatin1Char(','), QString::SkipEmptyParts);
+#else
+    const QStringList types = hrdLinkType->asUnicodeString().split(QLatin1Char(','), Qt::SkipEmptyParts);
+#endif
 
     if (messages.isEmpty() || types.isEmpty()) {
         return false;

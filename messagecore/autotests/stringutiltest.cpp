@@ -373,7 +373,11 @@ void StringUtilTest::test_parseMailtoUrl()
     QCOMPARE(list.count(), numberElement);
     if (numberOfTo > 0) {
         QCOMPARE(!list.at(0).second.isEmpty(), toIsNotEmpty);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         QCOMPARE(list.at(0).second.split(QLatin1String(", "), QString::SkipEmptyParts).count(), numberOfTo);
+#else
+        QCOMPARE(list.at(0).second.split(QLatin1String(", "), Qt::SkipEmptyParts).count(), numberOfTo);
+#endif
     }
 }
 
