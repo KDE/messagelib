@@ -32,6 +32,9 @@ private Q_SLOTS:
 
     void shouldContainsExternalReferences_data();
     void shouldContainsExternalReferences();
+
+    void shouldExtractHtml();
+    void shouldExtractHtml_data();
 };
 
 #endif // MESSAGEVIEWERUTILSTEST_H
