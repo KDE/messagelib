@@ -42,6 +42,7 @@
 #include <KMime/Content>
 #include <KService>
 #include <AkonadiCore/Item>
+
 class QUrl;
 class QWidget;
 class QActionGroup;
@@ -70,6 +71,8 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s)
 /** Return a QTextCodec for the specified charset.
 * This function is a bit more tolerant, than QTextCodec::codecForName */
 MESSAGEVIEWER_EXPORT const QTextCodec *codecForName(const QByteArray &_str);
+
+Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString processHtml(const QString &htmlSource, QString &extraHead);
 }
 }
 Q_DECLARE_METATYPE(KService::Ptr)

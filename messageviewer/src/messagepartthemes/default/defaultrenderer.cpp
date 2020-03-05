@@ -55,8 +55,6 @@
 #include <grantlee/templateloader.h>
 #include <grantlee/template.h>
 
-#include <qtwebenginewidgetsversion.h>
-
 using namespace MimeTreeParser;
 using namespace MessageViewer;
 
@@ -241,44 +239,6 @@ QString sigStatusToString(const QGpgME::Protocol *cryptProto, int status_code, G
     return result;
 }
 
-// FIXME this used to go through the full webkit parser to extract the body and head blocks
-// until we have that back, at least attempt to fix some of the damage
-// yes, "parsing" HTML with regexps is very very wrong, but it's still better than not filtering
-// this at all...
-QString processHtml(const QString &htmlSource, QString &extraHead)
-{
-    QString s = htmlSource.trimmed();
-    s = s.remove(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive)).trimmed();
-    s = s.remove(QRegExp(QStringLiteral("^<html[^>]*>"), Qt::CaseInsensitive)).trimmed();
-
-    // head
-    s = s.remove(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive)).trimmed();
-    const int startIndex = s.indexOf(QLatin1String("<head>"), Qt::CaseInsensitive);
-    if (startIndex >= 0) {
-        const auto endIndex = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
-
-        if (endIndex < 0) {
-            return htmlSource;
-        }
-        extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
-#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 13, 0)
-        //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
-        //Don't authorize to refresh content.
-        if (MessageViewer::Util::excludeExtraHeader(s)) {
-            extraHead.clear();
-        }
-#endif
-
-        s = s.mid(endIndex + 7).trimmed();
-    }
-
-    // body
-    s = s.remove(QRegExp(QStringLiteral("<body[^>]*>"), Qt::CaseInsensitive)).trimmed();
-    s = s.remove(QRegExp(QStringLiteral("</html>$"), Qt::CaseInsensitive)).trimmed();
-    s = s.remove(QRegExp(QStringLiteral("</body>$"), Qt::CaseInsensitive)).trimmed();
-    return s;
-}
-
 DefaultRendererPrivate::DefaultRendererPrivate(CSSHelperBase *cssHelper, const MessagePartRendererFactory *rendererFactory)
     : mCSSHelper(cssHelper)
     , mRendererFactory(rendererFactory)
@@ -379,7 +339,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
     {
         QString extraHead;
         //laurent: FIXME port to async method webengine
-        QString bodyText = processHtml(mp->bodyHtml(), extraHead);
+        QString bodyText = Util::processHtml(mp->bodyHtml(), extraHead);
 
         if (isHtmlPreferred) {
             mp->nodeHelper()->setNodeDisplayedEmbedded(mp->content(), true);
