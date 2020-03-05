@@ -688,9 +688,14 @@ void Util::readGravatarConfig()
 QString Util::processHtml(const QString &htmlSource, QString &extraHead)
 {
     QString s = htmlSource.trimmed();
+    const int indexDoctype = s.indexOf(QRegExp(QStringLiteral("<!DOCTYPE[^>]*>"), Qt::CaseInsensitive));
+    QString textBeforeDoctype;
+    if (indexDoctype != -1) {
+        textBeforeDoctype = s.left(indexDoctype);
+        s = s.remove(textBeforeDoctype);
+    }
     s = s.remove(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive)).trimmed();
     s = s.remove(QRegExp(QStringLiteral("^<html[^>]*>"), Qt::CaseInsensitive)).trimmed();
-
     // head
     s = s.remove(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive)).trimmed();
     const int startIndex = s.indexOf(QLatin1String("<head>"), Qt::CaseInsensitive);
@@ -711,10 +716,13 @@ QString Util::processHtml(const QString &htmlSource, QString &extraHead)
 
         s = s.mid(endIndex + 7).trimmed();
     }
-
+    //qDebug() << " remove 4 " << s;
     // body
     s = s.remove(QRegExp(QStringLiteral("<body[^>]*>"), Qt::CaseInsensitive)).trimmed();
+    //Some mail has </div>$ at end
+    s = s.remove(QRegExp(QStringLiteral("</html></div>$"), Qt::CaseInsensitive)).trimmed();
     s = s.remove(QRegExp(QStringLiteral("</html>$"), Qt::CaseInsensitive)).trimmed();
     s = s.remove(QRegExp(QStringLiteral("</body>$"), Qt::CaseInsensitive)).trimmed();
+    s = textBeforeDoctype + s;
     return s;
 }
