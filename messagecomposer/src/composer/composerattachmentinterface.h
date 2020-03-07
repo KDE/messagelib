@@ -24,7 +24,6 @@
 #include <QObject>
 
 namespace MessageComposer {
-class ComposerViewBase;
 /**
  * @brief The ComposerAttachmentInterface class
  * @author Laurent Montel <montel@kde.org>
