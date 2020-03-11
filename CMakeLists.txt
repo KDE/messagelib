@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-set(PIM_VERSION "5.13.59")
+set(PIM_VERSION "5.13.80")
 
 if (POLICY CMP0053)
     cmake_policy(SET CMP0053 NEW)
@@ -13,7 +13,7 @@ option(KDEPIM_RUN_AKONADI_TEST "Enable autotest based on Akonadi." TRUE)
 
 option(MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW "Experimental conversationview (in progress)" FALSE)
 
-set(KF5_MIN_VERSION "5.67.0")
+set(KF5_MIN_VERSION "5.68.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
