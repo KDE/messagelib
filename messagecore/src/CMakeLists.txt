@@ -43,15 +43,11 @@ ki18n_wrap_ui(messagecore_LIB_SRCS
     attachment/ui/attachmentpropertiesdialog_readonly.ui
     )
 
-if (ECM_VERSION VERSION_LESS "5.68.0")
-    ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME org.kde.pim.messagecore)
-else()
-    ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME org.kde.pim.messagecore
+ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME org.kde.pim.messagecore
         DESCRIPTION "messagelib (messagecore)"
         OLD_CATEGORY_NAMES log_messagecore
         EXPORT MESSAGELIB
     )
-endif()
 
 
 add_library(KF5MessageCore ${messagecore_LIB_SRCS})

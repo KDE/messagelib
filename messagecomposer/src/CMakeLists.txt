@@ -168,15 +168,11 @@ set( messagecomposer_src
 ki18n_wrap_ui(messagecomposer_src
     imagescaling/ui/imagescalingwidget.ui
     )
-if (ECM_VERSION VERSION_LESS "5.68.0")
-    ecm_qt_declare_logging_category(messagecomposer_src HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer)
-else()
-    ecm_qt_declare_logging_category(messagecomposer_src HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer
+ecm_qt_declare_logging_category(messagecomposer_src HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer
         DESCRIPTION "messagelib (messagecomposer)"
         OLD_CATEGORY_NAMES log_messagecomposer
         EXPORT MESSAGELIB
     )
-endif()
 
 
 if(KDEPIM_ENTERPRISE_BUILD)

@@ -1,9 +1,0 @@
-# messagelib
-org.kde.pim.messagecomposer messagelib (messagecomposer) IDENTIFIER [MESSAGECOMPOSER_LOG]
-org.kde.pim.messagecore messagelib (messagecore) IDENTIFIER [MESSAGECORE_LOG]
-org.kde.pim.messagelist messagelib (messagelist) IDENTIFIER [MESSAGELIST_LOG]
-org.kde.pim.messageviewer messagelib (messageviewer) IDENTIFIER [MESSAGEVIEWER_LOG]
-org.kde.pim.templateparser messagelib (templateparser) IDENTIFIER [MIMETREEPARSER_LOG]
-org.kde.pim.mimetreeparser messagelib (mimetreeparser) IDENTIFIER [TEMPLATEPARSER_LOG]
-org.kde.pim.webengineviewer messagelib (webengineviewer) IDENTIFIER [WEBENGINEVIEWER_LOG]
-org.kde.pim.messageviewer_dkimchecker messagelib (messageviewer dkim support) IDENTIFIER [MESSAGEVIEWER_DKIMCHECKER_LOG]

@@ -132,14 +132,10 @@ if (NOT ${MIMETREEPARSER_ONLY_BUILD})
    add_subdirectory(webengineviewer)
 endif()
 
-if (ECM_VERSION VERSION_LESS "5.68.0")
-    install(FILES messagelib.renamecategories messagelib.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
-else ()
-    ecm_qt_install_logging_categories(
+ecm_qt_install_logging_categories(
         EXPORT MESSAGELIB
         FILE messagelib.categories
         DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
         )
-endif()
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

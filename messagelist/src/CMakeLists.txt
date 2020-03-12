@@ -48,16 +48,11 @@ set(libmessagelist_SRCS
     widget.cpp
     messagelistutil.cpp
     )
-if (ECM_VERSION VERSION_LESS "5.68.0")
-    ecm_qt_declare_logging_category(libmessagelist_SRCS HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist)
-else()
-    ecm_qt_declare_logging_category(libmessagelist_SRCS HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist
+ecm_qt_declare_logging_category(libmessagelist_SRCS HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist
         DESCRIPTION "messagelib (messagelist)"
         OLD_CATEGORY_NAMES log_messagelist
         EXPORT MESSAGELIB
     )
-endif()
-
 
 kconfig_add_kcfg_files(libmessagelist_SRCS
     core/messagelistsettings.kcfgc
