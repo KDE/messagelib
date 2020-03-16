@@ -169,28 +169,27 @@ void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureRe
     if (mCheckPolicy.autogenerateRule()) {
         if (mCheckPolicy.autogenerateRuleOnlyIfSenderInSDID()) {
             //TODO
-            //Check value SDID !
-            if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
-                DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
-                job->setResult(checkResult);
-                if (!job->start()) {
-                    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start autogenerate rule";
-                }
-            }
+            //FIXME Check value SDID !
+            generateRule(checkResult);
         } else {
-            if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
-                DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
-                job->setResult(checkResult);
-                if (!job->start()) {
-                    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start autogenerate rule";
-                }
-            }
+            generateRule(checkResult);
         }
     }
 
     qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
     Q_EMIT result(checkResult, mAkonadiItem.id());
     deleteLater();
+}
+
+void DKIMCheckFullJob::generateRule(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
+{
+    if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
+        DKIMGenerateRuleJob *job = new DKIMGenerateRuleJob(this);
+        job->setResult(checkResult);
+        if (!job->start()) {
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start autogenerate rule";
+        }
+    }
 }
 
 void DKIMCheckFullJob::slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
