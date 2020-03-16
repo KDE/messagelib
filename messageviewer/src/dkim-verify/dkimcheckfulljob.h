@@ -52,6 +52,7 @@ private:
     void storeKey(const QString &key, const QString &domain, const QString &selector);
     void storeInKeyManager(const QString &key, const QString &domain, const QString &selector, bool verify);
     void storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    void generateRule(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void checkAuthenticationResults();
     DKIMCheckPolicy mCheckPolicy;
     KMime::Message::Ptr mMessage;
