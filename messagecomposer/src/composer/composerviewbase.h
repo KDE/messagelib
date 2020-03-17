@@ -214,7 +214,7 @@ public:
     *         FoundMissingAttachmentAndAddedAttachment, if mail might miss attachment and we added an attachment
     *         FoundMissingAttachmentAndCancel, if mail might miss attachment and cancel sending
     */
-    ComposerViewBase::MissingAttachment checkForMissingAttachments(const QStringList &attachmentKeywords);
+    Q_REQUIRED_RESULT ComposerViewBase::MissingAttachment checkForMissingAttachments(const QStringList &attachmentKeywords);
 
     Q_REQUIRED_RESULT bool hasMissingAttachments(const QStringList &attachmentKeywords);
 
@@ -232,7 +232,7 @@ public:
 
     Q_REQUIRED_RESULT KMime::Message::Ptr msg() const;
 
-    bool requestDeleveryConfirmation() const;
+    Q_REQUIRED_RESULT bool requestDeleveryConfirmation() const;
     void setRequestDeleveryConfirmation(bool requestDeleveryConfirmation);
 
 public Q_SLOTS:
