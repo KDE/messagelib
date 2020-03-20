@@ -45,8 +45,6 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
     mButtonBox = new QDialogButtonBox(QDialogButtonBox::Cancel, dialog);
     QPushButton *user1Button = new QPushButton;
     mButtonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
-    dialog->connect(mButtonBox, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
-    dialog->connect(mButtonBox, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
 
     if (offer) {
         QPushButton *user2Button = new QPushButton;
