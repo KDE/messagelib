@@ -1670,13 +1670,13 @@ void ViewerPrivate::createActions()
             q, &Viewer::slotScrollDown);
 
     mScrollUpMoreAction = new QAction(i18n("Scroll Message Up (More)"), this);
-    ac->setDefaultShortcut(mScrollUpMoreAction, QKeySequence(Qt::Key_PageUp));
+    ac->setDefaultShortcut(mScrollUpMoreAction, QKeySequence(Qt::ALT + Qt::Key_PageUp));
     ac->addAction(QStringLiteral("scroll_up_more"), mScrollUpMoreAction);
     connect(mScrollUpMoreAction, &QAction::triggered,
             q, &Viewer::slotScrollPrior);
 
     mScrollDownMoreAction = new QAction(i18n("Scroll Message Down (More)"), this);
-    ac->setDefaultShortcut(mScrollDownMoreAction, QKeySequence(Qt::Key_PageDown));
+    ac->setDefaultShortcut(mScrollDownMoreAction, QKeySequence(Qt::ALT + Qt::Key_PageDown));
     ac->addAction(QStringLiteral("scroll_down_more"), mScrollDownMoreAction);
     connect(mScrollDownMoreAction, &QAction::triggered,
             q, &Viewer::slotScrollNext);
