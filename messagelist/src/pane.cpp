@@ -274,15 +274,15 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         QString nextIcon, prevIcon;
         if (QApplication::isRightToLeft())
         {
-            prevShortcut.append(KStandardShortcut::tabPrev());
-            nextShortcut.append(KStandardShortcut::tabNext());
+            nextShortcut.append(KStandardShortcut::tabPrev());
+            prevShortcut.append(KStandardShortcut::tabNext());
             nextIcon = QStringLiteral("go-previous-view");
             prevIcon = QStringLiteral("go-next-view");
         }
         else
         {
-            nextShortcut.append(KStandardShortcut::tabPrev());
-            prevShortcut.append(KStandardShortcut::tabNext());
+            nextShortcut.append(KStandardShortcut::tabNext());
+            prevShortcut.append(KStandardShortcut::tabPrev());
             nextIcon = QStringLiteral("go-next-view");
             prevIcon = QStringLiteral("go-previous-view");
         }
