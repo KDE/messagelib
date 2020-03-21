@@ -232,9 +232,9 @@ private:
       Searches the "x-kmail-identity" header and if that fails,
       searches with KIdentityManagement::IdentityManager::identityForAddress()
     **/
-    uint identityUoid(const KMime::Message::Ptr &msg);
+    Q_REQUIRED_RESULT uint identityUoid(const KMime::Message::Ptr &msg);
 
-    QString replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s);
+    Q_REQUIRED_RESULT QString replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s);
 
     /*
     * If force charset option is enabled, try to set the original charset
@@ -243,7 +243,7 @@ private:
     */
     void applyCharset(const KMime::Message::Ptr msg);
 
-    QByteArray getRefStr(const KMime::Message::Ptr &msg);
+    Q_REQUIRED_RESULT QByteArray getRefStr(const KMime::Message::Ptr &msg);
     KMime::Content *createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg);
 
     KIdentityManagement::IdentityManager *m_identityManager = nullptr;

@@ -915,19 +915,13 @@ QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg,
     QRegExp rx(QStringLiteral("\\$\\{([a-z0-9-]+)\\}"), Qt::CaseInsensitive);
     Q_ASSERT(rx.isValid());
 
-    QRegExp rxDate(QStringLiteral("\\$\\{date\\}"));
-    Q_ASSERT(rxDate.isValid());
-
     const QString sDate = KMime::DateFormatter::formatDate(
         KMime::DateFormatter::Localized, msg->date()->dateTime().toSecsSinceEpoch());
     qCDebug(MESSAGECOMPOSER_LOG) << "creating mdn date:" << msg->date()->dateTime().toSecsSinceEpoch() << sDate;
 
-    int idx = 0;
-    if ((idx = rxDate.indexIn(result, idx)) != -1) {
-        result.replace(idx, rxDate.matchedLength(), sDate);
-    }
+    result.replace(QStringLiteral("${date}"), sDate);
 
-    idx = 0;
+    int idx = 0;
     while ((idx = rx.indexIn(result, idx)) != -1) {
         const QByteArray ba = rx.cap(1).toLatin1();
         QString replacement;
