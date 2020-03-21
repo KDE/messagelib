@@ -26,6 +26,7 @@
 #include <KXMLGUIClient>
 #include <QAction>
 #include <KToggleAction>
+#include <KStandardAction>
 
 #include <QAbstractItemModel>
 #include <QAbstractProxyModel>
@@ -36,6 +37,7 @@
 #include <QHeaderView>
 #include <QRegularExpression>
 #include <QVector>
+#include <QApplication>
 
 #include "storagemodel.h"
 #include "core/widgets/quicksearchline.h"
@@ -266,6 +268,48 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
             d->addActivateTabAction(i);
         }
 
+        QList<QKeySequence> nextShortcut;
+        QList<QKeySequence> prevShortcut;
+
+        QString nextIcon, prevIcon;
+        if (QApplication::isRightToLeft())
+        {
+            prevShortcut.append(KStandardShortcut::tabPrev());
+            nextShortcut.append(KStandardShortcut::tabNext());
+            nextIcon = QStringLiteral("go-previous-view");
+            prevIcon = QStringLiteral("go-next-view");
+        }
+        else
+        {
+            nextShortcut.append(KStandardShortcut::tabPrev());
+            prevShortcut.append(KStandardShortcut::tabNext());
+            nextIcon = QStringLiteral("go-next-view");
+            prevIcon = QStringLiteral("go-previous-view");
+        }
+
+
+        d->mActivateNextTabAction = new QAction(i18n("Activate Next Tab"), this);
+        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_next_tab"), d->mActivateNextTabAction);
+        d->mActivateNextTabAction->setEnabled(false);
+        d->mActivateNextTabAction->setIcon(QIcon::fromTheme(nextIcon));
+        d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mActivateNextTabAction, nextShortcut);
+        connect(d->mActivateNextTabAction, &QAction::triggered, [this]() {
+            d->activateNextTab();
+        });
+        d->mActionMenu->addAction(d->mActivateNextTabAction);
+
+        d->mActivatePreviousTabAction = new QAction(i18n("Activate Previous Tab"), this);
+        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_previous_tab"), d->mActivatePreviousTabAction);
+        d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mActivatePreviousTabAction, prevShortcut);
+        d->mActivatePreviousTabAction->setIcon(QIcon::fromTheme(prevIcon));
+        d->mActivatePreviousTabAction->setEnabled(false);
+        connect(d->mActivatePreviousTabAction, &QAction::triggered, this, [this]() {
+            d->activatePreviousTab();
+        });
+        d->mActionMenu->addAction(d->mActivatePreviousTabAction);
+
+        d->mActionMenu->addSeparator();
+
         d->mCloseTabAction = new QAction(i18n("Close Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("close_current_tab"), d->mCloseTabAction);
         d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mCloseTabAction, QList<QKeySequence>() << QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_W) << QKeySequence(Qt::CTRL + Qt::Key_W));
@@ -275,19 +319,6 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->mActionMenu->addAction(d->mCloseTabAction);
         d->mCloseTabAction->setEnabled(false);
 
-        d->mActivateNextTabAction = new QAction(i18n("Activate Next Tab"), this);
-        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_next_tab"), d->mActivateNextTabAction);
-        d->mActivateNextTabAction->setEnabled(false);
-        connect(d->mActivateNextTabAction, &QAction::triggered, [this]() {
-            d->activateNextTab();
-        });
-
-        d->mActivatePreviousTabAction = new QAction(i18n("Activate Previous Tab"), this);
-        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_previous_tab"), d->mActivatePreviousTabAction);
-        d->mActivatePreviousTabAction->setEnabled(false);
-        connect(d->mActivatePreviousTabAction, &QAction::triggered, this, [this]() {
-            d->activatePreviousTab();
-        });
 
         d->mMoveTabLeftAction = new QAction(i18n("Move Tab Left"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("move_tab_left"), d->mMoveTabLeftAction);
