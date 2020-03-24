@@ -46,7 +46,7 @@ public:
     Q_REQUIRED_RESULT PGPBlockType determineType() const;
 
     QByteArray msg;
-    PGPBlockType mType;
+    PGPBlockType mType = UnknownBlock;
 };
 
 /** Parses the given message and splits it into OpenPGP blocks and

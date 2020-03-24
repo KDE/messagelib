@@ -418,7 +418,6 @@ void Widget::viewDropEvent(QDropEvent *e)
     if ((e->possibleActions() & Qt::MoveAction) == 0) {     // We can't move anyway
         action = DragCopy;
     } else {
-        action = DragCancel;
         const auto keybstate = QApplication::keyboardModifiers();
         if (keybstate & Qt::CTRL) {
             action = DragCopy;
