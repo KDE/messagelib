@@ -33,8 +33,8 @@
 
 TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     : QWidget(parent)
+    , mZoom(1.0)
 {
-    mZoom = 1.0;
     QVBoxLayout *vbox = new QVBoxLayout(this);
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     connect(mTestWebEngine, &MessageViewer::MailWebEngineView::openUrl, this,
