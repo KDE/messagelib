@@ -158,7 +158,7 @@ bool Util::checkOverwrite(const QUrl &url, QWidget *w)
 #if KIO_VERSION < QT_VERSION_CHECK(5, 69, 0)
         auto job = KIO::stat(url, KIO::StatJob::DestinationSide, 0, KIO::JobFlag::DefaultFlags);
 #else
-        auto job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatDetail::Basic);
+        auto job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatBasic);
 #endif
         KJobWidgets::setWindow(job, w);
         fileExists = job->exec();
