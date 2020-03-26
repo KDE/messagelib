@@ -324,7 +324,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
 #if KIO_VERSION < QT_VERSION_CHECK(5, 69, 0)
                     auto job = KIO::stat(curUrl, KIO::StatJob::DestinationSide, 0);
 #else
-                    auto job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatDetail::Basic);
+                    auto job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatDetail::StatBasic);
 #endif
                     KJobWidgets::setWindow(job, parent);
                     fileExists = job->exec();
