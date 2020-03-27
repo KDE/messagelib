@@ -120,10 +120,8 @@ void EncryptJobTest::testHeaders()
 {
     std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
 
-    MessageComposer::Composer *composer = new MessageComposer::Composer;
-    MessageComposer::EncryptJob *eJob = new MessageComposer::EncryptJob(composer);
+    MessageComposer::EncryptJob *eJob = new MessageComposer::EncryptJob(this);
 
-    QVERIFY(composer);
     QVERIFY(eJob);
 
     QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
@@ -145,7 +143,6 @@ void EncryptJobTest::testHeaders()
 
     KMime::Content *result = eJob->content();
     result->assemble();
-    qDebug() << result->encodedContent();
 
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), mimeType);
