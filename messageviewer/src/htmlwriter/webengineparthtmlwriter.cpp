@@ -77,9 +77,11 @@ void WebEnginePartHtmlWriter::end()
     if (codecValue.isEmpty()) {
         codecValue = QByteArray("UTF-8");
     }
-    stream.setCodec(codecValue.constData());
     //qDebug() << " codecValue ******************************************: " << codecValue;
-    //stream.setCodec("UTF-8");
+    if (data().contains("<meta charset=\"utf-8\">")) {
+        codecValue = QByteArray("UTF-8");
+    }
+    stream.setCodec(codecValue.constData());
     stream << data();
 
     //Bug 387061
