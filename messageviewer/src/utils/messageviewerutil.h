@@ -73,6 +73,7 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s)
 MESSAGEVIEWER_EXPORT const QTextCodec *codecForName(const QByteArray &_str);
 
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString processHtml(const QString &htmlSource, QString &extraHead);
+Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QByteArray htmlCodec(const QByteArray &data, const QByteArray &currentCodec);
 }
 }
 Q_DECLARE_METATYPE(KService::Ptr)
