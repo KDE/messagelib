@@ -220,6 +220,9 @@ void ComposerPrivate::composeStep2()
         sJob->setCryptoMessageFormat(format);
         sJob->setSigningKeys(signers);
         sJob->appendSubjob(mainJob);
+        if (!encrypt) {
+            sJob->setSkeletonMessage(skeletonMessage);
+        }
         mainJob = sJob;
     }
 

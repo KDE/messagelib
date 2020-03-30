@@ -41,6 +41,8 @@
 
 QTEST_MAIN(SignJobTest)
 
+using namespace MessageComposer;
+
 void SignJobTest::initTestCase()
 {
     MessageComposer::Test::setupEnv();
@@ -216,4 +218,64 @@ void SignJobTest::checkSignJob(MessageComposer::SignJob *sJob)
     result->assemble();
 
     ComposerTestUtil::verifySignature(result, QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8(), Kleo::OpenPGPMIMEFormat, KMime::Headers::CE7Bit);
+}
+
+void SignJobTest::testProtectedHeaders_data()
+{
+    QTest::addColumn<bool>("protectedHeaders");
+    QTest::addColumn<QString>("referenceFile");
+
+    QTest::newRow("simple-non-obvoscate") << true << QStringLiteral("protected_headers-non-obvoscate.mbox");
+    QTest::newRow("non-protected_headers") << false << QStringLiteral("non-protected_headers.mbox");
+}
+
+void SignJobTest::testProtectedHeaders()
+{
+    QFETCH(bool,protectedHeaders);
+    QFETCH(QString, referenceFile);
+
+    std::vector< GpgME::Key > keys = Test::getKeys();
+
+    Composer composer;
+    auto sJob = new SignJob(&composer);
+
+    QVERIFY(sJob);
+
+    const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
+    const QString subject(QStringLiteral("asdfghjklö"));
+
+    auto content = new KMime::Content;
+    content->contentType(true)->setMimeType("text/plain");
+    content->setBody(data);
+
+    KMime::Message skeletonMessage;
+    skeletonMessage.contentType(true)->setMimeType("foo/bla");
+    skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
+    skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
+    skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
+    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+
+    sJob->setContent(content);
+    sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    sJob->setSigningKeys(keys);
+    sJob->setSkeletonMessage(&skeletonMessage);
+    sJob->setProtectedHeaders(protectedHeaders);
+
+    VERIFYEXEC(sJob);
+
+    QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
+
+    KMime::Content *result = sJob->content();
+    result->assemble();
+
+    QFile f(referenceFile);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    const QByteArray signedContent(result->contents().at(0)->encodedContent());
+    f.write(signedContent);
+    if (!signedContent.endsWith('\n')) {
+        f.write("\n");
+    }
+    f.close();
+
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
 }

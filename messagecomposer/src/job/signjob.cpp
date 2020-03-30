@@ -21,6 +21,7 @@
 #include "job/signjob.h"
 
 #include "contentjobbase_p.h"
+#include "job/protectedheaders.h"
 #include "utils/util_p.h"
 
 #include <Libkleo/Enum>
@@ -49,8 +50,11 @@ public:
     }
 
     KMime::Content *content = nullptr;
+    KMime::Message *skeletonMessage = nullptr;
     std::vector<GpgME::Key> signers;
     Kleo::CryptoMessageFormat format;
+
+    bool protectedHeaders = true;
 
     // copied from messagecomposer.cpp
     bool binaryHint(Kleo::CryptoMessageFormat f)
@@ -118,11 +122,66 @@ void SignJob::setSigningKeys(std::vector<GpgME::Key> &signers)
     d->signers = signers;
 }
 
+void SignJob::setSkeletonMessage(KMime::Message *skeletonMessage)
+{
+    Q_D(SignJob);
+
+    d->skeletonMessage = skeletonMessage;
+}
+
+void SignJob::setProtectedHeaders(bool protectedHeaders)
+{
+    Q_D(SignJob);
+
+    d->protectedHeaders = protectedHeaders;
+}
+
 KMime::Content *SignJob::origContent()
 {
     Q_D(SignJob);
 
     return d->content;
+}
+
+void SignJob::doStart()
+{
+    Q_D(SignJob);
+    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+
+    if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
+        ProtectedHeadersJob *pJob = new ProtectedHeadersJob;
+        pJob->setContent(d->content);
+        pJob->setSkeletonMessage(d->skeletonMessage);
+        pJob->setObvoscate(false);
+        QObject::connect(pJob, &ProtectedHeadersJob::finished, this, [d, pJob](KJob *job) {
+            if (job->error()) {
+                return;
+            }
+            d->content = pJob->content();
+        });
+        appendSubjob(pJob);
+    }
+
+    ContentJobBase::doStart();
+}
+
+void SignJob::slotResult(KJob *job)
+{
+    Q_D(SignJob);
+    if (error()) {
+        ContentJobBase::slotResult(job);
+        return;
+    }
+    if (subjobs().size() == 2) {
+        auto pjob = static_cast<ProtectedHeadersJob *>(subjobs().last());
+        if (pjob) {
+            auto cjob = dynamic_cast<ContentJobBase *>(job);
+            Q_ASSERT(cjob);
+            pjob->setContent(cjob->content());
+        }
+    }
+
+    ContentJobBase::slotResult(job);
 }
 
 void SignJob::process()

@@ -52,9 +52,14 @@ public:
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
     void setSigningKeys(std::vector<GpgME::Key> &signers);
 
+    void setSkeletonMessage(KMime::Message *skeletonMessage);
+    void setProtectedHeaders(bool protectedHeaders);
+
     Q_REQUIRED_RESULT KMime::Content *origContent();
 
 protected Q_SLOTS:
+    void doStart() override;
+    void slotResult(KJob *job) override;
     void process() override;
 
 private:

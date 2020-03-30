@@ -44,6 +44,8 @@ private Q_SLOTS:
     void testRecommentationRFC3156();
     void testMixedContent();
 
+    void testProtectedHeaders_data();
+    void testProtectedHeaders();
 private:
     void checkSignJob(MessageComposer::SignJob *sJob);
 };
