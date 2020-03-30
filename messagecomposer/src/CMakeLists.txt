@@ -35,6 +35,7 @@ set( messagecomposer_job_src
     job/savecontactpreferencejob.cpp
     job/attachmentvcardfromaddressbookjob.cpp
     job/attachmentclipboardjob.cpp
+    job/protectedheaders.cpp
     )
 
 set( messagecomposer_statusbarwidget_src

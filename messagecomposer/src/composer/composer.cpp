@@ -278,6 +278,7 @@ QList<ContentJobBase *> ComposerPrivate::createEncryptJobs(ContentJobBase *conte
             eJob->setCryptoMessageFormat(format);
             eJob->setEncryptionKeys(recipients.second);
             eJob->setRecipients(recipients.first);
+            eJob->setSkeletonMessage(skeletonMessage);
             subJob = eJob;
         }
         qCDebug(MESSAGECOMPOSER_LOG) << "subJob" << subJob;

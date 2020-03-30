@@ -21,6 +21,7 @@
 #include "job/encryptjob.h"
 
 #include "contentjobbase_p.h"
+#include "job/protectedheaders.h"
 #include "utils/util_p.h"
 
 #include <Libkleo/Enum>
@@ -29,9 +30,6 @@
 #include <QGpgME/EncryptJob>
 
 #include "messagecomposer_debug.h"
-
-#include <kmime/kmime_message.h>
-#include <kmime/kmime_content.h>
 
 #include <gpgme++/global.h>
 #include <gpgme++/signingresult.h>
@@ -52,6 +50,10 @@ public:
     std::vector<GpgME::Key> keys;
     Kleo::CryptoMessageFormat format;
     KMime::Content *content = nullptr;
+    KMime::Message *skeletonMessage = nullptr;
+
+    bool protectedHeaders = true;
+    bool protectedHeadersObvoscate = false;
 
     // copied from messagecomposer.cpp
     bool binaryHint(Kleo::CryptoMessageFormat f)
@@ -122,6 +124,27 @@ void EncryptJob::setRecipients(const QStringList &recipients)
     d->recipients = recipients;
 }
 
+void EncryptJob::setSkeletonMessage(KMime::Message* skeletonMessage)
+{
+    Q_D(EncryptJob);
+
+    d->skeletonMessage = skeletonMessage;
+}
+
+void EncryptJob::setProtectedHeaders(bool protectedHeaders)
+{
+    Q_D(EncryptJob);
+
+    d->protectedHeaders = protectedHeaders;
+}
+
+void EncryptJob::setProtectedHeadersObvoscate(bool protectedHeadersObvoscate)
+{
+    Q_D(EncryptJob);
+
+    d->protectedHeadersObvoscate = protectedHeadersObvoscate;
+}
+
 QStringList EncryptJob::recipients() const
 {
     Q_D(const EncryptJob);
@@ -136,7 +159,7 @@ std::vector<GpgME::Key> EncryptJob::encryptionKeys() const
     return d->keys;
 }
 
-void EncryptJob::process()
+void EncryptJob::doStart()
 {
     Q_D(EncryptJob);
     Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
@@ -149,11 +172,57 @@ void EncryptJob::process()
     // if setContent hasn't been called, we assume that a subjob was added
     // and we want to use that
     if (!d->content || !d->content->hasContent()) {
+        if (d->subjobContents.size() == 1) {
+            d->content = d->subjobContents.first();
+        }
+    }
+
+    if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
+        ProtectedHeadersJob *pJob = new ProtectedHeadersJob;
+        pJob->setContent(d->content);
+        pJob->setSkeletonMessage(d->skeletonMessage);
+        pJob->setObvoscate(d->protectedHeadersObvoscate);
+        QObject::connect(pJob, &ProtectedHeadersJob::finished, this, [d, pJob](KJob *job) {
+            if (job->error()) {
+                return;
+            }
+            d->content = pJob->content();
+        });
+        appendSubjob(pJob);
+    }
+
+    ContentJobBase::doStart();
+}
+
+void EncryptJob::slotResult(KJob *job)
+{
+    Q_D(EncryptJob);
+    if (error()) {
+        ContentJobBase::slotResult(job);
+        return;
+    }
+    if (subjobs().size() == 2) {
+        auto pjob = static_cast<ProtectedHeadersJob *>(subjobs().last());
+        if (pjob) {
+            Q_ASSERT(dynamic_cast<ContentJobBase *>(job));
+            auto cjob = static_cast<ContentJobBase *>(job);
+            pjob->setContent(cjob->content());
+        }
+    }
+
+    ContentJobBase::slotResult(job);
+}
+
+void EncryptJob::process()
+{
+    Q_D(EncryptJob);
+
+    // if setContent hasn't been called, we assume that a subjob was added
+    // and we want to use that
+    if (!d->content || !d->content->hasContent()) {
         Q_ASSERT(d->subjobContents.size() == 1);
         d->content = d->subjobContents.first();
     }
-
-    //d->resultContent = new KMime::Content;
 
     const QGpgME::Protocol *proto = nullptr;
     if (d->format & Kleo::AnyOpenPGP) {

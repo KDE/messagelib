@@ -1,0 +1,16 @@
+Content-Type: multipart/mixed; boundary="123456789"; protected-headers="v1"
+To: to@test.de, to2@test.de
+Cc: cc@test.de, cc2@test.de
+Subject: =?UTF-8?B?YXNkZmdoamtsw7Y=?=
+
+--123456789
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"; protected-headers="v1"
+
+Subject: asdfghjkl=C3=B6
+--123456789
+Content-Type: text/plain
+
+one flew over the cuckoo's nest
+--123456789--

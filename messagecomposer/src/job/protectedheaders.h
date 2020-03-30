@@ -1,6 +1,5 @@
 /*
-  Copyright (C) 2009 Klaralvdalens Datakonsult AB, a KDAB Group company, info@kdab.net
-  Copyright (c) 2009 Leo Franchi <lfranchi@kde.org>
+  Copyright (C) 2020 Sandro Knauß <sknauss@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -18,57 +17,46 @@
   02110-1301, USA.
 */
 
-#ifndef MESSAGECOMPOSER_ENCRYPTJOB_H
-#define MESSAGECOMPOSER_ENCRYPTJOB_H
+#ifndef MESSAGECOMPOSER_PROTECTEDHEADERSJOB_H
+#define MESSAGECOMPOSER_PROTECTEDHEADERSJOB_H
 
-#include "abstractencryptjob.h"
 #include "contentjobbase.h"
 #include "infopart.h"
 #include "messagecomposer_export.h"
-
-#include <Libkleo/Enum>
-
-#include <gpgme++/key.h>
-#include <vector>
 
 namespace KMime {
 class Content;
 }
 
 namespace MessageComposer {
-class EncryptJobPrivate;
+class ProtectedHeadersJobPrivate;
 
 /**
-  Encrypt the contents of a message .
-  Used as a subjob of CryptoMessage
+  Copies headers from skeleton message to content.
+  It is used for Protected Headers for Cryptographic E-mail
+  currently a draft for RFC:
+  https://datatracker.ietf.org/doc/draft-autocrypt-lamps-protected-headers/
+  Used as a subjob of EncryptJob/SignJob/SignEncryptJob
 */
-class MESSAGECOMPOSER_EXPORT EncryptJob : public ContentJobBase, public MessageComposer::AbstractEncryptJob
+class MESSAGECOMPOSER_EXPORT ProtectedHeadersJob : public ContentJobBase
 {
     Q_OBJECT
 
 public:
-    explicit EncryptJob(QObject *parent = nullptr);
-    ~EncryptJob() override;
+    explicit ProtectedHeadersJob(QObject *parent = nullptr);
+    ~ProtectedHeadersJob() override;
 
     void setContent(KMime::Content *content);
-    void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
-    void setEncryptionKeys(const std::vector<GpgME::Key> &keys) override;
-    void setRecipients(const QStringList &rec) override;
     void setSkeletonMessage(KMime::Message *skeletonMessage);
 
-    void setProtectedHeaders(bool protectedHeaders);
-    void setProtectedHeadersObvoscate(bool protectedHeadersObvoscate);
-
-    std::vector<GpgME::Key> encryptionKeys() const override;
-    QStringList recipients() const override;
+    void setObvoscate(bool obvoscate);
 
 protected Q_SLOTS:
     void doStart() override;
-    void slotResult(KJob *job) override;
     void process() override;
 
 private:
-    Q_DECLARE_PRIVATE(EncryptJob)
+    Q_DECLARE_PRIVATE(ProtectedHeadersJob)
 };
 }
 

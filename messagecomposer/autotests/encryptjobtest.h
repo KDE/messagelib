@@ -40,7 +40,11 @@ public Q_SLOTS:
 private Q_SLOTS:
     void testContentDirect();
     void testContentChained();
+    void testContentSubjobChained();
     void testHeaders();
+
+    void testProtectedHeaders_data();
+    void testProtectedHeaders();
 
 private:
     void checkEncryption(MessageComposer::EncryptJob *eJob);

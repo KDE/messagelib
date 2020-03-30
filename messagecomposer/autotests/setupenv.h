@@ -23,6 +23,8 @@
 
 #include <gpgme++/key.h>
 
+#include <KMime/Message>
+
 namespace MessageComposer {
 namespace Test {
 /**
@@ -37,6 +39,17 @@ void setupEnv();
 * Returns list of keys used in various crypto routines
 */
 std::vector<GpgME::Key> getKeys(bool smime = false);
+
+/**
+* Loads a message from filename and returns a message pointer
+*/
+KMime::Message::Ptr loadMessageFromFile(const QString &filename);
+
+/**
+* compare two mails via files.
+* If the files are not euqal print diff output.
+*/
+void compareFile(const QString &outFile, const QString &referenceFile);
 }
 }
 
