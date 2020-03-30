@@ -35,6 +35,9 @@ private Q_SLOTS:
 
     void shouldExtractHtml();
     void shouldExtractHtml_data();
+
+    void shouldUseCorrectCodec();
+    void shouldUseCorrectCodec_data();
 };
 
 #endif // MESSAGEVIEWERUTILSTEST_H
