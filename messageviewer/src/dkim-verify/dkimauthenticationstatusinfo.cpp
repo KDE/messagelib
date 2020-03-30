@@ -47,13 +47,14 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key,
     int index = valueKey.indexOf(QRegularExpression(regStr), 0, &match);
     if (index != -1) {
         mAuthservId = match.captured(1);
-        if (!match.captured(2).isEmpty()) {
-            mAuthVersion = match.captured(2).toInt();
+        const QString authVersionStr = match.captured(2);
+        if (!authVersionStr.isEmpty()) {
+            mAuthVersion = authVersionStr.toInt();
         } else {
             mAuthVersion = 1;
         }
         valueKey = valueKey.right(valueKey.length() - (index + match.capturedLength(0)));
-        //qDebug() << " match.captured(0)"<<match.captured(0)<<"match.captured(1)" <<match.captured(1) << match.captured(2);
+        //qDebug() << " match.captured(0)"<<match.captured(0)<<"match.captured(1)" <<match.captured(1) << authVersionStr;
         //qDebug() << " valueKey" << valueKey;
     } else {
         return false;
@@ -99,9 +100,9 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     }
     //qDebug() << " match" << match.captured(0) << match.captured(1) << match.capturedTexts();
     authStatusInfo.method = match.captured(1);
-
-    if (!match.captured(2).isEmpty()) {
-        authStatusInfo.methodVersion = match.captured(2).toInt();
+    const QString authVersionStr = match.captured(2);
+    if (!authVersionStr.isEmpty()) {
+        authStatusInfo.methodVersion = authVersionStr.toInt();
     } else {
         authStatusInfo.methodVersion = 1;
     }
