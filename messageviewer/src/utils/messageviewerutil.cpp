@@ -735,3 +735,17 @@ QString Util::processHtml(const QString &htmlSource, QString &extraHead)
     s = textBeforeDoctype + s;
     return s;
 }
+
+
+QByteArray Util::htmlCodec(const QByteArray &data, const QByteArray &codec)
+{
+    QByteArray currentCodec = codec;
+    if (currentCodec.isEmpty()) {
+        currentCodec = QByteArray("UTF-8");
+    }
+    //qDebug() << " codecValue ******************************************: " << codecValue;
+    if (data.contains("<meta charset=\"utf-8\">")) {
+        currentCodec = QByteArray("UTF-8");
+    }
+    return currentCodec;
+}

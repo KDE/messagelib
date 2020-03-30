@@ -20,7 +20,7 @@
 
 #include "messageviewer_debug.h"
 #include "viewer/webengine/mailwebengineview.h"
-
+#include "messageviewer/messageviewerutil.h"
 #include <QUrl>
 
 #include <cassert>
@@ -72,15 +72,8 @@ void WebEnginePartHtmlWriter::end()
     mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX")+ QLatin1String(".html"));
     mTempFile->open();
     QTextStream stream(mTempFile);
-    //TODO we need to change codec when mail use different codec.
-    QByteArray codecValue = codec();
-    if (codecValue.isEmpty()) {
-        codecValue = QByteArray("UTF-8");
-    }
-    //qDebug() << " codecValue ******************************************: " << codecValue;
-    if (data().contains("<meta charset=\"utf-8\">")) {
-        codecValue = QByteArray("UTF-8");
-    }
+
+    const QByteArray codecValue = Util::htmlCodec(data(), codec());
     stream.setCodec(codecValue.constData());
     stream << data();
 
