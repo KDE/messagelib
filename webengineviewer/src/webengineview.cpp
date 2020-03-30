@@ -34,13 +34,7 @@ class WebEngineViewer::WebEngineViewPrivate
 {
 public:
     explicit WebEngineViewPrivate(WebEngineView *q)
-        : mSavedRelativePosition(-1)
-        , mCurrentWidget(nullptr)
-        , mWebEngineNavigatorInterceptor(nullptr)
-        , mWebEngineNavigatorInterceptorView(nullptr)
-        , mPhishingDatabase(nullptr)
-        , mCrashCount(0)
-        , q(q)
+        : q(q)
     {
     }
 
@@ -78,13 +72,13 @@ public:
         }
     }
 
-    qreal mSavedRelativePosition;
+    qreal mSavedRelativePosition = -1;
     QWidget *mCurrentWidget = nullptr;
     WebEngineManageScript *mManagerScript = nullptr;
     WebEngineNavigationRequestInterceptor *mWebEngineNavigatorInterceptor = nullptr;
     WebEngineView *mWebEngineNavigatorInterceptorView = nullptr;
     LocalDataBaseManager *mPhishingDatabase = nullptr;
-    int mCrashCount;
+    int mCrashCount = 0;
 
 private:
     WebEngineView *const q;
