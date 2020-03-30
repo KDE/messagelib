@@ -97,3 +97,23 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
     output = QStringLiteral("That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote class=\"protonmail_quote\"><br><p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent installation I had an issue with the Orthanc-Module, during initialization of the database:</p>\r\n<p><span style=\" font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" font-family:'monospace','Noto Sans';\"><br />'Something' as changed in the setup of timezone data (between December and now so to say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">To make the story short, this module pytzdata comes from the pypi-package pytzdata and contains basically the same stuff as pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA 290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p>");
     QTest::newRow("bug418482") << input << output;
 }
+
+void MessageViewerUtilsTest::shouldUseCorrectCodec()
+{
+    QFETCH(QByteArray, currentCodec);
+    QFETCH(QByteArray, data);
+    QFETCH(QByteArray, codecResult);
+
+    QCOMPARE(MessageViewer::Util::htmlCodec(data, currentCodec), codecResult);
+}
+
+void MessageViewerUtilsTest::shouldUseCorrectCodec_data()
+{
+    QTest::addColumn<QByteArray>("currentCodec");
+    QTest::addColumn<QByteArray>("data");
+    QTest::addColumn<QByteArray>("codecResult");
+    QTest::newRow("empty UTF-8") << QByteArray("UTF-8") << QByteArray() << QByteArray("UTF-8");
+    QTest::newRow("empty2 UTF-8") << QByteArray("UTF-8") << QByteArray("foo bla blo") << QByteArray("UTF-8");
+    QTest::newRow("codec windows-1252") << QByteArray("windows-1252") << QByteArray("foo bla blo") << QByteArray("windows-1252");
+    QTest::newRow("codec windows-1252 with meta charset") << QByteArray("windows-1252") << QByteArray("foo bla blo <meta charset=\"utf-8\">") << QByteArray("UTF-8");
+}
