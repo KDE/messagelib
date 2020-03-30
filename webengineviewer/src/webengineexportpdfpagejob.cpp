@@ -37,6 +37,7 @@ void WebEngineExportPdfPageJob::start()
 {
     if (!canStart()) {
         qCWarning(WEBENGINEVIEWER_LOG) << "webengineview not defined or path is not defined.! It's a bug";
+        Q_EMIT exportPdfFailed();
         deleteLater();
         return;
     }

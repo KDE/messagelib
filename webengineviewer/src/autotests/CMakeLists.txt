@@ -21,3 +21,9 @@ ecm_add_test(webengineexporthtmlpagejobtest.cpp ${testwebengineviewer_webengine_
     NAME_PREFIX "webengineviewer-"
     LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer
 )
+
+ecm_add_test(webengineexportpdfpagejobtest.cpp ${testwebengineviewer_webengine_SRCS}
+    TEST_NAME webengineexportpdfpagejobtest
+    NAME_PREFIX "webengineviewer-"
+    LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer
+)
