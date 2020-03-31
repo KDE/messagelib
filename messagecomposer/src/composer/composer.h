@@ -85,7 +85,6 @@ private:
     Q_DECLARE_PRIVATE(Composer)
 
     Q_PRIVATE_SLOT(d_func(), void doStart())
-    Q_PRIVATE_SLOT(d_func(), void skeletonJobFinished(KJob *))
     Q_PRIVATE_SLOT(d_func(), void contentJobFinished(KJob *))
     Q_PRIVATE_SLOT(d_func(), void attachmentsFinished(KJob *))
 };

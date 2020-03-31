@@ -54,7 +54,6 @@ public:
     void init();
     void doStart(); // slot
     void composeStep1();
-    void skeletonJobFinished(KJob *job);   // slot
     void composeStep2();
     QList<ContentJobBase *> createEncryptJobs(ContentJobBase *contentJob, bool sign);
     void contentJobFinished(KJob *job);   // slot
@@ -114,28 +113,21 @@ void ComposerPrivate::composeStep1()
 
     // Create skeleton message (containing headers only; no content).
     SkeletonMessageJob *skeletonJob = new SkeletonMessageJob(infoPart, globalPart, q);
-    QObject::connect(skeletonJob, &SkeletonMessageJob::finished, q, [this](KJob *job) {
-        skeletonJobFinished(job);
+    QObject::connect(skeletonJob, &SkeletonMessageJob::finished, q, [this, skeletonJob](KJob *job) {
+        if (job->error()) {
+            return; // KCompositeJob takes care of the error.
+        }
+
+        // SkeletonMessageJob is a special job creating a Message instead of a Content.
+        Q_ASSERT(skeletonMessage == nullptr);
+        skeletonMessage = skeletonJob->message();
+        Q_ASSERT(skeletonMessage);
+        skeletonMessage->assemble();
+
+        composeStep2();
     });
     q->addSubjob(skeletonJob);
     skeletonJob->start();
-}
-
-void ComposerPrivate::skeletonJobFinished(KJob *job)
-{
-    if (job->error()) {
-        return; // KCompositeJob takes care of the error.
-    }
-
-    Q_ASSERT(dynamic_cast<SkeletonMessageJob *>(job));
-    SkeletonMessageJob *sjob = static_cast<SkeletonMessageJob *>(job);
-    // SkeletonMessageJob is a special job creating a Message instead of a Content.
-    Q_ASSERT(skeletonMessage == nullptr);
-    skeletonMessage = sjob->message();
-    Q_ASSERT(skeletonMessage);
-    skeletonMessage->assemble();
-
-    composeStep2();
 }
 
 void ComposerPrivate::composeStep2()
