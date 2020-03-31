@@ -400,6 +400,20 @@ void StringUtilTest::test_parseMailtoUrlExtra()
     }
 }
 
+void StringUtilTest::test_parseMailToWithUtf8Encoded()
+{
+    const QByteArray ba("mailto:=?utf-8?B?TWnFgm9zeg==?= Vo %3Craco.cki@foo.com%3E");
+    QUrl url = QUrl(QUrl::fromPercentEncoding(ba));
+    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(url);
+    QCOMPARE(data.size(), 1);
+    for (int i = 0; i < 1; ++i) {
+        if (data.at(i).first == QLatin1String("to")) {
+            QCOMPARE(data.at(i).second, QString::fromUtf8("Mi\u0142osz Vo <raco.cki@foo.com>"));
+        }
+    }
+
+}
+
 void StringUtilTest::test_parseMailToBug366981()
 {
     const QString ba(QStringLiteral("mailto:test@test.com?subject=test&body=line1%0D%0Aline2"));
@@ -473,7 +487,7 @@ void StringUtilTest::test_parseMailToBug406208()
         QString ba(QStringLiteral(
                        "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
-        qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
+        //qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
         QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(data.size(), 2);
         QCOMPARE(data.at(0).first, QLatin1String("body"));
@@ -486,7 +500,7 @@ void StringUtilTest::test_parseMailToBug406208()
         QString ba(QStringLiteral(
                        "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428%20%23%23bla&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
-        qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
+        //qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
         QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(data.size(), 2);
         QCOMPARE(data.at(0).first, QLatin1String("body"));
