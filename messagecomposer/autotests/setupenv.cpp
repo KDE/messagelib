@@ -26,6 +26,7 @@
 
 #include <QFile>
 #include <QDir>
+#include <QStandardPaths>
 
 using namespace MessageComposer;
 
