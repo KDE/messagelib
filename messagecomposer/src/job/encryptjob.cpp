@@ -167,9 +167,6 @@ void EncryptJob::process()
 
     Q_ASSERT(proto);
 
-    qCDebug(MESSAGECOMPOSER_LOG) << "got backend, starting job";
-    QGpgME::EncryptJob *seJob = proto->encryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat);
-
     // for now just do the main recipients
     QByteArray encryptedBody;
     QByteArray content;
@@ -180,22 +177,19 @@ void EncryptJob::process()
         content = d->content->encodedContent();
     }
 
-    // FIXME: Make async!
-    const GpgME::EncryptionResult res = seJob->exec(d->keys,
-                                                    content,
-                                                    true, // 'alwaysTrust' provided keys
-                                                    encryptedBody);
+    qCDebug(MESSAGECOMPOSER_LOG) << "got backend, starting job";
+    QGpgME::EncryptJob *eJob = proto->encryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat);
 
-    // exec'ed jobs don't delete themselves
-    seJob->deleteLater();
+    QObject::connect(eJob, &QGpgME::EncryptJob::result, this, [this, d](const GpgME::EncryptionResult &result, const QByteArray &cipherText, const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
+        if (result.error()) {
+            setError(result.error().code());
+            setErrorText(QString::fromLocal8Bit(result.error().asString()));
+            emitResult();
+            return;
+        }
+        d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false);
 
-    if (res.error()) {
-        setError(res.error().code());
-        setErrorText(QString::fromLocal8Bit(res.error().asString()));
         emitResult();
-        return;
-    }
-    d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, encryptedBody, d->format, false);
-
-    emitResult();
+    });
+    eJob->start(d->keys, content, true);
 }
