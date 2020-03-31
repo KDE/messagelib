@@ -274,6 +274,7 @@ QList<ContentJobBase *> ComposerPrivate::createEncryptJobs(ContentJobBase *conte
             seJob->setSigningKeys(signers);
             seJob->setEncryptionKeys(recipients.second);
             seJob->setRecipients(recipients.first);
+            seJob->setSkeletonMessage(skeletonMessage);
 
             subJob = seJob;
         } else {

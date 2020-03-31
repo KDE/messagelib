@@ -57,12 +57,19 @@ public:
     void setEncryptionKeys(const std::vector<GpgME::Key> &keys) override;
     void setRecipients(const QStringList &rec) override;
 
+    void setSkeletonMessage(KMime::Message *skeletonMessage);
+
+    void setProtectedHeaders(bool protectedHeaders);
+    void setProtectedHeadersObvoscate(bool protectedHeadersObvoscate);
+
     Q_REQUIRED_RESULT std::vector<GpgME::Key> encryptionKeys() const override;
     Q_REQUIRED_RESULT QStringList recipients() const override;
 
     Q_REQUIRED_RESULT KMime::Content *origContent();
 
 protected Q_SLOTS:
+    void doStart() override;
+    void slotResult(KJob *job) override;
     void process() override;
 
 private:

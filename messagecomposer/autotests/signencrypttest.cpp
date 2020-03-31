@@ -1,6 +1,5 @@
 /*
-  Copyright (C) 2009 Klaralvdalens Datakonsult AB, a KDAB Group company, info@kdab.net
-  Copyright (c) 2009 Leo Franchi <lfranchi@kde.org>
+  Copyright (C) 2020 Sandro Knauß <sknauss@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -31,16 +30,13 @@
 #include <KJob>
 
 #include <MessageComposer/Composer>
-#include <MessageComposer/EncryptJob>
+#include <MessageComposer/SignEncryptJob>
 #include <MessageComposer/MainTextJob>
-#include <MessageComposer/SignJob>
+#include <MessageComposer/TransparentJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/TextPart>
 
-#include <MimeTreeParser/NodeHelper>
 #include <setupenv.h>
-
-#include <MessageCore/NodeHelper>
 
 QTEST_MAIN(SignEncryptTest)
 
@@ -51,100 +47,153 @@ void SignEncryptTest::initTestCase()
     Test::setupEnv();
 }
 
+void SignEncryptTest::testContent_data()
+{
+    QTest::addColumn<int>("cryptoMessageFormat");
+    QTest::addColumn<QString>("error");
+
+    QTest::newRow("OpenPGPMimeFormat") << (int) Kleo::OpenPGPMIMEFormat << QString();
+    QTest::newRow("InlineOpenPGPFormat") << (int) Kleo::InlineOpenPGPFormat << QString();
+    QTest::newRow("SMIMEFormat") << (int) Kleo::SMIMEFormat << QStringLiteral("Not implemented");
+    QTest::newRow("SMIMEOpaqueFormat") << (int) Kleo::SMIMEOpaqueFormat << QStringLiteral("Not implemented");
+}
+
 void SignEncryptTest::testContent()
 {
+    QFETCH(int, cryptoMessageFormat);
+    QFETCH(QString, error);
+
     std::vector< GpgME::Key > keys = Test::getKeys();
+    const QString data(QString::fromLocal8Bit("one flew over the cuckoo's nest"));
 
-    Composer *composer = new Composer;
-    SignJob *sJob = new SignJob(composer);
-    EncryptJob *eJob = new EncryptJob(composer);
+    Composer composer;
 
-    QVERIFY(composer);
-    QVERIFY(sJob);
-    QVERIFY(eJob);
+    const QVector<QByteArray> charsets = {"us-ascii"};
+    composer.globalPart()->setCharsets(charsets);
 
-    QVector<QByteArray> charsets;
-    charsets << "us-ascii";
-    composer->globalPart()->setCharsets(charsets);
-    TextPart *part = new TextPart(this);
-    part->setWordWrappingEnabled(false);
-    part->setCleanPlainText(QStringLiteral("one flew over the cuckoo's nest"));
+    TextPart part;
+    part.setWordWrappingEnabled(false);
+    part.setCleanPlainText(data);
 
-    MainTextJob *mainTextJob = new MainTextJob(part, composer);
+    auto mainTextJob = new MainTextJob(&part, &composer);
+    auto seJob = new SignEncryptJob(&composer);
 
-    QVERIFY(composer);
     QVERIFY(mainTextJob);
 
     VERIFYEXEC(mainTextJob);
 
-    QStringList recipients;
-    recipients << QString::fromLocal8Bit("test@kolab.org");
+    const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
 
-    sJob->setContent(mainTextJob->content());
-    sJob->setSigningKeys(keys);
-    sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    seJob->setContent(mainTextJob->content());
+    seJob->setSigningKeys(keys);
+    seJob->setCryptoMessageFormat((Kleo::CryptoMessageFormat)cryptoMessageFormat);
+    seJob->setRecipients(recipients);
+    seJob->setEncryptionKeys(keys);
 
-    eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
-    eJob->setRecipients(recipients);
-    eJob->setEncryptionKeys(keys);
+    if (!error.isEmpty()) {
+        QVERIFY(!seJob->exec());
+        QCOMPARE(seJob->errorString(), error);
+        return;
+    }
 
-    eJob->appendSubjob(sJob);
-
-    VERIFYEXEC(eJob);
-
-    KMime::Content *result = eJob->content();
+    VERIFYEXEC(seJob);
+    KMime::Content *result = seJob->content();
     QVERIFY(result);
     result->assemble();
 
-    qDebug() << "result:" << result->encodedContent();
+    ComposerTestUtil::verifySignatureAndEncryption(
+        result,
+        data.toUtf8(),
+        (Kleo::CryptoMessageFormat)cryptoMessageFormat,
+        false,
+        true);
+
+    delete result;
+}
+
+void SignEncryptTest::testContentSubjobChained()
+{
+    std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
+
+    const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
+    KMime::Message skeletonMessage;
+
+    auto content = new KMime::Content;
+    content->contentType(true)->setMimeType("text/plain");
+    content->setBody(data);
+
+    auto tJob = new TransparentJob;
+    tJob->setContent(content);
+
+    const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
+
+    Composer composer;
+    auto seJob = new SignEncryptJob(&composer);
+
+    seJob->setSigningKeys(keys);
+    seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    seJob->setRecipients(recipients);
+    seJob->setEncryptionKeys(keys);
+    seJob->setSkeletonMessage(&skeletonMessage);
+    seJob->appendSubjob(tJob);
+
+    VERIFYEXEC(seJob);
+    KMime::Content *result = seJob->content();
+    QVERIFY(result);
+    result->assemble();
 
     ComposerTestUtil::verifySignatureAndEncryption(
         result,
-        QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8(),
-        Kleo::OpenPGPMIMEFormat);
+        data,
+        Kleo::OpenPGPMIMEFormat,
+        false,
+        true);
+
+    delete result;
 }
+
 
 void SignEncryptTest::testHeaders()
 {
     std::vector< GpgME::Key > keys = Test::getKeys();
 
-    Composer *composer = new Composer;
-    SignJob *sJob = new SignJob(composer);
-    EncryptJob *eJob = new EncryptJob(composer);
+    Composer composer;
+    auto seJob = new SignEncryptJob(&composer);
 
-    QVERIFY(composer);
-    QVERIFY(sJob);
-    QVERIFY(eJob);
+    QVERIFY(seJob);
 
-    QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
-    KMime::Content *content = new KMime::Content;
+    const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
+    auto content = new KMime::Content;
     content->setBody(data);
 
-    QStringList recipients;
-    recipients << QString::fromLocal8Bit("test@kolab.org");
+    const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
 
-    sJob->setContent(content);
-    sJob->setSigningKeys(keys);
-    sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    seJob->setContent(content);
+    seJob->setSigningKeys(keys);
+    seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    seJob->setRecipients(recipients);
+    seJob->setEncryptionKeys(keys);
 
-    eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
-    eJob->setRecipients(recipients);
-    eJob->setEncryptionKeys(keys);
+    VERIFYEXEC(seJob);
 
-    eJob->appendSubjob(sJob);
-
-    VERIFYEXEC(eJob);
-
-    KMime::Content *result = eJob->content();
+    KMime::Content *result = seJob->content();
     QVERIFY(result);
     result->assemble();
 
-    QByteArray mimeType("multipart/encrypted");
-    QByteArray charset("ISO-8859-1");
+    QFile f(QStringLiteral("test"));
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    const QByteArray encodedContent(result->encodedContent());
+    f.write(encodedContent);
+    if (!encodedContent.endsWith('\n')) {
+        f.write("\n");
+    }
+    f.close();
 
     QVERIFY(result->contentType(false));
-    QCOMPARE(result->contentType()->mimeType(), mimeType);
-    QCOMPARE(result->contentType()->charset(), charset);
+    QCOMPARE(result->contentType()->mimeType(), "multipart/encrypted");
+    QCOMPARE(result->contentType()->charset(), "ISO-8859-1");
     QCOMPARE(result->contentType()->parameter(QString::fromLocal8Bit("protocol")), QString::fromLocal8Bit("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
+
+    delete result;
 }

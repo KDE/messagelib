@@ -1,6 +1,5 @@
 /*
-  Copyright (C) 2009 Klaralvdalens Datakonsult AB, a KDAB Group company, info@kdab.net
-  Copyright (c) 2009 Leo Franchi <lfranchi@kde.org>
+  Copyright (C) 2020 Sandro Knauß <sknauss@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -31,7 +30,9 @@ public Q_SLOTS:
     void initTestCase();
 
 private Q_SLOTS:
+    void testContent_data();
     void testContent();
+    void testContentSubjobChained();
     void testHeaders();
 };
 

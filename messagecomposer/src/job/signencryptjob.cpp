@@ -21,7 +21,7 @@
 #include "job/signencryptjob.h"
 
 #include "contentjobbase_p.h"
-#include "utils/util.h"
+#include "job/protectedheaders.h"
 #include "utils/util_p.h"
 
 #include <Libkleo/Enum>
@@ -54,6 +54,10 @@ public:
     QStringList recipients;
     Kleo::CryptoMessageFormat format;
     KMime::Content *content = nullptr;
+    KMime::Message *skeletonMessage = nullptr;
+
+    bool protectedHeaders = true;
+    bool protectedHeadersObvoscate = false;
 
     // copied from messagecomposer.cpp
     bool binaryHint(Kleo::CryptoMessageFormat f)
@@ -130,6 +134,27 @@ void SignEncryptJob::setRecipients(const QStringList &recipients)
     d->recipients = recipients;
 }
 
+void SignEncryptJob::setSkeletonMessage(KMime::Message *skeletonMessage)
+{
+    Q_D(SignEncryptJob);
+
+    d->skeletonMessage = skeletonMessage;
+}
+
+void SignEncryptJob::setProtectedHeaders(bool protectedHeaders)
+{
+    Q_D(SignEncryptJob);
+
+    d->protectedHeaders = protectedHeaders;
+}
+
+void SignEncryptJob::setProtectedHeadersObvoscate(bool protectedHeadersObvoscate)
+{
+    Q_D(SignEncryptJob);
+
+    d->protectedHeadersObvoscate = protectedHeadersObvoscate;
+}
+
 QStringList SignEncryptJob::recipients() const
 {
     Q_D(const SignEncryptJob);
@@ -142,6 +167,48 @@ std::vector<GpgME::Key> SignEncryptJob::encryptionKeys() const
     Q_D(const SignEncryptJob);
 
     return d->encKeys;
+}
+
+void SignEncryptJob::doStart()
+{
+    Q_D(SignEncryptJob);
+    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+
+    if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
+        ProtectedHeadersJob *pJob = new ProtectedHeadersJob;
+        pJob->setContent(d->content);
+        pJob->setSkeletonMessage(d->skeletonMessage);
+        pJob->setObvoscate(d->protectedHeadersObvoscate);
+        QObject::connect(pJob, &ProtectedHeadersJob::finished, this, [d, pJob](KJob *job) {
+            if (job->error()) {
+                return;
+            }
+            d->content = pJob->content();
+        });
+        appendSubjob(pJob);
+    }
+
+    ContentJobBase::doStart();
+}
+
+
+void SignEncryptJob::slotResult(KJob *job)
+{
+    Q_D(SignEncryptJob);
+    if (error()) {
+        ContentJobBase::slotResult(job);
+        return;
+    }
+    if (subjobs().size() == 2) {
+        auto pjob = static_cast<ProtectedHeadersJob *>(subjobs().last());
+        if (pjob) {
+            auto cjob = dynamic_cast<ContentJobBase *>(job);
+            Q_ASSERT(cjob);
+            pjob->setContent(cjob->content());
+        }
+    }
+
+    ContentJobBase::slotResult(job);
 }
 
 void SignEncryptJob::process()
