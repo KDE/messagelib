@@ -27,14 +27,16 @@
 #include <QFile>
 #include <QDir>
 
-void MessageComposer::Test::setupEnv()
+using namespace MessageComposer;
+
+void Test::setupEnv()
 {
     qputenv("LC_ALL", "C");
     qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QLatin1String("/.qttest")).constData());
     QStandardPaths::setTestModeEnabled(true);
 }
 
-std::vector< GpgME::Key, std::allocator< GpgME::Key > > MessageComposer::Test::getKeys(bool smime)
+std::vector< GpgME::Key, std::allocator< GpgME::Key > > Test::getKeys(bool smime)
 {
     QGpgME::KeyListJob *job = nullptr;
 
