@@ -24,13 +24,13 @@ using namespace MessageViewer;
 #include "mailsourceviewtextbrowserwidget.h"
 #include "messageviewer/messageviewerutil.h"
 #include "findbar/findbarsourceview.h"
-#include "kpimtextedit/slidecontainer.h"
+#include <KPIMTextEdit/SlideContainer>
 
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Theme>
 
-#include "PimCommon/PimUtil"
+#include <PimCommon/PimUtil>
 #include <KLocalizedString>
 #include <QTabWidget>
 

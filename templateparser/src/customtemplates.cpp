@@ -22,7 +22,7 @@
 #include "customtemplates_kfg.h"
 #include "globalsettings_templateparser.h"
 #include "ui_customtemplates_base.h"
-#include "kpimtextedit/plaintexteditor.h"
+#include <KPIMTextEdit/PlainTextEditor>
 #include "templateparseremailaddressrequesterinterfacewidget.h"
 
 #include <KLocalizedString>

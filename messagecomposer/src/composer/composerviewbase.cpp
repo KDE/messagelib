@@ -26,7 +26,7 @@
 #include "composer-ng/richtextcomposerng.h"
 #include <KPIMTextEdit/RichTextComposerImages>
 #include "composer-ng/richtextcomposersignatures.h"
-#include "KPIMTextEdit/RichTextComposerControler"
+#include <KPIMTextEdit/RichTextComposerControler>
 #include "job/emailaddressresolvejob.h"
 #include "composer/keyresolver.h"
 #include "part/globalpart.h"
@@ -37,8 +37,8 @@
 #include "utils/util_p.h"
 #include "imagescaling/imagescalingutils.h"
 
-#include "SendLater/SendLaterInfo"
-#include "SendLater/SendLaterUtil"
+#include <SendLater/SendLaterInfo>
+#include <SendLater/SendLaterUtil>
 
 #include <libkdepim/recentaddresses.h>
 #include "helper/messagehelper.h"

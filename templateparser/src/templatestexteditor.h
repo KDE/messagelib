@@ -19,7 +19,7 @@
 #ifndef TEMPLATESTEXTEDITOR_H
 #define TEMPLATESTEXTEDITOR_H
 
-#include "kpimtextedit/plaintexteditor.h"
+#include <KPIMTextEdit/PlainTextEditor>
 
 #include <KSyntaxHighlighting/Repository>
 

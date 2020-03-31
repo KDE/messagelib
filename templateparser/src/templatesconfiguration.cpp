@@ -20,7 +20,7 @@
 #include "templatesconfiguration.h"
 #include "globalsettings_templateparser.h"
 #include "templatesconfiguration_kfg.h"
-#include "kpimtextedit/plaintexteditor.h"
+#include <KPIMTextEdit/PlainTextEditor>
 
 #include <KMessageBox>
 #include <KLocalizedString>

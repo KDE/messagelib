@@ -34,7 +34,7 @@
 
 #include "headerstyle.h"
 #include "messageviewer_debug.h"
-#include "grantleetheme/grantleetheme.h"
+#include <GrantleeTheme/GrantleeTheme>
 
 using namespace MessageViewer;
 //

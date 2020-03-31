@@ -21,7 +21,7 @@
 #define MESSAGECOMPOSER_COMPOSER_H
 
 #include "MessageComposer/JobBase"
-#include "Libkleo/Enum"
+#include <Libkleo/Enum>
 
 #include "messagecomposer_export.h"
 #include <QStringList>

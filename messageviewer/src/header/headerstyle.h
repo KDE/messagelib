@@ -37,7 +37,7 @@
 
 #include "messageviewer_export.h"
 
-//#include "grantleetheme/grantleetheme.h"
+//#include <GrantleeTheme/GrantleeTheme>
 
 #include <Akonadi/KMime/MessageStatus>
 #include <KMime/Message>

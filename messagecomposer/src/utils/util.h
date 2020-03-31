@@ -23,7 +23,7 @@
 #define MESSAGECOMPOSER_UTIL_H
 
 #include "messagecomposer_export.h"
-#include "Libkleo/Enum"
+#include <Libkleo/Enum>
 #include <KMime/Message>
 #include <AkonadiCore/Item>
 #include <Akonadi/KMime/MessageStatus>

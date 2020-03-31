@@ -35,10 +35,10 @@
 #include "mailsourceviewtextbrowserwidget.h"
 #include "messageviewer/messageviewerutil.h"
 #include "findbar/findbarsourceview.h"
-#include "kpimtextedit/slidecontainer.h"
-#include "PimCommon/PimUtil"
-#include "kpimtextedit/texttospeechwidget.h"
-#include "kpimtextedit/texttospeechinterface.h"
+#include <KPIMTextEdit/SlideContainer>
+#include <PimCommon/PimUtil>
+#include <KPIMTextEdit/TextToSpeechWidget>
+#include <KPIMTextEdit/TextToSpeechInterface>
 
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Definition>

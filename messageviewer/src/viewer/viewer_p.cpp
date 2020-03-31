@@ -35,7 +35,7 @@
 #include "widgets/openattachmentfolderwidget.h"
 #include "messageviewer/headerstyle.h"
 #include "messageviewer/headerstrategy.h"
-#include "kpimtextedit/slidecontainer.h"
+#include <KPIMTextEdit/SlideContainer>
 
 #include "job/modifymessagedisplayformatjob.h"
 
@@ -85,7 +85,7 @@
 #include <QPointer>
 #include <WebEngineViewer/WebEngineExportHtmlPageJob>
 //libkdepim
-#include "Libkdepim/BroadcastStatus"
+#include <Libkdepim/BroadcastStatus>
 #include <MessageCore/AttachmentPropertiesDialog>
 
 #include <AkonadiCore/collection.h>
@@ -141,11 +141,11 @@
 #include <header/headerstyleplugin.h>
 #include <viewerplugins/viewerplugininterface.h>
 #include <WebEngineViewer/ZoomActionMenu>
-#include <kpimtextedit/texttospeechwidget.h>
+#include <KPIMTextEdit/TextToSpeechWidget>
 #include "widgets/mailtrackingwarningwidget.h"
 
 #include <grantleetheme/grantleethememanager.h>
-#include <grantleetheme/grantleetheme.h>
+#include <GrantleeTheme/GrantleeTheme>
 
 #include "dkim-verify/dkimwidgetinfo.h"
 #include "dkim-verify/dkimmanager.h"

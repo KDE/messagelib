@@ -24,7 +24,7 @@
 
 #include "messagecomposer_export.h"
 #include "messagepart.h"
-#include "KPIMTextEdit/RichTextComposerImages"
+#include <KPIMTextEdit/RichTextComposerImages>
 
 namespace MessageComposer {
 /**

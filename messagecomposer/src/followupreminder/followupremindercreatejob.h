@@ -24,7 +24,7 @@
 #include <QDate>
 #include <AkonadiCore/Item>
 #include <AkonadiCore/Collection>
-#include "FollowupReminder/FollowUpReminderInfo"
+#include <FollowupReminder/FollowUpReminderInfo>
 #include <KJob>
 #include "messagecomposer_export.h"
 namespace MessageComposer {

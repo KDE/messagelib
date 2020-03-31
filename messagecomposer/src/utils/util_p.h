@@ -22,7 +22,7 @@
 #ifndef MESSAGECOMPOSER_UTIL_P_H
 #define MESSAGECOMPOSER_UTIL_P_H
 
-#include "Libkleo/Enum"
+#include <Libkleo/Enum>
 #include <KMime/Message>
 
 namespace KMime {

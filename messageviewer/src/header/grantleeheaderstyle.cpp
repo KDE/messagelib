@@ -20,7 +20,7 @@
 #include "grantleeheaderstyle.h"
 #include "header/grantleeheaderformatter.h"
 #include "header/headerstrategy.h"
-#include "grantleetheme/grantleetheme.h"
+#include <GrantleeTheme/GrantleeTheme>
 
 #include <kmime/kmime_message.h>
 

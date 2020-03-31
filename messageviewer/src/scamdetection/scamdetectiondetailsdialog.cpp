@@ -22,7 +22,7 @@
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
 
-#include "kpimtextedit/richtexteditorwidget.h"
+#include <KPIMTextEdit/RichTextEditorWidget>
 
 #include <KLocalizedString>
 

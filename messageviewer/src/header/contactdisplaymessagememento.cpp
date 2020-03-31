@@ -19,7 +19,7 @@
 
 #include "contactdisplaymessagememento.h"
 #include "messageviewer_debug.h"
-#include "Gravatar/GravatarResolvUrlJob"
+#include <Gravatar/GravatarResolvUrlJob>
 #include "gravatarsettings.h"
 #include "settings/messageviewersettings.h"
 #include <Akonadi/Contact/ContactSearchJob>

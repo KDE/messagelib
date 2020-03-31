@@ -19,7 +19,7 @@
 #include "printingsettings.h"
 #include "ui_printingsettings.h"
 #include "settings/messageviewersettings.h"
-#include "PimCommon/ConfigureImmutableWidgetUtils"
+#include <PimCommon/ConfigureImmutableWidgetUtils>
 using namespace PimCommon::ConfigureImmutableWidgetUtils;
 
 using namespace MessageViewer;

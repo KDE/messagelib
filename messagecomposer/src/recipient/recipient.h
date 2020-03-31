@@ -30,7 +30,7 @@
 #include <Libkdepim/MultiplyingLine>
 
 #include <gpgme++/key.h>
-#include <libkleo/enum.h>
+#include <Libkleo/Enum>
 
 #include <QString>
 #include <QSharedPointer>

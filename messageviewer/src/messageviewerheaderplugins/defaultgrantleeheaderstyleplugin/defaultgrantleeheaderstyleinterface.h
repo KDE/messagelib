@@ -21,7 +21,7 @@
 #define DEFAULTGRANTLEEHEADERSTYLEINTERFACE_H
 
 #include <messageviewer/headerstyleinterface.h>
-#include <grantleetheme/grantleetheme.h>
+#include <GrantleeTheme/GrantleeTheme>
 
 namespace MessageViewer {
 class DefaultGrantleeHeaderStyleInterface : public MessageViewer::HeaderStyleInterface

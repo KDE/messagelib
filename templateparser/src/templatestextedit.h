@@ -21,7 +21,7 @@
 
 #include "templateparser_export.h"
 
-#include "kpimtextedit/plaintexteditorwidget.h"
+#include <KPIMTextEdit/PlainTextEditorWidget>
 
 namespace TemplateParser {
 /**

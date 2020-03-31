@@ -18,7 +18,7 @@
 #include "mailsourceviewtextbrowserwidgettest.h"
 #include "../src/widgets/mailsourceviewtextbrowserwidget.h"
 #include "../src/findbar/findbarsourceview.h"
-#include "kpimtextedit/texttospeechwidget.h"
+#include <KPIMTextEdit/TextToSpeechWidget>
 #include <QTest>
 
 MailSourceViewTextBrowserWidgetTest::MailSourceViewTextBrowserWidgetTest(QObject *parent)

@@ -38,7 +38,7 @@
 
 #include "messageviewer/messageviewerutil.h"
 #include "messageviewerutil_p.h"
-#include "kpimtextedit/texttospeech.h"
+#include <KPIMTextEdit/TextToSpeech>
 #include <MimeTreeParser/NodeHelper>
 #include "messageviewer_debug.h"
 #include "MessageCore/MessageCoreSettings"
@@ -46,7 +46,7 @@
 #include "MessageCore/StringUtil"
 #include <kio_version.h>
 
-#include "PimCommon/RenameFileDialog"
+#include <PimCommon/RenameFileDialog>
 
 #include <Gravatar/GravatarCache>
 #include <gravatar/gravatarsettings.h>

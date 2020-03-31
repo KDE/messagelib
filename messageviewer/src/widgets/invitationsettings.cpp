@@ -28,7 +28,7 @@
 #include "invitationsettings.h"
 #include "ui_invitationsettings.h"
 #include "settings/messageviewersettings.h"
-#include "PimCommon/ConfigureImmutableWidgetUtils"
+#include <PimCommon/ConfigureImmutableWidgetUtils>
 using namespace PimCommon::ConfigureImmutableWidgetUtils;
 
 #include <KLocalizedString>

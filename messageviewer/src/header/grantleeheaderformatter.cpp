@@ -19,7 +19,7 @@
 
 #include "grantleeheaderformatter.h"
 #include "headerstyle_util.h"
-#include "grantleetheme/grantleetheme.h"
+#include <GrantleeTheme/GrantleeTheme>
 #include "settings/messageviewersettings.h"
 #include "utils/iconnamecache.h"
 #include "config-messageviewer.h"
