@@ -414,6 +414,20 @@ void StringUtilTest::test_parseMailToWithUtf8Encoded()
 
 }
 
+void StringUtilTest::test_parseMailToWithUtf8QuotedEncoded()
+{
+    const QByteArray ba("mailto:=?utf-8?q?foo_Cen_=3Cbla=2Ecete=40kde=2Ecom=3E=2C_Kile_Debut_=3Ckile=2Edebut=40foo=2Ecom?=");
+    QUrl url = QUrl(QUrl::fromPercentEncoding(ba));
+    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(url);
+    QCOMPARE(data.size(), 1);
+    for (int i = 0; i < 1; ++i) {
+        if (data.at(i).first == QLatin1String("to")) {
+            QCOMPARE(data.at(i).second, QString::fromUtf8("foo Cen <bla.cete@kde.com>, Kile Debut <kile.debut@foo.com"));
+        }
+    }
+
+}
+
 void StringUtilTest::test_parseMailToBug366981()
 {
     const QString ba(QStringLiteral("mailto:test@test.com?subject=test&body=line1%0D%0Aline2"));

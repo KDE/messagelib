@@ -40,7 +40,7 @@
 #include <QStringList>
 #include <QUrlQuery>
 #include <kpimtextedit/textutils.h>
-
+#include <KCodecs>
 using namespace KMime;
 using namespace KMime::Types;
 using namespace KMime::HeaderParsing;
@@ -182,27 +182,10 @@ QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
     QString toStr;
     int i = 0;
 
-    //Convert =?utf-8?B...?=
-    const QString utf8CharsetPrefix = QStringLiteral("=?utf-8?B?");
-    int indexUtf8 = str.indexOf(utf8CharsetPrefix);
-    bool utf8EncodingStrFound = false;
-    while (indexUtf8 != 1) {
-        const int indexEndEncoding = str.indexOf(QStringLiteral("?="));
-        if (indexEndEncoding == -1) {
-            break;
-        }
-        const QString encodedStr = str.mid(indexUtf8 + utf8CharsetPrefix.size(), indexEndEncoding - indexUtf8 - utf8CharsetPrefix.size());
-        const QByteArray ba = QByteArray::fromBase64(encodedStr.toLatin1(), QByteArray::Base64UrlEncoding);
-        const QString decodedStr = QString::fromUtf8(ba);
-        // +2 as "?="
-        str.replace(indexUtf8, indexEndEncoding + 2 -indexUtf8, decodedStr);
-        indexUtf8 = str.indexOf(utf8CharsetPrefix);
-        utf8EncodingStrFound = true;
-    }
-    QUrl newUrl = url;
-    if (utf8EncodingStrFound) {
-        newUrl = QUrl::fromUserInput(str);
-    }
+    //String can be encoded.
+    str = KCodecs::decodeRFC2047String(str);
+    const QUrl newUrl = QUrl::fromUserInput(str);
+
 
     int indexTo = -1;
     //Workaround line with # see bug 406208
