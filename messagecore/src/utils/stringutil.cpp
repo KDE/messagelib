@@ -418,7 +418,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     const QString i18nMe = i18nc("signal that this email is defined in my identity", "Me");
     const bool onlyOneIdentity = (im->identities().count() == 1);
     for (const KMime::Types::Mailbox &mailbox : mailboxList) {
-        const QString prettyAddressStr = KCodecs::decodeRFC2047String(mailbox.prettyAddress());
+        const QString prettyAddressStr = mailbox.prettyAddress();
         if (!prettyAddressStr.isEmpty()) {
             numberAddresses++;
             if (expandable == ExpandableAddresses && !expandableInserted && numberAddresses > collapseNumber) {
@@ -447,7 +447,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
                     result += foundMe ? i18nMe : quoteHtmlChars(prettyAddressStr, true);
                 }
             } else {
-                result += foundMe ? i18nMe : quoteHtmlChars(KCodecs::decodeRFC2047String(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)), true);
+                result += foundMe ? i18nMe : quoteHtmlChars(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary), true);
             }
             if (link == ShowLink) {
                 result += QLatin1String("</a>, ");
