@@ -26,6 +26,7 @@
 #include "settings/messagecomposersettings.h"
 #include <grantlee/markupdirector.h>
 #include <grantlee/plaintextmarkupbuilder.h>
+#include <KPIMTextEdit/TextHTMLBuilder>
 
 using namespace MessageComposer;
 
@@ -159,6 +160,8 @@ MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextCom
     return MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::NotConverted;
 }
 
+#define USE_TEXTHTML_BUILDER 1
+
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
     bool wasConverted
@@ -192,16 +195,30 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
     }
     textPart->setWordWrappingEnabled(lineWrapMode() == QTextEdit::FixedColumnWidth);
     if (composerControler()->isFormattingUsed() && !wasConverted) {
+#ifdef USE_TEXTHTML_BUILDER
+        KPIMTextEdit::TextHTMLBuilder *pb = new KPIMTextEdit::TextHTMLBuilder();
+
+        Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
+        pmd->processDocument(document());
+        QString cleanHtml = QStringLiteral("<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>%1</body>\n</html>").arg(pb->getResult());
+        delete pmd;
+        delete pb;
+        d->fixHtmlFontSize(cleanHtml);
+        textPart->setCleanHtml(cleanHtml);
+#else
         QString cleanHtml = d->toCleanHtml();
         d->fixHtmlFontSize(cleanHtml);
         textPart->setCleanHtml(cleanHtml);
+#endif
         textPart->setEmbeddedImages(composerControler()->composerImages()->embeddedImages());
     }
 }
 
 QString RichTextComposerNgPrivate::toCleanHtml() const
 {
+
     QString result = richtextComposer->toHtml();
+
 
     static const QString EMPTYLINEHTML = QStringLiteral(
         "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
