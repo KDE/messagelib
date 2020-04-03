@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
 **
 ** Filename   : util
 ** Created on : 03 April, 2005
@@ -743,9 +743,12 @@ QByteArray Util::htmlCodec(const QByteArray &data, const QByteArray &codec)
     if (currentCodec.isEmpty()) {
         currentCodec = QByteArray("UTF-8");
     }
-    //qDebug() << " codecValue ******************************************: " << codecValue;
-    if (data.contains("<meta charset=\"utf-8\">")) {
+    if (data.contains("charset=\"utf-8\"")
+            || data.contains("charset=\"UTF-8\"")
+            || data.contains("charset=UTF-8")) {
         currentCodec = QByteArray("UTF-8");
     }
+
+    //qDebug() << " codec ******************************************: " << codec << " currentCodec : " <<currentCodec;
     return currentCodec;
 }
