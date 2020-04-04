@@ -519,7 +519,7 @@ bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent
     return Util::saveContents(parent, contents, urlList);
 }
 
-QString Util::generateMboxFileName(const Akonadi::Item &msgBase)
+QString Util::generateFileNameForExtension(const Akonadi::Item &msgBase, const QString &extension)
 {
     QString fileName;
 
@@ -534,10 +534,15 @@ QString Util::generateMboxFileName(const Akonadi::Item &msgBase)
         fileName = i18n("message");
     }
 
-    if (!fileName.endsWith(QLatin1String(".mbox"))) {
-        fileName += QLatin1String(".mbox");
+    if (!fileName.endsWith(extension)) {
+        fileName += extension;
     }
     return fileName;
+}
+
+QString Util::generateMboxFileName(const Akonadi::Item &msgBase)
+{
+    return Util::generateFileNameForExtension(msgBase, QStringLiteral(".mbox"));
 }
 
 bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages)
