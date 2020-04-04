@@ -129,11 +129,7 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
     mScriptCombo = new QComboBox;
     vScriptLayout->addWidget(mScriptCombo);
     fillScriptCombo(mScriptCombo);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(mScriptCombo, qOverload<int>(&QComboBox::currentIndexChanged), this, &TestScriptWidget::slotCurrentIndexChanged);
-#else
-    connect(mScriptCombo, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &TestScriptWidget::slotCurrentIndexChanged);
-#endif
 
 
     mScriptEdit = new QTextEdit;
