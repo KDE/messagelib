@@ -20,7 +20,7 @@
 #include "defaultgrantleeheaderstyleinterface.h"
 #include "messageviewer/headerstyleplugin.h"
 #include "messageviewer/headerstyle.h"
-#include <grantleetheme/grantleethememanager.h>
+#include <GrantleeTheme/GrantleeThemeManager>
 #include "globalsettings_base.h"
 #include <KToggleAction>
 #include <KActionCollection>

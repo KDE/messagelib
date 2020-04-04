@@ -39,7 +39,7 @@
 #include <QRegularExpression>
 #include <QStringList>
 #include <QUrlQuery>
-#include <kpimtextedit/textutils.h>
+#include <KPIMTextEdit/TextUtils>
 #include <KCodecs>
 using namespace KMime;
 using namespace KMime::Types;

@@ -53,7 +53,7 @@
 
 #include <KMime/Content>
 #include <KEmailAddress>
-#include <kmbox/mbox.h>
+#include <KMbox/MBox>
 #include "messageflags.h"
 
 #include <KRun>

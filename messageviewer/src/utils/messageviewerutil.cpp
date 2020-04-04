@@ -53,7 +53,7 @@
 
 #include <AkonadiCore/item.h>
 
-#include <kmbox/mbox.h>
+#include <KMbox/MBox>
 
 #include <KMime/Message>
 #include <KFileWidget>

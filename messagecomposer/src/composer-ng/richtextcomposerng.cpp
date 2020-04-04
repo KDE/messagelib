@@ -18,10 +18,10 @@
 */
 
 #include "richtextcomposerng.h"
-#include <kpimtextedit/richtextcomposercontroler.h>
-#include <kpimtextedit/richtextcomposerimages.h>
+#include <KPIMTextEdit/RichTextComposerControler>
+#include <KPIMTextEdit/RichTextComposerImages>
 #include "richtextcomposersignatures.h"
-#include <pimcommon/autocorrection.h>
+#include <PimCommon/AutoCorrection>
 #include <part/textpart.h>
 #include "settings/messagecomposersettings.h"
 #include <grantlee/markupdirector.h>

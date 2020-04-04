@@ -71,7 +71,7 @@
 #include <AkonadiCore/ItemCreateJob>
 #include <messageflags.h>
 #include <Akonadi/KMime/SpecialMailCollections>
-#include <mailtransportakonadi/errorattribute.h>
+#include <MailTransportAkonadi/ErrorAttribute>
 
 //Qt includes
 #include <QClipboard>
@@ -144,7 +144,7 @@
 #include <KPIMTextEdit/TextToSpeechWidget>
 #include "widgets/mailtrackingwarningwidget.h"
 
-#include <grantleetheme/grantleethememanager.h>
+#include <GrantleeTheme/GrantleeThemeManager>
 #include <GrantleeTheme/GrantleeTheme>
 
 #include "dkim-verify/dkimwidgetinfo.h"

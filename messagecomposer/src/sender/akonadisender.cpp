@@ -27,12 +27,12 @@
 #include "utils/util_p.h"
 
 #include <kmime/kmime_message.h>
-#include <libkdepim/progressmanager.h>
+#include <Libkdepim/ProgressManager>
 
-#include <mailtransportakonadi/dispatcherinterface.h>
-#include <mailtransportakonadi/messagequeuejob.h>
-#include <mailtransport/transport.h>
-#include <mailtransport/transportmanager.h>
+#include <MailTransportAkonadi/DispatcherInterface>
+#include <MailTransportAkonadi/MessageQueueJob>
+#include <MailTransport/Transport>
+#include <MailTransport/TransportManager>
 #include <MessageCore/StringUtil>
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>

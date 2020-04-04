@@ -21,7 +21,7 @@
 #define MESSAGECOMPOSER_RICHTEXTCOMPOSERNG_H
 
 #include "messagecomposer_export.h"
-#include <kpimtextedit/richtextcomposer.h>
+#include <KPIMTextEdit/RichTextComposer>
 #include <MessageComposer/PluginEditorConvertTextInterface>
 #include <KIdentityManagement/Signature>
 

@@ -40,7 +40,7 @@
 #include <SendLater/SendLaterInfo>
 #include <SendLater/SendLaterUtil>
 
-#include <libkdepim/recentaddresses.h>
+#include <Libkdepim/RecentAddresses>
 #include "helper/messagehelper.h"
 
 #include <MessageComposer/RecipientsEditor>
@@ -57,9 +57,9 @@
 #include <MessageCore/StringUtil>
 #include <MessageCore/NodeHelper>
 
-#include <mailtransport/transportcombobox.h>
-#include <mailtransportakonadi/messagequeuejob.h>
-#include <mailtransport/transportmanager.h>
+#include <MailTransport/TransportComboBox>
+#include <MailTransportAkonadi/MessageQueueJob>
+#include <MailTransport/TransportManager>
 
 #include <Akonadi/KMime/SpecialMailCollections>
 #include <AkonadiCore/itemcreatejob.h>
