@@ -23,6 +23,10 @@ using namespace MessageViewer;
 
 DKIMCheckPolicy::DKIMCheckPolicy()
 {
+    // HACK make sure we create an instance of MessageViewerSettings, rather than
+    // have the below static functions call self() of the base class, which will
+    // assert in subsequent use of MessageViewerSettings
+    MessageViewer::MessageViewerSettings::self();
     mRsaSha1Policy = MessageViewer::MessageViewerSettings::policyRsaSha1();
     mVerifySignatureWhenOnlyTest = MessageViewer::MessageViewerSettings::verifySignatureWhenOnlyTest();
     mSaveDkimResult = MessageViewer::MessageViewerSettings::saveDkimResult();
