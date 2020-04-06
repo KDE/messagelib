@@ -56,10 +56,13 @@ void AttachmentClipBoardJob::doStart()
         setErrorText(i18n("No text found in Clipboard"));
         emitResult();
     } else {
-        QString attachmentName = QInputDialog::getText(nullptr, i18n("Define Attachment Name"), i18n("Attachment Name:"));
-        if (attachmentName.isEmpty()) {
-            attachmentName = i18n("Clipboard Text");
+        bool ok = false;
+        QString attachmentName = QInputDialog::getText(nullptr, i18n("Define Attachment Name"), i18n("Attachment Name:"), {}, {}, &ok);
+        if (ok) {
+            if (attachmentName.isEmpty()) {
+                attachmentName = i18n("Clipboard Text");
+            }
+            addAttachment(clipText.toUtf8(), attachmentName);
         }
-        addAttachment(clipText.toUtf8(), attachmentName);
     }
 }
