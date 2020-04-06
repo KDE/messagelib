@@ -44,18 +44,20 @@
 
 QTEST_MAIN(SignEncryptTest)
 
+using namespace MessageComposer;
+
 void SignEncryptTest::initTestCase()
 {
-    MessageComposer::Test::setupEnv();
+    Test::setupEnv();
 }
 
 void SignEncryptTest::testContent()
 {
-    std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
+    std::vector< GpgME::Key > keys = Test::getKeys();
 
-    MessageComposer::Composer *composer = new MessageComposer::Composer;
-    MessageComposer::SignJob *sJob = new MessageComposer::SignJob(composer);
-    MessageComposer::EncryptJob *eJob = new MessageComposer::EncryptJob(composer);
+    Composer *composer = new Composer;
+    SignJob *sJob = new SignJob(composer);
+    EncryptJob *eJob = new EncryptJob(composer);
 
     QVERIFY(composer);
     QVERIFY(sJob);
@@ -64,11 +66,11 @@ void SignEncryptTest::testContent()
     QVector<QByteArray> charsets;
     charsets << "us-ascii";
     composer->globalPart()->setCharsets(charsets);
-    MessageComposer::TextPart *part = new MessageComposer::TextPart(this);
+    TextPart *part = new TextPart(this);
     part->setWordWrappingEnabled(false);
     part->setCleanPlainText(QStringLiteral("one flew over the cuckoo's nest"));
 
-    MessageComposer::MainTextJob *mainTextJob = new MessageComposer::MainTextJob(part, composer);
+    MainTextJob *mainTextJob = new MainTextJob(part, composer);
 
     QVERIFY(composer);
     QVERIFY(mainTextJob);
@@ -104,11 +106,11 @@ void SignEncryptTest::testContent()
 
 void SignEncryptTest::testHeaders()
 {
-    std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
+    std::vector< GpgME::Key > keys = Test::getKeys();
 
-    MessageComposer::Composer *composer = new MessageComposer::Composer;
-    MessageComposer::SignJob *sJob = new MessageComposer::SignJob(composer);
-    MessageComposer::EncryptJob *eJob = new MessageComposer::EncryptJob(composer);
+    Composer *composer = new Composer;
+    SignJob *sJob = new SignJob(composer);
+    EncryptJob *eJob = new EncryptJob(composer);
 
     QVERIFY(composer);
     QVERIFY(sJob);
