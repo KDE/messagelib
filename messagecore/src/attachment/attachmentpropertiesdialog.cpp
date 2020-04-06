@@ -130,12 +130,8 @@ void AttachmentPropertiesDialog::Private::mimeTypeChanged(const QString &type)
 {
     QMimeDatabase db;
     const QMimeType mimeType = db.mimeTypeForName(type);
-    QPixmap pix;
-    if (mimeType.isValid()) {
-        pix = KIconLoader::global()->loadMimeTypeIcon(mimeType.iconName(), KIconLoader::Desktop);
-    } else {
-        pix = QIcon::fromTheme(QStringLiteral("unknown")).pixmap(q->style()->pixelMetric(QStyle::PM_MessageBoxIconSize));
-    }
+    QPixmap pix = QIcon::fromTheme(mimeType.iconName(), QIcon::fromTheme(QStringLiteral("unknown"))).pixmap(q->style()->pixelMetric(QStyle::PM_MessageBoxIconSize));
+
     if (mReadOnly) {
         uiReadOnly->mimeIcon->setPixmap(pix);
     } else {
