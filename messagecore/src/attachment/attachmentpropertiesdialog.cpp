@@ -27,7 +27,6 @@
 
 #include <KAboutData>
 #include "messagecore_debug.h"
-#include <KIconLoader>
 #include <PimCommon/PimUtil>
 
 #include <kmime/kmime_content.h>
