@@ -63,7 +63,6 @@ target_link_libraries(KF5MessageCore
     KF5::PimTextEdit
     KF5::Archive
     KF5::ConfigWidgets
-    KF5::IconThemes
     Qt5::Network
     KF5::I18n
     KF5::IdentityManagement
