@@ -104,9 +104,9 @@ ReplyStrategyTest::~ReplyStrategyTest()
 void ReplyStrategyTest::initTestCase()
 {
     QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
-                  + QDir::separator() + QStringLiteral("emailidentities"));
+                  + QStringLiteral("/emailidentities"));
     QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
-                  + QDir::separator() + QStringLiteral("emaildefaults"));
+                  + QStringLiteral("/emaildefaults"));
 
     mIdentityManager = new KIdentityManagement::IdentityManager;
 

@@ -105,7 +105,7 @@ void GrantleeHeaderStyleTest::initTestCase()
     QStandardPaths::setTestModeEnabled(true);
     qputenv("LC_ALL", "C");
     expectedDataLocation = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
-    expectedDataLocation += QDir::separator() + QStringLiteral("messageviewer/defaultthemes");
+    expectedDataLocation += QStringLiteral("/messageviewer/defaultthemes");
     QDir targetDir(expectedDataLocation);
     QDir sourceDir(QStringLiteral(GRANTLEETHEME_DATA_DIR));
     const auto themeDirs = sourceDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
@@ -119,7 +119,7 @@ void GrantleeHeaderStyleTest::initTestCase()
         QVERIFY(targetDir.mkpath(themeDir.fileName()));
         const auto files = QDir(themeDir.absoluteFilePath()).entryInfoList(QDir::Files | QDir::Readable | QDir::NoSymLinks);
         for (const auto &file : files) {
-            const QString &newPath = dirName + QDir::separator() + file.fileName();
+            const QString &newPath = dirName + QLatin1Char('/') + file.fileName();
             QVERIFY(QFile(file.absoluteFilePath()).copy(newPath));
         }
     }
