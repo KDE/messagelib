@@ -271,7 +271,6 @@ void DistributionListDialog::slotUser1()
     Akonadi::ContactGroupSearchJob *job = new Akonadi::ContactGroupSearchJob();
     job->setQuery(Akonadi::ContactGroupSearchJob::Name, name);
     job->setProperty("name", name);
-    qDebug() << " name " << name;
     connect(job, &Akonadi::ContactSearchJob::result, this, &DistributionListDialog::slotDelayedUser1);
 }
 
