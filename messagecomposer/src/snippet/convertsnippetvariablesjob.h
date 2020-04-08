@@ -49,9 +49,9 @@ Q_SIGNALS:
 
 private:
     static Q_REQUIRED_RESULT QString convertVariables(const QString &cmd, int &i, QChar c);
-    static QString getFirstNameFromEmail(QString address);
-    static QString getLastNameFromEmail(QString address);
-    static QString getNameFromEmail(QString address);
+    static Q_REQUIRED_RESULT QString getFirstNameFromEmail(const QString &address);
+    static Q_REQUIRED_RESULT QString getLastNameFromEmail(const QString &address);
+    static Q_REQUIRED_RESULT QString getNameFromEmail(const QString &address);
     QString mText;
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };

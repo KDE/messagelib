@@ -82,13 +82,13 @@ public:
     ViewItemJobResult viewItemJobStepInternalForJob(ViewItemJob *job, const QElapsedTimer &elapsedTimer);
 
     // FIXME: Those look like they should be made virtual in some job class! -> Refactor
-    ViewItemJobResult viewItemJobStepInternalForJobPass1Fill(ViewItemJob *job, const QElapsedTimer &elapsedTimer);
-    ViewItemJobResult viewItemJobStepInternalForJobPass1Cleanup(ViewItemJob *job, const QElapsedTimer &elapsedTimer);
-    ViewItemJobResult viewItemJobStepInternalForJobPass1Update(ViewItemJob *job, const QElapsedTimer &elapsedTimer);
-    ViewItemJobResult viewItemJobStepInternalForJobPass2(ViewItemJob *job, const QElapsedTimer &elapsedTimer);
-    ViewItemJobResult viewItemJobStepInternalForJobPass3(ViewItemJob *job, const QElapsedTimer &elapsedTimer);
-    ViewItemJobResult viewItemJobStepInternalForJobPass4(ViewItemJob *job, const QElapsedTimer &elapsedTimer);
-    ViewItemJobResult viewItemJobStepInternalForJobPass5(ViewItemJob *job, const QElapsedTimer &elapsedTimer);
+    ViewItemJobResult viewItemJobStepInternalForJobPass1Fill(ViewItemJob *job, QElapsedTimer elapsedTimer);
+    ViewItemJobResult viewItemJobStepInternalForJobPass1Cleanup(ViewItemJob *job, QElapsedTimer elapsedTimer);
+    ViewItemJobResult viewItemJobStepInternalForJobPass1Update(ViewItemJob *job, QElapsedTimer elapsedTimer);
+    ViewItemJobResult viewItemJobStepInternalForJobPass2(ViewItemJob *job, QElapsedTimer elapsedTimer);
+    ViewItemJobResult viewItemJobStepInternalForJobPass3(ViewItemJob *job, QElapsedTimer elapsedTimer);
+    ViewItemJobResult viewItemJobStepInternalForJobPass4(ViewItemJob *job, QElapsedTimer elapsedTimer);
+    ViewItemJobResult viewItemJobStepInternalForJobPass5(ViewItemJob *job, QElapsedTimer elapsedTimer);
     void clearJobList();
     void clearUnassignedMessageLists();
     void clearOrphanChildrenHash();

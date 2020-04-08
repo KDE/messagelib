@@ -241,7 +241,7 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
     return result;
 }
 
-QString ConvertSnippetVariablesJob::getNameFromEmail(QString address)
+QString ConvertSnippetVariablesJob::getNameFromEmail(const QString &address)
 {
     const QStringList lst = address.split(QStringLiteral(", "));
     QStringList resultName;
@@ -258,7 +258,7 @@ QString ConvertSnippetVariablesJob::getNameFromEmail(QString address)
     return str;
 }
 
-QString ConvertSnippetVariablesJob::getFirstNameFromEmail(QString address)
+QString ConvertSnippetVariablesJob::getFirstNameFromEmail(const QString &address)
 {
     const QStringList lst = address.split(QStringLiteral(", "));
     QStringList resultName;
@@ -275,7 +275,7 @@ QString ConvertSnippetVariablesJob::getFirstNameFromEmail(QString address)
     return str;
 }
 
-QString ConvertSnippetVariablesJob::getLastNameFromEmail(QString address)
+QString ConvertSnippetVariablesJob::getLastNameFromEmail(const QString &address)
 {
     const QStringList lst = address.split(QStringLiteral(", "));
     QStringList resultName;

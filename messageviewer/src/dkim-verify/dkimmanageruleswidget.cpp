@@ -86,7 +86,7 @@ DKIMManageRulesWidget::DKIMManageRulesWidget(QWidget *parent)
     mainLayout->addWidget(searchLineEdit);
 
     mainLayout->addWidget(mTreeWidget);
-    connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManageRulesWidget::customContextMenuRequested);
+    connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManageRulesWidget::slotCustomContextMenuRequested);
     connect(mTreeWidget, &QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item) {
         if (item) {
             DKIMManageRulesWidgetItem *rulesItem = dynamic_cast<DKIMManageRulesWidgetItem *>(item);
@@ -172,7 +172,7 @@ void DKIMManageRulesWidget::modifyRule(DKIMManageRulesWidgetItem *rulesItem)
     delete dlg;
 }
 
-void DKIMManageRulesWidget::customContextMenuRequested(const QPoint &pos)
+void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
 {
     Q_UNUSED(pos);
     QTreeWidgetItem *item = mTreeWidget->currentItem();

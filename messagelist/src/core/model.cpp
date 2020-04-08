@@ -2446,7 +2446,7 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi, AttachO
 //
 // When messages are added, mark it as dirty only (?)
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass5(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass5(ViewItemJob *job, QElapsedTimer elapsedTimer)
 {
     // In this pass we scan the group headers that are in mGroupHeadersThatNeedUpdate.
     // Empty groups get deleted while the other ones are re-sorted.
@@ -2545,7 +2545,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass5
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass4(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass4(ViewItemJob *job, QElapsedTimer elapsedTimer)
 {
     // In this pass we scan mUnassignedMessageListForPass4 which now
     // contains both items with parents and items without parents.
@@ -2586,7 +2586,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass4
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3(ViewItemJob *job, QElapsedTimer elapsedTimer)
 {
     // In this pass we scan the mUnassignedMessageListForPass3 and try to do construct the threads
     // by using subject based threading. If subject based threading is not in effect then
@@ -2667,7 +2667,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2(ViewItemJob *job, QElapsedTimer elapsedTimer)
 {
     // In this pass we scan the mUnassignedMessageList and try to do construct the threads.
     // If some thread leader message got attached to the viewable tree in Pass1Fill then
@@ -2782,7 +2782,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Fill(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Fill(ViewItemJob *job, QElapsedTimer elapsedTimer)
 {
     // In this pass we scan the a contiguous region of the underlying storage (that is
     // assumed to be FLAT) and create the corresponding MessageItem objects.
@@ -3061,7 +3061,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Cleanup(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Cleanup(ViewItemJob *job, QElapsedTimer elapsedTimer)
 {
     Q_ASSERT(mModelForItemFunctions);   // UI must be not disconnected here
     // In this pass we remove the MessageItem objects that are present in the job
@@ -3300,7 +3300,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Update(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Update(ViewItemJob *job, QElapsedTimer elapsedTimer)
 {
     Q_ASSERT(mModelForItemFunctions);   // UI must be not disconnected here
 
