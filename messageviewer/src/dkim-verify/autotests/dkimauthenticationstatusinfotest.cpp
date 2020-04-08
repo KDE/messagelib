@@ -73,20 +73,20 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         property.methodVersion = 1;
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QLatin1String("d");
-            prop.value = QLatin1String("kde.org");
+            prop.type = QStringLiteral("d");
+            prop.value = QStringLiteral("kde.org");
             property.header.append(prop);
         }
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QLatin1String("i");
-            prop.value = QLatin1String("@kde.org");
+            prop.type = QStringLiteral("i");
+            prop.value = QStringLiteral("@kde.org");
             property.header.append(prop);
         }
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QLatin1String("b");
-            prop.value = QLatin1String("\"GMG2ucPx\"");
+            prop.type = QStringLiteral("b");
+            prop.value = QStringLiteral("\"GMG2ucPx\"");
             property.header.append(prop);
         }
         lst.append(property);
@@ -98,20 +98,20 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
 
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QLatin1String("d");
-            prop.value = QLatin1String("kde.org");
+            prop.type = QStringLiteral("d");
+            prop.value = QStringLiteral("kde.org");
             property2.header.append(prop);
         }
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QLatin1String("i");
-            prop.value = QLatin1String("@kde.org");
+            prop.type = QStringLiteral("i");
+            prop.value = QStringLiteral("@kde.org");
             property2.header.append(prop);
         }
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QLatin1String("b");
-            prop.value = QLatin1String("\"I3t3p7Up\"");
+            prop.type = QStringLiteral("b");
+            prop.value = QStringLiteral("\"I3t3p7Up\"");
             property2.header.append(prop);
         }
         lst.append(property2);
@@ -162,8 +162,8 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
             property.methodVersion = 1;
             {
                 MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-                prop.type = QLatin1String("i");
-                prop.value = QLatin1String("@mail-router.example.net");
+                prop.type = QStringLiteral("i");
+                prop.value = QStringLiteral("@mail-router.example.net");
                 property.header.append(prop);
             }
             lst.append(property);
@@ -177,8 +177,8 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
 
             {
                 MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-                prop.type = QLatin1String("i");
-                prop.value = QLatin1String("@newyork.example.com");
+                prop.type = QStringLiteral("i");
+                prop.value = QStringLiteral("@newyork.example.com");
                 property2.header.append(prop);
             }
             lst.append(property2);
@@ -206,8 +206,8 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
             property.methodVersion = 1;
             {
                 MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-                prop.type = QLatin1String("i");
-                prop.value = QLatin1String("@mail-router.example.net");
+                prop.type = QStringLiteral("i");
+                prop.value = QStringLiteral("@mail-router.example.net");
                 property.header.append(prop);
             }
             lst.append(property);
@@ -221,8 +221,8 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
 
             {
                 MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-                prop.type = QLatin1String("i");
-                prop.value = QLatin1String("@newyork.example.com");
+                prop.type = QStringLiteral("i");
+                prop.value = QStringLiteral("@newyork.example.com");
                 property2.header.append(prop);
             }
             lst.append(property2);
@@ -246,8 +246,8 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
             property.methodVersion = 1;
             {
                 MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-                prop.type = QLatin1String("from");
-                prop.value = QLatin1String("gmail.com");
+                prop.type = QStringLiteral("from");
+                prop.value = QStringLiteral("gmail.com");
                 property.header.append(prop);
             }
             lst.append(property);

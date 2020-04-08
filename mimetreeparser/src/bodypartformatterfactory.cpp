@@ -73,7 +73,7 @@ void BodyPartFormatterFactoryPrivate::insert(const QString &mimeType, const Inte
 
     auto &v = registry[mt.isValid() ? mt.name() : mimeType];
     v.push_back(info);
-    std::stable_sort(v.begin(), v.end(), [](const FormatterInfo &lhs, const FormatterInfo &rhs) {
+    std::stable_sort(v.begin(), v.end(), [](FormatterInfo lhs, FormatterInfo rhs) {
         return lhs.priority > rhs.priority;
     });
 }

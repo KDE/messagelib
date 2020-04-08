@@ -116,7 +116,7 @@ void AttachmentTemporaryFilesDirsTest::shouldCreateDeleteTemporaryFiles()
     attachmentDir.addTempDir(tmpDir.path());
     attachmentDir.addTempFile(file.fileName());
     QVERIFY(!attachmentDir.temporaryFiles().isEmpty());
-    QCOMPARE(attachmentDir.temporaryFiles().first(), file.fileName());
+    QCOMPARE(attachmentDir.temporaryFiles().constFirst(), file.fileName());
     const QString path = tmpDir.path();
     attachmentDir.forceCleanTempFiles();
     QCOMPARE(attachmentDir.temporaryFiles().count(), 0);
@@ -140,7 +140,7 @@ void AttachmentTemporaryFilesDirsTest::shouldRemoveTemporaryFilesAfterTime()
     attachmentDir.addTempDir(tmpDir.path());
     attachmentDir.addTempFile(file.fileName());
     QVERIFY(!attachmentDir.temporaryFiles().isEmpty());
-    QCOMPARE(attachmentDir.temporaryFiles().first(), file.fileName());
+    QCOMPARE(attachmentDir.temporaryFiles().constFirst(), file.fileName());
     attachmentDir.setDelayRemoveAllInMs(500);
     QTest::qSleep(1000);
     attachmentDir.removeTempFiles();

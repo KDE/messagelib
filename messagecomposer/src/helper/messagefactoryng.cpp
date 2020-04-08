@@ -92,7 +92,7 @@ MessageFactoryNG::~MessageFactoryNG()
 // Return the addresses to use when replying to the author of msg.
 // See <https://cr.yp.to/proto/replyto.html>.
 static KMime::Types::Mailbox::List authorMailboxes(
-    const KMime::Message::Ptr &msg, KMime::Types::Mailbox::List mailingLists)
+    const KMime::Message::Ptr &msg, const KMime::Types::Mailbox::List &mailingLists)
 {
     if (auto mrt = msg->headerByType("Mail-Reply-To")) {
         return KMime::Types::Mailbox::listFrom7BitString(mrt->as7BitString(false));
@@ -231,7 +231,7 @@ void MessageFactoryNG::createReplyAsync()
             if (!m_mailingListAddresses.isEmpty()) {
                 toList = stripMyAddressesFromAddressList(m_origMsg->to()->mailboxes(), m_identityManager);
                 bool addMailingList = true;
-                for (const KMime::Types::Mailbox &m : m_mailingListAddresses) {
+                for (const KMime::Types::Mailbox &m : qAsConst(m_mailingListAddresses)) {
                     if (toList.contains(m)) {
                         addMailingList = false;
                         break;
@@ -261,7 +261,7 @@ void MessageFactoryNG::createReplyAsync()
                 }
             }
 
-            for (const KMime::Types::Mailbox &mailbox : ccList) {
+            for (const KMime::Types::Mailbox &mailbox : qAsConst(ccList)) {
                 msg->cc()->addAddress(mailbox);
             }
         }

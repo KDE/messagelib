@@ -44,10 +44,10 @@ QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
             mechanisms.)
         */
 
-    body.replace(QLatin1String("\n"), QLatin1String("\r\n"));
-    body.replace(QRegularExpression(QLatin1String("[ \t]+\r\n")), QLatin1String("\r\n"));
-    body.replace(QRegularExpression(QLatin1String("[ \t]+")), QStringLiteral(" "));
-    body.replace(QRegularExpression(QLatin1String("((\r\n)+?)$")), QLatin1String("\r\n"));
+    body.replace(QStringLiteral("\n"), QStringLiteral("\r\n"));
+    body.replace(QRegularExpression(QStringLiteral("[ \t]+\r\n")), QStringLiteral("\r\n"));
+    body.replace(QRegularExpression(QStringLiteral("[ \t]+")), QStringLiteral(" "));
+    body.replace(QRegularExpression(QStringLiteral("((\r\n)+?)$")), QStringLiteral("\r\n"));
     if (body == QLatin1String("\r\n")) {
         body.clear();
     }
@@ -66,13 +66,13 @@ QString MessageViewer::DKIMUtil::bodyCanonizationSimple(QString body)
 
     //       Note that a completely empty or missing body is canonicalized as a
     //       single "CRLF"; that is, the canonicalized length will be 2 octets.
-    body.replace(QLatin1String("\n"), QLatin1String("\r\n"));
-    body.replace(QRegularExpression(QLatin1String("((\r\n)+)?$")), QLatin1String("\r\n"));
+    body.replace(QStringLiteral("\n"), QStringLiteral("\r\n"));
+    body.replace(QRegularExpression(QStringLiteral("((\r\n)+)?$")), QStringLiteral("\r\n"));
     if (body.endsWith(QLatin1String("\r\n"))) { //Remove it from start
         body.chop(2);
     }
     if (body.isEmpty()) {
-        body = QLatin1String("\r\n");
+        body = QStringLiteral("\r\n");
     }
     return body;
 }

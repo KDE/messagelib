@@ -241,10 +241,10 @@ void DKIMCheckSignatureJob::computeHeaderCanonization(bool removeQuoteOnContentT
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
         return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
-        mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationSimple(QLatin1String("dkim-signature"), dkimValue);
+        mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationSimple(QStringLiteral("dkim-signature"), dkimValue);
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
-        mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationRelaxed(QLatin1String("dkim-signature"), dkimValue, removeQuoteOnContentType);
+        mHeaderCanonizationResult += QLatin1String("\r\n") + MessageViewer::DKIMUtil::headerCanonizationRelaxed(QStringLiteral("dkim-signature"), dkimValue, removeQuoteOnContentType);
         break;
     }
 #ifdef DEBUG_SIGNATURE_DKIM
