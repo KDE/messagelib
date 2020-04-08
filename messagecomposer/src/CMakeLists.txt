@@ -432,6 +432,7 @@ ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     EncryptJob
     AttachmentVcardFromAddressBookJob
     SignJob
+    SignEncryptJob
     TransparentJob
     JobBase
     AliasesExpandJob
