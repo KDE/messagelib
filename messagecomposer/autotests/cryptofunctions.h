@@ -49,7 +49,7 @@ void verifyEncryption(KMime::Content *content, const QByteArray &encrContent, Kl
 /**
  * Verifies that the given MIME content is signed and then encrypted, and the original text is as specified
  */
-void verifySignatureAndEncryption(KMime::Content *content, const QByteArray &origContent, Kleo::CryptoMessageFormat f, bool withAttachment = false);
+void verifySignatureAndEncryption(KMime::Content *content, const QByteArray &origContent, Kleo::CryptoMessageFormat f, bool withAttachment = false, bool combind = false);
 }
 
 #endif
