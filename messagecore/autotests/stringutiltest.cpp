@@ -411,7 +411,6 @@ void StringUtilTest::test_parseMailToWithUtf8Encoded()
             QCOMPARE(data.at(i).second, QString::fromUtf8("Mi\u0142osz Vo <raco.cki@foo.com>"));
         }
     }
-
 }
 
 void StringUtilTest::test_parseMailToWithUtf8QuotedEncoded()
@@ -425,7 +424,6 @@ void StringUtilTest::test_parseMailToWithUtf8QuotedEncoded()
             QCOMPARE(data.at(i).second, QString::fromUtf8("foo Cen <bla.cete@kde.com>, Kile Debut <kile.debut@foo.com"));
         }
     }
-
 }
 
 void StringUtilTest::test_parseMailToBug366981()

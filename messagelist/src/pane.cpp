@@ -264,7 +264,6 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->mActionMenu->addAction(action);
         d->mActionMenu->addSeparator();
 
-
         d->mMaxTabCreated = count();
         for (int i = 1; i < 10 && i <= count(); ++i) {
             d->addActivateTabAction(i);
@@ -274,21 +273,17 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         QList<QKeySequence> prevShortcut;
 
         QString nextIcon, prevIcon;
-        if (QApplication::isRightToLeft())
-        {
+        if (QApplication::isRightToLeft()) {
             nextShortcut.append(KStandardShortcut::tabPrev());
             prevShortcut.append(KStandardShortcut::tabNext());
             nextIcon = QStringLiteral("go-previous-view");
             prevIcon = QStringLiteral("go-next-view");
-        }
-        else
-        {
+        } else {
             nextShortcut.append(KStandardShortcut::tabNext());
             prevShortcut.append(KStandardShortcut::tabPrev());
             nextIcon = QStringLiteral("go-next-view");
             prevIcon = QStringLiteral("go-previous-view");
         }
-
 
         d->mActivateNextTabAction = new QAction(i18n("Activate Next Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_next_tab"), d->mActivateNextTabAction);
@@ -328,7 +323,6 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         });
         d->mActionMenu->addAction(d->mMoveTabRightAction);
 
-
         d->mActionMenu->addSeparator();
 
         d->mCloseTabAction = new QAction(i18n("Close Tab"), this);
@@ -339,8 +333,6 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         });
         d->mActionMenu->addAction(d->mCloseTabAction);
         d->mCloseTabAction->setEnabled(false);
-
-
     }
 }
 

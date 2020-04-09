@@ -37,7 +37,6 @@ ConvertSnippetVariableMenu::~ConvertSnippetVariableMenu()
 
 void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachmentFileName)
 {
-
     QMenu *dateTimeMenuVariable = nullptr;
     if (!onlyMenuForCustomizeAttachmentFileName) {
         mMenu = new QMenu(mParentWidget);

@@ -216,9 +216,7 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
 
 QString RichTextComposerNgPrivate::toCleanHtml() const
 {
-
     QString result = richtextComposer->toHtml();
-
 
     static const QString EMPTYLINEHTML = QStringLiteral(
         "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "

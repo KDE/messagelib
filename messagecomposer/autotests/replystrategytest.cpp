@@ -137,7 +137,7 @@ KMime::Message::Ptr ReplyStrategyTest::makeReply(const KMime::Message::Ptr &orig
     QSignalSpy spy {&factory, &MessageFactoryNG::createReplyDone};
     factory.createReplyAsync();
     KMime::Message::Ptr result {nullptr};
-    [&]{
+    [&] {
         QVERIFY(spy.wait());
         QCOMPARE(spy.count(), 1);
         result = spy.at(0).at(0).value<MessageFactoryNG::MessageReply>().msg;

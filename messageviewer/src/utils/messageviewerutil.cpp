@@ -741,7 +741,6 @@ QString Util::processHtml(const QString &htmlSource, QString &extraHead)
     return s;
 }
 
-
 QByteArray Util::htmlCodec(const QByteArray &data, const QByteArray &codec)
 {
     QByteArray currentCodec = codec;
@@ -749,8 +748,8 @@ QByteArray Util::htmlCodec(const QByteArray &data, const QByteArray &codec)
         currentCodec = QByteArray("UTF-8");
     }
     if (data.contains("charset=\"utf-8\"")
-            || data.contains("charset=\"UTF-8\"")
-            || data.contains("charset=UTF-8")) {
+        || data.contains("charset=\"UTF-8\"")
+        || data.contains("charset=UTF-8")) {
         currentCodec = QByteArray("UTF-8");
     }
 

@@ -186,7 +186,6 @@ QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
     str = KCodecs::decodeRFC2047String(str);
     const QUrl newUrl = QUrl::fromUserInput(str);
 
-
     int indexTo = -1;
     //Workaround line with # see bug 406208
     const int indexOf = str.indexOf(QLatin1Char('?'));
