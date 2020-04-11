@@ -20,8 +20,10 @@
 
 #include "converthtmltoplaintext.h"
 
-#include <grantlee/plaintextmarkupbuilder.h>
+#include <KPIMTextEdit/PlainTextMarkupBuilder>
 #include <QTextDocument>
+#include <QDebug>
+
 using namespace MimeTreeParser;
 ConvertHtmlToPlainText::ConvertHtmlToPlainText()
 {
@@ -41,7 +43,7 @@ QString ConvertHtmlToPlainText::generatePlainText()
     if (mHtmlString.isEmpty()) {
         return QString();
     }
-    Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
+    KPIMTextEdit::PlainTextMarkupBuilder *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
 
     Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
     QTextDocument *doc = new QTextDocument;
