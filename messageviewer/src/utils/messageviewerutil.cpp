@@ -709,7 +709,7 @@ QString Util::processHtml(const QString &htmlSource, QString &extraHead)
         s = s.remove(textBeforeDoctype);
     }
     s = s.remove(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive)).trimmed();
-    s = s.remove(QRegExp(QStringLiteral("^<html[^>]*>"), Qt::CaseInsensitive)).trimmed();
+    s = s.remove(QRegExp(QStringLiteral("<html[^>]*>"), Qt::CaseInsensitive)).trimmed();
     // head
     s = s.remove(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive)).trimmed();
     const int startIndex = s.indexOf(QLatin1String("<head>"), Qt::CaseInsensitive);
@@ -727,10 +727,8 @@ QString Util::processHtml(const QString &htmlSource, QString &extraHead)
             extraHead.clear();
         }
 #endif
-
-        s = s.mid(endIndex + 7).trimmed();
+        s = s.remove(startIndex, endIndex - startIndex + 7).trimmed();
     }
-    //qDebug() << " remove 4 " << s;
     // body
     s = s.remove(QRegExp(QStringLiteral("<body[^>]*>"), Qt::CaseInsensitive)).trimmed();
     //Some mail has </div>$ at end
