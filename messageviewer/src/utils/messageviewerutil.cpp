@@ -702,16 +702,16 @@ void Util::readGravatarConfig()
 QString Util::processHtml(const QString &htmlSource, QString &extraHead)
 {
     QString s = htmlSource.trimmed();
-    const int indexDoctype = s.indexOf(QRegExp(QStringLiteral("<!DOCTYPE[^>]*>"), Qt::CaseInsensitive));
+    const int indexDoctype = s.indexOf(QRegularExpression(QStringLiteral("<!DOCTYPE[^>]*>"), QRegularExpression::CaseInsensitiveOption));
     QString textBeforeDoctype;
     if (indexDoctype != -1) {
         textBeforeDoctype = s.left(indexDoctype);
         s = s.remove(textBeforeDoctype);
     }
-    s = s.remove(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive)).trimmed();
-    s = s.remove(QRegExp(QStringLiteral("<html[^>]*>"), Qt::CaseInsensitive)).trimmed();
+    s = s.remove(QRegularExpression(QStringLiteral("^<!DOCTYPE[^>]*>"), QRegularExpression::CaseInsensitiveOption)).trimmed();
+    s = s.remove(QRegularExpression(QStringLiteral("<html[^>]*>"), QRegularExpression::CaseInsensitiveOption)).trimmed();
     // head
-    s = s.remove(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive)).trimmed();
+    s = s.remove(QRegularExpression(QStringLiteral("^<head/>"), QRegularExpression::CaseInsensitiveOption)).trimmed();
     const int startIndex = s.indexOf(QLatin1String("<head>"), Qt::CaseInsensitive);
     if (startIndex >= 0) {
         const auto endIndex = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
@@ -730,11 +730,11 @@ QString Util::processHtml(const QString &htmlSource, QString &extraHead)
         s = s.remove(startIndex, endIndex - startIndex + 7).trimmed();
     }
     // body
-    s = s.remove(QRegExp(QStringLiteral("<body[^>]*>"), Qt::CaseInsensitive)).trimmed();
+    s = s.remove(QRegularExpression(QStringLiteral("<body[^>]*>"), QRegularExpression::CaseInsensitiveOption)).trimmed();
     //Some mail has </div>$ at end
-    s = s.remove(QRegExp(QStringLiteral("</html></div>$"), Qt::CaseInsensitive)).trimmed();
-    s = s.remove(QRegExp(QStringLiteral("</html>$"), Qt::CaseInsensitive)).trimmed();
-    s = s.remove(QRegExp(QStringLiteral("</body>$"), Qt::CaseInsensitive)).trimmed();
+    s = s.remove(QRegularExpression(QStringLiteral("</html></div>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
+    s = s.remove(QRegularExpression(QStringLiteral("</html>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
+    s = s.remove(QRegularExpression(QStringLiteral("</body>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
     s = textBeforeDoctype + s;
     return s;
 }
