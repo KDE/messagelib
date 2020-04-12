@@ -151,6 +151,7 @@ set(libmessageviewer_widgets_SRCS
     widgets/mailtrackingdetailsdialog.cpp
     widgets/shownextmessagewidget.cpp
     widgets/developertooldialog.cpp
+    widgets/developertoolwidget.cpp
     )
 
 

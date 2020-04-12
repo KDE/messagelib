@@ -17,23 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef DEVELOPERTOOLDIALOG_H
-#define DEVELOPERTOOLDIALOG_H
+#ifndef DEVELOPERTOOLWIDGETTEST_H
+#define DEVELOPERTOOLWIDGETTEST_H
 
-#include <QDialog>
-#include "messageviewer_private_export.h"
-class QWebEnginePage;
-namespace MessageViewer {
-class DeveloperToolWidget;
-class MESSAGEVIEWER_TESTS_EXPORT DeveloperToolDialog : public QDialog
+#include <QObject>
+
+class DeveloperToolWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit DeveloperToolDialog(QWidget *parent = nullptr);
-    ~DeveloperToolDialog();
-    QWebEnginePage *enginePage() const;
-private:
-    DeveloperToolWidget *mDeveloperToolWidget = nullptr;
+    explicit DeveloperToolWidgetTest(QObject *parent = nullptr);
+    ~DeveloperToolWidgetTest() = default;
 };
-}
-#endif // DEVELOPERTOOLDIALOG_H
+
+#endif // DEVELOPERTOOLWIDGETTEST_H

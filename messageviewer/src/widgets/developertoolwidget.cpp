@@ -16,34 +16,33 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#include "developertooldialog.h"
+
 #include "developertoolwidget.h"
 #include <QVBoxLayout>
-#include <QDialogButtonBox>
-#include <KLocalizedString>
+#include <WebEngineViewer/WebEnginePage>
+#include <WebEngineViewer/WebEngineView>
 using namespace MessageViewer;
-DeveloperToolDialog::DeveloperToolDialog(QWidget *parent)
-    : QDialog(parent)
+DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
+    : QWidget(parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setContentsMargins(0, 0, 0, 0);
 
-    mDeveloperToolWidget = new DeveloperToolWidget(this);
-    mDeveloperToolWidget->setObjectName(QStringLiteral("mDeveloperToolWidget"));
-    mainLayout->addWidget(mDeveloperToolWidget);
+    mWebEngineView = new WebEngineViewer::WebEngineView(this);
+    mWebEngineView->setObjectName(QStringLiteral("mWebEngineView"));
+    mainLayout->addWidget(mWebEngineView);
+    mEnginePage = new WebEngineViewer::WebEnginePage(this);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    buttonBox->setObjectName(QStringLiteral("buttonBox"));
-    connect(buttonBox, &QDialogButtonBox::rejected, this, &DeveloperToolDialog::reject);
-    mainLayout->addWidget(buttonBox);
+    //TODO
 }
 
-DeveloperToolDialog::~DeveloperToolDialog()
+DeveloperToolWidget::~DeveloperToolWidget()
 {
 
 }
 
-QWebEnginePage *DeveloperToolDialog::enginePage() const
+QWebEnginePage *DeveloperToolWidget::enginePage() const
 {
-    return mDeveloperToolWidget->enginePage();
+    return mEnginePage;
 }
