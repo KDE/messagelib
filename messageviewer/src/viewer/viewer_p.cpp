@@ -1734,9 +1734,8 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("disable_emoticon"), mDisableEmoticonAction);
     connect(mDisableEmoticonAction, &QAction::triggered, this, &ViewerPrivate::slotToggleEmoticons);
 
-
     //Don't translate it.
-    mDevelopmentToolsAction = new KToggleAction(QStringLiteral("Development Tools"), this);
+    mDevelopmentToolsAction = new QAction(QStringLiteral("Development Tools"), this);
     ac->addAction(QStringLiteral("development_tools"), mDevelopmentToolsAction);
     connect(mDevelopmentToolsAction, &QAction::triggered, this, &ViewerPrivate::slotShowDevelopmentTools);
 }
