@@ -33,6 +33,8 @@ public:
     ~DeveloperToolDialog();
     QWebEnginePage *enginePage() const;
 private:
+    void readConfig();
+    void writeConfig();
     DeveloperToolWidget *mDeveloperToolWidget = nullptr;
 };
 }

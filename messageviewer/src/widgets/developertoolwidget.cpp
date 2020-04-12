@@ -19,8 +19,8 @@
 
 #include "developertoolwidget.h"
 #include <QVBoxLayout>
-#include <WebEngineViewer/WebEnginePage>
-#include <WebEngineViewer/WebEngineView>
+#include <QWebEnginePage>
+#include <QWebEngineView>
 using namespace MessageViewer;
 DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     : QWidget(parent)
@@ -29,12 +29,11 @@ DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(0, 0, 0, 0);
 
-    mWebEngineView = new WebEngineViewer::WebEngineView(this);
+    mWebEngineView = new QWebEngineView(this);
     mWebEngineView->setObjectName(QStringLiteral("mWebEngineView"));
     mainLayout->addWidget(mWebEngineView);
-    mEnginePage = new WebEngineViewer::WebEnginePage(this);
-
-    //TODO
+    mEnginePage = new QWebEnginePage(this);
+    mWebEngineView->setPage(mEnginePage);
 }
 
 DeveloperToolWidget::~DeveloperToolWidget()

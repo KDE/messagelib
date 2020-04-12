@@ -22,11 +22,8 @@
 
 #include <QWidget>
 #include "messageviewer_private_export.h"
-namespace WebEngineViewer {
-class WebEngineView;
-class WebEnginePage;
-}
 class QWebEnginePage;
+class QWebEngineView;
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DeveloperToolWidget : public QWidget
 {
@@ -37,8 +34,8 @@ public:
     QWebEnginePage *enginePage() const;
 
 private:
-    WebEngineViewer::WebEngineView *mWebEngineView = nullptr;
-    WebEngineViewer::WebEnginePage *mEnginePage = nullptr;
+    QWebEngineView *mWebEngineView = nullptr;
+    QWebEnginePage *mEnginePage = nullptr;
 };
 }
 

@@ -35,6 +35,7 @@
 #include "widgets/openattachmentfolderwidget.h"
 #include "messageviewer/headerstyle.h"
 #include "messageviewer/headerstrategy.h"
+#include "widgets/developertooldialog.h"
 #include <KPIMTextEdit/SlideContainer>
 
 #include "job/modifymessagedisplayformatjob.h"
@@ -1742,8 +1743,11 @@ void ViewerPrivate::createActions()
 
 void ViewerPrivate::slotShowDevelopmentTools()
 {
-    mViewer->page()->setDevToolsPage(mViewer->page());
     mViewer->page()->triggerAction(QWebEnginePage::InspectElement);
+    DeveloperToolDialog *dlg = new DeveloperToolDialog(nullptr);
+    dlg->enginePage()->setDevToolsPage(mViewer->page());
+    dlg->exec();
+    delete dlg;
 }
 
 void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
