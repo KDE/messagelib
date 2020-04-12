@@ -72,6 +72,11 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s)
 * This function is a bit more tolerant, than QTextCodec::codecForName */
 MESSAGEVIEWER_EXPORT const QTextCodec *codecForName(const QByteArray &_str);
 
+struct HtmlMessageInfo {
+    QString htmlSource;
+    QString extraHead;
+};
+
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString processHtml(const QString &htmlSource, QString &extraHead);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QByteArray htmlCodec(const QByteArray &data, const QByteArray &currentCodec);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString generateFileNameForExtension(const Akonadi::Item &msgBase, const QString &extension);
