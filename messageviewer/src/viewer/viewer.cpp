@@ -638,6 +638,12 @@ QAction *Viewer::resetMessageDisplayFormatAction() const
     return d->mResetMessageDisplayFormat;
 }
 
+QAction *Viewer::developmentToolsAction() const
+{
+    Q_D(const Viewer);
+    return d->mDevelopmentToolsAction;
+}
+
 KToggleAction *Viewer::disableEmoticonAction() const
 {
     Q_D(const Viewer);

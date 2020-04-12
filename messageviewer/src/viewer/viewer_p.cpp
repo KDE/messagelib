@@ -1732,6 +1732,17 @@ void ViewerPrivate::createActions()
     mDisableEmoticonAction = new KToggleAction(i18n("Disable Emoticon"), this);
     ac->addAction(QStringLiteral("disable_emoticon"), mDisableEmoticonAction);
     connect(mDisableEmoticonAction, &QAction::triggered, this, &ViewerPrivate::slotToggleEmoticons);
+
+
+    //Don't translate it.
+    mDevelopmentToolsAction = new KToggleAction(QStringLiteral("Development Tools"), this);
+    ac->addAction(QStringLiteral("development_tools"), mDevelopmentToolsAction);
+    connect(mDevelopmentToolsAction, &QAction::triggered, this, &ViewerPrivate::slotShowDevelopmentTools);
+}
+
+void ViewerPrivate::slotShowDevelopmentTools()
+{
+    mViewer->page()->setDevToolsPage(mViewer->page());
 }
 
 void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)

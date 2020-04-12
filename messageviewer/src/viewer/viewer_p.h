@@ -598,6 +598,7 @@ private:
     void slotDelayPrintPreview();
     void applyZoomValue(qreal factor, bool saveConfig = true);
     void slotZoomChanged(qreal zoom);
+    void slotShowDevelopmentTools();
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting = false;
     bool mHtmlLoadExternalDefaultSetting = false;
@@ -648,6 +649,7 @@ public:
     KToggleAction *mToggleFixFontAction = nullptr;
     KToggleAction *mToggleDisplayModeAction = nullptr;
     KToggleAction *mToggleMimePartTreeAction = nullptr;
+    QAction *mDevelopmentToolsAction = nullptr;
     QAction *mSpeakTextAction = nullptr;
     QAction *mCopyImageLocation = nullptr;
     QUrl mClickedUrl;

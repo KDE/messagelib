@@ -281,6 +281,8 @@ public:
     Q_REQUIRED_RESULT QAction *saveAsAction() const;
     Q_REQUIRED_RESULT QAction *saveMessageDisplayFormatAction() const;
     Q_REQUIRED_RESULT QAction *resetMessageDisplayFormatAction() const;
+
+    Q_REQUIRED_RESULT QAction *developmentToolsAction() const;
     Q_REQUIRED_RESULT KToggleAction *disableEmoticonAction() const;
     Q_REQUIRED_RESULT KActionMenu *shareServiceUrlMenu() const;
     Q_REQUIRED_RESULT HeaderStylePlugin *headerStylePlugin() const;
