@@ -21,6 +21,7 @@
 #include <QVBoxLayout>
 #include <QWebEnginePage>
 #include <QWebEngineView>
+#include <QWebEngineSettings>
 using namespace MessageViewer;
 DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     : QWidget(parent)
@@ -33,6 +34,8 @@ DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     mWebEngineView->setObjectName(QStringLiteral("mWebEngineView"));
     mainLayout->addWidget(mWebEngineView);
     mEnginePage = new QWebEnginePage(this);
+    mEnginePage->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
+
     mWebEngineView->setPage(mEnginePage);
 }
 

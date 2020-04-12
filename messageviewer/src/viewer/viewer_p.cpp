@@ -1743,11 +1743,11 @@ void ViewerPrivate::createActions()
 
 void ViewerPrivate::slotShowDevelopmentTools()
 {
-    mViewer->page()->triggerAction(QWebEnginePage::InspectElement);
     DeveloperToolDialog *dlg = new DeveloperToolDialog(nullptr);
-    dlg->enginePage()->setDevToolsPage(mViewer->page());
-    dlg->exec();
-    delete dlg;
+    mViewer->page()->setDevToolsPage(dlg->enginePage());
+    mViewer->page()->triggerAction(QWebEnginePage::InspectElement);
+    connect(dlg, &DeveloperToolDialog::rejected, dlg, &DeveloperToolDialog::deleteLater);
+    dlg->show();
 }
 
 void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
