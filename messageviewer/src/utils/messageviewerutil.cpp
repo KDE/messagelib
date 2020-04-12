@@ -706,7 +706,7 @@ QString Util::processHtml(const QString &htmlSource, QString &extraHead)
     QString textBeforeDoctype;
     if (indexDoctype != -1) {
         textBeforeDoctype = s.left(indexDoctype);
-        s = s.remove(textBeforeDoctype);
+        s.remove(textBeforeDoctype);
     }
     s = s.remove(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive)).trimmed();
     s = s.remove(QRegExp(QStringLiteral("<html[^>]*>"), Qt::CaseInsensitive)).trimmed();
