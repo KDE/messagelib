@@ -1743,6 +1743,7 @@ void ViewerPrivate::createActions()
 void ViewerPrivate::slotShowDevelopmentTools()
 {
     mViewer->page()->setDevToolsPage(mViewer->page());
+    mViewer->page()->triggerAction(QWebEnginePage::InspectElement);
 }
 
 void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
