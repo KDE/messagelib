@@ -144,8 +144,26 @@ void MessageViewerUtilsTest::shouldUseCorrectCodec()
     QFETCH(QByteArray, currentCodec);
     QFETCH(QByteArray, data);
     QFETCH(QByteArray, codecResult);
+    QBENCHMARK {
+        QCOMPARE(MessageViewer::Util::htmlCodec(data, currentCodec), codecResult);
+    }
+    //BEFORE
+    //PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(empty UTF-8)
+    //RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"empty UTF-8":
+    //     0.00014 msecs per iteration (total: 76, iterations: 524288)
+    //PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(empty2 UTF-8)
+    //RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"empty2 UTF-8":
+    //     0.00014 msecs per iteration (total: 76, iterations: 524288)
+    //PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(codec windows-1252)
+    //RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"codec windows-1252":
+    //     0.00016 msecs per iteration (total: 84, iterations: 524288)
+    //PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(codec windows-1252 with meta charset)
+    //RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"codec windows-1252 with meta charset":
+    //     0.00020 msecs per iteration (total: 55, iterations: 262144)
+    //PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(codec windows-1252 with meta charset-2)
+    //RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"codec windows-1252 with meta charset-2":
+    //     0.00026 msecs per iteration (total: 70, iterations: 262144)
 
-    QCOMPARE(MessageViewer::Util::htmlCodec(data, currentCodec), codecResult);
 }
 
 void MessageViewerUtilsTest::shouldUseCorrectCodec_data()
@@ -157,4 +175,5 @@ void MessageViewerUtilsTest::shouldUseCorrectCodec_data()
     QTest::newRow("empty2 UTF-8") << QByteArray("UTF-8") << QByteArray("foo bla blo") << QByteArray("UTF-8");
     QTest::newRow("codec windows-1252") << QByteArray("windows-1252") << QByteArray("foo bla blo") << QByteArray("windows-1252");
     QTest::newRow("codec windows-1252 with meta charset") << QByteArray("windows-1252") << QByteArray("foo bla blo <meta charset=\"utf-8\">") << QByteArray("UTF-8");
+    QTest::newRow("codec windows-1252 with meta charset-2") << QByteArray("windows-1252") << QByteArray("foo bla blo <meta charset=UTF-8>") << QByteArray("UTF-8");
 }
