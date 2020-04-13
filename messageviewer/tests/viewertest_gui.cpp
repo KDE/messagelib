@@ -96,6 +96,7 @@ int main(int argc, char **argv)
     if (parser.isSet(developerToolsOption)) {
         viewer->showDevelopmentTools();
     }
+    viewer->resize(600, 400);
     viewer->show();
 
     const int ret = app.exec();
