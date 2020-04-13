@@ -1742,11 +1742,18 @@ void ViewerPrivate::createActions()
 
 void ViewerPrivate::slotShowDevelopmentTools()
 {
-    DeveloperToolDialog *dlg = new DeveloperToolDialog(nullptr);
-    mViewer->page()->setDevToolsPage(dlg->enginePage());
-    mViewer->page()->triggerAction(QWebEnginePage::InspectElement);
-    connect(dlg, &DeveloperToolDialog::rejected, dlg, &DeveloperToolDialog::deleteLater);
-    dlg->show();
+    if (!mDeveloperToolDialog) {
+        mDeveloperToolDialog = new DeveloperToolDialog(nullptr);
+        mViewer->page()->setDevToolsPage(mDeveloperToolDialog->enginePage());
+        mViewer->page()->triggerAction(QWebEnginePage::InspectElement);
+        connect(mDeveloperToolDialog, &DeveloperToolDialog::rejected, mDeveloperToolDialog, &DeveloperToolDialog::deleteLater);
+    }
+    if (mDeveloperToolDialog->isHidden()) {
+        mDeveloperToolDialog->show();
+    }
+
+    mDeveloperToolDialog->raise();
+    mDeveloperToolDialog->activateWindow();
 }
 
 void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
