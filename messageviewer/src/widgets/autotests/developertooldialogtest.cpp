@@ -19,16 +19,27 @@
 
 #include "developertooldialogtest.h"
 #include "widgets/developertooldialog.h"
+#include "widgets/developertoolwidget.h"
 #include <QTest>
+#include <QStandardPaths>
+#include <QVBoxLayout>
+#include <QDialogButtonBox>
 QTEST_MAIN(DeveloperToolDialogTest)
 DeveloperToolDialogTest::DeveloperToolDialogTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DeveloperToolDialogTest::shouldHaveDefaultValues()
 {
    MessageViewer::DeveloperToolDialog d;
-   //TODO
+   QVBoxLayout *mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+   QVERIFY(mainLayout);
+
+   MessageViewer::DeveloperToolWidget *mDeveloperToolWidget = d.findChild<MessageViewer::DeveloperToolWidget *>(QStringLiteral("mDeveloperToolWidget"));
+   QVERIFY(mDeveloperToolWidget);
+
+   QDialogButtonBox *buttonBox = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+   QVERIFY(buttonBox);
 }

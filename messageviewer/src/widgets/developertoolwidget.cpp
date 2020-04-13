@@ -34,6 +34,7 @@ DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     mWebEngineView->setObjectName(QStringLiteral("mWebEngineView"));
     mainLayout->addWidget(mWebEngineView);
     mEnginePage = new QWebEnginePage(this);
+    mEnginePage->setObjectName(QStringLiteral("mEnginePage"));
     mEnginePage->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
 
     mWebEngineView->setPage(mEnginePage);

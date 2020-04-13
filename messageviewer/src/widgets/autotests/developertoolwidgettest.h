@@ -28,6 +28,8 @@ class DeveloperToolWidgetTest : public QObject
 public:
     explicit DeveloperToolWidgetTest(QObject *parent = nullptr);
     ~DeveloperToolWidgetTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
 
 #endif // DEVELOPERTOOLWIDGETTEST_H
