@@ -51,6 +51,9 @@ int main(int argc, char **argv)
                                       "Show list of plugins installed."));
     parser.addOption(listOption);
 
+    QCommandLineOption developerToolsOption(QStringList() << QStringLiteral("d") << QStringLiteral("developer-tools"), QStringLiteral("Activate Developer tools"));
+    parser.addOption(developerToolsOption);
+
     parser.process(app);
 
     if (parser.isSet(listOption)) {
@@ -90,6 +93,9 @@ int main(int argc, char **argv)
     }
     viewer->setMessage(KMime::Message::Ptr(msg));
 
+    if (parser.isSet(developerToolsOption)) {
+        viewer->showDevelopmentTools();
+    }
     viewer->show();
 
     const int ret = app.exec();
