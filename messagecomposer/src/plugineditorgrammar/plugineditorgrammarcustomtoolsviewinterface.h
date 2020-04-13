@@ -86,7 +86,7 @@ Q_SIGNALS:
     void replaceText(const MessageComposer::PluginGrammarAction &act);
 
 private:
-    PluginEditorGrammarCustomToolsViewInterfacePrivate const *d;
+    PluginEditorGrammarCustomToolsViewInterfacePrivate *d = nullptr;
 };
 }
 Q_DECLARE_METATYPE(MessageComposer::PluginGrammarAction)
