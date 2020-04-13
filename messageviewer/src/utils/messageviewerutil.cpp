@@ -703,16 +703,23 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
 {
     Util::HtmlMessageInfo messageInfo;
     QString s = htmlSource.trimmed();
-    const int indexDoctype = s.indexOf(QRegularExpression(QStringLiteral("<!DOCTYPE[^>]*>"), QRegularExpression::CaseInsensitiveOption));
+    static QRegularExpression body = QRegularExpression(QStringLiteral("<body[^>]*>"), QRegularExpression::CaseInsensitiveOption);
+    static QRegularExpression docTypeRegularExpression = QRegularExpression(QStringLiteral("<!DOCTYPE[^>]*>"), QRegularExpression::CaseInsensitiveOption);
+    QRegularExpressionMatch match;
+    const int indexDoctype = s.indexOf(docTypeRegularExpression, 0, &match);
     QString textBeforeDoctype;
-    if (indexDoctype != -1) {
+    if (indexDoctype > 0) {
         textBeforeDoctype = s.left(indexDoctype);
         s.remove(textBeforeDoctype);
     }
-    s = s.remove(QRegularExpression(QStringLiteral("^<!DOCTYPE[^>]*>"), QRegularExpression::CaseInsensitiveOption)).trimmed();
-    s = s.remove(QRegularExpression(QStringLiteral("<html[^>]*>"), QRegularExpression::CaseInsensitiveOption)).trimmed();
+    if (!match.captured().isEmpty()) {
+        s = s.remove(match.captured()).trimmed();
+    }
+    static QRegularExpression htmlRegularExpression = QRegularExpression(QStringLiteral("<html[^>]*>"), QRegularExpression::CaseInsensitiveOption);
+    s = s.remove(htmlRegularExpression).trimmed();
     // head
-    s = s.remove(QRegularExpression(QStringLiteral("^<head/>"), QRegularExpression::CaseInsensitiveOption)).trimmed();
+    static QRegularExpression headEndRegularExpression = QRegularExpression(QStringLiteral("^<head/>"), QRegularExpression::CaseInsensitiveOption);
+    s = s.remove(headEndRegularExpression).trimmed();
     const int startIndex = s.indexOf(QLatin1String("<head>"), Qt::CaseInsensitive);
     if (startIndex >= 0) {
         const auto endIndex = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
@@ -721,7 +728,8 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
             messageInfo.htmlSource = htmlSource;
             return messageInfo;
         }
-        messageInfo.extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
+        const int index = startIndex + 6;
+        messageInfo.extraHead = s.mid(index, endIndex - index);
 #if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 13, 0)
         //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
         //Don't authorize to refresh content.
@@ -732,11 +740,13 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         s = s.remove(startIndex, endIndex - startIndex + 7).trimmed();
     }
     // body
-    s = s.remove(QRegularExpression(QStringLiteral("<body[^>]*>"), QRegularExpression::CaseInsensitiveOption)).trimmed();
+    s = s.remove(body).trimmed();
     //Some mail has </div>$ at end
-    s = s.remove(QRegularExpression(QStringLiteral("</html></div>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
-    s = s.remove(QRegularExpression(QStringLiteral("</html>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
-    s = s.remove(QRegularExpression(QStringLiteral("</body>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
+    static QRegularExpression htmlDivRegularExpression = QRegularExpression(QStringLiteral("(</html></div>|</html>)$"), QRegularExpression::CaseInsensitiveOption);
+    s = s.remove(htmlDivRegularExpression).trimmed();
+    //s = s.remove(QRegularExpression(QStringLiteral("</html>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
+    static QRegularExpression bodyEndRegularExpression = QRegularExpression(QStringLiteral("</body>$"), QRegularExpression::CaseInsensitiveOption);
+    s = s.remove(bodyEndRegularExpression).trimmed();
     s = textBeforeDoctype + s;
     messageInfo.htmlSource = s;
     return messageInfo;
