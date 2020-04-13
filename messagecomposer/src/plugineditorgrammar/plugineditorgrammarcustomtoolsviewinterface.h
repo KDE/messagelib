@@ -23,7 +23,6 @@
 #include <PimCommon/CustomToolsViewInterface>
 #include "messagecomposer_export.h"
 #include <QDebug>
-#include <QScopedPointer>
 
 namespace KPIMTextEdit {
 class RichTextComposer;
@@ -87,7 +86,7 @@ Q_SIGNALS:
     void replaceText(const MessageComposer::PluginGrammarAction &act);
 
 private:
-    const QScopedPointer<PluginEditorGrammarCustomToolsViewInterfacePrivate> d;
+    PluginEditorGrammarCustomToolsViewInterfacePrivate const *d;
 };
 }
 Q_DECLARE_METATYPE(MessageComposer::PluginGrammarAction)
