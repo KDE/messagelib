@@ -703,16 +703,15 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
 {
     Util::HtmlMessageInfo messageInfo;
     QString s = htmlSource.trimmed();
-    static QRegularExpression body = QRegularExpression(QStringLiteral("<body[^>]*>"), QRegularExpression::CaseInsensitiveOption);
     static QRegularExpression docTypeRegularExpression = QRegularExpression(QStringLiteral("<!DOCTYPE[^>]*>"), QRegularExpression::CaseInsensitiveOption);
-    QRegularExpressionMatch match;
-    const int indexDoctype = s.indexOf(docTypeRegularExpression, 0, &match);
+    QRegularExpressionMatch matchDocType;
+    const int indexDoctype = s.indexOf(docTypeRegularExpression, 0, &matchDocType);
     QString textBeforeDoctype;
     if (indexDoctype > 0) {
         textBeforeDoctype = s.left(indexDoctype);
         s.remove(textBeforeDoctype);
     }
-    const QString capturedString = match.captured();
+    const QString capturedString = matchDocType.captured();
     if (!capturedString.isEmpty()) {
         s = s.remove(capturedString).trimmed();
     }
@@ -741,6 +740,7 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         s = s.remove(startIndex, endIndex - startIndex + 7).trimmed();
     }
     // body
+    static QRegularExpression body = QRegularExpression(QStringLiteral("<body[^>]*>"), QRegularExpression::CaseInsensitiveOption);
     s = s.remove(body).trimmed();
     //Some mail has </div>$ at end
     static QRegularExpression htmlDivRegularExpression = QRegularExpression(QStringLiteral("(</html></div>|</html>)$"), QRegularExpression::CaseInsensitiveOption);
