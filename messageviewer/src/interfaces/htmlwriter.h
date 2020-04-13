@@ -93,7 +93,7 @@ public:
       */
     virtual void embedPart(const QByteArray &contentId, const QString &url) = 0;
 
-    virtual void extraHead(const QString &str) = 0;
+    virtual void setExtraHead(const QString &str) = 0;
 
     void setCodec(const QByteArray &codec);
     Q_REQUIRED_RESULT QByteArray codec() const;

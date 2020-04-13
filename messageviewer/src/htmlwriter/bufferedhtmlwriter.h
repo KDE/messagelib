@@ -44,7 +44,7 @@ public:
     Q_REQUIRED_RESULT QByteArray data() const;
     void clear();
 
-    void extraHead(const QString &str) override;
+    void setExtraHead(const QString &str) override;
     void embedPart(const QByteArray &contentId, const QString &url) override;
 
 protected:

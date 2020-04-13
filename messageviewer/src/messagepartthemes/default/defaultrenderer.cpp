@@ -342,7 +342,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
 
         if (isHtmlPreferred) {
             mp->nodeHelper()->setNodeDisplayedEmbedded(mp->content(), true);
-            htmlWriter->extraHead(messageInfo.extraHead);
+            htmlWriter->setExtraHead(messageInfo.extraHead);
         }
 
         block.setProperty("containsExternalReferences",

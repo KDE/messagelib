@@ -114,7 +114,7 @@ void WebEnginePartHtmlWriter::insertExtraHead()
     }
 }
 
-void WebEnginePartHtmlWriter::extraHead(const QString &str)
+void WebEnginePartHtmlWriter::setExtraHead(const QString &str)
 {
     mExtraHead = str;
 }

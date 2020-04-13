@@ -53,7 +53,7 @@ public:
     void reset() override;
     Q_REQUIRED_RESULT QIODevice *device() const override;
     void embedPart(const QByteArray &contentId, const QString &url) override;
-    void extraHead(const QString &str) override;
+    void setExtraHead(const QString &str) override;
 
 private:
     QFile mFile;

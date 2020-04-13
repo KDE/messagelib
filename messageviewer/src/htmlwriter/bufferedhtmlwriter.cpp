@@ -55,7 +55,7 @@ QIODevice *BufferedHtmlWriter::device() const
     return const_cast<QBuffer *>(&m_buffer);
 }
 
-void BufferedHtmlWriter::extraHead(const QString &str)
+void BufferedHtmlWriter::setExtraHead(const QString &str)
 {
     Q_UNUSED(str);
 }

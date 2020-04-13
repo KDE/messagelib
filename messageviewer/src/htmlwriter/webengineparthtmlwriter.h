@@ -40,7 +40,7 @@ public:
     void end() override;
     void reset() override;
     void embedPart(const QByteArray &contentId, const QString &url) override;
-    void extraHead(const QString &str) override;
+    void setExtraHead(const QString &str) override;
 
 Q_SIGNALS:
     void finished();
