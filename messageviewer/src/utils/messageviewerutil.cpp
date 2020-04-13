@@ -712,8 +712,9 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         textBeforeDoctype = s.left(indexDoctype);
         s.remove(textBeforeDoctype);
     }
-    if (!match.captured().isEmpty()) {
-        s = s.remove(match.captured()).trimmed();
+    const QString capturedString = match.captured();
+    if (!capturedString.isEmpty()) {
+        s = s.remove(capturedString).trimmed();
     }
     static QRegularExpression htmlRegularExpression = QRegularExpression(QStringLiteral("<html[^>]*>"), QRegularExpression::CaseInsensitiveOption);
     s = s.remove(htmlRegularExpression).trimmed();
@@ -747,8 +748,7 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
     //s = s.remove(QRegularExpression(QStringLiteral("</html>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
     static QRegularExpression bodyEndRegularExpression = QRegularExpression(QStringLiteral("</body>$"), QRegularExpression::CaseInsensitiveOption);
     s = s.remove(bodyEndRegularExpression).trimmed();
-    s = textBeforeDoctype + s;
-    messageInfo.htmlSource = s;
+    messageInfo.htmlSource = textBeforeDoctype + s;
     return messageInfo;
 }
 
