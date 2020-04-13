@@ -77,7 +77,7 @@ struct HtmlMessageInfo {
     QString extraHead;
 };
 
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString processHtml(const QString &htmlSource, QString &extraHead);
+Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT HtmlMessageInfo processHtml(const QString &htmlSource);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QByteArray htmlCodec(const QByteArray &data, const QByteArray &currentCodec);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString generateFileNameForExtension(const Akonadi::Item &msgBase, const QString &extension);
 }
