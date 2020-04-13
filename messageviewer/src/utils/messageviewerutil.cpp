@@ -741,7 +741,14 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
     }
     // body
     static QRegularExpression body = QRegularExpression(QStringLiteral("<body[^>]*>"), QRegularExpression::CaseInsensitiveOption);
-    s = s.remove(body).trimmed();
+    QRegularExpressionMatch matchBody;
+    const int bodyStartIndex = s.indexOf(body, 0, &matchBody);
+    if (bodyStartIndex >= 0) {
+        //qDebug() << "matchBody  " << matchBody.captured();
+        s = s.remove(bodyStartIndex, matchBody.capturedLength()).trimmed();
+        //Parse style
+        messageInfo.bodyStyle = matchBody.captured();
+    }
     //Some mail has </div>$ at end
     static QRegularExpression htmlDivRegularExpression = QRegularExpression(QStringLiteral("(</html></div>|</html>)$"), QRegularExpression::CaseInsensitiveOption);
     s = s.remove(htmlDivRegularExpression).trimmed();

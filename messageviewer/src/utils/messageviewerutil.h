@@ -75,10 +75,12 @@ MESSAGEVIEWER_EXPORT const QTextCodec *codecForName(const QByteArray &_str);
 struct HtmlMessageInfo {
     QString htmlSource;
     QString extraHead;
+    QString bodyStyle;
     Q_REQUIRED_RESULT bool operator==(const HtmlMessageInfo &other) const
     {
         return other.htmlSource == htmlSource
-               && other.extraHead == extraHead;
+                && other.extraHead == extraHead
+                && other.bodyStyle == bodyStyle;
     }
 };
 
