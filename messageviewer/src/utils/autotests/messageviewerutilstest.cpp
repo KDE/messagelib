@@ -73,11 +73,10 @@ void MessageViewerUtilsTest::shouldExtractHtml()
 {
     QFETCH(QString, input);
     QFETCH(QString, output);
-    QString header;
-    const QString processHtml = MessageViewer::Util::processHtml(input, header);
-    bool equal = processHtml == output;
+    const MessageViewer::Util::HtmlMessageInfo processHtml = MessageViewer::Util::processHtml(input);
+    bool equal = processHtml.htmlSource == output;
     if (!equal) {
-        qDebug() << " processed " << processHtml;
+        qDebug() << " processed " << processHtml.htmlSource;
         qDebug() << " ref " << output;
     }
     QVERIFY(equal);

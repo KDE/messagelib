@@ -337,18 +337,17 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
     block.setProperty("loadExternal", htmlLoadExternal());
     block.setProperty("isPrinting", isPrinting());
     {
-        QString extraHead;
         //laurent: FIXME port to async method webengine
-        QString bodyText = Util::processHtml(mp->bodyHtml(), extraHead);
+        Util::HtmlMessageInfo messageInfo = Util::processHtml(mp->bodyHtml());
 
         if (isHtmlPreferred) {
             mp->nodeHelper()->setNodeDisplayedEmbedded(mp->content(), true);
-            htmlWriter->extraHead(extraHead);
+            htmlWriter->extraHead(messageInfo.extraHead);
         }
 
         block.setProperty("containsExternalReferences",
-                          Util::containsExternalReferences(bodyText, extraHead));
-        c.insert(QStringLiteral("content"), bodyText);
+                          Util::containsExternalReferences(messageInfo.htmlSource, messageInfo.extraHead));
+        c.insert(QStringLiteral("content"), messageInfo.htmlSource);
     }
 
     {

@@ -699,8 +699,9 @@ void Util::readGravatarConfig()
 // until we have that back, at least attempt to fix some of the damage
 // yes, "parsing" HTML with regexps is very very wrong, but it's still better than not filtering
 // this at all...
-QString Util::processHtml(const QString &htmlSource, QString &extraHead)
+Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
 {
+    Util::HtmlMessageInfo messageInfo;
     QString s = htmlSource.trimmed();
     const int indexDoctype = s.indexOf(QRegExp(QStringLiteral("<!DOCTYPE[^>]*>"), Qt::CaseInsensitive));
     QString textBeforeDoctype;
@@ -717,14 +718,15 @@ QString Util::processHtml(const QString &htmlSource, QString &extraHead)
         const auto endIndex = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
 
         if (endIndex < 0) {
-            return htmlSource;
+            messageInfo.htmlSource = htmlSource;
+            return messageInfo;
         }
-        extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
+        messageInfo.extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
 #if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 13, 0)
         //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
         //Don't authorize to refresh content.
         if (MessageViewer::Util::excludeExtraHeader(s)) {
-            extraHead.clear();
+            messageInfo.extraHead.clear();
         }
 #endif
         s = s.remove(startIndex, endIndex - startIndex + 7).trimmed();
@@ -736,7 +738,8 @@ QString Util::processHtml(const QString &htmlSource, QString &extraHead)
     s = s.remove(QRegExp(QStringLiteral("</html>$"), Qt::CaseInsensitive)).trimmed();
     s = s.remove(QRegExp(QStringLiteral("</body>$"), Qt::CaseInsensitive)).trimmed();
     s = textBeforeDoctype + s;
-    return s;
+    messageInfo.htmlSource = s;
+    return messageInfo;
 }
 
 
