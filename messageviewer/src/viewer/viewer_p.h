@@ -563,6 +563,7 @@ public Q_SLOTS:
     void slotResetMessageDisplayFormat();
 
     void slotGeneralFontChanged();
+    void slotShowDevelopmentTools();
 
 Q_SIGNALS:
     void showStatusBarMessage(const QString &message);
@@ -599,7 +600,6 @@ private:
     void slotDelayPrintPreview();
     void applyZoomValue(qreal factor, bool saveConfig = true);
     void slotZoomChanged(qreal zoom);
-    void slotShowDevelopmentTools();
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting = false;
     bool mHtmlLoadExternalDefaultSetting = false;

@@ -770,4 +770,11 @@ void Viewer::exportToPdf(const QString &fileName)
     Q_D(Viewer);
     d->exportToPdf(fileName);
 }
+
+void Viewer::showDevelopmentTools()
+{
+    Q_D(Viewer);
+    d->slotShowDevelopmentTools();
+}
+
 }

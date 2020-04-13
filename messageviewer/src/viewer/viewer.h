@@ -348,10 +348,11 @@ public:
 
     void hasMultiMessages(bool messages);
     void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
-    MessageViewer::DKIMWidgetInfo *dkimWidgetInfo();
+    Q_REQUIRED_RESULT MessageViewer::DKIMWidgetInfo *dkimWidgetInfo();
 
     void exportToPdf(const QString &fileName);
 
+    void showDevelopmentTools();
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
