@@ -75,6 +75,11 @@ MESSAGEVIEWER_EXPORT const QTextCodec *codecForName(const QByteArray &_str);
 struct HtmlMessageInfo {
     QString htmlSource;
     QString extraHead;
+    Q_REQUIRED_RESULT bool operator==(const HtmlMessageInfo &other) const
+    {
+        return other.htmlSource == htmlSource
+               && other.extraHead == extraHead;
+    }
 };
 
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT HtmlMessageInfo processHtml(const QString &htmlSource);
