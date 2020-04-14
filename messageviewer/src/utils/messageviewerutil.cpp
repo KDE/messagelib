@@ -44,7 +44,6 @@
 #include "MessageCore/MessageCoreSettings"
 #include "MessageCore/NodeHelper"
 #include "MessageCore/StringUtil"
-#include <kio_version.h>
 
 #include <PimCommon/RenameFileDialog>
 
@@ -157,11 +156,7 @@ bool Util::checkOverwrite(const QUrl &url, QWidget *w)
     if (url.isLocalFile()) {
         fileExists = QFile::exists(url.toLocalFile());
     } else {
-#if KIO_VERSION < QT_VERSION_CHECK(5, 69, 0)
-        auto job = KIO::stat(url, KIO::StatJob::DestinationSide, 0, KIO::JobFlag::DefaultFlags);
-#else
         auto job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatBasic);
-#endif
         KJobWidgets::setWindow(job, w);
         fileExists = job->exec();
     }
@@ -323,11 +318,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                 if (curUrl.isLocalFile()) {
                     fileExists = QFile::exists(curUrl.toLocalFile());
                 } else {
-#if KIO_VERSION < QT_VERSION_CHECK(5, 69, 0)
-                    auto job = KIO::stat(curUrl, KIO::StatJob::DestinationSide, 0);
-#else
                     auto job = KIO::statDetails(url, KIO::StatJob::DestinationSide, KIO::StatDetail::StatBasic);
-#endif
                     KJobWidgets::setWindow(job, parent);
                     fileExists = job->exec();
                 }
