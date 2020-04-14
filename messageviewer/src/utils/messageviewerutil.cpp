@@ -767,3 +767,11 @@ QByteArray Util::htmlCodec(const QByteArray &data, const QByteArray &codec)
     //qDebug() << " codec ******************************************: " << codec << " currentCodec : " <<currentCodec;
     return currentCodec;
 }
+
+QDebug operator <<(QDebug d, const Util::HtmlMessageInfo &t)
+{
+    d << " htmlSource " << t.htmlSource;
+    d << " extraHead " << t.extraHead;
+    d << " bodyStyle " << t.bodyStyle;
+    return d;
+}

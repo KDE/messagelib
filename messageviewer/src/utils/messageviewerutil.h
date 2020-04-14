@@ -89,5 +89,7 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QByteArray htmlCodec(const QByteArray &da
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString generateFileNameForExtension(const Akonadi::Item &msgBase, const QString &extension);
 }
 }
+Q_DECLARE_TYPEINFO(MessageViewer::Util::HtmlMessageInfo, Q_MOVABLE_TYPE);
+MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::Util::HtmlMessageInfo &t);
 Q_DECLARE_METATYPE(KService::Ptr)
 #endif
