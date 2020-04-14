@@ -52,7 +52,7 @@ public:
 
     void setContent(KMime::Content *content);
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
-    void setSigningKeys(std::vector<GpgME::Key> &signers);
+    void setSigningKeys(const std::vector<GpgME::Key> &signers);
 
     void setEncryptionKeys(const std::vector<GpgME::Key> &keys) override;
     void setRecipients(const QStringList &rec) override;

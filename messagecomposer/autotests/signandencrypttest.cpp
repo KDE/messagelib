@@ -53,7 +53,7 @@ void SignAndEncryptTest::initTestCase()
 
 void SignAndEncryptTest::testContent()
 {
-    std::vector< GpgME::Key > keys = Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     Composer composer;
 
@@ -100,7 +100,7 @@ void SignAndEncryptTest::testContent()
 
 void SignAndEncryptTest::testHeaders()
 {
-    std::vector< GpgME::Key > keys = Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     Composer composer;
     SignJob *sJob = new SignJob(&composer);

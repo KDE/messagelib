@@ -106,7 +106,7 @@ void SignEncryptJob::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
     d->format = format;
 }
 
-void SignEncryptJob::setSigningKeys(std::vector<GpgME::Key> &signers)
+void SignEncryptJob::setSigningKeys(const std::vector<GpgME::Key> &signers)
 {
     Q_D(SignEncryptJob);
 

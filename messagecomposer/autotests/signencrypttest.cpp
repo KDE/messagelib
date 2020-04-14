@@ -63,7 +63,7 @@ void SignEncryptTest::testContent()
     QFETCH(int, cryptoMessageFormat);
     QFETCH(QString, error);
 
-    std::vector< GpgME::Key > keys = Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
     const QString data(QString::fromLocal8Bit("one flew over the cuckoo's nest"));
 
     Composer composer;
@@ -113,7 +113,7 @@ void SignEncryptTest::testContent()
 
 void SignEncryptTest::testContentSubjobChained()
 {
-    std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
+    const std::vector< GpgME::Key >  &keys = Test::getKeys();
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
     KMime::Message skeletonMessage;
@@ -155,7 +155,7 @@ void SignEncryptTest::testContentSubjobChained()
 
 void SignEncryptTest::testHeaders()
 {
-    std::vector< GpgME::Key > keys = Test::getKeys();
+    const std::vector< GpgME::Key >  &keys = Test::getKeys();
 
     Composer composer;
     auto seJob = new SignEncryptJob(&composer);

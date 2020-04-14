@@ -50,7 +50,7 @@ public:
 
     void setContent(KMime::Content *content);
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
-    void setSigningKeys(std::vector<GpgME::Key> &signers);
+    void setSigningKeys(const std::vector<GpgME::Key> &signers);
 
     void setSkeletonMessage(KMime::Message *skeletonMessage);
     void setProtectedHeaders(bool protectedHeaders);

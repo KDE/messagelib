@@ -50,7 +50,7 @@ void SignJobTest::initTestCase()
 
 void SignJobTest::testContentDirect()
 {
-    std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     Composer composer;
     auto sJob = new SignJob(&composer);
@@ -70,7 +70,7 @@ void SignJobTest::testContentDirect()
 
 void SignJobTest::testContentChained()
 {
-    std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
     auto content = new KMime::Content;
@@ -92,7 +92,7 @@ void SignJobTest::testContentChained()
 
 void SignJobTest::testHeaders()
 {
-    std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     Composer composer;
     auto sJob = new SignJob(&composer);
@@ -124,7 +124,7 @@ void SignJobTest::testHeaders()
 
 void SignJobTest::testRecommentationRFC3156()
 {
-    std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     const QString data = QStringLiteral("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
     KMime::Headers::contentEncoding cte = KMime::Headers::CEquPr;
@@ -157,7 +157,7 @@ void SignJobTest::testRecommentationRFC3156()
 
 void SignJobTest::testMixedContent()
 {
-    std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     const QString data = QStringLiteral("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
 
@@ -230,7 +230,7 @@ void SignJobTest::testProtectedHeaders()
     QFETCH(bool,protectedHeaders);
     QFETCH(QString, referenceFile);
 
-    std::vector< GpgME::Key > keys = Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     Composer composer;
     auto sJob = new SignJob(&composer);
