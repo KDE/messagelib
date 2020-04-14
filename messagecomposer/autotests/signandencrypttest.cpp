@@ -57,15 +57,14 @@ void SignAndEncryptTest::testContent()
 
     Composer composer;
 
-    QVector<QByteArray> charsets;
-    charsets << "us-ascii";
+    const QVector<QByteArray> charsets = {"us-ascii"};
     composer.globalPart()->setCharsets(charsets);
 
     TextPart part;
     part.setWordWrappingEnabled(false);
     part.setCleanPlainText(QStringLiteral("one flew over the cuckoo's nest"));
 
-    MainTextJob *mainTextJob = new MainTextJob(&part, &composer);
+    auto mainTextJob = new MainTextJob(&part, &composer);
     auto sJob = new SignJob(&composer);
     auto eJob = new EncryptJob(&composer);
 
@@ -73,8 +72,7 @@ void SignAndEncryptTest::testContent()
 
     VERIFYEXEC(mainTextJob);
 
-    QStringList recipients;
-    recipients << QString::fromLocal8Bit("test@kolab.org");
+    const QStringList recipients = {QStringLiteral("test@kolab.org")};
 
     sJob->setContent(mainTextJob->content());
     sJob->setSigningKeys(keys);
@@ -94,9 +92,9 @@ void SignAndEncryptTest::testContent()
 
     ComposerTestUtil::verifySignatureAndEncryption(
         result,
-        QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8(),
+        QStringLiteral("one flew over the cuckoo's nest").toUtf8(),
         Kleo::OpenPGPMIMEFormat);
-    
+
     delete result;
 }
 
@@ -111,12 +109,11 @@ void SignAndEncryptTest::testHeaders()
     QVERIFY(sJob);
     QVERIFY(eJob);
 
-    QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
-    KMime::Content *content = new KMime::Content;
+    const QByteArray data(QStringLiteral("one flew over the cuckoo's nest").toUtf8());
+    auto content = new KMime::Content;
     content->setBody(data);
 
-    QStringList recipients;
-    recipients << QString::fromLocal8Bit("test@kolab.org");
+    const QStringList recipients = {QStringLiteral("test@kolab.org")};
 
     sJob->setContent(content);
     sJob->setSigningKeys(keys);
@@ -134,14 +131,11 @@ void SignAndEncryptTest::testHeaders()
     QVERIFY(result);
     result->assemble();
 
-    QByteArray mimeType("multipart/encrypted");
-    QByteArray charset("ISO-8859-1");
-
     QVERIFY(result->contentType(false));
-    QCOMPARE(result->contentType()->mimeType(), mimeType);
-    QCOMPARE(result->contentType()->charset(), charset);
-    QCOMPARE(result->contentType()->parameter(QString::fromLocal8Bit("protocol")), QString::fromLocal8Bit("application/pgp-encrypted"));
+    QCOMPARE(result->contentType()->mimeType(), "multipart/encrypted");
+    QCOMPARE(result->contentType()->charset(), "ISO-8859-1");
+    QCOMPARE(result->contentType()->parameter(QStringLiteral("protocol")), QStringLiteral("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
-    
+
     delete result;
 }
