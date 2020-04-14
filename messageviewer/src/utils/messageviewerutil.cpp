@@ -137,9 +137,11 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
             }
         }
         if (!newStringImg.isEmpty()) {
-            const bool containsReg2 = newStringImg.contains(QRegularExpression(QStringLiteral("<img.*src=\"https?:/.*\".*>"), QRegularExpression::CaseInsensitiveOption), &rmatch);
+            static QRegularExpression image1RegularExpression = QRegularExpression(QStringLiteral("<img.*src=\"https?:/.*\".*>"), QRegularExpression::CaseInsensitiveOption);
+            const bool containsReg2 = newStringImg.contains(image1RegularExpression, &rmatch);
             if (!containsReg2) {
-                const bool containsReg = newStringImg.contains(QRegularExpression(QStringLiteral("<img.*src=https?:/.*>"), QRegularExpression::CaseInsensitiveOption), &rmatch);
+                static QRegularExpression image2RegularExpression = QRegularExpression(QStringLiteral("<img.*src=https?:/.*>"), QRegularExpression::CaseInsensitiveOption);
+                const bool containsReg = newStringImg.contains(image2RegularExpression, &rmatch);
                 return containsReg;
             } else {
                 return true;

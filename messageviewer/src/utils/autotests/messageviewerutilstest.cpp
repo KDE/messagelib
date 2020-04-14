@@ -55,6 +55,38 @@ void MessageViewerUtilsTest::shouldContainsExternalReferences_data()
     QTest::newRow("image2.txt") << QStringLiteral("image2.txt") << QString() << true;
     QTest::newRow("noimage2.txt") << QStringLiteral("noimage2.txt") << QString() << false;
     QTest::newRow("noimage3.txt") << QStringLiteral("noimage3.txt") << QString() << false;
+//    before
+//      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage.txt)
+//      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage.txt":
+//      0.0015 msecs per iteration (total: 52, iterations: 32768)
+//      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image.txt)
+//      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image.txt":
+//      0.0018 msecs per iteration (total: 60, iterations: 32768)
+//      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image2.txt)
+//      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image2.txt":
+//      0.058 msecs per iteration (total: 60, iterations: 1024)
+//      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage2.txt)
+//      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage2.txt":
+//      0.060 msecs per iteration (total: 62, iterations: 1024)
+//      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage3.txt)
+//      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage3.txt":
+
+    //AFTER
+    //RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage.txt":
+    //     0.0014 msecs per iteration (total: 98, iterations: 65536)
+    //PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image.txt)
+    //RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image.txt":
+    //     0.0017 msecs per iteration (total: 57, iterations: 32768)
+    //PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image2.txt)
+    //RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image2.txt":
+    //     0.0073 msecs per iteration (total: 60, iterations: 8192)
+    //PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage2.txt)
+    //RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage2.txt":
+    //     0.0023 msecs per iteration (total: 78, iterations: 32768)
+    //PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage3.txt)
+    //RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage3.txt":
+    //     0.0023 msecs per iteration (total: 78, iterations: 32768)
+
 }
 
 void MessageViewerUtilsTest::shouldContainsExternalReferences()
@@ -66,7 +98,9 @@ void MessageViewerUtilsTest::shouldContainsExternalReferences()
     QFile file(curPath + filename);
     QVERIFY(file.open(QIODevice::ReadOnly));
     const QString html = QString::fromLatin1(file.readAll());
-    QCOMPARE(MessageViewer::Util::containsExternalReferences(html, extraHead), hasExternalReference);
+    QBENCHMARK {
+        QCOMPARE(MessageViewer::Util::containsExternalReferences(html, extraHead), hasExternalReference);
+    }
 }
 
 void MessageViewerUtilsTest::shouldExtractHtml()
