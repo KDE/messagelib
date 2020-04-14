@@ -33,6 +33,9 @@ private Q_SLOTS:
     void shouldContainsExternalReferences_data();
     void shouldContainsExternalReferences();
 
+    void shouldExtractHtmlBenchmark();
+    void shouldExtractHtmlBenchmark_data();
+
     void shouldExtractHtml();
     void shouldExtractHtml_data();
 

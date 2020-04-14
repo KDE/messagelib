@@ -107,6 +107,45 @@ void MessageViewerUtilsTest::shouldExtractHtml()
 {
     QFETCH(QString, input);
     QFETCH(QString, output);
+    const MessageViewer::Util::HtmlMessageInfo processHtml = MessageViewer::Util::processHtml(input);
+    bool equal = processHtml.htmlSource == output;
+    if (!equal) {
+        qDebug() << " processed " << processHtml.htmlSource;
+        qDebug() << " ref " << output;
+    }
+    QVERIFY(equal);
+}
+
+void MessageViewerUtilsTest::shouldExtractHtml_data()
+{
+    QTest::addColumn<QString>("input");
+    QTest::addColumn<QString>("output");
+    QTest::newRow("empty") << QString() << QString();
+    QString input = QStringLiteral("<html><head></head><body>foo</body></html>");
+    QString output = QStringLiteral("foo");
+    QTest::newRow("test1") << input << output;
+
+    input = QStringLiteral("<html><head></head><body>foo</body></html></div>");
+    output = QStringLiteral("foo");
+    QTest::newRow("test2") << input << output;
+
+    input = QStringLiteral(
+                "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote class=\"protonmail_quote\"><br><!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\r\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style></head><body>\r\n<p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent installation I had an issue with the Orthanc-Module, during initialization of the database:</p>\r\n<p><span style=\" font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" font-family:'monospace','Noto Sans';\"><br />'Something' as changed in the setup of timezone data (between December and now so to say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">To make the story short, this module pytzdata comes from the pypi-package pytzdata and contains basically the same stuff as pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA 290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>");
+    output = QStringLiteral(
+                "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote class=\"protonmail_quote\"><br><p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent installation I had an issue with the Orthanc-Module, during initialization of the database:</p>\r\n<p><span style=\" font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" font-family:'monospace','Noto Sans';\"><br />'Something' as changed in the setup of timezone data (between December and now so to say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">To make the story short, this module pytzdata comes from the pypi-package pytzdata and contains basically the same stuff as pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA 290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p>");
+    QTest::newRow("bug418482") << input << output;
+
+    input = QStringLiteral(
+                "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<html><head><meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" /></head><body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\"><div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div></body></html>");
+    output = QStringLiteral("HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>");
+    QTest::newRow("bug419949") << input << output;
+}
+
+
+void MessageViewerUtilsTest::shouldExtractHtmlBenchmark()
+{
+    QFETCH(QString, input);
+    QFETCH(QString, output);
     QBENCHMARK {
         const MessageViewer::Util::HtmlMessageInfo processHtml = MessageViewer::Util::processHtml(input);
         bool equal = processHtml.htmlSource == output;
@@ -118,7 +157,7 @@ void MessageViewerUtilsTest::shouldExtractHtml()
     }
 }
 
-void MessageViewerUtilsTest::shouldExtractHtml_data()
+void MessageViewerUtilsTest::shouldExtractHtmlBenchmark_data()
 {
     QTest::addColumn<QString>("input");
     QTest::addColumn<QString>("output");
