@@ -146,7 +146,7 @@ void MessageViewerUtilsTest::shouldExtractHtmlBenchmark()
 {
     QFETCH(QString, input);
     QFETCH(QString, output);
-    QBENCHMARK {
+    //QBENCHMARK {
         const MessageViewer::Util::HtmlMessageInfo processHtml = MessageViewer::Util::processHtml(input);
         bool equal = processHtml.htmlSource == output;
         if (!equal) {
@@ -154,7 +154,7 @@ void MessageViewerUtilsTest::shouldExtractHtmlBenchmark()
             qDebug() << " ref " << output;
         }
         QVERIFY(equal);
-    }
+    //}
 }
 
 void MessageViewerUtilsTest::shouldExtractHtmlBenchmark_data()

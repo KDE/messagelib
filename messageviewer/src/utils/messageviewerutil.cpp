@@ -737,7 +737,7 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
     QRegularExpressionMatch matchBody;
     const int bodyStartIndex = s.indexOf(body, 0, &matchBody);
     if (bodyStartIndex >= 0) {
-        //qDebug() << "matchBody  " << matchBody.captured();
+        //qDebug() << "matchBody  " << matchBody.capturedTexts();
         s = s.remove(bodyStartIndex, matchBody.capturedLength()).trimmed();
         //Parse style
         messageInfo.bodyStyle = matchBody.captured();
