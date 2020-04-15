@@ -112,6 +112,8 @@ endif()
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
 endif()
+add_definitions(-DQT_NO_SIGNALS_SLOTS_KEYWORDS)
+add_definitions(-DQT_NO_EMIT)
 
 add_subdirectory(mimetreeparser)
 add_subdirectory(messageviewer)
