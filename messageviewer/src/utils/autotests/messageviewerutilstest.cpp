@@ -169,7 +169,7 @@ void MessageViewerUtilsTest::shouldExtractBodyStyle_data()
     QTest::addColumn<QString>("output");
     QTest::newRow("empty") << QString() << QString();
     QTest::newRow("test1") << QStringLiteral("<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">")
-                           << QStringLiteral("style=\"white-space:pre-wrap;\"");
+                           << QStringLiteral(" style=\"white-space:pre-wrap;\"");
 }
 
 void MessageViewerUtilsTest::shouldExtractHtmlBenchmark()
