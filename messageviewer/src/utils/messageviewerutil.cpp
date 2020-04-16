@@ -688,6 +688,26 @@ void Util::readGravatarConfig()
     }
 }
 
+QString Util::parseBodyStyle(const QString &style)
+{
+    const int indexStyle = style.indexOf(QLatin1String("style=\""));
+    if (indexStyle != -1) {
+        const int indexEnd = style.indexOf(QLatin1Char('"'), indexStyle + 7);
+        if (indexEnd != -1) {
+            const QStringRef styleStr = style.midRef(indexStyle + 7, indexEnd - (indexStyle + 7));
+            const auto lstStyle = styleStr.split(QLatin1Char(';'), Qt::SkipEmptyParts);
+            QStringList lst;
+            for (const auto &style : lstStyle) {
+                if (style.trimmed().contains(QLatin1String("white-space"))) {
+                    lst.append(style.toString().trimmed());
+                }
+            }
+            return QStringLiteral(" style=\"%1").arg(lst.join(QLatin1Char(';'))) + QStringLiteral(";\"");
+        }
+    }
+    return QString();
+}
+
 // FIXME this used to go through the full webkit parser to extract the body and head blocks
 // until we have that back, at least attempt to fix some of the damage
 // yes, "parsing" HTML with regexps is very very wrong, but it's still better than not filtering

@@ -66,6 +66,10 @@ void WebEnginePartHtmlWriter::end()
         insertExtraHead();
         mExtraHead.clear();
     }
+    if (!mStyleBody.isEmpty()) {
+        //insertBodyStyle();
+        mStyleBody.clear();
+    }
     // see QWebEnginePage::setHtml()
     //mHtmlView->setContent(data(), QStringLiteral("text/html;charset=UTF-8"), QUrl(QStringLiteral("file:///")));
 
@@ -108,10 +112,24 @@ void WebEnginePartHtmlWriter::embedPart(const QByteArray &contentId, const QStri
 void WebEnginePartHtmlWriter::insertExtraHead()
 {
     const auto headTag(QByteArrayLiteral("<head>"));
-    const int index = m_data.indexOf(headTag);
+    const int index = m_data.indexOf(headTag);   
     if (index != -1) {
         m_data.insert(index + headTag.length(), mExtraHead.toUtf8());
     }
+}
+
+void WebEnginePartHtmlWriter::insertBodyStyle()
+{
+    const auto bodyTag(QByteArrayLiteral("<body>"));
+    const int index = m_data.indexOf(bodyTag);
+    if (index != -1) {
+        m_data.insert(index + bodyTag.length() - 1, mStyleBody.toUtf8());
+    }
+}
+
+void WebEnginePartHtmlWriter::setStyleBody(const QString &styleBody)
+{
+    mStyleBody = styleBody;
 }
 
 void WebEnginePartHtmlWriter::setExtraHead(const QString &str)

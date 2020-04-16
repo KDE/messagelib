@@ -95,6 +95,8 @@ public:
 
     virtual void setExtraHead(const QString &str) = 0;
 
+    virtual void setStyleBody(const QString &styleBody) = 0;
+
     void setCodec(const QByteArray &codec);
     Q_REQUIRED_RESULT QByteArray codec() const;
 private:

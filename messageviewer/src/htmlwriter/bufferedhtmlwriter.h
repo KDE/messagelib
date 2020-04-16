@@ -46,6 +46,7 @@ public:
 
     void setExtraHead(const QString &str) override;
     void embedPart(const QByteArray &contentId, const QString &url) override;
+    void setStyleBody(const QString &styleBody) override;
 
 protected:
     QByteArray m_data;

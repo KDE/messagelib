@@ -156,6 +156,21 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
     }
 }
 
+void MessageViewerUtilsTest::shouldExtractBodyStyle()
+{
+    QFETCH(QString, input);
+    QFETCH(QString, output);
+    QCOMPARE(MessageViewer::Util::parseBodyStyle(input), output);
+}
+
+void MessageViewerUtilsTest::shouldExtractBodyStyle_data()
+{
+    QTest::addColumn<QString>("input");
+    QTest::addColumn<QString>("output");
+    QTest::newRow("empty") << QString() << QString();
+    QTest::newRow("test1") << QStringLiteral("<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">")
+                           << QStringLiteral("style=\"white-space:pre-wrap;\"");
+}
 
 void MessageViewerUtilsTest::shouldExtractHtmlBenchmark()
 {

@@ -94,3 +94,8 @@ void FileHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
 void FileHtmlWriter::setExtraHead(const QString &)
 {
 }
+
+
+void FileHtmlWriter::setStyleBody(const QString &)
+{
+}

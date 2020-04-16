@@ -42,15 +42,19 @@ public:
     void embedPart(const QByteArray &contentId, const QString &url) override;
     void setExtraHead(const QString &str) override;
 
+    void setStyleBody(const QString &styleBody) override;
+
 Q_SIGNALS:
     void finished();
 
 private:
     void insertExtraHead();
+    void insertBodyStyle();
 
 private:
     MailWebEngineView *mHtmlView = nullptr;
     QString mExtraHead;
+    QString mStyleBody;
     enum State {
         Begun,
         Queued,

@@ -66,6 +66,11 @@ void BufferedHtmlWriter::embedPart(const QByteArray &contentId, const QString &u
     Q_UNUSED(url);
 }
 
+void BufferedHtmlWriter::setStyleBody(const QString &styleBody)
+{
+    Q_UNUSED(styleBody)
+}
+
 QByteArray BufferedHtmlWriter::data() const
 {
     return m_data;

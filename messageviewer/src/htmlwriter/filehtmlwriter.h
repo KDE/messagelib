@@ -54,6 +54,7 @@ public:
     Q_REQUIRED_RESULT QIODevice *device() const override;
     void embedPart(const QByteArray &contentId, const QString &url) override;
     void setExtraHead(const QString &str) override;
+    void setStyleBody(const QString &styleBody) override;
 
 private:
     QFile mFile;

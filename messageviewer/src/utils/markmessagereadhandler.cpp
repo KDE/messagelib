@@ -28,6 +28,7 @@
 #include <Akonadi/KMime/MessageFlags>
 
 #include <QTimer>
+
 using namespace MessageViewer;
 Q_GLOBAL_STATIC(Akonadi::Item::List, sListItem)
 
@@ -79,20 +80,22 @@ MarkMessageReadHandler::~MarkMessageReadHandler()
 
 void MarkMessageReadHandler::setItem(const Akonadi::Item &item)
 {
-    if (sListItem->contains(item) || d->mItemQueue == item
-        || item.hasFlag(Akonadi::MessageFlags::Queued)) {
-        return;
-    }
-    d->mTimer.stop();
-
-    sListItem->removeAll(d->mItemQueue);
-    d->mItemQueue = item;
-    sListItem->append(item);
-    if (item.hasFlag(Akonadi::MessageFlags::Seen)) {
-        return;
-    }
-
     if (MessageViewer::MessageViewerSettings::self()->delayedMarkAsRead()) {
+        if (sListItem->contains(item) || d->mItemQueue == item
+                || item.hasFlag(Akonadi::MessageFlags::Queued)) {
+            return;
+        }
+        if (d->mTimer.isActive()) {
+            d->mTimer.stop();
+        }
+        if (item.hasFlag(Akonadi::MessageFlags::Seen)) {
+            return;
+        }
+
+        sListItem->removeAll(d->mItemQueue);
+        d->mItemQueue = item;
+        sListItem->append(item);
+
         const int delayedMarkTime = MessageViewer::MessageViewerSettings::self()->delayedMarkTime();
         if (delayedMarkTime != 0) {
             d->mTimer.start(delayedMarkTime * 1000);

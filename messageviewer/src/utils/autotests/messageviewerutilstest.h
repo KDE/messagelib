@@ -39,6 +39,10 @@ private Q_SLOTS:
     void shouldExtractHtml();
     void shouldExtractHtml_data();
 
+    void shouldExtractBodyStyle();
+    void shouldExtractBodyStyle_data();
+
+
     void shouldUseCorrectCodec();
     void shouldUseCorrectCodec_data();
 };
