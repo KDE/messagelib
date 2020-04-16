@@ -695,7 +695,7 @@ QString Util::parseBodyStyle(const QString &style)
         const int indexEnd = style.indexOf(QLatin1Char('"'), indexStyle + 7);
         if (indexEnd != -1) {
             const QStringRef styleStr = style.midRef(indexStyle + 7, indexEnd - (indexStyle + 7));
-            const auto lstStyle = styleStr.split(QLatin1Char(';'), Qt::SkipEmptyParts);
+            const auto lstStyle = styleStr.split(QLatin1Char(';'), QString::SkipEmptyParts);
             QStringList lst;
             for (const auto &style : lstStyle) {
                 if (style.trimmed().contains(QLatin1String("white-space"))) {
