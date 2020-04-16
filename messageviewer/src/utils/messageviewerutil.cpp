@@ -692,6 +692,7 @@ QString Util::parseBodyStyle(const QString &style)
 {
     const int indexStyle = style.indexOf(QLatin1String("style=\""));
     if (indexStyle != -1) {
+        //qDebug() << " style " << style;
         const int indexEnd = style.indexOf(QLatin1Char('"'), indexStyle + 7);
         if (indexEnd != -1) {
             const QStringRef styleStr = style.midRef(indexStyle + 7, indexEnd - (indexStyle + 7));
@@ -702,7 +703,9 @@ QString Util::parseBodyStyle(const QString &style)
                     lst.append(style.toString().trimmed());
                 }
             }
-            return QStringLiteral(" style=\"%1").arg(lst.join(QLatin1Char(';'))) + QStringLiteral(";\"");
+            if (!lst.isEmpty()) {
+                return QStringLiteral(" style=\"%1").arg(lst.join(QLatin1Char(';'))) + QStringLiteral(";\"");
+            }
         }
     }
     return QString();
