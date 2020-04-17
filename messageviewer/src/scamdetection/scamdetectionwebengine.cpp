@@ -100,7 +100,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         Q_EMIT resultScanDetection(foundScam);
         return;
     }
-    QRegularExpression ip4regExp(QStringLiteral(
+    static const QRegularExpression ip4regExp(QStringLiteral(
                                      "\\b[0-9]{1,3}\\.[0-9]{1,3}(?:\\.[0-9]{0,3})?(?:\\.[0-9]{0,3})?"));
     const QVariantMap mapResult = resultList.at(0).toMap();
     const QList<QVariant> lst = mapResult.value(QStringLiteral("anchors")).toList();

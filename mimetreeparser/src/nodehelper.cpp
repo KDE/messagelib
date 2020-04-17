@@ -786,7 +786,7 @@ QString NodeHelper::extractAttachmentIndex(const QString &path) const
     // start of the index is something that is not a number followed by a dot: \D.
     // index is only made of numbers,"." and ":": ([0-9.:]+)
     // index is the last part of the folder name: /
-    const QRegularExpression re(QStringLiteral("\\D\\.([e0-9.:]+)/"));
+    static const QRegularExpression re(QStringLiteral("\\D\\.([e0-9.:]+)/"));
     QRegularExpressionMatch rmatch;
     path.lastIndexOf(re, -1, &rmatch);
     if (rmatch.hasMatch()) {
