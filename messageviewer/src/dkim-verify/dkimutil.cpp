@@ -45,9 +45,12 @@ QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
         */
 
     body.replace(QStringLiteral("\n"), QStringLiteral("\r\n"));
-    body.replace(QRegularExpression(QStringLiteral("[ \t]+\r\n")), QStringLiteral("\r\n"));
-    body.replace(QRegularExpression(QStringLiteral("[ \t]+")), QStringLiteral(" "));
-    body.replace(QRegularExpression(QStringLiteral("((\r\n)+?)$")), QStringLiteral("\r\n"));
+    static const QRegularExpression reg1(QStringLiteral("[ \t]+\r\n"));
+    body.replace(reg1, QStringLiteral("\r\n"));
+    static const QRegularExpression reg2(QStringLiteral("[ \t]+"));
+    body.replace(reg2, QStringLiteral(" "));
+    static const QRegularExpression reg3(QStringLiteral("((\r\n)+?)$"));
+    body.replace(QRegularExpression(reg3), QStringLiteral("\r\n"));
     if (body == QLatin1String("\r\n")) {
         body.clear();
     }
