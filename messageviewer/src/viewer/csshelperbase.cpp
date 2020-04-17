@@ -411,7 +411,7 @@ QString CSSHelperBase::quoteCssDefinition() const
                                    "  margin: 4pt 0 4pt 0;\n"
                                    "  padding: 0 0 0 1em;\n"
                                    "  border-left: 2px solid %1;\n"
-                                   "  unicode-bidi: -webkit-plaintext\n"
+                                   "  unicode-bidi: plaintext\n"
                                    "}\n\n").arg(quoteColorName(i), blockQuote);
     }
     quoteCSS += QStringLiteral(".quotemarks{\n"
