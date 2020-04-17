@@ -44,7 +44,8 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key,
     QRegularExpressionMatch match;
     const QString regStr = DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String("(?:") + DKIMAuthenticationStatusInfoUtil::cfws_p() + QLatin1String("([0-9]+)") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String(" )?");
     //qDebug() << " regStr" << regStr;
-    int index = valueKey.indexOf(QRegularExpression(regStr), 0, &match);
+    static const QRegularExpression regular1(regStr);
+    int index = valueKey.indexOf(regular1, 0, &match);
     if (index != -1) {
         mAuthservId = match.captured(1);
         const QString authVersionStr = match.captured(2);
@@ -62,7 +63,8 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key,
     // check if message authentication was performed
     const QString authResultStr = DKIMAuthenticationStatusInfoUtil::regexMatchO(DKIMAuthenticationStatusInfoUtil::value_cp() + QLatin1String(";") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("?none"));
     //qDebug() << "authResultStr "<<authResultStr;
-    index = valueKey.indexOf(QRegularExpression(authResultStr), 0, &match);
+    static const QRegularExpression regular2(authResultStr);
+    index = valueKey.indexOf(regular2, 0, &match);
     if (index != -1) {
         //no result
         return false;
@@ -91,7 +93,8 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
 
     //qDebug() << "methodspec_p " << methodspec_p;
     QRegularExpressionMatch match;
-    int index = valueKey.indexOf(QRegularExpression(methodspec_p), 0, &match);
+    static const QRegularExpression reg2(methodspec_p);
+    int index = valueKey.indexOf(reg2, 0, &match);
     if (index == -1) {
         valueKey = QString(); //remove it !
         qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "methodspec not found ";
@@ -112,7 +115,8 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
 
     // 3) extract reasonspec (optional)
     const QString reasonspec_p = DKIMAuthenticationStatusInfoUtil::regexMatchO(QLatin1String("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + DKIMAuthenticationStatusInfoUtil::value_cp());
-    index = valueKey.indexOf(QRegularExpression(reasonspec_p), 0, &match);
+    static const QRegularExpression reg31(reasonspec_p);
+    index = valueKey.indexOf(reg31, 0, &match);
     if (index != -1) {
         //qDebug() << " reason " << match.capturedTexts();
         authStatusInfo.reason = match.captured(2);
@@ -134,7 +138,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     //qDebug() << "propspec_p " << propspec_p;
 
     const QString regexp = DKIMAuthenticationStatusInfoUtil::regexMatchO(propspec_p);
-    const QRegularExpression reg(regexp);
+    static const QRegularExpression reg(regexp);
     if (!reg.isValid()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " reg error : " << reg.errorString();
     } else {

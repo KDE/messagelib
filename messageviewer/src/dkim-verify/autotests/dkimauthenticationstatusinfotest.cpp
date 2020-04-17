@@ -43,15 +43,66 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey()
     QFETCH(MessageViewer::DKIMAuthenticationStatusInfo, result);
     QFETCH(bool, relaxingParsing);
     QFETCH(bool, success);
-    MessageViewer::DKIMAuthenticationStatusInfo info;
-    const bool val = info.parseAuthenticationStatus(key, relaxingParsing);
-    QCOMPARE(val, success);
-    const bool compareResult = result == info;
-    if (!compareResult) {
-        qDebug() << "parse info: " << info;
-        qDebug() << "expected: " << result;
+    QBENCHMARK {
+        MessageViewer::DKIMAuthenticationStatusInfo info;
+        const bool val = info.parseAuthenticationStatus(key, relaxingParsing);
+        QCOMPARE(val, success);
+        const bool compareResult = result == info;
+        if (!compareResult) {
+            qDebug() << "parse info: " << info;
+            qDebug() << "expected: " << result;
+        }
+        QVERIFY(compareResult);
     }
-    QVERIFY(compareResult);
+//    Before
+//        PASS   : DKIMAuthenticationStatusInfoTest::initTestCase()
+//        PASS   : DKIMAuthenticationStatusInfoTest::shouldHaveDefaultValue()
+//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(empty)
+//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"empty":
+//             0.81 msecs per iteration (total: 52, iterations: 64)
+//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(test1)
+//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"test1":
+//             18 msecs per iteration (total: 72, iterations: 4)
+//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none)
+//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none":
+//             2.0 msecs per iteration (total: 65, iterations: 32)
+//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none2)
+//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none2":
+//             2.0 msecs per iteration (total: 66, iterations: 32)
+//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason)
+//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason":
+//             13 msecs per iteration (total: 52, iterations: 4)
+//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason2)
+//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason2":
+//             12 msecs per iteration (total: 97, iterations: 8)
+//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(gmails)
+//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"gmails":
+//             7.0 msecs per iteration (total: 56, iterations: 8)
+//        PASS   : DKIMAuthenticationStatusInfoTest::cleanupTestCase()
+
+
+//    AFTER
+//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"empty":
+//     0.0089 msecs per iteration (total: 73, iterations: 8192)
+//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(test1)
+//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"test1":
+//     0.23 msecs per iteration (total: 59, iterations: 256)
+//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none)
+//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none":
+//     0.023 msecs per iteration (total: 96, iterations: 4096)
+//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none2)
+//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none2":
+//     0.023 msecs per iteration (total: 96, iterations: 4096)
+//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason)
+//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason":
+//     0.16 msecs per iteration (total: 83, iterations: 512)
+//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason2)
+//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason2":
+//     0.14 msecs per iteration (total: 75, iterations: 512)
+//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(gmails)
+//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"gmails":
+//     0.085 msecs per iteration (total: 88, iterations: 1024)
+//PASS   : DKIMAuthenticationStatusInfoTest::cleanupTestCase()
 }
 
 void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
