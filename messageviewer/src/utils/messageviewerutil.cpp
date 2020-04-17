@@ -703,7 +703,7 @@ QString Util::parseBodyStyle(const QString &style)
 #endif
             QStringList lst;
             for (const auto &style : lstStyle) {
-                if (style.trimmed().contains(QLatin1String("white-space"))) {
+                if (!style.trimmed().contains(QLatin1String("white-space"))) {
                     lst.append(style.toString().trimmed());
                 }
             }

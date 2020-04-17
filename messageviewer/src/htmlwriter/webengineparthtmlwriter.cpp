@@ -67,7 +67,7 @@ void WebEnginePartHtmlWriter::end()
         mExtraHead.clear();
     }
     if (!mStyleBody.isEmpty()) {
-        //insertBodyStyle();
+        insertBodyStyle();
         mStyleBody.clear();
     }
     // see QWebEnginePage::setHtml()
