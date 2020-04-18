@@ -228,9 +228,9 @@ QString stripSignature(const QString &msg)
 {
     // Following RFC 3676, only > before --
     // I prefer to not delete a SB instead of delete good mail content.
-    const QRegularExpression sbDelimiterSearch(QStringLiteral("(^|\n)[> ]*-- \n"));
+    static const QRegularExpression sbDelimiterSearch(QStringLiteral("(^|\n)[> ]*-- \n"));
     // The regular expression to look for prefix change
-    const QRegularExpression commonReplySearch(QStringLiteral("^[ ]*>"));
+    static const QRegularExpression commonReplySearch(QStringLiteral("^[ ]*>"));
 
     QString res = msg;
     int posDeletingStart = 1; // to start looking at 0
