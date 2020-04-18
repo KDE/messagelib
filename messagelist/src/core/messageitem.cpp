@@ -195,7 +195,7 @@ void MessageItemPrivate::fillTagList(const Akonadi::Tag::List &taglist)
 
     for (const Akonadi::Tag &tag : taglist) {
         QString symbol = QStringLiteral("mail-tagged");
-        auto attr = tag.attribute<Akonadi::TagAttribute>();
+        const auto attr = tag.attribute<Akonadi::TagAttribute>();
         if (attr) {
             if (!attr->iconName().isEmpty()) {
                 symbol = attr->iconName();
