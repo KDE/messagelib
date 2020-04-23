@@ -21,7 +21,6 @@ macro(add_templateparser_unittest _source)
     KF5::Mime
     KF5::IdentityManagement
     KF5::XmlGui
-    KF5::Completion
     KF5::IconThemes
     Qt5::WebEngineWidgets
   )
