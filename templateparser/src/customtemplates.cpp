@@ -23,6 +23,7 @@
 #include "globalsettings_templateparser.h"
 #include "ui_customtemplates_base.h"
 #include <KPIMTextEdit/PlainTextEditor>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include "templateparseremailaddressrequesterinterfacewidget.h"
 
 #include <KLocalizedString>
@@ -51,15 +52,15 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
     mUi->mList->header()->setSectionsMovable(false);
     mUi->mEditFrame->setEnabled(false);
 
-    mUi->mName->setTrapReturnKey(true);
+    new KPIM::LineEditCatchReturnKey(mUi->mName, this);
     connect(mUi->mEdit->editor(), &QPlainTextEdit::textChanged,
             this, &CustomTemplates::slotTextChanged);
     connect(mUi->mToEdit, &TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget::textChanged, this, &CustomTemplates::slotTextChanged);
     connect(mUi->mCCEdit, &TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget::textChanged, this, &CustomTemplates::slotTextChanged);
 
-    connect(mUi->mName, &KLineEdit::textChanged, this, &CustomTemplates::slotNameChanged);
+    connect(mUi->mName, &QLineEdit::textChanged, this, &CustomTemplates::slotNameChanged);
 
-    connect(mUi->mName, &KLineEdit::returnPressed, this, &CustomTemplates::slotAddClicked);
+    connect(mUi->mName, &QLineEdit::returnPressed, this, &CustomTemplates::slotAddClicked);
 
     connect(mUi->mInsertCommand, qOverload<const QString &, int>(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand), this, &CustomTemplates::slotInsertCommand);
 
@@ -482,7 +483,7 @@ CustomTemplateItemDelegate::~CustomTemplateItemDelegate()
 
 void CustomTemplateItemDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
 {
-    KLineEdit *lineEdit = static_cast<KLineEdit *>(editor);
+    QLineEdit *lineEdit = static_cast<QLineEdit *>(editor);
     const QString text = lineEdit->text();
     if (!text.isEmpty()) {
         model->setData(index, text, Qt::EditRole);

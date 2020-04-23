@@ -49,7 +49,7 @@
 
 #include <QColorDialog>
 #include <QComboBox>
-#include <KLineEdit>
+#include <QLineEdit>
 #include <KLocalizedString>
 #include <QMenu>
 #include <KIconLoader>
@@ -85,7 +85,7 @@ ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme:
     QLabel *l = new QLabel(i18nc("@label:textbox Property name", "Name:"), base);
     g->addWidget(l, 0, 0);
 
-    mNameEdit = new KLineEdit(base);
+    mNameEdit = new QLineEdit(base);
     mNameEdit->setToolTip(i18n("The label that will be displayed in the column header."));
     g->addWidget(mNameEdit, 0, 1);
 

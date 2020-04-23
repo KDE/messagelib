@@ -35,7 +35,7 @@ class QCheckBox;
 
 class QComboBox;
 class KPluralHandlingSpinBox;
-class KLineEdit;
+class QLineEdit;
 
 namespace MessageList {
 namespace Core {
@@ -55,7 +55,7 @@ public:
 
 protected:
     Core::Theme::Column *mColumn = nullptr;
-    KLineEdit *mNameEdit = nullptr;
+    QLineEdit *mNameEdit = nullptr;
     QCheckBox *mVisibleByDefaultCheck = nullptr;
     QCheckBox *mIsSenderOrReceiverCheck = nullptr;
     QComboBox *mMessageSortingCombo = nullptr;

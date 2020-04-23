@@ -23,7 +23,7 @@
 
 #include <QTabWidget>
 
-class KLineEdit;
+class QLineEdit;
 class KTextEdit;
 
 namespace MessageList {
@@ -50,7 +50,7 @@ protected:
     * Returns the editor for the name of the OptionSet.
     * Derived classes are responsable of filling this UI element and reading back data from it.
     */
-    KLineEdit *nameEdit() const;
+    QLineEdit *nameEdit() const;
 
     /**
     * Returns the editor for the description of the OptionSet.
@@ -66,7 +66,7 @@ protected Q_SLOTS:
     virtual void slotNameEditTextEdited(const QString &newName) = 0;
 
 private:
-    KLineEdit *mNameEdit = nullptr;                        ///< The editor for the OptionSet name
+    QLineEdit *mNameEdit = nullptr;                        ///< The editor for the OptionSet name
     KTextEdit *mDescriptionEdit = nullptr;                 ///< The editor for the OptionSet description
 };
 } // namespace Utils

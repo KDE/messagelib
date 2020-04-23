@@ -22,7 +22,7 @@
 #include "core/aggregation.h"
 #include "utils/comboboxutils.h"
 
-#include <KLineEdit>
+#include <QLineEdit>
 #include <KTextEdit>
 #include <QLabel>
 #include <QGridLayout>

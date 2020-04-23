@@ -24,7 +24,7 @@
 #include <QLabel>
 #include <QGridLayout>
 
-#include <KLineEdit>
+#include <QLineEdit>
 #include <KLocalizedString>
 #include <KTextEdit>
 
@@ -43,11 +43,11 @@ OptionSetEditor::OptionSetEditor(QWidget *parent)
     QLabel *l = new QLabel(i18nc("@label:textbox Name of the option", "Name:"), tab);
     tabg->addWidget(l, 0, 0);
 
-    mNameEdit = new KLineEdit(tab);
+    mNameEdit = new QLineEdit(tab);
 
     tabg->addWidget(mNameEdit, 0, 1);
 
-    connect(mNameEdit, &KLineEdit::textEdited, this, &OptionSetEditor::slotNameEditTextEdited);
+    connect(mNameEdit, &QLineEdit::textEdited, this, &OptionSetEditor::slotNameEditTextEdited);
 
     l = new QLabel(i18nc("@label:textbox Description of the option", "Description:"), tab);
     tabg->addWidget(l, 1, 0);
@@ -75,7 +75,7 @@ KTextEdit *OptionSetEditor::descriptionEdit() const
     return mDescriptionEdit;
 }
 
-KLineEdit *OptionSetEditor::nameEdit() const
+QLineEdit *OptionSetEditor::nameEdit() const
 {
     return mNameEdit;
 }

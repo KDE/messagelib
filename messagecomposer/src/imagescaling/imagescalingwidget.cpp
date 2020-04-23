@@ -20,7 +20,7 @@
 #include "imagescalingwidget.h"
 #include "ui_imagescalingwidget.h"
 #include "settings/messagecomposersettings.h"
-
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -61,6 +61,11 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
     initComboBox(d->ui->CBMinimumHeight);
 
     initWriteImageFormat();
+    new KPIM::LineEditCatchReturnKey(d->ui->pattern, this);
+    new KPIM::LineEditCatchReturnKey(d->ui->renameResizedImagePattern, this);
+    new KPIM::LineEditCatchReturnKey(d->ui->resizeEmailsPattern, this);
+    new KPIM::LineEditCatchReturnKey(d->ui->doNotResizePattern, this);
+
     connect(d->ui->enabledAutoResize, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->KeepImageRatio, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->AskBeforeResizing, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
@@ -72,18 +77,18 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
     connect(d->ui->customMinimumHeight, qOverload<int>(&QSpinBox::valueChanged), this, &ImageScalingWidget::changed);
     connect(d->ui->skipImageSizeLower, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->imageSize, qOverload<int>(&QSpinBox::valueChanged), this, &ImageScalingWidget::changed);
-    connect(d->ui->pattern, &KLineEdit::textChanged, this, &ImageScalingWidget::changed);
+    connect(d->ui->pattern, &QLineEdit::textChanged, this, &ImageScalingWidget::changed);
     connect(d->ui->CBMaximumWidth, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
     connect(d->ui->CBMaximumHeight, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
     connect(d->ui->CBMinimumWidth, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
     connect(d->ui->CBMinimumHeight, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
     connect(d->ui->WriteToImageFormat, qOverload<int>(&QComboBox::activated), this, &ImageScalingWidget::changed);
     connect(d->ui->renameResizedImage, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
-    connect(d->ui->renameResizedImage, &QCheckBox::clicked, d->ui->renameResizedImagePattern, &KLineEdit::setEnabled);
-    connect(d->ui->renameResizedImagePattern, &KLineEdit::textChanged, this, &ImageScalingWidget::changed);
+    connect(d->ui->renameResizedImage, &QCheckBox::clicked, d->ui->renameResizedImagePattern, &QLineEdit::setEnabled);
+    connect(d->ui->renameResizedImagePattern, &QLineEdit::textChanged, this, &ImageScalingWidget::changed);
 
-    connect(d->ui->resizeEmailsPattern, &KLineEdit::textChanged, this, &ImageScalingWidget::changed);
-    connect(d->ui->doNotResizePattern, &KLineEdit::textChanged, this, &ImageScalingWidget::changed);
+    connect(d->ui->resizeEmailsPattern, &QLineEdit::textChanged, this, &ImageScalingWidget::changed);
+    connect(d->ui->doNotResizePattern, &QLineEdit::textChanged, this, &ImageScalingWidget::changed);
     connect(d->ui->resizeImageWithFormatsType, &MessageComposer::ImageScalingSelectFormat::textChanged, this, &ImageScalingWidget::changed);
     connect(d->ui->resizeImageWithFormats, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->resizeImageWithFormats, &QCheckBox::clicked, d->ui->resizeImageWithFormatsType, &MessageComposer::ImageScalingSelectFormat::setEnabled);

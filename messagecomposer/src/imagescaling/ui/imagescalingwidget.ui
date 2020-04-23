@@ -303,7 +303,7 @@
              </widget>
             </item>
             <item>
-             <widget class="KLineEdit" name="pattern">
+             <widget class="QLineEdit" name="pattern">
               <property name="whatsThis">
                <string>This line allows to define several pattern. Separate them with ';'.</string>
               </property>
@@ -313,9 +313,6 @@
               <property name="showClearButton" stdset="0">
                <bool>true</bool>
               </property>
-         <property name="trapReturnKey">
-           <bool>true</bool>
-         </property>
              </widget>
             </item>
            </layout>
@@ -362,13 +359,10 @@
            </spacer>
           </item>
           <item row="1" column="0">
-           <widget class="KLineEdit" name="renameResizedImagePattern">
+           <widget class="QLineEdit" name="renameResizedImagePattern">
             <property name="showClearButton" stdset="0">
              <bool>true</bool>
             </property>
-         <property name="trapReturnKey">
-           <bool>true</bool>
-         </property>
            </widget>
           </item>
           <item row="0" column="0">
@@ -420,15 +414,12 @@
         </widget>
        </item>
        <item>
-        <widget class="KLineEdit" name="resizeEmailsPattern">
+        <widget class="QLineEdit" name="resizeEmailsPattern">
          <property name="placeholderText">
           <string>Specify patterns separate with ';'</string>
          </property>
          <property name="showClearButton" stdset="0">
           <bool>true</bool>
-         </property>
-         <property name="trapReturnKey">
-           <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -447,15 +438,12 @@
         </widget>
        </item>
        <item>
-        <widget class="KLineEdit" name="doNotResizePattern">
+        <widget class="QLineEdit" name="doNotResizePattern">
          <property name="placeholderText">
           <string>Specify patterns separate with ';'</string>
          </property>
          <property name="showClearButton" stdset="0">
           <bool>true</bool>
-         </property>
-         <property name="trapReturnKey">
-           <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -479,12 +467,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>MessageComposer::ImageScalingSelectFormat</class>
    <extends>QWidget</extends>

@@ -69,7 +69,7 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="KLineEdit" name="mName">
+          <widget class="QLineEdit" name="mName">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -347,12 +347,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>KKeySequenceWidget</class>
    <extends>QWidget</extends>
