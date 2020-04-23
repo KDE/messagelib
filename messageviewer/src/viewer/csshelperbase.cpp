@@ -38,6 +38,7 @@
 #include <QPaintDevice>
 #include <QPalette>
 #include <QUrl>
+
 #define USE_HTML_STYLE_COLOR 1
 namespace MessageViewer {
 namespace {
@@ -750,6 +751,7 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "  padding: 10px ! important;\n"
                        "  text-align: left ! important;\n"
                        "  line-height: normal;\n"
+                       "  min-height: %6px;\n"
                        "}\n\n"
 
                        "hr {\n"
@@ -762,7 +764,7 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "  position: absolute;\n"
                        "  margin-left:-10px;\n"
                        "}\n\n").arg(extraCommonCss(headerFont), inlineMessageCss.join(QLatin1String(", ")))
-        .arg(mForegroundColor.red()).arg(mForegroundColor.green()).arg(mForegroundColor.blue());
+        .arg(mForegroundColor.red()).arg(mForegroundColor.green()).arg(mForegroundColor.blue()).arg(QString::number(48));
 }
 
 void CSSHelperBase::setBodyFont(const QFont &font)
