@@ -217,6 +217,7 @@ void DKIMWidgetInfo::updateToolTip()
     }
 
     if (mResult.status != DKIMCheckSignatureJob::DKIMStatus::Invalid) {
+        QStringList tooltipList;
         for (const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &result : qAsConst(mResult.listSignatureAuthenticationResult)) {
             switch (result.status) {
             case DKIMCheckSignatureJob::DKIMStatus::Unknown:
@@ -232,8 +233,10 @@ void DKIMWidgetInfo::updateToolTip()
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
-                    tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                            + i18n("%1: None", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    const QString str = i18n("%1: None", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    if (!tooltipList.contains(str)) {
+                        tooltipList.append(str);
+                    }
                     break;
                 }
                 }
@@ -244,29 +247,43 @@ void DKIMWidgetInfo::updateToolTip()
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkim: {
-                    tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                            + i18n("%1: Valid (Signed by %2)", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
+                    const QString str = i18n("%1: Valid (Signed by %2)", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
                                    result.sdid);
+                    if (!tooltipList.contains(str)) {
+                        tooltipList.append(str);
+                    }
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Spf: {
-                    tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                            + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    const QString str = i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    if (!tooltipList.contains(str)) {
+                        tooltipList.append(str);
+                    }
+
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc: {
-                    tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                            + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    const QString str = i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    if (!tooltipList.contains(str)) {
+                        tooltipList.append(str);
+                    }
+
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
-                    tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                            + i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    const QString str = i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    if (!tooltipList.contains(str)) {
+                        tooltipList.append(str);
+                    }
+
                     break;
                 }
                 }
                 break;
             }
+        }
+        if (!tooltipList.isEmpty()) {
+            tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + tooltipList.join(QLatin1Char('\n'));
         }
         if (mResult.listSignatureAuthenticationResult.isEmpty()) {
             tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
