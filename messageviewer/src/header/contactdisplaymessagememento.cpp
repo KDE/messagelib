@@ -112,6 +112,8 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
             job->setEmail(mEmailAddress);
             job->setUseDefaultPixmap(
                 Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
+            job->setFallbackGravatar(Gravatar::GravatarSettings::self()->fallbackToGravatar());
+            job->setUseLibravatar(Gravatar::GravatarSettings::self()->libravatarSupportEnabled());
             if (job->canStart()) {
                 connect(job, &Gravatar::GravatarResolvUrlJob::finished, this,
                         &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
