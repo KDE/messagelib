@@ -112,7 +112,7 @@ void WebEnginePartHtmlWriter::embedPart(const QByteArray &contentId, const QStri
 void WebEnginePartHtmlWriter::insertExtraHead()
 {
     const auto headTag(QByteArrayLiteral("<head>"));
-    const int index = m_data.indexOf(headTag);   
+    const int index = m_data.indexOf(headTag);
     if (index != -1) {
         m_data.insert(index + headTag.length(), mExtraHead.toUtf8());
     }

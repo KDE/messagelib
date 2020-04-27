@@ -82,7 +82,7 @@ void MarkMessageReadHandler::setItem(const Akonadi::Item &item)
 {
     if (MessageViewer::MessageViewerSettings::self()->delayedMarkAsRead()) {
         if (sListItem->contains(item) || d->mItemQueue == item
-                || item.hasFlag(Akonadi::MessageFlags::Queued)) {
+            || item.hasFlag(Akonadi::MessageFlags::Queued)) {
             return;
         }
         if (d->mTimer.isActive()) {

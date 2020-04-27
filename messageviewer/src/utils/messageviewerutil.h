@@ -79,8 +79,8 @@ struct HtmlMessageInfo {
     Q_REQUIRED_RESULT bool operator==(const HtmlMessageInfo &other) const
     {
         return other.htmlSource == htmlSource
-                && other.extraHead == extraHead
-                && other.bodyStyle == bodyStyle;
+               && other.extraHead == extraHead
+               && other.bodyStyle == bodyStyle;
     }
 };
 

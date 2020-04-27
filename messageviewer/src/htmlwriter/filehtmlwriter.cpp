@@ -95,7 +95,6 @@ void FileHtmlWriter::setExtraHead(const QString &)
 {
 }
 
-
 void FileHtmlWriter::setStyleBody(const QString &)
 {
 }
