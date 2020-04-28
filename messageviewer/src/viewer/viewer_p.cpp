@@ -1738,6 +1738,9 @@ void ViewerPrivate::createActions()
     //Don't translate it.
     mDevelopmentToolsAction = new QAction(QStringLiteral("Development Tools"), this);
     ac->addAction(QStringLiteral("development_tools"), mDevelopmentToolsAction);
+    ac->setDefaultShortcut(mDevelopmentToolsAction,
+                           QKeySequence(Qt::SHIFT + Qt::CTRL + Qt::Key_I));
+
     connect(mDevelopmentToolsAction, &QAction::triggered, this, &ViewerPrivate::slotShowDevelopmentTools);
 }
 
