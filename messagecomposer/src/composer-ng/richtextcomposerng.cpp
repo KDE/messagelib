@@ -27,6 +27,7 @@
 #include <grantlee/markupdirector.h>
 #include <grantlee/plaintextmarkupbuilder.h>
 #include <KPIMTextEdit/TextHTMLBuilder>
+#include <KPIMTextEdit/MarkupDirector>
 
 using namespace MessageComposer;
 
@@ -198,17 +199,19 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
 #ifdef USE_TEXTHTML_BUILDER
         KPIMTextEdit::TextHTMLBuilder *pb = new KPIMTextEdit::TextHTMLBuilder();
 
-        Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
+        KPIMTextEdit::MarkupDirector *pmd = new KPIMTextEdit::MarkupDirector(pb);
         pmd->processDocument(document());
         QString cleanHtml = QStringLiteral("<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>%1</body>\n</html>").arg(pb->getResult());
         delete pmd;
         delete pb;
         d->fixHtmlFontSize(cleanHtml);
         textPart->setCleanHtml(cleanHtml);
+        //qDebug() << " cleanHtml  grantlee builder" << cleanHtml;
 #else
         QString cleanHtml = d->toCleanHtml();
         d->fixHtmlFontSize(cleanHtml);
         textPart->setCleanHtml(cleanHtml);
+        qDebug() << "cleanHtml  " << cleanHtml;
 #endif
         textPart->setEmbeddedImages(composerControler()->composerImages()->embeddedImages());
     }
