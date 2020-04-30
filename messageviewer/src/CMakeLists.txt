@@ -144,7 +144,7 @@ set(libmessageviewer_widgets_SRCS
     widgets/htmlstatusbar.cpp
     widgets/vcardviewer.cpp
     widgets/invitationsettings.cpp
-    widgets/openattachmentfolderwidget.cpp
+    widgets/opensavedfilefolderwidget.cpp
     widgets/mailsourceviewtextbrowserwidget.cpp
     widgets/submittedformwarningwidget.cpp
     widgets/mailtrackingwarningwidget.cpp

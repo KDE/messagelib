@@ -26,6 +26,7 @@
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer
 #include <PimCommon/ShareServiceUrlManager>
 #include "messageviewer/viewerplugininterface.h"
+#include "widgets/opensavedfilefolderwidget.h"
 #include <WebEngineViewer/CheckPhishingUrlUtil>
 
 #include <AkonadiCore/item.h>
@@ -87,7 +88,6 @@ class WebEnginePartHtmlWriter;
 class HtmlStatusBar;
 class ScamDetectionWarningWidget;
 class MimePartTreeView;
-class OpenAttachmentFolderWidget;
 class HeaderStyleMenuManager;
 class ViewerPluginToolManager;
 class SubmittedFormWarningWidget;
@@ -418,7 +418,7 @@ public:
     void goOnline();
     void goResourceOnline();
 
-    void showOpenAttachmentFolderWidget(const QList<QUrl> &urls);
+    void showSavedFileFolderWidget(const QList<QUrl> &urls, MessageViewer::OpenSavedFileFolderWidget::FileType fileType);
 
     Q_REQUIRED_RESULT bool mimePartTreeIsEmpty() const;
 
@@ -682,7 +682,7 @@ public:
     Akonadi::Item::Id mPreviouslyViewedItemId;
 
     MessageViewer::ScamDetectionWarningWidget *mScamDetectionWarning = nullptr;
-    MessageViewer::OpenAttachmentFolderWidget *mOpenAttachmentFolderWidget = nullptr;
+    MessageViewer::OpenSavedFileFolderWidget *mOpenSavedFileFolderWidget = nullptr;
     MessageViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
     MessageViewer::MailTrackingWarningWidget *mMailTrackingWarning = nullptr;
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;

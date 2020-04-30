@@ -48,10 +48,10 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
     QVERIFY(scandetectionWidget);
     QCOMPARE(scandetectionWidget->isVisible(), false);
 
-    QWidget *openattachementfolderwidget
-        = viewer->findChild<QWidget *>(QStringLiteral("openattachementfolderwidget"));
-    QVERIFY(openattachementfolderwidget);
-    QCOMPARE(openattachementfolderwidget->isVisible(), false);
+    QWidget *opensavefilefolderwidget
+        = viewer->findChild<QWidget *>(QStringLiteral("opensavefilefolderwidget"));
+    QVERIFY(opensavefilefolderwidget);
+    QCOMPARE(opensavefilefolderwidget->isVisible(), false);
 
     QVERIFY(viewer->toggleFixFontAction());
     QVERIFY(viewer->toggleMimePartTreeAction());

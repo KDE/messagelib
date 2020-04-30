@@ -24,25 +24,31 @@
 #include <QUrl>
 class QTimer;
 namespace MessageViewer {
-class OpenAttachmentFolderWidget : public KMessageWidget
+class OpenSavedFileFolderWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
-    explicit OpenAttachmentFolderWidget(QWidget *parent = nullptr);
-    ~OpenAttachmentFolderWidget();
+    enum class FileType {
+        Attachment,
+        Pdf
+    };
 
-    void setUrls(const QList<QUrl> &urls);
+    explicit OpenSavedFileFolderWidget(QWidget *parent = nullptr);
+    ~OpenSavedFileFolderWidget();
+
+    void setUrls(const QList<QUrl> &urls, MessageViewer::OpenSavedFileFolderWidget::FileType fileType);
 
 public Q_SLOTS:
     void slotShowWarning();
     void slotHideWarning();
 
 private:
-    void slotOpenAttachmentFolder();
+    void slotOpenSavedFileFolder();
     void slotTimeOut();
     void slotExplicitlyClosed();
     QList<QUrl> mUrls;
     QTimer *mTimer = nullptr;
+    QAction *mShowFolderAction = nullptr;
 };
 }
 

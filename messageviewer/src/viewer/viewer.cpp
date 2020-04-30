@@ -683,7 +683,7 @@ void Viewer::setPluginName(const QString &pluginName)
 void Viewer::showOpenAttachmentFolderWidget(const QList<QUrl> &urls)
 {
     Q_D(Viewer);
-    d->showOpenAttachmentFolderWidget(urls);
+    d->showSavedFileFolderWidget(urls, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
 }
 
 QList<QAction *> Viewer::viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features)

@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "openattachmentfolderwidget.h"
+#include "opensavedfilefolderwidget.h"
 
 #include <KLocalizedString>
 #include <KIO/OpenFileManagerWindowJob>
@@ -28,13 +28,13 @@
 
 using namespace MessageViewer;
 
-OpenAttachmentFolderWidget::OpenAttachmentFolderWidget(QWidget *parent)
+OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
     : KMessageWidget(parent)
 {
     mTimer = new QTimer(this);
     mTimer->setSingleShot(true);
     mTimer->setInterval(5000); // 5 seconds
-    connect(mTimer, &QTimer::timeout, this, &OpenAttachmentFolderWidget::slotTimeOut);
+    connect(mTimer, &QTimer::timeout, this, &OpenSavedFileFolderWidget::slotTimeOut);
     setVisible(false);
     setCloseButtonVisible(true);
     setMessageType(Positive);
@@ -42,32 +42,41 @@ OpenAttachmentFolderWidget::OpenAttachmentFolderWidget(QWidget *parent)
     QAction *action = this->findChild<QAction *>(); // should give us the close action...
     if (action) {
         connect(action, &QAction::triggered, this,
-                &OpenAttachmentFolderWidget::slotExplicitlyClosed);
+                &OpenSavedFileFolderWidget::slotExplicitlyClosed);
     }
 
-    action = new QAction(i18n("Open folder where attachment was saved"), this);
-    connect(action, &QAction::triggered, this,
-            &OpenAttachmentFolderWidget::slotOpenAttachmentFolder);
-    addAction(action);
+    mShowFolderAction = new QAction(i18n("Open folder where attachment was saved"), this);
+    connect(mShowFolderAction, &QAction::triggered, this,
+            &OpenSavedFileFolderWidget::slotOpenSavedFileFolder);
+    addAction(mShowFolderAction);
 }
 
-OpenAttachmentFolderWidget::~OpenAttachmentFolderWidget()
+OpenSavedFileFolderWidget::~OpenSavedFileFolderWidget()
 {
 }
 
-void OpenAttachmentFolderWidget::slotExplicitlyClosed()
+void OpenSavedFileFolderWidget::slotExplicitlyClosed()
 {
     if (mTimer->isActive()) {
         mTimer->stop();
     }
 }
 
-void OpenAttachmentFolderWidget::setUrls(const QList<QUrl> &urls)
+void OpenSavedFileFolderWidget::setUrls(const QList<QUrl> &urls, FileType fileType)
 {
     mUrls = urls;
+    switch(fileType) {
+    case FileType::Attachment:
+        mShowFolderAction->setText(i18np("Open folder where attachment was saved", "Open folder where attachments were saved", mUrls.count()));
+        break;
+    case FileType::Pdf:
+        mShowFolderAction->setText(i18n("Open folder where PDF file was saved"));
+        break;
+
+    }
 }
 
-void OpenAttachmentFolderWidget::slotOpenAttachmentFolder()
+void OpenSavedFileFolderWidget::slotOpenSavedFileFolder()
 {
     if (!mUrls.isEmpty()) {
         KIO::highlightInFileManager(mUrls);
@@ -75,7 +84,7 @@ void OpenAttachmentFolderWidget::slotOpenAttachmentFolder()
     }
 }
 
-void OpenAttachmentFolderWidget::slotHideWarning()
+void OpenSavedFileFolderWidget::slotHideWarning()
 {
     if (mTimer->isActive()) {
         mTimer->stop();
@@ -83,7 +92,7 @@ void OpenAttachmentFolderWidget::slotHideWarning()
     animatedHide();
 }
 
-void OpenAttachmentFolderWidget::slotShowWarning()
+void OpenSavedFileFolderWidget::slotShowWarning()
 {
     if (mTimer->isActive()) {
         mTimer->stop();
@@ -92,7 +101,7 @@ void OpenAttachmentFolderWidget::slotShowWarning()
     animatedShow();
 }
 
-void OpenAttachmentFolderWidget::slotTimeOut()
+void OpenSavedFileFolderWidget::slotTimeOut()
 {
     animatedHide();
 }
