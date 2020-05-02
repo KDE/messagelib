@@ -785,6 +785,9 @@ QByteArray Util::htmlCodec(const QByteArray &data, const QByteArray &codec)
     if (currentCodec.isEmpty()) {
         currentCodec = QByteArray("UTF-8");
     }
+    if (currentCodec == QByteArray("us-ascii")) {
+        currentCodec = QByteArray("iso-8859-1");
+    }
     if (data.contains("charset=\"utf-8\"")
         || data.contains("charset=\"UTF-8\"")
         || data.contains("charset=UTF-8")) {
