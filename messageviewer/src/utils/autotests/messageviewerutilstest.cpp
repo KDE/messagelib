@@ -288,6 +288,7 @@ void MessageViewerUtilsTest::shouldUseCorrectCodec_data()
     QTest::addColumn<QByteArray>("codecResult");
     QTest::newRow("empty UTF-8") << QByteArray("UTF-8") << QByteArray() << QByteArray("UTF-8");
     QTest::newRow("empty2 UTF-8") << QByteArray("UTF-8") << QByteArray("foo bla blo") << QByteArray("UTF-8");
+    QTest::newRow("us-ascii") << QByteArray("us-ascii") << QByteArray("foo bla blo") << QByteArray("iso-8859-1");
     QTest::newRow("codec windows-1252") << QByteArray("windows-1252") << QByteArray("foo bla blo") << QByteArray("windows-1252");
     QTest::newRow("codec windows-1252 with meta charset") << QByteArray("windows-1252") << QByteArray("foo bla blo <meta charset=\"utf-8\">") << QByteArray("UTF-8");
     QTest::newRow("codec windows-1252 with meta charset-2") << QByteArray("windows-1252") << QByteArray("foo bla blo <meta charset=UTF-8>") << QByteArray("UTF-8");
