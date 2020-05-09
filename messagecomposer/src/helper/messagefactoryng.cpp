@@ -41,6 +41,7 @@
 #include <KLocalizedString>
 #include "messagecomposer_debug.h"
 #include <KCharsets>
+#include <QRegularExpression>
 #include <QTextCodec>
 
 using namespace MessageComposer;
@@ -151,14 +152,15 @@ void MessageFactoryNG::createReplyAsync()
     msg->contentType()->setCharset("utf-8");
 
     if (auto hdr = m_origMsg->headerByType("List-Post")) {
-        const QString hdrListPost = hdr->asUnicodeString();
-        if (hdrListPost.contains(QLatin1String("mailto:"), Qt::CaseInsensitive)) {
-            QRegExp rx(QStringLiteral("<mailto:([^@>]+)@([^>]+)>"), Qt::CaseInsensitive);
-            if (rx.indexIn(hdrListPost, 0) != -1) {   // matched
-                KMime::Types::Mailbox mailbox;
-                mailbox.fromUnicodeString(rx.cap(1) + QLatin1Char('@') + rx.cap(2));
-                m_mailingListAddresses << mailbox;
-            }
+        static const QRegularExpression rx {
+            QStringLiteral("<\\s*mailto\\s*:([^@>]+@[^>]+)>"),
+            QRegularExpression::CaseInsensitiveOption
+        };
+        const auto match = rx.match(hdr->asUnicodeString());
+        if (match.hasMatch()) {
+            KMime::Types::Mailbox mailbox;
+            mailbox.fromUnicodeString(match.captured(1));
+            m_mailingListAddresses << mailbox;
         }
     }
 
@@ -912,8 +914,10 @@ uint MessageFactoryNG::identityUoid(const KMime::Message::Ptr &msg)
 QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s)
 {
     QString result = s;
-    QRegExp rx(QStringLiteral("\\$\\{([a-z0-9-]+)\\}"), Qt::CaseInsensitive);
-    Q_ASSERT(rx.isValid());
+    static QRegularExpression rx {
+        QStringLiteral("\\$\\{([a-z0-9-]+)\\}"),
+        QRegularExpression::CaseInsensitiveOption
+    };
 
     const QString sDate = KMime::DateFormatter::formatDate(
         KMime::DateFormatter::Localized, msg->date()->dateTime().toSecsSinceEpoch());
@@ -922,14 +926,17 @@ QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg,
     result.replace(QStringLiteral("${date}"), sDate);
 
     int idx = 0;
-    while ((idx = rx.indexIn(result, idx)) != -1) {
-        const QByteArray ba = rx.cap(1).toLatin1();
-        QString replacement;
-        if (auto hrd = msg->headerByType(ba.constData())) {
-            replacement = hrd->asUnicodeString();
+    for (auto match = rx.match(result); match.hasMatch(); match = rx.match(result, idx)) {
+        idx = match.capturedStart(1);
+        const QByteArray ba = match.captured(1).toLatin1();
+        if (auto hdr = msg->headerByType(ba.constData())) {
+            const auto replacement = hdr->asUnicodeString();
+            result.replace(idx, match.capturedLength(1), replacement);
+            idx += replacement.length();
         }
-        result.replace(idx, rx.matchedLength(), replacement);
-        idx += replacement.length();
+        else {
+            result.remove(idx, match.capturedLength(1));
+        }
     }
     return result;
 }
