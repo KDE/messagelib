@@ -43,27 +43,26 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
     dialog->setWindowTitle(i18nc("@title:window", "Open Attachment?"));
     dialog->setObjectName(QStringLiteral("attachmentSaveOpen"));
     mButtonBox = new QDialogButtonBox(QDialogButtonBox::Cancel, dialog);
-    QPushButton *user1Button = new QPushButton;
-    mButtonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
 
     if (offer) {
-        QPushButton *user2Button = new QPushButton;
-        mButtonBox->addButton(user2Button, QDialogButtonBox::ActionRole);
-        user2Button->setText(i18n("&Open With '%1'", offer->name()));
-        user2Button->setIcon(QIcon::fromTheme(offer->icon()));
-        connect(user2Button, &QPushButton::clicked, this, &AttachmentDialog::openClicked);
+        QPushButton *user1Button = new QPushButton;
+        mButtonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
+        user1Button->setText(i18n("&Open With '%1'", offer->name()));
+        user1Button->setIcon(QIcon::fromTheme(offer->icon()));
+        connect(user1Button, &QPushButton::clicked, this, &AttachmentDialog::openClicked);
     }
+
+    QPushButton *user2Button = new QPushButton;
+    mButtonBox->addButton(user2Button, QDialogButtonBox::ActionRole);
+    user2Button->setText(i18n("Open &With..."));
+    user2Button->setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
+    connect(user2Button, &QPushButton::clicked, this, &AttachmentDialog::openWithClicked);
 
     QPushButton *user3Button = new QPushButton;
     mButtonBox->addButton(user3Button, QDialogButtonBox::ActionRole);
-
     KGuiItem::assign(user3Button, KStandardGuiItem::saveAs());
-    user1Button->setText(i18n("&Open With..."));
-    user1Button->setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
     user3Button->setDefault(true);
-
     connect(user3Button, &QPushButton::clicked, this, &AttachmentDialog::saveClicked);
-    connect(user1Button, &QPushButton::clicked, this, &AttachmentDialog::openWithClicked);
 }
 
 //---------------------------------------------------------------------
