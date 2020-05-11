@@ -93,6 +93,7 @@ public:
 
     struct DKIMCheckSignatureAuthenticationResult {
         QString errorStr;
+        QString infoResult;
         AuthenticationMethod method = AuthenticationMethod::Unknown;
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
         QString sdid; //Signing Domain Identifier
