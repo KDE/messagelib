@@ -51,6 +51,7 @@ QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthe
         DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult convertedResult;
         convertedResult.method = MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(info.method);
         const QString &infoResult = info.result;
+        convertedResult.infoResult = infoResult;
         if (infoResult == QLatin1String("none")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
         } else if (infoResult == QLatin1String("pass")) {

@@ -704,6 +704,7 @@ QDebug operator <<(QDebug d, const DKIMCheckSignatureJob::DKIMCheckSignatureAuth
     d << " status " << t.status;
     d << " sdid " << t.sdid;
     d << " auid " << t.auid;
+    d << " inforesult " << t.infoResult;
     return d;
 }
 
@@ -713,7 +714,8 @@ bool DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult::operator==(c
             method == other.method &&
             status == other.status &&
             sdid == other.sdid &&
-            auid == other.auid;
+            auid == other.auid &&
+            infoResult == other.infoResult;
 }
 
 bool DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult::isValid() const
