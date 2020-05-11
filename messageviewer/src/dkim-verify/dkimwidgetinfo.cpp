@@ -255,7 +255,7 @@ void DKIMWidgetInfo::updateToolTip()
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Spf: {
-                    const QString str = i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    const QString str = i18n("%1: %2", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method), result.infoResult);
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
                     }
