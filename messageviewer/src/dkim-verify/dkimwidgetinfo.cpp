@@ -231,7 +231,7 @@ void DKIMWidgetInfo::updateToolTip()
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
-                    const QString str = i18n("%1: %2", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method), result.infoResult);
+                    const QString str = i18nc("method name: info about it from parsing", "%1: %2", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method), result.infoResult);
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
                     }
@@ -273,7 +273,7 @@ void DKIMWidgetInfo::updateToolTip()
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Spf: {
-                    const QString str = i18n("%1: %2", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method), result.infoResult);
+                    const QString str = i18nc("method name: info about it from parsing", "%1: %2", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method), result.infoResult);
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
                     }
@@ -308,7 +308,6 @@ void DKIMWidgetInfo::updateToolTip()
                     + i18n("Not Signed");
         }
     }
-    //TODO remove duplicate info.
     qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mResult.authentication " << mResult.listSignatureAuthenticationResult;
 
     mLabel->setToolTip(tooltip);
