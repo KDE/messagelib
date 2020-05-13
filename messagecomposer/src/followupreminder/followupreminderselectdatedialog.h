@@ -44,11 +44,13 @@ public:
     void accept() override;
 
     Akonadi::Collection collection() const;
+
 private Q_SLOTS:
     void slotDateChanged();
     void updateOkButton();
+
 private:
-    FollowUpReminderSelectDateDialogPrivate *const d;
+    std::unique_ptr<FollowUpReminderSelectDateDialogPrivate> const d;
 };
 }
 

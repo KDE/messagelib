@@ -24,9 +24,12 @@
 #include <QDate>
 #include <AkonadiCore/Item>
 #include <AkonadiCore/Collection>
-#include <FollowupReminder/FollowUpReminderInfo>
 #include <KJob>
+
 #include "messagecomposer_export.h"
+
+#include <memory>
+
 namespace MessageComposer {
 class FollowupReminderCreateJobPrivate;
 /**
@@ -56,9 +59,11 @@ public:
 
 private Q_SLOTS:
     void slotCreateNewTodo(KJob *job);
+
 private:
     void writeFollowupReminderInfo();
-    FollowupReminderCreateJobPrivate *const d;
+
+    std::unique_ptr<FollowupReminderCreateJobPrivate> const d;
 };
 }
 

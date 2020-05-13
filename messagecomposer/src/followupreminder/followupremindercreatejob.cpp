@@ -18,28 +18,30 @@
 */
 
 #include "followupremindercreatejob.h"
+#include "followupreminderinterface.h"
 #include "messagecomposer_debug.h"
-#include <FollowupReminder/FollowUpReminderUtil>
+
 #include <KCalendarCore/Todo>
 #include <KLocalizedString>
 #include <AkonadiCore/ItemCreateJob>
+#include <AkonadiCore/ServerManager>
+
+#include <QDBusInterface>
+#include <QDBusConnection>
+#include <QDBusPendingCallWatcher>
+#include <QDBusPendingReply>
 
 using namespace MessageComposer;
 class MessageComposer::FollowupReminderCreateJobPrivate
 {
 public:
-    FollowupReminderCreateJobPrivate()
-        : mInfo(new FollowUpReminder::FollowUpReminderInfo)
-    {
-    }
-
-    ~FollowupReminderCreateJobPrivate()
-    {
-        delete mInfo;
-    }
-
     Akonadi::Collection mCollection;
-    FollowUpReminder::FollowUpReminderInfo *mInfo = nullptr;
+    QDate mFollowupDate;
+    Akonadi::Item::Id mOriginalMessageItemId = -1;
+    Akonadi::Item::Id mTodoId = -1;
+    QString mMessageId;
+    QString mSubject;
+    QString mTo;
 };
 
 FollowupReminderCreateJob::FollowupReminderCreateJob(QObject *parent)
@@ -48,34 +50,31 @@ FollowupReminderCreateJob::FollowupReminderCreateJob(QObject *parent)
 {
 }
 
-FollowupReminderCreateJob::~FollowupReminderCreateJob()
-{
-    delete d;
-}
+FollowupReminderCreateJob::~FollowupReminderCreateJob() = default;
 
 void FollowupReminderCreateJob::setFollowUpReminderDate(const QDate &date)
 {
-    d->mInfo->setFollowUpReminderDate(date);
+    d->mFollowupDate = date;
 }
 
 void FollowupReminderCreateJob::setOriginalMessageItemId(Akonadi::Item::Id value)
 {
-    d->mInfo->setOriginalMessageItemId(value);
+    d->mOriginalMessageItemId = value;
 }
 
 void FollowupReminderCreateJob::setMessageId(const QString &messageId)
 {
-    d->mInfo->setMessageId(messageId);
+    d->mMessageId = messageId;
 }
 
 void FollowupReminderCreateJob::setTo(const QString &to)
 {
-    d->mInfo->setTo(to);
+    d->mTo = to;
 }
 
 void FollowupReminderCreateJob::setSubject(const QString &subject)
 {
-    d->mInfo->setSubject(subject);
+    d->mSubject = subject;
 }
 
 void FollowupReminderCreateJob::setCollectionToDo(const Akonadi::Collection &collection)
@@ -85,11 +84,11 @@ void FollowupReminderCreateJob::setCollectionToDo(const Akonadi::Collection &col
 
 void FollowupReminderCreateJob::start()
 {
-    if (d->mInfo->isValid()) {
+    if (!d->mMessageId.isEmpty() && d->mFollowupDate.isValid() && !d->mTo.isEmpty()) {
         if (d->mCollection.isValid()) {
             KCalendarCore::Todo::Ptr todo(new KCalendarCore::Todo);
-            todo->setSummary(i18n("Wait answer from \"%1\" send to \"%2\"", d->mInfo->subject(), d->mInfo->to()));
-            todo->setDtDue(QDateTime(d->mInfo->followUpReminderDate(), QTime(0, 0, 0)));
+            todo->setSummary(i18n("Wait answer from \"%1\" send to \"%2\"", d->mSubject, d->mTo));
+            todo->setDtDue(QDateTime(d->mFollowupDate, QTime(0, 0, 0)));
             Akonadi::Item newTodoItem;
             newTodoItem.setMimeType(KCalendarCore::Todo::todoMimeType());
             newTodoItem.setPayload<KCalendarCore::Todo::Ptr>(todo);
@@ -100,7 +99,7 @@ void FollowupReminderCreateJob::start()
             writeFollowupReminderInfo();
         }
     } else {
-        qCDebug(MESSAGECOMPOSER_LOG) << "FollowupReminderCreateJob info not valid " << *d->mInfo;
+        qCWarning(MESSAGECOMPOSER_LOG) << "FollowupReminderCreateJob info not valid!";
         emitResult();
         return;
     }
@@ -109,16 +108,46 @@ void FollowupReminderCreateJob::start()
 void FollowupReminderCreateJob::slotCreateNewTodo(KJob *job)
 {
     if (job->error()) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "Error during create new Todo " << job->errorString();
-    } else {
-        Akonadi::ItemCreateJob *createJob = qobject_cast<Akonadi::ItemCreateJob *>(job);
-        d->mInfo->setTodoId(createJob->item().id());
+        qCWarning(MESSAGECOMPOSER_LOG) << "Error during create new Todo " << job->errorString();
+        setError(job->error());
+        setErrorText(i18n("Failed to store a new reminder: an error occured while trying to create a new Todo in your calendar: %1", job->errorString()));
+        emitResult();
+        return;
     }
+
+    Akonadi::ItemCreateJob *createJob = qobject_cast<Akonadi::ItemCreateJob *>(job);
+    d->mTodoId = createJob->item().id();
     writeFollowupReminderInfo();
 }
 
 void FollowupReminderCreateJob::writeFollowupReminderInfo()
 {
-    FollowUpReminder::FollowUpReminderUtil::writeFollowupReminderInfo(FollowUpReminder::FollowUpReminderUtil::defaultConfig(), d->mInfo, true);
-    emitResult();
+    std::unique_ptr<org::freedesktop::Akonadi::FollowUpReminderAgent> iface{
+        new org::freedesktop::Akonadi::FollowUpReminderAgent{
+            Akonadi::ServerManager::agentServiceName(Akonadi::ServerManager::Agent, QStringLiteral("akonadi_followupreminder_agent")),
+            QStringLiteral("/FollowUpReminder"),
+            QDBusConnection::sessionBus()
+    }};
+
+    if (!iface->isValid()) {
+        qCWarning(MESSAGECOMPOSER_LOG) << "The FollowUpReminder agent is not running!";
+        return;
+    }
+
+    auto call = iface->addReminder(d->mMessageId, d->mOriginalMessageItemId, d->mTo, d->mSubject, d->mFollowupDate, d->mTodoId);
+    auto wait = new QDBusPendingCallWatcher{call, this};
+    connect(wait, &QDBusPendingCallWatcher::finished,
+            this, [this, iface_ = std::move(iface)](QDBusPendingCallWatcher *watcher) mutable {
+                auto iface = std::move(iface_);
+                watcher->deleteLater();
+
+                const QDBusPendingReply<void> reply = *watcher;
+                if (reply.isError()) {
+                    qCWarning(MESSAGECOMPOSER_LOG) << "Failed to write the new reminder, agent replied" << reply.error().message();
+                    setError(KJob::UserDefinedError);
+                    setErrorText(i18n("Failed to store a new reminder: %1", reply.error().message()));
+                }
+
+                emitResult();
+            });
 }

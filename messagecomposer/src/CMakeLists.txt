@@ -101,6 +101,12 @@ set( messagecomposer_sender_src
 set(messagecomposer_followupreminder_SRCS
     followupreminder/followupreminderselectdatedialog.cpp
     followupreminder/followupremindercreatejob.cpp
+    followupreminder/followupreminder.cpp
+    )
+
+qt5_add_dbus_interface(messagecomposer_followupreminder_SRCS
+    followupreminder/org.freedesktop.Akonadi.FollowUpReminder.xml
+    followupreminderinterface
     )
 
 set(messagecomposer_richtextcomposerng_SRCS
@@ -218,7 +224,6 @@ target_link_libraries(KF5MessageComposer
     Grantlee5::TextDocument
     KF5::CalendarCore   # for KCalendarCore/Todo
     KF5::SendLater
-    KF5::FollowupReminder
     KF5::Archive
     KF5::Contacts
     KF5::SonnetCore
@@ -395,6 +400,7 @@ ecm_generate_headers(MessageComposer_Camelcasefollowupreminder_HEADERS
     HEADER_NAMES
     FollowupReminderCreateJob
     FollowUpReminderSelectDateDialog
+    FollowupReminder
     REQUIRED_HEADERS MessageComposer_followupreminder_HEADERS
     PREFIX MessageComposer
     RELATIVE followupreminder

@@ -37,10 +37,6 @@ using namespace MessageComposer;
 class MessageComposer::FollowUpReminderSelectDateDialogPrivate
 {
 public:
-    FollowUpReminderSelectDateDialogPrivate()
-    {
-    }
-
     KDateComboBox *mDateComboBox = nullptr;
     Akonadi::CollectionComboBox *mCollectionCombobox = nullptr;
     QPushButton *mOkButton = nullptr;
@@ -93,10 +89,7 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     updateOkButton();
 }
 
-FollowUpReminderSelectDateDialog::~FollowUpReminderSelectDateDialog()
-{
-    delete d;
-}
+FollowUpReminderSelectDateDialog::~FollowUpReminderSelectDateDialog() = default;
 
 void FollowUpReminderSelectDateDialog::updateOkButton()
 {
