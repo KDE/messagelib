@@ -40,7 +40,8 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, enableElement);
-    settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, enableElement);
+    //We need to activate it in qt5.15 otherwise we can't load local css file and co
+    //settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, enableElement);
     settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::HyperlinkAuditingEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, enableElement);
