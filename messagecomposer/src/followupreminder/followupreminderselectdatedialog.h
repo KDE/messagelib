@@ -20,10 +20,15 @@
 #ifndef MESSAGECOMPOSER_FOLLOWUPREMINDERSELECTDATEDIALOG_H
 #define MESSAGECOMPOSER_FOLLOWUPREMINDERSELECTDATEDIALOG_H
 
+#include "messagecomposer_export.h"
+
+#include <AkonadiCore/Collection>
+
 #include <QDialog>
 #include <QPushButton>
-#include <AkonadiCore/Collection>
-#include "messagecomposer_export.h"
+
+#include <memory>
+
 class QAbstractItemModel;
 
 namespace MessageComposer {
