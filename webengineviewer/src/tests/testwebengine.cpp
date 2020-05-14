@@ -78,6 +78,7 @@ int main(int argc, char *argv[])
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     TestWebEngine *testWebEngine = new TestWebEngine;
     testWebEngine->show();
+    testWebEngine->resize(600, 400);
     const int ret = app.exec();
     return ret;
 }
