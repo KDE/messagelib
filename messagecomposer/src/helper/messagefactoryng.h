@@ -256,8 +256,9 @@ private:
 
     // Optional settings the calling class may set
     MessageComposer::ReplyStrategy m_replyStrategy;
-    QString m_selection, m_template;
-    bool m_quote = false;
+    QString m_selection;
+    QString m_template;
+    bool m_quote = true;
     KMime::Types::Mailbox::List m_mailingListAddresses;
     Akonadi::Item::Id m_id;
 };

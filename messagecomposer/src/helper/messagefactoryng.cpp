@@ -75,13 +75,11 @@ static KMime::Types::Mailbox::List stripMyAddressesFromAddressList(const KMime::
 
 MessageFactoryNG::MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col, QObject *parent)
     : QObject(parent)
-    , m_identityManager(nullptr)
     , m_origMsg(origMsg)
     , m_folderId(0)
     , m_parentFolderId(0)
     , m_collection(col)
     , m_replyStrategy(MessageComposer::ReplySmart)
-    , m_quote(true)
     , m_id(id)
 {
 }
