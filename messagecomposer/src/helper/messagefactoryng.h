@@ -219,6 +219,9 @@ public:
     */
     Q_REQUIRED_RESULT static bool MDNMDNUnknownOption(const KMime::Message::Ptr &msg);
 
+    Q_REQUIRED_RESULT bool replyAsHtml() const;
+    void setReplyAsHtml(bool replyAsHtml);
+
 Q_SIGNALS:
     void createReplyDone(const MessageComposer::MessageFactoryNG::MessageReply &reply);
     void createForwardDone(const KMime::Message::Ptr &msg);
@@ -259,6 +262,7 @@ private:
     QString m_selection;
     QString m_template;
     bool m_quote = true;
+    bool m_replyAsHtml = false;
     KMime::Types::Mailbox::List m_mailingListAddresses;
     Akonadi::Item::Id m_id;
 };

@@ -438,6 +438,16 @@ KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Me
     return msgPart;
 }
 
+bool MessageFactoryNG::replyAsHtml() const
+{
+    return m_replyAsHtml;
+}
+
+void MessageFactoryNG::setReplyAsHtml(bool replyAsHtml)
+{
+    m_replyAsHtml = replyAsHtml;
+}
+
 KMime::Message::Ptr MessageFactoryNG::createResend()
 {
     KMime::Message::Ptr msg(new KMime::Message);
