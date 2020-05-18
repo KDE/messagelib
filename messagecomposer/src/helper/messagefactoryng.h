@@ -62,8 +62,8 @@ public:
     /// Small helper structure which encapsulates the KMime::Message created when creating a reply, and
     /// the reply mode
     struct MessageReply {
-        KMime::Message::Ptr msg;  ///< The actual reply message
-        bool replyAll;   ///< If true, the "reply all" template was used, otherwise the normal reply
+        KMime::Message::Ptr msg = nullptr;  ///< The actual reply message
+        bool replyAll = false;   ///< If true, the "reply all" template was used, otherwise the normal reply
         ///  template
     };
 
@@ -249,22 +249,22 @@ private:
     Q_REQUIRED_RESULT QByteArray getRefStr(const KMime::Message::Ptr &msg);
     KMime::Content *createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg);
 
-    KIdentityManagement::IdentityManager *m_identityManager = nullptr;
+    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
     // Required parts to create messages
-    KMime::Message::Ptr m_origMsg;
-    Akonadi::Item::Id m_folderId;
-    Akonadi::Item::Id m_parentFolderId;
+    KMime::Message::Ptr mOrigMsg;
+    Akonadi::Item::Id mFolderId;
+    Akonadi::Item::Id mParentFolderId;
 
-    Akonadi::Collection m_collection;
+    Akonadi::Collection mCollection;
 
     // Optional settings the calling class may set
-    MessageComposer::ReplyStrategy m_replyStrategy;
-    QString m_selection;
-    QString m_template;
-    bool m_quote = true;
-    bool m_replyAsHtml = false;
-    KMime::Types::Mailbox::List m_mailingListAddresses;
-    Akonadi::Item::Id m_id;
+    MessageComposer::ReplyStrategy mReplyStrategy;
+    QString mSelection;
+    QString mTemplate;
+    bool mQuote = true;
+    bool mReplyAsHtml = false;
+    KMime::Types::Mailbox::List mMailingListAddresses;
+    Akonadi::Item::Id mId;
 };
 }
 

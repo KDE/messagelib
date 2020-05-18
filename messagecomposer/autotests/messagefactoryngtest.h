@@ -64,10 +64,10 @@ private Q_SLOTS:
 
     void cleanupTestCase();
 private:
-    KMime::Message::Ptr createPlainTestMessage();
-    KMime::Message::Ptr loadMessageFromFile(const QString &filename);
-    KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
-    KMime::Message::Ptr loadMessage(const QString &filename);
+    Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessage();
+    Q_REQUIRED_RESULT KMime::Message::Ptr loadMessageFromFile(const QString &filename);
+    Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
+    Q_REQUIRED_RESULT KMime::Message::Ptr loadMessage(const QString &filename);
     KIdentityManagement::IdentityManager *mIdentMan = nullptr;
 };
 
