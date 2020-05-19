@@ -37,8 +37,8 @@
 #include "utils/util_p.h"
 #include "imagescaling/imagescalingutils.h"
 
-#include <SendLater/SendLaterInfo>
-#include <SendLater/SendLaterUtil>
+#include "sendlater/sendlaterinfo.h"
+#include "sendlater/sendlatercreatejob.h"
 
 #include <Libkdepim/RecentAddresses>
 #include "helper/messagehelper.h"
@@ -107,10 +107,7 @@ ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
     initAutoSave();
 }
 
-ComposerViewBase::~ComposerViewBase()
-{
-    delete mSendLaterInfo;
-}
+ComposerViewBase::~ComposerViewBase() = default;
 
 bool ComposerViewBase::isComposing() const
 {
@@ -1361,11 +1358,7 @@ void ComposerViewBase::slotCreateItemResult(KJob *job)
         Akonadi::ItemCreateJob *createJob = static_cast<Akonadi::ItemCreateJob *>(job);
         const Akonadi::Item item = createJob->item();
         if (item.isValid()) {
-            id = item.id();
-            mSendLaterInfo->setItemId(id);
-            SendLater::SendLaterUtil::writeSendLaterInfo(SendLater::SendLaterUtil::defaultConfig(), mSendLaterInfo);
-            delete mSendLaterInfo;
-            mSendLaterInfo = nullptr;
+            addSendLaterItem(item);
         }
     }
 
@@ -2088,15 +2081,14 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely, Kleo:
     return encrypt || doEncryptCompletely;
 }
 
-void ComposerViewBase::setSendLaterInfo(SendLater::SendLaterInfo *info)
+void ComposerViewBase::setSendLaterInfo(SendLaterInfo *info)
 {
-    delete mSendLaterInfo;
-    mSendLaterInfo = info;
+    mSendLaterInfo.reset(info);
 }
 
-SendLater::SendLaterInfo *ComposerViewBase::sendLaterInfo() const
+SendLaterInfo *ComposerViewBase::sendLaterInfo() const
 {
-    return mSendLaterInfo;
+    return mSendLaterInfo.get();
 }
 
 void ComposerViewBase::addFollowupReminder(const QString &messageId)
@@ -2112,6 +2104,14 @@ void ComposerViewBase::addFollowupReminder(const QString &messageId)
             job->start();
         }
     }
+}
+
+void ComposerViewBase::addSendLaterItem(const Akonadi::Item &item)
+{
+    mSendLaterInfo->setItemId(item.id());
+
+    auto job = new MessageComposer::SendLaterCreateJob(*mSendLaterInfo, this);
+    job->start();
 }
 
 bool ComposerViewBase::requestDeleveryConfirmation() const

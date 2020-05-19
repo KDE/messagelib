@@ -1,0 +1,159 @@
+/*
+   Copyright (C) 2013-2020 Laurent Montel <montel@kde.org>
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public
+   License as published by the Free Software Foundation; either
+   version 2 of the License, or (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; see the file COPYING.  If not, write to
+   the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
+*/
+
+#include "sendlaterdialog.h"
+#include "sendlaterinfo.h"
+#include "sendlatertimedatewidget_p.h"
+#include "ui_sendlaterwidget.h"
+
+#include <KLocalizedString>
+#include <KSeparator>
+#include <QIcon>
+
+#include <QVBoxLayout>
+#include <QCheckBox>
+#include <QDialogButtonBox>
+#include <QPushButton>
+
+using namespace MessageComposer;
+
+SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
+    : QDialog(parent)
+    , mInfo(info)
+{
+    setWindowTitle(i18nc("@title:window", "Send Later"));
+    setWindowIcon(QIcon::fromTheme(QStringLiteral("kmail")));
+
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+
+    QWidget *sendLaterWidget = new QWidget(this);
+    mSendLaterWidget = new Ui::SendLaterWidget;
+    mSendLaterWidget->setupUi(sendLaterWidget);
+
+    QWidget *w = new QWidget(this);
+    QVBoxLayout *lay = new QVBoxLayout;
+    lay->setContentsMargins(0, 0, 0, 0);
+    w->setLayout(lay);
+
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    mOkButton = buttonBox->button(QDialogButtonBox::Ok);
+    mOkButton->setObjectName(QStringLiteral("okbutton"));
+    mOkButton->setDefault(true);
+    mOkButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &SendLaterDialog::reject);
+
+    if (!info) {
+        mOkButton->setText(i18n("Send Later"));
+        mDelay = new QCheckBox(i18n("Delay"));
+        mDelay->setChecked(false);
+        slotDelay(false);
+        connect(mDelay, &QCheckBox::clicked, this, &SendLaterDialog::slotDelay);
+        lay->addWidget(mDelay);
+    }
+
+    connect(mOkButton, &QPushButton::clicked, this, &SendLaterDialog::slotOkClicked);
+
+    lay->addWidget(sendLaterWidget);
+
+    QDateTime t = QDateTime::currentDateTime();
+    t = t.addSecs(60 * 60);
+
+    mSendLaterWidget->mDateTime->setDateTime(t);
+    connect(mSendLaterWidget->mRecurrence, &QCheckBox::clicked, this, &SendLaterDialog::slotRecurrenceClicked);
+    const QStringList unitsList = {i18n("Days"), i18n("Weeks"), i18n("Months"), i18n("Years")};
+    mSendLaterWidget->mRecurrenceComboBox->addItems(unitsList);
+    connect(mSendLaterWidget->mDateTime, &SendLaterTimeDateWidget::dateChanged, this, &SendLaterDialog::slotDateChanged);
+
+    lay->addWidget(new KSeparator);
+
+    mainLayout->addWidget(w);
+    mainLayout->addWidget(buttonBox);
+    slotRecurrenceClicked(false);
+    if (info) {
+        load(info);
+    }
+    resize(180, 120);
+}
+
+SendLaterDialog::~SendLaterDialog()
+{
+    delete mSendLaterWidget;
+}
+
+void SendLaterDialog::slotDateChanged(const QString &date)
+{
+    mOkButton->setEnabled(!date.isEmpty());
+}
+
+void SendLaterDialog::slotRecurrenceClicked(bool clicked)
+{
+    mSendLaterWidget->mRecurrenceValue->setEnabled(clicked);
+    mSendLaterWidget->mRecurrenceComboBox->setEnabled(clicked);
+}
+
+void SendLaterDialog::load(SendLaterInfo *info)
+{
+    mSendLaterWidget->mDateTime->setDateTime(info->dateTime());
+    const bool recurrence = info->isRecurrence();
+    mSendLaterWidget->mRecurrence->setChecked(recurrence);
+    slotRecurrenceClicked(recurrence);
+    mSendLaterWidget->mRecurrenceValue->setValue(info->recurrenceEachValue());
+    mSendLaterWidget->mRecurrenceComboBox->setCurrentIndex(static_cast<int>(info->recurrenceUnit()));
+}
+
+SendLaterInfo *SendLaterDialog::info()
+{
+    if (!mInfo) {
+        mInfo = new SendLaterInfo();
+    }
+    mInfo->setRecurrence(mSendLaterWidget->mRecurrence->isChecked());
+    mInfo->setRecurrenceEachValue(mSendLaterWidget->mRecurrenceValue->value());
+    mInfo->setRecurrenceUnit(static_cast<SendLaterInfo::RecurrenceUnit>(mSendLaterWidget->mRecurrenceComboBox->currentIndex()));
+    if (mSendDateTime.isValid()) {
+        mInfo->setDateTime(mSendDateTime);
+    } else {
+        mInfo->setDateTime(mSendLaterWidget->mDateTime->dateTime());
+    }
+    return mInfo;
+}
+
+SendLaterDialog::SendLaterAction SendLaterDialog::action() const
+{
+    return mAction;
+}
+
+void SendLaterDialog::slotOkClicked()
+{
+    if (!mDelay || mDelay->isChecked()) {
+        mSendDateTime = mSendLaterWidget->mDateTime->dateTime();
+        mAction = SendDeliveryAtTime;
+    } else {
+        mAction = PutInOutbox;
+    }
+    accept();
+}
+
+void SendLaterDialog::slotDelay(bool delayEnabled)
+{
+    mSendLaterWidget->mLabel->setEnabled(delayEnabled);
+    mSendLaterWidget->mDateTime->setEnabled(delayEnabled);
+    mSendLaterWidget->mRecurrence->setEnabled(delayEnabled);
+    mSendLaterWidget->mRecurrenceValue->setEnabled(delayEnabled && mSendLaterWidget->mRecurrence->isChecked());
+    mSendLaterWidget->mRecurrenceComboBox->setEnabled(delayEnabled && mSendLaterWidget->mRecurrence->isChecked());
+}

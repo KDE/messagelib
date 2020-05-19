@@ -41,10 +41,6 @@ namespace Sonnet {
 class DictionaryComboBox;
 }
 
-namespace SendLater {
-class SendLaterInfo;
-}
-
 namespace Akonadi {
 class CollectionComboBox;
 }
@@ -73,6 +69,7 @@ class Composer;
 class AttachmentControllerBase;
 class AttachmentModel;
 class SignatureController;
+class SendLaterInfo;
 /**
  * @brief The ComposerViewBase class
  */
@@ -218,8 +215,8 @@ public:
 
     Q_REQUIRED_RESULT bool hasMissingAttachments(const QStringList &attachmentKeywords);
 
-    void setSendLaterInfo(SendLater::SendLaterInfo *info);
-    Q_REQUIRED_RESULT SendLater::SendLaterInfo *sendLaterInfo() const;
+    void setSendLaterInfo(SendLaterInfo *info);
+    Q_REQUIRED_RESULT SendLaterInfo *sendLaterInfo() const;
     void saveMailSettings();
 
     Q_REQUIRED_RESULT QDate followUpDate() const;
@@ -326,6 +323,7 @@ private:
     */
     void initAutoSave();
     void addFollowupReminder(const QString &messageId);
+    void addSendLaterItem(const Akonadi::Item &item);
 
     KMime::Message::Ptr m_msg;
     MessageComposer::AttachmentControllerBase *m_attachmentController = nullptr;
@@ -373,7 +371,7 @@ private:
     QDate mFollowUpDate;
     Akonadi::Collection mFollowUpCollection;
 
-    SendLater::SendLaterInfo *mSendLaterInfo = nullptr;
+    std::unique_ptr<SendLaterInfo> mSendLaterInfo;
 };
 } // namespace
 

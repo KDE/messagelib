@@ -81,6 +81,10 @@ add_messagecomposer_test( composerviewbasetest.cpp )
 
 add_messagecomposer_test( recipientseditortest.cpp )
 
+# SendLater
+add_messagecomposer_test( sendlaterdialogtest.cpp )
+add_messagecomposer_test( sendlaterinfotest.cpp )
+
 # Crypto
 add_messagecomposer_cryptotest( signjobtest.cpp )
 add_messagecomposer_cryptotest( encryptjobtest.cpp )

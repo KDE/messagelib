@@ -149,6 +149,20 @@ set(messagecomposer_plugineditorgrammar_SRCS
     plugineditorgrammar/plugineditorgrammarmanager.cpp
     plugineditorgrammar/plugineditorgrammarcustomtoolsviewinterface.cpp
     )
+set(messagecomposer_sendlater_SRCS
+    sendlater/sendlaterinfo.cpp
+    sendlater/sendlaterjob.cpp
+    sendlater/sendlatercreatejob.cpp
+    sendlater/sendlaterremovejob.cpp
+    sendlater/sendlaterutil.cpp
+    sendlater/sendlaterdialog.cpp
+    sendlater/sendlatertimedatewidget.cpp
+)
+
+qt5_add_dbus_interface(messagecomposer_sendlater_SRCS
+    sendlater/org.freedesktop.Akonadi.SendLaterAgent.xml
+    sendlaterinterface
+)
 
 set( messagecomposer_src
     ${messagecomposer_snippet_src}
@@ -168,12 +182,14 @@ set( messagecomposer_src
     ${messagecomposer_followupreminder_SRCS}
     ${messagecomposer_plugineditorcheckbeforesend_SRCS}
     ${messagecomposer_plugineditorgrammar_SRCS}
+    ${messagecomposer_sendlater_SRCS}
     utils/util.cpp
     settings/messagecomposersettings.cpp
     )
 
 ki18n_wrap_ui(messagecomposer_src
     imagescaling/ui/imagescalingwidget.ui
+    sendlater/ui/sendlaterwidget.ui
     )
 ecm_qt_declare_logging_category(messagecomposer_src HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer
         DESCRIPTION "messagelib (messagecomposer)"
@@ -223,7 +239,6 @@ target_link_libraries(KF5MessageComposer
     KF5::SonnetUi
     Grantlee5::TextDocument
     KF5::CalendarCore   # for KCalendarCore/Todo
-    KF5::SendLater
     KF5::Archive
     KF5::Contacts
     KF5::SonnetCore
@@ -424,6 +439,19 @@ ecm_generate_headers(MessageComposer_Camelcaseimagescaling_HEADERS
     RELATIVE imagescaling
     )
 
+ecm_generate_headers(MessageComposer_Camelcasesendlater_HEADERS
+    HEADER_NAMES
+    SendLaterInfo
+    SendLaterDialog
+    SendLaterUtil
+    SendLaterJob
+    SendLaterCreateJob
+    SendLaterRemoveJob
+    REQUIRED_HEADERS MessageComposer_sendlater_HEADERS
+    PREFIX MessageComposer
+    RELATIVE sendlater
+)
+
 ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     HEADER_NAMES
     JobBase
@@ -469,6 +497,7 @@ install(FILES
     ${MessageComposer_Camelcasefollowupreminder_HEADERS}
     ${MessageComposer_Camelcaserecipient_HEADERS}
     ${MessageComposer_Camelcaseimagescaling_HEADERS}
+    ${MessageComposer_Camelcasesendlater_HEADERS}
     ${MessageComposer_Camelcasejob_HEADERS}
     ${MessageComposer_Camelcaseattachement_HEADERS}
     ${MessageComposer_Camelplugineditor_HEADERS}
@@ -497,6 +526,7 @@ install(FILES
     ${MessageComposer_followupreminder_HEADERS}
     ${MessageComposer_recipient_HEADERS}
     ${MessageComposer_imagescaling_HEADERS}
+    ${MessageComposer_sendlater_HEADERS}
     ${MessageComposer_attachement_HEADERS}
     ${MessageComposer_job_HEADERS}
     ${MessageComposer_plugineditor_HEADERS}
