@@ -23,6 +23,8 @@
 #include <QWidget>
 #include <QDateTime>
 
+#include <memory>
+
 class KTimeComboBox;
 class KDateComboBox;
 
