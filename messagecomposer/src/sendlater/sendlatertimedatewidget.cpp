@@ -31,7 +31,7 @@ using namespace MessageComposer;
 SendLaterTimeDateWidget::SendLaterTimeDateWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout;
+    QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setContentsMargins(0, 0, 0, 0);
 
     QDateTime t = QDateTime::currentDateTime();
@@ -49,8 +49,6 @@ SendLaterTimeDateWidget::SendLaterTimeDateWidget(QWidget *parent)
 
     lay->addWidget(mDateComboBox.get());
     lay->addWidget(mTimeComboBox.get());
-
-    setLayout(lay);
 }
 
 SendLaterTimeDateWidget::~SendLaterTimeDateWidget() = default;

@@ -47,9 +47,8 @@ SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
     mSendLaterWidget->setupUi(sendLaterWidget);
 
     QWidget *w = new QWidget(this);
-    QVBoxLayout *lay = new QVBoxLayout;
+    QVBoxLayout *lay = new QVBoxLayout(w);
     lay->setContentsMargins(0, 0, 0, 0);
-    w->setLayout(lay);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     mOkButton = buttonBox->button(QDialogButtonBox::Ok);

@@ -40,11 +40,10 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     vbox->setSpacing(0);
 
     QWidget *w = new QWidget;
-    QHBoxLayout *hbox = new QHBoxLayout;
+    QHBoxLayout *hbox = new QHBoxLayout(w);
     hbox->setContentsMargins(0, 0, 0, 0);
     hbox->setSpacing(0);
     w->setLayout(hbox);
-    vbox->addWidget(w);
 
     mSearchEdit = new SearchLineStatus(this);
     connect(mSearchEdit, &SearchLineStatus::filterActionChanged, this, &QuickSearchLine::slotFilterActionChanged);
