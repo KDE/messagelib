@@ -57,6 +57,11 @@
 #include <KMessageBox>
 #include <KMimeTypeChooser>
 #include <KMimeTypeTrader>
+#include <kio_version.h>
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+#include <KIO/JobUiDelegate>
+#include <KIO/OpenUrlJob>
+#endif
 #include <KRun>
 #include <KSelectAction>
 #include <KSharedConfig>
@@ -283,10 +288,17 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
         }
         if (node->contentType()->mimeType() == "message/external-body") {
             if (node->contentType()->hasParameter(QStringLiteral("url"))) {
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+                KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"));
+                job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
+                job->setRunExecutables(true);
+                job->start();
+#else
                 KRun::RunFlags flags;
                 flags |= KRun::RunExecutables;
                 const QString url = node->contentType()->parameter(QStringLiteral("url"));
                 KRun::runUrl(QUrl(url), QStringLiteral("text/html"), q, flags);
+#endif
                 return;
             }
         }
