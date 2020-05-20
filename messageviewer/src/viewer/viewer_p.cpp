@@ -2376,10 +2376,18 @@ void ViewerPrivate::slotOpenInBrowser()
 void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
 {
     const QUrl url(QUrl::fromLocalFile(filename));
+#if KIO_VERSION < QT_VERSION_CHECK(5, 71, 0)
     KRun::RunFlags flags;
     flags |= KRun::DeleteTemporaryFiles;
 
     KRun::runUrl(url, QStringLiteral("text/html"), q, flags);
+#else
+    KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"), q);
+    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
+    job->setDeleteTemporaryFile(true);
+    job->start();
+#endif
+
     Q_EMIT printingFinished();
 }
 
