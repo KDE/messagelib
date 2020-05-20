@@ -36,7 +36,7 @@ public:
     explicit TemplatesInsertCommandPushButton(QWidget *parent, const QString &name = QString());
     ~TemplatesInsertCommandPushButton();
 
-    TemplatesCommandMenu::MenuTypes type() const;
+    Q_REQUIRED_RESULT TemplatesCommandMenu::MenuTypes type() const;
     void setType(TemplatesCommandMenu::MenuTypes type);
 
 Q_SIGNALS:

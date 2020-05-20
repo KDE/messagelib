@@ -26,11 +26,11 @@
 namespace TemplateParser {
 /** Default new/reply/forward templates. */
 namespace DefaultTemplates {
-TEMPLATEPARSER_EXPORT QString defaultNewMessage();
-TEMPLATEPARSER_EXPORT QString defaultReply();
-TEMPLATEPARSER_EXPORT QString defaultReplyAll();
-TEMPLATEPARSER_EXPORT QString defaultForward();
-TEMPLATEPARSER_EXPORT QString defaultQuoteString();
+TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString defaultNewMessage();
+TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString defaultReply();
+TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString defaultReplyAll();
+TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString defaultForward();
+TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString defaultQuoteString();
 }
 }
 

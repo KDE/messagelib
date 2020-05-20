@@ -31,7 +31,7 @@ public:
     explicit TemplateParserEmailAddressRequesterInterfaceWidget(QWidget *parent = nullptr);
     ~TemplateParserEmailAddressRequesterInterfaceWidget() = default;
 
-    QString text() const;
+    Q_REQUIRED_RESULT QString text() const;
     void setText(const QString &str);
     void clear();
 

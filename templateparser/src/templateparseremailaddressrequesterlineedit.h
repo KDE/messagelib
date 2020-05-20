@@ -31,7 +31,7 @@ public:
     explicit TemplateParserEmailAddressRequesterLineEdit(QWidget *parent = nullptr);
     ~TemplateParserEmailAddressRequesterLineEdit() override;
 
-    QString text() const override;
+    Q_REQUIRED_RESULT QString text() const override;
     void setText(const QString &str) override;
     void clear() override;
 private:

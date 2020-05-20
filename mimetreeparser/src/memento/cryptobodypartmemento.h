@@ -37,7 +37,7 @@ public:
 
     virtual bool start() = 0;
     virtual void exec() = 0;
-    bool isRunning() const;
+    Q_REQUIRED_RESULT bool isRunning() const;
 
     const QString &auditLogAsHtml() const
     {

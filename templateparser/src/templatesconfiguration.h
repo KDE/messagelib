@@ -49,7 +49,7 @@ public:
     /**
      * Returns the template configuration identifier string for a given identity.
      */
-    static QString configIdString(uint id);
+    static Q_REQUIRED_RESULT QString configIdString(uint id);
 
 public Q_SLOTS:
     void slotInsertCommand(const QString &cmd, int adjustCursor = 0);

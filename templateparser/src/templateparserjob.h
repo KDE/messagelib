@@ -218,14 +218,14 @@ private:
     /// finally the global template.
     /// This also reads the To and CC address of the template
     /// @return the contents of the template
-    QString findTemplate();
+    Q_REQUIRED_RESULT QString findTemplate();
 
     /// Finds the template with the given name.
     /// This also reads the To and CC address of the template
     /// @return the contents of the template
-    QString findCustomTemplate(const QString &tmpl);
+    Q_REQUIRED_RESULT QString findCustomTemplate(const QString &tmpl);
 
-    QString pipe(const QString &cmd, const QString &buf);
+    Q_REQUIRED_RESULT QString pipe(const QString &cmd, const QString &buf);
 
     /**
      * Called by processWithTemplate(). This adds the completely processed body to
@@ -253,12 +253,12 @@ private:
     /**
      * Return the text signature used the by current identity.
      */
-    QString getPlainSignature() const;
+    Q_REQUIRED_RESULT QString getPlainSignature() const;
 
     /**
      * Return the HTML signature used the by current identity.
      */
-    QString getHtmlSignature() const;
+    Q_REQUIRED_RESULT QString getHtmlSignature() const;
 
     /**
      * Returns message body indented by the
@@ -270,7 +270,7 @@ private:
      * smart quoting is turned on. Signed or encrypted texts
      * get converted to plain text when allowDecryption is true.
      */
-    QString quotedPlainText(const QString &selection = QString()) const;
+    Q_REQUIRED_RESULT QString quotedPlainText(const QString &selection = QString()) const;
 
     /**
      * Returns HTML message body.
@@ -282,7 +282,7 @@ private:
      * smart quoting is turned on. Signed or encrypted texts
      * get converted to plain text when allowDecryption is true.
      */
-    QString quotedHtmlText(const QString &selection) const;
+    Q_REQUIRED_RESULT QString quotedHtmlText(const QString &selection) const;
 
     /**
      * This function return the plain text part from the OTP.
@@ -294,18 +294,18 @@ private:
      * @param aStripSignature strips the signature out of the message
      *
      */
-    QString plainMessageText(bool aStripSignature, AllowSelection isSelectionAllowed) const;
+    Q_REQUIRED_RESULT QString plainMessageText(bool aStripSignature, AllowSelection isSelectionAllowed) const;
 
     /**
      * Returns the HTML content of the message as plain text
      */
-    QString htmlMessageText(bool aStripSignature, AllowSelection isSelectionAllowed);
+    Q_REQUIRED_RESULT QString htmlMessageText(bool aStripSignature, AllowSelection isSelectionAllowed);
 
     /** @return the UOID of the identity for this message.
      * Searches the "x-kmail-identity" header and if that fails,
      * searches with KIdentityManagement::IdentityManager::identityForAddress()
      */
-    uint identityUoid(const KMime::Message::Ptr &msg) const;
+    Q_REQUIRED_RESULT uint identityUoid(const KMime::Message::Ptr &msg) const;
 
     /**
      * Returns KMime content of the plain text part of the message after setting
@@ -348,13 +348,13 @@ private:
     /**
      * Checks if the signature is HTML or not.
      */
-    bool isHtmlSignature() const;
+    Q_REQUIRED_RESULT bool isHtmlSignature() const;
 
     /**
      * Does the necessary conversions like escaping characters, changing "\n" to
      * breakline tag before appending text to htmlBody.
      */
-    static QString plainTextToHtml(const QString &body);
+    static Q_REQUIRED_RESULT QString plainTextToHtml(const QString &body);
 
     /**
      * Make a HTML content valid by adding missing html/head/body tag.

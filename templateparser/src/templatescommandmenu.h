@@ -124,7 +124,7 @@ public:
     void fillMenu();
     void fillSubMenus();
 
-    MenuTypes type() const;
+    Q_REQUIRED_RESULT MenuTypes type() const;
     void setType(MenuTypes type);
 
 Q_SIGNALS:

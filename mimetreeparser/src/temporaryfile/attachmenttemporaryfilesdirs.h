@@ -40,11 +40,11 @@ public:
 
     void addTempFile(const QString &file);
     void addTempDir(const QString &dir);
-    QStringList temporaryFiles() const;
+    Q_REQUIRED_RESULT QStringList temporaryFiles() const;
     void removeTempFiles();
     void forceCleanTempFiles();
 
-    QStringList temporaryDirs() const;
+    Q_REQUIRED_RESULT QStringList temporaryDirs() const;
 
     void setDelayRemoveAllInMs(int ms);
 

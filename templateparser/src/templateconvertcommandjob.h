@@ -35,12 +35,12 @@ class TEMPLATEPARSER_EXPORT TemplateConvertCommandJob : public QObject
 public:
     explicit TemplateConvertCommandJob(QObject *parent = nullptr);
     ~TemplateConvertCommandJob();
-    QString convertText();
+    Q_REQUIRED_RESULT QString convertText();
 
-    QString currentText() const;
+    Q_REQUIRED_RESULT QString currentText() const;
     void setCurrentText(const QString &currentText);
 
-    KMime::Message::Ptr originalMessage() const;
+    Q_REQUIRED_RESULT KMime::Message::Ptr originalMessage() const;
     void setOriginalMessage(const KMime::Message::Ptr &originalMessage);
 
 private:
