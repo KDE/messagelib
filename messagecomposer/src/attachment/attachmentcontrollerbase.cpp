@@ -71,6 +71,11 @@
 #include <MessageCore/AttachmentFromUrlUtils>
 #include <settings/messagecomposersettings.h>
 #include <KIO/Job>
+#include <kio_version.h>
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+#include <KIO/JobUiDelegate>
+#include <KIO/OpenUrlJob>
+#endif
 #include <Akonadi/Contact/EmailAddressSelectionDialog>
 #include <Akonadi/Contact/EmailAddressSelectionWidget>
 
@@ -741,6 +746,7 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
         return;
     }
     tempFile->setPermissions(QFile::ReadUser);
+#if KIO_VERSION < QT_VERSION_CHECK(5, 71, 0)
     KRun::RunFlags flags;
     flags |= KRun::DeleteTemporaryFiles;
     bool success = KRun::runUrl(QUrl::fromLocalFile(tempFile->fileName()),
@@ -763,6 +769,24 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
         // (and this object is destroyed).
         tempFile->setParent(this);   // Manages lifetime.
     }
+#else
+    KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl::fromLocalFile(tempFile->fileName()), QString::fromLatin1(part->mimeType()));
+    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
+    job->setDeleteTemporaryFile(true);
+    connect(job, &KIO::OpenUrlJob::result, this, [this, tempFile](KJob *job) {
+        if (job->error() == KIO::ERR_USER_CANCELED) {
+            KMessageBox::sorry(d->wParent,
+                               i18n("KMail was unable to open the attachment."),
+                               job->errorString());
+            delete tempFile;
+        } else {
+            // The file was opened.  Delete it only when the composer is closed
+            // (and this object is destroyed).
+            tempFile->setParent(this);   // Manages lifetime.
+        }
+    });
+    job->start();
+#endif
 }
 
 void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
