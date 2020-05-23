@@ -214,7 +214,6 @@ target_link_libraries(KF5MessageComposer
     KF5::KIOFileWidgets # for KEncodingDialog
     KF5::XmlGui         # for KActionCollection
     KF5::SonnetUi
-    Grantlee5::TextDocument
     KF5::CalendarCore   # for KCalendarCore/Todo
     KF5::SendLater
     KF5::FollowupReminder

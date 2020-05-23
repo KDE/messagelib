@@ -21,6 +21,7 @@
 #include "converthtmltoplaintext.h"
 
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
+#include <KPIMTextEdit/MarkupDirector>
 #include <QTextDocument>
 #include <QDebug>
 
@@ -45,7 +46,7 @@ QString ConvertHtmlToPlainText::generatePlainText()
     }
     KPIMTextEdit::PlainTextMarkupBuilder *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
 
-    Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
+    KPIMTextEdit::MarkupDirector *pmd = new KPIMTextEdit::MarkupDirector(pb);
     QTextDocument *doc = new QTextDocument;
     doc->setHtml(mHtmlString);
 
