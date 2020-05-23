@@ -37,5 +37,5 @@ ecm_add_test(showonlymimeparttest.cpp setupenv.cpp util.cpp testcsshelper.cpp
 ecm_add_test(converthtmltoplaintexttest.cpp ../converthtmltoplaintext.cpp
     TEST_NAME converthtmltoplaintexttest
     NAME_PREFIX "messageviewer-messageparttheme-"
-    LINK_LIBRARIES Qt5::Test Grantlee5::TextDocument KF5::PimTextEdit
+    LINK_LIBRARIES Qt5::Test KF5::PimTextEdit Qt5::Gui
 )

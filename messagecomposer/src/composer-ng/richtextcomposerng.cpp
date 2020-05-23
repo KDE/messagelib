@@ -24,10 +24,9 @@
 #include <PimCommon/AutoCorrection>
 #include <part/textpart.h>
 #include "settings/messagecomposersettings.h"
-#include <grantlee/markupdirector.h>
-#include <grantlee/plaintextmarkupbuilder.h>
 #include <KPIMTextEdit/TextHTMLBuilder>
 #include <KPIMTextEdit/MarkupDirector>
+#include <KPIMTextEdit/PlainTextMarkupBuilder>
 
 using namespace MessageComposer;
 
@@ -170,9 +169,9 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
     if (composerControler()->isFormattingUsed()) {
         if (!wasConverted) {
             if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
-                Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
+                KPIMTextEdit::PlainTextMarkupBuilder *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
 
-                Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
+                KPIMTextEdit::MarkupDirector *pmd = new KPIMTextEdit::MarkupDirector(pb);
                 pmd->processDocument(document());
                 const QString plainText = pb->getResult();
                 textPart->setCleanPlainText(composerControler()->toCleanPlainText(plainText));
