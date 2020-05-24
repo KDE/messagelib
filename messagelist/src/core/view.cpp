@@ -2400,9 +2400,11 @@ bool View::event(QEvent *e)
         if (textIsLeftToRight) {
             tip += htmlCodeForStandardRow.arg(i18n("Status")).arg(status);
             tip += htmlCodeForStandardRow.arg(i18n("Size")).arg(mi->formattedSize());
+            tip += htmlCodeForStandardRow.arg(i18n("Folder")).arg(mi->folder());
         } else {
             tip += htmlCodeForStandardRow.arg(status).arg(i18n("Status"));
             tip += htmlCodeForStandardRow.arg(mi->formattedSize()).arg(i18n("Size"));
+            tip += htmlCodeForStandardRow.arg(mi->folder()).arg(i18n("Folder"));
         }
 
         if (mi->hasAnnotation()) {

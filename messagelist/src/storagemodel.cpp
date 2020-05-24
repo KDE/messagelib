@@ -45,6 +45,7 @@
 #include <QMimeData>
 #include <QCryptographicHash>
 #include <QFontDatabase>
+#include <QHash>
 
 namespace MessageList {
 class Q_DECL_HIDDEN StorageModel::Private
@@ -59,6 +60,8 @@ public:
     QAbstractItemModel *mModel = nullptr;
     QAbstractItemModel *mChildrenFilterModel = nullptr;
     QItemSelectionModel *mSelectionModel = nullptr;
+    
+    QHash<Akonadi::Collection::Id, QString> mFolderHash;
 
     Private(StorageModel *owner)
         : q(owner)
@@ -253,6 +256,19 @@ bool StorageModel::initializeMessageItem(MessageList::Core::MessageItem *mi, int
     }
 
     mi->setSubject(subject);
+    
+    auto it = d->mFolderHash.find(item.storageCollectionId());
+    if (it == d->mFolderHash.end()) {
+        QString folder;
+        Collection collection = collectionForId(item.storageCollectionId());
+        while (collection.parentCollection().isValid()) {
+            folder = collection.displayName() + QLatin1Char('/') + folder;
+            collection = collection.parentCollection();
+        }
+        folder.chop(1);
+        it = d->mFolderHash.insert(item.storageCollectionId(), folder);
+    }
+    mi->setFolder(it.value());
 
     updateMessageItemData(mi, row);
 
@@ -427,6 +443,7 @@ void StorageModel::Private::onSourceDataChanged(const QModelIndex &topLeft, cons
 
 void StorageModel::Private::onSelectionChanged()
 {
+    mFolderHash.clear();
     Q_EMIT q->headerDataChanged(Qt::Horizontal, 0, q->columnCount() - 1);
 }
 
@@ -486,6 +503,20 @@ Collection StorageModel::parentCollectionForRow(int row) const
     Q_ASSERT(col.isValid());
 
     return col;
+}
+
+Akonadi::Collection StorageModel::collectionForId(Akonadi::Collection::Id colId) const
+{
+    // Get ETM
+    QAbstractProxyModel *childrenProxy = static_cast<QAbstractProxyModel *>(d->mChildrenFilterModel);
+    QAbstractItemModel* etm = childrenProxy->sourceModel();
+    
+    // get index in EntityTreeModel
+    const QModelIndex idx = EntityTreeModel::modelIndexForCollection(etm, Collection(colId));
+    Q_ASSERT(idx.isValid());
+    
+    // get and return collection
+    return idx.data(EntityTreeModel::CollectionRole).value<Collection>();
 }
 
 void StorageModel::resetModelStorage()

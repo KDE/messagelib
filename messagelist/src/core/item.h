@@ -358,6 +358,16 @@ public:
     * Sets the subject associated to this Item.
     */
     void setSubject(const QString &subject);
+    
+    /**
+    * Returns the folder associated to this Item.
+    */
+    const QString &folder() const;
+
+    /**
+    * Sets the folder associated to this Item.
+    */
+    void setFolder(const QString &folder);
 
     /**
     * This is meant to be called right after the constructor.

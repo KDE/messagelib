@@ -551,6 +551,16 @@ void Item::setSubject(const QString &subject)
     d_ptr->mSubject = subject;
 }
 
+const QString &Item::folder() const
+{
+    return d_ptr->mFolder;
+}
+
+void Item::setFolder(const QString &folder)
+{
+    d_ptr->mFolder = folder;
+}
+
 void MessageList::Core::Item::initialSetup(time_t date, size_t size, const QString &sender, const QString &receiver, bool useReceiver)
 {
     d_ptr->mDate = date;

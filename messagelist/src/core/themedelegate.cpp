@@ -865,6 +865,9 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
             case Theme::ContentItem::Size:
                 paint_right_aligned_elided_text(item->formattedSize(), ci, painter, l, top, r, layoutDir, font);
                 break;
+            case Theme::ContentItem::Folder:
+                paint_right_aligned_elided_text(item->folder(), ci, painter, l, top, r, layoutDir, font);
+                break;
             case Theme::ContentItem::GroupHeaderLabel:
                 if (groupHeaderItem) {
                     paint_right_aligned_elided_text(groupHeaderItem->label(), ci, painter, l, top, r, layoutDir, font);
@@ -1028,6 +1031,9 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 break;
             case Theme::ContentItem::Size:
                 paint_left_aligned_elided_text(item->formattedSize(), ci, painter, l, top, r, layoutDir, font);
+                break;
+            case Theme::ContentItem::Folder:
+                paint_left_aligned_elided_text(item->folder(), ci, painter, l, top, r, layoutDir, font);
                 break;
             case Theme::ContentItem::GroupHeaderLabel:
                 if (groupHeaderItem) {
@@ -1283,6 +1289,9 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
             case Theme::ContentItem::Size:
                 compute_bounding_rect_for_right_aligned_elided_text(mHitItem->formattedSize(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
                 break;
+            case Theme::ContentItem::Folder:
+                compute_bounding_rect_for_right_aligned_elided_text(mHitItem->folder(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
+                break;
             case Theme::ContentItem::GroupHeaderLabel:
                 if (groupHeaderItem) {
                     compute_bounding_rect_for_right_aligned_elided_text(groupHeaderItem->label(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
@@ -1427,6 +1436,9 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                 break;
             case Theme::ContentItem::Size:
                 compute_bounding_rect_for_left_aligned_elided_text(mHitItem->formattedSize(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
+                break;
+            case Theme::ContentItem::Folder:
+                compute_bounding_rect_for_left_aligned_elided_text(mHitItem->folder(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
                 break;
             case Theme::ContentItem::GroupHeaderLabel:
                 if (groupHeaderItem) {

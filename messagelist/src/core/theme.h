@@ -212,7 +212,11 @@ public:
             /**
             * Whether the message is an invitation
             */
-            InvitationIcon = 24 | ApplicableToMessageItems | IsIcon
+            InvitationIcon = 24 | ApplicableToMessageItems | IsIcon,
+            /**
+            * Folder of the message
+            */
+            Folder = 25 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems
 #if 0
                              TotalMessageCount
                              UnreadMessageCount
