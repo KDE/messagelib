@@ -205,6 +205,7 @@ ThemePreviewDelegate::ThemePreviewDelegate(QAbstractItemView *parent)
     mSampleMessageItem->setSender(i18n("Sender"));
     mSampleMessageItem->setReceiver(i18n("Receiver"));
     mSampleMessageItem->setSubject(i18n("Very long subject very long subject very long subject very long subject very long subject very long"));
+    mSampleMessageItem->setFolder(i18n("Folder"));
     mSampleMessageItem->setSignatureState(MessageItem::FullySigned);
     mSampleMessageItem->setEncryptionState(MessageItem::FullyEncrypted);
 
@@ -1362,6 +1363,11 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     cil->setText(Theme::ContentItem::description(cil->type()));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 1, 2);
+    
+    cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::Folder);
+    cil->setText(Theme::ContentItem::description(cil->type()));
+    cil->setToolTip(Theme::ContentItem::description(cil->type()));
+    gblayout->addWidget(cil, 2, 2);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::CombinedReadRepliedStateIcon);
     cil->setPixmap(*dummyTheme.pixmap(Theme::IconRepliedAndForwarded));

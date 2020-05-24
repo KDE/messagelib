@@ -188,6 +188,8 @@ QString Theme::ContentItem::description(Type type)
         return i18n("Note Icon");
     case InvitationIcon:
         return i18n("Invitation Icon");
+    case Folder:
+        return i18nc("Description of Type Folder", "Folder");
     default:
         return i18nc("Description for an Unknown Type", "Unknown");
         break;
@@ -336,6 +338,7 @@ bool Theme::ContentItem::load(QDataStream &stream, int /*themeVersion*/)
     case TagList:
     case AnnotationIcon:
     case InvitationIcon:
+    case Folder:
         // ok
         break;
     default:

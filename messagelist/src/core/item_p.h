@@ -242,6 +242,7 @@ public:
     QString mSender;                            ///< The sender of the message (or group sender)
     QString mReceiver;                          ///< The receiver of the message (or group receiver)
     QString mSubject;                           ///< The subject of the message (or group subject)
+    QString mFolder;                            ///< The folder of the message
     qint64 mItemId;                             ///< The Akonadi item id
     qint64 mParentCollectionId;                 ///< The Akonadi ID of collection that this particular item comes from (can be virtual collection)
     Akonadi::MessageStatus mStatus;             ///< The status of the message (may be extended to groups in the future)
