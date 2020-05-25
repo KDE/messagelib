@@ -286,7 +286,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     d->mExtractHtmlInfoResult = result;
     const QString tmpl = d->mExtractHtmlInfoResult.mTemplate;
     const int tmpl_len = tmpl.length();
-    QString plainBody, htmlBody;
+    QString plainBody;
+    QString htmlBody;
 
     bool dnl = false;
     auto definedLocale = QLocale();
