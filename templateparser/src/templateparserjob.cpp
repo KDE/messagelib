@@ -1077,8 +1077,9 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     // OR the original mail has no HTML part.
     const KMime::Content *content = d->mOrigMsg->mainBodyPart("text/html");
     if (d->mQuotes == ReplyAsPlain
-        || (d->mQuotes != ReplyAsHtml && !TemplateParserSettings::self()->replyUsingHtml())
-        || (!content || !content->hasContent())) {
+            || (d->mQuotes != ReplyAsHtml && !TemplateParserSettings::self()->replyUsingHtml())
+            /*|| (!d->mReplyAsHtml && ... TODO add config settings for it ) */
+            || (!content || !content->hasContent())) {
         htmlBody.clear();
     } else {
         makeValidHtml(htmlBody);
@@ -1086,11 +1087,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     if (d->mMode == NewMessage && plainBody.isEmpty() && !d->mExtractHtmlInfoResult.mPlainText.isEmpty()) {
         plainBody = d->mExtractHtmlInfoResult.mPlainText;
     }
-    /*
-    if (d->mMode == NewMessage && htmlBody.isEmpty() && !d->mExtractHtmlInfoResult.mHtmlElement.isEmpty()) {
-        htmlBody = d->mExtractHtmlInfoResult.mHtmlElement;
-    }
-    */
 
     addProcessedBodyToMessage(plainBody, htmlBody);
     Q_EMIT parsingDone(d->mForceCursorPosition);
