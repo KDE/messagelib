@@ -49,6 +49,8 @@ public:
 
     void setCollection(const Akonadi::Collection &collection);
 
+    void setReplyAsHtml(bool replyAsHtml);
+
 Q_SIGNALS:
     void replyDone(const KMime::Message::Ptr &msg, bool replyAll);
 
@@ -60,6 +62,7 @@ private:
     KMime::Message::Ptr mOrigMsg = nullptr;
     Akonadi::Collection mCollection;
     bool mReplyAll = false;
+    bool mReplyAsHtml = false;
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
 }

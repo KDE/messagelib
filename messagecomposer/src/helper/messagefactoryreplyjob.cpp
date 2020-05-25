@@ -62,6 +62,11 @@ void MessageFactoryReplyJob::setCollection(const Akonadi::Collection &collection
     mCollection = collection;
 }
 
+void MessageFactoryReplyJob::setReplyAsHtml(bool replyAsHtml)
+{
+    mReplyAsHtml = replyAsHtml;
+}
+
 void MessageFactoryReplyJob::setReplyAll(bool replyAll)
 {
     mReplyAll = replyAll;
