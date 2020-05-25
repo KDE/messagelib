@@ -1363,7 +1363,7 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     cil->setText(Theme::ContentItem::description(cil->type()));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 1, 2);
-    
+
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::Folder);
     cil->setText(Theme::ContentItem::description(cil->type()));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));

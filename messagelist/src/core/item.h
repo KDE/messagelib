@@ -358,7 +358,7 @@ public:
     * Sets the subject associated to this Item.
     */
     void setSubject(const QString &subject);
-    
+
     /**
     * Returns the folder associated to this Item.
     */

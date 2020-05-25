@@ -60,7 +60,7 @@ public:
     QAbstractItemModel *mModel = nullptr;
     QAbstractItemModel *mChildrenFilterModel = nullptr;
     QItemSelectionModel *mSelectionModel = nullptr;
-    
+
     QHash<Akonadi::Collection::Id, QString> mFolderHash;
 
     Private(StorageModel *owner)
@@ -256,7 +256,7 @@ bool StorageModel::initializeMessageItem(MessageList::Core::MessageItem *mi, int
     }
 
     mi->setSubject(subject);
-    
+
     auto it = d->mFolderHash.find(item.storageCollectionId());
     if (it == d->mFolderHash.end()) {
         QString folder;
@@ -509,12 +509,12 @@ Akonadi::Collection StorageModel::collectionForId(Akonadi::Collection::Id colId)
 {
     // Get ETM
     QAbstractProxyModel *childrenProxy = static_cast<QAbstractProxyModel *>(d->mChildrenFilterModel);
-    QAbstractItemModel* etm = childrenProxy->sourceModel();
-    
+    QAbstractItemModel *etm = childrenProxy->sourceModel();
+
     // get index in EntityTreeModel
     const QModelIndex idx = EntityTreeModel::modelIndexForCollection(etm, Collection(colId));
     Q_ASSERT(idx.isValid());
-    
+
     // get and return collection
     return idx.data(EntityTreeModel::CollectionRole).value<Collection>();
 }

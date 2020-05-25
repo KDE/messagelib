@@ -218,9 +218,9 @@ public:
             */
             Folder = 25 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems
 #if 0
-                             TotalMessageCount
-                             UnreadMessageCount
-                             NewMessageCount
+                     TotalMessageCount
+                     UnreadMessageCount
+                     NewMessageCount
 #endif
         };
 

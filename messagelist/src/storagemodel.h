@@ -78,7 +78,7 @@ public:
     Q_REQUIRED_RESULT Akonadi::Item itemForRow(int row) const;
     Q_REQUIRED_RESULT Akonadi::Collection parentCollectionForRow(int row) const;
     Q_REQUIRED_RESULT KMime::Message::Ptr messageForRow(int row) const;
-    
+
     Q_REQUIRED_RESULT Akonadi::Collection collectionForId(Akonadi::Collection::Id colId) const;
 
     void resetModelStorage();
