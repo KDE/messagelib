@@ -414,15 +414,16 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: QHEADERS";
                 i += strlen("QHEADERS");
                 if (d->mOrigMsg) {
+                    const QString headerStr = QString::fromLatin1(MessageCore::StringUtil::headerAsSendableString(d->mOrigMsg));
                     QString plainQuote
-                        = quotedPlainText(QString::fromLatin1(MessageCore::StringUtil::headerAsSendableString(d->mOrigMsg)));
+                        = quotedPlainText(headerStr);
                     if (plainQuote.endsWith(QLatin1Char('\n'))) {
                         plainQuote.chop(1);
                     }
                     plainBody.append(plainQuote);
 
                     const QString htmlQuote
-                        = quotedHtmlText(QString::fromLatin1(MessageCore::StringUtil::headerAsSendableString(d->mOrigMsg)));
+                        = quotedHtmlText(headerStr);
                     const QString str = plainTextToHtml(htmlQuote);
                     htmlBody.append(str);
                 }
