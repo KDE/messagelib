@@ -276,6 +276,11 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
     job->start();
 }
 
+void TemplateParserJob::setReplyAsHtml(bool replyAsHtml)
+{
+    d->mReplyAsHtml = replyAsHtml;
+}
+
 void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoResult &result)
 {
     d->mExtractHtmlInfoResult = result;

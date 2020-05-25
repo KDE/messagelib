@@ -63,6 +63,7 @@ public:
     bool mAllowDecryption = true;
     bool mDebug = false;
     bool mWrap = true;
+    bool mReplyAsHtml = false;
 };
 }
 

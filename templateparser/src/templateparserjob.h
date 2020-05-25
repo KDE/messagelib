@@ -209,6 +209,8 @@ public:
 
     void processWithTemplate(const QString &tmpl);
 
+    void setReplyAsHtml(bool replyAsHtml);
+
 Q_SIGNALS:
     void parsingDone(bool cursorPositionWasSet);
 
