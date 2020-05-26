@@ -27,9 +27,6 @@ public:
     explicit MessageViewerUtilsTest(QObject *parent = nullptr);
     ~MessageViewerUtilsTest() = default;
 private Q_SLOTS:
-    void shouldExcludeHeader_data();
-    void shouldExcludeHeader();
-
     void shouldContainsExternalReferences_data();
     void shouldContainsExternalReferences();
 

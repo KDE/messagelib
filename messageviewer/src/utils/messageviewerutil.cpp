@@ -652,15 +652,6 @@ QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, Q
     return act;
 }
 
-bool Util::excludeExtraHeader(const QString &s)
-{
-    QRegularExpression ref(QStringLiteral("http-equiv=\\s*(\'|\")(&#82;|R)EFRESH(\'|\")"), QRegularExpression::CaseInsensitiveOption);
-    if (s.contains(ref)) {
-        return true;
-    }
-    return false;
-}
-
 void Util::addHelpTextAction(QAction *act, const QString &text)
 {
     act->setStatusTip(text);
@@ -750,13 +741,6 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         }
         const int index = startIndex + 6;
         messageInfo.extraHead = s.mid(index, endIndex - index);
-#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 13, 0)
-        //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
-        //Don't authorize to refresh content.
-        if (MessageViewer::Util::excludeExtraHeader(s)) {
-            messageInfo.extraHead.clear();
-        }
-#endif
         s = s.remove(startIndex, endIndex - startIndex + 7).trimmed();
     }
     // body

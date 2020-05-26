@@ -67,7 +67,6 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString generateMboxFileName(const Akonad
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QList<QUrl> &saveUrl);
 
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
-Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s);
 /** Return a QTextCodec for the specified charset.
 * This function is a bit more tolerant, than QTextCodec::codecForName */
 MESSAGEVIEWER_EXPORT const QTextCodec *codecForName(const QByteArray &_str);

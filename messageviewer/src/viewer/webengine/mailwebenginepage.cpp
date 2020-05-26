@@ -52,9 +52,7 @@ void MailWebEnginePage::initialize()
 
     settings()->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, enableElement);
-#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 13, 0)
     settings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, enableElement);
-#endif
     profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
     profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
 

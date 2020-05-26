@@ -25,26 +25,6 @@ MessageViewerUtilsTest::MessageViewerUtilsTest(QObject *parent)
 {
 }
 
-void MessageViewerUtilsTest::shouldExcludeHeader_data()
-{
-    QTest::addColumn<QString>("header");
-    QTest::addColumn<bool>("exclude");
-    QTest::newRow("emptylist") << QString() << false;
-    QTest::newRow("REFRESH1") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\'REFRESH\'></head>") << true;
-    QTest::newRow("REFRESH2") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\"REFRESH\"></head>") << true;
-    QTest::newRow("REFRESH3") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\"refresh\"></head>") << true;
-    QTest::newRow("REFRESH4") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\"&#82;EFRESH\"></head>") << true;
-    QTest::newRow("REFRESH5") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\'&#82;EFRESH\'></head>") << true;
-    QTest::newRow("REFRESH6") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv= \"REFRESH\"></head>") << true;
-}
-
-void MessageViewerUtilsTest::shouldExcludeHeader()
-{
-    QFETCH(QString, header);
-    QFETCH(bool, exclude);
-    QCOMPARE(MessageViewer::Util::excludeExtraHeader(header), exclude);
-}
-
 void MessageViewerUtilsTest::shouldContainsExternalReferences_data()
 {
     QTest::addColumn<QString>("filename");
