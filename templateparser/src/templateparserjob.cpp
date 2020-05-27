@@ -1078,9 +1078,10 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     // there is no use of FORCED command but a configure setting has ReplyUsingHtml disabled,
     // OR the original mail has no HTML part.
     const KMime::Content *content = d->mOrigMsg->mainBodyPart("text/html");
+    qDebug() << " d->mReplyAsHtml" << d->mReplyAsHtml << " TemplateParserSettings::self()->replyUsingVisualFormat()" << TemplateParserSettings::self()->replyUsingVisualFormat();
     if (d->mQuotes == ReplyAsPlain
-            || (d->mQuotes != ReplyAsHtml && !TemplateParserSettings::self()->replyUsingHtml())
-            /*|| (!d->mReplyAsHtml && ... TODO add config settings for it ) */
+            || (d->mQuotes != ReplyAsHtml)
+            || (!d->mReplyAsHtml  && TemplateParserSettings::self()->replyUsingVisualFormat())
             || (!content || !content->hasContent())) {
         htmlBody.clear();
     } else {

@@ -40,6 +40,7 @@ void MessageFactoryReplyJob::start()
     parser->setIdentityManager(mIdentityManager);
     parser->setCharsets(MessageComposerSettings::self()->preferredCharsets());
     parser->setWordWrap(MessageComposerSettings::wordWrap(), MessageComposerSettings::lineWrapWidth());
+    parser->setReplyAsHtml(mReplyAsHtml);
     if (MessageComposer::MessageComposerSettings::quoteSelectionOnly()) {
         parser->setSelection(mSelection);
     }

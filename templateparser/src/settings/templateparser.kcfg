@@ -15,8 +15,8 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
         <label>Use smart &amp;quoting</label>
         <default>true</default>
       </entry>
-        <entry name="ReplyUsingHtml" type="Bool" key="replySameFormat">
-        <label>Reply or forward using HTML if present</label>
+      <entry name="ReplyUsingVisualFormat" type="Bool" key="replyUsingVisualFormat">
+        <label>Reply or forward using HTML based on Visual Format</label>
         <default>false</default>
       </entry>
 

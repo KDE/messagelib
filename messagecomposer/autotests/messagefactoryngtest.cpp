@@ -477,7 +477,8 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
-    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingVisualFormat(true);
+    factory.setReplyAsHtml(true);
 
     QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
     factory.setIdentityManager(mIdentMan);
@@ -497,7 +498,9 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
     QCOMPARE(reply.msg->contents().count(), 2);
     QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toLatin1());
 
-    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(false);
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingVisualFormat(false);
+    factory.setReplyAsHtml(false);
+
     factory.createReplyAsync();
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 2);
@@ -509,17 +512,19 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("text/plain"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
     QCOMPARE(reply.msg->contents().count(), 0);
-    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingVisualFormat(true);
+    factory.setReplyAsHtml(true);
 }
 
 void MessageFactoryTest::testCreateReplyUTF16Base64Async()
 {
     KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("plain_utf16.mbox"));
-
-    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
-
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
+
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingVisualFormat(true);
+    factory.setReplyAsHtml(true);
+
 
     QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
     factory.setIdentityManager(mIdentMan);

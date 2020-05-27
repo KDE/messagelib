@@ -301,6 +301,7 @@ void MessageFactoryNG::createReplyAsync()
         job->setTemplate(mTemplate);
         job->setOrigMsg(mOrigMsg);
         job->setCollection(mCollection);
+        job->setReplyAsHtml(mReplyAsHtml);
         job->start();
     } else {
         slotCreateReplyDone(msg, replyAll);
