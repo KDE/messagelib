@@ -2026,8 +2026,15 @@ void ViewerPrivate::checkPhishingUrl()
 void ViewerPrivate::executeRunner(const QUrl &url)
 {
     if (!MessageViewer::Util::handleUrlWithQDesktopServices(url)) {
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+        KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
+        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, viewer()));
+        job->setRunExecutables(false);
+        job->start();
+#else
         KRun *runner = new KRun(url, viewer());   // will delete itself
         runner->setRunExecutables(false);
+#endif
     }
 }
 
