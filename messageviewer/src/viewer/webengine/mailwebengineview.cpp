@@ -37,6 +37,7 @@
 #include <QWebEngineProfile>
 
 #include <QPrinter>
+#include <QWebEngineUrlScheme>
 
 #include <WebEngineViewer/WebHitTestResult>
 
@@ -385,4 +386,13 @@ void MailWebEngineView::setPrintElementBackground(bool printElementBackground)
 bool MailWebEngineView::execPrintPreviewPage(QPrinter *printer, int timeout)
 {
     return d->mPageEngine->execPrintPreviewPage(printer, timeout);
+}
+
+
+void MailWebEngineView::initializeCustomScheme()
+{
+    QWebEngineUrlScheme cidScheme("cid");
+    cidScheme.setFlags(QWebEngineUrlScheme::SecureScheme | QWebEngineUrlScheme::ContentSecurityPolicyIgnored);
+    cidScheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
+    QWebEngineUrlScheme::registerScheme(cidScheme);
 }

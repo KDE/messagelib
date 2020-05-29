@@ -72,6 +72,8 @@ public:
     void setViewer(MessageViewer::ViewerPrivate *viewer);
     Q_REQUIRED_RESULT bool execPrintPreviewPage(QPrinter *printer, int timeout);
     void readConfig();
+
+    static void initializeCustomScheme();
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();

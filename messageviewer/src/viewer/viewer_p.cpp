@@ -52,7 +52,6 @@
 #include <KActionMenu>
 #include <KCharsets>
 #include <QPrintPreviewDialog>
-#include <QWebEngineUrlScheme>
 
 #include <QMenu>
 #include <KMessageBox>
@@ -195,10 +194,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
                                     + QByteArray::number(reinterpret_cast<quintptr>(this)), this))
     , mPreviouslyViewedItemId(-1)
 {
-    QWebEngineUrlScheme cidScheme("cid");
-    cidScheme.setFlags(QWebEngineUrlScheme::SecureScheme | QWebEngineUrlScheme::ContentSecurityPolicyIgnored);
-    cidScheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
-    QWebEngineUrlScheme::registerScheme(cidScheme);
+    MailWebEngineView::initializeCustomScheme();
 
     if (!mainWindow) {
         mMainWindow = aParent;
