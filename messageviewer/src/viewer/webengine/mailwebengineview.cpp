@@ -26,6 +26,7 @@
 #include "blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h"
 #include "blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h"
 #include "cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
+#include "cidschemehandler/cidschemehandler.h"
 #include <WebEngineViewer/InterceptorManager>
 #include <WebEngineViewer/WebEngineManageScript>
 
@@ -33,6 +34,7 @@
 #include "scamdetection/scamcheckshorturl.h"
 #include <QContextMenuEvent>
 #include <WebEngineViewer/WebHitTest>
+#include <QWebEngineProfile>
 
 #include <QPrinter>
 
@@ -90,6 +92,8 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     connect(d->mWebViewAccessKey, &WebEngineViewer::WebEngineAccessKey::openUrl, this,
             &MailWebEngineView::openUrl);
     connect(this, &MailWebEngineView::loadFinished, this, &MailWebEngineView::slotLoadFinished);
+
+    d->mPageEngine->profile()->installUrlSchemeHandler(QByteArrayLiteral("cid"), new CidSchemeHandler(this));
 
     d->mNetworkAccessManager = new WebEngineViewer::InterceptorManager(this, ac, this);
     d->mExternalReference = new MessageViewer::LoadExternalReferencesUrlInterceptor(this);
