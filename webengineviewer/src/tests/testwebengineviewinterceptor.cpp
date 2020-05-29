@@ -22,8 +22,30 @@
 #include <QVBoxLayout>
 #include <QWebEngineView>
 #include <QWebEngineProfile>
+#include <QWebEngineSettings>
 #include <QWebEngineUrlRequestInterceptor>
+#include <QWebEngineUrlScheme>
+#include <QWebEngineUrlSchemeHandler>
+#include <QBuffer>
 
+class CidSchemeHandler : public QWebEngineUrlSchemeHandler
+{
+public:
+    explicit CidSchemeHandler(QObject *parent = nullptr);
+    void requestStarted(QWebEngineUrlRequestJob *request) override;
+};
+
+CidSchemeHandler::CidSchemeHandler(QObject *parent)
+    : QWebEngineUrlSchemeHandler(parent)
+{
+
+}
+
+void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *request)
+{
+    qDebug() << " void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *request)";
+    //TODO
+}
 
 class CidUrlRequestInterceptor : public QWebEngineUrlRequestInterceptor
 {
@@ -38,24 +60,38 @@ CidUrlRequestInterceptor::CidUrlRequestInterceptor(QObject *p)
 {
 
 }
-
+#define LOAD_FROM_FILE 1
 void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QUrl urlRequestUrl(info.requestUrl());
     if (urlRequestUrl.scheme() == QLatin1String("cid")) {
-        QUrl r;
-        if (urlRequestUrl.url() == QLatin1String("cid:resource_src")) {
-            qDebug() << " from resource src";
-            r = QUrl(QStringLiteral("qrc:audio-volume-medium.png"));
-        } else if (urlRequestUrl.url() == QLatin1String("cid:local_src")) {
-            qDebug() << " from local file";
-            r = QUrl::fromLocalFile(QLatin1String(PICSRC "/audio-volume-medium.png"));
+        qDebug() << " info.resourceType() "<< info.resourceType();
+        if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
+            QUrl r;
+            if (urlRequestUrl.url() == QLatin1String("cid:resource_src")) {
+                qDebug() << " from resource src";
+                r = QUrl(QStringLiteral("qrc:audio-volume-medium.png"));
+            } else if (urlRequestUrl.url() == QLatin1String("cid:local_src")) {
+                qDebug() << " from local file";
+#ifdef LOAD_FROM_FILE
+                QImage image(QLatin1String(PICSRC "/audio-volume-medium.png"));
+                QByteArray ba;
+                QBuffer buf(&ba);
+                image.save(&buf, "png");
+                const QByteArray hexed = ba.toBase64();
+                buf.close();
+                r = QUrl(QString::fromUtf8(QByteArray("data:image/png;base64,") + hexed));
+#else
+                r = QUrl::fromLocalFile(QLatin1String(PICSRC "/audio-volume-medium.png"));
+#endif
+            }
+            qDebug() << "urlRequestUrl  " << urlRequestUrl;
+            qDebug() << " r " << r;
+            info.redirect(r);
         }
-        qDebug() << "urlRequestUrl  " << urlRequestUrl;
-        qDebug() << " r " << r;
-        info.redirect(r);
+    } else if (urlRequestUrl.scheme() == QLatin1String("file")) {
+        //info.block(true);
     }
-    return;
 }
 
 CidUrlRequestInterceptor::~CidUrlRequestInterceptor()
@@ -82,18 +118,24 @@ TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
                                            "<br /></body>"
                                            "</html>");
 
-    mWebEngineView->setHtml(htmlStr);
+    mWebEngineView->setHtml(htmlStr/*, QUrl(QStringLiteral("file:///"))*/);
     vbox->addWidget(mWebEngineView);
 }
 
 int main(int argc, char *argv[])
 {
+    QWebEngineUrlScheme scheme("cid");
+    scheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
+    scheme.setFlags(QWebEngineUrlScheme::LocalScheme|QWebEngineUrlScheme::LocalAccessAllowed);
+    QWebEngineUrlScheme::registerScheme(scheme);
+
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+    CidSchemeHandler *handler = new CidSchemeHandler(nullptr);
+    QWebEngineProfile::defaultProfile()->installUrlSchemeHandler("cid", handler);
     TestWebEngineViewInterceptor *testWebEngine = new TestWebEngineViewInterceptor;
     testWebEngine->show();
     testWebEngine->resize(600, 400);
     const int ret = app.exec();
     return ret;
 }
-
