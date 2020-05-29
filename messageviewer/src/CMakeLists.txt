@@ -120,6 +120,7 @@ set(libmessageviewer_mailviewer_SRCS
     viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
     viewer/webengine/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.cpp
     viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.cpp
+    viewer/webengine/cidschemehandler/cidschemehandler.cpp
     )
 
 set(libmessageviewer_viewer_SRCS
