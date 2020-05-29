@@ -20,10 +20,14 @@
 #include "cidreferencesurlinterceptor.h"
 #include "htmlwriter/webengineembedpart.h"
 
+#include <QBuffer>
+#include <QUrl>
+#include <QImage>
+#include <QDebug>
 #include <QWebEngineUrlRequestInfo>
 
 using namespace MessageViewer;
-
+#define LOAD_FROM_FILE 1
 CidReferencesUrlInterceptor::CidReferencesUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
@@ -38,10 +42,21 @@ bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &inf
     const QUrl urlRequestUrl(info.requestUrl());
     if (urlRequestUrl.scheme() == QLatin1String("cid")) {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
-            const QString newUrl = MessageViewer::WebEngineEmbedPart::self()->contentUrl(
-                        urlRequestUrl.path());
+            const QUrl newUrl = QUrl(MessageViewer::WebEngineEmbedPart::self()->contentUrl(
+                        urlRequestUrl.path()));
             if (!newUrl.isEmpty()) {
-                info.redirect(QUrl(newUrl));
+#ifdef LOAD_FROM_FILE
+                QImage image(newUrl.path());
+                QByteArray ba;
+                QBuffer buf(&ba);
+                image.save(&buf, "png");
+                const QByteArray hexed = ba.toBase64();
+                buf.close();
+                const QUrl r = QUrl(QString::fromUtf8(QByteArray("data:image/png;base64,") + hexed));
+                info.redirect(r);
+#else
+                info.redirect(newUrl);
+#endif
             }
         }
     }
