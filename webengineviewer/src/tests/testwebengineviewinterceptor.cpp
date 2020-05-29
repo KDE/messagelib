@@ -43,9 +43,15 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QUrl urlRequestUrl(info.requestUrl());
     if (urlRequestUrl.scheme() == QLatin1String("cid")) {
-        //QUrl r = QUrl::fromLocalFile(QStringLiteral("/source5/kde/kde5.14/share/icons/oxygen/base/16x16/status/audio-volume-medium.png"));
-        //const QUrl r = QUrl(QStringLiteral("qrc:repeat.svg"));
-        const QUrl r = QUrl(QStringLiteral("qrc:audio-volume-medium.png"));
+        QUrl r;
+        if (urlRequestUrl.url() == QLatin1String("cid:resource_src")) {
+            qDebug() << " from resource src";
+            r = QUrl(QStringLiteral("qrc:audio-volume-medium.png"));
+        } else if (urlRequestUrl.url() == QLatin1String("cid:local_src")) {
+            qDebug() << " from local file";
+            r = QUrl::fromLocalFile(QLatin1String(PICSRC "/audio-volume-medium.png"));
+        }
+        qDebug() << "urlRequestUrl  " << urlRequestUrl;
         qDebug() << " r " << r;
         info.redirect(r);
     }
@@ -68,7 +74,9 @@ TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
                                            "<head>"
                                            "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">"
                                            "</head>"
-                                           "<body><p>Xcvwxcvwxvccwv xwvc w<img src=\"cid:1506382412@KDE\" />cvbxcvbxcvbcvxbvcxbx</p>"
+                                           "<body>"
+                                           "<p>image from resource file<img src=\"cid:resource_src\" /> end</p>"
+                                           "<p>image from local file<img src=\"cid:local_src\" /> end</p>"
                                            "<p>Xcv</p>"
                                            "<p>bxcvbxcvbxcvb</p>"
                                            "<br /></body>"

@@ -53,6 +53,9 @@ target_link_libraries(testselectionchangedwebengine
     )
 
 ####
+
+add_definitions(-DPICSRC="${CMAKE_CURRENT_SOURCE_DIR}")
+
 set(testwebengineviewinterceptor_test_SRCS
     testwebengineviewinterceptor.cpp
     )
