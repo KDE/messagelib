@@ -52,3 +52,13 @@ target_link_libraries(testselectionchangedwebengine
     Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )
 
+####
+set(testwebengineviewinterceptor_test_SRCS
+    testwebengineviewinterceptor.cpp
+    )
+add_executable(testwebengineviewinterceptor ${testwebengineviewinterceptor_test_SRCS})
+
+target_link_libraries(testwebengineviewinterceptor
+    Qt5::Widgets Qt5::WebEngineWidgets 
+    )
+
