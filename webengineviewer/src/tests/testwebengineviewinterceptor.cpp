@@ -43,9 +43,11 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QUrl urlRequestUrl(info.requestUrl());
     if (urlRequestUrl.scheme() == QLatin1String("cid")) {
-        QUrl r = QUrl::fromLocalFile(QStringLiteral("/source5/kde/kde5.14/share/icons/oxygen/base/16x16/status/audio-volume-medium.png"));
+        //QUrl r = QUrl::fromLocalFile(QStringLiteral("/source5/kde/kde5.14/share/icons/oxygen/base/16x16/status/audio-volume-medium.png"));
+        //const QUrl r = QUrl(QStringLiteral("qrc:repeat.svg"));
+        const QUrl r = QUrl(QStringLiteral("qrc:audio-volume-medium.png"));
         qDebug() << " r " << r;
-        info.redirect(/*QUrl::fromUserInput(QStringLiteral("file://home/laurent/repeat.svg"))*/r);
+        info.redirect(r);
     }
     return;
 }

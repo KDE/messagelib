@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="repeat.svg">repeat.svg</file>
+        <file alias="audio-volume-medium.png">audio-volume-medium.png</file>
+    </qresource>
+</RCC>
+

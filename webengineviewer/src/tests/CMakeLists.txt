@@ -56,6 +56,8 @@ target_link_libraries(testselectionchangedwebengine
 set(testwebengineviewinterceptor_test_SRCS
     testwebengineviewinterceptor.cpp
     )
+qt5_add_resources(testwebengineviewinterceptor_test_SRCS testwebengineviewinterceptor.qrc)
+
 add_executable(testwebengineviewinterceptor ${testwebengineviewinterceptor_test_SRCS})
 
 target_link_libraries(testwebengineviewinterceptor
