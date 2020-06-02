@@ -48,6 +48,7 @@ struct MESSAGEVIEWER_EXPORT KeyInfo {
     QString selector;
     QString domain;
     Q_REQUIRED_RESULT bool operator ==(const KeyInfo &) const;
+    Q_REQUIRED_RESULT bool operator !=(const KeyInfo &) const;
 };
 
 /**
@@ -79,4 +80,5 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(MessageViewer::KeyInfo, Q_MOVABLE_TYPE);
+MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::KeyInfo &t);
 #endif // DKIMMANAGERKEY_H
