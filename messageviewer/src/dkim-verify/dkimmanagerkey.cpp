@@ -56,9 +56,13 @@ QString DKIMManagerKey::keyValue(const QString &selector, const QString &domain)
 
 void DKIMManagerKey::addKey(const KeyInfo &key)
 {
-    if (!mKeys.contains(key)) {
-        mKeys.append(key);
+    const QVector<KeyInfo> keys = mKeys;
+    for (const KeyInfo &keyInfo : keys) {
+        if (keyInfo.selector == key.selector && keyInfo.domain == key.domain) {
+            mKeys.removeAll(keyInfo);
+        }
     }
+    mKeys.append(key);
 }
 
 void DKIMManagerKey::removeKey(const QString &key)
@@ -121,5 +125,18 @@ bool KeyInfo::operator ==(const KeyInfo &other) const
 {
     return keyValue == other.keyValue
            && selector == other.selector
-           && domain == other.domain;
+            && domain == other.domain;
+}
+
+bool KeyInfo::operator !=(const KeyInfo &other) const
+{
+    return !(operator ==(other));
+}
+
+QDebug operator <<(QDebug d, const KeyInfo &t)
+{
+    d << " keyvalue " << t.keyValue;
+    d << " selector " << t.selector;
+    d << " domain " << t.domain;
+    return d;
 }
