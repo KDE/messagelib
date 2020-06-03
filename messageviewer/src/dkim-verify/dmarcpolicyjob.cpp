@@ -99,7 +99,7 @@ void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QStr
             return;
         }
     }
-    Q_EMIT result(DMARCResult());
+    Q_EMIT result({});
 }
 
 void DMARCPolicyJob::checkSubDomain(const QString &domainName)
