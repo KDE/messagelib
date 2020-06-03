@@ -100,7 +100,7 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
     deleteLater();
 }
 
-void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value)
+void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value, const QString &emailAddress)
 {
     if (value.isValid()) {
         if (mCheckResult.status == DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned) {
@@ -109,6 +109,8 @@ void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::
             //TODO verify it.
             mCheckResult.sdid = value.mSource;
         }
+    } else {
+        //Store invalid emailAddress
     }
     Q_EMIT result(mCheckResult);
     deleteLater();

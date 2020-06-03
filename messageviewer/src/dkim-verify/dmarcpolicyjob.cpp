@@ -42,7 +42,7 @@ bool DMARCPolicyJob::start()
 {
     if (!canStart()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Impossible to start DMARCPolicyJob" << mEmailAddress;
-        Q_EMIT result({});
+        Q_EMIT result({}, mEmailAddress);
         deleteLater();
         return false;
     }
@@ -56,7 +56,7 @@ bool DMARCPolicyJob::start()
         checkSubDomain(domainName);
     });
     if (!job->start()) {
-        Q_EMIT result({});
+        Q_EMIT result({}, mEmailAddress);
         deleteLater();
         return false;
     }
@@ -83,7 +83,7 @@ void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QStr
     DMARCInfo info;
     if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
         if ((info.version() != QLatin1String("DMARC1")) || info.policy().isEmpty() || (info.percentage() > 100 || info.percentage() < 0)) {
-            Q_EMIT result({});
+            Q_EMIT result({}, mEmailAddress);
             deleteLater();
             return;
         } else {
@@ -94,12 +94,12 @@ void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QStr
             //TODO verify it !
             val.mDomain = domainName;
             val.mSource = domainName;
-            Q_EMIT result(val);
+            Q_EMIT result(val, mEmailAddress);
             deleteLater();
             return;
         }
     }
-    Q_EMIT result({});
+    Q_EMIT result({}, mEmailAddress);
 }
 
 void DMARCPolicyJob::checkSubDomain(const QString &domainName)
@@ -111,17 +111,17 @@ void DMARCPolicyJob::checkSubDomain(const QString &domainName)
         connect(job, &MessageViewer::DMARCRecordJob::success, this, &DMARCPolicyJob::slotCheckSubDomain);
         connect(job, &MessageViewer::DMARCRecordJob::error, this, [this](const QString &err, const QString &domainName) {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "error: " << err << " domain " << domainName;
-            Q_EMIT result({});
+            Q_EMIT result({}, mEmailAddress);
             deleteLater();
         });
         if (!job->start()) {
-            Q_EMIT result({});
+            Q_EMIT result({}, mEmailAddress);
             deleteLater();
             return;
         }
     } else {
         //Invalid
-        Q_EMIT result({});
+        Q_EMIT result({}, mEmailAddress);
         deleteLater();
         return;
     }
@@ -144,7 +144,7 @@ void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString
             val.mPolicy = info.policy();
             val.mDomain = domainName;
             val.mSource = domainName;
-            Q_EMIT result(val);
+            Q_EMIT result(val, mEmailAddress);
             deleteLater();
             return;
         }

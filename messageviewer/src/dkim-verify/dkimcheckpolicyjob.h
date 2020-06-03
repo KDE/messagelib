@@ -52,7 +52,7 @@ Q_SIGNALS:
 
 private:
     void compareWithDefaultRules();
-    void dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value);
+    void dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value, const QString &emailAddress);
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mCheckResult;
     QString mEmailAddress;
     DKIMCheckPolicy mPolicy;

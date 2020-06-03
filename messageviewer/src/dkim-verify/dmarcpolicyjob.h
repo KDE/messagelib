@@ -61,7 +61,7 @@ public:
     void setEmailAddress(const QString &emailAddress);
 
 Q_SIGNALS:
-    void result(const MessageViewer::DMARCPolicyJob::DMARCResult &value);
+    void result(const MessageViewer::DMARCPolicyJob::DMARCResult &value, const QString &emailAddress);
 
 private:
     void checkSubDomain(const QString &domainName);
