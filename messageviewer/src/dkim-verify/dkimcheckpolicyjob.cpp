@@ -20,8 +20,11 @@
 #include "dkimcheckpolicyjob.h"
 #include "dmarcpolicyjob.h"
 #include "dkim-verify/dkimmanagerrules.h"
+#include "dkim-verify/dkimutil.h"
 #include "settings/messageviewersettings.h"
 #include "messageviewer_dkimcheckerdebug.h"
+
+#include <KConfigGroup>
 using namespace MessageViewer;
 DKIMCheckPolicyJob::DKIMCheckPolicyJob(QObject *parent)
     : QObject(parent)
@@ -46,6 +49,14 @@ bool DKIMCheckPolicyJob::start()
         return false;
     }
     if (mPolicy.useDMarc()) {
+        const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
+        KConfigGroup grp(config, "NoExistingDmarcServer");
+        const QStringList addressList = grp.readEntry("AddressList", QStringList());
+        if (addressList.contains(mEmailAddress)) {
+            Q_EMIT result(mCheckResult);
+            deleteLater();
+            return true;
+        }
         DMARCPolicyJob *job = new DMARCPolicyJob(this);
         job->setEmailAddress(mEmailAddress);
         connect(job, &DMARCPolicyJob::result, this, &DKIMCheckPolicyJob::dmarcPolicyResult);
@@ -110,7 +121,13 @@ void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::
             mCheckResult.sdid = value.mSource;
         }
     } else {
-        //Store invalid emailAddress
+        const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
+        KConfigGroup grp(config, "NoExistingDmarcServer");
+        QStringList addressList = grp.readEntry("AddressList", QStringList());
+        if (!addressList.contains(emailAddress)) {
+            addressList.append(emailAddress);
+            grp.writeEntry("AddressList", addressList);
+        }
     }
     Q_EMIT result(mCheckResult);
     deleteLater();
