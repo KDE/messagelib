@@ -24,6 +24,7 @@
 #include "messageviewer_export.h"
 #include "config-messageviewer.h"
 #include <QVector>
+#include <KSharedConfig>
 namespace QCA {
 class Initializer;
 }
@@ -75,6 +76,7 @@ public:
     void saveKeys();
     Q_REQUIRED_RESULT QString keyValue(const QString &selector, const QString &domain);
 private:
+    Q_REQUIRED_RESULT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
     QVector<KeyInfo> mKeys;
     QCA::Initializer *mQcaInitializer = nullptr;
 };

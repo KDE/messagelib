@@ -80,11 +80,18 @@ QVector<KeyInfo> DKIMManagerKey::keys() const
     return mKeys;
 }
 
-void DKIMManagerKey::loadKeys()
+QStringList DKIMManagerKey::keyRecorderList(KSharedConfig::Ptr &config) const
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
+    config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
     const QStringList keyGroups
         = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Key Record #\\d+")));
+    return keyGroups;
+}
+
+void DKIMManagerKey::loadKeys()
+{
+    KSharedConfig::Ptr config;
+    const QStringList keyGroups = keyRecorderList(config);
 
     mKeys.clear();
     for (const QString &groupName : keyGroups) {
@@ -98,9 +105,8 @@ void DKIMManagerKey::loadKeys()
 
 void DKIMManagerKey::saveKeys()
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    const QStringList filterGroups
-        = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Key Record #\\d+")));
+    KSharedConfig::Ptr config;
+    const QStringList filterGroups = keyRecorderList(config);
 
     for (const QString &group : filterGroups) {
         config->deleteGroup(group);
