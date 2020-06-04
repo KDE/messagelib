@@ -93,6 +93,7 @@ if (${Qca-qt5_FOUND})
         dkim-verify/dkimmanageruleswidget.cpp
         dkim-verify/dkimruledialog.cpp
         dkim-verify/dkimrulewidget.cpp
+        dkim-verify/dmarcmanager.cpp
         )
 endif()
 
