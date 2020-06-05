@@ -415,7 +415,7 @@ const SortOrder Manager::sortOrderForStorageModel(const StorageModel *storageMod
     return ret;
 }
 
-void Manager::saveSortOrderForStorageModel(const StorageModel *storageModel, const SortOrder &order, bool storageUsesPrivateSortOrder)
+void Manager::saveSortOrderForStorageModel(const StorageModel *storageModel, SortOrder order, bool storageUsesPrivateSortOrder)
 {
     KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelSortOrderGroup());
     order.writeConfig(conf, storageModel->id(), storageUsesPrivateSortOrder);

@@ -173,7 +173,7 @@ void EncryptJob::doStart()
     // and we want to use that
     if (!d->content || !d->content->hasContent()) {
         if (d->subjobContents.size() == 1) {
-            d->content = d->subjobContents.first();
+            d->content = d->subjobContents.constFirst();
         }
     }
 
@@ -204,7 +204,7 @@ void EncryptJob::slotResult(KJob *job)
     if (subjobs().size() == 2) {
         auto pjob = static_cast<ProtectedHeadersJob *>(subjobs().last());
         if (pjob) {
-            auto cjob =dynamic_cast<ContentJobBase *>(job);
+            auto cjob = qobject_cast<ContentJobBase *>(job);
             Q_ASSERT(cjob);
             pjob->setContent(cjob->content());
         }
@@ -221,7 +221,7 @@ void EncryptJob::process()
     // and we want to use that
     if (!d->content || !d->content->hasContent()) {
         Q_ASSERT(d->subjobContents.size() == 1);
-        d->content = d->subjobContents.first();
+        d->content = d->subjobContents.constFirst();
     }
 
     const QGpgME::Protocol *proto = nullptr;

@@ -148,6 +148,7 @@ Collection::List StorageModel::displayedCollections() const
     Collection::List collections;
     const QModelIndexList indexes = d->mSelectionModel->selectedRows();
 
+    collections.reserve(indexes.count());
     for (const QModelIndex &index : indexes) {
         Collection c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
@@ -163,6 +164,7 @@ QString StorageModel::id() const
     QStringList ids;
     const QModelIndexList indexes = d->mSelectionModel->selectedRows();
 
+    ids.reserve(indexes.count());
     for (const QModelIndex &index : indexes) {
         Collection c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {

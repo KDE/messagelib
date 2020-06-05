@@ -246,7 +246,7 @@ void AttachmentControllerBase::Private::viewSelectedAttachments()
 void AttachmentControllerBase::Private::editSelectedAttachment()
 {
     Q_ASSERT(selectedParts.count() == 1);
-    q->editAttachment(selectedParts.first(), MessageViewer::EditorWatcher::NoOpenWithDialog);
+    q->editAttachment(selectedParts.constFirst(), MessageViewer::EditorWatcher::NoOpenWithDialog);
 }
 
 void AttachmentControllerBase::Private::editSelectedAttachmentWith()
@@ -268,19 +268,19 @@ void AttachmentControllerBase::Private::removeSelectedAttachments()
 void AttachmentControllerBase::Private::saveSelectedAttachmentAs()
 {
     Q_ASSERT(selectedParts.count() == 1);
-    q->saveAttachmentAs(selectedParts.first());
+    q->saveAttachmentAs(selectedParts.constFirst());
 }
 
 void AttachmentControllerBase::Private::selectedAttachmentProperties()
 {
     Q_ASSERT(selectedParts.count() == 1);
-    q->attachmentProperties(selectedParts.first());
+    q->attachmentProperties(selectedParts.constFirst());
 }
 
 void AttachmentControllerBase::Private::reloadAttachment()
 {
     Q_ASSERT(selectedParts.count() == 1);
-    AttachmentUpdateJob *ajob = new AttachmentUpdateJob(selectedParts.first(), q);
+    AttachmentUpdateJob *ajob = new AttachmentUpdateJob(selectedParts.constFirst(), q);
     connect(ajob, &AttachmentUpdateJob::result, q, [this](KJob *job) {
         updateJobResult(job);
     });
@@ -659,7 +659,7 @@ void AttachmentControllerBase::showContextMenu()
                 ) {
                 menu.addAction(d->viewContextAction);
             }
-            d->createOpenWithMenu(&menu, d->selectedParts.first());
+            d->createOpenWithMenu(&menu, d->selectedParts.constFirst());
         }
         menu.addAction(d->openContextAction);
     }

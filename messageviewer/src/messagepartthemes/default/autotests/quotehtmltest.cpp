@@ -194,7 +194,7 @@ void QuoteHtmlTest::testQuoteHtml_data()
                      "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">quote2</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?-1 \"><img src=\"%2\"/></a></div><br/></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img src=\"%1\"/></a></div>"
                      "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">new quote2</font></div></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
                      "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>")
-        .arg(mCollapseIcon).arg(mExpandIcon)
+        .arg(mCollapseIcon, mExpandIcon)
                                                    << true << 2;
 
     QTest::newRow("bug-369072-expand-quotelevel1") << QStringLiteral(
@@ -203,7 +203,7 @@ void QuoteHtmlTest::testQuoteHtml_data()
                      "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">quote1</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?-1 \"><img src=\"%2\"/></a></div><br/>"
                      "<blockquote></blockquote></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
                      "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>")
-        .arg(mCollapseIcon).arg(mExpandIcon)
+        .arg(mCollapseIcon, mExpandIcon)
                                                    << true << 1;
 
     QTest::newRow("bug-370452") << QStringLiteral("test\n> blo\n>\n>\n>\n> bla\nnew text")

@@ -286,6 +286,6 @@ void MainTextJob::process()
     Q_D(MainTextJob);
     // The content has been created by our subjob.
     Q_ASSERT(d->subjobContents.count() == 1);
-    d->resultContent = d->subjobContents.first();
+    d->resultContent = d->subjobContents.constFirst();
     emitResult();
 }

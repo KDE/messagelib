@@ -1186,7 +1186,7 @@ void ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
         // The messages were composed successfully. Only save the first message, there should
         // only be one anyway, since crypto is disabled.
         qCDebug(MESSAGECOMPOSER_LOG) << "NoError.";
-        writeAutoSaveToDisk(composer->resultMessages().first());
+        writeAutoSaveToDisk(composer->resultMessages().constFirst());
         Q_ASSERT(composer->resultMessages().size() == 1);
 
         if (m_autoSaveInterval > 0) {

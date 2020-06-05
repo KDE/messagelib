@@ -112,7 +112,9 @@ void DKIMManageRulesWidget::loadSettings()
 void DKIMManageRulesWidget::saveSettings()
 {
     QVector<MessageViewer::DKIMRule> rules;
-    for (int i = 0, total = mTreeWidget->topLevelItemCount(); i < total; ++i) {
+    const int total = mTreeWidget->topLevelItemCount();
+    rules.reserve(total);
+    for (int i = 0; i < total; ++i) {
         QTreeWidgetItem *item = mTreeWidget->topLevelItem(i);
         DKIMManageRulesWidgetItem *ruleItem = static_cast<DKIMManageRulesWidgetItem *>(item);
         rules.append(ruleItem->rule());

@@ -79,7 +79,7 @@ public:
         ViewItemJobInterrupted
     };
     ViewItemJobResult viewItemJobStepInternal();
-    ViewItemJobResult viewItemJobStepInternalForJob(ViewItemJob *job, const QElapsedTimer &elapsedTimer);
+    ViewItemJobResult viewItemJobStepInternalForJob(ViewItemJob *job, QElapsedTimer elapsedTimer);
 
     // FIXME: Those look like they should be made virtual in some job class! -> Refactor
     ViewItemJobResult viewItemJobStepInternalForJobPass1Fill(ViewItemJob *job, QElapsedTimer elapsedTimer);

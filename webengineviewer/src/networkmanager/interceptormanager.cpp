@@ -69,7 +69,9 @@ void InterceptorManager::removeInterceptor(WebEngineViewer::NetworkPluginUrlInte
 QList<QAction *> InterceptorManager::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     QList<QAction *> actions;
-    for (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface : d->mManager->interfaceList()) {
+    const auto interfaceList = d->mManager->interfaceList();
+    actions.reserve(interfaceList.count());
+    for (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface : interfaceList) {
         actions.append(interface->interceptorUrlActions(result));
     }
     return actions;

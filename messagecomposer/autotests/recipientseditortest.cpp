@@ -63,9 +63,9 @@ void RecipientsEditorTest::test_addLineOnCommaPress()
     QApplication::setActiveWindow(&editor);
     QVERIFY(QTest::qWaitForWindowActive(&editor));
 
-    QCOMPARE(editor.recipients().size(), 0);
+    QVERIFY(editor.recipients().isEmpty());
 
-    auto lineEdit = editor.lines().first()->findChild<MessageComposer::RecipientLineEdit *>();
+    auto lineEdit = editor.lines().constFirst()->findChild<MessageComposer::RecipientLineEdit *>();
     lineEdit->setFocus();
 
     // Simulate typing email address

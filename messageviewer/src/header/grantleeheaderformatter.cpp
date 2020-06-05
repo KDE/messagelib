@@ -253,7 +253,7 @@ public:
     QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
     {
         const auto value = nodeHelper->mailHeaderAsAddressList(header.constData(), message);
-        return QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(value));
+        return QVariant::fromValue(value);
     }
 
 protected:

@@ -167,7 +167,6 @@ void SignJob::doStart()
 
 void SignJob::slotResult(KJob *job)
 {
-    Q_D(SignJob);
     if (error()) {
         ContentJobBase::slotResult(job);
         return;
@@ -175,7 +174,7 @@ void SignJob::slotResult(KJob *job)
     if (subjobs().size() == 2) {
         auto pjob = static_cast<ProtectedHeadersJob *>(subjobs().last());
         if (pjob) {
-            auto cjob = dynamic_cast<ContentJobBase *>(job);
+            auto cjob = qobject_cast<ContentJobBase *>(job);
             Q_ASSERT(cjob);
             pjob->setContent(cjob->content());
         }
@@ -193,7 +192,7 @@ void SignJob::process()
     // and we want to use that
     if (!d->content) {
         Q_ASSERT(d->subjobContents.size() == 1);
-        d->content = d->subjobContents.first();
+        d->content = d->subjobContents.constFirst();
     }
 
     //d->resultContent = new KMime::Content;

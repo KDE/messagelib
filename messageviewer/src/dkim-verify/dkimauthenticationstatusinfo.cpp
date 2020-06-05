@@ -231,7 +231,8 @@ QDebug operator <<(QDebug d, const DKIMAuthenticationStatusInfo &t)
     d << "mAuthservId: " << t.authservId();
     d << "mReasonSpec: " << t.reasonSpec();
     d << "mAuthVersion: " << t.authVersion() << '\n';
-    for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : t.listAuthStatusInfo()) {
+    const auto listAuthStatusInfo = t.listAuthStatusInfo();
+    for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : listAuthStatusInfo) {
         d << "mListAuthStatusInfo: " << info.method << " : " << info.result << " : " << info.methodVersion << " : " << info.reason << '\n';
         d << "Property:" << '\n';
         if (!info.smtp.isEmpty()) {

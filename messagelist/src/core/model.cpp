@@ -3446,7 +3446,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(ViewItemJob *job, QElapsedTimer elapsedTimer)
 {
     // This function does a timed chunk of work for a single Fill View job.
     // It attempts to process messages until a timeout forces it to return to the caller.

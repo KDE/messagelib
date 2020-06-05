@@ -73,7 +73,7 @@ void DKIMManagerKeyWidget::customContextMenuRequested(const QPoint &)
     QTreeWidgetItem *item = mTreeWidget->currentItem();
     QMenu menu(this);
     if (item) {
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [this, item]() {
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [item]() {
             QApplication::clipboard()->setText(item->text(2));
         });
         menu.addSeparator();

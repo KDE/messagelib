@@ -278,9 +278,8 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
     }
     if (d->mActionCollection) {
         for (QAction *act : d->mActionCollection->actions()) {
-            QAction *a = qobject_cast<QAction *>(act);
-            if (a) {
-                const QKeySequence shortCut = a->shortcut();
+            if (act) {
+                const QKeySequence shortCut = act->shortcut();
                 if (!shortCut.isEmpty()) {
                     auto lstUnusedKeys = unusedKeys;
                     for (QChar c : qAsConst(unusedKeys)) {

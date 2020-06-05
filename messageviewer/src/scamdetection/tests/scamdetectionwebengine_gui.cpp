@@ -92,7 +92,7 @@ int main(int argc, char **argv)
     parser.process(app);
 
     QString fileName;
-    if (parser.positionalArguments().count()) {
+    if (!parser.positionalArguments().isEmpty()) {
         fileName = parser.positionalArguments().at(0);
     } else {
         fileName

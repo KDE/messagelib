@@ -129,7 +129,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     const QAbstractProxyModel *proxyModel = qobject_cast<const QAbstractProxyModel *>(d->mSelectionModel->model());
 
     while (proxyModel) {
-        if (static_cast<const QAbstractItemModel *>(proxyModel) == d->mModel) {
+        if (proxyModel == d->mModel) {
             break;
         }
 
@@ -138,7 +138,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
 
         if (!nextProxyModel) {
             // It's the final model in the chain, so it is necessarily the sourceModel.
-            Q_ASSERT(qobject_cast<const QAbstractItemModel *>(proxyModel->sourceModel()) == d->mModel);
+            Q_ASSERT(proxyModel->sourceModel() == d->mModel);
             break;
         }
         proxyModel = nextProxyModel;

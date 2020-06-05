@@ -378,7 +378,8 @@ void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &s
 
         // We added the text of the signature above, now it is time to add the images as well.
         if (signature.isInlinedHtml()) {
-            for (const KIdentityManagement::Signature::EmbeddedImagePtr &image : signature.embeddedImages()) {
+            const QList<KIdentityManagement::Signature::EmbeddedImagePtr> embeddedImages = signature.embeddedImages();
+            for (const KIdentityManagement::Signature::EmbeddedImagePtr &image : embeddedImages) {
                 composerControler()->composerImages()->loadImage(image->image, image->name, image->name);
             }
         }

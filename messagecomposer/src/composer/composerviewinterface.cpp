@@ -67,11 +67,15 @@ MessageComposer::ComposerAttachmentInterface ComposerViewInterface::attachments(
 {
     MessageComposer::ComposerAttachmentInterface attachmentInterface;
     if (mComposerView) {
-        attachmentInterface.setCount(mComposerView->attachmentModel()->attachments().count());
+        const int countElement = mComposerView->attachmentModel()->attachments().count();
+        attachmentInterface.setCount(countElement);
         QStringList fileNames;
         QStringList nameAndSize;
         QStringList names;
 
+        fileNames.reserve(countElement);
+        nameAndSize.reserve(countElement);
+        names.reserve(countElement);
         for (const MessageCore::AttachmentPart::Ptr &attachment : mComposerView->attachmentModel()->attachments()) {
             fileNames.append(attachment->fileName());
             names.append(attachment->name());
