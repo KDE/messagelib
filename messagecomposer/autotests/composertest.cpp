@@ -143,7 +143,7 @@ void ComposerTest::testBug271192()
     composer->infoPart()->setTo(QStringList() << (displayName + QLatin1String(" <") + mailbox + QLatin1String(">")));
     QVERIFY(composer->exec());
     QCOMPARE(composer->resultMessages().size(), 1);
-    const KMime::Message::Ptr message = composer->resultMessages().first();
+    const KMime::Message::Ptr message = composer->resultMessages().constFirst();
     QCOMPARE(message->to()->displayNames().size(), 1);
     QCOMPARE(message->to()->displayNames().first().toUtf8(), displayName.toUtf8());
     delete composer;

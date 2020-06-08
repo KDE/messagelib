@@ -44,7 +44,7 @@ class MESSAGECOMPOSER_EXPORT Recipient : public KPIM::MultiplyingLineData
 {
 public:
     typedef QSharedPointer<Recipient> Ptr;
-    typedef QList<Recipient::Ptr> List;
+    typedef QVector<Recipient::Ptr> List;
 
     enum Type {
         To, Cc, Bcc, ReplyTo, Undefined

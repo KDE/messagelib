@@ -3769,7 +3769,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternal()
 
     while (!mViewItemJobs.isEmpty()) {
         // Have a job to do.
-        ViewItemJob *job = mViewItemJobs.first();
+        ViewItemJob *job = mViewItemJobs.constFirst();
 
 #ifdef KDEPIM_FOLDEROPEN_PROFILE
 

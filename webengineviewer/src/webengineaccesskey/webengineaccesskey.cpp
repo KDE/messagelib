@@ -277,7 +277,8 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         unusedKeys << QLatin1Char(c);
     }
     if (d->mActionCollection) {
-        for (QAction *act : d->mActionCollection->actions()) {
+        const auto actions = d->mActionCollection->actions();
+        for (QAction *act : actions) {
             if (act) {
                 const QKeySequence shortCut = act->shortcut();
                 if (!shortCut.isEmpty()) {

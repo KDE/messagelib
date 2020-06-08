@@ -79,7 +79,7 @@ MessageComposer::ComposerAttachmentInterface ComposerViewInterface::attachments(
         for (const MessageCore::AttachmentPart::Ptr &attachment : mComposerView->attachmentModel()->attachments()) {
             fileNames.append(attachment->fileName());
             names.append(attachment->name());
-            nameAndSize.append(QStringLiteral("%1 (%2)").arg(attachment->name()).arg(KFormat().formatByteSize(attachment->size())));
+            nameAndSize.append(QStringLiteral("%1 (%2)").arg(attachment->name(), KFormat().formatByteSize(attachment->size())));
         }
         attachmentInterface.setNames(names);
         attachmentInterface.setNamesAndSize(nameAndSize);

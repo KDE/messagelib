@@ -709,7 +709,7 @@ void AttachmentControllerBase::slotOpenWithAction(QAction *act)
 
 void AttachmentControllerBase::openWith(const KService::Ptr &offer)
 {
-    QTemporaryFile *tempFile = dumpAttachmentToTempFile(d->selectedParts.first());
+    QTemporaryFile *tempFile = dumpAttachmentToTempFile(d->selectedParts.constFirst());
     if (!tempFile) {
         KMessageBox::sorry(d->wParent,
                            i18n("KMail was unable to write the attachment to a temporary file."),

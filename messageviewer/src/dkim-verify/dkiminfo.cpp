@@ -45,7 +45,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QLatin1String("v="))) {
-            mVersion = elem.right(elem.length() - 2).toInt();
+            mVersion = elem.rightRef(elem.length() - 2).toInt();
             if (mVersion != 1) {
                 qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Version is not correct " << mVersion;
             }
@@ -61,7 +61,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QLatin1String("bh="))) {
             mBodyHash = elem.right(elem.length() - 3).remove(QLatin1Char(' '));
         } else if (elem.startsWith(QLatin1String("l="))) {
-            mBodyLengthCount = elem.right(elem.length() - 2).toInt();
+            mBodyLengthCount = elem.rightRef(elem.length() - 2).toInt();
         } else if (elem.startsWith(QLatin1String("i="))) {
             mAgentOrUserIdentifier = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("q="))) {

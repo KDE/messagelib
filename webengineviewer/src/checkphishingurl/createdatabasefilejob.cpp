@@ -56,7 +56,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     hashStartPosition += mFile.write(reinterpret_cast<const char *>(&minor), sizeof(minor));
 
     //2 add number of items
-    QList<Addition> itemToStore;
+    QVector<Addition> itemToStore;
     for (const Addition &add : additionList) {
         switch (add.compressionType) {
         case UpdateDataBaseInfo::RawCompression:

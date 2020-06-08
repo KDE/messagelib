@@ -145,7 +145,7 @@ QString MessageViewer::DKIMAuthenticationStatusInfoUtil::qtext_p()
 QString MessageViewer::DKIMAuthenticationStatusInfoUtil::qcontent_p()
 {
     // qcontent as specified in Section 3.2.4 of RFC 5322
-    return QStringLiteral("(?:%1|%2)").arg(qtext_p()).arg(quotedPair_p());
+    return QStringLiteral("(?:%1|%2)").arg(qtext_p(), quotedPair_p());
 }
 
 QString MessageViewer::DKIMAuthenticationStatusInfoUtil::quotedString_p()

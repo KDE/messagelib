@@ -194,7 +194,7 @@ void SignEncryptJob::doStart()
 
 void SignEncryptJob::slotResult(KJob *job)
 {
-    Q_D(SignEncryptJob);
+    //Q_D(SignEncryptJob);
     if (error()) {
         ContentJobBase::slotResult(job);
         return;
@@ -220,7 +220,7 @@ void SignEncryptJob::process()
     // and we want to use that
     if (!d->content || !d->content->hasContent()) {
         Q_ASSERT(d->subjobContents.size() == 1);
-        d->content = d->subjobContents.first();
+        d->content = d->subjobContents.constFirst();
     }
 
     const QGpgME::Protocol *proto = nullptr;

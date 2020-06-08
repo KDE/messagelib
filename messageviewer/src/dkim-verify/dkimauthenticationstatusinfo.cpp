@@ -85,7 +85,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     // 2) extract methodspec
     const QString methodVersionp = DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('/') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1String("([0-9]+)");
     const QString method_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1String(")(?:") + methodVersionp + QLatin1String(")?");
-    QString Keyword_result_p = QLatin1String("none|pass|fail|softfail|policy|neutral|temperror|permerror");
+    QString Keyword_result_p = QStringLiteral("none|pass|fail|softfail|policy|neutral|temperror|permerror");
     // older SPF specs (e.g. RFC 4408) use mixed case
     Keyword_result_p += QLatin1String("|None|Pass|Fail|SoftFail|Neutral|TempError|PermError");
     const QString result_p = QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + Keyword_result_p + QLatin1Char(')');

@@ -181,6 +181,7 @@ QVector<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(
     });
 
     QVector<MessagePartRendererBase *> r;
+    r.reserve(candidates.size());
     for (const auto &candidate : candidates) {
         r.push_back(candidate.renderer.data());
     }

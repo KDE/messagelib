@@ -80,7 +80,8 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
         if (rule.enabled()) {
             if (rule.from() == mEmailAddress || rule.from() == QLatin1Char('*')) {
                 //Check SDID
-                for (const QString &ssid : rule.signedDomainIdentifier()) {
+                const QStringList signedDomainIdentifier = rule.signedDomainIdentifier();
+                for (const QString &ssid : signedDomainIdentifier) {
                     if (mCheckResult.sdid == ssid) {
                         switch (rule.ruleType()) {
                         case DKIMRule::RuleType::Unknown:

@@ -29,7 +29,7 @@ using namespace MessageComposer;
 void ContentJobBasePrivate::init(QObject *parent)
 {
     Q_Q(ContentJobBase);
-    ContentJobBase *parentJob = dynamic_cast<ContentJobBase *>(parent);
+    ContentJobBase *parentJob = qobject_cast<ContentJobBase *>(parent);
     if (parentJob) {
         if (!parentJob->appendSubjob(q)) {
             qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add subjob.";

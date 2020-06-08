@@ -519,9 +519,15 @@ void DKIMCheckSignatureJob::verifyRSASignature()
             sigAlg = QCA::EMSA3_SHA256;
             break;
         case DKIMInfo::HashingAlgorithmType::Any:
-        case DKIMInfo::HashingAlgorithmType::Unknown:
-            //Error !
-            break;
+        case DKIMInfo::HashingAlgorithmType::Unknown: {
+            // then signature is invalid
+            mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::ImpossibleToVerifySignature;
+            mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+            Q_EMIT result(createCheckResult());
+            deleteLater();
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMInfo::HashingAlgorithmType undefined ! ";
+            return;
+        }
         }
         if (!rsaPublicKey.verifyMessage(sec, ba, sigAlg, QCA::DERSequence)) {
             computeHeaderCanonization(false);

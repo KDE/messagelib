@@ -87,25 +87,25 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
             Q_ASSERT(signedPart);
             QCOMPARE(signedPart->contentTransferEncoding()->encoding(), KMime::Headers::CEbase64);
             QCOMPARE(signedPart->contentType()->mimeType(), QByteArray("application/pkcs7-signature"));
-            QCOMPARE(signedPart->contentType()->name(), QString::fromLatin1("smime.p7s"));
+            QCOMPARE(signedPart->contentType()->name(), QStringLiteral("smime.p7s"));
             QCOMPARE(signedPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
-            QCOMPARE(signedPart->contentDisposition()->filename(), QString::fromLatin1("smime.p7s"));
+            QCOMPARE(signedPart->contentDisposition()->filename(), QStringLiteral("smime.p7s"));
             Q_UNUSED(signedPart);
 
             QCOMPARE(MessageCore::NodeHelper::firstChild(resultMessage)->contentTransferEncoding()->encoding(), encoding);
 
             QCOMPARE(resultMessage->contentType()->mimeType(), QByteArray("multipart/signed"));
-            QCOMPARE(resultMessage->contentType()->parameter(QString::fromLatin1("protocol")), QString::fromLatin1("application/pkcs7-signature"));
-            QCOMPARE(resultMessage->contentType()->parameter(QString::fromLatin1("micalg")), QString::fromLatin1("sha1"));
+            QCOMPARE(resultMessage->contentType()->parameter(QStringLiteral("protocol")), QStringLiteral("application/pkcs7-signature"));
+            QCOMPARE(resultMessage->contentType()->parameter(QStringLiteral("micalg")), QStringLiteral("sha1"));
         } else if (f & Kleo::SMIMEOpaqueFormat) {
             KMime::Content *signedPart = Util::findTypeInMessage(resultMessage, "application", "pkcs7-mime");
             Q_ASSERT(signedPart);
             QCOMPARE(signedPart->contentTransferEncoding()->encoding(), KMime::Headers::CEbase64);
             QCOMPARE(signedPart->contentType()->mimeType(), QByteArray("application/pkcs7-mime"));
-            QCOMPARE(signedPart->contentType()->name(), QString::fromLatin1("smime.p7m"));
-            QCOMPARE(signedPart->contentType()->parameter(QString::fromLatin1("smime-type")), QString::fromLatin1("signed-data"));
+            QCOMPARE(signedPart->contentType()->name(), QStringLiteral("smime.p7m"));
+            QCOMPARE(signedPart->contentType()->parameter(QStringLiteral("smime-type")), QStringLiteral("signed-data"));
             QCOMPARE(signedPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
-            QCOMPARE(signedPart->contentDisposition()->filename(), QString::fromLatin1("smime.p7m"));
+            QCOMPARE(signedPart->contentDisposition()->filename(), QStringLiteral("smime.p7m"));
             Q_UNUSED(signedPart);
         }
         // process the result..
@@ -158,10 +158,10 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
         Q_ASSERT(encPart);
 
         QCOMPARE(encPart->contentType()->mimeType(), QByteArray("application/pkcs7-mime"));
-        QCOMPARE(encPart->contentType()->name(), QString::fromLatin1("smime.p7m"));
-        QCOMPARE(encPart->contentType()->parameter(QString::fromLatin1("smime-type")), QString::fromLatin1("enveloped-data"));
+        QCOMPARE(encPart->contentType()->name(), QStringLiteral("smime.p7m"));
+        QCOMPARE(encPart->contentType()->parameter(QStringLiteral("smime-type")), QStringLiteral("enveloped-data"));
         QCOMPARE(encPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
-        QCOMPARE(encPart->contentDisposition()->filename(), QString::fromLatin1("smime.p7m"));
+        QCOMPARE(encPart->contentDisposition()->filename(), QStringLiteral("smime.p7m"));
         Q_UNUSED(encPart);
 
         otp.parseObjectTree(resultMessage.data());
@@ -211,10 +211,10 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
         KMime::Content *encPart = Util::findTypeInMessage(resultMessage.data(), "application", "pkcs7-mime");
         Q_ASSERT(encPart);
         QCOMPARE(encPart->contentType()->mimeType(), QByteArray("application/pkcs7-mime"));
-        QCOMPARE(encPart->contentType()->name(), QString::fromLatin1("smime.p7m"));
-        QCOMPARE(encPart->contentType()->parameter(QString::fromLatin1("smime-type")), QString::fromLatin1("enveloped-data"));
+        QCOMPARE(encPart->contentType()->name(), QStringLiteral("smime.p7m"));
+        QCOMPARE(encPart->contentType()->parameter(QStringLiteral("smime-type")), QStringLiteral("enveloped-data"));
         QCOMPARE(encPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
-        QCOMPARE(encPart->contentDisposition()->filename(), QString::fromLatin1("smime.p7m"));
+        QCOMPARE(encPart->contentDisposition()->filename(), QStringLiteral("smime.p7m"));
         Q_UNUSED(encPart);
 
         otp.parseObjectTree(resultMessage.data());

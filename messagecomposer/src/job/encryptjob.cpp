@@ -196,7 +196,7 @@ void EncryptJob::doStart()
 
 void EncryptJob::slotResult(KJob *job)
 {
-    Q_D(EncryptJob);
+    //Q_D(EncryptJob);
     if (error()) {
         ContentJobBase::slotResult(job);
         return;
