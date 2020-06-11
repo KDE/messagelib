@@ -141,7 +141,7 @@ void RecipientsEditor::setRecipientString(const QVector< KMime::Types::Mailbox >
 
 Recipient::List RecipientsEditor::recipients() const
 {
-    const QList<MultiplyingLineData::Ptr> dataList = allData();
+    const QVector<MultiplyingLineData::Ptr> dataList = allData();
     Recipient::List recList;
     for (const MultiplyingLineData::Ptr &datum : dataList) {
         Recipient::Ptr rec = qSharedPointerDynamicCast<Recipient>(datum);
