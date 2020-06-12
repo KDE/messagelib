@@ -91,7 +91,7 @@
 #include <QPointer>
 #include <WebEngineViewer/WebEngineExportHtmlPageJob>
 //libkdepim
-#include <Libkdepim/BroadcastStatus>
+#include <PimCommon/BroadcastStatus>
 #include <MessageCore/AttachmentPropertiesDialog>
 
 #include <AkonadiCore/collection.h>
@@ -2094,7 +2094,7 @@ void ViewerPrivate::slotUrlOn(const QString &link)
 
     mViewer->setLinkHovered(url);
     if (link.trimmed().isEmpty()) {
-        KPIM::BroadcastStatus::instance()->reset();
+        PimCommon::BroadcastStatus::instance()->reset();
         Q_EMIT showStatusBarMessage(QString());
         return;
     }
@@ -2792,13 +2792,13 @@ void ViewerPrivate::slotUrlCopy()
         const QString address = KEmailAddress::decodeMailtoUrl(mClickedUrl);
         clip->setText(address, QClipboard::Clipboard);
         clip->setText(address, QClipboard::Selection);
-        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Address copied to clipboard."));
+        PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("Address copied to clipboard."));
     } else {
         // put the url into the mouse selection and the clipboard
         const QString clickedUrl = mClickedUrl.url();
         clip->setText(clickedUrl, QClipboard::Clipboard);
         clip->setText(clickedUrl, QClipboard::Selection);
-        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("URL copied to clipboard."));
+        PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("URL copied to clipboard."));
     }
 #endif
 }

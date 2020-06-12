@@ -46,7 +46,7 @@
 #include <MimeTreeParser/PartNodeBodyPart>
 
 #include <MessageCore/StringUtil>
-#include <Libkdepim/BroadcastStatus>
+#include <PimCommon/BroadcastStatus>
 #include <LibkdepimAkonadi/OpenEmailAddressJob>
 
 #include <Akonadi/Contact/ContactSearchJob>
@@ -642,7 +642,7 @@ bool ContactUidURLHandler::handleContextMenuRequest(const QUrl &url, const QPoin
             QClipboard *clip = QApplication::clipboard();
             clip->setText(fullEmail, QClipboard::Clipboard);
             clip->setText(fullEmail, QClipboard::Selection);
-            KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Address copied to clipboard."));
+            PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("Address copied to clipboard."));
         }
 #endif
     }
@@ -918,8 +918,8 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         || (scheme == QLatin1String("help")) || (scheme == QLatin1String("vnc"))
         || (scheme == QLatin1String("smb")) || (scheme == QLatin1String("fish"))
         || (scheme == QLatin1String("news")) || (scheme == QLatin1String("tel"))) {
-        KPIM::BroadcastStatus::instance()->setTransientStatusMsg(i18n("Opening URL..."));
-        QTimer::singleShot(2000, KPIM::BroadcastStatus::instance(), &KPIM::BroadcastStatus::reset);
+        PimCommon::BroadcastStatus::instance()->setTransientStatusMsg(i18n("Opening URL..."));
+        QTimer::singleShot(2000, PimCommon::BroadcastStatus::instance(), &PimCommon::BroadcastStatus::reset);
 
         QMimeDatabase mimeDb;
         auto mime = mimeDb.mimeTypeForUrl(url);

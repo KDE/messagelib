@@ -21,7 +21,7 @@
 #include "scamexpandurljob.h"
 #include "messageviewer_debug.h"
 
-#include <Libkdepim/BroadcastStatus>
+#include <PimCommon/BroadcastStatus>
 #include <PimCommon/NetworkManager>
 
 #include <KLocalizedString>
@@ -67,7 +67,7 @@ ScamExpandUrlJob::~ScamExpandUrlJob()
 void ScamExpandUrlJob::expandedUrl(const QUrl &url)
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n(
+        PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n(
                                                             "No network connection detected, we cannot expand url."));
         deleteLater();
         return;
@@ -108,16 +108,16 @@ void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
             longUrl.setUrl(longUrlVar.toString());
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << "JSon is not corect" << ba;
-            KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.",
+            PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.",
                                                                  shortUrl.url()));
             deleteLater();
             return;
         }
-        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Short url \'%1\' redirects to \'%2\'.",
+        PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("Short url \'%1\' redirects to \'%2\'.",
                                                              shortUrl.url(),
                                                              longUrl.toDisplayString()));
     } else {
-        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.",
+        PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.",
                                                              shortUrl.url()));
     }
     deleteLater();
