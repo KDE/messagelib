@@ -55,6 +55,7 @@
 #include <KMimeTypeTrader>
 #include <QPushButton>
 #include <KRun>
+#include <KIO/ApplicationLauncherJob>
 #include <QTemporaryFile>
 #include <QMimeDatabase>
 #include <KFileItemActions>
@@ -714,24 +715,21 @@ void AttachmentControllerBase::openWith(const KService::Ptr &offer)
                            i18n("Unable to open attachment"));
         return;
     }
-    QList<QUrl> lst;
     QUrl url = QUrl::fromLocalFile(tempFile->fileName());
-    lst.append(url);
     tempFile->setPermissions(QFile::ReadUser);
-    bool result = false;
-    if (offer) {
-        result = KRun::runService(*offer, lst, d->wParent, false);
-    } else {
-        result = KRun::displayOpenWithDialog(lst, d->wParent, false);
-    }
-    if (!result) {
-        delete tempFile;
-        tempFile = nullptr;
-    } else {
-        // The file was opened.  Delete it only when the composer is closed
-        // (and this object is destroyed).
-        tempFile->setParent(this);   // Manages lifetime.
-    }
+    // If offer is null, this will show the "open with" dialog
+    KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(offer);
+    job->setUrls({url});
+    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
+    job->start();
+    connect(job, &KJob::result, this, [tempFile, job]() {
+        if (job->error()) {
+            delete tempFile;
+        }
+    });
+    // Delete the file only when the composer is closed
+    // (and this object is destroyed).
+    tempFile->setParent(this);   // Manages lifetime.
 }
 
 void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
