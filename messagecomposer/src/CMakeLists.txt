@@ -231,6 +231,7 @@ target_link_libraries(KF5MessageComposer
     KF5::TemplateParser
     KF5::AkonadiWidgets
     KF5::LibkdepimAkonadi
+    KF5::PimCommonAkonadi
     KF5::KIOCore
     KF5::I18n
     KF5::KIOWidgets     # for KIO::JobUiDelegate

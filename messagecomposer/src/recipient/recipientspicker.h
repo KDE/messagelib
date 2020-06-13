@@ -28,7 +28,7 @@
 
 class QPushButton;
 
-namespace KLDAP {
+namespace PimCommon {
 class LdapSearchDialog;
 }
 
@@ -73,7 +73,7 @@ protected Q_SLOTS:
 private:
     Akonadi::RecipientsPickerWidget *mView = nullptr;
 
-    KLDAP::LdapSearchDialog *mLdapSearchDialog = nullptr;
+    PimCommon::LdapSearchDialog *mLdapSearchDialog = nullptr;
 
     Recipient::Type mDefaultType;
     QPushButton *mUser4Button = nullptr;

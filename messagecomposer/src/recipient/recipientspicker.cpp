@@ -25,7 +25,7 @@
 #include <Akonadi/Contact/EmailAddressSelectionWidget>
 #include <Akonadi/Contact/RecipientsPickerWidget>
 #include <kcontacts/contactgroup.h>
-#include <Libkdepim/LdapSearchDialog>
+#include <PimCommonAkonadi/LdapSearchDialog>
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -214,8 +214,8 @@ void RecipientsPicker::writeConfig()
 void RecipientsPicker::slotSearchLDAP()
 {
     if (!mLdapSearchDialog) {
-        mLdapSearchDialog = new KLDAP::LdapSearchDialog(this);
-        connect(mLdapSearchDialog, &KLDAP::LdapSearchDialog::contactsAdded, this, &RecipientsPicker::ldapSearchResult);
+        mLdapSearchDialog = new PimCommon::LdapSearchDialog(this);
+        connect(mLdapSearchDialog, &PimCommon::LdapSearchDialog::contactsAdded, this, &RecipientsPicker::ldapSearchResult);
     }
 
     mLdapSearchDialog->setSearchText(mView->emailAddressSelectionWidget()->searchLineEdit()->text());
