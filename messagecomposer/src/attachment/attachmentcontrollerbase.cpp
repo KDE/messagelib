@@ -72,10 +72,8 @@
 #include <settings/messagecomposersettings.h>
 #include <KIO/Job>
 #include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
-#endif
 #include <Akonadi/Contact/EmailAddressSelectionDialog>
 #include <Akonadi/Contact/EmailAddressSelectionWidget>
 
@@ -746,30 +744,6 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
         return;
     }
     tempFile->setPermissions(QFile::ReadUser);
-#if KIO_VERSION < QT_VERSION_CHECK(5, 71, 0)
-    KRun::RunFlags flags;
-    flags |= KRun::DeleteTemporaryFiles;
-    bool success = KRun::runUrl(QUrl::fromLocalFile(tempFile->fileName()),
-                                QString::fromLatin1(part->mimeType()),
-                                d->wParent,
-                                flags);
-    if (!success) {
-        if (!KMimeTypeTrader::self()->preferredService(QString::fromLatin1(part->mimeType())).data()) {
-            // KRun showed an Open-With dialog, and it was canceled.
-        } else {
-            // KRun failed.
-            KMessageBox::sorry(d->wParent,
-                               i18n("KMail was unable to open the attachment."),
-                               i18n("Unable to open attachment"));
-        }
-        delete tempFile;
-        tempFile = nullptr;
-    } else {
-        // The file was opened.  Delete it only when the composer is closed
-        // (and this object is destroyed).
-        tempFile->setParent(this);   // Manages lifetime.
-    }
-#else
     KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl::fromLocalFile(tempFile->fileName()), QString::fromLatin1(part->mimeType()));
     job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
     job->setDeleteTemporaryFile(true);
@@ -786,7 +760,6 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
         }
     });
     job->start();
-#endif
 }
 
 void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)

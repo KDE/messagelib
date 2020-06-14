@@ -58,10 +58,8 @@
 #include <KMimeTypeChooser>
 #include <KMimeTypeTrader>
 #include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
-#endif
 #include <KRun>
 #include <KSelectAction>
 #include <KSharedConfig>
@@ -290,17 +288,10 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
         }
         if (node->contentType()->mimeType() == "message/external-body") {
             if (node->contentType()->hasParameter(QStringLiteral("url"))) {
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
                 KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"));
                 job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
                 job->setRunExecutables(true);
                 job->start();
-#else
-                KRun::RunFlags flags;
-                flags |= KRun::RunExecutables;
-                const QString url = node->contentType()->parameter(QStringLiteral("url"));
-                KRun::runUrl(QUrl(url), QStringLiteral("text/html"), q, flags);
-#endif
                 return;
             }
         }
@@ -2028,15 +2019,10 @@ void ViewerPrivate::checkPhishingUrl()
 void ViewerPrivate::executeRunner(const QUrl &url)
 {
     if (!MessageViewer::Util::handleUrlWithQDesktopServices(url)) {
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
         KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, viewer()));
         job->setRunExecutables(false);
         job->start();
-#else
-        KRun *runner = new KRun(url, viewer());   // will delete itself
-        runner->setRunExecutables(false);
-#endif
     }
 }
 
@@ -2385,17 +2371,10 @@ void ViewerPrivate::slotOpenInBrowser()
 void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
 {
     const QUrl url(QUrl::fromLocalFile(filename));
-#if KIO_VERSION < QT_VERSION_CHECK(5, 71, 0)
-    KRun::RunFlags flags;
-    flags |= KRun::DeleteTemporaryFiles;
-
-    KRun::runUrl(url, QStringLiteral("text/html"), q, flags);
-#else
     KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"), q);
     job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
     job->setDeleteTemporaryFile(true);
     job->start();
-#endif
 
     Q_EMIT printingFinished();
 }
