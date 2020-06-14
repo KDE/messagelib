@@ -47,7 +47,7 @@
 
 #include <MessageCore/StringUtil>
 #include <PimCommon/BroadcastStatus>
-#include <LibkdepimAkonadi/OpenEmailAddressJob>
+#include <Akonadi/Contact/OpenEmailAddressJob>
 
 #include <Akonadi/Contact/ContactSearchJob>
 
@@ -602,7 +602,7 @@ static QString searchFullEmailByUid(const QString &uid)
 
 static void runKAddressBook(const QUrl &url)
 {
-    KPIM::OpenEmailAddressJob *job = new KPIM::OpenEmailAddressJob(url.path(), nullptr);
+    Akonadi::OpenEmailAddressJob *job = new Akonadi::OpenEmailAddressJob(url.path(), nullptr);
     job->start();
 }
 

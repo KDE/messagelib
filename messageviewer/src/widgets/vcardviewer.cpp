@@ -29,7 +29,7 @@ using KContacts::Addressee;
 #include <ContactDefaultActions>
 #include <KLocalizedString>
 
-#include <LibkdepimAkonadi/AddContactJob>
+#include <Akonadi/Contact/AddContactJob>
 #include <QDialogButtonBox>
 #include <KConfigGroup>
 #include <QPushButton>
@@ -113,7 +113,7 @@ void VCardViewer::slotUser1()
 {
     const KContacts::Addressee contact = mAddresseeList.at(mAddresseeListIndex);
 
-    KPIM::AddContactJob *job = new KPIM::AddContactJob(contact, this, this);
+    Akonadi::AddContactJob *job = new Akonadi::AddContactJob(contact, this, this);
     job->start();
 }
 
