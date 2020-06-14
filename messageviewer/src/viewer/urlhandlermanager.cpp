@@ -56,7 +56,6 @@
 #include <KMbox/MBox>
 #include "messageflags.h"
 
-#include <KRun>
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
