@@ -321,7 +321,6 @@ target_link_libraries(KF5MessageViewer
     KF5::ItemViews
     Qt5::Network
     KF5::WebEngineViewer
-    KF5::LibkdepimAkonadi
     KF5::GrantleeTheme
     KF5::KaddressbookGrantlee
     KF5::MailTransportAkonadi
@@ -334,6 +333,7 @@ target_link_libraries(KF5MessageViewer
     KF5::KIOFileWidgets
     KF5::KIOWidgets
     KF5::XmlGui
+    KF5::AkonadiContact
     Grantlee5::Templates
     Qt5::PrintSupport
     QGpgme

@@ -40,7 +40,7 @@
 #include "sendlater/sendlaterinfo.h"
 #include "sendlater/sendlatercreatejob.h"
 
-#include <Libkdepim/RecentAddresses>
+#include <PimCommonAkonadi/RecentAddresses>
 #include "helper/messagehelper.h"
 
 #include <MessageComposer/RecipientsEditor>
@@ -945,15 +945,15 @@ void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
     KConfig *config = MessageComposer::MessageComposerSettings::self()->config();
     const QVector<QByteArray> toAddresses = msg->to()->addresses();
     for (const QByteArray &address : toAddresses) {
-        KPIM::RecentAddresses::self(config)->add(QLatin1String(address));
+        PimCommon::RecentAddresses::self(config)->add(QLatin1String(address));
     }
     const QVector<QByteArray> ccAddresses = msg->cc()->addresses();
     for (const QByteArray &address : ccAddresses) {
-        KPIM::RecentAddresses::self(config)->add(QLatin1String(address));
+        PimCommon::RecentAddresses::self(config)->add(QLatin1String(address));
     }
     const QVector<QByteArray> bccAddresses = msg->bcc()->addresses();
     for (const QByteArray &address : bccAddresses) {
-        KPIM::RecentAddresses::self(config)->add(QLatin1String(address));
+        PimCommon::RecentAddresses::self(config)->add(QLatin1String(address));
     }
 }
 

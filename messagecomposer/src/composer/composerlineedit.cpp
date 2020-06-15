@@ -28,7 +28,7 @@
 using namespace MessageComposer;
 
 ComposerLineEdit::ComposerLineEdit(bool useCompletion, QWidget *parent)
-    : KPIM::AddresseeLineEdit(parent, useCompletion)
+    : PimCommon::AddresseeLineEdit(parent, useCompletion)
 {
     allowSemicolonAsSeparator(MessageComposerSettings::allowSemicolonAsAddressSeparator());
     setShowRecentAddresses(MessageComposerSettings::self()->showRecentAddressesInComposer());

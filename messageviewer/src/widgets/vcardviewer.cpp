@@ -26,7 +26,7 @@
 using KContacts::VCardConverter;
 using KContacts::Addressee;
 
-#include <ContactDefaultActions>
+#include <Akonadi/Contact/ContactDefaultActions>
 #include <KLocalizedString>
 
 #include <Akonadi/Contact/AddContactJob>
