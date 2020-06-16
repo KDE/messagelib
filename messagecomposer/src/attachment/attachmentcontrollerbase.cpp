@@ -54,7 +54,6 @@
 #include <KMessageBox>
 #include <KMimeTypeTrader>
 #include <QPushButton>
-#include <KRun>
 #include <KIO/ApplicationLauncherJob>
 #include <QTemporaryFile>
 #include <QMimeDatabase>
