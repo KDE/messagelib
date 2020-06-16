@@ -88,7 +88,7 @@ void DistributionListExpandJob::slotExpansionDone(KJob *job)
     const Akonadi::ContactGroupExpandJob *expandJob = qobject_cast<Akonadi::ContactGroupExpandJob *>(job);
 
     const KContacts::Addressee::List contacts = expandJob->contacts();
-
+    mEmailAddresses.reserve(contacts.count());
     for (const KContacts::Addressee &contact : contacts) {
         mEmailAddresses << contact.fullEmail();
     }

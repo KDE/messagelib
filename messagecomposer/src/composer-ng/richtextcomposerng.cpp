@@ -28,6 +28,8 @@
 #include <KPIMTextEdit/MarkupDirector>
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
 
+#define USE_TEXTHTML_BUILDER 1
+
 using namespace MessageComposer;
 
 class MessageComposer::RichTextComposerNgPrivate
@@ -160,11 +162,9 @@ MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextCom
     return MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::NotConverted;
 }
 
-#define USE_TEXTHTML_BUILDER 1
-
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
-    bool wasConverted
+    const bool wasConverted
         = convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
     if (composerControler()->isFormattingUsed()) {
         if (!wasConverted) {
