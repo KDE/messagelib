@@ -60,7 +60,7 @@
 #include <kio_version.h>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
-#include <KRun>
+#include <KIO/ApplicationLauncherJob>
 #include <KSelectAction>
 #include <KSharedConfig>
 #include <KStandardGuiItem>
@@ -712,15 +712,16 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
     QFile::setPermissions(name, perms | QFileDevice::ReadUser | QFileDevice::WriteUser);
     const QUrl url = QUrl::fromLocalFile(name);
     lst.append(url);
-    if (offer) {
-        if ((!KRun::runService(*offer, lst, nullptr, true))) {
+
+    KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(offer);
+    job->setUrls({url});
+    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, mMainWindow));
+    job->start();
+    connect(job, &KJob::result, this, [url, job]() {
+        if (job->error()) {
             QFile::remove(url.toLocalFile());
         }
-    } else {
-        if ((!KRun::displayOpenWithDialog(lst, mMainWindow, true))) {
-            QFile::remove(url.toLocalFile());
-        }
-    }
+    });
 }
 
 void ViewerPrivate::attachmentOpen(KMime::Content *node)
