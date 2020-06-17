@@ -67,13 +67,6 @@ class Q_DECL_HIDDEN MessageCore::AttachmentPart::Private
 {
 public:
     Private()
-        : mEncoding(KMime::Headers::CE7Bit)
-        , mSize(-1)
-        , mIsInline(false)
-        , mAutoEncoding(true)
-        , mCompressed(false)
-        , mToEncrypt(false)
-        , mToSign(false)
     {
     }
 
@@ -84,13 +77,13 @@ public:
     QByteArray mCharset;
     QByteArray mMimeType;
     QByteArray mData;
-    KMime::Headers::contentEncoding mEncoding;
-    qint64 mSize;
-    bool mIsInline;
-    bool mAutoEncoding;
-    bool mCompressed;
-    bool mToEncrypt;
-    bool mToSign;
+    KMime::Headers::contentEncoding mEncoding = KMime::Headers::CE7Bit;
+    qint64 mSize = -1;
+    bool mIsInline = false;
+    bool mAutoEncoding = true;
+    bool mCompressed = false;
+    bool mToEncrypt = false;
+    bool mToSign = false;
 };
 
 AttachmentPart::AttachmentPart()

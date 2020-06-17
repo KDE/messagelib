@@ -66,7 +66,9 @@ void AttachmentFromFolderJob::Private::compressFolder()
     }
     mZip->setCompression(mCompression);
     const QString filename = q->url().fileName();
-    mZip->writeDir(filename, QString(), QString(), 040755, mArchiveTime, mArchiveTime, mArchiveTime);
+    if (!mZip->writeDir(filename, QString(), QString(), 040755, mArchiveTime, mArchiveTime, mArchiveTime)) {
+        qCWarning(MESSAGECORE_LOG) << " Impossible to write file " << fileName;
+    }
     qCDebug(MESSAGECORE_LOG) << "writing root directory : " << filename;
     addEntity(QDir(q->url().path()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot
                                                   |QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), fileName + QLatin1Char('/'));
