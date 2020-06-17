@@ -272,7 +272,8 @@ void MainTextJob::doStart()
             MultipartJob *multipartJob = new MultipartJob;
             multipartJob->setMultipartSubtype("related");
             multipartJob->appendSubjob(alternativeJob);
-            foreach (const QSharedPointer<KPIMTextEdit::EmbeddedImage> &image, d->textPart->embeddedImages()) {
+            const auto embeddedImages = d->textPart->embeddedImages();
+            for (const QSharedPointer<KPIMTextEdit::EmbeddedImage> &image : embeddedImages) {
                 multipartJob->appendSubjob(d->createImageJob(image));
             }
             appendSubjob(multipartJob);

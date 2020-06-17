@@ -274,7 +274,7 @@ void SignEncryptJob::process()
         return;
     }
 
-    QByteArray signatureHashAlgo = res.first.createdSignature(0).hashAlgorithmAsString();
+    const QByteArray signatureHashAlgo = res.first.createdSignature(0).hashAlgorithmAsString();
 
     d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, encBody, d->format, false, signatureHashAlgo);
 
