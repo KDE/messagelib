@@ -227,7 +227,7 @@ void SignJobTest::testProtectedHeaders_data()
 
 void SignJobTest::testProtectedHeaders()
 {
-    QFETCH(bool,protectedHeaders);
+    QFETCH(bool, protectedHeaders);
     QFETCH(QString, referenceFile);
 
     const std::vector< GpgME::Key > &keys = Test::getKeys();

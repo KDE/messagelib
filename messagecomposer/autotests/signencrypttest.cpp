@@ -52,10 +52,10 @@ void SignEncryptTest::testContent_data()
     QTest::addColumn<int>("cryptoMessageFormat");
     QTest::addColumn<QString>("error");
 
-    QTest::newRow("OpenPGPMimeFormat") << (int) Kleo::OpenPGPMIMEFormat << QString();
-    QTest::newRow("InlineOpenPGPFormat") << (int) Kleo::InlineOpenPGPFormat << QString();
-    QTest::newRow("SMIMEFormat") << (int) Kleo::SMIMEFormat << QStringLiteral("Not implemented");
-    QTest::newRow("SMIMEOpaqueFormat") << (int) Kleo::SMIMEOpaqueFormat << QStringLiteral("Not implemented");
+    QTest::newRow("OpenPGPMimeFormat") << (int)Kleo::OpenPGPMIMEFormat << QString();
+    QTest::newRow("InlineOpenPGPFormat") << (int)Kleo::InlineOpenPGPFormat << QString();
+    QTest::newRow("SMIMEFormat") << (int)Kleo::SMIMEFormat << QStringLiteral("Not implemented");
+    QTest::newRow("SMIMEOpaqueFormat") << (int)Kleo::SMIMEOpaqueFormat << QStringLiteral("Not implemented");
 }
 
 void SignEncryptTest::testContent()
@@ -113,7 +113,7 @@ void SignEncryptTest::testContent()
 
 void SignEncryptTest::testContentSubjobChained()
 {
-    const std::vector< GpgME::Key >  &keys = Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
     KMime::Message skeletonMessage;
@@ -152,10 +152,9 @@ void SignEncryptTest::testContentSubjobChained()
     delete result;
 }
 
-
 void SignEncryptTest::testHeaders()
 {
-    const std::vector< GpgME::Key >  &keys = Test::getKeys();
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     Composer composer;
     auto seJob = new SignEncryptJob(&composer);

@@ -60,8 +60,7 @@ void ProtectedHeadersJob::setContent(KMime::Content *content)
     Q_D(ProtectedHeadersJob);
 
     d->content = content;
-    if (content)
-    {
+    if (content) {
         d->content->assemble();
     }
 }
@@ -80,39 +79,40 @@ void ProtectedHeadersJob::setObvoscate(bool obvoscate)
     d->obvoscate = obvoscate;
 }
 
-void ProtectedHeadersJob::doStart() {
+void ProtectedHeadersJob::doStart()
+{
     Q_D(ProtectedHeadersJob);
     Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
     Q_ASSERT(d->skeletonMessage); // We need a skeletonMessage to proceed
 
     auto subject = d->skeletonMessage->header<KMime::Headers::Subject>();
     if (d->obvoscate && subject) {
-            // Create protected header lagacy mimepart with replaced headers
-            SinglepartJob *cjob = new SinglepartJob;
-            cjob->contentType()->setMimeType("text/plain");
-            cjob->contentType()->setCharset(subject->rfc2047Charset());
-            cjob->contentType()->setParameter(QStringLiteral("protected-headers"), QStringLiteral("v1"));
-            cjob->contentDisposition()->setDisposition(KMime::Headers::contentDisposition::CDinline);
-            cjob->setData(subject->type() + QByteArray(": ") + subject->asUnicodeString().toUtf8());
+        // Create protected header lagacy mimepart with replaced headers
+        SinglepartJob *cjob = new SinglepartJob;
+        cjob->contentType()->setMimeType("text/plain");
+        cjob->contentType()->setCharset(subject->rfc2047Charset());
+        cjob->contentType()->setParameter(QStringLiteral("protected-headers"), QStringLiteral("v1"));
+        cjob->contentDisposition()->setDisposition(KMime::Headers::contentDisposition::CDinline);
+        cjob->setData(subject->type() + QByteArray(": ") + subject->asUnicodeString().toUtf8());
 
-            QObject::connect(cjob, &SinglepartJob::finished, this, [d, cjob](KJob *job) {
-                KMime::Content *mixedPart = new KMime::Content();
-                const QByteArray boundary = KMime::multiPartBoundary();
-                mixedPart->contentType()->setMimeType("multipart/mixed");
-                mixedPart->contentType()->setBoundary(boundary);
-                mixedPart->addContent(cjob->content());
+        QObject::connect(cjob, &SinglepartJob::finished, this, [d, cjob](KJob *job) {
+            KMime::Content *mixedPart = new KMime::Content();
+            const QByteArray boundary = KMime::multiPartBoundary();
+            mixedPart->contentType()->setMimeType("multipart/mixed");
+            mixedPart->contentType()->setBoundary(boundary);
+            mixedPart->addContent(cjob->content());
 
-                // if setContent hasn't been called, we assume that a subjob was added
-                // and we want to use that
-                if (!d->content || !d->content->hasContent()) {
-                    Q_ASSERT(d->subjobContents.size() == 1);
-                    d->content = d->subjobContents.first();
-                }
+            // if setContent hasn't been called, we assume that a subjob was added
+            // and we want to use that
+            if (!d->content || !d->content->hasContent()) {
+                Q_ASSERT(d->subjobContents.size() == 1);
+                d->content = d->subjobContents.first();
+            }
 
-                mixedPart->addContent(d->content);
-                d->content = mixedPart;
-                });
-            appendSubjob(cjob);
+            mixedPart->addContent(d->content);
+            d->content = mixedPart;
+        });
+        appendSubjob(cjob);
     }
 
     ContentJobBase::doStart();

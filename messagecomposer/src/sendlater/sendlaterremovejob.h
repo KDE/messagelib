@@ -26,7 +26,6 @@
 #include <AkonadiCore/Item>
 
 namespace MessageComposer {
-
 class MESSAGECOMPOSER_EXPORT SendLaterRemoveJob : public SendLaterJob
 {
     Q_OBJECT
@@ -40,7 +39,6 @@ protected:
 private:
     Akonadi::Item::Id mItem;
 };
-
 }
 
 #endif

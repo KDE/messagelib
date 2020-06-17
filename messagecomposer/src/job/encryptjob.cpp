@@ -124,7 +124,7 @@ void EncryptJob::setRecipients(const QStringList &recipients)
     d->recipients = recipients;
 }
 
-void EncryptJob::setSkeletonMessage(KMime::Message* skeletonMessage)
+void EncryptJob::setSkeletonMessage(KMime::Message *skeletonMessage)
 {
     Q_D(EncryptJob);
 

@@ -127,7 +127,7 @@ void FollowupReminderCreateJob::writeFollowupReminderInfo()
             Akonadi::ServerManager::agentServiceName(Akonadi::ServerManager::Agent, QStringLiteral("akonadi_followupreminder_agent")),
             QStringLiteral("/FollowUpReminder"),
             QDBusConnection::sessionBus()
-    }};
+        }};
 
     if (!iface->isValid()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "The FollowUpReminder agent is not running!";
@@ -138,16 +138,16 @@ void FollowupReminderCreateJob::writeFollowupReminderInfo()
     auto wait = new QDBusPendingCallWatcher{call, this};
     connect(wait, &QDBusPendingCallWatcher::finished,
             this, [this, iface_ = std::move(iface)](QDBusPendingCallWatcher *watcher) mutable {
-                auto iface = std::move(iface_);
-                watcher->deleteLater();
+        auto iface = std::move(iface_);
+        watcher->deleteLater();
 
-                const QDBusPendingReply<void> reply = *watcher;
-                if (reply.isError()) {
-                    qCWarning(MESSAGECOMPOSER_LOG) << "Failed to write the new reminder, agent replied" << reply.error().message();
-                    setError(KJob::UserDefinedError);
-                    setErrorText(i18n("Failed to store a new reminder: %1", reply.error().message()));
-                }
+        const QDBusPendingReply<void> reply = *watcher;
+        if (reply.isError()) {
+            qCWarning(MESSAGECOMPOSER_LOG) << "Failed to write the new reminder, agent replied" << reply.error().message();
+            setError(KJob::UserDefinedError);
+            setErrorText(i18n("Failed to store a new reminder: %1", reply.error().message()));
+        }
 
-                emitResult();
-            });
+        emitResult();
+    });
 }

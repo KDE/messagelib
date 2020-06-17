@@ -28,8 +28,7 @@
 class OrgFreedesktopAkonadiSendLaterAgentInterface;
 
 namespace MessageComposer {
-
-class MESSAGECOMPOSER_EXPORT SendLaterJob: public KJob
+class MESSAGECOMPOSER_EXPORT SendLaterJob : public KJob
 {
     Q_OBJECT
 public:
@@ -45,7 +44,6 @@ public:
 protected:
     virtual QDBusPendingReply<> doCall(OrgFreedesktopAkonadiSendLaterAgentInterface *iface) = 0;
     virtual QString getErrorString(Error error, const QString &desc) const = 0;
-
 };
 }
 

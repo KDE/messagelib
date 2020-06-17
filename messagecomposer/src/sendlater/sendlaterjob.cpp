@@ -33,7 +33,8 @@ using namespace MessageComposer;
 
 SendLaterJob::SendLaterJob(QObject *parent)
     : KJob(parent)
-{}
+{
+}
 
 void SendLaterJob::start()
 {
@@ -55,15 +56,15 @@ void SendLaterJob::start()
     auto watcher = new QDBusPendingCallWatcher(reply);
     connect(watcher, &QDBusPendingCallWatcher::finished,
             this, [this, iface_ = std::move(iface)](QDBusPendingCallWatcher *call) mutable {
-                auto iface = std::move(iface_);
-                call->deleteLater();
-                QDBusPendingReply<void> reply = *call;
-                if (reply.isError()) {
-                    qCWarning(MESSAGECOMPOSER_LOG) << "SendLater agent DBus call failed:" << reply.error().message();
-                    setError(SendLaterJob::CallFailed);
-                    setErrorText(getErrorString(SendLaterJob::CallFailed, reply.error().message()));
-                }
+        auto iface = std::move(iface_);
+        call->deleteLater();
+        QDBusPendingReply<void> reply = *call;
+        if (reply.isError()) {
+            qCWarning(MESSAGECOMPOSER_LOG) << "SendLater agent DBus call failed:" << reply.error().message();
+            setError(SendLaterJob::CallFailed);
+            setErrorText(getErrorString(SendLaterJob::CallFailed, reply.error().message()));
+        }
 
-                emitResult();
-            });
+        emitResult();
+    });
 }

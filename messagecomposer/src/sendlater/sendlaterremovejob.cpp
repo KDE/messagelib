@@ -27,7 +27,8 @@ using namespace MessageComposer;
 SendLaterRemoveJob::SendLaterRemoveJob(Akonadi::Item::Id item, QObject *parent)
     : SendLaterJob(parent)
     , mItem(item)
-{}
+{
+}
 
 QDBusPendingReply<> SendLaterRemoveJob::doCall(OrgFreedesktopAkonadiSendLaterAgentInterface *iface)
 {

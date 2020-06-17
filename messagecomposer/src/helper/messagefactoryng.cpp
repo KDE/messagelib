@@ -942,8 +942,7 @@ QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg,
             const auto replacement = hdr->asUnicodeString();
             result.replace(idx, match.capturedLength(1), replacement);
             idx += replacement.length();
-        }
-        else {
+        } else {
             result.remove(idx, match.capturedLength(1));
         }
     }

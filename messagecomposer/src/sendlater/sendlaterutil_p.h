@@ -23,14 +23,10 @@
 #include <AkonadiCore/ServerManager>
 #include <AkonadiCore/servermanager.h>
 
-namespace MessageComposer
-{
-namespace SendLaterUtil
-{
-
+namespace MessageComposer {
+namespace SendLaterUtil {
 QString agentServiceName();
 QString dbusPath();
-
 }
 }
 

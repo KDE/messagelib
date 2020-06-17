@@ -98,9 +98,9 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
 
     // compare to reference file
     const auto args = QStringList()
-           << QStringLiteral("-u")
-           << referenceFile
-           << outFile;
+                      << QStringLiteral("-u")
+                      << referenceFile
+                      << outFile;
     QProcess proc;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
     proc.start(QStringLiteral("diff"), args);

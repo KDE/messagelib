@@ -49,4 +49,3 @@ bool SendLaterUtil::sentLaterAgentEnabled()
     org::freedesktop::Akonadi::SendLaterAgent iface{agentServiceName(), dbusPath(), QDBusConnection::sessionBus()};
     return iface.isValid() && iface.enabledAgent();
 }
-

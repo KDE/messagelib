@@ -27,7 +27,8 @@ using namespace MessageComposer;
 SendLaterCreateJob::SendLaterCreateJob(const SendLaterInfo &info, QObject *parent)
     : SendLaterJob(parent)
     , mInfo(info)
-{}
+{
+}
 
 QDBusPendingReply<> SendLaterCreateJob::doCall(OrgFreedesktopAkonadiSendLaterAgentInterface *iface)
 {

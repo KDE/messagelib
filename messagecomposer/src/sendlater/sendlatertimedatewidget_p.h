@@ -29,7 +29,6 @@ class KTimeComboBox;
 class KDateComboBox;
 
 namespace MessageComposer {
-
 /** Send later date/time widget. */
 class SendLaterTimeDateWidget : public QWidget
 {

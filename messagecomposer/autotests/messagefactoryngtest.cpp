@@ -525,7 +525,6 @@ void MessageFactoryTest::testCreateReplyUTF16Base64Async()
     TemplateParser::TemplateParserSettings::self()->setReplyUsingVisualFormat(true);
     factory.setReplyAsHtml(true);
 
-
     QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
     factory.setIdentityManager(mIdentMan);
 

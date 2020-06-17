@@ -26,7 +26,6 @@
 #include "messagecomposer_export.h"
 
 namespace MessageComposer {
-
 class MESSAGECOMPOSER_EXPORT SendLaterCreateJob : public SendLaterJob
 {
     Q_OBJECT

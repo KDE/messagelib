@@ -26,7 +26,6 @@
 #include "messagecomposer_export.h"
 
 namespace MessageComposer {
-
 /** Send later information. */
 class MESSAGECOMPOSER_EXPORT SendLaterInfo
 {

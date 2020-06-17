@@ -25,7 +25,6 @@
 
 using namespace MessageComposer;
 
-
 bool FollowUpReminder::isAvailableAndEnabled()
 {
     using Akonadi::ServerManager;
@@ -37,4 +36,3 @@ bool FollowUpReminder::isAvailableAndEnabled()
 
     return iface.isValid() && iface.enabledAgent();
 }
-

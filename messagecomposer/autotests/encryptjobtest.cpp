@@ -199,7 +199,7 @@ void EncryptJobTest::testProtectedHeaders_data()
 
 void EncryptJobTest::testProtectedHeaders()
 {
-    QFETCH(bool,protectedHeaders);
+    QFETCH(bool, protectedHeaders);
     QFETCH(bool, protectedHeadersObvoscate);
     QFETCH(QString, referenceFile);
 

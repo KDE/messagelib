@@ -24,16 +24,12 @@
 
 #include <QtGlobal>
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 /** Send later utilities. */
 namespace SendLaterUtil {
-
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool sentLaterAgentWasRegistered();
 
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool sentLaterAgentEnabled();
-
 }
 }
 #endif // SENDLATERUTIL_H

@@ -32,7 +32,6 @@ class SendLaterWidget;
 }
 
 namespace MessageComposer {
-
 class SendLaterInfo;
 
 /** Send later dialog. */
