@@ -682,7 +682,8 @@ QVector< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(
         }
     }
 
-    QStringList recipients(mExpandedTo), bcc(mExpandedBcc);
+    QStringList recipients(mExpandedTo);
+    const QStringList bcc(mExpandedBcc);
     recipients.append(mExpandedCc);
 
     keyResolver->setPrimaryRecipients(recipients);
@@ -1786,7 +1787,8 @@ ComposerViewBase::MissingAttachment ComposerViewBase::checkForMissingAttachments
 void ComposerViewBase::markAllAttachmentsForSigning(bool sign)
 {
     if (m_attachmentModel) {
-        foreach (MessageCore::AttachmentPart::Ptr attachment, m_attachmentModel->attachments()) {
+        const auto attachments = m_attachmentModel->attachments();
+        for (MessageCore::AttachmentPart::Ptr attachment : attachments) {
             attachment->setSigned(sign);
         }
     }
@@ -1795,7 +1797,8 @@ void ComposerViewBase::markAllAttachmentsForSigning(bool sign)
 void ComposerViewBase::markAllAttachmentsForEncryption(bool encrypt)
 {
     if (m_attachmentModel) {
-        foreach (MessageCore::AttachmentPart::Ptr attachment, m_attachmentModel->attachments()) {
+        const auto attachments = m_attachmentModel->attachments();
+        for (MessageCore::AttachmentPart::Ptr attachment : attachments) {
             attachment->setEncrypted(encrypt);
         }
     }

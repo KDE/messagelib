@@ -42,7 +42,7 @@ public:
     }
 
     void fixHtmlFontSize(QString &cleanHtml);
-    QString toCleanHtml() const;
+    Q_REQUIRED_RESULT QString toCleanHtml() const;
     PimCommon::AutoCorrection *autoCorrection = nullptr;
     RichTextComposerNg *richtextComposer = nullptr;
     MessageComposer::RichTextComposerSignatures *richTextComposerSignatures = nullptr;

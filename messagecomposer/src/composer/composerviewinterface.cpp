@@ -76,7 +76,8 @@ MessageComposer::ComposerAttachmentInterface ComposerViewInterface::attachments(
         fileNames.reserve(countElement);
         nameAndSize.reserve(countElement);
         names.reserve(countElement);
-        for (const MessageCore::AttachmentPart::Ptr &attachment : mComposerView->attachmentModel()->attachments()) {
+        const auto attachments = mComposerView->attachmentModel()->attachments();
+        for (const MessageCore::AttachmentPart::Ptr &attachment : attachments) {
             fileNames.append(attachment->fileName());
             names.append(attachment->name());
             nameAndSize.append(QStringLiteral("%1 (%2)").arg(attachment->name(), KFormat().formatByteSize(attachment->size())));

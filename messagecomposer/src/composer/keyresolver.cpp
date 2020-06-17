@@ -296,12 +296,13 @@ static QStringList keysAsStrings(const std::vector<GpgME::Key> &keys)
     strings.reserve(keys.size());
     for (std::vector<GpgME::Key>::const_iterator it = keys.begin(); it != keys.end(); ++it) {
         assert(!(*it).userID(0).isNull());
-        QString keyLabel = QString::fromUtf8((*it).userID(0).email());
+        const auto userID = (*it).userID(0);
+        QString keyLabel = QString::fromUtf8(userID.email());
         if (keyLabel.isEmpty()) {
-            keyLabel = QString::fromUtf8((*it).userID(0).name());
+            keyLabel = QString::fromUtf8(userID.name());
         }
         if (keyLabel.isEmpty()) {
-            keyLabel = QString::fromUtf8((*it).userID(0).id());
+            keyLabel = QString::fromUtf8(userID.id());
         }
         strings.append(keyLabel);
     }
@@ -406,13 +407,6 @@ class Kleo::KeyResolver::SigningPreferenceCounter : public std::unary_function<K
 {
 public:
     SigningPreferenceCounter()
-        : mTotal(0)
-        , mUnknownSigningPreference(0)
-        , mNeverSign(0)
-        , mAlwaysSign(0)
-        , mAlwaysSignIfPossible(0)
-        , mAlwaysAskForSigning(0)
-        , mAskSigningWheneverPossible(0)
     {
     }
 
@@ -427,9 +421,13 @@ public:
     make_int_accessor(Total)
 #undef make_int_accessor
 private:
-    unsigned int mTotal;
-    unsigned int mUnknownSigningPreference, mNeverSign, mAlwaysSign,
-                 mAlwaysSignIfPossible, mAlwaysAskForSigning, mAskSigningWheneverPossible;
+    unsigned int mTotal = 0;
+    unsigned int mUnknownSigningPreference = 0;
+    unsigned int mNeverSign = 0;
+    unsigned int mAlwaysSign = 0;
+    unsigned int mAlwaysSignIfPossible = 0;
+    unsigned int mAlwaysAskForSigning = 0;
+    unsigned int mAskSigningWheneverPossible = 0;
 };
 
 void Kleo::KeyResolver::SigningPreferenceCounter::operator()(const Kleo::KeyResolver::Item &item)
@@ -455,14 +453,6 @@ public:
     EncryptionPreferenceCounter(const Kleo::KeyResolver *kr, EncryptionPreference defaultPreference)
         : _this(kr)
         , mDefaultPreference(defaultPreference)
-        , mTotal(0)
-        , mNoKey(0)
-        , mNeverEncrypt(0)
-        , mUnknownPreference(0)
-        , mAlwaysEncrypt(0)
-        , mAlwaysEncryptIfPossible(0)
-        , mAlwaysAskForEncryption(0)
-        , mAskWheneverPossible(0)
     {
     }
 
@@ -486,10 +476,14 @@ public:
 #undef make_int_accessor
 private:
     EncryptionPreference mDefaultPreference;
-    unsigned int mTotal;
-    unsigned int mNoKey;
-    unsigned int mNeverEncrypt, mUnknownPreference, mAlwaysEncrypt,
-                 mAlwaysEncryptIfPossible, mAlwaysAskForEncryption, mAskWheneverPossible;
+    unsigned int mTotal = 0;
+    unsigned int mNoKey = 0;
+    unsigned int mNeverEncrypt = 0;
+    unsigned int mUnknownPreference = 0;
+    unsigned int mAlwaysEncrypt = 0;
+    unsigned int mAlwaysEncryptIfPossible = 0;
+    unsigned int mAlwaysAskForEncryption = 0;
+    unsigned int mAskWheneverPossible = 0;
 };
 
 void Kleo::KeyResolver::EncryptionPreferenceCounter::operator()(Item &item)
@@ -522,11 +516,6 @@ class FormatPreferenceCounterBase : public std::unary_function<Kleo::KeyResolver
 {
 public:
     FormatPreferenceCounterBase()
-        : mTotal(0)
-        , mInlineOpenPGP(0)
-        , mOpenPGPMIME(0)
-        , mSMIME(0)
-        , mSMIMEOpaque(0)
     {
     }
 
@@ -555,8 +544,11 @@ public:
     }
 
 protected:
-    unsigned int mTotal;
-    unsigned int mInlineOpenPGP, mOpenPGPMIME, mSMIME, mSMIMEOpaque;
+    unsigned int mTotal = 0;
+    unsigned int mInlineOpenPGP = 0;
+    unsigned int mOpenPGPMIME = 0;
+    unsigned int mSMIME = 0;
+    unsigned int mSMIMEOpaque = 0;
 };
 
 class EncryptionFormatPreferenceCounter : public FormatPreferenceCounterBase
@@ -980,7 +972,7 @@ Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
 
     // check for near expiry:
 
-    for (std::vector<GpgME::Key>::const_iterator it = d->mOpenPGPSigningKeys.begin(); it != d->mOpenPGPSigningKeys.end(); ++it) {
+    for (std::vector<GpgME::Key>::const_iterator it = d->mOpenPGPSigningKeys.begin(), total = d->mOpenPGPSigningKeys.end(); it != total; ++it) {
         const Kleo::Result r = checkKeyNearExpiry(*it, "signing key expires soon warning",
                                                   true, true);
         if (r != Kleo::Ok) {
@@ -988,7 +980,7 @@ Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
         }
     }
 
-    for (std::vector<GpgME::Key>::const_iterator it = d->mSMIMESigningKeys.begin(); it != d->mSMIMESigningKeys.end(); ++it) {
+    for (std::vector<GpgME::Key>::const_iterator it = d->mSMIMESigningKeys.begin(), total = d->mSMIMESigningKeys.end(); it != total; ++it) {
         const Kleo::Result r = checkKeyNearExpiry(*it, "signing key expires soon warning",
                                                   true, true);
         if (r != Kleo::Ok) {
@@ -1190,7 +1182,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
         qCDebug(MESSAGECOMPOSER_LOG) << "set key data:" << int(it->pref) << int(it->signPref) << int(it->format);
     }
 
-    for (std::vector<Item>::iterator it = d->mSecondaryEncryptionKeys.begin(); it != d->mSecondaryEncryptionKeys.end(); ++it) {
+    for (std::vector<Item>::iterator it = d->mSecondaryEncryptionKeys.begin(), total = d->mSecondaryEncryptionKeys.end(); it != total; ++it) {
         if (!it->needKeys) {
             continue;
         }
@@ -1266,7 +1258,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
 
     for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
         const std::vector<SplitInfo> si_list = encryptionItems(concreteCryptoMessageFormats[i]);
-        for (std::vector<SplitInfo>::const_iterator sit = si_list.begin(); sit != si_list.end(); ++sit) {
+        for (std::vector<SplitInfo>::const_iterator sit = si_list.begin(), total = si_list.end(); sit != total; ++sit) {
             for (std::vector<GpgME::Key>::const_iterator kit = sit->keys.begin(); kit != sit->keys.end(); ++kit) {
                 const Kleo::Result r = checkKeyNearExpiry(*kit, "other encryption key near expiry warning",
                                                           false, false);
@@ -1416,14 +1408,15 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForSigningOnly()
     CryptoMessageFormat commonFormat = AutoFormat;
 
     for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
-        if (!(mCryptoMessageFormats & concreteCryptoMessageFormats[i])) {
+        const auto res = concreteCryptoMessageFormats[i];
+        if (!(mCryptoMessageFormats & res)) {
             continue;    // skip
         }
-        if (signingKeysFor(concreteCryptoMessageFormats[i]).empty()) {
+        if (signingKeysFor(res).empty()) {
             continue;    // skip
         }
-        if (count.numOf(concreteCryptoMessageFormats[i]) == count.numTotal()) {
-            commonFormat = concreteCryptoMessageFormats[i];
+        if (count.numOf(res) == count.numTotal()) {
+            commonFormat = res;
             break;
         }
     }
@@ -1599,7 +1592,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
     delete dlg;
 
     if (prefsChanged) {
-        for (uint i = 0; i < items.size(); ++i) {
+        for (uint i = 0, total = items.size(); i < total; ++i) {
             ContactPreferences pref = lookupContactPreferences(items[i].address);
             pref.encryptionPreference = items[i].pref;
             pref.pgpKeyFingerprints.clear();

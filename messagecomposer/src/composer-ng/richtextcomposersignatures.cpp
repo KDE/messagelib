@@ -34,7 +34,7 @@ public:
     }
 
     void cleanWhitespaceHelper(const QRegExp &regExp, const QString &newText, const KIdentityManagement::Signature &sig);
-    QVector<QPair<int, int> > signaturePositions(const KIdentityManagement::Signature &sig) const;
+    Q_REQUIRED_RESULT QVector<QPair<int, int> > signaturePositions(const KIdentityManagement::Signature &sig) const;
     RichTextComposerNg *richTextComposer = nullptr;
 };
 
@@ -55,8 +55,8 @@ void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitesp
 
     forever {
         // Find the text
-        QString text = richTextComposer->document()->toPlainText();
-        int currentMatch = regExp.indexIn(text, currentSearchPosition);
+        const QString text = richTextComposer->document()->toPlainText();
+        const int currentMatch = regExp.indexIn(text, currentSearchPosition);
         currentSearchPosition = currentMatch;
         if (currentMatch == -1) {
             break;
@@ -157,7 +157,7 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
     forever {
         // Find the next occurrence of the signature text
         const QString text = d->richTextComposer->document()->toPlainText();
-        int currentMatch = text.indexOf(oldSigText, currentSearchPosition);
+        const int currentMatch = text.indexOf(oldSigText, currentSearchPosition);
         currentSearchPosition = currentMatch;
         if (currentMatch == -1) {
             break;

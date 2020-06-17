@@ -387,7 +387,7 @@ void AttachmentModel::addAttachment(const AttachmentPart::Ptr &part)
 
 bool AttachmentModel::updateAttachment(const AttachmentPart::Ptr &part)
 {
-    int idx = d->parts.indexOf(part);
+    const int idx = d->parts.indexOf(part);
     if (idx == -1) {
         qCWarning(MESSAGECOMPOSER_LOG) << "Tried to update non-existent part.";
         return false;
@@ -401,7 +401,7 @@ bool AttachmentModel::replaceAttachment(const AttachmentPart::Ptr &oldPart, cons
 {
     Q_ASSERT(oldPart != newPart);
 
-    int idx = d->parts.indexOf(oldPart);
+    const int idx = d->parts.indexOf(oldPart);
     if (idx == -1) {
         qCWarning(MESSAGECOMPOSER_LOG) << "Tried to replace non-existent part.";
         return false;
@@ -414,7 +414,7 @@ bool AttachmentModel::replaceAttachment(const AttachmentPart::Ptr &oldPart, cons
 
 bool AttachmentModel::removeAttachment(const AttachmentPart::Ptr &part)
 {
-    int idx = d->parts.indexOf(part);
+    const int idx = d->parts.indexOf(part);
     if (idx < 0) {
         qCWarning(MESSAGECOMPOSER_LOG) << "Attachment not found.";
         return false;
@@ -507,7 +507,6 @@ int AttachmentModel::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0; // Items have no children.
     }
-    Q_UNUSED(parent);
     return d->parts.count();
 }
 
