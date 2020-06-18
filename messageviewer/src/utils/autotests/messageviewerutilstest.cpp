@@ -40,6 +40,7 @@ void MessageViewerUtilsTest::shouldExcludeHeader_data()
     QTest::newRow("REFRESH6") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv= \"REFRESH\"></head>") << true;
 #endif
     QTest::newRow("div1") << QStringLiteral("<div><p>ff</p></div></head>") << true;
+    QTest::newRow("body1") << QStringLiteral("<style>\nbody > div:nth-child(2) {\ndisplay: none !important;\n}\n</style>") << true;
 }
 
 void MessageViewerUtilsTest::shouldExcludeHeader()
