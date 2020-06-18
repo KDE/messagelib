@@ -661,10 +661,14 @@ QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, Q
 
 bool Util::excludeExtraHeader(const QString &s)
 {
+#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 14, 0)
+    //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
+    //Don't authorize to refresh content.
     QRegularExpression ref(QStringLiteral("http-equiv=\\s*(\'|\")(&#82;|R)EFRESH(\'|\")"), QRegularExpression::CaseInsensitiveOption);
     if (s.contains(ref)) {
         return true;
     }
+#endif
     return false;
 }
 
@@ -721,14 +725,11 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
             messageInfo.htmlSource = htmlSource;
             return messageInfo;
         }
-        messageInfo.extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
-#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 14, 0)
-        //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
-        //Don't authorize to refresh content.
+        const int index = startIndex + 6;
+        messageInfo.extraHead = s.mid(index, endIndex - index);
         if (MessageViewer::Util::excludeExtraHeader(s)) {
             messageInfo.extraHead.clear();
         }
-#endif
         s = s.remove(startIndex, endIndex - startIndex + 7).trimmed();
     }
     // body
