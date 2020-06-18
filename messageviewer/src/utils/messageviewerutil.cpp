@@ -722,7 +722,7 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
             return messageInfo;
         }
         messageInfo.extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
-#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 13, 0)
+#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 14, 0)
         //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
         //Don't authorize to refresh content.
         if (MessageViewer::Util::excludeExtraHeader(s)) {

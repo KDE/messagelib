@@ -20,6 +20,7 @@
 #include "blockexternalresourcesurlinterceptor.h"
 
 #include <QWebEngineUrlRequestInfo>
+#include <qtwebenginewidgetsversion.h>
 
 using namespace MessageViewer;
 
@@ -65,7 +66,10 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeTyped
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeBackForward
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeOther
-               || navigationType == QWebEngineUrlRequestInfo::NavigationTypeRedirect) {
+           #if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+               || navigationType == QWebEngineUrlRequestInfo::NavigationTypeRedirect
+           #endif
+               ) {
         return true;
     }
     return false;
