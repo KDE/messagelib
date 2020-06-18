@@ -20,10 +20,11 @@
 #define BLOCKEXTERNALRESOURCESURLINTERCEPTOR_H
 
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
+#include <QWebEngineUrlRequestInfo>
+#include "messageviewer_private_export.h"
 
 namespace MessageViewer {
-class BlockExternalResourcesUrlInterceptor : public WebEngineViewer::
-    NetworkPluginUrlInterceptorInterface
+class MESSAGEVIEWER_TESTS_EXPORT BlockExternalResourcesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:
@@ -33,6 +34,7 @@ public:
     Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
     void setAllowExternalContent(bool b);
     Q_REQUIRED_RESULT bool allowExternalContent() const;
+    Q_REQUIRED_RESULT bool interceptRequest(const QString &scheme, QWebEngineUrlRequestInfo::ResourceType resourceType, QWebEngineUrlRequestInfo::NavigationType navigationType);
 Q_SIGNALS:
     void formSubmittedForbidden();
 };

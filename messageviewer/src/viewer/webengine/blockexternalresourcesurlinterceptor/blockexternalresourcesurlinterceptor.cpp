@@ -33,16 +33,12 @@ BlockExternalResourcesUrlInterceptor::~BlockExternalResourcesUrlInterceptor()
 {
 }
 
-bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
+bool BlockExternalResourcesUrlInterceptor::interceptRequest(const QString &scheme, QWebEngineUrlRequestInfo::ResourceType resourceType, QWebEngineUrlRequestInfo::NavigationType navigationType)
 {
-    const QString scheme = info.requestUrl().scheme();
     if (scheme == QLatin1String("data")
         || scheme == QLatin1String("file")) {
         return false;
     }
-
-    const QWebEngineUrlRequestInfo::ResourceType resourceType = info.resourceType();
-    const QWebEngineUrlRequestInfo::NavigationType navigationType = info.navigationType();
 
     if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeMedia
         || resourceType == QWebEngineUrlRequestInfo::ResourceTypePing
@@ -73,4 +69,14 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
         return true;
     }
     return false;
+
+}
+
+bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
+{
+    const QString scheme = info.requestUrl().scheme();
+    const QWebEngineUrlRequestInfo::ResourceType resourceType = info.resourceType();
+    const QWebEngineUrlRequestInfo::NavigationType navigationType = info.navigationType();
+
+    return interceptRequest(scheme, resourceType, navigationType);
 }
