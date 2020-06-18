@@ -39,6 +39,7 @@ void MessageViewerUtilsTest::shouldExcludeHeader_data()
     QTest::newRow("REFRESH5") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\'&#82;EFRESH\'></head>") << true;
     QTest::newRow("REFRESH6") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv= \"REFRESH\"></head>") << true;
 #endif
+    QTest::newRow("div1") << QStringLiteral("<div><p>ff</p></div></head>") << true;
 }
 
 void MessageViewerUtilsTest::shouldExcludeHeader()
@@ -156,6 +157,15 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
         output.bodyStyle = QStringLiteral("<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">");
         output.extraHead = QStringLiteral("<meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" />");
         QTest::newRow("bug419949") << input << output;
+    }
+    {
+        //Bug head + div
+        const QString input = QStringLiteral("<html style=\"background: #5555ff;min-height:500px;\">\n<head>\n<style>\nbody div div {display: none;}\n</style>\n<div>\n<p><b>goo<\b></p></div><p>ff</p></head><body></body></html>");
+        MessageViewer::Util::HtmlMessageInfo output;
+        output.htmlSource = QString();
+        output.bodyStyle = QStringLiteral("<body>");
+        output.extraHead = QString();
+        QTest::newRow("headdiv") << input << output;
     }
 }
 

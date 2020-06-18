@@ -657,11 +657,15 @@ bool Util::excludeExtraHeader(const QString &s)
 #if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 14, 0)
     //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
     //Don't authorize to refresh content.
-    QRegularExpression ref(QStringLiteral("http-equiv=\\s*(\'|\")(&#82;|R)EFRESH(\'|\")"), QRegularExpression::CaseInsensitiveOption);
+    static QRegularExpression ref(QStringLiteral("http-equiv=\\s*(\'|\")(&#82;|R)EFRESH(\'|\")"), QRegularExpression::CaseInsensitiveOption);
     if (s.contains(ref)) {
         return true;
     }
 #endif
+    static QRegularExpression divRef(QStringLiteral("</div>"), QRegularExpression::CaseInsensitiveOption);
+    if (s.contains(divRef)) {
+        return true;
+    }
     return false;
 }
 
@@ -754,7 +758,7 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         }
         const int index = startIndex + 6;
         messageInfo.extraHead = s.mid(index, endIndex - index);
-        if (MessageViewer::Util::excludeExtraHeader(s)) {
+        if (MessageViewer::Util::excludeExtraHeader(messageInfo.extraHead)) {
             messageInfo.extraHead.clear();
         }
         s = s.remove(startIndex, endIndex - startIndex + 7).trimmed();
