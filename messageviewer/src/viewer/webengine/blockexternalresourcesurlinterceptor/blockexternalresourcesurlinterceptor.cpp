@@ -39,8 +39,10 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
         || scheme == QLatin1String("file")) {
         return false;
     }
+
     const QWebEngineUrlRequestInfo::ResourceType resourceType = info.resourceType();
     const QWebEngineUrlRequestInfo::NavigationType navigationType = info.navigationType();
+
     if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeMedia
         || resourceType == QWebEngineUrlRequestInfo::ResourceTypePing
         || resourceType == QWebEngineUrlRequestInfo::ResourceTypePrefetch
@@ -62,7 +64,8 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
     } else if (navigationType == QWebEngineUrlRequestInfo::NavigationTypeReload
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeTyped
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeBackForward
-               || navigationType == QWebEngineUrlRequestInfo::NavigationTypeOther) {
+               || navigationType == QWebEngineUrlRequestInfo::NavigationTypeOther
+               || navigationType == QWebEngineUrlRequestInfo::NavigationTypeRedirect) {
         return true;
     }
     return false;
