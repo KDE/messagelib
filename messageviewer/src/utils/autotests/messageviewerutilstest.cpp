@@ -39,6 +39,7 @@ void MessageViewerUtilsTest::shouldExcludeHeader_data()
     QTest::newRow("REFRESH5") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\'&#82;EFRESH\'></head>") << true;
     QTest::newRow("REFRESH6") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv= \"REFRESH\"></head>") << true;
 #endif
+    QTest::newRow("div1") << QStringLiteral("<div><p>ff</p></div></head>") << true;
 }
 
 void MessageViewerUtilsTest::shouldExcludeHeader()
