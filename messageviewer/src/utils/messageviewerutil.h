@@ -63,6 +63,7 @@ Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool containsExternalReferences(const QSt
 Q_REQUIRED_RESULT bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
+Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT QString generateMboxFileName(const Akonadi::Item &msgBase);
 Q_REQUIRED_RESULT MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QList<QUrl> &saveUrl);
 

@@ -635,6 +635,15 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
     return saveMessageInMboxAndGetUrl(url, retrievedMsgs, parent, appendMessages);
 }
 
+bool Util::excludeExtraHeader(const QString &s)
+{
+    QRegularExpression ref(QStringLiteral("http-equiv=\\s*(\'|\")(&#82;|R)EFRESH(\'|\")"), QRegularExpression::CaseInsensitiveOption);
+    if (s.contains(ref)) {
+        return true;
+    }
+    return false;
+}
+
 QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent)
 {
     QString actionName(service->name().replace(QLatin1Char('&'), QStringLiteral("&&")));
