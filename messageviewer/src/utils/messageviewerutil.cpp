@@ -666,6 +666,10 @@ bool Util::excludeExtraHeader(const QString &s)
     if (s.contains(divRef)) {
         return true;
     }
+    static QRegularExpression bodyRef(QStringLiteral("body.s*>.s*div"), QRegularExpression::CaseInsensitiveOption);
+    if (s.contains(bodyRef)) {
+        return true;
+    }
     return false;
 }
 
