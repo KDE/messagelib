@@ -30,7 +30,7 @@ struct HashCacheInfo {
     {
     }
 
-    bool isValid() const;
+    Q_REQUIRED_RESULT bool isValid() const;
     HashCacheManager::UrlStatus status = HashCacheManager::Unknown;
     uint verifyCacheAfterThisTime = 0;
 };
@@ -52,7 +52,7 @@ public:
     void save();
     void load();
     void addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration);
-    HashCacheManager::UrlStatus hashStatus(const QByteArray &hash);
+    Q_REQUIRED_RESULT HashCacheManager::UrlStatus hashStatus(const QByteArray &hash);
 private:
     void clear();
 

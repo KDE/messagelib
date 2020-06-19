@@ -58,7 +58,7 @@ QString UrlHashing::canonicalizeUrl(QUrl url)
     while (!hostname.isEmpty() && hostname.at(0) == QLatin1Char('.')) {
         hostname.remove(0, 1);
     }
-    qDebug() << "111111 hostname" << hostname;
+    qDebug() << "BEFORE hostname" << hostname;
     for (int i = hostname.length(); i >= 0; --i) {
         if (hostname.at(i) == QLatin1Char('.')) {
             hostname.remove(i);
@@ -66,7 +66,7 @@ QString UrlHashing::canonicalizeUrl(QUrl url)
             break;
         }
     }
-    qDebug() << "2222222 hostname" << hostname;
+    qDebug() << "AFTER hostname" << hostname;
     mUrl.setHost(hostname);
 #endif
     QByteArray urlEncoded = url.toEncoded(QUrl::RemoveFragment | QUrl::NormalizePathSegments | QUrl::EncodeUnicode | QUrl::RemoveUserInfo | QUrl::RemovePort | QUrl::RemovePassword);

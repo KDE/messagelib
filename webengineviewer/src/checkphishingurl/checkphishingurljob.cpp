@@ -97,7 +97,7 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                         }
                     }
                 } else {
-                    qWarning() << " CheckPhishingUrlJob::parse threatTypeStr : " << threatTypeStr;
+                    qCWarning(WEBENGINEVIEWER_LOG) << " CheckPhishingUrlJob::parse threatTypeStr : " << threatTypeStr;
                 }
             }
             Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Unknown, d->mUrl);

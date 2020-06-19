@@ -31,8 +31,8 @@ struct UrlCacheInfo {
     {
     }
 
-    bool isMalWare() const;
-    bool isValid() const;
+    Q_REQUIRED_RESULT bool isMalWare() const;
+    Q_REQUIRED_RESULT bool isValid() const;
     CheckPhishingUrlCache::UrlStatus status = CheckPhishingUrlCache::Unknown;
     uint verifyCacheAfterThisTime = 0;
 };

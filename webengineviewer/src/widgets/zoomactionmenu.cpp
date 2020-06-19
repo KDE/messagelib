@@ -23,7 +23,7 @@
 
 using namespace WebEngineViewer;
 namespace {
-qreal zoomBy()
+constexpr qreal zoomBy()
 {
     return 20;
 }

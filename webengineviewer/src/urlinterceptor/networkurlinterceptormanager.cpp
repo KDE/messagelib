@@ -34,7 +34,7 @@ public:
         createInterfaces(webEngine, ac);
     }
 
-    QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
     void createInterfaces(QWebEngineView *webEngine, KActionCollection *ac);
     QVector<WebEngineViewer::NetworkPluginUrlInterceptorInterface *> mListInterface;
 private:
