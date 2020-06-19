@@ -110,7 +110,6 @@ add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x054600)
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
 endif()
-add_definitions(-DQT_NO_SIGNALS_SLOTS_KEYWORDS)
 add_definitions(-DQT_NO_EMIT)
 
 add_subdirectory(mimetreeparser)
