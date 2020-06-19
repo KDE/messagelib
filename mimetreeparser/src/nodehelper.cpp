@@ -732,6 +732,9 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
 
 KMime::Content *NodeHelper::contentFromIndex(KMime::Content *node, const QString &persistentIndex) const
 {
+    if (!node) {
+        return nullptr;
+    }
     KMime::Content *c = node->topLevel();
     if (c) {
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
