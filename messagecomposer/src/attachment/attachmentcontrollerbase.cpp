@@ -185,8 +185,8 @@ void AttachmentControllerBase::Private::compressJobResult(KJob *job)
         return;
     }
 
-    Q_ASSERT(dynamic_cast<AttachmentCompressJob *>(job));
-    AttachmentCompressJob *ajob = static_cast<AttachmentCompressJob *>(job);
+    AttachmentCompressJob *ajob = dynamic_cast<AttachmentCompressJob *>(job);
+    Q_ASSERT(ajob);
     AttachmentPart::Ptr originalPart = ajob->originalPart();
     AttachmentPart::Ptr compressedPart = ajob->compressedPart();
 
@@ -219,8 +219,8 @@ void AttachmentControllerBase::Private::loadJobResult(KJob *job)
         return;
     }
 
-    Q_ASSERT(dynamic_cast<AttachmentLoadJob *>(job));
-    AttachmentLoadJob *ajob = static_cast<AttachmentLoadJob *>(job);
+    AttachmentLoadJob *ajob = dynamic_cast<AttachmentLoadJob *>(job);
+    Q_ASSERT(ajob);
     AttachmentPart::Ptr part = ajob->attachmentPart();
     q->addAttachment(part);
 }
@@ -291,8 +291,8 @@ void AttachmentControllerBase::Private::updateJobResult(KJob *job)
         KMessageBox::sorry(wParent, job->errorString(), i18n("Failed to reload attachment"));
         return;
     }
-    Q_ASSERT(dynamic_cast<AttachmentUpdateJob *>(job));
-    AttachmentUpdateJob *ajob = static_cast<AttachmentUpdateJob *>(job);
+    AttachmentUpdateJob *ajob = dynamic_cast<AttachmentUpdateJob *>(job);
+    Q_ASSERT(ajob);
     AttachmentPart::Ptr originalPart = ajob->originalPart();
     AttachmentPart::Ptr updatedPart = ajob->updatedPart();
 
@@ -837,7 +837,7 @@ void AttachmentControllerBase::saveAttachmentAs(const AttachmentPart::Ptr &part)
         pname = i18n("unnamed");
     }
 
-    QUrl url = QFileDialog::getSaveFileUrl(d->wParent, i18n("Save Attachment As"), QUrl::fromLocalFile(pname));
+    const QUrl url = QFileDialog::getSaveFileUrl(d->wParent, i18n("Save Attachment As"), QUrl::fromLocalFile(pname));
 
     if (url.isEmpty()) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Save Attachment As dialog canceled.";
@@ -943,7 +943,7 @@ void AttachmentControllerBase::showAddAttachmentFileDialog()
             QUrl urlWithEncoding = url;
             MessageCore::StringUtil::setEncodingFile(urlWithEncoding, encoding);
             QMimeDatabase mimeDb;
-            auto mimeType = mimeDb.mimeTypeForUrl(urlWithEncoding);
+            const auto mimeType = mimeDb.mimeTypeForUrl(urlWithEncoding);
             if (mimeType.name() == QLatin1String("inode/directory")) {
                 const int rc = KMessageBox::warningYesNo(d->wParent, i18n("Do you really want to attach this directory \"%1\"?", url.toLocalFile()),
                                                          i18nc("@title:window", "Attach directory"));

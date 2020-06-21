@@ -55,7 +55,7 @@ public:
     void doStart(); // slot
     void composeStep1();
     void composeStep2();
-    QList<ContentJobBase *> createEncryptJobs(ContentJobBase *contentJob, bool sign);
+    Q_REQUIRED_RESULT QList<ContentJobBase *> createEncryptJobs(ContentJobBase *contentJob, bool sign);
     void contentJobFinished(KJob *job);   // slot
     void composeWithLateAttachments(KMime::Message *headers, KMime::Content *content, const AttachmentPart::List &parts, const std::vector<GpgME::Key> &keys, const QStringList &recipients);
     void attachmentsFinished(KJob *job);   // slot
