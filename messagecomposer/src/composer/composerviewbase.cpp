@@ -668,7 +668,8 @@ QVector< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(
     }
 
     if (m_attachmentModel) {
-        foreach (const MessageCore::AttachmentPart::Ptr &attachment, m_attachmentModel->attachments()) {
+        const auto attachments = m_attachmentModel->attachments();
+        for (const MessageCore::AttachmentPart::Ptr &attachment : attachments) {
             if (attachment->isSigned()) {
                 signSomething = true;
             } else {
