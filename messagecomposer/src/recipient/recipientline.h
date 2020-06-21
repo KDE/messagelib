@@ -136,8 +136,8 @@ private:
     void slotAddRecipient(const QString &);
     RecipientComboBox *mCombo = nullptr;
     RecipientLineEdit *mEdit = nullptr;
-    int mRecipientsCount;
-    bool mModified;
+    int mRecipientsCount = 0;
+    bool mModified = false;
     QSharedPointer<Recipient> mData;
 };
 }

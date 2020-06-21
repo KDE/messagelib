@@ -68,8 +68,6 @@ void RecipientLineEdit::keyPressEvent(QKeyEvent *ev)
 
 RecipientLineNG::RecipientLineNG(QWidget *parent)
     : MultiplyingLine(parent)
-    , mRecipientsCount(0)
-    , mModified(false)
     , mData(new Recipient)
 {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);

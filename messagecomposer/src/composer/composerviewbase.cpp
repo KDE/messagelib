@@ -683,9 +683,8 @@ QVector< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(
         }
     }
 
-    QStringList recipients(mExpandedTo);
+    const QStringList recipients = mExpandedTo + mExpandedCc;
     const QStringList bcc(mExpandedBcc);
-    recipients.append(mExpandedCc);
 
     keyResolver->setPrimaryRecipients(recipients);
     keyResolver->setSecondaryRecipients(bcc);

@@ -181,7 +181,7 @@ void RecipientsEditor::removeRecipient(const QString &recipient, Recipient::Type
     MultiplyingLine *line = nullptr;
     while (it.hasNext()) {
         line = it.next();
-        RecipientLineNG *rec = qobject_cast< RecipientLineNG * >(line);
+        RecipientLineNG *rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if ((rec->recipient()->email() == recipient)
                 && (rec->recipientType() == type)) {
@@ -212,7 +212,7 @@ void MessageComposer::RecipientsEditor::setRecentAddressConfig(KConfig *config)
     if (config) {
         MultiplyingLine *line;
         foreach (line, lines()) {
-            RecipientLineNG *rec = qobject_cast< RecipientLineNG * >(line);
+            RecipientLineNG *rec = qobject_cast<RecipientLineNG *>(line);
             if (rec) {
                 rec->setRecentAddressConfig(config);
             }
@@ -248,14 +248,14 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
 
     if (count > 0) {
         if (count == 1) {
-            RecipientLineNG *last_rec = qobject_cast< RecipientLineNG * >(lines().constFirst());
+            RecipientLineNG *last_rec = qobject_cast<RecipientLineNG *>(lines().constFirst());
             if (last_rec && (last_rec->recipientType() == Recipient::Bcc || last_rec->recipientType() == Recipient::ReplyTo)) {
                 rec->setRecipientType(Recipient::To);
             } else {
                 rec->setRecipientType(Recipient::Cc);
             }
         } else {
-            RecipientLineNG *last_rec = qobject_cast< RecipientLineNG * >(lines().at(lines().count() - 2));
+            RecipientLineNG *last_rec = qobject_cast<RecipientLineNG *>(lines().at(lines().count() - 2));
             if (last_rec) {
                 if (last_rec->recipientType() == Recipient::ReplyTo) {
                     rec->setRecipientType(Recipient::To);
@@ -275,7 +275,7 @@ void RecipientsEditor::slotLineDeleted(int pos)
     int firstCC = -1;
     for (int i = pos, total = lines().count(); i < total; ++i) {
         MultiplyingLine *line = lines().at(i);
-        RecipientLineNG *rec = qobject_cast< RecipientLineNG * >(line);
+        RecipientLineNG *rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if (rec->recipientType() == Recipient::To) {
                 atLeastOneToLine = true;
@@ -286,7 +286,7 @@ void RecipientsEditor::slotLineDeleted(int pos)
     }
 
     if (!atLeastOneToLine && (firstCC >= 0)) {
-        RecipientLineNG *firstCCLine = qobject_cast< RecipientLineNG * >(lines().at(firstCC));
+        RecipientLineNG *firstCCLine = qobject_cast<RecipientLineNG *>(lines().at(firstCC));
         if (firstCCLine) {
             firstCCLine->setRecipientType(Recipient::To);
         }
@@ -326,7 +326,7 @@ void RecipientsEditor::slotCalculateTotal()
     int empty = 0;
     MultiplyingLine *line = nullptr;
     foreach (line, lines()) {
-        RecipientLineNG *rec = qobject_cast< RecipientLineNG * >(line);
+        RecipientLineNG *rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if (rec->isEmpty()) {
                 ++empty;
@@ -361,7 +361,7 @@ void RecipientsEditor::slotCalculateTotal()
     }
     int count = 0;
     foreach (line, lines()) {
-        RecipientLineNG *rec = qobject_cast< RecipientLineNG * >(line);
+        RecipientLineNG *rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if (!rec->isEmpty()) {
                 count++;
@@ -375,5 +375,5 @@ void RecipientsEditor::slotCalculateTotal()
 RecipientLineNG *RecipientsEditor::activeLine() const
 {
     MultiplyingLine *line = MultiplyingLineEditor::activeLine();
-    return qobject_cast< RecipientLineNG * >(line);
+    return qobject_cast<RecipientLineNG *>(line);
 }
