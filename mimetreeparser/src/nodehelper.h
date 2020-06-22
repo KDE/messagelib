@@ -125,7 +125,7 @@ public:
      * Writes the given message part to a temporary file and returns the
      * name of this file or QString() if writing failed.
      */
-    Q_REQUIRED_RESULT QString writeNodeToTempFile(KMime::Content *node);
+    QString writeNodeToTempFile(KMime::Content *node);
 
     Q_REQUIRED_RESULT QString writeFileToTempFile(KMime::Content *node, const QString &filename);
 
