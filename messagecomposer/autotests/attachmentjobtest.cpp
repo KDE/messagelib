@@ -71,6 +71,7 @@ void AttachmentJobTest::testAttachment()
     QCOMPARE(result->contentType(false)->mimeType(), mimeType);
     QCOMPARE(result->body(), data);
     QVERIFY(result->contentDisposition(false)->disposition() == Headers::CDattachment);
+    delete result;
 }
 
 #if 0
