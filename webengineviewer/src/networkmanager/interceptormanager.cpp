@@ -45,7 +45,8 @@ InterceptorManager::InterceptorManager(QWebEngineView *webEngine, KActionCollect
 
     // Add interceptor.
     d->mNetworkUrlInterceptor = new WebEngineViewer::NetworkUrlInterceptor(this);
-    for (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface : d->mManager->interfaceList()) {
+    const auto interfaceList = d->mManager->interfaceList();
+    for (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface : interfaceList) {
         d->mNetworkUrlInterceptor->addInterceptor(interface);
     }
     webEngine->page()->profile()->setUrlRequestInterceptor(d->mNetworkUrlInterceptor);

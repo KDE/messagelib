@@ -34,7 +34,7 @@ struct InsertCommand {
     const char *name;
     const TemplatesCommandMenu::Command command;
 
-    QString getLocalizedDisplayName() const
+    Q_REQUIRED_RESULT QString getLocalizedDisplayName() const
     {
         return i18nc(context, name);
     }

@@ -235,7 +235,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
     // If the message part is already written to a file, no point in doing it again.
     // This function is called twice actually, once from the rendering of the attachment
     // in the body and once for the header.
-    QUrl existingFileName = tempFileUrlFromNode(node);
+    const QUrl existingFileName = tempFileUrlFromNode(node);
     if (!existingFileName.isEmpty()) {
         return existingFileName.toLocalFile();
     }
@@ -286,14 +286,15 @@ QUrl NodeHelper::tempFileUrlFromNode(const KMime::Content *node)
 
     const QString index = persistentIndex(node);
 
-    foreach (const QString &path, mAttachmentFilesDir->temporaryFiles()) {
+    const QStringList temporaryFiles = mAttachmentFilesDir->temporaryFiles();
+    for (const QString &path : temporaryFiles) {
         const int right = path.lastIndexOf(QLatin1Char('/'));
         int left = path.lastIndexOf(QLatin1String(".index."), right);
         if (left != -1) {
             left += 7;
         }
 
-        QStringRef storedIndex(&path, left, right - left);
+        const QStringRef storedIndex(&path, left, right - left);
         if (left != -1 && storedIndex == index) {
             return QUrl::fromLocalFile(path);
         }
@@ -493,9 +494,9 @@ void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
 {
     const QByteArray body = aAutoDecode ? node->decodedContent() : node->body();
     QMimeDatabase db;
-    QMimeType mime = db.mimeTypeForData(body);
+    const QMimeType mime = db.mimeTypeForData(body);
 
-    QString mimetype = mime.name();
+    const QString mimetype = mime.name();
     node->contentType()->setMimeType(mimetype.toLatin1());
 }
 
@@ -695,7 +696,7 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
         while (it.hasNext()) {
             it.next();
             const auto &extraNodes = it.value();
-            for (int i = 0; i < extraNodes.size(); i++) {
+            for (int i = 0; i < extraNodes.size(); ++i) {
                 if (extraNodes[i] == node) {
                     indexStr = QStringLiteral("e%1").arg(i);
                     const QString parentIndex = persistentIndex(it.key());
@@ -814,7 +815,7 @@ QString NodeHelper::fixEncoding(const QString &encoding)
 //-----------------------------------------------------------------------------
 QString NodeHelper::encodingForName(const QString &descriptiveName)
 {
-    QString encoding = KCharsets::charsets()->encodingForName(descriptiveName);
+    const QString encoding = KCharsets::charsets()->encodingForName(descriptiveName);
     return NodeHelper::fixEncoding(encoding);
 }
 
@@ -827,7 +828,7 @@ QStringList NodeHelper::supportedEncodings(bool usAscii)
     for (QStringList::ConstIterator it = encodingNames.constBegin();
          it != constEnd; ++it) {
         QTextCodec *codec = KCharsets::charsets()->codecForName(*it);
-        QString mimeName = (codec) ? QString::fromLatin1(codec->name()).toLower() : (*it);
+        const QString mimeName = (codec) ? QString::fromLatin1(codec->name()).toLower() : (*it);
         if (!mimeNames.contains(mimeName)) {
             encodings.append(KCharsets::charsets()->descriptionForEncoding(*it));
             mimeNames.insert(mimeName, true);

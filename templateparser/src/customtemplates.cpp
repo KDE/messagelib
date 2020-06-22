@@ -36,7 +36,6 @@ using namespace TemplateParser;
 
 CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollection, QWidget *parent)
     : QWidget(parent)
-    , mBlockChangeSignal(false)
 {
     mUi = new Ui_CustomTemplatesBase;
     mUi->setupUi(this);

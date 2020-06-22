@@ -85,7 +85,7 @@ private:
 
     /// Whether or not to Q_EMIT the changed() signal. This is useful to disable when loading
     /// templates, which changes the UI without user action
-    bool mBlockChangeSignal;
+    bool mBlockChangeSignal = false;
 
     Ui_CustomTemplatesBase *mUi = nullptr;
 };

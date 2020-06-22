@@ -50,7 +50,7 @@ public:
     void updateTimer(int seconds);
     void slotTimerFinished();
 
-    BackOffModeManager *q;
+    BackOffModeManager *const q;
     QTimer *mTimer = nullptr;
     int mNumberOfHttpFailed = 0;
     bool isInOffMode = false;
