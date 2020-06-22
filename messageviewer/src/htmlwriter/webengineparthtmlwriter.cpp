@@ -55,7 +55,7 @@ void WebEnginePartHtmlWriter::begin()
     MessageViewer::WebEngineEmbedPart::self()->clear();
     mState = Begun;
 }
-//#define LOAD_BIG_EMAIL 1
+
 void WebEnginePartHtmlWriter::end()
 {
     BufferedHtmlWriter::end();
@@ -70,23 +70,24 @@ void WebEnginePartHtmlWriter::end()
         insertBodyStyle();
         mStyleBody.clear();
     }
-#ifdef LOAD_BIG_EMAIL
-    mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX")+ QLatin1String(".html"));
-    mTempFile->open();
-    QTextStream stream(mTempFile);
+    if (data().size() > 2000000000) {
+        qDebug() << " load big message ";
+        mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX")+ QLatin1String(".html"));
+        mTempFile->open();
+        QTextStream stream(mTempFile);
 
-    const QByteArray codecValue = Util::htmlCodec(data(), codec());
-    stream.setCodec(codecValue.constData());
-    stream << data();
-    //Bug 387061
-    mHtmlView->load(QUrl::fromLocalFile(mTempFile->fileName()));
-    //qDebug() << " tempFile.fileName()" << mTempFile->fileName();
-    mHtmlView->show();
-    mTempFile->close();
-#else
-    mHtmlView->setContent(data(), QStringLiteral("text/html;charset=UTF-8"), QUrl(QStringLiteral("file:///")));
-    mHtmlView->show();
-#endif
+        const QByteArray codecValue = Util::htmlCodec(data(), codec());
+        stream.setCodec(codecValue.constData());
+        stream << data();
+        //Bug 387061
+        mHtmlView->load(QUrl::fromLocalFile(mTempFile->fileName()));
+        //qDebug() << " tempFile.fileName()" << mTempFile->fileName();
+        mHtmlView->show();
+        mTempFile->close();
+    } else {
+        mHtmlView->setContent(data(), QStringLiteral("text/html;charset=UTF-8"), QUrl(QStringLiteral("file:///")));
+        mHtmlView->show();
+    }
     clear();
 
     mHtmlView->setUpdatesEnabled(true);
