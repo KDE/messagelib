@@ -95,7 +95,7 @@ void ProtectedHeadersJob::doStart()
         cjob->contentDisposition()->setDisposition(KMime::Headers::contentDisposition::CDinline);
         cjob->setData(subject->type() + QByteArray(": ") + subject->asUnicodeString().toUtf8());
 
-        QObject::connect(cjob, &SinglepartJob::finished, this, [d, cjob](KJob *job) {
+        QObject::connect(cjob, &SinglepartJob::finished, this, [d, cjob]() {
             KMime::Content *mixedPart = new KMime::Content();
             const QByteArray boundary = KMime::multiPartBoundary();
             mixedPart->contentType()->setMimeType("multipart/mixed");
