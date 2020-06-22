@@ -940,6 +940,8 @@ QString ViewerPrivate::writeMessageHeader(KMime::Message *aMsg, KMime::Content *
     HeaderStyle *style = headerStylePlugin()->headerStyle();
     if (vCardNode) {
         style->setVCardName(mNodeHelper->asHREF(vCardNode, QStringLiteral("body")));
+    } else {
+        style->setVCardName(QString());
     }
     style->setHeaderStrategy(headerStylePlugin()->headerStrategy());
     style->setPrinting(mPrinting);
