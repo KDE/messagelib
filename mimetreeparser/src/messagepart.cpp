@@ -952,9 +952,7 @@ void SignedMessagePart::startVerificationDetached(const QByteArray &text, KMime:
         parseInternal(textNode, false);
     }
 
-    okVerify(text, signature, textNode);
-
-    if (!partMetaData()->isSigned) {
+    if (!okVerify(text, signature, textNode)) {
         partMetaData()->creationTime = QDateTime();
     }
 }
