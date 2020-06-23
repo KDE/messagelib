@@ -267,6 +267,7 @@ ViewerPrivate::~ViewerPrivate()
     mViewer = nullptr;
     mNodeHelper->forceCleanTempFiles();
     qDeleteAll(mListMailSourceViewer);
+    mMessage.clear();
     delete mNodeHelper;
 }
 

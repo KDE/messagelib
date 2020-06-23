@@ -343,7 +343,8 @@ QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, 
     return format(absolutPath, headerTemplate, displayExtraHeaders, isPrinting, style, message);
 }
 
-QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showEmoticons) const
+QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders,
+                                        bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showEmoticons) const
 {
     QVariantHash headerObject;
     const auto nodeHelper = style->nodeHelper();
