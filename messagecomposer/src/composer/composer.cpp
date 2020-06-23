@@ -435,7 +435,7 @@ void ComposerPrivate::composeFinalStep(KMime::Content *headers, KMime::Content *
 {
     content->assemble();
 
-    QByteArray allData = headers->head() + content->encodedContent();
+    const QByteArray allData = headers->head() + content->encodedContent();
     KMime::Message::Ptr resultMessage(new KMime::Message);
     resultMessage->setContent(allData);
     resultMessage->parse(); // Not strictly necessary.
