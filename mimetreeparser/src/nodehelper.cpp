@@ -529,6 +529,7 @@ KMime::Headers::Generics::AddressList const *NodeHelper::mailHeaderAsAddressList
     } else if(strcmp(header, "cc") == 0) {
         return message->cc();
     } */
+    //FIXME: mem leak
     auto addressList = new KMime::Headers::Generics::AddressList();
     const auto hrd = mailHeaderAsBase(header, message);
     const QByteArray &data = hrd->as7BitString(false);
