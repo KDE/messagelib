@@ -50,6 +50,10 @@ public:
         : JobBasePrivate(qq)
     {
     }
+    ~ComposerPrivate()
+    {
+        //delete skeletonMessage;
+    }
 
     void init();
     void doStart(); // slot

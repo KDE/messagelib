@@ -58,6 +58,8 @@ void SkeletonMessageJobTest::testSubject()
     QVERIFY(message->subject(false));
     qDebug() << message->subject()->asUnicodeString();
     QCOMPARE(subject, message->subject()->asUnicodeString());
+    delete message;
+    delete composer;
 }
 
 void SkeletonMessageJobTest::testAddresses_data()
@@ -196,6 +198,8 @@ void SkeletonMessageJobTest::testAddresses()
         }
         QVERIFY(bcc.isEmpty());
     }
+    delete message;
+    delete composer;
 }
 
 void SkeletonMessageJobTest::testMessageID()
@@ -210,6 +214,7 @@ void SkeletonMessageJobTest::testMessageID()
     KMime::Message *message = sjob->message();
     QVERIFY(message->messageID(false));
     QVERIFY(!message->messageID(false)->isEmpty());
+    delete message;
     delete sjob;
     delete composer;
 }

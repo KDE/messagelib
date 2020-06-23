@@ -37,11 +37,13 @@ void NodeHelperTest::testPersistentIndex()
     KMime::Content *node2 = new KMime::Content();
     KMime::Content *node2Extra = new KMime::Content();
     KMime::Content *subNode = new KMime::Content();
-    KMime::Content *subsubNode = new KMime::Content(), *subsubNode2 = new KMime::Content();
+    KMime::Content *subsubNode = new KMime::Content();
+    KMime::Content *subsubNode2 = new KMime::Content();
     KMime::Content *node2ExtraSubNode = new KMime::Content();
     KMime::Content *node2ExtraSubsubNode = new KMime::Content();
     KMime::Content *node2ExtraSubsubNode2 = new KMime::Content();
-    KMime::Content *extra = new KMime::Content(), *extra2 = new KMime::Content();
+    KMime::Content *extra = new KMime::Content();
+    KMime::Content *extra2 = new KMime::Content();
     KMime::Content *subExtra = new KMime::Content();
     KMime::Content *subsubExtra = new KMime::Content();
     KMime::Content *subsubExtraNode = new KMime::Content();
@@ -121,6 +123,8 @@ void NodeHelperTest::testPersistentIndex()
     QCOMPARE(helper.persistentIndex(node2ExtraSubsubNode2), QStringLiteral("e0:2.3"));
     QCOMPARE(helper.contentFromIndex(node2, QStringLiteral("e0:2.3")), node2ExtraSubsubNode2);
 
+    helper.clear();
+    delete node2;
     delete node;
 }
 

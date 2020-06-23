@@ -69,6 +69,8 @@ void MainTextJobTest::testPlainText()
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
     QCOMPARE(result->contentType()->charset(), QByteArray("us-ascii"));
     QCOMPARE(QString::fromLatin1(result->body()), data);
+    delete textPart;
+    delete composer;
 }
 
 void MainTextJobTest::testWrappingErrors()
@@ -84,6 +86,8 @@ void MainTextJobTest::testWrappingErrors()
         MainTextJob *mjob = new MainTextJob(textPart, composer);
         QVERIFY(!mjob->exec());   // error: not UseWrapping but given only wrapped text
         QCOMPARE(mjob->error(), int(JobBase::BugError));
+        delete textPart;
+        delete composer;
     }
     {
         Composer *composer = new Composer;
@@ -96,6 +100,8 @@ void MainTextJobTest::testWrappingErrors()
         MainTextJob *mjob = new MainTextJob(textPart, composer);
         QVERIFY(!mjob->exec());   // error: UseWrapping but given only clean text
         QCOMPARE(mjob->error(), int(JobBase::BugError));
+        delete textPart;
+        delete composer;
     }
 }
 
@@ -120,6 +126,8 @@ void MainTextJobTest::testCustomCharset()
     QTextCodec *codec = QTextCodec::codecForName(charset);
     QVERIFY(codec);
     QCOMPARE(codec->toUnicode(outData), data);
+    delete textPart;
+    delete composer;
 }
 
 void MainTextJobTest::testNoCharset()
@@ -135,6 +143,8 @@ void MainTextJobTest::testNoCharset()
     QVERIFY(!mjob->exec());   // Error.
     QCOMPARE(mjob->error(), int(JobBase::BugError));
     qDebug() << mjob->errorString();
+    delete textPart;
+    delete composer;
 }
 
 void MainTextJobTest::testBadCharset()
@@ -151,6 +161,8 @@ void MainTextJobTest::testBadCharset()
     QVERIFY(!mjob->exec());   // Error.
     QCOMPARE(mjob->error(), int(JobBase::UserError));
     qDebug() << mjob->errorString();
+    delete textPart;
+    delete composer;
 }
 
 void MainTextJobTest::testFallbackCharset()
@@ -170,6 +182,8 @@ void MainTextJobTest::testFallbackCharset()
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
     QCOMPARE(result->contentType()->charset(), QByteArray("us-ascii"));     // Fallback is us-ascii or utf8.
     QCOMPARE(QString::fromLatin1(result->body()), data);
+    delete textPart;
+    delete composer;
 }
 
 void MainTextJobTest::testHtml()
@@ -214,6 +228,7 @@ void MainTextJobTest::testHtml()
             QCOMPARE(QLatin1String(html->body()), editor.toCleanHtml());
         }
     }
+    delete composer;
 }
 
 void MainTextJobTest::testHtmlWithImages()
@@ -309,4 +324,6 @@ void MainTextJobTest::testHtmlWithImages()
             QCOMPARE(cid->identifier(), cid2.toLatin1());
         }
     }
+    delete textPart;
+    delete composer;
 }

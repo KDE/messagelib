@@ -169,6 +169,7 @@ void GrantleeHeaderStyleTest::testRenderHeaderInvalidTheme()
     auto style = GrantleeHeaderStyle();
     auto aMsg = new KMime::Message();
     QCOMPARE(style.format(aMsg), QStringLiteral("Grantlee theme \"\" is not valid."));
+    delete aMsg;
 }
 
 void GrantleeHeaderStyleTest::testRenderHeaderEmpty()
@@ -178,6 +179,7 @@ void GrantleeHeaderStyleTest::testRenderHeaderEmpty()
     style.setTheme(defaultTheme());
 
     testHeaderFile(style, aMsg, QStringLiteral("empty"));
+    delete aMsg;
 }
 
 void GrantleeHeaderStyleTest::testRenderHeaderVCard()
@@ -188,6 +190,7 @@ void GrantleeHeaderStyleTest::testRenderHeaderVCard()
     style.setVCardName(QStringLiteral("nofile.vcd"));
 
     testHeaderFile(style, aMsg, QStringLiteral("vcard"));
+    delete aMsg;
 }
 
 void GrantleeHeaderStyleTest::testRenderHeader_data()

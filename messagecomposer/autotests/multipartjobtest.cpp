@@ -78,6 +78,7 @@ void MultipartJobTest::testMultipartMixed()
         QVERIFY(c->contentType(false));
         QCOMPARE(c->contentType()->mimeType(), type2);
     }
+    delete composer;
 }
 
 void MultipartJobTest::test8BitPropagation()
@@ -100,4 +101,6 @@ void MultipartJobTest::test8BitPropagation()
     qDebug() << content->encodedContent();
     QVERIFY(content->contentTransferEncoding(false));
     QCOMPARE(content->contentTransferEncoding()->encoding(), Headers::CE8Bit);
+    delete mjob;
+    delete composer;
 }

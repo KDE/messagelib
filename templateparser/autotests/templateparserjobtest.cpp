@@ -100,6 +100,7 @@ void TemplateParserJobTest::test_convertedHtml()
     QVERIFY(!convertedHtmlContent.isEmpty());
 
     QCOMPARE(convertedHtmlContent, referenceData);
+    delete parser;
 }
 
 void TemplateParserJobTest::test_replyHtml_data()
@@ -159,6 +160,7 @@ void TemplateParserJobTest::test_replyHtml()
     }
 
     QCOMPARE(convertedHtmlContent, referenceData);
+    delete parser;
 }
 
 void TemplateParserJobTest::test_replyPlain_data()
@@ -209,6 +211,7 @@ void TemplateParserJobTest::test_replyPlain()
     const QString convertedPlainTextContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
 
     QCOMPARE(convertedPlainTextContent, referenceData);
+    delete parser;
 }
 
 void TemplateParserJobTest::test_forwardPlain_data()
@@ -313,6 +316,7 @@ void TemplateParserJobTest::test_forwardHtml()
     }
 
     QCOMPARE(convertedHtmlContent, referenceData);
+    delete parser;
 }
 
 void TemplateParserJobTest::test_forwardedAttachments_data()
@@ -420,6 +424,7 @@ void TemplateParserJobTest::test_processWithTemplatesForBody()
     identMan->deleteLater();
     QCOMPARE(QString::fromLatin1(msg->encodedBody()), expected);
     QCOMPARE(spy.count(), 1);
+    delete parser;
 }
 
 void TemplateParserJobTest::test_processWithTemplatesForContent_data()

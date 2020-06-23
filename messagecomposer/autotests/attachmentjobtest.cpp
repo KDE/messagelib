@@ -72,6 +72,7 @@ void AttachmentJobTest::testAttachment()
     QCOMPARE(result->body(), data);
     QVERIFY(result->contentDisposition(false)->disposition() == Headers::CDattachment);
     delete result;
+    delete composer;
 }
 
 #if 0
