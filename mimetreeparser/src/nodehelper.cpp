@@ -48,6 +48,7 @@ namespace MimeTreeParser {
 NodeHelper::NodeHelper()
     : mAttachmentFilesDir(new AttachmentTemporaryFilesDirs())
 {
+    mListAttachmentTemporaryDirs.append(mAttachmentFilesDir);
     //TODO(Andras) add methods to modify these prefixes
 
     mLocalCodec = QTextCodec::codecForLocale();
