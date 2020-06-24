@@ -43,6 +43,7 @@ using namespace MessageCore;
 using namespace MessageViewer;
 
 Q_DECLARE_METATYPE(const KMime::Headers::Generics::AddressList *)
+Q_DECLARE_METATYPE(QSharedPointer<KMime::Headers::Generics::AddressList>)
 Q_DECLARE_METATYPE(const KMime::Headers::Generics::MailboxList *)
 Q_DECLARE_METATYPE(QSharedPointer<KMime::Headers::Generics::MailboxList>)
 Q_DECLARE_METATYPE(QDateTime)
@@ -51,32 +52,6 @@ Q_DECLARE_METATYPE(QDateTime)
 namespace Grantlee {
 template<>
 inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::lookUp(const KMime::Headers::Generics::AddressList *const object, const QString &property)
-{
-    if (property == QLatin1String("nameOnly")) {
-        return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayNameOnly);
-    } else if (property == QLatin1String("isSet")) {
-        return !object->asUnicodeString().isEmpty();
-    } else if (property == QLatin1String("fullAddress")) {
-        return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayFullAddress);
-    } else if (property == QLatin1String("str")) {
-        return object->asUnicodeString();
-    } else if (property.startsWith(QLatin1String("expandable"))) {
-        const auto &name = property.mid(10);
-        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
-            object, MessageCore::StringUtil::DisplayFullAddress,
-            QString(), MessageCore::StringUtil::ShowLink,
-            MessageCore::StringUtil::ExpandableAddresses,
-            QStringLiteral("Full") + name + QStringLiteral("AddressList"));
-        return val;
-    }
-    return QVariant();
-}
-}
-
-// Read-only introspection of KMime::Headers::Generics::MailboxList object.
-namespace Grantlee {
-template<>
-inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::lookUp(const KMime::Headers::Generics::MailboxList *const object, const QString &property)
 {
     if (property == QLatin1String("nameOnly")) {
         return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayNameOnly);
@@ -118,6 +93,53 @@ if (property == QLatin1String("nameOnly")) {
     return val;
 }
 GRANTLEE_END_LOOKUP
+
+// Read-only introspection of KMime::Headers::Generics::MailboxList object.
+namespace Grantlee {
+template<>
+inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::lookUp(const KMime::Headers::Generics::MailboxList *const object, const QString &property)
+{
+    if (property == QLatin1String("nameOnly")) {
+        return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayNameOnly);
+    } else if (property == QLatin1String("isSet")) {
+        return !object->asUnicodeString().isEmpty();
+    } else if (property == QLatin1String("fullAddress")) {
+        return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayFullAddress);
+    } else if (property == QLatin1String("str")) {
+        return object->asUnicodeString();
+    } else if (property.startsWith(QLatin1String("expandable"))) {
+        const auto &name = property.mid(10);
+        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
+            object, MessageCore::StringUtil::DisplayFullAddress,
+            QString(), MessageCore::StringUtil::ShowLink,
+            MessageCore::StringUtil::ExpandableAddresses,
+            QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+        return val;
+    }
+    return QVariant();
+}
+}
+
+GRANTLEE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::AddressList>)
+if (property == QLatin1String("nameOnly")) {
+    return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
+} else if (property == QLatin1String("isSet")) {
+    return !object->asUnicodeString().isEmpty();
+} else if (property == QLatin1String("fullAddress")) {
+    return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayFullAddress);
+} else if (property == QLatin1String("str")) {
+    return object->asUnicodeString();
+} else if (property.startsWith(QLatin1String("expandable"))) {
+    const auto &name = property.mid(10);
+    const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
+        object.data(), MessageCore::StringUtil::DisplayFullAddress,
+        QString(), MessageCore::StringUtil::ShowLink,
+        MessageCore::StringUtil::ExpandableAddresses,
+        QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+    return val;
+}
+GRANTLEE_END_LOOKUP
+
 
 namespace Grantlee {
 template<>
@@ -268,6 +290,7 @@ public:
         Grantlee::registerMetaType<const KMime::Headers::Generics::AddressList *>();
         Grantlee::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
         Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList> >();
+        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::AddressList> >();
         Grantlee::registerMetaType<QDateTime>();
         iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
         engine = new Grantlee::Engine;

@@ -517,7 +517,7 @@ KMime::Headers::Base const *NodeHelper::mailHeaderAsBase(const char *header, con
     return message->headerByType(header);
 }
 
-KMime::Headers::Generics::AddressList const *NodeHelper::mailHeaderAsAddressList(const char *header, const KMime::Content *message) const
+QSharedPointer<KMime::Headers::Generics::AddressList> NodeHelper::mailHeaderAsAddressList(const char *header, const KMime::Content *message) const
 {
     /* works without this is maybe faster ?
     if(strcmp(header, "to") == 0) {
@@ -530,7 +530,7 @@ KMime::Headers::Generics::AddressList const *NodeHelper::mailHeaderAsAddressList
         return message->cc();
     } */
     //FIXME: mem leak
-    auto addressList = new KMime::Headers::Generics::AddressList();
+    QSharedPointer<KMime::Headers::Generics::AddressList> addressList(new KMime::Headers::Generics::AddressList());
     const auto hrd = mailHeaderAsBase(header, message);
     const QByteArray &data = hrd->as7BitString(false);
     addressList->from7BitString(data);
