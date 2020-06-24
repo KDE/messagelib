@@ -77,10 +77,11 @@ NodeHelper::NodeHelper()
 
 NodeHelper::~NodeHelper()
 {
-    if (mAttachmentFilesDir) {
-        mAttachmentFilesDir->forceCleanTempFiles();
-        delete mAttachmentFilesDir;
-        mAttachmentFilesDir = nullptr;
+    for (auto att : mListAttachmentTemporaryDirs) {
+        if (att) {
+            att->forceCleanTempFiles();
+            delete att;
+        }
     }
     clear();
 }
@@ -337,6 +338,7 @@ void NodeHelper::removeTempFiles()
     //Don't delete as it will be deleted in class
     mAttachmentFilesDir->removeTempFiles();
     mAttachmentFilesDir = new AttachmentTemporaryFilesDirs();
+    mListAttachmentTemporaryDirs.append(mAttachmentFilesDir);
 }
 
 void NodeHelper::addTempFile(const QString &file)

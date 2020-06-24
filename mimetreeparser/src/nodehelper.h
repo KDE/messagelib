@@ -32,6 +32,7 @@
 #include <QMap>
 #include <QSet>
 #include <QVector>
+#include <QPointer>
 
 class QUrl;
 class QTextCodec;
@@ -265,9 +266,9 @@ private:
     QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *> > mBodyPartMementoMap;
     QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
     QMap<KMime::Message::Content *, QVector<KMime::Content *> > mExtraContents;
-    AttachmentTemporaryFilesDirs *mAttachmentFilesDir = nullptr;
+    QPointer<AttachmentTemporaryFilesDirs> mAttachmentFilesDir;
     QMap<const KMime::Content *, QVector<MessagePartPtr> > mHeaderOverwrite;
-
+    QVector<QPointer<AttachmentTemporaryFilesDirs> > mListAttachmentTemporaryDirs;
     friend class NodeHelperTest;
 };
 }
