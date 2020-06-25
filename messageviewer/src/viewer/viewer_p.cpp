@@ -2204,8 +2204,6 @@ void ViewerPrivate::slotShowMessageSource()
     if (!mMessage) {
         return;
     }
-    mNodeHelper->messageWithExtraContent(mMessage.data());
-
     QPointer<MailSourceWebEngineViewer> viewer = new MailSourceWebEngineViewer; // deletes itself upon close
     mListMailSourceViewer.append(viewer);
     viewer->setWindowTitle(i18nc("@title:window", "Message as Plain Text"));
