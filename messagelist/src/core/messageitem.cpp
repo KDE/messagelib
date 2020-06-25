@@ -644,6 +644,8 @@ FakeItem::FakeItem()
 
 FakeItem::~FakeItem()
 {
+    Q_D(const FakeItem);
+    qDeleteAll(d->mFakeTags);
 }
 
 QList< MessageItem::Tag * > FakeItem::tagList() const
