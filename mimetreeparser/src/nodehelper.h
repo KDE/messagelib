@@ -100,7 +100,7 @@ public:
     /** Return a modified message (node tree) starting from @param topLevelNode that has the original nodes and the extra nodes.
         The caller has the responsibility to delete the new message.
      */
-    KMime::Message *messageWithExtraContent(KMime::Content *topLevelNode);
+    Q_REQUIRED_RESULT KMime::Message *messageWithExtraContent(KMime::Content *topLevelNode);
 
     /** Get a QTextCodec suitable for this message part */
     const QTextCodec *codec(KMime::Content *node);
