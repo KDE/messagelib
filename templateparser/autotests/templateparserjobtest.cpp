@@ -100,6 +100,8 @@ void TemplateParserJobTest::test_convertedHtml()
     QVERIFY(!convertedHtmlContent.isEmpty());
 
     QCOMPARE(convertedHtmlContent, referenceData);
+    msg.clear();
+    origMsg.clear();
     delete parser;
 }
 
@@ -160,6 +162,8 @@ void TemplateParserJobTest::test_replyHtml()
     }
 
     QCOMPARE(convertedHtmlContent, referenceData);
+    msg.clear();
+    origMsg.clear();
     delete parser;
 }
 
@@ -211,6 +215,8 @@ void TemplateParserJobTest::test_replyPlain()
     const QString convertedPlainTextContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
 
     QCOMPARE(convertedPlainTextContent, referenceData);
+    msg.clear();
+    origMsg.clear();
     delete parser;
 }
 
@@ -262,6 +268,9 @@ void TemplateParserJobTest::test_forwardPlain()
     const QString convertedPlainTextContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
 
     QCOMPARE(convertedPlainTextContent, referenceData);
+    msg.clear();
+    origMsg.clear();
+    delete parser;
 }
 
 void TemplateParserJobTest::test_forwardHtml_data()
@@ -316,6 +325,8 @@ void TemplateParserJobTest::test_forwardHtml()
     }
 
     QCOMPARE(convertedHtmlContent, referenceData);
+    msg.clear();
+    origMsg.clear();
     delete parser;
 }
 
@@ -374,6 +385,9 @@ void TemplateParserJobTest::test_forwardedAttachments()
     } else {
         QCOMPARE(msg->contents().size(), 0);
     }
+    msg.clear();
+    origMsg.clear();
+    delete parser;
 }
 
 void TemplateParserJobTest::test_processWithTemplatesForBody_data()

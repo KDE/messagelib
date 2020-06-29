@@ -415,6 +415,7 @@ void ReplyStrategyTest::testReply()
         COMPARE_ADDRESSES(reply->to(), rTo);
         COMPARE_ADDRESSES(reply->cc(), rCc);
     }
+    original.clear();
 }
 
 QTEST_MAIN(ReplyStrategyTest)

@@ -130,6 +130,7 @@ void ComposerTest::testNonAsciiHeaders()
     QCOMPARE(message->cc()->displayNames().constFirst(), ccDisplayName);
     QCOMPARE(message->bcc()->displayNames().constFirst(), bccDisplayName);
     QCOMPARE(message->replyTo()->displayNames().constFirst(), replyToDisplayName);
+    message->clear();
     delete composer;
     composer = nullptr;
 }

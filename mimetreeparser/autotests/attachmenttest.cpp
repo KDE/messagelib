@@ -64,6 +64,7 @@ void AttachmentTest::testEncryptedAttachment()
     auto attachments = msg->attachments();
     auto encAtts = nodeHelper.attachmentsOfExtraContents();
     QCOMPARE(attachments.size() + encAtts.size(), 2);
+    msg.clear();
 }
 
 #include "attachmenttest.moc"

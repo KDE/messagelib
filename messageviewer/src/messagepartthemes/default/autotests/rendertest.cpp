@@ -318,7 +318,7 @@ void RenderTest::testRender()
     const bool bAsync = !asyncFileName.isEmpty();
 
     // load input mail
-    const KMime::Message::Ptr msg(Test::readAndParseMail(mailFileName));
+    KMime::Message::Ptr msg(Test::readAndParseMail(mailFileName));
 
     // render the mail
     FileHtmlWriter fileWriter(outFileName);
@@ -363,6 +363,7 @@ void RenderTest::testRender()
         testRenderTree(otp.parsedPart());
     }
     Test::compareFile(outFileName, referenceFileName);
+    msg.clear();
 }
 
 QTEST_MAIN(RenderTest)
