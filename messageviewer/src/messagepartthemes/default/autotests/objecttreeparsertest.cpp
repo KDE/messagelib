@@ -58,6 +58,7 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
     QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
     QVERIFY(testWriter.data().contains("This is an HTML message. For security reasons, only the raw HTML code is shown."));
     QVERIFY(testWriter.data().contains("SOME* HTML text. <br>"));
+    msg.clear();
 }
 
 void ObjectTreeParserTester::test_HTMLExternal()
@@ -101,6 +102,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
         QVERIFY(testWriter.data().contains("<b>SOME</b> HTML text."));
         QVERIFY(!testWriter.data().contains("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
     }
+    msg.clear();
 }
 
 void ObjectTreeParserTester::test_Alternative()
@@ -146,6 +148,7 @@ void ObjectTreeParserTester::test_Alternative()
         QVERIFY(testWriter.data().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"));
     }
 
+    msg.clear();
     msg = Test::readAndParseMail(QStringLiteral("alternative-notext.mbox"));
     QCOMPARE(msg->contents().size(), 1);
     {
@@ -185,4 +188,5 @@ void ObjectTreeParserTester::test_Alternative()
                                                "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
         QVERIFY(testWriter.data().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"));
     }
+    msg.clear();
 }

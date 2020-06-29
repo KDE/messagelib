@@ -403,6 +403,7 @@ void MessageFactoryTest::testCreateReplyToAuthorAsync()
                                      "%4")
                  .arg(dateStr).arg(replyTo).arg(reference).arg(replyStr).arg(replyStr.length() - 1);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
@@ -445,6 +446,7 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
                                      "X-KMail-Link-Type: reply\n\n> All happy families are alike; each unhappy family is unhappy in its own way.")
                  .arg(dateStr).arg(replyTo).arg(reference);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateReplyAllAsync()
@@ -467,6 +469,7 @@ void MessageFactoryTest::testCreateReplyAllAsync()
         = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateReplyHtmlAsync()
@@ -514,6 +517,7 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
     QCOMPARE(reply.msg->contents().count(), 0);
     TemplateParser::TemplateParserSettings::self()->setReplyUsingVisualFormat(true);
     factory.setReplyAsHtml(true);
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateReplyUTF16Base64Async()
@@ -541,6 +545,7 @@ void MessageFactoryTest::testCreateReplyUTF16Base64Async()
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: asking for reply"));
     QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toLatin1());
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateForwardMultiEmailsAsync()
@@ -584,6 +589,7 @@ void MessageFactoryTest::testCreateForwardMultiEmailsAsync()
 
     QCOMPARE(fw->subject()->asUnicodeString(), QStringLiteral("Fwd: Test Email Subject"));
     QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toLatin1());
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateForwardAsync()
@@ -628,6 +634,7 @@ void MessageFactoryTest::testCreateForwardAsync()
 
     QCOMPARE(fw->subject()->asUnicodeString(), QStringLiteral("Fwd: Test Email Subject"));
     QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toLatin1());
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
@@ -677,6 +684,7 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateRedirectToAndCC()
@@ -725,6 +733,7 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateRedirect()
@@ -770,6 +779,7 @@ void MessageFactoryTest::testCreateRedirect()
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateResend()
@@ -809,6 +819,7 @@ void MessageFactoryTest::testCreateResend()
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
+    msg.clear();
 }
 
 void MessageFactoryTest::testCreateMDN()
@@ -830,6 +841,7 @@ void MessageFactoryTest::testCreateMDN()
 
     QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(),
                      mdnContent.toLatin1());
+    msg.clear();
 }
 
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
@@ -946,4 +958,5 @@ void MessageFactoryTest::test_multipartAlternative()
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE(reply.msg->contents().at(contentAt)->encodedBody().data(), expected.toLatin1().data());
+    origMsg.clear();
 }

@@ -218,4 +218,5 @@ void GrantleeHeaderStyleTest::testRenderHeader()
     style.setTheme(defaultTheme());
 
     testHeaderFile(style, aMsg.data(), mailFileName);
+    aMsg.clear();
 }
