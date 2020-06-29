@@ -39,6 +39,14 @@ public:
         : ContentJobBasePrivate(qq)
     {
     }
+    ~SinglepartJobPrivate()
+    {
+        delete contentTransferEncoding;
+        delete contentType;
+        delete contentID;
+        delete contentDescription;
+        delete contentDisposition;
+    }
 
     bool chooseCTE();
 
