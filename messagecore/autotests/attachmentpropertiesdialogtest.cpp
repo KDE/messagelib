@@ -183,4 +183,5 @@ void AttachmentPropertiesDialogTest::testMimeContentReadOnly()
     dialog->accept();
     delete dialog;
     QCOMPARE(content->contentType()->name(), name);   // No change.
+    delete content;
 }

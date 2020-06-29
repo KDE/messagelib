@@ -46,6 +46,8 @@ void SinglepartJobTest::testContent()
     QVERIFY(result->contentDisposition(false) == nullptr);     // Not created unless demanded.
     QVERIFY(result->contentType(false) == nullptr);     // Not created unless demanded.
     QVERIFY(result->contentTransferEncoding(false));     // KMime gives it a default one (7bit).
+    delete cjob;
+    delete composer;
 }
 
 void SinglepartJobTest::testContentDisposition()
@@ -65,6 +67,8 @@ void SinglepartJobTest::testContentDisposition()
     QVERIFY(result->contentDisposition(false));
     QCOMPARE(result->contentDisposition()->disposition(), Headers::CDattachment);
     QCOMPARE(result->contentDisposition()->filename(), filename);
+    delete cjob;
+    delete composer;
 }
 
 void SinglepartJobTest::testContentID()
@@ -82,6 +86,9 @@ void SinglepartJobTest::testContentID()
     QCOMPARE(result->body(), data);
     QVERIFY(result->header<Headers::ContentID>());
     QCOMPARE(result->header<Headers::ContentID>()->identifier(), id);
+    delete cjob;
+
+    delete composer;
 }
 
 void SinglepartJobTest::testContentType()
@@ -102,6 +109,9 @@ void SinglepartJobTest::testContentType()
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), mimeType);
     QCOMPARE(result->contentType()->charset(), charset);
+    delete cjob;
+
+    delete composer;
 }
 
 void SinglepartJobTest::testContentTransferEncoding()
@@ -122,6 +132,7 @@ void SinglepartJobTest::testContentTransferEncoding()
         QVERIFY(result->contentTransferEncoding(false));
         QCOMPARE(result->contentTransferEncoding()->encoding(), Headers::CE7Bit);
         QCOMPARE(result->body(), data);
+        delete cjob;
     }
 
     // quoted-printable if text doesn't fit in 7bit.
@@ -136,6 +147,7 @@ void SinglepartJobTest::testContentTransferEncoding()
         QVERIFY(result->contentTransferEncoding(false));
         QCOMPARE(result->contentTransferEncoding()->encoding(), Headers::CEquPr);
         QCOMPARE(result->body(), data);
+        delete cjob;
     }
 
     // base64 if it's shorter than quoted-printable
@@ -150,6 +162,7 @@ void SinglepartJobTest::testContentTransferEncoding()
         QVERIFY(result->contentTransferEncoding(false));
         QCOMPARE(result->contentTransferEncoding()->encoding(), Headers::CEbase64);
         QCOMPARE(result->body(), data);
+        delete cjob;
     }
 
     // 8bit if asked for and allowed.
@@ -165,5 +178,7 @@ void SinglepartJobTest::testContentTransferEncoding()
         QVERIFY(result->contentTransferEncoding(false));
         QCOMPARE(result->contentTransferEncoding()->encoding(), Headers::CE8Bit);
         QCOMPARE(result->body(), data);
+        delete cjob;
     }
+    delete composer;
 }
