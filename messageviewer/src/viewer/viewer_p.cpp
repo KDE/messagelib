@@ -549,16 +549,17 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     Q_UNUSED(name)
     prepareHandleAttachment(node);
     bool deletedAttachment = false;
-    if (node->contentType(false)) {
-        deletedAttachment = (node->contentType()->mimeType() == "text/x-moz-deleted");
+    QString contentTypeStr;
+    if (auto contentType = node->contentType(false)) {
+        contentTypeStr = QLatin1String(contentType->mimeType());
     }
+    deletedAttachment = (contentTypeStr == QStringLiteral("text/x-moz-deleted"));
     //Not necessary to show popup menu when attachment was removed
     if (deletedAttachment) {
         return;
     }
 
     QMenu menu;
-    const QString contentTypeStr = QLatin1String(node->contentType()->mimeType());
 
     QAction *action
         = menu.addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("to open",
