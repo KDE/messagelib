@@ -55,13 +55,11 @@ void AttachmentJobTest::testAttachment()
     part->setMimeType(mimeType);
     part->setData(data);
 
-    Composer *composer = new Composer;
-    composer->globalPart()->setFallbackCharsetEnabled(true);
-    AttachmentJob *ajob = new AttachmentJob(part, composer);
+    Composer composer;
+    composer.globalPart()->setFallbackCharsetEnabled(true);
+    AttachmentJob *ajob = new AttachmentJob(part, &composer);
     QVERIFY(ajob->exec());
     Content *result = ajob->content();
-    delete ajob;
-    ajob = nullptr;
     result->assemble();
     qDebug() << result->encodedContent();
 
@@ -71,8 +69,9 @@ void AttachmentJobTest::testAttachment()
     QCOMPARE(result->contentType(false)->mimeType(), mimeType);
     QCOMPARE(result->body(), data);
     QVERIFY(result->contentDisposition(false)->disposition() == Headers::CDattachment);
-    delete result;
-    delete composer;
+    delete ajob;
+    ajob = nullptr;
+    //delete result;
 }
 
 #if 0
