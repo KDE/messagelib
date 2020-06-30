@@ -80,6 +80,8 @@ void UnencryptedMessageTest::testNotDecrypted()
 
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
     QCOMPARE((bool)unencryptedMessage, false);
+    originalMessage.clear();
+    unencryptedMessage.clear();
 }
 
 void UnencryptedMessageTest::testSMimeAutoCertImport()
@@ -99,4 +101,5 @@ void UnencryptedMessageTest::testSMimeAutoCertImport()
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "");
     QVERIFY(testWriter.data().contains("Sorry, certificate could not be imported."));
+    originalMessage.clear();
 }

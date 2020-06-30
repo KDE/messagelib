@@ -63,7 +63,7 @@ void ShowOnlyMimePartTest::testDrawFrame()
 
     QString referenceFileName(QStringLiteral(MAIL_DATA_DIR) + QLatin1Char('/') + commonName);
     // load input mail
-    const KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("frametest.mbox")));
+    KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("frametest.mbox")));
 
     // render the mail
     FileHtmlWriter fileWriter(outFileName);
@@ -85,6 +85,7 @@ void ShowOnlyMimePartTest::testDrawFrame()
     fileWriter.end();
 
     Test::compareFile(outFileName, referenceFileName);
+    msg.clear();
 }
 
 void ShowOnlyMimePartTest::testRelated_data()
@@ -110,7 +111,7 @@ void ShowOnlyMimePartTest::testRelated()
 
     QString referenceFileName(QStringLiteral(MAIL_DATA_DIR) + QLatin1Char('/') + commonName);
     // load input mail
-    const KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("html-multipart-related.mbox")));
+    KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("html-multipart-related.mbox")));
 
     // render the mail
     FileHtmlWriter fileWriter(outFileName);
@@ -132,6 +133,7 @@ void ShowOnlyMimePartTest::testRelated()
     fileWriter.end();
 
     Test::compareFile(outFileName, referenceFileName);
+    msg.clear();
 }
 
 QTEST_MAIN(ShowOnlyMimePartTest)

@@ -374,7 +374,7 @@ void TemplateParserJobTest::test_forwardedAttachments()
         QFile referenceFile(referenceFileName);
         QVERIFY(referenceFile.open(QIODevice::ReadOnly));
         const QByteArray referenceRawData = KMime::CRLFtoLF(referenceFile.readAll());
-        const KMime::Message::Ptr referenceMsg(new KMime::Message);
+        KMime::Message::Ptr referenceMsg(new KMime::Message);
         referenceMsg->setContent(referenceRawData);
         referenceMsg->parse();
 
@@ -382,6 +382,7 @@ void TemplateParserJobTest::test_forwardedAttachments()
         for (int i = 1; i < msg->contents().size(); i++) {
             QCOMPARE(msg->contents()[i]->encodedContent(), referenceMsg->contents()[i]->encodedContent());
         }
+        referenceMsg.clear();
     } else {
         QCOMPARE(msg->contents().size(), 0);
     }
