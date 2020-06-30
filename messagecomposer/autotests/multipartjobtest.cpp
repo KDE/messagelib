@@ -35,8 +35,8 @@ QTEST_MAIN(MultipartJobTest)
 
 void MultipartJobTest::testMultipartMixed()
 {
-    Composer *composer = new Composer;
-    MultipartJob *mjob = new MultipartJob(composer);
+    Composer composer;
+    MultipartJob *mjob = new MultipartJob(&composer);
     mjob->setMultipartSubtype("mixed");
 
     QByteArray data1("one");
@@ -62,32 +62,31 @@ void MultipartJobTest::testMultipartMixed()
     qDebug() << result->encodedContent();
 
     QVERIFY(result->contentType(false));
-    QCOMPARE(result->contentType()->mimeType(), QByteArray("multipart/mixed"));
+    QCOMPARE(result->contentType(false)->mimeType(), QByteArray("multipart/mixed"));
     QCOMPARE(result->contents().count(), 2);
 
     {
         Content *c = result->contents().at(0);
         QCOMPARE(c->body(), data1);
         QVERIFY(c->contentType(false));
-        QCOMPARE(c->contentType()->mimeType(), type1);
+        QCOMPARE(c->contentType(false)->mimeType(), type1);
     }
 
     {
         Content *c = result->contents().at(1);
         QCOMPARE(c->body(), data2);
         QVERIFY(c->contentType(false));
-        QCOMPARE(c->contentType()->mimeType(), type2);
+        QCOMPARE(c->contentType(false)->mimeType(), type2);
     }
-    delete composer;
 }
 
 void MultipartJobTest::test8BitPropagation()
 {
     // If a subpart is 8bit, its parent must be 8bit too.
 
-    Composer *composer = new Composer;
-    composer->globalPart()->set8BitAllowed(true);
-    MultipartJob *mjob = new MultipartJob(composer);
+    Composer composer;
+    composer.globalPart()->set8BitAllowed(true);
+    MultipartJob *mjob = new MultipartJob(&composer);
     mjob->setMultipartSubtype("mixed");
     MultipartJob *mjob2 = new MultipartJob(mjob);
     mjob2->setMultipartSubtype("mixed");
@@ -100,7 +99,6 @@ void MultipartJobTest::test8BitPropagation()
     content->assemble();
     qDebug() << content->encodedContent();
     QVERIFY(content->contentTransferEncoding(false));
-    QCOMPARE(content->contentTransferEncoding()->encoding(), Headers::CE8Bit);
+    QCOMPARE(content->contentTransferEncoding(false)->encoding(), Headers::CE8Bit);
     delete mjob;
-    delete composer;
 }
