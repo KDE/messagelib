@@ -636,20 +636,22 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
     KMime::Message::Ptr receipt(new KMime::Message());
     const uint originalIdentity = identityUoid(mOrigMsg);
     MessageHelper::initFromMessage(receipt, mOrigMsg, mIdentityManager, originalIdentity);
-    receipt->contentType()->from7BitString("multipart/report");
-    receipt->contentType()->setBoundary(KMime::multiPartBoundary());
-    receipt->contentType()->setCharset("us-ascii");
+    auto contentType = receipt->contentType(true); //create it
+    contentType->from7BitString("multipart/report");
+    contentType->setBoundary(KMime::multiPartBoundary());
+    contentType->setCharset("us-ascii");
     receipt->removeHeader<KMime::Headers::ContentTransferEncoding>();
     // Modify the ContentType directly (replaces setAutomaticFields(true))
-    receipt->contentType()->setParameter(QStringLiteral("report-type"), QStringLiteral("disposition-notification"));
+    contentType->setParameter(QStringLiteral("report-type"), QStringLiteral("disposition-notification"));
 
-    QString description = replaceHeadersInString(mOrigMsg, KMime::MDN::descriptionFor(d, m));
+    const QString description = replaceHeadersInString(mOrigMsg, KMime::MDN::descriptionFor(d, m));
 
     // text/plain part:
     KMime::Content *firstMsgPart = new KMime::Content(mOrigMsg.data());
-    firstMsgPart->contentType()->setMimeType("text/plain");
-    firstMsgPart->contentType()->setCharset("utf-8");
-    firstMsgPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
+    auto firstMsgPartContentType = firstMsgPart->contentType(); //create it
+    firstMsgPartContentType->setMimeType("text/plain");
+    firstMsgPartContentType->setCharset("utf-8");
+    firstMsgPart->contentTransferEncoding(true)->setEncoding(KMime::Headers::CE7Bit);
     firstMsgPart->setBody(description.toUtf8());
     receipt->addContent(firstMsgPart);
 
@@ -669,7 +671,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
                                d, a, s, m, special));
     receipt->addContent(secondMsgPart);
 
-    if (mdnQuoteOriginal < 0 || mdnQuoteOriginal > 2) {
+    if ((mdnQuoteOriginal < 0) || (mdnQuoteOriginal > 2)) {
         mdnQuoteOriginal = 0;
     }
     /* 0=> Nothing, 1=>Full Message, 2=>HeadersOnly*/
@@ -714,7 +716,7 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDi
     KMime::Message::Ptr msg(new KMime::Message);
     KMime::Content *digest = new KMime::Content(msg.data());
 
-    QString mainPartText = i18n("\nThis is a MIME digest forward. The content of the"
+    const QString mainPartText = i18n("\nThis is a MIME digest forward. The content of the"
                                 " message is contained in the attachment(s).\n\n\n");
 
     digest->contentType()->setMimeType("multipart/digest");
