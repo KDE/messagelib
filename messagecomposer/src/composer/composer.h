@@ -51,7 +51,7 @@ public:
     explicit Composer(QObject *parent = nullptr);
     ~Composer() override;
 
-    QVector<KMime::Message::Ptr> resultMessages() const;
+    Q_REQUIRED_RESULT QVector<KMime::Message::Ptr> resultMessages() const;
 
     Q_REQUIRED_RESULT GlobalPart *globalPart() const;
     Q_REQUIRED_RESULT InfoPart *infoPart() const;
