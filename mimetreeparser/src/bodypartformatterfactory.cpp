@@ -50,6 +50,16 @@ BodyPartFormatterFactoryPrivate::BodyPartFormatterFactoryPrivate(BodyPartFormatt
 {
 }
 
+BodyPartFormatterFactoryPrivate::~BodyPartFormatterFactoryPrivate()
+{
+    QHashIterator<QString, std::vector<FormatterInfo> > i(registry);
+    while (i.hasNext()) {
+        i.next();
+        auto formatterInfo = i.value();
+        formatterInfo.erase(formatterInfo.begin(), formatterInfo.end());
+    }
+}
+
 void BodyPartFormatterFactoryPrivate::setup()
 {
     if (registry.empty()) {

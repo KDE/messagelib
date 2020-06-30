@@ -49,6 +49,7 @@ struct RendererInfo
 class MessagePartRendererFactoryPrivate
 {
 public:
+    ~MessagePartRendererFactoryPrivate();
     void setup();
     void loadPlugins();
     void initialize_builtin_renderers();

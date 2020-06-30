@@ -44,7 +44,7 @@ class BodyPartFormatterFactoryPrivate
 {
 public:
     explicit BodyPartFormatterFactoryPrivate(BodyPartFormatterFactory *factory);
-    ~BodyPartFormatterFactoryPrivate() = default;
+    ~BodyPartFormatterFactoryPrivate();
 
     void setup();
     void messageviewer_create_builtin_bodypart_formatters();        //defined in bodypartformatter.cpp

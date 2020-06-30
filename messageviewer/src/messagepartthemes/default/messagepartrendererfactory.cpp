@@ -48,6 +48,16 @@
 
 using namespace MessageViewer;
 
+MessagePartRendererFactoryPrivate::~MessagePartRendererFactoryPrivate()
+{
+    QHashIterator<QByteArray, std::vector<RendererInfo> > i(m_renderers);
+    while (i.hasNext()) {
+        i.next();
+        auto renderInfo = i.value();
+        renderInfo.erase(renderInfo.begin(), renderInfo.end());
+    }
+}
+
 void MessagePartRendererFactoryPrivate::setup()
 {
     if (m_renderers.isEmpty()) {
