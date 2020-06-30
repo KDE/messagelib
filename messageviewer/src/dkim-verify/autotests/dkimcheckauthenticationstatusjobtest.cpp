@@ -79,4 +79,5 @@ void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()
     QSignalSpy dkimSignatureSpy(job, &MessageViewer::DKIMCheckAuthenticationStatusJob::result);
     QTimer::singleShot(10, job, &MessageViewer::DKIMCheckAuthenticationStatusJob::start);
     QVERIFY(dkimSignatureSpy.wait());
+    delete msg;
 }
