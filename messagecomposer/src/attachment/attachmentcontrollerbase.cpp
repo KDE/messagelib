@@ -773,7 +773,7 @@ void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
 void AttachmentControllerBase::Private::slotAttachmentContentCreated(KJob *job)
 {
     if (!job->error()) {
-        const MessageComposer::AttachmentJob *const attachmentJob = dynamic_cast<MessageComposer::AttachmentJob *>(job);
+        const MessageComposer::AttachmentJob *const attachmentJob = qobject_cast<MessageComposer::AttachmentJob *>(job);
         Q_ASSERT(attachmentJob);
         if (attachmentJob) {
             Q_EMIT q->showAttachment(attachmentJob->content(), QByteArray());
