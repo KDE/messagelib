@@ -64,8 +64,9 @@ void MultipartJob::process()
     Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
     Q_ASSERT(!d->subtype.isEmpty());
     d->resultContent = new KMime::Content;
-    d->resultContent->contentType(true)->setMimeType("multipart/" + d->subtype);
-    d->resultContent->contentType()->setBoundary(KMime::multiPartBoundary());
+    auto contentType = d->resultContent->contentType(true);
+    contentType->setMimeType("multipart/" + d->subtype);
+    contentType->setBoundary(KMime::multiPartBoundary());
     d->resultContent->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
     d->resultContent->setPreamble("This is a multi-part message in MIME format.\n");
     for (KMime::Content *c : qAsConst(d->subjobContents)) {
