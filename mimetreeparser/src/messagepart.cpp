@@ -1143,8 +1143,7 @@ void EncryptedMessagePart::startDecryption(const QByteArray &text, const QTextCo
             setText(aCodec->toUnicode(mDecryptedData));
         }
     }
-    //Verify it
-    //delete content;
+    delete content;
 }
 
 bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
