@@ -94,8 +94,8 @@ void ComposerTest::testAutoSave()
 
 void ComposerTest::testNonAsciiHeaders()
 {
-    Composer *composer = new Composer;
-    fillComposerData(composer);
+    Composer composer;
+    fillComposerData(&composer);
 
     const QString mailbox = QStringLiteral(" <bla@example.com>");
     const QString fromDisplayName = QStringLiteral("Hellö");
@@ -109,15 +109,15 @@ void ComposerTest::testNonAsciiHeaders()
     const QString bcc = bccDisplayName + mailbox;
     const QStringList replyto = QStringList{replyToDisplayName + mailbox};
 
-    composer->infoPart()->setFrom(from);
-    composer->infoPart()->setTo(QStringList() << to);
-    composer->infoPart()->setCc(QStringList() << cc);
-    composer->infoPart()->setBcc(QStringList() << bcc);
-    composer->infoPart()->setReplyTo(replyto);
+    composer.infoPart()->setFrom(from);
+    composer.infoPart()->setTo(QStringList() << to);
+    composer.infoPart()->setCc(QStringList() << cc);
+    composer.infoPart()->setBcc(QStringList() << bcc);
+    composer.infoPart()->setReplyTo(replyto);
 
-    QVERIFY(composer->exec());
-    QCOMPARE(composer->resultMessages().size(), 1);
-    const KMime::Message::Ptr message = composer->resultMessages().constFirst();
+    QVERIFY(composer.exec());
+    QCOMPARE(composer.resultMessages().size(), 1);
+    const KMime::Message::Ptr message = composer.resultMessages().constFirst();
     message->assemble();
     message->parse();
     QCOMPARE(message->bcc(false)->displayNames().size(), 1);
@@ -131,8 +131,6 @@ void ComposerTest::testNonAsciiHeaders()
     QCOMPARE(message->bcc()->displayNames().constFirst(), bccDisplayName);
     QCOMPARE(message->replyTo()->displayNames().constFirst(), replyToDisplayName);
     message->clear();
-    delete composer;
-    composer = nullptr;
 }
 
 void ComposerTest::testBug271192()
