@@ -1398,20 +1398,20 @@ void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
 {
     MessageCore::AttachmentPart::Ptr part(new MessageCore::AttachmentPart);
     if (partToAttach->contentType()->mimeType() == "multipart/digest"
-        || partToAttach->contentType()->mimeType() == "message/rfc822") {
+        || partToAttach->contentType(false)->mimeType() == "message/rfc822") {
         // if it is a digest or a full message, use the encodedContent() of the attachment,
         // which already has the proper headers
         part->setData(partToAttach->encodedContent());
     } else {
         part->setData(partToAttach->decodedContent());
     }
-    part->setMimeType(partToAttach->contentType()->mimeType());
+    part->setMimeType(partToAttach->contentType(false)->mimeType());
     if (auto cd = partToAttach->contentDescription(false)) {
         part->setDescription(cd->asUnicodeString());
     }
-    if (partToAttach->contentType(false)) {
-        if (partToAttach->contentType()->hasParameter(QStringLiteral("name"))) {
-            part->setName(partToAttach->contentType()->parameter(QStringLiteral("name")));
+    if (auto ct = partToAttach->contentType(false)) {
+        if (ct->hasParameter(QStringLiteral("name"))) {
+            part->setName(ct->parameter(QStringLiteral("name")));
         }
     }
     if (auto cd = partToAttach->contentDisposition(false)) {

@@ -32,7 +32,8 @@ using namespace MimeTreeParser::Util;
 
 bool MimeTreeParser::Util::isTypeBlacklisted(KMime::Content *node)
 {
-    const QByteArray mediaTypeLower = node->contentType()->mediaType().toLower();
+    auto contentType = node->contentType(); //Create
+    const QByteArray mediaTypeLower = contentType->mediaType().toLower();
     bool typeBlacklisted = mediaTypeLower == QByteArrayLiteral("multipart");
     if (!typeBlacklisted) {
         typeBlacklisted = KMime::isCryptoPart(node);
@@ -40,7 +41,7 @@ bool MimeTreeParser::Util::isTypeBlacklisted(KMime::Content *node)
     typeBlacklisted = typeBlacklisted || node == node->topLevel();
     const bool firstTextChildOfEncapsulatedMsg
         = mediaTypeLower == "text"
-          && node->contentType()->subType().toLower() == "plain"
+          && contentType->subType().toLower() == "plain"
           && node->parent() && node->parent()->contentType()->mediaType().toLower() == "message";
     return typeBlacklisted || firstTextChildOfEncapsulatedMsg;
 }
@@ -126,7 +127,8 @@ QString MimeTreeParser::Util::iconNameForContent(KMime::Content *node)
         return QString();
     }
 
-    QByteArray mimeType = node->contentType()->mimeType();
+    auto ct = node->contentType(); //Create
+    QByteArray mimeType = ct->mimeType();
     if (mimeType.isNull() || mimeType == "application/octet-stream") {
         const QString fileName = node->contentDisposition()->filename();
         if (!fileName.isEmpty()) {
@@ -136,7 +138,7 @@ QString MimeTreeParser::Util::iconNameForContent(KMime::Content *node)
     }
     mimeType = mimeType.toLower();
     return MimeTreeParser::Util::iconNameForMimetype(QLatin1String(mimeType), node->contentDisposition()->filename(),
-                                                     node->contentType()->name());
+                                                     ct->name());
 }
 
 QString MimeTreeParser::Util::htmlModeToString(HtmlMode mode)

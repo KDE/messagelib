@@ -100,7 +100,7 @@ public:
         if (node->contentType()->isText()
             && (!node->parent()
                 || (node->contentDisposition()->filename().trimmed().isEmpty()
-                    && node->contentType()->name().trimmed().isEmpty()))) {
+                    && node->contentType(false)->name().trimmed().isEmpty()))) {
             // text/* w/o filename parameter:
             return Inline;
         }
@@ -210,7 +210,7 @@ public:
     {
         if (node->contentType()->isText()
             && node->contentDisposition()->filename().trimmed().isEmpty()
-            && node->contentType()->name().trimmed().isEmpty()) {
+            && node->contentType(false)->name().trimmed().isEmpty()) {
             // text/* w/o filename parameter:
             return Inline;
         }
@@ -219,7 +219,7 @@ public:
         }
 
         if (node->parent() && node->parent()->contentType()->isMultipart()
-            && node->parent()->contentType()->subType() == "related") {
+            && node->parent()->contentType(false)->subType() == "related") {
             return Inline;
         }
 

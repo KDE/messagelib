@@ -992,23 +992,23 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
             KMime::Content headers;
             headers.setHead(curNode->head());
             headers.parse();
-            if (decryptedNode->contentType(false)) {
-                headers.contentType()->from7BitString(decryptedNode->contentType(false)->as7BitString(false));
+            if (auto ct = decryptedNode->contentType(false)) {
+                headers.contentType()->from7BitString(ct->as7BitString(false));
             } else {
                 headers.removeHeader<KMime::Headers::ContentType>();
             }
-            if (decryptedNode->contentTransferEncoding(false)) {
-                headers.contentTransferEncoding()->from7BitString(decryptedNode->contentTransferEncoding(false)->as7BitString(false));
+            if (auto ct = decryptedNode->contentTransferEncoding(false)) {
+                headers.contentTransferEncoding()->from7BitString(ct->as7BitString(false));
             } else {
                 headers.removeHeader<KMime::Headers::ContentTransferEncoding>();
             }
-            if (decryptedNode->contentDisposition(false)) {
-                headers.contentDisposition()->from7BitString(decryptedNode->contentDisposition(false)->as7BitString(false));
+            if (auto cd = decryptedNode->contentDisposition(false)) {
+                headers.contentDisposition()->from7BitString(cd->as7BitString(false));
             } else {
                 headers.removeHeader<KMime::Headers::ContentDisposition>();
             }
-            if (decryptedNode->contentDescription(false)) {
-                headers.contentDescription()->from7BitString(decryptedNode->contentDescription(false)->as7BitString(false));
+            if (auto cd = decryptedNode->contentDescription(false)) {
+                headers.contentDescription()->from7BitString(cd->as7BitString(false));
             } else {
                 headers.removeHeader<KMime::Headers::ContentDescription>();
             }

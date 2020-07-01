@@ -413,7 +413,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
     deletePart->contentDisposition(true)->setDisposition(KMime::Headers::CDattachment);
     deletePart->contentDisposition(false)->setFilename(QStringLiteral("Deleted: %1").arg(name));
 
-    deletePart->contentType()->setCharset("utf-8");
+    deletePart->contentType(false)->setCharset("utf-8");
     deletePart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
     QByteArray bodyMessage = QByteArrayLiteral(
         "\nYou deleted an attachment from this message. The original MIME headers for the attachment were:");

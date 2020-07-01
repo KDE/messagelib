@@ -227,14 +227,14 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
             ProcessResult processResult(mNodeHelper);
 
             QByteArray mimeType("text/plain");
-            if (node->contentType(false) && !node->contentType()->mimeType().isEmpty()) {
-                mimeType = node->contentType()->mimeType();
+            if (auto ct = node->contentType(false)) {
+                mimeType = ct->mimeType();
             }
             // unfortunately there's many emails where we can't trust the attachment mimetype
             // so try to see if we can find something better
             if (mimeType == "application/octet-stream") {
                 NodeHelper::magicSetType(node);
-                mimeType = node->contentType()->mimeType();
+                mimeType = node->contentType(false)->mimeType();
             }
 
             const auto mp = processType(node, processResult, mimeType);

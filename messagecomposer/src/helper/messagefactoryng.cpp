@@ -324,15 +324,15 @@ void MessageFactoryNG::createForwardAsync()
     // This is a non-multipart, non-text mail (e.g. text/calendar). Construct
     // a multipart/mixed mail and add the original body as an attachment.
     if (!mOrigMsg->contentType()->isMultipart()
-        && (!mOrigMsg->contentType()->isText()
-            || (mOrigMsg->contentType()->isText() && mOrigMsg->contentType()->subType() != "html"
-                && mOrigMsg->contentType()->subType() != "plain"))) {
+        && (!mOrigMsg->contentType(false)->isText()
+            || (mOrigMsg->contentType(false)->isText() && mOrigMsg->contentType(false)->subType() != "html"
+                && mOrigMsg->contentType(false)->subType() != "plain"))) {
         const uint originalIdentity = identityUoid(mOrigMsg);
         MessageHelper::initFromMessage(msg, mOrigMsg, mIdentityManager, originalIdentity);
         msg->removeHeader<KMime::Headers::ContentType>();
         msg->removeHeader<KMime::Headers::ContentTransferEncoding>();
 
-        msg->contentType()->setMimeType("multipart/mixed");
+        msg->contentType(false)->setMimeType("multipart/mixed");
 
         //TODO: Andras: somebody should check if this is correct. :)
         // empty text part
@@ -356,7 +356,7 @@ void MessageFactoryNG::createForwardAsync()
         //TODO Check if this is ok
         msg->setHead(mOrigMsg->head());
         msg->setBody(mOrigMsg->body());
-        QString oldContentType = msg->contentType()->asUnicodeString();
+        const QString oldContentType = msg->contentType()->asUnicodeString();
         const uint originalIdentity = identityUoid(mOrigMsg);
         MessageHelper::initFromMessage(msg, mOrigMsg, mIdentityManager, originalIdentity);
 

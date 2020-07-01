@@ -58,12 +58,13 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
     }
 
     // we are also registered for octet-stream, in that case stop here if that's not a part for us
-    const auto mt = node->contentType()->mimeType();
+    const auto ct = node->contentType(); //Create
+    const auto mt = ct->mimeType();
     const auto isCorrectMimeType = mt == QByteArrayLiteral("application/pkcs7-mime") || mt == QByteArrayLiteral("application/x-pkcs7-mime");
     const auto hasCorrectName = mt == QByteArrayLiteral("application/octet-stream")
-                                && (node->contentType()->name().endsWith(QLatin1String("p7m"))
-                                    || node->contentType()->name().endsWith(QLatin1String("p7s"))
-                                    || node->contentType()->name().endsWith(QLatin1String("p7c")));
+                                && (ct->name().endsWith(QLatin1String("p7m"))
+                                    || ct->name().endsWith(QLatin1String("p7s"))
+                                    || ct->name().endsWith(QLatin1String("p7c")));
     if (!isCorrectMimeType && !hasCorrectName) {
         return {};
     }

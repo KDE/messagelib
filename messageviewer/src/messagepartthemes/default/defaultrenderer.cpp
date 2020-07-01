@@ -865,9 +865,9 @@ bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr
     bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
 
     QByteArray mediaType("text");
-    if (content->contentType(false) && !content->contentType()->mediaType().isEmpty()
-        && !content->contentType()->subType().isEmpty()) {
-        mediaType = content->contentType()->mediaType();
+    if (content->contentType(false) && !content->contentType(false)->mediaType().isEmpty()
+        && !content->contentType(false)->subType().isEmpty()) {
+        mediaType = content->contentType(false)->mediaType();
     }
     const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
 

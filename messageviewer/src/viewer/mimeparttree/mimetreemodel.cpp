@@ -65,8 +65,8 @@ public:
         if (!name.isEmpty()) {
             return name;
         }
-        if (content->contentDescription(false)) {
-            const QString desc = content->contentDescription()->asUnicodeString();
+        if (auto ct = content->contentDescription(false)) {
+            const QString desc = ct->asUnicodeString();
             if (!desc.isEmpty()) {
                 return desc;
             }
@@ -84,9 +84,9 @@ public:
 
     QString typeForContent(KMime::Content *content)
     {
-        if (content->contentType(false)) {
-            const QString contentMimeType = QString::fromLatin1(content->contentType()->mimeType());
-            auto mimeType = m_mimeDb.mimeTypeForName(contentMimeType);
+        if (auto ct = content->contentType(false)) {
+            const QString contentMimeType = QString::fromLatin1(ct->mimeType());
+            const auto mimeType = m_mimeDb.mimeTypeForName(contentMimeType);
             if (!mimeType.isValid()) {
                 return contentMimeType;
             }
