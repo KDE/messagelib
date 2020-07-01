@@ -59,7 +59,7 @@ public:
     {
         KMime::Message *const message = dynamic_cast<KMime::Message *>(content);
         if (message && message->subject(false)) {
-            return message->subject()->asUnicodeString();
+            return message->subject(false)->asUnicodeString();
         }
         const QString name = MimeTreeParser::NodeHelper::fileName(content);
         if (!name.isEmpty()) {

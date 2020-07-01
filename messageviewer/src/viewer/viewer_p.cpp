@@ -288,7 +288,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
             return;
         }
         if (ct->mimeType() == "message/external-body") {
-            if (node->contentType()->hasParameter(QStringLiteral("url"))) {
+            if (ct->hasParameter(QStringLiteral("url"))) {
                 KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"));
                 job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
                 job->setRunExecutables(true);

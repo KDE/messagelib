@@ -98,9 +98,9 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
             NodeHelper::magicSetType(tempNode);
             if (node->topLevel()->textContent() != node && node->contentDisposition(false) && !tempNode->contentDisposition(false)) {
                 tempNode->contentDisposition()->setDisposition(node->contentDisposition()->disposition());
-                const auto fname = node->contentDisposition()->filename();
+                const auto fname = node->contentDisposition(false)->filename();
                 if (!fname.isEmpty()) {
-                    tempNode->contentDisposition()->setFilename(fname);
+                    tempNode->contentDisposition(false)->setFilename(fname);
                 }
             }
 
