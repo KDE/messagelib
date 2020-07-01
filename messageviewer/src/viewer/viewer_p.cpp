@@ -283,11 +283,11 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
         return;
     }
 
-    if (node->contentType(false)) {
-        if (node->contentType()->mimeType() == "text/x-moz-deleted") {
+    if (auto ct = node->contentType(false)) {
+        if (ct->mimeType() == "text/x-moz-deleted") {
             return;
         }
-        if (node->contentType()->mimeType() == "message/external-body") {
+        if (ct->mimeType() == "message/external-body") {
             if (node->contentType()->hasParameter(QStringLiteral("url"))) {
                 KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"));
                 job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
@@ -401,9 +401,9 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
         filename = node->contentDisposition()->filename();
     }
 
-    if (node->contentType(false)) {
-        name = node->contentType()->name();
-        mimetype = node->contentType()->mimeType();
+    if (auto ct = node->contentType(false)) {
+        name = ct->name();
+        mimetype = ct->mimeType();
     }
 
     // text/plain part:
@@ -1777,8 +1777,8 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
         return;
     }
 
-    if (content->contentType(false)) {
-        if (content->contentType()->mimeType() == "text/x-moz-deleted") {
+    if (auto ct = content->contentType(false)) {
+        if (ct->mimeType() == "text/x-moz-deleted") {
             return;
         }
     }

@@ -1195,8 +1195,9 @@ KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Con
 {
     KMime::Content *mixedPart = new KMime::Content(d->mMsg.data());
     const QByteArray boundary = KMime::multiPartBoundary();
-    mixedPart->contentType()->setMimeType("multipart/mixed");
-    mixedPart->contentType()->setBoundary(boundary);
+    auto contentType = mixedPart->contentType();
+    contentType->setMimeType("multipart/mixed");
+    contentType->setBoundary(boundary);
     mixedPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
     mixedPart->addContent(textPart);
 
@@ -1205,10 +1206,10 @@ KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Con
         mixedPart->addContent(attachment);
         // If the content type has no name or filename parameter, add one, since otherwise the name
         // would be empty in the attachment view of the composer, which looks confusing
-        if (attachment->contentType(false)) {
-            if (!attachment->contentType()->hasParameter(QStringLiteral("name"))
-                && !attachment->contentType()->hasParameter(QStringLiteral("filename"))) {
-                attachment->contentType()->setParameter(
+        if (auto ct = attachment->contentType(false)) {
+            if (!ct->hasParameter(QStringLiteral("name"))
+                && !ct->hasParameter(QStringLiteral("filename"))) {
+                ct->setParameter(
                     QStringLiteral("name"), i18nc("@item:intext", "Attachment %1", attachmentNumber));
             }
         }
@@ -1221,8 +1222,9 @@ KMime::Content *TemplateParserJob::createMultipartRelated(const MessageCore::Ima
 {
     KMime::Content *relatedPart = new KMime::Content(d->mMsg.data());
     const QByteArray boundary = KMime::multiPartBoundary();
-    relatedPart->contentType()->setMimeType("multipart/related");
-    relatedPart->contentType()->setBoundary(boundary);
+    auto contentType = relatedPart->contentType();
+    contentType->setMimeType("multipart/related");
+    contentType->setBoundary(boundary);
     relatedPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
     relatedPart->addContent(mainTextPart);
     for (KMime::Content *image : ic.images()) {

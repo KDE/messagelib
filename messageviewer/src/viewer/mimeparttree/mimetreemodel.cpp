@@ -76,8 +76,8 @@ public:
 
     QString mimeTypeForContent(KMime::Content *content)
     {
-        if (content->contentType(false)) {
-            return QString::fromLatin1(content->contentType()->mimeType());
+        if (auto ct = content->contentType(false)) {
+            return QString::fromLatin1(ct->mimeType());
         }
         return QString();
     }
@@ -106,13 +106,12 @@ public:
 
     QIcon iconForContent(KMime::Content *content)
     {
-        if (content->contentType(false)) {
+        if (auto ct = content->contentType(false)) {
             auto iconName
-                = MimeTreeParser::Util::iconNameForMimetype(QLatin1String(content->contentType()->
-                                                                          mimeType()));
+                = MimeTreeParser::Util::iconNameForMimetype(QLatin1String(ct->mimeType()));
 
             auto mimeType
-                = m_mimeDb.mimeTypeForName(QString::fromLatin1(content->contentType()->mimeType()));
+                = m_mimeDb.mimeTypeForName(QString::fromLatin1(ct->mimeType()));
             if (!mimeType.isValid()
                 || mimeType.name() == QLatin1String("application/octet-stream")) {
                 const QString name = descriptionForContent(content);

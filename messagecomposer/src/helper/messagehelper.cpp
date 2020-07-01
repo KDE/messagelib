@@ -164,9 +164,9 @@ void setAutomaticFields(const KMime::Message::Ptr &msg, bool aIsMulti)
 
     if (aIsMulti || msg->contents().size() > 1) {
         // Set the type to 'Multipart' and the subtype to 'Mixed'
-        msg->contentType()->setMimeType("multipart/mixed");
+        msg->contentType(false)->setMimeType("multipart/mixed");
         // Create a random printable string and set it as the boundary parameter
-        msg->contentType()->setBoundary(KMime::multiPartBoundary());
+        msg->contentType(false)->setBoundary(KMime::multiPartBoundary());
     }
 }
 }

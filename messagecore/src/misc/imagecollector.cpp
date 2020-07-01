@@ -44,11 +44,12 @@ static bool isInExclusionList(KMime::Content *node)
         return true;
     }
 
-    if (node->contentType()->mediaType() != "image") {
+    auto ct = node->contentType(); //Create if necessary
+    if (ct->mediaType() != "image") {
         return true;
     }
 
-    if (node->contentType()->isMultipart()) {
+    if (ct->isMultipart()) {
         return true;
     }
 

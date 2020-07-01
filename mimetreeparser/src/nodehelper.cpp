@@ -353,7 +353,7 @@ bool NodeHelper::isInEncapsulatedMessage(KMime::Content *node)
     const KMime::Content *cur = node;
     while (cur && cur != topLevel) {
         const bool parentIsMessage = cur->parent() && cur->parent()->contentType(false)
-                                     && cur->parent()->contentType()->mimeType().toLower() == "message/rfc822";
+                                     && cur->parent()->contentType(false)->mimeType().toLower() == "message/rfc822";
         if (parentIsMessage && cur->parent() != topLevel) {
             return true;
         }
@@ -957,9 +957,9 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
     if (node) {
         KMime::Content *curNode = node;
         KMime::Content *decryptedNode = nullptr;
-        const QByteArray type = node->contentType(false) ? QByteArray(node->contentType()->mediaType()).toLower() : "text";
-        const QByteArray subType = node->contentType(false) ? node->contentType()->subType().toLower() : "plain";
-        const bool isMultipart = node->contentType(false) && node->contentType()->isMultipart();
+        const QByteArray type = node->contentType(false) ? QByteArray(node->contentType(false)->mediaType()).toLower() : "text";
+        const QByteArray subType = node->contentType(false) ? node->contentType(false)->subType().toLower() : "plain";
+        const bool isMultipart = node->contentType(false) && node->contentType(false)->isMultipart();
         bool isSignature = false;
 
         qCDebug(MIMETREEPARSER_LOG) << "(" << recursionLevel << ") Looking at" << type << "/" << subType;
@@ -993,22 +993,22 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
             headers.setHead(curNode->head());
             headers.parse();
             if (decryptedNode->contentType(false)) {
-                headers.contentType()->from7BitString(decryptedNode->contentType()->as7BitString(false));
+                headers.contentType()->from7BitString(decryptedNode->contentType(false)->as7BitString(false));
             } else {
                 headers.removeHeader<KMime::Headers::ContentType>();
             }
             if (decryptedNode->contentTransferEncoding(false)) {
-                headers.contentTransferEncoding()->from7BitString(decryptedNode->contentTransferEncoding()->as7BitString(false));
+                headers.contentTransferEncoding()->from7BitString(decryptedNode->contentTransferEncoding(false)->as7BitString(false));
             } else {
                 headers.removeHeader<KMime::Headers::ContentTransferEncoding>();
             }
             if (decryptedNode->contentDisposition(false)) {
-                headers.contentDisposition()->from7BitString(decryptedNode->contentDisposition()->as7BitString(false));
+                headers.contentDisposition()->from7BitString(decryptedNode->contentDisposition(false)->as7BitString(false));
             } else {
                 headers.removeHeader<KMime::Headers::ContentDisposition>();
             }
             if (decryptedNode->contentDescription(false)) {
-                headers.contentDescription()->from7BitString(decryptedNode->contentDescription()->as7BitString(false));
+                headers.contentDescription()->from7BitString(decryptedNode->contentDescription(false)->as7BitString(false));
             } else {
                 headers.removeHeader<KMime::Headers::ContentDescription>();
             }

@@ -89,9 +89,10 @@ void ProtectedHeadersJob::doStart()
     if (d->obvoscate && subject) {
         // Create protected header lagacy mimepart with replaced headers
         SinglepartJob *cjob = new SinglepartJob;
-        cjob->contentType()->setMimeType("text/plain");
-        cjob->contentType()->setCharset(subject->rfc2047Charset());
-        cjob->contentType()->setParameter(QStringLiteral("protected-headers"), QStringLiteral("v1"));
+        auto ct = cjob->contentType();
+        ct->setMimeType("text/plain");
+        ct->setCharset(subject->rfc2047Charset());
+        ct->setParameter(QStringLiteral("protected-headers"), QStringLiteral("v1"));
         cjob->contentDisposition()->setDisposition(KMime::Headers::contentDisposition::CDinline);
         cjob->setData(subject->type() + QByteArray(": ") + subject->asUnicodeString().toUtf8());
 

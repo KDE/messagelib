@@ -66,22 +66,22 @@ void AttachmentFromMimeContentJob::doStart()
     part->setData(content->decodedContent());
 
     // Get the details from the MIME headers.
-    if (content->contentType(false)) {
-        part->setMimeType(content->contentType()->mimeType());
-        part->setName(content->contentType()->name());
+    if (auto ct = content->contentType(false)) {
+        part->setMimeType(ct->mimeType());
+        part->setName(ct->name());
     }
 
-    if (content->contentTransferEncoding(false)) {
-        part->setEncoding(content->contentTransferEncoding()->encoding());
+    if (auto ct = content->contentTransferEncoding(false)) {
+        part->setEncoding(ct->encoding());
     }
 
-    if (content->contentDisposition(false)) {
-        part->setFileName(content->contentDisposition()->filename());
-        part->setInline(content->contentDisposition()->disposition() == KMime::Headers::CDinline);
+    if (auto ct = content->contentDisposition(false)) {
+        part->setFileName(ct->filename());
+        part->setInline(ct->disposition() == KMime::Headers::CDinline);
     }
 
-    if (content->contentDescription(false)) {
-        part->setDescription(content->contentDescription()->asUnicodeString());
+    if (auto ct = content->contentDescription(false)) {
+        part->setDescription(ct->asUnicodeString());
     }
 
     setAttachmentPart(part);
