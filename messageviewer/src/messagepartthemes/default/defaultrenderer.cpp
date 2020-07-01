@@ -781,7 +781,7 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
     const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
     if (isHiddenHint(msgPart)) {
-        QByteArray cid = msgPart->content()->contentID()->identifier();
+        const QByteArray cid = msgPart->content()->contentID()->identifier();
         auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
         if (!cid.isEmpty() && mp) {
             QString fileName = mp->temporaryFilePath();

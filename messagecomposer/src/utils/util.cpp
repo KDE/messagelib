@@ -89,8 +89,9 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
 
             if (sign) {                           // sign PGPMime, sign SMIME
                 if (format & Kleo::AnySMIME) {      // sign SMIME
-                    code->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
-                    code->contentTransferEncoding()->needToEncode();
+                    auto ct = code->contentTransferEncoding(); //create
+                    ct->setEncoding(KMime::Headers::CEbase64);
+                    ct->needToEncode();
                     code->setBody(encodedBody);
                 } else {                            // sign PGPMmime
                     setBodyAndCTE(encodedBody, orig->contentType(), code);
@@ -114,8 +115,9 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
             }
         } else {                                //enc SMIME, sign/enc SMIMEOpaque
             result->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
-            result->contentDisposition()->setDisposition(KMime::Headers::CDattachment);
-            result->contentDisposition()->setFilename(QStringLiteral("smime.p7m"));
+            auto ct = result->contentDisposition(); //Create
+            ct->setDisposition(KMime::Headers::CDattachment);
+            ct->setFilename(QStringLiteral("smime.p7m"));
 
             result->assemble();
             //qCDebug(MESSAGECOMPOSER_LOG) << "processed header:" << result->head();

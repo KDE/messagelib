@@ -1406,17 +1406,17 @@ void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
         part->setData(partToAttach->decodedContent());
     }
     part->setMimeType(partToAttach->contentType()->mimeType());
-    if (partToAttach->contentDescription(false)) {
-        part->setDescription(partToAttach->contentDescription()->asUnicodeString());
+    if (auto cd = partToAttach->contentDescription(false)) {
+        part->setDescription(cd->asUnicodeString());
     }
     if (partToAttach->contentType(false)) {
         if (partToAttach->contentType()->hasParameter(QStringLiteral("name"))) {
             part->setName(partToAttach->contentType()->parameter(QStringLiteral("name")));
         }
     }
-    if (partToAttach->contentDisposition(false)) {
-        part->setFileName(partToAttach->contentDisposition()->filename());
-        part->setInline(partToAttach->contentDisposition()->disposition() == KMime::Headers::CDinline);
+    if (auto cd = partToAttach->contentDisposition(false)) {
+        part->setFileName(cd->filename());
+        part->setInline(cd->disposition() == KMime::Headers::CDinline);
     }
     if (part->name().isEmpty() && !part->fileName().isEmpty()) {
         part->setName(part->fileName());

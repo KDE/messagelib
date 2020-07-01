@@ -429,9 +429,10 @@ KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Me
     KMime::Content *msgPart = new KMime::Content(fwdMsg.data());
     msgPart->contentType()->setMimeType("message/rfc822");
 
-    msgPart->contentDisposition()->setParameter(QStringLiteral("filename"), i18n("forwarded message"));
-    msgPart->contentDisposition()->setDisposition(KMime::Headers::CDinline);
-    msgPart->contentDescription()->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1String(": ") + fwdMsg->subject()->asUnicodeString(), "utf-8");
+    auto cd = msgPart->contentDisposition(); //create
+    cd->setParameter(QStringLiteral("filename"), i18n("forwarded message"));
+    cd->setDisposition(KMime::Headers::CDinline);
+    cd->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1String(": ") + fwdMsg->subject()->asUnicodeString(), "utf-8");
     msgPart->setBody(fwdMsg->encodedContent());
     msgPart->assemble();
 

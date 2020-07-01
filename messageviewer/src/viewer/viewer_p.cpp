@@ -397,8 +397,8 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
     QString filename;
     QString name;
     QByteArray mimetype;
-    if (node->contentDisposition(false)) {
-        filename = node->contentDisposition()->filename();
+    if (auto cd = node->contentDisposition(false)) {
+        filename = cd->filename();
     }
 
     if (auto ct = node->contentType(false)) {
@@ -408,10 +408,10 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
 
     // text/plain part:
     KMime::Content *deletePart = new KMime::Content(parent);
-    deletePart->contentType()->setMimeType("text/x-moz-deleted");
-    deletePart->contentType()->setName(QStringLiteral("Deleted: %1").arg(name), "utf8");
-    deletePart->contentDisposition()->setDisposition(KMime::Headers::CDattachment);
-    deletePart->contentDisposition()->setFilename(QStringLiteral("Deleted: %1").arg(name));
+    deletePart->contentType(true)->setMimeType("text/x-moz-deleted");
+    deletePart->contentType(false)->setName(QStringLiteral("Deleted: %1").arg(name), "utf8");
+    deletePart->contentDisposition(true)->setDisposition(KMime::Headers::CDattachment);
+    deletePart->contentDisposition(false)->setFilename(QStringLiteral("Deleted: %1").arg(name));
 
     deletePart->contentType()->setCharset("utf-8");
     deletePart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
