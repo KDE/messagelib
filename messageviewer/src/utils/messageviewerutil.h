@@ -2,8 +2,7 @@
 **
 ** Filename   : util
 ** Created on : 03 April, 2005
-** Copyright  : (c) 2005 Till Adam
-** Email      : <adam@kde.org>
+** SPDX-FileCopyrightText : 2005 Till Adam <adam@kde.org>
 **
 *******************************************************************************/
 

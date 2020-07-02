@@ -1,4 +1,5 @@
-/* SPDX-FileCopyrightText: 2010 Volker Krause <vkrause@kde.org>
+/* 
+   SPDX-FileCopyrightText: 2010 Volker Krause <vkrause@kde.org>
    SPDX-FileCopyrightText: 2016 Sandro Knauß <sknauss@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
