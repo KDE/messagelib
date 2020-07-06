@@ -35,7 +35,7 @@ public:
     QHash<QString, MessageViewer::HeaderStyleInterface *> lstInterface;
     QActionGroup *group = nullptr;
     KActionMenu *headerMenu = nullptr;
-    HeaderStyleMenuManager *q = nullptr;
+    HeaderStyleMenuManager *const q = nullptr;
 };
 
 void HeaderStyleMenuManagerPrivate::setPluginName(const QString &pluginName)

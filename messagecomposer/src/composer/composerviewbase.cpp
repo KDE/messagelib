@@ -1190,6 +1190,7 @@ void ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
         Q_EMIT failed(i18n("Could not autosave message: %1", job->errorString()), AutoSave);
     }
 
+    qDebug() << " REMOVE ComposerViewBase::slotAutoSaveComposeResult " << this << " composer " << composer;
     m_composers.removeAll(composer);
 }
 
@@ -1236,6 +1237,8 @@ void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
         m_autoSaveErrorShown = false;
     }
     file.commit();
+    message->clear();
+
 }
 
 void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn)

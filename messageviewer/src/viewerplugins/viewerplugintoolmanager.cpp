@@ -34,7 +34,7 @@ public:
     QList<MessageViewer::ViewerPluginInterface *> mListInterface;
     KActionCollection *mActionCollection = nullptr;
     QWidget *mParentWidget = nullptr;
-    ViewerPluginToolManager *q = nullptr;
+    ViewerPluginToolManager *const q = nullptr;
     void setPluginDirectory(const QString &directory);
 };
 

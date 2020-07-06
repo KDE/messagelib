@@ -30,7 +30,7 @@ public:
     QAction *mZoomOutAction = nullptr;
     QAction *mZoomResetAction = nullptr;
     KActionCollection *mActionCollection = nullptr;
-    KActionMenu *q = nullptr;
+    KActionMenu *const q = nullptr;
 };
 
 ZoomActionMenu::ZoomActionMenu(QObject *parent)

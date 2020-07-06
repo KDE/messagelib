@@ -36,9 +36,11 @@ public:
     ComposerPrivate(Composer *qq)
         : JobBasePrivate(qq)
     {
+        qDebug() << " ComposerPrivate(Composer *qq)" << this;
     }
     ~ComposerPrivate()
     {
+        qDebug() << " ~ComposerPrivate() " << this;
         //delete skeletonMessage;
     }
 
@@ -437,11 +439,13 @@ Composer::Composer(QObject *parent)
     : JobBase(*new ComposerPrivate(this), parent)
 {
     Q_D(Composer);
+    qDebug() << " Composer::Composer(QObject *parent) " << this;
     d->init();
 }
 
 Composer::~Composer()
 {
+    qDebug() << "Composer::~Composer()  " <<  this;
 }
 
 QVector<KMime::Message::Ptr> Composer::resultMessages() const

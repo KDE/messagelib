@@ -59,7 +59,7 @@ public:
     QWebEngineView *mWebEngine = nullptr;
     AccessKeyState mAccessKeyActivated = NotActivated;
     KActionCollection *mActionCollection = nullptr;
-    WebEngineAccessKey *q = nullptr;
+    WebEngineAccessKey *const q = nullptr;
 };
 
 static QString linkElementKey(const WebEngineViewer::WebEngineAccessKeyAnchor &element, const QUrl &baseUrl)
