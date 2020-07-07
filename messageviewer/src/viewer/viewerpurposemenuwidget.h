@@ -8,10 +8,9 @@
 #define VIEWERPURPOSEMENUWIDGET_H
 
 #include <PimCommon/PurposeMenuWidget>
-#include "messageviewer_export.h"
 namespace MessageViewer {
 class MailWebEngineView;
-class MESSAGEVIEWER_EXPORT MailfilterPurposeMenuWidget : public PimCommon::PurposeMenuWidget
+class MailfilterPurposeMenuWidget : public PimCommon::PurposeMenuWidget
 {
     Q_OBJECT
 public:
