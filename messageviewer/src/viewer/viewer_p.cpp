@@ -9,6 +9,7 @@
 */
 #include "viewer_p.h"
 #include "viewer.h"
+#include "viewerpurposemenuwidget.h"
 
 #include "messageviewer_debug.h"
 #include "utils/mimetype.h"
@@ -1709,6 +1710,13 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("speak_text"), mSpeakTextAction);
     connect(mSpeakTextAction, &QAction::triggered,
             this, &ViewerPrivate::slotSpeakText);
+
+    MailfilterPurposeMenuWidget *purposeMenuWidget = new MailfilterPurposeMenuWidget(mViewer, this);
+    mShareTextAction = new QAction(i18n("Share Text..."), this);
+    mShareTextAction->setMenu(purposeMenuWidget->menu());
+    mShareTextAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
+    ac->addAction(QStringLiteral("purpose_share_text_menu"), mShareTextAction);
+    purposeMenuWidget->setViewer(mViewer);
 
     mCopyImageLocation = new QAction(i18n("Copy Image Location"), this);
     mCopyImageLocation->setIcon(QIcon::fromTheme(QStringLiteral("view-media-visualization")));

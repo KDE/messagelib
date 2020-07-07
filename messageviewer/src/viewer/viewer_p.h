@@ -641,6 +641,7 @@ public:
     QAction *mDevelopmentToolsAction = nullptr;
     QAction *mSpeakTextAction = nullptr;
     QAction *mCopyImageLocation = nullptr;
+    QAction *mShareTextAction = nullptr;
     QUrl mClickedUrl;
     QUrl mImageUrl;
     HtmlWriter *mHtmlWriter = nullptr;
