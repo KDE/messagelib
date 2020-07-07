@@ -605,6 +605,12 @@ QAction *Viewer::findInMessageAction() const
     return d->mFindInMessageAction;
 }
 
+QAction *Viewer::shareTextAction() const
+{
+    Q_D(const Viewer);
+    return d->mShareTextAction;
+}
+
 void Viewer::slotChangeDisplayMail(Viewer::DisplayFormatMessage mode, bool loadExternal)
 {
     if ((htmlLoadExtOverride() != loadExternal) || (displayFormatMessageOverwrite() != mode)) {
