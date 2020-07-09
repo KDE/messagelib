@@ -6,6 +6,9 @@
 
 #include "convertsnippetvariablesutil.h"
 
+#include <QDateTime>
+#include <QLocale>
+
 QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type)
 {
     switch (type) {
@@ -80,3 +83,35 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
     }
     return {};
 }
+
+QString MessageComposer::ConvertSnippetVariablesUtil::shortDate()
+{
+    QLocale locale;
+    return locale.toString(QDate::currentDate(), QLocale::ShortFormat);
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::longDate()
+{
+    QLocale locale;
+    return locale.toString(QDate::currentDate(), QLocale::LongFormat);
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::shortTime()
+{
+    QLocale locale;
+    return locale.toString(QTime::currentTime(), QLocale::ShortFormat);
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::longTime()
+{
+    QLocale locale;
+    return locale.toString(QTime::currentTime(), QLocale::LongFormat);
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::insertDayOfWeek()
+{
+    const QDateTime date = QDateTime::currentDateTime().toLocalTime();
+    const QString str = QLocale().dayName(date.date().dayOfWeek(), QLocale::LongFormat);
+    return str;
+}
+

@@ -6,6 +6,7 @@
 
 #include "composerviewinterface.h"
 #include "composerviewbase.h"
+#include "snippet/convertsnippetvariablesutil.h"
 #include <MessageComposer/AttachmentModel>
 #include <KFormat>
 using namespace MessageComposer;
@@ -78,31 +79,25 @@ MessageComposer::ComposerAttachmentInterface ComposerViewInterface::attachments(
 
 QString ComposerViewInterface::shortDate() const
 {
-    QLocale locale;
-    return locale.toString(QDate::currentDate(), QLocale::ShortFormat);
+    return MessageComposer::ConvertSnippetVariablesUtil::shortDate();
 }
 
 QString ComposerViewInterface::longDate() const
 {
-    QLocale locale;
-    return locale.toString(QDate::currentDate(), QLocale::LongFormat);
+    return MessageComposer::ConvertSnippetVariablesUtil::longDate();
 }
 
 QString ComposerViewInterface::shortTime() const
 {
-    QLocale locale;
-    return locale.toString(QTime::currentTime(), QLocale::ShortFormat);
+    return MessageComposer::ConvertSnippetVariablesUtil::shortTime();
 }
 
 QString ComposerViewInterface::longTime() const
 {
-    QLocale locale;
-    return locale.toString(QTime::currentTime(), QLocale::LongFormat);
+    return MessageComposer::ConvertSnippetVariablesUtil::longTime();
 }
 
 QString ComposerViewInterface::insertDayOfWeek() const
 {
-    const QDateTime date = QDateTime::currentDateTime().toLocalTime();
-    const QString str = QLocale().dayName(date.date().dayOfWeek(), QLocale::LongFormat);
-    return str;
+    return MessageComposer::ConvertSnippetVariablesUtil::insertDayOfWeek();
 }
