@@ -80,6 +80,8 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
         return QStringLiteral("%DAYOFWEEKNAMELONG"); //(Monday-Sunday)
     case YearLastMonth:
         return QStringLiteral("%YEARLASTMONTH"); //january 2020 will how 2019-12
+    case LastMonthNameLong:
+        return QStringLiteral("%LASTMONTHNAMELONG");
     }
     return {};
 }
@@ -154,6 +156,12 @@ QString MessageComposer::ConvertSnippetVariablesUtil::monthNameShort()
 QString MessageComposer::ConvertSnippetVariablesUtil::monthNameLong()
 {
     const QDate date = QDate::currentDate();
+    return date.toString(QStringLiteral("MMMM"));
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::lastMonthNameLong()
+{
+    const QDate date = QDate::currentDate().addMonths(-1);
     return date.toString(QStringLiteral("MMMM"));
 }
 

@@ -134,6 +134,9 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
     dateTimeMenuVariable->addAction(i18n("Month Name Long (%1)", MessageComposer::ConvertSnippetVariablesUtil::monthNameLong()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::MonthNameLong);
     });
+    dateTimeMenuVariable->addAction(i18n("Last Month Name Long (%1)", MessageComposer::ConvertSnippetVariablesUtil::lastMonthNameLong()), this, [this]() {
+        Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::LastMonthNameLong);
+    });
     dateTimeMenuVariable->addAction(i18n("Day Of Week (%1)", MessageComposer::ConvertSnippetVariablesUtil::dayOfWeek()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayOfWeek);
     });

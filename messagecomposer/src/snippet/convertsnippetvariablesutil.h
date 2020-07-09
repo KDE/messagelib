@@ -45,7 +45,8 @@ enum VariableType {
     DayOfWeek,
     DayOfWeekNameShort,
     DayOfWeekNameLong,
-    YearLastMonth
+    YearLastMonth,
+    LastMonthNameLong
 };
 
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);
@@ -68,6 +69,7 @@ Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString dayOfWeekNameLong();
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString yearLastMonth();
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString year();
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString dayOfWeek();
+Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString lastMonthNameLong();
 }
 }
 #endif // CONVERTSNIPPETVARIABLESUTIL_H

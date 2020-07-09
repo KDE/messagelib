@@ -101,6 +101,9 @@ QString ConvertSnippetVariablesJob::convertVariables(const QString &cmd, int &i,
     } else if (cmd.startsWith(QLatin1String("DAYOFWEEK"))) {
         i += strlen("DAYOFWEEK");
         result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfWeek());
+    } else if (cmd.startsWith(QLatin1String("LASTMONTHNAMELONG"))) {
+        i += strlen("LASTMONTHNAMELONG");
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::lastMonthNameLong());
     } else {
         result.append(c);
     }
