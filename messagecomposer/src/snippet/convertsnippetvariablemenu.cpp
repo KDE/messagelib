@@ -90,7 +90,7 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
         });
         mMenu->addMenu(attachmentMenuVariable);
         dateTimeMenuVariable = new QMenu(i18n("Date/Time"), mMenu);
-        dateTimeMenuVariable->addAction(i18n("Day Of Week"), this, [this]() {
+        dateTimeMenuVariable->addAction(i18n("Day Of Week (%1)", MessageComposer::ConvertSnippetVariablesUtil::dayOfWeek()), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Dow);
         });
         dateTimeMenuVariable->addAction(i18n("Date (%1)", MessageComposer::ConvertSnippetVariablesUtil::shortDate()), this, [this]() {
@@ -105,7 +105,7 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
         dateTimeMenuVariable->addAction(i18n("Time (%1)", MessageComposer::ConvertSnippetVariablesUtil::longTime()), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::TimeLong);
         });
-        dateTimeMenuVariable->addAction(i18n("Year"), this, [this]() {
+        dateTimeMenuVariable->addAction(i18n("Year (%1)", MessageComposer::ConvertSnippetVariablesUtil::year()), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::Year);
         });
     } else {
@@ -113,37 +113,37 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
         mMenu = dateTimeMenuVariable;
     }
 
-    dateTimeMenuVariable->addAction(i18n("Last Year"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Last Year (%1)", MessageComposer::ConvertSnippetVariablesUtil::lastYear()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::LastYear);
     });
-    dateTimeMenuVariable->addAction(i18n("Next Year"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Next Year (%1)", MessageComposer::ConvertSnippetVariablesUtil::nextYear()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::NextYear);
     });
-    dateTimeMenuVariable->addAction(i18n("Month Number"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Month Number (%1)", MessageComposer::ConvertSnippetVariablesUtil::monthNumber()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::MonthNumber);
     });
-    dateTimeMenuVariable->addAction(i18n("Day Of Month"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Day Of Month (%1)", MessageComposer::ConvertSnippetVariablesUtil::dayOfMonth()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayOfMonth);
     });
-    dateTimeMenuVariable->addAction(i18n("Week Number"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Week Number (%1)", MessageComposer::ConvertSnippetVariablesUtil::weekNumber()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::WeekNumber);
     });
-    dateTimeMenuVariable->addAction(i18n("Month Name Short"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Month Name Short (%1)", MessageComposer::ConvertSnippetVariablesUtil::monthNameShort()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::MonthNameShort);
     });
-    dateTimeMenuVariable->addAction(i18n("Month Name Long"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Month Name Long (%1)", MessageComposer::ConvertSnippetVariablesUtil::monthNameLong()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::MonthNameLong);
     });
-    dateTimeMenuVariable->addAction(i18n("Day Of Week"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Day Of Week (%1)", MessageComposer::ConvertSnippetVariablesUtil::dayOfWeek()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayOfWeek);
     });
-    dateTimeMenuVariable->addAction(i18n("Day Of Week Name Short"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Day Of Week Name Short (%1)", MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameShort()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayOfWeekNameShort);
     });
-    dateTimeMenuVariable->addAction(i18n("Day Of Week Name Long"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Day Of Week Name Long (%1)", MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameLong()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::DayOfWeekNameLong);
     });
-    dateTimeMenuVariable->addAction(i18n("Year Last Month"), this, [this]() {
+    dateTimeMenuVariable->addAction(i18n("Year Last Month (%1)", MessageComposer::ConvertSnippetVariablesUtil::yearLastMonth()), this, [this]() {
         Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::YearLastMonth);
     });
     if (!onlyMenuForCustomizeAttachmentFileName) {

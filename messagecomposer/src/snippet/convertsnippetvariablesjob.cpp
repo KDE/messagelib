@@ -7,6 +7,7 @@
 #include "convertsnippetvariablesjob.h"
 #include "messagecomposer_debug.h"
 #include "composer/composerviewinterface.h"
+#include "snippet/convertsnippetvariablesutil.h"
 #include <TemplateParser/TemplatesUtil>
 #include <KEmailAddress>
 #include <QDate>
@@ -66,52 +67,40 @@ QString ConvertSnippetVariablesJob::convertVariables(const QString &cmd, int &i,
     QString result;
     if (cmd.startsWith(QLatin1String("LASTYEAR"))) {
         i += strlen("LASTYEAR");
-        const QDate date = QDate::currentDate();
-        result.append(QString::number(date.year() - 1));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::lastYear());
     } else if (cmd.startsWith(QLatin1String("NEXTYEAR"))) {
         i += strlen("NEXTYEAR");
-        const QDate date = QDate::currentDate();
-        result.append(QString::number(date.year() - 2));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::nextYear());
     } else if (cmd.startsWith(QLatin1String("MONTHNUMBER"))) {
         i += strlen("MONTHNUMBER");
-        const QDate date = QDate::currentDate();
-        result.append(QString::number(date.month()));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::monthNumber());
     } else if (cmd.startsWith(QLatin1String("DAYOFMONTH"))) {
         i += strlen("DAYOFMONTH");
-        const QDate date = QDate::currentDate();
-        result.append(QString::number(date.daysInMonth()));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfMonth());
     } else if (cmd.startsWith(QLatin1String("WEEKNUMBER"))) {
         i += strlen("WEEKNUMBER");
-        const QDate date = QDate::currentDate();
-        result.append(QString::number(date.weekNumber()));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::weekNumber());
     } else if (cmd.startsWith(QLatin1String("MONTHNAMESHORT"))) {
         i += strlen("MONTHNAMESHORT");
-        const QDate date = QDate::currentDate();
-        result.append(date.toString(QStringLiteral("MMM")));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::monthNameShort());
     } else if (cmd.startsWith(QLatin1String("MONTHNAMELONG"))) {
         i += strlen("MONTHNAMELONG");
-        const QDate date = QDate::currentDate();
-        result.append(date.toString(QStringLiteral("MMMM")));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::monthNameLong());
     } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMESHORT"))) {
         i += strlen("DAYOFWEEKNAMESHORT");
-        const QDate date = QDate::currentDate();
-        result.append(date.toString(QStringLiteral("ddd")));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameShort());
     } else if (cmd.startsWith(QLatin1String("DAYOFWEEKNAMELONG"))) {
         i += strlen("DAYOFWEEKNAMELONG");
-        const QDate date = QDate::currentDate();
-        result.append(date.toString(QStringLiteral("dddd")));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameLong());
     } else if (cmd.startsWith(QLatin1String("YEARLASTMONTH"))) {
         i += strlen("YEARLASTMONTH");
-        const QDate date = QDate::currentDate().addMonths(-1);
-        result.append(date.toString(QStringLiteral("yyyy-MMM")));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::yearLastMonth());
     } else if (cmd.startsWith(QLatin1String("YEAR"))) {
         i += strlen("YEAR");
-        const QDate date = QDate::currentDate();
-        result.append(QString::number(date.year()));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::year());
     } else if (cmd.startsWith(QLatin1String("DAYOFWEEK"))) {
         i += strlen("DAYOFWEEK");
-        const QDate date = QDate::currentDate();
-        result.append(QString::number(date.dayOfWeek()));
+        result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfWeek());
     } else {
         result.append(c);
     }

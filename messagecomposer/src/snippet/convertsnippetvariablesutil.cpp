@@ -115,3 +115,74 @@ QString MessageComposer::ConvertSnippetVariablesUtil::insertDayOfWeek()
     return str;
 }
 
+QString MessageComposer::ConvertSnippetVariablesUtil::lastYear()
+{
+    const QDate date = QDate::currentDate();
+    return QString::number(date.year() - 1);
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::nextYear()
+{
+    const QDate date = QDate::currentDate();
+    return QString::number(date.year() - 2);
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::monthNumber()
+{
+    const QDate date = QDate::currentDate();
+    return QString::number(date.month());
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::dayOfMonth()
+{
+    const QDate date = QDate::currentDate();
+    return QString::number(date.daysInMonth());
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::weekNumber()
+{
+    const QDate date = QDate::currentDate();
+    return QString::number(date.weekNumber());
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::monthNameShort()
+{
+    const QDate date = QDate::currentDate();
+    return date.toString(QStringLiteral("MMM"));
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::monthNameLong()
+{
+    const QDate date = QDate::currentDate();
+    return date.toString(QStringLiteral("MMMM"));
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameShort()
+{
+    const QDate date = QDate::currentDate();
+    return date.toString(QStringLiteral("ddd"));
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameLong()
+{
+    const QDate date = QDate::currentDate();
+    return date.toString(QStringLiteral("dddd"));
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::yearLastMonth()
+{
+    const QDate date = QDate::currentDate();
+    return date.toString(date.toString(QStringLiteral("yyyy-MMM")));
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::year()
+{
+    const QDate date = QDate::currentDate();
+    return date.toString(QString::number(date.year()));
+}
+
+QString MessageComposer::ConvertSnippetVariablesUtil::dayOfWeek()
+{
+    const QDate date = QDate::currentDate();
+    return date.toString(QString::number(date.dayOfWeek()));
+}
