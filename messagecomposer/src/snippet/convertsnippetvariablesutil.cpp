@@ -124,7 +124,7 @@ QString MessageComposer::ConvertSnippetVariablesUtil::lastYear()
 QString MessageComposer::ConvertSnippetVariablesUtil::nextYear()
 {
     const QDate date = QDate::currentDate();
-    return QString::number(date.year() - 2);
+    return QString::number(date.year() + 1);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::monthNumber()
