@@ -53,7 +53,7 @@ public:
 private:
     QVector<ViewerPluginInfo> mPluginList;
     QVector<PimCommon::PluginUtilData> mPluginDataList;
-    ViewerPluginManager *q;
+    ViewerPluginManager *const q;
 };
 
 namespace {

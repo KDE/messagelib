@@ -58,7 +58,7 @@ public:
 private:
     QVector<PluginEditorInfo> mPluginList;
     QVector<PimCommon::PluginUtilData> mPluginDataList;
-    PluginEditorManager *q;
+    PluginEditorManager *const q;
 };
 
 void PluginEditorManagerPrivate::initializePlugins()

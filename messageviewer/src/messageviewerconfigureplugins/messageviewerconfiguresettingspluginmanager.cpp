@@ -46,7 +46,7 @@ public:
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
     QVector<ConfigureSettingsPluginInfo> mPluginList;
-    MessageViewerConfigureSettingsPluginManager *q;
+    MessageViewerConfigureSettingsPluginManager *const q;
 };
 
 namespace {

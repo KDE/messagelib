@@ -55,7 +55,7 @@ public:
     PluginEditorConvertText *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
-    PluginEditorConvertTextManager *q;
+    PluginEditorConvertTextManager *const q;
 };
 
 QString PluginEditorConvertTextManagerPrivate::configGroupName() const

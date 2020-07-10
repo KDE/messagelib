@@ -56,7 +56,7 @@ public:
     PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
-    PluginEditorGrammarManager *q;
+    PluginEditorGrammarManager *const q;
 };
 
 QString PluginEditorGrammarManagerPrivate::configGroupName() const

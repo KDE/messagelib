@@ -55,7 +55,7 @@ public:
     PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
-    PluginEditorCheckBeforeSendManager *q;
+    PluginEditorCheckBeforeSendManager *const q;
 };
 
 QString PluginEditorCheckBeforeSendManagerPrivate::configGroupName() const

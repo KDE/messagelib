@@ -28,7 +28,7 @@ public:
 
     void handleMessages();
 
-    MarkMessageReadHandler *q;
+    MarkMessageReadHandler *const q;
     Akonadi::Item mItemQueue;
     QTimer mTimer;
 };

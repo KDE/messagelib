@@ -47,7 +47,7 @@ public:
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
     QVector<HeaderStylePluginInfo> mPluginList;
-    HeaderStylePluginManager *q;
+    HeaderStylePluginManager *const q;
 };
 
 namespace {

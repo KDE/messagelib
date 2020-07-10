@@ -57,7 +57,7 @@ public:
 private:
     QVector<MailNetworkUrlInterceptorPluginInfo> mPluginList;
     QVector<PimCommon::PluginUtilData> mPluginDataList;
-    NetworkUrlInterceptorPluginManager *q;
+    NetworkUrlInterceptorPluginManager *const q;
 };
 
 QString NetworkUrlInterceptorPluginManagerPrivate::configGroupName() const

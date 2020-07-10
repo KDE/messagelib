@@ -33,7 +33,7 @@ public:
     QFile mFile;
     uchar *mData = nullptr;
     QDateTime mMtime;
-    LocalDataBaseFile *q;
+    LocalDataBaseFile *const q;
     bool mValid = false;
 };
 

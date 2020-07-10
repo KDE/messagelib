@@ -55,7 +55,7 @@ public:
     PluginEditorInit *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
-    PluginEditorInitManager *q;
+    PluginEditorInitManager *const q;
 };
 
 QString PluginEditorInitManagerPrivate::configGroupName() const

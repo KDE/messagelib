@@ -28,7 +28,7 @@ public:
     void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority = 0);
     void appendFormattersForType(const QString &mimeType, QVector<const Interface::BodyPartFormatter *> &formatters);
 
-    BodyPartFormatterFactory *q;
+    BodyPartFormatterFactory *const q;
     struct FormatterInfo {
         const Interface::BodyPartFormatter *formatter = nullptr;
         int priority = 0;

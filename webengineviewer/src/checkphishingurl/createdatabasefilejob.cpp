@@ -30,7 +30,7 @@ public:
     WebEngineViewer::UpdateDataBaseInfo mInfoDataBase;
     QString mFileName;
     QFile mFile;
-    CreateDatabaseFileJob *q;
+    CreateDatabaseFileJob *const q;
 };
 
 void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Addition> &additionList)
