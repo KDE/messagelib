@@ -224,7 +224,6 @@ void EncryptJob::process()
     Q_ASSERT(proto);
 
     // for now just do the main recipients
-    QByteArray encryptedBody;
     QByteArray content;
     d->content->assemble();
     if (d->format & Kleo::InlineOpenPGPFormat) {
