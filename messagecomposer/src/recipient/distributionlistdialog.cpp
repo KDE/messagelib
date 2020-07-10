@@ -114,8 +114,8 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     QBoxLayout *topLayout = new QVBoxLayout(topFrame);
     topLayout->setContentsMargins(0, 0, 0, 0);
 
-    QBoxLayout *titleLayout = new QHBoxLayout();
-    topLayout->addItem(titleLayout);
+    QBoxLayout *titleLayout = new QHBoxLayout;
+    topLayout->addLayout(titleLayout);
 
     QLabel *label = new QLabel(
         i18nc("@label:textbox Name of the distribution list.", "&Name:"), topFrame);
