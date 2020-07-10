@@ -273,7 +273,7 @@ private:
     friend class ::Kleo::KeyResolver::SigningPreferenceCounter;
 
     struct Private;
-    Private *d;
+    Private *const d;
 
     bool mEncryptToSelf;
     const bool mShowApprovalDialog : 1;

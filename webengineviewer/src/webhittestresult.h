@@ -60,7 +60,7 @@ public:
 
     WebHitTestResult &operator=(const WebHitTestResult &webHit);
 private:
-    WebHitTestResultPrivate *d;
+    WebHitTestResultPrivate *const d;
 };
 }
 Q_DECLARE_METATYPE(WebEngineViewer::WebHitTestResult)

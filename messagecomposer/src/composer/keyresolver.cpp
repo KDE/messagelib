@@ -615,7 +615,8 @@ struct Q_DECL_HIDDEN Kleo::KeyResolver::Private {
 };
 
 Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int f, int encrWarnThresholdKey, int signWarnThresholdKey, int encrWarnThresholdRootCert, int signWarnThresholdRootCert, int encrWarnThresholdChainCert, int signWarnThresholdChainCert)
-    : mEncryptToSelf(encToSelf)
+    : d(new Private)
+    , mEncryptToSelf(encToSelf)
     , mShowApprovalDialog(showApproval)
     , mOpportunisticEncyption(oppEncryption)
     , mCryptoMessageFormats(f)
@@ -626,13 +627,11 @@ Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryp
     , mEncryptChainCertNearExpiryWarningThreshold(encrWarnThresholdChainCert)
     , mSigningChainCertNearExpiryWarningThreshold(signWarnThresholdChainCert)
 {
-    d = new Private();
 }
 
 Kleo::KeyResolver::~KeyResolver()
 {
     delete d;
-    d = nullptr;
 }
 
 Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const char *dontAskAgainName, bool mine, bool sign, bool ca, int recur_limit, const GpgME::Key &orig) const

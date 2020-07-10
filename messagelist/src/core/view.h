@@ -631,7 +631,7 @@ protected Q_SLOTS:
 
 private:
     class Private;
-    Private *d;
+    Private *const d;
 }; // class View
 } // namespace Core
 } // namespace MessageList

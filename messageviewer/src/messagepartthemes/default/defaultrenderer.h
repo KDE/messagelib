@@ -44,7 +44,7 @@ public:
     void render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *writer);
     void setShowEncryptionDetails(bool showEncryptionDetails);
 private:
-    DefaultRendererPrivate *d;
+    DefaultRendererPrivate *const d;
 };
 }
 #endif //__MESSAGEVIEWER_MAILRENDERER_H

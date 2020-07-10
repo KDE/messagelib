@@ -137,7 +137,6 @@ View::~View()
     d->mAggregation = nullptr;
 
     delete d;
-    d = nullptr;
 }
 
 Model *View::model() const

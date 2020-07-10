@@ -44,7 +44,7 @@ protected:
 
 private:
     Q_DISABLE_COPY(BodyPartFormatterFactory)
-    BodyPartFormatterFactoryPrivate *d;
+    BodyPartFormatterFactoryPrivate *const d;
     friend class BodyPartFormatterFactoryPrivate;
 };
 }
