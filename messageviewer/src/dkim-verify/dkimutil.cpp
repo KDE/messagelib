@@ -173,6 +173,9 @@ QString MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(Message
     case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps:
         methodStr = QStringLiteral("dkim-atps");
         break;
+    case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Auth:
+        methodStr = QStringLiteral("auth");
+        break;
     }
     return methodStr;
 }
@@ -187,6 +190,8 @@ MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod MessageViewer::DKIMUt
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc;
     } else if (str == QLatin1String("dkim-atps")) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps;
+    } else if (str == QLatin1String("auth")) {
+        return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Auth;
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Undefined type " << str;
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown;

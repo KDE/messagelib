@@ -74,6 +74,7 @@ public:
         Spf = 2,
         Dmarc = 3,
         Dkimatps = 4,
+        Auth =5
     };
     Q_ENUM(AuthenticationMethod)
 
