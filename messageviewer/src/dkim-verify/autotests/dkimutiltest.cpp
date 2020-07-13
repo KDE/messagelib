@@ -72,6 +72,7 @@ void DKIMUtilTest::shouldConvertAuthenticationMethodEnumToString()
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Spf), QStringLiteral("spf"));
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc), QStringLiteral("dmarc"));
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps), QStringLiteral("dkim-atps"));
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Auth), QStringLiteral("auth"));
 }
 
 void DKIMUtilTest::shouldConvertAuthenticationMethodToString()
@@ -80,6 +81,7 @@ void DKIMUtilTest::shouldConvertAuthenticationMethodToString()
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QStringLiteral("spf")), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Spf);
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QStringLiteral("dmarc")), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc);
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QStringLiteral("dkim-atps")), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps);
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QStringLiteral("auth")), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Auth);
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QStringLiteral("sdfsdf")), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown);
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(QString()), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown);
 }
