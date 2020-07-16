@@ -189,7 +189,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
 
     mDkimWidgetInfo = new MessageViewer::DKIMWidgetInfo(mMainWindow);
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
-        MailWebEngineView::initializeCustomScheme();
+        //MailWebEngineView::initializeCustomScheme();
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::MessageDisplayFormatAttribute>();
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::ScamAttribute>();
     }
