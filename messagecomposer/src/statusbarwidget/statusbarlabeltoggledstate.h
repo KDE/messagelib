@@ -23,7 +23,7 @@ public:
 
     void setToggleMode(bool state);
 
-    bool toggleMode() const;
+    Q_REQUIRED_RESULT bool toggleMode() const;
 
     void setStateString(const QString &toggled, const QString &untoggled);
 Q_SIGNALS:
