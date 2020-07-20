@@ -347,7 +347,10 @@ void ComposerViewBase::send(MessageComposer::MessageSender::SendMethod method, M
     }
 
     if (mSendMethod == MessageComposer::MessageSender::SendImmediate && checkMailDispatcher) {
-        MessageComposer::Util::sendMailDispatcherIsOnline(m_parentWidget);
+        if (!MessageComposer::Util::sendMailDispatcherIsOnline(m_parentWidget)) {
+            qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to set sendmaildispatcher online. Please verify it";
+            return;
+        }
     }
 
     readyForSending();
