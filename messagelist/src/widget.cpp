@@ -46,9 +46,6 @@ class Q_DECL_HIDDEN Widget::Private
 public:
     Private(Widget *owner)
         : q(owner)
-        , mLastSelectedMessage(-1)
-        , mXmlGuiClient(nullptr)
-        , mMonitor(nullptr)
     {
     }
 
@@ -58,7 +55,7 @@ public:
 
     Widget *const q;
 
-    int mLastSelectedMessage;
+    int mLastSelectedMessage = -1;
     KXMLGUIClient *mXmlGuiClient = nullptr;
     QModelIndex mGroupHeaderItemIndex;
     Akonadi::Monitor *mMonitor = nullptr;
