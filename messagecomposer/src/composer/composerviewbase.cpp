@@ -35,8 +35,13 @@
 
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
+#include <kguiaddons_version.h>
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
 #include <Libkdepim/KCursorSaver>
+#endif
+#else
+#include <KCursorSaver>
 #endif
 #include <Sonnet/DictionaryComboBox>
 #include <KIdentityManagement/Identity>
@@ -290,10 +295,13 @@ void ComposerViewBase::send(MessageComposer::MessageSender::SendMethod method, M
     mSendMethod = method;
     mSaveIn = saveIn;
 
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
-    KPIM::KCursorSaver busy(KPIM::KBusyPtr::busy());
+    const KPIM::KCursorSaver saver(Qt::ArrowCursor);
 #endif
-
+#else
+    KCursorSaver saver(Qt::WaitCursor);
+#endif
     const KIdentityManagement::Identity identity = identityManager()->identityForUoid(m_identityCombo->currentIdentity());
 
     if (identity.attachVcard() && m_attachmentController->attachOwnVcard()) {
@@ -1814,8 +1822,12 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
     case Kleo::Ask:
     {
         // the user wants to be asked or has to be asked
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
-        KPIM::KCursorSaver busy(KPIM::KBusyPtr::busy());
+        const KPIM::KCursorSaver saver(Qt::ArrowCursor);
+#endif
+#else
+        KCursorSaver saver(Qt::WaitCursor);
 #endif
         const QString msg = i18n("Examination of the recipient's signing preferences "
                                  "yielded that you be asked whether or not to sign "
@@ -1844,8 +1856,12 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
     case Kleo::Conflict:
     {
         // warn the user that there are conflicting signing preferences
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
-        KPIM::KCursorSaver busy(KPIM::KBusyPtr::busy());
+        const KPIM::KCursorSaver saver(Qt::ArrowCursor);
+#endif
+#else
+        KCursorSaver saver(Qt::WaitCursor);
 #endif
         const QString msg = i18n("There are conflicting signing preferences "
                                  "for these recipients.\n"
@@ -1872,8 +1888,12 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
     }
     case Kleo::Impossible:
     {
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
-        KPIM::KCursorSaver busy(KPIM::KBusyPtr::busy());
+        const KPIM::KCursorSaver saver(Qt::ArrowCursor);
+#endif
+#else
+        KCursorSaver saver(Qt::WaitCursor);
 #endif
         const QString msg = i18n("You have requested to sign this message, "
                                  "but no valid signing keys have been configured "
@@ -1893,8 +1913,12 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
 
     if (!sign || !doSignCompletely) {
         if (MessageComposer::MessageComposerSettings::self()->cryptoWarningUnsigned()) {
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
-            KPIM::KCursorSaver busy(KPIM::KBusyPtr::busy());
+            const KPIM::KCursorSaver saver(Qt::ArrowCursor);
+#endif
+#else
+            KCursorSaver saver(Qt::WaitCursor);
 #endif
             const QString msg = sign && !doSignCompletely
                                 ? i18n("Some parts of this message will not be signed.\n"
@@ -1949,8 +1973,12 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely, Kleo:
     case Kleo::Ask:
     {
         // the user wants to be asked or has to be asked
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
-        KPIM::KCursorSaver busy(KPIM::KBusyPtr::busy());
+        const KPIM::KCursorSaver saver(Qt::ArrowCursor);
+#endif
+#else
+        KCursorSaver saver(Qt::WaitCursor);
 #endif
         const QString msg = opportunistic
                             ? i18n("Valid trusted encryption keys were found for all recipients.\n"
@@ -1986,8 +2014,12 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely, Kleo:
     case Kleo::Conflict:
     {
         // warn the user that there are conflicting encryption preferences
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
-        KPIM::KCursorSaver busy(KPIM::KBusyPtr::busy());
+        const KPIM::KCursorSaver saver(Qt::ArrowCursor);
+#endif
+#else
+        KCursorSaver saver(Qt::WaitCursor);
 #endif
         const QString msg = i18n("There are conflicting encryption preferences "
                                  "for these recipients.\n"
@@ -2014,8 +2046,12 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely, Kleo:
     }
     case Kleo::Impossible:
     {
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
-        KPIM::KCursorSaver busy(KPIM::KBusyPtr::busy());
+        const KPIM::KCursorSaver saver(Qt::ArrowCursor);
+#endif
+#else
+        KCursorSaver saver(Qt::WaitCursor);
 #endif
         const QString msg = i18n("You have requested to encrypt this message, "
                                  "and to encrypt a copy to yourself, "
@@ -2036,8 +2072,12 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely, Kleo:
 
     if (!encrypt || !doEncryptCompletely) {
         if (MessageComposer::MessageComposerSettings::self()->cryptoWarningUnencrypted()) {
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
-            KPIM::KCursorSaver busy(KPIM::KBusyPtr::busy());
+            const KPIM::KCursorSaver saver(Qt::ArrowCursor);
+#endif
+#else
+            KCursorSaver saver(Qt::WaitCursor);
 #endif
             const QString msg = !doEncryptCompletely
                                 ? i18n("Some parts of this message will not be encrypted.\n"

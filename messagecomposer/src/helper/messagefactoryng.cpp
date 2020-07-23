@@ -14,8 +14,13 @@
 #include "MessageComposer/Util"
 
 #include <AkonadiCore/item.h>
+#include <kguiaddons_version.h>
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
 #include <Libkdepim/KCursorSaver>
+#endif
+#else
+#include <KCursorSaver>
 #endif
 #include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 #include <KIdentityManagement/kidentitymanagement/identity.h>
@@ -386,8 +391,12 @@ QPair< KMime::Message::Ptr, QVector< KMime::Content * > > MessageFactoryNG::crea
     }
 
     MessageHelper::setAutomaticFields(msg, true);
+#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
 #ifndef QT_NO_CURSOR
-    KPIM::KCursorSaver busy(KPIM::KBusyPtr::busy());
+    const KPIM::KCursorSaver saver(Qt::ArrowCursor);
+#endif
+#else
+    KCursorSaver saver(Qt::WaitCursor);
 #endif
     if (numberOfItems == 0) {
         attachments << createForwardAttachmentMessage(mOrigMsg);

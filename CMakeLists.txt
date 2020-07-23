@@ -80,6 +80,7 @@ find_package(KF5WidgetsAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5XmlGui ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5SyntaxHighlighting ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5DBusAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5GuiAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(Grantlee5 "5.2" CONFIG REQUIRED) #Use KF5_VERSION in the future
 

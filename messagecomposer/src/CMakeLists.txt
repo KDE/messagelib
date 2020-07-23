@@ -241,6 +241,7 @@ target_link_libraries(KF5MessageComposer
     KF5::Archive
     KF5::Contacts
     KF5::SonnetCore
+    KF5::GuiAddons
     )
 
 target_include_directories(KF5MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messagecomposer>")
