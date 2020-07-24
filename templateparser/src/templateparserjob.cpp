@@ -238,6 +238,11 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
     d->mOtp->parseObjectTree(d->mOrigMsg.data());
 
     const auto mp = toplevelTextNode(d->mOtp->parsedPart());
+    if (!mp) {
+        qCWarning(TEMPLATEPARSER_LOG) << "Invalid message! mp is null ";
+        Q_EMIT parsingFailed();
+        return;
+    }
 
     QString plainText = mp->plaintextContent();
     QString htmlElement;
