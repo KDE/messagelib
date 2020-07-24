@@ -24,6 +24,7 @@ void MessageFactoryReplyJob::start()
 {
     TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(mMsg, (mReplyAll ? TemplateParser::TemplateParserJob::ReplyAll : TemplateParser::TemplateParserJob::Reply), this);
     connect(parser, &TemplateParser::TemplateParserJob::parsingDone, this, &MessageFactoryReplyJob::slotReplyDone);
+    connect(parser, &TemplateParser::TemplateParserJob::parsingFailed, this, &MessageFactoryReplyJob::slotReplyDone);
     parser->setIdentityManager(mIdentityManager);
     parser->setCharsets(MessageComposerSettings::self()->preferredCharsets());
     parser->setWordWrap(MessageComposerSettings::wordWrap(), MessageComposerSettings::lineWrapWidth());

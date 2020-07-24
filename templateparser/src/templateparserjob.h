@@ -200,6 +200,7 @@ public:
 
 Q_SIGNALS:
     void parsingDone(bool cursorPositionWasSet);
+    void parsingFailed();
 
 private:
     void slotExtractInfoDone(const TemplateParserExtractHtmlInfoResult &result);
