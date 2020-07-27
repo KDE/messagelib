@@ -2334,7 +2334,9 @@ void ViewerPrivate::slotDelayPrintPreview()
     connect(dialog, &QPrintPreviewDialog::paintRequested, this, [=](QPrinter *printing) {
         QApplication::setOverrideCursor(Qt::WaitCursor);
 
-        mViewer->execPrintPreviewPage(printing, 10000); // 10 seconds
+        if (!mViewer->execPrintPreviewPage(printing, 10000)) { // 10 seconds
+            qCWarning(MESSAGEVIEWER_LOG) << " Impossible to generate preview";
+        }
         QApplication::restoreOverrideCursor();
     });
 
@@ -3154,7 +3156,7 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
                 connect(mDkimViewerMenu, &DKIMViewerMenu::recheckSignature, this, [this]() {
                     MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
                 });
-                connect(mDkimViewerMenu, &DKIMViewerMenu::updateDkimKey, this, [this]() {
+                connect(mDkimViewerMenu, &DKIMViewerMenu::updateDkimKey, this, []() {
                     qWarning() <<" Unimplemented yet updateDkimKey";
                 });
                 connect(mDkimViewerMenu, &DKIMViewerMenu::showDkimRules, this, [this]() {

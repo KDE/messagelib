@@ -58,8 +58,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
 
         const KContacts::Addressee addressee = searchJob->contacts().at(0);
         processAddress(addressee);
-        searchPhoto(searchJob->contacts());
-        if (!mPhoto.isEmpty()) {
+        if (!searchPhoto(searchJob->contacts())) {
             //We have a data raw => we can update message
             if (mPhoto.isIntern()) {
                 Q_EMIT update(MimeTreeParser::Delayed);
