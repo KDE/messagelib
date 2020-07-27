@@ -34,6 +34,7 @@ set(LIBKDEPIM_LIB_VERSION "5.15.40")
 set(LIBKLEO_LIB_VERSION "5.15.40")
 set(PIMCOMMON_LIB_VERSION "5.15.40")
 set(GPGME_LIB_VERSION "1.11.1")
+set(AKONADI_SEARCH_VERSION "5.15.40")
 
 set(ECM_VERSION ${KF5_MIN_VERSION})
 
@@ -98,8 +99,7 @@ find_package(KF5Mbox ${KMBOX_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimCommonAkonadi ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
-
-find_package(KF5AkonadiSearch "5.15.40" CONFIG REQUIRED)
+find_package(KF5AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG REQUIRED)
 set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://kde.org/" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
 
 set(CMAKE_CXX_STANDARD 14)
