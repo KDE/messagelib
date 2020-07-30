@@ -58,7 +58,7 @@ void WebEnginePartHtmlWriter::end()
         insertBodyStyle();
         mStyleBody.clear();
     }
-    if (data().size() > 2000000000) {
+    if (data().size() > 2000000) {
         qDebug() << " load big message ";
         mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX")+ QLatin1String(".html"));
         mTempFile->open();
