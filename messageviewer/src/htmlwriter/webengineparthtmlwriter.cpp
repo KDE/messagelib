@@ -38,6 +38,7 @@ void WebEnginePartHtmlWriter::begin()
     }
 
     delete mTempFile;
+    mTempFile = nullptr;
 
     BufferedHtmlWriter::begin();
     MessageViewer::WebEngineEmbedPart::self()->clear();
