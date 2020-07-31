@@ -63,30 +63,32 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
             if (mPhoto.isIntern()) {
                 Q_EMIT update(MimeTreeParser::Delayed);
             } else {
-                QUrl url = QUrl::fromUserInput(mPhoto.url(), QString(), QUrl::AssumeLocalFile);
-                QImage image;
-                bool ok = false;
+                const QUrl url = QUrl::fromUserInput(mPhoto.url(), QString(), QUrl::AssumeLocalFile);
+                if (!url.isEmpty()) {
+                    bool ok = false;
+                    QImage image;
 
-                if (url.isLocalFile()) {
-                    if (image.load(url.toLocalFile())) {
-                        ok = true;
-                    }
-                } else {
-                    QByteArray imageData;
-                    KIO::TransferJob *job = KIO::get(url, KIO::NoReload);
-                    QObject::connect(job, &KIO::TransferJob::data,
-                                     [&imageData](KIO::Job *, const QByteArray &data) {
-                        imageData.append(data);
-                    });
-                    if (job->exec()) {
-                        if (image.loadFromData(imageData)) {
+                    if (url.isLocalFile()) {
+                        if (image.load(url.toLocalFile())) {
                             ok = true;
                         }
+                    } else {
+                        QByteArray imageData;
+                        KIO::TransferJob *job = KIO::get(url, KIO::NoReload);
+                        QObject::connect(job, &KIO::TransferJob::data,
+                                         [&imageData](KIO::Job *, const QByteArray &data) {
+                            imageData.append(data);
+                        });
+                        if (job->exec()) {
+                            if (image.loadFromData(imageData)) {
+                                ok = true;
+                            }
+                        }
                     }
-                }
-                if (ok) {
-                    mImageFromUrl = image;
-                    Q_EMIT update(MimeTreeParser::Delayed);
+                    if (ok) {
+                        mImageFromUrl = image;
+                        Q_EMIT update(MimeTreeParser::Delayed);
+                    }
                 }
             }
         }
