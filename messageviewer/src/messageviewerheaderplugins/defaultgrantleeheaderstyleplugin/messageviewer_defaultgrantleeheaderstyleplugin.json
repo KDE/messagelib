@@ -5,6 +5,7 @@
         "Description[ca@valencia]": "Aquest connector proporciona una capçalera «Grantlee» predeterminada per al correu.",
         "Description[ca]": "Aquest connector proporciona una capçalera «Grantlee» predeterminada per al correu.",
         "Description[cs]": "Tento modul poskytuje výchozí hlavičku e-mailu Grantlee.",
+        "Description[da]": "Dette plugin leverer en standard Grantlee-mail-header.",
         "Description[de]": "Mit diesem Modul können Sie ein Vorspann-Design „Standard-Grantlee“ definieren",
         "Description[en_GB]": "This plugin provides a default Grantlee mail header.",
         "Description[es]": "Este complemento proporciona un encabezado de correo predeterminado Grantlee.",
