@@ -2441,7 +2441,7 @@ bool View::event(QEvent *e)
                 "<nobr>%2</nobr>" \
                 "</td>" \
                 "</tr>"
-                ).arg(darkerColorName).arg(statsText).arg(textDirection);
+                ).arg(darkerColorName, statsText, textDirection);
         }
 
         break;

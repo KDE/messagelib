@@ -81,7 +81,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
         mVersion = 1;
     }
     if (mQuery.isEmpty()) {
-        mQuery = QLatin1String("dns/txt");
+        mQuery = QStringLiteral("dns/txt");
     }
     if (mAgentOrUserIdentifier.isEmpty()) {
         mAgentOrUserIdentifier = QLatin1Char('@') + mDomain;

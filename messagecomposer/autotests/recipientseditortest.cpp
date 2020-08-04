@@ -59,7 +59,7 @@ void RecipientsEditorTest::test_addLineOnCommaPress()
     QTest::keyClicks(lineEdit, QStringLiteral("\"Vratil, Daniel\" <dvratil@kde.org>"), Qt::NoModifier, 10);
 
     QCOMPARE(editor.recipients().size(), 1);
-    QCOMPARE(editor.recipients().first()->email(), QStringLiteral("\"Vratil, Daniel\" <dvratil@kde.org>"));
+    QCOMPARE(editor.recipients().constFirst()->email(), QStringLiteral("\"Vratil, Daniel\" <dvratil@kde.org>"));
 
     QTest::keyClick(lineEdit, Qt::Key_Comma, Qt::NoModifier, 0);
 

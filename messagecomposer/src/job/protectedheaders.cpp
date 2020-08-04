@@ -94,7 +94,7 @@ void ProtectedHeadersJob::doStart()
             // and we want to use that
             if (!d->content || !d->content->hasContent()) {
                 Q_ASSERT(d->subjobContents.size() == 1);
-                d->content = d->subjobContents.first();
+                d->content = d->subjobContents.constFirst();
             }
 
             mixedPart->addContent(d->content);
@@ -114,7 +114,7 @@ void ProtectedHeadersJob::process()
     // and we want to use that
     if (!d->content || !d->content->hasContent()) {
         Q_ASSERT(d->subjobContents.size() == 1);
-        d->content = d->subjobContents.first();
+        d->content = d->subjobContents.constFirst();
     }
 
     auto subject = d->skeletonMessage->header<KMime::Headers::Subject>();

@@ -173,7 +173,7 @@ void AttachmentControllerBase::Private::compressJobResult(KJob *job)
         return;
     }
 
-    AttachmentCompressJob *ajob = dynamic_cast<AttachmentCompressJob *>(job);
+    AttachmentCompressJob *ajob = qobject_cast<AttachmentCompressJob *>(job);
     Q_ASSERT(ajob);
     AttachmentPart::Ptr originalPart = ajob->originalPart();
     AttachmentPart::Ptr compressedPart = ajob->compressedPart();
@@ -207,7 +207,7 @@ void AttachmentControllerBase::Private::loadJobResult(KJob *job)
         return;
     }
 
-    AttachmentLoadJob *ajob = dynamic_cast<AttachmentLoadJob *>(job);
+    AttachmentLoadJob *ajob = qobject_cast<AttachmentLoadJob *>(job);
     Q_ASSERT(ajob);
     AttachmentPart::Ptr part = ajob->attachmentPart();
     q->addAttachment(part);
@@ -238,7 +238,7 @@ void AttachmentControllerBase::Private::editSelectedAttachment()
 void AttachmentControllerBase::Private::editSelectedAttachmentWith()
 {
     Q_ASSERT(selectedParts.count() == 1);
-    q->editAttachment(selectedParts.first(), MessageViewer::EditorWatcher::OpenWithDialog);
+    q->editAttachment(selectedParts.constFirst(), MessageViewer::EditorWatcher::OpenWithDialog);
 }
 
 void AttachmentControllerBase::Private::removeSelectedAttachments()
@@ -279,7 +279,7 @@ void AttachmentControllerBase::Private::updateJobResult(KJob *job)
         KMessageBox::sorry(wParent, job->errorString(), i18n("Failed to reload attachment"));
         return;
     }
-    AttachmentUpdateJob *ajob = dynamic_cast<AttachmentUpdateJob *>(job);
+    AttachmentUpdateJob *ajob = qobject_cast<AttachmentUpdateJob *>(job);
     Q_ASSERT(ajob);
     AttachmentPart::Ptr originalPart = ajob->originalPart();
     AttachmentPart::Ptr updatedPart = ajob->updatedPart();

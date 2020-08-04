@@ -188,7 +188,7 @@ void SignEncryptJob::slotResult(KJob *job)
     if (subjobs().size() == 2) {
         auto pjob = static_cast<ProtectedHeadersJob *>(subjobs().last());
         if (pjob) {
-            auto cjob = dynamic_cast<ContentJobBase *>(job);
+            auto cjob = qobject_cast<ContentJobBase *>(job);
             Q_ASSERT(cjob);
             pjob->setContent(cjob->content());
         }

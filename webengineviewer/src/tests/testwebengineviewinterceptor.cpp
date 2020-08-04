@@ -61,7 +61,7 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
             } else if (urlRequestUrl.url() == QLatin1String("cid:local_src")) {
                 qDebug() << " from local file";
 #ifdef LOAD_FROM_FILE
-                QImage image(QLatin1String(PICSRC "/audio-volume-medium.png"));
+                QImage image(QStringLiteral(PICSRC "/audio-volume-medium.png"));
                 QByteArray ba;
                 QBuffer buf(&ba);
                 image.save(&buf, "png");

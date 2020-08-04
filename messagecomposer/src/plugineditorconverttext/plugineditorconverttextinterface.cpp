@@ -65,7 +65,7 @@ QVector<PluginActionType> PluginEditorConvertTextInterface::actionTypes() const
     return d->mActionTypes;
 }
 
-void PluginEditorConvertTextInterface::addActionType(const PluginActionType &type)
+void PluginEditorConvertTextInterface::addActionType(PluginActionType type)
 {
     d->mActionTypes += type;
 }

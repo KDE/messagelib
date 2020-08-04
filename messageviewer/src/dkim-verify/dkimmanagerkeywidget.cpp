@@ -98,6 +98,7 @@ void DKIMManagerKeyWidget::loadKeys()
 void DKIMManagerKeyWidget::saveKeys()
 {
     QVector<MessageViewer::KeyInfo> lst;
+    lst.reserve(mTreeWidget->topLevelItemCount());
     for (int i = 0, total = mTreeWidget->topLevelItemCount(); i < total; ++i) {
         QTreeWidgetItem *item = mTreeWidget->topLevelItem(i);
         const MessageViewer::KeyInfo info {item->text(2), item->text(1), item->text(0)};

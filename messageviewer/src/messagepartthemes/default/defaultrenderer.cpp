@@ -700,7 +700,8 @@ void DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp, HtmlW
 
     auto mode = mp->preferredMode();
     if (mode == MimeTreeParser::Util::MultipartPlain && mp->text().trimmed().isEmpty()) {
-        for (const auto m : mp->availableModes()) {
+        const auto availableModes = mp->availableModes();
+        for (const auto m : availableModes) {
             if (m != MimeTreeParser::Util::MultipartPlain) {
                 mode = m;
                 break;
