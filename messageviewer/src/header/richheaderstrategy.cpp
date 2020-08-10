@@ -6,7 +6,7 @@
 
     SPDX-FileCopyrightText: 2013-2020 Laurent Montel <montel@kde.org>
 
-    SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "richheaderstrategy.h"

@@ -4,7 +4,7 @@
     This file is part of KMail, the KDE mail client.
     SPDX-FileCopyrightText: 2003 Marc Mutz <mutz@kde.org>
 
-    SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "filehtmlwriter.h"

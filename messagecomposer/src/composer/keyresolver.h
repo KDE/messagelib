@@ -8,7 +8,7 @@
     Copyright (C) 2001,2002 the KPGP authors
     See file libkdenetwork/AUTHORS.kpgp for details
 
-    SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #ifndef MESSAGECOMPOSER_KLEO_KEYRESOLVER_H
