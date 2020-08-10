@@ -21,7 +21,6 @@
 #include <KIdentityManagement/IdentityManager>
 #include <KIdentityManagement/Identity>
 #include <QHostInfo>
-#include <QRegExp>
 #include <QRegularExpression>
 #include <QStringList>
 #include <QUrlQuery>
@@ -723,15 +722,16 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bo
     // construct a big regexp that
     // 1. is anchored to the beginning of str (sans whitespace)
     // 2. matches at least one of the part regexps in prefixRegExps
-    QString bigRegExp = QStringLiteral("^(?:\\s+|(?:%1))+\\s*")
-                        .arg(prefixRegExps.join(QStringLiteral(")|(?:")));
-    QRegExp rx(bigRegExp, Qt::CaseInsensitive);
+    const QString bigRegExp = QStringLiteral("^(?:\\s+|(?:%1))+\\s*")
+                              .arg(prefixRegExps.join(QStringLiteral(")|(?:")));
+    const QRegularExpression rx(bigRegExp, QRegularExpression::CaseInsensitiveOption);
     if (rx.isValid()) {
         QString tmp = str;
-        if (rx.indexIn(tmp) == 0) {
+        const QRegularExpressionMatch match = rx.match(tmp);
+        if (match.hasMatch()) {
             recognized = true;
             if (replace) {
-                return tmp.replace(0, rx.matchedLength(), newPrefix + QLatin1Char(' '));
+                return tmp.replace(0, match.capturedLength(0), newPrefix + QLatin1Char(' '));
             }
         }
     } else {
@@ -762,20 +762,18 @@ QString stripOffPrefixes(const QString &subject)
     // 2. matches at least one of the part regexps in prefixRegExps
     const QString bigRegExp = QStringLiteral("^(?:\\s+|(?:%1))+\\s*").arg(prefixRegExps.join(QStringLiteral(")|(?:")));
 
-    static QString regExpPattern;
-    static QRegExp regExp;
+    static QRegularExpression regex;
 
-    regExp.setCaseSensitivity(Qt::CaseInsensitive);
-    if (regExpPattern != bigRegExp) {
+    regex.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+    if (regex.pattern() != bigRegExp) {
         // the prefixes have changed, so update the regexp
-        regExpPattern = bigRegExp;
-        regExp.setPattern(regExpPattern);
+        regex.setPattern(bigRegExp);
     }
 
-    if (regExp.isValid()) {
-        QString tmp = subject;
-        if (regExp.indexIn(tmp) == 0) {
-            return tmp.remove(0, regExp.matchedLength());
+    if (regex.isValid()) {
+        QRegularExpressionMatch match = regex.match(subject);
+        if (match.hasMatch()) {
+            return subject.mid(match.capturedEnd(0));
         }
     } else {
         qCWarning(MESSAGECORE_LOG) << "bigRegExp = \""
