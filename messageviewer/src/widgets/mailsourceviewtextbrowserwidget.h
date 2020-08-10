@@ -5,7 +5,7 @@
  *  SPDX-FileCopyrightText: 2002-2003 Carsten Pfeiffer <pfeiffer@kde.org>
  *  SPDX-FileCopyrightText: 2003 Zack Rusin <zack@kde.org>
  *
- *  SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
+ *  SPDX-License-Identifier: GPL-2.0-or-later
  */
 #ifndef MAILSOURCEVIEWTEXTBROWSERWIDGET_H
 #define MAILSOURCEVIEWTEXTBROWSERWIDGET_H

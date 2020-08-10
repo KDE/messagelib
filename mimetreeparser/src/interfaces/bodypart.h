@@ -5,7 +5,7 @@
     SPDX-FileCopyrightText: 2004 Marc Mutz <mutz@kde.org>
     SPDX-FileCopyrightText: 2004 Ingo Kloecker <kloecker@kde.org>
 
-    SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #ifndef MIMETREEPARSER_INTERFACES_BODYPART_H

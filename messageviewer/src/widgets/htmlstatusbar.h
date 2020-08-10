@@ -5,7 +5,7 @@
     SPDX-FileCopyrightText: 2002 Ingo Kloecker <kloecker@kde.org>
     SPDX-FileCopyrightText: 2003 Marc Mutz <mutz@kde.org>
 
-    SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #ifndef _MESSAGEVIEWER_HTMLSTATUSBAR_H_
 #define _MESSAGEVIEWER_HTMLSTATUSBAR_H_

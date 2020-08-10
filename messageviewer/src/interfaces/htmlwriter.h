@@ -4,7 +4,7 @@
     This file is part of KMail's plugin interface.
     SPDX-FileCopyrightText: 2003 Marc Mutz <mutz@kde.org>
 
-    SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #ifndef MESSAGEVIEWER_INTERFACES_HTMLWRITER_H
