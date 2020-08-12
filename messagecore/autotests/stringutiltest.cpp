@@ -549,6 +549,92 @@ void StringUtilTest::test_stripOffMessagePrefix()
     QCOMPARE(subjectAfterStrip, result);
 }
 
+void StringUtilTest::test_replaceMessagePrefix_data()
+{
+    QTest::addColumn<QString>("subject");
+    QTest::addColumn<bool>("shouldReplace");
+    QTest::addColumn<QString>("newPrefix");
+    QTest::addColumn<QString>("expectedResult");
+
+    QTest::newRow("no previous prefix") << QStringLiteral("Hello World Subject")
+                                        << true << QStringLiteral("New_Prefix:")
+                                        << QStringLiteral("New_Prefix: Hello World Subject");
+
+    QTest::newRow("no previous prefix, no replace") << QStringLiteral("Hello World Subject")
+                                                    << false << QStringLiteral("New_Prefix:")
+                                                    << QStringLiteral("New_Prefix: Hello World Subject");
+
+    QTest::newRow("No default reply forward") << QStringLiteral("AA: Hello World Subject")
+                                              << true << QStringLiteral("New_Prefix:")
+                                              << QStringLiteral("New_Prefix: AA: Hello World Subject");
+
+    QTest::newRow("No default reply forward, no replace") << QStringLiteral("AA: Hello World Subject")
+                                                          << false << QStringLiteral("New_Prefix:")
+                                                          << QStringLiteral("New_Prefix: AA: Hello World Subject");
+
+    QTest::newRow("Default Reply Re:") << QStringLiteral("Re: Hello World Subject")
+                                       << true << QStringLiteral("New_Prefix:")
+                                       << QStringLiteral("New_Prefix: Hello World Subject");
+
+    QTest::newRow("Default Reply Re:, no replace") << QStringLiteral("Re: Hello World Subject")
+                                                   << false << QStringLiteral("New_Prefix:")
+                                                   << QStringLiteral("Re: Hello World Subject");
+
+    QTest::newRow("Default Reply FW:") << QStringLiteral("FW: Hello World Subject")
+                                       << true << QStringLiteral("New_Prefix:")
+                                       << QStringLiteral("New_Prefix: Hello World Subject");
+
+    QTest::newRow("Default Reply FW:, no replace") << QStringLiteral("FW: Hello World Subject")
+                                                   << false << QStringLiteral("New_Prefix:")
+                                                   << QStringLiteral("FW: Hello World Subject");
+
+    QTest::newRow("Default Reply FWD:") << QStringLiteral("FWD: Hello World Subject")
+                                        << true << QStringLiteral("New_Prefix:")
+                                        << QStringLiteral("New_Prefix: Hello World Subject");
+
+    QTest::newRow("Default Reply FWD:, no replace") << QStringLiteral("FWD: Hello World Subject")
+                                                    << false << QStringLiteral("New_Prefix:")
+                                                    << QStringLiteral("FWD: Hello World Subject");
+
+    QTest::newRow("Default Reply Re   :") << QStringLiteral("Re   : Hello World Subject")
+                                          << true << QStringLiteral("New_Prefix:")
+                                          << QStringLiteral("New_Prefix: Hello World Subject");
+
+    QTest::newRow("Default Reply Re   :, no replace") << QStringLiteral("Re   : Hello World Subject")
+                                                   << false << QStringLiteral("New_Prefix:")
+                                                   << QStringLiteral("Re   : Hello World Subject");
+
+    QTest::newRow("Default Reply Re1:") << QStringLiteral("Re1: Hello World Subject")
+                                      << true << QStringLiteral("New_Prefix:")
+                                      << QStringLiteral("New_Prefix: Hello World Subject");
+
+    QTest::newRow("Default Reply Re1:, no replace") << QStringLiteral("Re1: Hello World Subject")
+                                                    << false << QStringLiteral("New_Prefix:")
+                                                    << QStringLiteral("Re1: Hello World Subject");
+
+    QTest::newRow("Default Reply Re[2]:") << QStringLiteral("Re[2]: Hello World Subject")
+                                          << true << QStringLiteral("New_Prefix:")
+                                          << QStringLiteral("New_Prefix: Hello World Subject");
+
+    QTest::newRow("Default Reply Re[2]:, no replace") << QStringLiteral("Re[2]: Hello World Subject")
+                                                      << false << QStringLiteral("New_Prefix:")
+                                                      << QStringLiteral("Re[2]: Hello World Subject");
+}
+
+void StringUtilTest::test_replaceMessagePrefix()
+{
+    QFETCH(QString, subject);
+    QFETCH(bool, shouldReplace);
+    QFETCH(QString, newPrefix);
+    QFETCH(QString, expectedResult);
+
+    const QStringList regexPattern = {QStringLiteral("Re\\s*:"), QStringLiteral("Re\\[\\d+\\]:"),
+                                      QStringLiteral("Re\\d+:"), QStringLiteral("Fwd:"), QStringLiteral("FW:")};
+
+    const QString str = StringUtil::replacePrefixes(subject, regexPattern, shouldReplace, newPrefix);
+    QCOMPARE(str, expectedResult);
+}
+
 void StringUtilTest::test_formatQuotePrefix_data()
 {
     QTest::addColumn<QString>("quotePattern");

@@ -20,6 +20,8 @@ private Q_SLOTS:
     void test_parseMailtoUrl_data();
     void test_parseMailtoUrl();
     void test_parseMailtoUrlExtra();
+    void test_replaceMessagePrefix_data();
+    void test_replaceMessagePrefix();
     void test_stripOffMessagePrefix_data();
     void test_stripOffMessagePrefix();
     void test_formatQuotePrefix_data();
