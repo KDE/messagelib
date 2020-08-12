@@ -1544,16 +1544,19 @@ QString TemplateParserJob::plainTextToHtml(const QString &body)
 
 void TemplateParserJob::makeValidHtml(QString &body)
 {
-    QRegExp regEx;
-    regEx.setMinimal(true);
-    regEx.setPattern(QStringLiteral("<html.*>"));
+    if (body.isEmpty()) {
+        return;
+    }
 
-    if (!body.isEmpty() && !body.contains(regEx)) {
-        regEx.setPattern(QStringLiteral("<body.*>"));
+    QRegularExpression regEx;
+
+    regEx.setPattern(QStringLiteral("<html.*?>"));
+    if (!body.contains(regEx)) {
+        regEx.setPattern(QStringLiteral("<body.*?>"));
         if (!body.contains(regEx)) {
             body = QLatin1String("<body>") + body + QLatin1String("<br/></body>");
         }
-        regEx.setPattern(QStringLiteral("<head.*>"));
+        regEx.setPattern(QStringLiteral("<head.*?>"));
         if (!body.contains(regEx)) {
             body = QLatin1String("<head>") + d->mHeadElement + QLatin1String("</head>") + body;
         }
