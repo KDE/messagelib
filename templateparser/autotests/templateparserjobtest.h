@@ -49,6 +49,9 @@ private Q_SLOTS:
 
     void test_processWithTemplatesForContentOtherTimeZone();
     void test_processWithTemplatesForContentOtherTimeZone_data();
+
+    void test_makeValidHtml_data();
+    void test_makeValidHtml();
 };
 
 #endif // TEMPLATEPARSERJOBTEST_H

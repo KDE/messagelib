@@ -566,4 +566,36 @@ void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone()
     QCOMPARE(spy.count(), 1);
 }
 
+void TemplateParserJobTest::test_makeValidHtml_data()
+{
+    QTest::addColumn<QString>("message");
+    QTest::addColumn<QString>("expected");
+
+    QTest::newRow("plain text") << QStringLiteral("Some text\n-- \nSignature")
+                                << QStringLiteral("<html><head></head><body>Some text\n"
+                                                  "-- \nSignature<br/></body></html>");
+
+    QTest::newRow("existing HTML tag") << QStringLiteral("<html><body>Some text\n-- \nSignature</body></html>")
+                                       << QStringLiteral("<html><body>Some text\n-- \nSignature</body></html>");
+
+    QTest::newRow("existing body tag, no html") << QStringLiteral("<body>Some text\n-- \nSignature</body>")
+                                                << QStringLiteral("<html><head></head><body>Some text\n"
+                                                                  "-- \nSignature</body></html>");
+
+}
+
+void TemplateParserJobTest::test_makeValidHtml()
+{
+    QFETCH(QString, message);
+    QFETCH(QString, expected);
+
+    KMime::Message::Ptr msg(new KMime::Message);
+
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
+    QString result = message;
+    parser->makeValidHtml(result);
+
+    QCOMPARE(result, expected);
+}
+
 QTEST_MAIN(TemplateParserJobTest)
