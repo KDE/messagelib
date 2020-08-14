@@ -40,7 +40,6 @@
 #include <KEncodingFileDialog>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KMimeTypeTrader>
 #include <QPushButton>
 #include <KIO/ApplicationLauncherJob>
 #include <QTemporaryFile>

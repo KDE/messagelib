@@ -13,7 +13,7 @@
 #include <KMessageBox>
 #include <KOpenWithDialog>
 #include <KProcess>
-#include <KMimeTypeTrader>
+#include <KApplicationTrader>
 #include <KIO/DesktopExecParser>
 
 #include <QSocketNotifier>
@@ -55,8 +55,7 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     // find an editor
     QList<QUrl> list;
     list.append(mUrl);
-    KService::Ptr offer
-        = KMimeTypeTrader::self()->preferredService(mMimeType, QStringLiteral("Application"));
+    KService::Ptr offer = KApplicationTrader::preferredService(mMimeType);
     if ((mOpenWithOption == OpenWithDialog) || !offer) {
         std::unique_ptr<KOpenWithDialog> dlg(new KOpenWithDialog(list, i18n("Edit with:"),
                                                                  QString(), mParentWidget));

@@ -45,7 +45,7 @@
 #include <QMenu>
 #include <KMessageBox>
 #include <KMimeTypeChooser>
-#include <KMimeTypeTrader>
+#include <KApplicationTrader>
 #include <kio_version.h>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
@@ -320,7 +320,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
             url.isLocalFile() ? url.toLocalFile() : url.fileName());
     }
     KService::Ptr offer
-        = KMimeTypeTrader::self()->preferredService(mimetype.name(), QStringLiteral("Application"));
+        = KApplicationTrader::preferredService(mimetype.name());
 
     const QString filenameText = MimeTreeParser::NodeHelper::fileName(node);
 
@@ -662,8 +662,7 @@ KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
         /*TODO(Andris) port when on-demand loading is done   && msgPart.isComplete() */
         mimetype = MimeTreeParser::Util::mimetype(fileName);
     }
-    return KMimeTypeTrader::self()->preferredService(mimetype.name(),
-                                                     QStringLiteral("Application"));
+    return KApplicationTrader::preferredService(mimetype.name());
 }
 
 KMime::Content::List ViewerPrivate::selectedContents() const
