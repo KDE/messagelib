@@ -517,4 +517,43 @@ void RichTextComposerNgTest::shouldLoadSignatureFromCommand()
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
+void RichTextComposerNgTest::fixHtmlFontSizeTest()
+{
+    MessageComposer::RichTextComposerNg richtextComposerNg;
+    QString str = QStringLiteral(
+        "<span style=\"color: green; font-size: 10pt;\">int font</span> size\n"
+        "<span style=\"font-size: 10.8pt; font-family: foo;\">double font</span> size\n"
+        "<span style=\"font-size: 15,2pt;\">invalid font</span> size, left as is\n");
+
+    richtextComposerNg.fixHtmlFontSize(str);
+    const QString expected(QStringLiteral(
+        "<span style=\"color: green; font-size:0.83em;\">int font</span> size\n"
+        "<span style=\"font-size:0.9em; font-family: foo;\">double font</span> size\n"
+        "<span style=\"font-size: 15,2pt;\">invalid font</span> size, left as is\n"));
+
+    QCOMPARE(str, expected);
+}
+
+void RichTextComposerNgTest::toCleanHtmlRegexTest()
+{
+    MessageComposer::RichTextComposerNg richtextComposerNg;
+    richtextComposerNg.setHtml(QStringLiteral(
+        "<p style=\"-qt-paragraph-type:empty\"></p>\n"
+        "<p>some text</p>\n"
+        "<p style=\"-qt-paragraph-type:empty\"></p>\n"));
+
+    const QString result = richtextComposerNg.toCleanHtml();
+    const int idx = result.indexOf(QStringLiteral("<p style=\"-qt-paragraph-type:empty"));
+    // Remove the XHTML DOCTYPE and <style> parts as they differ
+    // based on the fonts on the system
+    const QString resultStripped = result.mid(idx);
+
+    const QString expected = QStringLiteral(
+        "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; \">&nbsp;</p>\n"
+        "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">some text</p>\n"
+        "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; \">&nbsp;</p></body></html>");
+
+    QCOMPARE(resultStripped, expected);
+}
+
 QTEST_MAIN(RichTextComposerNgTest)

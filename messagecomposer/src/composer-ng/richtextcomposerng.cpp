@@ -28,7 +28,7 @@ public:
         richTextComposerSignatures = new MessageComposer::RichTextComposerSignatures(richtextComposer, richtextComposer);
     }
 
-    void fixHtmlFontSize(QString &cleanHtml);
+    void fixHtmlFontSize(QString &cleanHtml) const;
     Q_REQUIRED_RESULT QString toCleanHtml() const;
     PimCommon::AutoCorrection *autoCorrection = nullptr;
     RichTextComposerNg * const richtextComposer;
@@ -119,7 +119,7 @@ bool RichTextComposerNg::processModifyText(QKeyEvent *e)
     return false;
 }
 
-void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml)
+void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml) const
 {
     static const QString FONTSTYLEREGEX = QStringLiteral("<span style=\".*font-size:(.*)pt;.*</span>");
     QRegExp styleRegex(FONTSTYLEREGEX);
@@ -130,9 +130,9 @@ void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml)
         // replace all the matching text with the new line text
         bool ok = false;
         const QString fontSizeStr = styleRegex.cap(1);
-        const int ptValue = fontSizeStr.toInt(&ok);
+        const double ptValue = fontSizeStr.toDouble(&ok);
         if (ok) {
-            double emValue = static_cast<double>(ptValue) / 12;
+            const double emValue = ptValue / 12;
             const QString emValueStr = QString::number(emValue, 'g', 2);
             cleanHtml.replace(styleRegex.pos(1), QString(fontSizeStr + QLatin1String("px")).length(), emValueStr + QLatin1String("em"));
         }
@@ -376,6 +376,11 @@ void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &s
 QString RichTextComposerNg::toCleanHtml() const
 {
     return d->toCleanHtml();
+}
+
+void RichTextComposerNg::fixHtmlFontSize(QString &cleanHtml) const
+{
+    d->fixHtmlFontSize(cleanHtml);
 }
 
 void RichTextComposerNg::forceAutoCorrection(bool selectedText)

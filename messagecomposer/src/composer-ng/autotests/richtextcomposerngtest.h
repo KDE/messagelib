@@ -39,6 +39,10 @@ private Q_SLOTS:
 
     void shouldLoadSignatureFromCommand_data();
     void shouldLoadSignatureFromCommand();
+
+    void fixHtmlFontSizeTest();
+
+    void toCleanHtmlRegexTest();
 };
 
 #endif // RICHTEXTCOMPOSERNGTEST_H

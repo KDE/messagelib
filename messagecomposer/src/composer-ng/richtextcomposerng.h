@@ -12,6 +12,8 @@
 #include <MessageComposer/PluginEditorConvertTextInterface>
 #include <KIdentityManagement/Signature>
 
+class RichTextComposerNgTest;
+
 namespace PimCommon {
 class AutoCorrection;
 }
@@ -45,11 +47,15 @@ public:
 
     Q_REQUIRED_RESULT virtual MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus convertPlainText(MessageComposer::TextPart *textPart);
 
+
 protected:
     bool processModifyText(QKeyEvent *event) override;
 
 private:
     RichTextComposerNgPrivate *const d;
+
+    friend class ::RichTextComposerNgTest; // for fixHtmlFontSize
+    void fixHtmlFontSize(QString &cleanHtml) const;
 };
 }
 #endif
