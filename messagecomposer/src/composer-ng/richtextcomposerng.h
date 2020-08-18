@@ -47,7 +47,6 @@ public:
 
     Q_REQUIRED_RESULT virtual MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus convertPlainText(MessageComposer::TextPart *textPart);
 
-
 protected:
     bool processModifyText(QKeyEvent *event) override;
 

@@ -15,6 +15,8 @@
 #include <KPIMTextEdit/MarkupDirector>
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
 
+#include <QRegularExpression>
+
 #define USE_TEXTHTML_BUILDER 1
 
 using namespace MessageComposer;
@@ -121,25 +123,29 @@ bool RichTextComposerNg::processModifyText(QKeyEvent *e)
 
 void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml) const
 {
-    static const QString FONTSTYLEREGEX = QStringLiteral("<span style=\".*font-size:(.*)pt;.*</span>");
-    QRegExp styleRegex(FONTSTYLEREGEX);
-    styleRegex.setMinimal(true);
+    // non-greedy matching
+    static const QRegularExpression styleRegex(QStringLiteral("<span style=\".*?font-size:(.*?)pt;.*?</span>"));
 
-    int offset = styleRegex.indexIn(cleanHtml, 0);
-    while (offset != -1) {
-        // replace all the matching text with the new line text
+    QRegularExpressionMatch rmatch;
+    int offset = 0;
+    while (cleanHtml.indexOf(styleRegex, offset, &rmatch) != -1) {
+        QString replacement;
         bool ok = false;
-        const QString fontSizeStr = styleRegex.cap(1);
-        const double ptValue = fontSizeStr.toDouble(&ok);
+        const double ptValue = rmatch.captured(1).toDouble(&ok);
         if (ok) {
             const double emValue = ptValue / 12;
-            const QString emValueStr = QString::number(emValue, 'g', 2);
-            cleanHtml.replace(styleRegex.pos(1), QString(fontSizeStr + QLatin1String("px")).length(), emValueStr + QLatin1String("em"));
+            replacement = QString::number(emValue, 'g', 2);
+            const int capLen = rmatch.capturedLength(1);
+            cleanHtml.replace(rmatch.capturedStart(1),
+                              capLen + 2 /* QLatin1String("pt").size() */,
+                              replacement + QLatin1String("em"));
+            // advance the offset to just after the last replace
+            offset = rmatch.capturedEnd(0) - capLen + replacement.size();
+        } else {
+            // a match was found but the toDouble call failed, advance the offset to just after
+            // the entire match
+            offset = rmatch.capturedEnd(0);
         }
-        // advance the search offset to just beyond the last replace
-        offset += styleRegex.matchedLength();
-        // find the next occurrence
-        offset = styleRegex.indexIn(cleanHtml, offset);
     }
 }
 
@@ -213,8 +219,9 @@ QString RichTextComposerNgPrivate::toCleanHtml() const
 
     // Qt inserts various style properties based on the current mode of the editor (underline,
     // bold, etc), but only empty paragraphs *also* have qt-paragraph-type set to 'empty'.
+    // Minimal/non-greedy matching
     static const QString EMPTYLINEREGEX = QStringLiteral(
-        "<p style=\"-qt-paragraph-type:empty;(.*)</p>");
+        "<p style=\"-qt-paragraph-type:empty;(?:.*?)</p>");
 
     static const QString OLLISTPATTERNQT = QStringLiteral(
         "<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
@@ -233,19 +240,8 @@ QString RichTextComposerNgPrivate::toCleanHtml() const
     // Although we can simply remove the margin-top style property, we still get unwanted results
     // if you have three or more empty lines. It's best to replace empty <p> elements with <p>&nbsp;</p>.
 
-    QRegExp emptyLineFinder(EMPTYLINEREGEX);
-    emptyLineFinder.setMinimal(true);
-
-    // find the first occurrence
-    int offset = emptyLineFinder.indexIn(result, 0);
-    while (offset != -1) {
-        // replace all the matching text with the new line text
-        result.replace(offset, emptyLineFinder.matchedLength(), EMPTYLINEHTML);
-        // advance the search offset to just beyond the last replace
-        offset += EMPTYLINEHTML.length();
-        // find the next occurrence
-        offset = emptyLineFinder.indexIn(result, offset);
-    }
+    // Replace all the matching text with the new line text
+    result.replace(QRegularExpression(EMPTYLINEREGEX), EMPTYLINEHTML);
 
     // fix 2a - ordered lists - MS Outlook treats margin-left:0px; as
     // a non-existing number; e.g: "1. First item" turns into "First Item"
