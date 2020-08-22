@@ -14,14 +14,7 @@
 #include "composer/keyresolver.h"
 #include "job/savecontactpreferencejob.h"
 
-#include <kguiaddons_version.h>
-#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
-#ifndef QT_NO_CURSOR
-#include <Libkdepim/KCursorSaver>
-#endif
-#else
 #include <KCursorSaver>
-#endif
 #include "utils/kleo_util.h"
 
 #include <KEmailAddress>
@@ -1556,13 +1549,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
     std::copy(d->mSMIMEEncryptToSelfKeys.begin(), d->mSMIMEEncryptToSelfKeys.end(),
               std::back_inserter(senderKeys));
 
-#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
-#ifndef QT_NO_CURSOR
-    const KPIM::KCursorSaver saver(Qt::ArrowCursor);
-#endif
-#else
     KCursorSaver saver(Qt::WaitCursor);
-#endif
 
     QPointer<Kleo::KeyApprovalDialog> dlg = new Kleo::KeyApprovalDialog(items, senderKeys);
 
@@ -1644,13 +1631,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
                             : i18n("You did not select encryption keys for some of "
                                    "the recipients: these persons will not be able to "
                                    "decrypt the message if you encrypt it.");
-#if KGUIADDONS_VERSION < QT_VERSION_CHECK(5, 73, 0)
-#ifndef QT_NO_CURSOR
-        const KPIM::KCursorSaver saver(Qt::ArrowCursor);
-#endif
-#else
         KCursorSaver saver(Qt::WaitCursor);
-#endif
         if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                i18n("Missing Key Warning"),
                                                KGuiItem(i18n("&Encrypt")))
