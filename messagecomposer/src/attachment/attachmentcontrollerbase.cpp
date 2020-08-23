@@ -58,7 +58,6 @@
 #include <MessageCore/AttachmentFromUrlUtils>
 #include <settings/messagecomposersettings.h>
 #include <KIO/Job>
-#include <kio_version.h>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
 #include <Akonadi/Contact/EmailAddressSelectionDialog>

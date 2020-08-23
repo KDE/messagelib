@@ -46,7 +46,6 @@
 #include <KMessageBox>
 #include <KMimeTypeChooser>
 #include <KApplicationTrader>
-#include <kio_version.h>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
 #include <KIO/ApplicationLauncherJob>
