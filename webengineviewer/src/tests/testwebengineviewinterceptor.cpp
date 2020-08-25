@@ -30,6 +30,7 @@ CidSchemeHandler::CidSchemeHandler(QObject *parent)
 
 void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *request)
 {
+    Q_UNUSED(request);
     qDebug() << " void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *request)";
     //TODO
 }
