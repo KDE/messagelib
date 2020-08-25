@@ -420,7 +420,9 @@ KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Me
     auto cd = msgPart->contentDisposition(); //create
     cd->setParameter(QStringLiteral("filename"), i18n("forwarded message"));
     cd->setDisposition(KMime::Headers::CDinline);
-    cd->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1String(": ") + fwdMsg->subject()->asUnicodeString(), "utf-8");
+    const QString subject = fwdMsg->subject()->asUnicodeString();
+    msgPart->contentType()->setParameter(QStringLiteral("name"), subject);
+    cd->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1String(": ") + subject, "utf-8");
     msgPart->setBody(fwdMsg->encodedContent());
     msgPart->assemble();
 
