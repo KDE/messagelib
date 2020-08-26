@@ -37,7 +37,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    mView = new Akonadi::RecipientsPickerWidget(false, nullptr, this);
+    mView = new Akonadi::RecipientsPickerWidget(true, nullptr, this);
     mainLayout->addWidget(mView);
     mainLayout->setStretchFactor(mView, 1);
 
@@ -107,9 +107,9 @@ void RecipientsPicker::setRecipients(const Recipient::List &)
 void RecipientsPicker::setDefaultType(Recipient::Type type)
 {
     mDefaultType = type;
-    mUser1Button->setDefault(type == Recipient::To);
+    mUser1Button->setDefault(type == Recipient::Bcc);
     mUser2Button->setDefault(type == Recipient::Cc);
-    mUser3Button->setDefault(type == Recipient::Bcc);
+    mUser3Button->setDefault(type == Recipient::To);
     mUser4Button->setDefault(type == Recipient::ReplyTo);
 }
 
