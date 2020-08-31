@@ -670,7 +670,7 @@ bool Pane::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::MouseButtonPress) {
         QMouseEvent *const mouseEvent = static_cast<QMouseEvent *>(event);
-        if (mouseEvent->button() == Qt::MidButton) {
+        if (mouseEvent->button() == Qt::MiddleButton) {
             return true;
         }
     }
