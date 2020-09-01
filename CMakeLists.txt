@@ -40,7 +40,6 @@ set(ECM_VERSION ${KF5_MIN_VERSION})
 
 find_package(ECM ${ECM_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${Messagelib_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH})
-set(LIBRARY_NAMELINK)
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)

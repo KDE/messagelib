@@ -139,7 +139,7 @@ target_link_libraries(KF5MimeTreeParser
 
 install(TARGETS
     KF5MimeTreeParser
-    EXPORT KF5MimeTreeParserTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
+    EXPORT KF5MimeTreeParserTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 set_target_properties(KF5MimeTreeParser PROPERTIES
