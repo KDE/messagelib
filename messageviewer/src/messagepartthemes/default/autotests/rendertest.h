@@ -1,4 +1,4 @@
-/* 
+/*
    SPDX-FileCopyrightText: 2010 Volker Krause <vkrause@kde.org>
    SPDX-FileCopyrightText: 2016 Sandro Knauß <sknauss@kde.org>
 

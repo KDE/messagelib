@@ -12,7 +12,6 @@ QTEST_MAIN(BlockExternalResourcesUrlInterceptorTest)
 BlockExternalResourcesUrlInterceptorTest::BlockExternalResourcesUrlInterceptorTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void BlockExternalResourcesUrlInterceptorTest::shouldIntercept()

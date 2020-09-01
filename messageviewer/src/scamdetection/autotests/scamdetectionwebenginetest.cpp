@@ -153,7 +153,7 @@ void ScamDetectionWebEngineTest::scamtest_data()
 
     QTest::newRow("urlwithport") << QStringLiteral(
         "<a href=\"https://example.com:443/blablabla\">https://example.com:443/blablabla</a>")
-                            << false;
+                                 << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()

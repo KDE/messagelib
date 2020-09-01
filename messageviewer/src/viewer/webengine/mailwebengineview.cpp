@@ -375,7 +375,6 @@ bool MailWebEngineView::execPrintPreviewPage(QPrinter *printer, int timeout)
     return d->mPageEngine->execPrintPreviewPage(printer, timeout);
 }
 
-
 void MailWebEngineView::initializeCustomScheme()
 {
     QWebEngineUrlScheme cidScheme("cid");

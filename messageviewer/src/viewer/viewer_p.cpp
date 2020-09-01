@@ -180,7 +180,6 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
                                     + QByteArray::number(reinterpret_cast<quintptr>(this)), this))
     , mPreviouslyViewedItemId(-1)
 {
-
     if (!mainWindow) {
         mMainWindow = aParent;
     }
@@ -1335,7 +1334,6 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
 
         parseContent(node);
 
-
         htmlWriter()->write(cssHelper()->endBodyHtml());
         htmlWriter()->end();
     }
@@ -2351,7 +2349,6 @@ void ViewerPrivate::exportToPdf(const QString &fileName)
     job->setEngineView(mViewer);
     job->setPdfPath(fileName);
     job->start();
-
 }
 
 void ViewerPrivate::slotOpenInBrowser()

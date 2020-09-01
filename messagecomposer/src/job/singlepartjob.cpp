@@ -26,6 +26,7 @@ public:
         : ContentJobBasePrivate(qq)
     {
     }
+
     ~SinglepartJobPrivate()
     {
         delete contentTransferEncoding;

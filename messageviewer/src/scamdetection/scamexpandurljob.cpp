@@ -55,7 +55,7 @@ void ScamExpandUrlJob::expandedUrl(const QUrl &url)
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
         PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n(
-                                                            "No network connection detected, we cannot expand url."));
+                                                                 "No network connection detected, we cannot expand url."));
         deleteLater();
         return;
     }
@@ -74,7 +74,6 @@ void ScamExpandUrlJob::expandedUrl(const QUrl &url)
             qOverload<QNetworkReply::NetworkError>(&QNetworkReply::errorOccurred), this,
             &ScamExpandUrlJob::slotError);
 #endif
-
 }
 
 void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
@@ -96,16 +95,16 @@ void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << "JSon is not corect" << ba;
             PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.",
-                                                                 shortUrl.url()));
+                                                                      shortUrl.url()));
             deleteLater();
             return;
         }
         PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("Short url \'%1\' redirects to \'%2\'.",
-                                                             shortUrl.url(),
-                                                             longUrl.toDisplayString()));
+                                                                  shortUrl.url(),
+                                                                  longUrl.toDisplayString()));
     } else {
         PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.",
-                                                             shortUrl.url()));
+                                                                  shortUrl.url()));
     }
     deleteLater();
 }

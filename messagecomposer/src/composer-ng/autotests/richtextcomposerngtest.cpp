@@ -527,9 +527,9 @@ void RichTextComposerNgTest::fixHtmlFontSizeTest()
 
     richtextComposerNg.fixHtmlFontSize(str);
     const QString expected(QStringLiteral(
-        "<span style=\"color: green; font-size:0.83em;\">int font</span> size\n"
-        "<span style=\"font-size:0.9em; font-family: foo;\">double font</span> size\n"
-        "<span style=\"font-size: 15,2pt;\">invalid font</span> size, left as is\n"));
+                               "<span style=\"color: green; font-size:0.83em;\">int font</span> size\n"
+                               "<span style=\"font-size:0.9em; font-family: foo;\">double font</span> size\n"
+                               "<span style=\"font-size: 15,2pt;\">invalid font</span> size, left as is\n"));
 
     QCOMPARE(str, expected);
 }
@@ -538,9 +538,9 @@ void RichTextComposerNgTest::toCleanHtmlRegexTest()
 {
     MessageComposer::RichTextComposerNg richtextComposerNg;
     richtextComposerNg.setHtml(QStringLiteral(
-        "<p style=\"-qt-paragraph-type:empty\"></p>\n"
-        "<p>some text</p>\n"
-        "<p style=\"-qt-paragraph-type:empty\"></p>\n"));
+                                   "<p style=\"-qt-paragraph-type:empty\"></p>\n"
+                                   "<p>some text</p>\n"
+                                   "<p style=\"-qt-paragraph-type:empty\"></p>\n"));
 
     const QString result = richtextComposerNg.toCleanHtml();
     const int idx = result.indexOf(QStringLiteral("<p style=\"-qt-paragraph-type:empty"));

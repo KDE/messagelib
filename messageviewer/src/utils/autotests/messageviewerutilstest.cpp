@@ -39,7 +39,6 @@ void MessageViewerUtilsTest::shouldExcludeHeader()
     QCOMPARE(MessageViewer::Util::excludeExtraHeader(header), exclude);
 }
 
-
 void MessageViewerUtilsTest::shouldContainsExternalReferences_data()
 {
     QTest::addColumn<QString>("filename");

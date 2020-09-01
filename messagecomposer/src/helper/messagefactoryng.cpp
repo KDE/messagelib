@@ -704,7 +704,7 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDi
     KMime::Content *digest = new KMime::Content(msg.data());
 
     const QString mainPartText = i18n("\nThis is a MIME digest forward. The content of the"
-                                " message is contained in the attachment(s).\n\n\n");
+                                      " message is contained in the attachment(s).\n\n\n");
 
     digest->contentType()->setMimeType("multipart/digest");
     digest->contentType()->setBoundary(KMime::multiPartBoundary());

@@ -4,19 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-
 #include "cidschemehandler.h"
 using namespace MessageViewer;
 
 CidSchemeHandler::CidSchemeHandler(QObject *parent)
     : QWebEngineUrlSchemeHandler(parent)
 {
-
 }
 
 CidSchemeHandler::~CidSchemeHandler()
 {
-
 }
 
 void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *job)

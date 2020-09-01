@@ -75,9 +75,9 @@ void MessageViewer::Test::compareFile(const QString &outFile, const QString &ref
     QProcess proc;
 #ifdef _WIN32
     args = QStringList()
-            << QStringLiteral("Compare-Object")
-            << QString(QStringLiteral("(Get-Content %1)")).arg(referenceFile)
-            << QString(QStringLiteral("(Get-Content %1)")).arg(htmlFile);
+           << QStringLiteral("Compare-Object")
+           << QString(QStringLiteral("(Get-Content %1)")).arg(referenceFile)
+           << QString(QStringLiteral("(Get-Content %1)")).arg(htmlFile);
 
     proc.start(QStringLiteral("powershell"), args);
     QVERIFY(proc.waitForFinished());
@@ -92,14 +92,13 @@ void MessageViewer::Test::compareFile(const QString &outFile, const QString &ref
 #else
     // compare to reference file
     args = QStringList()
-            << QStringLiteral("-u")
-            << referenceFile
-            << htmlFile;
+           << QStringLiteral("-u")
+           << referenceFile
+           << htmlFile;
 
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
     proc.start(QStringLiteral("diff"), args);
     QVERIFY(proc.waitForFinished());
     QCOMPARE(proc.exitCode(), 0);
 #endif
-
 }

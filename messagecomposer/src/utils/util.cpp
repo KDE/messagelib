@@ -127,7 +127,8 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
     switch (format) {
     default:
     case Kleo::InlineOpenPGPFormat:
-    case Kleo::OpenPGPMIMEFormat: {
+    case Kleo::OpenPGPMIMEFormat:
+    {
         auto ct = content->contentType(); //Create
         if (sign) {
             ct->setMimeType(QByteArrayLiteral("multipart/signed"));
@@ -139,7 +140,8 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
         }
     }
         return;
-    case Kleo::SMIMEFormat: {
+    case Kleo::SMIMEFormat:
+    {
         if (sign) {
             auto ct = content->contentType(); //Create
             qCDebug(MESSAGECOMPOSER_LOG) << "setting headers for SMIME";
@@ -171,7 +173,8 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
 void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::CryptoMessageFormat format, bool sign)
 {
     switch (format) {
-    case Kleo::OpenPGPMIMEFormat: {
+    case Kleo::OpenPGPMIMEFormat:
+    {
         auto ct = content->contentType(); //Create
         if (sign) {
             ct->setMimeType(QByteArrayLiteral("application/pgp-signature"));
@@ -182,7 +185,8 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
         }
     }
         return;
-    case Kleo::SMIMEFormat: {
+    case Kleo::SMIMEFormat:
+    {
         if (sign) {
             auto ct = content->contentType(); //Create
             ct->setMimeType(QByteArrayLiteral("application/pkcs7-signature"));

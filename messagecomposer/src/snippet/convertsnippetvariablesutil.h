@@ -51,7 +51,6 @@ enum VariableType {
 
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);
 
-
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString shortDate();
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString longDate();
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString shortTime();

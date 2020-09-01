@@ -240,7 +240,6 @@ void EncryptJob::process()
             setError(result.error().code());
             setErrorText(QString::fromLocal8Bit(result.error().asString()));
             emitResult();
-            return;
         }
         d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false);
 

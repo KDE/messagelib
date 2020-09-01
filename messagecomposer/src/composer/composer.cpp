@@ -37,6 +37,7 @@ public:
         : JobBasePrivate(qq)
     {
     }
+
     ~ComposerPrivate()
     {
         //delete skeletonMessage;

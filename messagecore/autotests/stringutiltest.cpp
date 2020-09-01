@@ -601,12 +601,12 @@ void StringUtilTest::test_replaceMessagePrefix_data()
                                           << QStringLiteral("New_Prefix: Hello World Subject");
 
     QTest::newRow("Default Reply Re   :, no replace") << QStringLiteral("Re   : Hello World Subject")
-                                                   << false << QStringLiteral("New_Prefix:")
-                                                   << QStringLiteral("Re   : Hello World Subject");
+                                                      << false << QStringLiteral("New_Prefix:")
+                                                      << QStringLiteral("Re   : Hello World Subject");
 
     QTest::newRow("Default Reply Re1:") << QStringLiteral("Re1: Hello World Subject")
-                                      << true << QStringLiteral("New_Prefix:")
-                                      << QStringLiteral("New_Prefix: Hello World Subject");
+                                        << true << QStringLiteral("New_Prefix:")
+                                        << QStringLiteral("New_Prefix: Hello World Subject");
 
     QTest::newRow("Default Reply Re1:, no replace") << QStringLiteral("Re1: Hello World Subject")
                                                     << false << QStringLiteral("New_Prefix:")

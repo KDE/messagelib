@@ -56,7 +56,6 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(const QString &schem
         return true;
     }
     return false;
-
 }
 
 bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
