@@ -42,7 +42,7 @@ Q_SIGNALS:
     void saveDistributionList();
 
 private:
-    RecipientsEditor *mEditor = nullptr;
+    RecipientsEditor *const mEditor;
     QLabel *mTotalLabel = nullptr;
     QPushButton *mDistributionListButton = nullptr;
     QPushButton *mSelectButton = nullptr;

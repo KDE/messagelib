@@ -31,7 +31,7 @@ public:
         delete ui;
     }
 
-    Ui::ImageScalingWidget *ui = nullptr;
+    Ui::ImageScalingWidget *const ui;
     QButtonGroup *mSourceFilenameFilterGroup = nullptr;
     QButtonGroup *mRecipientFilterGroup = nullptr;
     bool mWasChanged = false;

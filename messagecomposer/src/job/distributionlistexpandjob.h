@@ -54,7 +54,7 @@ private Q_SLOTS:
     void slotExpansionDone(KJob *);
 
 private:
-    QString mListName;
+    const QString mListName;
     QStringList mEmailAddresses;
     bool mIsEmpty = false;
 };

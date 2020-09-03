@@ -28,7 +28,7 @@ Q_SIGNALS:
     void insertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);
 private:
     void initializeMenu(bool onlyMenuForCustomizeAttachmentFileName);
-    QWidget *mParentWidget = nullptr;
+    QWidget *const mParentWidget;
     QMenu *mMenu = nullptr;
 };
 }

@@ -51,7 +51,7 @@ QString ComposerViewInterface::from() const
     return {};
 }
 
-MessageComposer::ComposerAttachmentInterface ComposerViewInterface::attachments()
+MessageComposer::ComposerAttachmentInterface ComposerViewInterface::attachments() const
 {
     MessageComposer::ComposerAttachmentInterface attachmentInterface;
     if (mComposerView) {

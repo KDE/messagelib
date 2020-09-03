@@ -27,7 +27,7 @@ public:
     Q_REQUIRED_RESULT QString cc() const;
     Q_REQUIRED_RESULT QString from() const;
 
-    Q_REQUIRED_RESULT MessageComposer::ComposerAttachmentInterface attachments();
+    Q_REQUIRED_RESULT MessageComposer::ComposerAttachmentInterface attachments() const;
 
     Q_REQUIRED_RESULT QString shortDate() const;
     Q_REQUIRED_RESULT QString longDate() const;
@@ -35,7 +35,7 @@ public:
     Q_REQUIRED_RESULT QString longTime() const;
     Q_REQUIRED_RESULT QString insertDayOfWeek() const;
 private:
-    ComposerViewBase *mComposerView = nullptr;
+    ComposerViewBase *const mComposerView;
 };
 }
 

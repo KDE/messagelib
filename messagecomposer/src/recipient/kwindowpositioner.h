@@ -24,8 +24,8 @@ public:
     void reposition();
 
 private:
-    QWidget *mMaster = nullptr;
-    QWidget *mSlave = nullptr;
+    QWidget *const mMaster;
+    QWidget *const mSlave;
 
     Mode mMode = Bottom;
 };
