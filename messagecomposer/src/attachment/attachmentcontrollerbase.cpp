@@ -570,6 +570,7 @@ void AttachmentControllerBase::createActions()
     collection->addAction(QStringLiteral("attach_public_key"), d->attachPublicKeyAction);
     collection->addAction(QStringLiteral("attach_my_public_key"), d->attachMyPublicKeyAction);
     collection->addAction(QStringLiteral("attach"), d->addAttachmentFileAction);
+    collection->setDefaultShortcut(d->addAttachmentFileAction, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_A));
     collection->addAction(QStringLiteral("attach_directory"), d->addAttachmentDirectoryAction);
 
     collection->addAction(QStringLiteral("remove"), d->removeAction);
