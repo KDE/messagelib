@@ -163,8 +163,7 @@ void DKIMManageRulesWidget::modifyRule(DKIMManageRulesWidgetItem *rulesItem)
 
 void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
 {
-    Q_UNUSED(pos);
-    QTreeWidgetItem *item = mTreeWidget->currentItem();
+    QTreeWidgetItem *item = mTreeWidget->itemAt(pos);
     QMenu menu(this);
     menu.addAction(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Add..."), this, [this]() {
         addRule();
