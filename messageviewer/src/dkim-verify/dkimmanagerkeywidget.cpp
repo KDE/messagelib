@@ -55,9 +55,9 @@ void DKIMManagerKeyWidget::restoreHeaders(const QByteArray &header)
     mTreeWidget->header()->restoreState(header);
 }
 
-void DKIMManagerKeyWidget::customContextMenuRequested(const QPoint &)
+void DKIMManagerKeyWidget::customContextMenuRequested(const QPoint &pos)
 {
-    QTreeWidgetItem *item = mTreeWidget->currentItem();
+    QTreeWidgetItem *item = mTreeWidget->itemAt(pos);
     QMenu menu(this);
     if (item) {
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [item]() {

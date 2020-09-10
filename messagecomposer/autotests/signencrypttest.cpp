@@ -122,7 +122,7 @@ void SignEncryptTest::testContentSubjobChained()
     seJob->setRecipients(recipients);
     seJob->setEncryptionKeys(keys);
     seJob->setSkeletonMessage(&skeletonMessage);
-    seJob->appendSubjob(tJob);
+    QVERIFY(seJob->appendSubjob(tJob));
 
     VERIFYEXEC(seJob);
     KMime::Content *result = seJob->content();
