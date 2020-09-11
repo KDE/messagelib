@@ -9,8 +9,8 @@ using namespace TemplateParser;
 
 TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
     : QWidgetAction(parent)
+    , mMenuCommand(new TemplatesCommandMenu(this))
 {
-    mMenuCommand = new TemplatesCommandMenu(this);
     mMenuCommand->fillMenu();
     mMenuCommand->fillSubMenus();
     mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));

@@ -12,7 +12,6 @@ using namespace MimeTreeParser;
 CryptoBodyPartMemento::CryptoBodyPartMemento()
     : QObject(nullptr)
     , Interface::BodyPartMemento()
-    , m_running(false)
 {
 }
 

@@ -21,19 +21,13 @@ WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBa
 class WebEngineViewer::CreatePhishingUrlDataBaseJobPrivate
 {
 public:
-    CreatePhishingUrlDataBaseJobPrivate()
-        : mContraintsCompressionType(CreatePhishingUrlDataBaseJob::RawCompression)
-        , mDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::FullDataBase)
-    {
-    }
-
-    UpdateDataBaseInfo::CompressionType parseCompressionType(const QString &str);
-    RiceDeltaEncoding parseRiceDeltaEncoding(const QMap<QString, QVariant> &map);
-    QVector<Removal> parseRemovals(const QVariantList &lst);
-    QVector<Addition> parseAdditions(const QVariantList &lst);
+    Q_REQUIRED_RESULT UpdateDataBaseInfo::CompressionType parseCompressionType(const QString &str);
+    Q_REQUIRED_RESULT RiceDeltaEncoding parseRiceDeltaEncoding(const QMap<QString, QVariant> &map);
+    Q_REQUIRED_RESULT QVector<Removal> parseRemovals(const QVariantList &lst);
+    Q_REQUIRED_RESULT QVector<Addition> parseAdditions(const QVariantList &lst);
     QString mDataBaseState;
-    CreatePhishingUrlDataBaseJob::ContraintsCompressionType mContraintsCompressionType;
-    CreatePhishingUrlDataBaseJob::DataBaseDownloadType mDataBaseDownloadNeeded;
+    CreatePhishingUrlDataBaseJob::ContraintsCompressionType mContraintsCompressionType = CreatePhishingUrlDataBaseJob::RawCompression;
+    CreatePhishingUrlDataBaseJob::DataBaseDownloadType mDataBaseDownloadNeeded = CreatePhishingUrlDataBaseJob::FullDataBase;
     QNetworkAccessManager *mNetworkAccessManager = nullptr;
 };
 

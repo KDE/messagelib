@@ -40,7 +40,6 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser)
     : mSource(topLevelParser->mSource)
     , mNodeHelper(topLevelParser->mNodeHelper)
     , mTopLevelContent(topLevelParser->mTopLevelContent)
-    , mHasPendingAsyncJobs(false)
     , mAllowAsync(topLevelParser->mAllowAsync)
 {
     init();
@@ -50,7 +49,6 @@ ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source, MimeTree
     : mSource(source)
     , mNodeHelper(nodeHelper)
     , mTopLevelContent(nullptr)
-    , mHasPendingAsyncJobs(false)
     , mAllowAsync(false)
 {
     init();

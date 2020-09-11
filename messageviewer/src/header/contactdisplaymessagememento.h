@@ -55,7 +55,7 @@ private:
     KContacts::Picture mPhoto;
     QPixmap mGravatarPixmap;
     QImage mImageFromUrl;
-    QString mEmailAddress;
+    const QString mEmailAddress;
     bool mFinished = false;
     QPointer<Akonadi::ContactSearchJob> mSearchJob;
 };

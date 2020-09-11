@@ -53,7 +53,7 @@ protected:
     void setRunning(bool running);
 
 private:
-    bool m_running;
+    bool m_running = false;
     QString m_auditLog;
     GpgME::Error m_auditLogError;
 };

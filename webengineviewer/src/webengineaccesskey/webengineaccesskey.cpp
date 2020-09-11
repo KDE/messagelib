@@ -56,7 +56,7 @@ public:
     QVector<QLabel *> mAccessKeyLabels;
     QMultiHash<QChar, WebEngineViewer::WebEngineAccessKeyAnchor> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
-    QWebEngineView *mWebEngine = nullptr;
+    QWebEngineView *const mWebEngine;
     AccessKeyState mAccessKeyActivated = NotActivated;
     KActionCollection *mActionCollection = nullptr;
     WebEngineAccessKey *const q = nullptr;

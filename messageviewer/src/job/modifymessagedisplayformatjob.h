@@ -31,7 +31,7 @@ private:
     void slotModifyItemDone(KJob *job);
     void resetDisplayFormat();
     void modifyDisplayFormat();
-    Akonadi::Session *mSession = nullptr;
+    Akonadi::Session *const mSession;
     Akonadi::Item mMessageItem;
     Viewer::DisplayFormatMessage mMessageFormat = Viewer::UseGlobalSetting;
     bool mRemoteContent = false;

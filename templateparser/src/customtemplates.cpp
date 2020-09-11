@@ -24,8 +24,8 @@ using namespace TemplateParser;
 
 CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollection, QWidget *parent)
     : QWidget(parent)
+    , mUi(new Ui_CustomTemplatesBase)
 {
-    mUi = new Ui_CustomTemplatesBase;
     mUi->setupUi(this);
 
     mUi->mAdd->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
@@ -108,7 +108,6 @@ CustomTemplates::~CustomTemplates()
     disconnect(mUi->mToEdit, &TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget::textChanged, this, &CustomTemplates::slotTextChanged);
     disconnect(mUi->mCCEdit, &TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget::textChanged, this, &CustomTemplates::slotTextChanged);
     delete mUi;
-    mUi = nullptr;
 }
 
 void CustomTemplates::slotNameChanged(const QString &text)

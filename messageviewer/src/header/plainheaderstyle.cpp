@@ -27,7 +27,7 @@ public:
     {
     }
 
-    QString formatAllMessageHeaders(KMime::Message *message) const;
+    Q_REQUIRED_RESULT QString formatAllMessageHeaders(KMime::Message *message) const;
     MessageViewer::HeaderStyleUtil mHeaderStyleUtil;
 };
 

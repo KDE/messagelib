@@ -29,8 +29,8 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 
 TemplateExtractTextFromMail::TemplateExtractTextFromMail(QObject *parent)
     : QObject(parent)
+    , mPage(new TemplateWebEnginePage(this))
 {
-    mPage = new TemplateWebEnginePage(this);
     connect(mPage, &TemplateWebEnginePage::loadFinished, this, &TemplateExtractTextFromMail::slotLoadFinished);
 }
 

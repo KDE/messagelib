@@ -313,7 +313,7 @@ private:
     QByteArray mHtmlContentCharset;
     QString mPlainTextContent;
     QString mHtmlContent;
-    KMime::Content *mTopLevelContent;
+    KMime::Content *mTopLevelContent = nullptr;
     MessagePartPtr mParsedPart;
 
     /// Show only one mime part means that the user has selected some node in the message structure
@@ -328,7 +328,7 @@ private:
     /// the children can be completely displayed again.
     bool mShowOnlyOneMimePart;
 
-    bool mHasPendingAsyncJobs;
+    bool mHasPendingAsyncJobs = false;
     bool mAllowAsync;
     // DataUrl Icons cache
     QString mCollapseIcon;

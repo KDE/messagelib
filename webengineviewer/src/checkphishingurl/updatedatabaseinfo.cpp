@@ -10,7 +10,6 @@
 using namespace WebEngineViewer;
 
 UpdateDataBaseInfo::UpdateDataBaseInfo()
-    : responseType(Unknown)
 {
 }
 

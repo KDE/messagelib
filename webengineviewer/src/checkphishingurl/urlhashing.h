@@ -26,7 +26,7 @@ public:
     /*long hash, short hash*/
     QHash<QByteArray, QByteArray> hashList() const;
 private:
-    QUrl mUrl;
+    const QUrl mUrl;
 };
 }
 

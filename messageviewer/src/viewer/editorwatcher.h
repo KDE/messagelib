@@ -61,17 +61,17 @@ private:
     void editorExited();
     void inotifyEvent();
     void checkEditDone();
-    QUrl mUrl;
-    QString mMimeType;
+    const QUrl mUrl;
+    const QString mMimeType;
     QTimer mTimer;
     QElapsedTimer mEditTime;
 
     KProcess *mEditor = nullptr;
-    QWidget *mParentWidget = nullptr;
+    QWidget *const mParentWidget;
 
     int mInotifyFd = -1;
     int mInotifyWatch = -1;
-    OpenWithOption mOpenWithOption;
+    const OpenWithOption mOpenWithOption;
     bool mHaveInotify = false;
     bool mFileOpen = false;
     bool mEditorRunning = false;

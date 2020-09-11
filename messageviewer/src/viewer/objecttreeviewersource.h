@@ -40,7 +40,7 @@ public:
     Q_REQUIRED_RESULT bool showExpandQuotesMark() const override;
     Q_REQUIRED_RESULT bool isPrinting() const override;
 private:
-    ViewerPrivate *mViewer = nullptr;
+    ViewerPrivate *const mViewer;
 };
 }
 

@@ -36,7 +36,7 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo
     QString minimumWaitDuration;
     QString threatType;
     QString threatEntryType;
-    ResponseType responseType;
+    ResponseType responseType = Unknown;
     QString platformType;
     QString newClientState;
     QByteArray sha256;

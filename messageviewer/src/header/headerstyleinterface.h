@@ -42,7 +42,7 @@ protected:
     void addHelpTextAction(QAction *act, const QString &text);
     void addActionToMenu(KActionMenu *menu, QActionGroup *actionGroup);
     QList<KToggleAction *> mAction;
-    HeaderStylePlugin *mHeaderStylePlugin = nullptr;
+    HeaderStylePlugin *const mHeaderStylePlugin;
 };
 }
 #endif // HEADERSTYLEINTERFACE_H

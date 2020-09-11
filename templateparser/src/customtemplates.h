@@ -75,7 +75,7 @@ private:
     /// templates, which changes the UI without user action
     bool mBlockChangeSignal = false;
 
-    Ui_CustomTemplatesBase *mUi = nullptr;
+    Ui_CustomTemplatesBase *const mUi;
 };
 
 class CustomTemplateItem : public QTreeWidgetItem

@@ -30,7 +30,7 @@ Q_SIGNALS:
     void insertCommand(const QString &cmd, int adjustCursor);
 
 private:
-    TemplatesCommandMenu *mMenuCommand = nullptr;
+    TemplatesCommandMenu *const mMenuCommand;
 };
 }
 #endif // TEMPLATESINSERTCOMMANDACTION_H

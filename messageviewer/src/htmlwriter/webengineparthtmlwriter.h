@@ -40,7 +40,7 @@ private:
     void insertBodyStyle();
 
 private:
-    MailWebEngineView *mHtmlView = nullptr;
+    MailWebEngineView *const mHtmlView;
     QString mExtraHead;
     QString mStyleBody;
     enum State {
