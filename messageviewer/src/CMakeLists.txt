@@ -324,7 +324,6 @@ target_link_libraries(KF5MessageViewer
     Qt5::Network
     KF5::WebEngineViewer
     KF5::GrantleeTheme
-    KF5::KaddressbookGrantlee
     KF5::MailTransportAkonadi
     KF5::Mime
     KF5::Mbox
