@@ -320,7 +320,7 @@ void MessageFactoryNG::createForwardAsync()
         msg->removeHeader<KMime::Headers::ContentType>();
         msg->removeHeader<KMime::Headers::ContentTransferEncoding>();
 
-        msg->contentType(false)->setMimeType("multipart/mixed");
+        msg->contentType(true)->setMimeType("multipart/mixed");
 
         //TODO: Andras: somebody should check if this is correct. :)
         // empty text part
