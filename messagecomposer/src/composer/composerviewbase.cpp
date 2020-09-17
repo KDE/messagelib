@@ -1345,6 +1345,7 @@ void ComposerViewBase::slotCreateItemResult(KJob *job)
         Akonadi::ItemCreateJob *createJob = static_cast<Akonadi::ItemCreateJob *>(job);
         const Akonadi::Item item = createJob->item();
         if (item.isValid()) {
+            id = item.id();
             addSendLaterItem(item);
         }
     }
