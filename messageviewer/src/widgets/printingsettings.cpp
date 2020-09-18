@@ -25,7 +25,7 @@ public:
         delete mPrintingUi;
     }
 
-    Ui_PrintingSettings *mPrintingUi = nullptr;
+    Ui_PrintingSettings *const mPrintingUi;
 };
 
 PrintingSettings::PrintingSettings(QWidget *parent)

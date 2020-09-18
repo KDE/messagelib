@@ -61,8 +61,8 @@ private:
     void internalEnter();
     void internalExit();
 
-    KMime::Content *mNode = nullptr;
-    HtmlWriter *mWriter = nullptr;
+    KMime::Content *const mNode;
+    HtmlWriter *const mWriter;
 };
 
 // Make sure the whole content is relative, so that nothing is painted over the header

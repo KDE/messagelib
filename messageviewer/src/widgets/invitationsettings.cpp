@@ -24,10 +24,9 @@ public:
     ~InvitationSettingsPrivate()
     {
         delete mInvitationUi;
-        mInvitationUi = nullptr;
     }
 
-    Ui_InvitationSettings *mInvitationUi = nullptr;
+    Ui_InvitationSettings *const mInvitationUi;
 };
 
 InvitationSettings::InvitationSettings(QWidget *parent)

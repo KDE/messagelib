@@ -235,7 +235,11 @@ void EncryptJob::process()
     qCDebug(MESSAGECOMPOSER_LOG) << "got backend, starting job";
     QGpgME::EncryptJob *eJob = proto->encryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat);
 
-    QObject::connect(eJob, &QGpgME::EncryptJob::result, this, [this, d](const GpgME::EncryptionResult &result, const QByteArray &cipherText, const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
+    QObject::connect(eJob, &QGpgME::EncryptJob::result, this, [this, d](const GpgME::EncryptionResult &result,
+                     const QByteArray &cipherText,
+                     const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
+        Q_UNUSED(auditLogAsHtml);
+        Q_UNUSED(auditLogError);
         if (result.error()) {
             setError(result.error().code());
             setErrorText(QString::fromLocal8Bit(result.error().asString()));
