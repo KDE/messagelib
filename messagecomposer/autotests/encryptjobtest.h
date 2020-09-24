@@ -10,9 +10,6 @@
 
 #include <QObject>
 
-#include <gpgme++/key.h>
-#include <gpgme++/keylistresult.h>
-
 namespace MessageComposer {
 class EncryptJob;
 }
