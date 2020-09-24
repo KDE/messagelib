@@ -35,7 +35,7 @@ set( messagecomposer_job_src
     job/savecontactpreferencejob.cpp
     job/attachmentvcardfromaddressbookjob.cpp
     job/attachmentclipboardjob.cpp
-    job/protectedheaders.cpp
+    job/protectedheadersjob.cpp
     )
 
 set( messagecomposer_statusbarwidget_src
@@ -464,6 +464,7 @@ ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     AttachmentFromPublicKeyJob
     MultipartJob
     EncryptJob
+    ProtectedHeadersJob
     AttachmentVcardFromAddressBookJob
     SignJob
     SignEncryptJob

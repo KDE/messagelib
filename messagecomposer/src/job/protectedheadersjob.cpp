@@ -4,7 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "job/protectedheaders.h"
+#include "job/protectedheadersjob.h"
 
 #include "contentjobbase_p.h"
 #include "job/singlepartjob.h"

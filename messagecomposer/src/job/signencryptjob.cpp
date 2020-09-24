@@ -8,7 +8,7 @@
 #include "job/signencryptjob.h"
 
 #include "contentjobbase_p.h"
-#include "job/protectedheaders.h"
+#include "job/protectedheadersjob.h"
 #include "utils/util_p.h"
 
 #include <QGpgME/Protocol>
