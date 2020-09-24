@@ -42,6 +42,7 @@ public:
     KMime::Message *skeletonMessage = nullptr;
 
     bool preferEncrypted = false;
+    int subJobs = 0;
     GpgME::Key recipientKey;
     std::vector<GpgME::Key> gossipKeys;
 
@@ -163,6 +164,11 @@ void AutocryptHeadersJob::doStart()
     Q_ASSERT(job);
 
     connect(job, &QGpgME::ExportJob::result, this, [this, d](const GpgME::Error &error, const QByteArray &keydata) {
+        d->subJobs--;
+        if (AutocryptHeadersJob::error()) {
+            // When the job already has failed do nothing.
+            return;
+        }
         if (error) {
             d->emitGpgError(error);
             return;
@@ -175,8 +181,45 @@ void AutocryptHeadersJob::doStart()
         d->fillHeaderData(autocrypt, d->skeletonMessage->from()->addresses()[0], d->preferEncrypted, keydata);
 
         d->skeletonMessage->setHeader(autocrypt);
-        emitResult();
+
+        if (!d->subJobs) {
+            emitResult();
+        }
     });
 
+    foreach(const auto key, d->gossipKeys) {
+        auto gossipJob = QGpgME::openpgp()->publicKeyExportJob(false);
+        Q_ASSERT(gossipJob);
+
+        connect(gossipJob, &QGpgME::ExportJob::result, this, [this, d, key](const GpgME::Error &error, const QByteArray &keydata) {
+            d->subJobs--;
+            if (AutocryptHeadersJob::error()) {
+                // When the job already has failed do nothing.
+                return;
+            }
+            if (error) {
+                d->emitGpgError(error);
+                return;
+            }
+            if (keydata.isEmpty()) {
+                d->emitNotFoundError(key.userID(0).email(), key.primaryFingerprint());
+            }
+
+            auto header = new KMime::Headers::Generic("Autocrypt-Gossip");
+            d->fillHeaderData(header, key.userID(0).email(), false, keydata);
+
+            d->content->appendHeader(header);
+
+            if (!d->subJobs) {
+                emitResult();
+            }
+        });
+
+        d->subJobs++;
+        gossipJob->start(QStringList(QString::fromLatin1(key.primaryFingerprint())));
+
+    }
+
+    d->subJobs++;
     job->start(QStringList(QString::fromLatin1(d->recipientKey.primaryFingerprint())));
 }
