@@ -175,7 +175,7 @@ QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
     //Workaround line with # see bug 406208
     const int indexOf = str.indexOf(QLatin1Char('?'));
     if (indexOf != -1) {
-        str = str.right(str.length() - indexOf - 1);
+        str.remove(0, indexOf + 1);
         QUrlQuery query(str);
         const auto listQuery = query.queryItems(QUrl::FullyDecoded);
         for (const auto &queryItem : listQuery) {
