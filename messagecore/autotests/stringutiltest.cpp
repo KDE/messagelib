@@ -527,6 +527,54 @@ void StringUtilTest::test_parseMailToBug832795()
                  "On Thu, 28 Jul 2016References=<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>body=On Thu, 28 Jul 2016 23:39:03 +0200 Dominik George <nik@naturalnet.de> wrote:\n> Package: kmail\n> Version: 4:16.04.3-1\n"));
 }
 
+void StringUtilTest::test_crashXdgemail()
+{
+    const QString ba(QStringLiteral("mailto:foo@kde.org?to=bar@kde.org&to=baz@kde.org"));
+    QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
+    QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+    QCOMPARE(values.size(), 1);
+    QCOMPARE(values.at(0).first, QLatin1String("to"));
+    QCOMPARE(values.at(0).second, QLatin1String("foo@kde.org, bar@kde.org, baz@kde.org"));
+}
+
+void StringUtilTest::test_xdgemail()
+{
+    {
+        const QString ba(QStringLiteral("mailto:foo@kde.org?to=bar@kde.org&to=baz@kde.org&cc=bli@kde.org"));
+        QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
+        QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+        QCOMPARE(values.size(), 2);
+        QCOMPARE(values.at(0).first, QLatin1String("to"));
+        QCOMPARE(values.at(0).second, QLatin1String("foo@kde.org, bar@kde.org, baz@kde.org"));
+        QCOMPARE(values.at(1).first, QLatin1String("cc"));
+        QCOMPARE(values.at(1).second, QLatin1String("bli@kde.org"));
+    }
+    {
+        const QString ba(QStringLiteral("mailto:foo@kde.org?to=bar@kde.org&to=baz@kde.org&cc=ss@kde.org&bcc=ccs@kde.org"));
+        QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
+        QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+        QCOMPARE(values.size(), 3);
+        QCOMPARE(values.at(0).first, QLatin1String("to"));
+        QCOMPARE(values.at(0).second, QLatin1String("foo@kde.org, bar@kde.org, baz@kde.org"));
+        QCOMPARE(values.at(1).first, QLatin1String("cc"));
+        QCOMPARE(values.at(1).second, QLatin1String("ss@kde.org"));
+        QCOMPARE(values.at(2).first, QLatin1String("bcc"));
+        QCOMPARE(values.at(2).second, QLatin1String("ccs@kde.org"));
+    }
+    {
+        const QString ba(QStringLiteral("mailto:foo@kde.org?to=bar@kde.org&to=baz@kde.org&cc=ss@kde.org&bcc=ccs@kde.org&to=ff@kde.org"));
+        QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
+        QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+        QCOMPARE(values.size(), 3);
+        QCOMPARE(values.at(0).first, QLatin1String("cc"));
+        QCOMPARE(values.at(0).second, QLatin1String("ss@kde.org"));
+        QCOMPARE(values.at(1).first, QLatin1String("bcc"));
+        QCOMPARE(values.at(1).second, QLatin1String("ccs@kde.org"));
+        QCOMPARE(values.at(2).first, QLatin1String("to"));
+        QCOMPARE(values.at(2).second, QLatin1String("foo@kde.org, bar@kde.org, baz@kde.org, ff@kde.org"));
+    }
+}
+
 void StringUtilTest::test_stripOffMessagePrefix_data()
 {
     QTest::addColumn<QString>("subject");
