@@ -164,7 +164,7 @@ QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
         return values;
     }
     QString str = url.toString();
-    QString toStr;
+    QStringList toStr;
     int i = 0;
 
     //String can be encoded.
@@ -180,15 +180,15 @@ QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
         const auto listQuery = query.queryItems(QUrl::FullyDecoded);
         for (const auto &queryItem : listQuery) {
             if (queryItem.first == QLatin1String("to")) {
-                toStr = queryItem.second;
+                toStr << queryItem.second;
                 indexTo = i;
             } else {
                 QPair<QString, QString> pairElement;
                 pairElement.first = queryItem.first;
                 pairElement.second = queryItem.second;
                 values.append(pairElement);
+                i++;
             }
-            i++;
         }
     }
     QStringList to = {KEmailAddress::decodeMailtoUrl(newUrl)};

@@ -32,6 +32,8 @@ private Q_SLOTS:
     void test_parseMailToBug406208();
     void test_parseMailToWithUtf8Encoded();
     void test_parseMailToWithUtf8QuotedEncoded();
+    void test_crashXdgemail();
+    void test_xdgemail();
 };
 
 #endif
