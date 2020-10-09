@@ -917,7 +917,7 @@ void AttachmentControllerBase::showAddAttachmentCompressedDirectoryDialog()
 
 void AttachmentControllerBase::showAddAttachmentFileDialog()
 {
-    KEncodingFileDialog::Result result = KEncodingFileDialog::getOpenUrlsAndEncoding(QString(),
+    const KEncodingFileDialog::Result result = KEncodingFileDialog::getOpenUrlsAndEncoding(QString(),
                                                                                      QUrl(),
                                                                                      QString(),
                                                                                      d->wParent,
