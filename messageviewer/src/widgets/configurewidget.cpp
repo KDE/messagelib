@@ -40,7 +40,7 @@ ConfigureWidget::ConfigureWidget(QWidget *parent)
 {
     d->mSettingsUi = new Ui_Settings;
     d->mSettingsUi->setupUi(this);
-    layout()->setContentsMargins(0, 0, 0, 0);
+    layout()->setContentsMargins({});
 
     QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings(false);
     encodings.prepend(i18n("Auto"));

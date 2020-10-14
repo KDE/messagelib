@@ -39,7 +39,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     : QWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
     mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget;
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeech"));
     lay->addWidget(mTextToSpeechWidget);

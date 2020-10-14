@@ -60,7 +60,7 @@ RecipientLineNG::RecipientLineNG(QWidget *parent)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
     QBoxLayout *topLayout = new QHBoxLayout(this);
-    topLayout->setContentsMargins(0, 0, 0, 0);
+    topLayout->setContentsMargins({});
 
     const QStringList recipientTypes = Recipient::allTypeLabels();
 

@@ -98,7 +98,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     mainLayout->addWidget(buttonBox);
 
     QGridLayout *g = new QGridLayout(base);
-    g->setContentsMargins(0, 0, 0, 0);
+    g->setContentsMargins({});
 
     d->mThemeList = new ThemeListWidget(base);
     d->mThemeList->setSelectionMode(QAbstractItemView::ExtendedSelection);

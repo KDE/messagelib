@@ -23,12 +23,12 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vbox = new QVBoxLayout(this);
-    vbox->setContentsMargins(0, 0, 0, 0);
+    vbox->setContentsMargins({});
     vbox->setSpacing(0);
 
     QWidget *w = new QWidget;
     QHBoxLayout *hbox = new QHBoxLayout(w);
-    hbox->setContentsMargins(0, 0, 0, 0);
+    hbox->setContentsMargins({});
     hbox->setSpacing(0);
     vbox->addWidget(w);
 

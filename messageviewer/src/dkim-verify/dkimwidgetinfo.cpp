@@ -20,7 +20,7 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
 {
     QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setContentsMargins({});
 
     mLabel = new QLabel(this);
     mLabel->setAutoFillBackground(true);

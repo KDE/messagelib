@@ -18,7 +18,7 @@ TemplateParserEmailAddressRequesterInterfaceWidget::TemplateParserEmailAddressRe
 {
     QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setContentsMargins({});
     initializeEmailWidget();
     mainLayout->addWidget(mTemplateParserEmailBase);
 }

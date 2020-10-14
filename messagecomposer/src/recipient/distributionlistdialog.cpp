@@ -112,7 +112,7 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     mainLayout->addWidget(buttonBox);
 
     QBoxLayout *topLayout = new QVBoxLayout(topFrame);
-    topLayout->setContentsMargins(0, 0, 0, 0);
+    topLayout->setContentsMargins({});
 
     QBoxLayout *titleLayout = new QHBoxLayout;
     topLayout->addLayout(titleLayout);

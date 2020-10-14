@@ -19,7 +19,7 @@ SendLaterTimeDateWidget::SendLaterTimeDateWidget(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
 
     QDateTime t = QDateTime::currentDateTime();
     t = t.addSecs(60 * 60);

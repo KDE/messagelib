@@ -49,9 +49,9 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     topLayout->addWidget(mainWidget);
     topLayout->addWidget(buttonBox);
     QVBoxLayout *mainLayout = new QVBoxLayout(mainWidget);
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setContentsMargins({});
     QFormLayout *formLayout = new QFormLayout;
-    formLayout->setContentsMargins(0, 0, 0, 0);
+    formLayout->setContentsMargins({});
     mainLayout->addLayout(formLayout);
 
     d->mDateComboBox = new KDateComboBox;

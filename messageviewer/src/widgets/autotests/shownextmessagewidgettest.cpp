@@ -21,7 +21,7 @@ void ShowNextMessageWidgetTest::shouldHaveDefaultValue()
 
     QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
-    //mainLayout->setContentsMargins(0, 0, 0, 0);
+    //mainLayout->setContentsMargins({});
 
     QPushButton *mPreviousMessage = w.findChild<QPushButton *>(QStringLiteral("previous_message"));
     QVERIFY(mPreviousMessage);

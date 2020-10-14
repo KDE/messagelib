@@ -123,7 +123,7 @@ Widget::Widget(QWidget *pParent)
     setObjectName(QStringLiteral("messagelistwidget"));
 
     QVBoxLayout *g = new QVBoxLayout(this);
-    g->setContentsMargins(0, 0, 0, 0);
+    g->setContentsMargins({});
     g->setSpacing(0);
 
     d->quickSearchLine = new QuickSearchLine;

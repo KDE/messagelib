@@ -28,7 +28,7 @@ RecipientsEditorSideWidget::RecipientsEditorSideWidget(RecipientsEditor *view, Q
 {
     QBoxLayout *topLayout = new QVBoxLayout(this);
 
-    topLayout->setContentsMargins(0, 0, 0, 0);
+    topLayout->setContentsMargins({});
     topLayout->addStretch(1);
 
     mTotalLabel = new QLabel(this);

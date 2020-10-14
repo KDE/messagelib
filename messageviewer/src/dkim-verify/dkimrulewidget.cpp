@@ -19,7 +19,7 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
 {
     QFormLayout *layout = new QFormLayout(this);
     layout->setObjectName(QStringLiteral("layout"));
-    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setContentsMargins({});
 
     mEnabled = new QCheckBox(i18n("Enabled"), this);
     mEnabled->setObjectName(QStringLiteral("enabled"));

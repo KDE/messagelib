@@ -15,7 +15,7 @@ ShowNextMessageWidget::ShowNextMessageWidget(QWidget *parent)
 {
     QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setContentsMargins({});
 
     mPreviousMessage = new QPushButton(i18n("Previous Message"), this);
     mPreviousMessage->setObjectName(QStringLiteral("previous_message"));
