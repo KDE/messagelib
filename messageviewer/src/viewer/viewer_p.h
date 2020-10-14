@@ -592,6 +592,7 @@ private:
     bool mHtmlMailGlobalSetting = false;
     bool mHtmlLoadExternalDefaultSetting = false;
     bool mHtmlLoadExtOverride = false;
+    void assignMessageItem(const Akonadi::Item &item);
 public:
     KMime::Message::Ptr mMessage; //the current message, if it was set manually
     Akonadi::Item mMessageItem; //the message item from Akonadi

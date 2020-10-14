@@ -1240,6 +1240,11 @@ void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message, MimeT
     update(updateMode);
 }
 
+void ViewerPrivate::assignMessageItem(const Akonadi::Item &item)
+{
+    mMessageItem = item;
+}
+
 void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode)
 {
     resetStateForNewMessage();
@@ -1248,7 +1253,7 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
     }
     Q_ASSERT(mMonitor.itemsMonitoredEx().isEmpty());
 
-    mMessageItem = item;
+    assignMessageItem(item);
     if (mMessageItem.isValid()) {
         mMonitor.setItemMonitored(mMessageItem, true);
     }
@@ -1293,7 +1298,7 @@ void ViewerPrivate::setMessage(const KMime::Message::Ptr &aMsg, MimeTreeParser::
     Akonadi::Item item;
     item.setMimeType(KMime::Message::mimeType());
     item.setPayload(aMsg);
-    mMessageItem = item;
+    assignMessageItem(item);
 
     setMessageInternal(aMsg, updateMode);
 }
