@@ -599,9 +599,7 @@ public:
     QSplitter *mSplitter = nullptr;
     QWidget *mBox = nullptr;
     HtmlStatusBar *mColorBar = nullptr;
-#ifndef QT_NO_TREEVIEW
     MimePartTreeView *mMimePartTree = nullptr;
-#endif
     MailWebEngineView *mViewer = nullptr;
     WebEngineViewer::FindBarWebEngineView *mFindBar = nullptr;
 

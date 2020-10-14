@@ -377,9 +377,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
         return false; //cancelled
     }
     //don't confuse the model
-#ifndef QT_NO_TREEVIEW
     mMimePartTree->clearModel();
-#endif
     QString filename;
     QString name;
     QByteArray mimetype;
@@ -412,9 +410,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
     parent->assemble();
 
     KMime::Message *modifiedMessage = mNodeHelper->messageWithExtraContent(mMessage.data());
-#ifndef QT_NO_TREEVIEW
     mMimePartTree->mimePartModel()->setRoot(modifiedMessage);
-#endif
     mMessageItem.setPayloadFromData(modifiedMessage->encodedContent());
     Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
     job->disableRevisionCheck();
@@ -843,9 +839,7 @@ void ViewerPrivate::displayMessage()
     }
 
     parseContent(mMessage.data());
-#ifndef QT_NO_TREEVIEW
     mMimePartTree->setRoot(mNodeHelper->messageWithExtraContent(mMessage.data()));
-#endif
     mColorBar->update();
 
     htmlWriter()->write(cssHelper()->endBodyHtml());
@@ -1198,9 +1192,7 @@ void ViewerPrivate::resetStateForNewMessage()
     mMessage.reset();
     mNodeHelper->clear();
     mMessagePartNode = nullptr;
-#ifndef QT_NO_TREEVIEW
     mMimePartTree->clearModel();
-#endif
     if (mViewer) {
         mViewer->clearRelativePosition();
         mViewer->hideAccessKeys();
@@ -1243,10 +1235,8 @@ void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message, MimeT
         mNodeHelper->setOverrideCodec(mMessage.data(), overrideCodec());
     }
 
-#ifndef QT_NO_TREEVIEW
     mMimePartTree->setRoot(mNodeHelper->messageWithExtraContent(message.data()));
     update(updateMode);
-#endif
 }
 
 void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode)
@@ -1341,7 +1331,6 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
 
 void ViewerPrivate::showHideMimeTree()
 {
-#ifndef QT_NO_TREEVIEW
     if (mimePartTreeIsEmpty()) {
         mMimePartTree->hide();
         return;
@@ -1360,7 +1349,6 @@ void ViewerPrivate::showHideMimeTree()
     if (mToggleMimePartTreeAction && (mToggleMimePartTreeAction->isChecked() != showMimeTree)) {
         mToggleMimePartTreeAction->setChecked(showMimeTree);
     }
-#endif
 }
 
 void ViewerPrivate::attachmentViewMessage(const KMime::Message::Ptr &message)
@@ -1371,7 +1359,6 @@ void ViewerPrivate::attachmentViewMessage(const KMime::Message::Ptr &message)
 
 void ViewerPrivate::adjustLayout()
 {
-#ifndef QT_NO_TREEVIEW
     const int mimeH = MessageViewer::MessageViewerSettings::self()->mimePaneHeight();
     const int messageH = MessageViewer::MessageViewerSettings::self()->messagePaneHeight();
     const QList<int> splitterSizes{messageH, mimeH};
@@ -1386,7 +1373,6 @@ void ViewerPrivate::adjustLayout()
     } else {
         mMimePartTree->hide();
     }
-#endif
 
     if (mMsgDisplay) {
         mColorBar->show();
@@ -1397,7 +1383,6 @@ void ViewerPrivate::adjustLayout()
 
 void ViewerPrivate::saveSplitterSizes() const
 {
-#ifndef QT_NO_TREEVIEW
     if (!mSplitter || !mMimePartTree) {
         return;
     }
@@ -1406,7 +1391,6 @@ void ViewerPrivate::saveSplitterSizes() const
     }
     MessageViewer::MessageViewerSettings::self()->setMimePaneHeight(mSplitter->sizes().at(1));
     MessageViewer::MessageViewerSettings::self()->setMessagePaneHeight(mSplitter->sizes().at(0));
-#endif
 }
 
 void ViewerPrivate::createWidgets()
@@ -1420,13 +1404,11 @@ void ViewerPrivate::createWidgets()
     mSplitter->setObjectName(QStringLiteral("mSplitter"));
     mSplitter->setChildrenCollapsible(false);
     vlay->addWidget(mSplitter);
-#ifndef QT_NO_TREEVIEW
     mMimePartTree = new MimePartTreeView(mSplitter);
     connect(mMimePartTree, &QAbstractItemView::activated, this,
             &ViewerPrivate::slotMimePartSelected);
     connect(mMimePartTree, &QWidget::customContextMenuRequested, this,
             &ViewerPrivate::slotMimeTreeContextMenuRequested);
-#endif
 
     mBox = new QWidget(mSplitter);
     QHBoxLayout *mBoxHBoxLayout = new QHBoxLayout(mBox);
@@ -1493,9 +1475,7 @@ void ViewerPrivate::createWidgets()
             &KPIMTextEdit::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);
 
-#ifndef QT_NO_TREEVIEW
     mSplitter->setStretchFactor(mSplitter->indexOf(mMimePartTree), 0);
-#endif
 }
 
 void ViewerPrivate::slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin)
@@ -1763,7 +1743,6 @@ void ViewerPrivate::slotShowDevelopmentTools()
 
 void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
 {
-#ifndef QT_NO_TREEVIEW
     if (!content) {
         return;
     }
@@ -1817,7 +1796,6 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
         }
     }
     popup.exec(mMimePartTree->viewport()->mapToGlobal(pos));
-#endif
 }
 
 KToggleAction *ViewerPrivate::actionForAttachmentStrategy(
@@ -2239,9 +2217,7 @@ void ViewerPrivate::updateReaderWin()
             setMessagePart(mMessagePartNode);
         } else {
             mColorBar->hide();
-#ifndef QT_NO_TREEVIEW
             mMimePartTree->hide();
-#endif
             htmlWriter()->begin();
             htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont) + cssHelper()->endBodyHtml());
             htmlWriter()->end();
@@ -2252,14 +2228,12 @@ void ViewerPrivate::updateReaderWin()
 
 void ViewerPrivate::slotMimePartSelected(const QModelIndex &index)
 {
-#ifndef QT_NO_TREEVIEW
     KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
     if (!mMimePartTree->mimePartModel()->parent(index).isValid() && index.row() == 0) {
         update(MimeTreeParser::Force);
     } else {
         setMessagePart(content);
     }
-#endif
 }
 
 void ViewerPrivate::slotIconicAttachments()
@@ -2468,18 +2442,15 @@ void ViewerPrivate::slotSettingsChanged()
 
 void ViewerPrivate::slotMimeTreeContextMenuRequested(const QPoint &pos)
 {
-#ifndef QT_NO_TREEVIEW
     QModelIndex index = mMimePartTree->indexAt(pos);
     if (index.isValid()) {
         KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
         showContextMenu(content, pos);
     }
-#endif
 }
 
 void ViewerPrivate::slotAttachmentOpenWith()
 {
-#ifndef QT_NO_TREEVIEW
     QItemSelectionModel *selectionModel = mMimePartTree->selectionModel();
     const QModelIndexList selectedRows = selectionModel->selectedRows();
 
@@ -2487,12 +2458,10 @@ void ViewerPrivate::slotAttachmentOpenWith()
         KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
         attachmentOpenWith(content);
     }
-#endif
 }
 
 void ViewerPrivate::slotAttachmentOpen()
 {
-#ifndef QT_NO_TREEVIEW
     QItemSelectionModel *selectionModel = mMimePartTree->selectionModel();
     const QModelIndexList selectedRows = selectionModel->selectedRows();
 
@@ -2500,7 +2469,6 @@ void ViewerPrivate::slotAttachmentOpen()
         KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
         attachmentOpen(content);
     }
-#endif
 }
 
 void ViewerPrivate::showSavedFileFolderWidget(const QList<QUrl> &urls, OpenSavedFileFolderWidget::FileType fileType)
@@ -2511,11 +2479,7 @@ void ViewerPrivate::showSavedFileFolderWidget(const QList<QUrl> &urls, OpenSaved
 
 bool ViewerPrivate::mimePartTreeIsEmpty() const
 {
-#ifndef QT_NO_TREEVIEW
     return mMimePartTree->model()->rowCount() == 0;
-#else
-    return false;
-#endif
 }
 
 void ViewerPrivate::setPluginName(const QString &pluginName)

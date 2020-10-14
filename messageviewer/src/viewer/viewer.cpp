@@ -519,11 +519,7 @@ void Viewer::readConfig()
 
 QAbstractItemModel *Viewer::messageTreeModel() const
 {
-#ifndef QT_NO_TREEVIEW
     return d_func()->mMimePartTree->mimePartModel();
-#else
-    return nullptr;
-#endif
 }
 
 Akonadi::ItemFetchJob *Viewer::createFetchJob(const Akonadi::Item &item)
