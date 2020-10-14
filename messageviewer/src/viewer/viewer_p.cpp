@@ -2621,7 +2621,7 @@ void ViewerPrivate::slotHandleAttachment(int choice)
             item.setMimeType(KMime::Message::mimeType());
             QUrl url;
             if (MessageViewer::Util::saveMessageInMboxAndGetUrl(url, Akonadi::Item::List() << item, mMainWindow)) {
-                showSavedFileFolderWidget(QList<QUrl>() << url, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
+                showSavedFileFolderWidget({url}, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
             }
         } else {
             QList<QUrl> urlList;
