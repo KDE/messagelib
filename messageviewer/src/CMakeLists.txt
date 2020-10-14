@@ -139,6 +139,7 @@ set(libmessageviewer_viewer_SRCS
     viewer/mimeparttree/mimeparttreeview.cpp
     viewer/mimeparttree/mimetreemodel.cpp
     viewer/viewerpurposemenuwidget.cpp
+    viewer/messagewidgetarea.cpp
     )
 
 set(libmessageviewer_widgets_SRCS

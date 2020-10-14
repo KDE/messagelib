@@ -1,0 +1,23 @@
+/*
+  SPDX-FileCopyrightText: 2020 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: LGPL-2.0-or-later
+
+*/
+
+#include "messagewidgetarea.h"
+#include <QVBoxLayout>
+using namespace MessageViewer;
+MessageWidgetArea::MessageWidgetArea(QWidget *parent)
+    : QWidget(parent)
+{
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setContentsMargins({});
+
+}
+
+MessageWidgetArea::~MessageWidgetArea()
+{
+
+}
