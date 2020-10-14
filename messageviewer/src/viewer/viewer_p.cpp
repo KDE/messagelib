@@ -2122,10 +2122,6 @@ void ViewerPrivate::slotToggleHtmlMode()
 {
     const auto availableModes = mColorBar->availableModes();
     const int availableModeSize(availableModes.size());
-//    for (int i = 0; i < availableModeSize; ++i) {
-//        qDebug() << " Mode " << MimeTreeParser::Util::htmlModeToString(availableModes.at(i));
-//    }
-//    qDebug() << " availableModeSize"<<availableModeSize;
     if (mColorBar->isNormal() || availableModeSize < 2) {
         return;
     }
@@ -2134,11 +2130,6 @@ void ViewerPrivate::slotToggleHtmlMode()
     const int pos = (availableModes.indexOf(mode) + 1) % availableModeSize;
     setDisplayFormatMessageOverwrite(translateToDisplayFormat(availableModes[pos]));
     update(MimeTreeParser::Force);
-//    for (int i = 0; i < availableModeSize; ++i) {
-//        qDebug() << "AFTER Mode " << MimeTreeParser::Util::htmlModeToString(availableModes.at(i));
-//    }
-
-//    qDebug() << " Assign modes " << availableModes;
     mColorBar->setAvailableModes(availableModes);
 }
 
