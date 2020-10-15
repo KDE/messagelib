@@ -573,6 +573,21 @@ void StringUtilTest::test_xdgemail()
         QCOMPARE(values.at(2).first, QLatin1String("to"));
         QCOMPARE(values.at(2).second, QLatin1String("foo@kde.org, bar@kde.org, baz@kde.org, ff@kde.org"));
     }
+    {
+        //Bug 427697
+        const QByteArray ba(QByteArrayLiteral("mailto:julia.lawall%40inria.fr?In-Reply-To=%3Calpine.DEB.2.22.394.2009272255220.20726@hadrien%3E&#38;Cc=Gilles.Muller%40lip6.fr%2Ccocci%40systeme.lip6.fr%2Ccorbet%40lwn.net%2Clinux-doc%40vger.kernel.org%2Clinux-kernel%40vger.kernel.org%2Cmichal.lkml%40markovi.net%2Cnicolas.palix%40imag.fr%2Csylphrenadin%40gmail.com&#38;Subject=Re%3A%20%5BCocci%5D%20%5BPATCH%201%2F2%5D%20scripts%3A%20coccicheck%3A%20Change%20default%20value%20for%09parallelism"));
+        QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
+        QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+        QCOMPARE(values.size(), 4);
+        QCOMPARE(values.at(0).first, QLatin1String("to"));
+        QCOMPARE(values.at(0).second, QLatin1String("julia.lawall@inria.fr"));
+        QCOMPARE(values.at(1).first, QLatin1String("in-reply-to"));
+        QCOMPARE(values.at(1).second, QLatin1String("<alpine.DEB.2.22.394.2009272255220.20726@hadrien>"));
+        QCOMPARE(values.at(2).first, QLatin1String("cc"));
+        QCOMPARE(values.at(2).second, QLatin1String("Gilles.Muller@lip6.fr,cocci@systeme.lip6.fr,corbet@lwn.net,linux-doc@vger.kernel.org,linux-kernel@vger.kernel.org,michal.lkml@markovi.net,nicolas.palix@imag.fr,sylphrenadin@gmail.com"));
+        QCOMPARE(values.at(3).first, QLatin1String("subject"));
+        QCOMPARE(values.at(3).second, QLatin1String("Re: [Cocci] [PATCH 1/2] scripts: coccicheck: Change default value for\tparallelism"));
+    }
 }
 
 void StringUtilTest::test_stripOffMessagePrefix_data()

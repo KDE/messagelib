@@ -170,6 +170,8 @@ QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
 
     //String can be encoded.
     str = KCodecs::decodeRFC2047String(str);
+    //Bug 427697
+    str.replace(QStringLiteral("&#38;"), QStringLiteral("&"));
     const QUrl newUrl = QUrl::fromUserInput(str);
 
     int indexTo = -1;
@@ -185,7 +187,7 @@ QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
                 indexTo = i;
             } else {
                 QPair<QString, QString> pairElement;
-                pairElement.first = queryItem.first;
+                pairElement.first = queryItem.first.toLower();
                 pairElement.second = queryItem.second;
                 values.append(pairElement);
                 i++;
