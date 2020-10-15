@@ -588,6 +588,20 @@ void StringUtilTest::test_xdgemail()
         QCOMPARE(values.at(3).first, QLatin1String("subject"));
         QCOMPARE(values.at(3).second, QLatin1String("Re: [Cocci] [PATCH 1/2] scripts: coccicheck: Change default value for\tparallelism"));
     }
+    {
+        //Bug 427697
+        const QByteArray ba(QByteArrayLiteral("mailto:cocci%40systeme.lip6.fr?Subject=Re%3A%20%5BCocci%5D%20%5BPATCH%5D%20scripts%3A%20coccicheck%3A%20Refactor%20display%20messages%20on%0A%20coccinelle%20start%20up&In-Reply-To=%3C20201003142012.idwudlhqiv3a4mjj%40adolin%3E"));
+        QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
+        QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+        QCOMPARE(values.size(), 3);
+        qDebug() << " values " << values;
+        QCOMPARE(values.at(0).first, QLatin1String("to"));
+        QCOMPARE(values.at(0).second, QLatin1String("cocci@systeme.lip6.fr"));
+        QCOMPARE(values.at(1).first, QLatin1String("subject"));
+        QCOMPARE(values.at(1).second, QLatin1String("Re: [Cocci] [PATCH] scripts: coccicheck: Refactor display messages on\n coccinelle start up"));
+        QCOMPARE(values.at(2).first, QLatin1String("in-reply-to"));
+        QCOMPARE(values.at(2).second, QLatin1String("<20201003142012.idwudlhqiv3a4mjj@adolin>"));
+    }
 }
 
 void StringUtilTest::test_stripOffMessagePrefix_data()
