@@ -37,8 +37,6 @@ public:
     void expireParent(MessageItem *item);
 
 private:
-    QString cacheFilePath(const QString &id) const;
-
     QHash<qint64 /* child */, qint64 /* parent */> mParentCache;
     QHash<qint64 /* ID */, MessageItem *> mItemCache;
 

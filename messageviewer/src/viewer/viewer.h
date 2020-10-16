@@ -311,8 +311,6 @@ public:
 
     Q_REQUIRED_RESULT QString selectedText() const;
 
-    void setExternalWindow(bool b);
-
     void saveMainFrameScreenshotInFile(const QString &filename);
     bool mimePartTreeIsEmpty() const;
 

@@ -33,7 +33,6 @@ public:
     void addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
 
     Q_REQUIRED_RESULT WebEngineManageScript *webEngineManagerScript() const;
-    void setLinkHovered(const QUrl &url);
 
     Q_REQUIRED_RESULT WebEngineViewer::LocalDataBaseManager *phishingDatabase() const;
 
