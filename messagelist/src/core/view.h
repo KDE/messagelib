@@ -430,11 +430,6 @@ protected:
     void modelEmittedLayoutChanged();
 
     /**
-    * Recursive helper for currentThreadAsMessageItemList()
-    */
-    void appendMessageItemChildren(MessageItem *par, QList< MessageItem * > &list);
-
-    /**
     * This is called by the model to insulate us from certain QTreeView signals
     * This is because they may be spurious (caused by Model item rearrangements).
     */

@@ -46,7 +46,6 @@ public:
 
     Q_REQUIRED_RESULT QComboBox *tagFilterComboBox() const;
     Q_REQUIRED_RESULT SearchLineStatus *searchEdit() const;
-    Q_REQUIRED_RESULT QToolButton *openFullSearchButton() const;
     void resetFilter();
     Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> status() const;
 
