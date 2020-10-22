@@ -91,8 +91,9 @@ void AttachmentJob::doStart()
         sjob->contentTransferEncoding()->setEncoding(d->part->encoding());
     }
 
-    sjob->contentType()->setMimeType(d->part->mimeType());   // setMimeType() clears all other params.
-    sjob->contentType()->setName(d->part->name(), charset);
+    auto ct = sjob->contentType();
+    ct->setMimeType(d->part->mimeType());   // setMimeType() clears all other params.
+    ct->setName(d->part->name(), charset);
     if (sjob->contentType()->isText()) {
         // If it is a text file, detect its charset.
         //sjob->contentType()->setCharset( d->detectCharset( d->part->data() ) );
@@ -110,12 +111,13 @@ void AttachmentJob::doStart()
 
     sjob->contentDescription()->fromUnicodeString(d->part->description(), charset);
 
-    sjob->contentDisposition()->setFilename(d->part->fileName());
-    sjob->contentDisposition()->setRFC2047Charset(charset);
+    auto contentDisposition = sjob->contentDisposition();
+    contentDisposition->setFilename(d->part->fileName());
+    contentDisposition->setRFC2047Charset(charset);
     if (d->part->isInline()) {
-        sjob->contentDisposition()->setDisposition(KMime::Headers::CDinline);
+        contentDisposition->setDisposition(KMime::Headers::CDinline);
     } else {
-        sjob->contentDisposition()->setDisposition(KMime::Headers::CDattachment);
+        contentDisposition->setDisposition(KMime::Headers::CDattachment);
     }
 
     ContentJobBase::doStart();

@@ -178,7 +178,6 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     , q(aParent)
     , mSession(new Akonadi::Session("MessageViewer-"
                                     + QByteArray::number(reinterpret_cast<quintptr>(this)), this))
-    , mPreviouslyViewedItemId(-1)
 {
     if (!mainWindow) {
         mMainWindow = aParent;

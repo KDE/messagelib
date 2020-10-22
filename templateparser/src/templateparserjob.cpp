@@ -1229,9 +1229,10 @@ KMime::Content *TemplateParserJob::createMultipartRelated(const MessageCore::Ima
 KMime::Content *TemplateParserJob::createPlainPartContent(const QString &plainBody) const
 {
     KMime::Content *textPart = new KMime::Content(d->mMsg.data());
-    textPart->contentType()->setMimeType("text/plain");
+    auto ct = textPart->contentType(true);
+    ct->setMimeType("text/plain");
     QTextCodec *charset = selectCharset(d->mCharsets, plainBody);
-    textPart->contentType()->setCharset(charset->name());
+    ct->setCharset(charset->name());
     textPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
     textPart->fromUnicodeString(plainBody);
     return textPart;
@@ -1242,15 +1243,15 @@ KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QStri
     KMime::Content *multipartAlternative = new KMime::Content(d->mMsg.data());
     multipartAlternative->contentType()->setMimeType("multipart/alternative");
     const QByteArray boundary = KMime::multiPartBoundary();
-    multipartAlternative->contentType()->setBoundary(boundary);
+    multipartAlternative->contentType(false)->setBoundary(boundary); //Already created
 
     KMime::Content *textPart = createPlainPartContent(plainBody);
     multipartAlternative->addContent(textPart);
 
     KMime::Content *htmlPart = new KMime::Content(d->mMsg.data());
-    htmlPart->contentType()->setMimeType("text/html");
+    htmlPart->contentType(true)->setMimeType("text/html");
     QTextCodec *charset = selectCharset(d->mCharsets, htmlBody);
-    htmlPart->contentType()->setCharset(charset->name());
+    htmlPart->contentType(false)->setCharset(charset->name()); //Already created
     htmlPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
     htmlPart->fromUnicodeString(htmlBody);
     multipartAlternative->addContent(htmlPart);

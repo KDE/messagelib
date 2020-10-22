@@ -342,7 +342,7 @@ void MessageFactoryNG::createForwardAsync()
         //TODO Check if this is ok
         msg->setHead(mOrigMsg->head());
         msg->setBody(mOrigMsg->body());
-        const QString oldContentType = msg->contentType()->asUnicodeString();
+        const QString oldContentType = msg->contentType(true)->asUnicodeString();
         const uint originalIdentity = identityUoid(mOrigMsg);
         MessageHelper::initFromMessage(msg, mOrigMsg, mIdentityManager, originalIdentity);
 
@@ -706,8 +706,9 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDi
     const QString mainPartText = i18n("\nThis is a MIME digest forward. The content of the"
                                       " message is contained in the attachment(s).\n\n\n");
 
-    digest->contentType()->setMimeType("multipart/digest");
-    digest->contentType()->setBoundary(KMime::multiPartBoundary());
+    auto ct = digest->contentType();
+    ct->setMimeType("multipart/digest");
+    ct->setBoundary(KMime::multiPartBoundary());
     digest->contentDescription()->fromUnicodeString(QStringLiteral("Digest of %1 messages.").arg(items.count()), "utf8");
     digest->contentDisposition()->setFilename(QStringLiteral("digest"));
     digest->fromUnicodeString(mainPartText);
@@ -727,7 +728,7 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDi
         KMime::Content *part = new KMime::Content(digest);
 
         part->contentType()->setMimeType("message/rfc822");
-        part->contentType()->setCharset(fMsg->contentType()->charset());
+        part->contentType(false)->setCharset(fMsg->contentType()->charset());
         part->contentID()->setIdentifier(fMsg->contentID()->identifier());
         part->contentDescription()->fromUnicodeString(fMsg->contentDescription()->asUnicodeString(), "utf8");
         part->contentDisposition()->setParameter(QStringLiteral("name"), i18n("forwarded message"));
