@@ -7,7 +7,6 @@
 #include "messagefactoryreplyjob.h"
 #include "settings/messagecomposersettings.h"
 #include <TemplateParser/TemplateParserJob>
-#include <KIdentityManagement/IdentityManager>
 
 using namespace MessageComposer;
 

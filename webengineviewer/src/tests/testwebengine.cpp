@@ -7,7 +7,6 @@
 #include "testwebengine.h"
 #include <QHBoxLayout>
 #include <QApplication>
-#include <QWebEngineView>
 #include <WebEngineViewer/WebHitTestResult>
 #include <WebEngineViewer/WebEnginePage>
 #include <QDebug>

@@ -8,7 +8,6 @@
 #include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
 
-#include <QStringList>
 using namespace MessageViewer;
 
 DKIMInfo::DKIMInfo()

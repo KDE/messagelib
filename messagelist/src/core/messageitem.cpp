@@ -10,7 +10,6 @@
 #include "messageitem_p.h"
 
 #include <PimCommonAkonadi/AnnotationDialog>
-#include "theme.h"
 
 #include <item.h>
 #include <entityannotationsattribute.h>

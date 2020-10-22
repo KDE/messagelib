@@ -17,7 +17,6 @@
 
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
-#include <QPushButton>
 #include <QFormLayout>
 #include <QLineEdit>
 using namespace MessageComposer;

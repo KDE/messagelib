@@ -15,7 +15,6 @@
 #include <KMime/Message>
 #include <kmime/kmime_mdn.h>
 #include <kmime/kmime_dateformatter.h>
-#include <kmime/kmime_headers.h>
 #include <kidentitymanagement/identitymanager.h>
 #include <kidentitymanagement/identity.h>
 #include "messagecomposer_debug.h"

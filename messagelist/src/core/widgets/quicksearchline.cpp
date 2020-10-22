@@ -8,7 +8,6 @@
 #include "quicksearchline.h"
 #include "messagelistsettings.h"
 #include <KStringHandler>
-#include <Akonadi/KMime/MessageStatus>
 
 #include "searchlinestatus.h"
 #include <KLocalizedString>

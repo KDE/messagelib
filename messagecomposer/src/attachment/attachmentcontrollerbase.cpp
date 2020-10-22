@@ -18,7 +18,6 @@
 #include "MessageComposer/Composer"
 #include "MessageComposer/GlobalPart"
 
-#include <MessageViewer/EditorWatcher>
 #include <MessageViewer/MessageViewerUtil>
 
 #include <MimeTreeParser/NodeHelper>

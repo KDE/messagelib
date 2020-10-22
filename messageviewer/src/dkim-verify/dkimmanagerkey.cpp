@@ -6,7 +6,6 @@
 
 #include "dkimmanagerkey.h"
 #include "dkimutil.h"
-#include <KSharedConfig>
 #include <KConfig>
 #include <KConfigGroup>
 #include <QRegularExpression>

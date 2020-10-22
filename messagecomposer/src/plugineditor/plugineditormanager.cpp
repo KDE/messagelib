@@ -7,7 +7,6 @@
 #include "plugineditor.h"
 #include "messagecomposer_debug.h"
 #include "plugineditormanager.h"
-#include <PimCommon/PluginUtil>
 
 #include <QFileInfo>
 #include <QSet>

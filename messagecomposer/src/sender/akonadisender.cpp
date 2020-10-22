@@ -14,7 +14,6 @@
 #include "MessageComposer/Util"
 #include "utils/util_p.h"
 
-#include <kmime/kmime_message.h>
 #include <Libkdepim/ProgressManager>
 
 #include <MailTransportAkonadi/DispatcherInterface>

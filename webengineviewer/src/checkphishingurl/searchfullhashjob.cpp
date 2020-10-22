@@ -6,7 +6,6 @@
 
 #include "searchfullhashjob.h"
 
-#include "checkphishingurlutil.h"
 #include <QNetworkAccessManager>
 #include <QNetworkConfigurationManager>
 #include <PimCommon/NetworkManager>

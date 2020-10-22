@@ -10,7 +10,6 @@
 
 #include "messagecomposer_debug.h"
 
-#include <QWidget>
 #include <QApplication>
 #include <QDesktopWidget>
 

@@ -12,7 +12,6 @@
 #include "recipientseditor.h"
 
 #include "recipient.h"
-#include "recipientline.h"
 #include "recipientseditorsidewidget.h"
 
 #include "settings/messagecomposersettings.h"

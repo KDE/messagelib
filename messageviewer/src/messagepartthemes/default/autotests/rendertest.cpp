@@ -12,7 +12,6 @@
 
 #include <MessageViewer/FileHtmlWriter>
 #include <MimeTreeParser/ObjectTreeParser>
-#include <MimeTreeParser/MessagePart>
 
 #include <KMime/Message>
 

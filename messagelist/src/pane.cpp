@@ -24,7 +24,6 @@
 #include <QMouseEvent>
 #include <QHeaderView>
 #include <QRegularExpression>
-#include <QVector>
 #include <QApplication>
 
 #include "storagemodel.h"

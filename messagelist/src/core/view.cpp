@@ -35,7 +35,6 @@
 #include <QLineEdit>
 #include <QMenu>
 #include <QPainter>
-#include <QVector>
 
 #include <KLocalizedString>
 #include "messagelist_debug.h"

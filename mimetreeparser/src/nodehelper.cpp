@@ -13,8 +13,6 @@
 #include "temporaryfile/attachmenttemporaryfilesdirs.h"
 
 #include <KMime/Content>
-#include <KMime/Message>
-#include <KMime/Headers>
 
 #include <QTemporaryFile>
 #include <KLocalizedString>

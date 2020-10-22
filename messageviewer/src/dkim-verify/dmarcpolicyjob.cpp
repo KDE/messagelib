@@ -6,7 +6,6 @@
 
 #include "dmarcpolicyjob.h"
 #include "dmarcrecordjob.h"
-#include "dmarcinfo.h"
 #include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;

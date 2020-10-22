@@ -5,7 +5,6 @@
 */
 
 #include "checkphishingurljob.h"
-#include "checkphishingurlutil.h"
 #include <QNetworkAccessManager>
 #include <PimCommon/NetworkManager>
 #include <QJsonDocument>

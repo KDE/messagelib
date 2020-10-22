@@ -7,7 +7,6 @@
 #include "viewerplugintoolmanager.h"
 #include "viewerpluginmanager.h"
 #include "viewerplugin.h"
-#include "viewerplugininterface.h"
 
 #include <QVector>
 

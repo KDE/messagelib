@@ -4,11 +4,9 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "networkpluginurlinterceptorinterface.h"
 #include "networkurlinterceptormanager.h"
 #include "networkurlinterceptorpluginmanager.h"
 
-#include <WebEngineViewer/WebHitTestResult>
 
 using namespace WebEngineViewer;
 

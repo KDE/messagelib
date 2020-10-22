@@ -18,7 +18,6 @@
 #include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 #include <KIdentityManagement/kidentitymanagement/identity.h>
 
-#include <Akonadi/KMime/MessageStatus>
 #include <kmime/kmime_dateformatter.h>
 #include <KEmailAddress>
 #include <MessageCore/MailingList>

@@ -11,7 +11,6 @@
 
 #include <MessageComposer/Util>
 
-#include <Libkleo/Enum>
 #include <KMime/Message>
 #include <KMime/Content>
 

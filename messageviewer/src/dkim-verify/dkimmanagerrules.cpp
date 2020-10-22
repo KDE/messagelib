@@ -7,7 +7,6 @@
 #include "dkimmanagerrules.h"
 #include "dkimutil.h"
 #include <KConfigGroup>
-#include <KSharedConfig>
 #include <QRegularExpression>
 
 using namespace MessageViewer;

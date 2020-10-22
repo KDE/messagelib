@@ -7,7 +7,6 @@
 #include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
 #include <QRegularExpression>
-#include <QCryptographicHash>
 
 QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
 {

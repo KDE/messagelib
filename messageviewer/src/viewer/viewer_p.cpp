@@ -8,7 +8,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "viewer_p.h"
-#include "viewer.h"
 #include "viewerpurposemenuwidget.h"
 
 #include "messageviewer_debug.h"
@@ -74,7 +73,6 @@
 #include <QPrintDialog>
 #include <QMimeDatabase>
 #include <QWheelEvent>
-#include <QPointer>
 #include <WebEngineViewer/WebEngineExportHtmlPageJob>
 //libkdepim
 #include <PimCommon/BroadcastStatus>

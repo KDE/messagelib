@@ -12,7 +12,6 @@
 #include <QUrl>
 
 #include <cassert>
-#include <QByteArray>
 #include <QTemporaryFile>
 #include <QDir>
 

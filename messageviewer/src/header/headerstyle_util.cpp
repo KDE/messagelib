@@ -22,10 +22,8 @@
 
 #include <KEmailAddress>
 #include <KLocalizedString>
-#include <KTextToHTML>
 
 #include <QBuffer>
-#include <QVariantHash>
 
 using namespace MessageCore;
 

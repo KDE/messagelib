@@ -6,7 +6,6 @@
 
 #include "grantleeheaderformatter.h"
 #include "headerstyle_util.h"
-#include <GrantleeTheme/GrantleeTheme>
 #include "settings/messageviewersettings.h"
 #include "utils/iconnamecache.h"
 #include "config-messageviewer.h"
@@ -23,7 +22,6 @@
 
 #include <grantlee/engine.h>
 #include <grantlee/metatype.h>
-#include <grantlee/templateloader.h>
 
 using namespace MessageCore;
 

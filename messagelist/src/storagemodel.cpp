@@ -11,11 +11,9 @@
 #include <MessageCore/NodeHelper>
 
 #include <attributefactory.h>
-#include <collection.h>
 #include <collectionstatistics.h>
 #include <entitymimetypefiltermodel.h>
 #include <entitytreemodel.h>
-#include <item.h>
 #include <itemmodifyjob.h>
 #include <Akonadi/KMime/MessageFolderAttribute>
 #include <selectionproxymodel.h>

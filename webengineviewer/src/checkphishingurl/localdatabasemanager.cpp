@@ -6,7 +6,6 @@
 #include "localdatabasemanager.h"
 #include "localdatabasemanager_p.h"
 #include "webengineviewer_debug.h"
-#include "createphishingurldatabasejob.h"
 #include "createdatabasefilejob.h"
 #include "checkphishingurlutil.h"
 #include "urlhashing.h"

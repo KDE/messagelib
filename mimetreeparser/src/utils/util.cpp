@@ -13,7 +13,6 @@
 #include <KMime/Content>
 
 #include <QMimeDatabase>
-#include <QString>
 
 using namespace MimeTreeParser;
 using namespace MimeTreeParser::Util;

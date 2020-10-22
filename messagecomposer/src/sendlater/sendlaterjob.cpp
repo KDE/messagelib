@@ -12,7 +12,6 @@
 #include <KLocalizedString>
 
 #include <QDBusPendingCallWatcher>
-#include <QDBusPendingReply>
 
 #include <memory>
 

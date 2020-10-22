@@ -7,7 +7,6 @@
 #include "createdatabasefilejob.h"
 #include "webengineviewer_debug.h"
 #include "downloadlocaldatabasethread.h"
-#include <WebEngineViewer/CreatePhishingUrlDataBaseJob>
 using namespace WebEngineViewer;
 
 DownloadLocalDatabaseThread::DownloadLocalDatabaseThread(QObject *parent)

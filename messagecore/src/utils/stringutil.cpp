@@ -22,7 +22,6 @@
 #include <KIdentityManagement/Identity>
 #include <QHostInfo>
 #include <QRegularExpression>
-#include <QStringList>
 #include <QUrlQuery>
 #include <KPIMTextEdit/TextUtils>
 #include <KCodecs>

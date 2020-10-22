@@ -11,7 +11,6 @@
 #include "job/protectedheaders.h"
 #include "utils/util_p.h"
 
-#include <Libkleo/Enum>
 #include <QGpgME/Protocol>
 #include <QGpgME/SignJob>
 #include <QVector>

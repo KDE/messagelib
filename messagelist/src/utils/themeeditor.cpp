@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "utils/themeeditor.h"
-#include "core/theme.h"
 #include "core/groupheaderitem.h"
 #include "core/messageitem.h"
 #include "core/modelinvariantrowmapper.h"
@@ -25,9 +24,7 @@
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QHeaderView>
-#include <QLabel>
 #include <QMouseEvent>
-#include <QTreeWidget>
 #include <QPainter>
 #include <QPaintEvent>
 #include <QPixmap>

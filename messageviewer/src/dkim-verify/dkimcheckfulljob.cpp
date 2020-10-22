@@ -7,7 +7,6 @@
 #include "dkimcheckauthenticationstatusjob.h"
 #include "dkimcheckfulljob.h"
 #include "dkimcheckpolicyjob.h"
-#include "dkimchecksignaturejob.h"
 #include "dkimgeneraterulejob.h"
 #include "dkimmanagerkey.h"
 #include "dkimauthenticationstatusinfoconverter.h"

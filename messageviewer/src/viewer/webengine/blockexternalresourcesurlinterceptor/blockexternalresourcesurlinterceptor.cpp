@@ -6,7 +6,6 @@
 
 #include "blockexternalresourcesurlinterceptor.h"
 
-#include <QWebEngineUrlRequestInfo>
 #include <qtwebenginewidgetsversion.h>
 
 using namespace MessageViewer;
