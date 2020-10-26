@@ -478,7 +478,7 @@ ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     )
 ecm_generate_pri_file(BASE_NAME MessageComposer
     LIB_NAME KF5MessageComposer
-    DEPS "Mime MessageCore PimCommon Akonadi IdentityManagement AkonadiMime Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
+    DEPS "KMime MessageCore PimCommon Akonadi KIdentityManagement AkonadiMime Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
     )
 
 

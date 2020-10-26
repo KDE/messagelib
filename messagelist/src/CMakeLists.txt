@@ -137,7 +137,7 @@ ecm_generate_headers(MessageList_CamelCase_HEADERS
 
 ecm_generate_pri_file(BASE_NAME MessageList
     LIB_NAME KF5MessageList
-    DEPS "AkonadiCore AkonadiMime Mime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageList
+    DEPS "AkonadiCore AkonadiMime KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageList
     )
 
 

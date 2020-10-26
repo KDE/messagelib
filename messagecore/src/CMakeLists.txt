@@ -144,7 +144,7 @@ ecm_generate_headers(MessageCore_Camelcasehelpers_HEADERS
 
 ecm_generate_pri_file(BASE_NAME MessageCore
     LIB_NAME KF5MessageCore
-    DEPS "Mime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageCore
+    DEPS "KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageCore
     )
 
 

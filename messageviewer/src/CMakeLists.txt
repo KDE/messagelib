@@ -533,7 +533,7 @@ ecm_generate_headers(MessageViewer_Camelcaserenderer_HEADERS
 
 ecm_generate_pri_file(BASE_NAME MessageViewer
     LIB_NAME KF5MessageViewer
-    DEPS "PimCommon MessageCore AkonadiCore AkonadiMime Contacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
+    DEPS "PimCommon MessageCore AkonadiCore AkonadiMime KContacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
     )
 if (${Qca-qt5_FOUND})
     install(FILES
