@@ -1178,7 +1178,8 @@ void ViewerPrivate::printMessage(const Akonadi::Item &message)
     connect(
         mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this,
         &ViewerPrivate::slotPrintMessage);
-    setMessageItem(message, MimeTreeParser::Force);
+    //need to set htmlLoadExtOverride() when we set Item otherwise this settings is resetted
+    setMessageItem(message, MimeTreeParser::Force, htmlLoadExtOverride());
 }
 
 void ViewerPrivate::printPreviewMessage(const Akonadi::Item &message)
@@ -1189,7 +1190,7 @@ void ViewerPrivate::printPreviewMessage(const Akonadi::Item &message)
     connect(
         mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this,
         &ViewerPrivate::slotPrintPreview);
-    setMessageItem(message, MimeTreeParser::Force);
+    setMessageItem(message, MimeTreeParser::Force, htmlLoadExtOverride());
 }
 
 void ViewerPrivate::resetStateForNewMessage()
@@ -1253,9 +1254,13 @@ void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message, MimeT
 #endif
 }
 
-void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode)
+void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode, messageviewer/src/viewer/viewer_p.cpp)
 {
     resetStateForNewMessage();
+    if (forceHtmlLoadExtOverride) {
+        setHtmlLoadExtOverride(true);
+    }
+
     foreach (const Akonadi::Item::Id monitoredId, mMonitor.itemsMonitoredEx()) {
         mMonitor.setItemMonitored(Akonadi::Item(monitoredId), false);
     }
@@ -2822,8 +2827,11 @@ bool ViewerPrivate::htmlLoadExternal() const
         return mHtmlLoadExtOverride;
     }
 
-    return (mHtmlLoadExternalDefaultSetting && !mHtmlLoadExtOverride)
-           || (!mHtmlLoadExternalDefaultSetting && mHtmlLoadExtOverride);
+    const bool loadExternal = (mHtmlLoadExternalDefaultSetting && !mHtmlLoadExtOverride)
+            || (!mHtmlLoadExternalDefaultSetting && mHtmlLoadExtOverride);
+    qDebug() << " loadExternal" << loadExternal << " mHtmlLoadExtOverride " << mHtmlLoadExtOverride;
+
+    return loadExternal;
 }
 
 void ViewerPrivate::setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage format)

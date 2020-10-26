@@ -313,7 +313,7 @@ public:
     *                an empty page is shown.
     *  @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
     */
-    void setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
+    void setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed, bool forceHtmlLoadExtOverride = false);
 
     /** Set the message that shall be shown.
     * @param msg - the message to be shown. If 0, an empty page is displayed.
