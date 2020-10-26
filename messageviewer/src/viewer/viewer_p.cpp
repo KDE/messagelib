@@ -1254,7 +1254,7 @@ void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message, MimeT
 #endif
 }
 
-void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode, messageviewer/src/viewer/viewer_p.cpp)
+void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode, bool forceHtmlLoadExtOverride)
 {
     resetStateForNewMessage();
     if (forceHtmlLoadExtOverride) {
