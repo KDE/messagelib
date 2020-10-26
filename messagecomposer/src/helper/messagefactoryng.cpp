@@ -410,13 +410,14 @@ KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Me
     fwdMsg->assemble();
     // set the part
     KMime::Content *msgPart = new KMime::Content(fwdMsg.data());
-    msgPart->contentType()->setMimeType("message/rfc822");
+    auto ct = msgPart->contentType();
+    ct->setMimeType("message/rfc822");
 
     auto cd = msgPart->contentDisposition(); //create
     cd->setParameter(QStringLiteral("filename"), i18n("forwarded message"));
     cd->setDisposition(KMime::Headers::CDinline);
     const QString subject = fwdMsg->subject()->asUnicodeString();
-    msgPart->contentType()->setParameter(QStringLiteral("name"), subject);
+    ct->setParameter(QStringLiteral("name"), subject);
     cd->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1String(": ") + subject, "utf-8");
     msgPart->setBody(fwdMsg->encodedContent());
     msgPart->assemble();
@@ -730,7 +731,7 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDi
         part->contentType(false)->setCharset(fMsg->contentType()->charset());
         part->contentID()->setIdentifier(fMsg->contentID()->identifier());
         part->contentDescription()->fromUnicodeString(fMsg->contentDescription()->asUnicodeString(), "utf8");
-        part->contentDisposition()->setParameter(QStringLiteral("name"), i18n("forwarded message"));
+        part->contentDisposition(false)->setParameter(QStringLiteral("name"), i18n("forwarded message"));
         part->fromUnicodeString(QString::fromLatin1(fMsg->encodedContent()));
         part->assemble();
         MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());

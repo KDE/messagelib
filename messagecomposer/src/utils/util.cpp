@@ -325,7 +325,7 @@ KMime::Content *MessageComposer::Util::findTypeInMessage(KMime::Content *data, c
             return data;
         }
         if ((mimeType == data->contentType()->mediaType())
-            && (subType == data->contentType()->subType())) {
+            && (subType == data->contentType(false)->subType())) {
             return data;
         }
     }

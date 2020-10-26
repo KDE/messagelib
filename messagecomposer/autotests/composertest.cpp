@@ -43,19 +43,19 @@ void ComposerTest::testAttachments()
     // multipart/mixed
     {
         QVERIFY(message->contentType(false));
-        QCOMPARE(message->contentType()->mimeType(), QByteArray("multipart/mixed"));
+        QCOMPARE(message->contentType(false)->mimeType(), QByteArray("multipart/mixed"));
         QCOMPARE(message->contents().count(), 2);
         // text/plain
         {
             Content *plain = message->contents().at(0);
             QVERIFY(plain->contentType(false));
-            QCOMPARE(plain->contentType()->mimeType(), QByteArray("text/plain"));
+            QCOMPARE(plain->contentType(false)->mimeType(), QByteArray("text/plain"));
         }
         // x-some/x-type (attachment)
         {
             Content *plain = message->contents().at(1);
             QVERIFY(plain->contentType(false));
-            QCOMPARE(plain->contentType()->mimeType(), QByteArray("x-some/x-type"));
+            QCOMPARE(plain->contentType(false)->mimeType(), QByteArray("x-some/x-type"));
         }
     }
 }

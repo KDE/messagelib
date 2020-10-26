@@ -94,7 +94,7 @@ void AttachmentJob::doStart()
     auto ct = sjob->contentType();
     ct->setMimeType(d->part->mimeType());   // setMimeType() clears all other params.
     ct->setName(d->part->name(), charset);
-    if (sjob->contentType()->isText()) {
+    if (ct->isText()) {
         // If it is a text file, detect its charset.
         //sjob->contentType()->setCharset( d->detectCharset( d->part->data() ) );
 
@@ -106,7 +106,7 @@ void AttachmentJob::doStart()
             qCWarning(MESSAGECOMPOSER_LOG) << "No charset specified. Using UTF-8.";
             textCharset = "utf-8";
         }
-        sjob->contentType()->setCharset(textCharset);
+        ct->setCharset(textCharset);
     }
 
     sjob->contentDescription()->fromUnicodeString(d->part->description(), charset);

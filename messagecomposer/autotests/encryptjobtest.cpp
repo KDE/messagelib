@@ -165,9 +165,9 @@ void EncryptJobTest::testHeaders()
     result->assemble();
 
     QVERIFY(result->contentType(false));
-    QCOMPARE(result->contentType()->mimeType(), mimeType);
-    QCOMPARE(result->contentType()->charset(), charset);
-    QCOMPARE(result->contentType()->parameter(QStringLiteral("protocol")), QStringLiteral("application/pgp-encrypted"));
+    QCOMPARE(result->contentType(false)->mimeType(), mimeType);
+    QCOMPARE(result->contentType(false)->charset(), charset);
+    QCOMPARE(result->contentType(false)->parameter(QStringLiteral("protocol")), QStringLiteral("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
     delete result;
