@@ -518,7 +518,7 @@ void StringUtilTest::test_parseMailToBug832795()
     QCOMPARE(data.size(), 4);
     QCOMPARE(data.at(0).first, QLatin1String("to"));
     QCOMPARE(data.at(0).second, QLatin1String("832795@bugs.debian.org"));
-    QCOMPARE(data.at(1).first, QLatin1String("In-Reply-To"));
+    QCOMPARE(data.at(1).first, QLatin1String("in-reply-to"));
     QCOMPARE(data.at(1).second, QLatin1String("<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>"));
     QCOMPARE(data.at(2).first, QLatin1String("subject"));
     QCOMPARE(data.at(2).second, QLatin1String("Re: kmail: unescaping mailto: links broken"));
