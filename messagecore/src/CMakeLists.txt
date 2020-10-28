@@ -1,6 +1,9 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
 
 ########### next target ###############
+set(messagecore_autocrypt_LIB_SRCS
+    autocrypt/autocryptrecipient.cpp
+)
 
 set(messagecore_attachment_LIB_SRCS
     attachment/attachmentcompressjob.cpp
@@ -32,6 +35,7 @@ set(messagecore_utils_LIB_SRCS
     )
 
 set(messagecore_LIB_SRCS
+    ${messagecore_autocrypt_LIB_SRCS}
     ${messagecore_attachment_LIB_SRCS}
     ${messagecore_misc_LIB_SRCS}
     ${messagecore_helper_LIB_SRCS}
@@ -67,6 +71,7 @@ target_link_libraries(KF5MessageCore
     PUBLIC
     KF5::Mime
     PRIVATE
+    QGpgme
     KF5::KIOCore
     KF5::Codecs
     KF5::PimTextEdit
@@ -75,6 +80,7 @@ target_link_libraries(KF5MessageCore
     Qt5::Network
     KF5::I18n
     KF5::IdentityManagement
+    KF5::MimeTreeParser
     KF5::PimCommon
     )
 
