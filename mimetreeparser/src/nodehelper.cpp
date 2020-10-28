@@ -490,6 +490,13 @@ void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
 
 bool NodeHelper::hasMailHeader(const char *header, const KMime::Content *message) const
 {
+    if (mHeaderOverwrite.contains(message)) {
+        foreach (const auto messagePart, mHeaderOverwrite.value(message)) {
+            if (messagePart->hasHeader(header)) {
+                return true;
+            }
+        }
+    }
     return message->hasHeader(header);
 }
 
