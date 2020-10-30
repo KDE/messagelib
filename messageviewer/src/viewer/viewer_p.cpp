@@ -2783,7 +2783,6 @@ bool ViewerPrivate::htmlLoadExternal() const
 
     const bool loadExternal = (mHtmlLoadExternalDefaultSetting && !mHtmlLoadExtOverride)
             || (!mHtmlLoadExternalDefaultSetting && mHtmlLoadExtOverride);
-    qDebug() << " loadExternal" << loadExternal << " mHtmlLoadExtOverride " << mHtmlLoadExtOverride;
 
     return loadExternal;
 }
