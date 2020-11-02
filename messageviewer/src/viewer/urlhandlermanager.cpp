@@ -236,6 +236,7 @@ URLHandlerManager::URLHandlerManager()
     registerHandler(new ShowAuditLogURLHandler());
     registerHandler(new InternalImageURLHandler);
     registerHandler(new KRunURLHandler());
+    registerHandler(new EmbeddedImageURLHandler());
 }
 
 URLHandlerManager::~URLHandlerManager()
@@ -917,4 +918,17 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     } else {
         return false;
     }
+}
+
+bool EmbeddedImageURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) const
+{
+    Q_UNUSED(url);
+    Q_UNUSED(window);
+    return false;
+}
+
+bool EmbeddedImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *window) const
+{
+    Q_UNUSED(window);
+    return url.scheme() == QLatin1String("cid");
 }
