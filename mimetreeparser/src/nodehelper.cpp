@@ -869,7 +869,7 @@ void NodeHelper::mergeExtraNodes(KMime::Content *node)
                                           <<node->encodedContent() << "\n====== with =======\n" <<  extra << extra->encodedContent();
             continue;
         }
-        KMime::Content *c = new KMime::Content(node);
+        auto *c = new KMime::Content(node);
         c->setContent(extra->encodedContent());
         c->parse();
         node->addContent(c);
@@ -915,7 +915,7 @@ KMime::Message *NodeHelper::messageWithExtraContent(KMime::Content *topLevelNode
 
     mergeExtraNodes(topLevelNode);
 
-    KMime::Message *m = new KMime::Message;
+    auto *m = new KMime::Message;
     m->setContent(topLevelNode->encodedContent());
     m->parse();
 

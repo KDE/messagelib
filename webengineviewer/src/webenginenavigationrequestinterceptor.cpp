@@ -21,7 +21,7 @@ WebEngineNavigationRequestInterceptor::~WebEngineNavigationRequestInterceptor()
 bool WebEngineNavigationRequestInterceptor::acceptNavigationRequest(const QUrl &url, QWebEnginePage::NavigationType type, bool isMainFrame)
 {
     Q_UNUSED(isMainFrame);
-    WebEnginePage *page = qobject_cast<WebEnginePage *>(mTargetPage);
+    auto *page = qobject_cast<WebEnginePage *>(mTargetPage);
     if (type == NavigationTypeLinkClicked && page) {
         Q_EMIT page->urlClicked(url);
         return false;

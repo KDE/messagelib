@@ -16,10 +16,10 @@ CheckSignature::CheckSignature(const QString &fileName, QObject *parent)
     : QObject(parent)
 {
     mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
-    MessageViewer::DKIMCheckSignatureJob *job = new MessageViewer::DKIMCheckSignatureJob(this);
+    auto *job = new MessageViewer::DKIMCheckSignatureJob(this);
     connect(job, &MessageViewer::DKIMCheckSignatureJob::result, this, &CheckSignature::slotResult);
 
-    KMime::Message *msg = new KMime::Message;
+    auto *msg = new KMime::Message;
     QFile file(fileName);
     if (file.open(QIODevice::ReadOnly)) {
         msg->setContent(file.readAll());

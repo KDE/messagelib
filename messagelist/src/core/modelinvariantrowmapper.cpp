@@ -513,7 +513,7 @@ QList< ModelInvariantIndex * > *ModelInvariantRowMapper::modelRowsRemoved(int mo
     } // else already have shifts
 
     // add a shift for this row removal
-    RowShift *shift = new RowShift(modelIndexRowPosition + count, -count, d->mCurrentInvariantHash);
+    auto *shift = new RowShift(modelIndexRowPosition + count, -count, d->mCurrentInvariantHash);
     d->mRowShiftList->append(shift);
 
     d->mCurrentShiftSerial++;

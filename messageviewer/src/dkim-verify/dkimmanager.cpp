@@ -52,7 +52,7 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
 {
     if (mCheckPolicy.saveDkimResult()) {
         if (item.hasAttribute<MessageViewer::DKIMResultAttribute>()) {
-            const MessageViewer::DKIMResultAttribute *const attr
+            const auto *const attr
                 = item.attribute<MessageViewer::DKIMResultAttribute>();
             if (attr) {
                 DKIMCheckSignatureJob::CheckSignatureResult checkResult;
@@ -70,7 +70,7 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
 
 void DKIMManager::checkFullInfo(const Akonadi::Item &item)
 {
-    DKIMCheckFullJob *job = new DKIMCheckFullJob(this);
+    auto *job = new DKIMCheckFullJob(this);
     job->setPolicy(mCheckPolicy);
     connect(job, &DKIMCheckFullJob::result, this, &DKIMManager::result);
     job->startCheckFullInfo(item);
@@ -78,7 +78,7 @@ void DKIMManager::checkFullInfo(const Akonadi::Item &item)
 
 void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
 {
-    DKIMCheckFullJob *job = new DKIMCheckFullJob(this);
+    auto *job = new DKIMCheckFullJob(this);
     job->setPolicy(mCheckPolicy);
     connect(job, &DKIMCheckFullJob::result, this, &DKIMManager::result);
     job->startCheckFullInfo(message);

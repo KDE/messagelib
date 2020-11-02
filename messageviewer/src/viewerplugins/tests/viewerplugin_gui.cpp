@@ -20,10 +20,10 @@
 ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     : QWidget(parent)
 {
-    QMenuBar *menuBar = new QMenuBar(this);
-    QVBoxLayout *vbox = new QVBoxLayout(this);
+    auto *menuBar = new QMenuBar(this);
+    auto *vbox = new QVBoxLayout(this);
     vbox->addWidget(menuBar);
-    QTextEdit *textEdit = new QTextEdit(this);
+    auto *textEdit = new QTextEdit(this);
     vbox->addWidget(textEdit);
 
     QWidget *toolManagerWidget = new QWidget(this);
@@ -32,7 +32,7 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     vbox->setContentsMargins({});
     vbox->setSpacing(0);
     toolManagerWidget->setLayout(vbox);
-    MessageViewer::ViewerPluginToolManager *toolManager
+    auto *toolManager
         = new MessageViewer::ViewerPluginToolManager(toolManagerWidget, this);
     connect(toolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this,
             &ViewerPluginTest::slotActivatePlugin);
@@ -44,7 +44,7 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     }
     toolManager->setActionCollection(new KActionCollection(this));
     toolManager->createView();
-    QMenu *menu = new QMenu(this);
+    auto *menu = new QMenu(this);
     menu->setTitle(QStringLiteral("tools"));
     menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::All));
     menuBar->addMenu(menu);
@@ -89,7 +89,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    ViewerPluginTest *w = new ViewerPluginTest();
+    auto *w = new ViewerPluginTest();
     w->resize(800, 200);
     w->show();
     app.exec();

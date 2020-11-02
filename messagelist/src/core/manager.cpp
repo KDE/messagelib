@@ -539,14 +539,14 @@ void Manager::addTheme(Theme *set)
 
 static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name, Theme::ContentItem::Type type, bool visibleByDefault, SortOrder::MessageSorting messageSorting, bool alignRight, bool addGroupHeaderItem)
 {
-    Theme::Column *c = new Theme::Column();
+    auto *c = new Theme::Column();
     c->setLabel(name);
     c->setVisibleByDefault(visibleByDefault);
     c->setMessageSorting(messageSorting);
 
-    Theme::Row *r = new Theme::Row();
+    auto *r = new Theme::Row();
 
-    Theme::ContentItem *i = new Theme::ContentItem(type);
+    auto *i = new Theme::ContentItem(type);
 
     if (alignRight) {
         r->addRightItem(i);
@@ -557,9 +557,9 @@ static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name
     c->addMessageRow(r);
 
     if (addGroupHeaderItem) {
-        Theme::Row *r = new Theme::Row();
+        auto *r = new Theme::Row();
 
-        Theme::ContentItem *i = new Theme::ContentItem(type);
+        auto *i = new Theme::ContentItem(type);
 
         if (alignRight) {
             r->addRightItem(i);
@@ -577,15 +577,15 @@ static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name
 
 static Theme::Column *add_theme_simple_icon_column(Theme *s, const QString &name, const QString &pixmapName, Theme::ContentItem::Type type, bool visibleByDefault, SortOrder::MessageSorting messageSorting)
 {
-    Theme::Column *c = new Theme::Column();
+    auto *c = new Theme::Column();
     c->setLabel(name);
     c->setPixmapName(pixmapName);
     c->setVisibleByDefault(visibleByDefault);
     c->setMessageSorting(messageSorting);
 
-    Theme::Row *r = new Theme::Row();
+    auto *r = new Theme::Row();
 
-    Theme::ContentItem *i = new Theme::ContentItem(type);
+    auto *i = new Theme::ContentItem(type);
     i->setSoftenByBlendingWhenDisabled(true);
 
     r->addLeftItem(i);
@@ -733,7 +733,7 @@ void Manager::createDefaultThemes()
     s->addColumn(c);
 
     // clone the "Fancy theme" here so we'll use it as starting point for the "Fancy with clickable status"
-    Theme *fancyWithClickableStatus = new Theme(*s);
+    auto *fancyWithClickableStatus = new Theme(*s);
     fancyWithClickableStatus->detach();
     fancyWithClickableStatus->generateUniqueId();
 
@@ -847,7 +847,7 @@ void Manager::reloadGlobalConfiguration()
 void Manager::loadGlobalConfiguration()
 {
     // Load the date format
-    const KMime::DateFormatter::FormatType type = static_cast<KMime::DateFormatter::FormatType>(
+    const auto type = static_cast<KMime::DateFormatter::FormatType>(
         MessageCore::MessageCoreSettings::self()->dateFormat());
     mDateFormatter->setCustomFormat(MessageCore::MessageCoreSettings::self()->customDateFormat());
     mDateFormatter->setFormat(type);
@@ -870,7 +870,7 @@ void Manager::loadConfiguration()
         while (idx < cnt) {
             const QString data = conf.readEntry(QStringLiteral("Set%1").arg(idx), QString());
             if (!data.isEmpty()) {
-                Aggregation *set = new Aggregation();
+                auto *set = new Aggregation();
                 if (set->loadFromString(data)) {
                     if (Aggregation *old = mAggregations.value(set->id())) {
                         delete old;
@@ -902,7 +902,7 @@ void Manager::loadConfiguration()
         while (idx < cnt) {
             const QString data = conf.readEntry(QStringLiteral("Set%1").arg(idx), QString());
             if (!data.isEmpty()) {
-                Theme *set = new Theme();
+                auto *set = new Theme();
                 if (set->loadFromString(data)) {
                     if (Theme *old = mThemes.value(set->id())) {
                         delete old;

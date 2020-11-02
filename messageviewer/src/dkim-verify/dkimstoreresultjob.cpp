@@ -26,11 +26,11 @@ void DKIMStoreResultJob::start()
         deleteLater();
         return;
     }
-    MessageViewer::DKIMResultAttribute *attr = mItem.attribute<MessageViewer::DKIMResultAttribute>(Akonadi::Item::AddIfMissing);
+    auto *attr = mItem.attribute<MessageViewer::DKIMResultAttribute>(Akonadi::Item::AddIfMissing);
     attr->setError(static_cast<int>(mResult.error));
     attr->setWarning(static_cast<int>(mResult.warning));
     attr->setStatus(static_cast<int>(mResult.status));
-    Akonadi::ItemModifyJob *modify = new Akonadi::ItemModifyJob(mItem);
+    auto *modify = new Akonadi::ItemModifyJob(mItem);
     modify->setIgnorePayload(true);
     modify->disableRevisionCheck();
     connect(modify, &KJob::result, this, &DKIMStoreResultJob::slotModifyItemDone);

@@ -76,7 +76,7 @@ void EmailAddressResolveJob::start()
     QVector<AliasesExpandJob *> jobs;
 
     if (containsAliases(d->mFrom)) {
-        AliasesExpandJob *job = new AliasesExpandJob(d->mFrom, d->mDefaultDomainName, this);
+        auto *job = new AliasesExpandJob(d->mFrom, d->mDefaultDomainName, this);
         job->setProperty("id", QStringLiteral("infoPartFrom"));
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;

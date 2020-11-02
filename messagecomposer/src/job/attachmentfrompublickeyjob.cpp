@@ -105,7 +105,7 @@ void AttachmentFromPublicKeyJob::doStart()
         return;
     } else if (uiDelegate()) {
         Q_ASSERT(dynamic_cast<KDialogJobUiDelegate *>(uiDelegate()));
-        KDialogJobUiDelegate *delegate = static_cast<KDialogJobUiDelegate *>(uiDelegate());
+        auto *delegate = static_cast<KDialogJobUiDelegate *>(uiDelegate());
         (void)new Kleo::ProgressDialog(job, i18n("Exporting key..."),
                                        delegate->window());
     }

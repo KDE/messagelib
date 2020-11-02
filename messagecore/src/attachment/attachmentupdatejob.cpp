@@ -60,7 +60,7 @@ void AttachmentUpdateJob::Private::loadJobResult(KJob *job)
     }
 
     Q_ASSERT(dynamic_cast<AttachmentLoadJob *>(job));
-    AttachmentLoadJob *ajob = static_cast<AttachmentLoadJob *>(job);
+    auto *ajob = static_cast<AttachmentLoadJob *>(job);
     mUpdatedPart = ajob->attachmentPart();
     mUpdatedPart->setName(q->originalPart()->name());
     mUpdatedPart->setFileName(q->originalPart()->fileName());

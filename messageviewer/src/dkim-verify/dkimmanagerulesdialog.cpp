@@ -26,7 +26,7 @@ DKIMManageRulesDialog::DKIMManageRulesDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18nc("@title:window", "Configure Rule"));
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
     mRulesWidget = new DKIMManageRulesWidget(this);

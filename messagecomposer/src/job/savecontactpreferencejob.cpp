@@ -32,7 +32,7 @@ SaveContactPreferenceJob::~SaveContactPreferenceJob()
 
 void SaveContactPreferenceJob::start()
 {
-    Akonadi::ContactSearchJob *job = new Akonadi::ContactSearchJob(this);
+    auto *job = new Akonadi::ContactSearchJob(this);
     connect(job, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotSearchContact);
     job->setLimit(1);
     job->setQuery(Akonadi::ContactSearchJob::Email, mEmail);
@@ -41,7 +41,7 @@ void SaveContactPreferenceJob::start()
 
 void SaveContactPreferenceJob::slotSearchContact(KJob *job)
 {
-    Akonadi::ContactSearchJob *contactSearchJob = qobject_cast<Akonadi::ContactSearchJob *>(job);
+    auto *contactSearchJob = qobject_cast<Akonadi::ContactSearchJob *>(job);
 
     const Akonadi::Item::List items = contactSearchJob->items();
 
@@ -76,7 +76,7 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
         Akonadi::Item item(KContacts::Addressee::mimeType());
         item.setPayload<KContacts::Addressee>(contact);
 
-        Akonadi::ItemCreateJob *job = new Akonadi::ItemCreateJob(item, targetCollection);
+        auto *job = new Akonadi::ItemCreateJob(item, targetCollection);
         connect(job, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
     } else {
         Akonadi::Item item = items.first();
@@ -86,7 +86,7 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
 
         item.setPayload<KContacts::Addressee>(contact);
 
-        Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(item);
+        auto *job = new Akonadi::ItemModifyJob(item);
         connect(job, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
     }
 }

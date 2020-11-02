@@ -104,7 +104,7 @@ void ComposerPrivate::composeStep1()
     Q_Q(Composer);
 
     // Create skeleton message (containing headers only; no content).
-    SkeletonMessageJob *skeletonJob = new SkeletonMessageJob(infoPart, globalPart, q);
+    auto *skeletonJob = new SkeletonMessageJob(infoPart, globalPart, q);
     QObject::connect(skeletonJob, &SkeletonMessageJob::finished, q, [this, skeletonJob](KJob *job) {
         if (job->error()) {
             return; // KCompositeJob takes care of the error.
@@ -127,7 +127,7 @@ void ComposerPrivate::composeStep2()
     Q_Q(Composer);
 
     ContentJobBase *mainJob = nullptr;
-    MainTextJob *mainTextJob = new MainTextJob(textPart, q);
+    auto *mainTextJob = new MainTextJob(textPart, q);
 
     if ((sign || encrypt) && format & Kleo::InlineOpenPGPFormat) {    // needs custom handling --- one SignEncryptJob by itself
         qCDebug(MESSAGECOMPOSER_LOG) << "sending to sign/enc inline job!";
@@ -141,7 +141,7 @@ void ComposerPrivate::composeStep2()
                     // We have no attachments.  Use the content given by the MainTextJob.
                     mainJob = subJob;
                 } else {
-                    MultipartJob *multipartJob = new MultipartJob(q);
+                    auto *multipartJob = new MultipartJob(q);
                     multipartJob->setMultipartSubtype("mixed");
                     multipartJob->appendSubjob(subJob);
                     for (const AttachmentPart::Ptr &part : qAsConst(attachmentParts)) {
@@ -154,7 +154,7 @@ void ComposerPrivate::composeStep2()
                 q->addSubjob(mainJob);
             }
         } else {
-            SignJob *subJob = new SignJob(q);
+            auto *subJob = new SignJob(q);
             subJob->setSigningKeys(signers);
             subJob->setCryptoMessageFormat(format);
             subJob->appendSubjob(mainTextJob);
@@ -163,7 +163,7 @@ void ComposerPrivate::composeStep2()
                 // We have no attachments.  Use the content given by the MainTextJob.
                 mainJob = subJob;
             } else {
-                MultipartJob *multipartJob = new MultipartJob(q);
+                auto *multipartJob = new MultipartJob(q);
                 multipartJob->setMultipartSubtype("mixed");
                 multipartJob->appendSubjob(subJob);
                 for (const AttachmentPart::Ptr &part : qAsConst(attachmentParts)) {
@@ -198,7 +198,7 @@ void ComposerPrivate::composeStep2()
                 iter.remove();
             }
         }
-        MultipartJob *multipartJob = new MultipartJob(q);
+        auto *multipartJob = new MultipartJob(q);
         multipartJob->setMultipartSubtype("mixed");
         multipartJob->appendSubjob(mainTextJob);
         for (const AttachmentPart::Ptr &part : qAsConst(attachmentParts)) {
@@ -208,7 +208,7 @@ void ComposerPrivate::composeStep2()
     }
 
     if (sign) {
-        SignJob *sJob = new SignJob(q);
+        auto *sJob = new SignJob(q);
         sJob->setCryptoMessageFormat(format);
         sJob->setSigningKeys(signers);
         sJob->appendSubjob(mainJob);
@@ -260,7 +260,7 @@ QList<ContentJobBase *> ComposerPrivate::createEncryptJobs(ContentJobBase *conte
         qCDebug(MESSAGECOMPOSER_LOG) << "got first list of recipients:" << recipients.first;
         ContentJobBase *subJob = nullptr;
         if (sign) {
-            SignEncryptJob *seJob = new SignEncryptJob(q);
+            auto *seJob = new SignEncryptJob(q);
 
             seJob->setCryptoMessageFormat(format);
             seJob->setSigningKeys(signers);
@@ -270,7 +270,7 @@ QList<ContentJobBase *> ComposerPrivate::createEncryptJobs(ContentJobBase *conte
 
             subJob = seJob;
         } else {
-            EncryptJob *eJob = new EncryptJob(q);
+            auto *eJob = new EncryptJob(q);
             eJob->setCryptoMessageFormat(format);
             eJob->setEncryptionKeys(recipients.second);
             eJob->setRecipients(recipients.first);
@@ -298,13 +298,13 @@ void ComposerPrivate::contentJobFinished(KJob *job)
     QStringList recipients;
 
     Q_ASSERT(dynamic_cast<ContentJobBase *>(job) == static_cast<ContentJobBase *>(job));
-    ContentJobBase *contentJob = static_cast<ContentJobBase *>(job);
+    auto *contentJob = static_cast<ContentJobBase *>(job);
 
     // create the final headers and body,
     // taking into account secondary recipients for encryption
     if (encData.size() > 1) {  // crypto job with secondary recipients..
         Q_ASSERT(dynamic_cast<MessageComposer::AbstractEncryptJob *>(job));    // we need to get the recipients for this job
-        MessageComposer::AbstractEncryptJob *eJob = dynamic_cast<MessageComposer::AbstractEncryptJob *>(job);
+        auto *eJob = dynamic_cast<MessageComposer::AbstractEncryptJob *>(job);
 
         keys = eJob->encryptionKeys();
         recipients = eJob->recipients();
@@ -318,7 +318,7 @@ void ComposerPrivate::contentJobFinished(KJob *job)
         headers->setHeader(skeletonMessage->date());
         headers->setHeader(skeletonMessage->messageID());
 
-        KMime::Headers::Generic *realTo = new KMime::Headers::Generic("X-KMail-EncBccRecipients");
+        auto *realTo = new KMime::Headers::Generic("X-KMail-EncBccRecipients");
         realTo->fromUnicodeString(eJob->recipients().join(QLatin1Char('%')), "utf-8");
 
         qCDebug(MESSAGECOMPOSER_LOG) << "got one of multiple messages sending to:" << realTo->asUnicodeString();
@@ -347,11 +347,11 @@ void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime:
 {
     Q_Q(Composer);
 
-    MultipartJob *multiJob = new MultipartJob(q);
+    auto *multiJob = new MultipartJob(q);
     multiJob->setMultipartSubtype("mixed");
 
     // wrap the content into a job for the multijob to handle it
-    MessageComposer::TransparentJob *tJob = new MessageComposer::TransparentJob(q);
+    auto *tJob = new MessageComposer::TransparentJob(q);
     tJob->setContent(content);
     multiJob->appendSubjob(tJob);
     multiJob->setExtraContent(headers);
@@ -365,7 +365,7 @@ void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime:
         qCDebug(MESSAGECOMPOSER_LOG) << "got a late attachment";
         if (attachment->isSigned() && format) {
             qCDebug(MESSAGECOMPOSER_LOG) << "adding signjob for late attachment";
-            SignJob *sJob = new SignJob(q);
+            auto *sJob = new SignJob(q);
             sJob->setContent(nullptr);
             sJob->setCryptoMessageFormat(format);
             sJob->setSigningKeys(signers);
@@ -373,7 +373,7 @@ void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime:
             sJob->appendSubjob(attachJob);
             if (attachment->isEncrypted()) {
                 qCDebug(MESSAGECOMPOSER_LOG) << "adding sign + encrypt job for late attachment";
-                EncryptJob *eJob = new EncryptJob(q);
+                auto *eJob = new EncryptJob(q);
                 eJob->setCryptoMessageFormat(format);
                 eJob->setEncryptionKeys(keys);
                 eJob->setRecipients(recipients);
@@ -387,7 +387,7 @@ void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime:
             }
         } else if (attachment->isEncrypted() && format) {  // only encryption
             qCDebug(MESSAGECOMPOSER_LOG) << "just encrypting late attachment";
-            EncryptJob *eJob = new EncryptJob(q);
+            auto *eJob = new EncryptJob(q);
             eJob->setCryptoMessageFormat(format);
             eJob->setEncryptionKeys(keys);
             eJob->setRecipients(recipients);
@@ -415,7 +415,7 @@ void ComposerPrivate::attachmentsFinished(KJob *job)
     qCDebug(MESSAGECOMPOSER_LOG) << "composing final message with late attachments";
 
     Q_ASSERT(dynamic_cast<ContentJobBase *>(job));
-    ContentJobBase *contentJob = static_cast<ContentJobBase *>(job);
+    auto *contentJob = static_cast<ContentJobBase *>(job);
 
     KMime::Content *content = contentJob->content();
     KMime::Content *headers = contentJob->extraContent();

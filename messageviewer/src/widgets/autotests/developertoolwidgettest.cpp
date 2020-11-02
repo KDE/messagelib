@@ -20,14 +20,14 @@ DeveloperToolWidgetTest::DeveloperToolWidgetTest(QObject *parent)
 void DeveloperToolWidgetTest::shouldHaveDefaultValues()
 {
     MessageViewer::DeveloperToolWidget w;
-    QVBoxLayout *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    QWebEngineView *mWebEngineView = w.findChild<QWebEngineView *>(QStringLiteral("mWebEngineView"));
+    auto *mWebEngineView = w.findChild<QWebEngineView *>(QStringLiteral("mWebEngineView"));
     QVERIFY(mWebEngineView);
     mainLayout->addWidget(mWebEngineView);
-    QWebEnginePage *mEnginePage = w.findChild<QWebEnginePage *>(QStringLiteral("mEnginePage"));
+    auto *mEnginePage = w.findChild<QWebEnginePage *>(QStringLiteral("mEnginePage"));
     QVERIFY(mEnginePage);
     QCOMPARE(mWebEngineView->page(), mEnginePage);
     QVERIFY(mEnginePage->settings()->testAttribute(QWebEngineSettings::JavascriptEnabled));

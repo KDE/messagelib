@@ -289,7 +289,7 @@ void AttachmentPropertiesDialog::Private::saveToPart()
     if (ui->mimeType->currentText().startsWith(QLatin1String("message"))
         && ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE7Bit
         && ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE8Bit) {
-        qCWarning(MESSAGECORE_LOG) << "Encoding on message/rfc822 must be \"7bit\" or \"8bit\".";
+        qCWarning(MESSAGECORE_LOG) << R"(Encoding on message/rfc822 must be "7bit" or "8bit".)";
     }
 
     mPart->setEncoding(KMime::Headers::contentEncoding(
@@ -308,7 +308,7 @@ AttachmentPropertiesDialog::AttachmentPropertiesDialog(const KMime::Content *con
     : QDialog(parent)
     , d(new Private(this))
 {
-    AttachmentFromMimeContentJob *job = new AttachmentFromMimeContentJob(content, this);
+    auto *job = new AttachmentFromMimeContentJob(content, this);
     job->exec();
     if (job->error()) {
         qCCritical(MESSAGECORE_LOG) << "AttachmentFromMimeContentJob failed." << job->errorString();

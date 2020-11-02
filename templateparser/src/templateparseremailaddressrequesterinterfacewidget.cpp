@@ -16,7 +16,7 @@ using namespace TemplateParser;
 TemplateParserEmailAddressRequesterInterfaceWidget::TemplateParserEmailAddressRequesterInterfaceWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *mainLayout = new QHBoxLayout(this);
+    auto *mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
     initializeEmailWidget();

@@ -31,10 +31,10 @@ QString ConvertHtmlToPlainText::generatePlainText()
     if (mHtmlString.isEmpty()) {
         return QString();
     }
-    KPIMTextEdit::PlainTextMarkupBuilder *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
+    auto *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
 
-    KPIMTextEdit::MarkupDirector *pmd = new KPIMTextEdit::MarkupDirector(pb);
-    QTextDocument *doc = new QTextDocument;
+    auto *pmd = new KPIMTextEdit::MarkupDirector(pb);
+    auto *doc = new QTextDocument;
     doc->setHtml(mHtmlString);
 
     pmd->processDocument(doc);

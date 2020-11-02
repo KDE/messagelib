@@ -38,7 +38,7 @@ void ThemeConfigButtonPrivate::slotConfigureThemes()
         currentThemeID = mThemeComboBox->currentTheme();
     }
 
-    ConfigureThemesDialog *dialog = new ConfigureThemesDialog(q->window());
+    auto *dialog = new ConfigureThemesDialog(q->window());
     dialog->selectTheme(currentThemeID);
 
     QObject::connect(dialog, &ConfigureThemesDialog::okClicked, q, &ThemeConfigButton::configureDialogCompleted);

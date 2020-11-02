@@ -468,7 +468,7 @@ bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion,
     // FIXME: Remove code duplication here
 
     for (int i = 0; i < val; ++i) {
-        ContentItem *ci = new ContentItem(ContentItem::Subject);    // dummy type
+        auto *ci = new ContentItem(ContentItem::Subject);    // dummy type
         if (!ci->load(stream, themeVersion)) {
             qCDebug(MESSAGELIST_LOG) << "Left content item loading failed";
             delete ci;
@@ -487,7 +487,7 @@ bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion,
             && themeVersion < gThemeMinimumVersionWithAnnotationIcon
             && val > 1) {
             qCDebug(MESSAGELIST_LOG) << "Old theme version detected, adding annotation item next to attachment icon.";
-            ContentItem *annotationItem = new ContentItem(ContentItem::AnnotationIcon);
+            auto *annotationItem = new ContentItem(ContentItem::AnnotationIcon);
             annotationItem->setHideWhenDisabled(true);
             if (leftItem) {
                 addLeftItem(annotationItem);
@@ -501,7 +501,7 @@ bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion,
             && themeVersion < gThemeMinimumVersionWithInvitationIcon
             && val > 1) {
             qCDebug(MESSAGELIST_LOG) << "Old theme version detected, adding invitation item next to attachment icon.";
-            ContentItem *invitationItem = new ContentItem(ContentItem::InvitationIcon);
+            auto *invitationItem = new ContentItem(ContentItem::InvitationIcon);
             invitationItem->setHideWhenDisabled(true);
             if (leftItem) {
                 addLeftItem(invitationItem);
@@ -1200,7 +1200,7 @@ bool Theme::load(QDataStream &stream)
     }
 
     for (int i = 0; i < val; ++i) {
-        Column *col = new Column();
+        auto *col = new Column();
         if (!col->load(stream, themeVersion)) {
             qCDebug(MESSAGELIST_LOG) << "Column loading failed";
             delete col;

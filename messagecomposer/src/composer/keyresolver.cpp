@@ -116,8 +116,8 @@ static bool ValidTrustedOpenPGPEncryptionKey(const GpgME::Key &key)
         return false;
     }
     const std::vector<GpgME::UserID> uids = key.userIDs();
-    std::vector<GpgME::UserID>::const_iterator end(uids.end());
-    for (std::vector<GpgME::UserID>::const_iterator it = uids.begin(); it != end; ++it) {
+    auto end(uids.end());
+    for (auto it = uids.begin(); it != end; ++it) {
         if (!it->isRevoked() && it->validity() >= GpgME::UserID::Marginal) {
             return true;
         } else if (it->isRevoked()) {
@@ -243,7 +243,7 @@ static std::vector<GpgME::UserID> matchingUIDs(const std::vector<GpgME::UserID> 
     std::vector<GpgME::UserID> result;
     result.reserve(uids.size());
 
-    for (std::vector<GpgME::UserID>::const_iterator it = uids.begin(), end = uids.end(); it != end; ++it) {
+    for (auto it = uids.begin(), end = uids.end(); it != end; ++it) {
         // PENDING(marc) check DN for an EMAIL, too, in case of X.509 certs... :/
         if (const char *email = it->email()) {
             if (*email && QString::fromUtf8(email).simplified().toLower() == address) {
@@ -269,7 +269,7 @@ static QStringList keysAsStrings(const std::vector<GpgME::Key> &keys)
 {
     QStringList strings;
     strings.reserve(keys.size());
-    for (std::vector<GpgME::Key>::const_iterator it = keys.begin(); it != keys.end(); ++it) {
+    for (auto it = keys.begin(); it != keys.end(); ++it) {
         assert(!(*it).userID(0).isNull());
         const auto userID = (*it).userID(0);
         QString keyLabel = QString::fromUtf8(userID.email());
@@ -290,7 +290,7 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
     std::vector<GpgME::Key> fishies;
     std::vector<GpgME::Key> ickies;
     std::vector<GpgME::Key> rewookies;
-    std::vector<GpgME::Key>::const_iterator it = keys.begin();
+    auto it = keys.begin();
     const std::vector<GpgME::Key>::const_iterator end = keys.end();
     for (; it != end; ++it) {
         const GpgME::Key &key = *it;
@@ -1138,7 +1138,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
     // 1. Get keys for all recipients:
     //
     qCDebug(MESSAGECOMPOSER_LOG) << "resolving enc keys";
-    for (std::vector<Item>::iterator it = d->mPrimaryEncryptionKeys.begin(); it != d->mPrimaryEncryptionKeys.end(); ++it) {
+    for (auto it = d->mPrimaryEncryptionKeys.begin(); it != d->mPrimaryEncryptionKeys.end(); ++it) {
         qCDebug(MESSAGECOMPOSER_LOG) << "checking primary:" << it->address;
         if (!it->needKeys) {
             continue;
@@ -1156,7 +1156,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
         qCDebug(MESSAGECOMPOSER_LOG) << "set key data:" << int(it->pref) << int(it->signPref) << int(it->format);
     }
 
-    for (std::vector<Item>::iterator it = d->mSecondaryEncryptionKeys.begin(), total = d->mSecondaryEncryptionKeys.end(); it != total; ++it) {
+    for (auto it = d->mSecondaryEncryptionKeys.begin(), total = d->mSecondaryEncryptionKeys.end(); it != total; ++it) {
         if (!it->needKeys) {
             continue;
         }
@@ -1232,8 +1232,8 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
 
     for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
         const std::vector<SplitInfo> si_list = encryptionItems(concreteCryptoMessageFormats[i]);
-        for (std::vector<SplitInfo>::const_iterator sit = si_list.begin(), total = si_list.end(); sit != total; ++sit) {
-            for (std::vector<GpgME::Key>::const_iterator kit = sit->keys.begin(); kit != sit->keys.end(); ++kit) {
+        for (auto sit = si_list.begin(), total = si_list.end(); sit != total; ++sit) {
+            for (auto kit = sit->keys.begin(); kit != sit->keys.end(); ++kit) {
                 const Kleo::Result r = checkKeyNearExpiry(*kit, "other encryption key near expiry warning",
                                                           false, false);
                 if (r != Kleo::Ok) {
@@ -1354,7 +1354,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
     // FIXME: Present another message if _both_ OpenPGP and S/MIME keys
     // are missing.
 
-    for (std::map<CryptoMessageFormat, FormatInfo>::iterator it = d->mFormatInfoMap.begin(); it != d->mFormatInfoMap.end(); ++it) {
+    for (auto it = d->mFormatInfoMap.begin(); it != d->mFormatInfoMap.end(); ++it) {
         if (!it->second.splitInfos.empty()) {
             dump();
             it->second.signKeys = signingKeysFor(it->first);
@@ -1454,7 +1454,7 @@ void Kleo::KeyResolver::collapseAllSplitInfos()
 {
     dump();
     for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
-        std::map<CryptoMessageFormat, FormatInfo>::iterator pos
+        auto pos
             = d->mFormatInfoMap.find(concreteCryptoMessageFormats[i]);
         if (pos == d->mFormatInfoMap.end()) {
             continue;
@@ -1483,13 +1483,13 @@ void Kleo::KeyResolver::addToAllSplitInfos(const std::vector<GpgME::Key> &keys, 
         if (!(f & concreteCryptoMessageFormats[i])) {
             continue;
         }
-        std::map<CryptoMessageFormat, FormatInfo>::iterator pos
+        auto pos
             = d->mFormatInfoMap.find(concreteCryptoMessageFormats[i]);
         if (pos == d->mFormatInfoMap.end()) {
             continue;
         }
         std::vector<SplitInfo> &v = pos->second.splitInfos;
-        for (std::vector<SplitInfo>::iterator it = v.begin(); it != v.end(); ++it) {
+        for (auto it = v.begin(); it != v.end(); ++it) {
             it->keys.insert(it->keys.end(), keys.begin(), keys.end());
         }
     }
@@ -1505,13 +1505,13 @@ void Kleo::KeyResolver::dump() const
     for (std::map<CryptoMessageFormat, FormatInfo>::const_iterator it = d->mFormatInfoMap.begin(); it != d->mFormatInfoMap.end(); ++it) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Format info for " << Kleo::cryptoMessageFormatToString(it->first)
                                      << ":  Signing keys: ";
-        for (std::vector<GpgME::Key>::const_iterator sit = it->second.signKeys.begin(); sit != it->second.signKeys.end(); ++sit) {
+        for (auto sit = it->second.signKeys.begin(); sit != it->second.signKeys.end(); ++sit) {
             qCDebug(MESSAGECOMPOSER_LOG) << "  " << sit->shortKeyID() << " ";
         }
         unsigned int i = 0;
-        for (std::vector<SplitInfo>::const_iterator sit = it->second.splitInfos.begin(), sitEnd = it->second.splitInfos.end(); sit != sitEnd; ++sit, ++i) {
+        for (auto sit = it->second.splitInfos.begin(), sitEnd = it->second.splitInfos.end(); sit != sitEnd; ++sit, ++i) {
             qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " encryption keys: ";
-            for (std::vector<GpgME::Key>::const_iterator kit = sit->keys.begin(), sitEnd = sit->keys.end(); kit != sitEnd; ++kit) {
+            for (auto kit = sit->keys.begin(), sitEnd = sit->keys.end(); kit != sitEnd; ++kit) {
                 qCDebug(MESSAGECOMPOSER_LOG) << "  " << kit->shortKeyID();
             }
             qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " recipients: "
@@ -1570,7 +1570,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
             pref.pgpKeyFingerprints.clear();
             pref.smimeCertFingerprints.clear();
             const std::vector<GpgME::Key> &keys = items[i].keys;
-            for (std::vector<GpgME::Key>::const_iterator it = keys.begin(), end = keys.end(); it != end; ++it) {
+            for (auto it = keys.begin(), end = keys.end(); it != end; ++it) {
                 if (it->protocol() == GpgME::OpenPGP) {
                     if (const char *fpr = it->primaryFingerprint()) {
                         pref.pgpKeyFingerprints.push_back(QLatin1String(fpr));
@@ -1837,7 +1837,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, b
 void Kleo::KeyResolver::addKeys(const std::vector<Item> &items, CryptoMessageFormat f)
 {
     dump();
-    for (std::vector<Item>::const_iterator it = items.begin(); it != items.end(); ++it) {
+    for (auto it = items.begin(); it != items.end(); ++it) {
         SplitInfo si(QStringList(it->address));
         std::remove_copy_if(it->keys.begin(), it->keys.end(),
                             std::back_inserter(si.keys), IsNotForFormat(f));
@@ -1856,7 +1856,7 @@ void Kleo::KeyResolver::addKeys(const std::vector<Item> &items, CryptoMessageFor
 void Kleo::KeyResolver::addKeys(const std::vector<Item> &items)
 {
     dump();
-    for (std::vector<Item>::const_iterator it = items.begin(); it != items.end(); ++it) {
+    for (auto it = items.begin(); it != items.end(); ++it) {
         SplitInfo si(QStringList(it->address));
         CryptoMessageFormat f = AutoFormat;
         for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
@@ -1926,7 +1926,7 @@ Kleo::KeyResolver::ContactPreferences Kleo::KeyResolver::lookupContactPreference
 void Kleo::KeyResolver::saveContactPreference(const QString &email, const ContactPreferences &pref) const
 {
     d->mContactPreferencesMap.insert(std::make_pair(email, pref));
-    MessageComposer::SaveContactPreferenceJob *saveContactPreferencesJob = new MessageComposer::SaveContactPreferenceJob(email, pref);
+    auto *saveContactPreferencesJob = new MessageComposer::SaveContactPreferenceJob(email, pref);
     saveContactPreferencesJob->start();
 }
 

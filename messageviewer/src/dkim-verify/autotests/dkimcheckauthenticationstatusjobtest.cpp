@@ -51,13 +51,13 @@ void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()
     QFETCH(QString, fileName);
     QFETCH(QString, currentPath);
     QFETCH(bool, relaxedParsing);
-    KMime::Message *msg = new KMime::Message;
+    auto *msg = new KMime::Message;
     QFile file(currentPath + fileName);
     QVERIFY(file.open(QIODevice::ReadOnly));
     msg->setContent(file.readAll());
     msg->parse();
 
-    MessageViewer::DKIMCheckAuthenticationStatusJob *job = new  MessageViewer::DKIMCheckAuthenticationStatusJob(this);
+    auto *job = new  MessageViewer::DKIMCheckAuthenticationStatusJob(this);
     MessageViewer::DKIMHeaderParser mHeaderParser;
     mHeaderParser.setHead(msg->head());
     mHeaderParser.parse();

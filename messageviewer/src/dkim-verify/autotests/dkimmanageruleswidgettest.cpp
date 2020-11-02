@@ -23,15 +23,15 @@ DKIMManageRulesWidgetTest::DKIMManageRulesWidgetTest(QObject *parent)
 void DKIMManageRulesWidgetTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMManageRulesWidget w;
-    QVBoxLayout *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    QTreeWidget *mTreeWidget = w.findChild<QTreeWidget *>(QStringLiteral("treewidget"));
+    auto *mTreeWidget = w.findChild<QTreeWidget *>(QStringLiteral("treewidget"));
     QVERIFY(mTreeWidget);
     QVERIFY(!mTreeWidget->rootIsDecorated());
     QVERIFY(mTreeWidget->alternatingRowColors());
 
-    KTreeWidgetSearchLine *searchLineEdit = w.findChild<KTreeWidgetSearchLine *>(QStringLiteral("searchlineedit"));
+    auto *searchLineEdit = w.findChild<KTreeWidgetSearchLine *>(QStringLiteral("searchlineedit"));
     QVERIFY(searchLineEdit->isClearButtonEnabled());
 }

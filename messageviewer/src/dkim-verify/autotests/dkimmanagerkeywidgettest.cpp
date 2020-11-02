@@ -20,16 +20,16 @@ void DKIMManagerKeyWidgetTest::shouldHaveDefaultValue()
 {
     MessageViewer::DKIMManagerKeyWidget w;
 
-    QVBoxLayout *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    KTreeWidgetSearchLine *searchLineEdit = w.findChild<KTreeWidgetSearchLine *>(QStringLiteral("searchlineedit"));
+    auto *searchLineEdit = w.findChild<KTreeWidgetSearchLine *>(QStringLiteral("searchlineedit"));
     QVERIFY(searchLineEdit);
     QVERIFY(searchLineEdit->isClearButtonEnabled());
     mainLayout->addWidget(searchLineEdit);
 
-    QTreeWidget *mTreeWidget = w.findChild<QTreeWidget *>(QStringLiteral("treewidget"));
+    auto *mTreeWidget = w.findChild<QTreeWidget *>(QStringLiteral("treewidget"));
     QVERIFY(mTreeWidget);
     QCOMPARE(mTreeWidget->topLevelItemCount(), 0);
 }

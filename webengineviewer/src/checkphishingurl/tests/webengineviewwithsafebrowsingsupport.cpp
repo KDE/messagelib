@@ -18,13 +18,13 @@
 WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    auto *layout = new QVBoxLayout(this);
     QStandardPaths::setTestModeEnabled(true);
     pageView = new WebEngineViewer::WebEngineView(this);
     connect(pageView->phishingDatabase(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished,
             this, &WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished);
     layout->addWidget(pageView);
-    WebEngineViewer::WebEnginePage *mEnginePage = new WebEngineViewer::WebEnginePage(this);
+    auto *mEnginePage = new WebEngineViewer::WebEnginePage(this);
     pageView->setPage(mEnginePage);
     //pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
     const QString urlPage = QLatin1String(CHECKPHISHINGURL_TEST_DATA_DIR) + QStringLiteral("/test-url.html");
@@ -79,7 +79,7 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    WebEngineViewWithSafeBrowsingSupport *w = new WebEngineViewWithSafeBrowsingSupport;
+    auto *w = new WebEngineViewWithSafeBrowsingSupport;
 
     w->show();
     app.exec();

@@ -86,10 +86,10 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mNetworkAccessManager = new WebEngineViewer::InterceptorManager(this, ac, this);
     d->mExternalReference = new MessageViewer::LoadExternalReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(d->mExternalReference);
-    MessageViewer::CidReferencesUrlInterceptor *cidReference
+    auto *cidReference
         = new MessageViewer::CidReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(cidReference);
-    MessageViewer::BlockExternalResourcesUrlInterceptor *blockExternalUrl
+    auto *blockExternalUrl
         = new MessageViewer::BlockExternalResourcesUrlInterceptor(this);
     connect(blockExternalUrl, &BlockExternalResourcesUrlInterceptor::formSubmittedForbidden, this,
             &MailWebEngineView::formSubmittedForbidden);

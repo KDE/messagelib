@@ -563,7 +563,7 @@ QString MailToURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) con
 static QString searchFullEmailByUid(const QString &uid)
 {
     QString fullEmail;
-    Akonadi::ContactSearchJob *job = new Akonadi::ContactSearchJob();
+    auto *job = new Akonadi::ContactSearchJob();
     job->setLimit(1);
     job->setQuery(Akonadi::ContactSearchJob::ContactUid, uid,
                   Akonadi::ContactSearchJob::ExactMatch);
@@ -773,8 +773,8 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
             QFile::ReadOwner | QFile::WriteOwner | QFile::ReadUser | QFile::ReadGroup
             | QFile::ReadOther);
         const QString icon = Util::iconPathForContent(node, KIconLoader::Small);
-        QDrag *drag = new QDrag(window->viewer());
-        QMimeData *mimeData = new QMimeData();
+        auto *drag = new QDrag(window->viewer());
+        auto *mimeData = new QMimeData();
         mimeData->setUrls(QList<QUrl>() << tUrl);
         drag->setMimeData(mimeData);
         if (!icon.isEmpty()) {

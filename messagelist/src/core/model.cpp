@@ -1773,7 +1773,7 @@ MessageItem *ModelPrivate::guessMessageParent(MessageItem *mi)
 
             // Need to find the message with the maximum date lower than the one of this message
 
-            time_t maxTime = (time_t)0;
+            auto maxTime = (time_t)0;
             MessageItem *pParent = nullptr;
 
             // Here'we re really guessing so circular references are possible
@@ -4274,7 +4274,7 @@ void ModelPrivate::slotStorageModelRowsInserted(const QModelIndex &parent, int f
 
     if (newJobNeeded) {
         // FIXME: Should take timing options from aggregation here ?
-        ViewItemJob *job = new ViewItemJob(from, to, 100, 50, 10);
+        auto *job = new ViewItemJob(from, to, 100, 50, 10);
         mViewItemJobs.append(job);
     }
 

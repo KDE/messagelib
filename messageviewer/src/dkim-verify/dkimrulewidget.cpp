@@ -17,7 +17,7 @@ using namespace MessageViewer;
 DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QFormLayout *layout = new QFormLayout(this);
+    auto *layout = new QFormLayout(this);
     layout->setObjectName(QStringLiteral("layout"));
     layout->setContentsMargins({});
 

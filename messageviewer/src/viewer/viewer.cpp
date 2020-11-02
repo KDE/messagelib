@@ -525,7 +525,7 @@ QAbstractItemModel *Viewer::messageTreeModel() const
 Akonadi::ItemFetchJob *Viewer::createFetchJob(const Akonadi::Item &item)
 {
     Q_D(Viewer);
-    Akonadi::ItemFetchJob *job = new Akonadi::ItemFetchJob(item, d->mSession);
+    auto *job = new Akonadi::ItemFetchJob(item, d->mSession);
     job->fetchScope().fetchAllAttributes();
     job->fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
     job->fetchScope().fetchFullPayload(true);

@@ -90,8 +90,8 @@ void SignAndEncryptTest::testHeaders()
     const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     Composer composer;
-    SignJob *sJob = new SignJob(&composer);
-    EncryptJob *eJob = new EncryptJob(&composer);
+    auto *sJob = new SignJob(&composer);
+    auto *eJob = new EncryptJob(&composer);
 
     QVERIFY(sJob);
     QVERIFY(eJob);

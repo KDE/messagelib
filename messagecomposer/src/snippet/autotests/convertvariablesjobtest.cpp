@@ -31,7 +31,7 @@ void ConvertVariablesJobTest::shouldCanStart()
     job.setText(QStringLiteral("bla"));
     QVERIFY(!job.canStart());
     MessageComposer::ComposerViewBase b;
-    MessageComposer::ComposerViewInterface *interface = new MessageComposer::ComposerViewInterface(&b);
+    auto *interface = new MessageComposer::ComposerViewInterface(&b);
     job.setComposerViewInterface(interface);
     QVERIFY(job.canStart());
 }
@@ -41,7 +41,7 @@ void ConvertVariablesJobTest::shouldConvertVariables()
     QFETCH(QString, original);
     QFETCH(QString, expected);
     MessageComposer::ComposerViewBase b;
-    MessageComposer::ComposerViewInterface *interface = new MessageComposer::ComposerViewInterface(&b);
+    auto *interface = new MessageComposer::ComposerViewInterface(&b);
     MessageComposer::ConvertSnippetVariablesJob job;
     job.setComposerViewInterface(interface);
     b.setSubject(QStringLiteral("Subject!!!!"));

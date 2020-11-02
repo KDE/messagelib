@@ -22,13 +22,13 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
     QWidget *w = new QWidget;
-    QVBoxLayout *vbox = new QVBoxLayout(w);
+    auto *vbox = new QVBoxLayout(w);
 
-    ComposerLineEdit *kale1 = new ComposerLineEdit(0);
+    auto *kale1 = new ComposerLineEdit(false);
     // Add menu for completion
     kale1->enableCompletion(true);
     vbox->addWidget(kale1);
-    ComposerLineEdit *kale2 = new ComposerLineEdit(0);
+    auto *kale2 = new ComposerLineEdit(false);
     vbox->addWidget(kale2);
     vbox->addStretch();
 

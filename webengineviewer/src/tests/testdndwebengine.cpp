@@ -15,8 +15,8 @@
 TestDndWebEngine::TestDndWebEngine(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *vbox = new QVBoxLayout(this);
-    QHBoxLayout *layout = new QHBoxLayout;
+    auto *vbox = new QVBoxLayout(this);
+    auto *layout = new QHBoxLayout;
     vbox->addLayout(layout);
     pageView = new WebEngineViewer::WebEngineView(this);
     pageView->load(QUrl(QStringLiteral("http://www.planetkde.org")));
@@ -26,7 +26,7 @@ TestDndWebEngine::TestDndWebEngine(QWidget *parent)
     webEngineView->load(QUrl(QStringLiteral("http://www.kde.org")));
     layout->addWidget(webEngineView);
 
-    QTextEdit *edit = new QTextEdit(this);
+    auto *edit = new QTextEdit(this);
     vbox->addWidget(edit);
 }
 
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    TestDndWebEngine *testWebEngine = new TestDndWebEngine;
+    auto *testWebEngine = new TestDndWebEngine;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

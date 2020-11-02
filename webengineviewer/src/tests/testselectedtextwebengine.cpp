@@ -15,7 +15,7 @@
 TestSelectedTextWebEngine::TestSelectedTextWebEngine(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *hboxLayout = new QVBoxLayout(this);
+    auto *hboxLayout = new QVBoxLayout(this);
     pageView = new WebEngineViewer::WebEngineView(this);
     hboxLayout->addWidget(pageView);
     QPushButton *showSelectedText = new QPushButton(QStringLiteral("Show Selected Text"), this);
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    TestSelectedTextWebEngine *testWebEngine = new TestSelectedTextWebEngine;
+    auto *testWebEngine = new TestSelectedTextWebEngine;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

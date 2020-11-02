@@ -21,11 +21,11 @@ void DKIMWidgetInfoTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMWidgetInfo w;
 
-    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    QLabel *mLabel = w.findChild<QLabel *>(QStringLiteral("label"));
+    auto *mLabel = w.findChild<QLabel *>(QStringLiteral("label"));
     QVERIFY(mLabel);
     QVERIFY(mLabel->text().isEmpty());
 
@@ -35,7 +35,7 @@ void DKIMWidgetInfoTest::shouldHaveDefaultValues()
 void DKIMWidgetInfoTest::shouldClearWidget()
 {
     MessageViewer::DKIMWidgetInfo w;
-    QLabel *mLabel = w.findChild<QLabel *>(QStringLiteral("label"));
+    auto *mLabel = w.findChild<QLabel *>(QStringLiteral("label"));
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result;
     result.fromEmail = QStringLiteral("bla");
     result.sdid = QStringLiteral("bli");

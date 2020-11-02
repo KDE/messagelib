@@ -16,7 +16,7 @@
 ImageScalingTestWidget::ImageScalingTestWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout(this);
+    auto *lay = new QHBoxLayout(this);
     lay->addWidget(new MessageComposer::ImageScalingWidget(this));
 }
 
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.addHelpOption();
     parser.process(app);
-    ImageScalingTestWidget *w = new ImageScalingTestWidget();
+    auto *w = new ImageScalingTestWidget();
     w->resize(800, 600);
 
     w->show();

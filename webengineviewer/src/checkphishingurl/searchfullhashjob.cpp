@@ -264,7 +264,7 @@ void SearchFullHashJob::start()
 
 void SearchFullHashJob::slotError(QNetworkReply::NetworkError error)
 {
-    QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
+    auto *reply = qobject_cast<QNetworkReply *>(sender());
     qCWarning(WEBENGINEVIEWER_LOG) << " error " << error << " error string : " << reply->errorString();
     reply->deleteLater();
     deleteLater();

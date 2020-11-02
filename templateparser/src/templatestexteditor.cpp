@@ -44,7 +44,7 @@ TemplatesTextEditor::~TemplatesTextEditor()
 
 void TemplatesTextEditor::updateHighLighter()
 {
-    KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter *hlighter = dynamic_cast<KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter *>(highlighter());
+    auto *hlighter = dynamic_cast<KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter *>(highlighter());
     if (hlighter) {
         hlighter->toggleSpellHighlighting(checkSpellingEnabled());
     }

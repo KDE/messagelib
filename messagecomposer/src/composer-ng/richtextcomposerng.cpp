@@ -162,13 +162,13 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
     if (composerControler()->isFormattingUsed()) {
         if (!wasConverted) {
             if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
-                KPIMTextEdit::PlainTextMarkupBuilder *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
+                auto *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
 
-                KPIMTextEdit::MarkupDirector *pmd = new KPIMTextEdit::MarkupDirector(pb);
+                auto *pmd = new KPIMTextEdit::MarkupDirector(pb);
                 pmd->processDocument(document());
                 const QString plainText = pb->getResult();
                 textPart->setCleanPlainText(composerControler()->toCleanPlainText(plainText));
-                QTextDocument *doc = new QTextDocument(plainText);
+                auto *doc = new QTextDocument(plainText);
                 doc->adjustSize();
 
                 textPart->setWrappedPlainText(composerControler()->toWrappedPlainText(doc));
@@ -189,9 +189,9 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
     textPart->setWordWrappingEnabled(lineWrapMode() == QTextEdit::FixedColumnWidth);
     if (composerControler()->isFormattingUsed() && !wasConverted) {
 #ifdef USE_TEXTHTML_BUILDER
-        KPIMTextEdit::TextHTMLBuilder *pb = new KPIMTextEdit::TextHTMLBuilder();
+        auto *pb = new KPIMTextEdit::TextHTMLBuilder();
 
-        KPIMTextEdit::MarkupDirector *pmd = new KPIMTextEdit::MarkupDirector(pb);
+        auto *pmd = new KPIMTextEdit::MarkupDirector(pb);
         pmd->processDocument(document());
         QString cleanHtml = QStringLiteral("<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>%1</body>\n</html>").arg(pb->getResult());
         delete pmd;

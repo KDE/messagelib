@@ -34,7 +34,7 @@ ScamAttribute::~ScamAttribute()
 
 ScamAttribute *ScamAttribute::clone() const
 {
-    ScamAttribute *attr = new ScamAttribute();
+    auto *attr = new ScamAttribute();
     attr->setIsAScam(isAScam());
     return attr;
 }

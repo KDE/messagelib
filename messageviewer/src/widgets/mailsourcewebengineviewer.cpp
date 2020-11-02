@@ -36,7 +36,7 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     : QDialog(parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     mRawBrowser = new MailSourceViewTextBrowserWidget(QStringLiteral("Email"), this);
 #ifndef NDEBUG
     mShowHtmlSource = true;
@@ -61,7 +61,7 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     }
 
     // combining the shortcuts in one qkeysequence() did not work...
-    QShortcut *shortcut = new QShortcut(this);
+    auto *shortcut = new QShortcut(this);
     shortcut->setKey(Qt::Key_Escape);
     connect(shortcut, &QShortcut::activated, this, &MailSourceWebEngineViewer::close);
     shortcut = new QShortcut(this);

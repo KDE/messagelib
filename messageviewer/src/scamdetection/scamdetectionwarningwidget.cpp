@@ -37,7 +37,7 @@ ScamDetectionWarningWidget::ScamDetectionWarningWidget(QWidget *parent)
     connect(this, &ScamDetectionWarningWidget::linkActivated, this,
             &ScamDetectionWarningWidget::slotShowDetails);
 
-    QMenu *menu = new QMenu(this);
+    auto *menu = new QMenu(this);
     QAction *action = new QAction(i18n("Move to Trash"), this);
     connect(action, &QAction::triggered, this, &ScamDetectionWarningWidget::moveMessageToTrash);
     action->setMenu(menu);

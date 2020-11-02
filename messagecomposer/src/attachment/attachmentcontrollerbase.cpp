@@ -170,7 +170,7 @@ void AttachmentControllerBase::Private::compressJobResult(KJob *job)
         return;
     }
 
-    AttachmentCompressJob *ajob = qobject_cast<AttachmentCompressJob *>(job);
+    auto *ajob = qobject_cast<AttachmentCompressJob *>(job);
     Q_ASSERT(ajob);
     AttachmentPart::Ptr originalPart = ajob->originalPart();
     AttachmentPart::Ptr compressedPart = ajob->compressedPart();
@@ -204,7 +204,7 @@ void AttachmentControllerBase::Private::loadJobResult(KJob *job)
         return;
     }
 
-    AttachmentLoadJob *ajob = qobject_cast<AttachmentLoadJob *>(job);
+    auto *ajob = qobject_cast<AttachmentLoadJob *>(job);
     Q_ASSERT(ajob);
     AttachmentPart::Ptr part = ajob->attachmentPart();
     q->addAttachment(part);
@@ -263,7 +263,7 @@ void AttachmentControllerBase::Private::selectedAttachmentProperties()
 void AttachmentControllerBase::Private::reloadAttachment()
 {
     Q_ASSERT(selectedParts.count() == 1);
-    AttachmentUpdateJob *ajob = new AttachmentUpdateJob(selectedParts.constFirst(), q);
+    auto *ajob = new AttachmentUpdateJob(selectedParts.constFirst(), q);
     connect(ajob, &AttachmentUpdateJob::result, q, [this](KJob *job) {
         updateJobResult(job);
     });
@@ -276,7 +276,7 @@ void AttachmentControllerBase::Private::updateJobResult(KJob *job)
         KMessageBox::sorry(wParent, job->errorString(), i18n("Failed to reload attachment"));
         return;
     }
-    AttachmentUpdateJob *ajob = qobject_cast<AttachmentUpdateJob *>(job);
+    auto *ajob = qobject_cast<AttachmentUpdateJob *>(job);
     Q_ASSERT(ajob);
     AttachmentPart::Ptr originalPart = ajob->originalPart();
     AttachmentPart::Ptr updatedPart = ajob->updatedPart();
@@ -316,7 +316,7 @@ void AttachmentControllerBase::Private::createOpenWithMenu(QMenu *topMenu, const
     const KService::List offers = KFileItemActions::associatedApplications(QStringList() << contentTypeStr, QString());
     if (!offers.isEmpty()) {
         QMenu *menu = topMenu;
-        QActionGroup *actionGroup = new QActionGroup(menu);
+        auto *actionGroup = new QActionGroup(menu);
         connect(actionGroup, &QActionGroup::triggered, q, &AttachmentControllerBase::slotOpenWithAction);
 
         if (offers.count() > 1) { // submenu 'open with'
@@ -342,12 +342,12 @@ void AttachmentControllerBase::Private::createOpenWithMenu(QMenu *topMenu, const
         } else {
             openWithActionName = i18nc("@title:menu", "&Open With...");
         }
-        QAction *openWithAct = new QAction(menu);
+        auto *openWithAct = new QAction(menu);
         openWithAct->setText(openWithActionName);
         QObject::connect(openWithAct, &QAction::triggered, q, &AttachmentControllerBase::slotOpenWithDialog);
         menu->addAction(openWithAct);
     } else { // no app offers -> Open With...
-        QAction *act = new QAction(topMenu);
+        auto *act = new QAction(topMenu);
         act->setText(i18nc("@title:menu", "&Open With..."));
         QObject::connect(act, &QAction::triggered, q, &AttachmentControllerBase::slotOpenWithDialog);
         topMenu->addAction(act);
@@ -361,7 +361,7 @@ void AttachmentControllerBase::exportPublicKey(const QString &fingerprint)
         return;
     }
 
-    MessageComposer::AttachmentFromPublicKeyJob *ajob = new MessageComposer::AttachmentFromPublicKeyJob(fingerprint, this);
+    auto *ajob = new MessageComposer::AttachmentFromPublicKeyJob(fingerprint, this);
     connect(ajob, &AttachmentFromPublicKeyJob::result, this, [this](KJob *job) {
         d->attachPublicKeyJobResult(job);
     });
@@ -379,7 +379,7 @@ void AttachmentControllerBase::Private::attachPublicKeyJobResult(KJob *job)
     }
 
     Q_ASSERT(dynamic_cast<MessageComposer::AttachmentFromPublicKeyJob *>(job));
-    MessageComposer::AttachmentFromPublicKeyJob *ajob = static_cast<MessageComposer::AttachmentFromPublicKeyJob *>(job);
+    auto *ajob = static_cast<MessageComposer::AttachmentFromPublicKeyJob *>(job);
     AttachmentPart::Ptr part = ajob->attachmentPart();
     q->addAttachment(part);
 }
@@ -392,7 +392,7 @@ void AttachmentControllerBase::Private::attachVcardFromAddressBook(KJob *job)
         return;
     }
 
-    MessageComposer::AttachmentVcardFromAddressBookJob *ajob = static_cast<MessageComposer::AttachmentVcardFromAddressBookJob *>(job);
+    auto *ajob = static_cast<MessageComposer::AttachmentVcardFromAddressBookJob *>(job);
     AttachmentPart::Ptr part = ajob->attachmentPart();
     q->addAttachment(part);
 }
@@ -405,14 +405,14 @@ void AttachmentControllerBase::Private::attachClipBoardElement(KJob *job)
         return;
     }
 
-    MessageComposer::AttachmentClipBoardJob *ajob = static_cast<MessageComposer::AttachmentClipBoardJob *>(job);
+    auto *ajob = static_cast<MessageComposer::AttachmentClipBoardJob *>(job);
     AttachmentPart::Ptr part = ajob->attachmentPart();
     q->addAttachment(part);
 }
 
 static QTemporaryFile *dumpAttachmentToTempFile(const AttachmentPart::Ptr &part)   // local
 {
-    QTemporaryFile *file = new QTemporaryFile;
+    auto *file = new QTemporaryFile;
     if (!file->open()) {
         qCCritical(MESSAGECOMPOSER_LOG) << "Could not open tempfile" << file->fileName();
         delete file;
@@ -597,7 +597,7 @@ void AttachmentControllerBase::compressAttachment(const AttachmentPart::Ptr &par
     if (compress) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Compressing part.";
 
-        AttachmentCompressJob *ajob = new AttachmentCompressJob(part, this);
+        auto *ajob = new AttachmentCompressJob(part, this);
         connect(ajob, &AttachmentCompressJob::result, this, [this](KJob *job) {
             d->compressJobResult(job);
         });
@@ -703,7 +703,7 @@ void AttachmentControllerBase::openWith(const KService::Ptr &offer)
     QUrl url = QUrl::fromLocalFile(tempFile->fileName());
     tempFile->setPermissions(QFile::ReadUser);
     // If offer is null, this will show the "open with" dialog
-    KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(offer);
+    auto *job = new KIO::ApplicationLauncherJob(offer);
     job->setUrls({url});
     job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
     job->start();
@@ -747,7 +747,7 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
 
 void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
 {
-    MessageComposer::Composer *composer = new MessageComposer::Composer;
+    auto *composer = new MessageComposer::Composer;
     composer->globalPart()->setFallbackCharsetEnabled(true);
     MessageComposer::AttachmentJob *attachmentJob = new MessageComposer::AttachmentJob(part, composer);
     connect(attachmentJob, &AttachmentJob::result, this, [this](KJob *job) {
@@ -841,7 +841,7 @@ void AttachmentControllerBase::byteArrayToRemoteFile(const QByteArray &aData, co
 
 void AttachmentControllerBase::slotPutResult(KJob *job)
 {
-    KIO::StoredTransferJob *_job = qobject_cast<KIO::StoredTransferJob *>(job);
+    auto *_job = qobject_cast<KIO::StoredTransferJob *>(job);
 
     if (job->error()) {
         if (job->error() == KIO::ERR_FILE_ALREADY_EXIST) {
@@ -899,7 +899,7 @@ void AttachmentControllerBase::showAttachVcard()
 
 void AttachmentControllerBase::showAttachClipBoard()
 {
-    MessageComposer::AttachmentClipBoardJob *job = new MessageComposer::AttachmentClipBoardJob(this);
+    auto *job = new MessageComposer::AttachmentClipBoardJob(this);
     connect(job, &AttachmentClipBoardJob::result, this, [this](KJob *job) {
         d->attachClipBoardElement(job);
     });

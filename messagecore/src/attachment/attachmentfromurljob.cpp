@@ -55,7 +55,7 @@ void AttachmentFromUrlJob::Private::transferJobResult(KJob *job)
     }
 
     Q_ASSERT(dynamic_cast<KIO::TransferJob *>(job));
-    KIO::TransferJob *transferJob = static_cast<KIO::TransferJob *>(job);
+    auto *transferJob = static_cast<KIO::TransferJob *>(job);
 
     // Determine the MIME type and filename of the attachment.
     const QString mimeTypeName = transferJob->mimetype();

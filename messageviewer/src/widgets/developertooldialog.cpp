@@ -19,7 +19,7 @@ using namespace MessageViewer;
 DeveloperToolDialog::DeveloperToolDialog(QWidget *parent)
     : QDialog(parent)
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
     mDeveloperToolWidget = new DeveloperToolWidget(this);

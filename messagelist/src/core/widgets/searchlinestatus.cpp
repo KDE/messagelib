@@ -35,7 +35,7 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     setClearButtonEnabled(true);
     initializeActions();
     createMenuSearch();
-    QAction *act = findChild<QAction *>(QLatin1String(qLineEditclearButtonActionNameC));
+    auto *act = findChild<QAction *>(QLatin1String(qLineEditclearButtonActionNameC));
     if (act) {
         connect(act, &QAction::triggered, this, &SearchLineStatus::slotClear);
     } else {
@@ -152,7 +152,7 @@ void SearchLineStatus::clearFilterAction()
 
 void SearchLineStatus::createFilterAction(const QIcon &icon, const QString &text, int value)
 {
-    QAction *act = new QAction(icon, text, this);
+    auto *act = new QAction(icon, text, this);
     act->setCheckable(true);
     act->setData(value);
     mFilterMenu->addAction(act);
@@ -181,7 +181,7 @@ void SearchLineStatus::createMenuSearch()
 {
     mFilterMenu = new QMenu(this);
     mFilterMenu->setObjectName(QStringLiteral("filtermenu"));
-    QWidgetAction *clearWidgetAction = new QWidgetAction(mFilterMenu);
+    auto *clearWidgetAction = new QWidgetAction(mFilterMenu);
     QPushButton *clearFilterButton = new QPushButton(i18n("Clear Filter"), mFilterMenu);
     connect(clearFilterButton, &QPushButton::clicked, this, &SearchLineStatus::clearFilterButtonClicked);
 
@@ -235,7 +235,7 @@ void SearchLineStatus::createMenuSearch()
 void SearchLineStatus::createFilterByAction()
 {
     mFilterMenu->addSeparator();
-    QActionGroup *grp = new QActionGroup(mFilterMenu);
+    auto *grp = new QActionGroup(mFilterMenu);
 
     mSearchEveryWhereAction = new QAction(i18n("Full Message"), mFilterMenu);
     mSearchEveryWhereAction->setCheckable(true);

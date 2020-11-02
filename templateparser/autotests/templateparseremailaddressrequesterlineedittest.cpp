@@ -20,11 +20,11 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldHaveDefaultValue()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
 
-    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    auto *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
+    auto *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
     QVERIFY(mLineEdit);
     QVERIFY(mLineEdit->text().isEmpty());
 }
@@ -32,7 +32,7 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldHaveDefaultValue()
 void TemplateParserEmailAddressRequesterLineEditTest::shouldAssignValue()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
-    QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
+    auto *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
     const QString str{
         QStringLiteral("foo")
     };
@@ -44,7 +44,7 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldAssignValue()
 void TemplateParserEmailAddressRequesterLineEditTest::shouldClearValue()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
-    QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
+    auto *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
     const QString str{
         QStringLiteral("foo")
     };

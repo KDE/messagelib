@@ -59,7 +59,7 @@ void AggregationConfigButtonPrivate::slotConfigureAggregations()
         currentAggregationID = mAggregationComboBox->currentAggregation();
     }
 
-    ConfigureAggregationsDialog *dialog = new ConfigureAggregationsDialog(q->window());
+    auto *dialog = new ConfigureAggregationsDialog(q->window());
     dialog->selectAggregation(currentAggregationID);
 
     QObject::connect(dialog, &ConfigureAggregationsDialog::okClicked, q, &AggregationConfigButton::configureDialogCompleted);

@@ -51,7 +51,7 @@ void AttachmentFromUrlJobTest::testAttachments()
     QByteArray data = file.readAll();
     file.close();
 
-    AttachmentFromUrlJob *ljob = new AttachmentFromUrlJob(url, this);
+    auto *ljob = new AttachmentFromUrlJob(url, this);
     VERIFYEXEC(ljob);
     AttachmentPart::Ptr part = ljob->attachmentPart();
     delete ljob;
@@ -68,7 +68,7 @@ void AttachmentFromUrlJobTest::testAttachmentTooBig()
 {
     const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("doc.pdf"));
 
-    AttachmentFromUrlJob *ljob = new AttachmentFromUrlJob(url, this);
+    auto *ljob = new AttachmentFromUrlJob(url, this);
     ljob->setMaximumAllowedSize(1024);   // 1KiB, whereas the file is >9KiB.
     QVERIFY(!ljob->exec());
 }
@@ -80,7 +80,7 @@ void AttachmentFromUrlJobTest::testAttachmentCharset()
     QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + filename);
     MessageCore::StringUtil::setEncodingFile(url, QString::fromLatin1(charset));
 
-    AttachmentFromUrlJob *ljob = new AttachmentFromUrlJob(url, this);
+    auto *ljob = new AttachmentFromUrlJob(url, this);
     VERIFYEXEC(ljob);
     AttachmentPart::Ptr part = ljob->attachmentPart();
     delete ljob;

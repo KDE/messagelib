@@ -33,7 +33,7 @@ JobBase::~JobBase()
 GlobalPart *JobBase::globalPart()
 {
     for (QObject *obj = this; obj != nullptr; obj = obj->parent()) {
-        Composer *composer = qobject_cast<Composer *>(obj);
+        auto *composer = qobject_cast<Composer *>(obj);
         if (composer) {
             return composer->globalPart();
         }

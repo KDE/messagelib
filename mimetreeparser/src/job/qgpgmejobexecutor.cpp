@@ -87,7 +87,7 @@ Error QGpgMEJobExecutor::auditLogError() const
 void QGpgMEJobExecutor::verificationResult(const GpgME::VerificationResult &result)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Detached verification job finished";
-    QGpgME::Job *job = qobject_cast<QGpgME::Job *>(sender());
+    auto *job = qobject_cast<QGpgME::Job *>(sender());
     assert(job);
     mVerificationResult = result;
     mAuditLogError = job->auditLogError();
@@ -98,7 +98,7 @@ void QGpgMEJobExecutor::verificationResult(const GpgME::VerificationResult &resu
 void QGpgMEJobExecutor::verificationResult(const GpgME::VerificationResult &result, const QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Opaque verification job finished";
-    QGpgME::Job *job = qobject_cast<QGpgME::Job *>(sender());
+    auto *job = qobject_cast<QGpgME::Job *>(sender());
     assert(job);
     mVerificationResult = result;
     mData = plainText;
@@ -111,7 +111,7 @@ void QGpgMEJobExecutor::decryptResult(
     const GpgME::DecryptionResult &decryptionresult, const GpgME::VerificationResult &verificationresult, const QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Decryption job finished";
-    QGpgME::Job *job = qobject_cast<QGpgME::Job *>(sender());
+    auto *job = qobject_cast<QGpgME::Job *>(sender());
     assert(job);
     mVerificationResult = verificationresult;
     mDecryptResult = decryptionresult;
@@ -123,7 +123,7 @@ void QGpgMEJobExecutor::decryptResult(
 
 void QGpgMEJobExecutor::importResult(const GpgME::ImportResult &result)
 {
-    QGpgME::Job *job = qobject_cast<QGpgME::Job *>(sender());
+    auto *job = qobject_cast<QGpgME::Job *>(sender());
     assert(job);
     mImportResult = result;
     mAuditLogError = job->auditLogError();

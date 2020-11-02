@@ -95,7 +95,7 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Save Distribution List"));
     setModal(false);
 
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
 
     QWidget *topFrame = new QWidget(this);
     mainLayout->addWidget(topFrame);
@@ -157,7 +157,7 @@ void DistributionListDialog::setRecipients(const Recipient::List &recipients)
             QString email;
             KContacts::Addressee::parseEmailAddress(*it2, name, email);
             if (!email.isEmpty()) {
-                Akonadi::ContactSearchJob *job = new Akonadi::ContactSearchJob(this);
+                auto *job = new Akonadi::ContactSearchJob(this);
                 job->setQuery(Akonadi::ContactSearchJob::Email, email.toLower(), Akonadi::ContactSearchJob::ExactMatch);
                 job->setProperty("name", name);
                 job->setProperty("email", email);
@@ -191,7 +191,7 @@ void DistributionListDialog::slotDelayedSetRecipients(KJob *job)
         contact.setNameFromString(name);
         contact.insertEmail(email);
 
-        DistributionListItem *item = new DistributionListItem(mRecipientsList);
+        auto *item = new DistributionListItem(mRecipientsList);
         item->setAddressee(contact, email);
         item->setCheckState(0, Qt::Checked);
     } else {
@@ -200,7 +200,7 @@ void DistributionListDialog::slotDelayedSetRecipients(KJob *job)
             if (akItem.hasPayload<KContacts::Addressee>()) {
                 const KContacts::Addressee contact = akItem.payload<KContacts::Addressee>();
 
-                DistributionListItem *item = new DistributionListItem(mRecipientsList);
+                auto *item = new DistributionListItem(mRecipientsList);
                 item->setAddressee(contact, email);
 
                 // Need to record the Akonadi ID of the contact, so that
@@ -228,7 +228,7 @@ void DistributionListDialog::slotUser1()
     bool isEmpty = true;
     const int numberOfTopLevel(mRecipientsList->topLevelItemCount());
     for (int i = 0; i < numberOfTopLevel; ++i) {
-        DistributionListItem *item = static_cast<DistributionListItem *>(
+        auto *item = static_cast<DistributionListItem *>(
             mRecipientsList->topLevelItem(i));
         if (item && item->checkState(0) == Qt::Checked) {
             isEmpty = false;
@@ -255,7 +255,7 @@ void DistributionListDialog::slotUser1()
         }
     }
 
-    Akonadi::ContactGroupSearchJob *job = new Akonadi::ContactGroupSearchJob();
+    auto *job = new Akonadi::ContactGroupSearchJob();
     job->setQuery(Akonadi::ContactGroupSearchJob::Name, name);
     job->setProperty("name", name);
     connect(job, &Akonadi::ContactSearchJob::result, this, &DistributionListDialog::slotDelayedUser1);
@@ -288,7 +288,7 @@ void DistributionListDialog::slotDelayedUser1(KJob *job)
         KContacts::ContactGroup group(name);
         const int numberOfTopLevel(mRecipientsList->topLevelItemCount());
         for (int i = 0; i < numberOfTopLevel; ++i) {
-            DistributionListItem *item = static_cast<DistributionListItem *>(mRecipientsList->topLevelItem(i));
+            auto *item = static_cast<DistributionListItem *>(mRecipientsList->topLevelItem(i));
             if (item && item->checkState(0) == Qt::Checked) {
                 qCDebug(MESSAGECOMPOSER_LOG) << item->addressee().fullEmail() << item->addressee().uid();
                 if (item->isTransient()) {

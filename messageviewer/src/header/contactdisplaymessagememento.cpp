@@ -43,7 +43,7 @@ ContactDisplayMessageMemento::~ContactDisplayMessageMemento()
 void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
 {
     mFinished = true;
-    Akonadi::ContactSearchJob *searchJob = static_cast<Akonadi::ContactSearchJob *>(job);
+    auto *searchJob = static_cast<Akonadi::ContactSearchJob *>(job);
     if (searchJob->error()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Unable to fetch contact:" << searchJob->errorText();
         Q_EMIT update(MimeTreeParser::Delayed);
@@ -96,7 +96,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
     if (mPhoto.isEmpty() && mPhoto.url().isEmpty()) {
         // No url, no photo => search gravatar
         if (Gravatar::GravatarSettings::self()->gravatarSupportEnabled()) {
-            Gravatar::GravatarResolvUrlJob *job = new Gravatar::GravatarResolvUrlJob(this);
+            auto *job = new Gravatar::GravatarResolvUrlJob(this);
             job->setEmail(mEmailAddress);
             job->setUseDefaultPixmap(
                 Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());

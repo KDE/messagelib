@@ -739,7 +739,7 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
 
     const QByteArray _mementoName = mementoName();
 
-    CryptoBodyPartMemento *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(content(), _mementoName));
+    auto *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(content(), _mementoName));
     Q_ASSERT(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completely wrong
 
     if (!m && mCryptoProto) {
@@ -1112,7 +1112,7 @@ void EncryptedMessagePart::setMementoName(const QByteArray &name)
 
 void EncryptedMessagePart::startDecryption(const QByteArray &text, const QTextCodec *aCodec)
 {
-    KMime::Content *content = new KMime::Content;
+    auto *content = new KMime::Content;
     content->setBody(text);
     content->parse();
 
@@ -1159,7 +1159,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             cannotDecrypt = true;
         } else {
             const QByteArray ciphertext = data.decodedContent();
-            DecryptVerifyBodyPartMemento *newM
+            auto *newM
                 = new DecryptVerifyBodyPartMemento(job, ciphertext);
             if (mOtp->allowAsync()) {
                 QObject::connect(newM, &CryptoBodyPartMemento::update,

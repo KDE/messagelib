@@ -30,7 +30,7 @@ void WebEngineExportPdfPageJobTest::shouldBeAbleToExport()
     QVERIFY(!job.canStart());
     job.setPdfPath(QStringLiteral("foo"));
     QVERIFY(!job.canStart());
-    QWebEngineView *webEngine = new QWebEngineView;
+    auto *webEngine = new QWebEngineView;
 
     job.setEngineView(webEngine);
     QVERIFY(job.canStart());
@@ -54,7 +54,7 @@ void WebEngineExportPdfPageJobTest::shouldEmitSignalSuccess()
     QSignalSpy spyFailed(&job, &WebEngineViewer::WebEngineExportPdfPageJob::exportPdfFailed);
     QSignalSpy spySuccess(&job, &WebEngineViewer::WebEngineExportPdfPageJob::exportToPdfSuccess);
     job.setPdfPath(QDir::tempPath() + QStringLiteral("/test-webengine-export-test.pdf"));
-    QWebEngineView *webEngine = new QWebEngineView;
+    auto *webEngine = new QWebEngineView;
     job.setEngineView(webEngine);
 
     job.start();

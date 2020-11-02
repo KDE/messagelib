@@ -116,7 +116,7 @@ static inline const QFont &cachedFont(const Theme::ContentItem *ci, const Item *
         return cachedFont(ci);
     }
 
-    const MessageItem *mi = static_cast<const MessageItem *>(i);
+    const auto *mi = static_cast<const MessageItem *>(i);
     const bool bold = ci->isBold() || mi->isBold();
     const bool italic = ci->isItalic() || mi->isItalic();
     return (!bold && !italic) ? sFontCache[Normal]
@@ -550,7 +550,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
 
     // Set background color of control if necessary
     if (item->type() == Item::Message) {
-        MessageItem *msgItem = static_cast< MessageItem * >(item);
+        auto *msgItem = static_cast< MessageItem * >(item);
         if (msgItem->backgroundColor().isValid()) {
             opt.backgroundBrush = QBrush(msgItem->backgroundColor());
         }

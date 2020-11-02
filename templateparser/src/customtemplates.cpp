@@ -145,7 +145,7 @@ void CustomTemplates::slotTextChanged()
 {
     QTreeWidgetItem *item = mUi->mList->currentItem();
     if (item) {
-        CustomTemplateItem *vitem = static_cast<CustomTemplateItem *>(item);
+        auto *vitem = static_cast<CustomTemplateItem *>(item);
         vitem->setContent(mUi->mEdit->toPlainText());
         if (!mBlockChangeSignal) {
             vitem->setTo(mUi->mToEdit->text());
@@ -184,7 +184,7 @@ void CustomTemplates::load()
     for (QStringList::const_iterator it = list.constBegin(); it != end; ++it) {
         CTemplates t(*it);
         QKeySequence shortcut(t.shortcut());
-        CustomTemplates::Type type = static_cast<Type>(t.type());
+        auto type = static_cast<Type>(t.type());
         CustomTemplateItem *item = new CustomTemplateItem(mUi->mList, *it, t.content(),
                                                           shortcut, type, t.to(), t.cC());
         item->setText(1, *it);
@@ -210,7 +210,7 @@ void CustomTemplates::save()
     QStringList list;
     QTreeWidgetItemIterator lit(mUi->mList);
     while (*lit) {
-        CustomTemplateItem *it = static_cast<CustomTemplateItem *>(*lit);
+        auto *it = static_cast<CustomTemplateItem *>(*lit);
         const QString name = it->text(1);
         list.append(name);
 
@@ -319,7 +319,7 @@ void CustomTemplates::slotDuplicateClicked()
     if (!currentItem) {
         return;
     }
-    CustomTemplateItem *origItem = static_cast<CustomTemplateItem *>(currentItem);
+    auto *origItem = static_cast<CustomTemplateItem *>(currentItem);
     const QString templateName = createUniqueName(origItem->text(1));
     QKeySequence nullShortcut;
     CustomTemplates::Type type = origItem->customType();
@@ -371,7 +371,7 @@ void CustomTemplates::slotListSelectionChanged()
         mUi->mEditFrame->setEnabled(true);
         mUi->mRemove->setEnabled(true);
         mUi->mDuplicate->setEnabled(true);
-        CustomTemplateItem *vitem = static_cast<CustomTemplateItem *>(item);
+        auto *vitem = static_cast<CustomTemplateItem *>(item);
         mBlockChangeSignal = true;
         mUi->mEdit->setPlainText(vitem->content());
         mUi->mKeySequenceWidget->setKeySequence(vitem->shortcut(),
@@ -404,8 +404,8 @@ void CustomTemplates::slotTypeActivated(int index)
 {
     QTreeWidgetItem *item = mUi->mList->currentItem();
     if (item) {
-        CustomTemplateItem *vitem = static_cast<CustomTemplateItem *>(item);
-        CustomTemplates::Type customtype = static_cast<Type>(index);
+        auto *vitem = static_cast<CustomTemplateItem *>(item);
+        auto customtype = static_cast<Type>(index);
         vitem->setCustomType(customtype);
         vitem->setText(0, indexToType(customtype));
 
@@ -424,7 +424,7 @@ void CustomTemplates::slotShortcutChanged(const QKeySequence &newSeq)
 {
     QTreeWidgetItem *item = mUi->mList->currentItem();
     if (item) {
-        CustomTemplateItem *vitem = static_cast<CustomTemplateItem *>(item);
+        auto *vitem = static_cast<CustomTemplateItem *>(item);
         vitem->setShortcut(newSeq);
         mUi->mKeySequenceWidget->applyStealShortcut();
     }
@@ -437,7 +437,7 @@ void CustomTemplates::slotShortcutChanged(const QKeySequence &newSeq)
 void CustomTemplates::slotItemChanged(QTreeWidgetItem *item, int column)
 {
     if (item) {
-        CustomTemplateItem *vitem = static_cast<CustomTemplateItem *>(item);
+        auto *vitem = static_cast<CustomTemplateItem *>(item);
         if (column == 1) {
             const QString newName = vitem->text(1).trimmed();
             if (!newName.isEmpty()) {
@@ -469,7 +469,7 @@ CustomTemplateItemDelegate::~CustomTemplateItemDelegate()
 
 void CustomTemplateItemDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
 {
-    QLineEdit *lineEdit = static_cast<QLineEdit *>(editor);
+    auto *lineEdit = static_cast<QLineEdit *>(editor);
     const QString text = lineEdit->text();
     if (!text.isEmpty()) {
         model->setData(index, text, Qt::EditRole);

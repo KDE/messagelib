@@ -191,7 +191,7 @@ void Widget::setQuickSearchClickMessage(const QString &msg)
 
 void Widget::fillMessageTagCombo()
 {
-    Akonadi::TagFetchJob *fetchJob = new Akonadi::TagFetchJob(this);
+    auto *fetchJob = new Akonadi::TagFetchJob(this);
     fetchJob->fetchScope().fetchAttribute<Akonadi::TagAttribute>();
     connect(fetchJob, &Akonadi::TagFetchJob::result, this, &Widget::slotTagsFetched);
 }
@@ -202,7 +202,7 @@ void Widget::slotTagsFetched(KJob *job)
         qCWarning(MESSAGELIST_LOG) << "Failed to load tags " << job->errorString();
         return;
     }
-    Akonadi::TagFetchJob *fetchJob = static_cast<Akonadi::TagFetchJob *>(job);
+    auto *fetchJob = static_cast<Akonadi::TagFetchJob *>(job);
 
     KConfigGroup conf(MessageList::MessageListSettings::self()->config(), "MessageListView");
     const QString tagSelected = conf.readEntry(QStringLiteral("TagSelected"));
@@ -221,7 +221,7 @@ void Widget::slotTagsFetched(KJob *job)
             QString iconName = QStringLiteral("mail-tagged");
             const QString label = akonadiTag.name();
             const QString id = akonadiTag.url().url();
-            const Akonadi::TagAttribute *attr = akonadiTag.attribute<Akonadi::TagAttribute>();
+            const auto *attr = akonadiTag.attribute<Akonadi::TagAttribute>();
             if (attr) {
                 iconName = attr->iconName();
             }
@@ -479,10 +479,10 @@ void Widget::viewStartDragRequest()
         urls << url;
     }
 
-    QMimeData *mimeData = new QMimeData;
+    auto *mimeData = new QMimeData;
     mimeData->setUrls(urls);
 
-    QDrag *drag = new QDrag(view()->viewport());
+    auto *drag = new QDrag(view()->viewport());
     drag->setMimeData(mimeData);
 
     // Set pixmap

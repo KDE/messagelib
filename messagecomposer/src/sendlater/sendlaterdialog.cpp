@@ -27,14 +27,14 @@ SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Send Later"));
     setWindowIcon(QIcon::fromTheme(QStringLiteral("kmail")));
 
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
 
     QWidget *sendLaterWidget = new QWidget(this);
     mSendLaterWidget = new Ui::SendLaterWidget;
     mSendLaterWidget->setupUi(sendLaterWidget);
 
     QWidget *w = new QWidget(this);
-    QVBoxLayout *lay = new QVBoxLayout(w);
+    auto *lay = new QVBoxLayout(w);
     lay->setContentsMargins({});
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);

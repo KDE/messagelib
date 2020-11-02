@@ -22,7 +22,7 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     : QWidget(parent)
     , mZoom(1.0)
 {
-    QVBoxLayout *vbox = new QVBoxLayout(this);
+    auto *vbox = new QVBoxLayout(this);
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     connect(mTestWebEngine, &MessageViewer::MailWebEngineView::openUrl, this,
             &TestMailWebEngine::slotOpenUrl);
@@ -32,7 +32,7 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     mTestWebEngine->setHtml(str, QUrl(QStringLiteral("file:///")));
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vbox->addWidget(mTestWebEngine);
-    QHBoxLayout *hButtonBox = new QHBoxLayout;
+    auto *hButtonBox = new QHBoxLayout;
     vbox->addLayout(hButtonBox);
 
     QPushButton *scrollUp = new QPushButton(QStringLiteral("scrollUp 10px"), this);
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    TestMailWebEngine *testWebEngine = new TestMailWebEngine;
+    auto *testWebEngine = new TestMailWebEngine;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

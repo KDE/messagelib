@@ -19,7 +19,7 @@ using namespace MessageViewer;
 DKIMManagerKeyDialog::DKIMManagerKeyDialog(QWidget *parent)
     : QDialog(parent)
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
     mManagerWidget = new DKIMManagerKeyWidget(this);

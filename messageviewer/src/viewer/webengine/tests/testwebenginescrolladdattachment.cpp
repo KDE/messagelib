@@ -35,7 +35,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
 TestWebEngineScrollAddAttachment::TestWebEngineScrollAddAttachment(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *vboxLayout = new QVBoxLayout(this);
+    auto *vboxLayout = new QVBoxLayout(this);
 
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    TestWebEngineScrollAddAttachment *testWebEngine = new TestWebEngineScrollAddAttachment;
+    auto *testWebEngine = new TestWebEngineScrollAddAttachment;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

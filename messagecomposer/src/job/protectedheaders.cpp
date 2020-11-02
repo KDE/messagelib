@@ -75,7 +75,7 @@ void ProtectedHeadersJob::doStart()
     auto subject = d->skeletonMessage->header<KMime::Headers::Subject>();
     if (d->obvoscate && subject) {
         // Create protected header lagacy mimepart with replaced headers
-        SinglepartJob *cjob = new SinglepartJob;
+        auto *cjob = new SinglepartJob;
         auto ct = cjob->contentType();
         ct->setMimeType("text/plain");
         ct->setCharset(subject->rfc2047Charset());
@@ -84,7 +84,7 @@ void ProtectedHeadersJob::doStart()
         cjob->setData(subject->type() + QByteArray(": ") + subject->asUnicodeString().toUtf8());
 
         QObject::connect(cjob, &SinglepartJob::finished, this, [d, cjob]() {
-            KMime::Content *mixedPart = new KMime::Content();
+            auto *mixedPart = new KMime::Content();
             const QByteArray boundary = KMime::multiPartBoundary();
             mixedPart->contentType()->setMimeType("multipart/mixed");
             mixedPart->contentType(false)->setBoundary(boundary);
@@ -134,7 +134,7 @@ void ProtectedHeadersJob::process()
             continue;
         }
         if (headerType == "Subject") {
-            KMime::Headers::Subject *copySubject = new KMime::Headers::Subject();
+            auto *copySubject = new KMime::Headers::Subject();
             copySubject->from7BitString(subject->as7BitString(false));
             d->content->appendHeader(copySubject);
         } else {

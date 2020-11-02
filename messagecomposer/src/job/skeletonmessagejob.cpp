@@ -49,7 +49,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     // From:
     {
-        KMime::Headers::From *from = new KMime::Headers::From;
+        auto *from = new KMime::Headers::From;
         KMime::Types::Mailbox address;
         address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from()));
         from->fromUnicodeString(QString::fromLatin1(address.as7BitString("utf-8")), "utf-8");
@@ -58,7 +58,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     // To:
     {
-        KMime::Headers::To *to = new KMime::Headers::To;
+        auto *to = new KMime::Headers::To;
         QByteArray sTo;
         const QStringList lstTo = infoPart->to();
         for (const QString &a : lstTo) {
@@ -75,7 +75,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Reply To:
     if (!infoPart->replyTo().isEmpty()) {
-        KMime::Headers::ReplyTo *replyTo = new KMime::Headers::ReplyTo;
+        auto *replyTo = new KMime::Headers::ReplyTo;
         const QStringList lstReplyTo = infoPart->replyTo();
         QByteArray sReplyTo;
         for (const QString &a : lstReplyTo) {
@@ -92,7 +92,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Cc:
     {
-        KMime::Headers::Cc *cc = new KMime::Headers::Cc;
+        auto *cc = new KMime::Headers::Cc;
         QByteArray sCc;
         const QStringList lstCc = infoPart->cc();
         for (const QString &a : lstCc) {
@@ -109,7 +109,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Bcc:
     {
-        KMime::Headers::Bcc *bcc = new KMime::Headers::Bcc;
+        auto *bcc = new KMime::Headers::Bcc;
         QByteArray sBcc;
         const QStringList lstBcc = infoPart->bcc();
         for (const QString &a : lstBcc) {
@@ -126,7 +126,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Subject:
     {
-        KMime::Headers::Subject *subject = new KMime::Headers::Subject;
+        auto *subject = new KMime::Headers::Subject;
         subject->fromUnicodeString(infoPart->subject(), "utf-8");
         // TODO should we be more specific about the charset?
         message->setHeader(subject);
@@ -134,28 +134,28 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Date:
     {
-        KMime::Headers::Date *date = new KMime::Headers::Date;
+        auto *date = new KMime::Headers::Date;
         date->setDateTime(QDateTime::currentDateTime());
         message->setHeader(date);
     }
 
     // Fcc:
     if (!infoPart->fcc().isEmpty()) {
-        KMime::Headers::Generic *header = new KMime::Headers::Generic("X-KMail-Fcc");
+        auto *header = new KMime::Headers::Generic("X-KMail-Fcc");
         header->fromUnicodeString(infoPart->fcc(), "utf-8");
         message->setHeader(header);
     }
 
     //Transport:
     if (infoPart->transportId() > -1) {
-        KMime::Headers::Generic *header = new KMime::Headers::Generic("X-KMail-Transport");
+        auto *header = new KMime::Headers::Generic("X-KMail-Transport");
         header->fromUnicodeString(QString::number(infoPart->transportId()), "utf-8");
         message->setHeader(header);
     }
 
     // Message-ID
     {
-        KMime::Headers::MessageID *messageId = new KMime::Headers::MessageID();
+        auto *messageId = new KMime::Headers::MessageID();
         QByteArray fqdn;
         if (MessageComposer::MessageComposerSettings::self()->useCustomMessageIdSuffix()) {
             fqdn = QUrl::toAce(MessageComposer::MessageComposerSettings::self()->customMsgIDSuffix());
@@ -182,7 +182,7 @@ void SkeletonMessageJobPrivate::doStart()
         if (globalPart->requestDeleveryConfirmation()) {
             //TODO fix me multi address
             const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
-            KMime::Headers::Generic *requestDeleveryConfirmation = new KMime::Headers::Generic("Return-Receipt-To");
+            auto *requestDeleveryConfirmation = new KMime::Headers::Generic("Return-Receipt-To");
             requestDeleveryConfirmation->fromUnicodeString(addr, "utf-8");
             message->setHeader(requestDeleveryConfirmation);
         }
@@ -193,7 +193,7 @@ void SkeletonMessageJobPrivate::doStart()
         if (globalPart->MDNRequested()) {
             //TODO fix me multi address
             const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
-            KMime::Headers::Generic *mdn = new KMime::Headers::Generic("Disposition-Notification-To");
+            auto *mdn = new KMime::Headers::Generic("Disposition-Notification-To");
             mdn->fromUnicodeString(addr, "utf-8");
             message->setHeader(mdn);
         }
@@ -201,9 +201,9 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Urgent header
     if (infoPart->urgent()) {
-        KMime::Headers::Generic *urg1 = new KMime::Headers::Generic("X-PRIORITY");
+        auto *urg1 = new KMime::Headers::Generic("X-PRIORITY");
         urg1->fromUnicodeString(QStringLiteral("2 (High)"), "utf-8");
-        KMime::Headers::Generic *urg2 = new KMime::Headers::Generic("Priority");
+        auto *urg2 = new KMime::Headers::Generic("Priority");
         urg2->fromUnicodeString(QStringLiteral("urgent"), "utf-8");
         message->setHeader(urg1);
         message->setHeader(urg2);
@@ -211,14 +211,14 @@ void SkeletonMessageJobPrivate::doStart()
 
     // In-Reply-To
     if (!infoPart->inReplyTo().isEmpty()) {
-        KMime::Headers::InReplyTo *header = new KMime::Headers::InReplyTo;
+        auto *header = new KMime::Headers::InReplyTo;
         header->fromUnicodeString(infoPart->inReplyTo(), "utf-8");
         message->setHeader(header);
     }
 
     // References
     if (!infoPart->references().isEmpty()) {
-        KMime::Headers::References *header = new KMime::Headers::References;
+        auto *header = new KMime::Headers::References;
         header->fromUnicodeString(infoPart->references(), "utf-8");
         message->setHeader(header);
     }

@@ -21,12 +21,12 @@ DeveloperToolDialogTest::DeveloperToolDialogTest(QObject *parent)
 void DeveloperToolDialogTest::shouldHaveDefaultValues()
 {
    MessageViewer::DeveloperToolDialog d;
-   QVBoxLayout *mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+   auto *mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
    QVERIFY(mainLayout);
 
-   MessageViewer::DeveloperToolWidget *mDeveloperToolWidget = d.findChild<MessageViewer::DeveloperToolWidget *>(QStringLiteral("mDeveloperToolWidget"));
+   auto *mDeveloperToolWidget = d.findChild<MessageViewer::DeveloperToolWidget *>(QStringLiteral("mDeveloperToolWidget"));
    QVERIFY(mDeveloperToolWidget);
 
-   QDialogButtonBox *buttonBox = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+   auto *buttonBox = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
    QVERIFY(buttonBox);
 }

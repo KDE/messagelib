@@ -28,13 +28,13 @@ void DKIMManagerKeyDialogTest::shouldHaveDefaultValue()
 {
     MessageViewer::DKIMManagerKeyDialog dlg;
 
-    QVBoxLayout *mainLayout = dlg.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto *mainLayout = dlg.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
 
-    MessageViewer::DKIMManagerKeyWidget *w = dlg.findChild<MessageViewer::DKIMManagerKeyWidget *>(QStringLiteral("managerWidget"));
+    auto *w = dlg.findChild<MessageViewer::DKIMManagerKeyWidget *>(QStringLiteral("managerWidget"));
     QVERIFY(w);
 
-    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    auto *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Close});
 }

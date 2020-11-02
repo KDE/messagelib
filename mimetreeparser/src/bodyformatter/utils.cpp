@@ -10,7 +10,7 @@ using namespace MimeTreeParser;
 
 MimeMessagePart::Ptr MimeTreeParser::createAndParseTempNode(Interface::BodyPart &part, KMime::Content *parentNode, const char *content, const char *cntDesc)
 {
-    KMime::Content *newNode = new KMime::Content();
+    auto *newNode = new KMime::Content();
     newNode->setContent(KMime::CRLFtoLF(content));
     newNode->parse();
 

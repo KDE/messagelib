@@ -23,7 +23,7 @@ DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Add Rule"));
 
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
     mRuleWidget = new DKIMRuleWidget(this);

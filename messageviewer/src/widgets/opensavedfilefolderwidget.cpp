@@ -26,7 +26,7 @@ OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
     setCloseButtonVisible(true);
     setMessageType(Positive);
     setWordWrap(true);
-    QAction *action = this->findChild<QAction *>(); // should give us the close action...
+    auto *action = this->findChild<QAction *>(); // should give us the close action...
     if (action) {
         connect(action, &QAction::triggered, this,
                 &OpenSavedFileFolderWidget::slotExplicitlyClosed);

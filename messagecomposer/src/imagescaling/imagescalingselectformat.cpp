@@ -22,7 +22,7 @@ ImageScalingSelectFormatDialog::ImageScalingSelectFormatDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18nc("@title:window", "Select Image Format"));
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
@@ -42,7 +42,7 @@ ImageScalingSelectFormatDialog::~ImageScalingSelectFormatDialog()
 
 void ImageScalingSelectFormatDialog::addImageFormat(const QString &format, const QString &mimetype)
 {
-    QListWidgetItem *item = new QListWidgetItem(format);
+    auto *item = new QListWidgetItem(format);
     item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
     item->setData(ImageScalingSelectFormatDialog::ImageRole, mimetype);
     item->setCheckState(Qt::Unchecked);
@@ -87,7 +87,7 @@ void ImageScalingSelectFormatDialog::setFormat(const QString &format)
 ImageScalingSelectFormat::ImageScalingSelectFormat(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout(this);
+    auto *lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
     mFormat = new QLineEdit;
     connect(mFormat, &QLineEdit::textChanged, this, &ImageScalingSelectFormat::textChanged);

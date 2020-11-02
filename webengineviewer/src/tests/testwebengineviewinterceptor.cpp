@@ -90,7 +90,7 @@ CidUrlRequestInterceptor::~CidUrlRequestInterceptor()
 TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *vbox = new QVBoxLayout(this);
+    auto *vbox = new QVBoxLayout(this);
     mWebEngineView = new QWebEngineView(this);
     mWebEngineView->page()->profile()->setUrlRequestInterceptor(new CidUrlRequestInterceptor(this));
 
@@ -119,9 +119,9 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    CidSchemeHandler *handler = new CidSchemeHandler(nullptr);
+    auto *handler = new CidSchemeHandler(nullptr);
     QWebEngineProfile::defaultProfile()->installUrlSchemeHandler("cid", handler);
-    TestWebEngineViewInterceptor *testWebEngine = new TestWebEngineViewInterceptor;
+    auto *testWebEngine = new TestWebEngineViewInterceptor;
     testWebEngine->show();
     testWebEngine->resize(600, 400);
     const int ret = app.exec();

@@ -26,7 +26,7 @@ OptionSetEditor::OptionSetEditor(QWidget *parent)
     QWidget *tab = new QWidget(this);
     addTab(tab, i18nc("@title:tab General options of a view mode", "General"));
 
-    QGridLayout *tabg = new QGridLayout(tab);
+    auto *tabg = new QGridLayout(tab);
 
     QLabel *l = new QLabel(i18nc("@label:textbox Name of the option", "Name:"), tab);
     tabg->addWidget(l, 0, 0);

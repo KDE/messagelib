@@ -21,8 +21,8 @@ QTEST_MAIN(SinglepartJobTest)
 
 void SinglepartJobTest::testContent()
 {
-    Composer *composer = new Composer;
-    SinglepartJob *cjob = new SinglepartJob(composer);
+    auto *composer = new Composer;
+    auto *cjob = new SinglepartJob(composer);
     QByteArray data("birds came flying from the underground");
     cjob->setData(data);
     QVERIFY(cjob->exec());
@@ -39,8 +39,8 @@ void SinglepartJobTest::testContent()
 
 void SinglepartJobTest::testContentDisposition()
 {
-    Composer *composer = new Composer;
-    SinglepartJob *cjob = new SinglepartJob(composer);
+    auto *composer = new Composer;
+    auto *cjob = new SinglepartJob(composer);
     QByteArray data("birds came flying from the underground");
     cjob->setData(data);
     QString filename = QStringLiteral("test_ăîşţâ.txt");
@@ -60,8 +60,8 @@ void SinglepartJobTest::testContentDisposition()
 
 void SinglepartJobTest::testContentID()
 {
-    Composer *composer = new Composer;
-    SinglepartJob *cjob = new SinglepartJob(composer);
+    auto *composer = new Composer;
+    auto *cjob = new SinglepartJob(composer);
     QByteArray data("birds came flying from the underground");
     QByteArray id("play@cold");
     cjob->setData(data);
@@ -80,8 +80,8 @@ void SinglepartJobTest::testContentID()
 
 void SinglepartJobTest::testContentType()
 {
-    Composer *composer = new Composer;
-    SinglepartJob *cjob = new SinglepartJob(composer);
+    auto *composer = new Composer;
+    auto *cjob = new SinglepartJob(composer);
     QByteArray data("birds came flying from the underground");
     cjob->setData(data);
     QByteArray mimeType("text/plain");
@@ -103,13 +103,13 @@ void SinglepartJobTest::testContentType()
 
 void SinglepartJobTest::testContentTransferEncoding()
 {
-    Composer *composer = new Composer;
+    auto *composer = new Composer;
     QVERIFY(!composer->globalPart()->is8BitAllowed());
     composer->globalPart()->setFallbackCharsetEnabled(true);
 
     // 7bit if possible.
     {
-        SinglepartJob *cjob = new SinglepartJob(composer);
+        auto *cjob = new SinglepartJob(composer);
         QByteArray data("and the sun will set for you...");
         cjob->setData(data);
         QVERIFY(cjob->exec());
@@ -124,7 +124,7 @@ void SinglepartJobTest::testContentTransferEncoding()
 
     // quoted-printable if text doesn't fit in 7bit.
     {
-        SinglepartJob *cjob = new SinglepartJob(composer);
+        auto *cjob = new SinglepartJob(composer);
         QByteArray data("some long text to make qupr more compact than base64 [ăîşţâ]");   // utf-8
         cjob->setData(data);
         QVERIFY(cjob->exec());
@@ -139,7 +139,7 @@ void SinglepartJobTest::testContentTransferEncoding()
 
     // base64 if it's shorter than quoted-printable
     {
-        SinglepartJob *cjob = new SinglepartJob(composer);
+        auto *cjob = new SinglepartJob(composer);
         QByteArray data("[ăîşţâ]");   // utf-8
         cjob->setData(data);
         QVERIFY(cjob->exec());
@@ -156,7 +156,7 @@ void SinglepartJobTest::testContentTransferEncoding()
     {
         composer->globalPart()->set8BitAllowed(true);
         QByteArray data("[ăîşţâ]");   // utf-8
-        SinglepartJob *cjob = new SinglepartJob(composer);
+        auto *cjob = new SinglepartJob(composer);
         cjob->setData(data);
         QVERIFY(cjob->exec());
         Content *result = cjob->content();

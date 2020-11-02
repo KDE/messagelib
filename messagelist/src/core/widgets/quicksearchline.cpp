@@ -21,12 +21,12 @@ using namespace MessageList::Core;
 QuickSearchLine::QuickSearchLine(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *vbox = new QVBoxLayout(this);
+    auto *vbox = new QVBoxLayout(this);
     vbox->setContentsMargins({});
     vbox->setSpacing(0);
 
     QWidget *w = new QWidget;
-    QHBoxLayout *hbox = new QHBoxLayout(w);
+    auto *hbox = new QHBoxLayout(w);
     hbox->setContentsMargins({});
     hbox->setSpacing(0);
     vbox->addWidget(w);

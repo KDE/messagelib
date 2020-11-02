@@ -33,10 +33,10 @@ ScamDetectionDetailsDialog::ScamDetectionDetailsDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Details"));
     setAttribute(Qt::WA_DeleteOnClose);
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    QPushButton *user1Button = new QPushButton(this);
+    auto *user1Button = new QPushButton(this);
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &ScamDetectionDetailsDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ScamDetectionDetailsDialog::reject);
@@ -73,9 +73,9 @@ void ScamDetectionDetailsDialog::slotSaveAs()
             QTextStream ts(&file);
             ts.setCodec("UTF-8");
             QString htmlStr = mDetails->toHtml();
-            htmlStr.replace(QLatin1String("meta name=\"qrichtext\" content=\"1\""),
+            htmlStr.replace(QLatin1String(R"(meta name="qrichtext" content="1")"),
                             QLatin1String(
-                                "meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\""));
+                                R"(meta http-equiv="Content-Type" content="text/html; charset=UTF-8")"));
             ts <<  htmlStr;
             file.close();
         }

@@ -27,7 +27,7 @@ QTEST_MAIN(ComposerTest)
 
 void ComposerTest::testAttachments()
 {
-    Composer *composer = new Composer;
+    auto *composer = new Composer;
     fillComposerData(composer);
     AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData("abc");
@@ -62,7 +62,7 @@ void ComposerTest::testAttachments()
 
 void ComposerTest::testAutoSave()
 {
-    Composer *composer = new Composer;
+    auto *composer = new Composer;
     fillComposerData(composer);
     AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData("abc");
@@ -124,7 +124,7 @@ void ComposerTest::testBug271192()
 {
     const QString displayName = QStringLiteral("Интернет-компания example");
     const QString mailbox = QStringLiteral("example@example.com");
-    Composer *composer = new Composer;
+    auto *composer = new Composer;
     fillComposerData(composer);
     composer->infoPart()->setTo(QStringList() << (displayName + QLatin1String(" <") + mailbox + QLatin1String(">")));
     QVERIFY(composer->exec());

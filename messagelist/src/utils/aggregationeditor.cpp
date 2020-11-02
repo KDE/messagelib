@@ -32,7 +32,7 @@ AggregationEditor::AggregationEditor(QWidget *parent)
     QWidget *tab = new QWidget(this);
     addTab(tab, i18n("Groups && Threading"));
 
-    QGridLayout *tabg = new QGridLayout(tab);
+    auto *tabg = new QGridLayout(tab);
 
     tabg->addWidget(new QLabel(i18n("Grouping:"), tab), 0, 0);
     mGroupingCombo = new QComboBox(tab);

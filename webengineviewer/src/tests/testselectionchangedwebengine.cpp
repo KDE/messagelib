@@ -15,15 +15,15 @@
 TestSelectionChangedEngine::TestSelectionChangedEngine(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *vbox = new QVBoxLayout(this);
-    QHBoxLayout *layout = new QHBoxLayout;
+    auto *vbox = new QVBoxLayout(this);
+    auto *layout = new QHBoxLayout;
     vbox->addLayout(layout);
     pageView = new WebEngineViewer::WebEngineView(this);
     pageView->load(QUrl(QStringLiteral("http://www.planetkde.org")));
     connect(pageView, &WebEngineViewer::WebEngineView::selectionChanged, this, &TestSelectionChangedEngine::slotSelectionChanged);
     layout->addWidget(pageView);
 
-    QTextEdit *edit = new QTextEdit(this);
+    auto *edit = new QTextEdit(this);
     vbox->addWidget(edit);
 }
 
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    TestSelectionChangedEngine *testWebEngine = new TestSelectionChangedEngine;
+    auto *testWebEngine = new TestSelectionChangedEngine;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

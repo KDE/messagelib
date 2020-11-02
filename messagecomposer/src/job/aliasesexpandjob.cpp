@@ -41,14 +41,14 @@ void AliasesExpandJob::start()
         }
 
         // check for distribution list
-        DistributionListExpandJob *expandJob = new DistributionListExpandJob(recipient, this);
+        auto *expandJob = new DistributionListExpandJob(recipient, this);
         expandJob->setProperty("recipient", recipient);
         connect(expandJob, &Akonadi::ContactGroupExpandJob::result, this, &AliasesExpandJob::slotDistributionListExpansionDone);
         mDistributionListExpansionJobs++;
         expandJob->start();
 
         // check for nick name
-        Akonadi::ContactSearchJob *searchJob = new Akonadi::ContactSearchJob(this);
+        auto *searchJob = new Akonadi::ContactSearchJob(this);
         searchJob->setProperty("recipient", recipient);
         searchJob->setQuery(Akonadi::ContactSearchJob::NickName, recipient.toLower());
         connect(searchJob, &Akonadi::ContactSearchJob::result, this, &AliasesExpandJob::slotNicknameExpansionDone);

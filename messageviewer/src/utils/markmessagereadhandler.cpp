@@ -40,7 +40,7 @@ void MarkMessageReadHandler::Private::handleMessages()
     // mark as read
     item.setFlag(Akonadi::MessageFlags::Seen);
 
-    Akonadi::ItemModifyJob *modifyJob = new Akonadi::ItemModifyJob(item, q->session());
+    auto *modifyJob = new Akonadi::ItemModifyJob(item, q->session());
     modifyJob->disableRevisionCheck();
     modifyJob->setIgnorePayload(true);
     sListItem->removeAll(item);

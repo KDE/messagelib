@@ -24,6 +24,6 @@ void TemplatesInsertCommandPushButtonTest::shouldHaveDefaultValue()
     QVERIFY(act.menu());
     QVERIFY(!act.menu()->isEmpty());
     QCOMPARE(act.type(), TemplateParser::TemplatesCommandMenu::Default);
-    TemplateParser::TemplatesCommandMenu *menu = act.findChild<TemplateParser::TemplatesCommandMenu *>(QStringLiteral("templatescommandmenu"));
+    auto *menu = act.findChild<TemplateParser::TemplatesCommandMenu *>(QStringLiteral("templatescommandmenu"));
     QVERIFY(menu);
 }

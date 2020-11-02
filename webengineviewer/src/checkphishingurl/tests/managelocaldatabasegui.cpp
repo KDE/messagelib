@@ -17,7 +17,7 @@ ManageLocalDataBaseGui::ManageLocalDataBaseGui(QWidget *parent)
     : QWidget(parent)
     , mDbManager(new WebEngineViewer::LocalDataBaseManager(this))
 {
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    auto *layout = new QVBoxLayout(this);
 
     mResult = new QPlainTextEdit(this);
     mResult->setReadOnly(true);
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    ManageLocalDataBaseGui *w = new ManageLocalDataBaseGui;
+    auto *w = new ManageLocalDataBaseGui;
 
     w->show();
     app.exec();

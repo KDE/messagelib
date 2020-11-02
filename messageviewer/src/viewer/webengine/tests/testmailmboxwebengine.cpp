@@ -19,7 +19,7 @@
 TestMailMBoxWebEngine::TestMailMBoxWebEngine(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *vbox = new QVBoxLayout(this);
+    auto *vbox = new QVBoxLayout(this);
     MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
                                                                   this));
     vbox->addWidget(viewer);
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    TestMailMBoxWebEngine *testWebEngine = new TestMailMBoxWebEngine;
+    auto *testWebEngine = new TestMailMBoxWebEngine;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

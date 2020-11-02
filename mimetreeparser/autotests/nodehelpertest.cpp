@@ -19,20 +19,20 @@ void NodeHelperTest::testPersistentIndex()
 {
     NodeHelper helper;
 
-    KMime::Content *node = new KMime::Content();
-    KMime::Content *node2 = new KMime::Content();
-    KMime::Content *node2Extra = new KMime::Content();
-    KMime::Content *subNode = new KMime::Content();
-    KMime::Content *subsubNode = new KMime::Content();
-    KMime::Content *subsubNode2 = new KMime::Content();
-    KMime::Content *node2ExtraSubNode = new KMime::Content();
-    KMime::Content *node2ExtraSubsubNode = new KMime::Content();
-    KMime::Content *node2ExtraSubsubNode2 = new KMime::Content();
-    KMime::Content *extra = new KMime::Content();
-    KMime::Content *extra2 = new KMime::Content();
-    KMime::Content *subExtra = new KMime::Content();
-    KMime::Content *subsubExtra = new KMime::Content();
-    KMime::Content *subsubExtraNode = new KMime::Content();
+    auto *node = new KMime::Content();
+    auto *node2 = new KMime::Content();
+    auto *node2Extra = new KMime::Content();
+    auto *subNode = new KMime::Content();
+    auto *subsubNode = new KMime::Content();
+    auto *subsubNode2 = new KMime::Content();
+    auto *node2ExtraSubNode = new KMime::Content();
+    auto *node2ExtraSubsubNode = new KMime::Content();
+    auto *node2ExtraSubsubNode2 = new KMime::Content();
+    auto *extra = new KMime::Content();
+    auto *extra2 = new KMime::Content();
+    auto *subExtra = new KMime::Content();
+    auto *subsubExtra = new KMime::Content();
+    auto *subsubExtraNode = new KMime::Content();
 
     subNode->addContent(subsubNode);
     subNode->addContent(subsubNode2);
@@ -121,12 +121,12 @@ void NodeHelperTest::testHREF()
     QUrl url;
 
     KMime::Content *node = msg->topLevel();
-    KMime::Content *subNode = new KMime::Content();
-    KMime::Content *subsubNode = new KMime::Content(), *subsubNode2 = new KMime::Content();
-    KMime::Content *extra = new KMime::Content(), *extra2 = new KMime::Content();
-    KMime::Content *subExtra = new KMime::Content();
-    KMime::Content *subsubExtra = new KMime::Content();
-    KMime::Content *subsubExtraNode = new KMime::Content();
+    auto *subNode = new KMime::Content();
+    auto *subsubNode = new KMime::Content(), *subsubNode2 = new KMime::Content();
+    auto *extra = new KMime::Content(), *extra2 = new KMime::Content();
+    auto *subExtra = new KMime::Content();
+    auto *subsubExtra = new KMime::Content();
+    auto *subsubExtraNode = new KMime::Content();
 
     subNode->addContent(subsubNode);
     subNode->addContent(subsubNode2);
@@ -161,12 +161,12 @@ void NodeHelperTest::testLocalFiles()
     KMime::Message::Ptr msg(new KMime::Message);
 
     KMime::Content *node = msg->topLevel();
-    KMime::Content *subNode = new KMime::Content();
-    KMime::Content *subsubNode = new KMime::Content(), *subsubNode2 = new KMime::Content();
-    KMime::Content *extra = new KMime::Content(), *extra2 = new KMime::Content();
-    KMime::Content *subExtra = new KMime::Content();
-    KMime::Content *subsubExtra = new KMime::Content();
-    KMime::Content *subsubExtraNode = new KMime::Content();
+    auto *subNode = new KMime::Content();
+    auto *subsubNode = new KMime::Content(), *subsubNode2 = new KMime::Content();
+    auto *extra = new KMime::Content(), *extra2 = new KMime::Content();
+    auto *subExtra = new KMime::Content();
+    auto *subsubExtra = new KMime::Content();
+    auto *subsubExtraNode = new KMime::Content();
 
     subNode->addContent(subsubNode);
     subNode->addContent(subsubNode2);
@@ -236,7 +236,7 @@ void NodeHelperTest::testFromAsString()
     auto subExtra = new KMime::Content();
 
     // Encapsulated message
-    KMime::Message *encMsg = new KMime::Message;
+    auto *encMsg = new KMime::Message;
     encMsg->from(true)->fromUnicodeString(encSender, "UTF-8");
     auto encNode = encMsg->topLevel();
     auto encSubNode = new KMime::Content();

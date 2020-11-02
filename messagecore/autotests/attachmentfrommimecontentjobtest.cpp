@@ -30,7 +30,7 @@ void AttachmentFromMimeContentJobTest::testAttachment()
     const Headers::contentDisposition disposition = Headers::CDinline;
     const QByteArray data("ocean soul");
 
-    Content *content = new Content;
+    auto *content = new Content;
     content->contentType()->setMimeType(mimeType);
     content->contentType()->setName(name, charset);
     content->contentType()->setCharset(charset);
@@ -43,7 +43,7 @@ void AttachmentFromMimeContentJobTest::testAttachment()
     //qCDebug(MESSAGECORE_LOG) << "Encoded content:" << content->encodedContent();
     //qCDebug(MESSAGECORE_LOG) << "Decoded content:" << content->decodedContent();
 
-    AttachmentFromMimeContentJob *job = new AttachmentFromMimeContentJob(content, this);
+    auto *job = new AttachmentFromMimeContentJob(content, this);
     QVERIFY(job->uiDelegate() == nullptr);   // No GUI thankyouverymuch.
     VERIFYEXEC(job);
     delete content;

@@ -33,7 +33,7 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     , d(new MessageComposer::FollowUpReminderSelectDateDialogPrivate)
 {
     setWindowTitle(i18nc("@title:window", "Select Date"));
-    QVBoxLayout *topLayout = new QVBoxLayout(this);
+    auto *topLayout = new QVBoxLayout(this);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->mOkButton = buttonBox->button(QDialogButtonBox::Ok);
@@ -47,9 +47,9 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     QWidget *mainWidget = new QWidget(this);
     topLayout->addWidget(mainWidget);
     topLayout->addWidget(buttonBox);
-    QVBoxLayout *mainLayout = new QVBoxLayout(mainWidget);
+    auto *mainLayout = new QVBoxLayout(mainWidget);
     mainLayout->setContentsMargins({});
-    QFormLayout *formLayout = new QFormLayout;
+    auto *formLayout = new QFormLayout;
     formLayout->setContentsMargins({});
     mainLayout->addLayout(formLayout);
 

@@ -22,7 +22,7 @@ void TemplateParserExtractHtmlInfoTest::initTestCase()
 
 void TemplateParserExtractHtmlInfoTest::shouldReturnNullResult()
 {
-    TemplateParser::TemplateParserExtractHtmlInfo *info = new TemplateParser::TemplateParserExtractHtmlInfo;
+    auto *info = new TemplateParser::TemplateParserExtractHtmlInfo;
     QSignalSpy spy(info, &TemplateParser::TemplateParserExtractHtmlInfo::finished);
     info->start();
     QCOMPARE(spy.count(), 1);
@@ -36,7 +36,7 @@ void TemplateParserExtractHtmlInfoTest::shouldReturnNullResult()
 
 void TemplateParserExtractHtmlInfoTest::shouldReturnNullButWithTemplate()
 {
-    TemplateParser::TemplateParserExtractHtmlInfo *info = new TemplateParser::TemplateParserExtractHtmlInfo;
+    auto *info = new TemplateParser::TemplateParserExtractHtmlInfo;
     const QString templateStr = QStringLiteral("foo");
     info->setTemplate(templateStr);
     QSignalSpy spy(info, &TemplateParser::TemplateParserExtractHtmlInfo::finished);

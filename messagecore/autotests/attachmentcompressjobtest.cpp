@@ -40,7 +40,7 @@ void AttachmentCompressJobTest::testCompress()
     QVERIFY(!origPart->isCompressed());
 
     // Compress the part and verify it.
-    AttachmentCompressJob *cjob = new AttachmentCompressJob(origPart, this);
+    auto *cjob = new AttachmentCompressJob(origPart, this);
     VERIFYEXEC(cjob);
     QCOMPARE(cjob->originalPart(), origPart);
     AttachmentPart::Ptr zipPart = cjob->compressedPart();
@@ -85,7 +85,7 @@ void AttachmentCompressJobTest::testCompressedSizeLarger()
     QVERIFY(!origPart->isCompressed());
 
     // Compress the part and verify that it is aware of its folly.
-    AttachmentCompressJob *cjob = new AttachmentCompressJob(origPart, this);
+    auto *cjob = new AttachmentCompressJob(origPart, this);
     VERIFYEXEC(cjob);
     QVERIFY(cjob->isCompressedPartLarger());
 }

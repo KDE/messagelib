@@ -25,7 +25,7 @@ void AttachmentUpdateJobTest::shouldHaveDefaultValue()
 {
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
 
-    MessageCore::AttachmentUpdateJob *job = new MessageCore::AttachmentUpdateJob(origPart, this);
+    auto *job = new MessageCore::AttachmentUpdateJob(origPart, this);
     QCOMPARE(origPart, job->originalPart());
     QVERIFY(!job->updatedPart());
     delete job;
@@ -49,7 +49,7 @@ void AttachmentUpdateJobTest::shouldUpdateAttachment()
     origPart->setData(data);
     origPart->setUrl(url);
 
-    MessageCore::AttachmentUpdateJob *job = new MessageCore::AttachmentUpdateJob(origPart, this);
+    auto *job = new MessageCore::AttachmentUpdateJob(origPart, this);
 
     VERIFYEXEC(job);
     QVERIFY(origPart->size() != job->updatedPart()->size());
@@ -76,7 +76,7 @@ void AttachmentUpdateJobTest::shouldHaveSameNameDescriptionAfterUpdate()
     origPart->setData(data);
     origPart->setUrl(url);
 
-    MessageCore::AttachmentUpdateJob *job = new MessageCore::AttachmentUpdateJob(origPart, this);
+    auto *job = new MessageCore::AttachmentUpdateJob(origPart, this);
 
     VERIFYEXEC(job);
     QCOMPARE(origPart->name(), job->updatedPart()->name());
@@ -104,7 +104,7 @@ void AttachmentUpdateJobTest::shouldHaveSameCryptoSignStatusAfterUpdate()
     origPart->setSigned(true);
     origPart->setEncrypted(true);
 
-    MessageCore::AttachmentUpdateJob *job = new MessageCore::AttachmentUpdateJob(origPart, this);
+    auto *job = new MessageCore::AttachmentUpdateJob(origPart, this);
 
     VERIFYEXEC(job);
     QCOMPARE(origPart->isSigned(), job->updatedPart()->isSigned());
@@ -131,7 +131,7 @@ void AttachmentUpdateJobTest::shouldHaveSameEncodingAfterUpdate()
     origPart->setSigned(true);
     origPart->setEncrypted(true);
 
-    MessageCore::AttachmentUpdateJob *job = new MessageCore::AttachmentUpdateJob(origPart, this);
+    auto *job = new MessageCore::AttachmentUpdateJob(origPart, this);
 
     VERIFYEXEC(job);
     QCOMPARE(origPart->encoding(), job->updatedPart()->encoding());
@@ -157,7 +157,7 @@ void AttachmentUpdateJobTest::shouldHaveSameMimetypeAfterUpdate()
     origPart->setSigned(true);
     origPart->setEncrypted(true);
 
-    MessageCore::AttachmentUpdateJob *job = new MessageCore::AttachmentUpdateJob(origPart, this);
+    auto *job = new MessageCore::AttachmentUpdateJob(origPart, this);
 
     VERIFYEXEC(job);
     QCOMPARE(origPart->mimeType(), job->updatedPart()->mimeType());
@@ -177,7 +177,7 @@ void AttachmentUpdateJobTest::shouldNotUpdateWhenUrlIsEmpty()
     origPart->setEncoding(KMime::Headers::CE7Bit);
     origPart->setData(data);
 
-    MessageCore::AttachmentUpdateJob *job = new MessageCore::AttachmentUpdateJob(origPart, this);
+    auto *job = new MessageCore::AttachmentUpdateJob(origPart, this);
     job->exec();
     QVERIFY(!job->updatedPart());
 }
@@ -203,7 +203,7 @@ void AttachmentUpdateJobTest::shouldHaveSameInlineStatus()
     origPart->setEncrypted(true);
     origPart->setInline(true);
 
-    MessageCore::AttachmentUpdateJob *job = new MessageCore::AttachmentUpdateJob(origPart, this);
+    auto *job = new MessageCore::AttachmentUpdateJob(origPart, this);
 
     VERIFYEXEC(job);
     QCOMPARE(origPart->isInline(), job->updatedPart()->isInline());

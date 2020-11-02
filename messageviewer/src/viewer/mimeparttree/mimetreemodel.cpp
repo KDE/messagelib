@@ -44,7 +44,7 @@ public:
 
     QString descriptionForContent(KMime::Content *content)
     {
-        KMime::Message *const message = dynamic_cast<KMime::Message *>(content);
+        auto *const message = dynamic_cast<KMime::Message *>(content);
         if (message && message->subject(false)) {
             return message->subject(false)->asUnicodeString();
         }
@@ -159,7 +159,7 @@ QModelIndex MimeTreeModel::index(int row, int column, const QModelIndex &parent)
         return createIndex(row, column, d->root);
     }
 
-    KMime::Content *parentContent = static_cast<KMime::Content *>(parent.internalPointer());
+    auto *parentContent = static_cast<KMime::Content *>(parent.internalPointer());
     if (!parentContent || parentContent->contents().count() <= row || row < 0) {
         return QModelIndex();
     }
@@ -172,7 +172,7 @@ QModelIndex MimeTreeModel::parent(const QModelIndex &index) const
     if (!index.isValid()) {
         return QModelIndex();
     }
-    KMime::Content *currentContent = static_cast<KMime::Content *>(index.internalPointer());
+    auto *currentContent = static_cast<KMime::Content *>(index.internalPointer());
     if (!currentContent) {
         return QModelIndex();
     }
@@ -199,7 +199,7 @@ int MimeTreeModel::rowCount(const QModelIndex &parent) const
     if (!parent.isValid()) {
         return 1;
     }
-    KMime::Content *parentContent = static_cast<KMime::Content *>(parent.internalPointer());
+    auto *parentContent = static_cast<KMime::Content *>(parent.internalPointer());
     if (parentContent) {
         return parentContent->contents().count();
     }
@@ -214,7 +214,7 @@ int MimeTreeModel::columnCount(const QModelIndex &parent) const
 
 QVariant MimeTreeModel::data(const QModelIndex &index, int role) const
 {
-    KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
+    auto *content = static_cast<KMime::Content *>(index.internalPointer());
     if (!content) {
         return QVariant();
     }
@@ -246,14 +246,14 @@ QVariant MimeTreeModel::data(const QModelIndex &index, int role) const
         return d->mimeTypeForContent(content);
     }
     if (role == MainBodyPartRole) {
-        KMime::Message *topLevelMsg = dynamic_cast<KMime::Message *>(d->root);
+        auto *topLevelMsg = dynamic_cast<KMime::Message *>(d->root);
         if (!topLevelMsg) {
             return false;
         }
         return topLevelMsg->mainBodyPart() == content;
     }
     if (role == AlternativeBodyPartRole) {
-        KMime::Message *topLevelMsg = dynamic_cast<KMime::Message *>(d->root);
+        auto *topLevelMsg = dynamic_cast<KMime::Message *>(d->root);
         if (!topLevelMsg) {
             return false;
         }
@@ -285,7 +285,7 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
         if (index.column() != 0) {
             continue;
         }
-        KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
+        auto *content = static_cast<KMime::Content *>(index.internalPointer());
         if (!content) {
             continue;
         }
@@ -294,7 +294,7 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
             continue;
         }
 
-        QTemporaryDir *tempDir = new QTemporaryDir; // Will remove the directory on destruction.
+        auto *tempDir = new QTemporaryDir; // Will remove the directory on destruction.
         d->tempDirs.append(tempDir);
         const QString fileName = tempDir->path() + QLatin1Char('/') + d->descriptionForContent(
             content);
@@ -314,7 +314,7 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
         urls.append(url);
     }
 
-    QMimeData *mimeData = new QMimeData;
+    auto *mimeData = new QMimeData;
     mimeData->setUrls(urls);
     return mimeData;
 }

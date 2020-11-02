@@ -125,7 +125,7 @@ void SignatureController::insertSignatureHelper(KIdentityManagement::Signature::
 
     // Identity::signature() is not const, although it should be, therefore the
     // const_cast.
-    KIdentityManagement::Identity &ident = const_cast<KIdentityManagement::Identity &>(
+    auto &ident = const_cast<KIdentityManagement::Identity &>(
         d->m_identityCombo->identityManager()->identityForUoidOrDefault(
             d->m_identityCombo->currentIdentity()));
     const KIdentityManagement::Signature signature = ident.signature();

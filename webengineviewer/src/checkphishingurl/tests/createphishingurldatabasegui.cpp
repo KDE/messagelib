@@ -21,7 +21,7 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     : QWidget(parent)
 {
     webengineview_useCompactJson_CreatePhishingUrlDataBaseJob = false;
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    auto *layout = new QVBoxLayout(this);
 
     mCompressionType = new QComboBox(this);
     mCompressionType->addItem(QStringLiteral("RAW"));
@@ -36,7 +36,7 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     mJson->setReadOnly(true);
     layout->addWidget(mJson);
 
-    QHBoxLayout *buttonLayout = new QHBoxLayout;
+    auto *buttonLayout = new QHBoxLayout;
     layout->addLayout(buttonLayout);
     QPushButton *button = new QPushButton(QStringLiteral("DownLoad full database"), this);
     connect(button, &QPushButton::clicked, this, &CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase);
@@ -77,7 +77,7 @@ void CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase()
     const QString newValue = QInputDialog::getText(this, QStringLiteral("Define database newClientState"), QStringLiteral("newClientState:"));
     if (!newValue.isEmpty()) {
         clear();
-        WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
+        auto *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
         job->setContraintsCompressionType(compressionType());
         job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
         job->setDataBaseState(newValue);
@@ -90,7 +90,7 @@ void CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase()
 void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
 {
     clear();
-    WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
+    auto *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setContraintsCompressionType(compressionType());
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJson, this, &CreatePhisingUrlDataBaseGui::slotDebugJSon);
@@ -128,7 +128,7 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    CreatePhisingUrlDataBaseGui *w = new CreatePhisingUrlDataBaseGui;
+    auto *w = new CreatePhisingUrlDataBaseGui;
 
     w->show();
     app.exec();

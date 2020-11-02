@@ -35,7 +35,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     setObjectName(QStringLiteral("RecipientsPicker"));
     setWindowTitle(i18nc("@title:window", "Select Recipient"));
 
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
 
     mView = new Akonadi::RecipientsPickerWidget(true, nullptr, this);
     mainLayout->addWidget(mView);

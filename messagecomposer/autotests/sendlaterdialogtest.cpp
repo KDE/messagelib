@@ -31,12 +31,12 @@ void SendLaterDialogTest::initTestCase()
 void SendLaterDialogTest::shouldHaveDefaultValue()
 {
     MessageComposer::SendLaterDialog dlg(nullptr);
-    KTimeComboBox *timeCombo = dlg.findChild<KTimeComboBox *>(QStringLiteral("time_sendlater"));
+    auto *timeCombo = dlg.findChild<KTimeComboBox *>(QStringLiteral("time_sendlater"));
     QVERIFY(timeCombo);
-    KDateComboBox *dateCombo = dlg.findChild<KDateComboBox *>(QStringLiteral("date_sendlater"));
+    auto *dateCombo = dlg.findChild<KDateComboBox *>(QStringLiteral("date_sendlater"));
     QVERIFY(dateCombo);
     QVERIFY(dateCombo->date().isValid());
-    QPushButton *okButton = dlg.findChild<QPushButton *>(QStringLiteral("okbutton"));
+    auto *okButton = dlg.findChild<QPushButton *>(QStringLiteral("okbutton"));
     QVERIFY(okButton);
     QVERIFY(okButton->isEnabled());
     dateCombo->lineEdit()->clear();

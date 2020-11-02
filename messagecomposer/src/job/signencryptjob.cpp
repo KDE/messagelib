@@ -161,7 +161,7 @@ void SignEncryptJob::doStart()
     Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
 
     if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
-        ProtectedHeadersJob *pJob = new ProtectedHeadersJob;
+        auto *pJob = new ProtectedHeadersJob;
         pJob->setContent(d->content);
         pJob->setSkeletonMessage(d->skeletonMessage);
         pJob->setObvoscate(d->protectedHeadersObvoscate);

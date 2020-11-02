@@ -358,7 +358,7 @@ QString DKIMCheckSignatureJob::headerCanonizationRelaxed(bool removeQuoteOnConte
 
 void DKIMCheckSignatureJob::downloadKey(const DKIMInfo &info)
 {
-    DKIMDownloadKeyJob *job = new DKIMDownloadKeyJob(this);
+    auto *job = new DKIMDownloadKeyJob(this);
     job->setDomainName(info.domain());
     job->setSelectorName(info.selector());
     connect(job, &DKIMDownloadKeyJob::error, this, [this](const QString &errorString) {

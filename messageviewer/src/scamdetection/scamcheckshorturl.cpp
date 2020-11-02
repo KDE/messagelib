@@ -29,7 +29,7 @@ ScamCheckShortUrl::~ScamCheckShortUrl()
 
 void ScamCheckShortUrl::expandedUrl(const QUrl &url)
 {
-    MessageViewer::ScamExpandUrlJob *job = new MessageViewer::ScamExpandUrlJob(this);
+    auto *job = new MessageViewer::ScamExpandUrlJob(this);
     job->expandedUrl(url);
 }
 

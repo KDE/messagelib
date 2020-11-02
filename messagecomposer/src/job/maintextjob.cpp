@@ -156,7 +156,7 @@ bool MainTextJobPrivate::encodeTexts()
 
 SinglepartJob *MainTextJobPrivate::createPlainTextJob()
 {
-    SinglepartJob *cjob = new SinglepartJob; // No parent.
+    auto *cjob = new SinglepartJob; // No parent.
     cjob->contentType()->setMimeType("text/plain");
     cjob->contentType()->setCharset(chosenCharset);
     cjob->setData(encodedPlainText);
@@ -166,7 +166,7 @@ SinglepartJob *MainTextJobPrivate::createPlainTextJob()
 
 SinglepartJob *MainTextJobPrivate::createHtmlJob()
 {
-    SinglepartJob *cjob = new SinglepartJob; // No parent.
+    auto *cjob = new SinglepartJob; // No parent.
     cjob->contentType()->setMimeType("text/html");
     cjob->contentType()->setCharset(chosenCharset);
     const QByteArray data = KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(encodedHtml,
@@ -181,7 +181,7 @@ SinglepartJob *MainTextJobPrivate::createImageJob(const QSharedPointer<KPIMTextE
     Q_Q(MainTextJob);
 
     // The image is a PNG encoded with base64.
-    SinglepartJob *cjob = new SinglepartJob; // No parent.
+    auto *cjob = new SinglepartJob; // No parent.
     cjob->contentType()->setMimeType("image/png");
     const QByteArray charset = MessageComposer::Util::selectCharset(q->globalPart()->charsets(true), image->imageName);
     Q_ASSERT(!charset.isEmpty());
@@ -245,7 +245,7 @@ void MainTextJob::doStart()
         // Content is text/plain.
         appendSubjob(plainJob);
     } else {
-        MultipartJob *alternativeJob = new MultipartJob;
+        auto *alternativeJob = new MultipartJob;
         alternativeJob->setMultipartSubtype("alternative");
         alternativeJob->appendSubjob(plainJob);   // text/plain first.
         alternativeJob->appendSubjob(d->createHtmlJob());   // text/html second.
@@ -256,7 +256,7 @@ void MainTextJob::doStart()
         } else {
             qCDebug(MESSAGECOMPOSER_LOG) << "Have related images.  Making multipart/related.";
             // Content is multipart/related with a multipart/alternative sub-Content.
-            MultipartJob *multipartJob = new MultipartJob;
+            auto *multipartJob = new MultipartJob;
             multipartJob->setMultipartSubtype("related");
             multipartJob->appendSubjob(alternativeJob);
             const auto embeddedImages = d->textPart->embeddedImages();
