@@ -79,7 +79,7 @@ public:
     Q_ENUM(AuthenticationMethod)
 
 
-    struct DKIMCheckSignatureAuthenticationResult {
+    struct MESSAGEVIEWER_EXPORT DKIMCheckSignatureAuthenticationResult {
         QString errorStr;
         QString infoResult;
         AuthenticationMethod method = AuthenticationMethod::Unknown;
@@ -90,7 +90,7 @@ public:
         Q_REQUIRED_RESULT bool isValid() const;
     };
 
-    struct CheckSignatureResult {
+    struct MESSAGEVIEWER_EXPORT CheckSignatureResult {
         Q_REQUIRED_RESULT bool isValid() const;
 
         Q_REQUIRED_RESULT bool operator==(const CheckSignatureResult &other) const;
