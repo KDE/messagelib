@@ -102,6 +102,10 @@ target_link_libraries(KF5WebEngineViewer
     KF5::ConfigCore
     )
 
+if (WIN32)
+    target_link_libraries(KF5WebEngineViewer PRIVATE Ws2_32)
+endif()
+
 set_target_properties(KF5WebEngineViewer PROPERTIES
     VERSION ${WEBENGINEVIEWER_VERSION_STRING}
     SOVERSION ${WEBENGINEVIEWER_SOVERSION}

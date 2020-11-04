@@ -9,7 +9,11 @@
 #include "riceencodingdecoder.h"
 #include "webengineviewer_debug.h"
 
+#ifdef WIN32
+#include <Winsock2.h>
+#else
 #include <netinet/in.h>
+#endif
 
 namespace {
 const int kBitsPerByte = 8;
