@@ -304,7 +304,11 @@ add_library(KF5MessageViewer ${libmessageviewer_SRCS})
 generate_export_header(KF5MessageViewer BASE_NAME messageviewer)
 add_library(KF5::MessageViewer ALIAS KF5MessageViewer)
 
-target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer>;${Inotify_INCLUDE_DIRS}")
+if (${Inotify_FOUND})
+    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer>;${Inotify_INCLUDE_DIRS}")
+else()
+    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer>")
+endif()
 
 if (${Qca-qt5_FOUND})
     set(OPTIONAL_PRIVATE qca-qt5)
