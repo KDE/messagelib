@@ -19,6 +19,7 @@ class HtmlWriter;
 
 class DefaultRendererPrivate : public RenderContext
 {
+    using RenderContext::renderWithFactory;
 public:
     DefaultRendererPrivate(CSSHelperBase *cssHelper, const MessagePartRendererFactory *rendererFactory);
     ~DefaultRendererPrivate() override;
@@ -40,7 +41,6 @@ public:
     void render(const MimeTreeParser::AlternativeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const MimeTreeParser::CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     Q_REQUIRED_RESULT bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) override;
-    using RenderContext::renderWithFactory;
     void renderFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
 
     Q_REQUIRED_RESULT bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
