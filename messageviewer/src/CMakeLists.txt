@@ -26,7 +26,7 @@ else()
     set(HAVE_SYS_INOTIFY_H 0)
 endif()
 
-find_package(Qca-qt5 2.3.0 CONFIG REQUIRED)
+find_package(Qca-qt5 2.2.0 CONFIG REQUIRED)
 set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
                    URL "https://invent.kde.org/libraries/qca" TYPE REQUIRED
                    PURPOSE "Needed for dkim support.")
