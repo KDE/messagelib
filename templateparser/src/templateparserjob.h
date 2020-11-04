@@ -24,6 +24,7 @@ class ImageCollector;
 }
 
 struct TemplateParserExtractHtmlInfoResult;
+class TemplateParserJobTest;
 
 namespace TemplateParser {
 class TemplateParserJobPrivate;
@@ -129,6 +130,7 @@ class TemplateParserJobPrivate;
 class TEMPLATEPARSER_EXPORT TemplateParserJob : public QObject
 {
     Q_OBJECT
+    friend class TemplateParserJobTest;
 
 public:
     enum Mode {
