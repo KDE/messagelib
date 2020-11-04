@@ -31,7 +31,6 @@
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KContacts/VCardConverter>
 #include "htmlwriter/webengineembedpart.h"
-#include <unistd.h> // link()
 //KDE includes
 #include <QHBoxLayout>
 #include <QVBoxLayout>
