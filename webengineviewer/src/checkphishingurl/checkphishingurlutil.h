@@ -21,7 +21,7 @@ enum UrlStatus {
 };
 
 QString apiKey();
-QString versionApps();
+WEBENGINEVIEWER_EXPORT QString versionApps();
 QString databaseFileName();
 WEBENGINEVIEWER_EXPORT QString configFileName();
 WEBENGINEVIEWER_EXPORT quint16 minorVersion();
