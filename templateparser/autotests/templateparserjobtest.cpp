@@ -6,8 +6,10 @@
 
 #include "templateparserjobtest.h"
 
+#define private public
 #include "templateparserjob_p.h"
 #include "templateparserjob.h"
+#undef protected
 
 #include <MimeTreeParser/ObjectTreeParser>
 #include <KIdentityManagement/IdentityManager>
