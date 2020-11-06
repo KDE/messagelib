@@ -6,11 +6,14 @@
 
 #include "templateparserjobtest.h"
 
+#ifndef _WIN32
 #define private public
+#endif
 #include "templateparserjob_p.h"
 #include "templateparserjob.h"
+#ifndef _WIN32
 #undef protected
-
+#endif
 #include <MimeTreeParser/ObjectTreeParser>
 #include <KIdentityManagement/IdentityManager>
 #include <KIdentityManagement/Identity>
