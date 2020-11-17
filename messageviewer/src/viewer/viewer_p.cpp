@@ -2372,8 +2372,24 @@ void ViewerPrivate::slotPrintMessage()
         delete dialog;
         return;
     }
+    if (dialog->printer()->outputFormat() == QPrinter::PdfFormat) {
+        mViewer->page()->printToPdf(dialog->printer()->outputFileName(), dialog->printer()->pageLayout());
+        connect(mViewer->page(), &QWebEnginePage::pdfPrintingFinished, this, &ViewerPrivate::slotPdfPrintingFinished);
+    } else {
+        mViewer->page()->print(mCurrentPrinter, invoke(this, &ViewerPrivate::slotHandlePagePrinted));
+    }
     delete dialog;
-    mViewer->page()->print(mCurrentPrinter, invoke(this, &ViewerPrivate::slotHandlePagePrinted));
+}
+
+void ViewerPrivate::slotPdfPrintingFinished(const QString &filePath, bool success)
+{
+    Q_UNUSED(filePath)
+    if (!success) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Print to pdf failed";
+    }
+    delete mCurrentPrinter;
+    mCurrentPrinter = nullptr;
+    Q_EMIT printingFinished();
 }
 
 void ViewerPrivate::slotHandlePagePrinted(bool result)

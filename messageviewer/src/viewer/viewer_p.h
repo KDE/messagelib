@@ -588,11 +588,12 @@ private:
     void slotDelayPrintPreview();
     void applyZoomValue(qreal factor, bool saveConfig = true);
     void slotZoomChanged(qreal zoom);
+    void assignMessageItem(const Akonadi::Item &item);
+    void slotPdfPrintingFinished(const QString &filePath, bool success);
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting = false;
     bool mHtmlLoadExternalDefaultSetting = false;
     bool mHtmlLoadExtOverride = false;
-    void assignMessageItem(const Akonadi::Item &item);
 public:
     KMime::Message::Ptr mMessage; //the current message, if it was set manually
     Akonadi::Item mMessageItem; //the message item from Akonadi
