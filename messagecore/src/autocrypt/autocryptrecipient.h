@@ -40,9 +40,11 @@ class AutocryptRecipient
 public:
     AutocryptRecipient();
     void updateFromMessage(const HeaderMixupNodeHelper &mixup);
+    void updateFromGossip(const HeaderMixupNodeHelper& mixup, const KMime::Headers::Base* header);
     QByteArray toJson(QJsonDocument::JsonFormat format) const;
 
-    GpgME::Key gpgKey();
+    GpgME::Key gpgKey() const;
+    GpgME::Key gossipKey() const;
 
 private:
     AutocryptRecipientPrivate *d_ptr;

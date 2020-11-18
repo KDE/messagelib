@@ -55,9 +55,11 @@ public:
     QByteArray addr;
     QByteArray bad_user_agent;
     QByteArray keydata;
+    QByteArray gossip_key;
     QDateTime last_seen;
     QDateTime autocrypt_timestamp;
     QDateTime counting_since;
+    QDateTime gossip_timestamp;
     int count_have_ach;
     int count_no_ach;
     bool prefer_encrypt;
@@ -87,6 +89,10 @@ QByteArray AutocryptRecipientPrivate::toJson (QJsonDocument::JsonFormat format) 
     }
     if (!bad_user_agent.isEmpty()) {
         entry.insert(QStringLiteral("bad_user_agent"), QString::fromLatin1(bad_user_agent));
+    }
+    if (gossip_timestamp.isValid()) {
+        entry.insert(QStringLiteral("gossip_timestamp"), gossip_timestamp.toString(Qt::ISODate));
+        entry.insert(QStringLiteral("gossip_key"), QString::fromLatin1(gossip_key));
     }
     QJsonDocument document;
     document.setObject( entry );
@@ -143,22 +149,63 @@ void AutocryptRecipient::updateFromMessage ( const HeaderMixupNodeHelper& mixup 
     }
 }
 
+void AutocryptRecipient::updateFromGossip(const HeaderMixupNodeHelper& mixup, const KMime::Headers::Base* header)
+{
+    Q_D(AutocryptRecipient);
+    QDateTime effectiveDate = mixup.dateHeader();
+
+    if (effectiveDate > QDateTime::currentDateTime()) {
+        return;
+    }
+
+    if (d->gossip_timestamp.isValid() && effectiveDate <= d->gossip_timestamp) {
+        return;
+    }
+
+    const auto &parts = header->as7BitString(false).split(';');
+    QHash<QByteArray,QByteArray> params;
+    for(const auto &part: parts) {
+        const auto &i = part.split('=');
+        params[i[0].trimmed()] = i[1].trimmed();
+    }
+
+    if (d->addr.isEmpty()) {
+        d->addr = params["addr"];
+    } else if (d->addr != params["addr"]) {
+        return;
+    }
+
+    d->gossip_timestamp = effectiveDate;
+    d->gossip_key = params["keydata"].replace(' ', QByteArray());
+}
+
 QByteArray AutocryptRecipient::toJson ( QJsonDocument::JsonFormat format ) const
 {
     const Q_D(AutocryptRecipient);
     return d->toJson(format);
 }
 
-GpgME::Key MessageCore::AutocryptRecipient::gpgKey()
+GpgME::Key gpgKey(const QByteArray &keydata)
 {
-    const Q_D(AutocryptRecipient);
     assert(QGpgME::openpgp());      // Make sure, that openpgp backend is loaded
     auto context = GpgME::Context::create(GpgME::OpenPGP);
-    QGpgME::QByteArrayDataProvider dp(KCodecs::base64Decode(d->keydata));
+    QGpgME::QByteArrayDataProvider dp(KCodecs::base64Decode(keydata));
     GpgME::Data data(&dp);
     auto keys = data.toKeys();
     if (keys.size() == 0) {
         return GpgME::Key();
     }
     return keys[0];
+}
+
+GpgME::Key MessageCore::AutocryptRecipient::gpgKey() const
+{
+    const Q_D(AutocryptRecipient);
+    return ::gpgKey(d->keydata);
+}
+
+GpgME::Key AutocryptRecipient::gossipKey() const
+{
+    const Q_D(AutocryptRecipient);
+    return ::gpgKey(d->gossip_key);
 }

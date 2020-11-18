@@ -6,6 +6,9 @@
 
 #include <autocrypt/autocryptrecipient.h>
 
+#include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/SimpleObjectTreeSource>
+
 #include <gpgme++/data.h>
 
 #include <QGpgME/DataProvider>
@@ -63,6 +66,9 @@ void AutocryptRecipientTest::test_defaults()
     QCOMPARE(obj.contains(QStringLiteral("last_seen")), false);
     QCOMPARE(obj.contains(QStringLiteral("counting_since")), false);
     QCOMPARE(obj.contains(QStringLiteral("bad_user_agent")), false);
+
+    QCOMPARE(obj.contains(QStringLiteral("gossip_timestamp")), false);
+    QCOMPARE(obj.contains(QStringLiteral("gossip_key")), false);
 }
 
 void AutocryptRecipientTest::test_firstAutocryptHeader()
@@ -225,3 +231,155 @@ void AutocryptRecipientTest::test_gpgKey()
     QCOMPARE(key.userID(0).email(), "alice@autocrypt.example");
 }
 
+
+void AutocryptRecipientTest::test_setGossipHeader()
+{
+    MimeTreeParser::NodeHelper nodeHelper;
+    auto recipient = AutocryptRecipient();
+    auto message = readAndParseMail(QStringLiteral("autocrypt/gossipheader.mbox"));
+    HeaderMixupNodeHelper gossipMixin(&nodeHelper, message.data());
+
+    MimeTreeParser::SimpleObjectTreeSource testSource;
+    MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
+    testSource.setDecryptMessage(true);
+    otp.parseObjectTree(message.data());
+
+    auto gossipHeader = gossipMixin.mailHeaderAsBase("Autocrypt-Gossip");
+    QVERIFY(gossipHeader);
+    recipient.updateFromGossip(gossipMixin, gossipHeader);
+
+    auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
+    QVERIFY(document.isObject());
+    const auto &obj = document.object();
+
+    QCOMPARE(obj.value(QStringLiteral("addr")).toString(), QStringLiteral("bob@autocrypt.example"));
+    QCOMPARE(obj.value(QStringLiteral("count_have_ach")).toInt(), 0);
+    QCOMPARE(obj.value(QStringLiteral("count_no_ach")).toInt(), 0);
+    QCOMPARE(obj.value(QStringLiteral("prefer_encrypt")).toBool(), false);
+    QCOMPARE(obj.value(QStringLiteral("keydata")).toString(), QStringLiteral());
+    QCOMPARE(obj.value(QStringLiteral("autocrypt_timestamp")).toString(), QStringLiteral());
+
+    QCOMPARE(obj.contains(QStringLiteral("last_seen")), false);
+    QCOMPARE(obj.contains(QStringLiteral("counting_since")), false);
+    QCOMPARE(obj.contains(QStringLiteral("bad_user_agent")), false);
+
+    QCOMPARE(obj.value(QStringLiteral("gossip_timestamp")).toString(), QStringLiteral("2019-01-22T12:56:29+01:00"));
+    QCOMPARE(obj.value(QStringLiteral("gossip_key")).toString(), QStringLiteral("mDMEXEcE6RYJKwYBBAHaRw8BAQdAPPy13Q7Y8w2VPRkksrijrn9o8u59ra1c2CJiHFpbM2G0FWJvYkBhdXRvY3J5cHQuZXhhbXBsZYiWBBMWCAA+FiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwMFCQPCZwAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQ4w5v3UWQH4IfwAEA3lujohz3Nj9afUnaGUXN7YboIzQsmpgGkN8thyb/slIBAKwdJyg1SurKqHnxy3Wl/DBzOrR12/pN7nScn0+x4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbFjAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwwACgkQ4w5v3UWQH4LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNbGfav9X5KYmiratYR7oL"));
+}
+
+void AutocryptRecipientTest::test_gossipUpdateLogic()
+{
+    MimeTreeParser::NodeHelper nodeHelper;
+    auto message = readAndParseMail(QStringLiteral("html.mbox"));
+    HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
+
+    KMime::Headers::Generic gossipHeader("Autocrypt-Gossip");
+    KMime::Headers::Generic gossipHeader2("Autocrypt-Gossip");
+
+    QByteArray keydata("mDMEXEcE6RYJKwYBBAHaRw8BAQdAPPy13Q7Y8w2VPRkksrijrn9o8u59ra1c2CJiHFpbM2G0FWJvYkBhdXRvY3J5cHQuZXhhbXBsZYiWBBMWCAA+FiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwMFCQPCZwAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQ4w5v3UWQH4IfwAEA3lujohz3Nj9afUnaGUXN7YboIzQsmpgGkN8thyb/slIBAKwdJyg1SurKqHnxy3Wl/DBzOrR12/pN7nScn0+x4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbFjAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwwACgkQ4w5v3UWQH4LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNbGfav9X5KYmiratYR7oL");
+
+    QByteArray keydata2= "second";
+
+    gossipHeader.from7BitString("addr=bob@autocrypt.example; keydata=\n"+keydata);
+    gossipHeader2.from7BitString("addr=bob@autocrypt.example; keydata=\n"+keydata2);
+
+    // Set a date header, that we know to pass the update logic
+    auto messageDate = QDateTime::currentDateTime().addYears(-1);
+    message->date()->setDateTime(messageDate);
+
+    auto recipient = AutocryptRecipient();
+    recipient.updateFromGossip(mixin, &gossipHeader);
+
+    {
+        auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
+        QVERIFY(document.isObject());
+        const auto &obj = document.object();
+
+        QCOMPARE(obj.value(QStringLiteral("count_no_ach")).toInt(), 0);
+        QCOMPARE(obj.value(QStringLiteral("autocrypt_timestamp")).toString(), QStringLiteral());
+        QCOMPARE(obj.value(QStringLiteral("gossip_timestamp")).toString(), messageDate.toString(Qt::ISODate));
+    }
+
+    {   // Do not update when passing the same message a second time
+        // To verify that nothing is updated, parse a different header
+        // and test if gossip_key was not updated
+        recipient.updateFromGossip(mixin, &gossipHeader2);
+
+        auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
+        QVERIFY(document.isObject());
+        const auto &obj = document.object();
+
+        QCOMPARE(obj.value(QStringLiteral("gossip_key")).toString(), QString::fromLatin1(keydata));
+    }
+
+    {   // Do not update, if the header date is in the future
+        // To verify that nothing is updated, parse a different header
+        // and test if gossip_key was not updated
+        auto newDate = QDateTime::currentDateTime().addDays(2);
+        message->date()->setDateTime(newDate);
+
+        recipient.updateFromGossip(mixin, &gossipHeader2);
+
+        auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
+        QVERIFY(document.isObject());
+        const auto &obj = document.object();
+
+        QCOMPARE(obj.value(QStringLiteral("gossip_timestamp")).toString(), messageDate.toString(Qt::ISODate));
+        QCOMPARE(obj.value(QStringLiteral("gossip_key")).toString(), QString::fromLatin1(keydata));
+    }
+
+    {   // Update the timestamp and count, if we have a new mail
+        // To verify that gossip is updated, parse a different header
+        // with different keydata
+
+        auto newDate = QDateTime::currentDateTime().addDays(-2);
+        message->date()->setDateTime(newDate);
+        messageDate = newDate;
+        recipient.updateFromGossip(mixin, &gossipHeader2);
+
+        auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
+        QVERIFY(document.isObject());
+        const auto &obj = document.object();
+
+        QCOMPARE(obj.value(QStringLiteral("gossip_timestamp")).toString(), messageDate.toString(Qt::ISODate));
+        QCOMPARE(obj.value(QStringLiteral("gossip_key")).toString(), QString::fromLatin1(keydata2));
+    }
+
+    {   // Do not update when parsing an older mail
+        // To verify that nothing is updated, parse a different header
+        // and test if gossip_key was not updated
+        message->date()->setDateTime(messageDate.addDays(-1));
+        recipient.updateFromGossip(mixin, &gossipHeader);
+
+        auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
+        QVERIFY(document.isObject());
+        const auto &obj = document.object();
+
+        QCOMPARE(obj.value(QStringLiteral("gossip_timestamp")).toString(), messageDate.toString(Qt::ISODate));
+        QCOMPARE(obj.value(QStringLiteral("gossip_key")).toString(), QString::fromLatin1(keydata2));
+    }
+}
+
+void AutocryptRecipientTest::test_gossipKey()
+{
+    MimeTreeParser::NodeHelper nodeHelper;
+    auto recipient = AutocryptRecipient();
+    auto message = readAndParseMail(QStringLiteral("autocrypt/gossipheader.mbox"));
+    HeaderMixupNodeHelper gossipMixin(&nodeHelper, message.data());
+
+    MimeTreeParser::SimpleObjectTreeSource testSource;
+    MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
+    testSource.setDecryptMessage(true);
+    otp.parseObjectTree(message.data());
+
+    QCOMPARE(recipient.gossipKey().isNull(), true);
+
+    auto gossipHeader = gossipMixin.mailHeaderAsBase("Autocrypt-Gossip");
+    QVERIFY(gossipHeader);
+    recipient.updateFromGossip(gossipMixin, gossipHeader);
+
+    const auto &gossipKey = recipient.gossipKey();
+    QCOMPARE(gossipKey.isNull(), false);
+    QCOMPARE(gossipKey.primaryFingerprint(), "F0541EA82D3100AA1ADF3B1EE30E6FDD45901F82");
+    QCOMPARE(gossipKey.userID(0).email(), "bob@autocrypt.example");
+}
