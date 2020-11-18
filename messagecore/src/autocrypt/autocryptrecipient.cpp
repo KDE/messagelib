@@ -63,12 +63,14 @@ public:
     int count_have_ach;
     int count_no_ach;
     bool prefer_encrypt;
+    bool changed;
 };
 
 AutocryptRecipientPrivate::AutocryptRecipientPrivate()
     : count_have_ach(0)
     , count_no_ach(0)
     , prefer_encrypt(false)
+    , changed(false)
 {
 }
 
@@ -117,7 +119,9 @@ void AutocryptRecipient::updateFromMessage ( const HeaderMixupNodeHelper& mixup 
     if (d->autocrypt_timestamp.isValid() && effectiveDate <= d->autocrypt_timestamp) {
         return;
     }
+
     d->autocrypt_timestamp = effectiveDate;
+    d->changed = true;
 
     if (!d->counting_since.isValid()) {
         d->counting_since = effectiveDate;
@@ -175,6 +179,7 @@ void AutocryptRecipient::updateFromGossip(const HeaderMixupNodeHelper& mixup, co
         return;
     }
 
+    d->changed = true;
     d->gossip_timestamp = effectiveDate;
     d->gossip_key = params["keydata"].replace(' ', QByteArray());
 }
@@ -183,6 +188,18 @@ QByteArray AutocryptRecipient::toJson ( QJsonDocument::JsonFormat format ) const
 {
     const Q_D(AutocryptRecipient);
     return d->toJson(format);
+}
+
+bool AutocryptRecipient::hasChanged() const
+{
+    const Q_D(AutocryptRecipient);
+    return d->changed;
+}
+
+void AutocryptRecipient::setChangedFlag(bool changed)
+{
+    Q_D(AutocryptRecipient);
+    d->changed = changed;
 }
 
 GpgME::Key gpgKey(const QByteArray &keydata)

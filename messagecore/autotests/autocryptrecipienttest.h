@@ -17,9 +17,11 @@ private Q_SLOTS:
     void test_firstAutocryptHeader();
     void test_initiateWithNoAutocryptHeader();
     void test_coreUpdateLogic();
+    void test_changedLogic();
     void test_gpgKey();
     void test_setGossipHeader();
     void test_gossipUpdateLogic();
+    void test_changedLogicGossip();
     void test_gossipKey();
 };
 

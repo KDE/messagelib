@@ -216,6 +216,58 @@ void AutocryptRecipientTest::test_coreUpdateLogic()
         QCOMPARE(obj.value(QStringLiteral("autocrypt_timestamp")).toString(), messageDate.toString(Qt::ISODate));
     }
 }
+
+void AutocryptRecipientTest::test_changedLogic()
+{
+    MimeTreeParser::NodeHelper nodeHelper;
+    auto message = readAndParseMail(QStringLiteral("html.mbox"));
+    HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
+
+    // Set a date header, that we know to pass the update logic
+    auto messageDate = QDateTime::currentDateTime().addYears(-1);
+    message->date()->setDateTime(messageDate);
+
+    auto recipient = AutocryptRecipient();
+    QCOMPARE(recipient.hasChanged(), false);
+
+    recipient.updateFromMessage(mixin);
+    QCOMPARE(recipient.hasChanged(), true);
+
+    recipient.setChangedFlag(false);
+    QCOMPARE(recipient.hasChanged(), false);
+
+    {   // Do not update when passing the same message a second time
+        recipient.updateFromMessage(mixin);
+        QCOMPARE(recipient.hasChanged(), false);
+    }
+
+    {   // Do not update, if the header date is in the future
+        auto newDate = QDateTime::currentDateTime().addDays(2);
+        message->date()->setDateTime(newDate);
+
+        recipient.updateFromMessage(mixin);
+        QCOMPARE(recipient.hasChanged(), false);
+    }
+
+    {   // Update the timestamp and count, if we have a new mail
+        auto newDate = QDateTime::currentDateTime().addDays(-2);
+        message->date()->setDateTime(newDate);
+        messageDate = newDate;
+        recipient.updateFromMessage(mixin);
+
+        QCOMPARE(recipient.hasChanged(), true);
+
+        recipient.setChangedFlag(false);
+        QCOMPARE(recipient.hasChanged(), false);
+    }
+
+    {   // Do not update when parsing an older mail
+        message->date()->setDateTime(messageDate.addDays(-1));
+        recipient.updateFromMessage(mixin);
+        QCOMPARE(recipient.hasChanged(), false);
+    }
+}
+
 void AutocryptRecipientTest::test_gpgKey()
 {
     MimeTreeParser::NodeHelper nodeHelper;
@@ -358,6 +410,62 @@ void AutocryptRecipientTest::test_gossipUpdateLogic()
         QCOMPARE(obj.value(QStringLiteral("gossip_timestamp")).toString(), messageDate.toString(Qt::ISODate));
         QCOMPARE(obj.value(QStringLiteral("gossip_key")).toString(), QString::fromLatin1(keydata2));
     }
+}
+
+void AutocryptRecipientTest::test_changedLogicGossip()
+{
+    MimeTreeParser::NodeHelper nodeHelper;
+    auto message = readAndParseMail(QStringLiteral("html.mbox"));
+    HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
+
+    KMime::Headers::Generic gossipHeader("Autocrypt-Gossip");
+
+    QByteArray keydata("mDMEXEcE6RYJKwYBBAHaRw8BAQdAPPy13Q7Y8w2VPRkksrijrn9o8u59ra1c2CJiHFpbM2G0FWJvYkBhdXRvY3J5cHQuZXhhbXBsZYiWBBMWCAA+FiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwMFCQPCZwAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQ4w5v3UWQH4IfwAEA3lujohz3Nj9afUnaGUXN7YboIzQsmpgGkN8thyb/slIBAKwdJyg1SurKqHnxy3Wl/DBzOrR12/pN7nScn0+x4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbFjAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwwACgkQ4w5v3UWQH4LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNbGfav9X5KYmiratYR7oL");
+
+    gossipHeader.from7BitString("addr=bob@autocrypt.example; keydata=\n"+keydata);
+
+    // Set a date header, that we know to pass the update logic
+    auto messageDate = QDateTime::currentDateTime().addYears(-1);
+    message->date()->setDateTime(messageDate);
+
+    auto recipient = AutocryptRecipient();
+    QCOMPARE(recipient.hasChanged(), false);
+
+    recipient.updateFromGossip(mixin, &gossipHeader);
+
+    QCOMPARE(recipient.hasChanged(), true);
+    recipient.setChangedFlag(false);
+    QCOMPARE(recipient.hasChanged(), false);
+
+    // Do not update when passing the same message a second time
+    recipient.updateFromGossip(mixin, &gossipHeader);
+    QCOMPARE(recipient.hasChanged(), false);
+
+    {    // Do not update, if the header date is in the future
+        auto newDate = QDateTime::currentDateTime().addDays(2);
+        message->date()->setDateTime(newDate);
+
+        recipient.updateFromGossip(mixin, &gossipHeader);
+        QCOMPARE(recipient.hasChanged(), false);
+    }
+
+    {    // Update the timestamp and count, if we have a new mail
+
+        auto newDate = QDateTime::currentDateTime().addDays(-2);
+        message->date()->setDateTime(newDate);
+        messageDate = newDate;
+        recipient.updateFromGossip(mixin, &gossipHeader);
+        QCOMPARE(recipient.hasChanged(), true);
+
+        recipient.setChangedFlag(false);
+        QCOMPARE(recipient.hasChanged(), false);
+    }
+
+    // Do not update when parsing an older mail
+    message->date()->setDateTime(messageDate.addDays(-1));
+    recipient.updateFromGossip(mixin, &gossipHeader);
+
+    QCOMPARE(recipient.hasChanged(), false);
 }
 
 void AutocryptRecipientTest::test_gossipKey()

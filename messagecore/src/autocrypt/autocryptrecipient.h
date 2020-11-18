@@ -43,6 +43,9 @@ public:
     void updateFromGossip(const HeaderMixupNodeHelper& mixup, const KMime::Headers::Base* header);
     QByteArray toJson(QJsonDocument::JsonFormat format) const;
 
+    bool hasChanged() const;
+    void setChangedFlag(bool changed);
+
     GpgME::Key gpgKey() const;
     GpgME::Key gossipKey() const;
 
