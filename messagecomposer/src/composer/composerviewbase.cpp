@@ -970,13 +970,7 @@ void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageC
 
     MessageCore::StringUtil::removePrivateHeaderFields(message, false);
 
-    QMapIterator<QByteArray, QString> customHeader(m_customHeader);
-    while (customHeader.hasNext()) {
-        customHeader.next();
-        auto header = new KMime::Headers::Generic(customHeader.key().constData());
-        header->fromUnicodeString(customHeader.value(), "utf-8");
-        message->setHeader(header);
-    }
+    addCustomHeaders(message);
     message->assemble();
     connect(qjob, &MailTransport::MessageQueueJob::result, this, &ComposerViewBase::slotQueueResult);
     m_pendingQueueJobs++;
@@ -1237,6 +1231,17 @@ void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
     message->clear();
 }
 
+void ComposerViewBase::addCustomHeaders(const KMime::Message::Ptr &message)
+{
+    QMapIterator<QByteArray, QString> customHeader(m_customHeader);
+    while (customHeader.hasNext()) {
+        customHeader.next();
+        auto header = new KMime::Headers::Generic(customHeader.key().constData());
+        header->fromUnicodeString(customHeader.value(), "utf-8");
+        message->setHeader(header);
+    }
+}
+
 void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn)
 {
     Akonadi::Collection target;
@@ -1250,6 +1255,7 @@ void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageCo
             }
         }
     }
+    addCustomHeaders(message);
 
     message->assemble();
 
