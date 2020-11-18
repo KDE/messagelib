@@ -148,6 +148,11 @@ AutocryptRecipient::AutocryptRecipient()
 {
 }
 
+AutocryptRecipient::~AutocryptRecipient()
+{
+    delete d_ptr;
+}
+
 void AutocryptRecipient::updateFromMessage ( const HeaderMixupNodeHelper& mixup )
 {
     Q_D(AutocryptRecipient);
