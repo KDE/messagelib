@@ -50,6 +50,7 @@ class AutocryptRecipientPrivate
 public:
     AutocryptRecipientPrivate();
     QByteArray toJson(QJsonDocument::JsonFormat format) const;
+    void fromJson(const QByteArray &json);
 
 public:
     QByteArray addr;
@@ -101,6 +102,46 @@ QByteArray AutocryptRecipientPrivate::toJson (QJsonDocument::JsonFormat format) 
     return document.toJson(format);
 }
 
+void AutocryptRecipientPrivate::fromJson(const QByteArray& json)
+{
+    auto document = QJsonDocument::fromJson(json);
+    assert(document.isObject());
+    const auto &obj = document.object();
+
+    addr = obj.value(QStringLiteral("addr")).toString().toLatin1();
+    count_have_ach = obj.value(QStringLiteral("count_have_ach")).toInt();
+    count_no_ach = obj.value(QStringLiteral("count_no_ach")).toInt();
+    prefer_encrypt = obj.value(QStringLiteral("prefer_encrypt")).toBool();
+    keydata = obj.value(QStringLiteral("keydata")).toString().toLatin1();
+    autocrypt_timestamp = QDateTime::fromString(obj.value(QStringLiteral("autocrypt_timestamp")).toString(), Qt::ISODate);
+
+    if (obj.contains(QStringLiteral("last_seen"))) {
+        last_seen = QDateTime::fromString(obj.value(QStringLiteral("last_seen")).toString(), Qt::ISODate);
+    } else {
+        last_seen = QDateTime();
+    }
+
+    if (obj.contains(QStringLiteral("counting_since"))) {
+        counting_since = QDateTime::fromString(obj.value(QStringLiteral("counting_since")).toString(), Qt::ISODate);
+    } else {
+        counting_since = QDateTime();
+    }
+
+    if (obj.contains(QStringLiteral("bad_user_agent"))) {
+        bad_user_agent = obj.value(QStringLiteral("bad_user_agent")).toString().toLatin1();
+    } else {
+        bad_user_agent = "";
+    }
+
+    if (obj.contains(QStringLiteral("gossip_timestamp"))) {
+        gossip_timestamp = QDateTime::fromString(obj.value(QStringLiteral("gossip_timestamp")).toString(), Qt::ISODate);
+        gossip_key = obj.value(QStringLiteral("gossip_key")).toString().toLatin1();
+    } else {
+        gossip_timestamp = QDateTime();
+        gossip_key = "";
+    }
+    changed = false;
+}
 
 AutocryptRecipient::AutocryptRecipient()
     : d_ptr(new AutocryptRecipientPrivate())
@@ -188,6 +229,12 @@ QByteArray AutocryptRecipient::toJson ( QJsonDocument::JsonFormat format ) const
 {
     const Q_D(AutocryptRecipient);
     return d->toJson(format);
+}
+
+void AutocryptRecipient::fromJson (const QByteArray &json)
+{
+    Q_D(AutocryptRecipient);
+    return d->fromJson(json);
 }
 
 bool AutocryptRecipient::hasChanged() const

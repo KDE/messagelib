@@ -15,6 +15,8 @@ private Q_SLOTS:
     void initTestCase();
     void test_defaults();
     void test_firstAutocryptHeader();
+    void test_fromJson();
+    void test_fromJsonGossip();
     void test_initiateWithNoAutocryptHeader();
     void test_coreUpdateLogic();
     void test_changedLogic();

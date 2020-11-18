@@ -96,6 +96,70 @@ void AutocryptRecipientTest::test_firstAutocryptHeader()
     QCOMPARE(obj.contains(QStringLiteral("bad_user_agent")), false);
 }
 
+void AutocryptRecipientTest::test_fromJson()
+{
+    MimeTreeParser::NodeHelper nodeHelper;
+    auto message = readAndParseMail(QStringLiteral("autocrypt/header.mbox"));
+    HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
+
+    auto other = AutocryptRecipient();
+    other.updateFromMessage(mixin);
+
+    auto recipient = AutocryptRecipient();
+    recipient.fromJson(other.toJson(QJsonDocument::Compact));
+
+    auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
+    QVERIFY(document.isObject());
+    const auto &obj = document.object();
+
+    QCOMPARE(obj.value(QStringLiteral("addr")).toString(), QStringLiteral("alice@autocrypt.example"));
+    QCOMPARE(obj.value(QStringLiteral("count_have_ach")).toInt(), 1);
+    QCOMPARE(obj.value(QStringLiteral("count_no_ach")).toInt(), 0);
+    QCOMPARE(obj.value(QStringLiteral("prefer_encrypt")).toBool(), true);
+    QCOMPARE(obj.value(QStringLiteral("keydata")).toString(), QStringLiteral("mDMEXEcE6RYJKwYBBAHaRw8BAQdArjWwk3FAqyiFbFBKT4TzXcVBqPTB3gmzlC/Ub7O1u120F2FsaWNlQGF1dG9jcnlwdC5leGFtcGxliJYEExYIAD4WIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbAwUJA8JnAAULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRDyMVUMT0fjjkqLAP9frlijwBJvA+HFnqCZcYIVxlyXzS5Gi5gMTpp37K73jgD/VbKYhkwk9iu689OYH4K7q7LbmdeaJ+RX88Y/ad9hZwy4OARcRwTpEgorBgEEAZdVAQUBAQdAQv8GIa2rSTzgqbXCpDDYMiKRVitCsy203x3sE9+eviIDAQgHiHgEGBYIACAWIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbDAAKCRDyMVUMT0fjjlnQAQDFHUs6TIcxrNTtEZFjUFm1M0PJ1Dng/cDW4xN80fsn0QEA22Kr7VkCjeAEC08VSTeV+QFsmz55/lntWkwYWhmvOgE"));
+    QCOMPARE(obj.value(QStringLiteral("autocrypt_timestamp")).toString(), QStringLiteral("2019-01-22T12:56:25+01:00"));
+    QCOMPARE(obj.value(QStringLiteral("last_seen")).toString(), QStringLiteral("2019-01-22T12:56:25+01:00"));
+    QCOMPARE(obj.value(QStringLiteral("counting_since")).toString(), QStringLiteral("2019-01-22T12:56:25+01:00"));
+
+    QCOMPARE(obj.contains(QStringLiteral("bad_user_agent")), false);
+}
+
+void AutocryptRecipientTest::test_fromJsonGossip()
+{
+    MimeTreeParser::NodeHelper nodeHelper;
+    auto message = readAndParseMail(QStringLiteral("html.mbox"));
+    HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
+
+    KMime::Headers::Generic gossipHeader("Autocrypt-Gossip");
+    QByteArray keydata("mDMEXEcE6RYJKwYBBAHaRw8BAQdAPPy13Q7Y8w2VPRkksrijrn9o8u59ra1c2CJiHFpbM2G0FWJvYkBhdXRvY3J5cHQuZXhhbXBsZYiWBBMWCAA+FiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwMFCQPCZwAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQ4w5v3UWQH4IfwAEA3lujohz3Nj9afUnaGUXN7YboIzQsmpgGkN8thyb/slIBAKwdJyg1SurKqHnxy3Wl/DBzOrR12/pN7nScn0+x4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbFjAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwwACgkQ4w5v3UWQH4LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNbGfav9X5KYmiratYR7oL");
+
+    gossipHeader.from7BitString("addr=bob@autocrypt.example; keydata=\n"+keydata);
+    auto other = AutocryptRecipient();
+    other.updateFromGossip(mixin, &gossipHeader);
+
+    auto recipient = AutocryptRecipient();
+    recipient.fromJson(other.toJson(QJsonDocument::Compact));
+    qDebug() << QString::fromLatin1(other.toJson(QJsonDocument::Indented));
+
+    auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
+    QVERIFY(document.isObject());
+    const auto &obj = document.object();
+
+    QCOMPARE(obj.value(QStringLiteral("addr")).toString(), QStringLiteral("bob@autocrypt.example"));
+    QCOMPARE(obj.value(QStringLiteral("count_have_ach")).toInt(), 0);
+    QCOMPARE(obj.value(QStringLiteral("count_no_ach")).toInt(), 0);
+    QCOMPARE(obj.value(QStringLiteral("prefer_encrypt")).toBool(), false);
+    QCOMPARE(obj.value(QStringLiteral("keydata")).toString(), QStringLiteral());
+    QCOMPARE(obj.value(QStringLiteral("autocrypt_timestamp")).toString(), QStringLiteral());
+
+    QCOMPARE(obj.contains(QStringLiteral("last_seen")), false);
+    QCOMPARE(obj.contains(QStringLiteral("counting_since")), false);
+    QCOMPARE(obj.contains(QStringLiteral("bad_user_agent")), false);
+
+    QCOMPARE(obj.value(QStringLiteral("gossip_timestamp")).toString(), message->date()->dateTime().toString(Qt::ISODate));
+    QCOMPARE(obj.value(QStringLiteral("gossip_key")).toString(), QString::fromLatin1(keydata));
+}
+
 void AutocryptRecipientTest::test_initiateWithNoAutocryptHeader()
 {
     MimeTreeParser::NodeHelper nodeHelper;
