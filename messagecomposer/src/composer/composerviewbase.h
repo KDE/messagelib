@@ -311,6 +311,7 @@ private:
     void initAutoSave();
     void addFollowupReminder(const QString &messageId);
     void addSendLaterItem(const Akonadi::Item &item);
+    void addCustomHeaders(const KMime::Message::Ptr &message);
 
     KMime::Message::Ptr m_msg;
     MessageComposer::AttachmentControllerBase *m_attachmentController = nullptr;

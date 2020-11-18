@@ -23,7 +23,7 @@
 #include <MessageCore/StringUtil>
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
-
+#include <KEmailAddress>
 using namespace KMime::Types;
 using namespace KPIM;
 using namespace MailTransport;
@@ -168,6 +168,7 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
         qCDebug(MESSAGECOMPOSER_LOG) << " No transport defined. Need to create it";
         return;
     }
+
     if ((method == MessageComposer::MessageSender::SendImmediate) && !MessageComposer::Util::sendMailDispatcherIsOnline()) {
         return;
     }
@@ -188,6 +189,13 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     qjob->addressAttribute().setTo(to);
     qjob->addressAttribute().setCc(cc);
     qjob->addressAttribute().setBcc(bcc);
+
+    if (transport && transport->specifySenderOverwriteAddress()) {
+        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(transport->senderOverwriteAddress())));
+    } else {
+        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(message->from()->asUnicodeString())));
+    }
+
 
     MessageComposer::Util::addSendReplyForwardAction(message, qjob);
 
