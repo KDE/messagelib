@@ -42,6 +42,7 @@ public:
     ~AutocryptRecipient();
     void updateFromMessage(const HeaderMixupNodeHelper &mixup);
     void updateFromGossip(const HeaderMixupNodeHelper& mixup, const KMime::Headers::Base* header);
+
     QByteArray toJson(QJsonDocument::JsonFormat format) const;
     void fromJson(const QByteArray &json);
 

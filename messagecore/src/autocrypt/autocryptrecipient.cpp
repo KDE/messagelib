@@ -98,7 +98,7 @@ QByteArray AutocryptRecipientPrivate::toJson (QJsonDocument::JsonFormat format) 
         entry.insert(QStringLiteral("gossip_key"), QString::fromLatin1(gossip_key));
     }
     QJsonDocument document;
-    document.setObject( entry );
+    document.setObject(entry);
     return document.toJson(format);
 }
 
@@ -153,7 +153,7 @@ AutocryptRecipient::~AutocryptRecipient()
     delete d_ptr;
 }
 
-void AutocryptRecipient::updateFromMessage ( const HeaderMixupNodeHelper& mixup )
+void AutocryptRecipient::updateFromMessage(const HeaderMixupNodeHelper& mixup )
 {
     Q_D(AutocryptRecipient);
     QDateTime effectiveDate = mixup.dateHeader();
@@ -230,7 +230,7 @@ void AutocryptRecipient::updateFromGossip(const HeaderMixupNodeHelper& mixup, co
     d->gossip_key = params["keydata"].replace(' ', QByteArray());
 }
 
-QByteArray AutocryptRecipient::toJson ( QJsonDocument::JsonFormat format ) const
+QByteArray AutocryptRecipient::toJson (QJsonDocument::JsonFormat format) const
 {
     const Q_D(AutocryptRecipient);
     return d->toJson(format);
