@@ -15,13 +15,11 @@
 #include <QGpgME/DataProvider>
 #include <QGpgME/Protocol>
 
-#include "qtest.h"
-#include <QUrl>
-#include <QStandardPaths>
-#include <QJsonObject>
-
 #include <QFile>
-#include <kcodecs.h>
+#include <QJsonObject>
+#include <QStandardPaths>
+#include <QTest>
+#include <QUrl>
 
 KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
@@ -140,7 +138,6 @@ void AutocryptRecipientTest::test_fromJsonGossip()
 
     auto recipient = AutocryptRecipient();
     recipient.fromJson(other.toJson(QJsonDocument::Compact));
-    qDebug() << QString::fromLatin1(other.toJson(QJsonDocument::Indented));
 
     auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
     QVERIFY(document.isObject());
