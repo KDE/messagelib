@@ -14,8 +14,6 @@
 
 #include <QJsonDocument>
 
-class AutocryptRecipientTest;
-
 namespace MessageCore {
 
 class AutocryptRecipientPrivate;
@@ -55,8 +53,6 @@ public:
 private:
     std::unique_ptr<AutocryptRecipientPrivate> d_ptr;
     Q_DECLARE_PRIVATE(AutocryptRecipient)
-
-    friend class AutocryptRecipientTest;
 };
 }
 #endif
