@@ -1,0 +1,29 @@
+/* SPDX-FileCopyrightText: 2020 Sandro Knauß <sknauss@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+#ifndef AUTOCRYPTSTORAGETEST_H
+#define AUTOCRYPTSTORAGETEST_H
+
+#include <QObject>
+#include <QDir>
+
+class AutocryptStorageTest : public QObject
+{
+    Q_OBJECT
+
+private Q_SLOTS:
+    void initTestCase();
+    void init();
+    void cleanup();
+    void test_uniqness();
+    void test_unknown();
+    void test_existing();
+    void test_store();
+    void test_addRecipient();
+    void test_deleteRecipient();
+private:
+    QDir baseDir;
+};
+
+#endif

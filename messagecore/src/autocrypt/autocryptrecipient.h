@@ -17,6 +17,7 @@
 namespace MessageCore {
 
 class AutocryptRecipientPrivate;
+class AutocryptStorage;
 
 class HeaderMixupNodeHelper
 {
@@ -37,6 +38,7 @@ private:
 class AutocryptRecipient
 {
 public:
+    typedef QSharedPointer<AutocryptRecipient> Ptr;
     AutocryptRecipient();
     void updateFromMessage(const HeaderMixupNodeHelper &mixup);
     void updateFromGossip(const HeaderMixupNodeHelper& mixup, const KMime::Headers::Base* header);
@@ -53,6 +55,8 @@ public:
 private:
     std::unique_ptr<AutocryptRecipientPrivate> d_ptr;
     Q_DECLARE_PRIVATE(AutocryptRecipient)
+
+    friend class AutocryptStorage;
 };
 }
 #endif

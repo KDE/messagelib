@@ -3,6 +3,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
 ########### next target ###############
 set(messagecore_autocrypt_LIB_SRCS
     autocrypt/autocryptrecipient.cpp
+    autocrypt/autocryptstorage.cpp
 )
 
 set(messagecore_attachment_LIB_SRCS
