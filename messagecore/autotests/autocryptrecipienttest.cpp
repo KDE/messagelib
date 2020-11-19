@@ -4,7 +4,8 @@
 */
 #include "autocryptrecipienttest.h"
 
-#include <autocrypt/autocryptrecipient.h>
+#include "autocrypt/autocryptrecipient.h"
+#include "autocrypt/autocryptrecipient_p.h"
 
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>

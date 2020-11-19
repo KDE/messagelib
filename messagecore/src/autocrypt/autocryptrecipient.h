@@ -14,10 +14,11 @@
 
 #include <QJsonDocument>
 
-class AutocryptRecipientPrivate;
 class AutocryptRecipientTest;
 
 namespace MessageCore {
+
+class AutocryptRecipientPrivate;
 
 class HeaderMixupNodeHelper
 {
@@ -39,7 +40,6 @@ class AutocryptRecipient
 {
 public:
     AutocryptRecipient();
-    ~AutocryptRecipient();
     void updateFromMessage(const HeaderMixupNodeHelper &mixup);
     void updateFromGossip(const HeaderMixupNodeHelper& mixup, const KMime::Headers::Base* header);
 
@@ -53,7 +53,7 @@ public:
     GpgME::Key gossipKey() const;
 
 private:
-    AutocryptRecipientPrivate *d_ptr;
+    std::unique_ptr<AutocryptRecipientPrivate> d_ptr;
     Q_DECLARE_PRIVATE(AutocryptRecipient)
 
     friend class AutocryptRecipientTest;
