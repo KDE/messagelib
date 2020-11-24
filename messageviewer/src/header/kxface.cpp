@@ -90,45 +90,45 @@ QString KXFace::fromImage(const QImage &image)
     for (int i = 0; i < len; ++i) {
         switch (tmp[i].toLatin1()) {
         case '1':
-            tmp[i] = '8';
+            tmp[i] = QLatin1Char('8');
             break;
         case '2':
-            tmp[i] = '4';
+            tmp[i] = QLatin1Char('4');
             break;
         case '3':
-            tmp[i] = 'c';
+            tmp[i] = QLatin1Char('c');
             break;
         case '4':
-            tmp[i] = '2';
+            tmp[i] = QLatin1Char('2');
             break;
         case '5':
-            tmp[i] = 'a';
+            tmp[i] = QLatin1Char('a');
             break;
         case '7':
-            tmp[i] = 'e';
+            tmp[i] = QLatin1Char('e');
             break;
         case '8':
-            tmp[i] = '1';
+            tmp[i] = QLatin1Char('1');
             break;
         case 'A':
         case 'a':
-            tmp[i] = '5';
+            tmp[i] = QLatin1Char('5');
             break;
         case 'B':
         case 'b':
-            tmp[i] = 'd';
+            tmp[i] = QLatin1Char('d');
             break;
         case 'C':
         case 'c':
-            tmp[i] = '3';
+            tmp[i] = QLatin1Char('3');
             break;
         case 'D':
         case 'd':
-            tmp[i] = 'b';
+            tmp[i] = QLatin1Char('b');
             break;
         case 'E':
         case 'e':
-            tmp[i] = '7';
+            tmp[i] = QLatin1Char('7');
             break;
         }
         if (i % 2) {
