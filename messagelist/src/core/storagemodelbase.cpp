@@ -43,7 +43,10 @@ unsigned long StorageModel::preSelectedMessage() const
 void StorageModel::savePreSelectedMessage(unsigned long uniqueIdOfMessage)
 {
     const QString storageModelId = id();
-    Q_ASSERT(!storageModelId.isEmpty());
+    if (storageModelId.isEmpty()) {
+        // This happens when deleting a collection, and this is called when switching away from it
+        return;
+    }
 
     KConfigGroup conf(MessageListSettings::self()->config(),
                       MessageList::Util::storageModelSelectedMessageGroup());
