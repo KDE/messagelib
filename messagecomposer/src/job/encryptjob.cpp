@@ -237,13 +237,13 @@ void EncryptJob::process()
     QObject::connect(eJob, &QGpgME::EncryptJob::result, this, [this, d](const GpgME::EncryptionResult &result,
                      const QByteArray &cipherText,
                      const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
-        Q_UNUSED(auditLogAsHtml);
-        Q_UNUSED(auditLogError);
+        Q_UNUSED(auditLogAsHtml)
+        Q_UNUSED(auditLogError)
         if (result.error()) {
             setError(result.error().code());
             setErrorText(QString::fromLocal8Bit(result.error().asString()));
             emitResult();
-	    return;
+            return;
         }
         d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false);
 
