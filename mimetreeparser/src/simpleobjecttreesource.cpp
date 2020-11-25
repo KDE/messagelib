@@ -65,6 +65,6 @@ const QTextCodec *SimpleObjectTreeSource::overrideCodec()
 
 void SimpleObjectTreeSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
-    Q_UNUSED(mode);
-    Q_UNUSED(availableModes);
+    Q_UNUSED(mode)
+    Q_UNUSED(availableModes)
 }

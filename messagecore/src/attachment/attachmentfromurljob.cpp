@@ -39,7 +39,7 @@ AttachmentFromUrlJob::Private::Private(AttachmentFromUrlJob *qq)
 
 void AttachmentFromUrlJob::Private::transferJobData(KIO::Job *job, const QByteArray &jobData)
 {
-    Q_UNUSED(job);
+    Q_UNUSED(job)
     mData += jobData;
 }
 

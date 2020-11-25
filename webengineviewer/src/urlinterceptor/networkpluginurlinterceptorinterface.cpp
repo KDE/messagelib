@@ -19,11 +19,11 @@ NetworkPluginUrlInterceptorInterface::~NetworkPluginUrlInterceptorInterface()
 
 void NetworkPluginUrlInterceptorInterface::createActions(KActionCollection *ac)
 {
-    Q_UNUSED(ac);
+    Q_UNUSED(ac)
 }
 
 QList<QAction *> NetworkPluginUrlInterceptorInterface::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
-    Q_UNUSED(result);
+    Q_UNUSED(result)
     return {};
 }

@@ -52,6 +52,6 @@ void StatusBarLabelToggledState::updateLabel()
 
 void StatusBarLabelToggledState::mousePressEvent(QMouseEvent *ev)
 {
-    Q_UNUSED(ev);
+    Q_UNUSED(ev)
     setToggleMode(!mToggleMode);
 }

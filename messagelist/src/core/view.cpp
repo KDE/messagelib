@@ -686,9 +686,9 @@ void View::modelEmittedLayoutChanged()
 
 void View::slotHeaderSectionResized(int logicalIndex, int oldWidth, int newWidth)
 {
-    Q_UNUSED(logicalIndex);
-    Q_UNUSED(oldWidth);
-    Q_UNUSED(newWidth);
+    Q_UNUSED(logicalIndex)
+    Q_UNUSED(oldWidth)
+    Q_UNUSED(newWidth)
 
     if (d->mSaveThemeColumnStateOnSectionResize) {
         triggerDelayedSaveThemeColumnState();
@@ -2208,7 +2208,7 @@ void View::mouseMoveEvent(QMouseEvent *e)
 #if 0
 void View::contextMenuEvent(QContextMenuEvent *e)
 {
-    Q_UNUSED(e);
+    Q_UNUSED(e)
     QModelIndex index = currentIndex();
     if (index.isValid()) {
         QRect indexRect = this->visualRect(index);

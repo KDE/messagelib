@@ -328,7 +328,7 @@ void StringUtilTest::test_stripOffMessagePrefixBenchmark()
     const QString subject = QStringLiteral("Fwd: Hello World Subject");
     QBENCHMARK {
         QString result = StringUtil::stripOffPrefixes(subject);
-        Q_UNUSED(result);
+        Q_UNUSED(result)
     }
 }
 

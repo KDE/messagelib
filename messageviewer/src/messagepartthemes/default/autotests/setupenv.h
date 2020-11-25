@@ -130,8 +130,8 @@ public:
 
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override
     {
-        Q_UNUSED(mode);
-        Q_UNUSED(availableModes);
+        Q_UNUSED(mode)
+        Q_UNUSED(availableModes)
     }
 
     MimeTreeParser::Util::HtmlMode preferredMode() const override
@@ -161,7 +161,7 @@ public:
 
     QString createMessageHeader(KMime::Message *message) override
     {
-        Q_UNUSED(message);
+        Q_UNUSED(message)
         return QString(); //do nothing
     }
 

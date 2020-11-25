@@ -36,7 +36,7 @@ bool PluginEditorCheckBeforeSend::hasConfigureDialog() const
 
 void PluginEditorCheckBeforeSend::showConfigureDialog(QWidget *parent)
 {
-    Q_UNUSED(parent);
+    Q_UNUSED(parent)
 }
 
 void PluginEditorCheckBeforeSend::emitConfigChanged()

@@ -43,7 +43,7 @@ InsertTextFileJob::~InsertTextFileJob()
 
 void InsertTextFileJob::slotFileData(KIO::Job *job, const QByteArray &data)
 {
-    Q_UNUSED(job);
+    Q_UNUSED(job)
     d->mFileData += data;
 }
 

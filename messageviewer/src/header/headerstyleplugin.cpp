@@ -66,24 +66,24 @@ bool HeaderStylePlugin::hasConfigureDialog() const
 
 void HeaderStylePlugin::showConfigureDialog(QWidget *parent)
 {
-    Q_UNUSED(parent);
+    Q_UNUSED(parent)
     //Reimplement
 }
 
 QString HeaderStylePlugin::extraScreenCss(const QString &headerFont) const
 {
-    Q_UNUSED(headerFont);
+    Q_UNUSED(headerFont)
     return {};
 }
 
 QString HeaderStylePlugin::extraPrintCss(const QString &headerFont) const
 {
-    Q_UNUSED(headerFont);
+    Q_UNUSED(headerFont)
     return {};
 }
 
 QString HeaderStylePlugin::extraCommonCss(const QString &headerFont) const
 {
-    Q_UNUSED(headerFont);
+    Q_UNUSED(headerFont)
     return {};
 }

@@ -70,7 +70,7 @@ KMime::Message::Ptr Test::loadMessageFromFile(const QString &filename)
     QFile file(QLatin1String(QByteArray(MAIL_DATA_DIR "/" + filename.toLatin1())));
     const bool opened = file.open(QIODevice::ReadOnly);
     Q_ASSERT(opened);
-    Q_UNUSED(opened);
+    Q_UNUSED(opened)
     const QByteArray data = KMime::CRLFtoLF(file.readAll());
     Q_ASSERT(!data.isEmpty());
     KMime::Message::Ptr msg(new KMime::Message);

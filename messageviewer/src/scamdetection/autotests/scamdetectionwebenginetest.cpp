@@ -35,7 +35,7 @@ void TestWebEngineScamDetection::setHtml(const QString &html)
 
 void TestWebEngineScamDetection::loadFinished(bool b)
 {
-    Q_UNUSED(b);
+    Q_UNUSED(b)
     mScamDetectionWebEngine->scanPage(mEngineView->page());
 }
 

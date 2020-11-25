@@ -35,7 +35,7 @@ void ViewerPluginInterface::execute()
 
 void ViewerPluginInterface::setText(const QString &text)
 {
-    Q_UNUSED(text);
+    Q_UNUSED(text)
     // Reimplement in subclass.
 }
 
@@ -47,25 +47,25 @@ QList<QAction *> ViewerPluginInterface::actions() const
 
 void ViewerPluginInterface::setUrl(const QUrl &url)
 {
-    Q_UNUSED(url);
+    Q_UNUSED(url)
     // Reimplement in subclass
 }
 
 void ViewerPluginInterface::setMessage(const KMime::Message::Ptr &value)
 {
-    Q_UNUSED(value);
+    Q_UNUSED(value)
     // Reimplement in subclass
 }
 
 void ViewerPluginInterface::setMessageItem(const Akonadi::Item &item)
 {
-    Q_UNUSED(item);
+    Q_UNUSED(item)
     // Reimplement in subclass
 }
 
 void ViewerPluginInterface::setCurrentCollection(const Akonadi::Collection &col)
 {
-    Q_UNUSED(col);
+    Q_UNUSED(col)
     // Reimplement in subclass
 }
 
@@ -81,14 +81,14 @@ void ViewerPluginInterface::showWidget()
 
 void ViewerPluginInterface::updateAction(const Akonadi::Item &item)
 {
-    Q_UNUSED(item);
+    Q_UNUSED(item)
     // Reimplement in subclass
 }
 
 void ViewerPluginInterface::refreshActionList(KActionCollection *ac)
 {
     //TODO
-    Q_UNUSED(ac);
+    Q_UNUSED(ac)
 }
 
 void ViewerPluginInterface::addHelpTextAction(QAction *act, const QString &text)

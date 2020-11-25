@@ -28,7 +28,7 @@ TextMessagePartRenderer::~TextMessagePartRenderer()
 
 bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const
 {
-    Q_UNUSED(context);
+    Q_UNUSED(context)
     auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
     if (!mp) {
         return false;

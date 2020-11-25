@@ -354,7 +354,7 @@ void StorageModel::updateMessageItemData(MessageList::Core::MessageItem *mi, int
 
 void StorageModel::setMessageItemStatus(MessageList::Core::MessageItem *mi, int row, Akonadi::MessageStatus status)
 {
-    Q_UNUSED(mi);
+    Q_UNUSED(mi)
     Item item = itemForRow(row);
     item.setFlags(status.statusFlags());
     auto *job = new ItemModifyJob(item, this);
@@ -372,8 +372,8 @@ QVariant StorageModel::data(const QModelIndex &index, int role) const
     // with appropriate calls to data(). And for No-Akonadi-KMail we still have
     // a somewhat efficient implementation.
 
-    Q_UNUSED(index);
-    Q_UNUSED(role);
+    Q_UNUSED(index)
+    Q_UNUSED(role)
 
     return QVariant();
 }
@@ -396,7 +396,7 @@ QModelIndex StorageModel::index(int row, int column, const QModelIndex &parent) 
 
 QModelIndex StorageModel::parent(const QModelIndex &index) const
 {
-    Q_UNUSED(index);
+    Q_UNUSED(index)
     return QModelIndex(); // this model is flat.
 }
 

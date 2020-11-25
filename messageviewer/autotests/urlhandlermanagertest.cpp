@@ -53,7 +53,7 @@ public:
 
     bool handleContextMenuRequest(MimeTreeParser::Interface::BodyPart *part, const QString &path, const QPoint &p) const override
     {
-        Q_UNUSED(p);
+        Q_UNUSED(p)
         testContent(part->content());
         testPath(path);
         return mHandleContextMenuRequest;

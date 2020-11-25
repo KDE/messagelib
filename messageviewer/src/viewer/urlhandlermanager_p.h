@@ -258,7 +258,7 @@ public:
 
     Q_REQUIRED_RESULT QString statusBarMessage(const QUrl &url, ViewerPrivate *) const override
     {
-        Q_UNUSED(url);
+        Q_UNUSED(url)
         return QString();
     }
 };

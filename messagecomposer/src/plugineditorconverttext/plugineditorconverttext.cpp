@@ -36,7 +36,7 @@ bool PluginEditorConvertText::hasConfigureDialog() const
 
 void PluginEditorConvertText::showConfigureDialog(QWidget *parent)
 {
-    Q_UNUSED(parent);
+    Q_UNUSED(parent)
 }
 
 void PluginEditorConvertText::emitConfigChanged()

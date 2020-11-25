@@ -616,7 +616,7 @@ void AttachmentControllerBase::compressAttachment(const AttachmentPart::Ptr &par
         Q_ASSERT(originalPart);   // Found in uncompressedParts.
         bool ok = d->model->replaceAttachment(part, originalPart);
         Q_ASSERT(ok);
-        Q_UNUSED(ok);
+        Q_UNUSED(ok)
     }
 }
 

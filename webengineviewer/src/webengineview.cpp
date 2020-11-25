@@ -108,32 +108,32 @@ void WebEngineView::addScript(const QString &source, const QString &scriptName, 
 
 void WebEngineView::forwardWheelEvent(QWheelEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
 }
 
 void WebEngineView::forwardKeyPressEvent(QKeyEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
 }
 
 void WebEngineView::forwardKeyReleaseEvent(QKeyEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
 }
 
 void WebEngineView::forwardMousePressEvent(QMouseEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
 }
 
 void WebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
 }
 
 void WebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
 }
 
 bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
@@ -204,7 +204,7 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 
 QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 {
-    Q_UNUSED(type);
+    Q_UNUSED(type)
     delete d->mWebEngineNavigatorInterceptor;
     delete d->mWebEngineNavigatorInterceptorView;
     d->mWebEngineNavigatorInterceptorView = new WebEngineView();

@@ -72,7 +72,7 @@ void PluginEditorConvertTextInterface::addActionType(PluginActionType type)
 
 void PluginEditorConvertTextInterface::createAction(KActionCollection *ac)
 {
-    Q_UNUSED(ac);
+    Q_UNUSED(ac)
 }
 
 void PluginEditorConvertTextInterface::setInitialData(const PluginEditorConverterInitialData &data)
@@ -112,7 +112,7 @@ void PluginEditorConvertTextInterface::reloadConfig()
 
 void PluginEditorConvertTextInterface::enableDisablePluginActions(bool richText)
 {
-    Q_UNUSED(richText);
+    Q_UNUSED(richText)
 }
 
 void PluginEditorConvertTextInterface::setStatusBarWidget(QWidget *w)

@@ -93,6 +93,6 @@ void PluginEditorInterface::setComposerInterface(PluginComposerInterface *w)
 
 bool PluginEditorInterface::processProcessKeyEvent(QKeyEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
     return false;
 }

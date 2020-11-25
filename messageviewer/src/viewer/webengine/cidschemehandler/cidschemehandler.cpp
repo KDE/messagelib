@@ -18,5 +18,5 @@ CidSchemeHandler::~CidSchemeHandler()
 
 void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *job)
 {
-    Q_UNUSED(job);
+    Q_UNUSED(job)
 }

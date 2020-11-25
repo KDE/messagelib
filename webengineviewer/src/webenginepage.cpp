@@ -90,8 +90,8 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type
 
 void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID)
 {
-    Q_UNUSED(level);
-    Q_UNUSED(sourceID);
+    Q_UNUSED(level)
+    Q_UNUSED(sourceID)
     //Don't convert to debug categories
     qDebug() << "WebEnginePage::javaScriptConsoleMessage lineNumber: " << lineNumber << " message: " << message;
     Q_EMIT showConsoleMessage(message);

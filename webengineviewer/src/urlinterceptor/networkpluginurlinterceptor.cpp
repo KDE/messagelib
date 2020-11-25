@@ -24,7 +24,7 @@ bool NetworkPluginUrlInterceptor::hasConfigureDialog() const
 
 void NetworkPluginUrlInterceptor::showConfigureDialog(QWidget *parent)
 {
-    Q_UNUSED(parent);
+    Q_UNUSED(parent)
 }
 
 void NetworkPluginUrlInterceptor::setIsEnabled(bool enabled)

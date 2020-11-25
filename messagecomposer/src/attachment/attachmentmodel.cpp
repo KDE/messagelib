@@ -73,9 +73,9 @@ AttachmentModel::~AttachmentModel()
 
 bool AttachmentModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
 {
-    Q_UNUSED(row);
-    Q_UNUSED(column);
-    Q_UNUSED(parent);
+    Q_UNUSED(row)
+    Q_UNUSED(column)
+    Q_UNUSED(parent)
 
     qCDebug(MESSAGECOMPOSER_LOG) << "data has formats" << data->formats()
                                  << "urls" << data->urls()
@@ -485,7 +485,7 @@ QModelIndex AttachmentModel::index(int row, int column, const QModelIndex &paren
 
 QModelIndex AttachmentModel::parent(const QModelIndex &index) const
 {
-    Q_UNUSED(index);
+    Q_UNUSED(index)
     return QModelIndex(); // No parent.
 }
 
@@ -499,6 +499,6 @@ int AttachmentModel::rowCount(const QModelIndex &parent) const
 
 int AttachmentModel::columnCount(const QModelIndex &parent) const
 {
-    Q_UNUSED(parent);
+    Q_UNUSED(parent)
     return LastColumn;
 }

@@ -22,7 +22,7 @@ public:
 private:
     explicit FindBarSourceView(QWidget *parent)
     {
-        Q_UNUSED(parent);
+        Q_UNUSED(parent)
     }
 
     void clearSelections() override;

@@ -293,7 +293,7 @@ void Widget::viewSelectionChanged()
 
 void Widget::viewMessageListContextPopupRequest(const QVector< MessageList::Core::MessageItem * > &selectedItems, const QPoint &globalPos)
 {
-    Q_UNUSED(selectedItems);
+    Q_UNUSED(selectedItems)
 
     if (!d->mXmlGuiClient) {
         return;
@@ -327,7 +327,7 @@ void Widget::viewMessageStatusChangeRequest(MessageList::Core::MessageItem *msg,
 
 void Widget::viewGroupHeaderContextPopupRequest(MessageList::Core::GroupHeaderItem *ghi, const QPoint &globalPos)
 {
-    Q_UNUSED(ghi);
+    Q_UNUSED(ghi)
 
     QMenu menu(this);
 

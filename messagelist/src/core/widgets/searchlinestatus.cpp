@@ -321,7 +321,7 @@ QuickSearchLine::SearchOptions SearchLineStatus::searchOptions() const
 
 void SearchLineStatus::slotFilterActionClicked(QAction *act)
 {
-    Q_UNUSED(act);
+    Q_UNUSED(act)
     Q_EMIT searchOptionChanged();
 }
 

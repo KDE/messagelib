@@ -46,7 +46,7 @@ GrantleeTagLibrary::GrantleeTagLibrary(QObject *parent)
 
 QHash<QString, Grantlee::AbstractNodeFactory *> GrantleeTagLibrary::nodeFactories(const QString &name)
 {
-    Q_UNUSED(name);
+    Q_UNUSED(name)
     QHash<QString, Grantlee::AbstractNodeFactory *> nodeFactories;
     nodeFactories.insert(QStringLiteral("callback"), new CallbackTagFactory());
     return nodeFactories;

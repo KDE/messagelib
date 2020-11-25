@@ -252,13 +252,13 @@ void MessagePart::setIsImage(bool image)
 
 bool MessagePart::hasHeader(const char *header) const
 {
-    Q_UNUSED(header);
+    Q_UNUSED(header)
     return false;
 }
 
 KMime::Headers::Base *MimeTreeParser::MessagePart::header(const char *header) const
 {
-    Q_UNUSED(header);
+    Q_UNUSED(header)
     return nullptr;
 }
 

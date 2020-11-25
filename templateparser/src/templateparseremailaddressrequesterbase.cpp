@@ -23,7 +23,7 @@ QString TemplateParserEmailAddressRequesterBase::text() const
 
 void TemplateParserEmailAddressRequesterBase::setText(const QString &str)
 {
-    Q_UNUSED(str);
+    Q_UNUSED(str)
 }
 
 void TemplateParserEmailAddressRequesterBase::clear()

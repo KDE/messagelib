@@ -1051,9 +1051,9 @@ void Widget::viewStartDragRequest()
 
 void Widget::viewMessageStatusChangeRequest(MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear)
 {
-    Q_UNUSED(msg);
-    Q_UNUSED(set);
-    Q_UNUSED(clear);
+    Q_UNUSED(msg)
+    Q_UNUSED(set)
+    Q_UNUSED(clear)
 }
 
 void Widget::focusQuickSearch(const QString &selectedText)

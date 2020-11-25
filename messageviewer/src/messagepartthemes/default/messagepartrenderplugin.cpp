@@ -14,6 +14,6 @@ MessagePartRenderPlugin::~MessagePartRenderPlugin() = default;
 
 const Interface::BodyPartURLHandler *MessagePartRenderPlugin::urlHandler(int idx) const
 {
-    Q_UNUSED(idx);
+    Q_UNUSED(idx)
     return nullptr;
 }

@@ -46,9 +46,9 @@ TestWebEngineScriptPage::TestWebEngineScriptPage(QObject *parent)
 
 void TestWebEngineScriptPage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID)
 {
-    Q_UNUSED(level);
-    Q_UNUSED(lineNumber);
-    Q_UNUSED(sourceID);
+    Q_UNUSED(level)
+    Q_UNUSED(lineNumber)
+    Q_UNUSED(sourceID)
     qDebug() << "JAVASCRIPT MESSAGE : " << message;
     //TODO improve it.
     Q_EMIT showConsoleMessage(message);
@@ -76,7 +76,7 @@ TestWebEngineScript::~TestWebEngineScript()
 
 void TestWebEngineScript::slotShowConsoleMessage(const QString &msg)
 {
-    Q_UNUSED(msg);
+    Q_UNUSED(msg)
 }
 
 void TestWebEngineScript::handleScript(const QVariant &res)

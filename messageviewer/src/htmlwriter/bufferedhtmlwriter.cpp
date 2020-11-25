@@ -44,13 +44,13 @@ QIODevice *BufferedHtmlWriter::device() const
 
 void BufferedHtmlWriter::setExtraHead(const QString &str)
 {
-    Q_UNUSED(str);
+    Q_UNUSED(str)
 }
 
 void BufferedHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
 {
-    Q_UNUSED(contentId);
-    Q_UNUSED(url);
+    Q_UNUSED(contentId)
+    Q_UNUSED(url)
 }
 
 void BufferedHtmlWriter::setStyleBody(const QString &styleBody)

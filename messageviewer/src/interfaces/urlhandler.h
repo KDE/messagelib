@@ -65,8 +65,8 @@ public:
      */
     virtual Q_REQUIRED_RESULT bool handleShiftClick(const QUrl &url, MessageViewer::ViewerPrivate *window) const
     {
-        Q_UNUSED(url);
-        Q_UNUSED(window);
+        Q_UNUSED(url)
+        Q_UNUSED(window)
         return false;
     }
 
@@ -75,8 +75,8 @@ public:
      */
     virtual Q_REQUIRED_RESULT bool willHandleDrag(const QUrl &url, MessageViewer::ViewerPrivate *window) const
     {
-        Q_UNUSED(url);
-        Q_UNUSED(window);
+        Q_UNUSED(url)
+        Q_UNUSED(window)
         return false;
     }
 
@@ -87,8 +87,8 @@ public:
      */
     virtual Q_REQUIRED_RESULT bool handleDrag(const QUrl &url, MessageViewer::ViewerPrivate *window) const
     {
-        Q_UNUSED(url);
-        Q_UNUSED(window);
+        Q_UNUSED(url)
+        Q_UNUSED(window)
         return false;
     }
 };

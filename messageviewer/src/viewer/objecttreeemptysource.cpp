@@ -54,8 +54,8 @@ bool EmptySource::htmlLoadExternal() const
 
 void EmptySource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
-    Q_UNUSED(mode);
-    Q_UNUSED(availableModes);
+    Q_UNUSED(mode)
+    Q_UNUSED(availableModes)
 }
 
 MimeTreeParser::Util::HtmlMode EmptySource::preferredMode() const
@@ -75,7 +75,7 @@ const QTextCodec *EmptySource::overrideCodec()
 
 QString EmptySource::createMessageHeader(KMime::Message *message)
 {
-    Q_UNUSED(message);
+    Q_UNUSED(message)
     return QString(); //do nothing
 }
 

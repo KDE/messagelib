@@ -146,7 +146,7 @@ void ModelInvariantRowMapperPrivate::updateModelInvariantIndex(int modelIndexRow
     int count = shift->mInvariantHash->remove(invariantToFill->d->modelIndexRow());
 
     Q_ASSERT(count > 0);
-    Q_UNUSED(count);
+    Q_UNUSED(count)
 
     // update and make it belong to the current serial
     invariantToFill->d->setModelIndexRowAndRowMapperSerial(modelIndexRow, mCurrentShiftSerial);

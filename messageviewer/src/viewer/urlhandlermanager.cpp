@@ -452,8 +452,8 @@ bool ExpandCollapseQuoteURLManager::handleClick(const QUrl &url, ViewerPrivate *
 
 bool ExpandCollapseQuoteURLManager::handleDrag(const QUrl &url, ViewerPrivate *window) const
 {
-    Q_UNUSED(url);
-    Q_UNUSED(window);
+    Q_UNUSED(url)
+    Q_UNUSED(window)
     return false;
 }
 
@@ -842,7 +842,7 @@ bool ShowAuditLogURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) cons
 
 bool ShowAuditLogURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &, ViewerPrivate *w) const
 {
-    Q_UNUSED(w);
+    Q_UNUSED(w)
     // disable RMB for my own links:
     return !extractAuditLog(url).isEmpty();
 }
@@ -858,15 +858,15 @@ QString ShowAuditLogURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate 
 
 bool ShowAuditLogURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) const
 {
-    Q_UNUSED(url);
-    Q_UNUSED(window);
+    Q_UNUSED(url)
+    Q_UNUSED(window)
     return true;
 }
 
 bool InternalImageURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) const
 {
-    Q_UNUSED(window);
-    Q_UNUSED(url);
+    Q_UNUSED(window)
+    Q_UNUSED(url)
 
     // This will only be called when willHandleDrag() was true. Return false here, that will
     // notify ViewerPrivate::eventFilter() that no drag was started.
@@ -875,7 +875,7 @@ bool InternalImageURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window)
 
 bool InternalImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *window) const
 {
-    Q_UNUSED(window);
+    Q_UNUSED(window)
     if (url.scheme() == QLatin1String("data") && url.path().startsWith(QLatin1String("image"))) {
         return true;
     }
@@ -922,13 +922,13 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 
 bool EmbeddedImageURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) const
 {
-    Q_UNUSED(url);
-    Q_UNUSED(window);
+    Q_UNUSED(url)
+    Q_UNUSED(window)
     return false;
 }
 
 bool EmbeddedImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *window) const
 {
-    Q_UNUSED(window);
+    Q_UNUSED(window)
     return url.scheme() == QLatin1String("cid");
 }

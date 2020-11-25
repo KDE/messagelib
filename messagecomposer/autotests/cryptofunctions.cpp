@@ -56,7 +56,7 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
         KMime::Content *signedPart = Util::findTypeInMessage(resultMessage, "application", "pgp-signature");
         Q_ASSERT(signedPart);
         QCOMPARE(signedPart->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
-        Q_UNUSED(signedPart);
+        Q_UNUSED(signedPart)
 
         //Q_ASSERT( nh->signatureState( resultMessage ) == MimeTreeParser::KMMsgFullySigned );
 
@@ -76,7 +76,7 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
             QCOMPARE(signedPart->contentType(false)->name(), QStringLiteral("smime.p7s"));
             QCOMPARE(signedPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
             QCOMPARE(signedPart->contentDisposition()->filename(), QStringLiteral("smime.p7s"));
-            Q_UNUSED(signedPart);
+            Q_UNUSED(signedPart)
 
             QCOMPARE(MessageCore::NodeHelper::firstChild(resultMessage)->contentTransferEncoding()->encoding(), encoding);
 
@@ -92,7 +92,7 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
             QCOMPARE(signedPart->contentType(false)->parameter(QStringLiteral("smime-type")), QStringLiteral("signed-data"));
             QCOMPARE(signedPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
             QCOMPARE(signedPart->contentDisposition(false)->filename(), QStringLiteral("smime.p7m"));
-            Q_UNUSED(signedPart);
+            Q_UNUSED(signedPart)
         }
         // process the result..
         otp.parseObjectTree(resultMessage);
@@ -102,7 +102,7 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
 
     // make sure the good sig is of what we think it is
     QCOMPARE(otp.plainTextContent().trimmed(), QString::fromUtf8(signedContent).trimmed());
-    Q_UNUSED(signedContent);
+    Q_UNUSED(signedContent)
 }
 
 void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArray &encrContent, Kleo::CryptoMessageFormat f, bool withAttachment)
@@ -122,7 +122,7 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
         // ensure the enc part exists and is parseable
         KMime::Content *encPart = Util::findTypeInMessage(resultMessage.data(), "application", "pgp-encrypted");
         Q_ASSERT(encPart);
-        Q_UNUSED(encPart);
+        Q_UNUSED(encPart)
 
         // process the result..
         otp.parseObjectTree(resultMessage.data());
@@ -148,18 +148,18 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
         QCOMPARE(encPart->contentType(false)->parameter(QStringLiteral("smime-type")), QStringLiteral("enveloped-data"));
         QCOMPARE(encPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
         QCOMPARE(encPart->contentDisposition(false)->filename(), QStringLiteral("smime.p7m"));
-        Q_UNUSED(encPart);
+        Q_UNUSED(encPart)
 
         otp.parseObjectTree(resultMessage.data());
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
     }
     QCOMPARE(otp.plainTextContent().trimmed(), QString::fromUtf8(encrContent).trimmed());
-    Q_UNUSED(encrContent);
+    Q_UNUSED(encrContent)
 }
 
 void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, const QByteArray &origContent, Kleo::CryptoMessageFormat f, bool withAttachment, bool combind)
 {
-    Q_UNUSED(withAttachment);
+    Q_UNUSED(withAttachment)
     // store it in a KMime::Message, that's what OTP needs
     KMime::Message::Ptr resultMessage(new KMime::Message);
     resultMessage->setContent(content->encodedContent());
@@ -175,7 +175,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
         // ensure the enc part exists and is parseable
         KMime::Content *encPart = Util::findTypeInMessage(resultMessage.data(), "application", "pgp-encrypted");
         Q_ASSERT(encPart);
-        Q_UNUSED(encPart);
+        Q_UNUSED(encPart)
         otp.parseObjectTree(resultMessage.data());
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
 
@@ -201,7 +201,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
         QCOMPARE(encPart->contentType(false)->parameter(QStringLiteral("smime-type")), QStringLiteral("enveloped-data"));
         QCOMPARE(encPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
         QCOMPARE(encPart->contentDisposition(false)->filename(), QStringLiteral("smime.p7m"));
-        Q_UNUSED(encPart);
+        Q_UNUSED(encPart)
 
         otp.parseObjectTree(resultMessage.data());
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
@@ -211,5 +211,5 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
         QCOMPARE(nh->signatureState(extra[ 0 ]), MimeTreeParser::KMMsgFullySigned);
     }
     QCOMPARE(otp.plainTextContent().trimmed(), QString::fromUtf8(origContent).trimmed());
-    Q_UNUSED(origContent);
+    Q_UNUSED(origContent)
 }

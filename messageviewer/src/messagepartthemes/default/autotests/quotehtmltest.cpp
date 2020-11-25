@@ -34,19 +34,19 @@ public:
 
     void renderSubParts(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter) override
     {
-        Q_UNUSED(msgPart);
-        Q_UNUSED(htmlWriter);
+        Q_UNUSED(msgPart)
+        Q_UNUSED(htmlWriter)
     }
 
     bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override
     {
-        Q_UNUSED(msgPart);
+        Q_UNUSED(msgPart)
         return false;
     }
 
     MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override
     {
-        Q_UNUSED(msgPart);
+        Q_UNUSED(msgPart)
         return MimeTreeParser::IconType::NoIcon;
     }
 
@@ -97,9 +97,9 @@ public:
 protected:
     bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) override
     {
-        Q_UNUSED(mo);
-        Q_UNUSED(msgPart);
-        Q_UNUSED(writer);
+        Q_UNUSED(mo)
+        Q_UNUSED(msgPart)
+        Q_UNUSED(writer)
         return false;
     }
 };

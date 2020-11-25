@@ -1363,7 +1363,7 @@ void ComposerViewBase::slotCreateItemResult(KJob *job)
 
 void ComposerViewBase::addAttachment(const QUrl &url, const QString &comment, bool sync)
 {
-    Q_UNUSED(comment);
+    Q_UNUSED(comment)
     qCDebug(MESSAGECOMPOSER_LOG) << "adding attachment with url:" << url;
     if (sync) {
         m_attachmentController->addAttachmentUrlSync(url);

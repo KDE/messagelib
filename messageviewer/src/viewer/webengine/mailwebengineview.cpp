@@ -223,7 +223,7 @@ void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
 
 void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
     d->mCanStartDrag = false;
 }
 
