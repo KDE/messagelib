@@ -7,6 +7,8 @@
 #include "autocryptrecipient.h"
 #include "autocryptrecipient_p.h"
 
+#include "autocryptutils.h"
+
 #include<KMime/Headers>
 
 #include <QJsonDocument>
@@ -156,17 +158,13 @@ void AutocryptRecipient::updateFromMessage(const HeaderMixupNodeHelper& mixup, c
     }
 
     if (header) {
-        const auto &parts = header.split(';');
-        QHash<QByteArray,QByteArray> params;
-        for(const auto &part: parts) {
-            const auto &i = part.split('=');
-            params[i[0].trimmed()] = i[1].trimmed();
-        }
+        const auto params = paramsFromAutocryptHeader(header);
         if (d->addr.isEmpty()) {
-            d->addr = params["addr"];
+            d->addr = params.value("addr");
         }
         d->prefer_encrypt = params.contains("prefer-encrypt");
-        d->keydata = params["keydata"].replace(' ', QByteArray());
+        d->keydata = params.value("keydata");
+        d->keydata.replace(' ', QByteArray());
 
         d->last_seen = effectiveDate;
         d->count_have_ach += 1;
@@ -191,22 +189,18 @@ void AutocryptRecipient::updateFromGossip(const HeaderMixupNodeHelper& mixup, co
         return;
     }
 
-    const auto &parts = header->as7BitString(false).split(';');
-    QHash<QByteArray,QByteArray> params;
-    for(const auto &part: parts) {
-        const auto &i = part.split('=');
-        params[i[0].trimmed()] = i[1].trimmed();
-    }
+    const auto params = paramsFromAutocryptHeader(header);
 
     if (d->addr.isEmpty()) {
-        d->addr = params["addr"];
-    } else if (d->addr != params["addr"]) {
+        d->addr = params.value("addr");
+    } else if (d->addr != params.value("addr")) {
         return;
     }
 
     d->changed = true;
     d->gossip_timestamp = effectiveDate;
-    d->gossip_key = params["keydata"].replace(' ', QByteArray());
+    d->gossip_key = params.value("keydata");
+    d->gossip_key.replace(' ', QByteArray());
 }
 
 QByteArray AutocryptRecipient::toJson (QJsonDocument::JsonFormat format) const

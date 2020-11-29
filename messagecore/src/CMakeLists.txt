@@ -2,6 +2,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
 
 ########### next target ###############
 set(messagecore_autocrypt_LIB_SRCS
+    autocrypt/autocryptutils.cpp
     autocrypt/autocryptrecipient.cpp
     autocrypt/autocryptstorage.cpp
 )
@@ -59,6 +60,10 @@ ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER messagecore_debug.h 
         EXPORT MESSAGELIB
     )
 
+ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER autocrypt_debug.h IDENTIFIER AUTOCRYPT_LOG CATEGORY_NAME org.kde.pim.messagecore.autocrypt
+        DESCRIPTION "messagelib (messagecore.autocrypt)"
+        EXPORT MESSAGELIB
+    )
 
 add_library(KF5MessageCore ${messagecore_LIB_SRCS})
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)

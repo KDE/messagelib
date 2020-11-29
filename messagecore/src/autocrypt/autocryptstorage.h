@@ -10,6 +10,7 @@
 #include "autocryptrecipient.h"
 
 class AutocryptStorageTest;
+class AutocryptUtilsTest;
 
 namespace MessageCore {
 
@@ -35,6 +36,7 @@ private:
     Q_DECLARE_PRIVATE(AutocryptStorage)
 
     friend class ::AutocryptStorageTest;
+    friend class ::AutocryptUtilsTest;
 };
 }
 
