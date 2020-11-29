@@ -18,6 +18,40 @@
 
 using namespace MessageCore;
 
+HeaderMixupNodeHelper::HeaderMixupNodeHelper (MimeTreeParser::NodeHelper* n, KMime::Content* m)
+    : message(m)
+    , nodeHelper(n)
+{
+}
+
+QDateTime HeaderMixupNodeHelper::dateHeader() const
+{
+    return nodeHelper->dateHeader(message);
+}
+
+bool HeaderMixupNodeHelper::hasMailHeader (const char* header) const
+{
+    return nodeHelper->hasMailHeader(header, message);
+}
+
+QSharedPointer<KMime::Headers::Generics::AddressList> HeaderMixupNodeHelper::mailHeaderAsAddressList (const char* header) const
+{
+    return nodeHelper->mailHeaderAsAddressList(header, message);
+}
+
+const KMime::Headers::Base * HeaderMixupNodeHelper::mailHeaderAsBase (const char* header) const
+{
+    return nodeHelper->mailHeaderAsBase(header, message);
+}
+
+QVector<MimeTreeParser::MessagePart::Ptr> HeaderMixupNodeHelper::messagePartsOfMailHeader(const char *header) const {
+    return nodeHelper->messagePartsOfMailHeader(header, message);
+}
+
+QVector<KMime::Headers::Base *> HeaderMixupNodeHelper::headers(const char *header) const {
+    return nodeHelper->headers(header, message);
+}
+
 QHash<QByteArray,QByteArray> MessageCore::paramsFromAutocryptHeader(const KMime::Headers::Base *const header)
 {
     QHash<QByteArray,QByteArray> params;

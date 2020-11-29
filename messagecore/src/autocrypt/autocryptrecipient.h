@@ -7,9 +7,9 @@
 #ifndef AUTOCRYPTRECIPIENT_H
 #define AUTOCRYPTRECIPIENT_H
 
+#include "messagecore_export.h"
+
 #include <KMime/Headers>
-#include <MimeTreeParser/NodeHelper>
-#include <MimeTreeParser/MessagePart>
 
 #include <gpgme++/data.h>
 
@@ -19,24 +19,7 @@ namespace MessageCore {
 
 class AutocryptRecipientPrivate;
 class AutocryptStorage;
-
-class HeaderMixupNodeHelper
-{
-public:
-    HeaderMixupNodeHelper(MimeTreeParser::NodeHelper *n, KMime::Content *m);
-
-    Q_REQUIRED_RESULT bool hasMailHeader(const char *header) const;
-    KMime::Headers::Base const *mailHeaderAsBase(const char *header) const;
-    QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header) const;
-    Q_REQUIRED_RESULT QDateTime dateHeader() const;
-    Q_REQUIRED_RESULT QVector<MimeTreeParser::MessagePart::Ptr> messagePartsOfMailHeader(const char *header) const;
-    Q_REQUIRED_RESULT QVector<KMime::Headers::Base *> headers(const char* headerType) const;
-
-public:
-    KMime::Content *message;
-private:
-    MimeTreeParser::NodeHelper *nodeHelper;
-};
+class HeaderMixupNodeHelper;
 
 class AutocryptRecipient
 {
