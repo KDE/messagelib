@@ -257,3 +257,57 @@ GpgME::Key AutocryptRecipient::gossipKey() const
     const Q_D(AutocryptRecipient);
     return ::gpgKey(d->gossip_key);
 }
+
+QByteArray AutocryptRecipient::addr() const
+{
+    const Q_D(AutocryptRecipient);
+    return d->addr;
+}
+
+QByteArray AutocryptRecipient::bad_user_agent() const
+{
+    const Q_D(AutocryptRecipient);
+    return d->bad_user_agent;
+}
+
+QDateTime AutocryptRecipient::last_seen() const
+{
+    const Q_D(AutocryptRecipient);
+    return d->last_seen;
+}
+
+QDateTime AutocryptRecipient::autocrypt_timestamp() const
+{
+    const Q_D(AutocryptRecipient);
+    return d->autocrypt_timestamp;
+}
+
+QDateTime AutocryptRecipient::counting_since() const
+{
+    const Q_D(AutocryptRecipient);
+    return d->counting_since;
+}
+
+QDateTime AutocryptRecipient::gossip_timestamp() const
+{
+    const Q_D(AutocryptRecipient);
+    return d->gossip_timestamp;
+}
+
+int AutocryptRecipient::count_have_ach() const
+{
+    const Q_D(AutocryptRecipient);
+    return d->count_have_ach;
+}
+
+int AutocryptRecipient::count_no_ach() const
+{
+    const Q_D(AutocryptRecipient);
+    return d->count_no_ach;
+}
+
+bool AutocryptRecipient::prefer_encrypt() const
+{
+    const Q_D(AutocryptRecipient);
+    return d->prefer_encrypt;
+}

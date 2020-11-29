@@ -52,6 +52,19 @@ public:
     bool hasChanged() const;
     void setChangedFlag(bool changed);
 
+    QByteArray addr() const;
+    QByteArray bad_user_agent() const;
+
+    QDateTime last_seen() const;
+    QDateTime autocrypt_timestamp() const;
+    QDateTime counting_since() const;
+    QDateTime gossip_timestamp() const;
+
+    int count_have_ach() const;
+    int count_no_ach() const;
+
+    bool prefer_encrypt() const;
+
     GpgME::Key gpgKey() const;
     GpgME::Key gossipKey() const;
 
