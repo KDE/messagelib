@@ -44,7 +44,6 @@ add_gpg_crypto_test(autocryptrecipienttest messagecore-autocryptrecipienttest)
 add_executable(autocryptstoragetest
     autocryptstoragetest.cpp
     ../src/autocrypt/autocryptrecipient.cpp
-    ../src/autocrypt/autocryptstorage.cpp
 )
 
 target_link_libraries(autocryptstoragetest

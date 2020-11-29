@@ -7,7 +7,11 @@
 #ifndef AUTOCRYPTSTORAGE_H
 #define AUTOCRYPTSTORAGE_H
 
+#include "messagecore_export.h"
+
 #include "autocryptrecipient.h"
+
+#include <QSharedPointer>
 
 class AutocryptStorageTest;
 class AutocryptUtilsTest;
@@ -16,7 +20,7 @@ namespace MessageCore {
 
 class AutocryptStoragePrivate;
 
-class AutocryptStorage
+class MESSAGECORE_EXPORT AutocryptStorage
 {
 public:
     typedef QSharedPointer<AutocryptStorage> Ptr;
