@@ -133,7 +133,7 @@ AutocryptRecipient::AutocryptRecipient()
 {
 }
 
-void AutocryptRecipient::updateFromMessage(const HeaderMixupNodeHelper& mixup )
+void AutocryptRecipient::updateFromMessage(const HeaderMixupNodeHelper& mixup, const KMime::Headers::Base *header)
 {
     Q_D(AutocryptRecipient);
     QDateTime effectiveDate = mixup.dateHeader();
@@ -155,8 +155,7 @@ void AutocryptRecipient::updateFromMessage(const HeaderMixupNodeHelper& mixup )
         d->count_no_ach = 0;
     }
 
-    if (mixup.hasMailHeader("Autocrypt")) {
-        const auto &header = mixup.mailHeaderAsBase("Autocrypt")->as7BitString(false);
+    if (header) {
         const auto &parts = header.split(';');
         QHash<QByteArray,QByteArray> params;
         for(const auto &part: parts) {

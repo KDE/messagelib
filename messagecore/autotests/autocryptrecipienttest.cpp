@@ -77,7 +77,7 @@ void AutocryptRecipientTest::test_firstAutocryptHeader()
     HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
     auto recipient = AutocryptRecipient();
-    recipient.updateFromMessage(mixin);
+    recipient.updateFromMessage(mixin, mixin.mailHeaderAsBase("Autocrypt"));
 
     auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
     QVERIFY(document.isObject());
@@ -102,7 +102,7 @@ void AutocryptRecipientTest::test_fromJson()
     HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
     auto other = AutocryptRecipient();
-    other.updateFromMessage(mixin);
+    other.updateFromMessage(mixin, mixin.mailHeaderAsBase("Autocrypt"));
 
     auto recipient = AutocryptRecipient();
     recipient.fromJson(other.toJson(QJsonDocument::Compact));
@@ -165,7 +165,7 @@ void AutocryptRecipientTest::test_initiateWithNoAutocryptHeader()
     HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
     auto recipient = AutocryptRecipient();
-    recipient.updateFromMessage(mixin);
+    recipient.updateFromMessage(mixin, mixin.mailHeaderAsBase("Autocrypt"));
 
     {
         auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
@@ -185,7 +185,7 @@ void AutocryptRecipientTest::test_initiateWithNoAutocryptHeader()
 
     message = readAndParseMail(QStringLiteral("autocrypt/header.mbox"));
     mixin.message = message.data();
-    recipient.updateFromMessage(mixin);
+    recipient.updateFromMessage(mixin, mixin.mailHeaderAsBase("Autocrypt"));
 
     {
         auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
@@ -215,7 +215,7 @@ void AutocryptRecipientTest::test_coreUpdateLogic()
     message->date()->setDateTime(messageDate);
 
     auto recipient = AutocryptRecipient();
-    recipient.updateFromMessage(mixin);
+    recipient.updateFromMessage(mixin, nullptr);
 
     {
         auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
@@ -228,7 +228,7 @@ void AutocryptRecipientTest::test_coreUpdateLogic()
     }
 
     {   // Do not update when passing the same message a second time
-        recipient.updateFromMessage(mixin);
+        recipient.updateFromMessage(mixin, nullptr);
 
         auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
         QVERIFY(document.isObject());
@@ -241,7 +241,7 @@ void AutocryptRecipientTest::test_coreUpdateLogic()
         auto newDate = QDateTime::currentDateTime().addDays(2);
         message->date()->setDateTime(newDate);
 
-        recipient.updateFromMessage(mixin);
+        recipient.updateFromMessage(mixin, nullptr);
 
         auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
         QVERIFY(document.isObject());
@@ -256,7 +256,7 @@ void AutocryptRecipientTest::test_coreUpdateLogic()
         auto newDate = QDateTime::currentDateTime().addDays(-2);
         message->date()->setDateTime(newDate);
         messageDate = newDate;
-        recipient.updateFromMessage(mixin);
+        recipient.updateFromMessage(mixin, nullptr);
 
         auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
         QVERIFY(document.isObject());
@@ -268,7 +268,7 @@ void AutocryptRecipientTest::test_coreUpdateLogic()
 
     {   // Do not update when parsing an older mail
         message->date()->setDateTime(messageDate.addDays(-1));
-        recipient.updateFromMessage(mixin);
+        recipient.updateFromMessage(mixin, nullptr);
 
         auto document = QJsonDocument::fromJson(recipient.toJson(QJsonDocument::Compact));
         QVERIFY(document.isObject());
@@ -292,14 +292,14 @@ void AutocryptRecipientTest::test_changedLogic()
     auto recipient = AutocryptRecipient();
     QCOMPARE(recipient.hasChanged(), false);
 
-    recipient.updateFromMessage(mixin);
+    recipient.updateFromMessage(mixin, nullptr);
     QCOMPARE(recipient.hasChanged(), true);
 
     recipient.setChangedFlag(false);
     QCOMPARE(recipient.hasChanged(), false);
 
     {   // Do not update when passing the same message a second time
-        recipient.updateFromMessage(mixin);
+        recipient.updateFromMessage(mixin, nullptr);
         QCOMPARE(recipient.hasChanged(), false);
     }
 
@@ -307,7 +307,7 @@ void AutocryptRecipientTest::test_changedLogic()
         auto newDate = QDateTime::currentDateTime().addDays(2);
         message->date()->setDateTime(newDate);
 
-        recipient.updateFromMessage(mixin);
+        recipient.updateFromMessage(mixin, nullptr);
         QCOMPARE(recipient.hasChanged(), false);
     }
 
@@ -315,7 +315,7 @@ void AutocryptRecipientTest::test_changedLogic()
         auto newDate = QDateTime::currentDateTime().addDays(-2);
         message->date()->setDateTime(newDate);
         messageDate = newDate;
-        recipient.updateFromMessage(mixin);
+        recipient.updateFromMessage(mixin, nullptr);
 
         QCOMPARE(recipient.hasChanged(), true);
 
@@ -325,7 +325,7 @@ void AutocryptRecipientTest::test_changedLogic()
 
     {   // Do not update when parsing an older mail
         message->date()->setDateTime(messageDate.addDays(-1));
-        recipient.updateFromMessage(mixin);
+        recipient.updateFromMessage(mixin, nullptr);
         QCOMPARE(recipient.hasChanged(), false);
     }
 }
@@ -337,7 +337,7 @@ void AutocryptRecipientTest::test_gpgKey()
     HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
     auto recipient = AutocryptRecipient();
-    recipient.updateFromMessage(mixin);
+    recipient.updateFromMessage(mixin, mixin.mailHeaderAsBase("Autocrypt"));
 
     const auto &key = recipient.gpgKey();
 
