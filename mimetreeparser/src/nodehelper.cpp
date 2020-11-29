@@ -500,6 +500,29 @@ bool NodeHelper::hasMailHeader(const char *header, const KMime::Content *message
     return message->hasHeader(header);
 }
 
+QVector<MessagePart::Ptr> NodeHelper::messagePartsOfMailHeader(const char *header, const KMime::Content *message) const
+{
+    QVector<MessagePart::Ptr> ret;
+    if (mHeaderOverwrite.contains(message)) {
+        foreach (const auto messagePart, mHeaderOverwrite.value(message)) {
+            if (messagePart->hasHeader(header)) {
+                ret << messagePart;
+            }
+        }
+    }
+    return ret;
+}
+
+QVector<KMime::Headers::Base *> NodeHelper::headers(const char *header, const KMime::Content *message)
+{
+    const auto mp = messagePartsOfMailHeader(header, message);
+    if (mp.size() > 0) {
+        return mp.value(0)->headers(header);
+    }
+
+    return message->headersByType(header);
+}
+
 KMime::Headers::Base const *NodeHelper::mailHeaderAsBase(const char *header, const KMime::Content *message) const
 {
     if (mHeaderOverwrite.contains(message)) {

@@ -77,8 +77,10 @@ public:
     void clearOverrideHeaders();
     void registerOverrideHeader(KMime::Content *message, MessagePartPtr);
     Q_REQUIRED_RESULT bool hasMailHeader(const char *header, const KMime::Content *message) const;
+    QVector<MessagePartPtr> messagePartsOfMailHeader(const char *header, const KMime::Content *message) const;
     KMime::Headers::Base const *mailHeaderAsBase(const char *header, const KMime::Content *message) const;
     QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header, const KMime::Content *message) const;
+    QVector<KMime::Headers::Base *> headers(const char *header, const KMime::Content *message);
     Q_REQUIRED_RESULT QDateTime dateHeader(KMime::Content *message) const;
 
     /** Attach an extra node to an existing node */

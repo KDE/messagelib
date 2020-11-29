@@ -44,6 +44,14 @@ const KMime::Headers::Base * HeaderMixupNodeHelper::mailHeaderAsBase (const char
     return nodeHelper->mailHeaderAsBase(header, message);
 }
 
+QVector<MimeTreeParser::MessagePart::Ptr> HeaderMixupNodeHelper::messagePartsOfMailHeader(const char *header) const {
+    return nodeHelper->messagePartsOfMailHeader(header, message);
+}
+
+QVector<KMime::Headers::Base *> HeaderMixupNodeHelper::headers(const char *header) const {
+    return nodeHelper->headers(header, message);
+}
+
 AutocryptRecipientPrivate::AutocryptRecipientPrivate()
     : count_have_ach(0)
     , count_no_ach(0)

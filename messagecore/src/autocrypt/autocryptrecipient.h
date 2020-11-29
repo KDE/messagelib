@@ -9,6 +9,7 @@
 
 #include <KMime/Headers>
 #include <MimeTreeParser/NodeHelper>
+#include <MimeTreeParser/MessagePart>
 
 #include <gpgme++/data.h>
 
@@ -28,6 +29,8 @@ public:
     KMime::Headers::Base const *mailHeaderAsBase(const char *header) const;
     QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header) const;
     Q_REQUIRED_RESULT QDateTime dateHeader() const;
+    Q_REQUIRED_RESULT QVector<MimeTreeParser::MessagePart::Ptr> messagePartsOfMailHeader(const char *header) const;
+    Q_REQUIRED_RESULT QVector<KMime::Headers::Base *> headers(const char* headerType) const;
 
 public:
     KMime::Content *message;
