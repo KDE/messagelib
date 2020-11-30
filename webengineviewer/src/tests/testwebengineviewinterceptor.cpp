@@ -9,7 +9,6 @@
 #include <QVBoxLayout>
 #include <QWebEngineView>
 #include <QWebEngineProfile>
-#include <QWebEngineSettings>
 #include <QWebEngineUrlRequestInterceptor>
 #include <QWebEngineUrlScheme>
 #include <QWebEngineUrlSchemeHandler>

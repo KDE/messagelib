@@ -14,7 +14,6 @@
 #include <KXMLGUIClient>
 #include <QAction>
 #include <KToggleAction>
-#include <KStandardAction>
 
 #include <QAbstractItemModel>
 #include <QAbstractProxyModel>

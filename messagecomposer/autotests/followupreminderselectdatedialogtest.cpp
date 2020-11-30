@@ -10,7 +10,6 @@
 #include <KDateComboBox>
 #include <AkonadiWidgets/CollectionComboBox>
 
-#include <QLineEdit>
 #include <QPushButton>
 #include <AkonadiCore/EntityTreeModel>
 #include <QStandardItemModel>

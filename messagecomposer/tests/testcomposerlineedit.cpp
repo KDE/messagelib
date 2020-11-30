@@ -7,7 +7,6 @@
 #include <QWidget>
 #include <QVBoxLayout>
 
-#include <KLocalizedString>
 #include <QApplication>
 #include <QCommandLineParser>
 #include "composer/composerlineedit.h"

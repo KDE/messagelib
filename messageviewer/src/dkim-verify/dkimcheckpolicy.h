@@ -9,7 +9,6 @@
 
 #include "messageviewer_export.h"
 #include <messageviewer/messageviewersettings.h>
-#include <QObject>
 namespace MessageViewer {
 /**
  * @brief The DKIMCheckPolicy class

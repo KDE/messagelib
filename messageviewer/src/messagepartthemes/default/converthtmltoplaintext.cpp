@@ -10,7 +10,6 @@
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
 #include <KPIMTextEdit/MarkupDirector>
 #include <QTextDocument>
-#include <QDebug>
 
 using namespace MimeTreeParser;
 ConvertHtmlToPlainText::ConvertHtmlToPlainText()

@@ -10,7 +10,6 @@
 #include <QBuffer>
 #include <QUrl>
 #include <QImage>
-#include <QDebug>
 #include <QWebEngineUrlRequestInfo>
 
 using namespace MessageViewer;

@@ -7,9 +7,6 @@
 #include "convertsnippetvariablemenu.h"
 #include <KLocalizedString>
 #include <QMenu>
-#include <QDate>
-#include <QTime>
-#include <QLocale>
 using namespace MessageComposer;
 ConvertSnippetVariableMenu::ConvertSnippetVariableMenu(bool onlyMenuForCustomizeAttachmentFileName, QWidget *parentWidget, QObject *parent)
     : QObject(parent)

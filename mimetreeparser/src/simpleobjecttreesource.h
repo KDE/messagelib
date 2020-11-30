@@ -8,7 +8,6 @@
 #define MIMETREEPARSER_SIMPLEOBJECTTREESOURCE_H
 
 #include "mimetreeparser/objecttreesource.h"
-#include <QVector>
 #include <memory>
 
 namespace MimeTreeParser {

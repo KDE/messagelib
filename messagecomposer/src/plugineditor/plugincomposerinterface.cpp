@@ -10,7 +10,6 @@
 #include "composer/composerattachmentinterface.h"
 #include <MessageComposer/AttachmentModel>
 #include <MessageComposer/ConvertSnippetVariablesJob>
-#include <KFormat>
 using namespace MessageComposer;
 
 PluginComposerInterface::PluginComposerInterface()

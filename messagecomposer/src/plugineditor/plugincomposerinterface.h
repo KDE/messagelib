@@ -10,7 +10,6 @@
 #include "messagecomposer_export.h"
 #include <MessageComposer/ComposerAttachmentInterface>
 #include <MessageComposer/ConvertSnippetVariablesUtil>
-#include <QObject>
 namespace MessageComposer {
 class ComposerViewBase;
 class ComposerViewInterface;

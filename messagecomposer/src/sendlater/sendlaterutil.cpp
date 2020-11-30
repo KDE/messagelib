@@ -10,7 +10,6 @@
 
 #include <AkonadiCore/ServerManager>
 
-#include <QDBusInterface>
 #include <servermanager.h>
 
 using namespace MessageComposer;

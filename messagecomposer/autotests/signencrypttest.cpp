@@ -6,7 +6,6 @@
 
 #include "signencrypttest.h"
 
-#include <QDebug>
 #include <QTest>
 #include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
@@ -14,7 +13,6 @@
 #include <kmime/kmime_content.h>
 
 #include <Libkleo/Enum>
-#include <KJob>
 
 #include <MessageComposer/Composer>
 #include <MessageComposer/SignEncryptJob>

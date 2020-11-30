@@ -10,7 +10,6 @@
 #include "snippet/convertsnippetvariablesutil.h"
 #include <TemplateParser/TemplatesUtil>
 #include <KEmailAddress>
-#include <QDate>
 #include <KMime/Types>
 using namespace MessageComposer;
 ConvertSnippetVariablesJob::ConvertSnippetVariablesJob(QObject *parent)

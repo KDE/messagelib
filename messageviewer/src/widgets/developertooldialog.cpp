@@ -7,7 +7,6 @@
 #include "developertoolwidget.h"
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
-#include <KLocalizedString>
 #include <KConfigGroup>
 #include <KSharedConfig>
 

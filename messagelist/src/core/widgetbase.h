@@ -11,7 +11,6 @@
 
 #include <QWidget>
 #include <QString>
-#include <QList>
 
 #include <MessageList/Enums>
 #include <MessageList/QuickSearchLine>

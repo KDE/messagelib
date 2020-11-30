@@ -10,7 +10,6 @@
 #include <QCheckBox>
 #include <QFormLayout>
 #include <QLineEdit>
-#include <QIntValidator>
 #include <QSpinBox>
 
 using namespace MessageViewer;

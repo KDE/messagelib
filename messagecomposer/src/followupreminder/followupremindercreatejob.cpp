@@ -13,7 +13,6 @@
 #include <AkonadiCore/ItemCreateJob>
 #include <AkonadiCore/ServerManager>
 
-#include <QDBusInterface>
 #include <QDBusConnection>
 #include <QDBusPendingCallWatcher>
 #include <QDBusPendingReply>

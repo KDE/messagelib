@@ -10,7 +10,6 @@
 #include "messagepart.h"
 
 #include <QByteArray>
-#include <QList>
 
 namespace MessageComposer {
 /**

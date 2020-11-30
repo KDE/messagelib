@@ -14,7 +14,6 @@
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
-#include <QDebug>
 #include <QProcess>
 #include <QTest>
 

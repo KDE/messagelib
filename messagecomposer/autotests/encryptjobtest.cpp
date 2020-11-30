@@ -35,7 +35,6 @@
 #include <stdlib.h>
 #include <KCharsets>
 
-#include <QDebug>
 #include <QTest>
 #include <decryptionresult.h>
 

@@ -9,7 +9,6 @@
 #ifndef MESSAGELIST_UTILS_COMBOBOXUTILS_H
 #define MESSAGELIST_UTILS_COMBOBOXUTILS_H
 
-#include <QList>
 #include <QPair>
 
 class QComboBox;
