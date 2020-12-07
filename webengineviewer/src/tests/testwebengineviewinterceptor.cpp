@@ -39,7 +39,7 @@ class CidUrlRequestInterceptor : public QWebEngineUrlRequestInterceptor
 public:
     explicit CidUrlRequestInterceptor(QObject *p = nullptr);
     void interceptRequest(QWebEngineUrlRequestInfo &info) override;
-    ~CidUrlRequestInterceptor();
+    ~CidUrlRequestInterceptor() override;
 };
 
 CidUrlRequestInterceptor::CidUrlRequestInterceptor(QObject *p)

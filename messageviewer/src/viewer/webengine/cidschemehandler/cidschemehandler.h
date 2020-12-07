@@ -15,7 +15,7 @@ class CidSchemeHandler : public QWebEngineUrlSchemeHandler
     Q_OBJECT
 public:
     explicit CidSchemeHandler(QObject *parent = nullptr);
-    ~CidSchemeHandler();
+    ~CidSchemeHandler() override;
 
     void requestStarted(QWebEngineUrlRequestJob *job) override;
 };

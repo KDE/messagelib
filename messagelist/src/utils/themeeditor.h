@@ -57,7 +57,7 @@ class ThemePreviewDelegate : public Core::ThemeDelegate
     Q_OBJECT
 public:
     explicit ThemePreviewDelegate(QAbstractItemView *parent);
-    ~ThemePreviewDelegate();
+    ~ThemePreviewDelegate() override;
 
 private:
     Core::GroupHeaderItem *mSampleGroupHeaderItem = nullptr;
@@ -72,7 +72,7 @@ class ThemePreviewWidget : public QTreeWidget
     Q_OBJECT
 public:
     explicit ThemePreviewWidget(QWidget *parent);
-    ~ThemePreviewWidget();
+    ~ThemePreviewWidget() override;
     void setReadOnly(bool readOnly);
 
 private:
@@ -161,7 +161,7 @@ class ThemeContentItemSourceLabel : public QLabel
     Q_OBJECT
 public:
     ThemeContentItemSourceLabel(QWidget *parent, Core::Theme::ContentItem::Type type);
-    ~ThemeContentItemSourceLabel();
+    ~ThemeContentItemSourceLabel() override;
 
 public:
     Core::Theme::ContentItem::Type type() const;
@@ -181,7 +181,7 @@ class ThemeEditor : public OptionSetEditor
     Q_OBJECT
 public:
     explicit ThemeEditor(QWidget *parent);
-    ~ThemeEditor();
+    ~ThemeEditor() override;
 
 public:
     /**

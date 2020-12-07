@@ -15,7 +15,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMResultAttribute : public Akonadi::Attribute
 {
 public:
     DKIMResultAttribute();
-    ~DKIMResultAttribute();
+    ~DKIMResultAttribute() override;
     Q_REQUIRED_RESULT DKIMResultAttribute *clone() const override;
     Q_REQUIRED_RESULT QByteArray type() const override;
     Q_REQUIRED_RESULT QByteArray serialized() const override;

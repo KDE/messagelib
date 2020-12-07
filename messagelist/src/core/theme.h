@@ -781,7 +781,7 @@ public:
     /**
     * Destroys this theme object.
     */
-    ~Theme();
+    ~Theme() override;
 
     static bool compareName(Theme *theme1, Theme *theme2)
     {

@@ -205,7 +205,7 @@ class FakeItem : public MessageItem
 public:
 
     explicit FakeItem();
-    ~FakeItem();
+    ~FakeItem() override;
 
     /// Reimplemented to return the fake tag list
     QList< Tag * > tagList() const override;
