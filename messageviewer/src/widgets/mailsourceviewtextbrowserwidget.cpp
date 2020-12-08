@@ -77,7 +77,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
 
     lay->addWidget(mSliderContainer);
     auto *shortcut = new QShortcut(this);
-    shortcut->setKey(Qt::Key_F + Qt::CTRL);
+    shortcut->setKey(Qt::Key_F | Qt::CTRL);
     connect(shortcut, &QShortcut::activated, this, &MailSourceViewTextBrowserWidget::slotFind);
 }
 

@@ -215,7 +215,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
     d->mXmlGuiClient = xmlGuiClient;
 
     KToggleAction *const showHideQuicksearch = new KToggleAction(i18n("Show Quick Search Bar"), this);
-    d->mXmlGuiClient->actionCollection()->setDefaultShortcut(showHideQuicksearch, Qt::CTRL + Qt::Key_H);
+    d->mXmlGuiClient->actionCollection()->setDefaultShortcut(showHideQuicksearch, Qt::CTRL | Qt::Key_H);
     showHideQuicksearch->setChecked(MessageListSettings::showQuickSearch());
 
     d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("show_quick_search"), showHideQuicksearch);
@@ -243,7 +243,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 
         QAction *action = new QAction(i18n("Create New Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("create_new_tab"), action);
-        d->mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_O));
+        d->mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_O));
         connect(action, &QAction::triggered, this, [this]() {
             d->onNewTabClicked();
         });
@@ -313,7 +313,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 
         d->mCloseTabAction = new QAction(i18n("Close Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("close_current_tab"), d->mCloseTabAction);
-        d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mCloseTabAction, QList<QKeySequence>() << QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_W) << QKeySequence(Qt::CTRL + Qt::Key_W));
+        d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mCloseTabAction, QList<QKeySequence>() << QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_W) << QKeySequence(Qt::CTRL | Qt::Key_W));
         connect(d->mCloseTabAction, &QAction::triggered, this, [this]() {
             d->onCloseTabClicked();
         });

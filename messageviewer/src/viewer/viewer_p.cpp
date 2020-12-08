@@ -1587,7 +1587,7 @@ void ViewerPrivate::createActions()
     mSelectAllAction = new QAction(i18n("Select All Text"), this);
     ac->addAction(QStringLiteral("mark_all_text"), mSelectAllAction);
     connect(mSelectAllAction, &QAction::triggered, this, &ViewerPrivate::selectAll);
-    ac->setDefaultShortcut(mSelectAllAction, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_A));
+    ac->setDefaultShortcut(mSelectAllAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_A));
 
     // copy Email address to clipboard
     mCopyURLAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")),
@@ -1612,7 +1612,7 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("toggle_mimeparttree"), mToggleMimePartTreeAction);
     connect(mToggleMimePartTreeAction, &QAction::toggled,
             this, &ViewerPrivate::slotToggleMimePartTree);
-    ac->setDefaultShortcut(mToggleMimePartTreeAction, QKeySequence(Qt::Key_D + Qt::CTRL + Qt::ALT));
+    ac->setDefaultShortcut(mToggleMimePartTreeAction, QKeySequence(Qt::Key_D | Qt::CTRL | Qt::ALT));
 
     mViewSourceAction = new QAction(i18n("&View Source"), this);
     ac->addAction(QStringLiteral("view_source"), mViewSourceAction);
@@ -1625,7 +1625,7 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("save_message"), mSaveMessageAction);
     connect(mSaveMessageAction, &QAction::triggered, this, &ViewerPrivate::slotSaveMessage);
     //Laurent: conflict with kmail shortcut
-    //mSaveMessageAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_S));
+    //mSaveMessageAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_S));
 
     mSaveMessageDisplayFormat = new QAction(i18n("&Save Display Format"), this);
     ac->addAction(QStringLiteral("save_message_display_format"), mSaveMessageDisplayFormat);
@@ -1671,7 +1671,7 @@ void ViewerPrivate::createActions()
     // Toggle HTML display mode.
     mToggleDisplayModeAction = new KToggleAction(i18n("Toggle HTML Display Mode"), this);
     ac->addAction(QStringLiteral("toggle_html_display_mode"), mToggleDisplayModeAction);
-    ac->setDefaultShortcut(mToggleDisplayModeAction, QKeySequence(Qt::SHIFT + Qt::Key_H));
+    ac->setDefaultShortcut(mToggleDisplayModeAction, QKeySequence(Qt::SHIFT | Qt::Key_H));
     connect(mToggleDisplayModeAction, &QAction::triggered,
             this, &ViewerPrivate::slotToggleHtmlMode);
     MessageViewer::Util::addHelpTextAction(mToggleDisplayModeAction,
@@ -1681,7 +1681,7 @@ void ViewerPrivate::createActions()
     QAction *loadExternalReferenceAction = new QAction(i18n("Load external references"), this);
     ac->addAction(QStringLiteral("load_external_reference"), loadExternalReferenceAction);
     ac->setDefaultShortcut(loadExternalReferenceAction,
-                           QKeySequence(Qt::SHIFT + Qt::CTRL + Qt::Key_R));
+                           QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_R));
     connect(loadExternalReferenceAction, &QAction::triggered,
             this, &ViewerPrivate::slotLoadExternalReference);
     MessageViewer::Util::addHelpTextAction(loadExternalReferenceAction,
@@ -1727,7 +1727,7 @@ void ViewerPrivate::createActions()
     mDevelopmentToolsAction = new QAction(QStringLiteral("Development Tools"), this);
     ac->addAction(QStringLiteral("development_tools"), mDevelopmentToolsAction);
     ac->setDefaultShortcut(mDevelopmentToolsAction,
-                           QKeySequence(Qt::SHIFT + Qt::CTRL + Qt::Key_I));
+                           QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_I));
 
     connect(mDevelopmentToolsAction, &QAction::triggered, this, &ViewerPrivate::slotShowDevelopmentTools);
 }

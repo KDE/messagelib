@@ -65,7 +65,7 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     shortcut->setKey(Qt::Key_Escape);
     connect(shortcut, &QShortcut::activated, this, &MailSourceWebEngineViewer::close);
     shortcut = new QShortcut(this);
-    shortcut->setKey(Qt::Key_W + Qt::CTRL);
+    shortcut->setKey(Qt::Key_W | Qt::CTRL);
     connect(shortcut, &QShortcut::activated, this, &MailSourceWebEngineViewer::close);
 
     mRawBrowser->textBrowser()->setFocus();
