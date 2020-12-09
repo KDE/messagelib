@@ -16,7 +16,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
         <default>true</default>
       </entry>
       <entry name="ReplyUsingVisualFormat" type="Bool" key="replyUsingVisualFormat">
-        <label>Reply or forward using HTML based on Visual Format</label>
+        <label>Reply or forward using the same visual format of the original message (plain text or HTML)</label>
         <default>false</default>
       </entry>
 
