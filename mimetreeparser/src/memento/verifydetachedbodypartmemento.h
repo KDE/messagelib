@@ -21,7 +21,7 @@ class VerifyDetachedJob;
 class KeyListJob;
 }
 
-class QStringList;
+#include <QStringList>
 
 namespace MimeTreeParser {
 class VerifyDetachedBodyPartMemento : public CryptoBodyPartMemento

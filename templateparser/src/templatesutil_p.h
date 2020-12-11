@@ -10,7 +10,7 @@
 #include "templateparser_private_export.h"
 #include <QString>
 class QString;
-class QStringList;
+#include <QStringList>
 namespace TemplateParser {
 namespace Util {
 Q_REQUIRED_RESULT QStringList keywords();

@@ -22,7 +22,7 @@ class VerifyOpaqueJob;
 class KeyListJob;
 }
 
-class QStringList;
+#include <QStringList>
 
 namespace MimeTreeParser {
 class VerifyOpaqueBodyPartMemento : public CryptoBodyPartMemento

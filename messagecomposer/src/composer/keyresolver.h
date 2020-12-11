@@ -22,7 +22,7 @@
 
 #include <vector>
 
-class QStringList;
+#include <QStringList>
 
 namespace Kleo {
 enum Result {
