@@ -95,7 +95,7 @@ bool Widget::canAcceptDrag(const QDropEvent *e)
         return false;
     }
 
-    Collection::List collections = static_cast<const StorageModel *>(storageModel())->displayedCollections();
+    Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
     if (collections.size() != 1) {
         return false;    // no folder here or too many (in case we can't decide where the drop will end)
     }
@@ -319,7 +319,7 @@ void Widget::viewMessageStatusChangeRequest(MessageList::Core::MessageItem *msg,
     int row = msg->currentModelIndexRow();
     Q_ASSERT(row >= 0);
 
-    Item item = d->itemForRow(row);
+    Akonadi::Item item = d->itemForRow(row);
     Q_ASSERT(item.isValid());
 
     Q_EMIT messageStatusChangeRequest(item, set, clear);
@@ -429,7 +429,7 @@ void Widget::viewDropEvent(QDropEvent *e)
         return;
     }
 
-    Collection::List collections = static_cast<const StorageModel *>(storageModel())->displayedCollections();
+    Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
     Collection target = collections.at(0);
     Item::List items;
     items.reserve(urls.count());
@@ -446,7 +446,7 @@ void Widget::viewDropEvent(QDropEvent *e)
 
 void Widget::viewStartDragRequest()
 {
-    Collection::List collections = static_cast<const StorageModel *>(storageModel())->displayedCollections();
+    Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
 
     if (collections.isEmpty()) {
         return;    // no folder here
@@ -523,12 +523,12 @@ Item::List Widget::Private::selectionAsItems() const
 
 Item Widget::Private::itemForRow(int row) const
 {
-    return static_cast<const StorageModel *>(q->storageModel())->itemForRow(row);
+    return static_cast<const MessageList::StorageModel *>(q->storageModel())->itemForRow(row);
 }
 
 KMime::Message::Ptr Widget::Private::messageForRow(int row) const
 {
-    return static_cast<const StorageModel *>(q->storageModel())->messageForRow(row);
+    return static_cast<const MessageList::StorageModel *>(q->storageModel())->messageForRow(row);
 }
 
 Item Widget::currentItem() const
@@ -727,7 +727,7 @@ MessageList::Core::MessageItemSetReference Widget::currentThreadAsPersistentSet(
 
 Akonadi::Collection Widget::currentCollection() const
 {
-    Collection::List collections = static_cast<const StorageModel *>(storageModel())->displayedCollections();
+    Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
     if (collections.size() != 1) {
         return Akonadi::Collection();    // no folder here or too many (in case we can't decide where the drop will end)
     }

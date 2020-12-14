@@ -110,6 +110,18 @@ if(BUILD_TESTING)
 endif()
 add_definitions(-DQT_NO_EMIT)
 
+option(USE_UNIFY_CMAKE_SUPPORT "Use UNIFY cmake support (speedup compile time)" FALSE)
+
+set(COMPILE_WITH_CMAKE_SUPPORT false)
+if (USE_UNIFY_CMAKE_SUPPORT)
+    if(${CMAKE_VERSION} VERSION_LESS "3.16.0")
+        message(STATUS "CMAKE version is less than 3.16.0 . We can't use cmake unify build support")
+    else()
+        set(COMPILE_WITH_CMAKE_SUPPORT true)
+        add_definitions(-DCOMPILE_WITH_CMAKE_SUPPORT)
+    endif()
+endif()
+
 add_subdirectory(mimetreeparser)
 add_subdirectory(messageviewer)
 add_subdirectory(templateparser)

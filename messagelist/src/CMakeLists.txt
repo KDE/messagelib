@@ -59,6 +59,10 @@ kconfig_add_kcfg_files(libmessagelist_SRCS
     )
 
 add_library(KF5MessageList ${libmessagelist_SRCS})
+#if (COMPILE_WITH_CMAKE_SUPPORT)
+#    set_target_properties(KF5MessageList PROPERTIES UNITY_BUILD ON)
+#endif()
+
 generate_export_header(KF5MessageList BASE_NAME messagelist)
 add_library(KF5::MessageList ALIAS KF5MessageList)
 

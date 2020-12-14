@@ -14,7 +14,7 @@
 #include <QScopedPointer>
 #include <QSharedPointer>
 
-static const mode_t archivePerms = S_IFREG | 0644;
+static const mode_t archivePermsAttachment = S_IFREG | 0644;
 
 using namespace MessageCore;
 
@@ -115,7 +115,7 @@ void AttachmentFromFolderJob::Private::addEntity(const QFileInfoList &f, const Q
                 q->emitResult();
                 return;
             }
-            if (!mZip->writeFile(path + infoFileName, file.readAll(), archivePerms,
+            if (!mZip->writeFile(path + infoFileName, file.readAll(), archivePermsAttachment,
                                  QString(), QString(), mArchiveTime, mArchiveTime, mArchiveTime)) {
                 q->setError(KJob::UserDefinedError);
                 q->setErrorText(i18n("Could not add %1 to the archive", file.fileName()));

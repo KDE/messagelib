@@ -879,7 +879,7 @@ void Pane::Private::updateTabControls()
     }
 }
 
-Item Pane::currentItem() const
+Akonadi::Item Pane::currentItem() const
 {
     auto *w = static_cast<Widget *>(currentWidget());
 

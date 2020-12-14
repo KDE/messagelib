@@ -18,7 +18,7 @@
 #include <QPushButton>
 
 namespace {
-static const char myConfigGroupName[] = "DKIMManageRulesDialog";
+static const char myDKIMManageRulesDialogGroupName[] = "DKIMManageRulesDialog";
 }
 using namespace MessageViewer;
 
@@ -90,7 +90,7 @@ void DKIMManageRulesDialog::slotImport()
 
 void DKIMManageRulesDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    KConfigGroup group(KSharedConfig::openConfig(), myDKIMManageRulesDialogGroupName);
     const QSize size = group.readEntry("Size", QSize(600, 400));
     mRulesWidget->restoreHeaders(group.readEntry("Header", QByteArray()));
     if (size.isValid()) {
@@ -100,7 +100,7 @@ void DKIMManageRulesDialog::readConfig()
 
 void DKIMManageRulesDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    KConfigGroup group(KSharedConfig::openConfig(), myDKIMManageRulesDialogGroupName);
     group.writeEntry("Header", mRulesWidget->saveHeaders());
     group.writeEntry("Size", size());
     group.sync();

@@ -31,7 +31,7 @@ public:
 };
 
 namespace {
-QString pluginVersion()
+QString pluginEditorVersion()
 {
     return QStringLiteral("1.0");
 }
@@ -86,7 +86,7 @@ void PluginEditorManagerPrivate::initializePlugins()
             order = p.toInt();
         }
         info.order = order;
-        if (pluginVersion() == data.version()) {
+        if (pluginEditorVersion() == data.version()) {
             // only load plugins once, even if found multiple times!
             if (unique.contains(info.metaDataFileNameBaseName)) {
                 continue;

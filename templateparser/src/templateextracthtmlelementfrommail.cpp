@@ -10,7 +10,7 @@
 #include <QWebEngineScript>
 
 template<typename Arg, typename R, typename C>
-struct InvokeWrapper {
+struct InvokeWrapperFunction {
     R *receiver;
     void (C::*memberFun)(Arg);
     void operator()(Arg result)
@@ -20,9 +20,9 @@ struct InvokeWrapper {
 };
 
 template<typename Arg, typename R, typename C>
-InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
+InvokeWrapperFunction<Arg, R, C> invokeFunction(R *receiver, void (C::*memberFun)(Arg))
 {
-    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
+    InvokeWrapperFunction<Arg, R, C> wrapper = {receiver, memberFun};
     return wrapper;
 }
 
@@ -70,7 +70,7 @@ void TemplateExtractHtmlElementFromMail::slotLoadFinished(bool success)
     if (success) {
         mPage->runJavaScript(extractHeaderBodyScript(),
                              (QWebEngineScript::UserWorld + 2),
-                             invoke(this, &TemplateExtractHtmlElementFromMail::handleHtmlInfo));
+                             invokeFunction(this, &TemplateExtractHtmlElementFromMail::handleHtmlInfo));
     } else {
         Q_EMIT loadContentDone(false);
     }

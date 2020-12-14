@@ -45,6 +45,10 @@ ki18n_wrap_ui(templateparser_LIB_SRCS
     )
 
 add_library(KF5TemplateParser ${templateparser_LIB_SRCS})
+if (COMPILE_WITH_CMAKE_SUPPORT)
+    set_target_properties(KF5TemplateParser PROPERTIES UNITY_BUILD ON)
+endif()
+
 generate_export_header(KF5TemplateParser BASE_NAME templateparser)
 add_library(KF5::TemplateParser ALIAS KF5TemplateParser)
 
