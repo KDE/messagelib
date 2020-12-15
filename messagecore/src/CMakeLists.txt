@@ -51,7 +51,7 @@ ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER messagecore_debug.h 
 
 
 add_library(KF5MessageCore ${messagecore_LIB_SRCS})
-if (COMPILE_WITH_CMAKE_SUPPORT)
+if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5MessageCore PROPERTIES UNITY_BUILD ON)
 endif()
 

@@ -45,7 +45,7 @@ ki18n_wrap_ui(templateparser_LIB_SRCS
     )
 
 add_library(KF5TemplateParser ${templateparser_LIB_SRCS})
-if (COMPILE_WITH_CMAKE_SUPPORT)
+if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5TemplateParser PROPERTIES UNITY_BUILD ON)
 endif()
 

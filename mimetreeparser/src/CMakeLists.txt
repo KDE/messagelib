@@ -120,7 +120,7 @@ ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER mimetreeparser_deb
 add_library(KF5MimeTreeParser
     ${libmimetreeparser_SRCS}
     )
-if (COMPILE_WITH_CMAKE_SUPPORT)
+if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5MimeTreeParser PROPERTIES UNITY_BUILD ON)
 endif()
 

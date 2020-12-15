@@ -85,7 +85,7 @@ ecm_qt_declare_logging_category(libwebengineviewer_webengine_SRCS HEADER webengi
 
 
 add_library(KF5WebEngineViewer ${libwebengineviewer_SRCS} ${libwebengineviewer_webengine_SRCS})
-if (COMPILE_WITH_CMAKE_SUPPORT)
+if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5WebEngineViewer PROPERTIES UNITY_BUILD ON)
 endif()
 
