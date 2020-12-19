@@ -48,9 +48,7 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(const QString &schem
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeTyped
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeBackForward
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeOther
-           #if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 14, 0)
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeRedirect
-           #endif
                ) {
         return true;
     }

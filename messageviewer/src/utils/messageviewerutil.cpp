@@ -653,14 +653,6 @@ QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, Q
 
 bool Util::excludeExtraHeader(const QString &s)
 {
-#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 14, 0)
-    //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
-    //Don't authorize to refresh content.
-    static QRegularExpression ref(QStringLiteral("http-equiv=\\s*(\'|\")(&#82;|R)EFRESH(\'|\")"), QRegularExpression::CaseInsensitiveOption);
-    if (s.contains(ref)) {
-        return true;
-    }
-#endif
     static QRegularExpression divRef(QStringLiteral("</div>"), QRegularExpression::CaseInsensitiveOption);
     if (s.contains(divRef)) {
         return true;

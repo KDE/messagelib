@@ -20,14 +20,6 @@ void MessageViewerUtilsTest::shouldExcludeHeader_data()
     QTest::addColumn<QString>("header");
     QTest::addColumn<bool>("exclude");
     QTest::newRow("emptylist") << QString() << false;
-#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 14, 0)
-    QTest::newRow("REFRESH1") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\'REFRESH\'></head>") << true;
-    QTest::newRow("REFRESH2") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\"REFRESH\"></head>") << true;
-    QTest::newRow("REFRESH3") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\"refresh\"></head>") << true;
-    QTest::newRow("REFRESH4") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\"&#82;EFRESH\"></head>") << true;
-    QTest::newRow("REFRESH5") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv=\'&#82;EFRESH\'></head>") << true;
-    QTest::newRow("REFRESH6") << QStringLiteral("<meta content=\"0;URL=http://www.kde.org\" http-equiv= \"REFRESH\"></head>") << true;
-#endif
     QTest::newRow("div1") << QStringLiteral("<div><p>ff</p></div></head>") << true;
     QTest::newRow("body1") << QStringLiteral("<style>\nbody > div:nth-child(2) {\ndisplay: none !important;\n}\n</style>") << true;
 }

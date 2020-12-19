@@ -22,7 +22,5 @@ void BlockExternalResourcesUrlInterceptorTest::shouldIntercept()
     QVERIFY(interceptor.interceptRequest(QStringLiteral("ftp"), QWebEngineUrlRequestInfo::ResourceType::ResourceTypeUnknown, QWebEngineUrlRequestInfo::NavigationType::NavigationTypeReload));
     QVERIFY(interceptor.interceptRequest(QStringLiteral("ftp"), QWebEngineUrlRequestInfo::ResourceType::ResourceTypePing, QWebEngineUrlRequestInfo::NavigationType::NavigationTypeReload));
     QVERIFY(!interceptor.interceptRequest(QStringLiteral("ftp"), QWebEngineUrlRequestInfo::ResourceType::ResourceTypeMainFrame, QWebEngineUrlRequestInfo::NavigationType::NavigationTypeLink));
-#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     QVERIFY(interceptor.interceptRequest(QStringLiteral("ftp"), QWebEngineUrlRequestInfo::ResourceType::ResourceTypeMainFrame, QWebEngineUrlRequestInfo::NavigationType::NavigationTypeRedirect));
-#endif
 }

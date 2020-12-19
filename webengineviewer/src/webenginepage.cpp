@@ -69,12 +69,8 @@ void WebEnginePage::saveHtml(QWebEngineDownloadItem *download)
     const QString fileName = QFileDialog::getSaveFileName(view(), i18n("Save HTML Page"));
     if (!fileName.isEmpty()) {
         download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
-#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 14, 0)
         download->setDownloadDirectory(QFileInfo(fileName).path());
         download->setDownloadFileName(QFileInfo(fileName).fileName());
-#else
-        download->setPath(fileName);
-#endif
         download->accept();
     }
 }
