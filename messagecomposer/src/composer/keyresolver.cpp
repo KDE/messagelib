@@ -32,7 +32,6 @@
 #include "messagecomposer_debug.h"
 #include <KMessageBox>
 
-#include <QStringList>
 #include <QPointer>
 
 #include <algorithm>
