@@ -40,7 +40,7 @@ public:
     std::vector<GpgME::Key> signers;
     Kleo::CryptoMessageFormat format;
 
-    bool protectedHeaders = true;
+    bool protectedHeaders = false;
 
     // copied from messagecomposer.cpp
     Q_REQUIRED_RESULT bool binaryHint(Kleo::CryptoMessageFormat f)
