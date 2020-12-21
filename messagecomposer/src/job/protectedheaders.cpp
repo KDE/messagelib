@@ -133,13 +133,12 @@ void ProtectedHeadersJob::process()
         if (headerType.startsWith("Content-")) {
             continue;
         }
-        if (headerType == "Subject") {
-            KMime::Headers::Subject *copySubject = new KMime::Headers::Subject();
-            copySubject->from7BitString(subject->as7BitString(false));
-            d->content->appendHeader(copySubject);
-        } else {
-            d->content->appendHeader(header);
+        auto copyHeader = KMime::Headers::createHeader(headerType);
+        if (!copyHeader) {
+            copyHeader = new KMime::Headers::Generic(headerType.constData(), headerType.size());
         }
+        copyHeader->from7BitString(header->as7BitString(false));
+        d->content->appendHeader(copyHeader);
     }
 
     if (d->obvoscate && subject) {
