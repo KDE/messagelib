@@ -27,7 +27,7 @@ public:
         Unknown = 2
     };
     explicit HashCacheManager(QObject *parent = nullptr);
-    ~HashCacheManager();
+    ~HashCacheManager() override;
 
     static HashCacheManager *self();
 

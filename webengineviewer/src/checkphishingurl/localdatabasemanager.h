@@ -24,7 +24,7 @@ class WEBENGINEVIEWER_EXPORT LocalDataBaseManager : public QObject
     Q_OBJECT
 public:
     explicit LocalDataBaseManager(QObject *parent = nullptr);
-    ~LocalDataBaseManager();
+    ~LocalDataBaseManager() override;
 
     void checkUrl(const QUrl &url);
 

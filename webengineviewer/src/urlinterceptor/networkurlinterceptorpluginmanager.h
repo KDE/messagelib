@@ -24,7 +24,7 @@ class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptorPluginManager : public QObject
 public:
     static NetworkUrlInterceptorPluginManager *self();
     explicit NetworkUrlInterceptorPluginManager(QObject *parent = nullptr);
-    ~NetworkUrlInterceptorPluginManager();
+    ~NetworkUrlInterceptorPluginManager() override;
 
     Q_REQUIRED_RESULT QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
     Q_REQUIRED_RESULT QString configGroupName() const;

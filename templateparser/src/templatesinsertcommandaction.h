@@ -21,7 +21,7 @@ class TEMPLATEPARSER_EXPORT TemplatesInsertCommandAction : public QWidgetAction
     Q_OBJECT
 public:
     explicit TemplatesInsertCommandAction(QObject *parent = nullptr);
-    ~TemplatesInsertCommandAction();
+    ~TemplatesInsertCommandAction() override;
 
     Q_REQUIRED_RESULT TemplatesCommandMenu::MenuTypes type() const;
     void setType(TemplatesCommandMenu::MenuTypes type);

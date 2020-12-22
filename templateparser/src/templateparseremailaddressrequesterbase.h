@@ -19,7 +19,7 @@ class TEMPLATEPARSER_EXPORT TemplateParserEmailAddressRequesterBase : public QWi
     Q_OBJECT
 public:
     explicit TemplateParserEmailAddressRequesterBase(QWidget *parent = nullptr);
-    ~TemplateParserEmailAddressRequesterBase();
+    ~TemplateParserEmailAddressRequesterBase() override;
 
     virtual Q_REQUIRED_RESULT QString text() const;
     virtual void setText(const QString &str);

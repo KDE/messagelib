@@ -20,7 +20,7 @@ class WEBENGINEVIEWER_EXPORT WebEngineExportPdfPageJob : public QObject
     Q_OBJECT
 public:
     explicit WebEngineExportPdfPageJob(QObject *parent = nullptr);
-    ~WebEngineExportPdfPageJob();
+    ~WebEngineExportPdfPageJob() override;
     void start();
 
     Q_REQUIRED_RESULT QWebEngineView *engineView() const;

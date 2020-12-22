@@ -36,7 +36,7 @@ public:
 
 public:
     explicit CustomTemplates(const QList<KActionCollection *> &actionCollection, QWidget *parent = nullptr);
-    ~CustomTemplates();
+    ~CustomTemplates() override;
 
     void load();
     void save();

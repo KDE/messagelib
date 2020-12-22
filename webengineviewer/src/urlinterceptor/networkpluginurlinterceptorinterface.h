@@ -22,7 +22,7 @@ class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorInterface : public QObje
     Q_OBJECT
 public:
     explicit NetworkPluginUrlInterceptorInterface(QObject *parent = nullptr);
-    ~NetworkPluginUrlInterceptorInterface();
+    ~NetworkPluginUrlInterceptorInterface() override;
 
     virtual void createActions(KActionCollection *ac);
     virtual QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;

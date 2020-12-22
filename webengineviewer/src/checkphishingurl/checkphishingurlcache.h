@@ -30,7 +30,7 @@ public:
     };
 
     explicit CheckPhishingUrlCache(QObject *parent = nullptr);
-    ~CheckPhishingUrlCache();
+    ~CheckPhishingUrlCache() override;
 
     /**
      * @brief addCheckingUrlResult cache url. If @p correctUrl is true we store as UrlOk otherwise MalWare

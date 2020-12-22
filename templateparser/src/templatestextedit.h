@@ -20,7 +20,7 @@ class TEMPLATEPARSER_EXPORT TemplatesTextEdit : public KPIMTextEdit::PlainTextEd
     Q_OBJECT
 public:
     explicit TemplatesTextEdit(QWidget *parent = nullptr);
-    ~TemplatesTextEdit();
+    ~TemplatesTextEdit() override;
 };
 }
 

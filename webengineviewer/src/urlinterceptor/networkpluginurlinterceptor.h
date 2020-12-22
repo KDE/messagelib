@@ -21,7 +21,7 @@ class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptor : public QObject
     Q_OBJECT
 public:
     explicit NetworkPluginUrlInterceptor(QObject *parent = nullptr);
-    ~NetworkPluginUrlInterceptor();
+    ~NetworkPluginUrlInterceptor() override;
     virtual NetworkPluginUrlInterceptorInterface *createInterface(QWebEngineView *webEngine, QObject *parent = nullptr) = 0;
 
     virtual bool hasConfigureDialog() const;

@@ -22,7 +22,7 @@ class TEMPLATEPARSER_EXPORT TemplatesCommandMenu : public QObject
     Q_OBJECT
 public:
     explicit TemplatesCommandMenu(QObject *parent = nullptr);
-    ~TemplatesCommandMenu();
+    ~TemplatesCommandMenu() override;
 
     enum MenuType {
         ReplyForwardMessage = 1,

@@ -14,7 +14,7 @@ class TemplateWebEnginePage : public QWebEnginePage
     Q_OBJECT
 public:
     explicit TemplateWebEnginePage(QObject *parent = nullptr);
-    ~TemplateWebEnginePage();
+    ~TemplateWebEnginePage() override;
 };
 }
 

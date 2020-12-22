@@ -20,7 +20,7 @@ class TEMPLATEPARSER_TESTS_EXPORT TemplateParserExtractHtmlInfo : public QObject
     Q_OBJECT
 public:
     explicit TemplateParserExtractHtmlInfo(QObject *parent = nullptr);
-    ~TemplateParserExtractHtmlInfo();
+    ~TemplateParserExtractHtmlInfo() override;
 
     void setHtmlForExtractingTextPlain(const QString &html);
     void setHtmlForExtractionHeaderAndBody(const QString &html);

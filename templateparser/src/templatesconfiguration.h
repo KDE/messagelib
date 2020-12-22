@@ -22,7 +22,7 @@ class TEMPLATEPARSER_EXPORT TemplatesConfiguration : public QWidget, Ui::Templat
 public:
 
     explicit TemplatesConfiguration(QWidget *parent = nullptr, const QString &name = QString());
-    ~TemplatesConfiguration();
+    ~TemplatesConfiguration() override;
 
     void loadFromGlobal();
     void saveToGlobal();

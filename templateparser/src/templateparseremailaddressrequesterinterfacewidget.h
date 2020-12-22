@@ -16,7 +16,7 @@ class TEMPLATEPARSER_TESTS_EXPORT TemplateParserEmailAddressRequesterInterfaceWi
     Q_OBJECT
 public:
     explicit TemplateParserEmailAddressRequesterInterfaceWidget(QWidget *parent = nullptr);
-    ~TemplateParserEmailAddressRequesterInterfaceWidget() = default;
+    ~TemplateParserEmailAddressRequesterInterfaceWidget() override = default;
 
     Q_REQUIRED_RESULT QString text() const;
     void setText(const QString &str);

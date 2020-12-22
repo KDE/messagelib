@@ -20,7 +20,7 @@ class TEMPLATEPARSER_EXPORT TemplateExtractTextFromMail : public QObject
     Q_OBJECT
 public:
     explicit TemplateExtractTextFromMail(QObject *parent = nullptr);
-    ~TemplateExtractTextFromMail();
+    ~TemplateExtractTextFromMail() override;
 
     void setHtmlContent(const QString &html);
 

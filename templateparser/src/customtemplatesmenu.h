@@ -25,7 +25,7 @@ class TEMPLATEPARSER_EXPORT CustomTemplatesMenu : public QObject
 
 public:
     explicit CustomTemplatesMenu(QWidget *parent, KActionCollection *ac);
-    ~CustomTemplatesMenu();
+    ~CustomTemplatesMenu() override;
 
     KActionMenu *replyActionMenu() const;
     KActionMenu *replyAllActionMenu() const;

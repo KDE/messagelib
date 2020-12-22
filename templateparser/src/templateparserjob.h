@@ -153,7 +153,7 @@ public:
 
 public:
     explicit TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode, QObject *parent = nullptr);
-    ~TemplateParserJob();
+    ~TemplateParserJob() override;
 
     /**
      * Sets the selection. If this is set, only the selection will be added to

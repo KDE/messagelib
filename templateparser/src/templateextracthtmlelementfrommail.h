@@ -17,7 +17,7 @@ class TEMPLATEPARSER_TESTS_EXPORT TemplateExtractHtmlElementFromMail : public QO
     Q_OBJECT
 public:
     explicit TemplateExtractHtmlElementFromMail(QObject *parent = nullptr);
-    ~TemplateExtractHtmlElementFromMail();
+    ~TemplateExtractHtmlElementFromMail() override;
 
     Q_REQUIRED_RESULT QString bodyElement() const;
 

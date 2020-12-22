@@ -21,7 +21,7 @@ class TEMPLATEPARSER_EXPORT TemplateConvertCommandJob : public QObject
     Q_OBJECT
 public:
     explicit TemplateConvertCommandJob(QObject *parent = nullptr);
-    ~TemplateConvertCommandJob();
+    ~TemplateConvertCommandJob() override;
     Q_REQUIRED_RESULT QString convertText();
 
     Q_REQUIRED_RESULT QString currentText() const;

@@ -26,7 +26,7 @@ class WEBENGINEVIEWER_EXPORT WebEngineAccessKey : public QObject
     Q_OBJECT
 public:
     explicit WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent = nullptr);
-    ~WebEngineAccessKey();
+    ~WebEngineAccessKey() override;
 
     void setActionCollection(KActionCollection *ac);
 

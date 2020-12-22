@@ -62,7 +62,7 @@ class MIMETREEPARSER_EXPORT MessagePart : public QObject
 public:
     typedef QSharedPointer<MessagePart> Ptr;
     MessagePart(ObjectTreeParser *otp, const QString &text);
-    ~MessagePart();
+    ~MessagePart() override;
 
     void setParentPart(MessagePart *parentPart);
     MessagePart *parentPart() const;

@@ -22,7 +22,7 @@ class WEBENGINEVIEWER_EXPORT CreateDatabaseFileJob : public QObject
     Q_OBJECT
 public:
     explicit CreateDatabaseFileJob(QObject *parent = nullptr);
-    ~CreateDatabaseFileJob();
+    ~CreateDatabaseFileJob() override;
     void start();
     void setFileName(const QString &filename);
     bool canStart() const;

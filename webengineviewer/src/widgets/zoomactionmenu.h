@@ -21,7 +21,7 @@ class WEBENGINEVIEWER_EXPORT ZoomActionMenu : public KActionMenu
     Q_OBJECT
 public:
     explicit ZoomActionMenu(QObject *parent = nullptr);
-    ~ZoomActionMenu();
+    ~ZoomActionMenu() override;
 
     void createZoomActions();
 

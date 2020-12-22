@@ -22,7 +22,7 @@ class MIMETREEPARSER_EXPORT AttachmentTemporaryFilesDirs : public QObject
     Q_OBJECT
 public:
     explicit AttachmentTemporaryFilesDirs(QObject *parent = nullptr);
-    ~AttachmentTemporaryFilesDirs();
+    ~AttachmentTemporaryFilesDirs() override;
 
     void addTempFile(const QString &file);
     void addTempDir(const QString &dir);

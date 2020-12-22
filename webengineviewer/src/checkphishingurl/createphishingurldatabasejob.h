@@ -42,7 +42,7 @@ public:
     };
 
     explicit CreatePhishingUrlDataBaseJob(QObject *parent = nullptr);
-    ~CreatePhishingUrlDataBaseJob();
+    ~CreatePhishingUrlDataBaseJob() override;
 
     void start();
 
