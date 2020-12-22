@@ -252,7 +252,12 @@ set(libmessageviewer_interfaces_SRCS
     interfaces/htmlwriter.cpp
     )
 
+set(libmessageviewer_remotecontent
+    remote-content/remotecontentmanager.cpp
+    )
+
 set(libmessageviewer_SRCS
+    ${libmessageviewer_remotecontent}
     ${messageviewer_renderer_SRCS}
     ${libmessageviewer_conversationviewer_SRCS}
     ${dkim_verify_SRCS}
