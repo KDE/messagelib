@@ -16,3 +16,9 @@ RemoteContentManager::~RemoteContentManager()
 {
 
 }
+
+RemoteContentManager *RemoteContentManager::self()
+{
+    static RemoteContentManager s_self;
+    return &s_self;
+}

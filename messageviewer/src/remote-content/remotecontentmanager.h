@@ -17,6 +17,7 @@ class MESSAGEVIEWER_TESTS_EXPORT RemoteContentManager : public QObject
 public:
     explicit RemoteContentManager(QObject *parent = nullptr);
     ~RemoteContentManager() override;
+    static RemoteContentManager *self();
 };
 }
 
