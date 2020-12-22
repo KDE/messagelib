@@ -255,6 +255,7 @@ set(libmessageviewer_interfaces_SRCS
 
 set(libmessageviewer_remotecontent
     remote-content/remotecontentmanager.cpp
+    remote-content/remotecontentinfo.cpp
     )
 
 set(libmessageviewer_SRCS
