@@ -23,7 +23,7 @@ class MESSAGEVIEWER_EXPORT DKIMManager : public QObject
     Q_OBJECT
 public:
     explicit DKIMManager(QObject *parent = nullptr);
-    ~DKIMManager();
+    ~DKIMManager() override;
     static DKIMManager *self();
 
     void checkDKim(const KMime::Message::Ptr &message);

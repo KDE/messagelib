@@ -24,7 +24,7 @@ public:
     static HeaderStylePluginManager *self();
 
     explicit HeaderStylePluginManager(QObject *parent = nullptr);
-    ~HeaderStylePluginManager();
+    ~HeaderStylePluginManager() override;
 
     Q_REQUIRED_RESULT QVector<MessageViewer::HeaderStylePlugin *> pluginsList() const;
     Q_REQUIRED_RESULT QStringList pluginListName() const;

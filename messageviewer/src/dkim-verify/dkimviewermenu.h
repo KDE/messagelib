@@ -17,7 +17,7 @@ class MESSAGEVIEWER_EXPORT DKIMViewerMenu : public QObject
     Q_OBJECT
 public:
     explicit DKIMViewerMenu(QObject *parent = nullptr);
-    ~DKIMViewerMenu();
+    ~DKIMViewerMenu() override;
     QMenu *menu() const;
 
     void setEnableUpdateDkimKeyMenu(bool enabled);

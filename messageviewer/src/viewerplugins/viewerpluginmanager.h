@@ -23,7 +23,7 @@ class MESSAGEVIEWER_EXPORT ViewerPluginManager : public QObject
 public:
 
     explicit ViewerPluginManager(QObject *parent = nullptr);
-    ~ViewerPluginManager();
+    ~ViewerPluginManager() override;
     static ViewerPluginManager *self();
 
     Q_REQUIRED_RESULT QVector<MessageViewer::ViewerPlugin *> pluginsList() const;

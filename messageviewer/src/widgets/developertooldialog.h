@@ -17,7 +17,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DeveloperToolDialog : public QDialog
     Q_OBJECT
 public:
     explicit DeveloperToolDialog(QWidget *parent = nullptr);
-    ~DeveloperToolDialog();
+    ~DeveloperToolDialog() override;
     QWebEnginePage *enginePage() const;
 private:
     void readConfig();

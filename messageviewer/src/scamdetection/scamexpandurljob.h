@@ -22,7 +22,7 @@ class MESSAGEVIEWER_EXPORT ScamExpandUrlJob : public QObject
     Q_OBJECT
 public:
     explicit ScamExpandUrlJob(QObject *parent = nullptr);
-    ~ScamExpandUrlJob();
+    ~ScamExpandUrlJob() override;
 
     void expandedUrl(const QUrl &url);
 Q_SIGNALS:

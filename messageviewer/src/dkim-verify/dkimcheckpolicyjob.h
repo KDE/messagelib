@@ -21,7 +21,7 @@ class MESSAGEVIEWER_EXPORT DKIMCheckPolicyJob : public QObject
     Q_OBJECT
 public:
     explicit DKIMCheckPolicyJob(QObject *parent = nullptr);
-    ~DKIMCheckPolicyJob();
+    ~DKIMCheckPolicyJob() override;
     Q_REQUIRED_RESULT bool canStart() const;
     Q_REQUIRED_RESULT bool start();
 

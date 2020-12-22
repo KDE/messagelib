@@ -20,7 +20,7 @@ class ScamDetectionDetailsDialog : public QDialog
     Q_OBJECT
 public:
     explicit ScamDetectionDetailsDialog(QWidget *parent = nullptr);
-    ~ScamDetectionDetailsDialog();
+    ~ScamDetectionDetailsDialog() override;
 
     void setDetails(const QString &details);
 

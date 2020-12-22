@@ -18,7 +18,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMStoreResultJob : public QObject
     Q_OBJECT
 public:
     explicit DKIMStoreResultJob(QObject *parent = nullptr);
-    ~DKIMStoreResultJob();
+    ~DKIMStoreResultJob() override;
 
     void start();
     Q_REQUIRED_RESULT bool canStart() const;

@@ -19,7 +19,7 @@ class MESSAGEVIEWER_EXPORT DKIMManagerKeyWidget : public QWidget
     Q_OBJECT
 public:
     explicit DKIMManagerKeyWidget(QWidget *parent = nullptr);
-    ~DKIMManagerKeyWidget();
+    ~DKIMManagerKeyWidget() override;
 
     void loadKeys();
     void saveKeys();

@@ -15,7 +15,7 @@ class WebEngineEmbedPart : public QObject
     Q_OBJECT
 public:
     explicit WebEngineEmbedPart(QObject *parent = nullptr);
-    ~WebEngineEmbedPart();
+    ~WebEngineEmbedPart() override;
 
     void clear();
     Q_REQUIRED_RESULT bool isEmpty() const;

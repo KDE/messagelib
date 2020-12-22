@@ -24,7 +24,7 @@ class MESSAGEVIEWER_EXPORT HeaderStyleMenuManager : public QObject
     Q_OBJECT
 public:
     explicit HeaderStyleMenuManager(KActionCollection *ac, QObject *parent = nullptr);
-    ~HeaderStyleMenuManager();
+    ~HeaderStyleMenuManager() override;
 
     Q_REQUIRED_RESULT KActionMenu *menu() const;
 

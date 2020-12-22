@@ -23,7 +23,7 @@ class MESSAGEVIEWER_EXPORT ViewerPlugin : public QObject
     Q_OBJECT
 public:
     explicit ViewerPlugin(QObject *parent = nullptr);
-    ~ViewerPlugin();
+    ~ViewerPlugin() override;
 
     Q_REQUIRED_RESULT virtual MessageViewer::ViewerPluginInterface *createView(QWidget *parent, KActionCollection *ac) = 0;
     Q_REQUIRED_RESULT virtual QString viewerPluginName() const = 0;

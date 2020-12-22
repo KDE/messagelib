@@ -18,7 +18,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckAuthenticationStatusJob : public QObje
     Q_OBJECT
 public:
     explicit DKIMCheckAuthenticationStatusJob(QObject *parent = nullptr);
-    ~DKIMCheckAuthenticationStatusJob();
+    ~DKIMCheckAuthenticationStatusJob() override;
 
     void start();
 

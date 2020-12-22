@@ -19,7 +19,7 @@ class MESSAGEVIEWER_EXPORT InvitationSettings : public QWidget
     Q_OBJECT
 public:
     explicit InvitationSettings(QWidget *parent = nullptr);
-    ~InvitationSettings();
+    ~InvitationSettings() override;
     void save();
     Q_REQUIRED_RESULT QString helpAnchor() const;
     void doLoadFromGlobalSettings();

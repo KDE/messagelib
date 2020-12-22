@@ -27,7 +27,7 @@ class MESSAGEVIEWER_EXPORT ConfigureWidget : public QWidget
 public:
     explicit ConfigureWidget(QWidget *parent = nullptr);
 
-    ~ConfigureWidget();
+    ~ConfigureWidget() override;
 
     //
     // Read and write config settings to the GlobalSettings.

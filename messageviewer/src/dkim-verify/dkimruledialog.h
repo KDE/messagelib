@@ -18,7 +18,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMRuleDialog : public QDialog
     Q_OBJECT
 public:
     explicit DKIMRuleDialog(QWidget *parent = nullptr);
-    ~DKIMRuleDialog();
+    ~DKIMRuleDialog() override;
 
     Q_REQUIRED_RESULT MessageViewer::DKIMRule rule() const;
     void loadRule(const MessageViewer::DKIMRule &rule);

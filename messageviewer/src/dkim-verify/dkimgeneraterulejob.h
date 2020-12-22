@@ -16,7 +16,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMGenerateRuleJob : public QObject
     Q_OBJECT
 public:
     explicit DKIMGenerateRuleJob(QObject *parent = nullptr);
-    ~DKIMGenerateRuleJob();
+    ~DKIMGenerateRuleJob() override;
 
     Q_REQUIRED_RESULT bool canStart() const;
     Q_REQUIRED_RESULT bool start();

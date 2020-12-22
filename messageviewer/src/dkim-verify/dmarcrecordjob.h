@@ -1,4 +1,4 @@
-/*
+ /*
    SPDX-FileCopyrightText: 2019-2020 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
@@ -16,7 +16,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DMARCRecordJob : public QObject
     Q_OBJECT
 public:
     explicit DMARCRecordJob(QObject *parent = nullptr);
-    ~DMARCRecordJob();
+    ~DMARCRecordJob() override;
 
     Q_REQUIRED_RESULT bool start();
 

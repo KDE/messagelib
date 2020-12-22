@@ -16,7 +16,7 @@ class MESSAGEVIEWER_TESTS_EXPORT ShowNextMessageWidget : public QWidget
     Q_OBJECT
 public:
     explicit ShowNextMessageWidget(QWidget *parent = nullptr);
-    ~ShowNextMessageWidget();
+    ~ShowNextMessageWidget() override;
 
     void updateButton(bool hasPreviousMessage, bool hasNextMessage);
 Q_SIGNALS:

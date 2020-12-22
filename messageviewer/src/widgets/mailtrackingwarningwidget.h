@@ -23,7 +23,7 @@ class MESSAGEVIEWER_TESTS_EXPORT MailTrackingWarningWidget : public KMessageWidg
     Q_OBJECT
 public:
     explicit MailTrackingWarningWidget(QWidget *parent = nullptr);
-    ~MailTrackingWarningWidget();
+    ~MailTrackingWarningWidget() override;
     void addTracker(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
     void hideAndClear();
 private:

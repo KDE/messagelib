@@ -19,7 +19,7 @@ class MESSAGEVIEWER_TESTS_EXPORT ScamDetectionWarningWidget : public KMessageWid
     Q_OBJECT
 public:
     explicit ScamDetectionWarningWidget(QWidget *parent = nullptr);
-    ~ScamDetectionWarningWidget();
+    ~ScamDetectionWarningWidget() override;
 
     void setUseInTestApps(bool b);
 

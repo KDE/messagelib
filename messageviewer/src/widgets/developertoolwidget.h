@@ -17,7 +17,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DeveloperToolWidget : public QWidget
     Q_OBJECT
 public:
     explicit DeveloperToolWidget(QWidget *parent = nullptr);
-    ~DeveloperToolWidget();
+    ~DeveloperToolWidget() override;
     QWebEnginePage *enginePage() const;
 
 private:

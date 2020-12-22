@@ -19,7 +19,7 @@ class MESSAGEVIEWER_EXPORT DKIMManageRulesDialog : public QDialog
     Q_OBJECT
 public:
     explicit DKIMManageRulesDialog(QWidget *parent = nullptr);
-    ~DKIMManageRulesDialog();
+    ~DKIMManageRulesDialog() override;
 
 private:
     void slotAccepted();

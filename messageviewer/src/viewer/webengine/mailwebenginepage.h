@@ -19,7 +19,7 @@ class MESSAGEVIEWER_EXPORT MailWebEnginePage : public WebEngineViewer::WebEngine
     Q_OBJECT
 public:
     explicit MailWebEnginePage(QObject *parent = nullptr);
-    virtual ~MailWebEnginePage() = default;
+    ~MailWebEnginePage() override = default;
 
     void setPrintElementBackground(bool printElementBackground);
 

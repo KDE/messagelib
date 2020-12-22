@@ -15,7 +15,7 @@ class MESSAGEVIEWER_EXPORT DKIMManagerAuthenticationServer : public QObject
     Q_OBJECT
 public:
     explicit DKIMManagerAuthenticationServer(QObject *parent = nullptr);
-    ~DKIMManagerAuthenticationServer();
+    ~DKIMManagerAuthenticationServer() override;
     static DKIMManagerAuthenticationServer *self();
 
     Q_REQUIRED_RESULT QStringList serverList() const;

@@ -19,7 +19,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckFullJob : public QObject
     Q_OBJECT
 public:
     explicit DKIMCheckFullJob(QObject *parent = nullptr);
-    ~DKIMCheckFullJob();
+    ~DKIMCheckFullJob() override;
 
     void startCheckFullInfo(const KMime::Message::Ptr &message);
     void startCheckFullInfo(const Akonadi::Item &item);

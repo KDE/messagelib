@@ -20,7 +20,7 @@ class MESSAGEVIEWER_EXPORT DKIMDownloadKeyJob : public QObject
     Q_OBJECT
 public:
     explicit DKIMDownloadKeyJob(QObject *parent = nullptr);
-    ~DKIMDownloadKeyJob();
+    ~DKIMDownloadKeyJob() override;
 
     Q_REQUIRED_RESULT bool start();
 

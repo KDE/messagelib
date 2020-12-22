@@ -108,7 +108,7 @@ public:
     };
 
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
-    ~DKIMCheckSignatureJob();
+    ~DKIMCheckSignatureJob() override;
     void start();
 
     Q_REQUIRED_RESULT QString dkimValue() const;

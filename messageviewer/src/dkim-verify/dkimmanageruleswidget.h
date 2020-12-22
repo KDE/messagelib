@@ -31,7 +31,7 @@ public:
     };
 
     explicit DKIMManageRulesWidgetItem(QTreeWidget *parent = nullptr);
-    ~DKIMManageRulesWidgetItem();
+    ~DKIMManageRulesWidgetItem() override;
 
     Q_REQUIRED_RESULT MessageViewer::DKIMRule rule() const;
     void setRule(const MessageViewer::DKIMRule &rule);
@@ -51,7 +51,7 @@ class MESSAGEVIEWER_EXPORT DKIMManageRulesWidget : public QWidget
     Q_OBJECT
 public:
     explicit DKIMManageRulesWidget(QWidget *parent = nullptr);
-    ~DKIMManageRulesWidget();
+    ~DKIMManageRulesWidget() override;
     void loadSettings();
     void saveSettings();
     Q_REQUIRED_RESULT QByteArray saveHeaders() const;

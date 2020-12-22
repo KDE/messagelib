@@ -22,7 +22,7 @@ class MESSAGEVIEWER_EXPORT DKIMManagerRules : public QObject
     Q_OBJECT
 public:
     explicit DKIMManagerRules(QObject *parent = nullptr);
-    ~DKIMManagerRules();
+    ~DKIMManagerRules() override;
     static DKIMManagerRules *self();
 
     void addRule(const DKIMRule &rule);

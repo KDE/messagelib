@@ -20,7 +20,7 @@ class MESSAGEVIEWER_TESTS_EXPORT MailTrackingDetailsDialog : public QDialog
     Q_OBJECT
 public:
     explicit MailTrackingDetailsDialog(QWidget *parent = nullptr);
-    ~MailTrackingDetailsDialog();
+    ~MailTrackingDetailsDialog() override;
 
     void setDetails(const QString &details);
 private:

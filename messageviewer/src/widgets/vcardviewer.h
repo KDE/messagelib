@@ -20,7 +20,7 @@ class VCardViewer : public QDialog
     Q_OBJECT
 public:
     explicit VCardViewer(QWidget *parent, const QByteArray &vCard);
-    ~VCardViewer();
+    ~VCardViewer() override;
 
 private:
     void slotUser1();

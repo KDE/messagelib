@@ -17,7 +17,7 @@ class MESSAGEVIEWER_TESTS_EXPORT MessageWidgetArea : public QWidget
     Q_OBJECT
 public:
     explicit MessageWidgetArea(QWidget *parent = nullptr);
-    ~MessageWidgetArea();
+    ~MessageWidgetArea() override;
 };
 }
 #endif // MESSAGEWIDGETAREA_H

@@ -22,7 +22,7 @@ class MESSAGEVIEWER_EXPORT DKIMWidgetInfo : public QWidget
     Q_OBJECT
 public:
     explicit DKIMWidgetInfo(QWidget *parent = nullptr);
-    ~DKIMWidgetInfo();
+    ~DKIMWidgetInfo() override;
     void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id);
     void clear();
 

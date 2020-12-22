@@ -39,7 +39,7 @@ public:
     };
 
     explicit DMARCPolicyJob(QObject *parent = nullptr);
-    ~DMARCPolicyJob();
+    ~DMARCPolicyJob() override;
 
     Q_REQUIRED_RESULT bool canStart() const;
     Q_REQUIRED_RESULT bool start();

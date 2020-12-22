@@ -17,7 +17,7 @@ class SubmittedFormWarningWidget : public KMessageWidget
     Q_OBJECT
 public:
     explicit SubmittedFormWarningWidget(QWidget *parent = nullptr);
-    ~SubmittedFormWarningWidget();
+    ~SubmittedFormWarningWidget() override;
 
 public Q_SLOTS:
     void showWarning();

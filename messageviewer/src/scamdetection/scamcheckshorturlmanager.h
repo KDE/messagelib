@@ -22,7 +22,7 @@ class MESSAGEVIEWER_EXPORT ScamCheckShortUrlManager : public QObject
     Q_OBJECT
 public:
     explicit ScamCheckShortUrlManager(QObject *parent = nullptr);
-    ~ScamCheckShortUrlManager();
+    ~ScamCheckShortUrlManager() override;
     static ScamCheckShortUrlManager *self();
     Q_REQUIRED_RESULT ScamCheckShortUrl *scamCheckShortUrl() const;
 private:

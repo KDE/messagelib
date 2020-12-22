@@ -19,7 +19,7 @@ class MailSourceWebEngineViewer : public QDialog
     Q_OBJECT
 public:
     explicit MailSourceWebEngineViewer(QWidget *parent = nullptr);
-    ~MailSourceWebEngineViewer();
+    ~MailSourceWebEngineViewer() override;
 
     void setRawSource(const QString &source);
     void setDisplayedSource(QWebEnginePage *page);

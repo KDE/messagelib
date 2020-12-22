@@ -19,7 +19,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMRuleWidget : public QWidget
     Q_OBJECT
 public:
     explicit DKIMRuleWidget(QWidget *parent = nullptr);
-    ~DKIMRuleWidget();
+    ~DKIMRuleWidget() override;
     void loadRule(const MessageViewer::DKIMRule &rule);
     Q_REQUIRED_RESULT MessageViewer::DKIMRule rule() const;
 

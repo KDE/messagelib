@@ -21,7 +21,7 @@ public:
     };
 
     explicit OpenSavedFileFolderWidget(QWidget *parent = nullptr);
-    ~OpenSavedFileFolderWidget();
+    ~OpenSavedFileFolderWidget() override;
 
     void setUrls(const QList<QUrl> &urls, MessageViewer::OpenSavedFileFolderWidget::FileType fileType);
 

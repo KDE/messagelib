@@ -27,7 +27,7 @@ class MESSAGEVIEWER_EXPORT HeaderStylePlugin : public QObject
     Q_OBJECT
 public:
     explicit HeaderStylePlugin(QObject *parent = nullptr);
-    ~HeaderStylePlugin();
+    ~HeaderStylePlugin() override;
 
     virtual HeaderStyle *headerStyle() const = 0;
     virtual HeaderStrategy *headerStrategy() const = 0;

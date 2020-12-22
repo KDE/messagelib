@@ -18,7 +18,7 @@ class ModifyMessageDisplayFormatJob : public QObject
     Q_OBJECT
 public:
     explicit ModifyMessageDisplayFormatJob(Akonadi::Session *session, QObject *parent = nullptr);
-    ~ModifyMessageDisplayFormatJob();
+    ~ModifyMessageDisplayFormatJob() override;
 
     void setRemoteContent(bool remote);
     void setMessageFormat(Viewer::DisplayFormatMessage format);

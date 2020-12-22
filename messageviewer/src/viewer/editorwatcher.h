@@ -50,7 +50,7 @@ public:
      */
     explicit EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithOption option, QObject *parent, QWidget *parentWidget);
 
-    ~EditorWatcher();
+    ~EditorWatcher() override;
     Q_REQUIRED_RESULT ErrorEditorWatcher start();
     Q_REQUIRED_RESULT bool fileChanged() const;
     Q_REQUIRED_RESULT QUrl url() const;

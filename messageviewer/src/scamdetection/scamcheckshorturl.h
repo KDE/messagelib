@@ -24,7 +24,7 @@ class MESSAGEVIEWER_EXPORT ScamCheckShortUrl : public QObject
     Q_OBJECT
 public:
     explicit ScamCheckShortUrl(QObject *parent = nullptr);
-    ~ScamCheckShortUrl();
+    ~ScamCheckShortUrl() override;
 
     static Q_REQUIRED_RESULT bool isShortUrl(const QUrl &url);
 
