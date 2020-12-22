@@ -35,3 +35,8 @@ void RemoteContentInfo::setStatus(const RemoteContentInfoStatus &status)
 {
     mStatus = status;
 }
+
+bool RemoteContentInfo::isValid() const
+{
+    return !mUrl.isEmpty() && (mStatus != RemoteContentInfoStatus::Unknown);
+}

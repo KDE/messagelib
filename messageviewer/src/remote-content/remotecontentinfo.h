@@ -31,6 +31,8 @@ public:
     Q_REQUIRED_RESULT RemoteContentInfoStatus status() const;
     void setStatus(const RemoteContentInfoStatus &status);
 
+    Q_REQUIRED_RESULT bool isValid() const;
+
 private:
     RemoteContentInfoStatus mStatus = RemoteContentInfoStatus::Unknown;
     QString mUrl;

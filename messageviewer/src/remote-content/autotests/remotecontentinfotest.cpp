@@ -18,4 +18,5 @@ void RemoteContentInfoTest::shouldHaveDefaultValues()
     MessageViewer::RemoteContentInfo info;
     QVERIFY(info.url().isEmpty());
     QCOMPARE(info.status(), MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Unknown);
+    QVERIFY(!info.isValid());
 }
