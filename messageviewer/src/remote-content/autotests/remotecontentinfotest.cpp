@@ -16,5 +16,6 @@ RemoteContentInfoTest::RemoteContentInfoTest(QObject *parent)
 void RemoteContentInfoTest::shouldHaveDefaultValues()
 {
     MessageViewer::RemoteContentInfo info;
-    //TODO
+    QVERIFY(info.url().isEmpty());
+    QCOMPARE(info.status(), MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Unknown);
 }
