@@ -497,14 +497,18 @@ Akonadi::Collection StorageModel::collectionForId(Akonadi::Collection::Id colId)
 {
     // Get ETM
     auto *childrenProxy = static_cast<QAbstractProxyModel *>(d->mChildrenFilterModel);
-    QAbstractItemModel *etm = childrenProxy->sourceModel();
-
-    // get index in EntityTreeModel
-    const QModelIndex idx = EntityTreeModel::modelIndexForCollection(etm, Collection(colId));
-    Q_ASSERT(idx.isValid());
-
-    // get and return collection
-    return idx.data(EntityTreeModel::CollectionRole).value<Collection>();
+    if (childrenProxy) {
+        QAbstractItemModel *etm = childrenProxy->sourceModel();
+        if (etm) {
+            // get index in EntityTreeModel
+            const QModelIndex idx = EntityTreeModel::modelIndexForCollection(etm, Collection(colId));
+            if (idx.isValid()) {
+                // get and return collection
+                return idx.data(EntityTreeModel::CollectionRole).value<Collection>();
+            }
+        }
+    }
+    return Akonadi::Collection();
 }
 
 void StorageModel::resetModelStorage()
