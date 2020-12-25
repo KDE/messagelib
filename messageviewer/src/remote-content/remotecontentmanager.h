@@ -18,6 +18,10 @@ public:
     explicit RemoteContentManager(QObject *parent = nullptr);
     ~RemoteContentManager() override;
     static RemoteContentManager *self();
+
+private:
+    void loadSettings();
+    void writeSettings();
 };
 }
 
