@@ -11,6 +11,7 @@ public:
     ~RemoteContentInfoTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldVerifyIsValid();
 };
 
 #endif // REMOTECONTENTINFOTEST_H

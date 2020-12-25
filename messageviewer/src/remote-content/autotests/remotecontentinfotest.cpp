@@ -20,3 +20,16 @@ void RemoteContentInfoTest::shouldHaveDefaultValues()
     QCOMPARE(info.status(), MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Unknown);
     QVERIFY(!info.isValid());
 }
+
+void RemoteContentInfoTest::shouldVerifyIsValid()
+{
+    MessageViewer::RemoteContentInfo info;
+    QCOMPARE(info.status(), MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Unknown);
+    QVERIFY(!info.isValid());
+    info.setUrl(QStringLiteral("bla"));
+    QVERIFY(!info.isValid());
+    info.setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Blocked);
+    QVERIFY(info.isValid());
+    info.setUrl({});
+    QVERIFY(!info.isValid());
+}
