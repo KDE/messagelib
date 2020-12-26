@@ -9,6 +9,7 @@
 */
 #include "viewer_p.h"
 #include "viewerpurposemenuwidget.h"
+#include <kwidgetsaddons_version.h>
 
 #include "messageviewer_debug.h"
 #include "utils/mimetype.h"
@@ -1562,8 +1563,13 @@ void ViewerPrivate::createActions()
                                               i18n("&Set Encoding"), this);
     mSelectEncodingAction->setToolBarMode(KSelectAction::MenuMode);
     ac->addAction(QStringLiteral("encoding"), mSelectEncodingAction);
+#if KWIDGETSADDONS_VERSION < QT_VERSION_CHECK(5, 78, 0)
     connect(mSelectEncodingAction, qOverload<int>(&KSelectAction::triggered),
             this, &ViewerPrivate::slotSetEncoding);
+#else
+    connect(mSelectEncodingAction, &KSelectAction::indexTriggered,
+            this, &ViewerPrivate::slotSetEncoding);
+#endif
     QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings(false);
     encodings.prepend(i18n("Auto"));
     mSelectEncodingAction->setItems(encodings);
