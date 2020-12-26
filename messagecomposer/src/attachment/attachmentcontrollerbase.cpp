@@ -9,7 +9,6 @@
  */
 
 #include "attachmentcontrollerbase.h"
-#include <kwidgetsaddons_version.h>
 
 #include <MessageComposer/AttachmentModel>
 #include "MessageComposer/AttachmentJob"
@@ -463,11 +462,7 @@ void AttachmentControllerBase::createActions()
 
     d->attachmentMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-attachment")), i18n("Attach"), this);
     connect(d->attachmentMenu, &QAction::triggered, this, &AttachmentControllerBase::showAddAttachmentFileDialog);
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     d->attachmentMenu->setPopupMode(QToolButton::DelayedPopup);
-#else
-    d->attachmentMenu->setDelayed(true);
-#endif
 
 
     d->addAttachmentFileAction = new QAction(QIcon::fromTheme(QStringLiteral("mail-attachment")), i18n("&Attach File..."), this);
