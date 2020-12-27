@@ -211,18 +211,21 @@ void ComposerPrivate::composeStep2()
         sJob->setCryptoMessageFormat(format);
         sJob->setSigningKeys(signers);
         sJob->appendSubjob(mainJob);
-        if (!encrypt) {
-            sJob->setSkeletonMessage(skeletonMessage);
-        }
+        sJob->setSkeletonMessage(skeletonMessage);
         mainJob = sJob;
     }
 
     if (encrypt) {
         const auto lstJob = createEncryptJobs(mainJob, false);
-        for (ContentJobBase *eJob : lstJob) {
-            QObject::connect(eJob, SIGNAL(finished(KJob*)), q, SLOT(contentJobFinished(KJob*)));
-            q->addSubjob(eJob);
-            mainJob = eJob;         //start only last EncryptJob
+        for (ContentJobBase *job : lstJob) {
+            auto eJob = dynamic_cast<EncryptJob *>(job);
+            if (eJob && sign) {
+                // When doing Encrypt and Sign move headers only in the singed part
+                eJob->setProtectedHeaders(false);
+            }
+            QObject::connect(job, SIGNAL(finished(KJob*)), q, SLOT(contentJobFinished(KJob*)));
+            q->addSubjob(job);
+            mainJob = job;         //start only last EncryptJob
         }
     } else {
         QObject::connect(mainJob, SIGNAL(finished(KJob*)), q, SLOT(contentJobFinished(KJob*)));
