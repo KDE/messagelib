@@ -20,6 +20,8 @@ public:
     ~RemoteContentManager() override;
     static RemoteContentManager *self();
 
+    Q_REQUIRED_RESULT bool isAutorized(const QString &url) const;
+
 private:
     void loadSettings();
     void writeSettings();
