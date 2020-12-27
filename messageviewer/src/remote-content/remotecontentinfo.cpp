@@ -40,3 +40,10 @@ bool RemoteContentInfo::isValid() const
 {
     return !mUrl.isEmpty() && (mStatus != RemoteContentInfoStatus::Unknown);
 }
+
+QDebug operator <<(QDebug d, const MessageViewer::RemoteContentInfo &t)
+{
+    d << "mUrl " << t.url();
+    d << "mStatus " << t.status();
+    return d;
+}

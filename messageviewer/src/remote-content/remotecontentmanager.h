@@ -11,6 +11,7 @@
 #include "messageviewer_private_export.h"
 #include <QObject>
 namespace MessageViewer {
+class RemoteContentInfo;
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentManager : public QObject
 {
     Q_OBJECT
@@ -22,6 +23,7 @@ public:
 private:
     void loadSettings();
     void writeSettings();
+    QVector<RemoteContentInfo> mRemoveContentInfo;
 };
 }
 

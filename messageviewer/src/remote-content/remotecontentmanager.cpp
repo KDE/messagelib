@@ -5,6 +5,7 @@
 */
 
 #include "remotecontentmanager.h"
+#include "remotecontentinfo.h"
 using namespace MessageViewer;
 RemoteContentManager::RemoteContentManager(QObject *parent)
     : QObject(parent)
