@@ -322,6 +322,77 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
     QCOMPARE(QString::fromLatin1(MessageCore::NodeHelper::nextSibling(b)->body()), QString::fromLatin1("abc"));
 }
 
+// protected headers
+void CryptoComposerTest::testProtectedHeaders_data()
+{
+    QTest::addColumn<QString>("data");
+    QTest::addColumn<bool>("sign");
+    QTest::addColumn<bool>("encrypt");
+    QTest::addColumn<Headers::contentEncoding>("cte");
+
+    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QTest::newRow("SignOpenPGPMime") << data << true << false << Headers::CE7Bit;
+    QTest::newRow("EncryptOpenPGPMime") << data << false << true << Headers::CE7Bit;
+    QTest::newRow("SignEncryptOpenPGPMime") << data << true << true << Headers::CE7Bit;
+}
+
+void CryptoComposerTest::testProtectedHeaders()
+{
+    QFETCH(QString, data);
+    QFETCH(bool, sign);
+    QFETCH(bool, encrypt);
+    QFETCH(Headers::contentEncoding, cte);
+
+    Composer composer;
+
+    fillComposerData(&composer, data);
+    fillComposerCryptoData(&composer);
+
+    composer.setSignAndEncrypt(sign, encrypt);
+    composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+
+    VERIFYEXEC((&composer));
+    QCOMPARE(composer.resultMessages().size(), 1);
+
+    KMime::Message::Ptr message = composer.resultMessages().first();
+
+    // parse the result and make sure it is valid in various ways
+    MimeTreeParser::SimpleObjectTreeSource testSource;
+    MimeTreeParser::NodeHelper nh;
+    MimeTreeParser::ObjectTreeParser otp(&testSource, &nh);
+
+    testSource.setDecryptMessage(true);
+    otp.parseObjectTree(message.data());
+
+    if (encrypt) {
+        QCOMPARE(nh.encryptionState(message.data()), MimeTreeParser::KMMsgFullyEncrypted);
+    }
+
+    if (sign && !encrypt) {
+        QCOMPARE(nh.signatureState(message.data()), MimeTreeParser::KMMsgFullySigned);
+    }
+
+    KMime::Content *part = nullptr;
+
+    if (sign && !encrypt) {
+        part = Util::findTypeInMessage(message.data(), "text", "plain");
+    } else if (encrypt) {
+        auto extraContents = nh.extraContents(message.data());
+        QCOMPARE(extraContents.size(), 1);
+        part =  extraContents.first();
+        if (sign) {
+            QVERIFY(!part->contentType(false)->hasParameter(QStringLiteral("protected-headers")));
+            QVERIFY(!part->headerByType("to"));
+            QVERIFY(!part->headerByType("from:"));
+            part = Util::findTypeInMessage(part, "text", "plain");
+        }
+    }
+    QVERIFY(part);
+    QCOMPARE(part->contentType(false)->parameter(QStringLiteral("protected-headers")),QStringLiteral("v1"));
+    QCOMPARE(part->headerByType("to")->asUnicodeString(), QStringLiteral("you@you.you"));
+    QCOMPARE(part->headerByType("from")->asUnicodeString(), QStringLiteral("me@me.me"));
+}
+
 void CryptoComposerTest::testBCCEncrypt_data()
 {
     QTest::addColumn<int>("format");
