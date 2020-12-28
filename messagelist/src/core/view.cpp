@@ -2457,7 +2457,7 @@ bool View::event(QEvent *e)
             "</div>" \
             "</td>" \
             "</tr>"
-            ).arg(txtColorName).arg(bckColorName).arg(ghi->label()).arg(textDirection);
+            ).arg(txtColorName, bckColorName, ghi->label(), textDirection);
 
         QString description;
 
@@ -2599,7 +2599,7 @@ bool View::event(QEvent *e)
                 "%1" \
                 "</td>" \
                 "</tr>"
-                ).arg(description).arg(textDirection);
+                ).arg(description, textDirection);
         }
 
         if (ghi->hasChildren()) {

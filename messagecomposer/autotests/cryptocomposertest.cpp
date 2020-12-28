@@ -127,7 +127,7 @@ void CryptoComposerTest::testEncryptSameAttachments()
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().first();
+    KMime::Message::Ptr message = composer->resultMessages().constFirst();
     delete composer;
     composer = nullptr;
 
@@ -249,7 +249,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().first();
+    KMime::Message::Ptr message = composer->resultMessages().constFirst();
     delete composer;
     composer = nullptr;
 
@@ -306,7 +306,7 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().first();
+    KMime::Message::Ptr message = composer->resultMessages().constFirst();
     delete composer;
     composer = nullptr;
 
@@ -365,7 +365,7 @@ void CryptoComposerTest::testBCCEncrypt()
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 2);
 
-    KMime::Message::Ptr primMessage = composer->resultMessages().first();
+    KMime::Message::Ptr primMessage = composer->resultMessages().constFirst();
     KMime::Message::Ptr secMessage = composer->resultMessages()[1];
     delete composer;
     composer = nullptr;
@@ -415,7 +415,7 @@ void CryptoComposerTest::testOpenPGPInline()
     VERIFYEXEC(composer);
     QCOMPARE(composer->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().first();
+    KMime::Message::Ptr message = composer->resultMessages().constFirst();
     delete composer;
     composer = nullptr;
 
@@ -581,7 +581,7 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     QVERIFY(result);
     if (result) {
         QCOMPARE(composer->resultMessages().size(), 1);
-        KMime::Message::Ptr message = composer->resultMessages().first();
+        KMime::Message::Ptr message = composer->resultMessages().constFirst();
         delete composer;
         composer = nullptr;
 

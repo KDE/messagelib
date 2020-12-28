@@ -31,7 +31,7 @@ RemoteContentInfo::RemoteContentInfoStatus RemoteContentInfo::status() const
     return mStatus;
 }
 
-void RemoteContentInfo::setStatus(const RemoteContentInfoStatus &status)
+void RemoteContentInfo::setStatus(RemoteContentInfoStatus status)
 {
     mStatus = status;
 }

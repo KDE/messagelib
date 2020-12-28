@@ -548,7 +548,6 @@ QList< ModelInvariantIndex * > *ModelInvariantRowMapper::modelRowsRemoved(int mo
 void ModelInvariantRowMapper::modelReset()
 {
     // FIXME: optimize this (it probably can be optimized by providing a more complex user interface)
-    QHash< int, ModelInvariantIndex * >::ConstIterator end(d->mCurrentInvariantHash->constEnd());
 
     for (const auto idx : qAsConst(*d->mCurrentInvariantHash)) {
         idx->d->setRowMapper(nullptr);

@@ -30,7 +30,7 @@ public:
     void setUrl(const QString &url);
 
     Q_REQUIRED_RESULT RemoteContentInfoStatus status() const;
-    void setStatus(const RemoteContentInfoStatus &status);
+    void setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus status);
 
     Q_REQUIRED_RESULT bool isValid() const;
 

@@ -429,7 +429,7 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
                                      "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
                                      "X-KMail-Link-Message: 0\n"
                                      "X-KMail-Link-Type: reply\n\n> All happy families are alike; each unhappy family is unhappy in its own way.")
-                 .arg(dateStr).arg(replyTo).arg(reference);
+                 .arg(dateStr, replyTo, reference);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
     msg.clear();
 }
@@ -636,11 +636,11 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 
     QString datetime = rdir->date()->asUnicodeString();
 
-    const QRegularExpression rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
+    const QRegularExpression rx(QStringLiteral("Resent-Message-ID: ([^\n]*)"));
     const QRegularExpressionMatch rxMatch = rx.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxMatch.hasMatch());
 
-    const QRegularExpression rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
+    const QRegularExpression rxmessageid(QStringLiteral("Message-ID: ([^\n]+)"));
     const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxmessageidMatch.hasMatch());
 
@@ -685,11 +685,11 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
 
     QString datetime = rdir->date()->asUnicodeString();
 
-    const QRegularExpression rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
+    const QRegularExpression rx(QStringLiteral("Resent-Message-ID: ([^\n]*)"));
     const QRegularExpressionMatch rxMatch = rx.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxMatch.hasMatch());
 
-    const QRegularExpression rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
+    const QRegularExpression rxmessageid(QStringLiteral("Message-ID: ([^\n]+)"));
     const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxmessageidMatch.hasMatch());
 
@@ -778,11 +778,11 @@ void MessageFactoryTest::testCreateResend()
 
     QString datetime = rdir->date()->asUnicodeString();
 
-    const QRegularExpression rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
+    const QRegularExpression rx(QStringLiteral("Resent-Message-ID: ([^\n]*)"));
     const QRegularExpressionMatch rxMatch = rx.match(QString::fromLatin1(rdir->head()));
     QVERIFY(!rxMatch.hasMatch());
 
-    const QRegularExpression rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
+    const QRegularExpression rxmessageid(QStringLiteral("Message-ID: ([^\n]+)"));
     const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxmessageidMatch.hasMatch());
 
@@ -822,7 +822,7 @@ void MessageFactoryTest::testCreateMDN()
     QString mdnContent = QString::fromLatin1("The message sent on %1 to %2 with subject \"%3\" has been displayed. "
                                              "This is no guarantee that the message has been read or understood.");
     mdnContent = mdnContent.arg(KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, msg->date()->dateTime().toSecsSinceEpoch()))
-                 .arg(msg->to()->asUnicodeString()).arg(msg->subject()->asUnicodeString());
+                 .arg(msg->to()->asUnicodeString(), msg->subject()->asUnicodeString());
 
     QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(),
                      mdnContent.toLatin1());
@@ -834,9 +834,9 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
     auto *composer = new Composer;
     composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
-    composer->infoPart()->setTo(QStringList(QLatin1String("you@you.you")));
-    composer->infoPart()->setCc(QStringList(QLatin1String("cc@cc.cc")));
-    composer->infoPart()->setBcc(QStringList(QLatin1String("bcc@bcc.bcc")));
+    composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
+    composer->infoPart()->setCc(QStringList(QStringLiteral("cc@cc.cc")));
+    composer->infoPart()->setBcc(QStringList(QStringLiteral("bcc@bcc.bcc")));
     composer->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
     composer->infoPart()->setSubject(QStringLiteral("Test Email Subject"));
     composer->globalPart()->setMDNRequested(true);
@@ -863,7 +863,7 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
     composer->globalPart()->setMDNRequested(true);
     composer->exec();
 
-    KMime::Message::Ptr message = KMime::Message::Ptr(composer->resultMessages().first());
+    const KMime::Message::Ptr message = KMime::Message::Ptr(composer->resultMessages().constFirst());
     delete composer;
 
     MessageComposerSettings::self()->setPreferredCharsets(QStringList() << QStringLiteral("us-ascii") << QStringLiteral("iso-8859-1") << QStringLiteral("utf-8"));
