@@ -6,6 +6,9 @@
 
 #include "remotecontentmanager.h"
 #include "remotecontentinfo.h"
+#include <KConfigGroup>
+#include <KSharedConfig>
+
 using namespace MessageViewer;
 RemoteContentManager::RemoteContentManager(QObject *parent)
     : QObject(parent)
@@ -36,6 +39,10 @@ bool RemoteContentManager::isAutorized(const QString &url) const
 
 void RemoteContentManager::loadSettings()
 {
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group(config, "RemoteContent");
+    const QStringList blockedUrl = group.readEntry("Blocked", QStringList());
+
     //TODO
 }
 
