@@ -22,12 +22,11 @@ public:
 
     Q_REQUIRED_RESULT bool isAutorized(const QString &url) const;
 
+    void addRemoteContent(const RemoteContentInfo &info);
 private:
     void loadSettings();
     void writeSettings();
     QVector<RemoteContentInfo> mRemoveContentInfo;
-    QStringList mBlockedUrl;
-    QStringList mAuthorizedUrl;
 };
 }
 
