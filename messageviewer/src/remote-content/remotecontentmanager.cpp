@@ -13,12 +13,12 @@ using namespace MessageViewer;
 RemoteContentManager::RemoteContentManager(QObject *parent)
     : QObject(parent)
 {
-
+    loadSettings();
 }
 
 RemoteContentManager::~RemoteContentManager()
 {
-
+    writeSettings();
 }
 
 RemoteContentManager *RemoteContentManager::self()
@@ -41,12 +41,14 @@ void RemoteContentManager::loadSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group(config, "RemoteContent");
-    const QStringList blockedUrl = group.readEntry("Blocked", QStringList());
-
-    //TODO
+    mBlockedUrl = group.readEntry("Blocked", QStringList());
+    mAuthorizedUrl = group.readEntry("Authorized", QStringList());
 }
 
 void RemoteContentManager::writeSettings()
 {
-    //TODO
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group(config, "RemoteContent");
+    group.writeEntry("Blocked", mBlockedUrl);
+    group.writeEntry("Authorized", mAuthorizedUrl);
 }

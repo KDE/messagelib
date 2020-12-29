@@ -26,6 +26,8 @@ private:
     void loadSettings();
     void writeSettings();
     QVector<RemoteContentInfo> mRemoveContentInfo;
+    QStringList mBlockedUrl;
+    QStringList mAuthorizedUrl;
 };
 }
 
