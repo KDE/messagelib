@@ -80,7 +80,7 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
                                           mUrl.path().toLatin1().constData(),
                                           IN_CLOSE | IN_OPEN | IN_MODIFY | IN_ATTRIB);
         if (mInotifyWatch >= 0) {
-            auto *sn = new QSocketNotifier(mInotifyFd, QSocketNotifier::Read, this);
+            auto sn = new QSocketNotifier(mInotifyFd, QSocketNotifier::Read, this);
             connect(sn, &QSocketNotifier::activated, this, &EditorWatcher::inotifyEvent);
             mHaveInotify = true;
             mFileModified = false;

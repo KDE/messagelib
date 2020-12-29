@@ -29,9 +29,9 @@ VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
     : QDialog(parent)
 {
     setWindowTitle(i18nc("@title:window", "vCard Viewer"));
-    auto *mainLayout = new QVBoxLayout(this);
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    auto *user1Button = new QPushButton;
+    auto mainLayout = new QVBoxLayout(this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto user1Button = new QPushButton;
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
     mUser2Button = new QPushButton;
     mUser3Button = new QPushButton;
@@ -46,7 +46,7 @@ VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
     KGuiItem::assign(mUser3Button, KGuiItem(i18n("&Previous Card")));
 
     mContactViewer = new KAddressBookGrantlee::GrantleeContactViewer(this);
-    auto *actions = new Akonadi::ContactDefaultActions(this);
+    auto actions = new Akonadi::ContactDefaultActions(this);
     actions->connectToView(mContactViewer);
 
     mContactViewer->setForceDisableQRCode(true);
@@ -100,7 +100,7 @@ void VCardViewer::slotUser1()
 {
     const KContacts::Addressee contact = mAddresseeList.at(mAddresseeListIndex);
 
-    auto *job = new Akonadi::AddContactJob(contact, this, this);
+    auto job = new Akonadi::AddContactJob(contact, this, this);
     job->start();
 }
 

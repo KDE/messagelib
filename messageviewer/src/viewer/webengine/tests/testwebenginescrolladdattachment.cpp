@@ -35,13 +35,13 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
 TestWebEngineScrollAddAttachment::TestWebEngineScrollAddAttachment(QWidget *parent)
     : QWidget(parent)
 {
-    auto *vboxLayout = new QVBoxLayout(this);
+    auto vboxLayout = new QVBoxLayout(this);
 
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vboxLayout->addWidget(mTestWebEngine);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
-    QPushButton *scrollToButton = new QPushButton(QStringLiteral("Scroll to Attachment"), this);
+    auto scrollToButton = new QPushButton(QStringLiteral("Scroll to Attachment"), this);
     vboxLayout->addWidget(scrollToButton);
     connect(scrollToButton, &QPushButton::clicked, this,
             &TestWebEngineScrollAddAttachment::slotScrollToAttachment);
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    auto *testWebEngine = new TestWebEngineScrollAddAttachment;
+    auto testWebEngine = new TestWebEngineScrollAddAttachment;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

@@ -67,7 +67,7 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
                 qCWarning(WEBENGINEVIEWER_LOG) << "Database client state is unknown";
                 Q_EMIT checkUrlFinished(url, WebEngineViewer::CheckPhishingUrlUtil::Unknown);
             } else {
-                auto *job = new WebEngineViewer::SearchFullHashJob(this);
+                auto job = new WebEngineViewer::SearchFullHashJob(this);
                 job->setDatabaseState(QStringList() << d->mNewClientState);
                 job->setSearchHashs(conflictHashs);
                 job->setSearchFullHashForUrl(url);

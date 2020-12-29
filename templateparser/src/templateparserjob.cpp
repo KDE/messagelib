@@ -258,7 +258,7 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
         htmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
     }
 
-    auto *job = new TemplateParserExtractHtmlInfo(this);
+    auto job = new TemplateParserExtractHtmlInfo(this);
     connect(job, &TemplateParserExtractHtmlInfo::finished, this, &TemplateParserJob::slotExtractInfoDone);
 
     job->setHtmlForExtractingTextPlain(plainText);
@@ -312,7 +312,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 const int len = parseQuotes(QStringLiteral("DICTIONARYLANGUAGE="), cmd, q);
                 i += len;
                 if (!q.isEmpty()) {
-                    auto *header = new KMime::Headers::Generic("X-KMail-Dictionary");
+                    auto header = new KMime::Headers::Generic("X-KMail-Dictionary");
                     header->fromUnicodeString(q, "utf-8");
                     d->mMsg->setHeader(header);
                 }
@@ -485,7 +485,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 const QString htmlStr = pipe(pipe_cmd, htmlBody);
                 htmlBody = htmlStr;
 
-                auto *header = new KMime::Headers::Generic("X-KMail-CursorPos");
+                auto header = new KMime::Headers::Generic("X-KMail-CursorPos");
                 header->fromUnicodeString(QString::number(0), "utf-8");
                 d->mMsg->setHeader(header);
             } else if (cmd.startsWith(QLatin1String("TEXT"))) {
@@ -998,7 +998,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("CLEAR");
                 plainBody.clear();
                 htmlBody.clear();
-                auto *header = new KMime::Headers::Generic("X-KMail-CursorPos");
+                auto header = new KMime::Headers::Generic("X-KMail-CursorPos");
                 header->fromUnicodeString(QString::number(0), "utf-8");
                 d->mMsg->setHeader(header);
             } else if (cmd.startsWith(QLatin1String("DEBUGOFF"))) {
@@ -1016,7 +1016,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CURSOR";
                 int oldI = i;
                 i += strlen("CURSOR");
-                auto *header = new KMime::Headers::Generic("X-KMail-CursorPos");
+                auto header = new KMime::Headers::Generic("X-KMail-CursorPos");
                 header->fromUnicodeString(QString::number(plainBody.length()), "utf-8");
                 /* if template is:
                 *  FOOBAR
@@ -1185,7 +1185,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
 
 KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Content *> &attachments, KMime::Content *textPart) const
 {
-    auto *mixedPart = new KMime::Content(d->mMsg.data());
+    auto mixedPart = new KMime::Content(d->mMsg.data());
     const QByteArray boundary = KMime::multiPartBoundary();
     auto contentType = mixedPart->contentType();
     contentType->setMimeType("multipart/mixed");
@@ -1212,7 +1212,7 @@ KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Con
 
 KMime::Content *TemplateParserJob::createMultipartRelated(const MessageCore::ImageCollector &ic, KMime::Content *mainTextPart) const
 {
-    auto *relatedPart = new KMime::Content(d->mMsg.data());
+    auto relatedPart = new KMime::Content(d->mMsg.data());
     const QByteArray boundary = KMime::multiPartBoundary();
     auto contentType = relatedPart->contentType();
     contentType->setMimeType("multipart/related");
@@ -1228,7 +1228,7 @@ KMime::Content *TemplateParserJob::createMultipartRelated(const MessageCore::Ima
 
 KMime::Content *TemplateParserJob::createPlainPartContent(const QString &plainBody) const
 {
-    auto *textPart = new KMime::Content(d->mMsg.data());
+    auto textPart = new KMime::Content(d->mMsg.data());
     auto ct = textPart->contentType(true);
     ct->setMimeType("text/plain");
     QTextCodec *charset = selectCharset(d->mCharsets, plainBody);
@@ -1240,7 +1240,7 @@ KMime::Content *TemplateParserJob::createPlainPartContent(const QString &plainBo
 
 KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QString &plainBody, const QString &htmlBody) const
 {
-    auto *multipartAlternative = new KMime::Content(d->mMsg.data());
+    auto multipartAlternative = new KMime::Content(d->mMsg.data());
     multipartAlternative->contentType()->setMimeType("multipart/alternative");
     const QByteArray boundary = KMime::multiPartBoundary();
     multipartAlternative->contentType(false)->setBoundary(boundary); //Already created
@@ -1248,7 +1248,7 @@ KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QStri
     KMime::Content *textPart = createPlainPartContent(plainBody);
     multipartAlternative->addContent(textPart);
 
-    auto *htmlPart = new KMime::Content(d->mMsg.data());
+    auto htmlPart = new KMime::Content(d->mMsg.data());
     htmlPart->contentType(true)->setMimeType("text/html");
     QTextCodec *charset = selectCharset(d->mCharsets, htmlBody);
     htmlPart->contentType(false)->setCharset(charset->name()); //Already created

@@ -26,7 +26,7 @@ DistributionListExpandJob::~DistributionListExpandJob()
 
 void DistributionListExpandJob::start()
 {
-    auto *job = new Akonadi::ContactGroupSearchJob(this);
+    auto job = new Akonadi::ContactGroupSearchJob(this);
     job->setQuery(Akonadi::ContactGroupSearchJob::Name, mListName);
     connect(job, &KJob::result, this, &DistributionListExpandJob::slotSearchDone);
 }
@@ -58,7 +58,7 @@ void DistributionListExpandJob::slotSearchDone(KJob *job)
         return;
     }
 
-    auto *expandJob = new Akonadi::ContactGroupExpandJob(groups.first());
+    auto expandJob = new Akonadi::ContactGroupExpandJob(groups.first());
     connect(expandJob, &KJob::result, this, &DistributionListExpandJob::slotExpansionDone);
     expandJob->start();
 }

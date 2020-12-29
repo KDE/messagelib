@@ -20,15 +20,15 @@ CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
     : QWidget(parent)
 {
     webengineview_useCompactJson = false;
-    auto *layout = new QVBoxLayout(this);
+    auto layout = new QVBoxLayout(this);
 
-    auto *checkUrlLayout = new QHBoxLayout;
+    auto checkUrlLayout = new QHBoxLayout;
     layout->addLayout(checkUrlLayout);
-    QLabel *lab = new QLabel(QStringLiteral("Url to Check:"), this);
+    auto lab = new QLabel(QStringLiteral("Url to Check:"), this);
     checkUrlLayout->addWidget(lab);
     mCheckUrlLineEdit = new QLineEdit(this);
     checkUrlLayout->addWidget(mCheckUrlLineEdit);
-    QPushButton *button = new QPushButton(QStringLiteral("Check"), this);
+    auto button = new QPushButton(QStringLiteral("Check"), this);
     checkUrlLayout->addWidget(button);
     connect(button, &QPushButton::clicked, this, &CheckPhishingUrlGui::slotCheckUrl);
     connect(mCheckUrlLineEdit, &QLineEdit::returnPressed, this, &CheckPhishingUrlGui::slotCheckUrl);
@@ -54,7 +54,7 @@ void CheckPhishingUrlGui::slotCheckUrl()
     }
     mResult->clear();
 
-    auto *job = new WebEngineViewer::CheckPhishingUrlJob(this);
+    auto job = new WebEngineViewer::CheckPhishingUrlJob(this);
     connect(job, &WebEngineViewer::CheckPhishingUrlJob::result, this, &CheckPhishingUrlGui::slotGetResult);
     connect(job, &WebEngineViewer::CheckPhishingUrlJob::debugJson, this, &CheckPhishingUrlGui::slotJSonDebug);
     job->setUrl(QUrl::fromUserInput(urlStr));
@@ -94,7 +94,7 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    auto *w = new CheckPhishingUrlGui;
+    auto w = new CheckPhishingUrlGui;
 
     w->show();
     app.exec();

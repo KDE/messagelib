@@ -122,7 +122,7 @@ Widget::Widget(QWidget *pParent)
     setAutoFillBackground(true);
     setObjectName(QStringLiteral("messagelistwidget"));
 
-    auto *g = new QVBoxLayout(this);
+    auto g = new QVBoxLayout(this);
     g->setContentsMargins({});
     g->setSpacing(0);
 
@@ -373,7 +373,7 @@ void Widget::themeMenuAboutToShow()
         return;
     }
 
-    auto *menu = qobject_cast< QMenu * >(sender());
+    auto menu = qobject_cast< QMenu * >(sender());
     if (!menu) {
         return;
     }
@@ -386,7 +386,7 @@ void Widget::themeMenuAboutToShow(QMenu *menu)
 
     menu->addSection(i18n("Theme"));
 
-    auto *grp = new QActionGroup(menu);
+    auto grp = new QActionGroup(menu);
 
     QList< Theme * > sortedThemes = Manager::instance()->themes().values();
 
@@ -425,7 +425,7 @@ void Widget::setPrivateSortOrderForStorage()
 
 void Widget::configureThemes()
 {
-    auto *dialog = new Utils::ConfigureThemesDialog(window());
+    auto dialog = new Utils::ConfigureThemesDialog(window());
     dialog->selectTheme(d->mLastThemeId);
     dialog->show();
 }
@@ -436,7 +436,7 @@ void Widget::themeSelected(bool)
         return;    // nuthin to do
     }
 
-    auto *act = qobject_cast< QAction * >(sender());
+    auto act = qobject_cast< QAction * >(sender());
     if (!act) {
         return;
     }
@@ -466,7 +466,7 @@ void Widget::themeSelected(bool)
 
 void Widget::aggregationMenuAboutToShow()
 {
-    auto *menu = qobject_cast< QMenu * >(sender());
+    auto menu = qobject_cast< QMenu * >(sender());
     if (!menu) {
         return;
     }
@@ -479,7 +479,7 @@ void Widget::aggregationMenuAboutToShow(QMenu *menu)
 
     menu->addSection(i18n("Aggregation"));
 
-    auto *grp = new QActionGroup(menu);
+    auto grp = new QActionGroup(menu);
 
     QList< Aggregation * > sortedAggregations = Manager::instance()->aggregations().values();
 
@@ -507,7 +507,7 @@ void Widget::aggregationMenuAboutToShow(QMenu *menu)
 
 void Widget::aggregationSelected(bool)
 {
-    auto *act = qobject_cast< QAction * >(sender());
+    auto act = qobject_cast< QAction * >(sender());
     if (!act) {
         return;
     }
@@ -516,7 +516,7 @@ void Widget::aggregationSelected(bool)
     QString id = v.toString();
 
     if (id.isEmpty()) {
-        auto *dialog = new Utils::ConfigureAggregationsDialog(window());
+        auto dialog = new Utils::ConfigureAggregationsDialog(window());
         dialog->selectAggregation(d->mLastAggregationId);
         dialog->show();
         return;
@@ -551,7 +551,7 @@ void Widget::sortOrderMenuAboutToShow()
         return;
     }
 
-    auto *menu = qobject_cast< QMenu * >(sender());
+    auto menu = qobject_cast< QMenu * >(sender());
     if (!menu) {
         return;
     }

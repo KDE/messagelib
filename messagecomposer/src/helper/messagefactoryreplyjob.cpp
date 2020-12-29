@@ -21,7 +21,7 @@ MessageFactoryReplyJob::~MessageFactoryReplyJob()
 
 void MessageFactoryReplyJob::start()
 {
-    auto *parser = new TemplateParser::TemplateParserJob(mMsg, (mReplyAll ? TemplateParser::TemplateParserJob::ReplyAll : TemplateParser::TemplateParserJob::Reply), this);
+    auto parser = new TemplateParser::TemplateParserJob(mMsg, (mReplyAll ? TemplateParser::TemplateParserJob::ReplyAll : TemplateParser::TemplateParserJob::Reply), this);
     connect(parser, &TemplateParser::TemplateParserJob::parsingDone, this, &MessageFactoryReplyJob::slotReplyDone);
     connect(parser, &TemplateParser::TemplateParserJob::parsingFailed, this, &MessageFactoryReplyJob::slotReplyDone);
     parser->setIdentityManager(mIdentityManager);

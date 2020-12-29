@@ -39,7 +39,7 @@ bool DKIMCheckPolicyJob::start()
             deleteLater();
             return true;
         }
-        auto *job = new DMARCPolicyJob(this);
+        auto job = new DMARCPolicyJob(this);
         job->setEmailAddress(mEmailAddress);
         connect(job, &DMARCPolicyJob::result, this, &DKIMCheckPolicyJob::dmarcPolicyResult);
         if (!job->start()) {

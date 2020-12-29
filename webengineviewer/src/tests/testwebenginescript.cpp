@@ -57,9 +57,9 @@ void TestWebEngineScriptPage::javaScriptConsoleMessage(QWebEnginePage::JavaScrip
 TestWebEngineScript::TestWebEngineScript(QWidget *parent)
     : QWidget(parent)
 {
-    auto *vboxLayout = new QVBoxLayout(this);
+    auto vboxLayout = new QVBoxLayout(this);
     mTestWebEngine = new TestWebEngineScriptView(this);
-    auto *page = new TestWebEngineScriptPage(this);
+    auto page = new TestWebEngineScriptPage(this);
     mTestWebEngine->setPage(page);
     vboxLayout->addWidget(mTestWebEngine);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    auto *testWebEngine = new TestWebEngineScript;
+    auto testWebEngine = new TestWebEngineScript;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;
@@ -108,9 +108,9 @@ int main(int argc, char *argv[])
 TestScriptWidget::TestScriptWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto *layout = new QHBoxLayout(this);
+    auto layout = new QHBoxLayout(this);
 
-    auto *vScriptLayout = new QVBoxLayout;
+    auto vScriptLayout = new QVBoxLayout;
     layout->addLayout(vScriptLayout);
 
     mScriptCombo = new QComboBox;
@@ -123,13 +123,13 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
     mScriptEdit->setAcceptRichText(false);
     vScriptLayout->addWidget(mScriptEdit);
 
-    auto *vboxLayout = new QVBoxLayout;
+    auto vboxLayout = new QVBoxLayout;
     layout->addLayout(vboxLayout);
 
     mResultEdit = new QTextEdit;
     mResultEdit->setReadOnly(true);
     vboxLayout->addWidget(mResultEdit);
-    QPushButton *button = new QPushButton(QStringLiteral("Execute Script"), this);
+    auto button = new QPushButton(QStringLiteral("Execute Script"), this);
     connect(button, &QPushButton::clicked, this, &TestScriptWidget::executeScript);
     vboxLayout->addWidget(button);
 }

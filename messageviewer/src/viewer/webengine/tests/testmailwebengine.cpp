@@ -22,7 +22,7 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     : QWidget(parent)
     , mZoom(1.0)
 {
-    auto *vbox = new QVBoxLayout(this);
+    auto vbox = new QVBoxLayout(this);
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     connect(mTestWebEngine, &MessageViewer::MailWebEngineView::openUrl, this,
             &TestMailWebEngine::slotOpenUrl);
@@ -32,29 +32,29 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     mTestWebEngine->setHtml(str, QUrl(QStringLiteral("file:///")));
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vbox->addWidget(mTestWebEngine);
-    auto *hButtonBox = new QHBoxLayout;
+    auto hButtonBox = new QHBoxLayout;
     vbox->addLayout(hButtonBox);
 
-    QPushButton *scrollUp = new QPushButton(QStringLiteral("scrollUp 10px"), this);
+    auto scrollUp = new QPushButton(QStringLiteral("scrollUp 10px"), this);
     connect(scrollUp, &QPushButton::clicked, this, &TestMailWebEngine::slotScrollUp);
     hButtonBox->addWidget(scrollUp);
 
-    QPushButton *scrollDown = new QPushButton(QStringLiteral("scrollDown 10px"), this);
+    auto scrollDown = new QPushButton(QStringLiteral("scrollDown 10px"), this);
     connect(scrollDown, &QPushButton::clicked, this, &TestMailWebEngine::slotScrollDown);
     hButtonBox->addWidget(scrollDown);
 
     hButtonBox = new QHBoxLayout;
     vbox->addLayout(hButtonBox);
 
-    QPushButton *zoomUp = new QPushButton(QStringLiteral("zoom Up"), this);
+    auto zoomUp = new QPushButton(QStringLiteral("zoom Up"), this);
     connect(zoomUp, &QPushButton::clicked, this, &TestMailWebEngine::slotZoomUp);
     hButtonBox->addWidget(zoomUp);
 
-    QPushButton *zoomDown = new QPushButton(QStringLiteral("zoom Down"), this);
+    auto zoomDown = new QPushButton(QStringLiteral("zoom Down"), this);
     connect(zoomDown, &QPushButton::clicked, this, &TestMailWebEngine::slotZoomDown);
     hButtonBox->addWidget(zoomDown);
 
-    QPushButton *printPreview = new QPushButton(QStringLiteral("Print Preview"), this);
+    auto printPreview = new QPushButton(QStringLiteral("Print Preview"), this);
     connect(printPreview, &QPushButton::clicked, this, &TestMailWebEngine::slotPrintPreview);
     hButtonBox->addWidget(printPreview);
 }
@@ -96,7 +96,7 @@ void TestMailWebEngine::slotZoomUp()
 
 void TestMailWebEngine::slotPrintPreview()
 {
-    QPrintPreviewDialog *dialog = new QPrintPreviewDialog(this);
+    auto dialog = new QPrintPreviewDialog(this);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->resize(800, 750);
 
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    auto *testWebEngine = new TestMailWebEngine;
+    auto testWebEngine = new TestMailWebEngine;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

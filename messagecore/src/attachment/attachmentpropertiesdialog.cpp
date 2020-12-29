@@ -66,7 +66,7 @@ void AttachmentPropertiesDialog::Private::init(const AttachmentPart::Ptr &part, 
     mReadOnly = readOnly;
     mPart = part;
 
-    QWidget *widget = new QWidget(q);
+    auto widget = new QWidget(q);
     mainLayout = new QVBoxLayout;
     q->setLayout(mainLayout);
 
@@ -308,7 +308,7 @@ AttachmentPropertiesDialog::AttachmentPropertiesDialog(const KMime::Content *con
     : QDialog(parent)
     , d(new Private(this))
 {
-    auto *job = new AttachmentFromMimeContentJob(content, this);
+    auto job = new AttachmentFromMimeContentJob(content, this);
     job->exec();
     if (job->error()) {
         qCCritical(MESSAGECORE_LOG) << "AttachmentFromMimeContentJob failed." << job->errorString();

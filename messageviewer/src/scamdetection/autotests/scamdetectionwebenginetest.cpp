@@ -14,7 +14,7 @@
 TestWebEngineScamDetection::TestWebEngineScamDetection(QWidget *parent)
     : QWidget(parent)
 {
-    auto *hbox = new QHBoxLayout(this);
+    auto hbox = new QHBoxLayout(this);
     mEngineView = new QWebEngineView(this);
     mScamDetectionWebEngine = new MessageViewer::ScamDetectionWebEngine(this);
     connect(mScamDetectionWebEngine, &MessageViewer::ScamDetectionWebEngine::resultScanDetection,

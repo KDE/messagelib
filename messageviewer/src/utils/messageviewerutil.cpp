@@ -467,7 +467,7 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
 
     const int bytesWritten = ds.writeRawData(data.data(), data.size());
     if (bytesWritten != data.size()) {
-        auto *f = static_cast<QFile *>(ds.device());
+        auto f = static_cast<QFile *>(ds.device());
         KMessageBox::error(parent,
                            xi18nc("1 = file name, 2 = error string",
                                   "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</qt>",
@@ -643,7 +643,7 @@ QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, Q
         actionName = i18nc("@item:inmenu Open With, %1 is application name", "%1", actionName);
     }
 
-    auto *act = new QAction(parent);
+    auto act = new QAction(parent);
     act->setIcon(QIcon::fromTheme(service->icon()));
     act->setText(actionName);
     actionGroup->addAction(act);

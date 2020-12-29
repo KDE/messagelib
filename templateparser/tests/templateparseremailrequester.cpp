@@ -16,8 +16,8 @@
 TemplateParserEmailRequesterTestWidget::TemplateParserEmailRequesterTestWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto *lay = new QHBoxLayout(this);
-    auto *w = new TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget(this);
+    auto lay = new QHBoxLayout(this);
+    auto w = new TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget(this);
     lay->addWidget(w);
 }
 
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto *w = new TemplateParserEmailRequesterTestWidget();
+    auto w = new TemplateParserEmailRequesterTestWidget();
     w->resize(800, 600);
 
     w->show();

@@ -33,7 +33,7 @@ bool DMARCPolicyJob::start()
         return false;
     }
 
-    auto *job = new DMARCRecordJob(this);
+    auto job = new DMARCRecordJob(this);
     job->setDomainName(emailDomain());
     connect(job, &MessageViewer::DMARCRecordJob::success, this, &DMARCPolicyJob::slotCheckDomain);
     connect(job, &MessageViewer::DMARCRecordJob::error, this, [this](const QString &err, const QString &domainName) {
@@ -92,7 +92,7 @@ void DMARCPolicyJob::checkSubDomain(const QString &domainName)
 {
     const QString subDomain = emailSubDomain(domainName);
     if (subDomain != domainName) {
-        auto *job = new DMARCRecordJob(this);
+        auto job = new DMARCRecordJob(this);
         job->setDomainName(subDomain);
         connect(job, &MessageViewer::DMARCRecordJob::success, this, &DMARCPolicyJob::slotCheckSubDomain);
         connect(job, &MessageViewer::DMARCRecordJob::error, this, [this](const QString &err, const QString &domainName) {

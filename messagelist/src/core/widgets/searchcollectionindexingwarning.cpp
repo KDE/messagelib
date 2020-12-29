@@ -42,7 +42,7 @@ SearchCollectionIndexingWarning::~SearchCollectionIndexingWarning()
 Akonadi::CollectionFetchJob *SearchCollectionIndexingWarning::fetchCollections(const Akonadi::Collection::List &cols, bool recursive)
 {
     const Akonadi::CollectionFetchJob::Type type = recursive ? Akonadi::CollectionFetchJob::Recursive : Akonadi::CollectionFetchJob::Base;
-    auto *fetch = new Akonadi::CollectionFetchJob(cols, type, this);
+    auto fetch = new Akonadi::CollectionFetchJob(cols, type, this);
     fetch->fetchScope().setAncestorRetrieval(Akonadi::CollectionFetchScope::None);
     fetch->fetchScope().setContentMimeTypes(QStringList() << Akonadi::Collection::mimeType()
                                                           << QStringLiteral("message/rfc822"));

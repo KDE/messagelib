@@ -33,20 +33,20 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
     mButtonBox = new QDialogButtonBox(QDialogButtonBox::Cancel, dialog);
 
     if (offer) {
-        auto *user1Button = new QPushButton;
+        auto user1Button = new QPushButton;
         mButtonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
         user1Button->setText(i18n("&Open With '%1'", offer->name()));
         user1Button->setIcon(QIcon::fromTheme(offer->icon()));
         connect(user1Button, &QPushButton::clicked, this, &AttachmentDialog::openClicked);
     }
 
-    auto *user2Button = new QPushButton;
+    auto user2Button = new QPushButton;
     mButtonBox->addButton(user2Button, QDialogButtonBox::ActionRole);
     user2Button->setText(i18n("Open &With..."));
     user2Button->setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
     connect(user2Button, &QPushButton::clicked, this, &AttachmentDialog::openWithClicked);
 
-    auto *user3Button = new QPushButton;
+    auto user3Button = new QPushButton;
     mButtonBox->addButton(user3Button, QDialogButtonBox::ActionRole);
     KGuiItem::assign(user3Button, KStandardGuiItem::saveAs());
     user3Button->setDefault(true);

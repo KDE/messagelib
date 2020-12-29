@@ -144,7 +144,7 @@ bool WebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
 void WebEngineAccessKeyPrivate::makeAccessKeyLabel(QChar accessKey, const WebEngineViewer::WebEngineAccessKeyAnchor &element)
 {
     //qDebug()<<" void WebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const WebEngineViewer::MailWebEngineAccessKeyAnchor &element)";
-    QLabel *label = new QLabel(mWebEngine);
+    auto label = new QLabel(mWebEngine);
     QFont font(label->font());
     font.setBold(true);
     label->setFont(font);

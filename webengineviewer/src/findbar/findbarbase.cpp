@@ -26,10 +26,10 @@ using namespace WebEngineViewer;
 FindBarBase::FindBarBase(QWidget *parent)
     : QWidget(parent)
 {
-    auto *lay = new QHBoxLayout(this);
+    auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
 
-    auto *closeBtn = new QToolButton(this);
+    auto closeBtn = new QToolButton(this);
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     closeBtn->setObjectName(QStringLiteral("close"));
     closeBtn->setIconSize(QSize(16, 16));
@@ -42,7 +42,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     closeBtn->setAutoRaise(true);
     lay->addWidget(closeBtn);
 
-    QLabel *label = new QLabel(i18nc("Find text", "F&ind:"), this);
+    auto label = new QLabel(i18nc("Find text", "F&ind:"), this);
     lay->addWidget(label);
 
     mSearch = new PimCommon::LineEditWithCompleterNg(this);
@@ -64,7 +64,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     lay->addWidget(mFindPrevBtn);
     mFindPrevBtn->setEnabled(false);
 
-    auto *optionsBtn = new QPushButton(this);
+    auto optionsBtn = new QPushButton(this);
     optionsBtn->setText(i18n("Options"));
     optionsBtn->setToolTip(i18n("Modify search behavior"));
     mOptionsMenu = new QMenu(optionsBtn);
@@ -231,7 +231,7 @@ bool FindBarBase::event(QEvent *e)
     // With a shortcut override we can catch this before it gets to kactions.
     const bool shortCutOverride = (e->type() == QEvent::ShortcutOverride);
     if (shortCutOverride || e->type() == QEvent::KeyPress) {
-        auto *kev = static_cast<QKeyEvent * >(e);
+        auto kev = static_cast<QKeyEvent * >(e);
         if (kev->key() == Qt::Key_Escape) {
             if (shortCutOverride) {
                 e->accept();

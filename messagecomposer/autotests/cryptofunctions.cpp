@@ -39,13 +39,13 @@ void ComposerTestUtil::verify(bool sign, bool encrypt, KMime::Content *content, 
 void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray &signedContent, Kleo::CryptoMessageFormat f, KMime::Headers::contentEncoding encoding)
 {
     // store it in a KMime::Message, that's what OTP needs
-    auto *resultMessage = new KMime::Message;
+    auto resultMessage = new KMime::Message;
     resultMessage->setContent(content->encodedContent());
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
     MimeTreeParser::SimpleObjectTreeSource testSource;
-    auto *nh = new MimeTreeParser::NodeHelper;
+    auto nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 
     // ensure the signed part exists and is parseable
@@ -115,7 +115,7 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
     // parse the result and make sure it is valid in various ways
     MimeTreeParser::SimpleObjectTreeSource testSource;
     testSource.setDecryptMessage(true);
-    auto *nh = new MimeTreeParser::NodeHelper;
+    auto nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 
     if (f & Kleo::OpenPGPMIMEFormat) {
@@ -168,7 +168,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
     // parse the result and make sure it is valid in various ways
     MimeTreeParser::SimpleObjectTreeSource testSource;
     testSource.setDecryptMessage(true);
-    auto *nh = new MimeTreeParser::NodeHelper;
+    auto nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 
     if (f & Kleo::OpenPGPMIMEFormat) {

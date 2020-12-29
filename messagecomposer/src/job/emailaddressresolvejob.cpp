@@ -76,33 +76,33 @@ void EmailAddressResolveJob::start()
     QVector<AliasesExpandJob *> jobs;
 
     if (containsAliases(d->mFrom)) {
-        auto *job = new AliasesExpandJob(d->mFrom, d->mDefaultDomainName, this);
+        auto job = new AliasesExpandJob(d->mFrom, d->mDefaultDomainName, this);
         job->setProperty("id", QStringLiteral("infoPartFrom"));
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;
     }
     if (containsAliases(d->mTo)) {
-        AliasesExpandJob *job = new AliasesExpandJob(d->mTo.join(QLatin1String(", ")), d->mDefaultDomainName, this);
+        auto job = new AliasesExpandJob(d->mTo.join(QLatin1String(", ")), d->mDefaultDomainName, this);
         job->setProperty("id", QStringLiteral("infoPartTo"));
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;
     }
 
     if (containsAliases(d->mCc)) {
-        AliasesExpandJob *job = new AliasesExpandJob(d->mCc.join(QLatin1String(", ")), d->mDefaultDomainName, this);
+        auto job = new AliasesExpandJob(d->mCc.join(QLatin1String(", ")), d->mDefaultDomainName, this);
         job->setProperty("id", QStringLiteral("infoPartCc"));
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;
     }
 
     if (containsAliases(d->mBcc)) {
-        AliasesExpandJob *job = new AliasesExpandJob(d->mBcc.join(QLatin1String(", ")), d->mDefaultDomainName, this);
+        auto job = new AliasesExpandJob(d->mBcc.join(QLatin1String(", ")), d->mDefaultDomainName, this);
         job->setProperty("id", QStringLiteral("infoPartBcc"));
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;
     }
     if (containsAliases(d->mReplyTo)) {
-        AliasesExpandJob *job = new AliasesExpandJob(d->mReplyTo.join(QLatin1String(", ")), d->mDefaultDomainName, this);
+        auto job = new AliasesExpandJob(d->mReplyTo.join(QLatin1String(", ")), d->mDefaultDomainName, this);
         job->setProperty("id", QStringLiteral("infoPartReplyTo"));
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;

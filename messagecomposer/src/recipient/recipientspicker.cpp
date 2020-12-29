@@ -35,7 +35,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     setObjectName(QStringLiteral("RecipientsPicker"));
     setWindowTitle(i18nc("@title:window", "Select Recipient"));
 
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
 
     mView = new Akonadi::RecipientsPickerWidget(true, nullptr, this);
     mainLayout->addWidget(mView);
@@ -46,7 +46,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     connect(mView->view(), &QAbstractItemView::doubleClicked,
             this, &RecipientsPicker::slotPicked);
 
-    QPushButton *searchLDAPButton = new QPushButton(i18n("Search &Directory Service"), this);
+    auto searchLDAPButton = new QPushButton(i18n("Search &Directory Service"), this);
     connect(searchLDAPButton, &QPushButton::clicked, this, &RecipientsPicker::slotSearchLDAP);
     mainLayout->addWidget(searchLDAPButton);
 
@@ -57,7 +57,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
         searchLDAPButton->setVisible(false);
     }
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     mUser1Button = new QPushButton;
     buttonBox->addButton(mUser1Button, QDialogButtonBox::ActionRole);
     mUser2Button = new QPushButton;

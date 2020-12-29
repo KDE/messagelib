@@ -90,19 +90,19 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     , d(new Private(this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    auto *mainLayout = new QVBoxLayout(this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto mainLayout = new QVBoxLayout(this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ConfigureAggregationsDialog::reject);
     setWindowTitle(i18nc("@title:window", "Customize Message Aggregation Modes"));
 
-    QWidget *base = new QWidget(this);
+    auto base = new QWidget(this);
     mainLayout->addWidget(base);
     mainLayout->addWidget(buttonBox);
 
-    auto *g = new QGridLayout(base);
+    auto g = new QGridLayout(base);
     g->setContentsMargins({});
 
     d->mAggregationList = new AggregationListWidget(base);
@@ -130,7 +130,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
         d->cloneAggregationButtonClicked();
     });
 
-    QFrame *f = new QFrame(base);
+    auto f = new QFrame(base);
     f->setFrameStyle(QFrame::Sunken | QFrame::HLine);
     f->setMinimumHeight(24);
     g->addWidget(f, 2, 1, Qt::AlignVCenter);
@@ -356,7 +356,7 @@ void ConfigureAggregationsDialog::Private::newAggregationButtonClicked()
 {
     Aggregation emptyAggregation;
     emptyAggregation.setName(uniqueNameForAggregation(i18n("New Aggregation")));
-    auto *item = new AggregationListWidgetItem(mAggregationList, emptyAggregation);
+    auto item = new AggregationListWidgetItem(mAggregationList, emptyAggregation);
 
     mAggregationList->setCurrentItem(item);
     mDeleteAggregationButton->setEnabled(item && !item->aggregation()->readOnly());
@@ -418,7 +418,7 @@ void ConfigureAggregationsDialog::Private::importAggregationButtonClicked()
             while (idx < cnt) {
                 const QString data = grp.readEntry(QStringLiteral("Set%1").arg(idx), QString());
                 if (!data.isEmpty()) {
-                    auto *set = new Aggregation();
+                    auto set = new Aggregation();
                     if (set->loadFromString(data)) {
                         set->setReadOnly(false);
                         set->generateUniqueId(); // regenerate id so it becomes different
@@ -449,7 +449,7 @@ void ConfigureAggregationsDialog::Private::exportAggregationButtonClicked()
 
         int idx = 0;
         for (QListWidgetItem *item : list) {
-            auto *themeItem = static_cast< AggregationListWidgetItem * >(item);
+            auto themeItem = static_cast< AggregationListWidgetItem * >(item);
             grp.writeEntry(QStringLiteral("Set%1").arg(idx), themeItem->aggregation()->saveToString());
             ++idx;
         }

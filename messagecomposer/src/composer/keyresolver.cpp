@@ -1925,7 +1925,7 @@ Kleo::KeyResolver::ContactPreferences Kleo::KeyResolver::lookupContactPreference
 void Kleo::KeyResolver::saveContactPreference(const QString &email, const ContactPreferences &pref) const
 {
     d->mContactPreferencesMap.insert(std::make_pair(email, pref));
-    auto *saveContactPreferencesJob = new MessageComposer::SaveContactPreferenceJob(email, pref);
+    auto saveContactPreferencesJob = new MessageComposer::SaveContactPreferenceJob(email, pref);
     saveContactPreferencesJob->start();
 }
 

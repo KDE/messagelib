@@ -23,14 +23,14 @@ DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Add Rule"));
 
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
     mRuleWidget = new DKIMRuleWidget(this);
     mRuleWidget->setObjectName(QStringLiteral("rulewidget"));
     mainLayout->addWidget(mRuleWidget);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     mainLayout->addWidget(buttonBox);
 

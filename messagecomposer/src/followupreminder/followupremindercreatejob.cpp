@@ -79,7 +79,7 @@ void FollowupReminderCreateJob::start()
             newTodoItem.setMimeType(KCalendarCore::Todo::todoMimeType());
             newTodoItem.setPayload<KCalendarCore::Todo::Ptr>(todo);
 
-            auto *createJob = new Akonadi::ItemCreateJob(newTodoItem, d->mCollection);
+            auto createJob = new Akonadi::ItemCreateJob(newTodoItem, d->mCollection);
             connect(createJob, &Akonadi::ItemCreateJob::result, this, &FollowupReminderCreateJob::slotCreateNewTodo);
         } else {
             writeFollowupReminderInfo();
@@ -101,7 +101,7 @@ void FollowupReminderCreateJob::slotCreateNewTodo(KJob *job)
         return;
     }
 
-    auto *createJob = qobject_cast<Akonadi::ItemCreateJob *>(job);
+    auto createJob = qobject_cast<Akonadi::ItemCreateJob *>(job);
     d->mTodoId = createJob->item().id();
     writeFollowupReminderInfo();
 }

@@ -128,7 +128,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
             attachmentName = i18n("unnamed attachment");
         }
 
-        auto *tempDir = new QTemporaryDir; // Will remove the directory on destruction.
+        auto tempDir = new QTemporaryDir; // Will remove the directory on destruction.
         d->tempDirs.append(tempDir);
         const QString fileName = tempDir->path() + QLatin1Char('/') + attachmentName;
         QFile f(fileName);
@@ -149,7 +149,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
         urls.append(url);
     }
 
-    auto *mimeData = new QMimeData;
+    auto mimeData = new QMimeData;
     mimeData->setUrls(urls);
     return mimeData;
 }

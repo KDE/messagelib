@@ -503,7 +503,7 @@ void ObjectTreeParserTest::testInlinePGPDecryption()
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "some random text");
 
     // This test is only a workaround, till we can set the memento to the proper node of the mail.
-    auto *content = new KMime::Content;
+    auto content = new KMime::Content;
     QVERIFY(nodeHelper.bodyPartMemento(content, "decryptverify-attachment:?place=0"));
 
     QVERIFY(otp.htmlContent().isEmpty());

@@ -69,7 +69,7 @@ void AttachmentVcardFromAddressBookJob::doStart()
             const KContacts::ContactGroup group = d->mItem.payload<KContacts::ContactGroup>();
             const QString groupName(group.name());
             const QString attachmentName = (groupName.isEmpty() ? QStringLiteral("vcard") : groupName) + QLatin1String(".vcf");
-            auto *expandJob = new Akonadi::ContactGroupExpandJob(group, this);
+            auto expandJob = new Akonadi::ContactGroupExpandJob(group, this);
             expandJob->setProperty("groupName", attachmentName);
             connect(expandJob, &KJob::result, this, &AttachmentVcardFromAddressBookJob::slotExpandGroupResult);
             expandJob->start();
@@ -92,7 +92,7 @@ void AttachmentVcardFromAddressBookJob::invalidContact()
 
 void AttachmentVcardFromAddressBookJob::slotExpandGroupResult(KJob *job)
 {
-    auto *expandJob = qobject_cast<Akonadi::ContactGroupExpandJob *>(job);
+    auto expandJob = qobject_cast<Akonadi::ContactGroupExpandJob *>(job);
     Q_ASSERT(expandJob);
 
     const QString attachmentName = expandJob->property("groupName").toString();

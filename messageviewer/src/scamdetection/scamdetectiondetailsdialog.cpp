@@ -33,10 +33,10 @@ ScamDetectionDetailsDialog::ScamDetectionDetailsDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Details"));
     setAttribute(Qt::WA_DeleteOnClose);
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    auto *user1Button = new QPushButton(this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto user1Button = new QPushButton(this);
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &ScamDetectionDetailsDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ScamDetectionDetailsDialog::reject);

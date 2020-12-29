@@ -74,8 +74,8 @@ void TemplateParserJobTest::test_convertedHtml()
     const QString referenceData = QString::fromLatin1(referenceRawData);
     QVERIFY(!referenceData.isEmpty());
 
-    auto *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
-    auto *identMan = new KIdentityManagement::IdentityManager;
+    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
+    auto identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
 
     parser->d->mOrigMsg = origMsg;
@@ -133,8 +133,8 @@ void TemplateParserJobTest::test_replyHtml()
     const QString referenceData = QString::fromLatin1(referenceRawData);
     QVERIFY(!referenceData.isEmpty());
 
-    auto *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
-    auto *identMan = new KIdentityManagement::IdentityManager;
+    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
+    auto identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
 
     parser->d->mOrigMsg = origMsg;
@@ -195,7 +195,7 @@ void TemplateParserJobTest::test_replyPlain()
     const QString referenceData = QString::fromLatin1(referenceRawData);
     QVERIFY(!referenceData.isEmpty());
 
-    auto *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
+    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
     parser->d->mOrigMsg = origMsg;
 
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
@@ -248,7 +248,7 @@ void TemplateParserJobTest::test_forwardPlain()
     const QString referenceData = QString::fromLatin1(referenceRawData);
     QVERIFY(!referenceData.isEmpty());
 
-    auto *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Forward);
+    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Forward);
     parser->d->mOrigMsg = origMsg;
 
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
@@ -301,7 +301,7 @@ void TemplateParserJobTest::test_forwardHtml()
     const QString referenceData = QString::fromLatin1(referenceRawData);
     QVERIFY(!referenceData.isEmpty());
 
-    auto *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Forward);
+    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Forward);
     parser->d->mOrigMsg = origMsg;
 
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
@@ -353,7 +353,7 @@ void TemplateParserJobTest::test_forwardedAttachments()
 
     bool referenceExists = QFile::exists(referenceFileName);
 
-    auto *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Forward);
+    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Forward);
     parser->d->mOrigMsg = origMsg;
 
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
@@ -415,9 +415,9 @@ void TemplateParserJobTest::test_processWithTemplatesForBody()
     KMime::Message::Ptr origMsg(new KMime::Message());
     origMsg->setBody(text.toLocal8Bit());
     origMsg->parse();
-    auto *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
+    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
     parser->setSelection(selection);
-    auto *identMan = new KIdentityManagement::IdentityManager;
+    auto identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(true);
     parser->d->mOrigMsg = origMsg;
@@ -509,8 +509,8 @@ void TemplateParserJobTest::test_processWithTemplatesForContent()
     origMsg->setContent(mailData);
     origMsg->parse();
 
-    auto *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
-    auto *identMan = new KIdentityManagement::IdentityManager;
+    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
+    auto identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(false);
     parser->d->mOrigMsg = origMsg;
@@ -554,8 +554,8 @@ void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone()
     origMsg->setContent(mailData);
     origMsg->parse();
 
-    auto *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
-    auto *identMan = new KIdentityManagement::IdentityManager;
+    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
+    auto identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(false);
     parser->d->mOrigMsg = origMsg;
@@ -594,7 +594,7 @@ void TemplateParserJobTest::test_makeValidHtml()
 
     KMime::Message::Ptr msg(new KMime::Message);
 
-    auto *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
+    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
     QString result = message;
     parser->makeValidHtml(result);
 

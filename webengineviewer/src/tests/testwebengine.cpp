@@ -17,8 +17,8 @@
 TestWebEngine::TestWebEngine(QWidget *parent)
     : QWidget(parent)
 {
-    auto *hboxLayout = new QHBoxLayout(this);
-    auto *pageView = new TestWebEngineView(this);
+    auto hboxLayout = new QHBoxLayout(this);
+    auto pageView = new TestWebEngineView(this);
     hboxLayout->addWidget(pageView);
     mEnginePage = new WebEngineViewer::WebEnginePage(this);
     pageView->setPage(mEnginePage);
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    auto *testWebEngine = new TestWebEngine;
+    auto testWebEngine = new TestWebEngine;
     testWebEngine->show();
     testWebEngine->resize(600, 400);
     const int ret = app.exec();

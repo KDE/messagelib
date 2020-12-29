@@ -831,7 +831,7 @@ void MessageFactoryTest::testCreateMDN()
 
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
 {
-    auto *composer = new Composer;
+    auto composer = new Composer;
     composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
@@ -852,7 +852,7 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
 
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
 {
-    auto *composer = new Composer;
+    auto composer = new Composer;
     composer->globalPart()->setFallbackCharsetEnabled(true);
     composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList() << QStringLiteral("you@you.you") << QStringLiteral("you2@you.you"));

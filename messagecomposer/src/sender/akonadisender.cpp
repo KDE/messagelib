@@ -104,7 +104,7 @@ bool AkonadiSender::doSendQueued(int customTransportId)
 
     d->mCustomTransportId = customTransportId;
 
-    auto *dispatcher = new DispatcherInterface();
+    auto dispatcher = new DispatcherInterface();
     if (d->mCustomTransportId == -1) {
         dispatcher->dispatchManually();
     } else {
@@ -119,7 +119,7 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     Q_ASSERT(message);
     qCDebug(MESSAGECOMPOSER_LOG) << "KMime::Message: \n[\n" << message->encodedContent().left(1000) << "\n]\n";
 
-    auto *qjob = new MessageQueueJob(this);
+    auto qjob = new MessageQueueJob(this);
     if (message->hasHeader("X-KMail-FccDisabled")) {
         qjob->sentBehaviourAttribute().setSentBehaviour(MailTransport::SentBehaviourAttribute::Delete);
     } else if (auto hrd = message->headerByType("X-KMail-Fcc")) {

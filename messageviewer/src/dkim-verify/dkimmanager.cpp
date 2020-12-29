@@ -70,7 +70,7 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
 
 void DKIMManager::checkFullInfo(const Akonadi::Item &item)
 {
-    auto *job = new DKIMCheckFullJob(this);
+    auto job = new DKIMCheckFullJob(this);
     job->setPolicy(mCheckPolicy);
     connect(job, &DKIMCheckFullJob::result, this, &DKIMManager::result);
     job->startCheckFullInfo(item);
@@ -78,7 +78,7 @@ void DKIMManager::checkFullInfo(const Akonadi::Item &item)
 
 void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
 {
-    auto *job = new DKIMCheckFullJob(this);
+    auto job = new DKIMCheckFullJob(this);
     job->setPolicy(mCheckPolicy);
     connect(job, &DKIMCheckFullJob::result, this, &DKIMManager::result);
     job->startCheckFullInfo(message);

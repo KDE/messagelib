@@ -167,7 +167,7 @@ void ImageScalingWidget::slotRecipientFilterAbstractClicked(QAbstractButton *but
 
 void ImageScalingWidget::slotComboboxChanged(int index)
 {
-    auto *combo = qobject_cast< QComboBox * >(sender());
+    auto combo = qobject_cast< QComboBox * >(sender());
     if (combo) {
         const bool isCustom = combo->itemData(index) == -1;
         if (combo == d->ui->CBMaximumWidth) {

@@ -13,7 +13,7 @@ using namespace MessageViewer;
 ShowNextMessageWidget::ShowNextMessageWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto *mainLayout = new QHBoxLayout(this);
+    auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
 

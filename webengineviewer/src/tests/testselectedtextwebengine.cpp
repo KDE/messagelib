@@ -15,10 +15,10 @@
 TestSelectedTextWebEngine::TestSelectedTextWebEngine(QWidget *parent)
     : QWidget(parent)
 {
-    auto *hboxLayout = new QVBoxLayout(this);
+    auto hboxLayout = new QVBoxLayout(this);
     pageView = new WebEngineViewer::WebEngineView(this);
     hboxLayout->addWidget(pageView);
-    QPushButton *showSelectedText = new QPushButton(QStringLiteral("Show Selected Text"), this);
+    auto showSelectedText = new QPushButton(QStringLiteral("Show Selected Text"), this);
     connect(showSelectedText, &QPushButton::clicked, this, &TestSelectedTextWebEngine::slotSlowSelectedText);
     hboxLayout->addWidget(showSelectedText);
 
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    auto *testWebEngine = new TestSelectedTextWebEngine;
+    auto testWebEngine = new TestSelectedTextWebEngine;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

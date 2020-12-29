@@ -57,7 +57,7 @@ void TemplatesTextEditor::clearDecorator()
 
 void TemplatesTextEditor::createHighlighter()
 {
-    KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter *highlighter = new KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter(this);
+    auto highlighter = new KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter(this);
     highlighter->toggleSpellHighlighting(checkSpellingEnabled());
     highlighter->setCurrentLanguage(spellCheckingLanguage());
     highlighter->setDefinition(mSyntaxRepo.definitionForName(QStringLiteral("KMail Template")));

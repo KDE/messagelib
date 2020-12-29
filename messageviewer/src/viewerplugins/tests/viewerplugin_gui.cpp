@@ -20,13 +20,13 @@
 ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     : QWidget(parent)
 {
-    auto *menuBar = new QMenuBar(this);
-    auto *vbox = new QVBoxLayout(this);
+    auto menuBar = new QMenuBar(this);
+    auto vbox = new QVBoxLayout(this);
     vbox->addWidget(menuBar);
-    auto *textEdit = new QTextEdit(this);
+    auto textEdit = new QTextEdit(this);
     vbox->addWidget(textEdit);
 
-    QWidget *toolManagerWidget = new QWidget(this);
+    auto toolManagerWidget = new QWidget(this);
     vbox->addWidget(toolManagerWidget);
     vbox = new QVBoxLayout;
     vbox->setContentsMargins({});
@@ -44,7 +44,7 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     }
     toolManager->setActionCollection(new KActionCollection(this));
     toolManager->createView();
-    auto *menu = new QMenu(this);
+    auto menu = new QMenu(this);
     menu->setTitle(QStringLiteral("tools"));
     menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::All));
     menuBar->addMenu(menu);
@@ -89,7 +89,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto *w = new ViewerPluginTest();
+    auto w = new ViewerPluginTest();
     w->resize(800, 200);
     w->show();
     app.exec();

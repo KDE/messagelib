@@ -20,14 +20,14 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.addHelpOption();
     parser.process(app);
-    QWidget *w = new QWidget;
-    auto *vbox = new QVBoxLayout(w);
+    auto w = new QWidget;
+    auto vbox = new QVBoxLayout(w);
 
-    auto *kale1 = new ComposerLineEdit(false);
+    auto kale1 = new ComposerLineEdit(false);
     // Add menu for completion
     kale1->enableCompletion(true);
     vbox->addWidget(kale1);
-    auto *kale2 = new ComposerLineEdit(false);
+    auto kale2 = new ComposerLineEdit(false);
     vbox->addWidget(kale2);
     vbox->addStretch();
 

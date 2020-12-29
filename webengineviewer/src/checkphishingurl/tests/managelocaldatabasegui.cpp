@@ -17,13 +17,13 @@ ManageLocalDataBaseGui::ManageLocalDataBaseGui(QWidget *parent)
     : QWidget(parent)
     , mDbManager(new WebEngineViewer::LocalDataBaseManager(this))
 {
-    auto *layout = new QVBoxLayout(this);
+    auto layout = new QVBoxLayout(this);
 
     mResult = new QPlainTextEdit(this);
     mResult->setReadOnly(true);
     layout->addWidget(mResult);
 
-    QPushButton *button = new QPushButton(QStringLiteral("Create Database"), this);
+    auto button = new QPushButton(QStringLiteral("Create Database"), this);
     connect(button, &QPushButton::clicked, this, &ManageLocalDataBaseGui::slotDownloadFullDatabase);
     layout->addWidget(button);
 }
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    auto *w = new ManageLocalDataBaseGui;
+    auto w = new ManageLocalDataBaseGui;
 
     w->show();
     app.exec();

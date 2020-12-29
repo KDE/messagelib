@@ -26,13 +26,13 @@ using namespace MessageComposer;
 Composer::Composer(QWidget *parent)
     : QWidget(parent)
 {
-    auto *topLayout = new QGridLayout(this);
+    auto topLayout = new QGridLayout(this);
     topLayout->setContentsMargins(4, 4, 4, 4);
     topLayout->setSpacing(4);
 
-    QLabel *label = new QLabel(QStringLiteral("From:"), this);
+    auto label = new QLabel(QStringLiteral("From:"), this);
     topLayout->addWidget(label, 0, 0);
-    auto *edit = new QLineEdit(this);
+    auto edit = new QLineEdit(this);
     topLayout->addWidget(edit, 0, 1);
 
     mRecipients = new RecipientsEditor(this);
@@ -42,11 +42,11 @@ Composer::Composer(QWidget *parent)
 
 //  mRecipients->setFixedHeight( 10 );
 
-    auto *editor = new QTextEdit(this);
+    auto editor = new QTextEdit(this);
     topLayout->addWidget(editor, 2, 0, 1, 2);
     topLayout->setRowStretch(2, 1);
 
-    QPushButton *button = new QPushButton(QStringLiteral("&Close"), this);
+    auto button = new QPushButton(QStringLiteral("&Close"), this);
     topLayout->addWidget(button, 3, 0, 1, 2);
     connect(button, &QPushButton::clicked, this, &Composer::slotClose);
 }

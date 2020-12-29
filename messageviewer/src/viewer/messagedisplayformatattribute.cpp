@@ -34,7 +34,7 @@ MessageDisplayFormatAttribute::~MessageDisplayFormatAttribute()
 
 MessageDisplayFormatAttribute *MessageDisplayFormatAttribute::clone() const
 {
-    auto *messageDisplayFormatAttr = new MessageDisplayFormatAttribute();
+    auto messageDisplayFormatAttr = new MessageDisplayFormatAttribute();
     messageDisplayFormatAttr->setMessageFormat(messageFormat());
     messageDisplayFormatAttr->setRemoteContent(remoteContent());
     return messageDisplayFormatAttr;

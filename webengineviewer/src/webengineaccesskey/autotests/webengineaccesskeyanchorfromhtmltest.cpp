@@ -32,7 +32,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
 TestWebEngineAccessKey::TestWebEngineAccessKey(QWidget *parent)
     : QWidget(parent)
 {
-    auto *hbox = new QHBoxLayout(this);
+    auto hbox = new QHBoxLayout(this);
     mEngineView = new QWebEngineView(this);
     connect(mEngineView, &QWebEngineView::loadFinished, this, &TestWebEngineAccessKey::loadFinished);
     hbox->addWidget(mEngineView);

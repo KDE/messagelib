@@ -56,7 +56,7 @@ void DKIMManageRulesWidgetItem::updateInfo()
 DKIMManageRulesWidget::DKIMManageRulesWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
@@ -67,7 +67,7 @@ DKIMManageRulesWidget::DKIMManageRulesWidget(QWidget *parent)
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     mTreeWidget->setAlternatingRowColors(true);
 
-    auto *searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
+    auto searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
     searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
     searchLineEdit->setClearButtonEnabled(true);
     mainLayout->addWidget(searchLineEdit);
@@ -91,7 +91,7 @@ void DKIMManageRulesWidget::loadSettings()
     const QVector<MessageViewer::DKIMRule> rules = MessageViewer::DKIMManagerRules::self()->rules();
 
     for (const MessageViewer::DKIMRule &rule : rules) {
-        auto *item = new DKIMManageRulesWidgetItem(mTreeWidget);
+        auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
         item->setRule(rule);
     }
 }
@@ -103,7 +103,7 @@ void DKIMManageRulesWidget::saveSettings()
     rules.reserve(total);
     for (int i = 0; i < total; ++i) {
         QTreeWidgetItem *item = mTreeWidget->topLevelItem(i);
-        auto *ruleItem = static_cast<DKIMManageRulesWidgetItem *>(item);
+        auto ruleItem = static_cast<DKIMManageRulesWidgetItem *>(item);
         rules.append(ruleItem->rule());
     }
     MessageViewer::DKIMManagerRules::self()->saveRules(rules);
@@ -125,7 +125,7 @@ void DKIMManageRulesWidget::addRule()
     if (dlg->exec()) {
         const MessageViewer::DKIMRule rule = dlg->rule();
         if (rule.isValid()) {
-            auto *item = new DKIMManageRulesWidgetItem(mTreeWidget);
+            auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
             item->setRule(rule);
         } else {
             qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Rule is not valid";
@@ -141,7 +141,7 @@ void DKIMManageRulesWidget::duplicateRule(DKIMManageRulesWidgetItem *rulesItem)
     if (dlg->exec()) {
         const MessageViewer::DKIMRule rule = dlg->rule();
         if (rule.isValid()) {
-            auto *item = new DKIMManageRulesWidgetItem(mTreeWidget);
+            auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
             item->setRule(rule);
         }
     }

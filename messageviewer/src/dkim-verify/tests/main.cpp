@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     if (!parser.positionalArguments().isEmpty()) {
         const QStringList lst = parser.positionalArguments();
         for (const QString &str : lst) {
-            auto *d = new LookUpKey();
+            auto d = new LookUpKey();
             d->lookUpServer(str);
         }
     }

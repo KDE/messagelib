@@ -12,7 +12,7 @@ using namespace TemplateParser;
 TemplateParserEmailAddressRequesterLineEdit::TemplateParserEmailAddressRequesterLineEdit(QWidget *parent)
     : TemplateParser::TemplateParserEmailAddressRequesterBase(parent)
 {
-    auto *mainLayout = new QHBoxLayout(this);
+    auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
     mLineEdit = new QLineEdit(this);

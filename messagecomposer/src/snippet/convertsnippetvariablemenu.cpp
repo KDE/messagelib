@@ -26,7 +26,7 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
         mMenu = new QMenu(mParentWidget);
         mMenu->setFocusPolicy(Qt::NoFocus);
 
-        QMenu *toMenuVariable = new QMenu(i18n("To"), mMenu);
+        auto toMenuVariable = new QMenu(i18n("To"), mMenu);
         toMenuVariable->addAction(i18n("To Field Address"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::ToAddr);
         });
@@ -41,7 +41,7 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
         });
         mMenu->addMenu(toMenuVariable);
 
-        QMenu *fromMenuVariable = new QMenu(i18n("From"), mMenu);
+        auto fromMenuVariable = new QMenu(i18n("From"), mMenu);
         fromMenuVariable->addAction(i18n("From Field Address"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FromAddr);
         });
@@ -56,7 +56,7 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
         });
         mMenu->addMenu(fromMenuVariable);
 
-        QMenu *ccMenuVariable = new QMenu(i18n("CC"), mMenu);
+        auto ccMenuVariable = new QMenu(i18n("CC"), mMenu);
         ccMenuVariable->addAction(i18n("CC Field Address"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::CcAddr);
         });
@@ -72,7 +72,7 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
 
         mMenu->addMenu(ccMenuVariable);
 
-        QMenu *attachmentMenuVariable = new QMenu(i18n("Attachment"), mMenu);
+        auto attachmentMenuVariable = new QMenu(i18n("Attachment"), mMenu);
         attachmentMenuVariable->addAction(i18n("Number Of Attachments"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentCount);
         });
@@ -148,7 +148,7 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
     });
     if (!onlyMenuForCustomizeAttachmentFileName) {
         mMenu->addMenu(dateTimeMenuVariable);
-        QMenu *miscVariable = new QMenu(i18n("Misc"), mMenu);
+        auto miscVariable = new QMenu(i18n("Misc"), mMenu);
         miscVariable->addAction(i18n("Subject"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::FullSubject);
         });

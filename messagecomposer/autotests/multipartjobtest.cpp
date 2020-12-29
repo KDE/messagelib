@@ -23,7 +23,7 @@ QTEST_MAIN(MultipartJobTest)
 void MultipartJobTest::testMultipartMixed()
 {
     Composer composer;
-    auto *mjob = new MultipartJob(&composer);
+    auto mjob = new MultipartJob(&composer);
     mjob->setMultipartSubtype("mixed");
 
     QByteArray data1("one");
@@ -32,13 +32,13 @@ void MultipartJobTest::testMultipartMixed()
     QByteArray type2("application/x-mors-ontologica");
 
     {
-        auto *cjob = new SinglepartJob(mjob);
+        auto cjob = new SinglepartJob(mjob);
         cjob->setData(data1);
         cjob->contentType()->setMimeType(type1);
     }
 
     {
-        auto *cjob = new SinglepartJob(mjob);
+        auto cjob = new SinglepartJob(mjob);
         cjob->setData(data2);
         cjob->contentType()->setMimeType(type2);
     }
@@ -74,11 +74,11 @@ void MultipartJobTest::test8BitPropagation()
 
     Composer composer;
     composer.globalPart()->set8BitAllowed(true);
-    auto *mjob = new MultipartJob(&composer);
+    auto mjob = new MultipartJob(&composer);
     mjob->setMultipartSubtype("mixed");
-    auto *mjob2 = new MultipartJob(mjob);
+    auto mjob2 = new MultipartJob(mjob);
     mjob2->setMultipartSubtype("mixed");
-    auto *cjob = new SinglepartJob(mjob2);
+    auto cjob = new SinglepartJob(mjob2);
     QByteArray data("time is so short and I'm sure there must be something more");
     cjob->setData(data);
     cjob->contentTransferEncoding()->setEncoding(Headers::CE8Bit);

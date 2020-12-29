@@ -22,7 +22,7 @@ uint MessageCore::qHash(const MessageCore::AttachmentPart::Ptr &ptr)
 // TODO move to kmime_util?
 static qint64 sizeWithEncoding(const QByteArray &data, KMime::Headers::contentEncoding encoding)  // local
 {
-    auto *content = new KMime::Content;
+    auto content = new KMime::Content;
     content->setBody(data);
     content->contentTransferEncoding()->setEncoding(encoding);
 

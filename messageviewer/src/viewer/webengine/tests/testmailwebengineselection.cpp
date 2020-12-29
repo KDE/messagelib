@@ -18,7 +18,7 @@ TestMailWebEngineSelection::TestMailWebEngineSelection(QWidget *parent)
     : QWidget(parent)
     , mNumber(0)
 {
-    auto *vbox = new QVBoxLayout(this);
+    auto vbox = new QVBoxLayout(this);
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     connect(mTestWebEngine, &MessageViewer::MailWebEngineView::openUrl, this,
             &TestMailWebEngineSelection::slotOpenUrl);
@@ -27,14 +27,14 @@ TestMailWebEngineSelection::TestMailWebEngineSelection(QWidget *parent)
     mTestWebEngine->setHtml(str, QUrl(QStringLiteral("file:///")));
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vbox->addWidget(mTestWebEngine);
-    auto *hButtonBox = new QHBoxLayout;
+    auto hButtonBox = new QHBoxLayout;
     vbox->addLayout(hButtonBox);
 
-    QPushButton *changeHtml = new QPushButton(QStringLiteral("switch html"), this);
+    auto changeHtml = new QPushButton(QStringLiteral("switch html"), this);
     connect(changeHtml, &QPushButton::clicked, this, &TestMailWebEngineSelection::slotSwitchHtml);
     hButtonBox->addWidget(changeHtml);
 
-    QPushButton *showSelection = new QPushButton(QStringLiteral("Show Selection"), this);
+    auto showSelection = new QPushButton(QStringLiteral("Show Selection"), this);
     connect(showSelection, &QPushButton::clicked, this,
             &TestMailWebEngineSelection::slotShowSelection);
     hButtonBox->addWidget(showSelection);
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    auto *testWebEngine = new TestMailWebEngineSelection;
+    auto testWebEngine = new TestMailWebEngineSelection;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

@@ -115,7 +115,7 @@ void EncryptJobTest::testContentSubjobChained()
     const QByteArray data(QStringLiteral("one flew over the cuckoo's nest").toUtf8());
     KMime::Message skeletonMessage;
 
-    auto *content = new KMime::Content;
+    auto content = new KMime::Content;
     content->contentType(true)->setMimeType("text/plain");
     content->setBody(data);
 
@@ -192,7 +192,7 @@ void EncryptJobTest::testProtectedHeaders()
     const std::vector< GpgME::Key > &keys = Test::getKeys();
 
     Composer composer;
-    auto *eJob = new EncryptJob(&composer);
+    auto eJob = new EncryptJob(&composer);
 
     QVERIFY(eJob);
 

@@ -19,8 +19,8 @@
 TestMailDndAttachment::TestMailDndAttachment(QWidget *parent)
     : QWidget(parent)
 {
-    auto *vbox = new QVBoxLayout(this);
-    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
+    auto vbox = new QVBoxLayout(this);
+    auto viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
                                                                   this));
     vbox->addWidget(viewer);
     viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")) /*KMime::Message::Ptr(msg)*/);
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    auto *testWebEngine = new TestMailDndAttachment;
+    auto testWebEngine = new TestMailDndAttachment;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

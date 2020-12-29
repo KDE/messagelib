@@ -38,14 +38,14 @@ void initFromMessage(const KMime::Message::Ptr &msg, const KMime::Message::Ptr &
     if (idHeaders) {
         MessageHelper::initHeader(msg, identMan, id);
     } else {
-        auto *header = new KMime::Headers::Generic("X-KMail-Identity");
+        auto header = new KMime::Headers::Generic("X-KMail-Identity");
         header->fromUnicodeString(QString::number(id), "utf-8");
         msg->setHeader(header);
     }
 
     if (auto hdr = origMsg->headerByType("X-KMail-Transport")) {
         const QString transport = hdr->asUnicodeString();
-        auto *header = new KMime::Headers::Generic("X-KMail-Transport");
+        auto header = new KMime::Headers::Generic("X-KMail-Transport");
         header->fromUnicodeString(transport, "utf-8");
         msg->setHeader(header);
     }
@@ -89,7 +89,7 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
     if (ident.organization().isEmpty()) {
         message->removeHeader<KMime::Headers::Organization>();
     } else {
-        auto *const organization = new KMime::Headers::Organization;
+        auto const organization = new KMime::Headers::Organization;
         organization->fromUnicodeString(ident.organization(), "utf-8");
         message->setHeader(organization);
     }
@@ -97,7 +97,7 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
     if (ident.isDefault()) {
         message->removeHeader("X-KMail-Identity");
     } else {
-        auto *header = new KMime::Headers::Generic("X-KMail-Identity");
+        auto header = new KMime::Headers::Generic("X-KMail-Identity");
         header->fromUnicodeString(QString::number(ident.uoid()), "utf-8");
         message->setHeader(header);
     }
@@ -105,7 +105,7 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
     if (ident.transport().isEmpty()) {
         message->removeHeader("X-KMail-Transport");
     } else {
-        auto *header = new KMime::Headers::Generic("X-KMail-Transport");
+        auto header = new KMime::Headers::Generic("X-KMail-Transport");
         header->fromUnicodeString(ident.transport(), "utf-8");
         message->setHeader(header);
     }
@@ -113,13 +113,13 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
     if (ident.fcc().isEmpty()) {
         message->removeHeader("X-KMail-Fcc");
     } else {
-        auto *header = new KMime::Headers::Generic("X-KMail-Fcc");
+        auto header = new KMime::Headers::Generic("X-KMail-Fcc");
         header->fromUnicodeString(ident.fcc(), "utf-8");
         message->setHeader(header);
     }
 
     if (ident.disabledFcc()) {
-        auto *header = new KMime::Headers::Generic("X-KMail-FccDisabled");
+        auto header = new KMime::Headers::Generic("X-KMail-FccDisabled");
         header->fromUnicodeString(QStringLiteral("true"), "utf-8");
         message->setHeader(header);
     } else {

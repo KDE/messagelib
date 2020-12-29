@@ -22,13 +22,13 @@ void DKIMManageRulesDialogTest::shouldHaveDefaultValues()
     MessageViewer::DKIMManageRulesDialog w;
     QVERIFY(!w.windowTitle().isEmpty());
 
-    auto *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
 
-    auto *mRulesWidget = w.findChild<MessageViewer::DKIMManageRulesWidget *>(QStringLiteral("mRulesWidget"));
+    auto mRulesWidget = w.findChild<MessageViewer::DKIMManageRulesWidget *>(QStringLiteral("mRulesWidget"));
     QVERIFY(mRulesWidget);
 
-    auto *buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
 }

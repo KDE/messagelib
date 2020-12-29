@@ -100,7 +100,7 @@ void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool 
 
     MessageComposer::Util::addLinkInformation(msg, mId, Akonadi::MessageStatus::statusReplied());
     if (mParentFolderId > 0) {
-        auto *header = new KMime::Headers::Generic("X-KMail-Fcc");
+        auto header = new KMime::Headers::Generic("X-KMail-Fcc");
         header->fromUnicodeString(QString::number(mParentFolderId), "utf-8");
         msg->setHeader(header);
     }
@@ -277,7 +277,7 @@ void MessageFactoryNG::createReplyAsync()
 
     // If the reply shouldn't be blank, apply the template to the message
     if (mQuote) {
-        auto *job = new MessageFactoryReplyJob;
+        auto job = new MessageFactoryReplyJob;
         connect(job, &MessageFactoryReplyJob::replyDone, this, &MessageFactoryNG::slotCreateReplyDone);
         job->setMsg(msg);
         job->setReplyAll(replyAll);
@@ -321,12 +321,12 @@ void MessageFactoryNG::createForwardAsync()
 
         //TODO: Andras: somebody should check if this is correct. :)
         // empty text part
-        auto *msgPart = new KMime::Content;
+        auto msgPart = new KMime::Content;
         msgPart->contentType()->setMimeType("text/plain");
         msg->addContent(msgPart);
 
         // the old contents of the mail
-        auto *secondPart = new KMime::Content;
+        auto secondPart = new KMime::Content;
         secondPart->contentType()->setMimeType(mOrigMsg->contentType()->mimeType());
         secondPart->setBody(mOrigMsg->body());
         // use the headers of the original mail
@@ -352,7 +352,7 @@ void MessageFactoryNG::createForwardAsync()
     }
 
     msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(mOrigMsg.data()), "utf-8");
-    auto *job = new MessageFactoryForwardJob;
+    auto job = new MessageFactoryForwardJob;
     connect(job, &MessageFactoryForwardJob::forwardDone, this, &MessageFactoryNG::slotCreateForwardDone);
     job->setIdentityManager(mIdentityManager);
     job->setMsg(msg);
@@ -409,7 +409,7 @@ KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Me
     fwdMsg->removeHeader<KMime::Headers::Bcc>();
     fwdMsg->assemble();
     // set the part
-    auto *msgPart = new KMime::Content(fwdMsg.data());
+    auto msgPart = new KMime::Content(fwdMsg.data());
     auto ct = msgPart->contentType();
     ct->setMimeType("message/rfc822");
 
@@ -445,7 +445,7 @@ KMime::Message::Ptr MessageFactoryNG::createResend()
     uint originalIdentity = identityUoid(mOrigMsg);
 
     // Set the identity from above
-    auto *header = new KMime::Headers::Generic("X-KMail-Identity");
+    auto header = new KMime::Headers::Generic("X-KMail-Identity");
     header->fromUnicodeString(QString::number(originalIdentity), "utf-8");
     msg->setHeader(header);
 
@@ -504,7 +504,7 @@ KMime::Message::Ptr MessageFactoryNG::createRedirect(const QString &toStr, const
     if (MessageComposer::MessageComposerSettings::useCustomMessageIdSuffix()) {
         msgIdSuffix = MessageComposer::MessageComposerSettings::customMsgIDSuffix();
     }
-    auto *header = new KMime::Headers::Generic("Resent-Message-ID");
+    auto header = new KMime::Headers::Generic("Resent-Message-ID");
     header->fromUnicodeString(MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), msgIdSuffix), "utf-8");
     msg->setHeader(header);
 
@@ -517,7 +517,7 @@ KMime::Message::Ptr MessageFactoryNG::createRedirect(const QString &toStr, const
     msg->setHeader(header);
 
     if (msg->to(false)) {
-        auto *headerT = new KMime::Headers::To;
+        auto headerT = new KMime::Headers::To;
         headerT->fromUnicodeString(mOrigMsg->to()->asUnicodeString(), "utf-8");
         msg->setHeader(headerT);
     }
@@ -556,7 +556,7 @@ KMime::Message::Ptr MessageFactoryNG::createRedirect(const QString &toStr, const
 
     const bool fccIsDisabled = ident.disabledFcc();
     if (fccIsDisabled) {
-        auto *header = new KMime::Headers::Generic("X-KMail-FccDisabled");
+        auto header = new KMime::Headers::Generic("X-KMail-FccDisabled");
         header->fromUnicodeString(QStringLiteral("true"), "utf-8");
         msg->setHeader(header);
     } else {
@@ -634,7 +634,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
     const QString description = replaceHeadersInString(mOrigMsg, KMime::MDN::descriptionFor(d, m));
 
     // text/plain part:
-    auto *firstMsgPart = new KMime::Content(mOrigMsg.data());
+    auto firstMsgPart = new KMime::Content(mOrigMsg.data());
     auto firstMsgPartContentType = firstMsgPart->contentType(); //create it
     firstMsgPartContentType->setMimeType("text/plain");
     firstMsgPartContentType->setCharset("utf-8");
@@ -643,7 +643,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
     receipt->addContent(firstMsgPart);
 
     // message/disposition-notification part:
-    auto *secondMsgPart = new KMime::Content(mOrigMsg.data());
+    auto secondMsgPart = new KMime::Content(mOrigMsg.data());
     secondMsgPart->contentType()->setMimeType("message/disposition-notification");
 
     secondMsgPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
@@ -663,7 +663,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
     }
     /* 0=> Nothing, 1=>Full Message, 2=>HeadersOnly*/
 
-    auto *thirdMsgPart = new KMime::Content(mOrigMsg.data());
+    auto thirdMsgPart = new KMime::Content(mOrigMsg.data());
     switch (mdnQuoteOriginal) {
     case 1:
         thirdMsgPart->contentType()->setMimeType("message/rfc822");
@@ -684,7 +684,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
     receipt->to()->fromUnicodeString(receiptTo, "utf-8");
     //Laurent: We don't translate subject ?
     receipt->subject()->from7BitString("Message Disposition Notification");
-    auto *header = new KMime::Headers::InReplyTo;
+    auto header = new KMime::Headers::InReplyTo;
     header->fromUnicodeString(mOrigMsg->messageID()->asUnicodeString(), "utf-8");
     receipt->setHeader(header);
 
@@ -701,7 +701,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
 QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDigestMIME(const Akonadi::Item::List &items)
 {
     KMime::Message::Ptr msg(new KMime::Message);
-    auto *digest = new KMime::Content(msg.data());
+    auto digest = new KMime::Content(msg.data());
 
     const QString mainPartText = i18n("\nThis is a MIME digest forward. The content of the"
                                       " message is contained in the attachment(s).\n\n\n");
@@ -725,7 +725,7 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDi
         MessageCore::StringUtil::removePrivateHeaderFields(fMsg);
         fMsg->removeHeader<KMime::Headers::Bcc>();
         fMsg->assemble();
-        auto *part = new KMime::Content(digest);
+        auto part = new KMime::Content(digest);
 
         part->contentType()->setMimeType("message/rfc822");
         part->contentType(false)->setCharset(fMsg->contentType()->charset());

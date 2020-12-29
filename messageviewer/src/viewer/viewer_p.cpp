@@ -272,7 +272,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
         }
         if (ct->mimeType() == "message/external-body") {
             if (ct->hasParameter(QStringLiteral("url"))) {
-                KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"));
+                auto job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"));
                 job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
                 job->start();
                 return;
@@ -387,7 +387,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
     }
 
     // text/plain part:
-    auto *deletePart = new KMime::Content(parent);
+    auto deletePart = new KMime::Content(parent);
     auto deleteCt = deletePart->contentType(true);
     deleteCt->setMimeType("text/x-moz-deleted");
     deleteCt->setName(QStringLiteral("Deleted: %1").arg(name), "utf8");
@@ -409,7 +409,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
     KMime::Message *modifiedMessage = mNodeHelper->messageWithExtraContent(mMessage.data());
     mMimePartTree->mimePartModel()->setRoot(modifiedMessage);
     mMessageItem.setPayloadFromData(modifiedMessage->encodedContent());
-    auto *job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
+    auto job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
     job->disableRevisionCheck();
     connect(job, &KJob::result, this, &ViewerPrivate::itemModifiedResult);
     return true;
@@ -435,7 +435,7 @@ void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTyp
         QStringList() << contentTypeStr, QString());
     if (!offers.isEmpty()) {
         QMenu *menu = topMenu;
-        auto *actionGroup = new QActionGroup(menu);
+        auto actionGroup = new QActionGroup(menu);
 
         if (fromCurrentContent) {
             connect(actionGroup, &QActionGroup::triggered, this,
@@ -466,7 +466,7 @@ void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTyp
         } else {
             openWithActionName = i18nc("@title:menu", "&Open With...");
         }
-        auto *openWithAct = new QAction(menu);
+        auto openWithAct = new QAction(menu);
         openWithAct->setText(openWithActionName);
         if (fromCurrentContent) {
             connect(openWithAct, &QAction::triggered, this,
@@ -477,7 +477,7 @@ void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTyp
 
         menu->addAction(openWithAct);
     } else { // no app offers -> Open With...
-        auto *act = new QAction(topMenu);
+        auto act = new QAction(topMenu);
         act->setText(i18nc("@title:menu", "&Open With..."));
         if (fromCurrentContent) {
             connect(act, &QAction::triggered, this,
@@ -666,7 +666,7 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
     QString name = mNodeHelper->writeNodeToTempFile(node);
 
     // Make sure that it will not deleted when we switch from message.
-    QTemporaryDir *tmpDir
+    auto *tmpDir
         = new QTemporaryDir(QDir::tempPath() + QLatin1String("/messageviewer_attachment_XXXXXX"));
     if (tmpDir->isValid()) {
         tmpDir->setAutoRemove(false);
@@ -693,7 +693,7 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
     const QUrl url = QUrl::fromLocalFile(name);
     lst.append(url);
 
-    auto *job = new KIO::ApplicationLauncherJob(offer);
+    auto job = new KIO::ApplicationLauncherJob(offer);
     job->setUrls({url});
     job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, mMainWindow));
     job->start();
@@ -944,7 +944,7 @@ void ViewerPrivate::showVCard(KMime::Content *msgPart)
 {
     const QByteArray vCard = msgPart->decodedContent();
 
-    auto *vcv = new VCardViewer(mMainWindow, vCard);
+    auto vcv = new VCardViewer(mMainWindow, vCard);
     vcv->setAttribute(Qt::WA_DeleteOnClose);
     vcv->show();
 }
@@ -1404,7 +1404,7 @@ void ViewerPrivate::createWidgets()
 {
     //TODO: Make a MDN bar similar to Mozillas password bar and show MDNs here as soon as a
     //      MDN enabled message is shown.
-    auto *vlay = new QVBoxLayout(q);
+    auto vlay = new QVBoxLayout(q);
     vlay->setContentsMargins({});
     mSplitter = new QSplitter(Qt::Vertical, q);
     connect(mSplitter, &QSplitter::splitterMoved, this, &ViewerPrivate::saveSplitterSizes);
@@ -1418,13 +1418,13 @@ void ViewerPrivate::createWidgets()
             &ViewerPrivate::slotMimeTreeContextMenuRequested);
 
     mBox = new QWidget(mSplitter);
-    auto *mBoxHBoxLayout = new QHBoxLayout(mBox);
+    auto mBoxHBoxLayout = new QHBoxLayout(mBox);
     mBoxHBoxLayout->setContentsMargins({});
 
     mColorBar = new HtmlStatusBar(mBox);
     mBoxHBoxLayout->addWidget(mColorBar);
-    QWidget *readerBox = new QWidget(mBox);
-    auto *readerBoxVBoxLayout = new QVBoxLayout(readerBox);
+    auto readerBox = new QWidget(mBox);
+    auto readerBoxVBoxLayout = new QVBoxLayout(readerBox);
     readerBoxVBoxLayout->setContentsMargins({});
     mBoxHBoxLayout->addWidget(readerBox);
 
@@ -1514,12 +1514,12 @@ void ViewerPrivate::createActions()
     mZoomActionMenu->createZoomActions();
 
     // attachment style
-    KActionMenu *attachmentMenu = new KActionMenu(i18nc("View->", "&Attachments"), this);
+    auto attachmentMenu = new KActionMenu(i18nc("View->", "&Attachments"), this);
     ac->addAction(QStringLiteral("view_attachments"), attachmentMenu);
     MessageViewer::Util::addHelpTextAction(attachmentMenu, i18n("Choose display style of attachments"));
 
-    auto *group = new QActionGroup(this);
-    KToggleAction *raction = new KToggleAction(i18nc("View->attachments->", "&As Icons"), this);
+    auto group = new QActionGroup(this);
+    auto raction = new KToggleAction(i18nc("View->attachments->", "&As Icons"), this);
     ac->addAction(QStringLiteral("view_attachments_as_icons"), raction);
     connect(raction, &QAction::triggered, this, &ViewerPrivate::slotIconicAttachments);
     MessageViewer::Util::addHelpTextAction(raction, i18n("Show all attachments as icons. Click to see them."));
@@ -1683,7 +1683,7 @@ void ViewerPrivate::createActions()
                                            i18n("Toggle display mode between HTML and plain text"));
 
     // Load external reference
-    QAction *loadExternalReferenceAction = new QAction(i18n("Load external references"), this);
+    auto loadExternalReferenceAction = new QAction(i18n("Load external references"), this);
     ac->addAction(QStringLiteral("load_external_reference"), loadExternalReferenceAction);
     ac->setDefaultShortcut(loadExternalReferenceAction,
                            QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_R));
@@ -1698,7 +1698,7 @@ void ViewerPrivate::createActions()
     connect(mSpeakTextAction, &QAction::triggered,
             this, &ViewerPrivate::slotSpeakText);
 
-    auto *purposeMenuWidget = new MailfilterPurposeMenuWidget(mViewer, this);
+    auto purposeMenuWidget = new MailfilterPurposeMenuWidget(mViewer, this);
     mShareTextAction = new QAction(i18n("Share Text..."), this);
     mShareTextAction->setMenu(purposeMenuWidget->menu());
     mShareTextAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
@@ -2005,7 +2005,7 @@ void ViewerPrivate::checkPhishingUrl()
 void ViewerPrivate::executeRunner(const QUrl &url)
 {
     if (!MessageViewer::Util::handleUrlWithQDesktopServices(url)) {
-        auto *job = new KIO::OpenUrlJob(url);
+        auto job = new KIO::OpenUrlJob(url);
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, viewer()));
         job->setRunExecutables(false);
         job->start();
@@ -2231,7 +2231,7 @@ void ViewerPrivate::updateReaderWin()
 
 void ViewerPrivate::slotMimePartSelected(const QModelIndex &index)
 {
-    auto *content = static_cast<KMime::Content *>(index.internalPointer());
+    auto content = static_cast<KMime::Content *>(index.internalPointer());
     if (!mMimePartTree->mimePartModel()->parent(index).isValid() && index.row() == 0) {
         update(MimeTreeParser::Force);
     } else {
@@ -2300,7 +2300,7 @@ void ViewerPrivate::slotPrintPreview()
 
 void ViewerPrivate::slotDelayPrintPreview()
 {
-    QPrintPreviewDialog *dialog = new QPrintPreviewDialog(q);
+    auto dialog = new QPrintPreviewDialog(q);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->resize(800, 750);
 
@@ -2343,7 +2343,7 @@ void ViewerPrivate::slotOpenInBrowser()
 void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
 {
     const QUrl url(QUrl::fromLocalFile(filename));
-    KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"), q);
+    auto job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"), q);
     job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
     job->setDeleteTemporaryFile(true);
     job->start();
@@ -2463,7 +2463,7 @@ void ViewerPrivate::slotMimeTreeContextMenuRequested(const QPoint &pos)
 {
     QModelIndex index = mMimePartTree->indexAt(pos);
     if (index.isValid()) {
-        auto *content = static_cast<KMime::Content *>(index.internalPointer());
+        auto content = static_cast<KMime::Content *>(index.internalPointer());
         showContextMenu(content, pos);
     }
 }
@@ -2474,7 +2474,7 @@ void ViewerPrivate::slotAttachmentOpenWith()
     const QModelIndexList selectedRows = selectionModel->selectedRows();
 
     for (const QModelIndex &index : selectedRows) {
-        auto *content = static_cast<KMime::Content *>(index.internalPointer());
+        auto content = static_cast<KMime::Content *>(index.internalPointer());
         attachmentOpenWith(content);
     }
 }
@@ -2485,7 +2485,7 @@ void ViewerPrivate::slotAttachmentOpen()
     const QModelIndexList selectedRows = selectionModel->selectedRows();
 
     for (const QModelIndex &index : selectedRows) {
-        auto *content = static_cast<KMime::Content *>(index.internalPointer());
+        auto content = static_cast<KMime::Content *>(index.internalPointer());
         attachmentOpen(content);
     }
 }
@@ -2566,7 +2566,7 @@ void ViewerPrivate::slotAttachmentProperties()
 
 void ViewerPrivate::attachmentProperties(KMime::Content *content)
 {
-    auto *dialog = new MessageCore::AttachmentPropertiesDialog(
+    auto dialog = new MessageCore::AttachmentPropertiesDialog(
         content, mMainWindow);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->show();
@@ -2599,7 +2599,7 @@ void ViewerPrivate::attachmentCopy(const KMime::Content::List &contents)
         return;
     }
 
-    auto *mimeData = new QMimeData;
+    auto mimeData = new QMimeData;
     mimeData->setUrls(urls);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 #endif
@@ -2912,7 +2912,7 @@ void ViewerPrivate::itemFetchResult(KJob *job)
     if (job->error()) {
         displaySplashPage(i18n("Message loading failed: %1.", job->errorText()));
     } else {
-        auto *fetch = qobject_cast<Akonadi::ItemFetchJob *>(job);
+        auto fetch = qobject_cast<Akonadi::ItemFetchJob *>(job);
         Q_ASSERT(fetch);
         if (fetch->items().isEmpty()) {
             displaySplashPage(i18n("Message not found."));
@@ -3040,7 +3040,7 @@ void ViewerPrivate::slotMessageIsNotAScam()
         auto *attr = mMessageItem.attribute<MessageViewer::ScamAttribute>(
             Akonadi::Item::AddIfMissing);
         attr->setIsAScam(false);
-        auto *modify = new Akonadi::ItemModifyJob(mMessageItem, mSession);
+        auto modify = new Akonadi::ItemModifyJob(mMessageItem, mSession);
         modify->setIgnorePayload(true);
         modify->disableRevisionCheck();
         connect(modify, &KJob::result, this, &ViewerPrivate::slotModifyItemDone);

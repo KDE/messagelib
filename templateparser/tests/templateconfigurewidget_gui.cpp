@@ -14,7 +14,7 @@
 TemplateConfigureTestWidget::TemplateConfigureTestWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto *lay = new QHBoxLayout(this);
+    auto lay = new QHBoxLayout(this);
     lay->addWidget(new TemplateParser::TemplatesConfiguration(this));
 }
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto *w = new TemplateConfigureTestWidget();
+    auto w = new TemplateConfigureTestWidget();
     w->resize(800, 600);
 
     w->show();

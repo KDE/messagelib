@@ -18,7 +18,7 @@ using namespace MessageComposer;
 SendLaterTimeDateWidget::SendLaterTimeDateWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto *lay = new QHBoxLayout(this);
+    auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
 
     QDateTime t = QDateTime::currentDateTime();

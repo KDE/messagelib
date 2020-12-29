@@ -56,27 +56,27 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadWrite()
     part->setSigned(sign);
 
     // Show the dialog and verify that it is accurate.
-    auto *dialog = new AttachmentPropertiesDialog(part);
+    auto dialog = new AttachmentPropertiesDialog(part);
     dialog->show();
-    auto *nameEdit = dialog->findChild<QLineEdit *>(QStringLiteral("name"));
+    auto nameEdit = dialog->findChild<QLineEdit *>(QStringLiteral("name"));
     Q_ASSERT(nameEdit);
     QCOMPARE(nameEdit->text(), name);
-    auto *descriptionEdit = dialog->findChild<QLineEdit *>(QStringLiteral("description"));
+    auto descriptionEdit = dialog->findChild<QLineEdit *>(QStringLiteral("description"));
     Q_ASSERT(descriptionEdit);
     QCOMPARE(descriptionEdit->text(), description);
-    auto *mimeTypeCombo = dialog->findChild<QComboBox *>(QStringLiteral("mimeType"));
+    auto mimeTypeCombo = dialog->findChild<QComboBox *>(QStringLiteral("mimeType"));
     Q_ASSERT(mimeTypeCombo);
     QCOMPARE(mimeTypeCombo->currentText().toLatin1(), mimeType);
-    auto *encodingCombo = dialog->findChild<QComboBox *>(QStringLiteral("encoding"));
+    auto encodingCombo = dialog->findChild<QComboBox *>(QStringLiteral("encoding"));
     Q_ASSERT(encodingCombo);
     QCOMPARE(encodingCombo->currentIndex(), int(encoding));
-    auto *autoDisplayCheck = dialog->findChild<QCheckBox *>(QStringLiteral("autoDisplay"));
+    auto autoDisplayCheck = dialog->findChild<QCheckBox *>(QStringLiteral("autoDisplay"));
     Q_ASSERT(autoDisplayCheck);
     QCOMPARE(autoDisplayCheck->isChecked(), autoDisplay);
-    auto *encryptCheck = dialog->findChild<QCheckBox *>(QStringLiteral("encrypt"));
+    auto encryptCheck = dialog->findChild<QCheckBox *>(QStringLiteral("encrypt"));
     Q_ASSERT(encryptCheck);
     QCOMPARE(encryptCheck->isChecked(), encrypt);
-    auto *signCheck = dialog->findChild<QCheckBox *>(QStringLiteral("sign"));
+    auto signCheck = dialog->findChild<QCheckBox *>(QStringLiteral("sign"));
     Q_ASSERT(signCheck);
     QCOMPARE(signCheck->isChecked(), sign);
     //QTest::qWait( 5000 );
@@ -120,7 +120,7 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadOnly()
     part->setName(name);
 
     // Show the (read-only) dialog and do some changes.
-    auto *dialog = new AttachmentPropertiesDialog(part, true, nullptr);
+    auto dialog = new AttachmentPropertiesDialog(part, true, nullptr);
     dialog->show();
     // Click on 'OK'.  No changes should have been made.
     dialog->accept();
@@ -139,9 +139,9 @@ void AttachmentPropertiesDialogTest::testAttachmentPartCancel()
     part->setName(name);
 
     // Show the (read-write) dialog and do some changes.
-    auto *dialog = new AttachmentPropertiesDialog(part);
+    auto dialog = new AttachmentPropertiesDialog(part);
     dialog->show();
-    auto *nameEdit = dialog->findChild<QLineEdit *>(QStringLiteral("name"));
+    auto nameEdit = dialog->findChild<QLineEdit *>(QStringLiteral("name"));
     Q_ASSERT(nameEdit);
     nameEdit->setText(newName);
 
@@ -158,12 +158,12 @@ void AttachmentPropertiesDialogTest::testMimeContentReadOnly()
     const QByteArray charset("us-ascii");
 
     // Create the MIME Content.
-    auto *content = new Content;
+    auto content = new Content;
     content->contentType()->setName(name, charset);
     const Content *constContent = content;
 
     // Show the (read-only) dialog and do some changes.
-    auto *dialog = new AttachmentPropertiesDialog(constContent);
+    auto dialog = new AttachmentPropertiesDialog(constContent);
     dialog->show();
 
     // Click on 'OK'.  The MIME Content should be untouched.

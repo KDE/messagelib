@@ -1003,7 +1003,7 @@ void View::setCurrentThreadExpanded(bool expand)
     if (it->type() == Item::GroupHeader) {
         setExpanded(currentIndex(), expand);
     } else if (it->type() == Item::Message) {
-        auto *message = static_cast< MessageItem *>(it);
+        auto message = static_cast< MessageItem *>(it);
         while (message->parent()) {
             if (message->parent()->type() != Item::Message) {
                 break;
@@ -2148,7 +2148,7 @@ void View::mousePressEvent(QMouseEvent *e)
     case Item::GroupHeader:
     {
         // Don't let QTreeView handle the selection (as it deselects the current messages)
-        auto *groupHeaderItem = static_cast< GroupHeaderItem * >(it);
+        auto groupHeaderItem = static_cast< GroupHeaderItem * >(it);
 
         switch (e->button()) {
         case Qt::LeftButton:
@@ -2334,7 +2334,7 @@ bool View::event(QEvent *e)
     switch (it->type()) {
     case Item::Message:
     {
-        auto *mi = static_cast< MessageItem * >(it);
+        auto mi = static_cast< MessageItem * >(it);
 
         tip += QStringLiteral(
             "<tr>" \
@@ -2447,7 +2447,7 @@ bool View::event(QEvent *e)
     }
     case Item::GroupHeader:
     {
-        auto *ghi = static_cast< GroupHeaderItem * >(it);
+        auto ghi = static_cast< GroupHeaderItem * >(it);
 
         tip += QStringLiteral(
             "<tr>" \

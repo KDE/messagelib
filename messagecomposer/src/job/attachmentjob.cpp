@@ -65,7 +65,7 @@ void AttachmentJob::doStart()
         // the attachment is really a complete multipart/digest subtype
         // and us adding our own headers would break it. so copy over the content
         // and leave it alone
-        auto *part = new KMime::Content;
+        auto part = new KMime::Content;
         part->setContent(d->part->data());
         part->parse();
         d->subjobContents << part;
@@ -74,7 +74,7 @@ void AttachmentJob::doStart()
     }
 
     // Set up a subjob to generate the attachment content.
-    auto *sjob = new SinglepartJob(this);
+    auto sjob = new SinglepartJob(this);
     sjob->setData(d->part->data());
 
     // Figure out a charset to encode parts of the headers with.

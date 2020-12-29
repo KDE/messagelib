@@ -21,7 +21,7 @@ void QuickSearchWarningTest::shouldHaveDefaultValue()
 {
     MessageList::Core::QuickSearchWarning w;
     QVERIFY(!w.isVisible());
-    auto *act = w.findChild<QAction *>(QStringLiteral("donotshowagain"));
+    auto act = w.findChild<QAction *>(QStringLiteral("donotshowagain"));
     QVERIFY(act);
 }
 

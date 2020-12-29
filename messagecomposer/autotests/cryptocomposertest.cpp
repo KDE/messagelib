@@ -72,7 +72,7 @@ void CryptoComposerTest::testOpenPGPMime()
     QFETCH(bool, encrypt);
     QFETCH(Headers::contentEncoding, cte);
 
-    auto *composer = new Composer;
+    auto composer = new Composer;
 
     fillComposerData(composer, data);
     fillComposerCryptoData(composer);
@@ -108,7 +108,7 @@ void CryptoComposerTest::testEncryptSameAttachments_data()
 void CryptoComposerTest::testEncryptSameAttachments()
 {
     QFETCH(int, format);
-    auto *composer = new Composer;
+    auto composer = new Composer;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
     fillComposerData(composer, data);
     fillComposerCryptoData(composer);
@@ -140,7 +140,7 @@ void CryptoComposerTest::testEncryptSameAttachments()
 
     MimeTreeParser::SimpleObjectTreeSource testSource;
     testSource.setDecryptMessage(true);
-    auto *nh = new MimeTreeParser::NodeHelper;
+    auto nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 
     otp.parseObjectTree(message.data());
@@ -162,7 +162,7 @@ void CryptoComposerTest::testEditEncryptAttachments_data()
 void CryptoComposerTest::testEditEncryptAttachments()
 {
     QFETCH(int, format);
-    auto *composer = new Composer;
+    auto composer = new Composer;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
     fillComposerData(composer, data);
     fillComposerCryptoData(composer);
@@ -218,7 +218,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments_data()
 void CryptoComposerTest::testEditEncryptAndLateAttachments()
 {
     QFETCH(int, format);
-    auto *composer = new Composer;
+    auto composer = new Composer;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
     fillComposerData(composer, data);
     fillComposerCryptoData(composer);
@@ -287,7 +287,7 @@ void CryptoComposerTest::testSignEncryptLateAttachments_data()
 void CryptoComposerTest::testSignEncryptLateAttachments()
 {
     QFETCH(int, format);
-    auto *composer = new Composer;
+    auto composer = new Composer;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
     fillComposerData(composer, data);
     fillComposerCryptoData(composer);
@@ -335,7 +335,7 @@ void CryptoComposerTest::testBCCEncrypt_data()
 void CryptoComposerTest::testBCCEncrypt()
 {
     QFETCH(int, format);
-    auto *composer = new Composer;
+    auto composer = new Composer;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
     fillComposerData(composer, data);
     composer->infoPart()->setBcc(QStringList(QStringLiteral("bcc@bcc.org")));
@@ -404,7 +404,7 @@ void CryptoComposerTest::testOpenPGPInline()
     QFETCH(bool, encrypt);
     QFETCH(Headers::contentEncoding, cte);
 
-    auto *composer = new Composer;
+    auto composer = new Composer;
 
     fillComposerData(composer, data);
     fillComposerCryptoData(composer);
@@ -555,7 +555,7 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     QFETCH(QString, data);
     QFETCH(Headers::contentEncoding, cte);
 
-    auto *composer = new Composer;
+    auto composer = new Composer;
 
     fillComposerData(composer, data);
     composer->infoPart()->setFrom(QStringLiteral("test@example.com"));

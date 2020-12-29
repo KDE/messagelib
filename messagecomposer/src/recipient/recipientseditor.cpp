@@ -37,7 +37,7 @@ RecipientLineFactory::RecipientLineFactory(QObject *parent)
 
 KPIM::MultiplyingLine *RecipientLineFactory::newLine(QWidget *p)
 {
-    auto *line = new RecipientLineNG(p);
+    auto line = new RecipientLineNG(p);
     if (qobject_cast<RecipientsEditor *>(parent())) {
         connect(line, SIGNAL(addRecipient(RecipientLineNG*,QString)), qobject_cast<RecipientsEditor *>(parent()), SLOT(addRecipient(RecipientLineNG*,QString)));
     } else {
@@ -167,7 +167,7 @@ void RecipientsEditor::removeRecipient(const QString &recipient, Recipient::Type
     MultiplyingLine *line = nullptr;
     while (it.hasNext()) {
         line = it.next();
-        auto *rec = qobject_cast<RecipientLineNG *>(line);
+        auto rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if ((rec->recipient()->email() == recipient)
                 && (rec->recipientType() == type)) {
@@ -198,7 +198,7 @@ void MessageComposer::RecipientsEditor::setRecentAddressConfig(KConfig *config)
     if (config) {
         MultiplyingLine *line;
         foreach (line, lines()) {
-            auto *rec = qobject_cast<RecipientLineNG *>(line);
+            auto rec = qobject_cast<RecipientLineNG *>(line);
             if (rec) {
                 rec->setRecentAddressConfig(config);
             }
@@ -223,7 +223,7 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
     // subtract 1 here, because we want the number of lines
     // before this line was added.
     int count = lines().size() - 1;
-    auto *rec = qobject_cast<RecipientLineNG *>(line);
+    auto rec = qobject_cast<RecipientLineNG *>(line);
     if (!rec) {
         return;
     }
@@ -234,14 +234,14 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
 
     if (count > 0) {
         if (count == 1) {
-            auto *last_rec = qobject_cast<RecipientLineNG *>(lines().constFirst());
+            auto last_rec = qobject_cast<RecipientLineNG *>(lines().constFirst());
             if (last_rec && (last_rec->recipientType() == Recipient::Bcc || last_rec->recipientType() == Recipient::ReplyTo)) {
                 rec->setRecipientType(Recipient::To);
             } else {
                 rec->setRecipientType(Recipient::Cc);
             }
         } else {
-            auto *last_rec = qobject_cast<RecipientLineNG *>(lines().at(lines().count() - 2));
+            auto last_rec = qobject_cast<RecipientLineNG *>(lines().at(lines().count() - 2));
             if (last_rec) {
                 if (last_rec->recipientType() == Recipient::ReplyTo) {
                     rec->setRecipientType(Recipient::To);
@@ -261,7 +261,7 @@ void RecipientsEditor::slotLineDeleted(int pos)
     int firstCC = -1;
     for (int i = pos, total = lines().count(); i < total; ++i) {
         MultiplyingLine *line = lines().at(i);
-        auto *rec = qobject_cast<RecipientLineNG *>(line);
+        auto rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if (rec->recipientType() == Recipient::To) {
                 atLeastOneToLine = true;
@@ -272,7 +272,7 @@ void RecipientsEditor::slotLineDeleted(int pos)
     }
 
     if (!atLeastOneToLine && (firstCC >= 0)) {
-        auto *firstCCLine = qobject_cast<RecipientLineNG *>(lines().at(firstCC));
+        auto firstCCLine = qobject_cast<RecipientLineNG *>(lines().at(firstCC));
         if (firstCCLine) {
             firstCCLine->setRecipientType(Recipient::To);
         }
@@ -312,7 +312,7 @@ void RecipientsEditor::slotCalculateTotal()
     int empty = 0;
     MultiplyingLine *line = nullptr;
     foreach (line, lines()) {
-        auto *rec = qobject_cast<RecipientLineNG *>(line);
+        auto rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if (rec->isEmpty()) {
                 ++empty;
@@ -347,7 +347,7 @@ void RecipientsEditor::slotCalculateTotal()
     }
     int count = 0;
     foreach (line, lines()) {
-        auto *rec = qobject_cast<RecipientLineNG *>(line);
+        auto rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if (!rec->isEmpty()) {
                 count++;

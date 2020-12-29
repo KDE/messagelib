@@ -18,7 +18,7 @@ QuickSearchWarning::QuickSearchWarning(QWidget *parent)
     setMessageType(Warning);
     setWordWrap(true);
     setText(i18n("The words less than 3 letters are ignored."));
-    QAction *action = new QAction(i18n("Do not show again"), this);
+    auto action = new QAction(i18n("Do not show again"), this);
     action->setObjectName(QStringLiteral("donotshowagain"));
     connect(action, &QAction::triggered, this, &QuickSearchWarning::slotDoNotRememberIt);
     addAction(action);

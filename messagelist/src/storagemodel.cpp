@@ -81,12 +81,12 @@ StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selec
         AttributeFactory::registerAttribute<MessageFolderAttribute>();
     }
 
-    auto *childrenFilter = new Akonadi::SelectionProxyModel(d->mSelectionModel, this);
+    auto childrenFilter = new Akonadi::SelectionProxyModel(d->mSelectionModel, this);
     childrenFilter->setSourceModel(model);
     childrenFilter->setFilterBehavior(KSelectionProxyModel::ChildrenOfExactSelection);
     d->mChildrenFilterModel = childrenFilter;
 
-    auto *itemFilter = new EntityMimeTypeFilterModel(this);
+    auto itemFilter = new EntityMimeTypeFilterModel(this);
     itemFilter->setSourceModel(childrenFilter);
     itemFilter->addMimeTypeExclusionFilter(Collection::mimeType());
     itemFilter->addMimeTypeInclusionFilter(QStringLiteral("message/rfc822"));
@@ -357,7 +357,7 @@ void StorageModel::setMessageItemStatus(MessageList::Core::MessageItem *mi, int 
     Q_UNUSED(mi)
     Item item = itemForRow(row);
     item.setFlags(status.statusFlags());
-    auto *job = new ItemModifyJob(item, this);
+    auto job = new ItemModifyJob(item, this);
     job->disableRevisionCheck();
     job->setIgnorePayload(true);
 }
@@ -410,7 +410,7 @@ int StorageModel::rowCount(const QModelIndex &parent) const
 
 QMimeData *StorageModel::mimeData(const QVector< MessageList::Core::MessageItem * > &items) const
 {
-    auto *data = new QMimeData();
+    auto data = new QMimeData();
     QList<QUrl> urls;
     urls.reserve(items.count());
     for (MessageList::Core::MessageItem *mi : items) {
@@ -475,12 +475,12 @@ KMime::Message::Ptr StorageModel::messageForRow(int row) const
 
 Collection StorageModel::parentCollectionForRow(int row) const
 {
-    auto *mimeProxy = static_cast<QAbstractProxyModel *>(d->mModel);
+    auto mimeProxy = static_cast<QAbstractProxyModel *>(d->mModel);
     // This is index mapped to Akonadi::SelectionProxyModel
     const QModelIndex childrenFilterIndex = mimeProxy->mapToSource(d->mModel->index(row, 0));
     Q_ASSERT(childrenFilterIndex.isValid());
 
-    auto *childrenProxy = static_cast<QAbstractProxyModel *>(d->mChildrenFilterModel);
+    auto childrenProxy = static_cast<QAbstractProxyModel *>(d->mChildrenFilterModel);
     // This is index mapped to ETM
     const QModelIndex etmIndex = childrenProxy->mapToSource(childrenFilterIndex);
     Q_ASSERT(etmIndex.isValid());
@@ -496,7 +496,7 @@ Collection StorageModel::parentCollectionForRow(int row) const
 Akonadi::Collection StorageModel::collectionForId(Akonadi::Collection::Id colId) const
 {
     // Get ETM
-    auto *childrenProxy = static_cast<QAbstractProxyModel *>(d->mChildrenFilterModel);
+    auto childrenProxy = static_cast<QAbstractProxyModel *>(d->mChildrenFilterModel);
     if (childrenProxy) {
         QAbstractItemModel *etm = childrenProxy->sourceModel();
         if (etm) {

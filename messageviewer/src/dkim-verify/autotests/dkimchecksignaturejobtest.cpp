@@ -123,12 +123,12 @@ void DKIMCheckSignatureJobTest::shouldTestMail()
     QFETCH(QString, dkimdomain);
     QFETCH(QString, fromEmail);
     QFETCH(QString, currentPath);
-    auto *msg = new KMime::Message;
+    auto msg = new KMime::Message;
     QFile file(currentPath + fileName);
     QVERIFY(file.open(QIODevice::ReadOnly));
     msg->setContent(file.readAll());
     msg->parse();
-    auto *job = new MessageViewer::DKIMCheckSignatureJob();
+    auto job = new MessageViewer::DKIMCheckSignatureJob();
     job->setMessage(KMime::Message::Ptr(msg));
     MessageViewer::DKIMCheckPolicy pol;
     pol.setSaveKey(false);

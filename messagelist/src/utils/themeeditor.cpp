@@ -53,21 +53,21 @@ ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme:
     : QDialog(parent)
     , mColumn(column)
 {
-    auto *mainLayout = new QVBoxLayout(this);
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto mainLayout = new QVBoxLayout(this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ThemeColumnPropertiesDialog::reject);
     setWindowTitle(title);
 
-    QWidget *base = new QWidget(this);
+    auto base = new QWidget(this);
     mainLayout->addWidget(base);
     mainLayout->addWidget(buttonBox);
 
-    auto *g = new QGridLayout(base);
+    auto g = new QGridLayout(base);
 
-    QLabel *l = new QLabel(i18nc("@label:textbox Property name", "Name:"), base);
+    auto l = new QLabel(i18nc("@label:textbox Property name", "Name:"), base);
     g->addWidget(l, 0, 0);
 
     mNameEdit = new QLineEdit(base);
@@ -159,12 +159,12 @@ void ThemeContentItemSourceLabel::startDrag()
     //QPixmap alpha( pix.width(), pix.height() );
     //alpha.fill(0x0f0f0f0f);
     //pix.setAlphaChannel( alpha ); // <-- this crashes... no alpha for dragged pixmap :(
-    auto *data = new QMimeData();
+    auto data = new QMimeData();
     QByteArray arry;
     arry.resize(sizeof(Theme::ContentItem::Type));
     *((Theme::ContentItem::Type *)arry.data()) = mType;
     data->setData(QLatin1String(gThemeContentItemTypeDndMimeDataFormat), arry);
-    auto *drag = new QDrag(this);
+    auto drag = new QDrag(this);
     drag->setMimeData(data);
     //drag->setPixmap( pix );
     //drag->setHotSpot( mapFromGlobal( QCursor::pos() ) );
@@ -256,7 +256,7 @@ ThemePreviewWidget::ThemePreviewWidget(QWidget *parent)
     mGroupHeaderSampleItem->setText(0, QString());
     mGroupHeaderSampleItem->setFlags(Qt::ItemIsEnabled);
 
-    auto *m = new QTreeWidgetItem(mGroupHeaderSampleItem);
+    auto m = new QTreeWidgetItem(mGroupHeaderSampleItem);
     m->setText(0, QString());
 
     mGroupHeaderSampleItem->setExpanded(true);
@@ -568,7 +568,7 @@ void ThemePreviewWidget::dropEvent(QDropEvent *e)
         return;
     }
 
-    auto *ci = new Theme::ContentItem(type);
+    auto ci = new Theme::ContentItem(type);
     if (ci->canBeDisabled()) {
         if (ci->isClickable()) {
             ci->setSoftenByBlendingWhenDisabled(true);    // default to softened
@@ -791,12 +791,12 @@ void ThemePreviewWidget::mouseMoveEvent(QMouseEvent *e)
     }
 
     // starting a drag
-    auto *data = new QMimeData();
+    auto data = new QMimeData();
     QByteArray arry;
     arry.resize(sizeof(Theme::ContentItem::Type));
     *((Theme::ContentItem::Type *)arry.data()) = mSelectedThemeContentItem->type();
     data->setData(QLatin1String(gThemeContentItemTypeDndMimeDataFormat), arry);
-    auto *drag = new QDrag(this);
+    auto drag = new QDrag(this);
     drag->setMimeData(data);
 
     // remove the Theme::ContentItem from the Theme
@@ -864,7 +864,7 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
                 act->setChecked(mSelectedThemeContentItem->softenByBlending());
                 connect(act, &QAction::triggered, this, &ThemePreviewWidget::slotSoftenActionTriggered);
 
-                auto *childmenu = new QMenu(&menu);
+                auto childmenu = new QMenu(&menu);
 
                 act = childmenu->addAction(i18nc("@action:inmenu Font setting", "Bold"));
                 act->setData(QVariant(static_cast<int>(Theme::ContentItem::IsBold)));
@@ -881,9 +881,9 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
             }
 
             if (mSelectedThemeContentItem->canUseCustomColor()) {
-                auto *childmenu = new QMenu(&menu);
+                auto childmenu = new QMenu(&menu);
 
-                auto *grp = new QActionGroup(childmenu);
+                auto grp = new QActionGroup(childmenu);
 
                 QAction *act = childmenu->addAction(i18nc("@action:inmenu Foreground color setting", "Default"));
                 act->setData(QVariant(static_cast< int >(0)));
@@ -902,9 +902,9 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
             }
 
             if (mSelectedThemeContentItem->canBeDisabled()) {
-                auto *childmenu = new QMenu(&menu);
+                auto childmenu = new QMenu(&menu);
 
-                auto *grp = new QActionGroup(childmenu);
+                auto grp = new QActionGroup(childmenu);
 
                 QAction *act = childmenu->addAction(i18nc("Hide a mark if the mail does not have the attribute, e.g. Important mark on a non important mail", "Hide"));
                 act->setData(QVariant(static_cast< int >(Theme::ContentItem::HideWhenDisabled)));
@@ -933,9 +933,9 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
                 menu.addSection(i18n("Group Header"));
 
                 // Background color (mode) submenu
-                auto *childmenu = new QMenu(&menu);
+                auto childmenu = new QMenu(&menu);
 
-                auto *grp = new QActionGroup(childmenu);
+                auto grp = new QActionGroup(childmenu);
 
                 QAction *act = childmenu->addAction(i18nc("@action:inmenu Group header background color setting", "None"));
                 act->setData(QVariant(static_cast< int >(Theme::Transparent)));
@@ -1230,7 +1230,7 @@ void ThemePreviewWidget::slotAddColumn()
     mSelectedThemeColumn->addMessageRow(new Theme::Row());
     mSelectedThemeColumn->addGroupHeaderRow(new Theme::Row());
 
-    ThemeColumnPropertiesDialog *dlg
+    auto *dlg
         = new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Add New Column"));
 
     if (dlg->exec() == QDialog::Accepted) {
@@ -1255,7 +1255,7 @@ void ThemePreviewWidget::slotColumnProperties()
         return;
     }
 
-    ThemeColumnPropertiesDialog *dlg
+    auto *dlg
         = new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Column Properties"));
 
     if (dlg->exec() == QDialog::Accepted) {
@@ -1297,19 +1297,19 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     mCurrentTheme = nullptr;
 
     // Appearance tab
-    QWidget *tab = new QWidget(this);
+    auto tab = new QWidget(this);
     addTab(tab, i18n("Appearance"));
 
-    auto *tabg = new QGridLayout(tab);
+    auto tabg = new QGridLayout(tab);
 
-    QGroupBox *gb = new QGroupBox(i18n("Content Items"), tab);
+    auto gb = new QGroupBox(i18n("Content Items"), tab);
     tabg->addWidget(gb, 0, 0);
 
-    auto *gblayout = new QGridLayout(gb);
+    auto gblayout = new QGridLayout(gb);
 
     Theme dummyTheme;
 
-    auto *cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::Subject);
+    auto cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::Subject);
     cil->setText(Theme::ContentItem::description(cil->type()));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 0, 0);
@@ -1432,7 +1432,7 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     mPreviewWidget = new ThemePreviewWidget(tab);
     tabg->addWidget(mPreviewWidget, 1, 0);
 
-    QLabel *l = new QLabel(tab);
+    auto l = new QLabel(tab);
     l->setText(i18n(
                    "Right click on the header to add or modify columns. Drag the content items and drop them on the columns in order to compose your theme. Right click on the items inside the view for more options."));
     l->setWordWrap(true);

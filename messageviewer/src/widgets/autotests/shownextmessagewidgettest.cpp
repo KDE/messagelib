@@ -19,16 +19,16 @@ void ShowNextMessageWidgetTest::shouldHaveDefaultValue()
 {
     MessageViewer::ShowNextMessageWidget w;
 
-    auto *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     //mainLayout->setContentsMargins({});
 
-    auto *mPreviousMessage = w.findChild<QPushButton *>(QStringLiteral("previous_message"));
+    auto mPreviousMessage = w.findChild<QPushButton *>(QStringLiteral("previous_message"));
     QVERIFY(mPreviousMessage);
     QVERIFY(!mPreviousMessage->text().isEmpty());
     QVERIFY(!mPreviousMessage->isEnabled());
 
-    auto *mNextMessage = w.findChild<QPushButton *>(QStringLiteral("next_message"));
+    auto mNextMessage = w.findChild<QPushButton *>(QStringLiteral("next_message"));
     QVERIFY(mNextMessage);
     QVERIFY(!mNextMessage->text().isEmpty());
     QVERIFY(!mNextMessage->isEnabled());

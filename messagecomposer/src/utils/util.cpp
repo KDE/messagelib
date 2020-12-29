@@ -51,7 +51,7 @@ KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentTy
 
 KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *orig, QByteArray encodedBody, Kleo::CryptoMessageFormat format, bool sign, const QByteArray &hashAlgo)
 {
-    auto *result = new KMime::Content;
+    auto result = new KMime::Content;
 
     // called should have tested that the signing/encryption failed
     Q_ASSERT(!encodedBody.isEmpty());
@@ -70,7 +70,7 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
             // Build the encapsulated MIME parts.
             // Build a MIME part holding the code information
             // taking the body contents returned in ciphertext.
-            auto *code = new KMime::Content;
+            auto code = new KMime::Content;
             setNestedContentType(code, format, sign);
             setNestedContentDisposition(code, format, sign);
 
@@ -91,7 +91,7 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
                 // Build a MIME part holding the version information
                 // taking the body contents returned in
                 // structuring.data.bodyTextVersion.
-                auto *vers = new KMime::Content;
+                auto vers = new KMime::Content;
                 vers->contentType()->setMimeType("application/pgp-encrypted");
                 vers->contentDisposition()->setDisposition(KMime::Headers::CDattachment);
                 vers->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
@@ -293,7 +293,7 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
         if (rc == KMessageBox::Yes) {
             const Akonadi::AgentType type = Akonadi::AgentManager::self()->type(QStringLiteral("akonadi_maildispatcher_agent"));
             Q_ASSERT(type.isValid());
-            auto *job = new Akonadi::AgentInstanceCreateJob(type); // async. We'll have to try again later.
+            auto job = new Akonadi::AgentInstanceCreateJob(type); // async. We'll have to try again later.
             job->start();
         }
         return false;
@@ -371,7 +371,7 @@ void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, A
         type += QLatin1String("forward");
     }
 
-    auto *header = new KMime::Headers::Generic("X-KMail-Link-Message");
+    auto header = new KMime::Headers::Generic("X-KMail-Link-Message");
     header->fromUnicodeString(message, "utf-8");
     msg->setHeader(header);
 

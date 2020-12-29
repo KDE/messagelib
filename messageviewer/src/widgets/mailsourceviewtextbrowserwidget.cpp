@@ -38,7 +38,7 @@ using namespace MessageViewer;
 MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
     : QWidget(parent)
 {
-    auto *lay = new QVBoxLayout(this);
+    auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
     mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget;
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeech"));
@@ -57,7 +57,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
         qCWarning(MESSAGEVIEWER_LOG) << "Invalid definition name";
     }
 
-    auto *hl = new KSyntaxHighlighting::SyntaxHighlighter(
+    auto hl = new KSyntaxHighlighting::SyntaxHighlighter(
         mTextBrowser->document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
                  ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
@@ -76,7 +76,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     mSliderContainer->setContent(mFindBar);
 
     lay->addWidget(mSliderContainer);
-    auto *shortcut = new QShortcut(this);
+    auto shortcut = new QShortcut(this);
     shortcut->setKey(Qt::Key_F | Qt::CTRL);
     connect(shortcut, &QShortcut::activated, this, &MailSourceViewTextBrowserWidget::slotFind);
 }

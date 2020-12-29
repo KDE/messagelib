@@ -57,7 +57,7 @@ void DKIMCheckFullJob::startCheckFullInfo(const Akonadi::Item &item)
 void DKIMCheckFullJob::checkAuthenticationResults()
 {
     if (mCheckPolicy.useAuthenticationResults()) {
-        auto *job = new  DKIMCheckAuthenticationStatusJob(this);
+        auto job = new DKIMCheckAuthenticationStatusJob(this);
         mHeaderParser.setHead(mMessage->head());
         mHeaderParser.parse();
         job->setHeaderParser(mHeaderParser);
@@ -71,7 +71,7 @@ void DKIMCheckFullJob::checkAuthenticationResults()
 
 void DKIMCheckFullJob::checkSignature(const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst)
 {
-    auto *job = new DKIMCheckSignatureJob(this);
+    auto job = new DKIMCheckSignatureJob(this);
     connect(job, &DKIMCheckSignatureJob::storeKey, this, &DKIMCheckFullJob::storeKey);
     connect(job, &DKIMCheckSignatureJob::result, this, &DKIMCheckFullJob::slotCheckSignatureResult);
     job->setMessage(mMessage);
@@ -148,7 +148,7 @@ void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureRe
         if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid
             || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid
             || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned) {
-            auto *job = new DKIMStoreResultJob(this);
+            auto job = new DKIMStoreResultJob(this);
             job->setItem(mAkonadiItem);
             job->setResult(checkResult);
             job->start();
@@ -172,7 +172,7 @@ void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureRe
 void DKIMCheckFullJob::generateRule(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
     if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid) {
-        auto *job = new DKIMGenerateRuleJob(this);
+        auto job = new DKIMGenerateRuleJob(this);
         job->setResult(checkResult);
         if (!job->start()) {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Impossible to start autogenerate rule";
@@ -184,7 +184,7 @@ void DKIMCheckFullJob::slotCheckSignatureResult(const DKIMCheckSignatureJob::Che
 {
     if (mCheckPolicy.checkIfEmailShouldBeSigned()
         && (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned)) {
-        auto *job = new DKIMCheckPolicyJob(this);
+        auto job = new DKIMCheckPolicyJob(this);
         connect(job, &DKIMCheckPolicyJob::result, this, &DKIMCheckFullJob::storeResult);
         job->setCheckResult(checkResult);
         job->setEmailAddress(checkResult.fromEmail);

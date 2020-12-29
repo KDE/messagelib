@@ -386,7 +386,7 @@ void TemplatesCommandMenu::fillMenuFromActionMap(const QMap< QString, TemplatesC
     QMap< QString, TemplatesCommandMenu::Command >::const_iterator end = map.constEnd();
 
     while (it != end) {
-        auto *action = new QAction(it.key(), menu);   //krazy:exclude=tipsandthis
+        auto action = new QAction(it.key(), menu);   //krazy:exclude=tipsandthis
         const TemplatesCommandMenu::Command cmd = it.value();
         connect(action, &QAction::triggered, this, [this, cmd] {
             slotInsertCommand(cmd);

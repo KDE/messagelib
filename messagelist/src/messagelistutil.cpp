@@ -105,17 +105,17 @@ QColor MessageList::Util::todoDefaultMessageColor()
 
 void MessageList::Util::fillViewMenu(QMenu *menu, QObject *receiver)
 {
-    QMenu *sortingMenu = new QMenu(i18n("Sorting"), menu);
+    auto sortingMenu = new QMenu(i18n("Sorting"), menu);
     sortingMenu->setIcon(QIcon::fromTheme(QStringLiteral("view-sort-ascending")));
     menu->addMenu(sortingMenu);
     QObject::connect(sortingMenu, SIGNAL(aboutToShow()), receiver, SLOT(sortOrderMenuAboutToShow()));
 
-    QMenu *aggregationMenu = new QMenu(i18n("Aggregation"), menu);
+    auto aggregationMenu = new QMenu(i18n("Aggregation"), menu);
     aggregationMenu->setIcon(QIcon::fromTheme(QStringLiteral("view-process-tree")));
     menu->addMenu(aggregationMenu);
     QObject::connect(aggregationMenu, SIGNAL(aboutToShow()), receiver, SLOT(aggregationMenuAboutToShow()));
 
-    QMenu *themeMenu = new QMenu(i18n("Theme"), menu);
+    auto themeMenu = new QMenu(i18n("Theme"), menu);
     themeMenu->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-theme")));
     menu->addMenu(themeMenu);
     QObject::connect(themeMenu, SIGNAL(aboutToShow()),

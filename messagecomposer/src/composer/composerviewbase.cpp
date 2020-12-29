@@ -155,7 +155,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     // First, we copy the message and then parse it to the object tree parser.
     // The otp gets the message text out of it, in textualContent(), and also decrypts
     // the message if necessary.
-    auto *msgContent = new KMime::Content;
+    auto msgContent = new KMime::Content;
     msgContent->setContent(m_msg->encodedContent());
     msgContent->parse();
     MimeTreeParser::SimpleObjectTreeSource emptySource;
@@ -208,7 +208,7 @@ void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
     // First, we copy the message and then parse it to the object tree parser.
     // The otp gets the message text out of it, in textualContent(), and also decrypts
     // the message if necessary.
-    auto *msgContent = new KMime::Content;
+    auto msgContent = new KMime::Content;
     msgContent->setContent(msg->encodedContent());
     msgContent->parse();
     MimeTreeParser::SimpleObjectTreeSource emptySource;
@@ -371,7 +371,7 @@ void ComposerViewBase::readyForSending()
     }
 
     // first, expand all addresses
-    auto *job = new MessageComposer::EmailAddressResolveJob(this);
+    auto job = new MessageComposer::EmailAddressResolveJob(this);
     const KIdentityManagement::Identity identity = identityManager()->identityForUoid(m_identityCombo->currentIdentity());
     if (!identity.isNull()) {
         job->setDefaultDomainName(identity.defaultDomainName());
@@ -478,7 +478,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
     // if so, we create a composer per format
     // if we aren't signing or encrypting, this just returns a single empty message
     if (m_neverEncrypt && mSaveIn != MessageComposer::MessageSender::SaveInNone && !mSendLaterInfo) {
-        auto *composer = new MessageComposer::Composer;
+        auto composer = new MessageComposer::Composer;
         composer->setNoCrypto(true);
         m_composers.append(composer);
     } else {
@@ -735,7 +735,7 @@ QVector< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(
                 continue;
             }
 
-            auto *composer = new MessageComposer::Composer;
+            auto composer = new MessageComposer::Composer;
 
             if (encryptSomething) {
                 std::vector<Kleo::KeyResolver::SplitInfo> encData = keyResolver->encryptionItems(concreteFormat);
@@ -763,7 +763,7 @@ QVector< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(
             composers.append(composer);
         }
     } else {
-        auto *composer = new MessageComposer::Composer;
+        auto composer = new MessageComposer::Composer;
         composers.append(composer);
         //If we canceled sign or encrypt be sure to change status in attachment.
         markAllAttachmentsForSigning(false);
@@ -889,7 +889,7 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
 void ComposerViewBase::slotSendComposeResult(KJob *job)
 {
     Q_ASSERT(dynamic_cast< MessageComposer::Composer * >(job));
-    auto *composer = static_cast< MessageComposer::Composer * >(job);
+    auto composer = static_cast< MessageComposer::Composer * >(job);
     if (composer->error() != MessageComposer::Composer::NoError) {
         qCDebug(MESSAGECOMPOSER_LOG) << "compose job might have error: " << job->error() << " errorString: " << job->errorString();
     }
@@ -946,7 +946,7 @@ void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
 void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer)
 {
     const MessageComposer::InfoPart *infoPart = composer->infoPart();
-    auto *qjob = new MailTransport::MessageQueueJob(this);
+    auto qjob = new MailTransport::MessageQueueJob(this);
     qjob->setMessage(message);
     qjob->transportAttribute().setTransportId(infoPart->transportId());
     if (mSendMethod == MessageComposer::MessageSender::SendLater) {
@@ -982,7 +982,7 @@ void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageC
 void ComposerViewBase::slotQueueResult(KJob *job)
 {
     m_pendingQueueJobs--;
-    auto *qjob = static_cast<MailTransport::MessageQueueJob * >(job);
+    auto qjob = static_cast<MailTransport::MessageQueueJob * >(job);
     qCDebug(MESSAGECOMPOSER_LOG) << "mPendingQueueJobs" << m_pendingQueueJobs;
     Q_ASSERT(m_pendingQueueJobs >= 0);
 
@@ -1158,7 +1158,7 @@ void ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
     using MessageComposer::Composer;
 
     Q_ASSERT(dynamic_cast< Composer * >(job));
-    auto *composer = static_cast< Composer * >(job);
+    auto composer = static_cast< Composer * >(job);
 
     if (composer->error() == Composer::NoError) {
         Q_ASSERT(m_composers.contains(composer));
@@ -1283,13 +1283,13 @@ void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageCo
             break;
         }
 
-        auto *saveMessageJob = new Akonadi::CollectionFetchJob(target, Akonadi::CollectionFetchJob::Base);
+        auto saveMessageJob = new Akonadi::CollectionFetchJob(target, Akonadi::CollectionFetchJob::Base);
         saveMessageJob->setProperty("Akonadi::Item", QVariant::fromValue(item));
         QObject::connect(saveMessageJob, &Akonadi::CollectionFetchJob::result, this, &ComposerViewBase::slotSaveMessage);
     } else {
         // preinitialize with the default collections
         target = defaultSpecialTarget();
-        auto *create = new Akonadi::ItemCreateJob(item, target, this);
+        auto create = new Akonadi::ItemCreateJob(item, target, this);
         connect(create, &Akonadi::ItemCreateJob::result, this, &ComposerViewBase::slotCreateItemResult);
         ++m_pendingQueueJobs;
     }
@@ -1309,7 +1309,7 @@ void ComposerViewBase::slotSaveMessage(KJob *job)
             target = fetchJob->collections().at(0);
         }
     }
-    auto *create = new Akonadi::ItemCreateJob(item, target, this);
+    auto create = new Akonadi::ItemCreateJob(item, target, this);
     connect(create, &Akonadi::ItemCreateJob::result, this, &ComposerViewBase::slotCreateItemResult);
     ++m_pendingQueueJobs;
 }
@@ -1348,7 +1348,7 @@ void ComposerViewBase::slotCreateItemResult(KJob *job)
 
     Akonadi::Item::Id id = -1;
     if (mSendLaterInfo) {
-        auto *createJob = static_cast<Akonadi::ItemCreateJob *>(job);
+        auto createJob = static_cast<Akonadi::ItemCreateJob *>(job);
         const Akonadi::Item item = createJob->item();
         if (item.isValid()) {
             id = item.id();
@@ -1422,7 +1422,7 @@ void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
 
 MessageComposer::Composer *ComposerViewBase::createSimpleComposer()
 {
-    auto *composer = new MessageComposer::Composer;
+    auto composer = new MessageComposer::Composer;
     fillGlobalPart(composer->globalPart());
     m_editor->fillComposerTextPart(composer->textPart());
     fillInfoPart(composer->infoPart(), UseUnExpandedRecipients);
@@ -2075,7 +2075,7 @@ void ComposerViewBase::addFollowupReminder(const QString &messageId)
 {
     if (!messageId.isEmpty()) {
         if (mFollowUpDate.isValid()) {
-            auto *job = new MessageComposer::FollowupReminderCreateJob;
+            auto job = new MessageComposer::FollowupReminderCreateJob;
             job->setSubject(m_subject);
             job->setMessageId(messageId);
             job->setTo(mExpandedReplyTo.isEmpty() ? mExpandedTo.join(QLatin1Char(',')) : mExpandedReplyTo.join(QLatin1Char(',')));

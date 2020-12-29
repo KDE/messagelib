@@ -27,17 +27,17 @@ SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Send Later"));
     setWindowIcon(QIcon::fromTheme(QStringLiteral("kmail")));
 
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
 
-    QWidget *sendLaterWidget = new QWidget(this);
+    auto sendLaterWidget = new QWidget(this);
     mSendLaterWidget = new Ui::SendLaterWidget;
     mSendLaterWidget->setupUi(sendLaterWidget);
 
-    QWidget *w = new QWidget(this);
-    auto *lay = new QVBoxLayout(w);
+    auto w = new QWidget(this);
+    auto lay = new QVBoxLayout(w);
     lay->setContentsMargins({});
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     mOkButton = buttonBox->button(QDialogButtonBox::Ok);
     mOkButton->setObjectName(QStringLiteral("okbutton"));
     mOkButton->setDefault(true);

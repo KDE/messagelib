@@ -48,7 +48,7 @@ int main(int argc, char **argv)
         return 0;
     }
 
-    auto *msg = new KMime::Message;
+    auto msg = new KMime::Message;
     if (parser.positionalArguments().isEmpty()) {
         QByteArray mail = "From: dfaure@example.com\n"
                           "To: kde@example.com\n"
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
     }
     msg->parse();
 
-    Viewer *viewer = new Viewer(nullptr, nullptr, new KActionCollection(&app));
+    auto viewer = new Viewer(nullptr, nullptr, new KActionCollection(&app));
     if (parser.isSet(headerStylePluginOption)) {
         viewer->setPluginName(parser.value(headerStylePluginOption));
     }

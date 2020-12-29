@@ -38,7 +38,7 @@ QByteArray DKIMResultAttribute::type() const
 
 DKIMResultAttribute *DKIMResultAttribute::clone() const
 {
-    auto *attr = new DKIMResultAttribute();
+    auto attr = new DKIMResultAttribute();
     attr->setWarning(warning());
     attr->setStatus(status());
     attr->setError(error());

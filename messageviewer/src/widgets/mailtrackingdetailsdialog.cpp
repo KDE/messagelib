@@ -21,10 +21,10 @@ MailTrackingDetailsDialog::MailTrackingDetailsDialog(QWidget *parent)
     setAttribute(Qt::WA_DeleteOnClose);
     setModal(false);
 
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     connect(buttonBox, &QDialogButtonBox::rejected, this, &MailTrackingDetailsDialog::reject);
     connect(buttonBox->button(

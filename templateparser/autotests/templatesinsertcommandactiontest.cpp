@@ -21,6 +21,6 @@ void TemplatesInsertCommandActionTest::shouldHaveDefaultValue()
     TemplateParser::TemplatesInsertCommandAction act;
     QVERIFY(act.menu());
     QVERIFY(!act.menu()->isEmpty());
-    auto *menu = act.findChild<TemplateParser::TemplatesCommandMenu *>(QStringLiteral("templatescommandmenu"));
+    auto menu = act.findChild<TemplateParser::TemplatesCommandMenu *>(QStringLiteral("templatescommandmenu"));
     QVERIFY(menu);
 }

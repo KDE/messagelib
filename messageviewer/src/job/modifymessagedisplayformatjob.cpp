@@ -60,7 +60,7 @@ void ModifyMessageDisplayFormatJob::setMessageItem(const Akonadi::Item &messageI
 void ModifyMessageDisplayFormatJob::resetDisplayFormat()
 {
     mMessageItem.removeAttribute<MessageViewer::MessageDisplayFormatAttribute>();
-    auto *modify = new Akonadi::ItemModifyJob(mMessageItem, mSession);
+    auto modify = new Akonadi::ItemModifyJob(mMessageItem, mSession);
     modify->setIgnorePayload(true);
     modify->disableRevisionCheck();
     connect(modify, &KJob::result, this, &ModifyMessageDisplayFormatJob::slotModifyItemDone);
@@ -73,7 +73,7 @@ void ModifyMessageDisplayFormatJob::modifyDisplayFormat()
               Akonadi::Item::AddIfMissing);
     attr->setRemoteContent(mRemoteContent);
     attr->setMessageFormat(mMessageFormat);
-    auto *modify = new Akonadi::ItemModifyJob(mMessageItem, mSession);
+    auto modify = new Akonadi::ItemModifyJob(mMessageItem, mSession);
     modify->setIgnorePayload(true);
     modify->disableRevisionCheck();
     connect(modify, &KJob::result, this, &ModifyMessageDisplayFormatJob::slotModifyItemDone);

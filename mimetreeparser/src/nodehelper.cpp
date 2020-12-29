@@ -292,7 +292,7 @@ QUrl NodeHelper::tempFileUrlFromNode(const KMime::Content *node)
 
 QString NodeHelper::createTempDir(const QString &param)
 {
-    QTemporaryFile *tempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX") + QLatin1String(".index.") + param);
+    auto tempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX") + QLatin1String(".index.") + param);
     tempFile->open();
     const QString fname = tempFile->fileName();
     delete tempFile;
@@ -869,7 +869,7 @@ void NodeHelper::mergeExtraNodes(KMime::Content *node)
                                           <<node->encodedContent() << "\n====== with =======\n" <<  extra << extra->encodedContent();
             continue;
         }
-        auto *c = new KMime::Content(node);
+        auto c = new KMime::Content(node);
         c->setContent(extra->encodedContent());
         c->parse();
         node->addContent(c);
@@ -915,7 +915,7 @@ KMime::Message *NodeHelper::messageWithExtraContent(KMime::Content *topLevelNode
 
     mergeExtraNodes(topLevelNode);
 
-    auto *m = new KMime::Message;
+    auto m = new KMime::Message;
     m->setContent(topLevelNode->encodedContent());
     m->parse();
 

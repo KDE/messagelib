@@ -1112,7 +1112,7 @@ void EncryptedMessagePart::setMementoName(const QByteArray &name)
 
 void EncryptedMessagePart::startDecryption(const QByteArray &text, const QTextCodec *aCodec)
 {
-    auto *content = new KMime::Content;
+    auto content = new KMime::Content;
     content->setBody(text);
     content->parse();
 

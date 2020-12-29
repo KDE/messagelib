@@ -84,19 +84,19 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     , d(new Private(this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    auto *mainLayout = new QVBoxLayout(this);
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto mainLayout = new QVBoxLayout(this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ConfigureThemesDialog::reject);
     setWindowTitle(i18nc("@title:window", "Customize Themes"));
 
-    QWidget *base = new QWidget(this);
+    auto base = new QWidget(this);
     mainLayout->addWidget(base);
     mainLayout->addWidget(buttonBox);
 
-    auto *g = new QGridLayout(base);
+    auto g = new QGridLayout(base);
     g->setContentsMargins({});
 
     d->mThemeList = new ThemeListWidget(base);
@@ -125,7 +125,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
         d->cloneThemeButtonClicked();
     });
 
-    QFrame *f = new QFrame(base);
+    auto f = new QFrame(base);
     f->setFrameStyle(QFrame::Sunken | QFrame::HLine);
     f->setMinimumHeight(24);
     g->addWidget(f, 2, 1, Qt::AlignVCenter);
@@ -349,13 +349,13 @@ void ConfigureThemesDialog::Private::newThemeButtonClicked()
     const int numberOfSelectedItem(mThemeList->selectedItems().count());
     Theme emptyTheme;
     emptyTheme.setName(uniqueNameForTheme(i18n("New Theme")));
-    auto *col = new Theme::Column();
+    auto col = new Theme::Column();
     col->setLabel(i18n("New Column"));
     col->setVisibleByDefault(true);
     col->addMessageRow(new Theme::Row());
     col->addGroupHeaderRow(new Theme::Row());
     emptyTheme.addColumn(col);
-    auto *item = new ThemeListWidgetItem(mThemeList, emptyTheme);
+    auto item = new ThemeListWidgetItem(mThemeList, emptyTheme);
 
     mThemeList->setCurrentItem(item);
     Core::Theme *theme = item->theme();
@@ -439,7 +439,7 @@ void ConfigureThemesDialog::Private::importThemeButtonClicked()
             while (idx < cnt) {
                 const QString data = grp.readEntry(QStringLiteral("Set%1").arg(idx), QString());
                 if (!data.isEmpty()) {
-                    auto *set = new Theme();
+                    auto set = new Theme();
                     if (set->loadFromString(data)) {
                         set->setReadOnly(false);
                         set->detach(); // detach shared data
@@ -471,7 +471,7 @@ void ConfigureThemesDialog::Private::exportThemeButtonClicked()
 
         int idx = 0;
         for (QListWidgetItem *item : list) {
-            auto *themeItem = static_cast< ThemeListWidgetItem * >(item);
+            auto themeItem = static_cast< ThemeListWidgetItem * >(item);
             grp.writeEntry(QStringLiteral("Set%1").arg(idx), themeItem->theme()->saveToString());
             ++idx;
         }

@@ -4274,7 +4274,7 @@ void ModelPrivate::slotStorageModelRowsInserted(const QModelIndex &parent, int f
 
     if (newJobNeeded) {
         // FIXME: Should take timing options from aggregation here ?
-        auto *job = new ViewItemJob(from, to, 100, 50, 10);
+        auto job = new ViewItemJob(from, to, 100, 50, 10);
         mViewItemJobs.append(job);
     }
 

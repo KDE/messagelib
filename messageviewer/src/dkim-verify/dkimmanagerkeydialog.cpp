@@ -19,14 +19,14 @@ using namespace MessageViewer;
 DKIMManagerKeyDialog::DKIMManagerKeyDialog(QWidget *parent)
     : QDialog(parent)
 {
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
     mManagerWidget = new DKIMManagerKeyWidget(this);
     mManagerWidget->setObjectName(QStringLiteral("managerWidget"));
     mainLayout->addWidget(mManagerWidget);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMManagerKeyDialog::slotAccept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMManagerKeyDialog::reject);

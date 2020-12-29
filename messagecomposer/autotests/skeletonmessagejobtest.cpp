@@ -31,7 +31,7 @@ void SkeletonMessageJobTest::testSubject_data()
 void SkeletonMessageJobTest::testSubject()
 {
     // An InfoPart should belong to a Composer, even if we don't use the composer itself.
-    auto *composer = new Composer;
+    auto composer = new Composer;
     InfoPart *infoPart = composer->infoPart();
     GlobalPart *globalPart = composer->globalPart();
     Q_ASSERT(infoPart);
@@ -39,7 +39,7 @@ void SkeletonMessageJobTest::testSubject()
     QFETCH(QString, subject);
     //qDebug() << subject;
     infoPart->setSubject(subject);
-    auto *sjob = new SkeletonMessageJob(infoPart, globalPart, composer);
+    auto sjob = new SkeletonMessageJob(infoPart, globalPart, composer);
     QVERIFY(sjob->exec());
     KMime::Message *message = sjob->message();
     QVERIFY(message->subject(false));
@@ -122,7 +122,7 @@ void SkeletonMessageJobTest::testAddresses_data()
 void SkeletonMessageJobTest::testAddresses()
 {
     // An InfoPart should belong to a Composer, even if we don't use the composer itself.
-    auto *composer = new Composer;
+    auto composer = new Composer;
     InfoPart *infoPart = composer->infoPart();
     GlobalPart *globalPart = composer->globalPart();
     Q_ASSERT(infoPart);
@@ -137,7 +137,7 @@ void SkeletonMessageJobTest::testAddresses()
     infoPart->setTo(to);
     infoPart->setCc(cc);
     infoPart->setBcc(bcc);
-    auto *sjob = new SkeletonMessageJob(infoPart, globalPart, composer);
+    auto sjob = new SkeletonMessageJob(infoPart, globalPart, composer);
     QVERIFY(sjob->exec());
     KMime::Message *message = sjob->message();
 
@@ -191,12 +191,12 @@ void SkeletonMessageJobTest::testAddresses()
 
 void SkeletonMessageJobTest::testMessageID()
 {
-    auto *composer = new Composer();
+    auto composer = new Composer();
     InfoPart *infoPart = composer->infoPart();
     GlobalPart *globalPart = composer->globalPart();
     Q_ASSERT(infoPart);
 
-    auto *sjob = new SkeletonMessageJob(infoPart, globalPart, composer);
+    auto sjob = new SkeletonMessageJob(infoPart, globalPart, composer);
     QVERIFY(sjob->exec());
     KMime::Message *message = sjob->message();
     QVERIFY(message->messageID(false));

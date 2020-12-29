@@ -24,7 +24,7 @@ void SearchLineStatusTest::shouldHaveDefaultValue()
     MessageList::Core::SearchLineStatus w;
     QVERIFY(!w.containsOutboundMessages());
     QVERIFY(!w.locked());
-    auto *filterMenu = w.findChild<QMenu *>(QStringLiteral("filtermenu"));
+    auto filterMenu = w.findChild<QMenu *>(QStringLiteral("filtermenu"));
     QVERIFY(filterMenu);
     QVERIFY(!filterMenu->actions().isEmpty());
 
@@ -33,7 +33,7 @@ void SearchLineStatusTest::shouldHaveDefaultValue()
     QCOMPARE(w.completer()->model()->rowCount(), 0);
 
     //Verify if qt qlineedit name changed
-    auto *act = w.findChild<QAction *>(QStringLiteral("_q_qlineeditclearaction"));
+    auto act = w.findChild<QAction *>(QStringLiteral("_q_qlineeditclearaction"));
     QVERIFY(act);
 }
 

@@ -18,14 +18,14 @@ using namespace MessageViewer;
 DeveloperToolDialog::DeveloperToolDialog(QWidget *parent)
     : QDialog(parent)
 {
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
     mDeveloperToolWidget = new DeveloperToolWidget(this);
     mDeveloperToolWidget->setObjectName(QStringLiteral("mDeveloperToolWidget"));
     mainLayout->addWidget(mDeveloperToolWidget);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DeveloperToolDialog::reject);
     mainLayout->addWidget(buttonBox);

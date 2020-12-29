@@ -22,7 +22,7 @@ DMarcLookUpKey::~DMarcLookUpKey()
 
 void DMarcLookUpKey::lookUpDomain(const QString &domain)
 {
-    auto *job = new MessageViewer::DMARCRecordJob(this);
+    auto job = new MessageViewer::DMARCRecordJob(this);
     job->setDomainName(domain);
     connect(job, &MessageViewer::DMARCRecordJob::success, this, [](const QList<QByteArray> &lst, const QString &domainName) {
         qDebug() << "domainName: " << domainName << " lst " << lst;
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     if (!parser.positionalArguments().isEmpty()) {
         const QStringList lst = parser.positionalArguments();
         for (const QString &str : lst) {
-            auto *d = new DMarcLookUpKey();
+            auto d = new DMarcLookUpKey();
             d->lookUpDomain(str);
         }
     }

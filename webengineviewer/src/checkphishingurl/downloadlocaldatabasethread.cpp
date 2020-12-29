@@ -33,7 +33,7 @@ void DownloadLocalDatabaseThread::run()
         deleteLater();
         return;
     }
-    auto *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob;
+    auto job = new WebEngineViewer::CreatePhishingUrlDataBaseJob;
     job->moveToThread(this);
     job->setDataBaseDownloadNeeded(mCurrentDataBaseState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
     job->setDataBaseState(mCurrentDataBaseState);
@@ -89,7 +89,7 @@ void DownloadLocalDatabaseThread::setDatabaseFullPath(const QString &databaseFul
 
 void DownloadLocalDatabaseThread::installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
 {
-    auto *job = new WebEngineViewer::CreateDatabaseFileJob;
+    auto job = new WebEngineViewer::CreateDatabaseFileJob;
     job->setFileName(mDatabaseFullPath);
     job->setUpdateDataBaseInfo(infoDataBase);
     connect(job, &CreateDatabaseFileJob::finished, this, &DownloadLocalDatabaseThread::slotCreateDataBaseFileNameFinished);

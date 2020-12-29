@@ -21,7 +21,7 @@ using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
 
@@ -32,7 +32,7 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     mTreeWidget->setAlternatingRowColors(true);
 
-    auto *searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
+    auto searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
     searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
     searchLineEdit->setClearButtonEnabled(true);
     mainLayout->addWidget(searchLineEdit);
@@ -87,7 +87,7 @@ void DKIMManagerKeyWidget::loadKeys()
 {
     const QVector<MessageViewer::KeyInfo> lst = DKIMManagerKey::self()->keys();
     for (const MessageViewer::KeyInfo &key : lst) {
-        auto *item = new QTreeWidgetItem(mTreeWidget);
+        auto item = new QTreeWidgetItem(mTreeWidget);
         item->setText(0, key.domain);
         item->setText(1, key.selector);
         item->setText(2, key.keyValue);

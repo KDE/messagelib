@@ -20,7 +20,7 @@ CustomTemplatesMenuTest::~CustomTemplatesMenuTest()
 
 void CustomTemplatesMenuTest::shouldHaveDefaultValue()
 {
-    KActionCollection *collection = new KActionCollection(this);
+    auto collection = new KActionCollection(this);
     TemplateParser::CustomTemplatesMenu templateMenu(nullptr, collection);
 
     QVERIFY(templateMenu.replyActionMenu());
