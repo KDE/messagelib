@@ -37,6 +37,25 @@ bool RemoteContentManager::isAutorized(const QString &url) const
     return false;
 }
 
+bool RemoteContentManager::isAutorized(const QUrl &url, bool &contains) const
+{
+    const QString host = url.host();
+    const QString urlToString = url.toString();
+
+    contains = false;
+
+    for (const RemoteContentInfo &info : qAsConst(mRemoveContentInfo)) {
+        if (info.url() == urlToString) {
+            contains = true;
+            return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized;
+        } else if (info.url() == host) {
+            contains = true;
+            return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized;
+        }
+    }
+    return false;
+}
+
 void RemoteContentManager::loadSettings()
 {
     mRemoveContentInfo.clear();

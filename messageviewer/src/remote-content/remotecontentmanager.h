@@ -10,6 +10,7 @@
 
 #include "messageviewer_private_export.h"
 #include <QObject>
+#include <QUrl>
 namespace MessageViewer {
 class RemoteContentInfo;
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentManager : public QObject
@@ -21,6 +22,7 @@ public:
     static RemoteContentManager *self();
 
     Q_REQUIRED_RESULT bool isAutorized(const QString &url) const;
+    Q_REQUIRED_RESULT bool isAutorized(const QUrl &url, bool &contains) const;
 
     void addRemoteContent(const RemoteContentInfo &info);
 private:
