@@ -19,8 +19,9 @@ BlockExternalResourcesUrlInterceptor::~BlockExternalResourcesUrlInterceptor()
 {
 }
 
-bool BlockExternalResourcesUrlInterceptor::interceptRequest(const QString &scheme, QWebEngineUrlRequestInfo::ResourceType resourceType, QWebEngineUrlRequestInfo::NavigationType navigationType)
+bool BlockExternalResourcesUrlInterceptor::interceptRequest(const QUrl &url, QWebEngineUrlRequestInfo::ResourceType resourceType, QWebEngineUrlRequestInfo::NavigationType navigationType)
 {
+    const QString scheme = url.scheme();
     if (scheme == QLatin1String("data")
         || scheme == QLatin1String("file")) {
         return false;
@@ -57,9 +58,8 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(const QString &schem
 
 bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    const QString scheme = info.requestUrl().scheme();
     const QWebEngineUrlRequestInfo::ResourceType resourceType = info.resourceType();
     const QWebEngineUrlRequestInfo::NavigationType navigationType = info.navigationType();
 
-    return interceptRequest(scheme, resourceType, navigationType);
+    return interceptRequest(info.requestUrl(), resourceType, navigationType);
 }
