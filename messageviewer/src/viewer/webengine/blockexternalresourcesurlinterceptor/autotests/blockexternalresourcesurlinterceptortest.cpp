@@ -6,12 +6,13 @@
 
 #include "blockexternalresourcesurlinterceptortest.h"
 #include "viewer/webengine/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h"
-#include <qtwebenginewidgetsversion.h>
 #include <QTest>
+#include <QStandardPaths>
 QTEST_MAIN(BlockExternalResourcesUrlInterceptorTest)
 BlockExternalResourcesUrlInterceptorTest::BlockExternalResourcesUrlInterceptorTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void BlockExternalResourcesUrlInterceptorTest::shouldIntercept()

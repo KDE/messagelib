@@ -17,7 +17,6 @@
 #include <QFileDialog>
 #include <QWebEngineProfile>
 #include <QPrinter>
-#include <qtwebenginewidgetsversion.h>
 
 using namespace WebEngineViewer;
 

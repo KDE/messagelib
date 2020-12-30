@@ -7,7 +7,6 @@
 #include "messageviewerutilstest.h"
 #include "utils/messageviewerutil.h"
 #include <QTest>
-#include <qtwebenginewidgetsversion.h>
 QTEST_GUILESS_MAIN(MessageViewerUtilsTest)
 
 MessageViewerUtilsTest::MessageViewerUtilsTest(QObject *parent)

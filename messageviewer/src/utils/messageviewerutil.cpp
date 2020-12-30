@@ -73,8 +73,6 @@
 #include <QDesktopServices>
 #include <QRegularExpression>
 
-#include <qtwebenginewidgetsversion.h>
-
 using namespace MessageViewer;
 /** Checks whether @p str contains external references. To be precise,
     we only check whether @p str contains 'xxx="http[s]:' where xxx is

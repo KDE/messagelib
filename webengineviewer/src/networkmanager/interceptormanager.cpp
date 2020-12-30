@@ -9,7 +9,6 @@
 #include <QWebEngineProfile>
 #include <QWebEngineView>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
-#include <qtwebenginewidgetsversion.h>
 
 using namespace WebEngineViewer;
 

@@ -6,8 +6,6 @@
 
 #include "blockexternalresourcesurlinterceptor.h"
 
-#include <qtwebenginewidgetsversion.h>
-
 using namespace MessageViewer;
 
 BlockExternalResourcesUrlInterceptor::BlockExternalResourcesUrlInterceptor(QObject *parent)
