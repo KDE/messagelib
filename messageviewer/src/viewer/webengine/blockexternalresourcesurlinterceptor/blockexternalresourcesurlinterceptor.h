@@ -19,8 +19,6 @@ public:
     ~BlockExternalResourcesUrlInterceptor() override;
 
     Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
-    void setAllowExternalContent(bool b);
-    Q_REQUIRED_RESULT bool allowExternalContent() const;
     Q_REQUIRED_RESULT bool interceptRequest(const QString &scheme, QWebEngineUrlRequestInfo::ResourceType resourceType, QWebEngineUrlRequestInfo::NavigationType navigationType);
 Q_SIGNALS:
     void formSubmittedForbidden();
