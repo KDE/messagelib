@@ -48,7 +48,6 @@ Q_SIGNALS:
     void settingsChanged();
 
 private:
-    void readCurrentFallbackCodec();
     void readCurrentOverrideCodec();
     ConfigureWidgetPrivate *const d;
 };
