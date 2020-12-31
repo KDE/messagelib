@@ -16,6 +16,10 @@ class MESSAGEVIEWER_TESTS_EXPORT RemoteContentMenu : public QMenu
 public:
     explicit RemoteContentMenu(QWidget *parent = nullptr);
     ~RemoteContentMenu() override;
+private:
+    void initialize();
+    void slotConfigure();
+    QAction *mConfigureRemoteContentAction = nullptr;
 };
 }
 #endif // REMOTECONTENTMENU_H
