@@ -16,6 +16,10 @@ class MESSAGEVIEWER_TESTS_EXPORT RemoteContentConfigureDialog : public QDialog
 public:
     explicit RemoteContentConfigureDialog(QWidget *parent = nullptr);
     ~RemoteContentConfigureDialog() override;
+
+private:
+    void readConfig();
+    void writeConfig();
 };
 }
 
