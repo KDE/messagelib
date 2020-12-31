@@ -356,7 +356,6 @@ public:
     void setMementoName(const QByteArray &name);
     Q_REQUIRED_RESULT QByteArray mementoName() const;
 
-
     Q_REQUIRED_RESULT QString plaintextContent() const override;
     Q_REQUIRED_RESULT QString htmlContent() const override;
 

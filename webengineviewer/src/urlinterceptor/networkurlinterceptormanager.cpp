@@ -7,7 +7,6 @@
 #include "networkurlinterceptormanager.h"
 #include "networkurlinterceptorpluginmanager.h"
 
-
 using namespace WebEngineViewer;
 
 class WebEngineViewer::NetworkUrlInterceptorManagerPrivate

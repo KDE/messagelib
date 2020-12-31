@@ -24,7 +24,6 @@ public:
 CidSchemeHandler::CidSchemeHandler(QObject *parent)
     : QWebEngineUrlSchemeHandler(parent)
 {
-
 }
 
 void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *request)
@@ -45,8 +44,8 @@ public:
 CidUrlRequestInterceptor::CidUrlRequestInterceptor(QObject *p)
     : QWebEngineUrlRequestInterceptor(p)
 {
-
 }
+
 #define LOAD_FROM_FILE 1
 void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
@@ -83,7 +82,6 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 
 CidUrlRequestInterceptor::~CidUrlRequestInterceptor()
 {
-
 }
 
 TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
@@ -105,7 +103,7 @@ TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
                                            "<br /></body>"
                                            "</html>");
 
-    mWebEngineView->setHtml(htmlStr/*, QUrl(QStringLiteral("file:///"))*/);
+    mWebEngineView->setHtml(htmlStr /*, QUrl(QStringLiteral("file:///"))*/);
     vbox->addWidget(mWebEngineView);
 }
 

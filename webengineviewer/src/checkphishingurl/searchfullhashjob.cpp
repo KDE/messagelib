@@ -255,7 +255,6 @@ void SearchFullHashJob::start()
 #else
         connect(reply, qOverload<QNetworkReply::NetworkError>(&QNetworkReply::errorOccurred), this, &SearchFullHashJob::slotError);
 #endif
-
     } else {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl, d->mUrl);
         deleteLater();

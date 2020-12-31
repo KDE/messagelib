@@ -413,7 +413,7 @@ void Widget::viewDropEvent(QDropEvent *e)
             QAction *moveAction = menu.addAction(
                 QIcon::fromTheme(QStringLiteral("edit-move"), QIcon::fromTheme(QStringLiteral("go-jump"))),
                 i18n("&Move Here")
-            );
+                );
             QAction *copyAction = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("&Copy Here"));
             menu.addSeparator();
             menu.addAction(QIcon::fromTheme(QStringLiteral("dialog-cancel")), i18n("C&ancel"));

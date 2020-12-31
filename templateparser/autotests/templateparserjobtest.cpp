@@ -576,15 +576,14 @@ void TemplateParserJobTest::test_makeValidHtml_data()
 
     QTest::newRow("plain text") << QStringLiteral("Some text\n-- \nSignature")
                                 << QStringLiteral("<html><head></head><body>Some text\n"
-                                                  "-- \nSignature<br/></body></html>");
+                      "-- \nSignature<br/></body></html>");
 
     QTest::newRow("existing HTML tag") << QStringLiteral("<html><body>Some text\n-- \nSignature</body></html>")
                                        << QStringLiteral("<html><body>Some text\n-- \nSignature</body></html>");
 
     QTest::newRow("existing body tag, no html") << QStringLiteral("<body>Some text\n-- \nSignature</body>")
                                                 << QStringLiteral("<html><head></head><body>Some text\n"
-                                                                  "-- \nSignature</body></html>");
-
+                      "-- \nSignature</body></html>");
 }
 
 void TemplateParserJobTest::test_makeValidHtml()

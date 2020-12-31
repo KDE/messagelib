@@ -186,7 +186,7 @@ void CustomTemplates::load()
         QKeySequence shortcut(t.shortcut());
         auto type = static_cast<Type>(t.type());
         auto item = new CustomTemplateItem(mUi->mList, *it, t.content(),
-                                                          shortcut, type, t.to(), t.cC());
+                                           shortcut, type, t.to(), t.cC());
         item->setText(1, *it);
         item->setText(0, indexToType(type));
         iconFromType(type, item);

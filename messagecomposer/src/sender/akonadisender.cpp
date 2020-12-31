@@ -196,7 +196,6 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
         qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(message->from()->asUnicodeString())));
     }
 
-
     MessageComposer::Util::addSendReplyForwardAction(message, qjob);
 
     MessageCore::StringUtil::removePrivateHeaderFields(message, false);

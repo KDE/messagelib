@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-
 #ifndef WEBENGINEEXPORTPDFPAGEJOBTEST_H
 #define WEBENGINEEXPORTPDFPAGEJOBTEST_H
 

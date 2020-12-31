@@ -13,7 +13,6 @@ QTEST_MAIN(WebEngineExportPdfPageJobTest)
 WebEngineExportPdfPageJobTest::WebEngineExportPdfPageJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void WebEngineExportPdfPageJobTest::shouldHaveDefaultValue()

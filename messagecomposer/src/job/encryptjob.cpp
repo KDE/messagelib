@@ -11,7 +11,6 @@
 #include "job/protectedheadersjob.h"
 #include "utils/util_p.h"
 
-
 #include <QGpgME/Protocol>
 #include <QGpgME/EncryptJob>
 
@@ -258,11 +257,11 @@ void EncryptJob::process()
     auto result = eJob->exec(d->keys, content, true, cipherText);
 
     if (result.error()) {
-            setError(result.error().code());
-            setErrorText(QString::fromLocal8Bit(result.error().asString()));
-            emitResult();
-            return;
-        }
+        setError(result.error().code());
+        setErrorText(QString::fromLocal8Bit(result.error().asString()));
+        emitResult();
+        return;
+    }
     d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false);
 
     emitResult();

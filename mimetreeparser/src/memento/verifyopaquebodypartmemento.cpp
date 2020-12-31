@@ -12,7 +12,6 @@
 
 #include <gpgme++/keylistresult.h>
 
-
 #include <cassert>
 
 using namespace QGpgME;

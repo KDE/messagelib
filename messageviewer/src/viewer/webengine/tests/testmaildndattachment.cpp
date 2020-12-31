@@ -21,7 +21,7 @@ TestMailDndAttachment::TestMailDndAttachment(QWidget *parent)
 {
     auto vbox = new QVBoxLayout(this);
     auto viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
-                                                                  this));
+                                                this));
     vbox->addWidget(viewer);
     viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")) /*KMime::Message::Ptr(msg)*/);
     viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));

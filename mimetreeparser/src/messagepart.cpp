@@ -1325,7 +1325,6 @@ void EncryptedMessagePart::startDecryption(KMime::Content *data)
             parseInternal(tempNode, false);
         }
     }
-
 }
 
 QString EncryptedMessagePart::plaintextContent() const

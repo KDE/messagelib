@@ -464,7 +464,6 @@ void AttachmentControllerBase::createActions()
     connect(d->attachmentMenu, &QAction::triggered, this, &AttachmentControllerBase::showAddAttachmentFileDialog);
     d->attachmentMenu->setPopupMode(QToolButton::DelayedPopup);
 
-
     d->addAttachmentFileAction = new QAction(QIcon::fromTheme(QStringLiteral("mail-attachment")), i18n("&Attach File..."), this);
     d->addAttachmentFileAction->setIconText(i18n("Attach"));
     d->addContextAction = new QAction(QIcon::fromTheme(QStringLiteral("mail-attachment")),
@@ -916,10 +915,10 @@ void AttachmentControllerBase::showAddAttachmentCompressedDirectoryDialog()
 void AttachmentControllerBase::showAddAttachmentFileDialog()
 {
     const KEncodingFileDialog::Result result = KEncodingFileDialog::getOpenUrlsAndEncoding(QString(),
-                                                                                     QUrl(),
-                                                                                     QString(),
-                                                                                     d->wParent,
-                                                                                     i18nc("@title:window", "Attach File"));
+                                                                                           QUrl(),
+                                                                                           QString(),
+                                                                                           d->wParent,
+                                                                                           i18nc("@title:window", "Attach File"));
     if (!result.URLs.isEmpty()) {
         const QString encoding = MimeTreeParser::NodeHelper::fixEncoding(result.encoding);
         const int numberOfFiles(result.URLs.count());

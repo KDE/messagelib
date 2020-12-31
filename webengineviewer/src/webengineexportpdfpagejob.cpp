@@ -12,12 +12,10 @@ using namespace WebEngineViewer;
 WebEngineExportPdfPageJob::WebEngineExportPdfPageJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 WebEngineExportPdfPageJob::~WebEngineExportPdfPageJob()
 {
-
 }
 
 void WebEngineExportPdfPageJob::start()

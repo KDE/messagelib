@@ -79,7 +79,6 @@ void CreatePhishingUrlDataBaseJob::start()
 #else
         connect(reply, qOverload<QNetworkReply::NetworkError>(&QNetworkReply::errorOccurred), this, &CreatePhishingUrlDataBaseJob::slotError);
 #endif
-
     }
 }
 

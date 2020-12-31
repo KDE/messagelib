@@ -56,9 +56,9 @@ Manager::Manager()
 Manager::~Manager()
 {
     disconnect(MessageListSettings::self(), &MessageListSettings::configChanged,
-            this, &Manager::reloadGlobalConfiguration);
+               this, &Manager::reloadGlobalConfiguration);
     disconnect(MessageCore::MessageCoreSettings::self(), &MessageCore::MessageCoreSettings::configChanged,
-            this, &Manager::reloadGlobalConfiguration);
+               this, &Manager::reloadGlobalConfiguration);
 
     saveConfiguration();
     removeAllAggregations();

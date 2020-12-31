@@ -2802,7 +2802,7 @@ bool ViewerPrivate::htmlLoadExternal() const
     }
 
     const bool loadExternal = (mHtmlLoadExternalDefaultSetting && !mHtmlLoadExtOverride)
-            || (!mHtmlLoadExternalDefaultSetting && mHtmlLoadExtOverride);
+                              || (!mHtmlLoadExternalDefaultSetting && mHtmlLoadExtOverride);
 
     return loadExternal;
 }

@@ -460,7 +460,7 @@ void StringUtilTest::test_parseDuplicateQueryItems()
 void StringUtilTest::test_parseMAilToBug402378()
 {
     const QByteArray ba(QByteArrayLiteral(
-                         "mailto:?body=infotbm.com https://www.infotbm.com/fr/routes/id=-0.624162|44.849958&type=address/datetime=20181226T143038&id=stop_area:TBT:SA:HTLEV&time_type=arrival&type=stop_area/0&subject=Votre itineraire avec TBM"));
+                            "mailto:?body=infotbm.com https://www.infotbm.com/fr/routes/id=-0.624162|44.849958&type=address/datetime=20181226T143038&id=stop_area:TBT:SA:HTLEV&time_type=arrival&type=stop_area/0&subject=Votre itineraire avec TBM"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
     QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 6);
@@ -483,7 +483,7 @@ void StringUtilTest::test_parseMailToBug406208()
 {
     {
         const QByteArray ba(QByteArrayLiteral(
-                       "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
+                                "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
         //qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
         QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
@@ -496,7 +496,7 @@ void StringUtilTest::test_parseMailToBug406208()
     }
     {
         const QByteArray ba(QByteArrayLiteral(
-                       "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428%20%23%23bla&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
+                                "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428%20%23%23bla&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
         //qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
         QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
@@ -512,7 +512,7 @@ void StringUtilTest::test_parseMailToBug406208()
 void StringUtilTest::test_parseMailToBug832795()
 {
     const QByteArray ba(QByteArrayLiteral(
-                         "mailto:832795@bugs.debian.org?In-Reply-To=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3E&subject=Re%3A%20kmail%3A%20unescaping%20mailto%3A%20links%20broken&body=On%20Thu%2C%2028%20Jul%202016References=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3Ebody=On%20Thu%2C%2028%20Jul%202016%2023%3A39%3A03%20%2B0200%20Dominik%20George%20%3Cnik%40naturalnet.de%3E%20wrote%3A%0A%3E%20Package%3A%20kmail%0A%3E%20Version%3A%204%3A16.04.3-1%0A"));
+                            "mailto:832795@bugs.debian.org?In-Reply-To=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3E&subject=Re%3A%20kmail%3A%20unescaping%20mailto%3A%20links%20broken&body=On%20Thu%2C%2028%20Jul%202016References=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3Ebody=On%20Thu%2C%2028%20Jul%202016%2023%3A39%3A03%20%2B0200%20Dominik%20George%20%3Cnik%40naturalnet.de%3E%20wrote%3A%0A%3E%20Package%3A%20kmail%0A%3E%20Version%3A%204%3A16.04.3-1%0A"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
     QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 4);
@@ -575,7 +575,8 @@ void StringUtilTest::test_xdgemail()
     }
     {
         //Bug 427697
-        const QByteArray ba(QByteArrayLiteral("mailto:julia.lawall%40inria.fr?In-Reply-To=%3Calpine.DEB.2.22.394.2009272255220.20726@hadrien%3E&#38;Cc=Gilles.Muller%40lip6.fr%2Ccocci%40systeme.lip6.fr%2Ccorbet%40lwn.net%2Clinux-doc%40vger.kernel.org%2Clinux-kernel%40vger.kernel.org%2Cmichal.lkml%40markovi.net%2Cnicolas.palix%40imag.fr%2Csylphrenadin%40gmail.com&#38;Subject=Re%3A%20%5BCocci%5D%20%5BPATCH%201%2F2%5D%20scripts%3A%20coccicheck%3A%20Change%20default%20value%20for%09parallelism"));
+        const QByteArray ba(QByteArrayLiteral(
+                                "mailto:julia.lawall%40inria.fr?In-Reply-To=%3Calpine.DEB.2.22.394.2009272255220.20726@hadrien%3E&#38;Cc=Gilles.Muller%40lip6.fr%2Ccocci%40systeme.lip6.fr%2Ccorbet%40lwn.net%2Clinux-doc%40vger.kernel.org%2Clinux-kernel%40vger.kernel.org%2Cmichal.lkml%40markovi.net%2Cnicolas.palix%40imag.fr%2Csylphrenadin%40gmail.com&#38;Subject=Re%3A%20%5BCocci%5D%20%5BPATCH%201%2F2%5D%20scripts%3A%20coccicheck%3A%20Change%20default%20value%20for%09parallelism"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
         QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 4);

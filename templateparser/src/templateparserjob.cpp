@@ -1071,9 +1071,9 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     // OR the original mail has no HTML part.
     const KMime::Content *content = d->mOrigMsg->mainBodyPart("text/html");
     if (d->mQuotes == ReplyAsPlain
-            || (!d->mReplyAsHtml  && TemplateParserSettings::self()->replyUsingVisualFormat())
-            || !TemplateParserSettings::self()->replyUsingVisualFormat()
-            || (!content || !content->hasContent())) {
+        || (!d->mReplyAsHtml && TemplateParserSettings::self()->replyUsingVisualFormat())
+        || !TemplateParserSettings::self()->replyUsingVisualFormat()
+        || (!content || !content->hasContent())) {
         htmlBody.clear();
     } else {
         makeValidHtml(htmlBody);
