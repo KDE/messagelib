@@ -8,3 +8,4 @@ macro(add_messageviewer_remote_contents_unittest _source)
 endmacro ()
 
 add_messageviewer_remote_contents_unittest(remotecontentinfotest.cpp)
+add_messageviewer_remote_contents_unittest(remotecontentconfiguredialogtest.cpp)
