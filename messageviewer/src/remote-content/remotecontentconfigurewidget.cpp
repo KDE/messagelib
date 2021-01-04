@@ -7,6 +7,7 @@
 
 #include "remotecontentconfigurewidget.h"
 #include <KLocalizedString>
+#include <QListWidget>
 #include <QVBoxLayout>
 using namespace MessageViewer;
 RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
@@ -15,9 +16,23 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
+
+    mListWidget = new QListWidget(this);
+    mListWidget->setObjectName(QStringLiteral("mListWidget"));
+    mainLayout->addWidget(mListWidget);
 }
 
 RemoteContentConfigureWidget::~RemoteContentConfigureWidget()
+{
+
+}
+
+void RemoteContentConfigureWidget::saveSettings()
+{
+
+}
+
+void RemoteContentConfigureWidget::readSettings()
 {
 
 }

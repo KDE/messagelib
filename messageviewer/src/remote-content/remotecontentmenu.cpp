@@ -5,7 +5,9 @@
 */
 
 #include "remotecontentmenu.h"
+#include "remotecontentconfiguredialog.h"
 #include <KLocalizedString>
+#include <QPointer>
 
 using namespace MessageViewer;
 RemoteContentMenu::RemoteContentMenu(QWidget *parent)
@@ -27,5 +29,9 @@ void RemoteContentMenu::initialize()
 
 void RemoteContentMenu::slotConfigure()
 {
-    //TODO
+    QPointer<MessageViewer::RemoteContentConfigureDialog> remoteContentDialog = new MessageViewer::RemoteContentConfigureDialog(this);
+    if (remoteContentDialog->exec()) {
+        //TODO ?
+    }
+    delete remoteContentDialog;
 }

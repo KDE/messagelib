@@ -10,6 +10,7 @@
 #include <QWidget>
 
 #include "messageviewer_private_export.h"
+class QListWidget;
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentConfigureWidget : public QWidget
 {
@@ -17,6 +18,10 @@ class MESSAGEVIEWER_TESTS_EXPORT RemoteContentConfigureWidget : public QWidget
 public:
     explicit RemoteContentConfigureWidget(QWidget *parent = nullptr);
     ~RemoteContentConfigureWidget() override;
+    void saveSettings();
+    void readSettings();
+private:
+    QListWidget *mListWidget = nullptr;
 };
 }
 
