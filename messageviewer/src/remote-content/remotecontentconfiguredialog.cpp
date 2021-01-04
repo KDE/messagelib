@@ -5,6 +5,7 @@
 */
 
 #include "remotecontentconfiguredialog.h"
+#include "remotecontentconfigurewidget.h"
 #include <KLocalizedString>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
@@ -18,12 +19,17 @@ static const char myRemoteContentConfigureConfigGroupName[] = "RemoteContentConf
 using namespace MessageViewer;
 RemoteContentConfigureDialog::RemoteContentConfigureDialog(QWidget *parent)
     : QDialog(parent)
+    , mRemoteContentConfigureWidget(new RemoteContentConfigureWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Details"));
-    setAttribute(Qt::WA_DeleteOnClose);
     auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+
+    mRemoteContentConfigureWidget->setObjectName(QStringLiteral("mRemoteContentConfigureWidget"));
+    mainLayout->addWidget(mRemoteContentConfigureWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    buttonBox->setObjectName(QStringLiteral("buttonBox"));
     connect(buttonBox, &QDialogButtonBox::accepted, this, &RemoteContentConfigureDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RemoteContentConfigureDialog::reject);
     mainLayout->addWidget(buttonBox);

@@ -6,11 +6,15 @@
 
 
 #include "remotecontentconfigurewidget.h"
+#include <KLocalizedString>
+#include <QVBoxLayout>
 using namespace MessageViewer;
 RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     : QWidget(parent)
 {
-
+    auto vboxLayout = new QVBoxLayout(this);
+    vboxLayout->setObjectName(QStringLiteral("vboxLayout"));
+    vboxLayout->setContentsMargins({});
 }
 
 RemoteContentConfigureWidget::~RemoteContentConfigureWidget()

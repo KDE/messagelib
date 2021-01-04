@@ -6,7 +6,10 @@
 
 #include "remotecontentconfiguredialogtest.h"
 #include "remote-content/remotecontentconfiguredialog.h"
+#include "remote-content/remotecontentconfigurewidget.h"
+#include <QDialogButtonBox>
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(RemoteContentConfigureDialogTest)
 RemoteContentConfigureDialogTest::RemoteContentConfigureDialogTest(QObject *parent)
     : QObject(parent)
@@ -16,6 +19,17 @@ RemoteContentConfigureDialogTest::RemoteContentConfigureDialogTest(QObject *pare
 
 void RemoteContentConfigureDialogTest::shouldHaveDefaultValues()
 {
-    MessageViewer::RemoteContentConfigureDialog d;
-    //TODO
+    MessageViewer::RemoteContentConfigureDialog w;
+
+    QVERIFY(!w.windowTitle().isEmpty());
+
+    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    QVERIFY(mainLayout);
+
+    auto mRemoteContentConfigureWidget = w.findChild<MessageViewer::RemoteContentConfigureWidget *>(QStringLiteral("mRemoteContentConfigureWidget"));
+    QVERIFY(mRemoteContentConfigureWidget);
+
+    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    QVERIFY(buttonBox);
+    QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
 }
