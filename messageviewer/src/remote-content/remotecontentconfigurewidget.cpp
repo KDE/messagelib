@@ -12,9 +12,9 @@ using namespace MessageViewer;
 RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto vboxLayout = new QVBoxLayout(this);
-    vboxLayout->setObjectName(QStringLiteral("vboxLayout"));
-    vboxLayout->setContentsMargins({});
+    auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setContentsMargins({});
 }
 
 RemoteContentConfigureWidget::~RemoteContentConfigureWidget()
