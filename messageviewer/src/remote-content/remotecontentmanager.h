@@ -25,6 +25,8 @@ public:
     Q_REQUIRED_RESULT bool isAutorized(const QUrl &url, bool &contains) const;
 
     void addRemoteContent(const RemoteContentInfo &info);
+    Q_REQUIRED_RESULT QVector<RemoteContentInfo> removeContentInfo() const;
+
 private:
     void loadSettings();
     void writeSettings();

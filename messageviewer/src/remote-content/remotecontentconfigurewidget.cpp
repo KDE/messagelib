@@ -6,6 +6,8 @@
 
 
 #include "remotecontentconfigurewidget.h"
+#include "remotecontentinfo.h"
+#include "remotecontentmanager.h"
 #include <KLocalizedString>
 #include <QListWidget>
 #include <QVBoxLayout>
@@ -35,5 +37,12 @@ void RemoteContentConfigureWidget::saveSettings()
 
 void RemoteContentConfigureWidget::readSettings()
 {
-
+    const QVector<RemoteContentInfo> remoteContentInfos = RemoteContentManager::self()->removeContentInfo();
+    for (const RemoteContentInfo &info : remoteContentInfos) {
+        auto item = new QListWidgetItem(mListWidget);
+        item->setText(info.url());
+        if (info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized) {
+            item->setCheckState(Qt::Checked);
+        }
+    }
 }

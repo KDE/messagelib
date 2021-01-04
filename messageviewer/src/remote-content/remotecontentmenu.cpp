@@ -27,6 +27,11 @@ void RemoteContentMenu::initialize()
     //TODO
 }
 
+void RemoteContentMenu::fillMenu()
+{
+    //TODO
+}
+
 void RemoteContentMenu::slotConfigure()
 {
     QPointer<MessageViewer::RemoteContentConfigureDialog> remoteContentDialog = new MessageViewer::RemoteContentConfigureDialog(this);
