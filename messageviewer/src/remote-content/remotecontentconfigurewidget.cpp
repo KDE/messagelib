@@ -32,7 +32,10 @@ RemoteContentConfigureWidget::~RemoteContentConfigureWidget()
 
 void RemoteContentConfigureWidget::saveSettings()
 {
+    for (int i = 0; i < mListWidget->count(); ++i) {
 
+    }
+    //TODO add to manager.
 }
 
 void RemoteContentConfigureWidget::readSettings()

@@ -99,6 +99,11 @@ void RemoteContentManager::writeSettings()
     group.writeEntry("Authorized", authorizedUrl);
 }
 
+void RemoteContentManager::setRemoveContentInfo(const QVector<RemoteContentInfo> &removeContentInfo)
+{
+    mRemoveContentInfo = removeContentInfo;
+}
+
 QVector<RemoteContentInfo> RemoteContentManager::removeContentInfo() const
 {
     return mRemoveContentInfo;

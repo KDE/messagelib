@@ -27,6 +27,8 @@ public:
     void addRemoteContent(const RemoteContentInfo &info);
     Q_REQUIRED_RESULT QVector<RemoteContentInfo> removeContentInfo() const;
 
+    void setRemoveContentInfo(const QVector<RemoteContentInfo> &removeContentInfo);
+
 private:
     void loadSettings();
     void writeSettings();
