@@ -19,8 +19,8 @@ public:
     explicit RemoteContentConfigureWidget(QWidget *parent = nullptr);
     ~RemoteContentConfigureWidget() override;
     void saveSettings();
-    void readSettings();
 private:
+    void readSettings();
     QListWidget *mListWidget = nullptr;
 };
 }

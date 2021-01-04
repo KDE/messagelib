@@ -20,6 +20,7 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     mListWidget = new QListWidget(this);
     mListWidget->setObjectName(QStringLiteral("mListWidget"));
     mainLayout->addWidget(mListWidget);
+    readSettings();
 }
 
 RemoteContentConfigureWidget::~RemoteContentConfigureWidget()

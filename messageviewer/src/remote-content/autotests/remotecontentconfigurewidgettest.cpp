@@ -8,11 +8,13 @@
 #include <QListWidget>
 #include <QTest>
 #include <QVBoxLayout>
+#include <QStandardPaths>
+
 QTEST_MAIN(RemoteContentConfigureWidgetTest)
 RemoteContentConfigureWidgetTest::RemoteContentConfigureWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void RemoteContentConfigureWidgetTest::shouldHaveDefaultValues()

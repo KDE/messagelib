@@ -21,6 +21,7 @@ public:
 private:
     void readConfig();
     void writeConfig();
+    void slotAccept();
     RemoteContentConfigureWidget *const mRemoteContentConfigureWidget;
 };
 }

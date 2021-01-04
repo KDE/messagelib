@@ -8,13 +8,14 @@
 #include "remote-content/remotecontentconfiguredialog.h"
 #include "remote-content/remotecontentconfigurewidget.h"
 #include <QDialogButtonBox>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(RemoteContentConfigureDialogTest)
 RemoteContentConfigureDialogTest::RemoteContentConfigureDialogTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void RemoteContentConfigureDialogTest::shouldHaveDefaultValues()
