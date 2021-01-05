@@ -38,6 +38,10 @@ private Q_SLOTS:
     void testEditEncryptAndLateAttachments();
     void testEditEncryptAndLateAttachments_data();
 
+    // test protected headers
+    void testProtectedHeaders();
+    void testProtectedHeaders_data();
+
     // secondary recipients
     void testBCCEncrypt();
     void testBCCEncrypt_data();

@@ -260,3 +260,58 @@ void SignJobTest::testProtectedHeaders()
 
     Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
 }
+
+void SignJobTest::testProtectedHeadersOverwrite()
+{
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const auto referenceFile = QStringLiteral("protected_headers-non-obvoscate.mbox");
+
+    Composer composer;
+    auto sJob = new SignJob(&composer);
+
+    QVERIFY(sJob);
+
+    const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
+    const QString subject(QStringLiteral("asdfghjklö"));
+
+    auto content = new KMime::Content;
+    content->contentType(true)->setMimeType("text/plain");
+    content->setBody(data);
+
+    KMime::Message skeletonMessage;
+    skeletonMessage.contentType(true)->setMimeType("foo/bla");
+    skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
+    skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
+    skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
+    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+
+    sJob->setContent(content);
+    sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    sJob->setSigningKeys(keys);
+    sJob->setSkeletonMessage(&skeletonMessage);
+    sJob->setProtectedHeaders(true);
+
+    VERIFYEXEC(sJob);
+
+    QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
+    skeletonMessage.to()->from7BitString("owerwrite@example.org");
+    skeletonMessage.cc()->from7BitString("cc_overwrite@example.org");
+    skeletonMessage.bcc()->from7BitString("bcc_overwrite@example.org");
+    skeletonMessage.subject()->fromUnicodeString(subject+QStringLiteral("_owerwrite"), "utf-8");
+
+
+    KMime::Content *result = sJob->content();
+    result->assemble();
+
+    QFile f(referenceFile);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    const QByteArray signedContent(result->contents().at(0)->encodedContent());
+    f.write(signedContent);
+    if (!signedContent.endsWith('\n')) {
+        f.write("\n");
+    }
+    f.close();
+
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+
+}

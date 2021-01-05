@@ -21,6 +21,9 @@ private Q_SLOTS:
     void testContent();
     void testContentSubjobChained();
     void testHeaders();
+
+    void testProtectedHeaders_data();
+    void testProtectedHeaders();
 };
 
 #endif

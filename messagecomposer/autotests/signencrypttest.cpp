@@ -20,6 +20,15 @@
 #include <MessageComposer/TransparentJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/TextPart>
+#include <MessageComposer/Util>
+
+#include <QGpgME/Protocol>
+#include <QGpgME/DecryptVerifyJob>
+
+#include <gpgme++/verificationresult.h>
+#include <gpgme++/decryptionresult.h>
+
+#include <sstream>
 
 #include <setupenv.h>
 
@@ -180,4 +189,97 @@ void SignEncryptTest::testHeaders()
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
     delete result;
+}
+
+void SignEncryptTest::testProtectedHeaders_data()
+{
+    QTest::addColumn<bool>("protectedHeaders");
+    QTest::addColumn<bool>("protectedHeadersObvoscate");
+    QTest::addColumn<QString>("referenceFile");
+
+    QTest::newRow("simple-obvoscate") << true << true << QStringLiteral("protected_headers-obvoscate.mbox");
+    QTest::newRow("simple-non-obvoscate") << true << false << QStringLiteral("protected_headers-non-obvoscate.mbox");
+    QTest::newRow("non-protected_headers") << false << false << QStringLiteral("non-protected_headers.mbox");
+}
+
+void SignEncryptTest::testProtectedHeaders()
+{
+    QFETCH(bool, protectedHeaders);
+    QFETCH(bool, protectedHeadersObvoscate);
+    QFETCH(QString, referenceFile);
+
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
+
+    Composer composer;
+    auto *seJob = new SignEncryptJob(&composer);
+
+    QVERIFY(seJob);
+
+    const QByteArray data(QStringLiteral("one flew over the cuckoo's nest").toUtf8());
+    const QString subject(QStringLiteral("asdfghjklö"));
+
+    auto content = new KMime::Content;
+    content->contentType(true)->setMimeType("text/plain");
+    content->setBody(data);
+
+    KMime::Message skeletonMessage;
+    skeletonMessage.contentType(true)->setMimeType("foo/bla");
+    skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
+    skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
+    skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
+    skeletonMessage.subject(true)->fromUnicodeString(subject, "utf-8");
+
+    const QStringList recipients = {QStringLiteral("test@kolab.org")};
+
+    seJob->setContent(content);
+    seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    seJob->setRecipients(recipients);
+    seJob->setEncryptionKeys(keys);
+    seJob->setSkeletonMessage(&skeletonMessage);
+    seJob->setProtectedHeaders(protectedHeaders);
+    seJob->setProtectedHeadersObvoscate(protectedHeadersObvoscate);
+
+    VERIFYEXEC(seJob);
+
+    if (protectedHeadersObvoscate) {
+        QCOMPARE(skeletonMessage.subject()->as7BitString(false), "...");
+    } else {
+        QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
+    }
+
+    KMime::Content *result = seJob->content();
+    result->assemble();
+
+    KMime::Content *encPart = Util::findTypeInMessage(result, "application", "octet-stream");
+    KMime::Content tempNode;
+    {
+        QByteArray plainText;
+        auto job = QGpgME::openpgp()->decryptVerifyJob();
+        auto result = job->exec(encPart->encodedBody(), plainText);
+
+        auto signature = result.second.signatures()[0];
+
+        QCOMPARE(signature.fingerprint(), "1BA323932B3FAA826132C79E8D9860C58F246DE6");
+        QCOMPARE(signature.status().code(), 0);
+
+        tempNode.setContent(KMime::CRLFtoLF(plainText.constData()));
+        tempNode.parse();
+    }
+    if (protectedHeadersObvoscate) {
+        tempNode.contentType(false)->setBoundary("123456789");
+        tempNode.assemble();
+    }
+
+    delete result;
+
+    QFile f(referenceFile);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    const QByteArray encodedContent(tempNode.encodedContent());
+    f.write(encodedContent);
+    if (!encodedContent.endsWith('\n')) {
+        f.write("\n");
+    }
+    f.close();
+
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
 }
