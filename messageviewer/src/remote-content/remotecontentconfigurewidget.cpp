@@ -32,10 +32,17 @@ RemoteContentConfigureWidget::~RemoteContentConfigureWidget()
 
 void RemoteContentConfigureWidget::saveSettings()
 {
-    for (int i = 0; i < mListWidget->count(); ++i) {
-
+    QVector<RemoteContentInfo> lst;
+    const int count = mListWidget->count();
+    lst.reserve(count);
+    for (int i = 0; i < count; ++i) {
+        const auto item = mListWidget->item(i);
+        RemoteContentInfo info;
+        info.setUrl(item->text());
+        info.setStatus((item->checkState() == Qt::Checked) ? RemoteContentInfo::RemoteContentInfoStatus::Authorized : RemoteContentInfo::RemoteContentInfoStatus::Blocked);
+        lst.append(std::move(info));
     }
-    //TODO add to manager.
+    RemoteContentManager::self()->setRemoveContentInfo(lst);
 }
 
 void RemoteContentConfigureWidget::readSettings()
