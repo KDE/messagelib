@@ -840,7 +840,7 @@ bool MessageFactoryNG::MDNReturnPathEmpty(const KMime::Message::Ptr &msg)
     // SHOULD be obtained (or no MDN sent) if there is no Return-Path
     // header in the message [...]
     KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, "Return-Path");
-    QString returnPath = returnPathList.isEmpty() ? QString()
+    const QString returnPath = returnPathList.isEmpty() ? QString()
                          : returnPathList.front().localPart + QChar::fromLatin1('@') + returnPathList.front().domain;
     qCDebug(MESSAGECOMPOSER_LOG) << "clean return path:" << returnPath;
     return returnPath.isEmpty();
@@ -864,7 +864,7 @@ bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &ms
     // SHOULD be obtained (or no MDN sent) if there is no Return-Path
     // header in the message [...]
     KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, QStringLiteral("Return-Path").toLatin1());
-    QString returnPath = returnPathList.isEmpty() ? QString()
+    const QString returnPath = returnPathList.isEmpty() ? QString()
                          : returnPathList.front().localPart + QChar::fromLatin1('@') + returnPathList.front().domain;
     qCDebug(MESSAGECOMPOSER_LOG) << "clean return path:" << returnPath;
     return !receiptTo.contains(returnPath, Qt::CaseSensitive);
