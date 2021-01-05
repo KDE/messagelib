@@ -233,7 +233,6 @@ void EncryptJob::process()
     qCDebug(MESSAGECOMPOSER_LOG) << "got backend, starting job";
     QGpgME::EncryptJob *eJob = proto->encryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat);
 
-    /*
     QObject::connect(eJob, &QGpgME::EncryptJob::result, this, [this, d](const GpgME::EncryptionResult &result,
                      const QByteArray &cipherText,
                      const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
@@ -249,20 +248,12 @@ void EncryptJob::process()
 
         emitResult();
     });
-    eJob->start(d->keys, content, true);
-    */
 
-    //TODO: use async GPG again!!!
-    QByteArray cipherText;
-    auto result = eJob->exec(d->keys, content, true, cipherText);
-
-    if (result.error()) {
-        setError(result.error().code());
-        setErrorText(QString::fromLocal8Bit(result.error().asString()));
+    const auto error = eJob->start(d->keys, content, true);
+    if (error.code()) {
+        eJob->deleteLater();
+        setError(error.code());
+        setErrorText(QString::fromLocal8Bit(error.asString()));
         emitResult();
-        return;
     }
-    d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false);
-
-    emitResult();
 }
