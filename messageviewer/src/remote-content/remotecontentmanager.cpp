@@ -27,6 +27,11 @@ RemoteContentManager *RemoteContentManager::self()
     return &s_self;
 }
 
+void RemoteContentManager::clear()
+{
+    mRemoveContentInfo.clear();
+}
+
 bool RemoteContentManager::isAutorized(const QString &url) const
 {
     for (const RemoteContentInfo &info : qAsConst(mRemoveContentInfo)) {

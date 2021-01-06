@@ -20,6 +20,7 @@ public:
     explicit RemoteContentManager(QObject *parent = nullptr);
     ~RemoteContentManager() override;
     static RemoteContentManager *self();
+    void clear();
 
     Q_REQUIRED_RESULT bool isAutorized(const QString &url) const;
     Q_REQUIRED_RESULT bool isAutorized(const QUrl &url, bool &contains) const;

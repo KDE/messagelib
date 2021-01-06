@@ -28,6 +28,8 @@ void RemoteContentManagerTest::shouldIsBlocked_data()
     QTest::addColumn<bool>("blocked");
     QTest::addColumn<bool>("contains");
     QTest::newRow("empty") << QUrl() << false << false;
+    //QTest::newRow("empty") << QUrl() << false << false;
+    //TODO add elment + clear;
 
 }
 
