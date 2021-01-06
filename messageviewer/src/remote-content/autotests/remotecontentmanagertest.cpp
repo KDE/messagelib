@@ -5,7 +5,6 @@
 */
 
 #include "remotecontentmanagertest.h"
-#include "remote-content/remotecontentmanager.h"
 #include "remote-content/remotecontentinfo.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -16,10 +15,14 @@ RemoteContentManagerTest::RemoteContentManagerTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
+RemoteContentManagerTest::~RemoteContentManagerTest()
+{
+    mRemoveContentManager.clear();
+}
+
 void RemoteContentManagerTest::shouldHaveDefaultValues()
 {
-    MessageViewer::RemoteContentManager m;
-    QVERIFY(m.removeContentInfo().isEmpty());
+    QVERIFY(mRemoveContentManager.removeContentInfo().isEmpty());
 }
 
 void RemoteContentManagerTest::shouldIsBlocked_data()
@@ -28,9 +31,18 @@ void RemoteContentManagerTest::shouldIsBlocked_data()
     QTest::addColumn<bool>("blocked");
     QTest::addColumn<bool>("contains");
     QTest::newRow("empty") << QUrl() << false << false;
-    //QTest::newRow("empty") << QUrl() << false << false;
-    //TODO add elment + clear;
+    MessageViewer::RemoteContentInfo info;
+    info.setUrl(QStringLiteral("http://www.kde.org"));
+    info.setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Blocked);
 
+    mRemoveContentManager.addRemoteContent(info);
+    QTest::newRow("kde-blocked") << QUrl(QStringLiteral("http://www.kde.org")) << false << true;
+    MessageViewer::RemoteContentInfo info2;
+    info2.setUrl(QStringLiteral("http://www.kde2.org"));
+    info2.setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Authorized);
+    mRemoveContentManager.addRemoteContent(info2);
+
+    QTest::newRow("kde-authorized") << QUrl(QStringLiteral("http://www.kde2.org")) << true << true;
 }
 
 void RemoteContentManagerTest::shouldIsBlocked()
@@ -38,9 +50,8 @@ void RemoteContentManagerTest::shouldIsBlocked()
     QFETCH(QUrl, url);
     QFETCH(bool, blocked);
     QFETCH(bool, contains);
-    MessageViewer::RemoteContentManager m;
     bool isInList = false;
-    const bool result = m.isAutorized(url, isInList);
+    const bool result = mRemoveContentManager.isAutorized(url, isInList);
     QCOMPARE(isInList, contains);
     QCOMPARE(blocked, result);
 }

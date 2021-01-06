@@ -9,17 +9,21 @@
 
 #include <QObject>
 
+#include "remote-content/remotecontentmanager.h"
+
 class RemoteContentManagerTest : public QObject
 {
     Q_OBJECT
 public:
     explicit RemoteContentManagerTest(QObject *parent = nullptr);
-    ~RemoteContentManagerTest() override = default;
+    ~RemoteContentManagerTest() override;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldIsBlocked_data();
     void shouldIsBlocked();
+private:
+    MessageViewer::RemoteContentManager mRemoveContentManager;
 };
 
 #endif // REMOTECONTENTMANAGERTEST_H
