@@ -18,6 +18,8 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldIsBlocked_data();
+    void shouldIsBlocked();
 };
 
 #endif // REMOTECONTENTMANAGERTEST_H
