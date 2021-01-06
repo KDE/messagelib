@@ -24,6 +24,10 @@ class Item;
 class ItemFetchJob;
 }
 
+namespace KIdentityManagement {
+class IdentityManager;
+}
+
 class KActionCollection;
 class QAction;
 class KToggleAction;
@@ -340,6 +344,8 @@ public:
     void exportToPdf(const QString &fileName);
 
     void showDevelopmentTools();
+
+    void setIdentityManager(KIdentityManagement::IdentityManager *ident);
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);

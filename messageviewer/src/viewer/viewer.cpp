@@ -767,4 +767,10 @@ void Viewer::showDevelopmentTools()
     d->slotShowDevelopmentTools();
 }
 
+void Viewer::setIdentityManager(KIdentityManagement::IdentityManager *ident)
+{
+    Q_D(Viewer);
+    d->setIdentityManager(ident);
+}
+
 }

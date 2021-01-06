@@ -46,6 +46,10 @@ class QSplitter;
 class QModelIndex;
 class QPrinter;
 
+namespace KIdentityManagement {
+class IdentityManager;
+}
+
 namespace KPIMTextEdit {
 class SlideContainer;
 class TextToSpeechWidget;
@@ -427,6 +431,10 @@ public:
     void hasMultiMessages(bool messages);
     void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
     MessageViewer::DKIMViewerMenu *dkimViewerMenu();
+
+    Q_REQUIRED_RESULT bool isAutocryptEnabled(const KMime::Content *content);
+    void setIdentityManager(KIdentityManagement::IdentityManager *ident);
+
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
     void slotModifyItemDone(KJob *job);
@@ -690,6 +698,7 @@ public:
     MessageViewer::DKIMWidgetInfo *mDkimWidgetInfo = nullptr;
     MessageViewer::DKIMViewerMenu *mDkimViewerMenu = nullptr;
     MessageViewer::MessageViewerRenderer *mMessageViewerRenderer = nullptr;
+    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
 }
 

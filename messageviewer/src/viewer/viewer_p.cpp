@@ -85,6 +85,9 @@
 #include <AkonadiCore/attributefactory.h>
 #include <Akonadi/KMime/MessageParts>
 
+#include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
+
 //own includes
 #include "widgets/attachmentdialog.h"
 #include "csshelper.h"
@@ -3150,4 +3153,30 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
         }
     }
     return nullptr;
+}
+
+bool ViewerPrivate::isAutocryptEnabled(const KMime::Content *content)
+{
+    if (!mIdentityManager) {
+        return false;
+    }
+
+    QString addresses;
+    if (content->headerByType("to")) {
+        addresses += content->headerByType("to")->asUnicodeString();
+    }
+
+    if (content->headerByType("cc")) {
+        if (!addresses.isEmpty()) {
+            addresses += QLatin1String(", ");
+        }
+        addresses += content->headerByType("cc")->asUnicodeString();
+    }
+    const auto id = mIdentityManager->identityForAddress(addresses);
+    return id.autocryptEnabled();
+}
+
+void ViewerPrivate::setIdentityManager(KIdentityManagement::IdentityManager* ident)
+{
+    mIdentityManager = ident;
 }

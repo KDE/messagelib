@@ -348,6 +348,7 @@ target_link_libraries(KF5MessageViewer
     KF5::Mbox
     KF5::PimTextEdit
     KF5::Gravatar
+    KF5::IdentityManagement
     KF5::IconThemes
     KF5::I18n
     KF5::KIOFileWidgets
