@@ -220,7 +220,7 @@ void SignEncryptJob::process()
     //d->resultContent = new KMime::Content;
 
     qCDebug(MESSAGECOMPOSER_LOG) << "creating signencrypt from:" << proto->name() << proto->displayName();
-    std::unique_ptr<QGpgME::SignEncryptJob> job(proto->signEncryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat));
+
     QByteArray encBody;
     d->content->assemble();
 
@@ -235,33 +235,40 @@ void SignEncryptJob::process()
         content = d->content->encodedContent();
     }
 
-    // FIXME: Make this async
-    const std::pair<GpgME::SigningResult, GpgME::EncryptionResult> res = job->exec(d->signers, d->encKeys,
-                                                                                   content,
-                                                                                   false,
-                                                                                   encBody);
+    QGpgME::SignEncryptJob *job(proto->signEncryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat));
+    QObject::connect(job, &QGpgME::SignEncryptJob::result, this, [this, d](
+        const GpgME::SigningResult &signingResult,
+        const GpgME::EncryptionResult &encryptionResult,
+        const QByteArray &cipherText,
+        const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
+        Q_UNUSED(auditLogAsHtml)
+        Q_UNUSED(auditLogError)
+        if (signingResult.error()) {
+            qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << signingResult.error().asString();
+            setError(signingResult.error().code());
+            setErrorText(QString::fromLocal8Bit(signingResult.error().asString()));
+            emitResult();
+            return;
+        }
+        if (encryptionResult.error()) {
+            qCDebug(MESSAGECOMPOSER_LOG) << "encrypting failed:" << encryptionResult.error().asString();
+            setError(encryptionResult.error().code());
+            setErrorText(QString::fromLocal8Bit(encryptionResult.error().asString()));
+            emitResult();
+            return;
+        }
 
-    // exec'ed jobs don't delete themselves
-    job->deleteLater();
+        QByteArray signatureHashAlgo = signingResult.createdSignature(0).hashAlgorithmAsString();
+        d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false, signatureHashAlgo);
 
-    if (res.first.error()) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << res.first.error().asString();
-        setError(res.first.error().code());
-        setErrorText(QString::fromLocal8Bit(res.first.error().asString()));
         emitResult();
-        return;
-    }
-    if (res.second.error()) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "encrypting failed:" << res.second.error().asString();
-        setError(res.second.error().code());
-        setErrorText(QString::fromLocal8Bit(res.second.error().asString()));
+    });
+
+    const auto error = job->start(d->signers, d->encKeys, content, false);
+    if (error.code()) {
+        job->deleteLater();
+        setError(error.code());
+        setErrorText(QString::fromLocal8Bit(error.asString()));
         emitResult();
-        return;
     }
-
-    const QByteArray signatureHashAlgo = res.first.createdSignature(0).hashAlgorithmAsString();
-
-    d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, encBody, d->format, false, signatureHashAlgo);
-
-    emitResult();
 }

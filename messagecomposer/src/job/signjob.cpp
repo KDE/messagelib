@@ -193,7 +193,6 @@ void SignJob::process()
     Q_ASSERT(proto);
 
     qCDebug(MESSAGECOMPOSER_LOG) << "creating signJob from:" << proto->name() << proto->displayName();
-    std::unique_ptr<QGpgME::SignJob> job(proto->signJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat));
     // for now just do the main recipients
     QByteArray signature;
 
@@ -261,24 +260,32 @@ void SignJob::process()
         content = d->content->encodedContent();
     }
 
-    // FIXME: Make this async
-    GpgME::SigningResult res = job->exec(d->signers,
-                                         content,
-                                         d->signingMode(d->format),
-                                         signature);
+    QGpgME::SignJob *job(proto->signJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat));
+    QObject::connect(job, &QGpgME::SignJob::result, this, [this, d](const GpgME::SigningResult &result,
+        const QByteArray &signature,
+        const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
+        Q_UNUSED(auditLogAsHtml)
+        Q_UNUSED(auditLogError)
+        if (result.error().code()) {
+            qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << result.error().asString();
+            //        job->showErrorDialog( globalPart()->parentWidgetForGui() );
+            setError(result.error().code());
+            setErrorText(QString::fromLocal8Bit(result.error().asString()));
+            emitResult();
+            return;
+        }
 
-    // exec'ed jobs don't delete themselves
-    job->deleteLater();
-
-    if (res.error().code()) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << res.error().asString();
-        //        job->showErrorDialog( globalPart()->parentWidgetForGui() );
-        setError(res.error().code());
-        setErrorText(QString::fromLocal8Bit(res.error().asString()));
-    } else {
-        QByteArray signatureHashAlgo = res.createdSignature(0).hashAlgorithmAsString();
+        QByteArray signatureHashAlgo = result.createdSignature(0).hashAlgorithmAsString();
         d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, signature, d->format, true, signatureHashAlgo);
-    }
 
-    emitResult();
+        emitResult();
+    });
+
+    const auto error = job->start(d->signers, content, d->signingMode(d->format));
+    if (error.code()) {
+        job->deleteLater();
+        setError(error.code());
+        setErrorText(QString::fromLocal8Bit(error.asString()));
+        emitResult();
+    }
 }

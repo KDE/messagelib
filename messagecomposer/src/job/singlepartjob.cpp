@@ -27,15 +27,6 @@ public:
     {
     }
 
-    ~SinglepartJobPrivate()
-    {
-        delete contentTransferEncoding;
-        delete contentType;
-        delete contentID;
-        delete contentDescription;
-        delete contentDisposition;
-    }
-
     bool chooseCTE();
 
     QByteArray data;
