@@ -24,7 +24,7 @@ RemoteContentMenu::~RemoteContentMenu()
 void RemoteContentMenu::initialize()
 {
     mConfigureRemoteContentAction = addAction(i18n("Configure"), this, &RemoteContentMenu::slotConfigure);
-    //TODO
+    fillMenu();
 }
 
 void RemoteContentMenu::fillMenu()
@@ -35,8 +35,6 @@ void RemoteContentMenu::fillMenu()
 void RemoteContentMenu::slotConfigure()
 {
     QPointer<MessageViewer::RemoteContentConfigureDialog> remoteContentDialog = new MessageViewer::RemoteContentConfigureDialog(this);
-    if (remoteContentDialog->exec()) {
-        //TODO ?
-    }
+    remoteContentDialog->exec();
     delete remoteContentDialog;
 }
