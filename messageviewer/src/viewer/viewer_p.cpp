@@ -2372,8 +2372,8 @@ void ViewerPrivate::slotPrintMessage()
         return;
     }
     if (dialog->printer()->outputFormat() == QPrinter::PdfFormat) {
-        mViewer->page()->printToPdf(dialog->printer()->outputFileName(), dialog->printer()->pageLayout());
         connect(mViewer->page(), &QWebEnginePage::pdfPrintingFinished, this, &ViewerPrivate::slotPdfPrintingFinished);
+        mViewer->page()->printToPdf(dialog->printer()->outputFileName(), dialog->printer()->pageLayout());
     } else {
         mViewer->page()->print(mCurrentPrinter, invoke(this, &ViewerPrivate::slotHandlePagePrinted));
     }
