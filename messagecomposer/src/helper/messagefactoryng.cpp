@@ -777,7 +777,7 @@ void MessageFactoryNG::setMailingListAddresses(const KMime::Types::Mailbox::List
     mMailingListAddresses << listAddresses;
 }
 
-void MessageFactoryNG::setFolderIdentity(Akonadi::Collection::Id folderIdentityId)
+void MessageFactoryNG::setFolderIdentity(uint folderIdentityId)
 {
     mFolderId = folderIdentityId;
 }
