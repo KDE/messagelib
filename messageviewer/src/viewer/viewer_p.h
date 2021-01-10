@@ -432,7 +432,7 @@ public:
     void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
     MessageViewer::DKIMViewerMenu *dkimViewerMenu();
 
-    Q_REQUIRED_RESULT bool isAutocryptEnabled(const KMime::Content *content);
+    Q_REQUIRED_RESULT bool isAutocryptEnabled(KMime::Message *message);
     void setIdentityManager(KIdentityManagement::IdentityManager *ident);
     void setFolderIdentity(uint folderIdentity);
 

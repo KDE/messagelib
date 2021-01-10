@@ -22,6 +22,7 @@
 #include <KEmailAddress>
 #include <MessageCore/MailingList>
 #include <MessageCore/StringUtil>
+#include <MessageCore/Util>
 #include "helper/messagehelper.h"
 #include <KLocalizedString>
 #include "messagecomposer_debug.h"
@@ -901,11 +902,7 @@ uint MessageFactoryNG::identityUoid(const KMime::Message::Ptr &msg)
     uint id = idString.toUInt(&ok);
 
     if (!ok || id == 0) {
-        id = mIdentityManager->identityForAddress(msg->to()->asUnicodeString() + QLatin1String(", ") + msg->cc()->asUnicodeString()).uoid();
-    }
-
-    if (id == 0 && mFolderId > 0) {
-        id = mFolderId;
+        id = MessageCore::Util::identityForMessage(msg.data(), mIdentityManager, mFolderId).uoid();
     }
     return id;
 }

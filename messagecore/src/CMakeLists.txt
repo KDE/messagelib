@@ -27,6 +27,7 @@ set(messagecore_helper_LIB_SRCS
 
 set(messagecore_utils_LIB_SRCS
     utils/stringutil.cpp
+    utils/util.cpp
     utils/colorutil.cpp
     )
 
@@ -104,6 +105,7 @@ ecm_generate_headers(MessageCore_Camelcaseutils_HEADERS
     HEADER_NAMES
     ColorUtil
     StringUtil
+    Util
     REQUIRED_HEADERS MessageCore_utils_HEADERS
     PREFIX MessageCore
     RELATIVE utils
