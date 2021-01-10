@@ -11,14 +11,15 @@
 #include "settings/messagecomposersettings.h"
 #include "messagefactoryforwardjob.h"
 #include "messagefactoryreplyjob.h"
-#include "MessageComposer/Util"
+#include <MessageComposer/Util>
 
-#include <AkonadiCore/item.h>
+#include <AkonadiCore/Item>
 #include <KCursorSaver>
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
-#include <KIdentityManagement/kidentitymanagement/identity.h>
 
-#include <kmime/kmime_dateformatter.h>
+#include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
+
+#include <KMime/DateFormatter>
 #include <KEmailAddress>
 #include <MessageCore/MailingList>
 #include <MessageCore/StringUtil>

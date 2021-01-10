@@ -9,9 +9,9 @@
 #include "config-enterprise.h"
 #include "MessageCore/MessageCoreSettings"
 
-#include <kmime/kmime_header_parsing.h>
-#include <kmime/kmime_headers.h>
-#include <kmime/kmime_message.h>
+#include <KMime/HeaderParsing>
+#include <KMime/Headers>
+#include <KMime/Message>
 #include <KEmailAddress>
 #include <KLocalizedString>
 
@@ -25,6 +25,7 @@
 #include <QUrlQuery>
 #include <KPIMTextEdit/TextUtils>
 #include <KCodecs>
+
 using namespace KMime;
 using namespace KMime::Types;
 using namespace KMime::HeaderParsing;

@@ -11,7 +11,7 @@
 #include "settings/messageviewersettings.h"
 
 #include <MessageCore/ColorUtil>
-#include "MessageCore/MessageCoreSettings"
+#include <MessageCore/MessageCoreSettings>
 
 #include <KConfig>
 #include <KConfigGroup>

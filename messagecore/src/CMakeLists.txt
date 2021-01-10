@@ -127,7 +127,7 @@ ecm_generate_headers(MessageCore_Camelcaseattachment_HEADERS
     AttachmentPropertiesDialog
     AttachmentCompressJob
     AttachmentUpdateJob
-    AttachmentFromUrlUtils    
+    AttachmentFromUrlUtils
     AttachmentLoadJob
 
     REQUIRED_HEADERS MessageCore_attachment_HEADERS
