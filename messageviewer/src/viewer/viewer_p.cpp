@@ -3174,3 +3174,8 @@ void ViewerPrivate::setIdentityManager(KIdentityManagement::IdentityManager* ide
 {
     mIdentityManager = ident;
 }
+
+void MessageViewer::ViewerPrivate::setFolderIdentity(uint folderIdentity)
+{
+    mFolderIdentity = folderIdentity;
+}

@@ -434,6 +434,7 @@ public:
 
     Q_REQUIRED_RESULT bool isAutocryptEnabled(const KMime::Content *content);
     void setIdentityManager(KIdentityManagement::IdentityManager *ident);
+    void setFolderIdentity(uint folderIdentity);
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -664,6 +665,7 @@ public:
     bool mShowEncryptionDetails = false;
     bool mForceEmoticons = true;
     int mRecursionCountForDisplayMessage = 0;
+    uint mFolderIdentity = 0;
     KMime::Content *mCurrentContent = nullptr;
     KMime::Content *mMessagePartNode = nullptr;
     QString mMessagePath;

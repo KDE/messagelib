@@ -346,6 +346,7 @@ public:
     void showDevelopmentTools();
 
     void setIdentityManager(KIdentityManagement::IdentityManager *ident);
+    void setFolderIdentity(uint folderIdentity);
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
