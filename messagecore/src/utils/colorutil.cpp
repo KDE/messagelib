@@ -5,7 +5,7 @@
  *
  */
 
-#include "messagecoreutil.h"
+#include "colorutil.h"
 
 #include <KColorScheme>
 #include <QApplication>

@@ -10,8 +10,8 @@
 #include "csshelper.h"
 #include "settings/messageviewersettings.h"
 
+#include <MessageCore/ColorUtil>
 #include "MessageCore/MessageCoreSettings"
-#include <MessageCore/MessageCoreUtil>
 
 #include <KConfig>
 #include <KConfigGroup>

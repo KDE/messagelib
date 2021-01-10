@@ -25,12 +25,16 @@ set(messagecore_helper_LIB_SRCS
     helpers/nodehelper.cpp
     )
 
+set(messagecore_utils_LIB_SRCS
+    utils/stringutil.cpp
+    utils/colorutil.cpp
+    )
+
 set(messagecore_LIB_SRCS
     ${messagecore_attachment_LIB_SRCS}
     ${messagecore_misc_LIB_SRCS}
     ${messagecore_helper_LIB_SRCS}
-    utils/stringutil.cpp
-    messagecoreutil.cpp
+    ${messagecore_utils_LIB_SRCS}
     settings/messagecoresettings.cpp
     )
 
@@ -86,16 +90,6 @@ install(TARGETS
     EXPORT KF5MessageCoreTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
-
-ecm_generate_headers(MessageCore_Camelcasemain_HEADERS
-    HEADER_NAMES
-    MessageCoreUtil
-
-    REQUIRED_HEADERS MessageCore_main_HEADERS
-    PREFIX MessageCore
-    )
-
-
 ecm_generate_headers(MessageCore_Camelcasemisc_HEADERS
     HEADER_NAMES
     ImageCollector
@@ -108,6 +102,7 @@ ecm_generate_headers(MessageCore_Camelcasemisc_HEADERS
 
 ecm_generate_headers(MessageCore_Camelcaseutils_HEADERS
     HEADER_NAMES
+    ColorUtil
     StringUtil
     REQUIRED_HEADERS MessageCore_utils_HEADERS
     PREFIX MessageCore
