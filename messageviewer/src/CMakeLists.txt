@@ -427,6 +427,14 @@ if (${Qca-qt5_FOUND})
         )
 endif()
 
+ecm_generate_headers(MessageViewer_Camelremotecontent_HEADERS
+    HEADER_NAMES
+    RemoteContentConfigureDialog
+    REQUIRED_HEADERS MessageViewer_remotecontent_HEADERS
+    PREFIX MessageViewer
+    RELATIVE remote-content
+    )
+
 
 ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     HEADER_NAMES
@@ -579,6 +587,7 @@ install(FILES
     ${MessageViewer_Camelcaseinterfaces_HEADERS}
     ${MessageViewer_Camelcasehtmlwriter_HEADERS}
     ${MessageViewer_Camelcaseviewer_HEADERS}
+    ${MessageViewer_Camelremotecontent_HEADERS}
     ${MessageViewer_Camelcasewidgets_HEADERS}
     ${MessageViewer_Camelcaseantispam_HEADERS}
     ${MessageViewer_Camelfindbar_HEADERS}
@@ -605,6 +614,7 @@ install(FILES
     ${MessageViewer_antispam_HEADERS}
     ${MessageViewer_findbar_HEADERS}
     ${MessageViewer_renderer_HEADERS}
+    ${MessageViewer_remotecontent_HEADERS}
     ${MessageViewer_blockmailtrackingurlinterceptor_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
