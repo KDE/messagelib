@@ -5,16 +5,22 @@
 */
 
 #include "remotecontentdialog.h"
+#include "remotecontentwidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 using namespace MessageViewer;
 RemoteContentDialog::RemoteContentDialog(QWidget *parent)
     : QDialog(parent)
+    , mRemoveContentWidget(new RemoteContentWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Details"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
+
+    mRemoveContentWidget->setObjectName(QStringLiteral("mRemoveContentWidget"));
+    mainLayout->addWidget(mRemoveContentWidget);
+
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     connect(buttonBox, &QDialogButtonBox::accepted, this, &RemoteContentDialog::accept);
@@ -26,4 +32,9 @@ RemoteContentDialog::RemoteContentDialog(QWidget *parent)
 RemoteContentDialog::~RemoteContentDialog()
 {
 
+}
+
+RemoteContentInfo RemoteContentDialog::info() const
+{
+    return mRemoveContentWidget->info();
 }

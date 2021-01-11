@@ -21,3 +21,9 @@ RemoteContentWidget::~RemoteContentWidget()
 {
 
 }
+
+RemoteContentInfo RemoteContentWidget::info() const
+{
+    //TODO
+    return {};
+}

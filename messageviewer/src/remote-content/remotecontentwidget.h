@@ -9,6 +9,7 @@
 
 #include <QWidget>
 #include "messageviewer_private_export.h"
+#include "remotecontentinfo.h"
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentWidget : public QWidget
 {
@@ -16,6 +17,8 @@ class MESSAGEVIEWER_TESTS_EXPORT RemoteContentWidget : public QWidget
 public:
     explicit RemoteContentWidget(QWidget *parent = nullptr);
     ~RemoteContentWidget() override;
+
+    Q_REQUIRED_RESULT RemoteContentInfo info() const;
 };
 }
 #endif // REMOTECONTENTWIDGET_H
