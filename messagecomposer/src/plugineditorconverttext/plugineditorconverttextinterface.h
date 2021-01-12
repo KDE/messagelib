@@ -31,7 +31,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextInterface : public QObject
     Q_OBJECT
 public:
     explicit PluginEditorConvertTextInterface(QObject *parent = nullptr);
-    ~PluginEditorConvertTextInterface();
+    ~PluginEditorConvertTextInterface() override;
 
     enum class ConvertTextStatus {
         NotConverted,

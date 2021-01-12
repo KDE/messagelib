@@ -22,7 +22,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorInit : public QObject
     Q_OBJECT
 public:
     explicit PluginEditorInit(QObject *parent = nullptr);
-    ~PluginEditorInit();
+    ~PluginEditorInit() override;
 
     virtual PluginEditorInitInterface *createInterface(QObject *parent) = 0;
 

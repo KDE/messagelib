@@ -28,7 +28,7 @@ public:
     * with changes made by the configure dialog.
     */
     explicit ThemeConfigButton(QWidget *parent, const ThemeComboBox *themeComboBox = nullptr);
-    ~ThemeConfigButton();
+    ~ThemeConfigButton() override;
 
 Q_SIGNALS:
     /**

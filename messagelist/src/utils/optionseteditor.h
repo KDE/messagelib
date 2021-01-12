@@ -29,7 +29,7 @@ class OptionSetEditor : public QTabWidget
 
 public:
     explicit OptionSetEditor(QWidget *parent);
-    ~OptionSetEditor();
+    ~OptionSetEditor() override;
     void setReadOnly(bool readOnly);
 
 protected:

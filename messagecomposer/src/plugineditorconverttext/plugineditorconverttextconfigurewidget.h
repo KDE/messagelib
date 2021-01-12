@@ -20,7 +20,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextConfigureWidget : public QWi
     Q_OBJECT
 public:
     explicit PluginEditorConvertTextConfigureWidget(QWidget *parent = nullptr);
-    ~PluginEditorConvertTextConfigureWidget();
+    ~PluginEditorConvertTextConfigureWidget() override;
 
     virtual void loadSettings() = 0;
     virtual void saveSettings() = 0;

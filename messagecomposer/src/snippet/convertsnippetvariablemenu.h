@@ -21,7 +21,7 @@ class MESSAGECOMPOSER_EXPORT ConvertSnippetVariableMenu : public QObject
     Q_OBJECT
 public:
     explicit ConvertSnippetVariableMenu(bool onlyMenuForCustomizeAttachmentFileName, QWidget *parentWidget, QObject *parent = nullptr);
-    ~ConvertSnippetVariableMenu();
+    ~ConvertSnippetVariableMenu() override;
     QMenu *menu() const;
 
 Q_SIGNALS:

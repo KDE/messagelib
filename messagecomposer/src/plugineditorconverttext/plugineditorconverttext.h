@@ -21,7 +21,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorConvertText : public QObject
     Q_OBJECT
 public:
     explicit PluginEditorConvertText(QObject *parent = nullptr);
-    ~PluginEditorConvertText();
+    ~PluginEditorConvertText() override;
 
     virtual PluginEditorConvertTextInterface *createInterface(QObject *parent) = 0;
 

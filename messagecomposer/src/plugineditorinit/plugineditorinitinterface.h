@@ -25,7 +25,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorInitInterface : public QObject
     Q_OBJECT
 public:
     explicit PluginEditorInitInterface(QObject *parent = nullptr);
-    ~PluginEditorInitInterface();
+    ~PluginEditorInitInterface() override;
 
     virtual bool exec() = 0;
 

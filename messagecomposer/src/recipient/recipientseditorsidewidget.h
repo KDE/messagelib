@@ -27,7 +27,7 @@ class RecipientsEditorSideWidget : public QWidget
     Q_OBJECT
 public:
     explicit RecipientsEditorSideWidget(RecipientsEditor *editor, QWidget *parent);
-    ~RecipientsEditorSideWidget();
+    ~RecipientsEditorSideWidget() override;
 
     Q_REQUIRED_RESULT MessageComposer::RecipientsPicker *picker() const;
 

@@ -20,7 +20,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorInitConfigureWidget : public QWidget
     Q_OBJECT
 public:
     explicit PluginEditorInitConfigureWidget(QWidget *parent = nullptr);
-    ~PluginEditorInitConfigureWidget();
+    ~PluginEditorInitConfigureWidget() override;
 
     virtual void loadSettings() = 0;
     virtual void saveSettings() = 0;

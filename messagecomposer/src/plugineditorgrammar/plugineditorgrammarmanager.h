@@ -24,7 +24,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorGrammarManager : public QObject
     Q_OBJECT
 public:
     explicit PluginEditorGrammarManager(QObject *parent = nullptr);
-    ~PluginEditorGrammarManager();
+    ~PluginEditorGrammarManager() override;
 
     static PluginEditorGrammarManager *self();
 

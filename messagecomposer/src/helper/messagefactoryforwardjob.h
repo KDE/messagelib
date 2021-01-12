@@ -20,7 +20,7 @@ class MessageFactoryForwardJob : public QObject
     Q_OBJECT
 public:
     explicit MessageFactoryForwardJob(QObject *parent = nullptr);
-    ~MessageFactoryForwardJob();
+    ~MessageFactoryForwardJob() override;
     void start();
     void setMsg(const KMime::Message::Ptr &msg);
 

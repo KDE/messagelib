@@ -28,7 +28,7 @@ public:
     * with changes made by the configure dialog.
     */
     explicit AggregationConfigButton(QWidget *parent, const AggregationComboBox *aggregationComboBox = nullptr);
-    ~AggregationConfigButton();
+    ~AggregationConfigButton() override;
 
 Q_SIGNALS:
     /**

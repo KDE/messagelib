@@ -20,7 +20,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendConfigureWidget : public
     Q_OBJECT
 public:
     explicit PluginEditorCheckBeforeSendConfigureWidget(QWidget *parent = nullptr);
-    ~PluginEditorCheckBeforeSendConfigureWidget();
+    ~PluginEditorCheckBeforeSendConfigureWidget() override;
 
     virtual void loadSettings() = 0;
     virtual void saveSettings() = 0;

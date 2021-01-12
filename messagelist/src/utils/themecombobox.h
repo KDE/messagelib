@@ -26,7 +26,7 @@ class MESSAGELIST_EXPORT ThemeComboBox : public QComboBox
 
 public:
     explicit ThemeComboBox(QWidget *parent);
-    ~ThemeComboBox();
+    ~ThemeComboBox() override;
 
     QString currentTheme() const;
 

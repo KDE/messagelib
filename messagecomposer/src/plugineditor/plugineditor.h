@@ -20,7 +20,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditor : public PimCommon::AbstractGenericPlu
     Q_OBJECT
 public:
     explicit PluginEditor(QObject *parent = nullptr);
-    ~PluginEditor();
+    ~PluginEditor() override;
     void setOrder(int order);
     Q_REQUIRED_RESULT int order() const;
 

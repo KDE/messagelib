@@ -35,7 +35,7 @@ class MESSAGECOMPOSER_EXPORT AttachmentControllerBase : public QObject
 
 public:
     AttachmentControllerBase(MessageComposer::AttachmentModel *model, QWidget *wParent, KActionCollection *actionCollection);
-    ~AttachmentControllerBase();
+    ~AttachmentControllerBase() override;
 
     void createActions();
 

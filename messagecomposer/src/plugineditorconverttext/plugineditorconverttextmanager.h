@@ -22,7 +22,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextManager : public QObject
     Q_OBJECT
 public:
     explicit PluginEditorConvertTextManager(QObject *parent = nullptr);
-    ~PluginEditorConvertTextManager();
+    ~PluginEditorConvertTextManager() override;
 
     static PluginEditorConvertTextManager *self();
 

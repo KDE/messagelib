@@ -22,7 +22,7 @@ class DistributionListDialog : public QDialog
     Q_OBJECT
 public:
     explicit DistributionListDialog(QWidget *parent);
-    ~DistributionListDialog();
+    ~DistributionListDialog() override;
     void setRecipients(const Recipient::List &);
 
 public Q_SLOTS:

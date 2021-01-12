@@ -26,7 +26,7 @@ class MESSAGECOMPOSER_EXPORT ImageScalingWidget : public QWidget
     Q_OBJECT
 public:
     explicit ImageScalingWidget(QWidget *parent = nullptr);
-    ~ImageScalingWidget();
+    ~ImageScalingWidget() override;
 
     void loadConfig();
     void writeConfig();

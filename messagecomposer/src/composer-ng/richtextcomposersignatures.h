@@ -24,7 +24,7 @@ class MESSAGECOMPOSER_EXPORT RichTextComposerSignatures : public QObject
     Q_OBJECT
 public:
     explicit RichTextComposerSignatures(MessageComposer::RichTextComposerNg *composer, QObject *parent = nullptr);
-    ~RichTextComposerSignatures();
+    ~RichTextComposerSignatures() override;
 
     void cleanWhitespace(const KIdentityManagement::Signature &sig);
 

@@ -21,7 +21,7 @@ class ConfigureThemesDialog : public QDialog
 
 public:
     explicit ConfigureThemesDialog(QWidget *parent = nullptr);
-    ~ConfigureThemesDialog();
+    ~ConfigureThemesDialog() override;
 
     void selectTheme(const QString &themeId);
 

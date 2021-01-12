@@ -19,7 +19,7 @@ class ImageScalingSelectFormatDialog : public QDialog
     Q_OBJECT
 public:
     explicit ImageScalingSelectFormatDialog(QWidget *parent);
-    ~ImageScalingSelectFormatDialog();
+    ~ImageScalingSelectFormatDialog() override;
 
     void setFormat(const QString &format);
     QString format() const;

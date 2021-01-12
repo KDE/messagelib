@@ -18,7 +18,7 @@ class MessageFactoryReplyJob : public QObject
     Q_OBJECT
 public:
     explicit MessageFactoryReplyJob(QObject *parent = nullptr);
-    ~MessageFactoryReplyJob();
+    ~MessageFactoryReplyJob() override;
 
     void start();
 

@@ -28,7 +28,7 @@ class MESSAGECOMPOSER_EXPORT InsertTextFileJob : public KJob
     Q_OBJECT
 
 public:
-    InsertTextFileJob(QTextEdit *editor, const QUrl &url);
+    explicit InsertTextFileJob(QTextEdit *editor, const QUrl &url);
     ~InsertTextFileJob() override;
 
     void setEncoding(const QString &encoding);

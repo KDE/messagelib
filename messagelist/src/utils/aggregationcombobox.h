@@ -25,7 +25,7 @@ class MESSAGELIST_EXPORT AggregationComboBox : public QComboBox
 
 public:
     explicit AggregationComboBox(QWidget *parent);
-    ~AggregationComboBox();
+    ~AggregationComboBox() override;
 
     QString currentAggregation() const;
 

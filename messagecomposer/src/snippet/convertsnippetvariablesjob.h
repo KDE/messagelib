@@ -20,7 +20,7 @@ class MESSAGECOMPOSER_EXPORT ConvertSnippetVariablesJob : public QObject
     Q_OBJECT
 public:
     explicit ConvertSnippetVariablesJob(QObject *parent = nullptr);
-    ~ConvertSnippetVariablesJob();
+    ~ConvertSnippetVariablesJob() override;
     void start();
 
     void setText(const QString &str);

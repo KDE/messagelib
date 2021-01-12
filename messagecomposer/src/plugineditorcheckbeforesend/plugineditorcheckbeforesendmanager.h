@@ -22,7 +22,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendManager : public QObject
     Q_OBJECT
 public:
     explicit PluginEditorCheckBeforeSendManager(QObject *parent = nullptr);
-    ~PluginEditorCheckBeforeSendManager();
+    ~PluginEditorCheckBeforeSendManager() override;
 
     static PluginEditorCheckBeforeSendManager *self();
 
