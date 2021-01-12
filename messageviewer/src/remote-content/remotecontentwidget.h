@@ -10,6 +10,7 @@
 #include <QWidget>
 #include "messageviewer_private_export.h"
 #include "remotecontentinfo.h"
+class QLineEdit;
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentWidget : public QWidget
 {
@@ -19,6 +20,8 @@ public:
     ~RemoteContentWidget() override;
 
     Q_REQUIRED_RESULT RemoteContentInfo info() const;
+private:
+    QLineEdit *const mLineEdit;
 };
 }
 #endif // REMOTECONTENTWIDGET_H
