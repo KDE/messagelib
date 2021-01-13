@@ -6,7 +6,7 @@
 
 #include "remotecontentwidget.h"
 
-#include <QVBoxLayout>
+#include <QFormLayout>
 #include <QLabel>
 #include <KLocalizedString>
 #include <QLineEdit>
@@ -16,15 +16,12 @@ RemoteContentWidget::RemoteContentWidget(QWidget *parent)
     : QWidget(parent)
     , mLineEdit(new QLineEdit(this))
 {
-    auto mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
-    auto label = new QLabel(i18n("Url"), this);
-    label->setObjectName(QStringLiteral("label"));
-    mainLayout->addWidget(label);
 
     mLineEdit->setObjectName(QStringLiteral("mLineEdit"));
-    mainLayout->addWidget(mLineEdit);
+    mainLayout->addRow(i18n("Url"), mLineEdit);
 }
 
 RemoteContentWidget::~RemoteContentWidget()
