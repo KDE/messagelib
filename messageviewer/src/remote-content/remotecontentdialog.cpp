@@ -38,3 +38,8 @@ RemoteContentInfo RemoteContentDialog::info() const
 {
     return mRemoveContentWidget->info();
 }
+
+void RemoteContentDialog::setInfo(const RemoteContentInfo &info)
+{
+    mRemoveContentWidget->setInfo(info);
+}

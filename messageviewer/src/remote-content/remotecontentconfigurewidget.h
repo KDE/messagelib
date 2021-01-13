@@ -22,7 +22,7 @@ public:
     void saveSettings();
 private:
     void slotCustomContextMenuRequested(const QPoint &);
-    void modifyRule(QListWidgetItem *rulesItem);
+    void modifyRemoteContent(QListWidgetItem *rulesItem);
     void slotAdd();
     void readSettings();
     QListWidget *mListWidget = nullptr;

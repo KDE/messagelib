@@ -37,3 +37,8 @@ RemoteContentInfo RemoteContentWidget::info() const
     //TODO
     return {};
 }
+
+void RemoteContentWidget::setInfo(const RemoteContentInfo &info)
+{
+    //TODO
+}

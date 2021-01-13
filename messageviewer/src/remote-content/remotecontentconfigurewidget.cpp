@@ -6,6 +6,7 @@
 
 
 #include "remotecontentconfigurewidget.h"
+#include "remotecontentdialog.h"
 #include "remotecontentinfo.h"
 #include "remotecontentmanager.h"
 #include <KLocalizedString>
@@ -13,6 +14,8 @@
 #include <QListWidget>
 #include <QMenu>
 #include <QVBoxLayout>
+#include <QPointer>
+
 using namespace MessageViewer;
 RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     : QWidget(parent)
@@ -42,7 +45,7 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
     if (item) {
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18n("Modify..."), this, [this, item]() {
-            modifyRule(item);
+            modifyRemoteContent(item);
         });
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
@@ -54,13 +57,23 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
     menu.exec(QCursor::pos());
 }
 
-void RemoteContentConfigureWidget::modifyRule(QListWidgetItem *rulesItem)
+void RemoteContentConfigureWidget::modifyRemoteContent(QListWidgetItem *rulesItem)
 {
+    QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
+    if (dlg->exec()) {
+        //TODO
+    }
+    delete dlg;
     //TODO
 }
 
 void RemoteContentConfigureWidget::slotAdd()
 {
+    QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
+    if (dlg->exec()) {
+        //TODO
+    }
+    delete dlg;
     //TODO
 }
 

@@ -20,6 +20,7 @@ public:
     ~RemoteContentWidget() override;
 
     Q_REQUIRED_RESULT RemoteContentInfo info() const;
+    void setInfo(const RemoteContentInfo &info);
 private:
     QLineEdit *const mLineEdit;
 };

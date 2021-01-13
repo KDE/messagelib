@@ -21,6 +21,7 @@ public:
     ~RemoteContentDialog() override;
 
     Q_REQUIRED_RESULT RemoteContentInfo info() const;
+    void setInfo(const RemoteContentInfo &info);
 
 private:
     RemoteContentWidget *const mRemoveContentWidget;
