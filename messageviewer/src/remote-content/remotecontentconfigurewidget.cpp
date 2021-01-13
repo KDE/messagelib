@@ -9,6 +9,7 @@
 #include "remotecontentinfo.h"
 #include "remotecontentmanager.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QListWidget>
 #include <QMenu>
 #include <QVBoxLayout>
@@ -37,7 +38,30 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
 {
     QListWidgetItem *item = mListWidget->itemAt(pos);
     QMenu menu(this);
+    menu.addAction(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Add..."), this, &RemoteContentConfigureWidget::slotAdd);
+    if (item) {
+        menu.addSeparator();
+        menu.addAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18n("Modify..."), this, [this, item]() {
+            modifyRule(item);
+        });
+        menu.addSeparator();
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
+            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete this rule?"), i18n("Delete Rule"))) {
+                delete item;
+            }
+        });
+    }
     menu.exec(QCursor::pos());
+}
+
+void RemoteContentConfigureWidget::modifyRule(QListWidgetItem *rulesItem)
+{
+    //TODO
+}
+
+void RemoteContentConfigureWidget::slotAdd()
+{
+    //TODO
 }
 
 void RemoteContentConfigureWidget::saveSettings()

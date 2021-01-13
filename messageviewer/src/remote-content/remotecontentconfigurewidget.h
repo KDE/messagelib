@@ -11,6 +11,7 @@
 
 #include "messageviewer_private_export.h"
 class QListWidget;
+class QListWidgetItem;
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentConfigureWidget : public QWidget
 {
@@ -21,6 +22,8 @@ public:
     void saveSettings();
 private:
     void slotCustomContextMenuRequested(const QPoint &);
+    void modifyRule(QListWidgetItem *rulesItem);
+    void slotAdd();
     void readSettings();
     QListWidget *mListWidget = nullptr;
 };
