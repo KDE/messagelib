@@ -34,11 +34,16 @@ RemoteContentWidget::~RemoteContentWidget()
 
 RemoteContentInfo RemoteContentWidget::info() const
 {
+    RemoteContentInfo info;
+    info.setUrl(mLineEdit->text());
+    //info.setStatus() TODO implement
     //TODO
-    return {};
+    return info;
 }
 
 void RemoteContentWidget::setInfo(const RemoteContentInfo &info)
 {
+    mLineEdit->setText(info.url());
+    //mLineEdit->setText(info.status());
     //TODO
 }
