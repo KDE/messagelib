@@ -38,7 +38,7 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     mainLayout->addWidget(searchLineEdit);
 
     mainLayout->addWidget(mTreeWidget);
-    connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManagerKeyWidget::customContextMenuRequested);
+    connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManagerKeyWidget::slotCustomContextMenuRequested);
 }
 
 DKIMManagerKeyWidget::~DKIMManagerKeyWidget()
@@ -55,7 +55,7 @@ void DKIMManagerKeyWidget::restoreHeaders(const QByteArray &header)
     mTreeWidget->header()->restoreState(header);
 }
 
-void DKIMManagerKeyWidget::customContextMenuRequested(const QPoint &pos)
+void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
 {
     QTreeWidgetItem *item = mTreeWidget->itemAt(pos);
     QMenu menu(this);
