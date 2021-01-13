@@ -20,6 +20,7 @@ public:
     ~RemoteContentConfigureWidget() override;
     void saveSettings();
 private:
+    void slotCustomContextMenuRequested(const QPoint &);
     void readSettings();
     QListWidget *mListWidget = nullptr;
 };

@@ -10,6 +10,7 @@
 #include "remotecontentmanager.h"
 #include <KLocalizedString>
 #include <QListWidget>
+#include <QMenu>
 #include <QVBoxLayout>
 using namespace MessageViewer;
 RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
@@ -20,14 +21,23 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     mainLayout->setContentsMargins({});
 
     mListWidget = new QListWidget(this);
+    mListWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     mListWidget->setObjectName(QStringLiteral("mListWidget"));
     mainLayout->addWidget(mListWidget);
     readSettings();
+    connect(mListWidget, &QListWidget::customContextMenuRequested, this, &RemoteContentConfigureWidget::slotCustomContextMenuRequested);
 }
 
 RemoteContentConfigureWidget::~RemoteContentConfigureWidget()
 {
 
+}
+
+void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &pos)
+{
+    QListWidgetItem *item = mListWidget->itemAt(pos);
+    QMenu menu(this);
+    menu.exec(QCursor::pos());
 }
 
 void RemoteContentConfigureWidget::saveSettings()
