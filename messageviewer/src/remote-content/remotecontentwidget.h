@@ -11,6 +11,7 @@
 #include "messageviewer_private_export.h"
 #include "remotecontentinfo.h"
 class QLineEdit;
+class QCheckBox;
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentWidget : public QWidget
 {
@@ -23,6 +24,7 @@ public:
     void setInfo(const RemoteContentInfo &info);
 private:
     QLineEdit *const mLineEdit;
+    QCheckBox *const mStatusCheckBox;
 };
 }
 #endif // REMOTECONTENTWIDGET_H

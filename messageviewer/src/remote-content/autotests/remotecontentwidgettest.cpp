@@ -9,6 +9,7 @@
 #include <QTest>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <QCheckBox>
 QTEST_MAIN(RemoteContentWidgetTest)
 RemoteContentWidgetTest::RemoteContentWidgetTest(QObject *parent)
     : QObject(parent)
@@ -26,4 +27,7 @@ void RemoteContentWidgetTest::shouldHaveDefaultValues()
     auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mLineEdit"));
     QVERIFY(mLineEdit);
     QVERIFY(mLineEdit->text().isEmpty());
+
+    auto mStatusCheckBox = w.findChild<QCheckBox *>(QStringLiteral("mStatusCheckBox"));
+    QVERIFY(mStatusCheckBox);
 }

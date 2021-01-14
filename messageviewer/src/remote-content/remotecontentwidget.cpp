@@ -10,11 +10,13 @@
 #include <QLabel>
 #include <KLocalizedString>
 #include <QLineEdit>
+#include <QCheckBox>
 
 using namespace MessageViewer;
 RemoteContentWidget::RemoteContentWidget(QWidget *parent)
     : QWidget(parent)
     , mLineEdit(new QLineEdit(this))
+    , mStatusCheckBox(new QCheckBox(i18n("Authorized"), this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -22,6 +24,9 @@ RemoteContentWidget::RemoteContentWidget(QWidget *parent)
 
     mLineEdit->setObjectName(QStringLiteral("mLineEdit"));
     mainLayout->addRow(i18n("Url"), mLineEdit);
+
+    mStatusCheckBox->setObjectName(QStringLiteral("mStatusCheckBox"));
+    mainLayout->addRow(mStatusCheckBox);
 }
 
 RemoteContentWidget::~RemoteContentWidget()
@@ -33,14 +38,14 @@ RemoteContentInfo RemoteContentWidget::info() const
 {
     RemoteContentInfo info;
     info.setUrl(mLineEdit->text());
-    //info.setStatus() TODO implement
-    //TODO
+    info.setStatus(mStatusCheckBox->isChecked() ?
+                       RemoteContentInfo::RemoteContentInfoStatus::Authorized :
+                       RemoteContentInfo::RemoteContentInfoStatus::Blocked);
     return info;
 }
 
 void RemoteContentWidget::setInfo(const RemoteContentInfo &info)
 {
     mLineEdit->setText(info.url());
-    //mLineEdit->setText(info.status());
-    //TODO
+    mStatusCheckBox->setChecked(info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized);
 }
