@@ -60,21 +60,30 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
 void RemoteContentConfigureWidget::modifyRemoteContent(QListWidgetItem *rulesItem)
 {
     QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
+    RemoteContentInfo info;
+    info.setUrl(rulesItem->text());
+    info.setStatus(rulesItem->checkState() == Qt::Checked ?
+                       RemoteContentInfo::RemoteContentInfoStatus::Authorized :
+                       RemoteContentInfo::RemoteContentInfoStatus::Blocked);
+    dlg->setInfo(info);
     if (dlg->exec()) {
-        //TODO
+        //TODO replace here. not add
+        RemoteContentManager::self()->addRemoteContent(dlg->info());
+        rulesItem->setText(info.url());
+        rulesItem->setCheckState((info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized) ? Qt::Checked : Qt::Unchecked );
     }
     delete dlg;
-    //TODO
 }
 
 void RemoteContentConfigureWidget::slotAdd()
 {
     QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
     if (dlg->exec()) {
-        //TODO
+        const auto info = dlg->info();
+        RemoteContentManager::self()->addRemoteContent(info);
+        insertRemoteContentInfo(info);
     }
     delete dlg;
-    //TODO
 }
 
 void RemoteContentConfigureWidget::saveSettings()
@@ -96,10 +105,15 @@ void RemoteContentConfigureWidget::readSettings()
 {
     const QVector<RemoteContentInfo> remoteContentInfos = RemoteContentManager::self()->removeContentInfo();
     for (const RemoteContentInfo &info : remoteContentInfos) {
-        auto item = new QListWidgetItem(mListWidget);
-        item->setText(info.url());
-        if (info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized) {
-            item->setCheckState(Qt::Checked);
-        }
+        insertRemoteContentInfo(info);
+    }
+}
+
+void RemoteContentConfigureWidget::insertRemoteContentInfo(const RemoteContentInfo &info)
+{
+    auto item = new QListWidgetItem(mListWidget);
+    item->setText(info.url());
+    if (info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized) {
+        item->setCheckState(Qt::Checked);
     }
 }
