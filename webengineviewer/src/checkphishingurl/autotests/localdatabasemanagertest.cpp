@@ -56,4 +56,4 @@ LocalDataBaseManagerTest::~LocalDataBaseManagerTest()
 {
 }
 
-QTEST_MAIN(LocalDataBaseManagerTest)
+QTEST_GUILESS_MAIN(LocalDataBaseManagerTest)

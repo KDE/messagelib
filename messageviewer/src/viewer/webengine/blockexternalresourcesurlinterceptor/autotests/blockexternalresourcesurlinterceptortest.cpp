@@ -8,7 +8,7 @@
 #include "viewer/webengine/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h"
 #include <QTest>
 #include <QStandardPaths>
-QTEST_MAIN(BlockExternalResourcesUrlInterceptorTest)
+QTEST_GUILESS_MAIN(BlockExternalResourcesUrlInterceptorTest)
 BlockExternalResourcesUrlInterceptorTest::BlockExternalResourcesUrlInterceptorTest(QObject *parent)
     : QObject(parent)
 {

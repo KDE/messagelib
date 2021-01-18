@@ -49,4 +49,4 @@ void HashCacheManagerTest::shouldAddValue()
     cache.clearCache();
 }
 
-QTEST_MAIN(HashCacheManagerTest)
+QTEST_GUILESS_MAIN(HashCacheManagerTest)

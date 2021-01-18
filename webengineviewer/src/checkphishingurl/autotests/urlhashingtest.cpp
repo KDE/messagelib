@@ -169,4 +169,4 @@ void UrlHashingTest::shouldGenerateHashList()
     QCOMPARE(hashing.hashList().count(), numberItems);
 }
 
-QTEST_MAIN(UrlHashingTest)
+QTEST_GUILESS_MAIN(UrlHashingTest)

@@ -122,4 +122,4 @@ void VerifyDataBaseUpdateTest::shouldVerifyCheckSums()
     QCOMPARE(newSsha256Value.toBase64(), calculateCheckSums.toBase64());
 }
 
-QTEST_MAIN(VerifyDataBaseUpdateTest)
+QTEST_GUILESS_MAIN(VerifyDataBaseUpdateTest)

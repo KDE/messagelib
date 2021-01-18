@@ -6,7 +6,7 @@
 #include "dkimmanagerkeytest.h"
 #include <QTest>
 
-QTEST_MAIN(DKIMManagerKeyTest)
+QTEST_GUILESS_MAIN(DKIMManagerKeyTest)
 
 DKIMManagerKeyTest::DKIMManagerKeyTest(QObject *parent)
     : QObject(parent)

@@ -74,4 +74,4 @@ void SearchFullHashJobTest::shouldCreateRequest()
     }
 }
 
-QTEST_MAIN(SearchFullHashJobTest)
+QTEST_GUILESS_MAIN(SearchFullHashJobTest)

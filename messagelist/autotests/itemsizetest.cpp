@@ -29,6 +29,6 @@ private Q_SLOTS:
     }
 };
 
-QTEST_MAIN(ItemSizeTest)
+QTEST_GUILESS_MAIN(ItemSizeTest)
 
 #include "itemsizetest.moc"

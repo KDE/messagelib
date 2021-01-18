@@ -79,4 +79,4 @@ void CheckPhishingUrlUtilTest::shouldGenerateBackModeDelay()
     QVERIFY(result <= minuteMax);
 }
 
-QTEST_MAIN(CheckPhishingUrlUtilTest)
+QTEST_GUILESS_MAIN(CheckPhishingUrlUtilTest)

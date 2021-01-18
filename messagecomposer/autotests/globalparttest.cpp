@@ -27,4 +27,4 @@ void GlobalPartTest::shouldHaveDefaultValue()
     QVERIFY(!globalpart.requestDeleveryConfirmation());
 }
 
-QTEST_MAIN(GlobalPartTest)
+QTEST_GUILESS_MAIN(GlobalPartTest)

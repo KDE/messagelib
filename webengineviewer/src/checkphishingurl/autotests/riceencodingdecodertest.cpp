@@ -97,4 +97,4 @@ void RiceEncodingDecoderTest::shouldDecodeRiceHashes()
     QCOMPARE(hash, result);
 }
 
-QTEST_MAIN(RiceEncodingDecoderTest)
+QTEST_GUILESS_MAIN(RiceEncodingDecoderTest)

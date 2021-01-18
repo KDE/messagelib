@@ -108,4 +108,4 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
     }
 }
 
-QTEST_MAIN(LocalDataBaseFileTest)
+QTEST_GUILESS_MAIN(LocalDataBaseFileTest)

@@ -18,4 +18,4 @@ DownloadLocalDatabaseThreadTest::~DownloadLocalDatabaseThreadTest()
 {
 }
 
-QTEST_MAIN(DownloadLocalDatabaseThreadTest)
+QTEST_GUILESS_MAIN(DownloadLocalDatabaseThreadTest)

@@ -6,7 +6,7 @@
 #include "remotecontentinfotest.h"
 #include "remote-content/remotecontentinfo.h"
 #include <QTest>
-QTEST_MAIN(RemoteContentInfoTest)
+QTEST_GUILESS_MAIN(RemoteContentInfoTest)
 RemoteContentInfoTest::RemoteContentInfoTest(QObject *parent)
     : QObject(parent)
 {

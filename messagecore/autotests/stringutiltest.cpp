@@ -10,7 +10,7 @@
 #include <QUrl>
 using namespace MessageCore;
 
-QTEST_MAIN(StringUtilTest)
+QTEST_GUILESS_MAIN(StringUtilTest)
 #define lineLength 40
 
 void StringUtilTest::test_SmartQuote()
