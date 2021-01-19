@@ -59,6 +59,9 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
 
 void RemoteContentConfigureWidget::modifyRemoteContent(QListWidgetItem *rulesItem)
 {
+    if (!rulesItem) {
+        return;
+    }
     QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
     RemoteContentInfo info;
     info.setUrl(rulesItem->text());
@@ -67,8 +70,8 @@ void RemoteContentConfigureWidget::modifyRemoteContent(QListWidgetItem *rulesIte
                        RemoteContentInfo::RemoteContentInfoStatus::Blocked);
     dlg->setInfo(info);
     if (dlg->exec()) {
-        //TODO replace here. not add
-        RemoteContentManager::self()->addRemoteContent(dlg->info());
+        info = dlg->info();
+        RemoteContentManager::self()->addRemoteContent(info);
         rulesItem->setText(info.url());
         rulesItem->setCheckState((info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized) ? Qt::Checked : Qt::Unchecked );
     }
