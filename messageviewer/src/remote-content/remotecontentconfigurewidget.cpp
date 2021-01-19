@@ -30,6 +30,7 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     mainLayout->addWidget(mListWidget);
     readSettings();
     connect(mListWidget, &QListWidget::customContextMenuRequested, this, &RemoteContentConfigureWidget::slotCustomContextMenuRequested);
+    connect(mListWidget, &QListWidget::itemDoubleClicked, this, &RemoteContentConfigureWidget::modifyRemoteContent);
 }
 
 RemoteContentConfigureWidget::~RemoteContentConfigureWidget()
