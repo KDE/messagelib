@@ -102,6 +102,7 @@ void RemoteContentManager::writeSettings()
     }
     group.writeEntry("Blocked", blockedUrl);
     group.writeEntry("Authorized", authorizedUrl);
+    group.sync();
 }
 
 void RemoteContentManager::setRemoveContentInfo(const QVector<RemoteContentInfo> &removeContentInfo)
