@@ -29,7 +29,7 @@ class StorageModel : public QAbstractItemModel
 
 public:
     explicit StorageModel(QObject *parent = nullptr);
-    ~StorageModel();
+    ~StorageModel() override;
 
     /**
     * Returns an unique id for this Storage collection.

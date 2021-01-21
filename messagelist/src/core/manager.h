@@ -44,7 +44,7 @@ class Manager : public QObject
     Q_OBJECT
 protected:
     explicit Manager();
-    ~Manager();
+    ~Manager() override;
 
 private:
     static Manager *mInstance;
