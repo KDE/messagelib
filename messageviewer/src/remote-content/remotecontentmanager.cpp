@@ -119,3 +119,13 @@ void RemoteContentManager::addRemoteContent(const RemoteContentInfo &info)
 {
     mRemoveContentInfo.append(info);
 }
+
+bool RemoteContentManager::isUnique(const RemoteContentInfo &newInfo) const
+{
+    for (const RemoteContentInfo &info : qAsConst(mRemoveContentInfo)) {
+        if (info.url() == newInfo.url()) {
+            return false;
+        }
+    }
+    return true;
+}

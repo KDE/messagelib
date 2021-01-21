@@ -30,6 +30,7 @@ public:
 
     void setRemoveContentInfo(const QVector<RemoteContentInfo> &removeContentInfo);
 
+    Q_REQUIRED_RESULT bool isUnique(const RemoteContentInfo &newInfo) const;
 private:
     void loadSettings();
     void writeSettings();

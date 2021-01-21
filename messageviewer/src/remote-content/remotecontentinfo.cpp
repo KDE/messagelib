@@ -11,10 +11,7 @@ RemoteContentInfo::RemoteContentInfo()
 
 }
 
-RemoteContentInfo::~RemoteContentInfo()
-{
-
-}
+RemoteContentInfo::~RemoteContentInfo() = default;
 
 QString RemoteContentInfo::url() const
 {
