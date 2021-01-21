@@ -42,7 +42,7 @@ class Widget : public QWidget
     Q_OBJECT
 public:
     explicit Widget(QWidget *parent);
-    ~Widget();
+    ~Widget() override;
 
     /**
     * Sets the storage model for this Widget.
@@ -77,17 +77,17 @@ public:
     /**
     * Returns the Akonadi::MessageStatus in the current quicksearch field.
     */
-    QVector<Akonadi::MessageStatus> currentFilterStatus() const;
+    Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> currentFilterStatus() const;
 
     /**
     * Returns the search term in the current quicksearch field.
     */
-    QString currentFilterSearchString() const;
+    Q_REQUIRED_RESULT QString currentFilterSearchString() const;
 
     /**
     * Returns the id of the MessageItem::Tag currently set in the quicksearch field.
     */
-    QString currentFilterTagId() const;
+    Q_REQUIRED_RESULT QString currentFilterTagId() const;
 
     /**
     * Sets the focus on the quick search line of the currently active tab.
@@ -99,26 +99,26 @@ public:
     * (or if there is no current Aggregation).
     */
     bool isThreaded() const;
-    /**
+    Q_REQUIRED_RESULT /**
     * Fast function that determines if the selection is empty
     */
-    bool selectionEmpty() const;
+    Q_REQUIRED_RESULT bool selectionEmpty() const;
 
     /**
     * Sets the current folder.
     */
     void setCurrentFolder(const Akonadi::Collection &collection);
-    Akonadi::Collection currentFolder() const;
+    Q_REQUIRED_RESULT Akonadi::Collection currentFolder() const;
 
     void saveCurrentSelection();
 
-    bool searchEditHasFocus() const;
+    Q_REQUIRED_RESULT bool searchEditHasFocus() const;
 
     void sortOrderMenuAboutToShow(QMenu *menu);
     void themeMenuAboutToShow(QMenu *menu);
     void aggregationMenuAboutToShow(QMenu *menu);
 
-    MessageList::Core::QuickSearchLine::SearchOptions currentOptions() const;
+    Q_REQUIRED_RESULT MessageList::Core::QuickSearchLine::SearchOptions currentOptions() const;
 public Q_SLOTS:
 
     /**
@@ -203,6 +203,8 @@ protected:
     virtual void viewMessageStatusChangeRequest(MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear);
 
     void tagIdSelected(const QVariant &data);
+
+    void setLockTab(bool lock);
 
 Q_SIGNALS:
     /**

@@ -40,20 +40,6 @@ class Q_DECL_HIDDEN Pane::Private
 public:
     Private(Pane *owner)
         : q(owner)
-        , mXmlGuiClient(nullptr)
-        , mActionMenu(nullptr)
-        , mModel(nullptr)
-        , mSelectionModel(nullptr)
-        , mPreSelectionMode(Core::PreSelectLastSelected)
-        , mNewTabButton(nullptr)
-        , mCloseTabButton(nullptr)
-        , mCloseTabAction(nullptr)
-        , mActivateNextTabAction(nullptr)
-        , mActivatePreviousTabAction(nullptr)
-        , mMoveTabLeftAction(nullptr)
-        , mMoveTabRightAction(nullptr)
-        , mPreferEmptyTab(false)
-        , mMaxTabCreated(0)
     {
     }
 
@@ -83,7 +69,7 @@ public:
 
     QAbstractItemModel *mModel = nullptr;
     QItemSelectionModel *mSelectionModel = nullptr;
-    Core::PreSelectionMode mPreSelectionMode;
+    Core::PreSelectionMode mPreSelectionMode = Core::PreSelectLastSelected;
 
     QHash<Widget *, QItemSelectionModel *> mWidgetSelectionHash;
     QVector<const QAbstractProxyModel *> mProxyStack;
@@ -95,8 +81,8 @@ public:
     QAction *mActivatePreviousTabAction = nullptr;
     QAction *mMoveTabLeftAction = nullptr;
     QAction *mMoveTabRightAction = nullptr;
-    bool mPreferEmptyTab;
-    int mMaxTabCreated;
+    bool mPreferEmptyTab = false;
+    int mMaxTabCreated = 0;
 };
 } // namespace MessageList
 
@@ -709,12 +695,15 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
     QAction *closeTabAction = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
     closeTabAction->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
 
-    QAction *allOther = menu.addAction(i18nc("@action:inmenu", "Close All Other Tabs"));
-    allOther->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
+    QAction *allOtherAction = menu.addAction(i18nc("@action:inmenu", "Close All Other Tabs"));
+    allOtherAction->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
+
+    QAction *lockTabAction = menu.addAction(i18nc("@action:inmenu", "Lock Tab"));
+    //lockTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other"))); //TODO add icons
 
     QAction *action = menu.exec(q->mapToGlobal(pos));
 
-    if (action == allOther) {   // Close all other tabs
+    if (action == allOtherAction) {   // Close all other tabs
         QVector<Widget *> widgets;
         const int index = q->indexOf(w);
 
@@ -737,6 +726,8 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
         updateTabControls();
     } else if (action == closeTabAction) {
         closeTab(q->widget(indexBar));
+    } else if (action == lockTabAction) {
+        //TODO
     }
 }
 

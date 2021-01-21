@@ -48,19 +48,6 @@ class Widget::Private
 public:
     Private(Widget *owner)
         : q(owner)
-        , quickSearchWarning(nullptr)
-        , searchCollectionIndexingWarning(nullptr)
-        , quickSearchLine(nullptr)
-        , mView(nullptr)
-        , mSearchTimer(nullptr)
-        , mStorageModel(nullptr)
-        , mAggregation(nullptr)
-        , mTheme(nullptr)
-        , mFilter(nullptr)
-        , mStorageUsesPrivateTheme(false)
-        , mStorageUsesPrivateAggregation(false)
-        , mStorageUsesPrivateSortOrder(false)
-        , mStatusFilterComboPopulationInProgress(false)
     {
     }
 
@@ -100,13 +87,14 @@ public:
     Theme *mTheme;                         ///< The currently set theme, a deep copy
     SortOrder mSortOrder;                  ///< The currently set sort order
     Filter *mFilter;                       ///< The currently applied filter, owned by us.
-    bool mStorageUsesPrivateTheme;         ///< true if the current folder does not use the global theme
-    bool mStorageUsesPrivateAggregation;   ///< true if the current folder does not use the global aggregation
-    bool mStorageUsesPrivateSortOrder;     ///< true if the current folder does not use the global sort order
+    bool mStorageUsesPrivateTheme = false;         ///< true if the current folder does not use the global theme
+    bool mStorageUsesPrivateAggregation = false;   ///< true if the current folder does not use the global aggregation
+    bool mStorageUsesPrivateSortOrder = false;     ///< true if the current folder does not use the global sort order
     QUrl mCurrentFolderUrl;                ///< The Akonadi URL of the current folder
     Akonadi::Collection mCurrentFolder;    ///< The current folder
     int mCurrentStatusFilterIndex = 0;
-    bool mStatusFilterComboPopulationInProgress;
+    bool mStatusFilterComboPopulationInProgress = false;
+    bool mLockTab = false;
 };
 
 Widget::Widget(QWidget *pParent)
@@ -913,6 +901,12 @@ void Widget::tagIdSelected(const QVariant &data)
     }
 
     d->mView->model()->setFilter(d->mFilter);
+}
+
+void Widget::setLockTab(bool lock)
+{
+    d->mLockTab = lock;
+    //TODO
 }
 
 void Widget::statusSelected(int index)
