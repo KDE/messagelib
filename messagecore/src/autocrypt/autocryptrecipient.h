@@ -49,7 +49,10 @@ public:
     bool prefer_encrypt() const;
 
     GpgME::Key gpgKey() const;
+    QByteArray gpgKeydata() const;
+
     GpgME::Key gossipKey() const;
+    QByteArray gossipKeydata() const;
 
 private:
     std::unique_ptr<AutocryptRecipientPrivate> d_ptr;

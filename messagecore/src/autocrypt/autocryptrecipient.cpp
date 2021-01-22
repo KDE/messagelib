@@ -211,10 +211,22 @@ GpgME::Key MessageCore::AutocryptRecipient::gpgKey() const
     return ::gpgKey(d->keydata);
 }
 
+QByteArray MessageCore::AutocryptRecipient::gpgKeydata() const
+{
+    const Q_D(AutocryptRecipient);
+    return KCodecs::base64Decode(d->keydata);
+}
+
 GpgME::Key AutocryptRecipient::gossipKey() const
 {
     const Q_D(AutocryptRecipient);
     return ::gpgKey(d->gossip_key);
+}
+
+QByteArray MessageCore::AutocryptRecipient::gossipKeydata() const
+{
+    const Q_D(AutocryptRecipient);
+    return KCodecs::base64Decode(d->gossip_key);
 }
 
 QByteArray AutocryptRecipient::addr() const
