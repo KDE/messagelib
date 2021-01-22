@@ -90,7 +90,6 @@ public:
     bool mStorageUsesPrivateTheme = false;         ///< true if the current folder does not use the global theme
     bool mStorageUsesPrivateAggregation = false;   ///< true if the current folder does not use the global aggregation
     bool mStorageUsesPrivateSortOrder = false;     ///< true if the current folder does not use the global sort order
-    QUrl mCurrentFolderUrl;                ///< The Akonadi URL of the current folder
     Akonadi::Collection mCurrentFolder;    ///< The current folder
     int mCurrentStatusFilterIndex = 0;
     bool mStatusFilterComboPopulationInProgress = false;
