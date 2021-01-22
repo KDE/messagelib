@@ -453,8 +453,7 @@ QVector<KMime::Message::Ptr> Composer::resultMessages() const
     Q_D(const Composer);
     Q_ASSERT(d->finished);
     Q_ASSERT(!error());
-    const QVector<KMime::Message::Ptr> results = d->resultMessages;
-    return results;
+    return d->resultMessages;
 }
 
 GlobalPart *Composer::globalPart() const
