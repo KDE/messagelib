@@ -258,7 +258,7 @@ bool MessagePart::hasHeader(const char *headerType) const
     return false;
 }
 
-KMime::Headers::Base *MessagePart::header(const char *headerType) const
+const KMime::Headers::Base* MimeTreeParser::MessagePart::header(const char* headerType) const
 {
     Q_UNUSED(headerType)
     return nullptr;
@@ -1040,7 +1040,7 @@ bool SignedMessagePart::hasHeader(const char *headerType) const
     return false;
 }
 
-KMime::Headers::Base *SignedMessagePart::header(const char *headerType) const
+const KMime::Headers::Base* MimeTreeParser::SignedMessagePart::header(const char* headerType) const
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {
@@ -1400,7 +1400,7 @@ bool EncryptedMessagePart::hasHeader(const char *headerType) const
     return false;
 }
 
-KMime::Headers::Base *EncryptedMessagePart::header(const char *headerType) const
+const KMime::Headers::Base *EncryptedMessagePart::header(const char *headerType) const
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {

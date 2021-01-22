@@ -128,7 +128,7 @@ public:
     NodeHelper *nodeHelper() const;
 
     virtual Q_REQUIRED_RESULT bool hasHeader(const char *headerType) const;
-    virtual KMime::Headers::Base *header(const char *headerType) const;
+    virtual const KMime::Headers::Base *header(const char *headerType) const;
     virtual QVector<KMime::Headers::Base *> headers(const char *headerType) const;
 
 protected:
@@ -368,7 +368,7 @@ public:
     const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &decryptRecipients() const;
 
     Q_REQUIRED_RESULT bool hasHeader(const char *headerType) const override;
-    KMime::Headers::Base *header(const char *headerType) const override;
+    const KMime::Headers::Base *header(const char *headerType) const override;
     QVector<KMime::Headers::Base *> headers(const char *headerType) const override;
 
 
@@ -425,7 +425,7 @@ public:
     Q_REQUIRED_RESULT QString fromAddress() const;
 
     Q_REQUIRED_RESULT bool hasHeader(const char *headerType) const override;
-    KMime::Headers::Base *header(const char *headerType) const override;
+    const KMime::Headers::Base *header(const char *headerType) const override;
     QVector<KMime::Headers::Base *> headers(const char *headerType) const override;
 private:
     /** Handles the verification of data
