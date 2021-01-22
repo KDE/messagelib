@@ -130,7 +130,7 @@ void AutocryptHeadersJob::setSkeletonMessage(KMime::Message *skeletonMessage)
     d->skeletonMessage = skeletonMessage;
 }
 
-void AutocryptHeadersJob::setRecipientKey(const GpgME::Key& key)
+void AutocryptHeadersJob::setSenderKey(const GpgME::Key& key)
 {
     Q_D(AutocryptHeadersJob);
 

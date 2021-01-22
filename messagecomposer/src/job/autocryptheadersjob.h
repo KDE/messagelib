@@ -34,7 +34,7 @@ public:
     void setContent(KMime::Content *content);
     void setSkeletonMessage(KMime::Message *skeletonMessage);
 
-    void setRecipientKey(const GpgME::Key &key);
+    void setSenderKey(const GpgME::Key &key);
     void setPreferEncrypted(bool preferEncrypted);
     void setGossipKeys(const std::vector<GpgME::Key> &gossipKeys);
     

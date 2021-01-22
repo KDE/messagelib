@@ -66,7 +66,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
 
     aJob->setContent(&content);
     aJob->setSkeletonMessage(&skeletonMessage);
-    aJob->setRecipientKey(ownKeys[0]);
+    aJob->setSenderKey(ownKeys[0]);
     aJob->setPreferEncrypted(true);
     VERIFYEXEC(aJob);
 
@@ -110,7 +110,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
 
     aJob->setContent(&content);
     aJob->setSkeletonMessage(&skeletonMessage);
-    aJob->setRecipientKey(ownKeys[0]);
+    aJob->setSenderKey(ownKeys[0]);
     aJob->setPreferEncrypted(true);
     aJob->setGossipKeys(keys);
     VERIFYEXEC(aJob);
