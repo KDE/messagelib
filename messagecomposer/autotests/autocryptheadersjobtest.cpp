@@ -235,3 +235,48 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
 
     Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
 }
+
+void AutocryptHeadersJobTest::testStripSenderKey()
+{
+    Composer composer;
+
+    KMime::Message skeletonMessage;
+    skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
+
+    KMime::Content content;
+    content.setBody("Hi Bob and Carol,\n"
+                    "\n"
+                    "I wanted to introduce the two of you to each other.\n"
+                    "\n"
+                    "I hope you are both doing well!  You can now both \"reply all\" here,\n"
+                    "and the thread will remain encrypted.\n");
+
+    auto job = QGpgME::openpgp()->keyListJob(false);
+    std::vector< GpgME::Key > ownKeys;
+    job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
+    std::vector< GpgME::Key > keys;
+    job->exec(QStringList({QStringLiteral("bob@autocrypt.example"), QStringLiteral("carol@autocrypt.example")}), false, keys);
+    keys.push_back(ownKeys[0]);
+
+    auto aJob = new AutocryptHeadersJob(&composer);
+
+    QVERIFY(aJob);
+
+    aJob->setContent(&content);
+    aJob->setSkeletonMessage(&skeletonMessage);
+    aJob->setSenderKey(ownKeys[0]);
+    aJob->setPreferEncrypted(true);
+    aJob->setGossipKeys(keys);
+    VERIFYEXEC(aJob);
+
+    content.contentType(true)->from7BitString("text/plain");
+    content.assemble();
+
+    auto referenceFile = QStringLiteral("autocryptgossipheader.mbox");
+    QFile f(referenceFile);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write(content.encodedContent());
+    f.close();
+
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+}

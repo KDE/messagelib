@@ -210,6 +210,11 @@ void AutocryptHeadersJob::process()
 #endif
 
     foreach(const auto key, d->gossipKeys) {
+
+        if (QByteArray(key.primaryFingerprint()) == QByteArray(d->recipientKey.primaryFingerprint())) {
+            continue;
+        }
+
         auto gossipJob = QGpgME::openpgp()->publicKeyExportJob(false);
         Q_ASSERT(gossipJob);
 

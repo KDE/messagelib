@@ -25,6 +25,7 @@ private Q_SLOTS:
     void testContentChained();
     void testAutocryptGossipHeader();
     void testSetGnupgHome();
+    void testStripSenderKey();
 };
 
 #endif
