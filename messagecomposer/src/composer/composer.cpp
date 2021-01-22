@@ -13,6 +13,7 @@
 #include "job/attachmentjob.h"
 #include "job/encryptjob.h"
 #include "job/jobbase_p.h"
+#include "job/autocryptheadersjob.h"
 #include "job/maintextjob.h"
 #include "job/multipartjob.h"
 #include "job/signencryptjob.h"
@@ -212,6 +213,21 @@ void ComposerPrivate::composeStep2()
             multipartJob->appendSubjob(new AttachmentJob(part));
         }
         mainJob = multipartJob;
+    }
+
+    if(autocryptEnabled) {
+        auto autocryptJob = new AutocryptHeadersJob();
+        autocryptJob->setSkeletonMessage(skeletonMessage);
+        autocryptJob->setGnupgHome(gnupgHome);
+        autocryptJob->appendSubjob(mainJob);
+        autocryptJob->setSenderKey(senderEncryptionKey);
+        if (encrypt && format & Kleo::OpenPGPMIMEFormat) {
+            qDebug() << "Add gossip?" << encData[0].first.size() << encData[0].second.size();
+            if (encData[0].first.size() > 1 && encData[0].second.size() > 2) {
+                autocryptJob->setGossipKeys(encData[0].second);
+            }
+        }
+        mainJob = autocryptJob;
     }
 
     if (sign) {

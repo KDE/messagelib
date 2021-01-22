@@ -150,7 +150,7 @@ void SignJob::doStart()
 
 void SignJob::slotResult(KJob *job)
 {
-    if (error()) {
+    if (error() || job->error()) {
         ContentJobBase::slotResult(job);
         return;
     }

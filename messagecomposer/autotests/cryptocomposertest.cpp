@@ -35,7 +35,10 @@ using namespace MessageCore;
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
+#include <QGpgME/KeyListJob>
+#include <QGpgME/Protocol>
 #include <gpgme++/key.h>
+#include <gpgme++/keylistresult.h>
 
 #include <QDebug>
 #include <QTest>
@@ -592,6 +595,237 @@ void CryptoComposerTest::testCTEbase64()
     testOpenPGPMime();
     testOpenPGPInline();
 }
+
+void CryptoComposerTest::testSetGnupgHome_data()
+{
+    QTest::addColumn<QString>("data");
+    QTest::addColumn<bool>("sign");
+
+    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+
+    QTest::newRow("sign") << data << true;
+    QTest::newRow("notsign") << data << false;
+}
+
+void CryptoComposerTest::testSetGnupgHome()
+{
+    QFETCH(QString, data);
+    QFETCH(bool, sign);
+
+    bool encrypt(true);
+
+    KMime::Message::Ptr message;
+    QTemporaryDir dir;
+    {
+        Composer composer;
+
+        fillComposerData(&composer, data);
+        fillComposerCryptoData(&composer);
+
+        composer.setGnupgHome(dir.path());
+        composer.setSignAndEncrypt(sign, encrypt);
+        composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+
+        QCOMPARE(composer.exec(), false);
+    }
+
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    for(const auto key: keys) {
+        Test::populateKeyring(dir.path(), key);
+    }
+
+    {
+        Composer composer;
+
+        fillComposerData(&composer, data);
+        fillComposerCryptoData(&composer);
+
+        composer.setGnupgHome(dir.path());
+        composer.setSignAndEncrypt(sign, encrypt);
+        composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+
+        VERIFYEXEC((&composer));
+        QCOMPARE(composer.resultMessages().size(), 1);
+
+        message = composer.resultMessages().first();
+    }
+
+    ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
+
+    QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
+    QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
+}
+
+void CryptoComposerTest::testAutocryptHeaders_data()
+{
+    QTest::addColumn<QString>("data");
+    QTest::addColumn<bool>("encrypt");
+    QTest::addColumn<bool>("sign");
+
+    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+
+    QTest::newRow("encrypt+sign") << data << true << true;
+    QTest::newRow("encrypt") << data << true << false;
+    QTest::newRow("sign") << data << false << true;
+    QTest::newRow("noencrypt+nosign") << data << false << false;
+}
+
+void CryptoComposerTest::testAutocryptHeaders()
+{
+    QFETCH(QString, data);
+    QFETCH(bool, encrypt);
+    QFETCH(bool, sign);
+
+    std::vector<GpgME::Key> keys = Test::getKeys();
+
+    KMime::Message::Ptr message;
+    QTemporaryDir dir;
+    {
+        Composer composer;
+
+        fillComposerData(&composer, data);
+        fillComposerCryptoData(&composer);
+
+        composer.setAutocryptEnabled(true);
+        composer.setSenderEncryptionKey(keys[0]);
+        composer.setGnupgHome(dir.path());
+        composer.setSignAndEncrypt(sign, encrypt);
+        composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+
+        QCOMPARE(composer.exec(), false);
+    }
+
+    for(const auto key: keys) {
+        Test::populateKeyring(dir.path(), key);
+    }
+
+    {
+        Composer composer;
+
+        fillComposerData(&composer, data);
+        fillComposerCryptoData(&composer);
+
+        composer.setAutocryptEnabled(true);
+        composer.setSenderEncryptionKey(keys[0]);
+        composer.setGnupgHome(dir.path());
+        composer.setSignAndEncrypt(sign, encrypt);
+        composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+
+        VERIFYEXEC((&composer));
+        QCOMPARE(composer.resultMessages().size(), 1);
+
+        message = composer.resultMessages().first();
+    }
+
+    if (sign || encrypt) {
+        ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
+    }
+
+    QVERIFY(message->headerByType("autocrypt"));
+    QVERIFY(message->headerByType("Autocrypt")->asUnicodeString().startsWith(QStringLiteral("addr=me@me.me; keydata= mQENBEr9ij4BCADaFvyhzV7IrCAr/sCvfoPerAd4dYIGTeCeBmInu3p4oEG0rXTB2zL2t9zd7jV")));
+    QVERIFY(!message->headerByType("autocrypt-gossip"));
+    QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
+    QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
+}
+
+void CryptoComposerTest::testAutocryptGossip_data()
+{
+    QTest::addColumn<QString>("data");
+    QTest::addColumn<bool>("encrypt");
+    QTest::addColumn<bool>("sign");
+    QTest::addColumn<QStringList>("recipients");
+
+
+    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+
+    QStringList recipients({QStringLiteral("you@you.you")});
+
+    QTest::newRow("encrypt") << data << true << false << recipients;
+    QTest::newRow("encrypt+sign") << data << true << true << recipients;
+    QTest::newRow("sign") << data << false << true << recipients;
+
+    recipients.append(QStringLiteral("leo@kdab.com"));
+    QTest::newRow("encrypt-multiple") << data << true << false << recipients;
+    QTest::newRow("encrypt+sign-multiple") << data << true << true << recipients;
+    QTest::newRow("sign-multiple") << data << false << true << recipients;
+}
+
+void CryptoComposerTest::testAutocryptGossip()
+{
+    QFETCH(QString, data);
+    QFETCH(bool, encrypt);
+    QFETCH(bool, sign);
+    QFETCH(QStringList, recipients);
+
+    std::vector<GpgME::Key> keys = Test::getKeys();
+
+    KMime::Message::Ptr message;
+
+    {
+        Composer composer;
+
+        fillComposerData(&composer, data);
+        composer.infoPart()->setTo(recipients);
+        fillComposerCryptoData(&composer);
+
+        if (recipients.size() > 1) {
+            auto job = QGpgME::openpgp()->keyListJob(false);
+            std::vector<GpgME::Key> eKeys;
+            GpgME::KeyListResult res = job->exec(recipients, false, eKeys);
+
+            QVERIFY(!res.error());
+            QCOMPARE(eKeys.size(), 1);
+
+            eKeys.push_back(keys[0]);
+            eKeys.push_back(keys[1]);
+
+            QVector<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
+            encKeys.append({recipients, eKeys});
+
+            composer.setEncryptionKeys(encKeys);
+        }
+        composer.setAutocryptEnabled(true);
+        composer.setSenderEncryptionKey(keys[0]);
+        composer.setSignAndEncrypt(sign, encrypt);
+        composer.setMessageCryptoFormat(Kleo::OpenPGPMIMEFormat);
+
+        VERIFYEXEC((&composer));
+        QCOMPARE(composer.resultMessages().size(), 1);
+
+        message = composer.resultMessages().first();
+    }
+
+    if (sign || encrypt) {
+        ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
+
+    }
+
+    MimeTreeParser::SimpleObjectTreeSource testSource;
+    MimeTreeParser::NodeHelper nh;
+    MimeTreeParser::ObjectTreeParser otp(&testSource, &nh);
+    testSource.setDecryptMessage(true);
+    otp.parseObjectTree(message.data());
+
+    QVERIFY(!message->headerByType("autocrypt-gossip"));
+    if (encrypt && recipients.size() > 1) {
+        QCOMPARE(nh.headers("autocrypt-gossip", message.data()).size(), 2);
+
+        auto headers = QStringList();
+        for (const auto header: nh.headers("autocrypt-gossip", message.data())) {
+            headers.append(header->asUnicodeString());
+        }
+
+        headers.sort();
+
+        QVERIFY(headers[0].startsWith(QStringLiteral("addr=leo@kdab.com; keydata= mQINBEr4pSwBEADG/B1VaoxT7mnQfwekkY+f8wkqFVLvTwN0W59Ze/pxmuRf/iS0tZjsEiPK0za")));
+        QVERIFY(headers[1].startsWith(QStringLiteral("addr=you@you.com; keydata= mI0ESw2YuAEEALakcld4goNkwIL5gMETM3R+zI+AoJcuQWUpvS7AqwyR9/UAkVd3D+r32CgWhFi")));
+    } else {
+        QCOMPARE(nh.headers("autocrypt-gossip", message.data()).size(), 0);
+    }
+    QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
+    QCOMPARE(message->to()->asUnicodeString(), recipients.join(QStringLiteral(", ")));
+}
+
 
 // Helper methods
 void CryptoComposerTest::fillComposerData(Composer *composer, const QString &data)

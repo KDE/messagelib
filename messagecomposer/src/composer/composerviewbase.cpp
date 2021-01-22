@@ -39,6 +39,7 @@
 #include <MimeTreeParser/SimpleObjectTreeSource>
 #include <Sonnet/DictionaryComboBox>
 
+#include <MessageCore/AutocryptStorage>
 #include <MessageCore/NodeHelper>
 #include <MessageCore/StringUtil>
 
@@ -57,12 +58,21 @@
 #include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 
 #include "messagecomposer_debug.h"
+
+#include <QGpgME/ExportJob>
+#include <QGpgME/ImportJob>
+#include <QGpgME/Protocol>
+#include <gpgme++/context.h>
+#include <gpgme++/gpgmepp_version.h>
+#include <gpgme++/importresult.h>
+
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QSaveFile>
 
 #include <QDir>
 #include <QStandardPaths>
+#include <QTemporaryDir>
 #include <QTimer>
 #include <QUuid>
 #include <followupreminder/followupremindercreatejob.h>
@@ -596,6 +606,86 @@ inline bool showKeyApprovalDialog()
 }
 } // nameless namespace
 
+bool ComposerViewBase::addKeysToContext(const QString &gnupgHome, const QVector<QPair<QStringList, std::vector<GpgME::Key> > > &data, const std::map<QByteArray, QString> &autocryptMap)
+{
+    bool needSpecialContext = false;
+
+    for (const auto &p: data) {
+        for (const auto k: p.second) {
+            const auto it = autocryptMap.find(k.primaryFingerprint());
+            if (it != autocryptMap.end()) {
+                needSpecialContext = true;
+                break;
+            }
+        }
+        if (needSpecialContext) {
+            break;
+        }
+    }
+
+    qDebug() << "addKeysToContext: " << needSpecialContext;
+
+    if (!needSpecialContext) {
+        return false;
+    }
+    const QGpgME::Protocol *proto(QGpgME::openpgp());
+
+    const auto storage = MessageCore::AutocryptStorage::self();
+    QEventLoop loop;
+    int runningJobs = 0;
+    for (const auto &p: data) {
+        for (const auto k: p.second) {
+            const auto it = autocryptMap.find(k.primaryFingerprint());
+            if (it == autocryptMap.end()) {
+                qDebug() << "Adding " << k.primaryFingerprint() << "via Export/Import";
+                auto exportJob = proto->publicKeyExportJob(false);
+                connect(exportJob, &QGpgME::ExportJob::result, [&gnupgHome, &proto, &runningJobs, &loop, &k](const GpgME::Error &result, const QByteArray &keyData, const QString &auditLogAsHtml, const GpgME::Error &auditLogError){
+                        Q_UNUSED(auditLogAsHtml);
+                        Q_UNUSED(auditLogError);
+                        if (result) {
+                            qCWarning(MESSAGECOMPOSER_LOG) << "Failed to export " << k.primaryFingerprint() << result.asString();
+                            --runningJobs;
+                            if (runningJobs < 1) {
+                                loop.quit();
+                            }
+                        }
+
+                        auto importJob = proto->importJob();
+                        QGpgME::Job::context(importJob)->setEngineHomeDirectory(gnupgHome.toUtf8().constData());
+                        importJob->exec(keyData);
+                        importJob->deleteLater();
+                        --runningJobs;
+                        if (runningJobs < 1) {
+                            loop.quit();
+                        }
+                        });
+                QStringList patterns;
+                patterns << QString::fromUtf8(k.primaryFingerprint());
+                runningJobs++;
+                exportJob->start(patterns);
+#if GPGMEPP_VERSION >= 0x10E00 // 1.14.0
+                exportJob->setExportFlags(GpgME::Context::ExportMinimal);
+#endif
+            } else {
+                qDebug() << "Adding " << k.primaryFingerprint() << "from Autocrypt storage";
+                const auto recipient = storage->getRecipient(it->second.toUtf8());
+                auto key = recipient->gpgKey();
+                auto keydata = recipient->gpgKeydata();
+                if (QByteArray(key.primaryFingerprint()) != QByteArray(k.primaryFingerprint())) {
+                    qDebug() << "Using gossipkey";
+                    keydata = recipient->gossipKeydata();
+                }
+                auto importJob = proto->importJob();
+                QGpgME::Job::context(importJob)->setEngineHomeDirectory(gnupgHome.toUtf8().constData());
+                const auto result = importJob->exec(keydata);
+                importJob->deleteLater();
+            }
+        }
+    }
+    loop.exec();
+    return true;
+}
+
 QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
 {
     const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
@@ -611,6 +701,8 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
                                                                         signingRootCertNearExpiryWarningThresholdInDays(),
                                                                         encryptChainCertNearExpiryWarningThresholdInDays(),
                                                                         signingChainCertNearExpiryWarningThresholdInDays()));
+
+    keyResolver->setAutocryptEnabled(id.autocryptEnabled());
 
     QStringList encryptToSelfKeys;
     QStringList signKeys;
@@ -742,6 +834,16 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
                     qCDebug(MESSAGECOMPOSER_LOG) << "got resolved keys for:" << it->recipients;
                 }
                 composer->setEncryptionKeys(data);
+                if (concreteFormat & Kleo::OpenPGPMIMEFormat && id.autocryptEnabled()) {
+                    composer->setAutocryptEnabled(id.autocryptEnabled());
+                    composer->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(concreteFormat)[0]);
+                    QTemporaryDir dir;
+                    bool specialGnupgHome = addKeysToContext(dir.path(), data, keyResolver->useAutocrypt());
+                    if (specialGnupgHome) {
+                        dir.setAutoRemove(false);
+                        composer->setGnupgHome(dir.path());
+                    }
+                }
             }
 
             if (signSomething) {
@@ -914,6 +1016,11 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
             msg = i18n("Could not compose message: %1", job->errorString());
         }
         Q_EMIT failed(msg);
+    }
+
+    if (!composer->gnupgHome().isEmpty()) {
+        QDir dir(composer->gnupgHome());
+        dir.removeRecursively();
     }
 
     m_composers.removeAll(composer);
@@ -1129,8 +1236,10 @@ void ComposerViewBase::autoSaveMessage()
         return;
     }
 
+    const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
     MessageComposer::Composer *const composer = createSimpleComposer();
     composer->setAutoSave(true);
+    composer->setAutocryptEnabled(id.autocryptEnabled());
     m_composers.append(composer);
     connect(composer, &MessageComposer::Composer::result, this, &ComposerViewBase::slotAutoSaveComposeResult);
     composer->start();
