@@ -1887,13 +1887,12 @@ void Kleo::KeyResolver::addKeys(const std::vector<Item> &items)
 
 Kleo::KeyResolver::ContactPreferences Kleo::KeyResolver::lookupContactPreferences(const QString &address) const
 {
-#ifdef HAVE_A_FIX_FOR_LOCK
-    const Private::ContactPreferencesMap::iterator it
-        = d->mContactPreferencesMap.find(address);
+    const Private::ContactPreferencesMap::iterator it = d->mContactPreferencesMap.find(address);
     if (it != d->mContactPreferencesMap.end()) {
         return it->second;
     }
 
+#ifdef HAVE_A_FIX_FOR_LOCK
     Akonadi::ContactSearchJob *job = new Akonadi::ContactSearchJob();
     job->setLimit(1);
     job->setQuery(Akonadi::ContactSearchJob::Email, address);
