@@ -174,7 +174,13 @@ void SkeletonMessageJobPrivate::doStart()
 
     const KMime::Headers::Base::List extraHeaders = infoPart->extraHeaders();
     for (KMime::Headers::Base *extra : extraHeaders) {
-        message->setHeader(extra);
+        const QByteArray headerType(extra->type());
+        auto copyHeader = KMime::Headers::createHeader(headerType);
+        if (!copyHeader) {
+            copyHeader = new KMime::Headers::Generic(headerType.constData(), headerType.size());
+        }
+        copyHeader->from7BitString(extra->as7BitString(false));
+        message->setHeader(copyHeader);
     }
 
     // Request Delivery Confirmation
