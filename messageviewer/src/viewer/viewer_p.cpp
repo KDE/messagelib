@@ -85,6 +85,7 @@
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
 
+#include <MessageCore/AutocryptUtils>
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
 
@@ -858,6 +859,11 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     // decryption of a signed messages which has already been decrypted before).
     if (signatureState != MimeTreeParser::KMMsgNotSigned || mNodeHelper->signatureState(content) == MimeTreeParser::KMMsgSignatureStateUnknown) {
         mNodeHelper->setSignatureState(content, signatureState);
+    }
+
+    if (!onlySingleNode && isAutocryptEnabled(message)) {
+        auto mixup = HeaderMixupNodeHelper(mNodeHelper, message);
+        processAutocryptfromMail(mixup);
     }
 
     showHideMimeTree();
