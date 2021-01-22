@@ -908,6 +908,11 @@ void Widget::setLockTab(bool lock)
     //TODO
 }
 
+bool Widget::isLocked() const
+{
+    return d->mLockTab;
+}
+
 void Widget::statusSelected(int index)
 {
     if (index == 0) {
@@ -1071,8 +1076,10 @@ Akonadi::Collection Widget::currentFolder() const
 
 void Widget::setCurrentFolder(const Akonadi::Collection &collection)
 {
-    d->mCurrentFolder = collection;
-    d->searchCollectionIndexingWarning->setCollection(collection);
+    if (!d->mLockTab) {
+        d->mCurrentFolder = collection;
+        d->searchCollectionIndexingWarning->setCollection(collection);
+    }
 }
 
 bool Widget::searchEditHasFocus() const

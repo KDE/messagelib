@@ -131,6 +131,10 @@ public Q_SLOTS:
     */
     void changeQuicksearchVisibility(bool);
 
+
+    void setLockTab(bool lock);
+    Q_REQUIRED_RESULT bool isLocked() const;
+
 protected:
     /**
     * Called when the "Message Status/Tag" filter menu is opened by the user.
@@ -203,8 +207,6 @@ protected:
     virtual void viewMessageStatusChangeRequest(MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear);
 
     void tagIdSelected(const QVariant &data);
-
-    void setLockTab(bool lock);
 
 Q_SIGNALS:
     /**
