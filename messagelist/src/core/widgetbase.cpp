@@ -74,19 +74,19 @@ public:
 
     Widget *const q;
 
-    QuickSearchWarning *quickSearchWarning;
-    SearchCollectionIndexingWarning *searchCollectionIndexingWarning;
-    QuickSearchLine *quickSearchLine;
-    View *mView;
+    QuickSearchWarning *quickSearchWarning = nullptr;
+    SearchCollectionIndexingWarning *searchCollectionIndexingWarning = nullptr;
+    QuickSearchLine *quickSearchLine = nullptr;
+    View *mView = nullptr;
     QString mLastAggregationId;
     QString mLastThemeId;
-    QTimer *mSearchTimer;
-    StorageModel *mStorageModel;           ///< The currently displayed storage. The storage itself
+    QTimer *mSearchTimer = nullptr;
+    StorageModel *mStorageModel = nullptr;           ///< The currently displayed storage. The storage itself
     ///  is owned by MessageList::Widget.
-    Aggregation *mAggregation;             ///< The currently set aggregation mode, a deep copy
-    Theme *mTheme;                         ///< The currently set theme, a deep copy
+    Aggregation *mAggregation = nullptr;             ///< The currently set aggregation mode, a deep copy
+    Theme *mTheme = nullptr;                         ///< The currently set theme, a deep copy
     SortOrder mSortOrder;                  ///< The currently set sort order
-    Filter *mFilter;                       ///< The currently applied filter, owned by us.
+    Filter *mFilter = nullptr;                       ///< The currently applied filter, owned by us.
     bool mStorageUsesPrivateTheme = false;         ///< true if the current folder does not use the global theme
     bool mStorageUsesPrivateAggregation = false;   ///< true if the current folder does not use the global aggregation
     bool mStorageUsesPrivateSortOrder = false;     ///< true if the current folder does not use the global sort order
