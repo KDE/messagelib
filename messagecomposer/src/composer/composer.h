@@ -56,6 +56,9 @@ public:
     void setSigningKeys(std::vector<GpgME::Key> &signers);
     void setEncryptionKeys(const QVector<QPair<QStringList, std::vector<GpgME::Key>>> &data);
 
+    void setAutocryptEnabled(bool autocryptEnabled);
+    void setSenderEncryptionKey(const GpgME::Key &senderKey);
+
     void setGnupgHome(const QString &path);
     Q_REQUIRED_RESULT QString gnupgHome() const;
 

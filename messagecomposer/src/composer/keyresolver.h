@@ -227,6 +227,14 @@ public:
     */
     Q_REQUIRED_RESULT std::vector<SplitInfo> encryptionItems(CryptoMessageFormat f) const;
 
+    std::vector<GpgME::Key> encryptToSelfKeysFor(CryptoMessageFormat f) const;
+
+    /** If Autocrypt keys are used to find valid PGP Keys
+    */
+    void setAutocryptEnabled(bool autocryptEnabled);
+
+    std::map<QByteArray, QString> useAutocrypt() const;
+
 private:
     void dump() const;
     std::vector<Item> getEncryptionItems(const QStringList &recipients);
@@ -252,7 +260,6 @@ private:
     void addKeys(const std::vector<Item> &items);
     QStringList allRecipients() const;
     std::vector<GpgME::Key> signingKeysFor(CryptoMessageFormat f) const;
-    std::vector<GpgME::Key> encryptToSelfKeysFor(CryptoMessageFormat f) const;
 
     std::vector<GpgME::Key> lookup(const QStringList &patterns, bool secret = false) const;
 

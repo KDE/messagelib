@@ -607,6 +607,7 @@ struct FormatInfo {
 };
 
 struct Q_DECL_HIDDEN Kleo::KeyResolver::Private {
+    bool mAutocryptEnabled;
     std::set<QByteArray> alreadyWarnedFingerprints;
 
     std::vector<GpgME::Key> mOpenPGPSigningKeys; // signing
@@ -623,6 +624,7 @@ struct Q_DECL_HIDDEN Kleo::KeyResolver::Private {
     // key=email address, value=crypto preferences for this contact (from kabc)
     typedef std::map<QString, ContactPreferences> ContactPreferencesMap;
     ContactPreferencesMap mContactPreferencesMap;
+    std::map<QByteArray, QString> mAutocryptMap;
 };
 
 Kleo::KeyResolver::KeyResolver(bool encToSelf,
@@ -1647,6 +1649,16 @@ std::vector<Kleo::KeyResolver::SplitInfo> Kleo::KeyResolver::encryptionItems(Kle
     dump();
     std::map<CryptoMessageFormat, FormatInfo>::const_iterator it = d->mFormatInfoMap.find(f);
     return it != d->mFormatInfoMap.end() ? it->second.splitInfos : std::vector<SplitInfo>();
+}
+
+void Kleo::KeyResolver::setAutocryptEnabled(bool autocryptEnabled)
+{
+    d->mAutocryptEnabled = autocryptEnabled;
+}
+
+std::map<QByteArray, QString> Kleo::KeyResolver::useAutocrypt() const
+{
+    return d->mAutocryptMap;
 }
 
 std::vector<GpgME::Key> Kleo::KeyResolver::signingKeys(CryptoMessageFormat f) const

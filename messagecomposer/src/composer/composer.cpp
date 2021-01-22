@@ -60,6 +60,7 @@ public:
 
     QString gnupgHome;
     QVector<QPair<QStringList, std::vector<GpgME::Key>>> encData;
+    GpgME::Key senderEncryptionKey;
     std::vector<GpgME::Key> signers;
     AttachmentPart::List attachmentParts;
     // attachments with different sign/encrypt settings from
@@ -83,6 +84,7 @@ public:
     bool encrypt = false;
     bool noCrypto = false;
     bool autoSaving = false;
+    bool autocryptEnabled = false;
     Q_DECLARE_PUBLIC(Composer)
 };
 
@@ -569,6 +571,20 @@ void Composer::setNoCrypto(bool noCrypto)
     Q_D(Composer);
 
     d->noCrypto = noCrypto;
+}
+
+void Composer::setAutocryptEnabled(bool autocryptEnabled)
+{
+    Q_D(Composer);
+
+    d->autocryptEnabled = autocryptEnabled;
+}
+
+void Composer::setSenderEncryptionKey(const GpgME::Key &senderKey)
+{
+    Q_D(Composer);
+
+    d->senderEncryptionKey = senderKey;
 }
 
 void Composer::setGnupgHome(const QString &path)
