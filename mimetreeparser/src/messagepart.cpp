@@ -1395,7 +1395,7 @@ bool EncryptedMessagePart::hasHeader(const char *headerType) const
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {
-        return extraContent->hasHeader(headerType);
+        return nodeHelper()->hasMailHeader(headerType, extraContent);
     }
     return false;
 }
@@ -1404,7 +1404,7 @@ const KMime::Headers::Base *EncryptedMessagePart::header(const char *headerType)
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {
-        return extraContent->headerByType(headerType);
+        return nodeHelper()->mailHeaderAsBase(headerType, extraContent);
     }
     return nullptr;
 }
@@ -1413,7 +1413,7 @@ QVector<KMime::Headers::Base *> EncryptedMessagePart::headers(const char* header
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {
-        return extraContent->headersByType(headerType);
+        return nodeHelper()->headers(headerType, extraContent);
     }
     return QVector<KMime::Headers::Base *>();
 }
