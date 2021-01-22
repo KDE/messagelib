@@ -62,6 +62,7 @@
 #include <messageflags.h>
 #include <Akonadi/KMime/SpecialMailCollections>
 #include <MailTransportAkonadi/ErrorAttribute>
+#include <MessageCore/Util>
 
 //Qt includes
 #include <QClipboard>
@@ -3149,28 +3150,22 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
     return nullptr;
 }
 
-bool ViewerPrivate::isAutocryptEnabled(const KMime::Content *content)
+bool ViewerPrivate::isAutocryptEnabled(KMime::Message *message)
 {
     if (!mIdentityManager) {
         return false;
     }
 
-    QString addresses;
-    if (content->headerByType("to")) {
-        addresses += content->headerByType("to")->asUnicodeString();
-    }
-
-    if (content->headerByType("cc")) {
-        if (!addresses.isEmpty()) {
-            addresses += QLatin1String(", ");
-        }
-        addresses += content->headerByType("cc")->asUnicodeString();
-    }
-    const auto id = mIdentityManager->identityForAddress(addresses);
+    const auto id = MessageCore::Util::identityForMessage(message, mIdentityManager, mFolderIdentity);
     return id.autocryptEnabled();
 }
 
 void ViewerPrivate::setIdentityManager(KIdentityManagement::IdentityManager* ident)
 {
     mIdentityManager = ident;
+}
+
+void MessageViewer::ViewerPrivate::setFolderIdentity(uint folderIdentity)
+{
+    mFolderIdentity = folderIdentity;
 }

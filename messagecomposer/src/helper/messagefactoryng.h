@@ -162,9 +162,9 @@ public:
     *  Set the identity that is set for the folder in which the given message is.
     *   It is used as a fallback when finding the identity if it can't be found in
     *   any other way.
-    *  Also used if putRepliesInSameFolder is set to true.
+    *   @param folderIdentityId an uoid of KIdentityManagement::Identity
     */
-    void setFolderIdentity(Akonadi::Item::Id folderIdentityId);
+    void setFolderIdentity(uint folderIdentityId);
 
     /**
     * Whether or not to put the reply to a message in the same folder as the message itself.
@@ -240,7 +240,7 @@ private:
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
     // Required parts to create messages
     KMime::Message::Ptr mOrigMsg;
-    Akonadi::Item::Id mFolderId;
+    uint mFolderId;
     Akonadi::Item::Id mParentFolderId;
 
     Akonadi::Collection mCollection;

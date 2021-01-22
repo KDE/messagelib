@@ -5,8 +5,8 @@
  *
  */
 
-#ifndef MESSAGECORE_UTIL_H
-#define MESSAGECORE_UTIL_H
+#ifndef MESSAGECORE_COLORUTIL_H
+#define MESSAGECORE_COLORUTIL_H
 
 #include "messagecore_export.h"
 
@@ -58,4 +58,4 @@ private:
 };
 }
 
-#endif // MESSAGECORE_UTIL_H
+#endif // COLORUTIL_H

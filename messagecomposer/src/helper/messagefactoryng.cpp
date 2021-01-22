@@ -11,17 +11,19 @@
 #include "settings/messagecomposersettings.h"
 #include "messagefactoryforwardjob.h"
 #include "messagefactoryreplyjob.h"
-#include "MessageComposer/Util"
+#include <MessageComposer/Util>
 
-#include <AkonadiCore/item.h>
+#include <AkonadiCore/Item>
 #include <KCursorSaver>
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
-#include <KIdentityManagement/kidentitymanagement/identity.h>
 
-#include <kmime/kmime_dateformatter.h>
+#include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
+
+#include <KMime/DateFormatter>
 #include <KEmailAddress>
 #include <MessageCore/MailingList>
 #include <MessageCore/StringUtil>
+#include <MessageCore/Util>
 #include "helper/messagehelper.h"
 #include <KLocalizedString>
 #include "messagecomposer_debug.h"
@@ -777,7 +779,7 @@ void MessageFactoryNG::setMailingListAddresses(const KMime::Types::Mailbox::List
     mMailingListAddresses << listAddresses;
 }
 
-void MessageFactoryNG::setFolderIdentity(Akonadi::Collection::Id folderIdentityId)
+void MessageFactoryNG::setFolderIdentity(uint folderIdentityId)
 {
     mFolderId = folderIdentityId;
 }
@@ -901,11 +903,7 @@ uint MessageFactoryNG::identityUoid(const KMime::Message::Ptr &msg)
     uint id = idString.toUInt(&ok);
 
     if (!ok || id == 0) {
-        id = mIdentityManager->identityForAddress(msg->to()->asUnicodeString() + QLatin1String(", ") + msg->cc()->asUnicodeString()).uoid();
-    }
-
-    if (id == 0 && mFolderId > 0) {
-        id = mFolderId;
+        id = MessageCore::Util::identityForMessage(msg.data(), mIdentityManager, mFolderId).uoid();
     }
     return id;
 }

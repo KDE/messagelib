@@ -773,4 +773,10 @@ void Viewer::setIdentityManager(KIdentityManagement::IdentityManager *ident)
     d->setIdentityManager(ident);
 }
 
+void Viewer::setFolderIdentity(uint folderIdentity)
+{
+    Q_D(Viewer);
+    d->setFolderIdentity(folderIdentity);
+}
+
 }
