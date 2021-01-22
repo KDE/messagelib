@@ -40,21 +40,21 @@ public:
 
 private:
     const Theme *mTheme;  ///< Shallow pointer to the current theme
-    QAbstractItemView *mItemView;
+    QAbstractItemView *mItemView = nullptr;
 
     QColor mGroupHeaderBackgroundColor; // cache
 
     // hitTest results
     QModelIndex mHitIndex;
-    Item *mHitItem;
+    Item *mHitItem = nullptr;
     QRect mHitItemRect;
-    const Theme::Column *mHitColumn;
-    const Theme::Row *mHitRow;
+    const Theme::Column *mHitColumn = nullptr;
+    const Theme::Row *mHitRow = nullptr;
     int mHitRowIndex;
     bool mHitRowIsMessageRow;
     QRect mHitRowRect;
     bool mHitContentItemRight;
-    const Theme::ContentItem *mHitContentItem;
+    const Theme::ContentItem *mHitContentItem = nullptr;
     QRect mHitContentItemRect;
 
     mutable QSize mCachedMessageItemSizeHint;

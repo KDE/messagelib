@@ -98,8 +98,8 @@ public:
     * Returns true if the current Aggregation is threaded, false otherwise
     * (or if there is no current Aggregation).
     */
-    bool isThreaded() const;
-    Q_REQUIRED_RESULT /**
+    Q_REQUIRED_RESULT bool isThreaded() const;
+    /**
     * Fast function that determines if the selection is empty
     */
     Q_REQUIRED_RESULT bool selectionEmpty() const;

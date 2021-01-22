@@ -27,7 +27,7 @@ public:
     explicit AggregationComboBox(QWidget *parent);
     ~AggregationComboBox() override;
 
-    QString currentAggregation() const;
+    Q_REQUIRED_RESULT QString currentAggregation() const;
 
     void writeDefaultConfig() const;
 

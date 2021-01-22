@@ -51,7 +51,7 @@ public:
 
     ModelInvariantRowMapper *const q;
 
-    QList< RowShift * > *mRowShiftList;   ///< The ordered list of RowShifts, most recent at the end
+    QList< RowShift * > *mRowShiftList = nullptr;   ///< The ordered list of RowShifts, most recent at the end
     QHash< int, ModelInvariantIndex * > *mCurrentInvariantHash;  ///< The up-to-date invariants
     uint mCurrentShiftSerial;             ///< Current model change serial: FIXME: it explodes at 2^32 :D
     uint mRemovedShiftCount;              ///< The number of shifts that we have completely processed

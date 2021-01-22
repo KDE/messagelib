@@ -25,7 +25,7 @@ class MessageItemPrivate : public ItemPrivate
 public:
 
     explicit MessageItemPrivate(MessageItem *qq);
-    ~MessageItemPrivate();
+    ~MessageItemPrivate() override;
 
     /**
      * Linear search in the list of tags. The lists of tags

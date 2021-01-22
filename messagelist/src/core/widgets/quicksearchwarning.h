@@ -16,7 +16,7 @@ class MESSAGELIST_TESTS_EXPORT QuickSearchWarning : public KMessageWidget
     Q_OBJECT
 public:
     explicit QuickSearchWarning(QWidget *parent = nullptr);
-    ~QuickSearchWarning();
+    ~QuickSearchWarning() override;
     void setSearchText(const QString &text);
 
 private Q_SLOTS:

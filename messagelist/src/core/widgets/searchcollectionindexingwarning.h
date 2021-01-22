@@ -30,7 +30,7 @@ class MESSAGELIST_TESTS_EXPORT SearchCollectionIndexingWarning : public KMessage
     Q_OBJECT
 public:
     explicit SearchCollectionIndexingWarning(QWidget *parent = nullptr);
-    ~SearchCollectionIndexingWarning();
+    ~SearchCollectionIndexingWarning() override;
 
     void setCollection(const Akonadi::Collection &collection);
 
@@ -44,7 +44,7 @@ private:
 
     Akonadi::Collection mCollection;
     Akonadi::Collection::List mCollections;
-    Akonadi::Search::PIM::IndexedItems *mIndexedItems = nullptr;
+    Akonadi::Search::PIM::IndexedItems *const mIndexedItems;
 };
 }
 }

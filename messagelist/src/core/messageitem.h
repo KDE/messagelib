@@ -77,7 +77,7 @@ public:
     };
 
     explicit MessageItem();
-    virtual ~MessageItem();
+    ~MessageItem() override;
 
 public:
 

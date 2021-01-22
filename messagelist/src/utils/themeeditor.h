@@ -106,7 +106,7 @@ private:
     Core::Theme::ContentItem *mSelectedThemeContentItem = nullptr;
     Core::Theme::Column *mSelectedThemeColumn = nullptr;
     QPoint mMouseDownPoint;
-    Core::Theme *mTheme;
+    Core::Theme *mTheme = nullptr;
     RowInsertPosition mRowInsertPosition;
     ItemInsertPosition mItemInsertPosition;
     QPoint mDropIndicatorPoint1;

@@ -170,27 +170,27 @@ public:
     /**
      * The currently set storage model: shallow pointer.
      */
-    StorageModel *mStorageModel;
+    StorageModel *mStorageModel = nullptr;
 
     /**
      * The currently set aggregation mode: shallow pointer set by Widget
      */
-    const Aggregation *mAggregation;
+    const Aggregation *mAggregation = nullptr;
 
     /**
      * The currently used theme: shallow pointer
      */
-    const Theme *mTheme;
+    const Theme *mTheme = nullptr;
 
     /**
      * The currently used sort order. Pointer not owned by us, but by the Widget.
      */
-    const SortOrder *mSortOrder;
+    const SortOrder *mSortOrder = nullptr;
 
     /**
      * The filter to apply on messages. Shallow. Never 0.
      */
-    const Filter *mFilter;
+    const Filter *mFilter = nullptr;
 
     /**
      * The timer involved in breaking the "fill" operation in steps
@@ -266,12 +266,12 @@ public:
      * Owned invisible root item, useful to implement algorithms that not need
      * to handle the special case of parentless items. This is never 0.
      */
-    Item *mRootItem;
+    Item *mRootItem = nullptr;
 
     /**
      * The view we're attached to. Shallow pointer (the View owns us).
      */
-    View *mView;
+    View *mView = nullptr;
 
     /**
      * The time at the current ViewItemJob step started. Used to compute the time we
@@ -301,7 +301,7 @@ public:
      *
      * \sa ModelInvariantRowMapper
      */
-    ModelInvariantRowMapper *mInvariantRowMapper;
+    ModelInvariantRowMapper *mInvariantRowMapper = nullptr;
 
     /**
      * The label for the "Today" group item, cached, so we don't translate it multiple times.
@@ -370,7 +370,7 @@ public:
      * and QTreeView will loose the current setting. We also use this to force the current
      * to a specific item after a cleanup job.
      */
-    Item *mCurrentItemToRestoreAfterViewItemJobStep;
+    Item *mCurrentItemToRestoreAfterViewItemJobStep = nullptr;
 
     /**
      * Set to true in the first large loading job.
@@ -394,8 +394,8 @@ public:
 
     // Oldest and newest item while loading the model
     // Not valid afterwards anymore. Used for pre-selection of the newest/oldest message
-    MessageItem *mOldestItem;
-    MessageItem *mNewestItem;
+    MessageItem *mOldestItem = nullptr;
+    MessageItem *mNewestItem = nullptr;
 
     /**
      * The id of the preselected ;essage is "translated" to a message pointer when it's fetched
@@ -404,7 +404,7 @@ public:
      *
      * See also setStorageModel() and abortMessagePreSelection()
      */
-    MessageItem *mLastSelectedMessageInFolder;
+    MessageItem *mLastSelectedMessageInFolder = nullptr;
 
     /**
      * The "persistent message item sets" are (guess what?) sets of messages
@@ -418,13 +418,13 @@ public:
      * So mPersistentSetManager is in fact the manager for the outstanding "user" jobs.
      * 0 if no jobs are pending (so there are no persistent sets at the moment).
      */
-    MessageItemSetManager *mPersistentSetManager;
+    MessageItemSetManager *mPersistentSetManager = nullptr;
 
     /**
      * This pointer is passed to the Item functions that insert children.
      * When we work with disconnected UI this pointer becomes 0.
      */
-    Model *mModelForItemFunctions;
+    Model *mModelForItemFunctions = nullptr;
 
     /**
      * The cached result of StorageModel::containsOutboundMessages().
