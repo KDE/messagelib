@@ -138,4 +138,5 @@ void MessageCore::processAutocryptfromMail(const HeaderMixupNodeHelper& mixup)
             }
         }
     }
+    storage->save();
 }
