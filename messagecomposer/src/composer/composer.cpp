@@ -58,6 +58,7 @@ public:
 
     void composeFinalStep(KMime::Content *headers, KMime::Content *content);
 
+    QString gnupgHome;
     QVector<QPair<QStringList, std::vector<GpgME::Key>>> encData;
     std::vector<GpgME::Key> signers;
     AttachmentPart::List attachmentParts;
@@ -282,6 +283,7 @@ QList<ContentJobBase *> ComposerPrivate::createEncryptJobs(ContentJobBase *conte
             eJob->setEncryptionKeys(recipients.second);
             eJob->setRecipients(recipients.first);
             eJob->setSkeletonMessage(skeletonMessage);
+            eJob->setGnupgHome(gnupgHome);
             subJob = eJob;
         }
         qCDebug(MESSAGECOMPOSER_LOG) << "subJob" << subJob;
@@ -567,6 +569,20 @@ void Composer::setNoCrypto(bool noCrypto)
     Q_D(Composer);
 
     d->noCrypto = noCrypto;
+}
+
+void Composer::setGnupgHome(const QString &path)
+{
+    Q_D(Composer);
+
+    d->gnupgHome = path;
+}
+
+QString Composer::gnupgHome() const
+{
+    Q_D(const Composer);
+
+    return d->gnupgHome;
 }
 
 bool Composer::finished() const

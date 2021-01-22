@@ -39,6 +39,17 @@ KMime::Message::Ptr loadMessageFromFile(const QString &filename);
  * If the files are not euqal print diff output.
  */
 void compareFile(const QString &outFile, const QString &referenceFile);
+
+/**
+ * Adds keydata into keyring insinde gnupgHome.
+ */
+void populateKeyring(const QString& gnupgHome, const QByteArray &keydata);
+
+/**
+ * Adds keydata into keyring insinde gnupgHome.
+ */
+void populateKeyring(const QString& gnupgHome, const GpgME::Key &key);
+
 }
 }
 

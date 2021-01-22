@@ -31,6 +31,7 @@ public:
     {
     }
 
+    QString gnupgHome;
     QStringList recipients;
     std::vector<GpgME::Key> keys;
     Kleo::CryptoMessageFormat format;
@@ -128,6 +129,13 @@ void EncryptJob::setProtectedHeadersObvoscate(bool protectedHeadersObvoscate)
     Q_D(EncryptJob);
 
     d->protectedHeadersObvoscate = protectedHeadersObvoscate;
+}
+
+void EncryptJob::setGnupgHome(const QString &path)
+{
+    Q_D(EncryptJob);
+
+    d->gnupgHome = path;
 }
 
 QStringList EncryptJob::recipients() const
@@ -232,6 +240,10 @@ void EncryptJob::process()
 
     qCDebug(MESSAGECOMPOSER_LOG) << "got backend, starting job";
     QGpgME::EncryptJob *eJob = proto->encryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat);
+
+    if (!d->gnupgHome.isEmpty()) {
+        QGpgME::Job::context(eJob)->setEngineHomeDirectory(d->gnupgHome.toUtf8().constData());
+    }
 
     QObject::connect(
         eJob,

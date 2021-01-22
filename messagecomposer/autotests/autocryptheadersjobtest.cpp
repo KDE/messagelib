@@ -171,3 +171,67 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
 
     Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
 }
+
+void AutocryptHeadersJobTest::testSetGnupgHome()
+{
+    Composer composer;
+
+    KMime::Message skeletonMessage;
+    skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
+
+    KMime::Content content;
+    content.setBody("Hi Bob and Carol,\n"
+                    "\n"
+                    "I wanted to introduce the two of you to each other.\n"
+                    "\n"
+                    "I hope you are both doing well!  You can now both \"reply all\" here,\n"
+                    "and the thread will remain encrypted.\n");
+
+    auto exportJob = QGpgME::openpgp()->keyListJob(false);
+    std::vector< GpgME::Key > ownKeys;
+    exportJob->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
+    std::vector< GpgME::Key > keys;
+    exportJob->exec(QStringList({QStringLiteral("bob@autocrypt.example"), QStringLiteral("carol@autocrypt.example")}), false, keys);
+
+    QTemporaryDir dir;
+    {   // test with an empty gnupg Home
+        auto aJob = new AutocryptHeadersJob(&composer);
+        QVERIFY(aJob);
+
+        aJob->setContent(&content);
+        aJob->setSkeletonMessage(&skeletonMessage);
+        aJob->setSenderKey(ownKeys[0]);
+        aJob->setPreferEncrypted(true);
+        aJob->setGossipKeys(keys);
+        aJob->setGnupgHome(dir.path());
+        QCOMPARE(aJob->exec(), false);
+    }
+
+    // Populate Keyring with needed keys.
+    Test::populateKeyring(dir.path(), ownKeys[0]);
+    for(const auto key: keys) {
+        Test::populateKeyring(dir.path(), key);
+    }
+    auto aJob = new AutocryptHeadersJob(&composer);
+    QVERIFY(aJob);
+
+    aJob->setContent(&content);
+    aJob->setSkeletonMessage(&skeletonMessage);
+    aJob->setSenderKey(ownKeys[0]);
+    aJob->setPreferEncrypted(true);
+    aJob->setGossipKeys(keys);
+    aJob->setGnupgHome(dir.path());
+
+    VERIFYEXEC(aJob);
+
+    content.contentType(true)->from7BitString("text/plain");
+    content.assemble();
+
+    auto referenceFile = QStringLiteral("autocryptgossipheader.mbox");
+    QFile f(referenceFile);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write(content.encodedContent());
+    f.close();
+
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+}

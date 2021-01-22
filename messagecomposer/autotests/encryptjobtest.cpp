@@ -260,6 +260,44 @@ void EncryptJobTest::testProtectedHeaders()
     Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
+void EncryptJobTest::testSetGnupgHome()
+{
+    Composer composer;
+
+    KMime::Content content;
+    content.setBody("one flew over the cuckoo's nest");
+
+    const std::vector< GpgME::Key > &keys = Test::getKeys();
+
+    const QStringList recipients = {QStringLiteral("test@kolab.org")};
+
+    QTemporaryDir dir;
+    {
+        auto eJob = new EncryptJob(&composer);
+        QVERIFY(eJob);
+
+        eJob->setContent(&content);
+        eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+        eJob->setRecipients(recipients);
+        eJob->setEncryptionKeys(keys);
+        eJob->setGnupgHome(dir.path());
+        QCOMPARE(eJob->exec(), false);
+    }
+
+    for(const auto key: keys) {
+        Test::populateKeyring(dir.path(), key);
+    }
+    auto eJob = new EncryptJob(&composer);
+    QVERIFY(eJob);
+
+    eJob->setContent(&content);
+    eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    eJob->setRecipients(recipients);
+    eJob->setEncryptionKeys(keys);
+    eJob->setGnupgHome(dir.path());
+    checkEncryption(eJob);
+}
+
 void EncryptJobTest::checkEncryption(EncryptJob *eJob)
 {
     VERIFYEXEC(eJob);

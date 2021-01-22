@@ -7,8 +7,12 @@
 
 #include "setupenv.h"
 
+#include <QGpgME/ExportJob>
+#include <QGpgME/ImportJob>
 #include <QGpgME/KeyListJob>
 #include <QGpgME/Protocol>
+#include <gpgme++/context.h>
+#include <gpgme++/importresult.h>
 #include <gpgme++/keylistresult.h>
 
 #include <QDir>
@@ -91,4 +95,30 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
     QVERIFY(proc.waitForFinished());
 
     QCOMPARE(proc.exitCode(), 0);
+}
+
+void Test::populateKeyring(const QString& gnupgHome, const GpgME::Key &key)
+{
+    QEventLoop loop;
+    const QGpgME::Protocol *proto(QGpgME::openpgp());
+    auto exportJob = proto->publicKeyExportJob(false);
+    QObject::connect(exportJob, &QGpgME::ExportJob::result, [&gnupgHome, &loop](const GpgME::Error &result, const QByteArray &keyData, const QString &auditLogAsHtml, const GpgME::Error &auditLogError){
+        Q_UNUSED(auditLogAsHtml);
+        Q_UNUSED(auditLogError);
+        loop.quit();
+        QVERIFY(!result);
+        populateKeyring(gnupgHome, keyData);
+    });
+    QStringList patterns = {QString::fromUtf8(key.primaryFingerprint())};
+    exportJob->start(patterns);
+    loop.exec();
+}
+
+void Test::populateKeyring(const QString& gnupgHome, const QByteArray &keydata)
+{
+    const QGpgME::Protocol *proto(QGpgME::openpgp());
+    auto importJob = proto->importJob();
+    QGpgME::Job::context(importJob)->setEngineHomeDirectory(gnupgHome.toUtf8().constData());
+    const auto result = importJob->exec(keydata);
+    importJob->deleteLater();
 }

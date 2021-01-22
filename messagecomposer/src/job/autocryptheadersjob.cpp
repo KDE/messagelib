@@ -43,6 +43,8 @@ public:
 
     bool preferEncrypted = false;
     int subJobs = 0;
+
+    QString gnupgHome;
     GpgME::Key recipientKey;
     std::vector<GpgME::Key> gossipKeys;
 
@@ -128,6 +130,13 @@ void AutocryptHeadersJob::setSkeletonMessage(KMime::Message *skeletonMessage)
     d->skeletonMessage = skeletonMessage;
 }
 
+void AutocryptHeadersJob::setGnupgHome(const QString& path)
+{
+    Q_D(AutocryptHeadersJob);
+
+    d->gnupgHome = path;
+}
+
 void AutocryptHeadersJob::setSenderKey(const GpgME::Key& key)
 {
     Q_D(AutocryptHeadersJob);
@@ -164,6 +173,10 @@ void AutocryptHeadersJob::process()
     auto job = QGpgME::openpgp()->publicKeyExportJob(false);
     Q_ASSERT(job);
 
+    if (!d->gnupgHome.isEmpty()) {
+        QGpgME::Job::context(job)->setEngineHomeDirectory(d->gnupgHome.toUtf8().constData());
+    }
+
     connect(job, &QGpgME::ExportJob::result, this, [this, d](const GpgME::Error &error, const QByteArray &keydata) {
         d->subJobs--;
         if (AutocryptHeadersJob::error()) {
@@ -199,6 +212,10 @@ void AutocryptHeadersJob::process()
     foreach(const auto key, d->gossipKeys) {
         auto gossipJob = QGpgME::openpgp()->publicKeyExportJob(false);
         Q_ASSERT(gossipJob);
+
+        if (!d->gnupgHome.isEmpty()) {
+            QGpgME::Job::context(gossipJob)->setEngineHomeDirectory(d->gnupgHome.toUtf8().constData());
+        }
 
         connect(gossipJob, &QGpgME::ExportJob::result, this, [this, d, key](const GpgME::Error &error, const QByteArray &keydata) {
             d->subJobs--;
