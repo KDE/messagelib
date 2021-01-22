@@ -1033,27 +1033,24 @@ QString SignedMessagePart::fromAddress() const
 
 bool SignedMessagePart::hasHeader(const char *headerType) const
 {
-    const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
-    if (extraContent) {
-        return extraContent->hasHeader(headerType);
+    if(content()) {
+        return content()->hasHeader(headerType);
     }
     return false;
 }
 
 const KMime::Headers::Base* MimeTreeParser::SignedMessagePart::header(const char* headerType) const
 {
-    const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
-    if (extraContent) {
-        return extraContent->headerByType(headerType);
+    if(content()) {
+        return content()->headerByType(headerType);
     }
     return nullptr;
 }
 
 QVector<KMime::Headers::Base *> SignedMessagePart::headers(const char* headerType) const
 {
-    const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
-    if (extraContent) {
-        return extraContent->headersByType(headerType);
+    if(content()) {
+        return content()->headersByType(headerType);
     }
     return QVector<KMime::Headers::Base *>();
 }
