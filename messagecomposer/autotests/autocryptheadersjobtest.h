@@ -22,6 +22,7 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void testAutocryptHeader();
+    void testContentChained();
     void testAutocryptGossipHeader();
 };
 

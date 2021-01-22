@@ -6,13 +6,15 @@
 
 #include "job/autocryptheadersjob.h"
 
+#include "contentjobbase_p.h"
+
 #include "job/singlepartjob.h"
 #include "utils/util_p.h"
 
 #include "messagecomposer_debug.h"
 
-#include <QTimer>
-
+#include <gpgme++/gpgmepp_version.h>
+#include <gpgme++/context.h>
 #include <QGpgME/Protocol>
 #include <QGpgME/ExportJob>
 
@@ -24,19 +26,17 @@
 
 using namespace MessageComposer;
 
-class MessageComposer::AutocryptHeadersJobPrivate
+class MessageComposer::AutocryptHeadersJobPrivate : public ContentJobBasePrivate
 {
 public:
     AutocryptHeadersJobPrivate(AutocryptHeadersJob *qq)
-        : q_ptr(qq)
+        : ContentJobBasePrivate(qq)
     {
     }
 
     void emitGpgError(const GpgME::Error &error);
     void emitNotFoundError(const QByteArray &addr, const QByteArray &fingerprint);
     void fillHeaderData(KMime::Headers::Generic* header, const QByteArray& addr, bool preferEncrypted, const QByteArray& keydata);
-
-    AutocryptHeadersJob *q_ptr;
 
     KMime::Content *content = nullptr;
     KMime::Message *skeletonMessage = nullptr;
@@ -74,7 +74,6 @@ void AutocryptHeadersJobPrivate::emitNotFoundError(const QByteArray &addr, const
     q->setError(KJob::UserDefinedError);
     q->setErrorText(msg);
     q->emitResult();
-    return;
 }
 
 void AutocryptHeadersJobPrivate::fillHeaderData(KMime::Headers::Generic* header,
@@ -104,8 +103,7 @@ void AutocryptHeadersJobPrivate::fillHeaderData(KMime::Headers::Generic* header,
 }
 
 AutocryptHeadersJob::AutocryptHeadersJob(QObject *parent)
-    : KJob(parent)
-    , d_ptr(new AutocryptHeadersJobPrivate(this))
+    : ContentJobBase(*new AutocryptHeadersJobPrivate(this), parent)
 {
 }
 
@@ -151,14 +149,17 @@ void AutocryptHeadersJob::setGossipKeys(const std::vector<GpgME::Key> &gossipKey
     d->gossipKeys = gossipKeys;
 }
 
-void AutocryptHeadersJob::start()
-{
-    QTimer::singleShot(0, this, &AutocryptHeadersJob::doStart);
-}
-
-void AutocryptHeadersJob::doStart()
+void AutocryptHeadersJob::process()
 {
     Q_D(AutocryptHeadersJob);
+    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+
+    // if setContent hasn't been called, we assume that a subjob was added
+    // and we want to use that
+    if (!d->content) {
+        Q_ASSERT(d->subjobContents.size() == 1);
+        d->content = d->subjobContents.constFirst();
+    }
 
     auto job = QGpgME::openpgp()->publicKeyExportJob(false);
     Q_ASSERT(job);
@@ -175,17 +176,25 @@ void AutocryptHeadersJob::doStart()
         }
         if (keydata.isEmpty()) {
             d->emitNotFoundError(d->skeletonMessage->from()->addresses()[0], d->recipientKey.primaryFingerprint());
+            return;
         }
 
         auto autocrypt = new KMime::Headers::Generic("Autocrypt");
         d->fillHeaderData(autocrypt, d->skeletonMessage->from()->addresses()[0], d->preferEncrypted, keydata);
 
         d->skeletonMessage->setHeader(autocrypt);
+        d->skeletonMessage->assemble();
 
-        if (!d->subJobs) {
+        if (d->subJobs < 1) {
+            d->resultContent = d->content;
             emitResult();
         }
     });
+    d->subJobs++;
+    job->start(QStringList(QString::fromLatin1(d->recipientKey.primaryFingerprint())));
+#if GPGMEPP_VERSION >= 0x10E00 // 1.14.0
+        job->setExportFlags(GpgME::Context::ExportMinimal);
+#endif
 
     foreach(const auto key, d->gossipKeys) {
         auto gossipJob = QGpgME::openpgp()->publicKeyExportJob(false);
@@ -203,6 +212,7 @@ void AutocryptHeadersJob::doStart()
             }
             if (keydata.isEmpty()) {
                 d->emitNotFoundError(key.userID(0).email(), key.primaryFingerprint());
+                return;
             }
 
             auto header = new KMime::Headers::Generic("Autocrypt-Gossip");
@@ -210,16 +220,17 @@ void AutocryptHeadersJob::doStart()
 
             d->content->appendHeader(header);
 
-            if (!d->subJobs) {
+            if (d->subJobs < 1) {
+                d->resultContent = d->content;
                 emitResult();
             }
         });
 
         d->subJobs++;
         gossipJob->start(QStringList(QString::fromLatin1(key.primaryFingerprint())));
-
+#if GPGMEPP_VERSION >= 0x10E00 // 1.14.0
+        gossipJob->setExportFlags(GpgME::Context::ExportMinimal);
+#endif
     }
 
-    d->subJobs++;
-    job->start(QStringList(QString::fromLatin1(d->recipientKey.primaryFingerprint())));
 }

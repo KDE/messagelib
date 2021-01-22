@@ -8,8 +8,8 @@
 #define MESSAGECOMPOSER_AUTOCRYPTHEADERSJOB_H
 
 #include "messagecomposer_export.h"
+#include "contentjobbase.h"
 
-#include <KJob>
 #include <gpgme++/key.h>
 #include <vector>
 
@@ -23,7 +23,7 @@ class AutocryptHeadersJobPrivate;
 
 /**
 */
-class MESSAGECOMPOSER_EXPORT AutocryptHeadersJob : public KJob
+class MESSAGECOMPOSER_EXPORT AutocryptHeadersJob : public ContentJobBase
 {
     Q_OBJECT
 
@@ -37,14 +37,11 @@ public:
     void setSenderKey(const GpgME::Key &key);
     void setPreferEncrypted(bool preferEncrypted);
     void setGossipKeys(const std::vector<GpgME::Key> &gossipKeys);
-    
-    void start() override;
 
 protected Q_SLOTS:
-    void doStart();
+    void process() override;
 
 private:
-    AutocryptHeadersJobPrivate *const d_ptr;
     Q_DECLARE_PRIVATE(AutocryptHeadersJob)
 };
 }
