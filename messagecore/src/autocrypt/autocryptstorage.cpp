@@ -14,6 +14,7 @@
 #include <QStandardPaths>
 #include <QTemporaryFile>
 #include <QUrl>
+#include <autocrypt_debug.h>
 
 using namespace MessageCore;
 
@@ -91,6 +92,18 @@ void AutocryptStorage::deleteRecipient(const QByteArray& addr)
 void AutocryptStorage::save()
 {
     Q_D(AutocryptStorage);
+    if (!d->basePath.exists()) {
+        QDir parent = d->basePath;
+        if (!parent.cdUp()) {
+            qWarning(AUTOCRYPT_LOG) << parent.absolutePath() << "does not exist. Cancel saving Autocrypt storage.";
+            return;
+        }
+
+        if (!parent.mkdir(d->basePath.dirName())) {
+            qWarning(AUTOCRYPT_LOG) << "Cancel saving Autocrypt storage, because failed to create" << d->basePath.absolutePath();
+            return;
+        }
+    }
     foreach(const auto addr, d->recipients.keys()) {
         const auto recipient = d->recipients.value(addr);
         const QString fileName(address2Filename(addr));
