@@ -42,7 +42,7 @@ public:
     explicit ThemeColumnPropertiesDialog(QWidget *parent, Core::Theme::Column *column, const QString &title);
 
 protected:
-    Core::Theme::Column *mColumn = nullptr;
+    Core::Theme::Column *const mColumn;
     QLineEdit *mNameEdit = nullptr;
     QCheckBox *mVisibleByDefaultCheck = nullptr;
     QCheckBox *mIsSenderOrReceiverCheck = nullptr;

@@ -20,7 +20,6 @@ class MessageList::Utils::ThemeConfigButtonPrivate
 public:
     ThemeConfigButtonPrivate(ThemeConfigButton *owner)
         : q(owner)
-        , mThemeComboBox(nullptr)
     {
     }
 

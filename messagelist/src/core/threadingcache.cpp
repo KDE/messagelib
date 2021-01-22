@@ -45,10 +45,6 @@ QDataStream &operator>>(QDataStream &stream, CacheHeader &header)
 }
 
 ThreadingCache::ThreadingCache()
-    : mGrouping(Aggregation::NoGrouping)
-    , mThreading(Aggregation::NoThreading)
-    , mThreadLeader(Aggregation::TopmostMessage)
-    , mEnabled(true)
 {
 }
 

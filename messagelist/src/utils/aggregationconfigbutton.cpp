@@ -19,7 +19,6 @@ class MessageList::Utils::AggregationConfigButtonPrivate
 public:
     AggregationConfigButtonPrivate(AggregationConfigButton *owner)
         : q(owner)
-        , mAggregationComboBox(nullptr)
     {
     }
 

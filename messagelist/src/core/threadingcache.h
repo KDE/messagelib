@@ -41,10 +41,10 @@ private:
     QHash<qint64 /* ID */, MessageItem *> mItemCache;
 
     QString mCacheId;
-    Aggregation::Grouping mGrouping;
-    Aggregation::Threading mThreading;
-    Aggregation::ThreadLeader mThreadLeader;
-    bool mEnabled;
+    Aggregation::Grouping mGrouping = Aggregation::NoGrouping;
+    Aggregation::Threading mThreading = Aggregation::NoThreading;
+    Aggregation::ThreadLeader mThreadLeader = Aggregation::TopmostMessage;
+    bool mEnabled = true;
 };
 } // namespace Core
 } // namespace MessageList

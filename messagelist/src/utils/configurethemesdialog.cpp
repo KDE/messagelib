@@ -39,7 +39,7 @@ public:
         mTheme = new Core::Theme(set);
     }
 
-    ~ThemeListWidgetItem()
+    ~ThemeListWidgetItem() override
     {
         delete mTheme;
     }

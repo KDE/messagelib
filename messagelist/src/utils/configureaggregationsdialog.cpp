@@ -41,7 +41,7 @@ public:
         mAggregation = new Core::Aggregation(set);
     }
 
-    ~AggregationListWidgetItem()
+    ~AggregationListWidgetItem() override
     {
         delete mAggregation;
     }

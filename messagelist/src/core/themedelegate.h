@@ -39,7 +39,7 @@ public:
     void generalFontChanged();
 
 private:
-    const Theme *mTheme;  ///< Shallow pointer to the current theme
+    const Theme *mTheme = nullptr;  ///< Shallow pointer to the current theme
     QAbstractItemView *mItemView = nullptr;
 
     QColor mGroupHeaderBackgroundColor; // cache
