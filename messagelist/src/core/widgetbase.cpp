@@ -905,7 +905,6 @@ void Widget::tagIdSelected(const QVariant &data)
 void Widget::setLockTab(bool lock)
 {
     d->mLockTab = lock;
-    //TODO
 }
 
 bool Widget::isLocked() const

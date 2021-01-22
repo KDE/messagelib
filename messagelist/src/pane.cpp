@@ -727,9 +727,8 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
     } else if (action == closeTabAction) {
         closeTab(q->widget(indexBar));
     } else if (action == lockTabAction) {
-        auto *tab = qobject_cast<Widget *>(q->widget(indexBar));
-        tab->setLockTab(true);
-        //TODO
+        auto tab = qobject_cast<Widget *>(q->widget(indexBar));
+        tab->setLockTab(!tab->isLocked());
     }
 }
 
