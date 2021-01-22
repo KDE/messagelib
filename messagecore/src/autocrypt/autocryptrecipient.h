@@ -21,7 +21,7 @@ class AutocryptRecipientPrivate;
 class AutocryptStorage;
 class HeaderMixupNodeHelper;
 
-class AutocryptRecipient
+class MESSAGECORE_EXPORT AutocryptRecipient
 {
 public:
     typedef QSharedPointer<AutocryptRecipient> Ptr;

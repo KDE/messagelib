@@ -155,6 +155,16 @@ ecm_generate_headers(MessageCore_Camelcasehelpers_HEADERS
     RELATIVE helpers
     )
 
+ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
+    HEADER_NAMES
+    AutocryptRecipient
+    AutocryptStorage
+    AutocryptUtils
+    REQUIRED_HEADERS MessageCore_autocrypt_HEADERS
+    PREFIX MessageCore
+    RELATIVE autocrypt
+    )
+
 ecm_generate_pri_file(BASE_NAME MessageCore
     LIB_NAME KF5MessageCore
     DEPS "KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageCore
