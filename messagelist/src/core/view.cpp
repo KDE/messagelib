@@ -57,9 +57,9 @@ public:
     QColor mTextColor;
     View *const q;
 
-    Widget *mWidget = nullptr;
+    Widget *const mWidget;
     Model *mModel = nullptr;
-    Delegate *mDelegate = nullptr;
+    Delegate *const mDelegate;
 
     const Aggregation *mAggregation = nullptr;          ///< The Aggregation we're using now, shallow pointer
     Theme *mTheme = nullptr;                            ///< The Theme we're using now, shallow pointer
