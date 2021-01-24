@@ -40,7 +40,7 @@ protected:
     QString mId;
     QString mName;
     QString mDescription;
-    bool mReadOnly;
+    bool mReadOnly = false;
 
 public:
     /**

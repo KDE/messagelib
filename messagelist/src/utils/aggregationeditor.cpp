@@ -26,8 +26,6 @@ using namespace MessageList::Core;
 AggregationEditor::AggregationEditor(QWidget *parent)
     : OptionSetEditor(parent)
 {
-    mCurrentAggregation = nullptr;
-
     // Grouping and Threading tab
     auto tab = new QWidget(this);
     addTab(tab, i18n("Groups && Threading"));

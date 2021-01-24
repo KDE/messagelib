@@ -20,7 +20,6 @@ static const int gOptionSetWithReadOnLyModeVersion = 0x1002;
 using namespace MessageList::Core;
 
 OptionSet::OptionSet()
-    : mReadOnly(false)
 {
     generateUniqueId();
 }

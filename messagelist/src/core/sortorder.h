@@ -204,10 +204,10 @@ private:
 
     bool readConfigHelper(KConfigGroup &conf, const QString &id);
 
-    MessageSorting mMessageSorting;
-    SortDirection mMessageSortDirection;
-    GroupSorting mGroupSorting;
-    SortDirection mGroupSortDirection;
+    MessageSorting mMessageSorting = SortMessagesByDateTime;
+    SortDirection mMessageSortDirection = Descending;
+    GroupSorting mGroupSorting = NoGroupSorting;
+    SortDirection mGroupSortDirection = Ascending;
 };
 } // namespace Core
 } // namespace MessageList

@@ -37,8 +37,8 @@ static const int gHorizontalItemSpacing = 2;
 
 ThemeDelegate::ThemeDelegate(QAbstractItemView *parent)
     : QStyledItemDelegate(parent)
+    , mItemView(parent)
 {
-    mItemView = parent;
 }
 
 ThemeDelegate::~ThemeDelegate()

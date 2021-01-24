@@ -17,10 +17,6 @@
 using namespace MessageList::Core;
 
 SortOrder::SortOrder()
-    : mMessageSorting(SortMessagesByDateTime)
-    , mMessageSortDirection(Descending)
-    , mGroupSorting(NoGroupSorting)
-    , mGroupSortDirection(Ascending)
 {
 }
 

@@ -40,7 +40,7 @@ public:
 
 private:
     const Theme *mTheme = nullptr;  ///< Shallow pointer to the current theme
-    QAbstractItemView *mItemView = nullptr;
+    QAbstractItemView *const mItemView;
 
     QColor mGroupHeaderBackgroundColor; // cache
 

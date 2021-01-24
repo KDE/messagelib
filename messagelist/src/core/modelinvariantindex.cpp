@@ -16,7 +16,6 @@ using namespace MessageList::Core;
 ModelInvariantIndex::ModelInvariantIndex()
     : d(new Private)
 {
-    d->mRowMapper = nullptr;
 }
 
 ModelInvariantIndex::~ModelInvariantIndex()
