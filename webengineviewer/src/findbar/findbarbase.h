@@ -39,7 +39,7 @@ protected:
     virtual void updateSensitivity(bool);
 
     void setFoundMatch(bool match);
-    QMenu *optionsMenu();
+    QMenu *optionsMenu() const;
 
 public Q_SLOTS:
     void findNext();

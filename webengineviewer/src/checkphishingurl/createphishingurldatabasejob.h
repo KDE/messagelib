@@ -50,7 +50,7 @@ public:
 
     void setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType type);
 
-    QByteArray jsonRequest() const;
+    Q_REQUIRED_RESULT QByteArray jsonRequest() const;
 
     void parseResult(const QByteArray &value);
 

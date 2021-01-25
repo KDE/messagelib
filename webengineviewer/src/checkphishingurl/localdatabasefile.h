@@ -30,11 +30,11 @@ public:
     ~LocalDataBaseFile();
 
     void close();
-    bool fileExists() const;
+    Q_REQUIRED_RESULT bool fileExists() const;
 
     bool reload();
 
-    bool isValid() const;
+    Q_REQUIRED_RESULT bool isValid() const;
     quint16 getUint16(int offset) const;
     quint32 getUint32(int offset) const;
     quint64 getUint64(int offset) const;
@@ -42,9 +42,9 @@ public:
 
     QByteArray searchHash(const QByteArray &hashToSearch);
 
-    bool shouldCheck() const;
-    bool checkFileChanged();
-    QVector<WebEngineViewer::Addition> extractAllInfo() const;
+    Q_REQUIRED_RESULT bool shouldCheck() const;
+    Q_REQUIRED_RESULT bool checkFileChanged();
+    Q_REQUIRED_RESULT QVector<WebEngineViewer::Addition> extractAllInfo() const;
 
 private:
     LocalDataBaseFilePrivate *const d;

@@ -35,7 +35,7 @@ public:
 
     void addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration);
 
-    HashCacheManager::UrlStatus hashStatus(const QByteArray &hash);
+    Q_REQUIRED_RESULT HashCacheManager::UrlStatus hashStatus(const QByteArray &hash);
 
 private:
     HashCacheManagerPrivate *const d;

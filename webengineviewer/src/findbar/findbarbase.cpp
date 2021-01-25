@@ -96,7 +96,7 @@ FindBarBase::~FindBarBase()
 {
 }
 
-QMenu *FindBarBase::optionsMenu()
+QMenu *FindBarBase::optionsMenu() const
 {
     return mOptionsMenu;
 }
