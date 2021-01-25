@@ -451,8 +451,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 const int len = parseQuotes(QStringLiteral("MSGPIPE="), cmd, q);
                 i += len;
                 if (d->mOrigMsg) {
-                    QString pipe_cmd = q;
-                    const QString str = pipe(pipe_cmd, QString::fromLatin1(d->mOrigMsg->encodedContent()));
+                    const QString str = pipe(q, QString::fromLatin1(d->mOrigMsg->encodedContent()));
                     plainBody.append(str);
 
                     const QString body = plainTextToHtml(str);
@@ -465,7 +464,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 const int len = parseQuotes(QStringLiteral("BODYPIPE="), cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
-                const QString plainStr = pipe(pipe_cmd, plainBody);
+                const QString plainStr = pipe(q, plainBody);
                 plainBody.append(plainStr);
 
                 const QString htmlStr = pipe(pipe_cmd, htmlBody);
