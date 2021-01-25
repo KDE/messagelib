@@ -10,7 +10,8 @@
 
 #include <KMessageWidget>
 
-namespace MessageViewer {
+namespace MessageList {
+namespace Core {
 class TabLockedWarning : public KMessageWidget
 {
     Q_OBJECT
@@ -18,6 +19,7 @@ public:
     explicit TabLockedWarning(QWidget *parent = nullptr);
     ~TabLockedWarning() override;
 };
+}
 }
 
 #endif // TABLOCKEDWARNING_H

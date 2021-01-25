@@ -748,17 +748,19 @@ Akonadi::Collection Pane::currentFolder() const
 
 void Pane::setCurrentFolder(const Akonadi::Collection &collection, const QModelIndex &etmIndex, bool, Core::PreSelectionMode preSelectionMode, const QString &overrideLabel)
 {
-    d->setCurrentFolder(etmIndex);
-    d->mPreSelectionMode = preSelectionMode;
     auto *w = static_cast<Widget *>(currentWidget());
-    if (w) {
-        w->setCurrentFolder(collection);
-        QItemSelectionModel *s = d->mWidgetSelectionHash[w];
-        MessageList::StorageModel *m = createStorageModel(d->mModel, s, w);
-        w->setStorageModel(m, preSelectionMode);
-        if (!overrideLabel.isEmpty()) {
-            int index = indexOf(w);
-            setTabText(index, overrideLabel);
+    if (!w->isLocked()) {
+        d->setCurrentFolder(etmIndex);
+        d->mPreSelectionMode = preSelectionMode;
+        if (w) {
+            w->setCurrentFolder(collection);
+            QItemSelectionModel *s = d->mWidgetSelectionHash[w];
+            MessageList::StorageModel *m = createStorageModel(d->mModel, s, w);
+            w->setStorageModel(m, preSelectionMode);
+            if (!overrideLabel.isEmpty()) {
+                int index = indexOf(w);
+                setTabText(index, overrideLabel);
+            }
         }
     }
 }

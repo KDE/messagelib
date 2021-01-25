@@ -7,15 +7,15 @@
 
 #include "tablockedwarning.h"
 #include <KLocalizedString>
-using namespace MessageViewer;
-
+using namespace MessageList::Core;
 TabLockedWarning::TabLockedWarning(QWidget *parent)
     : KMessageWidget(parent)
 {
     setCloseButtonVisible(true);
     setMessageType(Warning);
     setWordWrap(true);
-    setText(i18n("Submit form is not allowed in mailer. Please open url in a browser."));
+    setText(i18n("Current Tab is locked."));
+    setVisible(false);
 }
 
 TabLockedWarning::~TabLockedWarning()

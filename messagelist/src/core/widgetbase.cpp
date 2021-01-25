@@ -18,6 +18,7 @@
 #include "core/model.h"
 #include "core/messageitem.h"
 #include "core/storagemodelbase.h"
+#include "core/widgets/tablockedwarning.h"
 #include "widgets/searchlinestatus.h"
 #include "messagelistsettings.h"
 
@@ -76,6 +77,7 @@ public:
 
     QuickSearchWarning *quickSearchWarning = nullptr;
     SearchCollectionIndexingWarning *searchCollectionIndexingWarning = nullptr;
+    TabLockedWarning *tabLockedWarning = nullptr;
     QuickSearchLine *quickSearchLine = nullptr;
     View *mView = nullptr;
     QString mLastAggregationId;
@@ -126,6 +128,10 @@ Widget::Widget(QWidget *pParent)
     g->addWidget(d->quickSearchWarning, 0);
     d->searchCollectionIndexingWarning = new SearchCollectionIndexingWarning(this);
     g->addWidget(d->searchCollectionIndexingWarning, 0);
+
+    d->tabLockedWarning = new TabLockedWarning(this);
+    g->addWidget(d->tabLockedWarning, 0);
+
 
     d->mView = new View(this);
     d->mView->setFrameStyle(QFrame::NoFrame);
@@ -905,6 +911,11 @@ void Widget::tagIdSelected(const QVariant &data)
 void Widget::setLockTab(bool lock)
 {
     d->mLockTab = lock;
+    if (lock) {
+        d->tabLockedWarning->animatedShow();
+    } else {
+        d->tabLockedWarning->animatedHide();
+    }
 }
 
 bool Widget::isLocked() const
