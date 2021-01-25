@@ -698,7 +698,7 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
     QAction *allOtherAction = menu.addAction(i18nc("@action:inmenu", "Close All Other Tabs"));
     allOtherAction->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
 
-    QAction *lockTabAction = menu.addAction(i18nc("@action:inmenu", "Lock Tab"));
+    QAction *lockTabAction = menu.addAction(w->isLocked() ? i18nc("@action:inmenu", "Unlock Tab") : i18nc("@action:inmenu", "Lock Tab"));
     //lockTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other"))); //TODO add icons
 
     QAction *action = menu.exec(q->mapToGlobal(pos));
@@ -758,7 +758,7 @@ void Pane::setCurrentFolder(const Akonadi::Collection &collection, const QModelI
             MessageList::StorageModel *m = createStorageModel(d->mModel, s, w);
             w->setStorageModel(m, preSelectionMode);
             if (!overrideLabel.isEmpty()) {
-                int index = indexOf(w);
+                const int index = indexOf(w);
                 setTabText(index, overrideLabel);
             }
         }
