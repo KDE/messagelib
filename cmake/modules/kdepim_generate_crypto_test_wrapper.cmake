@@ -20,14 +20,19 @@ unset GPG_AGENT_INFO
 tmp_dir=`mktemp -d -t messagelib-test-gnupg-home.XXXXXXXX` || exit 1
 cp -rf ${_gnupghome}/* $tmp_dir
 
-${_library_path_variable}=${_ld_library_path}\${${_library_path_variable}:+:\$${_library_path_variable}} GNUPGHOME=$tmp_dir gpg-agent --daemon \"${_executable}\" \"$@\"
+${_library_path_variable}=${_ld_library_path}\${${_library_path_variable}:+:\$${_library_path_variable}} GNUPGHOME=$tmp_dir ${_executable} $@
 _result=$?
+
 _pid=`echo GETINFO pid | GNUPGHOME=$tmp_dir gpg-connect-agent | grep 'D' | cut -d' ' -f2`
 if [ ! -z \"\$_pid\" ]; then
-    echo \"Waiting for gpg-agent to terminate (PID: $_pid)...\"
-    while kill -0 \"\$_pid\"; do
-        sleep 1
-    done
+    echo KILLAGENT | GNUPGHOME=$tmp_dir gpg-connect-agent > /dev/null
+    sleep .3
+    if ps -p \"\$_pid\" > /dev/null; then
+       echo \"Waiting for gpg-agent to terminate (PID: $_pid)...\"
+       while kill -0 \"\$_pid\"; do
+           sleep 1
+       done
+    fi
 fi
 rm -rf $tmp_dir
 exit \$_result
