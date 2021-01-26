@@ -699,7 +699,7 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
     allOtherAction->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
 
     QAction *lockTabAction = menu.addAction(w->isLocked() ? i18nc("@action:inmenu", "Unlock Tab") : i18nc("@action:inmenu", "Lock Tab"));
-    //lockTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other"))); //TODO add icons
+    lockTabAction->setIcon(w->isLocked() ? QIcon::fromTheme(QStringLiteral("lock")) : QIcon::fromTheme(QStringLiteral("unlock")));
 
     QAction *action = menu.exec(q->mapToGlobal(pos));
 
@@ -728,7 +728,9 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
         closeTab(q->widget(indexBar));
     } else if (action == lockTabAction) {
         auto tab = qobject_cast<Widget *>(q->widget(indexBar));
-        tab->setLockTab(!tab->isLocked());
+        const bool isLocked = !tab->isLocked();
+        tab->setLockTab(isLocked);
+        q->setTabIcon(indexBar, isLocked ? QIcon::fromTheme(QStringLiteral("lock")) : QIcon::fromTheme(QStringLiteral("unlock")));
     }
 }
 
