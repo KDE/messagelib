@@ -6,7 +6,7 @@
 
 #include "../src/utils/stringutil.h"
 
-#include "qtest.h"
+#include <QTest>
 #include <QUrl>
 using namespace MessageCore;
 
