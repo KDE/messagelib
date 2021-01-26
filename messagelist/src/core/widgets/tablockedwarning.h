@@ -9,10 +9,11 @@
 
 
 #include <KMessageWidget>
+#include "messagelist_private_export.h"
 
 namespace MessageList {
 namespace Core {
-class TabLockedWarning : public KMessageWidget
+class MESSAGELIST_TESTS_EXPORT TabLockedWarning : public KMessageWidget
 {
     Q_OBJECT
 public:
