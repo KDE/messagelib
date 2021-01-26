@@ -14,7 +14,7 @@ class QuickSearchWarningTest : public QObject
     Q_OBJECT
 public:
     explicit QuickSearchWarningTest(QObject *parent = nullptr);
-    ~QuickSearchWarningTest();
+    ~QuickSearchWarningTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldSetVisible();
