@@ -11,7 +11,7 @@ using namespace MessageList::Core;
 TabLockedWarning::TabLockedWarning(QWidget *parent)
     : KMessageWidget(parent)
 {
-    setCloseButtonVisible(true);
+    setCloseButtonVisible(false);
     setMessageType(Warning);
     setWordWrap(true);
     setText(i18n("Current Tab is locked."));
