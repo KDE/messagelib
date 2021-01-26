@@ -889,7 +889,7 @@ void Widget::fillMessageTagCombo()
 
 void Widget::tagIdSelected(const QVariant &data)
 {
-    QString tagId = data.toString();
+    const QString tagId = data.toString();
 
     if (tagId.isEmpty()) {
         if (d->mFilter) {
