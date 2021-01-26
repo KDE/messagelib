@@ -11,6 +11,8 @@
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
+#include <KCodecs>
+
 #include <gpgme++/data.h>
 
 #include <QGpgME/DataProvider>
@@ -553,4 +555,27 @@ void AutocryptRecipientTest::test_gossipKey()
     QCOMPARE(gossipKey.isNull(), false);
     QCOMPARE(gossipKey.primaryFingerprint(), "F0541EA82D3100AA1ADF3B1EE30E6FDD45901F82");
     QCOMPARE(gossipKey.userID(0).email(), "bob@autocrypt.example");
+
+    QCOMPARE(recipient.gossipKeydata(),  KCodecs::base64Decode("mDMEXEcE6RYJKwYBBAHaRw8BAQdAPPy13Q7Y8w2VPRkksrijrn9o8u59ra1c2CJiHFpbM2G0FWJvYkBhdXRvY3J5cHQuZXhhbXBsZYiWBBMWCAA+FiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwMFCQPCZwAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQ4w5v3UWQH4IfwAEA3lujohz3Nj9afUnaGUXN7YboIzQsmpgGkN8thyb/slIBAKwdJyg1SurKqHnxy3Wl/DBzOrR12/pN7nScn0+x4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbFjAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwwACgkQ4w5v3UWQH4LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNbGfav9X5KYmiratYR7oL"));
+}
+
+void AutocryptRecipientTest::test_getters()
+{
+    MimeTreeParser::NodeHelper nodeHelper;
+    auto message = readAndParseMail(QStringLiteral("autocrypt/header.mbox"));
+    HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
+
+    auto recipient = AutocryptRecipient();
+    recipient.updateFromMessage(mixin, mixin.mailHeaderAsBase("Autocrypt"));
+
+    QCOMPARE(recipient.addr(), "alice@autocrypt.example");
+    QCOMPARE(recipient.count_have_ach(), 1);
+    QCOMPARE(recipient.count_no_ach(), 0);
+    QCOMPARE(recipient.prefer_encrypt(), true);
+    QCOMPARE(recipient.gpgKeydata(),  KCodecs::base64Decode("mDMEXEcE6RYJKwYBBAHaRw8BAQdArjWwk3FAqyiFbFBKT4TzXcVBqPTB3gmzlC/Ub7O1u120F2FsaWNlQGF1dG9jcnlwdC5leGFtcGxliJYEExYIAD4WIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbAwUJA8JnAAULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRDyMVUMT0fjjkqLAP9frlijwBJvA+HFnqCZcYIVxlyXzS5Gi5gMTpp37K73jgD/VbKYhkwk9iu689OYH4K7q7LbmdeaJ+RX88Y/ad9hZwy4OARcRwTpEgorBgEEAZdVAQUBAQdAQv8GIa2rSTzgqbXCpDDYMiKRVitCsy203x3sE9+eviIDAQgHiHgEGBYIACAWIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbDAAKCRDyMVUMT0fjjlnQAQDFHUs6TIcxrNTtEZFjUFm1M0PJ1Dng/cDW4xN80fsn0QEA22Kr7VkCjeAEC08VSTeV+QFsmz55/lntWkwYWhmvOgE"));
+    QCOMPARE(recipient.autocrypt_timestamp(), QDateTime::fromString(QStringLiteral("2019-01-22T12:56:25+01:00"), Qt::ISODate));
+    QCOMPARE(recipient.last_seen(), QDateTime::fromString(QStringLiteral("2019-01-22T12:56:25+01:00"), Qt::ISODate));
+    QCOMPARE(recipient.counting_since(), QDateTime::fromString(QStringLiteral("2019-01-22T12:56:25+01:00"), Qt::ISODate));
+
+    QCOMPARE(recipient.bad_user_agent(), QByteArray());
 }

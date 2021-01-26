@@ -25,6 +25,7 @@ private Q_SLOTS:
     void test_gossipUpdateLogic();
     void test_changedLogicGossip();
     void test_gossipKey();
+    void test_getters();
 };
 
 #endif
