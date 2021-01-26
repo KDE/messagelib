@@ -142,3 +142,15 @@ void AutocryptStorageTest::test_deleteRecipient()
     QCOMPARE(baseDir.exists(fileName), false);
     QCOMPARE(storage->getRecipient(addr), nullptr);
 }
+
+void AutocryptStorageTest::test_create_basedir()
+{
+    const QByteArray addr("recipient@autocrypt.example");
+    const QString fileName(QStringLiteral("recipient%40autocrypt.example.json"));
+    auto storage = AutocryptStorage::self();
+    QVERIFY(storage->addRecipient(addr));
+    baseDir.removeRecursively();
+    QCOMPARE(baseDir.exists(), false);
+    storage->save();
+    QCOMPARE(baseDir.exists(fileName), true);
+}

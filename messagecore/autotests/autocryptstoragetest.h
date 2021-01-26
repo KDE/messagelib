@@ -22,6 +22,7 @@ private Q_SLOTS:
     void test_store();
     void test_addRecipient();
     void test_deleteRecipient();
+    void test_create_basedir();
 private:
     QDir baseDir;
 };
