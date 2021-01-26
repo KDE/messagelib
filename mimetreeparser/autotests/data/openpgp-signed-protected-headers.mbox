@@ -1,0 +1,41 @@
+From test@kolab.org Wed, 08 Sep 2010 17:02:52 +0200
+From: OpenPGP Test <test@kolab.org>
+To: test@kolab.org
+Subject: OpenPGP signed
+Date: Wed, 08 Sep 2010 17:02:52 +0200
+User-Agent: KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )
+MIME-Version: 1.0
+Content-Type: multipart/signed; boundary="SIGNED"; micalg="pgp-sha1"; protocol="application/pgp-signature"
+Content-Transfer-Encoding: 7Bit
+
+--SIGNED
+Content-Type: text/plain; charset="us-ascii", protected-headers="v1"
+Subject: hidden subject
+Date: Wed, 02 Jan 2018 03:04:05 +0000
+References: <hiddenreference@hidden>
+In-Reply-To: <hiddenreference@hidden>
+Message-ID: <myhiddenreference@me>
+From: you@example.com
+To: me@example.com
+Cc: cc@example.com
+
+very secret mesage
+
+--SIGNED
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEG6Mjkys/qoJhMseejZhgxY8kbeYFAmAPDvoACgkQjZhgxY8k
+beZ8ewf+NLCiosbRxR7cweULOdvGq1eml6y8tTWtlxqLZiB1qX0hy873W5Ka0tyh
+PhW6jfk+cTi/R0NG7zqGhoAxfmZ788FnZdeXwy7affaz1yk9SiIoimgAy2kqLBF3
+B7CNNRxy5n0waKx+tTRiBnZ2IasgNeJ3QmbBEXdry8u/WAtl+BcyY2o16DcvINgY
+6Ux/xBo+O/bLy90f1Hq3eD4Q94gKWaZa96qECvfMQ4w6ZFlaQEqe/ZJ4heEmL5Fm
+E3MFzsjTyhrq8fJz7wTU9GEvGtGMKFgSABr+Iyth0ZU6oSO4YbKZAVPa7eMul54H
+Er7i2b7cyOaTZhNYMaOsTt73pyHZuA==
+=hvIe
+-----END PGP SIGNATURE-----
+
+--SIGNED--

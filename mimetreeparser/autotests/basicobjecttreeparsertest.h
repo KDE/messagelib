@@ -27,7 +27,6 @@ private Q_SLOTS:
     void testAsync();
     void testHtmlContent_data();
     void testHtmlContent();
-    void testMemoryHole();
     void testRenderedTree();
     void testRenderedTree_data();
     void testParsePlainMessage();
