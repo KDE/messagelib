@@ -12,10 +12,11 @@
 #include <QObject>
 #include <QString>
 
-#include "interfaces/bodypart.h"
 #include "enums.h"
+#include "interfaces/bodypart.h"
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class CryptoBodyPartMemento : public QObject, public Interface::BodyPartMemento
 {
     Q_OBJECT

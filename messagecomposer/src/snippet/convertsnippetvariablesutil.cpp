@@ -63,11 +63,11 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
     case NextYear:
         return QStringLiteral("%NEXTYEAR");
     case MonthNumber:
-        return QStringLiteral("%MONTHNUMBER"); //1-12
+        return QStringLiteral("%MONTHNUMBER"); // 1-12
     case DayOfMonth:
-        return QStringLiteral("%DAYOFMONTH"); //1-31
+        return QStringLiteral("%DAYOFMONTH"); // 1-31
     case WeekNumber:
-        return QStringLiteral("%WEEKNUMBER"); //1-52
+        return QStringLiteral("%WEEKNUMBER"); // 1-52
     case MonthNameShort:
         return QStringLiteral("%MONTHNAMESHORT"); //(Jan-Dec)
     case MonthNameLong:
@@ -79,7 +79,7 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
     case DayOfWeekNameLong:
         return QStringLiteral("%DAYOFWEEKNAMELONG"); //(Monday-Sunday)
     case YearLastMonth:
-        return QStringLiteral("%YEARLASTMONTH"); //january 2020 will how 2019-12
+        return QStringLiteral("%YEARLASTMONTH"); // january 2020 will how 2019-12
     case LastMonthNameLong:
         return QStringLiteral("%LASTMONTHNAMELONG");
     }

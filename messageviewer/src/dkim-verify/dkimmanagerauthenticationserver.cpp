@@ -10,7 +10,8 @@
 #include <KSharedConfig>
 
 using namespace MessageViewer;
-namespace {
+namespace
+{
 static const char myConfigGroupName[] = "AuthenticationServer";
 }
 DKIMManagerAuthenticationServer::DKIMManagerAuthenticationServer(QObject *parent)

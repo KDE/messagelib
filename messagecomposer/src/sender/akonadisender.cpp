@@ -9,21 +9,21 @@
 
 #include "messagecomposer_debug.h"
 
+#include "MessageComposer/Util"
 #include "helper/messagehelper.h"
 #include "settings/messagecomposersettings.h"
-#include "MessageComposer/Util"
 #include "utils/util_p.h"
 
 #include <Libkdepim/ProgressManager>
 
-#include <MailTransportAkonadi/DispatcherInterface>
-#include <MailTransportAkonadi/MessageQueueJob>
-#include <MailTransport/Transport>
-#include <MailTransport/TransportManager>
-#include <MessageCore/StringUtil>
+#include <KEmailAddress>
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
-#include <KEmailAddress>
+#include <MailTransport/Transport>
+#include <MailTransport/TransportManager>
+#include <MailTransportAkonadi/DispatcherInterface>
+#include <MailTransportAkonadi/MessageQueueJob>
+#include <MessageCore/StringUtil>
 using namespace KMime::Types;
 using namespace KPIM;
 using namespace MailTransport;
@@ -123,34 +123,27 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     if (message->hasHeader("X-KMail-FccDisabled")) {
         qjob->sentBehaviourAttribute().setSentBehaviour(MailTransport::SentBehaviourAttribute::Delete);
     } else if (auto hrd = message->headerByType("X-KMail-Fcc")) {
-        qjob->sentBehaviourAttribute().setSentBehaviour(
-            SentBehaviourAttribute::MoveToCollection);
+        qjob->sentBehaviourAttribute().setSentBehaviour(SentBehaviourAttribute::MoveToCollection);
         const int sentCollectionId = hrd->asUnicodeString().toInt();
-        qjob->sentBehaviourAttribute().setMoveToCollection(
-            Akonadi::Collection(sentCollectionId));
+        qjob->sentBehaviourAttribute().setMoveToCollection(Akonadi::Collection(sentCollectionId));
     } else if (auto hrd = message->headerByType("X-KMail-Identity")) {
         KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
         const QString identityStrId = hrd->asUnicodeString();
         const KIdentityManagement::Identity id = im->modifyIdentityForUoid(identityStrId.toUInt());
         const QString fccId = id.fcc();
-        qjob->sentBehaviourAttribute().setSentBehaviour(
-            SentBehaviourAttribute::MoveToCollection);
+        qjob->sentBehaviourAttribute().setSentBehaviour(SentBehaviourAttribute::MoveToCollection);
         const int sentCollectionId = fccId.toInt();
-        qjob->sentBehaviourAttribute().setMoveToCollection(
-            Akonadi::Collection(sentCollectionId));
+        qjob->sentBehaviourAttribute().setMoveToCollection(Akonadi::Collection(sentCollectionId));
     } else if (auto hrd = message->headerByType("X-KMail-Identity-Name")) {
         KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
         const QString identityStrName = hrd->asUnicodeString();
         const KIdentityManagement::Identity id = im->modifyIdentityForName(identityStrName);
         const QString fccId = id.fcc();
-        qjob->sentBehaviourAttribute().setSentBehaviour(
-            SentBehaviourAttribute::MoveToCollection);
+        qjob->sentBehaviourAttribute().setSentBehaviour(SentBehaviourAttribute::MoveToCollection);
         const int sentCollectionId = fccId.toInt();
-        qjob->sentBehaviourAttribute().setMoveToCollection(
-            Akonadi::Collection(sentCollectionId));
+        qjob->sentBehaviourAttribute().setMoveToCollection(Akonadi::Collection(sentCollectionId));
     } else {
-        qjob->sentBehaviourAttribute().setSentBehaviour(
-            MailTransport::SentBehaviourAttribute::MoveToDefaultSentCollection);
+        qjob->sentBehaviourAttribute().setSentBehaviour(MailTransport::SentBehaviourAttribute::MoveToDefaultSentCollection);
     }
     qjob->setMessage(message);
 
@@ -191,7 +184,8 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     qjob->addressAttribute().setBcc(bcc);
 
     if (transport && transport->specifySenderOverwriteAddress()) {
-        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(transport->senderOverwriteAddress())));
+        qjob->addressAttribute().setFrom(
+            KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(transport->senderOverwriteAddress())));
     } else {
         qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(message->from()->asUnicodeString())));
     }

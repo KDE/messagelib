@@ -9,11 +9,13 @@
 
 #include <QAbstractItemModel>
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
   A model representing the mime part tree of a message.
 */
@@ -22,14 +24,7 @@ class MimeTreeModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
-    enum Role {
-        ContentIndexRole = Qt::UserRole + 1,
-        ContentRole,
-        MimeTypeRole,
-        MainBodyPartRole,
-        AlternativeBodyPartRole,
-        UserRole = Qt::UserRole + 100
-    };
+    enum Role { ContentIndexRole = Qt::UserRole + 1, ContentRole, MimeTypeRole, MainBodyPartRole, AlternativeBodyPartRole, UserRole = Qt::UserRole + 100 };
     explicit MimeTreeModel(QObject *parent = nullptr);
     ~MimeTreeModel() override;
 
@@ -46,6 +41,7 @@ public:
     QMimeData *mimeData(const QModelIndexList &indexes) const override;
     Q_REQUIRED_RESULT Qt::ItemFlags flags(const QModelIndex &index) const override;
     Q_REQUIRED_RESULT QStringList mimeTypes() const override;
+
 private:
     class Private;
     Private *const d;

@@ -9,7 +9,8 @@
 
 #include "messageviewer_export.h"
 #include <messageviewer/messageviewersettings.h>
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DKIMCheckPolicy class
  * @author Laurent Montel <montel@kde.org>

@@ -9,7 +9,8 @@
 
 #include "MessageCore/AttachmentLoadJob"
 #include "messagecomposer_export.h"
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The AttachmentClipBoardJob class
  * @author Laurent Montel <montel@kde.org>

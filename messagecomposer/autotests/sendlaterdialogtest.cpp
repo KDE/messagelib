@@ -7,12 +7,12 @@
 #include "sendlaterdialogtest.h"
 #include "sendlater/sendlaterdialog.h"
 
-#include <KTimeComboBox>
 #include <KDateComboBox>
+#include <KTimeComboBox>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QTest>
 #include <QStandardPaths>
+#include <QTest>
 
 SendLaterDialogTest::SendLaterDialogTest(QObject *parent)
     : QObject(parent)

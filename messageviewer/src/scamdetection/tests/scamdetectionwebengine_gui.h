@@ -9,7 +9,8 @@
 
 #include <QWidget>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class ScamDetectionWarningWidget;
 class ScamDetectionWebEngine;
 }

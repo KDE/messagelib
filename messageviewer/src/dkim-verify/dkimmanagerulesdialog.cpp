@@ -5,19 +5,20 @@
 */
 
 #include "dkimmanagerulesdialog.h"
-#include "dkimmanageruleswidget.h"
 #include "dkimmanagerrules.h"
+#include "dkimmanageruleswidget.h"
 
 #include <KConfigGroup>
-#include <KSharedConfig>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KSharedConfig>
 #include <QDialogButtonBox>
-#include <QVBoxLayout>
 #include <QFileDialog>
 #include <QPushButton>
+#include <QVBoxLayout>
 
-namespace {
+namespace
+{
 static const char myDKIMManageRulesDialogGroupName[] = "DKIMManageRulesDialog";
 }
 using namespace MessageViewer;

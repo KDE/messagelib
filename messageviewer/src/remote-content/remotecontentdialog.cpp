@@ -26,12 +26,10 @@ RemoteContentDialog::RemoteContentDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::accepted, this, &RemoteContentDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RemoteContentDialog::reject);
     mainLayout->addWidget(buttonBox);
-
 }
 
 RemoteContentDialog::~RemoteContentDialog()
 {
-
 }
 
 RemoteContentInfo RemoteContentDialog::info() const

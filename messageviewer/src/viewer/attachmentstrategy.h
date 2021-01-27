@@ -15,11 +15,13 @@
 #include "messageviewer_export.h"
 
 class QString;
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The AttachmentStrategy class
  */
@@ -33,9 +35,7 @@ public:
     //
     // Factory methods:
     //
-    enum Type {
-        Iconic, Smart, Inlined, Hidden, HeaderOnly
-    };
+    enum Type { Iconic, Smart, Inlined, Hidden, HeaderOnly };
 
     static const AttachmentStrategy *create(Type type);
     static const AttachmentStrategy *create(const QString &type);
@@ -56,9 +56,7 @@ public:
     // Behavioral:
     //
 
-    enum Display {
-        None, AsIcon, Inline
-    };
+    enum Display { None, AsIcon, Inline };
 
     virtual bool inlineNestedMessages() const = 0;
     virtual Display defaultDisplay(KMime::Content *node) const = 0;

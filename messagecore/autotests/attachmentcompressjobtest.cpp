@@ -7,9 +7,9 @@
 #include "attachmentcompressjobtest.h"
 #include "qtest_messagecore.h"
 
-#include <QBuffer>
 #include "messagecore_debug.h"
 #include <KZip>
+#include <QBuffer>
 #include <QTest>
 
 #include <MessageCore/AttachmentCompressJob>
@@ -44,8 +44,8 @@ void AttachmentCompressJobTest::testCompress()
     VERIFYEXEC(cjob);
     QCOMPARE(cjob->originalPart(), origPart);
     AttachmentPart::Ptr zipPart = cjob->compressedPart();
-    //qCDebug(MESSAGECORE_LOG) << data;
-    //qCDebug(MESSAGECORE_LOG) << zipPart->data();
+    // qCDebug(MESSAGECORE_LOG) << data;
+    // qCDebug(MESSAGECORE_LOG) << zipPart->data();
     QVERIFY(zipPart->isAutoEncoding());
     QVERIFY(zipPart->isCompressed());
     QCOMPARE(zipPart->name(), QString(name + QString::fromLatin1(".zip")));

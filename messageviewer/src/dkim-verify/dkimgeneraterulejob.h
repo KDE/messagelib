@@ -7,10 +7,11 @@
 #ifndef DKIMGENERATERULEJOB_H
 #define DKIMGENERATERULEJOB_H
 
-#include <QObject>
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_private_export.h"
-namespace MessageViewer {
+#include <QObject>
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT DKIMGenerateRuleJob : public QObject
 {
     Q_OBJECT

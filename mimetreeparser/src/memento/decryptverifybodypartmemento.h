@@ -9,18 +9,20 @@
 
 #include "cryptobodypartmemento.h"
 
-#include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
+#include <gpgme++/verificationresult.h>
 
 #include <QPointer>
 
 #include "interfaces/bodypart.h"
 
-namespace QGpgME {
+namespace QGpgME
+{
 class DecryptVerifyJob;
 }
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class DecryptVerifyBodyPartMemento : public CryptoBodyPartMemento
 {
     Q_OBJECT
@@ -51,6 +53,7 @@ private Q_SLOTS:
 
 private:
     void saveResult(const GpgME::DecryptionResult &, const GpgME::VerificationResult &, const QByteArray &);
+
 private:
     // input:
     const QByteArray m_cipherText;

@@ -12,11 +12,13 @@
 #include "jobbase.h"
 #include "messagecomposer_export.h"
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class ContentJobBasePrivate;
 /**
  * @brief The ContentJobBase class

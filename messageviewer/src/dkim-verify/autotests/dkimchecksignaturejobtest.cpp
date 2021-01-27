@@ -50,63 +50,36 @@ void DKIMCheckSignatureJobTest::shouldTestMail_data()
 
     const QString curPath = QStringLiteral(DKIM_DATA_DIR "/");
 
-    QTest::addRow("dkim2") << QStringLiteral("dkim2.mbox")
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                           << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
-                           << QStringLiteral("kde.org")
-                           << QStringLiteral("bugzilla_noreply@kde.org")
-                           << curPath;
+    QTest::addRow("dkim2") << QStringLiteral("dkim2.mbox") << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                           << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                           << QStringLiteral("kde.org") << QStringLiteral("bugzilla_noreply@kde.org") << curPath;
 
-    QTest::addRow("notsigned") << QStringLiteral("notsigned.mbox")
-                               << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                               << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                               << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned
-                               << QString()
-                               << QStringLiteral("richard@weickelt.de")
-                               << curPath;
+    QTest::addRow("notsigned") << QStringLiteral("notsigned.mbox") << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                               << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned
+                               << QString() << QStringLiteral("richard@weickelt.de") << curPath;
 
-    QTest::addRow("broken1") << QStringLiteral("broken1.mbox")
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
-                             << QStringLiteral("kde.org")
-                             << QStringLiteral("null@kde.org")
-                             << curPath;
+    QTest::addRow("broken1") << QStringLiteral("broken1.mbox") << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                             << QStringLiteral("kde.org") << QStringLiteral("null@kde.org") << curPath;
 
-    QTest::addRow("broken2") << QStringLiteral("broken2.mbox")
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
-                             << QStringLiteral("kde.org")
-                             << QStringLiteral("vkrause@kde.org")
-                             << curPath;
+    QTest::addRow("broken2") << QStringLiteral("broken2.mbox") << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                             << QStringLiteral("kde.org") << QStringLiteral("vkrause@kde.org") << curPath;
 
-    QTest::addRow("broken3") << QStringLiteral("broken3.mbox")
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+    QTest::addRow("broken3") << QStringLiteral("broken3.mbox") << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
                              << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
-                             << QStringLiteral("abonnement.radins.com")
-                             << QStringLiteral("newsletter@abonnement.radins.com")
-                             << curPath;
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid << QStringLiteral("abonnement.radins.com")
+                             << QStringLiteral("newsletter@abonnement.radins.com") << curPath;
 
-    QTest::addRow("broken4") << QStringLiteral("broken4.mbox")
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
-                             << QStringLiteral("kde.org")
-                             << QStringLiteral("null@kde.org")
-                             << curPath;
+    QTest::addRow("broken4") << QStringLiteral("broken4.mbox") << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                             << QStringLiteral("kde.org") << QStringLiteral("null@kde.org") << curPath;
 
-    QTest::addRow("broken5") << QStringLiteral("broken5.mbox")
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any
-                             << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
-                             << QStringLiteral("kde.org")
-                             << QStringLiteral("noreply@phabricator.kde.org")
-                             << curPath;
+    QTest::addRow("broken5") << QStringLiteral("broken5.mbox") << MessageViewer::DKIMCheckSignatureJob::DKIMError::Any
+                             << MessageViewer::DKIMCheckSignatureJob::DKIMWarning::Any << MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Valid
+                             << QStringLiteral("kde.org") << QStringLiteral("noreply@phabricator.kde.org") << curPath;
 
-    //Used for testing some private emails. Disable by default
+    // Used for testing some private emails. Disable by default
 #ifdef USE_EXTRA_CHECK
 //#if __has_include("dkimchecksignaturejobtest-extra.cpp")
 #include "dkimchecksignaturejobtest-extra.cpp"
@@ -137,7 +110,8 @@ void DKIMCheckSignatureJobTest::shouldTestMail()
     QTimer::singleShot(10, job, &MessageViewer::DKIMCheckSignatureJob::start);
     QVERIFY(dkimSignatureSpy.wait());
     QCOMPARE(dkimSignatureSpy.count(), 1);
-    const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult info = dkimSignatureSpy.at(0).at(0).value<MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult>();
+    const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult info =
+        dkimSignatureSpy.at(0).at(0).value<MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult>();
     QCOMPARE(info.warning, dkimwarning);
     QCOMPARE(info.error, dkimerror);
     QCOMPARE(info.status, dkimstatus);

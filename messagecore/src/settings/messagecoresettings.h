@@ -10,7 +10,8 @@
 
 #include "globalsettings_messagecore.h"
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @brief The MessageCoreSettings class
  */

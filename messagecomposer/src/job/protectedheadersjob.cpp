@@ -12,8 +12,8 @@
 
 #include "messagecomposer_debug.h"
 
-#include <kmime/kmime_message.h>
 #include <kmime/kmime_content.h>
+#include <kmime/kmime_message.h>
 
 using namespace MessageComposer;
 
@@ -69,7 +69,7 @@ void ProtectedHeadersJob::setObvoscate(bool obvoscate)
 void ProtectedHeadersJob::doStart()
 {
     Q_D(ProtectedHeadersJob);
-    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr); // Not processed before.
     Q_ASSERT(d->skeletonMessage); // We need a skeletonMessage to proceed
 
     auto subject = d->skeletonMessage->header<KMime::Headers::Subject>();
@@ -119,7 +119,7 @@ void ProtectedHeadersJob::process()
 
     auto subject = d->skeletonMessage->header<KMime::Headers::Subject>();
     const auto headers = d->skeletonMessage->headers();
-    for (const auto &header: headers) {
+    for (const auto &header : headers) {
         const QByteArray headerType(header->type());
         if (headerType.startsWith("X-KMail-")) {
             continue;

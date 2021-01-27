@@ -34,8 +34,7 @@ bool DecryptVerifyBodyPartMemento::start()
         m_dr = DecryptionResult(err);
         return false;
     }
-    connect(m_job.data(), &DecryptVerifyJob::result,
-            this, &DecryptVerifyBodyPartMemento::slotResult);
+    connect(m_job.data(), &DecryptVerifyJob::result, this, &DecryptVerifyBodyPartMemento::slotResult);
     setRunning(true);
     return true;
 }

@@ -12,19 +12,22 @@
 #include "core/item.h"
 #include "core/modelinvariantindex.h"
 
-#include <QPixmap>
-#include <QString>
+#include "theme.h"
 #include <QColor>
 #include <QFont>
+#include <QPixmap>
+#include <QString>
 #include <messagelist_export.h>
-#include "theme.h"
 
-namespace Akonadi {
+namespace Akonadi
+{
 class Item;
 }
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class MessageItemPrivate;
 /**
  * @brief The MessageItem class
@@ -56,33 +59,22 @@ public:
     };
 
     enum ThreadingStatus {
-        PerfectParentFound,     ///< this message found a perfect parent to attach to
-        ImperfectParentFound,   ///< this message found an imperfect parent to attach to (might be fixed later)
-        ParentMissing,          ///< this message might belong to a thread but its parent is actually missing
-        NonThreadable           ///< this message does not look as being threadable
+        PerfectParentFound, ///< this message found a perfect parent to attach to
+        ImperfectParentFound, ///< this message found an imperfect parent to attach to (might be fixed later)
+        ParentMissing, ///< this message might belong to a thread but its parent is actually missing
+        NonThreadable ///< this message does not look as being threadable
     };
 
-    enum EncryptionState {
-        NotEncrypted,
-        PartiallyEncrypted,
-        FullyEncrypted,
-        EncryptionStateUnknown
-    };
+    enum EncryptionState { NotEncrypted, PartiallyEncrypted, FullyEncrypted, EncryptionStateUnknown };
 
-    enum SignatureState {
-        NotSigned,
-        PartiallySigned,
-        FullySigned,
-        SignatureStateUnknown
-    };
+    enum SignatureState { NotSigned, PartiallySigned, FullySigned, SignatureStateUnknown };
 
     explicit MessageItem();
     ~MessageItem() override;
 
 public:
-
     /// Returns the list of tags for this item.
-    virtual QList< Tag * > tagList() const;
+    virtual QList<Tag *> tagList() const;
 
     /// Returns true if this message has an annotation.
     virtual bool hasAnnotation() const;
@@ -94,9 +86,9 @@ public:
     void editAnnotation(QWidget *parent);
 
     /**
-    * Returns Tag associated to this message that has the specified id or 0
-    * if no such tag exists. mTagList will be 0 in 99% of the cases.
-    */
+     * Returns Tag associated to this message that has the specified id or 0
+     * if no such tag exists. mTagList will be 0 in 99% of the cases.
+     */
     const Tag *findTag(const QString &szTagId) const;
 
     Q_REQUIRED_RESULT QString tagListDescription() const;
@@ -168,9 +160,9 @@ public:
     QString accessibleText(const MessageList::Core::Theme *theme, int columnIndex);
 
     /**
-    * Appends the whole subtree originating at this item
-    * to the specified list. This item is included!
-    */
+     * Appends the whole subtree originating at this item
+     * to the specified list. This item is included!
+     */
     void subTreeToList(QVector<MessageItem *> &list);
 
     //
@@ -189,6 +181,7 @@ public:
 
 protected:
     explicit MessageItem(MessageItemPrivate *dd);
+
 private:
     const QFont &font() const;
 
@@ -203,15 +196,14 @@ class FakeItemPrivate;
 class FakeItem : public MessageItem
 {
 public:
-
     explicit FakeItem();
     ~FakeItem() override;
 
     /// Reimplemented to return the fake tag list
-    QList< Tag * > tagList() const override;
+    QList<Tag *> tagList() const override;
 
     /// Sets a list of fake tags for this item
-    void setFakeTags(const QList< Tag * > &tagList);
+    void setFakeTags(const QList<Tag *> &tagList);
 
     /// Reimplemented to always return true
     bool hasAnnotation() const override;

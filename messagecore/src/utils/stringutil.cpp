@@ -6,32 +6,34 @@
 */
 #include "stringutil.h"
 
-#include "config-enterprise.h"
 #include "MessageCore/MessageCoreSettings"
+#include "config-enterprise.h"
 
+#include <KEmailAddress>
+#include <KLocalizedString>
 #include <KMime/HeaderParsing>
 #include <KMime/Headers>
 #include <KMime/Message>
-#include <KEmailAddress>
-#include <KLocalizedString>
 
 #include "messagecore_debug.h"
 #include <KUser>
 
-#include <KIdentityManagement/IdentityManager>
+#include <KCodecs>
 #include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
+#include <KPIMTextEdit/TextUtils>
 #include <QHostInfo>
 #include <QRegularExpression>
 #include <QUrlQuery>
-#include <KPIMTextEdit/TextUtils>
-#include <KCodecs>
 
 using namespace KMime;
 using namespace KMime::Types;
 using namespace KMime::HeaderParsing;
 
-namespace MessageCore {
-namespace StringUtil {
+namespace MessageCore
+{
+namespace StringUtil
+{
 // Removes trailing spaces and tabs at the end of the line
 static void removeTrailingSpace(QString &line)
 {
@@ -58,8 +60,8 @@ static QString splitLine(QString &line)
     const int lineLength(line.length());
     while (i < lineLength) {
         const QChar c = line[i];
-        const bool isAllowedQuoteChar = (c == QLatin1Char('>')) || (c == QLatin1Char(':')) || (c == QLatin1Char('|'))
-                                        || (c == QLatin1Char(' ')) || (c == QLatin1Char('\t'));
+        const bool isAllowedQuoteChar =
+            (c == QLatin1Char('>')) || (c == QLatin1Char(':')) || (c == QLatin1Char('|')) || (c == QLatin1Char(' ')) || (c == QLatin1Char('\t'));
         if (isAllowedQuoteChar) {
             startOfActualText = i + 1;
         } else {
@@ -157,9 +159,9 @@ static bool flushPart(QString &msg, QStringList &textParts, const QString &inden
     return appendEmptyLine;
 }
 
-QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
+QVector<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
 {
-    QVector<QPair<QString, QString> > values;
+    QVector<QPair<QString, QString>> values;
     if (url.scheme() != QLatin1String("mailto")) {
         return values;
     }
@@ -167,14 +169,14 @@ QVector<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
     QStringList toStr;
     int i = 0;
 
-    //String can be encoded.
+    // String can be encoded.
     str = KCodecs::decodeRFC2047String(str);
-    //Bug 427697
+    // Bug 427697
     str.replace(QStringLiteral("&#38;"), QStringLiteral("&"));
     const QUrl newUrl = QUrl::fromUserInput(str);
 
     int indexTo = -1;
-    //Workaround line with # see bug 406208
+    // Workaround line with # see bug 406208
     const int indexOf = str.indexOf(QLatin1Char('?'));
     if (indexOf != -1) {
         str.remove(0, indexOf + 1);
@@ -253,11 +255,10 @@ QString stripSignature(const QString &msg)
             // * does not starts with prefix or
             // * starts with prefix+(any substring of prefix)
             if ((prefix.isEmpty() && line.indexOf(commonReplySearch) < 0)
-                || (!prefix.isEmpty() && line.startsWith(prefix)
-                    && line.mid(prefix.size()).indexOf(commonReplySearch) < 0)) {
+                || (!prefix.isEmpty() && line.startsWith(prefix) && line.mid(prefix.size()).indexOf(commonReplySearch) < 0)) {
                 posNewLine = res.indexOf(QLatin1Char('\n'), posNewLine) + 1;
             } else {
-                break;    // end of the SB
+                break; // end of the SB
             }
         }
 
@@ -394,7 +395,13 @@ QByteArray headerAsSendableString(const KMime::Message::Ptr &originalMessage)
     return message->head();
 }
 
-QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
+QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
+                          Display display,
+                          const QString &cssStyle,
+                          Link link,
+                          AddressMode expandable,
+                          const QString &fieldName,
+                          int collapseNumber)
 {
     QString result;
     int numberAddresses = 0;
@@ -413,7 +420,9 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
                 if (link == ShowLink) {
                     shortListAddress.truncate(result.length() - 2);
                 }
-                result = QStringLiteral("<span><input type=\"checkbox\" class=\"addresslist_checkbox\" id=\"%1\" checked=\"checked\"/><span class=\"short%1\">").arg(fieldName) + shortListAddress;
+                result = QStringLiteral("<span><input type=\"checkbox\" class=\"addresslist_checkbox\" id=\"%1\" checked=\"checked\"/><span class=\"short%1\">")
+                             .arg(fieldName)
+                    + shortListAddress;
                 result += QStringLiteral("<label class=\"addresslist_label_short\" for=\"%1\"></label></span>").arg(fieldName);
                 expandableInserted = true;
                 result += QStringLiteral("<span class=\"full%1\">").arg(fieldName) + actualListAddress;
@@ -421,8 +430,9 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
 
             if (link == ShowLink) {
                 result += QLatin1String("<a href=\"mailto:")
-                          + QString::fromLatin1(QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
-                          + QLatin1String("\" ") + cssStyle + QLatin1Char('>');
+                    + QString::fromLatin1(
+                              QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
+                    + QLatin1String("\" ") + cssStyle + QLatin1Char('>');
             }
             const bool foundMe = onlyOneIdentity && (im->identityForAddress(prettyAddressStr) != KIdentityManagement::Identity::null());
 
@@ -451,13 +461,25 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     return result;
 }
 
-QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
+QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList,
+                          Display display,
+                          const QString &cssStyle,
+                          Link link,
+                          AddressMode expandable,
+                          const QString &fieldName,
+                          int collapseNumber)
 {
     Q_ASSERT(mailboxList);
     return emailAddrAsAnchor(mailboxList->mailboxes(), display, cssStyle, link, expandable, fieldName, collapseNumber);
 }
 
-QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
+QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList,
+                          Display display,
+                          const QString &cssStyle,
+                          Link link,
+                          AddressMode expandable,
+                          const QString &fieldName,
+                          int collapseNumber)
 {
     Q_ASSERT(addressList);
     return emailAddrAsAnchor(addressList->mailboxes(), display, cssStyle, link, expandable, fieldName, collapseNumber);
@@ -469,8 +491,7 @@ bool addressIsInAddressList(const QString &address, const QStringList &addresses
 
     QStringList::ConstIterator end(addresses.constEnd());
     for (QStringList::ConstIterator it = addresses.constBegin(); it != end; ++it) {
-        if (qstricmp(addrSpec.toUtf8().data(),
-                     KEmailAddress::extractEmailAddress(*it).toUtf8().data()) == 0) {
+        if (qstricmp(addrSpec.toUtf8().data(), KEmailAddress::extractEmailAddress(*it).toUtf8().data()) == 0) {
             return true;
         }
     }
@@ -618,18 +639,15 @@ QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayS
         if (ch == QLatin1Char('%') && i < strLength) {
             ch = wildString[i++];
             switch (ch.toLatin1()) {
-            case 'f':
-            {           // sender's initials
+            case 'f': { // sender's initials
                 if (fromDisplayString.isEmpty()) {
                     break;
                 }
 
                 int j = 0;
                 const int strLength(fromDisplayString.length());
-                for (; j < strLength && fromDisplayString[j] > QLatin1Char(' '); ++j) {
-                }
-                for (; j < strLength && fromDisplayString[j] <= QLatin1Char(' '); ++j) {
-                }
+                for (; j < strLength && fromDisplayString[j] > QLatin1Char(' '); ++j) { }
+                for (; j < strLength && fromDisplayString[j] <= QLatin1Char(' '); ++j) { }
                 result += fromDisplayString[0];
                 if (j < strLength && fromDisplayString[j] > QLatin1Char(' ')) {
                     result += fromDisplayString[j];
@@ -696,26 +714,32 @@ QString cleanFileName(const QString &name)
 
 QString cleanSubject(KMime::Message *msg)
 {
-    return cleanSubject(msg, MessageCore::MessageCoreSettings::self()->replyPrefixes() + MessageCore::MessageCoreSettings::self()->forwardPrefixes(),
-                        true, QString()).trimmed();
+    return cleanSubject(msg,
+                        MessageCore::MessageCoreSettings::self()->replyPrefixes() + MessageCore::MessageCoreSettings::self()->forwardPrefixes(),
+                        true,
+                        QString())
+        .trimmed();
 }
 
 QString cleanSubject(KMime::Message *msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
 {
-    return replacePrefixes(msg->subject()->asUnicodeString(), prefixRegExps, replace,
-                           newPrefix);
+    return replacePrefixes(msg->subject()->asUnicodeString(), prefixRegExps, replace, newPrefix);
 }
 
 QString forwardSubject(KMime::Message *msg)
 {
-    return cleanSubject(msg, MessageCore::MessageCoreSettings::self()->forwardPrefixes(),
-                        MessageCore::MessageCoreSettings::self()->replaceForwardPrefix(), QStringLiteral("Fwd:"));
+    return cleanSubject(msg,
+                        MessageCore::MessageCoreSettings::self()->forwardPrefixes(),
+                        MessageCore::MessageCoreSettings::self()->replaceForwardPrefix(),
+                        QStringLiteral("Fwd:"));
 }
 
 QString replySubject(KMime::Message *msg)
 {
-    return cleanSubject(msg, MessageCore::MessageCoreSettings::self()->replyPrefixes(),
-                        MessageCore::MessageCoreSettings::self()->replaceReplyPrefix(), QStringLiteral("Re:"));
+    return cleanSubject(msg,
+                        MessageCore::MessageCoreSettings::self()->replyPrefixes(),
+                        MessageCore::MessageCoreSettings::self()->replaceReplyPrefix(),
+                        QStringLiteral("Re:"));
 }
 
 QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
@@ -724,8 +748,7 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bo
     // construct a big regexp that
     // 1. is anchored to the beginning of str (sans whitespace)
     // 2. matches at least one of the part regexps in prefixRegExps
-    const QString bigRegExp = QStringLiteral("^(?:\\s+|(?:%1))+\\s*")
-                              .arg(prefixRegExps.join(QStringLiteral(")|(?:")));
+    const QString bigRegExp = QStringLiteral("^(?:\\s+|(?:%1))+\\s*").arg(prefixRegExps.join(QStringLiteral(")|(?:")));
     const QRegularExpression rx(bigRegExp, QRegularExpression::CaseInsensitiveOption);
     if (rx.isValid()) {
         QString tmp = str;
@@ -737,8 +760,7 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bo
             }
         }
     } else {
-        qCWarning(MESSAGECORE_LOG) << "bigRegExp = \""
-                                   << bigRegExp << "\"\n"
+        qCWarning(MESSAGECORE_LOG) << "bigRegExp = \"" << bigRegExp << "\"\n"
                                    << "prefix regexp is invalid!";
         // try good ole Re/Fwd:
         recognized = str.startsWith(newPrefix);
@@ -778,8 +800,7 @@ QString stripOffPrefixes(const QString &subject)
             return subject.mid(match.capturedEnd(0));
         }
     } else {
-        qCWarning(MESSAGECORE_LOG) << "bigRegExp = \""
-                                   << bigRegExp << "\"\n"
+        qCWarning(MESSAGECORE_LOG) << "bigRegExp = \"" << bigRegExp << "\"\n"
                                    << "prefix regexp is invalid!";
     }
 

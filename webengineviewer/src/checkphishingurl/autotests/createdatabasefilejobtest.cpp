@@ -10,9 +10,9 @@
 #include "../localdatabasefile.h"
 #include <QStandardPaths>
 
+#include <QDebug>
 #include <QSignalSpy>
 #include <QTest>
-#include <QDebug>
 Q_DECLARE_METATYPE(QVector<WebEngineViewer::Addition>)
 QByteArray readJsonFile(const QString &jsonFile)
 {
@@ -71,7 +71,8 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     QCOMPARE(spy1.count(), 1);
     const WebEngineViewer::UpdateDataBaseInfo info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
-    const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/test.db");
+    const QString createDataBaseName =
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/test.db");
     qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
@@ -93,12 +94,12 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
 
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
 {
-    QTest::addColumn<QList<quint32> >("listElementToRemove");
-    QTest::addColumn<QVector<WebEngineViewer::Addition> >("listElementToAdd");
+    QTest::addColumn<QList<quint32>>("listElementToRemove");
+    QTest::addColumn<QVector<WebEngineViewer::Addition>>("listElementToAdd");
     QTest::addColumn<QByteArray>("newssha");
     QTest::addColumn<bool>("success");
     QVector<WebEngineViewer::Addition> lstAdditions;
-    QList<quint32> r = { 2, 3, 4};
+    QList<quint32> r = {2, 3, 4};
     QTest::newRow("correctdatabase") << r << lstAdditions << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
     r = {3, 2, 4};
     QTest::newRow("correctdatabaseotherorder") << r << lstAdditions << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
@@ -144,7 +145,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
     //    >>> encoded
     //    'Cq7i4CGPpAVOiSzcSiq+haFRw5zIfWqDKnPVTCa++2g='
 
-    //m.update("111154321abcdabcdebbbbbcdefmnopqrstuvwx");
+    // m.update("111154321abcdabcdebbbbbcdefmnopqrstuvwx");
 
     QTest::newRow("correctdatabaseotherorderwithadditions") << r << lstAdditions << QByteArrayLiteral("Cq7i4CGPpAVOiSzcSiq+haFRw5zIfWqDKnPVTCa++2g=") << true;
 }
@@ -165,7 +166,8 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     // "x\x18\xbdn]\xa5\xa8R\xf7\xab\xcf\xc1\xa3\xa3\xc5Z,\xa6o"
 
     WebEngineViewer::CreateDatabaseFileJob databasejob;
-    const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/correctBinary.db");
+    const QString createDataBaseName =
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/correctBinary.db");
     qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
 
@@ -229,7 +231,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 
     for (int i = 0; i < 9; ++i) {
         quint64 value = newFile.getUint64(index);
-        //qDebug() << "char "<< newFile.getCharStar(value);
+        // qDebug() << "char "<< newFile.getCharStar(value);
         QCOMPARE(storageData.at(i), QByteArray(newFile.getCharStar(value)));
         index += sizeof(quint64);
     }
@@ -240,18 +242,18 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
         QCOMPARE(lstInfo.at(i).prefixSize, lstInfo.at(i).hashString.size());
     }
 
-    //Before
-    //storageData << QByteArrayLiteral("----");
-    //storageData << QByteArrayLiteral("1111");
-    //storageData << QByteArrayLiteral("22222");
-    //storageData << QByteArrayLiteral("54321");
-    //storageData << QByteArrayLiteral("abcd");
-    //storageData << QByteArrayLiteral("abcde");
-    //storageData << QByteArrayLiteral("bbbb");
-    //storageData << QByteArrayLiteral("bcdef");
-    //storageData << QByteArrayLiteral("efgh");
+    // Before
+    // storageData << QByteArrayLiteral("----");
+    // storageData << QByteArrayLiteral("1111");
+    // storageData << QByteArrayLiteral("22222");
+    // storageData << QByteArrayLiteral("54321");
+    // storageData << QByteArrayLiteral("abcd");
+    // storageData << QByteArrayLiteral("abcde");
+    // storageData << QByteArrayLiteral("bbbb");
+    // storageData << QByteArrayLiteral("bcdef");
+    // storageData << QByteArrayLiteral("efgh");
 
-    //TODO remove items.
+    // TODO remove items.
     WebEngineViewer::UpdateDataBaseInfo updateinfo;
 
     // we will remove QByteArrayLiteral("22222"); QByteArrayLiteral("54321"); QByteArrayLiteral("abcd");
@@ -298,7 +300,8 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
 {
     WebEngineViewer::CreateDatabaseFileJob databasejob;
-    const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/correctBinary.db");
+    const QString createDataBaseName =
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/correctBinary.db");
     qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
 
@@ -362,7 +365,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
 
     for (int i = 0; i < 9; ++i) {
         quint64 value = newFile.getUint64(index);
-        //qDebug() << "char "<< newFile.getCharStar(value);
+        // qDebug() << "char "<< newFile.getCharStar(value);
         QCOMPARE(storageData.at(i), QByteArray(newFile.getCharStar(value)));
         index += sizeof(quint64);
     }
@@ -384,8 +387,9 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     QCOMPARE(spy1.count(), 1);
     const WebEngineViewer::UpdateDataBaseInfo info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
-    const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/update.db");
-    //qDebug() << " new filename " << createDataBaseName;
+    const QString createDataBaseName =
+        QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/update.db");
+    // qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
 

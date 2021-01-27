@@ -8,13 +8,15 @@
 #ifndef MIMETREEPARSER_TESTS_SETUPENV_H
 #define MIMETREEPARSER_TESTS_SETUPENV_H
 
-namespace MimeTreeParser {
-namespace Test {
+namespace MimeTreeParser
+{
+namespace Test
+{
 /**
-* setup a environment variables for tests:
-* * set LC_ALL to C
-* * set KDEHOME
-*/
+ * setup a environment variables for tests:
+ * * set LC_ALL to C
+ * * set KDEHOME
+ */
 void setupEnv();
 }
 }

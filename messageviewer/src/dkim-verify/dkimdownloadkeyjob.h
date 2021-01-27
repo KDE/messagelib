@@ -7,10 +7,11 @@
 #ifndef DKIMDOWNLOADKEYJOB_H
 #define DKIMDOWNLOADKEYJOB_H
 
-#include <QObject>
 #include "messageviewer_export.h"
+#include <QObject>
 class QDnsLookup;
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DKIMDownloadKeyJob class
  * @author Laurent Montel <montel@kde.org>

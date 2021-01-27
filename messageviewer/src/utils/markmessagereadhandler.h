@@ -15,7 +15,8 @@
 
 #include <QObject>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @short A viewer handler to mark viewed messages as read.
  */

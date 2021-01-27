@@ -4,16 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "dkimcheckauthenticationstatusjob.h"
 #include "dkimcheckfulljob.h"
+#include "dkimauthenticationstatusinfoconverter.h"
+#include "dkimcheckauthenticationstatusjob.h"
 #include "dkimcheckpolicyjob.h"
 #include "dkimgeneraterulejob.h"
 #include "dkimmanagerkey.h"
-#include "dkimauthenticationstatusinfoconverter.h"
 #include "dkimstoreresultjob.h"
 #include "messageviewer_dkimcheckerdebug.h"
-#include <KMessageBox>
 #include <KLocalizedString>
+#include <KMessageBox>
 using namespace MessageViewer;
 
 DKIMCheckFullJob::DKIMCheckFullJob(QObject *parent)
@@ -96,7 +96,7 @@ void DKIMCheckFullJob::storeKey(const QString &key, const QString &domain, const
 {
     switch (mCheckPolicy.saveKey()) {
     case MessageViewer::MessageViewerSettings::EnumSaveKey::NotSaving:
-        //Nothing
+        // Nothing
         break;
     case MessageViewer::MessageViewerSettings::EnumSaveKey::Save:
         storeInKeyManager(key, selector, domain, false);
@@ -109,14 +109,17 @@ void DKIMCheckFullJob::storeKey(const QString &key, const QString &domain, const
 
 void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &domain, const QString &selector, bool verify)
 {
-    const MessageViewer::KeyInfo info {key, selector, domain};
+    const MessageViewer::KeyInfo info{key, selector, domain};
     if (verify) {
         const QString keyStored = MessageViewer::DKIMManagerKey::self()->keyValue(selector, domain);
         if (!keyStored.isEmpty()) {
             if (keyStored != key) {
                 qDebug() << "storeInKeyManager : keyStored  " << keyStored << " key " << key;
                 qDebug() << "domain " << domain << " selector " << selector;
-                if (KMessageBox::No == KMessageBox::warningYesNo(nullptr, i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"), i18n("Key Changed"))) {
+                if (KMessageBox::No
+                    == KMessageBox::warningYesNo(nullptr,
+                                                 i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"),
+                                                 i18n("Key Changed"))) {
                     return;
                 }
             }
@@ -127,17 +130,17 @@ void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &doma
 
 void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info)
 {
-    //qDebug() << "info " << info;
+    // qDebug() << "info " << info;
     DKIMAuthenticationStatusInfoConverter converter;
     converter.setStatusInfo(info);
-    //TODO Convert to CheckSignatureAuthenticationResult + add this list to CheckSignatureResult directly
+    // TODO Convert to CheckSignatureAuthenticationResult + add this list to CheckSignatureResult directly
     const QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> lst = converter.convert();
-    //qDebug() << "  lst " << lst;
-    //TODO use it.
+    // qDebug() << "  lst " << lst;
+    // TODO use it.
 
-    //TODO check info ! if auth is ok not necessary to checkSignature
+    // TODO check info ! if auth is ok not necessary to checkSignature
     if (mCheckPolicy.useOnlyAuthenticationResults()) {
-        //Don't check signature if not necessary.
+        // Don't check signature if not necessary.
     }
     checkSignature(lst);
 }
@@ -145,8 +148,7 @@ void DKIMCheckFullJob::slotCheckAuthenticationStatusResult(const MessageViewer::
 void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
     if (mCheckPolicy.saveDkimResult()) {
-        if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid
-            || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid
+        if (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Valid || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid
             || checkResult.status == DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned) {
             auto job = new DKIMStoreResultJob(this);
             job->setItem(mAkonadiItem);
@@ -156,15 +158,16 @@ void DKIMCheckFullJob::storeResult(const DKIMCheckSignatureJob::CheckSignatureRe
     }
     if (mCheckPolicy.autogenerateRule()) {
         if (mCheckPolicy.autogenerateRuleOnlyIfSenderInSDID()) {
-            //TODO
-            //FIXME Check value SDID !
+            // TODO
+            // FIXME Check value SDID !
             generateRule(checkResult);
         } else {
             generateRule(checkResult);
         }
     }
 
-    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
+    qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "result : status " << checkResult.status << " error : " << checkResult.error << " warning "
+                                           << checkResult.warning;
     Q_EMIT result(checkResult, mAkonadiItem.id());
     deleteLater();
 }
@@ -182,8 +185,7 @@ void DKIMCheckFullJob::generateRule(const DKIMCheckSignatureJob::CheckSignatureR
 
 void DKIMCheckFullJob::slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult)
 {
-    if (mCheckPolicy.checkIfEmailShouldBeSigned()
-        && (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned)) {
+    if (mCheckPolicy.checkIfEmailShouldBeSigned() && (checkResult.status == DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned)) {
         auto job = new DKIMCheckPolicyJob(this);
         connect(job, &DKIMCheckPolicyJob::result, this, &DKIMCheckFullJob::storeResult);
         job->setCheckResult(checkResult);

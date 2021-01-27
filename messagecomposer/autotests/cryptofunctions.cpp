@@ -11,8 +11,8 @@
 
 #include <MessageComposer/Util>
 
-#include <KMime/Message>
 #include <KMime/Content>
+#include <KMime/Message>
 
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
@@ -20,12 +20,17 @@
 #include <MessageCore/NodeHelper>
 
 #include <QTest>
-#include <stdlib.h>
 #include <gpgme++/keylistresult.h>
+#include <stdlib.h>
 
 using namespace MessageComposer;
 
-void ComposerTestUtil::verify(bool sign, bool encrypt, KMime::Content *content, const QByteArray &origContent, Kleo::CryptoMessageFormat f, KMime::Headers::contentEncoding encoding)
+void ComposerTestUtil::verify(bool sign,
+                              bool encrypt,
+                              KMime::Content *content,
+                              const QByteArray &origContent,
+                              Kleo::CryptoMessageFormat f,
+                              KMime::Headers::contentEncoding encoding)
 {
     if (sign && encrypt) {
         verifySignatureAndEncryption(content, origContent, f, false);
@@ -36,7 +41,10 @@ void ComposerTestUtil::verify(bool sign, bool encrypt, KMime::Content *content, 
     }
 }
 
-void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray &signedContent, Kleo::CryptoMessageFormat f, KMime::Headers::contentEncoding encoding)
+void ComposerTestUtil::verifySignature(KMime::Content *content,
+                                       const QByteArray &signedContent,
+                                       Kleo::CryptoMessageFormat f,
+                                       KMime::Headers::contentEncoding encoding)
 {
     // store it in a KMime::Message, that's what OTP needs
     auto resultMessage = new KMime::Message;
@@ -58,7 +66,7 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
         QCOMPARE(signedPart->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
         Q_UNUSED(signedPart)
 
-        //Q_ASSERT( nh->signatureState( resultMessage ) == MimeTreeParser::KMMsgFullySigned );
+        // Q_ASSERT( nh->signatureState( resultMessage ) == MimeTreeParser::KMMsgFullySigned );
 
         QCOMPARE(MessageCore::NodeHelper::firstChild(resultMessage)->contentTransferEncoding()->encoding(), encoding);
     } else if (f & Kleo::InlineOpenPGPFormat) {
@@ -97,7 +105,7 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
         // process the result..
         otp.parseObjectTree(resultMessage);
 
-        //Q_ASSERT( nh->signatureState( resultMessage ) == MimeTreeParser::KMMsgFullySigned );
+        // Q_ASSERT( nh->signatureState( resultMessage ) == MimeTreeParser::KMMsgFullySigned );
     }
 
     // make sure the good sig is of what we think it is
@@ -129,7 +137,7 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
     } else if (f & Kleo::InlineOpenPGPFormat) {
         if (withAttachment) {
-            //Only first MimePart is the encrypted Text
+            // Only first MimePart is the encrypted Text
             KMime::Content *cContent = MessageCore::NodeHelper::firstChild(resultMessage.data());
             resultMessage->setContent(cContent->encodedContent());
             resultMessage->parse();
@@ -157,7 +165,11 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
     Q_UNUSED(encrContent)
 }
 
-void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, const QByteArray &origContent, Kleo::CryptoMessageFormat f, bool withAttachment, bool combind)
+void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content,
+                                                    const QByteArray &origContent,
+                                                    Kleo::CryptoMessageFormat f,
+                                                    bool withAttachment,
+                                                    bool combind)
 {
     Q_UNUSED(withAttachment)
     // store it in a KMime::Message, that's what OTP needs
@@ -179,14 +191,14 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
         otp.parseObjectTree(resultMessage.data());
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
 
-        QVector< KMime::Content * > extra = nh->extraContents(resultMessage.data());
+        QVector<KMime::Content *> extra = nh->extraContents(resultMessage.data());
         QCOMPARE(extra.size(), 1);
         if (combind) {
             QCOMPARE(nh->signatureState(resultMessage.data()), MimeTreeParser::KMMsgFullySigned);
         } else {
-            QVector< KMime::Content * > extra = nh->extraContents(resultMessage.data());
+            QVector<KMime::Content *> extra = nh->extraContents(resultMessage.data());
             QCOMPARE(extra.size(), 1);
-            QCOMPARE(nh->signatureState(extra[ 0 ]), MimeTreeParser::KMMsgFullySigned);
+            QCOMPARE(nh->signatureState(extra[0]), MimeTreeParser::KMMsgFullySigned);
         }
     } else if (f & Kleo::InlineOpenPGPFormat) {
         otp.parseObjectTree(resultMessage.data());
@@ -206,9 +218,9 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
         otp.parseObjectTree(resultMessage.data());
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
 
-        QVector< KMime::Content * > extra = nh->extraContents(resultMessage.data());
+        QVector<KMime::Content *> extra = nh->extraContents(resultMessage.data());
         QCOMPARE(extra.size(), 1);
-        QCOMPARE(nh->signatureState(extra[ 0 ]), MimeTreeParser::KMMsgFullySigned);
+        QCOMPARE(nh->signatureState(extra[0]), MimeTreeParser::KMMsgFullySigned);
     }
     QCOMPARE(otp.plainTextContent().trimmed(), QString::fromUtf8(origContent).trimmed());
     Q_UNUSED(origContent)

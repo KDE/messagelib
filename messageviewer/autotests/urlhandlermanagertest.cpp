@@ -7,9 +7,9 @@
 #include "urlhandlermanagertest.h"
 
 #include "util.h"
+#include "viewer/urlhandlermanager_p.h"
 #include "viewer/viewer.h"
 #include "viewer/viewer_p.h"
-#include "viewer/urlhandlermanager_p.h"
 
 #include <MimeTreeParser/BodyPart>
 #include <MimeTreeParser/Enums>
@@ -88,9 +88,11 @@ void BodyPartUrlHandlerManagerTest::testHandleClick_data()
 
     QTest::newRow("completely_empty") << QString() << QString() << KMime::ContentIndex() << false;
     QTest::newRow("empty") << QStringLiteral("x-kmail:") << QString() << KMime::ContentIndex() << false;
-    QTest::newRow("pgpkey") << QStringLiteral("x-kmail:/bodypart/1234/2/pgpkey") << QStringLiteral("pgpkey") << KMime::ContentIndex(QStringLiteral("2")) << true;
+    QTest::newRow("pgpkey") << QStringLiteral("x-kmail:/bodypart/1234/2/pgpkey") << QStringLiteral("pgpkey") << KMime::ContentIndex(QStringLiteral("2"))
+                            << true;
     QTest::newRow("test") << QStringLiteral("x-kmail:/bodypart/1234/1/test") << QStringLiteral("test") << KMime::ContentIndex(QStringLiteral("1")) << true;
-    QTest::newRow("test_with_arguments") << QStringLiteral("x-kmail:/bodypart/1234/1/test?foo=qua") << QStringLiteral("test?foo=qua") << KMime::ContentIndex(QStringLiteral("1")) << true;
+    QTest::newRow("test_with_arguments") << QStringLiteral("x-kmail:/bodypart/1234/1/test?foo=qua") << QStringLiteral("test?foo=qua")
+                                         << KMime::ContentIndex(QStringLiteral("1")) << true;
 }
 
 void BodyPartUrlHandlerManagerTest::testHandleClick()

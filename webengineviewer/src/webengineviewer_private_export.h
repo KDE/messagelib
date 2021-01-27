@@ -11,11 +11,11 @@
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-# ifndef WEBENGINEVIEWER_TESTS_EXPORT
-#  define WEBENGINEVIEWER_TESTS_EXPORT WEBENGINEVIEWER_EXPORT
-# endif
+#ifndef WEBENGINEVIEWER_TESTS_EXPORT
+#define WEBENGINEVIEWER_TESTS_EXPORT WEBENGINEVIEWER_EXPORT
+#endif
 #else /* not compiling tests */
-# define WEBENGINEVIEWER_TESTS_EXPORT
+#define WEBENGINEVIEWER_TESTS_EXPORT
 #endif
 
 #endif

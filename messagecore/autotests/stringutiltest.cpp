@@ -25,7 +25,7 @@ void StringUtilTest::test_SmartQuote()
     qDebug() << "result  :" << resultList;
     qDebug() << "expected:" << expectedList;
     QCOMPARE(resultList, expectedList);
-    //QCOMPARE( result, quotedString );
+    // QCOMPARE( result, quotedString );
 }
 
 void StringUtilTest::test_SmartQuote_data()
@@ -58,15 +58,15 @@ void StringUtilTest::test_SmartQuote_data()
     QTest::newRow("6") << "Space at end of pre-broken line. \n"
                           "Yet another line of text."
                        << "Space at end of pre-broken line.\n"
-        "Yet another line of text.";
+                          "Yet another line of text.";
 
     //                                                               40
     //                                                               ↓
     QTest::newRow("7") << "Long long line, followed by another line starting with a space.\n"
                           " Starts with a space."
                        << "Long long line, followed by another line\n"
-        "starting with a space. Starts with a\n"
-        "space.";
+                          "starting with a space. Starts with a\n"
+                          "space.";
 
     //                                                               40
     //                                                               ↓
@@ -80,29 +80,29 @@ void StringUtilTest::test_SmartQuote_data()
                           "This is the very much too long line that needs to be broken.\n"
                           "This line is ok again."
                        << "Many lines.\n"
-        "Only one needs to be broken.\n"
-        "This is the very much too long line that\n"
-        "needs to be broken. This line is ok\n"
-        "again.";
+                          "Only one needs to be broken.\n"
+                          "This is the very much too long line that\n"
+                          "needs to be broken. This line is ok\n"
+                          "again.";
 
     //                                                                40
     //                                                                ↓
     QTest::newRow("10") << "> >Very long quoted line, that is very very long"
                         << "> >Very long quoted line, that is very\n"
-        "> >very long";
+                           "> >very long";
 
     //                                                                40
     //                                                                ↓
     QTest::newRow("11") << "> > Very long quoted line, that is very very long"
                         << "> > Very long quoted line, that is very\n"
-        "> > very long";
+                           "> > very long";
 
     //                                                                40
     //                                                                ↓
     QTest::newRow("12") << "> > Very long quoted line, that is very very long. \n"
                            "> > Another line here."
                         << "> > Very long quoted line, that is very\n"
-        "> > very long. Another line here.";
+                           "> > very long. Another line here.";
 
     //                                                                40
     //                                                                ↓
@@ -110,10 +110,10 @@ void StringUtilTest::test_SmartQuote_data()
                            "Unquoted line, for a change.\n"
                            "> > Another line here."
                         << "> > Very long quoted line, that is very\n"
-        "> > very long.\n"
-        "Unquoted line, for a change.\n"
-        "\n"
-        "> > Another line here.";
+                           "> > very long.\n"
+                           "Unquoted line, for a change.\n"
+                           "\n"
+                           "> > Another line here.";
 
     //                                                                40
     //                                                                ↓
@@ -123,14 +123,14 @@ void StringUtilTest::test_SmartQuote_data()
                            "> > Quote level 2 still.\n"
                            "No quotes."
                         << "> Quote level 1 with long long long long\n"
-        "> text, that is long. Quote level 1\n"
-        "> still.\n"
-        "> \n"
-        "> > Quote level 2 now, also with a long\n"
-        "> > long long long text. Quote level 2\n"
-        "> > still.\n"
-        "\n"
-        "No quotes.";
+                           "> text, that is long. Quote level 1\n"
+                           "> still.\n"
+                           "> \n"
+                           "> > Quote level 2 now, also with a long\n"
+                           "> > long long long text. Quote level 2\n"
+                           "> > still.\n"
+                           "\n"
+                           "No quotes.";
 
     //                                                                40
     //                                                                ↓
@@ -138,9 +138,9 @@ void StringUtilTest::test_SmartQuote_data()
                            "\n"
                            "Line after an empty one."
                         << "Some much longer text that exceeds our\n"
-        "limit by far.\n"
-        "\n"
-        "Line after an empty one.";
+                           "limit by far.\n"
+                           "\n"
+                           "Line after an empty one.";
 
     // Make sure the "You wrote:" line is not broken, that would look strange
     //                                                                40
@@ -148,7 +148,7 @@ void StringUtilTest::test_SmartQuote_data()
     QTest::newRow("16") << "Yesterday, Hans Martin Ulrich Franz August wrote:\n"
                            "> Bla Bla Bla Bla..."
                         << "Yesterday, Hans Martin Ulrich Franz August wrote:\n"
-        "> Bla Bla Bla Bla...";
+                           "> Bla Bla Bla Bla...";
 
     //                                                                40
     //                                                                ↓
@@ -156,7 +156,7 @@ void StringUtilTest::test_SmartQuote_data()
                            "\n"
                            "> Bla Bla Bla Bla..."
                         << "Yesterday, Hans Martin Ulrich Franz August wrote:\n"
-        "> Bla Bla Bla Bla...";
+                           "> Bla Bla Bla Bla...";
 
     // This test shows a fundamental flaw when breaking lines: The table header gets broken,
     // which is ok. However, the following line is appended to the table header, which leads
@@ -177,13 +177,13 @@ void StringUtilTest::test_SmartQuote_data()
     QTest::newRow("hard linebreak") << "==== Date ======== Amount ======= Type ======\n"
                                        "   12.12.09          5            Car        \n"
                                     << "==== Date ======== Amount ======= Type\n"
-        "======\n"
-        "   12.12.09          5            Car        \n";
+                                       "======\n"
+                                       "   12.12.09          5            Car        \n";
 }
 
 void StringUtilTest::test_signatureStripping()
 {
-    //QStringList tests;
+    // QStringList tests;
     const QString test1 = QStringLiteral(
         "text1\n"
         "-- \n"
@@ -355,7 +355,7 @@ void StringUtilTest::test_parseMailtoUrl()
 
     QUrl url(mailToUrl);
     auto list = StringUtil::parseMailtoUrl(url);
-    //qDebug() << " list "<< list;
+    // qDebug() << " list "<< list;
     QCOMPARE(list.count(), numberElement);
     if (numberOfTo > 0) {
         QCOMPARE(!list.at(0).second.isEmpty(), toIsNotEmpty);
@@ -367,7 +367,7 @@ void StringUtilTest::test_parseMailtoUrlExtra()
 {
     const QByteArray ba("mailto:someone@example.com?subject=This%20is%20the%20subject&cc=someone_else@example.com&body=This%20is%20the%20body");
     QUrl url = QUrl(QUrl::fromPercentEncoding(ba));
-    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(url);
+    QVector<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(url);
     QCOMPARE(data.size(), 4);
     for (int i = 0; i < 4; ++i) {
         if (data.at(i).first == QLatin1String("to")) {
@@ -386,7 +386,7 @@ void StringUtilTest::test_parseMailToWithUtf8Encoded()
 {
     const QByteArray ba("mailto:=?utf-8?B?TWnFgm9zeg==?= Vo %3Craco.cki@foo.com%3E");
     QUrl url = QUrl(QUrl::fromPercentEncoding(ba));
-    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(url);
+    QVector<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(url);
     QCOMPARE(data.size(), 1);
     for (int i = 0; i < 1; ++i) {
         if (data.at(i).first == QLatin1String("to")) {
@@ -399,7 +399,7 @@ void StringUtilTest::test_parseMailToWithUtf8QuotedEncoded()
 {
     const QByteArray ba("mailto:=?utf-8?q?foo_Cen_=3Cbla=2Ecete=40kde=2Ecom=3E=2C_Kile_Debut_=3Ckile=2Edebut=40foo=2Ecom?=");
     QUrl url = QUrl(QUrl::fromPercentEncoding(ba));
-    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(url);
+    QVector<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(url);
     QCOMPARE(data.size(), 1);
     for (int i = 0; i < 1; ++i) {
         if (data.at(i).first == QLatin1String("to")) {
@@ -412,7 +412,7 @@ void StringUtilTest::test_parseMailToBug366981()
 {
     const QByteArray ba(QByteArrayLiteral("mailto:test@test.com?subject=test&body=line1%0D%0Aline2"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+    QVector<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 3);
     for (int i = 0; i < 3; ++i) {
         if (data.at(i).first == QLatin1String("to")) {
@@ -432,7 +432,7 @@ void StringUtilTest::test_parseDuplicateQueryItems()
 {
     const QByteArray ba(QByteArrayLiteral("mailto:test@test.com?subject=test&body=line1%0D%0Aline2&cc=someone_else@example.com&cc=someone_else2@example.com"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-    QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+    QVector<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(values.size(), 5);
     int valueCC = 0;
     for (int i = 0; i < values.size(); ++i) {
@@ -455,14 +455,15 @@ void StringUtilTest::test_parseDuplicateQueryItems()
 
 void StringUtilTest::test_parseMAilToBug402378()
 {
-    const QByteArray ba(QByteArrayLiteral(
-                            "mailto:?body=infotbm.com https://www.infotbm.com/fr/routes/id=-0.624162|44.849958&type=address/datetime=20181226T143038&id=stop_area:TBT:SA:HTLEV&time_type=arrival&type=stop_area/0&subject=Votre itineraire avec TBM"));
+    const QByteArray ba(
+        QByteArrayLiteral("mailto:?body=infotbm.com "
+                          "https://www.infotbm.com/fr/routes/id=-0.624162|44.849958&type=address/"
+                          "datetime=20181226T143038&id=stop_area:TBT:SA:HTLEV&time_type=arrival&type=stop_area/0&subject=Votre itineraire avec TBM"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+    QVector<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 6);
     QCOMPARE(data.at(0).first, QLatin1String("body"));
-    QCOMPARE(data.at(0).second, QLatin1String(
-                 "infotbm.com https://www.infotbm.com/fr/routes/id=-0.624162|44.849958"));
+    QCOMPARE(data.at(0).second, QLatin1String("infotbm.com https://www.infotbm.com/fr/routes/id=-0.624162|44.849958"));
     QCOMPARE(data.at(1).first, QLatin1String("type"));
     QCOMPARE(data.at(1).second, QLatin1String("address/datetime=20181226T143038"));
     QCOMPARE(data.at(2).first, QLatin1String("id"));
@@ -478,28 +479,26 @@ void StringUtilTest::test_parseMAilToBug402378()
 void StringUtilTest::test_parseMailToBug406208()
 {
     {
-        const QByteArray ba(QByteArrayLiteral(
-                                "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
+        const QByteArray ba(
+            QByteArrayLiteral("mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-        //qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
-        QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+        // qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
+        QVector<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(data.size(), 2);
         QCOMPARE(data.at(0).first, QLatin1String("body"));
-        QCOMPARE(data.at(0).second, QLatin1String(
-                     "http://www.lecourrierdelarchitecte.com/article_8428"));
+        QCOMPARE(data.at(0).second, QLatin1String("http://www.lecourrierdelarchitecte.com/article_8428"));
         QCOMPARE(data.at(1).first, QLatin1String("subject"));
         QCOMPARE(data.at(1).second, QLatin1String("Le Courrier l'effet #metoo ?"));
     }
     {
         const QByteArray ba(QByteArrayLiteral(
-                                "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428%20%23%23bla&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
+            "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428%20%23%23bla&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-        //qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
-        QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+        // qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
+        QVector<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(data.size(), 2);
         QCOMPARE(data.at(0).first, QLatin1String("body"));
-        QCOMPARE(data.at(0).second, QLatin1String(
-                     "http://www.lecourrierdelarchitecte.com/article_8428 ##bla"));
+        QCOMPARE(data.at(0).second, QLatin1String("http://www.lecourrierdelarchitecte.com/article_8428 ##bla"));
         QCOMPARE(data.at(1).first, QLatin1String("subject"));
         QCOMPARE(data.at(1).second, QLatin1String("Le Courrier l'effet #metoo ?"));
     }
@@ -507,10 +506,13 @@ void StringUtilTest::test_parseMailToBug406208()
 
 void StringUtilTest::test_parseMailToBug832795()
 {
-    const QByteArray ba(QByteArrayLiteral(
-                            "mailto:832795@bugs.debian.org?In-Reply-To=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3E&subject=Re%3A%20kmail%3A%20unescaping%20mailto%3A%20links%20broken&body=On%20Thu%2C%2028%20Jul%202016References=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3Ebody=On%20Thu%2C%2028%20Jul%202016%2023%3A39%3A03%20%2B0200%20Dominik%20George%20%3Cnik%40naturalnet.de%3E%20wrote%3A%0A%3E%20Package%3A%20kmail%0A%3E%20Version%3A%204%3A16.04.3-1%0A"));
+    const QByteArray ba(
+        QByteArrayLiteral("mailto:832795@bugs.debian.org?In-Reply-To=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3E&subject="
+                          "Re%3A%20kmail%3A%20unescaping%20mailto%3A%20links%20broken&body=On%20Thu%2C%2028%20Jul%202016References=%3C146974194340.26747."
+                          "4814466130640572267.reportbug%40portux.lan.naturalnet.de%3Ebody=On%20Thu%2C%2028%20Jul%202016%2023%3A39%3A03%20%2B0200%20Dominik%"
+                          "20George%20%3Cnik%40naturalnet.de%3E%20wrote%3A%0A%3E%20Package%3A%20kmail%0A%3E%20Version%3A%204%3A16.04.3-1%0A"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-    QVector<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+    QVector<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 4);
     QCOMPARE(data.at(0).first, QLatin1String("to"));
     QCOMPARE(data.at(0).second, QLatin1String("832795@bugs.debian.org"));
@@ -519,15 +521,16 @@ void StringUtilTest::test_parseMailToBug832795()
     QCOMPARE(data.at(2).first, QLatin1String("subject"));
     QCOMPARE(data.at(2).second, QLatin1String("Re: kmail: unescaping mailto: links broken"));
     QCOMPARE(data.at(3).first, QLatin1String("body"));
-    QCOMPARE(data.at(3).second, QLatin1String(
-                 "On Thu, 28 Jul 2016References=<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>body=On Thu, 28 Jul 2016 23:39:03 +0200 Dominik George <nik@naturalnet.de> wrote:\n> Package: kmail\n> Version: 4:16.04.3-1\n"));
+    QCOMPARE(data.at(3).second,
+             QLatin1String("On Thu, 28 Jul 2016References=<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>body=On Thu, 28 Jul 2016 "
+                           "23:39:03 +0200 Dominik George <nik@naturalnet.de> wrote:\n> Package: kmail\n> Version: 4:16.04.3-1\n"));
 }
 
 void StringUtilTest::test_crashXdgemail()
 {
     const QByteArray ba(QByteArrayLiteral("mailto:foo@kde.org?to=bar@kde.org&to=baz@kde.org"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-    QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+    QVector<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(values.size(), 1);
     QCOMPARE(values.at(0).first, QLatin1String("to"));
     QCOMPARE(values.at(0).second, QLatin1String("foo@kde.org, bar@kde.org, baz@kde.org"));
@@ -538,7 +541,7 @@ void StringUtilTest::test_xdgemail()
     {
         const QByteArray ba(QByteArrayLiteral("mailto:foo@kde.org?to=bar@kde.org&to=baz@kde.org&cc=bli@kde.org"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-        QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+        QVector<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 2);
         QCOMPARE(values.at(0).first, QLatin1String("to"));
         QCOMPARE(values.at(0).second, QLatin1String("foo@kde.org, bar@kde.org, baz@kde.org"));
@@ -548,7 +551,7 @@ void StringUtilTest::test_xdgemail()
     {
         const QByteArray ba(QByteArrayLiteral("mailto:foo@kde.org?to=bar@kde.org&to=baz@kde.org&cc=ss@kde.org&bcc=ccs@kde.org"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-        QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+        QVector<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 3);
         QCOMPARE(values.at(0).first, QLatin1String("to"));
         QCOMPARE(values.at(0).second, QLatin1String("foo@kde.org, bar@kde.org, baz@kde.org"));
@@ -560,7 +563,7 @@ void StringUtilTest::test_xdgemail()
     {
         const QByteArray ba(QByteArrayLiteral("mailto:foo@kde.org?to=bar@kde.org&to=baz@kde.org&cc=ss@kde.org&bcc=ccs@kde.org&to=ff@kde.org"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-        QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+        QVector<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 3);
         QCOMPARE(values.at(0).first, QLatin1String("cc"));
         QCOMPARE(values.at(0).second, QLatin1String("ss@kde.org"));
@@ -570,26 +573,33 @@ void StringUtilTest::test_xdgemail()
         QCOMPARE(values.at(2).second, QLatin1String("foo@kde.org, bar@kde.org, baz@kde.org, ff@kde.org"));
     }
     {
-        //Bug 427697
-        const QByteArray ba(QByteArrayLiteral(
-                                "mailto:julia.lawall%40inria.fr?In-Reply-To=%3Calpine.DEB.2.22.394.2009272255220.20726@hadrien%3E&#38;Cc=Gilles.Muller%40lip6.fr%2Ccocci%40systeme.lip6.fr%2Ccorbet%40lwn.net%2Clinux-doc%40vger.kernel.org%2Clinux-kernel%40vger.kernel.org%2Cmichal.lkml%40markovi.net%2Cnicolas.palix%40imag.fr%2Csylphrenadin%40gmail.com&#38;Subject=Re%3A%20%5BCocci%5D%20%5BPATCH%201%2F2%5D%20scripts%3A%20coccicheck%3A%20Change%20default%20value%20for%09parallelism"));
+        // Bug 427697
+        const QByteArray ba(
+            QByteArrayLiteral("mailto:julia.lawall%40inria.fr?In-Reply-To=%3Calpine.DEB.2.22.394.2009272255220.20726@hadrien%3E&#38;Cc=Gilles.Muller%40lip6.fr%"
+                              "2Ccocci%40systeme.lip6.fr%2Ccorbet%40lwn.net%2Clinux-doc%40vger.kernel.org%2Clinux-kernel%40vger.kernel.org%2Cmichal.lkml%"
+                              "40markovi.net%2Cnicolas.palix%40imag.fr%2Csylphrenadin%40gmail.com&#38;Subject=Re%3A%20%5BCocci%5D%20%5BPATCH%201%2F2%5D%"
+                              "20scripts%3A%20coccicheck%3A%20Change%20default%20value%20for%09parallelism"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-        QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+        QVector<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 4);
         QCOMPARE(values.at(0).first, QLatin1String("to"));
         QCOMPARE(values.at(0).second, QLatin1String("julia.lawall@inria.fr"));
         QCOMPARE(values.at(1).first, QLatin1String("in-reply-to"));
         QCOMPARE(values.at(1).second, QLatin1String("<alpine.DEB.2.22.394.2009272255220.20726@hadrien>"));
         QCOMPARE(values.at(2).first, QLatin1String("cc"));
-        QCOMPARE(values.at(2).second, QLatin1String("Gilles.Muller@lip6.fr,cocci@systeme.lip6.fr,corbet@lwn.net,linux-doc@vger.kernel.org,linux-kernel@vger.kernel.org,michal.lkml@markovi.net,nicolas.palix@imag.fr,sylphrenadin@gmail.com"));
+        QCOMPARE(values.at(2).second,
+                 QLatin1String("Gilles.Muller@lip6.fr,cocci@systeme.lip6.fr,corbet@lwn.net,linux-doc@vger.kernel.org,linux-kernel@vger.kernel.org,michal.lkml@"
+                               "markovi.net,nicolas.palix@imag.fr,sylphrenadin@gmail.com"));
         QCOMPARE(values.at(3).first, QLatin1String("subject"));
         QCOMPARE(values.at(3).second, QLatin1String("Re: [Cocci] [PATCH 1/2] scripts: coccicheck: Change default value for\tparallelism"));
     }
     {
-        //Bug 427697
-        const QByteArray ba(QByteArrayLiteral("mailto:cocci%40systeme.lip6.fr?Subject=Re%3A%20%5BCocci%5D%20%5BPATCH%5D%20scripts%3A%20coccicheck%3A%20Refactor%20display%20messages%20on%0A%20coccinelle%20start%20up&In-Reply-To=%3C20201003142012.idwudlhqiv3a4mjj%40adolin%3E"));
+        // Bug 427697
+        const QByteArray ba(
+            QByteArrayLiteral("mailto:cocci%40systeme.lip6.fr?Subject=Re%3A%20%5BCocci%5D%20%5BPATCH%5D%20scripts%3A%20coccicheck%3A%20Refactor%20display%"
+                              "20messages%20on%0A%20coccinelle%20start%20up&In-Reply-To=%3C20201003142012.idwudlhqiv3a4mjj%40adolin%3E"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
-        QVector<QPair<QString, QString> > values = StringUtil::parseMailtoUrl(urlDecoded);
+        QVector<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 3);
         qDebug() << " values " << values;
         QCOMPARE(values.at(0).first, QLatin1String("to"));
@@ -630,68 +640,52 @@ void StringUtilTest::test_replaceMessagePrefix_data()
     QTest::addColumn<QString>("newPrefix");
     QTest::addColumn<QString>("expectedResult");
 
-    QTest::newRow("no previous prefix") << QStringLiteral("Hello World Subject")
-                                        << true << QStringLiteral("New_Prefix:")
+    QTest::newRow("no previous prefix") << QStringLiteral("Hello World Subject") << true << QStringLiteral("New_Prefix:")
                                         << QStringLiteral("New_Prefix: Hello World Subject");
 
-    QTest::newRow("no previous prefix, no replace") << QStringLiteral("Hello World Subject")
-                                                    << false << QStringLiteral("New_Prefix:")
+    QTest::newRow("no previous prefix, no replace") << QStringLiteral("Hello World Subject") << false << QStringLiteral("New_Prefix:")
                                                     << QStringLiteral("New_Prefix: Hello World Subject");
 
-    QTest::newRow("No default reply forward") << QStringLiteral("AA: Hello World Subject")
-                                              << true << QStringLiteral("New_Prefix:")
+    QTest::newRow("No default reply forward") << QStringLiteral("AA: Hello World Subject") << true << QStringLiteral("New_Prefix:")
                                               << QStringLiteral("New_Prefix: AA: Hello World Subject");
 
-    QTest::newRow("No default reply forward, no replace") << QStringLiteral("AA: Hello World Subject")
-                                                          << false << QStringLiteral("New_Prefix:")
-                                                          << QStringLiteral("New_Prefix: AA: Hello World Subject");
+    QTest::newRow("No default reply forward, no replace")
+        << QStringLiteral("AA: Hello World Subject") << false << QStringLiteral("New_Prefix:") << QStringLiteral("New_Prefix: AA: Hello World Subject");
 
-    QTest::newRow("Default Reply Re:") << QStringLiteral("Re: Hello World Subject")
-                                       << true << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply Re:") << QStringLiteral("Re: Hello World Subject") << true << QStringLiteral("New_Prefix:")
                                        << QStringLiteral("New_Prefix: Hello World Subject");
 
-    QTest::newRow("Default Reply Re:, no replace") << QStringLiteral("Re: Hello World Subject")
-                                                   << false << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply Re:, no replace") << QStringLiteral("Re: Hello World Subject") << false << QStringLiteral("New_Prefix:")
                                                    << QStringLiteral("Re: Hello World Subject");
 
-    QTest::newRow("Default Reply FW:") << QStringLiteral("FW: Hello World Subject")
-                                       << true << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply FW:") << QStringLiteral("FW: Hello World Subject") << true << QStringLiteral("New_Prefix:")
                                        << QStringLiteral("New_Prefix: Hello World Subject");
 
-    QTest::newRow("Default Reply FW:, no replace") << QStringLiteral("FW: Hello World Subject")
-                                                   << false << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply FW:, no replace") << QStringLiteral("FW: Hello World Subject") << false << QStringLiteral("New_Prefix:")
                                                    << QStringLiteral("FW: Hello World Subject");
 
-    QTest::newRow("Default Reply FWD:") << QStringLiteral("FWD: Hello World Subject")
-                                        << true << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply FWD:") << QStringLiteral("FWD: Hello World Subject") << true << QStringLiteral("New_Prefix:")
                                         << QStringLiteral("New_Prefix: Hello World Subject");
 
-    QTest::newRow("Default Reply FWD:, no replace") << QStringLiteral("FWD: Hello World Subject")
-                                                    << false << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply FWD:, no replace") << QStringLiteral("FWD: Hello World Subject") << false << QStringLiteral("New_Prefix:")
                                                     << QStringLiteral("FWD: Hello World Subject");
 
-    QTest::newRow("Default Reply Re   :") << QStringLiteral("Re   : Hello World Subject")
-                                          << true << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply Re   :") << QStringLiteral("Re   : Hello World Subject") << true << QStringLiteral("New_Prefix:")
                                           << QStringLiteral("New_Prefix: Hello World Subject");
 
-    QTest::newRow("Default Reply Re   :, no replace") << QStringLiteral("Re   : Hello World Subject")
-                                                      << false << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply Re   :, no replace") << QStringLiteral("Re   : Hello World Subject") << false << QStringLiteral("New_Prefix:")
                                                       << QStringLiteral("Re   : Hello World Subject");
 
-    QTest::newRow("Default Reply Re1:") << QStringLiteral("Re1: Hello World Subject")
-                                        << true << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply Re1:") << QStringLiteral("Re1: Hello World Subject") << true << QStringLiteral("New_Prefix:")
                                         << QStringLiteral("New_Prefix: Hello World Subject");
 
-    QTest::newRow("Default Reply Re1:, no replace") << QStringLiteral("Re1: Hello World Subject")
-                                                    << false << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply Re1:, no replace") << QStringLiteral("Re1: Hello World Subject") << false << QStringLiteral("New_Prefix:")
                                                     << QStringLiteral("Re1: Hello World Subject");
 
-    QTest::newRow("Default Reply Re[2]:") << QStringLiteral("Re[2]: Hello World Subject")
-                                          << true << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply Re[2]:") << QStringLiteral("Re[2]: Hello World Subject") << true << QStringLiteral("New_Prefix:")
                                           << QStringLiteral("New_Prefix: Hello World Subject");
 
-    QTest::newRow("Default Reply Re[2]:, no replace") << QStringLiteral("Re[2]: Hello World Subject")
-                                                      << false << QStringLiteral("New_Prefix:")
+    QTest::newRow("Default Reply Re[2]:, no replace") << QStringLiteral("Re[2]: Hello World Subject") << false << QStringLiteral("New_Prefix:")
                                                       << QStringLiteral("Re[2]: Hello World Subject");
 }
 
@@ -702,8 +696,11 @@ void StringUtilTest::test_replaceMessagePrefix()
     QFETCH(QString, newPrefix);
     QFETCH(QString, expectedResult);
 
-    const QStringList regexPattern = {QStringLiteral("Re\\s*:"), QStringLiteral("Re\\[\\d+\\]:"),
-                                      QStringLiteral("Re\\d+:"), QStringLiteral("Fwd:"), QStringLiteral("FW:")};
+    const QStringList regexPattern = {QStringLiteral("Re\\s*:"),
+                                      QStringLiteral("Re\\[\\d+\\]:"),
+                                      QStringLiteral("Re\\d+:"),
+                                      QStringLiteral("Fwd:"),
+                                      QStringLiteral("FW:")};
 
     const QString str = StringUtil::replacePrefixes(subject, regexPattern, shouldReplace, newPrefix);
     QCOMPARE(str, expectedResult);

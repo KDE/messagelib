@@ -10,7 +10,8 @@
 #include "mimetreeparser/objecttreesource.h"
 #include <memory>
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class SimpleObjectTreeSourcePrivate;
 
 /**

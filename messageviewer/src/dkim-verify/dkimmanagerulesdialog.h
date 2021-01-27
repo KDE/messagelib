@@ -6,9 +6,10 @@
 #ifndef DKIMMANAGERULESDIALOG_H
 #define DKIMMANAGERULESDIALOG_H
 
-#include <QDialog>
 #include "messageviewer_export.h"
-namespace MessageViewer {
+#include <QDialog>
+namespace MessageViewer
+{
 class DKIMManageRulesWidget;
 /**
  * @brief The DKIMManageRulesDialog class

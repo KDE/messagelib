@@ -7,10 +7,11 @@
 #ifndef DEVELOPERTOOLDIALOG_H
 #define DEVELOPERTOOLDIALOG_H
 
-#include <QDialog>
 #include "messageviewer_private_export.h"
+#include <QDialog>
 class QWebEnginePage;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class DeveloperToolWidget;
 class MESSAGEVIEWER_TESTS_EXPORT DeveloperToolDialog : public QDialog
 {
@@ -19,6 +20,7 @@ public:
     explicit DeveloperToolDialog(QWidget *parent = nullptr);
     ~DeveloperToolDialog() override;
     QWebEnginePage *enginePage() const;
+
 private:
     void readConfig();
     void writeConfig();

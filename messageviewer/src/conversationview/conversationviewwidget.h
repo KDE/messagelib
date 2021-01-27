@@ -8,7 +8,8 @@
 #define CONVERSATIONVIEWWIDGET_H
 
 #include <QWidget>
-namespace MessageViewer {
+namespace MessageViewer
+{
 class ConversationViewWidget : public QWidget
 {
     Q_OBJECT

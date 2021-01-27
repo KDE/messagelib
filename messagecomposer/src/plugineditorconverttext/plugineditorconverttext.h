@@ -7,9 +7,10 @@
 #ifndef PLUGINEDITORCONVERTTEXT_H
 #define PLUGINEDITORCONVERTTEXT_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
-namespace MessageComposer {
+#include <QObject>
+namespace MessageComposer
+{
 class PluginEditorConverttextPrivate;
 class PluginEditorConvertTextInterface;
 /**

@@ -10,7 +10,8 @@
 #include "templateparser_private_export.h"
 #include <QObject>
 #include <QString>
-namespace TemplateParser {
+namespace TemplateParser
+{
 class TemplateWebEnginePage;
 class TEMPLATEPARSER_TESTS_EXPORT TemplateExtractHtmlElementFromMail : public QObject
 {

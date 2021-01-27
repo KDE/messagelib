@@ -7,8 +7,8 @@
 #ifndef SEARCHFULLHASHGUI_H
 #define SEARCHFULLHASHGUI_H
 
-#include <QWidget>
 #include "../searchfullhashjob.h"
+#include <QWidget>
 class QLineEdit;
 class QPlainTextEdit;
 class SearchFullHashGui : public QWidget
@@ -21,6 +21,7 @@ private Q_SLOTS:
     void slotCheckUrl();
     void slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus result);
     void slotJSonDebug(const QByteArray &debug);
+
 private:
     QLineEdit *mCheckHashLineEdit;
     QLineEdit *mDataBaseHashLineEdit;

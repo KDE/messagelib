@@ -15,7 +15,8 @@
 #include <netinet/in.h>
 #endif
 
-namespace {
+namespace
+{
 const int kBitsPerByte = 8;
 const unsigned int kMaxBitIndex = kBitsPerByte * sizeof(uint32_t);
 }
@@ -183,8 +184,7 @@ bool RiceDecoder::nextBits(unsigned int numRequestedBits, uint32_t *x)
         // |mCurrentWord|.
         uint32_t lower = bitsFromCurrentWord(num_bits_left_in_current_word);
 
-        unsigned int num_bits_from_next_word
-            = numRequestedBits - num_bits_left_in_current_word;
+        unsigned int num_bits_from_next_word = numRequestedBits - num_bits_left_in_current_word;
         uint32_t upper;
         bool result = nextBits(num_bits_from_next_word, &upper);
         if (!result) {

@@ -7,14 +7,15 @@
 #ifndef VIEWERPLUGININTERFACE_H
 #define VIEWERPLUGININTERFACE_H
 
-#include <QObject>
 #include "messageviewer_export.h"
-#include <KMime/Message>
 #include <AkonadiCore/Item>
+#include <KMime/Message>
+#include <QObject>
 
 class QAction;
 class KActionCollection;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class ViewerPluginInterfacePrivate;
 /**
  * @brief The ViewerPluginInterface class
@@ -26,13 +27,7 @@ class MESSAGEVIEWER_EXPORT ViewerPluginInterface : public QObject
 public:
     explicit ViewerPluginInterface(QObject *parent = nullptr);
     ~ViewerPluginInterface() override;
-    enum SpecificFeatureType {
-        None = 0,
-        NeedSelection = 2,
-        NeedMessage = 4,
-        NeedUrl = 8,
-        All = 16
-    };
+    enum SpecificFeatureType { None = 0, NeedSelection = 2, NeedMessage = 4, NeedUrl = 8, All = 16 };
     Q_FLAGS(SpecificFeatureTypes)
     Q_DECLARE_FLAGS(SpecificFeatureTypes, SpecificFeatureType)
 

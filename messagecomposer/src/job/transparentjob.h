@@ -11,7 +11,8 @@
 #include "contentjobbase.h"
 #include "messagecomposer_export.h"
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class TransparentJobPrivate;
 
 /**

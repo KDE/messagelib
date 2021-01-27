@@ -13,8 +13,10 @@
 
 #include <QListWidget>
 
-namespace MessageList {
-namespace Utils {
+namespace MessageList
+{
+namespace Utils
+{
 class ConfigureThemesDialog : public QDialog
 {
     Q_OBJECT

@@ -8,8 +8,8 @@
 #include "htmlwriter/webengineembedpart.h"
 
 #include <QBuffer>
-#include <QUrl>
 #include <QImage>
+#include <QUrl>
 #include <QWebEngineUrlRequestInfo>
 
 using namespace MessageViewer;
@@ -28,8 +28,7 @@ bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &inf
     const QUrl urlRequestUrl(info.requestUrl());
     if (urlRequestUrl.scheme() == QLatin1String("cid")) {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
-            const QUrl newUrl = QUrl(MessageViewer::WebEngineEmbedPart::self()->contentUrl(
-                                         urlRequestUrl.path()));
+            const QUrl newUrl = QUrl(MessageViewer::WebEngineEmbedPart::self()->contentUrl(urlRequestUrl.path()));
             if (!newUrl.isEmpty()) {
 #ifdef LOAD_FROM_FILE
                 QImage image(newUrl.path());

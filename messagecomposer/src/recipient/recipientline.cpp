@@ -10,8 +10,8 @@
 #include <KEmailAddress>
 #include <KLocalizedString>
 
-#include <QKeyEvent>
 #include <QHBoxLayout>
+#include <QKeyEvent>
 
 using namespace MessageComposer;
 using namespace KPIM;
@@ -30,23 +30,23 @@ void RecipientComboBox::keyPressEvent(QKeyEvent *ev)
     }
 }
 
-RecipientLineEdit::RecipientLineEdit(QWidget *parent) : ComposerLineEdit(parent)
+RecipientLineEdit::RecipientLineEdit(QWidget *parent)
+    : ComposerLineEdit(parent)
 {
     setExpandIntern(false);
 }
 
 void RecipientLineEdit::keyPressEvent(QKeyEvent *ev)
 {
-    //Laurent Bug:280153
+    // Laurent Bug:280153
     /*if ( ev->key() == Qt::Key_Backspace  &&  text().isEmpty() ) {
     ev->accept();
     Q_EMIT deleteMe();
     } else */
-    if (ev->key() == Qt::Key_Left && cursorPosition() == 0
-        && !ev->modifiers().testFlag(Qt::ShiftModifier)) {      // Shift would be pressed during selection
+    if (ev->key() == Qt::Key_Left && cursorPosition() == 0 && !ev->modifiers().testFlag(Qt::ShiftModifier)) { // Shift would be pressed during selection
         Q_EMIT leftPressed();
     } else if (ev->key() == Qt::Key_Right && cursorPosition() == text().length()
-               && !ev->modifiers().testFlag(Qt::ShiftModifier)) {  // Shift would be pressed during selection
+               && !ev->modifiers().testFlag(Qt::ShiftModifier)) { // Shift would be pressed during selection
         Q_EMIT rightPressed();
     } else {
         MessageComposer::ComposerLineEdit::keyPressEvent(ev);
@@ -76,8 +76,7 @@ RecipientLineNG::RecipientLineNG(QWidget *parent)
 
     connect(mEdit, &RecipientLineEdit::returnPressed, this, &RecipientLineNG::slotReturnPressed);
     connect(mEdit, &RecipientLineEdit::deleteMe, this, &RecipientLineNG::slotPropagateDeletion);
-    connect(mEdit, &QLineEdit::textChanged,
-            this, &RecipientLineNG::analyzeLine);
+    connect(mEdit, &QLineEdit::textChanged, this, &RecipientLineNG::analyzeLine);
     connect(mEdit, &RecipientLineEdit::focusUp, this, &RecipientLineNG::slotFocusUp);
     connect(mEdit, &RecipientLineEdit::focusDown, this, &RecipientLineNG::slotFocusDown);
     connect(mEdit, &RecipientLineEdit::rightPressed, this, &RecipientLineNG::rightPressed);
@@ -88,8 +87,7 @@ RecipientLineNG::RecipientLineNG(QWidget *parent)
     connect(mEdit, &RecipientLineEdit::clearButtonClicked, this, &RecipientLineNG::slotPropagateDeletion);
     connect(mCombo, &RecipientComboBox::rightPressed, mEdit, qOverload<>(&QWidget::setFocus));
 
-    connect(mCombo, qOverload<int>(&RecipientComboBox::activated),
-            this, &RecipientLineNG::slotTypeModified);
+    connect(mCombo, qOverload<int>(&RecipientComboBox::activated), this, &RecipientLineNG::slotTypeModified);
 
     connect(mEdit, &RecipientLineEdit::addAddress, this, &RecipientLineNG::slotAddRecipient);
 }

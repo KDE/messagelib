@@ -13,7 +13,8 @@
 
 #include <QUrl>
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @brief The AttachmentFromUrlBaseJob class
  */
@@ -36,8 +37,8 @@ public:
     Q_REQUIRED_RESULT qint64 maximumAllowedSize() const;
 
     /**
-    * Sets the @p url of the folder that will be loaded as attachment.
-    */
+     * Sets the @p url of the folder that will be loaded as attachment.
+     */
     void setUrl(const QUrl &url);
 
     /**

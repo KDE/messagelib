@@ -9,7 +9,8 @@
 
 #include "messagecomposer_export.h"
 #include <KMime/Message>
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The PluginEditorConverterInitialData class
  * @author Laurent Montel <montel@kde.org>

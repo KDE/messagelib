@@ -36,13 +36,13 @@
 *******************************************************************************/
 
 #include "messageviewer/messageviewerutil.h"
-#include "messageviewerutil_p.h"
-#include <KPIMTextEdit/TextToSpeech>
-#include <MimeTreeParser/NodeHelper>
-#include "messageviewer_debug.h"
 #include "MessageCore/MessageCoreSettings"
 #include "MessageCore/NodeHelper"
 #include "MessageCore/StringUtil"
+#include "messageviewer_debug.h"
+#include "messageviewerutil_p.h"
+#include <KPIMTextEdit/TextToSpeech>
+#include <MimeTreeParser/NodeHelper>
 
 #include <PimCommon/RenameFileDialog>
 
@@ -53,25 +53,25 @@
 
 #include <KMbox/MBox>
 
-#include <KMime/Message>
-#include <KFileWidget>
 #include <KCharsets>
+#include <KFileWidget>
+#include <KIO/FileCopyJob>
+#include <KIO/StatJob>
+#include <KJobWidgets>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <QFileDialog>
-#include <ktoolinvocation.h>
-#include <KJobWidgets>
-#include <KIO/StatJob>
-#include <KIO/FileCopyJob>
+#include <KMime/Message>
 #include <KRecentDirs>
 #include <QAction>
+#include <QActionGroup>
+#include <QDBusConnectionInterface>
+#include <QDesktopServices>
+#include <QFileDialog>
 #include <QIcon>
+#include <QRegularExpression>
 #include <QTemporaryFile>
 #include <QWidget>
-#include <QDBusConnectionInterface>
-#include <QActionGroup>
-#include <QDesktopServices>
-#include <QRegularExpression>
+#include <ktoolinvocation.h>
 
 using namespace MessageViewer;
 /** Checks whether @p str contains external references. To be precise,
@@ -81,19 +81,15 @@ using namespace MessageViewer;
 
 bool Util::containsExternalReferences(const QString &str, const QString &extraHead)
 {
-    const bool hasBaseInHeader = extraHead.contains(QLatin1String(
-                                                        "<base href=\""), Qt::CaseInsensitive);
-    if (hasBaseInHeader && (str.contains(QLatin1String("href=\"/"), Qt::CaseInsensitive)
-                            || str.contains(QLatin1String("<img src=\"/"), Qt::CaseInsensitive))) {
+    const bool hasBaseInHeader = extraHead.contains(QLatin1String("<base href=\""), Qt::CaseInsensitive);
+    if (hasBaseInHeader && (str.contains(QLatin1String("href=\"/"), Qt::CaseInsensitive) || str.contains(QLatin1String("<img src=\"/"), Qt::CaseInsensitive))) {
         return true;
     }
     int httpPos = str.indexOf(QLatin1String("\"http:"), Qt::CaseInsensitive);
     int httpsPos = str.indexOf(QLatin1String("\"https:"), Qt::CaseInsensitive);
     while (httpPos >= 0 || httpsPos >= 0) {
         // pos = index of next occurrence of "http: or "https: whichever comes first
-        int pos = (httpPos < httpsPos)
-                  ? ((httpPos >= 0) ? httpPos : httpsPos)
-                  : ((httpsPos >= 0) ? httpsPos : httpPos);
+        int pos = (httpPos < httpsPos) ? ((httpPos >= 0) ? httpPos : httpsPos) : ((httpsPos >= 0) ? httpsPos : httpPos);
         // look backwards for "href"
         if (pos > 5) {
             int hrefPos = str.lastIndexOf(QLatin1String("href"), pos - 5, Qt::CaseInsensitive);
@@ -104,8 +100,7 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
                 // HTML messages created by KMail itself for now contain the following:
                 // <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
                 // Make sure not to show an external references warning for this string
-                int dtdPos = str.indexOf(QLatin1String(
-                                             "http://www.w3.org/TR/html4/loose.dtd"), pos + 1);
+                int dtdPos = str.indexOf(QLatin1String("http://www.w3.org/TR/html4/loose.dtd"), pos + 1);
                 if (dtdPos != (pos + 1)) {
                     return true;
                 }
@@ -133,10 +128,12 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
             }
         }
         if (!newStringImg.isEmpty()) {
-            static QRegularExpression image1RegularExpression = QRegularExpression(QStringLiteral("<img.*src=\"https?:/.*\".*>"), QRegularExpression::CaseInsensitiveOption);
+            static QRegularExpression image1RegularExpression =
+                QRegularExpression(QStringLiteral("<img.*src=\"https?:/.*\".*>"), QRegularExpression::CaseInsensitiveOption);
             const bool containsReg2 = newStringImg.contains(image1RegularExpression, &rmatch);
             if (!containsReg2) {
-                static QRegularExpression image2RegularExpression = QRegularExpression(QStringLiteral("<img.*src=https?:/.*>"), QRegularExpression::CaseInsensitiveOption);
+                static QRegularExpression image2RegularExpression =
+                    QRegularExpression(QStringLiteral("<img.*src=https?:/.*>"), QRegularExpression::CaseInsensitiveOption);
                 const bool containsReg = newStringImg.contains(image2RegularExpression, &rmatch);
                 return containsReg;
             } else {
@@ -158,12 +155,13 @@ bool Util::checkOverwrite(const QUrl &url, QWidget *w)
         fileExists = job->exec();
     }
     if (fileExists) {
-        if (KMessageBox::Cancel == KMessageBox::warningContinueCancel(
-                w,
-                i18n("A file named \"%1\" already exists. "
-                     "Are you sure you want to overwrite it?", url.toDisplayString()),
-                i18n("Overwrite File?"),
-                KStandardGuiItem::overwrite())) {
+        if (KMessageBox::Cancel
+            == KMessageBox::warningContinueCancel(w,
+                                                  i18n("A file named \"%1\" already exists. "
+                                                       "Are you sure you want to overwrite it?",
+                                                       url.toDisplayString()),
+                                                  i18n("Overwrite File?"),
+                                                  KStandardGuiItem::overwrite())) {
             return false;
         }
     }
@@ -210,11 +208,9 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
     const bool multiple = (contents.count() > 1);
     if (multiple) {
         // get the dir
-        dirUrl = QFileDialog::getExistingDirectoryUrl(parent, i18n(
-                                                          "Save Attachments To"),
-                                                      KFileWidget::getStartUrl(QUrl(QStringLiteral(
-                                                                                        "kfiledialog:///attachmentDir")),
-                                                                               recentDirClass));
+        dirUrl = QFileDialog::getExistingDirectoryUrl(parent,
+                                                      i18n("Save Attachments To"),
+                                                      KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass));
         if (!dirUrl.isValid()) {
             return false;
         }
@@ -233,13 +229,10 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
             fileName = i18nc("filename for an unnamed attachment", "attachment.1");
         }
 
-        QUrl localUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral(
-                                                          "kfiledialog:///attachmentDir")),
-                                                 recentDirClass);
+        QUrl localUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass);
         localUrl.setPath(localUrl.path() + QLatin1Char('/') + fileName);
         QFileDialog::Options options = QFileDialog::DontConfirmOverwrite;
-        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), localUrl,
-                                          QString(), nullptr, options);
+        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), localUrl, QString(), nullptr, options);
         if (url.isEmpty()) {
             return false;
         }
@@ -250,12 +243,11 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
         KRecentDirs::add(recentDirClass, currentFolder.path());
     }
 
-    QMap< QString, int > renameNumbering;
+    QMap<QString, int> renameNumbering;
 
     bool globalResult = true;
     int unnamedAtmCount = 0;
-    PimCommon::RenameFileDialog::RenameFileDialogResult result
-        = PimCommon::RenameFileDialog::RENAMEFILE_IGNORE;
+    PimCommon::RenameFileDialog::RenameFileDialogResult result = PimCommon::RenameFileDialog::RENAMEFILE_IGNORE;
     for (KMime::Content *content : qAsConst(contents)) {
         QUrl curUrl;
         if (!dirUrl.isEmpty()) {
@@ -264,8 +256,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
             fileName = MessageCore::StringUtil::cleanFileName(fileName);
             if (fileName.isEmpty()) {
                 ++unnamedAtmCount;
-                fileName = i18nc("filename for the %1-th unnamed attachment",
-                                 "attachment.%1", unnamedAtmCount);
+                fileName = i18nc("filename for the %1-th unnamed attachment", "attachment.%1", unnamedAtmCount);
             }
             if (!curUrl.path().endsWith(QLatin1Char('/'))) {
                 curUrl.setPath(curUrl.path() + QLatin1Char('/'));
@@ -275,7 +266,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
             curUrl = url;
         }
         if (!curUrl.isEmpty()) {
-            //Bug #312954
+            // Bug #312954
             if (multiple && (curUrl.fileName() == QLatin1String("smime.p7s"))) {
                 continue;
             }
@@ -288,8 +279,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                 file = origFile;
                 int num = renameNumbering[file] + 1;
                 int dotIdx = file.lastIndexOf(QLatin1Char('.'));
-                file.insert((dotIdx >= 0) ? dotIdx : file.length(), QLatin1Char(
-                                '_') + QString::number(num));
+                file.insert((dotIdx >= 0) ? dotIdx : file.length(), QLatin1Char('_') + QString::number(num));
             }
             curUrl = curUrl.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash);
             curUrl.setPath(curUrl.path() + QLatin1Char('/') + file);
@@ -309,8 +299,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                 }
             }
 
-            if (!(result == PimCommon::RenameFileDialog::RENAMEFILE_OVERWRITEALL
-                  || result == PimCommon::RenameFileDialog::RENAMEFILE_IGNOREALL)) {
+            if (!(result == PimCommon::RenameFileDialog::RENAMEFILE_OVERWRITEALL || result == PimCommon::RenameFileDialog::RENAMEFILE_IGNOREALL)) {
                 bool fileExists = false;
                 if (curUrl.isLocalFile()) {
                     fileExists = QFile::exists(curUrl.toLocalFile());
@@ -320,14 +309,9 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                     fileExists = job->exec();
                 }
                 if (fileExists) {
-                    QPointer<PimCommon::RenameFileDialog> dlg = new PimCommon::RenameFileDialog(
-                        curUrl,
-                        multiple,
-                        parent);
-                    result
-                        = static_cast<PimCommon::RenameFileDialog::RenameFileDialogResult>(dlg->exec());
-                    if (result == PimCommon::RenameFileDialog::RENAMEFILE_IGNORE
-                        || result == PimCommon::RenameFileDialog::RENAMEFILE_IGNOREALL) {
+                    QPointer<PimCommon::RenameFileDialog> dlg = new PimCommon::RenameFileDialog(curUrl, multiple, parent);
+                    result = static_cast<PimCommon::RenameFileDialog::RenameFileDialogResult>(dlg->exec());
+                    if (result == PimCommon::RenameFileDialog::RENAMEFILE_IGNORE || result == PimCommon::RenameFileDialog::RENAMEFILE_IGNOREALL) {
                         delete dlg;
                         continue;
                     } else if (result == PimCommon::RenameFileDialog::RENAMEFILE_RENAME) {
@@ -438,8 +422,7 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
     }
 #else
     const QByteArray data = content->decodedContent();
-    qCWarning(MESSAGEVIEWER_LOG)
-        << "Port the encryption/signature handling when saving a KMime::Content.";
+    qCWarning(MESSAGEVIEWER_LOG) << "Port the encryption/signature handling when saving a KMime::Content.";
 #endif
     QDataStream ds;
     QFile file;
@@ -514,11 +497,7 @@ QString Util::generateFileNameForExtension(const Akonadi::Item &msgBase, const Q
     QString fileName;
 
     if (msgBase.hasPayload<KMime::Message::Ptr>()) {
-        fileName
-            = MessageCore::StringUtil::cleanFileName(MessageCore::StringUtil::cleanSubject(
-                                                         msgBase.
-                                                         payload
-                                                         <KMime::Message::Ptr>().data()).trimmed());
+        fileName = MessageCore::StringUtil::cleanFileName(MessageCore::StringUtil::cleanSubject(msgBase.payload<KMime::Message::Ptr>().data()).trimmed());
         fileName.remove(QLatin1Char('\"'));
     } else {
         fileName = i18n("message");
@@ -546,17 +525,18 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
     const QString filter = i18n("email messages (*.mbox);;all files (*)");
 
     QString fileClass;
-    const QUrl startUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral(
-                                                            "kfiledialog:///savemessage")),
-                                                   fileClass);
+    const QUrl startUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///savemessage")), fileClass);
     QUrl localUrl;
     localUrl.setPath(startUrl.path() + QLatin1Char('/') + fileName);
     QFileDialog::Options opt;
     if (appendMessages) {
         opt |= QFileDialog::DontConfirmOverwrite;
     }
-    QUrl dirUrl = QFileDialog::getSaveFileUrl(parent, i18np("Save Message", "Save Messages",
-                                                            retrievedMsgs.count()), QUrl::fromLocalFile(localUrl.toString()), filter, nullptr,
+    QUrl dirUrl = QFileDialog::getSaveFileUrl(parent,
+                                              i18np("Save Message", "Save Messages", retrievedMsgs.count()),
+                                              QUrl::fromLocalFile(localUrl.toString()),
+                                              filter,
+                                              nullptr,
                                               opt);
     if (!dirUrl.isEmpty()) {
         QFile file;
@@ -578,11 +558,9 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
         KMBox::MBox mbox;
         if (!mbox.load(localFileName)) {
             if (appendMessages) {
-                KMessageBox::error(parent, i18n("File %1 could not be loaded.",
-                                                localFileName), i18n("Error loading message"));
+                KMessageBox::error(parent, i18n("File %1 could not be loaded.", localFileName), i18n("Error loading message"));
             } else {
-                KMessageBox::error(parent, i18n("File %1 could not be created.",
-                                                localFileName), i18n("Error saving message"));
+                KMessageBox::error(parent, i18n("File %1 could not be created.", localFileName), i18n("Error saving message"));
             }
             return false;
         }
@@ -593,14 +571,12 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
         }
 
         if (!mbox.save()) {
-            KMessageBox::error(parent, i18n("We cannot save message."),
-                               i18n("Error saving message"));
+            KMessageBox::error(parent, i18n("We cannot save message."), i18n("Error saving message"));
             return false;
         }
         localUrl = QUrl::fromLocalFile(localFileName);
         if (localUrl.isLocalFile()) {
-            KRecentDirs::add(fileClass, localUrl.adjusted(
-                                 QUrl::RemoveFilename | QUrl::StripTrailingSlash).path());
+            KRecentDirs::add(fileClass, localUrl.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash).path());
         }
 
         if (!dirUrl.isLocalFile()) {
@@ -682,8 +658,7 @@ const QTextCodec *Util::codecForName(const QByteArray &_str)
 
 void Util::readGravatarConfig()
 {
-    Gravatar::GravatarCache::self()->setMaximumSize(
-        Gravatar::GravatarSettings::self()->gravatarCacheSize());
+    Gravatar::GravatarCache::self()->setMaximumSize(Gravatar::GravatarSettings::self()->gravatarCacheSize());
     if (!Gravatar::GravatarSettings::self()->gravatarSupportEnabled()) {
         Gravatar::GravatarCache::self()->clear();
     }
@@ -693,7 +668,7 @@ QString Util::parseBodyStyle(const QString &style)
 {
     const int indexStyle = style.indexOf(QLatin1String("style=\""));
     if (indexStyle != -1) {
-        //qDebug() << " style " << style;
+        // qDebug() << " style " << style;
         const int indexEnd = style.indexOf(QLatin1Char('"'), indexStyle + 7);
         if (indexEnd != -1) {
             const QStringRef styleStr = style.midRef(indexStyle + 7, indexEnd - (indexStyle + 7));
@@ -757,15 +732,16 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
     QRegularExpressionMatch matchBody;
     const int bodyStartIndex = s.indexOf(body, 0, &matchBody);
     if (bodyStartIndex >= 0) {
-        //qDebug() << "matchBody  " << matchBody.capturedTexts();
+        // qDebug() << "matchBody  " << matchBody.capturedTexts();
         s = s.remove(bodyStartIndex, matchBody.capturedLength()).trimmed();
-        //Parse style
+        // Parse style
         messageInfo.bodyStyle = matchBody.captured();
     }
-    //Some mail has </div>$ at end
-    static QRegularExpression htmlDivRegularExpression = QRegularExpression(QStringLiteral("(</html></div>|</html>)$"), QRegularExpression::CaseInsensitiveOption);
+    // Some mail has </div>$ at end
+    static QRegularExpression htmlDivRegularExpression =
+        QRegularExpression(QStringLiteral("(</html></div>|</html>)$"), QRegularExpression::CaseInsensitiveOption);
     s = s.remove(htmlDivRegularExpression).trimmed();
-    //s = s.remove(QRegularExpression(QStringLiteral("</html>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
+    // s = s.remove(QRegularExpression(QStringLiteral("</html>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
     static QRegularExpression bodyEndRegularExpression = QRegularExpression(QStringLiteral("</body>$"), QRegularExpression::CaseInsensitiveOption);
     s = s.remove(bodyEndRegularExpression).trimmed();
     messageInfo.htmlSource = textBeforeDoctype + s;
@@ -781,17 +757,15 @@ QByteArray Util::htmlCodec(const QByteArray &data, const QByteArray &codec)
     if (currentCodec == QByteArray("us-ascii")) {
         currentCodec = QByteArray("iso-8859-1");
     }
-    if (data.contains("charset=\"utf-8\"")
-        || data.contains("charset=\"UTF-8\"")
-        || data.contains("charset=UTF-8")) {
+    if (data.contains("charset=\"utf-8\"") || data.contains("charset=\"UTF-8\"") || data.contains("charset=UTF-8")) {
         currentCodec = QByteArray("UTF-8");
     }
 
-    //qDebug() << " codec ******************************************: " << codec << " currentCodec : " <<currentCodec;
+    // qDebug() << " codec ******************************************: " << codec << " currentCodec : " <<currentCodec;
     return currentCodec;
 }
 
-QDebug operator <<(QDebug d, const Util::HtmlMessageInfo &t)
+QDebug operator<<(QDebug d, const Util::HtmlMessageInfo &t)
 {
     d << " htmlSource " << t.htmlSource;
     d << " extraHead " << t.extraHead;

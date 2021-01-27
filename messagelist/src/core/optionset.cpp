@@ -84,7 +84,7 @@ bool OptionSet::loadFromString(const QString &data)
     s >> marker;
 
     if (marker != gOptionSetInitialMarker) {
-        return false;    // invalid configuration
+        return false; // invalid configuration
     }
 
     int currentVersion;
@@ -92,19 +92,19 @@ bool OptionSet::loadFromString(const QString &data)
     s >> currentVersion;
 
     if (currentVersion > gOptionSetWithReadOnLyModeVersion) {
-        return false;    // invalid configuration
+        return false; // invalid configuration
     }
 
     s >> mId;
 
     if (mId.isEmpty()) {
-        return false;    // invalid configuration
+        return false; // invalid configuration
     }
 
     s >> mName;
 
     if (mName.isEmpty()) {
-        return false;    // invalid configuration
+        return false; // invalid configuration
     }
 
     s >> mDescription;
@@ -116,13 +116,13 @@ bool OptionSet::loadFromString(const QString &data)
     mReadOnly = readOnly;
 
     if (!load(s)) {
-        return false;    // invalid configuration
+        return false; // invalid configuration
     }
 
     s >> marker;
 
     if (marker != gOptionSetFinalMarker) {
-        return false;    // invalid configuration
+        return false; // invalid configuration
     }
 
     return true;

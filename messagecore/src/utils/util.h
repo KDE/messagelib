@@ -9,23 +9,26 @@
 
 #include <KIdentityManagement/Identity>
 
-namespace KIdentityManagement {
+namespace KIdentityManagement
+{
 class IdentityManager;
 }
 
-namespace KMime {
+namespace KMime
+{
 class Message;
 }
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * This namespace contain helper functions
  */
-namespace Util {
-
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT const KIdentityManagement::Identity &identityForMessage(KMime::Message *msg, const KIdentityManagement::IdentityManager *const identMgr, uint folderIdentityId);
+namespace Util
+{
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT const KIdentityManagement::Identity &
+identityForMessage(KMime::Message *msg, const KIdentityManagement::IdentityManager *const identMgr, uint folderIdentityId);
 }
 }
 
 #endif
-

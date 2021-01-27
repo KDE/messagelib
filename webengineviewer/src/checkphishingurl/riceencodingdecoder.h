@@ -7,11 +7,12 @@
 #ifndef RICEENCODINGDECODER_H
 #define RICEENCODINGDECODER_H
 
-#include "webengineviewer_private_export.h"
 #include "updatedatabaseinfo.h"
+#include "webengineviewer_private_export.h"
 #include <QVector>
-namespace WebEngineViewer {
-//https://developers.google.com/safe-browsing/v4/compression
+namespace WebEngineViewer
+{
+// https://developers.google.com/safe-browsing/v4/compression
 class RiceDecoder
 {
 public:
@@ -23,6 +24,7 @@ public:
     bool nextBits(unsigned int num_requested_bits, uint32_t *x);
     uint32_t bitsFromCurrentWord(unsigned int num_requested_bits);
     bool nextWord(uint32_t *word);
+
 private:
     QByteArray mEncodingData;
     int mRiceParameter;

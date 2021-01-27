@@ -7,9 +7,9 @@
 #include "templateeditor_gui.h"
 #include "templateparser/templatestextedit.h"
 
-#include <QHBoxLayout>
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QHBoxLayout>
 #include <QStandardPaths>
 
 TemplateEditorTestWidget::TemplateEditorTestWidget(QWidget *parent)

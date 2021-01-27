@@ -57,7 +57,7 @@ QString MessageViewer::DKIMUtil::bodyCanonizationSimple(QString body)
     //       single "CRLF"; that is, the canonicalized length will be 2 octets.
     body.replace(QStringLiteral("\n"), QStringLiteral("\r\n"));
     body.replace(QRegularExpression(QStringLiteral("((\r\n)+)?$")), QStringLiteral("\r\n"));
-    if (body.endsWith(QLatin1String("\r\n"))) { //Remove it from start
+    if (body.endsWith(QLatin1String("\r\n"))) { // Remove it from start
         body.chop(2);
     }
     if (body.isEmpty()) {
@@ -73,7 +73,7 @@ QByteArray MessageViewer::DKIMUtil::generateHash(const QByteArray &body, QCrypto
 
 QString MessageViewer::DKIMUtil::headerCanonizationSimple(const QString &headerName, const QString &headerValue)
 {
-    //TODO verify it lower it ?
+    // TODO verify it lower it ?
     return headerName + QLatin1Char(':') + headerValue;
 }
 
@@ -106,21 +106,21 @@ QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &header
     newHeaderValue.replace(QRegularExpression(QStringLiteral("\r\n[ \t]+")), QStringLiteral(" "));
     newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]+")), QStringLiteral(" "));
     newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]+\r\n")), QStringLiteral("\r\n"));
-    //Perhaps remove tab after headername and before value name
-    //newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]*:[ \t]")), QStringLiteral(":"));
-    if (newHeaderName == QLatin1String("content-type") && removeQuoteOnContentType) { //Remove quote in charset
+    // Perhaps remove tab after headername and before value name
+    // newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]*:[ \t]")), QStringLiteral(":"));
+    if (newHeaderName == QLatin1String("content-type") && removeQuoteOnContentType) { // Remove quote in charset
         if (newHeaderValue.contains(QLatin1String("charset=\""))) {
             newHeaderValue.remove(QLatin1Char('"'));
         }
     }
-    //Remove extra space.
+    // Remove extra space.
     newHeaderValue = newHeaderValue.trimmed();
     return newHeaderName + QLatin1Char(':') + newHeaderValue;
 }
 
 QString MessageViewer::DKIMUtil::cleanString(QString str)
 {
-    //Move as static ?
+    // Move as static ?
     // WSP help pattern as specified in Section 2.8 of RFC 6376
     const QString pattWSP = QStringLiteral("[ \t]");
     // FWS help pattern as specified in Section 2.8 of RFC 6376

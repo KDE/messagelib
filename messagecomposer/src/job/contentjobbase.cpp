@@ -61,8 +61,8 @@ void ContentJobBase::start()
 KMime::Content *ContentJobBase::content() const
 {
     Q_D(const ContentJobBase);
-    //Q_ASSERT( !hasSubjobs() ); // Finished. // JobBase::hasSubjobs is not const :-/ TODO const_cast??
-    Q_ASSERT(d->resultContent);   // process() should do something.
+    // Q_ASSERT( !hasSubjobs() ); // Finished. // JobBase::hasSubjobs is not const :-/ TODO const_cast??
+    Q_ASSERT(d->resultContent); // process() should do something.
     return d->resultContent;
 }
 
@@ -97,15 +97,15 @@ bool ContentJobBase::addSubjob(KJob *job)
 void ContentJobBase::doStart()
 {
     Q_D(ContentJobBase);
-    Q_ASSERT(d->resultContent == nullptr && d->subjobContents.isEmpty());   // Not started.
-    Q_ASSERT(!error());   // Jobs emitting an error in doStart should not call ContentJobBase::doStart().
+    Q_ASSERT(d->resultContent == nullptr && d->subjobContents.isEmpty()); // Not started.
+    Q_ASSERT(!error()); // Jobs emitting an error in doStart should not call ContentJobBase::doStart().
     d->doNextSubjob();
 }
 
 void ContentJobBase::slotResult(KJob *job)
 {
     Q_D(ContentJobBase);
-    KCompositeJob::slotResult(job);   // Handles errors and removes subjob.
+    KCompositeJob::slotResult(job); // Handles errors and removes subjob.
     qCDebug(MESSAGECOMPOSER_LOG) << "A subjob finished." << subjobs().count() << "more to go.";
     if (error()) {
         return;

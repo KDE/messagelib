@@ -4,9 +4,9 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "downloadlocaldatabasethread.h"
 #include "createdatabasefilejob.h"
 #include "webengineviewer_debug.h"
-#include "downloadlocaldatabasethread.h"
 using namespace WebEngineViewer;
 
 DownloadLocalDatabaseThread::DownloadLocalDatabaseThread(QObject *parent)
@@ -35,14 +35,16 @@ void DownloadLocalDatabaseThread::run()
     }
     auto job = new WebEngineViewer::CreatePhishingUrlDataBaseJob;
     job->moveToThread(this);
-    job->setDataBaseDownloadNeeded(mCurrentDataBaseState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
+    job->setDataBaseDownloadNeeded(mCurrentDataBaseState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase
+                                                                   : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
     job->setDataBaseState(mCurrentDataBaseState);
     connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &DownloadLocalDatabaseThread::slotDownloadDataBaseFinished);
     job->start();
     exec();
 }
 
-void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
+void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
+                                                               WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
 {
     bool dataBaseOk = false;
     switch (status) {

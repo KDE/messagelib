@@ -8,8 +8,8 @@
 
 #include "utils.h"
 
-#include "objecttreeparser.h"
 #include "messagepart.h"
+#include "objecttreeparser.h"
 
 #include <KMime/Content>
 
@@ -51,7 +51,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         return MessagePart::Ptr();
     }
 
-    //Latin1 or utf8 ?
+    // Latin1 or utf8 ?
     const QString str = QString::fromLatin1(curNode->decodedContent());
 
     //###
@@ -82,7 +82,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         return MessagePart::Ptr();
     }
 
-    //if ( curNode->mRoot )
+    // if ( curNode->mRoot )
     //  curNode = curNode->mRoot;
 
     // at least one message found: build a mime tree
@@ -91,7 +91,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
 
     MessagePartList::Ptr mpl(new MessagePartList(part.objectTreeParser()));
     mpl->appendSubPart(createAndParseTempNode(part, part.topLevelContent(), digestHeaderStr.toLatin1().constData(), "Digest Header"));
-    //mReader->queueHtml("<br><hr><br>");
+    // mReader->queueHtml("<br><hr><br>");
     // temporarily change current node's Content-Type
     // to get our embedded RfC822 messages properly inserted
     curNode->contentType()->setMimeType("multipart/digest");
@@ -111,7 +111,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         } else {
             thisDelim = thisDelim + 1;
         }
-        //while( thisDelim < cstr.size() && '\n' == cstr[thisDelim] )
+        // while( thisDelim < cstr.size() && '\n' == cstr[thisDelim] )
         //  ++thisDelim;
 
         partStr = QStringLiteral("Content-Type: message/rfc822\nContent-Description: embedded message\n\n");
@@ -128,7 +128,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         }
         qCDebug(MIMETREEPARSER_LOG) << "        embedded message found: \"" << subject;
         mpl->appendSubPart(createAndParseTempNode(part, part.topLevelContent(), partStr.toLatin1().constData(), subject.toLatin1().constData()));
-        //mReader->queueHtml("<br><hr><br>");
+        // mReader->queueHtml("<br><hr><br>");
         thisDelim = nextDelim + 1;
         nextDelim = str.indexOf(delim1, thisDelim, Qt::CaseInsensitive);
         if (-1 == nextDelim) {

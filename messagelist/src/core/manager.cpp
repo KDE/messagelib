@@ -9,12 +9,12 @@
 #include "core/manager.h"
 
 #include "core/aggregation.h"
+#include "core/model.h"
+#include "core/model_p.h"
+#include "core/storagemodelbase.h"
 #include "core/theme.h"
 #include "core/view.h"
 #include "core/widgetbase.h"
-#include "core/storagemodelbase.h"
-#include "core/model.h"
-#include "core/model_p.h"
 #include "messagelistsettings.h"
 
 #include "utils/configureaggregationsdialog.h"
@@ -29,8 +29,8 @@
 
 #include <kmime/kmime_dateformatter.h> // kdepimlibs
 
-#include <KConfig>
 #include "messagelist_debug.h"
+#include <KConfig>
 #include <KLocalizedString>
 
 using namespace MessageList::Core;
@@ -47,18 +47,14 @@ Manager::Manager()
     mCachedLocalizedUnknownText = i18nc("Unknown date", "Unknown");
 
     loadConfiguration();
-    connect(MessageListSettings::self(), &MessageListSettings::configChanged,
-            this, &Manager::reloadGlobalConfiguration);
-    connect(MessageCore::MessageCoreSettings::self(), &MessageCore::MessageCoreSettings::configChanged,
-            this, &Manager::reloadGlobalConfiguration);
+    connect(MessageListSettings::self(), &MessageListSettings::configChanged, this, &Manager::reloadGlobalConfiguration);
+    connect(MessageCore::MessageCoreSettings::self(), &MessageCore::MessageCoreSettings::configChanged, this, &Manager::reloadGlobalConfiguration);
 }
 
 Manager::~Manager()
 {
-    disconnect(MessageListSettings::self(), &MessageListSettings::configChanged,
-               this, &Manager::reloadGlobalConfiguration);
-    disconnect(MessageCore::MessageCoreSettings::self(), &MessageCore::MessageCoreSettings::configChanged,
-               this, &Manager::reloadGlobalConfiguration);
+    disconnect(MessageListSettings::self(), &MessageListSettings::configChanged, this, &Manager::reloadGlobalConfiguration);
+    disconnect(MessageCore::MessageCoreSettings::self(), &MessageCore::MessageCoreSettings::configChanged, this, &Manager::reloadGlobalConfiguration);
 
     saveConfiguration();
     removeAllAggregations();
@@ -105,8 +101,7 @@ const Aggregation *Manager::aggregation(const QString &id)
 
 const Aggregation *Manager::defaultAggregation()
 {
-    KConfigGroup conf(MessageListSettings::self()->config(),
-                      MessageList::Util::storageModelAggregationsGroup());
+    KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelAggregationsGroup());
 
     const QString aggregationId = conf.readEntry(QStringLiteral("DefaultSet"), "");
 
@@ -121,7 +116,7 @@ const Aggregation *Manager::defaultAggregation()
     }
 
     // try just the first one
-    QMap< QString, Aggregation * >::ConstIterator it = mAggregations.constBegin();
+    QMap<QString, Aggregation *>::ConstIterator it = mAggregations.constBegin();
     if (it != mAggregations.constEnd()) {
         return *it;
     }
@@ -147,8 +142,7 @@ void Manager::saveAggregationForStorageModel(const StorageModel *storageModel, c
 
 void Manager::saveAggregationForStorageModel(const QString &modelId, const QString &id, bool storageUsesPrivateAggregation)
 {
-    KConfigGroup conf(MessageListSettings::self()->config(),
-                      MessageList::Util::storageModelAggregationsGroup());
+    KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelAggregationsGroup());
 
     if (storageUsesPrivateAggregation) {
         conf.writeEntry(MessageList::Util::setForStorageModelConfigName().arg(modelId), id);
@@ -187,8 +181,7 @@ const Aggregation *Manager::aggregationForStorageModel(const StorageModel *stora
 
 const Aggregation *Manager::aggregationForStorageModel(const QString &storageId, bool *storageUsesPrivateAggregation)
 {
-    KConfigGroup conf(MessageListSettings::self()->config(),
-                      MessageList::Util::storageModelAggregationsGroup());
+    KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelAggregationsGroup());
 
     const QString aggregationId = conf.readEntry(MessageList::Util::setForStorageModelConfigName().arg(storageId), "");
 
@@ -219,136 +212,99 @@ void Manager::addAggregation(Aggregation *set)
 
 void Manager::createDefaultAggregations()
 {
-    addAggregation(
-        new Aggregation(
-            i18n("Current Activity, Threaded"),
-            i18n("This view uses smart date range groups. " \
-                 "Messages are threaded. " \
-                 "So for example, in \"Today\" you will find all the messages arrived today " \
-                 "and all the threads that have been active today."
-                 ),
-            Aggregation::GroupByDateRange,
-            Aggregation::ExpandRecentGroups,
-            Aggregation::PerfectReferencesAndSubject,
-            Aggregation::MostRecentMessage,
-            Aggregation::ExpandThreadsWithUnreadOrImportantMessages,
-            Aggregation::FavorInteractivity,
-            true
-            )
-        );
+    addAggregation(new Aggregation(i18n("Current Activity, Threaded"),
+                                   i18n("This view uses smart date range groups. "
+                                        "Messages are threaded. "
+                                        "So for example, in \"Today\" you will find all the messages arrived today "
+                                        "and all the threads that have been active today."),
+                                   Aggregation::GroupByDateRange,
+                                   Aggregation::ExpandRecentGroups,
+                                   Aggregation::PerfectReferencesAndSubject,
+                                   Aggregation::MostRecentMessage,
+                                   Aggregation::ExpandThreadsWithUnreadOrImportantMessages,
+                                   Aggregation::FavorInteractivity,
+                                   true));
 
-    addAggregation(
-        new Aggregation(
-            i18n("Current Activity, Flat"),
-            i18n("This view uses smart date range groups. " \
-                 "Messages are not threaded. " \
-                 "So for example, in \"Today\" you will simply find all the messages arrived today."
-                 ),
-            Aggregation::GroupByDateRange,
-            Aggregation::ExpandRecentGroups,
-            Aggregation::NoThreading,
-            Aggregation::MostRecentMessage,
-            Aggregation::NeverExpandThreads,
-            Aggregation::FavorInteractivity,
-            true
-            )
-        );
+    addAggregation(new Aggregation(i18n("Current Activity, Flat"),
+                                   i18n("This view uses smart date range groups. "
+                                        "Messages are not threaded. "
+                                        "So for example, in \"Today\" you will simply find all the messages arrived today."),
+                                   Aggregation::GroupByDateRange,
+                                   Aggregation::ExpandRecentGroups,
+                                   Aggregation::NoThreading,
+                                   Aggregation::MostRecentMessage,
+                                   Aggregation::NeverExpandThreads,
+                                   Aggregation::FavorInteractivity,
+                                   true));
 
-    addAggregation(
-        new Aggregation(
-            i18n("Activity by Date, Threaded"),
-            i18n("This view uses day-by-day groups. " \
-                 "Messages are threaded. " \
-                 "So for example, in \"Today\" you will find all the messages arrived today " \
-                 "and all the threads that have been active today."
-                 ),
-            Aggregation::GroupByDate,
-            Aggregation::ExpandRecentGroups,
-            Aggregation::PerfectReferencesAndSubject,
-            Aggregation::MostRecentMessage,
-            Aggregation::ExpandThreadsWithUnreadOrImportantMessages,
-            Aggregation::FavorInteractivity,
-            true
-            )
-        );
+    addAggregation(new Aggregation(i18n("Activity by Date, Threaded"),
+                                   i18n("This view uses day-by-day groups. "
+                                        "Messages are threaded. "
+                                        "So for example, in \"Today\" you will find all the messages arrived today "
+                                        "and all the threads that have been active today."),
+                                   Aggregation::GroupByDate,
+                                   Aggregation::ExpandRecentGroups,
+                                   Aggregation::PerfectReferencesAndSubject,
+                                   Aggregation::MostRecentMessage,
+                                   Aggregation::ExpandThreadsWithUnreadOrImportantMessages,
+                                   Aggregation::FavorInteractivity,
+                                   true));
 
-    addAggregation(
-        new Aggregation(
-            i18n("Activity by Date, Flat"),
-            i18n("This view uses day-by-day groups. " \
-                 "Messages are not threaded. " \
-                 "So for example, in \"Today\" you will simply find all the messages arrived today."
-                 ),
-            Aggregation::GroupByDate,
-            Aggregation::ExpandRecentGroups,
-            Aggregation::NoThreading,
-            Aggregation::MostRecentMessage,
-            Aggregation::NeverExpandThreads,
-            Aggregation::FavorInteractivity,
-            true
-            )
-        );
+    addAggregation(new Aggregation(i18n("Activity by Date, Flat"),
+                                   i18n("This view uses day-by-day groups. "
+                                        "Messages are not threaded. "
+                                        "So for example, in \"Today\" you will simply find all the messages arrived today."),
+                                   Aggregation::GroupByDate,
+                                   Aggregation::ExpandRecentGroups,
+                                   Aggregation::NoThreading,
+                                   Aggregation::MostRecentMessage,
+                                   Aggregation::NeverExpandThreads,
+                                   Aggregation::FavorInteractivity,
+                                   true));
 
-    addAggregation(
-        new Aggregation(
-            i18n("Standard Mailing List"),
-            i18n("This is a plain and old mailing list view: no groups and heavy threading."),
-            Aggregation::NoGrouping,
-            Aggregation::NeverExpandGroups,
-            Aggregation::PerfectReferencesAndSubject,
-            Aggregation::TopmostMessage,
-            Aggregation::ExpandThreadsWithUnreadOrImportantMessages,
-            Aggregation::FavorInteractivity,
-            true
-            )
-        );
+    addAggregation(new Aggregation(i18n("Standard Mailing List"),
+                                   i18n("This is a plain and old mailing list view: no groups and heavy threading."),
+                                   Aggregation::NoGrouping,
+                                   Aggregation::NeverExpandGroups,
+                                   Aggregation::PerfectReferencesAndSubject,
+                                   Aggregation::TopmostMessage,
+                                   Aggregation::ExpandThreadsWithUnreadOrImportantMessages,
+                                   Aggregation::FavorInteractivity,
+                                   true));
 
-    addAggregation(
-        new Aggregation(
-            i18n("Flat Date View"),
-            i18n("This is a plain and old list of messages sorted by date: no groups and no threading." \
-                 ),
-            Aggregation::NoGrouping,
-            Aggregation::NeverExpandGroups,
-            Aggregation::NoThreading,
-            Aggregation::TopmostMessage,
-            Aggregation::NeverExpandThreads,
-            Aggregation::FavorInteractivity,
-            true
+    addAggregation(new Aggregation(i18n("Flat Date View"),
+                                   i18n("This is a plain and old list of messages sorted by date: no groups and no threading."),
+                                   Aggregation::NoGrouping,
+                                   Aggregation::NeverExpandGroups,
+                                   Aggregation::NoThreading,
+                                   Aggregation::TopmostMessage,
+                                   Aggregation::NeverExpandThreads,
+                                   Aggregation::FavorInteractivity,
+                                   true
 
-            )
-        );
+                                   ));
 
-    addAggregation(
-        new Aggregation(
-            i18n("Senders/Receivers, Flat"),
-            i18n("This view groups the messages by senders or receivers (depending on the folder " \
-                 "type). " \
-                 "Messages are not threaded."
-                 ),
-            Aggregation::GroupBySenderOrReceiver,
-            Aggregation::NeverExpandGroups,
-            Aggregation::NoThreading,
-            Aggregation::TopmostMessage,
-            Aggregation::NeverExpandThreads,
-            Aggregation::FavorSpeed,
-            true
-            )
-        );
+    addAggregation(new Aggregation(i18n("Senders/Receivers, Flat"),
+                                   i18n("This view groups the messages by senders or receivers (depending on the folder "
+                                        "type). "
+                                        "Messages are not threaded."),
+                                   Aggregation::GroupBySenderOrReceiver,
+                                   Aggregation::NeverExpandGroups,
+                                   Aggregation::NoThreading,
+                                   Aggregation::TopmostMessage,
+                                   Aggregation::NeverExpandThreads,
+                                   Aggregation::FavorSpeed,
+                                   true));
 
-    addAggregation(
-        new Aggregation(
-            i18n("Thread Starters"),
-            i18n("This view groups the messages in threads and then groups the threads by the starting user."),
-            Aggregation::GroupBySenderOrReceiver,
-            Aggregation::NeverExpandGroups,
-            Aggregation::PerfectReferencesAndSubject,
-            Aggregation::TopmostMessage,
-            Aggregation::NeverExpandThreads,
-            Aggregation::FavorSpeed,
-            true
-            )
-        );
+    addAggregation(new Aggregation(i18n("Thread Starters"),
+                                   i18n("This view groups the messages in threads and then groups the threads by the starting user."),
+                                   Aggregation::GroupBySenderOrReceiver,
+                                   Aggregation::NeverExpandGroups,
+                                   Aggregation::PerfectReferencesAndSubject,
+                                   Aggregation::TopmostMessage,
+                                   Aggregation::NeverExpandThreads,
+                                   Aggregation::FavorSpeed,
+                                   true));
 
     /*
     FIX THIS
@@ -372,9 +328,9 @@ void Manager::createDefaultAggregations()
 
 void Manager::removeAllAggregations()
 {
-    QMap< QString, Aggregation * >::ConstIterator end(mAggregations.constEnd());
-    for (QMap< QString, Aggregation * >::ConstIterator it = mAggregations.constBegin(); it != end; ++it) {
-        delete(*it);
+    QMap<QString, Aggregation *>::ConstIterator end(mAggregations.constEnd());
+    for (QMap<QString, Aggregation *>::ConstIterator it = mAggregations.constBegin(); it != end; ++it) {
+        delete (*it);
     }
 
     mAggregations.clear();
@@ -383,7 +339,7 @@ void Manager::removeAllAggregations()
 void Manager::aggregationsConfigurationCompleted()
 {
     if (mAggregations.isEmpty()) {
-        createDefaultAggregations();    // panic
+        createDefaultAggregations(); // panic
     }
 
     saveConfiguration(); // just to be sure :)
@@ -441,7 +397,7 @@ const Theme *Manager::defaultTheme()
     }
 
     // try just the first one
-    QMap< QString, Theme * >::ConstIterator it = mThemes.constBegin();
+    QMap<QString, Theme *>::ConstIterator it = mThemes.constBegin();
     if (it != mThemes.constEnd()) {
         return *it;
     }
@@ -537,7 +493,13 @@ void Manager::addTheme(Theme *set)
     mThemes.insert(set->id(), set);
 }
 
-static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name, Theme::ContentItem::Type type, bool visibleByDefault, SortOrder::MessageSorting messageSorting, bool alignRight, bool addGroupHeaderItem)
+static Theme::Column *add_theme_simple_text_column(Theme *s,
+                                                   const QString &name,
+                                                   Theme::ContentItem::Type type,
+                                                   bool visibleByDefault,
+                                                   SortOrder::MessageSorting messageSorting,
+                                                   bool alignRight,
+                                                   bool addGroupHeaderItem)
 {
     auto c = new Theme::Column();
     c->setLabel(name);
@@ -575,7 +537,12 @@ static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name
     return c;
 }
 
-static Theme::Column *add_theme_simple_icon_column(Theme *s, const QString &name, const QString &pixmapName, Theme::ContentItem::Type type, bool visibleByDefault, SortOrder::MessageSorting messageSorting)
+static Theme::Column *add_theme_simple_icon_column(Theme *s,
+                                                   const QString &name,
+                                                   const QString &pixmapName,
+                                                   Theme::ContentItem::Type type,
+                                                   bool visibleByDefault,
+                                                   SortOrder::MessageSorting messageSorting)
 {
     auto c = new Theme::Column();
     c->setLabel(name);
@@ -606,10 +573,8 @@ void Manager::createDefaultThemes()
 
     // The "Classic" backward compatible theme
 
-    s = new Theme(
-        i18nc("Default theme name", "Classic"),
-        i18n("A simple, backward compatible, single row theme"), true   /*readOnly*/
-        );
+    s = new Theme(i18nc("Default theme name", "Classic"), i18n("A simple, backward compatible, single row theme"), true /*readOnly*/
+    );
 
     c = new Theme::Column();
     c->setLabel(i18nc("@title:column Subject of messages", "Subject"));
@@ -647,24 +612,80 @@ void Manager::createDefaultThemes()
 
     s->addColumn(c);
 
-    c = add_theme_simple_text_column(s, i18n("Sender/Receiver"), Theme::ContentItem::SenderOrReceiver, true, SortOrder::SortMessagesBySenderOrReceiver, false, false);
+    c = add_theme_simple_text_column(s,
+                                     i18n("Sender/Receiver"),
+                                     Theme::ContentItem::SenderOrReceiver,
+                                     true,
+                                     SortOrder::SortMessagesBySenderOrReceiver,
+                                     false,
+                                     false);
     c->setIsSenderOrReceiver(true);
     add_theme_simple_text_column(s, i18nc("Sender of a message", "Sender"), Theme::ContentItem::Sender, false, SortOrder::SortMessagesBySender, false, false);
-    add_theme_simple_text_column(s, i18nc("Receiver of a message", "Receiver"), Theme::ContentItem::Receiver, false, SortOrder::SortMessagesByReceiver, false, false);
+    add_theme_simple_text_column(s,
+                                 i18nc("Receiver of a message", "Receiver"),
+                                 Theme::ContentItem::Receiver,
+                                 false,
+                                 SortOrder::SortMessagesByReceiver,
+                                 false,
+                                 false);
     add_theme_simple_text_column(s, i18nc("Date of a message", "Date"), Theme::ContentItem::Date, true, SortOrder::SortMessagesByDateTime, false, false);
-    add_theme_simple_text_column(s, i18n("Most Recent Date"), Theme::ContentItem::MostRecentDate, false, SortOrder::SortMessagesByDateTimeOfMostRecent, false, true);
+    add_theme_simple_text_column(s,
+                                 i18n("Most Recent Date"),
+                                 Theme::ContentItem::MostRecentDate,
+                                 false,
+                                 SortOrder::SortMessagesByDateTimeOfMostRecent,
+                                 false,
+                                 true);
     add_theme_simple_text_column(s, i18nc("Size of a message", "Size"), Theme::ContentItem::Size, false, SortOrder::SortMessagesBySize, false, false);
-    add_theme_simple_icon_column(s, i18nc("Attachment indication", "Attachment"), QStringLiteral(
-                                     "mail-attachment"), Theme::ContentItem::AttachmentStateIcon, false, SortOrder::SortMessagesByAttachmentStatus);
-    add_theme_simple_icon_column(s, i18n("Read/Unread"), QStringLiteral("mail-mark-unread-new"), Theme::ContentItem::ReadStateIcon, false, SortOrder::SortMessagesByUnreadStatus);
+    add_theme_simple_icon_column(s,
+                                 i18nc("Attachment indication", "Attachment"),
+                                 QStringLiteral("mail-attachment"),
+                                 Theme::ContentItem::AttachmentStateIcon,
+                                 false,
+                                 SortOrder::SortMessagesByAttachmentStatus);
+    add_theme_simple_icon_column(s,
+                                 i18n("Read/Unread"),
+                                 QStringLiteral("mail-mark-unread-new"),
+                                 Theme::ContentItem::ReadStateIcon,
+                                 false,
+                                 SortOrder::SortMessagesByUnreadStatus);
     add_theme_simple_icon_column(s, i18n("Replied"), QStringLiteral("mail-replied"), Theme::ContentItem::RepliedStateIcon, false, SortOrder::NoMessageSorting);
-    add_theme_simple_icon_column(s, i18nc("Message importance indication", "Important"), QStringLiteral(
-                                     "mail-mark-important"), Theme::ContentItem::ImportantStateIcon, false, SortOrder::SortMessagesByImportantStatus);
-    add_theme_simple_icon_column(s, i18n("Action Item"), QStringLiteral("mail-task"), Theme::ContentItem::ActionItemStateIcon, false, SortOrder::SortMessagesByActionItemStatus);
-    add_theme_simple_icon_column(s, i18n("Spam/Ham"), QStringLiteral("mail-mark-junk"), Theme::ContentItem::SpamHamStateIcon, false, SortOrder::NoMessageSorting);
-    add_theme_simple_icon_column(s, i18n("Watched/Ignored"), QStringLiteral("mail-thread-watch"), Theme::ContentItem::WatchedIgnoredStateIcon, false, SortOrder::NoMessageSorting);
-    add_theme_simple_icon_column(s, i18n("Encryption"), QStringLiteral("mail-encrypted-full"), Theme::ContentItem::EncryptionStateIcon, false, SortOrder::NoMessageSorting);
-    add_theme_simple_icon_column(s, i18n("Signature"), QStringLiteral("mail-signed-verified"), Theme::ContentItem::SignatureStateIcon, false, SortOrder::NoMessageSorting);
+    add_theme_simple_icon_column(s,
+                                 i18nc("Message importance indication", "Important"),
+                                 QStringLiteral("mail-mark-important"),
+                                 Theme::ContentItem::ImportantStateIcon,
+                                 false,
+                                 SortOrder::SortMessagesByImportantStatus);
+    add_theme_simple_icon_column(s,
+                                 i18n("Action Item"),
+                                 QStringLiteral("mail-task"),
+                                 Theme::ContentItem::ActionItemStateIcon,
+                                 false,
+                                 SortOrder::SortMessagesByActionItemStatus);
+    add_theme_simple_icon_column(s,
+                                 i18n("Spam/Ham"),
+                                 QStringLiteral("mail-mark-junk"),
+                                 Theme::ContentItem::SpamHamStateIcon,
+                                 false,
+                                 SortOrder::NoMessageSorting);
+    add_theme_simple_icon_column(s,
+                                 i18n("Watched/Ignored"),
+                                 QStringLiteral("mail-thread-watch"),
+                                 Theme::ContentItem::WatchedIgnoredStateIcon,
+                                 false,
+                                 SortOrder::NoMessageSorting);
+    add_theme_simple_icon_column(s,
+                                 i18n("Encryption"),
+                                 QStringLiteral("mail-encrypted-full"),
+                                 Theme::ContentItem::EncryptionStateIcon,
+                                 false,
+                                 SortOrder::NoMessageSorting);
+    add_theme_simple_icon_column(s,
+                                 i18n("Signature"),
+                                 QStringLiteral("mail-signed-verified"),
+                                 Theme::ContentItem::SignatureStateIcon,
+                                 false,
+                                 SortOrder::NoMessageSorting);
     add_theme_simple_icon_column(s, i18n("Tag List"), QStringLiteral("feed-subscribe"), Theme::ContentItem::TagList, false, SortOrder::NoMessageSorting);
 
     s->resetColumnState(); // so it's initially set from defaults
@@ -673,10 +694,8 @@ void Manager::createDefaultThemes()
 
     // The Fancy theme
 
-    s = new Theme(
-        i18n("Smart"),
-        i18n("A smart multiline and multi item theme"), true   /*readOnly*/
-        );
+    s = new Theme(i18n("Smart"), i18n("A smart multiline and multi item theme"), true /*readOnly*/
+    );
 
     c = new Theme::Column();
     c->setLabel(i18n("Message"));
@@ -717,7 +736,7 @@ void Manager::createDefaultThemes()
     r->addRightItem(i);
     c->addMessageRow(r);
 
-    Theme::Row *firstFancyRow = r;  // save it so we can continue adding stuff below (after cloning the theme)
+    Theme::Row *firstFancyRow = r; // save it so we can continue adding stuff below (after cloning the theme)
 
     r = new Theme::Row();
     i = new Theme::ContentItem(Theme::ContentItem::SenderOrReceiver);
@@ -798,9 +817,9 @@ void Manager::createDefaultThemes()
 
 void Manager::removeAllThemes()
 {
-    QMap< QString, Theme * >::ConstIterator end(mThemes.constEnd());
-    for (QMap< QString, Theme * >::ConstIterator it = mThemes.constBegin(); it != end; ++it) {
-        delete(*it);
+    QMap<QString, Theme *>::ConstIterator end(mThemes.constEnd());
+    for (QMap<QString, Theme *>::ConstIterator it = mThemes.constBegin(); it != end; ++it) {
+        delete (*it);
     }
 
     mThemes.clear();
@@ -809,7 +828,7 @@ void Manager::removeAllThemes()
 void Manager::themesConfigurationCompleted()
 {
     if (mThemes.isEmpty()) {
-        createDefaultThemes();    // panic
+        createDefaultThemes(); // panic
     }
 
     saveConfiguration(); // just to be sure :)
@@ -820,8 +839,8 @@ void Manager::themesConfigurationCompleted()
 
 void Manager::reloadAllWidgets()
 {
-    QList< Widget * >::ConstIterator end(mWidgetList.constEnd());
-    for (QList< Widget * >::ConstIterator it = mWidgetList.constBegin(); it != end; ++it) {
+    QList<Widget *>::ConstIterator end(mWidgetList.constEnd());
+    for (QList<Widget *>::ConstIterator it = mWidgetList.constBegin(); it != end; ++it) {
         if ((*it)->view()) {
             (*it)->view()->reload();
         }
@@ -836,10 +855,7 @@ void Manager::reloadGlobalConfiguration()
 
     loadGlobalConfiguration();
 
-    if (
-        (oldDateFormat != (int)mDateFormatter->format())
-        || (oldDateCustomFormat != mDateFormatter->customFormat())
-        ) {
+    if ((oldDateFormat != (int)mDateFormatter->format()) || (oldDateCustomFormat != mDateFormatter->customFormat())) {
         reloadAllWidgets();
     }
 }
@@ -847,8 +863,7 @@ void Manager::reloadGlobalConfiguration()
 void Manager::loadGlobalConfiguration()
 {
     // Load the date format
-    const auto type = static_cast<KMime::DateFormatter::FormatType>(
-        MessageCore::MessageCoreSettings::self()->dateFormat());
+    const auto type = static_cast<KMime::DateFormatter::FormatType>(MessageCore::MessageCoreSettings::self()->dateFormat());
     mDateFormatter->setCustomFormat(MessageCore::MessageCoreSettings::self()->customDateFormat());
     mDateFormatter->setFormat(type);
 }
@@ -936,13 +951,13 @@ void Manager::saveConfiguration()
         // store aggregations
 
         KConfigGroup conf(MessageListSettings::self()->config(), "MessageListView::Aggregations");
-        //conf.clear();
+        // conf.clear();
 
         conf.writeEntry("Count", mAggregations.count());
 
         int idx = 0;
-        QMap< QString, Aggregation * >::ConstIterator end(mAggregations.end());
-        for (QMap< QString, Aggregation * >::ConstIterator it = mAggregations.constBegin(); it != end; ++it) {
+        QMap<QString, Aggregation *>::ConstIterator end(mAggregations.end());
+        for (QMap<QString, Aggregation *>::ConstIterator it = mAggregations.constBegin(); it != end; ++it) {
             conf.writeEntry(QStringLiteral("Set%1").arg(idx), (*it)->saveToString());
             ++idx;
         }
@@ -952,13 +967,13 @@ void Manager::saveConfiguration()
         // store themes
 
         KConfigGroup conf(MessageListSettings::self()->config(), "MessageListView::Themes");
-        //conf.clear();
+        // conf.clear();
 
         conf.writeEntry("Count", mThemes.count());
 
         int idx = 0;
-        QMap< QString, Theme * >::ConstIterator end(mThemes.constEnd());
-        for (QMap< QString, Theme * >::ConstIterator it = mThemes.constBegin(); it != end; ++it) {
+        QMap<QString, Theme *>::ConstIterator end(mThemes.constEnd());
+        for (QMap<QString, Theme *>::ConstIterator it = mThemes.constBegin(); it != end; ++it) {
             conf.writeEntry(QStringLiteral("Set%1").arg(idx), (*it)->saveToString());
             ++idx;
         }

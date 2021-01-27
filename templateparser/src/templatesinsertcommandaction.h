@@ -11,7 +11,8 @@
 #include <TemplateParser/TemplatesCommandMenu>
 
 #include "templateparser_export.h"
-namespace TemplateParser {
+namespace TemplateParser
+{
 /**
  * @brief The TemplatesInsertCommandAction class
  * @author Laurent Montel <montel@kde.org>

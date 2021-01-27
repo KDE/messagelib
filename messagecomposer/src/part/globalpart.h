@@ -11,7 +11,8 @@
 
 #include <QByteArray>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The GlobalPart class
  */

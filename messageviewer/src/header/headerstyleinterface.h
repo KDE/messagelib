@@ -7,14 +7,15 @@
 #ifndef HEADERSTYLEINTERFACE_H
 #define HEADERSTYLEINTERFACE_H
 
-#include <QObject>
 #include "messageviewer_export.h"
+#include <QObject>
 class KToggleAction;
 class KActionCollection;
 class QAction;
 class QActionGroup;
 class KActionMenu;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class HeaderStyle;
 class HeaderStylePlugin;
 /**
@@ -27,7 +28,7 @@ class MESSAGEVIEWER_EXPORT HeaderStyleInterface : public QObject
 public:
     explicit HeaderStyleInterface(MessageViewer::HeaderStylePlugin *, QObject *parent = nullptr);
     ~HeaderStyleInterface() override;
-    Q_REQUIRED_RESULT QList<KToggleAction * > action() const;
+    Q_REQUIRED_RESULT QList<KToggleAction *> action() const;
     virtual void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) = 0;
     virtual void activateAction() = 0;
     Q_REQUIRED_RESULT HeaderStylePlugin *headerStylePlugin() const;
@@ -38,6 +39,7 @@ Q_SIGNALS:
 
 protected Q_SLOTS:
     void slotStyleChanged();
+
 protected:
     void addHelpTextAction(QAction *act, const QString &text);
     void addActionToMenu(KActionMenu *menu, QActionGroup *actionGroup);

@@ -7,13 +7,15 @@
 #ifndef MIMETREEPARSER_BODYFORAMATTER_MAILMAN_H
 #define MIMETREEPARSER_BODYFORAMATTER_MAILMAN_H
 
-#include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
+#include "interfaces/bodypartformatter.h"
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class MailmanBodyPartFormatter : public Interface::BodyPartFormatter
 {
     static const MailmanBodyPartFormatter *self;
+
 public:
     MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();

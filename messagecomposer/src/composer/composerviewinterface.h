@@ -10,7 +10,8 @@
 #include <MessageComposer/ComposerAttachmentInterface>
 #include <QString>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class ComposerViewBase;
 /**
  * @brief The ComposerViewInterface class
@@ -34,6 +35,7 @@ public:
     Q_REQUIRED_RESULT QString shortTime() const;
     Q_REQUIRED_RESULT QString longTime() const;
     Q_REQUIRED_RESULT QString insertDayOfWeek() const;
+
 private:
     ComposerViewBase *const mComposerView;
 };

@@ -41,55 +41,54 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey()
         }
         QVERIFY(compareResult);
     }
-//    Before
-//        PASS   : DKIMAuthenticationStatusInfoTest::initTestCase()
-//        PASS   : DKIMAuthenticationStatusInfoTest::shouldHaveDefaultValue()
-//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(empty)
-//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"empty":
-//             0.81 msecs per iteration (total: 52, iterations: 64)
-//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(test1)
-//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"test1":
-//             18 msecs per iteration (total: 72, iterations: 4)
-//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none)
-//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none":
-//             2.0 msecs per iteration (total: 65, iterations: 32)
-//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none2)
-//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none2":
-//             2.0 msecs per iteration (total: 66, iterations: 32)
-//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason)
-//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason":
-//             13 msecs per iteration (total: 52, iterations: 4)
-//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason2)
-//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason2":
-//             12 msecs per iteration (total: 97, iterations: 8)
-//        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(gmails)
-//        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"gmails":
-//             7.0 msecs per iteration (total: 56, iterations: 8)
-//        PASS   : DKIMAuthenticationStatusInfoTest::cleanupTestCase()
+    //    Before
+    //        PASS   : DKIMAuthenticationStatusInfoTest::initTestCase()
+    //        PASS   : DKIMAuthenticationStatusInfoTest::shouldHaveDefaultValue()
+    //        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(empty)
+    //        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"empty":
+    //             0.81 msecs per iteration (total: 52, iterations: 64)
+    //        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(test1)
+    //        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"test1":
+    //             18 msecs per iteration (total: 72, iterations: 4)
+    //        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none)
+    //        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none":
+    //             2.0 msecs per iteration (total: 65, iterations: 32)
+    //        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none2)
+    //        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none2":
+    //             2.0 msecs per iteration (total: 66, iterations: 32)
+    //        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason)
+    //        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason":
+    //             13 msecs per iteration (total: 52, iterations: 4)
+    //        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason2)
+    //        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason2":
+    //             12 msecs per iteration (total: 97, iterations: 8)
+    //        PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(gmails)
+    //        RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"gmails":
+    //             7.0 msecs per iteration (total: 56, iterations: 8)
+    //        PASS   : DKIMAuthenticationStatusInfoTest::cleanupTestCase()
 
-
-//    AFTER
-//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"empty":
-//     0.0089 msecs per iteration (total: 73, iterations: 8192)
-//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(test1)
-//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"test1":
-//     0.23 msecs per iteration (total: 59, iterations: 256)
-//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none)
-//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none":
-//     0.023 msecs per iteration (total: 96, iterations: 4096)
-//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none2)
-//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none2":
-//     0.023 msecs per iteration (total: 96, iterations: 4096)
-//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason)
-//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason":
-//     0.16 msecs per iteration (total: 83, iterations: 512)
-//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason2)
-//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason2":
-//     0.14 msecs per iteration (total: 75, iterations: 512)
-//PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(gmails)
-//RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"gmails":
-//     0.085 msecs per iteration (total: 88, iterations: 1024)
-//PASS   : DKIMAuthenticationStatusInfoTest::cleanupTestCase()
+    //    AFTER
+    // RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"empty":
+    //     0.0089 msecs per iteration (total: 73, iterations: 8192)
+    // PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(test1)
+    // RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"test1":
+    //     0.23 msecs per iteration (total: 59, iterations: 256)
+    // PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none)
+    // RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none":
+    //     0.023 msecs per iteration (total: 96, iterations: 4096)
+    // PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(none2)
+    // RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"none2":
+    //     0.023 msecs per iteration (total: 96, iterations: 4096)
+    // PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason)
+    // RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason":
+    //     0.16 msecs per iteration (total: 83, iterations: 512)
+    // PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(reason2)
+    // RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"reason2":
+    //     0.14 msecs per iteration (total: 75, iterations: 512)
+    // PASS   : DKIMAuthenticationStatusInfoTest::shouldParseKey(gmails)
+    // RESULT : DKIMAuthenticationStatusInfoTest::shouldParseKey():"gmails":
+    //     0.085 msecs per iteration (total: 88, iterations: 1024)
+    // PASS   : DKIMAuthenticationStatusInfoTest::cleanupTestCase()
 }
 
 void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
@@ -161,30 +160,24 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         lst.append(property3);
 
         info.setListAuthStatusInfo(lst);
-        QTest::addRow("test1") << QStringLiteral("in68.mail.ovh.net; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"GMG2ucPx\"; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"I3t3p7Up\"; dkim-atps=neutral")
-                               << info
-                               << false
-                               << true;
+        QTest::addRow("test1") << QStringLiteral(
+            "in68.mail.ovh.net; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"GMG2ucPx\"; dkim=pass (2048-bit key; "
+            "unprotected) header.d=kde.org header.i=@kde.org header.b=\"I3t3p7Up\"; dkim-atps=neutral")
+                               << info << false << true;
     }
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
         info.setAuthservId(QStringLiteral("example.org"));
 
-        QTest::addRow("none") << QStringLiteral("example.org 1; none;")
-                              << info
-                              << false
-                              << false;
+        QTest::addRow("none") << QStringLiteral("example.org 1; none;") << info << false << false;
     }
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
         info.setAuthservId(QStringLiteral("example.org"));
 
-        QTest::addRow("none2") << QStringLiteral("example.org 1; none")
-                               << info
-                               << false
-                               << false;
+        QTest::addRow("none2") << QStringLiteral("example.org 1; none") << info << false << false;
     }
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
@@ -223,13 +216,13 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         }
         info.setListAuthStatusInfo(lst);
 
-        QTest::addRow("reason") << QStringLiteral("example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" header.i=@newyork.example.com;")
-                                << info
-                                << false
-                                << true;
+        QTest::addRow("reason") << QStringLiteral(
+            "example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" "
+            "header.i=@newyork.example.com;")
+                                << info << false << true;
     }
 
-    //It will failed. Fix it
+    // It will failed. Fix it
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
@@ -267,10 +260,10 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         }
         info.setListAuthStatusInfo(lst);
 
-        QTest::addRow("reason2") << QStringLiteral("example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" header.i=@newyork.example.com")
-                                 << info
-                                 << true
-                                 << true;
+        QTest::addRow("reason2") << QStringLiteral(
+            "example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" "
+            "header.i=@newyork.example.com")
+                                 << info << true << true;
     }
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
@@ -292,9 +285,6 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         }
         info.setListAuthStatusInfo(lst);
 
-        QTest::addRow("gmails") << QStringLiteral("letterbox.kde.org; dmarc=pass (p=none dis=none) header.from=gmail.com\r\n")
-                                << info
-                                << true
-                                << true;
+        QTest::addRow("gmails") << QStringLiteral("letterbox.kde.org; dmarc=pass (p=none dis=none) header.from=gmail.com\r\n") << info << true << true;
     }
 }

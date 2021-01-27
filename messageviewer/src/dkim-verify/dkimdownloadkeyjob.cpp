@@ -26,8 +26,7 @@ bool DKIMDownloadKeyJob::start()
         return false;
     }
     mDnsLookup = new QDnsLookup(this);
-    connect(mDnsLookup, &QDnsLookup::finished,
-            this, &DKIMDownloadKeyJob::resolvDnsDone);
+    connect(mDnsLookup, &QDnsLookup::finished, this, &DKIMDownloadKeyJob::resolvDnsDone);
 
     mDnsLookup->setType(QDnsLookup::TXT);
     mDnsLookup->setName(resolvDnsValue());

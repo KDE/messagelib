@@ -7,10 +7,10 @@
 #include "utils/themecombobox.h"
 #include "utils/themecombobox_p.h"
 
-#include "storagemodel.h"
 #include "core/manager.h"
 #include "core/theme.h"
 #include "messagelistsettings.h"
+#include "storagemodel.h"
 
 using namespace MessageList::Core;
 using namespace MessageList::Utils;
@@ -103,7 +103,7 @@ void ThemeComboBoxPrivate::slotLoadThemes()
     q->clear();
 
     // Get all message list themes and sort them into alphabetical order.
-    QList< Theme * > themes = Manager::instance()->themes().values();
+    QList<Theme *> themes = Manager::instance()->themes().values();
     std::sort(themes.begin(), themes.end(), MessageList::Core::Theme::compareName);
 
     for (const Theme *theme : qAsConst(themes)) {

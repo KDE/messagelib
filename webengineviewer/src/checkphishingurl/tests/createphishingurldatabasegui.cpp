@@ -7,13 +7,13 @@
 #include "createphishingurldatabasegui.h"
 
 #include <QApplication>
-#include <QStandardPaths>
-#include <QPushButton>
-#include <QPlainTextEdit>
-#include <QVBoxLayout>
-#include <QInputDialog>
 #include <QComboBox>
 #include <QFileDialog>
+#include <QInputDialog>
+#include <QPlainTextEdit>
+#include <QPushButton>
+#include <QStandardPaths>
+#include <QVBoxLayout>
 
 extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBaseJob;
 

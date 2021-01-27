@@ -5,13 +5,13 @@
 */
 
 #include "mailtrackingdetailsdialog.h"
-#include <QVBoxLayout>
-#include <KLocalizedString>
-#include <QDialogButtonBox>
 #include <KConfigGroup>
-#include <QPushButton>
-#include <KSharedConfig>
+#include <KLocalizedString>
 #include <KPIMTextEdit/RichTextEditorWidget>
+#include <KSharedConfig>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 using namespace MessageViewer;
 MailTrackingDetailsDialog::MailTrackingDetailsDialog(QWidget *parent)
@@ -27,9 +27,7 @@ MailTrackingDetailsDialog::MailTrackingDetailsDialog(QWidget *parent)
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     connect(buttonBox, &QDialogButtonBox::rejected, this, &MailTrackingDetailsDialog::reject);
-    connect(buttonBox->button(
-                QDialogButtonBox::Close), &QPushButton::clicked, this,
-            &MailTrackingDetailsDialog::close);
+    connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &MailTrackingDetailsDialog::close);
 
     mDetails = new KPIMTextEdit::RichTextEditorWidget(this);
     mDetails->setObjectName(QStringLiteral("detail"));

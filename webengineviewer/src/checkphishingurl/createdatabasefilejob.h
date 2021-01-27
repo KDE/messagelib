@@ -7,11 +7,12 @@
 #ifndef CREATEDATABASEFILEJOB_H
 #define CREATEDATABASEFILEJOB_H
 
-#include <QObject>
-#include "webengineviewer_export.h"
 #include "updatedatabaseinfo.h"
+#include "webengineviewer_export.h"
+#include <QObject>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class CreateDatabaseFileJobPrivate;
 /**
  * @brief The CreateDatabaseFileJob class

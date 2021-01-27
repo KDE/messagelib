@@ -5,20 +5,20 @@
 */
 
 #include "grantleeheaderformatter.h"
+#include "config-messageviewer.h"
 #include "headerstyle_util.h"
 #include "settings/messageviewersettings.h"
 #include "utils/iconnamecache.h"
-#include "config-messageviewer.h"
 
 #include <MessageCore/StringUtil>
 #include <MimeTreeParser/NodeHelper>
 
-#include <kmime/kmime_message.h>
 #include <kmime/kmime_dateformatter.h>
+#include <kmime/kmime_message.h>
 
-#include <KLocalizedString>
-#include <KIconLoader>
 #include <KColorScheme>
+#include <KIconLoader>
+#include <KLocalizedString>
 
 #include <grantlee/engine.h>
 #include <grantlee/metatype.h>
@@ -34,9 +34,11 @@ Q_DECLARE_METATYPE(QSharedPointer<KMime::Headers::Generics::MailboxList>)
 Q_DECLARE_METATYPE(QDateTime)
 
 // Read-only introspection of KMime::Headers::Generics::AddressList object.
-namespace Grantlee {
+namespace Grantlee
+{
 template<>
-inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::lookUp(const KMime::Headers::Generics::AddressList *const object, const QString &property)
+inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::lookUp(const KMime::Headers::Generics::AddressList *const object,
+                                                                                    const QString &property)
 {
     if (property == QLatin1String("nameOnly")) {
         return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayNameOnly);
@@ -48,11 +50,12 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::loo
         return object->asUnicodeString();
     } else if (property.startsWith(QLatin1String("expandable"))) {
         const auto &name = property.mid(10);
-        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
-            object, MessageCore::StringUtil::DisplayFullAddress,
-            QString(), MessageCore::StringUtil::ShowLink,
-            MessageCore::StringUtil::ExpandableAddresses,
-            QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(object,
+                                                                       MessageCore::StringUtil::DisplayFullAddress,
+                                                                       QString(),
+                                                                       MessageCore::StringUtil::ShowLink,
+                                                                       MessageCore::StringUtil::ExpandableAddresses,
+                                                                       QStringLiteral("Full") + name + QStringLiteral("AddressList"));
         return val;
     }
     return QVariant();
@@ -70,19 +73,22 @@ if (property == QLatin1String("nameOnly")) {
     return object->asUnicodeString();
 } else if (property.startsWith(QLatin1String("expandable"))) {
     const auto &name = property.mid(10);
-    const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
-        object.data(), MessageCore::StringUtil::DisplayFullAddress,
-        QString(), MessageCore::StringUtil::ShowLink,
-        MessageCore::StringUtil::ExpandableAddresses,
-        QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+    const QString val = MessageCore::StringUtil::emailAddrAsAnchor(object.data(),
+                                                                   MessageCore::StringUtil::DisplayFullAddress,
+                                                                   QString(),
+                                                                   MessageCore::StringUtil::ShowLink,
+                                                                   MessageCore::StringUtil::ExpandableAddresses,
+                                                                   QStringLiteral("Full") + name + QStringLiteral("AddressList"));
     return val;
 }
 GRANTLEE_END_LOOKUP
 
 // Read-only introspection of KMime::Headers::Generics::MailboxList object.
-namespace Grantlee {
+namespace Grantlee
+{
 template<>
-inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::lookUp(const KMime::Headers::Generics::MailboxList *const object, const QString &property)
+inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::lookUp(const KMime::Headers::Generics::MailboxList *const object,
+                                                                                    const QString &property)
 {
     if (property == QLatin1String("nameOnly")) {
         return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayNameOnly);
@@ -94,11 +100,12 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::loo
         return object->asUnicodeString();
     } else if (property.startsWith(QLatin1String("expandable"))) {
         const auto &name = property.mid(10);
-        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
-            object, MessageCore::StringUtil::DisplayFullAddress,
-            QString(), MessageCore::StringUtil::ShowLink,
-            MessageCore::StringUtil::ExpandableAddresses,
-            QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(object,
+                                                                       MessageCore::StringUtil::DisplayFullAddress,
+                                                                       QString(),
+                                                                       MessageCore::StringUtil::ShowLink,
+                                                                       MessageCore::StringUtil::ExpandableAddresses,
+                                                                       QStringLiteral("Full") + name + QStringLiteral("AddressList"));
         return val;
     }
     return QVariant();
@@ -116,18 +123,19 @@ if (property == QLatin1String("nameOnly")) {
     return object->asUnicodeString();
 } else if (property.startsWith(QLatin1String("expandable"))) {
     const auto &name = property.mid(10);
-    const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
-        object.data(), MessageCore::StringUtil::DisplayFullAddress,
-        QString(), MessageCore::StringUtil::ShowLink,
-        MessageCore::StringUtil::ExpandableAddresses,
-        QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+    const QString val = MessageCore::StringUtil::emailAddrAsAnchor(object.data(),
+                                                                   MessageCore::StringUtil::DisplayFullAddress,
+                                                                   QString(),
+                                                                   MessageCore::StringUtil::ShowLink,
+                                                                   MessageCore::StringUtil::ExpandableAddresses,
+                                                                   QStringLiteral("Full") + name + QStringLiteral("AddressList"));
     return val;
 }
 GRANTLEE_END_LOOKUP
 
-namespace Grantlee {
-template<>
-inline QVariant TypeAccessor<QDateTime &>::lookUp(const QDateTime &object, const QString &property)
+namespace Grantlee
+{
+template<> inline QVariant TypeAccessor<QDateTime &>::lookUp(const QDateTime &object, const QString &property)
 {
     MessageViewer::HeaderStyleUtil::HeaderStyleUtilDateFormat dateFormat;
     if (property == QLatin1String("str")) {
@@ -199,7 +207,7 @@ public:
     {
         KTextToHTML::Options flags = KTextToHTML::PreserveSpaces;
         // TODO: somehow, we need to get settings from format method.
-        //if (showEmoticons) {
+        // if (showEmoticons) {
         //    flags |= KTextToHTML::ReplaceSmileys;
         //}
         auto subjectStr = nodeHelper->mailHeaderAsBase("subject", message)->asUnicodeString();
@@ -273,19 +281,26 @@ public:
     {
         Grantlee::registerMetaType<const KMime::Headers::Generics::AddressList *>();
         Grantlee::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
-        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList> >();
-        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::AddressList> >();
+        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList>>();
+        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::AddressList>>();
         Grantlee::registerMetaType<QDateTime>();
         iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
         engine = new Grantlee::Engine;
-        templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(
-            new Grantlee::FileSystemTemplateLoader);
+        templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader);
         engine->addTemplateLoader(templateLoader);
 
         QVector<QByteArray> addressHeaders;
-        addressHeaders << "to" << "reply-To" << "reply-From" << "cc" << "bcc" << "from" << "sender" << "resent-From" << "resent-To";
+        addressHeaders << "to"
+                       << "reply-To"
+                       << "reply-From"
+                       << "cc"
+                       << "bcc"
+                       << "from"
+                       << "sender"
+                       << "resent-From"
+                       << "resent-To";
 
-        for (const auto &header: qAsConst(addressHeaders)) {
+        for (const auto &header : qAsConst(addressHeaders)) {
             registerHeaderFormatter(header, QSharedPointer<HeaderFormatter>(new AddressHeaderFormatter(header)));
         }
 
@@ -304,7 +319,7 @@ public:
     }
 
     QSharedPointer<Grantlee::FileSystemTemplateLoader> templateLoader;
-    QMap<QByteArray, QSharedPointer<HeaderFormatter> > headerFormatter;
+    QMap<QByteArray, QSharedPointer<HeaderFormatter>> headerFormatter;
     Grantlee::Engine *engine = nullptr;
     MessageViewer::HeaderStyleUtil headerStyleUtil;
     int iconSize;
@@ -320,8 +335,7 @@ GrantleeHeaderFormatter::~GrantleeHeaderFormatter()
     delete d;
 }
 
-QString GrantleeHeaderFormatter::toHtml(
-    const GrantleeHeaderFormatter::GrantleeHeaderFormatterSettings &settings) const
+QString GrantleeHeaderFormatter::toHtml(const GrantleeHeaderFormatter::GrantleeHeaderFormatterSettings &settings) const
 {
     QString errorMessage;
     if (!settings.theme.isValid()) {
@@ -334,13 +348,21 @@ QString GrantleeHeaderFormatter::toHtml(
         errorMessage = headerTemplate->errorString();
         return errorMessage;
     }
-    return format(
-        settings.theme.absolutePath(), headerTemplate,
-        settings.theme.displayExtraVariables(), settings.isPrinting, settings.style, settings.message,
-        settings.showEmoticons);
+    return format(settings.theme.absolutePath(),
+                  headerTemplate,
+                  settings.theme.displayExtraVariables(),
+                  settings.isPrinting,
+                  settings.style,
+                  settings.message,
+                  settings.showEmoticons);
 }
 
-QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool isPrinting) const
+QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders,
+                                        const QString &absolutPath,
+                                        const QString &filename,
+                                        const MessageViewer::HeaderStyle *style,
+                                        KMime::Message *message,
+                                        bool isPrinting) const
 {
     d->templateLoader->setTemplateDirs(QStringList() << absolutPath);
     Grantlee::Template headerTemplate = d->engine->loadByName(filename);
@@ -350,7 +372,13 @@ QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, 
     return format(absolutPath, headerTemplate, displayExtraHeaders, isPrinting, style, message);
 }
 
-QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showEmoticons) const
+QString GrantleeHeaderFormatter::format(const QString &absolutePath,
+                                        const Grantlee::Template &headerTemplate,
+                                        const QStringList &displayExtraHeaders,
+                                        bool isPrinting,
+                                        const MessageViewer::HeaderStyle *style,
+                                        KMime::Message *message,
+                                        bool showEmoticons) const
 {
     QVariantHash headerObject;
     const auto nodeHelper = style->nodeHelper();
@@ -362,18 +390,27 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     // direction.
     const QString absoluteThemePath = QUrl::fromLocalFile(absolutePath + QLatin1Char('/')).url();
     headerObject.insert(QStringLiteral("absoluteThemePath"), absoluteThemePath);
-    headerObject.insert(QStringLiteral("applicationDir"),
-                        QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral(
-                            "ltr"));
+    headerObject.insert(QStringLiteral("applicationDir"), QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
 
     // TODO: use correct subject from nodeHelper->mailHeader
-    headerObject.insert(QStringLiteral("subjectDir"),
-                        d->headerStyleUtil.subjectDirectionString(message));
+    headerObject.insert(QStringLiteral("subjectDir"), d->headerStyleUtil.subjectDirectionString(message));
 
     QVector<QByteArray> defaultHeaders;
-    defaultHeaders << "to" << "reply-To" << "reply-From" << "cc" << "bcc" << "from" << "sender" << "resent-From" << "resent-To" << "subject" << "organization" << "list-id" << "date";
+    defaultHeaders << "to"
+                   << "reply-To"
+                   << "reply-From"
+                   << "cc"
+                   << "bcc"
+                   << "from"
+                   << "sender"
+                   << "resent-From"
+                   << "resent-To"
+                   << "subject"
+                   << "organization"
+                   << "list-id"
+                   << "date";
 
-    for (const auto &header: qAsConst(defaultHeaders)) {
+    for (const auto &header : qAsConst(defaultHeaders)) {
         QSharedPointer<HeaderFormatter> formatter;
         if (d->headerFormatter.contains(header)) {
             formatter = d->headerFormatter.value(header);
@@ -387,7 +424,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
             headerObject.insert(objectName, value);
         }
         if (!i18nName.isEmpty()) {
-            headerObject.insert(objectName+QStringLiteral("i18n"), i18nName);
+            headerObject.insert(objectName + QStringLiteral("i18n"), i18nName);
         }
     }
 
@@ -406,9 +443,9 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     }
 
     if (isPrinting) {
-        //provide a bit more left padding when printing
-        //kolab/issue3254 (printed mail cut at the left side)
-        //Use it just for testing if we are in printing mode
+        // provide a bit more left padding when printing
+        // kolab/issue3254 (printed mail cut at the left side)
+        // Use it just for testing if we are in printing mode
         headerObject.insert(QStringLiteral("isprinting"), i18n("Printing mode"));
         headerObject.insert(QStringLiteral("printmode"), QStringLiteral("printmode"));
     } else {
@@ -418,8 +455,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     // colors depend on if it is encapsulated or not
     QColor fontColor(Qt::white);
     QString linkColor = QStringLiteral("white");
-    const QColor activeColor
-        = KColorScheme(QPalette::Active, KColorScheme::Selection).background().color();
+    const QColor activeColor = KColorScheme(QPalette::Active, KColorScheme::Selection).background().color();
     QColor activeColorDark = activeColor.darker(130);
     // reverse colors for encapsulated
     if (!style->isTopLevel()) {
@@ -443,7 +479,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     for (QString header : qAsConst(displayExtraHeaders)) {
         const QByteArray baHeader = header.toLocal8Bit();
         if (auto hrd = message->headerByType(baHeader.constData())) {
-            //Grantlee doesn't support '-' in variable name => remove it.
+            // Grantlee doesn't support '-' in variable name => remove it.
             header.remove(QLatin1Char('-'));
             headerObject.insert(header, hrd->asUnicodeString());
         }
@@ -459,33 +495,27 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("attachmentI18n"), i18n("Attachments:"));
 
     if (messageHasAttachment) {
-        const QString iconPath
-            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
-                                                                     "mail-attachment"),
-                                                                 KIconLoader::Toolbar);
-        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-attachment"), KIconLoader::Toolbar);
+        const QString html =
+            QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
         headerObject.insert(QStringLiteral("attachmentIcon"), html);
     }
 
     const bool messageIsSigned = KMime::isSigned(message);
     headerObject.insert(QStringLiteral("messageIsSigned"), messageIsSigned);
     if (messageIsSigned) {
-        const QString iconPath
-            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
-                                                                     "mail-signed"),
-                                                                 KIconLoader::Toolbar);
-        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-signed"), KIconLoader::Toolbar);
+        const QString html =
+            QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
         headerObject.insert(QStringLiteral("signedIcon"), html);
     }
 
     const bool messageIsEncrypted = KMime::isEncrypted(message);
     headerObject.insert(QStringLiteral("messageIsEncrypted"), messageIsEncrypted);
     if (messageIsEncrypted) {
-        const QString iconPath
-            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
-                                                                     "mail-encrypted"),
-                                                                 KIconLoader::Toolbar);
-        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-encrypted"), KIconLoader::Toolbar);
+        const QString html =
+            QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
         headerObject.insert(QStringLiteral("encryptedIcon"), html);
     }
 

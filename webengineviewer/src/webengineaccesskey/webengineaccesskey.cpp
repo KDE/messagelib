@@ -10,16 +10,15 @@
 #include "webenginemanagescript.h"
 
 #include <KActionCollection>
+#include <QAction>
+#include <QDebug>
 #include <QKeyEvent>
 #include <QLabel>
-#include <QAction>
-#include <QWebEngineView>
 #include <QToolTip>
-#include <QDebug>
 #include <QVector>
+#include <QWebEngineView>
 using namespace WebEngineViewer;
-template<typename Arg, typename R, typename C>
-struct InvokeWrapper {
+template<typename Arg, typename R, typename C> struct InvokeWrapper {
     R *receiver;
     void (C::*memberFunction)(Arg);
     void operator()(Arg result)
@@ -39,11 +38,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
 class WebEngineViewer::WebEngineAccessKeyPrivate
 {
 public:
-    enum AccessKeyState {
-        NotActivated,
-        PreActivated,
-        Activated
-    };
+    enum AccessKeyState { NotActivated, PreActivated, Activated };
 
     WebEngineAccessKeyPrivate(WebEngineAccessKey *qq, QWebEngineView *webEngine)
         : mWebEngine(webEngine)
@@ -64,10 +59,10 @@ public:
 
 static QString linkElementKey(const WebEngineViewer::WebEngineAccessKeyAnchor &element, const QUrl &baseUrl)
 {
-    //qDebug()<<" element.href()"<<element.href();
+    // qDebug()<<" element.href()"<<element.href();
     if (!element.href().isEmpty()) {
         const QUrl url = baseUrl.resolved(QUrl(element.href()));
-        //qDebug()<< "URL " << url;
+        // qDebug()<< "URL " << url;
         QString linkKey(url.toString());
         if (!element.target().isEmpty()) {
             linkKey += QLatin1Char('+');
@@ -78,13 +73,14 @@ static QString linkElementKey(const WebEngineViewer::WebEngineAccessKeyAnchor &e
     return QString();
 }
 
-static void handleDuplicateLinkElements(const WebEngineViewer::WebEngineAccessKeyAnchor &element, QHash<QString, QChar> *dupLinkList, QChar *accessKey, const QUrl &baseUrl)
+static void
+handleDuplicateLinkElements(const WebEngineViewer::WebEngineAccessKeyAnchor &element, QHash<QString, QChar> *dupLinkList, QChar *accessKey, const QUrl &baseUrl)
 {
     if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
         const QString linkKey(linkElementKey(element, baseUrl));
-        //qDebug() << "LINK KEY:" << linkKey;
+        // qDebug() << "LINK KEY:" << linkKey;
         if (dupLinkList->contains(linkKey)) {
-            //qDebug() << "***** Found duplicate link element:" << linkKey;
+            // qDebug() << "***** Found duplicate link element:" << linkKey;
             *accessKey = dupLinkList->value(linkKey);
         } else if (!linkKey.isEmpty()) {
             dupLinkList->insert(linkKey, *accessKey);
@@ -132,7 +128,7 @@ bool WebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
         if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
             const QString linkKey(linkElementKey(element, mWebEngine->url()));
             if (!linkKey.isEmpty()) {
-                //qDebug()<<" WebEngineAccessKey::checkForAccessKey****"<<linkKey;
+                // qDebug()<<" WebEngineAccessKey::checkForAccessKey****"<<linkKey;
                 Q_EMIT q->openUrl(QUrl(linkKey));
                 handled = true;
             }
@@ -143,7 +139,7 @@ bool WebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
 
 void WebEngineAccessKeyPrivate::makeAccessKeyLabel(QChar accessKey, const WebEngineViewer::WebEngineAccessKeyAnchor &element)
 {
-    //qDebug()<<" void WebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const WebEngineViewer::MailWebEngineAccessKeyAnchor &element)";
+    // qDebug()<<" void WebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const WebEngineViewer::MailWebEngineAccessKeyAnchor &element)";
     auto label = new QLabel(mWebEngine);
     QFont font(label->font());
     font.setBold(true);
@@ -167,7 +163,7 @@ WebEngineAccessKey::WebEngineAccessKey(QWebEngineView *webEngine, QObject *paren
     : QObject(parent)
     , d(new WebEngineViewer::WebEngineAccessKeyPrivate(this, webEngine))
 {
-    //qDebug() << " WebEngineAccessKey::WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
+    // qDebug() << " WebEngineAccessKey::WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
 }
 
 WebEngineAccessKey::~WebEngineAccessKey()
@@ -206,10 +202,10 @@ void WebEngineAccessKey::keyPressEvent(QKeyEvent *e)
             }
             hideAccessKeys();
         } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier
-#if 0 //FIXME
+#if 0 // FIXME
                    && !isEditableElement(d->mWebView->page())
 #endif
-                   ) {
+        ) {
             d->mAccessKeyActivated = WebEngineAccessKeyPrivate::PreActivated; // Only preactive here, it will be actually activated in key release.
         }
     }
@@ -217,7 +213,7 @@ void WebEngineAccessKey::keyPressEvent(QKeyEvent *e)
 
 void WebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)
 {
-    //qDebug() << " void WebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)";
+    // qDebug() << " void WebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)";
     if (d->mAccessKeyActivated == WebEngineAccessKeyPrivate::PreActivated) {
         // Activate only when the CTRL key is pressed and released by itself.
         if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
@@ -246,12 +242,12 @@ void WebEngineAccessKey::hideAccessKeys()
 
 void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 {
-    //qDebug() << " void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
+    // qDebug() << " void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
     const QVariantList lst = res.toList();
     QVector<WebEngineViewer::WebEngineAccessKeyAnchor> anchorList;
     anchorList.reserve(lst.count());
     for (const QVariant &var : lst) {
-        //qDebug()<<" var"<<var;
+        // qDebug()<<" var"<<var;
         anchorList << WebEngineViewer::WebEngineAccessKeyAnchor(var);
     }
 
@@ -288,7 +284,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
             continue;
         }
         if (isHiddenElement(element)) {
-            continue;    // Do not show access key for hidden elements...
+            continue; // Do not show access key for hidden elements...
         }
         const QString accessKeyAttribute(element.accessKey().toUpper());
         if (accessKeyAttribute.isEmpty()) {
@@ -319,9 +315,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
     // list of unused access keys
     for (const WebEngineViewer::WebEngineAccessKeyAnchor &element : qAsConst(unLabeledElements)) {
         const QRect geometry = element.boundingRect();
-        if (unusedKeys.isEmpty()
-            || geometry.size().isEmpty()
-            || !viewport.contains(geometry.topLeft())) {
+        if (unusedKeys.isEmpty() || geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
             continue;
         }
         QChar accessKey;

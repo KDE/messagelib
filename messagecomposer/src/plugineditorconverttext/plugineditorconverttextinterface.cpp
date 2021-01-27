@@ -5,8 +5,8 @@
 */
 
 #include "plugineditorconverttextinterface.h"
-#include "plugineditorconverterinitialdata.h"
 #include "plugineditorconverterbeforeconvertingdata.h"
+#include "plugineditorconverterinitialdata.h"
 
 #include <KActionCollection>
 
@@ -107,7 +107,7 @@ void PluginEditorConvertTextInterface::setRichTextEditor(KPIMTextEdit::RichTextC
 
 void PluginEditorConvertTextInterface::reloadConfig()
 {
-    //Reimplement it
+    // Reimplement it
 }
 
 void PluginEditorConvertTextInterface::enableDisablePluginActions(bool richText)

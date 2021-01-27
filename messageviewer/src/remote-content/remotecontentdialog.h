@@ -11,7 +11,8 @@
 
 #include "messageviewer_private_export.h"
 #include "remote-content/remotecontentinfo.h"
-namespace MessageViewer {
+namespace MessageViewer
+{
 class RemoteContentWidget;
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentDialog : public QDialog
 {

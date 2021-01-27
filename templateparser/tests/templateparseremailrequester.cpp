@@ -8,9 +8,9 @@
 #include "templateparser/templatestextedit.h"
 #include "templateparseremailaddressrequesterinterfacewidget.h"
 
-#include <QHBoxLayout>
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QHBoxLayout>
 #include <QStandardPaths>
 
 TemplateParserEmailRequesterTestWidget::TemplateParserEmailRequesterTestWidget(QWidget *parent)

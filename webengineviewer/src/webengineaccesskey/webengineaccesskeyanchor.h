@@ -7,10 +7,11 @@
 #ifndef MAILWEBENGINEACCESSKEYANCHOR_H
 #define MAILWEBENGINEACCESSKEYANCHOR_H
 
-#include <QVariant>
 #include <QRect>
+#include <QVariant>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebEngineAccessKeyAnchor
 {
 public:

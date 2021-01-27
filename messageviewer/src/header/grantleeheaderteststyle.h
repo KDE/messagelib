@@ -10,7 +10,8 @@
 #include "headerstyle.h"
 #include "messageviewer_export.h"
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class GrantleeHeaderTestStylePrivate;
 /**
  * @brief The GrantleeHeaderTestStyle class
@@ -19,6 +20,7 @@ class GrantleeHeaderTestStylePrivate;
 class MESSAGEVIEWER_EXPORT GrantleeHeaderTestStyle : public HeaderStyle
 {
     friend class GrantleeHeaderStyle;
+
 public:
     GrantleeHeaderTestStyle();
     ~GrantleeHeaderTestStyle() override;

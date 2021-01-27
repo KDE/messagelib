@@ -28,8 +28,7 @@ void KWindowPositioner::reposition()
     if (mMode == Right) {
         relativePos = QPoint(mMaster->width(), 0);
     } else if (mMode == Bottom) {
-        relativePos = QPoint(mMaster->width() - mSlave->frameGeometry().width(),
-                             mMaster->height());
+        relativePos = QPoint(mMaster->width() - mSlave->frameGeometry().width(), mMaster->height());
     } else {
         qCCritical(MESSAGECOMPOSER_LOG) << "KWindowPositioner: Illegal mode";
     }
@@ -43,7 +42,8 @@ void KWindowPositioner::reposition()
     if ((pos.y() + mSlave->frameGeometry().height()) > desktopRect.height()) {
         pos.setY(desktopRect.height() - mSlave->frameGeometry().height() - mMaster->height());
     }
-    qCDebug(MESSAGECOMPOSER_LOG) << mMaster->pos() << mMaster->mapToGlobal(mMaster->pos()) << pos.y() << (mMaster->pos().y() - pos.y()) << mSlave->frameGeometry().height();
+    qCDebug(MESSAGECOMPOSER_LOG) << mMaster->pos() << mMaster->mapToGlobal(mMaster->pos()) << pos.y() << (mMaster->pos().y() - pos.y())
+                                 << mSlave->frameGeometry().height();
     if (mMode == Bottom && mMaster->mapToGlobal(mMaster->pos()).y() > pos.y() && (mMaster->pos().y() - pos.y()) < mSlave->frameGeometry().height()) {
         pos.setY(mMaster->mapToGlobal(QPoint(0, -mSlave->frameGeometry().height())).y());
     }

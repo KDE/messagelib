@@ -13,7 +13,8 @@
 #include <QBuffer>
 #include <QByteArray>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * QBuffer-backed HtmlWriter
  */

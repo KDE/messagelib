@@ -7,21 +7,24 @@
 #ifndef TEMPLATEPARSERJOB_P_H
 #define TEMPLATEPARSERJOB_P_H
 
-#include "templateparserjob.h"
 #include "templateparserextracthtmlinforesult.h"
+#include "templateparserjob.h"
 
 #include <KMime/Message>
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class ObjectTreeParser;
 class SimpleObjectTreeSource;
 }
 
-namespace KIdentityManagement {
+namespace KIdentityManagement
+{
 class IdentityManager;
 }
 
-namespace TemplateParser {
+namespace TemplateParser
+{
 class TemplateParserJobPrivate
 {
 public:
@@ -29,8 +32,8 @@ public:
     ~TemplateParserJobPrivate();
     void setAllowDecryption(const bool allowDecryption);
 
-    KMime::Message::Ptr mMsg;             // Msg to write to
-    KMime::Message::Ptr mOrigMsg;         // Msg to read from
+    KMime::Message::Ptr mMsg; // Msg to write to
+    KMime::Message::Ptr mOrigMsg; // Msg to read from
     KIdentityManagement::IdentityManager *m_identityManager = nullptr;
     MimeTreeParser::ObjectTreeParser *mOtp = nullptr;
     MimeTreeParser::SimpleObjectTreeSource *mEmptySource = nullptr;
@@ -43,7 +46,7 @@ public:
     TemplateParserJob::Quotes mQuotes = TemplateParserJob::ReplyAsOriginalMessage;
     TemplateParserJob::Mode mMode;
     TemplateParserExtractHtmlInfoResult mExtractHtmlInfoResult;
-    qint64 mFolder = -1;          //Used to find a template
+    qint64 mFolder = -1; // Used to find a template
     uint mIdentity = 0;
     int mColWrap = 80;
     bool mForceCursorPosition = false;

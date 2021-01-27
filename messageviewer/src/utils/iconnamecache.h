@@ -5,11 +5,12 @@
 #ifndef MESSAGEVIEWER_ICONNAMECACHE_H
 #define MESSAGEVIEWER_ICONNAMECACHE_H
 
+#include "messageviewer_export.h"
 #include <QMap>
 #include <QString>
-#include "messageviewer_export.h"
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * This class is a replacement for KIconLoader::iconPath(), because the iconPath()
  * function can be slow for non-existing icons or icons that fall back to a generic icon.
@@ -20,7 +21,6 @@ namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT IconNameCache
 {
 public:
-
     static IconNameCache *instance();
     Q_REQUIRED_RESULT QString iconPath(const QString &name, int size) const;
     Q_REQUIRED_RESULT QString iconPathFromLocal(const QString &name) const;
@@ -34,7 +34,7 @@ private:
         QString fileName;
         int size;
 
-        Q_REQUIRED_RESULT bool operator <(const Entry &other) const;
+        Q_REQUIRED_RESULT bool operator<(const Entry &other) const;
     };
 
     mutable QMap<Entry, QString> mCachedEntries;

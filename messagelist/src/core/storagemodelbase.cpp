@@ -7,8 +7,8 @@
  *******************************************************************************/
 
 #include "core/storagemodelbase.h"
-#include "messagelistutil_p.h"
 #include "messagelistsettings.h"
+#include "messagelistutil_p.h"
 
 using namespace MessageList::Core;
 
@@ -31,8 +31,7 @@ unsigned long StorageModel::preSelectedMessage() const
     const QString storageModelId = id();
     Q_ASSERT(!storageModelId.isEmpty());
 
-    KConfigGroup conf(MessageListSettings::self()->config(),
-                      MessageList::Util::storageModelSelectedMessageGroup());
+    KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelSelectedMessageGroup());
 
     // QVariant supports unsigned int OR unsigned long long int, NOT unsigned long int... doh...
     qulonglong defValue = 0;
@@ -48,8 +47,7 @@ void StorageModel::savePreSelectedMessage(unsigned long uniqueIdOfMessage)
         return;
     }
 
-    KConfigGroup conf(MessageListSettings::self()->config(),
-                      MessageList::Util::storageModelSelectedMessageGroup());
+    KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelSelectedMessageGroup());
 
     if (uniqueIdOfMessage) {
         // QVariant supports unsigned int OR unsigned long long int, NOT unsigned long int... doh...

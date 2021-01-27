@@ -7,10 +7,11 @@
 #ifndef PLUGINEDITORINIT_H
 #define PLUGINEDITORINIT_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
+#include <QObject>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class PluginEditorInitPrivate;
 class PluginEditorInitInterface;
 /**

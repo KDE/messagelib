@@ -8,9 +8,9 @@
 #include "../localdatabasemanager.h"
 
 #include <QApplication>
-#include <QStandardPaths>
-#include <QPushButton>
 #include <QPlainTextEdit>
+#include <QPushButton>
+#include <QStandardPaths>
 #include <QVBoxLayout>
 #include <webenginepage.h>
 #include <webengineview.h>
@@ -21,12 +21,14 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
     auto layout = new QVBoxLayout(this);
     QStandardPaths::setTestModeEnabled(true);
     pageView = new WebEngineViewer::WebEngineView(this);
-    connect(pageView->phishingDatabase(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished,
-            this, &WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished);
+    connect(pageView->phishingDatabase(),
+            &WebEngineViewer::LocalDataBaseManager::checkUrlFinished,
+            this,
+            &WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished);
     layout->addWidget(pageView);
     auto mEnginePage = new WebEngineViewer::WebEnginePage(this);
     pageView->setPage(mEnginePage);
-    //pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
+    // pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
     const QString urlPage = QLatin1String(CHECKPHISHINGURL_TEST_DATA_DIR) + QStringLiteral("/test-url.html");
     qDebug() << " urlPage" << urlPage;
     pageView->load(QUrl::fromLocalFile(urlPage));

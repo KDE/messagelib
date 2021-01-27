@@ -14,10 +14,11 @@
 #include <vector>
 
 /**
-  * Simple interface that both EncryptJob and SignEncryptJob implement
-  * so the composer can extract some encryption-specific job info from them
-  */
-namespace MessageComposer {
+ * Simple interface that both EncryptJob and SignEncryptJob implement
+ * so the composer can extract some encryption-specific job info from them
+ */
+namespace MessageComposer
+{
 class AbstractEncryptJob
 {
 public:

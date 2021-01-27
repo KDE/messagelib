@@ -13,13 +13,14 @@
 
 #include "mimetreeparser_export.h"
 
-#include <gpgme++/verificationresult.h>
 #include <gpgme++/context.h>
+#include <gpgme++/verificationresult.h>
 
-#include <QStringList>
 #include <QDateTime>
+#include <QStringList>
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class PartMetaData
 {
 public:
@@ -41,7 +42,7 @@ public:
     QStringList signerMailAddresses;
     QByteArray keyId;
     GpgME::Signature::Validity keyTrust;
-    QString status;  // to be used for unknown plug-ins
+    QString status; // to be used for unknown plug-ins
     int status_code; // to be used for i18n of OpenPGP and S/MIME CryptPlugs
     QString errorText;
     QDateTime creationTime;

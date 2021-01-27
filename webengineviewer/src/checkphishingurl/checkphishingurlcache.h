@@ -11,7 +11,8 @@
 #include <QObject>
 #include <QUrl>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class CheckPhishingUrlCachePrivate;
 /**
  * @brief The CheckPhishingUrlCache class
@@ -23,11 +24,7 @@ class WEBENGINEVIEWER_EXPORT CheckPhishingUrlCache : public QObject
 public:
     static CheckPhishingUrlCache *self();
 
-    enum UrlStatus {
-        UrlOk = 0,
-        MalWare = 1,
-        Unknown = 2
-    };
+    enum UrlStatus { UrlOk = 0, MalWare = 1, Unknown = 2 };
 
     explicit CheckPhishingUrlCache(QObject *parent = nullptr);
     ~CheckPhishingUrlCache() override;
@@ -49,6 +46,7 @@ public:
      * @brief clearCache clear the cache and save result in config file.
      */
     void clearCache();
+
 private:
     CheckPhishingUrlCachePrivate *const d;
 };

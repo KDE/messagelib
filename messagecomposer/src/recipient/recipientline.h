@@ -17,7 +17,8 @@
 
 #include <QComboBox>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class RecipientComboBox : public QComboBox
 {
     Q_OBJECT

@@ -7,11 +7,12 @@
 #ifndef WEBENGINEVIEWWITHSAFEBROWSINGSUPPORT_H
 #define WEBENGINEVIEWWITHSAFEBROWSINGSUPPORT_H
 
-#include <QWidget>
 #include "../searchfullhashjob.h"
+#include <QWidget>
 #include <WebEngineViewer/LocalDataBaseManager>
 class QPlainTextEdit;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebEngineView;
 }
 class WebEngineViewWithSafeBrowsingSupport : public QWidget

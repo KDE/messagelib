@@ -8,10 +8,11 @@
 #ifndef SCAMEXPANDURLJOB_H
 #define SCAMEXPANDURLJOB_H
 
-#include <QObject>
-#include <QNetworkReply>
 #include "messageviewer_export.h"
-namespace MessageViewer {
+#include <QNetworkReply>
+#include <QObject>
+namespace MessageViewer
+{
 class ScamExpandUrlJobPrivate;
 /**
  * @brief The ScamExpandUrlJob class

@@ -14,7 +14,8 @@
 
 class KConfigDialogManager;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class ConfigureWidgetPrivate;
 /**
  * Configure widget that can be used in a KConfigDialog.
@@ -42,9 +43,9 @@ public:
 Q_SIGNALS:
 
     /**
-    * Emitted when the user changes the setting in some widget. Useful to enable the "Apply"
-    * button after this has been emitted.
-    */
+     * Emitted when the user changes the setting in some widget. Useful to enable the "Apply"
+     * button after this has been emitted.
+     */
     void settingsChanged();
 
 private:

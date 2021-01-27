@@ -8,9 +8,10 @@
 #ifndef SCAMCHECKSHORTURLMANAGER_H
 #define SCAMCHECKSHORTURLMANAGER_H
 
-#include <QObject>
 #include "messageviewer_export.h"
-namespace MessageViewer {
+#include <QObject>
+namespace MessageViewer
+{
 class ScamCheckShortUrl;
 class ScamCheckShortUrlManagerPrivate;
 /**
@@ -25,6 +26,7 @@ public:
     ~ScamCheckShortUrlManager() override;
     static ScamCheckShortUrlManager *self();
     Q_REQUIRED_RESULT ScamCheckShortUrl *scamCheckShortUrl() const;
+
 private:
     ScamCheckShortUrlManagerPrivate *const d;
 };

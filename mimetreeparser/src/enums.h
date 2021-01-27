@@ -7,15 +7,13 @@
 #ifndef MIMETREEPARSER_ENUMS_H
 #define MIMETREEPARSER_ENUMS_H
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 /**
  * The display update mode: Force updates the display immediately, Delayed updates
  * after some time (150ms by default)
  */
-enum UpdateMode {
-    Force = 0,
-    Delayed
-};
+enum UpdateMode { Force = 0, Delayed };
 
 /** Flags for the encryption state. */
 typedef enum {

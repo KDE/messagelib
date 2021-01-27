@@ -6,8 +6,8 @@
 
 #include "templateextracthtmlelementfrommailtest.h"
 #include "templateextracthtmlelementfrommail.h"
-#include <QTest>
 #include <QSignalSpy>
+#include <QTest>
 
 TemplateExtractHtmlElementFromMailTest::TemplateExtractHtmlElementFromMailTest(QObject *parent)
     : QObject(parent)

@@ -17,14 +17,16 @@
 
 class QEventLoop;
 
-namespace QGpgME {
+namespace QGpgME
+{
 class DecryptVerifyJob;
 class ImportJob;
 class VerifyDetachedJob;
 class VerifyOpaqueJob;
 }
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 /**
   Helper class for synchronous execution of Kleo crypto jobs.
 */

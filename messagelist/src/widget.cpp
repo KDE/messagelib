@@ -11,9 +11,9 @@
 #include <itemcopyjob.h>
 #include <itemmovejob.h>
 
-#include "storagemodel.h"
 #include "core/messageitem.h"
 #include "core/view.h"
+#include "storagemodel.h"
 #include <messagelistsettings.h>
 
 #include <QAction>
@@ -25,22 +25,23 @@
 #include <QUrlQuery>
 
 #include "messagelist_debug.h"
-#include <QIcon>
 #include <KLocalizedString>
-#include <QMenu>
 #include <KXMLGUIClient>
 #include <KXMLGUIFactory>
+#include <QIcon>
+#include <QMenu>
 #include <QUrl>
 
 #include "core/groupheaderitem.h"
 
 #include <Monitor>
 #include <Tag>
+#include <TagAttribute>
 #include <TagFetchJob>
 #include <TagFetchScope>
-#include <TagAttribute>
 
-namespace MessageList {
+namespace MessageList
+{
 class Q_DECL_HIDDEN Widget::Private
 {
 public:
@@ -97,19 +98,19 @@ bool Widget::canAcceptDrag(const QDropEvent *e)
 
     Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
     if (collections.size() != 1) {
-        return false;    // no folder here or too many (in case we can't decide where the drop will end)
+        return false; // no folder here or too many (in case we can't decide where the drop will end)
     }
 
     const Collection target = collections.first();
 
     if ((target.rights() & Collection::CanCreateItem) == 0) {
-        return false;    // no way to drag into
+        return false; // no way to drag into
     }
 
     const QList<QUrl> urls = e->mimeData()->urls();
     for (const QUrl &url : urls) {
         const Collection collection = Collection::fromUrl(url);
-        if (collection.isValid()) {   // You're not supposed to drop collections here
+        if (collection.isValid()) { // You're not supposed to drop collections here
             return false;
         } else { // Yay, this is an item!
             QUrlQuery query(url);
@@ -123,12 +124,18 @@ bool Widget::canAcceptDrag(const QDropEvent *e)
     return true;
 }
 
-bool Widget::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
+bool Widget::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
+                                   MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
+                                   bool centerItem,
+                                   bool loop)
 {
     return view()->selectNextMessageItem(messageTypeFilter, existingSelectionBehaviour, centerItem, loop);
 }
 
-bool Widget::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
+bool Widget::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
+                                       MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
+                                       bool centerItem,
+                                       bool loop)
 {
     return view()->selectPreviousMessageItem(messageTypeFilter, existingSelectionBehaviour, centerItem, loop);
 }
@@ -212,7 +219,9 @@ void Widget::slotTagsFetched(KJob *job)
     }
     const QStringList tagSelectedLst = tagSelected.split(QLatin1Char(','));
 
-    addMessageTagItem(QIcon::fromTheme(QStringLiteral("mail-flag")).pixmap(16, 16), i18nc("Item in list of Akonadi tags, to show all e-mails", "All"), QString());
+    addMessageTagItem(QIcon::fromTheme(QStringLiteral("mail-flag")).pixmap(16, 16),
+                      i18nc("Item in list of Akonadi tags, to show all e-mails", "All"),
+                      QString());
 
     QStringList tagFound;
     foreach (const Akonadi::Tag &akonadiTag, fetchJob->tags()) {
@@ -251,12 +260,12 @@ void Widget::viewMessageSelected(MessageList::Core::MessageItem *msg)
 
     d->mLastSelectedMessage = row;
 
-    Q_EMIT messageSelected(d->itemForRow(row));     // this MAY be null
+    Q_EMIT messageSelected(d->itemForRow(row)); // this MAY be null
 }
 
 void Widget::viewMessageActivated(MessageList::Core::MessageItem *msg)
 {
-    Q_ASSERT(msg);   // must not be null
+    Q_ASSERT(msg); // must not be null
     Q_ASSERT(storageModel());
 
     if (!msg->isValid()) {
@@ -268,7 +277,7 @@ void Widget::viewMessageActivated(MessageList::Core::MessageItem *msg)
 
     // The assert below may fail when quickly opening and closing a non-selected thread.
     // This will actually activate the item without selecting it...
-    //Q_ASSERT( d->mLastSelectedMessage == row );
+    // Q_ASSERT( d->mLastSelectedMessage == row );
 
     if (d->mLastSelectedMessage != row) {
         // Very ugly. We are activating a non selected message.
@@ -280,7 +289,7 @@ void Widget::viewMessageActivated(MessageList::Core::MessageItem *msg)
         return;
     }
 
-    Q_EMIT messageActivated(d->itemForRow(row));     // this MAY be null
+    Q_EMIT messageActivated(d->itemForRow(row)); // this MAY be null
 }
 
 void Widget::viewSelectionChanged()
@@ -291,7 +300,7 @@ void Widget::viewSelectionChanged()
     }
 }
 
-void Widget::viewMessageListContextPopupRequest(const QVector< MessageList::Core::MessageItem * > &selectedItems, const QPoint &globalPos)
+void Widget::viewMessageListContextPopupRequest(const QVector<MessageList::Core::MessageItem *> &selectedItems, const QPoint &globalPos)
 {
     Q_UNUSED(selectedItems)
 
@@ -299,9 +308,7 @@ void Widget::viewMessageListContextPopupRequest(const QVector< MessageList::Core
         return;
     }
 
-    QMenu *popup = static_cast<QMenu *>(d->mXmlGuiClient->factory()->container(
-                                            QStringLiteral("akonadi_messagelist_contextmenu"),
-                                            d->mXmlGuiClient));
+    QMenu *popup = static_cast<QMenu *>(d->mXmlGuiClient->factory()->container(QStringLiteral("akonadi_messagelist_contextmenu"), d->mXmlGuiClient));
     if (popup) {
         popup->exec(globalPos);
     }
@@ -309,7 +316,7 @@ void Widget::viewMessageListContextPopupRequest(const QVector< MessageList::Core
 
 void Widget::viewMessageStatusChangeRequest(MessageList::Core::MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear)
 {
-    Q_ASSERT(msg);   // must not be null
+    Q_ASSERT(msg); // must not be null
     Q_ASSERT(storageModel());
 
     if (!msg->isValid()) {
@@ -347,12 +354,10 @@ void Widget::viewGroupHeaderContextPopupRequest(MessageList::Core::GroupHeaderIt
     menu.addSeparator();
 
     act = menu.addAction(i18n("Expand All Groups"));
-    connect(act, &QAction::triggered,
-            view(), &Core::View::slotExpandAllGroups);
+    connect(act, &QAction::triggered, view(), &Core::View::slotExpandAllGroups);
 
     act = menu.addAction(i18n("Collapse All Groups"));
-    connect(act, &QAction::triggered,
-            view(), &Core::View::slotCollapseAllGroups);
+    connect(act, &QAction::triggered, view(), &Core::View::slotCollapseAllGroups);
 
     menu.exec(globalPos);
 }
@@ -377,11 +382,7 @@ void Widget::viewDragMoveEvent(QDragMoveEvent *e)
     e->accept();
 }
 
-enum DragMode {
-    DragCopy,
-    DragMove,
-    DragCancel
-};
+enum DragMode { DragCopy, DragMove, DragCancel };
 
 void Widget::viewDropEvent(QDropEvent *e)
 {
@@ -400,7 +401,7 @@ void Widget::viewDropEvent(QDropEvent *e)
     e->accept();
 
     int action;
-    if ((e->possibleActions() & Qt::MoveAction) == 0) {     // We can't move anyway
+    if ((e->possibleActions() & Qt::MoveAction) == 0) { // We can't move anyway
         action = DragCopy;
     } else {
         const auto keybstate = QApplication::keyboardModifiers();
@@ -410,10 +411,8 @@ void Widget::viewDropEvent(QDropEvent *e)
             action = DragMove;
         } else {
             QMenu menu;
-            QAction *moveAction = menu.addAction(
-                QIcon::fromTheme(QStringLiteral("edit-move"), QIcon::fromTheme(QStringLiteral("go-jump"))),
-                i18n("&Move Here")
-                );
+            QAction *moveAction =
+                menu.addAction(QIcon::fromTheme(QStringLiteral("edit-move"), QIcon::fromTheme(QStringLiteral("go-jump"))), i18n("&Move Here"));
             QAction *copyAction = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("&Copy Here"));
             menu.addSeparator();
             menu.addAction(QIcon::fromTheme(QStringLiteral("dialog-cancel")), i18n("C&ancel"));
@@ -452,7 +451,7 @@ void Widget::viewStartDragRequest()
     Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
 
     if (collections.isEmpty()) {
-        return;    // no folder here
+        return; // no folder here
     }
 
     const QVector<Core::MessageItem *> selection = view()->selectionAsMessageItemList();
@@ -556,7 +555,7 @@ KMime::Message::Ptr Widget::currentMessage() const
     return d->messageForRow(mi->currentModelIndexRow());
 }
 
-QVector<KMime::Message::Ptr > Widget::selectionAsMessageList(bool includeCollapsedChildren) const
+QVector<KMime::Message::Ptr> Widget::selectionAsMessageList(bool includeCollapsedChildren) const
 {
     QVector<KMime::Message::Ptr> lstMiPtr;
     const QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
@@ -651,8 +650,10 @@ bool Widget::selectionEmpty() const
     return view()->selectionEmpty();
 }
 
-bool Widget::getSelectionStats(
-    Akonadi::Item::List &selectedItems, Akonadi::Item::List &selectedVisibleItems, bool *allSelectedBelongToSameThread, bool includeCollapsedChildren) const
+bool Widget::getSelectionStats(Akonadi::Item::List &selectedItems,
+                               Akonadi::Item::List &selectedVisibleItems,
+                               bool *allSelectedBelongToSameThread,
+                               bool includeCollapsedChildren) const
 {
     if (!storageModel()) {
         return false;
@@ -661,7 +662,7 @@ bool Widget::getSelectionStats(
     selectedItems.clear();
     selectedVisibleItems.clear();
 
-    const QVector< Core::MessageItem * > selected = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    const QVector<Core::MessageItem *> selected = view()->selectionAsMessageItemList(includeCollapsedChildren);
 
     Core::MessageItem *topmost = nullptr;
 
@@ -691,7 +692,7 @@ void Widget::deletePersistentSet(MessageList::Core::MessageItemSetReference ref)
 
 void Widget::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSetReference ref, bool bMark)
 {
-    QList< Core::MessageItem * > lstPersistent = view()->persistentSetCurrentMessageItemList(ref);
+    QList<Core::MessageItem *> lstPersistent = view()->persistentSetCurrentMessageItemList(ref);
     if (!lstPersistent.isEmpty()) {
         view()->markMessageItemsAsAboutToBeRemoved(lstPersistent, bMark);
     }
@@ -700,7 +701,7 @@ void Widget::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSe
 Akonadi::Item::List Widget::itemListFromPersistentSet(MessageList::Core::MessageItemSetReference ref)
 {
     Akonadi::Item::List lstItem;
-    const QList< Core::MessageItem * > refList = view()->persistentSetCurrentMessageItemList(ref);
+    const QList<Core::MessageItem *> refList = view()->persistentSetCurrentMessageItemList(ref);
     if (!refList.isEmpty()) {
         lstItem.reserve(refList.count());
         for (Core::MessageItem *it : qAsConst(refList)) {
@@ -732,7 +733,7 @@ Akonadi::Collection Widget::currentCollection() const
 {
     Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
     if (collections.size() != 1) {
-        return Akonadi::Collection();    // no folder here or too many (in case we can't decide where the drop will end)
+        return Akonadi::Collection(); // no folder here or too many (in case we can't decide where the drop will end)
     }
     return collections.first();
 }

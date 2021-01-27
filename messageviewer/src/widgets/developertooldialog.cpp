@@ -5,12 +5,13 @@
 */
 #include "developertooldialog.h"
 #include "developertoolwidget.h"
-#include <QVBoxLayout>
-#include <QDialogButtonBox>
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QDialogButtonBox>
+#include <QVBoxLayout>
 
-namespace {
+namespace
+{
 static const char myConfigGroupName[] = "DeveloperToolDialog";
 }
 

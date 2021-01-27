@@ -64,7 +64,10 @@ void TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished(bool success)
     }
     if (!mHtmlForExtractionHeaderAndBody.isEmpty()) {
         mExtractHtmlElementWebEngineView = new TemplateExtractHtmlElementFromMail;
-        connect(mExtractHtmlElementWebEngineView, &TemplateExtractHtmlElementFromMail::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished);
+        connect(mExtractHtmlElementWebEngineView,
+                &TemplateExtractHtmlElementFromMail::loadContentDone,
+                this,
+                &TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished);
         mExtractHtmlElementWebEngineView->setHtmlContent(mHtmlForExtractionHeaderAndBody);
     } else {
         qCDebug(TEMPLATEPARSER_LOG) << "html string is empty for extracting to header and body";

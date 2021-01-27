@@ -87,7 +87,7 @@ void ViewerPluginInterface::updateAction(const Akonadi::Item &item)
 
 void ViewerPluginInterface::refreshActionList(KActionCollection *ac)
 {
-    //TODO
+    // TODO
     Q_UNUSED(ac)
 }
 

@@ -13,9 +13,9 @@
 #include <MessageCore/ColorUtil>
 #include <MessageCore/MessageCoreSettings>
 
+#include <KColorScheme>
 #include <KConfig>
 #include <KConfigGroup>
-#include <KColorScheme>
 #include <QApplication>
 
 #include <QFont>
@@ -26,12 +26,10 @@ using namespace MessageViewer;
 static const struct {
     CSSHelperBase::InlineMessageType type;
     KColorScheme::ForegroundRole role;
-} inlineMessageColors[] = {
-    { CSSHelperBase::Positive, KColorScheme::PositiveText },
-    { CSSHelperBase::Information, KColorScheme::ActiveText },
-    { CSSHelperBase::Warning, KColorScheme::NeutralText },
-    { CSSHelperBase::Error, KColorScheme::NegativeText }
-};
+} inlineMessageColors[] = {{CSSHelperBase::Positive, KColorScheme::PositiveText},
+                           {CSSHelperBase::Information, KColorScheme::ActiveText},
+                           {CSSHelperBase::Warning, KColorScheme::NeutralText},
+                           {CSSHelperBase::Error, KColorScheme::NegativeText}};
 
 CSSHelper::CSSHelper(const QPaintDevice *pd)
     : CSSHelperBase(pd)
@@ -59,14 +57,8 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
 
     QFont defaultFont = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     QFont defaultFixedFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
-    mBodyFont
-        = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer
-          ::
-          MessageViewerSettings::self()->bodyFont();
-    mPrintFont
-        = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer
-          ::
-          MessageViewerSettings::self()->printFont();
+    mBodyFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer ::MessageViewerSettings::self()->bodyFont();
+    mPrintFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer ::MessageViewerSettings::self()->printFont();
     mFixedFont = mFixedPrintFont = defaultFixedFont;
     defaultFont.setItalic(true);
     mQuoteFont = defaultFont;
@@ -84,18 +76,12 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
         mQuoteColor[1] = MessageCore::ColorUtil::self()->quoteLevel2DefaultTextColor();
         mQuoteColor[2] = MessageCore::ColorUtil::self()->quoteLevel3DefaultTextColor();
     } else {
-        mLinkColor
-            = reader.readEntry("LinkColor", mLinkColor);
-        cPgpEncrH
-            = reader.readEntry("PGPMessageEncr", cPgpEncrH);
-        cPgpOk1H
-            = reader.readEntry("PGPMessageOkKeyOk", cPgpOk1H);
-        cPgpOk0H
-            = reader.readEntry("PGPMessageOkKeyBad", cPgpOk0H);
-        cPgpWarnH
-            = reader.readEntry("PGPMessageWarn", cPgpWarnH);
-        cPgpErrH
-            = reader.readEntry("PGPMessageErr", cPgpErrH);
+        mLinkColor = reader.readEntry("LinkColor", mLinkColor);
+        cPgpEncrH = reader.readEntry("PGPMessageEncr", cPgpEncrH);
+        cPgpOk1H = reader.readEntry("PGPMessageOkKeyOk", cPgpOk1H);
+        cPgpOk0H = reader.readEntry("PGPMessageOkKeyBad", cPgpOk0H);
+        cPgpWarnH = reader.readEntry("PGPMessageWarn", cPgpWarnH);
+        cPgpErrH = reader.readEntry("PGPMessageErr", cPgpErrH);
         mQuoteColor[0] = MessageCore::MessageCoreSettings::self()->quotedText1();
         mQuoteColor[1] = MessageCore::MessageCoreSettings::self()->quotedText2();
         mQuoteColor[2] = MessageCore::MessageCoreSettings::self()->quotedText3();
@@ -120,12 +106,13 @@ CSSHelper::~CSSHelper()
 
 QString CSSHelper::htmlHead(bool fixed) const
 {
-    return
-        QLatin1String("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n"
-                      "<html><head><title></title><style>\n")
+    return QLatin1String(
+               "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n"
+               "<html><head><title></title><style>\n")
         + cssDefinitions(fixed)
-        +QLatin1String("</style></head>\n"
-                       "<body>\n");
+        + QLatin1String(
+               "</style></head>\n"
+               "<body>\n");
 }
 
 QString CSSHelper::endBodyHtml() const

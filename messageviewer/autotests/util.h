@@ -9,8 +9,10 @@
 
 #include <KMime/Message>
 
-namespace MessageViewer {
-namespace Test {
+namespace MessageViewer
+{
+namespace Test
+{
 KMime::Message::Ptr readAndParseMail(const QString &mailFile);
 }
 }

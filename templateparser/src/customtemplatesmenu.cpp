@@ -11,8 +11,8 @@
 
 #include <KActionCollection>
 #include <KActionMenu>
-#include <QIcon>
 #include <KLocalizedString>
+#include <QIcon>
 #include <QMenu>
 #include <QVector>
 
@@ -47,16 +47,13 @@ CustomTemplatesMenu::CustomTemplatesMenu(QWidget *owner, KActionCollection *ac)
 {
     d->mOwnerActionCollection = ac;
 
-    d->mCustomForwardActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-forward-custom")),
-                                                  i18n("With Custom Template"), owner);
+    d->mCustomForwardActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-forward-custom")), i18n("With Custom Template"), owner);
     d->mOwnerActionCollection->addAction(QStringLiteral("custom_forward"), d->mCustomForwardActionMenu);
 
-    d->mCustomReplyActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-reply-custom")),
-                                                i18n("Reply With Custom Template"), owner);
+    d->mCustomReplyActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-reply-custom")), i18n("Reply With Custom Template"), owner);
     d->mOwnerActionCollection->addAction(QStringLiteral("custom_reply"), d->mCustomReplyActionMenu);
 
-    d->mCustomReplyAllActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-reply-all-custom")),
-                                                   i18n("Reply to All With Custom Template"), owner);
+    d->mCustomReplyAllActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-reply-all-custom")), i18n("Reply to All With Custom Template"), owner);
     d->mOwnerActionCollection->addAction(QStringLiteral("custom_reply_all"), d->mCustomReplyAllActionMenu);
 
     update();
@@ -116,7 +113,7 @@ void CustomTemplatesMenu::update()
         QAction *action = nullptr;
         switch (t.type()) {
         case CustomTemplates::TReply:
-            action = new QAction(nameAction, d->mOwnerActionCollection);   //krazy:exclude=tipsandthis
+            action = new QAction(nameAction, d->mOwnerActionCollection); // krazy:exclude=tipsandthis
             d->mOwnerActionCollection->setDefaultShortcut(action, t.shortcut());
             d->mOwnerActionCollection->addAction(nameActionName, action);
             connect(action, &QAction::triggered, this, [this, idx] {
@@ -128,7 +125,7 @@ void CustomTemplatesMenu::update()
             break;
 
         case CustomTemplates::TReplyAll:
-            action = new QAction(nameAction, d->mOwnerActionCollection);   //krazy:exclude=tipsandthis
+            action = new QAction(nameAction, d->mOwnerActionCollection); // krazy:exclude=tipsandthis
             d->mOwnerActionCollection->setDefaultShortcut(action, t.shortcut());
             d->mOwnerActionCollection->addAction(nameActionName, action);
             connect(action, &QAction::triggered, this, [this, idx] {
@@ -140,7 +137,7 @@ void CustomTemplatesMenu::update()
             break;
 
         case CustomTemplates::TForward:
-            action = new QAction(nameAction, d->mOwnerActionCollection);   //krazy:exclude=tipsandthis
+            action = new QAction(nameAction, d->mOwnerActionCollection); // krazy:exclude=tipsandthis
             d->mOwnerActionCollection->addAction(nameActionName, action);
             d->mOwnerActionCollection->setDefaultShortcut(action, t.shortcut());
             connect(action, &QAction::triggered, this, [this, idx] {
@@ -152,7 +149,7 @@ void CustomTemplatesMenu::update()
             break;
 
         case CustomTemplates::TUniversal:
-            action = new QAction(nameAction, d->mOwnerActionCollection);   //krazy:exclude=tipsandthis
+            action = new QAction(nameAction, d->mOwnerActionCollection); // krazy:exclude=tipsandthis
             d->mOwnerActionCollection->addAction(nameActionName, action);
 
             connect(action, &QAction::triggered, this, [this, idx] {
@@ -161,14 +158,14 @@ void CustomTemplatesMenu::update()
             d->mCustomReplyActionMenu->addAction(action);
             d->mCustomTemplateActions.append(action);
             ++replyc;
-            action = new QAction(nameAction, d->mOwnerActionCollection);   //krazy:exclude=tipsandthis
+            action = new QAction(nameAction, d->mOwnerActionCollection); // krazy:exclude=tipsandthis
             connect(action, &QAction::triggered, this, [this, idx] {
                 slotReplyAllSelected(idx);
             });
             d->mCustomReplyAllActionMenu->addAction(action);
             d->mCustomTemplateActions.append(action);
             ++replyallc;
-            action = new QAction(nameAction, d->mOwnerActionCollection);   //krazy:exclude=tipsandthis
+            action = new QAction(nameAction, d->mOwnerActionCollection); // krazy:exclude=tipsandthis
             connect(action, &QAction::triggered, this, [this, idx] {
                 slotForwardSelected(idx);
             });
@@ -182,20 +179,17 @@ void CustomTemplatesMenu::update()
     }
 
     if (!replyc) {
-        QAction *noAction
-            = d->mCustomReplyActionMenu->menu()->addAction(i18n("(no custom templates)"));
+        QAction *noAction = d->mCustomReplyActionMenu->menu()->addAction(i18n("(no custom templates)"));
         noAction->setEnabled(false);
         d->mCustomReplyActionMenu->setEnabled(false);
     }
     if (!replyallc) {
-        QAction *noAction
-            = d->mCustomReplyAllActionMenu->menu()->addAction(i18n("(no custom templates)"));
+        QAction *noAction = d->mCustomReplyAllActionMenu->menu()->addAction(i18n("(no custom templates)"));
         noAction->setEnabled(false);
         d->mCustomReplyAllActionMenu->setEnabled(false);
     }
     if (!forwardc) {
-        QAction *noAction
-            = d->mCustomForwardActionMenu->menu()->addAction(i18n("(no custom templates)"));
+        QAction *noAction = d->mCustomForwardActionMenu->menu()->addAction(i18n("(no custom templates)"));
         noAction->setEnabled(false);
         d->mCustomForwardActionMenu->setEnabled(false);
     }

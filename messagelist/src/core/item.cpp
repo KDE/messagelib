@@ -8,8 +8,8 @@
 
 #include "core/item.h"
 #include "core/item_p.h"
-#include "core/model.h"
 #include "core/manager.h"
+#include "core/model.h"
 
 #include <kio/global.h> // for KIO::filesize_t and related functions
 #include <kmime/kmime_dateformatter.h> // kdepimlibs
@@ -56,7 +56,7 @@ void Item::childItemStats(ChildItemStats &stats) const
     }
 }
 
-QList< Item * > *Item::childItems() const
+QList<Item *> *Item::childItems() const
 {
     return d_ptr->mChildItems;
 }
@@ -148,8 +148,7 @@ Item *Item::itemAbove()
     }
 
     Item *siblingAbove = d_ptr->mParent->itemAboveChild(this);
-    if (siblingAbove && siblingAbove != this && siblingAbove != d_ptr->mParent
-        && siblingAbove->childItemCount() > 0) {
+    if (siblingAbove && siblingAbove != this && siblingAbove != d_ptr->mParent && siblingAbove->childItemCount() > 0) {
         return siblingAbove->deepestItem();
     }
 
@@ -173,7 +172,7 @@ int Item::indexOfChildItem(Item *child) const
     }
     int idx = child->d_ptr->mThisItemIndexGuess;
     if (idx < d_ptr->mChildItems->count() && d_ptr->mChildItems->at(idx) == child) {
-        return idx;    // good guess
+        return idx; // good guess
     }
 
     // We had a guess but it's out-of-date. Let's use the old guess as our
@@ -305,7 +304,7 @@ QString Item::formattedSize() const
 
 QString Item::formattedDate() const
 {
-    if (static_cast< uint >(date()) == static_cast< uint >(-1)) {
+    if (static_cast<uint>(date()) == static_cast<uint>(-1)) {
         return Manager::instance()->cachedLocalizedUnknownText();
     } else {
         return Manager::instance()->dateFormatter()->dateString(date());
@@ -314,7 +313,7 @@ QString Item::formattedDate() const
 
 QString Item::formattedMaxDate() const
 {
-    if (static_cast< uint >(maxDate()) == static_cast< uint >(-1)) {
+    if (static_cast<uint>(maxDate()) == static_cast<uint>(-1)) {
         return Manager::instance()->cachedLocalizedUnknownText();
     } else {
         return Manager::instance()->dateFormatter()->dateString(maxDate());
@@ -384,9 +383,9 @@ void Item::setViewable(Model *model, bool bViewable)
     if (bViewable) {
         if (model) {
             // fake having no children, for a second
-            QList< Item * > *tmp = d_ptr->mChildItems;
+            QList<Item *> *tmp = d_ptr->mChildItems;
             d_ptr->mChildItems = nullptr;
-            //qDebug("BEGIN INSERT ROWS FOR PARENT %x: from %d to %d, (will) have %d children",this,0,tmp->count()-1,tmp->count());
+            // qDebug("BEGIN INSERT ROWS FOR PARENT %x: from %d to %d, (will) have %d children",this,0,tmp->count()-1,tmp->count());
             model->beginInsertRows(model->index(this, 0), 0, tmp->count() - 1);
             d_ptr->mChildItems = tmp;
             d_ptr->mIsViewable = true;
@@ -409,7 +408,7 @@ void Item::setViewable(Model *model, bool bViewable)
         if (model) {
             // fake having no children, for a second
             model->beginRemoveRows(model->index(this, 0), 0, d_ptr->mChildItems->count() - 1);
-            QList< Item * > *tmp = d_ptr->mChildItems;
+            QList<Item *> *tmp = d_ptr->mChildItems;
             d_ptr->mChildItems = nullptr;
             d_ptr->mIsViewable = false;
             model->endRemoveRows();
@@ -427,7 +426,7 @@ void Item::killAllChildItems()
     }
 
     while (!d_ptr->mChildItems->isEmpty()) {
-        delete d_ptr->mChildItems->first();    // this will call childDead() which will remove the child from the list
+        delete d_ptr->mChildItems->first(); // this will call childDead() which will remove the child from the list
     }
 
     delete d_ptr->mChildItems;
@@ -590,7 +589,7 @@ void MessageList::Core::Item::setSubjectAndStatus(const QString &subject, Akonad
 void Item::rawAppendChildItem(Item *child)
 {
     if (!d_ptr->mChildItems) {
-        d_ptr->mChildItems = new QList< Item * >();
+        d_ptr->mChildItems = new QList<Item *>();
     }
     d_ptr->mChildItems->append(child);
 }
@@ -598,17 +597,17 @@ void Item::rawAppendChildItem(Item *child)
 int Item::appendChildItem(Model *model, Item *child)
 {
     if (!d_ptr->mChildItems) {
-        d_ptr->mChildItems = new QList< Item * >();
+        d_ptr->mChildItems = new QList<Item *>();
     }
     const int idx = d_ptr->mChildItems->count();
     if (d_ptr->mIsViewable) {
         if (model) {
-            model->beginInsertRows(model->index(this, 0), idx, idx);    // THIS IS EXTREMELY UGLY, BUT IT'S THE ONLY POSSIBLE WAY WITH QT4 AT THE TIME OF WRITING
+            model->beginInsertRows(model->index(this, 0), idx, idx); // THIS IS EXTREMELY UGLY, BUT IT'S THE ONLY POSSIBLE WAY WITH QT4 AT THE TIME OF WRITING
         }
         d_ptr->mChildItems->append(child);
         child->setIndexGuess(idx);
         if (model) {
-            model->endInsertRows();    // THIS IS EXTREMELY UGLY, BUT IT'S THE ONLY POSSIBLE WAY WITH QT4 AT THE TIME OF WRITING
+            model->endInsertRows(); // THIS IS EXTREMELY UGLY, BUT IT'S THE ONLY POSSIBLE WAY WITH QT4 AT THE TIME OF WRITING
         }
         child->setViewable(model, true);
     } else {
@@ -638,11 +637,11 @@ void Item::dump(const QString &prefix)
 void Item::takeChildItem(Model *model, Item *child)
 {
     if (!d_ptr->mChildItems) {
-        return;    // Ugh... not our child ?
+        return; // Ugh... not our child ?
     }
 
     if (!d_ptr->mIsViewable) {
-        //qDebug("TAKING NON VIEWABLE CHILD ITEM %x",child);
+        // qDebug("TAKING NON VIEWABLE CHILD ITEM %x",child);
         // We can highly optimize this case
         d_ptr->mChildItems->removeOne(child);
 #if 0
@@ -658,7 +657,7 @@ void Item::takeChildItem(Model *model, Item *child)
 
     const int idx = indexOfChildItem(child);
     if (idx < 0) {
-        return;    // Aaargh... not our child ?
+        return; // Aaargh... not our child ?
     }
 
     child->setViewable(model, false);
@@ -683,5 +682,5 @@ void Item::takeChildItem(Model *model, Item *child)
 void ItemPrivate::childItemDead(Item *child)
 {
     // mChildItems MUST be non zero here, if it's not then it's a bug in THIS FILE
-    mChildItems->removeOne(child);   // since we always have ONE (if we not, it's a bug)
+    mChildItems->removeOne(child); // since we always have ONE (if we not, it's a bug)
 }

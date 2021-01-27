@@ -12,8 +12,8 @@
 
 #include "messagecomposer_debug.h"
 #include <KLocalizedString>
-#include <QTemporaryDir>
 #include <QFileDevice>
+#include <QTemporaryDir>
 
 #include <kmime/kmime_headers.h>
 #include <kmime/kmime_util.h>
@@ -23,7 +23,7 @@
 using namespace MessageComposer;
 using namespace MessageCore;
 
-static Qt::CheckState boolToCheckState(bool checked)   // local
+static Qt::CheckState boolToCheckState(bool checked) // local
 {
     if (checked) {
         return Qt::Checked;
@@ -77,9 +77,7 @@ bool AttachmentModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     Q_UNUSED(column)
     Q_UNUSED(parent)
 
-    qCDebug(MESSAGECOMPOSER_LOG) << "data has formats" << data->formats()
-                                 << "urls" << data->urls()
-                                 << "action" << int(action);
+    qCDebug(MESSAGECOMPOSER_LOG) << "data has formats" << data->formats() << "urls" << data->urls() << "action" << int(action);
 
     if (action == Qt::IgnoreAction) {
         return true;
@@ -119,7 +117,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
             continue;
         }
 
-        const AttachmentPart::Ptr part = d->parts[ index.row() ];
+        const AttachmentPart::Ptr part = d->parts[index.row()];
         QString attachmentName = part->fileName();
         if (attachmentName.isEmpty()) {
             attachmentName = part->name();
@@ -258,13 +256,12 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
             return QVariant();
         }
     } else if (role == Qt::ToolTipRole) {
-        return QVariant::fromValue(
-            i18nc("@info:tooltip",
-                  "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4",
-                  part->name().isEmpty() ? part->fileName() : part->name(),
-                  KFormat().formatByteSize(part->size()),
-                  KMime::nameForEncoding(part->encoding()),
-                  QString::fromLatin1(part->mimeType().data())));
+        return QVariant::fromValue(i18nc("@info:tooltip",
+                                         "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4",
+                                         part->name().isEmpty() ? part->fileName() : part->name(),
+                                         KFormat().formatByteSize(part->size()),
+                                         KMime::nameForEncoding(part->encoding()),
+                                         QString::fromLatin1(part->mimeType().data())));
     } else if (role == Qt::CheckStateRole) {
         switch (index.column()) {
         case CompressColumn:
@@ -309,7 +306,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
 bool AttachmentModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     bool emitDataChanged = true;
-    AttachmentPart::Ptr part = d->parts[ index.row() ];
+    AttachmentPart::Ptr part = d->parts[index.row()];
 
     if (role == Qt::EditRole) {
         switch (index.column()) {
@@ -325,8 +322,7 @@ bool AttachmentModel::setData(const QModelIndex &index, const QVariant &value, i
         }
     } else if (role == Qt::CheckStateRole) {
         switch (index.column()) {
-        case CompressColumn:
-        {
+        case CompressColumn: {
             bool toZip = value.toBool();
             if (toZip != part->isCompressed()) {
                 Q_EMIT attachmentCompressRequested(part, toZip);
@@ -393,7 +389,7 @@ bool AttachmentModel::replaceAttachment(const AttachmentPart::Ptr &oldPart, cons
         qCWarning(MESSAGECOMPOSER_LOG) << "Tried to replace non-existent part.";
         return false;
     }
-    d->parts[ idx ] = newPart;
+    d->parts[idx] = newPart;
     // Emit dataChanged() for the whole row.
     Q_EMIT dataChanged(index(idx, 0), index(idx, LastColumn - 1));
     return true;
@@ -427,10 +423,7 @@ Qt::ItemFlags AttachmentModel::flags(const QModelIndex &index) const
         return Qt::ItemIsDropEnabled | defaultFlags;
     }
 
-    if (index.column() == CompressColumn
-        || index.column() == EncryptColumn
-        || index.column() == SignColumn
-        || index.column() == AutoDisplayColumn) {
+    if (index.column() == CompressColumn || index.column() == EncryptColumn || index.column() == SignColumn || index.column() == AutoDisplayColumn) {
         return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsUserCheckable | defaultFlags;
     } else if (index.column() == NameColumn) {
         return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEditable | defaultFlags;

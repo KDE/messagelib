@@ -18,11 +18,11 @@
 #include <KStandardGuiItem>
 #include <QFileDialog>
 
-#include <QTextStream>
-#include <QDialogButtonBox>
 #include <KConfigGroup>
-#include <QPushButton>
 #include <KGuiItem>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QTextStream>
 #include <QVBoxLayout>
 #include <memory>
 
@@ -74,9 +74,8 @@ void ScamDetectionDetailsDialog::slotSaveAs()
             ts.setCodec("UTF-8");
             QString htmlStr = mDetails->toHtml();
             htmlStr.replace(QLatin1String(R"(meta name="qrichtext" content="1")"),
-                            QLatin1String(
-                                R"(meta http-equiv="Content-Type" content="text/html; charset=UTF-8")"));
-            ts <<  htmlStr;
+                            QLatin1String(R"(meta http-equiv="Content-Type" content="text/html; charset=UTF-8")"));
+            ts << htmlStr;
             file.close();
         }
     }
@@ -89,8 +88,7 @@ void ScamDetectionDetailsDialog::setDetails(const QString &details)
 
 void ScamDetectionDetailsDialog::readConfig()
 {
-    KConfigGroup group(
-        KSharedConfig::openConfig(), "ScamDetectionDetailsDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), "ScamDetectionDetailsDialog");
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -99,8 +97,7 @@ void ScamDetectionDetailsDialog::readConfig()
 
 void ScamDetectionDetailsDialog::writeConfig()
 {
-    KConfigGroup group(
-        KSharedConfig::openConfig(), "ScamDetectionDetailsDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), "ScamDetectionDetailsDialog");
     group.writeEntry("Size", size());
     group.sync();
 }

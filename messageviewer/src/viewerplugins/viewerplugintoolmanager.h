@@ -7,13 +7,14 @@
 #ifndef VIEWERPLUGINTOOLMANAGER_H
 #define VIEWERPLUGINTOOLMANAGER_H
 
-#include <Item>
-#include <QObject>
 #include "messageviewer_export.h"
 #include "viewerplugininterface.h"
+#include <Item>
+#include <QObject>
 class KActionCollection;
 class QAction;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class ViewerPluginToolManagerPrivate;
 class ViewerPluginInterface;
 /**

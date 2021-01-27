@@ -16,7 +16,8 @@
 
 #include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MailTrackingDetailsDialog;
 class MESSAGEVIEWER_TESTS_EXPORT MailTrackingWarningWidget : public KMessageWidget
 {
@@ -26,6 +27,7 @@ public:
     ~MailTrackingWarningWidget() override;
     void addTracker(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
     void hideAndClear();
+
 private:
     void slotShowDetails(const QString &content);
     Q_REQUIRED_RESULT QString generateDetails() const;

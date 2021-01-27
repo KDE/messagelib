@@ -18,8 +18,7 @@ bool FollowUpReminder::isAvailableAndEnabled()
     org::freedesktop::Akonadi::FollowUpReminderAgent iface{
         ServerManager::agentServiceName(ServerManager::Agent, QStringLiteral("akonadi_followupreminder_agent")),
         QStringLiteral("/FollowUpReminder"),
-        QDBusConnection::sessionBus()
-    };
+        QDBusConnection::sessionBus()};
 
     return iface.isValid() && iface.enabledAgent();
 }

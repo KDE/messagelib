@@ -6,16 +6,18 @@
 
 #ifndef IMAGESCALINGWIDGET_H
 #define IMAGESCALINGWIDGET_H
-#include <QWidget>
 #include "messagecomposer_export.h"
+#include <QWidget>
 
 class QComboBox;
 class QAbstractButton;
-namespace Ui {
+namespace Ui
+{
 class ImageScalingWidget;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class ImageScalingWidgetPrivate;
 /**
  * @brief The ImageScalingWidget class

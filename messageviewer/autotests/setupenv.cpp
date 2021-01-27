@@ -9,13 +9,12 @@
 
 #include <QStandardPaths>
 
-#include <QFile>
 #include <QDir>
+#include <QFile>
 
 void MessageViewer::Test::setupEnv()
 {
     qputenv("LC_ALL", "C");
-    qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QLatin1String(
-                                             "/.qttest")).constData());
+    qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QLatin1String("/.qttest")).constData());
     QStandardPaths::setTestModeEnabled(true);
 }

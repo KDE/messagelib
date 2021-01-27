@@ -13,7 +13,8 @@
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class SignJob;
 }
 
@@ -35,6 +36,7 @@ private Q_SLOTS:
     void testProtectedHeaders();
 
     void testProtectedHeadersOverwrite();
+
 private:
     void checkSignJob(MessageComposer::SignJob *sJob);
 };

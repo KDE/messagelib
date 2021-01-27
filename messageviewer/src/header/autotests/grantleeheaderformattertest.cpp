@@ -5,15 +5,15 @@
 */
 #include "grantleeheaderformattertest.h"
 
+#include "../grantleeheaderformatter.h"
 #include <MessageViewer/GrantleeHeaderStyle>
 #include <MimeTreeParser/NodeHelper>
-#include "../grantleeheaderformatter.h"
 
 #include <QFile>
 #include <QProcess>
 #include <QRegularExpression>
-#include <QStringList>
 #include <QStandardPaths>
+#include <QStringList>
 #include <QTest>
 
 using namespace MessageViewer;
@@ -22,9 +22,10 @@ QTEST_MAIN(GrantleeHeaderFormatterTest)
 
 void testHeaderFile(const QString &data, const QString &absolutePath, const QString &name)
 {
-    QString header = QStringLiteral("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
-                                    "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-                                    "<body>\n");
+    QString header = QStringLiteral(
+        "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+        "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        "<body>\n");
     header += data + QStringLiteral("</div>\n</div>");
     header += QStringLiteral("\n</body>\n</html>\n");
 
@@ -49,20 +50,14 @@ void testHeaderFile(const QString &data, const QString &absolutePath, const QStr
     }
     // TODO add proper cmake check for xmllint and diff
     {
-        const QStringList args = QStringList()
-                                 << QStringLiteral("--format")
-                                 << QStringLiteral("--encode") << QStringLiteral("UTF8")
-                                 << QStringLiteral("--output") << fName
-                                 << outName;
+        const QStringList args = QStringList() << QStringLiteral("--format") << QStringLiteral("--encode") << QStringLiteral("UTF8")
+                                               << QStringLiteral("--output") << fName << outName;
         QCOMPARE(QProcess::execute(QStringLiteral("xmllint"), args), 0);
     }
 
     {
         // compare to reference file
-        const QStringList args = QStringList()
-                                 << QStringLiteral("-u")
-                                 << fName
-                                 << QStringLiteral(HEADER_DATA_DIR "/") + fName;
+        const QStringList args = QStringList() << QStringLiteral("-u") << fName << QStringLiteral(HEADER_DATA_DIR "/") + fName;
         QProcess proc;
         proc.setProcessChannelMode(QProcess::ForwardedChannels);
         proc.start(QStringLiteral("diff"), args);
@@ -114,12 +109,12 @@ void GrantleeHeaderFormatterTest::testPrint()
 
     {
         const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.data(), false);
-        testHeaderFile(QStringLiteral("<div><div>")+data, absolutePath, QStringLiteral("printtest.off"));
+        testHeaderFile(QStringLiteral("<div><div>") + data, absolutePath, QStringLiteral("printtest.off"));
     }
 
     {
         const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.data(), true);
-        testHeaderFile(QStringLiteral("<div><div>")+data, absolutePath, QStringLiteral("printtest.on"));
+        testHeaderFile(QStringLiteral("<div><div>") + data, absolutePath, QStringLiteral("printtest.on"));
     }
 }
 
@@ -146,7 +141,7 @@ void GrantleeHeaderFormatterTest::testFancyDate()
     const QString &absolutePath = QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + tmplName;
 
     const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, msg.data(), false);
-    testHeaderFile(QStringLiteral("<div><div>")+data, absolutePath, QStringLiteral("fancydate"));
+    testHeaderFile(QStringLiteral("<div><div>") + data, absolutePath, QStringLiteral("fancydate"));
 }
 
 void GrantleeHeaderFormatterTest::testBlock_data()
@@ -176,5 +171,5 @@ void GrantleeHeaderFormatterTest::testBlock()
     QString absolutePath = QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + tmplName;
     QString data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.data(), false);
 
-    testHeaderFile(QStringLiteral("<div><div>")+data, absolutePath, tmplName);
+    testHeaderFile(QStringLiteral("<div><div>") + data, absolutePath, tmplName);
 }

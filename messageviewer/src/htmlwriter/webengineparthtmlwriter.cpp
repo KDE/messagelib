@@ -6,14 +6,14 @@
 #include "webengineparthtmlwriter.h"
 #include "webengineembedpart.h"
 
+#include "messageviewer/messageviewerutil.h"
 #include "messageviewer_debug.h"
 #include "viewer/webengine/mailwebengineview.h"
-#include "messageviewer/messageviewerutil.h"
 #include <QUrl>
 
-#include <cassert>
-#include <QTemporaryFile>
 #include <QDir>
+#include <QTemporaryFile>
+#include <cassert>
 
 using namespace MessageViewer;
 
@@ -60,16 +60,16 @@ void WebEnginePartHtmlWriter::end()
     }
     if (data().size() > 2000000) {
         qDebug() << " load big message ";
-        mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX")+ QLatin1String(".html"));
+        mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX") + QLatin1String(".html"));
         mTempFile->open();
         QTextStream stream(mTempFile);
 
         const QByteArray codecValue = Util::htmlCodec(data(), codec());
         stream.setCodec(codecValue.constData());
         stream << data();
-        //Bug 387061
+        // Bug 387061
         mHtmlView->load(QUrl::fromLocalFile(mTempFile->fileName()));
-        //qDebug() << " tempFile.fileName()" << mTempFile->fileName();
+        // qDebug() << " tempFile.fileName()" << mTempFile->fileName();
         mHtmlView->show();
         mTempFile->close();
     } else {

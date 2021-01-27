@@ -9,10 +9,10 @@
 #include "attachmentfromurljob.h"
 
 #include "messagecore_debug.h"
+#include <KFormat>
 #include <KIO/Scheduler>
 #include <KIO/TransferJob>
 #include <KLocalizedString>
-#include <KFormat>
 
 #include <QFileInfo>
 #include <QMimeDatabase>
@@ -67,15 +67,14 @@ void AttachmentFromUrlJob::Private::transferJobResult(KJob *job)
         QMimeDatabase db;
         const auto mimeType = db.mimeTypeForName(mimeTypeName);
         if (mimeType.isValid()) {
-            fileName = i18nc("a file called 'unknown.ext'", "unknown%1",
-                             mimeType.preferredSuffix());
+            fileName = i18nc("a file called 'unknown.ext'", "unknown%1", mimeType.preferredSuffix());
         } else {
             fileName = i18nc("a file called 'unknown'", "unknown");
         }
     }
 
     // Create the AttachmentPart.
-    Q_ASSERT(q->attachmentPart() == nullptr);   // Not created before.
+    Q_ASSERT(q->attachmentPart() == nullptr); // Not created before.
 
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
     QUrlQuery query(q->url());
@@ -114,17 +113,15 @@ void AttachmentFromUrlJob::doStart()
         const qint64 size = QFileInfo(url().toLocalFile()).size();
         if (size > maximumAllowedSize()) {
             setError(KJob::UserDefinedError);
-            setErrorText(i18n("You may not attach files bigger than %1. Share it with storage service.",
-                              KFormat().formatByteSize(maximumAllowedSize())));
+            setErrorText(i18n("You may not attach files bigger than %1. Share it with storage service.", KFormat().formatByteSize(maximumAllowedSize())));
             emitResult();
             return;
         }
     }
 
-    Q_ASSERT(d->mData.isEmpty());   // Not started twice.
+    Q_ASSERT(d->mData.isEmpty()); // Not started twice.
 
-    KIO::TransferJob *job = KIO::get(url(), KIO::NoReload,
-                                     (uiDelegate() ? KIO::DefaultFlags : KIO::HideProgressInfo));
+    KIO::TransferJob *job = KIO::get(url(), KIO::NoReload, (uiDelegate() ? KIO::DefaultFlags : KIO::HideProgressInfo));
     connect(job, &KIO::TransferJob::result, this, [this](KJob *job) {
         d->transferJobResult(job);
     });

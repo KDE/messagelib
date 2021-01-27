@@ -6,11 +6,11 @@
 
 #include "remotecontentwidget.h"
 
+#include <KLocalizedString>
+#include <QCheckBox>
 #include <QFormLayout>
 #include <QLabel>
-#include <KLocalizedString>
 #include <QLineEdit>
-#include <QCheckBox>
 
 using namespace MessageViewer;
 RemoteContentWidget::RemoteContentWidget(QWidget *parent)
@@ -31,16 +31,13 @@ RemoteContentWidget::RemoteContentWidget(QWidget *parent)
 
 RemoteContentWidget::~RemoteContentWidget()
 {
-
 }
 
 RemoteContentInfo RemoteContentWidget::info() const
 {
     RemoteContentInfo info;
     info.setUrl(mLineEdit->text());
-    info.setStatus(mStatusCheckBox->isChecked() ?
-                       RemoteContentInfo::RemoteContentInfoStatus::Authorized :
-                       RemoteContentInfo::RemoteContentInfoStatus::Blocked);
+    info.setStatus(mStatusCheckBox->isChecked() ? RemoteContentInfo::RemoteContentInfoStatus::Authorized : RemoteContentInfo::RemoteContentInfoStatus::Blocked);
     return info;
 }
 

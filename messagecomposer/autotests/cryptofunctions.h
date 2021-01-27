@@ -9,19 +9,26 @@
 #define CRYPTO_FUNCTIONS_H
 
 #include <Libkleo/Enum>
-#include <kmime/kmime_headers.h>
 #include <QByteArray>
+#include <kmime/kmime_headers.h>
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace ComposerTestUtil {
+namespace ComposerTestUtil
+{
 /**
  * gate function to run verifySignature, verifyEncryption or verifySignatureAndEncryption.
  */
 
-void verify(bool sign, bool encrypt, KMime::Content *content, const QByteArray &origContent, Kleo::CryptoMessageFormat f, KMime::Headers::contentEncoding encoding);
+void verify(bool sign,
+            bool encrypt,
+            KMime::Content *content,
+            const QByteArray &origContent,
+            Kleo::CryptoMessageFormat f,
+            KMime::Headers::contentEncoding encoding);
 
 /**
  * Verifies that the given MIME content is signed and that the text is equal
@@ -36,7 +43,11 @@ void verifyEncryption(KMime::Content *content, const QByteArray &encrContent, Kl
 /**
  * Verifies that the given MIME content is signed and then encrypted, and the original text is as specified
  */
-void verifySignatureAndEncryption(KMime::Content *content, const QByteArray &origContent, Kleo::CryptoMessageFormat f, bool withAttachment = false, bool combind = false);
+void verifySignatureAndEncryption(KMime::Content *content,
+                                  const QByteArray &origContent,
+                                  Kleo::CryptoMessageFormat f,
+                                  bool withAttachment = false,
+                                  bool combind = false);
 }
 
 #endif

@@ -6,17 +6,21 @@
 
 #ifndef DKIMUTIL_H
 #define DKIMUTIL_H
-#include <QString>
-#include <QCryptographicHash>
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_private_export.h"
-namespace MessageViewer {
-namespace DKIMUtil {
+#include <QCryptographicHash>
+#include <QString>
+namespace MessageViewer
+{
+namespace DKIMUtil
+{
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString bodyCanonizationRelaxed(QString body);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString bodyCanonizationSimple(QString body);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QByteArray generateHash(const QByteArray &body, QCryptographicHash::Algorithm algo);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString headerCanonizationSimple(const QString &headerName, const QString &headerValue);
-MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString headerCanonizationRelaxed(const QString &headerName, const QString &headerValue, bool removeQuoteOnContentType);
+MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString headerCanonizationRelaxed(const QString &headerName,
+                                                                               const QString &headerValue,
+                                                                               bool removeQuoteOnContentType);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString cleanString(QString str);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString emailDomain(const QString &emailDomain);
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString emailSubDomain(const QString &emailDomain);

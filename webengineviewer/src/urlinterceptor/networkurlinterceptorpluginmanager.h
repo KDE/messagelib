@@ -7,11 +7,12 @@
 #ifndef MAILNETWORKURLINTERCEPTORPLUGINMANAGER_H
 #define MAILNETWORKURLINTERCEPTORPLUGINMANAGER_H
 
+#include "webengineviewer_export.h"
+#include <PimCommon/PluginUtil>
 #include <QObject>
 #include <QVector>
-#include <PimCommon/PluginUtil>
-#include "webengineviewer_export.h"
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class NetworkUrlInterceptorPluginManagerPrivate;
 class NetworkPluginUrlInterceptor;
 /**
@@ -31,6 +32,7 @@ public:
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT WebEngineViewer::NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
+
 private:
     NetworkUrlInterceptorPluginManagerPrivate *const d;
 };

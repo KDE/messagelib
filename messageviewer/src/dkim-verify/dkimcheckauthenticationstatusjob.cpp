@@ -9,7 +9,7 @@
 #include "messageviewer_dkimcheckerdebug.h"
 #include <KMime/Message>
 using namespace MessageViewer;
-//see https://tools.ietf.org/html/rfc7601
+// see https://tools.ietf.org/html/rfc7601
 DKIMCheckAuthenticationStatusJob::DKIMCheckAuthenticationStatusJob(QObject *parent)
     : QObject(parent)
 {
@@ -38,7 +38,7 @@ void DKIMCheckAuthenticationStatusJob::start()
         str = mHeaderParser.headerType(strAuthenticationHeader);
     }
 
-    //qDebug() << "result info: " << info;
+    // qDebug() << "result info: " << info;
     Q_EMIT result(info);
     deleteLater();
 }

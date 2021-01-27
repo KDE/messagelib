@@ -7,15 +7,16 @@
 #ifndef MAILNETWORKURLINTERCEPTORMANAGER_H
 #define MAILNETWORKURLINTERCEPTORMANAGER_H
 
-#include <QObject>
 #include "networkpluginurlinterceptor.h"
 #include "networkpluginurlinterceptorinterface.h"
 #include "webengineviewer_export.h"
+#include <QObject>
 #include <QVector>
 #include <WebEngineViewer/WebHitTestResult>
 class KActionCollection;
 class QWebEngineView;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebHitTestResult;
 class NetworkUrlInterceptorManagerPrivate;
 /**
@@ -31,6 +32,7 @@ public:
 
     Q_REQUIRED_RESULT QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
     Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+
 private:
     NetworkUrlInterceptorManagerPrivate *const d;
 };

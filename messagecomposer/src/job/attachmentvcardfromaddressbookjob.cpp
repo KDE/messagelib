@@ -5,10 +5,10 @@
 */
 
 #include "attachmentvcardfromaddressbookjob.h"
-#include <KLocalizedString>
 #include <KContacts/Addressee>
 #include <KContacts/ContactGroup>
 #include <KContacts/VCardConverter>
+#include <KLocalizedString>
 #include <akonadi/contact/contactgroupexpandjob.h>
 
 using namespace MessageComposer;
@@ -61,7 +61,7 @@ void AttachmentVcardFromAddressBookJob::doStart()
                 const QString attachmentName = (contactRealName.isEmpty() ? QStringLiteral("vcard") : contactRealName) + QLatin1String(".vcf");
 
                 QByteArray data = d->mItem.payloadData();
-                //Workaround about broken kaddressbook fields.
+                // Workaround about broken kaddressbook fields.
                 KContacts::adaptIMAttributes(data);
                 addAttachment(data, attachmentName);
             }

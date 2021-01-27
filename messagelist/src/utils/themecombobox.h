@@ -5,16 +5,19 @@
 #ifndef MESSAGELIST_UTILS_THEMECOMBOBOX_H
 #define MESSAGELIST_UTILS_THEMECOMBOBOX_H
 
-#include <messagelist_export.h>
 #include <QComboBox>
 #include <collection.h>
-namespace MessageList {
-namespace Core {
+#include <messagelist_export.h>
+namespace MessageList
+{
+namespace Core
+{
 class StorageModel;
 class Theme;
 } // namespace Core
 
-namespace Utils {
+namespace Utils
+{
 class ThemeComboBoxPrivate;
 
 /**

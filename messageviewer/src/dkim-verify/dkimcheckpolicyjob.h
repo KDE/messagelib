@@ -7,11 +7,12 @@
 #ifndef DKIMCHECKPOLICYJOB_H
 #define DKIMCHECKPOLICYJOB_H
 
-#include <QObject>
 #include "dkimchecksignaturejob.h"
 #include "dmarcpolicyjob.h"
 #include "messageviewer_export.h"
-namespace MessageViewer {
+#include <QObject>
+namespace MessageViewer
+{
 /**
  * @brief The DKIMCheckPolicyJob class
  * @author Laurent Montel <montel@kde.org>

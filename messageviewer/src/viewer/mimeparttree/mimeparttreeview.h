@@ -7,10 +7,11 @@
 #ifndef MIMEPARTTREEVIEW_H
 #define MIMEPARTTREEVIEW_H
 
-#include <QTreeView>
 #include <KMime/Message>
+#include <QTreeView>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MimeTreeModel;
 class MimePartTreeView : public QTreeView
 {

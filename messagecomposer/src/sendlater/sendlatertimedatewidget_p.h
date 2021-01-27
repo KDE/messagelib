@@ -7,15 +7,16 @@
 #ifndef MESSAGECOMPOSER_SENDLATERTIMEDATEWIDGET_H
 #define MESSAGECOMPOSER_SENDLATERTIMEDATEWIDGET_H
 
-#include <QWidget>
 #include <QDateTime>
+#include <QWidget>
 
 #include <memory>
 
 class KTimeComboBox;
 class KDateComboBox;
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 /** Send later date/time widget. */
 class SendLaterTimeDateWidget : public QWidget
 {

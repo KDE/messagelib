@@ -7,18 +7,20 @@
 #ifndef MESSAGECOMPOSER_SENDLATERDIALOG_H
 #define MESSAGECOMPOSER_SENDLATERDIALOG_H
 
-#include <QDialog>
 #include <QDateTime>
+#include <QDialog>
 
 #include "messagecomposer_export.h"
 
 class QCheckBox;
 class QPushButton;
-namespace Ui {
+namespace Ui
+{
 class SendLaterWidget;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class SendLaterInfo;
 
 /** Send later dialog. */
@@ -26,12 +28,7 @@ class MESSAGECOMPOSER_EXPORT SendLaterDialog : public QDialog
 {
     Q_OBJECT
 public:
-    enum SendLaterAction {
-        Unknown = 0,
-        SendDeliveryAtTime = 1,
-        Canceled = 2,
-        PutInOutbox = 3
-    };
+    enum SendLaterAction { Unknown = 0, SendDeliveryAtTime = 1, Canceled = 2, PutInOutbox = 3 };
 
     explicit SendLaterDialog(SendLaterInfo *info, QWidget *parent = nullptr);
     ~SendLaterDialog() override;

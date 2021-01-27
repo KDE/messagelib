@@ -13,7 +13,8 @@
 
 class QTimer;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The MessageViewerSettings class
  */

@@ -9,7 +9,8 @@
 
 #include "messageviewer/headerstyle.h"
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class GrantleeHeaderStylePrivate;
 /**
  * @brief The GrantleeHeaderStyle class
@@ -25,6 +26,7 @@ public:
     const char *name() const override;
 
     Q_REQUIRED_RESULT QString format(KMime::Message *message) const override;
+
 private:
     GrantleeHeaderStylePrivate *const d;
 };

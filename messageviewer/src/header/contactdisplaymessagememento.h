@@ -9,21 +9,24 @@
 #include "interfaces/bodypart.h"
 #include "messageviewer/viewer.h"
 
-#include <KContacts/Picture>
 #include <KContacts/Addressee>
+#include <KContacts/Picture>
 
 #include <QObject>
 #include <QPointer>
 
 class KJob;
-namespace Gravatar {
+namespace Gravatar
+{
 class GravatarResolvUrlJob;
 }
 
-namespace Akonadi {
+namespace Akonadi
+{
 class ContactSearchJob;
 }
-namespace MessageViewer {
+namespace MessageViewer
+{
 class ContactDisplayMessageMemento : public QObject, public MimeTreeParser::Interface::BodyPartMemento
 {
     Q_OBJECT
@@ -50,6 +53,7 @@ private Q_SLOTS:
     void slotSearchJobFinished(KJob *job);
 
     void slotGravatarResolvUrlFinished(Gravatar::GravatarResolvUrlJob *);
+
 private:
     Q_REQUIRED_RESULT bool searchPhoto(const KContacts::AddresseeList &list);
     KContacts::Picture mPhoto;

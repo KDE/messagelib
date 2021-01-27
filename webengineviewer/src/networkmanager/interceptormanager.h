@@ -7,12 +7,13 @@
 #ifndef INTERCEPTORMANAGER_H
 #define INTERCEPTORMANAGER_H
 
-#include "webengineviewer_export.h"
 #include "webengineviewer/networkpluginurlinterceptor.h"
+#include "webengineviewer_export.h"
 class KActionCollection;
 class QWebEngineView;
 class QAction;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebHitTestResult;
 class NetworkPluginUrlInterceptorInterface;
 class NetworkAccessManagerWebEnginePrivate;
@@ -29,6 +30,7 @@ public:
     void addInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
     Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
     void removeInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
+
 private:
     NetworkAccessManagerWebEnginePrivate *const d;
 };

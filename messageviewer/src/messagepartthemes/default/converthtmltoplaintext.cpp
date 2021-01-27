@@ -7,8 +7,8 @@
 
 #include "converthtmltoplaintext.h"
 
-#include <KPIMTextEdit/PlainTextMarkupBuilder>
 #include <KPIMTextEdit/MarkupDirector>
+#include <KPIMTextEdit/PlainTextMarkupBuilder>
 #include <QTextDocument>
 
 using namespace MimeTreeParser;
@@ -51,7 +51,7 @@ QString ConvertHtmlToPlainText::htmlString() const
     return mHtmlString;
 }
 
-//Duplicate from kpimtextedit/textedit.h
+// Duplicate from kpimtextedit/textedit.h
 void ConvertHtmlToPlainText::toCleanPlainText(QString &text)
 {
     // Remove line separators. Normal \n chars are still there, so no linebreaks get lost here

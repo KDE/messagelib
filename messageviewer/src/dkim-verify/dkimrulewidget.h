@@ -6,13 +6,14 @@
 
 #ifndef DKIMRULEWIDGET_H
 #define DKIMRULEWIDGET_H
-#include <QWidget>
 #include "messageviewer_private_export.h"
 #include <MessageViewer/DKIMRule>
+#include <QWidget>
 class QCheckBox;
 class QLineEdit;
 class QSpinBox;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class DKIMManageRulesComboBox;
 class MESSAGEVIEWER_TESTS_EXPORT DKIMRuleWidget : public QWidget
 {

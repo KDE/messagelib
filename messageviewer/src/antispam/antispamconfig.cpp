@@ -61,8 +61,7 @@ void AntiSpamConfig::readConfig()
             } else if (qstricmp(type.data(), "adjusted") == 0) {
                 typeE = SpamAgentAdjustedFloat;
             }
-            mAgents.append(SpamAgent(name, typeE, header, cheader, QRegExp(score),
-                                     QRegExp(threshold), QRegExp(confidence)));
+            mAgents.append(SpamAgent(name, typeE, header, cheader, QRegExp(score), QRegExp(threshold), QRegExp(confidence)));
         }
     }
 }

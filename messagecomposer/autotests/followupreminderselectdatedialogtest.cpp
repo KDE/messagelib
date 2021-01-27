@@ -6,16 +6,16 @@
 
 #include "followupreminderselectdatedialogtest.h"
 #include "../src/followupreminder/followupreminderselectdatedialog.h"
-#include <QTest>
-#include <QLineEdit>
-#include <KDateComboBox>
 #include <AkonadiWidgets/CollectionComboBox>
+#include <KDateComboBox>
+#include <QLineEdit>
+#include <QTest>
 
+#include <AkonadiCore/EntityTreeModel>
+#include <KCalendarCore/Todo>
 #include <QLineEdit>
 #include <QPushButton>
-#include <AkonadiCore/EntityTreeModel>
 #include <QStandardItemModel>
-#include <KCalendarCore/Todo>
 
 FollowupReminderSelectDateDialogTest::FollowupReminderSelectDateDialogTest(QObject *parent)
     : QObject(parent)
@@ -36,10 +36,8 @@ QStandardItemModel *FollowupReminderSelectDateDialogTest::defaultItemModel()
         collection.setContentMimeTypes(QStringList() << KCalendarCore::Todo::todoMimeType());
 
         QStandardItem *item = new QStandardItem(collection.name());
-        item->setData(QVariant::fromValue(collection),
-                      Akonadi::EntityTreeModel::CollectionRole);
-        item->setData(QVariant::fromValue(collection.id()),
-                      Akonadi::EntityTreeModel::CollectionIdRole);
+        item->setData(QVariant::fromValue(collection), Akonadi::EntityTreeModel::CollectionRole);
+        item->setData(QVariant::fromValue(collection.id()), Akonadi::EntityTreeModel::CollectionIdRole);
 
         model->appendRow(item);
     }

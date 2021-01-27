@@ -9,14 +9,16 @@
 #include "bufferedhtmlwriter.h"
 #include <QObject>
 
-#include <QString>
 #include <QByteArray>
+#include <QString>
 class QTemporaryFile;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MailWebEngineView;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class WebEnginePartHtmlWriter : public QObject, public BufferedHtmlWriter
 {
     Q_OBJECT
@@ -43,11 +45,7 @@ private:
     MailWebEngineView *const mHtmlView;
     QString mExtraHead;
     QString mStyleBody;
-    enum State {
-        Begun,
-        Queued,
-        Ended
-    } mState = Ended;
+    enum State { Begun, Queued, Ended } mState = Ended;
     QTemporaryFile *mTempFile = nullptr;
 };
 }

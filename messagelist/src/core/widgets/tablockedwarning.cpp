@@ -18,12 +18,10 @@ TabLockedWarning::TabLockedWarning(QWidget *parent)
     setText(i18n("Current Tab is locked."));
     setVisible(false);
     auto unlockAction = new QAction(i18n("Unlock"), this);
-    connect(unlockAction, &QAction::triggered, this,
-            &TabLockedWarning::unlockTabRequested);
+    connect(unlockAction, &QAction::triggered, this, &TabLockedWarning::unlockTabRequested);
     addAction(unlockAction);
 }
 
 TabLockedWarning::~TabLockedWarning()
 {
-
 }

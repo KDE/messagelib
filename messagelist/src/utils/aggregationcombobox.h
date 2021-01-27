@@ -5,16 +5,19 @@
 #ifndef MESSAGELIST_UTILS_AGGREGATIONCOMBOBOX_H
 #define MESSAGELIST_UTILS_AGGREGATIONCOMBOBOX_H
 
-#include <messagelist_export.h>
 #include <QComboBox>
 #include <collection.h>
-namespace MessageList {
-namespace Core {
+#include <messagelist_export.h>
+namespace MessageList
+{
+namespace Core
+{
 class Aggregation;
 class StorageModel;
 }
 
-namespace Utils {
+namespace Utils
+{
 class AggregationComboBoxPrivate;
 /**
  * A specialized QComboBox that lists all message list aggregations.

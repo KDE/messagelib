@@ -7,9 +7,10 @@
 #ifndef TEMPLATEPARSEREMAILADDRESSREQUESTERINTERFACEWIDGET_H
 #define TEMPLATEPARSEREMAILADDRESSREQUESTERINTERFACEWIDGET_H
 
-#include <QWidget>
 #include "templateparser_private_export.h"
-namespace TemplateParser {
+#include <QWidget>
+namespace TemplateParser
+{
 class TemplateParserEmailAddressRequesterBase;
 class TEMPLATEPARSER_TESTS_EXPORT TemplateParserEmailAddressRequesterInterfaceWidget : public QWidget
 {

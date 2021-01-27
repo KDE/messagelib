@@ -11,8 +11,10 @@
 
 #include <QtGlobal>
 
-namespace MessageComposer {
-namespace FollowUpReminder {
+namespace MessageComposer
+{
+namespace FollowUpReminder
+{
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool isAvailableAndEnabled();
 }
 }

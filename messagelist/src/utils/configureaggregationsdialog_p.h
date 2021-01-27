@@ -11,12 +11,15 @@
 
 #include "utils/configureaggregationsdialog.h"
 #include <QListWidgetItem>
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class Aggregation;
 } // namespace Core
 
-namespace Utils {
+namespace Utils
+{
 class AggregationEditor;
 class AggregationListWidget;
 class AggregationListWidgetItem;

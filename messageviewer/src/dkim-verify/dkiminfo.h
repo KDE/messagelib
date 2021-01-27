@@ -8,10 +8,11 @@
 #define DKIMINFO_H
 
 #include "messageviewer_export.h"
+#include <QObject>
 #include <QString>
 #include <QStringList>
-#include <QObject>
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DKIMInfo class
  * @author Laurent Montel <montel@kde.org>
@@ -105,7 +106,7 @@ private:
     QString mAgentOrUserIdentifier;
     QString mIDomain;
     QStringList mListSignedHeader;
-    QStringList mCopiedHeaderField; //Default is empty
+    QStringList mCopiedHeaderField; // Default is empty
     qint64 mSignatureTimeStamp = -1;
     qint64 mExpireTime = -1;
     int mVersion = -1;
@@ -115,5 +116,5 @@ private:
 };
 }
 Q_DECLARE_METATYPE(MessageViewer::DKIMInfo)
-MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMInfo &t);
+MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMInfo &t);
 #endif // DKIMINFO_H

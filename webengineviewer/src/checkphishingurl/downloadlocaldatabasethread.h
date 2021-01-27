@@ -7,10 +7,11 @@
 #ifndef DOWNLOADLOCALDATABASETHREAD_H
 #define DOWNLOADLOCALDATABASETHREAD_H
 
-#include <QThread>
 #include "webengineviewer_private_export.h"
+#include <QThread>
 #include <WebEngineViewer/CreatePhishingUrlDataBaseJob>
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WEBENGINEVIEWER_TESTS_EXPORT DownloadLocalDatabaseThread : public QThread
 {
     Q_OBJECT
@@ -31,7 +32,8 @@ protected:
 
 private:
     void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
-    void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
+    void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
+                                      WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr);
     QString mCurrentDataBaseState;
     QString mDatabaseFullPath;

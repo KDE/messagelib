@@ -7,10 +7,10 @@
 #include "testdndwebengine.h"
 
 #include <QApplication>
+#include <QDebug>
+#include <QTextEdit>
 #include <QVBoxLayout>
 #include <webengineview.h>
-#include <QTextEdit>
-#include <QDebug>
 
 TestDndWebEngine::TestDndWebEngine(QWidget *parent)
     : QWidget(parent)

@@ -15,7 +15,6 @@ QTEST_MAIN(RemoteContentDialogTest)
 RemoteContentDialogTest::RemoteContentDialogTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void RemoteContentDialogTest::shouldHaveDefaultValues()

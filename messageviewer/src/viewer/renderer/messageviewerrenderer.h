@@ -12,7 +12,8 @@
 
 #include "messageviewer_private_export.h"
 #include <QWidget>
-namespace MessageViewer {
+namespace MessageViewer
+{
 class CSSHelper;
 class MESSAGEVIEWER_TESTS_EXPORT MessageViewerRenderer
 {
@@ -26,6 +27,7 @@ public:
     void setCurrentWidget(QWidget *currentWidget);
 
     void recreateCssHelper();
+
 private:
     CSSHelper *mCSSHelper = nullptr;
     QWidget *mCurrentWidget = nullptr;

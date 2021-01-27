@@ -13,42 +13,47 @@
 class QString;
 class QPoint;
 
-namespace MimeTreeParser {
-namespace Interface {
+namespace MimeTreeParser
+{
+namespace Interface
+{
 class BodyPart;
 }
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class Viewer;
 }
 
-namespace MessageViewer {
-namespace Interface {
+namespace MessageViewer
+{
+namespace Interface
+{
 /**
-  * @short An interface to body part reader link handlers
-  * @author Marc Mutz <mutz@kde.org>
-  *
-  * This interface is a condensed of variant of the more general
-  * @see URLHandler interface, designed to make bodypart-dependent
-  * link operations possible without exposing KMail-internal
-  * classes.
-  *
-  * Implementation-wise, these handlers are called as a nested
-  * Chain Of Responsibilty by an internal implementation of
-  * URLHandler.
-  *
-  * You can create a link whose handling is passed to this handler
-  * by using BodyPart::makeLink( const QString & path ). \a path is
-  * what * is passed back to the methods of this interface.
-  *
-  * Note that the BodyPart interface does not provide a means of
-  * learning the content type of the body part passed. This is
-  * intentional. It is expected that either separate
-  * BodyPartURLHandlers are created for these purposes or else the
-  * information encoded into the path parameter by the
-  * BodyPartFormatter.
-  */
+ * @short An interface to body part reader link handlers
+ * @author Marc Mutz <mutz@kde.org>
+ *
+ * This interface is a condensed of variant of the more general
+ * @see URLHandler interface, designed to make bodypart-dependent
+ * link operations possible without exposing KMail-internal
+ * classes.
+ *
+ * Implementation-wise, these handlers are called as a nested
+ * Chain Of Responsibilty by an internal implementation of
+ * URLHandler.
+ *
+ * You can create a link whose handling is passed to this handler
+ * by using BodyPart::makeLink( const QString & path ). \a path is
+ * what * is passed back to the methods of this interface.
+ *
+ * Note that the BodyPart interface does not provide a means of
+ * learning the content type of the body part passed. This is
+ * intentional. It is expected that either separate
+ * BodyPartURLHandlers are created for these purposes or else the
+ * information encoded into the path parameter by the
+ * BodyPartFormatter.
+ */
 class BodyPartURLHandler
 {
 public:

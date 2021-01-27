@@ -19,15 +19,15 @@
 
 #include <KPluginLoader>
 
-#include <QMimeDatabase>
 #include <QJsonArray>
+#include <QMimeDatabase>
 #include <algorithm>
 
 using namespace MessageViewer;
 
 MessagePartRendererFactoryPrivate::~MessagePartRendererFactoryPrivate()
 {
-    QHashIterator<QByteArray, std::vector<RendererInfo> > i(m_renderers);
+    QHashIterator<QByteArray, std::vector<RendererInfo>> i(m_renderers);
     while (i.hasNext()) {
         i.next();
         auto renderInfo = i.value();
@@ -146,12 +146,15 @@ QVector<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(
     auto candidates = d->m_renderers.value(mo->className());
 
     // remove candidates with a mimetype set that don't match the mimetype of the part
-    candidates.erase(std::remove_if(candidates.begin(), candidates.end(), [ancestors](const RendererInfo &info) {
-        if (info.mimeType.isEmpty()) {
-            return false;
-        }
-        return !ancestors.contains(info.mimeType);
-    }), candidates.end());
+    candidates.erase(std::remove_if(candidates.begin(),
+                                    candidates.end(),
+                                    [ancestors](const RendererInfo &info) {
+                                        if (info.mimeType.isEmpty()) {
+                                            return false;
+                                        }
+                                        return !ancestors.contains(info.mimeType);
+                                    }),
+                     candidates.end());
 
     // sort most specific mimetpypes first
     std::stable_sort(candidates.begin(), candidates.end(), [ancestors](const RendererInfo &lhs, const RendererInfo &rhs) {

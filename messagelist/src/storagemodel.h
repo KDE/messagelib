@@ -7,23 +7,26 @@
 #ifndef MESSAGELIST_STORAGEMODEL_H
 #define MESSAGELIST_STORAGEMODEL_H
 
-#include <messagelist_export.h>
 #include <messagelist/storagemodelbase.h>
+#include <messagelist_export.h>
 
+#include <QVector>
 #include <collection.h>
 #include <item.h>
-#include <QVector>
 #include <kmime/kmime_message.h>
 
 class QAbstractItemModel;
 class QItemSelectionModel;
 
-namespace Akonadi {
+namespace Akonadi
+{
 class Item;
 }
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class MessageItem;
 }
 
@@ -36,8 +39,8 @@ class MESSAGELIST_EXPORT StorageModel : public MessageList::Core::StorageModel
 
 public:
     /**
-    * Create a StorageModel wrapping the specified folder.
-    */
+     * Create a StorageModel wrapping the specified folder.
+     */
     explicit StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent = nullptr);
     ~StorageModel() override;
 
@@ -60,7 +63,7 @@ public:
     Q_REQUIRED_RESULT QModelIndex parent(const QModelIndex &index) const override;
     Q_REQUIRED_RESULT int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    QMimeData *mimeData(const QVector< MessageList::Core::MessageItem * > &) const override;
+    QMimeData *mimeData(const QVector<MessageList::Core::MessageItem *> &) const override;
     using MessageList::Core::StorageModel::mimeData;
 
     Q_REQUIRED_RESULT Akonadi::Item itemForRow(int row) const;

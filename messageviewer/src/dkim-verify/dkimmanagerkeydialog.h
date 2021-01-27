@@ -7,10 +7,11 @@
 #ifndef DKIMMANAGERKEYDIALOG_H
 #define DKIMMANAGERKEYDIALOG_H
 
-#include <QDialog>
 #include "messageviewer_export.h"
+#include <QDialog>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class DKIMManagerKeyWidget;
 /**
  * @brief The DKIMManagerKeyDialog class
@@ -22,6 +23,7 @@ class MESSAGEVIEWER_EXPORT DKIMManagerKeyDialog : public QDialog
 public:
     explicit DKIMManagerKeyDialog(QWidget *parent = nullptr);
     ~DKIMManagerKeyDialog() override;
+
 private:
     void readConfig();
     void writeConfig();

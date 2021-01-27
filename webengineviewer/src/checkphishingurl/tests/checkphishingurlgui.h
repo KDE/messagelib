@@ -7,8 +7,8 @@
 #ifndef CHECKPHISHINGURLGUI_H
 #define CHECKPHISHINGURLGUI_H
 
-#include <QWidget>
 #include "../checkphishingurljob.h"
+#include <QWidget>
 class QLineEdit;
 class QPlainTextEdit;
 class CheckPhishingUrlGui : public QWidget
@@ -21,6 +21,7 @@ private Q_SLOTS:
     void slotCheckUrl();
     void slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus result, const QUrl &url, uint verifyCacheAfterThisTime);
     void slotJSonDebug(const QByteArray &debug);
+
 private:
     QLineEdit *mCheckUrlLineEdit;
     QPlainTextEdit *mJson;

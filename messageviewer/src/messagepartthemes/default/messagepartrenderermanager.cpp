@@ -6,14 +6,14 @@
 
 #include "messagepartrenderermanager.h"
 #include "messageviewer_debug.h"
-#include <KIconLoader>
-#include <QStandardPaths>
 #include <GrantleeTheme/GrantleeKi18nLocalizer>
 #include <GrantleeTheme/GrantleeThemeEngine>
+#include <KIconLoader>
+#include <QStandardPaths>
 
-#include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/key.h>
+#include <gpgme++/verificationresult.h>
 
 #include <QGpgME/Protocol>
 
@@ -36,9 +36,9 @@ if (property == QLatin1String("keyID")) {
 }
 GRANTLEE_END_LOOKUP
 // Read-only introspection of QGpgME::Protocol object.
-namespace Grantlee {
-template<>
-inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object, const QString &property)
+namespace Grantlee
+{
+template<> inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object, const QString &property)
 {
     if (property == QLatin1String("name")) {
         return object->name();
@@ -50,9 +50,12 @@ inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Pro
 }
 
 // Read-only introspection of std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> object.
-namespace Grantlee {
+namespace Grantlee
+{
 template<>
-inline QVariant TypeAccessor<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> &>::lookUp(std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> const &object, const QString &property)
+inline QVariant
+TypeAccessor<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> &>::lookUp(std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> const &object,
+                                                                                  const QString &property)
 {
     if (property == QLatin1String("keyID")) {
         return QString::fromLatin1(object.first.keyID());
@@ -67,14 +70,16 @@ inline QVariant TypeAccessor<std::pair<GpgME::DecryptionResult::Recipient, GpgME
 }
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class GlobalContext : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString dir READ layoutDirection CONSTANT)
     Q_PROPERTY(int iconSize READ iconSize CONSTANT)
 public:
-    explicit GlobalContext(QObject *parent) : QObject(parent)
+    explicit GlobalContext(QObject *parent)
+        : QObject(parent)
     {
     }
 
@@ -115,7 +120,7 @@ void MessagePartRendererManager::initializeRenderer()
 {
     Grantlee::registerMetaType<GpgME::DecryptionResult::Recipient>();
     Grantlee::registerMetaType<const QGpgME::Protocol *>();
-    Grantlee::registerMetaType<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> >();
+    Grantlee::registerMetaType<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>>();
     m_engine = new GrantleeTheme::Engine;
     const auto libraryPaths = QCoreApplication::libraryPaths();
     for (const auto &p : libraryPaths) {
@@ -124,8 +129,7 @@ void MessagePartRendererManager::initializeRenderer()
     m_engine->addDefaultLibrary(QStringLiteral("messageviewer_grantlee_extension"));
     m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
 
-    auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(
-        new Grantlee::FileSystemTemplateLoader());
+    auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader());
     loader->setTemplateDirs({QStringLiteral(":/")});
     m_engine->addTemplateLoader(loader);
 }
@@ -134,11 +138,8 @@ Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
 {
     Grantlee::Template t = m_engine->loadByName(name);
     if (t->error()) {
-        qCWarning(MESSAGEVIEWER_LOG) << t->errorString()
-                                     <<
-            ". Searched in subdir mimetreeparser/themes/default in these locations"
-                                     << QStandardPaths::standardLocations(
-            QStandardPaths::GenericDataLocation);
+        qCWarning(MESSAGEVIEWER_LOG) << t->errorString() << ". Searched in subdir mimetreeparser/themes/default in these locations"
+                                     << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
     }
     return t;
 }

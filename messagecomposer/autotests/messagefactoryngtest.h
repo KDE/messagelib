@@ -11,7 +11,8 @@
 
 #include <QObject>
 #include <kmime/kmime_message.h>
-namespace KIdentityManagement {
+namespace KIdentityManagement
+{
 class IdentityManager;
 }
 class MessageFactoryTest : public QObject
@@ -37,7 +38,7 @@ private Q_SLOTS:
     void testCreateRedirectToAndCC();
     void testCreateRedirectToAndCCAndBCC();
 
-    //MultiPart
+    // MultiPart
     void test_multipartAlternative_data();
     void test_multipartAlternative();
 
@@ -50,6 +51,7 @@ private Q_SLOTS:
     void testCreateReplyToAllWithUseSenderAndIdentityInCCAsync();
 
     void cleanupTestCase();
+
 private:
     Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessage();
     Q_REQUIRED_RESULT KMime::Message::Ptr loadMessageFromFile(const QString &filename);

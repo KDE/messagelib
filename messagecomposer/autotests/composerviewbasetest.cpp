@@ -5,8 +5,8 @@
 */
 
 #include "composerviewbasetest.h"
-#include <QTest>
 #include "../src/composer/composerviewbase.h"
+#include <QTest>
 
 ComposerViewBaseTest::ComposerViewBaseTest(QObject *parent)
     : QObject(parent)
@@ -30,7 +30,7 @@ void ComposerViewBaseTest::shouldHaveDefaultValue()
     QVERIFY(!composerViewBase.transportComboBox());
     QVERIFY(!composerViewBase.fccCombo());
     QVERIFY(!composerViewBase.dictionary());
-#if 0 //mrecipient is null
+#if 0 // mrecipient is null
     QVERIFY(composerViewBase.to().isEmpty());
     QVERIFY(composerViewBase.cc().isEmpty());
     QVERIFY(composerViewBase.bcc().isEmpty());

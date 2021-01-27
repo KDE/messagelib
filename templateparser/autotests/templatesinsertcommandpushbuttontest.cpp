@@ -5,11 +5,11 @@
 */
 
 #include "templatesinsertcommandpushbuttontest.h"
-#include "templatesinsertcommandpushbutton.h"
 #include "templatescommandmenu.h"
+#include "templatesinsertcommandpushbutton.h"
 
-#include <QTest>
 #include <QMenu>
+#include <QTest>
 
 QTEST_MAIN(TemplatesInsertCommandPushButtonTest)
 

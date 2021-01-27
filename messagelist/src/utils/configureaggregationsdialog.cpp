@@ -9,26 +9,28 @@
 #include "utils/configureaggregationsdialog.h"
 #include "utils/configureaggregationsdialog_p.h"
 
-#include "utils/aggregationeditor.h"
 #include "core/aggregation.h"
+#include "utils/aggregationeditor.h"
 
 #include "core/manager.h"
 
-#include <QGridLayout>
-#include <QPushButton>
 #include <QFrame>
+#include <QGridLayout>
 #include <QMap>
+#include <QPushButton>
 
-#include <KLocalizedString>
-#include <QIcon>
 #include <KConfig>
-#include <QFileDialog>
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <QDialogButtonBox>
+#include <QFileDialog>
+#include <QIcon>
 #include <QVBoxLayout>
 
-namespace MessageList {
-namespace Utils {
+namespace MessageList
+{
+namespace Utils
+{
 class AggregationListWidgetItem : public QListWidgetItem
 {
 private:
@@ -72,7 +74,6 @@ public:
     }
 
 public:
-
     // need a larger but shorter QListWidget
     QSize sizeHint() const override
     {
@@ -202,7 +203,7 @@ void ConfigureAggregationsDialog::Private::okButtonClicked()
         const int c = mAggregationList->count();
         int i = 0;
         while (i < c) {
-            auto *item = dynamic_cast< AggregationListWidgetItem * >(mAggregationList->item(i));
+            auto *item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
             if (item) {
                 Manager::instance()->addAggregation(item->aggregation());
                 item->forgetAggregation();
@@ -256,9 +257,9 @@ void ConfigureAggregationsDialog::Private::fillAggregationList()
     if (!Manager::instance()) {
         return;
     }
-    const QMap< QString, Aggregation * > &sets = Manager::instance()->aggregations();
-    QMap< QString, Aggregation * >::ConstIterator end(sets.constEnd());
-    for (QMap< QString, Aggregation * >::ConstIterator it = sets.constBegin(); it != end; ++it) {
+    const QMap<QString, Aggregation *> &sets = Manager::instance()->aggregations();
+    QMap<QString, Aggregation *>::ConstIterator end(sets.constEnd());
+    for (QMap<QString, Aggregation *>::ConstIterator it = sets.constBegin(); it != end; ++it) {
         (void)new AggregationListWidgetItem(mAggregationList, *(*it));
     }
 }
@@ -273,14 +274,14 @@ void ConfigureAggregationsDialog::Private::updateButton(QListWidgetItem *cur)
 {
     const int numberOfSelectedItem(mAggregationList->selectedItems().count());
 
-    AggregationListWidgetItem *item = cur ? dynamic_cast< AggregationListWidgetItem * >(cur) : nullptr;
+    AggregationListWidgetItem *item = cur ? dynamic_cast<AggregationListWidgetItem *>(cur) : nullptr;
     mDeleteAggregationButton->setEnabled(item && !item->aggregation()->readOnly() && (mAggregationList->count() > 1));
 
     mCloneAggregationButton->setEnabled(numberOfSelectedItem == 1);
     mExportAggregationButton->setEnabled(numberOfSelectedItem > 0);
     mEditor->editAggregation(item ? item->aggregation() : nullptr);
     if (item && !item->isSelected()) {
-        item->setSelected(true);    // make sure it's true
+        item->setSelected(true); // make sure it's true
     }
 }
 
@@ -289,7 +290,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
     const int c = mAggregationList->count();
     int i = 0;
     while (i < c) {
-        auto *item = dynamic_cast< AggregationListWidgetItem * >(mAggregationList->item(i));
+        auto *item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
         if (item) {
             if (item->aggregation() != skipAggregation) {
                 if (item->aggregation()->name() == name) {
@@ -307,7 +308,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
     const int c = mAggregationList->count();
     int i = 0;
     while (i < c) {
-        auto *item = dynamic_cast< AggregationListWidgetItem * >(mAggregationList->item(i));
+        auto *item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
         if (item) {
             if (item->aggregation()->id() == aggregationId) {
                 return item;
@@ -323,7 +324,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
     const int c = mAggregationList->count();
     int i = 0;
     while (i < c) {
-        auto *item = dynamic_cast< AggregationListWidgetItem * >(mAggregationList->item(i));
+        auto *item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
         if (item) {
             if (item->aggregation() == set) {
                 return item;
@@ -364,7 +365,7 @@ void ConfigureAggregationsDialog::Private::newAggregationButtonClicked()
 
 void ConfigureAggregationsDialog::Private::cloneAggregationButtonClicked()
 {
-    auto *item = dynamic_cast< AggregationListWidgetItem * >(mAggregationList->currentItem());
+    auto *item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->currentItem());
     if (!item) {
         return;
     }
@@ -387,9 +388,9 @@ void ConfigureAggregationsDialog::Private::deleteAggregationButtonClicked()
         return;
     }
 
-    mEditor->editAggregation(nullptr);   // forget it
+    mEditor->editAggregation(nullptr); // forget it
     for (QListWidgetItem *it : list) {
-        auto *item = dynamic_cast< AggregationListWidgetItem * >(it);
+        auto *item = dynamic_cast<AggregationListWidgetItem *>(it);
         if (!item) {
             return;
         }
@@ -397,11 +398,11 @@ void ConfigureAggregationsDialog::Private::deleteAggregationButtonClicked()
             delete item; // this will trigger aggregationListCurrentItemChanged()
         }
         if (mAggregationList->count() < 2) {
-            break;    // no way: desperately try to keep at least one option set alive :)
+            break; // no way: desperately try to keep at least one option set alive :)
         }
     }
 
-    auto *newItem = dynamic_cast< AggregationListWidgetItem * >(mAggregationList->currentItem());
+    auto *newItem = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->currentItem());
     updateButton(newItem);
 }
 
@@ -449,7 +450,7 @@ void ConfigureAggregationsDialog::Private::exportAggregationButtonClicked()
 
         int idx = 0;
         for (QListWidgetItem *item : list) {
-            auto themeItem = static_cast< AggregationListWidgetItem * >(item);
+            auto themeItem = static_cast<AggregationListWidgetItem *>(item);
             grp.writeEntry(QStringLiteral("Set%1").arg(idx), themeItem->aggregation()->saveToString());
             ++idx;
         }

@@ -7,8 +7,8 @@
 #include "developertoolwidget.h"
 #include <QVBoxLayout>
 #include <QWebEnginePage>
-#include <QWebEngineView>
 #include <QWebEngineSettings>
+#include <QWebEngineView>
 using namespace MessageViewer;
 DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     : QWidget(parent)
@@ -29,7 +29,6 @@ DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
 
 DeveloperToolWidget::~DeveloperToolWidget()
 {
-
 }
 
 QWebEnginePage *DeveloperToolWidget::enginePage() const

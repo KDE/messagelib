@@ -9,7 +9,8 @@
 
 #include "messageviewer_export.h"
 #include <QDebug>
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DMARCInfo class
  * @author Laurent Montel <montel@kde.org>
@@ -25,7 +26,7 @@ public:
     Q_REQUIRED_RESULT QString adkim() const;
     void setAdkim(const QString &adkim);
 
-    //TODO enum ?
+    // TODO enum ?
     Q_REQUIRED_RESULT QString policy() const;
     void setPolicy(const QString &policy);
 
@@ -46,5 +47,5 @@ private:
 };
 }
 Q_DECLARE_METATYPE(MessageViewer::DMARCInfo)
-MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DMARCInfo &t);
+MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DMARCInfo &t);
 #endif // DMARCINFO_H

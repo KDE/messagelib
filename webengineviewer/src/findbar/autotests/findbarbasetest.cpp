@@ -7,12 +7,12 @@
 #include "findbarbasetest.h"
 #include "../findbarbase.h"
 
+#include <PimCommon/LineEditWithCompleterNg>
 #include <QLabel>
 #include <QPushButton>
-#include <QToolButton>
-#include <QTest>
 #include <QSignalSpy>
-#include <PimCommon/LineEditWithCompleterNg>
+#include <QTest>
+#include <QToolButton>
 
 FindBarBaseTest::FindBarBaseTest(QObject *parent)
     : QObject(parent)

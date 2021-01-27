@@ -10,8 +10,8 @@
 #include "webengineviewer_debug.h"
 #include <PimCommon/NetworkManager>
 
-#include <QNetworkConfigurationManager>
 #include <QJsonDocument>
+#include <QNetworkConfigurationManager>
 #include <QUrlQuery>
 
 using namespace WebEngineViewer;
@@ -65,14 +65,16 @@ void CreatePhishingUrlDataBaseJob::start()
         query.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch"));
         safeUrl.setQuery(query);
-        //qCDebug(WEBENGINEVIEWER_LOG) << " safeUrl" << safeUrl;
+        // qCDebug(WEBENGINEVIEWER_LOG) << " safeUrl" << safeUrl;
         QNetworkRequest request(safeUrl);
         request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
         const QByteArray baPostData = jsonRequest();
         Q_EMIT debugJson(baPostData);
         qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
-        //curl -H "Content-Type: application/json" -X POST -d '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}' https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
+        // curl -H "Content-Type: application/json" -X POST -d
+        // '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}'
+        // https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         connect(reply, qOverload<QNetworkReply::NetworkError>(&QNetworkReply::error), this, &CreatePhishingUrlDataBaseJob::slotError);
@@ -131,7 +133,7 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     threatMap.insert(QStringLiteral("threatType"), QStringLiteral("MALWARE"));
     threatMap.insert(QStringLiteral("threatEntryType"), QStringLiteral("URL"));
 
-    //Contrainsts
+    // Contrainsts
     QVariantMap contraintsMap;
     QVariantList contraintsCompressionList;
     QString compressionStr;
@@ -147,7 +149,7 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     contraintsMap.insert(QStringLiteral("supportedCompressions"), contraintsCompressionList);
     threatMap.insert(QStringLiteral("constraints"), contraintsMap);
 
-    //Define state when we want to define update database. Empty is full.
+    // Define state when we want to define update database. Empty is full.
     switch (d->mDataBaseDownloadNeeded) {
     case FullDataBase:
         qCDebug(WEBENGINEVIEWER_LOG) << " full update";

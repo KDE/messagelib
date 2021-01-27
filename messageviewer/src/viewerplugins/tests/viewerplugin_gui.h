@@ -8,7 +8,8 @@
 #define TEST_VIEWERPLUGIN_GUI_H
 
 #include <QWidget>
-namespace MessageViewer {
+namespace MessageViewer
+{
 class ViewerPluginInterface;
 }
 

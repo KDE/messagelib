@@ -25,41 +25,43 @@
 //   kmheaders.cpp / kmheaders.h, headeritem.cpp / headeritem.h
 //   Copyright: (c) 2004 Till Adam < adam at kde dot org >
 //
-#include <config-messagelist.h>
 #include "core/model.h"
-#include "core/model_p.h"
-#include "core/view.h"
+#include "core/delegate.h"
 #include "core/filter.h"
 #include "core/groupheaderitem.h"
 #include "core/item_p.h"
+#include "core/manager.h"
 #include "core/messageitem.h"
+#include "core/messageitemsetmanager.h"
+#include "core/model_p.h"
 #include "core/modelinvariantrowmapper.h"
 #include "core/storagemodelbase.h"
 #include "core/theme.h"
-#include "core/delegate.h"
-#include "core/manager.h"
-#include "core/messageitemsetmanager.h"
+#include "core/view.h"
 #include "messagelist_debug.h"
+#include <config-messagelist.h>
 
-#include <item.h>
+#include "MessageCore/StringUtil"
 #include <Akonadi/KMime/MessageStatus>
 #include <AkonadiCore/Item>
-#include "MessageCore/StringUtil"
+#include <item.h>
 
 #include <KLocalizedString>
 
 #include <QApplication>
-#include <QTimer>
 #include <QDateTime>
-#include <QScrollBar>
+#include <QElapsedTimer>
 #include <QIcon>
 #include <QLocale>
-#include <QElapsedTimer>
+#include <QScrollBar>
+#include <QTimer>
 
 #include <algorithm>
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 Q_GLOBAL_STATIC(QTimer, _k_heartBeatTimer)
 
 /**
@@ -142,23 +144,24 @@ class ViewItemJob
 {
 public:
     enum Pass {
-        Pass1Fill = 0,        ///< Build threading caches, *TRY* to do some threading, try to attach something to the view
-        Pass1Cleanup = 1,     ///< Kill messages, build list of orphans
-        Pass1Update = 2,      ///< Update messages
-        Pass2 = 3,            ///< Thread everything by using caches, try to attach more to the view
-        Pass3 = 4,            ///< Do more threading (this time try to guess), try to attach more to the view
-        Pass4 = 5,            ///< Attach anything is still unattached
-        Pass5 = 6,            ///< Eventually Re-sort group headers and remove the empty ones
-        LastIndex = 7         ///< Keep this at the end, needed to get the size of the enum
+        Pass1Fill = 0, ///< Build threading caches, *TRY* to do some threading, try to attach something to the view
+        Pass1Cleanup = 1, ///< Kill messages, build list of orphans
+        Pass1Update = 2, ///< Update messages
+        Pass2 = 3, ///< Thread everything by using caches, try to attach more to the view
+        Pass3 = 4, ///< Do more threading (this time try to guess), try to attach more to the view
+        Pass4 = 5, ///< Attach anything is still unattached
+        Pass5 = 6, ///< Eventually Re-sort group headers and remove the empty ones
+        LastIndex = 7 ///< Keep this at the end, needed to get the size of the enum
     };
+
 private:
     // Data for "View Fill" jobs
-    int mStartIndex;        ///< The first index (in the underlying storage) of this job
-    int mCurrentIndex;      ///< The current index (in the underlying storage) of this job
-    int mEndIndex;          ///< The last index (in the underlying storage) of this job
+    int mStartIndex; ///< The first index (in the underlying storage) of this job
+    int mCurrentIndex; ///< The current index (in the underlying storage) of this job
+    int mEndIndex; ///< The last index (in the underlying storage) of this job
 
     // Data for "View Cleanup" jobs
-    QList< ModelInvariantIndex * > *mInvariantIndexList;  ///< Owned list of shallow pointers
+    QList<ModelInvariantIndex *> *mInvariantIndexList; ///< Owned list of shallow pointers
 
     // Common data
 
@@ -187,10 +190,11 @@ private:
     // job though: subsequent jobs can't use layoutChanged() as it looses the expanded
     // state of items.
     bool mDisconnectUI;
+
 public:
     /**
-    * Creates a "View Fill" operation job
-    */
+     * Creates a "View Fill" operation job
+     */
     ViewItemJob(int startIndex, int endIndex, int chunkTimeout, int idleInterval, int messageCheckCount, bool disconnectUI = false)
         : mStartIndex(startIndex)
         , mCurrentIndex(startIndex)
@@ -205,9 +209,9 @@ public:
     }
 
     /**
-    * Creates a "View Cleanup" or "View Update" operation job
-    */
-    ViewItemJob(Pass pass, QList< ModelInvariantIndex * > *invariantIndexList, int chunkTimeout, int idleInterval, int messageCheckCount)
+     * Creates a "View Cleanup" or "View Update" operation job
+     */
+    ViewItemJob(Pass pass, QList<ModelInvariantIndex *> *invariantIndexList, int chunkTimeout, int idleInterval, int messageCheckCount)
         : mStartIndex(0)
         , mCurrentIndex(0)
         , mEndIndex(invariantIndexList->count() - 1)
@@ -282,7 +286,7 @@ public:
         return mMessageCheckCount;
     }
 
-    QList< ModelInvariantIndex * > *invariantIndexList() const
+    QList<ModelInvariantIndex *> *invariantIndexList() const
     {
         return mInvariantIndexList;
     }
@@ -319,15 +323,13 @@ Model::Model(View *pParent)
     d->mFillStepTimer.setSingleShot(true);
     d->mInvariantRowMapper = new ModelInvariantRowMapper();
     d->mModelForItemFunctions = this;
-    connect(&d->mFillStepTimer, &QTimer::timeout,
-            this, [this]() {
+    connect(&d->mFillStepTimer, &QTimer::timeout, this, [this]() {
         d->viewItemJobStep();
     });
 
     d->mCachedTodayLabel = i18n("Today");
     d->mCachedYesterdayLabel = i18n("Yesterday");
-    d->mCachedUnknownLabel = i18nc("Unknown date",
-                                   "Unknown");
+    d->mCachedUnknownLabel = i18nc("Unknown date", "Unknown");
     d->mCachedLastWeekLabel = i18n("Last Week");
     d->mCachedTwoWeeksAgoLabel = i18n("Two Weeks Ago");
     d->mCachedThreeWeeksAgoLabel = i18n("Three Weeks Ago");
@@ -336,13 +338,12 @@ Model::Model(View *pParent)
 
     d->mCachedWatchedOrIgnoredStatusBits = Akonadi::MessageStatus::statusIgnored().toQInt32() | Akonadi::MessageStatus::statusWatched().toQInt32();
 
-    connect(_k_heartBeatTimer(), &QTimer::timeout,
-            this, [this]() {
+    connect(_k_heartBeatTimer(), &QTimer::timeout, this, [this]() {
         d->checkIfDateChanged();
     });
 
-    if (!_k_heartBeatTimer->isActive()) {   // First model starts it
-        _k_heartBeatTimer->start(60000);   // 1 minute
+    if (!_k_heartBeatTimer->isActive()) { // First model starts it
+        _k_heartBeatTimer->start(60000); // 1 minute
     }
 }
 
@@ -369,8 +370,7 @@ Model::~Model()
 void Model::setAggregation(const Aggregation *aggregation)
 {
     d->mAggregation = aggregation;
-    d->mView->setRootIsDecorated((d->mAggregation->grouping() == Aggregation::NoGrouping)
-                                 && (d->mAggregation->threading() != Aggregation::NoThreading));
+    d->mView->setRootIsDecorated((d->mAggregation->grouping() == Aggregation::NoGrouping) && (d->mAggregation->threading() != Aggregation::NoThreading));
 }
 
 void Model::setTheme(const Theme *theme)
@@ -427,8 +427,8 @@ bool ModelPrivate::applyFilterToSubtree(Item *item, const QModelIndex &parentInd
         qCWarning(MESSAGELIST_LOG) << "Cannot apply filter, the UI must be not disconnected.";
         return true;
     }
-    Q_ASSERT(item);                      // the item must obviously be valid
-    Q_ASSERT(item->isViewable());        // the item must be viewable
+    Q_ASSERT(item); // the item must obviously be valid
+    Q_ASSERT(item->isViewable()); // the item must be viewable
 
     // Apply to children first
 
@@ -495,7 +495,7 @@ QVariant Model::data(const QModelIndex &index, int role) const
 
     switch (role) {
     /// taken from entitytreemodel.h
-    case Qt::UserRole + 1: //EntityTreeModel::ItemIdRole
+    case Qt::UserRole + 1: // EntityTreeModel::ItemIdRole
         if (item->type() == MessageList::Core::Item::Message) {
             auto mItem = static_cast<MessageItem *>(item);
             return QVariant::fromValue(mItem->akonadiItem().id());
@@ -503,7 +503,7 @@ QVariant Model::data(const QModelIndex &index, int role) const
             return QVariant();
         }
         break;
-    case Qt::UserRole + 2: //EntityTreeModel::ItemRole
+    case Qt::UserRole + 2: // EntityTreeModel::ItemRole
         if (item->type() == MessageList::Core::Item::Message) {
             auto mItem = static_cast<MessageItem *>(item);
             return QVariant::fromValue(mItem->akonadiItem());
@@ -511,7 +511,7 @@ QVariant Model::data(const QModelIndex &index, int role) const
             return QVariant();
         }
         break;
-    case Qt::UserRole + 3: //EntityTreeModel::MimeTypeRole
+    case Qt::UserRole + 3: // EntityTreeModel::MimeTypeRole
         if (item->type() == MessageList::Core::Item::Message) {
             return QStringLiteral("message/rfc822");
         } else {
@@ -547,8 +547,7 @@ QVariant Model::headerData(int section, Qt::Orientation, int role) const
         return QVariant();
     }
 
-    if (d->mStorageModel && column->isSenderOrReceiver()
-        && (role == Qt::DisplayRole)) {
+    if (d->mStorageModel && column->isSenderOrReceiver() && (role == Qt::DisplayRole)) {
         if (d->mStorageModelContainsOutboundMessages) {
             return QVariant(i18n("Receiver"));
         }
@@ -570,7 +569,7 @@ QVariant Model::headerData(int section, Qt::Orientation, int role) const
 QModelIndex Model::index(Item *item, int column) const
 {
     if (!d->mModelForItemFunctions) {
-        return QModelIndex();    // called with disconnected UI: the item isn't known on the Qt side, yet
+        return QModelIndex(); // called with disconnected UI: the item isn't known on the Qt side, yet
     }
 
     if (!item) {
@@ -587,7 +586,7 @@ QModelIndex Model::index(Item *item, int column) const
 
     const int index = par->indexOfChildItem(item);
     if (index < 0) {
-        return QModelIndex();    // BUG
+        return QModelIndex(); // BUG
     }
     return createIndex(index, column, item);
 }
@@ -595,12 +594,12 @@ QModelIndex Model::index(Item *item, int column) const
 QModelIndex Model::index(int row, int column, const QModelIndex &parent) const
 {
     if (!d->mModelForItemFunctions) {
-        return QModelIndex();    // called with disconnected UI: the item isn't known on the Qt side, yet
+        return QModelIndex(); // called with disconnected UI: the item isn't known on the Qt side, yet
     }
 
 #ifdef READD_THIS_IF_YOU_WANT_TO_PASS_MODEL_TEST
     if (column < 0) {
-        return QModelIndex();    // senseless column (we could optimize by skipping this check but ModelTest from trolltech is pedantic)
+        return QModelIndex(); // senseless column (we could optimize by skipping this check but ModelTest from trolltech is pedantic)
     }
 #endif
 
@@ -608,29 +607,29 @@ QModelIndex Model::index(int row, int column, const QModelIndex &parent) const
     if (parent.isValid()) {
         item = static_cast<const Item *>(parent.internalPointer());
         if (!item) {
-            return QModelIndex();    // should never happen
+            return QModelIndex(); // should never happen
         }
     } else {
         item = d->mRootItem;
     }
 
     if (parent.column() > 0) {
-        return QModelIndex();    // parent column is not 0: shouldn't have children (as per Qt documentation)
+        return QModelIndex(); // parent column is not 0: shouldn't have children (as per Qt documentation)
     }
 
     Item *child = item->childItem(row);
     if (!child) {
-        return QModelIndex();    // no such row in parent
+        return QModelIndex(); // no such row in parent
     }
     return createIndex(row, column, child);
 }
 
 QModelIndex Model::parent(const QModelIndex &modelIndex) const
 {
-    Q_ASSERT(d->mModelForItemFunctions);   // should be never called with disconnected UI
+    Q_ASSERT(d->mModelForItemFunctions); // should be never called with disconnected UI
 
     if (!modelIndex.isValid()) {
-        return QModelIndex();    // should never happen
+        return QModelIndex(); // should never happen
     }
     auto item = static_cast<Item *>(modelIndex.internalPointer());
     if (!item) {
@@ -638,23 +637,23 @@ QModelIndex Model::parent(const QModelIndex &modelIndex) const
     }
     auto par = item->parent();
     if (!par) {
-        return QModelIndex();    // should never happen
+        return QModelIndex(); // should never happen
     }
-    //return index( par, modelIndex.column() );
-    return index(par, 0);   // parents are always in column 0 (as per Qt documentation)
+    // return index( par, modelIndex.column() );
+    return index(par, 0); // parents are always in column 0 (as per Qt documentation)
 }
 
 int Model::rowCount(const QModelIndex &parent) const
 {
     if (!d->mModelForItemFunctions) {
-        return 0;    // called with disconnected UI
+        return 0; // called with disconnected UI
     }
 
     const Item *item;
     if (parent.isValid()) {
         item = static_cast<const Item *>(parent.internalPointer());
         if (!item) {
-            return 0;    // should never happen
+            return 0; // should never happen
         }
     } else {
         item = d->mRootItem;
@@ -735,7 +734,7 @@ void ModelPrivate::clear()
     mRootItem->killAllChildItems();
 
     q->endResetModel();
-    //Q_EMIT headerDataChanged();
+    // Q_EMIT headerDataChanged();
 
     mView->selectionModel()->clearSelection();
 }
@@ -753,8 +752,7 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
 
     if (d->mStorageModel) {
         // Disconnect all signals from old storageModel
-        std::for_each(d->mStorageModelConnections.cbegin(), d->mStorageModelConnections.cend(),
-                      [](const QMetaObject::Connection &c) -> bool {
+        std::for_each(d->mStorageModelConnections.cbegin(), d->mStorageModelConnections.cend(), [](const QMetaObject::Connection &c) -> bool {
             return QObject::disconnect(c);
         });
         d->mStorageModelConnections.clear();
@@ -764,7 +762,7 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
     d->mStorageModel = storageModel;
 
     if (!d->mStorageModel) {
-        return;    // no folder: nothing to fill
+        return; // no folder: nothing to fill
     }
 
     // Save threading cache of the previous folder, but only if the cache was
@@ -795,41 +793,42 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
     d->mPreSelectionMode = preSelectionMode;
     d->mStorageModelContainsOutboundMessages = d->mStorageModel->containsOutboundMessages();
 
-    d->mStorageModelConnections = {
-        connect(d->mStorageModel, &StorageModel::rowsInserted,
-                this, [this](const QModelIndex &parent, int first, int last)
-        {
-            d->slotStorageModelRowsInserted(parent, first, last);
-        }),
-        connect(d->mStorageModel, &StorageModel::rowsRemoved,
-                this, [this](const QModelIndex &parent, int first, int last)
-        {
-            d->slotStorageModelRowsRemoved(parent, first, last);
-        }),
-        connect(d->mStorageModel, &StorageModel::layoutChanged,
-                this, [this]()
-        {
-            d->slotStorageModelLayoutChanged();
-        }),
-        connect(d->mStorageModel, &StorageModel::modelReset,
-                this, [this]()
-        {
-            d->slotStorageModelLayoutChanged();
-        }),
-        connect(d->mStorageModel, &StorageModel::dataChanged,
-                this, [this](const QModelIndex &topLeft, const QModelIndex &bottomRight)
-        {
-            d->slotStorageModelDataChanged(topLeft, bottomRight);
-        }),
-        connect(d->mStorageModel, &StorageModel::headerDataChanged,
-                this, [this](Qt::Orientation orientation, int first, int last)
-        {
-            d->slotStorageModelHeaderDataChanged(orientation, first, last);
-        })
-    };
+    d->mStorageModelConnections = {connect(d->mStorageModel,
+                                           &StorageModel::rowsInserted,
+                                           this,
+                                           [this](const QModelIndex &parent, int first, int last) {
+                                               d->slotStorageModelRowsInserted(parent, first, last);
+                                           }),
+                                   connect(d->mStorageModel,
+                                           &StorageModel::rowsRemoved,
+                                           this,
+                                           [this](const QModelIndex &parent, int first, int last) {
+                                               d->slotStorageModelRowsRemoved(parent, first, last);
+                                           }),
+                                   connect(d->mStorageModel,
+                                           &StorageModel::layoutChanged,
+                                           this,
+                                           [this]() {
+                                               d->slotStorageModelLayoutChanged();
+                                           }),
+                                   connect(d->mStorageModel,
+                                           &StorageModel::modelReset,
+                                           this,
+                                           [this]() {
+                                               d->slotStorageModelLayoutChanged();
+                                           }),
+                                   connect(d->mStorageModel,
+                                           &StorageModel::dataChanged,
+                                           this,
+                                           [this](const QModelIndex &topLeft, const QModelIndex &bottomRight) {
+                                               d->slotStorageModelDataChanged(topLeft, bottomRight);
+                                           }),
+                                   connect(d->mStorageModel, &StorageModel::headerDataChanged, this, [this](Qt::Orientation orientation, int first, int last) {
+                                       d->slotStorageModelHeaderDataChanged(orientation, first, last);
+                                   })};
 
     if (d->mStorageModel->rowCount() == 0) {
-        return;    // folder empty: nothing to fill
+        return; // folder empty: nothing to fill
     }
 
     // Here we use different strategies based on user preference and the folder size.
@@ -899,31 +898,25 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
     bool canDoFirstSmallChunkWithDisconnectedUI = !d->mFilter;
 
     // Larger works need a bigger condition: few messages must be expanded in the end.
-    bool canDoJobWithDisconnectedUI
-        =// we have no filter
-          !d->mFilter
-          && (
-              // we do no threading at all
-              (d->mAggregation->threading() == Aggregation::NoThreading)
-              || // or we never expand threads
-              (d->mAggregation->threadExpandPolicy() == Aggregation::NeverExpandThreads)
-              || // or we expand threads but we'll be going to expand really only a few
-              (
-                  // so we don't expand them all
-                  (d->mAggregation->threadExpandPolicy() != Aggregation::AlwaysExpandThreads)
-                  && // and we'd expand only a few in fact
-                  (d->mStorageModel->initialUnreadRowCountGuess() < 1000)
-              )
-              );
+    bool canDoJobWithDisconnectedUI = // we have no filter
+        !d->mFilter
+        && (
+            // we do no threading at all
+            (d->mAggregation->threading() == Aggregation::NoThreading) || // or we never expand threads
+            (d->mAggregation->threadExpandPolicy() == Aggregation::NeverExpandThreads) || // or we expand threads but we'll be going to expand really only a few
+            (
+                // so we don't expand them all
+                (d->mAggregation->threadExpandPolicy() != Aggregation::AlwaysExpandThreads) && // and we'd expand only a few in fact
+                (d->mStorageModel->initialUnreadRowCountGuess() < 1000)));
 
     switch (d->mAggregation->fillViewStrategy()) {
     case Aggregation::FavorInteractivity:
         // favor interactivity
-        if ((!canDoJobWithDisconnectedUI) && (d->mStorageModel->rowCount() > 3000)) {     // empiric value
+        if ((!canDoJobWithDisconnectedUI) && (d->mStorageModel->rowCount() > 3000)) { // empiric value
             // First a small job with the most recent messages. Large chunk, small (but non zero) idle interval
             // and a larger number of messages to process at once.
-            auto job1 = new ViewItemJob(d->mStorageModel->rowCount() - 1000, d->mStorageModel->rowCount() - 1,
-                                        200, 20, 100, canDoFirstSmallChunkWithDisconnectedUI);
+            auto job1 =
+                new ViewItemJob(d->mStorageModel->rowCount() - 1000, d->mStorageModel->rowCount() - 1, 200, 20, 100, canDoFirstSmallChunkWithDisconnectedUI);
             d->mViewItemJobs.append(job1);
             // Then a larger job with older messages. Small chunk, bigger idle interval, small number of messages to
             // process at once.
@@ -942,10 +935,10 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
         break;
     case Aggregation::FavorSpeed:
         // More batchy jobs, still interactive to a certain degree
-        if ((!canDoJobWithDisconnectedUI) && (d->mStorageModel->rowCount() > 3000)) {     // empiric value
+        if ((!canDoJobWithDisconnectedUI) && (d->mStorageModel->rowCount() > 3000)) { // empiric value
             // large folder, but favor speed
-            auto job1 = new ViewItemJob(d->mStorageModel->rowCount() - 1000, d->mStorageModel->rowCount() - 1,
-                                        250, 0, 100, canDoFirstSmallChunkWithDisconnectedUI);
+            auto job1 =
+                new ViewItemJob(d->mStorageModel->rowCount() - 1000, d->mStorageModel->rowCount() - 1, 250, 0, 100, canDoFirstSmallChunkWithDisconnectedUI);
             d->mViewItemJobs.append(job1);
             auto job2 = new ViewItemJob(0, d->mStorageModel->rowCount() - 1001, 200, 0, 10, false);
             d->mViewItemJobs.append(job2);
@@ -956,8 +949,7 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
             d->mViewItemJobs.append(job);
         }
         break;
-    case Aggregation::BatchNoInteractivity:
-    {
+    case Aggregation::BatchNoInteractivity: {
         // one large job, never interrupt, block UI
         auto job = new ViewItemJob(0, d->mStorageModel->rowCount() - 1, 60000, 0, 100000, canDoJobWithDisconnectedUI);
         d->mViewItemJobs.append(job);
@@ -989,19 +981,19 @@ void ModelPrivate::checkIfDateChanged()
     // So to keep the things simple we just reload the view.
 
     if (!mStorageModel) {
-        return;    // nothing to do
+        return; // nothing to do
     }
 
     if (mLoading) {
-        return;    // not now
+        return; // not now
     }
 
     if (!mViewItemJobs.isEmpty()) {
-        return;    // not now
+        return; // not now
     }
 
     if (mTodayDate == QDate::currentDate()) {
-        return;    // date not changed
+        return; // date not changed
     }
 
     // date changed, reload the view (and try to preserve the current selection)
@@ -1177,12 +1169,11 @@ void ModelPrivate::clearJobList()
 void ModelPrivate::attachGroup(GroupHeaderItem *ghi)
 {
     if (ghi->parent()) {
-        if (
-            ((ghi)->childItemCount() > 0)        // has children
-            && (ghi)->isViewable()   // is actually attached to the viewable root
+        if (((ghi)->childItemCount() > 0) // has children
+            && (ghi)->isViewable() // is actually attached to the viewable root
             && mModelForItemFunctions // the UI is not disconnected
-            && mView->isExpanded(q->index(ghi, 0))  // is actually expanded
-            ) {
+            && mView->isExpanded(q->index(ghi, 0)) // is actually expanded
+        ) {
             saveExpandedStateOfSubtree(ghi);
         }
 
@@ -1196,18 +1187,17 @@ void ModelPrivate::attachGroup(GroupHeaderItem *ghi)
     // I'm using a macro since it does really improve readability.
     // I'm NOT using a helper function since gcc will refuse to inline some of
     // the calls because they make this function grow too much.
-#define INSERT_GROUP_WITH_COMPARATOR(_ItemComparator) \
-    switch (mSortOrder->groupSortDirection()) \
-    { \
-    case SortOrder::Ascending: \
-        mRootItem->d_ptr->insertChildItem< _ItemComparator, true >(mModelForItemFunctions, ghi); \
-        break; \
-    case SortOrder::Descending: \
-        mRootItem->d_ptr->insertChildItem< _ItemComparator, false >(mModelForItemFunctions, ghi); \
-        break; \
-    default: /* should never happen... */ \
-        mRootItem->appendChildItem(mModelForItemFunctions, ghi); \
-        break; \
+#define INSERT_GROUP_WITH_COMPARATOR(_ItemComparator)                                                                                                          \
+    switch (mSortOrder->groupSortDirection()) {                                                                                                                \
+    case SortOrder::Ascending:                                                                                                                                 \
+        mRootItem->d_ptr->insertChildItem<_ItemComparator, true>(mModelForItemFunctions, ghi);                                                                 \
+        break;                                                                                                                                                 \
+    case SortOrder::Descending:                                                                                                                                \
+        mRootItem->d_ptr->insertChildItem<_ItemComparator, false>(mModelForItemFunctions, ghi);                                                                \
+        break;                                                                                                                                                 \
+    default: /* should never happen... */                                                                                                                      \
+        mRootItem->appendChildItem(mModelForItemFunctions, ghi);                                                                                               \
+        break;                                                                                                                                                 \
     }
 
     switch (mSortOrder->groupSorting()) {
@@ -1244,7 +1234,7 @@ void ModelPrivate::attachGroup(GroupHeaderItem *ghi)
 
     // A group header is always viewable, when attached: apply the filter, if we have it.
     if (mFilter) {
-        Q_ASSERT(mModelForItemFunctions);   // UI must be NOT disconnected
+        Q_ASSERT(mModelForItemFunctions); // UI must be NOT disconnected
         // apply the filter to subtree
         applyFilterToSubtree(ghi, QModelIndex());
     }
@@ -1252,7 +1242,7 @@ void ModelPrivate::attachGroup(GroupHeaderItem *ghi)
 
 void ModelPrivate::saveExpandedStateOfSubtree(Item *root)
 {
-    Q_ASSERT(mModelForItemFunctions);   // UI must be NOT disconnected here
+    Q_ASSERT(mModelForItemFunctions); // UI must be NOT disconnected here
     Q_ASSERT(root);
 
     root->setInitialExpandStatus(Item::ExpandNeeded);
@@ -1262,8 +1252,8 @@ void ModelPrivate::saveExpandedStateOfSubtree(Item *root)
         return;
     }
     for (const auto mi : qAsConst(*children)) {
-        if (mi->childItemCount() > 0        // has children
-            && mi->isViewable()   // is actually attached to the viewable root
+        if (mi->childItemCount() > 0 // has children
+            && mi->isViewable() // is actually attached to the viewable root
             && mView->isExpanded(q->index(mi, 0))) { // is actually expanded
             saveExpandedStateOfSubtree(mi);
         }
@@ -1272,7 +1262,7 @@ void ModelPrivate::saveExpandedStateOfSubtree(Item *root)
 
 void ModelPrivate::syncExpandedStateOfSubtree(Item *root)
 {
-    Q_ASSERT(mModelForItemFunctions);   // UI must be NOT disconnected here
+    Q_ASSERT(mModelForItemFunctions); // UI must be NOT disconnected here
 
     // WE ASSUME that:
     // - the item is viewable
@@ -1281,8 +1271,8 @@ void ModelPrivate::syncExpandedStateOfSubtree(Item *root)
 
     QModelIndex idx = q->index(root, 0);
 
-    //if ( !mView->isExpanded( idx ) ) // this is O(logN!) in Qt.... very ugly... but it should never happen here
-    mView->expand(idx);   // sync the real state in the view
+    // if ( !mView->isExpanded( idx ) ) // this is O(logN!) in Qt.... very ugly... but it should never happen here
+    mView->expand(idx); // sync the real state in the view
     root->setInitialExpandStatus(Item::ExpandExecuted);
 
     auto children = root->childItems();
@@ -1307,8 +1297,7 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
     // compute the group header label and the date
     switch (mAggregation->grouping()) {
     case Aggregation::GroupByDate:
-    case Aggregation::GroupByDateRange:
-    {
+    case Aggregation::GroupByDateRange: {
         if (mAggregation->threadLeader() == Aggregation::MostRecentMessage) {
             date = mi->maxDate();
         } else {
@@ -1324,22 +1313,22 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
             daysAgo = dDate.daysTo(mTodayDate);
         }
 
-        if ((daysAgo < 0)       // In the future
-            || (static_cast< uint >(date) == static_cast< uint >(-1))) {       // Invalid
+        if ((daysAgo < 0) // In the future
+            || (static_cast<uint>(date) == static_cast<uint>(-1))) { // Invalid
             groupLabel = mCachedUnknownLabel;
         } else if (daysAgo == 0) { // Today
             groupLabel = mCachedTodayLabel;
         } else if (daysAgo == 1) { // Yesterday
             groupLabel = mCachedYesterdayLabel;
-        } else if (daysAgo > 1 && daysAgo < daysInWeek) {   // Within last seven days
+        } else if (daysAgo > 1 && daysAgo < daysInWeek) { // Within last seven days
             auto dayName = mCachedDayNameLabel.find(dDate.dayOfWeek()); // non-const call, but non-shared container
             if (dayName == mCachedDayNameLabel.end()) {
                 dayName = mCachedDayNameLabel.insert(dDate.dayOfWeek(), QLocale::system().standaloneDayName(dDate.dayOfWeek()));
             }
             groupLabel = *dayName;
-        } else if (mAggregation->grouping() == Aggregation::GroupByDate) {   // GroupByDate seven days or more ago
+        } else if (mAggregation->grouping() == Aggregation::GroupByDate) { // GroupByDate seven days or more ago
             groupLabel = QLocale::system().toString(dDate, QLocale::ShortFormat);
-        } else if (dDate.month() == mTodayDate.month()          // GroupByDateRange within this month
+        } else if (dDate.month() == mTodayDate.month() // GroupByDateRange within this month
                    && dDate.year() == mTodayDate.year()) {
             int startOfWeekDaysAgo = (daysInWeek + mTodayDate.dayOfWeek() - QLocale().firstDayOfWeek()) % daysInWeek;
             int weeksAgo = ((daysAgo - startOfWeekDaysAgo) / daysInWeek) + 1;
@@ -1365,7 +1354,7 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
             default: // should never happen
                 groupLabel = mCachedUnknownLabel;
             }
-        } else if (dDate.year() == mTodayDate.year()) {       // GroupByDateRange within this year
+        } else if (dDate.year() == mTodayDate.year()) { // GroupByDateRange within this year
             auto monthName = mCachedMonthNameLabel.find(dDate.month()); // non-const call, but non-shared container
             if (monthName == mCachedMonthNameLabel.end()) {
                 monthName = mCachedMonthNameLabel.insert(dDate.month(), QLocale::system().standaloneMonthName(dDate.month()));
@@ -1376,7 +1365,9 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
             if (monthName == mCachedMonthNameLabel.end()) {
                 monthName = mCachedMonthNameLabel.insert(dDate.month(), QLocale::system().standaloneMonthName(dDate.month()));
             }
-            groupLabel = i18nc("Message Aggregation Group Header: Month name and Year number", "%1 %2", *monthName,
+            groupLabel = i18nc("Message Aggregation Group Header: Month name and Year number",
+                               "%1 %2",
+                               *monthName,
                                QLocale::system().toString(dDate, QLatin1String("yyyy")));
         }
         break;
@@ -1444,7 +1435,7 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
 
         attachMessageToParent(ghi, mi);
 
-        attachGroup(ghi);   // this will expand the group if required
+        attachGroup(ghi); // this will expand the group if required
 
         mGroupHeaderItemHash.insert(groupLabel, ghi);
     } else {
@@ -1456,7 +1447,7 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
         // So it may happen that we find out that in fact re-grouping wasn't really
         // needed because the message is already in the correct group.
         if (mi->parent() == ghi) {
-            return;    // nothing to be done
+            return; // nothing to be done
         }
 
         attachMessageToParent(ghi, mi);
@@ -1468,7 +1459,7 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
 
 MessageItem *ModelPrivate::findMessageParent(MessageItem *mi)
 {
-    Q_ASSERT(mAggregation->threading() != Aggregation::NoThreading);   // caller must take care of this
+    Q_ASSERT(mAggregation->threading() != Aggregation::NoThreading); // caller must take care of this
 
     // This function attempts to find a thread parent for the item "mi"
     // which actually may already have a children subtree.
@@ -1497,13 +1488,10 @@ MessageItem *ModelPrivate::findMessageParent(MessageItem *mi)
         pParent = mThreadingCacheMessageIdMD5ToMessageItem.value(md5, nullptr);
         if (pParent) {
             // Take care of circular references
-            if (
-                (mi == pParent)                   // self referencing message
-                || (
-                    (mi->childItemCount() > 0)      // mi already has children, this is fast to determine
-                    && pParent->hasAncestor(mi)     // pParent is in the mi's children tree
-                    )
-                ) {
+            if ((mi == pParent) // self referencing message
+                || ((mi->childItemCount() > 0) // mi already has children, this is fast to determine
+                    && pParent->hasAncestor(mi) // pParent is in the mi's children tree
+                    )) {
                 qCWarning(MESSAGELIST_LOG) << "Circular In-Reply-To reference loop detected in the message tree";
                 mi->setThreadingStatus(MessageItem::NonThreadable);
                 return nullptr; // broken message: throw it away
@@ -1538,13 +1526,10 @@ MessageItem *ModelPrivate::findMessageParent(MessageItem *mi)
         pParent = mThreadingCacheMessageIdMD5ToMessageItem.value(md5, nullptr);
         if (pParent) {
             // Take care of circular references
-            if (
-                (mi == pParent)                   // self referencing message
-                || (
-                    (mi->childItemCount() > 0)      // mi already has children, this is fast to determine
-                    && pParent->hasAncestor(mi)     // pParent is in the mi's children tree
-                    )
-                ) {
+            if ((mi == pParent) // self referencing message
+                || ((mi->childItemCount() > 0) // mi already has children, this is fast to determine
+                    && pParent->hasAncestor(mi) // pParent is in the mi's children tree
+                    )) {
                 qCWarning(MESSAGELIST_LOG) << "Circular reference loop detected in the message tree";
                 mi->setThreadingStatus(MessageItem::NonThreadable);
                 return nullptr; // broken message: throw it away
@@ -1647,7 +1632,7 @@ void ModelPrivate::addMessageToReferencesBasedThreadingCache(MessageItem *mi)
     auto messagesWithTheSameReference = mThreadingCacheMessageReferencesIdMD5ToMessageItem.value(mi->referencesIdMD5(), nullptr);
 
     if (!messagesWithTheSameReference) {
-        messagesWithTheSameReference = new QList< MessageItem * >();
+        messagesWithTheSameReference = new QList<MessageItem *>();
         mThreadingCacheMessageReferencesIdMD5ToMessageItem.insert(mi->referencesIdMD5(), messagesWithTheSameReference);
         messagesWithTheSameReference->append(mi);
         return;
@@ -1704,7 +1689,7 @@ void ModelPrivate::addMessageToSubjectBasedThreadingCache(MessageItem *mi)
 
     if (!messagesWithTheSameStrippedSubject) {
         // Not there yet: create it and append.
-        messagesWithTheSameStrippedSubject = new QList< MessageItem * >();
+        messagesWithTheSameStrippedSubject = new QList<MessageItem *>();
         mThreadingCacheMessageSubjectMD5ToMessageItem.insert(mi->strippedSubjectMD5(), messagesWithTheSameStrippedSubject);
         messagesWithTheSameStrippedSubject->append(mi);
         return;
@@ -1759,8 +1744,8 @@ MessageItem *ModelPrivate::guessMessageParent(MessageItem *mi)
     // We have all the problems of findMessageParent() plus the fact that
     // we're actually guessing (and often we may be *wrong*).
 
-    Q_ASSERT(mAggregation->threading() == Aggregation::PerfectReferencesAndSubject);   // caller must take care of this
-    Q_ASSERT(mi->subjectIsPrefixed());   // caller must take care of this
+    Q_ASSERT(mAggregation->threading() == Aggregation::PerfectReferencesAndSubject); // caller must take care of this
+    Q_ASSERT(mi->subjectIsPrefixed()); // caller must take care of this
     Q_ASSERT(mi->threadingStatus() == MessageItem::ParentMissing);
 
     // Do subject based threading
@@ -1793,7 +1778,7 @@ MessageItem *ModelPrivate::guessMessageParent(MessageItem *mi)
                 // This check also includes negative deltas so messages later than mi aren't considered
 
                 if (delta < 120) {
-                    break;    // The list is ordered by date (ascending) so we can stop searching here
+                    break; // The list is ordered by date (ascending) so we can stop searching here
                 }
 
                 // About the "magic" 3628899 value here comes a Till's comment from the original KMHeaders:
@@ -1841,13 +1826,13 @@ MessageItem *ModelPrivate::guessMessageParent(MessageItem *mi)
 // Checking if a message needs re-sorting instead of just re-sorting it
 // is very useful since re-sorting is an expensive operation.
 //
-template< class ItemComparator > static bool messageItemNeedsReSorting(SortOrder::SortDirection messageSortDirection, ItemPrivate *parent, MessageItem *messageItem)
+template<class ItemComparator>
+static bool messageItemNeedsReSorting(SortOrder::SortDirection messageSortDirection, ItemPrivate *parent, MessageItem *messageItem)
 {
-    if ((messageSortDirection == SortOrder::Ascending)
-        || (parent->mType == Item::Message)) {
-        return parent->childItemNeedsReSorting< ItemComparator, true >(messageItem);
+    if ((messageSortDirection == SortOrder::Ascending) || (parent->mType == Item::Message)) {
+        return parent->childItemNeedsReSorting<ItemComparator, true>(messageItem);
     }
-    return parent->childItemNeedsReSorting< ItemComparator, false >(messageItem);
+    return parent->childItemNeedsReSorting<ItemComparator, false>(messageItem);
 }
 
 bool ModelPrivate::handleItemPropertyChanges(int propertyChangeMask, Item *parent, Item *item)
@@ -1870,25 +1855,20 @@ bool ModelPrivate::handleItemPropertyChanges(int propertyChangeMask, Item *paren
         // It might need resorting.
         if (item->type() == Item::GroupHeader) {
             // item is a group header attached to the root.
-            if (
-                (
+            if ((
                     // max date changed
-                    (propertyChangeMask & MaxDateChanged)
-                    &&// groups sorted by max date
-                    (mSortOrder->groupSorting() == SortOrder::SortGroupsByDateTimeOfMostRecent)
-                ) || (
+                    (propertyChangeMask & MaxDateChanged) && // groups sorted by max date
+                    (mSortOrder->groupSorting() == SortOrder::SortGroupsByDateTimeOfMostRecent))
+                || (
                     // date changed
-                    (propertyChangeMask & DateChanged)
-                    &&// groups sorted by date
-                    (mSortOrder->groupSorting() == SortOrder::SortGroupsByDateTime)
-                    )
-                ) {
+                    (propertyChangeMask & DateChanged) && // groups sorted by date
+                    (mSortOrder->groupSorting() == SortOrder::SortGroupsByDateTime))) {
                 // This group might need re-sorting.
 
                 // Groups are large container of messages so it's likely that
                 // another message inserted will cause this group to be marked again.
                 // So we wait until the end to do the grand final re-sorting: it will be done in Pass4.
-                mGroupHeadersThatNeedUpdate.insert(static_cast< GroupHeaderItem * >(item), static_cast< GroupHeaderItem * >(item));
+                mGroupHeadersThatNeedUpdate.insert(static_cast<GroupHeaderItem *>(item), static_cast<GroupHeaderItem *>(item));
             }
         } else {
             // item is a message. It might need re-sorting.
@@ -1900,43 +1880,51 @@ bool ModelPrivate::handleItemPropertyChanges(int propertyChangeMask, Item *paren
             switch (mSortOrder->messageSorting()) {
             case SortOrder::SortMessagesByDateTime:
                 if (propertyChangeMask & DateChanged) { // date changed
-                    if (messageItemNeedsReSorting< ItemDateComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                        attachMessageToParent(parent, static_cast< MessageItem * >(item));
+                    if (messageItemNeedsReSorting<ItemDateComparator>(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast<MessageItem *>(item))) {
+                        attachMessageToParent(parent, static_cast<MessageItem *>(item));
                     }
                 } // else date changed, but it doesn't match sorting order: no need to re-sort
                 break;
             case SortOrder::SortMessagesByDateTimeOfMostRecent:
                 if (propertyChangeMask & MaxDateChanged) { // max date changed
-                    if (messageItemNeedsReSorting< ItemMaxDateComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                        attachMessageToParent(parent, static_cast< MessageItem * >(item));
+                    if (messageItemNeedsReSorting<ItemMaxDateComparator>(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast<MessageItem *>(item))) {
+                        attachMessageToParent(parent, static_cast<MessageItem *>(item));
                     }
                 } // else max date changed, but it doesn't match sorting order: no need to re-sort
                 break;
             case SortOrder::SortMessagesByActionItemStatus:
                 if (propertyChangeMask & ActionItemStatusChanged) { // todo status changed
-                    if (messageItemNeedsReSorting< ItemActionItemStatusComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                        attachMessageToParent(parent, static_cast< MessageItem * >(item));
+                    if (messageItemNeedsReSorting<ItemActionItemStatusComparator>(mSortOrder->messageSortDirection(),
+                                                                                  parent->d_ptr,
+                                                                                  static_cast<MessageItem *>(item))) {
+                        attachMessageToParent(parent, static_cast<MessageItem *>(item));
                     }
                 } // else to do status changed, but it doesn't match sorting order: no need to re-sort
                 break;
             case SortOrder::SortMessagesByUnreadStatus:
                 if (propertyChangeMask & UnreadStatusChanged) { // new / unread status changed
-                    if (messageItemNeedsReSorting< ItemUnreadStatusComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                        attachMessageToParent(parent, static_cast< MessageItem * >(item));
+                    if (messageItemNeedsReSorting<ItemUnreadStatusComparator>(mSortOrder->messageSortDirection(),
+                                                                              parent->d_ptr,
+                                                                              static_cast<MessageItem *>(item))) {
+                        attachMessageToParent(parent, static_cast<MessageItem *>(item));
                     }
                 } // else new/unread status changed, but it doesn't match sorting order: no need to re-sort
                 break;
             case SortOrder::SortMessagesByImportantStatus:
                 if (propertyChangeMask & ImportantStatusChanged) { // important status changed
-                    if (messageItemNeedsReSorting< ItemImportantStatusComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                        attachMessageToParent(parent, static_cast< MessageItem * >(item));
+                    if (messageItemNeedsReSorting<ItemImportantStatusComparator>(mSortOrder->messageSortDirection(),
+                                                                                 parent->d_ptr,
+                                                                                 static_cast<MessageItem *>(item))) {
+                        attachMessageToParent(parent, static_cast<MessageItem *>(item));
                     }
                 } // else new/unread status changed, but it doesn't match sorting order: no need to re-sort
                 break;
             case SortOrder::SortMessagesByAttachmentStatus:
                 if (propertyChangeMask & AttachmentStatusChanged) { // attachment status changed
-                    if (messageItemNeedsReSorting< ItemAttachmentStatusComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                        attachMessageToParent(parent, static_cast< MessageItem * >(item));
+                    if (messageItemNeedsReSorting<ItemAttachmentStatusComparator>(mSortOrder->messageSortDirection(),
+                                                                                  parent->d_ptr,
+                                                                                  static_cast<MessageItem *>(item))) {
+                        attachMessageToParent(parent, static_cast<MessageItem *>(item));
                     }
                 } // else new/unread status changed, but it doesn't match sorting order: no need to re-sort
                 break;
@@ -1954,23 +1942,18 @@ bool ModelPrivate::handleItemPropertyChanges(int propertyChangeMask, Item *paren
         // It might need re-grouping or re-sorting (within the same group)
 
         // Check re-grouping here.
-        if (
-            (
+        if ((
                 // max date changed
-                (propertyChangeMask & MaxDateChanged)
-                &&// thread leader is most recent message
-                (mAggregation->threadLeader() == Aggregation::MostRecentMessage)
-            ) || (
+                (propertyChangeMask & MaxDateChanged) && // thread leader is most recent message
+                (mAggregation->threadLeader() == Aggregation::MostRecentMessage))
+            || (
                 // date changed
-                (propertyChangeMask & DateChanged)
-                &&// thread leader the topmost message
-                (mAggregation->threadLeader() == Aggregation::TopmostMessage)
-                )
-            ) {
+                (propertyChangeMask & DateChanged) && // thread leader the topmost message
+                (mAggregation->threadLeader() == Aggregation::TopmostMessage))) {
             // Might really need re-grouping.
             // attachMessageToGroupHeader() will find the right group for this message
             // and if it's different than the current it will move it.
-            attachMessageToGroupHeader(static_cast< MessageItem * >(item));
+            attachMessageToGroupHeader(static_cast<MessageItem *>(item));
             // Re-grouping fixes the properties of the involved group headers
             // so at exit of attachMessageToGroupHeader() the parent can't be affected
             // by the change anymore.
@@ -1985,43 +1968,47 @@ bool ModelPrivate::handleItemPropertyChanges(int propertyChangeMask, Item *paren
     switch (mSortOrder->messageSorting()) {
     case SortOrder::SortMessagesByDateTime:
         if (propertyChangeMask & DateChanged) { // date changed
-            if (messageItemNeedsReSorting< ItemDateComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                attachMessageToParent(parent, static_cast< MessageItem * >(item));
+            if (messageItemNeedsReSorting<ItemDateComparator>(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast<MessageItem *>(item))) {
+                attachMessageToParent(parent, static_cast<MessageItem *>(item));
             }
         } // else date changed, but it doesn't match sorting order: no need to re-sort
         break;
     case SortOrder::SortMessagesByDateTimeOfMostRecent:
         if (propertyChangeMask & MaxDateChanged) { // max date changed
-            if (messageItemNeedsReSorting< ItemMaxDateComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                attachMessageToParent(parent, static_cast< MessageItem * >(item));
+            if (messageItemNeedsReSorting<ItemMaxDateComparator>(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast<MessageItem *>(item))) {
+                attachMessageToParent(parent, static_cast<MessageItem *>(item));
             }
         } // else max date changed, but it doesn't match sorting order: no need to re-sort
         break;
     case SortOrder::SortMessagesByActionItemStatus:
         if (propertyChangeMask & ActionItemStatusChanged) { // todo status changed
-            if (messageItemNeedsReSorting< ItemActionItemStatusComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                attachMessageToParent(parent, static_cast< MessageItem * >(item));
+            if (messageItemNeedsReSorting<ItemActionItemStatusComparator>(mSortOrder->messageSortDirection(),
+                                                                          parent->d_ptr,
+                                                                          static_cast<MessageItem *>(item))) {
+                attachMessageToParent(parent, static_cast<MessageItem *>(item));
             }
         } // else to do status changed, but it doesn't match sorting order: no need to re-sort
         break;
     case SortOrder::SortMessagesByUnreadStatus:
         if (propertyChangeMask & UnreadStatusChanged) { // new / unread status changed
-            if (messageItemNeedsReSorting< ItemUnreadStatusComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                attachMessageToParent(parent, static_cast< MessageItem * >(item));
+            if (messageItemNeedsReSorting<ItemUnreadStatusComparator>(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast<MessageItem *>(item))) {
+                attachMessageToParent(parent, static_cast<MessageItem *>(item));
             }
         } // else new/unread status changed, but it doesn't match sorting order: no need to re-sort
         break;
     case SortOrder::SortMessagesByImportantStatus:
         if (propertyChangeMask & ImportantStatusChanged) { // important status changed
-            if (messageItemNeedsReSorting< ItemImportantStatusComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                attachMessageToParent(parent, static_cast< MessageItem * >(item));
+            if (messageItemNeedsReSorting<ItemImportantStatusComparator>(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast<MessageItem *>(item))) {
+                attachMessageToParent(parent, static_cast<MessageItem *>(item));
             }
         } // else important status changed, but it doesn't match sorting order: no need to re-sort
         break;
     case SortOrder::SortMessagesByAttachmentStatus:
         if (propertyChangeMask & AttachmentStatusChanged) { // attachment status changed
-            if (messageItemNeedsReSorting< ItemAttachmentStatusComparator >(mSortOrder->messageSortDirection(), parent->d_ptr, static_cast< MessageItem * >(item))) {
-                attachMessageToParent(parent, static_cast< MessageItem * >(item));
+            if (messageItemNeedsReSorting<ItemAttachmentStatusComparator>(mSortOrder->messageSortDirection(),
+                                                                          parent->d_ptr,
+                                                                          static_cast<MessageItem *>(item))) {
+                attachMessageToParent(parent, static_cast<MessageItem *>(item));
             }
         } // else important status changed, but it doesn't match sorting order: no need to re-sort
         break;
@@ -2052,7 +2039,7 @@ void ModelPrivate::messageDetachedUpdateParentProperties(Item *oldParent, Messag
         if ((mi->maxDate() == oldParent->maxDate()) && oldParent->recomputeMaxDate()) {
             propertyChangeMask = MaxDateChanged;
         } else {
-            break;    // from the for(;;) loop
+            break; // from the for(;;) loop
         }
 
         // One of the oldParent properties has changed for sure
@@ -2062,13 +2049,13 @@ void ModelPrivate::messageDetachedUpdateParentProperties(Item *oldParent, Messag
         // If there is no grandParent then oldParent isn't attached to the view.
         // Re-sorting / re-grouping isn't needed for sure.
         if (!grandParent) {
-            break;    // from the for(;;) loop
+            break; // from the for(;;) loop
         }
 
         // The following function will return true if grandParent may be affected by the change.
         // If the grandParent isn't affected, we stop climbing.
         if (!handleItemPropertyChanges(propertyChangeMask, grandParent, oldParent)) {
-            break;    // from the for(;;) loop
+            break; // from the for(;;) loop
         }
 
         // Now we need to climb up one level and check again.
@@ -2079,7 +2066,7 @@ void ModelPrivate::messageDetachedUpdateParentProperties(Item *oldParent, Messag
     // for sure. We will need to remove it (unless a message is attached back to it)
     if (oldParent->type() == Item::GroupHeader) {
         if (oldParent->childItemCount() == 0) {
-            mGroupHeadersThatNeedUpdate.insert(static_cast< GroupHeaderItem * >(oldParent), static_cast< GroupHeaderItem * >(oldParent));
+            mGroupHeadersThatNeedUpdate.insert(static_cast<GroupHeaderItem *>(oldParent), static_cast<GroupHeaderItem *>(oldParent));
         }
     }
 }
@@ -2113,13 +2100,13 @@ void ModelPrivate::propagateItemPropertiesToParent(Item *item)
         // If there is no grandParent then pParent isn't attached to the view.
         // Re-sorting / re-grouping isn't needed for sure.
         if (!grandParent) {
-            break;    // from the for(;;) loop
+            break; // from the for(;;) loop
         }
 
         // The following function will return true if grandParent may be affected by the change.
         // If the grandParent isn't affected, we stop climbing.
         if (!handleItemPropertyChanges(propertyChangeMask, grandParent, pParent)) {
-            break;    // from the for(;;) loop
+            break; // from the for(;;) loop
         }
 
         // Now we need to climb up one level and check again.
@@ -2171,11 +2158,10 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi, AttachO
             // The current item saving can be somewhat optimized doing it once for
             // a single job step...
 
-            if (
-                ((mi)->childItemCount() > 0)        // has children
+            if (((mi)->childItemCount() > 0) // has children
                 && mModelForItemFunctions // the UI is not actually disconnected
-                && mView->isExpanded(q->index(mi, 0))  // is actually expanded
-                ) {
+                && mView->isExpanded(q->index(mi, 0)) // is actually expanded
+            ) {
                 saveExpandedStateOfSubtree(mi);
             }
         }
@@ -2229,10 +2215,9 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi, AttachO
     mi->setParent(pParent);
 
     // Propagate watched and ignored status
-    if (
-        (pParent->status().toQInt32() & mCachedWatchedOrIgnoredStatusBits)      // unlikely
+    if ((pParent->status().toQInt32() & mCachedWatchedOrIgnoredStatusBits) // unlikely
         && (pParent->type() == Item::Message) // likely
-        ) {
+    ) {
         // the parent is either watched or ignored: propagate to the child
         if (pParent->status().isWatched()) {
             int row = mInvariantRowMapper->modelInvariantIndexToModelIndexRow(mi);
@@ -2255,15 +2240,11 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi, AttachO
     // I'm using a macro since it does really improve readability.
     // I'm NOT using a helper function since gcc will refuse to inline some of
     // the calls because they make this function grow too much.
-#define INSERT_MESSAGE_WITH_COMPARATOR(_ItemComparator) \
-    if ((mSortOrder->messageSortDirection() == SortOrder::Ascending) \
-        || (pParent->type() == Item::Message)) \
-    { \
-        pParent->d_ptr->insertChildItem< _ItemComparator, true >(mModelForItemFunctions, mi); \
-    } \
-    else \
-    { \
-        pParent->d_ptr->insertChildItem< _ItemComparator, false >(mModelForItemFunctions, mi); \
+#define INSERT_MESSAGE_WITH_COMPARATOR(_ItemComparator)                                                                                                        \
+    if ((mSortOrder->messageSortDirection() == SortOrder::Ascending) || (pParent->type() == Item::Message)) {                                                  \
+        pParent->d_ptr->insertChildItem<_ItemComparator, true>(mModelForItemFunctions, mi);                                                                    \
+    } else {                                                                                                                                                   \
+        pParent->d_ptr->insertChildItem<_ItemComparator, false>(mModelForItemFunctions, mi);                                                                   \
     }
 
     // If pParent is viewable then the insertion call will also set the child state to viewable.
@@ -2353,7 +2334,7 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi, AttachO
             Item *parentToExpand = pParent;
             while (parentToExpand) {
                 if (parentToExpand == mRootItem) {
-                    break;    // no need to set it expanded
+                    break; // no need to set it expanded
                 }
                 // parentToExpand is surely viewable (because this item is)
                 if (parentToExpand->initialExpandStatus() == Item::ExpandExecuted) {
@@ -2370,7 +2351,7 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi, AttachO
             Item *parentToExpand = pParent->parent();
             while (parentToExpand) {
                 if (parentToExpand == mRootItem) {
-                    break;    // no need to set it expanded
+                    break; // no need to set it expanded
                 }
                 parentToExpand->setInitialExpandStatus(Item::ExpandNeeded);
                 parentToExpand = parentToExpand->parent();
@@ -2385,14 +2366,14 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi, AttachO
         if (childNeedsExpanding) {
             if (mi->childItemCount() > 0) {
                 if (mModelForItemFunctions) { // the UI is not disconnected
-                    syncExpandedStateOfSubtree(mi);    // sync the real state in the view
+                    syncExpandedStateOfSubtree(mi); // sync the real state in the view
                 }
             }
         }
 
         // apply the filter, if needed
         if (mFilter) {
-            Q_ASSERT(mModelForItemFunctions);   // the UI must be NOT disconnected here
+            Q_ASSERT(mModelForItemFunctions); // the UI must be NOT disconnected here
 
             // apply the filter to subtree
             if (applyFilterToSubtree(mi, q->index(pParent, 0))) {
@@ -2469,18 +2450,17 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass5
             bool needsReSorting;
 
             // A macro really improves readability here.
-#define CHECK_IF_GROUP_NEEDS_RESORTING(_ItemDateComparator) \
-    switch (mSortOrder->groupSortDirection()) \
-    { \
-    case SortOrder::Ascending: \
-        needsReSorting = (*it)->parent()->d_ptr->childItemNeedsReSorting< _ItemDateComparator, true >(*it); \
-        break; \
-    case SortOrder::Descending: \
-        needsReSorting = (*it)->parent()->d_ptr->childItemNeedsReSorting< _ItemDateComparator, false >(*it); \
-        break; \
-    default: /* should never happen */ \
-        needsReSorting = false; \
-        break; \
+#define CHECK_IF_GROUP_NEEDS_RESORTING(_ItemDateComparator)                                                                                                    \
+    switch (mSortOrder->groupSortDirection()) {                                                                                                                \
+    case SortOrder::Ascending:                                                                                                                                 \
+        needsReSorting = (*it)->parent()->d_ptr->childItemNeedsReSorting<_ItemDateComparator, true>(*it);                                                      \
+        break;                                                                                                                                                 \
+    case SortOrder::Descending:                                                                                                                                \
+        needsReSorting = (*it)->parent()->d_ptr->childItemNeedsReSorting<_ItemDateComparator, false>(*it);                                                     \
+        break;                                                                                                                                                 \
+    default: /* should never happen */                                                                                                                         \
+        needsReSorting = false;                                                                                                                                \
+        break;                                                                                                                                                 \
     }
 
             switch (mSortOrder->groupSorting()) {
@@ -2509,7 +2489,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass5
             }
 
             if (needsReSorting) {
-                attachGroup(*it);    // it will first detach and then re-attach in the proper place
+                attachGroup(*it); // it will first detach and then re-attach in the proper place
             }
         }
 
@@ -2608,7 +2588,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3
                         if (!mparent->isViewable()) {
                             // re-attach it immediately (so current item is not lost)
                             auto topmost = mparent->topmostMessage();
-                            Q_ASSERT(!topmost->parent());   // groups are always viewable!
+                            Q_ASSERT(!topmost->parent()); // groups are always viewable!
                             topmost->setThreadingStatus(MessageItem::ParentMissing);
                             attachMessageToGroupHeader(topmost);
                         }
@@ -2620,13 +2600,13 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3
                 } else {
                     // so parent not found, (threadingStatus() is either MessageItem::ParentMissing or MessageItem::NonThreadable)
                     Q_ASSERT((mi->threadingStatus() == MessageItem::ParentMissing) || (mi->threadingStatus() == MessageItem::NonThreadable));
-                    mUnassignedMessageListForPass4.append(mi);   // this is ~O(1)
+                    mUnassignedMessageListForPass4.append(mi); // this is ~O(1)
                     // and wait for Pass4
                 }
             } else {
                 // can't guess the parent as the subject isn't prefixed
                 Q_ASSERT((mi->threadingStatus() == MessageItem::ParentMissing) || (mi->threadingStatus() == MessageItem::NonThreadable));
-                mUnassignedMessageListForPass4.append(mi);   // this is ~O(1)
+                mUnassignedMessageListForPass4.append(mi); // this is ~O(1)
                 // and wait for Pass4
             }
         } else {
@@ -2708,7 +2688,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2
                         if (!mparent->isViewable()) {
                             // re-attach it immediately (so current item is not lost)
                             auto topmost = mparent->topmostMessage();
-                            Q_ASSERT(!topmost->parent());   // groups are always viewable!
+                            Q_ASSERT(!topmost->parent()); // groups are always viewable!
                             topmost->setThreadingStatus(MessageItem::ParentMissing);
                             attachMessageToGroupHeader(topmost);
                         }
@@ -2723,15 +2703,15 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2
                     case MessageItem::ParentMissing:
                         if (mAggregation->threading() == Aggregation::PerfectReferencesAndSubject) {
                             // parent missing but still can be found in Pass3
-                            mUnassignedMessageListForPass3.append(mi);   // this is ~O(1)
+                            mUnassignedMessageListForPass3.append(mi); // this is ~O(1)
                         } else {
                             // We're not doing subject based threading: will never be threaded, go straight to Pass4
-                            mUnassignedMessageListForPass4.append(mi);   // this is ~O(1)
+                            mUnassignedMessageListForPass4.append(mi); // this is ~O(1)
                         }
                         break;
                     case MessageItem::NonThreadable:
                         // will never be threaded, go straight to Pass4
-                        mUnassignedMessageListForPass4.append(mi);   // this is ~O(1)
+                        mUnassignedMessageListForPass4.append(mi); // this is ~O(1)
                         break;
                     default:
                         // a bug for sure
@@ -2894,8 +2874,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                         Q_ASSERT(it->parent());
                         Q_ASSERT(it->parent() != mi);
 
-                        if (!((it->threadingStatus() == MessageItem::ImperfectParentFound)
-                              || (it->threadingStatus() == MessageItem::ParentMissing))) {
+                        if (!((it->threadingStatus() == MessageItem::ImperfectParentFound) || (it->threadingStatus() == MessageItem::ParentMissing))) {
                             qCritical() << "Got message " << it << " with threading status" << it->threadingStatus();
                             Q_ASSERT_X(false, "ModelPrivate::viewItemJobStepInternalForJobPass1Fill", "Wrong threading status");
                         }
@@ -2935,13 +2914,10 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                         // and circular In-Reply-To reference loops which are possible
                         // in case this item was found to be a perfect parent for some
                         // imperfectly threaded message just above.
-                        if (
-                            (mi == pParent)                   // self referencing message
-                            || (
-                                (mi->childItemCount() > 0)      // mi already has children, this is fast to determine
-                                && pParent->hasAncestor(mi)     // pParent is in the mi's children tree
-                                )
-                            ) {
+                        if ((mi == pParent) // self referencing message
+                            || ((mi->childItemCount() > 0) // mi already has children, this is fast to determine
+                                && pParent->hasAncestor(mi) // pParent is in the mi's children tree
+                                )) {
                             // Bad, bad message.. it has In-Reply-To equal to Message-Id
                             // or it's in a circular In-Reply-To reference loop.
                             // Will wait for Pass2 with References-Id only
@@ -2988,13 +2964,10 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                         // a standalone message or a thread leader.
                         // If there is no grouping in effect or thread leaders are just the "topmost"
                         // messages then we might be done with this one.
-                        if (
-                            (mAggregation->grouping() == Aggregation::NoGrouping)
-                            || (mAggregation->threadLeader() == Aggregation::TopmostMessage)
-                            ) {
+                        if ((mAggregation->grouping() == Aggregation::NoGrouping) || (mAggregation->threadLeader() == Aggregation::TopmostMessage)) {
                             // We're done with this message: it will be surely either toplevel (no grouping in effect)
                             // or a thread leader with a well defined group. Do it :)
-                            //qCDebug(MESSAGELIST_LOG) << "Setting message status from " << mi->threadingStatus() << " to non threadable (1) " << mi;
+                            // qCDebug(MESSAGELIST_LOG) << "Setting message status from " << mi->threadingStatus() << " to non threadable (1) " << mi;
                             mi->setThreadingStatus(MessageItem::NonThreadable);
                             // Locate the parent group for this item
                             attachMessageToGroupHeader(mi);
@@ -3019,11 +2992,11 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
         } else {
             // else no threading requested: we don't even need Pass2
             // set not threadable status (even if it might be not true, but in this mode we don't care)
-            //qCDebug(MESSAGELIST_LOG) << "Setting message status from " << mi->threadingStatus() << " to non threadable (2) " << mi;
+            // qCDebug(MESSAGELIST_LOG) << "Setting message status from " << mi->threadingStatus() << " to non threadable (2) " << mi;
             mi->setThreadingStatus(MessageItem::NonThreadable);
             // locate the parent group for this item
             if (mAggregation->grouping() == Aggregation::NoGrouping) {
-                attachMessageToParent(mRootItem, mi);    // no groups requested, attach directly to root
+                attachMessageToParent(mRootItem, mi); // no groups requested, attach directly to root
             } else {
                 attachMessageToGroupHeader(mi);
             }
@@ -3051,12 +3024,12 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
 
 ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Cleanup(ViewItemJob *job, QElapsedTimer elapsedTimer)
 {
-    Q_ASSERT(mModelForItemFunctions);   // UI must be not disconnected here
+    Q_ASSERT(mModelForItemFunctions); // UI must be not disconnected here
     // In this pass we remove the MessageItem objects that are present in the job
     // and put their children in the unassigned message list.
 
     // Note that this list in fact contains MessageItem objects (we need dynamic_cast<>).
-    QList< ModelInvariantIndex * > *invalidatedMessages = job->invariantIndexList();
+    QList<ModelInvariantIndex *> *invalidatedMessages = job->invariantIndexList();
 
     // We don't shrink the invalidatedMessages because it's basically an array.
     // It's faster to traverse an array of N entries than to remove K>0 entries
@@ -3073,7 +3046,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
 
     while (curIndex <= endIndex) {
         // Get the underlying storage message data...
-        auto dyingMessage = dynamic_cast< MessageItem * >(invalidatedMessages->at(curIndex));
+        auto dyingMessage = dynamic_cast<MessageItem *>(invalidatedMessages->at(curIndex));
         // This MUST NOT be null (otherwise we have a bug somewhere in this file).
         Q_ASSERT(dyingMessage);
 
@@ -3120,11 +3093,9 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                 Q_ASSERT((!mCurrentItemToRestoreAfterViewItemJobStep) || mCurrentItemToRestoreAfterViewItemJobStep->isViewable());
             }
 
-            if (
-                dyingMessage->isViewable()
-                && ((dyingMessage)->childItemCount() > 0)     // has children
-                && mView->isExpanded(q->index(dyingMessage, 0))  // is actually expanded
-                ) {
+            if (dyingMessage->isViewable() && ((dyingMessage)->childItemCount() > 0) // has children
+                && mView->isExpanded(q->index(dyingMessage, 0)) // is actually expanded
+            ) {
                 saveExpandedStateOfSubtree(dyingMessage);
             }
 
@@ -3142,7 +3113,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
             // We might have already removed its parent from the view, so it
             // might already be in the orphan child hash...
             if (dyingMessage->threadingStatus() == MessageItem::ParentMissing) {
-                mOrphanChildrenHash.remove(dyingMessage);    // this can turn to a no-op (dyingMessage not present in fact)
+                mOrphanChildrenHash.remove(dyingMessage); // this can turn to a no-op (dyingMessage not present in fact)
             }
         } else {
             // The dying message had no parent: this should happen only if it's already an orphan
@@ -3184,7 +3155,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
         }
 
         while (auto childItem = dyingMessage->firstChildItem()) {
-            auto childMessage = dynamic_cast< MessageItem * >(childItem);
+            auto childMessage = dynamic_cast<MessageItem *>(childItem);
             Q_ASSERT(childMessage);
 
             dyingMessage->takeChildItem(q, childMessage);
@@ -3213,11 +3184,8 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                 (childMessage == mCurrentItemToRestoreAfterViewItemJobStep)
                 || (
                     // there is a message that is going to be re-selected
-                    mCurrentItemToRestoreAfterViewItemJobStep
-                    &&// that message is in the childMessage subtree
-                    mCurrentItemToRestoreAfterViewItemJobStep->hasAncestor(childMessage)
-                    )
-                ) {
+                    mCurrentItemToRestoreAfterViewItemJobStep && // that message is in the childMessage subtree
+                    mCurrentItemToRestoreAfterViewItemJobStep->hasAncestor(childMessage))) {
                 attachMessageToGroupHeader(childMessage);
 
                 Q_ASSERT(childMessage->isViewable());
@@ -3290,7 +3258,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
 
 ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Update(ViewItemJob *job, QElapsedTimer elapsedTimer)
 {
-    Q_ASSERT(mModelForItemFunctions);   // UI must be not disconnected here
+    Q_ASSERT(mModelForItemFunctions); // UI must be not disconnected here
 
     // In this pass we simply update the MessageItem objects that are present in the job.
 
@@ -3379,7 +3347,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                 // The following function will return true if itemParent may be affected by the change.
                 // If the itemParent isn't affected, we stop climbing.
                 if (handleItemPropertyChanges(propertyChangeMask, pParent, message)) {
-                    Q_ASSERT(message->parent());   // handleItemPropertyChanges() must never leave an item detached
+                    Q_ASSERT(message->parent()); // handleItemPropertyChanges() must never leave an item detached
 
                     // Note that actually message->parent() may be different than pParent since
                     // handleItemPropertyChanges() may have re-grouped it.
@@ -3620,7 +3588,8 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
 #ifdef KDEPIM_FOLDEROPEN_PROFILE
 
 // Namespace to collect all the vars and functions for KDEPIM_FOLDEROPEN_PROFILE
-namespace Stats {
+namespace Stats
+{
 // Number of existing jobs/passes
 static const int numberOfPasses = ViewItemJob::LastIndex;
 
@@ -3641,15 +3610,13 @@ static int expandingTreeTime;
 static int layoutChangeTime;
 
 // Descriptions of the job, for nicer debug output
-static const char *jobDescription[numberOfPasses] = {
-    "Creating items from messages and simple threading",
-    "Removing messages",
-    "Updating messages",
-    "Additional Threading",
-    "Subject-Based threading",
-    "Grouping",
-    "Group resorting + cleanup"
-};
+static const char *jobDescription[numberOfPasses] = {"Creating items from messages and simple threading",
+                                                     "Removing messages",
+                                                     "Updating messages",
+                                                     "Additional Threading",
+                                                     "Subject-Based threading",
+                                                     "Grouping",
+                                                     "Group resorting + cleanup"};
 
 // Timer to track time between start of first job and end of last job
 static QTime firstStartTime;
@@ -3704,14 +3671,12 @@ void ModelPrivate::printStatistics()
     }
 
     qCDebug(MESSAGELIST_LOG) << "Finished filling the view with" << totalMessages << "messages";
-    qCDebug(MESSAGELIST_LOG) << "That took" << totalTotalTime << "msecs inside the model and"
-                             << completeTime << "in total.";
-    qCDebug(MESSAGELIST_LOG) << (totalTotalTime / (float)completeTime) * 100.0f
-                             << "percent of the time was spent in the model.";
-    qCDebug(MESSAGELIST_LOG) << "Time for layoutChanged(), in msecs:" << layoutChangeTime
-                             << "(" << (layoutChangeTime / (float)totalTotalTime) * 100.0f << "percent )";
-    qCDebug(MESSAGELIST_LOG) << "Time to expand tree, in msecs:" << expandingTreeTime
-                             << "(" << (expandingTreeTime / (float)totalTotalTime) * 100.0f << "percent )";
+    qCDebug(MESSAGELIST_LOG) << "That took" << totalTotalTime << "msecs inside the model and" << completeTime << "in total.";
+    qCDebug(MESSAGELIST_LOG) << (totalTotalTime / (float)completeTime) * 100.0f << "percent of the time was spent in the model.";
+    qCDebug(MESSAGELIST_LOG) << "Time for layoutChanged(), in msecs:" << layoutChangeTime << "(" << (layoutChangeTime / (float)totalTotalTime) * 100.0f
+                             << "percent )";
+    qCDebug(MESSAGELIST_LOG) << "Time to expand tree, in msecs:" << expandingTreeTime << "(" << (expandingTreeTime / (float)totalTotalTime) * 100.0f
+                             << "percent )";
     qCDebug(MESSAGELIST_LOG) << "Number of messages per second in the model:" << msgPerSecond;
     qCDebug(MESSAGELIST_LOG) << "Number of messages per second in total:" << msgPerSecondComplete;
     qCDebug(MESSAGELIST_LOG) << "Number of threads:" << totalThreads;
@@ -3719,8 +3684,7 @@ void ModelPrivate::printStatistics()
     qCDebug(MESSAGELIST_LOG) << "Messages per thread:" << totalMessages / (float)totalThreads;
     qCDebug(MESSAGELIST_LOG) << "Threads per group:" << totalThreads / (float)mGroupHeaderItemHash.size();
     qCDebug(MESSAGELIST_LOG) << "Messages with the same subject:"
-                             << "Max:" << messagesWithSameSubjectMax
-                             << "Avg:" << messagesWithSameSubjectAvg;
+                             << "Max:" << messagesWithSameSubjectMax << "Avg:" << messagesWithSameSubjectAvg;
     qCDebug(MESSAGELIST_LOG);
     qCDebug(MESSAGELIST_LOG) << "Now follows a breakdown of the jobs.";
     qCDebug(MESSAGELIST_LOG);
@@ -3791,7 +3755,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternal()
 
         if (job->disconnectUI()) {
             mModelForItemFunctions = nullptr; // disconnect the UI for this job
-            Q_ASSERT(mLoading);   // this must be true in the first job
+            Q_ASSERT(mLoading); // this must be true in the first job
             // FIXME: Should assert yet more that this is the very first job for this StorageModel
             //        Asserting only mLoading is not enough as we could be using a two-jobs loading strategy
             //        or this could be a job enqueued before the first job has completed.
@@ -3809,7 +3773,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternal()
             // fact are "forced" by next item insertions. The delayed layout algorithm, then
             // is probably slower than the non-delayed one.
             // Disabling the paintEvent() doesn't seem to work either.
-            //mView->setUpdatesEnabled( false );
+            // mView->setUpdatesEnabled( false );
         }
 
         switch (viewItemJobStepInternalForJob(job, elapsedTimer)) {
@@ -3958,7 +3922,7 @@ void ModelPrivate::viewItemJobStep()
     }
 
     if (!mStorageModel) {
-        return;    // nothing more to do
+        return; // nothing more to do
     }
 
     // Save the current item in the view as our process may
@@ -3967,8 +3931,7 @@ void ModelPrivate::viewItemJobStep()
     // a cleanup job: we'll be trying to set as current the item after the one removed.
 
     QModelIndex currentIndexBeforeStep = mView->currentIndex();
-    Item *currentItemBeforeStep = currentIndexBeforeStep.isValid()
-                                  ? static_cast< Item * >(currentIndexBeforeStep.internalPointer()) : nullptr;
+    Item *currentItemBeforeStep = currentIndexBeforeStep.isValid() ? static_cast<Item *>(currentIndexBeforeStep.internalPointer()) : nullptr;
 
     // mCurrentItemToRestoreAfterViewItemJobStep will be zeroed out if it's killed
     mCurrentItemToRestoreAfterViewItemJobStep = currentItemBeforeStep;
@@ -3997,13 +3960,13 @@ void ModelPrivate::viewItemJobStep()
         if (!mInLengthyJobBatch) {
             mInLengthyJobBatch = true;
         }
-        mFillStepTimer.start(mViewItemJobStepIdleInterval);   // this is a single shot timer connected to viewItemJobStep()
+        mFillStepTimer.start(mViewItemJobStepIdleInterval); // this is a single shot timer connected to viewItemJobStep()
         // and go dealing with current/selection out of the switch.
         break;
     case ViewItemJobCompleted:
         // done :)
 
-        Q_ASSERT(mModelForItemFunctions);   // UI must be no (longer) disconnected in this state
+        Q_ASSERT(mModelForItemFunctions); // UI must be no (longer) disconnected in this state
 
         // Ask the view to remove the eventual busy indications
         if (mInLengthyJobBatch) {
@@ -4026,7 +3989,7 @@ void ModelPrivate::viewItemJobStep()
                 // fall down
                 break;
             case PreSelectFirstUnreadCentered:
-                bSelectionDone = mView->selectFirstMessageItem(MessageTypeUnreadOnly, true);   // center
+                bSelectionDone = mView->selectFirstMessageItem(MessageTypeUnreadOnly, true); // center
                 break;
             case PreSelectOldestCentered:
                 mView->setCurrentMessageItem(mOldestItem, true /* center */);
@@ -4087,8 +4050,7 @@ void ModelPrivate::viewItemJobStep()
 
         // Check if the current item changed
         QModelIndex currentIndexAfterStep = mView->currentIndex();
-        Item *currentAfterStep = currentIndexAfterStep.isValid()
-                                 ? static_cast< Item * >(currentIndexAfterStep.internalPointer()) : nullptr;
+        Item *currentAfterStep = currentIndexAfterStep.isValid() ? static_cast<Item *>(currentIndexAfterStep.internalPointer()) : nullptr;
 
         if (mCurrentItemToRestoreAfterViewItemJobStep != currentAfterStep) {
             // QTreeView lost the current item...
@@ -4161,7 +4123,7 @@ void ModelPrivate::viewItemJobStep()
 void ModelPrivate::slotStorageModelRowsInserted(const QModelIndex &parent, int from, int to)
 {
     if (parent.isValid()) {
-        return;    // ugh... should never happen
+        return; // ugh... should never happen
     }
 
     Q_ASSERT(from <= to);
@@ -4260,10 +4222,8 @@ void ModelPrivate::slotStorageModelRowsInserted(const QModelIndex &parent, int f
         if (job->currentPass() == ViewItemJob::Pass1Fill) {
             if (
                 // The job ends just before the added rows
-                (from == (job->endIndex() + 1))
-                &&// The job didn't reach the end of Pass1Fill yet
-                (job->currentIndex() <= job->endIndex())
-                ) {
+                (from == (job->endIndex() + 1)) && // The job didn't reach the end of Pass1Fill yet
+                (job->currentIndex() <= job->endIndex())) {
                 // We can still attach this :)
                 job->setEndIndex(to);
                 Q_ASSERT(job->currentIndex() <= job->endIndex());
@@ -4288,7 +4248,7 @@ void ModelPrivate::slotStorageModelRowsRemoved(const QModelIndex &parent, int fr
     // This is called when the underlying StorageModel emits the rowsRemoved signal.
 
     if (parent.isValid()) {
-        return;    // ugh... should never happen
+        return; // ugh... should never happen
     }
 
     // look if no current job is in the middle
@@ -4352,7 +4312,7 @@ void ModelPrivate::slotStorageModelRowsRemoved(const QModelIndex &parent, int fr
             // The change starts in the middle of the job and ends in the middle or after the job.
             // The first part is unaffected by the shift and ranges from job->currentIndex() to from - 1
             // We use the existing job for this.
-            job->setEndIndex(from - 1);   // stop before the first removed row
+            job->setEndIndex(from - 1); // stop before the first removed row
 
             Q_ASSERT(job->currentIndex() <= job->endIndex());
 
@@ -4422,7 +4382,7 @@ void ModelPrivate::slotStorageModelRowsRemoved(const QModelIndex &parent, int fr
             ViewItemJob *job = mViewItemJobs.at(jobCount - 1);
             if (job->currentPass() == ViewItemJob::Pass1Cleanup) {
                 if ((job->currentIndex() <= job->endIndex()) && job->invariantIndexList()) {
-                    //qCDebug(MESSAGELIST_LOG) << "Appending " << invalidatedIndexes->count() << " invalidated indexes to existing cleanup job";
+                    // qCDebug(MESSAGELIST_LOG) << "Appending " << invalidatedIndexes->count() << " invalidated indexes to existing cleanup job";
                     // We can still attach this :)
                     *(job->invariantIndexList()) += *invalidatedIndexes;
                     job->setEndIndex(job->endIndex() + invalidatedIndexes->count());
@@ -4435,7 +4395,7 @@ void ModelPrivate::slotStorageModelRowsRemoved(const QModelIndex &parent, int fr
         if (invalidatedIndexes) {
             // Didn't append to any existing cleanup job.. create a new one
 
-            //qCDebug(MESSAGELIST_LOG) << "Creating new cleanup job for " << invalidatedIndexes->count() << " invalidated indexes";
+            // qCDebug(MESSAGELIST_LOG) << "Creating new cleanup job for " << invalidatedIndexes->count() << " invalidated indexes";
             // FIXME: Should take timing options from aggregation here ?
             auto job = new ViewItemJob(ViewItemJob::Pass1Cleanup, invalidatedIndexes, 100, 50, 10);
             mViewItemJobs.append(job);
@@ -4457,7 +4417,7 @@ void ModelPrivate::slotStorageModelLayoutChanged()
 
 void ModelPrivate::slotStorageModelDataChanged(const QModelIndex &fromIndex, const QModelIndex &toIndex)
 {
-    Q_ASSERT(mStorageModel);   // must exist (and be the sender of the signal connected to this slot)
+    Q_ASSERT(mStorageModel); // must exist (and be the sender of the signal connected to this slot)
 
     int from = fromIndex.row();
     int to = toIndex.row();
@@ -4518,9 +4478,9 @@ Qt::ItemFlags Model::flags(const QModelIndex &index) const
         return Qt::NoItemFlags;
     }
 
-    Q_ASSERT(d->mModelForItemFunctions);   // UI must be connected if a valid index was queried
+    Q_ASSERT(d->mModelForItemFunctions); // UI must be connected if a valid index was queried
 
-    Item *it = static_cast< Item * >(index.internalPointer());
+    Item *it = static_cast<Item *>(index.internalPointer());
 
     Q_ASSERT(it);
 
@@ -4530,16 +4490,16 @@ Qt::ItemFlags Model::flags(const QModelIndex &index) const
 
     Q_ASSERT(it->type() == Item::Message);
 
-    if (!static_cast< MessageItem * >(it)->isValid()) {
-        return Qt::NoItemFlags;    // not enabled, not selectable
+    if (!static_cast<MessageItem *>(it)->isValid()) {
+        return Qt::NoItemFlags; // not enabled, not selectable
     }
 
-    if (static_cast< MessageItem * >(it)->aboutToBeRemoved()) {
-        return Qt::NoItemFlags;    // not enabled, not selectable
+    if (static_cast<MessageItem *>(it)->aboutToBeRemoved()) {
+        return Qt::NoItemFlags; // not enabled, not selectable
     }
 
-    if (static_cast< MessageItem * >(it)->status().isDeleted()) {
-        return Qt::NoItemFlags;    // not enabled, not selectable
+    if (static_cast<MessageItem *>(it)->status().isDeleted()) {
+        return Qt::NoItemFlags; // not enabled, not selectable
     }
 
     return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
@@ -4547,7 +4507,7 @@ Qt::ItemFlags Model::flags(const QModelIndex &index) const
 
 QMimeData *MessageList::Core::Model::mimeData(const QModelIndexList &indexes) const
 {
-    QVector< MessageItem * > msgs;
+    QVector<MessageItem *> msgs;
     for (const QModelIndex &idx : indexes) {
         if (idx.isValid()) {
             Item *item = static_cast<Item *>(idx.internalPointer());
@@ -4579,7 +4539,7 @@ MessageItem *Model::messageItemByStorageRow(int row) const
         return nullptr;
     }
 
-    return static_cast< MessageItem * >(idx);
+    return static_cast<MessageItem *>(idx);
 }
 
 MessageItemSetReference Model::createPersistentSet(const QVector<MessageItem *> &items)
@@ -4601,7 +4561,7 @@ QList<MessageItem *> Model::persistentSetCurrentMessageItemList(MessageItemSetRe
     if (d->mPersistentSetManager) {
         return d->mPersistentSetManager->messageItems(ref);
     }
-    return QList< MessageItem * >();
+    return QList<MessageItem *>();
 }
 
 void Model::deletePersistentSet(MessageItemSetReference ref)

@@ -5,12 +5,15 @@
 #ifndef MESSAGELIST_UTILS_THEMECOMBOBOX_P_H
 #define MESSAGELIST_UTILS_THEMECOMBOBOX_P_H
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class Theme;
 } // namespace Core
 
-namespace Utils {
+namespace Utils
+{
 class ThemeComboBox;
 
 class ThemeComboBoxPrivate

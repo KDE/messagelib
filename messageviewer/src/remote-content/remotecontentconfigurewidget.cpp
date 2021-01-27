@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-
 #include "remotecontentconfigurewidget.h"
 #include "remotecontentdialog.h"
 #include "remotecontentinfo.h"
@@ -13,8 +12,8 @@
 #include <KMessageBox>
 #include <QListWidget>
 #include <QMenu>
-#include <QVBoxLayout>
 #include <QPointer>
+#include <QVBoxLayout>
 
 using namespace MessageViewer;
 RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
@@ -35,7 +34,6 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
 
 RemoteContentConfigureWidget::~RemoteContentConfigureWidget()
 {
-
 }
 
 void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &pos)
@@ -66,15 +64,14 @@ void RemoteContentConfigureWidget::modifyRemoteContent(QListWidgetItem *rulesIte
     QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
     RemoteContentInfo info;
     info.setUrl(rulesItem->text());
-    info.setStatus(rulesItem->checkState() == Qt::Checked ?
-                       RemoteContentInfo::RemoteContentInfoStatus::Authorized :
-                       RemoteContentInfo::RemoteContentInfoStatus::Blocked);
+    info.setStatus(rulesItem->checkState() == Qt::Checked ? RemoteContentInfo::RemoteContentInfoStatus::Authorized
+                                                          : RemoteContentInfo::RemoteContentInfoStatus::Blocked);
     dlg->setInfo(info);
     if (dlg->exec()) {
         info = dlg->info();
         RemoteContentManager::self()->addRemoteContent(info);
         rulesItem->setText(info.url());
-        rulesItem->setCheckState((info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized) ? Qt::Checked : Qt::Unchecked );
+        rulesItem->setCheckState((info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized) ? Qt::Checked : Qt::Unchecked);
     }
     delete dlg;
 }
@@ -103,7 +100,8 @@ void RemoteContentConfigureWidget::saveSettings()
         const auto item = mListWidget->item(i);
         RemoteContentInfo info;
         info.setUrl(item->text());
-        info.setStatus((item->checkState() == Qt::Checked) ? RemoteContentInfo::RemoteContentInfoStatus::Authorized : RemoteContentInfo::RemoteContentInfoStatus::Blocked);
+        info.setStatus((item->checkState() == Qt::Checked) ? RemoteContentInfo::RemoteContentInfoStatus::Authorized
+                                                           : RemoteContentInfo::RemoteContentInfoStatus::Blocked);
         lst.append(std::move(info));
     }
     RemoteContentManager::self()->setRemoveContentInfo(lst);

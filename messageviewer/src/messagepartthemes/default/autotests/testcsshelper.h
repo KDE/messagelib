@@ -9,8 +9,10 @@
 
 #include <MessageViewer/CSSHelper>
 
-namespace MessageViewer {
-namespace Test {
+namespace MessageViewer
+{
+namespace Test
+{
 class TestCSSHelper : public MessageViewer::CSSHelper
 {
 public:

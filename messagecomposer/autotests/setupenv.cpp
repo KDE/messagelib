@@ -7,8 +7,8 @@
 
 #include "setupenv.h"
 
-#include <QGpgME/Protocol>
 #include <QGpgME/KeyListJob>
+#include <QGpgME/Protocol>
 #include <gpgme++/keylistresult.h>
 
 #include <QDir>
@@ -26,7 +26,7 @@ void Test::setupEnv()
     QStandardPaths::setTestModeEnabled(true);
 }
 
-std::vector< GpgME::Key, std::allocator< GpgME::Key > > Test::getKeys(bool smime)
+std::vector<GpgME::Key, std::allocator<GpgME::Key>> Test::getKeys(bool smime)
 {
     QGpgME::KeyListJob *job = nullptr;
 
@@ -41,7 +41,7 @@ std::vector< GpgME::Key, std::allocator< GpgME::Key > > Test::getKeys(bool smime
     }
     Q_ASSERT(job);
 
-    std::vector< GpgME::Key > keys;
+    std::vector<GpgME::Key> keys;
     GpgME::KeyListResult res = job->exec(QStringList(), true, keys);
 
     if (!smime) {
@@ -84,10 +84,7 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
     QVERIFY(QFile::exists(outFile));
 
     // compare to reference file
-    const auto args = QStringList()
-                      << QStringLiteral("-u")
-                      << referenceFile
-                      << outFile;
+    const auto args = QStringList() << QStringLiteral("-u") << referenceFile << outFile;
     QProcess proc;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
     proc.start(QStringLiteral("diff"), args);

@@ -8,8 +8,8 @@
 
 #include "messagecore_export.h"
 
-#include <kmime/kmime_message.h>
 #include <QUrl>
+#include <kmime/kmime_message.h>
 
 #include <QByteArray>
 #include <QSharedDataPointer>
@@ -17,7 +17,8 @@
 
 class KConfigGroup;
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @short A class to extract information about mailing lists from emails.
  *
@@ -35,23 +36,23 @@ public:
      * Defines what entity should manage the mailing list.
      */
     enum Handler {
-        KMail,   ///< The list is handled by KMail
-        Browser  ///< The list is handled by a browser.
+        KMail, ///< The list is handled by KMail
+        Browser ///< The list is handled by a browser.
     };
 
     /**
      * Defines the features a mailinglist can support.
      */
     enum Feature {
-        None = 0 << 0,         ///< No mailing list fields exist.
-        Post = 1 << 0,         ///< List-Post header exists.
-        Subscribe = 1 << 1,    ///< List-Subscribe header exists.
-        Unsubscribe = 1 << 2,  ///< List-Unsubscribe header exists.
-        Help = 1 << 3,         ///< List-Help header exists.
-        Archive = 1 << 4,      ///< List-Archive header exists.
-        Id = 1 << 5,           ///< List-ID header exists.
-        Owner = 1 << 6,        ///< List-Owner header exists.
-        ArchivedAt = 1 << 7    ///< Archive-At header exists.
+        None = 0 << 0, ///< No mailing list fields exist.
+        Post = 1 << 0, ///< List-Post header exists.
+        Subscribe = 1 << 1, ///< List-Subscribe header exists.
+        Unsubscribe = 1 << 2, ///< List-Unsubscribe header exists.
+        Help = 1 << 3, ///< List-Help header exists.
+        Archive = 1 << 4, ///< List-Archive header exists.
+        Id = 1 << 5, ///< List-ID header exists.
+        Owner = 1 << 6, ///< List-Owner header exists.
+        ArchivedAt = 1 << 7 ///< Archive-At header exists.
     };
     Q_DECLARE_FLAGS(Features, Feature)
 

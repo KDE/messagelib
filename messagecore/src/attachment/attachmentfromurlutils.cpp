@@ -4,15 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "attachmentfromfolderjob.h"
-#include "attachmentfromurljob.h"
 #include "attachmentfromurlutils.h"
 #include "MessageCore/MessageCoreSettings"
+#include "attachmentfromfolderjob.h"
+#include "attachmentfromurljob.h"
 #include "messagecore_debug.h"
 
 #include <QMimeDatabase>
 
-namespace MessageCore {
+namespace MessageCore
+{
 MessageCore::AttachmentFromUrlBaseJob *AttachmentFromUrlUtils::createAttachmentJob(const QUrl &url, QObject *parent)
 {
     MessageCore::AttachmentFromUrlBaseJob *ajob = nullptr;

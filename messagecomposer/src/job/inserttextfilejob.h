@@ -13,11 +13,13 @@
 
 class QTextEdit;
 
-namespace KIO {
+namespace KIO
+{
 class Job;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class InsertTextFileJobPrivate;
 /**
  * A job that downloads a given URL, interprets the result as a text file with the

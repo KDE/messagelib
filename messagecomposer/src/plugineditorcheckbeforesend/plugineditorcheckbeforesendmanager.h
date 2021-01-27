@@ -7,10 +7,11 @@
 #ifndef PLUGINEDITORCHECKBEFORESENDMANAGER_H
 #define PLUGINEDITORCHECKBEFORESENDMANAGER_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
 #include <PimCommon/PluginUtil>
-namespace MessageComposer {
+#include <QObject>
+namespace MessageComposer
+{
 class PluginEditorCheckBeforeSendManagerPrivate;
 class PluginEditorCheckBeforeSend;
 /**
@@ -32,6 +33,7 @@ public:
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
+
 private:
     PluginEditorCheckBeforeSendManagerPrivate *const d;
 };

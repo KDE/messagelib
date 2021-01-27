@@ -8,7 +8,8 @@
 #define IMAGESCALINGUTILS_H
 #include <MessageCore/AttachmentPart>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class Utils
 {
 public:

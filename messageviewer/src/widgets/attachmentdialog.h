@@ -8,12 +8,13 @@
 #ifndef MESSAGEVIEWERT_ATTACHMENTDIALOG_H
 #define MESSAGEVIEWERT_ATTACHMENTDIALOG_H
 
-#include <QObject>
 #include <KService>
+#include <QObject>
 
 class QDialog;
 class QDialogButtonBox;
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * A class which handles the dialog used to present the user a choice what to do
  * with an attachment.
@@ -24,12 +25,7 @@ class AttachmentDialog : public QObject
 
 public:
     /// returncodes for exec()
-    enum {
-        Save = 2,
-        Open,
-        OpenWith,
-        Cancel
-    };
+    enum { Save = 2, Open, OpenWith, Cancel };
 
     // if @offer is non-null, the "open with <application>" button will also be shown,
     // otherwise only save, open with, cancel

@@ -7,8 +7,8 @@
 #ifndef MESSAGEVIEWER_TEST_RENDERTEST_H
 #define MESSAGEVIEWER_TEST_RENDERTEST_H
 
-#include <QObject>
 #include <MimeTreeParser/MessagePart>
+#include <QObject>
 
 class RenderTest : public QObject
 {

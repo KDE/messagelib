@@ -5,8 +5,8 @@
 */
 
 #include "dkimrulewidgettest.h"
-#include "dkim-verify/dkimrulewidget.h"
 #include "dkim-verify/dkimmanagerulescombobox.h"
+#include "dkim-verify/dkimrulewidget.h"
 #include <QCheckBox>
 #include <QFormLayout>
 #include <QLineEdit>

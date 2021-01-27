@@ -7,13 +7,15 @@
 #ifndef MIMETREEPARSER_BODYFORAMATTER_ENCRYPTED_H
 #define MIMETREEPARSER_BODYFORAMATTER_ENCRYPTED_H
 
-#include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
+#include "interfaces/bodypartformatter.h"
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class EncryptedBodyPartFormatter : public Interface::BodyPartFormatter
 {
     static const EncryptedBodyPartFormatter *self;
+
 public:
     MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();

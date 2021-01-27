@@ -11,14 +11,14 @@
 
 #include "recipientseditorsidewidget.h"
 
-#include "recipientspicker.h"
 #include "kwindowpositioner.h"
+#include "recipientspicker.h"
 
 #include <KLocalizedString>
 #include <QPushButton>
 
-#include <QLabel>
 #include <QBoxLayout>
+#include <QLabel>
 
 using namespace MessageComposer;
 
@@ -39,17 +39,13 @@ RecipientsEditorSideWidget::RecipientsEditorSideWidget(RecipientsEditor *view, Q
 
     topLayout->addStretch(1);
 
-    mDistributionListButton = new QPushButton(
-        i18nc("@action:button", "Save List..."), this);
+    mDistributionListButton = new QPushButton(i18nc("@action:button", "Save List..."), this);
     topLayout->addWidget(mDistributionListButton);
     mDistributionListButton->hide();
-    connect(mDistributionListButton, &QAbstractButton::clicked,
-            this, &RecipientsEditorSideWidget::saveDistributionList);
-    mDistributionListButton->setToolTip(
-        i18nc("@info:tooltip", "Save recipients as distribution list"));
+    connect(mDistributionListButton, &QAbstractButton::clicked, this, &RecipientsEditorSideWidget::saveDistributionList);
+    mDistributionListButton->setToolTip(i18nc("@info:tooltip", "Save recipients as distribution list"));
 
-    mSelectButton = new QPushButton(
-        i18nc("@action:button Open recipient selection dialog.", "Se&lect..."), this);
+    mSelectButton = new QPushButton(i18nc("@action:button Open recipient selection dialog.", "Se&lect..."), this);
     topLayout->addWidget(mSelectButton);
     connect(mSelectButton, &QPushButton::clicked, this, &RecipientsEditorSideWidget::pickRecipient);
     mSelectButton->setToolTip(i18nc("@info:tooltip", "Select recipients from address book"));
@@ -66,8 +62,7 @@ RecipientsPicker *RecipientsEditorSideWidget::picker() const
         // hacks to allow picker() to be const in the presence of lazy loading
         auto *non_const_this = const_cast<RecipientsEditorSideWidget *>(this);
         mRecipientPicker = new RecipientsPicker(non_const_this);
-        connect(mRecipientPicker, &RecipientsPicker::pickedRecipient,
-                non_const_this, &RecipientsEditorSideWidget::pickedRecipient);
+        connect(mRecipientPicker, &RecipientsPicker::pickedRecipient, non_const_this, &RecipientsEditorSideWidget::pickedRecipient);
         mPickerPositioner = new KWindowPositioner(mSelectButton, mRecipientPicker);
     }
     return mRecipientPicker;
@@ -82,11 +77,9 @@ void RecipientsEditorSideWidget::setTotal(int recipients, int lines)
 {
     QString labelText;
     if (recipients == 0) {
-        labelText = i18nc("@info:status No recipients selected",
-                          "No recipients");
+        labelText = i18nc("@info:status No recipients selected", "No recipients");
     } else {
-        labelText = i18ncp("@info:status Number of recipients selected",
-                           "1 recipient", "%1 recipients", recipients);
+        labelText = i18ncp("@info:status Number of recipients selected", "1 recipient", "%1 recipients", recipients);
     }
 
     if (lines > 3) {

@@ -8,9 +8,9 @@
 #include "checkphishingurlutil.h"
 #include "updatedatabaseinfo.h"
 #include "webengineviewer_debug.h"
+#include <QDateTime>
 #include <QElapsedTimer>
 #include <QFileInfo>
-#include <QDateTime>
 
 using namespace WebEngineViewer;
 
@@ -47,9 +47,8 @@ bool LocalDataBaseFilePrivate::load()
         const int major = q->getUint16(0);
         const int minor = q->getUint16(2);
 
-        //Check version in binary file. => version value == 1.0 for the moment see CheckPhishingUrlUtil
-        mValid = (major == WebEngineViewer::CheckPhishingUrlUtil::majorVersion()
-                  && minor == WebEngineViewer::CheckPhishingUrlUtil::minorVersion());
+        // Check version in binary file. => version value == 1.0 for the moment see CheckPhishingUrlUtil
+        mValid = (major == WebEngineViewer::CheckPhishingUrlUtil::majorVersion() && minor == WebEngineViewer::CheckPhishingUrlUtil::minorVersion());
     }
     mMtime = QFileInfo(mFile).lastModified();
     return mValid;
@@ -140,7 +139,8 @@ QByteArray LocalDataBaseFile::searchHash(const QByteArray &hashToSearch)
             const char *hashCharStar = getCharStar(hashOffset);
             const int cmp = qstrcmp(hashCharStar, hashToSearch.constData());
             currentValue = QByteArray(hashCharStar);
-            qCWarning(WEBENGINEVIEWER_LOG) << "search " << hashToSearch.toBase64() << " begin " << begin << " end " << end << " hashCharStar" << currentValue.toBase64();
+            qCWarning(WEBENGINEVIEWER_LOG) << "search " << hashToSearch.toBase64() << " begin " << begin << " end " << end << " hashCharStar"
+                                           << currentValue.toBase64();
             if (end == begin) {
                 return currentValue;
             }
@@ -193,7 +193,7 @@ QVector<WebEngineViewer::Addition> LocalDataBaseFile::extractAllInfo() const
         tmp.hashString = QByteArray(getCharStar(value));
         tmp.prefixSize = tmp.hashString.size();
         tmp.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
-        index += 8; //next index based on quint64
+        index += 8; // next index based on quint64
         lst.append(tmp);
     }
     return lst;

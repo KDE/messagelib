@@ -13,29 +13,32 @@
 
 class QComboBox;
 
-namespace MessageList {
-namespace Utils {
+namespace MessageList
+{
+namespace Utils
+{
 /**
  * Namespace containing some helper functions for QComboBox widgets.
  */
-namespace ComboBoxUtils {
+namespace ComboBoxUtils
+{
 /**
-   * Fills the specified QComboBox with the options available in optionDescriptors.
-   * Each option descriptor contains a description string and a distinct integer (possibly enum)
-   * identifier value.
-   */
-void fillIntegerOptionCombo(QComboBox *combo, const QVector<QPair<QString, int> > &optionDescriptors);
+ * Fills the specified QComboBox with the options available in optionDescriptors.
+ * Each option descriptor contains a description string and a distinct integer (possibly enum)
+ * identifier value.
+ */
+void fillIntegerOptionCombo(QComboBox *combo, const QVector<QPair<QString, int>> &optionDescriptors);
 
 /**
-   * Returns the identifier of the currently selected option in the specified combo.
-   * If the combo has no current selection or something goes wrong then the defaultValue
-   * is returned instead.
-   */
+ * Returns the identifier of the currently selected option in the specified combo.
+ * If the combo has no current selection or something goes wrong then the defaultValue
+ * is returned instead.
+ */
 int getIntegerOptionComboValue(QComboBox *combo, int defaultValue);
 
 /**
-   * Sets the currently selected option in the specified combo.
-   */
+ * Sets the currently selected option in the specified combo.
+ */
 void setIntegerOptionComboValue(QComboBox *combo, int value);
 } // namespace ComboBoxUtils
 } // namespace Utils

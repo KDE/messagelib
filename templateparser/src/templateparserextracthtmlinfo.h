@@ -7,11 +7,12 @@
 #ifndef TEMPLATEPARSEREXTRACTHTMLINFO_H
 #define TEMPLATEPARSEREXTRACTHTMLINFO_H
 
-#include <QObject>
 #include "templateparser_private_export.h"
 #include "templateparserextracthtmlinforesult.h"
+#include <QObject>
 
-namespace TemplateParser {
+namespace TemplateParser
+{
 class TemplateExtractTextFromMail;
 class TemplateExtractHtmlElementFromMail;
 

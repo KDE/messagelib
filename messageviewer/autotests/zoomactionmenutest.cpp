@@ -6,8 +6,8 @@
 
 #include "zoomactionmenutest.h"
 #include "../src/widgets/zoomactionmenu.h"
-#include <QTest>
 #include <KActionCollection>
+#include <QTest>
 
 ZoomActionMenuTest::ZoomActionMenuTest(QObject *parent)
     : QObject(parent)

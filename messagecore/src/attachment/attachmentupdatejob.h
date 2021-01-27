@@ -7,11 +7,12 @@
 #ifndef ATTACHMENTUPDATEJOB_H
 #define ATTACHMENTUPDATEJOB_H
 
+#include "attachmentpart.h"
 #include "messagecore_export.h"
 #include <KJob>
-#include "attachmentpart.h"
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @brief The AttachmentUpdateJob class
  * @author Laurent Montel <montel@kde.org>
@@ -26,6 +27,7 @@ public:
     void start() override;
     Q_REQUIRED_RESULT AttachmentPart::Ptr originalPart() const;
     Q_REQUIRED_RESULT AttachmentPart::Ptr updatedPart() const;
+
 private:
     //@cond PRIVATE
     class Private;

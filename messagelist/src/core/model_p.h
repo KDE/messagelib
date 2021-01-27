@@ -11,19 +11,22 @@
 
 #include "model.h"
 #include "threadingcache.h"
-#include <config-messagelist.h>
 #include <QTimer>
+#include <config-messagelist.h>
 
 class QElapsedTimer;
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class ViewItemJob;
 class ModelInvariantRowMapper;
 class MessageItemSetManager;
 class ModelPrivate
 {
 public:
-    explicit ModelPrivate(Model *owner) : q(owner)
+    explicit ModelPrivate(Model *owner)
+        : q(owner)
     {
     }
 
@@ -53,19 +56,13 @@ public:
      */
     MessageItem *guessMessageParent(MessageItem *mi);
 
-    enum AttachOptions {
-        SkipCacheUpdate = 0,
-        StoreInCache = 1
-    };
+    enum AttachOptions { SkipCacheUpdate = 0, StoreInCache = 1 };
     void attachMessageToParent(Item *pParent, MessageItem *mi, AttachOptions attachOptions = StoreInCache);
     void messageDetachedUpdateParentProperties(Item *oldParent, MessageItem *mi);
     void attachMessageToGroupHeader(MessageItem *mi);
     void attachGroup(GroupHeaderItem *ghi);
 
-    enum ViewItemJobResult {
-        ViewItemJobCompleted,
-        ViewItemJobInterrupted
-    };
+    enum ViewItemJobResult { ViewItemJobCompleted, ViewItemJobInterrupted };
     ViewItemJobResult viewItemJobStepInternal();
     ViewItemJobResult viewItemJobStepInternalForJob(ViewItemJob *job, QElapsedTimer elapsedTimer);
 
@@ -200,61 +197,61 @@ public:
     /**
      * Group Key (usually the label) -> GroupHeaderItem, used to quickly find groups, pointers are shallow copies
      */
-    QHash< QString, GroupHeaderItem * > mGroupHeaderItemHash;
+    QHash<QString, GroupHeaderItem *> mGroupHeaderItemHash;
 
     /**
      * Threading cache.
      * MessageIdMD5 -> MessageItem, pointers are shallow copies
      */
-    QHash< QByteArray, MessageItem * > mThreadingCacheMessageIdMD5ToMessageItem;
+    QHash<QByteArray, MessageItem *> mThreadingCacheMessageIdMD5ToMessageItem;
 
     /**
      * Threading cache.
      * MessageInReplyToIdMD5 -> MessageItem, pointers are shallow copies
      */
-    QMultiHash< QByteArray, MessageItem * > mThreadingCacheMessageInReplyToIdMD5ToMessageItem;
+    QMultiHash<QByteArray, MessageItem *> mThreadingCacheMessageInReplyToIdMD5ToMessageItem;
 
     /**
      * Threading cache.
      * ReferencesIdMD5 -> MessageItem, pointers are shallow copies
      */
-    QHash< QByteArray, QList< MessageItem * > * > mThreadingCacheMessageReferencesIdMD5ToMessageItem;
+    QHash<QByteArray, QList<MessageItem *> *> mThreadingCacheMessageReferencesIdMD5ToMessageItem;
 
     /**
      * Threading cache.
      * SubjectMD5 -> MessageItem, pointers are shallow copies
      */
-    QHash< QByteArray, QList< MessageItem * > * > mThreadingCacheMessageSubjectMD5ToMessageItem;
+    QHash<QByteArray, QList<MessageItem *> *> mThreadingCacheMessageSubjectMD5ToMessageItem;
 
     /**
      * List of group headers that either need to be re-sorted or must be removed because empty
      */
-    QHash< GroupHeaderItem *, GroupHeaderItem * > mGroupHeadersThatNeedUpdate;
+    QHash<GroupHeaderItem *, GroupHeaderItem *> mGroupHeadersThatNeedUpdate;
 
     /**
      * List of unassigned messages, used to handle threading in two passes, pointers are owned!
      */
-    QList< MessageItem * > mUnassignedMessageListForPass2;
+    QList<MessageItem *> mUnassignedMessageListForPass2;
 
     /**
      * List of unassigned messages, used to handle threading in two passes, pointers are owned!
      */
-    QList< MessageItem * > mUnassignedMessageListForPass3;
+    QList<MessageItem *> mUnassignedMessageListForPass3;
 
     /**
      * List of unassigned messages, used to handle threading in two passes, pointers are owned!
      */
-    QList< MessageItem * > mUnassignedMessageListForPass4;
+    QList<MessageItem *> mUnassignedMessageListForPass4;
 
     /**
      * Hash of orphan children used in Pass1Cleanup.
      */
-    QHash< MessageItem *, MessageItem * > mOrphanChildrenHash;
+    QHash<MessageItem *, MessageItem *> mOrphanChildrenHash;
 
     /**
      * Pending fill view jobs, pointers are owned
      */
-    QList< ViewItemJob * > mViewItemJobs;
+    QList<ViewItemJob *> mViewItemJobs;
 
     /**
      * The today's date. Set when the StorageModel is set and thus grouping is performed.

@@ -7,8 +7,8 @@
 #ifndef TESTMAILMBOXWEBENGINE_H
 #define TESTMAILMBOXWEBENGINE_H
 
-#include <QWidget>
 #include <KMime/Message>
+#include <QWidget>
 
 class TestMailMBoxWebEngine : public QWidget
 {
@@ -16,6 +16,7 @@ class TestMailMBoxWebEngine : public QWidget
 public:
     explicit TestMailMBoxWebEngine(QWidget *parent = nullptr);
     ~TestMailMBoxWebEngine();
+
 private:
     KMime::Message::Ptr readAndParseMail(const QString &mailFile);
 };

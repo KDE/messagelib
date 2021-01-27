@@ -7,12 +7,13 @@
 #ifndef CREATEPHISHINGURLDATABASEJOB_H
 #define CREATEPHISHINGURLDATABASEJOB_H
 
+#include <QNetworkReply>
 #include <QObject>
 #include <QSslError>
-#include <QNetworkReply>
 
 #include "webengineviewer_export.h"
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 struct UpdateDataBaseInfo;
 class CreatePhishingUrlDataBaseJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */
@@ -24,22 +25,11 @@ class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
 {
     Q_OBJECT
 public:
-    enum DataBaseDownloadType {
-        FullDataBase = 0,
-        UpdateDataBase = 1
-    };
+    enum DataBaseDownloadType { FullDataBase = 0, UpdateDataBase = 1 };
 
-    enum DataBaseDownloadResult {
-        InvalidData = 0,
-        ValidData = 1,
-        UnknownError = 2,
-        BrokenNetwork = 3
-    };
+    enum DataBaseDownloadResult { InvalidData = 0, ValidData = 1, UnknownError = 2, BrokenNetwork = 3 };
 
-    enum ContraintsCompressionType {
-        RawCompression = 0,
-        RiceCompression = 1
-    };
+    enum ContraintsCompressionType { RawCompression = 0, RiceCompression = 1 };
 
     explicit CreatePhishingUrlDataBaseJob(QObject *parent = nullptr);
     ~CreatePhishingUrlDataBaseJob() override;

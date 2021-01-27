@@ -9,11 +9,13 @@
 #ifndef THREADINGCACHE_H
 #define THREADINGCACHE_H
 
-#include <QHash>
 #include "messageitem.h"
+#include <QHash>
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class Aggregation;
 
 class ThreadingCache

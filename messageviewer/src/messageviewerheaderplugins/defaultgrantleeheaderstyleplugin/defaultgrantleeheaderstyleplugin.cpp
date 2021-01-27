@@ -4,16 +4,15 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "defaultgrantleeheaderstyleinterface.h"
 #include "defaultgrantleeheaderstyleplugin.h"
-#include "globalsettings_base.h"
-#include <messageviewer/grantleeheaderstyle.h>
 #include "defaultgrantleeheaderstrategy.h"
+#include "defaultgrantleeheaderstyleinterface.h"
+#include "globalsettings_base.h"
 #include <KPluginFactory>
+#include <messageviewer/grantleeheaderstyle.h>
 using namespace MessageViewer;
 
-K_PLUGIN_CLASS_WITH_JSON(DefaultGrantleeHeaderStylePlugin,
-                         "messageviewer_defaultgrantleeheaderstyleplugin.json")
+K_PLUGIN_CLASS_WITH_JSON(DefaultGrantleeHeaderStylePlugin, "messageviewer_defaultgrantleeheaderstyleplugin.json")
 
 DefaultGrantleeHeaderStylePlugin::DefaultGrantleeHeaderStylePlugin(QObject *parent, const QList<QVariant> &)
     : MessageViewer::HeaderStylePlugin(parent)
@@ -45,8 +44,7 @@ HeaderStrategy *DefaultGrantleeHeaderStylePlugin::headerStrategy() const
 
 HeaderStyleInterface *DefaultGrantleeHeaderStylePlugin::createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent)
 {
-    MessageViewer::HeaderStyleInterface *view
-        = new MessageViewer::DefaultGrantleeHeaderStyleInterface(this, parent);
+    MessageViewer::HeaderStyleInterface *view = new MessageViewer::DefaultGrantleeHeaderStyleInterface(this, parent);
     if (ac) {
         view->createAction(menu, actionGroup, ac);
     }

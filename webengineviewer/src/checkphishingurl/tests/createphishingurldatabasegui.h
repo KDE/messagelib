@@ -7,8 +7,8 @@
 #ifndef CREATEPHISHINGURLDATABASEGUI_H
 #define CREATEPHISHINGURLDATABASEGUI_H
 
-#include <QWidget>
 #include "../createphishingurldatabasejob.h"
+#include <QWidget>
 class QPlainTextEdit;
 class QComboBox;
 class CreatePhisingUrlDataBaseGui : public QWidget
@@ -23,6 +23,7 @@ private Q_SLOTS:
     void slotDebugJSon(const QByteArray &data);
     void slotDownloadPartialDatabase();
     void slotSaveResultToDisk();
+
 private:
     WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType compressionType();
     void clear();

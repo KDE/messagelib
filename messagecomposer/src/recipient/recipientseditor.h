@@ -17,12 +17,15 @@
 
 #include <Libkdepim/MultiplyingLineEditor>
 
-namespace KMime {
-namespace Types {
+namespace KMime
+{
+namespace Types
+{
 class Mailbox;
 }
 }
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The RecipientLineFactory class
  */
@@ -94,4 +97,4 @@ private:
 };
 }
 
-#endif //MESSAGECOMPOSER_RECIPIENTSEDITORNG_H
+#endif // MESSAGECOMPOSER_RECIPIENTSEDITORNG_H

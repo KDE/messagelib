@@ -9,7 +9,8 @@
 
 #include <QWidget>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MailWebEngineView;
 }
 
@@ -23,6 +24,7 @@ private Q_SLOTS:
     void slotOpenUrl(const QUrl &url);
     void slotSwitchHtml();
     void slotShowSelection();
+
 private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
     int mNumber;

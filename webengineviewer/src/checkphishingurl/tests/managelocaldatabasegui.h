@@ -9,7 +9,8 @@
 
 #include <QWidget>
 class QPlainTextEdit;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class LocalDataBaseManager;
 }
 
@@ -21,6 +22,7 @@ public:
     ~ManageLocalDataBaseGui();
 private Q_SLOTS:
     void slotDownloadFullDatabase();
+
 private:
     QPlainTextEdit *mResult;
     WebEngineViewer::LocalDataBaseManager *mDbManager;

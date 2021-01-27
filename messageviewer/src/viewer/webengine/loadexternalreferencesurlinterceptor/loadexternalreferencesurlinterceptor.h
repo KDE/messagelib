@@ -8,7 +8,8 @@
 
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class LoadExternalReferencesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
@@ -19,6 +20,7 @@ public:
     Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
     void setAllowExternalContent(bool b);
     Q_REQUIRED_RESULT bool allowExternalContent() const;
+
 private:
     bool mAllowLoadExternalReference = false;
 };

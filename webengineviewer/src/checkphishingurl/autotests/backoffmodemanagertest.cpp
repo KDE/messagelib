@@ -6,8 +6,8 @@
 
 #include "backoffmodemanagertest.h"
 #include "../backoffmodemanager.h"
-#include <QTest>
 #include <QStandardPaths>
+#include <QTest>
 BackOffModeManagerTest::BackOffModeManagerTest(QObject *parent)
     : QObject(parent)
 {

@@ -8,23 +8,29 @@
 #ifndef SEARCHCOLLECTIONINDEXINGWARNING_H
 #define SEARCHCOLLECTIONINDEXINGWARNING_H
 
-#include <KMessageWidget>
-#include <AkonadiCore/Collection>
 #include "messagelist_private_export.h"
+#include <AkonadiCore/Collection>
+#include <KMessageWidget>
 class KJob;
 
-namespace Akonadi {
-namespace Search {
-namespace PIM {
+namespace Akonadi
+{
+namespace Search
+{
+namespace PIM
+{
 class IndexedItems;
 }
 }
 }
-namespace Akonadi {
+namespace Akonadi
+{
 class CollectionFetchJob;
 }
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class MESSAGELIST_TESTS_EXPORT SearchCollectionIndexingWarning : public KMessageWidget
 {
     Q_OBJECT

@@ -12,11 +12,10 @@ QTEST_MAIN(TabLockedWarningTest)
 TabLockedWarningTest::TabLockedWarningTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void TabLockedWarningTest::shouldHaveDefaultValues()
 {
     MessageList::Core::TabLockedWarning w;
-    //TODO
+    // TODO
 }

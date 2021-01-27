@@ -74,8 +74,7 @@ void AttachmentMarkBlock::internalExit()
 QString AttachmentMarkBlock::enterString() const
 {
     const QString index = mNode->index().toString();
-    return QStringLiteral("<a name=\"att%1\"></a>").arg(index)
-           + QStringLiteral("<div id=\"attachmentDiv%1\">\n").arg(index);
+    return QStringLiteral("<a name=\"att%1\"></a>").arg(index) + QStringLiteral("<div id=\"attachmentDiv%1\">\n").arg(index);
 }
 
 QString AttachmentMarkBlock::exitString() const

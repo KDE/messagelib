@@ -8,9 +8,10 @@
 #define ATTACHMENTVCARDFROMADDRESSBOOKJOB_H
 
 #include "MessageCore/AttachmentLoadJob"
-#include <AkonadiCore/Item>
 #include "messagecomposer_export.h"
-namespace MessageComposer {
+#include <AkonadiCore/Item>
+namespace MessageComposer
+{
 class AttachmentVcardFromAddressBookJobPrivate;
 /**
  * @brief The AttachmentVcardFromAddressBookJob class

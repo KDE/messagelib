@@ -7,8 +7,8 @@
 #ifndef AKONADISENDER_H
 #define AKONADISENDER_H
 
-#include "messagesender.h"
 #include "messagecomposer_export.h"
+#include "messagesender.h"
 
 #include <QObject>
 
@@ -16,7 +16,8 @@
 
 class KJob;
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class AkonadiSenderPrivate;
 /**
  * @brief The AkonadiSender class

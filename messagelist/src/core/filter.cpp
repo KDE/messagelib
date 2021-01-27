@@ -50,11 +50,11 @@ bool Filter::match(const MessageItem *item) const
 
         bool searchMatches = false;
         bool searchEveryWhere = (mOptions & QuickSearchLine::SearchEveryWhere);
-        if (containString(item->subject()) && ((mOptions &QuickSearchLine::SearchAgainstSubject) || searchEveryWhere)) {
+        if (containString(item->subject()) && ((mOptions & QuickSearchLine::SearchAgainstSubject) || searchEveryWhere)) {
             searchMatches = true;
-        } else if (containString(item->sender()) && ((mOptions &QuickSearchLine::SearchAgainstFrom) || searchEveryWhere)) {
+        } else if (containString(item->sender()) && ((mOptions & QuickSearchLine::SearchAgainstFrom) || searchEveryWhere)) {
             searchMatches = true;
-        } else if (containString(item->receiver()) && ((mOptions &QuickSearchLine::SearchAgainstTo) || searchEveryWhere)) {
+        } else if (containString(item->receiver()) && ((mOptions & QuickSearchLine::SearchAgainstTo) || searchEveryWhere)) {
             searchMatches = true;
         }
         if (!searchMatches) {
@@ -63,7 +63,7 @@ bool Filter::match(const MessageItem *item) const
     }
 
     if (!mTagId.isEmpty()) {
-        //mTagId is a Akonadi::Tag::url
+        // mTagId is a Akonadi::Tag::url
         const bool tagMatches = item->findTag(mTagId) != nullptr;
         if (!tagMatches) {
             return false;
@@ -160,7 +160,7 @@ void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptio
             query.setTo(QStringList() << newStr);
         }
 
-        //If the collection is virtual we're probably trying to filter the search collection, so we just search globally
+        // If the collection is virtual we're probably trying to filter the search collection, so we just search globally
         if (mCurrentFolder.isValid() && !mCurrentFolder.isVirtual()) {
             query.addCollection(mCurrentFolder.id());
         }

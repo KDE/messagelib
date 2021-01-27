@@ -10,7 +10,8 @@
 #include "messagecomposer_export.h"
 #include <MessageComposer/ComposerAttachmentInterface>
 #include <MessageComposer/ConvertSnippetVariablesUtil>
-namespace MessageComposer {
+namespace MessageComposer
+{
 class ComposerViewBase;
 class ComposerViewInterface;
 /**
@@ -37,6 +38,7 @@ public:
 
     Q_REQUIRED_RESULT QString convertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const;
     Q_REQUIRED_RESULT QString convertText(const QString &str) const;
+
 private:
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };

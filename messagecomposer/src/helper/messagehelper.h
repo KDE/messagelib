@@ -10,15 +10,17 @@
 
 #include "messagecomposer_export.h"
 
+#include <item.h>
 #include <kmime/kmime_headers.h>
 #include <kmime/kmime_message.h>
-#include <item.h>
 
-namespace KIdentityManagement {
+namespace KIdentityManagement
+{
 class IdentityManager;
 }
 
-namespace KMime {
+namespace KMime
+{
 class Message;
 }
 
@@ -26,19 +28,24 @@ class Message;
  * Contains random helper methods when dealing with messages.
  * TODO: cleanup and organize, along with similar methods in messageviewer.
  */
-namespace MessageHelper {
+namespace MessageHelper
+{
 /** Initialize header fields. Should be called on new messages
     if they are not set manually. E.g. before composing. Calling
     of setAutomaticFields(), see below, is still required. */
 void MESSAGECOMPOSER_EXPORT initHeader(const KMime::Message::Ptr &message, const KIdentityManagement::IdentityManager *identMan, uint id = 0);
 
 /** Set the from, to, cc, bcc, encryption etc headers as specified in the
-  * given identity. */
+ * given identity. */
 void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement::IdentityManager *identMan, uint id);
 
 /** Initialize headers fields according to the identity and the transport
    header of the given original message */
-void initFromMessage(const KMime::Message::Ptr &msg, const KMime::Message::Ptr &orgiMsg, KIdentityManagement::IdentityManager *, uint id, bool idHeaders = true);
+void initFromMessage(const KMime::Message::Ptr &msg,
+                     const KMime::Message::Ptr &orgiMsg,
+                     KIdentityManagement::IdentityManager *,
+                     uint id,
+                     bool idHeaders = true);
 
 MESSAGECOMPOSER_EXPORT KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, const QByteArray &header);
 

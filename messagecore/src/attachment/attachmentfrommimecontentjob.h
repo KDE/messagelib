@@ -11,11 +11,13 @@
 
 #include "attachmentloadjob.h"
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @short A job to load an attachment from a mime content.
  *

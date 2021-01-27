@@ -17,5 +17,5 @@ DKIMCheckFullJobTest::DKIMCheckFullJobTest(QObject *parent)
 void DKIMCheckFullJobTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMCheckFullJob job;
-    //TODO
+    // TODO
 }

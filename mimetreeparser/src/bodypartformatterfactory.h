@@ -15,8 +15,10 @@
 
 #include <QVector>
 
-namespace MimeTreeParser {
-namespace Interface {
+namespace MimeTreeParser
+{
+namespace Interface
+{
 class BodyPartFormatter;
 }
 

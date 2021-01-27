@@ -11,7 +11,8 @@
 #include "objecttreeemptysource.h"
 class QString;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class AttachmentStrategy;
 class HtmlWriter;
 class ViewerPrivate;
@@ -39,6 +40,7 @@ public:
     Q_REQUIRED_RESULT bool showEmoticons() const override;
     Q_REQUIRED_RESULT bool showExpandQuotesMark() const override;
     Q_REQUIRED_RESULT bool isPrinting() const override;
+
 private:
     ViewerPrivate *const mViewer;
 };

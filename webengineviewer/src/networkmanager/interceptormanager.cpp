@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "interceptormanager.h"
-#include "urlinterceptor/networkurlinterceptormanager.h"
 #include "urlinterceptor/networkurlinterceptor.h"
+#include "urlinterceptor/networkurlinterceptormanager.h"
 #include <QWebEngineProfile>
 #include <QWebEngineView>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>

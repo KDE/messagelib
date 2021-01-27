@@ -5,12 +5,12 @@
 */
 
 #include "convertsnippetvariablesjob.h"
-#include "messagecomposer_debug.h"
 #include "composer/composerviewinterface.h"
+#include "messagecomposer_debug.h"
 #include "snippet/convertsnippetvariablesutil.h"
-#include <TemplateParser/TemplatesUtil>
 #include <KEmailAddress>
 #include <KMime/Types>
+#include <TemplateParser/TemplatesUtil>
 using namespace MessageComposer;
 ConvertSnippetVariablesJob::ConvertSnippetVariablesJob(QObject *parent)
     : QObject(parent)

@@ -14,34 +14,39 @@
 
 #include <KMime/Message>
 
-#include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/importresult.h>
 #include <gpgme++/key.h>
+#include <gpgme++/verificationresult.h>
 
-#include <QString>
 #include <QSharedPointer>
+#include <QString>
 
 #include <memory>
 
 class QTextCodec;
 
-namespace GpgME {
+namespace GpgME
+{
 class ImportResult;
 }
 
-namespace QGpgME {
+namespace QGpgME
+{
 class Protocol;
 }
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class CryptoBodyPartMemento;
 class MessagePartPrivate;
-namespace Interface {
+namespace Interface
+{
 class ObjectTreeSource;
 }
 /**
@@ -149,6 +154,7 @@ public:
 
     Q_REQUIRED_RESULT QString plaintextContent() const override;
     Q_REQUIRED_RESULT QString htmlContent() const override;
+
 private:
     bool mOnlyOneMimePart;
 };
@@ -169,11 +175,7 @@ public:
     Q_REQUIRED_RESULT QString htmlContent() const override;
 };
 
-enum IconType {
-    NoIcon = 0,
-    IconExternal,
-    IconInline
-};
+enum IconType { NoIcon = 0, IconExternal, IconInline };
 /**
  * @brief The TextMessagePart class
  */
@@ -362,12 +364,13 @@ public:
     const QGpgME::Protocol *cryptoProto() const;
     Q_REQUIRED_RESULT QString fromAddress() const;
 
-    const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > &decryptRecipients() const;
+    const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &decryptRecipients() const;
 
     Q_REQUIRED_RESULT bool hasHeader(const char *header) const override;
     KMime::Headers::Base *header(const char *header) const override;
 
     QByteArray mDecryptedData;
+
 private:
     /** Handles the decryption of a given content
      * returns true if the decryption was successful
@@ -383,7 +386,7 @@ protected:
     QString mFromAddress;
     QByteArray mVerifiedText;
     QByteArray mMementoName;
-    std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > mDecryptRecipients;
+    std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> mDecryptRecipients;
 
     friend class EncryptedBodyPartFormatter;
 };
@@ -420,6 +423,7 @@ public:
 
     Q_REQUIRED_RESULT bool hasHeader(const char *header) const override;
     KMime::Headers::Base *header(const char *header) const override;
+
 private:
     /** Handles the verification of data
      * If signature is empty it is handled as inline signature otherwise as detached signature mode.
@@ -431,6 +435,7 @@ private:
     void sigStatusToMetaData();
 
     void setVerificationResult(const CryptoBodyPartMemento *m, KMime::Content *textNode);
+
 protected:
     const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;

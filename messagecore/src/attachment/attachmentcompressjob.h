@@ -13,7 +13,8 @@
 
 #include <KJob>
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @short A job to compress the attachment of an email.
  *

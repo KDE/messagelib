@@ -6,8 +6,8 @@
 
 #include "urlhashingtest.h"
 #include "../urlhashing.h"
-#include <QUrl>
 #include <QTest>
+#include <QUrl>
 
 UrlHashingTest::UrlHashingTest(QObject *parent)
     : QObject(parent)
@@ -67,12 +67,14 @@ void UrlHashingTest::shouldCanonicalizeUrl_data()
     QTest::newRow("http://host/asdf%25%32%35asd") << QStringLiteral("http://host/asdf%25%32%35asd") << QStringLiteral("http://host/asdf%25asd");
     QTest::newRow("http://host/%%%25%32%35asd%%") << QStringLiteral("http://host/%%%25%32%35asd%%") << QStringLiteral("http://host/%25%25%25asd%25%25");
     QTest::newRow("http://www.google.com/") << QStringLiteral("http://www.google.com/") << QStringLiteral("http://www.google.com/");
-    QTest::newRow("http://%31%36%38%2e%31%38%38%2e%39%39%2e%32%36/%2E%73%65%63%75%72%65/%77%77%77%2E%65%62%61%79%2E%63%6F%6D/") << QStringLiteral(
-        "http://%31%36%38%2e%31%38%38%2e%39%39%2e%32%36/%2E%73%65%63%75%72%65/%77%77%77%2E%65%62%61%79%2E%63%6F%6D/") << QStringLiteral("http://168.188.99.26/.secure/www.ebay.com/");
-    QTest::newRow("test8") << QStringLiteral("http://195.127.0.11/uploads/%20%20%20%20/.verify/.eBaysecure=updateuserdataxplimnbqmn-xplmvalidateinfoswqpcmlx=hgplmcx/") << QStringLiteral(
-        "http://195.127.0.11/uploads/%20%20%20%20/.verify/.eBaysecure=updateuserdataxplimnbqmn-xplmvalidateinfoswqpcmlx=hgplmcx/");
-    QTest::newRow("test9") << QStringLiteral("http://host%23.com/%257Ea%2521b%2540c%2523d%2524e%25f%255E00%252611%252A22%252833%252944_55%252B") << QStringLiteral(
-        "http://host%23.com/~a!b@c%23d$e%25f^00&11*22(33)44_55+");
+    QTest::newRow("http://%31%36%38%2e%31%38%38%2e%39%39%2e%32%36/%2E%73%65%63%75%72%65/%77%77%77%2E%65%62%61%79%2E%63%6F%6D/")
+        << QStringLiteral("http://%31%36%38%2e%31%38%38%2e%39%39%2e%32%36/%2E%73%65%63%75%72%65/%77%77%77%2E%65%62%61%79%2E%63%6F%6D/")
+        << QStringLiteral("http://168.188.99.26/.secure/www.ebay.com/");
+    QTest::newRow("test8")
+        << QStringLiteral("http://195.127.0.11/uploads/%20%20%20%20/.verify/.eBaysecure=updateuserdataxplimnbqmn-xplmvalidateinfoswqpcmlx=hgplmcx/")
+        << QStringLiteral("http://195.127.0.11/uploads/%20%20%20%20/.verify/.eBaysecure=updateuserdataxplimnbqmn-xplmvalidateinfoswqpcmlx=hgplmcx/");
+    QTest::newRow("test9") << QStringLiteral("http://host%23.com/%257Ea%2521b%2540c%2523d%2524e%25f%255E00%252611%252A22%252833%252944_55%252B")
+                           << QStringLiteral("http://host%23.com/~a!b@c%23d$e%25f^00&11*22(33)44_55+");
     QTest::newRow("http://3279880203/blah") << QStringLiteral("http://3279880203/blah") << QStringLiteral("http://195.127.0.11/blah");
     QTest::newRow("http://www.google.com/blah/..") << QStringLiteral("http://www.google.com/blah/..") << QStringLiteral("http://www.google.com/");
     QTest::newRow("www.google.com/") << QStringLiteral("www.google.com/") << QStringLiteral("http://www.google.com/");
@@ -80,7 +82,8 @@ void UrlHashingTest::shouldCanonicalizeUrl_data()
     QTest::newRow("http://www.evil.com/blah#frag") << QStringLiteral("http://www.evil.com/blah#frag") << QStringLiteral("http://www.evil.com/blah");
     QTest::newRow("http://www.GOOgle.com/") << QStringLiteral("http://www.GOOgle.com/") << QStringLiteral("http://www.google.com/");
     QTest::newRow("http://www.google.com.../") << QStringLiteral("http://www.google.com.../") << QStringLiteral("http://www.google.com/");
-    QTest::newRow("http://www.google.com/foo\tbar\rbaz\n2") << QStringLiteral("http://www.google.com/foo\tbar\rbaz\n2") << QStringLiteral("http://www.google.com/foobarbaz2");
+    QTest::newRow("http://www.google.com/foo\tbar\rbaz\n2")
+        << QStringLiteral("http://www.google.com/foo\tbar\rbaz\n2") << QStringLiteral("http://www.google.com/foobarbaz2");
     QTest::newRow("http://www.google.com/q?") << QStringLiteral("http://www.google.com/q?") << QStringLiteral("http://www.google.com/q?");
     QTest::newRow("http://www.google.com/q?r?") << QStringLiteral("http://www.google.com/q?r?") << QStringLiteral("http://www.google.com/q?r?");
     QTest::newRow("http://www.google.com/q?r?s") << QStringLiteral("http://www.google.com/q?r?s") << QStringLiteral("http://www.google.com/q?r?s");
@@ -96,7 +99,8 @@ void UrlHashingTest::shouldCanonicalizeUrl_data()
     QTest::newRow("%20leadingspace.com/") << QStringLiteral("%20leadingspace.com/") << QStringLiteral("http://%20leadingspace.com/");
     QTest::newRow("https://www.securesite.com/") << QStringLiteral("https://www.securesite.com/") << QStringLiteral("https://www.securesite.com/");
     QTest::newRow("http://host.com/ab%23cd") << QStringLiteral("http://host.com/ab%23cd") << QStringLiteral("http://host.com/ab%23cd");
-    QTest::newRow("http://host.com//twoslashes?more//slashes") << QStringLiteral("http://host.com//twoslashes?more//slashes") << QStringLiteral("http://host.com/twoslashes?more//slashes");
+    QTest::newRow("http://host.com//twoslashes?more//slashes")
+        << QStringLiteral("http://host.com//twoslashes?more//slashes") << QStringLiteral("http://host.com/twoslashes?more//slashes");
 }
 
 void UrlHashingTest::shouldCanonicalizeUrl()

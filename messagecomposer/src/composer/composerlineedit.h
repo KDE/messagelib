@@ -12,7 +12,8 @@
 
 #include "messagecomposer_export.h"
 #include <PimCommonAkonadi/AddresseeLineEdit>
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The ComposerLineEdit class
  */

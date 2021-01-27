@@ -7,13 +7,14 @@
 #ifndef DKIMMANAGER_H
 #define DKIMMANAGER_H
 
-#include <QObject>
-#include "messageviewer_export.h"
 #include "dkimchecksignaturejob.h"
-#include <KMime/Message>
+#include "messageviewer_export.h"
 #include <AkonadiCore/Item>
+#include <KMime/Message>
+#include <QObject>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DKIMManager class
  * @author Laurent Montel <montel@kde.org>

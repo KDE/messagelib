@@ -9,12 +9,12 @@
 #include "csshelper.h"
 #include <MimeTreeParser/BodyPartFormatterFactory>
 
-#include <MimeTreeParser/BodyPartFormatter>
 #include "messagepartthemes/default/defaultrenderer.h"
+#include <MimeTreeParser/BodyPartFormatter>
 
+#include "settings/messageviewersettings.h"
 #include "viewer/viewer_p.h"
 #include "widgets/htmlstatusbar.h"
-#include "settings/messageviewersettings.h"
 
 using namespace MessageViewer;
 
@@ -50,11 +50,11 @@ bool MailViewerSource::showEncryptionDetails() const
 
 void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
-//    qDebug() << " void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)";
-//    for (int i = 0; i < availableModes.count(); ++i) {
-//        qDebug() << "MailViewerSource::setHtmlMode Mode " << MimeTreeParser::Util::htmlModeToString(availableModes.at(i));
-//    }
-//    qDebug() << "MailViewerSource::setHtmlMode preferred " << MimeTreeParser::Util::htmlModeToString(mode);
+    //    qDebug() << " void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)";
+    //    for (int i = 0; i < availableModes.count(); ++i) {
+    //        qDebug() << "MailViewerSource::setHtmlMode Mode " << MimeTreeParser::Util::htmlModeToString(availableModes.at(i));
+    //    }
+    //    qDebug() << "MailViewerSource::setHtmlMode preferred " << MimeTreeParser::Util::htmlModeToString(mode);
 
     mViewer->mColorBar->setAvailableModes(availableModes);
     mViewer->mColorBar->setMode(mode);
@@ -65,8 +65,7 @@ MimeTreeParser::Util::HtmlMode MailViewerSource::preferredMode() const
     switch (mViewer->displayFormatMessageOverwrite()) {
     case MessageViewer::Viewer::UseGlobalSetting:
     case MessageViewer::Viewer::Unknown:
-        return mViewer->htmlMailGlobalSetting() ? MimeTreeParser::Util::Html : MimeTreeParser::Util
-               ::Normal;
+        return mViewer->htmlMailGlobalSetting() ? MimeTreeParser::Util::Html : MimeTreeParser::Util ::Normal;
     case MessageViewer::Viewer::Html:
         return MimeTreeParser::Util::MultipartHtml;
     case MessageViewer::Viewer::Text:

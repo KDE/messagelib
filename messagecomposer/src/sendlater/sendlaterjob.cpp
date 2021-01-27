@@ -5,9 +5,9 @@
 */
 
 #include "sendlaterjob.h"
+#include "messagecomposer_debug.h"
 #include "sendlaterinterface.h"
 #include "sendlaterutil_p.h"
-#include "messagecomposer_debug.h"
 
 #include <KLocalizedString>
 
@@ -25,10 +25,7 @@ SendLaterJob::SendLaterJob(QObject *parent)
 void SendLaterJob::start()
 {
     std::unique_ptr<org::freedesktop::Akonadi::SendLaterAgent> iface{
-        new org::freedesktop::Akonadi::SendLaterAgent{
-            SendLaterUtil::agentServiceName(), SendLaterUtil::dbusPath(),
-            QDBusConnection::sessionBus()
-        }};
+        new org::freedesktop::Akonadi::SendLaterAgent{SendLaterUtil::agentServiceName(), SendLaterUtil::dbusPath(), QDBusConnection::sessionBus()}};
     if (!iface->isValid()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "The SendLater agent is not running!";
         setError(SendLaterJob::AgentNotAvailable);
@@ -40,8 +37,7 @@ void SendLaterJob::start()
     auto reply = doCall(iface.get());
 
     auto watcher = new QDBusPendingCallWatcher(reply);
-    connect(watcher, &QDBusPendingCallWatcher::finished,
-            this, [this, iface_ = std::move(iface)](QDBusPendingCallWatcher *call) mutable {
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, iface_ = std::move(iface)](QDBusPendingCallWatcher *call) mutable {
         auto iface = std::move(iface_);
         call->deleteLater();
         QDBusPendingReply<void> reply = *call;

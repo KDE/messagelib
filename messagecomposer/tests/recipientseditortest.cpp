@@ -13,13 +13,13 @@
 
 #include <KMessageBox>
 
-#include <QPushButton>
-#include <QLabel>
-#include <QLineEdit>
-#include <QTextEdit>
-#include <QGridLayout>
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QGridLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QTextEdit>
 
 using namespace MessageComposer;
 
@@ -40,7 +40,7 @@ Composer::Composer(QWidget *parent)
 
     qDebug() << "SIZEHINT:" << mRecipients->sizeHint();
 
-//  mRecipients->setFixedHeight( 10 );
+    //  mRecipients->setFixedHeight( 10 );
 
     auto editor = new QTextEdit(this);
     topLayout->addWidget(editor, 2, 0, 1, 2);

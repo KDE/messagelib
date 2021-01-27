@@ -5,8 +5,8 @@
 */
 
 #include "lookupkey.h"
-#include <QDnsLookup>
 #include <QDebug>
+#include <QDnsLookup>
 LookUpKey::LookUpKey(QObject *parent)
     : QObject(parent)
 {
@@ -17,11 +17,10 @@ void LookUpKey::lookUpServer(const QString &addr)
     // Create a DNS lookup.
     mAddress = addr;
     mDnsLookup = new QDnsLookup(this);
-    connect(mDnsLookup, &QDnsLookup::finished,
-            this, &LookUpKey::handleServers);
+    connect(mDnsLookup, &QDnsLookup::finished, this, &LookUpKey::handleServers);
 
     mDnsLookup->setType(QDnsLookup::TXT);
-    //mDnsLookup->setName(QStringLiteral("s2048._domainkey.yahoo.fr"));
+    // mDnsLookup->setName(QStringLiteral("s2048._domainkey.yahoo.fr"));
     mDnsLookup->setName(addr);
     mDnsLookup->lookup();
 }
@@ -37,7 +36,7 @@ void LookUpKey::handleServers()
 
     // Handle the results.
     const auto records = mDnsLookup->textRecords();
-    qDebug() <<" resolve address " << mAddress;
+    qDebug() << " resolve address " << mAddress;
     for (const QDnsTextRecord &record : records) {
         qDebug() << " record " << record.values();
     }

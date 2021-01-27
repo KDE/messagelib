@@ -7,15 +7,17 @@
 #ifndef DKIMMANAGERKEY_H
 #define DKIMMANAGERKEY_H
 
-#include <QObject>
-#include "messageviewer_export.h"
 #include "config-messageviewer.h"
-#include <QVector>
+#include "messageviewer_export.h"
 #include <KSharedConfig>
-namespace QCA {
+#include <QObject>
+#include <QVector>
+namespace QCA
+{
 class Initializer;
 }
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The KeyInfo struct
  * @author Laurent Montel <montel@kde.org>
@@ -35,8 +37,8 @@ struct MESSAGEVIEWER_EXPORT KeyInfo {
     QString keyValue;
     QString selector;
     QString domain;
-    Q_REQUIRED_RESULT bool operator ==(const KeyInfo &) const;
-    Q_REQUIRED_RESULT bool operator !=(const KeyInfo &) const;
+    Q_REQUIRED_RESULT bool operator==(const KeyInfo &) const;
+    Q_REQUIRED_RESULT bool operator!=(const KeyInfo &) const;
 };
 
 /**
@@ -62,6 +64,7 @@ public:
 
     void saveKeys();
     Q_REQUIRED_RESULT QString keyValue(const QString &selector, const QString &domain);
+
 private:
     Q_REQUIRED_RESULT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
     QVector<KeyInfo> mKeys;
@@ -69,5 +72,5 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(MessageViewer::KeyInfo, Q_MOVABLE_TYPE);
-MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::KeyInfo &t);
+MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::KeyInfo &t);
 #endif // DKIMMANAGERKEY_H

@@ -7,16 +7,16 @@
 #include "job/maintextjob.h"
 
 #include "contentjobbase_p.h"
-#include "part/globalpart.h"
 #include "job/multipartjob.h"
 #include "job/singlepartjob.h"
+#include "part/globalpart.h"
 #include "part/textpart.h"
 #include "utils/util.h"
 
 #include <QTextCodec>
 
-#include <KCharsets>
 #include "messagecomposer_debug.h"
+#include <KCharsets>
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -55,16 +55,14 @@ bool MainTextJobPrivate::chooseSourcePlainText()
     Q_ASSERT(textPart);
     if (textPart->isWordWrappingEnabled()) {
         sourcePlainText = textPart->wrappedPlainText();
-        if (sourcePlainText.isEmpty()
-            && !textPart->cleanPlainText().isEmpty()) {
+        if (sourcePlainText.isEmpty() && !textPart->cleanPlainText().isEmpty()) {
             q->setError(JobBase::BugError);
             q->setErrorText(i18n("Asked to use word wrapping, but not given wrapped plain text."));
             return false;
         }
     } else {
         sourcePlainText = textPart->cleanPlainText();
-        if (sourcePlainText.isEmpty()
-            && !textPart->wrappedPlainText().isEmpty()) {
+        if (sourcePlainText.isEmpty() && !textPart->wrappedPlainText().isEmpty()) {
             q->setError(JobBase::BugError);
             q->setErrorText(i18n("Asked not to use word wrapping, but not given clean plain text."));
             return false;
@@ -80,7 +78,8 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
     const QVector<QByteArray> charsets = q->globalPart()->charsets(true);
     if (charsets.isEmpty()) {
         q->setError(JobBase::BugError);
-        q->setErrorText(i18n("No charsets were available for encoding. Please check your configuration and make sure it contains at least one charset for sending."));
+        q->setErrorText(
+            i18n("No charsets were available for encoding. Please check your configuration and make sure it contains at least one charset for sending."));
         return false;
     }
 
@@ -97,14 +96,13 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
         // No good charset was found.
         if (q->globalPart()->isGuiEnabled() && textPart->warnBadCharset()) {
             // Warn the user and give them a chance to go back.
-            int result = KMessageBox::warningYesNo(
-                q->globalPart()->parentWidgetForGui(),
-                i18n("Encoding the message with %1 will lose some characters.\n"
-                     "Do you want to continue?", QString::fromLatin1(charsets.first())),
-                i18n("Some Characters Will Be Lost"),
-                KGuiItem(i18n("Lose Characters")),
-                KGuiItem(i18n("Change Encoding"))
-                );
+            int result = KMessageBox::warningYesNo(q->globalPart()->parentWidgetForGui(),
+                                                   i18n("Encoding the message with %1 will lose some characters.\n"
+                                                        "Do you want to continue?",
+                                                        QString::fromLatin1(charsets.first())),
+                                                   i18n("Some Characters Will Be Lost"),
+                                                   KGuiItem(i18n("Lose Characters")),
+                                                   KGuiItem(i18n("Change Encoding")));
             if (result == KMessageBox::No) {
                 q->setError(JobBase::UserCancelledError);
                 q->setErrorText(i18n("User decided to change the encoding."));
@@ -117,8 +115,7 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
             // Should warn user but no Gui available.
             qCDebug(MESSAGECOMPOSER_LOG) << "warnBadCharset but Gui is disabled.";
             q->setError(JobBase::UserError);
-            q->setErrorText(i18n("The selected encoding (%1) cannot fully encode the message.",
-                                 QString::fromLatin1(charsets.first())));
+            q->setErrorText(i18n("The selected encoding (%1) cannot fully encode the message.", QString::fromLatin1(charsets.first())));
             return false;
         } else {
             // OK to go ahead with a bad charset.
@@ -169,8 +166,7 @@ SinglepartJob *MainTextJobPrivate::createHtmlJob()
     auto cjob = new SinglepartJob; // No parent.
     cjob->contentType()->setMimeType("text/html");
     cjob->contentType()->setCharset(chosenCharset);
-    const QByteArray data = KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(encodedHtml,
-                                                                                         textPart->embeddedImages());
+    const QByteArray data = KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(encodedHtml, textPart->embeddedImages());
     cjob->setData(data);
     // TODO standard recommends Content-ID.
     return cjob;
@@ -187,7 +183,7 @@ SinglepartJob *MainTextJobPrivate::createImageJob(const QSharedPointer<KPIMTextE
     Q_ASSERT(!charset.isEmpty());
     cjob->contentType()->setName(image->imageName, charset);
     cjob->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
-    cjob->contentTransferEncoding()->setDecoded(false);   // It is already encoded.
+    cjob->contentTransferEncoding()->setDecoded(false); // It is already encoded.
     cjob->contentID()->setIdentifier(image->contentID.toLatin1());
     qCDebug(MESSAGECOMPOSER_LOG) << "cid" << cjob->contentID()->identifier();
     cjob->setData(image->image);
@@ -247,8 +243,8 @@ void MainTextJob::doStart()
     } else {
         auto alternativeJob = new MultipartJob;
         alternativeJob->setMultipartSubtype("alternative");
-        alternativeJob->appendSubjob(plainJob);   // text/plain first.
-        alternativeJob->appendSubjob(d->createHtmlJob());   // text/html second.
+        alternativeJob->appendSubjob(plainJob); // text/plain first.
+        alternativeJob->appendSubjob(d->createHtmlJob()); // text/html second.
         if (!d->textPart->hasEmbeddedImages()) {
             qCDebug(MESSAGECOMPOSER_LOG) << "Have no images.  Making multipart/alternative.";
             // Content is multipart/alternative.

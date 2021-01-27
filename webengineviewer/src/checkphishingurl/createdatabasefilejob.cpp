@@ -6,9 +6,9 @@
 
 #include "createdatabasefilejob.h"
 #include "checkphishingurlutil.h"
-#include "webengineviewer_debug.h"
 #include "localdatabasefile.h"
 #include "riceencodingdecoder.h"
+#include "webengineviewer_debug.h"
 
 #include <QCryptographicHash>
 #include <QFile>
@@ -35,20 +35,19 @@ public:
 
 void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Addition> &additionList)
 {
-    //1 add version number
+    // 1 add version number
     const quint16 major = WebEngineViewer::CheckPhishingUrlUtil::majorVersion();
     const quint16 minor = WebEngineViewer::CheckPhishingUrlUtil::minorVersion();
 
     qint64 hashStartPosition = mFile.write(reinterpret_cast<const char *>(&major), sizeof(major));
     hashStartPosition += mFile.write(reinterpret_cast<const char *>(&minor), sizeof(minor));
 
-    //2 add number of items
+    // 2 add number of items
     QVector<Addition> itemToStore;
     for (const Addition &add : additionList) {
         switch (add.compressionType) {
-        case UpdateDataBaseInfo::RawCompression:
-        {
-            //qCWarning(WEBENGINEVIEWER_LOG) << " add.size" << add.prefixSize;
+        case UpdateDataBaseInfo::RawCompression: {
+            // qCWarning(WEBENGINEVIEWER_LOG) << " add.size" << add.prefixSize;
             const QByteArray uncompressed = add.hashString;
             for (int i = 0; i < uncompressed.size();) {
                 const QByteArray m = uncompressed.mid(i, add.prefixSize);
@@ -59,7 +58,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
                 tmp.prefixSize = add.prefixSize;
                 itemToStore << tmp;
 
-                //We store index as 8 octets.
+                // We store index as 8 octets.
                 hashStartPosition += 8;
                 if (m.size() != add.prefixSize) {
                     qCWarning(WEBENGINEVIEWER_LOG) << "hash string: " << m << " hash string size: " << m.size();
@@ -67,9 +66,8 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
             }
             break;
         }
-        case UpdateDataBaseInfo::RiceCompression:
-        {
-            //TODO
+        case UpdateDataBaseInfo::RiceCompression: {
+            // TODO
             qCWarning(WEBENGINEVIEWER_LOG) << "Rice compression still not implemented";
             const QVector<quint32> listRice = WebEngineViewer::RiceEncodingDecoder::decodeRiceHashesDelta(add.riceDeltaEncoding);
             qDebug() << " listRice" << listRice;
@@ -82,19 +80,19 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     }
     const quint64 numberOfElement = itemToStore.count();
     hashStartPosition += mFile.write(reinterpret_cast<const char *>(&numberOfElement), sizeof(numberOfElement));
-    //3 add index of items
+    // 3 add index of items
 
-    //Order it first
+    // Order it first
     std::sort(itemToStore.begin(), itemToStore.end(), Addition::lessThan);
 
     quint64 tmpPos = hashStartPosition;
 
     for (const Addition &add : qAsConst(itemToStore)) {
         mFile.write(reinterpret_cast<const char *>(&tmpPos), sizeof(tmpPos));
-        tmpPos += add.prefixSize + 1; //We add +1 as we store '\0'
+        tmpPos += add.prefixSize + 1; // We add +1 as we store '\0'
     }
 
-    //4 add items
+    // 4 add items
     QByteArray newSsha256;
     for (const Addition &add : qAsConst(itemToStore)) {
         const QByteArray storedBa = add.hashString + '\0';
@@ -102,7 +100,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
         newSsha256 += add.hashString;
     }
     mFile.close();
-    //Verify hash with sha256
+    // Verify hash with sha256
     const QByteArray newSsha256Value = QCryptographicHash::hash(newSsha256, QCryptographicHash::Sha256);
 
     const bool checkSumCorrect = (mInfoDataBase.sha256 == newSsha256Value.toBase64());
@@ -135,14 +133,14 @@ void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
             Q_EMIT q->finished(false, QString(), QString());
             return;
         }
-        //Read Element from database.
+        // Read Element from database.
         QVector<Addition> oldDataBaseAddition = localeFile.extractAllInfo();
 
         removeElementFromDataBase(mInfoDataBase.removalList, oldDataBaseAddition);
         QVector<Addition> additionList = mInfoDataBase.additionList; // Add value found in database
         oldDataBaseAddition += additionList;
 
-        //Close file
+        // Close file
         localeFile.close();
 
         if (!mFile.remove()) {

@@ -6,34 +6,35 @@
 
 #include "storagemodel.h"
 
-#include <MessageCore/StringUtil>
 #include <MessageCore/MessageCoreSettings>
 #include <MessageCore/NodeHelper>
+#include <MessageCore/StringUtil>
 
+#include <Akonadi/KMime/MessageFolderAttribute>
 #include <attributefactory.h>
 #include <collectionstatistics.h>
 #include <entitymimetypefiltermodel.h>
 #include <entitytreemodel.h>
 #include <itemmodifyjob.h>
-#include <Akonadi/KMime/MessageFolderAttribute>
 #include <selectionproxymodel.h>
 
-#include "messagelist_debug.h"
-#include <KLocalizedString>
 #include "core/messageitem.h"
+#include "messagelist_debug.h"
 #include "messagelistsettings.h"
 #include "messagelistutil.h"
+#include <KLocalizedString>
 #include <QUrl>
 
 #include <QAbstractItemModel>
 #include <QAtomicInt>
-#include <QItemSelectionModel>
-#include <QMimeData>
 #include <QCryptographicHash>
 #include <QFontDatabase>
 #include <QHash>
+#include <QItemSelectionModel>
+#include <QMimeData>
 
-namespace MessageList {
+namespace MessageList
+{
 class Q_DECL_HIDDEN StorageModel::Private
 {
 public:
@@ -59,7 +60,8 @@ public:
 using namespace Akonadi;
 using namespace MessageList;
 
-namespace {
+namespace
+{
 KMime::Message::Ptr messageForItem(const Akonadi::Item &item)
 {
     if (!item.hasPayload<KMime::Message::Ptr>()) {
@@ -96,8 +98,7 @@ StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selec
 
     qCDebug(MESSAGELIST_LOG) << "Using model:" << model->metaObject()->className();
 
-    connect(d->mModel, &QAbstractItemModel::dataChanged,
-            this, [this](const QModelIndex &id1, const QModelIndex &id2) {
+    connect(d->mModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &id1, const QModelIndex &id2) {
         d->onSourceDataChanged(id1, id2);
     });
 
@@ -106,20 +107,18 @@ StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selec
     connect(d->mModel, &QAbstractItemModel::modelAboutToBeReset, this, &StorageModel::modelAboutToBeReset);
     connect(d->mModel, &QAbstractItemModel::modelReset, this, &StorageModel::modelReset);
 
-    //Here we assume we'll always get QModelIndex() in the parameters
+    // Here we assume we'll always get QModelIndex() in the parameters
     connect(d->mModel, &QAbstractItemModel::rowsAboutToBeInserted, this, &StorageModel::rowsAboutToBeInserted);
     connect(d->mModel, &QAbstractItemModel::rowsInserted, this, &StorageModel::rowsInserted);
     connect(d->mModel, &QAbstractItemModel::rowsAboutToBeRemoved, this, &StorageModel::rowsAboutToBeRemoved);
     connect(d->mModel, &QAbstractItemModel::rowsRemoved, this, &StorageModel::rowsRemoved);
 
-    connect(d->mSelectionModel, &QItemSelectionModel::selectionChanged,
-            this, [this]() {
+    connect(d->mSelectionModel, &QItemSelectionModel::selectionChanged, this, [this]() {
         d->onSelectionChanged();
     });
 
     d->loadSettings();
-    connect(MessageListSettings::self(), &MessageListSettings::configChanged,
-            this, [this]() {
+    connect(MessageListSettings::self(), &MessageListSettings::configChanged, this, [this]() {
         d->loadSettings();
     });
 }
@@ -164,8 +163,7 @@ QString StorageModel::id() const
 
 bool StorageModel::isOutBoundFolder(const Akonadi::Collection &c) const
 {
-    if (c.hasAttribute<MessageFolderAttribute>()
-        && c.attribute<MessageFolderAttribute>()->isOutboundFolder()) {
+    if (c.hasAttribute<MessageFolderAttribute>() && c.attribute<MessageFolderAttribute>()->isOutboundFolder()) {
         return true;
     }
     return false;
@@ -231,10 +229,7 @@ bool StorageModel::initializeMessageItem(MessageList::Core::MessageItem *mi, int
         receiver = unknown;
     }
 
-    mi->initialSetup(mail->date()->dateTime().toSecsSinceEpoch(),
-                     item.size(),
-                     sender, receiver,
-                     bUseReceiver);
+    mi->initialSetup(mail->date()->dateTime().toSecsSinceEpoch(), item.size(), sender, receiver, bUseReceiver);
     mi->setItemId(item.id());
     mi->setParentCollectionId(parentCol.id());
 
@@ -290,11 +285,10 @@ static QByteArray md5Encode(const QString &str)
 void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *mi, int row, ThreadingDataSubset subset) const
 {
     const KMime::Message::Ptr mail = messageForRow(row);
-    Q_ASSERT(mail);   // We ASSUME that initializeMessageItem has been called successfully...
+    Q_ASSERT(mail); // We ASSUME that initializeMessageItem has been called successfully...
 
     switch (subset) {
-    case PerfectThreadingReferencesAndSubject:
-    {
+    case PerfectThreadingReferencesAndSubject: {
         const QString subject = mail->subject()->asUnicodeString();
         const QString strippedSubject = MessageCore::StringUtil::stripOffPrefixes(subject);
         mi->setStrippedSubjectMD5(md5Encode(strippedSubject));
@@ -302,8 +296,7 @@ void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *
         // fall through
     }
         Q_FALLTHROUGH();
-    case PerfectThreadingPlusReferences:
-    {
+    case PerfectThreadingPlusReferences: {
         const auto refs = mail->references()->identifiers();
         if (!refs.isEmpty()) {
             mi->setReferencesIdMD5(md5Encode(refs.last()));
@@ -311,8 +304,7 @@ void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *
     }
         Q_FALLTHROUGH();
     // fall through
-    case PerfectThreadingOnly:
-    {
+    case PerfectThreadingOnly: {
         mi->setMessageIdMD5(md5Encode(mail->messageID()->identifier()));
         const auto inReplyTos = mail->inReplyTo()->identifiers();
         if (!inReplyTos.isEmpty()) {
@@ -321,7 +313,7 @@ void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *
         break;
     }
     default:
-        Q_ASSERT(false);   // should never happen
+        Q_ASSERT(false); // should never happen
         break;
     }
 }
@@ -408,7 +400,7 @@ int StorageModel::rowCount(const QModelIndex &parent) const
     return 0; // this model is flat.
 }
 
-QMimeData *StorageModel::mimeData(const QVector< MessageList::Core::MessageItem * > &items) const
+QMimeData *StorageModel::mimeData(const QVector<MessageList::Core::MessageItem *> &items) const
 {
     auto data = new QMimeData();
     QList<QUrl> urls;
@@ -425,8 +417,7 @@ QMimeData *StorageModel::mimeData(const QVector< MessageList::Core::MessageItem 
 
 void StorageModel::Private::onSourceDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
 {
-    Q_EMIT q->dataChanged(q->index(topLeft.row(), 0),
-                          q->index(bottomRight.row(), 0));
+    Q_EMIT q->dataChanged(q->index(topLeft.row(), 0), q->index(bottomRight.row(), 0));
 }
 
 void StorageModel::Private::onSelectionChanged()

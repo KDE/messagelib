@@ -12,30 +12,32 @@
 
 #include <KMime/Message>
 
-namespace MessageComposer {
-namespace Test {
+namespace MessageComposer
+{
+namespace Test
+{
 /**
-* setup a environment variables for tests:
-* * set LC_ALL to C
-* * set KDEHOME
-* * verify that Kleo has correctly loaded all backends
-*/
+ * setup a environment variables for tests:
+ * * set LC_ALL to C
+ * * set KDEHOME
+ * * verify that Kleo has correctly loaded all backends
+ */
 void setupEnv();
 
 /**
-* Returns list of keys used in various crypto routines
-*/
+ * Returns list of keys used in various crypto routines
+ */
 std::vector<GpgME::Key> getKeys(bool smime = false);
 
 /**
-* Loads a message from filename and returns a message pointer
-*/
+ * Loads a message from filename and returns a message pointer
+ */
 KMime::Message::Ptr loadMessageFromFile(const QString &filename);
 
 /**
-* compare two mails via files.
-* If the files are not euqal print diff output.
-*/
+ * compare two mails via files.
+ * If the files are not euqal print diff output.
+ */
 void compareFile(const QString &outFile, const QString &referenceFile);
 }
 }

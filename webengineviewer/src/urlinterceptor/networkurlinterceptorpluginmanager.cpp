@@ -4,16 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "networkpluginurlinterceptor.h"
 #include "networkurlinterceptorpluginmanager.h"
+#include "networkpluginurlinterceptor.h"
 #include "webengineviewer_debug.h"
 
-#include <KPluginLoader>
 #include <KPluginFactory>
-#include <QFileInfo>
-#include <QVariant>
-#include <QSet>
+#include <KPluginLoader>
 #include <KPluginMetaData>
+#include <QFileInfo>
+#include <QSet>
+#include <QVariant>
 
 using namespace WebEngineViewer;
 
@@ -31,7 +31,8 @@ public:
     bool isEnabled = false;
 };
 
-namespace {
+namespace
+{
 QString pluginVersion()
 {
     return QStringLiteral("1.0");
@@ -54,6 +55,7 @@ public:
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginDataList() const;
     Q_REQUIRED_RESULT NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
+
 private:
     QVector<MailNetworkUrlInterceptorPluginInfo> mPluginList;
     QVector<PimCommon::PluginUtilData> mPluginDataList;
@@ -89,10 +91,11 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 
         const KPluginMetaData data = i.previous();
 
-        //1) get plugin data => name/description etc.
+        // 1) get plugin data => name/description etc.
         info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
-        //2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        // 2) look at if plugin is activated
+        const bool isPluginActivated =
+            PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();

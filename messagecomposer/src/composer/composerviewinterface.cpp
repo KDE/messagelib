@@ -7,8 +7,8 @@
 #include "composerviewinterface.h"
 #include "composerviewbase.h"
 #include "snippet/convertsnippetvariablesutil.h"
-#include <MessageComposer/AttachmentModel>
 #include <KFormat>
+#include <MessageComposer/AttachmentModel>
 using namespace MessageComposer;
 ComposerViewInterface::ComposerViewInterface(ComposerViewBase *composerView)
     : mComposerView(composerView)

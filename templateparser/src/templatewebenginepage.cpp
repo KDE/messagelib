@@ -5,8 +5,8 @@
 */
 
 #include "templatewebenginepage.h"
-#include <QWebEngineSettings>
 #include <QWebEngineProfile>
+#include <QWebEngineSettings>
 
 using namespace TemplateParser;
 
@@ -21,8 +21,8 @@ TemplateWebEnginePage::TemplateWebEnginePage(QObject *parent)
     settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, false);
     settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, false);
     settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, false);
-    //We need to activate it in qt5.15 otherwise we can't load local css file and co
-    //settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, false);
+    // We need to activate it in qt5.15 otherwise we can't load local css file and co
+    // settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, false);
     settings()->setAttribute(QWebEngineSettings::HyperlinkAuditingEnabled, false);
     settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, false);
     settings()->setAttribute(QWebEngineSettings::ScreenCaptureEnabled, false);

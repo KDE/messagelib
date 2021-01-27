@@ -5,13 +5,13 @@
 */
 
 #include "mailinglisttest.h"
-#include "misc/mailinglist.h"
-#include <QTest>
-#include <KConfigGroup>
 #include "messagecore_debug.h"
+#include "misc/mailinglist.h"
+#include <KConfigGroup>
 #include <KSharedConfig>
+#include <QTest>
 
-//TODO add test for static MailingList detect(  const KMime::Message::Ptr &message ); and static QString name( ... );
+// TODO add test for static MailingList detect(  const KMime::Message::Ptr &message ); and static QString name( ... );
 
 MailingListTest::MailingListTest(QObject *parent)
     : QObject(parent)
@@ -50,11 +50,11 @@ void MailingListTest::shouldRestoreFromSettings()
     lst << QUrl(QStringLiteral("mailto://www.kde4.org")) << QUrl(QStringLiteral("http://www.koffice4.org"));
     ml.setHelpUrls(lst);
     /* Note: mArchivedAtUrl deliberately not saved here as it refers to a single
-    * instance of a message rather than an element of a general mailing list.
-    * http://reviewboard.kde.org/r/1768/#review2783
-    */
-    //normal that we don't save it.
-    //ml.setArchivedAtUrls(lst);
+     * instance of a message rather than an element of a general mailing list.
+     * http://reviewboard.kde.org/r/1768/#review2783
+     */
+    // normal that we don't save it.
+    // ml.setArchivedAtUrls(lst);
     lst << QUrl(QStringLiteral("mailto://www.kde5.org")) << QUrl(QStringLiteral("http://www.koffice5.org"));
     ml.setArchiveUrls(lst);
     lst << QUrl(QStringLiteral("mailto://www.kde6.org")) << QUrl(QStringLiteral("http://www.koffice6.org"));

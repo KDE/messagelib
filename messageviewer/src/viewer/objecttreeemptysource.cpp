@@ -7,8 +7,8 @@
 
 #include "objecttreeemptysource.h"
 #include "viewer/attachmentstrategy.h"
-#include "viewer/viewer_p.h"
 #include "viewer/csshelperbase.h"
+#include "viewer/viewer_p.h"
 
 #include <MimeTreeParser/BodyPartFormatter>
 #include <MimeTreeParser/BodyPartFormatterFactory>
@@ -19,7 +19,8 @@
 
 using namespace MessageViewer;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class EmptySourcePrivate
 {
 public:
@@ -76,7 +77,7 @@ const QTextCodec *EmptySource::overrideCodec()
 QString EmptySource::createMessageHeader(KMime::Message *message)
 {
     Q_UNUSED(message)
-    return QString(); //do nothing
+    return QString(); // do nothing
 }
 
 const AttachmentStrategy *EmptySource::attachmentStrategy() const

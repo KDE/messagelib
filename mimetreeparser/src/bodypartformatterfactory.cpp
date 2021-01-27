@@ -15,8 +15,8 @@
 
 #include <KPluginLoader>
 
-#include <QMimeDatabase>
 #include <QJsonArray>
+#include <QMimeDatabase>
 
 #include <assert.h>
 
@@ -29,7 +29,7 @@ BodyPartFormatterFactoryPrivate::BodyPartFormatterFactoryPrivate(BodyPartFormatt
 
 BodyPartFormatterFactoryPrivate::~BodyPartFormatterFactoryPrivate()
 {
-    QHashIterator<QString, std::vector<FormatterInfo> > i(registry);
+    QHashIterator<QString, std::vector<FormatterInfo>> i(registry);
     while (i.hasNext()) {
         i.next();
         auto formatterInfo = i.value();
@@ -157,9 +157,7 @@ void BodyPartFormatterFactory::loadPlugins()
             const auto metaData = formatterData.at(i).toObject();
             const auto mimetype = metaData.value(QLatin1String("mimetype")).toString();
             if (mimetype.isEmpty()) {
-                qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterFactory: plugin" << path
-                                              << "returned empty mimetype specification for index"
-                                              << i;
+                qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterFactory: plugin" << path << "returned empty mimetype specification for index" << i;
                 break;
             }
             // priority should always be higher than the built-in ones, otherwise what's the point?

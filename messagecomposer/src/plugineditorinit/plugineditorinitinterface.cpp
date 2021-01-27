@@ -52,5 +52,5 @@ void PluginEditorInitInterface::setRichTextEditor(KPIMTextEdit::RichTextComposer
 
 void PluginEditorInitInterface::reloadConfig()
 {
-    //Reimplement it
+    // Reimplement it
 }

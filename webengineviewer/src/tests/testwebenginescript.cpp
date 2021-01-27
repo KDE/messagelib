@@ -8,14 +8,13 @@
 #include "webenginescript.h"
 
 #include <QApplication>
-#include <QPushButton>
+#include <QComboBox>
 #include <QHBoxLayout>
+#include <QPushButton>
 #include <QTextEdit>
 #include <QWebEngineSettings>
-#include <QComboBox>
 
-template<typename Arg, typename R, typename C>
-struct InvokeWrapper {
+template<typename Arg, typename R, typename C> struct InvokeWrapper {
     R *receiver;
     void (C::*memberFunction)(Arg);
     void operator()(Arg result)
@@ -44,13 +43,16 @@ TestWebEngineScriptPage::TestWebEngineScriptPage(QObject *parent)
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
 }
 
-void TestWebEngineScriptPage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID)
+void TestWebEngineScriptPage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level,
+                                                       const QString &message,
+                                                       int lineNumber,
+                                                       const QString &sourceID)
 {
     Q_UNUSED(level)
     Q_UNUSED(lineNumber)
     Q_UNUSED(sourceID)
     qDebug() << "JAVASCRIPT MESSAGE : " << message;
-    //TODO improve it.
+    // TODO improve it.
     Q_EMIT showConsoleMessage(message);
 }
 
@@ -82,8 +84,8 @@ void TestWebEngineScript::slotShowConsoleMessage(const QString &msg)
 void TestWebEngineScript::handleScript(const QVariant &res)
 {
     qDebug() << " res" << res;
-    //TODO
-    //mTestScriptWidget->setResult();
+    // TODO
+    // mTestScriptWidget->setResult();
 }
 
 void TestWebEngineScript::slotExecuteScript()
@@ -160,7 +162,7 @@ void TestScriptWidget::fillScriptCombo(QComboBox *scriptCombo)
     WebEngineViewer::WebEngineScript::removeStyleToElement(const QString &element);
     WebEngineViewer::WebEngineScript::replaceInnerHtml(const QString &field, const QString &html, bool doShow);
 #endif
-    //TODO
+    // TODO
 }
 
 void TestScriptWidget::setResult(const QString &res)

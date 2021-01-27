@@ -6,10 +6,11 @@
 
 #ifndef PLUGINEDITOR_H
 #define PLUGINEDITOR_H
-#include <QObject>
 #include "messagecomposer_export.h"
 #include <PimCommon/AbstractGenericPlugin>
-namespace MessageComposer {
+#include <QObject>
+namespace MessageComposer
+{
 class PluginEditorPrivate;
 /**
  * @brief The PluginEditor class
@@ -25,6 +26,7 @@ public:
     Q_REQUIRED_RESULT int order() const;
 
     virtual Q_REQUIRED_RESULT bool canProcessKeyEvent() const;
+
 private:
     PluginEditorPrivate *const d;
 };

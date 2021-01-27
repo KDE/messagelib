@@ -6,14 +6,14 @@
 
 #include "imagescalingselectformat.h"
 
+#include <KLocalizedString>
 #include <QLineEdit>
 #include <QPushButton>
-#include <KLocalizedString>
 
-#include <QListWidget>
-#include <QHBoxLayout>
-#include <QPointer>
 #include <QDialogButtonBox>
+#include <QHBoxLayout>
+#include <QListWidget>
+#include <QPointer>
 #include <QVBoxLayout>
 
 using namespace MessageComposer;

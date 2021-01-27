@@ -12,8 +12,8 @@
 #include <KDialogJobUiDelegate>
 #include <KLocalizedString>
 
-#include <QGpgME/Protocol>
 #include <QGpgME/ExportJob>
+#include <QGpgME/Protocol>
 
 #include <Libkleo/ProgressDialog>
 
@@ -25,7 +25,7 @@ class Q_DECL_HIDDEN MessageComposer::AttachmentFromPublicKeyJob::Private
 public:
     Private(AttachmentFromPublicKeyJob *qq);
 
-    void exportResult(const GpgME::Error &error, const QByteArray &keyData);   // slot
+    void exportResult(const GpgME::Error &error, const QByteArray &keyData); // slot
     void emitGpgError(const GpgME::Error &error);
 
     AttachmentFromPublicKeyJob *const q;
@@ -59,10 +59,11 @@ void AttachmentFromPublicKeyJob::Private::exportResult(const GpgME::Error &error
 void AttachmentFromPublicKeyJob::Private::emitGpgError(const GpgME::Error &error)
 {
     Q_ASSERT(error);
-    const QString msg = i18n("<p>An error occurred while trying to export "
-                             "the key from the backend:</p>"
-                             "<p><b>%1</b></p>",
-                             QString::fromLocal8Bit(error.asString()));
+    const QString msg = i18n(
+        "<p>An error occurred while trying to export "
+        "the key from the backend:</p>"
+        "<p><b>%1</b></p>",
+        QString::fromLocal8Bit(error.asString()));
     q->setError(KJob::UserDefinedError);
     q->setErrorText(msg);
     q->emitResult();
@@ -106,8 +107,7 @@ void AttachmentFromPublicKeyJob::doStart()
     } else if (uiDelegate()) {
         Q_ASSERT(dynamic_cast<KDialogJobUiDelegate *>(uiDelegate()));
         auto delegate = static_cast<KDialogJobUiDelegate *>(uiDelegate());
-        (void)new Kleo::ProgressDialog(job, i18n("Exporting key..."),
-                                       delegate->window());
+        (void)new Kleo::ProgressDialog(job, i18n("Exporting key..."), delegate->window());
     }
 }
 

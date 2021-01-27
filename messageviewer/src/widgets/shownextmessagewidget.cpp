@@ -5,8 +5,8 @@
 */
 
 #include "shownextmessagewidget.h"
-#include <QHBoxLayout>
 #include <KLocalizedString>
+#include <QHBoxLayout>
 #include <QPushButton>
 
 using namespace MessageViewer;

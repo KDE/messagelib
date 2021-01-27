@@ -5,8 +5,8 @@
 */
 
 #include "hashcachemanager.h"
-#include "webengineviewer_debug.h"
 #include "checkphishingurlutil.h"
+#include "webengineviewer_debug.h"
 #include <KConfig>
 #include <KConfigGroup>
 
@@ -40,6 +40,7 @@ public:
     void load();
     void addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration);
     Q_REQUIRED_RESULT HashCacheManager::UrlStatus hashStatus(const QByteArray &hash);
+
 private:
     void clear();
 

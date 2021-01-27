@@ -11,18 +11,15 @@
 #define KMAIL_MESSAGESENDER_H
 
 #include <kmime/kmime_message.h>
-namespace MessageComposer {
+namespace MessageComposer
+{
 class MessageSender
 {
 protected:
     virtual ~MessageSender() = 0;
 
 public:
-    enum SendMethod {
-        SendDefault = -1,
-        SendImmediate = true,
-        SendLater = false
-    };
+    enum SendMethod { SendDefault = -1, SendImmediate = true, SendLater = false };
     enum SaveIn {
         SaveInNone,
         SaveInDrafts,

@@ -13,8 +13,10 @@
 
 #include "core/item.h"
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class GroupHeaderItem : public Item
 {
 public:

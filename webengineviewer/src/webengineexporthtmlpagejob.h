@@ -7,10 +7,11 @@
 #ifndef WEBENGINEEXPORTHTMLPAGEJOB_H
 #define WEBENGINEEXPORTHTMLPAGEJOB_H
 
-#include <QObject>
 #include "webengineviewer_export.h"
+#include <QObject>
 class QWebEngineView;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 /**
  * @brief The WebEngineExportHtmlPageJob class
  * @author Laurent Montel <montel@kde.org>

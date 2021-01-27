@@ -7,10 +7,10 @@
 #include "testselectionchangedwebengine.h"
 
 #include <QApplication>
+#include <QDebug>
+#include <QTextEdit>
 #include <QVBoxLayout>
 #include <webengineview.h>
-#include <QTextEdit>
-#include <QDebug>
 
 TestSelectionChangedEngine::TestSelectionChangedEngine(QWidget *parent)
     : QWidget(parent)

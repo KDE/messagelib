@@ -6,8 +6,8 @@
 
 #include "imagescaling.h"
 #include "settings/messagecomposersettings.h"
-#include <QImage>
 #include <QBuffer>
+#include <QImage>
 using namespace MessageComposer;
 
 class MessageComposer::ImageScalingPrivate
@@ -92,7 +92,9 @@ bool ImageScaling::resizeImage()
     }
     if ((newHeight != height) || (newWidth != width)) {
         d->mBuffer.open(QIODevice::WriteOnly);
-        d->mImage = d->mImage.scaled(newWidth, newHeight, MessageComposer::MessageComposerSettings::self()->keepImageRatio() ? Qt::KeepAspectRatio : Qt::IgnoreAspectRatio);
+        d->mImage = d->mImage.scaled(newWidth,
+                                     newHeight,
+                                     MessageComposer::MessageComposerSettings::self()->keepImageRatio() ? Qt::KeepAspectRatio : Qt::IgnoreAspectRatio);
 
         QByteArray format;
         if (d->mMimeType == "image/jpeg") {
@@ -122,7 +124,7 @@ QByteArray ImageScaling::mimetype() const
     if ((d->mMimeType == "image/jpeg") || (d->mMimeType == "image/png")) {
         return d->mMimeType;
     } else {
-        //Add more mimetype if a day we add more saving format.
+        // Add more mimetype if a day we add more saving format.
         const QString type = MessageComposer::MessageComposerSettings::self()->writeFormat();
         if (type == QLatin1String("JPG")) {
             return "image/jpeg";

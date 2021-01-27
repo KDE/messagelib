@@ -13,7 +13,8 @@
 
 #include <kmime/kmime_headers.h>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class MessagePartPrivate;
 /**
  * @brief The MessagePart class

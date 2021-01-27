@@ -10,7 +10,8 @@
 #include "messageviewer_export.h"
 #include <QWidget>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class PrintingSettingsPrivate;
 /**
  * @brief The PrintingSettings class

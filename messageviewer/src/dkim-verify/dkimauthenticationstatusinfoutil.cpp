@@ -182,15 +182,8 @@ QString MessageViewer::DKIMAuthenticationStatusInfoUtil::domainName_p()
 // If match is found, removes it from str.
 QString MessageViewer::DKIMAuthenticationStatusInfoUtil::regexMatchO(const QString &regularExpressionStr)
 {
-    const QString regexp = (QLatin1Char('^')
-                            + DKIMAuthenticationStatusInfoUtil::cfws_op()
-                            + QStringLiteral("(?:")
-                            + regularExpressionStr
-                            + QLatin1Char(')')
-                            + QStringLiteral("(?:(?:")
-                            + DKIMAuthenticationStatusInfoUtil::cfws_op()
-                            + QStringLiteral("\r\n$)|(?=;)|(?=")
-                            + DKIMAuthenticationStatusInfoUtil::cfws_p()
-                            + QStringLiteral("))"));
+    const QString regexp = (QLatin1Char('^') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QStringLiteral("(?:") + regularExpressionStr + QLatin1Char(')')
+                            + QStringLiteral("(?:(?:") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QStringLiteral("\r\n$)|(?=;)|(?=")
+                            + DKIMAuthenticationStatusInfoUtil::cfws_p() + QStringLiteral("))"));
     return regexp;
 }

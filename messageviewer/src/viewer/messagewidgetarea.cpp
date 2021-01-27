@@ -14,10 +14,8 @@ MessageWidgetArea::MessageWidgetArea(QWidget *parent)
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
-
 }
 
 MessageWidgetArea::~MessageWidgetArea()
 {
-
 }

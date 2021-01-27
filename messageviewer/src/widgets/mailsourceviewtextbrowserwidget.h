@@ -10,16 +10,18 @@
 #ifndef MAILSOURCEVIEWTEXTBROWSERWIDGET_H
 #define MAILSOURCEVIEWTEXTBROWSERWIDGET_H
 
-#include <QSyntaxHighlighter>
-#include <QPlainTextEdit>
 #include <KSyntaxHighlighting/Repository>
-namespace KPIMTextEdit {
+#include <QPlainTextEdit>
+#include <QSyntaxHighlighter>
+namespace KPIMTextEdit
+{
 class SlideContainer;
 class TextToSpeechWidget;
 class TextToSpeechInterface;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class FindBarSourceView;
 
 /**
@@ -42,6 +44,7 @@ public:
     void setPlainText(const QString &text);
     void setFixedFont();
     Q_REQUIRED_RESULT MessageViewer::MailSourceViewTextBrowser *textBrowser() const;
+
 private:
     void slotFind();
     KSyntaxHighlighting::Repository mRepo;
@@ -56,10 +59,12 @@ class MailSourceViewTextBrowser : public QPlainTextEdit
     Q_OBJECT
 public:
     explicit MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent = nullptr);
+
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 Q_SIGNALS:
     void findText();
+
 private:
     void slotSpeakText();
     void slotSaveAs();

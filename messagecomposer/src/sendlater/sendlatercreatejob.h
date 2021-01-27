@@ -7,12 +7,13 @@
 #ifndef MESSAGECOMPOSER_SENDLATERCREATEJOB_H
 #define MESSAGECOMPOSER_SENDLATERCREATEJOB_H
 
-#include "sendlaterjob.h"
 #include "sendlaterinfo.h"
+#include "sendlaterjob.h"
 
 #include "messagecomposer_export.h"
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class MESSAGECOMPOSER_EXPORT SendLaterCreateJob : public SendLaterJob
 {
     Q_OBJECT

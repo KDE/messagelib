@@ -5,8 +5,8 @@
 */
 
 #include "sendlaterutil.h"
-#include "sendlaterutil_p.h"
 #include "sendlaterinterface.h"
+#include "sendlaterutil_p.h"
 
 #include <AkonadiCore/ServerManager>
 

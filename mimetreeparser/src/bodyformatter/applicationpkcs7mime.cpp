@@ -8,8 +8,8 @@
 
 #include "utils.h"
 
-#include "objecttreeparser.h"
 #include "messagepart.h"
+#include "objecttreeparser.h"
 
 #include <QGpgME/Protocol>
 
@@ -45,13 +45,11 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
     }
 
     // we are also registered for octet-stream, in that case stop here if that's not a part for us
-    const auto ct = node->contentType(); //Create
+    const auto ct = node->contentType(); // Create
     const auto mt = ct->mimeType();
     const auto isCorrectMimeType = mt == QByteArrayLiteral("application/pkcs7-mime") || mt == QByteArrayLiteral("application/x-pkcs7-mime");
     const auto hasCorrectName = mt == QByteArrayLiteral("application/octet-stream")
-                                && (ct->name().endsWith(QLatin1String("p7m"))
-                                    || ct->name().endsWith(QLatin1String("p7s"))
-                                    || ct->name().endsWith(QLatin1String("p7c")));
+        && (ct->name().endsWith(QLatin1String("p7m")) || ct->name().endsWith(QLatin1String("p7s")) || ct->name().endsWith(QLatin1String("p7c")));
     if (!isCorrectMimeType && !hasCorrectName) {
         return {};
     }
@@ -84,9 +82,8 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
             qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
         }
 
-        auto _mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(part.objectTreeParser(),
-                                                                      node->decodedText(), smimeCrypto,
-                                                                      part.nodeHelper()->fromAsString(node), node));
+        auto _mp = EncryptedMessagePart::Ptr(
+            new EncryptedMessagePart(part.objectTreeParser(), node->decodedText(), smimeCrypto, part.nodeHelper()->fromAsString(node), node));
         mp = _mp;
         _mp->setIsEncrypted(true);
         _mp->setDecryptMessage(part.source()->decryptMessage());
@@ -134,9 +131,8 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
 
         const QTextCodec *aCodec(part.objectTreeParser()->codecFor(signTestNode));
         const QByteArray signaturetext = signTestNode->decodedContent();
-        auto _mp = SignedMessagePart::Ptr(new SignedMessagePart(part.objectTreeParser(),
-                                                                aCodec->toUnicode(signaturetext), smimeCrypto,
-                                                                part.nodeHelper()->fromAsString(node), signTestNode));
+        auto _mp = SignedMessagePart::Ptr(
+            new SignedMessagePart(part.objectTreeParser(), aCodec->toUnicode(signaturetext), smimeCrypto, part.nodeHelper()->fromAsString(node), signTestNode));
         mp = _mp;
         _mp->startVerificationDetached(signaturetext, nullptr, QByteArray());
 

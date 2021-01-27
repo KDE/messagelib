@@ -6,11 +6,11 @@
 
 #include "testselectedtextwebengine.h"
 #include <QApplication>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QVBoxLayout>
 #include <WebEngineViewer/WebEnginePage>
 #include <webengineview.h>
-#include <QPushButton>
-#include <QMessageBox>
-#include <QVBoxLayout>
 
 TestSelectedTextWebEngine::TestSelectedTextWebEngine(QWidget *parent)
     : QWidget(parent)
@@ -23,7 +23,7 @@ TestSelectedTextWebEngine::TestSelectedTextWebEngine(QWidget *parent)
     hboxLayout->addWidget(showSelectedText);
 
     mEnginePage = new WebEngineViewer::WebEnginePage(this);
-    //pageView->setPage(mEnginePage);
+    // pageView->setPage(mEnginePage);
     pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
 }
 

@@ -8,10 +8,10 @@
 #include "followupreminderinterface.h"
 #include "messagecomposer_debug.h"
 
-#include <KCalendarCore/Todo>
-#include <KLocalizedString>
 #include <AkonadiCore/ItemCreateJob>
 #include <AkonadiCore/ServerManager>
+#include <KCalendarCore/Todo>
+#include <KLocalizedString>
 
 #include <QDBusConnection>
 #include <QDBusPendingCallWatcher>
@@ -108,12 +108,10 @@ void FollowupReminderCreateJob::slotCreateNewTodo(KJob *job)
 
 void FollowupReminderCreateJob::writeFollowupReminderInfo()
 {
-    std::unique_ptr<org::freedesktop::Akonadi::FollowUpReminderAgent> iface{
-        new org::freedesktop::Akonadi::FollowUpReminderAgent{
-            Akonadi::ServerManager::agentServiceName(Akonadi::ServerManager::Agent, QStringLiteral("akonadi_followupreminder_agent")),
-            QStringLiteral("/FollowUpReminder"),
-            QDBusConnection::sessionBus()
-        }};
+    std::unique_ptr<org::freedesktop::Akonadi::FollowUpReminderAgent> iface{new org::freedesktop::Akonadi::FollowUpReminderAgent{
+        Akonadi::ServerManager::agentServiceName(Akonadi::ServerManager::Agent, QStringLiteral("akonadi_followupreminder_agent")),
+        QStringLiteral("/FollowUpReminder"),
+        QDBusConnection::sessionBus()}};
 
     if (!iface->isValid()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "The FollowUpReminder agent is not running!";
@@ -122,8 +120,7 @@ void FollowupReminderCreateJob::writeFollowupReminderInfo()
 
     auto call = iface->addReminder(d->mMessageId, d->mOriginalMessageItemId, d->mTo, d->mSubject, d->mFollowupDate, d->mTodoId);
     auto wait = new QDBusPendingCallWatcher{call, this};
-    connect(wait, &QDBusPendingCallWatcher::finished,
-            this, [this, iface_ = std::move(iface)](QDBusPendingCallWatcher *watcher) mutable {
+    connect(wait, &QDBusPendingCallWatcher::finished, this, [this, iface_ = std::move(iface)](QDBusPendingCallWatcher *watcher) mutable {
         auto iface = std::move(iface_);
         watcher->deleteLater();
 

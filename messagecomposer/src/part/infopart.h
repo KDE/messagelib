@@ -11,9 +11,10 @@
 
 #include <QStringList>
 
-#include <kmime/kmime_message.h>
 #include <kmime/kmime_headers.h>
-namespace MessageComposer {
+#include <kmime/kmime_message.h>
+namespace MessageComposer
+{
 /**
  * @brief The InfoPart class
  */

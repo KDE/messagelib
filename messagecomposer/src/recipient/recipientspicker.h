@@ -10,20 +10,23 @@
 
 #include <MessageComposer/Recipient>
 
-#include <kcontacts/addressee.h>
 #include <QDialog>
+#include <kcontacts/addressee.h>
 
 class QPushButton;
 
-namespace PimCommon {
+namespace PimCommon
+{
 class LdapSearchDialog;
 }
 
-namespace Akonadi {
+namespace Akonadi
+{
 class RecipientsPickerWidget;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class RecipientsPicker : public QDialog
 {
     Q_OBJECT

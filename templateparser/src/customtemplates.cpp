@@ -6,13 +6,13 @@
  */
 
 #include "customtemplates.h"
-#include "templateparser/templatesinsertcommandpushbutton.h"
 #include "customtemplates_kfg.h"
 #include "globalsettings_templateparser.h"
+#include "templateparser/templatesinsertcommandpushbutton.h"
+#include "templateparseremailaddressrequesterinterfacewidget.h"
 #include "ui_customtemplates_base.h"
 #include <KPIMTextEdit/PlainTextEditor>
 #include <Libkdepim/LineEditCatchReturnKey>
-#include "templateparseremailaddressrequesterinterfacewidget.h"
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -40,8 +40,7 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
     mUi->mEditFrame->setEnabled(false);
 
     new KPIM::LineEditCatchReturnKey(mUi->mName, this);
-    connect(mUi->mEdit->editor(), &QPlainTextEdit::textChanged,
-            this, &CustomTemplates::slotTextChanged);
+    connect(mUi->mEdit->editor(), &QPlainTextEdit::textChanged, this, &CustomTemplates::slotTextChanged);
     connect(mUi->mToEdit, &TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget::textChanged, this, &CustomTemplates::slotTextChanged);
     connect(mUi->mCCEdit, &TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget::textChanged, this, &CustomTemplates::slotTextChanged);
 
@@ -49,7 +48,10 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
 
     connect(mUi->mName, &QLineEdit::returnPressed, this, &CustomTemplates::slotAddClicked);
 
-    connect(mUi->mInsertCommand, qOverload<const QString &, int>(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand), this, &CustomTemplates::slotInsertCommand);
+    connect(mUi->mInsertCommand,
+            qOverload<const QString &, int>(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand),
+            this,
+            &CustomTemplates::slotInsertCommand);
 
     connect(mUi->mAdd, &QPushButton::clicked, this, &CustomTemplates::slotAddClicked);
     connect(mUi->mRemove, &QPushButton::clicked, this, &CustomTemplates::slotRemoveClicked);
@@ -73,8 +75,7 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
     mUi->mType->addItem(mForwardPix, i18nc("Message->", "Forward"));
 
     mUi->mHelp->setText(i18n("<a href=\"whatsthis\">How does this work?</a>"));
-    connect(mUi->mHelp, &QLabel::linkActivated,
-            this, &CustomTemplates::slotHelpLinkClicked);
+    connect(mUi->mHelp, &QLabel::linkActivated, this, &CustomTemplates::slotHelpLinkClicked);
     mUi->mHelp->setContextMenuPolicy(Qt::NoContextMenu);
 
     slotNameChanged(mUi->mName->text());
@@ -82,29 +83,28 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
 
 void CustomTemplates::slotHelpLinkClicked(const QString &)
 {
-    const QString help
-        = i18n("<qt>"
-               "<p>Here you can add, edit, and delete custom message "
-               "templates to use when you compose a reply or forwarding message. "
-               "Create the custom template by typing the name into the input box "
-               "and press the '+' button. Also, you can bind a keyboard "
-               "combination to the template for faster operations.</p>"
-               "<p>Message templates support substitution commands, "
-               "by simply typing them or selecting them from the "
-               "<i>Insert command</i> menu.</p>"
-               "<p>There are four types of custom templates: used to "
-               "<i>Reply</i>, <i>Reply to All</i>, <i>Forward</i>, and "
-               "<i>Universal</i> which can be used for all kinds of operations. "
-               "You cannot bind a keyboard shortcut to <i>Universal</i> templates.</p>"
-               "</qt>");
+    const QString help = i18n(
+        "<qt>"
+        "<p>Here you can add, edit, and delete custom message "
+        "templates to use when you compose a reply or forwarding message. "
+        "Create the custom template by typing the name into the input box "
+        "and press the '+' button. Also, you can bind a keyboard "
+        "combination to the template for faster operations.</p>"
+        "<p>Message templates support substitution commands, "
+        "by simply typing them or selecting them from the "
+        "<i>Insert command</i> menu.</p>"
+        "<p>There are four types of custom templates: used to "
+        "<i>Reply</i>, <i>Reply to All</i>, <i>Forward</i>, and "
+        "<i>Universal</i> which can be used for all kinds of operations. "
+        "You cannot bind a keyboard shortcut to <i>Universal</i> templates.</p>"
+        "</qt>");
 
     QWhatsThis::showText(QCursor::pos(), help);
 }
 
 CustomTemplates::~CustomTemplates()
 {
-    disconnect(mUi->mEdit->editor(), &QPlainTextEdit::textChanged,
-               this, &CustomTemplates::slotTextChanged);
+    disconnect(mUi->mEdit->editor(), &QPlainTextEdit::textChanged, this, &CustomTemplates::slotTextChanged);
     disconnect(mUi->mToEdit, &TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget::textChanged, this, &CustomTemplates::slotTextChanged);
     disconnect(mUi->mCCEdit, &TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget::textChanged, this, &CustomTemplates::slotTextChanged);
     delete mUi;
@@ -185,8 +185,7 @@ void CustomTemplates::load()
         CTemplates t(*it);
         QKeySequence shortcut(t.shortcut());
         auto type = static_cast<Type>(t.type());
-        auto item = new CustomTemplateItem(mUi->mList, *it, t.content(),
-                                           shortcut, type, t.to(), t.cC());
+        auto item = new CustomTemplateItem(mUi->mList, *it, t.content(), shortcut, type, t.to(), t.cC());
         item->setText(1, *it);
         item->setText(0, indexToType(type));
         iconFromType(type, item);
@@ -250,10 +249,7 @@ bool CustomTemplates::nameAlreadyExists(const QString &str, QTreeWidgetItem *ite
     while (*lit) {
         const QString name = (*lit)->text(1);
         if ((name == str) && ((*lit) != item)) {
-            KMessageBox::error(
-                this,
-                i18n("A template with same name already exists."),
-                i18n("Cannot create template"));
+            KMessageBox::error(this, i18n("A template with same name already exists."), i18n("Cannot create template"));
             return true;
         }
         ++lit;
@@ -270,9 +266,7 @@ void CustomTemplates::slotAddClicked()
         }
 
         QKeySequence nullShortcut;
-        auto *item
-            = new CustomTemplateItem(mUi->mList, str, QString(), nullShortcut, TUniversal,
-                                     QString(), QString());
+        auto *item = new CustomTemplateItem(mUi->mList, str, QString(), nullShortcut, TUniversal, QString(), QString());
         item->setText(0, indexToType(TUniversal));
         item->setText(1, str);
         mUi->mList->setCurrentItem(item);
@@ -323,9 +317,7 @@ void CustomTemplates::slotDuplicateClicked()
     const QString templateName = createUniqueName(origItem->text(1));
     QKeySequence nullShortcut;
     CustomTemplates::Type type = origItem->customType();
-    auto *item
-        = new CustomTemplateItem(mUi->mList, templateName, origItem->content(), nullShortcut, type,
-                                 origItem->to(), origItem->cc());
+    auto *item = new CustomTemplateItem(mUi->mList, templateName, origItem->content(), nullShortcut, type, origItem->to(), origItem->cc());
     item->setText(0, indexToType(type));
     item->setText(1, templateName);
     iconFromType(type, item);
@@ -348,12 +340,12 @@ void CustomTemplates::slotRemoveClicked()
 
     const QString templateName = item->text(1);
 
-    if (KMessageBox::warningContinueCancel(
-            this,
-            i18nc("@info", "Do you really want to remove template \"%1\"?", templateName),
-            i18nc("@title:window", "Remove Template?"),
-            KStandardGuiItem::remove(),
-            KStandardGuiItem::cancel()) == KMessageBox::Continue) {
+    if (KMessageBox::warningContinueCancel(this,
+                                           i18nc("@info", "Do you really want to remove template \"%1\"?", templateName),
+                                           i18nc("@title:window", "Remove Template?"),
+                                           KStandardGuiItem::remove(),
+                                           KStandardGuiItem::cancel())
+        == KMessageBox::Continue) {
         mItemsToDelete.append(templateName);
         delete mUi->mList->takeTopLevelItem(mUi->mList->indexOfTopLevelItem(item));
         mUi->mRemove->setEnabled(mUi->mList->topLevelItemCount() > 0);
@@ -374,8 +366,7 @@ void CustomTemplates::slotListSelectionChanged()
         auto vitem = static_cast<CustomTemplateItem *>(item);
         mBlockChangeSignal = true;
         mUi->mEdit->setPlainText(vitem->content());
-        mUi->mKeySequenceWidget->setKeySequence(vitem->shortcut(),
-                                                KKeySequenceWidget::NoValidate);
+        mUi->mKeySequenceWidget->setKeySequence(vitem->shortcut(), KKeySequenceWidget::NoValidate);
         CustomTemplates::Type type = vitem->customType();
 
         mUi->mType->setCurrentIndex(mUi->mType->findText(indexToType(type)));
@@ -484,7 +475,13 @@ QWidget *CustomTemplateItemDelegate::createEditor(QWidget *parent, const QStyleO
     return nullptr;
 }
 
-CustomTemplateItem::CustomTemplateItem(QTreeWidget *parent, const QString &name, const QString &content, const QKeySequence &shortcut, CustomTemplates::Type type, const QString &to, const QString &cc)
+CustomTemplateItem::CustomTemplateItem(QTreeWidget *parent,
+                                       const QString &name,
+                                       const QString &content,
+                                       const QKeySequence &shortcut,
+                                       CustomTemplates::Type type,
+                                       const QString &to,
+                                       const QString &cc)
     : QTreeWidgetItem(parent)
     , mName(name)
     , mContent(content)

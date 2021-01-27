@@ -8,14 +8,16 @@
 #ifndef QUICKSEARCHLINE_H
 #define QUICKSEARCHLINE_H
 
-#include <QWidget>
 #include "messagelist_export.h"
 #include <Akonadi/KMime/MessageStatus>
+#include <QWidget>
 
 class QComboBox;
 class QToolButton;
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class SearchLineStatus;
 /**
  * @brief The QuickSearchLine class
@@ -70,6 +72,7 @@ private Q_SLOTS:
     void slotSearchEditTextEdited(const QString &text);
     void slotClearButtonClicked();
     void slotFilterActionChanged(const QVector<Akonadi::MessageStatus> &lst);
+
 private:
     SearchLineStatus *mSearchEdit = nullptr;
     QComboBox *mTagFilterCombo = nullptr;

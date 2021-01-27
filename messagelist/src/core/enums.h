@@ -9,8 +9,10 @@
 #ifndef MESSAGELIST_CORE_ENUMS_H
 #define MESSAGELIST_CORE_ENUMS_H
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 /**
  * Pre-selection is the action of automatically selecting a message just after the folder
  * has finished loading. We may want to select the message that was selected the last
@@ -25,28 +27,28 @@ namespace Core {
  * See Model::setStorageModel() for more information.
  */
 enum PreSelectionMode {
-    PreSelectNone,                     //< no pre-selection at all
-    PreSelectLastSelected,             //< pre-select the last message that was selected in this folder (default)
-    PreSelectFirstUnreadCentered,      //< pre-select the first unread message and center it
-    PreSelectNewestCentered,           //< pre-select the newest message, by date
-    PreSelectOldestCentered            //< pre-select the oldest message, by date
+    PreSelectNone, //< no pre-selection at all
+    PreSelectLastSelected, //< pre-select the last message that was selected in this folder (default)
+    PreSelectFirstUnreadCentered, //< pre-select the first unread message and center it
+    PreSelectNewestCentered, //< pre-select the newest message, by date
+    PreSelectOldestCentered //< pre-select the oldest message, by date
 };
 
 /**
  * This enum is used in the view message selection functions (for instance View::nextMessageItem()).
  */
 enum MessageTypeFilter {
-    MessageTypeAny,                    //< Select any message
-    MessageTypeUnreadOnly              //< Select only unread messages
+    MessageTypeAny, //< Select any message
+    MessageTypeUnreadOnly //< Select only unread messages
 };
 
 /**
  * This enum is used in the view message selection functions (for instance View::selectNextMessage())
  */
 enum ExistingSelectionBehaviour {
-    ClearExistingSelection,            //< Clear the existing selection before selecting the new item
-    ExpandExistingSelection,           //< Preserve the existing selection (grow only)
-    GrowOrShrinkExistingSelection      //< Grow or shrink the existing selection depending on what item is actually being selected
+    ClearExistingSelection, //< Clear the existing selection before selecting the new item
+    ExpandExistingSelection, //< Preserve the existing selection (grow only)
+    GrowOrShrinkExistingSelection //< Grow or shrink the existing selection depending on what item is actually being selected
 };
 }
 }

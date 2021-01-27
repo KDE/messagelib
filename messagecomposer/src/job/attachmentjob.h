@@ -12,7 +12,8 @@
 
 #include <MessageCore/AttachmentPart>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class AttachmentJobPrivate;
 
 /**

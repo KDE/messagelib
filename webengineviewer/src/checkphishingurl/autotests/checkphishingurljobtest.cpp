@@ -32,9 +32,12 @@ void CheckPhishingUrlJobTest::shouldCreateRequest_data()
     QTest::addColumn<QString>("request");
     QTest::addColumn<bool>("canStart");
     QTest::newRow("no url") << QUrl() << QString() << false;
-    QTest::newRow("value") << QUrl(QStringLiteral("http://www.kde.org")) << QStringLiteral(
-        "{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"url\":\"http://www.kde.org\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}")
-        .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps()) << true;
+    QTest::newRow("value") << QUrl(QStringLiteral("http://www.kde.org"))
+                           << QStringLiteral(
+                                  "{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],"
+                                  "\"threatEntries\":[{\"url\":\"http://www.kde.org\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}")
+                                  .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps())
+                           << true;
 }
 
 void CheckPhishingUrlJobTest::shouldCreateRequest()
@@ -64,8 +67,10 @@ void CheckPhishingUrlJobTest::shouldParseResult_data()
 
     val = WebEngineViewer::CheckPhishingUrlUtil::refreshingCacheAfterThisTime(WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(QStringLiteral("300s")));
     QTest::newRow("malware") << QByteArrayLiteral(
-        "{\"matches\":[{\"threatType\":\"MALWARE\",\"platformType\":\"WINDOWS\",\"threat\":{\"url\":\"http://malware.testing.google.test/testing/malware/\"},\"cacheDuration\":\"300s\",\"threatEntryType\":\"URL\"}]}")
-                             << QUrl(QStringLiteral("http://malware.testing.google.test/testing/malware/")) << val << WebEngineViewer::CheckPhishingUrlUtil::MalWare;
+        "{\"matches\":[{\"threatType\":\"MALWARE\",\"platformType\":\"WINDOWS\",\"threat\":{\"url\":\"http://malware.testing.google.test/testing/malware/"
+        "\"},\"cacheDuration\":\"300s\",\"threatEntryType\":\"URL\"}]}")
+                             << QUrl(QStringLiteral("http://malware.testing.google.test/testing/malware/")) << val
+                             << WebEngineViewer::CheckPhishingUrlUtil::MalWare;
 }
 
 void CheckPhishingUrlJobTest::shouldParseResult()

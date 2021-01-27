@@ -11,11 +11,11 @@
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-# ifndef TEMPLATEPARSER_TESTS_EXPORT
-#  define TEMPLATEPARSER_TESTS_EXPORT TEMPLATEPARSER_EXPORT
-# endif
+#ifndef TEMPLATEPARSER_TESTS_EXPORT
+#define TEMPLATEPARSER_TESTS_EXPORT TEMPLATEPARSER_EXPORT
+#endif
 #else /* not compiling tests */
-# define TEMPLATEPARSER_TESTS_EXPORT
+#define TEMPLATEPARSER_TESTS_EXPORT
 #endif
 
 #endif

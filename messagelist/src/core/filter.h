@@ -13,12 +13,14 @@
 #include <QSet>
 #include <QString>
 
+#include "widgets/quicksearchline.h"
 #include <Akonadi/KMime/MessageStatus>
 #include <Collection>
-#include "widgets/quicksearchline.h"
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class MessageItem;
 
 /**
@@ -34,70 +36,70 @@ public:
 
 public:
     /**
-    * Returns true if the specified parameters match this filter and false otherwise.
-    * The msg pointer must not be null.
-    */
+     * Returns true if the specified parameters match this filter and false otherwise.
+     * The msg pointer must not be null.
+     */
     Q_REQUIRED_RESULT bool match(const MessageItem *item) const;
 
     /**
-    * Returns the currently set status mask
-    */
+     * Returns the currently set status mask
+     */
     Q_REQUIRED_RESULT QVector<Akonadi::MessageStatus> status() const
     {
         return mStatus;
     }
 
     /**
-    * Sets the status mask for this filter.
-    */
+     * Sets the status mask for this filter.
+     */
     void setStatus(const QVector<Akonadi::MessageStatus> &lstStatus)
     {
         mStatus = lstStatus;
     }
 
     /**
-    * Sets the current folder of this filter.
-    */
+     * Sets the current folder of this filter.
+     */
     void setCurrentFolder(const Akonadi::Collection &collection);
 
     /**
-    * Returns the currently set search string.
-    */
+     * Returns the currently set search string.
+     */
     const QString &searchString() const
     {
         return mSearchString;
     }
 
     /**
-    * Sets the search string for this filter.
-    */
+     * Sets the search string for this filter.
+     */
     void setSearchString(const QString &search, QuickSearchLine::SearchOptions options);
 
     /**
-    * Returns the currently set MessageItem::Tag id
-    */
+     * Returns the currently set MessageItem::Tag id
+     */
     const QString &tagId() const
     {
         return mTagId;
     }
 
     /**
-    * Sets the id of a MessageItem::Tag that the matching messages must contain.
-    */
+     * Sets the id of a MessageItem::Tag that the matching messages must contain.
+     */
     void setTagId(const QString &tagId)
     {
         mTagId = tagId;
     }
 
     /**
-    * Clears this filter (sets status to 0, search string and tag id to empty strings)
-    */
+     * Clears this filter (sets status to 0, search string and tag id to empty strings)
+     */
     void clear();
 
     /**
-    * Returns true if this filter is empty (0 status mask, empty search string and empty tag)
-    * and it's useless to call match() that will always return true.
-    */
+     * Returns true if this filter is empty (0 status mask, empty search string and empty tag)
+     * and it's useless to call match() that will always return true.
+     */
     Q_REQUIRED_RESULT bool isEmpty() const;
 
     Q_REQUIRED_RESULT QuickSearchLine::SearchOptions currentOptions() const;
@@ -106,9 +108,9 @@ Q_SIGNALS:
 
 private:
     Q_REQUIRED_RESULT bool containString(const QString &searchInString) const;
-    QVector<Akonadi::MessageStatus> mStatus;    ///< Messages must match these statuses, if non 0
-    QString mSearchString;             ///< Messages must match this search string, if not empty
-    QString mTagId;                    ///< Messages must have this tag, if not empty. Contains a tag url.
+    QVector<Akonadi::MessageStatus> mStatus; ///< Messages must match these statuses, if non 0
+    QString mSearchString; ///< Messages must match this search string, if not empty
+    QString mTagId; ///< Messages must have this tag, if not empty. Contains a tag url.
     Akonadi::Collection mCurrentFolder;
     QSet<qint64> mMatchingItemIds;
     QuickSearchLine::SearchOptions mOptions;

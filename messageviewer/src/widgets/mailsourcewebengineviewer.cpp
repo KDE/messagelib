@@ -8,17 +8,17 @@
 
 using namespace MessageViewer;
 
+#include "findbar/findbarsourceview.h"
 #include "mailsourceviewtextbrowserwidget.h"
 #include "messageviewer/messageviewerutil.h"
-#include "findbar/findbarsourceview.h"
 #include <KPIMTextEdit/SlideContainer>
 
-#include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Theme>
 
-#include <PimCommon/PimUtil>
 #include <KLocalizedString>
+#include <PimCommon/PimUtil>
 #include <QTabWidget>
 
 #include <KConfigGroup>
@@ -47,9 +47,7 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
         mainLayout->addWidget(mTabWidget);
 
         mTabWidget->addTab(mRawBrowser, i18nc("Unchanged mail message", "Raw Source"));
-        mTabWidget->setTabToolTip(0,
-                                  i18n(
-                                      "Raw, unmodified mail as it is stored on the filesystem or on the server"));
+        mTabWidget->setTabToolTip(0, i18n("Raw, unmodified mail as it is stored on the filesystem or on the server"));
 
         mHtmlBrowser = new MailSourceViewTextBrowserWidget(QStringLiteral("HTML"), this);
         mTabWidget->addTab(mHtmlBrowser, i18nc("Mail message as shown, in HTML format", "HTML Source"));
@@ -71,9 +69,7 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     mRawBrowser->textBrowser()->setFocus();
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &MailSourceWebEngineViewer::reject);
-    connect(buttonBox->button(
-                QDialogButtonBox::Close), &QPushButton::clicked, this,
-            &MailSourceWebEngineViewer::close);
+    connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &MailSourceWebEngineViewer::close);
 
     mainLayout->addWidget(buttonBox);
     readConfig();

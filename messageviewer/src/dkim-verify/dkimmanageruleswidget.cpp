@@ -4,19 +4,19 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "dkimmanagerulescombobox.h"
 #include "dkimmanageruleswidget.h"
+#include "dkimmanagerulescombobox.h"
 #include "dkimruledialog.h"
 #include "messageviewer_dkimcheckerdebug.h"
-#include <MessageViewer/DKIMManagerRules>
-#include <QVBoxLayout>
-#include <QHeaderView>
 #include <KLocalizedString>
-#include <QTreeWidget>
-#include <KTreeWidgetSearchLine>
 #include <KMessageBox>
+#include <KTreeWidgetSearchLine>
+#include <MessageViewer/DKIMManagerRules>
+#include <QHeaderView>
 #include <QMenu>
 #include <QPointer>
+#include <QTreeWidget>
+#include <QVBoxLayout>
 using namespace MessageViewer;
 DKIMManageRulesWidgetItem::DKIMManageRulesWidgetItem(QTreeWidget *parent)
     : QTreeWidgetItem(parent)

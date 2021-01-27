@@ -16,7 +16,8 @@
 
 #include <memory>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MessagePartRendererBase;
 class MessagePartRendererFactoryPrivate;
 /**

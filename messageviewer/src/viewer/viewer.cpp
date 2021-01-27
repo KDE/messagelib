@@ -13,21 +13,21 @@
 //#define KMAIL_READER_HTML_DEBUG 1
 
 #include "viewer.h"
+#include "csshelper.h"
+#include "dkim-verify/dkimwidgetinfo.h"
+#include "settings/messageviewersettings.h"
+#include "viewer/mimeparttree/mimeparttreeview.h"
+#include "viewer/mimeparttree/mimetreemodel.h"
+#include "viewer/webengine/mailwebengineview.h"
 #include "viewer_p.h"
 #include "widgets/configurewidget.h"
-#include "csshelper.h"
-#include "settings/messageviewersettings.h"
-#include "viewer/webengine/mailwebengineview.h"
-#include <WebEngineViewer/WebHitTestResult>
-#include <WebEngineViewer/WebEngineManageScript>
-#include "viewer/mimeparttree/mimetreemodel.h"
-#include "viewer/mimeparttree/mimeparttreeview.h"
 #include "widgets/zoomactionmenu.h"
-#include "dkim-verify/dkimwidgetinfo.h"
 #include <Akonadi/KMime/MessageParts>
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
 #include <QUrl>
+#include <WebEngineViewer/WebEngineManageScript>
+#include <WebEngineViewer/WebHitTestResult>
 
 #include <MailTransportAkonadi/ErrorAttribute>
 
@@ -35,7 +35,8 @@
 
 #include <QAction>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class AbstractMessageLoadedHandler::Private
 {
 public:
@@ -71,27 +72,21 @@ Viewer::Viewer(QWidget *aParent, QWidget *mainWindow, KActionCollection *actionC
 
 Viewer::~Viewer()
 {
-    //the d_ptr is automatically deleted
+    // the d_ptr is automatically deleted
 }
 
 void Viewer::initialize()
 {
-    connect(d_ptr, &ViewerPrivate::displayPopupMenu,
-            this, &Viewer::displayPopupMenu);
-    connect(d_ptr, &ViewerPrivate::popupMenu,
-            this, &Viewer::popupMenu);
-    connect(d_ptr, SIGNAL(urlClicked(Akonadi::Item,QUrl)),
-            SIGNAL(urlClicked(Akonadi::Item,QUrl)));
+    connect(d_ptr, &ViewerPrivate::displayPopupMenu, this, &Viewer::displayPopupMenu);
+    connect(d_ptr, &ViewerPrivate::popupMenu, this, &Viewer::popupMenu);
+    connect(d_ptr, SIGNAL(urlClicked(Akonadi::Item, QUrl)), SIGNAL(urlClicked(Akonadi::Item, QUrl)));
     connect(d_ptr, &ViewerPrivate::requestConfigSync, this, &Viewer::requestConfigSync);
     connect(d_ptr, &ViewerPrivate::makeResourceOnline, this, &Viewer::makeResourceOnline);
-    connect(d_ptr, &ViewerPrivate::showReader,
-            this, &Viewer::showReader);
+    connect(d_ptr, &ViewerPrivate::showReader, this, &Viewer::showReader);
     connect(d_ptr, &ViewerPrivate::showMessage, this, &Viewer::showMessage);
     connect(d_ptr, &ViewerPrivate::replyMessageTo, this, &Viewer::replyMessageTo);
-    connect(d_ptr, &ViewerPrivate::showStatusBarMessage,
-            this, &Viewer::showStatusBarMessage);
-    connect(d_ptr, &ViewerPrivate::itemRemoved,
-            this, &Viewer::itemRemoved);
+    connect(d_ptr, &ViewerPrivate::showStatusBarMessage, this, &Viewer::showStatusBarMessage);
+    connect(d_ptr, &ViewerPrivate::itemRemoved, this, &Viewer::itemRemoved);
     connect(d_ptr, &ViewerPrivate::changeDisplayMail, this, &Viewer::slotChangeDisplayMail);
     connect(d_ptr, &ViewerPrivate::moveMessageToTrash, this, &Viewer::moveMessageToTrash);
     connect(d_ptr, &ViewerPrivate::pageIsScrolledToBottom, this, &Viewer::pageIsScrolledToBottom);
@@ -133,8 +128,8 @@ void Viewer::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMod
     } else {
         Akonadi::ItemFetchJob *job = createFetchJob(item);
         connect(job, &Akonadi::ItemFetchJob::result, [d](KJob *job) {
-                d->itemFetchResult(job);
-            });
+            d->itemFetchResult(job);
+        });
         d->displaySplashPage(i18n("Loading message..."));
     }
 }
@@ -529,7 +524,7 @@ Akonadi::ItemFetchJob *Viewer::createFetchJob(const Akonadi::Item &item)
     job->fetchScope().fetchAllAttributes();
     job->fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
     job->fetchScope().fetchFullPayload(true);
-    job->fetchScope().setFetchRelations(true);   // needed to know if we have notes or not
+    job->fetchScope().setFetchRelations(true); // needed to know if we have notes or not
     job->fetchScope().fetchAttribute<MailTransport::ErrorAttribute>();
     return job;
 }
@@ -682,8 +677,7 @@ QList<QAction *> Viewer::viewerPluginActionList(ViewerPluginInterface::SpecificF
     return d->viewerPluginActionList(features);
 }
 
-QList<QAction *> Viewer::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result)
-const
+QList<QAction *> Viewer::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     Q_D(const Viewer);
     return d->interceptorUrlActions(result);

@@ -78,13 +78,8 @@ void DKIMRule::setListId(const QString &listId)
 
 bool DKIMRule::operator==(const DKIMRule &other) const
 {
-    if (other.domain() == mDomain
-        && other.signedDomainIdentifier() == mSignedDomainIdentifier
-        && other.from() == mFrom
-        && other.listId() == mListId
-        && other.ruleType() == mRuleType
-        && other.enabled() == mEnabled
-        && other.priority() == mPriority) {
+    if (other.domain() == mDomain && other.signedDomainIdentifier() == mSignedDomainIdentifier && other.from() == mFrom && other.listId() == mListId
+        && other.ruleType() == mRuleType && other.enabled() == mEnabled && other.priority() == mPriority) {
         return true;
     }
     return false;
@@ -105,7 +100,7 @@ void DKIMRule::setPriority(int priority)
     mPriority = priority;
 }
 
-QDebug operator <<(QDebug d, const DKIMRule &t)
+QDebug operator<<(QDebug d, const DKIMRule &t)
 {
     d << "mDomain: " << t.domain();
     d << "mSignedDomainIdentifier: " << t.signedDomainIdentifier();

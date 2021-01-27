@@ -14,7 +14,8 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-namespace {
+namespace
+{
 static const char myConfigGroupName[] = "DKIMRuleDialog";
 }
 using namespace MessageViewer;

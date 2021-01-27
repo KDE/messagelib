@@ -5,8 +5,8 @@
 */
 
 #include "urlhashing.h"
-#include <QDebug>
 #include <QCryptographicHash>
+#include <QDebug>
 
 using namespace WebEngineViewer;
 
@@ -33,8 +33,8 @@ QString UrlHashing::canonicalizeUrl(QUrl url)
         path.remove(QLatin1Char('\r'));
         path.remove(QLatin1Char('\n'));
 
-        //In the URL, percent-escape all characters that are <= ASCII 32, >= 127, "#", or "%". The escapes should use uppercase hex characters.
-        //TODO
+        // In the URL, percent-escape all characters that are <= ASCII 32, >= 127, "#", or "%". The escapes should use uppercase hex characters.
+        // TODO
 
         url.setPath(path);
     }
@@ -56,10 +56,11 @@ QString UrlHashing::canonicalizeUrl(QUrl url)
     qDebug() << "AFTER hostname" << hostname;
     mUrl.setHost(hostname);
 #endif
-    QByteArray urlEncoded = url.toEncoded(QUrl::RemoveFragment | QUrl::NormalizePathSegments | QUrl::EncodeUnicode | QUrl::RemoveUserInfo | QUrl::RemovePort | QUrl::RemovePassword);
-    //qDebug() << "BEFORE  urlEncoded" <<urlEncoded;
+    QByteArray urlEncoded = url.toEncoded(QUrl::RemoveFragment | QUrl::NormalizePathSegments | QUrl::EncodeUnicode | QUrl::RemoveUserInfo | QUrl::RemovePort
+                                          | QUrl::RemovePassword);
+    // qDebug() << "BEFORE  urlEncoded" <<urlEncoded;
     urlEncoded.replace(QByteArrayLiteral("%25"), QByteArrayLiteral("%"));
-    //qDebug() << "AFTER  urlEncoded" <<urlEncoded;
+    // qDebug() << "AFTER  urlEncoded" <<urlEncoded;
     return QString::fromLatin1(urlEncoded);
 }
 
@@ -71,7 +72,7 @@ QStringList UrlHashing::generatePathsToCheck(const QString &str, const QString &
     }
     const int strLength(str.length());
     for (int i = 0; i < strLength; ++i) {
-        //We check 5 element => 4 here and host if necessary
+        // We check 5 element => 4 here and host if necessary
         if (pathToCheck.count() == 4) {
             break;
         }
@@ -101,7 +102,7 @@ QStringList UrlHashing::generateHostsToCheck(const QString &str)
     const int strLength(str.length());
     bool lastElement = true;
     for (int i = (strLength - 1); i > 0; --i) {
-        //We need to check just 5 element => 4 splits hosts + current host
+        // We need to check just 5 element => 4 splits hosts + current host
         if (hostToCheck.count() == 4) {
             break;
         }
@@ -133,7 +134,7 @@ QHash<QByteArray, QByteArray> UrlHashing::hashList() const
                 QByteArray baShort = ba;
                 baShort.truncate(4);
                 lst.insert(ba, baShort);
-                //qDebug() << " ba " << ba.toBase64();
+                // qDebug() << " ba " << ba.toBase64();
             }
         }
     }

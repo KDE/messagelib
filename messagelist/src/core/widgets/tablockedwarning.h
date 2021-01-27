@@ -7,12 +7,13 @@
 #ifndef TABLOCKEDWARNING_H
 #define TABLOCKEDWARNING_H
 
-
-#include <KMessageWidget>
 #include "messagelist_private_export.h"
+#include <KMessageWidget>
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class MESSAGELIST_TESTS_EXPORT TabLockedWarning : public KMessageWidget
 {
     Q_OBJECT

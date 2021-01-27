@@ -7,9 +7,10 @@
 #ifndef TESTWEBENGINE_H
 #define TESTWEBENGINE_H
 
-#include <QWidget>
 #include <QWebEngineView>
-namespace WebEngineViewer {
+#include <QWidget>
+namespace WebEngineViewer
+{
 class WebEnginePage;
 class WebHitTestResult;
 }
@@ -19,6 +20,7 @@ class TestWebEngineView : public QWebEngineView
     Q_OBJECT
 public:
     explicit TestWebEngineView(QWidget *parent = nullptr);
+
 protected:
     void contextMenuEvent(QContextMenuEvent *e) override;
 private Q_SLOTS:
@@ -31,6 +33,7 @@ class TestWebEngine : public QWidget
 public:
     explicit TestWebEngine(QWidget *parent = nullptr);
     ~TestWebEngine();
+
 private:
     WebEngineViewer::WebEnginePage *mEnginePage;
 };

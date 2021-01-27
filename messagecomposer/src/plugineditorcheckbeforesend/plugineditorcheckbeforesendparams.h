@@ -10,7 +10,8 @@
 #include "messagecomposer_export.h"
 #include <QString>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class PluginEditorCheckBeforeSendParamsPrivate;
 /**
  * @brief The PluginEditorCheckBeforeSendParams class
@@ -53,8 +54,9 @@ public:
     Q_REQUIRED_RESULT int transportId() const;
     void setTransportId(int id);
 
-    PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
-    Q_REQUIRED_RESULT bool operator ==(const PluginEditorCheckBeforeSendParams &other) const;
+    PluginEditorCheckBeforeSendParams &operator=(const PluginEditorCheckBeforeSendParams &other);
+    Q_REQUIRED_RESULT bool operator==(const PluginEditorCheckBeforeSendParams &other) const;
+
 private:
     PluginEditorCheckBeforeSendParamsPrivate *const d;
 };

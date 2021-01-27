@@ -7,11 +7,12 @@
 #ifndef BACKOFFMODEMANAGER_H
 #define BACKOFFMODEMANAGER_H
 
-#include <QObject>
 #include "webengineviewer_export.h"
-namespace WebEngineViewer {
+#include <QObject>
+namespace WebEngineViewer
+{
 class BackOffModeManagerPrivate;
-//https://developers.google.com/safe-browsing/v4/request-frequency
+// https://developers.google.com/safe-browsing/v4/request-frequency
 /**
  * @brief The BackOffModeManager class
  * @author Laurent Montel <montel@kde.org>

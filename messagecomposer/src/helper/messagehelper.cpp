@@ -6,22 +6,23 @@
 */
 
 #include "messagehelper.h"
-#include "utils/util.h"
 #include "settings/messagecomposersettings.h"
+#include "utils/util.h"
 
 #include "MessageCore/MailingList"
 #include "MessageCore/StringUtil"
 
-#include <KMime/Message>
-#include <kmime/kmime_mdn.h>
-#include <kmime/kmime_dateformatter.h>
-#include <kidentitymanagement/identitymanager.h>
-#include <kidentitymanagement/identity.h>
 #include "messagecomposer_debug.h"
+#include <KMime/Message>
+#include <kidentitymanagement/identity.h>
+#include <kidentitymanagement/identitymanager.h>
+#include <kmime/kmime_dateformatter.h>
+#include <kmime/kmime_mdn.h>
 
 using namespace MessageCore;
 
-namespace MessageHelper {
+namespace MessageHelper
+{
 void initHeader(const KMime::Message::Ptr &message, const KIdentityManagement::IdentityManager *identMan, uint id)
 {
     applyIdentity(message, identMan, id);
@@ -33,7 +34,11 @@ void initHeader(const KMime::Message::Ptr &message, const KIdentityManagement::I
     message->contentType()->setMimeType("text/plain");
 }
 
-void initFromMessage(const KMime::Message::Ptr &msg, const KMime::Message::Ptr &origMsg, KIdentityManagement::IdentityManager *identMan, uint id, bool idHeaders)
+void initFromMessage(const KMime::Message::Ptr &msg,
+                     const KMime::Message::Ptr &origMsg,
+                     KIdentityManagement::IdentityManager *identMan,
+                     uint id,
+                     bool idHeaders)
 {
     if (idHeaders) {
         MessageHelper::initHeader(msg, identMan, id);
@@ -53,8 +58,7 @@ void initFromMessage(const KMime::Message::Ptr &msg, const KMime::Message::Ptr &
 
 void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement::IdentityManager *identMan, uint id)
 {
-    const KIdentityManagement::Identity &ident
-        = identMan->identityForUoidOrDefault(id);
+    const KIdentityManagement::Identity &ident = identMan->identityForUoidOrDefault(id);
 
     if (ident.fullEmailAddr().isEmpty()) {
         message->removeHeader<KMime::Headers::From>();
@@ -131,8 +135,7 @@ KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, cons
 {
     KMime::Types::AddrSpecList result;
     if (auto hrd = msg->headerByType(header.constData())) {
-        KMime::Types::AddressList al
-            = MessageCore::StringUtil::splitAddressField(hrd->asUnicodeString().toUtf8());
+        KMime::Types::AddressList al = MessageCore::StringUtil::splitAddressField(hrd->asUnicodeString().toUtf8());
         KMime::Types::AddressList::const_iterator alend(al.constEnd());
         for (KMime::Types::AddressList::const_iterator ait = al.constBegin(); ait != alend; ++ait) {
             KMime::Types::MailboxList::const_iterator mitEnd((*ait).mailboxList.constEnd());

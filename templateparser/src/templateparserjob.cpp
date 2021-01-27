@@ -5,40 +5,41 @@
 */
 
 #include "templateparserjob.h"
-#include "templateparserjob_p.h"
-#include "templateparserextracthtmlinfo.h"
-#include "globalsettings_templateparser.h"
 #include "customtemplates_kfg.h"
-#include "templatesconfiguration_kfg.h"
+#include "globalsettings_templateparser.h"
+#include "templateparserextracthtmlinfo.h"
+#include "templateparserjob_p.h"
 #include "templatesconfiguration.h"
+#include "templatesconfiguration_kfg.h"
 #include "templatesutil.h"
 #include "templatesutil_p.h"
 
 #include <MessageCore/ImageCollector>
 #include <MessageCore/StringUtil>
 
-#include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/MessagePart>
+#include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
 
+#include "templateparser_debug.h"
 #include <KCharsets>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KProcess>
 #include <KShell>
-#include "templateparser_debug.h"
 
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <QTextCodec>
 #include <QLocale>
 #include <QRegularExpression>
+#include <QTextCodec>
 
-namespace {
+namespace
+{
 Q_DECL_CONSTEXPR inline int pipeTimeout()
 {
     return 15 * 1000;
@@ -141,7 +142,7 @@ int TemplateParserJob::parseQuotes(const QString &prefix, const QString &str, QS
 
     // Also allow the german lower double-quote sign as quote separator, not only
     // the standard ASCII quote ("). This fixes bug 166728.
-    const QList< QChar > quoteChars = {QLatin1Char('"'), 0x201C};
+    const QList<QChar> quoteChars = {QLatin1Char('"'), 0x201C};
 
     QChar prev(QChar::Null);
 
@@ -249,10 +250,10 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
 
     if (mp->isHtml()) {
         htmlElement = d->mOtp->htmlContent();
-        if (plainText.isEmpty()) {   //HTML-only mails
+        if (plainText.isEmpty()) { // HTML-only mails
             plainText = htmlElement;
         }
-    } else {   //plain mails only
+    } else { // plain mails only
         QString htmlReplace = plainText.toHtmlEscaped();
         htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
         htmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
@@ -342,10 +343,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 } else if (d->mDebug) {
-                    KMessageBox::error(
-                        nullptr,
-                        i18nc("@info",
-                              "Cannot insert content from file %1: %2", path, file.errorString()));
+                    KMessageBox::error(nullptr, i18nc("@info", "Cannot insert content from file %1: %2", path, file.errorString()));
                 }
             } else if (cmd.startsWith(QLatin1String("SYSTEM="))) {
                 // insert content of specified file as is
@@ -366,16 +364,14 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += len;
                 const QString pipe_cmd = q;
                 if (d->mOrigMsg) {
-                    const QString plainStr
-                        = pipe(pipe_cmd, plainMessageText(shouldStripSignature(), NoSelectionAllowed));
+                    const QString plainStr = pipe(pipe_cmd, plainMessageText(shouldStripSignature(), NoSelectionAllowed));
                     QString plainQuote = quotedPlainText(plainStr);
                     if (plainQuote.endsWith(QLatin1Char('\n'))) {
                         plainQuote.chop(1);
                     }
                     plainBody.append(plainQuote);
 
-                    const QString htmlStr
-                        = pipe(pipe_cmd, htmlMessageText(shouldStripSignature(), NoSelectionAllowed));
+                    const QString htmlStr = pipe(pipe_cmd, htmlMessageText(shouldStripSignature(), NoSelectionAllowed));
                     const QString htmlQuote = quotedHtmlText(htmlStr);
                     htmlBody.append(htmlQuote);
                 }
@@ -383,15 +379,13 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: QUOTE";
                 i += strlen("QUOTE");
                 if (d->mOrigMsg) {
-                    QString plainQuote
-                        = quotedPlainText(plainMessageText(shouldStripSignature(), SelectionAllowed));
+                    QString plainQuote = quotedPlainText(plainMessageText(shouldStripSignature(), SelectionAllowed));
                     if (plainQuote.endsWith(QLatin1Char('\n'))) {
                         plainQuote.chop(1);
                     }
                     plainBody.append(plainQuote);
 
-                    const QString htmlQuote
-                        = quotedHtmlText(htmlMessageText(shouldStripSignature(), SelectionAllowed));
+                    const QString htmlQuote = quotedHtmlText(htmlMessageText(shouldStripSignature(), SelectionAllowed));
                     htmlBody.append(htmlQuote);
                 }
             } else if (cmd.startsWith(QLatin1String("FORCEDPLAIN"))) {
@@ -407,15 +401,13 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("QHEADERS");
                 if (d->mOrigMsg) {
                     const QString headerStr = QString::fromLatin1(MessageCore::StringUtil::headerAsSendableString(d->mOrigMsg));
-                    QString plainQuote
-                        = quotedPlainText(headerStr);
+                    QString plainQuote = quotedPlainText(headerStr);
                     if (plainQuote.endsWith(QLatin1Char('\n'))) {
                         plainQuote.chop(1);
                     }
                     plainBody.append(plainQuote);
 
-                    const QString htmlQuote
-                        = quotedHtmlText(headerStr);
+                    const QString htmlQuote = quotedHtmlText(headerStr);
                     const QString str = plainTextToHtml(htmlQuote);
                     htmlBody.append(str);
                 }
@@ -436,12 +428,10 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += len;
                 const QString pipe_cmd = q;
                 if (d->mOrigMsg) {
-                    const QString plainStr
-                        = pipe(pipe_cmd, plainMessageText(shouldStripSignature(), NoSelectionAllowed));
+                    const QString plainStr = pipe(pipe_cmd, plainMessageText(shouldStripSignature(), NoSelectionAllowed));
                     plainBody.append(plainStr);
 
-                    const QString htmlStr
-                        = pipe(pipe_cmd, htmlMessageText(shouldStripSignature(), NoSelectionAllowed));
+                    const QString htmlStr = pipe(pipe_cmd, htmlMessageText(shouldStripSignature(), NoSelectionAllowed));
                     htmlBody.append(htmlStr);
                 }
             } else if (cmd.startsWith(QLatin1String("MSGPIPE="))) {
@@ -534,7 +524,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                         htmlBody.append(str);
                     }
                     if (!cc.isEmpty()) {
-                        const QString ccLine = i18nc("@item:intext email CC", "CC:") + QLatin1Char(' ') +  cc;
+                        const QString ccLine = i18nc("@item:intext email CC", "CC:") + QLatin1Char(' ') + cc;
                         plainBody.append(ccLine);
                         const QString str = plainTextToHtml(ccLine);
                         htmlBody.append(str);
@@ -692,7 +682,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     // something wrong
                     i += strlen("HEADER( ");
                 } else {
-                    i += match.capturedLength(0); //length of HEADER(<space> + <space>)
+                    i += match.capturedLength(0); // length of HEADER(<space> + <space>)
                     const QString hdr = match.captured(1).trimmed();
                     QString str;
                     if (auto hrdMsgOrigin = d->mOrigMsg->headerByType(hdr.toLocal8Bit().constData())) {
@@ -1018,17 +1008,17 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 auto header = new KMime::Headers::Generic("X-KMail-CursorPos");
                 header->fromUnicodeString(QString::number(plainBody.length()), "utf-8");
                 /* if template is:
-                *  FOOBAR
-                *  %CURSOR
-                *
-                * Make sure there is an empty line for the cursor otherwise it will be placed at the end of FOOBAR
-                */
-                if (oldI > 0 && tmpl[ oldI - 1 ] == QLatin1Char('\n') && i == tmpl_len - 1) {
+                 *  FOOBAR
+                 *  %CURSOR
+                 *
+                 * Make sure there is an empty line for the cursor otherwise it will be placed at the end of FOOBAR
+                 */
+                if (oldI > 0 && tmpl[oldI - 1] == QLatin1Char('\n') && i == tmpl_len - 1) {
                     plainBody.append(QLatin1Char('\n'));
                 }
                 d->mMsg->setHeader(header);
                 d->mForceCursorPosition = true;
-                //FIXME HTML part for header remaining
+                // FIXME HTML part for header remaining
             } else if (cmd.startsWith(QLatin1String("SIGNATURE"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: SIGNATURE";
                 i += strlen("SIGNATURE");
@@ -1042,8 +1032,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
         } else if (dnl && (c == QLatin1Char('\n') || c == QLatin1Char('\r'))) {
             // skip
             if ((tmpl.size() > i + 1)
-                && ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r'))
-                    || (c == QLatin1Char('\r') && tmpl[i + 1] == QLatin1Char('\n')))) {
+                && ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r')) || (c == QLatin1Char('\r') && tmpl[i + 1] == QLatin1Char('\n')))) {
                 // skip one more
                 i += 1;
             }
@@ -1054,8 +1043,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 htmlBody.append(QLatin1String("<br />"));
                 htmlBody.append(c);
                 if (tmpl.size() > i + 1
-                    && ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r'))
-                        || (c == QLatin1Char('\r') && tmpl[i + 1] == QLatin1Char('\n')))) {
+                    && ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r')) || (c == QLatin1Char('\r') && tmpl[i + 1] == QLatin1Char('\n')))) {
                     htmlBody.append(tmpl[i + 1]);
                     plainBody.append(tmpl[i + 1]);
                     i += 1;
@@ -1069,10 +1057,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     // there is no use of FORCED command but a configure setting has ReplyUsingHtml disabled,
     // OR the original mail has no HTML part.
     const KMime::Content *content = d->mOrigMsg->mainBodyPart("text/html");
-    if (d->mQuotes == ReplyAsPlain
-        || (!d->mReplyAsHtml && TemplateParserSettings::self()->replyUsingVisualFormat())
-        || !TemplateParserSettings::self()->replyUsingVisualFormat()
-        || (!content || !content->hasContent())) {
+    if (d->mQuotes == ReplyAsPlain || (!d->mReplyAsHtml && TemplateParserSettings::self()->replyUsingVisualFormat())
+        || !TemplateParserSettings::self()->replyUsingVisualFormat() || (!content || !content->hasContent())) {
         htmlBody.clear();
     } else {
         makeValidHtml(htmlBody);
@@ -1088,18 +1074,15 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
 
 QString TemplateParserJob::getPlainSignature() const
 {
-    const KIdentityManagement::Identity &identity
-        = d->m_identityManager->identityForUoid(d->mIdentity);
+    const KIdentityManagement::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
 
     if (identity.isNull()) {
         return QString();
     }
 
-    KIdentityManagement::Signature signature
-        = const_cast<KIdentityManagement::Identity &>(identity).signature();
+    KIdentityManagement::Signature signature = const_cast<KIdentityManagement::Identity &>(identity).signature();
 
-    if (signature.type() == KIdentityManagement::Signature::Inlined
-        && signature.isInlinedHtml()) {
+    if (signature.type() == KIdentityManagement::Signature::Inlined && signature.isInlinedHtml()) {
         return signature.toPlainText();
     } else {
         return signature.rawText();
@@ -1111,14 +1094,12 @@ QString TemplateParserJob::getPlainSignature() const
 // There should be no two signatures.
 QString TemplateParserJob::getHtmlSignature() const
 {
-    const KIdentityManagement::Identity &identity
-        = d->m_identityManager->identityForUoid(d->mIdentity);
+    const KIdentityManagement::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
     if (identity.isNull()) {
         return QString();
     }
 
-    KIdentityManagement::Signature signature
-        = const_cast<KIdentityManagement::Identity &>(identity).signature();
+    KIdentityManagement::Signature signature = const_cast<KIdentityManagement::Identity &>(identity).signature();
 
     if (!signature.isInlinedHtml()) {
         signature = signature.rawText().toHtmlEscaped();
@@ -1150,11 +1131,8 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
 
     d->mMsg->contentType()->clear(); // to get rid of old boundary
 
-    //const QByteArray boundary = KMime::multiPartBoundary();
-    KMime::Content *const mainTextPart
-        = htmlBody.isEmpty()
-          ? createPlainPartContent(plainBody)
-          : createMultipartAlternativeContent(plainBody, htmlBody);
+    // const QByteArray boundary = KMime::multiPartBoundary();
+    KMime::Content *const mainTextPart = htmlBody.isEmpty() ? createPlainPartContent(plainBody) : createMultipartAlternativeContent(plainBody, htmlBody);
     mainTextPart->assemble();
 
     KMime::Content *textPart = mainTextPart;
@@ -1198,10 +1176,8 @@ KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Con
         // If the content type has no name or filename parameter, add one, since otherwise the name
         // would be empty in the attachment view of the composer, which looks confusing
         if (auto ct = attachment->contentType(false)) {
-            if (!ct->hasParameter(QStringLiteral("name"))
-                && !ct->hasParameter(QStringLiteral("filename"))) {
-                ct->setParameter(
-                    QStringLiteral("name"), i18nc("@item:intext", "Attachment %1", attachmentNumber));
+            if (!ct->hasParameter(QStringLiteral("name")) && !ct->hasParameter(QStringLiteral("filename"))) {
+                ct->setParameter(QStringLiteral("name"), i18nc("@item:intext", "Attachment %1", attachmentNumber));
             }
         }
         ++attachmentNumber;
@@ -1242,7 +1218,7 @@ KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QStri
     auto multipartAlternative = new KMime::Content(d->mMsg.data());
     multipartAlternative->contentType()->setMimeType("multipart/alternative");
     const QByteArray boundary = KMime::multiPartBoundary();
-    multipartAlternative->contentType(false)->setBoundary(boundary); //Already created
+    multipartAlternative->contentType(false)->setBoundary(boundary); // Already created
 
     KMime::Content *textPart = createPlainPartContent(plainBody);
     multipartAlternative->addContent(textPart);
@@ -1250,7 +1226,7 @@ KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QStri
     auto htmlPart = new KMime::Content(d->mMsg.data());
     htmlPart->contentType(true)->setMimeType("text/html");
     QTextCodec *charset = selectCharset(d->mCharsets, htmlBody);
-    htmlPart->contentType(false)->setCharset(charset->name()); //Already created
+    htmlPart->contentType(false)->setCharset(charset->name()); // Already created
     htmlPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
     htmlPart->fromUnicodeString(htmlBody);
     multipartAlternative->addContent(htmlPart);
@@ -1278,10 +1254,10 @@ QString TemplateParserJob::findTemplate()
     QString tmpl;
 
     qCDebug(TEMPLATEPARSER_LOG) << "Folder identify found:" << d->mFolder;
-    if (d->mFolder >= 0) {   // only if a folder was found
+    if (d->mFolder >= 0) { // only if a folder was found
         QString fid = QString::number(d->mFolder);
         Templates fconf(fid);
-        if (fconf.useCustomTemplates()) {     // does folder use custom templates?
+        if (fconf.useCustomTemplates()) { // does folder use custom templates?
             switch (d->mMode) {
             case NewMessage:
                 tmpl = fconf.templateNewMessage();
@@ -1301,12 +1277,12 @@ QString TemplateParserJob::findTemplate()
             }
             d->mQuoteString = fconf.quoteString();
             if (!tmpl.isEmpty()) {
-                return tmpl;  // use folder-specific template
+                return tmpl; // use folder-specific template
             }
         }
     }
 
-    if (!d->mIdentity) {   // find identity message belongs to
+    if (!d->mIdentity) { // find identity message belongs to
         d->mIdentity = identityUoid(d->mMsg);
         if (!d->mIdentity && d->mOrigMsg) {
             d->mIdentity = identityUoid(d->mOrigMsg);
@@ -1320,13 +1296,13 @@ QString TemplateParserJob::findTemplate()
 
     QString iid;
     if (d->mIdentity) {
-        iid = TemplatesConfiguration::configIdString(d->mIdentity);          // templates ID for that identity
+        iid = TemplatesConfiguration::configIdString(d->mIdentity); // templates ID for that identity
     } else {
         iid = QStringLiteral("IDENTITY_NO_IDENTITY"); // templates ID for no identity
     }
 
     Templates iconf(iid);
-    if (iconf.useCustomTemplates()) {   // does identity use custom templates?
+    if (iconf.useCustomTemplates()) { // does identity use custom templates?
         switch (d->mMode) {
         case NewMessage:
             tmpl = iconf.templateNewMessage();
@@ -1346,11 +1322,11 @@ QString TemplateParserJob::findTemplate()
         }
         d->mQuoteString = iconf.quoteString();
         if (!tmpl.isEmpty()) {
-            return tmpl;  // use identity-specific template
+            return tmpl; // use identity-specific template
         }
     }
 
-    switch (d->mMode) {  // use the global template
+    switch (d->mMode) { // use the global template
     case NewMessage:
         tmpl = TemplateParserSettings::self()->templateNewMessage();
         break;
@@ -1410,10 +1386,7 @@ QString TemplateParserJob::pipe(const QString &cmd, const QString &buf)
     }
 
     if (!success && d->mDebug) {
-        KMessageBox::error(
-            nullptr,
-            xi18nc("@info",
-                   "Pipe command <command>%1</command> failed.", cmd));
+        KMessageBox::error(nullptr, xi18nc("@info", "Pipe command <command>%1</command> failed.", cmd));
     }
 
     if (success) {
@@ -1453,21 +1426,21 @@ QString TemplateParserJob::plainMessageText(bool aStripSignature, AllowSelection
 QString TemplateParserJob::htmlMessageText(bool aStripSignature, AllowSelection isSelectionAllowed)
 {
     if (!d->mSelection.isEmpty() && (isSelectionAllowed == SelectionAllowed)) {
-        //TODO implement d->mSelection for HTML
+        // TODO implement d->mSelection for HTML
         return d->mSelection;
     }
     d->mHeadElement = d->mExtractHtmlInfoResult.mHeaderElement;
     const QString bodyElement = d->mExtractHtmlInfoResult.mBodyElement;
     if (!bodyElement.isEmpty()) {
         if (aStripSignature) {
-            //FIXME strip signature works partially for HTML mails
+            // FIXME strip signature works partially for HTML mails
             return MessageCore::StringUtil::stripSignature(bodyElement);
         }
         return bodyElement;
     }
 
     if (aStripSignature) {
-        //FIXME strip signature works partially for HTML mails
+        // FIXME strip signature works partially for HTML mails
         return MessageCore::StringUtil::stripSignature(d->mExtractHtmlInfoResult.mHtmlElement);
     }
     return d->mExtractHtmlInfoResult.mHtmlElement;
@@ -1477,8 +1450,7 @@ QString TemplateParserJob::quotedPlainText(const QString &selection) const
 {
     QString content = TemplateParser::Util::removeSpaceAtBegin(selection);
 
-    const QString indentStr
-        = MessageCore::StringUtil::formatQuotePrefix(d->mQuoteString, d->mOrigMsg->from()->displayString());
+    const QString indentStr = MessageCore::StringUtil::formatQuotePrefix(d->mQuoteString, d->mOrigMsg->from()->displayString());
     if (TemplateParserSettings::self()->smartQuote() && d->mWrap) {
         content = MessageCore::StringUtil::smartQuote(content, d->mColWrap - indentStr.length());
     }
@@ -1492,12 +1464,12 @@ QString TemplateParserJob::quotedPlainText(const QString &selection) const
 QString TemplateParserJob::quotedHtmlText(const QString &selection) const
 {
     QString content = selection;
-    //TODO 1) look for all the variations of <br>  and remove the blank lines
-    //2) implement vertical bar for quoted HTML mail.
-    //3) After vertical bar is implemented, If a user wants to edit quoted message,
+    // TODO 1) look for all the variations of <br>  and remove the blank lines
+    // 2) implement vertical bar for quoted HTML mail.
+    // 3) After vertical bar is implemented, If a user wants to edit quoted message,
     // then the <blockquote> tags below should open and close as when required.
 
-    //Add blockquote tag, so that quoted message can be differentiated from normal message
+    // Add blockquote tag, so that quoted message can be differentiated from normal message
     content = QLatin1String("<blockquote>") + content + QLatin1String("</blockquote>");
     return content;
 }
@@ -1512,8 +1484,7 @@ uint TemplateParserJob::identityUoid(const KMime::Message::Ptr &msg) const
     unsigned int id = idString.toUInt(&ok);
 
     if (!ok || id == 0) {
-        id = d->m_identityManager->identityForAddress(
-            msg->to()->asUnicodeString() + QLatin1String(", ") + msg->cc()->asUnicodeString()).uoid();
+        id = d->m_identityManager->identityForAddress(msg->to()->asUnicodeString() + QLatin1String(", ") + msg->cc()->asUnicodeString()).uoid();
     }
 
     return id;
@@ -1521,15 +1492,13 @@ uint TemplateParserJob::identityUoid(const KMime::Message::Ptr &msg) const
 
 bool TemplateParserJob::isHtmlSignature() const
 {
-    const KIdentityManagement::Identity &identity
-        = d->m_identityManager->identityForUoid(d->mIdentity);
+    const KIdentityManagement::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
 
     if (identity.isNull()) {
         return false;
     }
 
-    const KIdentityManagement::Signature signature
-        = const_cast<KIdentityManagement::Identity &>(identity).signature();
+    const KIdentityManagement::Signature signature = const_cast<KIdentityManagement::Identity &>(identity).signature();
 
     return signature.isInlinedHtml();
 }

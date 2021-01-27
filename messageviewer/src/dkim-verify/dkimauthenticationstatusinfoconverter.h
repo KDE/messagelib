@@ -13,7 +13,8 @@
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_private_export.h"
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT DKIMAuthenticationStatusInfoConverter
 {
 public:

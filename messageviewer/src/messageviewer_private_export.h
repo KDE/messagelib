@@ -11,11 +11,11 @@
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-    #ifndef MESSAGEVIEWER_TESTS_EXPORT
-        #define MESSAGEVIEWER_TESTS_EXPORT MESSAGEVIEWER_EXPORT
-    # endif
+#ifndef MESSAGEVIEWER_TESTS_EXPORT
+#define MESSAGEVIEWER_TESTS_EXPORT MESSAGEVIEWER_EXPORT
+#endif
 #else /* not compiling tests */
-    #define MESSAGEVIEWER_TESTS_EXPORT
+#define MESSAGEVIEWER_TESTS_EXPORT
 #endif
 
 #endif

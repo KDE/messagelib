@@ -7,12 +7,14 @@
 #ifndef MODIFYMESSAGEDISPLAYFORMATJOB_H
 #define MODIFYMESSAGEDISPLAYFORMATJOB_H
 
-#include <QObject>
 #include "viewer/viewer_p.h"
-namespace Akonadi {
+#include <QObject>
+namespace Akonadi
+{
 class Session;
 }
-namespace MessageViewer {
+namespace MessageViewer
+{
 class ModifyMessageDisplayFormatJob : public QObject
 {
     Q_OBJECT

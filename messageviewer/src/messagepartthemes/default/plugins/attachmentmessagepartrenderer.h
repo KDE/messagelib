@@ -9,7 +9,8 @@
 
 #include "../messagepartrendererbase.h"
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class AttachmentMessagePartRenderer : public MessagePartRendererBase
 {
 public:

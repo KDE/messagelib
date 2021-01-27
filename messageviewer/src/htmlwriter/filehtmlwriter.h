@@ -15,7 +15,8 @@
 
 #include <QFile>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The FileHtmlWriter class
  */

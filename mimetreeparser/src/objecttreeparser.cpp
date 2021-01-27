@@ -15,8 +15,8 @@
 #include "objecttreeparser.h"
 
 #include "bodypartformatterfactory.h"
-#include "nodehelper.h"
 #include "messagepart.h"
+#include "nodehelper.h"
 #include "partnodebodypart.h"
 
 #include "mimetreeparser_debug.h"
@@ -260,8 +260,7 @@ void ProcessResult::setNeverDisplayInline(bool display)
 
 void ProcessResult::adjustCryptoStatesOfNode(const KMime::Content *node) const
 {
-    if ((inlineSignatureState() != KMMsgNotSigned)
-        || (inlineEncryptionState() != KMMsgNotEncrypted)) {
+    if ((inlineSignatureState() != KMMsgNotSigned) || (inlineEncryptionState() != KMMsgNotEncrypted)) {
         mNodeHelper->setSignatureState(node, inlineSignatureState());
         mNodeHelper->setEncryptionState(node, inlineEncryptionState());
     }

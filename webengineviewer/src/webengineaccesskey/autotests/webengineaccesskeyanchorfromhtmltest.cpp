@@ -5,14 +5,13 @@
 */
 #include "webengineaccesskeyanchorfromhtmltest.h"
 #include "../webengineaccesskeyutils.h"
-#include <WebEngineViewer/WebEngineManageScript>
-#include <QTest>
 #include <QHBoxLayout>
-#include <QWebEngineView>
 #include <QSignalSpy>
+#include <QTest>
+#include <QWebEngineView>
+#include <WebEngineViewer/WebEngineManageScript>
 
-template<typename Arg, typename R, typename C>
-struct InvokeWrapper {
+template<typename Arg, typename R, typename C> struct InvokeWrapper {
     R *receiver;
     void (C::*memberFunction)(Arg);
     void operator()(Arg result)
@@ -71,7 +70,7 @@ Q_DECLARE_METATYPE(QVector<WebEngineViewer::WebEngineAccessKeyAnchor>)
 WebEngineAccessKeyAnchorFromHtmlTest::WebEngineAccessKeyAnchorFromHtmlTest(QObject *parent)
     : QObject(parent)
 {
-    qRegisterMetaType<QVector<WebEngineViewer::WebEngineAccessKeyAnchor> >();
+    qRegisterMetaType<QVector<WebEngineViewer::WebEngineAccessKeyAnchor>>();
 }
 
 void WebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAnchor()
@@ -81,7 +80,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAn
     w.setHtml(QStringLiteral("<body>foo</body>"));
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
-    const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor> >();
+    const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor>>();
     QCOMPARE(resultLst.count(), 0);
 }
 
@@ -92,7 +91,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnOneAnchor()
     w.setHtml(QStringLiteral("<body>foo<a href=\"http://www.kde.org\">foo</a></body>"));
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
-    const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor> >();
+    const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor>>();
     QCOMPARE(resultLst.count(), 1);
 }
 
@@ -103,7 +102,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnTwoAnchor()
     w.setHtml(QStringLiteral("<body>foo<a href=\"http://www.kde.org\">foo</a><a href=\"http://www.kde.vv\">foo</a></body>"));
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
-    const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor> >();
+    const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor>>();
     QCOMPARE(resultLst.count(), 2);
 }
 

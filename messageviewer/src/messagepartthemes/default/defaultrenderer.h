@@ -11,16 +11,19 @@
 
 #include <functional>
 
-namespace KMime {
+namespace KMime
+{
 class Message;
 }
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class DefaultRendererPrivate;
 class HtmlWriter;
 class AttachmentStrategy;
@@ -43,6 +46,7 @@ public:
     void setCreateMessageHeader(const std::function<QString(KMime::Message *)> &);
     void render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *writer);
     void setShowEncryptionDetails(bool showEncryptionDetails);
+
 private:
     DefaultRendererPrivate *const d;
 };

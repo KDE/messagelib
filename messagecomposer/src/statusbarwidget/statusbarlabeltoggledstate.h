@@ -7,9 +7,10 @@
 #ifndef STATUSBARLABELTOGGLEDSTATE_H
 #define STATUSBARLABELTOGGLEDSTATE_H
 
-#include <QLabel>
 #include "messagecomposer_export.h"
-namespace MessageComposer {
+#include <QLabel>
+namespace MessageComposer
+{
 /**
  * @brief The StatusBarLabelToggledState class
  * @author Laurent Montel <montel@kde.org>

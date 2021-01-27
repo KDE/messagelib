@@ -6,10 +6,10 @@
 
 #include "templatescommandmenu.h"
 
-#include <QAction>
-#include <KActionMenu>
 #include "templateparser_debug.h"
+#include <KActionMenu>
 #include <KLocalizedString>
+#include <QAction>
 
 #undef I18N_NOOP
 #define I18N_NOOP(t) nullptr, t
@@ -27,366 +27,156 @@ struct InsertCommand {
     }
 };
 
-static const InsertCommand originalCommands[] = {
-    {
-        I18N_NOOP("Quoted Message Text"),
-        TemplatesCommandMenu::CQuote
-    },
+static const InsertCommand originalCommands[] = {{I18N_NOOP("Quoted Message Text"), TemplatesCommandMenu::CQuote},
 
-    {
-        I18N_NOOP("Message Text as Is"),
-        TemplatesCommandMenu::CText
-    },
+                                                 {I18N_NOOP("Message Text as Is"), TemplatesCommandMenu::CText},
 
-    {
-        I18N_NOOP("Message Id"),
-        TemplatesCommandMenu::COMsgId
-    },
+                                                 {I18N_NOOP("Message Id"), TemplatesCommandMenu::COMsgId},
 
-    {
-        I18N_NOOP("Date"),
-        TemplatesCommandMenu::CODate
-    },
+                                                 {I18N_NOOP("Date"), TemplatesCommandMenu::CODate},
 
-    {
-        I18N_NOOP("Date in Short Format"),
-        TemplatesCommandMenu::CODateShort
-    },
+                                                 {I18N_NOOP("Date in Short Format"), TemplatesCommandMenu::CODateShort},
 
-    {
-        I18N_NOOP("Date in C Locale"),
-        TemplatesCommandMenu::CODateEn
-    },
+                                                 {I18N_NOOP("Date in C Locale"), TemplatesCommandMenu::CODateEn},
 
-    {
-        I18N_NOOP("Day of Week"),
-        TemplatesCommandMenu::CODow
-    },
+                                                 {I18N_NOOP("Day of Week"), TemplatesCommandMenu::CODow},
 
-    {
-        I18N_NOOP("Time"),
-        TemplatesCommandMenu::COTime
-    },
+                                                 {I18N_NOOP("Time"), TemplatesCommandMenu::COTime},
 
-    {
-        I18N_NOOP("Time in Long Format"),
-        TemplatesCommandMenu::COTimeLong
-    },
+                                                 {I18N_NOOP("Time in Long Format"), TemplatesCommandMenu::COTimeLong},
 
-    {
-        I18N_NOOP("Time in C Locale"),
-        TemplatesCommandMenu::COTimeLongEn
-    },
+                                                 {I18N_NOOP("Time in C Locale"), TemplatesCommandMenu::COTimeLongEn},
 
-    {
-        I18N_NOOP("To Field Address"),
-        TemplatesCommandMenu::COToAddr
-    },
+                                                 {I18N_NOOP("To Field Address"), TemplatesCommandMenu::COToAddr},
 
-    {
-        I18N_NOOP("To Field Name"),
-        TemplatesCommandMenu::COToName
-    },
+                                                 {I18N_NOOP("To Field Name"), TemplatesCommandMenu::COToName},
 
-    {
-        I18N_NOOP("To Field First Name"),
-        TemplatesCommandMenu::COToFName
-    },
+                                                 {I18N_NOOP("To Field First Name"), TemplatesCommandMenu::COToFName},
 
-    {
-        I18N_NOOP("To Field Last Name"),
-        TemplatesCommandMenu::COToLName
-    },
+                                                 {I18N_NOOP("To Field Last Name"), TemplatesCommandMenu::COToLName},
 
-    {
-        I18N_NOOP("CC Field Address"),
-        TemplatesCommandMenu::COCCAddr
-    },
+                                                 {I18N_NOOP("CC Field Address"), TemplatesCommandMenu::COCCAddr},
 
-    {
-        I18N_NOOP("CC Field Name"),
-        TemplatesCommandMenu::COCCName
-    },
+                                                 {I18N_NOOP("CC Field Name"), TemplatesCommandMenu::COCCName},
 
-    {
-        I18N_NOOP("CC Field First Name"),
-        TemplatesCommandMenu::COCCFName
-    },
+                                                 {I18N_NOOP("CC Field First Name"), TemplatesCommandMenu::COCCFName},
 
-    {
-        I18N_NOOP("CC Field Last Name"),
-        TemplatesCommandMenu::COCCLName
-    },
+                                                 {I18N_NOOP("CC Field Last Name"), TemplatesCommandMenu::COCCLName},
 
-    {
-        I18N_NOOP("From Field Address"),
-        TemplatesCommandMenu::COFromAddr
-    },
+                                                 {I18N_NOOP("From Field Address"), TemplatesCommandMenu::COFromAddr},
 
-    {
-        I18N_NOOP("From Field Name"),
-        TemplatesCommandMenu::COFromName
-    },
+                                                 {I18N_NOOP("From Field Name"), TemplatesCommandMenu::COFromName},
 
-    {
-        I18N_NOOP("From Field First Name"),
-        TemplatesCommandMenu::COFromFName
-    },
+                                                 {I18N_NOOP("From Field First Name"), TemplatesCommandMenu::COFromFName},
 
-    {
-        I18N_NOOP("From Field Last Name"),
-        TemplatesCommandMenu::COFromLName
-    },
+                                                 {I18N_NOOP("From Field Last Name"), TemplatesCommandMenu::COFromLName},
 
-    {
-        I18N_NOOP("Addresses of all recipients"),
-        TemplatesCommandMenu::COAddresseesAddr
-    },
+                                                 {I18N_NOOP("Addresses of all recipients"), TemplatesCommandMenu::COAddresseesAddr},
 
-    {
-        I18NC_NOOP("Template value for subject of the message", "Subject"),
-        TemplatesCommandMenu::COFullSubject
-    },
+                                                 {I18NC_NOOP("Template value for subject of the message", "Subject"), TemplatesCommandMenu::COFullSubject},
 
-    {
-        I18N_NOOP("Quoted Headers"),
-        TemplatesCommandMenu::CQHeaders
-    },
+                                                 {I18N_NOOP("Quoted Headers"), TemplatesCommandMenu::CQHeaders},
 
-    {
-        I18N_NOOP("Headers as Is"),
-        TemplatesCommandMenu::CHeaders
-    },
+                                                 {I18N_NOOP("Headers as Is"), TemplatesCommandMenu::CHeaders},
 
-    {
-        I18N_NOOP("Header Content"),
-        TemplatesCommandMenu::COHeader
-    },
+                                                 {I18N_NOOP("Header Content"), TemplatesCommandMenu::COHeader},
 
-    {
-        I18N_NOOP("Reply as Quoted Plain Text"),
-        TemplatesCommandMenu::CQuotePlain
-    },
+                                                 {I18N_NOOP("Reply as Quoted Plain Text"), TemplatesCommandMenu::CQuotePlain},
 
-    {
-        I18N_NOOP("Reply as Quoted HTML Text"),
-        TemplatesCommandMenu::CQuoteHtml
-    }
-};
-static const int originalCommandsCount
-    = sizeof(originalCommands) / sizeof(*originalCommands);
+                                                 {I18N_NOOP("Reply as Quoted HTML Text"), TemplatesCommandMenu::CQuoteHtml}};
+static const int originalCommandsCount = sizeof(originalCommands) / sizeof(*originalCommands);
 
-static const InsertCommand currentCommands[] = {
-    {
-        I18N_NOOP("Date"),
-        TemplatesCommandMenu::CDate
-    },
+static const InsertCommand currentCommands[] = {{I18N_NOOP("Date"), TemplatesCommandMenu::CDate},
 
-    {
-        I18N_NOOP("Date in Short Format"),
-        TemplatesCommandMenu::CDateShort
-    },
+                                                {I18N_NOOP("Date in Short Format"), TemplatesCommandMenu::CDateShort},
 
-    {
-        I18N_NOOP("Date in C Locale"),
-        TemplatesCommandMenu::CDateEn
-    },
+                                                {I18N_NOOP("Date in C Locale"), TemplatesCommandMenu::CDateEn},
 
-    {
-        I18N_NOOP("Day of Week"),
-        TemplatesCommandMenu::CDow
-    },
+                                                {I18N_NOOP("Day of Week"), TemplatesCommandMenu::CDow},
 
-    {
-        I18N_NOOP("Time"),
-        TemplatesCommandMenu::CTime
-    },
+                                                {I18N_NOOP("Time"), TemplatesCommandMenu::CTime},
 
-    {
-        I18N_NOOP("Time in Long Format"),
-        TemplatesCommandMenu::CTimeLong
-    },
+                                                {I18N_NOOP("Time in Long Format"), TemplatesCommandMenu::CTimeLong},
 
-    {
-        I18N_NOOP("Time in C Locale"),
-        TemplatesCommandMenu::CTimeLongEn
-    },
-    {
-        I18N_NOOP("To Field Address"),
-        TemplatesCommandMenu::CToAddr
-    },
+                                                {I18N_NOOP("Time in C Locale"), TemplatesCommandMenu::CTimeLongEn},
+                                                {I18N_NOOP("To Field Address"), TemplatesCommandMenu::CToAddr},
 
-    {
-        I18N_NOOP("To Field Name"),
-        TemplatesCommandMenu::CToName
-    },
+                                                {I18N_NOOP("To Field Name"), TemplatesCommandMenu::CToName},
 
-    {
-        I18N_NOOP("To Field First Name"),
-        TemplatesCommandMenu::CToFName
-    },
+                                                {I18N_NOOP("To Field First Name"), TemplatesCommandMenu::CToFName},
 
-    {
-        I18N_NOOP("To Field Last Name"),
-        TemplatesCommandMenu::CToLName
-    },
+                                                {I18N_NOOP("To Field Last Name"), TemplatesCommandMenu::CToLName},
 
-    {
-        I18N_NOOP("CC Field Address"),
-        TemplatesCommandMenu::CCCAddr
-    },
+                                                {I18N_NOOP("CC Field Address"), TemplatesCommandMenu::CCCAddr},
 
-    {
-        I18N_NOOP("CC Field Name"),
-        TemplatesCommandMenu::CCCName
-    },
+                                                {I18N_NOOP("CC Field Name"), TemplatesCommandMenu::CCCName},
 
-    {
-        I18N_NOOP("CC Field First Name"),
-        TemplatesCommandMenu::CCCFName
-    },
+                                                {I18N_NOOP("CC Field First Name"), TemplatesCommandMenu::CCCFName},
 
-    {
-        I18N_NOOP("CC Field Last Name"),
-        TemplatesCommandMenu::CCCLName
-    },
+                                                {I18N_NOOP("CC Field Last Name"), TemplatesCommandMenu::CCCLName},
 
-    {
-        I18N_NOOP("From Field Address"),
-        TemplatesCommandMenu::CFromAddr
-    },
+                                                {I18N_NOOP("From Field Address"), TemplatesCommandMenu::CFromAddr},
 
-    {
-        I18N_NOOP("From field Name"),
-        TemplatesCommandMenu::CFromName
-    },
+                                                {I18N_NOOP("From field Name"), TemplatesCommandMenu::CFromName},
 
-    {
-        I18N_NOOP("From Field First Name"),
-        TemplatesCommandMenu::CFromFName
-    },
+                                                {I18N_NOOP("From Field First Name"), TemplatesCommandMenu::CFromFName},
 
-    {
-        I18N_NOOP("From Field Last Name"),
-        TemplatesCommandMenu::CFromLName
-    },
+                                                {I18N_NOOP("From Field Last Name"), TemplatesCommandMenu::CFromLName},
 
-    {
-        I18NC_NOOP("Template subject command.", "Subject"),
-        TemplatesCommandMenu::CFullSubject
-    },
+                                                {I18NC_NOOP("Template subject command.", "Subject"), TemplatesCommandMenu::CFullSubject},
 
-    {
-        I18N_NOOP("Header Content"),
-        TemplatesCommandMenu::CHeader
-    }
-};
+                                                {I18N_NOOP("Header Content"), TemplatesCommandMenu::CHeader}};
 static const int currentCommandsCount = sizeof(currentCommands) / sizeof(*currentCommands);
 
-static const InsertCommand extCommands[] = {
-    {
-        I18N_NOOP("Pipe Original Message Body and Insert Result as Quoted Text"),
-        TemplatesCommandMenu::CQuotePipe
-    },
+static const InsertCommand extCommands[] = {{I18N_NOOP("Pipe Original Message Body and Insert Result as Quoted Text"), TemplatesCommandMenu::CQuotePipe},
 
-    {
-        I18N_NOOP("Pipe Original Message Body and Insert Result as Is"),
-        TemplatesCommandMenu::CTextPipe
-    },
+                                            {I18N_NOOP("Pipe Original Message Body and Insert Result as Is"), TemplatesCommandMenu::CTextPipe},
 
-    {
-        I18N_NOOP("Pipe Original Message with Headers and Insert Result as Is"),
-        TemplatesCommandMenu::CMsgPipe
-    },
+                                            {I18N_NOOP("Pipe Original Message with Headers and Insert Result as Is"), TemplatesCommandMenu::CMsgPipe},
 
-    {
-        I18N_NOOP("Pipe Current Message Body and Insert Result as Is"),
-        TemplatesCommandMenu::CBodyPipe
-    },
+                                            {I18N_NOOP("Pipe Current Message Body and Insert Result as Is"), TemplatesCommandMenu::CBodyPipe},
 
-    {
-        I18N_NOOP("Pipe Current Message Body and Replace with Result"),
-        TemplatesCommandMenu::CClearPipe
-    }
-};
+                                            {I18N_NOOP("Pipe Current Message Body and Replace with Result"), TemplatesCommandMenu::CClearPipe}};
 
-static const int extCommandsCount
-    = sizeof(extCommands) / sizeof(*extCommands);
+static const int extCommandsCount = sizeof(extCommands) / sizeof(*extCommands);
 
 static const InsertCommand miscCommands[] = {
-    {
-        I18NC_NOOP("Inserts user signature, also known as footer, into message", "Signature"),
-        TemplatesCommandMenu::CSignature
-    },
+    {I18NC_NOOP("Inserts user signature, also known as footer, into message", "Signature"), TemplatesCommandMenu::CSignature},
 
-    {
-        I18N_NOOP("Insert File Content"),
-        TemplatesCommandMenu::CInsert
-    },
+    {I18N_NOOP("Insert File Content"), TemplatesCommandMenu::CInsert},
 
-    {
-        I18NC_NOOP("All characters, up to and including the next newline, "
-                   "are discarded without performing any macro expansion",
-                   "Discard to Next Line"),
-        TemplatesCommandMenu::CDnl
-    },
+    {I18NC_NOOP("All characters, up to and including the next newline, "
+                "are discarded without performing any macro expansion",
+                "Discard to Next Line"),
+     TemplatesCommandMenu::CDnl},
 
-    {
-        I18N_NOOP("Template Comment"),
-        TemplatesCommandMenu::CRem
-    },
+    {I18N_NOOP("Template Comment"), TemplatesCommandMenu::CRem},
 
-    {
-        I18N_NOOP("No Operation"),
-        TemplatesCommandMenu::CNop
-    },
+    {I18N_NOOP("No Operation"), TemplatesCommandMenu::CNop},
 
-    {
-        I18N_NOOP("Clear Generated Message"),
-        TemplatesCommandMenu::CClear
-    },
-    {
-        I18N_NOOP("Cursor position"),
-        TemplatesCommandMenu::CCursor
-    },
+    {I18N_NOOP("Clear Generated Message"), TemplatesCommandMenu::CClear},
+    {I18N_NOOP("Cursor position"), TemplatesCommandMenu::CCursor},
 
-    {
-        I18N_NOOP("Blank text"),
-        TemplatesCommandMenu::CBlank
-    },
+    {I18N_NOOP("Blank text"), TemplatesCommandMenu::CBlank},
 
-    {
-        I18N_NOOP("Dictionary Language"),
-        TemplatesCommandMenu::CDictionaryLanguage
-    },
-    {
-        I18N_NOOP("Language"),
-        TemplatesCommandMenu::CLanguage
-    },
-    //TODO add support for custom variable. %CUSTOM="???" ?
+    {I18N_NOOP("Dictionary Language"), TemplatesCommandMenu::CDictionaryLanguage},
+    {I18N_NOOP("Language"), TemplatesCommandMenu::CLanguage},
+    // TODO add support for custom variable. %CUSTOM="???" ?
 };
 static const int miscCommandsCount = sizeof(miscCommands) / sizeof(*miscCommands);
 
-static const InsertCommand debugCommands[] = {
-    {
-        I18N_NOOP("Turn Debug On"),
-        TemplatesCommandMenu::CDebug
-    },
+static const InsertCommand debugCommands[] = {{I18N_NOOP("Turn Debug On"), TemplatesCommandMenu::CDebug},
 
-    {
-        I18N_NOOP("Turn Debug Off"),
-        TemplatesCommandMenu::CDebugOff
-    }
-};
+                                              {I18N_NOOP("Turn Debug Off"), TemplatesCommandMenu::CDebugOff}};
 static const int debugCommandsCount = sizeof(debugCommands) / sizeof(*debugCommands);
 
-void TemplatesCommandMenu::fillMenuFromActionMap(const QMap< QString, TemplatesCommandMenu::Command > &map, KActionMenu *menu)
+void TemplatesCommandMenu::fillMenuFromActionMap(const QMap<QString, TemplatesCommandMenu::Command> &map, KActionMenu *menu)
 {
-    QMap< QString, TemplatesCommandMenu::Command >::const_iterator it = map.constBegin();
-    QMap< QString, TemplatesCommandMenu::Command >::const_iterator end = map.constEnd();
+    QMap<QString, TemplatesCommandMenu::Command>::const_iterator it = map.constBegin();
+    QMap<QString, TemplatesCommandMenu::Command>::const_iterator end = map.constEnd();
 
     while (it != end) {
-        auto action = new QAction(it.key(), menu);   //krazy:exclude=tipsandthis
+        auto action = new QAction(it.key(), menu); // krazy:exclude=tipsandthis
         const TemplatesCommandMenu::Command cmd = it.value();
         connect(action, &QAction::triggered, this, [this, cmd] {
             slotInsertCommand(cmd);
@@ -421,7 +211,7 @@ void TemplatesCommandMenu::fillSubMenus()
         return;
     }
     mWasInitialized = true;
-    QMap< QString, Command > commandMap;
+    QMap<QString, Command> commandMap;
     KActionMenu *menu = nullptr;
     // ******************************************************
     if (mType & ReplyForwardMessage) {

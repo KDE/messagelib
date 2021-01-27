@@ -11,7 +11,8 @@
 
 #include <QVariant>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class GrantleeHeaderStyle;
 class DefaultGrantleeHeaderStylePlugin : public MessageViewer::HeaderStylePlugin
 {
@@ -24,6 +25,7 @@ public:
     Q_REQUIRED_RESULT HeaderStrategy *headerStrategy() const override;
     Q_REQUIRED_RESULT HeaderStyleInterface *createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent = nullptr) override;
     Q_REQUIRED_RESULT QString name() const override;
+
 private:
     void initializePlugin();
     GrantleeHeaderStyle *mHeaderStyle = nullptr;

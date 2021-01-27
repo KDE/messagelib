@@ -5,11 +5,11 @@
 */
 
 #include "templateparseremailaddressrequesterinterfacewidget.h"
+#include "templateparseremailaddressrequesterlineedit.h"
+#include <KPluginFactory>
+#include <KPluginLoader>
 #include <QHBoxLayout>
 #include <TemplateParser/TemplateParserEmailAddressRequesterBase>
-#include "templateparseremailaddressrequesterlineedit.h"
-#include <KPluginLoader>
-#include <KPluginFactory>
 
 using namespace TemplateParser;
 
@@ -33,8 +33,10 @@ void TemplateParserEmailAddressRequesterInterfaceWidget::initializeEmailWidget()
         mTemplateParserEmailBase = new TemplateParser::TemplateParserEmailAddressRequesterLineEdit(this);
     }
     mTemplateParserEmailBase->setObjectName(QStringLiteral("templateparseremailbase"));
-    connect(mTemplateParserEmailBase, &TemplateParserEmailAddressRequesterBase::textChanged,
-            this, &TemplateParserEmailAddressRequesterInterfaceWidget::textChanged);
+    connect(mTemplateParserEmailBase,
+            &TemplateParserEmailAddressRequesterBase::textChanged,
+            this,
+            &TemplateParserEmailAddressRequesterInterfaceWidget::textChanged);
 }
 
 QString TemplateParserEmailAddressRequesterInterfaceWidget::text() const

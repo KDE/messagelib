@@ -7,15 +7,17 @@
 #ifndef SEARCHLINESTATUS_H
 #define SEARCHLINESTATUS_H
 
-#include <QLineEdit>
-#include <Akonadi/KMime/MessageStatus>
 #include "messagelist_private_export.h"
 #include "quicksearchline.h"
+#include <Akonadi/KMime/MessageStatus>
 #include <QIcon>
+#include <QLineEdit>
 class QStringListModel;
 class QAction;
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class MESSAGELIST_TESTS_EXPORT SearchLineStatus : public QLineEdit
 {
     Q_OBJECT
@@ -46,6 +48,7 @@ private Q_SLOTS:
     void slotToggledLockAction();
     void showMenu();
     void slotFilterActionClicked(QAction *act);
+
 private:
     void clearFilterAction();
     void createFilterAction(const QIcon &icon, const QString &text, int value);

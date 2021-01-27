@@ -4,11 +4,11 @@
 */
 #include "utils/themeconfigbutton.h"
 
+#include "core/manager.h"
 #include "core/theme.h"
+#include "utils/configurethemesdialog.h"
 #include "utils/themecombobox.h"
 #include "utils/themecombobox_p.h"
-#include "utils/configurethemesdialog.h"
-#include "core/manager.h"
 
 #include <KLocalizedString>
 
@@ -54,10 +54,9 @@ ThemeConfigButton::ThemeConfigButton(QWidget *parent, const ThemeComboBox *theme
         d->slotConfigureThemes();
     });
 
-    //Keep theme combo up-to-date with any changes made in the configure dialog.
+    // Keep theme combo up-to-date with any changes made in the configure dialog.
     if (d->mThemeComboBox != nullptr) {
-        connect(this, &ThemeConfigButton::configureDialogCompleted,
-                d->mThemeComboBox, &ThemeComboBox::slotLoadThemes);
+        connect(this, &ThemeConfigButton::configureDialogCompleted, d->mThemeComboBox, &ThemeComboBox::slotLoadThemes);
     }
     setEnabled(Manager::instance());
 }

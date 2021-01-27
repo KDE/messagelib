@@ -79,7 +79,7 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadWrite()
     auto signCheck = dialog->findChild<QCheckBox *>(QStringLiteral("sign"));
     Q_ASSERT(signCheck);
     QCOMPARE(signCheck->isChecked(), sign);
-    //QTest::qWait( 5000 );
+    // QTest::qWait( 5000 );
 
     // Make some changes in the dialog.
     nameEdit->setText(newName);
@@ -102,7 +102,7 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadWrite()
     delete dialog;
     QCOMPARE(part->name(), newName);
     QCOMPARE(part->description(), newDescription);
-    QCOMPARE(part->data(), data);   // Unchanged.
+    QCOMPARE(part->data(), data); // Unchanged.
     QCOMPARE(part->mimeType(), newMimeType);
     QCOMPARE(int(part->encoding()), int(newEncoding));
     QCOMPARE(part->isInline(), !autoDisplay);
@@ -125,7 +125,7 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadOnly()
     // Click on 'OK'.  No changes should have been made.
     dialog->accept();
     delete dialog;
-    QCOMPARE(part->name(), name);   // No change.
+    QCOMPARE(part->name(), name); // No change.
 }
 
 void AttachmentPropertiesDialogTest::testAttachmentPartCancel()
@@ -148,7 +148,7 @@ void AttachmentPropertiesDialogTest::testAttachmentPartCancel()
     // Click on 'Cancel'.  No changes should have been made.
     dialog->reject();
     delete dialog;
-    QCOMPARE(part->name(), name);   // No change.
+    QCOMPARE(part->name(), name); // No change.
 }
 
 void AttachmentPropertiesDialogTest::testMimeContentReadOnly()
@@ -169,6 +169,6 @@ void AttachmentPropertiesDialogTest::testMimeContentReadOnly()
     // Click on 'OK'.  The MIME Content should be untouched.
     dialog->accept();
     delete dialog;
-    QCOMPARE(content->contentType()->name(), name);   // No change.
+    QCOMPARE(content->contentType()->name(), name); // No change.
     delete content;
 }

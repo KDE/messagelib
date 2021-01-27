@@ -7,15 +7,16 @@
 #ifndef DKIMCHECKSIGNATUREJOB_H
 #define DKIMCHECKSIGNATUREJOB_H
 
-#include <QObject>
 #include "messageviewer_export.h"
-#include <MessageViewer/DKIMKeyRecord>
-#include <MessageViewer/DKIMInfo>
+#include <KMime/Message>
 #include <MessageViewer/DKIMCheckPolicy>
 #include <MessageViewer/DKIMHeaderParser>
-#include <KMime/Message>
+#include <MessageViewer/DKIMInfo>
+#include <MessageViewer/DKIMKeyRecord>
+#include <QObject>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DKIMCheckSignatureJob class
  * @author Laurent Montel <montel@kde.org>
@@ -24,14 +25,7 @@ class MESSAGEVIEWER_EXPORT DKIMCheckSignatureJob : public QObject
 {
     Q_OBJECT
 public:
-
-    enum class DKIMStatus : int {
-        Unknown = 0,
-        Valid = 1,
-        Invalid = 2,
-        EmailNotSigned = 3,
-        NeedToBeSigned = 4
-    };
+    enum class DKIMStatus : int { Unknown = 0, Valid = 1, Invalid = 2, EmailNotSigned = 3, NeedToBeSigned = 4 };
     Q_ENUM(DKIMStatus)
 
     enum class DKIMError : int {
@@ -68,24 +62,16 @@ public:
     };
     Q_ENUM(DKIMWarning)
 
-    enum class AuthenticationMethod : int {
-        Unknown = 0,
-        Dkim = 1,
-        Spf = 2,
-        Dmarc = 3,
-        Dkimatps = 4,
-        Auth =5
-    };
+    enum class AuthenticationMethod : int { Unknown = 0, Dkim = 1, Spf = 2, Dmarc = 3, Dkimatps = 4, Auth = 5 };
     Q_ENUM(AuthenticationMethod)
-
 
     struct MESSAGEVIEWER_EXPORT DKIMCheckSignatureAuthenticationResult {
         QString errorStr;
         QString infoResult;
         AuthenticationMethod method = AuthenticationMethod::Unknown;
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
-        QString sdid; //Signing Domain Identifier
-        QString auid; //DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
+        QString sdid; // Signing Domain Identifier
+        QString auid; // DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
         Q_REQUIRED_RESULT bool operator==(const DKIMCheckSignatureAuthenticationResult &other) const;
         Q_REQUIRED_RESULT bool isValid() const;
     };
@@ -100,8 +86,8 @@ public:
         DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
         DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
-        QString sdid; //Signing Domain Identifier
-        QString auid; //DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
+        QString sdid; // Signing Domain Identifier
+        QString auid; // DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
         QString fromEmail;
 
         QVector<DKIMCheckSignatureAuthenticationResult> listSignatureAuthenticationResult;
@@ -167,8 +153,8 @@ private:
     DKIMCheckSignatureJob::DKIMStatus mStatus = DKIMCheckSignatureJob::DKIMStatus::Unknown;
 };
 }
-MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &t);
-MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &t);
+MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &t);
+MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &t);
 Q_DECLARE_METATYPE(MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult)
 Q_DECLARE_TYPEINFO(MessageViewer::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult, Q_MOVABLE_TYPE);
 #endif // DKIMCHECKSIGNATUREJOB_H

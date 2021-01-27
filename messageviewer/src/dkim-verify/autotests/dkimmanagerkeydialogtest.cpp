@@ -7,10 +7,10 @@
 #include "dkimmanagerkeydialogtest.h"
 #include "dkim-verify/dkimmanagerkeydialog.h"
 #include "dkim-verify/dkimmanagerkeywidget.h"
-#include <QVBoxLayout>
 #include <QDialogButtonBox>
-#include <QTest>
 #include <QStandardPaths>
+#include <QTest>
+#include <QVBoxLayout>
 
 QTEST_MAIN(DKIMManagerKeyDialogTest)
 

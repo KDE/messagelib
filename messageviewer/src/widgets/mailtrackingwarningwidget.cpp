@@ -18,8 +18,7 @@ MailTrackingWarningWidget::MailTrackingWarningWidget(QWidget *parent)
     setWordWrap(true);
 
     setText(i18n("Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails\">(Details...)"));
-    connect(this, &MailTrackingWarningWidget::linkActivated, this,
-            &MailTrackingWarningWidget::slotShowDetails);
+    connect(this, &MailTrackingWarningWidget::linkActivated, this, &MailTrackingWarningWidget::slotShowDetails);
 }
 
 MailTrackingWarningWidget::~MailTrackingWarningWidget()
@@ -44,9 +43,8 @@ QString MailTrackingWarningWidget::generateDetails() const
     QMapIterator<QString, blackListFound> i(mBackLists);
     while (i.hasNext()) {
         i.next();
-        details += QLatin1String("<li>") + i18np("1 tracker from the company %2 (%3)",
-                                                 "%1 trackers from the company %2 (%3)",
-                                                 i.value().number, i.key(), i.value().url);
+        details += QLatin1String("<li>")
+            + i18np("1 tracker from the company %2 (%3)", "%1 trackers from the company %2 (%3)", i.value().number, i.key(), i.value().url);
     }
     details += QLatin1String("</ul>");
     return details;

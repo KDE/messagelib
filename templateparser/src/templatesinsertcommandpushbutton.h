@@ -17,11 +17,12 @@
 #ifndef TEMPLATEPARSER_TEMPLATESINSERTCOMMANDPUSHBUTTON_H
 #define TEMPLATEPARSER_TEMPLATESINSERTCOMMANDPUSHBUTTON_H
 
-#include <QPushButton>
 #include "templateparser_export.h"
+#include <QPushButton>
 #include <TemplateParser/TemplatesCommandMenu>
 
-namespace TemplateParser {
+namespace TemplateParser
+{
 /**
  * @brief The TemplatesInsertCommandPushButton class
  * @author Laurent Montel <montel@kde.org>

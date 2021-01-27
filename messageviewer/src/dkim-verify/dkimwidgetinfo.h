@@ -7,12 +7,13 @@
 #ifndef DKIMWIDGETINFO_H
 #define DKIMWIDGETINFO_H
 
-#include <QWidget>
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_export.h"
 #include <AkonadiCore/Item>
+#include <QWidget>
 class QLabel;
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DKIMWidgetInfo class
  * @author Laurent Montel <montel@kde.org>

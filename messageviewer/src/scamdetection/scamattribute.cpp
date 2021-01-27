@@ -7,8 +7,8 @@
 
 #include "scamattribute.h"
 #include <QByteArray>
-#include <QIODevice>
 #include <QDataStream>
+#include <QIODevice>
 
 using namespace MessageViewer;
 

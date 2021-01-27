@@ -5,9 +5,9 @@
 */
 
 #include "dkimmanager.h"
-#include "messageviewer_dkimcheckerdebug.h"
-#include "dkimresultattribute.h"
 #include "dkimcheckfulljob.h"
+#include "dkimresultattribute.h"
+#include "messageviewer_dkimcheckerdebug.h"
 #include "settings/messageviewersettings.h"
 #include <AkonadiCore/AttributeFactory>
 
@@ -52,14 +52,14 @@ void DKIMManager::checkDKim(const Akonadi::Item &item)
 {
     if (mCheckPolicy.saveDkimResult()) {
         if (item.hasAttribute<MessageViewer::DKIMResultAttribute>()) {
-            const auto *const attr
-                = item.attribute<MessageViewer::DKIMResultAttribute>();
+            const auto *const attr = item.attribute<MessageViewer::DKIMResultAttribute>();
             if (attr) {
                 DKIMCheckSignatureJob::CheckSignatureResult checkResult;
                 checkResult.error = static_cast<DKIMCheckSignatureJob::DKIMError>(attr->error());
                 checkResult.warning = static_cast<DKIMCheckSignatureJob::DKIMWarning>(attr->warning());
                 checkResult.status = static_cast<DKIMCheckSignatureJob::DKIMStatus>(attr->status());
-                qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
+                qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG)
+                    << "result : status " << checkResult.status << " error : " << checkResult.error << " warning " << checkResult.warning;
                 Q_EMIT result(checkResult, item.id());
                 return;
             }

@@ -7,9 +7,9 @@
 
 #include "signjobtest.h"
 
-#include <QTest>
-#include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
+#include "qtest_messagecomposer.h"
+#include <QTest>
 
 #include <kmime/kmime_content.h>
 
@@ -35,7 +35,7 @@ void SignJobTest::initTestCase()
 
 void SignJobTest::testContentDirect()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     Composer composer;
     auto sJob = new SignJob(&composer);
@@ -55,7 +55,7 @@ void SignJobTest::testContentDirect()
 
 void SignJobTest::testContentChained()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
     auto content = new KMime::Content;
@@ -77,7 +77,7 @@ void SignJobTest::testContentChained()
 
 void SignJobTest::testHeaders()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     Composer composer;
     auto sJob = new SignJob(&composer);
@@ -100,7 +100,8 @@ void SignJobTest::testHeaders()
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), "multipart/signed");
     QCOMPARE(result->contentType()->charset(), "ISO-8859-1");
-    QVERIFY(result->contentType()->parameter(QString::fromLocal8Bit("micalg")).startsWith(QLatin1String("pgp-sha"))); // sha1 or sha256, depending on GnuPG version
+    QVERIFY(
+        result->contentType()->parameter(QString::fromLocal8Bit("micalg")).startsWith(QLatin1String("pgp-sha"))); // sha1 or sha256, depending on GnuPG version
     QCOMPARE(result->contentType()->parameter(QString::fromLocal8Bit("protocol")), QString::fromLocal8Bit("application/pgp-signature"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
@@ -109,7 +110,7 @@ void SignJobTest::testHeaders()
 
 void SignJobTest::testRecommentationRFC3156()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     const QString data = QStringLiteral("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
     KMime::Headers::contentEncoding cte = KMime::Headers::CEquPr;
@@ -132,17 +133,15 @@ void SignJobTest::testRecommentationRFC3156()
     result->assemble();
 
     const QByteArray body = MessageCore::NodeHelper::firstChild(result)->body();
-    QCOMPARE(QString::fromUtf8(body),
-             QStringLiteral("=3D2D Magic foo\n=46rom test\n\n=2D- quaak\nOhno"));
+    QCOMPARE(QString::fromUtf8(body), QStringLiteral("=3D2D Magic foo\n=46rom test\n\n=2D- quaak\nOhno"));
 
-    ComposerTestUtil::verify(true, false, result, data.toUtf8(),
-                             Kleo::OpenPGPMIMEFormat, cte);
+    ComposerTestUtil::verify(true, false, result, data.toUtf8(), Kleo::OpenPGPMIMEFormat, cte);
     delete result;
 }
 
 void SignJobTest::testMixedContent()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     const QString data = QStringLiteral("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
 
@@ -183,8 +182,7 @@ void SignJobTest::testMixedContent()
     QCOMPARE(firstChild->contents()[0]->body(), data.toUtf8());
     QCOMPARE(firstChild->contents()[1]->body(), attachmentData);
 
-    ComposerTestUtil::verify(true, false, result, data.toUtf8(),
-                             Kleo::OpenPGPMIMEFormat, KMime::Headers::CE7Bit);
+    ComposerTestUtil::verify(true, false, result, data.toUtf8(), Kleo::OpenPGPMIMEFormat, KMime::Headers::CE7Bit);
     delete result;
 }
 
@@ -196,7 +194,10 @@ void SignJobTest::checkSignJob(SignJob *sJob)
     Q_ASSERT(result);
     result->assemble();
 
-    ComposerTestUtil::verifySignature(result, QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8(), Kleo::OpenPGPMIMEFormat, KMime::Headers::CE7Bit);
+    ComposerTestUtil::verifySignature(result,
+                                      QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8(),
+                                      Kleo::OpenPGPMIMEFormat,
+                                      KMime::Headers::CE7Bit);
 
     delete result;
 }
@@ -215,7 +216,7 @@ void SignJobTest::testProtectedHeaders()
     QFETCH(bool, protectedHeaders);
     QFETCH(QString, referenceFile);
 
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     Composer composer;
     auto sJob = new SignJob(&composer);
@@ -258,12 +259,12 @@ void SignJobTest::testProtectedHeaders()
     }
     f.close();
 
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void SignJobTest::testProtectedHeadersOverwrite()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
     const auto referenceFile = QStringLiteral("protected_headers-non-obvoscate.mbox");
 
     Composer composer;
@@ -297,8 +298,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     skeletonMessage.to()->from7BitString("owerwrite@example.org");
     skeletonMessage.cc()->from7BitString("cc_overwrite@example.org");
     skeletonMessage.bcc()->from7BitString("bcc_overwrite@example.org");
-    skeletonMessage.subject()->fromUnicodeString(subject+QStringLiteral("_owerwrite"), "utf-8");
-
+    skeletonMessage.subject()->fromUnicodeString(subject + QStringLiteral("_owerwrite"), "utf-8");
 
     KMime::Content *result = sJob->content();
     result->assemble();
@@ -312,6 +312,5 @@ void SignJobTest::testProtectedHeadersOverwrite()
     }
     f.close();
 
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
-
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }

@@ -7,9 +7,9 @@
 
 #include "signandencrypttest.h"
 
-#include <QTest>
-#include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
+#include "qtest_messagecomposer.h"
+#include <QTest>
 
 #include <kmime/kmime_content.h>
 
@@ -17,9 +17,9 @@
 
 #include <MessageComposer/Composer>
 #include <MessageComposer/EncryptJob>
+#include <MessageComposer/GlobalPart>
 #include <MessageComposer/MainTextJob>
 #include <MessageComposer/SignJob>
-#include <MessageComposer/GlobalPart>
 #include <MessageComposer/TextPart>
 
 #include <MimeTreeParser/NodeHelper>
@@ -38,7 +38,7 @@ void SignAndEncryptTest::initTestCase()
 
 void SignAndEncryptTest::testContent()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     Composer composer;
 
@@ -75,17 +75,14 @@ void SignAndEncryptTest::testContent()
     QVERIFY(result);
     result->assemble();
 
-    ComposerTestUtil::verifySignatureAndEncryption(
-        result,
-        QStringLiteral("one flew over the cuckoo's nest").toUtf8(),
-        Kleo::OpenPGPMIMEFormat);
+    ComposerTestUtil::verifySignatureAndEncryption(result, QStringLiteral("one flew over the cuckoo's nest").toUtf8(), Kleo::OpenPGPMIMEFormat);
 
     delete result;
 }
 
 void SignAndEncryptTest::testHeaders()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     Composer composer;
     auto sJob = new SignJob(&composer);

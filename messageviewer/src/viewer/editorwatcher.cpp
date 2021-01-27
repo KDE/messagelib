@@ -4,17 +4,17 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include <config-messageviewer.h>
 #include "editorwatcher.h"
+#include <config-messageviewer.h>
 
 #include "messageviewer_debug.h"
 
+#include <KApplicationTrader>
+#include <KIO/DesktopExecParser>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KOpenWithDialog>
 #include <KProcess>
-#include <KApplicationTrader>
-#include <KIO/DesktopExecParser>
 
 #include <QSocketNotifier>
 
@@ -23,10 +23,10 @@
 
 // inotify stuff taken from kdelibs/kio/kio/kdirwatch.cpp
 #ifdef HAVE_SYS_INOTIFY_H
-#include <unistd.h>
 #include <fcntl.h>
 #include <sys/inotify.h>
 #include <sys/ioctl.h>
+#include <unistd.h>
 #endif
 
 using namespace MessageViewer;
@@ -57,8 +57,7 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     list.append(mUrl);
     KService::Ptr offer = KApplicationTrader::preferredService(mMimeType);
     if ((mOpenWithOption == OpenWithDialog) || !offer) {
-        std::unique_ptr<KOpenWithDialog> dlg(new KOpenWithDialog(list, i18n("Edit with:"),
-                                                                 QString(), mParentWidget));
+        std::unique_ptr<KOpenWithDialog> dlg(new KOpenWithDialog(list, i18n("Edit with:"), QString(), mParentWidget));
         const int dlgrc = dlg->exec();
         if (dlgrc && dlg) {
             offer = dlg->service();
@@ -76,9 +75,7 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     mInotifyFd = inotify_init();
     if (mInotifyFd > 0) {
         (void)fcntl(mInotifyFd, F_SETFD, FD_CLOEXEC);
-        mInotifyWatch = inotify_add_watch(mInotifyFd,
-                                          mUrl.path().toLatin1().constData(),
-                                          IN_CLOSE | IN_OPEN | IN_MODIFY | IN_ATTRIB);
+        mInotifyWatch = inotify_add_watch(mInotifyFd, mUrl.path().toLatin1().constData(), IN_CLOSE | IN_OPEN | IN_MODIFY | IN_ATTRIB);
         if (mInotifyWatch >= 0) {
             auto sn = new QSocketNotifier(mInotifyFd, QSocketNotifier::Read, this);
             connect(sn, &QSocketNotifier::activated, this, &EditorWatcher::inotifyEvent);
@@ -96,8 +93,7 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     const QStringList params = parser.resultingArguments();
     mEditor = new KProcess(this);
     mEditor->setProgram(params);
-    connect(mEditor, qOverload<int, QProcess::ExitStatus>(&KProcess::finished),
-            this, &EditorWatcher::editorExited);
+    connect(mEditor, qOverload<int, QProcess::ExitStatus>(&KProcess::finished), this, &EditorWatcher::editorExited);
     mEditor->start();
     if (!mEditor->waitForStarted()) {
         return CannotStart;
@@ -181,8 +177,7 @@ void EditorWatcher::checkEditDone()
 
     static QStringList readOnlyMimeTypes;
     if (readOnlyMimeTypes.isEmpty()) {
-        readOnlyMimeTypes << QStringLiteral("message/rfc822")
-                          << QStringLiteral("application/pdf");
+        readOnlyMimeTypes << QStringLiteral("message/rfc822") << QStringLiteral("application/pdf");
     }
 
     // protect us against double-deletion by calling this method again while
@@ -190,8 +185,7 @@ void EditorWatcher::checkEditDone()
     mDone = true;
 
     // check if it's a mime type that's mostly handled read-only
-    const bool isReadOnlyMimeType = (readOnlyMimeTypes.contains(mMimeType)
-                                     || mMimeType.startsWith(QLatin1String("image/")));
+    const bool isReadOnlyMimeType = (readOnlyMimeTypes.contains(mMimeType) || mMimeType.startsWith(QLatin1String("image/")));
 
     // nobody can edit that fast, we seem to be unable to detect
     // when the editor will be closed

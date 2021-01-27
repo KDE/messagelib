@@ -7,10 +7,11 @@
 #ifndef TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H
 #define TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H
 
-#include <TemplateParser/TemplateParserEmailAddressRequesterBase>
 #include "templateparser_private_export.h"
+#include <TemplateParser/TemplateParserEmailAddressRequesterBase>
 class QLineEdit;
-namespace TemplateParser {
+namespace TemplateParser
+{
 class TEMPLATEPARSER_TESTS_EXPORT TemplateParserEmailAddressRequesterLineEdit : public TemplateParser::TemplateParserEmailAddressRequesterBase
 {
     Q_OBJECT
@@ -21,6 +22,7 @@ public:
     Q_REQUIRED_RESULT QString text() const override;
     void setText(const QString &str) override;
     void clear() override;
+
 private:
     QLineEdit *mLineEdit = nullptr;
 };

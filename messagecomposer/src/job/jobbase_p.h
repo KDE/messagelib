@@ -9,7 +9,8 @@
 
 #include "jobbase.h"
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class JobBasePrivate
 {
 public:

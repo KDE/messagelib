@@ -9,7 +9,8 @@
 
 #include "templateparser_export.h"
 #include <QObject>
-namespace TemplateParser {
+namespace TemplateParser
+{
 class TemplateWebEnginePage;
 /**
  * @brief The TemplateExtractTextFromMail class

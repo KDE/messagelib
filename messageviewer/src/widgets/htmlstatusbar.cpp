@@ -14,8 +14,8 @@
 
 #include "MessageCore/MessageCoreSettings"
 
-#include <KLocalizedString>
 #include <KConfigGroup>
+#include <KLocalizedString>
 
 #include <KSharedConfig>
 #include <QMouseEvent>
@@ -76,7 +76,7 @@ void HtmlStatusBar::setAvailableModes(const QList<MimeTreeParser::Util::HtmlMode
     mAvailableModes = availableModes;
 }
 
-const QList< MimeTreeParser::Util::HtmlMode > &HtmlStatusBar::availableModes()
+const QList<MimeTreeParser::Util::HtmlMode> &HtmlStatusBar::availableModes()
 {
     return mAvailableModes;
 }

@@ -7,11 +7,12 @@
 #ifndef DKIMVIEWERMENU_H
 #define DKIMVIEWERMENU_H
 
-#include <QObject>
 #include "messageviewer_export.h"
+#include <QObject>
 class QMenu;
 class QAction;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MESSAGEVIEWER_EXPORT DKIMViewerMenu : public QObject
 {
     Q_OBJECT

@@ -7,9 +7,10 @@
 #ifndef REMOTECONTENTCONFIGUREDIALOG_H
 #define REMOTECONTENTCONFIGUREDIALOG_H
 
-#include <QDialog>
 #include "messageviewer_export.h"
-namespace MessageViewer {
+#include <QDialog>
+namespace MessageViewer
+{
 class RemoteContentConfigureWidget;
 class MESSAGEVIEWER_EXPORT RemoteContentConfigureDialog : public QDialog
 {

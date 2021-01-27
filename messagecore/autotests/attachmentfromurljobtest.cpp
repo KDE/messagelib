@@ -29,15 +29,9 @@ void AttachmentFromUrlJobTest::testAttachments_data()
     QTest::addColumn<QByteArray>("mimetype");
 
     // PATH_ATTACHMENTS is defined by CMake.
-    QTest::newRow("png image") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("image.png"))
-                               << QStringLiteral("image.png")
-                               << QByteArray("image/png");
-    QTest::newRow("pdf doc") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("doc.pdf"))
-                             << QStringLiteral("doc.pdf")
-                             << QByteArray("application/pdf");
-    QTest::newRow("text file") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"))
-                               << QStringLiteral("file.txt")
-                               << QByteArray("text/plain");
+    QTest::newRow("png image") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("image.png")) << QStringLiteral("image.png") << QByteArray("image/png");
+    QTest::newRow("pdf doc") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("doc.pdf")) << QStringLiteral("doc.pdf") << QByteArray("application/pdf");
+    QTest::newRow("text file") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt")) << QStringLiteral("file.txt") << QByteArray("text/plain");
 }
 
 void AttachmentFromUrlJobTest::testAttachments()
@@ -69,7 +63,7 @@ void AttachmentFromUrlJobTest::testAttachmentTooBig()
     const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("doc.pdf"));
 
     auto ljob = new AttachmentFromUrlJob(url, this);
-    ljob->setMaximumAllowedSize(1024);   // 1KiB, whereas the file is >9KiB.
+    ljob->setMaximumAllowedSize(1024); // 1KiB, whereas the file is >9KiB.
     QVERIFY(!ljob->exec());
 }
 

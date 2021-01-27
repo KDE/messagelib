@@ -11,7 +11,8 @@
 #include <QString>
 class QAction;
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The PluginActionType class
  * @author Laurent Montel <montel@kde.org>
@@ -19,16 +20,7 @@ namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT PluginActionType
 {
 public:
-    enum Type {
-        Tools = 0,
-        Edit = 1,
-        File = 2,
-        Action = 3,
-        PopupMenu = 4,
-        ToolBar = 5,
-        Options = 6,
-        None = 7
-    };
+    enum Type { Tools = 0, Edit = 1, File = 2, Action = 3, PopupMenu = 4, ToolBar = 5, Options = 6, None = 7 };
     PluginActionType();
 
     PluginActionType(QAction *action, Type type);
@@ -36,6 +28,7 @@ public:
     Q_REQUIRED_RESULT Type type() const;
 
     static QString actionXmlExtension(PluginActionType::Type type);
+
 private:
     QAction *mAction = nullptr;
     Type mType = Tools;

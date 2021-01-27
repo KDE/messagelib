@@ -5,8 +5,8 @@
 */
 #include "dkimcheckpolicytest.h"
 #include "dkim-verify/dkimcheckpolicy.h"
-#include <QTest>
 #include <QStandardPaths>
+#include <QTest>
 QTEST_GUILESS_MAIN(DKIMCheckPolicyTest)
 
 DKIMCheckPolicyTest::DKIMCheckPolicyTest(QObject *parent)

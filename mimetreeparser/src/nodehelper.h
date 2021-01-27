@@ -10,31 +10,34 @@
 
 #include "mimetreeparser_export.h"
 
-#include "mimetreeparser/partmetadata.h"
 #include "mimetreeparser/enums.h"
+#include "mimetreeparser/partmetadata.h"
 
-#include <KMime/Message>
 #include <KMime/Headers>
+#include <KMime/Message>
 
 #include <QList>
 #include <QMap>
+#include <QPointer>
 #include <QSet>
 #include <QVector>
-#include <QPointer>
 
 class QUrl;
 class QTextCodec;
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class AttachmentTemporaryFilesDirs;
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
-namespace Interface {
+namespace Interface
+{
 class BodyPartMemento;
 }
 }
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 /**
  * @author Andras Mantia <andras@kdab.net>
  */
@@ -175,7 +178,7 @@ public:
      * MIME-compliant encoding name instead.
      * @see encodingForName
      */
-    Q_REQUIRED_RESULT static QString fixEncoding(const QString &encoding);   //TODO(Andras) move to a utility class?
+    Q_REQUIRED_RESULT static QString fixEncoding(const QString &encoding); // TODO(Andras) move to a utility class?
 
     /**
      * Drop-in replacement for KCharsets::encodingForName(). The problem with
@@ -183,13 +186,13 @@ public:
      * like "ISO 8859-15" instead of valid encoding names like "ISO-8859-15".
      * This function fixes this by replacing whitespace with a hyphen.
      */
-    Q_REQUIRED_RESULT static QString encodingForName(const QString &descriptiveName);   //TODO(Andras) move to a utility class?
+    Q_REQUIRED_RESULT static QString encodingForName(const QString &descriptiveName); // TODO(Andras) move to a utility class?
 
     /**
      * Return a list of the supported encodings
      * @param usAscii if true, US-Ascii encoding will be prepended to the list.
      */
-    static Q_REQUIRED_RESULT QStringList supportedEncodings(bool usAscii);   //TODO(Andras) move to a utility class?
+    static Q_REQUIRED_RESULT QStringList supportedEncodings(bool usAscii); // TODO(Andras) move to a utility class?
 
     Q_REQUIRED_RESULT QString fromAsString(KMime::Content *node) const;
 
@@ -251,12 +254,12 @@ private:
     QSet<KMime::Content *> mDisplayHiddenNodes;
     QTextCodec *mLocalCodec = nullptr;
     QMap<KMime::Content *, const QTextCodec *> mOverrideCodecs;
-    QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *> > mBodyPartMementoMap;
+    QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *>> mBodyPartMementoMap;
     QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
-    QMap<KMime::Message::Content *, QVector<KMime::Content *> > mExtraContents;
+    QMap<KMime::Message::Content *, QVector<KMime::Content *>> mExtraContents;
     QPointer<AttachmentTemporaryFilesDirs> mAttachmentFilesDir;
-    QMap<const KMime::Content *, QVector<MessagePartPtr> > mHeaderOverwrite;
-    QVector<QPointer<AttachmentTemporaryFilesDirs> > mListAttachmentTemporaryDirs;
+    QMap<const KMime::Content *, QVector<MessagePartPtr>> mHeaderOverwrite;
+    QVector<QPointer<AttachmentTemporaryFilesDirs>> mListAttachmentTemporaryDirs;
     friend class NodeHelperTest;
 };
 }

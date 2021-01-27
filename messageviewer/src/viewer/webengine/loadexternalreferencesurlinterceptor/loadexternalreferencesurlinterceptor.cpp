@@ -22,16 +22,13 @@ LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor()
 bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QString scheme = info.requestUrl().scheme();
-    if (scheme == QLatin1String("data")
-        || scheme == QLatin1String("file")) {
+    if (scheme == QLatin1String("data") || scheme == QLatin1String("file")) {
         return false;
     }
     if (mAllowLoadExternalReference) {
         return false;
     } else {
-        if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage
-            && !info.requestUrl().isLocalFile()
-            && (scheme != QLatin1String("cid"))) {
+        if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !info.requestUrl().isLocalFile() && (scheme != QLatin1String("cid"))) {
             return true;
         }
     }

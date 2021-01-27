@@ -10,7 +10,8 @@
 
 #include <KMessageWidget>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class SubmittedFormWarningWidgetPrivate;
 class SubmittedFormWarningWidget : public KMessageWidget
 {

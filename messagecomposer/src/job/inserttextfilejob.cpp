@@ -7,12 +7,12 @@
 
 #include <QTextEdit>
 
-#include <KCharsets>
 #include "messagecomposer_debug.h"
+#include <KCharsets>
 #include <KIO/Job>
 
-#include <QTextCodec>
 #include <QPointer>
+#include <QTextCodec>
 
 using namespace MessageComposer;
 class MessageComposer::InsertTextFileJobPrivate

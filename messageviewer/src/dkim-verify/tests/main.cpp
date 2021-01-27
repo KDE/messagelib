@@ -4,10 +4,10 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <QStandardPaths>
-#include <QCoreApplication>
-#include <QCommandLineParser>
 #include "lookupkey.h"
+#include <QCommandLineParser>
+#include <QCoreApplication>
+#include <QStandardPaths>
 int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
@@ -15,8 +15,7 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addPositionalArgument(
-        QStringLiteral("server address"), QStringLiteral("add specific server address"));
+    parser.addPositionalArgument(QStringLiteral("server address"), QStringLiteral("add specific server address"));
     parser.process(app);
 
     if (!parser.positionalArguments().isEmpty()) {

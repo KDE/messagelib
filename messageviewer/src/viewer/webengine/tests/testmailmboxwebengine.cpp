@@ -6,12 +6,12 @@
 
 #include "testmailmboxwebengine.h"
 
-#include <KMime/Content>
 #include <KActionCollection>
+#include <KMime/Content>
 #include <QApplication>
+#include <QDebug>
 #include <QFile>
 #include <QVBoxLayout>
-#include <QDebug>
 
 #include <MessageViewer/MailWebEngineView>
 #include <MessageViewer/Viewer>
@@ -20,8 +20,7 @@ TestMailMBoxWebEngine::TestMailMBoxWebEngine(QWidget *parent)
     : QWidget(parent)
 {
     auto vbox = new QVBoxLayout(this);
-    auto viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
-                                                this));
+    auto viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
     vbox->addWidget(viewer);
     viewer->setMessage(readAndParseMail(QStringLiteral("html.mbox")));
     viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));

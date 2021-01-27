@@ -10,7 +10,8 @@
 #include "messagecomposer_export.h"
 #include <QObject>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The ComposerAttachmentInterface class
  * @author Laurent Montel <montel@kde.org>

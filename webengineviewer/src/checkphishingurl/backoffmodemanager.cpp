@@ -8,8 +8,8 @@
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 
-#include <KConfigGroup>
 #include <KConfig>
+#include <KConfigGroup>
 
 #include <QTimer>
 
@@ -87,7 +87,7 @@ void BackOffModeManagerPrivate::load()
             const qint64 diff = (delay - now);
             updateTimer(diff);
         } else {
-            //Disable mode.
+            // Disable mode.
             isInOffMode = false;
         }
     }

@@ -17,11 +17,13 @@
 
 #include "mimetreeparser/objecttreeparser.h"
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 
-namespace Interface {
+namespace Interface
+{
 class BodyPart;
 /**
  * @brief The BodyPartFormatter class

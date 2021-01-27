@@ -19,17 +19,15 @@ using namespace MimeTreeParser::Util;
 
 bool MimeTreeParser::Util::isTypeBlacklisted(KMime::Content *node)
 {
-    auto contentType = node->contentType(); //Create
+    auto contentType = node->contentType(); // Create
     const QByteArray mediaTypeLower = contentType->mediaType().toLower();
     bool typeBlacklisted = mediaTypeLower == QByteArrayLiteral("multipart");
     if (!typeBlacklisted) {
         typeBlacklisted = KMime::isCryptoPart(node);
     }
     typeBlacklisted = typeBlacklisted || node == node->topLevel();
-    const bool firstTextChildOfEncapsulatedMsg
-        = mediaTypeLower == "text"
-          && contentType->subType().toLower() == "plain"
-          && node->parent() && node->parent()->contentType()->mediaType().toLower() == "message";
+    const bool firstTextChildOfEncapsulatedMsg = mediaTypeLower == "text" && contentType->subType().toLower() == "plain" && node->parent()
+        && node->parent()->contentType()->mediaType().toLower() == "message";
     return typeBlacklisted || firstTextChildOfEncapsulatedMsg;
 }
 
@@ -90,7 +88,7 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
             qCWarning(MIMETREEPARSER_LOG) << "unknown mimetype" << tMimeType;
         }
     }
-    //WorkAround for #199083
+    // WorkAround for #199083
     if (fileName == QLatin1String("text-vcard")) {
         fileName = QStringLiteral("text-x-vcard");
     }
@@ -114,7 +112,7 @@ QString MimeTreeParser::Util::iconNameForContent(KMime::Content *node)
         return QString();
     }
 
-    auto ct = node->contentType(); //Create
+    auto ct = node->contentType(); // Create
     QByteArray mimeType = ct->mimeType();
     if (mimeType.isNull() || mimeType == "application/octet-stream") {
         const QString fileName = node->contentDisposition()->filename();
@@ -124,8 +122,7 @@ QString MimeTreeParser::Util::iconNameForContent(KMime::Content *node)
         }
     }
     mimeType = mimeType.toLower();
-    return MimeTreeParser::Util::iconNameForMimetype(QLatin1String(mimeType), node->contentDisposition()->filename(),
-                                                     ct->name());
+    return MimeTreeParser::Util::iconNameForMimetype(QLatin1String(mimeType), node->contentDisposition()->filename(), ct->name());
 }
 
 QString MimeTreeParser::Util::htmlModeToString(HtmlMode mode)
@@ -133,13 +130,13 @@ QString MimeTreeParser::Util::htmlModeToString(HtmlMode mode)
     switch (mode) {
     case Normal: ///< A normal plaintext message, non-multipart
         return QStringLiteral("Normal PlainText Message, non-multipart");
-    case Html:           ///< A HTML message, non-multipart
+    case Html: ///< A HTML message, non-multipart
         return QStringLiteral("A HTML message, non-multipart");
     case MultipartPlain: ///< A multipart/alternative message, the plain text part is currently displayed
         return QStringLiteral("A multipart/alternative message, the plain text part is currently displayed");
-    case MultipartHtml:  ///< A multipart/alternative message, the HTML part is currently displayed
+    case MultipartHtml: ///< A multipart/alternative message, the HTML part is currently displayed
         return QStringLiteral("A multipart/alternative message, the HTML part is currently displayed");
-    case MultipartIcal:  ///< A multipart/alternative message, the ICal part is currently displayed
+    case MultipartIcal: ///< A multipart/alternative message, the ICal part is currently displayed
         return QStringLiteral("A multipart/alternative message, the ICal part is currently displayed");
     }
     return {};

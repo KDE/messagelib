@@ -27,27 +27,27 @@ bool DKIMKeyRecord::parseKey(const QString &key)
         if (elem.startsWith(QLatin1String("v="))) {
             mVersion = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("h="))) {
-            //Parse multi array.
+            // Parse multi array.
             mHashAlgorithm = elem.right(elem.length() - 2).split(QLatin1Char(':'));
-        } else if (elem.startsWith(QLatin1String("k="))) { //Key type (rsa by default)
+        } else if (elem.startsWith(QLatin1String("k="))) { // Key type (rsa by default)
             mKeyType = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1String("n="))) { //Notes (optional empty by default)
+        } else if (elem.startsWith(QLatin1String("n="))) { // Notes (optional empty by default)
             mNote = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1String("p="))) { //Public key
+        } else if (elem.startsWith(QLatin1String("p="))) { // Public key
             mPublicKey = elem.right(elem.length() - 2).remove(QLatin1Char(' '));
-        } else if (elem.startsWith(QLatin1String("s="))) { //Service Default is "*"
-            //Service Type (plain-text; OPTIONAL; default is "*").  A colon-
-            //separated list of service types to which this record applies.
-            //Verifiers for a given service type MUST ignore this record if the
-            //appropriate type is not listed.  Unrecognized service types MUST
-            //be ignored.  Currently defined service types are as follows:
+        } else if (elem.startsWith(QLatin1String("s="))) { // Service Default is "*"
+            // Service Type (plain-text; OPTIONAL; default is "*").  A colon-
+            // separated list of service types to which this record applies.
+            // Verifiers for a given service type MUST ignore this record if the
+            // appropriate type is not listed.  Unrecognized service types MUST
+            // be ignored.  Currently defined service types are as follows:
             const QStringList lst = elem.right(elem.length() - 2).split(QLatin1Char(':'));
             for (const QString &service : lst) {
                 if (service == QLatin1Char('*') || service == QLatin1String("email")) {
                     mService = service;
                 }
             }
-        } else if (elem.startsWith(QLatin1String("t="))) { //Flag
+        } else if (elem.startsWith(QLatin1String("t="))) { // Flag
             //            t= Flags, represented as a colon-separated list of names (plain-
             //                  text; OPTIONAL, default is no flags set).  Unrecognized flags MUST
             //                  be ignored.  The defined flags are as follows:
@@ -65,10 +65,10 @@ bool DKIMKeyRecord::parseKey(const QString &key)
             mFlags = elem.right(elem.length() - 2).split(QLatin1Char(':'));
         }
     }
-    if (mVersion.isEmpty()) { //It's optional
+    if (mVersion.isEmpty()) { // It's optional
         mVersion = QStringLiteral("DKIM1");
     }
-    if (mKeyType.isEmpty()) { //Rsa by default
+    if (mKeyType.isEmpty()) { // Rsa by default
         mKeyType = QStringLiteral("rsa");
     }
     if (mService.isEmpty()) {
@@ -139,12 +139,8 @@ void DKIMKeyRecord::setFlags(const QStringList &flags)
 
 bool DKIMKeyRecord::operator==(const DKIMKeyRecord &other) const
 {
-    return mVersion == other.version()
-           && mNote == other.note()
-           && mPublicKey == other.publicKey()
-           && mService == other.service()
-           && mHashAlgorithm == other.hashAlgorithm()
-           && mFlags == other.flags();
+    return mVersion == other.version() && mNote == other.note() && mPublicKey == other.publicKey() && mService == other.service()
+        && mHashAlgorithm == other.hashAlgorithm() && mFlags == other.flags();
 }
 
 QStringList DKIMKeyRecord::hashAlgorithm() const
@@ -157,7 +153,7 @@ void DKIMKeyRecord::setHashAlgorithm(const QStringList &hashAlgorithm)
     mHashAlgorithm = hashAlgorithm;
 }
 
-QDebug operator <<(QDebug d, const DKIMKeyRecord &t)
+QDebug operator<<(QDebug d, const DKIMKeyRecord &t)
 {
     d << "mVersion " << t.version();
     d << "mKeyType " << t.keyType();

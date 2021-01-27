@@ -7,17 +7,18 @@
 #ifndef MESSAGECOMPOSER_FOLLOWUPREMINDERCREATEJOB_H
 #define MESSAGECOMPOSER_FOLLOWUPREMINDERCREATEJOB_H
 
-#include <QObject>
-#include <QDate>
-#include <AkonadiCore/Item>
 #include <AkonadiCore/Collection>
+#include <AkonadiCore/Item>
 #include <KJob>
+#include <QDate>
+#include <QObject>
 
 #include "messagecomposer_export.h"
 
 #include <memory>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class FollowupReminderCreateJobPrivate;
 /**
  * @brief The FollowupReminderCreateJob class

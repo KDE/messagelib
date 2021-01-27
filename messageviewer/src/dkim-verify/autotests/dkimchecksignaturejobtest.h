@@ -21,6 +21,7 @@ private Q_SLOTS:
     void shouldTestMail_data();
     void initTestCase();
     void cleanupTestCase();
+
 private:
     QCA::Initializer *mQcaInitializer = nullptr;
 };

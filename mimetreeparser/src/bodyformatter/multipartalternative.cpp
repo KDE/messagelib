@@ -8,8 +8,8 @@
 
 #include "utils.h"
 
-#include "objecttreeparser.h"
 #include "messagepart.h"
+#include "objecttreeparser.h"
 
 #include <KMime/Content>
 
@@ -54,8 +54,7 @@ MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyP
             part.nodeHelper()->setNodeProcessed(dataPlain, false);
         }
         preferredMode = Util::MultipartIcal;
-    } else if ((dataHtml && (preferredMode == Util::MultipartHtml || preferredMode == Util::Html))
-               || (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
+    } else if ((dataHtml && (preferredMode == Util::MultipartHtml || preferredMode == Util::Html)) || (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
         if (dataPlain) {
             part.nodeHelper()->setNodeProcessed(dataPlain, false);
         }
@@ -65,11 +64,11 @@ MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyP
         preferredMode = Util::MultipartPlain;
     }
 
-//    qDebug() << " MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyPart &part) const";
-//    for (int i = 0; i < mp->availableModes().count(); ++i) {
-//        qDebug() << "MultiPartAlternativeBodyPartFormatter::processed Modes " << MimeTreeParser::Util::htmlModeToString(mp->availableModes().at(i));
-//    }
-//    qDebug() << "MultiPartAlternativeBodyPartFormatter::process preferred " << MimeTreeParser::Util::htmlModeToString(preferredMode);
+    //    qDebug() << " MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyPart &part) const";
+    //    for (int i = 0; i < mp->availableModes().count(); ++i) {
+    //        qDebug() << "MultiPartAlternativeBodyPartFormatter::processed Modes " << MimeTreeParser::Util::htmlModeToString(mp->availableModes().at(i));
+    //    }
+    //    qDebug() << "MultiPartAlternativeBodyPartFormatter::process preferred " << MimeTreeParser::Util::htmlModeToString(preferredMode);
 
     part.source()->setHtmlMode(preferredMode, mp->availableModes());
     mp->setPreferredMode(preferredMode);

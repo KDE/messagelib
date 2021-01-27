@@ -10,7 +10,8 @@
 #include "messagecomposer_export.h"
 #include <QWidget>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The PluginEditorConvertTextConfigureWidget class
  * @author Laurent Montel <montel@kde.org>

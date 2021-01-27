@@ -7,10 +7,11 @@
 #ifndef DEFAULTGRANTLEEHEADERSTYLEINTERFACE_H
 #define DEFAULTGRANTLEEHEADERSTYLEINTERFACE_H
 
-#include <messageviewer/headerstyleinterface.h>
 #include <GrantleeTheme/GrantleeTheme>
+#include <messageviewer/headerstyleinterface.h>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class DefaultGrantleeHeaderStyleInterface : public MessageViewer::HeaderStyleInterface
 {
     Q_OBJECT
@@ -20,6 +21,7 @@ public:
 
     void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) override;
     void activateAction() override;
+
 private:
     void slotDefaultGrantleeHeaders();
     GrantleeTheme::Theme mDefaultTheme;

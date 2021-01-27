@@ -11,7 +11,8 @@
 
 class QWebEngineView;
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class FindBarWebEngineViewPrivate;
 /**
  * @brief The FindBarWebEngineView class

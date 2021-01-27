@@ -14,9 +14,9 @@
 #include <kmime/kmime_headers.h>
 using namespace KMime;
 
+#include <MessageComposer/AttachmentJob>
 #include <MessageComposer/Composer>
 #include <MessageComposer/GlobalPart>
-#include <MessageComposer/AttachmentJob>
 using namespace MessageComposer;
 
 //#include "messagecore/attachmentfromfolderjob.h"
@@ -58,7 +58,7 @@ void AttachmentJobTest::testAttachment()
     QVERIFY(result->contentDisposition(false)->disposition() == Headers::CDattachment);
     delete ajob;
     ajob = nullptr;
-    //delete result;
+    // delete result;
 }
 
 #if 0

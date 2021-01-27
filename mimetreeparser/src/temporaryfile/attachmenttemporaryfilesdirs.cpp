@@ -63,7 +63,7 @@ void AttachmentTemporaryFilesDirs::forceCleanTempFiles()
 void AttachmentTemporaryFilesDirs::slotRemoveTempFiles()
 {
     forceCleanTempFiles();
-    //Delete it after cleaning
+    // Delete it after cleaning
     deleteLater();
 }
 

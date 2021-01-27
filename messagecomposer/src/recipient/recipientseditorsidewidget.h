@@ -17,7 +17,8 @@
 class QLabel;
 class QPushButton;
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class KWindowPositioner;
 
 class RecipientsPicker;
@@ -54,4 +55,4 @@ private:
 };
 }
 
-#endif //RECIPIENTSEDITORSIDEWIDGET_H
+#endif // RECIPIENTSEDITORSIDEWIDGET_H

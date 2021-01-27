@@ -23,7 +23,8 @@ void TemplateParserUtilTest::shouldRemoveSpaceAtBegin_data()
     QTest::newRow("newlinetabatbeginwithspace") << QStringLiteral("        \n\n\n\n\t\t  foo") << QStringLiteral("\n\t\t  foo");
     QTest::newRow("newlinetabatbeginwithspace2") << QStringLiteral("        \n     \n\n\n\t\t  foo") << QStringLiteral("\n\t\t  foo");
     QTest::newRow("newlinetabatbeginwithspace3") << QStringLiteral("ddd        \n     \n\n\n\t\t  foo") << QStringLiteral("ddd        \n     \n\n\n\t\t  foo");
-    QTest::newRow("newlinetabatbeginwithspace4") << QStringLiteral("    ddd        \n     \n\n\n\t\t  foo") << QStringLiteral("    ddd        \n     \n\n\n\t\t  foo");
+    QTest::newRow("newlinetabatbeginwithspace4") << QStringLiteral("    ddd        \n     \n\n\n\t\t  foo")
+                                                 << QStringLiteral("    ddd        \n     \n\n\n\t\t  foo");
 }
 
 void TemplateParserUtilTest::shouldRemoveSpaceAtBegin()

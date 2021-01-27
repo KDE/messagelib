@@ -5,10 +5,10 @@
 */
 
 #include "convertvariablesjobtest.h"
-#include "snippet/convertsnippetvariablesjob.h"
-#include <QTest>
 #include "composer/composerviewbase.h"
 #include "composer/composerviewinterface.h"
+#include "snippet/convertsnippetvariablesjob.h"
+#include <QTest>
 QTEST_GUILESS_MAIN(ConvertVariablesJobTest)
 
 ConvertVariablesJobTest::ConvertVariablesJobTest(QObject *parent)
@@ -46,7 +46,7 @@ void ConvertVariablesJobTest::shouldConvertVariables()
     job.setComposerViewInterface(interface);
     b.setSubject(QStringLiteral("Subject!!!!"));
     b.setFrom(QStringLiteral("from!!"));
-    //TOOD add CC/BCC/TO
+    // TOOD add CC/BCC/TO
 
     job.setText(original);
     QCOMPARE(job.convertVariables(interface, original), expected);
@@ -59,5 +59,5 @@ void ConvertVariablesJobTest::shouldConvertVariables_data()
     QTest::newRow("empty") << QString() << QString();
     QTest::newRow("novariable") << QStringLiteral("bla bli blo") << QStringLiteral("bla bli blo");
     QTest::newRow("subject") << QStringLiteral("bla bli blo %FULLSUBJECT") << QStringLiteral("bla bli blo Subject!!!!");
-    //TODO add more autotests !
+    // TODO add more autotests !
 }

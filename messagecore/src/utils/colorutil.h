@@ -12,7 +12,8 @@
 
 #include <QColor>
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @brief The ColorUtil class
  */

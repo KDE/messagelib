@@ -10,7 +10,8 @@
 
 #include <KPIMTextEdit/PlainTextEditorWidget>
 
-namespace TemplateParser {
+namespace TemplateParser
+{
 /**
  * @brief The TemplatesTextEdit class
  * @author Laurent Montel <montel@kde.org>

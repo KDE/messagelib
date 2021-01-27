@@ -12,9 +12,9 @@
 #include "searchlinestatus.h"
 #include <KLocalizedString>
 
-#include <QPushButton>
 #include <QComboBox>
 #include <QHBoxLayout>
+#include <QPushButton>
 #include <QStandardPaths>
 
 using namespace MessageList::Core;
@@ -51,7 +51,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     mTagFilterCombo->hide();
     hbox->addWidget(mTagFilterCombo);
 
-    //Be disable until we have a storageModel => logical that it's disable.
+    // Be disable until we have a storageModel => logical that it's disable.
     mSearchEdit->setEnabled(false);
     mTagFilterCombo->setEnabled(false);
 

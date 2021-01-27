@@ -6,11 +6,12 @@
 #ifndef BLOCKEXTERNALRESOURCESURLINTERCEPTOR_H
 #define BLOCKEXTERNALRESOURCESURLINTERCEPTOR_H
 
-#include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
-#include <QWebEngineUrlRequestInfo>
 #include "messageviewer_private_export.h"
 #include <QUrl>
-namespace MessageViewer {
+#include <QWebEngineUrlRequestInfo>
+#include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT BlockExternalResourcesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
@@ -19,7 +20,8 @@ public:
     ~BlockExternalResourcesUrlInterceptor() override;
 
     Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
-    Q_REQUIRED_RESULT bool interceptRequest(const QUrl &url, QWebEngineUrlRequestInfo::ResourceType resourceType, QWebEngineUrlRequestInfo::NavigationType navigationType);
+    Q_REQUIRED_RESULT bool
+    interceptRequest(const QUrl &url, QWebEngineUrlRequestInfo::ResourceType resourceType, QWebEngineUrlRequestInfo::NavigationType navigationType);
 Q_SIGNALS:
     void formSubmittedForbidden();
 };

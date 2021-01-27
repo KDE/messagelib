@@ -6,11 +6,13 @@
 
 #ifndef ATTACHMENTFROMURLUTILS_H
 #define ATTACHMENTFROMURLUTILS_H
-#include <QObject>
 #include "messagecore_export.h"
-namespace MessageCore {
+#include <QObject>
+namespace MessageCore
+{
 class AttachmentFromUrlBaseJob;
-namespace AttachmentFromUrlUtils {
+namespace AttachmentFromUrlUtils
+{
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT MessageCore::AttachmentFromUrlBaseJob *createAttachmentJob(const QUrl &url, QObject *parent);
 }
 }

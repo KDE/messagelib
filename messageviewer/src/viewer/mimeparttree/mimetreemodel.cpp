@@ -13,13 +13,13 @@
 #include <KMime/Content>
 #include <KMime/Message>
 
-#include <KLocalizedString>
 #include <KFormat>
+#include <KLocalizedString>
 
 #include <QIcon>
+#include <QMimeData>
 #include <QMimeDatabase>
 #include <QTemporaryDir>
-#include <QMimeData>
 #include <QUrl>
 
 using namespace MessageViewer;
@@ -94,13 +94,10 @@ public:
     QIcon iconForContent(KMime::Content *content)
     {
         if (auto ct = content->contentType(false)) {
-            auto iconName
-                = MimeTreeParser::Util::iconNameForMimetype(QLatin1String(ct->mimeType()));
+            auto iconName = MimeTreeParser::Util::iconNameForMimetype(QLatin1String(ct->mimeType()));
 
-            auto mimeType
-                = m_mimeDb.mimeTypeForName(QString::fromLatin1(ct->mimeType()));
-            if (!mimeType.isValid()
-                || mimeType.name() == QLatin1String("application/octet-stream")) {
+            auto mimeType = m_mimeDb.mimeTypeForName(QString::fromLatin1(ct->mimeType()));
+            if (!mimeType.isValid() || mimeType.name() == QLatin1String("application/octet-stream")) {
                 const QString name = descriptionForContent(content);
                 mimeType = MimeTreeParser::Util::mimetype(name);
             }
@@ -185,7 +182,7 @@ QModelIndex MimeTreeModel::parent(const QModelIndex &index) const
     KMime::Content *parentContent = d->root->content(currentIndex);
     int row = 0;
     if (currentIndex.isValid()) {
-        row = currentIndex.up() - 1;    // 1 based -> 0 based
+        row = currentIndex.up() - 1; // 1 based -> 0 based
     }
 
     return createIndex(row, 0, parentContent);
@@ -220,7 +217,7 @@ QVariant MimeTreeModel::data(const QModelIndex &index, int role) const
     }
     if (role == Qt::ToolTipRole) {
         // TODO
-        //return d->root->indexForContent( content ).toString();
+        // return d->root->indexForContent( content ).toString();
         return QVariant();
     }
     if (role == Qt::DisplayRole) {
@@ -281,7 +278,7 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
 {
     QList<QUrl> urls;
     for (const QModelIndex &index : indexes) {
-        //create dnd for one item not for all three columns.
+        // create dnd for one item not for all three columns.
         if (index.column() != 0) {
             continue;
         }
@@ -296,8 +293,7 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
 
         auto tempDir = new QTemporaryDir; // Will remove the directory on destruction.
         d->tempDirs.append(tempDir);
-        const QString fileName = tempDir->path() + QLatin1Char('/') + d->descriptionForContent(
-            content);
+        const QString fileName = tempDir->path() + QLatin1Char('/') + d->descriptionForContent(content);
         QFile f(fileName);
         if (!f.open(QIODevice::WriteOnly)) {
             qCWarning(MESSAGEVIEWER_LOG) << "Cannot write attachment:" << f.errorString();

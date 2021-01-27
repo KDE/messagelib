@@ -3,11 +3,11 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "objecttreeparsertest.h"
-#include "util.h"
 #include "setupenv.h"
+#include "util.h"
 
-#include <MimeTreeParser/ObjectTreeParser>
 #include <MessageViewer/BufferedHtmlWriter>
+#include <MimeTreeParser/ObjectTreeParser>
 
 #include <QTest>
 
@@ -69,7 +69,8 @@ void ObjectTreeParserTester::test_HTMLExternal()
         QVERIFY(otp.plainTextContent().isEmpty());
         QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
         QVERIFY(testWriter.data().contains("<b>SOME</b> HTML text."));
-        QVERIFY(testWriter.data().contains("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
+        QVERIFY(testWriter.data().contains(
+            "This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
     }
     {
         BufferedHtmlWriter testWriter;
@@ -86,7 +87,8 @@ void ObjectTreeParserTester::test_HTMLExternal()
 
         QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
         QVERIFY(testWriter.data().contains("<b>SOME</b> HTML text."));
-        QVERIFY(!testWriter.data().contains("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
+        QVERIFY(!testWriter.data().contains(
+            "This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
     }
     msg.clear();
 }
@@ -109,8 +111,8 @@ void ObjectTreeParserTester::test_Alternative()
         testWriter.end();
 
         QVERIFY(otp.htmlContent().isEmpty());
-        QVERIFY(otp.plainTextContent().contains(QLatin1String(
-                                                    "If you can see this text it means that your email client couldn't display our newsletter properly.")));
+        QVERIFY(otp.plainTextContent().contains(
+            QLatin1String("If you can see this text it means that your email client couldn't display our newsletter properly.")));
         QVERIFY(testWriter.data().contains("If you can see this text it means that your email client couldn't display our newsletter properly."));
     }
 
@@ -127,10 +129,9 @@ void ObjectTreeParserTester::test_Alternative()
         emptySource.render(otp.parsedPart(), false);
         testWriter.end();
 
-        QVERIFY(otp.plainTextContent().contains(QLatin1String(
-                                                    "If you can see this text it means that your email client couldn't display our newsletter properly.")));
-        QVERIFY(otp.htmlContent().contains(QLatin1String(
-                                               "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(otp.plainTextContent().contains(
+            QLatin1String("If you can see this text it means that your email client couldn't display our newsletter properly.")));
+        QVERIFY(otp.htmlContent().contains(QLatin1String("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
         QVERIFY(testWriter.data().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"));
     }
 
@@ -170,8 +171,7 @@ void ObjectTreeParserTester::test_Alternative()
         testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());
-        QVERIFY(otp.htmlContent().contains(QLatin1String(
-                                               "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(otp.htmlContent().contains(QLatin1String("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
         QVERIFY(testWriter.data().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"));
     }
     msg.clear();

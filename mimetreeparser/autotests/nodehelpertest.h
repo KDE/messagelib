@@ -9,7 +9,8 @@
 
 #include <KMime/Message>
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class NodeHelperTest : public QObject
 {
     Q_OBJECT

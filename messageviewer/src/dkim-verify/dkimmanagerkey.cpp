@@ -69,8 +69,7 @@ QVector<KeyInfo> DKIMManagerKey::keys() const
 QStringList DKIMManagerKey::keyRecorderList(KSharedConfig::Ptr &config) const
 {
     config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    const QStringList keyGroups
-        = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Key Record #\\d+")));
+    const QStringList keyGroups = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Key Record #\\d+")));
     return keyGroups;
 }
 
@@ -113,19 +112,17 @@ void DKIMManagerKey::saveKeys(const QVector<MessageViewer::KeyInfo> &lst)
     saveKeys();
 }
 
-bool KeyInfo::operator ==(const KeyInfo &other) const
+bool KeyInfo::operator==(const KeyInfo &other) const
 {
-    return keyValue == other.keyValue
-           && selector == other.selector
-            && domain == other.domain;
+    return keyValue == other.keyValue && selector == other.selector && domain == other.domain;
 }
 
-bool KeyInfo::operator !=(const KeyInfo &other) const
+bool KeyInfo::operator!=(const KeyInfo &other) const
 {
-    return !(operator ==(other));
+    return !(operator==(other));
 }
 
-QDebug operator <<(QDebug d, const KeyInfo &t)
+QDebug operator<<(QDebug d, const KeyInfo &t)
 {
     d << " keyvalue " << t.keyValue;
     d << " selector " << t.selector;

@@ -10,7 +10,8 @@
 #include "messagecomposer_export.h"
 #include <QByteArray>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class ImageScalingPrivate;
 /**
  * @brief The ImageScaling class
@@ -51,6 +52,7 @@ public:
     void setName(const QString &name);
 
     Q_REQUIRED_RESULT QString generateNewName();
+
 private:
     ImageScalingPrivate *const d;
 };

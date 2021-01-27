@@ -24,7 +24,7 @@ void AttachmentPartTest::testApi()
 
     // Test that an AttachmentPart::Ptr can be put in a QHash.
     QHash<AttachmentPart::Ptr, QString> hash;
-    hash[ part ] = str;
+    hash[part] = str;
     QVERIFY(hash.contains(part));
 
     // Test that an AttachmentPart::Ptr can be put in a QVariant.
@@ -37,7 +37,7 @@ void AttachmentPartTest::testApi()
 void AttachmentPartTest::shouldHaveDefaultValue()
 {
     AttachmentPart part;
-    QCOMPARE(part.size(), (qint64) - 1);
+    QCOMPARE(part.size(), (qint64)-1);
     QVERIFY(!part.isInline());
     QVERIFY(part.isAutoEncoding());
     QVERIFY(!part.isCompressed());

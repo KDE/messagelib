@@ -11,11 +11,11 @@
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-# ifndef MESSAGECORE_TESTS_EXPORT
-#  define MESSAGECORE_TESTS_EXPORT MESSAGECORE_EXPORT
-# endif
+#ifndef MESSAGECORE_TESTS_EXPORT
+#define MESSAGECORE_TESTS_EXPORT MESSAGECORE_EXPORT
+#endif
 #else /* not compiling tests */
-# define MESSAGECORE_TESTS_EXPORT
+#define MESSAGECORE_TESTS_EXPORT
 #endif
 
 #endif

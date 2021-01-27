@@ -5,15 +5,15 @@
 */
 
 #include "webengineview.h"
-#include "webenginenavigationrequestinterceptor.h"
-#include "webenginemanagescript.h"
-#include "webengineviewer_debug.h"
 #include "checkphishingurl/localdatabasemanager.h"
+#include "webenginemanagescript.h"
+#include "webenginenavigationrequestinterceptor.h"
+#include "webengineviewer_debug.h"
 #include <QEvent>
 #include <QKeyEvent>
 #include <QMouseEvent>
-#include <QWheelEvent>
 #include <QTimer>
+#include <QWheelEvent>
 
 using namespace WebEngineViewer;
 
@@ -78,12 +78,10 @@ WebEngineView::WebEngineView(QWidget *parent)
     installEventFilter(this);
     d->mManagerScript = new WebEngineManageScript(this);
 
-    connect(this, &QWebEngineView::renderProcessTerminated,
-            this, [this](QWebEnginePage::RenderProcessTerminationStatus status) {
+    connect(this, &QWebEngineView::renderProcessTerminated, this, [this](QWebEnginePage::RenderProcessTerminationStatus status) {
         d->renderProcessTerminated(status);
     });
-    connect(this, &QWebEngineView::loadFinished,
-            this, [this]() {
+    connect(this, &QWebEngineView::loadFinished, this, [this]() {
         // Reset the crash counter if we manage to actually load a page.
         // This does not perfectly correspond to "we managed to render
         // a page", but it's the best we have
@@ -155,14 +153,14 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 
     // Forward events to WebEngineView
     if (obj == d->mCurrentWidget) {
-#define HANDLE_EVENT(f, t) \
-    { \
-        bool wasAccepted = event->isAccepted(); \
-        event->setAccepted(false); \
-        f(static_cast<t *>(event)); \
-        bool ret = event->isAccepted(); \
-        event->setAccepted(wasAccepted); \
-        return ret; \
+#define HANDLE_EVENT(f, t)                                                                                                                                     \
+    {                                                                                                                                                          \
+        bool wasAccepted = event->isAccepted();                                                                                                                \
+        event->setAccepted(false);                                                                                                                             \
+        f(static_cast<t *>(event));                                                                                                                            \
+        bool ret = event->isAccepted();                                                                                                                        \
+        event->setAccepted(wasAccepted);                                                                                                                       \
+        return ret;                                                                                                                                            \
     }
 
         switch (event->type()) {

@@ -5,8 +5,8 @@
 */
 
 #include "templatesinsertcommandactiontest.h"
-#include "templatesinsertcommandaction.h"
 #include "templatescommandmenu.h"
+#include "templatesinsertcommandaction.h"
 #include <QMenu>
 #include <QTest>
 QTEST_MAIN(TemplatesInsertCommandActionTest)

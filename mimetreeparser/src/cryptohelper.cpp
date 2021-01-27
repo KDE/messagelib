@@ -19,8 +19,7 @@ PGPBlockType Block::determineType() const
         return SignatureBlock;
     } else if (data.startsWith("-----BEGIN PGP PUBLIC")) {
         return PublicKeyBlock;
-    } else if (data.startsWith("-----BEGIN PGP PRIVATE")
-               || data.startsWith("-----BEGIN PGP SECRET")) {
+    } else if (data.startsWith("-----BEGIN PGP PRIVATE") || data.startsWith("-----BEGIN PGP SECRET")) {
         return PrivateKeyBlock;
     } else if (data.startsWith("-----BEGIN PGP MESSAGE")) {
         if (data.startsWith("-----BEGIN PGP MESSAGE PART")) {
@@ -41,7 +40,7 @@ QVector<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg
 {
     PGPBlockType pgpBlock = NoPgpBlock;
     QVector<Block> blocks;
-    int start = -1;   // start of the current PGP block
+    int start = -1; // start of the current PGP block
     int lastEnd = -1; // end of the last PGP block
     const int length = msg.length();
 
@@ -72,7 +71,7 @@ QVector<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg
         nextEnd = msg.indexOf("\n-----END PGP ", start + 15);
         nextStart = msg.indexOf("\n-----BEGIN PGP ", start + 15);
 
-        if (nextEnd == -1) {        // Missing END PGP line
+        if (nextEnd == -1) { // Missing END PGP line
             if (lastEnd != -1) {
                 blocks.append(Block(msg.mid(lastEnd + 1), UnknownBlock));
             } else {
@@ -107,7 +106,7 @@ QVector<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg
 
         if (start == -1) {
             if (lastEnd + 1 < length) {
-                //rest of mail is no PGP Block
+                // rest of mail is no PGP Block
                 blocks.append(Block(msg.mid(lastEnd + 1), NoPgpBlock));
             }
             break;

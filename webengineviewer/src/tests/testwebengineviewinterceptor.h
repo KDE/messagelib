@@ -14,6 +14,7 @@ class TestWebEngineViewInterceptor : public QWidget
     Q_OBJECT
 public:
     explicit TestWebEngineViewInterceptor(QWidget *parent = nullptr);
+
 private:
     QWebEngineView *mWebEngineView = nullptr;
 };

@@ -13,7 +13,8 @@
 #include "messagepart.h"
 #include <KPIMTextEdit/RichTextComposerImages>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The TextPart class
  */

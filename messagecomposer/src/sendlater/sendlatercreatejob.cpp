@@ -19,8 +19,13 @@ SendLaterCreateJob::SendLaterCreateJob(const SendLaterInfo &info, QObject *paren
 
 QDBusPendingReply<> SendLaterCreateJob::doCall(OrgFreedesktopAkonadiSendLaterAgentInterface *iface)
 {
-    return iface->addItem(mInfo.dateTime().toSecsSinceEpoch(), mInfo.isRecurrence(), mInfo.recurrenceEachValue(), mInfo.recurrenceUnit(),
-                          mInfo.itemId(), mInfo.subject(), mInfo.to());
+    return iface->addItem(mInfo.dateTime().toSecsSinceEpoch(),
+                          mInfo.isRecurrence(),
+                          mInfo.recurrenceEachValue(),
+                          mInfo.recurrenceUnit(),
+                          mInfo.itemId(),
+                          mInfo.subject(),
+                          mInfo.to());
 }
 
 QString SendLaterCreateJob::getErrorString(Error, const QString &detail) const

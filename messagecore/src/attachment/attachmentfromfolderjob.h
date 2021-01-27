@@ -11,25 +11,25 @@
 
 #include <KZip>
 
-namespace MessageCore {
+namespace MessageCore
+{
 class AttachmentFromFolderJob : public AttachmentFromUrlBaseJob
 {
     Q_OBJECT
 
 public:
-
     /**
-    * Creates a new job.
-    *
-    * @param url The url of the folder that will be compressed and added as attachment.
-    * @param parent The parent object.
-    */
+     * Creates a new job.
+     *
+     * @param url The url of the folder that will be compressed and added as attachment.
+     * @param parent The parent object.
+     */
 
     explicit AttachmentFromFolderJob(const QUrl &url = QUrl(), QObject *parent = nullptr);
 
     /**
-    * Destroys the job.
-    */
+     * Destroys the job.
+     */
 
     ~AttachmentFromFolderJob() override;
 

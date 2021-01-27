@@ -8,10 +8,11 @@
 #define DKIMRULEDIALOG_H
 
 #include "messageviewer_private_export.h"
-#include <QDialog>
 #include <MessageViewer/DKIMRule>
+#include <QDialog>
 class QPushButton;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class DKIMRuleWidget;
 class MESSAGEVIEWER_TESTS_EXPORT DKIMRuleDialog : public QDialog
 {
@@ -22,6 +23,7 @@ public:
 
     Q_REQUIRED_RESULT MessageViewer::DKIMRule rule() const;
     void loadRule(const MessageViewer::DKIMRule &rule);
+
 private:
     void slotAccepted();
     void writeConfig();

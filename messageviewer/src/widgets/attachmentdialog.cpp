@@ -1,20 +1,20 @@
-    /*
-  This file is part of KMail, the KDE mail client.
-  SPDX-FileCopyrightText: 2009 Martin Koller <kollix@aon.at>
+/*
+This file is part of KMail, the KDE mail client.
+SPDX-FileCopyrightText: 2009 Martin Koller <kollix@aon.at>
 
-  SPDX-License-Identifier: GPL-2.0-or-later
+SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "attachmentdialog.h"
 
-#include <QDialog>
-#include <KMessageBox>
-#include <KLocalizedString>
-#include <KSharedConfig>
 #include <KConfigGroup>
+#include <KGuiItem>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KSharedConfig>
+#include <QDialog>
 #include <QDialogButtonBox>
 #include <QPushButton>
-#include <KGuiItem>
 using namespace MessageViewer;
 
 //---------------------------------------------------------------------
@@ -22,9 +22,10 @@ using namespace MessageViewer;
 AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText, const KService::Ptr &offer, const QString &dontAskAgainName)
     : dontAskName(dontAskAgainName)
 {
-    text = xi18nc("@info", "Open attachment <filename>%1</filename>?<nl/>"
-                           "Note that opening an attachment may compromise "
-                           "your system's security.",
+    text = xi18nc("@info",
+                  "Open attachment <filename>%1</filename>?<nl/>"
+                  "Note that opening an attachment may compromise "
+                  "your system's security.",
                   filenameText);
 
     dialog = new QDialog(parent);
@@ -63,11 +64,8 @@ int AttachmentDialog::exec()
     }
 
     bool again = false;
-    const QDialogButtonBox::StandardButton ret = KMessageBox::createKMessageBox(dialog, mButtonBox,
-                                                                                QMessageBox::Question, text,
-                                                                                QStringList(),
-                                                                                i18n(
-                                                                                    "Do not ask again"), &again, KMessageBox::Option());
+    const QDialogButtonBox::StandardButton ret =
+        KMessageBox::createKMessageBox(dialog, mButtonBox, QMessageBox::Question, text, QStringList(), i18n("Do not ask again"), &again, KMessageBox::Option());
 
     if (ret == QDialogButtonBox::Cancel) {
         return Cancel;

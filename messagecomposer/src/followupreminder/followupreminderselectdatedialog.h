@@ -18,7 +18,8 @@
 
 class QAbstractItemModel;
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class FollowUpReminderSelectDateDialogPrivate;
 /**
  * @brief The FollowUpReminderSelectDateDialog class

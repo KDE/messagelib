@@ -6,8 +6,8 @@
 
 #include "multipartsigned.h"
 
-#include "objecttreeparser.h"
 #include "messagepart.h"
+#include "objecttreeparser.h"
 
 #include <KMime/Content>
 
@@ -33,9 +33,7 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
 {
     KMime::Content *node = part.content();
     if (node->contents().size() != 2) {
-        qCDebug(MIMETREEPARSER_LOG) << "mulitpart/signed must have exactly two child parts!"
-            << Qt::endl
-            << "processing as multipart/mixed";
+        qCDebug(MIMETREEPARSER_LOG) << "mulitpart/signed must have exactly two child parts!" << Qt::endl << "processing as multipart/mixed";
         if (!node->contents().isEmpty()) {
             return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), node->contents().at(0), false));
         } else {
@@ -52,16 +50,15 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
     const QString signatureContentType = QLatin1String(signature->contentType()->mimeType().toLower());
     if (protocolContentType.isEmpty()) {
         qCWarning(MIMETREEPARSER_LOG) << "Message doesn't set the protocol for the multipart/signed content-type, "
-                                         "using content-type of the signature:" << signatureContentType;
+                                         "using content-type of the signature:"
+                                      << signatureContentType;
         protocolContentType = signatureContentType;
     }
 
     const QGpgME::Protocol *protocol = nullptr;
-    if (protocolContentType == QLatin1String("application/pkcs7-signature")
-        || protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
+    if (protocolContentType == QLatin1String("application/pkcs7-signature") || protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
         protocol = QGpgME::smime();
-    } else if (protocolContentType == QLatin1String("application/pgp-signature")
-               || protocolContentType == QLatin1String("application/x-pgp-signature")) {
+    } else if (protocolContentType == QLatin1String("application/pgp-signature") || protocolContentType == QLatin1String("application/x-pgp-signature")) {
         protocol = QGpgME::openpgp();
     }
 
@@ -76,9 +73,8 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
     const QByteArray cleartext = KMime::LFtoCRLF(signedData->encodedContent());
     const QTextCodec *aCodec(part.objectTreeParser()->codecFor(signedData));
 
-    SignedMessagePart::Ptr mp(new SignedMessagePart(part.objectTreeParser(),
-                                                    aCodec->toUnicode(cleartext), protocol,
-                                                    part.nodeHelper()->fromAsString(node), signature));
+    SignedMessagePart::Ptr mp(
+        new SignedMessagePart(part.objectTreeParser(), aCodec->toUnicode(cleartext), protocol, part.nodeHelper()->fromAsString(node), signature));
 
     mp->startVerificationDetached(cleartext, signedData, signature->decodedContent());
 

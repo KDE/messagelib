@@ -8,20 +8,22 @@
 #ifndef MESSAGEVIEWER_TESTS_SETUPENV_H
 #define MESSAGEVIEWER_TESTS_SETUPENV_H
 
-#include <gpgme++/key.h>
 #include <MimeTreeParser/BodyPartFormatterFactory>
 #include <MimeTreeParser/ObjectTreeSource>
+#include <gpgme++/key.h>
 
 #include <MessageViewer/AttachmentStrategy>
 #include <MessageViewer/ObjectTreeEmptySource>
 
-namespace MessageViewer {
-namespace Test {
+namespace MessageViewer
+{
+namespace Test
+{
 /**
-* setup a environment variables for tests:
-* * set LC_ALL to C
-* * set KDEHOME
-*/
+ * setup a environment variables for tests:
+ * * set LC_ALL to C
+ * * set KDEHOME
+ */
 void setupEnv();
 
 // We can't use EmptySource, since we need to control some elements of the source for tests to also test
@@ -162,7 +164,7 @@ public:
     QString createMessageHeader(KMime::Message *message) override
     {
         Q_UNUSED(message)
-        return QString(); //do nothing
+        return QString(); // do nothing
     }
 
 private:

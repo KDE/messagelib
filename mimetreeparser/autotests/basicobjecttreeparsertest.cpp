@@ -6,11 +6,11 @@
 */
 
 #include "basicobjecttreeparsertest.h"
-#include "util.h"
 #include "setupenv.h"
+#include "util.h"
 
-#include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/MessagePart>
+#include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
@@ -29,9 +29,7 @@ void ObjectTreeParserTest::initTestCase()
 
 QString stringifyMessagePartTree(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
-    const QString line
-        = QStringLiteral("%1 * %3\n").arg(indent,
-                                          QString::fromUtf8(messagePart->metaObject()->className()));
+    const QString line = QStringLiteral("%1 * %3\n").arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
     QString ret = line;
 
     indent += QLatin1Char(' ');
@@ -46,8 +44,7 @@ void testMessagePartTree(const MessagePart::Ptr &messagePart, const QString &mai
 {
     QString renderedTree = stringifyMessagePartTree(messagePart, QString());
 
-    const QString treeFileName = QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFileName
-                                 + QStringLiteral(".tree");
+    const QString treeFileName = QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFileName + QStringLiteral(".tree");
     const QString outTreeFileName = mailFileName + QStringLiteral(".tree");
 
     {
@@ -57,10 +54,7 @@ void testMessagePartTree(const MessagePart::Ptr &messagePart, const QString &mai
         f.close();
     }
     // compare to reference file
-    const QStringList args = QStringList()
-                             << QStringLiteral("-u")
-                             << treeFileName
-                             << outTreeFileName;
+    const QStringList args = QStringList() << QStringLiteral("-u") << treeFileName << outTreeFileName;
     QProcess proc;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
     proc.start(QStringLiteral("diff"), args);
@@ -71,8 +65,7 @@ void testMessagePartTree(const MessagePart::Ptr &messagePart, const QString &mai
 
 void ObjectTreeParserTest::testMailWithoutEncryption()
 {
-    KMime::Message::Ptr originalMessage
-        = readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
     ObjectTreeParser otp(&testSource, &nodeHelper);
@@ -82,28 +75,24 @@ void ObjectTreeParserTest::testMailWithoutEncryption()
 
 void ObjectTreeParserTest::testSignedForwardedOpenPGPSignedEncrypted()
 {
-    KMime::Message::Ptr originalMessage
-        = readAndParseMail(QStringLiteral("signed-forward-openpgp-signed-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("signed-forward-openpgp-signed-encrypted.mbox"));
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
     ObjectTreeParser otp(&testSource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
 
-    QCOMPARE(otp.plainTextContent().toLatin1().data(), "bla bla bla");   // The textual content doesn't include the encrypted encapsulated message by design
-    QCOMPARE(nodeHelper.overallEncryptionState(
-                 originalMessage.data()), KMMsgPartiallyEncrypted);
-    QCOMPARE(nodeHelper.overallSignatureState(
-                 originalMessage.data()), KMMsgFullySigned);
+    QCOMPARE(otp.plainTextContent().toLatin1().data(), "bla bla bla"); // The textual content doesn't include the encrypted encapsulated message by design
+    QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgPartiallyEncrypted);
+    QCOMPARE(nodeHelper.overallSignatureState(originalMessage.data()), KMMsgFullySigned);
 
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
-    QVERIFY(!unencryptedMessage);   // We must not invalidate the outer signature
+    QVERIFY(!unencryptedMessage); // We must not invalidate the outer signature
 }
 
 void ObjectTreeParserTest::testForwardedOpenPGPSignedEncrypted()
 {
-    KMime::Message::Ptr originalMessage
-        = readAndParseMail(QStringLiteral("forward-openpgp-signed-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("forward-openpgp-signed-encrypted.mbox"));
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -111,29 +100,24 @@ void ObjectTreeParserTest::testForwardedOpenPGPSignedEncrypted()
     testSource.setDecryptMessage(true);
     otp.parseObjectTree(originalMessage.data());
 
-    QCOMPARE(otp.plainTextContent().toLatin1().data(), "bla bla bla");   // The textual content doesn't include the encrypted encapsulated message by design
-    QCOMPARE(nodeHelper.overallEncryptionState(
-                 originalMessage.data()), KMMsgPartiallyEncrypted);
+    QCOMPARE(otp.plainTextContent().toLatin1().data(), "bla bla bla"); // The textual content doesn't include the encrypted encapsulated message by design
+    QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgPartiallyEncrypted);
 
-    QCOMPARE(nodeHelper.overallSignatureState(
-                 originalMessage.data()), KMMsgPartiallySigned);
+    QCOMPARE(nodeHelper.overallSignatureState(originalMessage.data()), KMMsgPartiallySigned);
 
     // Now, test that the unencrypted message is generated correctly
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
     QVERIFY(unencryptedMessage.data());
     QCOMPARE(unencryptedMessage->contentType()->mimeType().data(), "multipart/mixed");
     QCOMPARE(unencryptedMessage->contents().size(), 2);
-    QCOMPARE(unencryptedMessage->contents().first()->contentType()->mimeType().data(),
-             "text/plain");
+    QCOMPARE(unencryptedMessage->contents().first()->contentType()->mimeType().data(), "text/plain");
     QCOMPARE(unencryptedMessage->contents().first()->decodedContent().data(), "bla bla bla");
-    QCOMPARE(unencryptedMessage->contents().at(
-                 1)->contentType()->mimeType().data(), "message/rfc822");
+    QCOMPARE(unencryptedMessage->contents().at(1)->contentType()->mimeType().data(), "message/rfc822");
     KMime::Message::Ptr encapsulated = unencryptedMessage->contents().at(1)->bodyAsMessage();
     QCOMPARE(encapsulated->contentType()->mimeType().data(), "multipart/signed");
     QCOMPARE(encapsulated->contents().size(), 2);
     QCOMPARE(encapsulated->contents().first()->contentType()->mimeType().data(), "text/plain");
-    QCOMPARE(encapsulated->contents().at(
-                 1)->contentType()->mimeType().data(), "application/pgp-signature");
+    QCOMPARE(encapsulated->contents().at(1)->contentType()->mimeType().data(), "application/pgp-signature");
     QCOMPARE(encapsulated->contents().first()->decodedContent().data(), "encrypted message text");
 
     // TODO: Check that the signature is valid
@@ -141,8 +125,7 @@ void ObjectTreeParserTest::testForwardedOpenPGPSignedEncrypted()
 
 void ObjectTreeParserTest::testSMIMESignedEncrypted()
 {
-    KMime::Message::Ptr originalMessage
-        = readAndParseMail(QStringLiteral("smime-signed-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("smime-signed-encrypted.mbox"));
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -151,30 +134,24 @@ void ObjectTreeParserTest::testSMIMESignedEncrypted()
     otp.parseObjectTree(originalMessage.data());
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "encrypted message text");
-    QCOMPARE(nodeHelper.overallEncryptionState(
-                 originalMessage.data()), KMMsgFullyEncrypted);
+    QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgFullyEncrypted);
 
-    QCOMPARE(nodeHelper.overallSignatureState(
-                 originalMessage.data()), KMMsgFullySigned);
+    QCOMPARE(nodeHelper.overallSignatureState(originalMessage.data()), KMMsgFullySigned);
 
     // Now, test that the unencrypted message is generated correctly
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
     QCOMPARE(unencryptedMessage->contentType()->mimeType().data(), "multipart/signed");
     QCOMPARE(unencryptedMessage->contents().size(), 2);
-    QCOMPARE(unencryptedMessage->contents().first()->contentType()->mimeType().data(),
-             "text/plain");
-    QCOMPARE(unencryptedMessage->contents().at(
-                 1)->contentType()->mimeType().data(), "application/pkcs7-signature");
-    QCOMPARE(
-        unencryptedMessage->contents().first()->decodedContent().data(), "encrypted message text");
+    QCOMPARE(unencryptedMessage->contents().first()->contentType()->mimeType().data(), "text/plain");
+    QCOMPARE(unencryptedMessage->contents().at(1)->contentType()->mimeType().data(), "application/pkcs7-signature");
+    QCOMPARE(unencryptedMessage->contents().first()->decodedContent().data(), "encrypted message text");
 
     // TODO: Check that the signature is valid
 }
 
 void ObjectTreeParserTest::testOpenPGPSignedEncrypted()
 {
-    KMime::Message::Ptr originalMessage
-        = readAndParseMail(QStringLiteral("openpgp-signed-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-signed-encrypted.mbox"));
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -183,30 +160,24 @@ void ObjectTreeParserTest::testOpenPGPSignedEncrypted()
     otp.parseObjectTree(originalMessage.data());
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "encrypted message text");
-    QCOMPARE(nodeHelper.overallEncryptionState(
-                 originalMessage.data()), KMMsgFullyEncrypted);
+    QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgFullyEncrypted);
 
-    QCOMPARE(nodeHelper.overallSignatureState(
-                 originalMessage.data()), KMMsgFullySigned);
+    QCOMPARE(nodeHelper.overallSignatureState(originalMessage.data()), KMMsgFullySigned);
 
     // Now, test that the unencrypted message is generated correctly
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
     QCOMPARE(unencryptedMessage->contentType()->mimeType().data(), "multipart/signed");
     QCOMPARE(unencryptedMessage->contents().size(), 2);
-    QCOMPARE(unencryptedMessage->contents().first()->contentType()->mimeType().data(),
-             "text/plain");
-    QCOMPARE(unencryptedMessage->contents().at(
-                 1)->contentType()->mimeType().data(), "application/pgp-signature");
-    QCOMPARE(
-        unencryptedMessage->contents().first()->decodedContent().data(), "encrypted message text");
+    QCOMPARE(unencryptedMessage->contents().first()->contentType()->mimeType().data(), "text/plain");
+    QCOMPARE(unencryptedMessage->contents().at(1)->contentType()->mimeType().data(), "application/pgp-signature");
+    QCOMPARE(unencryptedMessage->contents().first()->decodedContent().data(), "encrypted message text");
 
     // TODO: Check that the signature is valid
 }
 
 void ObjectTreeParserTest::testOpenPGPEncryptedAndSigned()
 {
-    KMime::Message::Ptr originalMessage
-        = readAndParseMail(QStringLiteral("openpgp-encrypted+signed.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted+signed.mbox"));
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -215,11 +186,9 @@ void ObjectTreeParserTest::testOpenPGPEncryptedAndSigned()
     otp.parseObjectTree(originalMessage.data());
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "encrypted message text");
-    QCOMPARE(nodeHelper.overallEncryptionState(
-                 originalMessage.data()), KMMsgFullyEncrypted);
+    QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgFullyEncrypted);
 
-    QCOMPARE(nodeHelper.overallSignatureState(
-                 originalMessage.data()), KMMsgFullySigned);
+    QCOMPARE(nodeHelper.overallSignatureState(originalMessage.data()), KMMsgFullySigned);
 
     // Now, test that the unencrypted message is generated correctly
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
@@ -232,8 +201,7 @@ void ObjectTreeParserTest::testOpenPGPEncryptedAndSigned()
 
 void ObjectTreeParserTest::testOpenPGPEncrypted()
 {
-    KMime::Message::Ptr originalMessage
-        = readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -242,8 +210,7 @@ void ObjectTreeParserTest::testOpenPGPEncrypted()
     otp.parseObjectTree(originalMessage.data());
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "encrypted message text");
-    QCOMPARE(nodeHelper.overallEncryptionState(
-                 originalMessage.data()), KMMsgFullyEncrypted);
+    QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgFullyEncrypted);
 
     // Now, test that the unencrypted message is generated correctly
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
@@ -254,16 +221,14 @@ void ObjectTreeParserTest::testOpenPGPEncrypted()
 
 void ObjectTreeParserTest::testOpenPGPEncryptedNotDecrypted()
 {
-    KMime::Message::Ptr originalMessage
-        = readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
     ObjectTreeParser otp(&testSource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
 
-    QCOMPARE(nodeHelper.overallEncryptionState(
-                 originalMessage.data()), KMMsgFullyEncrypted);
+    QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgFullyEncrypted);
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "");
 
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
@@ -275,15 +240,11 @@ void ObjectTreeParserTest::testAsync_data()
     QTest::addColumn<QString>("mailFileName");
     QTest::addColumn<QString>("output");
 
-    QTest::newRow("openpgp-encrypt") << QStringLiteral("openpgp-encrypted.mbox") << QStringLiteral(
-        "encrypted message text");
-    QTest::newRow("smime-opaque-sign") << QStringLiteral("smime-opaque-sign.mbox")
-                                       << QStringLiteral("A simple signed only test.");
-    QTest::newRow("smime-encrypt") << QStringLiteral("smime-encrypted.mbox") << QStringLiteral(
-        "The quick brown fox jumped over the lazy dog.");
-    QTest::newRow("openpgp-inline-encrypt") << QStringLiteral(
-        "openpgp-inline-charset-encrypted.mbox") << QStringLiteral(
-        "asdasd asd asd asdf sadf sdaf sadf \u00F6\u00E4\u00FC");
+    QTest::newRow("openpgp-encrypt") << QStringLiteral("openpgp-encrypted.mbox") << QStringLiteral("encrypted message text");
+    QTest::newRow("smime-opaque-sign") << QStringLiteral("smime-opaque-sign.mbox") << QStringLiteral("A simple signed only test.");
+    QTest::newRow("smime-encrypt") << QStringLiteral("smime-encrypted.mbox") << QStringLiteral("The quick brown fox jumped over the lazy dog.");
+    QTest::newRow("openpgp-inline-encrypt") << QStringLiteral("openpgp-inline-charset-encrypted.mbox")
+                                            << QStringLiteral("asdasd asd asd asdf sadf sdaf sadf \u00F6\u00E4\u00FC");
 }
 
 void ObjectTreeParserTest::testAsync()
@@ -318,10 +279,9 @@ void ObjectTreeParserTest::testHtmlContent_data()
     QTest::addColumn<QString>("mailFileName");
     QTest::addColumn<QString>("output");
 
-    QTest::newRow("html-attachments1") << QStringLiteral("html-attachment1.mbox") << QStringLiteral(
-        "<html><head></head><body><p><span style=\"font-family:Arial;\">A Body Text</span></p></body></html>");
-    QTest::newRow("html-attachments2") << QStringLiteral("html-attachment2.mbox")
-                                       << QStringLiteral("<html><head></head><body>HTML Text</body></html>");
+    QTest::newRow("html-attachments1") << QStringLiteral("html-attachment1.mbox")
+                                       << QStringLiteral("<html><head></head><body><p><span style=\"font-family:Arial;\">A Body Text</span></p></body></html>");
+    QTest::newRow("html-attachments2") << QStringLiteral("html-attachment2.mbox") << QStringLiteral("<html><head></head><body>HTML Text</body></html>");
 }
 
 void ObjectTreeParserTest::testHtmlContent()
@@ -420,14 +380,14 @@ void ObjectTreeParserTest::testParsePlainMessage()
 
     // Test that the charset of messages without an explicit charset declaration
     // is correct
-    content
-        = "From: Thomas McGuire <dontspamme@gmx.net>\n"
-          "Subject: Plain Message Test\n"
-          "Date: Wed, 5 Aug 2009 10:58:27 +0200\n"
-          "MIME-Version: 1.0\n"
-          "Content-Type: text/plain;\n"
-          "\n"
-          "This is the message text.\n";
+    content =
+        "From: Thomas McGuire <dontspamme@gmx.net>\n"
+        "Subject: Plain Message Test\n"
+        "Date: Wed, 5 Aug 2009 10:58:27 +0200\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain;\n"
+        "\n"
+        "This is the message text.\n";
     msg->setContent(content);
     msg->parse();
     ObjectTreeParser otp2(&testSource);
@@ -437,8 +397,7 @@ void ObjectTreeParserTest::testParsePlainMessage()
 
 void ObjectTreeParserTest::testParseEncapsulatedMessage()
 {
-    KMime::Message::Ptr msg
-        = readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
+    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "Fwd: Test with attachment");
     QCOMPARE(msg->contents().size(), 2);
 
@@ -473,8 +432,7 @@ void ObjectTreeParserTest::testParseEncapsulatedMessage()
 void ObjectTreeParserTest::testMissingContentTypeHeader()
 {
     KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("no-content-type.mbox"));
-    QCOMPARE(msg->subject()->as7BitString(
-                 false).constData(), "Simple Mail Without Content-Type Header");
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Simple Mail Without Content-Type Header");
     QCOMPARE(msg->contents().size(), 0);
 
     NodeHelper nodeHelper;
@@ -540,8 +498,7 @@ void ObjectTreeParserTest::testHTML()
     otp.parseObjectTree(msg.data());
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "Some HTML text");
-    QVERIFY(otp.htmlContent().contains(QLatin1String(
-                                           "Some <span style=\" font-weight:600;\">HTML</span> text")));
+    QVERIFY(otp.htmlContent().contains(QLatin1String("Some <span style=\" font-weight:600;\">HTML</span> text")));
     QCOMPARE(otp.htmlContentCharset().data(), "windows-1252");
 }
 

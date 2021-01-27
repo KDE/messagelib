@@ -6,8 +6,8 @@
 
 #include "maintextjobtest.h"
 
-#include <QTextCodec>
 #include <QStandardPaths>
+#include <QTextCodec>
 
 #include <QDebug>
 #include <QTest>
@@ -15,13 +15,13 @@
 #include <kmime/kmime_content.h>
 using namespace KMime;
 
+#include <KPIMTextEdit/RichTextComposerControler>
+#include <KPIMTextEdit/RichTextComposerImages>
 #include <MessageComposer/Composer>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/MainTextJob>
-#include <MessageComposer/TextPart>
 #include <MessageComposer/RichTextComposerNg>
-#include <KPIMTextEdit/RichTextComposerControler>
-#include <KPIMTextEdit/RichTextComposerImages>
+#include <MessageComposer/TextPart>
 
 #include <KActionCollection>
 
@@ -42,7 +42,8 @@ void MainTextJobTest::testPlainText()
     auto composer = new Composer;
     composer->globalPart()->setGuiEnabled(false);
     QVector<QByteArray> charsets;
-    charsets << "us-ascii" << "utf-8";
+    charsets << "us-ascii"
+             << "utf-8";
     composer->globalPart()->setCharsets(charsets);
     auto textPart = new TextPart;
     QString data = QStringLiteral("they said their nevers they slept their dream");
@@ -71,7 +72,7 @@ void MainTextJobTest::testWrappingErrors()
         textPart->setWordWrappingEnabled(false);
         textPart->setWrappedPlainText(data);
         auto mjob = new MainTextJob(textPart, composer);
-        QVERIFY(!mjob->exec());   // error: not UseWrapping but given only wrapped text
+        QVERIFY(!mjob->exec()); // error: not UseWrapping but given only wrapped text
         QCOMPARE(mjob->error(), int(JobBase::BugError));
         delete textPart;
         delete composer;
@@ -85,7 +86,7 @@ void MainTextJobTest::testWrappingErrors()
         QString data = QStringLiteral("they said their nevers they slept their dream");
         textPart->setCleanPlainText(data);
         auto mjob = new MainTextJob(textPart, composer);
-        QVERIFY(!mjob->exec());   // error: UseWrapping but given only clean text
+        QVERIFY(!mjob->exec()); // error: UseWrapping but given only clean text
         QCOMPARE(mjob->error(), int(JobBase::BugError));
         delete textPart;
         delete composer;
@@ -127,7 +128,7 @@ void MainTextJobTest::testNoCharset()
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, composer);
     QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
-    QVERIFY(!mjob->exec());   // Error.
+    QVERIFY(!mjob->exec()); // Error.
     QCOMPARE(mjob->error(), int(JobBase::BugError));
     qDebug() << mjob->errorString();
     delete textPart;
@@ -138,14 +139,14 @@ void MainTextJobTest::testBadCharset()
 {
     auto composer = new Composer;
     composer->globalPart()->setGuiEnabled(false);
-    QByteArray charset("us-ascii");   // Cannot handle Romanian chars.
+    QByteArray charset("us-ascii"); // Cannot handle Romanian chars.
     composer->globalPart()->setCharsets(QVector<QByteArray>() << charset);
     auto textPart = new TextPart;
     QString data = QStringLiteral("el a plâns peste ţară cu lacrima limbii noastre");
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, composer);
     QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
-    QVERIFY(!mjob->exec());   // Error.
+    QVERIFY(!mjob->exec()); // Error.
     QCOMPARE(mjob->error(), int(JobBase::UserError));
     qDebug() << mjob->errorString();
     delete textPart;
@@ -167,7 +168,7 @@ void MainTextJobTest::testFallbackCharset()
     qDebug() << result->encodedContent();
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
-    QCOMPARE(result->contentType()->charset(), QByteArray("us-ascii"));     // Fallback is us-ascii or utf8.
+    QCOMPARE(result->contentType()->charset(), QByteArray("us-ascii")); // Fallback is us-ascii or utf8.
     QCOMPARE(QString::fromLatin1(result->body()), data);
     delete textPart;
     delete composer;

@@ -6,12 +6,13 @@
 #include "dkimmanagerkeydialog.h"
 #include "dkimmanagerkeywidget.h"
 
-#include <QVBoxLayout>
-#include <QDialogButtonBox>
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QDialogButtonBox>
+#include <QVBoxLayout>
 
-namespace {
+namespace
+{
 static const char myConfigGroupName[] = "DKIMManagerKeyDialog";
 }
 

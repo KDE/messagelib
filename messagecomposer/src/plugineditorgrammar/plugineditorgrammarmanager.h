@@ -7,13 +7,15 @@
 #ifndef PLUGINEDITORGRAMMARMANAGER_H
 #define PLUGINEDITORGRAMMARMANAGER_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
 #include <PimCommon/PluginUtil>
-namespace PimCommon {
+#include <QObject>
+namespace PimCommon
+{
 class CustomToolsPlugin;
 }
-namespace MessageComposer {
+namespace MessageComposer
+{
 class PluginEditorGrammarManagerPrivate;
 /**
  * @brief The PluginEditorGrammarManager class
@@ -34,6 +36,7 @@ public:
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
+
 private:
     PluginEditorGrammarManagerPrivate *const d;
 };

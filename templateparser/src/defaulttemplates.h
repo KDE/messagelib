@@ -11,9 +11,11 @@
 #include "templateparser_export.h"
 #include <QString>
 
-namespace TemplateParser {
+namespace TemplateParser
+{
 /** Default new/reply/forward templates. */
-namespace DefaultTemplates {
+namespace DefaultTemplates
+{
 TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString defaultNewMessage();
 TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString defaultReply();
 TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString defaultReplyAll();

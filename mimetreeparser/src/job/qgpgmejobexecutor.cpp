@@ -19,14 +19,14 @@
 using namespace GpgME;
 using namespace MimeTreeParser;
 
-QGpgMEJobExecutor::QGpgMEJobExecutor(QObject *parent) : QObject(parent)
+QGpgMEJobExecutor::QGpgMEJobExecutor(QObject *parent)
+    : QObject(parent)
 {
     setObjectName(QStringLiteral("KleoJobExecutor"));
     mEventLoop = new QEventLoop(this);
 }
 
-GpgME::VerificationResult QGpgMEJobExecutor::exec(
-    QGpgME::VerifyDetachedJob *job, const QByteArray &signature, const QByteArray &signedData)
+GpgME::VerificationResult QGpgMEJobExecutor::exec(QGpgME::VerifyDetachedJob *job, const QByteArray &signature, const QByteArray &signedData)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Starting detached verification job";
     connect(job, &QGpgME::VerifyDetachedJob::result, this, qOverload<const GpgME::VerificationResult &>(&QGpgMEJobExecutor::verificationResult));
@@ -38,11 +38,13 @@ GpgME::VerificationResult QGpgMEJobExecutor::exec(
     return mVerificationResult;
 }
 
-GpgME::VerificationResult QGpgMEJobExecutor::exec(
-    QGpgME::VerifyOpaqueJob *job, const QByteArray &signedData, QByteArray &plainText)
+GpgME::VerificationResult QGpgMEJobExecutor::exec(QGpgME::VerifyOpaqueJob *job, const QByteArray &signedData, QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Starting opaque verification job";
-    connect(job, &QGpgME::VerifyOpaqueJob::result, this, qOverload<const GpgME::VerificationResult &, const QByteArray &>(&QGpgMEJobExecutor::verificationResult));
+    connect(job,
+            &QGpgME::VerifyOpaqueJob::result,
+            this,
+            qOverload<const GpgME::VerificationResult &, const QByteArray &>(&QGpgMEJobExecutor::verificationResult));
     GpgME::Error err = job->start(signedData);
     if (err) {
         plainText.clear();
@@ -53,8 +55,8 @@ GpgME::VerificationResult QGpgMEJobExecutor::exec(
     return mVerificationResult;
 }
 
-std::pair< GpgME::DecryptionResult, GpgME::VerificationResult > QGpgMEJobExecutor::exec(
-    QGpgME::DecryptVerifyJob *job, const QByteArray &cipherText, QByteArray &plainText)
+std::pair<GpgME::DecryptionResult, GpgME::VerificationResult>
+QGpgMEJobExecutor::exec(QGpgME::DecryptVerifyJob *job, const QByteArray &cipherText, QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Starting decryption job";
     connect(job, &QGpgME::DecryptVerifyJob::result, this, &QGpgMEJobExecutor::decryptResult);
@@ -107,8 +109,9 @@ void QGpgMEJobExecutor::verificationResult(const GpgME::VerificationResult &resu
     mEventLoop->quit();
 }
 
-void QGpgMEJobExecutor::decryptResult(
-    const GpgME::DecryptionResult &decryptionresult, const GpgME::VerificationResult &verificationresult, const QByteArray &plainText)
+void QGpgMEJobExecutor::decryptResult(const GpgME::DecryptionResult &decryptionresult,
+                                      const GpgME::VerificationResult &verificationresult,
+                                      const QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Decryption job finished";
     auto job = qobject_cast<QGpgME::Job *>(sender());

@@ -7,12 +7,13 @@
 #ifndef WEBENGINEMANAGESCRIPT_H
 #define WEBENGINEMANAGESCRIPT_H
 
+#include "webengineviewer_export.h"
 #include <QObject>
 #include <QWebEngineScript>
-#include "webengineviewer_export.h"
 
 class QWebEngineProfile;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 /**
  * @brief The WebEngineManageScript class
  * @author Laurent Montel <montel@kde.org>

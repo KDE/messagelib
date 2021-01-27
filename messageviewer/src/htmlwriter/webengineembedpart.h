@@ -7,9 +7,10 @@
 #ifndef WEBENGINEEMBEDPART_H
 #define WEBENGINEEMBEDPART_H
 
-#include <QObject>
 #include <QMap>
-namespace MessageViewer {
+#include <QObject>
+namespace MessageViewer
+{
 class WebEngineEmbedPart : public QObject
 {
     Q_OBJECT
@@ -26,6 +27,7 @@ public:
     Q_REQUIRED_RESULT QString contentUrl(const QString &contentId) const;
 
     static WebEngineEmbedPart *self();
+
 private:
     // Key is Content-Id, value is URL
     QMap<QString, QString> mEmbeddedPartMap;

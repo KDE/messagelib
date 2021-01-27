@@ -11,12 +11,12 @@
 #include <KLocalizedString>
 
 #include <QEventLoop>
-#include <QWebEngineDownloadItem>
-#include <QPointer>
-#include <QTimer>
 #include <QFileDialog>
-#include <QWebEngineProfile>
+#include <QPointer>
 #include <QPrinter>
+#include <QTimer>
+#include <QWebEngineDownloadItem>
+#include <QWebEngineProfile>
 
 using namespace WebEngineViewer;
 
@@ -83,11 +83,14 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type
     return true;
 }
 
-void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID)
+void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level,
+                                             const QString &message,
+                                             int lineNumber,
+                                             const QString &sourceID)
 {
     Q_UNUSED(level)
     Q_UNUSED(sourceID)
-    //Don't convert to debug categories
+    // Don't convert to debug categories
     qDebug() << "WebEnginePage::javaScriptConsoleMessage lineNumber: " << lineNumber << " message: " << message;
     Q_EMIT showConsoleMessage(message);
 }

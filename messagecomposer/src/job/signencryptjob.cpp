@@ -15,13 +15,13 @@
 #include <QGpgME/SignEncryptJob>
 
 #include "messagecomposer_debug.h"
-#include <kmime/kmime_message.h>
 #include <kmime/kmime_content.h>
 #include <kmime/kmime_headers.h>
+#include <kmime/kmime_message.h>
 
+#include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>
 #include <gpgme++/signingresult.h>
-#include <gpgme++/encryptionresult.h>
 #include <sstream>
 
 using namespace MessageComposer;
@@ -85,10 +85,7 @@ void SignEncryptJob::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
     Q_D(SignEncryptJob);
 
     // There *must* be a concrete format set at this point.
-    Q_ASSERT(format == Kleo::OpenPGPMIMEFormat
-             || format == Kleo::InlineOpenPGPFormat
-             || format == Kleo::SMIMEFormat
-             || format == Kleo::SMIMEOpaqueFormat);
+    Q_ASSERT(format == Kleo::OpenPGPMIMEFormat || format == Kleo::InlineOpenPGPFormat || format == Kleo::SMIMEFormat || format == Kleo::SMIMEOpaqueFormat);
     d->format = format;
 }
 
@@ -158,7 +155,7 @@ std::vector<GpgME::Key> SignEncryptJob::encryptionKeys() const
 void SignEncryptJob::doStart()
 {
     Q_D(SignEncryptJob);
-    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr); // Not processed before.
 
     if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
         auto pJob = new ProtectedHeadersJob;
@@ -179,7 +176,7 @@ void SignEncryptJob::doStart()
 
 void SignEncryptJob::slotResult(KJob *job)
 {
-    //Q_D(SignEncryptJob);
+    // Q_D(SignEncryptJob);
     if (error()) {
         ContentJobBase::slotResult(job);
         return;
@@ -199,7 +196,7 @@ void SignEncryptJob::slotResult(KJob *job)
 void SignEncryptJob::process()
 {
     Q_D(SignEncryptJob);
-    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr); // Not processed before.
 
     // if setContent hasn't been called, we assume that a subjob was added
     // and we want to use that
@@ -217,7 +214,7 @@ void SignEncryptJob::process()
         return;
     }
     Q_ASSERT(proto);
-    //d->resultContent = new KMime::Content;
+    // d->resultContent = new KMime::Content;
 
     qCDebug(MESSAGECOMPOSER_LOG) << "creating signencrypt from:" << proto->name() << proto->displayName();
 
@@ -231,38 +228,41 @@ void SignEncryptJob::process()
         content = d->content->body();
     } else if (!(d->format & Kleo::SMIMEOpaqueFormat)) {
         content = KMime::LFtoCRLF(d->content->encodedContent());
-    } else {                    // SMimeOpaque doesn't need LFtoCRLF, else it gets munged
+    } else { // SMimeOpaque doesn't need LFtoCRLF, else it gets munged
         content = d->content->encodedContent();
     }
 
     QGpgME::SignEncryptJob *job(proto->signEncryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat));
-    QObject::connect(job, &QGpgME::SignEncryptJob::result, this, [this, d](
-        const GpgME::SigningResult &signingResult,
-        const GpgME::EncryptionResult &encryptionResult,
-        const QByteArray &cipherText,
-        const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
-        Q_UNUSED(auditLogAsHtml)
-        Q_UNUSED(auditLogError)
-        if (signingResult.error()) {
-            qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << signingResult.error().asString();
-            setError(signingResult.error().code());
-            setErrorText(QString::fromLocal8Bit(signingResult.error().asString()));
-            emitResult();
-            return;
-        }
-        if (encryptionResult.error()) {
-            qCDebug(MESSAGECOMPOSER_LOG) << "encrypting failed:" << encryptionResult.error().asString();
-            setError(encryptionResult.error().code());
-            setErrorText(QString::fromLocal8Bit(encryptionResult.error().asString()));
-            emitResult();
-            return;
-        }
+    QObject::connect(job,
+                     &QGpgME::SignEncryptJob::result,
+                     this,
+                     [this, d](const GpgME::SigningResult &signingResult,
+                               const GpgME::EncryptionResult &encryptionResult,
+                               const QByteArray &cipherText,
+                               const QString &auditLogAsHtml,
+                               const GpgME::Error &auditLogError) {
+                         Q_UNUSED(auditLogAsHtml)
+                         Q_UNUSED(auditLogError)
+                         if (signingResult.error()) {
+                             qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << signingResult.error().asString();
+                             setError(signingResult.error().code());
+                             setErrorText(QString::fromLocal8Bit(signingResult.error().asString()));
+                             emitResult();
+                             return;
+                         }
+                         if (encryptionResult.error()) {
+                             qCDebug(MESSAGECOMPOSER_LOG) << "encrypting failed:" << encryptionResult.error().asString();
+                             setError(encryptionResult.error().code());
+                             setErrorText(QString::fromLocal8Bit(encryptionResult.error().asString()));
+                             emitResult();
+                             return;
+                         }
 
-        QByteArray signatureHashAlgo = signingResult.createdSignature(0).hashAlgorithmAsString();
-        d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false, signatureHashAlgo);
+                         QByteArray signatureHashAlgo = signingResult.createdSignature(0).hashAlgorithmAsString();
+                         d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false, signatureHashAlgo);
 
-        emitResult();
-    });
+                         emitResult();
+                     });
 
     const auto error = job->start(d->signers, d->encKeys, content, false);
     if (error.code()) {

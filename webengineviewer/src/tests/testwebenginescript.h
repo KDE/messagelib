@@ -22,6 +22,7 @@ Q_SIGNALS:
     void executeScript();
 private Q_SLOTS:
     void slotCurrentIndexChanged(int);
+
 private:
     void fillScriptCombo(QComboBox *scriptCombo);
     QTextEdit *mScriptEdit;
@@ -60,6 +61,7 @@ private Q_SLOTS:
     void slotExecuteScript();
     void handleScript(const QVariant &res);
     void slotShowConsoleMessage(const QString &msg);
+
 private:
     TestScriptWidget *mTestScriptWidget;
     TestWebEngineScriptView *mTestWebEngine;

@@ -7,10 +7,11 @@
 #ifndef SHOWNEXTMESSAGEWIDGET_H
 #define SHOWNEXTMESSAGEWIDGET_H
 
-#include <QWidget>
 #include "messageviewer_private_export.h"
+#include <QWidget>
 class QPushButton;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT ShowNextMessageWidget : public QWidget
 {
     Q_OBJECT

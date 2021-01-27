@@ -9,9 +9,9 @@
 
 #include "settings/messageviewersettings.h"
 
-#include <AkonadiCore/itemmodifyjob.h>
-#include <AkonadiCore/Session>
 #include <Akonadi/KMime/MessageFlags>
+#include <AkonadiCore/Session>
+#include <AkonadiCore/itemmodifyjob.h>
 
 #include <QTimer>
 
@@ -67,8 +67,7 @@ MarkMessageReadHandler::~MarkMessageReadHandler()
 void MarkMessageReadHandler::setItem(const Akonadi::Item &item)
 {
     if (MessageViewer::MessageViewerSettings::self()->delayedMarkAsRead()) {
-        if (sListItem->contains(item) || d->mItemQueue == item
-            || item.hasFlag(Akonadi::MessageFlags::Queued)) {
+        if (sListItem->contains(item) || d->mItemQueue == item || item.hasFlag(Akonadi::MessageFlags::Queued)) {
             return;
         }
         if (d->mTimer.isActive()) {

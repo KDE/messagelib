@@ -10,9 +10,9 @@
 #include "templatesconfiguration_kfg.h"
 #include <KPIMTextEdit/PlainTextEditor>
 
-#include <KMessageBox>
-#include <KLocalizedString>
 #include "templateparser_debug.h"
+#include <KLocalizedString>
+#include <KMessageBox>
 
 #include <QWhatsThis>
 
@@ -37,62 +37,53 @@ TemplatesConfiguration::TemplatesConfiguration(QWidget *parent, const QString &n
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     sizeHint();
 
-    connect(textEdit_new->editor(), &QPlainTextEdit::textChanged,
-            this, &TemplatesConfiguration::slotTextChanged);
-    connect(textEdit_reply->editor(), &QPlainTextEdit::textChanged,
-            this, &TemplatesConfiguration::slotTextChanged);
-    connect(textEdit_reply_all->editor(), &QPlainTextEdit::textChanged,
-            this, &TemplatesConfiguration::slotTextChanged);
-    connect(textEdit_forward->editor(), &QPlainTextEdit::textChanged,
-            this, &TemplatesConfiguration::slotTextChanged);
-    connect(lineEdit_quote, &QLineEdit::textChanged,
-            this, &TemplatesConfiguration::slotTextChanged);
+    connect(textEdit_new->editor(), &QPlainTextEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
+    connect(textEdit_reply->editor(), &QPlainTextEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
+    connect(textEdit_reply_all->editor(), &QPlainTextEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
+    connect(textEdit_forward->editor(), &QPlainTextEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
+    connect(lineEdit_quote, &QLineEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
 
-    connect(mInsertCommand, qOverload<const QString &, int>(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand),
-            this, &TemplatesConfiguration::slotInsertCommand);
+    connect(mInsertCommand,
+            qOverload<const QString &, int>(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand),
+            this,
+            &TemplatesConfiguration::slotInsertCommand);
 
-    d->mHelpString
-        = i18n("<p>Here you can create and manage templates to use when "
-               "composing new messages, replies or forwarded messages.</p>"
-               "<p>The message templates support substitution commands, "
-               "either simply type them or select them from "
-               "the <i>Insert command</i> menu.</p>");
+    d->mHelpString = i18n(
+        "<p>Here you can create and manage templates to use when "
+        "composing new messages, replies or forwarded messages.</p>"
+        "<p>The message templates support substitution commands, "
+        "either simply type them or select them from "
+        "the <i>Insert command</i> menu.</p>");
     const QString templateConfigurationName(name);
     if (templateConfigurationName == QLatin1String("folder-templates")) {
-        d->mHelpString
-            += i18n("<p>Templates specified here are folder-specific. "
-                    "They override both global templates and per-identity "
-                    "templates.</p>");
+        d->mHelpString += i18n(
+            "<p>Templates specified here are folder-specific. "
+            "They override both global templates and per-identity "
+            "templates.</p>");
     } else if (templateConfigurationName == QLatin1String("identity-templates")) {
-        d->mHelpString
-            += i18n("<p>Templates specified here are identity-specific. "
-                    "They override global templates, but can be overridden by "
-                    "per-folder templates if they are specified.</p>");
+        d->mHelpString += i18n(
+            "<p>Templates specified here are identity-specific. "
+            "They override global templates, but can be overridden by "
+            "per-folder templates if they are specified.</p>");
     } else {
-        d->mHelpString
-            += i18n("<p>These are global (default) templates. They can be overridden "
-                    "by per-identity templates or per-folder templates "
-                    "if they are specified.</p>");
+        d->mHelpString += i18n(
+            "<p>These are global (default) templates. They can be overridden "
+            "by per-identity templates or per-folder templates "
+            "if they are specified.</p>");
     }
 
     mHelp->setText(i18n("<a href=\"whatsthis\">How does this work?</a>"));
-    connect(mHelp, &QLabel::linkActivated,
-            this, &TemplatesConfiguration::slotHelpLinkClicked);
+    connect(mHelp, &QLabel::linkActivated, this, &TemplatesConfiguration::slotHelpLinkClicked);
     mHelp->setContextMenuPolicy(Qt::NoContextMenu);
 }
 
 TemplatesConfiguration::~TemplatesConfiguration()
 {
-    disconnect(textEdit_new->editor(), &QPlainTextEdit::textChanged,
-               this, &TemplatesConfiguration::slotTextChanged);
-    disconnect(textEdit_reply->editor(), &QPlainTextEdit::textChanged,
-               this, &TemplatesConfiguration::slotTextChanged);
-    disconnect(textEdit_reply_all->editor(), &QPlainTextEdit::textChanged,
-               this, &TemplatesConfiguration::slotTextChanged);
-    disconnect(textEdit_forward->editor(), &QPlainTextEdit::textChanged,
-               this, &TemplatesConfiguration::slotTextChanged);
-    disconnect(lineEdit_quote, &QLineEdit::textChanged,
-               this, &TemplatesConfiguration::slotTextChanged);
+    disconnect(textEdit_new->editor(), &QPlainTextEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
+    disconnect(textEdit_reply->editor(), &QPlainTextEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
+    disconnect(textEdit_reply_all->editor(), &QPlainTextEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
+    disconnect(textEdit_forward->editor(), &QPlainTextEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
+    disconnect(lineEdit_quote, &QLineEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
 
     delete d;
 }
@@ -109,14 +100,12 @@ void TemplatesConfiguration::slotTextChanged()
 
 void TemplatesConfiguration::resetToDefault()
 {
-    const int choice
-        = KMessageBox::questionYesNoCancel(
-              nullptr,
-              i18n("Do you want to reset current template or all templates to default?"),
-              i18n("Reset to default"),
-              KGuiItem(i18n("Reset Current Template")),
-              KGuiItem(i18n("Reset All Templates")),
-              KStandardGuiItem::cancel());
+    const int choice = KMessageBox::questionYesNoCancel(nullptr,
+                                                        i18n("Do you want to reset current template or all templates to default?"),
+                                                        i18n("Reset to default"),
+                                                        KGuiItem(i18n("Reset Current Template")),
+                                                        KGuiItem(i18n("Reset All Templates")),
+                                                        KStandardGuiItem::cancel());
 
     if (choice == KMessageBox::Cancel) {
         return;
@@ -326,7 +315,7 @@ void TemplatesConfiguration::loadFromFolder(const QString &id, uint identity)
     }
     lineEdit_quote->setText(str);
 
-    delete(tid);
+    delete (tid);
 }
 
 void TemplatesConfiguration::saveToFolder(const QString &id)
@@ -372,13 +361,12 @@ void TemplatesConfiguration::slotInsertCommand(const QString &cmd, int adjustCur
     const QString editText(edit->toPlainText());
     if ((editText.contains(QLatin1String("%FORCEDPLAIN")) && (cmd == QLatin1String("%FORCEDHTML")))
         || (editText.contains(QLatin1String("%FORCEDHTML")) && (cmd == QLatin1String("%FORCEDPLAIN")))) {
-        KMessageBox::error(
-            this,
-            i18n("Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs"
-                 " is not correct. Use only one of the aforementioned commands with \" Reply as"
-                 " Quoted Message command\" as per your need\n"
-                 "(a)Reply using plain text for quotes to be strictly in plain text\n"
-                 "(b)Reply using HTML text for quotes being in HTML format if present"));
+        KMessageBox::error(this,
+                           i18n("Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs"
+                                " is not correct. Use only one of the aforementioned commands with \" Reply as"
+                                " Quoted Message command\" as per your need\n"
+                                "(a)Reply using plain text for quotes to be strictly in plain text\n"
+                                "(b)Reply using HTML text for quotes being in HTML format if present"));
     } else {
         QTextCursor cursor = edit->textCursor();
         cursor.insertText(cmd);

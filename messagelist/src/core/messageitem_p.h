@@ -9,21 +9,22 @@
 #ifndef MESSAGELIST_MESSAGEITEM_P_H
 #define MESSAGELIST_MESSAGEITEM_P_H
 
-#include "messageitem.h"
 #include "item_p.h"
-#include <PimCommonAkonadi/AnnotationDialog>
+#include "messageitem.h"
 #include <Item>
-#include <Monitor>
-#include <Tag>
 #include <KJob>
+#include <Monitor>
+#include <PimCommonAkonadi/AnnotationDialog>
 #include <QCache>
+#include <Tag>
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class MessageItemPrivate : public ItemPrivate
 {
 public:
-
     explicit MessageItemPrivate(MessageItem *qq);
     ~MessageItemPrivate() override;
 
@@ -51,23 +52,22 @@ public:
     // This creates mTagList and fills it with useful data
     void fillTagList(const Akonadi::Tag::List &taglist);
 
-    QByteArray mMessageIdMD5;            ///< always set
-    QByteArray mInReplyToIdMD5;          ///< set only if we're doing threading
-    QByteArray mReferencesIdMD5;         ///< set only if we're doing threading
-    QByteArray mStrippedSubjectMD5;      ///< set only if we're doing threading
+    QByteArray mMessageIdMD5; ///< always set
+    QByteArray mInReplyToIdMD5; ///< set only if we're doing threading
+    QByteArray mReferencesIdMD5; ///< set only if we're doing threading
+    QByteArray mStrippedSubjectMD5; ///< set only if we're doing threading
     Akonadi::Item mAkonadiItem;
     MessageItem::ThreadingStatus mThreadingStatus : 4;
     MessageItem::EncryptionState mEncryptionState : 4;
     MessageItem::SignatureState mSignatureState : 4;
 
-    bool mAboutToBeRemoved : 1;       ///< Set to true when this item is going to be deleted and shouldn't be selectable
-    bool mSubjectIsPrefixed : 1;      ///< set only if we're doing subject based threading
+    bool mAboutToBeRemoved : 1; ///< Set to true when this item is going to be deleted and shouldn't be selectable
+    bool mSubjectIsPrefixed : 1; ///< set only if we're doing subject based threading
 
 private:
-
     // List of all tags. If this is 0, it means we have not yet calculated this list. It is calculated
     // on demand when needed.
-    mutable QList< MessageItem::Tag * > *mTagList;
+    mutable QList<MessageItem::Tag *> *mTagList;
 };
 
 class FakeItemPrivate : public MessageItemPrivate

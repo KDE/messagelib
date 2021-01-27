@@ -11,8 +11,10 @@
 
 #include <QtPlugin>
 
-namespace MessageViewer {
-namespace Interface {
+namespace MessageViewer
+{
+namespace Interface
+{
 class BodyPartURLHandler;
 }
 class MessagePartRendererBase;

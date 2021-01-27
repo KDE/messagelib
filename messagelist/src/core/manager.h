@@ -16,12 +16,15 @@
 
 #include <collection.h>
 
-namespace KMime {
+namespace KMime
+{
 class DateFormatter;
 }
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class Aggregation;
 class Theme;
 class StorageModel;
@@ -48,9 +51,9 @@ protected:
 
 private:
     static Manager *mInstance;
-    QList< Widget * > mWidgetList;
-    QMap< QString, Aggregation * > mAggregations;
-    QMap< QString, Theme * > mThemes;
+    QList<Widget *> mWidgetList;
+    QMap<QString, Aggregation *> mAggregations;
+    QMap<QString, Theme *> mThemes;
     KMime::DateFormatter *mDateFormatter = nullptr;
     QString mCachedLocalizedUnknownText;
 
@@ -90,15 +93,15 @@ public:
     void addAggregation(Aggregation *set);
     void removeAllAggregations();
 
-    const QMap< QString, Aggregation * > &aggregations() const
+    const QMap<QString, Aggregation *> &aggregations() const
     {
         return mAggregations;
     }
 
     /**
-    * This is called by the aggregation configuration dialog
-    * once the sets have been changed.
-    */
+     * This is called by the aggregation configuration dialog
+     * once the sets have been changed.
+     */
     void aggregationsConfigurationCompleted();
 
     // sort order management
@@ -120,28 +123,28 @@ public:
     void addTheme(Theme *set);
     void removeAllThemes();
 
-    const QMap< QString, Theme * > &themes() const
+    const QMap<QString, Theme *> &themes() const
     {
         return mThemes;
     }
 
     /**
-    * This is called by the theme configuration dialog
-    * once the sets have been changed.
-    */
+     * This is called by the theme configuration dialog
+     * once the sets have been changed.
+     */
     void themesConfigurationCompleted();
 
 protected Q_SLOTS:
     /**
-    * Reloads the global configuration from the config files (so we assume it has changed)
-    * The settings private to MessageList (like Themes or Aggregations) aren't reloaded.
-    * If the global configuration has changed then all the views are reloaded.
-    */
+     * Reloads the global configuration from the config files (so we assume it has changed)
+     * The settings private to MessageList (like Themes or Aggregations) aren't reloaded.
+     * If the global configuration has changed then all the views are reloaded.
+     */
     void reloadGlobalConfiguration();
 
     /**
-    * Explicitly reloads the contents of all the widgets.
-    */
+     * Explicitly reloads the contents of all the widgets.
+     */
     void reloadAllWidgets();
 
 Q_SIGNALS:

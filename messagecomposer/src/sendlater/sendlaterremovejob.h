@@ -7,12 +7,13 @@
 #ifndef MESSAGECOMPOSER_SENDLATERREMOVEJOB_H
 #define MESSAGECOMPOSER_SENDLATERREMOVEJOB_H
 
-#include "sendlaterjob.h"
 #include "messagecomposer_export.h"
+#include "sendlaterjob.h"
 
 #include <AkonadiCore/Item>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class MESSAGECOMPOSER_EXPORT SendLaterRemoveJob : public SendLaterJob
 {
     Q_OBJECT

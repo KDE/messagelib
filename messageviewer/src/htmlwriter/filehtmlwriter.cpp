@@ -59,8 +59,7 @@ QIODevice *FileHtmlWriter::device() const
 
 void FileHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
 {
-    *stream() << "<!-- embedPart(contentID=" << contentId << ", url=" << url << ") -->"
-        << Qt::endl;
+    *stream() << "<!-- embedPart(contentID=" << contentId << ", url=" << url << ") -->" << Qt::endl;
 }
 
 void FileHtmlWriter::setExtraHead(const QString &)

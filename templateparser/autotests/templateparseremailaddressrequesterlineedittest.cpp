@@ -6,10 +6,10 @@
 
 #include "templateparseremailaddressrequesterlineedittest.h"
 #include "templateparseremailaddressrequesterlineedit.h"
-#include <QTest>
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QSignalSpy>
+#include <QTest>
 
 TemplateParserEmailAddressRequesterLineEditTest::TemplateParserEmailAddressRequesterLineEditTest(QObject *parent)
     : QObject(parent)
@@ -33,9 +33,7 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldAssignValue()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
     auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
-    const QString str{
-        QStringLiteral("foo")
-    };
+    const QString str{QStringLiteral("foo")};
     w.setText(str);
     QCOMPARE(w.text(), str);
     QCOMPARE(mLineEdit->text(), str);
@@ -45,9 +43,7 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldClearValue()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
     auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
-    const QString str{
-        QStringLiteral("foo")
-    };
+    const QString str{QStringLiteral("foo")};
     w.setText(str);
     QCOMPARE(w.text(), str);
     w.clear();

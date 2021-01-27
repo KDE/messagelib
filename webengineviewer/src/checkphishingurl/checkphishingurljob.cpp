@@ -5,12 +5,12 @@
 */
 
 #include "checkphishingurljob.h"
-#include <QNetworkAccessManager>
 #include <PimCommon/NetworkManager>
 #include <QJsonDocument>
-#include <webengineviewer_debug.h>
+#include <QNetworkAccessManager>
 #include <QNetworkConfigurationManager>
 #include <QUrlQuery>
+#include <webengineviewer_debug.h>
 using namespace WebEngineViewer;
 
 WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson = true;
@@ -112,12 +112,12 @@ QByteArray CheckPhishingUrlJob::jsonRequest() const
     map.insert(QStringLiteral("client"), clientMap);
 
     QVariantMap threatMap;
-    const QVariantList platformList = { QStringLiteral("WINDOWS") };
+    const QVariantList platformList = {QStringLiteral("WINDOWS")};
     threatMap.insert(QStringLiteral("platformTypes"), platformList);
 
-    const QVariantList threatTypesList = { QStringLiteral("MALWARE") };
+    const QVariantList threatTypesList = {QStringLiteral("MALWARE")};
     threatMap.insert(QStringLiteral("threatTypes"), threatTypesList);
-    const QVariantList threatEntryTypesList = { QStringLiteral("URL") };
+    const QVariantList threatEntryTypesList = {QStringLiteral("URL")};
     threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
     QVariantList threatEntriesList;
     QVariantMap urlMap;
@@ -148,7 +148,9 @@ void CheckPhishingUrlJob::start()
         const QByteArray baPostData = jsonRequest();
         qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
         Q_EMIT debugJson(baPostData);
-        //curl -H "Content-Type: application/json" -X POST -d '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}' https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
+        // curl -H "Content-Type: application/json" -X POST -d
+        // '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}'
+        // https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
 
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)

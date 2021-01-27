@@ -107,22 +107,26 @@ void CryptoHelperTest::testEmbededPGPBlock()
 
 void CryptoHelperTest::testClearSignedMessage()
 {
-    const QByteArray text = QByteArray("before\n-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\nafter");
+    const QByteArray text = QByteArray(
+        "before\n-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\nafter");
     const QVector<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 3);
     QCOMPARE(blocks[0].text(), QByteArray("before\n"));
-    QCOMPARE(blocks[1].text(), QByteArray("-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\n"));
+    QCOMPARE(blocks[1].text(),
+             QByteArray("-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\n"));
     QCOMPARE(blocks[2].text(), QByteArray("after"));
 }
 
 void CryptoHelperTest::testMultipleBlockMessage()
 {
     const QByteArray text = QByteArray(
-        "before\n-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\nafter\n-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n");
+        "before\n-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP "
+        "SIGNATURE-----\nafter\n-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n");
     const QVector<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 4);
     QCOMPARE(blocks[0].text(), QByteArray("before\n"));
-    QCOMPARE(blocks[1].text(), QByteArray("-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\n"));
+    QCOMPARE(blocks[1].text(),
+             QByteArray("-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\n"));
     QCOMPARE(blocks[2].text(), QByteArray("after\n"));
     QCOMPARE(blocks[3].text(), QByteArray("-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n"));
 }

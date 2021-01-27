@@ -9,7 +9,8 @@
 
 #include <QWidget>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class InvitationSettingsPrivate;
 /**
  * @brief The InvitationSettings class

@@ -5,8 +5,8 @@
 #include "findbarsourceview.h"
 #include <PimCommon/LineEditWithCompleterNg>
 
-#include <QPlainTextEdit>
 #include <QAction>
+#include <QPlainTextEdit>
 
 using namespace MessageViewer;
 

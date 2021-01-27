@@ -8,9 +8,9 @@
 
 #include <QCommandLineParser>
 #include <QCoreApplication>
+#include <QDebug>
 #include <QFile>
 #include <QStandardPaths>
-#include <QDebug>
 
 CheckSignature::CheckSignature(const QString &fileName, QObject *parent)
     : QObject(parent)
@@ -48,8 +48,7 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"),
-                                        QStringLiteral("File containing an email")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"), QStringLiteral("File containing an email")));
 
     parser.process(app);
 

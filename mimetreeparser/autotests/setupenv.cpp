@@ -9,8 +9,8 @@
 
 #include <QStandardPaths>
 
-#include <QFile>
 #include <QDir>
+#include <QFile>
 
 void MimeTreeParser::Test::setupEnv()
 {

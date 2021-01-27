@@ -18,7 +18,8 @@
 class QString;
 class QPaintDevice;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class HeaderStylePlugin;
 /**
  * @brief The CSSHelperBase class
@@ -67,13 +68,7 @@ public:
 
     void setHeaderPlugin(const HeaderStylePlugin *headerPlugin);
 
-    enum InlineMessageType {
-        Positive,
-        Information,
-        Warning,
-        Error,
-        MESSAGE_TYPE_COUNT
-    };
+    enum InlineMessageType { Positive, Information, Warning, Error, MESSAGE_TYPE_COUNT };
 
 protected:
     /** Recalculate PGP frame and body colors (should be called after changing

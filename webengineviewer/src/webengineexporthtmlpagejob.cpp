@@ -9,8 +9,7 @@
 #include <QWebEngineView>
 
 using namespace WebEngineViewer;
-template<typename Arg, typename R, typename C>
-struct InvokeWrapper {
+template<typename Arg, typename R, typename C> struct InvokeWrapper {
     R *receiver;
     void (C::*memberFun)(Arg);
     void operator()(Arg result)
@@ -19,8 +18,7 @@ struct InvokeWrapper {
     }
 };
 
-template<typename Arg, typename R, typename C>
-InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
+template<typename Arg, typename R, typename C> InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 {
     InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
     return wrapper;
@@ -60,7 +58,7 @@ void WebEngineExportHtmlPageJob::slotSaveHtmlToPage(const QString &text)
     newText.replace(QLatin1String("<head>"), QLatin1String("<head><meta charset=\"UTF-8\">"));
     stream << newText;
     temporaryFile.close();
-    //We need to remove this temporary file
+    // We need to remove this temporary file
     Q_EMIT success(temporaryFile.fileName());
     deleteLater();
 }

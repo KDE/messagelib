@@ -12,27 +12,22 @@
 
 #include <Libkleo/Enum>
 
-static const Kleo::CryptoMessageFormat cryptoMessageFormats[] = {
-    Kleo::AutoFormat,
-    Kleo::InlineOpenPGPFormat,
-    Kleo::OpenPGPMIMEFormat,
-    Kleo::SMIMEFormat,
-    Kleo::SMIMEOpaqueFormat
-};
+static const Kleo::CryptoMessageFormat cryptoMessageFormats[] = {Kleo::AutoFormat,
+                                                                 Kleo::InlineOpenPGPFormat,
+                                                                 Kleo::OpenPGPMIMEFormat,
+                                                                 Kleo::SMIMEFormat,
+                                                                 Kleo::SMIMEOpaqueFormat};
 static const int numCryptoMessageFormats = sizeof cryptoMessageFormats / sizeof *cryptoMessageFormats;
 
-static const Kleo::CryptoMessageFormat concreteCryptoMessageFormats[] = {
-    Kleo::OpenPGPMIMEFormat,
-    Kleo::SMIMEFormat,
-    Kleo::SMIMEOpaqueFormat,
-    Kleo::InlineOpenPGPFormat
-};
-static const unsigned int numConcreteCryptoMessageFormats
-    = sizeof concreteCryptoMessageFormats / sizeof *concreteCryptoMessageFormats;
+static const Kleo::CryptoMessageFormat concreteCryptoMessageFormats[] = {Kleo::OpenPGPMIMEFormat,
+                                                                         Kleo::SMIMEFormat,
+                                                                         Kleo::SMIMEOpaqueFormat,
+                                                                         Kleo::InlineOpenPGPFormat};
+static const unsigned int numConcreteCryptoMessageFormats = sizeof concreteCryptoMessageFormats / sizeof *concreteCryptoMessageFormats;
 
 static inline Kleo::CryptoMessageFormat cb2format(int idx)
 {
-    return cryptoMessageFormats[ idx >= 0 && idx < numCryptoMessageFormats ? idx : 0 ];
+    return cryptoMessageFormats[idx >= 0 && idx < numCryptoMessageFormats ? idx : 0];
 }
 
 static inline int format2cb(Kleo::CryptoMessageFormat f)

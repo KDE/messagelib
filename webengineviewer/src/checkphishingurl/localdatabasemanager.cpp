@@ -4,12 +4,12 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "localdatabasemanager.h"
-#include "localdatabasemanager_p.h"
-#include "webengineviewer_debug.h"
-#include "createdatabasefilejob.h"
-#include "checkphishingurlutil.h"
-#include "urlhashing.h"
 #include "backoffmodemanager.h"
+#include "checkphishingurlutil.h"
+#include "createdatabasefilejob.h"
+#include "localdatabasemanager_p.h"
+#include "urlhashing.h"
+#include "webengineviewer_debug.h"
 
 #include <KSharedConfig>
 
@@ -45,7 +45,7 @@ void LocalDataBaseManager::initialize()
 void LocalDataBaseManager::checkUrl(const QUrl &url)
 {
     if (d->mDataBaseOk) {
-        //TODO fixme short hash! we don't need to use it.
+        // TODO fixme short hash! we don't need to use it.
         WebEngineViewer::UrlHashing urlHashing(url);
         QHash<QByteArray, QByteArray> hashList = urlHashing.hashList();
         QHash<QByteArray, QByteArray> conflictHashs;

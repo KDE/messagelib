@@ -5,8 +5,8 @@
 */
 
 #include "messageviewerconfiguresettingspluginmanager.h"
-#include "messageviewerconfiguresettingsplugin.h"
 #include "messageviewer_debug.h"
+#include "messageviewerconfiguresettingsplugin.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KPluginMetaData>
@@ -43,13 +43,15 @@ public:
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
     MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
+
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
     QVector<ConfigureSettingsPluginInfo> mPluginList;
     MessageViewerConfigureSettingsPluginManager *const q;
 };
 
-namespace {
+namespace
+{
 QString pluginVersion()
 {
     return QStringLiteral("1.0");
@@ -73,13 +75,11 @@ QString MessageViewerConfigureSettingsPluginManagerPrivate::configPrefixSettingK
 
 void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
 {
-    const QVector<KPluginMetaData> plugins
-        = KPluginLoader::findPlugins(QStringLiteral("messageviewer/configuresettings"));
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("messageviewer/configuresettings"));
 
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
-    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(
-        configGroupName(), configPrefixSettingKey());
+    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QSet<QString> unique;
     QVector<int> listOrder;
     while (i.hasPrevious()) {
@@ -87,9 +87,9 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
 
         const KPluginMetaData data = i.previous();
 
-        //1) get plugin data => name/description etc.
+        // 1) get plugin data => name/description etc.
         info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
-        //2) look at if plugin is activated
+        // 2) look at if plugin is activated
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         const QString version = data.version();
@@ -98,8 +98,7 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
             if (unique.contains(info.metaDataFileNameBaseName)) {
                 continue;
             }
-            const QVariant p
-                = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Configure-Order")).toVariant();
+            const QVariant p = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Configure-Order")).toVariant();
             int order = -1;
             if (p.isValid()) {
                 order = p.toInt();
@@ -117,9 +116,7 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
             mPluginList.insert(pos, info);
             unique.insert(info.metaDataFileNameBaseName);
         } else {
-            qCWarning(MESSAGEVIEWER_LOG) << "Plugin " << data.name()
-                                         <<
-                " doesn't have correction plugin version. It will not be loaded.";
+            qCWarning(MESSAGEVIEWER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<ConfigureSettingsPluginInfo>::iterator end(mPluginList.end());
@@ -132,8 +129,7 @@ QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> MessageViewerConf
 {
     QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> lst;
     QVector<ConfigureSettingsPluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<ConfigureSettingsPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end;
-         ++it) {
+    for (QVector<ConfigureSettingsPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
         }
@@ -145,10 +141,8 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::loadPlugin(ConfigureSet
 {
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<MessageViewer::MessageViewerConfigureSettingsPlugin>(q,
-                                                                                                           QVariantList()
-                                                                                                           << item->metaDataFileNameBaseName);
-        //By default it's true
+        item->plugin = pluginLoader.factory()->create<MessageViewer::MessageViewerConfigureSettingsPlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
+        // By default it's true
         item->pluginData.mHasConfigureDialog = true;
         mPluginDataList.append(item->pluginData);
     }

@@ -71,9 +71,7 @@ void DKIMResultAttribute::deserialize(const QByteArray &data)
 
 bool DKIMResultAttribute::operator==(const DKIMResultAttribute &other) const
 {
-    return d->error == other.error()
-           && d->warning == other.warning()
-           && d->status == other.status();
+    return d->error == other.error() && d->warning == other.warning() && d->status == other.status();
 }
 
 void DKIMResultAttribute::setError(int err)

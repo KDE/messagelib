@@ -18,10 +18,11 @@
 
 #include <MessageCore/AttachmentPart>
 
-#include <vector>
 #include <gpgme++/key.h>
+#include <vector>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class ComposerPrivate;
 class GlobalPart;
 class InfoPart;
@@ -53,7 +54,7 @@ public:
     void setSignAndEncrypt(const bool doSign, const bool doEncrypt);
     void setMessageCryptoFormat(Kleo::CryptoMessageFormat format);
     void setSigningKeys(std::vector<GpgME::Key> &signers);
-    void setEncryptionKeys(const QVector<QPair<QStringList, std::vector<GpgME::Key> > > &data);
+    void setEncryptionKeys(const QVector<QPair<QStringList, std::vector<GpgME::Key>>> &data);
 
     /// Sets if this message being composed is an auto-saved message
     ///  if so, might need different handling, such as no crypto attachments.

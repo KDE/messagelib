@@ -7,8 +7,8 @@
 
 #include "attachmentvcardfromaddressbookjobtest.h"
 #include "MessageComposer/AttachmentVcardFromAddressBookJob"
-#include <QTest>
 #include <KContacts/Addressee>
+#include <QTest>
 
 AttachmentVcardFromAddressBookJobTest::AttachmentVcardFromAddressBookJobTest(QObject *parent)
     : QObject(parent)

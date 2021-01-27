@@ -11,8 +11,10 @@
 #include <QString>
 class QString;
 #include <QStringList>
-namespace TemplateParser {
-namespace Util {
+namespace TemplateParser
+{
+namespace Util
+{
 Q_REQUIRED_RESULT QStringList keywords();
 Q_REQUIRED_RESULT QStringList keywordsWithArgs();
 TEMPLATEPARSER_TESTS_EXPORT Q_REQUIRED_RESULT QString removeSpaceAtBegin(const QString &selection);

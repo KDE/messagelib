@@ -7,11 +7,12 @@
 #ifndef SAVECONTACTPREFERENCEJOB_H
 #define SAVECONTACTPREFERENCEJOB_H
 
-#include <KJob>
-#include <KContacts/Addressee>
 #include "composer/keyresolver.h"
+#include <KContacts/Addressee>
+#include <KJob>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class SaveContactPreferenceJob : public QObject
 {
     Q_OBJECT
@@ -24,6 +25,7 @@ private Q_SLOTS:
     void slotSearchContact(KJob *job);
 
     void slotModifyCreateItem(KJob *job);
+
 private:
     void writeCustomContactProperties(KContacts::Addressee &contact, const Kleo::KeyResolver::ContactPreferences &pref) const;
     QString mEmail;

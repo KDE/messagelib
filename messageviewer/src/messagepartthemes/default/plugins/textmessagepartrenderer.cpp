@@ -10,8 +10,8 @@
 
 #include "../messagepartrenderermanager.h"
 
-#include <MessageCore/StringUtil>
 #include "interfaces/htmlwriter.h"
+#include <MessageCore/StringUtil>
 
 #include <grantlee/context.h>
 #include <grantlee/template.h>
@@ -48,8 +48,8 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPa
     c.insert(QStringLiteral("block"), msgPart.data());
     c.insert(QStringLiteral("showOnlyOneMimePart"), context->showOnlyOneMimePart());
     c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([mp, htmlWriter, context](Grantlee::OutputStream *) {
-        context->renderSubParts(mp, htmlWriter);
-    }));
+                 context->renderSubParts(mp, htmlWriter);
+             }));
     t = MessagePartRendererManager::self()->loadByName(QStringLiteral("textmessagepart.html"));
 
     Grantlee::OutputStream s(htmlWriter->stream());

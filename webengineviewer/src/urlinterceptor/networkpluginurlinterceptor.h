@@ -7,10 +7,11 @@
 #ifndef MAILNETWORKPLUGINURLINTERCEPTOR_H
 #define MAILNETWORKPLUGINURLINTERCEPTOR_H
 
-#include <QObject>
 #include "webengineviewer_export.h"
+#include <QObject>
 class QWebEngineView;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class NetworkPluginUrlInterceptorInterface;
 /**
  * @brief The NetworkPluginUrlInterceptor class

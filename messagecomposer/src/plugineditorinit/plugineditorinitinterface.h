@@ -7,14 +7,16 @@
 #ifndef PLUGINEDITORINITINTERFACE_H
 #define PLUGINEDITORINITINTERFACE_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
+#include <QObject>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class RichTextComposer;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class PluginEditorInitInterfacePrivate;
 /**
  * @brief The PluginEditorInitInterface class

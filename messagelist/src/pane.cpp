@@ -8,33 +8,34 @@
 
 #include <KActionCollection>
 #include <KActionMenu>
-#include <QIcon>
 #include <KLocalizedString>
-#include <QMenu>
+#include <KToggleAction>
 #include <KXMLGUIClient>
 #include <QAction>
-#include <KToggleAction>
+#include <QIcon>
+#include <QMenu>
 
 #include <QAbstractItemModel>
 #include <QAbstractProxyModel>
+#include <QApplication>
+#include <QHeaderView>
 #include <QItemSelectionModel>
+#include <QMouseEvent>
+#include <QRegularExpression>
 #include <QTabBar>
 #include <QToolButton>
-#include <QMouseEvent>
-#include <QHeaderView>
-#include <QRegularExpression>
-#include <QApplication>
 
-#include "storagemodel.h"
-#include "core/widgets/quicksearchline.h"
-#include "widget.h"
-#include "messagelistsettings.h"
 #include "core/manager.h"
-#include <Akonadi/KMime/MessageStatus>
 #include "core/model.h"
+#include "core/widgets/quicksearchline.h"
+#include "messagelistsettings.h"
 #include "messagelistutil_p.h"
+#include "storagemodel.h"
+#include "widget.h"
+#include <Akonadi/KMime/MessageStatus>
 
-namespace MessageList {
+namespace MessageList
+{
 class Q_DECL_HIDDEN Pane::Private
 {
 public:
@@ -136,8 +137,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     d->mCloseTabButton->setAccessibleName(i18n("Close tab"));
 #endif
     setCornerWidget(d->mCloseTabButton, Qt::TopRightCorner);
-    connect(d->mCloseTabButton, &QToolButton::clicked,
-            this, [this]() {
+    connect(d->mCloseTabButton, &QToolButton::clicked, this, [this]() {
         d->onCloseTabClicked();
     });
 
@@ -149,8 +149,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     readConfig(restoreSession);
     setMovable(true);
 
-    connect(this, &Pane::currentChanged,
-            this, [this]() {
+    connect(this, &Pane::currentChanged, this, [this]() {
         d->onCurrentTabChanged();
     });
 
@@ -159,13 +158,11 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
         d->onTabContextMenuRequest(point);
     });
 
-    connect(MessageListSettings::self(), &MessageListSettings::configChanged,
-            this, [this]() {
+    connect(MessageListSettings::self(), &MessageListSettings::configChanged, this, [this]() {
         d->updateTabControls();
     });
 
-    connect(this, &QTabWidget::tabBarDoubleClicked,
-            this, &Pane::createNewTab);
+    connect(this, &QTabWidget::tabBarDoubleClicked, this, &Pane::createNewTab);
 
     tabBar()->installEventFilter(this);
 }
@@ -299,7 +296,9 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 
         d->mCloseTabAction = new QAction(i18n("Close Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("close_current_tab"), d->mCloseTabAction);
-        d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mCloseTabAction, QList<QKeySequence>() << QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_W) << QKeySequence(Qt::CTRL | Qt::Key_W));
+        d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mCloseTabAction,
+                                                                  QList<QKeySequence>()
+                                                                      << QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_W) << QKeySequence(Qt::CTRL | Qt::Key_W));
         connect(d->mCloseTabAction, &QAction::triggered, this, [this]() {
             d->onCloseTabClicked();
         });
@@ -308,7 +307,10 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
     }
 }
 
-bool Pane::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
+bool Pane::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
+                                 MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
+                                 bool centerItem,
+                                 bool loop)
 {
     auto *w = static_cast<Widget *>(currentWidget());
 
@@ -323,7 +325,10 @@ bool Pane::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTyp
     }
 }
 
-bool Pane::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
+bool Pane::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
+                                     MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
+                                     bool centerItem,
+                                     bool loop)
 {
     auto *w = static_cast<Widget *>(currentWidget());
 
@@ -528,8 +533,7 @@ void Pane::Private::setCurrentFolder(const QModelIndex &etmIndex)
     q->setTabIcon(index, icon);
     q->setTabToolTip(index, toolTip);
     if (mPreferEmptyTab) {
-        mSelectionModel->select(mapSelectionFromSource(s->selection()),
-                                QItemSelectionModel::ClearAndSelect);
+        mSelectionModel->select(mapSelectionFromSource(s->selection()), QItemSelectionModel::ClearAndSelect);
     }
     mPreferEmptyTab = false;
 }
@@ -669,8 +673,7 @@ void Pane::Private::onCurrentTabChanged()
 
     QItemSelectionModel *s = mWidgetSelectionHash[w];
 
-    mSelectionModel->select(mapSelectionFromSource(s->selection()),
-                            QItemSelectionModel::ClearAndSelect);
+    mSelectionModel->select(mapSelectionFromSource(s->selection()), QItemSelectionModel::ClearAndSelect);
 }
 
 void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
@@ -703,13 +706,13 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
 
     QAction *action = menu.exec(q->mapToGlobal(pos));
 
-    if (action == allOtherAction) {   // Close all other tabs
+    if (action == allOtherAction) { // Close all other tabs
         QVector<Widget *> widgets;
         const int index = q->indexOf(w);
 
         for (int i = 0; i < q->count(); ++i) {
             if (i == index) {
-                continue;    // Skip the current one
+                continue; // Skip the current one
             }
 
             auto *other = qobject_cast<Widget *>(q->widget(i));
@@ -748,7 +751,11 @@ Akonadi::Collection Pane::currentFolder() const
     return {};
 }
 
-void Pane::setCurrentFolder(const Akonadi::Collection &collection, const QModelIndex &etmIndex, bool, Core::PreSelectionMode preSelectionMode, const QString &overrideLabel)
+void Pane::setCurrentFolder(const Akonadi::Collection &collection,
+                            const QModelIndex &etmIndex,
+                            bool,
+                            Core::PreSelectionMode preSelectionMode,
+                            const QString &overrideLabel)
 {
     auto *w = static_cast<Widget *>(currentWidget());
     if (!w->isLocked()) {
@@ -799,20 +806,14 @@ QItemSelectionModel *Pane::createNewTab()
 
     d->mWidgetSelectionHash[w] = s;
 
-    connect(w, &Widget::messageSelected,
-            this, &Pane::messageSelected);
-    connect(w, &Widget::messageActivated,
-            this, &Pane::messageActivated);
-    connect(w, &Widget::selectionChanged,
-            this, &Pane::selectionChanged);
-    connect(w, &Widget::messageStatusChangeRequest,
-            this, &Pane::messageStatusChangeRequest);
+    connect(w, &Widget::messageSelected, this, &Pane::messageSelected);
+    connect(w, &Widget::messageActivated, this, &Pane::messageActivated);
+    connect(w, &Widget::selectionChanged, this, &Pane::selectionChanged);
+    connect(w, &Widget::messageStatusChangeRequest, this, &Pane::messageStatusChangeRequest);
 
-    connect(w, &Core::Widget::statusMessage,
-            this, &Pane::statusMessage);
+    connect(w, &Core::Widget::statusMessage, this, &Pane::statusMessage);
 
-    connect(w, &Core::Widget::forceLostFocus,
-            this, &Pane::forceLostFocus);
+    connect(w, &Core::Widget::forceLostFocus, this, &Pane::forceLostFocus);
 
     d->updateTabControls();
     setCurrentWidget(w);
@@ -897,7 +898,7 @@ KMime::Message::Ptr Pane::currentMessage() const
     return w->currentMessage();
 }
 
-QVector<KMime::Message::Ptr > Pane::selectionAsMessageList(bool includeCollapsedChildren) const
+QVector<KMime::Message::Ptr> Pane::selectionAsMessageList(bool includeCollapsedChildren) const
 {
     auto *w = static_cast<Widget *>(currentWidget());
     if (!w) {
@@ -1012,17 +1013,17 @@ bool Pane::selectionEmpty() const
     return false;
 }
 
-bool Pane::getSelectionStats(Akonadi::Item::List &selectedItems, Akonadi::Item::List &selectedVisibleItems, bool *allSelectedBelongToSameThread, bool includeCollapsedChildren) const
+bool Pane::getSelectionStats(Akonadi::Item::List &selectedItems,
+                             Akonadi::Item::List &selectedVisibleItems,
+                             bool *allSelectedBelongToSameThread,
+                             bool includeCollapsedChildren) const
 {
     auto *w = static_cast<Widget *>(currentWidget());
     if (!w) {
         return false;
     }
 
-    return w->getSelectionStats(
-        selectedItems, selectedVisibleItems,
-        allSelectedBelongToSameThread, includeCollapsedChildren
-        );
+    return w->getSelectionStats(selectedItems, selectedVisibleItems, allSelectedBelongToSameThread, includeCollapsedChildren);
 }
 
 MessageList::Core::MessageItemSetReference Pane::selectionAsPersistentSet(bool includeCollapsedChildren) const
@@ -1142,7 +1143,7 @@ void Pane::readConfig(bool restoreSession)
                 createNewTab();
                 restoreHeaderSettings(i);
                 if (restoreSession) {
-#if 0 //TODO fix me
+#if 0 // TODO fix me
                     Akonadi::Collection::Id id = grp.readEntry(QStringLiteral("collectionId"), -1);
                     ETMViewStateSaver *saver = new ETMViewStateSaver;
                     saver->setSelectionModel(selectionModel);
@@ -1187,7 +1188,7 @@ bool Pane::searchEditHasFocus() const
 
 void Pane::sortOrderMenuAboutToShow()
 {
-    auto *menu = qobject_cast< QMenu * >(sender());
+    auto *menu = qobject_cast<QMenu *>(sender());
     if (!menu) {
         return;
     }
@@ -1197,7 +1198,7 @@ void Pane::sortOrderMenuAboutToShow()
 
 void Pane::aggregationMenuAboutToShow()
 {
-    auto *menu = qobject_cast< QMenu * >(sender());
+    auto *menu = qobject_cast<QMenu *>(sender());
     if (!menu) {
         return;
     }
@@ -1207,7 +1208,7 @@ void Pane::aggregationMenuAboutToShow()
 
 void Pane::themeMenuAboutToShow()
 {
-    auto *menu = qobject_cast< QMenu * >(sender());
+    auto *menu = qobject_cast<QMenu *>(sender());
     if (!menu) {
         return;
     }

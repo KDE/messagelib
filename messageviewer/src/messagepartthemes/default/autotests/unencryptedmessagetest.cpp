@@ -6,12 +6,12 @@
 */
 
 #include "unencryptedmessagetest.h"
-#include "util.h"
 #include "setupenv.h"
+#include "util.h"
 
+#include <MessageViewer/BufferedHtmlWriter>
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
-#include <MessageViewer/BufferedHtmlWriter>
 
 #include <QTest>
 
@@ -32,12 +32,10 @@ void UnencryptedMessageTest::testNotDecrypted_data()
     QTest::newRow("openpgp-inline") << QStringLiteral("inlinepgpencrypted.mbox") << true;
     QTest::newRow("openpgp-encrypt") << QStringLiteral("openpgp-encrypted.mbox") << true;
     QTest::newRow("smime-encrypt") << QStringLiteral("smime-encrypted.mbox") << true;
-    QTest::newRow("openpgp-inline-encrypt") << QStringLiteral(
-        "openpgp-inline-charset-encrypted.mbox") << true;
+    QTest::newRow("openpgp-inline-encrypt") << QStringLiteral("openpgp-inline-charset-encrypted.mbox") << true;
     QTest::newRow("smime-opaque-sign") << QStringLiteral("smime-opaque-sign.mbox") << false;
     QTest::newRow("openpgp-inline-signed") << QStringLiteral("openpgp-inline-signed.mbox") << false;
-    QTest::newRow("openpgp-mime-signed") << QStringLiteral("openpgp-signed-mailinglist.mbox")
-                                         << false;
+    QTest::newRow("openpgp-mime-signed") << QStringLiteral("openpgp-signed-mailinglist.mbox") << false;
 }
 
 void UnencryptedMessageTest::testNotDecrypted()

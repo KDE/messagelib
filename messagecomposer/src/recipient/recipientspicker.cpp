@@ -11,21 +11,21 @@
 
 #include <Akonadi/Contact/EmailAddressSelectionWidget>
 #include <Akonadi/Contact/RecipientsPickerWidget>
-#include <kcontacts/contactgroup.h>
 #include <PimCommonAkonadi/LdapSearchDialog>
+#include <kcontacts/contactgroup.h>
 
+#include "messagecomposer_debug.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QLineEdit>
 #include <QPushButton>
-#include "messagecomposer_debug.h"
 
+#include <KSharedConfig>
+#include <QDialogButtonBox>
 #include <QKeyEvent>
 #include <QTreeView>
 #include <QVBoxLayout>
-#include <KSharedConfig>
-#include <QDialogButtonBox>
 
 using namespace MessageComposer;
 
@@ -41,10 +41,8 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     mainLayout->addWidget(mView);
     mainLayout->setStretchFactor(mView, 1);
 
-    connect(mView->view()->selectionModel(), &QItemSelectionModel::selectionChanged,
-            this, &RecipientsPicker::slotSelectionChanged);
-    connect(mView->view(), &QAbstractItemView::doubleClicked,
-            this, &RecipientsPicker::slotPicked);
+    connect(mView->view()->selectionModel(), &QItemSelectionModel::selectionChanged, this, &RecipientsPicker::slotSelectionChanged);
+    connect(mView->view(), &QAbstractItemView::doubleClicked, this, &RecipientsPicker::slotPicked);
 
     auto searchLDAPButton = new QPushButton(i18n("Search &Directory Service"), this);
     connect(searchLDAPButton, &QPushButton::clicked, this, &RecipientsPicker::slotSearchLDAP);
@@ -154,7 +152,8 @@ void RecipientsPicker::pick(Recipient::Type type)
                            i18np("You selected 1 recipient. The maximum supported number of "
                                  "recipients is %2. Please adapt the selection.",
                                  "You selected %1 recipients. The maximum supported number of "
-                                 "recipients is %2. Please adapt the selection.", count,
+                                 "recipients is %2. Please adapt the selection.",
+                                 count,
                                  MessageComposerSettings::self()->maximumRecipients()));
         return;
     }

@@ -11,8 +11,10 @@
 
 #include "core/themedelegate.h"
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class View;
 
 class Delegate : public ThemeDelegate
@@ -24,8 +26,8 @@ public:
 
 protected:
     /**
-    * Returns the Item for the specified model index. Reimplemented from ThemeDelegate.
-    */
+     * Returns the Item for the specified model index. Reimplemented from ThemeDelegate.
+     */
     Q_REQUIRED_RESULT Item *itemFromIndex(const QModelIndex &index) const override;
 };
 } // namespace Core

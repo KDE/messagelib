@@ -10,11 +10,13 @@
 #include "jobbase.h"
 #include "messagecomposer_export.h"
 
-namespace KMime {
+namespace KMime
+{
 class Message;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class SkeletonMessageJobPrivate;
 class InfoPart;
 class GlobalPart;

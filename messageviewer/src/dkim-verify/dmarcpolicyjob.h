@@ -7,10 +7,11 @@
 #ifndef DMARCPOLICYJOB_H
 #define DMARCPOLICYJOB_H
 
-#include <QObject>
 #include "dmarcinfo.h"
 #include "messageviewer_private_export.h"
-namespace MessageViewer {
+#include <QObject>
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT DMARCPolicyJob : public QObject
 {
     Q_OBJECT
@@ -23,7 +24,8 @@ public:
 
         Q_REQUIRED_RESULT bool operator==(const DMARCPolicyJob::DMARCResult &other) const
         {
-            return mAdkim == other.mAdkim && mPolicy == other.mPolicy && mDomain == other.mDomain && mSource == other.mSource && mPercentage == other.mPercentage;
+            return mAdkim == other.mAdkim && mPolicy == other.mPolicy && mDomain == other.mDomain && mSource == other.mSource
+                && mPercentage == other.mPercentage;
         }
 
         Q_REQUIRED_RESULT bool operator!=(const DMARCPolicyJob::DMARCResult &other) const

@@ -10,7 +10,8 @@
 #include "messageviewer_export.h"
 #include <QWidget>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The MessageViewerConfigureSettingsPluginWidget class
  * @author Laurent Montel <montel@kde.org>

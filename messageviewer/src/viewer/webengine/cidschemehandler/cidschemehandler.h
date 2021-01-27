@@ -7,9 +7,10 @@
 #ifndef CIDSCHEMEHANDLER_H
 #define CIDSCHEMEHANDLER_H
 
-#include <QWebEngineUrlSchemeHandler>
 #include <QObject>
-namespace MessageViewer {
+#include <QWebEngineUrlSchemeHandler>
+namespace MessageViewer
+{
 class CidSchemeHandler : public QWebEngineUrlSchemeHandler
 {
     Q_OBJECT

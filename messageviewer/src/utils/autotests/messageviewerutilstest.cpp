@@ -40,36 +40,36 @@ void MessageViewerUtilsTest::shouldContainsExternalReferences_data()
     QTest::newRow("image2.txt") << QStringLiteral("image2.txt") << QString() << true;
     QTest::newRow("noimage2.txt") << QStringLiteral("noimage2.txt") << QString() << false;
     QTest::newRow("noimage3.txt") << QStringLiteral("noimage3.txt") << QString() << false;
-//    before
-//      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage.txt)
-//      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage.txt":
-//      0.0015 msecs per iteration (total: 52, iterations: 32768)
-//      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image.txt)
-//      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image.txt":
-//      0.0018 msecs per iteration (total: 60, iterations: 32768)
-//      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image2.txt)
-//      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image2.txt":
-//      0.058 msecs per iteration (total: 60, iterations: 1024)
-//      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage2.txt)
-//      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage2.txt":
-//      0.060 msecs per iteration (total: 62, iterations: 1024)
-//      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage3.txt)
-//      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage3.txt":
+    //    before
+    //      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage.txt)
+    //      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage.txt":
+    //      0.0015 msecs per iteration (total: 52, iterations: 32768)
+    //      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image.txt)
+    //      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image.txt":
+    //      0.0018 msecs per iteration (total: 60, iterations: 32768)
+    //      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image2.txt)
+    //      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image2.txt":
+    //      0.058 msecs per iteration (total: 60, iterations: 1024)
+    //      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage2.txt)
+    //      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage2.txt":
+    //      0.060 msecs per iteration (total: 62, iterations: 1024)
+    //      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage3.txt)
+    //      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage3.txt":
 
-    //AFTER
-    //RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage.txt":
+    // AFTER
+    // RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage.txt":
     //     0.0014 msecs per iteration (total: 98, iterations: 65536)
-    //PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image.txt)
-    //RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image.txt":
+    // PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image.txt)
+    // RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image.txt":
     //     0.0017 msecs per iteration (total: 57, iterations: 32768)
-    //PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image2.txt)
-    //RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image2.txt":
+    // PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(image2.txt)
+    // RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"image2.txt":
     //     0.0073 msecs per iteration (total: 60, iterations: 8192)
-    //PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage2.txt)
-    //RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage2.txt":
+    // PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage2.txt)
+    // RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage2.txt":
     //     0.0023 msecs per iteration (total: 78, iterations: 32768)
-    //PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage3.txt)
-    //RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage3.txt":
+    // PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage3.txt)
+    // RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage3.txt":
     //     0.0023 msecs per iteration (total: 78, iterations: 32768)
 }
 
@@ -121,26 +121,58 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
     }
     {
         const QString input = QStringLiteral(
-            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote class=\"protonmail_quote\"><br><!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\r\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style></head><body>\r\n<p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent installation I had an issue with the Orthanc-Module, during initialization of the database:</p>\r\n<p><span style=\" font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" font-family:'monospace','Noto Sans';\"><br />'Something' as changed in the setup of timezone data (between December and now so to say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">To make the story short, this module pytzdata comes from the pypi-package pytzdata and contains basically the same stuff as pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA 290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>");
+            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
+            "other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the "
+            "best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote "
+            "class=\"protonmail_quote\"><br><!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+            "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\r\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { "
+            "white-space: pre-wrap; }\r\n</style></head><body>\r\n<p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your "
+            "PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent installation I had an issue with the Orthanc-Module, during initialization of the "
+            "database:</p>\r\n<p><span style=\" font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" "
+            "font-family:'monospace','Noto Sans';\"><br />'Something' as changed in the setup of timezone data (between December and now so to "
+            "say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">To make the story short, this module pytzdata comes from the "
+            "pypi-package pytzdata and contains basically the same stuff as pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto "
+            "Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you "
+            "have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: "
+            "@coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA "
+            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>");
         MessageViewer::Util::HtmlMessageInfo output;
         output.extraHead = QStringLiteral("<meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style>");
         output.bodyStyle = QStringLiteral("<body>");
         output.htmlSource = QStringLiteral(
-            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote class=\"protonmail_quote\"><br><p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent installation I had an issue with the Orthanc-Module, during initialization of the database:</p>\r\n<p><span style=\" font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" font-family:'monospace','Noto Sans';\"><br />'Something' as changed in the setup of timezone data (between December and now so to say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">To make the story short, this module pytzdata comes from the pypi-package pytzdata and contains basically the same stuff as pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA 290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p>");
+            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
+            "other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the "
+            "best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote "
+            "class=\"protonmail_quote\"><br><p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent "
+            "installation I had an issue with the Orthanc-Module, during initialization of the database:</p>\r\n<p><span style=\" "
+            "font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" font-family:'monospace','Noto Sans';\"><br />'Something' "
+            "as changed in the setup of timezone data (between December and now so to say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto "
+            "Sans';\">To make the story short, this module pytzdata comes from the pypi-package pytzdata and contains basically the same stuff as "
+            "pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Except that pendulum and pytzdata is from the same "
+            "author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody "
+            "else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: "
+            "@docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA "
+            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p>");
         QTest::newRow("bug418482") << input << output;
     }
     {
         const QString input = QStringLiteral(
-            "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<html><head><meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" /></head><body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\"><div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div></body></html>");
+            "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<html><head><meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" /></head><body  "
+            "style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\"><div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; "
+            "border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div></body></html>");
         MessageViewer::Util::HtmlMessageInfo output;
-        output.htmlSource = QStringLiteral("HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>");
+        output.htmlSource = QStringLiteral(
+            "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, "
+            "204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>");
         output.bodyStyle = QStringLiteral("<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">");
         output.extraHead = QStringLiteral("<meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" />");
         QTest::newRow("bug419949") << input << output;
     }
     {
-        //Bug head + div
-        const QString input = QStringLiteral("<html style=\"background: #5555ff;min-height:500px;\">\n<head>\n<style>\nbody div div {display: none;}\n</style>\n<div>\n<p><b>goo<\b></p></div><p>ff</p></head><body></body></html>");
+        // Bug head + div
+        const QString input = QStringLiteral(
+            "<html style=\"background: #5555ff;min-height:500px;\">\n<head>\n<style>\nbody div div {display: "
+            "none;}\n</style>\n<div>\n<p><b>goo<\b></p></div><p>ff</p></head><body></body></html>");
         MessageViewer::Util::HtmlMessageInfo output;
         output.htmlSource = QString();
         output.bodyStyle = QStringLiteral("<body>");
@@ -201,51 +233,81 @@ void MessageViewerUtilsTest::shouldExtractHtmlBenchmark_data()
     }
     {
         const QString input = QStringLiteral(
-            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote class=\"protonmail_quote\"><br><!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\r\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style></head><body>\r\n<p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent installation I had an issue with the Orthanc-Module, during initialization of the database:</p>\r\n<p><span style=\" font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" font-family:'monospace','Noto Sans';\"><br />'Something' as changed in the setup of timezone data (between December and now so to say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">To make the story short, this module pytzdata comes from the pypi-package pytzdata and contains basically the same stuff as pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA 290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>");
+            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
+            "other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the "
+            "best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote "
+            "class=\"protonmail_quote\"><br><!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
+            "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\r\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { "
+            "white-space: pre-wrap; }\r\n</style></head><body>\r\n<p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your "
+            "PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent installation I had an issue with the Orthanc-Module, during initialization of the "
+            "database:</p>\r\n<p><span style=\" font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" "
+            "font-family:'monospace','Noto Sans';\"><br />'Something' as changed in the setup of timezone data (between December and now so to "
+            "say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">To make the story short, this module pytzdata comes from the "
+            "pypi-package pytzdata and contains basically the same stuff as pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto "
+            "Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you "
+            "have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: "
+            "@coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA "
+            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>");
         MessageViewer::Util::HtmlMessageInfo output;
         output.extraHead = QStringLiteral("<meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style>");
         output.bodyStyle = QStringLiteral("<body>");
 
         output.htmlSource = QStringLiteral(
-            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote class=\"protonmail_quote\"><br><p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent installation I had an issue with the Orthanc-Module, during initialization of the database:</p>\r\n<p><span style=\" font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" font-family:'monospace','Noto Sans';\"><br />'Something' as changed in the setup of timezone data (between December and now so to say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">To make the story short, this module pytzdata comes from the pypi-package pytzdata and contains basically the same stuff as pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA 290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p>");
+            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
+            "other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the "
+            "best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote "
+            "class=\"protonmail_quote\"><br><p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent "
+            "installation I had an issue with the Orthanc-Module, during initialization of the database:</p>\r\n<p><span style=\" "
+            "font-family:'monospace';\"><br />   from .datetime import DateTime </span><span style=\" font-family:'monospace','Noto Sans';\"><br />'Something' "
+            "as changed in the setup of timezone data (between December and now so to say).</span></p>\r\n<p><span style=\" font-family:'monospace','Noto "
+            "Sans';\">To make the story short, this module pytzdata comes from the pypi-package pytzdata and contains basically the same stuff as "
+            "pytz.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Except that pendulum and pytzdata is from the same "
+            "author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody "
+            "else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: "
+            "@docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA "
+            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p>");
         QTest::newRow("bug418482") << input << output;
     }
     {
         const QString input = QStringLiteral(
-            "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<html><head><meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" /></head><body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\"><div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div></body></html>");
+            "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<html><head><meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" /></head><body  "
+            "style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\"><div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; "
+            "border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div></body></html>");
         MessageViewer::Util::HtmlMessageInfo output;
-        output.htmlSource = QStringLiteral("HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>");
+        output.htmlSource = QStringLiteral(
+            "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, "
+            "204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>");
         output.bodyStyle = QStringLiteral("<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">");
         output.extraHead = QStringLiteral("<meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" />");
         QTest::newRow("bug419949") << input << output;
     }
-    //Before
-    //RESULT : MessageViewerUtilsTest::shouldExtractHtml():"empty":
+    // Before
+    // RESULT : MessageViewerUtilsTest::shouldExtractHtml():"empty":
     //     0.099 msecs per iteration (total: 51, iterations: 512)
-    //PASS   : MessageViewerUtilsTest::shouldExtractHtml(test1)
-    //RESULT : MessageViewerUtilsTest::shouldExtractHtml():"test1":
+    // PASS   : MessageViewerUtilsTest::shouldExtractHtml(test1)
+    // RESULT : MessageViewerUtilsTest::shouldExtractHtml():"test1":
     //     0.10 msecs per iteration (total: 54, iterations: 512)
-    //PASS   : MessageViewerUtilsTest::shouldExtractHtml(bug418482)
-    //RESULT : MessageViewerUtilsTest::shouldExtractHtml():"bug418482":
+    // PASS   : MessageViewerUtilsTest::shouldExtractHtml(bug418482)
+    // RESULT : MessageViewerUtilsTest::shouldExtractHtml():"bug418482":
     //     0.11 msecs per iteration (total: 58, iterations: 512)
-    //PASS   : MessageViewerUtilsTest::shouldExtractHtml(bug419949)
-    //RESULT : MessageViewerUtilsTest::shouldExtractHtml():"bug419949":
+    // PASS   : MessageViewerUtilsTest::shouldExtractHtml(bug419949)
+    // RESULT : MessageViewerUtilsTest::shouldExtractHtml():"bug419949":
     //     0.10 msecs per iteration (total: 54, iterations: 512)
 
-    //After
-    //RESULT : MessageViewerUtilsTest::shouldExtractHtml():"empty":
+    // After
+    // RESULT : MessageViewerUtilsTest::shouldExtractHtml():"empty":
     //     0.0014 msecs per iteration (total: 95, iterations: 65536)
-    //PASS   : MessageViewerUtilsTest::shouldExtractHtml(test1)
-    //RESULT : MessageViewerUtilsTest::shouldExtractHtml():"test1":
+    // PASS   : MessageViewerUtilsTest::shouldExtractHtml(test1)
+    // RESULT : MessageViewerUtilsTest::shouldExtractHtml():"test1":
     //     0.0031 msecs per iteration (total: 51, iterations: 16384)
-    //PASS   : MessageViewerUtilsTest::shouldExtractHtml(test2)
-    //RESULT : MessageViewerUtilsTest::shouldExtractHtml():"test2":
+    // PASS   : MessageViewerUtilsTest::shouldExtractHtml(test2)
+    // RESULT : MessageViewerUtilsTest::shouldExtractHtml():"test2":
     //     0.0031 msecs per iteration (total: 51, iterations: 16384)
-    //PASS   : MessageViewerUtilsTest::shouldExtractHtml(bug418482)
-    //RESULT : MessageViewerUtilsTest::shouldExtractHtml():"bug418482":
+    // PASS   : MessageViewerUtilsTest::shouldExtractHtml(bug418482)
+    // RESULT : MessageViewerUtilsTest::shouldExtractHtml():"bug418482":
     //     0.0095 msecs per iteration (total: 78, iterations: 8192)
-    //PASS   : MessageViewerUtilsTest::shouldExtractHtml(bug419949)
-    //RESULT : MessageViewerUtilsTest::shouldExtractHtml():"bug419949":
+    // PASS   : MessageViewerUtilsTest::shouldExtractHtml(bug419949)
+    // RESULT : MessageViewerUtilsTest::shouldExtractHtml():"bug419949":
     //     0.0046 msecs per iteration (total: 76, iterations: 16384)
 }
 
@@ -257,21 +319,21 @@ void MessageViewerUtilsTest::shouldUseCorrectCodec()
     QBENCHMARK {
         QCOMPARE(MessageViewer::Util::htmlCodec(data, currentCodec), codecResult);
     }
-    //BEFORE
-    //PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(empty UTF-8)
-    //RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"empty UTF-8":
+    // BEFORE
+    // PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(empty UTF-8)
+    // RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"empty UTF-8":
     //     0.00014 msecs per iteration (total: 76, iterations: 524288)
-    //PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(empty2 UTF-8)
-    //RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"empty2 UTF-8":
+    // PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(empty2 UTF-8)
+    // RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"empty2 UTF-8":
     //     0.00014 msecs per iteration (total: 76, iterations: 524288)
-    //PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(codec windows-1252)
-    //RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"codec windows-1252":
+    // PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(codec windows-1252)
+    // RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"codec windows-1252":
     //     0.00016 msecs per iteration (total: 84, iterations: 524288)
-    //PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(codec windows-1252 with meta charset)
-    //RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"codec windows-1252 with meta charset":
+    // PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(codec windows-1252 with meta charset)
+    // RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"codec windows-1252 with meta charset":
     //     0.00020 msecs per iteration (total: 55, iterations: 262144)
-    //PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(codec windows-1252 with meta charset-2)
-    //RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"codec windows-1252 with meta charset-2":
+    // PASS   : MessageViewerUtilsTest::shouldUseCorrectCodec(codec windows-1252 with meta charset-2)
+    // RESULT : MessageViewerUtilsTest::shouldUseCorrectCodec():"codec windows-1252 with meta charset-2":
     //     0.00026 msecs per iteration (total: 70, iterations: 262144)
 }
 
@@ -284,6 +346,8 @@ void MessageViewerUtilsTest::shouldUseCorrectCodec_data()
     QTest::newRow("empty2 UTF-8") << QByteArray("UTF-8") << QByteArray("foo bla blo") << QByteArray("UTF-8");
     QTest::newRow("us-ascii") << QByteArray("us-ascii") << QByteArray("foo bla blo") << QByteArray("iso-8859-1");
     QTest::newRow("codec windows-1252") << QByteArray("windows-1252") << QByteArray("foo bla blo") << QByteArray("windows-1252");
-    QTest::newRow("codec windows-1252 with meta charset") << QByteArray("windows-1252") << QByteArray("foo bla blo <meta charset=\"utf-8\">") << QByteArray("UTF-8");
-    QTest::newRow("codec windows-1252 with meta charset-2") << QByteArray("windows-1252") << QByteArray("foo bla blo <meta charset=UTF-8>") << QByteArray("UTF-8");
+    QTest::newRow("codec windows-1252 with meta charset")
+        << QByteArray("windows-1252") << QByteArray("foo bla blo <meta charset=\"utf-8\">") << QByteArray("UTF-8");
+    QTest::newRow("codec windows-1252 with meta charset-2")
+        << QByteArray("windows-1252") << QByteArray("foo bla blo <meta charset=UTF-8>") << QByteArray("UTF-8");
 }

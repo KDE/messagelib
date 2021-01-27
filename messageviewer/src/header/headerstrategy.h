@@ -13,7 +13,8 @@
 #include "messageviewer_export.h"
 #include <QStringList>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 //
 // Convenience function
 //
@@ -36,9 +37,7 @@ public:
     //
     // HeaderStrategy interface:
     //
-    enum DefaultPolicy {
-        Display, Hide
-    };
+    enum DefaultPolicy { Display, Hide };
 
     Q_REQUIRED_RESULT virtual QStringList headersToDisplay() const;
     Q_REQUIRED_RESULT virtual QStringList headersToHide() const;

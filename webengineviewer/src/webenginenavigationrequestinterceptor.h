@@ -9,7 +9,8 @@
 
 #include <QWebEnginePage>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebEnginePage;
 class WebEngineNavigationRequestInterceptor : public QWebEnginePage
 {

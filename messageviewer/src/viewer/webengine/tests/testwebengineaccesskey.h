@@ -7,7 +7,8 @@
 #define TESTWEBENGINEACCESSKEY_H
 
 #include <QWidget>
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class MailWebEngineView;
 }
 

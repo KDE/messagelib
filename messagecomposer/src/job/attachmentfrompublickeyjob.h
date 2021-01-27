@@ -11,7 +11,8 @@
 
 #include "messagecomposer_export.h"
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 // TODO I have no idea how to test this.  Have a fake keyring???
 /**
  * @brief The AttachmentFromPublicKeyJob class

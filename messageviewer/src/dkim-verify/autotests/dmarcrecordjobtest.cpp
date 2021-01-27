@@ -5,8 +5,8 @@
 */
 
 #include "dmarcrecordjobtest.h"
-#include <QTest>
 #include "dkim-verify/dmarcrecordjob.h"
+#include <QTest>
 QTEST_GUILESS_MAIN(DMARCRecordJobTest)
 
 DMARCRecordJobTest::DMARCRecordJobTest(QObject *parent)

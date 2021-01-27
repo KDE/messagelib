@@ -7,14 +7,16 @@
 #ifndef PLUGINEDITORGRAMMARCUSTOMTOOLSVIEWINTERFACE_H
 #define PLUGINEDITORGRAMMARCUSTOMTOOLSVIEWINTERFACE_H
 
-#include <PimCommon/CustomToolsViewInterface>
 #include "messagecomposer_export.h"
+#include <PimCommon/CustomToolsViewInterface>
 #include <QDebug>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class RichTextComposer;
 }
-namespace MessageComposer {
+namespace MessageComposer
+{
 class PluginEditorGrammarCustomToolsViewInterfacePrivate;
 /**
  * @brief The PluginGrammarAction class
@@ -77,5 +79,5 @@ private:
 };
 }
 Q_DECLARE_METATYPE(MessageComposer::PluginGrammarAction)
-MESSAGECOMPOSER_EXPORT QDebug operator <<(QDebug d, const MessageComposer::PluginGrammarAction &t);
+MESSAGECOMPOSER_EXPORT QDebug operator<<(QDebug d, const MessageComposer::PluginGrammarAction &t);
 #endif // PLUGINEDITORGRAMMARCUSTOMTOOLSVIEWINTERFACE_H

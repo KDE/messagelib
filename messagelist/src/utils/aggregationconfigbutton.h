@@ -5,11 +5,13 @@
 #ifndef MESSAGELIST_UTILS_AGGREGATIONCONFIGBUTTON_H
 #define MESSAGELIST_UTILS_AGGREGATIONCONFIGBUTTON_H
 
-#include <messagelist_export.h>
 #include <QPushButton>
+#include <messagelist_export.h>
 
-namespace MessageList {
-namespace Utils {
+namespace MessageList
+{
+namespace Utils
+{
 class AggregationComboBox;
 class AggregationConfigButtonPrivate;
 
@@ -23,17 +25,17 @@ class MESSAGELIST_EXPORT AggregationConfigButton : public QPushButton
 
 public:
     /** Constructor.
-    * @param parent The parent widget for the button.
-    * @param aggregationComboBox Optional AggregationComboBox to be kept in sync
-    * with changes made by the configure dialog.
-    */
+     * @param parent The parent widget for the button.
+     * @param aggregationComboBox Optional AggregationComboBox to be kept in sync
+     * with changes made by the configure dialog.
+     */
     explicit AggregationConfigButton(QWidget *parent, const AggregationComboBox *aggregationComboBox = nullptr);
     ~AggregationConfigButton() override;
 
 Q_SIGNALS:
     /**
-    * A signal emitted when configure dialog has been successfully completed.
-    */
+     * A signal emitted when configure dialog has been successfully completed.
+     */
     void configureDialogCompleted();
 
 private:

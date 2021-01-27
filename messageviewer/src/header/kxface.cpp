@@ -20,7 +20,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define GEN(g) F[h] ^= G.g[k]; break
+#define GEN(g)                                                                                                                                                 \
+    F[h] ^= G.g[k];                                                                                                                                            \
+    break
 
 #define BITSPERDIG 4
 #define DIGITS (PIXELS / BITSPERDIG)
@@ -44,10 +46,10 @@ static const int MAXLINELEN = 78;
 #define WORDCARRY (1 << BITSPERWORD)
 #define WORDMASK (WORDCARRY - 1)
 
-#define ERR_OK          0        /* successful completion */
-#define ERR_EXCESS      1        /* completed OK but some input was ignored */
-#define ERR_INSUFF     -1        /* insufficient input.  Bad face format? */
-#define ERR_INTERNAL   -2        /* Arithmetic overflow or buffer overflow */
+#define ERR_OK 0 /* successful completion */
+#define ERR_EXCESS 1 /* completed OK but some input was ignored */
+#define ERR_INSUFF -1 /* insufficient input.  Bad face format? */
+#define ERR_INTERNAL -2 /* Arithmetic overflow or buffer overflow */
 
 #define BLACK 0
 #define GREY 1
@@ -165,7 +167,7 @@ QImage KXFace::toImage(const QString &xface)
     strncpy(fbuf, xface.toLatin1().constData(), xface.length());
     QByteArray img;
     if (!(status = setjmp(comp_env))) {
-        UnCompAll(fbuf);  /* compress otherwise */
+        UnCompAll(fbuf); /* compress otherwise */
         UnGenFace();
         img = WriteFace();
     }
@@ -226,7 +228,7 @@ void KXFace::BigDiv(unsigned char a, unsigned char *r)
         *r = 0;
         return;
     }
-    if (a == 0) {      /* treat this as a == WORDCARRY */
+    if (a == 0) { /* treat this as a == WORDCARRY */
         /* and just shift everything right a WORD (unsigned char)*/
         i = --B.b_words;
         w = B.b_word;
@@ -242,7 +244,7 @@ void KXFace::BigDiv(unsigned char a, unsigned char *r)
     c = 0;
     while (i--) {
         c <<= BITSPERWORD;
-        c += (COMP)*--w;
+        c += (COMP) * --w;
         d = c / (COMP)a;
         c = c % (COMP)a;
         *w = (unsigned char)(d & WORDMASK);
@@ -265,7 +267,7 @@ void KXFace::BigMul(unsigned char a)
     if ((a == 1) || (B.b_words == 0)) {
         return;
     }
-    if (a == 0) {      /* treat this as a == WORDCARRY */
+    if (a == 0) { /* treat this as a == WORDCARRY */
         /* and just shift everything left a WORD (unsigned char) */
         if ((i = B.b_words++) >= MAXWORDS - 1) {
             longjmp(comp_env, ERR_INTERNAL);
@@ -332,10 +334,9 @@ QByteArray KXFace::WriteFace()
 {
     char *s;
     int i, j, bits, digits, words;
-    //int digsperword = DIGSPERWORD;
-    //int wordsperline = WORDSPERLINE;
-    QByteArray t(
-        "#define noname_width 48\n#define noname_height 48\nstatic char noname_bits[] = {\n ");
+    // int digsperword = DIGSPERWORD;
+    // int wordsperline = WORDSPERLINE;
+    QByteArray t("#define noname_width 48\n#define noname_height 48\nstatic char noname_bits[] = {\n ");
     j = t.length() - 1;
 
     s = F;
@@ -429,7 +430,7 @@ void KXFace::BigWrite(char *fbuf)
         BigDiv(NUMPRINTS, &tmp);
         *(s++) = tmp + FIRSTPRINT;
     }
-    i = 7;        // leave room for the field name on the first line
+    i = 7; // leave room for the field name on the first line
     *(fbuf++) = ' ';
     while (s-- > buf) {
         if (i == 0) {
@@ -678,9 +679,7 @@ int KXFace::AllBlack(char *f, int wid, int hei)
     if (wid > 3) {
         wid /= 2;
         hei /= 2;
-        return AllBlack(f, wid, hei) && AllBlack(f + wid, wid, hei)
-               && AllBlack(f + WIDTH * hei, wid, hei)
-               && AllBlack(f + WIDTH * hei + wid, wid, hei);
+        return AllBlack(f, wid, hei) && AllBlack(f + wid, wid, hei) && AllBlack(f + WIDTH * hei, wid, hei) && AllBlack(f + WIDTH * hei + wid, wid, hei);
     } else {
         return *f || *(f + 1) || *(f + WIDTH) || *(f + WIDTH + 1);
     }
@@ -715,7 +714,6 @@ void KXFace::PushGreys(char *f, int wid, int hei)
         PushGreys(f + WIDTH * hei, wid, hei);
         PushGreys(f + WIDTH * hei + wid, wid, hei);
     } else {
-        RevPush(freqs + *f + 2 * *(f + 1) + 4 * *(f + WIDTH)
-                +8 * *(f + WIDTH + 1));
+        RevPush(freqs + *f + 2 * *(f + 1) + 4 * *(f + WIDTH) + 8 * *(f + WIDTH + 1));
     }
 }

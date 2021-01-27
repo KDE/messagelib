@@ -8,8 +8,10 @@
 
 #include <QString>
 
-namespace WebEngineViewer {
-namespace WebEngineAccessKeyUtils {
+namespace WebEngineViewer
+{
+namespace WebEngineAccessKeyUtils
+{
 Q_REQUIRED_RESULT QString script();
 }
 }

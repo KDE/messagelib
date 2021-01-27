@@ -7,8 +7,8 @@
 #include "templateparserextracthtmlinfotest.h"
 #include "templateparserextracthtmlinfo.h"
 
-#include <QTest>
 #include <QSignalSpy>
+#include <QTest>
 
 TemplateParserExtractHtmlInfoTest::TemplateParserExtractHtmlInfoTest(QObject *parent)
     : QObject(parent)

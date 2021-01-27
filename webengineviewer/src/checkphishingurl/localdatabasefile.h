@@ -10,7 +10,8 @@
 #include "webengineviewer_private_export.h"
 #include <QString>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class LocalDataBaseFilePrivate;
 struct Addition;
 class WEBENGINEVIEWER_TESTS_EXPORT LocalDataBaseFile

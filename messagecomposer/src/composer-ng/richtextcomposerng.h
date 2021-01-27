@@ -8,17 +8,19 @@
 #define MESSAGECOMPOSER_RICHTEXTCOMPOSERNG_H
 
 #include "messagecomposer_export.h"
+#include <KIdentityManagement/Signature>
 #include <KPIMTextEdit/RichTextComposer>
 #include <MessageComposer/PluginEditorConvertTextInterface>
-#include <KIdentityManagement/Signature>
 
 class RichTextComposerNgTest;
 
-namespace PimCommon {
+namespace PimCommon
+{
 class AutoCorrection;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class TextPart;
 class RichTextComposerSignatures;
 class RichTextComposerNgPrivate;
@@ -40,7 +42,9 @@ public:
     void fillComposerTextPart(MessageComposer::TextPart *textPart);
     Q_REQUIRED_RESULT MessageComposer::RichTextComposerSignatures *composerSignature() const;
 
-    void insertSignature(const KIdentityManagement::Signature &signature, KIdentityManagement::Signature::Placement placement, KIdentityManagement::Signature::AddedText addedText);
+    void insertSignature(const KIdentityManagement::Signature &signature,
+                         KIdentityManagement::Signature::Placement placement,
+                         KIdentityManagement::Signature::AddedText addedText);
     Q_REQUIRED_RESULT QString toCleanHtml() const;
 
     void forceAutoCorrection(bool selectedText = false) override;

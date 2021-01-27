@@ -11,11 +11,14 @@
 
 #include "utils/configurethemesdialog.h"
 class QListWidgetItem;
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class Theme;
 }
-namespace Utils {
+namespace Utils
+{
 class ThemeEditor;
 class ThemeListWidget;
 class ThemeListWidgetItem;

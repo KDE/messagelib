@@ -14,14 +14,16 @@
 #include "MessageCore/StringUtil"
 
 // See the MessageList::ItemPrivate::insertChildItem() function below for an explanation of this macro.
-#if __GNUC__ >= 3  //krazy:exclude=cpp
+#if __GNUC__ >= 3 // krazy:exclude=cpp
 #define GCC_DONT_INLINE_THIS __attribute__((noinline))
 #else
 #define GCC_DONT_INLINE_THIS
 #endif
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class ItemPrivate
 {
 public:
@@ -76,7 +78,7 @@ public:
      * With this attribute, instead, gcc doesn't complain at all and the inner comparisons
      * *seem* to be inlined correctly (there is no sign of them in the symbol table).
      */
-    template< class ItemComparator, bool bAscending > int GCC_DONT_INLINE_THIS insertChildItem(Model *model, Item *child)
+    template<class ItemComparator, bool bAscending> int GCC_DONT_INLINE_THIS insertChildItem(Model *model, Item *child)
     {
         if (!mChildItems) {
             return q->appendChildItem(model, child);
@@ -93,8 +95,8 @@ public:
         if (bAscending) {
             pivot = mChildItems->at(cnt - 1);
 
-            if (ItemComparator::firstGreaterOrEqual(child, pivot)) {   // gcc: <-- inline this instead, thnx
-                return q->appendChildItem(model, child);    // this is very likely in date based comparisons (FIXME: not in other ones)
+            if (ItemComparator::firstGreaterOrEqual(child, pivot)) { // gcc: <-- inline this instead, thnx
+                return q->appendChildItem(model, child); // this is very likely in date based comparisons (FIXME: not in other ones)
             }
 
             // Binary search based insertion
@@ -104,7 +106,7 @@ public:
             for (;;) {
                 idx = (l + h) / 2;
                 pivot = mChildItems->at(idx);
-                if (ItemComparator::firstGreaterOrEqual(pivot, child)) {   // gcc: <-- inline this instead, thnx
+                if (ItemComparator::firstGreaterOrEqual(pivot, child)) { // gcc: <-- inline this instead, thnx
                     if (l < h) {
                         h = idx - 1;
                     } else {
@@ -121,8 +123,8 @@ public:
             }
         } else {
             pivot = mChildItems->at(0);
-            if (ItemComparator::firstGreaterOrEqual(child, pivot)) {   // gcc: <-- inline this instead, thnx
-                idx = 0;    // this is very likely in date based comparisons (FIXME: not in other ones)
+            if (ItemComparator::firstGreaterOrEqual(child, pivot)) { // gcc: <-- inline this instead, thnx
+                idx = 0; // this is very likely in date based comparisons (FIXME: not in other ones)
             } else {
                 // Binary search based insertion
                 int l = 0;
@@ -131,7 +133,7 @@ public:
                 for (;;) {
                     idx = (l + h) / 2;
                     pivot = mChildItems->at(idx);
-                    if (ItemComparator::firstGreaterOrEqual(child, pivot)) {   // gcc: <-- inline this instead, thnx
+                    if (ItemComparator::firstGreaterOrEqual(child, pivot)) { // gcc: <-- inline this instead, thnx
                         if (l < h) {
                             h = idx - 1;
                         } else {
@@ -153,14 +155,14 @@ public:
         Q_ASSERT(idx <= mChildItems->count());
 
         if (mIsViewable && model) {
-            model->beginInsertRows(model->index(q, 0), idx, idx);    // BLEAH :D
+            model->beginInsertRows(model->index(q, 0), idx, idx); // BLEAH :D
         }
 
         mChildItems->insert(idx, child);
         child->setIndexGuess(idx);
         if (mIsViewable) {
             if (model) {
-                model->endInsertRows();    // BLEAH :D
+                model->endInsertRows(); // BLEAH :D
             }
             child->setViewable(model, true);
         }
@@ -174,10 +176,10 @@ public:
      * Returns false if the item is already in the right position
      * and no re-sorting is needed.
      */
-    template< class ItemComparator, bool bAscending > bool childItemNeedsReSorting(Item *child)
+    template<class ItemComparator, bool bAscending> bool childItemNeedsReSorting(Item *child)
     {
         if (!mChildItems) {
-            return false;    // not my child! (ugh... should assert ?)
+            return false; // not my child! (ugh... should assert ?)
         }
 
         const int idx = q->indexOfChildItem(child);
@@ -187,12 +189,12 @@ public:
             if (bAscending) {
                 // child must be greater or equal to the previous item
                 if (!ItemComparator::firstGreaterOrEqual(child, prev)) {
-                    return true;    // wrong order: needs re-sorting
+                    return true; // wrong order: needs re-sorting
                 }
             } else {
                 // previous must be greater or equal to the child item
                 if (!ItemComparator::firstGreaterOrEqual(prev, child)) {
-                    return true;    // wrong order: needs re-sorting
+                    return true; // wrong order: needs re-sorting
                 }
             }
         }
@@ -202,12 +204,12 @@ public:
             if (bAscending) {
                 // next must be greater or equal to child
                 if (!ItemComparator::firstGreaterOrEqual(next, child)) {
-                    return true;    // wrong order: needs re-sorting
+                    return true; // wrong order: needs re-sorting
                 }
             } else {
                 // child must be greater or equal to next
                 if (!ItemComparator::firstGreaterOrEqual(child, next)) {
-                    return true;    // wrong order: needs re-sorting
+                    return true; // wrong order: needs re-sorting
                 }
             }
         }
@@ -222,23 +224,23 @@ public:
 
     Item *const q;
 
-    QList< Item * > *mChildItems;               ///< List of children, may be 0
-    Item *mParent = nullptr;                              ///< The parent view item
-    time_t mMaxDate;                            ///< The maximum date in the subtree
-    time_t mDate;                               ///< The date of the message (or group date)
-    size_t mSize;                               ///< The size of the message in bytes
-    QString mSender;                            ///< The sender of the message (or group sender)
-    QString mReceiver;                          ///< The receiver of the message (or group receiver)
-    QString mSubject;                           ///< The subject of the message (or group subject)
-    QString mFolder;                            ///< The folder of the message
-    qint64 mItemId;                             ///< The Akonadi item id
-    qint64 mParentCollectionId;                 ///< The Akonadi ID of collection that this particular item comes from (can be virtual collection)
-    Akonadi::MessageStatus mStatus;             ///< The status of the message (may be extended to groups in the future)
-    int mThisItemIndexGuess;                    ///< The guess for the index in the parent's child list
-    Item::Type mType : 4;                       ///< The type of this item
+    QList<Item *> *mChildItems; ///< List of children, may be 0
+    Item *mParent = nullptr; ///< The parent view item
+    time_t mMaxDate; ///< The maximum date in the subtree
+    time_t mDate; ///< The date of the message (or group date)
+    size_t mSize; ///< The size of the message in bytes
+    QString mSender; ///< The sender of the message (or group sender)
+    QString mReceiver; ///< The receiver of the message (or group receiver)
+    QString mSubject; ///< The subject of the message (or group subject)
+    QString mFolder; ///< The folder of the message
+    qint64 mItemId; ///< The Akonadi item id
+    qint64 mParentCollectionId; ///< The Akonadi ID of collection that this particular item comes from (can be virtual collection)
+    Akonadi::MessageStatus mStatus; ///< The status of the message (may be extended to groups in the future)
+    int mThisItemIndexGuess; ///< The guess for the index in the parent's child list
+    Item::Type mType : 4; ///< The type of this item
     Item::InitialExpandStatus mInitialExpandStatus : 4; ///< The expand status we have to honor when we attach to the viewable root
-    bool mIsViewable : 1;                       ///< Is this item attached to the viewable root ?
-    bool mUseReceiver : 1;                      ///< senderOrReceiver() returns receiver rather than sender
+    bool mIsViewable : 1; ///< Is this item attached to the viewable root ?
+    bool mUseReceiver : 1; ///< senderOrReceiver() returns receiver rather than sender
 };
 
 /**
@@ -276,7 +278,7 @@ public:
         if (first->date() == second->date()) {
             return first->subject() >= second->subject();
         }
-        if (first->date() == static_cast<uint>(-1)) {   // invalid is always smaller
+        if (first->date() == static_cast<uint>(-1)) { // invalid is always smaller
             return false;
         }
         if (second->date() == static_cast<uint>(-1)) {
@@ -317,8 +319,8 @@ class ItemSubjectComparator
 public:
     static inline bool firstGreaterOrEqual(Item *first, Item *second)
     {
-        const int ret = MessageCore::StringUtil::stripOffPrefixes(first->subject()).
-                        compare(MessageCore::StringUtil::stripOffPrefixes(second->subject()), Qt::CaseInsensitive);
+        const int ret = MessageCore::StringUtil::stripOffPrefixes(first->subject())
+                            .compare(MessageCore::StringUtil::stripOffPrefixes(second->subject()), Qt::CaseInsensitive);
         if (ret < 0) {
             return false;
         }
@@ -339,8 +341,7 @@ class ItemSenderComparator
 public:
     static inline bool firstGreaterOrEqual(Item *first, Item *second)
     {
-        const int ret = first->displaySender().compare(
-            second->displaySender(), Qt::CaseInsensitive);
+        const int ret = first->displaySender().compare(second->displaySender(), Qt::CaseInsensitive);
         if (ret < 0) {
             return false;
         }
@@ -361,8 +362,7 @@ class ItemReceiverComparator
 public:
     static inline bool firstGreaterOrEqual(Item *first, Item *second)
     {
-        const int ret = first->displayReceiver().compare(
-            second->displayReceiver(), Qt::CaseInsensitive);
+        const int ret = first->displayReceiver().compare(second->displayReceiver(), Qt::CaseInsensitive);
         if (ret < 0) {
             return false;
         }
@@ -383,8 +383,7 @@ class ItemSenderOrReceiverComparator
 public:
     static inline bool firstGreaterOrEqual(Item *first, Item *second)
     {
-        const int ret = first->displaySenderOrReceiver().compare(
-            second->displaySenderOrReceiver(), Qt::CaseInsensitive);
+        const int ret = first->displaySenderOrReceiver().compare(second->displaySenderOrReceiver(), Qt::CaseInsensitive);
         if (ret < 0) {
             return false;
         }
@@ -430,7 +429,7 @@ public:
         if (!first->status().isRead()) {
             // fist is unread
             if (!second->status().isRead()) {
-                return first->date() >= second->date();    // both are unread
+                return first->date() >= second->date(); // both are unread
             }
             // unread comes always first with respect to non-unread
             return true;
@@ -455,7 +454,7 @@ public:
         if (!first->status().isImportant()) {
             // fist is unread
             if (!second->status().isImportant()) {
-                return first->date() >= second->date();    // both are unread
+                return first->date() >= second->date(); // both are unread
             }
             // unread comes always first with respect to non-unread
             return true;
@@ -480,7 +479,7 @@ public:
         if (!first->status().hasAttachment()) {
             // fist is unread
             if (!second->status().hasAttachment()) {
-                return first->date() >= second->date();    // both are unread
+                return first->date() >= second->date(); // both are unread
             }
             // unread comes always first with respect to non-unread
             return true;

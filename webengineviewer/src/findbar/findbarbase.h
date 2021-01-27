@@ -7,16 +7,18 @@
 #ifndef FINDBARBASE_H
 #define FINDBARBASE_H
 
-#include <QWidget>
 #include "webengineviewer_export.h"
+#include <QWidget>
 class QAction;
 class QPushButton;
 class QMenu;
 class QLabel;
-namespace PimCommon {
+namespace PimCommon
+{
 class LineEditWithCompleterNg;
 }
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 /**
  * @brief The FindBarBase class
  */

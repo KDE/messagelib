@@ -8,8 +8,8 @@
 
 #include "quotehtml.h"
 
-#include "../htmlblock.h"
 #include "../defaultrenderer_p.h"
+#include "../htmlblock.h"
 
 #include "interfaces/htmlwriter.h"
 

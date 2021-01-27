@@ -9,28 +9,29 @@
 #ifndef MAILVIEWER_P_H
 #define MAILVIEWER_P_H
 
-#include "messageviewer_private_export.h"
 #include "config-messageviewer.h"
-#include "viewer.h" //not so nice, it is actually for the enums from MailViewer
-#include <PimCommon/ShareServiceUrlManager>
 #include "messageviewer/viewerplugininterface.h"
+#include "messageviewer_private_export.h"
+#include "viewer.h" //not so nice, it is actually for the enums from MailViewer
 #include "widgets/opensavedfilefolderwidget.h"
+#include <PimCommon/ShareServiceUrlManager>
 #include <WebEngineViewer/CheckPhishingUrlUtil>
 
 #include <AkonadiCore/item.h>
 #include <AkonadiCore/monitor.h>
 #include <AkonadiCore/session.h>
-#include <kio/job.h>
 #include <KMime/Message>
 #include <KService>
 #include <QPointer>
 #include <QUrl>
 #include <QVector>
+#include <kio/job.h>
 
 #include <QObject>
 #include <QTimer>
 
-namespace KIO {
+namespace KIO
+{
 class Job;
 }
 
@@ -46,30 +47,36 @@ class QSplitter;
 class QModelIndex;
 class QPrinter;
 
-namespace KIdentityManagement {
+namespace KIdentityManagement
+{
 class IdentityManager;
 }
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class SlideContainer;
 class TextToSpeechWidget;
 }
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class ObjectTreeParser;
 class NodeHelper;
 }
-namespace MessageViewer {
+namespace MessageViewer
+{
 class DKIMWidgetInfo;
 class DKIMViewerMenu;
 }
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebHitTestResult;
 class FindBarWebEngineView;
 class ZoomActionMenu;
 class LocalDataBaseManager;
 }
-namespace MessageViewer {
+namespace MessageViewer
+{
 class AttachmentStrategy;
 class HeaderStylePlugin;
 class HtmlWriter;
@@ -188,7 +195,6 @@ class MESSAGEVIEWER_TESTS_EXPORT ViewerPrivate : public QObject
 {
     Q_OBJECT
 public:
-
     ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollection *actionCollection);
 
     ~ViewerPrivate() override;
@@ -198,9 +204,9 @@ public:
     Q_REQUIRED_RESULT KMime::Content *nodeFromUrl(const QUrl &url) const;
 
     /** Open the attachment pointed to the node.
-    * @param node the node
-    * @param url - if not empty, use this file to load the attachment content
-    */
+     * @param node the node
+     * @param url - if not empty, use this file to load the attachment content
+     */
     void openAttachment(KMime::Content *node, const QUrl &url);
 
     /** Delete the attachment the @p node points to. Returns false if the user
@@ -219,10 +225,10 @@ public:
     void showAttachmentPopup(KMime::Content *node, const QString &name, const QPoint &p);
 
     /**
-    * Sets the current attachment ID and the current attachment temporary filename
-    * to the given values.
-    * Call this so that slotHandleAttachment() knows which attachment to handle.
-    */
+     * Sets the current attachment ID and the current attachment temporary filename
+     * to the given values.
+     * Call this so that slotHandleAttachment() knows which attachment to handle.
+     */
     void prepareHandleAttachment(KMime::Content *node);
 
     Q_REQUIRED_RESULT KService::Ptr getServiceOffer(KMime::Content *content);
@@ -278,8 +284,8 @@ private:
     /** HTML initialization. */
     void initHtmlWidget();
     void createOpenWithMenu(QMenu *topMenu, const QString &contentTypeStr, bool fromCurrentContent);
-public:
 
+public:
     void itemFetchResult(KJob *job);
 
     /** Read settings from app's config file. */
@@ -313,16 +319,16 @@ public:
     void setMessageInternal(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode);
 
     /** Set the Akonadi item that will be displayed.
-    *  @param item - the Akonadi item to be displayed. If it doesn't hold a mail (KMime::Message::Ptr as payload data),
-    *                an empty page is shown.
-    *  @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
-    */
+     *  @param item - the Akonadi item to be displayed. If it doesn't hold a mail (KMime::Message::Ptr as payload data),
+     *                an empty page is shown.
+     *  @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
+     */
     void setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed, bool forceHtmlLoadExtOverride = false);
 
     /** Set the message that shall be shown.
-    * @param msg - the message to be shown. If 0, an empty page is displayed.
-    * @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
-    */
+     * @param msg - the message to be shown. If 0, an empty page is displayed.
+     * @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
+     */
     void setMessage(const KMime::Message::Ptr &msg, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /** Instead of settings a message to be shown sets a message part
@@ -352,7 +358,7 @@ public:
 
     Q_REQUIRED_RESULT QString renderAttachments(KMime::Content *node, const QColor &bgColor) const;
 
-    KMime::Content *findContentByType(KMime::Content *content, const QByteArray &type); //TODO(Andras) move to MimeTreeParser::NodeHelper
+    KMime::Content *findContentByType(KMime::Content *content, const QByteArray &type); // TODO(Andras) move to MimeTreeParser::NodeHelper
 
     /** Saves the relative position of the scroll view. Call this before calling update()
       if you want to preserve the current view. */
@@ -416,8 +422,7 @@ public:
 
     void setPluginName(const QString &pluginName);
 
-    Q_REQUIRED_RESULT QList<QAction *> viewerPluginActionList(
-        MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
+    Q_REQUIRED_RESULT QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
     Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void setPrintElementBackground(bool printElementBackground);
@@ -532,12 +537,12 @@ public Q_SLOTS:
     void slotLoadExternalReference();
 
     /**
-    * Does an action for the current attachment.
-    * The action is defined by the KMHandleAttachmentCommand::AttachmentAction
-    * enum.
-    * prepareHandleAttachment() needs to be called before calling this to set the
-    * correct attachment ID.
-    */
+     * Does an action for the current attachment.
+     * The action is defined by the KMHandleAttachmentCommand::AttachmentAction
+     * enum.
+     * prepareHandleAttachment() needs to be called before calling this to set the
+     * correct attachment ID.
+     */
     void slotHandleAttachment(int action);
     /** Copy the selected text to the clipboard */
     void slotCopySelectedText();
@@ -582,6 +587,7 @@ Q_SIGNALS:
     void zoomChanged(qreal zoomFactor);
     void showNextMessage();
     void showPreviousMessage();
+
 private:
     Q_REQUIRED_RESULT QString attachmentHtml();
     void initializeColorFromScheme();
@@ -603,9 +609,10 @@ private:
     bool mHtmlMailGlobalSetting = false;
     bool mHtmlLoadExternalDefaultSetting = false;
     bool mHtmlLoadExtOverride = false;
+
 public:
-    KMime::Message::Ptr mMessage; //the current message, if it was set manually
-    Akonadi::Item mMessageItem; //the message item from Akonadi
+    KMime::Message::Ptr mMessage; // the current message, if it was set manually
+    Akonadi::Item mMessageItem; // the message item from Akonadi
     // widgets:
     QSplitter *mSplitter = nullptr;
     QWidget *mBox = nullptr;
@@ -694,7 +701,7 @@ public:
     MessageViewer::ViewerPluginToolManager *mViewerPluginToolManager = nullptr;
     WebEngineViewer::ZoomActionMenu *mZoomActionMenu = nullptr;
     QPrinter *mCurrentPrinter = nullptr;
-    QVector<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
+    QVector<QPointer<MessageViewer::MailSourceWebEngineViewer>> mListMailSourceViewer;
     WebEngineViewer::LocalDataBaseManager *mPhishingDatabase = nullptr;
     MessageViewer::ShowNextMessageWidget *mShowNextMessageWidget = nullptr;
     MessageViewer::DKIMWidgetInfo *mDkimWidgetInfo = nullptr;

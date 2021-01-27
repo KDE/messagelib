@@ -6,8 +6,8 @@
 
 #include "texthtml.h"
 
-#include "objecttreeparser.h"
 #include "messagepart.h"
+#include "objecttreeparser.h"
 
 #include <KMime/Content>
 

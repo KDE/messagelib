@@ -13,7 +13,8 @@
 
 #include <MessageComposer/MessageFactoryNG>
 
-namespace KIdentityManagement {
+namespace KIdentityManagement
+{
 class IdentityManager;
 }
 

@@ -11,10 +11,11 @@
 #include "messageviewer_export.h"
 
 #include <QObject>
-#include <QUrl>
 #include <QStringList>
+#include <QUrl>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The ScamCheckShortUrl class
  * @author Laurent Montel <montel@kde.org>

@@ -7,13 +7,15 @@
 #ifndef MIMETREEPARSER_BODYFORAMATTER_MULTIPARTSIGNED_H
 #define MIMETREEPARSER_BODYFORAMATTER_MULTIPARTSIGNED_H
 
-#include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
+#include "interfaces/bodypartformatter.h"
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class MultiPartSignedBodyPartFormatter : public Interface::BodyPartFormatter
 {
     static const MultiPartSignedBodyPartFormatter *self;
+
 public:
     MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();

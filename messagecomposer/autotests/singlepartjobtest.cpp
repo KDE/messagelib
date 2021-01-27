@@ -30,9 +30,9 @@ void SinglepartJobTest::testContent()
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
-    QVERIFY(result->contentDisposition(false) == nullptr);     // Not created unless demanded.
-    QVERIFY(result->contentType(false) == nullptr);     // Not created unless demanded.
-    QVERIFY(result->contentTransferEncoding(false));     // KMime gives it a default one (7bit).
+    QVERIFY(result->contentDisposition(false) == nullptr); // Not created unless demanded.
+    QVERIFY(result->contentType(false) == nullptr); // Not created unless demanded.
+    QVERIFY(result->contentTransferEncoding(false)); // KMime gives it a default one (7bit).
     delete cjob;
     delete composer;
 }
@@ -125,7 +125,7 @@ void SinglepartJobTest::testContentTransferEncoding()
     // quoted-printable if text doesn't fit in 7bit.
     {
         auto cjob = new SinglepartJob(composer);
-        QByteArray data("some long text to make qupr more compact than base64 [ăîşţâ]");   // utf-8
+        QByteArray data("some long text to make qupr more compact than base64 [ăîşţâ]"); // utf-8
         cjob->setData(data);
         QVERIFY(cjob->exec());
         Content *result = cjob->content();
@@ -140,7 +140,7 @@ void SinglepartJobTest::testContentTransferEncoding()
     // base64 if it's shorter than quoted-printable
     {
         auto cjob = new SinglepartJob(composer);
-        QByteArray data("[ăîşţâ]");   // utf-8
+        QByteArray data("[ăîşţâ]"); // utf-8
         cjob->setData(data);
         QVERIFY(cjob->exec());
         Content *result = cjob->content();
@@ -155,7 +155,7 @@ void SinglepartJobTest::testContentTransferEncoding()
     // 8bit if asked for and allowed.
     {
         composer->globalPart()->set8BitAllowed(true);
-        QByteArray data("[ăîşţâ]");   // utf-8
+        QByteArray data("[ăîşţâ]"); // utf-8
         auto cjob = new SinglepartJob(composer);
         cjob->setData(data);
         QVERIFY(cjob->exec());

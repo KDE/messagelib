@@ -5,8 +5,8 @@
 */
 
 #include "dkimviewermenu.h"
-#include <QMenu>
 #include <KLocalizedString>
+#include <QMenu>
 
 using namespace MessageViewer;
 DKIMViewerMenu::DKIMViewerMenu(QObject *parent)

@@ -9,14 +9,18 @@
 */
 
 #include "partnodebodypart.h"
+#include "mimetreeparser_debug.h"
 #include "nodehelper.h"
 #include "objecttreeparser.h"
-#include "mimetreeparser_debug.h"
 #include <KMime/Content>
 
 using namespace MimeTreeParser;
 
-PartNodeBodyPart::PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content, NodeHelper *nodeHelper)
+PartNodeBodyPart::PartNodeBodyPart(ObjectTreeParser *otp,
+                                   ProcessResult *result,
+                                   KMime::Content *topLevelContent,
+                                   KMime::Content *content,
+                                   NodeHelper *nodeHelper)
     : Interface::BodyPart()
     , mTopLevelContent(topLevelContent)
     , mContent(content)

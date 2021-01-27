@@ -8,8 +8,8 @@
 
 #include "utils.h"
 
-#include "objecttreeparser.h"
 #include "messagepart.h"
+#include "objecttreeparser.h"
 
 #include <KMime/Content>
 
@@ -63,15 +63,14 @@ MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interface::BodyPar
 
     part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
 
-    EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(part.objectTreeParser(),
-                                                          data->decodedText(), useThisCryptProto,
-                                                          part.nodeHelper()->fromAsString(data), node));
+    EncryptedMessagePart::Ptr mp(
+        new EncryptedMessagePart(part.objectTreeParser(), data->decodedText(), useThisCryptProto, part.nodeHelper()->fromAsString(data), node));
     mp->setIsEncrypted(true);
     mp->setDecryptMessage(part.source()->decryptMessage());
     PartMetaData *messagePart(mp->partMetaData());
 
     if (!part.source()->decryptMessage()) {
-        part.nodeHelper()->setNodeProcessed(data, false);  // Set the data node to done to prevent it from being processed
+        part.nodeHelper()->setNodeProcessed(data, false); // Set the data node to done to prevent it from being processed
     } else if (KMime::Content *newNode = part.nodeHelper()->decryptedNodeForContent(data)) {
         part.nodeHelper()->registerOverrideHeader(data->parent(), mp);
 
@@ -83,7 +82,7 @@ MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interface::BodyPar
 
         if (!messagePart->inProgress) {
             part.nodeHelper()->registerOverrideHeader(data->parent(), mp);
-            part.nodeHelper()->setNodeProcessed(data, false);   // Set the data node to done to prevent it from being processed
+            part.nodeHelper()->setNodeProcessed(data, false); // Set the data node to done to prevent it from being processed
         }
     }
     return mp;

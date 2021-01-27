@@ -7,9 +7,9 @@
 
 #include "configurewidget.h"
 #include "messageviewer_debug.h"
+#include "settings/messageviewersettings.h"
 #include "ui_settings.h"
 #include "utils/messageviewerutil.h"
-#include "settings/messageviewersettings.h"
 #include <MimeTreeParser/NodeHelper>
 
 #include "MessageCore/MessageCoreSettings"
@@ -47,14 +47,10 @@ ConfigureWidget::ConfigureWidget(QWidget *parent)
     d->mSettingsUi->overrideCharacterEncoding->addItems(encodings);
     d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(0);
 
-    d->mSettingsUi->overrideCharacterEncoding->setWhatsThis(
-        MessageCore::MessageCoreSettings::self()->overrideCharacterEncodingItem()->whatsThis());
-    d->mSettingsUi->kcfg_ShrinkQuotes->setWhatsThis(
-        MessageViewer::MessageViewerSettings::self()->shrinkQuotesItem()->whatsThis());
-    d->mSettingsUi->kcfg_ShowExpandQuotesMark->setWhatsThis(
-        MessageViewer::MessageViewerSettings::self()->showExpandQuotesMarkItem()->whatsThis());
-    connect(d->mSettingsUi->overrideCharacterEncoding, qOverload<int>(&QComboBox::currentIndexChanged), this,
-            &ConfigureWidget::settingsChanged);
+    d->mSettingsUi->overrideCharacterEncoding->setWhatsThis(MessageCore::MessageCoreSettings::self()->overrideCharacterEncodingItem()->whatsThis());
+    d->mSettingsUi->kcfg_ShrinkQuotes->setWhatsThis(MessageViewer::MessageViewerSettings::self()->shrinkQuotesItem()->whatsThis());
+    d->mSettingsUi->kcfg_ShowExpandQuotesMark->setWhatsThis(MessageViewer::MessageViewerSettings::self()->showExpandQuotesMarkItem()->whatsThis());
+    connect(d->mSettingsUi->overrideCharacterEncoding, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConfigureWidget::settingsChanged);
 }
 
 ConfigureWidget::~ConfigureWidget()
@@ -65,23 +61,20 @@ ConfigureWidget::~ConfigureWidget()
 void ConfigureWidget::readConfig()
 {
     readCurrentOverrideCodec();
-    d->mSettingsUi->kcfg_CollapseQuoteLevelSpin->setEnabled(
-        MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark());
+    d->mSettingsUi->kcfg_CollapseQuoteLevelSpin->setEnabled(MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark());
 }
 
 void ConfigureWidget::writeConfig()
 {
     MessageCore::MessageCoreSettings::self()->setOverrideCharacterEncoding(
         d->mSettingsUi->overrideCharacterEncoding->currentIndex() == 0
-        ? QString()
-        : MimeTreeParser::NodeHelper::encodingForName(d->mSettingsUi->overrideCharacterEncoding->
-                                                      currentText()));
+            ? QString()
+            : MimeTreeParser::NodeHelper::encodingForName(d->mSettingsUi->overrideCharacterEncoding->currentText()));
 }
 
 void ConfigureWidget::readCurrentOverrideCodec()
 {
-    const QString &currentOverrideEncoding
-        = MessageCore::MessageCoreSettings::self()->overrideCharacterEncoding();
+    const QString &currentOverrideEncoding = MessageCore::MessageCoreSettings::self()->overrideCharacterEncoding();
     if (currentOverrideEncoding.isEmpty()) {
         d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(0);
         return;
@@ -100,9 +93,7 @@ void ConfigureWidget::readCurrentOverrideCodec()
     }
     if (i == encodings.size()) {
         // the current value of overrideCharacterEncoding is an unknown encoding => reset to Auto
-        qCWarning(MESSAGEVIEWER_LOG) << "Unknown override character encoding"
-                                     << currentOverrideEncoding
-                                     << ". Resetting to Auto.";
+        qCWarning(MESSAGEVIEWER_LOG) << "Unknown override character encoding" << currentOverrideEncoding << ". Resetting to Auto.";
         d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(0);
         MessageCore::MessageCoreSettings::self()->setOverrideCharacterEncoding(QString());
     }

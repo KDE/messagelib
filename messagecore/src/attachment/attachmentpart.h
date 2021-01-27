@@ -16,7 +16,8 @@
 #include <QSharedPointer>
 
 class QUrl;
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @short A class that encapsulates an attachment.
  *

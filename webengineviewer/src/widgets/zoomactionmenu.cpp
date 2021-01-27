@@ -5,11 +5,12 @@
 */
 
 #include "zoomactionmenu.h"
-#include <KLocalizedString>
 #include <KActionCollection>
+#include <KLocalizedString>
 
 using namespace WebEngineViewer;
-namespace {
+namespace
+{
 constexpr qreal zoomBy()
 {
     return 20;

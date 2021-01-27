@@ -6,9 +6,9 @@
 #include "remotecontentconfigurewidgettest.h"
 #include "remote-content/remotecontentconfigurewidget.h"
 #include <QListWidget>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
-#include <QStandardPaths>
 
 QTEST_MAIN(RemoteContentConfigureWidgetTest)
 RemoteContentConfigureWidgetTest::RemoteContentConfigureWidgetTest(QObject *parent)
@@ -23,7 +23,6 @@ void RemoteContentConfigureWidgetTest::shouldHaveDefaultValues()
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), {});
-
 
     auto mListWidget = w.findChild<QListWidget *>(QStringLiteral("mListWidget"));
     QVERIFY(mListWidget);

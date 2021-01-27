@@ -25,14 +25,11 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
     setMenu(mMenuCommand->menu());
     connect(mMenuCommand, qOverload<const QString &, int>(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandPushButton::insertCommand);
 
-    setToolTip(
-        i18nc("@info:tooltip",
-              "Select a command to insert into the template"));
-    setWhatsThis(
-        i18nc("@info:whatsthis",
-              "Traverse this menu to find a command to insert into the current template "
-              "being edited.  The command will be inserted at the cursor location, "
-              "so you want to move your cursor to the desired insertion point first."));
+    setToolTip(i18nc("@info:tooltip", "Select a command to insert into the template"));
+    setWhatsThis(i18nc("@info:whatsthis",
+                       "Traverse this menu to find a command to insert into the current template "
+                       "being edited.  The command will be inserted at the cursor location, "
+                       "so you want to move your cursor to the desired insertion point first."));
 }
 
 TemplatesInsertCommandPushButton::~TemplatesInsertCommandPushButton()

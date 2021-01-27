@@ -7,10 +7,11 @@
 #ifndef VIEWERPLUGINMANAGER_H
 #define VIEWERPLUGINMANAGER_H
 
-#include <QObject>
 #include "messageviewer_export.h"
 #include <PimCommon/PluginUtil>
-namespace MessageViewer {
+#include <QObject>
+namespace MessageViewer
+{
 class ViewerPluginManagerPrivate;
 class ViewerPlugin;
 /**
@@ -21,7 +22,6 @@ class MESSAGEVIEWER_EXPORT ViewerPluginManager : public QObject
 {
     Q_OBJECT
 public:
-
     explicit ViewerPluginManager(QObject *parent = nullptr);
     ~ViewerPluginManager() override;
     static ViewerPluginManager *self();
@@ -38,6 +38,7 @@ public:
     void setPluginDirectory(const QString &directory);
     void setPluginName(const QString &pluginName);
     Q_REQUIRED_RESULT QString pluginName() const;
+
 private:
     Q_DISABLE_COPY(ViewerPluginManager)
     ViewerPluginManagerPrivate *const d;

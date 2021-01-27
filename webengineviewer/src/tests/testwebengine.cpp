@@ -5,13 +5,13 @@
 */
 
 #include "testwebengine.h"
-#include <QHBoxLayout>
 #include <QApplication>
-#include <WebEngineViewer/WebHitTestResult>
-#include <WebEngineViewer/WebEnginePage>
-#include <QDebug>
-#include <QWebEngineSettings>
 #include <QContextMenuEvent>
+#include <QDebug>
+#include <QHBoxLayout>
+#include <QWebEngineSettings>
+#include <WebEngineViewer/WebEnginePage>
+#include <WebEngineViewer/WebHitTestResult>
 #include <webengineviewer/webhittest.h>
 
 TestWebEngine::TestWebEngine(QWidget *parent)

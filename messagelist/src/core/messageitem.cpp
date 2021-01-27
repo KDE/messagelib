@@ -11,16 +11,16 @@
 
 #include <PimCommonAkonadi/AnnotationDialog>
 
-#include <item.h>
+#include "messagelist_debug.h"
+#include <KIconLoader>
+#include <KLocalizedString>
+#include <QIcon>
+#include <QPointer>
 #include <entityannotationsattribute.h>
+#include <item.h>
 #include <tagattribute.h>
 #include <tagfetchjob.h>
 #include <tagfetchscope.h>
-#include <KIconLoader>
-#include <KLocalizedString>
-#include <QPointer>
-#include <QIcon>
-#include "messagelist_debug.h"
 using namespace MessageList::Core;
 
 Q_GLOBAL_STATIC(TagCache, s_tagCache)
@@ -29,13 +29,13 @@ class Q_DECL_HIDDEN MessageItem::Tag::Private
 {
 public:
     Private()
-        : mPriority(0)  //Initialize it
+        : mPriority(0) // Initialize it
     {
     }
 
     QPixmap mPixmap;
     QString mName;
-    QString mId;             ///< The unique id of this tag
+    QString mId; ///< The unique id of this tag
     QColor mTextColor;
     QColor mBackgroundColor;
     QFont mFont;
@@ -178,7 +178,7 @@ void MessageItemPrivate::fillTagList(const Akonadi::Tag::List &taglist)
     // TODO: The tag pointers here could be shared between all items, there really is no point in
     //       creating them for each item that has tags
 
-    //Priority sort this and make bestTag more efficient
+    // Priority sort this and make bestTag more efficient
 
     for (const Akonadi::Tag &tag : taglist) {
         QString symbol = QStringLiteral("mail-tagged");
@@ -241,7 +241,7 @@ MessageItem::~MessageItem()
 {
 }
 
-QList< MessageItem::Tag * > MessageItem::tagList() const
+QList<MessageItem::Tag *> MessageItem::tagList() const
 {
     Q_D(const MessageItem);
     return d->getTagList();
@@ -250,7 +250,7 @@ QList< MessageItem::Tag * > MessageItem::tagList() const
 bool MessageItem::hasAnnotation() const
 {
     Q_D(const MessageItem);
-    //TODO check for note entry?
+    // TODO check for note entry?
     return d->mAkonadiItem.hasAttribute<Akonadi::EntityAnnotationsAttribute>();
 }
 
@@ -276,7 +276,7 @@ void MessageItem::editAnnotation(QWidget *parent)
 {
     Q_D(MessageItem);
     QPointer<PimCommon::AnnotationEditDialog> mAnnotationDialog = new PimCommon::AnnotationEditDialog(d->mAkonadiItem, parent);
-    //FIXME make async
+    // FIXME make async
     if (mAnnotationDialog->exec()) {
         // invalidate the cached mHasAnnotation value
     }
@@ -514,7 +514,7 @@ MessageItem *MessageItem::topmostMessage()
         return this;
     }
     if (parent()->type() == Item::Message) {
-        return static_cast< MessageItem * >(parent())->topmostMessage();
+        return static_cast<MessageItem *>(parent())->topmostMessage();
     }
     return this;
 }
@@ -572,7 +572,7 @@ QString MessageItem::accessibleText(const Theme *theme, int columnIndex)
     return rowsTexts.join(QLatin1Char(' '));
 }
 
-void MessageItem::subTreeToList(QVector< MessageItem * > &list)
+void MessageItem::subTreeToList(QVector<MessageItem *> &list)
 {
     list.append(this);
     const auto childList = childItems();
@@ -620,7 +620,8 @@ void MessageItem::setToDoMessageFont(const QFont &font)
     s_settings->mFontToDoMessage = font;
 }
 
-FakeItemPrivate::FakeItemPrivate(FakeItem *qq) : MessageItemPrivate(qq)
+FakeItemPrivate::FakeItemPrivate(FakeItem *qq)
+    : MessageItemPrivate(qq)
 {
 }
 
@@ -635,13 +636,13 @@ FakeItem::~FakeItem()
     qDeleteAll(d->mFakeTags);
 }
 
-QList< MessageItem::Tag * > FakeItem::tagList() const
+QList<MessageItem::Tag *> FakeItem::tagList() const
 {
     Q_D(const FakeItem);
     return d->mFakeTags;
 }
 
-void FakeItem::setFakeTags(const QList< MessageItem::Tag * > &tagList)
+void FakeItem::setFakeTags(const QList<MessageItem::Tag *> &tagList)
 {
     Q_D(FakeItem);
     d->mFakeTags = tagList;
@@ -682,7 +683,7 @@ void TagCache::onTagRemoved(const Akonadi::Tag &tag)
 
 void TagCache::retrieveTags(const Akonadi::Tag::List &tags, MessageItemPrivate *m)
 {
-    //Retrieval is in progress
+    // Retrieval is in progress
     if (mRequests.key(m)) {
         return;
     }
@@ -695,7 +696,7 @@ void TagCache::retrieveTags(const Akonadi::Tag::List &tags, MessageItemPrivate *
             toFetch << tag;
         }
     }
-    //Because fillTagList expects to be called once we either fetch all or none
+    // Because fillTagList expects to be called once we either fetch all or none
     if (!toFetch.isEmpty()) {
         auto tagFetchJob = new Akonadi::TagFetchJob(tags, this);
         tagFetchJob->fetchScope().fetchAttribute<Akonadi::TagAttribute>();
@@ -709,7 +710,7 @@ void TagCache::retrieveTags(const Akonadi::Tag::List &tags, MessageItemPrivate *
 void TagCache::cancelRequest(MessageItemPrivate *m)
 {
     const QList<KJob *> keys = mRequests.keys(m);
-    Q_FOREACH (KJob *job, keys) { //Don't use for(...:...)
+    Q_FOREACH (KJob *job, keys) { // Don't use for(...:...)
         mRequests.remove(job);
     }
 }

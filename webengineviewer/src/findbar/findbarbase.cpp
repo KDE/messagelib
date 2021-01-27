@@ -7,19 +7,19 @@
 #include "findbarbase.h"
 #include <PimCommon/LineEditWithCompleterNg>
 
-#include <QIcon>
-#include <KLocalizedString>
-#include <QLineEdit>
 #include <KColorScheme>
+#include <KLocalizedString>
+#include <QIcon>
+#include <QLineEdit>
 
+#include <QEvent>
 #include <QHBoxLayout>
-#include <QPushButton>
-#include <QTimer>
+#include <QKeyEvent>
 #include <QLabel>
 #include <QMenu>
+#include <QPushButton>
+#include <QTimer>
 #include <QToolButton>
-#include <QEvent>
-#include <QKeyEvent>
 
 using namespace WebEngineViewer;
 
@@ -231,7 +231,7 @@ bool FindBarBase::event(QEvent *e)
     // With a shortcut override we can catch this before it gets to kactions.
     const bool shortCutOverride = (e->type() == QEvent::ShortcutOverride);
     if (shortCutOverride || e->type() == QEvent::KeyPress) {
-        auto kev = static_cast<QKeyEvent * >(e);
+        auto kev = static_cast<QKeyEvent *>(e);
         if (kev->key() == Qt::Key_Escape) {
             if (shortCutOverride) {
                 e->accept();
@@ -240,8 +240,7 @@ bool FindBarBase::event(QEvent *e)
             e->accept();
             closeBar();
             return true;
-        } else if (kev->key() == Qt::Key_Enter
-                   || kev->key() == Qt::Key_Return) {
+        } else if (kev->key() == Qt::Key_Enter || kev->key() == Qt::Key_Return) {
             e->accept();
             if (shortCutOverride) {
                 return true;

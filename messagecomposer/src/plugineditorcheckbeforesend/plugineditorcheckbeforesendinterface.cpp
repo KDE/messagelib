@@ -52,5 +52,5 @@ MessageComposer::PluginEditorCheckBeforeSendParams PluginEditorCheckBeforeSendIn
 
 void PluginEditorCheckBeforeSendInterface::reloadConfig()
 {
-    //Reimplement it
+    // Reimplement it
 }

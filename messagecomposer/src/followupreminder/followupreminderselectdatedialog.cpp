@@ -6,19 +6,19 @@
 
 #include "followupreminderselectdatedialog.h"
 
-#include <KLocalizedString>
-#include <KSharedConfig>
-#include <KMessageBox>
 #include <KDateComboBox>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KSharedConfig>
 
 #include <AkonadiWidgets/CollectionComboBox>
 
 #include <KCalendarCore/Todo>
 
-#include <QVBoxLayout>
 #include <QDialogButtonBox>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <QVBoxLayout>
 using namespace MessageComposer;
 class MessageComposer::FollowUpReminderSelectDateDialogPrivate
 {
@@ -79,9 +79,7 @@ FollowUpReminderSelectDateDialog::~FollowUpReminderSelectDateDialog() = default;
 
 void FollowUpReminderSelectDateDialog::updateOkButton()
 {
-    d->mOkButton->setEnabled(!d->mDateComboBox->lineEdit()->text().isEmpty()
-                             && d->mDateComboBox->date().isValid()
-                             && (d->mCollectionCombobox->count() > 0)
+    d->mOkButton->setEnabled(!d->mDateComboBox->lineEdit()->text().isEmpty() && d->mDateComboBox->date().isValid() && (d->mCollectionCombobox->count() > 0)
                              && d->mCollectionCombobox->currentCollection().isValid());
 }
 

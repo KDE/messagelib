@@ -6,13 +6,13 @@
 
 #include "testwebengineviewinterceptor.h"
 #include <QApplication>
+#include <QBuffer>
 #include <QVBoxLayout>
-#include <QWebEngineView>
 #include <QWebEngineProfile>
 #include <QWebEngineUrlRequestInterceptor>
 #include <QWebEngineUrlScheme>
 #include <QWebEngineUrlSchemeHandler>
-#include <QBuffer>
+#include <QWebEngineView>
 
 class CidSchemeHandler : public QWebEngineUrlSchemeHandler
 {
@@ -30,7 +30,7 @@ void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *request)
 {
     Q_UNUSED(request)
     qDebug() << " void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *request)";
-    //TODO
+    // TODO
 }
 
 class CidUrlRequestInterceptor : public QWebEngineUrlRequestInterceptor
@@ -51,7 +51,7 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QUrl urlRequestUrl(info.requestUrl());
     if (urlRequestUrl.scheme() == QLatin1String("cid")) {
-        qDebug() << " info.resourceType() "<< info.resourceType();
+        qDebug() << " info.resourceType() " << info.resourceType();
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
             QUrl r;
             if (urlRequestUrl.url() == QLatin1String("cid:resource_src")) {
@@ -76,7 +76,7 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
             info.redirect(r);
         }
     } else if (urlRequestUrl.scheme() == QLatin1String("file")) {
-        //info.block(true);
+        // info.block(true);
     }
 }
 
@@ -91,17 +91,18 @@ TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
     mWebEngineView = new QWebEngineView(this);
     mWebEngineView->page()->profile()->setUrlRequestInterceptor(new CidUrlRequestInterceptor(this));
 
-    const QString htmlStr = QStringLiteral("<html>"
-                                           "<head>"
-                                           "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">"
-                                           "</head>"
-                                           "<body>"
-                                           "<p>image from resource file<img src=\"cid:resource_src\" /> end</p>"
-                                           "<p>image from local file<img src=\"cid:local_src\" /> end</p>"
-                                           "<p>Xcv</p>"
-                                           "<p>bxcvbxcvbxcvb</p>"
-                                           "<br /></body>"
-                                           "</html>");
+    const QString htmlStr = QStringLiteral(
+        "<html>"
+        "<head>"
+        "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">"
+        "</head>"
+        "<body>"
+        "<p>image from resource file<img src=\"cid:resource_src\" /> end</p>"
+        "<p>image from local file<img src=\"cid:local_src\" /> end</p>"
+        "<p>Xcv</p>"
+        "<p>bxcvbxcvbxcvb</p>"
+        "<br /></body>"
+        "</html>");
 
     mWebEngineView->setHtml(htmlStr /*, QUrl(QStringLiteral("file:///"))*/);
     vbox->addWidget(mWebEngineView);
@@ -111,7 +112,7 @@ int main(int argc, char *argv[])
 {
     QWebEngineUrlScheme scheme("cid");
     scheme.setSyntax(QWebEngineUrlScheme::Syntax::Path);
-    scheme.setFlags(QWebEngineUrlScheme::LocalScheme|QWebEngineUrlScheme::LocalAccessAllowed);
+    scheme.setFlags(QWebEngineUrlScheme::LocalScheme | QWebEngineUrlScheme::LocalAccessAllowed);
     QWebEngineUrlScheme::registerScheme(scheme);
 
     QApplication app(argc, argv);

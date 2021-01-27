@@ -8,11 +8,11 @@
 #include "dkimmanager.h"
 #include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
-#include <KLocalizedString>
 #include <KColorScheme>
+#include <KLocalizedString>
 
-#include <QLabel>
 #include <QHBoxLayout>
+#include <QLabel>
 
 using namespace MessageViewer;
 DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
@@ -37,7 +37,7 @@ DKIMWidgetInfo::~DKIMWidgetInfo()
 
 void DKIMWidgetInfo::initColors()
 {
-    const KColorScheme colorScheme {QPalette::Active};
+    const KColorScheme colorScheme{QPalette::Active};
     mWarningColor = colorScheme.background(KColorScheme::NeutralBackground).color();
     mErrorColor = colorScheme.background(KColorScheme::NegativeBackground).color();
     mOkColor = colorScheme.background(KColorScheme::PositiveBackground).color();
@@ -190,7 +190,7 @@ void DKIMWidgetInfo::updateToolTip()
         tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Signature expired");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureCreatedInFuture:
-        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))  + i18n("Signature created in the future");
+        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Signature created in the future");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureTooSmall:
         tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Signature too small");
@@ -210,7 +210,7 @@ void DKIMWidgetInfo::updateToolTip()
             case DKIMCheckSignatureJob::DKIMStatus::Unknown:
                 break;
             case DKIMCheckSignatureJob::DKIMStatus::Invalid:
-                switch(result.method) {
+                switch (result.method) {
                 case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
                     break;
                 }
@@ -219,7 +219,10 @@ void DKIMWidgetInfo::updateToolTip()
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Auth:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
-                    const QString str = i18nc("method name: info about it from parsing", "%1: %2", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method), result.infoResult);
+                    const QString str = i18nc("method name: info about it from parsing",
+                                              "%1: %2",
+                                              MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
+                                              result.infoResult);
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
                     }
@@ -231,7 +234,7 @@ void DKIMWidgetInfo::updateToolTip()
             case DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned:
                 break;
             case DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned:
-                switch(result.method) {
+                switch (result.method) {
                 case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
                     break;
                 }
@@ -249,20 +252,23 @@ void DKIMWidgetInfo::updateToolTip()
                 }
                 break;
             case DKIMCheckSignatureJob::DKIMStatus::Valid:
-                switch(result.method) {
+                switch (result.method) {
                 case DKIMCheckSignatureJob::AuthenticationMethod::Unknown: {
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkim: {
-                    const QString str = i18n("%1: Valid (Signed by %2)", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
-                                   result.sdid);
+                    const QString str =
+                        i18n("%1: Valid (Signed by %2)", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method), result.sdid);
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
                     }
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Spf: {
-                    const QString str = i18nc("method name: info about it from parsing", "%1: %2", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method), result.infoResult);
+                    const QString str = i18nc("method name: info about it from parsing",
+                                              "%1: %2",
+                                              MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
+                                              result.infoResult);
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
                     }
@@ -287,8 +293,7 @@ void DKIMWidgetInfo::updateToolTip()
             tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + tooltipList.join(QLatin1Char('\n'));
         }
         if (mResult.listSignatureAuthenticationResult.isEmpty()) {
-            tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n'))
-                    + i18n("Not Signed");
+            tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Not Signed");
         }
     }
     qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mResult.authentication " << mResult.listSignatureAuthenticationResult;

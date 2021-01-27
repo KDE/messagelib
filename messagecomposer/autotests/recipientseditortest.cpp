@@ -7,8 +7,8 @@
 #include <QObject>
 #include <QTest>
 
-#include "recipient/recipientseditor.h"
 #include "recipient/recipientline.h"
+#include "recipient/recipientseditor.h"
 
 #include <KMime/Types>
 #include <QClipboard>
@@ -25,8 +25,7 @@ public:
 
     KPIM::MultiplyingLine *newLine(QWidget *parent) override
     {
-        auto line = qobject_cast<MessageComposer::RecipientLineNG *>(
-            MessageComposer::RecipientLineFactory::newLine(parent));
+        auto line = qobject_cast<MessageComposer::RecipientLineNG *>(MessageComposer::RecipientLineFactory::newLine(parent));
         line->setEnableAkonadiSearch(false);
         line->setEnableIndexSearch(false);
         return line;
@@ -106,7 +105,7 @@ void RecipientsEditorTest::test_splitPastedListToLines()
         QCOMPARE(editor.recipients().size(), 2);
         QCOMPARE(editor.recipients().at(0)->email(), QStringLiteral("test@example.com"));
         QCOMPARE(editor.recipients().at(1)->email(), QStringLiteral("\"Vrátil, Daniel\" <dvratil@kde.org>"));
-    } ();
+    }();
 
     clipboard->setText(oldText);
 }

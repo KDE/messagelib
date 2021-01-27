@@ -6,8 +6,8 @@
 
 #include "mailtrackingdetailsdialogtest.h"
 #include "widgets/mailtrackingdetailsdialog.h"
-#include <QTest>
 #include <QStandardPaths>
+#include <QTest>
 
 QTEST_MAIN(MailTrackingDetailsDialogTest)
 
@@ -19,5 +19,5 @@ MailTrackingDetailsDialogTest::MailTrackingDetailsDialogTest(QObject *parent)
 
 void MailTrackingDetailsDialogTest::shouldHaveDefaultValue()
 {
-    //TOOD
+    // TOOD
 }

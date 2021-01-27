@@ -10,19 +10,21 @@
 
 #include "abstractencryptjob.h"
 #include "contentjobbase.h"
-#include "part/infopart.h"
 #include "messagecomposer_export.h"
+#include "part/infopart.h"
 
 #include <Libkleo/Enum>
 
 #include <gpgme++/key.h>
 #include <vector>
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class SignEncryptJobPrivate;
 
 /**

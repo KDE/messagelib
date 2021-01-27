@@ -4,14 +4,14 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "attachmentfromfolderjob.h"
-#include "MessageCore/AttachmentFromUrlBaseJob"
-#include "attachmentfromurljob.h"
 #include "attachmentupdatejob.h"
+#include "MessageCore/AttachmentFromUrlBaseJob"
+#include "attachmentfromfolderjob.h"
+#include "attachmentfromurljob.h"
 #include "attachmentfromurlutils.h"
 #include "messagecore_debug.h"
-#include <QTimer>
 #include <KLocalizedString>
+#include <QTimer>
 
 using namespace MessageCore;
 

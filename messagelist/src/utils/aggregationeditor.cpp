@@ -10,15 +10,15 @@
 #include "core/aggregation.h"
 #include "utils/comboboxutils.h"
 
-#include <QLineEdit>
 #include <KTextEdit>
-#include <QLabel>
-#include <QGridLayout>
-#include <QPushButton>
 #include <QCheckBox>
+#include <QGridLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
 
-#include <QComboBox>
 #include <KLocalizedString>
+#include <QComboBox>
 
 using namespace MessageList::Utils;
 using namespace MessageList::Core;
@@ -97,24 +97,19 @@ void AggregationEditor::editAggregation(Aggregation *set)
     descriptionEdit()->setText(set->description());
 
     ComboBoxUtils::setIntegerOptionComboValue(mGroupingCombo, (int)mCurrentAggregation->grouping());
-    ComboBoxUtils::setIntegerOptionComboValue(mThreadingCombo,
-                                              (int)mCurrentAggregation->threading());
-    ComboBoxUtils::setIntegerOptionComboValue(mFillViewStrategyCombo,
-                                              (int)mCurrentAggregation->fillViewStrategy());
+    ComboBoxUtils::setIntegerOptionComboValue(mThreadingCombo, (int)mCurrentAggregation->threading());
+    ComboBoxUtils::setIntegerOptionComboValue(mFillViewStrategyCombo, (int)mCurrentAggregation->fillViewStrategy());
 
-    //Necessary to fill after apply mGroupingCombo/mThreadingCombo/mFillViewStrategyCombo otherwise other combo are not filled.
+    // Necessary to fill after apply mGroupingCombo/mThreadingCombo/mFillViewStrategyCombo otherwise other combo are not filled.
     fillThreadLeaderCombo();
     fillThreadExpandPolicyCombo();
     fillGroupExpandPolicyCombo();
 
-    ComboBoxUtils::setIntegerOptionComboValue(mThreadLeaderCombo,
-                                              (int)mCurrentAggregation->threadLeader());
+    ComboBoxUtils::setIntegerOptionComboValue(mThreadLeaderCombo, (int)mCurrentAggregation->threadLeader());
 
-    ComboBoxUtils::setIntegerOptionComboValue(mThreadExpandPolicyCombo,
-                                              (int)mCurrentAggregation->threadExpandPolicy());
+    ComboBoxUtils::setIntegerOptionComboValue(mThreadExpandPolicyCombo, (int)mCurrentAggregation->threadExpandPolicy());
 
-    ComboBoxUtils::setIntegerOptionComboValue(mGroupExpandPolicyCombo,
-                                              (int)mCurrentAggregation->groupExpandPolicy());
+    ComboBoxUtils::setIntegerOptionComboValue(mGroupExpandPolicyCombo, (int)mCurrentAggregation->groupExpandPolicy());
     fillThreadLeaderCombo();
     fillThreadExpandPolicyCombo();
     fillGroupExpandPolicyCombo();
@@ -139,29 +134,19 @@ void AggregationEditor::commit()
     mCurrentAggregation->setName(nameEdit()->text());
     mCurrentAggregation->setDescription(descriptionEdit()->toPlainText());
 
-    mCurrentAggregation->setGrouping(
-        static_cast<Aggregation::Grouping>(ComboBoxUtils::getIntegerOptionComboValue(mGroupingCombo, 0))
-        );
+    mCurrentAggregation->setGrouping(static_cast<Aggregation::Grouping>(ComboBoxUtils::getIntegerOptionComboValue(mGroupingCombo, 0)));
 
     mCurrentAggregation->setGroupExpandPolicy(
-        static_cast<Aggregation::GroupExpandPolicy>(ComboBoxUtils::getIntegerOptionComboValue(mGroupExpandPolicyCombo, 0))
-        );
+        static_cast<Aggregation::GroupExpandPolicy>(ComboBoxUtils::getIntegerOptionComboValue(mGroupExpandPolicyCombo, 0)));
 
-    mCurrentAggregation->setThreading(
-        static_cast<Aggregation::Threading>(ComboBoxUtils::getIntegerOptionComboValue(mThreadingCombo, 0))
-        );
+    mCurrentAggregation->setThreading(static_cast<Aggregation::Threading>(ComboBoxUtils::getIntegerOptionComboValue(mThreadingCombo, 0)));
 
-    mCurrentAggregation->setThreadLeader(
-        static_cast<Aggregation::ThreadLeader>(ComboBoxUtils::getIntegerOptionComboValue(mThreadLeaderCombo, 0))
-        );
+    mCurrentAggregation->setThreadLeader(static_cast<Aggregation::ThreadLeader>(ComboBoxUtils::getIntegerOptionComboValue(mThreadLeaderCombo, 0)));
 
     mCurrentAggregation->setThreadExpandPolicy(
-        static_cast<Aggregation::ThreadExpandPolicy>(ComboBoxUtils::getIntegerOptionComboValue(mThreadExpandPolicyCombo, 0))
-        );
+        static_cast<Aggregation::ThreadExpandPolicy>(ComboBoxUtils::getIntegerOptionComboValue(mThreadExpandPolicyCombo, 0)));
 
-    mCurrentAggregation->setFillViewStrategy(
-        static_cast<Aggregation::FillViewStrategy>(ComboBoxUtils::getIntegerOptionComboValue(mFillViewStrategyCombo, 0))
-        );
+    mCurrentAggregation->setFillViewStrategy(static_cast<Aggregation::FillViewStrategy>(ComboBoxUtils::getIntegerOptionComboValue(mFillViewStrategyCombo, 0)));
 }
 
 void AggregationEditor::slotNameEditTextEdited(const QString &newName)
@@ -175,10 +160,7 @@ void AggregationEditor::slotNameEditTextEdited(const QString &newName)
 
 void AggregationEditor::fillGroupingCombo()
 {
-    ComboBoxUtils::fillIntegerOptionCombo(
-        mGroupingCombo,
-        Aggregation::enumerateGroupingOptions()
-        );
+    ComboBoxUtils::fillIntegerOptionCombo(mGroupingCombo, Aggregation::enumerateGroupingOptions());
 }
 
 void AggregationEditor::groupingComboActivated(int)
@@ -189,20 +171,14 @@ void AggregationEditor::groupingComboActivated(int)
 
 void AggregationEditor::fillGroupExpandPolicyCombo()
 {
-    ComboBoxUtils::fillIntegerOptionCombo(
-        mGroupExpandPolicyCombo,
-        Aggregation::enumerateGroupExpandPolicyOptions(
-            (Aggregation::Grouping)ComboBoxUtils::getIntegerOptionComboValue(mGroupingCombo, Aggregation::NoGrouping)
-            )
-        );
+    ComboBoxUtils::fillIntegerOptionCombo(mGroupExpandPolicyCombo,
+                                          Aggregation::enumerateGroupExpandPolicyOptions(
+                                              (Aggregation::Grouping)ComboBoxUtils::getIntegerOptionComboValue(mGroupingCombo, Aggregation::NoGrouping)));
 }
 
 void AggregationEditor::fillThreadingCombo()
 {
-    ComboBoxUtils::fillIntegerOptionCombo(
-        mThreadingCombo,
-        Aggregation::enumerateThreadingOptions()
-        );
+    ComboBoxUtils::fillIntegerOptionCombo(mThreadingCombo, Aggregation::enumerateThreadingOptions());
 }
 
 void AggregationEditor::threadingComboActivated(int)
@@ -213,29 +189,20 @@ void AggregationEditor::threadingComboActivated(int)
 
 void AggregationEditor::fillThreadLeaderCombo()
 {
-    ComboBoxUtils::fillIntegerOptionCombo(
-        mThreadLeaderCombo,
-        Aggregation::enumerateThreadLeaderOptions(
-            (Aggregation::Grouping)ComboBoxUtils::getIntegerOptionComboValue(mGroupingCombo, Aggregation::NoGrouping),
-            (Aggregation::Threading)ComboBoxUtils::getIntegerOptionComboValue(mThreadingCombo, Aggregation::NoThreading)
-            )
-        );
+    ComboBoxUtils::fillIntegerOptionCombo(mThreadLeaderCombo,
+                                          Aggregation::enumerateThreadLeaderOptions(
+                                              (Aggregation::Grouping)ComboBoxUtils::getIntegerOptionComboValue(mGroupingCombo, Aggregation::NoGrouping),
+                                              (Aggregation::Threading)ComboBoxUtils::getIntegerOptionComboValue(mThreadingCombo, Aggregation::NoThreading)));
 }
 
 void AggregationEditor::fillThreadExpandPolicyCombo()
 {
-    ComboBoxUtils::fillIntegerOptionCombo(
-        mThreadExpandPolicyCombo,
-        Aggregation::enumerateThreadExpandPolicyOptions(
-            (Aggregation::Threading)ComboBoxUtils::getIntegerOptionComboValue(mThreadingCombo, Aggregation::NoThreading)
-            )
-        );
+    ComboBoxUtils::fillIntegerOptionCombo(mThreadExpandPolicyCombo,
+                                          Aggregation::enumerateThreadExpandPolicyOptions(
+                                              (Aggregation::Threading)ComboBoxUtils::getIntegerOptionComboValue(mThreadingCombo, Aggregation::NoThreading)));
 }
 
 void AggregationEditor::fillFillViewStrategyCombo()
 {
-    ComboBoxUtils::fillIntegerOptionCombo(
-        mFillViewStrategyCombo,
-        Aggregation::enumerateFillViewStrategyOptions()
-        );
+    ComboBoxUtils::fillIntegerOptionCombo(mFillViewStrategyCombo, Aggregation::enumerateFillViewStrategyOptions());
 }

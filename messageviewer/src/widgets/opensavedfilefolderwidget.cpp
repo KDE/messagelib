@@ -6,8 +6,8 @@
 
 #include "opensavedfilefolderwidget.h"
 
-#include <KLocalizedString>
 #include <KIO/OpenFileManagerWindowJob>
+#include <KLocalizedString>
 
 #include <QTimer>
 
@@ -28,13 +28,11 @@ OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
     setWordWrap(true);
     auto action = this->findChild<QAction *>(); // should give us the close action...
     if (action) {
-        connect(action, &QAction::triggered, this,
-                &OpenSavedFileFolderWidget::slotExplicitlyClosed);
+        connect(action, &QAction::triggered, this, &OpenSavedFileFolderWidget::slotExplicitlyClosed);
     }
 
     mShowFolderAction = new QAction(i18n("Open folder where attachment was saved"), this);
-    connect(mShowFolderAction, &QAction::triggered, this,
-            &OpenSavedFileFolderWidget::slotOpenSavedFileFolder);
+    connect(mShowFolderAction, &QAction::triggered, this, &OpenSavedFileFolderWidget::slotOpenSavedFileFolder);
     addAction(mShowFolderAction);
 }
 
@@ -52,14 +50,13 @@ void OpenSavedFileFolderWidget::slotExplicitlyClosed()
 void OpenSavedFileFolderWidget::setUrls(const QList<QUrl> &urls, FileType fileType)
 {
     mUrls = urls;
-    switch(fileType) {
+    switch (fileType) {
     case FileType::Attachment:
         mShowFolderAction->setText(i18np("Open folder where attachment was saved", "Open folder where attachments were saved", mUrls.count()));
         break;
     case FileType::Pdf:
         mShowFolderAction->setText(i18n("Open folder where PDF file was saved"));
         break;
-
     }
 }
 

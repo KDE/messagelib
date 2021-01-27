@@ -9,7 +9,8 @@
 
 #include <QWidget>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebEngineView;
 }
 
@@ -21,6 +22,7 @@ public:
     ~TestSelectionChangedEngine();
 private Q_SLOTS:
     void slotSelectionChanged();
+
 private:
     WebEngineViewer::WebEngineView *pageView;
 };

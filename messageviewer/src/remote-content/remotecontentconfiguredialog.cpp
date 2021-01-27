@@ -6,13 +6,14 @@
 
 #include "remotecontentconfiguredialog.h"
 #include "remotecontentconfigurewidget.h"
-#include <KLocalizedString>
-#include <QVBoxLayout>
-#include <QDialogButtonBox>
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
+#include <QDialogButtonBox>
+#include <QVBoxLayout>
 
-namespace {
+namespace
+{
 static const char myRemoteContentConfigureConfigGroupName[] = "RemoteContentConfigureDialog";
 }
 

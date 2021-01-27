@@ -9,7 +9,8 @@
 #include "messageviewer_export.h"
 #include <WebEngineViewer/WebEnginePage>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The MailWebEnginePage class
  * @author Laurent Montel <montel@kde.org>

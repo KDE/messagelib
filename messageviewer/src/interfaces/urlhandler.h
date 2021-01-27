@@ -15,16 +15,18 @@
 class QString;
 class QPoint;
 
-namespace MessasgeViewer {
+namespace MessasgeViewer
+{
 class ViewerPrivate;
 }
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 /**
-  * @short An interface to reader link handlers
-  * @author Marc Mutz <mutz@kde.org>
-  *
-  */
+ * @short An interface to reader link handlers
+ * @author Marc Mutz <mutz@kde.org>
+ *
+ */
 class URLHandler
 {
 public:
@@ -33,30 +35,30 @@ public:
     }
 
     /**
-      * Called when LMB-clicking on a link in the reader. Should start
-      * processing equivalent to "opening" the link.
-      *
-      * @return true if the click was handled by this URLHandler,
-      *         false otherwise.
-      */
+     * Called when LMB-clicking on a link in the reader. Should start
+     * processing equivalent to "opening" the link.
+     *
+     * @return true if the click was handled by this URLHandler,
+     *         false otherwise.
+     */
     virtual bool handleClick(const QUrl &url, MessageViewer::ViewerPrivate *w) const = 0;
 
     /**
-      * Called when RMB-clicking on a link in the reader. Should show
-      * a context menu at the specified point with the specified
-      * widget as parent.
-      *
-      * @return true if the right-click was handled by this
-      * URLHandler, false otherwise.
-      */
+     * Called when RMB-clicking on a link in the reader. Should show
+     * a context menu at the specified point with the specified
+     * widget as parent.
+     *
+     * @return true if the right-click was handled by this
+     * URLHandler, false otherwise.
+     */
     virtual bool handleContextMenuRequest(const QUrl &url, const QPoint &p, MessageViewer::ViewerPrivate *w) const = 0;
 
     /**
-      * Called when hovering over a link.
-      *
-      * @return a string to be shown in the status bar while hovering
-      * over this link.
-      */
+     * Called when hovering over a link.
+     *
+     * @return a string to be shown in the status bar while hovering
+     * over this link.
+     */
     virtual Q_REQUIRED_RESULT QString statusBarMessage(const QUrl &url, MessageViewer::ViewerPrivate *w) const = 0;
 
     /**

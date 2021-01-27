@@ -10,42 +10,42 @@
 */
 
 #include "urlhandlermanager.h"
-#include "urlhandlermanager_p.h"
-#include "messageviewer_debug.h"
+#include "../utils/messageviewerutil_p.h"
 #include "interfaces/bodyparturlhandler.h"
+#include "messageviewer/messageviewerutil.h"
+#include "messageviewer_debug.h"
+#include "stl_util.h"
+#include "urlhandlermanager_p.h"
 #include "utils/mimetype.h"
 #include "viewer/viewer_p.h"
-#include "messageviewer/messageviewerutil.h"
-#include "../utils/messageviewerutil_p.h"
-#include "stl_util.h"
 
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/PartNodeBodyPart>
 
+#include <Akonadi/Contact/OpenEmailAddressJob>
 #include <MessageCore/StringUtil>
 #include <PimCommon/BroadcastStatus>
-#include <Akonadi/Contact/OpenEmailAddressJob>
 
 #include <Akonadi/Contact/ContactSearchJob>
 
-#include <KMime/Content>
+#include "messageflags.h"
 #include <KEmailAddress>
 #include <KMbox/MBox>
-#include "messageflags.h"
+#include <KMime/Content>
 
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 
-#include <QMenu>
-#include <QIcon>
 #include <QApplication>
 #include <QClipboard>
-#include <QProcess>
-#include <QFile>
-#include <QMimeData>
 #include <QDrag>
+#include <QFile>
+#include <QIcon>
+#include <QMenu>
+#include <QMimeData>
 #include <QMimeDatabase>
+#include <QProcess>
 #include <QStandardPaths>
 #include <QUrl>
 #include <QUrlQuery>
@@ -54,9 +54,9 @@
 
 #include <Libkleo/MessageBox>
 
+using std::find;
 using std::for_each;
 using std::remove;
-using std::find;
 using namespace MessageViewer;
 using namespace MessageCore;
 
@@ -70,20 +70,17 @@ URLHandlerManager *URLHandlerManager::self = nullptr;
 
 BodyPartURLHandlerManager::~BodyPartURLHandlerManager()
 {
-    for_each(mHandlers.begin(), mHandlers.end(),
-             [](QVector<const Interface::BodyPartURLHandler *> &handlers) {
-        for_each(handlers.begin(), handlers.end(),
-                 DeleteAndSetToZero<Interface::BodyPartURLHandler>());
+    for_each(mHandlers.begin(), mHandlers.end(), [](QVector<const Interface::BodyPartURLHandler *> &handlers) {
+        for_each(handlers.begin(), handlers.end(), DeleteAndSetToZero<Interface::BodyPartURLHandler>());
     });
 }
 
-void BodyPartURLHandlerManager::registerHandler(
-    const Interface::BodyPartURLHandler *handler, const QString &mimeType)
+void BodyPartURLHandlerManager::registerHandler(const Interface::BodyPartURLHandler *handler, const QString &mimeType)
 {
     if (!handler) {
         return;
     }
-    unregisterHandler(handler);   // don't produce duplicates
+    unregisterHandler(handler); // don't produce duplicates
     const auto mt = mimeType.toLatin1();
     auto it = mHandlers.find(mt);
     if (it == mHandlers.end()) {
@@ -92,8 +89,7 @@ void BodyPartURLHandlerManager::registerHandler(
     it->push_back(handler);
 }
 
-void BodyPartURLHandlerManager::unregisterHandler(
-    const Interface::BodyPartURLHandler *handler)
+void BodyPartURLHandlerManager::unregisterHandler(const Interface::BodyPartURLHandler *handler)
 {
     // don't delete them, only remove them from the list!
     auto it = mHandlers.begin();
@@ -127,7 +123,7 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
     if (urlParts.size() != 3) {
         return nullptr;
     }
-    //KMime::ContentIndex index( urlParts[1] );
+    // KMime::ContentIndex index( urlParts[1] );
     QByteArray query(urlParts.at(2).toLatin1());
     if (url.hasQuery()) {
         query += "?" + url.query().toLatin1();
@@ -160,10 +156,9 @@ bool BodyPartURLHandlerManager::handleClick(const QUrl &url, ViewerPrivate *w) c
         return false;
     }
 
-    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr,
-                                          w->message().data(), node, w->nodeHelper());
+    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().data(), node, w->nodeHelper());
 
-    for (const auto &handlers : { handlersForPart(node), mHandlers.value({}) }) {
+    for (const auto &handlers : {handlersForPart(node), mHandlers.value({})}) {
         for (auto it = handlers.cbegin(), end = handlers.cend(); it != end; ++it) {
             if ((*it)->handleClick(w->viewer(), &part, path)) {
                 return true;
@@ -182,10 +177,9 @@ bool BodyPartURLHandlerManager::handleContextMenuRequest(const QUrl &url, const 
         return false;
     }
 
-    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr,
-                                          w->message().data(), node, w->nodeHelper());
+    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().data(), node, w->nodeHelper());
 
-    for (const auto &handlers : { handlersForPart(node), mHandlers.value({}) }) {
+    for (const auto &handlers : {handlersForPart(node), mHandlers.value({})}) {
         for (auto it = handlers.cbegin(), end = handlers.cend(); it != end; ++it) {
             if ((*it)->handleContextMenuRequest(&part, path, p)) {
                 return true;
@@ -203,10 +197,9 @@ QString BodyPartURLHandlerManager::statusBarMessage(const QUrl &url, ViewerPriva
         return QString();
     }
 
-    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr,
-                                          w->message().data(), node, w->nodeHelper());
+    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().data(), node, w->nodeHelper());
 
-    for (const auto &handlers : { handlersForPart(node), mHandlers.value({}) }) {
+    for (const auto &handlers : {handlersForPart(node), mHandlers.value({})}) {
         for (auto it = handlers.cbegin(), end = handlers.cend(); it != end; ++it) {
             const QString msg = (*it)->statusBarMessage(&part, path);
             if (!msg.isEmpty()) {
@@ -241,8 +234,7 @@ URLHandlerManager::URLHandlerManager()
 
 URLHandlerManager::~URLHandlerManager()
 {
-    for_each(mHandlers.begin(), mHandlers.end(),
-             DeleteAndSetToZero<MimeTreeParser::URLHandler>());
+    for_each(mHandlers.begin(), mHandlers.end(), DeleteAndSetToZero<MimeTreeParser::URLHandler>());
 }
 
 URLHandlerManager *URLHandlerManager::instance()
@@ -258,7 +250,7 @@ void URLHandlerManager::registerHandler(const MimeTreeParser::URLHandler *handle
     if (!handler) {
         return;
     }
-    unregisterHandler(handler);   // don't produce duplicates
+    unregisterHandler(handler); // don't produce duplicates
     mHandlers.push_back(handler);
 }
 
@@ -462,7 +454,7 @@ QString ExpandCollapseQuoteURLManager::statusBarMessage(const QUrl &url, ViewerP
     if (url.scheme() == QLatin1String("kmail") && url.path() == QLatin1String("levelquote")) {
         const QString query = url.query();
         if (query.length() >= 1) {
-            if (query[ 0 ] == QLatin1Char('-')) {
+            if (query[0] == QLatin1Char('-')) {
                 return i18n("Expand all quoted text.");
             } else {
                 return i18n("Collapse quoted text.");
@@ -515,18 +507,16 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         return false;
     }
     QString displayName, libName, keyId;
-    if (!foundSMIMEData(url.path() + QLatin1Char('#')
-                        +QUrl::fromPercentEncoding(url.fragment().toLatin1()),
-                        displayName, libName, keyId)) {
+    if (!foundSMIMEData(url.path() + QLatin1Char('#') + QUrl::fromPercentEncoding(url.fragment().toLatin1()), displayName, libName, keyId)) {
         return false;
     }
     QStringList lst;
-    lst << QStringLiteral("--parent-windowid")
-        << QString::number(static_cast<qlonglong>(w->viewer()->mainWindow()->winId()))
-        << QStringLiteral("--query") << keyId;
+    lst << QStringLiteral("--parent-windowid") << QString::number(static_cast<qlonglong>(w->viewer()->mainWindow()->winId())) << QStringLiteral("--query")
+        << keyId;
     if (!QProcess::startDetached(QStringLiteral("kleopatra"), lst)) {
-        KMessageBox::error(w->mMainWindow, i18n("Could not start certificate manager. "
-                                                "Please check your installation."),
+        KMessageBox::error(w->mMainWindow,
+                           i18n("Could not start certificate manager. "
+                                "Please check your installation."),
                            i18n("KMail Error"));
     }
     return true;
@@ -535,9 +525,7 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 QString SMimeURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
     QString displayName, libName, keyId;
-    if (!foundSMIMEData(url.path() + QLatin1Char('#')
-                        +QUrl::fromPercentEncoding(url.fragment().toLatin1()),
-                        displayName, libName, keyId)) {
+    if (!foundSMIMEData(url.path() + QLatin1Char('#') + QUrl::fromPercentEncoding(url.fragment().toLatin1()), displayName, libName, keyId)) {
         return QString();
     }
     return i18n("Show certificate 0x%1", keyId);
@@ -566,8 +554,7 @@ static QString searchFullEmailByUid(const QString &uid)
     QString fullEmail;
     auto job = new Akonadi::ContactSearchJob();
     job->setLimit(1);
-    job->setQuery(Akonadi::ContactSearchJob::ContactUid, uid,
-                  Akonadi::ContactSearchJob::ExactMatch);
+    job->setQuery(Akonadi::ContactSearchJob::ContactUid, uid, Akonadi::ContactSearchJob::ExactMatch);
     job->exec();
     const KContacts::Addressee::List res = job->contacts();
     if (!res.isEmpty()) {
@@ -600,13 +587,9 @@ bool ContactUidURLHandler::handleContextMenuRequest(const QUrl &url, const QPoin
     }
 
     QMenu menu;
-    QAction *open
-        = menu.addAction(QIcon::fromTheme(QStringLiteral("view-pim-contacts")),
-                         i18n("&Open in Address Book"));
+    QAction *open = menu.addAction(QIcon::fromTheme(QStringLiteral("view-pim-contacts")), i18n("&Open in Address Book"));
 #ifndef QT_NO_CLIPBOARD
-    QAction *copy
-        = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")),
-                         i18n("&Copy Email Address"));
+    QAction *copy = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("&Copy Email Address"));
 #endif
 
     QAction *a = menu.exec(p);
@@ -670,7 +653,7 @@ bool AttachmentURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     if (inHeader) {
         w->scrollToAttachment(node);
     }
-    //if (shouldShowDialog || w->nodeHelper()->isNodeDisplayedHidden(node)) {
+    // if (shouldShowDialog || w->nodeHelper()->isNodeDisplayedHidden(node)) {
     w->openAttachment(node, w->nodeHelper()->tempFileUrlFromNode(node));
     //}
 
@@ -770,9 +753,7 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
     }
     if (!fileName.isEmpty()) {
         QFile f(fileName);
-        f.setPermissions(
-            QFile::ReadOwner | QFile::WriteOwner | QFile::ReadUser | QFile::ReadGroup
-            | QFile::ReadOther);
+        f.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ReadUser | QFile::ReadGroup | QFile::ReadOther);
         const QString icon = Util::iconPathForContent(node, KIconLoader::Small);
         auto drag = new QDrag(window->viewer());
         auto mimeData = new QMimeData();
@@ -785,7 +766,7 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
         return true;
     } else
 #endif
-    return false;
+        return false;
 }
 
 bool AttachmentURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *w) const
@@ -810,8 +791,7 @@ QString AttachmentURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *w
         return i18n("Attachment: %1", name);
     } else if (dynamic_cast<KMime::Message *>(node)) {
         if (node->header<KMime::Headers::Subject>()) {
-            return i18n("Encapsulated Message (Subject: %1)",
-                        node->header<KMime::Headers::Subject>()->asUnicodeString());
+            return i18n("Encapsulated Message (Subject: %1)", node->header<KMime::Headers::Subject>()->asUnicodeString());
         } else {
             return i18n("Encapsulated Message");
         }
@@ -821,8 +801,7 @@ QString AttachmentURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *w
 
 static QString extractAuditLog(const QUrl &url)
 {
-    if (url.scheme() != QLatin1String("kmail")
-        || url.path() != QLatin1String("showAuditLog")) {
+    if (url.scheme() != QLatin1String("kmail") || url.path() != QLatin1String("showAuditLog")) {
         return QString();
     }
     QUrlQuery query(url);
@@ -880,36 +859,30 @@ bool InternalImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *win
         return true;
     }
 
-    const QString imagePath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral(
-                                                         "libmessageviewer/pics/"),
-                                                     QStandardPaths::LocateDirectory);
+    const QString imagePath =
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("libmessageviewer/pics/"), QStandardPaths::LocateDirectory);
     return url.path().contains(imagePath);
 }
 
 bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 {
     const QString scheme(url.scheme());
-    if ((scheme == QLatin1String("http")) || (scheme == QLatin1String("https"))
-        || (scheme == QLatin1String("ftp")) || (scheme == QLatin1String("file"))
-        || (scheme == QLatin1String("ftps")) || (scheme == QLatin1String("sftp"))
-        || (scheme == QLatin1String("help")) || (scheme == QLatin1String("vnc"))
-        || (scheme == QLatin1String("smb")) || (scheme == QLatin1String("fish"))
-        || (scheme == QLatin1String("news")) || (scheme == QLatin1String("tel"))) {
+    if ((scheme == QLatin1String("http")) || (scheme == QLatin1String("https")) || (scheme == QLatin1String("ftp")) || (scheme == QLatin1String("file"))
+        || (scheme == QLatin1String("ftps")) || (scheme == QLatin1String("sftp")) || (scheme == QLatin1String("help")) || (scheme == QLatin1String("vnc"))
+        || (scheme == QLatin1String("smb")) || (scheme == QLatin1String("fish")) || (scheme == QLatin1String("news")) || (scheme == QLatin1String("tel"))) {
         PimCommon::BroadcastStatus::instance()->setTransientStatusMsg(i18n("Opening URL..."));
         QTimer::singleShot(2000, PimCommon::BroadcastStatus::instance(), &PimCommon::BroadcastStatus::reset);
 
         QMimeDatabase mimeDb;
         auto mime = mimeDb.mimeTypeForUrl(url);
-        if (mime.name() == QLatin1String("application/x-desktop")
-            || mime.name() == QLatin1String("application/x-executable")
-            || mime.name() == QLatin1String("application/x-ms-dos-executable")
-            || mime.name() == QLatin1String("application/x-shellscript")) {
+        if (mime.name() == QLatin1String("application/x-desktop") || mime.name() == QLatin1String("application/x-executable")
+            || mime.name() == QLatin1String("application/x-ms-dos-executable") || mime.name() == QLatin1String("application/x-shellscript")) {
             if (KMessageBox::warningYesNo(nullptr,
-                                          xi18nc("@info",
-                                                 "Do you really want to execute <filename>%1</filename>?",
-                                                 url.toDisplayString(QUrl::PreferLocalFile)),
-                                          QString(), KGuiItem(i18n("Execute")),
-                                          KStandardGuiItem::cancel()) != KMessageBox::Yes) {
+                                          xi18nc("@info", "Do you really want to execute <filename>%1</filename>?", url.toDisplayString(QUrl::PreferLocalFile)),
+                                          QString(),
+                                          KGuiItem(i18n("Execute")),
+                                          KStandardGuiItem::cancel())
+                != KMessageBox::Yes) {
                 return true;
             }
         }

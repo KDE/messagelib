@@ -18,11 +18,13 @@
 #include <gpgme++/key.h>
 #include <vector>
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class EncryptJobPrivate;
 
 /**

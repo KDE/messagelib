@@ -9,8 +9,10 @@
 #include "messagecomposer_export.h"
 #include <QString>
 
-namespace MessageComposer {
-namespace ConvertSnippetVariablesUtil {
+namespace MessageComposer
+{
+namespace ConvertSnippetVariablesUtil
+{
 enum VariableType {
     CcAddr,
     CcLname,

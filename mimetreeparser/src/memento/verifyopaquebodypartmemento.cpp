@@ -7,8 +7,8 @@
 #include "verifyopaquebodypartmemento.h"
 #include "mimetreeparser_debug.h"
 
-#include <QGpgME/VerifyOpaqueJob>
 #include <QGpgME/KeyListJob>
+#include <QGpgME/VerifyOpaqueJob>
 
 #include <gpgme++/keylistresult.h>
 
@@ -50,8 +50,7 @@ bool VerifyOpaqueBodyPartMemento::start()
 #endif
         return false;
     }
-    connect(m_job.data(), &VerifyOpaqueJob::result,
-            this, &VerifyOpaqueBodyPartMemento::slotResult);
+    connect(m_job.data(), &VerifyOpaqueJob::result, this, &VerifyOpaqueBodyPartMemento::slotResult);
     setRunning(true);
     return true;
 }
@@ -72,13 +71,13 @@ void VerifyOpaqueBodyPartMemento::exec()
     m_job = nullptr;
     if (canStartKeyListJob()) {
         std::vector<GpgME::Key> keys;
-        m_keylistjob->exec(keyListPattern(), /*secretOnly=*/ false, keys);
+        m_keylistjob->exec(keyListPattern(), /*secretOnly=*/false, keys);
         if (!keys.empty()) {
             m_key = keys.back();
         }
     }
     if (m_keylistjob) {
-        m_keylistjob->deleteLater();    // exec'ed jobs don't delete themselves
+        m_keylistjob->deleteLater(); // exec'ed jobs don't delete themselves
     }
     m_keylistjob = nullptr;
     setRunning(false);
@@ -138,8 +137,7 @@ bool VerifyOpaqueBodyPartMemento::startKeyListJob()
         return false;
     }
     connect(m_keylistjob.data(), &Job::done, this, &VerifyOpaqueBodyPartMemento::slotKeyListJobDone);
-    connect(m_keylistjob.data(), &KeyListJob::nextKey,
-            this, &VerifyOpaqueBodyPartMemento::slotNextKey);
+    connect(m_keylistjob.data(), &KeyListJob::nextKey, this, &VerifyOpaqueBodyPartMemento::slotNextKey);
     return true;
 }
 

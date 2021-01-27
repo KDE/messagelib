@@ -14,18 +14,18 @@
 #include "recipient.h"
 #include "recipientseditorsidewidget.h"
 
-#include "settings/messagecomposersettings.h"
 #include "distributionlistdialog.h"
+#include "settings/messagecomposersettings.h"
 
 #include "messagecomposer_debug.h"
 
-#include <KMime/Headers>
+#include <KEmailAddress>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KEmailAddress>
+#include <KMime/Headers>
 
-#include <QLayout>
 #include <QKeyEvent>
+#include <QLayout>
 
 using namespace MessageComposer;
 using namespace KPIM;
@@ -39,7 +39,10 @@ KPIM::MultiplyingLine *RecipientLineFactory::newLine(QWidget *p)
 {
     auto line = new RecipientLineNG(p);
     if (qobject_cast<RecipientsEditor *>(parent())) {
-        connect(line, SIGNAL(addRecipient(RecipientLineNG*,QString)), qobject_cast<RecipientsEditor *>(parent()), SLOT(addRecipient(RecipientLineNG*,QString)));
+        connect(line,
+                SIGNAL(addRecipient(RecipientLineNG *, QString)),
+                qobject_cast<RecipientsEditor *>(parent()),
+                SLOT(addRecipient(RecipientLineNG *, QString)));
     } else {
         qCWarning(MESSAGECOMPOSER_LOG) << "RecipientLineFactory::newLine: We can't connect to new line" << parent();
     }
@@ -72,7 +75,7 @@ RecipientsEditor::RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *p
     : MultiplyingLineEditor(lineFactory, parent)
     , d(new MessageComposer::RecipientsEditorPrivate)
 {
-    factory()->setParent(this);   // HACK: can't use 'this' above since it's not yet constructed at that point
+    factory()->setParent(this); // HACK: can't use 'this' above since it's not yet constructed at that point
     d->mSideWidget = new RecipientsEditorSideWidget(this, this);
 
     layout()->addWidget(d->mSideWidget);
@@ -107,7 +110,7 @@ void RecipientsEditor::addRecipient(RecipientLineNG *line, const QString &recipi
     addRecipient(recipient, line->recipientType());
 }
 
-void RecipientsEditor::setRecipientString(const QVector< KMime::Types::Mailbox > &mailboxes, Recipient::Type type)
+void RecipientsEditor::setRecipientString(const QVector<KMime::Types::Mailbox> &mailboxes, Recipient::Type type)
 {
     int count = 1;
 
@@ -169,8 +172,7 @@ void RecipientsEditor::removeRecipient(const QString &recipient, Recipient::Type
         line = it.next();
         auto rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
-            if ((rec->recipient()->email() == recipient)
-                && (rec->recipientType() == type)) {
+            if ((rec->recipient()->email() == recipient) && (rec->recipientType() == type)) {
                 break;
             }
         }
@@ -288,8 +290,7 @@ bool RecipientsEditor::eventFilter(QObject *object, QEvent *event)
         // Treats comma or semicolon as email separator, will automatically move focus
         // to a new line, basically preventing user from inputting more than one
         // email address per line, which breaks our opportunistic crypto in composer
-        if (ke->key() == Qt::Key_Comma || (
-                ke->key() == Qt::Key_Semicolon && MessageComposerSettings::self()->allowSemicolonAsAddressSeparator())) {
+        if (ke->key() == Qt::Key_Comma || (ke->key() == Qt::Key_Semicolon && MessageComposerSettings::self()->allowSemicolonAsAddressSeparator())) {
             auto line = qobject_cast<RecipientLineNG *>(object->parent());
             const auto split = KEmailAddress::splitAddressList(line->rawData() + QLatin1String(", "));
             if (split.size() > 1) {

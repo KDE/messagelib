@@ -6,9 +6,9 @@
 
 #include "statusbarlabeltoggledstatetest.h"
 #include "MessageComposer/StatusBarLabelToggledState"
+#include <QSignalSpy>
 #include <QTest>
 #include <qtestmouse.h>
-#include <QSignalSpy>
 
 QTEST_MAIN(StatusBarLabelToggledStateTest)
 

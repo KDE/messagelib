@@ -13,10 +13,10 @@
 #include <KSeparator>
 #include <QIcon>
 
-#include <QVBoxLayout>
 #include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QVBoxLayout>
 
 using namespace MessageComposer;
 

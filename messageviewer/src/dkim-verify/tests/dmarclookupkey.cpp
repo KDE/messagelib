@@ -6,10 +6,10 @@
 
 #include "dmarclookupkey.h"
 #include "dkim-verify/dmarcrecordjob.h"
-#include <QStandardPaths>
-#include <QCoreApplication>
 #include <QCommandLineParser>
+#include <QCoreApplication>
 #include <QDebug>
+#include <QStandardPaths>
 
 DMarcLookUpKey::DMarcLookUpKey(QObject *parent)
     : QObject(parent)
@@ -42,8 +42,7 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addPositionalArgument(
-        QStringLiteral("server address"), QStringLiteral("add specific server address"));
+    parser.addPositionalArgument(QStringLiteral("server address"), QStringLiteral("add specific server address"));
     parser.process(app);
 
     if (!parser.positionalArguments().isEmpty()) {

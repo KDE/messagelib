@@ -4,24 +4,24 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "mailwebengineview.h"
-#include "mailwebenginepage.h"
-#include "webengineviewer/webengineaccesskey.h"
-#include "webengineviewer/webenginescript.h"
-#include "messageviewer/messageviewersettings.h"
 #include "../urlhandlermanager.h"
-#include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
 #include "blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h"
 #include "blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h"
 #include "cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
 #include "cidschemehandler/cidschemehandler.h"
+#include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
+#include "mailwebenginepage.h"
+#include "messageviewer/messageviewersettings.h"
+#include "webengineviewer/webengineaccesskey.h"
+#include "webengineviewer/webenginescript.h"
 #include <WebEngineViewer/InterceptorManager>
 #include <WebEngineViewer/WebEngineManageScript>
 
-#include "scamdetection/scamdetectionwebengine.h"
 #include "scamdetection/scamcheckshorturl.h"
+#include "scamdetection/scamdetectionwebengine.h"
 #include <QContextMenuEvent>
-#include <WebEngineViewer/WebHitTest>
 #include <QWebEngineProfile>
+#include <WebEngineViewer/WebHitTest>
 
 #include <QPrinter>
 #include <QWebEngineUrlScheme>
@@ -29,8 +29,7 @@
 #include <WebEngineViewer/WebHitTestResult>
 
 using namespace MessageViewer;
-template<typename Arg, typename R, typename C>
-struct InvokeWrapper {
+template<typename Arg, typename R, typename C> struct InvokeWrapper {
     R *receiver;
     void (C::*memberFunction)(Arg);
     void operator()(Arg result)
@@ -75,10 +74,8 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mWebViewAccessKey = new WebEngineViewer::WebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);
     d->mScamDetection = new ScamDetectionWebEngine(this);
-    connect(d->mScamDetection, &ScamDetectionWebEngine::messageMayBeAScam, this,
-            &MailWebEngineView::messageMayBeAScam);
-    connect(d->mWebViewAccessKey, &WebEngineViewer::WebEngineAccessKey::openUrl, this,
-            &MailWebEngineView::openUrl);
+    connect(d->mScamDetection, &ScamDetectionWebEngine::messageMayBeAScam, this, &MailWebEngineView::messageMayBeAScam);
+    connect(d->mWebViewAccessKey, &WebEngineViewer::WebEngineAccessKey::openUrl, this, &MailWebEngineView::openUrl);
     connect(this, &MailWebEngineView::loadFinished, this, &MailWebEngineView::slotLoadFinished);
 
     d->mPageEngine->profile()->installUrlSchemeHandler(QByteArrayLiteral("cid"), new CidSchemeHandler(this));
@@ -86,25 +83,18 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mNetworkAccessManager = new WebEngineViewer::InterceptorManager(this, ac, this);
     d->mExternalReference = new MessageViewer::LoadExternalReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(d->mExternalReference);
-    auto *cidReference
-        = new MessageViewer::CidReferencesUrlInterceptor(this);
+    auto *cidReference = new MessageViewer::CidReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(cidReference);
-    auto *blockExternalUrl
-        = new MessageViewer::BlockExternalResourcesUrlInterceptor(this);
-    connect(blockExternalUrl, &BlockExternalResourcesUrlInterceptor::formSubmittedForbidden, this,
-            &MailWebEngineView::formSubmittedForbidden);
+    auto *blockExternalUrl = new MessageViewer::BlockExternalResourcesUrlInterceptor(this);
+    connect(blockExternalUrl, &BlockExternalResourcesUrlInterceptor::formSubmittedForbidden, this, &MailWebEngineView::formSubmittedForbidden);
     d->mNetworkAccessManager->addInterceptor(blockExternalUrl);
 
-    d->mBlockMailTrackingUrl
-        = new MessageViewer::BlockMailTrackingUrlInterceptor(this);
-    connect(d->mBlockMailTrackingUrl, &BlockMailTrackingUrlInterceptor::mailTrackingFound, this,
-            &MailWebEngineView::mailTrackingFound);
+    d->mBlockMailTrackingUrl = new MessageViewer::BlockMailTrackingUrlInterceptor(this);
+    connect(d->mBlockMailTrackingUrl, &BlockMailTrackingUrlInterceptor::mailTrackingFound, this, &MailWebEngineView::mailTrackingFound);
 
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
-    connect(
-        page(), &QWebEnginePage::scrollPositionChanged, d->mWebViewAccessKey,
-        &WebEngineViewer::WebEngineAccessKey::hideAccessKeys);
+    connect(page(), &QWebEnginePage::scrollPositionChanged, d->mWebViewAccessKey, &WebEngineViewer::WebEngineAccessKey::hideAccessKeys);
 }
 
 MailWebEngineView::~MailWebEngineView()
@@ -123,7 +113,7 @@ void MailWebEngineView::readConfig()
 
 void MailWebEngineView::setLinkHovered(const QUrl &url)
 {
-    //TODO we need to detect image url too.
+    // TODO we need to detect image url too.
     d->mHoveredUrl = url;
 }
 
@@ -140,8 +130,7 @@ void MailWebEngineView::setViewer(MessageViewer::ViewerPrivate *viewer)
 void MailWebEngineView::contextMenuEvent(QContextMenuEvent *e)
 {
     WebEngineViewer::WebHitTest *webHit = d->mPageEngine->hitTestContent(e->pos());
-    connect(webHit, &WebEngineViewer::WebHitTest::finished, this,
-            &MailWebEngineView::slotWebHitFinished);
+    connect(webHit, &WebEngineViewer::WebHitTest::finished, this, &MailWebEngineView::slotWebHitFinished);
 }
 
 void MailWebEngineView::slotWebHitFinished(const WebEngineViewer::WebHitTestResult &result)
@@ -197,8 +186,7 @@ void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)
             }
         }
         if (event->button() == Qt::LeftButton) {
-            d->mCanStartDrag = URLHandlerManager::instance()->willHandleDrag(d->mHoveredUrl,
-                                                                             d->mViewer);
+            d->mCanStartDrag = URLHandlerManager::instance()->willHandleDrag(d->mHoveredUrl, d->mViewer);
             d->mLastClickPosition = event->pos();
         }
     }
@@ -209,8 +197,7 @@ void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
     if (d->mViewer && !d->mHoveredUrl.isEmpty()) {
         // If we are potentially handling a drag, deal with that.
         if (d->mCanStartDrag && (event->buttons() & Qt::LeftButton)) {
-            if ((d->mLastClickPosition - event->pos()).manhattanLength()
-                > QApplication::startDragDistance()) {
+            if ((d->mLastClickPosition - event->pos()).manhattanLength() > QApplication::startDragDistance()) {
                 if (URLHandlerManager::instance()->handleDrag(d->mHoveredUrl, d->mViewer)) {
                     // If the URL handler manager started a drag, don't handle this in the future
                     d->mCanStartDrag = false;
@@ -259,7 +246,7 @@ void MailWebEngineView::resizeEvent(QResizeEvent *e)
 
 void MailWebEngineView::saveMainFrameScreenshotInFile(const QString &filename)
 {
-    //TODO need to verify it
+    // TODO need to verify it
     QImage image(size(), QImage::Format_ARGB32_Premultiplied);
     image.fill(Qt::transparent);
 
@@ -354,8 +341,7 @@ void MailWebEngineView::setAllowExternalContent(bool b)
     }
 }
 
-QList<QAction *> MailWebEngineView::interceptorUrlActions(
-    const WebEngineViewer::WebHitTestResult &result) const
+QList<QAction *> MailWebEngineView::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     return d->mNetworkAccessManager->interceptorUrlActions(result);
 }

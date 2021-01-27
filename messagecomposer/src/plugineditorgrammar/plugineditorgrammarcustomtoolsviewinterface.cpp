@@ -109,7 +109,7 @@ void PluginGrammarAction::setInfoUrls(const QStringList &urls)
     mInfoUrls = urls;
 }
 
-QDebug operator <<(QDebug d, const PluginGrammarAction &t)
+QDebug operator<<(QDebug d, const PluginGrammarAction &t)
 {
     d << "start " << t.start();
     d << "length " << t.length();

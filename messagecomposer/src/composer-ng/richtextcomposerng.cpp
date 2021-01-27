@@ -5,15 +5,15 @@
 */
 
 #include "richtextcomposerng.h"
-#include <KPIMTextEdit/RichTextComposerControler>
-#include <KPIMTextEdit/RichTextComposerImages>
 #include "richtextcomposersignatures.h"
-#include <PimCommon/AutoCorrection>
-#include <part/textpart.h>
 #include "settings/messagecomposersettings.h"
-#include <KPIMTextEdit/TextHTMLBuilder>
 #include <KPIMTextEdit/MarkupDirector>
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
+#include <KPIMTextEdit/RichTextComposerControler>
+#include <KPIMTextEdit/RichTextComposerImages>
+#include <KPIMTextEdit/TextHTMLBuilder>
+#include <PimCommon/AutoCorrection>
+#include <part/textpart.h>
 
 #include <QRegularExpression>
 
@@ -72,8 +72,8 @@ void RichTextComposerNg::setAutocorrectionLanguage(const QString &lang)
 
 static bool isSpecial(const QTextCharFormat &charFormat)
 {
-    return charFormat.isFrameFormat() || charFormat.isImageFormat()
-           || charFormat.isListFormat() || charFormat.isTableFormat() || charFormat.isTableCellFormat();
+    return charFormat.isFrameFormat() || charFormat.isImageFormat() || charFormat.isListFormat() || charFormat.isTableFormat()
+        || charFormat.isTableCellFormat();
 }
 
 bool RichTextComposerNg::processModifyText(QKeyEvent *e)
@@ -136,9 +136,7 @@ void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml) const
             const double emValue = ptValue / 12;
             replacement = QString::number(emValue, 'g', 2);
             const int capLen = rmatch.capturedLength(1);
-            cleanHtml.replace(rmatch.capturedStart(1),
-                              capLen + 2 /* QLatin1String("pt").size() */,
-                              replacement + QLatin1String("em"));
+            cleanHtml.replace(rmatch.capturedStart(1), capLen + 2 /* QLatin1String("pt").size() */, replacement + QLatin1String("em"));
             // advance the offset to just after the last replace
             offset = rmatch.capturedEnd(0) - capLen + replacement.size();
         } else {
@@ -157,8 +155,7 @@ MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextCom
 
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
-    const bool wasConverted
-        = convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
+    const bool wasConverted = convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
     if (composerControler()->isFormattingUsed()) {
         if (!wasConverted) {
             if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
@@ -193,12 +190,14 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
 
         auto pmd = new KPIMTextEdit::MarkupDirector(pb);
         pmd->processDocument(document());
-        QString cleanHtml = QStringLiteral("<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>%1</body>\n</html>").arg(pb->getResult());
+        QString cleanHtml =
+            QStringLiteral("<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>%1</body>\n</html>")
+                .arg(pb->getResult());
         delete pmd;
         delete pb;
         d->fixHtmlFontSize(cleanHtml);
         textPart->setCleanHtml(cleanHtml);
-        //qDebug() << " cleanHtml  grantlee builder" << cleanHtml;
+        // qDebug() << " cleanHtml  grantlee builder" << cleanHtml;
 #else
         QString cleanHtml = d->toCleanHtml();
         d->fixHtmlFontSize(cleanHtml);
@@ -220,20 +219,15 @@ QString RichTextComposerNgPrivate::toCleanHtml() const
     // Qt inserts various style properties based on the current mode of the editor (underline,
     // bold, etc), but only empty paragraphs *also* have qt-paragraph-type set to 'empty'.
     // Minimal/non-greedy matching
-    static const QString EMPTYLINEREGEX = QStringLiteral(
-        "<p style=\"-qt-paragraph-type:empty;(?:.*?)</p>");
+    static const QString EMPTYLINEREGEX = QStringLiteral("<p style=\"-qt-paragraph-type:empty;(?:.*?)</p>");
 
-    static const QString OLLISTPATTERNQT = QStringLiteral(
-        "<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
+    static const QString OLLISTPATTERNQT = QStringLiteral("<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
 
-    static const QString ULLISTPATTERNQT = QStringLiteral(
-        "<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
+    static const QString ULLISTPATTERNQT = QStringLiteral("<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
 
-    static const QString ORDEREDLISTHTML = QStringLiteral(
-        "<ol style=\"margin-top: 0px; margin-bottom: 0px;");
+    static const QString ORDEREDLISTHTML = QStringLiteral("<ol style=\"margin-top: 0px; margin-bottom: 0px;");
 
-    static const QString UNORDEREDLISTHTML = QStringLiteral(
-        "<ul style=\"margin-top: 0px; margin-bottom: 0px;");
+    static const QString UNORDEREDLISTHTML = QStringLiteral("<ul style=\"margin-top: 0px; margin-bottom: 0px;");
 
     // fix 1 - empty lines should show as empty lines - MS Outlook treats margin-top:0px; as
     // a non-existing line.
@@ -261,7 +255,11 @@ static bool isCursorAtEndOfLine(const QTextCursor &cursor)
     return !testCursor.hasSelection();
 }
 
-static void insertSignatureHelper(const QString &signature, RichTextComposerNg *textEdit, KIdentityManagement::Signature::Placement placement, bool isHtml, bool addNewlines)
+static void insertSignatureHelper(const QString &signature,
+                                  RichTextComposerNg *textEdit,
+                                  KIdentityManagement::Signature::Placement placement,
+                                  bool isHtml,
+                                  bool addNewlines)
 {
     if (!signature.isEmpty()) {
         // Save the modified state of the document, as inserting a signature
@@ -344,7 +342,9 @@ static void insertSignatureHelper(const QString &signature, RichTextComposerNg *
     }
 }
 
-void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &signature, KIdentityManagement::Signature::Placement placement, KIdentityManagement::Signature::AddedText addedText)
+void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &signature,
+                                         KIdentityManagement::Signature::Placement placement,
+                                         KIdentityManagement::Signature::AddedText addedText)
 {
     if (signature.isEnabledSignature()) {
         QString signatureStr;
@@ -354,9 +354,10 @@ void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &s
             signatureStr = signature.rawText();
         }
 
-        insertSignatureHelper(signatureStr, this, placement,
-                              (signature.isInlinedHtml()
-                               && signature.type() == KIdentityManagement::Signature::Inlined),
+        insertSignatureHelper(signatureStr,
+                              this,
+                              placement,
+                              (signature.isInlinedHtml() && signature.type() == KIdentityManagement::Signature::Inlined),
                               (addedText & KIdentityManagement::Signature::AddNewLines));
 
         // We added the text of the signature above, now it is time to add the images as well.

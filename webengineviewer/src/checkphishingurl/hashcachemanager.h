@@ -7,12 +7,13 @@
 #ifndef HASHCACHEMANAGER_H
 #define HASHCACHEMANAGER_H
 
-#include <QObject>
 #include "webengineviewer_export.h"
+#include <QObject>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class HashCacheManagerPrivate;
-//https://developers.google.com/safe-browsing/v4/caching
+// https://developers.google.com/safe-browsing/v4/caching
 /**
  * @brief The HashCacheManager class
  * @author Laurent Montel <montel@kde.org>
@@ -21,11 +22,7 @@ class WEBENGINEVIEWER_EXPORT HashCacheManager : public QObject
 {
     Q_OBJECT
 public:
-    enum UrlStatus {
-        UrlOk = 0,
-        MalWare = 1,
-        Unknown = 2
-    };
+    enum UrlStatus { UrlOk = 0, MalWare = 1, Unknown = 2 };
     explicit HashCacheManager(QObject *parent = nullptr);
     ~HashCacheManager() override;
 

@@ -12,19 +12,20 @@
 
 #include "messageviewer_export.h"
 
-#include <qglobal.h>
-#include <memory>
 #include <QByteArray>
+#include <memory>
+#include <qglobal.h>
 class QIODevice;
 class QString;
 class QTextStream;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
-  * @short An interface for HTML sinks.
-  * @author Marc Mutz <mutz@kde.org>
-  *
-  */
+ * @short An interface for HTML sinks.
+ * @author Marc Mutz <mutz@kde.org>
+ *
+ */
 class MESSAGEVIEWER_EXPORT HtmlWriter
 {
 public:
@@ -66,8 +67,8 @@ public:
     QTextStream *stream() const;
 
     /**
-      * Embed a part with Content-ID @p contentId, using url @p url.
-      */
+     * Embed a part with Content-ID @p contentId, using url @p url.
+     */
     virtual void embedPart(const QByteArray &contentId, const QString &url) = 0;
 
     virtual void setExtraHead(const QString &str) = 0;
@@ -76,6 +77,7 @@ public:
 
     void setCodec(const QByteArray &codec);
     Q_REQUIRED_RESULT QByteArray codec() const;
+
 private:
     Q_DISABLE_COPY(HtmlWriter)
     QByteArray mCodec = QByteArrayLiteral("UTF-8");

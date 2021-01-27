@@ -10,7 +10,8 @@
 #include "templateparser_export.h"
 #include "ui_templatesconfiguration_base.h"
 class QPlainTextEdit;
-namespace TemplateParser {
+namespace TemplateParser
+{
 class TemplatesConfigurationPrivate;
 /**
  * @brief The TemplatesConfiguration class
@@ -20,7 +21,6 @@ class TEMPLATEPARSER_EXPORT TemplatesConfiguration : public QWidget, Ui::Templat
     Q_OBJECT
 
 public:
-
     explicit TemplatesConfiguration(QWidget *parent = nullptr, const QString &name = QString());
     ~TemplatesConfiguration() override;
 

@@ -14,7 +14,8 @@
 
 class QTimer;
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The MessageComposerSettings class
  */

@@ -12,8 +12,8 @@
 
 #include "header/headerstyle.h"
 
-#include "utils/iconnamecache.h"
 #include "settings/messageviewersettings.h"
+#include "utils/iconnamecache.h"
 
 #include <MessageCore/StringUtil>
 #include <MimeTreeParser/NodeHelper>
@@ -107,17 +107,15 @@ QString HeaderStyleUtil::spamStatus(KMime::Message *message) const
     QString spamHTML;
     const SpamScores scores = SpamHeaderAnalyzer::getSpamScores(message);
 
-    for (SpamScores::const_iterator it = scores.constBegin(), end = scores.constEnd(); it != end;
-         ++it) {
-        spamHTML += (*it).agent() + QLatin1Char(' ')
-                    +drawSpamMeter((*it).error(), (*it).score(),
-                                   (*it).confidence(), (*it).spamHeader(),
-                                   (*it).confidenceHeader());
+    for (SpamScores::const_iterator it = scores.constBegin(), end = scores.constEnd(); it != end; ++it) {
+        spamHTML +=
+            (*it).agent() + QLatin1Char(' ') + drawSpamMeter((*it).error(), (*it).score(), (*it).confidence(), (*it).spamHeader(), (*it).confidenceHeader());
     }
     return spamHTML;
 }
 
-QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confidence, const QString &filterHeader, const QString &confidenceHeader) const
+QString
+HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confidence, const QString &filterHeader, const QString &confidenceHeader) const
 {
     static const int meterWidth = 20;
     static const int meterHeight = 5;
@@ -129,34 +127,15 @@ QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, doub
     if (spamError != noError) { // grey is for errors
         meterBar.fill(meterWidth + 2);
     } else {
-        static const unsigned short gradient[meterWidth][3] = {
-            {   0, 255, 0 },
-            {  27, 254, 0 },
-            {  54, 252, 0 },
-            {  80, 250, 0 },
-            { 107, 249, 0 },
-            { 135, 247, 0 },
-            { 161, 246, 0 },
-            { 187, 244, 0 },
-            { 214, 242, 0 },
-            { 241, 241, 0 },
-            { 255, 228, 0 },
-            { 255, 202, 0 },
-            { 255, 177, 0 },
-            { 255, 151, 0 },
-            { 255, 126, 0 },
-            { 255, 101, 0 },
-            { 255, 76, 0 },
-            { 255, 51, 0 },
-            { 255, 25, 0 },
-            { 255, 0, 0 }
-        };
+        static const unsigned short gradient[meterWidth][3] = {{0, 255, 0},   {27, 254, 0},  {54, 252, 0},  {80, 250, 0},  {107, 249, 0},
+                                                               {135, 247, 0}, {161, 246, 0}, {187, 244, 0}, {214, 242, 0}, {241, 241, 0},
+                                                               {255, 228, 0}, {255, 202, 0}, {255, 177, 0}, {255, 151, 0}, {255, 126, 0},
+                                                               {255, 101, 0}, {255, 76, 0},  {255, 51, 0},  {255, 25, 0},  {255, 0, 0}};
 
         meterBar.fill(meterWidth + 1);
         const int max = qMin(meterWidth, static_cast<int>(percent) / 5);
         for (int i = 0; i < max; ++i) {
-            meterBar.setColor(i + 1, qRgb(gradient[i][0], gradient[i][1],
-                                          gradient[i][2]));
+            meterBar.setColor(i + 1, qRgb(gradient[i][0], gradient[i][1], gradient[i][2]));
             meterBar.setPixel(i, 0, i + 1);
         }
     }
@@ -166,15 +145,20 @@ QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, doub
     if (spamError == noError) {
         if (confidence >= 0) {
             confidenceString = QString::number(confidence) + QLatin1String("% &nbsp;");
-            titleText = i18n("%1% probability of being spam with confidence %3%.\n\n"
-                             "Full report:\nProbability=%2\nConfidence=%4",
-                             QString::number(percent, 'f',
-                                             2), filterHeader, confidence, confidenceHeader);
+            titleText = i18n(
+                "%1% probability of being spam with confidence %3%.\n\n"
+                "Full report:\nProbability=%2\nConfidence=%4",
+                QString::number(percent, 'f', 2),
+                filterHeader,
+                confidence,
+                confidenceHeader);
         } else { // do not show negative confidence
             confidenceString = QString() + QLatin1String("&nbsp;");
-            titleText = i18n("%1% probability of being spam.\n\n"
-                             "Full report:\nProbability=%2",
-                             QString::number(percent, 'f', 2), filterHeader);
+            titleText = i18n(
+                "%1% probability of being spam.\n\n"
+                "Full report:\nProbability=%2",
+                QString::number(percent, 'f', 2),
+                filterHeader);
         }
     } else {
         QString errorMsg;
@@ -199,14 +183,15 @@ QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, doub
             break;
         }
         // report the error in the spam filter
-        titleText = i18n("%1.\n\n"
-                         "Full report:\n%2",
-                         errorMsg, filterHeader);
+        titleText = i18n(
+            "%1.\n\n"
+            "Full report:\n%2",
+            errorMsg,
+            filterHeader);
     }
-    return QStringLiteral(
-        "<img src=\"%1\" width=\"%2\" height=\"%3\" style=\"border: 1px solid black;\" title=\"%4\" />")
-           .arg(imgToDataUrl(meterBar), QString::number(meterWidth),
-                QString::number(meterHeight), titleText) + confidenceString;
+    return QStringLiteral("<img src=\"%1\" width=\"%2\" height=\"%3\" style=\"border: 1px solid black;\" title=\"%4\" />")
+               .arg(imgToDataUrl(meterBar), QString::number(meterWidth), QString::number(meterHeight), titleText)
+        + confidenceString;
 }
 
 QString HeaderStyleUtil::imgToDataUrl(const QImage &image) const
@@ -215,17 +200,15 @@ QString HeaderStyleUtil::imgToDataUrl(const QImage &image) const
     QBuffer buffer(&ba);
     buffer.open(QIODevice::WriteOnly);
     image.save(&buffer, "PNG");
-    return QStringLiteral("data:image/%1;base64,%2").arg(QStringLiteral("PNG"),
-                                                         QString::fromLatin1(ba.toBase64()));
+    return QStringLiteral("data:image/%1;base64,%2").arg(QStringLiteral("PNG"), QString::fromLatin1(ba.toBase64()));
 }
 
 QString HeaderStyleUtil::dateStr(const QDateTime &dateTime)
 {
     const time_t unixTime = dateTime.toSecsSinceEpoch();
-    return KMime::DateFormatter::formatDate(
-        static_cast<KMime::DateFormatter::FormatType>(
-            MessageCore::MessageCoreSettings::self()->dateFormat()),
-        unixTime, MessageCore::MessageCoreSettings::self()->customDateFormat());
+    return KMime::DateFormatter::formatDate(static_cast<KMime::DateFormatter::FormatType>(MessageCore::MessageCoreSettings::self()->dateFormat()),
+                                            unixTime,
+                                            MessageCore::MessageCoreSettings::self()->customDateFormat());
 }
 
 QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime)
@@ -268,8 +251,7 @@ void HeaderStyleUtil::updateXFaceSettings(QImage photo, xfaceSettings &settings)
             double ratio = (double)settings.photoHeight / (double)settings.photoWidth;
             settings.photoHeight = 60;
             settings.photoWidth = (int)(60 / ratio);
-            photo = photo.scaled(settings.photoWidth, settings.photoHeight, Qt::IgnoreAspectRatio,
-                                 Qt::SmoothTransformation);
+            photo = photo.scaled(settings.photoWidth, settings.photoHeight, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         }
         settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(photo);
     }
@@ -284,22 +266,18 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
         Q_ASSERT(style->nodeHelper());
         Q_ASSERT(style->sourceObject());
 
-        ContactDisplayMessageMemento *photoMemento
-            = dynamic_cast<ContactDisplayMessageMemento *>(style->nodeHelper()->bodyPartMemento(
-                                                               message, "contactphoto"));
+        ContactDisplayMessageMemento *photoMemento =
+            dynamic_cast<ContactDisplayMessageMemento *>(style->nodeHelper()->bodyPartMemento(message, "contactphoto"));
         if (!photoMemento) {
-            const QString email
-                = QString::fromLatin1(KEmailAddress::firstEmailAddress(message->from()->as7BitString(
-                                                                           false)));
+            const QString email = QString::fromLatin1(KEmailAddress::firstEmailAddress(message->from()->as7BitString(false)));
             photoMemento = new ContactDisplayMessageMemento(email);
             style->nodeHelper()->setBodyPartMemento(message, "contactphoto", photoMemento);
-            QObject::connect(photoMemento, SIGNAL(update(MimeTreeParser::UpdateMode)),
-                             style->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));
+            QObject::connect(photoMemento, SIGNAL(update(MimeTreeParser::UpdateMode)), style->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));
 
             QObject::connect(photoMemento,
-                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)),
+                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage, bool)),
                              style->sourceObject(),
-                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)));
+                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage, bool)));
         }
 
         if (photoMemento->finished()) {
@@ -344,18 +322,14 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
                     if (faceimage.loadFromData(facearray, "png")) {
                         // Spec says image must be 48x48 pixels
                         if ((48 == faceimage.width()) && (48 == faceimage.height())) {
-                            settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(
-                                faceimage);
+                            settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(faceimage);
                             settings.photoWidth = 48;
                             settings.photoHeight = 48;
                         } else {
-                            qCDebug(MESSAGEVIEWER_LOG) << "Face: header image is"
-                                                       << faceimage.width() << "by"
-                                                       << faceimage.height() << "not 48x48 Pixels";
+                            qCDebug(MESSAGEVIEWER_LOG) << "Face: header image is" << faceimage.width() << "by" << faceimage.height() << "not 48x48 Pixels";
                         }
                     } else {
-                        qCDebug(MESSAGEVIEWER_LOG)
-                            << "Failed to load decoded png from Face: header";
+                        qCDebug(MESSAGEVIEWER_LOG) << "Failed to load decoded png from Face: header";
                     }
                 } else {
                     qCDebug(MESSAGEVIEWER_LOG) << "Face: header too long at" << facestring.length();
@@ -370,8 +344,7 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
             const QString xfhead = hrd->asUnicodeString();
             if (!xfhead.isEmpty()) {
                 MessageViewer::KXFace xf;
-                settings.photoURL
-                    = MessageViewer::HeaderStyleUtil::imgToDataUrl(xf.toImage(xfhead));
+                settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(xf.toImage(xfhead));
                 settings.photoWidth = 48;
                 settings.photoHeight = 48;
             }

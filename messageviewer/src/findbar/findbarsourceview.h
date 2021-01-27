@@ -10,7 +10,8 @@
 
 class QPlainTextEdit;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class FindBarSourceView : public WebEngineViewer::FindBarBase
 {
     Q_OBJECT

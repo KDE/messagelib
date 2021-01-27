@@ -8,8 +8,8 @@
 #define TEMPLATEPARSEREXTRACTHTMLINFORESULT_H
 
 #include "templateparser_export.h"
-#include <QString>
 #include <QObject>
+#include <QString>
 struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult {
     void clear();
     QString mBodyElement;

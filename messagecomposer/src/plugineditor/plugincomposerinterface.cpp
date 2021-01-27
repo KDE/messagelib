@@ -5,9 +5,9 @@
 */
 
 #include "plugincomposerinterface.h"
+#include "composer/composerattachmentinterface.h"
 #include "composer/composerviewbase.h"
 #include "composer/composerviewinterface.h"
-#include "composer/composerattachmentinterface.h"
 #include <MessageComposer/AttachmentModel>
 #include <MessageComposer/ConvertSnippetVariablesJob>
 using namespace MessageComposer;
@@ -79,7 +79,8 @@ QString PluginComposerInterface::insertDayOfWeek() const
 
 QString PluginComposerInterface::convertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const
 {
-    return MessageComposer::ConvertSnippetVariablesJob::convertVariables(mComposerViewInterface, MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(type));
+    return MessageComposer::ConvertSnippetVariablesJob::convertVariables(mComposerViewInterface,
+                                                                         MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(type));
 }
 
 QString PluginComposerInterface::convertText(const QString &str) const

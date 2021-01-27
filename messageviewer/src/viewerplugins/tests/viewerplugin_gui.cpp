@@ -6,14 +6,14 @@
 
 #include "viewerplugin_gui.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
-#include <QStandardPaths>
 #include <KActionCollection>
+#include <QStandardPaths>
 
 #include <QApplication>
-#include <QTextEdit>
 #include <QCommandLineParser>
-#include <QVBoxLayout>
 #include <QMenuBar>
+#include <QTextEdit>
+#include <QVBoxLayout>
 
 #include <viewerplugins/viewerplugininterface.h>
 
@@ -32,10 +32,8 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     vbox->setContentsMargins({});
     vbox->setSpacing(0);
     toolManagerWidget->setLayout(vbox);
-    auto *toolManager
-        = new MessageViewer::ViewerPluginToolManager(toolManagerWidget, this);
-    connect(toolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this,
-            &ViewerPluginTest::slotActivatePlugin);
+    auto *toolManager = new MessageViewer::ViewerPluginToolManager(toolManagerWidget, this);
+    connect(toolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this, &ViewerPluginTest::slotActivatePlugin);
 
     toolManager->setPluginName(QStringLiteral("messageviewer"));
     toolManager->setPluginDirectory(QStringLiteral("messageviewer/viewerplugin"));
@@ -51,14 +49,12 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
 
     menu = new QMenu(this);
     menu->setTitle(QStringLiteral("selected tools"));
-    menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::
-                                                         NeedSelection));
+    menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::NeedSelection));
     menuBar->addMenu(menu);
 
     menu = new QMenu(this);
     menu->setTitle(QStringLiteral("message tools"));
-    menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::
-                                                         NeedMessage));
+    menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::NeedMessage));
     menuBar->addMenu(menu);
 
     menu = new QMenu(this);

@@ -9,12 +9,12 @@
 #include "utils/optionseteditor.h"
 #include "core/optionset.h"
 
-#include <QLabel>
 #include <QGridLayout>
+#include <QLabel>
 
-#include <QLineEdit>
 #include <KLocalizedString>
 #include <KTextEdit>
+#include <QLineEdit>
 
 using namespace MessageList::Utils;
 using namespace MessageList::Core;

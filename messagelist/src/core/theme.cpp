@@ -8,14 +8,14 @@
 
 #include "core/theme.h"
 
-#include <QDataStream>
-#include <QPixmap>
-#include <QIcon>
-#include <QStandardPaths>
 #include <QApplication>
+#include <QDataStream>
+#include <QIcon>
+#include <QPixmap>
+#include <QStandardPaths>
 
-#include <KLocalizedString>
 #include "messagelist_debug.h"
+#include <KLocalizedString>
 
 using namespace MessageList::Core;
 
@@ -70,37 +70,37 @@ Theme::ContentItem::Type Theme::ContentItem::type() const
 
 bool Theme::ContentItem::canBeDisabled() const
 {
-    return (static_cast< int >(mType) & CanBeDisabled) != 0;
+    return (static_cast<int>(mType) & CanBeDisabled) != 0;
 }
 
 bool Theme::ContentItem::canUseCustomColor() const
 {
-    return (static_cast< int >(mType) & CanUseCustomColor) != 0;
+    return (static_cast<int>(mType) & CanUseCustomColor) != 0;
 }
 
 bool Theme::ContentItem::displaysText() const
 {
-    return (static_cast< int >(mType) & DisplaysText) != 0;
+    return (static_cast<int>(mType) & DisplaysText) != 0;
 }
 
 bool Theme::ContentItem::displaysLongText() const
 {
-    return (static_cast< int >(mType) & LongText) != 0;
+    return (static_cast<int>(mType) & LongText) != 0;
 }
 
 bool Theme::ContentItem::isIcon() const
 {
-    return (static_cast< int >(mType) & IsIcon) != 0;
+    return (static_cast<int>(mType) & IsIcon) != 0;
 }
 
 bool Theme::ContentItem::isClickable() const
 {
-    return (static_cast< int >(mType) & IsClickable) != 0;
+    return (static_cast<int>(mType) & IsClickable) != 0;
 }
 
 bool Theme::ContentItem::isSpacer() const
 {
-    return (static_cast< int >(mType) & IsSpacer) != 0;
+    return (static_cast<int>(mType) & IsSpacer) != 0;
 }
 
 QString Theme::ContentItem::description(Type type)
@@ -280,12 +280,12 @@ void Theme::ContentItem::setCustomColor(const QColor &clr)
 
 bool Theme::ContentItem::applicableToMessageItems(Type type)
 {
-    return static_cast< int >(type) & ApplicableToMessageItems;
+    return static_cast<int>(type) & ApplicableToMessageItems;
 }
 
 bool Theme::ContentItem::applicableToGroupHeaderItems(Type type)
 {
-    return static_cast< int >(type) & ApplicableToGroupHeaderItems;
+    return static_cast<int>(type) & ApplicableToGroupHeaderItems;
 }
 
 void Theme::ContentItem::save(QDataStream &stream) const
@@ -300,7 +300,7 @@ bool Theme::ContentItem::load(QDataStream &stream, int /*themeVersion*/)
     int val;
 
     stream >> val;
-    mType = static_cast< Type >(val);
+    mType = static_cast<Type>(val);
     switch (mType) {
     case Subject:
     case Date:
@@ -462,13 +462,13 @@ void Theme::Row::save(QDataStream &stream) const
 bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion, bool leftItem)
 {
     if ((val < 0) || (val > 50)) {
-        return false;    // senseless
+        return false; // senseless
     }
 
     // FIXME: Remove code duplication here
 
     for (int i = 0; i < val; ++i) {
-        auto ci = new ContentItem(ContentItem::Subject);    // dummy type
+        auto ci = new ContentItem(ContentItem::Subject); // dummy type
         if (!ci->load(stream, themeVersion)) {
             qCDebug(MESSAGELIST_LOG) << "Left content item loading failed";
             delete ci;
@@ -483,9 +483,7 @@ bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion,
         // Add the annotation item next to the attachment icon, so that users upgrading from old
         // versions don't manually need to set this.
         // Don't do this for the stand-alone attachment column.
-        if (ci->type() == ContentItem::AttachmentStateIcon
-            && themeVersion < gThemeMinimumVersionWithAnnotationIcon
-            && val > 1) {
+        if (ci->type() == ContentItem::AttachmentStateIcon && themeVersion < gThemeMinimumVersionWithAnnotationIcon && val > 1) {
             qCDebug(MESSAGELIST_LOG) << "Old theme version detected, adding annotation item next to attachment icon.";
             auto annotationItem = new ContentItem(ContentItem::AnnotationIcon);
             annotationItem->setHideWhenDisabled(true);
@@ -497,9 +495,7 @@ bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion,
         }
 
         // Same as above, for the invitation icon
-        if (ci->type() == ContentItem::AttachmentStateIcon
-            && themeVersion < gThemeMinimumVersionWithInvitationIcon
-            && val > 1) {
+        if (ci->type() == ContentItem::AttachmentStateIcon && themeVersion < gThemeMinimumVersionWithInvitationIcon && val > 1) {
             qCDebug(MESSAGELIST_LOG) << "Old theme version detected, adding invitation item next to attachment icon.";
             auto invitationItem = new ContentItem(ContentItem::InvitationIcon);
             invitationItem->setHideWhenDisabled(true);
@@ -688,7 +684,7 @@ void Theme::Column::setVisibleByDefault(bool vbd)
 void Theme::Column::detach()
 {
     if (mSharedRuntimeData->referenceCount() < 2) {
-        return;    // nothing to detach
+        return; // nothing to detach
     }
     mSharedRuntimeData->deleteReference();
 
@@ -849,7 +845,7 @@ bool Theme::Column::load(QDataStream &stream, int themeVersion)
     int val;
 
     stream >> val;
-    mMessageSorting = static_cast< SortOrder::MessageSorting >(val);
+    mMessageSorting = static_cast<SortOrder::MessageSorting>(val);
     if (!SortOrder::isValidMessageSorting(mMessageSorting)) {
         qCDebug(MESSAGELIST_LOG) << "Invalid message sorting";
         return false;
@@ -1029,7 +1025,7 @@ void Theme::setGroupHeaderBackgroundMode(GroupHeaderBackgroundMode bm)
 {
     mGroupHeaderBackgroundMode = bm;
     if ((bm == CustomColor) && !mGroupHeaderBackgroundColor.isValid()) {
-        mGroupHeaderBackgroundColor = QColor(127, 127, 127);    // something neutral
+        mGroupHeaderBackgroundColor = QColor(127, 127, 127); // something neutral
     }
 }
 
@@ -1053,42 +1049,21 @@ void Theme::setGroupHeaderBackgroundStyle(Theme::GroupHeaderBackgroundStyle grou
     mGroupHeaderBackgroundStyle = groupHeaderBackgroundStyle;
 }
 
-QVector<QPair<QString, int> > Theme::enumerateViewHeaderPolicyOptions()
+QVector<QPair<QString, int>> Theme::enumerateViewHeaderPolicyOptions()
 {
-    return { {
-        i18n("Never Show"), NeverShowHeader
-    },
-        {
-            i18n("Always Show"), ShowHeaderAlways
-        } };
+    return {{i18n("Never Show"), NeverShowHeader}, {i18n("Always Show"), ShowHeaderAlways}};
 }
 
-QVector<QPair<QString, int> > Theme::enumerateGroupHeaderBackgroundStyles()
+QVector<QPair<QString, int>> Theme::enumerateGroupHeaderBackgroundStyles()
 {
-    return { {
-        i18n("Plain Rectangles"), PlainRect
-    },
-        {
-            i18n("Plain Joined Rectangle"), PlainJoinedRect
-        },
-        {
-            i18n("Rounded Rectangles"), RoundedRect
-        },
-        {
-            i18n("Rounded Joined Rectangle"), RoundedJoinedRect
-        },
-        {
-            i18n("Gradient Rectangles"), GradientRect
-        },
-        {
-            i18n("Gradient Joined Rectangle"), GradientJoinedRect
-        },
-        {
-            i18n("Styled Rectangles"), StyledRect
-        },
-        {
-            i18n("Styled Joined Rectangles"), StyledJoinedRect
-        } };
+    return {{i18n("Plain Rectangles"), PlainRect},
+            {i18n("Plain Joined Rectangle"), PlainJoinedRect},
+            {i18n("Rounded Rectangles"), RoundedRect},
+            {i18n("Rounded Joined Rectangle"), RoundedJoinedRect},
+            {i18n("Gradient Rectangles"), GradientRect},
+            {i18n("Gradient Joined Rectangle"), GradientJoinedRect},
+            {i18n("Styled Rectangles"), StyledRect},
+            {i18n("Styled Joined Rectangles"), StyledJoinedRect}};
 }
 
 Theme::ViewHeaderPolicy Theme::viewHeaderPolicy() const
@@ -1128,10 +1103,7 @@ bool Theme::load(QDataStream &stream)
 
     // We support themes starting at version gThemeMinimumSupportedVersion (0x1013 actually)
 
-    if (
-        (themeVersion > gThemeCurrentVersion)
-        || (themeVersion < gThemeMinimumSupportedVersion)
-        ) {
+    if ((themeVersion > gThemeCurrentVersion) || (themeVersion < gThemeMinimumSupportedVersion)) {
         qCDebug(MESSAGELIST_LOG) << "Invalid theme version";
         return false; // b0rken (invalid version)
     }
@@ -1187,7 +1159,7 @@ bool Theme::load(QDataStream &stream)
         // icon size parameter
         stream >> mIconSize;
         if ((mIconSize < 8) || (mIconSize > 64)) {
-            mIconSize = gThemeDefaultIconSize;    // limit insane values
+            mIconSize = gThemeDefaultIconSize; // limit insane values
         }
     } else {
         mIconSize = gThemeDefaultIconSize;
@@ -1196,7 +1168,7 @@ bool Theme::load(QDataStream &stream)
     // column count
     stream >> val;
     if (val < 1 || val > 50) {
-        return false;    // plain b0rken ( negative, zero or more than 50 columns )
+        return false; // plain b0rken ( negative, zero or more than 50 columns )
     }
 
     for (int i = 0; i < val; ++i) {
@@ -1250,11 +1222,11 @@ void Theme::populatePixmapCache() const
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-deleted")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-replied")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded-replied")).pixmap(mIconSize, mIconSize))
-             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-queued")).pixmap(mIconSize, mIconSize))  // mail-queue ?
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-queued")).pixmap(mIconSize, mIconSize)) // mail-queue ?
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-task")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-sent")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded")).pixmap(mIconSize, mIconSize))
-             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-important")).pixmap(mIconSize, mIconSize))  // "flag"
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-important")).pixmap(mIconSize, mIconSize)) // "flag"
              << new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-watch.png")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-ignored.png")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-junk")).pixmap(mIconSize, mIconSize))
@@ -1270,9 +1242,8 @@ void Theme::populatePixmapCache() const
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-attachment")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("view-pim-notes")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-invitation")).pixmap(mIconSize, mIconSize))
-             << ((QApplication::isRightToLeft())
-        ? new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-left")).pixmap(mIconSize, mIconSize))
-        : new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-right")).pixmap(mIconSize, mIconSize)))
+             << ((QApplication::isRightToLeft()) ? new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-left")).pixmap(mIconSize, mIconSize))
+                                                 : new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-right")).pixmap(mIconSize, mIconSize)))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-down")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-vertical-separator-line.png")))
              << new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-horizontal-space.png")));

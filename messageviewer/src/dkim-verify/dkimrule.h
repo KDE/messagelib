@@ -9,7 +9,8 @@
 #include "messageviewer_export.h"
 #include <QDebug>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DKIMRule class
  * @author Laurent Montel <montel@kde.org>
@@ -65,6 +66,6 @@ private:
 }
 Q_DECLARE_METATYPE(MessageViewer::DKIMRule)
 Q_DECLARE_TYPEINFO(MessageViewer::DKIMRule, Q_MOVABLE_TYPE);
-MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMRule &t);
+MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMRule &t);
 
 #endif // DKIMRULE_H

@@ -7,12 +7,13 @@
 #ifndef MESSAGECOMPOSER_MESSAGEFACTORYREPLYJOB_H
 #define MESSAGECOMPOSER_MESSAGEFACTORYREPLYJOB_H
 
-#include <QObject>
-#include <KMime/Message>
-#include <KIdentityManagement/IdentityManager>
 #include <AkonadiCore/Collection>
+#include <KIdentityManagement/IdentityManager>
+#include <KMime/Message>
+#include <QObject>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class MessageFactoryReplyJob : public QObject
 {
     Q_OBJECT

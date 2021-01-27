@@ -17,7 +17,8 @@
 
 #include <QStringList>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class Composer;
 
 class EmailAddressResolveJobPrivate;

@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "dkimmanagerulescombobox.h"
 #include "dkimrulewidget.h"
+#include "dkimmanagerulescombobox.h"
 #include <KLocalizedString>
 #include <QCheckBox>
 #include <QFormLayout>
@@ -56,7 +56,7 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     mPriority->setObjectName(QStringLiteral("priority"));
     mPriority->setMinimum(1);
     mPriority->setMaximum(9999);
-    mPriority->setValue(1000); //Default Value
+    mPriority->setValue(1000); // Default Value
     layout->addRow(i18n("Priority:"), mPriority);
 }
 

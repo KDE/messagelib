@@ -13,7 +13,8 @@
 class KActionCollection;
 class QActionGroup;
 class KActionMenu;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class HeaderStyle;
 class HeaderStrategy;
 class HeaderStylePluginPrivate;

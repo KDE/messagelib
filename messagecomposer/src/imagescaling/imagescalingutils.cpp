@@ -17,7 +17,7 @@ bool Utils::resizeImage(MessageCore::AttachmentPart::Ptr part)
     const QString pattern = MessageComposer::MessageComposerSettings::self()->filterSourcePattern();
 
     if (!pattern.isEmpty()) {
-        //TODO use regexp ?
+        // TODO use regexp ?
         const QStringList lstPattern = pattern.split(QLatin1Char(';'));
         for (const QString &patternStr : lstPattern) {
             switch (MessageComposer::MessageComposerSettings::self()->filterSourceType()) {
@@ -76,8 +76,8 @@ void Utils::changeFileName(MessageCore::AttachmentPart::Ptr part)
             const QString filename = part->fileName();
             pattern.replace(QLatin1String("%t"), QTime::currentTime().toString());
             pattern.replace(QLatin1String("%d"), QDate::currentDate().toString());
-            pattern.replace(QLatin1String("%n"), filename); //Original name
-            pattern.replace(QLatin1String("%e"), QFileInfo(filename).completeSuffix()); //Original extension
+            pattern.replace(QLatin1String("%n"), filename); // Original name
+            pattern.replace(QLatin1String("%e"), QFileInfo(filename).completeSuffix()); // Original extension
 
             const QString type = MessageComposer::MessageComposerSettings::self()->writeFormat();
             QString newExtension;
@@ -87,10 +87,10 @@ void Utils::changeFileName(MessageCore::AttachmentPart::Ptr part)
                 newExtension = QStringLiteral("png");
             }
             if (!newExtension.isEmpty()) {
-                pattern.replace(QLatin1String("%x"), newExtension);    //new Extension
+                pattern.replace(QLatin1String("%x"), newExtension); // new Extension
             }
 
-            //Need to define pattern type.
+            // Need to define pattern type.
             part->setFileName(pattern);
             part->setName(pattern);
         }
@@ -103,7 +103,8 @@ bool Utils::filterRecipients(const QStringList &recipients)
         return false;
     }
 
-    if (MessageComposer::MessageComposerSettings::self()->filterRecipientType() == MessageComposer::MessageComposerSettings::EnumFilterRecipientType::NoFilter) {
+    if (MessageComposer::MessageComposerSettings::self()->filterRecipientType()
+        == MessageComposer::MessageComposerSettings::EnumFilterRecipientType::NoFilter) {
         return true;
     }
 
@@ -163,9 +164,7 @@ bool Utils::filterRecipients(const QStringList &recipients)
 
 bool Utils::hasImage(const QByteArray &mimetype)
 {
-    if (mimetype == "image/gif"
-        || mimetype == "image/jpeg"
-        || mimetype == "image/png") {
+    if (mimetype == "image/gif" || mimetype == "image/jpeg" || mimetype == "image/png") {
         return true;
     }
     return false;

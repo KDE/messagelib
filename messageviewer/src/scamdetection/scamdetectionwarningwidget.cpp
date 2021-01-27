@@ -34,8 +34,7 @@ ScamDetectionWarningWidget::ScamDetectionWarningWidget(QWidget *parent)
     setWordWrap(true);
     setText(i18n("This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"));
 
-    connect(this, &ScamDetectionWarningWidget::linkActivated, this,
-            &ScamDetectionWarningWidget::slotShowDetails);
+    connect(this, &ScamDetectionWarningWidget::linkActivated, this, &ScamDetectionWarningWidget::slotShowDetails);
 
     auto menu = new QMenu(this);
     auto action = new QAction(i18n("Move to Trash"), this);
@@ -53,8 +52,7 @@ ScamDetectionWarningWidget::ScamDetectionWarningWidget(QWidget *parent)
 
     action = new QAction(i18n("Disable scam detection for all messages"), this);
     menu->addAction(action);
-    connect(action, &QAction::triggered, this,
-            &ScamDetectionWarningWidget::slotDisableScamDetection);
+    connect(action, &QAction::triggered, this, &ScamDetectionWarningWidget::slotDisableScamDetection);
 }
 
 ScamDetectionWarningWidget::~ScamDetectionWarningWidget()

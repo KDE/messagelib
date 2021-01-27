@@ -67,7 +67,7 @@ bool HeaderStylePlugin::hasConfigureDialog() const
 void HeaderStylePlugin::showConfigureDialog(QWidget *parent)
 {
     Q_UNUSED(parent)
-    //Reimplement
+    // Reimplement
 }
 
 QString HeaderStylePlugin::extraScreenCss(const QString &headerFont) const

@@ -11,7 +11,8 @@
 #include <QTreeWidgetItem>
 #include <QWidget>
 class QTreeWidget;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class DKIMManageRulesComboBox;
 /**
  * @brief The DKIMManageRulesWidgetItem class
@@ -58,6 +59,7 @@ public:
     void restoreHeaders(const QByteArray &header);
 
     void addRule();
+
 private:
     void modifyRule(DKIMManageRulesWidgetItem *rulesItem);
     void slotCustomContextMenuRequested(const QPoint &);

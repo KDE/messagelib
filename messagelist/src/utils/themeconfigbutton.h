@@ -5,11 +5,13 @@
 #ifndef MESSAGELIST_UTILS_THEMECONFIGBUTTON_H
 #define MESSAGELIST_UTILS_THEMECONFIGBUTTON_H
 
-#include <messagelist_export.h>
 #include <QPushButton>
+#include <messagelist_export.h>
 
-namespace MessageList {
-namespace Utils {
+namespace MessageList
+{
+namespace Utils
+{
 class ThemeComboBox;
 class ThemeConfigButtonPrivate;
 
@@ -23,18 +25,19 @@ class MESSAGELIST_EXPORT ThemeConfigButton : public QPushButton
 
 public:
     /** Constructor.
-    * @param parent The parent widget for the button.
-    * @param themeComboBox Optional ThemeComboBox to be kept in sync
-    * with changes made by the configure dialog.
-    */
+     * @param parent The parent widget for the button.
+     * @param themeComboBox Optional ThemeComboBox to be kept in sync
+     * with changes made by the configure dialog.
+     */
     explicit ThemeConfigButton(QWidget *parent, const ThemeComboBox *themeComboBox = nullptr);
     ~ThemeConfigButton() override;
 
 Q_SIGNALS:
     /**
-    * A signal emitted when configure dialog has been successfully completed.
-    */
+     * A signal emitted when configure dialog has been successfully completed.
+     */
     void configureDialogCompleted();
+
 private:
     ThemeConfigButtonPrivate *const d;
 };

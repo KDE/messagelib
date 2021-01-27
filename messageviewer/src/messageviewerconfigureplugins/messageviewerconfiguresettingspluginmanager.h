@@ -7,10 +7,11 @@
 #ifndef MESSAGEVIEWERCONFIGURESETTINGSPLUGINMANAGER_H
 #define MESSAGEVIEWERCONFIGURESETTINGSPLUGINMANAGER_H
 
-#include <QObject>
 #include "messageviewer_export.h"
 #include <PimCommon/PluginUtil>
-namespace MessageViewer {
+#include <QObject>
+namespace MessageViewer
+{
 class MessageViewerConfigureSettingsPlugin;
 class MessageViewerConfigureSettingsPluginManagerPrivate;
 /**
@@ -32,6 +33,7 @@ public:
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
     MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
+
 private:
     MessageViewerConfigureSettingsPluginManagerPrivate *const d;
 };

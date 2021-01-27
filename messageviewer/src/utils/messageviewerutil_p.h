@@ -40,13 +40,16 @@
 #include <KMime/Content>
 class QUrl;
 class QWidget;
+class QAction;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
-namespace Util {
+namespace Util
+{
 Q_REQUIRED_RESULT bool handleUrlWithQDesktopServices(const QUrl &url);
 
 Q_REQUIRED_RESULT KMime::Content::List allContents(const KMime::Content *message);

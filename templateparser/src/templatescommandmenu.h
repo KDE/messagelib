@@ -7,12 +7,13 @@
 #ifndef TEMPLATESCOMMANDMENU_H
 #define TEMPLATESCOMMANDMENU_H
 
+#include "templateparser_export.h"
 #include <QMap>
 #include <QObject>
-#include "templateparser_export.h"
 class KActionMenu;
 class QMenu;
-namespace TemplateParser {
+namespace TemplateParser
+{
 /**
  * @brief The TemplatesCommandMenu class
  * @author Laurent Montel <montel@kde.org>
@@ -34,7 +35,7 @@ public:
     };
     Q_FLAG(MenuType)
     Q_DECLARE_FLAGS(MenuTypes, MenuType)
-    //TODO: apidox for all these enums
+    // TODO: apidox for all these enums
     enum Command {
         CDnl = 1,
         CRem,

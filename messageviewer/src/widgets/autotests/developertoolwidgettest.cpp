@@ -8,13 +8,12 @@
 #include "widgets/developertoolwidget.h"
 #include <QTest>
 #include <QVBoxLayout>
-#include <QWebEngineView>
 #include <QWebEngineSettings>
+#include <QWebEngineView>
 QTEST_MAIN(DeveloperToolWidgetTest)
 DeveloperToolWidgetTest::DeveloperToolWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DeveloperToolWidgetTest::shouldHaveDefaultValues()

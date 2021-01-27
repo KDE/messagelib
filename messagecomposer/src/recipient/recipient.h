@@ -13,12 +13,13 @@
 
 #include <Libkdepim/MultiplyingLine>
 
-#include <gpgme++/key.h>
 #include <Libkleo/Enum>
+#include <gpgme++/key.h>
 
-#include <QString>
 #include <QSharedPointer>
-namespace MessageComposer {
+#include <QString>
+namespace MessageComposer
+{
 /** Represents a mail recipient. */
 class RecipientPrivate;
 /**
@@ -30,11 +31,9 @@ public:
     typedef QSharedPointer<Recipient> Ptr;
     typedef QVector<Recipient::Ptr> List;
 
-    enum Type {
-        To, Cc, Bcc, ReplyTo, Undefined
-    };
+    enum Type { To, Cc, Bcc, ReplyTo, Undefined };
 
-    Recipient(const QString &email = QString(), Type type = To);   //krazy:exclude=explicit
+    Recipient(const QString &email = QString(), Type type = To); // krazy:exclude=explicit
     ~Recipient() override;
     void setType(Type type);
     Q_REQUIRED_RESULT Type type() const;

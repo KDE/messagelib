@@ -10,17 +10,17 @@
 #include <Akonadi/Contact/GrantleeContactViewer>
 
 #include <kcontacts/vcardconverter.h>
-using KContacts::VCardConverter;
 using KContacts::Addressee;
+using KContacts::VCardConverter;
 
 #include <Akonadi/Contact/ContactDefaultActions>
 #include <KLocalizedString>
 
 #include <Akonadi/Contact/AddContactJob>
-#include <QDialogButtonBox>
 #include <KConfigGroup>
-#include <QPushButton>
 #include <KGuiItem>
+#include <QDialogButtonBox>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 using namespace MessageViewer;

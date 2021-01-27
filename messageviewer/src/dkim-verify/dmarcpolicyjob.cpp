@@ -5,8 +5,8 @@
 */
 
 #include "dmarcpolicyjob.h"
-#include "dmarcrecordjob.h"
 #include "dkimutil.h"
+#include "dmarcrecordjob.h"
 #include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
 
@@ -38,7 +38,7 @@ bool DMARCPolicyJob::start()
     connect(job, &MessageViewer::DMARCRecordJob::success, this, &DMARCPolicyJob::slotCheckDomain);
     connect(job, &MessageViewer::DMARCRecordJob::error, this, [this](const QString &err, const QString &domainName) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "error: " << err << " domain " << domainName;
-        //Verify subdomain
+        // Verify subdomain
         checkSubDomain(domainName);
     });
     if (!job->start()) {
@@ -77,7 +77,7 @@ void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QStr
             val.mAdkim = info.adkim();
             val.mPercentage = info.percentage();
             val.mPolicy = info.subDomainPolicy().isEmpty() ? info.policy() : info.subDomainPolicy();
-            //TODO verify it !
+            // TODO verify it !
             val.mDomain = domainName;
             val.mSource = domainName;
             Q_EMIT result(val, mEmailAddress);
@@ -106,7 +106,7 @@ void DMARCPolicyJob::checkSubDomain(const QString &domainName)
             return;
         }
     } else {
-        //Invalid
+        // Invalid
         Q_EMIT result({}, mEmailAddress);
         deleteLater();
         return;
@@ -120,8 +120,8 @@ void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString
     if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
         if ((info.version() != QLatin1String("DMARC1")) || info.policy().isEmpty()
             || (info.percentage() != -1 && (info.percentage() > 100 || info.percentage() < 0))) {
-            //Invalid
-            //Check subdomain
+            // Invalid
+            // Check subdomain
             checkSubDomain(domainName);
         } else {
             DMARCPolicyJob::DMARCResult val;
@@ -135,7 +135,7 @@ void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString
             return;
         }
     } else {
-        //Check subdomain
+        // Check subdomain
         checkSubDomain(domainName);
     }
 }

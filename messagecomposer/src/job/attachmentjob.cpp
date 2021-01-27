@@ -9,8 +9,8 @@
 
 #include "job/attachmentjob.h"
 #include "contentjobbase_p.h"
-#include "part/globalpart.h"
 #include "job/singlepartjob.h"
+#include "part/globalpart.h"
 #include "utils/util.h"
 
 #include "messagecomposer_debug.h"
@@ -59,8 +59,7 @@ void AttachmentJob::doStart()
     Q_D(AttachmentJob);
     Q_ASSERT(d->part);
 
-    if (d->part->mimeType() == "multipart/digest"
-        || d->part->mimeType() == "message/rfc822") {
+    if (d->part->mimeType() == "multipart/digest" || d->part->mimeType() == "message/rfc822") {
         // this is actually a digest, so we don't want any additional headers
         // the attachment is really a complete multipart/digest subtype
         // and us adding our own headers would break it. so copy over the content
@@ -91,11 +90,11 @@ void AttachmentJob::doStart()
     }
 
     auto ct = sjob->contentType();
-    ct->setMimeType(d->part->mimeType());   // setMimeType() clears all other params.
+    ct->setMimeType(d->part->mimeType()); // setMimeType() clears all other params.
     ct->setName(d->part->name(), charset);
     if (ct->isText()) {
         // If it is a text file, detect its charset.
-        //sjob->contentType()->setCharset( d->detectCharset( d->part->data() ) );
+        // sjob->contentType()->setCharset( d->detectCharset( d->part->data() ) );
 
         // From my few tests, this is *very* unreliable.
         // Therefore, if we do not know which charset to use, just use UTF-8.

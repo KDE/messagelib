@@ -7,12 +7,13 @@
 #ifndef SEARCHFULLHASHJOB_H
 #define SEARCHFULLHASHJOB_H
 
+#include "checkphishingurlutil.h"
+#include "webengineviewer_export.h"
+#include <QNetworkReply>
 #include <QObject>
 #include <QUrl>
-#include <QNetworkReply>
-#include "webengineviewer_export.h"
-#include "checkphishingurlutil.h"
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class SearchFullHashJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */
 /**
@@ -44,6 +45,7 @@ private Q_SLOTS:
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
+
 private:
     Q_DISABLE_COPY(SearchFullHashJob)
     SearchFullHashJobPrivate *const d;

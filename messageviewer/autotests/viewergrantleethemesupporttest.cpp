@@ -8,9 +8,9 @@
 #include "messageviewer/viewer.h"
 
 #include <KActionCollection>
-#include <QStandardPaths>
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QStandardPaths>
 #include <QTest>
 
 ViewerGrantleeThemeSupportTest::ViewerGrantleeThemeSupportTest(QObject *parent)
@@ -34,8 +34,7 @@ void ViewerGrantleeThemeSupportTest::initTestCase()
 
 void ViewerGrantleeThemeSupportTest::shouldUpdateThemeMenu()
 {
-    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
-                                                                  this));
+    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
     viewer->show();
     QVERIFY(QTest::qWaitForWindowExposed(viewer));
 

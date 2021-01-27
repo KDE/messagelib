@@ -8,8 +8,8 @@
 
 #include "utils.h"
 
-#include "objecttreeparser.h"
 #include "messagepart.h"
+#include "objecttreeparser.h"
 
 #include <QGpgME/Protocol>
 
@@ -44,19 +44,18 @@ MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(Interface::Bo
     KMime::Content *data = findTypeInDirectChilds(part.content()->parent(), "application/octet-stream");
 
     if (!data) {
-        return MessagePart::Ptr(); //new MimeMessagePart(part.objectTreeParser(), node, false));
+        return MessagePart::Ptr(); // new MimeMessagePart(part.objectTreeParser(), node, false));
     }
 
     part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
 
-    EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(part.objectTreeParser(),
-                                                          data->decodedText(), QGpgME::openpgp(),
-                                                          part.nodeHelper()->fromAsString(data), node));
+    EncryptedMessagePart::Ptr mp(
+        new EncryptedMessagePart(part.objectTreeParser(), data->decodedText(), QGpgME::openpgp(), part.nodeHelper()->fromAsString(data), node));
     mp->setIsEncrypted(true);
     mp->setDecryptMessage(part.source()->decryptMessage());
     PartMetaData *messagePart(mp->partMetaData());
     if (!part.source()->decryptMessage()) {
-        part.nodeHelper()->setNodeProcessed(data, false);  // Set the data node to done to prevent it from being processed
+        part.nodeHelper()->setNodeProcessed(data, false); // Set the data node to done to prevent it from being processed
     } else if (KMime::Content *newNode = part.nodeHelper()->decryptedNodeForContent(data)) {
         part.nodeHelper()->registerOverrideHeader(data->parent(), mp);
         // if we already have a decrypted node for this encrypted node, don't do the decryption again
@@ -65,7 +64,7 @@ MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(Interface::Bo
         mp->startDecryption(data);
         if (!messagePart->inProgress) {
             part.nodeHelper()->registerOverrideHeader(data->parent(), mp);
-            part.nodeHelper()->setNodeProcessed(data, false);   // Set the data node to done to prevent it from being processed
+            part.nodeHelper()->setNodeProcessed(data, false); // Set the data node to done to prevent it from being processed
             if (messagePart->isDecryptable && messagePart->isSigned) {
                 part.nodeHelper()->setSignatureState(node, KMMsgFullySigned);
             }

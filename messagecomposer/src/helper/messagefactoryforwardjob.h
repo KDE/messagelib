@@ -7,14 +7,16 @@
 #ifndef MESSAGECOMPOSER_MESSAGEFACTORYFORWARDJOB_H
 #define MESSAGECOMPOSER_MESSAGEFACTORYFORWARDJOB_H
 
-#include <QObject>
-#include <KMime/Message>
 #include <AkonadiCore/Collection>
-namespace KIdentityManagement {
+#include <KMime/Message>
+#include <QObject>
+namespace KIdentityManagement
+{
 class IdentityManager;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class MessageFactoryForwardJob : public QObject
 {
     Q_OBJECT

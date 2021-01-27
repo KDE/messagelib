@@ -16,5 +16,5 @@ PluginEditorTest::PluginEditorTest(QObject *parent)
 
 void PluginEditorTest::shouldHaveDefaultValues()
 {
-    //TODO
+    // TODO
 }

@@ -7,10 +7,10 @@
 #include "checkphishingurlcachetest.h"
 #include "../checkphishingurlcache.h"
 #include "../checkphishingurlutil.h"
-#include <QTest>
-#include <QStandardPaths>
 #include <KConfig>
 #include <KConfigGroup>
+#include <QStandardPaths>
+#include <QTest>
 
 CheckPhishingUrlCacheTest::CheckPhishingUrlCacheTest(QObject *parent)
     : QObject(parent)
@@ -36,8 +36,10 @@ void CheckPhishingUrlCacheTest::shouldAddValue_data()
     QTest::addColumn<WebEngineViewer::CheckPhishingUrlCache::UrlStatus>("status");
     uint currentValue = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
     QTest::newRow("valid") << QUrl(QStringLiteral("http://www.kde.org")) << true << currentValue << WebEngineViewer::CheckPhishingUrlCache::UrlOk;
-    QTest::newRow("malware1validcache") << QUrl(QStringLiteral("http://www.kde.org")) << false << (currentValue + 2000) << WebEngineViewer::CheckPhishingUrlCache::MalWare;
-    QTest::newRow("malware1invalidcache") << QUrl(QStringLiteral("http://www.kde.org")) << false << (currentValue - 2000) << WebEngineViewer::CheckPhishingUrlCache::Unknown;
+    QTest::newRow("malware1validcache") << QUrl(QStringLiteral("http://www.kde.org")) << false << (currentValue + 2000)
+                                        << WebEngineViewer::CheckPhishingUrlCache::MalWare;
+    QTest::newRow("malware1invalidcache") << QUrl(QStringLiteral("http://www.kde.org")) << false << (currentValue - 2000)
+                                          << WebEngineViewer::CheckPhishingUrlCache::Unknown;
 }
 
 void CheckPhishingUrlCacheTest::shouldAddValue()
@@ -61,7 +63,7 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
     uint currentValue = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
     cache.addCheckingUrlResult(url, false, currentValue + 2000);
 
-    //Add malware
+    // Add malware
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("MalwareUrl"));
     QList<QUrl> listMalware = grp.readEntry("Url", QList<QUrl>());
@@ -70,7 +72,7 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
     QCOMPARE(listMalware.count(), 1);
     QCOMPARE(listMalwareCachedTime.count(), 1);
 
-    //Clear cache
+    // Clear cache
     cache.clearCache();
     KConfig phishingurlKConfig2(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
     grp = phishingurlKConfig2.group(QStringLiteral("MalwareUrl"));
@@ -80,7 +82,7 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
     QCOMPARE(listMalware.count(), 0);
     QCOMPARE(listMalwareCachedTime.count(), 0);
 
-    //Add correct url
+    // Add correct url
     cache.clearCache();
 
     cache.addCheckingUrlResult(url, true, 0);
@@ -95,7 +97,7 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
 
     cache.clearCache();
 
-    //Load another instance => data were saved
+    // Load another instance => data were saved
     cache.addCheckingUrlResult(url, false, currentValue + 2000);
 
     WebEngineViewer::CheckPhishingUrlCache cache2;
@@ -107,7 +109,7 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
     QCOMPARE(listMalware.count(), 1);
     QCOMPARE(listMalwareCachedTime.count(), 1);
 
-    //Need to clear to avoid problem when we relaunch this autotest
+    // Need to clear to avoid problem when we relaunch this autotest
     cache2.clearCache();
     cache.clearCache();
 }

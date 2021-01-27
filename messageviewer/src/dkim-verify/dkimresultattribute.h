@@ -6,9 +6,10 @@
 #ifndef DKIMRESULTATTRIBUTE_H
 #define DKIMRESULTATTRIBUTE_H
 
-#include <AkonadiCore/attribute.h>
 #include "messageviewer_private_export.h"
-namespace MessageViewer {
+#include <AkonadiCore/attribute.h>
+namespace MessageViewer
+{
 class DKIMResultAttributePrivate;
 
 class MESSAGEVIEWER_TESTS_EXPORT DKIMResultAttribute : public Akonadi::Attribute

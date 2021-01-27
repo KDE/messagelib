@@ -13,21 +13,23 @@
 
 #include "messagecore_export.h"
 
-#include <vector>
 #include <QObject>
+#include <vector>
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
-   * @short A helper class to collect the embedded images of a email.
-   *
-   * @author Marc Mutz <mutz@kde.org>
-   * @author Torgny Nyblom <nyblom@kde.org>
-   * @todo: Make it a simple static method?!?
-   */
+ * @short A helper class to collect the embedded images of a email.
+ *
+ * @author Marc Mutz <mutz@kde.org>
+ * @author Torgny Nyblom <nyblom@kde.org>
+ * @todo: Make it a simple static method?!?
+ */
 class MESSAGECORE_EXPORT ImageCollector
 {
 public:

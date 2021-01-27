@@ -9,7 +9,8 @@
 
 #include <messageviewer/headerstrategy.h>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class DefaultGrantleeHeaderStrategy : public HeaderStrategy
 {
 public:

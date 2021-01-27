@@ -5,17 +5,17 @@
 */
 
 #include "imagescalingwidget.h"
-#include "ui_imagescalingwidget.h"
 #include "settings/messagecomposersettings.h"
-#include <Libkdepim/LineEditCatchReturnKey>
+#include "ui_imagescalingwidget.h"
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <Libkdepim/LineEditCatchReturnKey>
 
 #include <QButtonGroup>
 #include <QComboBox>
 #include <QImageWriter>
-#include <QWhatsThis>
 #include <QVector>
+#include <QWhatsThis>
 
 using namespace MessageComposer;
 class MessageComposer::ImageScalingWidgetPrivate
@@ -86,25 +86,37 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->mSourceFilenameFilterGroup, qOverload<int>(&QButtonGroup::buttonClicked), this, &ImageScalingWidget::slotSourceFilterClicked);
 #else
-    connect(d->mSourceFilenameFilterGroup, qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked), this, &ImageScalingWidget::slotSourceFilterAbstractButtonClicked);
+    connect(d->mSourceFilenameFilterGroup,
+            qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked),
+            this,
+            &ImageScalingWidget::slotSourceFilterAbstractButtonClicked);
 #endif
     d->mSourceFilenameFilterGroup->addButton(d->ui->notFilterFilename, MessageComposer::MessageComposerSettings::EnumFilterSourceType::NoFilter);
-    d->mSourceFilenameFilterGroup->addButton(d->ui->includeFilesWithPattern, MessageComposer::MessageComposerSettings::EnumFilterSourceType::IncludeFilesWithPattern);
-    d->mSourceFilenameFilterGroup->addButton(d->ui->excludeFilesWithPattern, MessageComposer::MessageComposerSettings::EnumFilterSourceType::ExcludeFilesWithPattern);
+    d->mSourceFilenameFilterGroup->addButton(d->ui->includeFilesWithPattern,
+                                             MessageComposer::MessageComposerSettings::EnumFilterSourceType::IncludeFilesWithPattern);
+    d->mSourceFilenameFilterGroup->addButton(d->ui->excludeFilesWithPattern,
+                                             MessageComposer::MessageComposerSettings::EnumFilterSourceType::ExcludeFilesWithPattern);
 
     d->mRecipientFilterGroup = new QButtonGroup(d->ui->tab_4);
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->mRecipientFilterGroup, qOverload<int>(&QButtonGroup::buttonClicked), this, &ImageScalingWidget::slotRecipientFilterClicked);
 #else
-    connect(d->mRecipientFilterGroup, qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked), this, &ImageScalingWidget::slotRecipientFilterAbstractClicked);
+    connect(d->mRecipientFilterGroup,
+            qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked),
+            this,
+            &ImageScalingWidget::slotRecipientFilterAbstractClicked);
 #endif
     d->ui->doNotResizePattern->setEnabled(false);
     d->ui->resizeEmailsPattern->setEnabled(false);
     d->mRecipientFilterGroup->addButton(d->ui->doNotFilterRecipients, MessageComposer::MessageComposerSettings::EnumFilterRecipientType::NoFilter);
-    d->mRecipientFilterGroup->addButton(d->ui->resizeEachEmails, MessageComposer::MessageComposerSettings::EnumFilterRecipientType::ResizeEachEmailsContainsPattern);
-    d->mRecipientFilterGroup->addButton(d->ui->resizeOneEmails, MessageComposer::MessageComposerSettings::EnumFilterRecipientType::ResizeOneEmailContainsPattern);
-    d->mRecipientFilterGroup->addButton(d->ui->doNotResizeEachEmails, MessageComposer::MessageComposerSettings::EnumFilterRecipientType::DontResizeEachEmailsContainsPattern);
-    d->mRecipientFilterGroup->addButton(d->ui->doNotResizeOneEmails, MessageComposer::MessageComposerSettings::EnumFilterRecipientType::DontResizeOneEmailContainsPattern);
+    d->mRecipientFilterGroup->addButton(d->ui->resizeEachEmails,
+                                        MessageComposer::MessageComposerSettings::EnumFilterRecipientType::ResizeEachEmailsContainsPattern);
+    d->mRecipientFilterGroup->addButton(d->ui->resizeOneEmails,
+                                        MessageComposer::MessageComposerSettings::EnumFilterRecipientType::ResizeOneEmailContainsPattern);
+    d->mRecipientFilterGroup->addButton(d->ui->doNotResizeEachEmails,
+                                        MessageComposer::MessageComposerSettings::EnumFilterRecipientType::DontResizeEachEmailsContainsPattern);
+    d->mRecipientFilterGroup->addButton(d->ui->doNotResizeOneEmails,
+                                        MessageComposer::MessageComposerSettings::EnumFilterRecipientType::DontResizeOneEmailContainsPattern);
 
     d->ui->help->setText(i18n("<a href=\"whatsthis\">How does this work?</a>"));
     connect(d->ui->help, &QLabel::linkActivated, this, &ImageScalingWidget::slotHelpLinkClicked);
@@ -118,18 +130,18 @@ ImageScalingWidget::~ImageScalingWidget()
 
 void ImageScalingWidget::slotHelpLinkClicked(const QString &)
 {
-    const QString help
-        = i18n("<qt>"
-               "<p>Here you can define image filename. "
-               "You can use:</p>"
-               "<ul>"
-               "<li>%t set current time</li>"
-               "<li>%d set current date</li>"
-               "<li>%n original filename</li>"
-               "<li>%e original extension</li>"
-               "<li>%x new extension</li>"
-               "</ul>"
-               "</qt>");
+    const QString help = i18n(
+        "<qt>"
+        "<p>Here you can define image filename. "
+        "You can use:</p>"
+        "<ul>"
+        "<li>%t set current time</li>"
+        "<li>%d set current date</li>"
+        "<li>%n original filename</li>"
+        "<li>%e original extension</li>"
+        "<li>%x new extension</li>"
+        "</ul>"
+        "</qt>");
 
     QWhatsThis::showText(QCursor::pos(), help);
 }
@@ -167,7 +179,7 @@ void ImageScalingWidget::slotRecipientFilterAbstractClicked(QAbstractButton *but
 
 void ImageScalingWidget::slotComboboxChanged(int index)
 {
-    auto combo = qobject_cast< QComboBox * >(sender());
+    auto combo = qobject_cast<QComboBox *>(sender());
     if (combo) {
         const bool isCustom = combo->itemData(index) == -1;
         if (combo == d->ui->CBMaximumWidth) {
@@ -185,7 +197,7 @@ void ImageScalingWidget::slotComboboxChanged(int index)
 
 void ImageScalingWidget::initComboBox(QComboBox *combo)
 {
-    const QVector<int> size = { 240, 320, 512, 640, 800, 1024, 1600, 2048 };
+    const QVector<int> size = {240, 320, 512, 640, 800, 1024, 1600, 2048};
     for (int val : size) {
         combo->addItem(QString::number(val), val);
     }
@@ -200,7 +212,7 @@ void ImageScalingWidget::initWriteImageFormat()
         d->ui->WriteToImageFormat->addItem(QString::fromLatin1(format));
     }
     */
-    //known by several mailer.
+    // known by several mailer.
     d->ui->WriteToImageFormat->addItem(QStringLiteral("JPG"));
     d->ui->WriteToImageFormat->addItem(QStringLiteral("PNG"));
 }

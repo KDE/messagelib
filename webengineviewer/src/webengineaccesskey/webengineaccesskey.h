@@ -15,7 +15,8 @@ class QWheelEvent;
 class QResizeEvent;
 class QKeyEvent;
 class QWebEngineView;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebEngineAccessKeyPrivate;
 /**
  * @brief The WebEngineAccessKey class

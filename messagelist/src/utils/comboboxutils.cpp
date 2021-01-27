@@ -14,16 +14,16 @@
 
 using namespace MessageList::Utils;
 
-void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QVector< QPair< QString, int > > &optionDescriptors)
+void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QVector<QPair<QString, int>> &optionDescriptors)
 {
     int val = getIntegerOptionComboValue(combo, -1);
     combo->clear();
     int valIdx = -1;
     int idx = 0;
 
-    QVector< QPair< QString, int > >::ConstIterator end(optionDescriptors.end());
+    QVector<QPair<QString, int>>::ConstIterator end(optionDescriptors.end());
 
-    for (QVector< QPair< QString, int > >::ConstIterator it = optionDescriptors.constBegin(); it != end; ++it) {
+    for (QVector<QPair<QString, int>>::ConstIterator it = optionDescriptors.constBegin(); it != end; ++it) {
         if (val == (*it).second) {
             valIdx = idx;
         }
@@ -31,7 +31,7 @@ void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QVector< QPai
         ++idx;
     }
     if (idx == 0) {
-        combo->addItem(QStringLiteral("-"), QVariant((int)0));     // always default to 0
+        combo->addItem(QStringLiteral("-"), QVariant((int)0)); // always default to 0
         combo->setEnabled(false);
     } else {
         if (!combo->isEnabled()) {
@@ -41,7 +41,7 @@ void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QVector< QPai
             combo->setCurrentIndex(valIdx);
         }
         if (combo->count() == 1) {
-            combo->setEnabled(false);    // disable when there is no choice
+            combo->setEnabled(false); // disable when there is no choice
         }
     }
 }
@@ -55,7 +55,7 @@ void ComboBoxUtils::setIntegerOptionComboValue(QComboBox *combo, int value)
     if (index != -1) {
         combo->setCurrentIndex(index);
     } else {
-        combo->setCurrentIndex(0);    // default
+        combo->setCurrentIndex(0); // default
     }
 }
 

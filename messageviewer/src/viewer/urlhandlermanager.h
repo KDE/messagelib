@@ -20,25 +20,29 @@ class QUrl;
 class QString;
 class QPoint;
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class URLHandler;
 }
 
-namespace MessageViewer {
-namespace Interface {
+namespace MessageViewer
+{
+namespace Interface
+{
 class BodyPartURLHandler;
 }
 class ViewerPrivate;
 class BodyPartURLHandlerManager;
 /**
-  * @short Singleton to manage the list of URLHandlers
-  * @author Marc Mutz <mutz@kde.org>
-  */
+ * @short Singleton to manage the list of URLHandlers
+ * @author Marc Mutz <mutz@kde.org>
+ */
 class MESSAGEVIEWER_TESTS_EXPORT URLHandlerManager
 {
     static URLHandlerManager *self;
 
     URLHandlerManager();
+
 public:
     ~URLHandlerManager();
 

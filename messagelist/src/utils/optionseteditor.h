@@ -14,12 +14,15 @@
 class QLineEdit;
 class KTextEdit;
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class OptionSet;
 } // namespace Core
 
-namespace Utils {
+namespace Utils
+{
 /**
  * The base class for the OptionSet editors. Provides common functionality.
  */
@@ -33,29 +36,28 @@ public:
     void setReadOnly(bool readOnly);
 
 protected:
-
     /**
-    * Returns the editor for the name of the OptionSet.
-    * Derived classes are responsable of filling this UI element and reading back data from it.
-    */
+     * Returns the editor for the name of the OptionSet.
+     * Derived classes are responsable of filling this UI element and reading back data from it.
+     */
     QLineEdit *nameEdit() const;
 
     /**
-    * Returns the editor for the description of the OptionSet.
-    * Derived classes are responsable of filling this UI element and reading back data from it.
-    */
+     * Returns the editor for the description of the OptionSet.
+     * Derived classes are responsable of filling this UI element and reading back data from it.
+     */
     KTextEdit *descriptionEdit() const;
 
 protected Q_SLOTS:
     /**
-    * Handles editing of the name field.
-    * Pure virtual slot. Derived classes must provide an implementation.
-    */
+     * Handles editing of the name field.
+     * Pure virtual slot. Derived classes must provide an implementation.
+     */
     virtual void slotNameEditTextEdited(const QString &newName) = 0;
 
 private:
-    QLineEdit *mNameEdit = nullptr;                        ///< The editor for the OptionSet name
-    KTextEdit *mDescriptionEdit = nullptr;                 ///< The editor for the OptionSet description
+    QLineEdit *mNameEdit = nullptr; ///< The editor for the OptionSet name
+    KTextEdit *mDescriptionEdit = nullptr; ///< The editor for the OptionSet description
 };
 } // namespace Utils
 } // namespace MessageList

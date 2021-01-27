@@ -5,8 +5,8 @@
 */
 #include "mailwebenginepage.h"
 #include <QFontDatabase>
-#include <QWebEngineSettings>
 #include <QWebEngineProfile>
+#include <QWebEngineSettings>
 
 using namespace MessageViewer;
 
@@ -26,8 +26,8 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, enableElement);
-    //We need to activate it in qt5.15 otherwise we can't load local css file and co
-    //settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, enableElement);
+    // We need to activate it in qt5.15 otherwise we can't load local css file and co
+    // settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, enableElement);
     settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::HyperlinkAuditingEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, enableElement);
@@ -45,8 +45,7 @@ void MailWebEnginePage::initialize()
     const QFontInfo font(QFontDatabase().systemFont(QFontDatabase::GeneralFont));
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
     settings()->setFontSize(QWebEngineSettings::DefaultFontSize, font.pixelSize());
-    connect(this, &QWebEnginePage::featurePermissionRequested,
-            this, &MailWebEnginePage::slotFeaturePermissionRequested);
+    connect(this, &QWebEnginePage::featurePermissionRequested, this, &MailWebEnginePage::slotFeaturePermissionRequested);
 }
 
 void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
@@ -56,6 +55,6 @@ void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
 
 void MailWebEnginePage::slotFeaturePermissionRequested(const QUrl &url, QWebEnginePage::Feature feature)
 {
-    //Denied all permissions.
+    // Denied all permissions.
     setFeaturePermission(url, feature, QWebEnginePage::PermissionDeniedByUser);
 }

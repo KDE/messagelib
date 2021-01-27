@@ -10,8 +10,8 @@
 #include "messageviewer/messageviewersettings.h"
 #include <QApplication>
 #include <QHBoxLayout>
-#include <QWebEngineSettings>
 #include <QStandardPaths>
+#include <QWebEngineSettings>
 
 #include <QLabel>
 #include <QPushButton>
@@ -46,8 +46,7 @@ TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
     QPushButton *searchAccessKey = new QPushButton(QStringLiteral("AccessKey"), this);
     vboxLayout->addWidget(searchAccessKey);
-    connect(searchAccessKey, &QPushButton::clicked, this,
-            &TestWebEngineAccesskey::slotShowAccessKey);
+    connect(searchAccessKey, &QPushButton::clicked, this, &TestWebEngineAccesskey::slotShowAccessKey);
 }
 
 TestWebEngineAccesskey::~TestWebEngineAccesskey()

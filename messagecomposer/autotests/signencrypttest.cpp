@@ -6,27 +6,27 @@
 
 #include "signencrypttest.h"
 
-#include <QTest>
-#include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
+#include "qtest_messagecomposer.h"
+#include <QTest>
 
 #include <kmime/kmime_content.h>
 
 #include <Libkleo/Enum>
 
 #include <MessageComposer/Composer>
-#include <MessageComposer/SignEncryptJob>
-#include <MessageComposer/MainTextJob>
-#include <MessageComposer/TransparentJob>
 #include <MessageComposer/GlobalPart>
+#include <MessageComposer/MainTextJob>
+#include <MessageComposer/SignEncryptJob>
 #include <MessageComposer/TextPart>
+#include <MessageComposer/TransparentJob>
 #include <MessageComposer/Util>
 
-#include <QGpgME/Protocol>
 #include <QGpgME/DecryptVerifyJob>
+#include <QGpgME/Protocol>
 
-#include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
+#include <gpgme++/verificationresult.h>
 
 #include <sstream>
 
@@ -57,7 +57,7 @@ void SignEncryptTest::testContent()
     QFETCH(int, cryptoMessageFormat);
     QFETCH(QString, error);
 
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
     const QString data(QString::fromLocal8Bit("one flew over the cuckoo's nest"));
 
     Composer composer;
@@ -95,19 +95,14 @@ void SignEncryptTest::testContent()
     QVERIFY(result);
     result->assemble();
 
-    ComposerTestUtil::verifySignatureAndEncryption(
-        result,
-        data.toUtf8(),
-        (Kleo::CryptoMessageFormat)cryptoMessageFormat,
-        false,
-        true);
+    ComposerTestUtil::verifySignatureAndEncryption(result, data.toUtf8(), (Kleo::CryptoMessageFormat)cryptoMessageFormat, false, true);
 
     delete result;
 }
 
 void SignEncryptTest::testContentSubjobChained()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
     KMime::Message skeletonMessage;
@@ -136,19 +131,14 @@ void SignEncryptTest::testContentSubjobChained()
     QVERIFY(result);
     result->assemble();
 
-    ComposerTestUtil::verifySignatureAndEncryption(
-        result,
-        data,
-        Kleo::OpenPGPMIMEFormat,
-        false,
-        true);
+    ComposerTestUtil::verifySignatureAndEncryption(result, data, Kleo::OpenPGPMIMEFormat, false, true);
 
     delete result;
 }
 
 void SignEncryptTest::testHeaders()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     Composer composer;
     auto seJob = new SignEncryptJob(&composer);
@@ -208,7 +198,7 @@ void SignEncryptTest::testProtectedHeaders()
     QFETCH(bool, protectedHeadersObvoscate);
     QFETCH(QString, referenceFile);
 
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     Composer composer;
     auto *seJob = new SignEncryptJob(&composer);
@@ -281,5 +271,5 @@ void SignEncryptTest::testProtectedHeaders()
     }
     f.close();
 
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }

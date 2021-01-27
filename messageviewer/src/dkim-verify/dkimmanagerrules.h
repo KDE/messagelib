@@ -7,12 +7,13 @@
 #ifndef DKIMMANAGERRULES_H
 #define DKIMMANAGERRULES_H
 
-#include <QObject>
 #include "messageviewer_export.h"
-#include <MessageViewer/DKIMRule>
-#include <QVector>
 #include <KSharedConfig>
-namespace MessageViewer {
+#include <MessageViewer/DKIMRule>
+#include <QObject>
+#include <QVector>
+namespace MessageViewer
+{
 /**
  * @brief The DKIMManagerRules class
  * @author Laurent Montel <montel@kde.org>
@@ -37,6 +38,7 @@ public:
     void exportRules(const QString &fileName);
 
     Q_REQUIRED_RESULT bool isEmpty() const;
+
 private:
     Q_REQUIRED_RESULT int loadRules(const QString &fileName = QString());
     void save(const QString &fileName = QString());

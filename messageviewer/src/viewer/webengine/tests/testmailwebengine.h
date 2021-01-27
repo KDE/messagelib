@@ -9,7 +9,8 @@
 
 #include <QWidget>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MailWebEngineView;
 }
 
@@ -27,6 +28,7 @@ private Q_SLOTS:
     void slotZoomDown();
     void slotOpenUrl(const QUrl &url);
     void slotPrintPreview();
+
 private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
     qreal mZoom;

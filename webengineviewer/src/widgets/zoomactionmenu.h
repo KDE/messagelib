@@ -7,10 +7,11 @@
 #ifndef WEBENGINEZOOMACTIONMENU_H
 #define WEBENGINEZOOMACTIONMENU_H
 
-#include <KActionMenu>
 #include "webengineviewer_export.h"
+#include <KActionMenu>
 class KActionCollection;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class ZoomActionMenuPrivate;
 /**
  * @brief The ZoomActionMenu class

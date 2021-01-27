@@ -12,7 +12,8 @@
 
 using namespace MimeTreeParser;
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class SimpleObjectTreeSourcePrivate
 {
 public:

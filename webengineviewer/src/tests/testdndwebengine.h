@@ -10,7 +10,8 @@
 #include <QWebEngineView>
 #include <QWidget>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebEngineView;
 }
 
@@ -19,6 +20,7 @@ class WebEngineViewBase : public QWebEngineView
     Q_OBJECT
 public:
     explicit WebEngineViewBase(QWidget *parent = nullptr);
+
 protected:
     void dragEnterEvent(QDragEnterEvent *e) override;
     void dragLeaveEvent(QDragLeaveEvent *e) override;
@@ -32,6 +34,7 @@ class TestDndWebEngine : public QWidget
 public:
     explicit TestDndWebEngine(QWidget *parent = nullptr);
     ~TestDndWebEngine();
+
 private:
     WebEngineViewer::WebEngineView *pageView = nullptr;
     WebEngineViewBase *webEngineView = nullptr;

@@ -16,7 +16,8 @@
 #include <QString>
 #include <QVector>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 enum SpamError {
     noError,
     uninitializedStructUsed,
@@ -45,7 +46,6 @@ enum SpamError {
 class SpamScore
 {
 public:
-
     SpamScore()
         : mError(noError)
         , mScore(-2.0)

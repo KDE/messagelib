@@ -14,29 +14,31 @@
 #include "bodyformatter/encrypted.h"
 #include "bodyformatter/mailman.h"
 #include "bodyformatter/multipartalternative.h"
-#include "bodyformatter/multipartmixed.h"
 #include "bodyformatter/multipartencrypted.h"
+#include "bodyformatter/multipartmixed.h"
 #include "bodyformatter/multipartsigned.h"
 #include "bodyformatter/texthtml.h"
 #include "bodyformatter/textplain.h"
 
-#include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
+#include "interfaces/bodypartformatter.h"
 
 #include "bodypartformatterfactory.h"
 #include "bodypartformatterfactory_p.h"
 
-#include "objecttreeparser.h"
 #include "messagepart.h"
+#include "objecttreeparser.h"
 
 #include <KMime/Content>
 
 using namespace MimeTreeParser;
 
-namespace {
+namespace
+{
 class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
     static const AnyTypeBodyPartFormatter *self;
+
 public:
     MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
@@ -64,6 +66,7 @@ const AnyTypeBodyPartFormatter *AnyTypeBodyPartFormatter::self = nullptr;
 class ImageTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
     static const ImageTypeBodyPartFormatter *self;
+
 public:
     static const MimeTreeParser::Interface::BodyPartFormatter *create()
     {
@@ -98,6 +101,7 @@ const ImageTypeBodyPartFormatter *ImageTypeBodyPartFormatter::self = nullptr;
 class MessageRfc822BodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
     static const MessageRfc822BodyPartFormatter *self;
+
 public:
     MessagePart::Ptr process(Interface::BodyPart &) const override;
     static const MimeTreeParser::Interface::BodyPartFormatter *create();

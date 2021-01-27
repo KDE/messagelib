@@ -9,8 +9,7 @@
 #include "templatewebenginepage.h"
 #include <QWebEngineScript>
 
-template<typename Arg, typename R, typename C>
-struct InvokeWrapperFunction {
+template<typename Arg, typename R, typename C> struct InvokeWrapperFunction {
     R *receiver;
     void (C::*memberFun)(Arg);
     void operator()(Arg result)
@@ -19,8 +18,7 @@ struct InvokeWrapperFunction {
     }
 };
 
-template<typename Arg, typename R, typename C>
-InvokeWrapperFunction<Arg, R, C> invokeFunction(R *receiver, void (C::*memberFun)(Arg))
+template<typename Arg, typename R, typename C> InvokeWrapperFunction<Arg, R, C> invokeFunction(R *receiver, void (C::*memberFun)(Arg))
 {
     InvokeWrapperFunction<Arg, R, C> wrapper = {receiver, memberFun};
     return wrapper;
@@ -55,13 +53,14 @@ void TemplateExtractHtmlElementFromMail::setHtmlContent(const QString &html)
 
 QString extractHeaderBodyScript()
 {
-    const QString source = QStringLiteral("(function() {"
-                                          "var res = {"
-                                          "    body: document.getElementsByTagName('body')[0].innerHTML,"
-                                          "    header: document.getElementsByTagName('head')[0].innerHTML"
-                                          "};"
-                                          "return res;"
-                                          "})()");
+    const QString source = QStringLiteral(
+        "(function() {"
+        "var res = {"
+        "    body: document.getElementsByTagName('body')[0].innerHTML,"
+        "    header: document.getElementsByTagName('head')[0].innerHTML"
+        "};"
+        "return res;"
+        "})()");
     return source;
 }
 

@@ -7,11 +7,12 @@
 #ifndef CONVERTSNIPPETVARIABLEMENU_H
 #define CONVERTSNIPPETVARIABLEMENU_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
 #include <MessageComposer/ConvertSnippetVariablesUtil>
+#include <QObject>
 class QMenu;
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The ConvertSnippetVariableMenu class
  * @author Laurent Montel <montel@kde.org>
@@ -26,6 +27,7 @@ public:
 
 Q_SIGNALS:
     void insertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);
+
 private:
     void initializeMenu(bool onlyMenuForCustomizeAttachmentFileName);
     QWidget *const mParentWidget;

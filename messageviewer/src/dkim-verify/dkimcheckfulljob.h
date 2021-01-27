@@ -7,13 +7,14 @@
 #ifndef DKIMCHECKFULLJOB_H
 #define DKIMCHECKFULLJOB_H
 
-#include <QObject>
 #include "dkimauthenticationstatusinfo.h"
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_private_export.h"
-#include <MessageViewer/DKIMCheckPolicy>
 #include <AkonadiCore/Item>
-namespace MessageViewer {
+#include <MessageViewer/DKIMCheckPolicy>
+#include <QObject>
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckFullJob : public QObject
 {
     Q_OBJECT

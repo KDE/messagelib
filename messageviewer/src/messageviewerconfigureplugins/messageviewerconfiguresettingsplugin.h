@@ -10,7 +10,8 @@
 #include <QObject>
 
 #include "messageviewer_export.h"
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MessageViewerConfigureSettingsPluginPrivate;
 /**
  * @brief The MessageViewerConfigureSettingsPlugin class

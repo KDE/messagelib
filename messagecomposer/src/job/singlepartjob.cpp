@@ -49,7 +49,7 @@ bool SinglepartJobPrivate::chooseCTE()
         allowed.removeAll(KMime::Headers::CE8Bit);
     }
 
-#if 0 //TODO signing
+#if 0 // TODO signing
       // In the following cases only QP and Base64 are allowed:
       // - the buffer will be OpenPGP/MIME signed and it contains trailing
       //   whitespace (cf. RFC 3156)
@@ -65,8 +65,8 @@ bool SinglepartJobPrivate::chooseCTE()
         // Specific CTE set.  Check that our data fits in it.
         if (!allowed.contains(contentTransferEncoding->encoding())) {
             q->setError(JobBase::BugError);
-            q->setErrorText(i18n("%1 Content-Transfer-Encoding cannot correctly encode this message.",
-                                 KMime::nameForEncoding(contentTransferEncoding->encoding())));
+            q->setErrorText(
+                i18n("%1 Content-Transfer-Encoding cannot correctly encode this message.", KMime::nameForEncoding(contentTransferEncoding->encoding())));
             return false;
             // TODO improve error message in case 8bit is requested but not allowed.
         }
@@ -149,7 +149,7 @@ KMime::Headers::ContentType *SinglepartJob::contentType()
 void SinglepartJob::process()
 {
     Q_D(SinglepartJob);
-    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr); // Not processed before.
     d->resultContent = new KMime::Content;
 
     if (!d->chooseCTE()) {
@@ -168,7 +168,7 @@ void SinglepartJob::process()
     if (d->contentID) {
         d->resultContent->setHeader(d->contentID);
     }
-    Q_ASSERT(d->contentTransferEncoding);   // chooseCTE() created it if it didn't exist.
+    Q_ASSERT(d->contentTransferEncoding); // chooseCTE() created it if it didn't exist.
     {
         d->resultContent->setHeader(d->contentTransferEncoding);
     }

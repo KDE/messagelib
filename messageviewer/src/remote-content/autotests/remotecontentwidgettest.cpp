@@ -6,15 +6,14 @@
 
 #include "remotecontentwidgettest.h"
 #include "remote-content/remotecontentwidget.h"
-#include <QTest>
+#include <QCheckBox>
 #include <QFormLayout>
 #include <QLineEdit>
-#include <QCheckBox>
+#include <QTest>
 QTEST_MAIN(RemoteContentWidgetTest)
 RemoteContentWidgetTest::RemoteContentWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void RemoteContentWidgetTest::shouldHaveDefaultValues()

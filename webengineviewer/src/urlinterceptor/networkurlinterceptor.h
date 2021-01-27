@@ -7,10 +7,11 @@
 #ifndef MAILNETWORKURLINTERCEPTOR_H
 #define MAILNETWORKURLINTERCEPTOR_H
 
-#include <QWebEngineUrlRequestInterceptor>
 #include "webengineviewer_export.h"
+#include <QWebEngineUrlRequestInterceptor>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class NetworkUrlInterceptorPrivate;
 class NetworkPluginUrlInterceptorInterface;
 /**
@@ -28,6 +29,7 @@ public:
 
     void addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
     void removeInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
+
 private:
     NetworkUrlInterceptorPrivate *const d;
 };

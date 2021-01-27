@@ -11,12 +11,15 @@
 
 #include <QDialog>
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class Manager;
 } // namespace Core
 
-namespace Utils {
+namespace Utils
+{
 /**
  * The dialog used for configuring MessageList::Aggregation sets.
  *

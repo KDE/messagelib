@@ -7,9 +7,10 @@
 #ifndef DKIMMANAGERAUTHENTICATIONSERVER_H
 #define DKIMMANAGERAUTHENTICATIONSERVER_H
 
-#include <QObject>
 #include "messageviewer_export.h"
-namespace MessageViewer {
+#include <QObject>
+namespace MessageViewer
+{
 class MESSAGEVIEWER_EXPORT DKIMManagerAuthenticationServer : public QObject
 {
     Q_OBJECT

@@ -7,12 +7,13 @@
 #ifndef DKIMSTORERESULTJOB_H
 #define DKIMSTORERESULTJOB_H
 
-#include <QObject>
 #include "messageviewer_private_export.h"
-#include <MessageViewer/DKIMCheckSignatureJob>
 #include <AkonadiCore/Item>
+#include <MessageViewer/DKIMCheckSignatureJob>
+#include <QObject>
 class KJob;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT DKIMStoreResultJob : public QObject
 {
     Q_OBJECT
@@ -25,6 +26,7 @@ public:
 
     void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void setItem(const Akonadi::Item &item);
+
 private:
     void slotModifyItemDone(KJob *job);
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;

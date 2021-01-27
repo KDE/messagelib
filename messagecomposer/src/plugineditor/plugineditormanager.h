@@ -7,10 +7,11 @@
 #ifndef PLUGINEDITORMANAGER_H
 #define PLUGINEDITORMANAGER_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
 #include <PimCommon/PluginUtil>
-namespace MessageComposer {
+#include <QObject>
+namespace MessageComposer
+{
 class PluginEditorManagerPrivate;
 class PluginEditor;
 /**
@@ -21,7 +22,6 @@ class MESSAGECOMPOSER_EXPORT PluginEditorManager : public QObject
 {
     Q_OBJECT
 public:
-
     explicit PluginEditorManager(QObject *parent = nullptr);
     ~PluginEditorManager() override;
 
@@ -34,6 +34,7 @@ public:
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT PluginEditor *pluginFromIdentifier(const QString &id);
+
 private:
     PluginEditorManagerPrivate *const d;
 };

@@ -11,26 +11,26 @@
 #include "utils/util.h"
 #include "util_p.h"
 
-#include <QRegularExpression>
 #include "composer/composer.h"
 #include "job/singlepartjob.h"
+#include <QRegularExpression>
 
+#include <QTextBlock>
 #include <QTextCodec>
 #include <QTextDocument>
-#include <QTextBlock>
 
-#include <KCharsets>
 #include "messagecomposer_debug.h"
+#include <KCharsets>
 #include <KLocalizedString>
 #include <KMessageBox>
 
-#include <kmime/kmime_content.h>
-#include <kmime/kmime_headers.h>
-#include <MailTransportAkonadi/MessageQueueJob>
 #include <AkonadiCore/agentinstance.h>
 #include <AkonadiCore/agentinstancecreatejob.h>
 #include <AkonadiCore/agentmanager.h>
+#include <MailTransportAkonadi/MessageQueueJob>
 #include <MessageCore/StringUtil>
+#include <kmime/kmime_content.h>
+#include <kmime/kmime_headers.h>
 
 KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
 {
@@ -49,23 +49,27 @@ KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentTy
     return ret;
 }
 
-KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *orig, QByteArray encodedBody, Kleo::CryptoMessageFormat format, bool sign, const QByteArray &hashAlgo)
+KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *orig,
+                                                             QByteArray encodedBody,
+                                                             Kleo::CryptoMessageFormat format,
+                                                             bool sign,
+                                                             const QByteArray &hashAlgo)
 {
     auto result = new KMime::Content;
 
     // called should have tested that the signing/encryption failed
     Q_ASSERT(!encodedBody.isEmpty());
 
-    if (!(format & Kleo::InlineOpenPGPFormat)) {    // make a MIME message
+    if (!(format & Kleo::InlineOpenPGPFormat)) { // make a MIME message
         qCDebug(MESSAGECOMPOSER_LOG) << "making MIME message, format:" << format;
         makeToplevelContentType(result, format, sign, hashAlgo);
 
-        if (makeMultiMime(format, sign)) {      // sign/enc PGPMime, sign SMIME
+        if (makeMultiMime(format, sign)) { // sign/enc PGPMime, sign SMIME
             const QByteArray boundary = KMime::multiPartBoundary();
             result->contentType()->setBoundary(boundary);
 
             result->assemble();
-            //qCDebug(MESSAGECOMPOSER_LOG) << "processed header:" << result->head();
+            // qCDebug(MESSAGECOMPOSER_LOG) << "processed header:" << result->head();
 
             // Build the encapsulated MIME parts.
             // Build a MIME part holding the code information
@@ -74,18 +78,18 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
             setNestedContentType(code, format, sign);
             setNestedContentDisposition(code, format, sign);
 
-            if (sign) {                           // sign PGPMime, sign SMIME
-                if (format & Kleo::AnySMIME) {      // sign SMIME
-                    auto ct = code->contentTransferEncoding(); //create
+            if (sign) { // sign PGPMime, sign SMIME
+                if (format & Kleo::AnySMIME) { // sign SMIME
+                    auto ct = code->contentTransferEncoding(); // create
                     ct->setEncoding(KMime::Headers::CEbase64);
                     ct->needToEncode();
                     code->setBody(encodedBody);
-                } else {                            // sign PGPMmime
+                } else { // sign PGPMmime
                     setBodyAndCTE(encodedBody, orig->contentType(), code);
                 }
                 result->addContent(orig);
                 result->addContent(code);
-            } else {                              // enc PGPMime
+            } else { // enc PGPMime
                 setBodyAndCTE(encodedBody, orig->contentType(), code);
 
                 // Build a MIME part holding the version information
@@ -100,18 +104,18 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
                 result->addContent(vers);
                 result->addContent(code);
             }
-        } else {                                //enc SMIME, sign/enc SMIMEOpaque
+        } else { // enc SMIME, sign/enc SMIMEOpaque
             result->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
-            auto ct = result->contentDisposition(); //Create
+            auto ct = result->contentDisposition(); // Create
             ct->setDisposition(KMime::Headers::CDattachment);
             ct->setFilename(QStringLiteral("smime.p7m"));
 
             result->assemble();
-            //qCDebug(MESSAGECOMPOSER_LOG) << "processed header:" << result->head();
+            // qCDebug(MESSAGECOMPOSER_LOG) << "processed header:" << result->head();
 
             result->setBody(encodedBody);
         }
-    } else {                                  // sign/enc PGPInline
+    } else { // sign/enc PGPInline
         result->setHead(orig->head());
         result->parse();
 
@@ -127,9 +131,8 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
     switch (format) {
     default:
     case Kleo::InlineOpenPGPFormat:
-    case Kleo::OpenPGPMIMEFormat:
-    {
-        auto ct = content->contentType(); //Create
+    case Kleo::OpenPGPMIMEFormat: {
+        auto ct = content->contentType(); // Create
         if (sign) {
             ct->setMimeType(QByteArrayLiteral("multipart/signed"));
             ct->setParameter(QStringLiteral("protocol"), QStringLiteral("application/pgp-signature"));
@@ -140,10 +143,9 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
         }
     }
         return;
-    case Kleo::SMIMEFormat:
-    {
+    case Kleo::SMIMEFormat: {
         if (sign) {
-            auto ct = content->contentType(); //Create
+            auto ct = content->contentType(); // Create
             qCDebug(MESSAGECOMPOSER_LOG) << "setting headers for SMIME";
             ct->setMimeType(QByteArrayLiteral("multipart/signed"));
             ct->setParameter(QStringLiteral("protocol"), QStringLiteral("application/pkcs7-signature"));
@@ -158,7 +160,7 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
     case Kleo::SMIMEOpaqueFormat:
 
         qCDebug(MESSAGECOMPOSER_LOG) << "setting headers for SMIME/opaque";
-        auto ct = content->contentType(); //Create
+        auto ct = content->contentType(); // Create
         ct->setMimeType(QByteArrayLiteral("application/pkcs7-mime"));
 
         if (sign) {
@@ -173,9 +175,8 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
 void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::CryptoMessageFormat format, bool sign)
 {
     switch (format) {
-    case Kleo::OpenPGPMIMEFormat:
-    {
-        auto ct = content->contentType(); //Create
+    case Kleo::OpenPGPMIMEFormat: {
+        auto ct = content->contentType(); // Create
         if (sign) {
             ct->setMimeType(QByteArrayLiteral("application/pgp-signature"));
             ct->setParameter(QStringLiteral("name"), QStringLiteral("signature.asc"));
@@ -185,10 +186,9 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
         }
     }
         return;
-    case Kleo::SMIMEFormat:
-    {
+    case Kleo::SMIMEFormat: {
         if (sign) {
-            auto ct = content->contentType(); //Create
+            auto ct = content->contentType(); // Create
             ct->setMimeType(QByteArrayLiteral("application/pkcs7-signature"));
             ct->setParameter(QStringLiteral("name"), QStringLiteral("smime.p7s"));
             return;
@@ -198,8 +198,7 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
     // fall through:
     default:
     case Kleo::InlineOpenPGPFormat:
-    case Kleo::SMIMEOpaqueFormat:
-        ;
+    case Kleo::SMIMEOpaqueFormat:;
     }
 }
 
@@ -225,7 +224,7 @@ bool MessageComposer::Util::makeMultiMime(Kleo::CryptoMessageFormat format, bool
     case Kleo::OpenPGPMIMEFormat:
         return true;
     case Kleo::SMIMEFormat:
-        return sign;                             // only on sign - there's no mp/encrypted for S/MIME
+        return sign; // only on sign - there's no mp/encrypted for S/MIME
     }
 }
 
@@ -255,9 +254,10 @@ QByteArray MessageComposer::Util::selectCharset(const QVector<QByteArray> &chars
 QStringList MessageComposer::Util::AttachmentKeywords()
 {
     return i18nc(
-        "comma-separated list of keywords that are used to detect whether "
-        "the user forgot to attach his attachment. Do not add space between words.",
-        "attachment,attached").split(QLatin1Char(','));
+               "comma-separated list of keywords that are used to detect whether "
+               "the user forgot to attach his attachment. Do not add space between words.",
+               "attachment,attached")
+        .split(QLatin1Char(','));
 }
 
 QString MessageComposer::Util::cleanedUpHeaderString(const QString &s)
@@ -288,8 +288,12 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
 {
     Akonadi::AgentInstance instance = Akonadi::AgentManager::self()->instance(QStringLiteral("akonadi_maildispatcher_agent"));
     if (!instance.isValid()) {
-        const int rc = KMessageBox::warningYesNo(parent, i18n("The mail dispatcher is not set up, so mails cannot be sent. Do you want to create a mail dispatcher?"),
-                                                 i18n("No mail dispatcher."), KStandardGuiItem::yes(), KStandardGuiItem::no(), QStringLiteral("no_maildispatcher"));
+        const int rc = KMessageBox::warningYesNo(parent,
+                                                 i18n("The mail dispatcher is not set up, so mails cannot be sent. Do you want to create a mail dispatcher?"),
+                                                 i18n("No mail dispatcher."),
+                                                 KStandardGuiItem::yes(),
+                                                 KStandardGuiItem::no(),
+                                                 QStringLiteral("no_maildispatcher"));
         if (rc == KMessageBox::Yes) {
             const Akonadi::AgentType type = Akonadi::AgentManager::self()->type(QStringLiteral("akonadi_maildispatcher_agent"));
             Q_ASSERT(type.isValid());
@@ -301,8 +305,12 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
     if (instance.isOnline()) {
         return true;
     } else {
-        const int rc = KMessageBox::warningYesNo(parent, i18n("The mail dispatcher is offline, so mails cannot be sent. Do you want to make it online?"),
-                                                 i18n("Mail dispatcher offline."), KStandardGuiItem::yes(), KStandardGuiItem::no(), QStringLiteral("maildispatcher_put_online"));
+        const int rc = KMessageBox::warningYesNo(parent,
+                                                 i18n("The mail dispatcher is offline, so mails cannot be sent. Do you want to make it online?"),
+                                                 i18n("Mail dispatcher offline."),
+                                                 KStandardGuiItem::yes(),
+                                                 KStandardGuiItem::no(),
+                                                 QStringLiteral("maildispatcher_put_online"));
         if (rc == KMessageBox::Yes) {
             instance.setIsOnline(true);
             return true;
@@ -324,16 +332,13 @@ KMime::Content *MessageComposer::Util::findTypeInMessage(KMime::Content *data, c
         if (mimeType.isEmpty() || subType.isEmpty()) {
             return data;
         }
-        if ((mimeType == data->contentType()->mediaType())
-            && (subType == data->contentType(false)->subType())) {
+        if ((mimeType == data->contentType()->mediaType()) && (subType == data->contentType(false)->subType())) {
             return data;
         }
     }
 
     foreach (auto child, data->contents()) {
-        if ((!child->contentType()->isEmpty())
-            && (mimeType == child->contentType()->mimeType())
-            && (subType == child->contentType()->subType())) {
+        if ((!child->contentType()->isEmpty()) && (mimeType == child->contentType()->mimeType()) && (subType == child->contentType()->subType())) {
             return child;
         }
         auto ret = findTypeInMessage(child, mimeType, subType);
@@ -432,9 +437,8 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
     }
     QStringList attachWordsList = attachmentKeywords;
 
-    QRegularExpression rx(QLatin1String("\\b")
-                          +attachWordsList.join(QLatin1String("\\b|\\b"))
-                          +QLatin1String("\\b"), QRegularExpression::CaseInsensitiveOption);
+    QRegularExpression rx(QLatin1String("\\b") + attachWordsList.join(QLatin1String("\\b|\\b")) + QLatin1String("\\b"),
+                          QRegularExpression::CaseInsensitiveOption);
 
     // check whether the subject contains one of the attachment key words
     // unless the message is a reply or a forwarded message
@@ -447,8 +451,7 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
         QTextBlock end(doc->end());
         for (QTextBlock it = doc->begin(); it != end; it = it.next()) {
             const QString line = it.text();
-            gotMatch = (!quotationRx.match(line).hasMatch())
-                       && (rx.match(line).hasMatch());
+            gotMatch = (!quotationRx.match(line).hasMatch()) && (rx.match(line).hasMatch());
             if (gotMatch) {
                 break;
             }

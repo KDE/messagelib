@@ -8,11 +8,11 @@
 
 #include "quotehtml.h"
 
-#include "utils/mimetype.h"
 #include "../messagepartrenderermanager.h"
+#include "utils/mimetype.h"
 
-#include <MessageCore/StringUtil>
 #include "interfaces/htmlwriter.h"
+#include <MessageCore/StringUtil>
 
 #include <KIconLoader>
 #include <QUrl>
@@ -45,8 +45,7 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
         return context->renderWithFactory<MimeTreeParser::TextMessagePart>(mp, htmlWriter);
     }
 
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
-                                                                                             "asiconpart.html"));
+    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("asiconpart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     c.insert(QStringLiteral("block"), msgPart.data());
 

@@ -7,11 +7,12 @@
 #ifndef DEVELOPERTOOLWIDGET_H
 #define DEVELOPERTOOLWIDGET_H
 
-#include <QWidget>
 #include "messageviewer_private_export.h"
+#include <QWidget>
 class QWebEnginePage;
 class QWebEngineView;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT DeveloperToolWidget : public QWidget
 {
     Q_OBJECT

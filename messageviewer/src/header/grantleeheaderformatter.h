@@ -7,15 +7,17 @@
 #ifndef GRANTLEEHEADERFORMATTER_H
 #define GRANTLEEHEADERFORMATTER_H
 
+#include "messageviewer_export.h"
+#include <GrantleeTheme/GrantleeTheme>
 #include <QString>
 #include <grantlee/templateloader.h>
-#include <GrantleeTheme/GrantleeTheme>
-#include "messageviewer_export.h"
-namespace KMime {
+namespace KMime
+{
 class Message;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class HeaderStyle;
 /**
  * @brief The GrantleeHeaderFormatter class
@@ -41,9 +43,21 @@ public:
 
     Q_REQUIRED_RESULT QString toHtml(const GrantleeHeaderFormatterSettings &settings) const;
 
-    Q_REQUIRED_RESULT QString toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool isPrinting) const;
+    Q_REQUIRED_RESULT QString toHtml(const QStringList &displayExtraHeaders,
+                                     const QString &absolutPath,
+                                     const QString &filename,
+                                     const MessageViewer::HeaderStyle *style,
+                                     KMime::Message *message,
+                                     bool isPrinting) const;
+
 private:
-    Q_REQUIRED_RESULT QString format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showEmoticons = true) const;
+    Q_REQUIRED_RESULT QString format(const QString &absolutePath,
+                                     const Grantlee::Template &headerTemplate,
+                                     const QStringList &displayExtraHeaders,
+                                     bool isPrinting,
+                                     const MessageViewer::HeaderStyle *style,
+                                     KMime::Message *message,
+                                     bool showEmoticons = true) const;
     class Private;
     Private *const d;
 };

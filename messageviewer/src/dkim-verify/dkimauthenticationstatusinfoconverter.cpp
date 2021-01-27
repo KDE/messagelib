@@ -61,9 +61,7 @@ QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthe
                 convertedResult.sdid = sdid;
                 convertedResult.auid = auid;
             }
-        } else if (infoResult == QLatin1String("fail")
-                   || infoResult == QLatin1String("policy")
-                   || infoResult == QLatin1String("neutral")
+        } else if (infoResult == QLatin1String("fail") || infoResult == QLatin1String("policy") || infoResult == QLatin1String("neutral")
                    || infoResult == QLatin1String("permerror")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
             if (!info.reason.isEmpty()) {

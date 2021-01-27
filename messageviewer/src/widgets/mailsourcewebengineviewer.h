@@ -11,7 +11,8 @@
 class QTabWidget;
 class QWebEnginePage;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class FindBarSourceView;
 class MailSourceViewTextBrowserWidget;
 class MailSourceWebEngineViewer : public QDialog
@@ -24,6 +25,7 @@ public:
     void setRawSource(const QString &source);
     void setDisplayedSource(QWebEnginePage *page);
     void setFixedFont();
+
 private:
     void readConfig();
     void writeConfig();

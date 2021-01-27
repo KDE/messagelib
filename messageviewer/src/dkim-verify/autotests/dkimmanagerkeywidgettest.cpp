@@ -6,10 +6,10 @@
 
 #include "dkimmanagerkeywidgettest.h"
 #include "dkim-verify/dkimmanagerkeywidget.h"
+#include <KTreeWidgetSearchLine>
 #include <QTest>
 #include <QTreeWidget>
 #include <QVBoxLayout>
-#include <KTreeWidgetSearchLine>
 QTEST_MAIN(DKIMManagerKeyWidgetTest)
 DKIMManagerKeyWidgetTest::DKIMManagerKeyWidgetTest(QObject *parent)
     : QObject(parent)

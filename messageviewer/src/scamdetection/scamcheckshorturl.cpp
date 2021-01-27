@@ -6,13 +6,13 @@
 */
 
 #include "scamcheckshorturl.h"
-#include "scamexpandurljob.h"
 #include "messageviewer_debug.h"
+#include "scamexpandurljob.h"
 
 #include <QFile>
 
-#include <QStandardPaths>
 #include <QJsonDocument>
+#include <QStandardPaths>
 
 using namespace MessageViewer;
 QStringList ScamCheckShortUrl::sSupportedServices = QStringList();
@@ -35,9 +35,7 @@ void ScamCheckShortUrl::expandedUrl(const QUrl &url)
 
 bool ScamCheckShortUrl::isShortUrl(const QUrl &url)
 {
-    if (!url.path().isEmpty()
-        && QString::compare(url.path(),
-                            QStringLiteral("/")) && sSupportedServices.contains(url.host())) {
+    if (!url.path().isEmpty() && QString::compare(url.path(), QStringLiteral("/")) && sSupportedServices.contains(url.host())) {
         return true;
     } else {
         return false;
@@ -46,8 +44,7 @@ bool ScamCheckShortUrl::isShortUrl(const QUrl &url)
 
 void ScamCheckShortUrl::loadLongUrlServices()
 {
-    QFile servicesFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral(
-                                                  "messageviewer/longurlServices.json")));
+    QFile servicesFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messageviewer/longurlServices.json")));
     if (servicesFile.open(QIODevice::ReadOnly)) {
         QJsonParseError error;
         const QJsonDocument json = QJsonDocument::fromJson(servicesFile.readAll(), &error);

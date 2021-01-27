@@ -73,8 +73,7 @@ bool MessageDisplayFormatAttribute::remoteContent() const
 
 bool MessageDisplayFormatAttribute::operator==(const MessageDisplayFormatAttribute &other) const
 {
-    return (d->messageFormat == other.messageFormat())
-           && (d->remoteContent == other.remoteContent());
+    return (d->messageFormat == other.messageFormat()) && (d->remoteContent == other.remoteContent());
 }
 
 Viewer::DisplayFormatMessage MessageDisplayFormatAttribute::messageFormat() const

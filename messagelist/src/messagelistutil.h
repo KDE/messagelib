@@ -8,15 +8,18 @@
 #ifndef MESSAGELISTUTIL_H
 #define MESSAGELISTUTIL_H
 
-#include <messagelist_export.h>
-#include <QString>
 #include <QColor>
+#include <QString>
+#include <messagelist_export.h>
 
-namespace Akonadi {
+namespace Akonadi
+{
 class Item;
 }
-namespace MessageList {
-namespace Util {
+namespace MessageList
+{
+namespace Util
+{
 MESSAGELIST_EXPORT void deleteConfig(const QString &collectionId);
 MESSAGELIST_EXPORT QColor unreadDefaultMessageColor();
 MESSAGELIST_EXPORT QColor importantDefaultMessageColor();

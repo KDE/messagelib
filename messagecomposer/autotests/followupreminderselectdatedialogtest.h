@@ -21,6 +21,7 @@ private Q_SLOTS:
     void shouldDisableOkButtonIfDateIsEmpty();
     void shouldDisableOkButtonIfDateIsNotValid();
     void shouldDisableOkButtonIfModelIsEmpty();
+
 private:
     QStandardItemModel *defaultItemModel();
 };

@@ -6,8 +6,8 @@
 
 #include "../src/core/messageitem_p.h"
 #include <QDebug>
-#include <QTest>
 #include <QObject>
+#include <QTest>
 
 using namespace MessageList::Core;
 

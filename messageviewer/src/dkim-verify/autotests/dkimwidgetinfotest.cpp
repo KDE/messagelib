@@ -6,10 +6,10 @@
 
 #include "dkimwidgetinfotest.h"
 #include "dkim-verify/dkimwidgetinfo.h"
+#include <MessageViewer/DKIMCheckSignatureJob>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QTest>
-#include <MessageViewer/DKIMCheckSignatureJob>
 
 QTEST_MAIN(DKIMWidgetInfoTest)
 DKIMWidgetInfoTest::DKIMWidgetInfoTest(QObject *parent)

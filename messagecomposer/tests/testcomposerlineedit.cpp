@@ -4,12 +4,12 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 
 */
-#include <QWidget>
 #include <QVBoxLayout>
+#include <QWidget>
 
+#include "composer/composerlineedit.h"
 #include <QApplication>
 #include <QCommandLineParser>
-#include "composer/composerlineedit.h"
 
 using namespace MessageComposer;
 

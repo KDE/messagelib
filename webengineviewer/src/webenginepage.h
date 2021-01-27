@@ -7,12 +7,13 @@
 #ifndef WEBENGINEPAGE_H
 #define WEBENGINEPAGE_H
 
-#include <QWebEnginePage>
 #include "webengineviewer_export.h"
+#include <QWebEnginePage>
 class QWebEngineProfile;
 class QWebEngineDownloadItem;
 class QPrinter;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebHitTest;
 /**
  * @brief The WebEnginePage class

@@ -6,8 +6,8 @@
 
 #include "messagefactoryforwardjob.h"
 #include "settings/messagecomposersettings.h"
-#include <TemplateParser/TemplateParserJob>
 #include <KIdentityManagement/IdentityManager>
+#include <TemplateParser/TemplateParserJob>
 
 using namespace MessageComposer;
 

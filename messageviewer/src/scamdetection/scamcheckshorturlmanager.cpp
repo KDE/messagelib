@@ -5,8 +5,8 @@
 
 */
 
-#include "scamcheckshorturl.h"
 #include "scamcheckshorturlmanager.h"
+#include "scamcheckshorturl.h"
 
 using namespace MessageViewer;
 

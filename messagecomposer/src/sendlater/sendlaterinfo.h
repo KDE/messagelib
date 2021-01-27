@@ -12,19 +12,15 @@
 
 #include "messagecomposer_export.h"
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 /** Send later information. */
 class MESSAGECOMPOSER_EXPORT SendLaterInfo
 {
 public:
     explicit SendLaterInfo() = default;
 
-    enum RecurrenceUnit {
-        Days = 0,
-        Weeks,
-        Months,
-        Years
-    };
+    enum RecurrenceUnit { Days = 0, Weeks, Months, Years };
 
     Q_REQUIRED_RESULT bool isValid() const;
 
@@ -52,8 +48,8 @@ public:
     void setTo(const QString &to);
     Q_REQUIRED_RESULT QString to() const;
 
-    bool operator ==(const SendLaterInfo &other) const;
-    inline bool operator !=(const SendLaterInfo &other) const
+    bool operator==(const SendLaterInfo &other) const;
+    inline bool operator!=(const SendLaterInfo &other) const
     {
         return !(*this == other);
     }

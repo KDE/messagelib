@@ -9,20 +9,20 @@
 #ifndef _WIN32
 #define private public
 #endif
-#include "templateparserjob_p.h"
 #include "templateparserjob.h"
+#include "templateparserjob_p.h"
 #ifndef _WIN32
 #undef protected
 #endif
-#include <MimeTreeParser/ObjectTreeParser>
-#include <KIdentityManagement/IdentityManager>
 #include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
+#include <MimeTreeParser/ObjectTreeParser>
 
-#include <QTest>
 #include <QDir>
 #include <QLocale>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QTest>
 
 using namespace MimeTreeParser;
 
@@ -46,7 +46,8 @@ void TemplateParserJobTest::test_convertedHtml_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("plain*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << QString(dir.path() + QLatin1Char('/') + file + QLatin1String(".html"));
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file)
+                                                   << QString(dir.path() + QLatin1Char('/') + file + QLatin1String(".html"));
     }
 }
 
@@ -107,7 +108,7 @@ void TemplateParserJobTest::test_replyHtml_data()
         if (!QFile::exists(expectedFile)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << expectedFile;
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << expectedFile;
     }
 }
 
@@ -169,7 +170,7 @@ void TemplateParserJobTest::test_replyPlain_data()
         if (!QFile::exists(expectedFile)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << expectedFile;
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << expectedFile;
     }
 }
 
@@ -222,7 +223,7 @@ void TemplateParserJobTest::test_forwardPlain_data()
         if (!QFile::exists(expectedFile)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << expectedFile;
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << expectedFile;
     }
 }
 
@@ -275,7 +276,7 @@ void TemplateParserJobTest::test_forwardHtml_data()
         if (!QFile::exists(expectedFile)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << expectedFile;
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << expectedFile;
     }
 }
 
@@ -332,7 +333,7 @@ void TemplateParserJobTest::test_forwardedAttachments_data()
             continue;
         }
         QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".forwarded.mbox");
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << expectedFile;
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << expectedFile;
     }
 }
 
@@ -388,20 +389,29 @@ void TemplateParserJobTest::test_processWithTemplatesForBody_data()
     QTest::addColumn<QString>("expected");
     QTest::addColumn<QString>("selection");
 
-    QTest::newRow("%OTEXT-plain") << "%OTEXT" << "Original text.\nLine two." << "Original text.\nLine two." << "";
-    QTest::newRow("%OTEXT-encrypted") << "%OTEXT" << "-----BEGIN PGP MESSAGE-----\nVersion: GnuPG v1.4.12 (GNU/Linux)\n"
-                                                     "\n"
-                                                     "hQEMAwzOQ1qnzNo7AQgA1345CrnOBTGf2eo4ABR6wkOdasI9SELRBKA1fNkFcq+Z\n"
-                                                     "Qg0gWB5RLapU+VFRc5hK1zPOZ1dY6j3+uPHO4RhjfUgfiZ8T7oaWav15yP+07u21\n"
-                                                     "EI9W9sk+eQU9GZSOayURucmZa/mbBz9hrsmePpORxD+C3uNTYa6ePTFlQP6wEZOI\n"
-                                                     "7E53DrtJnF0EzIsCBIVep6CyuYfuSSwQ5gMgyPzfBqiGHNw96w2i/eayErc6lquL\n"
-                                                     "JPFhIcMMq8w9Yo9+vXCAbkns6dtBAzlnAzuV86VFUZ/MnHTlCNk2yHyGLP6BS6hG\n"
-                                                     "kFEUmgdHrGRizdz1sjo1tSmOLu+Gyjlv1Ir/Sqr8etJQAeTq3heKslAfhtotAMMt\n"
-                                                     "R3tk228Su13Q3CAP/rktAyuGMDFtH8klW09zFdsZBDu8svE6d9e2nZ541NGspFVI\n"
-                                                     "6XTZHUMMdlgnTBcu3aPc0ow=\n"
-                                                     "=0xtc\n"
-                                                     "-----END PGP MESSAGE-----" << "Crypted line.\nCrypted line two." << "";
-    QTest::newRow("%QUOTE") << "%QUOTE" << "Quoted text.\nLine two." << "> Quoted text.\n> Line two." << "";
+    QTest::newRow("%OTEXT-plain") << "%OTEXT"
+                                  << "Original text.\nLine two."
+                                  << "Original text.\nLine two."
+                                  << "";
+    QTest::newRow("%OTEXT-encrypted") << "%OTEXT"
+                                      << "-----BEGIN PGP MESSAGE-----\nVersion: GnuPG v1.4.12 (GNU/Linux)\n"
+                                         "\n"
+                                         "hQEMAwzOQ1qnzNo7AQgA1345CrnOBTGf2eo4ABR6wkOdasI9SELRBKA1fNkFcq+Z\n"
+                                         "Qg0gWB5RLapU+VFRc5hK1zPOZ1dY6j3+uPHO4RhjfUgfiZ8T7oaWav15yP+07u21\n"
+                                         "EI9W9sk+eQU9GZSOayURucmZa/mbBz9hrsmePpORxD+C3uNTYa6ePTFlQP6wEZOI\n"
+                                         "7E53DrtJnF0EzIsCBIVep6CyuYfuSSwQ5gMgyPzfBqiGHNw96w2i/eayErc6lquL\n"
+                                         "JPFhIcMMq8w9Yo9+vXCAbkns6dtBAzlnAzuV86VFUZ/MnHTlCNk2yHyGLP6BS6hG\n"
+                                         "kFEUmgdHrGRizdz1sjo1tSmOLu+Gyjlv1Ir/Sqr8etJQAeTq3heKslAfhtotAMMt\n"
+                                         "R3tk228Su13Q3CAP/rktAyuGMDFtH8klW09zFdsZBDu8svE6d9e2nZ541NGspFVI\n"
+                                         "6XTZHUMMdlgnTBcu3aPc0ow=\n"
+                                         "=0xtc\n"
+                                         "-----END PGP MESSAGE-----"
+                                      << "Crypted line.\nCrypted line two."
+                                      << "";
+    QTest::newRow("%QUOTE") << "%QUOTE"
+                            << "Quoted text.\nLine two."
+                            << "> Quoted text.\n> Line two."
+                            << "";
 }
 
 void TemplateParserJobTest::test_processWithTemplatesForBody()
@@ -441,7 +451,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     qputenv("TZ", "Europe/Paris");
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const QString file = QStringLiteral("plain-message.mbox");
-    const QString fileName = QString(dir.path() + QLatin1Char('/') +  file);
+    const QString fileName = QString(dir.path() + QLatin1Char('/') + file);
     QTest::newRow("%OTIME") << "%OTIME" << fileName << QLocale().toString(QTime(8, 0, 27), QLocale::ShortFormat) << false;
     QTest::newRow("%OTIMELONG") << "%OTIMELONG" << fileName << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) << false;
     QTest::newRow("%OTIMELONGEN") << "%OTIMELONGEN" << fileName << QLocale(QLocale::C).toString(QTime(8, 0, 27), QLocale::LongFormat) << false;
@@ -451,7 +461,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("%OFULLSUBJ") << "%OFULLSUBJ" << fileName << "Plain Message Test" << false;
     QTest::newRow("%OFULLSUBJECT") << "%OFULLSUBJECT" << fileName << "Plain Message Test" << false;
     QTest::newRow("%OFROMFNAME") << "%OFROMFNAME" << fileName << "Sudhendu" << false;
-    QTest::newRow("%OFROMLNAME") << "%OFROMLNAME" << fileName  << "Kumar" << false;
+    QTest::newRow("%OFROMLNAME") << "%OFROMLNAME" << fileName << "Kumar" << false;
     QTest::newRow("%OFROMNAME") << "%OFROMNAME" << fileName << "Sudhendu Kumar" << false;
     QTest::newRow("%OFROMADDR") << "%OFROMADDR" << fileName << "Sudhendu Kumar <dontspamme@yoohoo.com>" << false;
     QTest::newRow("%OTOADDR") << "%OTOADDR" << fileName << "kde <foo@yoohoo.org>" << false;
@@ -464,12 +474,14 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("%NOP") << "%NOP" << fileName << "" << false;
     QTest::newRow("%DICTIONARYLANGUAGE=\"en\"") << "%DICTIONARYLANGUAGE=\"en\"" << fileName << "" << true;
     QTest::newRow("%DICTIONARYLANGUAGE=\"\"") << "%DICTIONARYLANGUAGE=\"\"" << fileName << "" << false;
-    QTest::newRow("%OTIMELONG %OFULLSUBJECT") << "%OTIMELONG %OFULLSUBJECT" << fileName << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) + QStringLiteral(" Plain Message Test") << false;
-    QTest::newRow("%OTIMELONG\n%OFULLSUBJECT") << "%OTIMELONG\n%OFULLSUBJECT" << fileName << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) + QStringLiteral("\nPlain Message Test") << false;
+    QTest::newRow("%OTIMELONG %OFULLSUBJECT") << "%OTIMELONG %OFULLSUBJECT" << fileName
+                                              << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) + QStringLiteral(" Plain Message Test") << false;
+    QTest::newRow("%OTIMELONG\n%OFULLSUBJECT") << "%OTIMELONG\n%OFULLSUBJECT" << fileName
+                                               << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) + QStringLiteral("\nPlain Message Test") << false;
     QTest::newRow("%REM=\"sdfsfsdsdfsdf\"") << "%REM=\"sdfsfsdsdfsdf\"" << fileName << "" << false;
     QTest::newRow("%CLEAR") << "%CLEAR" << fileName << "" << false;
     QTest::newRow("FOO foo") << "FOO foo" << fileName << "FOO foo" << false;
-    const QString insertFileName = QString(dir.path() + QLatin1Char('/') +  QLatin1String("insert-file.txt"));
+    const QString insertFileName = QString(dir.path() + QLatin1Char('/') + QLatin1String("insert-file.txt"));
     QString insertFileNameCommand = QStringLiteral("%INSERT=\"%1\"").arg(insertFileName);
     QTest::newRow("%INSERT") << insertFileNameCommand << fileName << "test insert file!\n" << false;
     insertFileNameCommand = QStringLiteral("%PUT=\"%1\"").arg(insertFileName);
@@ -479,17 +491,17 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("%DEBUG") << "%DEBUG" << fileName << "" << false;
     QTest::newRow("%DEBUGOFF") << "%DEBUGOFF" << fileName << "" << false;
     QTest::newRow("%HEADER=\"Reply-To\"") << "%HEADER=\"Reply-To\"" << fileName << "bla@yoohoo.org" << false;
-    //Header doesn't exist => don't add value
+    // Header doesn't exist => don't add value
     QTest::newRow("%OHEADER=\"SSS\"") << "%HEADER=\"SSS\"" << fileName << "" << false;
     QTest::newRow("%OHEADER=\"To\"") << "%OHEADER=\"To\"" << fileName << "kde <foo@yoohoo.org>" << false;
     QTest::newRow("%HEADER( To )") << "%HEADER( To )" << fileName << "kde <foo@yoohoo.org>" << false;
     QTest::newRow("%HEADER( To ) second test ") << "foo %HEADER( To )" << fileName << "foo kde <foo@yoohoo.org>" << false;
-    //Unknown command
+    // Unknown command
     QTest::newRow("unknown command") << "%GGGGG" << fileName << "%GGGGG" << false;
 
-    //Test bug 308444
+    // Test bug 308444
     const QString file2 = QStringLiteral("plain-message-timezone.mbox");
-    const QString fileName2 = QString(dir.path() + QLatin1Char('/') +  file2);
+    const QString fileName2 = QString(dir.path() + QLatin1Char('/') + file2);
     QTest::newRow("bug308444-%OTIMELONG") << "%OTIMELONG" << fileName2 << QLocale::system().toString(QTime(20, 31, 25), QLocale::LongFormat) << false;
 }
 
@@ -532,9 +544,9 @@ void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone_dat
     QTest::addColumn<bool>("hasDictionary");
     qputenv("TZ", "America/New_York");
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    //Test bug 308444
+    // Test bug 308444
     const QString file2 = QStringLiteral("plain-message-timezone.mbox");
-    const QString fileName2 = QString(dir.path() + QLatin1Char('/') +  file2);
+    const QString fileName2 = QString(dir.path() + QLatin1Char('/') + file2);
     QTest::newRow("bug308444-%OTIMELONG") << "%OTIMELONG" << fileName2 << QLocale::system().toString(QTime(14, 31, 25), QLocale::LongFormat) << false;
 }
 
@@ -575,15 +587,17 @@ void TemplateParserJobTest::test_makeValidHtml_data()
     QTest::addColumn<QString>("expected");
 
     QTest::newRow("plain text") << QStringLiteral("Some text\n-- \nSignature")
-                                << QStringLiteral("<html><head></head><body>Some text\n"
-                      "-- \nSignature<br/></body></html>");
+                                << QStringLiteral(
+                                       "<html><head></head><body>Some text\n"
+                                       "-- \nSignature<br/></body></html>");
 
     QTest::newRow("existing HTML tag") << QStringLiteral("<html><body>Some text\n-- \nSignature</body></html>")
                                        << QStringLiteral("<html><body>Some text\n-- \nSignature</body></html>");
 
     QTest::newRow("existing body tag, no html") << QStringLiteral("<body>Some text\n-- \nSignature</body>")
-                                                << QStringLiteral("<html><head></head><body>Some text\n"
-                      "-- \nSignature</body></html>");
+                                                << QStringLiteral(
+                                                       "<html><head></head><body>Some text\n"
+                                                       "-- \nSignature</body></html>");
 }
 
 void TemplateParserJobTest::test_makeValidHtml()

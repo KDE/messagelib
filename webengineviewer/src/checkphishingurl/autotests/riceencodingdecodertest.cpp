@@ -24,7 +24,7 @@ void RiceEncodingDecoderTest::shouldDecodeRiceIndices_data()
     QTest::addColumn<int>("riceParameter");
     QTest::addColumn<int>("numberEntries");
     QTest::addColumn<QByteArray>("encodingData");
-    QTest::addColumn<QVector<quint32> >("result");
+    QTest::addColumn<QVector<quint32>>("result");
     QTest::newRow("empty") << QByteArray() << 0 << 0 << QByteArray() << QVector<quint32>();
     QVector<quint32> result;
     result << 3;
@@ -38,11 +38,11 @@ void RiceEncodingDecoderTest::shouldDecodeRiceIndices_data()
     QTest::newRow("failedempty") << QByteArray("3") << 5 << 1 << QByteArray() << result;
 
     result.clear();
-    //TODO fixme
-    //QTest::newRow("failednegativeentries") << QByteArray("3") << 5 << -1 << QByteArray() << result;
+    // TODO fixme
+    // QTest::newRow("failednegativeentries") << QByteArray("3") << 5 << -1 << QByteArray() << result;
 
     result.clear();
-    //QTest::newRow("failednonpositive") << QByteArray("3") << 0 << 1 << QByteArrayLiteral("a") << result;
+    // QTest::newRow("failednonpositive") << QByteArray("3") << 0 << 1 << QByteArrayLiteral("a") << result;
     result.clear();
     QTest::newRow("failednonpositive1") << QByteArray("3") << -1 << 1 << QByteArrayLiteral("a") << result;
 }
@@ -71,7 +71,7 @@ void RiceEncodingDecoderTest::shouldDecodeRiceHashes_data()
     QTest::addColumn<int>("riceParameter");
     QTest::addColumn<int>("numberEntries");
     QTest::addColumn<QByteArray>("encodingData");
-    QTest::addColumn<QVector<quint32> >("result");
+    QTest::addColumn<QVector<quint32>>("result");
     QVector<quint32> r;
     QTest::newRow("empty") << QByteArray() << 0 << 0 << QByteArray() << r;
     r.clear();

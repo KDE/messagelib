@@ -7,9 +7,9 @@
 #include "sendlaterinfotest.h"
 #include "sendlater/sendlaterinfo.h"
 
-#include <QTest>
 #include <QDateTime>
 #include <QStandardPaths>
+#include <QTest>
 
 SendLaterInfoTest::SendLaterInfoTest(QObject *parent)
     : QObject(parent)

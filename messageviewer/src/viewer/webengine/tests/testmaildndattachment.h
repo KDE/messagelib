@@ -7,8 +7,8 @@
 #ifndef TESTMAILDNDATTACHMENT_H
 #define TESTMAILDNDATTACHMENT_H
 
-#include <QWidget>
 #include <KMime/Message>
+#include <QWidget>
 
 class TestMailDndAttachment : public QWidget
 {
@@ -16,6 +16,7 @@ class TestMailDndAttachment : public QWidget
 public:
     explicit TestMailDndAttachment(QWidget *parent = nullptr);
     ~TestMailDndAttachment();
+
 private:
     KMime::Message::Ptr readAndParseMail(const QString &mailFile);
 };

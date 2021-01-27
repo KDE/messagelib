@@ -7,23 +7,23 @@
  *******************************************************************************/
 
 #include "core/themedelegate.h"
-#include "core/messageitem.h"
 #include "core/groupheaderitem.h"
 #include "core/manager.h"
+#include "core/messageitem.h"
 #include "messagelistsettings.h"
 
-#include "MessageCore/StringUtil"
 #include "MessageCore/MessageCoreSettings"
+#include "MessageCore/StringUtil"
 
-#include <QStyle>
-#include <QPainter>
-#include <QFont>
-#include <QFontMetrics>
-#include <QAbstractItemView>
-#include <QPixmap>
-#include <QLinearGradient>
 #include <KColorScheme>
+#include <QAbstractItemView>
+#include <QFont>
 #include <QFontDatabase>
+#include <QFontMetrics>
+#include <QLinearGradient>
+#include <QPainter>
+#include <QPixmap>
+#include <QStyle>
 
 using namespace MessageList::Core;
 
@@ -50,7 +50,7 @@ void ThemeDelegate::setTheme(const Theme *theme)
     mTheme = theme;
 
     if (!mTheme) {
-        return;    // hum
+        return; // hum
     }
 
     // Rebuild the group header background color cache
@@ -61,16 +61,11 @@ void ThemeDelegate::setTheme(const Theme *theme)
     case Theme::CustomColor:
         mGroupHeaderBackgroundColor = mTheme->groupHeaderBackgroundColor();
         break;
-    case Theme::AutoColor:
-    {
+    case Theme::AutoColor: {
         QPalette pal = mItemView->palette();
         QColor txt = pal.color(QPalette::Normal, QPalette::Text);
         QColor bck = pal.color(QPalette::Normal, QPalette::Base);
-        mGroupHeaderBackgroundColor = QColor(
-            (txt.red() + (bck.red() * 3)) / 4,
-            (txt.green() + (bck.green() * 3)) / 4,
-            (txt.blue() + (bck.blue() * 3)) / 4
-            );
+        mGroupHeaderBackgroundColor = QColor((txt.red() + (bck.red() * 3)) / 4, (txt.green() + (bck.green() * 3)) / 4, (txt.blue() + (bck.blue() * 3)) / 4);
         break;
     }
     }
@@ -90,23 +85,23 @@ enum FontType {
 };
 
 static QFont sFontCache[FontTypesCount];
-static QFontMetrics sFontMetricsCache[FontTypesCount] = { QFontMetrics(QFont()), QFontMetrics(QFont()), QFontMetrics(QFont()), QFontMetrics(QFont()) };
+static QFontMetrics sFontMetricsCache[FontTypesCount] = {QFontMetrics(QFont()), QFontMetrics(QFont()), QFontMetrics(QFont()), QFontMetrics(QFont())};
 static int sFontHeightCache = 0;
 
 static inline const QFontMetrics &cachedFontMetrics(const Theme::ContentItem *ci)
 {
     return (!ci->isBold() && !ci->isItalic()) ? sFontMetricsCache[Normal]
-           : (ci->isBold() && !ci->isItalic()) ? sFontMetricsCache[Bold]
-           : (!ci->isBold() && ci->isItalic()) ? sFontMetricsCache[Italic]
-           : sFontMetricsCache[BoldItalic];
+        : (ci->isBold() && !ci->isItalic())   ? sFontMetricsCache[Bold]
+        : (!ci->isBold() && ci->isItalic())   ? sFontMetricsCache[Italic]
+                                              : sFontMetricsCache[BoldItalic];
 }
 
 static inline const QFont &cachedFont(const Theme::ContentItem *ci)
 {
     return (!ci->isBold() && !ci->isItalic()) ? sFontCache[Normal]
-           : (ci->isBold() && !ci->isItalic()) ? sFontCache[Bold]
-           : (!ci->isBold() && ci->isItalic()) ? sFontCache[Italic]
-           : sFontCache[BoldItalic];
+        : (ci->isBold() && !ci->isItalic())   ? sFontCache[Bold]
+        : (!ci->isBold() && ci->isItalic())   ? sFontCache[Italic]
+                                              : sFontCache[BoldItalic];
 }
 
 static inline const QFont &cachedFont(const Theme::ContentItem *ci, const Item *i)
@@ -118,13 +113,17 @@ static inline const QFont &cachedFont(const Theme::ContentItem *ci, const Item *
     const auto mi = static_cast<const MessageItem *>(i);
     const bool bold = ci->isBold() || mi->isBold();
     const bool italic = ci->isItalic() || mi->isItalic();
-    return (!bold && !italic) ? sFontCache[Normal]
-           : (bold && !italic) ? sFontCache[Bold]
-           : (!bold && italic) ? sFontCache[Italic]
-           : sFontCache[BoldItalic];
+    return (!bold && !italic) ? sFontCache[Normal] : (bold && !italic) ? sFontCache[Bold] : (!bold && italic) ? sFontCache[Italic] : sFontCache[BoldItalic];
 }
 
-static inline void paint_right_aligned_elided_text(const QString &text, Theme::ContentItem *ci, QPainter *painter, int &left, int top, int &right, Qt::LayoutDirection layoutDir, const QFont &font)
+static inline void paint_right_aligned_elided_text(const QString &text,
+                                                   Theme::ContentItem *ci,
+                                                   QPainter *painter,
+                                                   int &left,
+                                                   int top,
+                                                   int &right,
+                                                   Qt::LayoutDirection layoutDir,
+                                                   const QFont &font)
 {
     painter->setFont(font);
     const QFontMetrics &fontMetrics = cachedFontMetrics(ci);
@@ -148,7 +147,14 @@ static inline void paint_right_aligned_elided_text(const QString &text, Theme::C
     }
 }
 
-static inline void compute_bounding_rect_for_right_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir, const QFont &font)
+static inline void compute_bounding_rect_for_right_aligned_elided_text(const QString &text,
+                                                                       Theme::ContentItem *ci,
+                                                                       int &left,
+                                                                       int top,
+                                                                       int &right,
+                                                                       QRect &outRect,
+                                                                       Qt::LayoutDirection layoutDir,
+                                                                       const QFont &font)
 {
     Q_UNUSED(font)
     const QFontMetrics &fontMetrics = cachedFontMetrics(ci);
@@ -164,7 +170,14 @@ static inline void compute_bounding_rect_for_right_aligned_elided_text(const QSt
     }
 }
 
-static inline void paint_left_aligned_elided_text(const QString &text, Theme::ContentItem *ci, QPainter *painter, int &left, int top, int &right, Qt::LayoutDirection layoutDir, const QFont &font)
+static inline void paint_left_aligned_elided_text(const QString &text,
+                                                  Theme::ContentItem *ci,
+                                                  QPainter *painter,
+                                                  int &left,
+                                                  int top,
+                                                  int &right,
+                                                  Qt::LayoutDirection layoutDir,
+                                                  const QFont &font)
 {
     painter->setFont(font);
     const QFontMetrics &fontMetrics = cachedFontMetrics(ci);
@@ -187,7 +200,14 @@ static inline void paint_left_aligned_elided_text(const QString &text, Theme::Co
     }
 }
 
-static inline void compute_bounding_rect_for_left_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir, const QFont &font)
+static inline void compute_bounding_rect_for_left_aligned_elided_text(const QString &text,
+                                                                      Theme::ContentItem *ci,
+                                                                      int &left,
+                                                                      int top,
+                                                                      int &right,
+                                                                      QRect &outRect,
+                                                                      Qt::LayoutDirection layoutDir,
+                                                                      const QFont &font)
 {
     Q_UNUSED(font)
     const QFontMetrics &fontMetrics = cachedFontMetrics(ci);
@@ -374,7 +394,8 @@ static inline void compute_bounding_rect_for_horizontal_spacer(int &left, int to
     }
 }
 
-static inline void paint_permanent_icon(const QPixmap *pix, Theme::ContentItem *, QPainter *painter, int &left, int top, int &right, bool alignOnRight, int iconSize)
+static inline void
+paint_permanent_icon(const QPixmap *pix, Theme::ContentItem *, QPainter *painter, int &left, int top, int &right, bool alignOnRight, int iconSize)
 {
     if (alignOnRight) {
         right -= iconSize; // this icon is always present
@@ -392,7 +413,8 @@ static inline void paint_permanent_icon(const QPixmap *pix, Theme::ContentItem *
     }
 }
 
-static inline void compute_bounding_rect_for_permanent_icon(Theme::ContentItem *, int &left, int top, int &right, QRect &outRect, bool alignOnRight, int iconSize)
+static inline void
+compute_bounding_rect_for_permanent_icon(Theme::ContentItem *, int &left, int top, int &right, QRect &outRect, bool alignOnRight, int iconSize)
 {
     if (alignOnRight) {
         right -= iconSize; // this icon is always present
@@ -404,7 +426,15 @@ static inline void compute_bounding_rect_for_permanent_icon(Theme::ContentItem *
     }
 }
 
-static inline void paint_boolean_state_icon(bool enabled, const QPixmap *pix, Theme::ContentItem *ci, QPainter *painter, int &left, int top, int &right, bool alignOnRight, int iconSize)
+static inline void paint_boolean_state_icon(bool enabled,
+                                            const QPixmap *pix,
+                                            Theme::ContentItem *ci,
+                                            QPainter *painter,
+                                            int &left,
+                                            int top,
+                                            int &right,
+                                            bool alignOnRight,
+                                            int iconSize)
 {
     if (enabled) {
         paint_permanent_icon(pix, ci, painter, left, top, right, alignOnRight, iconSize);
@@ -413,7 +443,7 @@ static inline void paint_boolean_state_icon(bool enabled, const QPixmap *pix, Th
 
     // off -> icon disabled
     if (ci->hideWhenDisabled()) {
-        return;    // doesn't even take space
+        return; // doesn't even take space
     }
 
     if (ci->softenByBlendingWhenDisabled()) {
@@ -433,7 +463,14 @@ static inline void paint_boolean_state_icon(bool enabled, const QPixmap *pix, Th
     }
 }
 
-static inline void compute_bounding_rect_for_boolean_state_icon(bool enabled, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, bool alignOnRight, int iconSize)
+static inline void compute_bounding_rect_for_boolean_state_icon(bool enabled,
+                                                                Theme::ContentItem *ci,
+                                                                int &left,
+                                                                int top,
+                                                                int &right,
+                                                                QRect &outRect,
+                                                                bool alignOnRight,
+                                                                int iconSize)
 {
     if ((!enabled) && ci->hideWhenDisabled()) {
         outRect = QRect();
@@ -443,7 +480,7 @@ static inline void compute_bounding_rect_for_boolean_state_icon(bool enabled, Th
     compute_bounding_rect_for_permanent_icon(ci, left, top, right, outRect, alignOnRight, iconSize);
 }
 
-static inline void paint_tag_list(const QList< MessageItem::Tag * > &tagList, QPainter *painter, int &left, int top, int &right, bool alignOnRight, int iconSize)
+static inline void paint_tag_list(const QList<MessageItem::Tag *> &tagList, QPainter *painter, int &left, int top, int &right, bool alignOnRight, int iconSize)
 {
     if (alignOnRight) {
         for (const MessageItem::Tag *tag : tagList) {
@@ -465,7 +502,8 @@ static inline void paint_tag_list(const QList< MessageItem::Tag * > &tagList, QP
     }
 }
 
-static inline void compute_bounding_rect_for_tag_list(const QList< MessageItem::Tag * > &tagList, int &left, int top, int &right, QRect &outRect, bool alignOnRight, int iconSize)
+static inline void
+compute_bounding_rect_for_tag_list(const QList<MessageItem::Tag *> &tagList, int &left, int top, int &right, QRect &outRect, bool alignOnRight, int iconSize)
 {
     int width = tagList.count() * (iconSize + gHorizontalItemSpacing);
     if (alignOnRight) {
@@ -534,12 +572,12 @@ static inline QSize compute_size_hint_for_row(const Theme::Row *r, int iconSize,
 void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     if (!index.isValid()) {
-        return;    // bleah
+        return; // bleah
     }
 
     Item *item = itemFromIndex(index);
     if (!item) {
-        return;    // hm...
+        return; // hm...
     }
 
     QStyleOptionViewItem opt = option;
@@ -549,7 +587,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
 
     // Set background color of control if necessary
     if (item->type() == Item::Message) {
-        auto msgItem = static_cast< MessageItem * >(item);
+        auto msgItem = static_cast<MessageItem *>(item);
         if (msgItem->backgroundColor().isValid()) {
             opt.backgroundBrush = QBrush(msgItem->backgroundColor());
         }
@@ -559,12 +597,12 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
     style->drawControl(QStyle::CE_ItemViewItem, &opt, painter, mItemView);
 
     if (!mTheme) {
-        return;    // hm hm...
+        return; // hm hm...
     }
 
     const Theme::Column *skcolumn = mTheme->column(index.column());
     if (!skcolumn) {
-        return;    // bleah
+        return; // bleah
     }
 
     const QList<MessageList::Core::Theme::Row *> *rows;
@@ -587,13 +625,9 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
     switch (item->type()) {
     case Item::Message:
         rows = &(skcolumn->messageRows());
-        messageItem = static_cast< MessageItem * >(item);
+        messageItem = static_cast<MessageItem *>(item);
 
-        if (
-            (!(opt.state & QStyle::State_Enabled))
-            || messageItem->aboutToBeRemoved()
-            || (!messageItem->isValid())
-            ) {
+        if ((!(opt.state & QStyle::State_Enabled)) || messageItem->aboutToBeRemoved() || (!messageItem->isValid())) {
             painter->setOpacity(0.5);
             defaultPen = QPen(opt.palette.brush(QPalette::Disabled, QPalette::Text), 0);
         } else {
@@ -621,10 +655,9 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         right -= gMessageHorizontalMargin;
         left += gMessageHorizontalMargin;
         break;
-    case Item::GroupHeader:
-    {
+    case Item::GroupHeader: {
         rows = &(skcolumn->groupHeaderRows());
-        groupHeaderItem = static_cast< GroupHeaderItem * >(item);
+        groupHeaderItem = static_cast<GroupHeaderItem *>(item);
 
         QPalette::ColorGroup cg = (opt.state & QStyle::State_Enabled) ? QPalette::Normal : QPalette::Disabled;
 
@@ -647,44 +680,36 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         case Theme::CustomColor:
             switch (mTheme->groupHeaderBackgroundStyle()) {
             case Theme::PlainRect:
-                painter->fillRect(
-                    QRect(left, top, right - left, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
-                    QBrush(mGroupHeaderBackgroundColor)
-                    );
+                painter->fillRect(QRect(left, top, right - left, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
+                                  QBrush(mGroupHeaderBackgroundColor));
                 break;
-            case Theme::PlainJoinedRect:
-            {
-                int rleft = (opt.viewItemPosition == QStyleOptionViewItem::Beginning) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne) ? left : opt.rect.left();
-                int rright = (opt.viewItemPosition == QStyleOptionViewItem::End) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne) ? right : opt.rect.left() + opt.rect.width();
-                painter->fillRect(
-                    QRect(rleft, top, rright - rleft, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
-                    QBrush(mGroupHeaderBackgroundColor)
-                    );
+            case Theme::PlainJoinedRect: {
+                int rleft = (opt.viewItemPosition == QStyleOptionViewItem::Beginning) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne)
+                    ? left
+                    : opt.rect.left();
+                int rright = (opt.viewItemPosition == QStyleOptionViewItem::End) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne)
+                    ? right
+                    : opt.rect.left() + opt.rect.width();
+                painter->fillRect(QRect(rleft, top, rright - rleft, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
+                                  QBrush(mGroupHeaderBackgroundColor));
                 break;
             }
             case Theme::RoundedJoinedRect:
                 if (opt.viewItemPosition == QStyleOptionViewItem::Middle) {
-                    painter->fillRect(
-                        QRect(opt.rect.left(), top, opt.rect.width(), opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
-                        QBrush(mGroupHeaderBackgroundColor)
-                        );
+                    painter->fillRect(QRect(opt.rect.left(), top, opt.rect.width(), opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
+                                      QBrush(mGroupHeaderBackgroundColor));
                     break; // don't fall through
                 }
                 if (opt.viewItemPosition == QStyleOptionViewItem::Beginning) {
-                    painter->fillRect(
-                        QRect(opt.rect.left() + opt.rect.width() - 10, top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
-                        QBrush(mGroupHeaderBackgroundColor)
-                        );
+                    painter->fillRect(QRect(opt.rect.left() + opt.rect.width() - 10, top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
+                                      QBrush(mGroupHeaderBackgroundColor));
                 } else if (opt.viewItemPosition == QStyleOptionViewItem::End) {
-                    painter->fillRect(
-                        QRect(opt.rect.left(), top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
-                        QBrush(mGroupHeaderBackgroundColor)
-                        );
+                    painter->fillRect(QRect(opt.rect.left(), top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
+                                      QBrush(mGroupHeaderBackgroundColor));
                 }
                 // fall through anyway
                 Q_FALLTHROUGH();
-            case Theme::RoundedRect:
-            {
+            case Theme::RoundedRect: {
                 painter->setPen(Qt::NoPen);
                 bool hadAntialiasing = painter->renderHints() & QPainter::Antialiasing;
                 if (!hadAntialiasing) {
@@ -694,10 +719,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 painter->setBackgroundMode(Qt::OpaqueMode);
                 int w = right - left;
                 if (w > 0) {
-                    painter->drawRoundedRect(
-                        QRect(left, top, w, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
-                        4.0, 4.0
-                        );
+                    painter->drawRoundedRect(QRect(left, top, w, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)), 4.0, 4.0);
                 }
                 if (!hadAntialiasing) {
                     painter->setRenderHint(QPainter::Antialiasing, false);
@@ -705,35 +727,26 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 painter->setBackgroundMode(Qt::TransparentMode);
                 break;
             }
-            case Theme::GradientJoinedRect:
-            {
+            case Theme::GradientJoinedRect: {
                 // FIXME: Could cache this brush
                 QLinearGradient gradient(0, top, 0, top + opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2));
                 gradient.setColorAt(0.0, KColorScheme::shade(mGroupHeaderBackgroundColor, KColorScheme::LightShade, 0.3));
                 gradient.setColorAt(1.0, mGroupHeaderBackgroundColor);
                 if (opt.viewItemPosition == QStyleOptionViewItem::Middle) {
-                    painter->fillRect(
-                        QRect(opt.rect.left(), top, opt.rect.width(), opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
-                        QBrush(gradient)
-                        );
+                    painter->fillRect(QRect(opt.rect.left(), top, opt.rect.width(), opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
+                                      QBrush(gradient));
                     break; // don't fall through
                 }
                 if (opt.viewItemPosition == QStyleOptionViewItem::Beginning) {
-                    painter->fillRect(
-                        QRect(opt.rect.left() + opt.rect.width() - 10, top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
-                        QBrush(gradient)
-                        );
+                    painter->fillRect(QRect(opt.rect.left() + opt.rect.width() - 10, top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
+                                      QBrush(gradient));
                 } else if (opt.viewItemPosition == QStyleOptionViewItem::End) {
-                    painter->fillRect(
-                        QRect(opt.rect.left(), top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
-                        QBrush(gradient)
-                        );
+                    painter->fillRect(QRect(opt.rect.left(), top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)), QBrush(gradient));
                 }
                 // fall through anyway
                 Q_FALLTHROUGH();
             }
-            case Theme::GradientRect:
-            {
+            case Theme::GradientRect: {
                 // FIXME: Could cache this brush
                 QLinearGradient gradient(0, top, 0, top + opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2));
                 gradient.setColorAt(0.0, KColorScheme::shade(mGroupHeaderBackgroundColor, KColorScheme::LightShade, 0.3));
@@ -747,10 +760,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 painter->setBackgroundMode(Qt::OpaqueMode);
                 int w = right - left;
                 if (w > 0) {
-                    painter->drawRoundedRect(
-                        QRect(left, top, w, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
-                        4.0, 4.0
-                        );
+                    painter->drawRoundedRect(QRect(left, top, w, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)), 4.0, 4.0);
                 }
                 if (!hadAntialiasing) {
                     painter->setRenderHint(QPainter::Antialiasing, false);
@@ -766,10 +776,13 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 opt.palette.setColor(cg, QPalette::Highlight, mGroupHeaderBackgroundColor);
                 style->drawControl(QStyle::CE_ItemViewItem, &opt, painter, mItemView);
                 break;
-            case Theme::StyledJoinedRect:
-            {
-                int rleft = (opt.viewItemPosition == QStyleOptionViewItem::Beginning) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne) ? left : opt.rect.left();
-                int rright = (opt.viewItemPosition == QStyleOptionViewItem::End) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne) ? right : opt.rect.left() + opt.rect.width();
+            case Theme::StyledJoinedRect: {
+                int rleft = (opt.viewItemPosition == QStyleOptionViewItem::Beginning) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne)
+                    ? left
+                    : opt.rect.left();
+                int rright = (opt.viewItemPosition == QStyleOptionViewItem::End) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne)
+                    ? right
+                    : opt.rect.left() + opt.rect.width();
                 opt.rect = QRect(rleft, top, rright - rleft, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2));
                 opt.state |= QStyle::State_Selected;
                 opt.palette.setColor(cg, QPalette::Highlight, mGroupHeaderBackgroundColor);
@@ -811,11 +824,9 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                         // merge the colors
                         QColor nonDefault = defaultPen.color();
                         QColor custom = ci->customColor();
-                        QColor merged(
-                            (nonDefault.red() + custom.red()) >> 1,
-                            (nonDefault.green() + custom.green()) >> 1,
-                            (nonDefault.blue() + custom.blue()) >> 1
-                            );
+                        QColor merged((nonDefault.red() + custom.red()) >> 1,
+                                      (nonDefault.green() + custom.green()) >> 1,
+                                      (nonDefault.blue() + custom.blue()) >> 1);
                         painter->setPen(QPen(merged));
                     } else {
                         painter->setPen(QPen(ci->customColor()));
@@ -832,16 +843,13 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 paint_right_aligned_elided_text(item->subject(), ci, painter, l, top, r, layoutDir, font);
                 break;
             case Theme::ContentItem::SenderOrReceiver:
-                paint_right_aligned_elided_text(item->displaySenderOrReceiver(),
-                                                ci, painter, l, top, r, layoutDir, font);
+                paint_right_aligned_elided_text(item->displaySenderOrReceiver(), ci, painter, l, top, r, layoutDir, font);
                 break;
             case Theme::ContentItem::Receiver:
-                paint_right_aligned_elided_text(item->displayReceiver(),
-                                                ci, painter, l, top, r, layoutDir, font);
+                paint_right_aligned_elided_text(item->displayReceiver(), ci, painter, l, top, r, layoutDir, font);
                 break;
             case Theme::ContentItem::Sender:
-                paint_right_aligned_elided_text(item->displaySender(),
-                                                ci, painter, l, top, r, layoutDir, font);
+                paint_right_aligned_elided_text(item->displaySender(), ci, painter, l, top, r, layoutDir, font);
                 break;
             case Theme::ContentItem::Date:
                 paint_right_aligned_elided_text(item->formattedDate(), ci, painter, l, top, r, layoutDir, font);
@@ -861,95 +869,153 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 }
                 break;
             case Theme::ContentItem::ReadStateIcon:
-                paint_permanent_icon(get_read_state_icon(mTheme, item), ci, painter, l, top, r,
-                                     layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                paint_permanent_icon(get_read_state_icon(mTheme, item), ci, painter, l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::CombinedReadRepliedStateIcon:
                 if (messageItem) {
-                    paint_permanent_icon(get_combined_read_replied_state_icon(mTheme, messageItem), ci, painter,
-                                         l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    paint_permanent_icon(get_combined_read_replied_state_icon(mTheme, messageItem),
+                                         ci,
+                                         painter,
+                                         l,
+                                         top,
+                                         r,
+                                         layoutDir == Qt::LeftToRight,
+                                         mTheme->iconSize());
                 }
                 break;
-            case Theme::ContentItem::ExpandedStateIcon:
-            {
-                const QPixmap *pix = item->childItemCount() > 0 ? mTheme->pixmap((option.state & QStyle::State_Open) ? Theme::IconShowLess : Theme::IconShowMore) : nullptr;
-                paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconShowMore),
-                                         ci, painter, l, top, r, layoutDir == Qt::LeftToRight,
+            case Theme::ContentItem::ExpandedStateIcon: {
+                const QPixmap *pix =
+                    item->childItemCount() > 0 ? mTheme->pixmap((option.state & QStyle::State_Open) ? Theme::IconShowLess : Theme::IconShowMore) : nullptr;
+                paint_boolean_state_icon(pix != nullptr,
+                                         pix ? pix : mTheme->pixmap(Theme::IconShowMore),
+                                         ci,
+                                         painter,
+                                         l,
+                                         top,
+                                         r,
+                                         layoutDir == Qt::LeftToRight,
                                          mTheme->iconSize());
                 break;
             }
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_replied_state_icon(mTheme, messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconReplied),
-                                             ci, painter, l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    paint_boolean_state_icon(pix != nullptr,
+                                             pix ? pix : mTheme->pixmap(Theme::IconReplied),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir == Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::EncryptionStateIcon:
                 if (messageItem) {
                     bool enabled;
                     const QPixmap *pix = get_encryption_state_icon(mTheme, messageItem, &enabled);
-                    paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r,
-                                             layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::SignatureStateIcon:
                 if (messageItem) {
                     bool enabled;
                     const QPixmap *pix = get_signature_state_icon(mTheme, messageItem, &enabled);
-                    paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r,
-                                             layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_spam_ham_state_icon(mTheme, messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconSpam),
-                                             ci, painter, l, top, r, layoutDir == Qt::LeftToRight,
+                    paint_boolean_state_icon(pix != nullptr,
+                                             pix ? pix : mTheme->pixmap(Theme::IconSpam),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir == Qt::LeftToRight,
                                              mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_watched_ignored_state_icon(mTheme, messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconWatched),
-                                             ci, painter, l, top, r, layoutDir == Qt::LeftToRight,
+                    paint_boolean_state_icon(pix != nullptr,
+                                             pix ? pix : mTheme->pixmap(Theme::IconWatched),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir == Qt::LeftToRight,
                                              mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AttachmentStateIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->status().hasAttachment(),
-                                             mTheme->pixmap(Theme::IconAttachment), ci, painter,
-                                             l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                                             mTheme->pixmap(Theme::IconAttachment),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir == Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AnnotationIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->hasAnnotation(),
-                                             mTheme->pixmap(Theme::IconAnnotation), ci, painter,
-                                             l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                                             mTheme->pixmap(Theme::IconAnnotation),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir == Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::InvitationIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->status().hasInvitation(),
-                                             mTheme->pixmap(Theme::IconInvitation), ci, painter,
-                                             l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                                             mTheme->pixmap(Theme::IconInvitation),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir == Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::ActionItemStateIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->status().isToAct(),
-                                             mTheme->pixmap(Theme::IconActionItem), ci, painter,
-                                             l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                                             mTheme->pixmap(Theme::IconActionItem),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir == Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::ImportantStateIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->status().isImportant(),
-                                             mTheme->pixmap(Theme::IconImportant), ci, painter, l,
-                                             top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                                             mTheme->pixmap(Theme::IconImportant),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir == Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::VerticalLine:
@@ -960,7 +1026,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 break;
             case Theme::ContentItem::TagList:
                 if (messageItem) {
-                    const QList< MessageItem::Tag * > tagList = messageItem->tagList();
+                    const QList<MessageItem::Tag *> tagList = messageItem->tagList();
                     paint_tag_list(tagList, painter, l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
@@ -978,11 +1044,9 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                         // merge the colors
                         QColor nonDefault = defaultPen.color();
                         QColor custom = ci->customColor();
-                        QColor merged(
-                            (nonDefault.red() + custom.red()) >> 1,
-                            (nonDefault.green() + custom.green()) >> 1,
-                            (nonDefault.blue() + custom.blue()) >> 1
-                            );
+                        QColor merged((nonDefault.red() + custom.red()) >> 1,
+                                      (nonDefault.green() + custom.green()) >> 1,
+                                      (nonDefault.blue() + custom.blue()) >> 1);
                         painter->setPen(QPen(merged));
                     } else {
                         painter->setPen(QPen(ci->customColor()));
@@ -999,16 +1063,13 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 paint_left_aligned_elided_text(item->subject(), ci, painter, l, top, r, layoutDir, font);
                 break;
             case Theme::ContentItem::SenderOrReceiver:
-                paint_left_aligned_elided_text(item->displaySenderOrReceiver(),
-                                               ci, painter, l, top, r, layoutDir, font);
+                paint_left_aligned_elided_text(item->displaySenderOrReceiver(), ci, painter, l, top, r, layoutDir, font);
                 break;
             case Theme::ContentItem::Receiver:
-                paint_left_aligned_elided_text(item->displayReceiver(),
-                                               ci, painter, l, top, r, layoutDir, font);
+                paint_left_aligned_elided_text(item->displayReceiver(), ci, painter, l, top, r, layoutDir, font);
                 break;
             case Theme::ContentItem::Sender:
-                paint_left_aligned_elided_text(item->displaySender(),
-                                               ci, painter, l, top, r, layoutDir, font);
+                paint_left_aligned_elided_text(item->displaySender(), ci, painter, l, top, r, layoutDir, font);
                 break;
             case Theme::ContentItem::Date:
                 paint_left_aligned_elided_text(item->formattedDate(), ci, painter, l, top, r, layoutDir, font);
@@ -1028,92 +1089,153 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 }
                 break;
             case Theme::ContentItem::ReadStateIcon:
-                paint_permanent_icon(get_read_state_icon(mTheme, item), ci, painter, l, top, r,
-                                     layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                paint_permanent_icon(get_read_state_icon(mTheme, item), ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::CombinedReadRepliedStateIcon:
                 if (messageItem) {
-                    paint_permanent_icon(get_combined_read_replied_state_icon(mTheme, messageItem), ci, painter,
-                                         l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    paint_permanent_icon(get_combined_read_replied_state_icon(mTheme, messageItem),
+                                         ci,
+                                         painter,
+                                         l,
+                                         top,
+                                         r,
+                                         layoutDir != Qt::LeftToRight,
+                                         mTheme->iconSize());
                 }
                 break;
-            case Theme::ContentItem::ExpandedStateIcon:
-            {
-                const QPixmap *pix = item->childItemCount() > 0 ? mTheme->pixmap((option.state & QStyle::State_Open) ? Theme::IconShowLess : Theme::IconShowMore) : nullptr;
-                paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconShowMore),
-                                         ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+            case Theme::ContentItem::ExpandedStateIcon: {
+                const QPixmap *pix =
+                    item->childItemCount() > 0 ? mTheme->pixmap((option.state & QStyle::State_Open) ? Theme::IconShowLess : Theme::IconShowMore) : nullptr;
+                paint_boolean_state_icon(pix != nullptr,
+                                         pix ? pix : mTheme->pixmap(Theme::IconShowMore),
+                                         ci,
+                                         painter,
+                                         l,
+                                         top,
+                                         r,
+                                         layoutDir != Qt::LeftToRight,
+                                         mTheme->iconSize());
                 break;
             }
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_replied_state_icon(mTheme, messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconReplied),
-                                             ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    paint_boolean_state_icon(pix != nullptr,
+                                             pix ? pix : mTheme->pixmap(Theme::IconReplied),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir != Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::EncryptionStateIcon:
                 if (messageItem) {
                     bool enabled;
                     const QPixmap *pix = get_encryption_state_icon(mTheme, messageItem, &enabled);
-                    paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r,
-                                             layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::SignatureStateIcon:
                 if (messageItem) {
                     bool enabled;
                     const QPixmap *pix = get_signature_state_icon(mTheme, messageItem, &enabled);
-                    paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r,
-                                             layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_spam_ham_state_icon(mTheme, messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconSpam),
-                                             ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    paint_boolean_state_icon(pix != nullptr,
+                                             pix ? pix : mTheme->pixmap(Theme::IconSpam),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir != Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_watched_ignored_state_icon(mTheme, messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconWatched),
-                                             ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    paint_boolean_state_icon(pix != nullptr,
+                                             pix ? pix : mTheme->pixmap(Theme::IconWatched),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir != Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AttachmentStateIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->status().hasAttachment(),
-                                             mTheme->pixmap(Theme::IconAttachment), ci, painter,
-                                             l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                                             mTheme->pixmap(Theme::IconAttachment),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir != Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AnnotationIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->hasAnnotation(),
-                                             mTheme->pixmap(Theme::IconAnnotation), ci, painter,
-                                             l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                                             mTheme->pixmap(Theme::IconAnnotation),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir != Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::InvitationIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->status().hasInvitation(),
-                                             mTheme->pixmap(Theme::IconInvitation), ci, painter,
-                                             l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                                             mTheme->pixmap(Theme::IconInvitation),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir != Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::ActionItemStateIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->status().isToAct(),
-                                             mTheme->pixmap(Theme::IconActionItem), ci, painter,
-                                             l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                                             mTheme->pixmap(Theme::IconActionItem),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir != Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::ImportantStateIcon:
                 if (messageItem) {
                     paint_boolean_state_icon(messageItem->status().isImportant(),
-                                             mTheme->pixmap(Theme::IconImportant), ci, painter, l,
-                                             top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                                             mTheme->pixmap(Theme::IconImportant),
+                                             ci,
+                                             painter,
+                                             l,
+                                             top,
+                                             r,
+                                             layoutDir != Qt::LeftToRight,
+                                             mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::VerticalLine:
@@ -1124,7 +1246,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 break;
             case Theme::ContentItem::TagList:
                 if (messageItem) {
-                    const QList< MessageItem::Tag * > tagList = messageItem->tagList();
+                    const QList<MessageItem::Tag *> tagList = messageItem->tagList();
                     paint_tag_list(tagList, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
@@ -1147,28 +1269,28 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
     mHitContentItem = nullptr;
 
     if (!mTheme) {
-        return false;    // hm hm...
+        return false; // hm hm...
     }
 
     mHitIndex = mItemView->indexAt(viewportPoint);
 
     if (!mHitIndex.isValid()) {
-        return false;    // bleah
+        return false; // bleah
     }
 
     mHitItem = itemFromIndex(mHitIndex);
     if (!mHitItem) {
-        return false;    // hm...
+        return false; // hm...
     }
 
     mHitItemRect = mItemView->visualRect(mHitIndex);
 
     mHitColumn = mTheme->column(mHitIndex.column());
     if (!mHitColumn) {
-        return false;    // bleah
+        return false; // bleah
     }
 
-    const QList< Theme::Row * > *rows;  // I'd like to have it as reference, but gcc complains...
+    const QList<Theme::Row *> *rows; // I'd like to have it as reference, but gcc complains...
 
     MessageItem *messageItem = nullptr;
     GroupHeaderItem *groupHeaderItem = nullptr;
@@ -1185,7 +1307,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
     case Item::Message:
         mHitRowIsMessageRow = true;
         rows = &(mHitColumn->messageRows());
-        messageItem = static_cast< MessageItem * >(mHitItem);
+        messageItem = static_cast<MessageItem *>(mHitItem);
         // FIXME: paint eventual background here
 
         top += gMessageVerticalMargin;
@@ -1195,7 +1317,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
     case Item::GroupHeader:
         mHitRowIsMessageRow = false;
         rows = &(mHitColumn->groupHeaderRows());
-        groupHeaderItem = static_cast< GroupHeaderItem * >(mHitItem);
+        groupHeaderItem = static_cast<GroupHeaderItem *>(mHitItem);
 
         top += gGroupHeaderOuterVerticalMargin + gGroupHeaderInnerVerticalMargin;
         right -= gGroupHeaderOuterHorizontalMargin + gGroupHeaderInnerHorizontalMargin;
@@ -1218,7 +1340,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
         QSize rowSizeHint = compute_size_hint_for_row(row, mTheme->iconSize(), mHitItem);
 
         if ((viewportPoint.y() < top) && (rowIdx > 0)) {
-            break;    // not this row (tough we should have already found it... probably clicked upper margin)
+            break; // not this row (tough we should have already found it... probably clicked upper margin)
         }
 
         int bottom = top + rowSizeHint.height();
@@ -1256,16 +1378,13 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                 compute_bounding_rect_for_right_aligned_elided_text(mHitItem->subject(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
                 break;
             case Theme::ContentItem::SenderOrReceiver:
-                compute_bounding_rect_for_right_aligned_elided_text(mHitItem->displaySenderOrReceiver(),
-                                                                    ci, l, top, r, mHitContentItemRect, layoutDir, font);
+                compute_bounding_rect_for_right_aligned_elided_text(mHitItem->displaySenderOrReceiver(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
                 break;
             case Theme::ContentItem::Receiver:
-                compute_bounding_rect_for_right_aligned_elided_text(mHitItem->displayReceiver(),
-                                                                    ci, l, top, r, mHitContentItemRect, layoutDir, font);
+                compute_bounding_rect_for_right_aligned_elided_text(mHitItem->displayReceiver(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
                 break;
             case Theme::ContentItem::Sender:
-                compute_bounding_rect_for_right_aligned_elided_text(mHitItem->displaySender(),
-                                                                    ci, l, top, r, mHitContentItemRect, layoutDir, font);
+                compute_bounding_rect_for_right_aligned_elided_text(mHitItem->displaySender(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
                 break;
             case Theme::ContentItem::Date:
                 compute_bounding_rect_for_right_aligned_elided_text(mHitItem->formattedDate(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
@@ -1291,12 +1410,26 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                 compute_bounding_rect_for_permanent_icon(ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::ExpandedStateIcon:
-                compute_bounding_rect_for_boolean_state_icon(mHitItem->childItemCount() > 0, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                compute_bounding_rect_for_boolean_state_icon(mHitItem->childItemCount() > 0,
+                                                             ci,
+                                                             l,
+                                                             top,
+                                                             r,
+                                                             mHitContentItemRect,
+                                                             layoutDir == Qt::LeftToRight,
+                                                             mTheme->iconSize());
                 break;
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_replied_state_icon(mTheme, messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr,
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir == Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::EncryptionStateIcon:
@@ -1316,38 +1449,87 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_spam_ham_state_icon(mTheme, messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr,
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir == Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_watched_ignored_state_icon(mTheme, messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr,
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir == Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AttachmentStateIcon:
                 if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().hasAttachment(), ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().hasAttachment(),
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir == Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AnnotationIcon:
                 if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->hasAnnotation(), ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(messageItem->hasAnnotation(),
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir == Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::InvitationIcon:
                 if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().hasInvitation(), ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().hasInvitation(),
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir == Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::ActionItemStateIcon:
                 if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().isToAct(), ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().isToAct(),
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir == Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::ImportantStateIcon:
                 if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().isImportant(), ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().isImportant(),
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir == Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::VerticalLine:
@@ -1358,7 +1540,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                 break;
             case Theme::ContentItem::TagList:
                 if (messageItem) {
-                    const QList< MessageItem::Tag * > tagList = messageItem->tagList();
+                    const QList<MessageItem::Tag *> tagList = messageItem->tagList();
                     compute_bounding_rect_for_tag_list(tagList, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
@@ -1377,7 +1559,8 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                         return true;
                     }
 
-                    int inexactDistance = viewportPoint.x() > inexactRect.right() ? viewportPoint.x() - inexactRect.right() : inexactRect.left() - viewportPoint.x();
+                    int inexactDistance =
+                        viewportPoint.x() > inexactRect.right() ? viewportPoint.x() - inexactRect.right() : inexactRect.left() - viewportPoint.x();
                     if (inexactDistance < bestInexactDistance) {
                         bestInexactDistance = inexactDistance;
                         bestInexactRect = mHitContentItemRect;
@@ -1404,16 +1587,13 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                 compute_bounding_rect_for_left_aligned_elided_text(mHitItem->subject(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
                 break;
             case Theme::ContentItem::SenderOrReceiver:
-                compute_bounding_rect_for_left_aligned_elided_text(mHitItem->displaySenderOrReceiver(),
-                                                                   ci, l, top, r, mHitContentItemRect, layoutDir, font);
+                compute_bounding_rect_for_left_aligned_elided_text(mHitItem->displaySenderOrReceiver(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
                 break;
             case Theme::ContentItem::Receiver:
-                compute_bounding_rect_for_left_aligned_elided_text(mHitItem->displayReceiver(),
-                                                                   ci, l, top, r, mHitContentItemRect, layoutDir, font);
+                compute_bounding_rect_for_left_aligned_elided_text(mHitItem->displayReceiver(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
                 break;
             case Theme::ContentItem::Sender:
-                compute_bounding_rect_for_left_aligned_elided_text(mHitItem->displaySender(),
-                                                                   ci, l, top, r, mHitContentItemRect, layoutDir, font);
+                compute_bounding_rect_for_left_aligned_elided_text(mHitItem->displaySender(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
                 break;
             case Theme::ContentItem::Date:
                 compute_bounding_rect_for_left_aligned_elided_text(mHitItem->formattedDate(), ci, l, top, r, mHitContentItemRect, layoutDir, font);
@@ -1439,12 +1619,26 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                 compute_bounding_rect_for_permanent_icon(ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::ExpandedStateIcon:
-                compute_bounding_rect_for_boolean_state_icon(mHitItem->childItemCount() > 0, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                compute_bounding_rect_for_boolean_state_icon(mHitItem->childItemCount() > 0,
+                                                             ci,
+                                                             l,
+                                                             top,
+                                                             r,
+                                                             mHitContentItemRect,
+                                                             layoutDir != Qt::LeftToRight,
+                                                             mTheme->iconSize());
                 break;
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_replied_state_icon(mTheme, messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr,
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir != Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::EncryptionStateIcon:
@@ -1464,38 +1658,87 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_spam_ham_state_icon(mTheme, messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr,
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir != Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_watched_ignored_state_icon(mTheme, messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr,
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir != Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AttachmentStateIcon:
                 if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().hasAttachment(), ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().hasAttachment(),
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir != Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AnnotationIcon:
                 if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->hasAnnotation(), ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(messageItem->hasAnnotation(),
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir != Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::InvitationIcon:
                 if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().hasInvitation(), ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().hasInvitation(),
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir != Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::ActionItemStateIcon:
                 if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().isToAct(), ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().isToAct(),
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir != Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::ImportantStateIcon:
                 if (messageItem) {
-                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().isImportant(), ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(messageItem->status().isImportant(),
+                                                                 ci,
+                                                                 l,
+                                                                 top,
+                                                                 r,
+                                                                 mHitContentItemRect,
+                                                                 layoutDir != Qt::LeftToRight,
+                                                                 mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::VerticalLine:
@@ -1506,7 +1749,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                 break;
             case Theme::ContentItem::TagList:
                 if (messageItem) {
-                    const QList< MessageItem::Tag * > tagList = messageItem->tagList();
+                    const QList<MessageItem::Tag *> tagList = messageItem->tagList();
                     compute_bounding_rect_for_tag_list(tagList, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
@@ -1525,7 +1768,8 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                         return true;
                     }
 
-                    int inexactDistance = viewportPoint.x() > inexactRect.right() ? viewportPoint.x() - inexactRect.right() : inexactRect.left() - viewportPoint.x();
+                    int inexactDistance =
+                        viewportPoint.x() > inexactRect.right() ? viewportPoint.x() - inexactRect.right() : inexactRect.left() - viewportPoint.x();
                     if (inexactDistance < bestInexactDistance) {
                         bestInexactDistance = inexactDistance;
                         bestInexactRect = mHitContentItemRect;
@@ -1609,15 +1853,15 @@ QRect ThemeDelegate::hitContentItemRect() const
 QSize ThemeDelegate::sizeHintForItemTypeAndColumn(Item::Type type, int column, const Item *item) const
 {
     if (!mTheme) {
-        return QSize(16, 16);    // bleah
+        return QSize(16, 16); // bleah
     }
 
     const Theme::Column *skcolumn = mTheme->column(column);
     if (!skcolumn) {
-        return QSize(16, 16);    // bleah
+        return QSize(16, 16); // bleah
     }
 
-    const QList< Theme::Row * > *rows;  // I'd like to have it as reference, but gcc complains...
+    const QList<Theme::Row *> *rows; // I'd like to have it as reference, but gcc complains...
 
     // The sizeHint() is layout direction independent.
 
@@ -1638,14 +1882,14 @@ QSize ThemeDelegate::sizeHintForItemTypeAndColumn(Item::Type type, int column, c
         marginw = (gGroupHeaderOuterVerticalMargin + gGroupHeaderInnerVerticalMargin) << 1;
         break;
     default:
-        return QSize(16, 16);   // bug
+        return QSize(16, 16); // bug
         break;
     }
 
     int totalh = 0;
     int maxw = 0;
 
-    for (QList< Theme::Row * >::ConstIterator rowit = rows->constBegin(), endRowIt = rows->constEnd(); rowit != endRowIt; ++rowit) {
+    for (QList<Theme::Row *>::ConstIterator rowit = rows->constBegin(), endRowIt = rows->constEnd(); rowit != endRowIt; ++rowit) {
         const QSize sh = compute_size_hint_for_row((*rowit), mTheme->iconSize(), item);
         totalh += sh.height();
         if (sh.width() > maxw) {
@@ -1659,12 +1903,12 @@ QSize ThemeDelegate::sizeHintForItemTypeAndColumn(Item::Type type, int column, c
 QSize ThemeDelegate::sizeHint(const QStyleOptionViewItem &, const QModelIndex &index) const
 {
     if (!mTheme || !index.isValid()) {
-        return QSize(16, 16);    // hm hm...
+        return QSize(16, 16); // hm hm...
     }
 
     Item *item = itemFromIndex(index);
     if (!item) {
-        return QSize(16, 16);    // hm...
+        return QSize(16, 16); // hm...
     }
 
     const Item::Type type = item->type();

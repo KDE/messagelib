@@ -40,11 +40,11 @@ void AttachmentFromMimeContentJobTest::testAttachment()
     content->contentDescription()->fromUnicodeString(description, charset);
     content->setBody(data);
     content->assemble();
-    //qCDebug(MESSAGECORE_LOG) << "Encoded content:" << content->encodedContent();
-    //qCDebug(MESSAGECORE_LOG) << "Decoded content:" << content->decodedContent();
+    // qCDebug(MESSAGECORE_LOG) << "Encoded content:" << content->encodedContent();
+    // qCDebug(MESSAGECORE_LOG) << "Decoded content:" << content->decodedContent();
 
     auto job = new AttachmentFromMimeContentJob(content, this);
-    QVERIFY(job->uiDelegate() == nullptr);   // No GUI thankyouverymuch.
+    QVERIFY(job->uiDelegate() == nullptr); // No GUI thankyouverymuch.
     VERIFYEXEC(job);
     delete content;
     content = nullptr;
@@ -55,7 +55,7 @@ void AttachmentFromMimeContentJobTest::testAttachment()
     QCOMPARE(part->mimeType(), mimeType);
     QCOMPARE(part->name(), name);
     QCOMPARE(part->description(), description);
-    //QCOMPARE( part->charset(), charset ); // TODO will probably need charsets in AttachmentPart :(
+    // QCOMPARE( part->charset(), charset ); // TODO will probably need charsets in AttachmentPart :(
     QCOMPARE(part->fileName(), fileName);
     QVERIFY(part->encoding() == encoding);
     QVERIFY(part->isInline());

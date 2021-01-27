@@ -6,9 +6,9 @@
 
 #include "sendlatertimedatewidget_p.h"
 
-#include <KTimeComboBox>
 #include <KDateComboBox>
 #include <KLocalizedString>
+#include <KTimeComboBox>
 #include <QLineEdit>
 
 #include <QHBoxLayout>
@@ -28,7 +28,8 @@ SendLaterTimeDateWidget::SendLaterTimeDateWidget(QWidget *parent)
     mTimeComboBox->setObjectName(QStringLiteral("time_sendlater"));
 
     mDateComboBox.reset(new KDateComboBox);
-    mDateComboBox->setOptions(KDateComboBox::EditDate | KDateComboBox::SelectDate | KDateComboBox::DatePicker | KDateComboBox::DateKeywords | KDateComboBox::WarnOnInvalid);
+    mDateComboBox->setOptions(KDateComboBox::EditDate | KDateComboBox::SelectDate | KDateComboBox::DatePicker | KDateComboBox::DateKeywords
+                              | KDateComboBox::WarnOnInvalid);
     mDateComboBox->setObjectName(QStringLiteral("date_sendlater"));
     connect(mDateComboBox->lineEdit(), &QLineEdit::textChanged, this, &SendLaterTimeDateWidget::dateChanged);
     mDateComboBox->setMinimumDate(t.date(), i18n("You cannot select a date prior to the current date."));

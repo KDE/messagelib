@@ -7,13 +7,13 @@
 
 #include "showonlymimeparttest.h"
 
-#include "util.h"
 #include "setupenv.h"
 #include "testcsshelper.h"
+#include "util.h"
 
-#include <MimeTreeParser/ObjectTreeParser>
-#include <MimeTreeParser/MessagePart>
 #include <MessageViewer/FileHtmlWriter>
+#include <MimeTreeParser/MessagePart>
+#include <MimeTreeParser/ObjectTreeParser>
 
 #include <QString>
 #include <QTest>

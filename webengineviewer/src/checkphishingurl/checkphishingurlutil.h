@@ -7,18 +7,14 @@
 #ifndef CHECKPHISHINGURLUTIL_H
 #define CHECKPHISHINGURLUTIL_H
 
-#include <QString>
-#include <QObject>
 #include "webengineviewer_export.h"
-namespace WebEngineViewer {
-namespace CheckPhishingUrlUtil {
-enum UrlStatus {
-    Ok = 0,
-    MalWare = 1,
-    BrokenNetwork = 2,
-    InvalidUrl = 3,
-    Unknown = 4
-};
+#include <QObject>
+#include <QString>
+namespace WebEngineViewer
+{
+namespace CheckPhishingUrlUtil
+{
+enum UrlStatus { Ok = 0, MalWare = 1, BrokenNetwork = 2, InvalidUrl = 3, Unknown = 4 };
 
 QString apiKey();
 WEBENGINEVIEWER_EXPORT QString versionApps();

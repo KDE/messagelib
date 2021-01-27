@@ -10,7 +10,8 @@
 
 #include <QObject>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class Composer;
 }
 

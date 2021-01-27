@@ -10,8 +10,10 @@
 #include "messageviewer_private_export.h"
 #include <QString>
 
-namespace MessageViewer {
-namespace DKIMAuthenticationStatusInfoUtil {
+namespace MessageViewer
+{
+namespace DKIMAuthenticationStatusInfoUtil
+{
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString wsp_p();
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString vchar_p();
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString letDig_p();

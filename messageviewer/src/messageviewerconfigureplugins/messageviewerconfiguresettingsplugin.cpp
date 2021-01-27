@@ -29,5 +29,5 @@ MessageViewerConfigureSettingsPlugin::~MessageViewerConfigureSettingsPlugin()
 void MessageViewerConfigureSettingsPlugin::showConfigureDialog(QWidget *parent)
 {
     Q_UNUSED(parent)
-    //Reimplement
+    // Reimplement
 }

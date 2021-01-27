@@ -5,10 +5,10 @@
 
 #include "mailinglist.h"
 
+#include "messagecore_debug.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <QUrl>
-#include "messagecore_debug.h"
 
 #include <QSharedData>
 #include <QStringList>
@@ -69,9 +69,7 @@ static QString check_delivered_to(const KMime::Message::Ptr &message, QByteArray
     if (auto hrd = message->headerByType("Delivered-To")) {
         header = hrd->asUnicodeString();
     }
-    if (header.isNull()
-        || header.left(13) != QLatin1String("mailing list")
-        || header.indexOf(QLatin1Char('@')) == -1) {
+    if (header.isNull() || header.left(13) != QLatin1String("mailing list") || header.indexOf(QLatin1Char('@')) == -1) {
         return QString();
     }
 
@@ -170,8 +168,7 @@ static QString check_mailing_list(const KMime::Message::Ptr &message, QByteArray
         return QString();
     }
 
-    if (header.left(5) != QLatin1String("list ")
-        || header.indexOf(QLatin1Char('@')) < 5) {
+    if (header.left(5) != QLatin1String("list ") || header.indexOf(QLatin1Char('@')) < 5) {
         return QString();
     }
 
@@ -223,17 +220,15 @@ static QString check_x_ml_name(const KMime::Message::Ptr &message, QByteArray &h
     return header;
 }
 
-static const MagicDetectorFunc magic_detectors[] = {
-    check_list_id,
-    check_list_post,
-    check_sender,
-    check_x_mailing_list,
-    check_mailing_list,
-    check_delivered_to,
-    check_x_beenthere,
-    check_x_loop,
-    check_x_ml_name
-};
+static const MagicDetectorFunc magic_detectors[] = {check_list_id,
+                                                    check_list_post,
+                                                    check_sender,
+                                                    check_x_mailing_list,
+                                                    check_mailing_list,
+                                                    check_delivered_to,
+                                                    check_x_beenthere,
+                                                    check_x_loop,
+                                                    check_x_ml_name};
 
 static QStringList headerToAddress(const QString &header)
 {
@@ -372,16 +367,9 @@ MailingList &MailingList::operator=(const MailingList &other)
 
 bool MailingList::operator==(const MailingList &other) const
 {
-    return other.features() == d->mFeatures
-           && other.handler() == d->mHandler
-           && other.postUrls() == d->mPostUrls
-           && other.subscribeUrls() == d->mSubscribeUrls
-           && other.unsubscribeUrls() == d->mUnsubscribeUrls
-           && other.helpUrls() == d->mHelpUrls
-           && other.archiveUrls() == d->mArchiveUrls
-           && other.ownerUrls() == d->mOwnerUrls
-           && other.archivedAtUrls() == d->mArchivedAtUrls
-           && other.id() == d->mId;
+    return other.features() == d->mFeatures && other.handler() == d->mHandler && other.postUrls() == d->mPostUrls && other.subscribeUrls() == d->mSubscribeUrls
+        && other.unsubscribeUrls() == d->mUnsubscribeUrls && other.helpUrls() == d->mHelpUrls && other.archiveUrls() == d->mArchiveUrls
+        && other.ownerUrls() == d->mOwnerUrls && other.archivedAtUrls() == d->mArchivedAtUrls && other.id() == d->mId;
 }
 
 MailingList::~MailingList()
@@ -591,16 +579,15 @@ void MailingList::writeConfig(KConfigGroup &group) const
     }
 
     /* Note: mArchivedAtUrl deliberately not saved here as it refers to a single
-    * instance of a message rather than an element of a general mailing list.
-    * http://reviewboard.kde.org/r/1768/#review2783
-    */
+     * instance of a message rather than an element of a general mailing list.
+     * http://reviewboard.kde.org/r/1768/#review2783
+     */
 }
 
 void MailingList::readConfig(const KConfigGroup &group)
 {
     d->mFeatures = static_cast<MailingList::Features>(group.readEntry("MailingListFeatures", 0));
-    d->mHandler = static_cast<MailingList::Handler>(group.readEntry("MailingListHandler",
-                                                                    static_cast<int>(MailingList::KMail)));
+    d->mHandler = static_cast<MailingList::Handler>(group.readEntry("MailingListHandler", static_cast<int>(MailingList::KMail)));
     d->mId = group.readEntry("MailingListId");
     d->mPostUrls = QUrl::fromStringList(group.readEntry("MailingListPostingAddress", QStringList()));
     d->mSubscribeUrls = QUrl::fromStringList(group.readEntry("MailingListSubscribeAddress", QStringList()));

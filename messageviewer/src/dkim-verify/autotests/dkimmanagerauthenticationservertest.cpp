@@ -6,8 +6,8 @@
 
 #include "dkimmanagerauthenticationservertest.h"
 #include "dkim-verify/dkimmanagerauthenticationserver.h"
-#include <QTest>
 #include <QStandardPaths>
+#include <QTest>
 QTEST_GUILESS_MAIN(DKIMManagerAuthenticationServerTest)
 
 DKIMManagerAuthenticationServerTest::DKIMManagerAuthenticationServerTest(QObject *parent)

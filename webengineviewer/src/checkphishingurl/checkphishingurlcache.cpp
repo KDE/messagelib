@@ -5,8 +5,8 @@
 */
 
 #include "checkphishingurlcache.h"
-#include "webengineviewer_debug.h"
 #include "checkphishingurlutil.h"
+#include "webengineviewer_debug.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <QMap>
@@ -47,6 +47,7 @@ public:
     void clearCache();
     void load();
     void save();
+
 private:
     QMap<QUrl, UrlCacheInfo> mCacheCheckedUrl;
 };

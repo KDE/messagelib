@@ -9,11 +9,11 @@
 */
 
 #include "spamheaderanalyzer.h"
-#include "messageviewer_debug.h"
 #include "antispamconfig.h"
+#include "messageviewer_debug.h"
 
-#include <kmime/kmime_message.h>
 #include <kmime/kmime_headers.h>
+#include <kmime/kmime_message.h>
 
 using namespace MessageViewer;
 
@@ -61,8 +61,7 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
 
         if (!scoreValid) {
             spamError = couldNotFindTheScoreField;
-            qCDebug(MESSAGEVIEWER_LOG) << "Score could not be extracted from header '"
-                                       << mField << "'";
+            qCDebug(MESSAGEVIEWER_LOG) << "Score could not be extracted from header '" << mField << "'";
         } else {
             bool floatValid = false;
             switch ((*it).scoreType()) {
@@ -111,8 +110,7 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
                     thresholdString = thresholdPattern.cap(1);
                 } else {
                     spamError = couldNotFindTheThresholdField;
-                    qCDebug(MESSAGEVIEWER_LOG) << "Threshold could not be extracted from header '"
-                                               << mField << "'";
+                    qCDebug(MESSAGEVIEWER_LOG) << "Threshold could not be extracted from header '" << mField << "'";
                     break;
                 }
                 const float threshold = thresholdString.toFloat(&floatValid);
@@ -136,7 +134,7 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
                 break;
             }
         }
-        //Find the confidence
+        // Find the confidence
         float confidence = -2.0;
         QString confidenceString = QStringLiteral("-2.0");
         bool confidenceValid = false;
@@ -156,8 +154,7 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
                     confidence = confidenceString.toFloat(&confidenceValid);
                     if (!confidenceValid) {
                         spamError = couldNotConvertConfidenceToFloat;
-                        qCDebug(MESSAGEVIEWER_LOG) << "Unable to convert confidence to float:"
-                                                   << confidenceString;
+                        qCDebug(MESSAGEVIEWER_LOG) << "Unable to convert confidence to float:" << confidenceString;
                     }
                 }
             }

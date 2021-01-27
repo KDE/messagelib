@@ -52,7 +52,8 @@ QStringList DKIMManagerRules::ruleGroups(const KSharedConfig::Ptr &config) const
 
 int DKIMManagerRules::loadRules(const QString &fileName)
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(fileName.isEmpty() ? MessageViewer::DKIMUtil::defaultConfigFileName() : fileName, KConfig::NoGlobals);
+    const KSharedConfig::Ptr &config =
+        KSharedConfig::openConfig(fileName.isEmpty() ? MessageViewer::DKIMUtil::defaultConfigFileName() : fileName, KConfig::NoGlobals);
     const QStringList rulesGroups = ruleGroups(config);
 
     if (fileName.isEmpty()) {
@@ -108,7 +109,8 @@ void DKIMManagerRules::exportRules(const QString &fileName)
 
 void DKIMManagerRules::save(const QString &fileName)
 {
-    const KSharedConfig::Ptr &config = KSharedConfig::openConfig(fileName.isEmpty() ? MessageViewer::DKIMUtil::defaultConfigFileName() : fileName, KConfig::NoGlobals);
+    const KSharedConfig::Ptr &config =
+        KSharedConfig::openConfig(fileName.isEmpty() ? MessageViewer::DKIMUtil::defaultConfigFileName() : fileName, KConfig::NoGlobals);
     const QStringList rulesGroups = ruleGroups(config);
 
     for (const QString &group : rulesGroups) {

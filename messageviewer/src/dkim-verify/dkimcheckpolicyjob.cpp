@@ -6,9 +6,9 @@
 
 #include "dkimcheckpolicyjob.h"
 #include "dkim-verify/dkimmanagerrules.h"
-#include "settings/messageviewersettings.h"
-#include "messageviewer_dkimcheckerdebug.h"
 #include "dkim-verify/dmarcmanager.h"
+#include "messageviewer_dkimcheckerdebug.h"
+#include "settings/messageviewersettings.h"
 
 using namespace MessageViewer;
 DKIMCheckPolicyJob::DKIMCheckPolicyJob(QObject *parent)
@@ -65,7 +65,7 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
     for (const DKIMRule &rule : rules) {
         if (rule.enabled()) {
             if (rule.from() == mEmailAddress || rule.from() == QLatin1Char('*')) {
-                //Check SDID
+                // Check SDID
                 const QStringList signedDomainIdentifier = rule.signedDomainIdentifier();
                 for (const QString &ssid : signedDomainIdentifier) {
                     if (mCheckResult.sdid == ssid) {
@@ -78,10 +78,10 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
                             mCheckResult.status = DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
                             break;
                         case DKIMRule::RuleType::CanBeSigned:
-                            //Show a warning ?
+                            // Show a warning ?
                             break;
                         case DKIMRule::RuleType::IgnoreEmailNotSigned:
-                            //Nothing !
+                            // Nothing !
                             break;
                         }
                         break;
@@ -99,8 +99,9 @@ void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::
     if (value.isValid()) {
         if (mCheckResult.status == DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned) {
             mCheckResult.status = DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
-            //qDebug() << " void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value)"<<value.mDomain << "value " << value.mSource;
-            //TODO verify it.
+            // qDebug() << " void DKIMCheckPolicyJob::dmarcPolicyResult(const MessageViewer::DMARCPolicyJob::DMARCResult &value)"<<value.mDomain << "value " <<
+            // value.mSource;
+            // TODO verify it.
             mCheckResult.sdid = value.mSource;
         }
     } else {

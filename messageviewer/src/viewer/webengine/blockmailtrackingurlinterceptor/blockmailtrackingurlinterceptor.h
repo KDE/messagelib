@@ -7,10 +7,11 @@
 #ifndef BLOCKMAILTRACKINGURLINTERCEPTOR_H
 #define BLOCKMAILTRACKINGURLINTERCEPTOR_H
 
-#include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 #include "messageviewer_export.h"
 #include <QVector>
-namespace MessageViewer {
+#include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
+namespace MessageViewer
+{
 /**
  * @brief The BlockMailTrackingUrlInterceptor class
  * @author Laurent Montel <montel@kde.org>
@@ -19,8 +20,7 @@ class MESSAGEVIEWER_EXPORT BlockMailTrackingUrlInterceptor : public WebEngineVie
 {
     Q_OBJECT
 public:
-    struct MailTrackerBlackList
-    {
+    struct MailTrackerBlackList {
         MailTrackerBlackList() = default;
         MailTrackerBlackList(const QString &company, const QString &pattern, const QString &url)
             : mCompanyName(company)

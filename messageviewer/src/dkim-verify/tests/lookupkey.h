@@ -16,6 +16,7 @@ public:
     explicit LookUpKey(QObject *parent = nullptr);
     ~LookUpKey() = default;
     void lookUpServer(const QString &addr);
+
 private:
     void handleServers();
     QDnsLookup *mDnsLookup = nullptr;

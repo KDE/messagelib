@@ -10,21 +10,23 @@
 #ifndef MESSAGEVIEWER_H
 #define MESSAGEVIEWER_H
 
-#include "messageviewer_export.h"
 #include "config-messageviewer.h"
 #include "messageviewer/viewerplugininterface.h"
+#include "messageviewer_export.h"
 #include <MimeTreeParser/Enums>
 
 #include <KMime/Message>
 
 #include <QWidget>
 
-namespace Akonadi {
+namespace Akonadi
+{
 class Item;
 class ItemFetchJob;
 }
 
-namespace KIdentityManagement {
+namespace KIdentityManagement
+{
 class IdentityManager;
 }
 
@@ -38,11 +40,13 @@ class QCloseEvent;
 class QEvent;
 class QResizeEvent;
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebHitTestResult;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class WebHitTestResult;
 class DKIMWidgetInfo;
 class DKIMViewerMenu;
@@ -94,94 +98,74 @@ class MESSAGEVIEWER_EXPORT Viewer : public QWidget
 
 public:
     /**
-    * Create a mail viewer widget
-    * @param parent parent widget
-    * @param widget the application's main widget
-    * @param actionCollection the action collection where the widget's actions will belong to
-    */
+     * Create a mail viewer widget
+     * @param parent parent widget
+     * @param widget the application's main widget
+     * @param actionCollection the action collection where the widget's actions will belong to
+     */
     explicit Viewer(QWidget *parent, QWidget *widget = nullptr, KActionCollection *actionCollection = nullptr);
     ~Viewer() override;
 
     /**
-    * Returns the current message displayed in the viewer.
-    */
+     * Returns the current message displayed in the viewer.
+     */
     Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
 
     /**
-    * Returns the current message item displayed in the viewer.
-    */
+     * Returns the current message item displayed in the viewer.
+     */
     Q_REQUIRED_RESULT Akonadi::Item messageItem() const;
 
-    enum DisplayFormatMessage {
-        UseGlobalSetting = 0,
-        Text = 1,
-        Html = 2,
-        Unknown = 3,
-        ICal = 4
-    };
+    enum DisplayFormatMessage { UseGlobalSetting = 0, Text = 1, Html = 2, Unknown = 3, ICal = 4 };
 
-    enum AttachmentAction {
-        Open = 1,
-        OpenWith,
-        View,
-        Save,
-        Properties,
-        Delete,
-        Copy,
-        ScrollTo,
-        ReplyMessageToAuthor,
-        ReplyMessageToAll
-    };
+    enum AttachmentAction { Open = 1, OpenWith, View, Save, Properties, Delete, Copy, ScrollTo, ReplyMessageToAuthor, ReplyMessageToAll };
 
-    enum ResourceOnlineMode {
-        AllResources = 0,
-        SelectedResource = 1
-    };
+    enum ResourceOnlineMode { AllResources = 0, SelectedResource = 1 };
 
     /**
-    * Set the message that shall be shown.
-    * @param message - the message to be shown. If 0, an empty page is displayed.
-    * @param updateMode - update the display immediately or not. See UpdateMode.
-    */
+     * Set the message that shall be shown.
+     * @param message - the message to be shown. If 0, an empty page is displayed.
+     * @param updateMode - update the display immediately or not. See UpdateMode.
+     */
     void setMessage(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /**
-    * Set the Akonadi item that will be displayed.
-    * @param item - the Akonadi item to be displayed. If it doesn't hold a mail (KMime::Message::Ptr as payload data),
-    *               an empty page is shown.
-    * @param updateMode - update the display immediately or not. See UpdateMode.
-    */
+     * Set the Akonadi item that will be displayed.
+     * @param item - the Akonadi item to be displayed. If it doesn't hold a mail (KMime::Message::Ptr as payload data),
+     *               an empty page is shown.
+     * @param updateMode - update the display immediately or not. See UpdateMode.
+     */
     void setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /**
-    * The path to the message in terms of Akonadi collection hierarchy.
-    */
+     * The path to the message in terms of Akonadi collection hierarchy.
+     */
     Q_REQUIRED_RESULT QString messagePath() const;
 
     /**
-    * Set the path to the message in terms of Akonadi collection hierarchy.
-    */
+     * Set the path to the message in terms of Akonadi collection hierarchy.
+     */
     void setMessagePath(const QString &path);
 
     /**
-    * Instead of settings a message to be shown sets a message part
-    * to be shown
-    */
+     * Instead of settings a message to be shown sets a message part
+     * to be shown
+     */
     void setMessagePart(KMime::Content *aMsgPart);
 
     /**
-    * Convenience method to clear the reader and discard the current message. Sets the internal message pointer
-    * returned by message() to 0.
-    * @param updateMode - update the display immediately or not. See UpdateMode.
-    */
+     * Convenience method to clear the reader and discard the current message. Sets the internal message pointer
+     * returned by message() to 0.
+     * @param updateMode - update the display immediately or not. See UpdateMode.
+     */
     void clear(MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     void update(MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /**
-    * Sets a message as the current one and print it immediately.
-    * @param msg the message to display and print
-    */
+     * Sets a message as the current one and print it immediately.
+     * @param msg the message to display and print
+     */
     void printMessage(const Akonadi::Item &msg);
 
     void printPreviewMessage(const Akonadi::Item &message);
@@ -220,11 +204,11 @@ public:
     Q_REQUIRED_RESULT bool htmlLoadExternal() const;
 
     /**
-    * Display a generic HTML splash page instead of a message.
-    * @param templateName - the template to be loaded
-    * @param data - data for the template
-    * @param domain the domain.
-    */
+     * Display a generic HTML splash page instead of a message.
+     * @param templateName - the template to be loaded
+     * @param data - data for the template
+     * @param domain the domain.
+     */
     void displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain = QByteArray());
 
     /** Enable the displaying of messages again after an splash (or other) page was displayed */
@@ -242,7 +226,7 @@ public:
     void setDecryptMessageOverwrite(bool overwrite = true);
 
     /**
-    * Initiates a delete, by sending a signal to delete the message item */
+     * Initiates a delete, by sending a signal to delete the message item */
     void deleteMessage();
 
     Q_REQUIRED_RESULT const AttachmentStrategy *attachmentStrategy() const;
@@ -294,23 +278,23 @@ public:
     QAbstractItemModel *messageTreeModel() const;
 
     /**
-    * Create an item fetch job that is suitable for using to fetch the message item that will
-    * be displayed on this viewer.
-    * It will set the correct fetch scope.
-    * You still need to connect to the job's result signal.
-    */
+     * Create an item fetch job that is suitable for using to fetch the message item that will
+     * be displayed on this viewer.
+     * It will set the correct fetch scope.
+     * You still need to connect to the job's result signal.
+     */
     Akonadi::ItemFetchJob *createFetchJob(const Akonadi::Item &item);
 
     /**
-    * Adds a @p handler for actions that will be executed when the message
-    * has been loaded into the view.
-    */
+     * Adds a @p handler for actions that will be executed when the message
+     * has been loaded into the view.
+     */
     void addMessageLoadedHandler(AbstractMessageLoadedHandler *handler);
 
     /**
-    * Removes the @p handler for actions that will be executed when the message
-    * has been loaded into the view.
-    */
+     * Removes the @p handler for actions that will be executed when the message
+     * has been loaded into the view.
+     */
     void removeMessageLoadedHandler(AbstractMessageLoadedHandler *handler);
 
     Q_REQUIRED_RESULT QString selectedText() const;
@@ -319,8 +303,7 @@ public:
     bool mimePartTreeIsEmpty() const;
 
     void showOpenAttachmentFolderWidget(const QList<QUrl> &urls);
-    Q_REQUIRED_RESULT QList<QAction *> viewerPluginActionList(
-        MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
+    Q_REQUIRED_RESULT QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
     Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void runJavaScript(const QString &code);
@@ -352,18 +335,18 @@ Q_SIGNALS:
     void pageIsScrolledToBottom(bool);
 
     /**
-    * Emitted when a status bar message is shown. Note that the status bar message is also set to
-    * KPIM::BroadcastStatus in addition.
-    */
+     * Emitted when a status bar message is shown. Note that the status bar message is also set to
+     * KPIM::BroadcastStatus in addition.
+     */
     void showStatusBarMessage(const QString &message);
 
     /** The user presses the right mouse button. 'url' may be 0. */
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
     void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result, const QPoint &mousePos);
     /**
-    * The message viewer handles some types of urls itself, most notably http(s)
-    * and ftp(s). When it can't handle the url it will Q_EMIT this signal.
-    */
+     * The message viewer handles some types of urls itself, most notably http(s)
+     * and ftp(s). When it can't handle the url it will Q_EMIT this signal.
+     */
     void urlClicked(const Akonadi::Item &, const QUrl &);
 
     void requestConfigSync();
@@ -394,11 +377,11 @@ private:
 public Q_SLOTS:
 
     /**
-    * HTML Widget scrollbar and layout handling.
-    *
-    * Scrolling always happens in the direction of the slot that is called. I.e.
-    * the methods take the absolute value of
-    */
+     * HTML Widget scrollbar and layout handling.
+     *
+     * Scrolling always happens in the direction of the slot that is called. I.e.
+     * the methods take the absolute value of
+     */
     void slotScrollUp();
     void slotScrollDown();
     void slotScrollPrior();
@@ -413,6 +396,7 @@ public Q_SLOTS:
     void slotZoomOut();
     void slotZoomReset();
     void slotChangeDisplayMail(Viewer::DisplayFormatMessage, bool);
+
 protected:
     /** Some necessary event handling. */
     void closeEvent(QCloseEvent *) override;

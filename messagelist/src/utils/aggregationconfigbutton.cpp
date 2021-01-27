@@ -4,10 +4,10 @@
 */
 #include "utils/aggregationconfigbutton.h"
 
+#include "core/manager.h"
 #include "utils/aggregationcombobox.h"
 #include "utils/aggregationcombobox_p.h"
 #include "utils/configureaggregationsdialog.h"
-#include "core/manager.h"
 
 #include <KLocalizedString>
 
@@ -40,8 +40,7 @@ AggregationConfigButton::AggregationConfigButton(QWidget *parent, const Aggregat
 
     // Keep aggregation combo up-to-date with any changes made in the configure dialog.
     if (d->mAggregationComboBox != nullptr) {
-        connect(this, &AggregationConfigButton::configureDialogCompleted,
-                d->mAggregationComboBox, &AggregationComboBox::slotLoadAggregations);
+        connect(this, &AggregationConfigButton::configureDialogCompleted, d->mAggregationComboBox, &AggregationComboBox::slotLoadAggregations);
     }
     setEnabled(Manager::instance());
 }

@@ -7,8 +7,8 @@
 
 #include "cryptocomposertest.h"
 
-#include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
+#include "qtest_messagecomposer.h"
 
 #include "setupenv.h"
 
@@ -17,15 +17,15 @@
 #include <KMime/Headers>
 using namespace KMime;
 
-#include <MessageComposer/Composer>
-#include <MessageComposer/ComposerViewBase>
-#include <MessageComposer/RichTextComposerNg>
-#include <MessageComposer/GlobalPart>
-#include <MessageComposer/InfoPart>
-#include <MessageComposer/TextPart>
-#include <MessageComposer/Util>
 #include <MessageComposer/AttachmentControllerBase>
 #include <MessageComposer/AttachmentModel>
+#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerViewBase>
+#include <MessageComposer/GlobalPart>
+#include <MessageComposer/InfoPart>
+#include <MessageComposer/RichTextComposerNg>
+#include <MessageComposer/TextPart>
+#include <MessageComposer/Util>
 using namespace MessageComposer;
 
 #include <MessageCore/AttachmentPart>
@@ -87,9 +87,8 @@ void CryptoComposerTest::testOpenPGPMime()
     delete composer;
     composer = nullptr;
 
-    //qDebug()<< "message:" << message.data()->encodedContent();
-    ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(),
-                             Kleo::OpenPGPMIMEFormat, cte);
+    // qDebug()<< "message:" << message.data()->encodedContent();
+    ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, cte);
 
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -101,8 +100,8 @@ void CryptoComposerTest::testEncryptSameAttachments_data()
     QTest::addColumn<int>("format");
 
     QTest::newRow("OpenPGPMime") << (int)Kleo::OpenPGPMIMEFormat;
-    //TODO: fix Inline PGP with encrypted attachments
-    //QTest::newRow( "InlineOpenPGP" ) << (int) Kleo::InlineOpenPGPFormat;
+    // TODO: fix Inline PGP with encrypted attachments
+    // QTest::newRow( "InlineOpenPGP" ) << (int) Kleo::InlineOpenPGPFormat;
 }
 
 void CryptoComposerTest::testEncryptSameAttachments()
@@ -131,9 +130,8 @@ void CryptoComposerTest::testEncryptSameAttachments()
     delete composer;
     composer = nullptr;
 
-    //qDebug()<< "message:" << message.data()->encodedContent();
-    ComposerTestUtil::verifyEncryption(message.data(), data.toUtf8(),
-                                       (Kleo::CryptoMessageFormat)format, true);
+    // qDebug()<< "message:" << message.data()->encodedContent();
+    ComposerTestUtil::verifyEncryption(message.data(), data.toUtf8(), (Kleo::CryptoMessageFormat)format, true);
 
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -156,7 +154,7 @@ void CryptoComposerTest::testEditEncryptAttachments_data()
 {
     QTest::addColumn<int>("format");
     QTest::newRow("OpenPGPMime") << (int)Kleo::OpenPGPMIMEFormat;
-    //TODO: SMIME should also be tested
+    // TODO: SMIME should also be tested
 }
 
 void CryptoComposerTest::testEditEncryptAttachments()
@@ -212,7 +210,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments_data()
 {
     QTest::addColumn<int>("format");
     QTest::newRow("OpenPGPMime") << (int)Kleo::OpenPGPMIMEFormat;
-    //TODO: SMIME should also be tested
+    // TODO: SMIME should also be tested
 }
 
 void CryptoComposerTest::testEditEncryptAndLateAttachments()
@@ -265,7 +263,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
     // Let's load the email to the viewer
     view.setMessage(message, true);
 
-    //QModelIndex index = model.index(0, 0);
+    // QModelIndex index = model.index(0, 0);
     QCOMPARE(editor.toPlainText(), data);
     QCOMPARE(model.rowCount(), 2);
     AttachmentPart::Ptr part = model.attachments()[0];
@@ -312,8 +310,7 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
 
     // as we have an additional attachment, just ignore it when checking for sign/encrypt
     KMime::Content *b = MessageCore::NodeHelper::firstChild(message.data());
-    ComposerTestUtil::verifySignatureAndEncryption(b, data.toUtf8(),
-                                                   (Kleo::CryptoMessageFormat)format, true);
+    ComposerTestUtil::verifySignatureAndEncryption(b, data.toUtf8(), (Kleo::CryptoMessageFormat)format, true);
 
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -379,7 +376,7 @@ void CryptoComposerTest::testProtectedHeaders()
     } else if (encrypt) {
         auto extraContents = nh.extraContents(message.data());
         QCOMPARE(extraContents.size(), 1);
-        part =  extraContents.first();
+        part = extraContents.first();
         if (sign) {
             QVERIFY(!part->contentType(false)->hasParameter(QStringLiteral("protected-headers")));
             QVERIFY(!part->headerByType("to"));
@@ -388,7 +385,7 @@ void CryptoComposerTest::testProtectedHeaders()
         }
     }
     QVERIFY(part);
-    QCOMPARE(part->contentType(false)->parameter(QStringLiteral("protected-headers")),QStringLiteral("v1"));
+    QCOMPARE(part->contentType(false)->parameter(QStringLiteral("protected-headers")), QStringLiteral("v1"));
     QCOMPARE(part->headerByType("to")->asUnicodeString(), QStringLiteral("you@you.you"));
     QCOMPARE(part->headerByType("from")->asUnicodeString(), QStringLiteral("me@me.me"));
 }
@@ -415,17 +412,17 @@ void CryptoComposerTest::testBCCEncrypt()
 
     QStringList primRecipients;
     primRecipients << QString::fromLocal8Bit("you@you.you");
-    std::vector< GpgME::Key > pkeys;
+    std::vector<GpgME::Key> pkeys;
     pkeys.push_back(keys[1]);
 
     QStringList secondRecipients;
     secondRecipients << QString::fromLocal8Bit("bcc@bcc.org");
-    std::vector< GpgME::Key > skeys;
+    std::vector<GpgME::Key> skeys;
     skeys.push_back(keys[2]);
 
-    QVector<QPair<QStringList, std::vector<GpgME::Key> > > encKeys;
-    encKeys.append(QPair<QStringList, std::vector<GpgME::Key> >(primRecipients, pkeys));
-    encKeys.append(QPair<QStringList, std::vector<GpgME::Key> >(secondRecipients, skeys));
+    QVector<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
+    encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(primRecipients, pkeys));
+    encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(secondRecipients, skeys));
 
     composer->setSignAndEncrypt(true, true);
     composer->setMessageCryptoFormat((Kleo::CryptoMessageFormat)format);
@@ -441,14 +438,12 @@ void CryptoComposerTest::testBCCEncrypt()
     delete composer;
     composer = nullptr;
 
-    ComposerTestUtil::verifySignatureAndEncryption(primMessage.data(), data.toUtf8(),
-                                                   (Kleo::CryptoMessageFormat)format);
+    ComposerTestUtil::verifySignatureAndEncryption(primMessage.data(), data.toUtf8(), (Kleo::CryptoMessageFormat)format);
 
     QCOMPARE(primMessage->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(primMessage->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
 
-    ComposerTestUtil::verifySignatureAndEncryption(secMessage.data(), data.toUtf8(),
-                                                   (Kleo::CryptoMessageFormat)format);
+    ComposerTestUtil::verifySignatureAndEncryption(secMessage.data(), data.toUtf8(), (Kleo::CryptoMessageFormat)format);
 
     QCOMPARE(secMessage->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(secMessage->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -493,9 +488,8 @@ void CryptoComposerTest::testOpenPGPInline()
     if (sign && !encrypt) {
         data += QLatin1Char('\n');
     }
-    //qDebug() << "message:" << message->encodedContent();
-    ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(),
-                             Kleo::InlineOpenPGPFormat, cte);
+    // qDebug() << "message:" << message->encodedContent();
+    ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::InlineOpenPGPFormat, cte);
 
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -560,7 +554,8 @@ void CryptoComposerTest::testCTEquPr_data()
     QTest::newRow("CTEquPr:SignEncrypt") << data << true << true << Headers::CE7Bit;
 
     data = QStringLiteral(
-        "All happy families are alike;\n\n\n\neach unhappy family is unhappy in its own way.\n--\n hallloasdfasdfsadfsdf asdf sadfasdf sdf sdf sdf sadfasdf sdaf daf sdf asdf sadf asdf asdf [ä]");
+        "All happy families are alike;\n\n\n\neach unhappy family is unhappy in its own way.\n--\n hallloasdfasdfsadfsdf asdf sadfasdf sdf sdf sdf sadfasdf "
+        "sdaf daf sdf asdf sadf asdf asdf [ä]");
     QTest::newRow("CTEquPr:Sign:Newline") << data << true << false << Headers::CEquPr;
     QTest::newRow("CTEquPr:Encrypt:Newline") << data << false << true << Headers::CE7Bit;
     QTest::newRow("CTEquPr:SignEncrypt:Newline") << data << true << true << Headers::CE7Bit;
@@ -581,8 +576,10 @@ void CryptoComposerTest::testCTEbase64_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(QStringLiteral(
-                     "[ääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääää]"));
+    QString data(
+        QStringLiteral("[ääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääää"
+                       "äääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääää"
+                       "äääääääääääääääääääääääääääääääääääääääääääääää]"));
     QTest::newRow("CTEbase64:Sign") << data << true << false << Headers::CEbase64;
     QTest::newRow("CTEbase64:Encrypt") << data << false << true << Headers::CE7Bit;
     QTest::newRow("CTEbase64:SignEncrypt") << data << true << true << Headers::CE7Bit;
@@ -609,13 +606,13 @@ void CryptoComposerTest::fillComposerCryptoData(Composer *composer)
 {
     std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys();
 
-    //qDebug() << "got num of keys:" << keys.size();
+    // qDebug() << "got num of keys:" << keys.size();
 
     QStringList recipients;
     recipients << QString::fromLocal8Bit("you@you.you");
 
-    QVector<QPair<QStringList, std::vector<GpgME::Key> > > encKeys;
-    encKeys.append(QPair<QStringList, std::vector<GpgME::Key> >(recipients, keys));
+    QVector<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
+    encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(recipients, keys));
 
     composer->setEncryptionKeys(encKeys);
     composer->setSigningKeys(keys);
@@ -634,8 +631,8 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys(true);
     QStringList recipients;
     recipients << QString::fromLocal8Bit("you@you.you");
-    QVector<QPair<QStringList, std::vector<GpgME::Key> > > encKeys;
-    encKeys.append(QPair<QStringList, std::vector<GpgME::Key> >(recipients, keys));
+    QVector<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
+    encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(recipients, keys));
     composer->setEncryptionKeys(encKeys);
     composer->setSigningKeys(keys);
     composer->setSignAndEncrypt(sign, enc);
@@ -648,7 +645,7 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     composer->setMessageCryptoFormat(f);
 
     const bool result = composer->exec();
-    //QEXPECT_FAIL("", "GPG setup problems", Continue);
+    // QEXPECT_FAIL("", "GPG setup problems", Continue);
     QVERIFY(result);
     if (result) {
         QCOMPARE(composer->resultMessages().size(), 1);
@@ -656,7 +653,7 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
         delete composer;
         composer = nullptr;
 
-        //qDebug() << "message:" << message->encodedContent();
+        // qDebug() << "message:" << message->encodedContent();
 
         ComposerTestUtil::verify(sign, enc, message.data(), data.toUtf8(), f, cte);
 

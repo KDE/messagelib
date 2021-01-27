@@ -24,14 +24,14 @@ bool DMARCInfo::parseDMARC(const QString &key)
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QLatin1String("v="))) {
-            //v: Version (plain-text; REQUIRED).  Identifies the record retrieved
+            // v: Version (plain-text; REQUIRED).  Identifies the record retrieved
             //      as a DMARC record.  It MUST have the value of "DMARC1".  The value
             //      of this tag MUST match precisely; if it does not or it is absent,
             //      the entire retrieved record MUST be ignored.  It MUST be the first
             //      tag in the list.
             mVersion = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("r="))) {
-            //adkim:  (plain-text; OPTIONAL; default is "r".)  Indicates whether
+            // adkim:  (plain-text; OPTIONAL; default is "r".)  Indicates whether
             //   strict or relaxed DKIM Identifier Alignment mode is required by
             //   the Domain Owner.  See Section 3.1.1 for details.  Valid values
             //   are as follows:
@@ -39,7 +39,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //      s: strict mode
             mAdkim = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("p="))) {
-            //p: Requested Mail Receiver policy (plain-text; REQUIRED for policy
+            // p: Requested Mail Receiver policy (plain-text; REQUIRED for policy
             //                    records).  Indicates the policy to be enacted by the Receiver at
             //                    the request of the Domain Owner.  Policy applies to the domain
             //                    queried and to subdomains, unless subdomain policy is explicitly
@@ -62,7 +62,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //                discussion of SMTP rejection methods and their implications.
             mPolicy = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1String("ptc="))) {
-            //pct:  (plain-text integer between 0 and 100, inclusive; OPTIONAL;
+            // pct:  (plain-text integer between 0 and 100, inclusive; OPTIONAL;
             //      default is 100).  Percentage of messages from the Domain Owner's
             //      mail stream to which the DMARC policy is to be applied.  However,
             //      this MUST NOT be applied to the DMARC-generated reports, all of
@@ -78,10 +78,10 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //         selected = true
             //       else
             //         selected = false
-            //TODO verify if it's a percentage
+            // TODO verify if it's a percentage
             mPercentage = elem.rightRef(elem.length() - 4).toInt();
         } else if (elem.startsWith(QLatin1String("sp="))) {
-            //sp:  Requested Mail Receiver policy for all subdomains (plain-text;
+            // sp:  Requested Mail Receiver policy for all subdomains (plain-text;
             //   OPTIONAL).  Indicates the policy to be enacted by the Receiver at
             //   the request of the Domain Owner.  It applies only to subdomains of
             //   the domain queried and not to the domain itself.  Its syntax is
@@ -152,14 +152,11 @@ void DMARCInfo::setSubDomainPolicy(const QString &subDomainPolicy)
 
 bool DMARCInfo::operator==(const DMARCInfo &other) const
 {
-    return mVersion == other.version()
-           && mAdkim == other.adkim()
-           && mPolicy == other.policy()
-           && mSubDomainPolicy == other.subDomainPolicy()
-           && mPercentage == other.percentage();
+    return mVersion == other.version() && mAdkim == other.adkim() && mPolicy == other.policy() && mSubDomainPolicy == other.subDomainPolicy()
+        && mPercentage == other.percentage();
 }
 
-QDebug operator <<(QDebug d, const DMARCInfo &t)
+QDebug operator<<(QDebug d, const DMARCInfo &t)
 {
     d << " mVersion " << t.version();
     d << " mAdkim " << t.adkim();

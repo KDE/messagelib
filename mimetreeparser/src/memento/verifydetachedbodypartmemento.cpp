@@ -7,8 +7,8 @@
 #include "verifydetachedbodypartmemento.h"
 #include "mimetreeparser_debug.h"
 
-#include <QGpgME/VerifyDetachedJob>
 #include <QGpgME/KeyListJob>
+#include <QGpgME/VerifyDetachedJob>
 
 #include <gpgme++/keylistresult.h>
 
@@ -44,8 +44,7 @@ bool VerifyDetachedBodyPartMemento::start()
 #ifdef DEBUG_SIGNATURE
     qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento started";
 #endif
-    connect(m_job.data(), &VerifyDetachedJob::result,
-            this, &VerifyDetachedBodyPartMemento::slotResult);
+    connect(m_job.data(), &VerifyDetachedJob::result, this, &VerifyDetachedBodyPartMemento::slotResult);
     if (const Error err = m_job->start(m_signature, m_plainText)) {
         m_vr = VerificationResult(err);
 #ifdef DEBUG_SIGNATURE
@@ -72,13 +71,13 @@ void VerifyDetachedBodyPartMemento::exec()
 #endif
     if (canStartKeyListJob()) {
         std::vector<GpgME::Key> keys;
-        m_keylistjob->exec(keyListPattern(), /*secretOnly=*/ false, keys);
+        m_keylistjob->exec(keyListPattern(), /*secretOnly=*/false, keys);
         if (!keys.empty()) {
             m_key = keys.back();
         }
     }
     if (m_keylistjob) {
-        m_keylistjob->deleteLater();    // exec'ed jobs don't delete themselves
+        m_keylistjob->deleteLater(); // exec'ed jobs don't delete themselves
     }
     m_keylistjob = nullptr;
     setRunning(false);
@@ -137,8 +136,7 @@ bool VerifyDetachedBodyPartMemento::startKeyListJob()
         return false;
     }
     connect(m_keylistjob.data(), &Job::done, this, &VerifyDetachedBodyPartMemento::slotKeyListJobDone);
-    connect(m_keylistjob.data(), &KeyListJob::nextKey,
-            this, &VerifyDetachedBodyPartMemento::slotNextKey);
+    connect(m_keylistjob.data(), &KeyListJob::nextKey, this, &VerifyDetachedBodyPartMemento::slotNextKey);
     return true;
 }
 

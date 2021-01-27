@@ -16,14 +16,16 @@
 
 #include <functional>
 
-namespace GrantleeTheme {
+namespace GrantleeTheme
+{
 class Engine;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class GlobalContext;
 
-typedef std::function<void (Grantlee::OutputStream *stream)> GrantleeCallback;
+typedef std::function<void(Grantlee::OutputStream *stream)> GrantleeCallback;
 /**
  * @brief The MessagePartRendererManager class
  */
@@ -37,6 +39,7 @@ public:
 
     Q_REQUIRED_RESULT Grantlee::Template loadByName(const QString &name);
     Q_REQUIRED_RESULT Grantlee::Context createContext();
+
 private:
     void initializeRenderer();
     GrantleeTheme::Engine *m_engine = nullptr;

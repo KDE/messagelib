@@ -10,10 +10,10 @@
 #ifndef KDEPIM_MESSAGEVIEWER_STL_UTIL_H
 #define KDEPIM_MESSAGEVIEWER_STL_UTIL_H
 
-namespace MessageViewer {
-template<typename T>
-struct DeleteAndSetToZero {
-    void operator()(const T * &t)
+namespace MessageViewer
+{
+template<typename T> struct DeleteAndSetToZero {
+    void operator()(const T *&t)
     {
         delete t;
         t = nullptr;

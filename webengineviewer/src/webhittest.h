@@ -7,11 +7,12 @@
 #ifndef WEBHITTEST_H
 #define WEBHITTEST_H
 
-#include <QObject>
 #include "webengineviewer_export.h"
+#include <QObject>
 #include <QPoint>
 class QWebEnginePage;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebHitTestResult;
 class WebHitTestPrivate;
 /**
@@ -30,6 +31,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void handleHitTest(const QVariant &result);
+
 private:
     WebHitTestPrivate *const d;
 };

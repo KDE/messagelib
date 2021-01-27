@@ -9,7 +9,8 @@
 
 #include <QString>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class HtmlWriter;
 class RenderContext;
 }

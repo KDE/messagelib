@@ -14,10 +14,11 @@
 
 #include <QUrl>
 
-#include <MessageCore/AttachmentPart>
 #include <AkonadiCore/item.h>
+#include <MessageCore/AttachmentPart>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 /**
  * @brief The AttachmentModel class
  */
@@ -26,17 +27,7 @@ class MESSAGECOMPOSER_EXPORT AttachmentModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
-    enum {
-        AttachmentPartRole = Qt::UserRole,
-        NameRole,
-        SizeRole,
-        EncodingRole,
-        MimeTypeRole,
-        CompressRole,
-        EncryptRole,
-        SignRole,
-        AutoDisplayRole
-    };
+    enum { AttachmentPartRole = Qt::UserRole, NameRole, SizeRole, EncodingRole, MimeTypeRole, CompressRole, EncryptRole, SignRole, AutoDisplayRole };
 
     /**
      * @todo: get rid of columns and use the roles instead.

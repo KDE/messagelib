@@ -6,12 +6,12 @@
 
 #include "testmaildndattachment.h"
 
-#include <KMime/Content>
 #include <KActionCollection>
+#include <KMime/Content>
 #include <QApplication>
+#include <QDebug>
 #include <QFile>
 #include <QVBoxLayout>
-#include <QDebug>
 
 #include <MessageViewer/MailWebEngineView>
 #include <MessageViewer/Viewer>
@@ -20,8 +20,7 @@ TestMailDndAttachment::TestMailDndAttachment(QWidget *parent)
     : QWidget(parent)
 {
     auto vbox = new QVBoxLayout(this);
-    auto viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
-                                                this));
+    auto viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
     vbox->addWidget(viewer);
     viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")) /*KMime::Message::Ptr(msg)*/);
     viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));

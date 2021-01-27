@@ -5,12 +5,15 @@
 #ifndef MESSAGELIST_UTILS_AGGREGATIONCOMBOBOX_P_H
 #define MESSAGELIST_UTILS_AGGREGATIONCOMBOBOX_P_H
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class Aggregation;
 } // namespace Core
 
-namespace Utils {
+namespace Utils
+{
 class AggregationComboBox;
 
 class AggregationComboBoxPrivate

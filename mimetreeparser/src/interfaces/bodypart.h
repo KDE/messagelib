@@ -13,16 +13,19 @@
 
 #include "mimetreeparser_export.h"
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class NodeHelper;
 class ObjectTreeParser;
 class ProcessResult;
 
-namespace Interface {
+namespace Interface
+{
 class ObjectTreeSource;
 
 /**

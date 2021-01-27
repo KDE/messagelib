@@ -6,12 +6,14 @@
 #ifndef WEBENGINESCRIPT_H
 #define WEBENGINESCRIPT_H
 
-#include <QString>
-#include <QPoint>
 #include "webengineviewer_export.h"
+#include <QPoint>
+#include <QString>
 
-namespace WebEngineViewer {
-namespace WebEngineScript {
+namespace WebEngineViewer
+{
+namespace WebEngineScript
+{
 Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT QString findAllImages();
 Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT QString findAllScripts();
 Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT QString findAllAnchors();

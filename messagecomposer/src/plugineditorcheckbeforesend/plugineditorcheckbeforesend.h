@@ -7,10 +7,11 @@
 #ifndef PLUGINEDITORCHECKBEFORESEND_H
 #define PLUGINEDITORCHECKBEFORESEND_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
+#include <QObject>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class PluginEditorCheckBeforeSendPrivate;
 class PluginEditorCheckBeforeSendInterface;
 /**

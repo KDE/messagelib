@@ -22,6 +22,7 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldIsBlocked_data();
     void shouldIsBlocked();
+
 private:
     MessageViewer::RemoteContentManager mRemoveContentManager;
 };

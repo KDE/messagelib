@@ -14,7 +14,8 @@
 class KActionCollection;
 class KActionMenu;
 
-namespace TemplateParser {
+namespace TemplateParser
+{
 class CustomTemplatesMenuPrivate;
 /**
  * @brief The CustomTemplatesMenu class

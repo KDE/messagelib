@@ -7,16 +7,18 @@
 #ifndef PLUGINEDITORCONVERTTEXTINTERFACE_H
 #define PLUGINEDITORCONVERTTEXTINTERFACE_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
-#include <MessageComposer/PluginActionType>
 #include <KMime/Message>
+#include <MessageComposer/PluginActionType>
+#include <QObject>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class RichTextComposer;
 }
 class KActionCollection;
-namespace MessageComposer {
+namespace MessageComposer
+{
 class TextPart;
 class PluginEditorConvertTextInterfacePrivate;
 class PluginEditorConverterInitialData;
@@ -33,11 +35,7 @@ public:
     explicit PluginEditorConvertTextInterface(QObject *parent = nullptr);
     ~PluginEditorConvertTextInterface() override;
 
-    enum class ConvertTextStatus {
-        NotConverted,
-        Converted,
-        Error
-    };
+    enum class ConvertTextStatus { NotConverted, Converted, Error };
 
     virtual bool reformatText();
 

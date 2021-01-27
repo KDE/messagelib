@@ -9,14 +9,16 @@
 
 #include "messageviewer_export.h"
 
-#include <QString>
 #include <QSharedPointer>
+#include <QString>
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class HtmlWriter;
 /**
  * @brief The HTMLBlock class
@@ -32,6 +34,7 @@ public:
 
     Q_REQUIRED_RESULT Q_REQUIRED_RESULT QString enter();
     Q_REQUIRED_RESULT Q_REQUIRED_RESULT QString exit();
+
 protected:
     Q_REQUIRED_RESULT QString dir() const;
     virtual QString enterString() const = 0;

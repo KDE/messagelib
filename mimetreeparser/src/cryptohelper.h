@@ -14,16 +14,17 @@
 #include <QByteArray>
 #include <QVector>
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 enum PGPBlockType {
-    UnknownBlock = -1,        // BEGIN PGP ???
+    UnknownBlock = -1, // BEGIN PGP ???
     NoPgpBlock = 0,
-    PgpMessageBlock = 1,      // BEGIN PGP MESSAGE
+    PgpMessageBlock = 1, // BEGIN PGP MESSAGE
     MultiPgpMessageBlock = 2, // BEGIN PGP MESSAGE, PART X[/Y]
-    SignatureBlock = 3,       // BEGIN PGP SIGNATURE
-    ClearsignedBlock = 4,     // BEGIN PGP SIGNED MESSAGE
-    PublicKeyBlock = 5,       // BEGIN PGP PUBLIC KEY BLOCK
-    PrivateKeyBlock = 6       // BEGIN PGP PRIVATE KEY BLOCK (PGP 2.x: ...SECRET...)
+    SignatureBlock = 3, // BEGIN PGP SIGNATURE
+    ClearsignedBlock = 4, // BEGIN PGP SIGNED MESSAGE
+    PublicKeyBlock = 5, // BEGIN PGP PUBLIC KEY BLOCK
+    PrivateKeyBlock = 6 // BEGIN PGP PRIVATE KEY BLOCK (PGP 2.x: ...SECRET...)
 };
 
 class Block

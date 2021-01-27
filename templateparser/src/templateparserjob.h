@@ -15,18 +15,21 @@
 
 #include <memory>
 
-namespace KIdentityManagement {
+namespace KIdentityManagement
+{
 class IdentityManager;
 }
 
-namespace MessageCore {
+namespace MessageCore
+{
 class ImageCollector;
 }
 
 struct TemplateParserExtractHtmlInfoResult;
 class TemplateParserJobTest;
 
-namespace TemplateParser {
+namespace TemplateParser
+{
 class TemplateParserJobPrivate;
 /**
  * \brief The TemplateParser transforms a message with a given template.
@@ -133,23 +136,11 @@ class TEMPLATEPARSER_EXPORT TemplateParserJob : public QObject
     friend class TemplateParserJobTest;
 
 public:
-    enum Mode {
-        NewMessage,
-        Reply,
-        ReplyAll,
-        Forward
-    };
+    enum Mode { NewMessage, Reply, ReplyAll, Forward };
 
-    enum AllowSelection {
-        SelectionAllowed,
-        NoSelectionAllowed
-    };
+    enum AllowSelection { SelectionAllowed, NoSelectionAllowed };
 
-    enum Quotes {
-        ReplyAsOriginalMessage,
-        ReplyAsPlain,
-        ReplyAsHtml
-    };
+    enum Quotes { ReplyAsOriginalMessage, ReplyAsPlain, ReplyAsHtml };
 
 public:
     explicit TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode, QObject *parent = nullptr);

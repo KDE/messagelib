@@ -10,41 +10,39 @@
 #ifndef _MESSAGEVIEWER_HTMLSTATUSBAR_H_
 #define _MESSAGEVIEWER_HTMLSTATUSBAR_H_
 
-#include <MimeTreeParser/Util>
 #include "messageviewer/messageviewerutil.h"
+#include <MimeTreeParser/Util>
 #include <QLabel>
 class QMouseEvent;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
-  * @short The HTML statusbar widget for use with the reader.
-  *
-  * The HTML status bar is a small widget that acts as an indicator
-  * for the message content. It can be in one of four modes:
-  *
-  * <dl>
-  * <dt><code>Normal</code></dt>
-  * <dd>Default. No HTML.</dd>
-  * <dt><code>Html</code></dt>
-  * <dd>HTML content is being shown. Since HTML mails can mimic all sorts
-  *     of KMail markup in the reader, this provides out-of-band information
-  *     about the presence of (rendered) HTML.</dd>
-  * <dt><code>MultipartPlain</code></dt>
-  * <dd>Viewed as plain text with HTML part also available.</dd>
-  * <dt><code>MultipartHtml</code></dt>
-  * <dd>Viewed as Html with plain text part also available.</dd>
-  * </dl>
-  *
-  * @author Ingo Kloecker <kloecker@kde.org>, Marc Mutz <mutz@kde.org>
-  **/
+ * @short The HTML statusbar widget for use with the reader.
+ *
+ * The HTML status bar is a small widget that acts as an indicator
+ * for the message content. It can be in one of four modes:
+ *
+ * <dl>
+ * <dt><code>Normal</code></dt>
+ * <dd>Default. No HTML.</dd>
+ * <dt><code>Html</code></dt>
+ * <dd>HTML content is being shown. Since HTML mails can mimic all sorts
+ *     of KMail markup in the reader, this provides out-of-band information
+ *     about the presence of (rendered) HTML.</dd>
+ * <dt><code>MultipartPlain</code></dt>
+ * <dd>Viewed as plain text with HTML part also available.</dd>
+ * <dt><code>MultipartHtml</code></dt>
+ * <dd>Viewed as Html with plain text part also available.</dd>
+ * </dl>
+ *
+ * @author Ingo Kloecker <kloecker@kde.org>, Marc Mutz <mutz@kde.org>
+ **/
 class HtmlStatusBar : public QLabel
 {
     Q_OBJECT
 public:
-    enum UpdateMode {
-        NoUpdate,
-        Update
-    };
+    enum UpdateMode { NoUpdate, Update };
 
     explicit HtmlStatusBar(QWidget *parent = nullptr);
     ~HtmlStatusBar() override;

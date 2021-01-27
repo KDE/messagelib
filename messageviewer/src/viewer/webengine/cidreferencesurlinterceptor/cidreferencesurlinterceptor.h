@@ -9,7 +9,8 @@
 
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class CidReferencesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT

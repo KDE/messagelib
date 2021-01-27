@@ -11,15 +11,18 @@
 
 #include "core/modelinvariantrowmapper.h"
 
-#include <QTimer>
 #include <QTime>
+#include <QTimer>
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class ModelInvariantRowMapperPrivate
 {
 public:
-    explicit ModelInvariantRowMapperPrivate(ModelInvariantRowMapper *owner) : q(owner)
+    explicit ModelInvariantRowMapperPrivate(ModelInvariantRowMapper *owner)
+        : q(owner)
     {
     }
 
@@ -51,13 +54,13 @@ public:
 
     ModelInvariantRowMapper *const q;
 
-    QList< RowShift * > *mRowShiftList = nullptr;   ///< The ordered list of RowShifts, most recent at the end
-    QHash< int, ModelInvariantIndex * > *mCurrentInvariantHash;  ///< The up-to-date invariants
-    uint mCurrentShiftSerial;             ///< Current model change serial: FIXME: it explodes at 2^32 :D
-    uint mRemovedShiftCount;              ///< The number of shifts that we have completely processed
-    int mLazyUpdateChunkInterval;         ///< Msecs: how much time we spend inside a lazy update chunk
-    int mLazyUpdateIdleInterval;          ///< Msecs: how much time we idle between lazy update chunks
-    QTimer *mUpdateTimer = nullptr;                 ///< Background lazy update timer
+    QList<RowShift *> *mRowShiftList = nullptr; ///< The ordered list of RowShifts, most recent at the end
+    QHash<int, ModelInvariantIndex *> *mCurrentInvariantHash; ///< The up-to-date invariants
+    uint mCurrentShiftSerial; ///< Current model change serial: FIXME: it explodes at 2^32 :D
+    uint mRemovedShiftCount; ///< The number of shifts that we have completely processed
+    int mLazyUpdateChunkInterval; ///< Msecs: how much time we spend inside a lazy update chunk
+    int mLazyUpdateIdleInterval; ///< Msecs: how much time we idle between lazy update chunks
+    QTimer *mUpdateTimer = nullptr; ///< Background lazy update timer
 };
 } // Core
 } // MessageList

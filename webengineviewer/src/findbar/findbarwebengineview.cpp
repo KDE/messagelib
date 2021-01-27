@@ -5,8 +5,8 @@
 
 #include "findbarwebengineview.h"
 #include <PimCommon/LineEditWithCompleterNg>
-#include <QWebEngineView>
 #include <QAction>
+#include <QWebEngineView>
 
 using namespace WebEngineViewer;
 
@@ -46,7 +46,7 @@ void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
     if (!isAutoSearch && !mLastSearchStr.contains(searchWord, Qt::CaseSensitive)) {
         clearSelections();
     }
-    d->mView->findText(QString()); //Clear an existing highlight
+    d->mView->findText(QString()); // Clear an existing highlight
     mLastSearchStr = searchWord;
     d->mView->findText(mLastSearchStr, searchOptions, [this](bool found) {
         setFoundMatch(found);
@@ -58,7 +58,7 @@ void FindBarWebEngineView::updateSensitivity(bool sensitivity)
     QWebEnginePage::FindFlags searchOptions;
     if (sensitivity) {
         searchOptions |= QWebEnginePage::FindCaseSensitively;
-        d->mView->findText(QString()); //Clear an existing highlight
+        d->mView->findText(QString()); // Clear an existing highlight
     }
     d->mView->findText(QString(), searchOptions, [this](bool found) {
         setFoundMatch(found);

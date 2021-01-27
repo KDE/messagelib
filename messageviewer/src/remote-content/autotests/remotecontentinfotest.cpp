@@ -10,7 +10,6 @@ QTEST_GUILESS_MAIN(RemoteContentInfoTest)
 RemoteContentInfoTest::RemoteContentInfoTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void RemoteContentInfoTest::shouldHaveDefaultValues()

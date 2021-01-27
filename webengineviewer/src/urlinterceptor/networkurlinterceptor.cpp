@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "networkpluginurlinterceptorinterface.h"
 #include "networkurlinterceptor.h"
+#include "networkpluginurlinterceptorinterface.h"
 #include "webengineviewer_debug.h"
 
 #include <QVector>

@@ -74,7 +74,7 @@ void CheckPhishingUrlUtilTest::shouldGenerateBackModeDelay()
     QFETCH(int, minuteMax);
 
     int result = WebEngineViewer::CheckPhishingUrlUtil::generateRandomSecondValue(numberFailed);
-    result /= 60; //minutes
+    result /= 60; // minutes
     QVERIFY(result >= minuteMin);
     QVERIFY(result <= minuteMax);
 }

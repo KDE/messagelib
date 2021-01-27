@@ -48,7 +48,7 @@ void MultipartJob::setMultipartSubtype(const QByteArray &subtype)
 void MultipartJob::process()
 {
     Q_D(MultipartJob);
-    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr); // Not processed before.
     Q_ASSERT(!d->subtype.isEmpty());
     d->resultContent = new KMime::Content;
     auto contentType = d->resultContent->contentType(true);
@@ -63,7 +63,7 @@ void MultipartJob::process()
             break;
         }
     }
-    qCDebug(MESSAGECOMPOSER_LOG) << "Created" << d->resultContent->contentType()->mimeType() << "content with"
-                                 << d->resultContent->contents().count() << "subjobContents.";
+    qCDebug(MESSAGECOMPOSER_LOG) << "Created" << d->resultContent->contentType()->mimeType() << "content with" << d->resultContent->contents().count()
+                                 << "subjobContents.";
     emitResult();
 }

@@ -18,7 +18,6 @@ RemoteContentMenu::RemoteContentMenu(QWidget *parent)
 
 RemoteContentMenu::~RemoteContentMenu()
 {
-
 }
 
 void RemoteContentMenu::initialize()
@@ -29,7 +28,7 @@ void RemoteContentMenu::initialize()
 
 void RemoteContentMenu::fillMenu()
 {
-    //TODO
+    // TODO
 }
 
 void RemoteContentMenu::slotConfigure()

@@ -45,12 +45,12 @@ void QuickSearchWarningTest::shouldSetSearchText_data()
 {
     QTest::addColumn<QString>("input");
     QTest::addColumn<bool>("visible");
-    QTest::newRow("bigword") <<  QStringLiteral("foofoofoo") << false;
-    QTest::newRow("1character") <<  QStringLiteral("f") << true;
-    QTest::newRow("multibigword") <<  QStringLiteral("foo foo foo") << false;
-    QTest::newRow("multibigwordwithasmallone") <<  QStringLiteral("foo foo foo 1") << true;
-    QTest::newRow("aspace") <<  QStringLiteral(" ") << false;
-    QTest::newRow("multispace") <<  QStringLiteral("            ") << false;
+    QTest::newRow("bigword") << QStringLiteral("foofoofoo") << false;
+    QTest::newRow("1character") << QStringLiteral("f") << true;
+    QTest::newRow("multibigword") << QStringLiteral("foo foo foo") << false;
+    QTest::newRow("multibigwordwithasmallone") << QStringLiteral("foo foo foo 1") << true;
+    QTest::newRow("aspace") << QStringLiteral(" ") << false;
+    QTest::newRow("multispace") << QStringLiteral("            ") << false;
 }
 
 QTEST_MAIN(QuickSearchWarningTest)

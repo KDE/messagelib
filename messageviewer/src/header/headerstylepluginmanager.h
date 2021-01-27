@@ -7,10 +7,11 @@
 #ifndef HEADERSTYLEPLUGINMANAGER_H
 #define HEADERSTYLEPLUGINMANAGER_H
 
-#include <QObject>
 #include "messageviewer_export.h"
 #include <PimCommon/PluginUtil>
-namespace MessageViewer {
+#include <QObject>
+namespace MessageViewer
+{
 class HeaderStylePlugin;
 class HeaderStylePluginManagerPrivate;
 /**
@@ -33,6 +34,7 @@ public:
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
+
 private:
     HeaderStylePluginManagerPrivate *const d;
 };

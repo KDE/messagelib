@@ -14,8 +14,9 @@
 
 #include <functional>
 
-namespace MessageViewer {
-typedef std::function<void (Grantlee::OutputStream *stream)> GrantleeCallback;
+namespace MessageViewer
+{
+typedef std::function<void(Grantlee::OutputStream *stream)> GrantleeCallback;
 
 class CallbackTag : public Grantlee::Node
 {

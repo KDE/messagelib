@@ -11,18 +11,21 @@
 #ifndef MIMETREEPARSER_PARTNODEBODYPART_H
 #define MIMETREEPARSER_PARTNODEBODYPART_H
 
-#include "mimetreeparser_export.h"
 #include "mimetreeparser/bodypart.h"
+#include "mimetreeparser_export.h"
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class NodeHelper;
 }
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 /**
     @short an implementation of the BodyPart interface using KMime::Content's
 */
@@ -39,6 +42,7 @@ public:
     NodeHelper *nodeHelper() const override;
     ObjectTreeParser *objectTreeParser() const override;
     Interface::ObjectTreeSource *source() const override;
+
 private:
     KMime::Content *mTopLevelContent = nullptr;
     KMime::Content *mContent = nullptr;

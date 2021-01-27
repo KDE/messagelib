@@ -19,5 +19,5 @@ void DMARCPolicyJobTest::shouldHaveDefaultValues()
     MessageViewer::DMARCPolicyJob job;
     QVERIFY(job.emailAddress().isEmpty());
     QVERIFY(!job.canStart());
-    //TODO
+    // TODO
 }

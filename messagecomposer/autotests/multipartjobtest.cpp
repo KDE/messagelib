@@ -14,8 +14,8 @@ using namespace KMime;
 
 #include <MessageComposer/Composer>
 #include <MessageComposer/GlobalPart>
-#include <MessageComposer/SinglepartJob>
 #include <MessageComposer/MultipartJob>
+#include <MessageComposer/SinglepartJob>
 using namespace MessageComposer;
 
 QTEST_MAIN(MultipartJobTest)

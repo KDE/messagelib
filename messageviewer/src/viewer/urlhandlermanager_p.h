@@ -11,15 +11,18 @@
 #include <MessageViewer/URLHandler>
 #include <QHash>
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT BodyPartURLHandlerManager : public MimeTreeParser::URLHandler
 {
 public:
-    BodyPartURLHandlerManager() : MimeTreeParser::URLHandler()
+    BodyPartURLHandlerManager()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -35,14 +38,15 @@ public:
 private:
     Q_REQUIRED_RESULT QVector<const Interface::BodyPartURLHandler *> handlersForPart(KMime::Content *node) const;
 
-    typedef QHash<QByteArray, QVector<const Interface::BodyPartURLHandler *> > BodyPartHandlerList;
+    typedef QHash<QByteArray, QVector<const Interface::BodyPartURLHandler *>> BodyPartHandlerList;
     BodyPartHandlerList mHandlers;
 };
 
 class MESSAGEVIEWER_TESTS_EXPORT KMailProtocolURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    KMailProtocolURLHandler() : MimeTreeParser::URLHandler()
+    KMailProtocolURLHandler()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -62,7 +66,8 @@ public:
 class MESSAGEVIEWER_TESTS_EXPORT ExpandCollapseQuoteURLManager : public MimeTreeParser::URLHandler
 {
 public:
-    ExpandCollapseQuoteURLManager() : MimeTreeParser::URLHandler()
+    ExpandCollapseQuoteURLManager()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -83,7 +88,8 @@ public:
 class MESSAGEVIEWER_TESTS_EXPORT SMimeURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    SMimeURLHandler() : MimeTreeParser::URLHandler()
+    SMimeURLHandler()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -103,7 +109,8 @@ public:
 class MESSAGEVIEWER_TESTS_EXPORT MailToURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    MailToURLHandler() : MimeTreeParser::URLHandler()
+    MailToURLHandler()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -127,7 +134,8 @@ public:
 class MESSAGEVIEWER_TESTS_EXPORT ContactUidURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    ContactUidURLHandler() : MimeTreeParser::URLHandler()
+    ContactUidURLHandler()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -143,7 +151,8 @@ public:
 class MESSAGEVIEWER_TESTS_EXPORT HtmlAnchorHandler : public MimeTreeParser::URLHandler
 {
 public:
-    HtmlAnchorHandler() : MimeTreeParser::URLHandler()
+    HtmlAnchorHandler()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -166,7 +175,8 @@ public:
 class MESSAGEVIEWER_TESTS_EXPORT AttachmentURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    AttachmentURLHandler() : MimeTreeParser::URLHandler()
+    AttachmentURLHandler()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -180,6 +190,7 @@ public:
     Q_REQUIRED_RESULT bool handleDrag(const QUrl &url, ViewerPrivate *window) const override;
     Q_REQUIRED_RESULT bool willHandleDrag(const QUrl &url, ViewerPrivate *window) const override;
     Q_REQUIRED_RESULT QString statusBarMessage(const QUrl &, ViewerPrivate *) const override;
+
 private:
     KMime::Content *nodeForUrl(const QUrl &url, ViewerPrivate *w) const;
     bool attachmentIsInHeader(const QUrl &url) const;
@@ -188,7 +199,8 @@ private:
 class MESSAGEVIEWER_TESTS_EXPORT ShowAuditLogURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    ShowAuditLogURLHandler() : MimeTreeParser::URLHandler()
+    ShowAuditLogURLHandler()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -207,7 +219,8 @@ public:
 class MESSAGEVIEWER_TESTS_EXPORT InternalImageURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    InternalImageURLHandler() : MimeTreeParser::URLHandler()
+    InternalImageURLHandler()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -236,7 +249,8 @@ public:
 class MESSAGEVIEWER_TESTS_EXPORT EmbeddedImageURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    EmbeddedImageURLHandler() : MimeTreeParser::URLHandler()
+    EmbeddedImageURLHandler()
+        : MimeTreeParser::URLHandler()
     {
     }
 
@@ -266,7 +280,8 @@ public:
 class MESSAGEVIEWER_TESTS_EXPORT KRunURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    KRunURLHandler() : MimeTreeParser::URLHandler()
+    KRunURLHandler()
+        : MimeTreeParser::URLHandler()
     {
     }
 

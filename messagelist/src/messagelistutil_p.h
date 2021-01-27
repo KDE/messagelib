@@ -13,8 +13,10 @@
 
 class QMenu;
 
-namespace MessageList {
-namespace Util {
+namespace MessageList
+{
+namespace Util
+{
 Q_REQUIRED_RESULT QString messageSortingConfigName();
 Q_REQUIRED_RESULT QString messageSortDirectionConfigName();
 Q_REQUIRED_RESULT QString groupSortingConfigName();

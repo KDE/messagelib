@@ -12,8 +12,10 @@
 
 #include <KConfigGroup>
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 /**
  * A class which holds information about sorting, e.g. the sorting and sort direction
  * of messages and groups.
@@ -26,129 +28,125 @@ class SortOrder
     Q_ENUMS(MessageSorting)
 
 public:
-
     /**
-    * How to sort the groups
-    * If you add values here please look at the implementations of the enumerate* functions
-    * and add appropriate descriptors.
-    */
+     * How to sort the groups
+     * If you add values here please look at the implementations of the enumerate* functions
+     * and add appropriate descriptors.
+     */
     enum GroupSorting {
-        NoGroupSorting,                      ///< Don't sort the groups at all, add them as they come in
-        SortGroupsByDateTime,                ///< Sort groups by date/time of the group
-        SortGroupsByDateTimeOfMostRecent,    ///< Sort groups by date/time of the most recent message
-        SortGroupsBySenderOrReceiver,        ///< Sort groups by sender or receiver (makes sense only with GroupBySenderOrReceiver)
-        SortGroupsBySender,                  ///< Sort groups by sender (makes sense only with GroupBySender)
-        SortGroupsByReceiver                 ///< Sort groups by receiver (makes sense only with GroupByReceiver)
+        NoGroupSorting, ///< Don't sort the groups at all, add them as they come in
+        SortGroupsByDateTime, ///< Sort groups by date/time of the group
+        SortGroupsByDateTimeOfMostRecent, ///< Sort groups by date/time of the most recent message
+        SortGroupsBySenderOrReceiver, ///< Sort groups by sender or receiver (makes sense only with GroupBySenderOrReceiver)
+        SortGroupsBySender, ///< Sort groups by sender (makes sense only with GroupBySender)
+        SortGroupsByReceiver ///< Sort groups by receiver (makes sense only with GroupByReceiver)
         // Never add enum entries in the middle: always add them at the end (numeric values are stored in configuration)
     };
 
     /**
-    * The "generic" sort direction: used for groups and for messages
-    * If you add values here please look at the implementations of the enumerate* functions
-    * and add appropriate descriptors.
-    */
-    enum SortDirection {
-        Ascending,
-        Descending
-    };
+     * The "generic" sort direction: used for groups and for messages
+     * If you add values here please look at the implementations of the enumerate* functions
+     * and add appropriate descriptors.
+     */
+    enum SortDirection { Ascending, Descending };
 
     /**
-    * The available message sorting options.
-    * If you add values here please look at the implementations of the enumerate* functions
-    * and add appropriate descriptors.
-    */
+     * The available message sorting options.
+     * If you add values here please look at the implementations of the enumerate* functions
+     * and add appropriate descriptors.
+     */
     enum MessageSorting {
-        NoMessageSorting,                    ///< Don't sort the messages at all
-        SortMessagesByDateTime,              ///< Sort the messages by date and time
-        SortMessagesByDateTimeOfMostRecent,  ///< Sort the messages by date and time of the most recent message in subtree
-        SortMessagesBySenderOrReceiver,      ///< Sort the messages by sender or receiver
-        SortMessagesBySender,                ///< Sort the messages by sender
-        SortMessagesByReceiver,              ///< Sort the messages by receiver
-        SortMessagesBySubject,               ///< Sort the messages by subject
-        SortMessagesBySize,                  ///< Sort the messages by size
-        SortMessagesByActionItemStatus,      ///< Sort the messages by the "Action Item" flag of status
-        SortMessagesByUnreadStatus,        ///< Sort the messages by the "Unread" flags of status
-        SortMessagesByImportantStatus,        /// Sort the messages By "Important" flags of status
-        SortMessagesByAttachmentStatus        /// Sort the messages By "Attachment" flags of status
+        NoMessageSorting, ///< Don't sort the messages at all
+        SortMessagesByDateTime, ///< Sort the messages by date and time
+        SortMessagesByDateTimeOfMostRecent, ///< Sort the messages by date and time of the most recent message in subtree
+        SortMessagesBySenderOrReceiver, ///< Sort the messages by sender or receiver
+        SortMessagesBySender, ///< Sort the messages by sender
+        SortMessagesByReceiver, ///< Sort the messages by receiver
+        SortMessagesBySubject, ///< Sort the messages by subject
+        SortMessagesBySize, ///< Sort the messages by size
+        SortMessagesByActionItemStatus, ///< Sort the messages by the "Action Item" flag of status
+        SortMessagesByUnreadStatus, ///< Sort the messages by the "Unread" flags of status
+        SortMessagesByImportantStatus, /// Sort the messages By "Important" flags of status
+        SortMessagesByAttachmentStatus /// Sort the messages By "Attachment" flags of status
         // Warning: Never add enum entries in the middle: always add them at the end (numeric values are stored in configuration)
     };
 
     SortOrder();
 
     /**
-    * Returns the GroupSorting
-    */
+     * Returns the GroupSorting
+     */
     GroupSorting groupSorting() const;
 
     /**
-    * Sets the GroupSorting option.
-    * This may not have any effect, depending on the Aggregation this sort order
-    * is used in.
-    */
+     * Sets the GroupSorting option.
+     * This may not have any effect, depending on the Aggregation this sort order
+     * is used in.
+     */
     void setGroupSorting(GroupSorting gs);
 
     /**
-    * Returns the current group SortDirection.
-    */
+     * Returns the current group SortDirection.
+     */
     SortDirection groupSortDirection() const;
 
     /**
-    * Sets the SortDirection for the groups.
-    * Note that this option has no meaning if group sorting is set to NoGroupSorting.
-    */
+     * Sets the SortDirection for the groups.
+     * Note that this option has no meaning if group sorting is set to NoGroupSorting.
+     */
     void setGroupSortDirection(SortDirection groupSortDirection);
 
     /**
-    * Returns the current message sorting option
-    */
+     * Returns the current message sorting option
+     */
     MessageSorting messageSorting() const;
 
     /**
-    * Sets the current message sorting option
-    */
+     * Sets the current message sorting option
+     */
     void setMessageSorting(MessageSorting ms);
 
     /**
-    * Returns the current message SortDirection.
-    */
+     * Returns the current message SortDirection.
+     */
     SortDirection messageSortDirection() const;
 
     /**
-    * Sets the SortDirection for the message.
-    * Note that this option has no meaning if message sorting is set to NoMessageSorting.
-    */
+     * Sets the SortDirection for the message.
+     * Note that this option has no meaning if message sorting is set to NoMessageSorting.
+     */
     void setMessageSortDirection(SortDirection messageSortDirection);
 
     /**
-    * Enumerates the message sorting options compatible with the specified Threading setting.
-    * The returned descriptors are pairs in that the first item is the localized description
-    * of the option value and the second item is the integer option value itself.
-    */
-    static QVector<QPair<QString, int> > enumerateMessageSortingOptions(Aggregation::Threading t);
+     * Enumerates the message sorting options compatible with the specified Threading setting.
+     * The returned descriptors are pairs in that the first item is the localized description
+     * of the option value and the second item is the integer option value itself.
+     */
+    static QVector<QPair<QString, int>> enumerateMessageSortingOptions(Aggregation::Threading t);
 
     /**
-    * Enumerates the available message sorting directions for the specified MessageSorting option.
-    * The returned descriptors are pairs in that the first item is the localized description
-    * of the option value and the second item is the integer option value itself.
-    * If the returned list is empty then the value of the option is meaningless in the current context.
-    */
-    static QVector< QPair< QString, int > > enumerateMessageSortDirectionOptions(MessageSorting ms);
+     * Enumerates the available message sorting directions for the specified MessageSorting option.
+     * The returned descriptors are pairs in that the first item is the localized description
+     * of the option value and the second item is the integer option value itself.
+     * If the returned list is empty then the value of the option is meaningless in the current context.
+     */
+    static QVector<QPair<QString, int>> enumerateMessageSortDirectionOptions(MessageSorting ms);
 
     /**
-    * Enumerates the group sorting options compatible with the specified Grouping.
-    * The returned descriptors are pairs in that the first item is the localized description
-    * of the option value and the second item is the integer option value itself.
-    * If the returned list is empty then the value of the option is meaningless in the current context.
-    */
-    static QVector< QPair< QString, int > > enumerateGroupSortingOptions(Aggregation::Grouping g);
+     * Enumerates the group sorting options compatible with the specified Grouping.
+     * The returned descriptors are pairs in that the first item is the localized description
+     * of the option value and the second item is the integer option value itself.
+     * If the returned list is empty then the value of the option is meaningless in the current context.
+     */
+    static QVector<QPair<QString, int>> enumerateGroupSortingOptions(Aggregation::Grouping g);
 
     /**
-    * Enumerates the group sort direction options compatible with the specified Grouping and GroupSorting.
-    * The returned descriptors are pairs in that the first item is the localized description
-    * of the option value and the second item is the integer option value itself.
-    * If the returned list is empty then the value of the option is meaningless in the current context.
-    */
-    static QVector< QPair< QString, int > > enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting groupSorting);
+     * Enumerates the group sort direction options compatible with the specified Grouping and GroupSorting.
+     * The returned descriptors are pairs in that the first item is the localized description
+     * of the option value and the second item is the integer option value itself.
+     * If the returned list is empty then the value of the option is meaningless in the current context.
+     */
+    static QVector<QPair<QString, int>> enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting groupSorting);
 
     /**
      * Checks if this sort order can be used in combination with the given aggregation.
@@ -167,8 +165,8 @@ public:
     static SortOrder defaultForAggregation(const Aggregation *aggregation, SortOrder oldSortOrder);
 
     /**
-    * Returns true if the ms parameter specifies a valid MessageSorting option.
-    */
+     * Returns true if the ms parameter specifies a valid MessageSorting option.
+     */
     static bool isValidMessageSorting(SortOrder::MessageSorting ms);
 
     /**
@@ -193,7 +191,6 @@ public:
     void writeConfig(KConfigGroup &conf, const QString &storageId, bool storageUsesPrivateSortOrder) const;
 
 private:
-
     // Helper function to convert an enum value to a string and back
     static const QString nameForSortDirection(SortDirection sortDirection);
     static const QString nameForMessageSorting(MessageSorting messageSorting);

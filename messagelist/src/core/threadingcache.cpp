@@ -10,13 +10,14 @@
 #include "aggregation.h"
 #include "messagelist_debug.h"
 
-#include <QStandardPaths>
-#include <QFile>
 #include <QDir>
+#include <QFile>
+#include <QStandardPaths>
 
 using namespace MessageList::Core;
 
-namespace {
+namespace
+{
 struct CacheHeader {
     int version;
     Aggregation::Grouping grouping;
@@ -27,20 +28,12 @@ struct CacheHeader {
 
 QDataStream &operator<<(QDataStream &stream, const CacheHeader &header)
 {
-    return stream << header.version
-                  << (qint8)header.grouping
-                  << (qint8)header.threading
-                  << (qint8)header.threadLeader
-                  << header.cacheSize;
+    return stream << header.version << (qint8)header.grouping << (qint8)header.threading << (qint8)header.threadLeader << header.cacheSize;
 }
 
 QDataStream &operator>>(QDataStream &stream, CacheHeader &header)
 {
-    return stream >> header.version
-           >> (qint8 &)header.grouping
-           >> (qint8 &)header.threading
-           >> (qint8 &)header.threadLeader
-           >> header.cacheSize;
+    return stream >> header.version >> (qint8 &)header.grouping >> (qint8 &)header.threading >> (qint8 &)header.threadLeader >> header.cacheSize;
 }
 }
 
@@ -76,9 +69,8 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
     mGrouping = aggregation->grouping();
     mEnabled = true;
 
-    const QString cacheFileName = QStandardPaths::locate(QStandardPaths::CacheLocation,
-                                                         QStringLiteral("messagelist/threading/%1").arg(id),
-                                                         QStandardPaths::LocateFile);
+    const QString cacheFileName =
+        QStandardPaths::locate(QStandardPaths::CacheLocation, QStringLiteral("messagelist/threading/%1").arg(id), QStandardPaths::LocateFile);
     if (cacheFileName.isEmpty()) {
         qCDebug(MESSAGELIST_LOG) << "No threading cache file for collection" << id;
         return;
@@ -103,9 +95,7 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
         return;
     }
 
-    if (cacheHeader.grouping != mGrouping
-        || cacheHeader.threading != mThreading
-        || cacheHeader.threadLeader != mThreadLeader) {
+    if (cacheHeader.grouping != mGrouping || cacheHeader.threading != mThreading || cacheHeader.threadLeader != mThreadLeader) {
         // The cache is valid, but for a different grouping/threading configuration.
         qCDebug(MESSAGELIST_LOG) << "\tCache file unusable, threading configuration mismatch";
         cacheFile.close();
@@ -156,13 +146,11 @@ void ThreadingCache::save()
     qCDebug(MESSAGELIST_LOG) << "Saving threading cache to" << cacheFile.fileName();
 
     QDataStream stream(&cacheFile);
-    CacheHeader cacheHeader{
-        1,                      // version
-        mGrouping,
-        mThreading,
-        mThreadLeader,
-        mParentCache.size()
-    };
+    CacheHeader cacheHeader{1, // version
+                            mGrouping,
+                            mThreading,
+                            mThreadLeader,
+                            mParentCache.size()};
     stream << cacheHeader;
     cacheFile.flush();
 

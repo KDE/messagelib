@@ -5,12 +5,12 @@
 */
 
 #include "managelocaldatabasegui.h"
-#include <QStandardPaths>
 #include "../localdatabasemanager.h"
+#include <QStandardPaths>
 
 #include <QApplication>
-#include <QPushButton>
 #include <QPlainTextEdit>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 ManageLocalDataBaseGui::ManageLocalDataBaseGui(QWidget *parent)

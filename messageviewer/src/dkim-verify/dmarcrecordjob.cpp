@@ -10,7 +10,7 @@
 #include <QDnsLookup>
 
 using namespace MessageViewer;
-//see https://tools.ietf.org/html/rfc7489
+// see https://tools.ietf.org/html/rfc7489
 DMARCRecordJob::DMARCRecordJob(QObject *parent)
     : QObject(parent)
 {
@@ -28,8 +28,7 @@ bool DMARCRecordJob::start()
         return false;
     }
     mDnsLookup = new QDnsLookup(this);
-    connect(mDnsLookup, &QDnsLookup::finished,
-            this, &DMARCRecordJob::resolvDnsDone);
+    connect(mDnsLookup, &QDnsLookup::finished, this, &DMARCRecordJob::resolvDnsDone);
 
     mDnsLookup->setType(QDnsLookup::TXT);
     mDnsLookup->setName(resolvDnsValue());

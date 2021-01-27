@@ -13,9 +13,9 @@
 #include <KZip>
 
 #include <QBuffer>
-#include <QTimer>
-#include <QSharedPointer>
 #include <QDateTime>
+#include <QSharedPointer>
+#include <QTimer>
 
 using namespace MessageCore;
 static const mode_t archivePerms = S_IFREG | 0644;
@@ -56,9 +56,7 @@ void AttachmentCompressJob::Private::doStart()
     // Compress.
     zip.setCompression(KZip::DeflateCompression);
     QDateTime zipTime = QDateTime::currentDateTime();
-    if (!zip.writeFile(mOriginalPart->name(), decoded, archivePerms,
-                       QString(/*user*/), QString(/*group*/),
-                       zipTime, zipTime, zipTime)) {
+    if (!zip.writeFile(mOriginalPart->name(), decoded, archivePerms, QString(/*user*/), QString(/*group*/), zipTime, zipTime, zipTime)) {
         q->setError(KJob::UserDefinedError);
         q->setErrorText(i18n("Could not compress the attachment."));
         q->emitResult();
@@ -70,7 +68,7 @@ void AttachmentCompressJob::Private::doStart()
     // Create new part.
     Q_ASSERT(mCompressedPart == nullptr);
     mCompressedPart = AttachmentPart::Ptr(new AttachmentPart);
-    mCompressedPart->setName(mOriginalPart->name() + QLatin1String(".zip"));     // TODO not sure name should be .zipped too
+    mCompressedPart->setName(mOriginalPart->name() + QLatin1String(".zip")); // TODO not sure name should be .zipped too
     mCompressedPart->setFileName(mOriginalPart->fileName() + QLatin1String(".zip"));
     mCompressedPart->setDescription(mOriginalPart->description());
     mCompressedPart->setInline(mOriginalPart->isInline());

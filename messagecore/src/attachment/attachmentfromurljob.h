@@ -11,7 +11,8 @@
 
 #include "MessageCore/AttachmentFromUrlBaseJob"
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @short A job to load an attachment from an url.
  *

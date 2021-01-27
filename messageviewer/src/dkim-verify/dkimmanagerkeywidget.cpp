@@ -7,15 +7,15 @@
 #include "dkimmanagerkeywidget.h"
 #include "dkimmanagerkey.h"
 
-#include <QTreeWidget>
-#include <QHeaderView>
-#include <QVBoxLayout>
 #include <KLocalizedString>
-#include <QMenu>
-#include <QClipboard>
-#include <QApplication>
-#include <KTreeWidgetSearchLine>
 #include <KMessageBox>
+#include <KTreeWidgetSearchLine>
+#include <QApplication>
+#include <QClipboard>
+#include <QHeaderView>
+#include <QMenu>
+#include <QTreeWidget>
+#include <QVBoxLayout>
 
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
@@ -101,7 +101,7 @@ void DKIMManagerKeyWidget::saveKeys()
     lst.reserve(mTreeWidget->topLevelItemCount());
     for (int i = 0, total = mTreeWidget->topLevelItemCount(); i < total; ++i) {
         QTreeWidgetItem *item = mTreeWidget->topLevelItem(i);
-        const MessageViewer::KeyInfo info {item->text(2), item->text(1), item->text(0)};
+        const MessageViewer::KeyInfo info{item->text(2), item->text(1), item->text(0)};
         lst.append(info);
     }
     DKIMManagerKey::self()->saveKeys(lst);

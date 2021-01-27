@@ -7,8 +7,8 @@
 #ifndef CHECKSIGNATURE_H
 #define CHECKSIGNATURE_H
 
-#include <QObject>
 #include "dkim-verify/dkimchecksignaturejob.h"
+#include <QObject>
 #include <QtCrypto>
 
 class CheckSignature : public QObject
@@ -17,6 +17,7 @@ class CheckSignature : public QObject
 public:
     explicit CheckSignature(const QString &fileName, QObject *parent = nullptr);
     ~CheckSignature();
+
 private:
     void slotResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     QCA::Initializer *mQcaInitializer = nullptr;

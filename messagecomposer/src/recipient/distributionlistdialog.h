@@ -16,7 +16,8 @@ class QLineEdit;
 class QTreeWidget;
 class QPushButton;
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class DistributionListDialog : public QDialog
 {
     Q_OBJECT

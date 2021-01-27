@@ -15,7 +15,8 @@
 #include "messageviewer_export.h"
 #include <QStringList>
 //
-namespace MessageViewer {
+namespace MessageViewer
+{
 //
 // RichHeaderStrategy:
 //   Date, Subject, From, To, CC, ### what exactly?

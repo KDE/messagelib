@@ -7,11 +7,12 @@
 #ifndef TEMPLATECONVERTCOMMANDJOB_H
 #define TEMPLATECONVERTCOMMANDJOB_H
 
-#include <QObject>
 #include "templateparser_export.h"
 #include <KMime/Message>
+#include <QObject>
 
-namespace TemplateParser {
+namespace TemplateParser
+{
 /**
  * @brief The TemplateConvertCommandJob class
  * @author Laurent Montel <montel@kde.org>

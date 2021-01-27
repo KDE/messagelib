@@ -8,11 +8,12 @@
 #ifndef MAILVIEWER_OBJECTTREEEMPTYSOURCE_H
 #define MAILVIEWER_OBJECTTREEEMPTYSOURCE_H
 
-#include <MimeTreeParser/ObjectTreeSource>
 #include "messageviewer_export.h"
+#include <MimeTreeParser/ObjectTreeSource>
 class QString;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class AttachmentStrategy;
 class CSSHelperBase;
 class HtmlWriter;
@@ -49,6 +50,7 @@ public:
     virtual bool showExpandQuotesMark() const;
     virtual bool isPrinting() const;
     virtual int levelQuote() const;
+
 private:
     EmptySourcePrivate *const d;
 };

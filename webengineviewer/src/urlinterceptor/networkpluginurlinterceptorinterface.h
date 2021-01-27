@@ -6,12 +6,13 @@
 #ifndef MAILNETWORKPLUGINURLINTERCEPTORINTERFACE_H
 #define MAILNETWORKPLUGINURLINTERCEPTORINTERFACE_H
 
-#include <QObject>
 #include "webengineviewer_export.h"
+#include <QObject>
 class QWebEngineUrlRequestInfo;
 class KActionCollection;
 class QAction;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebHitTestResult;
 /**
  * @brief The NetworkPluginUrlInterceptorInterface class

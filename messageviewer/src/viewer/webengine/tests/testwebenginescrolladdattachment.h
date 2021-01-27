@@ -8,7 +8,8 @@
 #define TESTWEBENGINESCROLLADDATTACHMENT_H
 
 #include <QWidget>
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MailWebEngineView;
 }
 class TestWebEngineScrollAddAttachment : public QWidget
@@ -19,6 +20,7 @@ public:
 
 private Q_SLOTS:
     void slotScrollToAttachment();
+
 private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
 };

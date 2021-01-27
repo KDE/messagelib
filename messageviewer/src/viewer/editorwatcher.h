@@ -10,12 +10,13 @@
 #include "messageviewer_export.h"
 #include <QUrl>
 
+#include <QElapsedTimer>
 #include <QObject>
 #include <QTimer>
-#include <QElapsedTimer>
 class KProcess;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
   Starts an editor for the given URL and emits an signal when
   editing has been finished. Both, the editor process as well
@@ -26,17 +27,8 @@ class MESSAGEVIEWER_EXPORT EditorWatcher : public QObject
 {
     Q_OBJECT
 public:
-    enum OpenWithOption {
-        OpenWithDialog,
-        NoOpenWithDialog
-    };
-    enum ErrorEditorWatcher {
-        Unknown = 0,
-        Canceled,
-        NoServiceFound,
-        CannotStart,
-        NoError
-    };
+    enum OpenWithOption { OpenWithDialog, NoOpenWithDialog };
+    enum ErrorEditorWatcher { Unknown = 0, Canceled, NoServiceFound, CannotStart, NoError };
 
     /**
      * Constructs an EditorWatcher.

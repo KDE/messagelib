@@ -7,15 +7,17 @@
 #ifndef MAILWEBENGINE_H
 #define MAILWEBENGINE_H
 #include "messageviewer_export.h"
+#include <MessageViewer/BlockMailTrackingUrlInterceptor>
 #include <WebEngineViewer/WebEngineView>
 #include <boost/function.hpp>
-#include <MessageViewer/BlockMailTrackingUrlInterceptor>
 class QPrinter;
 class KActionCollection;
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebHitTestResult;
 }
-namespace MessageViewer {
+namespace MessageViewer
+{
 class ViewerPrivate;
 class MailWebEngineViewPrivate;
 /**
@@ -92,6 +94,7 @@ private Q_SLOTS:
 
     void slotWebHitFinished(const WebEngineViewer::WebHitTestResult &result);
     void slotLoadFinished();
+
 private:
     void runJavaScriptInWordId(const QString &script);
     MailWebEngineViewPrivate *const d;

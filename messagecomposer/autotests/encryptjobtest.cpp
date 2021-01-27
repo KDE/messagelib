@@ -7,8 +7,8 @@
 
 #include "encryptjobtest.h"
 
-#include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
+#include "qtest_messagecomposer.h"
 #include "setupenv.h"
 
 #include <KMime/Content>
@@ -23,17 +23,17 @@
 #include <MessageComposer/TransparentJob>
 #include <MessageComposer/Util>
 
-#include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/NodeHelper>
+#include <MimeTreeParser/ObjectTreeParser>
 
-#include <QGpgME/Protocol>
 #include <QGpgME/DecryptVerifyJob>
+#include <QGpgME/Protocol>
 
-#include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
+#include <gpgme++/verificationresult.h>
 
-#include <stdlib.h>
 #include <KCharsets>
+#include <stdlib.h>
 
 #include <QTest>
 #include <decryptionresult.h>
@@ -63,7 +63,7 @@ void EncryptJobTest::testContentDirect()
 
     VERIFYEXEC(mainTextJob);
 
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     auto eJob = new EncryptJob(&composer);
 
@@ -95,7 +95,7 @@ void EncryptJobTest::testContentChained()
 
     VERIFYEXEC(mainTextJob);
 
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
     auto eJob = new EncryptJob(&composer);
 
     const QStringList recipients = {QStringLiteral("test@kolab.org")};
@@ -110,7 +110,7 @@ void EncryptJobTest::testContentChained()
 
 void EncryptJobTest::testContentSubjobChained()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     const QByteArray data(QStringLiteral("one flew over the cuckoo's nest").toUtf8());
     KMime::Message skeletonMessage;
@@ -138,7 +138,7 @@ void EncryptJobTest::testContentSubjobChained()
 
 void EncryptJobTest::testHeaders()
 {
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     auto eJob = new EncryptJob(this);
 
@@ -189,7 +189,7 @@ void EncryptJobTest::testProtectedHeaders()
     QFETCH(bool, protectedHeadersObvoscate);
     QFETCH(QString, referenceFile);
 
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     Composer composer;
     auto eJob = new EncryptJob(&composer);
@@ -257,7 +257,7 @@ void EncryptJobTest::testProtectedHeaders()
     }
     f.close();
 
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void EncryptJobTest::checkEncryption(EncryptJob *eJob)

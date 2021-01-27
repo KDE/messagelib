@@ -7,9 +7,10 @@
 #ifndef TEMPLATEPARSEREMAILADDRESSREQUESTERBASE_H
 #define TEMPLATEPARSEREMAILADDRESSREQUESTERBASE_H
 
-#include <QWidget>
 #include "templateparser_export.h"
-namespace TemplateParser {
+#include <QWidget>
+namespace TemplateParser
+{
 /**
  * @brief The TemplateParserEmailAddressRequesterBase class
  * @author Laurent Montel <montel@kde.org>

@@ -4,13 +4,13 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "headerstyle.h"
 #include "headerstyleinterface.h"
+#include "headerstyle.h"
 #include "headerstyleplugin.h"
 #include "utils/messageviewerutil_p.h"
 #include <KActionMenu>
-#include <QAction>
 #include <KToggleAction>
+#include <QAction>
 using namespace MessageViewer;
 
 HeaderStyleInterface::HeaderStyleInterface(MessageViewer::HeaderStylePlugin *headerStylePlugin, QObject *parent)

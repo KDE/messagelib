@@ -5,13 +5,13 @@
 */
 
 #include "plugineditorcheckbeforesendmanager.h"
-#include "plugineditorcheckbeforesend.h"
 #include "messagecomposer_debug.h"
-#include <QFileInfo>
-#include <QSet>
+#include "plugineditorcheckbeforesend.h"
+#include <KPluginFactory>
 #include <KPluginLoader>
 #include <KPluginMetaData>
-#include <KPluginFactory>
+#include <QFileInfo>
+#include <QSet>
 
 using namespace MessageComposer;
 
@@ -29,7 +29,8 @@ public:
     bool isEnabled = true;
 };
 
-namespace {
+namespace
+{
 QString pluginVersion()
 {
     return QStringLiteral("1.0");
@@ -53,6 +54,7 @@ public:
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
+
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
     PluginEditorCheckBeforeSendManager *const q;
@@ -86,10 +88,11 @@ void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
         PluginEditorCheckBeforeSendInfo info;
         const KPluginMetaData data = i.previous();
 
-        //1) get plugin data => name/description etc.
+        // 1) get plugin data => name/description etc.
         info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
-        //2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        // 2) look at if plugin is activated
+        const bool isPluginActivated =
+            PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();

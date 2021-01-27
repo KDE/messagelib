@@ -12,8 +12,10 @@
 #include <QHash>
 #include <QList>
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class MessageItem;
 
 typedef long int MessageItemSetReference;
@@ -36,14 +38,14 @@ public:
     ~MessageItemSetManager();
 
 private:
-    QHash< MessageItemSetReference, QHash< MessageItem *, MessageItem * > * > *mSets;
+    QHash<MessageItemSetReference, QHash<MessageItem *, MessageItem *> *> *mSets;
 
 public:
     void clearAllSets();
     Q_REQUIRED_RESULT int setCount() const;
     void removeSet(MessageItemSetReference ref);
     void removeMessageItemFromAllSets(MessageItem *mi);
-    Q_REQUIRED_RESULT QList< MessageItem * > messageItems(MessageItemSetReference ref);
+    Q_REQUIRED_RESULT QList<MessageItem *> messageItems(MessageItemSetReference ref);
     Q_REQUIRED_RESULT MessageItemSetReference createSet();
     Q_REQUIRED_RESULT bool addMessageItem(MessageItemSetReference ref, MessageItem *mi);
 };

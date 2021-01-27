@@ -15,16 +15,17 @@
 
 #include <QUrl>
 
-#include <MessageCore/AttachmentPart>
-#include <MessageViewer/EditorWatcher>
+#include "messagecomposer_export.h"
 #include <KJob>
 #include <KService>
-#include "messagecomposer_export.h"
+#include <MessageCore/AttachmentPart>
+#include <MessageViewer/EditorWatcher>
 
 class KActionCollection;
 class QAction;
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class AttachmentModel;
 /**
  * @brief The AttachmentControllerBase class
@@ -56,7 +57,8 @@ public Q_SLOTS:
     void showContextMenu();
     void openAttachment(const MessageCore::AttachmentPart::Ptr &part);
     void viewAttachment(const MessageCore::AttachmentPart::Ptr &part);
-    void editAttachment(MessageCore::AttachmentPart::Ptr part, MessageViewer::EditorWatcher::OpenWithOption option = MessageViewer::EditorWatcher::NoOpenWithDialog);
+    void editAttachment(MessageCore::AttachmentPart::Ptr part,
+                        MessageViewer::EditorWatcher::OpenWithOption option = MessageViewer::EditorWatcher::NoOpenWithDialog);
     void editAttachmentWith(const MessageCore::AttachmentPart::Ptr &part);
     void saveAttachmentAs(const MessageCore::AttachmentPart::Ptr &part);
     void attachmentProperties(const MessageCore::AttachmentPart::Ptr &part);

@@ -5,16 +5,16 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "messagelistutil.h"
-#include "messagelistutil_p.h"
 #include "messagelistsettings.h"
+#include "messagelistutil_p.h"
 
-#include <KConfigGroup>
-#include <QMenu>
-#include <QIcon>
-#include <KLocalizedString>
-#include <KMime/Message>
 #include <Item>
 #include <KColorScheme>
+#include <KConfigGroup>
+#include <KLocalizedString>
+#include <KMime/Message>
+#include <QIcon>
+#include <QMenu>
 
 QString MessageList::Util::messageSortingConfigName()
 {
@@ -68,23 +68,19 @@ QString MessageList::Util::storageModelSelectedMessageGroup()
 
 void MessageList::Util::deleteConfig(const QString &collectionId)
 {
-    KConfigGroup confselectedMessage(MessageListSettings::self()->config(),
-                                     MessageList::Util::storageModelSelectedMessageGroup());
+    KConfigGroup confselectedMessage(MessageListSettings::self()->config(), MessageList::Util::storageModelSelectedMessageGroup());
     confselectedMessage.deleteEntry(MessageList::Util::messageUniqueIdConfigName().arg(collectionId));
 
-    KConfigGroup storageModelOrder(MessageListSettings::self()->config(),
-                                   MessageList::Util::storageModelSortOrderGroup());
+    KConfigGroup storageModelOrder(MessageListSettings::self()->config(), MessageList::Util::storageModelSortOrderGroup());
     storageModelOrder.deleteEntry(collectionId + groupSortDirectionConfigName());
     storageModelOrder.deleteEntry(collectionId + groupSortingConfigName());
     storageModelOrder.deleteEntry(collectionId + messageSortDirectionConfigName());
     storageModelOrder.deleteEntry(collectionId + messageSortingConfigName());
 
-    KConfigGroup storageModelTheme(MessageListSettings::self()->config(),
-                                   MessageList::Util::storageModelThemesGroup());
+    KConfigGroup storageModelTheme(MessageListSettings::self()->config(), MessageList::Util::storageModelThemesGroup());
     storageModelTheme.deleteEntry(collectionId + setForStorageModelConfigName());
 
-    KConfigGroup storageModelAggregation(MessageListSettings::self()->config(),
-                                         MessageList::Util::storageModelAggregationsGroup());
+    KConfigGroup storageModelAggregation(MessageListSettings::self()->config(), MessageList::Util::storageModelAggregationsGroup());
     storageModelAggregation.deleteEntry(collectionId + setForStorageModelConfigName());
 }
 
@@ -118,8 +114,7 @@ void MessageList::Util::fillViewMenu(QMenu *menu, QObject *receiver)
     auto themeMenu = new QMenu(i18n("Theme"), menu);
     themeMenu->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-theme")));
     menu->addMenu(themeMenu);
-    QObject::connect(themeMenu, SIGNAL(aboutToShow()),
-                     receiver, SLOT(themeMenuAboutToShow()));
+    QObject::connect(themeMenu, SIGNAL(aboutToShow()), receiver, SLOT(themeMenuAboutToShow()));
 }
 
 QString MessageList::Util::contentSummary(const Akonadi::Item &item)

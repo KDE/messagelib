@@ -16,13 +16,13 @@
 #include <QVector>
 
 #include "messagecomposer_debug.h"
+#include <kmime/kmime_content.h>
 #include <kmime/kmime_headers.h>
 #include <kmime/kmime_message.h>
-#include <kmime/kmime_content.h>
 
+#include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>
 #include <gpgme++/signingresult.h>
-#include <gpgme++/encryptionresult.h>
 #include <sstream>
 
 using namespace MessageComposer;
@@ -94,10 +94,7 @@ void SignJob::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
     Q_D(SignJob);
 
     // There *must* be a concrete format set at this point.
-    Q_ASSERT(format == Kleo::OpenPGPMIMEFormat
-             || format == Kleo::InlineOpenPGPFormat
-             || format == Kleo::SMIMEFormat
-             || format == Kleo::SMIMEOpaqueFormat);
+    Q_ASSERT(format == Kleo::OpenPGPMIMEFormat || format == Kleo::InlineOpenPGPFormat || format == Kleo::SMIMEFormat || format == Kleo::SMIMEOpaqueFormat);
     d->format = format;
 }
 
@@ -132,7 +129,7 @@ KMime::Content *SignJob::origContent()
 void SignJob::doStart()
 {
     Q_D(SignJob);
-    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr); // Not processed before.
 
     if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
         auto pJob = new ProtectedHeadersJob;
@@ -172,7 +169,7 @@ void SignJob::slotResult(KJob *job)
 void SignJob::process()
 {
     Q_D(SignJob);
-    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr); // Not processed before.
 
     // if setContent hasn't been called, we assume that a subjob was added
     // and we want to use that
@@ -181,7 +178,7 @@ void SignJob::process()
         d->content = d->subjobContents.constFirst();
     }
 
-    //d->resultContent = new KMime::Content;
+    // d->resultContent = new KMime::Content;
 
     const QGpgME::Protocol *proto = nullptr;
     if (d->format & Kleo::AnyOpenPGP) {
@@ -210,8 +207,7 @@ void SignJob::process()
         //   suggested that either the Quoted-Printable or Base64 MIME encoding
         //   be applied.
         const auto encoding = d->content->contentTransferEncoding()->encoding();
-        if ((encoding == KMime::Headers::CEquPr || encoding == KMime::Headers::CE7Bit)
-            && !d->content->contentType(false)) {
+        if ((encoding == KMime::Headers::CEquPr || encoding == KMime::Headers::CE7Bit) && !d->content->contentType(false)) {
             QByteArray body = d->content->encodedBody();
             bool changed = false;
             QVector<QByteArray> search;
@@ -256,30 +252,32 @@ void SignJob::process()
         }
 
         content = KMime::LFtoCRLF(d->content->encodedContent());
-    } else {                    // SMimeOpaque doesn't need LFtoCRLF, else it gets munged
+    } else { // SMimeOpaque doesn't need LFtoCRLF, else it gets munged
         content = d->content->encodedContent();
     }
 
     QGpgME::SignJob *job(proto->signJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat));
-    QObject::connect(job, &QGpgME::SignJob::result, this, [this, d](const GpgME::SigningResult &result,
-        const QByteArray &signature,
-        const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
-        Q_UNUSED(auditLogAsHtml)
-        Q_UNUSED(auditLogError)
-        if (result.error().code()) {
-            qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << result.error().asString();
-            //        job->showErrorDialog( globalPart()->parentWidgetForGui() );
-            setError(result.error().code());
-            setErrorText(QString::fromLocal8Bit(result.error().asString()));
+    QObject::connect(
+        job,
+        &QGpgME::SignJob::result,
+        this,
+        [this, d](const GpgME::SigningResult &result, const QByteArray &signature, const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
+            Q_UNUSED(auditLogAsHtml)
+            Q_UNUSED(auditLogError)
+            if (result.error().code()) {
+                qCDebug(MESSAGECOMPOSER_LOG) << "signing failed:" << result.error().asString();
+                //        job->showErrorDialog( globalPart()->parentWidgetForGui() );
+                setError(result.error().code());
+                setErrorText(QString::fromLocal8Bit(result.error().asString()));
+                emitResult();
+                return;
+            }
+
+            QByteArray signatureHashAlgo = result.createdSignature(0).hashAlgorithmAsString();
+            d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, signature, d->format, true, signatureHashAlgo);
+
             emitResult();
-            return;
-        }
-
-        QByteArray signatureHashAlgo = result.createdSignature(0).hashAlgorithmAsString();
-        d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, signature, d->format, true, signatureHashAlgo);
-
-        emitResult();
-    });
+        });
 
     const auto error = job->start(d->signers, content, d->signingMode(d->format));
     if (error.code()) {

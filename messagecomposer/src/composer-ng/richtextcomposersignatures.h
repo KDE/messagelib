@@ -7,13 +7,15 @@
 #ifndef MESSAGECOMPOSER_RICHTEXTCOMPOSERSIGNATURES_H
 #define MESSAGECOMPOSER_RICHTEXTCOMPOSERSIGNATURES_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
-namespace KIdentityManagement {
+#include <QObject>
+namespace KIdentityManagement
+{
 class Signature;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class RichTextComposerNg;
 /**
  * @brief The RichTextComposerSignatures class
@@ -29,6 +31,7 @@ public:
     void cleanWhitespace(const KIdentityManagement::Signature &sig);
 
     Q_REQUIRED_RESULT bool replaceSignature(const KIdentityManagement::Signature &oldSig, const KIdentityManagement::Signature &newSig);
+
 private:
     class RichTextComposerSignaturesPrivate;
     RichTextComposerSignaturesPrivate *const d;

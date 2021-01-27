@@ -14,14 +14,16 @@
 #define MESSAGECOMPOSER_SIGNATURECONTROLLER_H
 
 #include "messagecomposer_export.h"
-#include <QObject>
 #include <KIdentityManagement/kidentitymanagement/signature.h>
+#include <QObject>
 
-namespace KIdentityManagement {
+namespace KIdentityManagement
+{
 class IdentityCombo;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class RichTextComposerNg;
 class SignatureControllerPrivate;
 /**
@@ -46,7 +48,7 @@ public:
     void resume();
 
     /** Adds the given signature to the editor, taking user preferences into account.
-    */
+     */
     void applySignature(const KIdentityManagement::Signature &signature);
 
 public Q_SLOTS:

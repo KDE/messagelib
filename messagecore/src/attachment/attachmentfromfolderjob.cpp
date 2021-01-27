@@ -58,8 +58,8 @@ void AttachmentFromFolderJob::Private::compressFolder()
         qCWarning(MESSAGECORE_LOG) << " Impossible to write file " << fileName;
     }
     qCDebug(MESSAGECORE_LOG) << "writing root directory : " << filename;
-    addEntity(QDir(q->url().path()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot
-                                                  |QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), fileName + QLatin1Char('/'));
+    addEntity(QDir(q->url().path()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks | QDir::Files, QDir::DirsFirst),
+              fileName + QLatin1Char('/'));
     mZip->close();
 
     Q_ASSERT(mCompressedFolder == nullptr);
@@ -76,7 +76,7 @@ void AttachmentFromFolderJob::Private::compressFolder()
     q->setAttachmentPart(mCompressedFolder);
     q->emitResult();
 
-    //TODO:add allowCompression bool to AttachmentPart && modify GUI to disable decompressing.
+    // TODO:add allowCompression bool to AttachmentPart && modify GUI to disable decompressing.
     //  Or leave attachment as uncompressed and let it be compressed again?
 }
 
@@ -87,8 +87,7 @@ void AttachmentFromFolderJob::Private::addEntity(const QFileInfoList &f, const Q
 
         if (q->maximumAllowedSize() != -1 && mZip->device()->size() > q->maximumAllowedSize()) {
             q->setError(KJob::UserDefinedError);
-            q->setErrorText(i18n
-                                ("The resulting attachment would be larger than the maximum allowed size, aborting."));
+            q->setErrorText(i18n("The resulting attachment would be larger than the maximum allowed size, aborting."));
             q->emitResult();
             return;
         }
@@ -102,8 +101,8 @@ void AttachmentFromFolderJob::Private::addEntity(const QFileInfoList &f, const Q
                 q->emitResult();
                 return;
             }
-            addEntity(QDir(info.filePath()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot
-                                                          |QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), path + infoFileName + QLatin1Char('/'));
+            addEntity(QDir(info.filePath()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks | QDir::Files, QDir::DirsFirst),
+                      path + infoFileName + QLatin1Char('/'));
         }
 
         if (info.isFile()) {
@@ -115,8 +114,7 @@ void AttachmentFromFolderJob::Private::addEntity(const QFileInfoList &f, const Q
                 q->emitResult();
                 return;
             }
-            if (!mZip->writeFile(path + infoFileName, file.readAll(), archivePermsAttachment,
-                                 QString(), QString(), mArchiveTime, mArchiveTime, mArchiveTime)) {
+            if (!mZip->writeFile(path + infoFileName, file.readAll(), archivePermsAttachment, QString(), QString(), mArchiveTime, mArchiveTime, mArchiveTime)) {
                 q->setError(KJob::UserDefinedError);
                 q->setErrorText(i18n("Could not add %1 to the archive", file.fileName()));
                 q->emitResult();

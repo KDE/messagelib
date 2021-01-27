@@ -12,7 +12,8 @@
 
 using namespace MessageCore;
 
-const KIdentityManagement::Identity &Util::identityForMessage(KMime::Message *msg, const KIdentityManagement::IdentityManager *const identMgr, uint folderIdentityId)
+const KIdentityManagement::Identity &
+Util::identityForMessage(KMime::Message *msg, const KIdentityManagement::IdentityManager *const identMgr, uint folderIdentityId)
 {
     const auto &identity = identMgr->identityForAddress(msg->to()->asUnicodeString() + QLatin1String(", ") + msg->cc()->asUnicodeString());
 

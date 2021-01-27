@@ -12,10 +12,12 @@
 #include <KSyntaxHighlighting/Repository>
 
 class QKeyEvent;
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TextEditorCompleter;
 }
-namespace TemplateParser {
+namespace TemplateParser
+{
 class TemplatesTextEditor : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT
@@ -31,6 +33,7 @@ protected:
 
     void clearDecorator() override;
     void createHighlighter() override;
+
 private:
     KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;
     KSyntaxHighlighting::Repository mSyntaxRepo;

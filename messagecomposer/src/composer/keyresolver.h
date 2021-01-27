@@ -15,8 +15,8 @@
 #define MESSAGECOMPOSER_KLEO_KEYRESOLVER_H
 
 #include "messagecomposer_export.h"
-#include <Libkleo/KeyApprovalDialog>
 #include <Libkleo/Enum>
+#include <Libkleo/KeyApprovalDialog>
 
 #include <gpgme++/key.h>
 
@@ -24,12 +24,9 @@
 
 #include <QStringList>
 
-namespace Kleo {
-enum Result {
-    Failure = 0,
-    Ok = 1,
-    Canceled = 2
-};
+namespace Kleo
+{
+enum Result { Failure = 0, Ok = 1, Canceled = 2 };
 /**
      \short A class to resolve signing/encryption keys w.r.t. per-recipient preferences
 
@@ -106,7 +103,15 @@ enum Result {
 class KeyResolver
 {
 public:
-    KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, int encrKeyNearExpiryThresholdDays, int signKeyNearExpiryThresholdDays, int encrRootCertNearExpiryThresholdDays, int signRootCertNearExpiryThresholdDays, int encrChainCertNearExpiryThresholdDays,
+    KeyResolver(bool encToSelf,
+                bool showApproval,
+                bool oppEncryption,
+                unsigned int format,
+                int encrKeyNearExpiryThresholdDays,
+                int signKeyNearExpiryThresholdDays,
+                int encrRootCertNearExpiryThresholdDays,
+                int signRootCertNearExpiryThresholdDays,
+                int encrChainCertNearExpiryThresholdDays,
                 int signChainCertNearExpiryThresholdDays);
 
     ~KeyResolver();
@@ -202,7 +207,8 @@ public:
         {
         }
 
-        SplitInfo(const QStringList &r) : recipients(r)
+        SplitInfo(const QStringList &r)
+            : recipients(r)
         {
         }
 
@@ -233,7 +239,13 @@ private:
     Kleo::Result resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted);
     Kleo::Result resolveSigningKeysForEncryption();
     Kleo::Result resolveSigningKeysForSigningOnly();
-    Kleo::Result checkKeyNearExpiry(const GpgME::Key &key, const char *dontAskAgainName, bool mine, bool sign, bool ca = false, int recurse_limit = 100, const GpgME::Key &orig_key = GpgME::Key::null) const;
+    Kleo::Result checkKeyNearExpiry(const GpgME::Key &key,
+                                    const char *dontAskAgainName,
+                                    bool mine,
+                                    bool sign,
+                                    bool ca = false,
+                                    int recurse_limit = 100,
+                                    const GpgME::Key &orig_key = GpgME::Key::null) const;
     void collapseAllSplitInfos();
     void addToAllSplitInfos(const std::vector<GpgME::Key> &keys, unsigned int formats);
     void addKeys(const std::vector<Item> &items, CryptoMessageFormat f);
@@ -246,7 +258,8 @@ private:
 
     bool haveTrustedEncryptionKey(const QString &person) const;
 
-    std::vector<GpgME::Key> selectKeys(const QString &person, const QString &msg, const std::vector<GpgME::Key> &selectedKeys = std::vector<GpgME::Key>()) const;
+    std::vector<GpgME::Key>
+    selectKeys(const QString &person, const QString &msg, const std::vector<GpgME::Key> &selectedKeys = std::vector<GpgME::Key>()) const;
 
     QStringList keysForAddress(const QString &address) const;
     void setKeysForAddress(const QString &address, const QStringList &pgpKeyFingerprints, const QStringList &smimeCertFingerprints) const;

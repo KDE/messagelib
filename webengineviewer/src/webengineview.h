@@ -7,10 +7,11 @@
 #ifndef WEBENGINEVIEW_H
 #define WEBENGINEVIEW_H
 
-#include <QWebEngineView>
-#include <QWebEngineScript>
 #include "webengineviewer_export.h"
-namespace WebEngineViewer {
+#include <QWebEngineScript>
+#include <QWebEngineView>
+namespace WebEngineViewer
+{
 class WebEngineViewPrivate;
 class WebEngineManageScript;
 class LocalDataBaseManager;
@@ -46,6 +47,7 @@ protected:
     virtual void forwardMousePressEvent(QMouseEvent *event);
     virtual void forwardMouseMoveEvent(QMouseEvent *event);
     virtual void forwardMouseReleaseEvent(QMouseEvent *event);
+
 private:
     WebEngineViewPrivate *const d;
 };

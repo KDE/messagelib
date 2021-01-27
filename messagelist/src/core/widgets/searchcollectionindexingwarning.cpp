@@ -8,12 +8,12 @@
 #include "searchcollectionindexingwarning.h"
 #include "messagelist_debug.h"
 
-#include <AkonadiCore/persistentsearchattribute.h>
+#include <AkonadiCore/cachepolicy.h>
 #include <AkonadiCore/collectionfetchjob.h>
 #include <AkonadiCore/collectionfetchscope.h>
 #include <AkonadiCore/collectionstatistics.h>
 #include <AkonadiCore/entityhiddenattribute.h>
-#include <AkonadiCore/cachepolicy.h>
+#include <AkonadiCore/persistentsearchattribute.h>
 
 #include <PimCommon/PimUtil>
 
@@ -29,8 +29,9 @@ SearchCollectionIndexingWarning::SearchCollectionIndexingWarning(QWidget *parent
 {
     setVisible(false);
     setWordWrap(true);
-    setText(i18n("Some of the search folders in this query are still being indexed "
-                 "or are excluded from indexing completely. The results below may be incomplete."));
+    setText(
+        i18n("Some of the search folders in this query are still being indexed "
+             "or are excluded from indexing completely. The results below may be incomplete."));
     setCloseButtonVisible(true);
     setMessageType(Information);
 }
@@ -44,8 +45,7 @@ Akonadi::CollectionFetchJob *SearchCollectionIndexingWarning::fetchCollections(c
     const Akonadi::CollectionFetchJob::Type type = recursive ? Akonadi::CollectionFetchJob::Recursive : Akonadi::CollectionFetchJob::Base;
     auto fetch = new Akonadi::CollectionFetchJob(cols, type, this);
     fetch->fetchScope().setAncestorRetrieval(Akonadi::CollectionFetchScope::None);
-    fetch->fetchScope().setContentMimeTypes(QStringList() << Akonadi::Collection::mimeType()
-                                                          << QStringLiteral("message/rfc822"));
+    fetch->fetchScope().setContentMimeTypes(QStringList() << Akonadi::Collection::mimeType() << QStringLiteral("message/rfc822"));
     fetch->fetchScope().setIncludeStatistics(true);
     return fetch;
 }

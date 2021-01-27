@@ -7,10 +7,11 @@
 #ifndef PLUGINEDITORCONVERTTEXTMANAGER_H
 #define PLUGINEDITORCONVERTTEXTMANAGER_H
 
-#include <QObject>
 #include "messagecomposer_export.h"
 #include <PimCommon/PluginUtil>
-namespace MessageComposer {
+#include <QObject>
+namespace MessageComposer
+{
 class PluginEditorConvertTextManagerPrivate;
 class PluginEditorConvertText;
 /**
@@ -32,6 +33,7 @@ public:
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT PluginEditorConvertText *pluginFromIdentifier(const QString &id);
+
 private:
     PluginEditorConvertTextManagerPrivate *const d;
 };

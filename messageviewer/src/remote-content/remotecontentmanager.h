@@ -4,14 +4,14 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-
 #ifndef REMOTECONTENTMANAGER_H
 #define REMOTECONTENTMANAGER_H
 
 #include "messageviewer_private_export.h"
 #include <QObject>
 #include <QUrl>
-namespace MessageViewer {
+namespace MessageViewer
+{
 class RemoteContentInfo;
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentManager : public QObject
 {
@@ -31,6 +31,7 @@ public:
     void setRemoveContentInfo(const QVector<RemoteContentInfo> &removeContentInfo);
 
     Q_REQUIRED_RESULT bool isUnique(const RemoteContentInfo &newInfo) const;
+
 private:
     void loadSettings();
     void writeSettings();

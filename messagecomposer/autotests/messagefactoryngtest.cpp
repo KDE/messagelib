@@ -8,16 +8,16 @@
 
 #include "messagefactoryngtest.h"
 
-#include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
+#include "qtest_messagecomposer.h"
 #include "setupenv.h"
 
 #include <MessageCore/StringUtil>
 
 #include <MessageComposer/Composer>
-#include <MessageComposer/MessageFactoryNG>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/MessageComposerSettings>
+#include <MessageComposer/MessageFactoryNG>
 #include <MessageComposer/Util>
 
 #include <MessageComposer/InfoPart>
@@ -25,17 +25,17 @@
 
 #include <KMime/DateFormatter>
 
-#include <KIdentityManagement/KIdentityManagement/IdentityManager>
 #include <KIdentityManagement/KIdentityManagement/Identity>
+#include <KIdentityManagement/KIdentityManagement/IdentityManager>
 
 #include "globalsettings_templateparser.h"
 
 #include <KCharsets>
-#include <QRegularExpression>
-#include <QRegularExpressionMatch>
 #include <QDateTime>
 #include <QDir>
 #include <QLocale>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
 #include <QSignalSpy>
 #include <QTest>
 
@@ -64,9 +64,9 @@ void initLocale()
 Q_CONSTRUCTOR_FUNCTION(initLocale)
 #endif
 
-namespace {
-template<typename String>
-String very_simplistic_diff(const String &a, const String &b)
+namespace
+{
+template<typename String> String very_simplistic_diff(const String &a, const String &b)
 {
     const QList<String> al = a.split('\n');
     const QList<String> bl = b.split('\n');
@@ -74,21 +74,20 @@ String very_simplistic_diff(const String &a, const String &b)
     int ai = 0, bi = 0;
     while (ai < al.size() && bi < bl.size()) {
         if (al[ai] == bl[bi]) {
-            //qDebug( "found   equal line a@%d x b@%d", ai, bi );
+            // qDebug( "found   equal line a@%d x b@%d", ai, bi );
             result += "  " + al[ai] + '\n';
             ++ai;
             ++bi;
         } else {
-            //qDebug( "found unequal line a@%d x b@%d", ai, bi );
+            // qDebug( "found unequal line a@%d x b@%d", ai, bi );
             const int b_in_a = al.indexOf(bl[bi], ai);
             const int a_in_b = bl.indexOf(al[ai], bi);
-            //qDebug( "   b_in_a == %d", b_in_a );
-            //qDebug( "   a_in_b == %d", a_in_b );
+            // qDebug( "   b_in_a == %d", b_in_a );
+            // qDebug( "   a_in_b == %d", a_in_b );
             if (b_in_a == -1) {
                 if (a_in_b == -1) {
                     // (at least) one line changed:
-                    result += "- " + al[ai++] + '\n'
-                              +  "+ " + bl[bi++] + '\n';
+                    result += "- " + al[ai++] + '\n' + "+ " + bl[bi++] + '\n';
                 } else {
                     // some lines added:
                     while (bi < a_in_b) {
@@ -105,7 +104,7 @@ String very_simplistic_diff(const String &a, const String &b)
                     result += "+ " + bl[bi++] + '\n';
                 }
             }
-            //qDebug( "result ( a@%d b@%d ):\n%s\n--end", ai, bi, result.constData() );
+            // qDebug( "result ( a@%d b@%d ):\n%s\n--end", ai, bi, result.constData() );
         }
     }
 
@@ -121,9 +120,10 @@ String very_simplistic_diff(const String &a, const String &b)
 }
 }
 
-#define QCOMPARE_OR_DIFF(a, b)                                        \
-    if (a != b) {                                                       \
-        qDebug("diff:\n--begin--\n%s\n--end--", very_simplistic_diff(a, b).constData());} \
+#define QCOMPARE_OR_DIFF(a, b)                                                                                                                                 \
+    if (a != b) {                                                                                                                                              \
+        qDebug("diff:\n--begin--\n%s\n--end--", very_simplistic_diff(a, b).constData());                                                                       \
+    }                                                                                                                                                          \
     QVERIFY(a == b)
 
 QTEST_MAIN(MessageFactoryTest)
@@ -201,18 +201,21 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
 
     QString dateStr = reply.msg->date()->asUnicodeString();
-    QString ba = QString::fromLatin1("From: foo1 <identity1@bla.com>\n"
-                                     "X-KMail-Identity: %1\n"
-                                     "Date: %2\n"
-                                     "Cc: blu <blu@blu.org>, bly <bly@bly.org>\n"
-                                     "To: blo <blo@blo.org>, bli <bli@bli.org>\n"
-                                     "Subject: Re: Plain Message Test\n"
-                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
-                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
-                                     "X-KMail-Link-Message: 0\n"
-                                     "X-KMail-Link-Type: reply\n\n"
-                                     "%3")
-                 .arg(i1.uoid()).arg(dateStr).arg(replyStr);
+    QString ba = QString::fromLatin1(
+                     "From: foo1 <identity1@bla.com>\n"
+                     "X-KMail-Identity: %1\n"
+                     "Date: %2\n"
+                     "Cc: blu <blu@blu.org>, bly <bly@bly.org>\n"
+                     "To: blo <blo@blo.org>, bli <bli@bli.org>\n"
+                     "Subject: Re: Plain Message Test\n"
+                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                     "X-KMail-Link-Message: 0\n"
+                     "X-KMail-Link-Type: reply\n\n"
+                     "%3")
+                     .arg(i1.uoid())
+                     .arg(dateStr)
+                     .arg(replyStr);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
@@ -249,17 +252,19 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
 
     QString dateStr = reply.msg->date()->asUnicodeString();
-    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
-                                     "Date: %1\n"
-                                     "Cc: blu <blu@blu.org>, bly <bly@bly.org>\n"
-                                     "To: blo <blo@blo.org>, bli <bli@bli.org>\n"
-                                     "Subject: Re: Plain Message Test\n"
-                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
-                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
-                                     "X-KMail-Link-Message: 0\n"
-                                     "X-KMail-Link-Type: reply\n\n"
-                                     "%2")
-                 .arg(dateStr).arg(replyStr);
+    QString ba = QString::fromLatin1(
+                     "From: another <another@another.com>\n"
+                     "Date: %1\n"
+                     "Cc: blu <blu@blu.org>, bly <bly@bly.org>\n"
+                     "To: blo <blo@blo.org>, bli <bli@bli.org>\n"
+                     "Subject: Re: Plain Message Test\n"
+                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                     "X-KMail-Link-Message: 0\n"
+                     "X-KMail-Link-Type: reply\n\n"
+                     "%2")
+                     .arg(dateStr)
+                     .arg(replyStr);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
@@ -296,17 +301,19 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsyn
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
 
     QString dateStr = reply.msg->date()->asUnicodeString();
-    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
-                                     "Date: %1\n"
-                                     "Cc: blu <blu@blu.org>, bly <bly@bly.org>\n"
-                                     "To: blo <blo@blo.org>, bli <bli@bli.org>, Bla <bloblo@bla.com>\n"
-                                     "Subject: Re: Plain Message Test\n"
-                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
-                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
-                                     "X-KMail-Link-Message: 0\n"
-                                     "X-KMail-Link-Type: reply\n\n"
-                                     "%2")
-                 .arg(dateStr).arg(replyStr);
+    QString ba = QString::fromLatin1(
+                     "From: another <another@another.com>\n"
+                     "Date: %1\n"
+                     "Cc: blu <blu@blu.org>, bly <bly@bly.org>\n"
+                     "To: blo <blo@blo.org>, bli <bli@bli.org>, Bla <bloblo@bla.com>\n"
+                     "Subject: Re: Plain Message Test\n"
+                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                     "X-KMail-Link-Message: 0\n"
+                     "X-KMail-Link-Type: reply\n\n"
+                     "%2")
+                     .arg(dateStr)
+                     .arg(replyStr);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
@@ -335,16 +342,18 @@ void MessageFactoryTest::testCreateReplyToListAsync()
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
     QString dateStr = reply.msg->date()->asUnicodeString();
-    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
-                                     "Date: %1\n"
-                                     "To: list@list.org\n"
-                                     "Subject: Re: Plain Message Test\n"
-                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
-                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
-                                     "X-KMail-Link-Message: 0\n"
-                                     "X-KMail-Link-Type: reply\n\n"
-                                     "%2")
-                 .arg(dateStr).arg(replyStr);
+    QString ba = QString::fromLatin1(
+                     "From: another <another@another.com>\n"
+                     "Date: %1\n"
+                     "To: list@list.org\n"
+                     "Subject: Re: Plain Message Test\n"
+                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                     "X-KMail-Link-Message: 0\n"
+                     "X-KMail-Link-Type: reply\n\n"
+                     "%2")
+                     .arg(dateStr)
+                     .arg(replyStr);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
@@ -368,27 +377,33 @@ void MessageFactoryTest::testCreateReplyToAuthorAsync()
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
     datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
-    QString replyStr
-        = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
+    QString replyStr =
+        QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1()
+                                       + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
     QString replyTo = reply.msg->inReplyTo()->asUnicodeString();
     QString reference = reply.msg->references()->asUnicodeString();
     QString dateStr = reply.msg->date()->asUnicodeString();
-    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
-                                     "Date: %1\n"
-                                     "X-KMail-Transport: 0\n"
-                                     "To: me@me.me\n"
-                                     "References: %3\n"
-                                     "In-Reply-To: %2\n"
-                                     "Subject: Re: Test Email Subject\n"
-                                     "X-KMail-CursorPos: %5\n"
-                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
-                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
-                                     "X-KMail-Link-Message: 0\n"
-                                     "X-KMail-Link-Type: reply\n\n"
-                                     "%4")
-                 .arg(dateStr).arg(replyTo).arg(reference).arg(replyStr).arg(replyStr.length() - 1);
+    QString ba = QString::fromLatin1(
+                     "From: another <another@another.com>\n"
+                     "Date: %1\n"
+                     "X-KMail-Transport: 0\n"
+                     "To: me@me.me\n"
+                     "References: %3\n"
+                     "In-Reply-To: %2\n"
+                     "Subject: Re: Test Email Subject\n"
+                     "X-KMail-CursorPos: %5\n"
+                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                     "X-KMail-Link-Message: 0\n"
+                     "X-KMail-Link-Type: reply\n\n"
+                     "%4")
+                     .arg(dateStr)
+                     .arg(replyTo)
+                     .arg(reference)
+                     .arg(replyStr)
+                     .arg(replyStr.length() - 1);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
     msg.clear();
 }
@@ -418,18 +433,19 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
     QString replyTo = reply.msg->inReplyTo()->asUnicodeString();
     QString reference = reply.msg->references()->asUnicodeString();
     QString dateStr = reply.msg->date()->asUnicodeString();
-    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
-                                     "Date: %1\n"
-                                     "X-KMail-Transport: 0\n"
-                                     "Cc: cc@cc.cc, cc2@cc.cc\n"
-                                     "To: you@you.you, you2@you.you, me@me.me\n"
-                                     "References: %3\n"
-                                     "In-Reply-To: %2\n"
-                                     "Subject: Re: Test Email Subject\nContent-Type: text/plain; charset=\"US-ASCII\"\n"
-                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
-                                     "X-KMail-Link-Message: 0\n"
-                                     "X-KMail-Link-Type: reply\n\n> All happy families are alike; each unhappy family is unhappy in its own way.")
-                 .arg(dateStr, replyTo, reference);
+    QString ba = QString::fromLatin1(
+                     "From: another <another@another.com>\n"
+                     "Date: %1\n"
+                     "X-KMail-Transport: 0\n"
+                     "Cc: cc@cc.cc, cc2@cc.cc\n"
+                     "To: you@you.you, you2@you.you, me@me.me\n"
+                     "References: %3\n"
+                     "In-Reply-To: %2\n"
+                     "Subject: Re: Test Email Subject\nContent-Type: text/plain; charset=\"US-ASCII\"\n"
+                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                     "X-KMail-Link-Message: 0\n"
+                     "X-KMail-Link-Type: reply\n\n> All happy families are alike; each unhappy family is unhappy in its own way.")
+                     .arg(dateStr, replyTo, reference);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
     msg.clear();
 }
@@ -450,8 +466,9 @@ void MessageFactoryTest::testCreateReplyAllAsync()
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
     datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
-    QString replyStr
-        = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
+    QString replyStr =
+        QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1()
+                                       + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
     msg.clear();
@@ -461,7 +478,7 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
 {
     KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("html_utf8_encoded.mbox"));
 
-    //qDebug() << "html message:" << msg->encodedContent();
+    // qDebug() << "html message:" << msg->encodedContent();
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
@@ -644,28 +661,30 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
     const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxmessageidMatch.hasMatch());
 
-    QString baseline = QString::fromLatin1("From: me@me.me\n"
-                                           "Cc: cc@cc.cc\n"
-                                           "Bcc: bcc@bcc.bcc\n"
-                                           "Subject: Test Email Subject\n"
-                                           "Date: %1\n"
-                                           "X-KMail-Transport: 0\n"
-                                           "Message-ID: %2\n"
-                                           "Disposition-Notification-To: me@me.me\n"
-                                           "MIME-Version: 1.0\n"
-                                           "Content-Transfer-Encoding: 7Bit\n"
-                                           "Content-Type: text/plain; charset=\"us-ascii\"\n"
-                                           "Resent-Message-ID: %3\n"
-                                           "Resent-Date: %4\n"
-                                           "Resent-From: %5\n"
-                                           "To: you@you.you\n"
-                                           "Resent-To: redir@redir.com\n"
-                                           "Resent-Cc: redircc@redircc.com, redircc2@redircc.com\n"
-                                           "Resent-Bcc: redirbcc@redirbcc.com, redirbcc2@redirbcc.com\n"
-                                           "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
-                                           "\n"
-                                           "All happy families are alike; each unhappy family is unhappy in its own way.");
-    baseline = baseline.arg(datetime).arg(rxmessageidMatch.captured(1)).arg(rxMatch.captured(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
+    QString baseline = QString::fromLatin1(
+        "From: me@me.me\n"
+        "Cc: cc@cc.cc\n"
+        "Bcc: bcc@bcc.bcc\n"
+        "Subject: Test Email Subject\n"
+        "Date: %1\n"
+        "X-KMail-Transport: 0\n"
+        "Message-ID: %2\n"
+        "Disposition-Notification-To: me@me.me\n"
+        "MIME-Version: 1.0\n"
+        "Content-Transfer-Encoding: 7Bit\n"
+        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Resent-Message-ID: %3\n"
+        "Resent-Date: %4\n"
+        "Resent-From: %5\n"
+        "To: you@you.you\n"
+        "Resent-To: redir@redir.com\n"
+        "Resent-Cc: redircc@redircc.com, redircc2@redircc.com\n"
+        "Resent-Bcc: redirbcc@redirbcc.com, redirbcc2@redirbcc.com\n"
+        "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
+        "\n"
+        "All happy families are alike; each unhappy family is unhappy in its own way.");
+    baseline =
+        baseline.arg(datetime).arg(rxmessageidMatch.captured(1)).arg(rxMatch.captured(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
@@ -693,28 +712,30 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
     const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxmessageidMatch.hasMatch());
 
-    //qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
-    QString baseline = QString::fromLatin1("From: me@me.me\n"
-                                           "Cc: cc@cc.cc\n"
-                                           "Bcc: bcc@bcc.bcc\n"
-                                           "Subject: Test Email Subject\n"
-                                           "Date: %1\n"
-                                           "X-KMail-Transport: 0\n"
-                                           "Message-ID: %2\n"
-                                           "Disposition-Notification-To: me@me.me\n"
-                                           "MIME-Version: 1.0\n"
-                                           "Content-Transfer-Encoding: 7Bit\n"
-                                           "Content-Type: text/plain; charset=\"us-ascii\"\n"
-                                           "Resent-Message-ID: %3\n"
-                                           "Resent-Date: %4\n"
-                                           "Resent-From: %5\n"
-                                           "To: you@you.you\n"
-                                           "Resent-To: redir@redir.com\n"
-                                           "Resent-Cc: redircc@redircc.com, redircc2@redircc.com\n"
-                                           "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
-                                           "\n"
-                                           "All happy families are alike; each unhappy family is unhappy in its own way.");
-    baseline = baseline.arg(datetime).arg(rxmessageidMatch.captured(1)).arg(rxMatch.captured(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
+    // qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
+    QString baseline = QString::fromLatin1(
+        "From: me@me.me\n"
+        "Cc: cc@cc.cc\n"
+        "Bcc: bcc@bcc.bcc\n"
+        "Subject: Test Email Subject\n"
+        "Date: %1\n"
+        "X-KMail-Transport: 0\n"
+        "Message-ID: %2\n"
+        "Disposition-Notification-To: me@me.me\n"
+        "MIME-Version: 1.0\n"
+        "Content-Transfer-Encoding: 7Bit\n"
+        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Resent-Message-ID: %3\n"
+        "Resent-Date: %4\n"
+        "Resent-From: %5\n"
+        "To: you@you.you\n"
+        "Resent-To: redir@redir.com\n"
+        "Resent-Cc: redircc@redircc.com, redircc2@redircc.com\n"
+        "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
+        "\n"
+        "All happy families are alike; each unhappy family is unhappy in its own way.");
+    baseline =
+        baseline.arg(datetime).arg(rxmessageidMatch.captured(1)).arg(rxMatch.captured(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
@@ -741,26 +762,28 @@ void MessageFactoryTest::testCreateRedirect()
     const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxmessageidMatch.hasMatch());
 
-    QString baseline = QString::fromLatin1("From: me@me.me\n"
-                                           "Cc: cc@cc.cc\n"
-                                           "Bcc: bcc@bcc.bcc\n"
-                                           "Subject: Test Email Subject\n"
-                                           "Date: %1\n"
-                                           "X-KMail-Transport: 0\n"
-                                           "Message-ID: %2\n"
-                                           "Disposition-Notification-To: me@me.me\n"
-                                           "MIME-Version: 1.0\n"
-                                           "Content-Transfer-Encoding: 7Bit\n"
-                                           "Content-Type: text/plain; charset=\"us-ascii\"\n"
-                                           "Resent-Message-ID: %3\n"
-                                           "Resent-Date: %4\n"
-                                           "Resent-From: %5\n"
-                                           "To: you@you.you\n"
-                                           "Resent-To: redir@redir.com\n"
-                                           "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
-                                           "\n"
-                                           "All happy families are alike; each unhappy family is unhappy in its own way.");
-    baseline = baseline.arg(datetime).arg(rxmessageidMatch.captured(1)).arg(rxMatch.captured(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
+    QString baseline = QString::fromLatin1(
+        "From: me@me.me\n"
+        "Cc: cc@cc.cc\n"
+        "Bcc: bcc@bcc.bcc\n"
+        "Subject: Test Email Subject\n"
+        "Date: %1\n"
+        "X-KMail-Transport: 0\n"
+        "Message-ID: %2\n"
+        "Disposition-Notification-To: me@me.me\n"
+        "MIME-Version: 1.0\n"
+        "Content-Transfer-Encoding: 7Bit\n"
+        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "Resent-Message-ID: %3\n"
+        "Resent-Date: %4\n"
+        "Resent-From: %5\n"
+        "To: you@you.you\n"
+        "Resent-To: redir@redir.com\n"
+        "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
+        "\n"
+        "All happy families are alike; each unhappy family is unhappy in its own way.");
+    baseline =
+        baseline.arg(datetime).arg(rxmessageidMatch.captured(1)).arg(rxMatch.captured(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
@@ -786,20 +809,21 @@ void MessageFactoryTest::testCreateResend()
     const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxmessageidMatch.hasMatch());
 
-    QString baseline = QString::fromLatin1("From: me@me.me\n"
-                                           "To: %1\n"
-                                           "Cc: cc@cc.cc\n"
-                                           "Bcc: bcc@bcc.bcc\n"
-                                           "Subject: Test Email Subject\n"
-                                           "Date: %2\n"
-                                           "X-KMail-Transport: 0\n"
-                                           "Message-ID: %3\n"
-                                           "Disposition-Notification-To: me@me.me\n"
-                                           "MIME-Version: 1.0\n"
-                                           "Content-Transfer-Encoding: 7Bit\n"
-                                           "Content-Type: text/plain; charset=\"us-ascii\"\n"
-                                           "\n"
-                                           "All happy families are alike; each unhappy family is unhappy in its own way.");
+    QString baseline = QString::fromLatin1(
+        "From: me@me.me\n"
+        "To: %1\n"
+        "Cc: cc@cc.cc\n"
+        "Bcc: bcc@bcc.bcc\n"
+        "Subject: Test Email Subject\n"
+        "Date: %2\n"
+        "X-KMail-Transport: 0\n"
+        "Message-ID: %3\n"
+        "Disposition-Notification-To: me@me.me\n"
+        "MIME-Version: 1.0\n"
+        "Content-Transfer-Encoding: 7Bit\n"
+        "Content-Type: text/plain; charset=\"us-ascii\"\n"
+        "\n"
+        "All happy families are alike; each unhappy family is unhappy in its own way.");
     baseline = baseline.arg(msg->to()->asUnicodeString()).arg(datetime).arg(rxmessageidMatch.captured(1));
 
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
@@ -819,13 +843,13 @@ void MessageFactoryTest::testCreateMDN()
 
     QVERIFY(mdn.data());
 
-    QString mdnContent = QString::fromLatin1("The message sent on %1 to %2 with subject \"%3\" has been displayed. "
-                                             "This is no guarantee that the message has been read or understood.");
+    QString mdnContent = QString::fromLatin1(
+        "The message sent on %1 to %2 with subject \"%3\" has been displayed. "
+        "This is no guarantee that the message has been read or understood.");
     mdnContent = mdnContent.arg(KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, msg->date()->dateTime().toSecsSinceEpoch()))
-                 .arg(msg->to()->asUnicodeString(), msg->subject()->asUnicodeString());
+                     .arg(msg->to()->asUnicodeString(), msg->subject()->asUnicodeString());
 
-    QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(),
-                     mdnContent.toLatin1());
+    QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(), mdnContent.toLatin1());
     msg.clear();
 }
 
@@ -845,7 +869,8 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
     KMime::Message::Ptr message = KMime::Message::Ptr(composer->resultMessages().first());
     delete composer;
 
-    MessageComposerSettings::self()->setPreferredCharsets(QStringList() << QStringLiteral("us-ascii") << QStringLiteral("iso-8859-1") << QStringLiteral("utf-8"));
+    MessageComposerSettings::self()->setPreferredCharsets(QStringList()
+                                                          << QStringLiteral("us-ascii") << QStringLiteral("iso-8859-1") << QStringLiteral("utf-8"));
 
     return message;
 }
@@ -866,7 +891,8 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
     const KMime::Message::Ptr message = KMime::Message::Ptr(composer->resultMessages().constFirst());
     delete composer;
 
-    MessageComposerSettings::self()->setPreferredCharsets(QStringList() << QStringLiteral("us-ascii") << QStringLiteral("iso-8859-1") << QStringLiteral("utf-8"));
+    MessageComposerSettings::self()->setPreferredCharsets(QStringList()
+                                                          << QStringLiteral("us-ascii") << QStringLiteral("iso-8859-1") << QStringLiteral("utf-8"));
 
     return message;
 }
@@ -896,20 +922,23 @@ void MessageFactoryTest::test_multipartAlternative_data()
     const QStringList lst = dir.entryList(QStringList(QStringLiteral("plain_message.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : lst) {
         QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 0 << ""
-                                                   <<"> This *is* the *message* text *from* Sudhendu Kumar<dontspamme@yoohoo.com>\n"
-            "> \n"
-            "> --\n"
-            "> Thanks & Regards\n"
-            "> Sudhendu Kumar";
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 1 << "" << "<html><head></head><body>"
-                                                                                                                  "<blockquote>This <i>is</i> the <b>message</b> text <u>from</u> Sudhendu Kumar&lt;dontspamme@yoohoo.com&gt;<br>"
-                                                                                                                  "<br>-- <br>Thanks &amp; Regards<br>Sudhendu Kumar<br>\n</blockquote><br/></body></html>";
+                                                   << "> This *is* the *message* text *from* Sudhendu Kumar<dontspamme@yoohoo.com>\n"
+                                                      "> \n"
+                                                      "> --\n"
+                                                      "> Thanks & Regards\n"
+                                                      "> Sudhendu Kumar";
+        QTest::newRow(file.toLatin1().constData())
+            << QString(dir.path() + QLatin1Char('/') + file) << 1 << ""
+            << "<html><head></head><body>"
+               "<blockquote>This <i>is</i> the <b>message</b> text <u>from</u> Sudhendu Kumar&lt;dontspamme@yoohoo.com&gt;<br>"
+               "<br>-- <br>Thanks &amp; Regards<br>Sudhendu Kumar<br>\n</blockquote><br/></body></html>";
 
         QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 0 << "This *is* the *message* text *from*"
-                                                   <<"> This *is* the *message* text *from*";
+                                                   << "> This *is* the *message* text *from*";
 
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 1 << "This *is* the *message* text *from*"
-                                                   <<"<html><head></head><body><blockquote>This *is* the *message* text *from*</blockquote><br/></body></html>";
+        QTest::newRow(file.toLatin1().constData())
+            << QString(dir.path() + QLatin1Char('/') + file) << 1 << "This *is* the *message* text *from*"
+            << "<html><head></head><body><blockquote>This *is* the *message* text *from*</blockquote><br/></body></html>";
     }
 }
 

@@ -7,14 +7,16 @@
 #ifndef MAILTRACKINGDETAILSDIALOG_H
 #define MAILTRACKINGDETAILSDIALOG_H
 
-#include <QDialog>
 #include "messageviewer_private_export.h"
+#include <QDialog>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class RichTextEditorWidget;
 }
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT MailTrackingDetailsDialog : public QDialog
 {
     Q_OBJECT
@@ -23,6 +25,7 @@ public:
     ~MailTrackingDetailsDialog() override;
 
     void setDetails(const QString &details);
+
 private:
     void writeConfig();
     void readConfig();

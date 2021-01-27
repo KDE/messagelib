@@ -4,21 +4,21 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "settings/messagecomposersettings.h"
 #include "job/skeletonmessagejob.h"
+#include "settings/messagecomposersettings.h"
 
-#include "part/infopart.h"
-#include "part/globalpart.h"
 #include "job/jobbase_p.h"
+#include "part/globalpart.h"
+#include "part/infopart.h"
 
 #include <QHostInfo>
 #include <QUrl>
 
-#include <KCharsets>
 #include "messagecomposer_debug.h"
+#include <KCharsets>
 
-#include <kmime/kmime_message.h>
 #include <KEmailAddress>
+#include <kmime/kmime_message.h>
 
 using namespace MessageComposer;
 
@@ -146,7 +146,7 @@ void SkeletonMessageJobPrivate::doStart()
         message->setHeader(header);
     }
 
-    //Transport:
+    // Transport:
     if (infoPart->transportId() > -1) {
         auto header = new KMime::Headers::Generic("X-KMail-Transport");
         header->fromUnicodeString(QString::number(infoPart->transportId()), "utf-8");
@@ -180,7 +180,7 @@ void SkeletonMessageJobPrivate::doStart()
     // Request Delivery Confirmation
     {
         if (globalPart->requestDeleveryConfirmation()) {
-            //TODO fix me multi address
+            // TODO fix me multi address
             const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
             auto requestDeleveryConfirmation = new KMime::Headers::Generic("Return-Receipt-To");
             requestDeleveryConfirmation->fromUnicodeString(addr, "utf-8");
@@ -191,7 +191,7 @@ void SkeletonMessageJobPrivate::doStart()
     // MDN
     {
         if (globalPart->MDNRequested()) {
-            //TODO fix me multi address
+            // TODO fix me multi address
             const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
             auto mdn = new KMime::Headers::Generic("Disposition-Notification-To");
             mdn->fromUnicodeString(addr, "utf-8");

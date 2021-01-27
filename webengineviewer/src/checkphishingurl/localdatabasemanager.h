@@ -7,12 +7,13 @@
 #ifndef LOCALDATABASEMANAGER_H
 #define LOCALDATABASEMANAGER_H
 
-#include <QObject>
-#include "webengineviewer_export.h"
 #include "createphishingurldatabasejob.h"
 #include "searchfullhashjob.h"
+#include "webengineviewer_export.h"
+#include <QObject>
 #include <QUrl>
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebEngineView;
 class LocalDataBaseManagerPrivate;
 /**

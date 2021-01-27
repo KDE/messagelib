@@ -9,13 +9,13 @@
 #ifndef MESSAGELIST_UTILS_THEMEEDITOR_H
 #define MESSAGELIST_UTILS_THEMEEDITOR_H
 
-#include "utils/optionseteditor.h"
-#include "core/themedelegate.h"
 #include "core/theme.h"
+#include "core/themedelegate.h"
+#include "utils/optionseteditor.h"
 
-#include <QTreeWidget>
 #include <QLabel>
 #include <QRect>
+#include <QTreeWidget>
 
 #include <QDialog>
 
@@ -25,8 +25,10 @@ class QComboBox;
 class KPluralHandlingSpinBox;
 class QLineEdit;
 
-namespace MessageList {
-namespace Core {
+namespace MessageList
+{
+namespace Core
+{
 class Item;
 class GroupHeaderItem;
 class MessageItem;
@@ -34,7 +36,8 @@ class FakeItem;
 class ModelInvariantRowMapper;
 } // namespace Core
 
-namespace Utils {
+namespace Utils
+{
 class ThemeColumnPropertiesDialog : public QDialog
 {
     Q_OBJECT
@@ -62,7 +65,7 @@ public:
 private:
     Core::GroupHeaderItem *mSampleGroupHeaderItem = nullptr;
     Core::FakeItem *mSampleMessageItem = nullptr;
-    Core::ModelInvariantRowMapper *mRowMapper = nullptr;  // needed for the MessageItem above to be valid
+    Core::ModelInvariantRowMapper *mRowMapper = nullptr; // needed for the MessageItem above to be valid
 public:
     Core::Item *itemFromIndex(const QModelIndex &index) const override;
 };
@@ -79,24 +82,24 @@ private:
     // DnD insert position stuff
 
     /**
-    * The row we'll be inserting the dragged item into
-    */
+     * The row we'll be inserting the dragged item into
+     */
     enum RowInsertPosition {
-        AboveRow,         ///< We'll insert above the currently hit row in mDelegate
-        InsideRow,        ///< We'll insert inside the currently hit row in mDelegate
-        BelowRow          ///< We'll insert below the currently hit row in mDelegate
+        AboveRow, ///< We'll insert above the currently hit row in mDelegate
+        InsideRow, ///< We'll insert inside the currently hit row in mDelegate
+        BelowRow ///< We'll insert below the currently hit row in mDelegate
     };
 
     /**
-    * The position in row that we'll be inserting the dragged item
-    */
+     * The position in row that we'll be inserting the dragged item
+     */
     enum ItemInsertPosition {
-        OnLeftOfItem,     ///< We'll insert on the left of the selected item
-        OnRightOfItem,    ///< We'll insert on the right of the selected item
-        AsLastLeftItem,   ///< We'll insert as last left item of the row (rightmost left item)
-        AsLastRightItem,  ///< We'll insert as last right item of the row (leftmost right item)
-        AsFirstLeftItem,  ///< We'll insert as first left item of the row (leftmost)
-        AsFirstRightItem  ///< We'll insert as first right item of the row (rightmost)
+        OnLeftOfItem, ///< We'll insert on the left of the selected item
+        OnRightOfItem, ///< We'll insert on the right of the selected item
+        AsLastLeftItem, ///< We'll insert as last left item of the row (rightmost left item)
+        AsLastRightItem, ///< We'll insert as last right item of the row (leftmost right item)
+        AsFirstLeftItem, ///< We'll insert as first left item of the row (leftmost)
+        AsFirstRightItem ///< We'll insert as first right item of the row (rightmost)
     };
 
 private:
@@ -113,6 +116,7 @@ private:
     QPoint mDropIndicatorPoint2;
     bool mFirstShow;
     bool mReadOnly;
+
 public:
     QSize sizeHint() const override;
     void setTheme(Core::Theme *theme);
@@ -132,11 +136,11 @@ private:
     void internalHandleDragEnterEvent(QDragEnterEvent *e);
 
     /**
-    * Computes the drop insert position for the dragged item at position pos.
-    * Returns true if the dragged item can be inserted somewhere and
-    * false otherwise. Sets mRowInsertPosition, mItemInsertPosition,
-    * mDropIndicatorPoint1 ,mDropIndicatorPoint2.
-    */
+     * Computes the drop insert position for the dragged item at position pos.
+     * Returns true if the dragged item can be inserted somewhere and
+     * false otherwise. Sets mRowInsertPosition, mItemInsertPosition,
+     * mDropIndicatorPoint1 ,mDropIndicatorPoint2.
+     */
     bool computeContentItemInsertPosition(const QPoint &pos, Core::Theme::ContentItem::Type type);
 
     void applyThemeColumnWidths();
@@ -185,10 +189,10 @@ public:
 
 public:
     /**
-    * Sets the option set to be edited.
-    * Saves and forgets any previously option set that was being edited.
-    * The set parameter may be 0: in this case the editor is simply disabled.
-    */
+     * Sets the option set to be edited.
+     * Saves and forgets any previously option set that was being edited.
+     * The set parameter may be 0: in this case the editor is simply disabled.
+     */
     void editTheme(Core::Theme *set);
 
     Core::Theme *editedTheme() const;
@@ -207,7 +211,7 @@ protected Q_SLOTS:
 private:
     void setReadOnly(bool readOnly);
 
-    Core::Theme *mCurrentTheme = nullptr;  // shallow, may be null!
+    Core::Theme *mCurrentTheme = nullptr; // shallow, may be null!
 
     // Appearance tab
     ThemePreviewWidget *mPreviewWidget = nullptr;

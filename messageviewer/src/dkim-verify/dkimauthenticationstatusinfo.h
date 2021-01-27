@@ -8,9 +8,10 @@
 #define DKIMAUTHENTICATIONSTATUSINFO_H
 
 #include "messageviewer_private_export.h"
-#include <QString>
 #include <QDebug>
-namespace MessageViewer {
+#include <QString>
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT DKIMAuthenticationStatusInfo
 {
 public:
@@ -27,8 +28,7 @@ public:
 
             Q_REQUIRED_RESULT bool operator==(const Property &other) const
             {
-                return other.type == type
-                       && other.value == value;
+                return other.type == type && other.value == value;
             }
         };
 
@@ -37,7 +37,7 @@ public:
         QString reason;
         int methodVersion = -1;
 
-        //Add Properties
+        // Add Properties
         QVector<Property> smtp;
         QVector<Property> header;
         QVector<Property> body;
@@ -73,6 +73,6 @@ private:
 }
 Q_DECLARE_METATYPE(MessageViewer::DKIMAuthenticationStatusInfo)
 Q_DECLARE_TYPEINFO(MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo, Q_MOVABLE_TYPE);
-MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMAuthenticationStatusInfo &t);
+MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMAuthenticationStatusInfo &t);
 
 #endif // DKIMAUTHENTICATIONSTATUSINFO_H

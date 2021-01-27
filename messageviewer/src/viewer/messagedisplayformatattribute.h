@@ -8,10 +8,11 @@
 #ifndef MESSAGEDISPLAYFORMATATTRIBUTE_H
 #define MESSAGEDISPLAYFORMATATTRIBUTE_H
 
-#include <AkonadiCore/attribute.h>
-#include "messageviewer_export.h"
 #include "messageviewer/viewer.h"
-namespace MessageViewer {
+#include "messageviewer_export.h"
+#include <AkonadiCore/attribute.h>
+namespace MessageViewer
+{
 class MessageDisplayFormatAttributePrivate;
 /**
  * @brief The MessageDisplayFormatAttribute class

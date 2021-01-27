@@ -7,10 +7,11 @@
 #ifndef NETWORKPLUGINURLINTERCEPTORCONFIGUREWIDGET_H
 #define NETWORKPLUGINURLINTERCEPTORCONFIGUREWIDGET_H
 
-#include <QWidget>
 #include "webengineviewer_export.h"
+#include <QWidget>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 /**
  * @brief The NetworkPluginUrlInterceptorConfigureWidget class
  * @author Laurent Montel <montel@kde.org>

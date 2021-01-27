@@ -4,18 +4,18 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "headerstyleinterface.h"
 #include "headerstylemenumanager.h"
+#include "header/headerstrategy.h"
+#include "header/headerstyle.h"
+#include "headerstyleinterface.h"
 #include "headerstyleplugin.h"
 #include "headerstylepluginmanager.h"
-#include "header/headerstyle.h"
-#include "header/headerstrategy.h"
+#include "messageviewer/messageviewersettings.h"
 #include "messageviewer_debug.h"
 #include "utils/messageviewerutil_p.h"
-#include "messageviewer/messageviewersettings.h"
 
-#include <KActionMenu>
 #include <KActionCollection>
+#include <KActionMenu>
 #include <KLocalizedString>
 
 using namespace MessageViewer;
@@ -64,40 +64,30 @@ void HeaderStyleMenuManagerPrivate::readSettings()
     QString headerStyleName = MessageViewer::MessageViewerSettings::self()->headerPluginStyleName();
     if (headerStyleName.isEmpty()) {
         const QString headerStyle = MessageViewer::MessageViewerSettings::self()->headerStyle();
-        const QString headerSetDisplayed
-            = MessageViewer::MessageViewerSettings::self()->headerSetDisplayed();
+        const QString headerSetDisplayed = MessageViewer::MessageViewerSettings::self()->headerSetDisplayed();
 
-        if ((headerStyle == QLatin1String("custom"))
-            && (headerSetDisplayed == QLatin1String("custom"))) {                                          //Custom
+        if ((headerStyle == QLatin1String("custom")) && (headerSetDisplayed == QLatin1String("custom"))) { // Custom
             headerStyleName = QStringLiteral("custom");
-        } else if ((headerStyle == QLatin1String("plain"))
-                   && (headerSetDisplayed == QLatin1String("all"))) {                                         //all
+        } else if ((headerStyle == QLatin1String("plain")) && (headerSetDisplayed == QLatin1String("all"))) { // all
             headerStyleName = QStringLiteral("all-headers");
-        } else if ((headerStyle == QLatin1String("brief"))
-                   && (headerSetDisplayed == QLatin1String("brief"))) {                                         //brief
+        } else if ((headerStyle == QLatin1String("brief")) && (headerSetDisplayed == QLatin1String("brief"))) { // brief
             headerStyleName = QStringLiteral("brief");
-        } else if ((headerStyle == QLatin1String("enterprise"))
-                   && (headerSetDisplayed == QLatin1String("rich"))) {                                               //enterprise
+        } else if ((headerStyle == QLatin1String("enterprise")) && (headerSetDisplayed == QLatin1String("rich"))) { // enterprise
             headerStyleName = QStringLiteral("enterprise");
-        } else if ((headerStyle == QLatin1String("fancy"))
-                   && (headerSetDisplayed == QLatin1String("rich"))) {                                         //fancy
+        } else if ((headerStyle == QLatin1String("fancy")) && (headerSetDisplayed == QLatin1String("rich"))) { // fancy
             headerStyleName = QStringLiteral("fancy");
-        } else if ((headerStyle == QLatin1String("grantlee"))
-                   && (headerSetDisplayed == QLatin1String("grantlee"))) {                                            //grantlee
+        } else if ((headerStyle == QLatin1String("grantlee")) && (headerSetDisplayed == QLatin1String("grantlee"))) { // grantlee
             headerStyleName = QStringLiteral("grantlee");
-        } else if ((headerStyle == QLatin1String("plain"))
-                   && (headerSetDisplayed == QLatin1String("rich"))) {                                         //longheader
+        } else if ((headerStyle == QLatin1String("plain")) && (headerSetDisplayed == QLatin1String("rich"))) { // longheader
             headerStyleName = QStringLiteral("long-header");
-        } else if ((headerStyle == QLatin1String("plain"))
-                   && (headerSetDisplayed == QLatin1String("standard"))) {                                         //Standard
+        } else if ((headerStyle == QLatin1String("plain")) && (headerSetDisplayed == QLatin1String("standard"))) { // Standard
             headerStyleName = QStringLiteral("standards-header");
         } else {
-            qCDebug(MESSAGEVIEWER_LOG) << "unknown style : headerstyle " << headerStyle
-                                       << " headerstrategy :" << headerSetDisplayed;
+            qCDebug(MESSAGEVIEWER_LOG) << "unknown style : headerstyle " << headerStyle << " headerstrategy :" << headerSetDisplayed;
         }
         MessageViewer::MessageViewerSettings::self()->setHeaderPluginStyleName(headerStyleName);
     }
-    //Fallback
+    // Fallback
     if (headerStyleName.isEmpty()) {
         headerStyleName = QStringLiteral("fancy");
     }
@@ -119,17 +109,13 @@ void HeaderStyleMenuManagerPrivate::initialize(KActionCollection *ac)
     MessageViewer::Util::addHelpTextAction(headerMenu, i18n("Choose display style of message headers"));
     group = new QActionGroup(q);
 
-    const QVector<MessageViewer::HeaderStylePlugin *> lstPlugin
-        = MessageViewer::HeaderStylePluginManager::self()->pluginsList();
+    const QVector<MessageViewer::HeaderStylePlugin *> lstPlugin = MessageViewer::HeaderStylePluginManager::self()->pluginsList();
     for (MessageViewer::HeaderStylePlugin *plugin : lstPlugin) {
         if (plugin->isEnabled()) {
-            MessageViewer::HeaderStyleInterface *interface = plugin->createView(headerMenu, group,
-                                                                                ac, q);
+            MessageViewer::HeaderStyleInterface *interface = plugin->createView(headerMenu, group, ac, q);
             lstInterface.insert(plugin->name(), interface);
-            q->connect(interface, &HeaderStyleInterface::styleChanged, q,
-                       &HeaderStyleMenuManager::slotStyleChanged);
-            q->connect(interface, &HeaderStyleInterface::styleUpdated, q,
-                       &HeaderStyleMenuManager::styleUpdated);
+            q->connect(interface, &HeaderStyleInterface::styleChanged, q, &HeaderStyleMenuManager::slotStyleChanged);
+            q->connect(interface, &HeaderStyleInterface::styleUpdated, q, &HeaderStyleMenuManager::styleUpdated);
         }
     }
 }

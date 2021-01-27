@@ -8,10 +8,11 @@
 #define DKIMKEYRECORD_H
 
 #include "messageviewer_export.h"
+#include <QObject>
 #include <QString>
 #include <QStringList>
-#include <QObject>
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DKIMKeyRecord class
  * @author Laurent Montel <montel@kde.org>
@@ -44,6 +45,7 @@ public:
     void setFlags(const QStringList &flags);
 
     Q_REQUIRED_RESULT bool operator==(const DKIMKeyRecord &other) const;
+
 private:
     QString mVersion;
     QString mKeyType;
@@ -55,6 +57,6 @@ private:
 };
 }
 Q_DECLARE_METATYPE(MessageViewer::DKIMKeyRecord)
-MESSAGEVIEWER_EXPORT QDebug operator <<(QDebug d, const MessageViewer::DKIMKeyRecord &t);
+MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMKeyRecord &t);
 
 #endif // DKIMKEYRECORD_H

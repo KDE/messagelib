@@ -15,7 +15,8 @@
 
 #include <QDialog>
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @short A dialog for editing attachment properties.
  *

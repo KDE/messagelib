@@ -9,27 +9,19 @@
 
 #include "webengineviewer_export.h"
 #include <QList>
-#include <QVector>
 #include <QObject>
-namespace WebEngineViewer {
+#include <QVector>
+namespace WebEngineViewer
+{
 struct Addition;
 struct Removal;
-struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo
-{
+struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     UpdateDataBaseInfo();
     bool isValid() const;
 
-    enum ResponseType {
-        Unknown = 0,
-        FullUpdate = 1,
-        PartialUpdate = 2
-    };
+    enum ResponseType { Unknown = 0, FullUpdate = 1, PartialUpdate = 2 };
 
-    enum CompressionType {
-        UnknownCompression = 0,
-        RiceCompression = 1,
-        RawCompression = 2
-    };
+    enum CompressionType { UnknownCompression = 0, RiceCompression = 1, RawCompression = 2 };
 
     QVector<Addition> additionList;
     QVector<Removal> removalList;

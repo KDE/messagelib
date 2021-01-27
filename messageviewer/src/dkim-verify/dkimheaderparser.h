@@ -11,7 +11,8 @@
 
 #include <QByteArray>
 #include <QVector>
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DKIMHeaderParser class
  * @author Laurent Montel <montel@kde.org>
@@ -30,11 +31,10 @@ private:
 
         Q_REQUIRED_RESULT bool operator==(const Header &other) const
         {
-            return other.headerName == headerName
-                   && other.headerValue == headerValue
-                   && other.codec == codec;
+            return other.headerName == headerName && other.headerValue == headerValue && other.codec == codec;
         }
     };
+
 public:
     DKIMHeaderParser();
     ~DKIMHeaderParser();
@@ -49,8 +49,8 @@ public:
 
     Q_REQUIRED_RESULT bool operator==(const DKIMHeaderParser &other) const;
     Q_REQUIRED_RESULT QVector<DKIMHeaderParser::Header> listHeaders() const;
-private:
 
+private:
     Q_REQUIRED_RESULT static int findHeaderLineEnd(const QByteArray &src, int &dataBegin, bool *folded);
     Q_REQUIRED_RESULT MessageViewer::DKIMHeaderParser::Header extractHeader(const QByteArray &head, const int headerStart, int &endOfFieldBody);
     Q_REQUIRED_RESULT static QByteArray unfoldHeader(const char *header, size_t headerSize);

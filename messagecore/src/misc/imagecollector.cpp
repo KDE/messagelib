@@ -21,7 +21,7 @@ static bool isInExclusionList(KMime::Content *node)
         return true;
     }
 
-    auto ct = node->contentType(); //Create if necessary
+    auto ct = node->contentType(); // Create if necessary
     if (ct->mediaType() != "image") {
         return true;
     }
@@ -66,11 +66,10 @@ void MessageCore::ImageCollector::collectImagesFrom(KMime::Content *node)
             continue;
         }
 
-        if (parent && parent->contentType()->isMultipart()
-            && parent->contentType(false)->subType() == "related") {
+        if (parent && parent->contentType()->isMultipart() && parent->contentType(false)->subType() == "related") {
             qCWarning(MESSAGECORE_LOG) << "Adding image" << node->contentID();
             d->mImages.push_back(node);
-            node = MessageCore::NodeHelper::next(node);    // skip embedded images
+            node = MessageCore::NodeHelper::next(node); // skip embedded images
             continue;
         }
 

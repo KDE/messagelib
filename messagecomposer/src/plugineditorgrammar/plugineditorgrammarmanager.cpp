@@ -5,14 +5,14 @@
 */
 
 #include "plugineditorgrammarmanager.h"
-#include <PimCommon/CustomToolsPlugin>
 #include "messagecomposer_debug.h"
 #include "plugineditorgrammarcustomtoolsviewinterface.h"
-#include <QFileInfo>
-#include <QSet>
+#include <KPluginFactory>
 #include <KPluginLoader>
 #include <KPluginMetaData>
-#include <KPluginFactory>
+#include <PimCommon/CustomToolsPlugin>
+#include <QFileInfo>
+#include <QSet>
 
 using namespace MessageComposer;
 
@@ -30,7 +30,8 @@ public:
     bool isEnabled = true;
 };
 
-namespace {
+namespace
+{
 QString pluginEditorGrammarVersion()
 {
     return QStringLiteral("1.0");
@@ -54,6 +55,7 @@ public:
     Q_REQUIRED_RESULT QString configGroupName() const;
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
+
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
     PluginEditorGrammarManager *const q;
@@ -87,10 +89,11 @@ void PluginEditorGrammarManagerPrivate::initializePlugins()
         PluginEditorGrammarInfo info;
         const KPluginMetaData data = i.previous();
 
-        //1) get plugin data => name/description etc.
+        // 1) get plugin data => name/description etc.
         info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
-        //2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        // 2) look at if plugin is activated
+        const bool isPluginActivated =
+            PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();

@@ -13,7 +13,8 @@
 
 #include <KJob>
 
-namespace MessageCore {
+namespace MessageCore
+{
 /**
  * @short A base class for jobs to load attachments from different sources.
  *

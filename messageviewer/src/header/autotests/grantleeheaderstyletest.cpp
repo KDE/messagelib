@@ -13,8 +13,8 @@
 #include <QFile>
 #include <QProcess>
 #include <QRegularExpression>
-#include <QStringList>
 #include <QStandardPaths>
+#include <QStringList>
 #include <QTest>
 
 using namespace MessageViewer;
@@ -23,9 +23,10 @@ QTEST_MAIN(GrantleeHeaderStyleTest)
 
 void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString &name)
 {
-    QString header = QStringLiteral("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
-                                    "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-                                    "<body>\n");
+    QString header = QStringLiteral(
+        "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+        "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        "<body>\n");
     header += style.format(msg) + QStringLiteral("</div>");
     header += QStringLiteral("\n</body>\n</html>\n");
 
@@ -50,20 +51,14 @@ void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString
     }
     // TODO add proper cmake check for xmllint and diff
     {
-        const QStringList args = QStringList()
-                                 << QStringLiteral("--format")
-                                 << QStringLiteral("--encode") << QStringLiteral("UTF8")
-                                 << QStringLiteral("--output") << fName
-                                 << outName;
+        const QStringList args = QStringList() << QStringLiteral("--format") << QStringLiteral("--encode") << QStringLiteral("UTF8")
+                                               << QStringLiteral("--output") << fName << outName;
         QCOMPARE(QProcess::execute(QStringLiteral("xmllint"), args), 0);
     }
 
     {
         // compare to reference file
-        const QStringList args = QStringList()
-                                 << QStringLiteral("-u")
-                                 << fName
-                                 << QStringLiteral(HEADER_DATA_DIR "/") + fName;
+        const QStringList args = QStringList() << QStringLiteral("-u") << fName << QStringLiteral(HEADER_DATA_DIR "/") + fName;
         QProcess proc;
         proc.setProcessChannelMode(QProcess::ForwardedChannels);
         proc.start(QStringLiteral("diff"), args);
@@ -129,13 +124,9 @@ void GrantleeHeaderStyleTest::cleanupTestCase()
 
 const GrantleeTheme::Theme defaultTheme(const QString &name = QStringLiteral("5.2"))
 {
-    const QStringList defaultThemePath = QStandardPaths::locateAll(
-        QStandardPaths::GenericDataLocation,
-        QStringLiteral("messageviewer/defaultthemes/"),
-        QStandardPaths::LocateDirectory);
-    return GrantleeTheme::ThemeManager::loadTheme(defaultThemePath.at(0) + QStringLiteral("/")+name,
-                                                  name,
-                                                  QStringLiteral("kmail_default.desktop"));
+    const QStringList defaultThemePath =
+        QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("messageviewer/defaultthemes/"), QStandardPaths::LocateDirectory);
+    return GrantleeTheme::ThemeManager::loadTheme(defaultThemePath.at(0) + QStringLiteral("/") + name, name, QStringLiteral("kmail_default.desktop"));
 }
 
 void GrantleeHeaderStyleTest::testName()

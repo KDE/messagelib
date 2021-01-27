@@ -4,13 +4,12 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-
 #ifndef DMARCMANAGER_H
 #define DMARCMANAGER_H
 
 #include <QStringList>
-namespace MessageViewer {
-
+namespace MessageViewer
+{
 class DMARCManager
 {
 public:
@@ -21,6 +20,7 @@ public:
 
     void addNoDMarcServerAddress(const QString &address);
     Q_REQUIRED_RESULT bool isNoDMarcServerAddress(const QString &address) const;
+
 private:
     void saveNoServerKeys();
     void loadNoServerKeys();

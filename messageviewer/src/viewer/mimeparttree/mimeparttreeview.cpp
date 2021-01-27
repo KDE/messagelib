@@ -57,7 +57,7 @@ void MimePartTreeView::saveMimePartTreeConfig()
 
 void MimePartTreeView::slotMimePartDestroyed()
 {
-    //root is either null or a modified tree that we need to clean up
+    // root is either null or a modified tree that we need to clean up
     clearModel();
 }
 

@@ -8,32 +8,33 @@
 
 #include "distributionlistdialog.h"
 
-#include <AkonadiWidgets/collectiondialog.h>
 #include <Akonadi/Contact/ContactGroupSearchJob>
 #include <Akonadi/Contact/ContactSearchJob>
 #include <AkonadiCore/itemcreatejob.h>
+#include <AkonadiWidgets/collectiondialog.h>
 #include <KEmailAddress>
 
-#include <KLocalizedString>
 #include "messagecomposer_debug.h"
-#include <QLineEdit>
+#include <KLocalizedString>
 #include <KMessageBox>
 #include <QInputDialog>
+#include <QLineEdit>
 
+#include <KConfigGroup>
+#include <KSharedConfig>
+#include <QDialogButtonBox>
+#include <QHBoxLayout>
+#include <QHeaderView>
 #include <QLabel>
+#include <QPushButton>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QHeaderView>
-#include <KSharedConfig>
-#include <QDialogButtonBox>
-#include <KConfigGroup>
-#include <QPushButton>
 
 using namespace MessageComposer;
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class DistributionListItem : public QTreeWidgetItem
 {
 public:
@@ -117,8 +118,7 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     QBoxLayout *titleLayout = new QHBoxLayout;
     topLayout->addLayout(titleLayout);
 
-    auto label = new QLabel(
-        i18nc("@label:textbox Name of the distribution list.", "&Name:"), topFrame);
+    auto label = new QLabel(i18nc("@label:textbox Name of the distribution list.", "&Name:"), topFrame);
     titleLayout->addWidget(label);
 
     mTitleEdit = new QLineEdit(topFrame);
@@ -128,10 +128,8 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     label->setBuddy(mTitleEdit);
 
     mRecipientsList = new QTreeWidget(topFrame);
-    mRecipientsList->setHeaderLabels(
-        QStringList() << i18nc("@title:column Name of the recipient", "Name")
-                      << i18nc("@title:column Email of the recipient", "Email")
-        );
+    mRecipientsList->setHeaderLabels(QStringList() << i18nc("@title:column Name of the recipient", "Name")
+                                                   << i18nc("@title:column Email of the recipient", "Email"));
     mRecipientsList->setRootIsDecorated(false);
     mRecipientsList->header()->setSectionsMovable(false);
     topLayout->addWidget(mRecipientsList);
@@ -228,8 +226,7 @@ void DistributionListDialog::slotUser1()
     bool isEmpty = true;
     const int numberOfTopLevel(mRecipientsList->topLevelItemCount());
     for (int i = 0; i < numberOfTopLevel; ++i) {
-        auto item = static_cast<DistributionListItem *>(
-            mRecipientsList->topLevelItem(i));
+        auto item = static_cast<DistributionListItem *>(mRecipientsList->topLevelItem(i));
         if (item && item->checkState(0) == Qt::Checked) {
             isEmpty = false;
             break;
@@ -238,9 +235,10 @@ void DistributionListDialog::slotUser1()
 
     if (isEmpty) {
         KMessageBox::information(this,
-                                 i18nc("@info", "There are no recipients in your list. "
-                                                "First select some recipients, "
-                                                "then try again."));
+                                 i18nc("@info",
+                                       "There are no recipients in your list. "
+                                       "First select some recipients, "
+                                       "then try again."));
         return;
     }
 
@@ -248,8 +246,12 @@ void DistributionListDialog::slotUser1()
 
     if (name.isEmpty()) {
         bool ok = false;
-        name = QInputDialog::getText(this, i18nc("@title:window", "New Distribution List"),
-                                     i18nc("@label:textbox", "Please enter name:"), QLineEdit::Normal, QString(), &ok);
+        name = QInputDialog::getText(this,
+                                     i18nc("@title:window", "New Distribution List"),
+                                     i18nc("@label:textbox", "Please enter name:"),
+                                     QLineEdit::Normal,
+                                     QString(),
+                                     &ok);
         if (!ok || name.isEmpty()) {
             return;
         }
@@ -269,15 +271,15 @@ void DistributionListDialog::slotDelayedUser1(KJob *job)
     if (!searchJob->contactGroups().isEmpty()) {
         qDebug() << " searchJob->contactGroups()" << searchJob->contactGroups().count();
         KMessageBox::information(this,
-                                 xi18nc("@info", "<para>Distribution list with the given name <resource>%1</resource> "
-                                                 "already exists. Please select a different name.</para>", name));
+                                 xi18nc("@info",
+                                        "<para>Distribution list with the given name <resource>%1</resource> "
+                                        "already exists. Please select a different name.</para>",
+                                        name));
         return;
     }
 
-    QPointer<Akonadi::CollectionDialog> dlg
-        = new Akonadi::CollectionDialog(Akonadi::CollectionDialog::KeepTreeExpanded, nullptr, this);
-    dlg->setMimeTypeFilter(QStringList() << KContacts::Addressee::mimeType()
-                                         << KContacts::ContactGroup::mimeType());
+    QPointer<Akonadi::CollectionDialog> dlg = new Akonadi::CollectionDialog(Akonadi::CollectionDialog::KeepTreeExpanded, nullptr, this);
+    dlg->setMimeTypeFilter(QStringList() << KContacts::Addressee::mimeType() << KContacts::ContactGroup::mimeType());
     dlg->setAccessRightsFilter(Akonadi::Collection::CanCreateItem);
     dlg->setWindowTitle(i18nc("@title:window", "Select Address Book"));
     dlg->setDescription(i18n("Select the address book folder to store the contact group in:"));

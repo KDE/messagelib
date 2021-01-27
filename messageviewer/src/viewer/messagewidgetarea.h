@@ -8,10 +8,11 @@
 #ifndef MESSAGEWIDGETAREA_H
 #define MESSAGEWIDGETAREA_H
 
-#include <QWidget>
 #include "messageviewer_private_export.h"
+#include <QWidget>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT MessageWidgetArea : public QWidget
 {
     Q_OBJECT

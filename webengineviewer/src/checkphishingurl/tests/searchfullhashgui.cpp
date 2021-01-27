@@ -7,11 +7,11 @@
 #include "searchfullhashgui.h"
 
 #include <QApplication>
-#include <QStandardPaths>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QPlainTextEdit>
 #include <QLabel>
+#include <QLineEdit>
+#include <QPlainTextEdit>
+#include <QPushButton>
+#include <QStandardPaths>
 #include <QVBoxLayout>
 
 extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_SearchFullHashJob;

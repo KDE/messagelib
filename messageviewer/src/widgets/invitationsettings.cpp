@@ -3,8 +3,8 @@
 */
 
 #include "invitationsettings.h"
-#include "ui_invitationsettings.h"
 #include "settings/messageviewersettings.h"
+#include "ui_invitationsettings.h"
 #include <PimCommon/ConfigureImmutableWidgetUtils>
 using namespace PimCommon::ConfigureImmutableWidgetUtils;
 
@@ -36,41 +36,29 @@ InvitationSettings::InvitationSettings(QWidget *parent)
     d->mInvitationUi->setupUi(this);
 
     d->mInvitationUi->mDeleteInvitations->setText(
-        i18n(MessageViewer::MessageViewerSettings::self()->
-             deleteInvitationEmailsAfterSendingReplyItem()->label().toUtf8().constData()));
+        i18n(MessageViewer::MessageViewerSettings::self()->deleteInvitationEmailsAfterSendingReplyItem()->label().toUtf8().constData()));
     d->mInvitationUi->mDeleteInvitations->setWhatsThis(
-        i18n(MessageViewer::MessageViewerSettings::self()->
-             deleteInvitationEmailsAfterSendingReplyItem()->whatsThis().toUtf8().constData()));
-    connect(d->mInvitationUi->mDeleteInvitations, &QCheckBox::toggled, this,
-            &InvitationSettings::changed);
+        i18n(MessageViewer::MessageViewerSettings::self()->deleteInvitationEmailsAfterSendingReplyItem()->whatsThis().toUtf8().constData()));
+    connect(d->mInvitationUi->mDeleteInvitations, &QCheckBox::toggled, this, &InvitationSettings::changed);
 
     d->mInvitationUi->mLegacyMangleFromTo->setWhatsThis(
-        i18n(MessageViewer::MessageViewerSettings::self()->legacyMangleFromToHeadersItem()->
-             whatsThis().toUtf8().constData()));
-    connect(d->mInvitationUi->mLegacyMangleFromTo, &QCheckBox::stateChanged, this,
-            &InvitationSettings::changed);
+        i18n(MessageViewer::MessageViewerSettings::self()->legacyMangleFromToHeadersItem()->whatsThis().toUtf8().constData()));
+    connect(d->mInvitationUi->mLegacyMangleFromTo, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
 
     d->mInvitationUi->mLegacyBodyInvites->setWhatsThis(
-        i18n(MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem()->whatsThis().
-             toUtf8().constData()));
-    connect(d->mInvitationUi->mLegacyBodyInvites, &QCheckBox::toggled, this,
-            &InvitationSettings::slotLegacyBodyInvitesToggled);
-    connect(d->mInvitationUi->mLegacyBodyInvites, &QCheckBox::stateChanged, this,
-            &InvitationSettings::changed);
+        i18n(MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem()->whatsThis().toUtf8().constData()));
+    connect(d->mInvitationUi->mLegacyBodyInvites, &QCheckBox::toggled, this, &InvitationSettings::slotLegacyBodyInvitesToggled);
+    connect(d->mInvitationUi->mLegacyBodyInvites, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
 
     d->mInvitationUi->mExchangeCompatibleInvitations->setWhatsThis(
-        i18n(MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem()->
-             whatsThis().toUtf8().constData()));
-    connect(d->mInvitationUi->mExchangeCompatibleInvitations, &QCheckBox::stateChanged, this,
-            &InvitationSettings::changed);
+        i18n(MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem()->whatsThis().toUtf8().constData()));
+    connect(d->mInvitationUi->mExchangeCompatibleInvitations, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
 
-    //Laurent BUG:257723: in kmail2 it's not possible to not send automatically.
+    // Laurent BUG:257723: in kmail2 it's not possible to not send automatically.
     d->mInvitationUi->mAutomaticSending->hide();
     d->mInvitationUi->mAutomaticSending->setWhatsThis(
-        i18n(MessageViewer::MessageViewerSettings::self()->automaticSendingItem()->whatsThis().
-             toUtf8().constData()));
-    connect(d->mInvitationUi->mAutomaticSending, &QCheckBox::stateChanged, this,
-            &InvitationSettings::changed);
+        i18n(MessageViewer::MessageViewerSettings::self()->automaticSendingItem()->whatsThis().toUtf8().constData()));
+    connect(d->mInvitationUi->mAutomaticSending, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
 }
 
 InvitationSettings::~InvitationSettings()
@@ -81,56 +69,45 @@ InvitationSettings::~InvitationSettings()
 void InvitationSettings::slotLegacyBodyInvitesToggled(bool on)
 {
     if (on) {
-        const QString txt = i18n("<qt>Invitations are normally sent as attachments to "
-                                 "a mail. This switch changes the invitation mails to "
-                                 "be sent in the text of the mail instead; this is "
-                                 "necessary to send invitations and replies to "
-                                 "Microsoft Outlook.<br />But, when you do this, you no "
-                                 "longer get descriptive text that mail programs "
-                                 "can read; so, to people who have email programs "
-                                 "that do not understand the invitations, the "
-                                 "resulting messages look very odd.<br />People that have email "
-                                 "programs that do understand invitations will still "
-                                 "be able to work with this.</qt>");
+        const QString txt = i18n(
+            "<qt>Invitations are normally sent as attachments to "
+            "a mail. This switch changes the invitation mails to "
+            "be sent in the text of the mail instead; this is "
+            "necessary to send invitations and replies to "
+            "Microsoft Outlook.<br />But, when you do this, you no "
+            "longer get descriptive text that mail programs "
+            "can read; so, to people who have email programs "
+            "that do not understand the invitations, the "
+            "resulting messages look very odd.<br />People that have email "
+            "programs that do understand invitations will still "
+            "be able to work with this.</qt>");
         KMessageBox::information(this, txt, QString(), QStringLiteral("LegacyBodyInvitesWarning"));
     }
     // Invitations in the body are autosent in any case (no point in editing raw ICAL)
     // So the autosend option is only available if invitations are sent as attachment.
-    d->mInvitationUi->mAutomaticSending->setEnabled(
-        !d->mInvitationUi->mLegacyBodyInvites->isChecked());
+    d->mInvitationUi->mAutomaticSending->setEnabled(!d->mInvitationUi->mLegacyBodyInvites->isChecked());
 }
 
 void InvitationSettings::doLoadFromGlobalSettings()
 {
-    loadWidget(d->mInvitationUi->mLegacyMangleFromTo,
-               MessageViewer::MessageViewerSettings::self()->legacyMangleFromToHeadersItem());
+    loadWidget(d->mInvitationUi->mLegacyMangleFromTo, MessageViewer::MessageViewerSettings::self()->legacyMangleFromToHeadersItem());
     d->mInvitationUi->mLegacyBodyInvites->blockSignals(true);
-    loadWidget(d->mInvitationUi->mLegacyBodyInvites,
-               MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem());
+    loadWidget(d->mInvitationUi->mLegacyBodyInvites, MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem());
     d->mInvitationUi->mLegacyBodyInvites->blockSignals(false);
-    loadWidget(d->mInvitationUi->mExchangeCompatibleInvitations,
-               MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem());
-    loadWidget(d->mInvitationUi->mAutomaticSending,
-               MessageViewer::MessageViewerSettings::self()->automaticSendingItem());
-    //TODO verify it
-    d->mInvitationUi->mAutomaticSending->setEnabled(
-        !d->mInvitationUi->mLegacyBodyInvites->isChecked());
-    loadWidget(d->mInvitationUi->mDeleteInvitations,
-               MessageViewer::MessageViewerSettings::self()->deleteInvitationEmailsAfterSendingReplyItem());
+    loadWidget(d->mInvitationUi->mExchangeCompatibleInvitations, MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem());
+    loadWidget(d->mInvitationUi->mAutomaticSending, MessageViewer::MessageViewerSettings::self()->automaticSendingItem());
+    // TODO verify it
+    d->mInvitationUi->mAutomaticSending->setEnabled(!d->mInvitationUi->mLegacyBodyInvites->isChecked());
+    loadWidget(d->mInvitationUi->mDeleteInvitations, MessageViewer::MessageViewerSettings::self()->deleteInvitationEmailsAfterSendingReplyItem());
 }
 
 void InvitationSettings::save()
 {
-    saveCheckBox(d->mInvitationUi->mLegacyMangleFromTo,
-                 MessageViewer::MessageViewerSettings::self()->legacyMangleFromToHeadersItem());
-    saveCheckBox(d->mInvitationUi->mLegacyBodyInvites,
-                 MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem());
-    saveCheckBox(d->mInvitationUi->mExchangeCompatibleInvitations,
-                 MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem());
-    saveCheckBox(d->mInvitationUi->mAutomaticSending,
-                 MessageViewer::MessageViewerSettings::self()->automaticSendingItem());
-    saveCheckBox(d->mInvitationUi->mDeleteInvitations,
-                 MessageViewer::MessageViewerSettings::self()->deleteInvitationEmailsAfterSendingReplyItem());
+    saveCheckBox(d->mInvitationUi->mLegacyMangleFromTo, MessageViewer::MessageViewerSettings::self()->legacyMangleFromToHeadersItem());
+    saveCheckBox(d->mInvitationUi->mLegacyBodyInvites, MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem());
+    saveCheckBox(d->mInvitationUi->mExchangeCompatibleInvitations, MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem());
+    saveCheckBox(d->mInvitationUi->mAutomaticSending, MessageViewer::MessageViewerSettings::self()->automaticSendingItem());
+    saveCheckBox(d->mInvitationUi->mDeleteInvitations, MessageViewer::MessageViewerSettings::self()->deleteInvitationEmailsAfterSendingReplyItem());
 }
 
 QString InvitationSettings::helpAnchor() const
@@ -141,20 +118,14 @@ QString InvitationSettings::helpAnchor() const
 void InvitationSettings::doResetToDefaultsOther()
 {
     const bool bUseDefaults = MessageViewer::MessageViewerSettings::self()->useDefaults(true);
-    loadWidget(d->mInvitationUi->mLegacyMangleFromTo,
-               MessageViewer::MessageViewerSettings::self()->legacyMangleFromToHeadersItem());
+    loadWidget(d->mInvitationUi->mLegacyMangleFromTo, MessageViewer::MessageViewerSettings::self()->legacyMangleFromToHeadersItem());
     d->mInvitationUi->mLegacyBodyInvites->blockSignals(true);
-    loadWidget(d->mInvitationUi->mLegacyBodyInvites,
-               MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem());
+    loadWidget(d->mInvitationUi->mLegacyBodyInvites, MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem());
     d->mInvitationUi->mLegacyBodyInvites->blockSignals(false);
-    loadWidget(d->mInvitationUi->mExchangeCompatibleInvitations,
-               MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem());
-    loadWidget(d->mInvitationUi->mAutomaticSending,
-               MessageViewer::MessageViewerSettings::self()->automaticSendingItem());
-    //TODO verify it
-    d->mInvitationUi->mAutomaticSending->setEnabled(
-        !d->mInvitationUi->mLegacyBodyInvites->isChecked());
-    loadWidget(d->mInvitationUi->mDeleteInvitations,
-               MessageViewer::MessageViewerSettings::self()->deleteInvitationEmailsAfterSendingReplyItem());
+    loadWidget(d->mInvitationUi->mExchangeCompatibleInvitations, MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem());
+    loadWidget(d->mInvitationUi->mAutomaticSending, MessageViewer::MessageViewerSettings::self()->automaticSendingItem());
+    // TODO verify it
+    d->mInvitationUi->mAutomaticSending->setEnabled(!d->mInvitationUi->mLegacyBodyInvites->isChecked());
+    loadWidget(d->mInvitationUi->mDeleteInvitations, MessageViewer::MessageViewerSettings::self()->deleteInvitationEmailsAfterSendingReplyItem());
     MessageViewer::MessageViewerSettings::self()->useDefaults(bUseDefaults);
 }

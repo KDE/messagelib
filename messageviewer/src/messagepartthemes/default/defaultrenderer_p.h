@@ -11,7 +11,8 @@
 
 #include <MimeTreeParser/MessagePart>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class AttachmentStrategy;
 class MessagePartRendererFactory;
 class CSSHelperBase;
@@ -20,6 +21,7 @@ class HtmlWriter;
 class DefaultRendererPrivate : public RenderContext
 {
     using RenderContext::renderWithFactory;
+
 public:
     DefaultRendererPrivate(CSSHelperBase *cssHelper, const MessagePartRendererFactory *rendererFactory);
     ~DefaultRendererPrivate() override;

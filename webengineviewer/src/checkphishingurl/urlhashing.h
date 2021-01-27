@@ -8,11 +8,12 @@
 #define URLHASHING_H
 
 #include "webengineviewer_private_export.h"
-#include <QUrl>
 #include <QString>
+#include <QUrl>
 
-namespace WebEngineViewer {
-//https://developers.google.com/safe-browsing/v4/urls-hashing
+namespace WebEngineViewer
+{
+// https://developers.google.com/safe-browsing/v4/urls-hashing
 class WEBENGINEVIEWER_TESTS_EXPORT UrlHashing
 {
 public:
@@ -25,6 +26,7 @@ public:
 
     /*long hash, short hash*/
     QHash<QByteArray, QByteArray> hashList() const;
+
 private:
     const QUrl mUrl;
 };

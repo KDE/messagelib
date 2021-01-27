@@ -8,23 +8,25 @@
 #define MIMETREEPARSER_VERIFYOPAQUEBODYPARTMEMENTO_H
 
 #include "cryptobodypartmemento.h"
-#include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/key.h>
+#include <gpgme++/verificationresult.h>
 
-#include <QString>
 #include <QPointer>
+#include <QString>
 
 #include "interfaces/bodypart.h"
 
-namespace QGpgME {
+namespace QGpgME
+{
 class VerifyOpaqueJob;
 class KeyListJob;
 }
 
 #include <QStringList>
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class VerifyOpaqueBodyPartMemento : public CryptoBodyPartMemento
 {
     Q_OBJECT
@@ -60,6 +62,7 @@ private:
     bool canStartKeyListJob() const;
     QStringList keyListPattern() const;
     bool startKeyListJob();
+
 private:
     // input:
     const QByteArray m_signature;

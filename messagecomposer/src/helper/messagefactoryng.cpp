@@ -8,9 +8,9 @@
 
 #include "messagefactoryng.h"
 
-#include "settings/messagecomposersettings.h"
 #include "messagefactoryforwardjob.h"
 #include "messagefactoryreplyjob.h"
+#include "settings/messagecomposersettings.h"
 #include <MessageComposer/Util>
 
 #include <AkonadiCore/Item>
@@ -19,22 +19,24 @@
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
 
-#include <KMime/DateFormatter>
+#include "helper/messagehelper.h"
+#include "messagecomposer_debug.h"
+#include <KCharsets>
 #include <KEmailAddress>
+#include <KLocalizedString>
+#include <KMime/DateFormatter>
 #include <MessageCore/MailingList>
 #include <MessageCore/StringUtil>
 #include <MessageCore/Util>
-#include "helper/messagehelper.h"
-#include <KLocalizedString>
-#include "messagecomposer_debug.h"
-#include <KCharsets>
 #include <QRegularExpression>
 #include <QTextCodec>
 
 using namespace MessageComposer;
 
-namespace KMime {
-namespace Types {
+namespace KMime
+{
+namespace Types
+{
 static bool operator==(const KMime::Types::Mailbox &left, const KMime::Types::Mailbox &right)
 {
     return left.addrSpec().asString() == right.addrSpec().asString();
@@ -77,8 +79,7 @@ MessageFactoryNG::~MessageFactoryNG()
 
 // Return the addresses to use when replying to the author of msg.
 // See <https://cr.yp.to/proto/replyto.html>.
-static KMime::Types::Mailbox::List authorMailboxes(
-    const KMime::Message::Ptr &msg, const KMime::Types::Mailbox::List &mailingLists)
+static KMime::Types::Mailbox::List authorMailboxes(const KMime::Message::Ptr &msg, const KMime::Types::Mailbox::List &mailingLists)
 {
     if (auto mrt = msg->headerByType("Mail-Reply-To")) {
         return KMime::Types::Mailbox::listFrom7BitString(mrt->as7BitString(false));
@@ -137,10 +138,7 @@ void MessageFactoryNG::createReplyAsync()
     msg->contentType()->setCharset("utf-8");
 
     if (auto hdr = mOrigMsg->headerByType("List-Post")) {
-        static const QRegularExpression rx {
-            QStringLiteral("<\\s*mailto\\s*:([^@>]+@[^>]+)>"),
-            QRegularExpression::CaseInsensitiveOption
-        };
+        static const QRegularExpression rx{QStringLiteral("<\\s*mailto\\s*:([^@>]+@[^>]+)>"), QRegularExpression::CaseInsensitiveOption};
         const auto match = rx.match(hdr->asUnicodeString());
         if (match.hasMatch()) {
             KMime::Types::Mailbox mailbox;
@@ -150,8 +148,7 @@ void MessageFactoryNG::createReplyAsync()
     }
 
     switch (mReplyStrategy) {
-    case MessageComposer::ReplySmart:
-    {
+    case MessageComposer::ReplySmart: {
         if (auto hdr = mOrigMsg->headerByType("Mail-Followup-To")) {
             toList << KMime::Types::Mailbox::listFrom7BitString(hdr->as7BitString(false));
         } else if (!mMailingListAddresses.isEmpty()) {
@@ -166,8 +163,7 @@ void MessageFactoryNG::createReplyAsync()
             auto originalToList = mOrigMsg->to()->mailboxes();
 
             if (mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalFromList))
-                && !mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalToList))
-                ) {
+                && !mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalToList))) {
                 // Sender seems to be one of our own identities and recipient is not,
                 // so we assume that this is a reply to a "sent" mail where the user
                 // wants to add additional information for the recipient.
@@ -190,14 +186,13 @@ void MessageFactoryNG::createReplyAsync()
         }
         break;
     }
-    case MessageComposer::ReplyList:
-    {
+    case MessageComposer::ReplyList: {
         if (auto hdr = mOrigMsg->headerByType("Mail-Followup-To")) {
             KMime::Types::Mailbox mailbox;
             mailbox.from7BitString(hdr->as7BitString(false));
             toList << mailbox;
         } else if (!mMailingListAddresses.isEmpty()) {
-            toList << mMailingListAddresses[ 0 ];
+            toList << mMailingListAddresses[0];
         } else if (!replyToList.isEmpty()) {
             // assume a Reply-To header mangling mailing list
             toList = replyToList;
@@ -235,8 +230,7 @@ void MessageFactoryNG::createReplyAsync()
                 auto originalToList = mOrigMsg->to()->mailboxes();
 
                 if (mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalFromList))
-                    && !mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalToList))
-                    ) {
+                    && !mIdentityManager->thatIsMe(KMime::Types::Mailbox::listToUnicodeString(originalToList))) {
                     // Sender seems to be one of our own identities and recipient is not,
                     // so we assume that this is a reply to a "sent" mail where the user
                     // wants to add additional information for the recipient.
@@ -272,7 +266,7 @@ void MessageFactoryNG::createReplyAsync()
     if (!refStr.isEmpty()) {
         msg->references()->fromUnicodeString(QString::fromLocal8Bit(refStr), "utf-8");
     }
-    //In-Reply-To = original msg-id
+    // In-Reply-To = original msg-id
     msg->inReplyTo()->from7BitString(mOrigMsg->messageID()->as7BitString(false));
 
     msg->subject()->fromUnicodeString(MessageCore::StringUtil::replySubject(mOrigMsg.data()), "utf-8");
@@ -321,7 +315,7 @@ void MessageFactoryNG::createForwardAsync()
 
         msg->contentType(true)->setMimeType("multipart/mixed");
 
-        //TODO: Andras: somebody should check if this is correct. :)
+        // TODO: Andras: somebody should check if this is correct. :)
         // empty text part
         auto msgPart = new KMime::Content;
         msgPart->contentType()->setMimeType("text/plain");
@@ -340,7 +334,7 @@ void MessageFactoryNG::createForwardAsync()
     // Just copy the message, the template parser will do the hard work of
     // replacing the body text in TemplateParser::addProcessedBodyToMessage()
     else {
-        //TODO Check if this is ok
+        // TODO Check if this is ok
         msg->setHead(mOrigMsg->head());
         msg->setBody(mOrigMsg->body());
         const QString oldContentType = msg->contentType(true)->asUnicodeString();
@@ -365,12 +359,12 @@ void MessageFactoryNG::createForwardAsync()
     job->start();
 }
 
-QPair< KMime::Message::Ptr, QVector< KMime::Content * > > MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
+QPair<KMime::Message::Ptr, QVector<KMime::Content *>> MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
 {
     // create forwarded message with original message as attachment
     // remove headers that shouldn't be forwarded
     KMime::Message::Ptr msg(new KMime::Message);
-    QVector< KMime::Content * > attachments;
+    QVector<KMime::Content *> attachments;
 
     const int numberOfItems(items.count());
     if (numberOfItems >= 2) {
@@ -400,8 +394,8 @@ QPair< KMime::Message::Ptr, QVector< KMime::Content * > > MessageFactoryNG::crea
 
     applyCharset(msg);
 
-    //msg->assemble();
-    return QPair< KMime::Message::Ptr, QVector< KMime::Content * > >(msg, QVector< KMime::Content * >() << attachments);
+    // msg->assemble();
+    return QPair<KMime::Message::Ptr, QVector<KMime::Content *>>(msg, QVector<KMime::Content *>() << attachments);
 }
 
 KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg)
@@ -415,7 +409,7 @@ KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Me
     auto ct = msgPart->contentType();
     ct->setMimeType("message/rfc822");
 
-    auto cd = msgPart->contentDisposition(); //create
+    auto cd = msgPart->contentDisposition(); // create
     cd->setParameter(QStringLiteral("filename"), i18n("forwarded message"));
     cd->setDisposition(KMime::Headers::CDinline);
     const QString subject = fwdMsg->subject()->asUnicodeString();
@@ -456,7 +450,8 @@ KMime::Message::Ptr MessageFactoryNG::createResend()
     return msg;
 }
 
-KMime::Message::Ptr MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, const QString &bccStr, int transportId, const QString &fcc, int identity)
+KMime::Message::Ptr
+MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, const QString &bccStr, int transportId, const QString &fcc, int identity)
 {
     if (!mOrigMsg) {
         return KMime::Message::Ptr();
@@ -476,24 +471,21 @@ KMime::Message::Ptr MessageFactoryNG::createRedirect(const QString &toStr, const
             }
         }
     }
-    const KIdentityManagement::Identity &ident
-        = mIdentityManager->identityForUoidOrDefault(id);
+    const KIdentityManagement::Identity &ident = mIdentityManager->identityForUoidOrDefault(id);
 
     // X-KMail-Redirect-From: content
-    const QString strByWayOf = QString::fromLocal8Bit("%1 (by way of %2 <%3>)")
-                               .arg(mOrigMsg->from()->asUnicodeString(), ident.fullName(), ident.primaryEmailAddress());
+    const QString strByWayOf =
+        QString::fromLocal8Bit("%1 (by way of %2 <%3>)").arg(mOrigMsg->from()->asUnicodeString(), ident.fullName(), ident.primaryEmailAddress());
 
     // Resent-From: content
-    const QString strFrom = QString::fromLocal8Bit("%1 <%2>")
-                            .arg(ident.fullName(), ident.primaryEmailAddress());
+    const QString strFrom = QString::fromLocal8Bit("%1 <%2>").arg(ident.fullName(), ident.primaryEmailAddress());
 
     // format the current date to be used in Resent-Date:
     // FIXME: generate datetime the same way as KMime, otherwise we get inconsistency
     // in unit-tests. Unfortunatelly RFC2822Date is not enough for us, we need the
     // composition hack below
     const QDateTime dt = QDateTime::currentDateTime();
-    const QString newDate = QLocale::c().toString(dt, QStringLiteral("ddd, "))
-                            +dt.toString(Qt::RFC2822Date);
+    const QString newDate = QLocale::c().toString(dt, QStringLiteral("ddd, ")) + dt.toString(Qt::RFC2822Date);
 
     // Clean up any resent headers
     msg->removeHeader("Resent-Cc");
@@ -601,7 +593,11 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     return receipt;
 }
 
-KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal, const QVector<KMime::MDN::DispositionModifier> &m)
+KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
+                                                KMime::MDN::DispositionType d,
+                                                KMime::MDN::SendingMode s,
+                                                int mdnQuoteOriginal,
+                                                const QVector<KMime::MDN::DispositionModifier> &m)
 {
     // extract where to send to:
     QString receiptTo;
@@ -625,7 +621,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
     KMime::Message::Ptr receipt(new KMime::Message());
     const uint originalIdentity = identityUoid(mOrigMsg);
     MessageHelper::initFromMessage(receipt, mOrigMsg, mIdentityManager, originalIdentity);
-    auto contentType = receipt->contentType(true); //create it
+    auto contentType = receipt->contentType(true); // create it
     contentType->from7BitString("multipart/report");
     contentType->setBoundary(KMime::multiPartBoundary());
     contentType->setCharset("us-ascii");
@@ -637,7 +633,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
 
     // text/plain part:
     auto firstMsgPart = new KMime::Content(mOrigMsg.data());
-    auto firstMsgPartContentType = firstMsgPart->contentType(); //create it
+    auto firstMsgPartContentType = firstMsgPart->contentType(); // create it
     firstMsgPartContentType->setMimeType("text/plain");
     firstMsgPartContentType->setCharset("utf-8");
     firstMsgPart->contentTransferEncoding(true)->setEncoding(KMime::Headers::CE7Bit);
@@ -653,11 +649,14 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
     if (auto hrd = mOrigMsg->headerByType("Original-Recipient")) {
         originalRecipient = hrd->as7BitString(false);
     }
-    secondMsgPart->setBody(KMime::MDN::dispositionNotificationBodyContent(
-                               finalRecipient,
-                               originalRecipient,
-                               mOrigMsg->messageID()->as7BitString(false), /* Message-ID */
-                               d, a, s, m, special));
+    secondMsgPart->setBody(KMime::MDN::dispositionNotificationBodyContent(finalRecipient,
+                                                                          originalRecipient,
+                                                                          mOrigMsg->messageID()->as7BitString(false), /* Message-ID */
+                                                                          d,
+                                                                          a,
+                                                                          s,
+                                                                          m,
+                                                                          special));
     receipt->addContent(secondMsgPart);
 
     if ((mdnQuoteOriginal < 0) || (mdnQuoteOriginal > 2)) {
@@ -684,7 +683,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
     }
 
     receipt->to()->fromUnicodeString(receiptTo, "utf-8");
-    //Laurent: We don't translate subject ?
+    // Laurent: We don't translate subject ?
     receipt->subject()->from7BitString("Message Disposition Notification");
     auto header = new KMime::Headers::InReplyTo;
     header->fromUnicodeString(mOrigMsg->messageID()->asUnicodeString(), "utf-8");
@@ -700,13 +699,14 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime:
     return receipt;
 }
 
-QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDigestMIME(const Akonadi::Item::List &items)
+QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDigestMIME(const Akonadi::Item::List &items)
 {
     KMime::Message::Ptr msg(new KMime::Message);
     auto digest = new KMime::Content(msg.data());
 
-    const QString mainPartText = i18n("\nThis is a MIME digest forward. The content of the"
-                                      " message is contained in the attachment(s).\n\n\n");
+    const QString mainPartText = i18n(
+        "\nThis is a MIME digest forward. The content of the"
+        " message is contained in the attachment(s).\n\n\n");
 
     auto ct = digest->contentType();
     ct->setMimeType("multipart/digest");
@@ -746,7 +746,7 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDi
 
     //   qCDebug(MESSAGECOMPOSER_LOG) << "digest:" << digest->contents().size() << digest->encodedContent();
 
-    return QPair< KMime::Message::Ptr, KMime::Content * >(msg, digest);
+    return QPair<KMime::Message::Ptr, KMime::Content *>(msg, digest);
 }
 
 void MessageFactoryNG::setIdentityManager(KIdentityManagement::IdentityManager *ident)
@@ -818,8 +818,7 @@ bool MessageFactoryNG::MDNConfirmMultipleRecipients(const KMime::Message::Ptr &m
     // RFC 2298: [ Confirmation from the user SHOULD be obtained (or no
     // MDN sent) ] if there is more than one distinct address in the
     // Disposition-Notification-To header.
-    qCDebug(MESSAGECOMPOSER_LOG) << "KEmailAddress::splitAddressList(receiptTo):"
-                                 << KEmailAddress::splitAddressList(receiptTo).join(QLatin1Char('\n'));
+    qCDebug(MESSAGECOMPOSER_LOG) << "KEmailAddress::splitAddressList(receiptTo):" << KEmailAddress::splitAddressList(receiptTo).join(QLatin1Char('\n'));
 
     return KEmailAddress::splitAddressList(receiptTo).count() > 1;
 }
@@ -842,8 +841,7 @@ bool MessageFactoryNG::MDNReturnPathEmpty(const KMime::Message::Ptr &msg)
     // SHOULD be obtained (or no MDN sent) if there is no Return-Path
     // header in the message [...]
     KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, "Return-Path");
-    const QString returnPath = returnPathList.isEmpty() ? QString()
-                         : returnPathList.front().localPart + QChar::fromLatin1('@') + returnPathList.front().domain;
+    const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + QChar::fromLatin1('@') + returnPathList.front().domain;
     qCDebug(MESSAGECOMPOSER_LOG) << "clean return path:" << returnPath;
     return returnPath.isEmpty();
 }
@@ -866,8 +864,7 @@ bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &ms
     // SHOULD be obtained (or no MDN sent) if there is no Return-Path
     // header in the message [...]
     KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, QStringLiteral("Return-Path").toLatin1());
-    const QString returnPath = returnPathList.isEmpty() ? QString()
-                         : returnPathList.front().localPart + QChar::fromLatin1('@') + returnPathList.front().domain;
+    const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + QChar::fromLatin1('@') + returnPathList.front().domain;
     qCDebug(MESSAGECOMPOSER_LOG) << "clean return path:" << returnPath;
     return !receiptTo.contains(returnPath, Qt::CaseSensitive);
 }
@@ -911,13 +908,9 @@ uint MessageFactoryNG::identityUoid(const KMime::Message::Ptr &msg)
 QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s)
 {
     QString result = s;
-    static QRegularExpression rx {
-        QStringLiteral("\\$\\{([a-z0-9-]+)\\}"),
-        QRegularExpression::CaseInsensitiveOption
-    };
+    static QRegularExpression rx{QStringLiteral("\\$\\{([a-z0-9-]+)\\}"), QRegularExpression::CaseInsensitiveOption};
 
-    const QString sDate = KMime::DateFormatter::formatDate(
-        KMime::DateFormatter::Localized, msg->date()->dateTime().toSecsSinceEpoch());
+    const QString sDate = KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, msg->date()->dateTime().toSecsSinceEpoch());
     qCDebug(MESSAGECOMPOSER_LOG) << "creating mdn date:" << msg->date()->dateTime().toSecsSinceEpoch() << sDate;
 
     result.replace(QStringLiteral("${date}"), sDate);
@@ -954,7 +947,7 @@ void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
         QTextCodec *codec = KCharsets::charsets()->codecForName(QString::fromLatin1(msg->contentType()->charset()));
         if (!codec) {
             qCCritical(MESSAGECOMPOSER_LOG) << "Could not get text codec for charset" << msg->contentType()->charset();
-        } else if (!codec->canEncode(body)) {     // charset can't encode body, fall back to preferred
+        } else if (!codec->canEncode(body)) { // charset can't encode body, fall back to preferred
             const QStringList charsets = MessageComposer::MessageComposerSettings::preferredCharsets();
 
             QVector<QByteArray> chars;

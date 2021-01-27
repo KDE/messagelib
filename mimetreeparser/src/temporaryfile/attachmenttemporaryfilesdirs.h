@@ -7,11 +7,12 @@
 #ifndef ATTACHMENTTEMPORARYFILESDIRS_H
 #define ATTACHMENTTEMPORARYFILESDIRS_H
 
+#include "mimetreeparser_export.h"
 #include <QObject>
 #include <QStringList>
-#include "mimetreeparser_export.h"
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class AttachmentTemporaryFilesDirsPrivate;
 /**
  * @brief The AttachmentTemporaryFilesDirs class

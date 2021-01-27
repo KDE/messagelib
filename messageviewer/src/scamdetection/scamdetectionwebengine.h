@@ -8,11 +8,12 @@
 #ifndef SCAMDETECTIONWEBENGINE_H
 #define SCAMDETECTIONWEBENGINE_H
 
+#include "messageviewer_export.h"
 #include <QObject>
 #include <QVariant>
-#include "messageviewer_export.h"
 class QWebEnginePage;
-namespace MessageViewer {
+namespace MessageViewer
+{
 class ScamDetectionWebEnginePrivate;
 /**
  * @brief The ScamDetectionWebEngine class

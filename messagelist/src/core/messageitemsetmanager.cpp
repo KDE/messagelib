@@ -25,7 +25,7 @@ MessageItemSetManager::~MessageItemSetManager()
 void MessageItemSetManager::clearAllSets()
 {
     for (auto it = mSets->cbegin(), end = mSets->cend(); it != end; ++it) {
-        delete(*it);
+        delete (*it);
     }
     mSets->clear();
 }
@@ -45,7 +45,7 @@ void MessageItemSetManager::removeSet(MessageItemSetReference ref)
     delete set;
 }
 
-QList< MessageItem * > MessageItemSetManager::messageItems(MessageItemSetReference ref)
+QList<MessageItem *> MessageItemSetManager::messageItems(MessageItemSetReference ref)
 {
     auto *set = mSets->value(static_cast<ulong>(ref), nullptr);
     if (!set) {
@@ -57,7 +57,7 @@ QList< MessageItem * > MessageItemSetManager::messageItems(MessageItemSetReferen
 
 void MessageItemSetManager::removeMessageItemFromAllSets(MessageItem *mi)
 {
-    QVector< MessageItemSetReference > setsToBeKilled;
+    QVector<MessageItemSetReference> setsToBeKilled;
 
     for (auto it = mSets->cbegin(), end = mSets->cend(); it != end; ++it) {
         (*it)->remove(mi);
@@ -90,7 +90,7 @@ MessageItemSetReference MessageItemSetManager::createSet()
     set = new QHash<MessageItem *, MessageItem *>();
     mSets->insert(uNextId, set);
 
-    return static_cast< MessageItemSetReference >(uNextId);
+    return static_cast<MessageItemSetReference>(uNextId);
 }
 
 bool MessageItemSetManager::addMessageItem(MessageItemSetReference ref, MessageItem *mi)

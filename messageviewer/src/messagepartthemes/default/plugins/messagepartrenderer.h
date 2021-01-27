@@ -11,7 +11,8 @@
 
 #include <QSharedPointer>
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 class MessagePartRenderer : public MessagePartRendererBase
 {
 public:

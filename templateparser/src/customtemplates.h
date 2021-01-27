@@ -18,7 +18,8 @@ class KActionCollection;
 
 class Ui_CustomTemplatesBase;
 
-namespace TemplateParser {
+namespace TemplateParser
+{
 class CustomTemplateItem;
 /**
  * @brief The CustomTemplates class
@@ -27,12 +28,7 @@ class TEMPLATEPARSER_EXPORT CustomTemplates : public QWidget
 {
     Q_OBJECT
 public:
-    enum Type {
-        TUniversal,
-        TReply,
-        TReplyAll,
-        TForward
-    };
+    enum Type { TUniversal, TReply, TReplyAll, TForward };
 
 public:
     explicit CustomTemplates(const QList<KActionCollection *> &actionCollection, QWidget *parent = nullptr);
@@ -81,7 +77,13 @@ private:
 class CustomTemplateItem : public QTreeWidgetItem
 {
 public:
-    explicit CustomTemplateItem(QTreeWidget *parent, const QString &name, const QString &content, const QKeySequence &shortcut, CustomTemplates::Type type, const QString &to, const QString &cc);
+    explicit CustomTemplateItem(QTreeWidget *parent,
+                                const QString &name,
+                                const QString &content,
+                                const QKeySequence &shortcut,
+                                CustomTemplates::Type type,
+                                const QString &to,
+                                const QString &cc);
     ~CustomTemplateItem();
     void setCustomType(CustomTemplates::Type type);
     CustomTemplates::Type customType() const;

@@ -14,8 +14,7 @@
 
 #include <messageviewer/mailwebengineview.h>
 
-template<typename Arg, typename R, typename C>
-struct InvokeWrapper {
+template<typename Arg, typename R, typename C> struct InvokeWrapper {
     R *receiver;
     void (C::*memberFunction)(Arg);
     void operator()(Arg result)
@@ -43,8 +42,7 @@ TestWebEngineScrollAddAttachment::TestWebEngineScrollAddAttachment(QWidget *pare
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
     auto scrollToButton = new QPushButton(QStringLiteral("Scroll to Attachment"), this);
     vboxLayout->addWidget(scrollToButton);
-    connect(scrollToButton, &QPushButton::clicked, this,
-            &TestWebEngineScrollAddAttachment::slotScrollToAttachment);
+    connect(scrollToButton, &QPushButton::clicked, this, &TestWebEngineScrollAddAttachment::slotScrollToAttachment);
 }
 
 void TestWebEngineScrollAddAttachment::slotScrollToAttachment()

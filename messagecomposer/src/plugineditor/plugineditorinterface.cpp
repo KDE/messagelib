@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "plugincomposerinterface.h"
 #include "plugineditorinterface.h"
+#include "plugincomposerinterface.h"
 
 using namespace MessageComposer;
 

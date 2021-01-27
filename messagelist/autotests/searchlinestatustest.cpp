@@ -6,9 +6,9 @@
 
 #include "searchlinestatustest.h"
 #include "../src/core/widgets/searchlinestatus.h"
+#include <QCompleter>
 #include <QMenu>
 #include <QTest>
-#include <QCompleter>
 
 SearchLineStatusTest::SearchLineStatusTest(QObject *parent)
     : QObject(parent)
@@ -32,7 +32,7 @@ void SearchLineStatusTest::shouldHaveDefaultValue()
     QVERIFY(w.completer()->model());
     QCOMPARE(w.completer()->model()->rowCount(), 0);
 
-    //Verify if qt qlineedit name changed
+    // Verify if qt qlineedit name changed
     auto act = w.findChild<QAction *>(QStringLiteral("_q_qlineeditclearaction"));
     QVERIFY(act);
 }
@@ -43,7 +43,7 @@ void SearchLineStatusTest::shouldAddCompletionItem()
     w.addCompletionItem(QStringLiteral("ff"));
     QCOMPARE(w.completer()->model()->rowCount(), 1);
 
-    //Don't add same element
+    // Don't add same element
     w.addCompletionItem(QStringLiteral("ff"));
     QCOMPARE(w.completer()->model()->rowCount(), 1);
 

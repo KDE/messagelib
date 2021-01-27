@@ -6,10 +6,11 @@
 #ifndef DKIMMANAGERKEYWIDGET_H
 #define DKIMMANAGERKEYWIDGET_H
 
-#include <QWidget>
 #include "messageviewer_export.h"
+#include <QWidget>
 class QTreeWidget;
-namespace MessageViewer {
+namespace MessageViewer
+{
 /**
  * @brief The DKIMManagerKeyWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -26,6 +27,7 @@ public:
     void resetKeys();
     Q_REQUIRED_RESULT QByteArray saveHeaders() const;
     void restoreHeaders(const QByteArray &header);
+
 private:
     void slotCustomContextMenuRequested(const QPoint &);
     QTreeWidget *mTreeWidget = nullptr;

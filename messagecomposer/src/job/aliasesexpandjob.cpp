@@ -11,8 +11,8 @@
 
 #include "distributionlistexpandjob.h"
 
-#include <Akonadi/Contact/ContactSearchJob>
 #include <Akonadi/Contact/ContactGroupExpandJob>
+#include <Akonadi/Contact/ContactSearchJob>
 #include <KEmailAddress>
 
 #include <MessageCore/StringUtil>
@@ -167,8 +167,7 @@ void AliasesExpandJob::finishExpansion()
         KEmailAddress::splitAddress(receiver, displayName, addrSpec, comment);
         if (!addrSpec.contains(QLatin1Char('@'))) {
             if (!mDefaultDomain.isEmpty()) {
-                mEmailAddresses += KEmailAddress::normalizedAddress(displayName, addrSpec + QLatin1Char('@')
-                                                                    +mDefaultDomain, comment);
+                mEmailAddresses += KEmailAddress::normalizedAddress(displayName, addrSpec + QLatin1Char('@') + mDefaultDomain, comment);
             } else {
                 mEmailAddresses += MessageCore::StringUtil::guessEmailAddressFromLoginName(addrSpec);
             }

@@ -14,10 +14,10 @@
 #include "core/manager.h"
 #include "core/messageitem.h"
 #include "core/model.h"
-#include "core/theme.h"
-#include "messagelistsettings.h"
 #include "core/storagemodelbase.h"
+#include "core/theme.h"
 #include "core/widgetbase.h"
+#include "messagelistsettings.h"
 #include "messagelistutil.h"
 #include "messagelistutil_p.h"
 
@@ -26,18 +26,18 @@
 #include <kmime/kmime_dateformatter.h> // kdepimlibs
 
 #include <Item>
-#include <QHelpEvent>
-#include <QToolTip>
-#include <QHeaderView>
-#include <QTimer>
 #include <QApplication>
-#include <QScrollBar>
+#include <QHeaderView>
+#include <QHelpEvent>
 #include <QLineEdit>
 #include <QMenu>
 #include <QPainter>
+#include <QScrollBar>
+#include <QTimer>
+#include <QToolTip>
 
-#include <KLocalizedString>
 #include "messagelist_debug.h"
+#include <KLocalizedString>
 
 using namespace MessageList::Core;
 
@@ -61,16 +61,16 @@ public:
     Model *mModel = nullptr;
     Delegate *const mDelegate;
 
-    const Aggregation *mAggregation = nullptr;          ///< The Aggregation we're using now, shallow pointer
-    Theme *mTheme = nullptr;                            ///< The Theme we're using now, shallow pointer
-    bool mNeedToApplyThemeColumns = false;            ///< Flag signaling a pending application of theme columns
+    const Aggregation *mAggregation = nullptr; ///< The Aggregation we're using now, shallow pointer
+    Theme *mTheme = nullptr; ///< The Theme we're using now, shallow pointer
+    bool mNeedToApplyThemeColumns = false; ///< Flag signaling a pending application of theme columns
     Item *mLastCurrentItem = nullptr;
     QPoint mMousePressPosition;
-    bool mSaveThemeColumnStateOnSectionResize = true;      ///< This is used to filter out programmatic column resizes in slotSectionResized().
-    QTimer *mSaveThemeColumnStateTimer = nullptr;             ///< Used to trigger a delayed "save theme state"
-    QTimer *mApplyThemeColumnsTimer = nullptr;                ///< Used to trigger a delayed "apply theme columns"
+    bool mSaveThemeColumnStateOnSectionResize = true; ///< This is used to filter out programmatic column resizes in slotSectionResized().
+    QTimer *mSaveThemeColumnStateTimer = nullptr; ///< Used to trigger a delayed "save theme state"
+    QTimer *mApplyThemeColumnsTimer = nullptr; ///< Used to trigger a delayed "apply theme columns"
     int mLastViewportWidth = -1;
-    bool mIgnoreUpdateGeometries = false;                   ///< Shall we ignore the "update geometries" calls ?
+    bool mIgnoreUpdateGeometries = false; ///< Shall we ignore the "update geometries" calls ?
 };
 
 View::View(Widget *pParent)
@@ -92,25 +92,20 @@ View::View(Widget *pParent)
     viewport()->setAcceptDrops(true);
 
     header()->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(header(), &QWidget::customContextMenuRequested,
-            this, &View::slotHeaderContextMenuRequested);
-    connect(header(), &QHeaderView::sectionResized,
-            this, &View::slotHeaderSectionResized);
+    connect(header(), &QWidget::customContextMenuRequested, this, &View::slotHeaderContextMenuRequested);
+    connect(header(), &QHeaderView::sectionResized, this, &View::slotHeaderSectionResized);
 
     header()->setSectionsClickable(true);
     header()->setSectionResizeMode(QHeaderView::Interactive);
-    header()->setMinimumSectionSize(2);   // QTreeView overrides our sections sizes if we set them smaller than this value
-    header()->setDefaultSectionSize(2);   // QTreeView overrides our sections sizes if we set them smaller than this value
+    header()->setMinimumSectionSize(2); // QTreeView overrides our sections sizes if we set them smaller than this value
+    header()->setDefaultSectionSize(2); // QTreeView overrides our sections sizes if we set them smaller than this value
 
     d->mModel = new Model(this);
     setModel(d->mModel);
 
-    connect(d->mModel, &Model::statusMessage,
-            pParent, &Widget::statusMessage);
+    connect(d->mModel, &Model::statusMessage, pParent, &Widget::statusMessage);
 
-    connect(selectionModel(), &QItemSelectionModel::selectionChanged,
-            this, &View::slotSelectionChanged,
-            Qt::UniqueConnection);
+    connect(selectionModel(), &QItemSelectionModel::selectionChanged, this, &View::slotSelectionChanged, Qt::UniqueConnection);
 
     // as in KDE3, when a root-item of a message thread is expanded, expand all children
     connect(this, &View::expanded, this, [this](const QModelIndex &index) {
@@ -151,13 +146,10 @@ Delegate *View::delegate() const
 void View::ignoreCurrentChanges(bool ignore)
 {
     if (ignore) {
-        disconnect(selectionModel(), &QItemSelectionModel::selectionChanged,
-                   this, &View::slotSelectionChanged);
+        disconnect(selectionModel(), &QItemSelectionModel::selectionChanged, this, &View::slotSelectionChanged);
         viewport()->setUpdatesEnabled(false);
     } else {
-        connect(selectionModel(), &QItemSelectionModel::selectionChanged,
-                this, &View::slotSelectionChanged,
-                Qt::UniqueConnection);
+        connect(selectionModel(), &QItemSelectionModel::selectionChanged, this, &View::slotSelectionChanged, Qt::UniqueConnection);
         viewport()->setUpdatesEnabled(true);
     }
 }
@@ -190,17 +182,16 @@ bool View::isScrollingLocked() const
     const int scrollBarMaximum = verticalScrollBar()->maximum();
     const SortOrder *sortOrder = d->mModel->sortOrder();
     const bool lockView = (
-        // not the first loading job
-        !d->mModel->isLoading()
-        ) && (
-        // messages sorted by date
-        (sortOrder->messageSorting() == SortOrder::SortMessagesByDateTime)
-        || (sortOrder->messageSorting() == SortOrder::SortMessagesByDateTimeOfMostRecent)
-        ) && (
-        // scrollbar at top (Descending order) or bottom (Ascending order)
-        (scrollBarPosition == 0 && sortOrder->messageSortDirection() == SortOrder::Descending)
-        || (scrollBarPosition == scrollBarMaximum && sortOrder->messageSortDirection() == SortOrder::Ascending)
-        );
+                              // not the first loading job
+                              !d->mModel->isLoading())
+        && (
+                              // messages sorted by date
+                              (sortOrder->messageSorting() == SortOrder::SortMessagesByDateTime)
+                              || (sortOrder->messageSorting() == SortOrder::SortMessagesByDateTimeOfMostRecent))
+        && (
+                              // scrollbar at top (Descending order) or bottom (Ascending order)
+                              (scrollBarPosition == 0 && sortOrder->messageSortDirection() == SortOrder::Descending)
+                              || (scrollBarPosition == scrollBarMaximum && sortOrder->messageSortDirection() == SortOrder::Ascending));
     return lockView;
 }
 
@@ -307,20 +298,20 @@ void View::applyThemeColumns()
         return;
     }
 
-    //qCDebug(MESSAGELIST_LOG) << "Apply theme columns";
+    // qCDebug(MESSAGELIST_LOG) << "Apply theme columns";
 
-    const QList< Theme::Column * > &columns = d->mTheme->columns();
+    const QList<Theme::Column *> &columns = d->mTheme->columns();
 
     if (columns.isEmpty()) {
-        return;    // bad theme
+        return; // bad theme
     }
 
     if (!viewport()->isVisible()) {
-        return;    // invisible
+        return; // invisible
     }
 
     if (viewport()->width() < 1) {
-        return;    // insane width
+        return; // insane width
     }
     const int viewportWidth = viewport()->width();
     d->mLastViewportWidth = viewportWidth;
@@ -355,32 +346,32 @@ void View::applyThemeColumns()
     // all saved then the total hint is equal to the total saved width.
 
     int totalVisibleWidthHint = 0;
-    QVector< int > lColumnSizeHints;
+    QVector<int> lColumnSizeHints;
     for (const auto col : qAsConst(columns)) {
         if (col->currentlyVisible() || (idx == 0)) {
-            //qCDebug(MESSAGELIST_LOG) << "Column " << idx << " will be visible";
+            // qCDebug(MESSAGELIST_LOG) << "Column " << idx << " will be visible";
             // Column visible
             const int savedWidth = col->currentWidth();
             const int hintWidth = d->mDelegate->sizeHintForItemTypeAndColumn(Item::Message, idx).width();
             totalVisibleWidthHint += savedWidth > 0 ? savedWidth : hintWidth;
             lColumnSizeHints.append(hintWidth);
-            //qCDebug(MESSAGELIST_LOG) << "Column " << idx << " size hint is " << hintWidth;
+            // qCDebug(MESSAGELIST_LOG) << "Column " << idx << " size hint is " << hintWidth;
         } else {
-            //qCDebug(MESSAGELIST_LOG) << "Column " << idx << " will be not visible";
+            // qCDebug(MESSAGELIST_LOG) << "Column " << idx << " will be not visible";
             // The column is not visible
-            lColumnSizeHints.append(-1);   // dummy
+            lColumnSizeHints.append(-1); // dummy
         }
         idx++;
     }
 
     if (totalVisibleWidthHint < 16) {
-        totalVisibleWidthHint = 16;    // be reasonable
+        totalVisibleWidthHint = 16; // be reasonable
     }
 
     // Now compute somewhat "proportional" widths.
     idx = 0;
 
-    QVector< double > lColumnWidths;
+    QVector<double> lColumnWidths;
     lColumnWidths.reserve(columns.count());
     int totalVisibleWidth = 0;
     for (const auto col : qAsConst(columns)) {
@@ -398,7 +389,7 @@ void View::applyThemeColumns()
             }
 
             if (realWidth < 2) {
-                realWidth = 2;    // don't allow very insane values
+                realWidth = 2; // don't allow very insane values
             }
 
             totalVisibleWidth += realWidth;
@@ -440,16 +431,16 @@ void View::applyThemeColumns()
                 if ((column->currentlyVisible() || (idx == 0)) && column->containsTextItems()) {
                     // give more space to this column
                     available /= 2; // eat half of the available space
-                    lColumnWidths[ idx ] += available; // and give it to this column
+                    lColumnWidths[idx] += available; // and give it to this column
                     if (available < 1) {
-                        break;    // no more space to give away
+                        break; // no more space to give away
                     }
                 }
             }
 
             // if any space is still available, give it to the first column
             if (available >= 1) {
-                lColumnWidths[ 0 ] += available;
+                lColumnWidths[0] += available;
             }
         } else {
             // We were using more space than available
@@ -468,10 +459,10 @@ void View::applyThemeColumns()
                             if (chop > missing) {
                                 chop = missing;
                             }
-                            lColumnWidths[ idx ] -= chop;
+                            lColumnWidths[idx] -= chop;
                             missing -= chop;
                             if (missing < 1) {
-                                break;    // no more space to recover
+                                break; // no more space to recover
                             }
                         }
                     } // else it's invisible
@@ -497,7 +488,7 @@ void View::applyThemeColumns()
 
     for (const auto col : qAsConst(columns)) {
         bool visible = (idx == 0) || col->currentlyVisible();
-        //qCDebug(MESSAGELIST_LOG) << "Column " << idx << " visible " << visible;
+        // qCDebug(MESSAGELIST_LOG) << "Column " << idx << " visible " << visible;
         col->setCurrentlyVisible(visible);
         header()->setSectionHidden(idx, !visible);
         idx++;
@@ -513,7 +504,7 @@ void View::applyThemeColumns()
         if (col->currentlyVisible()) {
             const double columnWidth(lColumnWidths.at(idx));
             col->setCurrentWidth(columnWidth);
-            //Laurent Bug 358855 - message list column widths lost when program closed
+            // Laurent Bug 358855 - message list column widths lost when program closed
             // I need to investigate if this code is still necessary (all method)
             header()->resizeSection(idx, static_cast<int>(columnWidth));
         } else {
@@ -543,7 +534,7 @@ void View::applyThemeColumns()
 
     if (bTriggeredQtBug && bAllowRecursion) {
         bAllowRecursion = false;
-        //qCDebug(MESSAGELIST_LOG) << "I've triggered the QHeaderView bug: trying to fix by calling myself again";
+        // qCDebug(MESSAGELIST_LOG) << "I've triggered the QHeaderView bug: trying to fix by calling myself again";
         applyThemeColumns();
         bAllowRecursion = true;
     }
@@ -569,26 +560,26 @@ void View::saveThemeColumnState()
     }
 
     if (d->mNeedToApplyThemeColumns) {
-        return;    // don't save the state if it hasn't been applied at all
+        return; // don't save the state if it hasn't been applied at all
     }
 
-    //qCDebug(MESSAGELIST_LOG) << "Save theme column state";
+    // qCDebug(MESSAGELIST_LOG) << "Save theme column state";
 
     const auto columns = d->mTheme->columns();
 
     if (columns.isEmpty()) {
-        return;    // bad theme
+        return; // bad theme
     }
 
     int idx = 0;
 
     for (const auto col : qAsConst(columns)) {
         if (header()->isSectionHidden(idx)) {
-            //qCDebug(MESSAGELIST_LOG) << "Section " << idx << " is hidden";
+            // qCDebug(MESSAGELIST_LOG) << "Section " << idx << " is hidden";
             col->setCurrentlyVisible(false);
-            col->setCurrentWidth(-1);     // reset (hmmm... we could use the "don't touch" policy here too...)
+            col->setCurrentWidth(-1); // reset (hmmm... we could use the "don't touch" policy here too...)
         } else {
-            //qCDebug(MESSAGELIST_LOG) << "Section " << idx << " is visible and has size " << header()->sectionSize( idx );
+            // qCDebug(MESSAGELIST_LOG) << "Section " << idx << " is visible and has size " << header()->sectionSize( idx );
             col->setCurrentlyVisible(true);
             col->setCurrentWidth(header()->sectionSize(idx));
         }
@@ -612,7 +603,7 @@ void View::resizeEvent(QResizeEvent *e)
     QTreeView::resizeEvent(e);
 
     if (!isVisible()) {
-        return;    // don't play with
+        return; // don't play with
     }
 
     if (d->mLastViewportWidth != viewport()->width()) {
@@ -703,7 +694,7 @@ int View::sizeHintForColumn(int logicalColumnIndex) const
         return w;
     }
     if (!d->mDelegate) {
-        return 32;    // dummy
+        return 32; // dummy
     }
     w = d->mDelegate->sizeHintForItemTypeAndColumn(Item::Message, logicalColumnIndex).width();
     return w;
@@ -723,7 +714,7 @@ void View::slotHeaderContextMenuRequested(const QPoint &pnt)
     const auto columns = d->mTheme->columns();
 
     if (columns.isEmpty()) {
-        return;    // bad theme
+        return; // bad theme
     }
 
     // the menu for the columns
@@ -795,11 +786,11 @@ void View::slotDisplayTooltips(bool showTooltips)
 void View::slotShowHideColumn(int columnIdx)
 {
     if (!d->mTheme) {
-        return;    // oops
+        return; // oops
     }
 
     if (columnIdx == 0) {
-        return;    // can never be hidden
+        return; // can never be hidden
     }
 
     if (columnIdx >= d->mTheme->columns().count()) {
@@ -831,7 +822,7 @@ Item *View::currentItem() const
     if (!idx.isValid()) {
         return nullptr;
     }
-    Item *it = static_cast< Item * >(idx.internalPointer());
+    Item *it = static_cast<Item *>(idx.internalPointer());
     Q_ASSERT(it);
     return it;
 }
@@ -851,7 +842,7 @@ MessageItem *View::currentMessageItem(bool selectIfNeeded) const
         }
     }
 
-    return static_cast< MessageItem * >(it);
+    return static_cast<MessageItem *>(it);
 }
 
 void View::setCurrentMessageItem(MessageItem *it, bool center)
@@ -860,14 +851,12 @@ void View::setCurrentMessageItem(MessageItem *it, bool center)
         qCDebug(MESSAGELIST_LOG) << "Setting current message to" << it->subject();
 
         const QModelIndex index = d->mModel->index(it, 0);
-        selectionModel()->setCurrentIndex(index, QItemSelectionModel::Select
-                                          |QItemSelectionModel::Current | QItemSelectionModel::Rows);
+        selectionModel()->setCurrentIndex(index, QItemSelectionModel::Select | QItemSelectionModel::Current | QItemSelectionModel::Rows);
         if (center) {
             scrollTo(index, QAbstractItemView::PositionAtCenter);
         }
     } else {
-        selectionModel()->setCurrentIndex(QModelIndex(), QItemSelectionModel::Current
-                                          |QItemSelectionModel::Clear);
+        selectionModel()->setCurrentIndex(QModelIndex(), QItemSelectionModel::Current | QItemSelectionModel::Clear);
     }
 }
 
@@ -876,9 +865,9 @@ bool View::selectionEmpty() const
     return selectionModel()->selectedRows().isEmpty();
 }
 
-QVector< MessageItem * > View::selectionAsMessageItemList(bool includeCollapsedChildren) const
+QVector<MessageItem *> View::selectionAsMessageItemList(bool includeCollapsedChildren) const
 {
-    QVector< MessageItem * > selectedMessages;
+    QVector<MessageItem *> selectedMessages;
 
     QModelIndexList lSelected = selectionModel()->selectedRows();
     if (lSelected.isEmpty()) {
@@ -889,8 +878,8 @@ QVector< MessageItem * > View::selectionAsMessageItemList(bool includeCollapsedC
         // of writing they fail because of a bug in QItemSelectionModel::selectedRows()
         // which returns also non-selectable items.
 
-        //Q_ASSERT( selectedItem->type() == Item::Message );
-        //Q_ASSERT( ( *it ).isValid() );
+        // Q_ASSERT( selectedItem->type() == Item::Message );
+        // Q_ASSERT( ( *it ).isValid() );
 
         if (!idx.isValid()) {
             continue;
@@ -932,7 +921,7 @@ QVector<MessageItem *> View::currentThreadAsMessageItemList() const
         if (msg->parent()->type() != Item::Message) {
             break;
         }
-        msg = static_cast< MessageItem * >(msg->parent());
+        msg = static_cast<MessageItem *>(msg->parent());
     }
 
     msg->subTreeToList(currentThread);
@@ -982,13 +971,12 @@ void View::Private::expandFullThread(const QModelIndex &index)
         return;
     }
 
-    Item *item = static_cast< Item * >(index.internalPointer());
+    Item *item = static_cast<Item *>(index.internalPointer());
     if (item->type() != Item::Message) {
         return;
     }
 
-    if (!static_cast< MessageItem * >(item)->parent()
-        || (static_cast< MessageItem * >(item)->parent()->type() != Item::Message)) {
+    if (!static_cast<MessageItem *>(item)->parent() || (static_cast<MessageItem *>(item)->parent()->type() != Item::Message)) {
         q->setChildrenExpanded(item, true);
     }
 }
@@ -1003,12 +991,12 @@ void View::setCurrentThreadExpanded(bool expand)
     if (it->type() == Item::GroupHeader) {
         setExpanded(currentIndex(), expand);
     } else if (it->type() == Item::Message) {
-        auto message = static_cast< MessageItem *>(it);
+        auto message = static_cast<MessageItem *>(it);
         while (message->parent()) {
             if (message->parent()->type() != Item::Message) {
                 break;
             }
-            message = static_cast< MessageItem * >(message->parent());
+            message = static_cast<MessageItem *>(message->parent());
         }
 
         if (expand) {
@@ -1045,7 +1033,7 @@ void View::setAllThreadsExpanded(bool expand)
 void View::setAllGroupsExpanded(bool expand)
 {
     if (d->mAggregation->grouping() == Aggregation::NoGrouping) {
-        return;    // no grouping in effect
+        return; // no grouping in effect
     }
 
     Item *item = d->mModel->rootItem();
@@ -1060,7 +1048,7 @@ void View::setAllGroupsExpanded(bool expand)
         Q_ASSERT(item->type() == Item::GroupHeader);
         QModelIndex idx = d->mModel->index(item, 0);
         Q_ASSERT(idx.isValid());
-        Q_ASSERT(static_cast< Item * >(idx.internalPointer()) == item);
+        Q_ASSERT(static_cast<Item *>(idx.internalPointer()) == item);
         if (expand) {
             if (!isExpanded(idx)) {
                 setExpanded(idx, true);
@@ -1073,7 +1061,7 @@ void View::setAllGroupsExpanded(bool expand)
     }
 }
 
-void View::selectMessageItems(const QVector< MessageItem * > &list)
+void View::selectMessageItems(const QVector<MessageItem *> &list)
 {
     QItemSelection selection;
     for (const auto mi : list) {
@@ -1113,7 +1101,7 @@ static inline bool message_type_matches(Item *item, MessageTypeFilter messageTyp
 Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeFilter, bool loop)
 {
     if (!storageModel()) {
-        return nullptr;    // no folder
+        return nullptr; // no folder
     }
 
     // find the item to start with
@@ -1121,15 +1109,7 @@ Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeF
 
     if (referenceItem) {
         // there was a current item: we start just below it
-        if (
-            (referenceItem->childItemCount() > 0)
-            &&
-            (
-                (messageTypeFilter != MessageTypeAny)
-                ||
-                isExpanded(d->mModel->index(referenceItem, 0))
-            )
-            ) {
+        if ((referenceItem->childItemCount() > 0) && ((messageTypeFilter != MessageTypeAny) || isExpanded(d->mModel->index(referenceItem, 0)))) {
             // the current item had children: either expanded or we want unread/new messages (and so we'll expand it if it isn't)
             below = referenceItem->itemBelow();
         } else {
@@ -1143,10 +1123,10 @@ Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeF
             if (loop) {
                 // try re-starting from top
                 below = d->mModel->rootItem()->itemBelow();
-                Q_ASSERT(below);   // must exist (we had a current item)
+                Q_ASSERT(below); // must exist (we had a current item)
 
                 if (below == referenceItem) {
-                    return nullptr;    // only one item in folder: loop complete
+                    return nullptr; // only one item in folder: loop complete
                 }
             } else {
                 // looping not requested
@@ -1158,7 +1138,7 @@ Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeF
         below = d->mModel->rootItem()->itemBelow();
 
         if (!below) {
-            return nullptr;    // folder empty
+            return nullptr; // folder empty
         }
     }
 
@@ -1172,14 +1152,10 @@ Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeF
 
     while (
         // is not a message (we want messages, don't we ?)
-        (below->type() != Item::Message)
-        ||// message filter doesn't match
-        (!message_type_matches(below, messageTypeFilter))
-        ||// is hidden (and we don't want hidden items as they arent "officially" in the view)
-        isRowHidden(belowIndex.row(), parentIndex)
-        ||// is not enabled or not selectable
-        ((d->mModel->flags(belowIndex) & (Qt::ItemIsSelectable | Qt::ItemIsEnabled)) != (Qt::ItemIsSelectable | Qt::ItemIsEnabled))
-        ) {
+        (below->type() != Item::Message) || // message filter doesn't match
+        (!message_type_matches(below, messageTypeFilter)) || // is hidden (and we don't want hidden items as they arent "officially" in the view)
+        isRowHidden(belowIndex.row(), parentIndex) || // is not enabled or not selectable
+        ((d->mModel->flags(belowIndex) & (Qt::ItemIsSelectable | Qt::ItemIsEnabled)) != (Qt::ItemIsSelectable | Qt::ItemIsEnabled))) {
         // find the next one
         if ((below->childItemCount() > 0) && ((messageTypeFilter != MessageTypeAny) || isExpanded(belowIndex))) {
             // the current item had children: either expanded or we want unread messages (and so we'll expand it if it isn't)
@@ -1231,8 +1207,7 @@ Item *View::nextMessageItem(MessageTypeFilter messageTypeFilter, bool loop)
 Item *View::deepestExpandedChild(Item *referenceItem) const
 {
     const int children = referenceItem->childItemCount();
-    if (children > 0
-        && isExpanded(d->mModel->index(referenceItem, 0))) {
+    if (children > 0 && isExpanded(d->mModel->index(referenceItem, 0))) {
         return deepestExpandedChild(referenceItem->childItem(children - 1));
     } else {
         return referenceItem;
@@ -1242,7 +1217,7 @@ Item *View::deepestExpandedChild(Item *referenceItem) const
 Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageTypeFilter, bool loop)
 {
     if (!storageModel()) {
-        return nullptr;    // no folder
+        return nullptr; // no folder
     }
 
     // find the item to start with
@@ -1250,16 +1225,10 @@ Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageType
 
     if (referenceItem) {
         Item *parent = referenceItem->parent();
-        Item *siblingAbove = parent
-                             ? parent->itemAboveChild(referenceItem) : nullptr;
+        Item *siblingAbove = parent ? parent->itemAboveChild(referenceItem) : nullptr;
         // there was a current item: we start just above it
-        if ((siblingAbove && siblingAbove != referenceItem && siblingAbove != parent)
-            && (siblingAbove->childItemCount() > 0)
-            && (
-                (messageTypeFilter != MessageTypeAny)
-                || (isExpanded(d->mModel->index(siblingAbove, 0)))
-                )
-            ) {
+        if ((siblingAbove && siblingAbove != referenceItem && siblingAbove != parent) && (siblingAbove->childItemCount() > 0)
+            && ((messageTypeFilter != MessageTypeAny) || (isExpanded(d->mModel->index(siblingAbove, 0))))) {
             // the current item had children: either expanded or we want unread/new messages (and so we'll expand it if it isn't)
             above = deepestExpandedChild(siblingAbove);
         } else {
@@ -1273,11 +1242,11 @@ Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageType
             if (loop) {
                 // try re-starting from bottom
                 above = d->mModel->rootItem()->deepestItem();
-                Q_ASSERT(above);   // must exist (we had a current item)
+                Q_ASSERT(above); // must exist (we had a current item)
                 Q_ASSERT(above != d->mModel->rootItem());
 
                 if (above == referenceItem) {
-                    return nullptr;    // only one item in folder: loop complete
+                    return nullptr; // only one item in folder: loop complete
                 }
             } else {
                 // looping not requested
@@ -1289,7 +1258,7 @@ Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageType
         above = d->mModel->rootItem()->deepestItem();
 
         if (!above || !above->parent() || (above == d->mModel->rootItem())) {
-            return nullptr;    // folder empty
+            return nullptr; // folder empty
         }
     }
 
@@ -1303,21 +1272,15 @@ Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageType
 
     while (
         // is not a message (we want messages, don't we ?)
-        (above->type() != Item::Message)
-        ||// message filter doesn't match
-        (!message_type_matches(above, messageTypeFilter))
-        ||// we don't expand items but the item has parents unexpanded (so should be skipped)
+        (above->type() != Item::Message) || // message filter doesn't match
+        (!message_type_matches(above, messageTypeFilter)) || // we don't expand items but the item has parents unexpanded (so should be skipped)
         (
             // !expand items
-            (messageTypeFilter == MessageTypeAny)
-            &&// has unexpanded parents or is itself hidden
-            (!isDisplayedWithParentsExpanded(above))
-        )
-        ||// is hidden
-        isRowHidden(aboveIndex.row(), parentIndex)
-        ||// is not enabled or not selectable
-        ((d->mModel->flags(aboveIndex) & (Qt::ItemIsSelectable | Qt::ItemIsEnabled)) != (Qt::ItemIsSelectable | Qt::ItemIsEnabled))
-        ) {
+            (messageTypeFilter == MessageTypeAny) && // has unexpanded parents or is itself hidden
+            (!isDisplayedWithParentsExpanded(above)))
+        || // is hidden
+        isRowHidden(aboveIndex.row(), parentIndex) || // is not enabled or not selectable
+        ((d->mModel->flags(aboveIndex) & (Qt::ItemIsSelectable | Qt::ItemIsEnabled)) != (Qt::ItemIsSelectable | Qt::ItemIsEnabled))) {
         above = above->itemAbove();
 
         if ((!above) || (above == d->mModel->rootItem())) {
@@ -1443,8 +1406,7 @@ void View::growOrShrinkExistingSelection(const QModelIndex &newSelectedIndex, bo
     }
 }
 
-bool View::selectNextMessageItem(
-    MessageTypeFilter messageTypeFilter, ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
+bool View::selectNextMessageItem(MessageTypeFilter messageTypeFilter, ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
 {
     Item *it = nextMessageItem(messageTypeFilter, loop);
     if (!it) {
@@ -1469,7 +1431,7 @@ bool View::selectNextMessageItem(
         growOrShrinkExistingSelection(idx, false);
         break;
     default:
-        //case ClearExistingSelection:
+        // case ClearExistingSelection:
         setCurrentIndex(idx);
         break;
     }
@@ -1481,8 +1443,7 @@ bool View::selectNextMessageItem(
     return true;
 }
 
-bool View::selectPreviousMessageItem(
-    MessageTypeFilter messageTypeFilter, ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
+bool View::selectPreviousMessageItem(MessageTypeFilter messageTypeFilter, ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
 {
     Item *it = previousMessageItem(messageTypeFilter, loop);
     if (!it) {
@@ -1507,7 +1468,7 @@ bool View::selectPreviousMessageItem(
         growOrShrinkExistingSelection(idx, true);
         break;
     default:
-        //case ClearExistingSelection:
+        // case ClearExistingSelection:
         setCurrentIndex(idx);
         break;
     }
@@ -1588,7 +1549,7 @@ void View::selectFocusedMessageItem(bool centerItem)
 bool View::selectFirstMessageItem(MessageTypeFilter messageTypeFilter, bool centerItem)
 {
     if (!storageModel()) {
-        return false;    // nothing to do
+        return false; // nothing to do
     }
 
     Item *it = firstMessageItem(messageTypeFilter);
@@ -1596,7 +1557,7 @@ bool View::selectFirstMessageItem(MessageTypeFilter messageTypeFilter, bool cent
         return false;
     }
 
-    Q_ASSERT(it != d->mModel->rootItem());   // must never happen (obviously)
+    Q_ASSERT(it != d->mModel->rootItem()); // must never happen (obviously)
 
     ensureDisplayedWithParentsExpanded(it);
 
@@ -1654,7 +1615,7 @@ MessageItemSetReference View::createPersistentSet(const QVector<MessageItem *> &
     return d->mModel->createPersistentSet(items);
 }
 
-QList< MessageItem * > View::persistentSetCurrentMessageItemList(MessageItemSetReference ref)
+QList<MessageItem *> View::persistentSetCurrentMessageItemList(MessageItemSetReference ref)
 {
     return d->mModel->persistentSetCurrentMessageItemList(ref);
 }
@@ -1668,7 +1629,7 @@ void View::markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items,
 {
     if (!bMark) {
         for (const auto mi : items) {
-            if (mi->isValid()) {   // hasn't been removed in the meantime
+            if (mi->isValid()) { // hasn't been removed in the meantime
                 mi->setAboutToBeRemoved(false);
             }
         }
@@ -1726,14 +1687,14 @@ void View::markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items,
             Q_ASSERT(selectedIndex.isValid());
             Q_ASSERT(selectedIndex.column() == 0);
 
-            Item *selectedItem = static_cast< Item * >(selectedIndex.internalPointer());
+            Item *selectedItem = static_cast<Item *>(selectedIndex.internalPointer());
             Q_ASSERT(selectedItem);
 
             if (selectedItem->type() != Item::Message) {
                 continue;
             }
 
-            if (!items.contains(static_cast< MessageItem * >(selectedItem))) {
+            if (!items.contains(static_cast<MessageItem *>(selectedItem))) {
                 // the selection contains something that we aren't going to remove:
                 // we will not clear the selection completely
                 clearingEntireSelection = false;
@@ -1763,7 +1724,7 @@ void View::markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items,
                 break;
             }
             Q_ASSERT(next->type() == Item::Message);
-            aMessage = static_cast< MessageItem * >(next);
+            aMessage = static_cast<MessageItem *>(next);
             maxAttempts--;
         }
 
@@ -1781,7 +1742,7 @@ void View::markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items,
                     break;
                 }
                 Q_ASSERT(prev->type() == Item::Message);
-                aMessage = static_cast< MessageItem * >(prev);
+                aMessage = static_cast<MessageItem *>(prev);
                 maxAttempts--;
             }
         }
@@ -1789,7 +1750,7 @@ void View::markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items,
         if (aMessage) {
             QModelIndex aMessageIndex = d->mModel->index(aMessage, 0);
             Q_ASSERT(aMessageIndex.isValid());
-            Q_ASSERT(static_cast< MessageItem * >(aMessageIndex.internalPointer()) == aMessage);
+            Q_ASSERT(static_cast<MessageItem *>(aMessageIndex.internalPointer()) == aMessage);
             Q_ASSERT(!selectionModel()->isSelected(aMessageIndex));
             setCurrentIndex(aMessageIndex);
             selectionModel()->select(aMessageIndex, QItemSelectionModel::ClearAndSelect | QItemSelectionModel::Rows);
@@ -1802,7 +1763,7 @@ void View::markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items,
         mi->setAboutToBeRemoved(true);
         QModelIndex idx = d->mModel->index(mi, 0);
         Q_ASSERT(idx.isValid());
-        Q_ASSERT(static_cast< MessageItem * >(idx.internalPointer()) == mi);
+        Q_ASSERT(static_cast<MessageItem *>(idx.internalPointer()) == mi);
         if (selectionModel()->isSelected(idx)) {
             selectionModel()->select(idx, QItemSelectionModel::Deselect | QItemSelectionModel::Rows);
         }
@@ -1815,7 +1776,7 @@ void View::ensureDisplayedWithParentsExpanded(Item *it)
 {
     Q_ASSERT(it);
     Q_ASSERT(it->parent());
-    Q_ASSERT(it->isViewable());   // must be attached to the viewable root
+    Q_ASSERT(it->isViewable()); // must be attached to the viewable root
 
     if (isRowHidden(it->parent()->indexOfChildItem(it), d->mModel->index(it->parent(), 0))) {
         setRowHidden(it->parent()->indexOfChildItem(it), d->mModel->index(it->parent(), 0), false);
@@ -1831,7 +1792,7 @@ void View::ensureDisplayedWithParentsExpanded(Item *it)
         QModelIndex idx = d->mModel->index(it, 0);
 
         Q_ASSERT(idx.isValid());
-        Q_ASSERT(static_cast< Item * >(idx.internalPointer()) == it);
+        Q_ASSERT(static_cast<Item *>(idx.internalPointer()) == it);
 
         if (!isExpanded(idx)) {
             setExpanded(idx, true);
@@ -1850,17 +1811,17 @@ bool View::isDisplayedWithParentsExpanded(Item *it) const
     //  - all of its parents are expanded
 
     if (!it) {
-        return false;    // be nice and allow the caller not to care
+        return false; // be nice and allow the caller not to care
     }
 
     if (!it->isViewable()) {
-        return false;    // item not viewable (not attached to the viewable root or qt not yet aware of it)
+        return false; // item not viewable (not attached to the viewable root or qt not yet aware of it)
     }
 
     // the item and all the parents are marked as viewable.
 
     if (isRowHidden(it->parent()->indexOfChildItem(it), d->mModel->index(it->parent(), 0))) {
-        return false;    // item qt representation explicitly hidden
+        return false; // item qt representation explicitly hidden
     }
 
     // the item (and theoretically all the parents) are not explicitly hidden
@@ -1871,13 +1832,13 @@ bool View::isDisplayedWithParentsExpanded(Item *it) const
 
     while (it) {
         if (it == d->mModel->rootItem()) {
-            return true;    // parent is root item: ok
+            return true; // parent is root item: ok
         }
 
         // parent is not root item
 
         if (!isExpanded(d->mModel->index(it, 0))) {
-            return false;    // parent is not expanded (so child not actually visible)
+            return false; // parent is not expanded (so child not actually visible)
         }
 
         it = it->parent(); // climb up
@@ -1922,14 +1883,14 @@ void View::slotSelectionChanged(const QItemSelection &, const QItemSelection &)
         }
     }
 
-    Item *it = static_cast< Item * >(current.internalPointer());
+    Item *it = static_cast<Item *>(current.internalPointer());
     Q_ASSERT(it);
 
     switch (it->type()) {
     case Item::Message:
         if (d->mLastCurrentItem != it) {
-            qCDebug(MESSAGELIST_LOG) << "View message selected [" << static_cast< MessageItem * >(it)->subject() << "]";
-            d->mWidget->viewMessageSelected(static_cast< MessageItem * >(it));
+            qCDebug(MESSAGELIST_LOG) << "View message selected [" << static_cast<MessageItem *>(it)->subject() << "]";
+            d->mWidget->viewMessageSelected(static_cast<MessageItem *>(it));
             d->mLastCurrentItem = it;
         }
         break;
@@ -1957,9 +1918,9 @@ void View::mouseDoubleClickEvent(QMouseEvent *e)
 
     // Something was hit :)
 
-    Item *it = static_cast< Item * >(d->mDelegate->hitItem());
+    Item *it = static_cast<Item *>(d->mDelegate->hitItem());
     if (!it) {
-        return;    // should never happen
+        return; // should never happen
     }
 
     switch (it->type()) {
@@ -1977,7 +1938,7 @@ void View::mouseDoubleClickEvent(QMouseEvent *e)
                 }
             }
 
-            d->mWidget->viewMessageActivated(static_cast< MessageItem * >(it));
+            d->mWidget->viewMessageActivated(static_cast<MessageItem *>(it));
             break;
         default:
             // make gcc happy
@@ -2062,9 +2023,9 @@ void View::mousePressEvent(QMouseEvent *e)
 
     // Something was hit :)
 
-    Item *it = static_cast< Item * >(d->mDelegate->hitItem());
+    Item *it = static_cast<Item *>(d->mDelegate->hitItem());
     if (!it) {
-        return;    // should never happen
+        return; // should never happen
     }
 
     // Abort any pending message pre-selection as the user is probably
@@ -2085,42 +2046,41 @@ void View::mousePressEvent(QMouseEvent *e)
 
                 switch (d->mDelegate->hitContentItem()->type()) {
                 case Theme::ContentItem::AnnotationIcon:
-                    static_cast< MessageItem * >(it)->editAnnotation(this);
+                    static_cast<MessageItem *>(it)->editAnnotation(this);
                     return; // don't select the item
                     break;
                 case Theme::ContentItem::ActionItemStateIcon:
-                    changeMessageStatus(
-                        static_cast< MessageItem * >(it),
-                        it->status().isToAct() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusToAct(),
-                        it->status().isToAct() ? Akonadi::MessageStatus::statusToAct() : Akonadi::MessageStatus()
-                        );
+                    changeMessageStatus(static_cast<MessageItem *>(it),
+                                        it->status().isToAct() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusToAct(),
+                                        it->status().isToAct() ? Akonadi::MessageStatus::statusToAct() : Akonadi::MessageStatus());
                     return; // don't select the item
                     break;
                 case Theme::ContentItem::ImportantStateIcon:
-                    changeMessageStatus(
-                        static_cast< MessageItem * >(it),
-                        it->status().isImportant() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusImportant(),
-                        it->status().isImportant() ? Akonadi::MessageStatus::statusImportant() : Akonadi::MessageStatus()
-                        );
+                    changeMessageStatus(static_cast<MessageItem *>(it),
+                                        it->status().isImportant() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusImportant(),
+                                        it->status().isImportant() ? Akonadi::MessageStatus::statusImportant() : Akonadi::MessageStatus());
                     return; // don't select the item
                 case Theme::ContentItem::ReadStateIcon:
-                    changeMessageStatusRead(static_cast< MessageItem * >(it), it->status().isRead() ? false : true);
+                    changeMessageStatusRead(static_cast<MessageItem *>(it), it->status().isRead() ? false : true);
                     return;
                     break;
                 case Theme::ContentItem::SpamHamStateIcon:
-                    changeMessageStatus(
-                        static_cast< MessageItem * >(it),
-                        it->status().isSpam() ? Akonadi::MessageStatus() : (it->status().isHam() ? Akonadi::MessageStatus::statusSpam() : Akonadi::MessageStatus::statusHam()),
-                        it->status().isSpam() ? Akonadi::MessageStatus::statusSpam() : (it->status().isHam() ? Akonadi::MessageStatus::statusHam() : Akonadi::MessageStatus())
-                        );
+                    changeMessageStatus(static_cast<MessageItem *>(it),
+                                        it->status().isSpam()
+                                            ? Akonadi::MessageStatus()
+                                            : (it->status().isHam() ? Akonadi::MessageStatus::statusSpam() : Akonadi::MessageStatus::statusHam()),
+                                        it->status().isSpam() ? Akonadi::MessageStatus::statusSpam()
+                                                              : (it->status().isHam() ? Akonadi::MessageStatus::statusHam() : Akonadi::MessageStatus()));
                     return; // don't select the item
                     break;
                 case Theme::ContentItem::WatchedIgnoredStateIcon:
-                    changeMessageStatus(
-                        static_cast< MessageItem * >(it),
-                        it->status().isIgnored() ? Akonadi::MessageStatus() : (it->status().isWatched() ? Akonadi::MessageStatus::statusIgnored() : Akonadi::MessageStatus::statusWatched()),
-                        it->status().isIgnored() ? Akonadi::MessageStatus::statusIgnored() : (it->status().isWatched() ? Akonadi::MessageStatus::statusWatched() : Akonadi::MessageStatus())
-                        );
+                    changeMessageStatus(static_cast<MessageItem *>(it),
+                                        it->status().isIgnored()
+                                            ? Akonadi::MessageStatus()
+                                            : (it->status().isWatched() ? Akonadi::MessageStatus::statusIgnored() : Akonadi::MessageStatus::statusWatched()),
+                                        it->status().isIgnored()
+                                            ? Akonadi::MessageStatus::statusIgnored()
+                                            : (it->status().isWatched() ? Akonadi::MessageStatus::statusWatched() : Akonadi::MessageStatus()));
                     return; // don't select the item
                     break;
                 default:
@@ -2145,14 +2105,12 @@ void View::mousePressEvent(QMouseEvent *e)
             break;
         }
         break;
-    case Item::GroupHeader:
-    {
+    case Item::GroupHeader: {
         // Don't let QTreeView handle the selection (as it deselects the current messages)
-        auto groupHeaderItem = static_cast< GroupHeaderItem * >(it);
+        auto groupHeaderItem = static_cast<GroupHeaderItem *>(it);
 
         switch (e->button()) {
-        case Qt::LeftButton:
-        {
+        case Qt::LeftButton: {
             QModelIndex index = d->mModel->index(groupHeaderItem, 0);
 
             if (index.isValid()) {
@@ -2287,39 +2245,37 @@ bool View::event(QEvent *e)
     }
 
     if (!MessageListSettings::self()->messageToolTipEnabled()) {
-        return true;    // don't display tooltips
+        return true; // don't display tooltips
     }
 
-    auto *he = dynamic_cast< QHelpEvent * >(e);
+    auto *he = dynamic_cast<QHelpEvent *>(e);
     if (!he) {
-        return true;    // eh ?
+        return true; // eh ?
     }
 
     QPoint pnt = viewport()->mapFromGlobal(mapToGlobal(he->pos()));
 
     if (pnt.y() < 0) {
-        return true;    // don't display the tooltip for items hidden under the header
+        return true; // don't display the tooltip for items hidden under the header
     }
 
     QModelIndex idx = indexAt(pnt);
     if (!idx.isValid()) {
-        return true;    // may be
+        return true; // may be
     }
 
-    Item *it = static_cast< Item * >(idx.internalPointer());
+    Item *it = static_cast<Item *>(idx.internalPointer());
     if (!it) {
-        return true;    // hum
+        return true; // hum
     }
 
     Q_ASSERT(storageModel());
 
     QColor bckColor = palette().color(QPalette::ToolTipBase);
     QColor txtColor = palette().color(QPalette::ToolTipText);
-    QColor darkerColor(
-        ((bckColor.red() * 8) + (txtColor.red() * 2)) / 10,
-        ((bckColor.green() * 8) + (txtColor.green() * 2)) / 10,
-        ((bckColor.blue() * 8) + (txtColor.blue() * 2)) / 10
-        );
+    QColor darkerColor(((bckColor.red() * 8) + (txtColor.red() * 2)) / 10,
+                       ((bckColor.green() * 8) + (txtColor.green() * 2)) / 10,
+                       ((bckColor.blue() * 8) + (txtColor.blue() * 2)) / 10);
 
     QString bckColorName = bckColor.name();
     QString txtColorName = txtColor.name();
@@ -2327,41 +2283,37 @@ bool View::event(QEvent *e)
     const bool textIsLeftToRight = (QApplication::layoutDirection() == Qt::LeftToRight);
     const QString textDirection = textIsLeftToRight ? QStringLiteral("left") : QStringLiteral("right");
 
-    QString tip = QStringLiteral(
-        "<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\">"
-        );
+    QString tip = QStringLiteral("<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\">");
 
     switch (it->type()) {
-    case Item::Message:
-    {
-        auto mi = static_cast< MessageItem * >(it);
+    case Item::Message: {
+        auto mi = static_cast<MessageItem *>(it);
 
         tip += QStringLiteral(
-            "<tr>" \
-            "<td bgcolor=\"%1\" align=\"%4\" valign=\"middle\">" \
-            "<div style=\"color: %2; font-weight: bold;\">" \
-            "%3" \
-            "</div>" \
-            "</td>" \
-            "</tr>"
-            ).arg(txtColorName, bckColorName, mi->subject().toHtmlEscaped(), textDirection);
+                   "<tr>"
+                   "<td bgcolor=\"%1\" align=\"%4\" valign=\"middle\">"
+                   "<div style=\"color: %2; font-weight: bold;\">"
+                   "%3"
+                   "</div>"
+                   "</td>"
+                   "</tr>")
+                   .arg(txtColorName, bckColorName, mi->subject().toHtmlEscaped(), textDirection);
 
         tip += QLatin1String(
-            "<tr>" \
-            "<td align=\"center\" valign=\"middle\">" \
-            "<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\">"
-            );
+            "<tr>"
+            "<td align=\"center\" valign=\"middle\">"
+            "<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\">");
 
         const QString htmlCodeForStandardRow = QStringLiteral(
-            "<tr>" \
-            "<td align=\"right\" valign=\"top\" width=\"45\">" \
-            "<div style=\"font-weight: bold;\"><nobr>" \
-            "%1:" \
-            "</nobr></div>" \
-            "</td>" \
-            "<td align=\"left\" valign=\"top\">" \
-            "%2" \
-            "</td>" \
+            "<tr>"
+            "<td align=\"right\" valign=\"top\" width=\"45\">"
+            "<div style=\"font-weight: bold;\"><nobr>"
+            "%1:"
+            "</nobr></div>"
+            "</td>"
+            "<td align=\"left\" valign=\"top\">"
+            "%2"
+            "</td>"
             "</tr>");
 
         if (textIsLeftToRight) {
@@ -2411,10 +2363,9 @@ bool View::event(QEvent *e)
         }
 
         tip += QLatin1String(
-            "</table>" \
-            "</td>" \
-            "</tr>"
-            );
+            "</table>"
+            "</td>"
+            "</tr>");
 
         // FIXME: Find a way to show also CC and other header fields ?
 
@@ -2427,37 +2378,34 @@ bool View::event(QEvent *e)
             statsText = i18np("<b>%1</b> reply", "<b>%1</b> replies", mi->childItemCount());
             statsText += QLatin1String(", ");
 
-            statsText += i18np(
-                "<b>%1</b> message in subtree (<b>%2</b> unread)",
-                "<b>%1</b> messages in subtree (<b>%2</b> unread)",
-                stats.mTotalChildCount,
-                stats.mUnreadChildCount
-                );
+            statsText += i18np("<b>%1</b> message in subtree (<b>%2</b> unread)",
+                               "<b>%1</b> messages in subtree (<b>%2</b> unread)",
+                               stats.mTotalChildCount,
+                               stats.mUnreadChildCount);
 
             tip += QStringLiteral(
-                "<tr>" \
-                "<td bgcolor=\"%1\" align=\"%3\" valign=\"middle\">" \
-                "<nobr>%2</nobr>" \
-                "</td>" \
-                "</tr>"
-                ).arg(darkerColorName, statsText, textDirection);
+                       "<tr>"
+                       "<td bgcolor=\"%1\" align=\"%3\" valign=\"middle\">"
+                       "<nobr>%2</nobr>"
+                       "</td>"
+                       "</tr>")
+                       .arg(darkerColorName, statsText, textDirection);
         }
 
         break;
     }
-    case Item::GroupHeader:
-    {
-        auto ghi = static_cast< GroupHeaderItem * >(it);
+    case Item::GroupHeader: {
+        auto ghi = static_cast<GroupHeaderItem *>(it);
 
         tip += QStringLiteral(
-            "<tr>" \
-            "<td bgcolor=\"%1\" align=\"%4\" valign=\"middle\">" \
-            "<div style=\"color: %2; font-weight: bold;\">" \
-            "%3" \
-            "</div>" \
-            "</td>" \
-            "</tr>"
-            ).arg(txtColorName, bckColorName, ghi->label(), textDirection);
+                   "<tr>"
+                   "<td bgcolor=\"%1\" align=\"%4\" valign=\"middle\">"
+                   "<div style=\"color: %2; font-weight: bold;\">"
+                   "%3"
+                   "</div>"
+                   "</td>"
+                   "</tr>")
+                   .arg(txtColorName, bckColorName, ghi->label(), textDirection);
 
         QString description;
 
@@ -2467,17 +2415,9 @@ bool View::event(QEvent *e)
                 switch (d->mAggregation->threadLeader()) {
                 case Aggregation::TopmostMessage:
                     if (ghi->label().contains(QRegularExpression(QStringLiteral("[0-9]")))) {
-                        description = i18nc(
-                            "@info:tooltip Formats to something like 'Threads started on 2008-12-21'",
-                            "Threads started on %1",
-                            ghi->label()
-                            );
+                        description = i18nc("@info:tooltip Formats to something like 'Threads started on 2008-12-21'", "Threads started on %1", ghi->label());
                     } else {
-                        description = i18nc(
-                            "@info:tooltip Formats to something like 'Threads started Yesterday'",
-                            "Threads started %1",
-                            ghi->label()
-                            );
+                        description = i18nc("@info:tooltip Formats to something like 'Threads started Yesterday'", "Threads started %1", ghi->label());
                     }
                     break;
                 case Aggregation::MostRecentMessage:
@@ -2490,31 +2430,16 @@ bool View::event(QEvent *e)
             } else {
                 if (ghi->label().contains(QRegularExpression(QStringLiteral("[0-9]")))) {
                     if (storageModel()->containsOutboundMessages()) {
-                        description = i18nc(
-                            "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'",
-                            "Messages sent on %1",
-                            ghi->label()
-                            );
+                        description = i18nc("@info:tooltip Formats to something like 'Messages sent on 2008-12-21'", "Messages sent on %1", ghi->label());
                     } else {
-                        description = i18nc(
-                            "@info:tooltip Formats to something like 'Messages received on 2008-12-21'",
-                            "Messages received on %1",
-                            ghi->label()
-                            );
+                        description =
+                            i18nc("@info:tooltip Formats to something like 'Messages received on 2008-12-21'", "Messages received on %1", ghi->label());
                     }
                 } else {
                     if (storageModel()->containsOutboundMessages()) {
-                        description = i18nc(
-                            "@info:tooltip Formats to something like 'Messages sent Yesterday'",
-                            "Messages sent %1",
-                            ghi->label()
-                            );
+                        description = i18nc("@info:tooltip Formats to something like 'Messages sent Yesterday'", "Messages sent %1", ghi->label());
                     } else {
-                        description = i18nc(
-                            "@info:tooltip Formats to something like 'Messages received Yesterday'",
-                            "Messages received %1",
-                            ghi->label()
-                            );
+                        description = i18nc("@info:tooltip Formats to something like 'Messages received Yesterday'", "Messages received %1", ghi->label());
                     }
                 }
             }
@@ -2594,12 +2519,12 @@ bool View::event(QEvent *e)
 
         if (!description.isEmpty()) {
             tip += QStringLiteral(
-                "<tr>" \
-                "<td align=\"%2\" valign=\"middle\">" \
-                "%1" \
-                "</td>" \
-                "</tr>"
-                ).arg(description, textDirection);
+                       "<tr>"
+                       "<td align=\"%2\" valign=\"middle\">"
+                       "%1"
+                       "</td>"
+                       "</tr>")
+                       .arg(description, textDirection);
         }
 
         if (ghi->hasChildren()) {
@@ -2613,20 +2538,18 @@ bool View::event(QEvent *e)
                 statsText += QLatin1String(", ");
             }
 
-            statsText += i18np(
-                "<b>%1</b> message (<b>%2</b> unread)",
-                "<b>%1</b> messages (<b>%2</b> unread)",
-                stats.mTotalChildCount,
-                stats.mUnreadChildCount
-                );
+            statsText +=
+                i18np("<b>%1</b> message (<b>%2</b> unread)", "<b>%1</b> messages (<b>%2</b> unread)", stats.mTotalChildCount, stats.mUnreadChildCount);
 
             tip += QStringLiteral(
-                "<tr>" \
-                "<td bgcolor=\"%1\" align=\"%3\" valign=\"middle\">" \
-                "<nobr>%2</nobr>" \
-                "</td>" \
-                "</tr>"
-                ).arg(darkerColorName).arg(statsText).arg(textDirection);
+                       "<tr>"
+                       "<td bgcolor=\"%1\" align=\"%3\" valign=\"middle\">"
+                       "<nobr>%2</nobr>"
+                       "</td>"
+                       "</tr>")
+                       .arg(darkerColorName)
+                       .arg(statsText)
+                       .arg(textDirection);
         }
 
         break;
@@ -2636,9 +2559,7 @@ bool View::event(QEvent *e)
         break;
     }
 
-    tip += QLatin1String(
-        "</table>"
-        );
+    tip += QLatin1String("</table>");
 
     QToolTip::showText(he->globalPos(), tip, viewport(), visualRect(idx));
 
@@ -2688,7 +2609,7 @@ QString View::currentFilterSearchString() const
 void View::setRowHidden(int row, const QModelIndex &parent, bool hide)
 {
     const QModelIndex rowModelIndex = model()->index(row, 0, parent);
-    const Item *const rowItem = static_cast< Item * >(rowModelIndex.internalPointer());
+    const Item *const rowItem = static_cast<Item *>(rowModelIndex.internalPointer());
 
     if (rowItem) {
         const bool currentlyHidden = isRowHidden(row, parent);

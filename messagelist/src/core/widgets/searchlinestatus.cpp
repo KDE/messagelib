@@ -7,19 +7,19 @@
 #include "searchlinestatus.h"
 #include "messagelist_debug.h"
 
-#include <KLocalizedString>
-#include <QAction>
-#include <QStandardPaths>
-#include <QMenu>
+#include <KColorScheme>
 #include <KIconEngine>
 #include <KIconLoader>
-#include <QWidgetAction>
-#include <QPushButton>
+#include <KLocalizedString>
+#include <QAbstractItemView>
+#include <QAction>
 #include <QCompleter>
 #include <QContextMenuEvent>
+#include <QMenu>
+#include <QPushButton>
+#include <QStandardPaths>
 #include <QStringListModel>
-#include <QAbstractItemView>
-#include <KColorScheme>
+#include <QWidgetAction>
 
 static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";
 #define MAX_COMPLETION_ITEMS 20
@@ -71,8 +71,7 @@ void SearchLineStatus::updateLockAction()
 {
     if (mLocked) {
         mLockAction->setIcon(QIcon::fromTheme(QStringLiteral("object-locked")));
-        mLockAction->setToolTip(i18nc("@info:tooltip",
-                                      "Prevent the quick search field from being cleared when changing folders"));
+        mLockAction->setToolTip(i18nc("@info:tooltip", "Prevent the quick search field from being cleared when changing folders"));
     } else {
         mLockAction->setIcon(QIcon::fromTheme(QStringLiteral("object-unlocked")));
         mLockAction->setToolTip(i18nc("@info:tooltip", "Clear the quick search field when changing folders"));
@@ -94,11 +93,10 @@ bool SearchLineStatus::locked() const
 void SearchLineStatus::initializeActions()
 {
     mLockAction = addAction(QIcon::fromTheme(QStringLiteral("object-locked")), QLineEdit::TrailingPosition);
-    mLockAction->setWhatsThis(
-        i18nc("@info:whatsthis",
-              "Toggle this button if you want to keep your quick search "
-              "locked when moving to other folders or when narrowing the search "
-              "by message status."));
+    mLockAction->setWhatsThis(i18nc("@info:whatsthis",
+                                    "Toggle this button if you want to keep your quick search "
+                                    "locked when moving to other folders or when narrowing the search "
+                                    "by message status."));
 
     connect(mLockAction, &QAction::triggered, this, &SearchLineStatus::slotToggledLockAction);
     updateLockAction();
@@ -125,7 +123,7 @@ void SearchLineStatus::updateFilters()
     for (QAction *act : qAsConst(mFilterListActions)) {
         if (act->isChecked()) {
             Akonadi::MessageStatus status;
-            status.fromQInt32(static_cast< qint32 >(act->data().toInt()));
+            status.fromQInt32(static_cast<qint32>(act->data().toInt()));
             lstStatus.append(status);
         }
     }
@@ -187,7 +185,8 @@ void SearchLineStatus::createMenuSearch()
 
     clearWidgetAction->setDefaultWidget(clearFilterButton);
     mFilterMenu->addAction(clearWidgetAction);
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-unread")), i18nc("@action:inmenu Status of a message", "Unread"),
+    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-unread")),
+                       i18nc("@action:inmenu Status of a message", "Unread"),
                        Akonadi::MessageStatus::statusUnread().toQInt32());
 
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-replied")),

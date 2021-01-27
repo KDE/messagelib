@@ -7,7 +7,8 @@
 
 #include <QObject>
 
-namespace MimeTreeParser {
+namespace MimeTreeParser
+{
 class CryptoHelperTest : public QObject
 {
     Q_OBJECT

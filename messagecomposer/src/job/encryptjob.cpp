@@ -11,14 +11,14 @@
 #include "job/protectedheadersjob.h"
 #include "utils/util_p.h"
 
-#include <QGpgME/Protocol>
 #include <QGpgME/EncryptJob>
+#include <QGpgME/Protocol>
 
 #include "messagecomposer_debug.h"
 
+#include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>
 #include <gpgme++/signingresult.h>
-#include <gpgme++/encryptionresult.h>
 #include <sstream>
 
 using namespace MessageComposer;
@@ -147,9 +147,9 @@ std::vector<GpgME::Key> EncryptJob::encryptionKeys() const
 void EncryptJob::doStart()
 {
     Q_D(EncryptJob);
-    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr); // Not processed before.
 
-    if (d->keys.size() == 0) {  // should not happen---resolver should have dealt with it earlier
+    if (d->keys.size() == 0) { // should not happen---resolver should have dealt with it earlier
         qCDebug(MESSAGECOMPOSER_LOG) << "HELP! Encrypt job but have no keys to encrypt with.";
         return;
     }
@@ -181,7 +181,7 @@ void EncryptJob::doStart()
 
 void EncryptJob::slotResult(KJob *job)
 {
-    //Q_D(EncryptJob);
+    // Q_D(EncryptJob);
     if (error()) {
         ContentJobBase::slotResult(job);
         return;
@@ -233,21 +233,23 @@ void EncryptJob::process()
     qCDebug(MESSAGECOMPOSER_LOG) << "got backend, starting job";
     QGpgME::EncryptJob *eJob = proto->encryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat);
 
-    QObject::connect(eJob, &QGpgME::EncryptJob::result, this, [this, d](const GpgME::EncryptionResult &result,
-                     const QByteArray &cipherText,
-                     const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
-        Q_UNUSED(auditLogAsHtml)
-        Q_UNUSED(auditLogError)
-        if (result.error()) {
-            setError(result.error().code());
-            setErrorText(QString::fromLocal8Bit(result.error().asString()));
-            emitResult();
-            return;
-        }
-        d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false);
+    QObject::connect(
+        eJob,
+        &QGpgME::EncryptJob::result,
+        this,
+        [this, d](const GpgME::EncryptionResult &result, const QByteArray &cipherText, const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
+            Q_UNUSED(auditLogAsHtml)
+            Q_UNUSED(auditLogError)
+            if (result.error()) {
+                setError(result.error().code());
+                setErrorText(QString::fromLocal8Bit(result.error().asString()));
+                emitResult();
+                return;
+            }
+            d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false);
 
-        emitResult();
-    });
+            emitResult();
+        });
 
     const auto error = eJob->start(d->keys, content, true);
     if (error.code()) {

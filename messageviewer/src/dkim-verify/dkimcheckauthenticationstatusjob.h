@@ -7,11 +7,12 @@
 #ifndef DKIMCHECKAUTHENTICATIONSTATUSJOB_H
 #define DKIMCHECKAUTHENTICATIONSTATUSJOB_H
 
-#include <QObject>
 #include "dkimheaderparser.h"
 #include "messageviewer_private_export.h"
 #include <AkonadiCore/Item>
-namespace MessageViewer {
+#include <QObject>
+namespace MessageViewer
+{
 class DKIMAuthenticationStatusInfo;
 class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckAuthenticationStatusJob : public QObject
 {
@@ -31,6 +32,7 @@ public:
 
 Q_SIGNALS:
     void result(const MessageViewer::DKIMAuthenticationStatusInfo &info);
+
 private:
     DKIMHeaderParser mHeaderParser;
     bool mUseRelaxedParsing = false;

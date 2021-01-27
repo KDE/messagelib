@@ -32,12 +32,12 @@ bool DKIMInfo::parseDKIM(const QString &header)
                 qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Version is not correct " << mVersion;
             }
         } else if (elem.startsWith(QLatin1String("a="))) {
-            //Parse it as "algorithm.signature-algorithm.hash
+            // Parse it as "algorithm.signature-algorithm.hash
             parseAlgorithm(elem.right(elem.length() - 2));
         } else if (elem.startsWith(QLatin1String("t="))) {
             mSignatureTimeStamp = elem.right(elem.length() - 2).toLong();
         } else if (elem.startsWith(QLatin1String("c="))) {
-            //Parse header/body canonicalization (example c=relaxed/simple) only relaxed and simple.
+            // Parse header/body canonicalization (example c=relaxed/simple) only relaxed and simple.
             parseCanonicalization(elem.right(elem.length() - 2));
             foundCanonizations = true;
         } else if (elem.startsWith(QLatin1String("bh="))) {
@@ -68,7 +68,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Unknown element type" << elem << " : items : " << items;
         }
     }
-    if (!foundCanonizations) { //Default
+    if (!foundCanonizations) { // Default
         mHeaderCanonization = Simple;
         mBodyCanonization = Simple;
     }
@@ -99,7 +99,7 @@ void DKIMInfo::parseAlgorithm(const QString &str)
     const QStringList lst = str.split(QLatin1Char('-'));
     if (lst.count() != 2) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "algorithm is invalid " << str;
-        //Error
+        // Error
     } else {
         mSigningAlgorithm = lst.at(0);
         const QString hashStr = lst.at(1);
@@ -127,7 +127,7 @@ void DKIMInfo::parseCanonicalization(const QString &str)
 {
     if (!str.isEmpty()) {
         const QStringList canonicalizations = str.split(QLatin1Char('/'));
-        //qDebug() << " canonicalizations "<< canonicalizations;
+        // qDebug() << " canonicalizations "<< canonicalizations;
         if (canonicalizations.count() >= 1) {
             if (canonicalizations.at(0) == QLatin1String("relaxed")) {
                 mHeaderCanonization = DKIMInfo::Relaxed;
@@ -181,22 +181,12 @@ void DKIMInfo::setBodyCanonization(CanonicalizationType bodyCanonization)
 
 bool DKIMInfo::operator==(const DKIMInfo &other) const
 {
-    return mVersion == other.version()
-           && mHashingAlgorithm == other.hashingAlgorithm()
-           && mSigningAlgorithm == other.signingAlgorithm()
-           && mDomain == other.domain()
-           && mSelector == other.selector()
-           && mBodyHash == other.bodyHash()
-           && mSignatureTimeStamp == other.signatureTimeStamp()
-           && mExpireTime == other.expireTime()
-           && mQuery == other.query()
-           && mSignature == other.signature()
-           && mAgentOrUserIdentifier == other.agentOrUserIdentifier()
-           && mBodyLengthCount == other.bodyLengthCount()
-           && mListSignedHeader == other.listSignedHeader()
-           && mHeaderCanonization == other.headerCanonization()
-           && mBodyCanonization == other.bodyCanonization()
-           && mIDomain == other.iDomain();
+    return mVersion == other.version() && mHashingAlgorithm == other.hashingAlgorithm() && mSigningAlgorithm == other.signingAlgorithm()
+        && mDomain == other.domain() && mSelector == other.selector() && mBodyHash == other.bodyHash() && mSignatureTimeStamp == other.signatureTimeStamp()
+        && mExpireTime == other.expireTime() && mQuery == other.query() && mSignature == other.signature()
+        && mAgentOrUserIdentifier == other.agentOrUserIdentifier() && mBodyLengthCount == other.bodyLengthCount()
+        && mListSignedHeader == other.listSignedHeader() && mHeaderCanonization == other.headerCanonization() && mBodyCanonization == other.bodyCanonization()
+        && mIDomain == other.iDomain();
 }
 
 DKIMInfo::CanonicalizationType DKIMInfo::headerCanonization() const
@@ -266,7 +256,7 @@ bool DKIMInfo::isValid() const
     }
 
     return !mSelector.isEmpty() && !mDomain.isEmpty() && !mBodyHash.isEmpty()
-           && ((mHashingAlgorithm == HashingAlgorithmType::Sha1) || mHashingAlgorithm == HashingAlgorithmType::Sha256);
+        && ((mHashingAlgorithm == HashingAlgorithmType::Sha1) || mHashingAlgorithm == HashingAlgorithmType::Sha256);
 }
 
 QStringList DKIMInfo::listSignedHeader() const
@@ -349,7 +339,7 @@ void DKIMInfo::setBodyLengthCount(int bodyLengthCount)
     mBodyLengthCount = bodyLengthCount;
 }
 
-QDebug operator <<(QDebug d, const DKIMInfo &t)
+QDebug operator<<(QDebug d, const DKIMInfo &t)
 {
     d << "mVersion " << t.version();
     d << "mHashingAlgorithm " << t.hashingAlgorithm();

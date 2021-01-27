@@ -14,8 +14,8 @@ class AttachmentJobTest : public QObject
     Q_OBJECT
 private Q_SLOTS:
     void testAttachment();
-    //void testTextCharsetAutodetect_data();
-    //void testTextCharsetAutodetect();
+    // void testTextCharsetAutodetect_data();
+    // void testTextCharsetAutodetect();
 };
 
 #endif
