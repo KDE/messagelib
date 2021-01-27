@@ -66,11 +66,6 @@ QHash<QByteArray,QByteArray> MessageCore::paramsFromAutocryptHeader(const KMime:
 
 void MessageCore::processAutocryptfromMail(const HeaderMixupNodeHelper& mixup)
 {
-    if (mixup.hasMailHeader("Autocrypt-Draft-State")) {
-        qInfo(AUTOCRYPT_LOG) << "Don't update Autocrypt storage from draft" << mixup.mailHeaderAsBase("Message-ID")->as7BitString(false);
-        return;
-    }
-
     auto storage = AutocryptStorage::self();
 
     const auto fromAddr = mixup.mailHeaderAsAddressList("from");
