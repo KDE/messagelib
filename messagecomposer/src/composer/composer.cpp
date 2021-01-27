@@ -40,7 +40,7 @@ public:
 
     ~ComposerPrivate()
     {
-        // delete skeletonMessage;
+        delete skeletonMessage;
     }
 
     void init();
