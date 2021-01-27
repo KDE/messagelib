@@ -7,6 +7,7 @@
 
 #include "tablockedwarning.h"
 #include <KLocalizedString>
+#include <QAction>
 using namespace MessageList::Core;
 TabLockedWarning::TabLockedWarning(QWidget *parent)
     : KMessageWidget(parent)
@@ -16,6 +17,10 @@ TabLockedWarning::TabLockedWarning(QWidget *parent)
     setWordWrap(true);
     setText(i18n("Current Tab is locked."));
     setVisible(false);
+    auto unlockAction = new QAction(i18n("Unlock"), this);
+    connect(unlockAction, &QAction::triggered, this,
+            &TabLockedWarning::unlockTabRequested);
+    addAction(unlockAction);
 }
 
 TabLockedWarning::~TabLockedWarning()

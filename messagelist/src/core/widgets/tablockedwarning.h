@@ -19,6 +19,8 @@ class MESSAGELIST_TESTS_EXPORT TabLockedWarning : public KMessageWidget
 public:
     explicit TabLockedWarning(QWidget *parent = nullptr);
     ~TabLockedWarning() override;
+Q_SIGNALS:
+    void unlockTabRequested();
 };
 }
 }
