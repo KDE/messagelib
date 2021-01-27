@@ -81,7 +81,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     f.write(content.encodedContent());
     f.close();
 
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void AutocryptHeadersJobTest::testContentChained()
@@ -125,7 +125,7 @@ void AutocryptHeadersJobTest::testContentChained()
     f.write(content.encodedContent());
     f.close();
 
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void AutocryptHeadersJobTest::testAutocryptGossipHeader()
@@ -164,12 +164,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     content.assemble();
 
     auto referenceFile = QStringLiteral("autocryptgossipheader.mbox");
-    QFile f(referenceFile);
-    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
-    f.write(content.encodedContent());
-    f.close();
-
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+    Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void AutocryptHeadersJobTest::testSetGnupgHome()
@@ -228,12 +223,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     content.assemble();
 
     auto referenceFile = QStringLiteral("autocryptgossipheader.mbox");
-    QFile f(referenceFile);
-    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
-    f.write(content.encodedContent());
-    f.close();
-
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+    Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void AutocryptHeadersJobTest::testStripSenderKey()
@@ -273,10 +263,5 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     content.assemble();
 
     auto referenceFile = QStringLiteral("autocryptgossipheader.mbox");
-    QFile f(referenceFile);
-    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
-    f.write(content.encodedContent());
-    f.close();
-
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/")+referenceFile);
+    Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/" ) + referenceFile);
 }

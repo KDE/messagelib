@@ -250,16 +250,7 @@ void SignJobTest::testProtectedHeaders()
     KMime::Content *result = sJob->content();
     result->assemble();
 
-    QFile f(referenceFile);
-    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
-    const QByteArray signedContent(result->contents().at(0)->encodedContent());
-    f.write(signedContent);
-    if (!signedContent.endsWith('\n')) {
-        f.write("\n");
-    }
-    f.close();
-
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
+    Test::compareFile(result->contents().at(0), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void SignJobTest::testProtectedHeadersOverwrite()
@@ -303,14 +294,6 @@ void SignJobTest::testProtectedHeadersOverwrite()
     KMime::Content *result = sJob->content();
     result->assemble();
 
-    QFile f(referenceFile);
-    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
-    const QByteArray signedContent(result->contents().at(0)->encodedContent());
-    f.write(signedContent);
-    if (!signedContent.endsWith('\n')) {
-        f.write("\n");
-    }
-    f.close();
+    Test::compareFile(result->contents().at(0), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }

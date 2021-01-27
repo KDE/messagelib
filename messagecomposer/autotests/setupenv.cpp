@@ -83,6 +83,21 @@ KMime::Message::Ptr Test::loadMessageFromFile(const QString &filename)
     return msg;
 }
 
+void Test::compareFile(KMime::Content* content, const QString& referenceFile)
+{
+    QFileInfo fi(referenceFile);
+    const QString actualFile = fi.fileName();
+    QFile f(actualFile);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    const QByteArray encodedContent(content->encodedContent());
+    f.write(encodedContent);
+    if (!encodedContent.endsWith('\n')) {
+        f.write("\n");
+    }
+    f.close();
+    compareFile(actualFile, referenceFile);
+}
+
 void Test::compareFile(const QString &outFile, const QString &referenceFile)
 {
     QVERIFY(QFile::exists(outFile));

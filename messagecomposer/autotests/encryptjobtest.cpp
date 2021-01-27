@@ -248,16 +248,7 @@ void EncryptJobTest::testProtectedHeaders()
 
     delete result;
 
-    QFile f(referenceFile);
-    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
-    const QByteArray encodedContent(tempNode.encodedContent());
-    f.write(encodedContent);
-    if (!encodedContent.endsWith('\n')) {
-        f.write("\n");
-    }
-    f.close();
-
-    Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
+    Test::compareFile(&tempNode, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void EncryptJobTest::testSetGnupgHome()

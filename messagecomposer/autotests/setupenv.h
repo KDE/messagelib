@@ -35,6 +35,12 @@ std::vector<GpgME::Key> getKeys(bool smime = false);
 KMime::Message::Ptr loadMessageFromFile(const QString &filename);
 
 /**
+ * compares a KMime::Content against the referenceFile
+ * If the files are not euqal print diff output.
+ */
+void compareFile(KMime::Content *content, const QString &referenceFile);
+
+/**
  * compare two mails via files.
  * If the files are not euqal print diff output.
  */
