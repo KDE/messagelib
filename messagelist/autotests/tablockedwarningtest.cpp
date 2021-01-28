@@ -17,5 +17,8 @@ TabLockedWarningTest::TabLockedWarningTest(QObject *parent)
 void TabLockedWarningTest::shouldHaveDefaultValues()
 {
     MessageList::Core::TabLockedWarning w;
-    // TODO
+    QVERIFY(!w.isVisible());
+    QVERIFY(w.wordWrap());
+    QVERIFY(!w.isCloseButtonVisible());
+    QCOMPARE(w.messageType(), KMessageWidget::Warning);
 }
