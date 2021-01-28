@@ -1755,16 +1755,18 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
         qCDebug(MESSAGECOMPOSER_LOG) << "Search in Autocrypt storage a key for " << address;
         const auto storage = MessageCore::AutocryptStorage::self();
         const auto recipient = storage->getRecipient(address.toUtf8());
-        const auto key = recipient->gpgKey();
-        if (!key.isNull() && ValidEncryptionKey(key)) {
-            qCDebug(MESSAGECOMPOSER_LOG) << "Found an valid autocrypt key.";
-            matchingKeys.push_back(key);
-        } else {
-            const auto gossipKey = recipient->gossipKey();
-            if (!gossipKey.isNull() && ValidEncryptionKey(gossipKey)) {
-                qCDebug(MESSAGECOMPOSER_LOG) << "Found an valid autocrypt gossip key.";
-                matchingKeys.push_back(gossipKey);
+        if (recipient) {
+            const auto key = recipient->gpgKey();
+            if (!key.isNull() && ValidEncryptionKey(key)) {
+                qCDebug(MESSAGECOMPOSER_LOG) << "Found an valid autocrypt key.";
+                matchingKeys.push_back(key);
+            } else {
+                const auto gossipKey = recipient->gossipKey();
+                if (!gossipKey.isNull() && ValidEncryptionKey(gossipKey)) {
+                    qCDebug(MESSAGECOMPOSER_LOG) << "Found an valid autocrypt gossip key.";
+                    matchingKeys.push_back(gossipKey);
 
+                }
             }
         }
         // Accept any autocrypt key, as the validility is not used in Autocrypt.

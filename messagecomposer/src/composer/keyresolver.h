@@ -100,7 +100,7 @@ enum Result { Failure = 0, Ok = 1, Canceled = 2 };
      a copy of it's own to hide the other secondary recipients.
     */
 
-class KeyResolver
+class MESSAGECOMPOSER_EXPORT KeyResolver
 {
 public:
     KeyResolver(bool encToSelf,
