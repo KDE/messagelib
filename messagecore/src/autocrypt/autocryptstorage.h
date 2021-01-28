@@ -16,8 +16,8 @@
 class AutocryptStorageTest;
 class AutocryptUtilsTest;
 
-namespace MessageCore {
-
+namespace MessageCore
+{
 class AutocryptStoragePrivate;
 
 class MESSAGECORE_EXPORT AutocryptStorage

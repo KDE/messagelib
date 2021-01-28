@@ -5,12 +5,12 @@
 */
 
 #include "autocryptstorage.h"
-#include "autocryptstorage_p.h"
 #include "autocryptrecipient_p.h"
+#include "autocryptstorage_p.h"
 
-#include <QFile>
-#include <QDir>
 #include <QDebug>
+#include <QDir>
+#include <QFile>
 #include <QStandardPaths>
 #include <QTemporaryFile>
 #include <QUrl>
@@ -19,16 +19,16 @@
 using namespace MessageCore;
 
 AutocryptStoragePrivate::AutocryptStoragePrivate()
-    : basePath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)+QStringLiteral("/autocrypt"))
+    : basePath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/autocrypt"))
 {
 }
 
-AutocryptStorage::Ptr  AutocryptStorage::mSelf = nullptr;
+AutocryptStorage::Ptr AutocryptStorage::mSelf = nullptr;
 
 AutocryptStorage::Ptr AutocryptStorage::self()
 {
     if (!mSelf) {
-            mSelf = AutocryptStorage::Ptr(new AutocryptStorage());
+        mSelf = AutocryptStorage::Ptr(new AutocryptStorage());
     }
 
     return mSelf;
@@ -66,7 +66,7 @@ AutocryptRecipient::Ptr AutocryptStorage::getRecipient(const QByteArray &addr)
     return nullptr;
 }
 
-AutocryptRecipient::Ptr AutocryptStorage::addRecipient(const QByteArray& addr)
+AutocryptRecipient::Ptr AutocryptStorage::addRecipient(const QByteArray &addr)
 {
     Q_D(AutocryptStorage);
 
@@ -81,7 +81,7 @@ AutocryptRecipient::Ptr AutocryptStorage::addRecipient(const QByteArray& addr)
     return recipient;
 }
 
-void AutocryptStorage::deleteRecipient(const QByteArray& addr)
+void AutocryptStorage::deleteRecipient(const QByteArray &addr)
 {
     Q_D(AutocryptStorage);
     const QString fileName(address2Filename(addr));
@@ -104,11 +104,11 @@ void AutocryptStorage::save()
             return;
         }
     }
-    foreach(const auto addr, d->recipients.keys()) {
+    foreach (const auto addr, d->recipients.keys()) {
         const auto recipient = d->recipients.value(addr);
         const QString fileName(address2Filename(addr));
         if (recipient->hasChanged() || !d->basePath.exists(fileName)) {
-            QTemporaryFile file(d->basePath.path()+QLatin1Char('/'));
+            QTemporaryFile file(d->basePath.path() + QLatin1Char('/'));
             if (!file.open()) {
                 continue;
             }

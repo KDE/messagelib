@@ -230,7 +230,7 @@ public:
     std::vector<GpgME::Key> encryptToSelfKeysFor(CryptoMessageFormat f) const;
 
     /** If Autocrypt keys are used to find valid PGP Keys
-    */
+     */
     void setAutocryptEnabled(bool autocryptEnabled);
 
     std::map<QByteArray, QString> useAutocrypt() const;

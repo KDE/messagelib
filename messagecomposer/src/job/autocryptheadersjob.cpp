@@ -13,16 +13,15 @@
 
 #include "messagecomposer_debug.h"
 
-#include <gpgme++/gpgmepp_version.h>
-#include <gpgme++/context.h>
-#include <QGpgME/Protocol>
 #include <QGpgME/ExportJob>
+#include <QGpgME/Protocol>
+#include <gpgme++/context.h>
+#include <gpgme++/gpgmepp_version.h>
 
 #include <KCodecs/KCodecs>
-#include <KMime/Headers>
-#include <KMime/Content>
 #include <KLocalizedString>
-
+#include <KMime/Content>
+#include <KMime/Headers>
 
 using namespace MessageComposer;
 
@@ -36,7 +35,7 @@ public:
 
     void emitGpgError(const GpgME::Error &error);
     void emitNotFoundError(const QByteArray &addr, const QByteArray &fingerprint);
-    void fillHeaderData(KMime::Headers::Generic* header, const QByteArray& addr, bool preferEncrypted, const QByteArray& keydata);
+    void fillHeaderData(KMime::Headers::Generic *header, const QByteArray &addr, bool preferEncrypted, const QByteArray &keydata);
 
     KMime::Content *content = nullptr;
     KMime::Message *skeletonMessage = nullptr;
@@ -56,10 +55,11 @@ void AutocryptHeadersJobPrivate::emitGpgError(const GpgME::Error &error)
     Q_Q(AutocryptHeadersJob);
 
     Q_ASSERT(error);
-    const QString msg = i18n("<p>An error occurred while trying to export "
-                             "the key from the backend:</p>"
-                             "<p><b>%1</b></p>",
-                             QString::fromLocal8Bit(error.asString()));
+    const QString msg = i18n(
+        "<p>An error occurred while trying to export "
+        "the key from the backend:</p>"
+        "<p><b>%1</b></p>",
+        QString::fromLocal8Bit(error.asString()));
     q->setError(KJob::UserDefinedError);
     q->setErrorText(msg);
     q->emitResult();
@@ -68,18 +68,18 @@ void AutocryptHeadersJobPrivate::emitGpgError(const GpgME::Error &error)
 void AutocryptHeadersJobPrivate::emitNotFoundError(const QByteArray &addr, const QByteArray &fingerprint)
 {
     Q_Q(AutocryptHeadersJob);
-    const QString msg = i18n("<p>An error occurred while trying to export "
-                             "the key from the backend:</p>"
-                             "<p><b>No vaild key found for user %1 (%2)</b></p>",
-                             QString::fromLatin1(addr),
-                             QString::fromLatin1(fingerprint));
+    const QString msg = i18n(
+        "<p>An error occurred while trying to export "
+        "the key from the backend:</p>"
+        "<p><b>No vaild key found for user %1 (%2)</b></p>",
+        QString::fromLatin1(addr),
+        QString::fromLatin1(fingerprint));
     q->setError(KJob::UserDefinedError);
     q->setErrorText(msg);
     q->emitResult();
 }
 
-void AutocryptHeadersJobPrivate::fillHeaderData(KMime::Headers::Generic* header,
-                                                const QByteArray& addr, bool preferEncrypted, const QByteArray& keydata)
+void AutocryptHeadersJobPrivate::fillHeaderData(KMime::Headers::Generic *header, const QByteArray &addr, bool preferEncrypted, const QByteArray &keydata)
 {
     QByteArray parameters = "addr=" + addr + "; ";
     if (preferEncrypted) {
@@ -91,8 +91,8 @@ void AutocryptHeadersJobPrivate::fillHeaderData(KMime::Headers::Generic* header,
     const auto lineLength = 76;
     auto start = 0;
     auto column = 1;
-    while(start < length) {
-        const auto midLength = std::min(length-start, lineLength-column);
+    while (start < length) {
+        const auto midLength = std::min(length - start, lineLength - column);
         parameters += encoded.mid(start, midLength);
         start += midLength;
         column += midLength;
@@ -130,14 +130,14 @@ void AutocryptHeadersJob::setSkeletonMessage(KMime::Message *skeletonMessage)
     d->skeletonMessage = skeletonMessage;
 }
 
-void AutocryptHeadersJob::setGnupgHome(const QString& path)
+void AutocryptHeadersJob::setGnupgHome(const QString &path)
 {
     Q_D(AutocryptHeadersJob);
 
     d->gnupgHome = path;
 }
 
-void AutocryptHeadersJob::setSenderKey(const GpgME::Key& key)
+void AutocryptHeadersJob::setSenderKey(const GpgME::Key &key)
 {
     Q_D(AutocryptHeadersJob);
 
@@ -161,7 +161,7 @@ void AutocryptHeadersJob::setGossipKeys(const std::vector<GpgME::Key> &gossipKey
 void AutocryptHeadersJob::process()
 {
     Q_D(AutocryptHeadersJob);
-    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr); // Not processed before.
 
     // if setContent hasn't been called, we assume that a subjob was added
     // and we want to use that
@@ -206,11 +206,10 @@ void AutocryptHeadersJob::process()
     d->subJobs++;
     job->start(QStringList(QString::fromLatin1(d->recipientKey.primaryFingerprint())));
 #if GPGMEPP_VERSION >= 0x10E00 // 1.14.0
-        job->setExportFlags(GpgME::Context::ExportMinimal);
+    job->setExportFlags(GpgME::Context::ExportMinimal);
 #endif
 
-    foreach(const auto key, d->gossipKeys) {
-
+    foreach (const auto key, d->gossipKeys) {
         if (QByteArray(key.primaryFingerprint()) == QByteArray(d->recipientKey.primaryFingerprint())) {
             continue;
         }
@@ -254,5 +253,4 @@ void AutocryptHeadersJob::process()
         gossipJob->setExportFlags(GpgME::Context::ExportMinimal);
 #endif
     }
-
 }

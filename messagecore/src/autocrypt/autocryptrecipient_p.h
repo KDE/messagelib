@@ -9,8 +9,8 @@
 
 #include <QJsonDocument>
 
-namespace MessageCore {
-
+namespace MessageCore
+{
 class AutocryptRecipientPrivate
 {
 public:

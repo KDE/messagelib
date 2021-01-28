@@ -10,11 +10,11 @@
 
 #include "autocryptrecipient.h"
 
-#include <QHash>
 #include <QDir>
+#include <QHash>
 
-namespace MessageCore {
-
+namespace MessageCore
+{
 class AutocryptStoragePrivate
 {
 public:
@@ -25,4 +25,3 @@ public:
 
 }
 #endif
-

@@ -14,19 +14,19 @@ class ProtectedHeadersTest : public QObject
     Q_OBJECT
 private Q_SLOTS:
     void initTestCase();
-    
+
     void testMailHeaderAsBase_data();
     void testMailHeaderAsBase();
 
     void testHeaders_data();
     void testHeaders();
-    
+
     void testMailHeaderAsAddresslist_data();
     void testMailHeaderAsAddresslist();
-    
+
     void testhasMailHeader_data();
     void testhasMailHeader();
-    
+
     void testMessagePartsOfMailHeader_data();
     void testMessagePartsOfMailHeader();
 };

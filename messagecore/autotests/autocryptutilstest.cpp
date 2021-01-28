@@ -4,14 +4,14 @@
 */
 #include "autocryptutilstest.h"
 
-#include "autocrypt/autocryptutils.h"
+#include "autocrypt/autocryptrecipient_p.h"
 #include "autocrypt/autocryptstorage.h"
 #include "autocrypt/autocryptstorage_p.h"
-#include "autocrypt/autocryptrecipient_p.h"
+#include "autocrypt/autocryptutils.h"
 
 #include <MimeTreeParser/NodeHelper>
-#include <MimeTreeParser/SimpleObjectTreeSource>
 #include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/SimpleObjectTreeSource>
 
 #include <QFile>
 #include <QStandardPaths>
@@ -74,8 +74,7 @@ void AutocryptUtilsTest::test_header()
     QCOMPARE(storage->d_func()->recipients.keys().size(), 1);
 
     const QByteArray addr("alice@autocrypt.example");
-    QVERIFY2(storage->getRecipient(addr),
-                qPrintable(QStringLiteral("storage missing %1").arg(QString::fromLatin1(addr))));
+    QVERIFY2(storage->getRecipient(addr), qPrintable(QStringLiteral("storage missing %1").arg(QString::fromLatin1(addr))));
 
     QCOMPARE(storage->getRecipient(addr)->gpgKey().isNull(), false);
     QCOMPARE(storage->getRecipient(addr)->gossipKey().isNull(), true);
@@ -107,9 +106,8 @@ void AutocryptUtilsTest::test_gossip()
     auto storage = AutocryptStorage::self();
     QCOMPARE(storage->d_func()->recipients.keys().size(), expectedKeys.size());
 
-    for(const auto addr: expectedKeys) {
-        QVERIFY2(storage->getRecipient(addr),
-                 qPrintable(QStringLiteral("storage missing %1").arg(QString::fromLatin1(addr))));
+    for (const auto addr : expectedKeys) {
+        QVERIFY2(storage->getRecipient(addr), qPrintable(QStringLiteral("storage missing %1").arg(QString::fromLatin1(addr))));
     }
 
     QCOMPARE(storage->getRecipient("alice@autocrypt.example")->gossipKey().isNull(), true);
@@ -183,7 +181,6 @@ void AutocryptUtilsTest::test_report()
     QCOMPARE(alice->count_no_ach(), 0);
 }
 
-
 void AutocryptUtilsTest::test_multiple_headers()
 {
     // If there is more than one valid header, this SHOULD be treated as an
@@ -246,7 +243,6 @@ void AutocryptUtilsTest::test_multiple_from()
     auto storage = AutocryptStorage::self();
     QCOMPARE(storage->d_func()->recipients.size(), 0);
 }
-
 
 void AutocryptUtilsTest::test_non_autocrypt()
 {

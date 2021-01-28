@@ -258,13 +258,13 @@ bool MessagePart::hasHeader(const char *headerType) const
     return false;
 }
 
-const KMime::Headers::Base* MimeTreeParser::MessagePart::header(const char* headerType) const
+const KMime::Headers::Base *MimeTreeParser::MessagePart::header(const char *headerType) const
 {
     Q_UNUSED(headerType)
     return nullptr;
 }
 
-QVector<KMime::Headers::Base *> MessagePart::headers(const char* headerType) const
+QVector<KMime::Headers::Base *> MessagePart::headers(const char *headerType) const
 {
     Q_UNUSED(headerType)
     return QVector<KMime::Headers::Base *>();
@@ -1033,23 +1033,23 @@ QString SignedMessagePart::fromAddress() const
 
 bool SignedMessagePart::hasHeader(const char *headerType) const
 {
-    if(content()) {
+    if (content()) {
         return content()->hasHeader(headerType);
     }
     return false;
 }
 
-const KMime::Headers::Base* MimeTreeParser::SignedMessagePart::header(const char* headerType) const
+const KMime::Headers::Base *MimeTreeParser::SignedMessagePart::header(const char *headerType) const
 {
-    if(content()) {
+    if (content()) {
         return content()->headerByType(headerType);
     }
     return nullptr;
 }
 
-QVector<KMime::Headers::Base *> SignedMessagePart::headers(const char* headerType) const
+QVector<KMime::Headers::Base *> SignedMessagePart::headers(const char *headerType) const
 {
-    if(content()) {
+    if (content()) {
         return content()->headersByType(headerType);
     }
     return QVector<KMime::Headers::Base *>();
@@ -1406,7 +1406,7 @@ const KMime::Headers::Base *EncryptedMessagePart::header(const char *headerType)
     return nullptr;
 }
 
-QVector<KMime::Headers::Base *> EncryptedMessagePart::headers(const char* headerType) const
+QVector<KMime::Headers::Base *> EncryptedMessagePart::headers(const char *headerType) const
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {

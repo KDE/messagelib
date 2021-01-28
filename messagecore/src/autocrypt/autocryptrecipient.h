@@ -15,8 +15,8 @@
 
 #include <QJsonDocument>
 
-namespace MessageCore {
-
+namespace MessageCore
+{
 class AutocryptRecipientPrivate;
 class AutocryptStorage;
 class HeaderMixupNodeHelper;
@@ -27,7 +27,7 @@ public:
     typedef QSharedPointer<AutocryptRecipient> Ptr;
     AutocryptRecipient();
     void updateFromMessage(const HeaderMixupNodeHelper &mixup, const KMime::Headers::Base *header);
-    void updateFromGossip(const HeaderMixupNodeHelper& mixup, const KMime::Headers::Base* header);
+    void updateFromGossip(const HeaderMixupNodeHelper &mixup, const KMime::Headers::Base *header);
 
     QByteArray toJson(QJsonDocument::JsonFormat format) const;
     void fromJson(const QByteArray &json);

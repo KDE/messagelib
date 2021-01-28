@@ -7,22 +7,24 @@
 #ifndef MESSAGECOMPOSER_AUTOCRYPTHEADERSJOB_H
 #define MESSAGECOMPOSER_AUTOCRYPTHEADERSJOB_H
 
-#include "messagecomposer_export.h"
 #include "contentjobbase.h"
+#include "messagecomposer_export.h"
 
 #include <gpgme++/key.h>
 #include <vector>
 
-namespace KMime {
+namespace KMime
+{
 class Content;
 class Message;
 }
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 class AutocryptHeadersJobPrivate;
 
 /**
-*/
+ */
 class MESSAGECOMPOSER_EXPORT AutocryptHeadersJob : public ContentJobBase
 {
     Q_OBJECT

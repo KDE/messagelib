@@ -6,32 +6,32 @@
 
 #include "autocryptheadersjobtest.h"
 
-#include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
+#include "qtest_messagecomposer.h"
 #include "setupenv.h"
 
 #include <KMime/Content>
 
 #include <Libkleo/Enum>
 
-#include <MessageComposer/Composer>
 #include <MessageComposer/AutocryptHeadersJob>
+#include <MessageComposer/Composer>
 #include <MessageComposer/Util>
 
-#include <QGpgME/Protocol>
 #include <QGpgME/KeyListJob>
+#include <QGpgME/Protocol>
 
-#include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
+#include <gpgme++/verificationresult.h>
 
-#include <stdlib.h>
 #include <KCharsets>
+#include <stdlib.h>
 
+#include <MessageComposer/TransparentJob>
 #include <QDebug>
 #include <QTest>
-#include <keylistresult.h>
-#include <MessageComposer/TransparentJob>
 #include <decryptionresult.h>
+#include <keylistresult.h>
 
 QTEST_MAIN(AutocryptHeadersJobTest)
 
@@ -58,7 +58,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     content.setBody("This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key\nfingerprint: ) as defined in Level 1 revision 1.1.\n");
 
     auto job = QGpgME::openpgp()->keyListJob(false);
-    std::vector< GpgME::Key > ownKeys;
+    std::vector<GpgME::Key> ownKeys;
     auto res = job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
 
     auto aJob = new AutocryptHeadersJob(&composer);
@@ -100,7 +100,7 @@ void AutocryptHeadersJobTest::testContentChained()
     content.setBody("This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key\nfingerprint: ) as defined in Level 1 revision 1.1.\n");
 
     auto job = QGpgME::openpgp()->keyListJob(false);
-    std::vector< GpgME::Key > ownKeys;
+    std::vector<GpgME::Key> ownKeys;
     auto res = job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
 
     auto aJob = new AutocryptHeadersJob(&composer);
@@ -136,17 +136,18 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
 
     KMime::Content content;
-    content.setBody("Hi Bob and Carol,\n"
-                    "\n"
-                    "I wanted to introduce the two of you to each other.\n"
-                    "\n"
-                    "I hope you are both doing well!  You can now both \"reply all\" here,\n"
-                    "and the thread will remain encrypted.\n");
+    content.setBody(
+        "Hi Bob and Carol,\n"
+        "\n"
+        "I wanted to introduce the two of you to each other.\n"
+        "\n"
+        "I hope you are both doing well!  You can now both \"reply all\" here,\n"
+        "and the thread will remain encrypted.\n");
 
     auto job = QGpgME::openpgp()->keyListJob(false);
-    std::vector< GpgME::Key > ownKeys;
+    std::vector<GpgME::Key> ownKeys;
     job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
-    std::vector< GpgME::Key > keys;
+    std::vector<GpgME::Key> keys;
     job->exec(QStringList({QStringLiteral("bob@autocrypt.example"), QStringLiteral("carol@autocrypt.example")}), false, keys);
 
     auto aJob = new AutocryptHeadersJob(&composer);
@@ -175,21 +176,22 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
 
     KMime::Content content;
-    content.setBody("Hi Bob and Carol,\n"
-                    "\n"
-                    "I wanted to introduce the two of you to each other.\n"
-                    "\n"
-                    "I hope you are both doing well!  You can now both \"reply all\" here,\n"
-                    "and the thread will remain encrypted.\n");
+    content.setBody(
+        "Hi Bob and Carol,\n"
+        "\n"
+        "I wanted to introduce the two of you to each other.\n"
+        "\n"
+        "I hope you are both doing well!  You can now both \"reply all\" here,\n"
+        "and the thread will remain encrypted.\n");
 
     auto exportJob = QGpgME::openpgp()->keyListJob(false);
-    std::vector< GpgME::Key > ownKeys;
+    std::vector<GpgME::Key> ownKeys;
     exportJob->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
-    std::vector< GpgME::Key > keys;
+    std::vector<GpgME::Key> keys;
     exportJob->exec(QStringList({QStringLiteral("bob@autocrypt.example"), QStringLiteral("carol@autocrypt.example")}), false, keys);
 
     QTemporaryDir dir;
-    {   // test with an empty gnupg Home
+    { // test with an empty gnupg Home
         auto aJob = new AutocryptHeadersJob(&composer);
         QVERIFY(aJob);
 
@@ -204,7 +206,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
 
     // Populate Keyring with needed keys.
     Test::populateKeyring(dir.path(), ownKeys[0]);
-    for(const auto key: keys) {
+    for (const auto key : keys) {
         Test::populateKeyring(dir.path(), key);
     }
     auto aJob = new AutocryptHeadersJob(&composer);
@@ -234,17 +236,18 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
 
     KMime::Content content;
-    content.setBody("Hi Bob and Carol,\n"
-                    "\n"
-                    "I wanted to introduce the two of you to each other.\n"
-                    "\n"
-                    "I hope you are both doing well!  You can now both \"reply all\" here,\n"
-                    "and the thread will remain encrypted.\n");
+    content.setBody(
+        "Hi Bob and Carol,\n"
+        "\n"
+        "I wanted to introduce the two of you to each other.\n"
+        "\n"
+        "I hope you are both doing well!  You can now both \"reply all\" here,\n"
+        "and the thread will remain encrypted.\n");
 
     auto job = QGpgME::openpgp()->keyListJob(false);
-    std::vector< GpgME::Key > ownKeys;
+    std::vector<GpgME::Key> ownKeys;
     job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
-    std::vector< GpgME::Key > keys;
+    std::vector<GpgME::Key> keys;
     job->exec(QStringList({QStringLiteral("bob@autocrypt.example"), QStringLiteral("carol@autocrypt.example")}), false, keys);
     keys.push_back(ownKeys[0]);
 
@@ -263,5 +266,5 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     content.assemble();
 
     auto referenceFile = QStringLiteral("autocryptgossipheader.mbox");
-    Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/" ) + referenceFile);
+    Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }

@@ -49,12 +49,12 @@ void compareFile(const QString &outFile, const QString &referenceFile);
 /**
  * Adds keydata into keyring insinde gnupgHome.
  */
-void populateKeyring(const QString& gnupgHome, const QByteArray &keydata);
+void populateKeyring(const QString &gnupgHome, const QByteArray &keydata);
 
 /**
  * Adds keydata into keyring insinde gnupgHome.
  */
-void populateKeyring(const QString& gnupgHome, const GpgME::Key &key);
+void populateKeyring(const QString &gnupgHome, const GpgME::Key &key);
 
 }
 }

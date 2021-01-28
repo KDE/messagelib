@@ -538,7 +538,7 @@ KMime::Headers::Base const *NodeHelper::mailHeaderAsBase(const char *header, con
 QSharedPointer<KMime::Headers::Generics::AddressList> NodeHelper::mailHeaderAsAddressList(const char *header, const KMime::Content *message) const
 {
     const auto hrd = mailHeaderAsBase(header, message);
-    if(!hrd) {
+    if (!hrd) {
         return nullptr;
     }
     QSharedPointer<KMime::Headers::Generics::AddressList> addressList(new KMime::Headers::Generics::AddressList());

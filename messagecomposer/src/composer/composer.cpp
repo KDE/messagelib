@@ -11,9 +11,9 @@
 #include "imagescaling/imagescaling.h"
 #include "imagescaling/imagescalingutils.h"
 #include "job/attachmentjob.h"
+#include "job/autocryptheadersjob.h"
 #include "job/encryptjob.h"
 #include "job/jobbase_p.h"
-#include "job/autocryptheadersjob.h"
 #include "job/maintextjob.h"
 #include "job/multipartjob.h"
 #include "job/signencryptjob.h"
@@ -215,7 +215,7 @@ void ComposerPrivate::composeStep2()
         mainJob = multipartJob;
     }
 
-    if(autocryptEnabled) {
+    if (autocryptEnabled) {
         auto autocryptJob = new AutocryptHeadersJob();
         autocryptJob->setSkeletonMessage(skeletonMessage);
         autocryptJob->setGnupgHome(gnupgHome);

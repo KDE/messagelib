@@ -258,7 +258,7 @@ void EncryptJobTest::testSetGnupgHome()
     KMime::Content content;
     content.setBody("one flew over the cuckoo's nest");
 
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     const QStringList recipients = {QStringLiteral("test@kolab.org")};
 
@@ -275,7 +275,7 @@ void EncryptJobTest::testSetGnupgHome()
         QCOMPARE(eJob->exec(), false);
     }
 
-    for(const auto key: keys) {
+    for (const auto key : keys) {
         Test::populateKeyring(dir.path(), key);
     }
     auto eJob = new EncryptJob(&composer);

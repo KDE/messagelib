@@ -629,8 +629,8 @@ void CryptoComposerTest::testSetGnupgHome()
         QCOMPARE(composer.exec(), false);
     }
 
-    const std::vector< GpgME::Key > &keys = Test::getKeys();
-    for(const auto key: keys) {
+    const std::vector<GpgME::Key> &keys = Test::getKeys();
+    for (const auto key : keys) {
         Test::populateKeyring(dir.path(), key);
     }
 
@@ -695,7 +695,7 @@ void CryptoComposerTest::testAutocryptHeaders()
         QCOMPARE(composer.exec(), false);
     }
 
-    for(const auto key: keys) {
+    for (const auto key : keys) {
         Test::populateKeyring(dir.path(), key);
     }
 
@@ -722,7 +722,9 @@ void CryptoComposerTest::testAutocryptHeaders()
     }
 
     QVERIFY(message->headerByType("autocrypt"));
-    QVERIFY(message->headerByType("Autocrypt")->asUnicodeString().startsWith(QStringLiteral("addr=me@me.me; keydata= mQENBEr9ij4BCADaFvyhzV7IrCAr/sCvfoPerAd4dYIGTeCeBmInu3p4oEG0rXTB2zL2t9zd7jV")));
+    QVERIFY(message->headerByType("Autocrypt")
+                ->asUnicodeString()
+                .startsWith(QStringLiteral("addr=me@me.me; keydata= mQENBEr9ij4BCADaFvyhzV7IrCAr/sCvfoPerAd4dYIGTeCeBmInu3p4oEG0rXTB2zL2t9zd7jV")));
     QVERIFY(!message->headerByType("autocrypt-gossip"));
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -734,7 +736,6 @@ void CryptoComposerTest::testAutocryptGossip_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<bool>("sign");
     QTest::addColumn<QStringList>("recipients");
-
 
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
 
@@ -797,7 +798,6 @@ void CryptoComposerTest::testAutocryptGossip()
 
     if (sign || encrypt) {
         ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
-
     }
 
     MimeTreeParser::SimpleObjectTreeSource testSource;
@@ -811,21 +811,22 @@ void CryptoComposerTest::testAutocryptGossip()
         QCOMPARE(nh.headers("autocrypt-gossip", message.data()).size(), 2);
 
         auto headers = QStringList();
-        for (const auto header: nh.headers("autocrypt-gossip", message.data())) {
+        for (const auto header : nh.headers("autocrypt-gossip", message.data())) {
             headers.append(header->asUnicodeString());
         }
 
         headers.sort();
 
-        QVERIFY(headers[0].startsWith(QStringLiteral("addr=leo@kdab.com; keydata= mQINBEr4pSwBEADG/B1VaoxT7mnQfwekkY+f8wkqFVLvTwN0W59Ze/pxmuRf/iS0tZjsEiPK0za")));
-        QVERIFY(headers[1].startsWith(QStringLiteral("addr=you@you.com; keydata= mI0ESw2YuAEEALakcld4goNkwIL5gMETM3R+zI+AoJcuQWUpvS7AqwyR9/UAkVd3D+r32CgWhFi")));
+        QVERIFY(
+            headers[0].startsWith(QStringLiteral("addr=leo@kdab.com; keydata= mQINBEr4pSwBEADG/B1VaoxT7mnQfwekkY+f8wkqFVLvTwN0W59Ze/pxmuRf/iS0tZjsEiPK0za")));
+        QVERIFY(
+            headers[1].startsWith(QStringLiteral("addr=you@you.com; keydata= mI0ESw2YuAEEALakcld4goNkwIL5gMETM3R+zI+AoJcuQWUpvS7AqwyR9/UAkVd3D+r32CgWhFi")));
     } else {
         QCOMPARE(nh.headers("autocrypt-gossip", message.data()).size(), 0);
     }
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), recipients.join(QStringLiteral(", ")));
 }
-
 
 // Helper methods
 void CryptoComposerTest::fillComposerData(Composer *composer, const QString &data)

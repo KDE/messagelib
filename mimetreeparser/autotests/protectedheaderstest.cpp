@@ -8,8 +8,8 @@
 #include "setupenv.h"
 #include "util.h"
 
-#include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/MessagePart>
+#include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
@@ -28,7 +28,7 @@ void ProtectedHeadersTest::initTestCase()
 void ProtectedHeadersTest::testMailHeaderAsBase_data()
 {
     QTest::addColumn<QString>("mailFileName");
-    
+
     QTest::newRow("encrypted") << QStringLiteral("openpgp-encrypted-protected-headers.mbox");
     QTest::newRow("signed") << QStringLiteral("openpgp-signed-protected-headers.mbox");
     QTest::newRow("encrypted+signed") << QStringLiteral("openpgp-encrypted+signed-protected-headers.mbox");
@@ -55,18 +55,19 @@ void ProtectedHeadersTest::testMailHeaderAsBase()
     QCOMPARE(nodeHelper.mailHeaderAsBase("message-id", originalMessage.data())->asUnicodeString(), QStringLiteral("<myhiddenreference@me>"));
     QCOMPARE(nodeHelper.mailHeaderAsBase("references", originalMessage.data())->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
     QCOMPARE(nodeHelper.mailHeaderAsBase("in-reply-to", originalMessage.data())->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
-    
+
     // test non-existing headers
     QCOMPARE(nodeHelper.mailHeaderAsBase("invalid", originalMessage.data()), nullptr);
-    
+
     // test envelope headers
-    QCOMPARE(nodeHelper.mailHeaderAsBase("user-agent", originalMessage.data())->asUnicodeString(), QStringLiteral("KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )"));
+    QCOMPARE(nodeHelper.mailHeaderAsBase("user-agent", originalMessage.data())->asUnicodeString(),
+             QStringLiteral("KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )"));
 }
 
 void ProtectedHeadersTest::testHeaders_data()
 {
     QTest::addColumn<QString>("mailFileName");
-    
+
     QTest::newRow("encrypted") << QStringLiteral("openpgp-encrypted-protected-headers.mbox");
     QTest::newRow("signed") << QStringLiteral("openpgp-signed-protected-headers.mbox");
     QTest::newRow("encrypted+signed") << QStringLiteral("openpgp-encrypted+signed-protected-headers.mbox");
@@ -101,19 +102,20 @@ void ProtectedHeadersTest::testHeaders()
     QCOMPARE(nodeHelper.headers("references", originalMessage.data())[0]->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
     QCOMPARE(nodeHelper.headers("in-reply-to", originalMessage.data()).size(), 1);
     QCOMPARE(nodeHelper.headers("in-reply-to", originalMessage.data())[0]->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
-    
+
     // test non-existing headers
     QCOMPARE(nodeHelper.headers("invalid", originalMessage.data()).isEmpty(), true);
-    
+
     // test envelope headers
     QCOMPARE(nodeHelper.headers("user-agent", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("user-agent", originalMessage.data())[0]->asUnicodeString(), QStringLiteral("KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )"));
+    QCOMPARE(nodeHelper.headers("user-agent", originalMessage.data())[0]->asUnicodeString(),
+             QStringLiteral("KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )"));
 }
 
 void ProtectedHeadersTest::testMailHeaderAsAddresslist_data()
 {
     QTest::addColumn<QString>("mailFileName");
-    
+
     QTest::newRow("encrypted") << QStringLiteral("openpgp-encrypted-protected-headers.mbox");
     QTest::newRow("signed") << QStringLiteral("openpgp-signed-protected-headers.mbox");
     QTest::newRow("encrypted+signed") << QStringLiteral("openpgp-encrypted+signed-protected-headers.mbox");
@@ -135,10 +137,10 @@ void ProtectedHeadersTest::testMailHeaderAsAddresslist()
 
     // test protected only headers
     QCOMPARE(nodeHelper.mailHeaderAsAddressList("message-id", originalMessage.data())->displayNames(), QStringList() << QStringLiteral("myhiddenreference@me"));
-    
+
     // test non-existing headers
     QCOMPARE(nodeHelper.mailHeaderAsAddressList("invalid", originalMessage.data()), nullptr);
-    
+
     // test envelope headers
     QVERIFY(nodeHelper.mailHeaderAsAddressList("user-agent", originalMessage.data()));
 }
@@ -146,7 +148,7 @@ void ProtectedHeadersTest::testMailHeaderAsAddresslist()
 void ProtectedHeadersTest::testhasMailHeader_data()
 {
     QTest::addColumn<QString>("mailFileName");
-    
+
     QTest::newRow("encrypted") << QStringLiteral("openpgp-encrypted-protected-headers.mbox");
     QTest::newRow("signed") << QStringLiteral("openpgp-signed-protected-headers.mbox");
     QTest::newRow("encrypted+signed") << QStringLiteral("openpgp-encrypted+signed-protected-headers.mbox");
@@ -167,10 +169,10 @@ void ProtectedHeadersTest::testhasMailHeader()
 
     // test protected only headers
     QCOMPARE(nodeHelper.hasMailHeader("message-id", originalMessage.data()), true);
-    
+
     // test non-existing headers
     QCOMPARE(nodeHelper.hasMailHeader("invalid", originalMessage.data()), false);
-    
+
     // test envelope headers
     QCOMPARE(nodeHelper.hasMailHeader("user-agent", originalMessage.data()), true);
 }
@@ -179,11 +181,11 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader_data()
 {
     QTest::addColumn<QString>("mailFileName");
     QTest::addColumn<QStringList>("messagePartVector");
-    
+
     QStringList encryptedPart, signedPart;
     encryptedPart << QStringLiteral("MimeTreeParser::EncryptedMessagePart");
     signedPart << QStringLiteral("MimeTreeParser::SignedMessagePart");
-    
+
     QTest::newRow("encrypted") << QStringLiteral("openpgp-encrypted-protected-headers.mbox") << encryptedPart;
     QTest::newRow("signed") << QStringLiteral("openpgp-signed-protected-headers.mbox") << signedPart;
     QTest::newRow("encrypted+signed") << QStringLiteral("openpgp-encrypted+signed-protected-headers.mbox") << encryptedPart;
@@ -193,7 +195,7 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
 {
     QFETCH(QString, mailFileName);
     QFETCH(QStringList, messagePartVector);
-    
+
     auto originalMessage = readAndParseMail(mailFileName);
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -204,8 +206,8 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
     // test overwrite
     {
         QStringList actual;
-        for(const auto mp: nodeHelper.messagePartsOfMailHeader("from", originalMessage.data())) {
-           actual << QString::fromLatin1(mp->metaObject()->className());
+        for (const auto mp : nodeHelper.messagePartsOfMailHeader("from", originalMessage.data())) {
+            actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, messagePartVector);
     }
@@ -213,26 +215,26 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
     // test protected only headers
     {
         QStringList actual;
-        for(const auto mp: nodeHelper.messagePartsOfMailHeader("message-id", originalMessage.data())) {
-           actual << QString::fromLatin1(mp->metaObject()->className());
+        for (const auto mp : nodeHelper.messagePartsOfMailHeader("message-id", originalMessage.data())) {
+            actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, messagePartVector);
     }
-    
+
     // test non-existing headers
     {
         QStringList actual;
-        for(const auto mp: nodeHelper.messagePartsOfMailHeader("invalid", originalMessage.data())) {
-           actual << QString::fromLatin1(mp->metaObject()->className());
+        for (const auto mp : nodeHelper.messagePartsOfMailHeader("invalid", originalMessage.data())) {
+            actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, QStringList());
     }
-    
+
     // test envelope headers
     {
         QStringList actual;
-        for(const auto mp: nodeHelper.messagePartsOfMailHeader("user-agent", originalMessage.data())) {
-           actual << QString::fromLatin1(mp->metaObject()->className());
+        for (const auto mp : nodeHelper.messagePartsOfMailHeader("user-agent", originalMessage.data())) {
+            actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, QStringList());
     }

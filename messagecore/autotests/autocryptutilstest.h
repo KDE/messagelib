@@ -5,8 +5,8 @@
 #ifndef AUTOCRYPTUTILSTEST_H
 #define AUTOCRYPTUTILSTEST_H
 
-#include <QObject>
 #include <QDir>
+#include <QObject>
 
 class AutocryptUtilsTest : public QObject
 {
@@ -29,6 +29,7 @@ private Q_SLOTS:
     void test_update_autocrypt();
     void test_update_non_autocrypt();
     void test_update_autocrypt_gossip();
+
 private:
     QDir baseDir;
 };

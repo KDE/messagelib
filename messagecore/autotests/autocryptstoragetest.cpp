@@ -57,7 +57,7 @@ void AutocryptStorageTest::test_existing()
 {
     auto storage = AutocryptStorage::self();
     QFile file(QLatin1String(DATA_DIR) + QStringLiteral("/autocrypt/empty.json"));
-    QVERIFY(file.copy(baseDir.path()+QStringLiteral("/empty%40autocrypt.example.json")));
+    QVERIFY(file.copy(baseDir.path() + QStringLiteral("/empty%40autocrypt.example.json")));
 
     const auto recipient = storage->getRecipient("empty@autocrypt.example");
     const auto recipient2 = storage->getRecipient("empty@autocrypt.example");

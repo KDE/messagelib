@@ -83,7 +83,7 @@ KMime::Message::Ptr Test::loadMessageFromFile(const QString &filename)
     return msg;
 }
 
-void Test::compareFile(KMime::Content* content, const QString& referenceFile)
+void Test::compareFile(KMime::Content *content, const QString &referenceFile)
 {
     QFileInfo fi(referenceFile);
     const QString actualFile = fi.fileName();
@@ -112,24 +112,27 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
     QCOMPARE(proc.exitCode(), 0);
 }
 
-void Test::populateKeyring(const QString& gnupgHome, const GpgME::Key &key)
+void Test::populateKeyring(const QString &gnupgHome, const GpgME::Key &key)
 {
     QEventLoop loop;
     const QGpgME::Protocol *proto(QGpgME::openpgp());
     auto exportJob = proto->publicKeyExportJob(false);
-    QObject::connect(exportJob, &QGpgME::ExportJob::result, [&gnupgHome, &loop](const GpgME::Error &result, const QByteArray &keyData, const QString &auditLogAsHtml, const GpgME::Error &auditLogError){
-        Q_UNUSED(auditLogAsHtml);
-        Q_UNUSED(auditLogError);
-        loop.quit();
-        QVERIFY(!result);
-        populateKeyring(gnupgHome, keyData);
-    });
+    QObject::connect(
+        exportJob,
+        &QGpgME::ExportJob::result,
+        [&gnupgHome, &loop](const GpgME::Error &result, const QByteArray &keyData, const QString &auditLogAsHtml, const GpgME::Error &auditLogError) {
+            Q_UNUSED(auditLogAsHtml);
+            Q_UNUSED(auditLogError);
+            loop.quit();
+            QVERIFY(!result);
+            populateKeyring(gnupgHome, keyData);
+        });
     QStringList patterns = {QString::fromUtf8(key.primaryFingerprint())};
     exportJob->start(patterns);
     loop.exec();
 }
 
-void Test::populateKeyring(const QString& gnupgHome, const QByteArray &keydata)
+void Test::populateKeyring(const QString &gnupgHome, const QByteArray &keydata)
 {
     const QGpgME::Protocol *proto(QGpgME::openpgp());
     auto importJob = proto->importJob();

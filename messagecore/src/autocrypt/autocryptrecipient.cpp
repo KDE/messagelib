@@ -8,14 +8,14 @@
 #include "autocryptrecipient_p.h"
 #include "autocryptutils.h"
 
-#include<KMime/Headers>
+#include <KMime/Headers>
 
+#include <KCodecs>
+#include <QGpgME/DataProvider>
+#include <QGpgME/Protocol>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <gpgme++/data.h>
-#include <QGpgME/DataProvider>
-#include <QGpgME/Protocol>
-#include <KCodecs>
 
 using namespace MessageCore;
 
@@ -27,7 +27,7 @@ AutocryptRecipientPrivate::AutocryptRecipientPrivate()
 {
 }
 
-QByteArray AutocryptRecipientPrivate::toJson (QJsonDocument::JsonFormat format) const
+QByteArray AutocryptRecipientPrivate::toJson(QJsonDocument::JsonFormat format) const
 {
     QJsonObject entry;
     entry.insert(QStringLiteral("addr"), QString::fromLatin1(addr));
@@ -54,7 +54,7 @@ QByteArray AutocryptRecipientPrivate::toJson (QJsonDocument::JsonFormat format) 
     return document.toJson(format);
 }
 
-void AutocryptRecipientPrivate::fromJson(const QByteArray& json)
+void AutocryptRecipientPrivate::fromJson(const QByteArray &json)
 {
     auto document = QJsonDocument::fromJson(json);
     assert(document.isObject());
@@ -100,7 +100,7 @@ AutocryptRecipient::AutocryptRecipient()
 {
 }
 
-void AutocryptRecipient::updateFromMessage(const HeaderMixupNodeHelper& mixup, const KMime::Headers::Base *header)
+void AutocryptRecipient::updateFromMessage(const HeaderMixupNodeHelper &mixup, const KMime::Headers::Base *header)
 {
     Q_D(AutocryptRecipient);
     QDateTime effectiveDate = mixup.dateHeader();
@@ -141,7 +141,7 @@ void AutocryptRecipient::updateFromMessage(const HeaderMixupNodeHelper& mixup, c
     }
 }
 
-void AutocryptRecipient::updateFromGossip(const HeaderMixupNodeHelper& mixup, const KMime::Headers::Base* header)
+void AutocryptRecipient::updateFromGossip(const HeaderMixupNodeHelper &mixup, const KMime::Headers::Base *header)
 {
     Q_D(AutocryptRecipient);
     QDateTime effectiveDate = mixup.dateHeader();
@@ -168,13 +168,13 @@ void AutocryptRecipient::updateFromGossip(const HeaderMixupNodeHelper& mixup, co
     d->gossip_key.replace(' ', QByteArray());
 }
 
-QByteArray AutocryptRecipient::toJson (QJsonDocument::JsonFormat format) const
+QByteArray AutocryptRecipient::toJson(QJsonDocument::JsonFormat format) const
 {
     const Q_D(AutocryptRecipient);
     return d->toJson(format);
 }
 
-void AutocryptRecipient::fromJson (const QByteArray &json)
+void AutocryptRecipient::fromJson(const QByteArray &json)
 {
     Q_D(AutocryptRecipient);
     return d->fromJson(json);
@@ -194,7 +194,7 @@ void AutocryptRecipient::setChangedFlag(bool changed)
 
 GpgME::Key gpgKey(const QByteArray &keydata)
 {
-    assert(QGpgME::openpgp());      // Make sure, that openpgp backend is loaded
+    assert(QGpgME::openpgp()); // Make sure, that openpgp backend is loaded
     auto context = GpgME::Context::create(GpgME::OpenPGP);
     QGpgME::QByteArrayDataProvider dp(KCodecs::base64Decode(keydata));
     GpgME::Data data(&dp);

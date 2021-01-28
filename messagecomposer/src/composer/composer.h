@@ -62,7 +62,6 @@ public:
     void setGnupgHome(const QString &path);
     Q_REQUIRED_RESULT QString gnupgHome() const;
 
-
     /// Sets if this message being composed is an auto-saved message
     ///  if so, might need different handling, such as no crypto attachments.
     void setAutoSave(bool isAutoSave);

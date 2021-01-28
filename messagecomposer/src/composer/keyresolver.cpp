@@ -1765,7 +1765,6 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
                 if (!gossipKey.isNull() && ValidEncryptionKey(gossipKey)) {
                     qCDebug(MESSAGECOMPOSER_LOG) << "Found an valid autocrypt gossip key.";
                     matchingKeys.push_back(gossipKey);
-
                 }
             }
         }

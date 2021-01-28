@@ -5,8 +5,8 @@
 #ifndef AUTOCRYPTSTORAGETEST_H
 #define AUTOCRYPTSTORAGETEST_H
 
-#include <QObject>
 #include <QDir>
+#include <QObject>
 
 class AutocryptStorageTest : public QObject
 {
@@ -23,6 +23,7 @@ private Q_SLOTS:
     void test_addRecipient();
     void test_deleteRecipient();
     void test_create_basedir();
+
 private:
     QDir baseDir;
 };

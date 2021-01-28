@@ -606,12 +606,14 @@ inline bool showKeyApprovalDialog()
 }
 } // nameless namespace
 
-bool ComposerViewBase::addKeysToContext(const QString &gnupgHome, const QVector<QPair<QStringList, std::vector<GpgME::Key> > > &data, const std::map<QByteArray, QString> &autocryptMap)
+bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
+                                        const QVector<QPair<QStringList, std::vector<GpgME::Key>>> &data,
+                                        const std::map<QByteArray, QString> &autocryptMap)
 {
     bool needSpecialContext = false;
 
-    for (const auto &p: data) {
-        for (const auto k: p.second) {
+    for (const auto &p : data) {
+        for (const auto k : p.second) {
             const auto it = autocryptMap.find(k.primaryFingerprint());
             if (it != autocryptMap.end()) {
                 needSpecialContext = true;
@@ -633,31 +635,36 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome, const QVector<
     const auto storage = MessageCore::AutocryptStorage::self();
     QEventLoop loop;
     int runningJobs = 0;
-    for (const auto &p: data) {
-        for (const auto k: p.second) {
+    for (const auto &p : data) {
+        for (const auto k : p.second) {
             const auto it = autocryptMap.find(k.primaryFingerprint());
             if (it == autocryptMap.end()) {
                 qDebug() << "Adding " << k.primaryFingerprint() << "via Export/Import";
                 auto exportJob = proto->publicKeyExportJob(false);
-                connect(exportJob, &QGpgME::ExportJob::result, [&gnupgHome, &proto, &runningJobs, &loop, &k](const GpgME::Error &result, const QByteArray &keyData, const QString &auditLogAsHtml, const GpgME::Error &auditLogError){
-                        Q_UNUSED(auditLogAsHtml);
-                        Q_UNUSED(auditLogError);
-                        if (result) {
-                            qCWarning(MESSAGECOMPOSER_LOG) << "Failed to export " << k.primaryFingerprint() << result.asString();
+                connect(exportJob,
+                        &QGpgME::ExportJob::result,
+                        [&gnupgHome, &proto, &runningJobs, &loop, &k](const GpgME::Error &result,
+                                                                      const QByteArray &keyData,
+                                                                      const QString &auditLogAsHtml,
+                                                                      const GpgME::Error &auditLogError) {
+                            Q_UNUSED(auditLogAsHtml);
+                            Q_UNUSED(auditLogError);
+                            if (result) {
+                                qCWarning(MESSAGECOMPOSER_LOG) << "Failed to export " << k.primaryFingerprint() << result.asString();
+                                --runningJobs;
+                                if (runningJobs < 1) {
+                                    loop.quit();
+                                }
+                            }
+
+                            auto importJob = proto->importJob();
+                            QGpgME::Job::context(importJob)->setEngineHomeDirectory(gnupgHome.toUtf8().constData());
+                            importJob->exec(keyData);
+                            importJob->deleteLater();
                             --runningJobs;
                             if (runningJobs < 1) {
                                 loop.quit();
                             }
-                        }
-
-                        auto importJob = proto->importJob();
-                        QGpgME::Job::context(importJob)->setEngineHomeDirectory(gnupgHome.toUtf8().constData());
-                        importJob->exec(keyData);
-                        importJob->deleteLater();
-                        --runningJobs;
-                        if (runningJobs < 1) {
-                            loop.quit();
-                        }
                         });
                 QStringList patterns;
                 patterns << QString::fromUtf8(k.primaryFingerprint());

@@ -295,5 +295,4 @@ void SignJobTest::testProtectedHeadersOverwrite()
     result->assemble();
 
     Test::compareFile(result->contents().at(0), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
-
 }

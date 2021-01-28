@@ -7,8 +7,8 @@
 #ifndef KEYRESOLVERTEST_H
 #define KEYRESOLVERTEST_H
 
-#include <QObject>
 #include <QDir>
+#include <QObject>
 
 class KeyResolverTest : public QObject
 {
@@ -20,6 +20,7 @@ private Q_SLOTS:
     void cleanup();
 
     void testAutocrypt();
+
 private:
     QDir baseDir;
 };

@@ -12,12 +12,11 @@
 #include "messagecore_export.h"
 
 #include <KMime/Headers>
-#include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/MessagePart>
+#include <MimeTreeParser/NodeHelper>
 
 namespace MessageCore
 {
-
 class MESSAGECORE_EXPORT HeaderMixupNodeHelper
 {
 public:
@@ -28,16 +27,17 @@ public:
     Q_REQUIRED_RESULT QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header) const;
     Q_REQUIRED_RESULT QDateTime dateHeader() const;
     Q_REQUIRED_RESULT QVector<MimeTreeParser::MessagePart::Ptr> messagePartsOfMailHeader(const char *header) const;
-    Q_REQUIRED_RESULT QVector<KMime::Headers::Base *> headers(const char* headerType) const;
+    Q_REQUIRED_RESULT QVector<KMime::Headers::Base *> headers(const char *headerType) const;
 
 public:
     KMime::Content *message;
+
 private:
     MimeTreeParser::NodeHelper *nodeHelper;
 };
 
-QHash<QByteArray,QByteArray> MESSAGECORE_EXPORT paramsFromAutocryptHeader(const KMime::Headers::Base *const header);
-void MESSAGECORE_EXPORT processAutocryptfromMail(const HeaderMixupNodeHelper& mixup);
+QHash<QByteArray, QByteArray> MESSAGECORE_EXPORT paramsFromAutocryptHeader(const KMime::Headers::Base *const header);
+void MESSAGECORE_EXPORT processAutocryptfromMail(const HeaderMixupNodeHelper &mixup);
 
 }
 

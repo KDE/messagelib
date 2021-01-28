@@ -300,8 +300,6 @@ void ObjectTreeParserTest::testHtmlContent()
     QCOMPARE(otp.htmlContent(), output);
 }
 
-
-
 void ObjectTreeParserTest::testRenderedTree_data()
 {
     QTest::addColumn<QString>("mailFileName");

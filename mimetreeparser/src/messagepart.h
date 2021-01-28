@@ -371,7 +371,6 @@ public:
     const KMime::Headers::Base *header(const char *headerType) const override;
     QVector<KMime::Headers::Base *> headers(const char *headerType) const override;
 
-
     QByteArray mDecryptedData;
 
 private:
@@ -427,6 +426,7 @@ public:
     Q_REQUIRED_RESULT bool hasHeader(const char *headerType) const override;
     const KMime::Headers::Base *header(const char *headerType) const override;
     QVector<KMime::Headers::Base *> headers(const char *headerType) const override;
+
 private:
     /** Handles the verification of data
      * If signature is empty it is handled as inline signature otherwise as detached signature mode.
