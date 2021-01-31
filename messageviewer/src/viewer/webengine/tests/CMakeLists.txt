@@ -7,7 +7,7 @@ set(scrolladdattachment_test_SRCS
 add_executable(scrolladdattachmenttest ${scrolladdattachment_test_SRCS})
 
 target_link_libraries(scrolladdattachmenttest
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )
 
 ####
@@ -18,7 +18,7 @@ set(testmailwebengine_test_SRCS
 add_executable(testmailwebengine ${testmailwebengine_test_SRCS})
 
 target_link_libraries(testmailwebengine
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer Qt5::PrintSupport KF5::I18n
+    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer Qt::PrintSupport KF5::I18n
 )
 
 #####
@@ -29,7 +29,7 @@ target_link_libraries(testmailwebengine
 #add_executable(testwebengineaccesskey ${testwebengineaccesskey_test_SRCS})
 
 #target_link_libraries(testwebengineaccesskey
-#    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::MessageViewer
+#    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets KF5::MessageViewer
 #    )
 
 ####
@@ -40,7 +40,7 @@ set(testmailwebengineselection_test_SRCS
 add_executable(testmailwebengineselection ${testmailwebengineselection_test_SRCS})
 
 target_link_libraries(testmailwebengineselection
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )
 ######
 
@@ -50,7 +50,7 @@ set(testmaildndattachment_test_SRCS
 add_executable(testmaildndattachment ${testmaildndattachment_test_SRCS})
 
 target_link_libraries(testmaildndattachment
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )
 
 #####
@@ -61,5 +61,5 @@ set(testmailmboxwebengine_test_SRCS
 add_executable(testmailmboxwebengine ${testmailmboxwebengine_test_SRCS})
 
 target_link_libraries(testmailmboxwebengine
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )

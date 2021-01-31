@@ -16,7 +16,7 @@ macro( add_messagecomposer_test _source )
             KF5::MessageCore
             KF5::TemplateParser
             KF5::PimTextEdit
-            Qt5::Test
+            Qt::Test
             KF5::IdentityManagement
             KF5::Contacts
             KF5::AkonadiCore
@@ -41,7 +41,7 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::Libkdepim
         KF5::PimTextEdit
         KF5::AkonadiCore
-        Qt5::Test
+        Qt::Test
         QGpgme
         KF5::IconThemes
         KF5::Completion

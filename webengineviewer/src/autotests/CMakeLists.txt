@@ -5,25 +5,25 @@ include_directories(${Messagelib_BINARY_DIR})
 ecm_add_test(webhittestresulttest.cpp
     TEST_NAME webhittestresulttest
     NAME_PREFIX "webengineviewer-"
-    LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer
+    LINK_LIBRARIES Qt::Test KF5::WebEngineViewer
 )
 
 
 ecm_add_test(zoomactionmenutest.cpp 
     TEST_NAME zoomactionmenutest
     NAME_PREFIX "webengineviewer-"
-    LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer KF5::XmlGui
+    LINK_LIBRARIES Qt::Test KF5::WebEngineViewer KF5::XmlGui
 )
 
 
 ecm_add_test(webengineexporthtmlpagejobtest.cpp ${testwebengineviewer_webengine_SRCS}
     TEST_NAME webengineexporthtmlpagejobtest
     NAME_PREFIX "webengineviewer-"
-    LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer
+    LINK_LIBRARIES Qt::Test KF5::WebEngineViewer
 )
 
 ecm_add_test(webengineexportpdfpagejobtest.cpp ${testwebengineviewer_webengine_SRCS}
     TEST_NAME webengineexportpdfpagejobtest
     NAME_PREFIX "webengineviewer-"
-    LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer
+    LINK_LIBRARIES Qt::Test KF5::WebEngineViewer
 )

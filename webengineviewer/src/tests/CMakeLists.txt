@@ -5,7 +5,7 @@ set(webengine_test_SRCS
 add_executable(webenginetest ${webengine_test_SRCS}) 
 
 target_link_libraries(webenginetest
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets
+    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
     )
 
 #####
@@ -16,7 +16,7 @@ set(webenginescript_test_SRCS
 add_executable(webenginescripttest ${webenginescript_test_SRCS})
 
 target_link_libraries(webenginescripttest
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets
+    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
     )
 
 ####
@@ -27,7 +27,7 @@ set(selectedtextwebengine_test_SRCS
 add_executable(selectedtextwebenginetest ${selectedtextwebengine_test_SRCS})
 
 target_link_libraries(selectedtextwebenginetest
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets
+    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
     )
 
 
@@ -38,7 +38,7 @@ set(testdndwebengine_test_SRCS
 add_executable(testdndwebenginetest ${testdndwebengine_test_SRCS})
 
 target_link_libraries(testdndwebenginetest
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets
+    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
     )
 
 #####
@@ -49,7 +49,7 @@ set(testselectionchangedwebengine_test_SRCS
 add_executable(testselectionchangedwebengine ${testselectionchangedwebengine_test_SRCS})
 
 target_link_libraries(testselectionchangedwebengine
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )
 
 ####
@@ -64,6 +64,6 @@ qt5_add_resources(testwebengineviewinterceptor_test_SRCS testwebengineviewinterc
 add_executable(testwebengineviewinterceptor ${testwebengineviewinterceptor_test_SRCS})
 
 target_link_libraries(testwebengineviewinterceptor
-    Qt5::Widgets Qt5::WebEngineWidgets 
+    Qt::Widgets Qt::WebEngineWidgets 
     )
 
