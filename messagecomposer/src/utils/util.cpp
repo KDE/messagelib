@@ -337,7 +337,8 @@ KMime::Content *MessageComposer::Util::findTypeInMessage(KMime::Content *data, c
         }
     }
 
-    foreach (auto child, data->contents()) {
+    const auto contents = data->contents();
+    for (auto child : contents) {
         if ((!child->contentType()->isEmpty()) && (mimeType == child->contentType()->mimeType()) && (subType == child->contentType()->subType())) {
             return child;
         }

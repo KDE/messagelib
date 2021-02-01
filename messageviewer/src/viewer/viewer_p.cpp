@@ -1174,7 +1174,9 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
         setHtmlLoadExtOverride(true);
     }
 
-    foreach (const Akonadi::Item::Id monitoredId, mMonitor.itemsMonitoredEx()) {
+    const auto itemsMonitoredEx = mMonitor.itemsMonitoredEx();
+
+    for (const Akonadi::Item::Id monitoredId : itemsMonitoredEx) {
         mMonitor.setItemMonitored(Akonadi::Item(monitoredId), false);
     }
     Q_ASSERT(mMonitor.itemsMonitoredEx().isEmpty());

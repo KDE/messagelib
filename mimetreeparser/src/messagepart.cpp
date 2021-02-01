@@ -195,7 +195,8 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 QString MessagePart::renderInternalText() const
 {
     QString text;
-    foreach (const auto &mp, subParts()) {
+    const auto subPartsLst = subParts();
+    for (const auto &mp : subPartsLst) {
         text += mp->text();
     }
     return text;
@@ -203,7 +204,8 @@ QString MessagePart::renderInternalText() const
 
 void MessagePart::fix() const
 {
-    foreach (const auto &mp, subParts()) {
+    const auto subPartsLst = subParts();
+    for (const auto &mp : subPartsLst) {
         const auto m = mp.dynamicCast<MessagePart>();
         if (m) {
             m->fix();

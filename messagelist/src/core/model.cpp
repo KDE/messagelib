@@ -3663,7 +3663,7 @@ void ModelPrivate::printStatistics()
 
     int totalThreads = 0;
     if (!mGroupHeaderItemHash.isEmpty()) {
-        foreach (const GroupHeaderItem *groupHeader, mGroupHeaderItemHash) {
+        for (const GroupHeaderItem *groupHeader : qAsConst(mGroupHeaderItemHash)) {
             totalThreads += groupHeader->childItemCount();
         }
     } else {

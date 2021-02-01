@@ -1011,7 +1011,8 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
                 resultingData += curNode->head() + '\n';
             }
             const QByteArray boundary = curNode->contentType()->boundary();
-            foreach (KMime::Content *child, curNode->contents()) {
+            const auto contents = curNode->contents();
+            for (KMime::Content *child : contents) {
                 resultingData += "\n--" + boundary + '\n';
                 const bool changed = unencryptedMessage_helper(child, resultingData, true, recursionLevel + 1);
                 if (changed) {

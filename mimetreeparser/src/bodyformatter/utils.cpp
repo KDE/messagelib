@@ -28,7 +28,8 @@ KMime::Content *MimeTreeParser::findTypeInDirectChilds(KMime::Content *content, 
         return content;
     }
 
-    foreach (const auto child, content->contents()) {
+    const auto contents = content->contents();
+    for (const auto child : contents) {
         if ((!child->contentType()->isEmpty()) && (mimeType == child->contentType(false)->mimeType())) {
             return child;
         }
