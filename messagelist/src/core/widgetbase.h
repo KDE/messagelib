@@ -217,6 +217,7 @@ Q_SIGNALS:
      */
     void statusMessage(const QString &message);
     void forceLostFocus();
+    void unlockTabRequested();
 
 protected Q_SLOTS:
     /**

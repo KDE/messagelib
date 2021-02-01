@@ -131,6 +131,7 @@ Widget::Widget(QWidget *pParent)
     g->addWidget(d->tabLockedWarning, 0);
     connect(d->tabLockedWarning, &TabLockedWarning::unlockTabRequested, this, [this]() {
         setLockTab(false);
+        Q_EMIT unlockTabRequested();
         // Fix icon!
     });
 
