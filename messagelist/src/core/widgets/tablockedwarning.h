@@ -22,6 +22,9 @@ public:
     ~TabLockedWarning() override;
 Q_SIGNALS:
     void unlockTabRequested();
+
+private:
+    void slotLinkActivated(const QString &contents);
 };
 }
 }

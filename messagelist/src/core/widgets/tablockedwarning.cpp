@@ -15,13 +15,18 @@ TabLockedWarning::TabLockedWarning(QWidget *parent)
     setCloseButtonVisible(false);
     setMessageType(Warning);
     setWordWrap(true);
-    setText(i18n("Current Tab is locked."));
+    setText(QStringLiteral("%1 <a href=\"unlock\">%2</a>").arg(i18n("Current Tab is locked."), i18n("(Unlock it)")));
     setVisible(false);
-    auto unlockAction = new QAction(i18n("Unlock"), this);
-    connect(unlockAction, &QAction::triggered, this, &TabLockedWarning::unlockTabRequested);
-    addAction(unlockAction);
+    connect(this, &TabLockedWarning::linkActivated, this, &TabLockedWarning::slotLinkActivated);
 }
 
 TabLockedWarning::~TabLockedWarning()
 {
+}
+
+void TabLockedWarning::slotLinkActivated(const QString &contents)
+{
+    if (contents == QLatin1String("unlock")) {
+        Q_EMIT unlockTabRequested();
+    }
 }
