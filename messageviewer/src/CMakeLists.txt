@@ -286,9 +286,8 @@ set(libmessageviewer_SRCS
     ${libmessageviewer_mailviewer_SRCS}
     ${libmessageviewer_interfaces_SRCS}
     ${libmessageviewer_configureplugins_SRCS}
+    messagepartthemes.qrc
     )
-
-qt5_add_resources(libmessageviewer_SRCS messagepartthemes.qrc)
 
 ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
         DESCRIPTION "messagelib (messageviewer)"
