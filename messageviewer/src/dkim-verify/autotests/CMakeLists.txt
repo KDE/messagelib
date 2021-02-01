@@ -4,7 +4,7 @@ macro(add_messageviewer_dkim_verify_unittest _source)
     ecm_add_test(${_source}
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer KF5::WebEngineViewer KF5::Libkleo QGpgme Qt::Test qca-qt5 KF5::ItemViews
+        LINK_LIBRARIES KF5::MessageViewer KF5::WebEngineViewer KF5::Libkleo QGpgme Qt5::Test qca-qt5 KF5::ItemViews
     )
 endmacro ()
 

@@ -9,8 +9,8 @@ add_executable(checkphishingurlgui ${checkphishingurlgui_SRCS})
 target_link_libraries(checkphishingurlgui
     KF5::KIOCore
     KF5::WebEngineViewer
-    Qt::WebEngine
-    Qt::WebEngineWidgets
+    Qt5::WebEngine
+    Qt5::WebEngineWidgets
     KF5::I18n
     )
 
@@ -19,8 +19,8 @@ add_executable(searchfullhashgui ${searchfullhashgui_SRCS})
 target_link_libraries(searchfullhashgui
     KF5::KIOCore
     KF5::WebEngineViewer
-    Qt::WebEngine
-    Qt::WebEngineWidgets
+    Qt5::WebEngine
+    Qt5::WebEngineWidgets
     KF5::I18n
     )
 
@@ -29,8 +29,8 @@ add_executable(createphishingurldatabasegui ${createphishingurldatabasegui_SRCS}
 target_link_libraries(createphishingurldatabasegui
     KF5::KIOCore
     KF5::WebEngineViewer
-    Qt::WebEngine
-    Qt::WebEngineWidgets
+    Qt5::WebEngine
+    Qt5::WebEngineWidgets
     KF5::I18n
     )
 
@@ -39,8 +39,8 @@ add_executable(managelocaldatabasegui ${managelocaldatabasegui_SRCS})
 target_link_libraries(managelocaldatabasegui
     KF5::KIOCore
     KF5::WebEngineViewer
-    Qt::WebEngine
-    Qt::WebEngineWidgets
+    Qt5::WebEngine
+    Qt5::WebEngineWidgets
     KF5::I18n
     )
 
@@ -49,7 +49,7 @@ add_executable(webengineviewwithsafebrowsingsupport ${webengineviewwithsafebrows
 target_link_libraries(webengineviewwithsafebrowsingsupport
     KF5::KIOCore
     KF5::WebEngineViewer
-    Qt::WebEngine
-    Qt::WebEngineWidgets
+    Qt5::WebEngine
+    Qt5::WebEngineWidgets
     KF5::I18n
     )

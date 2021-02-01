@@ -138,7 +138,7 @@ target_link_libraries(KF5MimeTreeParser
     KF5::I18n
     KF5::CoreAddons
     KF5::Mime
-    Qt::Gui
+    Qt5::Gui
     )
 
 install(TARGETS
