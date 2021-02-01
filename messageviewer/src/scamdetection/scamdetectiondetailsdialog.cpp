@@ -71,7 +71,9 @@ void ScamDetectionDetailsDialog::slotSaveAs()
                 return;
             }
             QTextStream ts(&file);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             ts.setCodec("UTF-8");
+#endif
             QString htmlStr = mDetails->toHtml();
             htmlStr.replace(QLatin1String(R"(meta name="qrichtext" content="1")"),
                             QLatin1String(R"(meta http-equiv="Content-Type" content="text/html; charset=UTF-8")"));

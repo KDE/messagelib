@@ -53,7 +53,9 @@ void WebEngineExportHtmlPageJob::slotSaveHtmlToPage(const QString &text)
         return;
     }
     QTextStream stream(&temporaryFile);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     stream.setCodec("UTF-8");
+#endif
     QString newText = text;
     newText.replace(QLatin1String("<head>"), QLatin1String("<head><meta charset=\"UTF-8\">"));
     stream << newText;

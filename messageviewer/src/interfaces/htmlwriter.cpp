@@ -19,7 +19,9 @@ void HtmlWriter::begin()
         m_stream.reset(new QTextStream());
     }
     m_stream->setDevice(device());
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     m_stream->setCodec("UTF-8");
+#endif
 }
 
 void HtmlWriter::write(const QString &html)
