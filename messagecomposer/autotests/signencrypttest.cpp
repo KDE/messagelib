@@ -201,7 +201,7 @@ void SignEncryptTest::testProtectedHeaders()
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     Composer composer;
-    auto *seJob = new SignEncryptJob(&composer);
+    auto seJob = new SignEncryptJob(&composer);
 
     QVERIFY(seJob);
 

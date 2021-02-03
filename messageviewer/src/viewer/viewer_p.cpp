@@ -635,7 +635,7 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
     QString name = mNodeHelper->writeNodeToTempFile(node);
 
     // Make sure that it will not deleted when we switch from message.
-    auto *tmpDir = new QTemporaryDir(QDir::tempPath() + QLatin1String("/messageviewer_attachment_XXXXXX"));
+    auto tmpDir = new QTemporaryDir(QDir::tempPath() + QLatin1String("/messageviewer_attachment_XXXXXX"));
     if (tmpDir->isValid()) {
         tmpDir->setAutoRemove(false);
         const QString path = tmpDir->path();
@@ -2177,7 +2177,7 @@ void ViewerPrivate::slotDelayPrintPreview()
 
 void ViewerPrivate::exportToPdf(const QString &fileName)
 {
-    auto *job = new WebEngineViewer::WebEngineExportPdfPageJob(this);
+    auto job = new WebEngineViewer::WebEngineExportPdfPageJob(this);
     connect(job, &WebEngineViewer::WebEngineExportPdfPageJob::exportToPdfSuccess, this, [this, fileName]() {
         showSavedFileFolderWidget({QUrl::fromLocalFile(fileName)}, MessageViewer::OpenSavedFileFolderWidget::FileType::Pdf);
     });
@@ -2188,7 +2188,7 @@ void ViewerPrivate::exportToPdf(const QString &fileName)
 
 void ViewerPrivate::slotOpenInBrowser()
 {
-    auto *job = new WebEngineViewer::WebEngineExportHtmlPageJob(this);
+    auto job = new WebEngineViewer::WebEngineExportHtmlPageJob(this);
     job->setEngineView(mViewer);
     connect(job, &WebEngineViewer::WebEngineExportHtmlPageJob::failed, this, &ViewerPrivate::slotExportHtmlPageFailed);
     connect(job, &WebEngineViewer::WebEngineExportHtmlPageJob::success, this, &ViewerPrivate::slotExportHtmlPageSuccess);
@@ -2831,7 +2831,7 @@ void ViewerPrivate::goResourceOnline()
 void ViewerPrivate::slotSaveMessageDisplayFormat()
 {
     if (mMessageItem.isValid()) {
-        auto *job = new MessageViewer::ModifyMessageDisplayFormatJob(mSession, this);
+        auto job = new MessageViewer::ModifyMessageDisplayFormatJob(mSession, this);
         job->setMessageFormat(displayFormatMessageOverwrite());
         job->setMessageItem(mMessageItem);
         job->setRemoteContent(htmlLoadExtOverride());
@@ -2843,7 +2843,7 @@ void ViewerPrivate::slotResetMessageDisplayFormat()
 {
     if (mMessageItem.isValid()) {
         if (mMessageItem.hasAttribute<MessageViewer::MessageDisplayFormatAttribute>()) {
-            auto *job = new MessageViewer::ModifyMessageDisplayFormatJob(mSession, this);
+            auto job = new MessageViewer::ModifyMessageDisplayFormatJob(mSession, this);
             job->setMessageItem(mMessageItem);
             job->setResetFormat(true);
             job->start();

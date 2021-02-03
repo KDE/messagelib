@@ -32,7 +32,7 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     vbox->setContentsMargins({});
     vbox->setSpacing(0);
     toolManagerWidget->setLayout(vbox);
-    auto *toolManager = new MessageViewer::ViewerPluginToolManager(toolManagerWidget, this);
+    auto toolManager = new MessageViewer::ViewerPluginToolManager(toolManagerWidget, this);
     connect(toolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this, &ViewerPluginTest::slotActivatePlugin);
 
     toolManager->setPluginName(QStringLiteral("messageviewer"));

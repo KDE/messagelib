@@ -266,7 +266,7 @@ void CustomTemplates::slotAddClicked()
         }
 
         QKeySequence nullShortcut;
-        auto *item = new CustomTemplateItem(mUi->mList, str, QString(), nullShortcut, TUniversal, QString(), QString());
+        auto item = new CustomTemplateItem(mUi->mList, str, QString(), nullShortcut, TUniversal, QString(), QString());
         item->setText(0, indexToType(TUniversal));
         item->setText(1, str);
         mUi->mList->setCurrentItem(item);
@@ -317,7 +317,7 @@ void CustomTemplates::slotDuplicateClicked()
     const QString templateName = createUniqueName(origItem->text(1));
     QKeySequence nullShortcut;
     CustomTemplates::Type type = origItem->customType();
-    auto *item = new CustomTemplateItem(mUi->mList, templateName, origItem->content(), nullShortcut, type, origItem->to(), origItem->cc());
+    auto item = new CustomTemplateItem(mUi->mList, templateName, origItem->content(), nullShortcut, type, origItem->to(), origItem->cc());
     item->setText(0, indexToType(type));
     item->setText(1, templateName);
     iconFromType(type, item);

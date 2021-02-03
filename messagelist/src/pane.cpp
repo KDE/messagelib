@@ -107,7 +107,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
         }
 
         d->mProxyStack << proxyModel;
-        const auto *nextProxyModel = qobject_cast<const QAbstractProxyModel *>(proxyModel->sourceModel());
+        const auto nextProxyModel = qobject_cast<const QAbstractProxyModel *>(proxyModel->sourceModel());
 
         if (!nextProxyModel) {
             // It's the final model in the chain, so it is necessarily the sourceModel.
@@ -207,7 +207,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
     });
 
     for (int i = 0; i < count(); ++i) {
-        auto *w = qobject_cast<Widget *>(widget(i));
+        auto w = qobject_cast<Widget *>(widget(i));
         if (w) {
             w->setXmlGuiClient(d->mXmlGuiClient);
         }
@@ -312,7 +312,7 @@ bool Pane::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTyp
                                  bool centerItem,
                                  bool loop)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -330,7 +330,7 @@ bool Pane::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messag
                                      bool centerItem,
                                      bool loop)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -345,7 +345,7 @@ bool Pane::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messag
 
 bool Pane::focusNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -360,7 +360,7 @@ bool Pane::focusNextMessageItem(MessageList::Core::MessageTypeFilter messageType
 
 bool Pane::focusPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -375,7 +375,7 @@ bool Pane::focusPreviousMessageItem(MessageList::Core::MessageTypeFilter message
 
 void Pane::selectFocusedMessageItem(bool centerItem)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -388,7 +388,7 @@ void Pane::selectFocusedMessageItem(bool centerItem)
 
 bool Pane::selectFirstMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -403,7 +403,7 @@ bool Pane::selectFirstMessageItem(MessageList::Core::MessageTypeFilter messageTy
 
 bool Pane::selectLastMessageItem(Core::MessageTypeFilter messageTypeFilter, bool centerItem)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -418,7 +418,7 @@ bool Pane::selectLastMessageItem(Core::MessageTypeFilter messageTypeFilter, bool
 
 void Pane::selectAll()
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -431,7 +431,7 @@ void Pane::selectAll()
 
 void Pane::setCurrentThreadExpanded(bool expand)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -444,7 +444,7 @@ void Pane::setCurrentThreadExpanded(bool expand)
 
 void Pane::setAllThreadsExpanded(bool expand)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -457,7 +457,7 @@ void Pane::setAllThreadsExpanded(bool expand)
 
 void Pane::setAllGroupsExpanded(bool expand)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         if (w->view()->model()->isLoading()) {
@@ -470,7 +470,7 @@ void Pane::setAllGroupsExpanded(bool expand)
 
 void Pane::focusQuickSearch(const QString &selectedText)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         w->focusQuickSearch(selectedText);
@@ -479,7 +479,7 @@ void Pane::focusQuickSearch(const QString &selectedText)
 
 void Pane::setQuickSearchClickMessage(const QString &msg)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (w) {
         w->setQuickSearchClickMessage(msg);
@@ -492,7 +492,7 @@ void Pane::Private::setCurrentFolder(const QModelIndex &etmIndex)
         q->createNewTab();
     }
 
-    auto *w = static_cast<Widget *>(q->currentWidget());
+    auto w = static_cast<Widget *>(q->currentWidget());
     QItemSelectionModel *s = mWidgetSelectionHash[w];
 
     w->saveCurrentSelection();
@@ -635,7 +635,7 @@ void Pane::Private::closeTab(QWidget *w)
         return;
     }
 
-    auto *wWidget = qobject_cast<Widget *>(w);
+    auto wWidget = qobject_cast<Widget *>(w);
     if (wWidget) {
         wWidget->saveCurrentSelection();
     }
@@ -647,7 +647,7 @@ void Pane::Private::closeTab(QWidget *w)
 void Pane::Private::changeQuicksearchVisibility(bool show)
 {
     for (int i = 0; i < q->count(); ++i) {
-        auto *w = qobject_cast<Widget *>(q->widget(i));
+        auto w = qobject_cast<Widget *>(q->widget(i));
         if (w) {
             w->changeQuicksearchVisibility(show);
         }
@@ -657,7 +657,7 @@ void Pane::Private::changeQuicksearchVisibility(bool show)
 bool Pane::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::MouseButtonPress) {
-        auto *const mouseEvent = static_cast<QMouseEvent *>(event);
+        auto const mouseEvent = static_cast<QMouseEvent *>(event);
         if (mouseEvent->button() == Qt::MiddleButton) {
             return true;
         }
@@ -669,7 +669,7 @@ void Pane::Private::onCurrentTabChanged()
 {
     Q_EMIT q->currentTabChanged();
 
-    auto *w = static_cast<Widget *>(q->currentWidget());
+    auto w = static_cast<Widget *>(q->currentWidget());
 
     QItemSelectionModel *s = mWidgetSelectionHash[w];
 
@@ -688,7 +688,7 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
         return;
     }
 
-    auto *w = qobject_cast<Widget *>(q->widget(indexBar));
+    auto w = qobject_cast<Widget *>(q->widget(indexBar));
     if (!w) {
         return;
     }
@@ -715,7 +715,7 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
                 continue; // Skip the current one
             }
 
-            auto *other = qobject_cast<Widget *>(q->widget(i));
+            auto other = qobject_cast<Widget *>(q->widget(i));
             if (other) {
                 widgets << other;
             }
@@ -744,7 +744,7 @@ MessageList::StorageModel *Pane::createStorageModel(QAbstractItemModel *model, Q
 
 Akonadi::Collection Pane::currentFolder() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         return w->currentCollection();
     }
@@ -757,7 +757,7 @@ void Pane::setCurrentFolder(const Akonadi::Collection &collection,
                             Core::PreSelectionMode preSelectionMode,
                             const QString &overrideLabel)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (!w->isLocked()) {
         d->setCurrentFolder(etmIndex);
         d->mPreSelectionMode = preSelectionMode;
@@ -777,7 +777,7 @@ void Pane::setCurrentFolder(const Akonadi::Collection &collection,
 void Pane::updateTabIconText(const Akonadi::Collection &collection, const QString &label, const QIcon &icon)
 {
     for (int i = 0; i < count(); ++i) {
-        auto *w = qobject_cast<Widget *>(widget(i));
+        auto w = qobject_cast<Widget *>(widget(i));
         if (w && (w->currentCollection() == collection)) {
             const int index = indexOf(w);
             setTabText(index, label);
@@ -788,7 +788,7 @@ void Pane::updateTabIconText(const Akonadi::Collection &collection, const QStrin
 
 QItemSelectionModel *Pane::createNewTab()
 {
-    auto *w = new Widget(this);
+    auto w = new Widget(this);
     w->setXmlGuiClient(d->mXmlGuiClient);
 
     addTab(w, i18nc("@title:tab Empty messagelist", "Empty"));
@@ -800,7 +800,7 @@ QItemSelectionModel *Pane::createNewTab()
         }
     }
 
-    auto *s = new QItemSelectionModel(d->mModel, w);
+    auto s = new QItemSelectionModel(d->mModel, w);
     MessageList::StorageModel *m = createStorageModel(d->mModel, s, w);
     w->setStorageModel(m);
 
@@ -885,7 +885,7 @@ void Pane::Private::updateTabControls()
 
 Akonadi::Item Pane::currentItem() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (!w) {
         return Item();
@@ -896,7 +896,7 @@ Akonadi::Item Pane::currentItem() const
 
 KMime::Message::Ptr Pane::currentMessage() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
 
     if (!w) {
         return KMime::Message::Ptr();
@@ -907,7 +907,7 @@ KMime::Message::Ptr Pane::currentMessage() const
 
 QVector<KMime::Message::Ptr> Pane::selectionAsMessageList(bool includeCollapsedChildren) const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
         return QVector<KMime::Message::Ptr>();
     }
@@ -916,7 +916,7 @@ QVector<KMime::Message::Ptr> Pane::selectionAsMessageList(bool includeCollapsedC
 
 Akonadi::Item::List Pane::selectionAsMessageItemList(bool includeCollapsedChildren) const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
         return Akonadi::Item::List();
     }
@@ -925,7 +925,7 @@ Akonadi::Item::List Pane::selectionAsMessageItemList(bool includeCollapsedChildr
 
 QVector<Akonadi::Item::Id> Pane::selectionAsListMessageId(bool includeCollapsedChildren) const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
         return QVector<Akonadi::Item::Id>();
     }
@@ -934,7 +934,7 @@ QVector<Akonadi::Item::Id> Pane::selectionAsListMessageId(bool includeCollapsedC
 
 QVector<qlonglong> Pane::selectionAsMessageItemListId(bool includeCollapsedChildren) const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
         return QVector<qlonglong>();
     }
@@ -943,7 +943,7 @@ QVector<qlonglong> Pane::selectionAsMessageItemListId(bool includeCollapsedChild
 
 Akonadi::Item::List Pane::currentThreadAsMessageList() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
         return Akonadi::Item::List();
     }
@@ -952,7 +952,7 @@ Akonadi::Item::List Pane::currentThreadAsMessageList() const
 
 Akonadi::Item::List Pane::itemListFromPersistentSet(MessageList::Core::MessageItemSetReference ref)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         return w->itemListFromPersistentSet(ref);
     }
@@ -961,7 +961,7 @@ Akonadi::Item::List Pane::itemListFromPersistentSet(MessageList::Core::MessageIt
 
 void Pane::deletePersistentSet(MessageList::Core::MessageItemSetReference ref)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         w->deletePersistentSet(ref);
     }
@@ -969,7 +969,7 @@ void Pane::deletePersistentSet(MessageList::Core::MessageItemSetReference ref)
 
 void Pane::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSetReference ref, bool bMark)
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         w->markMessageItemsAsAboutToBeRemoved(ref, bMark);
     }
@@ -977,7 +977,7 @@ void Pane::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSetR
 
 QVector<Akonadi::MessageStatus> Pane::currentFilterStatus() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
         return QVector<Akonadi::MessageStatus>();
     }
@@ -986,7 +986,7 @@ QVector<Akonadi::MessageStatus> Pane::currentFilterStatus() const
 
 Core::QuickSearchLine::SearchOptions Pane::currentOptions() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
         return Core::QuickSearchLine::SearchEveryWhere;
     }
@@ -995,7 +995,7 @@ Core::QuickSearchLine::SearchOptions Pane::currentOptions() const
 
 QString Pane::currentFilterSearchString() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         return w->currentFilterSearchString();
     }
@@ -1004,7 +1004,7 @@ QString Pane::currentFilterSearchString() const
 
 bool Pane::isThreaded() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         return w->isThreaded();
     }
@@ -1013,7 +1013,7 @@ bool Pane::isThreaded() const
 
 bool Pane::selectionEmpty() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         return w->selectionEmpty();
     }
@@ -1025,7 +1025,7 @@ bool Pane::getSelectionStats(Akonadi::Item::List &selectedItems,
                              bool *allSelectedBelongToSameThread,
                              bool includeCollapsedChildren) const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
         return false;
     }
@@ -1035,7 +1035,7 @@ bool Pane::getSelectionStats(Akonadi::Item::List &selectedItems,
 
 MessageList::Core::MessageItemSetReference Pane::selectionAsPersistentSet(bool includeCollapsedChildren) const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         return w->selectionAsPersistentSet(includeCollapsedChildren);
     }
@@ -1044,7 +1044,7 @@ MessageList::Core::MessageItemSetReference Pane::selectionAsPersistentSet(bool i
 
 MessageList::Core::MessageItemSetReference Pane::currentThreadAsPersistentSet() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         return w->currentThreadAsPersistentSet();
     }
@@ -1053,7 +1053,7 @@ MessageList::Core::MessageItemSetReference Pane::currentThreadAsPersistentSet() 
 
 void Pane::focusView()
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         QWidget *view = w->view();
         if (view) {
@@ -1069,7 +1069,7 @@ void Pane::reloadGlobalConfiguration()
 
 QItemSelectionModel *Pane::currentItemSelectionModel()
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         return w->view()->selectionModel();
     }
@@ -1078,9 +1078,9 @@ QItemSelectionModel *Pane::currentItemSelectionModel()
 
 void Pane::resetModelStorage()
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
-        auto *m = static_cast<MessageList::StorageModel *>(w->storageModel());
+        auto m = static_cast<MessageList::StorageModel *>(w->storageModel());
         if (m) {
             m->resetModelStorage();
         }
@@ -1095,7 +1095,7 @@ void Pane::setPreferEmptyTab(bool emptyTab)
 void Pane::saveCurrentSelection()
 {
     for (int i = 0; i < count(); ++i) {
-        auto *w = qobject_cast<Widget *>(widget(i));
+        auto w = qobject_cast<Widget *>(widget(i));
         if (w) {
             w->saveCurrentSelection();
         }
@@ -1105,7 +1105,7 @@ void Pane::saveCurrentSelection()
 void Pane::updateTagComboBox()
 {
     for (int i = 0; i < count(); ++i) {
-        auto *w = qobject_cast<Widget *>(widget(i));
+        auto w = qobject_cast<Widget *>(widget(i));
         if (w) {
             w->populateStatusFilterCombo();
         }
@@ -1127,7 +1127,7 @@ void Pane::writeConfig(bool restoreSession)
         conf.writeEntry(QStringLiteral("tabNumber"), count());
 
         for (int i = 0; i < count(); ++i) {
-            auto *w = qobject_cast<Widget *>(widget(i));
+            auto w = qobject_cast<Widget *>(widget(i));
             if (w) {
                 KConfigGroup grp(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListTab%1").arg(i));
                 grp.writeEntry(QStringLiteral("collectionId"), w->currentCollection().id());
@@ -1177,7 +1177,7 @@ void Pane::restoreHeaderSettings(int index)
 {
     KConfigGroup grp(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListTab%1").arg(index));
     if (grp.exists()) {
-        auto *w = qobject_cast<Widget *>(widget(index));
+        auto w = qobject_cast<Widget *>(widget(index));
         if (w) {
             w->view()->header()->restoreState(grp.readEntry(QStringLiteral("HeaderState"), QByteArray()));
         }
@@ -1186,7 +1186,7 @@ void Pane::restoreHeaderSettings(int index)
 
 bool Pane::searchEditHasFocus() const
 {
-    auto *w = static_cast<Widget *>(currentWidget());
+    auto w = static_cast<Widget *>(currentWidget());
     if (w) {
         return w->searchEditHasFocus();
     }
@@ -1195,7 +1195,7 @@ bool Pane::searchEditHasFocus() const
 
 void Pane::sortOrderMenuAboutToShow()
 {
-    auto *menu = qobject_cast<QMenu *>(sender());
+    auto menu = qobject_cast<QMenu *>(sender());
     if (!menu) {
         return;
     }
@@ -1205,7 +1205,7 @@ void Pane::sortOrderMenuAboutToShow()
 
 void Pane::aggregationMenuAboutToShow()
 {
-    auto *menu = qobject_cast<QMenu *>(sender());
+    auto menu = qobject_cast<QMenu *>(sender());
     if (!menu) {
         return;
     }
@@ -1215,7 +1215,7 @@ void Pane::aggregationMenuAboutToShow()
 
 void Pane::themeMenuAboutToShow()
 {
-    auto *menu = qobject_cast<QMenu *>(sender());
+    auto menu = qobject_cast<QMenu *>(sender());
     if (!menu) {
         return;
     }
@@ -1226,7 +1226,7 @@ void Pane::themeMenuAboutToShow()
 void Pane::populateStatusFilterCombo()
 {
     for (int i = 0; i < count(); ++i) {
-        auto *w = qobject_cast<Widget *>(widget(i));
+        auto w = qobject_cast<Widget *>(widget(i));
         if (w) {
             w->populateStatusFilterCombo();
         }

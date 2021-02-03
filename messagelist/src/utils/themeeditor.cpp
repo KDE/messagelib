@@ -1225,7 +1225,7 @@ void ThemePreviewWidget::slotAddColumn()
     mSelectedThemeColumn->addMessageRow(new Theme::Row());
     mSelectedThemeColumn->addGroupHeaderRow(new Theme::Row());
 
-    auto *dlg = new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Add New Column"));
+    auto dlg = new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Add New Column"));
 
     if (dlg->exec() == QDialog::Accepted) {
         mTheme->insertColumn(newColumnIndex, mSelectedThemeColumn);
@@ -1249,7 +1249,7 @@ void ThemePreviewWidget::slotColumnProperties()
         return;
     }
 
-    auto *dlg = new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Column Properties"));
+    auto dlg = new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Column Properties"));
 
     if (dlg->exec() == QDialog::Accepted) {
         mSelectedThemeContentItem = nullptr;

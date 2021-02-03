@@ -1167,7 +1167,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             cannotDecrypt = true;
         } else {
             const QByteArray ciphertext = data.decodedContent();
-            auto *newM = new DecryptVerifyBodyPartMemento(job, ciphertext);
+            auto newM = new DecryptVerifyBodyPartMemento(job, ciphertext);
             if (mOtp->allowAsync()) {
                 QObject::connect(newM, &CryptoBodyPartMemento::update, nodeHelper, &NodeHelper::update);
                 if (newM->start()) {

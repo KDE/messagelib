@@ -1613,7 +1613,7 @@ void ComposerViewBase::setFcc(const Akonadi::Collection &fccCollection)
     } else {
         m_fccCollection = fccCollection;
     }
-    auto *const checkFccCollectionJob = new Akonadi::CollectionFetchJob(fccCollection, Akonadi::CollectionFetchJob::Base);
+    auto const checkFccCollectionJob = new Akonadi::CollectionFetchJob(fccCollection, Akonadi::CollectionFetchJob::Base);
     connect(checkFccCollectionJob, &KJob::result, this, &ComposerViewBase::slotFccCollectionCheckResult);
 }
 

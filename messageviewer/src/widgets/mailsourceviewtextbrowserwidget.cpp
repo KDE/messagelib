@@ -44,7 +44,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeech"));
     lay->addWidget(mTextToSpeechWidget);
 
-    auto *textToSpeechInterface = new KPIMTextEdit::TextToSpeechInterface(mTextToSpeechWidget, this);
+    auto textToSpeechInterface = new KPIMTextEdit::TextToSpeechInterface(mTextToSpeechWidget, this);
 
     mTextBrowser = new MailSourceViewTextBrowser(textToSpeechInterface);
     mTextBrowser->setObjectName(QStringLiteral("textbrowser"));
