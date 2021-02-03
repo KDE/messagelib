@@ -35,6 +35,8 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
             return true;
         } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeFontResource) {
             return true;
+        } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeStylesheet) {
+            return true;
         }
     }
     return false;
