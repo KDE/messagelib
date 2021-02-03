@@ -30,6 +30,8 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
     } else {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !info.requestUrl().isLocalFile() && (scheme != QLatin1String("cid"))) {
             return true;
+        } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeFontResource) {
+            return true;
         }
     }
     return false;
