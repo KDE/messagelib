@@ -1892,7 +1892,6 @@ Kleo::KeyResolver::ContactPreferences Kleo::KeyResolver::lookupContactPreference
         return it->second;
     }
 
-#ifdef HAVE_A_FIX_FOR_LOCK
     Akonadi::ContactSearchJob *job = new Akonadi::ContactSearchJob();
     job->setLimit(1);
     job->setQuery(Akonadi::ContactSearchJob::Email, address);
@@ -1922,10 +1921,6 @@ Kleo::KeyResolver::ContactPreferences Kleo::KeyResolver::lookupContactPreference
     // insert into map and grab resulting iterator
     d->mContactPreferencesMap.insert(std::make_pair(address, pref));
     return pref;
-#else
-    Q_UNUSED(address)
-    return ContactPreferences();
-#endif
 }
 
 void Kleo::KeyResolver::saveContactPreference(const QString &email, const ContactPreferences &pref) const
