@@ -28,8 +28,8 @@ private Q_SLOTS:
 
 private:
     void writeCustomContactProperties(KContacts::Addressee &contact, const Kleo::KeyResolver::ContactPreferences &pref) const;
-    QString mEmail;
-    Kleo::KeyResolver::ContactPreferences mPref;
+    const QString mEmail;
+    const Kleo::KeyResolver::ContactPreferences mPref;
 };
 }
 #endif // SAVECONTACTPREFERENCEJOB_H
