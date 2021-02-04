@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-set(PIM_VERSION "5.16.2")
+set(PIM_VERSION "5.16.3")
 
 if (POLICY CMP0053)
     cmake_policy(SET CMP0053 NEW)
@@ -98,7 +98,7 @@ find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG REQUIRED)
 
-find_package(KF5AkonadiSearch "5.15.3" CONFIG REQUIRED)
+find_package(KF5AkonadiSearch "5.16.2" CONFIG REQUIRED)
 set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://kde.org/" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
 
 set(CMAKE_CXX_STANDARD 14)
