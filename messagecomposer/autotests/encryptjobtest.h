@@ -31,6 +31,8 @@ private Q_SLOTS:
     void testProtectedHeaders_data();
     void testProtectedHeaders();
 
+    void testSetGnupgHome();
+
 private:
     void checkEncryption(MessageComposer::EncryptJob *eJob);
 };

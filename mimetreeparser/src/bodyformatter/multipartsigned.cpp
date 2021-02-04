@@ -74,9 +74,9 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
     const QTextCodec *aCodec(part.objectTreeParser()->codecFor(signedData));
 
     SignedMessagePart::Ptr mp(
-        new SignedMessagePart(part.objectTreeParser(), aCodec->toUnicode(cleartext), protocol, part.nodeHelper()->fromAsString(node), signature));
+        new SignedMessagePart(part.objectTreeParser(), aCodec->toUnicode(cleartext), protocol, part.nodeHelper()->fromAsString(node), signedData));
 
     mp->startVerificationDetached(cleartext, signedData, signature->decodedContent());
-
+    part.nodeHelper()->registerOverrideHeader(node, mp);
     return mp;
 }

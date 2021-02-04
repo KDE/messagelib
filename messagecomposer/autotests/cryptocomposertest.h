@@ -63,6 +63,15 @@ private Q_SLOTS:
     void testCTEbase64_data();
     void testCTEbase64();
 
+    void testSetGnupgHome_data();
+    void testSetGnupgHome();
+
+    void testAutocryptHeaders_data();
+    void testAutocryptHeaders();
+
+    void testAutocryptGossip_data();
+    void testAutocryptGossip();
+
     // TODO test the code for autodetecting the charset of a text attachment.
 private:
     void fillComposerData(MessageComposer::Composer *composer, const QString &data);

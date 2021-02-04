@@ -11,6 +11,7 @@
 #include "imagescaling/imagescaling.h"
 #include "imagescaling/imagescalingutils.h"
 #include "job/attachmentjob.h"
+#include "job/autocryptheadersjob.h"
 #include "job/encryptjob.h"
 #include "job/jobbase_p.h"
 #include "job/maintextjob.h"
@@ -58,7 +59,9 @@ public:
 
     void composeFinalStep(KMime::Content *headers, KMime::Content *content);
 
+    QString gnupgHome;
     QVector<QPair<QStringList, std::vector<GpgME::Key>>> encData;
+    GpgME::Key senderEncryptionKey;
     std::vector<GpgME::Key> signers;
     AttachmentPart::List attachmentParts;
     // attachments with different sign/encrypt settings from
@@ -82,6 +85,7 @@ public:
     bool encrypt = false;
     bool noCrypto = false;
     bool autoSaving = false;
+    bool autocryptEnabled = false;
     Q_DECLARE_PUBLIC(Composer)
 };
 
@@ -211,6 +215,21 @@ void ComposerPrivate::composeStep2()
         mainJob = multipartJob;
     }
 
+    if (autocryptEnabled) {
+        auto autocryptJob = new AutocryptHeadersJob();
+        autocryptJob->setSkeletonMessage(skeletonMessage);
+        autocryptJob->setGnupgHome(gnupgHome);
+        autocryptJob->appendSubjob(mainJob);
+        autocryptJob->setSenderKey(senderEncryptionKey);
+        if (encrypt && format & Kleo::OpenPGPMIMEFormat) {
+            qDebug() << "Add gossip?" << encData[0].first.size() << encData[0].second.size();
+            if (encData[0].first.size() > 1 && encData[0].second.size() > 2) {
+                autocryptJob->setGossipKeys(encData[0].second);
+            }
+        }
+        mainJob = autocryptJob;
+    }
+
     if (sign) {
         auto sJob = new SignJob(q);
         sJob->setCryptoMessageFormat(format);
@@ -282,6 +301,7 @@ QList<ContentJobBase *> ComposerPrivate::createEncryptJobs(ContentJobBase *conte
             eJob->setEncryptionKeys(recipients.second);
             eJob->setRecipients(recipients.first);
             eJob->setSkeletonMessage(skeletonMessage);
+            eJob->setGnupgHome(gnupgHome);
             subJob = eJob;
         }
         qCDebug(MESSAGECOMPOSER_LOG) << "subJob" << subJob;
@@ -567,6 +587,34 @@ void Composer::setNoCrypto(bool noCrypto)
     Q_D(Composer);
 
     d->noCrypto = noCrypto;
+}
+
+void Composer::setAutocryptEnabled(bool autocryptEnabled)
+{
+    Q_D(Composer);
+
+    d->autocryptEnabled = autocryptEnabled;
+}
+
+void Composer::setSenderEncryptionKey(const GpgME::Key &senderKey)
+{
+    Q_D(Composer);
+
+    d->senderEncryptionKey = senderKey;
+}
+
+void Composer::setGnupgHome(const QString &path)
+{
+    Q_D(Composer);
+
+    d->gnupgHome = path;
+}
+
+QString Composer::gnupgHome() const
+{
+    Q_D(const Composer);
+
+    return d->gnupgHome;
 }
 
 bool Composer::finished() const

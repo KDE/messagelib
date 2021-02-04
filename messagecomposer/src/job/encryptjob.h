@@ -48,6 +48,8 @@ public:
     void setProtectedHeaders(bool protectedHeaders);
     void setProtectedHeadersObvoscate(bool protectedHeadersObvoscate);
 
+    void setGnupgHome(const QString &path);
+
     std::vector<GpgME::Key> encryptionKeys() const override;
     QStringList recipients() const override;
 

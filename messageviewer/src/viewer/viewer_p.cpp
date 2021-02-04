@@ -85,6 +85,7 @@
 #include <AkonadiCore/itemfetchjob.h>
 #include <AkonadiCore/itemfetchscope.h>
 
+#include <MessageCore/AutocryptUtils>
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
 
@@ -830,20 +831,21 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     }
 
     auto *message = dynamic_cast<KMime::Message *>(content);
+    bool onlySingleNode = mMessage.data() != content;
 
     // Pass control to the OTP now, which does the real work
     mNodeHelper->setNodeUnprocessed(mMessage.data(), true);
     MailViewerSource otpSource(this);
     MimeTreeParser::ObjectTreeParser otp(&otpSource, mNodeHelper);
-    // TODO: needs to end up in renderer: mMessage.data() != content /* show only single node */);
+
     otp.setAllowAsync(!mPrinting);
-    otp.parseObjectTree(content, mMessage.data() != content /* parse/show only single node */);
+    otp.parseObjectTree(content, onlySingleNode);
     htmlWriter()->setCodec(otp.plainTextContentCharset());
     if (message) {
         htmlWriter()->write(writeMessageHeader(message, hasVCard ? vCardContent : nullptr, true));
     }
 
-    otpSource.render(otp.parsedPart(), mMessage.data() != content /* parse/show only single node */);
+    otpSource.render(otp.parsedPart(), onlySingleNode);
 
     // TODO: Setting the signature state to nodehelper is not enough, it should actually
     // be added to the store, so that the message list correctly displays the signature state
@@ -857,6 +859,11 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     // decryption of a signed messages which has already been decrypted before).
     if (signatureState != MimeTreeParser::KMMsgNotSigned || mNodeHelper->signatureState(content) == MimeTreeParser::KMMsgSignatureStateUnknown) {
         mNodeHelper->setSignatureState(content, signatureState);
+    }
+
+    if (!onlySingleNode && isAutocryptEnabled(message)) {
+        auto mixup = HeaderMixupNodeHelper(mNodeHelper, message);
+        processAutocryptfromMail(mixup);
     }
 
     showHideMimeTree();

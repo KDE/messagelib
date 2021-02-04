@@ -490,7 +490,37 @@ void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
 
 bool NodeHelper::hasMailHeader(const char *header, const KMime::Content *message) const
 {
+    if (mHeaderOverwrite.contains(message)) {
+        foreach (const auto messagePart, mHeaderOverwrite.value(message)) {
+            if (messagePart->hasHeader(header)) {
+                return true;
+            }
+        }
+    }
     return message->hasHeader(header);
+}
+
+QVector<MessagePart::Ptr> NodeHelper::messagePartsOfMailHeader(const char *header, const KMime::Content *message) const
+{
+    QVector<MessagePart::Ptr> ret;
+    if (mHeaderOverwrite.contains(message)) {
+        foreach (const auto messagePart, mHeaderOverwrite.value(message)) {
+            if (messagePart->hasHeader(header)) {
+                ret << messagePart;
+            }
+        }
+    }
+    return ret;
+}
+
+QVector<KMime::Headers::Base *> NodeHelper::headers(const char *header, const KMime::Content *message)
+{
+    const auto mp = messagePartsOfMailHeader(header, message);
+    if (mp.size() > 0) {
+        return mp.value(0)->headers(header);
+    }
+
+    return message->headersByType(header);
 }
 
 KMime::Headers::Base const *NodeHelper::mailHeaderAsBase(const char *header, const KMime::Content *message) const
@@ -507,10 +537,12 @@ KMime::Headers::Base const *NodeHelper::mailHeaderAsBase(const char *header, con
 
 QSharedPointer<KMime::Headers::Generics::AddressList> NodeHelper::mailHeaderAsAddressList(const char *header, const KMime::Content *message) const
 {
-    QSharedPointer<KMime::Headers::Generics::AddressList> addressList(new KMime::Headers::Generics::AddressList());
     const auto hrd = mailHeaderAsBase(header, message);
-    const QByteArray &data = hrd->as7BitString(false);
-    addressList->from7BitString(data);
+    if (!hrd) {
+        return nullptr;
+    }
+    QSharedPointer<KMime::Headers::Generics::AddressList> addressList(new KMime::Headers::Generics::AddressList());
+    addressList->from7BitString(hrd->as7BitString(false));
     return addressList;
 }
 

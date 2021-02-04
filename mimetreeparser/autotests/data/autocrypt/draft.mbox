@@ -1,0 +1,48 @@
+From: Alice <alice@autocrypt.example>
+To: Bob <bob@autocrypt.example>
+Subject: an example of a Draft
+Date: Wed, 30 Jan 2019 18:48:38 +0100
+Message-ID: <1b6828d5-61d5-40b4-8b42-bc318cfd2ad9@autocrypt.example>
+MIME-Version: 1.0
+Autocrypt-Draft-State: encrypt=yes; _by-choice=yes;
+Content-Type: multipart/encrypted;
+ protocol="application/pgp-encrypted";
+ boundary="PLdq3hBodDceBdiavo4rbQeh0u8JfdUHL"
+
+--PLdq3hBodDceBdiavo4rbQeh0u8JfdUHL
+Content-Type: application/pgp-encrypted
+Content-Description: PGP/MIME version identification
+
+Version: 1
+
+--PLdq3hBodDceBdiavo4rbQeh0u8JfdUHL
+Content-Type: application/octet-stream; name="encrypted.asc"
+Content-Description: OpenPGP encrypted message
+Content-Disposition: inline; filename="encrypted.asc"
+
+-----BEGIN PGP MESSAGE-----
+
+hIwDGJlthTT7oq0BBACK9MU/qOYLLYc49Cr+GcPcEac9raEF0DLGQG0akI2Jqva+
+eMa7vp2aFkEuKLEOB8pFXpVVM2lxytB60ltfMSYcilI25OI9/8QYuXoyGP0mlAYU
+fOuzsLg23r4/KG+9KqK24hNWJ+DaboTTe42NRGojzrcUQ+dCLcTf2Jos4WjGAtLp
+AeQQT5yr5XLERoorSJd4olgsG5IyzSFpkYzgz//9yL/Ow/6yE5aWkAvtGJakWr94
+xCaQT4I0H3tPukJA7NxeQn9VckLgLimChsDpVXaqkNMDWa8zLQaUMI73DhVSwYfv
+E1Bliz3Hmci2qSErN/thVcjZt/fYIcimB8SRTljbM7HMB9TsBeuyG66OHWlaU9zu
+5pd897SvQpehe6BsP2LUa0fuPZNXSb1EUwU/Zdxz5NjXB+8SS2h0Exsg4hyio9Yk
+020j2lAEFbF/aSPwJldOOMPl/zkjDKjjQzBsLdSmaQv762553pknX2KklXx15a7P
+CwcpJ+WOh2Cz0nNgU+JKul7pexZ13Hz8csheNclahtwT25p1jjQgf1NeVj24iVH+
+W9NV3fPMa5jU5M+oCQaZm/v7N+Ua1Sk3nvCg+VqfL7FA1raJEUXtbM5FORCd5gOc
+ct1Ua8Qh3bAFxAWbMztd9uvAKuqFLSvstOeCGbRJkCP+y/0P4bGAGQ0aUv1b7Mea
+l27OmPJRZYz3vNZKIgvt1rUZn7XBAIG+RzXAYN9TsuHcFfElojY7FpJO7ffYg4t6
+DjVWYxeFVY3UbEi+DVBtf9x4TU9qYaC9Jx39kWPzd4RfnXg04VqSpFmwHUSNnsGM
+5N0fsC1qCXqVshlf9r9UDrlyWFNe1xpc3wcdYA36WR/ATUDM5V/AEepn3zZyjnTE
+/OZs7U7Ws6N0AXR+O/I6zvn1S2Z/JLiS/4Wn3q1GKW5dW+Wro7hZEzdnOevf348Q
+qEEsCdueZC6dMLeu+hCqTM8INFi6IJXw4YOTYtGqtD73l95Jg1Y1cadhoCvATkzG
+aiGmCorgcJO6IokhS92Tyidoy3IUdQCNGJuBwPFkmJQayjoNt+krSncy9JuBjWbe
+PT2bp1pk2CxdEyn3qGVwGo/7l4JP0Us7e9Pa/Q/JKUCIlU7E5Fd9b5rpAXg6nyX/
+Y2UybUZjIlT3N8PogsSfHquzQbUe2jjGcrA3rx8qjmu0K9IjADHcp7Og65Wwge4z
+Cpi9uc8R3O6Vh6JmZ6nd
+=J6rH
+-----END PGP MESSAGE-----
+
+--PLdq3hBodDceBdiavo4rbQeh0u8JfdUHL--

@@ -1,0 +1,29 @@
+Delivered-To: <bob@autocrypt.example>
+From: Alice <alice@autocrypt.example>
+To: Bob <bob@autocrypt.example>
+Subject: an Autocrypt header example using Ed25519+Cv25519 key
+Autocrypt: addr=alice@autocrypt.example; prefer-encrypt=mutual; keydata=
+ mDMEXEcE6RYJKwYBBAHaRw8BAQdArjWwk3FAqyiFbFBKT4TzXcVBqPTB3gmzlC/Ub7O1u120F2F
+ saWNlQGF1dG9jcnlwdC5leGFtcGxliJYEExYIAD4WIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXE
+ cE6QIbAwUJA8JnAAULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRDyMVUMT0fjjkqLAP9frlijw
+ BJvA+HFnqCZcYIVxlyXzS5Gi5gMTpp37K73jgD/VbKYhkwk9iu689OYH4K7q7LbmdeaJ+RX88Y/
+ ad9hZwy4OARcRwTpEgorBgEEAZdVAQUBAQdAQv8GIa2rSTzgqbXCpDDYMiKRVitCsy203x3sE9+
+ eviIDAQgHiHgEGBYIACAWIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbDAAKCRDyMVUMT0
+ fjjlnQAQDFHUs6TIcxrNTtEZFjUFm1M0PJ1Dng/cDW4xN80fsn0QEA22Kr7VkCjeAEC08VSTeV+
+Autocrypt: addr=alice@autocrypt.example; invalid_key=test; keydata=
+ mDMEXEcE6RYJKwYBBAHaRw8BAQdAPPy13Q7Y8w2VPRkksrijrn9o8u59ra1c2CJiHFpbM2G0FWJ
+ vYkBhdXRvY3J5cHQuZXhhbXBsZYiWBBMWCAA+FiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBO
+ kCGwMFCQPCZwAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQ4w5v3UWQH4IfwAEA3lujohz3N
+ j9afUnaGUXN7YboIzQsmpgGkN8thyb/slIBAKwdJyg1SurKqHnxy3Wl/DBzOrR12/pN7nScn0+x
+ 4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbF
+ jAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwwACgkQ4w5v3UWQH4
+ LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNb
+ Gfav9X5KYmiratYR7oL
+QFsmz55/lntWkwYWhmvOgE=
+Date: Tue, 22 Jan 2019 12:56:25 +0100
+Message-ID: <abe640bb-018d-4f9d-b4d8-1636d6164e22@autocrypt.example>
+MIME-Version: 1.0
+Content-Type: text/plain
+
+This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key
+fingerprint: ) as defined in Level 1 revision 1.1.

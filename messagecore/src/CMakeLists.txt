@@ -1,6 +1,11 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
 
 ########### next target ###############
+set(messagecore_autocrypt_LIB_SRCS
+    autocrypt/autocryptutils.cpp
+    autocrypt/autocryptrecipient.cpp
+    autocrypt/autocryptstorage.cpp
+)
 
 set(messagecore_attachment_LIB_SRCS
     attachment/attachmentcompressjob.cpp
@@ -32,6 +37,7 @@ set(messagecore_utils_LIB_SRCS
     )
 
 set(messagecore_LIB_SRCS
+    ${messagecore_autocrypt_LIB_SRCS}
     ${messagecore_attachment_LIB_SRCS}
     ${messagecore_misc_LIB_SRCS}
     ${messagecore_helper_LIB_SRCS}
@@ -54,6 +60,10 @@ ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER messagecore_debug.h 
         EXPORT MESSAGELIB
     )
 
+ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER autocrypt_debug.h IDENTIFIER AUTOCRYPT_LOG CATEGORY_NAME org.kde.pim.messagecore.autocrypt
+        DESCRIPTION "messagelib (messagecore.autocrypt)"
+        EXPORT MESSAGELIB
+    )
 
 add_library(KF5MessageCore ${messagecore_LIB_SRCS})
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -67,6 +77,7 @@ target_link_libraries(KF5MessageCore
     PUBLIC
     KF5::Mime
     PRIVATE
+    QGpgme
     KF5::KIOCore
     KF5::Codecs
     KF5::PimTextEdit
@@ -75,6 +86,7 @@ target_link_libraries(KF5MessageCore
     Qt5::Network
     KF5::I18n
     KF5::IdentityManagement
+    KF5::MimeTreeParser
     KF5::PimCommon
     )
 
@@ -141,6 +153,16 @@ ecm_generate_headers(MessageCore_Camelcasehelpers_HEADERS
     REQUIRED_HEADERS MessageCore_helpers_HEADERS
     PREFIX MessageCore
     RELATIVE helpers
+    )
+
+ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
+    HEADER_NAMES
+    AutocryptRecipient
+    AutocryptStorage
+    AutocryptUtils
+    REQUIRED_HEADERS MessageCore_autocrypt_HEADERS
+    PREFIX MessageCore
+    RELATIVE autocrypt
     )
 
 ecm_generate_pri_file(BASE_NAME MessageCore

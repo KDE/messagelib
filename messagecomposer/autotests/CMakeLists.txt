@@ -86,10 +86,39 @@ add_messagecomposer_test( sendlaterdialogtest.cpp )
 add_messagecomposer_test( sendlaterinfotest.cpp )
 
 # Crypto
+add_messagecomposer_cryptotest( autocryptheadersjobtest.cpp )
 add_messagecomposer_cryptotest( signjobtest.cpp )
 add_messagecomposer_cryptotest( encryptjobtest.cpp )
 add_messagecomposer_cryptotest( signencrypttest.cpp )
 add_messagecomposer_cryptotest( signandencrypttest.cpp )
+
+add_executable( keyresolvertest
+    cryptofunctions.cpp
+    setupenv.cpp
+    keyresolvertest.cpp
+)
+target_link_libraries( keyresolvertest
+    KF5::AkonadiCore
+    KF5::Completion
+    KF5::Contacts
+    KF5::GuiAddons
+    KF5::I18n
+    KF5::IconThemes
+    KF5::Ldap
+    KF5::Libkdepim
+    KF5::Libkleo
+    KF5::MailTransport
+    KF5::MessageComposer
+    KF5::MessageCore
+    KF5::MessageViewer
+    KF5::Mime
+    KF5::PimTextEdit
+    QGpgme
+    Qt5::Test
+)
+add_gpg_crypto_test(keyresolvertest messagecomposer-keyresolvertest)
+set_tests_properties(messagecomposer-keyresolvertest PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent
+
 if (KDEPIM_RUN_AKONADI_TEST)
 	set(KDEPIMLIBS_RUN_ISOLATED_TESTS TRUE)
 	set(KDEPIMLIBS_RUN_SQLITE_ISOLATED_TESTS TRUE)

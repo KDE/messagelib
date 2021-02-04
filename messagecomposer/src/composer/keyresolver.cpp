@@ -32,6 +32,9 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
+#include <MessageCore/AutocryptRecipient>
+#include <MessageCore/AutocryptStorage>
+
 #include <QPointer>
 
 #include <algorithm>
@@ -607,6 +610,7 @@ struct FormatInfo {
 };
 
 struct Q_DECL_HIDDEN Kleo::KeyResolver::Private {
+    bool mAutocryptEnabled;
     std::set<QByteArray> alreadyWarnedFingerprints;
 
     std::vector<GpgME::Key> mOpenPGPSigningKeys; // signing
@@ -623,6 +627,7 @@ struct Q_DECL_HIDDEN Kleo::KeyResolver::Private {
     // key=email address, value=crypto preferences for this contact (from kabc)
     typedef std::map<QString, ContactPreferences> ContactPreferencesMap;
     ContactPreferencesMap mContactPreferencesMap;
+    std::map<QByteArray, QString> mAutocryptMap;
 };
 
 Kleo::KeyResolver::KeyResolver(bool encToSelf,
@@ -1649,6 +1654,16 @@ std::vector<Kleo::KeyResolver::SplitInfo> Kleo::KeyResolver::encryptionItems(Kle
     return it != d->mFormatInfoMap.end() ? it->second.splitInfos : std::vector<SplitInfo>();
 }
 
+void Kleo::KeyResolver::setAutocryptEnabled(bool autocryptEnabled)
+{
+    d->mAutocryptEnabled = autocryptEnabled;
+}
+
+std::map<QByteArray, QString> Kleo::KeyResolver::useAutocrypt() const
+{
+    return d->mAutocryptMap;
+}
+
 std::vector<GpgME::Key> Kleo::KeyResolver::signingKeys(CryptoMessageFormat f) const
 {
     dump();
@@ -1735,6 +1750,35 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
     // Now search all public keys for matching keys
     std::vector<GpgME::Key> matchingKeys = lookup(QStringList(address));
     matchingKeys.erase(std::remove_if(matchingKeys.begin(), matchingKeys.end(), NotValidEncryptionKey), matchingKeys.end());
+
+    if (matchingKeys.empty() && d->mAutocryptEnabled) {
+        qCDebug(MESSAGECOMPOSER_LOG) << "Search in Autocrypt storage a key for " << address;
+        const auto storage = MessageCore::AutocryptStorage::self();
+        const auto recipient = storage->getRecipient(address.toUtf8());
+        if (recipient) {
+            const auto key = recipient->gpgKey();
+            if (!key.isNull() && ValidEncryptionKey(key)) {
+                qCDebug(MESSAGECOMPOSER_LOG) << "Found an valid autocrypt key.";
+                matchingKeys.push_back(key);
+            } else {
+                const auto gossipKey = recipient->gossipKey();
+                if (!gossipKey.isNull() && ValidEncryptionKey(gossipKey)) {
+                    qCDebug(MESSAGECOMPOSER_LOG) << "Found an valid autocrypt gossip key.";
+                    matchingKeys.push_back(gossipKey);
+                }
+            }
+        }
+        // Accept any autocrypt key, as the validility is not used in Autocrypt.
+        if (matchingKeys.size() == 1) {
+            if (recipient->prefer_encrypt()) {
+                d->mContactPreferencesMap[address].encryptionPreference = AlwaysEncrypt;
+            } else {
+                d->mContactPreferencesMap[address].encryptionPreference = AlwaysEncryptIfPossible;
+            }
+            d->mAutocryptMap[matchingKeys[0].primaryFingerprint()] = address;
+            return matchingKeys;
+        }
+    }
 
     // if called with quite == true (from EncryptionPreferenceCounter), we only want to
     // check if there are keys for this recipients, not (yet) their validity, so

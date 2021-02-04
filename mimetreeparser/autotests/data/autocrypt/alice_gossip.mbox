@@ -1,0 +1,65 @@
+Delivered-To: <alice@autocrypt.example>
+From: Bob <bob@autocrypt.example>
+To: Alice <alice@autocrypt.example>, Carol <carol@autocrypt.example>
+Subject: an Autocrypt Gossip header example
+Autocrypt: addr=bob@autocrypt.example; keydata=
+ mDMEXEcE6RYJKwYBBAHaRw8BAQdAPPy13Q7Y8w2VPRkksrijrn9o8u59ra1c2CJiHFpbM2G0FWJ
+ vYkBhdXRvY3J5cHQuZXhhbXBsZYiWBBMWCAA+FiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBO
+ kCGwMFCQPCZwAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQ4w5v3UWQH4IfwAEA3lujohz3N
+ j9afUnaGUXN7YboIzQsmpgGkN8thyb/slIBAKwdJyg1SurKqHnxy3Wl/DBzOrR12/pN7nScn0+x
+ 4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbF
+ jAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwwACgkQ4w5v3UWQH4
+ LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNb
+ Gfav9X5KYmiratYR7oL
+Date: Tue, 22 Jan 2019 12:56:29 +0100
+Message-ID: <alice-gossip@autocrypt.example>
+MIME-Version: 1.0
+Content-Type: multipart/encrypted;
+ protocol="application/pgp-encrypted";
+ boundary="PLdq3hBodDceBdiavo4rbQeh0u8JfdUHL"
+
+--PLdq3hBodDceBdiavo4rbQeh0u8JfdUHL
+Content-Type: application/pgp-encrypted
+Content-Description: PGP/MIME version identification
+
+Version: 1
+
+--PLdq3hBodDceBdiavo4rbQeh0u8JfdUHL
+Content-Type: application/octet-stream; name="encrypted.asc"
+Content-Description: OpenPGP encrypted message
+Content-Disposition: inline; filename="encrypted.asc"
+
+-----BEGIN PGP MESSAGE-----
+
+hIwDGJlthTT7oq0BA/0X36YL/oTufnE/dowMBgk0c4uLhdPHwtcLocq5VcTkotGB
+eVtCbEiqvYWShh51m0W+rPn9xAEkoIC/n+odLu13NkKwlvjomuYFbuW33qnzeOe2
+Tyu5YP0DuMVHcNiRZ5y+6tpoj5vYvtz7i2G7cLMwZ3XHqjeFCQoWSUVhBadmh9Lq
+AXpTTyOuvky/x6xKsjMiB82swM2mkCtDxYrZ7HYmwGX0m4D2r1lagcOzpqMxKoEr
+VqXy76Y9+bf1YHaklU2sEGvRuCS4c1Af8fwe1J0OUkggcsKVi8XvEhRIWb1ZnprW
+opYTGFO5X4BzSy+n110WEb/+mWibsQ/TdCZ6Bb1mmvZ7cBKSoae7/oWBFEWYFpO1
+QCGqHUYTN3ZS43eh0PqhINx8MafTp8KJ+baA0Czu+38Mx6sJHvo0WUs+rohxduLL
+8K2weY4v9zAyDTG0N8vqE3Sz40rPL7vnrKlaRspvpJM4gMY8atzlHsQXnIqShAZq
+hL83uwQxyanWrNIyBh+vO1ZLv6j7+T9VssYVfz7gY9kpI/blQUDlkRxY+OJmUKDq
+MgzvgVFpVuwW2/d1SV1o+N0/AFpfqgGvUinZfyMSk63AepjNDjsuvdu/5cabxnb3
+PgehI/gnjyYmnxs98xR8BBZynf5iVZCmbMxii1HKyzF4PaPvhQKiA83Ykp9XtfEK
+vS0L0M6uqtEzSw6RKg6FAmOmZv8Cmt5ZyCnzLFg4RQRV3Ok4c24HhPlVAke/yz0c
+Yi6rTYWkEtkSf6ADlmbpePsoFqAV97fK/ORxdtgTf4wl83tSCqDTRs1o8ZCugRff
+1rDdDmp6iOvLvPBYFZgemDjb/JrI0Af5f2LE0kZ02pCxCmKQLBGWyM2Hhya0nuyz
+zAkaXn++v2wrDiGi+3pduTHYBtXQm0+pjfb3dyRjX3DjsHXNy2Kbsk9nSgdrarnj
+SKjsyuodL2p4cEdvhrV345TLc5Al+gYBOiGsKNWOrCZxSlwT93Zh+UHOHla7Sk61
+zscGWbKHXsv8ODYMr7Shd2oHLiUqM65eZJQKbImXq3wmG558ynyPunpuGSbjC2IV
+GNZhyMFg5N9X3BWW2PoMj1ElmWExiIOXL6gX5MCTGY3fKzx5fMJ26KoA/DWBH8lm
+NkLr2Ai0bKSZihDphu3mh7PPTndIDLQ1yfHH4dFCnbSZtDGvibrfZVRoUrVOSUSO
+32EAZu7jJwIO7Tm/loKT6fD/ivoBvMO49/4wtJV5bWheJ7psOZvz5LClagnesPUI
+6WKAwSgqv/50JRnEi4S9RnIl8lHPQeaFzU9SjMsECOVywQyHvB0ymxIveEdMAz7N
+H8DNS8vHHpKDkOty5DQqMcVljGXobdG7ZCOWtDiwYqUt7AK74/uoY06fy2jAasYq
+s5S0OYhSfCknkZ+vHVGKHkxxR+jgts9Mr6vV/kK7ltP9m/cRc3GgFJ9IzSZ9WuYN
+ctAon6WBv2sQKgi9I2FTGiKQCpVnI3nTpoZ5Pj5g6/ICJcCROnLGOZ/Hl/zMBblg
+s/GYA54J2IQ8T7XQXbEcN55VUel9KSx0WA8Jt99ikskr+0RfzbtDg/9k4YhIznHF
+gnOaZAqNKsj8xvg5y3WqMv8wzLknW2xrLqCxk3XpWBUI7RHPmfOAiVvg/FTK+cc/
+t8vRdNpmyKj7SfPqZqtliJGPV2SDJnGc45o+wkt039seq/tNQ/ftE41zRVaJj7nz
+6kj44J3hc2BhXoNY/7X4blrJUjPWV8LnRl8ZcoNCfw==
+=MVLB
+-----END PGP MESSAGE-----
+
+--PLdq3hBodDceBdiavo4rbQeh0u8JfdUHL--

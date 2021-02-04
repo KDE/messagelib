@@ -254,16 +254,22 @@ void MessagePart::setIsImage(bool image)
     d->mIsImage = image;
 }
 
-bool MessagePart::hasHeader(const char *header) const
+bool MessagePart::hasHeader(const char *headerType) const
 {
-    Q_UNUSED(header)
+    Q_UNUSED(headerType)
     return false;
 }
 
-KMime::Headers::Base *MimeTreeParser::MessagePart::header(const char *header) const
+const KMime::Headers::Base *MimeTreeParser::MessagePart::header(const char *headerType) const
 {
-    Q_UNUSED(header)
+    Q_UNUSED(headerType)
     return nullptr;
+}
+
+QVector<KMime::Headers::Base *> MessagePart::headers(const char *headerType) const
+{
+    Q_UNUSED(headerType)
+    return QVector<KMime::Headers::Base *>();
 }
 
 //-----MessagePartList----------------------
@@ -1027,22 +1033,28 @@ QString SignedMessagePart::fromAddress() const
     return mFromAddress;
 }
 
-bool SignedMessagePart::hasHeader(const char *header) const
+bool SignedMessagePart::hasHeader(const char *headerType) const
 {
-    const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
-    if (extraContent) {
-        return extraContent->hasHeader(header);
+    if (content()) {
+        return content()->hasHeader(headerType);
     }
     return false;
 }
 
-KMime::Headers::Base *SignedMessagePart::header(const char *header) const
+const KMime::Headers::Base *MimeTreeParser::SignedMessagePart::header(const char *headerType) const
 {
-    const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
-    if (extraContent) {
-        return extraContent->headerByType(header);
+    if (content()) {
+        return content()->headerByType(headerType);
     }
     return nullptr;
+}
+
+QVector<KMime::Headers::Base *> SignedMessagePart::headers(const char *headerType) const
+{
+    if (content()) {
+        return content()->headersByType(headerType);
+    }
+    return QVector<KMime::Headers::Base *>();
 }
 
 //-----CryptMessageBlock---------------------
@@ -1378,22 +1390,31 @@ const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &En
     return mDecryptRecipients;
 }
 
-bool EncryptedMessagePart::hasHeader(const char *header) const
+bool EncryptedMessagePart::hasHeader(const char *headerType) const
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {
-        return extraContent->hasHeader(header);
+        return nodeHelper()->hasMailHeader(headerType, extraContent);
     }
     return false;
 }
 
-KMime::Headers::Base *EncryptedMessagePart::header(const char *header) const
+const KMime::Headers::Base *EncryptedMessagePart::header(const char *headerType) const
 {
     const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
     if (extraContent) {
-        return extraContent->headerByType(header);
+        return nodeHelper()->mailHeaderAsBase(headerType, extraContent);
     }
     return nullptr;
+}
+
+QVector<KMime::Headers::Base *> EncryptedMessagePart::headers(const char *headerType) const
+{
+    const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
+    if (extraContent) {
+        return nodeHelper()->headers(headerType, extraContent);
+    }
+    return QVector<KMime::Headers::Base *>();
 }
 
 EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message)

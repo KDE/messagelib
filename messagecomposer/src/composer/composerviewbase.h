@@ -321,6 +321,10 @@ private:
     void addSendLaterItem(const Akonadi::Item &item);
     void addCustomHeaders(const KMime::Message::Ptr &message);
 
+    bool addKeysToContext(const QString &gnupgHome,
+                          const QVector<QPair<QStringList, std::vector<GpgME::Key>>> &data,
+                          const std::map<QByteArray, QString> &autocryptMap);
+
     KMime::Message::Ptr m_msg;
     MessageComposer::AttachmentControllerBase *m_attachmentController = nullptr;
     MessageComposer::AttachmentModel *m_attachmentModel = nullptr;

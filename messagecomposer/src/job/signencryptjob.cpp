@@ -177,7 +177,7 @@ void SignEncryptJob::doStart()
 void SignEncryptJob::slotResult(KJob *job)
 {
     // Q_D(SignEncryptJob);
-    if (error()) {
+    if (error() || job->error()) {
         ContentJobBase::slotResult(job);
         return;
     }

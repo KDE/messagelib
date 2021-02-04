@@ -1,0 +1,46 @@
+From test@kolab.org Wed, 08 Sep 2010 17:02:52 +0200
+From: OpenPGP Test <test@kolab.org>
+To: test@kolab.org
+Subject: OpenPGP encrypted
+Date: Wed, 08 Sep 2010 17:02:52 +0200
+User-Agent: KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )
+MIME-Version: 1.0
+Content-Type: multipart/encrypted; boundary="nextPart1357031.ppLHckZtsp"; protocol="application/pgp-encrypted"
+Content-Transfer-Encoding: 7Bit
+
+
+--nextPart1357031.ppLHckZtsp
+Content-Type: application/pgp-encrypted
+Content-Disposition: attachment
+
+Version: 1
+--nextPart1357031.ppLHckZtsp
+Content-Type: application/octet-stream
+Content-Disposition: inline; filename="msg.asc"
+
+-----BEGIN PGP MESSAGE-----
+
+hIwDGJlthTT7oq0BBACKUsOJs8Uls4ZR1FgAMVFAQHPL17Lun4a+QAc0vm95ICaA
+zP80SvNprnOP4OfEbFdd+6j0j4MOR6X/5Rced4JbK3Q+5z7j0MtQZjnpXZPmyIA6
+ybkXL5omELPW4r9BHKHpnor3FnCoDd7aJTABR8R0OoBkBy6PjE16fmiBoJG0RNLp
+AQ94XBOBwB0NjvxhB8AnNWADgThx31HNnixcYs0SeQZxSAw9w4+Da/aGs1JGbeX7
+blh5lEVM55E5yHjoInBzhm5ahrDvG1x4ST6Z+FgSRhUXkzK9xVnBOh/De2m8nyYE
+FFOJ5JU0wzS9ShJWCP3rpy4Se7hnwJSTj+dOieJNpiDeJyXWMRrm61Ip+8xmyxUk
+euXlyVFC/kHrsyHq+SgqOS2T1NLm2fpY1is/jN56UaiEaPlNG5i2ZQVzH7rZWDWv
++rL0mOtBJHqtisMcWSITkuGGYVwRcBx6we9VUYv1AXo5dcHvfZUN4FfA1p3suoof
+dObn5JuxTyR7GD/wPlvtZ/0VMx2pRGNVkiqXbCa2074YCkRqVYpT00nCuGZ/4tlU
+fusYV3iMSFc9oXfObP0PRzmiV48/EGWAwaXkYlTuH9iLZDBnfYVOIWhcX4SHzVHv
+MpWm9gFPVb8NYKcnkIWSCiwHRTB7lkImJ463NlStAzu5mHnnbYW8fqItRU90U+Yk
+NpZEpONGcOdCD2qEarr/MmrsBnNLZ+/7VPoIFYxIpaao7X9cPLaxidlUEM1Ir7CI
+JBUTeIfoz7YtcmWbIJHt8XjBdaioDmI1mhdy0OyLIbyr3jwum3DiWplw7QOo3mDG
+ksvnmQbDKjQaAn9OpIbYtpkJD19zJWz2MtWqm83BxjnAY0xjZLrlJlA6xzWvazKe
+gzzkkV0Y9cmdxlPcypseWsD7IZun01vJd1GudzAdH7Bi30MKHjK5KendNRGxvIE4
+4ZY9xmuhty3p5GXxurs1lI7h96kvHorW1KiAyRUMbeBrhv2yU5XUIlu8JvzN/nPw
+DsDXYg/duH9ZDrnNzlopaxOaV3gmb47lh9UVrtsdSUmpCdfUkjvUDaMPAvpyxHOz
+D6T/TQOUUM68vcZRFPeYMD0toPqRNz2HDtFXOtj8h+GIOHwubXL+eHhC9Kl20Dx0
+PLow6Gtp9wFv4HKwSuVYiUl4XvxRe+TvSj6v6oheSDR+1mduf76GV76tF5QxLiZK
+5J11IRB3yrT6e5GEYHzyxlN+vDRLXCMy43u9NXh5GdCtNe3l1A==
+=XZOv
+-----END PGP MESSAGE-----
+
+--nextPart1357031.ppLHckZtsp--
