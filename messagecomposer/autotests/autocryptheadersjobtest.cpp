@@ -206,7 +206,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
 
     // Populate Keyring with needed keys.
     Test::populateKeyring(dir.path(), ownKeys[0]);
-    for (const auto key : keys) {
+    for (const auto &key : keys) {
         Test::populateKeyring(dir.path(), key);
     }
     auto aJob = new AutocryptHeadersJob(&composer);
