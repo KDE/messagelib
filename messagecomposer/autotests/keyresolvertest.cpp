@@ -11,20 +11,27 @@
 #include "qtest_messagecomposer.h"
 #include "setupenv.h"
 
+#include <AkonadiCore/Control>
+#include <qtest_akonadi.h>
+
 #include <QDebug>
 #include <QStandardPaths>
 #include <QTest>
 
-QTEST_MAIN(KeyResolverTest)
+QTEST_AKONADIMAIN(KeyResolverTest)
 
 using namespace MessageComposer;
 using namespace Kleo;
 
 void KeyResolverTest::initTestCase()
 {
-    Test::setupEnv();
+    qputenv("LC_ALL", "C");
+
     const QDir genericDataLocation(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     baseDir = QDir(genericDataLocation.filePath(QStringLiteral("autocrypt")));
+    AkonadiTest::checkTestIsIsolated();
+    Akonadi::Control::start();
+
 }
 
 void KeyResolverTest::init()
