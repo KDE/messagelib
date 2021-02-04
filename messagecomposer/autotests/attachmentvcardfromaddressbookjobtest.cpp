@@ -6,7 +6,7 @@
 */
 
 #include "attachmentvcardfromaddressbookjobtest.h"
-#include "MessageComposer/AttachmentVcardFromAddressBookJob"
+#include <MessageComposer/AttachmentVcardFromAddressBookJob>
 #include <KContacts/Addressee>
 #include <QTest>
 

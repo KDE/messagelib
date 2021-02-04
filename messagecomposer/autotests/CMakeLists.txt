@@ -119,11 +119,20 @@ target_link_libraries( keyresolvertest
 add_gpg_crypto_test(keyresolvertest messagecomposer-keyresolvertest)
 set_tests_properties(messagecomposer-keyresolvertest PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent
 
-if (KDEPIM_RUN_AKONADI_TEST)
-	set(KDEPIMLIBS_RUN_ISOLATED_TESTS TRUE)
-	set(KDEPIMLIBS_RUN_SQLITE_ISOLATED_TESTS TRUE)
+ecm_add_test(followupreminderselectdatedialogtest.cpp
+    NAME_PREFIX "messagecomposer-"
+    LINK_LIBRARIES
+        KF5::AkonadiCore
+        KF5::AkonadiWidgets
+        KF5::CalendarCore
+        KF5::MessageComposer
+        Qt5::Test
+)
 
-	add_akonadi_isolated_test_advanced(followupreminderselectdatedialogtest.cpp "" "KF5::CalendarCore;KF5::AkonadiCore;KF5::AkonadiWidgets;KF5::MessageComposer;KF5::I18n")
-
-	add_akonadi_isolated_test_advanced(attachmentvcardfromaddressbookjobtest.cpp "" "KF5::CalendarCore;KF5::AkonadiCore;KF5::AkonadiWidgets;KF5::MessageComposer;KF5::Contacts;KF5::AkonadiContact;KF5::I18n")
-endif()
+ecm_add_test(attachmentvcardfromaddressbookjobtest.cpp
+    NAME_PREFIX "messagecomposer-"
+    LINK_LIBRARIES
+        KF5::Contacts
+        KF5::MessageComposer
+        Qt5::Test
+)

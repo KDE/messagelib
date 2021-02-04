@@ -5,7 +5,7 @@
 */
 
 #include "followupreminderselectdatedialogtest.h"
-#include "../src/followupreminder/followupreminderselectdatedialog.h"
+#include <MessageComposer/FollowUpReminderSelectDateDialog>
 #include <AkonadiWidgets/CollectionComboBox>
 #include <KDateComboBox>
 #include <QLineEdit>
