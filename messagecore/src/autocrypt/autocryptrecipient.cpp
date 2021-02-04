@@ -20,10 +20,6 @@
 using namespace MessageCore;
 
 AutocryptRecipientPrivate::AutocryptRecipientPrivate()
-    : count_have_ach(0)
-    , count_no_ach(0)
-    , prefer_encrypt(false)
-    , changed(false)
 {
 }
 

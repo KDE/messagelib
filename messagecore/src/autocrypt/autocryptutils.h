@@ -30,13 +30,13 @@ public:
     Q_REQUIRED_RESULT QVector<KMime::Headers::Base *> headers(const char *headerType) const;
 
 public:
-    KMime::Content *message;
+    KMime::Content *message = nullptr;
 
 private:
-    MimeTreeParser::NodeHelper *nodeHelper;
+    MimeTreeParser::NodeHelper *const mNodeHelper;
 };
 
-QHash<QByteArray, QByteArray> MESSAGECORE_EXPORT paramsFromAutocryptHeader(const KMime::Headers::Base *const header);
+Q_REQUIRED_RESULT QHash<QByteArray, QByteArray> MESSAGECORE_EXPORT paramsFromAutocryptHeader(const KMime::Headers::Base *const header);
 void MESSAGECORE_EXPORT processAutocryptfromMail(const HeaderMixupNodeHelper &mixup);
 
 }

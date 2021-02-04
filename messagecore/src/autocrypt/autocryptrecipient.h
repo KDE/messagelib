@@ -1,7 +1,7 @@
 /*
-   SPDX-FileCopyrightText: 2020 Sandro Knauß <knauss@kde.org>
+  SPDX-FileCopyrightText: 2020 Sandro Knauß <knauss@kde.org>
 
-   SPDX-License-Identifier: LGPL-2.0-or-later
+  SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
 #ifndef AUTOCRYPTRECIPIENT_H
@@ -29,30 +29,30 @@ public:
     void updateFromMessage(const HeaderMixupNodeHelper &mixup, const KMime::Headers::Base *header);
     void updateFromGossip(const HeaderMixupNodeHelper &mixup, const KMime::Headers::Base *header);
 
-    QByteArray toJson(QJsonDocument::JsonFormat format) const;
+    Q_REQUIRED_RESULT QByteArray toJson(QJsonDocument::JsonFormat format) const;
     void fromJson(const QByteArray &json);
 
-    bool hasChanged() const;
+    Q_REQUIRED_RESULT bool hasChanged() const;
     void setChangedFlag(bool changed);
 
-    QByteArray addr() const;
-    QByteArray bad_user_agent() const;
+    Q_REQUIRED_RESULT QByteArray addr() const;
+    Q_REQUIRED_RESULT QByteArray bad_user_agent() const;
 
-    QDateTime last_seen() const;
-    QDateTime autocrypt_timestamp() const;
-    QDateTime counting_since() const;
-    QDateTime gossip_timestamp() const;
+    Q_REQUIRED_RESULT QDateTime last_seen() const;
+    Q_REQUIRED_RESULT QDateTime autocrypt_timestamp() const;
+    Q_REQUIRED_RESULT QDateTime counting_since() const;
+    Q_REQUIRED_RESULT QDateTime gossip_timestamp() const;
 
-    int count_have_ach() const;
-    int count_no_ach() const;
+    Q_REQUIRED_RESULT int count_have_ach() const;
+    Q_REQUIRED_RESULT int count_no_ach() const;
 
-    bool prefer_encrypt() const;
+    Q_REQUIRED_RESULT bool prefer_encrypt() const;
 
-    GpgME::Key gpgKey() const;
-    QByteArray gpgKeydata() const;
+    Q_REQUIRED_RESULT GpgME::Key gpgKey() const;
+    Q_REQUIRED_RESULT QByteArray gpgKeydata() const;
 
-    GpgME::Key gossipKey() const;
-    QByteArray gossipKeydata() const;
+    Q_REQUIRED_RESULT GpgME::Key gossipKey() const;
+    Q_REQUIRED_RESULT QByteArray gossipKeydata() const;
 
 private:
     std::unique_ptr<AutocryptRecipientPrivate> d_ptr;

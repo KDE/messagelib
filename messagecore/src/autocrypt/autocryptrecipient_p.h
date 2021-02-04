@@ -15,7 +15,7 @@ class AutocryptRecipientPrivate
 {
 public:
     AutocryptRecipientPrivate();
-    QByteArray toJson(QJsonDocument::JsonFormat format) const;
+    Q_REQUIRED_RESULT QByteArray toJson(QJsonDocument::JsonFormat format) const;
     void fromJson(const QByteArray &json);
 
 public:
@@ -27,10 +27,10 @@ public:
     QDateTime autocrypt_timestamp;
     QDateTime counting_since;
     QDateTime gossip_timestamp;
-    int count_have_ach;
-    int count_no_ach;
-    bool prefer_encrypt;
-    bool changed;
+    int count_have_ach = 0;
+    int count_no_ach = 0;
+    bool prefer_encrypt = false;
+    bool changed = false;
 };
 
 }
