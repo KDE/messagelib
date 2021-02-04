@@ -79,6 +79,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     connect(mFindPrevBtn, &QPushButton::clicked, this, &FindBarBase::findPrev);
     connect(mCaseSensitiveAct, &QAction::toggled, this, &FindBarBase::caseSensitivityChanged);
     connect(mSearch, &QLineEdit::textChanged, this, &FindBarBase::autoSearch);
+    connect(mSearch, &QLineEdit::returnPressed, this, &FindBarBase::findNext);
 
     mStatus = new QLabel;
     mStatus->setObjectName(QStringLiteral("status"));
