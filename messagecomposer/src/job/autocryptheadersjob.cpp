@@ -71,7 +71,7 @@ void AutocryptHeadersJobPrivate::emitNotFoundError(const QByteArray &addr, const
     const QString msg = i18n(
         "<p>An error occurred while trying to export "
         "the key from the backend:</p>"
-        "<p><b>No vaild key found for user %1 (%2)</b></p>",
+        "<p><b>No valid key found for user %1 (%2)</b></p>",
         QString::fromLatin1(addr),
         QString::fromLatin1(fingerprint));
     q->setError(KJob::UserDefinedError);
