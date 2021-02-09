@@ -8,55 +8,13 @@
 
 using namespace MessageComposer;
 
-class MessageComposer::PluginEditorConverttextPrivate
-{
-public:
-    PluginEditorConverttextPrivate()
-    {
-    }
-
-    bool mIsEnabled = false;
-};
-
 PluginEditorConvertText::PluginEditorConvertText(QObject *parent)
-    : QObject(parent)
-    , d(new MessageComposer::PluginEditorConverttextPrivate)
+    : PluginEditorBase(parent)
 {
 }
 
 PluginEditorConvertText::~PluginEditorConvertText()
 {
-    delete d;
-}
-
-bool PluginEditorConvertText::hasConfigureDialog() const
-{
-    return false;
-}
-
-void PluginEditorConvertText::showConfigureDialog(QWidget *parent)
-{
-    Q_UNUSED(parent)
-}
-
-void PluginEditorConvertText::emitConfigChanged()
-{
-    Q_EMIT configChanged();
-}
-
-QString PluginEditorConvertText::description() const
-{
-    return {};
-}
-
-void PluginEditorConvertText::setIsEnabled(bool enabled)
-{
-    d->mIsEnabled = enabled;
-}
-
-bool PluginEditorConvertText::isEnabled() const
-{
-    return d->mIsEnabled;
 }
 
 bool PluginEditorConvertText::canWorkOnHtml() const

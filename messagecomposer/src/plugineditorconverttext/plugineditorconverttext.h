@@ -8,16 +8,15 @@
 #define PLUGINEDITORCONVERTTEXT_H
 
 #include "messagecomposer_export.h"
-#include <QObject>
+#include <MessageComposer/PluginEditorBase>
 namespace MessageComposer
 {
-class PluginEditorConverttextPrivate;
 class PluginEditorConvertTextInterface;
 /**
  * @brief The PluginEditorConvertText class
  * @author Laurent Montel <montel@kde.org>
  */
-class MESSAGECOMPOSER_EXPORT PluginEditorConvertText : public QObject
+class MESSAGECOMPOSER_EXPORT PluginEditorConvertText : public PluginEditorBase
 {
     Q_OBJECT
 public:
@@ -26,18 +25,6 @@ public:
 
     virtual PluginEditorConvertTextInterface *createInterface(QObject *parent) = 0;
 
-    Q_REQUIRED_RESULT virtual bool hasConfigureDialog() const;
-
-    virtual void showConfigureDialog(QWidget *parent = nullptr);
-
-    void emitConfigChanged();
-
-
-    void setIsEnabled(bool enabled);
-    Q_REQUIRED_RESULT bool isEnabled() const;
-
-    Q_REQUIRED_RESULT virtual QString description() const;
-
     Q_REQUIRED_RESULT virtual bool canWorkOnHtml() const;
 
     Q_REQUIRED_RESULT virtual bool hasStatusBarSupport() const;
@@ -45,12 +32,6 @@ public:
     Q_REQUIRED_RESULT virtual bool hasPopupMenuSupport() const;
 
     Q_REQUIRED_RESULT virtual bool hasToolBarSupport() const;
-
-Q_SIGNALS:
-    void configChanged();
-
-private:
-    PluginEditorConverttextPrivate *const d;
 };
 }
 #endif // PLUGINEDITORCONVERTTEXT_H
