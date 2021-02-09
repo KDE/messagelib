@@ -8,17 +8,17 @@
 #define PLUGINEDITORINIT_H
 
 #include "messagecomposer_export.h"
+#include <MessageComposer/PluginEditorBase>
 #include <QObject>
 
 namespace MessageComposer
 {
-class PluginEditorInitPrivate;
 class PluginEditorInitInterface;
 /**
  * @brief The PluginEditorInit class
  * @author Laurent Montel <montel@kde.org>
  */
-class MESSAGECOMPOSER_EXPORT PluginEditorInit : public QObject
+class MESSAGECOMPOSER_EXPORT PluginEditorInit : public PluginEditorBase
 {
     Q_OBJECT
 public:
@@ -26,23 +26,6 @@ public:
     ~PluginEditorInit() override;
 
     virtual PluginEditorInitInterface *createInterface(QObject *parent) = 0;
-
-    Q_REQUIRED_RESULT virtual bool hasConfigureDialog() const;
-
-    virtual void showConfigureDialog(QWidget *parent = nullptr);
-
-    void emitConfigChanged();
-
-    Q_REQUIRED_RESULT virtual QString description() const;
-
-    void setIsEnabled(bool enabled);
-    Q_REQUIRED_RESULT bool isEnabled() const;
-
-Q_SIGNALS:
-    void configChanged();
-
-private:
-    PluginEditorInitPrivate *const d;
 };
 }
 #endif // PLUGINEDITORINIT_H

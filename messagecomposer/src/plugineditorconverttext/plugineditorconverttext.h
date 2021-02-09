@@ -32,10 +32,11 @@ public:
 
     void emitConfigChanged();
 
-    Q_REQUIRED_RESULT virtual QString description() const;
 
     void setIsEnabled(bool enabled);
     Q_REQUIRED_RESULT bool isEnabled() const;
+
+    Q_REQUIRED_RESULT virtual QString description() const;
 
     Q_REQUIRED_RESULT virtual bool canWorkOnHtml() const;
 

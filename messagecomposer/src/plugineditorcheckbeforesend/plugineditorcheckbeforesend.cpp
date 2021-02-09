@@ -8,53 +8,11 @@
 
 using namespace MessageComposer;
 
-class MessageComposer::PluginEditorCheckBeforeSendPrivate
-{
-public:
-    PluginEditorCheckBeforeSendPrivate()
-    {
-    }
-
-    bool mIsEnabled = false;
-};
-
 PluginEditorCheckBeforeSend::PluginEditorCheckBeforeSend(QObject *parent)
-    : QObject(parent)
-    , d(new MessageComposer::PluginEditorCheckBeforeSendPrivate)
+    : PluginEditorBase(parent)
 {
 }
 
 PluginEditorCheckBeforeSend::~PluginEditorCheckBeforeSend()
 {
-    delete d;
-}
-
-bool PluginEditorCheckBeforeSend::hasConfigureDialog() const
-{
-    return false;
-}
-
-void PluginEditorCheckBeforeSend::showConfigureDialog(QWidget *parent)
-{
-    Q_UNUSED(parent)
-}
-
-void PluginEditorCheckBeforeSend::emitConfigChanged()
-{
-    Q_EMIT configChanged();
-}
-
-QString PluginEditorCheckBeforeSend::description() const
-{
-    return {};
-}
-
-void PluginEditorCheckBeforeSend::setIsEnabled(bool enabled)
-{
-    d->mIsEnabled = enabled;
-}
-
-bool PluginEditorCheckBeforeSend::isEnabled() const
-{
-    return d->mIsEnabled;
 }

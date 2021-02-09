@@ -150,6 +150,10 @@ set(messagecomposer_plugineditorgrammar_SRCS
     plugineditorgrammar/plugineditorgrammarmanager.cpp
     plugineditorgrammar/plugineditorgrammarcustomtoolsviewinterface.cpp
     )
+
+set(messagecomposer_plugineditorbase_SRCS
+   plugineditorbase/plugineditorbase.cpp
+   )
 set(messagecomposer_sendlater_SRCS
     sendlater/sendlaterinfo.cpp
     sendlater/sendlaterjob.cpp
@@ -184,6 +188,7 @@ set( messagecomposer_src
     ${messagecomposer_plugineditorcheckbeforesend_SRCS}
     ${messagecomposer_plugineditorgrammar_SRCS}
     ${messagecomposer_sendlater_SRCS}
+    ${messagecomposer_plugineditorbase_SRCS}
     utils/util.cpp
     settings/messagecomposersettings.cpp
     )
@@ -300,6 +305,14 @@ ecm_generate_headers(MessageComposer_Camelplugineditorinit_HEADERS
     REQUIRED_HEADERS MessageComposer_plugineditorinit_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorinit
+    )
+
+ecm_generate_headers(MessageComposer_CamelPluginEditorBase_HEADERS
+    HEADER_NAMES
+    PluginEditorBase
+    REQUIRED_HEADERS MessageComposer_PluginEditorBase_HEADERS
+    PREFIX MessageComposer
+    RELATIVE plugineditorbase
     )
 
 ecm_generate_headers(MessageComposer_Camelplugineditorconverttext_HEADERS
@@ -487,8 +500,8 @@ ecm_generate_pri_file(BASE_NAME MessageComposer
     DEPS "KMime MessageCore PimCommon Akonadi KIdentityManagement AkonadiMime Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
     )
 
-
 install(FILES
+    ${MessageComposer_CamelPluginEditorBase_HEADERS}
     ${MessageComposer_Camelsnippet_HEADERS}
     ${MessageComposer_Camelplugineditorconverttext_HEADERS}
     ${MessageComposer_Camelplugineditorinit_HEADERS}
@@ -515,6 +528,7 @@ install(FILES
 
 install(FILES
     ${MessageComposer_HEADERS}
+    ${MessageComposer_PluginEditorBase_HEADERS}
     ${MessageComposer_snippet_HEADERS}
     ${MessageComposer_plugineditorconverttext_HEADERS}
     ${MessageComposer_plugineditorinit_HEADERS}
