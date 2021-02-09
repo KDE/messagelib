@@ -26,7 +26,7 @@ private:
     QWidget *const mMaster;
     QWidget *const mSlave;
 
-    Mode mMode = Bottom;
+    const Mode mMode = Bottom;
 };
 }
 
