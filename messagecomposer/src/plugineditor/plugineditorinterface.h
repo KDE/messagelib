@@ -31,6 +31,10 @@ class MESSAGECOMPOSER_EXPORT PluginEditorInterface : public PimCommon::AbstractG
 {
     Q_OBJECT
 public:
+    enum ApplyOnFieldType { Composer = 1, EmailFields = 2, SubjectField = 4, All = Composer | EmailFields | SubjectField };
+    Q_FLAG(ApplyOnFieldType)
+    Q_DECLARE_FLAGS(ApplyOnFieldTypes, ApplyOnFieldType)
+
     explicit PluginEditorInterface(QObject *parent = nullptr);
     ~PluginEditorInterface() override;
 
@@ -51,6 +55,9 @@ public:
 
     virtual bool processProcessKeyEvent(QKeyEvent *event);
 
+    Q_REQUIRED_RESULT PluginEditorInterface::ApplyOnFieldTypes applyOnFieldTypes() const;
+
+    void setApplyOnFieldTypes(PluginEditorInterface::ApplyOnFieldTypes types);
 Q_SIGNALS:
     void emitPluginActivated(MessageComposer::PluginEditorInterface *interface);
     void insertText(const QString &str);

@@ -21,6 +21,7 @@ public:
         delete mComposerInterface;
     }
 
+    PluginEditorInterface::ApplyOnFieldTypes mApplyOnFieldTypes;
     PluginActionType mActionType;
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;
@@ -95,4 +96,14 @@ bool PluginEditorInterface::processProcessKeyEvent(QKeyEvent *event)
 {
     Q_UNUSED(event)
     return false;
+}
+
+PluginEditorInterface::ApplyOnFieldTypes PluginEditorInterface::applyOnFieldTypes() const
+{
+    return d->mApplyOnFieldTypes;
+}
+
+void PluginEditorInterface::setApplyOnFieldTypes(PluginEditorInterface::ApplyOnFieldTypes types)
+{
+    d->mApplyOnFieldTypes = types;
 }
