@@ -21,7 +21,7 @@ public:
         delete mComposerInterface;
     }
 
-    PluginEditorInterface::ApplyOnFieldTypes mApplyOnFieldTypes;
+    PluginEditorInterface::ApplyOnFieldTypes mApplyOnFieldTypes = {PluginEditorInterface::ApplyOnFieldType::All};
     PluginActionType mActionType;
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;
