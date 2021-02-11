@@ -81,11 +81,19 @@ void RemoteContentConfigureWidget::slotAdd()
     QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
     if (dlg->exec()) {
         const auto info = dlg->info();
-        if (RemoteContentManager::self()->isUnique(info)) {
+        const int count = mListWidget->count();
+        bool isUnique = true;
+        for (int i = 0; i < count; ++i) {
+            const auto item = mListWidget->item(i);
+            if (item->text() == info.url()) {
+                isUnique = false;
+                KMessageBox::error(this, i18n("An entry already defines this url. Please modify it."), i18n("Add new Url"));
+                break;
+            }
+        }
+        if (isUnique) {
             RemoteContentManager::self()->addRemoteContent(info);
             insertRemoteContentInfo(info);
-        } else {
-            KMessageBox::error(this, i18n("An entry already defines this url. Please modify it."), i18n("Add new Url"));
         }
     }
     delete dlg;
