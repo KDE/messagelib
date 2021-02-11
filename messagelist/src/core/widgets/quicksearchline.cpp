@@ -20,6 +20,8 @@
 using namespace MessageList::Core;
 QuickSearchLine::QuickSearchLine(QWidget *parent)
     : QWidget(parent)
+    , mSearchEdit(new SearchLineStatus(this))
+    , mTagFilterCombo(new QComboBox(this))
 {
     auto vbox = new QVBoxLayout(this);
     vbox->setContentsMargins({});
@@ -31,7 +33,6 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     hbox->setSpacing(0);
     vbox->addWidget(w);
 
-    mSearchEdit = new SearchLineStatus(this);
     connect(mSearchEdit, &SearchLineStatus::filterActionChanged, this, &QuickSearchLine::slotFilterActionChanged);
     connect(mSearchEdit, &SearchLineStatus::searchOptionChanged, this, &QuickSearchLine::searchOptionChanged);
     connect(mSearchEdit, &SearchLineStatus::forceLostFocus, this, &QuickSearchLine::forceLostFocus);
@@ -45,7 +46,6 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     hbox->addWidget(mSearchEdit);
 
     // The status filter button. Will be populated later, as populateStatusFilterCombo() is virtual
-    mTagFilterCombo = new QComboBox(this);
     mTagFilterCombo->setMaximumWidth(300);
     mTagFilterCombo->setMaximumWidth(200);
     mTagFilterCombo->hide();

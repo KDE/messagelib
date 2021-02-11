@@ -74,8 +74,8 @@ private Q_SLOTS:
     void slotFilterActionChanged(const QVector<Akonadi::MessageStatus> &lst);
 
 private:
-    SearchLineStatus *mSearchEdit = nullptr;
-    QComboBox *mTagFilterCombo = nullptr;
+    SearchLineStatus *const mSearchEdit;
+    QComboBox *const mTagFilterCombo;
     QVector<Akonadi::MessageStatus> mLstStatus;
 };
 }
