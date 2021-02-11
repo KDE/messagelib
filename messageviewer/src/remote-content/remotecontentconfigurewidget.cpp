@@ -121,5 +121,7 @@ void RemoteContentConfigureWidget::insertRemoteContentInfo(const RemoteContentIn
     item->setText(info.url());
     if (info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized) {
         item->setCheckState(Qt::Checked);
+    } else {
+        item->setCheckState(Qt::Unchecked);
     }
 }
