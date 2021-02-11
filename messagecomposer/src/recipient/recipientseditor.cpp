@@ -299,6 +299,8 @@ bool RecipientsEditor::eventFilter(QObject *object, QEvent *event)
                 return true;
             }
         }
+    } else if (event->type() == QEvent::FocusIn && qobject_cast<RecipientLineEdit *>(object)) {
+        Q_EMIT focusInRecipientLineEdit();
     }
 
     return false;

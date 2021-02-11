@@ -92,6 +92,9 @@ protected:
     bool eventFilter(QObject *object, QEvent *event) override;
     Q_REQUIRED_RESULT RecipientLineNG *activeLine() const override;
 
+Q_SIGNALS:
+    void focusInRecipientLineEdit();
+
 private:
     RecipientsEditorPrivate *const d;
 };
