@@ -14,7 +14,7 @@ class ComposerAttachmentInterfaceTest : public QObject
     Q_OBJECT
 public:
     explicit ComposerAttachmentInterfaceTest(QObject *parent = nullptr);
-    ~ComposerAttachmentInterfaceTest() = default;
+    ~ComposerAttachmentInterfaceTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

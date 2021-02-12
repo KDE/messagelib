@@ -14,7 +14,7 @@ class DKIMManageRulesComboBoxTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMManageRulesComboBoxTest(QObject *parent = nullptr);
-    ~DKIMManageRulesComboBoxTest() = default;
+    ~DKIMManageRulesComboBoxTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

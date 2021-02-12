@@ -14,7 +14,7 @@ class DKIMKeyRecordTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMKeyRecordTest(QObject *parent = nullptr);
-    ~DKIMKeyRecordTest() = default;
+    ~DKIMKeyRecordTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldTestExtractDkimKeyRecord();

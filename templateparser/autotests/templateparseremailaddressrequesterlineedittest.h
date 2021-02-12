@@ -14,7 +14,7 @@ class TemplateParserEmailAddressRequesterLineEditTest : public QObject
     Q_OBJECT
 public:
     explicit TemplateParserEmailAddressRequesterLineEditTest(QObject *parent = nullptr);
-    ~TemplateParserEmailAddressRequesterLineEditTest() = default;
+    ~TemplateParserEmailAddressRequesterLineEditTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldAssignValue();

@@ -14,7 +14,7 @@ class DKIMCheckSignatureJobTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMCheckSignatureJobTest(QObject *parent = nullptr);
-    ~DKIMCheckSignatureJobTest() = default;
+    ~DKIMCheckSignatureJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldTestMail();

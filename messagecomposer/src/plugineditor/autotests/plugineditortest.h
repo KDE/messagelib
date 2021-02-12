@@ -14,7 +14,7 @@ class PluginEditorTest : public QObject
     Q_OBJECT
 public:
     explicit PluginEditorTest(QObject *parent = nullptr);
-    ~PluginEditorTest() = default;
+    ~PluginEditorTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

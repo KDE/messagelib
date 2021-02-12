@@ -14,7 +14,7 @@ class DMARCRecordJobTest : public QObject
     Q_OBJECT
 public:
     explicit DMARCRecordJobTest(QObject *parent = nullptr);
-    ~DMARCRecordJobTest() = default;
+    ~DMARCRecordJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldBeAbleToStart();

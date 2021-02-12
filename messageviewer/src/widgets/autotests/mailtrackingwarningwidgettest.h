@@ -14,7 +14,7 @@ class MailTrackingWarningWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit MailTrackingWarningWidgetTest(QObject *parent = nullptr);
-    ~MailTrackingWarningWidgetTest() = default;
+    ~MailTrackingWarningWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

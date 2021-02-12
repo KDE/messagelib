@@ -14,7 +14,7 @@ class ConvertSnippetVariableMenuTest : public QObject
     Q_OBJECT
 public:
     explicit ConvertSnippetVariableMenuTest(QObject *parent = nullptr);
-    ~ConvertSnippetVariableMenuTest() = default;
+    ~ConvertSnippetVariableMenuTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

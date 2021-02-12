@@ -14,7 +14,7 @@ class DKIMRuleWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMRuleWidgetTest(QObject *parent = nullptr);
-    ~DKIMRuleWidgetTest() = default;
+    ~DKIMRuleWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

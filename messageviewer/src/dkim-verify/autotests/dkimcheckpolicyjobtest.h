@@ -14,7 +14,7 @@ class DKIMCheckPolicyJobTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMCheckPolicyJobTest(QObject *parent = nullptr);
-    ~DKIMCheckPolicyJobTest() = default;
+    ~DKIMCheckPolicyJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

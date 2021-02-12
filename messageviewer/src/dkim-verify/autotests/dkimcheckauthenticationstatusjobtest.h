@@ -14,7 +14,7 @@ class DKIMCheckAuthenticationStatusJobTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMCheckAuthenticationStatusJobTest(QObject *parent = nullptr);
-    ~DKIMCheckAuthenticationStatusJobTest() = default;
+    ~DKIMCheckAuthenticationStatusJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldTestMail();

@@ -14,7 +14,7 @@ class DKIMDownloadKeyJobTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMDownloadKeyJobTest(QObject *parent = nullptr);
-    ~DKIMDownloadKeyJobTest() = default;
+    ~DKIMDownloadKeyJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldTestCanStart();

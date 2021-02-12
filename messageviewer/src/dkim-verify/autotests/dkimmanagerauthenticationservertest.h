@@ -14,7 +14,7 @@ class DKIMManagerAuthenticationServerTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMManagerAuthenticationServerTest(QObject *parent = nullptr);
-    ~DKIMManagerAuthenticationServerTest() = default;
+    ~DKIMManagerAuthenticationServerTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

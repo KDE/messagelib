@@ -13,7 +13,7 @@ class ShowNextMessageWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit ShowNextMessageWidgetTest(QObject *parent = nullptr);
-    ~ShowNextMessageWidgetTest() = default;
+    ~ShowNextMessageWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

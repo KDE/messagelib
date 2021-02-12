@@ -14,7 +14,7 @@ class TemplateParserExtractHtmlInfoTest : public QObject
     Q_OBJECT
 public:
     explicit TemplateParserExtractHtmlInfoTest(QObject *parent = nullptr);
-    ~TemplateParserExtractHtmlInfoTest() = default;
+    ~TemplateParserExtractHtmlInfoTest() override = default;
 private Q_SLOTS:
     void initTestCase();
     void shouldReturnNullResult();

@@ -14,7 +14,7 @@ class DKIMCheckFullJobTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMCheckFullJobTest(QObject *parent = nullptr);
-    ~DKIMCheckFullJobTest() = default;
+    ~DKIMCheckFullJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

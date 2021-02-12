@@ -14,7 +14,7 @@ class DKIMWidgetInfoTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMWidgetInfoTest(QObject *parent = nullptr);
-    ~DKIMWidgetInfoTest() = default;
+    ~DKIMWidgetInfoTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldClearWidget();

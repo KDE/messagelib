@@ -14,7 +14,7 @@ class DKIMAuthenticationStatusInfoUtilTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMAuthenticationStatusInfoUtilTest(QObject *parent = nullptr);
-    ~DKIMAuthenticationStatusInfoUtilTest() = default;
+    ~DKIMAuthenticationStatusInfoUtilTest() override = default;
 };
 
 #endif // DKIMAUTHENTICATIONSTATUSINFOUTILTEST_H

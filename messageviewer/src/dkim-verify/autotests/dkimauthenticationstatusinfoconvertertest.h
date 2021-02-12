@@ -17,7 +17,7 @@ class DKIMAuthenticationStatusInfoConverterTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMAuthenticationStatusInfoConverterTest(QObject *parent = nullptr);
-    ~DKIMAuthenticationStatusInfoConverterTest() = default;
+    ~DKIMAuthenticationStatusInfoConverterTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

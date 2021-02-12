@@ -14,7 +14,7 @@ class LookUpKey : public QObject
     Q_OBJECT
 public:
     explicit LookUpKey(QObject *parent = nullptr);
-    ~LookUpKey() = default;
+    ~LookUpKey() override = default;
     void lookUpServer(const QString &addr);
 
 private:

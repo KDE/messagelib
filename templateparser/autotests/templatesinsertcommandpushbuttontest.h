@@ -14,7 +14,7 @@ class TemplatesInsertCommandPushButtonTest : public QObject
     Q_OBJECT
 public:
     explicit TemplatesInsertCommandPushButtonTest(QObject *parent = nullptr);
-    ~TemplatesInsertCommandPushButtonTest() = default;
+    ~TemplatesInsertCommandPushButtonTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

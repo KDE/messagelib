@@ -14,7 +14,7 @@ class DeveloperToolDialogTest : public QObject
     Q_OBJECT
 public:
     explicit DeveloperToolDialogTest(QObject *parent = nullptr);
-    ~DeveloperToolDialogTest() = default;
+    ~DeveloperToolDialogTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

@@ -14,7 +14,7 @@ class DKIMManagerKeyWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMManagerKeyWidgetTest(QObject *parent = nullptr);
-    ~DKIMManagerKeyWidgetTest() = default;
+    ~DKIMManagerKeyWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

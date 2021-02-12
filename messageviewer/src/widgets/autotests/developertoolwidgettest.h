@@ -14,7 +14,7 @@ class DeveloperToolWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit DeveloperToolWidgetTest(QObject *parent = nullptr);
-    ~DeveloperToolWidgetTest() = default;
+    ~DeveloperToolWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

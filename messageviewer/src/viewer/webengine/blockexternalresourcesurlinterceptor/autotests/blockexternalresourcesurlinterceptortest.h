@@ -14,7 +14,7 @@ class BlockExternalResourcesUrlInterceptorTest : public QObject
     Q_OBJECT
 public:
     explicit BlockExternalResourcesUrlInterceptorTest(QObject *parent = nullptr);
-    ~BlockExternalResourcesUrlInterceptorTest() = default;
+    ~BlockExternalResourcesUrlInterceptorTest() override = default;
 private Q_SLOTS:
     void shouldIntercept();
 };

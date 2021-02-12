@@ -14,7 +14,7 @@ class TemplateParserUtilTest : public QObject
     Q_OBJECT
 public:
     explicit TemplateParserUtilTest(QObject *parent = nullptr);
-    ~TemplateParserUtilTest() = default;
+    ~TemplateParserUtilTest() override = default;
 
 private Q_SLOTS:
     void shouldRemoveSpaceAtBegin_data();

@@ -14,7 +14,7 @@ class MailTrackingDetailsDialogTest : public QObject
     Q_OBJECT
 public:
     explicit MailTrackingDetailsDialogTest(QObject *parent = nullptr);
-    ~MailTrackingDetailsDialogTest() = default;
+    ~MailTrackingDetailsDialogTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

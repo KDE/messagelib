@@ -14,7 +14,7 @@ class MessageViewerUtilsTest : public QObject
     Q_OBJECT
 public:
     explicit MessageViewerUtilsTest(QObject *parent = nullptr);
-    ~MessageViewerUtilsTest() = default;
+    ~MessageViewerUtilsTest() override = default;
 private Q_SLOTS:
     void shouldExcludeHeader_data();
     void shouldExcludeHeader();

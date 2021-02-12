@@ -14,7 +14,7 @@ class TemplatesInsertCommandActionTest : public QObject
     Q_OBJECT
 public:
     explicit TemplatesInsertCommandActionTest(QObject *parent = nullptr);
-    ~TemplatesInsertCommandActionTest() = default;
+    ~TemplatesInsertCommandActionTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

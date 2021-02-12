@@ -14,7 +14,7 @@ class DMARCInfoTest : public QObject
     Q_OBJECT
 public:
     explicit DMARCInfoTest(QObject *parent = nullptr);
-    ~DMARCInfoTest() = default;
+    ~DMARCInfoTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldTestExtractDkimKeyRecord_data();

@@ -14,7 +14,7 @@ class DKIMManageRulesDialogTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMManageRulesDialogTest(QObject *parent = nullptr);
-    ~DKIMManageRulesDialogTest() = default;
+    ~DKIMManageRulesDialogTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

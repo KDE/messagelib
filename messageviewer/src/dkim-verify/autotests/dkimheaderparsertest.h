@@ -14,7 +14,7 @@ class DKIMHeaderParserTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMHeaderParserTest(QObject *parent = nullptr);
-    ~DKIMHeaderParserTest() = default;
+    ~DKIMHeaderParserTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldChangeWasAlreadyParsedBoolean();

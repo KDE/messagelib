@@ -14,7 +14,7 @@ class ConvertVariablesJobTest : public QObject
     Q_OBJECT
 public:
     explicit ConvertVariablesJobTest(QObject *parent = nullptr);
-    ~ConvertVariablesJobTest() = default;
+    ~ConvertVariablesJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldCanStart();

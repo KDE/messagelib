@@ -14,7 +14,7 @@ class DKIMViewerMenuTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMViewerMenuTest(QObject *parent = nullptr);
-    ~DKIMViewerMenuTest() = default;
+    ~DKIMViewerMenuTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

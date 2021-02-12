@@ -14,7 +14,7 @@ class DMARCPolicyJobTest : public QObject
     Q_OBJECT
 public:
     explicit DMARCPolicyJobTest(QObject *parent = nullptr);
-    ~DMARCPolicyJobTest() = default;
+    ~DMARCPolicyJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

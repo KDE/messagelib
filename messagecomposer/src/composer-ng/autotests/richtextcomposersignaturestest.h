@@ -14,7 +14,7 @@ class RichTextComposerSignaturesTest : public QObject
     Q_OBJECT
 public:
     explicit RichTextComposerSignaturesTest(QObject *parent = nullptr);
-    ~RichTextComposerSignaturesTest() = default;
+    ~RichTextComposerSignaturesTest() override = default;
 private Q_SLOTS:
     void shouldCleanSignature();
     void shouldReplaceSignatureWhenText();

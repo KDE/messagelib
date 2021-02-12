@@ -14,7 +14,7 @@ class WebEngineExportPdfPageJobTest : public QObject
     Q_OBJECT
 public:
     explicit WebEngineExportPdfPageJobTest(QObject *parent = nullptr);
-    ~WebEngineExportPdfPageJobTest() = default;
+    ~WebEngineExportPdfPageJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldBeAbleToExport();

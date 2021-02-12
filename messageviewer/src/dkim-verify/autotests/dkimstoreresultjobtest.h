@@ -14,7 +14,7 @@ class DKIMStoreResultJobTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMStoreResultJobTest(QObject *parent = nullptr);
-    ~DKIMStoreResultJobTest() = default;
+    ~DKIMStoreResultJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

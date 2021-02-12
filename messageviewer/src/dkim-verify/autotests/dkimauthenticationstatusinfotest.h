@@ -14,7 +14,7 @@ class DKIMAuthenticationStatusInfoTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMAuthenticationStatusInfoTest(QObject *parent = nullptr);
-    ~DKIMAuthenticationStatusInfoTest() = default;
+    ~DKIMAuthenticationStatusInfoTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

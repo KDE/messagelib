@@ -14,7 +14,7 @@ class DKIMManagerKeyTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMManagerKeyTest(QObject *parent = nullptr);
-    ~DKIMManagerKeyTest() = default;
+    ~DKIMManagerKeyTest() override = default;
 };
 
 #endif // DKIMMANAGERKEYTEST_H

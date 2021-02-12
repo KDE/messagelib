@@ -14,7 +14,7 @@ class TemplateParserEmailAddressRequesterInterfaceWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit TemplateParserEmailAddressRequesterInterfaceWidgetTest(QObject *parent = nullptr);
-    ~TemplateParserEmailAddressRequesterInterfaceWidgetTest() = default;
+    ~TemplateParserEmailAddressRequesterInterfaceWidgetTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

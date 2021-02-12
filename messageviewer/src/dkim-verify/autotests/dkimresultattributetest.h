@@ -14,7 +14,7 @@ class DKIMResultAttributeTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMResultAttributeTest(QObject *parent = nullptr);
-    ~DKIMResultAttributeTest() = default;
+    ~DKIMResultAttributeTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldCloneAttribute();

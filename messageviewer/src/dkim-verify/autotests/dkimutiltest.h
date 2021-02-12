@@ -14,7 +14,7 @@ class DKIMUtilTest : public QObject
     Q_OBJECT
 public:
     explicit DKIMUtilTest(QObject *parent = nullptr);
-    ~DKIMUtilTest() = default;
+    ~DKIMUtilTest() override = default;
 private Q_SLOTS:
     void shouldTestBodyCanonizationRelaxed();
     void shouldVerifyEmailDomain();
