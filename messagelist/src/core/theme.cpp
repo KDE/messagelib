@@ -1227,8 +1227,8 @@ void Theme::populatePixmapCache() const
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-sent")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-important")).pixmap(mIconSize, mIconSize)) // "flag"
-             << new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-watch.png")).pixmap(mIconSize, mIconSize))
-             << new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-ignored.png")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-thread-watch")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-thread-ignored")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-junk")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")).pixmap(mIconSize, mIconSize))
              << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-verified")).pixmap(mIconSize, mIconSize))
