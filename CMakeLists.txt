@@ -12,7 +12,7 @@ option(KDEPIM_RUN_AKONADI_TEST "Enable autotest based on Akonadi." TRUE)
 
 option(MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW "Experimental conversationview (in progress)" FALSE)
 
-set(KF5_MIN_VERSION "5.78.0")
+set(KF5_MIN_VERSION "5.79.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
@@ -50,9 +50,7 @@ include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
 
 include(FeatureSummary)
-if(ECM_VERSION VERSION_GREATER_EQUAL 5.79)
-   include(KDEGitCommitHooks)
-endif()
+include(KDEGitCommitHooks)
 include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
 
@@ -113,6 +111,8 @@ if(BUILD_TESTING)
 endif()
 add_definitions(-DQT_NO_EMIT)
 remove_definitions(-DQT_NO_FOREACH)
+remove_definitions(-DQT_NO_KEYWORDS)
+add_definitions(-DQT_NO_SIGNALS_SLOTS_KEYWORDS)
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" FALSE)
 
@@ -140,7 +140,5 @@ ecm_qt_install_logging_categories(
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
     )
 
-if(ECM_VERSION VERSION_GREATER_EQUAL 5.79)
-    kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
-endif()
+kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
