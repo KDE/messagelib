@@ -491,7 +491,8 @@ void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
 bool NodeHelper::hasMailHeader(const char *header, const KMime::Content *message) const
 {
     if (mHeaderOverwrite.contains(message)) {
-        foreach (const auto messagePart, mHeaderOverwrite.value(message)) {
+        const auto parts = mHeaderOverwrite.value(message);
+        for (const auto messagePart : parts) {
             if (messagePart->hasHeader(header)) {
                 return true;
             }
@@ -504,7 +505,8 @@ QVector<MessagePart::Ptr> NodeHelper::messagePartsOfMailHeader(const char *heade
 {
     QVector<MessagePart::Ptr> ret;
     if (mHeaderOverwrite.contains(message)) {
-        foreach (const auto messagePart, mHeaderOverwrite.value(message)) {
+        const auto parts = mHeaderOverwrite.value(message);
+        for (const auto &messagePart : parts) {
             if (messagePart->hasHeader(header)) {
                 ret << messagePart;
             }
@@ -526,7 +528,8 @@ QVector<KMime::Headers::Base *> NodeHelper::headers(const char *header, const KM
 KMime::Headers::Base const *NodeHelper::mailHeaderAsBase(const char *header, const KMime::Content *message) const
 {
     if (mHeaderOverwrite.contains(message)) {
-        foreach (const auto messagePart, mHeaderOverwrite.value(message)) {
+        const auto parts = mHeaderOverwrite.value(message);
+        for (const auto &messagePart : parts) {
             if (messagePart->hasHeader(header)) {
                 return messagePart->header(header); // Found.
             }
@@ -1099,7 +1102,8 @@ QVector<KMime::Content *> NodeHelper::attachmentsOfExtraContents() const
 {
     QVector<KMime::Content *> result;
     for (auto it = mExtraContents.begin(), end = mExtraContents.end(); it != end; ++it) {
-        foreach (auto content, it.value()) {
+        const auto contents = it.value();
+        for (auto content : contents) {
             if (KMime::isAttachment(content)) {
                 result.push_back(content);
             } else {

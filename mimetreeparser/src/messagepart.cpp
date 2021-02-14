@@ -1270,7 +1270,8 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
                 mDecryptedData = plainText;
             } else {
                 mNoSecKey = true;
-                foreach (const GpgME::DecryptionResult::Recipient &recipient, decryptResult.recipients()) {
+                const auto decryRecipients = decryptResult.recipients();
+                for (const GpgME::DecryptionResult::Recipient &recipient : decryRecipients) {
                     mNoSecKey &= (recipient.status().code() == GPG_ERR_NO_SECKEY);
                 }
                 if (!mPassphraseError && !mNoSecKey) { // GpgME do not detect passphrase error correctly
