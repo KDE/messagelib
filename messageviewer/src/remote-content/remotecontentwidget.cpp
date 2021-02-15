@@ -27,10 +27,16 @@ RemoteContentWidget::RemoteContentWidget(QWidget *parent)
 
     mStatusCheckBox->setObjectName(QStringLiteral("mStatusCheckBox"));
     mainLayout->addRow(mStatusCheckBox);
+    connect(mLineEdit, &QLineEdit::textChanged, this, &RemoteContentWidget::slotTextChanged);
 }
 
 RemoteContentWidget::~RemoteContentWidget()
 {
+}
+
+void RemoteContentWidget::slotTextChanged(const QString &url)
+{
+    Q_EMIT updateOkButton(!url.trimmed().isEmpty());
 }
 
 RemoteContentInfo RemoteContentWidget::info() const

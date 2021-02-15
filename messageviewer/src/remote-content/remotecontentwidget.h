@@ -24,7 +24,11 @@ public:
     Q_REQUIRED_RESULT RemoteContentInfo info() const;
     void setInfo(const RemoteContentInfo &info);
 
+Q_SIGNALS:
+    void updateOkButton(bool enabled);
+
 private:
+    void slotTextChanged(const QString &url);
     QLineEdit *const mLineEdit;
     QCheckBox *const mStatusCheckBox;
 };

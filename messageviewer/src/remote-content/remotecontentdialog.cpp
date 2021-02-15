@@ -8,6 +8,7 @@
 #include "remotecontentwidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QVBoxLayout>
 using namespace MessageViewer;
 RemoteContentDialog::RemoteContentDialog(QWidget *parent)
@@ -26,6 +27,11 @@ RemoteContentDialog::RemoteContentDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::accepted, this, &RemoteContentDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RemoteContentDialog::reject);
     mainLayout->addWidget(buttonBox);
+    QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
+    okButton->setEnabled(false);
+    connect(mRemoveContentWidget, &RemoteContentWidget::updateOkButton, this, [okButton](bool enabled) {
+        okButton->setEnabled(enabled);
+    });
 }
 
 RemoteContentDialog::~RemoteContentDialog()
