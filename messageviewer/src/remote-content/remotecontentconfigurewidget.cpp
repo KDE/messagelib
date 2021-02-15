@@ -48,7 +48,7 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
         });
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
-            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete this rule?"), i18n("Delete Rule"))) {
+            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete this rule '%1'?", item->text()), i18n("Delete Rule"))) {
                 delete item;
             }
         });
