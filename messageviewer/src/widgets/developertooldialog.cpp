@@ -12,7 +12,7 @@
 
 namespace
 {
-static const char myConfigGroupName[] = "DeveloperToolDialog";
+static const char myDeveloperToolDialogConfigGroupName[] = "DeveloperToolDialog";
 }
 
 using namespace MessageViewer;
@@ -45,7 +45,7 @@ QWebEnginePage *DeveloperToolDialog::enginePage() const
 
 void DeveloperToolDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    KConfigGroup group(KSharedConfig::openConfig(), myDeveloperToolDialogConfigGroupName);
     const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -54,6 +54,6 @@ void DeveloperToolDialog::readConfig()
 
 void DeveloperToolDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    KConfigGroup group(KSharedConfig::openConfig(), myDeveloperToolDialogConfigGroupName);
     group.writeEntry("Size", size());
 }

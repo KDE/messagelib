@@ -16,7 +16,7 @@
 
 namespace
 {
-static const char myConfigGroupName[] = "DKIMRuleDialog";
+static const char myDKIMRuleDialogConfigGroupName[] = "DKIMRuleDialog";
 }
 using namespace MessageViewer;
 DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)
@@ -59,7 +59,7 @@ void DKIMRuleDialog::slotAccepted()
 
 void DKIMRuleDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    KConfigGroup group(KSharedConfig::openConfig(), myDKIMRuleDialogConfigGroupName);
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -68,7 +68,7 @@ void DKIMRuleDialog::readConfig()
 
 void DKIMRuleDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    KConfigGroup group(KSharedConfig::openConfig(), myDKIMRuleDialogConfigGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }

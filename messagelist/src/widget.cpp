@@ -42,7 +42,7 @@
 
 namespace MessageList
 {
-class Q_DECL_HIDDEN Widget::Private
+class Q_DECL_HIDDEN MessageList::Widget::Private
 {
 public:
     Private(Widget *owner)
@@ -66,7 +66,7 @@ public:
 using namespace MessageList;
 using namespace Akonadi;
 
-Widget::Widget(QWidget *parent)
+MessageList::Widget::Widget(QWidget *parent)
     : Core::Widget(parent)
     , d(new Private(this))
 {
@@ -80,17 +80,17 @@ Widget::Widget(QWidget *parent)
     connect(d->mMonitor, &Akonadi::Monitor::tagChanged, this, &Widget::populateStatusFilterCombo);
 }
 
-Widget::~Widget()
+MessageList::Widget::~Widget()
 {
     delete d;
 }
 
-void Widget::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
+void MessageList::Widget::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 {
     d->mXmlGuiClient = xmlGuiClient;
 }
 
-bool Widget::canAcceptDrag(const QDropEvent *e)
+bool MessageList::Widget::canAcceptDrag(const QDropEvent *e)
 {
     if (e->source() == view()->viewport()) {
         return false;
@@ -124,86 +124,86 @@ bool Widget::canAcceptDrag(const QDropEvent *e)
     return true;
 }
 
-bool Widget::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
-                                   MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
-                                   bool centerItem,
-                                   bool loop)
+bool MessageList::Widget::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
+                                                MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
+                                                bool centerItem,
+                                                bool loop)
 {
     return view()->selectNextMessageItem(messageTypeFilter, existingSelectionBehaviour, centerItem, loop);
 }
 
-bool Widget::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
-                                       MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
-                                       bool centerItem,
-                                       bool loop)
+bool MessageList::Widget::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
+                                                    MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
+                                                    bool centerItem,
+                                                    bool loop)
 {
     return view()->selectPreviousMessageItem(messageTypeFilter, existingSelectionBehaviour, centerItem, loop);
 }
 
-bool Widget::focusNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop)
+bool MessageList::Widget::focusNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop)
 {
     return view()->focusNextMessageItem(messageTypeFilter, centerItem, loop);
 }
 
-bool Widget::focusPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop)
+bool MessageList::Widget::focusPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop)
 {
     return view()->focusPreviousMessageItem(messageTypeFilter, centerItem, loop);
 }
 
-void Widget::selectFocusedMessageItem(bool centerItem)
+void MessageList::Widget::selectFocusedMessageItem(bool centerItem)
 {
     view()->selectFocusedMessageItem(centerItem);
 }
 
-bool Widget::selectFirstMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem)
+bool MessageList::Widget::selectFirstMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem)
 {
     return view()->selectFirstMessageItem(messageTypeFilter, centerItem);
 }
 
-bool Widget::selectLastMessageItem(Core::MessageTypeFilter messageTypeFilter, bool centerItem)
+bool MessageList::Widget::selectLastMessageItem(Core::MessageTypeFilter messageTypeFilter, bool centerItem)
 {
     return view()->selectLastMessageItem(messageTypeFilter, centerItem);
 }
 
-void Widget::selectAll()
+void MessageList::Widget::selectAll()
 {
     view()->setAllGroupsExpanded(true);
     view()->selectAll();
 }
 
-void Widget::setCurrentThreadExpanded(bool expand)
+void MessageList::Widget::setCurrentThreadExpanded(bool expand)
 {
     view()->setCurrentThreadExpanded(expand);
 }
 
-void Widget::setAllThreadsExpanded(bool expand)
+void MessageList::Widget::setAllThreadsExpanded(bool expand)
 {
     view()->setAllThreadsExpanded(expand);
 }
 
-void Widget::setAllGroupsExpanded(bool expand)
+void MessageList::Widget::setAllGroupsExpanded(bool expand)
 {
     view()->setAllGroupsExpanded(expand);
 }
 
-void Widget::focusQuickSearch(const QString &selectedText)
+void MessageList::Widget::focusQuickSearch(const QString &selectedText)
 {
     view()->focusQuickSearch(selectedText);
 }
 
-void Widget::setQuickSearchClickMessage(const QString &msg)
+void MessageList::Widget::setQuickSearchClickMessage(const QString &msg)
 {
     view()->setQuickSearchClickMessage(msg);
 }
 
-void Widget::fillMessageTagCombo()
+void MessageList::Widget::fillMessageTagCombo()
 {
     auto fetchJob = new Akonadi::TagFetchJob(this);
     fetchJob->fetchScope().fetchAttribute<Akonadi::TagAttribute>();
     connect(fetchJob, &Akonadi::TagFetchJob::result, this, &Widget::slotTagsFetched);
 }
 
-void Widget::slotTagsFetched(KJob *job)
+void MessageList::Widget::slotTagsFetched(KJob *job)
 {
     if (job->error()) {
         qCWarning(MESSAGELIST_LOG) << "Failed to load tags " << job->errorString();
@@ -243,7 +243,7 @@ void Widget::slotTagsFetched(KJob *job)
     setCurrentStatusFilterItem();
 }
 
-void Widget::viewMessageSelected(MessageList::Core::MessageItem *msg)
+void MessageList::Widget::viewMessageSelected(MessageList::Core::MessageItem *msg)
 {
     int row = -1;
     if (msg) {
@@ -252,7 +252,7 @@ void Widget::viewMessageSelected(MessageList::Core::MessageItem *msg)
 
     if (!msg || !msg->isValid() || !storageModel()) {
         d->mLastSelectedMessage = -1;
-        Q_EMIT messageSelected(Item());
+        Q_EMIT messageSelected(Akonadi::Item());
         return;
     }
 
@@ -263,7 +263,7 @@ void Widget::viewMessageSelected(MessageList::Core::MessageItem *msg)
     Q_EMIT messageSelected(d->itemForRow(row)); // this MAY be null
 }
 
-void Widget::viewMessageActivated(MessageList::Core::MessageItem *msg)
+void MessageList::Widget::viewMessageActivated(MessageList::Core::MessageItem *msg)
 {
     Q_ASSERT(msg); // must not be null
     Q_ASSERT(storageModel());
@@ -292,15 +292,15 @@ void Widget::viewMessageActivated(MessageList::Core::MessageItem *msg)
     Q_EMIT messageActivated(d->itemForRow(row)); // this MAY be null
 }
 
-void Widget::viewSelectionChanged()
+void MessageList::Widget::viewSelectionChanged()
 {
     Q_EMIT selectionChanged();
     if (!currentMessageItem()) {
-        Q_EMIT messageSelected(Item());
+        Q_EMIT messageSelected(Akonadi::Item());
     }
 }
 
-void Widget::viewMessageListContextPopupRequest(const QVector<MessageList::Core::MessageItem *> &selectedItems, const QPoint &globalPos)
+void MessageList::Widget::viewMessageListContextPopupRequest(const QVector<MessageList::Core::MessageItem *> &selectedItems, const QPoint &globalPos)
 {
     Q_UNUSED(selectedItems)
 
@@ -314,7 +314,7 @@ void Widget::viewMessageListContextPopupRequest(const QVector<MessageList::Core:
     }
 }
 
-void Widget::viewMessageStatusChangeRequest(MessageList::Core::MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear)
+void MessageList::Widget::viewMessageStatusChangeRequest(MessageList::Core::MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear)
 {
     Q_ASSERT(msg); // must not be null
     Q_ASSERT(storageModel());
@@ -332,7 +332,7 @@ void Widget::viewMessageStatusChangeRequest(MessageList::Core::MessageItem *msg,
     Q_EMIT messageStatusChangeRequest(item, set, clear);
 }
 
-void Widget::viewGroupHeaderContextPopupRequest(MessageList::Core::GroupHeaderItem *ghi, const QPoint &globalPos)
+void MessageList::Widget::viewGroupHeaderContextPopupRequest(MessageList::Core::GroupHeaderItem *ghi, const QPoint &globalPos)
 {
     Q_UNUSED(ghi)
 
@@ -362,7 +362,7 @@ void Widget::viewGroupHeaderContextPopupRequest(MessageList::Core::GroupHeaderIt
     menu.exec(globalPos);
 }
 
-void Widget::viewDragEnterEvent(QDragEnterEvent *e)
+void MessageList::Widget::viewDragEnterEvent(QDragEnterEvent *e)
 {
     if (!canAcceptDrag(e)) {
         e->ignore();
@@ -372,7 +372,7 @@ void Widget::viewDragEnterEvent(QDragEnterEvent *e)
     e->accept();
 }
 
-void Widget::viewDragMoveEvent(QDragMoveEvent *e)
+void MessageList::Widget::viewDragMoveEvent(QDragMoveEvent *e)
 {
     if (!canAcceptDrag(e)) {
         e->ignore();
@@ -384,7 +384,7 @@ void Widget::viewDragMoveEvent(QDragMoveEvent *e)
 
 enum DragMode { DragCopy, DragMove, DragCancel };
 
-void Widget::viewDropEvent(QDropEvent *e)
+void MessageList::Widget::viewDropEvent(QDropEvent *e)
 {
     if (!canAcceptDrag(e)) {
         e->ignore();
@@ -433,10 +433,10 @@ void Widget::viewDropEvent(QDropEvent *e)
 
     Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
     Collection target = collections.at(0);
-    Item::List items;
+    Akonadi::Item::List items;
     items.reserve(urls.count());
     for (const QUrl &url : qAsConst(urls)) {
-        items << Item::fromUrl(url);
+        items << Akonadi::Item::fromUrl(url);
     }
 
     if (action == DragCopy) {
@@ -446,7 +446,7 @@ void Widget::viewDropEvent(QDropEvent *e)
     }
 }
 
-void Widget::viewStartDragRequest()
+void MessageList::Widget::viewStartDragRequest()
 {
     Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
 
@@ -473,8 +473,8 @@ void Widget::viewStartDragRequest()
     QList<QUrl> urls;
     urls.reserve(selection.count());
     for (Core::MessageItem *mi : selection) {
-        const Item i = d->itemForRow(mi->currentModelIndexRow());
-        QUrl url = i.url(Item::Item::Item::UrlWithMimeType);
+        const Akonadi::Item i = d->itemForRow(mi->currentModelIndexRow());
+        QUrl url = i.url(Akonadi::Item::UrlWithMimeType);
         QUrlQuery query(url);
         query.addQueryItem(QStringLiteral("parent"), QString::number(mi->parentCollectionId()));
         url.setQuery(query);
@@ -508,14 +508,14 @@ void Widget::viewStartDragRequest()
     }
 }
 
-Item::List Widget::Private::selectionAsItems() const
+Akonadi::Item::List MessageList::Widget::Private::selectionAsItems() const
 {
-    Item::List res;
+    Akonadi::Item::List res;
     const QVector<Core::MessageItem *> selection = q->view()->selectionAsMessageItemList();
     res.reserve(selection.count());
 
     for (Core::MessageItem *mi : qAsConst(selection)) {
-        Item i = itemForRow(mi->currentModelIndexRow());
+        Akonadi::Item i = itemForRow(mi->currentModelIndexRow());
         Q_ASSERT(i.isValid());
         res << i;
     }
@@ -523,28 +523,28 @@ Item::List Widget::Private::selectionAsItems() const
     return res;
 }
 
-Item Widget::Private::itemForRow(int row) const
+Akonadi::Item MessageList::Widget::Private::itemForRow(int row) const
 {
     return static_cast<const MessageList::StorageModel *>(q->storageModel())->itemForRow(row);
 }
 
-KMime::Message::Ptr Widget::Private::messageForRow(int row) const
+KMime::Message::Ptr MessageList::Widget::Private::messageForRow(int row) const
 {
     return static_cast<const MessageList::StorageModel *>(q->storageModel())->messageForRow(row);
 }
 
-Item Widget::currentItem() const
+Akonadi::Item MessageList::Widget::currentItem() const
 {
     Core::MessageItem *mi = view()->currentMessageItem();
 
     if (mi == nullptr) {
-        return Item();
+        return Akonadi::Item();
     }
 
     return d->itemForRow(mi->currentModelIndexRow());
 }
 
-KMime::Message::Ptr Widget::currentMessage() const
+KMime::Message::Ptr MessageList::Widget::currentMessage() const
 {
     Core::MessageItem *mi = view()->currentMessageItem();
 
@@ -555,7 +555,7 @@ KMime::Message::Ptr Widget::currentMessage() const
     return d->messageForRow(mi->currentModelIndexRow());
 }
 
-QVector<KMime::Message::Ptr> Widget::selectionAsMessageList(bool includeCollapsedChildren) const
+QVector<KMime::Message::Ptr> MessageList::Widget::selectionAsMessageList(bool includeCollapsedChildren) const
 {
     QVector<KMime::Message::Ptr> lstMiPtr;
     const QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
@@ -569,7 +569,7 @@ QVector<KMime::Message::Ptr> Widget::selectionAsMessageList(bool includeCollapse
     return lstMiPtr;
 }
 
-Akonadi::Item::List Widget::selectionAsMessageItemList(bool includeCollapsedChildren) const
+Akonadi::Item::List MessageList::Widget::selectionAsMessageItemList(bool includeCollapsedChildren) const
 {
     Akonadi::Item::List lstMiPtr;
     const QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
@@ -583,7 +583,7 @@ Akonadi::Item::List Widget::selectionAsMessageItemList(bool includeCollapsedChil
     return lstMiPtr;
 }
 
-QVector<qlonglong> Widget::selectionAsMessageItemListId(bool includeCollapsedChildren) const
+QVector<qlonglong> MessageList::Widget::selectionAsMessageItemListId(bool includeCollapsedChildren) const
 {
     QVector<qlonglong> lstMiPtr;
     const QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
@@ -597,7 +597,7 @@ QVector<qlonglong> Widget::selectionAsMessageItemListId(bool includeCollapsedChi
     return lstMiPtr;
 }
 
-QVector<Akonadi::Item::Id> Widget::selectionAsListMessageId(bool includeCollapsedChildren) const
+QVector<Akonadi::Item::Id> MessageList::Widget::selectionAsListMessageId(bool includeCollapsedChildren) const
 {
     QVector<qlonglong> lstMiPtr;
     const QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
@@ -611,7 +611,7 @@ QVector<Akonadi::Item::Id> Widget::selectionAsListMessageId(bool includeCollapse
     return lstMiPtr;
 }
 
-Akonadi::Item::List Widget::currentThreadAsMessageList() const
+Akonadi::Item::List MessageList::Widget::currentThreadAsMessageList() const
 {
     Akonadi::Item::List lstMiPtr;
     const QVector<Core::MessageItem *> lstMi = view()->currentThreadAsMessageItemList();
@@ -625,35 +625,35 @@ Akonadi::Item::List Widget::currentThreadAsMessageList() const
     return lstMiPtr;
 }
 
-MessageList::Core::QuickSearchLine::SearchOptions Widget::currentOptions() const
+MessageList::Core::QuickSearchLine::SearchOptions MessageList::Widget::currentOptions() const
 {
     return view()->currentOptions();
 }
 
-QVector<Akonadi::MessageStatus> Widget::currentFilterStatus() const
+QVector<Akonadi::MessageStatus> MessageList::Widget::currentFilterStatus() const
 {
     return view()->currentFilterStatus();
 }
 
-QString Widget::currentFilterSearchString() const
+QString MessageList::Widget::currentFilterSearchString() const
 {
     return view()->currentFilterSearchString();
 }
 
-bool Widget::isThreaded() const
+bool MessageList::Widget::isThreaded() const
 {
     return view()->isThreaded();
 }
 
-bool Widget::selectionEmpty() const
+bool MessageList::Widget::selectionEmpty() const
 {
     return view()->selectionEmpty();
 }
 
-bool Widget::getSelectionStats(Akonadi::Item::List &selectedItems,
-                               Akonadi::Item::List &selectedVisibleItems,
-                               bool *allSelectedBelongToSameThread,
-                               bool includeCollapsedChildren) const
+bool MessageList::Widget::getSelectionStats(Akonadi::Item::List &selectedItems,
+                                            Akonadi::Item::List &selectedVisibleItems,
+                                            bool *allSelectedBelongToSameThread,
+                                            bool includeCollapsedChildren) const
 {
     if (!storageModel()) {
         return false;
@@ -669,7 +669,7 @@ bool Widget::getSelectionStats(Akonadi::Item::List &selectedItems,
     *allSelectedBelongToSameThread = true;
 
     for (Core::MessageItem *it : qAsConst(selected)) {
-        const Item item = d->itemForRow(it->currentModelIndexRow());
+        const Akonadi::Item item = d->itemForRow(it->currentModelIndexRow());
         selectedItems.append(item);
         if (view()->isDisplayedWithParentsExpanded(it)) {
             selectedVisibleItems.append(item);
@@ -685,12 +685,12 @@ bool Widget::getSelectionStats(Akonadi::Item::List &selectedItems,
     return true;
 }
 
-void Widget::deletePersistentSet(MessageList::Core::MessageItemSetReference ref)
+void MessageList::Widget::deletePersistentSet(MessageList::Core::MessageItemSetReference ref)
 {
     view()->deletePersistentSet(ref);
 }
 
-void Widget::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSetReference ref, bool bMark)
+void MessageList::Widget::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSetReference ref, bool bMark)
 {
     QList<Core::MessageItem *> lstPersistent = view()->persistentSetCurrentMessageItemList(ref);
     if (!lstPersistent.isEmpty()) {
@@ -698,7 +698,7 @@ void Widget::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSe
     }
 }
 
-Akonadi::Item::List Widget::itemListFromPersistentSet(MessageList::Core::MessageItemSetReference ref)
+Akonadi::Item::List MessageList::Widget::itemListFromPersistentSet(MessageList::Core::MessageItemSetReference ref)
 {
     Akonadi::Item::List lstItem;
     const QList<Core::MessageItem *> refList = view()->persistentSetCurrentMessageItemList(ref);
@@ -711,7 +711,7 @@ Akonadi::Item::List Widget::itemListFromPersistentSet(MessageList::Core::Message
     return lstItem;
 }
 
-MessageList::Core::MessageItemSetReference Widget::selectionAsPersistentSet(bool includeCollapsedChildren) const
+MessageList::Core::MessageItemSetReference MessageList::Widget::selectionAsPersistentSet(bool includeCollapsedChildren) const
 {
     QVector<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
@@ -720,7 +720,7 @@ MessageList::Core::MessageItemSetReference Widget::selectionAsPersistentSet(bool
     return view()->createPersistentSet(lstMi);
 }
 
-MessageList::Core::MessageItemSetReference Widget::currentThreadAsPersistentSet() const
+MessageList::Core::MessageItemSetReference MessageList::Widget::currentThreadAsPersistentSet() const
 {
     QVector<Core::MessageItem *> lstMi = view()->currentThreadAsMessageItemList();
     if (lstMi.isEmpty()) {
@@ -729,7 +729,7 @@ MessageList::Core::MessageItemSetReference Widget::currentThreadAsPersistentSet(
     return view()->createPersistentSet(lstMi);
 }
 
-Akonadi::Collection Widget::currentCollection() const
+Akonadi::Collection MessageList::Widget::currentCollection() const
 {
     Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
     if (collections.size() != 1) {
@@ -738,12 +738,12 @@ Akonadi::Collection Widget::currentCollection() const
     return collections.first();
 }
 
-void Widget::slotCollapseItem()
+void MessageList::Widget::slotCollapseItem()
 {
     view()->setCollapseItem(d->mGroupHeaderItemIndex);
 }
 
-void Widget::slotExpandItem()
+void MessageList::Widget::slotExpandItem()
 {
     view()->setExpandItem(d->mGroupHeaderItemIndex);
 }

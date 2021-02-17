@@ -12,7 +12,7 @@
 using namespace MessageViewer;
 namespace
 {
-static const char myConfigGroupName[] = "AuthenticationServer";
+static const char myDKIMManagerAuthenticationServerConfigGroupName[] = "AuthenticationServer";
 }
 DKIMManagerAuthenticationServer::DKIMManagerAuthenticationServer(QObject *parent)
     : QObject(parent)
@@ -43,13 +43,13 @@ void DKIMManagerAuthenticationServer::setServerList(const QStringList &serverLis
 void DKIMManagerAuthenticationServer::load()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, myConfigGroupName);
+    KConfigGroup grp(config, myDKIMManagerAuthenticationServerConfigGroupName);
     mServerList = grp.readEntry("ServerList", QStringList());
 }
 
 void DKIMManagerAuthenticationServer::save()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, myConfigGroupName);
+    KConfigGroup grp(config, myDKIMManagerAuthenticationServerConfigGroupName);
     grp.writeEntry("ServerList", mServerList);
 }

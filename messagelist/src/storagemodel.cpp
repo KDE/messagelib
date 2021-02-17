@@ -74,7 +74,7 @@ KMime::Message::Ptr messageForItem(const Akonadi::Item &item)
 
 static QAtomicInt _k_attributeInitialized;
 
-StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent)
+MessageList::StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent)
     : Core::StorageModel(parent)
     , d(new Private(this))
 {
@@ -123,12 +123,12 @@ StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selec
     });
 }
 
-StorageModel::~StorageModel()
+MessageList::StorageModel::~StorageModel()
 {
     delete d;
 }
 
-Collection::List StorageModel::displayedCollections() const
+Collection::List MessageList::StorageModel::displayedCollections() const
 {
     Collection::List collections;
     const QModelIndexList indexes = d->mSelectionModel->selectedRows();
@@ -144,7 +144,7 @@ Collection::List StorageModel::displayedCollections() const
     return collections;
 }
 
-QString StorageModel::id() const
+QString MessageList::StorageModel::id() const
 {
     QStringList ids;
     const QModelIndexList indexes = d->mSelectionModel->selectedRows();
@@ -161,7 +161,7 @@ QString StorageModel::id() const
     return ids.join(QLatin1Char(':'));
 }
 
-bool StorageModel::isOutBoundFolder(const Akonadi::Collection &c) const
+bool MessageList::StorageModel::isOutBoundFolder(const Akonadi::Collection &c) const
 {
     if (c.hasAttribute<MessageFolderAttribute>() && c.attribute<MessageFolderAttribute>()->isOutboundFolder()) {
         return true;
@@ -169,7 +169,7 @@ bool StorageModel::isOutBoundFolder(const Akonadi::Collection &c) const
     return false;
 }
 
-bool StorageModel::containsOutboundMessages() const
+bool MessageList::StorageModel::containsOutboundMessages() const
 {
     const QModelIndexList indexes = d->mSelectionModel->selectedRows();
 
@@ -183,7 +183,7 @@ bool StorageModel::containsOutboundMessages() const
     return false;
 }
 
-int StorageModel::initialUnreadRowCountGuess() const
+int MessageList::StorageModel::initialUnreadRowCountGuess() const
 {
     const QModelIndexList indexes = d->mSelectionModel->selectedRows();
 
@@ -199,9 +199,9 @@ int StorageModel::initialUnreadRowCountGuess() const
     return unreadCount;
 }
 
-bool StorageModel::initializeMessageItem(MessageList::Core::MessageItem *mi, int row, bool bUseReceiver) const
+bool MessageList::StorageModel::initializeMessageItem(MessageList::Core::MessageItem *mi, int row, bool bUseReceiver) const
 {
-    const Item item = itemForRow(row);
+    const Akonadi::Item item = itemForRow(row);
     const KMime::Message::Ptr mail = messageForItem(item);
     if (!mail) {
         return false;
@@ -282,7 +282,7 @@ static QByteArray md5Encode(const QString &str)
     return c.result();
 }
 
-void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *mi, int row, ThreadingDataSubset subset) const
+void MessageList::StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *mi, int row, ThreadingDataSubset subset) const
 {
     const KMime::Message::Ptr mail = messageForRow(row);
     Q_ASSERT(mail); // We ASSUME that initializeMessageItem has been called successfully...
@@ -318,9 +318,9 @@ void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *
     }
 }
 
-void StorageModel::updateMessageItemData(MessageList::Core::MessageItem *mi, int row) const
+void MessageList::StorageModel::updateMessageItemData(MessageList::Core::MessageItem *mi, int row) const
 {
-    const Item item = itemForRow(row);
+    const Akonadi::Item item = itemForRow(row);
 
     Akonadi::MessageStatus stat;
     stat.setStatusFromFlags(item.flags());
@@ -344,17 +344,17 @@ void StorageModel::updateMessageItemData(MessageList::Core::MessageItem *mi, int
     mi->invalidateAnnotationCache();
 }
 
-void StorageModel::setMessageItemStatus(MessageList::Core::MessageItem *mi, int row, Akonadi::MessageStatus status)
+void MessageList::StorageModel::setMessageItemStatus(MessageList::Core::MessageItem *mi, int row, Akonadi::MessageStatus status)
 {
     Q_UNUSED(mi)
-    Item item = itemForRow(row);
+    Akonadi::Item item = itemForRow(row);
     item.setFlags(status.statusFlags());
     auto job = new ItemModifyJob(item, this);
     job->disableRevisionCheck();
     job->setIgnorePayload(true);
 }
 
-QVariant StorageModel::data(const QModelIndex &index, int role) const
+QVariant MessageList::StorageModel::data(const QModelIndex &index, int role) const
 {
     // We don't provide an implementation for data() in No-Akonadi-KMail.
     // This is because StorageModel must be a wrapper anyway (because columns
@@ -370,7 +370,7 @@ QVariant StorageModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-int StorageModel::columnCount(const QModelIndex &parent) const
+int MessageList::StorageModel::columnCount(const QModelIndex &parent) const
 {
     if (!parent.isValid()) {
         return 1;
@@ -378,7 +378,7 @@ int StorageModel::columnCount(const QModelIndex &parent) const
     return 0; // this model is flat.
 }
 
-QModelIndex StorageModel::index(int row, int column, const QModelIndex &parent) const
+QModelIndex MessageList::StorageModel::index(int row, int column, const QModelIndex &parent) const
 {
     if (!parent.isValid()) {
         return createIndex(row, column, (void *)nullptr);
@@ -386,13 +386,13 @@ QModelIndex StorageModel::index(int row, int column, const QModelIndex &parent) 
     return QModelIndex(); // this model is flat.
 }
 
-QModelIndex StorageModel::parent(const QModelIndex &index) const
+QModelIndex MessageList::StorageModel::parent(const QModelIndex &index) const
 {
     Q_UNUSED(index)
     return QModelIndex(); // this model is flat.
 }
 
-int StorageModel::rowCount(const QModelIndex &parent) const
+int MessageList::StorageModel::rowCount(const QModelIndex &parent) const
 {
     if (!parent.isValid()) {
         return d->mModel->rowCount();
@@ -400,14 +400,14 @@ int StorageModel::rowCount(const QModelIndex &parent) const
     return 0; // this model is flat.
 }
 
-QMimeData *StorageModel::mimeData(const QVector<MessageList::Core::MessageItem *> &items) const
+QMimeData *MessageList::StorageModel::mimeData(const QVector<MessageList::Core::MessageItem *> &items) const
 {
     auto data = new QMimeData();
     QList<QUrl> urls;
     urls.reserve(items.count());
     for (MessageList::Core::MessageItem *mi : items) {
         Akonadi::Item item = itemForRow(mi->currentModelIndexRow());
-        urls << item.url(Item::UrlWithMimeType);
+        urls << item.url(Akonadi::Item::UrlWithMimeType);
     }
 
     data->setUrls(urls);
@@ -415,18 +415,18 @@ QMimeData *StorageModel::mimeData(const QVector<MessageList::Core::MessageItem *
     return data;
 }
 
-void StorageModel::Private::onSourceDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
+void MessageList::StorageModel::Private::onSourceDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
 {
     Q_EMIT q->dataChanged(q->index(topLeft.row(), 0), q->index(bottomRight.row(), 0));
 }
 
-void StorageModel::Private::onSelectionChanged()
+void MessageList::StorageModel::Private::onSelectionChanged()
 {
     mFolderHash.clear();
     Q_EMIT q->headerDataChanged(Qt::Horizontal, 0, q->columnCount() - 1);
 }
 
-void StorageModel::Private::loadSettings()
+void MessageList::StorageModel::Private::loadSettings()
 {
     // Custom/System colors
     MessageListSettings *settings = MessageListSettings::self();
@@ -454,17 +454,17 @@ void StorageModel::Private::loadSettings()
     }
 }
 
-Item StorageModel::itemForRow(int row) const
+Akonadi::Item MessageList::StorageModel::itemForRow(int row) const
 {
-    return d->mModel->data(d->mModel->index(row, 0), EntityTreeModel::ItemRole).value<Item>();
+    return d->mModel->data(d->mModel->index(row, 0), EntityTreeModel::ItemRole).value<Akonadi::Item>();
 }
 
-KMime::Message::Ptr StorageModel::messageForRow(int row) const
+KMime::Message::Ptr MessageList::StorageModel::messageForRow(int row) const
 {
     return messageForItem(itemForRow(row));
 }
 
-Collection StorageModel::parentCollectionForRow(int row) const
+Collection MessageList::StorageModel::parentCollectionForRow(int row) const
 {
     auto mimeProxy = static_cast<QAbstractProxyModel *>(d->mModel);
     // This is index mapped to Akonadi::SelectionProxyModel
@@ -484,7 +484,7 @@ Collection StorageModel::parentCollectionForRow(int row) const
     return col;
 }
 
-Akonadi::Collection StorageModel::collectionForId(Akonadi::Collection::Id colId) const
+Akonadi::Collection MessageList::StorageModel::collectionForId(Akonadi::Collection::Id colId) const
 {
     // Get ETM
     auto childrenProxy = static_cast<QAbstractProxyModel *>(d->mChildrenFilterModel);
@@ -502,7 +502,7 @@ Akonadi::Collection StorageModel::collectionForId(Akonadi::Collection::Id colId)
     return Akonadi::Collection();
 }
 
-void StorageModel::resetModelStorage()
+void MessageList::StorageModel::resetModelStorage()
 {
     beginResetModel();
     endResetModel();

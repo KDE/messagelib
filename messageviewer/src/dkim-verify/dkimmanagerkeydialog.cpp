@@ -13,7 +13,7 @@
 
 namespace
 {
-static const char myConfigGroupName[] = "DKIMManagerKeyDialog";
+static const char myDKIMManagerKeyDialogConfigGroupName[] = "DKIMManagerKeyDialog";
 }
 
 using namespace MessageViewer;
@@ -43,7 +43,7 @@ DKIMManagerKeyDialog::~DKIMManagerKeyDialog()
 
 void DKIMManagerKeyDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    KConfigGroup group(KSharedConfig::openConfig(), myDKIMManagerKeyDialogConfigGroupName);
     mManagerWidget->restoreHeaders(group.readEntry("Header", QByteArray()));
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
@@ -53,7 +53,7 @@ void DKIMManagerKeyDialog::readConfig()
 
 void DKIMManagerKeyDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    KConfigGroup group(KSharedConfig::openConfig(), myDKIMManagerKeyDialogConfigGroupName);
     group.writeEntry("Header", mManagerWidget->saveHeaders());
     group.writeEntry("Size", size());
     group.sync();

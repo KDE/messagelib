@@ -888,7 +888,7 @@ Akonadi::Item Pane::currentItem() const
     auto w = static_cast<Widget *>(currentWidget());
 
     if (!w) {
-        return Item();
+        return Akonadi::Item();
     }
 
     return w->currentItem();
