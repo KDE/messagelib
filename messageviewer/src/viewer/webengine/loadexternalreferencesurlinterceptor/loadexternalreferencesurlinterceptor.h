@@ -21,6 +21,9 @@ public:
     void setAllowExternalContent(bool b);
     Q_REQUIRED_RESULT bool allowExternalContent() const;
 
+Q_SIGNALS:
+    void urlBlocked(const QUrl &url);
+
 private:
     bool mAllowLoadExternalReference = false;
 };
