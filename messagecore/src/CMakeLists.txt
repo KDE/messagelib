@@ -173,6 +173,7 @@ ecm_generate_pri_file(BASE_NAME MessageCore
 
 
 install(FILES
+    ${MessageCore_Camelcaseautocrypt_HEADERS}
     ${MessageCore_Camelcasehelpers_HEADERS}
     ${MessageCore_Camelcasesettings_HEADERS}
     ${MessageCore_Camelcaseutils_HEADERS}
@@ -185,6 +186,7 @@ install(FILES
 
 install(FILES
     ${MessageCore_HEADERS}
+    ${MessageCore_autocrypt_HEADERS}
     ${MessageCore_helpers_HEADERS}
     ${MessageCore_settings_HEADERS}
     ${MessageCore_utils_HEADERS}
