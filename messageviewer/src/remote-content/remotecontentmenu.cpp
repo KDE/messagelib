@@ -7,6 +7,7 @@
 #include "remotecontentmenu.h"
 #include "remotecontentconfiguredialog.h"
 #include <KLocalizedString>
+#include <QAction>
 #include <QPointer>
 
 using namespace MessageViewer;
@@ -22,7 +23,8 @@ RemoteContentMenu::~RemoteContentMenu()
 
 void RemoteContentMenu::initialize()
 {
-    mConfigureRemoteContentAction = addAction(i18n("Configure"), this, &RemoteContentMenu::slotConfigure);
+    mConfigureRemoteContentAction = new QAction(i18n("Configure"), this);
+    connect(mConfigureRemoteContentAction, &QAction::triggered, this, &RemoteContentMenu::slotConfigure);
 }
 
 void RemoteContentMenu::slotConfigure()
@@ -30,4 +32,11 @@ void RemoteContentMenu::slotConfigure()
     QPointer<MessageViewer::RemoteContentConfigureDialog> remoteContentDialog = new MessageViewer::RemoteContentConfigureDialog(this);
     remoteContentDialog->exec();
     delete remoteContentDialog;
+}
+
+void RemoteContentMenu::updateMenu()
+{
+    clear();
+    addSeparator();
+    addAction(mConfigureRemoteContentAction);
 }

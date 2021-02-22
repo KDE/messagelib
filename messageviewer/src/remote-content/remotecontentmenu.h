@@ -18,6 +18,8 @@ public:
     explicit RemoteContentMenu(QWidget *parent = nullptr);
     ~RemoteContentMenu() override;
 
+    void updateMenu();
+
 private:
     void initialize();
     void slotConfigure();
