@@ -938,7 +938,7 @@ void ViewerPrivate::applyZoomValue(qreal factor, bool saveConfig)
 {
     if (mZoomActionMenu) {
         if (factor >= 10 && factor <= 300) {
-            if (mZoomActionMenu->zoomFactor() != factor) {
+            if (!qFuzzyCompare(mZoomActionMenu->zoomFactor(), factor)) {
                 mZoomActionMenu->setZoomFactor(factor);
                 mZoomActionMenu->setWebViewerZoomFactor(factor / 100.0);
                 if (saveConfig) {
