@@ -927,6 +927,11 @@ void ViewerPrivate::initHtmlWidget()
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::messageIsNotAScam, this, &ViewerPrivate::slotMessageIsNotAScam);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::addToWhiteList, this, &ViewerPrivate::slotAddToWhiteList);
     connect(mViewer, &MailWebEngineView::pageIsScrolledToBottom, this, &ViewerPrivate::pageIsScrolledToBottom);
+    connect(mViewer, &MailWebEngineView::urlBlocked, this, &ViewerPrivate::slotUrlBlocked);
+}
+
+void ViewerPrivate::slotUrlBlocked(const QUrl &url)
+{
 }
 
 void ViewerPrivate::applyZoomValue(qreal factor, bool saveConfig)

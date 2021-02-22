@@ -81,6 +81,7 @@ protected:
 Q_SIGNALS:
     void wheelZoomChanged(int numSteps);
     void openUrl(const QUrl &url);
+    void urlBlocked(const QUrl &url);
     void messageMayBeAScam();
     void formSubmittedForbidden();
     void mailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);

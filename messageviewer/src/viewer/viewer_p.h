@@ -609,6 +609,7 @@ private:
     bool mHtmlMailGlobalSetting = false;
     bool mHtmlLoadExternalDefaultSetting = false;
     bool mHtmlLoadExtOverride = false;
+    void slotUrlBlocked(const QUrl &url);
 
 public:
     KMime::Message::Ptr mMessage; // the current message, if it was set manually

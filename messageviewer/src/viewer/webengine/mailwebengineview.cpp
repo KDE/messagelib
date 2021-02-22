@@ -82,6 +82,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
 
     d->mNetworkAccessManager = new WebEngineViewer::InterceptorManager(this, ac, this);
     d->mExternalReference = new MessageViewer::LoadExternalReferencesUrlInterceptor(this);
+    connect(d->mExternalReference, &MessageViewer::LoadExternalReferencesUrlInterceptor::urlBlocked, this, &MailWebEngineView::urlBlocked);
     d->mNetworkAccessManager->addInterceptor(d->mExternalReference);
     auto cidReference = new MessageViewer::CidReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(cidReference);
