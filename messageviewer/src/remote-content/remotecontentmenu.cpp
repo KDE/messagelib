@@ -23,12 +23,6 @@ RemoteContentMenu::~RemoteContentMenu()
 void RemoteContentMenu::initialize()
 {
     mConfigureRemoteContentAction = addAction(i18n("Configure"), this, &RemoteContentMenu::slotConfigure);
-    fillMenu();
-}
-
-void RemoteContentMenu::fillMenu()
-{
-    // TODO
 }
 
 void RemoteContentMenu::slotConfigure()
