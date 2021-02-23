@@ -34,6 +34,16 @@ void RemoteContentMenu::slotConfigure()
     delete remoteContentDialog;
 }
 
+QStringList RemoteContentMenu::urls() const
+{
+    return mUrls;
+}
+
+void RemoteContentMenu::setUrls(const QStringList &urls)
+{
+    mUrls = urls;
+}
+
 void RemoteContentMenu::updateMenu()
 {
     clear();

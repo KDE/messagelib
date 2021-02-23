@@ -20,9 +20,13 @@ public:
 
     void updateMenu();
 
+    Q_REQUIRED_RESULT QStringList urls() const;
+    void setUrls(const QStringList &urls);
+
 private:
     void initialize();
     void slotConfigure();
+    QStringList mUrls;
     QAction *mConfigureRemoteContentAction = nullptr;
 };
 }
