@@ -659,6 +659,12 @@ DKIMViewerMenu *Viewer::dkimViewerMenu()
     return d->dkimViewerMenu();
 }
 
+RemoteContentMenu *Viewer::remoteContentMenu() const
+{
+    Q_D(const Viewer);
+    return d->remoteContentMenu();
+}
+
 void Viewer::setPluginName(const QString &pluginName)
 {
     Q_D(Viewer);

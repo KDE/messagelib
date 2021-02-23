@@ -7,12 +7,12 @@
 #ifndef REMOTECONTENTMENU_H
 #define REMOTECONTENTMENU_H
 
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 #include <QMenu>
 #include <QObject>
 namespace MessageViewer
 {
-class MESSAGEVIEWER_TESTS_EXPORT RemoteContentMenu : public QMenu
+class MESSAGEVIEWER_EXPORT RemoteContentMenu : public QMenu
 {
 public:
     explicit RemoteContentMenu(QWidget *parent = nullptr);

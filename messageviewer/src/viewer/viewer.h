@@ -55,6 +55,7 @@ class HeaderStylePlugin;
 class CSSHelper;
 class ViewerPrivate;
 class Viewer;
+class RemoteContentMenu;
 
 /**
  * An interface to plug in a handler that is called when
@@ -264,6 +265,8 @@ public:
     Q_REQUIRED_RESULT KActionMenu *shareServiceUrlMenu() const;
     Q_REQUIRED_RESULT HeaderStylePlugin *headerStylePlugin() const;
     Q_REQUIRED_RESULT MessageViewer::DKIMViewerMenu *dkimViewerMenu();
+
+    Q_REQUIRED_RESULT MessageViewer::RemoteContentMenu *remoteContentMenu() const;
 
     void setPluginName(const QString &pluginName);
 

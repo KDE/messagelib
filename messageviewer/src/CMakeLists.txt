@@ -431,6 +431,7 @@ endif()
 ecm_generate_headers(MessageViewer_Camelremotecontent_HEADERS
     HEADER_NAMES
     RemoteContentConfigureDialog
+    RemoteContentMenu
     REQUIRED_HEADERS MessageViewer_remotecontent_HEADERS
     PREFIX MessageViewer
     RELATIVE remote-content
