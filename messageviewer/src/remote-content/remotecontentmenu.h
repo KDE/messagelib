@@ -28,6 +28,7 @@ public:
 
 private:
     void initialize();
+    void authorize(const QString &url);
     void slotConfigure();
     QStringList mUrls;
     QAction *mConfigureRemoteContentAction = nullptr;

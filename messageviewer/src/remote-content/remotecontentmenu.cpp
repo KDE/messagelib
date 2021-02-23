@@ -47,8 +47,19 @@ void RemoteContentMenu::setUrls(const QStringList &urls)
 void RemoteContentMenu::updateMenu()
 {
     clear();
+    for (const QString &url : qAsConst(mUrls)) {
+        QAction *act = addAction(i18n("Authorize %1", url));
+        connect(act, &QAction::triggered, this, [this, url]() {
+            authorize(url);
+        });
+    }
     addSeparator();
     addAction(mConfigureRemoteContentAction);
+}
+
+void RemoteContentMenu::authorize(const QString &url)
+{
+    // TODO
 }
 
 void RemoteContentMenu::clearUrls()
