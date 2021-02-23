@@ -24,6 +24,7 @@ public:
     void setUrls(const QStringList &urls);
 
     void clearUrls();
+    void appendUrl(const QString &url);
 
 private:
     void initialize();

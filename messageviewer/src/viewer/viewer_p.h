@@ -94,6 +94,7 @@ class MailSourceWebEngineViewer;
 class MailTrackingWarningWidget;
 class ShowNextMessageWidget;
 class DeveloperToolDialog;
+class RemoteContentMenu;
 /**
 \brief Private class for the Viewer, the main widget in the messageviewer library.
 
@@ -441,6 +442,8 @@ public:
     void setIdentityManager(KIdentityManagement::IdentityManager *ident);
     void setFolderIdentity(uint folderIdentity);
 
+    RemoteContentMenu *remoteContentMenu() const;
+
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
     void slotModifyItemDone(KJob *job);
@@ -709,6 +712,7 @@ public:
     MessageViewer::DKIMViewerMenu *mDkimViewerMenu = nullptr;
     MessageViewer::MessageViewerRenderer *mMessageViewerRenderer = nullptr;
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
+    RemoteContentMenu *mRemoteContentMenu = nullptr;
 };
 }
 

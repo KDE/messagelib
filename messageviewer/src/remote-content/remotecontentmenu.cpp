@@ -55,3 +55,8 @@ void RemoteContentMenu::clearUrls()
 {
     mUrls.clear();
 }
+
+void RemoteContentMenu::appendUrl(const QString &url)
+{
+    mUrls.append(url);
+}

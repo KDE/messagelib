@@ -147,6 +147,8 @@
 #include "dkim-verify/dkimviewermenu.h"
 #include "dkim-verify/dkimwidgetinfo.h"
 
+#include "remote-content/remotecontentmenu.h"
+
 using namespace boost;
 using namespace MailTransport;
 using namespace MessageViewer;
@@ -182,6 +184,8 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
         mMainWindow = aParent;
     }
     mMessageViewerRenderer = new MessageViewerRenderer;
+
+    mRemoteContentMenu = new MessageViewer::RemoteContentMenu(mMainWindow);
 
     mDkimWidgetInfo = new MessageViewer::DKIMWidgetInfo(mMainWindow);
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
@@ -932,6 +936,12 @@ void ViewerPrivate::initHtmlWidget()
 
 void ViewerPrivate::slotUrlBlocked(const QUrl &url)
 {
+    mRemoteContentMenu->appendUrl(url.toString());
+}
+
+RemoteContentMenu *ViewerPrivate::remoteContentMenu() const
+{
+    return mRemoteContentMenu;
 }
 
 void ViewerPrivate::applyZoomValue(qreal factor, bool saveConfig)
