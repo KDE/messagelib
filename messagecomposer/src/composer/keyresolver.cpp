@@ -545,18 +545,16 @@ public:
 void EncryptionFormatPreferenceCounter::operator()(const Kleo::KeyResolver::Item &item)
 {
     if (item.format & (Kleo::InlineOpenPGPFormat | Kleo::OpenPGPMIMEFormat)
-        && std::find_if(item.keys.begin(),
+        && std::any_of(item.keys.begin(),
                         item.keys.end(),
-                        ValidTrustedOpenPGPEncryptionKey)
-            != item.keys.end()) { // -= trusted?
+                        ValidTrustedOpenPGPEncryptionKey)) { // -= trusted?
         CASE(OpenPGPMIME);
         CASE(InlineOpenPGP);
     }
     if (item.format & (Kleo::SMIMEFormat | Kleo::SMIMEOpaqueFormat)
-        && std::find_if(item.keys.begin(),
+        && std::any_of(item.keys.begin(),
                         item.keys.end(),
-                        ValidTrustedSMIMEEncryptionKey)
-            != item.keys.end()) { // -= trusted?
+                        ValidTrustedSMIMEEncryptionKey)) { // -= trusted?
         CASE(SMIME);
         CASE(SMIMEOpaque);
     }
@@ -1085,8 +1083,8 @@ Kleo::Action Kleo::KeyResolver::checkEncryptionPreferences(bool encryptionReques
 
 bool Kleo::KeyResolver::encryptionPossible() const
 {
-    return std::find_if(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(), EmptyKeyList) == d->mPrimaryEncryptionKeys.end()
-        && std::find_if(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(), EmptyKeyList) == d->mSecondaryEncryptionKeys.end();
+    return std::none_of(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(), EmptyKeyList)
+        && std::none_of(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(), EmptyKeyList);
 }
 
 Kleo::Result Kleo::KeyResolver::resolveAllKeys(bool &signingRequested, bool &encryptionRequested)
@@ -1503,8 +1501,8 @@ void Kleo::KeyResolver::dump() const
 Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypted)
 {
     const bool showKeysForApproval = showApprovalDialog()
-        || std::find_if(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(), ApprovalNeeded) != d->mPrimaryEncryptionKeys.end()
-        || std::find_if(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(), ApprovalNeeded) != d->mSecondaryEncryptionKeys.end();
+        || std::any_of(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(), ApprovalNeeded)
+        || std::any_of(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(), ApprovalNeeded);
 
     if (!showKeysForApproval) {
         return Kleo::Ok;
@@ -1701,8 +1699,8 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
         std::vector<GpgME::Key> keys = lookup(fingerprints);
         if (!keys.empty()) {
             // Check if all of the keys are trusted and valid encryption keys
-            if (std::find_if(keys.begin(), keys.end(),
-                             NotValidTrustedEncryptionKey) != keys.end()) { // -= trusted?
+            if (std::any_of(keys.begin(), keys.end(),
+                             NotValidTrustedEncryptionKey)) { // -= trusted?
                 // not ok, let the user select: this is not conditional on !quiet,
                 // since it's a bug in the configuration and the user should be
                 // notified about it as early as possible:
