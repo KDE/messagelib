@@ -23,6 +23,8 @@ public:
     Q_REQUIRED_RESULT QStringList urls() const;
     void setUrls(const QStringList &urls);
 
+    void clearUrls();
+
 private:
     void initialize();
     void slotConfigure();

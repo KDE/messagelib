@@ -50,3 +50,8 @@ void RemoteContentMenu::updateMenu()
     addSeparator();
     addAction(mConfigureRemoteContentAction);
 }
+
+void RemoteContentMenu::clearUrls()
+{
+    mUrls.clear();
+}
