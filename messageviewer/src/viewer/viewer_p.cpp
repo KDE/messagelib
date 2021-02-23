@@ -936,7 +936,7 @@ void ViewerPrivate::initHtmlWidget()
 
 void ViewerPrivate::slotUrlBlocked(const QUrl &url)
 {
-    mRemoteContentMenu->appendUrl(url.toString());
+    mRemoteContentMenu->appendUrl(url.adjusted(QUrl::RemovePath | QUrl::RemovePort | QUrl::RemoveQuery).toString());
 }
 
 RemoteContentMenu *ViewerPrivate::remoteContentMenu() const

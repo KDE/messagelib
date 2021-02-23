@@ -32,6 +32,7 @@ private:
     void slotConfigure();
     QStringList mUrls;
     QAction *mConfigureRemoteContentAction = nullptr;
+    QList<QAction *> mListAction;
 };
 }
 #endif // REMOTECONTENTMENU_H

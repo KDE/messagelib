@@ -8,13 +8,13 @@
 #include "remotecontentconfiguredialog.h"
 #include <KLocalizedString>
 #include <QAction>
+#include <QDebug>
 #include <QPointer>
 
 using namespace MessageViewer;
 RemoteContentMenu::RemoteContentMenu(QWidget *parent)
     : QMenu(parent)
 {
-    initialize();
     setTitle(i18n("Remote Content"));
     initialize();
     updateMenu();
@@ -49,12 +49,15 @@ void RemoteContentMenu::setUrls(const QStringList &urls)
 
 void RemoteContentMenu::updateMenu()
 {
-    clear();
+    for (auto act : qAsConst(mListAction)) {
+        removeAction(act);
+    }
     for (const QString &url : qAsConst(mUrls)) {
         QAction *act = addAction(i18n("Authorize %1", url));
         connect(act, &QAction::triggered, this, [this, url]() {
             authorize(url);
         });
+        mListAction << act;
     }
     addSeparator();
     addAction(mConfigureRemoteContentAction);
@@ -75,4 +78,5 @@ void RemoteContentMenu::appendUrl(const QString &url)
     if (!mUrls.contains(url)) {
         mUrls.append(url);
     }
+    updateMenu();
 }
