@@ -47,23 +47,6 @@
 #include <memory>
 #include <set>
 
-// this should go into stl_util.h, which has since moved into messageviewer.
-// for lack of a better place put it in here for now.
-namespace kdtools
-{
-template<typename Iterator, typename UnaryPredicate> bool any(Iterator first, Iterator last, UnaryPredicate p)
-{
-    while (first != last) {
-        if (p(*first)) {
-            return true;
-        } else {
-            ++first;
-        }
-    }
-    return false;
-}
-} // namespace kdtools
-
 //
 // some predicates to be used in STL algorithms:
 //
@@ -1877,7 +1860,7 @@ void Kleo::KeyResolver::addKeys(const std::vector<Item> &items)
         CryptoMessageFormat f = AutoFormat;
         for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
             const CryptoMessageFormat fmt = concreteCryptoMessageFormats[i];
-            if ((fmt & it->format) && kdtools::any(it->keys.begin(), it->keys.end(), IsForFormat(fmt))) {
+            if ((fmt & it->format) && std::any_of(it->keys.begin(), it->keys.end(), IsForFormat(fmt))) {
                 f = fmt;
                 break;
             }
