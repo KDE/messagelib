@@ -5,7 +5,9 @@
 */
 
 #include "remotecontentmenu.h"
+#include "remote-content/remotecontentmanager.h"
 #include "remotecontentconfiguredialog.h"
+#include "remotecontentinfo.h"
 #include <KLocalizedString>
 #include <QAction>
 #include <QDebug>
@@ -65,7 +67,10 @@ void RemoteContentMenu::updateMenu()
 
 void RemoteContentMenu::authorize(const QString &url)
 {
-    // TODO
+    RemoteContentInfo info;
+    info.setUrl(url);
+    info.setStatus(RemoteContentInfo::RemoteContentInfoStatus::Authorized);
+    RemoteContentManager::self()->addRemoteContent(info);
 }
 
 void RemoteContentMenu::clearUrls()
