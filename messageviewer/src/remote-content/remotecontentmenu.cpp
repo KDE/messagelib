@@ -15,6 +15,9 @@ RemoteContentMenu::RemoteContentMenu(QWidget *parent)
     : QMenu(parent)
 {
     initialize();
+    setTitle(i18n("Remote Content"));
+    initialize();
+    updateMenu();
 }
 
 RemoteContentMenu::~RemoteContentMenu()
