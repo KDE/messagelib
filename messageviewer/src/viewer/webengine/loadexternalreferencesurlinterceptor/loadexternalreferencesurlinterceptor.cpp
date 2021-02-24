@@ -5,7 +5,7 @@
 */
 
 #include "loadexternalreferencesurlinterceptor.h"
-
+#include "remote-content/remotecontentmanager.h"
 #include <QDebug>
 #include <QWebEngineUrlRequestInfo>
 
@@ -30,7 +30,14 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
         return false;
     } else {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !info.requestUrl().isLocalFile() && (scheme != QLatin1String("cid"))) {
-            Q_EMIT urlBlocked(info.requestUrl());
+            const QUrl url = info.requestUrl().adjusted(QUrl::RemovePath | QUrl::RemovePort | QUrl::RemoveQuery);
+            bool contains = false;
+            if (MessageViewer::RemoteContentManager::self()->isAutorized(url, contains)) {
+                return false;
+            }
+            if (!contains) {
+                Q_EMIT urlBlocked(info.requestUrl());
+            }
             return true;
         } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeFontResource) {
             return true;

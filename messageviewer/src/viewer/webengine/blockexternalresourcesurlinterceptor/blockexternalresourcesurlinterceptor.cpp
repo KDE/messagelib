@@ -5,8 +5,6 @@
 */
 
 #include "blockexternalresourcesurlinterceptor.h"
-#include "remote-content/remotecontentmanager.h"
-#include <QDebug>
 using namespace MessageViewer;
 
 BlockExternalResourcesUrlInterceptor::BlockExternalResourcesUrlInterceptor(QObject *parent)
@@ -41,15 +39,6 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(const QUrl &url,
     } else if (navigationType == QWebEngineUrlRequestInfo::NavigationTypeReload || navigationType == QWebEngineUrlRequestInfo::NavigationTypeTyped
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeBackForward || navigationType == QWebEngineUrlRequestInfo::NavigationTypeOther
                || navigationType == QWebEngineUrlRequestInfo::NavigationTypeRedirect) {
-        return true;
-    }
-    bool contains = false;
-    if (MessageViewer::RemoteContentManager::self()->isAutorized(url, contains)) {
-        return false;
-    }
-    if (!contains) { // Don't block it if it's not in list of url in remote content manager
-        return false;
-    } else {
         return true;
     }
     return false;
