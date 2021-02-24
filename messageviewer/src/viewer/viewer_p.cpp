@@ -1152,6 +1152,7 @@ void ViewerPrivate::resetStateForNewMessage()
     mOpenSavedFileFolderWidget->setVisible(false);
     mSubmittedFormWarning->setVisible(false);
     mMailTrackingWarning->hideAndClear();
+    mRemoteContentMenu->clearUrls();
 
     if (mPrinting) {
         if (MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettings()) {
