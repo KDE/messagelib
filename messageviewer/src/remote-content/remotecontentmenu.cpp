@@ -18,8 +18,8 @@ RemoteContentMenu::RemoteContentMenu(QWidget *parent)
     : QMenu(parent)
 {
     setTitle(i18n("Remote Content"));
+    connect(this, &QMenu::aboutToShow, this, &RemoteContentMenu::updateMenu);
     initialize();
-    updateMenu();
 }
 
 RemoteContentMenu::~RemoteContentMenu()
@@ -29,12 +29,10 @@ RemoteContentMenu::~RemoteContentMenu()
 void RemoteContentMenu::initialize()
 {
     mConfigureRemoteContentAction = new QAction(i18n("Configure"), this);
-    connect(mConfigureRemoteContentAction, &QAction::triggered, this, &RemoteContentMenu::slotConfigure);
 }
 
 void RemoteContentMenu::slotConfigure()
 {
-    qDebug() << " void RemoteContentMenu::slotConfigure()";
     QPointer<MessageViewer::RemoteContentConfigureDialog> remoteContentDialog = new MessageViewer::RemoteContentConfigureDialog(this);
     remoteContentDialog->exec();
     delete remoteContentDialog;
@@ -64,6 +62,7 @@ void RemoteContentMenu::updateMenu()
     }
     addSeparator();
     addAction(mConfigureRemoteContentAction);
+    connect(mConfigureRemoteContentAction, &QAction::triggered, this, &RemoteContentMenu::slotConfigure);
 }
 
 void RemoteContentMenu::authorize(const QString &url)
@@ -84,5 +83,4 @@ void RemoteContentMenu::appendUrl(const QString &url)
     if (!mUrls.contains(url)) {
         mUrls.append(url);
     }
-    updateMenu();
 }
