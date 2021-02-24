@@ -21,7 +21,10 @@
 #include <QMouseEvent>
 
 using namespace MessageViewer;
-
+namespace
+{
+static const char myHtmlStatusBarConfigGroupName[] = "Reader";
+}
 HtmlStatusBar::HtmlStatusBar(QWidget *parent)
     : QLabel(parent)
     , mMode(MimeTreeParser::Util::Normal)
@@ -142,7 +145,7 @@ QString HtmlStatusBar::toolTip() const
 
 QColor HtmlStatusBar::fgColor() const
 {
-    KConfigGroup conf(KSharedConfig::openConfig(), "Reader");
+    KConfigGroup conf(KSharedConfig::openConfig(), myHtmlStatusBarConfigGroupName);
     QColor defaultColor, color;
     switch (mode()) {
     case MimeTreeParser::Util::Html:
@@ -168,7 +171,7 @@ QColor HtmlStatusBar::fgColor() const
 
 QColor HtmlStatusBar::bgColor() const
 {
-    KConfigGroup conf(KSharedConfig::openConfig(), "Reader");
+    KConfigGroup conf(KSharedConfig::openConfig(), myHtmlStatusBarConfigGroupName);
 
     QColor defaultColor, color;
     switch (mode()) {
