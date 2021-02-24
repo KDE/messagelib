@@ -14,6 +14,10 @@
 #include <QVBoxLayout>
 
 using namespace MessageViewer;
+namespace
+{
+static const char myMailTrackingDetailsDialogConfigGroupName[] = "MailTrackingDetailsDialog";
+}
 MailTrackingDetailsDialog::MailTrackingDetailsDialog(QWidget *parent)
     : QDialog(parent)
 {
@@ -44,7 +48,7 @@ MailTrackingDetailsDialog::~MailTrackingDetailsDialog()
 
 void MailTrackingDetailsDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "MailTrackingDetailsDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), myMailTrackingDetailsDialogConfigGroupName);
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -53,7 +57,7 @@ void MailTrackingDetailsDialog::readConfig()
 
 void MailTrackingDetailsDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "MailTrackingDetailsDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), myMailTrackingDetailsDialogConfigGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }

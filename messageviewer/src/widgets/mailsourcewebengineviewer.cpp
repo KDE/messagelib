@@ -31,7 +31,10 @@ using namespace MessageViewer;
 #include <QWebEnginePage>
 
 using namespace MessageViewer;
-
+namespace
+{
+static const char myMailSourceWebEngineViewerConfigGroupName[] = "MailSourceWebEngineViewer";
+}
 MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     : QDialog(parent)
 {
@@ -82,7 +85,7 @@ MailSourceWebEngineViewer::~MailSourceWebEngineViewer()
 
 void MailSourceWebEngineViewer::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "MailSourceWebEngineViewer");
+    KConfigGroup group(KSharedConfig::openConfig(), myMailSourceWebEngineViewerConfigGroupName);
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -91,7 +94,7 @@ void MailSourceWebEngineViewer::readConfig()
 
 void MailSourceWebEngineViewer::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "MailSourceWebEngineViewer");
+    KConfigGroup group(KSharedConfig::openConfig(), myMailSourceWebEngineViewerConfigGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }

@@ -34,6 +34,7 @@ void RemoteContentMenu::initialize()
 
 void RemoteContentMenu::slotConfigure()
 {
+    qDebug() << " void RemoteContentMenu::slotConfigure()";
     QPointer<MessageViewer::RemoteContentConfigureDialog> remoteContentDialog = new MessageViewer::RemoteContentConfigureDialog(this);
     remoteContentDialog->exec();
     delete remoteContentDialog;

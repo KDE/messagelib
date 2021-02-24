@@ -27,7 +27,10 @@
 #include <memory>
 
 using namespace MessageViewer;
-
+namespace
+{
+static const char myScamDetectionDetailsDialogConfigGroupName[] = "ScamDetectionDetailsDialog";
+}
 ScamDetectionDetailsDialog::ScamDetectionDetailsDialog(QWidget *parent)
     : QDialog(parent)
 {
@@ -90,7 +93,7 @@ void ScamDetectionDetailsDialog::setDetails(const QString &details)
 
 void ScamDetectionDetailsDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "ScamDetectionDetailsDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), myScamDetectionDetailsDialogConfigGroupName);
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -99,7 +102,7 @@ void ScamDetectionDetailsDialog::readConfig()
 
 void ScamDetectionDetailsDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "ScamDetectionDetailsDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), myScamDetectionDetailsDialogConfigGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }

@@ -14,7 +14,10 @@
 #include <QHeaderView>
 
 using namespace MessageViewer;
-
+namespace
+{
+static const char myMimePartTreeViewConfigGroupName[] = "MimePartTree";
+}
 MimePartTreeView::MimePartTreeView(QWidget *parent)
     : QTreeView(parent)
 {
@@ -45,13 +48,13 @@ MimeTreeModel *MimePartTreeView::mimePartModel() const
 
 void MimePartTreeView::restoreMimePartTreeConfig()
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), "MimePartTree");
+    KConfigGroup grp(KSharedConfig::openConfig(), myMimePartTreeViewConfigGroupName);
     header()->restoreState(grp.readEntry("State", QByteArray()));
 }
 
 void MimePartTreeView::saveMimePartTreeConfig()
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), "MimePartTree");
+    KConfigGroup grp(KSharedConfig::openConfig(), myMimePartTreeViewConfigGroupName);
     grp.writeEntry("State", header()->saveState());
 }
 

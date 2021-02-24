@@ -24,7 +24,10 @@ using KContacts::VCardConverter;
 #include <QVBoxLayout>
 
 using namespace MessageViewer;
-
+namespace
+{
+static const char myVCardViewerConfigGroupName[] = "VCardViewer";
+}
 VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
     : QDialog(parent)
 {
@@ -82,7 +85,7 @@ VCardViewer::~VCardViewer()
 
 void VCardViewer::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "VCardViewer");
+    KConfigGroup group(KSharedConfig::openConfig(), myVCardViewerConfigGroupName);
     const QSize size = group.readEntry("Size", QSize(300, 400));
     if (size.isValid()) {
         resize(size);
@@ -91,7 +94,7 @@ void VCardViewer::readConfig()
 
 void VCardViewer::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "VCardViewer");
+    KConfigGroup group(KSharedConfig::openConfig(), myVCardViewerConfigGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }
