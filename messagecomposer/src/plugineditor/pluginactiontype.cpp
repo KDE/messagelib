@@ -45,6 +45,10 @@ QString PluginActionType::actionXmlExtension(PluginActionType::Type type)
         return QStringLiteral("_toolbar_actions");
     case MessageComposer::PluginActionType::Options:
         return QStringLiteral("_plugins_options");
+    case MessageComposer::PluginActionType::Insert:
+        return QStringLiteral("_plugins_insert");
+    case MessageComposer::PluginActionType::View:
+        return QStringLiteral("_plugins_view");
     case MessageComposer::PluginActionType::None:
         return QString();
     }
