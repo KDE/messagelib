@@ -30,6 +30,7 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     mTreeWidget->setRootIsDecorated(false);
     mTreeWidget->setHeaderLabels({i18n("SDID"), i18n("Selector"), i18n("DKIM Key")});
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
+    mTreeWidget->setSelectionMode(QAbstractItemView::MultiSelection);
     mTreeWidget->setAlternatingRowColors(true);
 
     auto searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
@@ -60,15 +61,27 @@ void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
     QTreeWidgetItem *item = mTreeWidget->itemAt(pos);
     QMenu menu(this);
     if (item) {
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [item]() {
-            QApplication::clipboard()->setText(item->text(2));
-        });
-        menu.addSeparator();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Key"), this, [this, item]() {
-            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete this key?"), i18n("Delete Key"))) {
-                delete item;
-            }
-        });
+        const int selectedItemsCount{mTreeWidget->selectedItems().count()};
+        if (selectedItemsCount == 1) {
+            menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [item]() {
+                QApplication::clipboard()->setText(item->text(2));
+            });
+            menu.addSeparator();
+        }
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")),
+                       i18np("Remove Key", "Remove Keys", selectedItemsCount),
+                       this,
+                       [this, selectedItemsCount]() {
+                           if (KMessageBox::Yes
+                               == KMessageBox::warningYesNo(this,
+                                                            i18np("Do you want to delete this key?", "Do you want to delete these keys?", selectedItemsCount),
+                                                            i18np("Delete Key", "Delete Keys", selectedItemsCount))) {
+                               const auto selectedItems = mTreeWidget->selectedItems();
+                               for (QTreeWidgetItem *item : selectedItems) {
+                                   delete item;
+                               }
+                           }
+                       });
         menu.addSeparator();
     }
     if (mTreeWidget->topLevelItemCount() > 0) {
