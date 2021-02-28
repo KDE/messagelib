@@ -29,7 +29,7 @@ private:
     void writeConfig();
     void loadKeys();
     void slotAccept();
-    DKIMManagerKeyWidget *mManagerWidget = nullptr;
+    DKIMManagerKeyWidget *const mManagerWidget;
 };
 }
 

@@ -21,13 +21,13 @@ static const char myDKIMRuleDialogConfigGroupName[] = "DKIMRuleDialog";
 using namespace MessageViewer;
 DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)
     : QDialog(parent)
+    , mRuleWidget(new DKIMRuleWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Add Rule"));
 
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
-    mRuleWidget = new DKIMRuleWidget(this);
     mRuleWidget->setObjectName(QStringLiteral("rulewidget"));
     mainLayout->addWidget(mRuleWidget);
 

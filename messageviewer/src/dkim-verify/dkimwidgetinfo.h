@@ -37,7 +37,7 @@ private:
     void updateToolTip();
     void initColors();
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;
-    QLabel *mLabel = nullptr;
+    QLabel *const mLabel;
     QColor mWarningColor;
     QColor mErrorColor;
     QColor mOkColor;

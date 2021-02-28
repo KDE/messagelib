@@ -13,8 +13,8 @@
 using namespace MessageViewer;
 DKIMManagerKey::DKIMManagerKey(QObject *parent)
     : QObject(parent)
+    , mQcaInitializer(new QCA::Initializer(QCA::Practical, 64))
 {
-    mQcaInitializer = new QCA::Initializer(QCA::Practical, 64);
     loadKeys();
 }
 

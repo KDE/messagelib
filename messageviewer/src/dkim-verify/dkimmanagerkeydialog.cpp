@@ -19,11 +19,11 @@ static const char myDKIMManagerKeyDialogConfigGroupName[] = "DKIMManagerKeyDialo
 using namespace MessageViewer;
 DKIMManagerKeyDialog::DKIMManagerKeyDialog(QWidget *parent)
     : QDialog(parent)
+    , mManagerWidget(new DKIMManagerKeyWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
-    mManagerWidget = new DKIMManagerKeyWidget(this);
     mManagerWidget->setObjectName(QStringLiteral("managerWidget"));
     mainLayout->addWidget(mManagerWidget);
 

@@ -30,7 +30,7 @@ public:
 
 private:
     void slotCustomContextMenuRequested(const QPoint &);
-    QTreeWidget *mTreeWidget = nullptr;
+    QTreeWidget *const mTreeWidget;
 };
 }
 

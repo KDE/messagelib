@@ -20,8 +20,8 @@
 using namespace MessageViewer;
 DKIMManageRulesWidgetItem::DKIMManageRulesWidgetItem(QTreeWidget *parent)
     : QTreeWidgetItem(parent)
+    , mRuleTypeCombobox(new DKIMManageRulesComboBox)
 {
-    mRuleTypeCombobox = new DKIMManageRulesComboBox;
     treeWidget()->setItemWidget(this, ColumnType::RuleType, mRuleTypeCombobox);
 }
 
@@ -55,12 +55,12 @@ void DKIMManageRulesWidgetItem::updateInfo()
 
 DKIMManageRulesWidget::DKIMManageRulesWidget(QWidget *parent)
     : QWidget(parent)
+    , mTreeWidget(new QTreeWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    mTreeWidget = new QTreeWidget(this);
     mTreeWidget->setObjectName(QStringLiteral("treewidget"));
     mTreeWidget->setRootIsDecorated(false);
     mTreeWidget->setHeaderLabels({i18n("Active"), i18n("Domain"), i18n("List-ID"), i18n("From"), i18n("SDID"), i18n("Rule type"), i18n("Priority")});

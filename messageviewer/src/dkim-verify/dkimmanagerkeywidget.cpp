@@ -20,12 +20,12 @@
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     : QWidget(parent)
+    , mTreeWidget(new QTreeWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
 
-    mTreeWidget = new QTreeWidget(this);
     mTreeWidget->setObjectName(QStringLiteral("treewidget"));
     mTreeWidget->setRootIsDecorated(false);
     mTreeWidget->setHeaderLabels({i18n("SDID"), i18n("Selector"), i18n("DKIM Key")});

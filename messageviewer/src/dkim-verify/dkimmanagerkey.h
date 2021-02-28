@@ -68,7 +68,7 @@ public:
 private:
     Q_REQUIRED_RESULT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
     QVector<KeyInfo> mKeys;
-    QCA::Initializer *mQcaInitializer = nullptr;
+    QCA::Initializer *const mQcaInitializer;
 };
 }
 Q_DECLARE_TYPEINFO(MessageViewer::KeyInfo, Q_MOVABLE_TYPE);

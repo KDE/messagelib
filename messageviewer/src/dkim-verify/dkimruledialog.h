@@ -28,7 +28,7 @@ private:
     void slotAccepted();
     void writeConfig();
     void readConfig();
-    DKIMRuleWidget *mRuleWidget = nullptr;
+    DKIMRuleWidget *const mRuleWidget;
     QPushButton *mOkButton = nullptr;
 };
 }

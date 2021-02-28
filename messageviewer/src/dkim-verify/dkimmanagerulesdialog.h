@@ -28,7 +28,7 @@ private:
     void writeConfig();
     void slotImport();
     void slotExport();
-    DKIMManageRulesWidget *mRulesWidget = nullptr;
+    DKIMManageRulesWidget *const mRulesWidget;
 };
 }
 

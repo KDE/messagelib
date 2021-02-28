@@ -25,12 +25,12 @@ using namespace MessageViewer;
 
 DKIMManageRulesDialog::DKIMManageRulesDialog(QWidget *parent)
     : QDialog(parent)
+    , mRulesWidget(new DKIMManageRulesWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Rule"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
-    mRulesWidget = new DKIMManageRulesWidget(this);
     mRulesWidget->setObjectName(QStringLiteral("mRulesWidget"));
     mainLayout->addWidget(mRulesWidget);
 

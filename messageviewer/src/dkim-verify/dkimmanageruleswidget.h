@@ -40,7 +40,7 @@ public:
 private:
     void updateInfo();
     MessageViewer::DKIMRule mRule;
-    DKIMManageRulesComboBox *mRuleTypeCombobox = nullptr;
+    DKIMManageRulesComboBox *const mRuleTypeCombobox;
 };
 
 /**
@@ -64,7 +64,7 @@ private:
     void modifyRule(DKIMManageRulesWidgetItem *rulesItem);
     void slotCustomContextMenuRequested(const QPoint &);
     void duplicateRule(DKIMManageRulesWidgetItem *rulesItem);
-    QTreeWidget *mTreeWidget = nullptr;
+    QTreeWidget *const mTreeWidget;
 };
 }
 #endif // DKIMMANAGERULESWIDGET_H

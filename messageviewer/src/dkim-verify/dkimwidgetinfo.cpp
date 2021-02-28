@@ -17,12 +17,12 @@
 using namespace MessageViewer;
 DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     : QWidget(parent)
+    , mLabel(new QLabel(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    mLabel = new QLabel(this);
     mLabel->setAutoFillBackground(true);
     mLabel->setObjectName(QStringLiteral("label"));
     mainLayout->addWidget(mLabel);
