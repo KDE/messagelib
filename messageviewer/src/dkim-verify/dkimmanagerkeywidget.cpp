@@ -30,7 +30,7 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     mTreeWidget->setRootIsDecorated(false);
     mTreeWidget->setHeaderLabels({i18n("SDID"), i18n("Selector"), i18n("DKIM Key")});
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
-    mTreeWidget->setSelectionMode(QAbstractItemView::MultiSelection);
+    mTreeWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
     mTreeWidget->setAlternatingRowColors(true);
 
     auto searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
