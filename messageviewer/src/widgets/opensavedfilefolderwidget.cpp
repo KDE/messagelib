@@ -31,7 +31,7 @@ OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
         connect(action, &QAction::triggered, this, &OpenSavedFileFolderWidget::slotExplicitlyClosed);
     }
 
-    mShowFolderAction = new QAction(i18n("Open folder where attachment was saved"), this);
+    mShowFolderAction = new QAction(i18nc("@action", "Open folder where attachment was saved"), this);
     connect(mShowFolderAction, &QAction::triggered, this, &OpenSavedFileFolderWidget::slotOpenSavedFileFolder);
     addAction(mShowFolderAction);
 }
