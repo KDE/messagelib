@@ -42,7 +42,7 @@ DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)
         mOkButton->setEnabled(enabled);
     });
 
-    connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMRuleDialog::slotAccepted);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMRuleDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMRuleDialog::reject);
     readConfig();
 }
@@ -50,11 +50,6 @@ DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)
 DKIMRuleDialog::~DKIMRuleDialog()
 {
     writeConfig();
-}
-
-void DKIMRuleDialog::slotAccepted()
-{
-    accept();
 }
 
 void DKIMRuleDialog::readConfig()

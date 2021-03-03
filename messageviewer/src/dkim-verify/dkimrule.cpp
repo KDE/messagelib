@@ -102,12 +102,12 @@ void DKIMRule::setPriority(int priority)
 
 QDebug operator<<(QDebug d, const DKIMRule &t)
 {
-    d << "mDomain: " << t.domain();
-    d << "mSignedDomainIdentifier: " << t.signedDomainIdentifier();
-    d << "mFrom: " << t.from();
-    d << "mEnabled: " << t.enabled();
-    d << "mRuleType " << t.ruleType();
-    d << "mListId " << t.listId();
-    d << "mPriority " << t.priority();
+    d << " mDomain: " << t.domain();
+    d << " mSignedDomainIdentifier: " << t.signedDomainIdentifier();
+    d << " mFrom: " << t.from();
+    d << " mEnabled: " << t.enabled();
+    d << " mRuleType " << t.ruleType();
+    d << " mListId " << t.listId();
+    d << " mPriority " << t.priority();
     return d;
 }

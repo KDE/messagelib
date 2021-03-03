@@ -31,7 +31,15 @@ DKIMManageRulesWidgetItem::~DKIMManageRulesWidgetItem()
 
 MessageViewer::DKIMRule DKIMManageRulesWidgetItem::rule() const
 {
-    return mRule;
+    MessageViewer::DKIMRule rule;
+    rule.setEnabled(checkState(ColumnType::Enabled) == Qt::Checked);
+    rule.setDomain(text(ColumnType::Domain));
+    rule.setFrom(text(ColumnType::From));
+    rule.setListId(text(ColumnType::ListId));
+    rule.setPriority(text(ColumnType::Priority).toInt());
+    rule.setRuleType(mRuleTypeCombobox->ruleType());
+    rule.setSignedDomainIdentifier(text(ColumnType::SDid).split(QLatin1Char(' ')));
+    return rule;
 }
 
 void DKIMManageRulesWidgetItem::setRule(const MessageViewer::DKIMRule &rule)

@@ -25,7 +25,6 @@ public:
     void loadRule(const MessageViewer::DKIMRule &rule);
 
 private:
-    void slotAccepted();
     void writeConfig();
     void readConfig();
     DKIMRuleWidget *const mRuleWidget;
