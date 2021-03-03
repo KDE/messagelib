@@ -6,6 +6,7 @@
 
 #include "dkimmanager.h"
 #include "dkimcheckfulljob.h"
+#include "dkimmanagerkey.h"
 #include "dkimresultattribute.h"
 #include "messageviewer_dkimcheckerdebug.h"
 #include "settings/messageviewersettings.h"
@@ -15,6 +16,8 @@ using namespace MessageViewer;
 DKIMManager::DKIMManager(QObject *parent)
     : QObject(parent)
 {
+    // Initialize QCA
+    MessageViewer::DKIMManagerKey::self();
     Akonadi::AttributeFactory::registerAttribute<MessageViewer::DKIMResultAttribute>();
 }
 
