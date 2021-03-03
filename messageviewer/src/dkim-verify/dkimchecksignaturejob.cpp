@@ -16,6 +16,7 @@
 #include <QCryptographicHash>
 #include <QDateTime>
 #include <QFile>
+#include <QRegularExpression>
 #include <qca_publickey.h>
 
 // see https://tools.ietf.org/html/rfc6376
@@ -136,6 +137,10 @@ void DKIMCheckSignatureJob::start()
     if (mBodyCanonizationResult.startsWith(QLatin1String(" This is a cryptographically signed message in MIME format."))) { // Remove it from start
         mBodyCanonizationResult.replace(QStringLiteral(" This is a cryptographically signed message in MIME format."),
                                         QStringLiteral("This is a cryptographically signed message in MIME format."));
+    }
+    if (mBodyCanonizationResult.startsWith(QLatin1String(" \r\n"))) { // Remove it from start
+        static const QRegularExpression reg{QStringLiteral("^ \r\n")};
+        mBodyCanonizationResult.remove(reg);
     }
 #ifdef DEBUG_SIGNATURE_DKIM
     QFile caFile(QStringLiteral("/tmp/bodycanon-kmail.txt"));
