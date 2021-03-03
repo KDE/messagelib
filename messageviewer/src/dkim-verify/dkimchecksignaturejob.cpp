@@ -481,7 +481,7 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     if (rsaPublicKey.e().toString().toLong() * 4 < 1024) {
         const int publicRsaTooSmallPolicyValue = mPolicy.publicRsaTooSmallPolicy();
         if (publicRsaTooSmallPolicyValue == MessageViewer::MessageViewerSettings::EnumPublicRsaTooSmall::Nothing) {
-            ; // Nothing
+            // Nothing
         } else if (publicRsaTooSmallPolicyValue == MessageViewer::MessageViewerSettings::EnumPublicRsaTooSmall::Warning) {
             mWarning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::PublicRsaKeyTooSmall;
         } else if (publicRsaTooSmallPolicyValue == MessageViewer::MessageViewerSettings::EnumPublicRsaTooSmall::Error) {
