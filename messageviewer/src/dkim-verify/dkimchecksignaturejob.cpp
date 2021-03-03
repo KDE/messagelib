@@ -132,6 +132,11 @@ void DKIMCheckSignatureJob::start()
         mBodyCanonizationResult.replace(QStringLiteral(" This is a multi-part message in MIME format"),
                                         QStringLiteral("This is a multi-part message in MIME format"));
     }
+    // It seems that kmail add a space before this line => it breaks check
+    if (mBodyCanonizationResult.startsWith(QLatin1String(" This is a cryptographically signed message in MIME format."))) { // Remove it from start
+        mBodyCanonizationResult.replace(QStringLiteral(" This is a cryptographically signed message in MIME format."),
+                                        QStringLiteral("This is a cryptographically signed message in MIME format."));
+    }
 #ifdef DEBUG_SIGNATURE_DKIM
     QFile caFile(QStringLiteral("/tmp/bodycanon-kmail.txt"));
     caFile.open(QIODevice::WriteOnly | QIODevice::Text);
