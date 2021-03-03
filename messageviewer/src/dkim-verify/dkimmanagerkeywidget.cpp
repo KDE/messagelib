@@ -86,7 +86,7 @@ void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
     }
     if (mTreeWidget->topLevelItemCount() > 0) {
         menu.addAction(i18n("Delete All"), this, [this]() {
-            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete all rules?"), i18n("Delete Rules"))) {
+            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete all keys?"), i18n("Delete Keys"))) {
                 mTreeWidget->clear();
             }
         });
