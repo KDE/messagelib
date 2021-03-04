@@ -35,13 +35,13 @@ public:
     void clear();
 
     Q_REQUIRED_RESULT int importRules(const QString &fileName);
-    void exportRules(const QString &fileName);
+    void exportRules(const QString &fileName, const QVector<DKIMRule> &lst = {});
 
     Q_REQUIRED_RESULT bool isEmpty() const;
 
 private:
     Q_REQUIRED_RESULT int loadRules(const QString &fileName = QString());
-    void save(const QString &fileName = QString());
+    void save(const QString &fileName = QString(), const QVector<DKIMRule> &lst = {});
     Q_REQUIRED_RESULT QStringList ruleGroups(const KSharedConfig::Ptr &config) const;
     QVector<DKIMRule> mRules;
 };

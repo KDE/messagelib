@@ -102,12 +102,12 @@ int DKIMManagerRules::importRules(const QString &fileName)
     return loadRules(fileName);
 }
 
-void DKIMManagerRules::exportRules(const QString &fileName)
+void DKIMManagerRules::exportRules(const QString &fileName, const QVector<DKIMRule> &lst)
 {
     save(fileName);
 }
 
-void DKIMManagerRules::save(const QString &fileName)
+void DKIMManagerRules::save(const QString &fileName, const QVector<DKIMRule> &lst)
 {
     const KSharedConfig::Ptr &config =
         KSharedConfig::openConfig(fileName.isEmpty() ? MessageViewer::DKIMUtil::defaultConfigFileName() : fileName, KConfig::NoGlobals);
@@ -116,10 +116,14 @@ void DKIMManagerRules::save(const QString &fileName)
     for (const QString &group : rulesGroups) {
         config->deleteGroup(group);
     }
-    for (int i = 0, total = mRules.count(); i < total; ++i) {
+    QVector<DKIMRule> rules = lst;
+    if (lst.isEmpty()) {
+        rules = mRules;
+    }
+    for (int i = 0, total = rules.count(); i < total; ++i) {
         const QString groupName = QStringLiteral("DKIM Rule #%1").arg(i);
         KConfigGroup group = config->group(groupName);
-        const DKIMRule &rule = mRules.at(i);
+        const DKIMRule &rule = rules.at(i);
 
         group.writeEntry(QStringLiteral("SignedDomainIdentifier"), rule.signedDomainIdentifier());
         group.writeEntry(QStringLiteral("From"), rule.from());
