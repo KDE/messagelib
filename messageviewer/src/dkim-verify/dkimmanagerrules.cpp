@@ -104,7 +104,7 @@ int DKIMManagerRules::importRules(const QString &fileName)
 
 void DKIMManagerRules::exportRules(const QString &fileName, const QVector<DKIMRule> &lst)
 {
-    save(fileName);
+    save(fileName, lst);
 }
 
 void DKIMManagerRules::save(const QString &fileName, const QVector<DKIMRule> &lst)

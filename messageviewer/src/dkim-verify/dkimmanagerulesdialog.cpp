@@ -69,13 +69,14 @@ void DKIMManageRulesDialog::slotAccepted()
 
 void DKIMManageRulesDialog::slotExport()
 {
-    if (MessageViewer::DKIMManagerRules::self()->isEmpty()) {
+    const auto rules = mRulesWidget->rules();
+    if (rules.isEmpty()) {
         KMessageBox::error(this, i18n("No rules found"), i18n("Export Rules"));
         return;
     }
     const QString fileName = QFileDialog::getSaveFileName(this, i18n("Export Rules"));
     if (!fileName.isEmpty()) {
-        MessageViewer::DKIMManagerRules::self()->exportRules(fileName);
+        MessageViewer::DKIMManagerRules::self()->exportRules(fileName, rules);
     }
 }
 
