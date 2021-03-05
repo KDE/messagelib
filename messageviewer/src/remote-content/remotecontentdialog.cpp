@@ -15,7 +15,7 @@ RemoteContentDialog::RemoteContentDialog(QWidget *parent)
     : QDialog(parent)
     , mRemoveContentWidget(new RemoteContentWidget(this))
 {
-    setWindowTitle(i18nc("@title:window", "Details"));
+    setWindowTitle(i18nc("@title:window", "Edit Remote Content"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
