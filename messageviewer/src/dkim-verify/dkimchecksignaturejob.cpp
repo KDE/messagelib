@@ -31,7 +31,7 @@ DKIMCheckSignatureJob::~DKIMCheckSignatureJob()
 {
 }
 
-MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob::createCheckResult()
+MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob::createCheckResult() const
 {
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result;
     result.error = mError;
