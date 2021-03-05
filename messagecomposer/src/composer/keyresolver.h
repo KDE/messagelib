@@ -263,8 +263,6 @@ private:
 
     std::vector<GpgME::Key> lookup(const QStringList &patterns, bool secret = false) const;
 
-    bool haveTrustedEncryptionKey(const QString &person) const;
-
     std::vector<GpgME::Key>
     selectKeys(const QString &person, const QString &msg, const std::vector<GpgME::Key> &selectedKeys = std::vector<GpgME::Key>()) const;
 
