@@ -28,11 +28,12 @@ struct MESSAGEVIEWER_EXPORT KeyInfo {
     {
     }
 
-    KeyInfo(const QString &key, const QString &sel, const QString &dom, const QDateTime &storedAt = {})
+    KeyInfo(const QString &key, const QString &sel, const QString &dom, const QDateTime &storedAt = {}, const QDateTime &lastUsed = {})
         : keyValue(key)
         , selector(sel)
         , domain(dom)
         , storedAtDateTime(storedAt)
+        , lastUsedDateTime(lastUsed)
     {
     }
 
@@ -40,6 +41,7 @@ struct MESSAGEVIEWER_EXPORT KeyInfo {
     QString selector;
     QString domain;
     QDateTime storedAtDateTime;
+    QDateTime lastUsedDateTime;
     Q_REQUIRED_RESULT bool operator==(const KeyInfo &) const;
     Q_REQUIRED_RESULT bool operator!=(const KeyInfo &) const;
 };
