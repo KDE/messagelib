@@ -109,13 +109,13 @@ void DKIMCheckFullJob::storeKey(const QString &key, const QString &domain, const
 
 void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &domain, const QString &selector, bool verify)
 {
-    const MessageViewer::KeyInfo info{key, selector, domain};
+    const MessageViewer::KeyInfo info{key, selector, domain, QDateTime::currentDateTime()};
     if (verify) {
         const QString keyStored = MessageViewer::DKIMManagerKey::self()->keyValue(selector, domain);
         if (!keyStored.isEmpty()) {
             if (keyStored != key) {
-                qDebug() << "storeInKeyManager : keyStored  " << keyStored << " key " << key;
-                qDebug() << "domain " << domain << " selector " << selector;
+                // qDebug() << "storeInKeyManager : keyStored  " << keyStored << " key " << key;
+                // qDebug() << "domain " << domain << " selector " << selector;
                 if (KMessageBox::No
                     == KMessageBox::warningYesNo(nullptr,
                                                  i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"),

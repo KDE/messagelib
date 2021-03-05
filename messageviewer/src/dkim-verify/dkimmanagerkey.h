@@ -10,6 +10,7 @@
 #include "config-messageviewer.h"
 #include "messageviewer_export.h"
 #include <KSharedConfig>
+#include <QDateTime>
 #include <QObject>
 #include <QVector>
 namespace QCA
@@ -27,16 +28,18 @@ struct MESSAGEVIEWER_EXPORT KeyInfo {
     {
     }
 
-    KeyInfo(const QString &key, const QString &sel, const QString &dom)
+    KeyInfo(const QString &key, const QString &sel, const QString &dom, const QDateTime &storedAt = {})
         : keyValue(key)
         , selector(sel)
         , domain(dom)
+        , storedAtDateTime(storedAt)
     {
     }
 
     QString keyValue;
     QString selector;
     QString domain;
+    QDateTime storedAtDateTime;
     Q_REQUIRED_RESULT bool operator==(const KeyInfo &) const;
     Q_REQUIRED_RESULT bool operator!=(const KeyInfo &) const;
 };

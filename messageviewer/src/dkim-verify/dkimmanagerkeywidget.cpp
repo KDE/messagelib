@@ -28,7 +28,7 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
 
     mTreeWidget->setObjectName(QStringLiteral("treewidget"));
     mTreeWidget->setRootIsDecorated(false);
-    mTreeWidget->setHeaderLabels({i18n("SDID"), i18n("Selector"), i18n("DKIM Key")});
+    mTreeWidget->setHeaderLabels({i18n("SDID"), i18n("Selector"), i18n("DKIM Key"), i18n("Inserted")});
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     mTreeWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
     mTreeWidget->setAlternatingRowColors(true);
@@ -104,6 +104,7 @@ void DKIMManagerKeyWidget::loadKeys()
         item->setText(0, key.domain);
         item->setText(1, key.selector);
         item->setText(2, key.keyValue);
+        item->setText(3, key.storedAtDateTime.toString());
         item->setToolTip(2, key.keyValue);
     }
 }
@@ -114,7 +115,7 @@ void DKIMManagerKeyWidget::saveKeys()
     lst.reserve(mTreeWidget->topLevelItemCount());
     for (int i = 0, total = mTreeWidget->topLevelItemCount(); i < total; ++i) {
         QTreeWidgetItem *item = mTreeWidget->topLevelItem(i);
-        const MessageViewer::KeyInfo info{item->text(2), item->text(1), item->text(0)};
+        const MessageViewer::KeyInfo info{item->text(2), item->text(1), item->text(0), QDateTime::fromString(item->text(3))};
         lst.append(info);
     }
     DKIMManagerKey::self()->saveKeys(lst);

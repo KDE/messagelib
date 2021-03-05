@@ -84,7 +84,8 @@ void DKIMManagerKey::loadKeys()
         const QString selector = group.readEntry(QStringLiteral("Selector"), QString());
         const QString domain = group.readEntry(QStringLiteral("Domain"), QString());
         const QString key = group.readEntry(QStringLiteral("Key"), QString());
-        mKeys.append(KeyInfo{key, selector, domain});
+        const QDateTime storedAt = QDateTime::fromString(group.readEntry(QStringLiteral("StoredAt"), QString()), Qt::ISODate);
+        mKeys.append(KeyInfo{key, selector, domain, storedAt});
     }
 }
 
@@ -103,6 +104,7 @@ void DKIMManagerKey::saveKeys()
         group.writeEntry(QStringLiteral("Selector"), info.selector);
         group.writeEntry(QStringLiteral("Domain"), info.domain);
         group.writeEntry(QStringLiteral("Key"), info.keyValue);
+        group.writeEntry(QStringLiteral("StoredAt"), info.storedAtDateTime.toString(Qt::ISODate));
     }
 }
 
@@ -127,5 +129,6 @@ QDebug operator<<(QDebug d, const KeyInfo &t)
     d << " keyvalue " << t.keyValue;
     d << " selector " << t.selector;
     d << " domain " << t.domain;
+    d << " storedAtDateTime " << t.storedAtDateTime;
     return d;
 }
