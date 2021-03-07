@@ -199,6 +199,7 @@ void DKIMCheckSignatureJob::start()
             downloadKey(mDkimInfo);
         } else {
             parseDKIMKeyRecord(keyValue, mDkimInfo.domain(), mDkimInfo.selector(), false);
+            MessageViewer::DKIMManagerKey::self()->updateLastUsed(mDkimInfo.domain(), mDkimInfo.selector());
         }
     } else {
         downloadKey(mDkimInfo);

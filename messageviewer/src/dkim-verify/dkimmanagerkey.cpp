@@ -40,6 +40,18 @@ QString DKIMManagerKey::keyValue(const QString &selector, const QString &domain)
     return {};
 }
 
+void DKIMManagerKey::updateLastUsed(const QString &selector, const QString &domain)
+{
+    for (const KeyInfo &keyInfo : qAsConst(mKeys)) {
+        if (keyInfo.selector == selector && keyInfo.domain == domain) {
+            KeyInfo newKey = keyInfo;
+            newKey.lastUsedDateTime = QDateTime::currentDateTime();
+            addKey(newKey);
+            return;
+        }
+    }
+}
+
 void DKIMManagerKey::addKey(const KeyInfo &key)
 {
     const QVector<KeyInfo> keys = mKeys;
