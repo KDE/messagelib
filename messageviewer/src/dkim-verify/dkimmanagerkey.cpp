@@ -85,7 +85,10 @@ void DKIMManagerKey::loadKeys()
         const QString domain = group.readEntry(QStringLiteral("Domain"), QString());
         const QString key = group.readEntry(QStringLiteral("Key"), QString());
         const QDateTime storedAt = QDateTime::fromString(group.readEntry(QStringLiteral("StoredAt"), QString()), Qt::ISODate);
-        const QDateTime lastUsed = QDateTime::fromString(group.readEntry(QStringLiteral("LastUsed"), QString()), Qt::ISODate);
+        QDateTime lastUsed = QDateTime::fromString(group.readEntry(QStringLiteral("LastUsed"), QString()), Qt::ISODate);
+        if (!lastUsed.isValid()) {
+            lastUsed = storedAt;
+        }
         mKeys.append(KeyInfo{key, selector, domain, storedAt, lastUsed});
     }
 }
