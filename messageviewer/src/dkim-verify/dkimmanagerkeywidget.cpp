@@ -12,6 +12,7 @@
 #include <KTreeWidgetSearchLine>
 #include <QApplication>
 #include <QClipboard>
+#include <QDebug>
 #include <QHeaderView>
 #include <QMenu>
 #include <QTreeWidget>
@@ -32,6 +33,9 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     mTreeWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
     mTreeWidget->setAlternatingRowColors(true);
+    mTreeWidget->setSortingEnabled(true);
+    mTreeWidget->header()->setSortIndicatorShown(true);
+    mTreeWidget->header()->setSectionsClickable(true);
 
     auto searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
     searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
