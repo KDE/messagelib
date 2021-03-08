@@ -33,9 +33,6 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     mTreeWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
     mTreeWidget->setAlternatingRowColors(true);
-    mTreeWidget->setSortingEnabled(true);
-    mTreeWidget->header()->setSortIndicatorShown(true);
-    mTreeWidget->header()->setSectionsClickable(true);
 
     auto searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
     searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
@@ -112,6 +109,10 @@ void DKIMManagerKeyWidget::loadKeys()
         item->setText(4, key.lastUsedDateTime.toString());
         item->setToolTip(2, key.keyValue);
     }
+    mTreeWidget->setSortingEnabled(true);
+    mTreeWidget->header()->setSortIndicatorShown(true);
+    mTreeWidget->header()->setSectionsClickable(true);
+    mTreeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
 void DKIMManagerKeyWidget::saveKeys()
