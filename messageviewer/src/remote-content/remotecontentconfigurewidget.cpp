@@ -12,7 +12,7 @@
 #include <KMessageBox>
 #include <KTreeWidgetSearchLine>
 #include <QComboBox>
-#include <QListWidget>
+#include <QHeaderView>
 #include <QMenu>
 #include <QPointer>
 #include <QTreeWidget>
@@ -163,6 +163,10 @@ void RemoteContentConfigureWidget::readSettings()
     for (const RemoteContentInfo &info : remoteContentInfos) {
         insertRemoteContentInfo(info);
     }
+    mTreeWidget->setSortingEnabled(true);
+    mTreeWidget->header()->setSortIndicatorShown(true);
+    mTreeWidget->header()->setSectionsClickable(true);
+    mTreeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
 void RemoteContentConfigureWidget::insertRemoteContentInfo(const RemoteContentInfo &info)
