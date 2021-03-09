@@ -10,7 +10,7 @@
 #include <QWidget>
 
 #include "messageviewer_private_export.h"
-class QListWidget;
+class QTreeWidget;
 class QListWidgetItem;
 namespace MessageViewer
 {
@@ -29,7 +29,7 @@ private:
     void modifyRemoteContent(QListWidgetItem *rulesItem);
     void slotAdd();
     void readSettings();
-    QListWidget *const mListWidget;
+    QTreeWidget *const mTreeWidget;
 };
 }
 
