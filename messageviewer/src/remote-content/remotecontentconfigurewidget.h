@@ -13,11 +13,11 @@
 #include "remotecontentinfo.h"
 #include <QTreeWidgetItem>
 class QTreeWidget;
-class QComboBox;
 namespace MessageViewer
 {
+class RemoteContentStatusTypeComboBox;
 class RemoteContentInfo;
-class MESSAGEVIEWER_EXPORT RemoteContentWidgetItem : public QTreeWidgetItem
+class MESSAGEVIEWER_TESTS_EXPORT RemoteContentWidgetItem : public QTreeWidgetItem
 {
 public:
     enum ColumnType {
@@ -33,7 +33,7 @@ public:
 
 private:
     void updateInfo();
-    QComboBox *const mStatusTypeCombobox;
+    RemoteContentStatusTypeComboBox *const mStatusTypeCombobox;
 };
 
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentConfigureWidget : public QWidget

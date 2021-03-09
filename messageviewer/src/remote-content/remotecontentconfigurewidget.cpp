@@ -8,6 +8,7 @@
 #include "remotecontentdialog.h"
 #include "remotecontentinfo.h"
 #include "remotecontentmanager.h"
+#include "remotecontentstatustypecombobox.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KTreeWidgetSearchLine>
@@ -22,10 +23,8 @@ using namespace MessageViewer;
 
 RemoteContentWidgetItem::RemoteContentWidgetItem(QTreeWidget *parent)
     : QTreeWidgetItem(parent)
-    , mStatusTypeCombobox(new QComboBox)
+    , mStatusTypeCombobox(new RemoteContentStatusTypeComboBox)
 {
-    mStatusTypeCombobox->addItem(i18n("Authorized"), QVariant::fromValue(RemoteContentInfo::RemoteContentInfoStatus::Authorized));
-    mStatusTypeCombobox->addItem(i18n("Blocked"), QVariant::fromValue(RemoteContentInfo::RemoteContentInfoStatus::Blocked));
     treeWidget()->setItemWidget(this, ColumnType::RuleType, mStatusTypeCombobox);
 }
 
@@ -35,15 +34,12 @@ RemoteContentWidgetItem::~RemoteContentWidgetItem()
 
 void RemoteContentWidgetItem::setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus type)
 {
-    const int index = mStatusTypeCombobox->findData(QVariant::fromValue(type));
-    if (index != -1) {
-        mStatusTypeCombobox->setCurrentIndex(index);
-    }
+    mStatusTypeCombobox->setStatus(type);
 }
 
 RemoteContentInfo::RemoteContentInfoStatus RemoteContentWidgetItem::status() const
 {
-    return mStatusTypeCombobox->currentData().value<RemoteContentInfo::RemoteContentInfoStatus>();
+    return mStatusTypeCombobox->status();
 }
 
 RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)

@@ -261,6 +261,7 @@ set(libmessageviewer_remotecontent
     remote-content/remotecontentconfigurewidget.cpp
     remote-content/remotecontentdialog.cpp
     remote-content/remotecontentwidget.cpp
+    remote-content/remotecontentstatustypecombobox.cpp
     )
 
 set(libmessageviewer_SRCS
