@@ -22,11 +22,11 @@ using namespace MessageViewer;
 
 RemoteContentWidgetItem::RemoteContentWidgetItem(QTreeWidget *parent)
     : QTreeWidgetItem(parent)
-    , mRuleTypeCombobox(new QComboBox)
+    , mStatusTypeCombobox(new QComboBox)
 {
-    mRuleTypeCombobox->addItem(i18n("Authorized"), QVariant::fromValue(RemoteContentInfo::RemoteContentInfoStatus::Authorized));
-    mRuleTypeCombobox->addItem(i18n("Blocked"), QVariant::fromValue(RemoteContentInfo::RemoteContentInfoStatus::Blocked));
-    treeWidget()->setItemWidget(this, ColumnType::RuleType, mRuleTypeCombobox);
+    mStatusTypeCombobox->addItem(i18n("Authorized"), QVariant::fromValue(RemoteContentInfo::RemoteContentInfoStatus::Authorized));
+    mStatusTypeCombobox->addItem(i18n("Blocked"), QVariant::fromValue(RemoteContentInfo::RemoteContentInfoStatus::Blocked));
+    treeWidget()->setItemWidget(this, ColumnType::RuleType, mStatusTypeCombobox);
 }
 
 RemoteContentWidgetItem::~RemoteContentWidgetItem()
@@ -35,15 +35,15 @@ RemoteContentWidgetItem::~RemoteContentWidgetItem()
 
 void RemoteContentWidgetItem::setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus type)
 {
-    const int index = mRuleTypeCombobox->findData(QVariant::fromValue(type));
+    const int index = mStatusTypeCombobox->findData(QVariant::fromValue(type));
     if (index != -1) {
-        mRuleTypeCombobox->setCurrentIndex(index);
+        mStatusTypeCombobox->setCurrentIndex(index);
     }
 }
 
 RemoteContentInfo::RemoteContentInfoStatus RemoteContentWidgetItem::status() const
 {
-    return mRuleTypeCombobox->currentData().value<RemoteContentInfo::RemoteContentInfoStatus>();
+    return mStatusTypeCombobox->currentData().value<RemoteContentInfo::RemoteContentInfoStatus>();
 }
 
 RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)

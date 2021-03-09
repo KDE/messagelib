@@ -33,7 +33,7 @@ public:
 
 private:
     void updateInfo();
-    QComboBox *const mRuleTypeCombobox;
+    QComboBox *const mStatusTypeCombobox;
 };
 
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentConfigureWidget : public QWidget
