@@ -5,9 +5,9 @@
 */
 
 #include "remotecontentwidgettest.h"
+#include "remote-content/remotecontentstatustypecombobox.h"
 #include "remote-content/remotecontentwidget.h"
-#include <QCheckBox>
-#include <QFormLayout>
+#include <QHBoxLayout>
 #include <QLineEdit>
 #include <QTest>
 QTEST_MAIN(RemoteContentWidgetTest)
@@ -19,7 +19,7 @@ RemoteContentWidgetTest::RemoteContentWidgetTest(QObject *parent)
 void RemoteContentWidgetTest::shouldHaveDefaultValues()
 {
     MessageViewer::RemoteContentWidget w;
-    auto mainLayout = w.findChild<QFormLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), {});
 
@@ -27,6 +27,6 @@ void RemoteContentWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mLineEdit);
     QVERIFY(mLineEdit->text().isEmpty());
 
-    auto mStatusCheckBox = w.findChild<QCheckBox *>(QStringLiteral("mStatusCheckBox"));
-    QVERIFY(mStatusCheckBox);
+    auto mStatusComboBox = w.findChild<MessageViewer::RemoteContentStatusTypeComboBox *>(QStringLiteral("mStatusComboBox"));
+    QVERIFY(mStatusComboBox);
 }

@@ -5,10 +5,11 @@
 */
 
 #include "remotecontentwidget.h"
+#include "remotecontentstatustypecombobox.h"
 
 #include <KLocalizedString>
 #include <QCheckBox>
-#include <QFormLayout>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
 
@@ -16,17 +17,19 @@ using namespace MessageViewer;
 RemoteContentWidget::RemoteContentWidget(QWidget *parent)
     : QWidget(parent)
     , mLineEdit(new QLineEdit(this))
-    , mStatusCheckBox(new QCheckBox(i18n("Authorized"), this))
+    , mStatusComboBox(new RemoteContentStatusTypeComboBox(this))
 {
-    auto mainLayout = new QFormLayout(this);
+    auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
     mLineEdit->setObjectName(QStringLiteral("mLineEdit"));
-    mainLayout->addRow(i18n("Domain:"), mLineEdit);
+    QLabel *label = new QLabel(i18n("Domain:"), this);
+    mainLayout->addWidget(label);
+    mainLayout->addWidget(mLineEdit);
 
-    mStatusCheckBox->setObjectName(QStringLiteral("mStatusCheckBox"));
-    mainLayout->addRow(mStatusCheckBox);
+    mStatusComboBox->setObjectName(QStringLiteral("mStatusComboBox"));
+    mainLayout->addWidget(mStatusComboBox);
     connect(mLineEdit, &QLineEdit::textChanged, this, &RemoteContentWidget::slotTextChanged);
 }
 
@@ -43,12 +46,12 @@ RemoteContentInfo RemoteContentWidget::info() const
 {
     RemoteContentInfo info;
     info.setUrl(mLineEdit->text());
-    info.setStatus(mStatusCheckBox->isChecked() ? RemoteContentInfo::RemoteContentInfoStatus::Authorized : RemoteContentInfo::RemoteContentInfoStatus::Blocked);
+    info.setStatus(mStatusComboBox->status());
     return info;
 }
 
 void RemoteContentWidget::setInfo(const RemoteContentInfo &info)
 {
     mLineEdit->setText(info.url());
-    mStatusCheckBox->setChecked(info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized);
+    mStatusComboBox->setStatus(info.status());
 }

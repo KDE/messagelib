@@ -11,9 +11,9 @@
 #include "remotecontentinfo.h"
 #include <QWidget>
 class QLineEdit;
-class QCheckBox;
 namespace MessageViewer
 {
+class RemoteContentStatusTypeComboBox;
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentWidget : public QWidget
 {
     Q_OBJECT
@@ -30,7 +30,7 @@ Q_SIGNALS:
 private:
     void slotTextChanged(const QString &url);
     QLineEdit *const mLineEdit;
-    QCheckBox *const mStatusCheckBox;
+    RemoteContentStatusTypeComboBox *const mStatusComboBox;
 };
 }
 #endif // REMOTECONTENTWIDGET_H
