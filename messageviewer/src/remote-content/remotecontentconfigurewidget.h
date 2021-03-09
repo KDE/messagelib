@@ -10,11 +10,32 @@
 #include <QWidget>
 
 #include "messageviewer_private_export.h"
+#include "remotecontentinfo.h"
+#include <QTreeWidgetItem>
 class QTreeWidget;
-class QListWidgetItem;
+class QComboBox;
 namespace MessageViewer
 {
 class RemoteContentInfo;
+class MESSAGEVIEWER_EXPORT RemoteContentWidgetItem : public QTreeWidgetItem
+{
+public:
+    enum ColumnType {
+        Domain = 0,
+        RuleType = 1,
+    };
+
+    explicit RemoteContentWidgetItem(QTreeWidget *parent = nullptr);
+    ~RemoteContentWidgetItem() override;
+
+    Q_REQUIRED_RESULT MessageViewer::RemoteContentInfo::RemoteContentInfoStatus status() const;
+    void setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus type);
+
+private:
+    void updateInfo();
+    QComboBox *const mRuleTypeCombobox;
+};
+
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentConfigureWidget : public QWidget
 {
     Q_OBJECT
@@ -26,7 +47,7 @@ public:
 private:
     void insertRemoteContentInfo(const RemoteContentInfo &info);
     void slotCustomContextMenuRequested(const QPoint &);
-    void modifyRemoteContent(QListWidgetItem *rulesItem);
+    void modifyRemoteContent(RemoteContentWidgetItem *rulesItem);
     void slotAdd();
     void readSettings();
     QTreeWidget *const mTreeWidget;

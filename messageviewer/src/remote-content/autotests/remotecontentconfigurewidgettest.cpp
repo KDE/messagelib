@@ -5,6 +5,7 @@
 */
 #include "remotecontentconfigurewidgettest.h"
 #include "remote-content/remotecontentconfigurewidget.h"
+#include <KTreeWidgetSearchLine>
 #include <QListWidget>
 #include <QStandardPaths>
 #include <QTest>
@@ -24,6 +25,12 @@ void RemoteContentConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), {});
 
-    auto mListWidget = w.findChild<QListWidget *>(QStringLiteral("mListWidget"));
-    QVERIFY(mListWidget);
+    auto mTreeWidget = w.findChild<QTreeWidget *>(QStringLiteral("treewidget"));
+    QVERIFY(mTreeWidget);
+    QVERIFY(mTreeWidget->alternatingRowColors());
+    QVERIFY(!mTreeWidget->rootIsDecorated());
+
+    auto searchLineEdit = w.findChild<KTreeWidgetSearchLine *>(QStringLiteral("searchlineedit"));
+    QVERIFY(searchLineEdit);
+    QVERIFY(searchLineEdit->isClearButtonEnabled());
 }

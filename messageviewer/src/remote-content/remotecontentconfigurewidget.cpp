@@ -11,6 +11,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KTreeWidgetSearchLine>
+#include <QComboBox>
 #include <QListWidget>
 #include <QMenu>
 #include <QPointer>
@@ -18,6 +19,33 @@
 #include <QVBoxLayout>
 
 using namespace MessageViewer;
+
+RemoteContentWidgetItem::RemoteContentWidgetItem(QTreeWidget *parent)
+    : QTreeWidgetItem(parent)
+    , mRuleTypeCombobox(new QComboBox)
+{
+    mRuleTypeCombobox->addItem(i18n("Authorized"), QVariant::fromValue(RemoteContentInfo::RemoteContentInfoStatus::Authorized));
+    mRuleTypeCombobox->addItem(i18n("Blocked"), QVariant::fromValue(RemoteContentInfo::RemoteContentInfoStatus::Blocked));
+    treeWidget()->setItemWidget(this, ColumnType::RuleType, mRuleTypeCombobox);
+}
+
+RemoteContentWidgetItem::~RemoteContentWidgetItem()
+{
+}
+
+void RemoteContentWidgetItem::setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus type)
+{
+    const int index = mRuleTypeCombobox->findData(QVariant::fromValue(type));
+    if (index != -1) {
+        mRuleTypeCombobox->setCurrentIndex(index);
+    }
+}
+
+RemoteContentInfo::RemoteContentInfoStatus RemoteContentWidgetItem::status() const
+{
+    return mRuleTypeCombobox->currentData().value<RemoteContentInfo::RemoteContentInfoStatus>();
+}
+
 RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     : QWidget(parent)
     , mTreeWidget(new QTreeWidget(this))
@@ -39,12 +67,13 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
 
     mainLayout->addWidget(mTreeWidget);
     connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &RemoteContentConfigureWidget::slotCustomContextMenuRequested);
-    //    connect(mTreeWidget, &QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item) {
-    //        if (item) {
-    //            auto *rulesItem = dynamic_cast<DKIMManageRulesWidgetItem *>(item);
-    //            modifyRule(rulesItem);
-    //        }
-    //    });
+    connect(mTreeWidget, &QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item) {
+        if (item) {
+            auto *rulesItem = static_cast<RemoteContentWidgetItem *>(item);
+            modifyRemoteContent(rulesItem);
+        }
+    });
+    readSettings();
 }
 
 RemoteContentConfigureWidget::~RemoteContentConfigureWidget()
@@ -59,7 +88,7 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
     if (item) {
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18n("Modify..."), this, [this, item]() {
-            // modifyRemoteContent(item);
+            modifyRemoteContent(static_cast<RemoteContentWidgetItem *>(item));
         });
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
@@ -71,63 +100,61 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
     menu.exec(QCursor::pos());
 }
 
-void RemoteContentConfigureWidget::modifyRemoteContent(QListWidgetItem *rulesItem)
+void RemoteContentConfigureWidget::modifyRemoteContent(RemoteContentWidgetItem *rulesItem)
 {
-    //    if (!rulesItem) {
-    //        return;
-    //    }
-    //    QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
-    //    RemoteContentInfo info;
-    //    info.setUrl(rulesItem->text());
-    //    info.setStatus(rulesItem->checkState() == Qt::Checked ? RemoteContentInfo::RemoteContentInfoStatus::Authorized
-    //                                                          : RemoteContentInfo::RemoteContentInfoStatus::Blocked);
-    //    dlg->setInfo(info);
-    //    if (dlg->exec()) {
-    //        info = dlg->info();
-    //        RemoteContentManager::self()->addRemoteContent(info);
-    //        rulesItem->setText(info.url());
-    //        rulesItem->setCheckState((info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized) ? Qt::Checked : Qt::Unchecked);
-    //    }
-    //    delete dlg;
+    if (!rulesItem) {
+        return;
+    }
+    QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
+    RemoteContentInfo info;
+    info.setUrl(rulesItem->text(0));
+    info.setStatus(rulesItem->status());
+    dlg->setInfo(info);
+    if (dlg->exec()) {
+        info = dlg->info();
+        RemoteContentManager::self()->addRemoteContent(info);
+        rulesItem->setText(0, info.url());
+        rulesItem->setStatus(info.status());
+    }
+    delete dlg;
 }
 
 void RemoteContentConfigureWidget::slotAdd()
 {
-    //    QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
-    //    if (dlg->exec()) {
-    //        const auto info = dlg->info();
-    //        const int count = mListWidget->count();
-    //        bool isUnique = true;
-    //        for (int i = 0; i < count; ++i) {
-    //            const auto item = mListWidget->item(i);
-    //            if (item->text() == info.url()) {
-    //                isUnique = false;
-    //                KMessageBox::error(this, i18n("An entry already defines this url. Please modify it."), i18n("Add new Url"));
-    //                break;
-    //            }
-    //        }
-    //        if (isUnique) {
-    //            RemoteContentManager::self()->addRemoteContent(info);
-    //            insertRemoteContentInfo(info);
-    //        }
-    //    }
-    //    delete dlg;
+    QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
+    if (dlg->exec()) {
+        const auto info = dlg->info();
+        const int count = mTreeWidget->topLevelItemCount();
+        bool isUnique = true;
+        for (int i = 0; i < count; ++i) {
+            const auto item = mTreeWidget->topLevelItem(i);
+            if (item->text(0) == info.url()) {
+                isUnique = false;
+                KMessageBox::error(this, i18n("An entry already defines this url. Please modify it."), i18n("Add new Url"));
+                break;
+            }
+        }
+        if (isUnique) {
+            RemoteContentManager::self()->addRemoteContent(info);
+            insertRemoteContentInfo(info);
+        }
+    }
+    delete dlg;
 }
 
 void RemoteContentConfigureWidget::saveSettings()
 {
-    //    QVector<RemoteContentInfo> lst;
-    //    const int count = mListWidget->count();
-    //    lst.reserve(count);
-    //    for (int i = 0; i < count; ++i) {
-    //        const auto item = mListWidget->item(i);
-    //        RemoteContentInfo info;
-    //        info.setUrl(item->text());
-    //        info.setStatus((item->checkState() == Qt::Checked) ? RemoteContentInfo::RemoteContentInfoStatus::Authorized
-    //                                                           : RemoteContentInfo::RemoteContentInfoStatus::Blocked);
-    //        lst.append(std::move(info));
-    //    }
-    //    RemoteContentManager::self()->setRemoveContentInfo(lst);
+    QVector<RemoteContentInfo> lst;
+    const int count = mTreeWidget->topLevelItemCount();
+    lst.reserve(count);
+    for (int i = 0; i < count; ++i) {
+        const auto item = static_cast<RemoteContentWidgetItem *>(mTreeWidget->topLevelItem(i));
+        RemoteContentInfo info;
+        info.setUrl(item->text(0));
+        info.setStatus(item->status());
+        lst.append(std::move(info));
+    }
+    RemoteContentManager::self()->setRemoveContentInfo(lst);
 }
 
 void RemoteContentConfigureWidget::readSettings()
@@ -140,11 +167,7 @@ void RemoteContentConfigureWidget::readSettings()
 
 void RemoteContentConfigureWidget::insertRemoteContentInfo(const RemoteContentInfo &info)
 {
-    //    auto item = new QListWidgetItem(mListWidget);
-    //    item->setText(info.url());
-    //    if (info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized) {
-    //        item->setCheckState(Qt::Checked);
-    //    } else {
-    //        item->setCheckState(Qt::Unchecked);
-    //    }
+    auto item = new RemoteContentWidgetItem(mTreeWidget);
+    item->setText(0, info.url());
+    item->setStatus(info.status());
 }

@@ -84,7 +84,7 @@ DKIMManageRulesWidget::DKIMManageRulesWidget(QWidget *parent)
     connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManageRulesWidget::slotCustomContextMenuRequested);
     connect(mTreeWidget, &QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item) {
         if (item) {
-            auto *rulesItem = dynamic_cast<DKIMManageRulesWidgetItem *>(item);
+            auto *rulesItem = static_cast<DKIMManageRulesWidgetItem *>(item);
             modifyRule(rulesItem);
         }
     });
