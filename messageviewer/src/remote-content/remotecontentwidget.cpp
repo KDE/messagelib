@@ -23,7 +23,7 @@ RemoteContentWidget::RemoteContentWidget(QWidget *parent)
     mainLayout->setContentsMargins({});
 
     mLineEdit->setObjectName(QStringLiteral("mLineEdit"));
-    mainLayout->addRow(i18n("Url:"), mLineEdit);
+    mainLayout->addRow(i18n("Domain:"), mLineEdit);
 
     mStatusCheckBox->setObjectName(QStringLiteral("mStatusCheckBox"));
     mainLayout->addRow(mStatusCheckBox);
