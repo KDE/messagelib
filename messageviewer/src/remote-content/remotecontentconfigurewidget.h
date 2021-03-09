@@ -29,7 +29,7 @@ private:
     void modifyRemoteContent(QListWidgetItem *rulesItem);
     void slotAdd();
     void readSettings();
-    QListWidget *mListWidget = nullptr;
+    QListWidget *const mListWidget;
 };
 }
 

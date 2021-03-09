@@ -18,12 +18,12 @@
 using namespace MessageViewer;
 RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     : QWidget(parent)
+    , mListWidget(new QListWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    mListWidget = new QListWidget(this);
     mListWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     mListWidget->setObjectName(QStringLiteral("mListWidget"));
     mainLayout->addWidget(mListWidget);
