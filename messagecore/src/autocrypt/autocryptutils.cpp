@@ -10,9 +10,7 @@
 
 #include "autocrypt_debug.h"
 
-#include <MimeTreeParser/MessagePart>
 
-#include <KMime/Headers>
 
 #include <QHash>
 

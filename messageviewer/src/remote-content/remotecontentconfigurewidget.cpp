@@ -6,7 +6,6 @@
 
 #include "remotecontentconfigurewidget.h"
 #include "remotecontentdialog.h"
-#include "remotecontentinfo.h"
 #include "remotecontentmanager.h"
 #include "remotecontentstatustypecombobox.h"
 #include <KLocalizedString>

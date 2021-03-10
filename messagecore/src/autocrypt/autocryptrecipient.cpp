@@ -8,12 +8,10 @@
 #include "autocryptrecipient_p.h"
 #include "autocryptutils.h"
 
-#include <KMime/Headers>
 
 #include <KCodecs>
 #include <QGpgME/DataProvider>
 #include <QGpgME/Protocol>
-#include <QJsonDocument>
 #include <QJsonObject>
 #include <gpgme++/data.h>
 
