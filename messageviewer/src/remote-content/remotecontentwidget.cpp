@@ -24,7 +24,8 @@ RemoteContentWidget::RemoteContentWidget(QWidget *parent)
     mainLayout->setContentsMargins({});
 
     mLineEdit->setObjectName(QStringLiteral("mLineEdit"));
-    QLabel *label = new QLabel(i18n("Domain:"), this);
+    mLineEdit->setClearButtonEnabled(true);
+    auto label = new QLabel(i18n("Domain:"), this);
     mainLayout->addWidget(label);
     mainLayout->addWidget(mLineEdit);
 
