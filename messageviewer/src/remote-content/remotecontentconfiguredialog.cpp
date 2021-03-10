@@ -22,7 +22,7 @@ RemoteContentConfigureDialog::RemoteContentConfigureDialog(QWidget *parent)
     : QDialog(parent)
     , mRemoteContentConfigureWidget(new RemoteContentConfigureWidget(this))
 {
-    setWindowTitle(i18nc("@title:window", "Details"));
+    setWindowTitle(i18nc("@title:window", "Configure Remote Content"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
