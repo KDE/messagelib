@@ -102,6 +102,9 @@ void DKIMManageRulesWidget::loadSettings()
         auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
         item->setRule(rule);
     }
+    mTreeWidget->header()->setSortIndicatorShown(true);
+    mTreeWidget->header()->setSectionsClickable(true);
+    mTreeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
 QVector<MessageViewer::DKIMRule> DKIMManageRulesWidget::rules() const
