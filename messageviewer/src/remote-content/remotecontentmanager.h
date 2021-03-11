@@ -32,6 +32,8 @@ public:
 
     Q_REQUIRED_RESULT bool isUnique(const RemoteContentInfo &newInfo) const;
 
+    Q_REQUIRED_RESULT bool isBlocked(const QUrl &url, bool &contains) const;
+
 private:
     void loadSettings();
     void writeSettings();

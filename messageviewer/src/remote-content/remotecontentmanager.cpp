@@ -61,6 +61,25 @@ bool RemoteContentManager::isAutorized(const QUrl &url, bool &contains) const
     return false;
 }
 
+bool RemoteContentManager::isBlocked(const QUrl &url, bool &contains) const
+{
+    const QString host = url.host();
+    const QString urlToString = url.toString();
+
+    contains = false;
+
+    for (const RemoteContentInfo &info : qAsConst(mRemoveContentInfo)) {
+        if (info.url() == urlToString) {
+            contains = true;
+            return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Blocked;
+        } else if (info.url() == host) {
+            contains = true;
+            return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Blocked;
+        }
+    }
+    return false;
+}
+
 void RemoteContentManager::loadSettings()
 {
     mRemoveContentInfo.clear();

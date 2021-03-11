@@ -27,6 +27,13 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
         return false;
     }
     if (mAllowLoadExternalReference) {
+        if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !info.requestUrl().isLocalFile() && (scheme != QLatin1String("cid"))) {
+            const QUrl url = info.requestUrl().adjusted(QUrl::RemovePath | QUrl::RemovePort | QUrl::RemoveQuery);
+            bool contains = false;
+            if (MessageViewer::RemoteContentManager::self()->isBlocked(url, contains)) {
+                return true;
+            }
+        }
         return false;
     } else {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !info.requestUrl().isLocalFile() && (scheme != QLatin1String("cid"))) {
