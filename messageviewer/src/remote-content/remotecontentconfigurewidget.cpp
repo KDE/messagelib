@@ -54,6 +54,7 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     mTreeWidget->setHeaderLabels({i18n("Domain"), i18n("Status")});
     mTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     mTreeWidget->setAlternatingRowColors(true);
+    mTreeWidget->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
     auto searchLineEdit = new KTreeWidgetSearchLine(this, mTreeWidget);
     searchLineEdit->setObjectName(QStringLiteral("searchlineedit"));
