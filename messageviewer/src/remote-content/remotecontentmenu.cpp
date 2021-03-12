@@ -53,6 +53,7 @@ void RemoteContentMenu::updateMenu()
     for (auto act : qAsConst(mListAction)) {
         removeAction(act);
     }
+    mListAction.reserve(mUrls.count());
     for (const QString &url : qAsConst(mUrls)) {
         QAction *act = addAction(i18n("Authorize %1", url));
         connect(act, &QAction::triggered, this, [this, url]() {
