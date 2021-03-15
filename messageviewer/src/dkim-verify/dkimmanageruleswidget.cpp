@@ -102,6 +102,7 @@ void DKIMManageRulesWidget::loadSettings()
         auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
         item->setRule(rule);
     }
+    mTreeWidget->setSortingEnabled(true);
     mTreeWidget->header()->setSortIndicatorShown(true);
     mTreeWidget->header()->setSectionsClickable(true);
     mTreeWidget->sortByColumn(0, Qt::AscendingOrder);
