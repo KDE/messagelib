@@ -517,6 +517,9 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     if (auto contentType = node->contentType(false)) {
         contentTypeStr = QLatin1String(contentType->mimeType());
     }
+    if (contentTypeStr == QStringLiteral("message/global")) { // Not registred in mimetype => it's a message/rfc822
+        contentTypeStr = QStringLiteral("message/rfc822");
+    }
     deletedAttachment = (contentTypeStr == QStringLiteral("text/x-moz-deleted"));
     // Not necessary to show popup menu when attachment was removed
     if (deletedAttachment) {
