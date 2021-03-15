@@ -77,6 +77,8 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
         tMimeType = QStringLiteral("image/jpeg");
     } else if (mimeType == QLatin1String("application/x-pkcs7-signature")) {
         tMimeType = QStringLiteral("application/pkcs7-signature");
+    } else if (mimeType == QLatin1String("message/global")) {
+        tMimeType = QStringLiteral("message/rfc822");
     }
     QMimeDatabase mimeDb;
     auto mime = mimeDb.mimeTypeForName(tMimeType);
