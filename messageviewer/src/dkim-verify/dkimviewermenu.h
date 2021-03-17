@@ -29,7 +29,7 @@ Q_SIGNALS:
 
 private:
     void initialize();
-    QMenu *mMenu = nullptr;
+    QMenu *const mMenu;
     QAction *mUpdateDKIMKey = nullptr;
 };
 }

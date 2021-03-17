@@ -29,13 +29,13 @@ Q_SIGNALS:
 
 private:
     void updateOkButton();
-    QCheckBox *mEnabled = nullptr;
-    QLineEdit *mDomain = nullptr;
-    QLineEdit *mSignatureDomainIdentifier = nullptr;
-    QLineEdit *mFrom = nullptr;
-    QLineEdit *mListId = nullptr;
-    QSpinBox *mPriority = nullptr;
-    DKIMManageRulesComboBox *mRuleType = nullptr;
+    QCheckBox *const mEnabled;
+    QLineEdit *const mDomain;
+    QLineEdit *const mSignatureDomainIdentifier;
+    QLineEdit *const mFrom;
+    QLineEdit *const mListId;
+    QSpinBox *const mPriority;
+    DKIMManageRulesComboBox *const mRuleType;
 };
 }
 #endif // DKIMRULEWIDGET_H

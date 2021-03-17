@@ -15,44 +15,44 @@
 using namespace MessageViewer;
 DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     : QWidget(parent)
+    , mEnabled(new QCheckBox(i18n("Enabled"), this))
+    , mDomain(new QLineEdit(this))
+    , mSignatureDomainIdentifier(new QLineEdit(this))
+    , mFrom(new QLineEdit(this))
+    , mListId(new QLineEdit(this))
+    , mPriority(new QSpinBox(this))
+    , mRuleType(new DKIMManageRulesComboBox(this))
 {
     auto layout = new QFormLayout(this);
     layout->setObjectName(QStringLiteral("layout"));
     layout->setContentsMargins({});
 
-    mEnabled = new QCheckBox(i18n("Enabled"), this);
     mEnabled->setObjectName(QStringLiteral("enabled"));
     mEnabled->setChecked(true);
     layout->addWidget(mEnabled);
 
-    mDomain = new QLineEdit(this);
     mDomain->setObjectName(QStringLiteral("domain"));
     mDomain->setClearButtonEnabled(true);
     layout->addRow(i18n("Domain:"), mDomain);
     connect(mDomain, &QLineEdit::textChanged, this, &DKIMRuleWidget::updateOkButton);
 
-    mListId = new QLineEdit(this);
     mListId->setObjectName(QStringLiteral("listid"));
     mListId->setClearButtonEnabled(true);
     layout->addRow(i18n("List-Id:"), mListId);
 
-    mFrom = new QLineEdit(this);
     mFrom->setObjectName(QStringLiteral("from"));
     mFrom->setClearButtonEnabled(true);
     layout->addRow(i18n("From:"), mFrom);
     mFrom->setPlaceholderText(i18n("Use '*' to specify all emails from domain"));
     connect(mFrom, &QLineEdit::textChanged, this, &DKIMRuleWidget::updateOkButton);
 
-    mSignatureDomainIdentifier = new QLineEdit(this);
     mSignatureDomainIdentifier->setObjectName(QStringLiteral("signaturedomainidentifier"));
     mSignatureDomainIdentifier->setClearButtonEnabled(true);
     layout->addRow(i18n("SDID:"), mSignatureDomainIdentifier);
 
-    mRuleType = new DKIMManageRulesComboBox(this);
     mRuleType->setObjectName(QStringLiteral("ruletype"));
     layout->addRow(i18n("Rule:"), mRuleType);
 
-    mPriority = new QSpinBox(this);
     mPriority->setObjectName(QStringLiteral("priority"));
     mPriority->setMinimum(1);
     mPriority->setMaximum(9999);

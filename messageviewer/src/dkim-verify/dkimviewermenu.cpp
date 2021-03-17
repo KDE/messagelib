@@ -11,6 +11,7 @@
 using namespace MessageViewer;
 DKIMViewerMenu::DKIMViewerMenu(QObject *parent)
     : QObject(parent)
+    , mMenu(new QMenu(i18n("DKIM")))
 {
     initialize();
 }
@@ -32,7 +33,6 @@ void DKIMViewerMenu::setEnableUpdateDkimKeyMenu(bool enabled)
 
 void DKIMViewerMenu::initialize()
 {
-    mMenu = new QMenu(i18n("DKIM"));
     QAction *checkSignature = mMenu->addAction(i18n("Recheck DKIM Signature"));
     connect(checkSignature, &QAction::triggered, this, &DKIMViewerMenu::recheckSignature);
 
