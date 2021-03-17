@@ -99,7 +99,6 @@ using namespace MessageViewer;
 
 MessagePartRendererManager::MessagePartRendererManager(QObject *parent)
     : QObject(parent)
-    , m_engine(nullptr)
     , m_globalContext(new GlobalContext(this))
 {
     initializeRenderer();

@@ -27,11 +27,10 @@ public:
     void appendUrl(const QString &url);
 
 private:
-    void initialize();
     void authorize(const QString &url);
     void slotConfigure();
     QStringList mUrls;
-    QAction *mConfigureRemoteContentAction = nullptr;
+    QAction *const mConfigureRemoteContentAction;
     QList<QAction *> mListAction;
 };
 }

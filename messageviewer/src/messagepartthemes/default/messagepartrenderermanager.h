@@ -34,7 +34,7 @@ class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
     Q_OBJECT
 public:
     explicit MessagePartRendererManager(QObject *parent = nullptr);
-    ~MessagePartRendererManager();
+    ~MessagePartRendererManager() override;
     static MessagePartRendererManager *self();
 
     Q_REQUIRED_RESULT Grantlee::Template loadByName(const QString &name);

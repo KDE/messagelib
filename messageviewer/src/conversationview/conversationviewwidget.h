@@ -15,7 +15,7 @@ class ConversationViewWidget : public QWidget
     Q_OBJECT
 public:
     explicit ConversationViewWidget(QWidget *parent = nullptr);
-    ~ConversationViewWidget();
+    ~ConversationViewWidget() override;
 };
 }
 

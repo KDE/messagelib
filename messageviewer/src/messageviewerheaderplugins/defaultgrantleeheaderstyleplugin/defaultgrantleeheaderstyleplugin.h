@@ -28,8 +28,8 @@ public:
 
 private:
     void initializePlugin();
-    GrantleeHeaderStyle *mHeaderStyle = nullptr;
-    HeaderStrategy *mHeaderStrategy = nullptr;
+    GrantleeHeaderStyle *const mHeaderStyle;
+    HeaderStrategy *const mHeaderStrategy;
 };
 }
 #endif // DEFAULTGRANTLEEHEADERSTYLEPLUGIN_H

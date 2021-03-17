@@ -16,19 +16,14 @@
 using namespace MessageViewer;
 RemoteContentMenu::RemoteContentMenu(QWidget *parent)
     : QMenu(parent)
+    , mConfigureRemoteContentAction(new QAction(i18n("Configure"), this))
 {
     setTitle(i18n("Remote Content"));
     connect(this, &QMenu::aboutToShow, this, &RemoteContentMenu::updateMenu);
-    initialize();
 }
 
 RemoteContentMenu::~RemoteContentMenu()
 {
-}
-
-void RemoteContentMenu::initialize()
-{
-    mConfigureRemoteContentAction = new QAction(i18n("Configure"), this);
 }
 
 void RemoteContentMenu::slotConfigure()

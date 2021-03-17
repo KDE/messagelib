@@ -22,6 +22,7 @@ public:
 
 private:
     explicit FindBarSourceView(QWidget *parent)
+        : mView(nullptr)
     {
         Q_UNUSED(parent)
     }
@@ -32,7 +33,7 @@ private:
     void updateSensitivity(bool) override;
 
 private:
-    QPlainTextEdit *mView = nullptr;
+    QPlainTextEdit *const mView;
 };
 }
 
