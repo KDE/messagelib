@@ -210,7 +210,7 @@ void MessageComposer::RecipientsEditor::setRecentAddressConfig(KConfig *config)
 
 void MessageComposer::RecipientsEditor::slotPickedRecipient(const Recipient &rec, bool &tooManyAddress)
 {
-    Recipient::Type t = rec.type();
+    const Recipient::Type t = rec.type();
     tooManyAddress = addRecipient(rec.email(), t == Recipient::Undefined ? Recipient::To : t);
     mModified = true;
 }
@@ -224,7 +224,7 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
 {
     // subtract 1 here, because we want the number of lines
     // before this line was added.
-    int count = lines().size() - 1;
+    const int count = lines().size() - 1;
     auto rec = qobject_cast<RecipientLineNG *>(line);
     if (!rec) {
         return;
