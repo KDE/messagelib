@@ -104,7 +104,8 @@ void AutocryptStorage::save()
             return;
         }
     }
-    foreach (const auto addr, d->recipients.keys()) {
+    const auto keys = d->recipients.keys();
+    for (const auto &addr : keys) {
         const auto recipient = d->recipients.value(addr);
         const QString fileName(address2Filename(addr));
         if (recipient->hasChanged() || !d->basePath.exists(fileName)) {

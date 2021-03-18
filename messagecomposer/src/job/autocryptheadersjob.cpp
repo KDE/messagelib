@@ -209,7 +209,8 @@ void AutocryptHeadersJob::process()
     job->setExportFlags(GpgME::Context::ExportMinimal);
 #endif
 
-    foreach (const auto key, d->gossipKeys) {
+    const auto keys = d->gossipKeys;
+    for (const auto key : keys) {
         if (QByteArray(key.primaryFingerprint()) == QByteArray(d->recipientKey.primaryFingerprint())) {
             continue;
         }
