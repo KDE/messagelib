@@ -209,12 +209,14 @@ void TemplateParserJob::processWithIdentity(uint uoid, const KMime::Message::Ptr
 
 MimeTreeParser::MessagePart::Ptr toplevelTextNode(MimeTreeParser::MessagePart::Ptr messageTree)
 {
-    foreach (const auto &mp, messageTree->subParts()) {
+    const auto subParts = messageTree->subParts();
+    for (const auto &mp : subParts) {
         auto text = mp.dynamicCast<MimeTreeParser::TextMessagePart>();
         const auto attach = mp.dynamicCast<MimeTreeParser::AttachmentMessagePart>();
         if (text && !attach) {
             // TextMessagePart can have several subparts cause of PGP inline, we search for the first part with content
-            foreach (const auto &sub, mp->subParts()) {
+            const auto mpSubParts{mp->subParts()};
+            for (const auto &sub : mpSubParts) {
                 if (!sub->text().trimmed().isEmpty()) {
                     return sub;
                 }
