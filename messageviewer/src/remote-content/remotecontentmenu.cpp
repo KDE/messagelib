@@ -54,6 +54,7 @@ void RemoteContentMenu::updateMenu()
         QAction *act = addAction(i18n("Authorize %1", url));
         connect(act, &QAction::triggered, this, [this, url]() {
             authorize(url);
+            mUrls.removeAll(url);
         });
         mListAction << act;
     }
@@ -64,6 +65,7 @@ void RemoteContentMenu::updateMenu()
             for (const QString &url : qAsConst(mUrls)) {
                 authorize(url);
             }
+            mUrls.clear();
         });
         mListAction << act;
         mListAction << addSeparator();
