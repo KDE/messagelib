@@ -80,7 +80,7 @@ void RemoteContentMenu::authorize(const QString &url)
     info.setUrl(url);
     info.setStatus(RemoteContentInfo::RemoteContentInfoStatus::Authorized);
     RemoteContentManager::self()->addRemoteContent(info);
-    // TODO update email.
+    Q_EMIT updateEmail();
 }
 
 void RemoteContentMenu::clearUrls()

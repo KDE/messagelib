@@ -9,11 +9,11 @@
 
 #include "messageviewer_export.h"
 #include <QMenu>
-#include <QObject>
 namespace MessageViewer
 {
 class MESSAGEVIEWER_EXPORT RemoteContentMenu : public QMenu
 {
+    Q_OBJECT
 public:
     explicit RemoteContentMenu(QWidget *parent = nullptr);
     ~RemoteContentMenu() override;
@@ -25,6 +25,9 @@ public:
 
     void clearUrls();
     void appendUrl(const QString &url);
+
+Q_SIGNALS:
+    void updateEmail();
 
 private:
     void authorize(const QString &url);
