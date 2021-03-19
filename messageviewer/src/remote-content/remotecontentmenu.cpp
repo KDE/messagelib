@@ -48,7 +48,8 @@ void RemoteContentMenu::updateMenu()
     for (auto act : qAsConst(mListAction)) {
         removeAction(act);
     }
-    mListAction.reserve(mUrls.count());
+    const int numberOfUrl{mUrls.count()};
+    mListAction.reserve(numberOfUrl);
     for (const QString &url : qAsConst(mUrls)) {
         QAction *act = addAction(i18n("Authorize %1", url));
         connect(act, &QAction::triggered, this, [this, url]() {
@@ -56,7 +57,17 @@ void RemoteContentMenu::updateMenu()
         });
         mListAction << act;
     }
-    addSeparator();
+    mListAction << addSeparator();
+    if (numberOfUrl > 0) {
+        QAction *act = addAction(i18n("Authorize all Urls"));
+        connect(act, &QAction::triggered, this, [this]() {
+            for (const QString &url : qAsConst(mUrls)) {
+                authorize(url);
+            }
+        });
+        mListAction << act;
+        mListAction << addSeparator();
+    }
     addAction(mConfigureRemoteContentAction);
     connect(mConfigureRemoteContentAction, &QAction::triggered, this, &RemoteContentMenu::slotConfigure);
 }
