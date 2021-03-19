@@ -186,6 +186,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     mMessageViewerRenderer = new MessageViewerRenderer;
 
     mRemoteContentMenu = new MessageViewer::RemoteContentMenu(mMainWindow);
+    connect(mRemoteContentMenu, &MessageViewer::RemoteContentMenu::updateEmail, this, &ViewerPrivate::updateReaderWin);
 
     mDkimWidgetInfo = new MessageViewer::DKIMWidgetInfo(mMainWindow);
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
