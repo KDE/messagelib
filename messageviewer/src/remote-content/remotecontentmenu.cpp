@@ -28,9 +28,8 @@ RemoteContentMenu::~RemoteContentMenu()
 
 void RemoteContentMenu::slotConfigure()
 {
-    QPointer<MessageViewer::RemoteContentConfigureDialog> remoteContentDialog = new MessageViewer::RemoteContentConfigureDialog(this);
-    remoteContentDialog->exec();
-    delete remoteContentDialog;
+    MessageViewer::RemoteContentConfigureDialog dlg(this);
+    dlg.exec();
 }
 
 QStringList RemoteContentMenu::urls() const
@@ -49,17 +48,17 @@ void RemoteContentMenu::updateMenu()
         removeAction(act);
     }
     const int numberOfUrl{mUrls.count()};
-    mListAction.reserve(numberOfUrl);
-    for (const QString &url : qAsConst(mUrls)) {
-        QAction *act = addAction(i18n("Authorize %1", url));
-        connect(act, &QAction::triggered, this, [this, url]() {
-            authorize(url);
-            mUrls.removeAll(url);
-        });
-        mListAction << act;
-    }
-    mListAction << addSeparator();
     if (numberOfUrl > 0) {
+        mListAction.reserve(numberOfUrl + 3);
+        for (const QString &url : qAsConst(mUrls)) {
+            QAction *act = addAction(i18n("Authorize %1", url));
+            connect(act, &QAction::triggered, this, [this, url]() {
+                authorize(url);
+                mUrls.removeAll(url);
+            });
+            mListAction << act;
+        }
+        mListAction << addSeparator();
         QAction *act = addAction(i18n("Authorize all Urls"));
         connect(act, &QAction::triggered, this, [this]() {
             for (const QString &url : qAsConst(mUrls)) {
