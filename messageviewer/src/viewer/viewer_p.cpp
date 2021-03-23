@@ -816,7 +816,7 @@ void ViewerPrivate::displayMessage()
 
 void ViewerPrivate::parseContent(KMime::Content *content)
 {
-    assert(content != nullptr);
+    Q_ASSERT(content != nullptr);
     mNodeHelper->removeTempFiles();
 
     // Check if any part of this message is a v-card
