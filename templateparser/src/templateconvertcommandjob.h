@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATECONVERTCOMMANDJOB_H
-#define TEMPLATECONVERTCOMMANDJOB_H
+#pragma once
 
 #include "templateparser_export.h"
 #include <KMime/Message>
@@ -37,4 +36,3 @@ private:
 };
 }
 
-#endif // TEMPLATECONVERTCOMMANDJOB_H

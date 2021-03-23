@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_H
-#define MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_H
+#pragma once
 
 #include <QHash>
 #include <QList>
@@ -176,4 +175,3 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_H

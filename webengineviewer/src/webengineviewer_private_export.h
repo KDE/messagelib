@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef WEBENGINEVIEWERPRIVATE_EXPORT_H
-#define WEBENGINEVIEWERPRIVATE_EXPORT_H
+#pragma once
 
 #include "webengineviewer_export.h"
 
@@ -18,4 +17,3 @@
 #define WEBENGINEVIEWER_TESTS_EXPORT
 #endif
 
-#endif

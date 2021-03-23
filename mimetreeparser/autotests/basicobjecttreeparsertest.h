@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_TESTS_BASICOBJECTTREEPARSERTEST_H
-#define MIMETREEPARSER_TESTS_BASICOBJECTTREEPARSERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -39,4 +38,3 @@ private Q_SLOTS:
     void testHTMLOnly();
 };
 
-#endif // MIMETREEPARSER_TESTS_BASICOBJECTTREEPARSERTEST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TESTMAILDNDATTACHMENT_H
-#define TESTMAILDNDATTACHMENT_H
+#pragma once
 
 #include <KMime/Message>
 #include <QWidget>
@@ -21,4 +20,3 @@ private:
     KMime::Message::Ptr readAndParseMail(const QString &mailFile);
 };
 
-#endif // TESTMAILDNDATTACHMENT_H

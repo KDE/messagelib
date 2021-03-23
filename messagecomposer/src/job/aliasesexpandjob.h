@@ -7,8 +7,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef ALIASESEXPANDJOB_H
-#define ALIASESEXPANDJOB_H
+#pragma once
 
 #include "messagecomposer_export.h"
 
@@ -88,4 +87,3 @@ private:
 };
 }
 
-#endif

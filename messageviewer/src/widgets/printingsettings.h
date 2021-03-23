@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PRINTINGSETTINGS_H
-#define PRINTINGSETTINGS_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QWidget>
@@ -35,4 +34,3 @@ private:
     PrintingSettingsPrivate *const d;
 };
 }
-#endif // PRINTINGSETTINGS_H

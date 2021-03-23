@@ -4,8 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECORE_ATTACHMENTFROMFOLDERJOB_H
-#define MESSAGECORE_ATTACHMENTFROMFOLDERJOB_H
+#pragma once
 
 #include "MessageCore/AttachmentFromUrlBaseJob"
 
@@ -52,4 +51,3 @@ private:
     Private *const d;
 };
 }
-#endif // ATTACHMENTFROMFOLDER_H

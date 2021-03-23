@@ -2,8 +2,7 @@
 
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
-#ifndef MESSAGELIST_UTILS_AGGREGATIONCOMBOBOX_P_H
-#define MESSAGELIST_UTILS_AGGREGATIONCOMBOBOX_P_H
+#pragma once
 
 namespace MessageList
 {
@@ -36,4 +35,3 @@ public:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_AGGREGATIONCOMBOBOX_P_H

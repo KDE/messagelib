@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_SENDLATERDIALOG_H
-#define MESSAGECOMPOSER_SENDLATERDIALOG_H
+#pragma once
 
 #include <QDateTime>
 #include <QDialog>
@@ -54,4 +53,3 @@ private:
     QPushButton *mOkButton = nullptr;
 };
 }
-#endif // SENDLATERDIALOG_H

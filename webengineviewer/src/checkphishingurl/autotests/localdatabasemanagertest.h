@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef LOCALDATABASEMANAGERTEST_H
-#define LOCALDATABASEMANAGERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -17,4 +16,3 @@ public:
     ~LocalDataBaseManagerTest();
 };
 
-#endif // LOCALDATABASEMANAGERTEST_H

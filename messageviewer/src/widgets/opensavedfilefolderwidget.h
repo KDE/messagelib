@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef OPENATTACHMENTFOLDERWIDGET_H
-#define OPENATTACHMENTFOLDERWIDGET_H
+#pragma once
 
 #include <KMessageWidget>
 #include <QUrl>
@@ -37,4 +36,3 @@ private:
 };
 }
 
-#endif // OPENATTACHMENTFOLDERWIDGET_H

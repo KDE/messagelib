@@ -3,8 +3,7 @@
  *
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
-#ifndef INSERTTEXTFILEJOB_H
-#define INSERTTEXTFILEJOB_H
+#pragma once
 
 #include "messagecomposer_export.h"
 
@@ -47,4 +46,3 @@ private:
 };
 }
 
-#endif

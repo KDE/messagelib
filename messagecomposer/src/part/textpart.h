@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_TEXTPART_H
-#define MESSAGECOMPOSER_TEXTPART_H
+#pragma once
 
 #include <QString>
 
@@ -52,4 +51,3 @@ private:
 };
 } // namespace MessageComposer
 
-#endif // MESSAGECOMPOSER_TEXTPART_H

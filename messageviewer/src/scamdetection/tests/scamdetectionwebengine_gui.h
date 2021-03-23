@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEST_SCAMDETECTIONWEBENGINE_GUI_H
-#define TEST_SCAMDETECTIONWEBENGINE_GUI_H
+#pragma once
 
 #include <QWidget>
 
@@ -32,4 +31,3 @@ private:
     QWebEngineView *mWebEngineView;
 };
 
-#endif

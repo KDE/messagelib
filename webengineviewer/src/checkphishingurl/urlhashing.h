@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef URLHASHING_H
-#define URLHASHING_H
+#pragma once
 
 #include "webengineviewer_private_export.h"
 #include <QString>
@@ -32,4 +31,3 @@ private:
 };
 }
 
-#endif // URLHASHING_H

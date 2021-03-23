@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MAILWEBENGINEACCESSKEY_H
-#define MAILWEBENGINEACCESSKEY_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QObject>
@@ -51,4 +50,3 @@ private:
 };
 }
 
-#endif

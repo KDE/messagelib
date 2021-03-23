@@ -5,8 +5,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RECIPIENTLINE_H
-#define RECIPIENTLINE_H
+#pragma once
 
 #include <QSharedPointer>
 
@@ -130,4 +129,3 @@ private:
 };
 }
 
-#endif // RECIPIENTLINE_H

@@ -7,8 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_INTERFACES_HTMLWRITER_H
-#define MESSAGEVIEWER_INTERFACES_HTMLWRITER_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -85,4 +84,3 @@ private:
 };
 }
 
-#endif // MESSAGEVIEWER_INTERFACES_HTMLWRITER_H

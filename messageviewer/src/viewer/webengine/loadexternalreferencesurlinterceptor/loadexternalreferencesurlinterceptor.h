@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef LOADEXTERNALREFERENCESURLINTERCEPTOR_H
-#define LOADEXTERNALREFERENCESURLINTERCEPTOR_H
+#pragma once
 
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 
@@ -28,4 +27,3 @@ private:
     bool mAllowLoadExternalReference = false;
 };
 }
-#endif // LOADEXTERNALREFERENCESURLINTERCEPTOR_H

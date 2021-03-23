@@ -8,8 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_BODYPARTFORMATTERFACTORY_P_H
-#define MIMETREEPARSER_BODYPARTFORMATTERFACTORY_P_H
+#pragma once
 
 #include <QHash>
 #include <vector>
@@ -38,4 +37,3 @@ public:
 };
 }
 
-#endif // MIMETREEPARSER_BODYPARTFORMATTERFACTORY_P_H

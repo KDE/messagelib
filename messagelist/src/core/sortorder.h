@@ -5,8 +5,7 @@
  *  SPDX-License-Identifier: GPL-2.0-or-later
  *
  *******************************************************************************/
-#ifndef MESSAGELIST_CORE_SORTORDER_H
-#define MESSAGELIST_CORE_SORTORDER_H
+#pragma once
 
 #include <core/aggregation.h>
 
@@ -209,4 +208,3 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif // MESSAGELIST_CORE_SORTORDER_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_GRANTLEEEXTENSION_H
-#define MESSAGEVIEWER_GRANTLEEEXTENSION_H
+#pragma once
 
 #include <grantlee/node.h>
 #include <grantlee/taglibraryinterface.h>
@@ -49,4 +48,3 @@ public:
 
 Q_DECLARE_METATYPE(MessageViewer::GrantleeCallback)
 
-#endif // MESSAGEVIEWER_GRANTLEEEXTENSION_H

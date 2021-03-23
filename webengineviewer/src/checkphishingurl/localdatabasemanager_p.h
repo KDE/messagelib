@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef LOCALDATABASEMANAGER_P_H
-#define LOCALDATABASEMANAGER_P_H
+#pragma once
 
 #include "downloadlocaldatabasethread.h"
 #include "localdatabasefile.h"
@@ -141,4 +140,3 @@ public:
 };
 }
 
-#endif

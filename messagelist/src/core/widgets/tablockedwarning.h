@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 
 */
-#ifndef TABLOCKEDWARNING_H
-#define TABLOCKEDWARNING_H
+#pragma once
 
 #include "messagelist_private_export.h"
 #include <KMessageWidget>
@@ -29,4 +28,3 @@ private:
 }
 }
 
-#endif // TABLOCKEDWARNING_H

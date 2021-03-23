@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef HEADERSTYLEPLUGINMANAGER_H
-#define HEADERSTYLEPLUGINMANAGER_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <PimCommon/PluginUtil>
@@ -39,4 +38,3 @@ private:
     HeaderStylePluginManagerPrivate *const d;
 };
 }
-#endif // HEADERSTYLEPLUGINMANAGER_H

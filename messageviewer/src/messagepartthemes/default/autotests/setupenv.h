@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_TESTS_SETUPENV_H
-#define MESSAGEVIEWER_TESTS_SETUPENV_H
+#pragma once
 
 #include <MimeTreeParser/BodyPartFormatterFactory>
 #include <MimeTreeParser/ObjectTreeSource>
@@ -183,4 +182,3 @@ private:
 }
 }
 
-#endif //__MESSAGEVIEWER_TESTS_SETUPENV_H

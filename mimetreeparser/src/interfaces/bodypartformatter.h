@@ -8,8 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H
-#define MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H
+#pragma once
 
 #include "mimetreeparser_export.h"
 
@@ -61,4 +60,3 @@ public:
 
 Q_DECLARE_INTERFACE(MimeTreeParser::Interface::BodyPartFormatterPlugin, "org.kde.messageviewer.bodypartformatter/1.1")
 
-#endif // MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H

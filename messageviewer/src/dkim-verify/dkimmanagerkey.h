@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMMANAGERKEY_H
-#define DKIMMANAGERKEY_H
+#pragma once
 
 #include "config-messageviewer.h"
 #include "messageviewer_export.h"
@@ -80,4 +79,3 @@ private:
 }
 Q_DECLARE_TYPEINFO(MessageViewer::KeyInfo, Q_MOVABLE_TYPE);
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::KeyInfo &t);
-#endif // DKIMMANAGERKEY_H

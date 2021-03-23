@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORINITINTERFACE_H
-#define PLUGINEDITORINITINTERFACE_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <QObject>
@@ -45,4 +44,3 @@ private:
 };
 }
 
-#endif // PLUGINEDITORINITINTERFACE_H

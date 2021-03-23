@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef ATTACHMENTFROMMIMECONTENTJOBTEST_H
-#define ATTACHMENTFROMMIMECONTENTJOBTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -17,4 +16,3 @@ private Q_SLOTS:
     void testAttachment();
 };
 
-#endif

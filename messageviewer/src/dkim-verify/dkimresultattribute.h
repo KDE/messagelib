@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef DKIMRESULTATTRIBUTE_H
-#define DKIMRESULTATTRIBUTE_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <AkonadiCore/attribute.h>
@@ -39,4 +38,3 @@ private:
 };
 }
 
-#endif // DKIMRESULTATTRIBUTE_H

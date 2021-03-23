@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CONVERTSNIPPETVARIABLESUTIL_H
-#define CONVERTSNIPPETVARIABLESUTIL_H
+#pragma once
 #include "messagecomposer_export.h"
 #include <QString>
 
@@ -73,4 +72,3 @@ Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString dayOfWeek();
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QString lastMonthNameLong();
 }
 }
-#endif // CONVERTSNIPPETVARIABLESUTIL_H

@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef REPLYSTRATEGY_TEST_H
-#define REPLYSTRATEGY_TEST_H
+#pragma once
 
 #include <KMime/Message>
 
@@ -39,4 +38,3 @@ private:
     KIdentityManagement::IdentityManager *mIdentityManager;
 };
 
-#endif

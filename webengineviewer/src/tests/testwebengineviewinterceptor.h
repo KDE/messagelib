@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TESTWEBENGINEVIEWINTERCEPTOR_H
-#define TESTWEBENGINEVIEWINTERCEPTOR_H
+#pragma once
 
 #include <QWidget>
 class QWebEngineView;
@@ -19,4 +18,3 @@ private:
     QWebEngineView *mWebEngineView = nullptr;
 };
 
-#endif // TESTWEBENGINEVIEWINTERCEPTOR_H

@@ -5,8 +5,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGELISTUTIL_P_H
-#define MESSAGELISTUTIL_P_H
+#pragma once
 
 #include <QObject>
 #include <QString>
@@ -31,4 +30,3 @@ void fillViewMenu(QMenu *menu, QObject *receiver);
 }
 }
 
-#endif /* MESSAGELISTUTIL_H */

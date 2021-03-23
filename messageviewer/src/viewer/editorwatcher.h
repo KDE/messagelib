@@ -4,8 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_EDITORWATCHER_H
-#define MESSAGEVIEWER_EDITORWATCHER_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QUrl>
@@ -72,4 +71,3 @@ private:
 };
 }
 
-#endif

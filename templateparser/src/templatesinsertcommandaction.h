@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATESINSERTCOMMANDACTION_H
-#define TEMPLATESINSERTCOMMANDACTION_H
+#pragma once
 
 #include <QWidgetAction>
 #include <TemplateParser/TemplatesCommandMenu>
@@ -34,4 +33,3 @@ private:
     TemplatesCommandMenu *const mMenuCommand;
 };
 }
-#endif // TEMPLATESINSERTCOMMANDACTION_H

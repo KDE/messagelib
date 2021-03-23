@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SCAMDETECTIONDETAILSDIALOG_H
-#define SCAMDETECTIONDETAILSDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -34,4 +33,3 @@ private:
 };
 }
 
-#endif // SCAMDETECTIONDETAILSDIALOG_H

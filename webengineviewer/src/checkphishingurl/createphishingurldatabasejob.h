@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CREATEPHISHINGURLDATABASEJOB_H
-#define CREATEPHISHINGURLDATABASEJOB_H
+#pragma once
 
 #include <QNetworkReply>
 #include <QObject>
@@ -62,4 +61,3 @@ private:
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType)
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType)
-#endif // CREATEPHISHINGURLDATABASEJOB_H

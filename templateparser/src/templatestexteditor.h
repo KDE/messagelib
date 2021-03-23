@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef TEMPLATESTEXTEDITOR_H
-#define TEMPLATESTEXTEDITOR_H
+#pragma once
 
 #include <KPIMTextEdit/PlainTextEditor>
 
@@ -39,4 +38,3 @@ private:
     KSyntaxHighlighting::Repository mSyntaxRepo;
 };
 }
-#endif // TEMPLATESTEXTEDITOR_H

@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_MAINTEXTJOB_H
-#define MESSAGECOMPOSER_MAINTEXTJOB_H
+#pragma once
 
 #include "contentjobbase.h"
 #include "messagecomposer_export.h"
@@ -37,4 +36,3 @@ private:
 };
 } // namespace MessageComposer
 
-#endif

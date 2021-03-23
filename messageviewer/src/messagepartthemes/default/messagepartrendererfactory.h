@@ -5,8 +5,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_MESSAGEPARTRENDERERFACTORY_H
-#define MESSAGEVIEWER_MESSAGEPARTRENDERERFACTORY_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -46,4 +45,3 @@ private:
 };
 }
 
-#endif

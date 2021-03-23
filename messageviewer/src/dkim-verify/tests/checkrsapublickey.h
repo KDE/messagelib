@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CHECKRSAPUBLICKEY_H
-#define CHECKRSAPUBLICKEY_H
+#pragma once
 
 #include <QObject>
 
@@ -16,4 +15,3 @@ public:
     explicit CheckRSAPublicKey(QObject *parent = nullptr);
 };
 
-#endif // CHECKRSAPUBLICKEY_H

@@ -2,8 +2,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef MESSAGECORE_UTILS_H
-#define MESSAGECORE_UTILS_H
+#pragma once
 
 #include "messagecore_export.h"
 
@@ -31,4 +30,3 @@ identityForMessage(KMime::Message *msg, const KIdentityManagement::IdentityManag
 }
 }
 
-#endif

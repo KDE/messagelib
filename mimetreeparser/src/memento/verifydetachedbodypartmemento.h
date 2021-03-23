@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_VERIFYDETACHEDBODYPARTMEMENTO_H
-#define MIMETREEPARSER_VERIFYDETACHEDBODYPARTMEMENTO_H
+#pragma once
 
 #include "cryptobodypartmemento.h"
 #include <gpgme++/key.h>
@@ -69,4 +68,3 @@ private:
 };
 }
 
-#endif // MIMETREEPARSER_VERIFYDETACHEDBODYPARTMEMENTO_H

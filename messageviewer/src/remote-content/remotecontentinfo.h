@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef REMOTECONTENTINFO_H
-#define REMOTECONTENTINFO_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QDebug>
@@ -41,4 +40,3 @@ private:
 }
 Q_DECLARE_TYPEINFO(MessageViewer::RemoteContentInfo, Q_MOVABLE_TYPE);
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::RemoteContentInfo &t);
-#endif // REMOTECONTENTINFO_H

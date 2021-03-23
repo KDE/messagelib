@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CIDREFERENCESURLINTERCEPTOR_H
-#define CIDREFERENCESURLINTERCEPTOR_H
+#pragma once
 
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 
@@ -21,4 +20,3 @@ public:
     Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 };
 }
-#endif // CIDREFERENCESURLINTERCEPTOR_H

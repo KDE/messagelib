@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_STORAGEMODELBASE_H
-#define MESSAGELIST_CORE_STORAGEMODELBASE_H
+#pragma once
 
 #include <QAbstractItemModel>
 #include <QVector>
@@ -113,4 +112,3 @@ public:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_STORAGEMODEL_H

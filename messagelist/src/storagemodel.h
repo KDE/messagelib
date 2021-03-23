@@ -4,8 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGELIST_STORAGEMODEL_H
-#define MESSAGELIST_STORAGEMODEL_H
+#pragma once
 
 #include <messagelist/storagemodelbase.h>
 #include <messagelist_export.h>
@@ -80,4 +79,3 @@ private:
 };
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_STORAGEMODEL_H

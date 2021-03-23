@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SCAMCHECKSHORTURLMANAGER_H
-#define SCAMCHECKSHORTURLMANAGER_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QObject>
@@ -31,4 +30,3 @@ private:
     ScamCheckShortUrlManagerPrivate *const d;
 };
 }
-#endif // SCAMCHECKSHORTURLMANAGER_H

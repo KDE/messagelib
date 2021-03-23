@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MAILTRACKINGWARNINGWIDGET_H
-#define MAILTRACKINGWARNINGWIDGET_H
+#pragma once
 
 #include <KMessageWidget>
 
@@ -41,4 +40,3 @@ private:
 };
 }
 
-#endif // MAILTRACKINGWARNINGWIDGET_H

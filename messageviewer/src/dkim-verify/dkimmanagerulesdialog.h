@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef DKIMMANAGERULESDIALOG_H
-#define DKIMMANAGERULESDIALOG_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QDialog>
@@ -32,4 +31,3 @@ private:
 };
 }
 
-#endif // DKIMMANAGERULESDIALOG_H

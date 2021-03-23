@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef TEMPLATEPARSER_DEFAULTTEMPLATES_H
-#define TEMPLATEPARSER_DEFAULTTEMPLATES_H
+#pragma once
 
 #include "templateparser_export.h"
 #include <QString>
@@ -24,4 +23,3 @@ TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString defaultQuoteString();
 }
 }
 
-#endif

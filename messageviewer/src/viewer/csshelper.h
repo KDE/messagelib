@@ -7,8 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_CSSHELPER_H
-#define MESSAGEVIEWER_CSSHELPER_H
+#pragma once
 
 #include <MessageViewer/CSSHelperBase>
 
@@ -32,4 +31,3 @@ public:
 };
 }
 
-#endif // MESSAGEVIEWER_CSSHELPER_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef GRANTLEEHEADERSTYLE_H
-#define GRANTLEEHEADERSTYLE_H
+#pragma once
 
 #include "messageviewer/headerstyle.h"
 
@@ -31,4 +30,3 @@ private:
     GrantleeHeaderStylePrivate *const d;
 };
 }
-#endif // GRANTLEEHEADERSTYLE_H

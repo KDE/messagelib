@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CRYPTOCOMPOSERTEST_H
-#define CRYPTOCOMPOSERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -81,4 +80,3 @@ private:
     void runSMIMETest(bool sign, bool enc, bool opaque);
 };
 
-#endif

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_FOLLOWUPREMINDERSELECTDATEDIALOG_H
-#define MESSAGECOMPOSER_FOLLOWUPREMINDERSELECTDATEDIALOG_H
+#pragma once
 
 #include "messagecomposer_export.h"
 
@@ -47,4 +46,3 @@ private:
 };
 }
 
-#endif

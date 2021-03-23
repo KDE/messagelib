@@ -7,8 +7,7 @@
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */
-#ifndef _MESSAGEVIEWER_HTMLSTATUSBAR_H_
-#define _MESSAGEVIEWER_HTMLSTATUSBAR_H_
+#pragma once
 
 #include "messageviewer/messageviewerutil.h"
 #include <MimeTreeParser/Util>
@@ -83,4 +82,3 @@ private:
 };
 }
 
-#endif // _KMAIL_HTMLSTATUSBAR_H_

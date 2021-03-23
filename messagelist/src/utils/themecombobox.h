@@ -2,8 +2,7 @@
 
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
-#ifndef MESSAGELIST_UTILS_THEMECOMBOBOX_H
-#define MESSAGELIST_UTILS_THEMECOMBOBOX_H
+#pragma once
 
 #include <QComboBox>
 #include <collection.h>
@@ -51,4 +50,3 @@ private:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_THEMECOMBOBOX_H

@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSERPRIVATE_EXPORT_H
-#define MESSAGECOMPOSERPRIVATE_EXPORT_H
+#pragma once
 
 #include "messagecomposer_export.h"
 
@@ -18,4 +17,3 @@
 #define MESSAGECOMPOSER_TESTS_EXPORT
 #endif
 
-#endif

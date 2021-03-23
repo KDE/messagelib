@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef TEMPLATEPARSER_TEMPLATESUTIL_H
-#define TEMPLATEPARSER_TEMPLATESUTIL_H
+#pragma once
 
 #include "templateparser_export.h"
 #include <QString>
@@ -20,4 +19,3 @@ TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString getFirstNameFromEmail(const QStr
 }
 }
 
-#endif

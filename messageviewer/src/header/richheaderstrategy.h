@@ -9,8 +9,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef RICHHEADERSTRATEGY_H
-#define RICHHEADERSTRATEGY_H
+#pragma once
 #include "messageviewer/headerstrategy.h"
 #include "messageviewer_export.h"
 #include <QStringList>
@@ -51,4 +50,3 @@ private:
 };
 }
 
-#endif

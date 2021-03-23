@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef MAILWEBENGINEACCESSKEYANCHORFROMHTMLTEST_H
-#define MAILWEBENGINEACCESSKEYANCHORFROMHTMLTEST_H
+#pragma once
 
 #include <QObject>
 #include <QWidget>
@@ -41,4 +40,3 @@ private Q_SLOTS:
     void shouldReturnTwoAnchor();
 };
 
-#endif // MAILWEBENGINEACCESSKEYANCHORFROMHTMLTEST_H

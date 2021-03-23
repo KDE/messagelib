@@ -6,8 +6,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_MARKMESSAGEREADHANDLER_H
-#define MESSAGEVIEWER_MARKMESSAGEREADHANDLER_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -51,4 +50,3 @@ private:
 };
 }
 
-#endif

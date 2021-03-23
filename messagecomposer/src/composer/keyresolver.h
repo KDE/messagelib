@@ -11,8 +11,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_KLEO_KEYRESOLVER_H
-#define MESSAGECOMPOSER_KLEO_KEYRESOLVER_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <Libkleo/Enum>
@@ -307,4 +306,3 @@ private:
 };
 } // namespace Kleo
 
-#endif

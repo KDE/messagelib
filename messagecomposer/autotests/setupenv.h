@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECORE_TESTS_SETUPENV_H
-#define MESSAGECORE_TESTS_SETUPENV_H
+#pragma once
 
 #include <gpgme++/key.h>
 
@@ -59,4 +58,3 @@ void populateKeyring(const QString &gnupgHome, const GpgME::Key &key);
 }
 }
 
-#endif

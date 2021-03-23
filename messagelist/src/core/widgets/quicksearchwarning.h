@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef QUICKSEARCHWARNING_H
-#define QUICKSEARCHWARNING_H
+#pragma once
 
 #include "messagelist_private_export.h"
 #include <KMessageWidget>
@@ -26,4 +25,3 @@ private Q_SLOTS:
 };
 }
 }
-#endif // QUICKSEARCHWARNING_H

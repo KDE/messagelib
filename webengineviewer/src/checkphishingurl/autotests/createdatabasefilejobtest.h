@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CREATEDATABASEFILEJOBTEST_H
-#define CREATEDATABASEFILEJOBTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -30,4 +29,3 @@ private Q_SLOTS:
     void shouldRemoveElementInDataBase_data();
 };
 
-#endif // CREATEDATABASEFILEJOBTEST_H

@@ -7,8 +7,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_COMPOSERLINEEDIT_H
-#define MESSAGECOMPOSER_COMPOSERLINEEDIT_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <PimCommonAkonadi/AddresseeLineEdit>
@@ -34,4 +33,3 @@ protected:
 };
 }
 
-#endif

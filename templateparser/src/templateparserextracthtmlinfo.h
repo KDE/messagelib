@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATEPARSEREXTRACTHTMLINFO_H
-#define TEMPLATEPARSEREXTRACTHTMLINFO_H
+#pragma once
 
 #include "templateparser_private_export.h"
 #include "templateparserextracthtmlinforesult.h"
@@ -46,4 +45,3 @@ private:
     TemplateExtractHtmlElementFromMail *mExtractHtmlElementWebEngineView = nullptr;
 };
 }
-#endif // TEMPLATEPARSEREXTRACTHTMLINFO_H

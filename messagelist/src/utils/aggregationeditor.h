@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_UTILS_AGGREGATIONEDITOR_H
-#define MESSAGELIST_UTILS_AGGREGATIONEDITOR_H
+#pragma once
 
 #include <utils/optionseteditor.h>
 
@@ -98,4 +97,3 @@ private Q_SLOTS:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_AGGREGATIONEDITOR_H

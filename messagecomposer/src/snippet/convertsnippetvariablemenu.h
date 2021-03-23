@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef CONVERTSNIPPETVARIABLEMENU_H
-#define CONVERTSNIPPETVARIABLEMENU_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <MessageComposer/ConvertSnippetVariablesUtil>
@@ -34,4 +33,3 @@ private:
     QMenu *mMenu = nullptr;
 };
 }
-#endif // CONVERTSNIPPETVARIABLEMENU_H

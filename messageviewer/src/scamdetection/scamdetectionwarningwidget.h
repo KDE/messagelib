@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SCAMDETECTIONWARNINGWIDGET_H
-#define SCAMDETECTIONWARNINGWIDGET_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 
@@ -44,4 +43,3 @@ private:
 };
 }
 
-#endif // SCAMDETECTIONWARNINGWIDGET_H

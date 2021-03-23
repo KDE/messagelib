@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_MESSAGEPART_H
-#define MIMETREEPARSER_MESSAGEPART_H
+#pragma once
 
 #include "mimetreeparser_export.h"
 
@@ -449,4 +448,3 @@ protected:
 };
 }
 
-#endif //__MIMETREEPARSER_MESSAGEPART_H

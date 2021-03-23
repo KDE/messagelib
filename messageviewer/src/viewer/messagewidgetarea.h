@@ -5,8 +5,7 @@
 
 */
 
-#ifndef MESSAGEWIDGETAREA_H
-#define MESSAGEWIDGETAREA_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QWidget>
@@ -21,4 +20,3 @@ public:
     ~MessageWidgetArea() override;
 };
 }
-#endif // MESSAGEWIDGETAREA_H

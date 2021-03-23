@@ -4,8 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECORE_ATTACHMENTFROMURLBASEJOB_H
-#define MESSAGECORE_ATTACHMENTFROMURLBASEJOB_H
+#pragma once
 
 #include "messagecore_export.h"
 
@@ -55,4 +54,3 @@ private:
     Private *const d;
 };
 }
-#endif // ATTACHMENTFROMURLBASE_H

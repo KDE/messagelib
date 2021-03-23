@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef TESTWEBENGINEACCESSKEY_H
-#define TESTWEBENGINEACCESSKEY_H
+#pragma once
 
 #include <QWidget>
 namespace WebEngineViewer
@@ -34,4 +33,3 @@ private:
     WebEngineViewer::MailWebEngineView *mTestWebEngine;
 };
 
-#endif // TESTWEBENGINEACCESSKEY_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATESCOMMANDMENU_H
-#define TEMPLATESCOMMANDMENU_H
+#pragma once
 
 #include "templateparser_export.h"
 #include <QMap>
@@ -132,4 +131,3 @@ private:
 };
 }
 
-#endif // TEMPLATESCOMMANDMENU_H

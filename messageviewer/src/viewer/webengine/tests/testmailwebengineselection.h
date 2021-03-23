@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TESTMAILWEBENGINESELECTION_H
-#define TESTMAILWEBENGINESELECTION_H
+#pragma once
 
 #include <QWidget>
 
@@ -30,4 +29,3 @@ private:
     int mNumber;
 };
 
-#endif // TESTMAILWEBENGINE_H

@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef AttachmentClipBoardJob_H
-#define AttachmentClipBoardJob_H
+#pragma once
 
 #include "MessageCore/AttachmentLoadJob"
 #include "messagecomposer_export.h"
@@ -29,4 +28,3 @@ private:
     void addAttachment(const QByteArray &data, const QString &attachmentName);
 };
 }
-#endif // AttachmentClipBoardJob_H

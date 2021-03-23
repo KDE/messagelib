@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMGENERATERULEJOB_H
-#define DKIMGENERATERULEJOB_H
+#pragma once
 
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_private_export.h"
@@ -30,4 +29,3 @@ private:
     DKIMCheckSignatureJob::CheckSignatureResult mResult;
 };
 }
-#endif // DKIMGENERATERULEJOB_H

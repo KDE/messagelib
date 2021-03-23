@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMAGESCALING_H
-#define IMAGESCALING_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <QByteArray>
@@ -58,4 +57,3 @@ private:
 };
 }
 
-#endif // IMAGESCALING_H

@@ -9,8 +9,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_ATTACHMENTSTRATEGY_H
-#define MESSAGEVIEWER_ATTACHMENTSTRATEGY_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -64,4 +63,3 @@ public:
 };
 }
 
-#endif // MIMETREEPARSER_ATTACHMENTSTRATEGY_H

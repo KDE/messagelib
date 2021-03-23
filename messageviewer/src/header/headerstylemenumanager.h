@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef HEADERSTYLEMENU_H
-#define HEADERSTYLEMENU_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -42,4 +41,3 @@ private:
     HeaderStyleMenuManagerPrivate *const d;
 };
 }
-#endif // HEADERSTYLEMENU_H

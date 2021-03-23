@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef STATUSBARLABELTOGGLEDSTATE_H
-#define STATUSBARLABELTOGGLEDSTATE_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <QLabel>
@@ -40,4 +39,3 @@ private:
     bool mToggleMode = false;
 };
 }
-#endif // STATUSBARLABELTOGGLEDSTATE_H

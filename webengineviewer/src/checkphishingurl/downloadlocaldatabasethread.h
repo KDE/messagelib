@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DOWNLOADLOCALDATABASETHREAD_H
-#define DOWNLOADLOCALDATABASETHREAD_H
+#pragma once
 
 #include "webengineviewer_private_export.h"
 #include <QThread>
@@ -39,4 +38,3 @@ private:
     QString mDatabaseFullPath;
 };
 }
-#endif // DOWNLOADLOCALDATABASETHREAD_H

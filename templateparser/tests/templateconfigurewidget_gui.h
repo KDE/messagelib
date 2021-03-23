@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef TEST_TEMPLATECONFIGUREWIDGET_GUI_H
-#define TEST_TEMPLATECONFIGUREWIDGET_GUI_H
+#pragma once
 
 #include <QWidget>
 
@@ -17,4 +16,3 @@ public:
     ~TemplateConfigureTestWidget();
 };
 
-#endif

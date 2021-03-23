@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_GROUPHEADERITEM_H
-#define MESSAGELIST_CORE_GROUPHEADERITEM_H
+#pragma once
 
 #include <QString>
 
@@ -32,4 +31,3 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_GROUPHEADERITEM_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SEARCHFULLHASHJOB_H
-#define SEARCHFULLHASHJOB_H
+#pragma once
 
 #include "checkphishingurlutil.h"
 #include "webengineviewer_export.h"
@@ -52,4 +51,3 @@ private:
 };
 }
 
-#endif // SEARCHFULLHASHJOB_H

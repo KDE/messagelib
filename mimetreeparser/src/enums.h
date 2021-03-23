@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_ENUMS_H
-#define MIMETREEPARSER_ENUMS_H
+#pragma once
 
 namespace MimeTreeParser
 {
@@ -34,4 +33,3 @@ typedef enum {
 } KMMsgSignatureState;
 }
 
-#endif

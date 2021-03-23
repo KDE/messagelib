@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef NETWORKPLUGINURLINTERCEPTORCONFIGUREWIDGET_H
-#define NETWORKPLUGINURLINTERCEPTORCONFIGUREWIDGET_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QWidget>
@@ -33,4 +32,3 @@ Q_SIGNALS:
     void configureChanged();
 };
 }
-#endif // NETWORKPLUGINURLINTERCEPTORCONFIGUREWIDGET_H

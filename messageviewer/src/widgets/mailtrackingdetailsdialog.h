@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MAILTRACKINGDETAILSDIALOG_H
-#define MAILTRACKINGDETAILSDIALOG_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QDialog>
@@ -34,4 +33,3 @@ private:
 };
 }
 
-#endif // MAILTRACKINGDETAILSDIALOG_H

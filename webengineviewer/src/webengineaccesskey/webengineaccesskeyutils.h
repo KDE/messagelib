@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef MAILWEBENGINEACCESSKEYUTILS_H
-#define MAILWEBENGINEACCESSKEYUTILS_H
+#pragma once
 
 #include <QString>
 
@@ -16,4 +15,3 @@ Q_REQUIRED_RESULT QString script();
 }
 }
 
-#endif // MAILWEBENGINEACCESSKEYUTILS_H

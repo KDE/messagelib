@@ -34,8 +34,7 @@
 **   your version.
 **
 *******************************************************************************/
-#ifndef MESSAGEVIEWERUTIL_H
-#define MESSAGEVIEWERUTIL_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <AkonadiCore/Item>
@@ -95,4 +94,3 @@ Q_DECLARE_TYPEINFO(MessageViewer::Util::HtmlMessageInfo, Q_MOVABLE_TYPE);
 Q_DECLARE_METATYPE(MessageViewer::Util::HtmlMessageInfo)
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::Util::HtmlMessageInfo &t);
 Q_DECLARE_METATYPE(KService::Ptr)
-#endif

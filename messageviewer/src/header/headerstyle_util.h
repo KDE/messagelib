@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef HEADERSTYLE_UTIL_H
-#define HEADERSTYLE_UTIL_H
+#pragma once
 
 #include <KTextToHTML>
 #include <QString>
@@ -81,4 +80,3 @@ private:
 };
 }
 
-#endif // HEADERSTYLE_UTIL_H

@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef MAILWEBENGINEPAGE_H
-#define MAILWEBENGINEPAGE_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <WebEngineViewer/WebEnginePage>
@@ -29,4 +28,3 @@ private:
     void initialize();
 };
 }
-#endif // MAILWEBENGINEPAGE_H

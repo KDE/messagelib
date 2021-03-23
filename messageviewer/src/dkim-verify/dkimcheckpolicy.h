@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMCHECKPOLICY_H
-#define DKIMCHECKPOLICY_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <messageviewer/messageviewersettings.h>
@@ -76,4 +75,3 @@ private:
 };
 }
 
-#endif // DKIMCHECKPOLICY_H

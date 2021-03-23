@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef DEFAULTGRANTLEEHEADERSTRATEGY_H
-#define DEFAULTGRANTLEEHEADERSTRATEGY_H
+#pragma once
 
 #include <messageviewer/headerstrategy.h>
 
@@ -29,4 +28,3 @@ public:
     }
 };
 }
-#endif // DEFAULTGRANTLEEHEADERSTRATEGY_H

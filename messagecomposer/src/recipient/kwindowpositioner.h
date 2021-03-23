@@ -5,8 +5,7 @@
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef KWINDOWPOSITIONER_H
-#define KWINDOWPOSITIONER_H
+#pragma once
 
 #include <QWidget>
 
@@ -30,4 +29,3 @@ private:
 };
 }
 
-#endif

@@ -7,8 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef KDEPIM_KMAIL_KLEO_UTIL_H
-#define KDEPIM_KMAIL_KLEO_UTIL_H
+#pragma once
 
 #include <Libkleo/Enum>
 
@@ -65,4 +64,3 @@ static inline bool containsOpenPGP(unsigned int f)
     return f & (Kleo::OpenPGPMIMEFormat | Kleo::InlineOpenPGPFormat);
 }
 
-#endif // KDEPIM_KMAIL_KLEO_UTIL_H

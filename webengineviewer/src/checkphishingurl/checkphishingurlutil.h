@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CHECKPHISHINGURLUTIL_H
-#define CHECKPHISHINGURLUTIL_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QObject>
@@ -29,4 +28,3 @@ WEBENGINEVIEWER_EXPORT int generateRandomSecondValue(int numberOfFailed);
 }
 }
 Q_DECLARE_METATYPE(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus)
-#endif // CHECKPHISHINGURLUTIL_H

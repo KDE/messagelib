@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_COMPOSER_VIEW_BASE_H
-#define MESSAGECOMPOSER_COMPOSER_VIEW_BASE_H
+#pragma once
 
 #include "MessageComposer/Recipient"
 #include "messagecomposer/messagesender.h"
@@ -375,4 +374,3 @@ private:
 };
 } // namespace
 
-#endif

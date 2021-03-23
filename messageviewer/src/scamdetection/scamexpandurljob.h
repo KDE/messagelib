@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SCAMEXPANDURLJOB_H
-#define SCAMEXPANDURLJOB_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QNetworkReply>
@@ -38,4 +37,3 @@ private:
     ScamExpandUrlJobPrivate *const d;
 };
 }
-#endif // SCAMEXPANDURLJOB_H

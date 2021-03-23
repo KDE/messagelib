@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef CONTACTDISPLAYMESSAGEMEMENTO_H
-#define CONTACTDISPLAYMESSAGEMEMENTO_H
+#pragma once
 
 #include "interfaces/bodypart.h"
 #include "messageviewer/viewer.h"
@@ -65,4 +64,3 @@ private:
 };
 }
 
-#endif /* CONTACTDISPLAYMESSAGE_H */

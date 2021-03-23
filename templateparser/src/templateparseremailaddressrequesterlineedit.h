@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H
-#define TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H
+#pragma once
 
 #include "templateparser_private_export.h"
 #include <TemplateParser/TemplateParserEmailAddressRequesterBase>
@@ -27,4 +26,3 @@ private:
     QLineEdit *mLineEdit = nullptr;
 };
 }
-#endif // TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H

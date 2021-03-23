@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_SENDLATERTIMEDATEWIDGET_H
-#define MESSAGECOMPOSER_SENDLATERTIMEDATEWIDGET_H
+#pragma once
 
 #include <QDateTime>
 #include <QWidget>
@@ -39,4 +38,3 @@ private:
 };
 }
 
-#endif // MESSAGECOMPOSER_SENDLATERTIMEDATEWIDGET_H

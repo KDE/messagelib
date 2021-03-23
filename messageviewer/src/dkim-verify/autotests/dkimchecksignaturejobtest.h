@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMCHECKSIGNATUREJOBTEST_H
-#define DKIMCHECKSIGNATUREJOBTEST_H
+#pragma once
 
 #include <QObject>
 #include <QtCrypto>
@@ -26,4 +25,3 @@ private:
     QCA::Initializer *mQcaInitializer = nullptr;
 };
 
-#endif // DKIMCHECKSIGNATUREJOBTEST_H

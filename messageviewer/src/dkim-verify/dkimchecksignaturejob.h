@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMCHECKSIGNATUREJOB_H
-#define DKIMCHECKSIGNATUREJOB_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <KMime/Message>
@@ -157,4 +156,3 @@ MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMCheckS
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &t);
 Q_DECLARE_METATYPE(MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult)
 Q_DECLARE_TYPEINFO(MessageViewer::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult, Q_MOVABLE_TYPE);
-#endif // DKIMCHECKSIGNATUREJOB_H

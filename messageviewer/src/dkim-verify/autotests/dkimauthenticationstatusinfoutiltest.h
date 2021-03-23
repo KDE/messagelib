@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMAUTHENTICATIONSTATUSINFOUTILTEST_H
-#define DKIMAUTHENTICATIONSTATUSINFOUTILTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -17,4 +16,3 @@ public:
     ~DKIMAuthenticationStatusInfoUtilTest() override = default;
 };
 
-#endif // DKIMAUTHENTICATIONSTATUSINFOUTILTEST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef DEFAULTGRANTLEEHEADERSTYLEPLUGIN_H
-#define DEFAULTGRANTLEEHEADERSTYLEPLUGIN_H
+#pragma once
 
 #include "messageviewer/headerstyleplugin.h"
 
@@ -32,4 +31,3 @@ private:
     HeaderStrategy *const mHeaderStrategy;
 };
 }
-#endif // DEFAULTGRANTLEEHEADERSTYLEPLUGIN_H

@@ -6,8 +6,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_UTIL_H
-#define MESSAGECOMPOSER_UTIL_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <Akonadi/KMime/MessageStatus>
@@ -79,4 +78,3 @@ Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool hasMissingAttachments(const QStrin
 }
 }
 
-#endif

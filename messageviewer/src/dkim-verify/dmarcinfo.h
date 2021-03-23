@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DMARCINFO_H
-#define DMARCINFO_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QDebug>
@@ -48,4 +47,3 @@ private:
 }
 Q_DECLARE_METATYPE(MessageViewer::DMARCInfo)
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DMARCInfo &t);
-#endif // DMARCINFO_H

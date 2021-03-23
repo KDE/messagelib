@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMWIDGETINFO_H
-#define DKIMWIDGETINFO_H
+#pragma once
 
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_export.h"
@@ -46,4 +45,3 @@ private:
 };
 }
 
-#endif // DKIMWIDGETINFO_H

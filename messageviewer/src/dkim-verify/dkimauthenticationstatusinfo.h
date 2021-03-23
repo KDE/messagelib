@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMAUTHENTICATIONSTATUSINFO_H
-#define DKIMAUTHENTICATIONSTATUSINFO_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QDebug>
@@ -75,4 +74,3 @@ Q_DECLARE_METATYPE(MessageViewer::DKIMAuthenticationStatusInfo)
 Q_DECLARE_TYPEINFO(MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo, Q_MOVABLE_TYPE);
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMAuthenticationStatusInfo &t);
 
-#endif // DKIMAUTHENTICATIONSTATUSINFO_H

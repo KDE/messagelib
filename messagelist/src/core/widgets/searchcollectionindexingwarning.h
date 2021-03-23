@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef SEARCHCOLLECTIONINDEXINGWARNING_H
-#define SEARCHCOLLECTIONINDEXINGWARNING_H
+#pragma once
 
 #include "messagelist_private_export.h"
 #include <AkonadiCore/Collection>
@@ -55,4 +54,3 @@ private:
 }
 }
 
-#endif // SEARCHCOLLECTIONINDEXINGWARNING_H

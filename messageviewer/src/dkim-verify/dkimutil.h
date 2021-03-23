@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMUTIL_H
-#define DKIMUTIL_H
+#pragma once
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_private_export.h"
 #include <QCryptographicHash>
@@ -30,4 +29,3 @@ MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT DKIMCheckSignatureJob::Authenticati
 }
 }
 
-#endif // DKIMUTIL_H

@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_MESSAGEITEM_H
-#define MESSAGELIST_CORE_MESSAGEITEM_H
+#pragma once
 
 #include "core/item.h"
 #include "core/modelinvariantindex.h"
@@ -214,4 +213,3 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MESSAGEITEM_H

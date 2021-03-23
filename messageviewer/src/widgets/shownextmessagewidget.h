@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SHOWNEXTMESSAGEWIDGET_H
-#define SHOWNEXTMESSAGEWIDGET_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QWidget>
@@ -30,4 +29,3 @@ private:
 };
 }
 
-#endif // SHOWNEXTMESSAGEWIDGET_H

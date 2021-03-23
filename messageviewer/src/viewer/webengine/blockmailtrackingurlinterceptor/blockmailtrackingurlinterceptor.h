@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef BLOCKMAILTRACKINGURLINTERCEPTOR_H
-#define BLOCKMAILTRACKINGURLINTERCEPTOR_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QVector>
@@ -48,4 +47,3 @@ private:
 }
 Q_DECLARE_TYPEINFO(MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList, Q_MOVABLE_TYPE);
 Q_DECLARE_METATYPE(MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList)
-#endif // BLOCKMAILTRACKINGURLINTERCEPTOR_H

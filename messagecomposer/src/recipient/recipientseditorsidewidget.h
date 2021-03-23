@@ -9,8 +9,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RECIPIENTSEDITORSIDEWIDGET_H
-#define RECIPIENTSEDITORSIDEWIDGET_H
+#pragma once
 
 #include "recipientseditor.h"
 
@@ -55,4 +54,3 @@ private:
 };
 }
 
-#endif // RECIPIENTSEDITORSIDEWIDGET_H

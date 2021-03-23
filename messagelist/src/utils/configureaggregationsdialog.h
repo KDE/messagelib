@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_H
-#define MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -46,4 +45,3 @@ private:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_H

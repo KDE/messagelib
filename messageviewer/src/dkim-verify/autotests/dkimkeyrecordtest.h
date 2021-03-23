@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMKEYRECORDTEST_H
-#define DKIMKEYRECORDTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -21,4 +20,3 @@ private Q_SLOTS:
     void shouldTestExtractDkimKeyRecord_data();
 };
 
-#endif // DKIMKEYRECORDTEST_H

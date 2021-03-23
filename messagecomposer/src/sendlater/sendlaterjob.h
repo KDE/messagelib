@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_SENDLATERJOB_H
-#define MESSAGECOMPOSER_SENDLATERJOB_H
+#pragma once
 
 #include <KJob>
 #include <QDBusPendingReply>
@@ -32,4 +31,3 @@ protected:
 };
 }
 
-#endif

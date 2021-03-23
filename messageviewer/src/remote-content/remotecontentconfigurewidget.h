@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef REMOTECONTENTCONFIGUREWIDGET_H
-#define REMOTECONTENTCONFIGUREWIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -54,4 +53,3 @@ private:
 };
 }
 
-#endif // REMOTECONTENTCONFIGUREWIDGET_H

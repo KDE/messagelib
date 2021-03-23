@@ -5,8 +5,7 @@
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef MESSAGECOMPOSER_RECIPIENTSPICKER_H
-#define MESSAGECOMPOSER_RECIPIENTSPICKER_H
+#pragma once
 
 #include <MessageComposer/Recipient>
 
@@ -73,4 +72,3 @@ private:
 };
 }
 
-#endif

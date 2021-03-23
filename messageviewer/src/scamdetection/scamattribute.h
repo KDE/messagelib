@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SCAMATTRIBUTE_H
-#define SCAMATTRIBUTE_H
+#pragma once
 
 #include <AkonadiCore/attribute.h>
 namespace MessageViewer
@@ -35,4 +34,3 @@ private:
 };
 }
 
-#endif // SCAMATTRIBUTE_H

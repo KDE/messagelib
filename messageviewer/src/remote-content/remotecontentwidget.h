@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef REMOTECONTENTWIDGET_H
-#define REMOTECONTENTWIDGET_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include "remotecontentinfo.h"
@@ -33,4 +32,3 @@ private:
     RemoteContentStatusTypeComboBox *const mStatusComboBox;
 };
 }
-#endif // REMOTECONTENTWIDGET_H

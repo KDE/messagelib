@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MODIFYMESSAGEDISPLAYFORMATJOB_H
-#define MODIFYMESSAGEDISPLAYFORMATJOB_H
+#pragma once
 
 #include "viewer/viewer_p.h"
 #include <QObject>
@@ -41,4 +40,3 @@ private:
 };
 }
 
-#endif // MODIFYMESSAGEDISPLAYFORMATJOB_H

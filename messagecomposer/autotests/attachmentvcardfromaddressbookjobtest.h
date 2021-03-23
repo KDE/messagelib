@@ -5,8 +5,7 @@
 
 */
 
-#ifndef ATTACHMENTVCARDFROMADDRESSBOOKJOBTEST_H
-#define ATTACHMENTVCARDFROMADDRESSBOOKJOBTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -23,4 +22,3 @@ private Q_SLOTS:
     void testAttachmentVCardWithEmptyVCard();
 };
 
-#endif // ATTACHMENTVCARDFROMADDRESSBOOKJOBTEST_H

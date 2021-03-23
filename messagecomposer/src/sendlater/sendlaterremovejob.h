@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_SENDLATERREMOVEJOB_H
-#define MESSAGECOMPOSER_SENDLATERREMOVEJOB_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include "sendlaterjob.h"
@@ -29,4 +28,3 @@ private:
 };
 }
 
-#endif

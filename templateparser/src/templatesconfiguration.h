@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef TEMPLATEPARSER_TEMPLATESCONFIGURATION_H
-#define TEMPLATEPARSER_TEMPLATESCONFIGURATION_H
+#pragma once
 
 #include "templateparser_export.h"
 #include "ui_templatesconfiguration_base.h"
@@ -56,4 +55,3 @@ private:
 };
 }
 
-#endif

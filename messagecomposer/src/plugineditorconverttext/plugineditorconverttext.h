@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORCONVERTTEXT_H
-#define PLUGINEDITORCONVERTTEXT_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <MessageComposer/PluginEditorBase>
@@ -34,4 +33,3 @@ public:
     Q_REQUIRED_RESULT virtual bool hasToolBarSupport() const;
 };
 }
-#endif // PLUGINEDITORCONVERTTEXT_H

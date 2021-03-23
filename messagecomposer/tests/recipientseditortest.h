@@ -5,8 +5,7 @@
 
     SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
 */
-#ifndef RECIPIENTSEDITORTEST_H
-#define RECIPIENTSEDITORTEST_H
+#pragma once
 
 #include <QWidget>
 
@@ -28,4 +27,3 @@ private:
     MessageComposer::RecipientsEditor *mRecipients = nullptr;
 };
 
-#endif

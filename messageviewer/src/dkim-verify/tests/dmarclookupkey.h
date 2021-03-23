@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DMARCLOOKUPKEY_H
-#define DMARCLOOKUPKEY_H
+#pragma once
 
 #include <QObject>
 
@@ -18,4 +17,3 @@ public:
     void lookUpDomain(const QString &domain);
 };
 
-#endif // DMARCLOOKUPKEY_H

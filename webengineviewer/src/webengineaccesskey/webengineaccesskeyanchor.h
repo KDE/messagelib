@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MAILWEBENGINEACCESSKEYANCHOR_H
-#define MAILWEBENGINEACCESSKEYANCHOR_H
+#pragma once
 
 #include <QRect>
 #include <QVariant>
@@ -41,4 +40,3 @@ private:
 }
 
 Q_DECLARE_TYPEINFO(WebEngineViewer::WebEngineAccessKeyAnchor, Q_MOVABLE_TYPE);
-#endif // MAILWEBENGINEACCESSKEYANCHOR_H

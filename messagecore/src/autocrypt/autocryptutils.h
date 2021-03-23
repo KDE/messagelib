@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef AUTOCRYPTUTILS_H
-#define AUTOCRYPTUTILS_H
+#pragma once
 
 #include "autocryptrecipient.h"
 
@@ -40,4 +39,3 @@ Q_REQUIRED_RESULT QHash<QByteArray, QByteArray> MESSAGECORE_EXPORT paramsFromAut
 MESSAGECORE_EXPORT void processAutocryptfromMail(const HeaderMixupNodeHelper &mixup);
 }
 
-#endif

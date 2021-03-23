@@ -7,8 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef KMAIL_MESSAGESENDER_H
-#define KMAIL_MESSAGESENDER_H
+#pragma once
 
 #include <kmime/kmime_message.h>
 namespace MessageComposer
@@ -68,4 +67,3 @@ inline MessageSender::~MessageSender()
 }
 }
 
-#endif /* __KMAIL_MESSAGESENDER_H */

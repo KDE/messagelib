@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_DEFAULTRENDERER_QUOTEHTML_H
-#define MESSAGEVIEWER_DEFAULTRENDERER_QUOTEHTML_H
+#pragma once
 
 #include <QString>
 
@@ -17,4 +16,3 @@ class RenderContext;
 
 void quotedHTML(const QString &s, MessageViewer::RenderContext *context, MessageViewer::HtmlWriter *htmlWriter);
 
-#endif

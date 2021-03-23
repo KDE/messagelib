@@ -5,8 +5,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MAILVIEWER_OBJECTTREEVIEWERSOURCE_H
-#define MAILVIEWER_OBJECTTREEVIEWERSOURCE_H
+#pragma once
 
 #include "objecttreeemptysource.h"
 class QString;
@@ -46,4 +45,3 @@ private:
 };
 }
 
-#endif

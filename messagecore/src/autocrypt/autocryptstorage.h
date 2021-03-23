@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef AUTOCRYPTSTORAGE_H
-#define AUTOCRYPTSTORAGE_H
+#pragma once
 
 #include "messagecore_export.h"
 
@@ -44,4 +43,3 @@ private:
 };
 }
 
-#endif

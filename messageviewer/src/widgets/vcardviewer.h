@@ -5,8 +5,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef MESSAGEVIEWER_VCARDVIEWER_H
-#define MESSAGEVIEWER_VCARDVIEWER_H
+#pragma once
 #include <QDialog>
 #include <kcontacts/addressee.h>
 
@@ -39,4 +38,3 @@ private:
 };
 }
 
-#endif // VCARDVIEWER_H

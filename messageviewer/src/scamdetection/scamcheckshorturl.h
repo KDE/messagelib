@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SCAMCHECKSHORTURL_H
-#define SCAMCHECKSHORTURL_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -38,4 +37,3 @@ private:
 };
 }
 
-#endif // SCAMCHECKSHORTURL_H

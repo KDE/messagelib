@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_MODELINVARIANTINDEX_P_H
-#define MESSAGELIST_CORE_MODELINVARIANTINDEX_P_H
+#pragma once
 
 #include "core/modelinvariantindex.h"
 
@@ -51,4 +50,3 @@ public:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MODELINVARIANTINDEX_P_H

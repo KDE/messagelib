@@ -7,8 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef KMAIL_INTERFACE_BODYPARTURLHANDLER_H
-#define KMAIL_INTERFACE_BODYPARTURLHANDLER_H
+#pragma once
 
 class QString;
 class QPoint;
@@ -90,4 +89,3 @@ public:
 } // namespace Interface
 }
 
-#endif // KMAIL_INTERFACES_BODYPARTURLHANDLER_H

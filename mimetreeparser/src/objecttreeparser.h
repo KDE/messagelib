@@ -9,8 +9,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_OBJECTTREEPARSER_H
-#define MIMETREEPARSER_OBJECTTREEPARSER_H
+#pragma once
 
 #include "mimetreeparser_export.h"
 
@@ -350,4 +349,3 @@ private:
 };
 }
 
-#endif // MIMETREEPARSER_OBJECTTREEPARSER_H

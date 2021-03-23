@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef ABSTRACT_ENCRYPT_JOB_H
-#define ABSTRACT_ENCRYPT_JOB_H
+#pragma once
 
 #include <QStringList>
 
@@ -40,4 +39,3 @@ public:
     virtual QStringList recipients() const = 0;
 };
 }
-#endif

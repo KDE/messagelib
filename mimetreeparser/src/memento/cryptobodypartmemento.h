@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_CRYPTOBODYPARTMEMENTO_H
-#define MIMETREEPARSER_CRYPTOBODYPARTMEMENTO_H
+#pragma once
 
 #include <gpgme++/error.h>
 
@@ -59,4 +58,3 @@ private:
     GpgME::Error m_auditLogError;
 };
 }
-#endif // MIMETREEPARSER_CRYPTOBODYPARTMEMENTO_H

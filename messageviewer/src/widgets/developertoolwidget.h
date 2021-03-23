@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DEVELOPERTOOLWIDGET_H
-#define DEVELOPERTOOLWIDGET_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QWidget>
@@ -27,4 +26,3 @@ private:
 };
 }
 
-#endif // DEVELOPERTOOLWIDGET_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CHECKPHISHINGURLGUI_H
-#define CHECKPHISHINGURLGUI_H
+#pragma once
 
 #include "../checkphishingurljob.h"
 #include <QWidget>
@@ -28,4 +27,3 @@ private:
     QPlainTextEdit *mResult;
 };
 
-#endif // CHECKPHISHINGURLGUI_H

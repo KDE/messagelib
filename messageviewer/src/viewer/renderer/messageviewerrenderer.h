@@ -7,8 +7,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWERRENDERER_H
-#define MESSAGEVIEWERRENDERER_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QWidget>
@@ -34,4 +33,3 @@ private:
 };
 }
 
-#endif // MESSAGEVIEWERRENDERER_H

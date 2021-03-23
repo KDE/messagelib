@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_UTILS_UTIL_H
-#define MIMETREEPARSER_UTILS_UTIL_H
+#pragma once
 
 #include "mimetreeparser_export.h"
 
@@ -54,4 +53,3 @@ MIMETREEPARSER_EXPORT Q_REQUIRED_RESULT QString iconNameForContent(KMime::Conten
 }
 }
 
-#endif

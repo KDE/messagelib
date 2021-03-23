@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-#ifndef MESSAGEVIEWER_TEST_SHOWONLYMIMEPARTTEST_H
-#define MESSAGEVIEWER_TEST_SHOWONLYMIMEPARTTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -24,4 +23,3 @@ private Q_SLOTS:
     void testRelated();
 };
 
-#endif

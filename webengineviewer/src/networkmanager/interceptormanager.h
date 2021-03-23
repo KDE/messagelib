@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef INTERCEPTORMANAGER_H
-#define INTERCEPTORMANAGER_H
+#pragma once
 
 #include "webengineviewer/networkpluginurlinterceptor.h"
 #include "webengineviewer_export.h"
@@ -35,4 +34,3 @@ private:
     NetworkAccessManagerWebEnginePrivate *const d;
 };
 }
-#endif // INTERCEPTORMANAGER_H

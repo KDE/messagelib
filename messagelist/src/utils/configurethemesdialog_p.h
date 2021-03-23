@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_UTILS_CONFIGURETHEMESDIALOG_P_H
-#define MESSAGELIST_UTILS_CONFIGURETHEMESDIALOG_P_H
+#pragma once
 
 #include "utils/configurethemesdialog.h"
 class QListWidgetItem;
@@ -60,4 +59,3 @@ public:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_CONFIGURESKINSDIALOG_P_H

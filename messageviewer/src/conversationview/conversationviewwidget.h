@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CONVERSATIONVIEWWIDGET_H
-#define CONVERSATIONVIEWWIDGET_H
+#pragma once
 
 #include <QWidget>
 namespace MessageViewer
@@ -19,4 +18,3 @@ public:
 };
 }
 
-#endif // CONVERSATIONVIEWWIDGET_H

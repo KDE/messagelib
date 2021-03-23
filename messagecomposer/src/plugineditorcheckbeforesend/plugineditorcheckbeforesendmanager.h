@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORCHECKBEFORESENDMANAGER_H
-#define PLUGINEDITORCHECKBEFORESENDMANAGER_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <PimCommon/PluginUtil>
@@ -38,4 +37,3 @@ private:
     PluginEditorCheckBeforeSendManagerPrivate *const d;
 };
 }
-#endif // PLUGINEDITORCHECKBEFORESENDMANAGER_H

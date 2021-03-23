@@ -8,8 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_ANTISPAMCONFIG_H
-#define MESSAGEVIEWER_ANTISPAMCONFIG_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QRegExp>
@@ -142,4 +141,3 @@ private:
 };
 }
 
-#endif // MESSAGEVIEWER_ANTISPAMCONFIG_H

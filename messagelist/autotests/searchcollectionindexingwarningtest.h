@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SEARCHCOLLECTIONINDEXINGWARNINGTEST_H
-#define SEARCHCOLLECTIONINDEXINGWARNINGTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -20,4 +19,3 @@ private Q_SLOTS:
     void shouldHaveDefaultValue();
 };
 
-#endif // SEARCHCOLLECTIONINDEXINGWARNINGTEST_H

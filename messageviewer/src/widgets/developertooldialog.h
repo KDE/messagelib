@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DEVELOPERTOOLDIALOG_H
-#define DEVELOPERTOOLDIALOG_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QDialog>
@@ -27,4 +26,3 @@ private:
     DeveloperToolWidget *mDeveloperToolWidget = nullptr;
 };
 }
-#endif // DEVELOPERTOOLDIALOG_H

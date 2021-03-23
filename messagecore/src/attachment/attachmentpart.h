@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECORE_ATTACHMENTPART_H
-#define MESSAGECORE_ATTACHMENTPART_H
+#pragma once
 
 #include "messagecore_export.h"
 
@@ -201,4 +200,3 @@ MESSAGECORE_EXPORT uint qHash(const QSharedPointer<MessageCore::AttachmentPart> 
 
 Q_DECLARE_METATYPE(MessageCore::AttachmentPart::Ptr)
 
-#endif

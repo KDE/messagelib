@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef BACKOFFMODEMANAGER_H
-#define BACKOFFMODEMANAGER_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QObject>
@@ -38,4 +37,3 @@ private:
 };
 }
 
-#endif // BACKOFFMODEMANAGER_H

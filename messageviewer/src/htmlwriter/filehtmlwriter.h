@@ -7,8 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_FILEHTMLWRITER_H
-#define MESSAGEVIEWER_FILEHTMLWRITER_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <MessageViewer/HtmlWriter>
@@ -39,4 +38,3 @@ private:
 };
 } // namespace MessageViewer
 
-#endif // MESSAGEVIEWER_FILEHTMLWRITER_H

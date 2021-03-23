@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIGNJOBTEST_H
-#define SIGNJOBTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -41,4 +40,3 @@ private:
     void checkSignJob(MessageComposer::SignJob *sJob);
 };
 
-#endif

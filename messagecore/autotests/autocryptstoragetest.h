@@ -2,8 +2,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef AUTOCRYPTSTORAGETEST_H
-#define AUTOCRYPTSTORAGETEST_H
+#pragma once
 
 #include <QDir>
 #include <QObject>
@@ -28,4 +27,3 @@ private:
     QDir baseDir;
 };
 
-#endif

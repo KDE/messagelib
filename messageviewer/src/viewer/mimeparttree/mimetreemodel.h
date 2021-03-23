@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MAILVIEWER_MIMETREEMODEL_H
-#define MAILVIEWER_MIMETREEMODEL_H
+#pragma once
 
 #include <QAbstractItemModel>
 
@@ -48,4 +47,3 @@ private:
 };
 }
 
-#endif

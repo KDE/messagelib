@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CREATEDATABASEFILEJOB_H
-#define CREATEDATABASEFILEJOB_H
+#pragma once
 
 #include "updatedatabaseinfo.h"
 #include "webengineviewer_export.h"
@@ -37,4 +36,3 @@ private:
 };
 }
 
-#endif // CREATEDATABASEFILEJOB_H

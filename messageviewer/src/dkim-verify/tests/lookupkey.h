@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef LOOKUPKEY_H
-#define LOOKUPKEY_H
+#pragma once
 
 #include <QObject>
 class QDnsLookup;
@@ -23,4 +22,3 @@ private:
     QString mAddress;
 };
 
-#endif // LOOKUPKEY_H

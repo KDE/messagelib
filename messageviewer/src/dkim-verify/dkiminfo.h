@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMINFO_H
-#define DKIMINFO_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QObject>
@@ -117,4 +116,3 @@ private:
 }
 Q_DECLARE_METATYPE(MessageViewer::DKIMInfo)
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMInfo &t);
-#endif // DKIMINFO_H

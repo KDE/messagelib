@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TestSelectionChangedWebEngine_H
-#define TestSelectionChangedWebEngine_H
+#pragma once
 
 #include <QWidget>
 
@@ -27,4 +26,3 @@ private:
     WebEngineViewer::WebEngineView *pageView;
 };
 
-#endif // TestSelectionChangedWebEngine_H

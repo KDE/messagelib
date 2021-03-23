@@ -7,8 +7,7 @@
  *
  *  SPDX-License-Identifier: GPL-2.0-or-later
  */
-#ifndef MAILSOURCEVIEWTEXTBROWSERWIDGET_H
-#define MAILSOURCEVIEWTEXTBROWSERWIDGET_H
+#pragma once
 
 #include <KSyntaxHighlighting/Repository>
 #include <QPlainTextEdit>
@@ -71,4 +70,3 @@ private:
     KPIMTextEdit::TextToSpeechInterface *mTextToSpeechInterface = nullptr;
 };
 }
-#endif // MAILSOURCEVIEWTEXTBROWSERWIDGET_H

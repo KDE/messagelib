@@ -5,8 +5,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWERT_ATTACHMENTDIALOG_H
-#define MESSAGEVIEWERT_ATTACHMENTDIALOG_H
+#pragma once
 
 #include <KService>
 #include <QObject>
@@ -44,4 +43,3 @@ private:
 };
 }
 
-#endif

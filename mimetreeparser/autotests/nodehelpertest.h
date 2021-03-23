@@ -2,8 +2,7 @@
 
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
-#ifndef NODEHELPERTEST_H
-#define NODEHELPERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -28,4 +27,3 @@ private Q_SLOTS:
     void shouldTestExtractAttachmentIndex();
 };
 }
-#endif

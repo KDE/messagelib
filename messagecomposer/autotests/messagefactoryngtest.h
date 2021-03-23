@@ -6,8 +6,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEFACTORYNG_TEST_H
-#define MESSAGEFACTORYNG_TEST_H
+#pragma once
 
 #include <QObject>
 #include <kmime/kmime_message.h>
@@ -60,4 +59,3 @@ private:
     KIdentityManagement::IdentityManager *mIdentMan = nullptr;
 };
 
-#endif

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MAILNETWORKURLINTERCEPTOR_H
-#define MAILNETWORKURLINTERCEPTOR_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QWebEngineUrlRequestInterceptor>
@@ -34,4 +33,3 @@ private:
     NetworkUrlInterceptorPrivate *const d;
 };
 }
-#endif // MAILNETWORKURLINTERCEPTOR_H

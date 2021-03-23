@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECORE_ATTACHMENTLOADJOB_H
-#define MESSAGECORE_ATTACHMENTLOADJOB_H
+#pragma once
 
 #include "messagecore_export.h"
 
@@ -64,4 +63,3 @@ private:
 };
 }
 
-#endif

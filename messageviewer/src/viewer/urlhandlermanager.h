@@ -9,8 +9,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_URLHANDLERMANAGER_H
-#define MESSAGEVIEWER_URLHANDLERMANAGER_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 
@@ -68,4 +67,3 @@ private:
 };
 }
 
-#endif // MESSAGEVIEWER_URLHANDLERMANAGER_H

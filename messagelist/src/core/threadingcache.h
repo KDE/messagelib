@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef THREADINGCACHE_H
-#define THREADINGCACHE_H
+#pragma once
 
 #include "messageitem.h"
 #include <QHash>
@@ -51,4 +50,3 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif

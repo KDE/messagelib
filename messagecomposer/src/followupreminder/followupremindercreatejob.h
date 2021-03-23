@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_FOLLOWUPREMINDERCREATEJOB_H
-#define MESSAGECOMPOSER_FOLLOWUPREMINDERCREATEJOB_H
+#pragma once
 
 #include <AkonadiCore/Collection>
 #include <AkonadiCore/Item>
@@ -55,4 +54,3 @@ private:
 };
 }
 
-#endif

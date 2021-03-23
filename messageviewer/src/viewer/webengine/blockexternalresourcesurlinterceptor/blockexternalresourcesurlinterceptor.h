@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef BLOCKEXTERNALRESOURCESURLINTERCEPTOR_H
-#define BLOCKEXTERNALRESOURCESURLINTERCEPTOR_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QUrl>
@@ -26,4 +25,3 @@ Q_SIGNALS:
     void formSubmittedForbidden();
 };
 }
-#endif // BLOCKEXTERNALRESOURCESURLINTERCEPTOR_H

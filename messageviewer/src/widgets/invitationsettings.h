@@ -2,8 +2,7 @@
     SPDX-License-Identifier: BSL-1.0
 */
 
-#ifndef MESSAGEVIEWER_INVITATIONSETTINGS_H
-#define MESSAGEVIEWER_INVITATIONSETTINGS_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -35,4 +34,3 @@ private:
 };
 }
 
-#endif // MESSAGEVIEWER_INVITATIONSETTINGS_H

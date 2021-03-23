@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_RICHTEXTCOMPOSERSIGNATURES_H
-#define MESSAGECOMPOSER_RICHTEXTCOMPOSERSIGNATURES_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <QObject>
@@ -37,4 +36,3 @@ private:
     RichTextComposerSignaturesPrivate *const d;
 };
 }
-#endif

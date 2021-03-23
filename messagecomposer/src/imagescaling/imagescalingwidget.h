@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMAGESCALINGWIDGET_H
-#define IMAGESCALINGWIDGET_H
+#pragma once
 #include "messagecomposer_export.h"
 #include <QWidget>
 
@@ -55,4 +54,3 @@ private:
 };
 }
 
-#endif // IMAGESCALINGWIDGET_H

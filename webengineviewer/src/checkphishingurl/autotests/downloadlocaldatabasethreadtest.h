@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DOWNLOADLOCALDATABASETHREADTEST_H
-#define DOWNLOADLOCALDATABASETHREADTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -17,4 +16,3 @@ public:
     ~DownloadLocalDatabaseThreadTest();
 };
 
-#endif // DOWNLOADLOCALDATABASETHREADTEST_H

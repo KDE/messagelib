@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DMARCMANAGER_H
-#define DMARCMANAGER_H
+#pragma once
 
 #include <QStringList>
 namespace MessageViewer
@@ -28,4 +27,3 @@ private:
 };
 }
 
-#endif // DMARCMANAGER_H

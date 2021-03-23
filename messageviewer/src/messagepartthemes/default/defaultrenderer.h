@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_DEFAULTRENDERER_H
-#define MESSAGEVIEWER_DEFAULTRENDERER_H
+#pragma once
 
 #include <QSharedPointer>
 
@@ -51,4 +50,3 @@ private:
     DefaultRendererPrivate *const d;
 };
 }
-#endif //__MESSAGEVIEWER_MAILRENDERER_H

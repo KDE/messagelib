@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SEARCHFULLHASHGUI_H
-#define SEARCHFULLHASHGUI_H
+#pragma once
 
 #include "../searchfullhashjob.h"
 #include <QWidget>
@@ -29,4 +28,3 @@ private:
     QPlainTextEdit *mResult;
 };
 
-#endif // SEARCHFULLHASHGUI_H

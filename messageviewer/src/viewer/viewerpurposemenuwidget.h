@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef VIEWERPURPOSEMENUWIDGET_H
-#define VIEWERPURPOSEMENUWIDGET_H
+#pragma once
 
 #include <PimCommon/PurposeMenuWidget>
 namespace MessageViewer
@@ -26,4 +25,3 @@ private:
 };
 }
 
-#endif

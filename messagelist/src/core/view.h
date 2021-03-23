@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_VIEW_H
-#define MESSAGELIST_CORE_VIEW_H
+#pragma once
 
 #include <QList>
 #include <QPoint>
@@ -633,4 +632,3 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_VIEW_H

@@ -7,8 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef KDEPIM_MESSAGEVIEWER_STL_UTIL_H
-#define KDEPIM_MESSAGEVIEWER_STL_UTIL_H
+#pragma once
 
 namespace MessageViewer
 {
@@ -21,4 +20,3 @@ template<typename T> struct DeleteAndSetToZero {
 };
 }
 
-#endif // KDEPIM__MESSAGEVIEWER__STL_UTIL_H

@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_OPTIONSET_H
-#define MESSAGELIST_CORE_OPTIONSET_H
+#pragma once
 
 #include <QString>
 
@@ -138,4 +137,3 @@ protected:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_OPTIONSET_H

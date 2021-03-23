@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWERCONFIGURESETTINGSPLUGINMANAGER_H
-#define MESSAGEVIEWERCONFIGURESETTINGSPLUGINMANAGER_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <PimCommon/PluginUtil>
@@ -38,4 +37,3 @@ private:
     MessageViewerConfigureSettingsPluginManagerPrivate *const d;
 };
 }
-#endif // MESSAGEVIEWERCONFIGURESETTINGSPLUGINMANAGER_H

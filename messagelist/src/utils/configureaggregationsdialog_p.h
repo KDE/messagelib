@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_P_H
-#define MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_P_H
+#pragma once
 
 #include "utils/configureaggregationsdialog.h"
 #include <QListWidgetItem>
@@ -72,4 +71,3 @@ public:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_P_H

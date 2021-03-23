@@ -5,8 +5,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef AUTOCRYPTSTORAGE_P_H
-#define AUTOCRYPTSTORAGE_P_H
+#pragma once
 
 #include "autocryptrecipient.h"
 
@@ -24,4 +23,3 @@ public:
 };
 
 }
-#endif

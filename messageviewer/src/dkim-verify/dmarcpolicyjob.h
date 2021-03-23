@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DMARCPOLICYJOB_H
-#define DMARCPOLICYJOB_H
+#pragma once
 
 #include "dmarcinfo.h"
 #include "messageviewer_private_export.h"
@@ -62,4 +61,3 @@ private:
     QString mEmailAddress;
 };
 }
-#endif // DMARCPOLICYJOB_H

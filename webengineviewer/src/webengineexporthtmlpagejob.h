@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef WEBENGINEEXPORTHTMLPAGEJOB_H
-#define WEBENGINEEXPORTHTMLPAGEJOB_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QObject>
@@ -40,4 +39,3 @@ private:
 };
 }
 
-#endif // WEBENGINEEXPORTHTMLPAGEJOB_H

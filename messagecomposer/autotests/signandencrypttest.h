@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIGNANDENCRYPTTEST_H
-#define SIGNANDENCRYPTTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -22,4 +21,3 @@ private Q_SLOTS:
     void testHeaders();
 };
 
-#endif

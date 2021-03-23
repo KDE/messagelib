@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_MESSAGEFACTORYREPLYJOB_H
-#define MESSAGECOMPOSER_MESSAGEFACTORYREPLYJOB_H
+#pragma once
 
 #include <AkonadiCore/Collection>
 #include <KIdentityManagement/IdentityManager>
@@ -54,4 +53,3 @@ private:
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
 }
-#endif

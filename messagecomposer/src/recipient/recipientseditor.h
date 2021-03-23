@@ -8,8 +8,7 @@
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef MESSAGECOMPOSER_RECIPIENTSEDITORNG_H
-#define MESSAGECOMPOSER_RECIPIENTSEDITORNG_H
+#pragma once
 
 #include "messagecomposer_export.h"
 
@@ -100,4 +99,3 @@ private:
 };
 }
 
-#endif // MESSAGECOMPOSER_RECIPIENTSEDITORNG_H

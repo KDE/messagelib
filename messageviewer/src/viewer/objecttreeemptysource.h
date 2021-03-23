@@ -5,8 +5,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MAILVIEWER_OBJECTTREEEMPTYSOURCE_H
-#define MAILVIEWER_OBJECTTREEEMPTYSOURCE_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <MimeTreeParser/ObjectTreeSource>
@@ -56,4 +55,3 @@ private:
 };
 }
 
-#endif

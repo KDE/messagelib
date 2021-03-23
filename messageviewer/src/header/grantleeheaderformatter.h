@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef GRANTLEEHEADERFORMATTER_H
-#define GRANTLEEHEADERFORMATTER_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <GrantleeTheme/GrantleeTheme>
@@ -63,4 +62,3 @@ private:
 };
 }
 
-#endif // GRANTLEEHEADERFORMATTER_H

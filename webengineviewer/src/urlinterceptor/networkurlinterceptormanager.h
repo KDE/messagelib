@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MAILNETWORKURLINTERCEPTORMANAGER_H
-#define MAILNETWORKURLINTERCEPTORMANAGER_H
+#pragma once
 
 #include "networkpluginurlinterceptor.h"
 #include "networkpluginurlinterceptorinterface.h"
@@ -37,4 +36,3 @@ private:
     NetworkUrlInterceptorManagerPrivate *const d;
 };
 }
-#endif // MAILNETWORKURLINTERCEPTORMANAGER_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMCHECKFULLJOB_H
-#define DKIMCHECKFULLJOB_H
+#pragma once
 
 #include "dkimauthenticationstatusinfo.h"
 #include "dkimchecksignaturejob.h"
@@ -46,4 +45,3 @@ private:
     DKIMHeaderParser mHeaderParser;
 };
 }
-#endif // DKIMCHECKFULLJOB_H

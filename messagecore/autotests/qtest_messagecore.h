@@ -7,8 +7,7 @@
   SPDX-License-Identifier: LGPL-2.0-only
 */
 
-#ifndef QTEST_MESSAGECORE_H
-#define QTEST_MESSAGECORE_H
+#pragma once
 
 /**
  * Runs a KJob synchronously and aborts if the job failed.
@@ -17,4 +16,3 @@
  */
 #define VERIFYEXEC(job) QVERIFY2(job->exec(), job->errorString().toUtf8().constData())
 
-#endif

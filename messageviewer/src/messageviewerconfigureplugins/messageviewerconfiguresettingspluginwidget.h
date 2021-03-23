@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWERCONFIGURESETTINGSPLUGINWIDGET_H
-#define MESSAGEVIEWERCONFIGURESETTINGSPLUGINWIDGET_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QWidget>
@@ -31,4 +30,3 @@ Q_SIGNALS:
     void configureChanged();
 };
 }
-#endif // MESSAGEVIEWERCONFIGURESETTINGSPLUGINWIDGET_H

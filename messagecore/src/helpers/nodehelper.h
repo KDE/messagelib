@@ -6,8 +6,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECORE_NODEHELPER_H
-#define MESSAGECORE_NODEHELPER_H
+#pragma once
 
 #include "messagecore_export.h"
 
@@ -46,4 +45,3 @@ MESSAGECORE_EXPORT KMime::Content *firstChild(const KMime::Content *node);
 }
 }
 
-#endif

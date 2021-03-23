@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef StatusBarLabelToggledStateTEST_H
-#define StatusBarLabelToggledStateTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -25,4 +24,3 @@ private Q_SLOTS:
     void shouldChangeTestWhenStateChanged();
 };
 
-#endif // StatusBarLabelToggledStateTEST_H

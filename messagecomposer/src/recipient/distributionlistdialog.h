@@ -5,8 +5,7 @@
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef MESSAGECOMPOSER_DISTRIBUTIONLISTDIALOG_H
-#define MESSAGECOMPOSER_DISTRIBUTIONLISTDIALOG_H
+#pragma once
 
 #include <MessageComposer/Recipient>
 #include <QDialog>
@@ -46,4 +45,3 @@ private:
 };
 }
 
-#endif

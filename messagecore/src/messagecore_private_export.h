@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOREPRIVATE_EXPORT_H
-#define MESSAGECOREPRIVATE_EXPORT_H
+#pragma once
 
 #include "messagecore_export.h"
 
@@ -18,4 +17,3 @@
 #define MESSAGECORE_TESTS_EXPORT
 #endif
 
-#endif

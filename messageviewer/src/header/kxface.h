@@ -10,8 +10,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_KXFACE_H
-#define MESSAGEVIEWER_KXFACE_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -334,4 +333,3 @@ private:
     void PushGreys(char *f, int wid, int hei);
 };
 }
-#endif

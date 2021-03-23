@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_MODEL_P_H
-#define MESSAGELIST_CORE_MODEL_P_H
+#pragma once
 
 #include "model.h"
 #include "threadingcache.h"
@@ -445,4 +444,3 @@ public:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MODEL_P_H

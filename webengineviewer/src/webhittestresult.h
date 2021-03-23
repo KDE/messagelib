@@ -21,8 +21,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * ============================================================ */
-#ifndef WebHitTestResult_H
-#define WebHitTestResult_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QRect>
@@ -66,4 +65,3 @@ private:
 };
 }
 Q_DECLARE_METATYPE(WebEngineViewer::WebHitTestResult)
-#endif // WEBHITTESTRESULT_H

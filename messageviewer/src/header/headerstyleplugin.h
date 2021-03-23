@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef HEADERSTYLEPLUGIN_H
-#define HEADERSTYLEPLUGIN_H
+#pragma once
 
 #include <QObject>
 
@@ -55,4 +54,3 @@ private:
     HeaderStylePluginPrivate *const d;
 };
 }
-#endif // HEADERSTYLEPLUGIN_H

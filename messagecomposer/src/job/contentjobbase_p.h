@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CONTENTJOBBASE_P_H
-#define CONTENTJOBBASE_P_H
+#pragma once
 
 #include "contentjobbase.h"
 #include "job/jobbase_p.h"
@@ -33,4 +32,3 @@ public:
 };
 }
 
-#endif

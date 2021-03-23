@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_ITEM_H
-#define MESSAGELIST_CORE_ITEM_H
+#pragma once
 
 #include <QList>
 #include <QString>
@@ -410,4 +409,3 @@ protected:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_ITEM_H

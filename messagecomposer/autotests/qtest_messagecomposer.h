@@ -7,8 +7,7 @@
   SPDX-License-Identifier: LGPL-2.0-only
 */
 
-#ifndef QTEST_MESSAGECOMPOSER_H
-#define QTEST_MESSAGECOMPOSER_H
+#pragma once
 
 /**
  * Runs a MessageComposer::JobBase synchronously and aborts if the job failed.
@@ -17,4 +16,3 @@
  */
 #define VERIFYEXEC(job) QVERIFY2(job->exec(), job->errorString().toUtf8().constData())
 
-#endif

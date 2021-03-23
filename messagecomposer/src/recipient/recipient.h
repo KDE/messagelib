@@ -6,8 +6,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
 */
 
-#ifndef MESSAGECOMPOSER_RECIPIENT_H
-#define MESSAGECOMPOSER_RECIPIENT_H
+#pragma once
 
 #include "messagecomposer_export.h"
 
@@ -65,4 +64,3 @@ private:
 };
 }
 
-#endif

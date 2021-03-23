@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef HASHCACHEMANAGERTEST_H
-#define HASHCACHEMANAGERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -22,4 +21,3 @@ private Q_SLOTS:
     void shouldAddValue();
 };
 
-#endif // HASHCACHEMANAGERTEST_H

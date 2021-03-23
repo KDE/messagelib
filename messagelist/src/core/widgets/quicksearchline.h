@@ -5,8 +5,7 @@
 
 */
 
-#ifndef QUICKSEARCHLINE_H
-#define QUICKSEARCHLINE_H
+#pragma once
 
 #include "messagelist_export.h"
 #include <Akonadi/KMime/MessageStatus>
@@ -80,4 +79,3 @@ private:
 };
 }
 }
-#endif // QUICKSEARCHLINE_H

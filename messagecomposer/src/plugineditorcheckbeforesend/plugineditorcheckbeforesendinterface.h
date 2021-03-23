@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORCHECKBEFORESENDINTERFACE_H
-#define PLUGINEDITORCHECKBEFORESENDINTERFACE_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include "plugineditorcheckbeforesendparams.h"
@@ -42,4 +41,3 @@ private:
 };
 }
 
-#endif // PLUGINEDITORCHECKBEFORESENDINTERFACE_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_SENDLATERINFO_H
-#define MESSAGECOMPOSER_SENDLATERINFO_H
+#pragma once
 
 #include <AkonadiCore/Item>
 #include <QDateTime>
@@ -68,4 +67,3 @@ private:
 
 MESSAGECOMPOSER_EXPORT QDebug operator<<(QDebug debug, const MessageComposer::SendLaterInfo &info);
 
-#endif // SENDLATERINFO_H

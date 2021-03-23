@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TESTMAILWEBENGINE_H
-#define TESTMAILWEBENGINE_H
+#pragma once
 
 #include <QWidget>
 
@@ -34,4 +33,3 @@ private:
     qreal mZoom;
 };
 
-#endif // TESTMAILWEBENGINE_H

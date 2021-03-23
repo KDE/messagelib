@@ -6,8 +6,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
 */
 
-#ifndef MESSAGEVIEWER_MESSAGEVIEWERSETTINGS_H
-#define MESSAGEVIEWER_MESSAGEVIEWERSETTINGS_H
+#pragma once
 
 #include "globalsettings_messageviewer.h"
 
@@ -43,4 +42,3 @@ private:
 };
 }
 
-#endif

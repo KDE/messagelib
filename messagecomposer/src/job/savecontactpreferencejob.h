@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef SAVECONTACTPREFERENCEJOB_H
-#define SAVECONTACTPREFERENCEJOB_H
+#pragma once
 
 #include "composer/keyresolver.h"
 #include <KContacts/Addressee>
@@ -32,4 +31,3 @@ private:
     const Kleo::KeyResolver::ContactPreferences mPref;
 };
 }
-#endif // SAVECONTACTPREFERENCEJOB_H

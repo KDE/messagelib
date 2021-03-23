@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_HTMLBLOCK_H
-#define MIMETREEPARSER_HTMLBLOCK_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -88,4 +87,3 @@ private:
     HtmlWriter *mWriter = nullptr;
 };
 }
-#endif //__MIMETREEPARSER_HTMLBLOCK_H

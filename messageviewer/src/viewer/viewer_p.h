@@ -6,8 +6,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MAILVIEWER_P_H
-#define MAILVIEWER_P_H
+#pragma once
 
 #include "config-messageviewer.h"
 #include "messageviewer/viewerplugininterface.h"
@@ -716,4 +715,3 @@ public:
 };
 }
 
-#endif

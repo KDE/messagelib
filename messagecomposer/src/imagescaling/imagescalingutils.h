@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMAGESCALINGUTILS_H
-#define IMAGESCALINGUTILS_H
+#pragma once
 #include <MessageCore/AttachmentPart>
 
 namespace MessageComposer
@@ -21,4 +20,3 @@ public:
 };
 }
 
-#endif // IMAGESCALINGUTILS_H

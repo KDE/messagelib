@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_TESTS_UNENCRYPTEDMESSAGETEST_H
-#define MESSAGEVIEWER_TESTS_UNENCRYPTEDMESSAGETEST_H
+#pragma once
 
 #include <QObject>
 
@@ -20,4 +19,3 @@ private Q_SLOTS:
     void testSMimeAutoCertImport();
 };
 
-#endif // MESSAGEVIEWER_TESTS_UNENCRYPTEDMESSAGETEST_H

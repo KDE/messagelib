@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMAUTHENTICATIONSTATUSINFOUTIL_H
-#define DKIMAUTHENTICATIONSTATUSINFOUTIL_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QString>
@@ -45,4 +44,3 @@ MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString regexMatchO(const QString &
 }
 }
 
-#endif // DKIMAUTHENTICATIONSTATUSINFOUTIL_H

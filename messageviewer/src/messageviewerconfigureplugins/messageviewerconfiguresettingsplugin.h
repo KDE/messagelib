@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWERCONFIGURESETTINGSPLUGIN_H
-#define MESSAGEVIEWERCONFIGURESETTINGSPLUGIN_H
+#pragma once
 
 #include <QObject>
 
@@ -33,4 +32,3 @@ private:
     MessageViewerConfigureSettingsPluginPrivate *const d;
 };
 }
-#endif // MESSAGEVIEWERCONFIGURESETTINGSPLUGIN_H

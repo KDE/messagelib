@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINACTIONTYPE_H
-#define PLUGINACTIONTYPE_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <QString>
@@ -36,4 +35,3 @@ private:
 }
 Q_DECLARE_TYPEINFO(MessageComposer::PluginActionType, Q_MOVABLE_TYPE);
 
-#endif

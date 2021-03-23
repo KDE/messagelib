@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_UTILS_CONFIGURETHEMESDIALOG_H
-#define MESSAGELIST_UTILS_CONFIGURETHEMESDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -37,4 +36,3 @@ private:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_CONFIGURESKINSDIALOG_H

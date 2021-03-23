@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_ENUMS_H
-#define MESSAGELIST_CORE_ENUMS_H
+#pragma once
 
 namespace MessageList
 {
@@ -53,4 +52,3 @@ enum ExistingSelectionBehaviour {
 }
 }
 
-#endif //!__MESSAGELIST_CORE_ENUMS_H

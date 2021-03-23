@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef REMOTECONTENTDIALOG_H
-#define REMOTECONTENTDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -28,4 +27,3 @@ private:
     RemoteContentWidget *const mRemoveContentWidget;
 };
 }
-#endif // REMOTECONTENTDIALOG_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef ATTACHMENTFROMURLUTILS_H
-#define ATTACHMENTFROMURLUTILS_H
+#pragma once
 #include "messagecore_export.h"
 #include <QObject>
 namespace MessageCore
@@ -17,4 +16,3 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT MessageCore::AttachmentFromUrlBaseJob *crea
 }
 }
 
-#endif // ATTACHMENTFROMURLUTILS_H

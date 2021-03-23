@@ -2,8 +2,7 @@
 
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
-#ifndef MESSAGECORE_STRINGUTIL_H
-#define MESSAGECORE_STRINGUTIL_H
+#pragma once
 
 #include "kmime/kmime_header_parsing.h"
 #include "kmime/kmime_message.h"
@@ -220,4 +219,3 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replacePrefixes(const QString &str,
 }
 }
 
-#endif

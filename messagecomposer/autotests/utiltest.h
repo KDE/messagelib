@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef UTILTEST_H
-#define UTILTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -21,4 +20,3 @@ private Q_SLOTS:
     void shouldTestHasMissingAttachment_data();
 };
 
-#endif

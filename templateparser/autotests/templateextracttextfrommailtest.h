@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATEEXTRACTTEXTFROMMAILTEST_H
-#define TEMPLATEEXTRACTTEXTFROMMAILTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -20,4 +19,3 @@ private Q_SLOTS:
     void shouldExtractHtml();
 };
 
-#endif // TEMPLATEEXTRACTTEXTFROMMAILTEST_H

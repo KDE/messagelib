@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DMARCRECORDJOB_H
-#define DMARCRECORDJOB_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <QObject>
@@ -38,4 +37,3 @@ private:
 };
 }
 
-#endif // DMARCRECORDJOB_H

@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef VIEWERTEST_H
-#define VIEWERTEST_H
+#pragma once
 #include <QObject>
 
 class ViewerTest : public QObject
@@ -19,4 +18,3 @@ private Q_SLOTS:
     void shouldSwitchToAnotherMessage();
 };
 
-#endif // VIEWERTEST_H

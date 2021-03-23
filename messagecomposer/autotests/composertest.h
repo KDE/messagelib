@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef COMPOSERTEST_H
-#define COMPOSERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -30,4 +29,3 @@ private:
     void fillComposerData(MessageComposer::Composer *composer);
 };
 
-#endif

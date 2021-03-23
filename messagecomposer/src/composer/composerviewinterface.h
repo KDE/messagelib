@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_COMPOSERVIEWINTERFACE_H
-#define MESSAGECOMPOSER_COMPOSERVIEWINTERFACE_H
+#pragma once
 #include "messagecomposer_export.h"
 #include <MessageComposer/ComposerAttachmentInterface>
 #include <QString>
@@ -41,4 +40,3 @@ private:
 };
 }
 
-#endif // COMPOSERVIEWINTERFACE_H

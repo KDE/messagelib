@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef RICHTEXTCOMPOSERNGTEST_H
-#define RICHTEXTCOMPOSERNGTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -45,4 +44,3 @@ private Q_SLOTS:
     void toCleanHtmlRegexTest();
 };
 
-#endif // RICHTEXTCOMPOSERNGTEST_H

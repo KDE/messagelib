@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CHECKPHISHINGURLCACHE_H
-#define CHECKPHISHINGURLCACHE_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QObject>
@@ -54,4 +53,3 @@ private:
 
 Q_DECLARE_METATYPE(WebEngineViewer::CheckPhishingUrlCache::UrlStatus)
 
-#endif // CHECKPHISHINGURLCACHE_H

@@ -4,8 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGELIST_PANE_H
-#define MESSAGELIST_PANE_H
+#pragma once
 
 #include <QHash>
 #include <QTabWidget>
@@ -445,4 +444,3 @@ private:
 };
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_PANE_H

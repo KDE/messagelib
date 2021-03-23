@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_BUFFEREDHTMLWRITER_H
-#define MESSAGEVIEWER_BUFFEREDHTMLWRITER_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <MessageViewer/HtmlWriter>
@@ -44,4 +43,3 @@ private:
 };
 }
 
-#endif // MESSAGEVIEWER_BUFFEREDHTMLWRITER_H

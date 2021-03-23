@@ -4,8 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_QGPGMEJOBEXECUTOR_H
-#define MIMETREEPARSER_QGPGMEJOBEXECUTOR_H
+#pragma once
 
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/importresult.h>
@@ -61,4 +60,3 @@ private:
 };
 }
 
-#endif

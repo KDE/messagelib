@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_THEME_H
-#define MESSAGELIST_CORE_THEME_H
+#pragma once
 
 #include <QColor>
 #include <QList>
@@ -1018,4 +1017,3 @@ protected:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_SKIN_H

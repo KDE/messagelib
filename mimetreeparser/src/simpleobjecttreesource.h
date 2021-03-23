@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_SIMPLEOBJECTTREESOURCE_H
-#define MIMETREEPARSER_SIMPLEOBJECTTREESOURCE_H
+#pragma once
 
 #include "mimetreeparser/objecttreesource.h"
 #include <memory>
@@ -41,4 +40,3 @@ private:
     std::unique_ptr<SimpleObjectTreeSourcePrivate> d;
 };
 }
-#endif

@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef MESSAGECORE_COLORUTIL_H
-#define MESSAGECORE_COLORUTIL_H
+#pragma once
 
 #include "messagecore_export.h"
 
@@ -59,4 +58,3 @@ private:
 };
 }
 
-#endif // COLORUTIL_H

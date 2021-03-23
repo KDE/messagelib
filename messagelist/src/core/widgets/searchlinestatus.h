@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef SEARCHLINESTATUS_H
-#define SEARCHLINESTATUS_H
+#pragma once
 
 #include "messagelist_private_export.h"
 #include "quicksearchline.h"
@@ -84,4 +83,3 @@ private:
 }
 }
 
-#endif // SEARCHLINESTATUS_H

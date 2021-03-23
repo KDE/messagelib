@@ -2,8 +2,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
-#ifndef MESSAGEVIEWER_ICONNAMECACHE_H
-#define MESSAGEVIEWER_ICONNAMECACHE_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QMap>
@@ -41,4 +40,3 @@ private:
     mutable QString mPicsPath;
 };
 }
-#endif

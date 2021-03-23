@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINCOMPOSERINTERFACE_H
-#define PLUGINCOMPOSERINTERFACE_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <MessageComposer/ComposerAttachmentInterface>
@@ -43,4 +42,3 @@ private:
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };
 }
-#endif // PLUGINCOMPOSERINTERFACE_H

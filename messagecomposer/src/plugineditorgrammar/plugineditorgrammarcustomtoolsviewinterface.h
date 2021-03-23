@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORGRAMMARCUSTOMTOOLSVIEWINTERFACE_H
-#define PLUGINEDITORGRAMMARCUSTOMTOOLSVIEWINTERFACE_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <PimCommon/CustomToolsViewInterface>
@@ -80,4 +79,3 @@ private:
 }
 Q_DECLARE_METATYPE(MessageComposer::PluginGrammarAction)
 MESSAGECOMPOSER_EXPORT QDebug operator<<(QDebug d, const MessageComposer::PluginGrammarAction &t);
-#endif // PLUGINEDITORGRAMMARCUSTOMTOOLSVIEWINTERFACE_H

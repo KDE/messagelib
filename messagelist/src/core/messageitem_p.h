@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_MESSAGEITEM_P_H
-#define MESSAGELIST_MESSAGEITEM_P_H
+#pragma once
 
 #include "item_p.h"
 #include "messageitem.h"
@@ -102,4 +101,3 @@ private:
 }
 }
 
-#endif

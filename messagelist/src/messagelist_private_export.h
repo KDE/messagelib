@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGELISTPRIVATE_EXPORT_H
-#define MESSAGELISTPRIVATE_EXPORT_H
+#pragma once
 
 #include "messagelist_export.h"
 
@@ -18,4 +17,3 @@
 #define MESSAGELIST_TESTS_EXPORT
 #endif
 
-#endif

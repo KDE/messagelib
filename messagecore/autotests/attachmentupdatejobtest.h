@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef ATTACHMENTUPDATEJOBTEST_H
-#define ATTACHMENTUPDATEJOBTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -27,4 +26,3 @@ private Q_SLOTS:
     void shouldHaveSameInlineStatus();
 };
 
-#endif // ATTACHMENTUPDATEJOBTEST_H

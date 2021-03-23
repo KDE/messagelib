@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SCAMDETECTIONWEBENGINE_H
-#define SCAMDETECTIONWEBENGINE_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QObject>
@@ -42,4 +41,3 @@ private:
     ScamDetectionWebEnginePrivate *const d;
 };
 }
-#endif // SCAMDETECTIONWEBENGINE_H

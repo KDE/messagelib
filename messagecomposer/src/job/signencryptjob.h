@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_SIGNENCRYPTJOB_H
-#define MESSAGECOMPOSER_SIGNENCRYPTJOB_H
+#pragma once
 
 #include "abstractencryptjob.h"
 #include "contentjobbase.h"
@@ -66,4 +65,3 @@ private:
 };
 }
 
-#endif

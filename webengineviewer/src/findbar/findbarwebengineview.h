@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef WEBENGINEVIEWER_FINDBAR_WEBENGINEVIEW_H
-#define WEBENGINEVIEWER_FINDBAR_WEBENGINEVIEW_H
+#pragma once
 
 #include "findbarbase.h"
 #include "webengineviewer_export.h"
@@ -35,4 +34,3 @@ private:
 };
 }
 
-#endif

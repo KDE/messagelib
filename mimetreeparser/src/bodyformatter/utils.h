@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_BODYFORAMATTER_UTILS_H
-#define MIMETREEPARSER_BODYFORAMATTER_UTILS_H
+#pragma once
 
 #include "interfaces/bodypart.h"
 #include "messagepart.h"
@@ -26,4 +25,3 @@ KMime::Content *findTypeInDirectChilds(KMime::Content *content, const QByteArray
 MessagePart::Ptr toplevelTextNode(MessagePart::Ptr messageTree);
 }
 
-#endif

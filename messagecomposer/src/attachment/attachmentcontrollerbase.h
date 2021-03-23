@@ -8,8 +8,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef MESSAGECOMPOSER_ATTACHMENTCONTROLLERBASE_H
-#define MESSAGECOMPOSER_ATTACHMENTCONTROLLERBASE_H
+#pragma once
 
 #include <QObject>
 
@@ -101,4 +100,3 @@ private:
 };
 } //
 
-#endif

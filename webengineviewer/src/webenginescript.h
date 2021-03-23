@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef WEBENGINESCRIPT_H
-#define WEBENGINESCRIPT_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QPoint>
@@ -30,4 +29,3 @@ Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT QString removeStyleToElement(const QStr
 Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT QString isScrolledToBottom();
 }
 }
-#endif // WEBENGINESCRIPT_H

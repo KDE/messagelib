@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef TEMPLATEPARSER_TEMPLATESUTIL_P_H
-#define TEMPLATEPARSER_TEMPLATESUTIL_P_H
+#pragma once
 
 #include "templateparser_private_export.h"
 #include <QString>
@@ -21,4 +20,3 @@ TEMPLATEPARSER_TESTS_EXPORT Q_REQUIRED_RESULT QString removeSpaceAtBegin(const Q
 }
 }
 
-#endif

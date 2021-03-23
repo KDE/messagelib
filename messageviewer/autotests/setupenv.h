@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECORE_SETUPENV_H
-#define MESSAGECORE_SETUPENV_H
+#pragma once
 
 namespace MessageViewer
 {
@@ -21,4 +20,3 @@ void setupEnv();
 }
 }
 
-#endif

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef VIEWERPLUGININTERFACE_H
-#define VIEWERPLUGININTERFACE_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <AkonadiCore/Item>
@@ -59,4 +58,3 @@ private:
 };
 }
 
-#endif // VIEWERPLUGININTERFACE_H

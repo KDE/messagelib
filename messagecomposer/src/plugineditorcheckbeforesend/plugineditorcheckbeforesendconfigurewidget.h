@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORCHECKBEFORESENDCONFIGUREWIDGET_H
-#define PLUGINEDITORCHECKBEFORESENDCONFIGUREWIDGET_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <QWidget>
@@ -31,4 +30,3 @@ Q_SIGNALS:
     void configureChanged();
 };
 }
-#endif // PLUGINEDITORCHECKBEFORESENDCONFIGUREWIDGET_H

@@ -5,8 +5,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_UTIL_MIMETYPE_H
-#define MESSAGEVIEWER_UTIL_MIMETYPE_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -58,4 +57,3 @@ struct AttachmentDisplayInfo {
 Q_REQUIRED_RESULT AttachmentDisplayInfo attachmentDisplayInfo(KMime::Content *node);
 }
 }
-#endif

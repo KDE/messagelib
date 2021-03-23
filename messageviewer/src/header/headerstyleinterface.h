@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef HEADERSTYLEINTERFACE_H
-#define HEADERSTYLEINTERFACE_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QObject>
@@ -47,4 +46,3 @@ protected:
     HeaderStylePlugin *const mHeaderStylePlugin;
 };
 }
-#endif // HEADERSTYLEINTERFACE_H

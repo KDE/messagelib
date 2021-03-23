@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef UPDATEDATABASEINFO_H
-#define UPDATEDATABASEINFO_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QList>
@@ -73,4 +72,3 @@ Q_DECLARE_TYPEINFO(WebEngineViewer::Addition, Q_MOVABLE_TYPE);
 Q_DECLARE_TYPEINFO(WebEngineViewer::Removal, Q_MOVABLE_TYPE);
 Q_DECLARE_TYPEINFO(WebEngineViewer::RiceDeltaEncoding, Q_MOVABLE_TYPE);
 
-#endif // UPDATEDATABASEINFO_H

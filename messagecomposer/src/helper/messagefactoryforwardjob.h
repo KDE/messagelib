@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_MESSAGEFACTORYFORWARDJOB_H
-#define MESSAGECOMPOSER_MESSAGEFACTORYFORWARDJOB_H
+#pragma once
 
 #include <AkonadiCore/Collection>
 #include <KMime/Message>
@@ -51,4 +50,3 @@ private:
 };
 }
 
-#endif

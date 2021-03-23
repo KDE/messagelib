@@ -7,8 +7,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_H
-#define MESSAGEVIEWER_H
+#pragma once
 
 #include "config-messageviewer.h"
 #include "messageviewer/viewerplugininterface.h"
@@ -412,4 +411,3 @@ protected:
 };
 }
 
-#endif

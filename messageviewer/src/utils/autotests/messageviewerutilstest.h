@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef MESSAGEVIEWERUTILSTEST_H
-#define MESSAGEVIEWERUTILSTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -35,4 +34,3 @@ private Q_SLOTS:
     void shouldUseCorrectCodec_data();
 };
 
-#endif // MESSAGEVIEWERUTILSTEST_H

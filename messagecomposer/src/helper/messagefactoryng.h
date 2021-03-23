@@ -6,8 +6,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_MESSAGE_FACTORYNG_H
-#define MESSAGECOMPOSER_MESSAGE_FACTORYNG_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <kmime/kmime_mdn.h>
@@ -268,4 +267,3 @@ private:
 Q_DECLARE_METATYPE(MessageComposer::ReplyStrategy)
 Q_DECLARE_METATYPE(MessageComposer::MessageFactoryNG::MessageReply)
 
-#endif

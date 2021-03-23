@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef TEXTPARTTEST_H
-#define TEXTPARTTEST_H
+#pragma once
 #include <QObject>
 
 class TextPartTest : public QObject
@@ -18,4 +17,3 @@ private Q_SLOTS:
     void shouldHaveDefaultValue();
 };
 
-#endif // TEXTPARTTEST_H

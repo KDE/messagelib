@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORINTERFACE_H
-#define PLUGINEDITORINTERFACE_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <MessageComposer/PluginActionType>
@@ -67,4 +66,3 @@ private:
 };
 }
 
-#endif // PLUGINEDITORINTERFACE_H

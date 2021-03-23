@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_MANAGER_H
-#define MESSAGELIST_CORE_MANAGER_H
+#pragma once
 
 #include "core/sortorder.h"
 #include <QList>
@@ -165,4 +164,3 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MANAGER_H

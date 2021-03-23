@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef REMOTECONTENTCONFIGUREDIALOG_H
-#define REMOTECONTENTCONFIGUREDIALOG_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QDialog>
@@ -27,4 +26,3 @@ private:
 };
 }
 
-#endif // REMOTECONTENTCONFIGUREDIALOG_H

@@ -10,8 +10,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef MESSAGECOMPOSER_SIGNATURECONTROLLER_H
-#define MESSAGECOMPOSER_SIGNATURECONTROLLER_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <KIdentityManagement/kidentitymanagement/signature.h>
@@ -92,4 +91,3 @@ private:
 };
 }
 
-#endif

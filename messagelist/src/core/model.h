@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_MODEL_H
-#define MESSAGELIST_CORE_MODEL_H
+#pragma once
 
 #include <QAbstractItemModel>
 #include <QHash>
@@ -211,4 +210,3 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MODEL_H

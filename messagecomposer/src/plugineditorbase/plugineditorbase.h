@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORBASE_H
-#define PLUGINEDITORBASE_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <QObject>
@@ -43,4 +42,3 @@ private:
     PluginEditorBasePrivate *const d;
 };
 }
-#endif // PLUGINEDITORBASE_H

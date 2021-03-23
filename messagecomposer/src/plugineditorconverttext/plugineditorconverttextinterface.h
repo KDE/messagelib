@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORCONVERTTEXTINTERFACE_H
-#define PLUGINEDITORCONVERTTEXTINTERFACE_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <KMime/Message>
@@ -79,4 +78,3 @@ private:
 };
 }
 
-#endif // PLUGINEDITORCONVERTTEXTINTERFACE_H

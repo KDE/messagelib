@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_THEMEDELEGATE_H
-#define MESSAGELIST_CORE_THEMEDELEGATE_H
+#pragma once
 
 #include <QColor>
 #include <QRect>
@@ -193,4 +192,3 @@ protected:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_SKINDELEGATE_H

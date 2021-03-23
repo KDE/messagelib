@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMMANAGERRULES_H
-#define DKIMMANAGERRULES_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <KSharedConfig>
@@ -47,4 +46,3 @@ private:
 };
 }
 
-#endif // DKIMMANAGERRULES_H

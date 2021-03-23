@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef WEBENGINENAVIGATIONREQUESTINTERCEPTOR_H
-#define WEBENGINENAVIGATIONREQUESTINTERCEPTOR_H
+#pragma once
 
 #include <QWebEnginePage>
 
@@ -27,4 +26,3 @@ private:
 };
 }
 
-#endif // WEBENGINENAVIGATIONREQUESTINTERCEPTOR_H

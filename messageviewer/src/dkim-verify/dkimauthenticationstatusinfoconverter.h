@@ -7,8 +7,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMAUTHENTICATIONSTATUSINFOCONVERTER_H
-#define DKIMAUTHENTICATIONSTATUSINFOCONVERTER_H
+#pragma once
 #include "dkimauthenticationstatusinfo.h"
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_private_export.h"
@@ -30,4 +29,3 @@ private:
     MessageViewer::DKIMAuthenticationStatusInfo mStatusInfo;
 };
 }
-#endif // DKIMAUTHENTICATIONSTATUSINFOCONVERTER_H

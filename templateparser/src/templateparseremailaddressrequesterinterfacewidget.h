@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATEPARSEREMAILADDRESSREQUESTERINTERFACEWIDGET_H
-#define TEMPLATEPARSEREMAILADDRESSREQUESTERINTERFACEWIDGET_H
+#pragma once
 
 #include "templateparser_private_export.h"
 #include <QWidget>
@@ -31,4 +30,3 @@ private:
     TemplateParser::TemplateParserEmailAddressRequesterBase *mTemplateParserEmailBase = nullptr;
 };
 }
-#endif // TEMPLATEPARSEREMAILADDRESSREQUESTERINTERFACEWIDGET_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CHECKPHISHINGURLJOB_H
-#define CHECKPHISHINGURLJOB_H
+#pragma once
 
 #include "checkphishingurlutil.h"
 #include "webengineviewer_export.h"
@@ -49,4 +48,3 @@ private:
     CheckPhishingUrlJobPrivate *const d;
 };
 }
-#endif // CHECKPHISHINGURLJOB_H

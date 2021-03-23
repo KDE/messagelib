@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMAUTHENTICATIONSTATUSINFOTEST_H
-#define DKIMAUTHENTICATIONSTATUSINFOTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -22,4 +21,3 @@ private Q_SLOTS:
     void shouldParseKey_data();
 };
 
-#endif // DKIMAUTHENTICATIONSTATUSINFOTEST_H

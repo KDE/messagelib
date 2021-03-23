@@ -1,5 +1,4 @@
-#ifndef REMOTECONTENTINFOTEST_H
-#define REMOTECONTENTINFOTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -14,4 +13,3 @@ private Q_SLOTS:
     void shouldVerifyIsValid();
 };
 
-#endif // REMOTECONTENTINFOTEST_H

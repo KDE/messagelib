@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef ATTACHMENTVCARDFROMADDRESSBOOKJOB_H
-#define ATTACHMENTVCARDFROMADDRESSBOOKJOB_H
+#pragma once
 
 #include "MessageCore/AttachmentLoadJob"
 #include "messagecomposer_export.h"
@@ -36,4 +35,3 @@ private:
     AttachmentVcardFromAddressBookJobPrivate *const d;
 };
 }
-#endif // ATTACHMENTVCARDFROMADDRESSBOOKJOB_H

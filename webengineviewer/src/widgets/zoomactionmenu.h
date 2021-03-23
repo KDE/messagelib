@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef WEBENGINEZOOMACTIONMENU_H
-#define WEBENGINEZOOMACTIONMENU_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <KActionMenu>
@@ -52,4 +51,3 @@ private:
 };
 }
 
-#endif // ZOOMACTIONMENU_H

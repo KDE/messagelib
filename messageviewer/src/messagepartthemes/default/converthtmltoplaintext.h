@@ -5,8 +5,7 @@
 
 */
 
-#ifndef MIMETREEPARSER_CONVERTHTMLTOPLAINTEXT_H
-#define MIMETREEPARSER_CONVERTHTMLTOPLAINTEXT_H
+#pragma once
 
 #include <QString>
 namespace MimeTreeParser
@@ -28,4 +27,3 @@ private:
 };
 }
 
-#endif // MIMETREEPARSER_CONVERTHTMLTOPLAINTEXT_H

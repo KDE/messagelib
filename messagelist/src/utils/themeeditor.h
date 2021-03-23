@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_UTILS_THEMEEDITOR_H
-#define MESSAGELIST_UTILS_THEMEEDITOR_H
+#pragma once
 
 #include "core/theme.h"
 #include "core/themedelegate.h"
@@ -223,4 +222,3 @@ private:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_SKINEDITOR_H

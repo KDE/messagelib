@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_MESSAGEPARTRENDERPLUGIN_H
-#define MESSAGEVIEWER_MESSAGEPARTRENDERPLUGIN_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -33,4 +32,3 @@ public:
 
 Q_DECLARE_INTERFACE(MessageViewer::MessagePartRenderPlugin, "org.kde.messageviewer.messagepartrenderer/1.1")
 
-#endif // MESSAGEVIEWER_MESSAGEPARTRENDERPLUGIN_H

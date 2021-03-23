@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef VIEWERPLUGINTOOLMANAGER_H
-#define VIEWERPLUGINTOOLMANAGER_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include "viewerplugininterface.h"
@@ -54,4 +53,3 @@ private:
     ViewerPluginToolManagerPrivate *const d;
 };
 }
-#endif // VIEWERPLUGINTOOLMANAGER_H

@@ -4,8 +4,7 @@
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
-#ifndef AKONADISENDER_H
-#define AKONADISENDER_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include "messagesender.h"
@@ -63,4 +62,3 @@ private:
     AkonadiSenderPrivate *const d;
 };
 }
-#endif /* AKONADISENDER_H */

@@ -7,8 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_HEADERSTRATEGY_H
-#define MESSAGEVIEWER_HEADERSTRATEGY_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QStringList>
@@ -47,4 +46,3 @@ public:
 };
 }
 
-#endif // MESSAGEVIEWER_HEADERSTRATEGY_H

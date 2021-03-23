@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORMANAGER_H
-#define PLUGINEDITORMANAGER_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <PimCommon/PluginUtil>
@@ -39,4 +38,3 @@ private:
     PluginEditorManagerPrivate *const d;
 };
 }
-#endif // PLUGINEDITORMANAGER_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMMANAGERULESWIDGET_H
-#define DKIMMANAGERULESWIDGET_H
+#pragma once
 #include "messageviewer_export.h"
 #include <MessageViewer/DKIMRule>
 #include <QTreeWidgetItem>
@@ -68,4 +67,3 @@ private:
     QTreeWidget *const mTreeWidget;
 };
 }
-#endif // DKIMMANAGERULESWIDGET_H

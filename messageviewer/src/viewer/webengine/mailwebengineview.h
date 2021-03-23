@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MAILWEBENGINE_H
-#define MAILWEBENGINE_H
+#pragma once
 #include "messageviewer_export.h"
 #include <MessageViewer/BlockMailTrackingUrlInterceptor>
 #include <WebEngineViewer/WebEngineView>
@@ -102,4 +101,3 @@ private:
 };
 }
 
-#endif // MAILWEBENGINE_H

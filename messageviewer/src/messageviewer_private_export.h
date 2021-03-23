@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWERPRIVATE_EXPORT_H
-#define MESSAGEVIEWERPRIVATE_EXPORT_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -18,4 +17,3 @@
 #define MESSAGEVIEWER_TESTS_EXPORT
 #endif
 
-#endif

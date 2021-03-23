@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_UTILS_COMBOBOXUTILS_H
-#define MESSAGELIST_UTILS_COMBOBOXUTILS_H
+#pragma once
 
 #include <QPair>
 
@@ -44,4 +43,3 @@ void setIntegerOptionComboValue(QComboBox *combo, int value);
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_COMBOBOXUTILS_H

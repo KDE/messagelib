@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MIMEPARTTREEVIEW_H
-#define MIMEPARTTREEVIEW_H
+#pragma once
 
 #include <KMime/Message>
 #include <QTreeView>
@@ -35,4 +34,3 @@ private:
 };
 }
 
-#endif // MIMEPARTTREEVIEW_H

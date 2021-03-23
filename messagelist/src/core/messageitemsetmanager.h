@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_MESSAGEITEMSETMANAGER_H
-#define MESSAGELIST_CORE_MESSAGEITEMSETMANAGER_H
+#pragma once
 
 #include <QHash>
 #include <QList>
@@ -52,4 +51,3 @@ public:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MESSAGEITEMSETMANAGER_H

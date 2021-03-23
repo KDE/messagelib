@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORINIT_H
-#define PLUGINEDITORINIT_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <MessageComposer/PluginEditorBase>
@@ -28,4 +27,3 @@ public:
     virtual PluginEditorInitInterface *createInterface(QObject *parent) = 0;
 };
 }
-#endif // PLUGINEDITORINIT_H

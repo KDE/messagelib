@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TESTSELECTEDTEXTWEBENGINE_H
-#define TESTSELECTEDTEXTWEBENGINE_H
+#pragma once
 
 #include <QWidget>
 namespace WebEngineViewer
@@ -29,4 +28,3 @@ private:
     WebEngineViewer::WebEngineView *pageView;
 };
 
-#endif

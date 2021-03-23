@@ -7,8 +7,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWERRENDERERTEST_H
-#define MESSAGEVIEWERRENDERERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -22,4 +21,3 @@ private Q_SLOTS:
     void shouldHaveDefaultValue();
 };
 
-#endif // MESSAGEVIEWERRENDERERTEST_H

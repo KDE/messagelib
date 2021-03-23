@@ -8,8 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef MIMETREEPARSER_CRYPTOHELPER_H
-#define MIMETREEPARSER_CRYPTOHELPER_H
+#pragma once
 
 #include <QByteArray>
 #include <QVector>
@@ -51,4 +50,3 @@ QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
 
 Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_MOVABLE_TYPE);
 
-#endif

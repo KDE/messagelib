@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLUGINEDITORCHECKBEFORESENDPARAMS_H
-#define PLUGINEDITORCHECKBEFORESENDPARAMS_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <QString>
@@ -61,4 +60,3 @@ private:
     PluginEditorCheckBeforeSendParamsPrivate *const d;
 };
 }
-#endif // PLUGINEDITORCHECKBEFORESENDPARAMS_H

@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_COMPOSER_H
-#define MESSAGECOMPOSER_COMPOSER_H
+#pragma once
 
 #include "MessageComposer/JobBase"
 #include <Libkleo/Enum>
@@ -84,4 +83,3 @@ private:
 };
 }
 
-#endif

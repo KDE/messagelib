@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef MESSAGEVIEWER_DEFAULTRENDERER_P_H
-#define MESSAGEVIEWER_DEFAULTRENDERER_P_H
+#pragma once
 
 #include "defaultrenderer.h"
 #include "messagepartrendererbase.h"
@@ -72,4 +71,3 @@ public:
     bool mShowEncryptionDetails = false;
 };
 }
-#endif

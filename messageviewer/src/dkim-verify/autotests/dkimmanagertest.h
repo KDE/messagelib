@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMMANAGERTEST_H
-#define DKIMMANAGERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -17,4 +16,3 @@ public:
     ~DKIMManagerTest() override = default;
 };
 
-#endif // DKIMMANAGERTEST_H

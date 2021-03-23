@@ -5,8 +5,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGELISTUTIL_H
-#define MESSAGELISTUTIL_H
+#pragma once
 
 #include <QColor>
 #include <QString>
@@ -29,4 +28,3 @@ MESSAGELIST_EXPORT QString contentSummary(const Akonadi::Item &item);
 }
 }
 
-#endif /* MESSAGELISTUTIL_H */

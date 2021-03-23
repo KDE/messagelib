@@ -5,8 +5,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_MESSAGE_HELPER_H
-#define MESSAGECOMPOSER_MESSAGE_HELPER_H
+#pragma once
 
 #include "messagecomposer_export.h"
 
@@ -57,4 +56,3 @@ MESSAGECOMPOSER_EXPORT KMime::Types::AddrSpecList extractAddrSpecs(const KMime::
 void setAutomaticFields(const KMime::Message::Ptr &msg, bool isMultipart = false);
 }
 
-#endif

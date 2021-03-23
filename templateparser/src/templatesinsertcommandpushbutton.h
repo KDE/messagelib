@@ -14,8 +14,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef TEMPLATEPARSER_TEMPLATESINSERTCOMMANDPUSHBUTTON_H
-#define TEMPLATEPARSER_TEMPLATESINSERTCOMMANDPUSHBUTTON_H
+#pragma once
 
 #include "templateparser_export.h"
 #include <QPushButton>
@@ -45,4 +44,3 @@ private:
 };
 }
 
-#endif

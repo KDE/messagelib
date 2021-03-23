@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMSTORERESULTJOB_H
-#define DKIMSTORERESULTJOB_H
+#pragma once
 
 #include "messageviewer_private_export.h"
 #include <AkonadiCore/Item>
@@ -34,4 +33,3 @@ private:
 };
 }
 
-#endif // DKIMSTORERESULTJOB_H

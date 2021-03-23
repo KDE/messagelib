@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef WEBENGINEVIEWWITHSAFEBROWSINGSUPPORT_H
-#define WEBENGINEVIEWWITHSAFEBROWSINGSUPPORT_H
+#pragma once
 
 #include "../searchfullhashjob.h"
 #include <QWidget>
@@ -31,4 +30,3 @@ private:
     WebEngineViewer::WebEngineView *pageView = nullptr;
 };
 
-#endif // WEBENGINEVIEWWITHSAFEBROWSINGSUPPORT_H

@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SUBMITTEDFORMWARNINGWIDGET_H
-#define SUBMITTEDFORMWARNINGWIDGET_H
+#pragma once
 
 #include <KMessageWidget>
 
@@ -25,4 +24,3 @@ public Q_SLOTS:
 };
 }
 
-#endif // SUBMITTEDFORMWARNINGWIDGET_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef VIEWERPLUGINMANAGER_H
-#define VIEWERPLUGINMANAGER_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <PimCommon/PluginUtil>
@@ -45,4 +44,3 @@ private:
 };
 }
 
-#endif // VIEWERPLUGINMANAGER_H

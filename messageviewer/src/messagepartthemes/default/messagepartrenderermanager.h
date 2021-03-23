@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEPARTRENDERERMANAGER_H
-#define MESSAGEPARTRENDERERMANAGER_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -49,4 +48,3 @@ private:
 
 Q_DECLARE_METATYPE(MessageViewer::GrantleeCallback)
 
-#endif // MESSAGEPARTRENDERERMANAGER_H

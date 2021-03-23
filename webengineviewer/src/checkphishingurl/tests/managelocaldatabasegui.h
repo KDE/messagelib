@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MANAGELOCALDATABASEGUI_H
-#define MANAGELOCALDATABASEGUI_H
+#pragma once
 
 #include <QWidget>
 class QPlainTextEdit;
@@ -28,4 +27,3 @@ private:
     WebEngineViewer::LocalDataBaseManager *mDbManager;
 };
 
-#endif // MANAGELOCALDATABASEGUI_H

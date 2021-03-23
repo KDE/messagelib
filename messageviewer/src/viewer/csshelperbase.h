@@ -7,8 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_CSSHELPERBASE_H
-#define MIMETREEPARSER_CSSHELPERBASE_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -135,4 +134,3 @@ private:
 };
 }
 
-#endif

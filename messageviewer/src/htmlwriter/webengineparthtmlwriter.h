@@ -3,8 +3,7 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#ifndef WEBENGINEPARTHTMLWRITER_H
-#define WEBENGINEPARTHTMLWRITER_H
+#pragma once
 
 #include "bufferedhtmlwriter.h"
 #include <QObject>
@@ -49,4 +48,3 @@ private:
     QTemporaryFile *mTempFile = nullptr;
 };
 }
-#endif // WEBENGINEPARTHTMLWRITER_H

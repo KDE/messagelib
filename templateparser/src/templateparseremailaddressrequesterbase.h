@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATEPARSEREMAILADDRESSREQUESTERBASE_H
-#define TEMPLATEPARSEREMAILADDRESSREQUESTERBASE_H
+#pragma once
 
 #include "templateparser_export.h"
 #include <QWidget>
@@ -30,4 +29,3 @@ Q_SIGNALS:
 };
 }
 
-#endif // TEMPLATEPARSEREMAILADDRESSREQUESTERBASE_H

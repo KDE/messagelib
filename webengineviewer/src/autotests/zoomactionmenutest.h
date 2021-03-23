@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef ZOOMACTIONMENUTEST_H
-#define ZOOMACTIONMENUTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -20,4 +19,3 @@ private Q_SLOTS:
     void shouldAssignZoomFactor();
 };
 
-#endif // ZOOMACTIONMENUTEST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TESTWEBENGINESCROLLADDATTACHMENT_H
-#define TESTWEBENGINESCROLLADDATTACHMENT_H
+#pragma once
 
 #include <QWidget>
 namespace MessageViewer
@@ -25,4 +24,3 @@ private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
 };
 
-#endif // TESTWEBENGINESCROLLADDATTACHMENT_H

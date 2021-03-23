@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_SENDLATERUTIL_P_H
-#define MESSAGECOMPOSER_SENDLATERUTIL_P_H
+#pragma once
 
 #include <AkonadiCore/ServerManager>
 #include <AkonadiCore/servermanager.h>
@@ -19,4 +18,3 @@ Q_REQUIRED_RESULT QString dbusPath();
 }
 }
 
-#endif

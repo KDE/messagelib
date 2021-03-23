@@ -3,8 +3,7 @@
    SPDX-License-Identifier: LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-#ifndef MESSAGECORE_SETTINGS_H
-#define MESSAGECORE_SETTINGS_H
+#pragma once
 
 #include "messagecore_export.h"
 
@@ -29,4 +28,3 @@ private:
 };
 }
 
-#endif

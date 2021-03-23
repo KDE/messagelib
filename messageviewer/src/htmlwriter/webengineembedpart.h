@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef WEBENGINEEMBEDPART_H
-#define WEBENGINEEMBEDPART_H
+#pragma once
 
 #include <QMap>
 #include <QObject>
@@ -33,4 +32,3 @@ private:
     QMap<QString, QString> mEmbeddedPartMap;
 };
 }
-#endif // WEBENGINEEMBEDPART_H

@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_FILTER_H
-#define MESSAGELIST_CORE_FILTER_H
+#pragma once
 
 #include <QObject>
 #include <QSet>
@@ -119,4 +118,3 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_FILTER_H

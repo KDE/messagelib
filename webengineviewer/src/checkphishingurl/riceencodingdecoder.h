@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RICEENCODINGDECODER_H
-#define RICEENCODINGDECODER_H
+#pragma once
 
 #include "updatedatabaseinfo.h"
 #include "webengineviewer_private_export.h"
@@ -55,4 +54,3 @@ public:
 };
 }
 
-#endif // RICEENCODINGDECODER_H

@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CRYPTO_FUNCTIONS_H
-#define CRYPTO_FUNCTIONS_H
+#pragma once
 
 #include <Libkleo/Enum>
 #include <QByteArray>
@@ -50,4 +49,3 @@ void verifySignatureAndEncryption(KMime::Content *content,
                                   bool combind = false);
 }
 
-#endif

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEST_VIEWERPLUGIN_GUI_H
-#define TEST_VIEWERPLUGIN_GUI_H
+#pragma once
 
 #include <QWidget>
 namespace MessageViewer
@@ -24,4 +23,3 @@ private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
 };
 
-#endif

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CREATEPHISHINGURLDATABASEGUI_H
-#define CREATEPHISHINGURLDATABASEGUI_H
+#pragma once
 
 #include "../createphishingurldatabasejob.h"
 #include <QWidget>
@@ -32,4 +31,3 @@ private:
     QComboBox *mCompressionType;
 };
 
-#endif // CREATEPHISHINGURLDATABASEGUI_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef ATTACHMENTUPDATEJOB_H
-#define ATTACHMENTUPDATEJOB_H
+#pragma once
 
 #include "attachmentpart.h"
 #include "messagecore_export.h"
@@ -35,4 +34,3 @@ private:
 };
 }
 
-#endif // ATTACHMENTUPDATEJOB_H

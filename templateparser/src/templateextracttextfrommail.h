@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATEEXTRACTTEXTFROMMAIL_H
-#define TEMPLATEEXTRACTTEXTFROMMAIL_H
+#pragma once
 
 #include "templateparser_export.h"
 #include <QObject>
@@ -38,4 +37,3 @@ private:
     TemplateWebEnginePage *const mPage;
 };
 }
-#endif // TEMPLATEEXTRACTTEXTFROMMAIL_H

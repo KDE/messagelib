@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMRULEWIDGET_H
-#define DKIMRULEWIDGET_H
+#pragma once
 #include "messageviewer_private_export.h"
 #include <MessageViewer/DKIMRule>
 #include <QWidget>
@@ -38,4 +37,3 @@ private:
     DKIMManageRulesComboBox *const mRuleType;
 };
 }
-#endif // DKIMRULEWIDGET_H

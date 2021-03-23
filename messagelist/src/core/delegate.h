@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_DELEGATE_H
-#define MESSAGELIST_CORE_DELEGATE_H
+#pragma once
 
 #include "core/themedelegate.h"
 
@@ -33,4 +32,3 @@ protected:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_DELEGATE_H

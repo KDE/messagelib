@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TESTMAILMBOXWEBENGINE_H
-#define TESTMAILMBOXWEBENGINE_H
+#pragma once
 
 #include <KMime/Message>
 #include <QWidget>
@@ -21,4 +20,3 @@ private:
     KMime::Message::Ptr readAndParseMail(const QString &mailFile);
 };
 
-#endif // TESTMAILMBOXWEBENGINE_H

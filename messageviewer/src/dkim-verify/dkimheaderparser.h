@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMHEADERPARSER_H
-#define DKIMHEADERPARSER_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -59,4 +58,3 @@ private:
     bool mWasAlreadyParsed = false;
 };
 }
-#endif // DKIMHEADERPARSER_H

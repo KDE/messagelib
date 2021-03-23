@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef LOCALDATABASEFILE_H
-#define LOCALDATABASEFILE_H
+#pragma once
 
 #include "webengineviewer_private_export.h"
 #include <QString>
@@ -52,4 +51,3 @@ private:
 };
 }
 
-#endif // LOCALDATABASEFILE_H

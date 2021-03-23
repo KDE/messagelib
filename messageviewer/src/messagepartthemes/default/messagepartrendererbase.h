@@ -4,8 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_MESSAGEPARTRENDERERBASE_H
-#define MESSAGEVIEWER_MESSAGEPARTRENDERERBASE_H
+#pragma once
 
 #include "messageviewer_export.h"
 
@@ -66,4 +65,3 @@ public:
     virtual Q_REQUIRED_RESULT bool render(const MimeTreeParser::MessagePart::Ptr &, HtmlWriter *htmlWriter, RenderContext *context) const = 0;
 };
 }
-#endif

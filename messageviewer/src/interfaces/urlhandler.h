@@ -7,8 +7,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef KMAIL_INTERFACES_URLHANDLER_H
-#define KMAIL_INTERFACES_URLHANDLER_H
+#pragma once
 
 #include <QUrl>
 
@@ -96,4 +95,3 @@ public:
 };
 }
 
-#endif // KMAIL_INTERFACES_URLHANDLER_H

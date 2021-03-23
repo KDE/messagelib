@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef REMOTECONTENTMENU_H
-#define REMOTECONTENTMENU_H
+#pragma once
 
 #include "messageviewer_export.h"
 #include <QMenu>
@@ -37,4 +36,3 @@ private:
     QList<QAction *> mListAction;
 };
 }
-#endif // REMOTECONTENTMENU_H

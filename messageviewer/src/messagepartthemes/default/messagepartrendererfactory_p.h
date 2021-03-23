@@ -4,8 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_MESSAGEPARTRENDERERFACTORY_P_H
-#define MESSAGEVIEWER_MESSAGEPARTRENDERERFACTORY_P_H
+#pragma once
 
 #include <QByteArray>
 #include <QHash>
@@ -37,4 +36,3 @@ public:
 };
 }
 
-#endif

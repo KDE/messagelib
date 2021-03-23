@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_PROTECTEDHEADERSJOB_H
-#define MESSAGECOMPOSER_PROTECTEDHEADERSJOB_H
+#pragma once
 
 #include "contentjobbase.h"
 #include "infopart.h"
@@ -49,4 +48,3 @@ private:
 };
 }
 
-#endif

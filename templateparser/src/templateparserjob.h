@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATEPARSERJOB_H
-#define TEMPLATEPARSERJOB_H
+#pragma once
 
 #include "templateparser_export.h"
 
@@ -348,4 +347,3 @@ private:
 };
 }
 
-#endif // TEMPLATEPARSERJOB_H

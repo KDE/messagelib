@@ -5,8 +5,7 @@
 
 */
 
-#ifndef MESSAGEDISPLAYFORMATATTRIBUTE_H
-#define MESSAGEDISPLAYFORMATATTRIBUTE_H
+#pragma once
 
 #include "messageviewer/viewer.h"
 #include "messageviewer_export.h"
@@ -43,4 +42,3 @@ private:
 };
 }
 
-#endif // MESSAGEDISPLAYFORMATATTRIBUTE_H

@@ -4,8 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGELIST_WIDGET_H
-#define MESSAGELIST_WIDGET_H
+#pragma once
 
 #include <MessageList/QuickSearchLine>
 #include <MessageList/View>
@@ -407,4 +406,3 @@ private:
 };
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_WIDGET_H

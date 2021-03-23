@@ -2,8 +2,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef AUTOCRYPTRECIPIENTTEST_H
-#define AUTOCRYPTRECIPIENTTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -28,4 +27,3 @@ private Q_SLOTS:
     void test_getters();
 };
 
-#endif

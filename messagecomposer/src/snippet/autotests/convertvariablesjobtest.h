@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CONVERTVARIABLESJOBTEST_H
-#define CONVERTVARIABLESJOBTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -22,4 +21,3 @@ private Q_SLOTS:
     void shouldConvertVariables_data();
 };
 
-#endif // CONVERTVARIABLESJOBTEST_H

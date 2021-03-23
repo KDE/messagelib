@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MAILSOURCEWEBENGINEVIEWER_H
-#define MAILSOURCEWEBENGINEVIEWER_H
+#pragma once
 
 #include <QDialog>
 class QTabWidget;
@@ -36,4 +35,3 @@ private:
     bool mShowHtmlSource = false;
 };
 }
-#endif // MAILSOURCEWEBENGINEVIEWER_H

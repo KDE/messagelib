@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMCHECKPOLICYJOB_H
-#define DKIMCHECKPOLICYJOB_H
+#pragma once
 
 #include "dkimchecksignaturejob.h"
 #include "dmarcpolicyjob.h"
@@ -47,4 +46,3 @@ private:
 };
 }
 
-#endif // DKIMCHECKPOLICYJOB_H

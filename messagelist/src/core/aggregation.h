@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_AGGREGATION_H
-#define MESSAGELIST_CORE_AGGREGATION_H
+#pragma once
 
 class QDataStream;
 
@@ -292,4 +291,3 @@ public:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_AGGREGATION_H

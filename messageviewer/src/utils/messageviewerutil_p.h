@@ -34,8 +34,7 @@
 **   your version.
 **
 *******************************************************************************/
-#ifndef MESSAGEVIEWERUTIL_P_H
-#define MESSAGEVIEWERUTIL_P_H
+#pragma once
 
 #include <KMime/Content>
 class QUrl;
@@ -60,4 +59,3 @@ void addHelpTextAction(QAction *act, const QString &text);
 void readGravatarConfig();
 }
 }
-#endif

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATEWEBENGINEPAGE_H
-#define TEMPLATEWEBENGINEPAGE_H
+#pragma once
 
 #include <QWebEnginePage>
 namespace TemplateParser
@@ -19,4 +18,3 @@ public:
 };
 }
 
-#endif // TEMPLATEWEBENGINEPAGE_H

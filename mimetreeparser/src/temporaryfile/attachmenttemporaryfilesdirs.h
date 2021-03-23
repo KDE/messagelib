@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef ATTACHMENTTEMPORARYFILESDIRS_H
-#define ATTACHMENTTEMPORARYFILESDIRS_H
+#pragma once
 
 #include "mimetreeparser_export.h"
 #include <QObject>
@@ -43,4 +42,3 @@ private:
 };
 }
 
-#endif // ATTACHMENTTEMPORARYFILESDIRS_H

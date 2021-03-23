@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEMPLATEPARSEREXTRACTHTMLINFORESULT_H
-#define TEMPLATEPARSEREXTRACTHTMLINFORESULT_H
+#pragma once
 
 #include "templateparser_export.h"
 #include <QObject>
@@ -19,4 +18,3 @@ struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult {
     QString mTemplate;
 };
 Q_DECLARE_METATYPE(TemplateParserExtractHtmlInfoResult)
-#endif // TEMPLATEPARSEREXTRACTHTMLINFORESULT_H

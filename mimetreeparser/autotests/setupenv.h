@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_TESTS_SETUPENV_H
-#define MIMETREEPARSER_TESTS_SETUPENV_H
+#pragma once
 
 namespace MimeTreeParser
 {
@@ -21,4 +20,3 @@ void setupEnv();
 }
 }
 
-#endif

@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_ITEM_P_H
-#define MESSAGELIST_CORE_ITEM_P_H
+#pragma once
 
 #include "core/item.h"
 
@@ -494,4 +493,3 @@ public:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_ITEM_P_H

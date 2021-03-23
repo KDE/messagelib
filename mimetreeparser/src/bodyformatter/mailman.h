@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_BODYFORAMATTER_MAILMAN_H
-#define MIMETREEPARSER_BODYFORAMATTER_MAILMAN_H
+#pragma once
 
 #include "interfaces/bodypart.h"
 #include "interfaces/bodypartformatter.h"
@@ -25,4 +24,3 @@ private:
 };
 }
 
-#endif

@@ -4,8 +4,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
-#ifndef MESSAGEVIEWER_TEST_RENDERTEST_H
-#define MESSAGEVIEWER_TEST_RENDERTEST_H
+#pragma once
 
 #include <MimeTreeParser/MessagePart>
 #include <QObject>
@@ -44,4 +43,3 @@ private:
     void testRenderTree(const MimeTreeParser::MessagePart::Ptr &messagePart);
 };
 
-#endif

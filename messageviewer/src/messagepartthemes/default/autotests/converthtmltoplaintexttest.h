@@ -5,8 +5,7 @@
 
 */
 
-#ifndef CONVERTHTMLTOPLAINTEXTTEST_H
-#define CONVERTHTMLTOPLAINTEXTTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -25,4 +24,3 @@ private Q_SLOTS:
     void shouldConvertToPlainText();
 };
 
-#endif // CONVERTHTMLTOPLAINTEXTTEST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CIDSCHEMEHANDLER_H
-#define CIDSCHEMEHANDLER_H
+#pragma once
 
 #include <QObject>
 #include <QWebEngineUrlSchemeHandler>
@@ -21,4 +20,3 @@ public:
     void requestStarted(QWebEngineUrlRequestJob *job) override;
 };
 }
-#endif // CIDSCHEMEHANDLER_H

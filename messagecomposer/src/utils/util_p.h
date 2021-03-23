@@ -6,8 +6,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_UTIL_P_H
-#define MESSAGECOMPOSER_UTIL_P_H
+#pragma once
 
 #include <KMime/Message>
 #include <Libkleo/Enum>
@@ -57,4 +56,3 @@ void addSendReplyForwardAction(const KMime::Message::Ptr &message, MailTransport
 }
 }
 
-#endif

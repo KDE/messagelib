@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGECOMPOSER_COMPOSERATTACHMENTINTERFACE_H
-#define MESSAGECOMPOSER_COMPOSERATTACHMENTINTERFACE_H
+#pragma once
 
 #include "messagecomposer_export.h"
 #include <QObject>
@@ -41,4 +40,3 @@ private:
     int mCount = 0;
 };
 }
-#endif

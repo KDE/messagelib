@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMRULE_H
-#define DKIMRULE_H
+#pragma once
 #include "messageviewer_export.h"
 #include <QDebug>
 
@@ -68,4 +67,3 @@ Q_DECLARE_METATYPE(MessageViewer::DKIMRule)
 Q_DECLARE_TYPEINFO(MessageViewer::DKIMRule, Q_MOVABLE_TYPE);
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMRule &t);
 
-#endif // DKIMRULE_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef REMOTECONTENTMANAGERTEST_H
-#define REMOTECONTENTMANAGERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -27,4 +26,3 @@ private:
     MessageViewer::RemoteContentManager mRemoveContentManager;
 };
 
-#endif // REMOTECONTENTMANAGERTEST_H

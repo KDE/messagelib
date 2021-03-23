@@ -8,8 +8,7 @@
  *    SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef MESSAGECORE_IMAGECOLLECTOR_H
-#define MESSAGECORE_IMAGECOLLECTOR_H
+#pragma once
 
 #include "messagecore_export.h"
 
@@ -65,4 +64,3 @@ private:
 };
 }
 
-#endif

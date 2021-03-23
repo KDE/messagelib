@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef ENCRYPTJOBTEST_H
-#define ENCRYPTJOBTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -37,4 +36,3 @@ private:
     void checkEncryption(MessageComposer::EncryptJob *eJob);
 };
 
-#endif

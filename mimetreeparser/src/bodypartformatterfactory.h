@@ -8,8 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MIMETREEPARSER_BODYPARTFORMATTERFACTORY_H
-#define MIMETREEPARSER_BODYPARTFORMATTERFACTORY_H
+#pragma once
 
 #include "mimetreeparser_export.h"
 
@@ -51,4 +50,3 @@ private:
 };
 }
 
-#endif // MIMETREEPARSER_BODYPARTFORMATTERFACTORY_H

@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef FINDBARSOURCEVIEW_H
-#define FINDBARSOURCEVIEW_H
+#pragma once
 
 #include <WebEngineViewer/FindBarBase>
 
@@ -37,4 +36,3 @@ private:
 };
 }
 
-#endif /* FINDBARSOURCEVIEW_H */

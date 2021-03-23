@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef GLOBALPARTTEST_H
-#define GLOBALPARTTEST_H
+#pragma once
 #include <QObject>
 
 class GlobalPartTest : public QObject
@@ -18,4 +17,3 @@ private Q_SLOTS:
     void shouldHaveDefaultValue();
 };
 
-#endif // GLOBALPARTTEST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TestDndWebEngine_H
-#define TestDndWebEngine_H
+#pragma once
 
 #include <QWebEngineView>
 #include <QWidget>
@@ -40,4 +39,3 @@ private:
     WebEngineViewBase *webEngineView = nullptr;
 };
 
-#endif // TestDndWebEngine_H

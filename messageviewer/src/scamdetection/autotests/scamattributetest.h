@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SCAMATTRIBUTETEST_H
-#define SCAMATTRIBUTETEST_H
+#pragma once
 
 #include <QObject>
 
@@ -24,4 +23,3 @@ private Q_SLOTS:
     void shouldHaveType();
 };
 
-#endif // SCAMATTRIBUTETEST_H

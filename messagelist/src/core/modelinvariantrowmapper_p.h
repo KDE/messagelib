@@ -6,8 +6,7 @@
  *
  *******************************************************************************/
 
-#ifndef MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_P_H
-#define MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_P_H
+#pragma once
 
 #include "core/modelinvariantrowmapper.h"
 
@@ -65,4 +64,3 @@ public:
 } // Core
 } // MessageList
 
-#endif //!__MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_P_H

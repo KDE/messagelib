@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef DKIMMANAGERULESCOMBOBOX_H
-#define DKIMMANAGERULESCOMBOBOX_H
+#pragma once
 #include "messageviewer_private_export.h"
 #include <MessageViewer/DKIMRule>
 #include <QComboBox>
@@ -25,4 +24,3 @@ private:
 };
 }
 
-#endif // DKIMMANAGERULESCOMBOBOX_H

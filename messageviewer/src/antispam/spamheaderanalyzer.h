@@ -8,8 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_SPAMHEADERANALYZER_H
-#define MESSAGEVIEWER_SPAMHEADERANALYZER_H
+#pragma once
 
 #include <KMime/Message>
 
@@ -119,4 +118,3 @@ public:
 };
 }
 
-#endif // SPAMHEADERANALYZER_H

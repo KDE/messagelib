@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef MAILNETWORKPLUGINURLINTERCEPTORINTERFACE_H
-#define MAILNETWORKPLUGINURLINTERCEPTORINTERFACE_H
+#pragma once
 
 #include "webengineviewer_export.h"
 #include <QObject>
@@ -31,4 +30,3 @@ public:
     virtual bool interceptRequest(QWebEngineUrlRequestInfo &info) = 0;
 };
 }
-#endif // MAILNETWORKPLUGINURLINTERCEPTORINTERFACE_H

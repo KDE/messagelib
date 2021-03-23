@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MESSAGEVIEWER_DEFAULTRENDERER_MESSAGEPARTRENDERER_H
-#define MESSAGEVIEWER_DEFAULTRENDERER_MESSAGEPARTRENDERER_H
+#pragma once
 
 #include "../messagepartrendererbase.h"
 
@@ -22,4 +21,3 @@ public:
 };
 }
 
-#endif

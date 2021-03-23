@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef LOCALDATABASEMANAGER_H
-#define LOCALDATABASEMANAGER_H
+#pragma once
 
 #include "createphishingurldatabasejob.h"
 #include "searchfullhashjob.h"
@@ -41,4 +40,3 @@ protected:
 };
 }
 
-#endif // LOCALDATABASEMANAGER_H

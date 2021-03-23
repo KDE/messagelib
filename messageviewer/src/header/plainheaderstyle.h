@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLAINHEADERSTYLE_H
-#define PLAINHEADERSTYLE_H
+#pragma once
 
 #include "messageviewer/headerstyle.h"
 #include "messageviewer_export.h"
@@ -31,4 +30,3 @@ private:
     PlainHeaderStylePrivate *const d;
 };
 }
-#endif // PLAINHEADERSTYLE_H
