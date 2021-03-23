@@ -12,6 +12,10 @@ class QMenu;
 class QAction;
 namespace MessageViewer
 {
+/**
+ * @brief The DKIMViewerMenu class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT DKIMViewerMenu : public QObject
 {
     Q_OBJECT

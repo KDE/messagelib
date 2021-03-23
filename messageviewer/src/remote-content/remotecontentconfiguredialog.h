@@ -11,6 +11,10 @@
 namespace MessageViewer
 {
 class RemoteContentConfigureWidget;
+/**
+ * @brief The RemoteContentConfigureDialog class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT RemoteContentConfigureDialog : public QDialog
 {
     Q_OBJECT

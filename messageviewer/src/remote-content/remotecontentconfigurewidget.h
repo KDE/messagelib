@@ -16,6 +16,10 @@ namespace MessageViewer
 {
 class RemoteContentStatusTypeComboBox;
 class RemoteContentInfo;
+/**
+ * @brief The RemoteContentWidgetItem class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentWidgetItem : public QTreeWidgetItem
 {
 public:

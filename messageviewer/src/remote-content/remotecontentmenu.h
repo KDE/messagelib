@@ -10,6 +10,10 @@
 #include <QMenu>
 namespace MessageViewer
 {
+/**
+ * @brief The RemoteContentMenu class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT RemoteContentMenu : public QMenu
 {
     Q_OBJECT

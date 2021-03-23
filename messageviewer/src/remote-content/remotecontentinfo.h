@@ -11,6 +11,10 @@
 #include <QObject>
 namespace MessageViewer
 {
+/**
+ * @brief The RemoteContentInfo class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentInfo
 {
     Q_GADGET
