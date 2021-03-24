@@ -102,6 +102,7 @@ void RemoteContentConfigureWidget::modifyRemoteContent(RemoteContentWidgetItem *
         return;
     }
     QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
+    dlg->setWindowTitle(i18nc("@title:window", "Edit Remote Content"));
     RemoteContentInfo info;
     info.setUrl(rulesItem->text(0));
     info.setStatus(rulesItem->status());
@@ -118,6 +119,7 @@ void RemoteContentConfigureWidget::modifyRemoteContent(RemoteContentWidgetItem *
 void RemoteContentConfigureWidget::slotAdd()
 {
     QPointer<RemoteContentDialog> dlg = new RemoteContentDialog(this);
+    dlg->setWindowTitle(i18nc("@title:window", "Add Remote Content"));
     if (dlg->exec()) {
         const auto info = dlg->info();
         const int count = mTreeWidget->topLevelItemCount();
