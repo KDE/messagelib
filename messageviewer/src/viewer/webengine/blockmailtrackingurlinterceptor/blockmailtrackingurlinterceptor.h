@@ -38,7 +38,7 @@ public:
     Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 
 Q_SIGNALS:
-    void mailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
+    void trackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
 
 private:
     void initializeList();

@@ -26,7 +26,7 @@ bool BlockMailTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo 
     for (int i = 0, total = mBackList.size(); i < total; ++i) {
         const auto blackListinfo{mBackList.at(i)};
         if (urlRequestUrl.url().startsWith(blackListinfo.mCompanyUrl)) {
-            Q_EMIT mailTrackingFound(blackListinfo);
+            Q_EMIT trackingFound(blackListinfo);
             return true;
         }
     }
