@@ -13,7 +13,7 @@
 #include <QMap>
 #include <QPointer>
 
-#include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>
+#include <WebEngineViewer/BlockMailTrackingUrlInterceptor>
 
 namespace MessageViewer
 {
@@ -24,7 +24,7 @@ class MESSAGEVIEWER_TESTS_EXPORT MailTrackingWarningWidget : public KMessageWidg
 public:
     explicit MailTrackingWarningWidget(QWidget *parent = nullptr);
     ~MailTrackingWarningWidget() override;
-    void addTracker(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
+    void addTracker(const WebEngineViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
     void hideAndClear();
 
 private:

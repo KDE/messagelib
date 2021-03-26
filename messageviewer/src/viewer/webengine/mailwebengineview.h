@@ -6,7 +6,7 @@
 
 #pragma once
 #include "messageviewer_export.h"
-#include <MessageViewer/BlockMailTrackingUrlInterceptor>
+#include <WebEngineViewer/BlockMailTrackingUrlInterceptor>
 #include <WebEngineViewer/WebEngineView>
 #include <boost/function.hpp>
 class QPrinter;
@@ -83,7 +83,7 @@ Q_SIGNALS:
     void urlBlocked(const QUrl &url);
     void messageMayBeAScam();
     void formSubmittedForbidden();
-    void mailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
+    void mailTrackingFound(const WebEngineViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
     /// Emitted when the user right-clicks somewhere
     void popupMenu(const WebEngineViewer::WebHitTestResult &result);
     void pageIsScrolledToBottom(bool);

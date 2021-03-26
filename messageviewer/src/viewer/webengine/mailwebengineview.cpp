@@ -6,7 +6,6 @@
 #include "mailwebengineview.h"
 #include "../urlhandlermanager.h"
 #include "blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h"
-#include "blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h"
 #include "cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
 #include "cidschemehandler/cidschemehandler.h"
 #include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
@@ -14,6 +13,7 @@
 #include "messageviewer/messageviewersettings.h"
 #include "webengineviewer/webengineaccesskey.h"
 #include "webengineviewer/webenginescript.h"
+#include <WebEngineViewer/BlockMailTrackingUrlInterceptor>
 #include <WebEngineViewer/InterceptorManager>
 #include <WebEngineViewer/WebEngineManageScript>
 
@@ -61,7 +61,7 @@ public:
     MailWebEnginePage *mPageEngine = nullptr;
     WebEngineViewer::InterceptorManager *mNetworkAccessManager = nullptr;
     MessageViewer::ViewerPrivate *mViewer = nullptr;
-    MessageViewer::BlockMailTrackingUrlInterceptor *mBlockMailTrackingUrl = nullptr;
+    WebEngineViewer::BlockMailTrackingUrlInterceptor *mBlockMailTrackingUrl = nullptr;
     bool mCanStartDrag = false;
 };
 
@@ -90,8 +90,8 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     connect(blockExternalUrl, &BlockExternalResourcesUrlInterceptor::formSubmittedForbidden, this, &MailWebEngineView::formSubmittedForbidden);
     d->mNetworkAccessManager->addInterceptor(blockExternalUrl);
 
-    d->mBlockMailTrackingUrl = new MessageViewer::BlockMailTrackingUrlInterceptor(this);
-    connect(d->mBlockMailTrackingUrl, &BlockMailTrackingUrlInterceptor::trackingFound, this, &MailWebEngineView::mailTrackingFound);
+    d->mBlockMailTrackingUrl = new WebEngineViewer::BlockMailTrackingUrlInterceptor(this);
+    connect(d->mBlockMailTrackingUrl, &WebEngineViewer::BlockMailTrackingUrlInterceptor::trackingFound, this, &MailWebEngineView::mailTrackingFound);
     d->mNetworkAccessManager->addInterceptor(d->mBlockMailTrackingUrl);
 
     setFocusPolicy(Qt::WheelFocus);

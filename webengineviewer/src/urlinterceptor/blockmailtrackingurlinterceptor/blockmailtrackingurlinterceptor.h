@@ -6,16 +6,16 @@
 
 #pragma once
 
-#include "messageviewer_export.h"
+#include "webengineviewer_export.h"
 #include <QVector>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
-namespace MessageViewer
+namespace WebEngineViewer
 {
 /**
  * @brief The BlockMailTrackingUrlInterceptor class
  * @author Laurent Montel <montel@kde.org>
  */
-class MESSAGEVIEWER_EXPORT BlockMailTrackingUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
+class WEBENGINEVIEWER_EXPORT BlockMailTrackingUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:
@@ -41,7 +41,7 @@ public:
     void setEnabledMailTrackingInterceptor(bool enabledMailTrackingInterceptor);
 
 Q_SIGNALS:
-    void trackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
+    void trackingFound(const WebEngineViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
 
 private:
     void initializeList();
@@ -49,5 +49,5 @@ private:
     bool mEnabledMailTrackingInterceptor = false;
 };
 }
-Q_DECLARE_TYPEINFO(MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList, Q_MOVABLE_TYPE);
-Q_DECLARE_METATYPE(MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList)
+Q_DECLARE_TYPEINFO(WebEngineViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList, Q_MOVABLE_TYPE);
+Q_DECLARE_METATYPE(WebEngineViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList)

@@ -8,11 +8,11 @@
 
 #include <QWebEngineUrlRequestInfo>
 
-using namespace MessageViewer;
+using namespace WebEngineViewer;
 BlockMailTrackingUrlInterceptor::BlockMailTrackingUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
-    qRegisterMetaType<MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList>();
+    qRegisterMetaType<WebEngineViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList>();
     initializeList();
 }
 

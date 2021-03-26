@@ -50,6 +50,7 @@ set(libwebengineviewer_interceptor_SRCS
     urlinterceptor/networkpluginurlinterceptor.cpp
     urlinterceptor/networkurlinterceptormanager.cpp
     urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
+    urlinterceptor/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.cpp
     )
 
 set(libwebengineviewer_accesskey_SRCS
@@ -194,6 +195,14 @@ ecm_generate_headers(WebEngineViewer_Camelcasewidgets_HEADERS
     RELATIVE widgets
     )
 
+ecm_generate_headers(WebEngineViewer_Camelblockmailtrackingurlinterceptor_HEADERS
+    HEADER_NAMES
+    BlockMailTrackingUrlInterceptor
+
+    REQUIRED_HEADERS WebEngineViewer_blockmailtrackingurlinterceptor_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE urlinterceptor/blockmailtrackingurlinterceptor/
+    )
 
 
 ecm_generate_pri_file(BASE_NAME WebEngineViewer
@@ -203,6 +212,7 @@ ecm_generate_pri_file(BASE_NAME WebEngineViewer
 
 
 install(FILES
+    ${WebEngineViewer_Camelblockmailtrackingurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_checkurl_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_accesskey_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_urlinterceptor_HEADERS}
@@ -216,6 +226,7 @@ install(FILES
     )
 
 install(FILES
+    ${WebEngineViewer_blockmailtrackingurlinterceptor_HEADERS}
     ${WebEngineViewer_webengine_checkurl_HEADERS}
     ${WebEngineViewer_webengine_accesskey_HEADERS}
     ${WebEngineViewer_findbar_HEADERS}
