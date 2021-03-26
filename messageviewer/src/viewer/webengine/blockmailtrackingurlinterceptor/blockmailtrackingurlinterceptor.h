@@ -37,12 +37,16 @@ public:
     ~BlockMailTrackingUrlInterceptor() override;
     Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 
+    Q_REQUIRED_RESULT bool enabledMailTrackingInterceptor() const;
+    void setEnabledMailTrackingInterceptor(bool enabledMailTrackingInterceptor);
+
 Q_SIGNALS:
     void trackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
 
 private:
     void initializeList();
     QVector<MailTrackerBlackList> mBackList;
+    bool mEnabledMailTrackingInterceptor = false;
 };
 }
 Q_DECLARE_TYPEINFO(MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList, Q_MOVABLE_TYPE);

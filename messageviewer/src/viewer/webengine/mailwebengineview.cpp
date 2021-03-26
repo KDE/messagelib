@@ -92,6 +92,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
 
     d->mBlockMailTrackingUrl = new MessageViewer::BlockMailTrackingUrlInterceptor(this);
     connect(d->mBlockMailTrackingUrl, &BlockMailTrackingUrlInterceptor::trackingFound, this, &MailWebEngineView::mailTrackingFound);
+    d->mNetworkAccessManager->addInterceptor(d->mBlockMailTrackingUrl);
 
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
@@ -105,11 +106,7 @@ MailWebEngineView::~MailWebEngineView()
 
 void MailWebEngineView::readConfig()
 {
-    if (MessageViewer::MessageViewerSettings::self()->mailTrackingUrlEnabled()) {
-        d->mNetworkAccessManager->addInterceptor(d->mBlockMailTrackingUrl);
-    } else {
-        d->mNetworkAccessManager->removeInterceptor(d->mBlockMailTrackingUrl);
-    }
+    d->mBlockMailTrackingUrl->setEnabledMailTrackingInterceptor(MessageViewer::MessageViewerSettings::self()->mailTrackingUrlEnabled());
 }
 
 void MailWebEngineView::setLinkHovered(const QUrl &url)

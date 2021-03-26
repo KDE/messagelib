@@ -22,6 +22,9 @@ BlockMailTrackingUrlInterceptor::~BlockMailTrackingUrlInterceptor()
 
 bool BlockMailTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
+    if (!mEnabledMailTrackingInterceptor) {
+        return false;
+    }
     const QUrl urlRequestUrl(info.requestUrl());
     for (int i = 0, total = mBackList.size(); i < total; ++i) {
         const auto blackListinfo{mBackList.at(i)};
@@ -59,4 +62,14 @@ void BlockMailTrackingUrlInterceptor::initializeList()
                  {QStringLiteral("Mailtrack.io"), QStringLiteral("mailtrack.io/trace"), QStringLiteral("http://mailtrack.io")},
                  {QStringLiteral("ToutApp"), QStringLiteral("go.toutapp.com"), QStringLiteral("http://toutapp.com")},
                  {QStringLiteral("Outreach"), QStringLiteral("app.outreach.io"), QStringLiteral("http://outreach.io")}};
+}
+
+bool BlockMailTrackingUrlInterceptor::enabledMailTrackingInterceptor() const
+{
+    return mEnabledMailTrackingInterceptor;
+}
+
+void BlockMailTrackingUrlInterceptor::setEnabledMailTrackingInterceptor(bool enabledMailTrackingInterceptor)
+{
+    mEnabledMailTrackingInterceptor = enabledMailTrackingInterceptor;
 }
