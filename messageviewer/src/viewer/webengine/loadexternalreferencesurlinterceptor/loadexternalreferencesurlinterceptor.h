@@ -23,6 +23,10 @@ public:
 Q_SIGNALS:
     void urlBlocked(const QUrl &url);
 
+protected:
+    Q_REQUIRED_RESULT bool urlAuthorized(const QUrl &requestedUrl);
+    Q_REQUIRED_RESULT bool urlIsBlocked(const QUrl &requestedUrl);
+
 private:
     bool mAllowLoadExternalReference = false;
 };

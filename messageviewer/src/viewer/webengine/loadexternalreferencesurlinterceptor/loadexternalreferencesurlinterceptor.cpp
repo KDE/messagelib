@@ -28,24 +28,12 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
     }
     if (mAllowLoadExternalReference) {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !info.requestUrl().isLocalFile() && (scheme != QLatin1String("cid"))) {
-            const QUrl url = info.requestUrl().adjusted(QUrl::RemovePath | QUrl::RemovePort | QUrl::RemoveQuery);
-            bool contains = false;
-            if (MessageViewer::RemoteContentManager::self()->isBlocked(url, contains)) {
-                return true;
-            }
+            return urlIsBlocked(info.requestUrl());
         }
         return false;
     } else {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !info.requestUrl().isLocalFile() && (scheme != QLatin1String("cid"))) {
-            const QUrl url = info.requestUrl().adjusted(QUrl::RemovePath | QUrl::RemovePort | QUrl::RemoveQuery);
-            bool contains = false;
-            if (MessageViewer::RemoteContentManager::self()->isAutorized(url, contains)) {
-                return false;
-            }
-            if (!contains) {
-                Q_EMIT urlBlocked(info.requestUrl());
-            }
-            return true;
+            return urlAuthorized(info.requestUrl());
         } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeFontResource) {
             return true;
         } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeStylesheet) {
@@ -53,6 +41,29 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
         }
     }
     return false;
+}
+
+bool LoadExternalReferencesUrlInterceptor::urlIsBlocked(const QUrl &requestedUrl)
+{
+    const QUrl url = requestedUrl.adjusted(QUrl::RemovePath | QUrl::RemovePort | QUrl::RemoveQuery);
+    bool contains = false;
+    if (MessageViewer::RemoteContentManager::self()->isBlocked(url, contains)) {
+        return true;
+    }
+    return false;
+}
+
+bool LoadExternalReferencesUrlInterceptor::urlAuthorized(const QUrl &requestedUrl)
+{
+    const QUrl url = requestedUrl.adjusted(QUrl::RemovePath | QUrl::RemovePort | QUrl::RemoveQuery);
+    bool contains = false;
+    if (MessageViewer::RemoteContentManager::self()->isAutorized(url, contains)) {
+        return false;
+    }
+    if (!contains) {
+        Q_EMIT urlBlocked(requestedUrl);
+    }
+    return true;
 }
 
 void LoadExternalReferencesUrlInterceptor::setAllowExternalContent(bool b)
