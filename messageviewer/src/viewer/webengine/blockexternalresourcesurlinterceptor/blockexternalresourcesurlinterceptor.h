@@ -19,6 +19,7 @@ public:
     ~BlockExternalResourcesUrlInterceptor() override;
 
     Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
+    // Used by autotest only
     Q_REQUIRED_RESULT bool
     interceptRequest(const QUrl &url, QWebEngineUrlRequestInfo::ResourceType resourceType, QWebEngineUrlRequestInfo::NavigationType navigationType);
 Q_SIGNALS:
