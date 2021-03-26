@@ -34,7 +34,7 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
         return false;
     } else {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !requestUrl.isLocalFile() && (scheme != QLatin1String("cid"))) {
-            return urlAuthorized(requestUrl);
+            return urlIsAuthorized(requestUrl);
         } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeFontResource) {
             return true;
         } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeStylesheet) {
@@ -54,7 +54,7 @@ bool LoadExternalReferencesUrlInterceptor::urlIsBlocked(const QUrl &requestedUrl
     return false;
 }
 
-bool LoadExternalReferencesUrlInterceptor::urlAuthorized(const QUrl &requestedUrl)
+bool LoadExternalReferencesUrlInterceptor::urlIsAuthorized(const QUrl &requestedUrl)
 {
     const QUrl url = requestedUrl.adjusted(QUrl::RemovePath | QUrl::RemovePort | QUrl::RemoveQuery);
     bool contains = false;
