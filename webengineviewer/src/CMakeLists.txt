@@ -51,6 +51,7 @@ set(libwebengineviewer_interceptor_SRCS
     urlinterceptor/networkurlinterceptormanager.cpp
     urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
     urlinterceptor/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.cpp
+    urlinterceptor/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
     )
 
 set(libwebengineviewer_accesskey_SRCS
@@ -204,6 +205,14 @@ ecm_generate_headers(WebEngineViewer_Camelblockmailtrackingurlinterceptor_HEADER
     RELATIVE urlinterceptor/blockmailtrackingurlinterceptor/
     )
 
+ecm_generate_headers(WebEngineViewer_Camelloadexternalreferencesurlinterceptor_HEADERS
+    HEADER_NAMES
+    LoadExternalReferencesUrlInterceptor
+
+    REQUIRED_HEADERS WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE urlinterceptor/loadexternalreferencesurlinterceptor/
+    )
 
 ecm_generate_pri_file(BASE_NAME WebEngineViewer
     LIB_NAME KF5WebEngineViewer
@@ -212,6 +221,7 @@ ecm_generate_pri_file(BASE_NAME WebEngineViewer
 
 
 install(FILES
+    ${WebEngineViewer_Camelloadexternalreferencesurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelblockmailtrackingurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_checkurl_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_accesskey_HEADERS}
@@ -226,6 +236,7 @@ install(FILES
     )
 
 install(FILES
+    ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
     ${WebEngineViewer_blockmailtrackingurlinterceptor_HEADERS}
     ${WebEngineViewer_webengine_checkurl_HEADERS}
     ${WebEngineViewer_webengine_accesskey_HEADERS}

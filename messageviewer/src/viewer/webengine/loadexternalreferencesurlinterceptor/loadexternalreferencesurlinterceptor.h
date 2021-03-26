@@ -5,29 +5,19 @@
 */
 #pragma once
 
+#include <WebEngineViewer/LoadExternalReferencesUrlInterceptor>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
-
 namespace MessageViewer
 {
-class LoadExternalReferencesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
+class LoadExternalReferencesUrlInterceptor : public WebEngineViewer::LoadExternalReferencesUrlInterceptor
 {
     Q_OBJECT
 public:
     explicit LoadExternalReferencesUrlInterceptor(QObject *parent = nullptr);
     ~LoadExternalReferencesUrlInterceptor() override;
 
-    Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
-    void setAllowExternalContent(bool b);
-    Q_REQUIRED_RESULT bool allowExternalContent() const;
-
-Q_SIGNALS:
-    void urlBlocked(const QUrl &url);
-
 protected:
-    Q_REQUIRED_RESULT bool urlIsAuthorized(const QUrl &requestedUrl);
-    Q_REQUIRED_RESULT bool urlIsBlocked(const QUrl &requestedUrl);
-
-private:
-    bool mAllowLoadExternalReference = false;
+    Q_REQUIRED_RESULT bool urlIsAuthorized(const QUrl &requestedUrl) override;
+    Q_REQUIRED_RESULT bool urlIsBlocked(const QUrl &requestedUrl) override;
 };
 }
