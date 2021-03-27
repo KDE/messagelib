@@ -165,17 +165,17 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 
         switch (event->type()) {
         case QEvent::KeyPress:
-            HANDLE_EVENT(forwardKeyPressEvent, QKeyEvent);
+            HANDLE_EVENT(forwardKeyPressEvent, QKeyEvent)
         case QEvent::KeyRelease:
-            HANDLE_EVENT(forwardKeyReleaseEvent, QKeyEvent);
+            HANDLE_EVENT(forwardKeyReleaseEvent, QKeyEvent)
         case QEvent::MouseButtonPress:
-            HANDLE_EVENT(forwardMousePressEvent, QMouseEvent);
+            HANDLE_EVENT(forwardMousePressEvent, QMouseEvent)
         case QEvent::MouseButtonRelease:
-            HANDLE_EVENT(forwardMouseReleaseEvent, QMouseEvent);
+            HANDLE_EVENT(forwardMouseReleaseEvent, QMouseEvent)
         case QEvent::MouseMove:
-            HANDLE_EVENT(forwardMouseMoveEvent, QMouseEvent);
+            HANDLE_EVENT(forwardMouseMoveEvent, QMouseEvent)
         case QEvent::Wheel:
-            HANDLE_EVENT(forwardWheelEvent, QWheelEvent);
+            HANDLE_EVENT(forwardWheelEvent, QWheelEvent)
         default:
             break;
         }
