@@ -5,9 +5,9 @@
 */
 
 #include "blockexternalresourcesurlinterceptortest.h"
-#include "viewer/webengine/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h"
 #include <QStandardPaths>
 #include <QTest>
+#include <WebEngineViewer/BlockExternalResourcesUrlInterceptor>
 QTEST_GUILESS_MAIN(BlockExternalResourcesUrlInterceptorTest)
 BlockExternalResourcesUrlInterceptorTest::BlockExternalResourcesUrlInterceptorTest(QObject *parent)
     : QObject(parent)
@@ -17,7 +17,7 @@ BlockExternalResourcesUrlInterceptorTest::BlockExternalResourcesUrlInterceptorTe
 
 void BlockExternalResourcesUrlInterceptorTest::shouldIntercept()
 {
-    MessageViewer::BlockExternalResourcesUrlInterceptor interceptor;
+    WebEngineViewer::BlockExternalResourcesUrlInterceptor interceptor;
     QVERIFY(!interceptor.interceptRequest(QUrl(QStringLiteral("file://")),
                                           QWebEngineUrlRequestInfo::ResourceType::ResourceTypeMedia,
                                           QWebEngineUrlRequestInfo::NavigationType::NavigationTypeReload));

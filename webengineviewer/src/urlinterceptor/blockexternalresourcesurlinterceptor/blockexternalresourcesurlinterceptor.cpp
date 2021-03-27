@@ -5,7 +5,7 @@
 */
 
 #include "blockexternalresourcesurlinterceptor.h"
-using namespace MessageViewer;
+using namespace WebEngineViewer;
 
 BlockExternalResourcesUrlInterceptor::BlockExternalResourcesUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)

@@ -9,6 +9,7 @@ if(BUILD_TESTING)
     add_subdirectory(findbar/autotests)
     add_subdirectory(checkphishingurl/autotests/)
     add_subdirectory(checkphishingurl/tests/)
+    add_subdirectory(urlinterceptor/blockexternalresourcesurlinterceptor/autotests)
 endif()
 
 
@@ -52,6 +53,7 @@ set(libwebengineviewer_interceptor_SRCS
     urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
     urlinterceptor/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.cpp
     urlinterceptor/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
+    urlinterceptor/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.cpp
     )
 
 set(libwebengineviewer_accesskey_SRCS
@@ -214,6 +216,16 @@ ecm_generate_headers(WebEngineViewer_Camelloadexternalreferencesurlinterceptor_H
     RELATIVE urlinterceptor/loadexternalreferencesurlinterceptor/
     )
 
+ecm_generate_headers(WebEngineViewer_Camelblockexternalresourcesurlinterceptor_HEADERS
+    HEADER_NAMES
+    BlockExternalResourcesUrlInterceptor
+
+    REQUIRED_HEADERS WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE urlinterceptor/blockexternalresourcesurlinterceptor/
+    )
+
+
 ecm_generate_pri_file(BASE_NAME WebEngineViewer
     LIB_NAME KF5WebEngineViewer
     DEPS "webenginewidgets PimCommon" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
@@ -221,6 +233,7 @@ ecm_generate_pri_file(BASE_NAME WebEngineViewer
 
 
 install(FILES
+    ${WebEngineViewer_Camelblockexternalresourcesurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelloadexternalreferencesurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelblockmailtrackingurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_checkurl_HEADERS}
@@ -236,6 +249,7 @@ install(FILES
     )
 
 install(FILES
+    ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
     ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
     ${WebEngineViewer_blockmailtrackingurlinterceptor_HEADERS}
     ${WebEngineViewer_webengine_checkurl_HEADERS}

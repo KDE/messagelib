@@ -48,7 +48,6 @@ if(BUILD_TESTING)
     add_subdirectory(widgets/autotests/)
     add_subdirectory(utils/autotests)
     add_subdirectory(viewer/renderer/autotests)
-    add_subdirectory(viewer/webengine/blockexternalresourcesurlinterceptor/autotests)
     add_subdirectory(remote-content/autotests)
 endif()
 add_subdirectory(pics)
@@ -121,7 +120,6 @@ set(libmessageviewer_mailviewer_SRCS
     viewer/webengine/mailwebenginepage.cpp
     viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
     viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
-    viewer/webengine/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.cpp
     viewer/webengine/cidschemehandler/cidschemehandler.cpp
     )
 

@@ -5,13 +5,13 @@
 */
 #pragma once
 
-#include "messageviewer_private_export.h"
+#include "webengineviewer_export.h"
 #include <QUrl>
 #include <QWebEngineUrlRequestInfo>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
-namespace MessageViewer
+namespace WebEngineViewer
 {
-class MESSAGEVIEWER_TESTS_EXPORT BlockExternalResourcesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
+class WEBENGINEVIEWER_EXPORT BlockExternalResourcesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:

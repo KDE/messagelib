@@ -5,7 +5,6 @@
 */
 #include "mailwebengineview.h"
 #include "../urlhandlermanager.h"
-#include "blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h"
 #include "cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
 #include "cidschemehandler/cidschemehandler.h"
 #include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
@@ -13,6 +12,7 @@
 #include "messageviewer/messageviewersettings.h"
 #include "webengineviewer/webengineaccesskey.h"
 #include "webengineviewer/webenginescript.h"
+#include <WebEngineViewer/BlockExternalResourcesUrlInterceptor>
 #include <WebEngineViewer/BlockMailTrackingUrlInterceptor>
 #include <WebEngineViewer/InterceptorManager>
 #include <WebEngineViewer/WebEngineManageScript>
@@ -86,8 +86,8 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mNetworkAccessManager->addInterceptor(d->mExternalReference);
     auto cidReference = new MessageViewer::CidReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(cidReference);
-    auto blockExternalUrl = new MessageViewer::BlockExternalResourcesUrlInterceptor(this);
-    connect(blockExternalUrl, &BlockExternalResourcesUrlInterceptor::formSubmittedForbidden, this, &MailWebEngineView::formSubmittedForbidden);
+    auto blockExternalUrl = new WebEngineViewer::BlockExternalResourcesUrlInterceptor(this);
+    connect(blockExternalUrl, &WebEngineViewer::BlockExternalResourcesUrlInterceptor::formSubmittedForbidden, this, &MailWebEngineView::formSubmittedForbidden);
     d->mNetworkAccessManager->addInterceptor(blockExternalUrl);
 
     d->mBlockMailTrackingUrl = new WebEngineViewer::BlockMailTrackingUrlInterceptor(this);
