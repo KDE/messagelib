@@ -53,7 +53,7 @@ bool LoadExternalReferencesUrlInterceptor::urlIsBlocked(const QUrl &requestedUrl
 bool LoadExternalReferencesUrlInterceptor::urlIsAuthorized(const QUrl &requestedUrl)
 {
     Q_UNUSED(requestedUrl)
-    return false;
+    return true;
 }
 
 void LoadExternalReferencesUrlInterceptor::setAllowExternalContent(bool b)
