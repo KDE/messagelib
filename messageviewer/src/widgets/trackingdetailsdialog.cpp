@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "mailtrackingdetailsdialog.h"
+#include "trackingdetailsdialog.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KPIMTextEdit/RichTextEditorWidget>
@@ -18,7 +18,7 @@ namespace
 {
 static const char myMailTrackingDetailsDialogConfigGroupName[] = "MailTrackingDetailsDialog";
 }
-MailTrackingDetailsDialog::MailTrackingDetailsDialog(QWidget *parent)
+TrackingDetailsDialog::TrackingDetailsDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18nc("@title:window", "Details"));
@@ -30,8 +30,8 @@ MailTrackingDetailsDialog::MailTrackingDetailsDialog(QWidget *parent)
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
-    connect(buttonBox, &QDialogButtonBox::rejected, this, &MailTrackingDetailsDialog::reject);
-    connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &MailTrackingDetailsDialog::close);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &TrackingDetailsDialog::reject);
+    connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &TrackingDetailsDialog::close);
 
     mDetails = new KPIMTextEdit::RichTextEditorWidget(this);
     mDetails->setObjectName(QStringLiteral("detail"));
@@ -41,12 +41,12 @@ MailTrackingDetailsDialog::MailTrackingDetailsDialog(QWidget *parent)
     readConfig();
 }
 
-MailTrackingDetailsDialog::~MailTrackingDetailsDialog()
+TrackingDetailsDialog::~TrackingDetailsDialog()
 {
     writeConfig();
 }
 
-void MailTrackingDetailsDialog::readConfig()
+void TrackingDetailsDialog::readConfig()
 {
     KConfigGroup group(KSharedConfig::openConfig(), myMailTrackingDetailsDialogConfigGroupName);
     const QSize size = group.readEntry("Size", QSize(600, 400));
@@ -55,14 +55,14 @@ void MailTrackingDetailsDialog::readConfig()
     }
 }
 
-void MailTrackingDetailsDialog::writeConfig()
+void TrackingDetailsDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openConfig(), myMailTrackingDetailsDialogConfigGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }
 
-void MailTrackingDetailsDialog::setDetails(const QString &details)
+void TrackingDetailsDialog::setDetails(const QString &details)
 {
     mDetails->setHtml(details);
 }

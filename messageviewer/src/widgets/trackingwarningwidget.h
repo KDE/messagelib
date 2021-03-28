@@ -17,13 +17,13 @@
 
 namespace MessageViewer
 {
-class MailTrackingDetailsDialog;
-class MESSAGEVIEWER_TESTS_EXPORT MailTrackingWarningWidget : public KMessageWidget
+class TrackingDetailsDialog;
+class MESSAGEVIEWER_TESTS_EXPORT TrackingWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
-    explicit MailTrackingWarningWidget(QWidget *parent = nullptr);
-    ~MailTrackingWarningWidget() override;
+    explicit TrackingWarningWidget(QWidget *parent = nullptr);
+    ~TrackingWarningWidget() override;
     void addTracker(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &);
     void hideAndClear();
 
@@ -36,7 +36,6 @@ private:
         int number = 1;
     };
     QMap<QString, blackListFound> mBackLists;
-    QPointer<MailTrackingDetailsDialog> mMailTrackingDetailDialog;
+    QPointer<TrackingDetailsDialog> mMailTrackingDetailDialog;
 };
 }
-

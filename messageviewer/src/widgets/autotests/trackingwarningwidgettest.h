@@ -8,13 +8,12 @@
 
 #include <QObject>
 
-class MailTrackingWarningWidgetTest : public QObject
+class TrackingWarningWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailTrackingWarningWidgetTest(QObject *parent = nullptr);
-    ~MailTrackingWarningWidgetTest() override = default;
+    explicit TrackingWarningWidgetTest(QObject *parent = nullptr);
+    ~TrackingWarningWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };
-

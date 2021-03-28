@@ -8,13 +8,12 @@
 
 #include <QObject>
 
-class MailTrackingDetailsDialogTest : public QObject
+class TrackingDetailsDialogTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailTrackingDetailsDialogTest(QObject *parent = nullptr);
-    ~MailTrackingDetailsDialogTest() override = default;
+    explicit TrackingDetailsDialogTest(QObject *parent = nullptr);
+    ~TrackingDetailsDialogTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };
-

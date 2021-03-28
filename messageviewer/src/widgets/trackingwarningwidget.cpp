@@ -4,12 +4,12 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "mailtrackingwarningwidget.h"
-#include "mailtrackingdetailsdialog.h"
+#include "trackingwarningwidget.h"
+#include "trackingdetailsdialog.h"
 #include <KLocalizedString>
 
 using namespace MessageViewer;
-MailTrackingWarningWidget::MailTrackingWarningWidget(QWidget *parent)
+TrackingWarningWidget::TrackingWarningWidget(QWidget *parent)
     : KMessageWidget(parent)
 {
     setVisible(false);
@@ -18,25 +18,25 @@ MailTrackingWarningWidget::MailTrackingWarningWidget(QWidget *parent)
     setWordWrap(true);
 
     setText(i18n("Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails\">(Details...)"));
-    connect(this, &MailTrackingWarningWidget::linkActivated, this, &MailTrackingWarningWidget::slotShowDetails);
+    connect(this, &TrackingWarningWidget::linkActivated, this, &TrackingWarningWidget::slotShowDetails);
 }
 
-MailTrackingWarningWidget::~MailTrackingWarningWidget()
+TrackingWarningWidget::~TrackingWarningWidget()
 {
 }
 
-void MailTrackingWarningWidget::slotShowDetails(const QString &content)
+void TrackingWarningWidget::slotShowDetails(const QString &content)
 {
     if (content == QLatin1String("mailtrackingdetails")) {
         if (!mMailTrackingDetailDialog) {
-            mMailTrackingDetailDialog = new MessageViewer::MailTrackingDetailsDialog;
+            mMailTrackingDetailDialog = new MessageViewer::TrackingDetailsDialog;
         }
         mMailTrackingDetailDialog->setDetails(generateDetails());
         mMailTrackingDetailDialog->show();
     }
 }
 
-QString MailTrackingWarningWidget::generateDetails() const
+QString TrackingWarningWidget::generateDetails() const
 {
     QString details = QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
 
@@ -50,7 +50,7 @@ QString MailTrackingWarningWidget::generateDetails() const
     return details;
 }
 
-void MailTrackingWarningWidget::addTracker(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &tracker)
+void TrackingWarningWidget::addTracker(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &tracker)
 {
     blackListFound item = mBackLists.value(tracker.mCompanyName);
     if (item.url.isEmpty()) {
@@ -65,7 +65,7 @@ void MailTrackingWarningWidget::addTracker(const WebEngineViewer::BlockTrackingU
     }
 }
 
-void MailTrackingWarningWidget::hideAndClear()
+void TrackingWarningWidget::hideAndClear()
 {
     mBackLists.clear();
     setVisible(false);

@@ -16,12 +16,12 @@ class RichTextEditorWidget;
 
 namespace MessageViewer
 {
-class MESSAGEVIEWER_TESTS_EXPORT MailTrackingDetailsDialog : public QDialog
+class MESSAGEVIEWER_TESTS_EXPORT TrackingDetailsDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit MailTrackingDetailsDialog(QWidget *parent = nullptr);
-    ~MailTrackingDetailsDialog() override;
+    explicit TrackingDetailsDialog(QWidget *parent = nullptr);
+    ~TrackingDetailsDialog() override;
 
     void setDetails(const QString &details);
 
@@ -32,4 +32,3 @@ private:
     KPIMTextEdit::RichTextEditorWidget *mDetails = nullptr;
 };
 }
-
