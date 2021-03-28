@@ -50,7 +50,7 @@ QString MailTrackingWarningWidget::generateDetails() const
     return details;
 }
 
-void MailTrackingWarningWidget::addTracker(const WebEngineViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &tracker)
+void MailTrackingWarningWidget::addTracker(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &tracker)
 {
     blackListFound item = mBackLists.value(tracker.mCompanyName);
     if (item.url.isEmpty()) {

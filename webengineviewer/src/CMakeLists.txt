@@ -51,7 +51,7 @@ set(libwebengineviewer_interceptor_SRCS
     urlinterceptor/networkpluginurlinterceptor.cpp
     urlinterceptor/networkurlinterceptormanager.cpp
     urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
-    urlinterceptor/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.cpp
+    urlinterceptor/blocktrackingurlinterceptor/blocktrackingurlinterceptor.cpp
     urlinterceptor/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
     urlinterceptor/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.cpp
     )
@@ -198,13 +198,13 @@ ecm_generate_headers(WebEngineViewer_Camelcasewidgets_HEADERS
     RELATIVE widgets
     )
 
-ecm_generate_headers(WebEngineViewer_Camelblockmailtrackingurlinterceptor_HEADERS
+ecm_generate_headers(WebEngineViewer_Camelblocktrackingurlinterceptor_HEADERS
     HEADER_NAMES
-    BlockMailTrackingUrlInterceptor
+    BlockTrackingUrlInterceptor
 
-    REQUIRED_HEADERS WebEngineViewer_blockmailtrackingurlinterceptor_HEADERS
+    REQUIRED_HEADERS WebEngineViewer_blocktrackingurlinterceptor_HEADERS
     PREFIX WebEngineViewer
-    RELATIVE urlinterceptor/blockmailtrackingurlinterceptor/
+    RELATIVE urlinterceptor/blocktrackingurlinterceptor/
     )
 
 ecm_generate_headers(WebEngineViewer_Camelloadexternalreferencesurlinterceptor_HEADERS
@@ -235,7 +235,7 @@ ecm_generate_pri_file(BASE_NAME WebEngineViewer
 install(FILES
     ${WebEngineViewer_Camelblockexternalresourcesurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelloadexternalreferencesurlinterceptor_HEADERS}
-    ${WebEngineViewer_Camelblockmailtrackingurlinterceptor_HEADERS}
+    ${WebEngineViewer_Camelblocktrackingurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_checkurl_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_accesskey_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_urlinterceptor_HEADERS}
@@ -251,7 +251,7 @@ install(FILES
 install(FILES
     ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
     ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
-    ${WebEngineViewer_blockmailtrackingurlinterceptor_HEADERS}
+    ${WebEngineViewer_blocktrackingurlinterceptor_HEADERS}
     ${WebEngineViewer_webengine_checkurl_HEADERS}
     ${WebEngineViewer_webengine_accesskey_HEADERS}
     ${WebEngineViewer_findbar_HEADERS}

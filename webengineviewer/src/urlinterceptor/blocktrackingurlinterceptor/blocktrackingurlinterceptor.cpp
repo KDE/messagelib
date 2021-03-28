@@ -4,23 +4,23 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "blockmailtrackingurlinterceptor.h"
+#include "blocktrackingurlinterceptor.h"
 
 #include <QWebEngineUrlRequestInfo>
 
 using namespace WebEngineViewer;
-BlockMailTrackingUrlInterceptor::BlockMailTrackingUrlInterceptor(QObject *parent)
+BlockTrackingUrlInterceptor::BlockTrackingUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
-    qRegisterMetaType<WebEngineViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList>();
+    qRegisterMetaType<WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList>();
     initializeList();
 }
 
-BlockMailTrackingUrlInterceptor::~BlockMailTrackingUrlInterceptor()
+BlockTrackingUrlInterceptor::~BlockTrackingUrlInterceptor()
 {
 }
 
-bool BlockMailTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
+bool BlockTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     if (!mEnabledMailTrackingInterceptor) {
         return false;
@@ -36,7 +36,7 @@ bool BlockMailTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo 
     return false;
 }
 
-void BlockMailTrackingUrlInterceptor::initializeList()
+void BlockTrackingUrlInterceptor::initializeList()
 {
     mBackList = {{QStringLiteral("Sidekick"), QStringLiteral("t.signaux"), QStringLiteral("http://getsidekick.com")},
                  {QStringLiteral("Sidekick"), QStringLiteral("t.sidekickopen"), QStringLiteral("http://getsidekick.com")},
@@ -64,12 +64,12 @@ void BlockMailTrackingUrlInterceptor::initializeList()
                  {QStringLiteral("Outreach"), QStringLiteral("app.outreach.io"), QStringLiteral("http://outreach.io")}};
 }
 
-bool BlockMailTrackingUrlInterceptor::enabledMailTrackingInterceptor() const
+bool BlockTrackingUrlInterceptor::enabledMailTrackingInterceptor() const
 {
     return mEnabledMailTrackingInterceptor;
 }
 
-void BlockMailTrackingUrlInterceptor::setEnabledMailTrackingInterceptor(bool enabledMailTrackingInterceptor)
+void BlockTrackingUrlInterceptor::setEnabledMailTrackingInterceptor(bool enabledMailTrackingInterceptor)
 {
     mEnabledMailTrackingInterceptor = enabledMailTrackingInterceptor;
 }

@@ -13,7 +13,7 @@
 #include "webengineviewer/webengineaccesskey.h"
 #include "webengineviewer/webenginescript.h"
 #include <WebEngineViewer/BlockExternalResourcesUrlInterceptor>
-#include <WebEngineViewer/BlockMailTrackingUrlInterceptor>
+#include <WebEngineViewer/BlockTrackingUrlInterceptor>
 #include <WebEngineViewer/InterceptorManager>
 #include <WebEngineViewer/WebEngineManageScript>
 
@@ -61,7 +61,7 @@ public:
     MailWebEnginePage *mPageEngine = nullptr;
     WebEngineViewer::InterceptorManager *mNetworkAccessManager = nullptr;
     MessageViewer::ViewerPrivate *mViewer = nullptr;
-    WebEngineViewer::BlockMailTrackingUrlInterceptor *mBlockMailTrackingUrl = nullptr;
+    WebEngineViewer::BlockTrackingUrlInterceptor *mBlockMailTrackingUrl = nullptr;
     bool mCanStartDrag = false;
 };
 
@@ -90,8 +90,8 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     connect(blockExternalUrl, &WebEngineViewer::BlockExternalResourcesUrlInterceptor::formSubmittedForbidden, this, &MailWebEngineView::formSubmittedForbidden);
     d->mNetworkAccessManager->addInterceptor(blockExternalUrl);
 
-    d->mBlockMailTrackingUrl = new WebEngineViewer::BlockMailTrackingUrlInterceptor(this);
-    connect(d->mBlockMailTrackingUrl, &WebEngineViewer::BlockMailTrackingUrlInterceptor::trackingFound, this, &MailWebEngineView::mailTrackingFound);
+    d->mBlockMailTrackingUrl = new WebEngineViewer::BlockTrackingUrlInterceptor(this);
+    connect(d->mBlockMailTrackingUrl, &WebEngineViewer::BlockTrackingUrlInterceptor::trackingFound, this, &MailWebEngineView::mailTrackingFound);
     d->mNetworkAccessManager->addInterceptor(d->mBlockMailTrackingUrl);
 
     setFocusPolicy(Qt::WheelFocus);
