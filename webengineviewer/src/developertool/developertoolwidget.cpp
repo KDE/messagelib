@@ -9,7 +9,7 @@
 #include <QWebEnginePage>
 #include <QWebEngineSettings>
 #include <QWebEngineView>
-using namespace MessageViewer;
+using namespace WebEngineViewer;
 DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     : QWidget(parent)
 {

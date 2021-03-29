@@ -15,7 +15,7 @@ namespace
 static const char myDeveloperToolDialogConfigGroupName[] = "DeveloperToolDialog";
 }
 
-using namespace MessageViewer;
+using namespace WebEngineViewer;
 DeveloperToolDialog::DeveloperToolDialog(QWidget *parent)
     : QDialog(parent)
 {

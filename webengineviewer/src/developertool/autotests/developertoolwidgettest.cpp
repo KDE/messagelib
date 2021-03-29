@@ -5,7 +5,7 @@
 */
 
 #include "developertoolwidgettest.h"
-#include "widgets/developertoolwidget.h"
+#include "developertool/developertoolwidget.h"
 #include <QTest>
 #include <QVBoxLayout>
 #include <QWebEngineSettings>
@@ -18,7 +18,7 @@ DeveloperToolWidgetTest::DeveloperToolWidgetTest(QObject *parent)
 
 void DeveloperToolWidgetTest::shouldHaveDefaultValues()
 {
-    MessageViewer::DeveloperToolWidget w;
+    WebEngineViewer::DeveloperToolWidget w;
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));

@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "messageviewer_private_export.h"
+#include "webengineviewer_export.h"
 #include <QDialog>
 class QWebEnginePage;
-namespace MessageViewer
+namespace WebEngineViewer
 {
 class DeveloperToolWidget;
-class MESSAGEVIEWER_TESTS_EXPORT DeveloperToolDialog : public QDialog
+class WEBENGINEVIEWER_EXPORT DeveloperToolDialog : public QDialog
 {
     Q_OBJECT
 public:

@@ -11,6 +11,7 @@ if(BUILD_TESTING)
     add_subdirectory(checkphishingurl/tests/)
     add_subdirectory(urlinterceptor/blockexternalresourcesurlinterceptor/autotests)
     add_subdirectory(widgets/tracking/autotests/)
+    add_subdirectory(developertool/autotests)
 endif()
 
 
@@ -77,7 +78,14 @@ set(libwebengineviewer_tracking_SRCS
    widgets/tracking/trackingwarningwidget.cpp
    )
 
+set(libwebengineviewer_developertool_SRCS
+    developertool/developertoolwidget.cpp
+    developertool/developertooldialog.cpp
+    )
+
+
 set(libwebengineviewer_SRCS
+    ${libwebengineviewer_developertool_SRCS}
     ${libwebengineviewer_checkphishingurl_SRCS}
     ${libwebengineviewer_interceptor_SRCS}
     ${libwebengineviewer_webengine_SRCS}
@@ -243,6 +251,15 @@ ecm_generate_headers(WebEngineViewer_Cameltracking_HEADERS
     RELATIVE widgets/tracking/
     )
 
+ecm_generate_headers(WebEngineViewer_Cameldevelopertool_HEADERS
+    HEADER_NAMES
+    DeveloperToolDialog
+
+    REQUIRED_HEADERS WebEngineViewer_developertool_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE developertool/
+    )
+
 ecm_generate_pri_file(BASE_NAME WebEngineViewer
     LIB_NAME KF5WebEngineViewer
     DEPS "webenginewidgets PimCommon" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
@@ -250,6 +267,7 @@ ecm_generate_pri_file(BASE_NAME WebEngineViewer
 
 
 install(FILES
+    ${WebEngineViewer_Cameldevelopertool_HEADERS}
     ${WebEngineViewer_Cameltracking_HEADERS}
     ${WebEngineViewer_Camelblockexternalresourcesurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelloadexternalreferencesurlinterceptor_HEADERS}
@@ -267,6 +285,7 @@ install(FILES
     )
 
 install(FILES
+    ${WebEngineViewer_developertool_HEADERS}
     ${WebEngineViewer_tracking_HEADERS}
     ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
     ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}

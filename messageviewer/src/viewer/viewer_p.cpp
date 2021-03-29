@@ -23,7 +23,6 @@
 
 #include "messageviewer/headerstrategy.h"
 #include "messageviewer/headerstyle.h"
-#include "widgets/developertooldialog.h"
 #include <KPIMTextEdit/SlideContainer>
 
 #include "job/modifymessagedisplayformatjob.h"
@@ -132,6 +131,7 @@
 #include <QApplication>
 #include <QStandardPaths>
 #include <QWebEngineSettings>
+#include <WebEngineViewer/DeveloperToolDialog>
 #include <WebEngineViewer/TrackingWarningWidget>
 #include <WebEngineViewer/ZoomActionMenu>
 #include <boost/bind.hpp>
@@ -1651,10 +1651,13 @@ void ViewerPrivate::createActions()
 void ViewerPrivate::slotShowDevelopmentTools()
 {
     if (!mDeveloperToolDialog) {
-        mDeveloperToolDialog = new DeveloperToolDialog(nullptr);
+        mDeveloperToolDialog = new WebEngineViewer::DeveloperToolDialog(nullptr);
         mViewer->page()->setDevToolsPage(mDeveloperToolDialog->enginePage());
         mViewer->page()->triggerAction(QWebEnginePage::InspectElement);
-        connect(mDeveloperToolDialog, &DeveloperToolDialog::rejected, mDeveloperToolDialog, &DeveloperToolDialog::deleteLater);
+        connect(mDeveloperToolDialog,
+                &WebEngineViewer::DeveloperToolDialog::rejected,
+                mDeveloperToolDialog,
+                &WebEngineViewer::DeveloperToolDialog::deleteLater);
     }
     if (mDeveloperToolDialog->isHidden()) {
         mDeveloperToolDialog->show();

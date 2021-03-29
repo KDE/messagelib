@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "messageviewer_private_export.h"
+#include "webengineviewer_private_export.h"
 #include <QWidget>
 class QWebEnginePage;
 class QWebEngineView;
-namespace MessageViewer
+namespace WebEngineViewer
 {
-class MESSAGEVIEWER_TESTS_EXPORT DeveloperToolWidget : public QWidget
+class WEBENGINEVIEWER_TESTS_EXPORT DeveloperToolWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -25,4 +25,3 @@ private:
     QWebEnginePage *mEnginePage = nullptr;
 };
 }
-

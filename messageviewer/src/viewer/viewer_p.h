@@ -74,6 +74,7 @@ class FindBarWebEngineView;
 class ZoomActionMenu;
 class LocalDataBaseManager;
 class TrackingWarningWidget;
+class DeveloperToolDialog;
 }
 namespace MessageViewer
 {
@@ -92,7 +93,6 @@ class ViewerPluginToolManager;
 class SubmittedFormWarningWidget;
 class MailSourceWebEngineViewer;
 class ShowNextMessageWidget;
-class DeveloperToolDialog;
 class RemoteContentMenu;
 /**
 \brief Private class for the Viewer, the main widget in the messageviewer library.
@@ -667,7 +667,7 @@ public:
     /** Used only to be able to connect and disconnect finished() signal
       in printMsg() and slotPrintMsg() since mHtmlWriter points only to abstract non-QObject class. */
     QPointer<WebEnginePartHtmlWriter> mPartHtmlWriter;
-    QPointer<DeveloperToolDialog> mDeveloperToolDialog;
+    QPointer<WebEngineViewer::DeveloperToolDialog> mDeveloperToolDialog;
 
     int mLevelQuote;
     bool mDecrytMessageOverwrite = false;

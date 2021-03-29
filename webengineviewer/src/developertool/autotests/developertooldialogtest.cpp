@@ -5,8 +5,8 @@
 */
 
 #include "developertooldialogtest.h"
-#include "widgets/developertooldialog.h"
-#include "widgets/developertoolwidget.h"
+#include "developertool/developertooldialog.h"
+#include "developertool/developertoolwidget.h"
 #include <QDialogButtonBox>
 #include <QStandardPaths>
 #include <QTest>
@@ -20,11 +20,11 @@ DeveloperToolDialogTest::DeveloperToolDialogTest(QObject *parent)
 
 void DeveloperToolDialogTest::shouldHaveDefaultValues()
 {
-    MessageViewer::DeveloperToolDialog d;
+    WebEngineViewer::DeveloperToolDialog d;
     auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 
-    auto mDeveloperToolWidget = d.findChild<MessageViewer::DeveloperToolWidget *>(QStringLiteral("mDeveloperToolWidget"));
+    auto mDeveloperToolWidget = d.findChild<WebEngineViewer::DeveloperToolWidget *>(QStringLiteral("mDeveloperToolWidget"));
     QVERIFY(mDeveloperToolWidget);
 
     auto buttonBox = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));

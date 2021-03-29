@@ -151,8 +151,6 @@ set(libmessageviewer_widgets_SRCS
     widgets/mailsourceviewtextbrowserwidget.cpp
     widgets/submittedformwarningwidget.cpp
     widgets/shownextmessagewidget.cpp
-    widgets/developertooldialog.cpp
-    widgets/developertoolwidget.cpp
     )
 
 
