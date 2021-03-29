@@ -9,6 +9,7 @@
 #include "webengineviewer_export.h"
 #include <QWebEngineScript>
 #include <QWebEngineView>
+#include <WebEngineViewer/BlockTrackingUrlInterceptor>
 namespace WebEngineViewer
 {
 class WebEngineViewPrivate;
@@ -35,6 +36,9 @@ public:
     Q_REQUIRED_RESULT WebEngineManageScript *webEngineManagerScript() const;
 
     Q_REQUIRED_RESULT WebEngineViewer::LocalDataBaseManager *phishingDatabase() const;
+
+Q_SIGNALS:
+    void mailTrackingFound(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &);
 
 protected:
     bool eventFilter(QObject *obj, QEvent *event) override;

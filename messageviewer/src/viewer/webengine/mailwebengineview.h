@@ -83,7 +83,6 @@ Q_SIGNALS:
     void urlBlocked(const QUrl &url);
     void messageMayBeAScam();
     void formSubmittedForbidden();
-    void mailTrackingFound(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &);
     /// Emitted when the user right-clicks somewhere
     void popupMenu(const WebEngineViewer::WebHitTestResult &result);
     void pageIsScrolledToBottom(bool);
