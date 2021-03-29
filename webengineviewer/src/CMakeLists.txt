@@ -10,6 +10,7 @@ if(BUILD_TESTING)
     add_subdirectory(checkphishingurl/autotests/)
     add_subdirectory(checkphishingurl/tests/)
     add_subdirectory(urlinterceptor/blockexternalresourcesurlinterceptor/autotests)
+    add_subdirectory(widgets/tracking/autotests/)
 endif()
 
 
@@ -71,6 +72,11 @@ set(libwebengineviewer_widgets_SRCS
     widgets/zoomactionmenu.cpp
     )
 
+set(libwebengineviewer_tracking_SRCS
+   widgets/tracking/trackingdetailsdialog.cpp
+   widgets/tracking/trackingwarningwidget.cpp
+   )
+
 set(libwebengineviewer_SRCS
     ${libwebengineviewer_checkphishingurl_SRCS}
     ${libwebengineviewer_interceptor_SRCS}
@@ -79,6 +85,7 @@ set(libwebengineviewer_SRCS
     ${libwebengineviewer_widgets_SRCS}
     ${libwebengineviewer_print_SRCS}
     ${libwebengineviewer_accesskey_SRCS}
+    ${libwebengineviewer_tracking_SRCS}
     )
 
 ecm_qt_declare_logging_category(libwebengineviewer_webengine_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer
@@ -102,6 +109,7 @@ target_link_libraries(KF5WebEngineViewer
     PUBLIC
     Qt5::WebEngineWidgets
     KF5::PimCommon
+    KF5::PimTextEdit
     PRIVATE
     KF5::CoreAddons
     KF5::XmlGui
@@ -226,6 +234,15 @@ ecm_generate_headers(WebEngineViewer_Camelblockexternalresourcesurlinterceptor_H
     )
 
 
+ecm_generate_headers(WebEngineViewer_Cameltracking_HEADERS
+    HEADER_NAMES
+    TrackingWarningWidget
+
+    REQUIRED_HEADERS WebEngineViewer_tracking_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE widgets/tracking/
+    )
+
 ecm_generate_pri_file(BASE_NAME WebEngineViewer
     LIB_NAME KF5WebEngineViewer
     DEPS "webenginewidgets PimCommon" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
@@ -233,6 +250,7 @@ ecm_generate_pri_file(BASE_NAME WebEngineViewer
 
 
 install(FILES
+    ${WebEngineViewer_Cameltracking_HEADERS}
     ${WebEngineViewer_Camelblockexternalresourcesurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelloadexternalreferencesurlinterceptor_HEADERS}
     ${WebEngineViewer_Camelblocktrackingurlinterceptor_HEADERS}
@@ -249,6 +267,7 @@ install(FILES
     )
 
 install(FILES
+    ${WebEngineViewer_tracking_HEADERS}
     ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
     ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
     ${WebEngineViewer_blocktrackingurlinterceptor_HEADERS}

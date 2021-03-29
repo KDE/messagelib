@@ -8,7 +8,7 @@
 #include "trackingdetailsdialog.h"
 #include <KLocalizedString>
 
-using namespace MessageViewer;
+using namespace WebEngineViewer;
 TrackingWarningWidget::TrackingWarningWidget(QWidget *parent)
     : KMessageWidget(parent)
 {
@@ -29,7 +29,7 @@ void TrackingWarningWidget::slotShowDetails(const QString &content)
 {
     if (content == QLatin1String("mailtrackingdetails")) {
         if (!mMailTrackingDetailDialog) {
-            mMailTrackingDetailDialog = new MessageViewer::TrackingDetailsDialog;
+            mMailTrackingDetailDialog = new WebEngineViewer::TrackingDetailsDialog;
         }
         mMailTrackingDetailDialog->setDetails(generateDetails());
         mMailTrackingDetailDialog->show();

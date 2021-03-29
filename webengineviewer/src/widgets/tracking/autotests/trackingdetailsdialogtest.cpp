@@ -5,7 +5,7 @@
 */
 
 #include "trackingdetailsdialogtest.h"
-#include "widgets/trackingdetailsdialog.h"
+#include "widgets/tracking/trackingdetailsdialog.h"
 #include <QStandardPaths>
 #include <QTest>
 
@@ -19,5 +19,6 @@ TrackingDetailsDialogTest::TrackingDetailsDialogTest(QObject *parent)
 
 void TrackingDetailsDialogTest::shouldHaveDefaultValue()
 {
-    // TOOD
+    WebEngineViewer::TrackingDetailsDialog d;
+    // TODO
 }

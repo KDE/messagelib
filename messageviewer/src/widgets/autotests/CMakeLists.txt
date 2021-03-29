@@ -8,8 +8,6 @@ macro(add_messageviewer_widget_unittest _source)
     )
 endmacro ()
 
-add_messageviewer_widget_unittest(trackingwarningwidgettest.cpp)
-add_messageviewer_widget_unittest(trackingdetailsdialogtest.cpp)
 add_messageviewer_widget_unittest(shownextmessagewidgettest.cpp)
 add_messageviewer_widget_unittest(developertooldialogtest.cpp)
 add_messageviewer_widget_unittest(developertoolwidgettest.cpp)

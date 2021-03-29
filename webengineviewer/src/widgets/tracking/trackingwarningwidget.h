@@ -8,17 +8,17 @@
 
 #include <KMessageWidget>
 
-#include "messageviewer_private_export.h"
+#include "webengineviewer_export.h"
 
 #include <QMap>
 #include <QPointer>
 
 #include <WebEngineViewer/BlockTrackingUrlInterceptor>
 
-namespace MessageViewer
+namespace WebEngineViewer
 {
 class TrackingDetailsDialog;
-class MESSAGEVIEWER_TESTS_EXPORT TrackingWarningWidget : public KMessageWidget
+class WEBENGINEVIEWER_EXPORT TrackingWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:

@@ -13,7 +13,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-using namespace MessageViewer;
+using namespace WebEngineViewer;
 namespace
 {
 static const char myMailTrackingDetailsDialogConfigGroupName[] = "MailTrackingDetailsDialog";

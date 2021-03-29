@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "messageviewer_private_export.h"
+#include "webengineviewer_export.h"
 #include <QDialog>
 
 namespace KPIMTextEdit
@@ -14,9 +14,9 @@ namespace KPIMTextEdit
 class RichTextEditorWidget;
 }
 
-namespace MessageViewer
+namespace WebEngineViewer
 {
-class MESSAGEVIEWER_TESTS_EXPORT TrackingDetailsDialog : public QDialog
+class WEBENGINEVIEWER_EXPORT TrackingDetailsDialog : public QDialog
 {
     Q_OBJECT
 public:

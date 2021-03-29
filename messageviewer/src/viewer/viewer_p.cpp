@@ -127,12 +127,12 @@
 #include <AkonadiCore/agentmanager.h>
 #include <AkonadiCore/collectionfetchscope.h>
 
-#include "widgets/trackingwarningwidget.h"
 #include <KJobWidgets/KJobWidgets>
 #include <KPIMTextEdit/TextToSpeechWidget>
 #include <QApplication>
 #include <QStandardPaths>
 #include <QWebEngineSettings>
+#include <WebEngineViewer/TrackingWarningWidget>
 #include <WebEngineViewer/ZoomActionMenu>
 #include <boost/bind.hpp>
 #include <header/headerstyleplugin.h>
@@ -929,7 +929,7 @@ void ViewerPrivate::initHtmlWidget()
     connect(mViewer, &MailWebEngineView::wheelZoomChanged, this, &ViewerPrivate::slotWheelZoomChanged);
     connect(mViewer, &MailWebEngineView::messageMayBeAScam, this, &ViewerPrivate::slotMessageMayBeAScam);
     connect(mViewer, &MailWebEngineView::formSubmittedForbidden, mSubmittedFormWarning, &SubmittedFormWarningWidget::showWarning);
-    connect(mViewer, &MailWebEngineView::mailTrackingFound, mMailTrackingWarning, &TrackingWarningWidget::addTracker);
+    connect(mViewer, &MailWebEngineView::mailTrackingFound, mMailTrackingWarning, &WebEngineViewer::TrackingWarningWidget::addTracker);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebEngineView::slotShowDetails);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this, &ViewerPrivate::moveMessageToTrash);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::messageIsNotAScam, this, &ViewerPrivate::slotMessageIsNotAScam);
@@ -1391,7 +1391,7 @@ void ViewerPrivate::createWidgets()
     mSubmittedFormWarning->setObjectName(QStringLiteral("submittedformwarning"));
     readerBoxVBoxLayout->addWidget(mSubmittedFormWarning);
 
-    mMailTrackingWarning = new TrackingWarningWidget(readerBox);
+    mMailTrackingWarning = new WebEngineViewer::TrackingWarningWidget(readerBox);
     mMailTrackingWarning->setObjectName(QStringLiteral("mailtrackingwarning"));
     readerBoxVBoxLayout->addWidget(mMailTrackingWarning);
 

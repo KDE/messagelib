@@ -5,7 +5,7 @@
 */
 
 #include "trackingwarningwidgettest.h"
-#include "widgets/trackingwarningwidget.h"
+#include "widgets/tracking/trackingwarningwidget.h"
 #include <QTest>
 
 QTEST_MAIN(TrackingWarningWidgetTest)
@@ -17,7 +17,7 @@ TrackingWarningWidgetTest::TrackingWarningWidgetTest(QObject *parent)
 
 void TrackingWarningWidgetTest::shouldHaveDefaultValues()
 {
-    MessageViewer::TrackingWarningWidget w;
+    WebEngineViewer::TrackingWarningWidget w;
     QVERIFY(!w.isVisible());
     QVERIFY(!w.isCloseButtonVisible());
     QVERIFY(w.wordWrap());

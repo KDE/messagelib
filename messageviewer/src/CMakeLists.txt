@@ -150,8 +150,6 @@ set(libmessageviewer_widgets_SRCS
     widgets/opensavedfilefolderwidget.cpp
     widgets/mailsourceviewtextbrowserwidget.cpp
     widgets/submittedformwarningwidget.cpp
-    widgets/trackingwarningwidget.cpp
-    widgets/trackingdetailsdialog.cpp
     widgets/shownextmessagewidget.cpp
     widgets/developertooldialog.cpp
     widgets/developertoolwidget.cpp
