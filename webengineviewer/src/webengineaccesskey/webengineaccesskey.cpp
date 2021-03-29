@@ -18,7 +18,8 @@
 #include <QVector>
 #include <QWebEngineView>
 using namespace WebEngineViewer;
-template<typename Arg, typename R, typename C> struct InvokeWrapper {
+template<typename Arg, typename R, typename C>
+struct InvokeWrapperWebAccessKey {
     R *receiver;
     void (C::*memberFunction)(Arg);
     void operator()(Arg result)
@@ -29,9 +30,9 @@ template<typename Arg, typename R, typename C> struct InvokeWrapper {
 
 template<typename Arg, typename R, typename C>
 
-InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
+InvokeWrapperWebAccessKey<Arg, R, C> invokeWebAccessKey(R *receiver, void (C::*memberFunction)(Arg))
 {
-    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFunction};
+    InvokeWrapperWebAccessKey<Arg, R, C> wrapper = {receiver, memberFunction};
     return wrapper;
 }
 
@@ -345,5 +346,5 @@ void WebEngineAccessKey::showAccessKeys()
     d->mAccessKeyActivated = WebEngineAccessKeyPrivate::Activated;
     d->mWebEngine->page()->runJavaScript(WebEngineViewer::WebEngineAccessKeyUtils::script(),
                                          WebEngineManageScript::scriptWordId(),
-                                         invoke(this, &WebEngineAccessKey::handleSearchAccessKey));
+                                         invokeWebAccessKey(this, &WebEngineAccessKey::handleSearchAccessKey));
 }
