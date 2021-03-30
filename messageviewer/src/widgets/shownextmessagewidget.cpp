@@ -12,19 +12,19 @@
 using namespace MessageViewer;
 ShowNextMessageWidget::ShowNextMessageWidget(QWidget *parent)
     : QWidget(parent)
+    , mNextMessage(new QPushButton(i18n("Next Message"), this))
+    , mPreviousMessage(new QPushButton(i18n("Previous Message"), this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
 
-    mPreviousMessage = new QPushButton(i18n("Previous Message"), this);
     mPreviousMessage->setObjectName(QStringLiteral("previous_message"));
     mPreviousMessage->setEnabled(false);
     mainLayout->addWidget(mPreviousMessage);
     connect(mPreviousMessage, &QPushButton::clicked, this, &ShowNextMessageWidget::showPreviousMessage);
 
     mainLayout->addStretch(1);
-    mNextMessage = new QPushButton(i18n("Next Message"), this);
     mNextMessage->setObjectName(QStringLiteral("next_message"));
     mNextMessage->setEnabled(false);
     connect(mNextMessage, &QPushButton::clicked, this, &ShowNextMessageWidget::showNextMessage);

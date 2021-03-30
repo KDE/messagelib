@@ -24,8 +24,8 @@ Q_SIGNALS:
     void showPreviousMessage();
 
 private:
-    QPushButton *mNextMessage = nullptr;
-    QPushButton *mPreviousMessage = nullptr;
+    QPushButton *const mNextMessage;
+    QPushButton *const mPreviousMessage;
 };
 }
 

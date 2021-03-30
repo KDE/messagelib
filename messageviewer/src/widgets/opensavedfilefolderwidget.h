@@ -31,7 +31,7 @@ private:
     void slotTimeOut();
     void slotExplicitlyClosed();
     QList<QUrl> mUrls;
-    QTimer *mTimer = nullptr;
+    QTimer *const mTimer;
     QAction *mShowFolderAction = nullptr;
 };
 }

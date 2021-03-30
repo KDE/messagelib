@@ -37,10 +37,10 @@
 using namespace MessageViewer;
 MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
     : QWidget(parent)
+    , mTextToSpeechWidget(new KPIMTextEdit::TextToSpeechWidget(this))
 {
     auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
-    mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget;
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeech"));
     lay->addWidget(mTextToSpeechWidget);
 

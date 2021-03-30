@@ -21,6 +21,7 @@ using namespace MessageViewer;
 
 AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText, const KService::Ptr &offer, const QString &dontAskAgainName)
     : dontAskName(dontAskAgainName)
+    , dialog(new QDialog(parent))
 {
     text = xi18nc("@info",
                   "Open attachment <filename>%1</filename>?<nl/>"
@@ -28,7 +29,6 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
                   "your system's security.",
                   filenameText);
 
-    dialog = new QDialog(parent);
     dialog->setWindowTitle(i18nc("@title:window", "Open Attachment?"));
     dialog->setObjectName(QStringLiteral("attachmentSaveOpen"));
     mButtonBox = new QDialogButtonBox(QDialogButtonBox::Cancel, dialog);

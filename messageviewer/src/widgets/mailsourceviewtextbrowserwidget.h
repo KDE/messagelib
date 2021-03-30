@@ -50,7 +50,7 @@ private:
     MailSourceViewTextBrowser *mTextBrowser = nullptr;
     FindBarSourceView *mFindBar = nullptr;
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
-    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
+    KPIMTextEdit::TextToSpeechWidget *const mTextToSpeechWidget;
 };
 
 class MailSourceViewTextBrowser : public QPlainTextEdit

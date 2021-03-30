@@ -17,8 +17,8 @@ using namespace MessageViewer;
 
 OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
     : KMessageWidget(parent)
+    , mTimer(new QTimer(this))
 {
-    mTimer = new QTimer(this);
     mTimer->setSingleShot(true);
     mTimer->setInterval(5000); // 5 seconds
     connect(mTimer, &QTimer::timeout, this, &OpenSavedFileFolderWidget::slotTimeOut);
