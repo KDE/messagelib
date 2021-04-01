@@ -20,10 +20,10 @@ static const char myMimePartTreeViewConfigGroupName[] = "MimePartTree";
 }
 MimePartTreeView::MimePartTreeView(QWidget *parent)
     : QTreeView(parent)
+    , mMimePartModel(new MimeTreeModel(this))
 {
     setObjectName(QStringLiteral("mMimePartTree"));
 
-    mMimePartModel = new MimeTreeModel(this);
     setModel(mMimePartModel);
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     setSelectionBehavior(QAbstractItemView::SelectRows);
