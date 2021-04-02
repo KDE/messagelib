@@ -33,6 +33,7 @@ static const char myScamDetectionDetailsDialogConfigGroupName[] = "ScamDetection
 }
 ScamDetectionDetailsDialog::ScamDetectionDetailsDialog(QWidget *parent)
     : QDialog(parent)
+    , mDetails(new KPIMTextEdit::RichTextEditorWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Details"));
     setAttribute(Qt::WA_DeleteOnClose);
@@ -45,7 +46,6 @@ ScamDetectionDetailsDialog::ScamDetectionDetailsDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ScamDetectionDetailsDialog::reject);
     KGuiItem::assign(user1Button, KStandardGuiItem::saveAs());
     setModal(false);
-    mDetails = new KPIMTextEdit::RichTextEditorWidget(this);
     mainLayout->addWidget(mDetails);
     mainLayout->addWidget(buttonBox);
     mDetails->setReadOnly(true);

@@ -29,7 +29,7 @@ private:
     void slotSaveAs();
     void writeConfig();
     void readConfig();
-    KPIMTextEdit::RichTextEditorWidget *mDetails = nullptr;
+    KPIMTextEdit::RichTextEditorWidget *const mDetails;
 };
 }
 
