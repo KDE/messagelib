@@ -332,6 +332,7 @@ target_link_libraries(KF5MessageViewer
     KF5::Contacts
     KF5::Libkleo
     KF5::MimeTreeParser
+    KF5::Service
     PRIVATE
     KF5::SyntaxHighlighting
     KF5::ItemViews
