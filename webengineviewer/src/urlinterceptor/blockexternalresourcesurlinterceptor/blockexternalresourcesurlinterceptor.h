@@ -22,7 +22,11 @@ public:
     // Used by autotest only
     Q_REQUIRED_RESULT bool
     interceptRequest(const QUrl &url, QWebEngineUrlRequestInfo::ResourceType resourceType, QWebEngineUrlRequestInfo::NavigationType navigationType);
+    void setEnabled(bool enabled);
 Q_SIGNALS:
     void formSubmittedForbidden();
+
+private:
+    bool mEnabled = true;
 };
 }

@@ -16,10 +16,18 @@ BlockExternalResourcesUrlInterceptor::~BlockExternalResourcesUrlInterceptor()
 {
 }
 
+void BlockExternalResourcesUrlInterceptor::setEnabled(bool enabled)
+{
+    mEnabled = enabled;
+}
+
 bool BlockExternalResourcesUrlInterceptor::interceptRequest(const QUrl &url,
                                                             QWebEngineUrlRequestInfo::ResourceType resourceType,
                                                             QWebEngineUrlRequestInfo::NavigationType navigationType)
 {
+    if (!mEnabled) {
+        return false;
+    }
     const QString scheme = url.scheme();
     if (scheme == QLatin1String("data") || scheme == QLatin1String("file")) {
         return false;
