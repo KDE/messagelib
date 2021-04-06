@@ -75,6 +75,7 @@ class ZoomActionMenu;
 class LocalDataBaseManager;
 class TrackingWarningWidget;
 class DeveloperToolDialog;
+class SubmittedFormWarningWidget;
 }
 namespace MessageViewer
 {
@@ -90,7 +91,6 @@ class ScamDetectionWarningWidget;
 class MimePartTreeView;
 class HeaderStyleMenuManager;
 class ViewerPluginToolManager;
-class SubmittedFormWarningWidget;
 class MailSourceWebEngineViewer;
 class ShowNextMessageWidget;
 class RemoteContentMenu;
@@ -692,7 +692,7 @@ public:
 
     MessageViewer::ScamDetectionWarningWidget *mScamDetectionWarning = nullptr;
     MessageViewer::OpenSavedFileFolderWidget *mOpenSavedFileFolderWidget = nullptr;
-    MessageViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
+    WebEngineViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
     WebEngineViewer::TrackingWarningWidget *mMailTrackingWarning = nullptr;
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
     Viewer::DisplayFormatMessage mDisplayFormatMessageOverwrite;

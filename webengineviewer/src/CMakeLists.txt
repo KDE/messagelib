@@ -83,8 +83,12 @@ set(libwebengineviewer_developertool_SRCS
     developertool/developertooldialog.cpp
     )
 
+set(libwebengineviewer_submittedform_SRCS
+    widgets/submittedformwidgets/submittedformwarningwidget.cpp
+    )
 
 set(libwebengineviewer_SRCS
+    ${libwebengineviewer_submittedform_SRCS}
     ${libwebengineviewer_developertool_SRCS}
     ${libwebengineviewer_checkphishingurl_SRCS}
     ${libwebengineviewer_interceptor_SRCS}
@@ -260,6 +264,16 @@ ecm_generate_headers(WebEngineViewer_Cameldevelopertool_HEADERS
     RELATIVE developertool/
     )
 
+ecm_generate_headers(WebEngineViewer_Camelsubmittedformwidget_HEADERS
+    HEADER_NAMES
+    SubmittedFormWarningWidget 
+
+    REQUIRED_HEADERS WebEngineViewer_submittedformwidget_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE widgets/submittedformwidgets/
+    )
+
+
 ecm_generate_pri_file(BASE_NAME WebEngineViewer
     LIB_NAME KF5WebEngineViewer
     DEPS "webenginewidgets PimCommon" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
@@ -267,6 +281,7 @@ ecm_generate_pri_file(BASE_NAME WebEngineViewer
 
 
 install(FILES
+    ${WebEngineViewer_Camelsubmittedformwidget_HEADERS}
     ${WebEngineViewer_Cameldevelopertool_HEADERS}
     ${WebEngineViewer_Cameltracking_HEADERS}
     ${WebEngineViewer_Camelblockexternalresourcesurlinterceptor_HEADERS}
@@ -285,6 +300,7 @@ install(FILES
     )
 
 install(FILES
+    ${WebEngineViewer_submittedformwidget_HEADERS}
     ${WebEngineViewer_developertool_HEADERS}
     ${WebEngineViewer_tracking_HEADERS}
     ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}

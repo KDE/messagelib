@@ -104,9 +104,9 @@
 #include "header/headerstylemenumanager.h"
 #include "htmlwriter/webengineparthtmlwriter.h"
 #include "viewer/webengine/mailwebengineview.h"
-#include "widgets/submittedformwarningwidget.h"
 #include <WebEngineViewer/FindBarWebEngineView>
 #include <WebEngineViewer/LocalDataBaseManager>
+#include <WebEngineViewer/SubmittedFormWarningWidget>
 #include <WebEngineViewer/WebEngineExportPdfPageJob>
 #include <WebEngineViewer/WebHitTestResult>
 #include <widgets/mailsourcewebengineviewer.h>
@@ -928,7 +928,7 @@ void ViewerPrivate::initHtmlWidget()
     connect(mViewer, &MailWebEngineView::popupMenu, this, &ViewerPrivate::slotUrlPopup);
     connect(mViewer, &MailWebEngineView::wheelZoomChanged, this, &ViewerPrivate::slotWheelZoomChanged);
     connect(mViewer, &MailWebEngineView::messageMayBeAScam, this, &ViewerPrivate::slotMessageMayBeAScam);
-    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, mSubmittedFormWarning, &SubmittedFormWarningWidget::showWarning);
+    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, mSubmittedFormWarning, &WebEngineViewer::SubmittedFormWarningWidget::showWarning);
     connect(mViewer, &MailWebEngineView::mailTrackingFound, mMailTrackingWarning, &WebEngineViewer::TrackingWarningWidget::addTracker);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebEngineView::slotShowDetails);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this, &ViewerPrivate::moveMessageToTrash);
@@ -1387,7 +1387,7 @@ void ViewerPrivate::createWidgets()
     connect(mShowNextMessageWidget, &ShowNextMessageWidget::showPreviousMessage, this, &ViewerPrivate::showPreviousMessage);
     connect(mShowNextMessageWidget, &ShowNextMessageWidget::showNextMessage, this, &ViewerPrivate::showNextMessage);
 
-    mSubmittedFormWarning = new SubmittedFormWarningWidget(readerBox);
+    mSubmittedFormWarning = new WebEngineViewer::SubmittedFormWarningWidget(readerBox);
     mSubmittedFormWarning->setObjectName(QStringLiteral("submittedformwarning"));
     readerBoxVBoxLayout->addWidget(mSubmittedFormWarning);
 

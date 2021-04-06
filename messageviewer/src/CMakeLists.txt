@@ -149,7 +149,6 @@ set(libmessageviewer_widgets_SRCS
     widgets/invitationsettings.cpp
     widgets/opensavedfilefolderwidget.cpp
     widgets/mailsourceviewtextbrowserwidget.cpp
-    widgets/submittedformwarningwidget.cpp
     widgets/shownextmessagewidget.cpp
     )
 

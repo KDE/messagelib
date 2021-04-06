@@ -9,7 +9,7 @@
 
 #include <KLocalizedString>
 
-using namespace MessageViewer;
+using namespace WebEngineViewer;
 
 SubmittedFormWarningWidget::SubmittedFormWarningWidget(QWidget *parent)
     : KMessageWidget(parent)

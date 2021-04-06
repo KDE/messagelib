@@ -6,13 +6,13 @@
 */
 
 #pragma once
-
+#include "webengineviewer_export.h"
 #include <KMessageWidget>
 
-namespace MessageViewer
+namespace WebEngineViewer
 {
 class SubmittedFormWarningWidgetPrivate;
-class SubmittedFormWarningWidget : public KMessageWidget
+class WEBENGINEVIEWER_EXPORT SubmittedFormWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
@@ -23,4 +23,3 @@ public Q_SLOTS:
     void showWarning();
 };
 }
-
