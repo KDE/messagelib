@@ -85,7 +85,7 @@ MailSourceWebEngineViewer::~MailSourceWebEngineViewer()
 
 void MailSourceWebEngineViewer::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myMailSourceWebEngineViewerConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), myMailSourceWebEngineViewerConfigGroupName);
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -94,7 +94,7 @@ void MailSourceWebEngineViewer::readConfig()
 
 void MailSourceWebEngineViewer::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myMailSourceWebEngineViewerConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), myMailSourceWebEngineViewerConfigGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }

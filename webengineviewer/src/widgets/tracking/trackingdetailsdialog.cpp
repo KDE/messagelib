@@ -48,7 +48,7 @@ TrackingDetailsDialog::~TrackingDetailsDialog()
 
 void TrackingDetailsDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myMailTrackingDetailsDialogConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), myMailTrackingDetailsDialogConfigGroupName);
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -57,7 +57,7 @@ void TrackingDetailsDialog::readConfig()
 
 void TrackingDetailsDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myMailTrackingDetailsDialogConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), myMailTrackingDetailsDialogConfigGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }

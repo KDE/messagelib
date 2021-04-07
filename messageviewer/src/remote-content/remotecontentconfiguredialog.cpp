@@ -50,7 +50,7 @@ void RemoteContentConfigureDialog::slotAccept()
 
 void RemoteContentConfigureDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myRemoteContentConfigureConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), myRemoteContentConfigureConfigGroupName);
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -59,7 +59,7 @@ void RemoteContentConfigureDialog::readConfig()
 
 void RemoteContentConfigureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), myRemoteContentConfigureConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), myRemoteContentConfigureConfigGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }
