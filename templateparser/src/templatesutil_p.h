@@ -8,7 +8,6 @@
 
 #include "templateparser_private_export.h"
 #include <QString>
-class QString;
 #include <QStringList>
 namespace TemplateParser
 {
