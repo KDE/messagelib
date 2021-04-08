@@ -9,8 +9,8 @@ add_executable(scamdetectionwebengine_gui ${scamdetectionwebengine_gui_SRCS})
 target_link_libraries(scamdetectionwebengine_gui
     KF5::KIOCore
     KF5::MessageViewer
-    Qt5::WebEngine
-    Qt5::WebEngineWidgets
+    Qt::WebEngine
+    Qt::WebEngineWidgets
     KF5::I18n
     )
 

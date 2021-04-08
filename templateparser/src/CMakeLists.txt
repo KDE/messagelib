@@ -63,7 +63,7 @@ target_link_libraries(KF5TemplateParser
     KF5::I18n
     KF5::SonnetUi
     KF5::SyntaxHighlighting
-    Qt5::WebEngineWidgets
+    Qt::WebEngineWidgets
     KF5::Libkdepim
     )
 set_target_properties(KF5TemplateParser PROPERTIES

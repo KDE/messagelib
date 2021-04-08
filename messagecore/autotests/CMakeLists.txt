@@ -8,7 +8,7 @@ macro(add_messagecore_test _source )
     add_definitions(-DKDESRCDIR="${CMAKE_CURRENT_SOURCE_DIR}")
     ecm_add_test(${_source}
         NAME_PREFIX "messagecore-"
-        LINK_LIBRARIES Qt5::Test KF5::Libkleo KF5::MessageCore Qt5::Widgets KF5::Archive KF5::Completion KF5::ConfigCore KF5::CoreAddons
+        LINK_LIBRARIES Qt::Test KF5::Libkleo KF5::MessageCore Qt5::Widgets KF5::Archive KF5::Completion KF5::ConfigCore KF5::CoreAddons
     )
 endmacro()
 
@@ -28,8 +28,8 @@ macro( add_messagecore_cryptotest _source )
         KF5::MessageCore
         KF5::MimeTreeParser
         QGpgme
-        Qt5::Test
-        Qt5::Widgets
+        Qt::Test
+        Qt::Widgets
         )
     add_gpg_crypto_test(${_name} messagecore-${_name})
     set_tests_properties(messagecore-${_name} PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent

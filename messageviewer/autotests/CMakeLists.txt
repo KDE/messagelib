@@ -11,7 +11,7 @@ macro(add_messageviewer_unittest _source)
     ecm_add_test(${_source} setupenv.cpp util.cpp
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo QGpgme Qt5::Test KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::WebEngineViewer
+        LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo QGpgme Qt::Test KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::WebEngineViewer
     )
 endmacro ()
 
@@ -20,7 +20,7 @@ macro(add_messageviewer_class_unittest _source _additionalSource)
     ecm_add_test(${_source} ${_additionalSource}
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer Qt5::Test KF5::IconThemes KF5::XmlGui KF5::I18n
+        LINK_LIBRARIES KF5::MessageViewer Qt::Test KF5::IconThemes KF5::XmlGui KF5::I18n
     )
 endmacro ()
 
@@ -32,7 +32,7 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp ${test_libmessageviewer_SRCS}
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES Qt5::Test Qt5::Gui Qt5::Widgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::PimTextEdit KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer KF5::SyntaxHighlighting KF5::I18n KF5::IconThemes
+        LINK_LIBRARIES Qt::Test Qt5::Gui Qt5::Widgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::PimTextEdit KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer KF5::SyntaxHighlighting KF5::I18n KF5::IconThemes
     )
 endmacro ()
 

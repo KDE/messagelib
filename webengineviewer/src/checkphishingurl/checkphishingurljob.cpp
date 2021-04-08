@@ -153,11 +153,7 @@ void CheckPhishingUrlJob::start()
         // https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
 
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-        connect(reply, qOverload<QNetworkReply::NetworkError>(&QNetworkReply::error), this, &CheckPhishingUrlJob::slotError);
-#else
         connect(reply, qOverload<QNetworkReply::NetworkError>(&QNetworkReply::errorOccurred), this, &CheckPhishingUrlJob::slotError);
-#endif
     } else {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl, d->mUrl);
         deleteLater();

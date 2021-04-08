@@ -16,13 +16,13 @@ macro(add_templateparser_unittest _source)
     KF5::TemplateParser
     KF5::MimeTreeParser
     QGpgme
-    Qt5::Test
+    Qt::Test
     KF5::KIOCore
     KF5::Mime
     KF5::IdentityManagement
     KF5::XmlGui
     KF5::IconThemes
-    Qt5::WebEngineWidgets
+    Qt::WebEngineWidgets
   )
   add_gpg_crypto_test(${_name} templateparser-${_name})
 endmacro()

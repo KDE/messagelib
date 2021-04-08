@@ -4,7 +4,7 @@ macro(add_webengineviewer_widget_unittest _source)
     ecm_add_test(${_source}
         TEST_NAME ${_name}
         NAME_PREFIX "webengineviewer-"
-        LINK_LIBRARIES KF5::WebEngineViewer Qt5::Test
+        LINK_LIBRARIES KF5::WebEngineViewer Qt::Test
     )
 endmacro ()
 

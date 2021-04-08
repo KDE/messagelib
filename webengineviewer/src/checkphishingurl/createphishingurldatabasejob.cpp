@@ -76,11 +76,7 @@ void CreatePhishingUrlDataBaseJob::start()
         // '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}'
         // https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-        connect(reply, qOverload<QNetworkReply::NetworkError>(&QNetworkReply::error), this, &CreatePhishingUrlDataBaseJob::slotError);
-#else
         connect(reply, qOverload<QNetworkReply::NetworkError>(&QNetworkReply::errorOccurred), this, &CreatePhishingUrlDataBaseJob::slotError);
-#endif
     }
 }
 

@@ -335,7 +335,7 @@ target_link_libraries(KF5MessageViewer
     PRIVATE
     KF5::SyntaxHighlighting
     KF5::ItemViews
-    Qt5::Network
+    Qt::Network
     KF5::WebEngineViewer
     KF5::GrantleeTheme
     KF5::MailTransportAkonadi
@@ -351,7 +351,7 @@ target_link_libraries(KF5MessageViewer
     KF5::XmlGui
     KF5::AkonadiContact
     Grantlee5::Templates
-    Qt5::PrintSupport
+    Qt::PrintSupport
     QGpgme
     ${Inotify_LIBRARIES}
     ${OPTIONAL_PRIVATE}

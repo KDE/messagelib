@@ -16,7 +16,7 @@ macro( add_messagecomposer_test _source )
             KF5::MessageCore
             KF5::TemplateParser
             KF5::PimTextEdit
-            Qt5::Test
+            Qt::Test
             KF5::IdentityManagement
             KF5::Contacts
             KF5::AkonadiCore
@@ -41,7 +41,7 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::Libkdepim
         KF5::PimTextEdit
         KF5::AkonadiCore
-        Qt5::Test
+        Qt::Test
         QGpgme
         KF5::IconThemes
         KF5::Completion
@@ -104,7 +104,7 @@ if (KDEPIM_RUN_AKONADI_TEST)
     target_link_libraries( keyresolvertest
             KF5::AkonadiCore
             KF5::MessageComposer
-            Qt5::Test
+            Qt::Test
     )
     add_gpg_crypto_akonadi_test(keyresolvertest messagecomposer-keyresolvertest)
     set_tests_properties(akonadi-sqlite-messagecomposer-keyresolvertest PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent
@@ -117,7 +117,7 @@ ecm_add_test(followupreminderselectdatedialogtest.cpp
         KF5::AkonadiWidgets
         KF5::CalendarCore
         KF5::MessageComposer
-        Qt5::Test
+        Qt::Test
 )
 
 ecm_add_test(attachmentvcardfromaddressbookjobtest.cpp
@@ -125,5 +125,5 @@ ecm_add_test(attachmentvcardfromaddressbookjobtest.cpp
     LINK_LIBRARIES
         KF5::Contacts
         KF5::MessageComposer
-        Qt5::Test
+        Qt::Test
 )

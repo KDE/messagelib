@@ -41,13 +41,8 @@ void SendLaterInfoTest::shouldNotValidIfIdIsNotValid()
     info.setRecurrenceEachValue(5);
     info.setRecurrenceUnit(MessageComposer::SendLaterInfo::Years);
     const QDate date(2014, 1, 1);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    info.setDateTime(QDateTime(date));
-    info.setLastDateTimeSend(QDateTime(date));
-#else
     info.setDateTime(QDateTime(date.startOfDay()));
     info.setLastDateTimeSend(QDateTime(date.startOfDay()));
-#endif
     QVERIFY(!info.isValid());
 }
 
@@ -62,11 +57,7 @@ void SendLaterInfoTest::shouldNotValidIfDateIsNotValid()
     info.setRecurrenceEachValue(5);
     info.setRecurrenceUnit(MessageComposer::SendLaterInfo::Years);
     const QDate date(2014, 1, 1);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    info.setLastDateTimeSend(QDateTime(date));
-#else
     info.setLastDateTimeSend(QDateTime(date.startOfDay()));
-#endif
     QVERIFY(!info.isValid());
 }
 
@@ -81,13 +72,8 @@ void SendLaterInfoTest::shouldCopyInfo()
     info.setRecurrenceEachValue(5);
     info.setRecurrenceUnit(MessageComposer::SendLaterInfo::Years);
     const QDate date(2014, 1, 1);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    info.setDateTime(QDateTime(date));
-    info.setLastDateTimeSend(QDateTime(date));
-#else
     info.setDateTime(QDateTime(date.startOfDay()));
     info.setLastDateTimeSend(QDateTime(date.startOfDay()));
-#endif
     MessageComposer::SendLaterInfo copyInfo(info);
     QCOMPARE(info, copyInfo);
 }

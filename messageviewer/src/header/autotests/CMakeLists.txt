@@ -10,7 +10,7 @@ ecm_add_test(grantleeheaderstyletest.cpp
         KF5::IconThemes
         KF5::MessageViewer
         KF5::Mime
-        Qt5::Test
+        Qt::Test
 )
 
 ecm_add_test(grantleeheaderformattertest.cpp
@@ -22,7 +22,7 @@ ecm_add_test(grantleeheaderformattertest.cpp
         KF5::IconThemes
         KF5::MessageViewer
         KF5::Mime
-        Qt5::Test
+        Qt::Test
 )
 
 set_tests_properties(
