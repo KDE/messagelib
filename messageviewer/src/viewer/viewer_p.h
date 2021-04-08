@@ -637,7 +637,7 @@ public:
     bool mUseFixedFont = false;
     bool mPrinting = false;
     QWidget *mMainWindow = nullptr;
-    KActionCollection *mActionCollection = nullptr;
+    KActionCollection *const mActionCollection;
     QAction *mCopyAction = nullptr;
     QAction *mCopyURLAction = nullptr;
     QAction *mUrlOpenAction = nullptr;
