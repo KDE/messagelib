@@ -23,6 +23,6 @@ public:
 private:
     void readConfig();
     void writeConfig();
-    DeveloperToolWidget *mDeveloperToolWidget = nullptr;
+    DeveloperToolWidget *const mDeveloperToolWidget;
 };
 }

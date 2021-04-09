@@ -12,12 +12,12 @@
 using namespace WebEngineViewer;
 DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     : QWidget(parent)
+    , mWebEngineView(new QWebEngineView(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    mWebEngineView = new QWebEngineView(this);
     mWebEngineView->setObjectName(QStringLiteral("mWebEngineView"));
     mainLayout->addWidget(mWebEngineView);
     mEnginePage = new QWebEnginePage(this);

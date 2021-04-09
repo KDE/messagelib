@@ -20,6 +20,7 @@ static const char myMailTrackingDetailsDialogConfigGroupName[] = "MailTrackingDe
 }
 TrackingDetailsDialog::TrackingDetailsDialog(QWidget *parent)
     : QDialog(parent)
+    , mDetails(new KPIMTextEdit::RichTextEditorWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Details"));
     setAttribute(Qt::WA_DeleteOnClose);
@@ -33,7 +34,6 @@ TrackingDetailsDialog::TrackingDetailsDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::rejected, this, &TrackingDetailsDialog::reject);
     connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &TrackingDetailsDialog::close);
 
-    mDetails = new KPIMTextEdit::RichTextEditorWidget(this);
     mDetails->setObjectName(QStringLiteral("detail"));
     mainLayout->addWidget(mDetails);
     mainLayout->addWidget(buttonBox);

@@ -18,11 +18,11 @@ static const char myDeveloperToolDialogConfigGroupName[] = "DeveloperToolDialog"
 using namespace WebEngineViewer;
 DeveloperToolDialog::DeveloperToolDialog(QWidget *parent)
     : QDialog(parent)
+    , mDeveloperToolWidget(new DeveloperToolWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
-    mDeveloperToolWidget = new DeveloperToolWidget(this);
     mDeveloperToolWidget->setObjectName(QStringLiteral("mDeveloperToolWidget"));
     mainLayout->addWidget(mDeveloperToolWidget);
 

@@ -11,11 +11,11 @@
 using namespace TemplateParser;
 TemplateParserEmailAddressRequesterLineEdit::TemplateParserEmailAddressRequesterLineEdit(QWidget *parent)
     : TemplateParser::TemplateParserEmailAddressRequesterBase(parent)
+    , mLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
-    mLineEdit = new QLineEdit(this);
     mLineEdit->setObjectName(QStringLiteral("lineedit"));
     mainLayout->addWidget(mLineEdit);
     connect(mLineEdit, &QLineEdit::textChanged, this, &TemplateParserEmailAddressRequesterLineEdit::textChanged);

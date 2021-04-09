@@ -23,6 +23,6 @@ public:
     void clear() override;
 
 private:
-    QLineEdit *mLineEdit = nullptr;
+    QLineEdit *const mLineEdit;
 };
 }

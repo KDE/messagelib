@@ -13,18 +13,18 @@ using namespace WebEngineViewer;
 class WebEngineViewer::FindBarWebEngineViewPrivate
 {
 public:
-    FindBarWebEngineViewPrivate()
+    FindBarWebEngineViewPrivate(QWebEngineView *view)
+        : mView(view)
     {
     }
 
-    QWebEngineView *mView = nullptr;
+    QWebEngineView *const mView;
 };
 
 FindBarWebEngineView::FindBarWebEngineView(QWebEngineView *view, QWidget *parent)
     : FindBarBase(parent)
-    , d(new WebEngineViewer::FindBarWebEngineViewPrivate)
+    , d(new WebEngineViewer::FindBarWebEngineViewPrivate(view))
 {
-    d->mView = view;
 }
 
 FindBarWebEngineView::~FindBarWebEngineView()

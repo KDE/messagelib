@@ -21,7 +21,7 @@ public:
     QWebEnginePage *enginePage() const;
 
 private:
-    QWebEngineView *mWebEngineView = nullptr;
+    QWebEngineView *const mWebEngineView;
     QWebEnginePage *mEnginePage = nullptr;
 };
 }
