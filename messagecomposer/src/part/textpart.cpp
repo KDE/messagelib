@@ -41,7 +41,11 @@ bool TextPart::isWordWrappingEnabled() const
 
 void TextPart::setWordWrappingEnabled(bool enabled)
 {
+    if (d->wordWrappingEnabled == enabled) {
+        return;
+    }
     d->wordWrappingEnabled = enabled;
+    Q_EMIT wordWrappingChanged();
 }
 
 bool TextPart::warnBadCharset() const
@@ -51,7 +55,11 @@ bool TextPart::warnBadCharset() const
 
 void TextPart::setWarnBadCharset(bool warn)
 {
+    if (d->warnBadCharset == warn) {
+        return;
+    }
     d->warnBadCharset = warn;
+    Q_EMIT warnBadCharsetChanged();
 }
 
 QString TextPart::cleanPlainText() const
@@ -61,7 +69,11 @@ QString TextPart::cleanPlainText() const
 
 void TextPart::setCleanPlainText(const QString &text)
 {
+    if (d->cleanPlainText == text) {
+        return;
+    }
     d->cleanPlainText = text;
+    Q_EMIT cleanPlainTextChanged();
 }
 
 QString TextPart::wrappedPlainText() const
@@ -71,7 +83,11 @@ QString TextPart::wrappedPlainText() const
 
 void TextPart::setWrappedPlainText(const QString &text)
 {
+    if (d->wrappedPlainText == text) {
+        return;
+    }
     d->wrappedPlainText = text;
+    Q_EMIT wrappedPlainTextChanged();
 }
 
 bool TextPart::isHtmlUsed() const
@@ -86,7 +102,11 @@ QString TextPart::cleanHtml() const
 
 void TextPart::setCleanHtml(const QString &text)
 {
+    if (d->cleanHtml == text) {
+        return;
+    }
     d->cleanHtml = text;
+    Q_EMIT cleanHtmlChanged();
 }
 
 bool TextPart::hasEmbeddedImages() const

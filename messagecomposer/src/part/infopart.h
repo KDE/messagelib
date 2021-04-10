@@ -15,11 +15,42 @@
 namespace MessageComposer
 {
 /**
- * @brief The InfoPart class
+ * @brief The InfoPart class contains the message header.
  */
 class MESSAGECOMPOSER_EXPORT InfoPart : public MessageComposer::MessagePart
 {
     Q_OBJECT
+
+    /// The email address and optionally the name of the author of the mail.
+    Q_PROPERTY(QString from READ from WRITE setFrom NOTIFY fromChanged)
+
+    /// The email address and optionally the name of the primary recipients.
+    Q_PROPERTY(QStringList to READ to WRITE setTo NOTIFY toChanged)
+
+    /// Carbon copy: The email address and optionally the name of the secondary recipients.
+    Q_PROPERTY(QStringList cc READ cc WRITE setCc NOTIFY ccChanged)
+
+    /// Blind Carbon copy: The email address and optionally the name of the secondary recipients.
+    /// Only specified during SMTP delivery but not in the final mail delivery.
+    Q_PROPERTY(QStringList bcc READ bcc WRITE setBcc NOTIFY bccChanged)
+
+    /// Reply-To: Email address that should be used to reply to this mail.
+    Q_PROPERTY(QStringList replyTo READ replyTo WRITE setReplyTo NOTIFY replyToChanged)
+
+    /// Subject of the message.
+    Q_PROPERTY(QString subject READ subject WRITE setSubject NOTIFY subjectChanged)
+
+    /// The name of a file, to which a copy of the sent message should be appended.
+    Q_PROPERTY(QString fcc READ fcc WRITE setFcc NOTIFY fccChanged)
+
+    /// User agent of the sender.
+    Q_PROPERTY(QString userAgent READ userAgent WRITE setUserAgent NOTIFY userAgentChanged)
+
+    /// Set urgency of the message.
+    Q_PROPERTY(bool urgent READ urgent WRITE setUrgent NOTIFY urgentChanged)
+
+    /// In-Reply-To: Id of the message this message is a reply to.
+    Q_PROPERTY(QString inReplyTo READ inReplyTo WRITE setInReplyTo NOTIFY inReplyToChanged)
 
 public:
     explicit InfoPart(QObject *parent = nullptr);
@@ -60,6 +91,18 @@ public:
 
     Q_REQUIRED_RESULT int transportId() const;
     void setTransportId(int tid);
+
+Q_SIGNALS:
+    void toChanged();
+    void fromChanged();
+    void ccChanged();
+    void bccChanged();
+    void replyToChanged();
+    void subjectChanged();
+    void urgentChanged();
+    void userAgentChanged();
+    void inReplyToChanged();
+    void fccChanged();
 
 private:
     class Private;

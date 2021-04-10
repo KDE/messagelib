@@ -48,7 +48,11 @@ QString InfoPart::from() const
 
 void InfoPart::setFrom(const QString &from)
 {
+    if (d->from == from) {
+        return;
+    }
     d->from = from;
+    Q_EMIT fromChanged();
 }
 
 QStringList InfoPart::to() const
@@ -58,7 +62,11 @@ QStringList InfoPart::to() const
 
 void InfoPart::setTo(const QStringList &to)
 {
+    if (d->to == to) {
+        return;
+    }
     d->to = to;
+    Q_EMIT toChanged();
 }
 
 QStringList InfoPart::cc() const
@@ -68,7 +76,11 @@ QStringList InfoPart::cc() const
 
 void InfoPart::setCc(const QStringList &cc)
 {
+    if (d->cc == cc) {
+        return;
+    }
     d->cc = cc;
+    Q_EMIT ccChanged();
 }
 
 QStringList InfoPart::bcc() const
@@ -78,7 +90,11 @@ QStringList InfoPart::bcc() const
 
 void InfoPart::setBcc(const QStringList &bcc)
 {
+    if (d->bcc == bcc) {
+        return;
+    }
     d->bcc = bcc;
+    Q_EMIT bccChanged();
 }
 
 QString InfoPart::subject() const
@@ -88,7 +104,11 @@ QString InfoPart::subject() const
 
 void InfoPart::setSubject(const QString &subject)
 {
+    if (d->subject == subject) {
+        return;
+    }
     d->subject = subject;
+    Q_EMIT subjectChanged();
 }
 
 QStringList InfoPart::replyTo() const
@@ -98,7 +118,11 @@ QStringList InfoPart::replyTo() const
 
 void InfoPart::setReplyTo(const QStringList &replyTo)
 {
+    if (d->replyTo == replyTo) {
+        return;
+    }
     d->replyTo = replyTo;
+    Q_EMIT replyToChanged();
 }
 
 int InfoPart::transportId() const
@@ -113,7 +137,11 @@ void InfoPart::setTransportId(int tid)
 
 void InfoPart::setFcc(const QString &fcc)
 {
+    if (d->fcc == fcc) {
+        return;
+    }
     d->fcc = fcc;
+    Q_EMIT fccChanged();
 }
 
 QString InfoPart::fcc() const
@@ -128,7 +156,11 @@ bool InfoPart::urgent() const
 
 void InfoPart::setUrgent(bool urgent)
 {
+    if (d->urgent == urgent) {
+        return;
+    }
     d->urgent = urgent;
+    Q_EMIT urgentChanged();
 }
 
 QString InfoPart::inReplyTo() const
@@ -138,7 +170,11 @@ QString InfoPart::inReplyTo() const
 
 void InfoPart::setInReplyTo(const QString &inReplyTo)
 {
+    if (d->inReplyTo == inReplyTo) {
+        return;
+    }
     d->inReplyTo = inReplyTo;
+    Q_EMIT inReplyToChanged();
 }
 
 QString InfoPart::references() const
@@ -168,5 +204,9 @@ QString InfoPart::userAgent() const
 
 void InfoPart::setUserAgent(const QString &userAgent)
 {
+    if (d->userAgent == userAgent) {
+        return;
+    }
     d->userAgent = userAgent;
+    Q_EMIT userAgentChanged();
 }
