@@ -86,7 +86,7 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::BccName);
         });
 
-        mMenu->addMenu(ccMenuVariable);
+        mMenu->addMenu(bccMenuVariable);
 
         auto attachmentMenuVariable = new QMenu(i18n("Attachment"), mMenu);
         attachmentMenuVariable->addAction(i18n("Number Of Attachments"), this, [this]() {
