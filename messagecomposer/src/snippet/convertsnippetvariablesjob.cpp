@@ -134,6 +134,22 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                     i += strlen("CCNAME");
                     const QString str = getNameFromEmail(composerView->cc());
                     result.append(str);
+                } else if (cmd.startsWith(QLatin1String("BCCADDR"))) {
+                    i += strlen("BCCADDR");
+                    const QString str = composerView->bcc();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("BCCFNAME"))) {
+                    i += strlen("BCCFNAME");
+                    const QString str = getFirstNameFromEmail(composerView->bcc());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("BCCLNAME"))) {
+                    i += strlen("BCCLNAME");
+                    const QString str = getLastNameFromEmail(composerView->bcc());
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1String("BCCNAME"))) {
+                    i += strlen("BCCNAME");
+                    const QString str = getNameFromEmail(composerView->bcc());
+                    result.append(str);
                 } else if (cmd.startsWith(QLatin1String("FULLSUBJECT"))) {
                     i += strlen("FULLSUBJECT");
                     const QString str = composerView->subject();

@@ -43,6 +43,14 @@ QString ComposerViewInterface::cc() const
     return {};
 }
 
+QString ComposerViewInterface::bcc() const
+{
+    if (mComposerView) {
+        return mComposerView->bcc();
+    }
+    return {};
+}
+
 QString ComposerViewInterface::from() const
 {
     if (mComposerView) {
