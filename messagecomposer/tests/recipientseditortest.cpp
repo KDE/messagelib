@@ -25,6 +25,7 @@ using namespace MessageComposer;
 
 Composer::Composer(QWidget *parent)
     : QWidget(parent)
+    , mRecipients(new RecipientsEditor(this))
 {
     auto topLayout = new QGridLayout(this);
     topLayout->setContentsMargins(4, 4, 4, 4);
@@ -35,7 +36,6 @@ Composer::Composer(QWidget *parent)
     auto edit = new QLineEdit(this);
     topLayout->addWidget(edit, 0, 1);
 
-    mRecipients = new RecipientsEditor(this);
     topLayout->addWidget(mRecipients, 1, 0, 1, 2);
 
     qDebug() << "SIZEHINT:" << mRecipients->sizeHint();

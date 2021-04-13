@@ -18,12 +18,12 @@ class Composer : public QWidget
 {
     Q_OBJECT
 public:
-    Composer(QWidget *parent);
+    explicit Composer(QWidget *parent);
 
 public Q_SLOTS:
     void slotClose();
 
 private:
-    MessageComposer::RecipientsEditor *mRecipients = nullptr;
+    MessageComposer::RecipientsEditor *const mRecipients;
 };
 

@@ -24,7 +24,7 @@ protected:
     Q_REQUIRED_RESULT QString getErrorString(Error error, const QString &detail) const override;
 
 private:
-    Akonadi::Item::Id mItem;
+    const Akonadi::Item::Id mItem;
 };
 }
 

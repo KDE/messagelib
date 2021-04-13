@@ -9,8 +9,6 @@
 #include <QDateTime>
 #include <QWidget>
 
-#include <memory>
-
 class KTimeComboBox;
 class KDateComboBox;
 
@@ -33,8 +31,8 @@ Q_SIGNALS:
 
 private:
     void slotDateTimeChanged();
-    std::unique_ptr<KTimeComboBox> mTimeComboBox;
-    std::unique_ptr<KDateComboBox> mDateComboBox;
+    KTimeComboBox *const mTimeComboBox;
+    KDateComboBox *const mDateComboBox;
 };
 }
 

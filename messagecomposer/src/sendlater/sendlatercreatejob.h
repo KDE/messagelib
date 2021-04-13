@@ -24,7 +24,7 @@ protected:
     Q_REQUIRED_RESULT QString getErrorString(SendLaterJob::Error code, const QString &detail) const override;
 
 private:
-    SendLaterInfo mInfo;
+    const SendLaterInfo mInfo;
 };
 }
 
