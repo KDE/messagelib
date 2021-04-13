@@ -23,6 +23,7 @@ using namespace MessageComposer;
 SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
     : QDialog(parent)
     , mInfo(info)
+    , mSendLaterWidget(new Ui::SendLaterWidget)
 {
     setWindowTitle(i18nc("@title:window", "Send Later"));
     setWindowIcon(QIcon::fromTheme(QStringLiteral("kmail")));
@@ -30,7 +31,6 @@ SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
     auto mainLayout = new QVBoxLayout(this);
 
     auto sendLaterWidget = new QWidget(this);
-    mSendLaterWidget = new Ui::SendLaterWidget;
     mSendLaterWidget->setupUi(sendLaterWidget);
 
     auto w = new QWidget(this);
