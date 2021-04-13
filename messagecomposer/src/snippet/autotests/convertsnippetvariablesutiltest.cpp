@@ -25,6 +25,16 @@ void ConvertSnippetVariablesUtilTest::shouldTranslateVariables()
              QStringLiteral("%CCFNAME"));
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::CcName),
              QStringLiteral("%CCNAME"));
+
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::BccAddr),
+             QStringLiteral("%BCCADDR"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::BccLname),
+             QStringLiteral("%BCCLNAME"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::BccFname),
+             QStringLiteral("%BCCFNAME"));
+    QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::BccName),
+             QStringLiteral("%BCCNAME"));
+
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::FullSubject),
              QStringLiteral("%FULLSUBJECT"));
     QCOMPARE(MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::ToAddr),

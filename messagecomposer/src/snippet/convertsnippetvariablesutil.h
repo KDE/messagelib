@@ -17,6 +17,11 @@ enum VariableType {
     CcLname,
     CcFname,
     CcName,
+    BccAddr,
+    BccLname,
+    BccFname,
+    BccName,
+
     FullSubject,
     ToAddr,
     ToFname,

@@ -20,6 +20,14 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
         return QStringLiteral("%CCFNAME");
     case CcName:
         return QStringLiteral("%CCNAME");
+    case BccAddr:
+        return QStringLiteral("%BCCADDR");
+    case BccLname:
+        return QStringLiteral("%BCCLNAME");
+    case BccFname:
+        return QStringLiteral("%BCCFNAME");
+    case BccName:
+        return QStringLiteral("%BCCNAME");
     case FullSubject:
         return QStringLiteral("%FULLSUBJECT");
     case ToAddr:

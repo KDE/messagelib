@@ -72,6 +72,22 @@ void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachm
 
         mMenu->addMenu(ccMenuVariable);
 
+        auto bccMenuVariable = new QMenu(i18n("Bcc"), mMenu);
+        bccMenuVariable->addAction(i18n("BCC Field Address"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::BccAddr);
+        });
+        bccMenuVariable->addAction(i18n("BCC Field Last Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::BccLname);
+        });
+        bccMenuVariable->addAction(i18n("BCC Field First Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::BccFname);
+        });
+        bccMenuVariable->addAction(i18n("BCC Field Name"), this, [this]() {
+            Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::BccName);
+        });
+
+        mMenu->addMenu(ccMenuVariable);
+
         auto attachmentMenuVariable = new QMenu(i18n("Attachment"), mMenu);
         attachmentMenuVariable->addAction(i18n("Number Of Attachments"), this, [this]() {
             Q_EMIT insertVariable(MessageComposer::ConvertSnippetVariablesUtil::AttachmentCount);
