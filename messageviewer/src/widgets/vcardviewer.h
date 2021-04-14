@@ -32,9 +32,9 @@ private:
 
     KContacts::Addressee::List mAddresseeList;
     int mAddresseeListIndex = 0;
-    KAddressBookGrantlee::GrantleeContactViewer *mContactViewer = nullptr;
-    QPushButton *mUser2Button = nullptr;
-    QPushButton *mUser3Button = nullptr;
+    KAddressBookGrantlee::GrantleeContactViewer *const mContactViewer;
+    QPushButton *const mUser2Button;
+    QPushButton *const mUser3Button;
 };
 }
 

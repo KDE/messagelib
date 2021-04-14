@@ -18,6 +18,7 @@ using namespace MessageViewer;
 OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
     : KMessageWidget(parent)
     , mTimer(new QTimer(this))
+    , mShowFolderAction(new QAction(i18nc("@action", "Open folder where attachment was saved"), this))
 {
     mTimer->setSingleShot(true);
     mTimer->setInterval(5000); // 5 seconds
@@ -31,7 +32,6 @@ OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
         connect(action, &QAction::triggered, this, &OpenSavedFileFolderWidget::slotExplicitlyClosed);
     }
 
-    mShowFolderAction = new QAction(i18nc("@action", "Open folder where attachment was saved"), this);
     connect(mShowFolderAction, &QAction::triggered, this, &OpenSavedFileFolderWidget::slotOpenSavedFileFolder);
     addAction(mShowFolderAction);
 }

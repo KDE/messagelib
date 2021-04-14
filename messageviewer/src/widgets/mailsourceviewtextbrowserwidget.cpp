@@ -37,6 +37,7 @@
 using namespace MessageViewer;
 MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
     : QWidget(parent)
+    , mSliderContainer(new KPIMTextEdit::SlideContainer(this))
     , mTextToSpeechWidget(new KPIMTextEdit::TextToSpeechWidget(this))
 {
     auto lay = new QVBoxLayout(this);
@@ -63,7 +64,6 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
 
     connect(mTextBrowser, &MailSourceViewTextBrowser::findText, this, &MailSourceViewTextBrowserWidget::slotFind);
     lay->addWidget(mTextBrowser);
-    mSliderContainer = new KPIMTextEdit::SlideContainer(this);
 
     mFindBar = new FindBarSourceView(mTextBrowser, this);
     mFindBar->setObjectName(QStringLiteral("findbar"));

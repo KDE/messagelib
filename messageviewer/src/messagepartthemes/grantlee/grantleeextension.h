@@ -25,7 +25,7 @@ public:
     void render(Grantlee::OutputStream *stream, Grantlee::Context *context) const override;
 
 private:
-    QString m_name;
+    const QString m_name;
 };
 
 class CallbackTagFactory : public Grantlee::AbstractNodeFactory

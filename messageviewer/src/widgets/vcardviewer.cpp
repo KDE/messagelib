@@ -30,14 +30,15 @@ static const char myVCardViewerConfigGroupName[] = "VCardViewer";
 }
 VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
     : QDialog(parent)
+    , mContactViewer(new KAddressBookGrantlee::GrantleeContactViewer(this))
+    , mUser2Button(new QPushButton)
+    , mUser3Button(new QPushButton)
 {
     setWindowTitle(i18nc("@title:window", "vCard Viewer"));
     auto mainLayout = new QVBoxLayout(this);
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     auto user1Button = new QPushButton;
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
-    mUser2Button = new QPushButton;
-    mUser3Button = new QPushButton;
     buttonBox->addButton(mUser3Button, QDialogButtonBox::ActionRole);
     buttonBox->addButton(mUser2Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &VCardViewer::reject);
@@ -48,7 +49,6 @@ VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
     KGuiItem::assign(mUser2Button, KGuiItem(i18n("&Next Card")));
     KGuiItem::assign(mUser3Button, KGuiItem(i18n("&Previous Card")));
 
-    mContactViewer = new KAddressBookGrantlee::GrantleeContactViewer(this);
     auto actions = new Akonadi::ContactDefaultActions(this);
     actions->connectToView(mContactViewer);
 

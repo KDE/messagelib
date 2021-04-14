@@ -116,18 +116,18 @@ protected:
     QString imgHideUrl;
 
 private:
-    QString quoteCssDefinition() const;
+    Q_REQUIRED_RESULT QString quoteCssDefinition() const;
     int fontSize(bool fixed, bool print = false) const;
     // returns CSS rules specific to the print media type
-    QString printCssDefinitions(bool fixed) const;
+    Q_REQUIRED_RESULT QString printCssDefinitions(bool fixed) const;
     // returns CSS rules specific to the screen media type
-    QString screenCssDefinitions(const CSSHelperBase *helper, bool fixed) const;
+    Q_REQUIRED_RESULT QString screenCssDefinitions(const CSSHelperBase *helper, bool fixed) const;
     // returns CSS rules common to both screen and print media types
-    QString commonCssDefinitions() const;
-    QString fullAddressList() const;
-    QString linkColorDefinition() const;
-    QString defaultScreenHeaderFont() const;
-    QString defaultPrintHeaderFont() const;
+    Q_REQUIRED_RESULT QString commonCssDefinitions() const;
+    Q_REQUIRED_RESULT QString fullAddressList() const;
+    Q_REQUIRED_RESULT QString linkColorDefinition() const;
+    Q_REQUIRED_RESULT QString defaultScreenHeaderFont() const;
+    Q_REQUIRED_RESULT QString defaultPrintHeaderFont() const;
 
     const QPaintDevice *mPaintDevice = nullptr;
     const HeaderStylePlugin *mHeaderPlugin = nullptr;

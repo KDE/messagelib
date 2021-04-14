@@ -49,7 +49,7 @@ private:
     KSyntaxHighlighting::Repository mRepo;
     MailSourceViewTextBrowser *mTextBrowser = nullptr;
     FindBarSourceView *mFindBar = nullptr;
-    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    KPIMTextEdit::SlideContainer *const mSliderContainer;
     KPIMTextEdit::TextToSpeechWidget *const mTextToSpeechWidget;
 };
 
