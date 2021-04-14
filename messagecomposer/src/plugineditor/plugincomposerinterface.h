@@ -38,6 +38,8 @@ public:
     Q_REQUIRED_RESULT QString convertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const;
     Q_REQUIRED_RESULT QString convertText(const QString &str) const;
 
+    Q_REQUIRED_RESULT QString variableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type) const;
+
 private:
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };
