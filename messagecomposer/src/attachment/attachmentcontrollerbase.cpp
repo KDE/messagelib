@@ -118,24 +118,6 @@ AttachmentControllerBase::Private::~Private()
 {
 }
 
-void AttachmentControllerBase::Private::editSelectedAttachment()
-{
-    Q_ASSERT(selectedParts.count() == 1);
-    static_cast<AttachmentControllerBase *>(q)->editAttachment(selectedParts.constFirst(), MessageViewer::EditorWatcher::NoOpenWithDialog);
-}
-
-void AttachmentControllerBase::Private::editSelectedAttachmentWith()
-{
-    Q_ASSERT(selectedParts.count() == 1);
-    static_cast<AttachmentControllerBase *>(q)->editAttachment(selectedParts.constFirst(), MessageViewer::EditorWatcher::OpenWithDialog);
-}
-
-void AttachmentControllerBase::Private::saveSelectedAttachmentAs()
-{
-    Q_ASSERT(selectedParts.count() == 1);
-    static_cast<AttachmentControllerBase *>(q)->saveAttachmentAs(selectedParts.constFirst());
-}
-
 void AttachmentControllerBase::setSelectedParts(const AttachmentPart::List &selectedParts)
 {
     AbstractAttachmentControllerBase::setSelectedParts(selectedParts);
@@ -152,6 +134,24 @@ void AttachmentControllerBase::setSelectedParts(const AttachmentPart::List &sele
     d->saveAsContextAction->setEnabled(selectedCount == 1);
     d->propertiesAction->setEnabled(selectedCount == 1);
     d->propertiesContextAction->setEnabled(selectedCount == 1);
+}
+
+void AttachmentControllerBase::Private::editSelectedAttachment()
+{
+    Q_ASSERT(selectedParts.count() == 1);
+    static_cast<AttachmentControllerBase *>(q)->editAttachment(selectedParts.constFirst(), MessageViewer::EditorWatcher::NoOpenWithDialog);
+}
+
+void AttachmentControllerBase::Private::editSelectedAttachmentWith()
+{
+    Q_ASSERT(selectedParts.count() == 1);
+    static_cast<AttachmentControllerBase *>(q)->editAttachment(selectedParts.constFirst(), MessageViewer::EditorWatcher::OpenWithDialog);
+}
+
+void AttachmentControllerBase::Private::saveSelectedAttachmentAs()
+{
+    Q_ASSERT(selectedParts.count() == 1);
+    static_cast<AttachmentControllerBase *>(q)->saveAttachmentAs(selectedParts.constFirst());
 }
 
 void AttachmentControllerBase::Private::editDone(MessageViewer::EditorWatcher *watcher)
