@@ -14,6 +14,7 @@
 
 #include <QUrl>
 
+#include "abstractattachmentcontrollerbase.h"
 #include "messagecomposer_export.h"
 #include <KJob>
 #include <KService>
@@ -29,7 +30,7 @@ class AttachmentModel;
 /**
  * @brief The AttachmentControllerBase class
  */
-class MESSAGECOMPOSER_EXPORT AttachmentControllerBase : public QObject
+class MESSAGECOMPOSER_EXPORT AttachmentControllerBase : public AbstractAttachmentControllerBase
 {
     Q_OBJECT
 
@@ -48,14 +49,9 @@ public:
     void setIdentityHasOwnVcard(bool state);
 
 public Q_SLOTS:
-    /// model sets these
-    void setEncryptEnabled(bool enabled);
-    void setSignEnabled(bool enabled);
     /// compression is async...
-    void compressAttachment(const MessageCore::AttachmentPart::Ptr &part, bool compress);
     void showContextMenu();
     void openAttachment(const MessageCore::AttachmentPart::Ptr &part);
-    void viewAttachment(const MessageCore::AttachmentPart::Ptr &part);
     void editAttachment(MessageCore::AttachmentPart::Ptr part,
                         MessageViewer::EditorWatcher::OpenWithOption option = MessageViewer::EditorWatcher::NoOpenWithDialog);
     void editAttachmentWith(const MessageCore::AttachmentPart::Ptr &part);
@@ -64,14 +60,9 @@ public Q_SLOTS:
     void showAddAttachmentFileDialog();
     void showAddAttachmentCompressedDirectoryDialog();
     /// sets sign, encrypt, shows properties dialog if so configured
-    void addAttachment(const MessageCore::AttachmentPart::Ptr &part);
-    void addAttachment(const QUrl &url);
-    void addAttachmentUrlSync(const QUrl &url);
-    void addAttachments(const QList<QUrl> &urls);
     void showAttachPublicKeyDialog();
     void showAttachVcard();
     void showAttachClipBoard();
-    virtual void attachMyPublicKey();
 
 Q_SIGNALS:
     void actionsCreated();
@@ -82,16 +73,16 @@ Q_SIGNALS:
     void fileAttached();
 
 protected:
-    void exportPublicKey(const QString &fingerprint);
     void enableAttachPublicKey(bool enable);
     void enableAttachMyPublicKey(bool enable);
     void byteArrayToRemoteFile(const QByteArray &aData, const QUrl &aURL, bool overwrite = false);
+
+    /// Override default implentation and add UI delegate to the job handling.
     void openWith(const KService::Ptr &offer = KService::Ptr());
 
 private:
     void attachDirectory(const QUrl &url);
     void slotPutResult(KJob *job);
-    void slotOpenWithDialog();
     void slotOpenWithAction(QAction *act);
 
 private:

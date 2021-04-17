@@ -85,6 +85,8 @@ set( messagecomposer_part_src
 
 set( messagecomposer_attachment_src
     attachment/attachmentcontrollerbase.cpp
+    attachment/abstractattachmentcontrollerbase.cpp
+    attachment/abstractattachmentcontrollerbase_p.cpp
     attachment/attachmentmodel.cpp
     )
 
