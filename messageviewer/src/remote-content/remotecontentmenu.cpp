@@ -16,7 +16,7 @@
 using namespace MessageViewer;
 RemoteContentMenu::RemoteContentMenu(QWidget *parent)
     : QMenu(parent)
-    , mConfigureRemoteContentAction(new QAction(i18n("Configure"), this))
+    , mConfigureRemoteContentAction(new QAction(QIcon::fromTheme(QStringLiteral("settings-configure")), i18n("Configure"), this))
 {
     setTitle(i18n("Remote Content"));
     connect(this, &QMenu::aboutToShow, this, &RemoteContentMenu::updateMenu);
