@@ -1363,6 +1363,7 @@ void ViewerPrivate::createWidgets()
     mSplitter->setChildrenCollapsible(false);
     vlay->addWidget(mSplitter);
     mMimePartTree = new MimePartTreeView(mSplitter);
+    mMimePartTree->setMinimumHeight(10);
     connect(mMimePartTree, &QAbstractItemView::activated, this, &ViewerPrivate::slotMimePartSelected);
     connect(mMimePartTree, &QWidget::customContextMenuRequested, this, &ViewerPrivate::slotMimeTreeContextMenuRequested);
 
@@ -1378,7 +1379,7 @@ void ViewerPrivate::createWidgets()
     mBoxHBoxLayout->addWidget(readerBox);
 
     mColorBar->setObjectName(QStringLiteral("mColorBar"));
-    mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+    mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
 
     mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(readerBox);
     mShowNextMessageWidget->setObjectName(QStringLiteral("shownextmessagewidget"));
