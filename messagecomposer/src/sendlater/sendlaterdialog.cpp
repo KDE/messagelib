@@ -22,8 +22,8 @@ using namespace MessageComposer;
 
 SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
     : QDialog(parent)
-    , mInfo(info)
     , mSendLaterWidget(new Ui::SendLaterWidget)
+    , mInfo(info)
 {
     setWindowTitle(i18nc("@title:window", "Send Later"));
     setWindowIcon(QIcon::fromTheme(QStringLiteral("kmail")));
