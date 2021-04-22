@@ -50,7 +50,7 @@ private Q_SLOTS:
     void importResult(const GpgME::ImportResult &result);
 
 private:
-    QEventLoop *mEventLoop = nullptr;
+    QEventLoop *const mEventLoop;
     GpgME::VerificationResult mVerificationResult;
     GpgME::DecryptionResult mDecryptResult;
     GpgME::ImportResult mImportResult;

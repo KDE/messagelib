@@ -21,9 +21,9 @@ using namespace MimeTreeParser;
 
 QGpgMEJobExecutor::QGpgMEJobExecutor(QObject *parent)
     : QObject(parent)
+    , mEventLoop(new QEventLoop(this))
 {
     setObjectName(QStringLiteral("KleoJobExecutor"));
-    mEventLoop = new QEventLoop(this);
 }
 
 GpgME::VerificationResult QGpgMEJobExecutor::exec(QGpgME::VerifyDetachedJob *job, const QByteArray &signature, const QByteArray &signedData)

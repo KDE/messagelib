@@ -156,7 +156,7 @@ public:
     Q_REQUIRED_RESULT QString htmlContent() const override;
 
 private:
-    bool mOnlyOneMimePart;
+    const bool mOnlyOneMimePart;
 };
 /**
  * @brief The MessagePartList class
@@ -213,7 +213,7 @@ private:
 
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;
-    bool mDecryptMessage;
+    const bool mDecryptMessage;
 };
 /**
  * @brief The AttachmentMessagePart class
