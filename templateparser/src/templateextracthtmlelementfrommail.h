@@ -39,6 +39,6 @@ private:
     QString mHeaderElement;
     QString mHtmlElement;
 
-    TemplateWebEnginePage *mPage = nullptr;
+    TemplateWebEnginePage *const mPage;
 };
 }

@@ -27,9 +27,9 @@ public:
     explicit CustomTemplatesMenu(QWidget *parent, KActionCollection *ac);
     ~CustomTemplatesMenu() override;
 
-    KActionMenu *replyActionMenu() const;
-    KActionMenu *replyAllActionMenu() const;
-    KActionMenu *forwardActionMenu() const;
+    Q_REQUIRED_RESULT KActionMenu *replyActionMenu() const;
+    Q_REQUIRED_RESULT KActionMenu *replyAllActionMenu() const;
+    Q_REQUIRED_RESULT KActionMenu *forwardActionMenu() const;
 
 public Q_SLOTS:
     void update();

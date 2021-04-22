@@ -87,19 +87,19 @@ public:
     void setCustomType(CustomTemplates::Type type);
     CustomTemplates::Type customType() const;
 
-    QString to() const;
-    QString cc() const;
+    Q_REQUIRED_RESULT QString to() const;
+    Q_REQUIRED_RESULT QString cc() const;
 
     void setTo(const QString &);
     void setCc(const QString &);
 
-    QString content() const;
+    Q_REQUIRED_RESULT QString content() const;
     void setContent(const QString &);
 
-    QKeySequence shortcut() const;
+    Q_REQUIRED_RESULT QKeySequence shortcut() const;
     void setShortcut(const QKeySequence &);
 
-    QString oldName() const;
+    Q_REQUIRED_RESULT QString oldName() const;
     void setOldName(const QString &);
 
 private:

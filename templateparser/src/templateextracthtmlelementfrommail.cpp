@@ -28,8 +28,8 @@ using namespace TemplateParser;
 
 TemplateExtractHtmlElementFromMail::TemplateExtractHtmlElementFromMail(QObject *parent)
     : QObject(parent)
+    , mPage(new TemplateWebEnginePage(this))
 {
-    mPage = new TemplateWebEnginePage(this);
     connect(mPage, &TemplateWebEnginePage::loadFinished, this, &TemplateExtractHtmlElementFromMail::slotLoadFinished);
 }
 

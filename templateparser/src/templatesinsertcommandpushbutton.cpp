@@ -14,11 +14,11 @@ using namespace TemplateParser;
 
 TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *parent, const QString &name)
     : QPushButton(parent)
+    , mMenuCommand(new TemplatesCommandMenu(this))
 {
     setObjectName(name);
     setText(i18n("&Insert Command"));
 
-    mMenuCommand = new TemplatesCommandMenu(this);
     mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));
     mMenuCommand->fillMenu();
     mMenuCommand->fillSubMenus();

@@ -49,8 +49,8 @@ Q_SIGNALS:
     void changed();
 
 private:
-    QPlainTextEdit *currentTextEdit() const;
-    QString strOrBlank(const QString &str);
+    Q_REQUIRED_RESULT QPlainTextEdit *currentTextEdit() const;
+    Q_REQUIRED_RESULT QString strOrBlank(const QString &str);
     TemplatesConfigurationPrivate *const d;
 };
 }
