@@ -39,16 +39,16 @@ void MainTextJobTest::initTestCase()
 
 void MainTextJobTest::testPlainText()
 {
-    auto composer = new Composer;
-    composer->globalPart()->setGuiEnabled(false);
+    auto composer = Composer();
+    composer.globalPart()->setGuiEnabled(false);
     QVector<QByteArray> charsets;
     charsets << "us-ascii"
              << "utf-8";
-    composer->globalPart()->setCharsets(charsets);
+    composer.globalPart()->setCharsets(charsets);
     auto textPart = new TextPart;
     QString data = QStringLiteral("they said their nevers they slept their dream");
     textPart->setWrappedPlainText(data);
-    auto mjob = new MainTextJob(textPart, composer);
+    auto mjob = new MainTextJob(textPart, &composer);
     QVERIFY(mjob->exec());
     Content *result = mjob->content();
     result->assemble();
@@ -58,51 +58,48 @@ void MainTextJobTest::testPlainText()
     QCOMPARE(result->contentType()->charset(), QByteArray("us-ascii"));
     QCOMPARE(QString::fromLatin1(result->body()), data);
     delete textPart;
-    delete composer;
 }
 
 void MainTextJobTest::testWrappingErrors()
 {
     {
-        auto composer = new Composer;
-        composer->globalPart()->setGuiEnabled(false);
-        composer->globalPart()->setFallbackCharsetEnabled(true);
+        auto composer = Composer();
+        composer.globalPart()->setGuiEnabled(false);
+        composer.globalPart()->setFallbackCharsetEnabled(true);
         auto textPart = new TextPart;
         QString data = QStringLiteral("they said their nevers they slept their dream");
         textPart->setWordWrappingEnabled(false);
         textPart->setWrappedPlainText(data);
-        auto mjob = new MainTextJob(textPart, composer);
+        auto mjob = new MainTextJob(textPart, &composer);
         QVERIFY(!mjob->exec()); // error: not UseWrapping but given only wrapped text
         QCOMPARE(mjob->error(), int(JobBase::BugError));
         delete textPart;
-        delete composer;
     }
     {
-        auto composer = new Composer;
-        composer->globalPart()->setGuiEnabled(false);
-        composer->globalPart()->setFallbackCharsetEnabled(true);
+        auto composer = Composer();
+        composer.globalPart()->setGuiEnabled(false);
+        composer.globalPart()->setFallbackCharsetEnabled(true);
         auto textPart = new TextPart;
         textPart->setWordWrappingEnabled(true);
         QString data = QStringLiteral("they said their nevers they slept their dream");
         textPart->setCleanPlainText(data);
-        auto mjob = new MainTextJob(textPart, composer);
+        auto mjob = new MainTextJob(textPart, &composer);
         QVERIFY(!mjob->exec()); // error: UseWrapping but given only clean text
         QCOMPARE(mjob->error(), int(JobBase::BugError));
         delete textPart;
-        delete composer;
     }
 }
 
 void MainTextJobTest::testCustomCharset()
 {
-    auto composer = new Composer;
-    composer->globalPart()->setGuiEnabled(false);
+    auto composer = Composer();
+    composer.globalPart()->setGuiEnabled(false);
     QByteArray charset("iso-8859-2");
-    composer->globalPart()->setCharsets(QVector<QByteArray>() << charset);
+    composer.globalPart()->setCharsets(QVector<QByteArray>() << charset);
     auto textPart = new TextPart;
     QString data = QStringLiteral("şi el o să se-nchidă cu o frunză de pelin");
     textPart->setWrappedPlainText(data);
-    auto mjob = new MainTextJob(textPart, composer);
+    auto mjob = new MainTextJob(textPart, &composer);
     QVERIFY(mjob->exec());
     Content *result = mjob->content();
     result->assemble();
@@ -115,53 +112,50 @@ void MainTextJobTest::testCustomCharset()
     QVERIFY(codec);
     QCOMPARE(codec->toUnicode(outData), data);
     delete textPart;
-    delete composer;
 }
 
 void MainTextJobTest::testNoCharset()
 {
-    auto composer = new Composer;
-    QVERIFY(!composer->globalPart()->isFallbackCharsetEnabled());
-    composer->globalPart()->setGuiEnabled(false);
+    auto composer = Composer();
+    QVERIFY(!composer.globalPart()->isFallbackCharsetEnabled());
+    composer.globalPart()->setGuiEnabled(false);
     auto textPart = new TextPart;
     QString data = QStringLiteral("do you still play the accordion?");
     textPart->setWrappedPlainText(data);
-    auto mjob = new MainTextJob(textPart, composer);
+    auto mjob = new MainTextJob(textPart, &composer);
     QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
     QVERIFY(!mjob->exec()); // Error.
     QCOMPARE(mjob->error(), int(JobBase::BugError));
     qDebug() << mjob->errorString();
     delete textPart;
-    delete composer;
 }
 
 void MainTextJobTest::testBadCharset()
 {
-    auto composer = new Composer;
-    composer->globalPart()->setGuiEnabled(false);
+    auto composer = Composer();
+    composer.globalPart()->setGuiEnabled(false);
     QByteArray charset("us-ascii"); // Cannot handle Romanian chars.
-    composer->globalPart()->setCharsets(QVector<QByteArray>() << charset);
+    composer.globalPart()->setCharsets(QVector<QByteArray>() << charset);
     auto textPart = new TextPart;
     QString data = QStringLiteral("el a plâns peste ţară cu lacrima limbii noastre");
     textPart->setWrappedPlainText(data);
-    auto mjob = new MainTextJob(textPart, composer);
+    auto mjob = new MainTextJob(textPart, &composer);
     QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
     QVERIFY(!mjob->exec()); // Error.
     QCOMPARE(mjob->error(), int(JobBase::UserError));
     qDebug() << mjob->errorString();
     delete textPart;
-    delete composer;
 }
 
 void MainTextJobTest::testFallbackCharset()
 {
-    auto composer = new Composer;
-    composer->globalPart()->setGuiEnabled(false);
-    composer->globalPart()->setFallbackCharsetEnabled(true);
+    auto composer = Composer();
+    composer.globalPart()->setGuiEnabled(false);
+    composer.globalPart()->setFallbackCharsetEnabled(true);
     auto textPart = new TextPart;
     QString data = QStringLiteral("and when he falleth...");
     textPart->setWrappedPlainText(data);
-    auto mjob = new MainTextJob(textPart, composer);
+    auto mjob = new MainTextJob(textPart, &composer);
     QVERIFY(mjob->exec());
     Content *result = mjob->content();
     result->assemble();
@@ -171,7 +165,6 @@ void MainTextJobTest::testFallbackCharset()
     QCOMPARE(result->contentType()->charset(), QByteArray("us-ascii")); // Fallback is us-ascii or utf8.
     QCOMPARE(QString::fromLatin1(result->body()), data);
     delete textPart;
-    delete composer;
 }
 
 void MainTextJobTest::testHtml()
