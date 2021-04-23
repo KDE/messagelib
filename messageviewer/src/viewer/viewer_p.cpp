@@ -574,6 +574,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     const bool canChange = mMessageItem.isValid() && mMessageItem.parentCollection().isValid()
         && (mMessageItem.parentCollection().rights() != Akonadi::Collection::ReadOnly) && !isEncapsulatedMessage;
 
+    menu.addSeparator();
     action = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Attachment"));
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::Delete);
@@ -1709,6 +1710,7 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
             popup.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"), this, &ViewerPrivate::slotAttachmentCopy);
         }
 
+        popup.addSeparator();
         auto deleteAction =
             popup.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Attachment"), this, &ViewerPrivate::slotAttachmentDelete);
         // body parts can only be deleted one at a time, and extra content cannot be delete
