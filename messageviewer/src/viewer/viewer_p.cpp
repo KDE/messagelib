@@ -1681,12 +1681,11 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
     }
     const bool isAttachment = !content->contentType()->isMultipart() && !content->isTopLevel();
     const bool isExtraContent = !mMessage->content(content->index());
-    const bool isRoot = (content == mMessage.data());
     const auto hasAttachments = KMime::hasAttachment(mMessage.data());
 
     QMenu popup;
 
-    if (!isRoot) {
+    if (!content->isTopLevel()) {
         popup.addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save &As..."), this, &ViewerPrivate::slotAttachmentSaveAs);
 
         if (isAttachment) {
@@ -1705,20 +1704,18 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
         popup.addAction(i18n("Save All Attachments..."), this, &ViewerPrivate::slotAttachmentSaveAll);
     }
 
-    if (!isRoot) {
+    if (!content->isTopLevel()) {
         if (isAttachment) {
             popup.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"), this, &ViewerPrivate::slotAttachmentCopy);
         }
 
-        if (!content->isTopLevel()) {
-            auto deleteAction =
-                popup.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Attachment"), this, &ViewerPrivate::slotAttachmentDelete);
-            // body parts can only be deleted one at a time, and extra content cannot be delete
-            deleteAction->setEnabled(selectedContents().size() == 1 && !isExtraContent);
+        auto deleteAction =
+            popup.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Attachment"), this, &ViewerPrivate::slotAttachmentDelete);
+        // body parts can only be deleted one at a time, and extra content cannot be delete
+        deleteAction->setEnabled(selectedContents().size() == 1 && !isExtraContent);
 
-            popup.addSeparator();
-            popup.addAction(i18n("Properties"), this, &ViewerPrivate::slotAttachmentProperties);
-        }
+        popup.addSeparator();
+        popup.addAction(i18n("Properties"), this, &ViewerPrivate::slotAttachmentProperties);
     }
     popup.exec(mMimePartTree->viewport()->mapToGlobal(pos));
 }
