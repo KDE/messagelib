@@ -1680,6 +1680,7 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
         }
     }
     const bool isAttachment = !content->contentType()->isMultipart() && !content->isTopLevel();
+    const bool isExtraContent = !mMessage->content(content->index());
     const bool isRoot = (content == mMessage.data());
     const auto hasAttachments = KMime::hasAttachment(mMessage.data());
 
@@ -1704,13 +1705,17 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
         popup.addAction(i18n("Save All Attachments..."), this, &ViewerPrivate::slotAttachmentSaveAll);
     }
 
-    // edit + delete only for attachments
     if (!isRoot) {
         if (isAttachment) {
             popup.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"), this, &ViewerPrivate::slotAttachmentCopy);
         }
 
         if (!content->isTopLevel()) {
+            auto deleteAction =
+                popup.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Attachment"), this, &ViewerPrivate::slotAttachmentDelete);
+            // body parts can only be deleted one at a time, and extra content cannot be delete
+            deleteAction->setEnabled(selectedContents().size() == 1 && !isExtraContent);
+
             popup.addSeparator();
             popup.addAction(i18n("Properties"), this, &ViewerPrivate::slotAttachmentProperties);
         }
@@ -2483,6 +2488,22 @@ void ViewerPrivate::attachmentCopy(const KMime::Content::List &contents)
     mimeData->setUrls(urls);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 #endif
+}
+
+void ViewerPrivate::slotAttachmentDelete()
+{
+    const auto contents = selectedContents();
+    if (contents.size() != 1) {
+        return;
+    }
+    // look up the selected content node of the mime part tree in the node tree of the original message;
+    // since deleting extra content (e.g. attachments inside encrypted message parts) is not supported,
+    // we do not need to consider the extra content in the lookup
+    const auto contentIndex = contents[0]->index();
+    const auto contentInOriginalMessage = mMessage->content(contentIndex);
+    if (contentInOriginalMessage) {
+        (void)deleteAttachment(contentInOriginalMessage);
+    }
 }
 
 void ViewerPrivate::slotLevelQuote(int l)

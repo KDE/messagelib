@@ -532,6 +532,7 @@ public Q_SLOTS:
     void slotAttachmentView();
     void slotAttachmentProperties();
     void slotAttachmentCopy();
+    void slotAttachmentDelete();
     void slotLevelQuote(int l);
 
     /** Toggle display mode between HTML and plain text. */
