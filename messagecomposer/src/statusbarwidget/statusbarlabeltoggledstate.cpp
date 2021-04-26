@@ -6,6 +6,7 @@
 
 #include "statusbarlabeltoggledstate.h"
 #include "messagecomposer_debug.h"
+#include <QMouseEvent>
 using namespace MessageComposer;
 StatusBarLabelToggledState::StatusBarLabelToggledState(QWidget *parent)
     : QLabel(parent)
@@ -53,5 +54,7 @@ void StatusBarLabelToggledState::updateLabel()
 void StatusBarLabelToggledState::mousePressEvent(QMouseEvent *ev)
 {
     Q_UNUSED(ev)
-    setToggleMode(!mToggleMode);
+    if (ev->button() == Qt::LeftButton) {
+        setToggleMode(!mToggleMode);
+    }
 }
