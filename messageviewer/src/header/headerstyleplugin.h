@@ -45,7 +45,7 @@ public:
 
     virtual Q_REQUIRED_RESULT bool hasConfigureDialog() const;
 
-    virtual Q_REQUIRED_RESULT void showConfigureDialog(QWidget *parent);
+    virtual void showConfigureDialog(QWidget *parent);
 
     virtual Q_REQUIRED_RESULT QString extraScreenCss(const QString &headerFont) const;
     virtual Q_REQUIRED_RESULT QString extraPrintCss(const QString &headerFont) const;
