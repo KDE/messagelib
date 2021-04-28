@@ -30,6 +30,6 @@ private Q_SLOTS:
     void slotShowAccessKey();
 
 private:
-    WebEngineViewer::MailWebEngineView *mTestWebEngine;
+    WebEngineViewer::MailWebEngineView *mTestWebEngine = nullptr;
 };
 
