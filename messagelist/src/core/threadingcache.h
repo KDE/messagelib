@@ -23,7 +23,7 @@ public:
     ThreadingCache();
     ~ThreadingCache();
 
-    bool isEnabled() const;
+    Q_REQUIRED_RESULT bool isEnabled() const;
     void setEnabled(bool enabled);
 
     void load(const QString &id, const Aggregation *aggregation);
