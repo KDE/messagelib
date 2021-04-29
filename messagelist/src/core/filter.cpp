@@ -124,6 +124,20 @@ QuickSearchLine::SearchOptions Filter::currentOptions() const
     return mOptions;
 }
 
+void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername)
+{
+    KConfigGroup grp(config, "General");
+    int numberFilter = grp.readEntry("NumberFilter").toInt();
+    KConfigGroup newGroup(config, QStringLiteral("Filter_%1").arg(numberFilter++));
+    newGroup.writeEntry("name", filtername);
+    newGroup.writeEntry("searchString", mSearchString);
+    // TODO newGroup.writeEntry("searchOptions", mOptions);
+    newGroup.writeEntry("tagId", mTagId);
+    // newGroup.writeEntry("currentFolder", mCurrentFolder);
+    // TODO mStatus.toQInt32()
+    newGroup.sync();
+}
+
 void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptions options)
 {
     const QString trimStr = search.trimmed();

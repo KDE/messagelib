@@ -15,6 +15,7 @@
 #include "widgets/quicksearchline.h"
 #include <Akonadi/KMime/MessageStatus>
 #include <Collection>
+#include <KSharedConfig>
 
 namespace MessageList
 {
@@ -87,6 +88,8 @@ public:
     Q_REQUIRED_RESULT bool isEmpty() const;
 
     Q_REQUIRED_RESULT QuickSearchLine::SearchOptions currentOptions() const;
+
+    void save(const KSharedConfig::Ptr &config, const QString &filtername);
 Q_SIGNALS:
     void finished();
 
