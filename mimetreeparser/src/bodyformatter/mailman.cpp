@@ -87,7 +87,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
 
     // at least one message found: build a mime tree
     digestHeaderStr = QStringLiteral("Content-Type: text/plain\nContent-Description: digest header\n\n");
-    digestHeaderStr += str.midRef(0, thisDelim);
+    digestHeaderStr += QStringView(str).mid(0, thisDelim);
 
     MessagePartList::Ptr mpl(new MessagePartList(part.objectTreeParser()));
     mpl->appendSubPart(createAndParseTempNode(part, part.topLevelContent(), digestHeaderStr.toLatin1().constData(), "Digest Header"));
@@ -115,7 +115,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         //  ++thisDelim;
 
         partStr = QStringLiteral("Content-Type: message/rfc822\nContent-Description: embedded message\n\n");
-        partStr += str.midRef(thisDelim, nextDelim - thisDelim);
+        partStr += QStringView(str).mid(thisDelim, nextDelim - thisDelim);
         QString subject = QStringLiteral("embedded message");
         QString subSearch = QStringLiteral("\nSubject:");
         int subPos = partStr.indexOf(subSearch, 0, Qt::CaseInsensitive);
@@ -154,7 +154,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         thisDelim = thisDelim + 1;
     }
     partStr = QStringLiteral("Content-Type: text/plain\nContent-Description: digest footer\n\n");
-    partStr += str.midRef(thisDelim);
+    partStr += QStringView(str).mid(thisDelim);
     mpl->appendSubPart(createAndParseTempNode(part, part.topLevelContent(), partStr.toLatin1().constData(), "Digest Footer"));
     return mpl;
 }

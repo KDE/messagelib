@@ -753,7 +753,7 @@ KMime::Content *NodeHelper::contentFromIndex(KMime::Content *node, const QString
             const QString &path = pathParts[i];
             if (path.startsWith(QLatin1Char('e'))) {
                 const QVector<KMime::Content *> &extraParts = mExtraContents.value(c);
-                const int idx = path.midRef(1, -1).toInt();
+                const int idx = QStringView(path).mid(1, -1).toInt();
                 c = (idx < extraParts.size()) ? extraParts[idx] : nullptr;
             } else {
                 c = c->content(KMime::ContentIndex(path));

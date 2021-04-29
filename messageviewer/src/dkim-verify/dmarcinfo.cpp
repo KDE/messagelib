@@ -79,7 +79,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //       else
             //         selected = false
             // TODO verify if it's a percentage
-            mPercentage = elem.rightRef(elem.length() - 4).toInt();
+            mPercentage = QStringView(elem).right(elem.length() - 4).toInt();
         } else if (elem.startsWith(QLatin1String("sp="))) {
             // sp:  Requested Mail Receiver policy for all subdomains (plain-text;
             //   OPTIONAL).  Indicates the policy to be enacted by the Receiver at
