@@ -25,6 +25,7 @@
 #include <QUrlQuery>
 
 #include "messagelist_debug.h"
+#include <KJob>
 #include <KLocalizedString>
 #include <KXMLGUIClient>
 #include <KXMLGUIFactory>

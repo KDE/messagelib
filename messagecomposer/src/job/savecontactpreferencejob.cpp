@@ -6,7 +6,9 @@
 
 #include "savecontactpreferencejob.h"
 
+#include <KJob>
 #include <KLocalizedString>
+
 #include <QInputDialog>
 
 #include <Akonadi/Contact/ContactSearchJob>

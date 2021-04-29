@@ -8,7 +8,7 @@
 
 #include "composer/keyresolver.h"
 #include <KContacts/Addressee>
-#include <KJob>
+class KJob;
 
 namespace MessageComposer
 {

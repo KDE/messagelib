@@ -61,7 +61,9 @@
 #include <MessageCore/AttachmentPropertiesDialog>
 #include <settings/messagecomposersettings.h>
 
+#include <KJob>
 #include <KMime/Content>
+
 #include <QFileDialog>
 
 using namespace MessageComposer;

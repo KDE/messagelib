@@ -11,14 +11,14 @@
 #include <MessageList/WidgetBase>
 
 #include <AkonadiCore/Item>
-#include <KJob>
+
 #include <kmime/kmime_message.h>
 
 #include <QVector>
 #include <messagelist_export.h>
 class KXMLGUIClient;
 class QWidget;
-
+class KJob;
 namespace MessageList
 {
 /**

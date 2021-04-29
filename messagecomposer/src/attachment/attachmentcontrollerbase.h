@@ -15,14 +15,13 @@
 #include <QUrl>
 
 #include "messagecomposer_export.h"
-#include <KJob>
 #include <KService>
 #include <MessageCore/AttachmentPart>
 #include <MessageViewer/EditorWatcher>
 
 class KActionCollection;
 class QAction;
-
+class KJob;
 namespace MessageComposer
 {
 class AttachmentModel;
