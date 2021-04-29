@@ -396,7 +396,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
 
     KMime::Message *modifiedMessage = mNodeHelper->messageWithExtraContent(mMessage.data());
     mMimePartTree->mimePartModel()->setRoot(modifiedMessage);
-    mMessageItem.setPayloadFromData(modifiedMessage->encodedContent());
+    mMessageItem.setPayloadFromData(mMessage->encodedContent());
     auto job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
     job->disableRevisionCheck();
     connect(job, &KJob::result, this, &ViewerPrivate::itemModifiedResult);
