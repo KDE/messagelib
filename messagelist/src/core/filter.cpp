@@ -73,6 +73,16 @@ bool Filter::match(const MessageItem *item) const
     return true;
 }
 
+QVector<Akonadi::MessageStatus> Filter::status() const
+{
+    return mStatus;
+}
+
+void Filter::setStatus(const QVector<Akonadi::MessageStatus> &lstStatus)
+{
+    mStatus = lstStatus;
+}
+
 bool Filter::isEmpty() const
 {
     if (!mStatus.isEmpty()) {
@@ -102,6 +112,11 @@ void Filter::clear()
 void Filter::setCurrentFolder(const Akonadi::Collection &folder)
 {
     mCurrentFolder = folder;
+}
+
+const QString &Filter::searchString() const
+{
+    return mSearchString;
 }
 
 QuickSearchLine::SearchOptions Filter::currentOptions() const
@@ -171,4 +186,14 @@ void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptio
         }
     }
     Q_EMIT finished();
+}
+
+const QString &Filter::tagId() const
+{
+    return mTagId;
+}
+
+void Filter::setTagId(const QString &tagId)
+{
+    mTagId = tagId;
 }
