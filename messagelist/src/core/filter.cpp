@@ -131,9 +131,9 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername)
     KConfigGroup newGroup(config, QStringLiteral("Filter_%1").arg(numberFilter++));
     newGroup.writeEntry("name", filtername);
     newGroup.writeEntry("searchString", mSearchString);
-    // TODO newGroup.writeEntry("searchOptions", mOptions);
+    newGroup.writeEntry("searchOptions", static_cast<int>(mOptions));
     newGroup.writeEntry("tagId", mTagId);
-    // newGroup.writeEntry("currentFolder", mCurrentFolder);
+    newGroup.writeEntry("currentFolder", mCurrentFolder.id());
     // TODO mStatus.toQInt32()
     newGroup.sync();
 }
