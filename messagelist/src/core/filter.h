@@ -90,6 +90,7 @@ public:
     Q_REQUIRED_RESULT QuickSearchLine::SearchOptions currentOptions() const;
 
     void save(const KSharedConfig::Ptr &config, const QString &filtername);
+    static Q_REQUIRED_RESULT Filter *load(const KSharedConfig::Ptr &config, int filternumber);
 Q_SIGNALS:
     void finished();
 

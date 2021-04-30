@@ -136,6 +136,23 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername)
     newGroup.writeEntry("currentFolder", mCurrentFolder.id());
     // TODO mStatus.toQInt32()
     newGroup.sync();
+    grp.writeEntry("NumberFilter", numberFilter);
+    grp.sync();
+}
+
+Filter *Filter::load(const KSharedConfig::Ptr &config, int filternumber)
+{
+    KConfigGroup grp(config, "General");
+    int numberFilter = grp.readEntry("NumberFilter").toInt();
+    if (filternumber < numberFilter) {
+        auto filter = new Filter();
+        KConfigGroup newGroup(config, QStringLiteral("Filter_%1").arg(filternumber));
+        filter->setSearchString(newGroup.readEntry("searchString"), static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
+        filter->setCurrentFolder(Akonadi::Collection(newGroup.readEntry("currentFolder").toInt()));
+        filter->setTagId(newGroup.readEntry("tagId"));
+        return filter;
+    }
+    return nullptr;
 }
 
 void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptions options)
