@@ -123,7 +123,7 @@ QString MessageList::Util::contentSummary(const Akonadi::Item &item)
         return QString();
     }
 
-    KMime::Message::Ptr message = item.payload<KMime::Message::Ptr>();
+    auto message = item.payload<KMime::Message::Ptr>();
     KMime::Content *textContent = message->textContent();
     if (!textContent) {
         return QString();

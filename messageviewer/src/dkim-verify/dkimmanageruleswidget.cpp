@@ -84,7 +84,7 @@ DKIMManageRulesWidget::DKIMManageRulesWidget(QWidget *parent)
     connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManageRulesWidget::slotCustomContextMenuRequested);
     connect(mTreeWidget, &QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item) {
         if (item) {
-            auto *rulesItem = static_cast<DKIMManageRulesWidgetItem *>(item);
+            auto rulesItem = static_cast<DKIMManageRulesWidgetItem *>(item);
             modifyRule(rulesItem);
         }
     });
@@ -185,7 +185,7 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
     menu.addAction(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Add..."), this, [this]() {
         addRule();
     });
-    auto *rulesItem = dynamic_cast<DKIMManageRulesWidgetItem *>(item);
+    auto rulesItem = dynamic_cast<DKIMManageRulesWidgetItem *>(item);
     if (rulesItem) {
         menu.addAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18n("Modify..."), this, [this, rulesItem]() {
             modifyRule(rulesItem);

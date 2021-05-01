@@ -44,7 +44,7 @@ public:
 
     QString descriptionForContent(KMime::Content *content)
     {
-        auto *const message = dynamic_cast<KMime::Message *>(content);
+        auto const message = dynamic_cast<KMime::Message *>(content);
         if (message && message->subject(false)) {
             return message->subject(false)->asUnicodeString();
         }
@@ -243,14 +243,14 @@ QVariant MimeTreeModel::data(const QModelIndex &index, int role) const
         return d->mimeTypeForContent(content);
     }
     if (role == MainBodyPartRole) {
-        auto *topLevelMsg = dynamic_cast<KMime::Message *>(d->root);
+        auto topLevelMsg = dynamic_cast<KMime::Message *>(d->root);
         if (!topLevelMsg) {
             return false;
         }
         return topLevelMsg->mainBodyPart() == content;
     }
     if (role == AlternativeBodyPartRole) {
-        auto *topLevelMsg = dynamic_cast<KMime::Message *>(d->root);
+        auto topLevelMsg = dynamic_cast<KMime::Message *>(d->root);
         if (!topLevelMsg) {
             return false;
         }

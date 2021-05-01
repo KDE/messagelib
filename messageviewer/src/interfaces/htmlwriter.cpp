@@ -7,6 +7,7 @@
 #include "htmlwriter.h"
 
 #include <QTextStream>
+#include <memory>
 
 using namespace MessageViewer;
 
@@ -16,7 +17,7 @@ HtmlWriter::~HtmlWriter() = default;
 void HtmlWriter::begin()
 {
     if (!m_stream) {
-        m_stream.reset(new QTextStream());
+        m_stream = std::make_unique<QTextStream>();
     }
     m_stream->setDevice(device());
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)

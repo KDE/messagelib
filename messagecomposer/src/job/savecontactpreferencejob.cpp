@@ -86,7 +86,7 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
     } else {
         Akonadi::Item item = items.first();
 
-        KContacts::Addressee contact = item.payload<KContacts::Addressee>();
+        auto contact = item.payload<KContacts::Addressee>();
         writeCustomContactProperties(contact, mPref);
 
         item.setPayload<KContacts::Addressee>(contact);

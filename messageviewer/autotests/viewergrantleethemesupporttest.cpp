@@ -34,7 +34,7 @@ void ViewerGrantleeThemeSupportTest::initTestCase()
 
 void ViewerGrantleeThemeSupportTest::shouldUpdateThemeMenu()
 {
-    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
+    auto viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
     viewer->show();
     QVERIFY(QTest::qWaitForWindowExposed(viewer));
 

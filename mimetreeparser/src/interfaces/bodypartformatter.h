@@ -19,7 +19,7 @@
 namespace MimeTreeParser
 {
 class MessagePart;
-typedef QSharedPointer<MessagePart> MessagePartPtr;
+using MessagePartPtr = QSharedPointer<MessagePart>;
 
 namespace Interface
 {

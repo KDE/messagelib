@@ -2248,7 +2248,7 @@ bool View::event(QEvent *e)
         return true; // don't display tooltips
     }
 
-    auto *he = dynamic_cast<QHelpEvent *>(e);
+    auto he = dynamic_cast<QHelpEvent *>(e);
     if (!he) {
         return true; // eh ?
     }

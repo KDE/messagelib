@@ -22,7 +22,7 @@ class AutocryptStoragePrivate;
 class MESSAGECORE_EXPORT AutocryptStorage
 {
 public:
-    typedef QSharedPointer<AutocryptStorage> Ptr;
+    using Ptr = QSharedPointer<AutocryptStorage>;
     static AutocryptStorage::Ptr self();
 
     AutocryptRecipient::Ptr getRecipient(const QByteArray &addr);

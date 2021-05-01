@@ -23,14 +23,14 @@ void MailSourceViewTextBrowserWidgetTest::shouldHaveDefaultValue()
 {
     MessageViewer::MailSourceViewTextBrowserWidget widget(QStringLiteral("Email"));
 
-    auto *textbrowser = widget.findChild<MessageViewer::MailSourceViewTextBrowser *>(QStringLiteral("textbrowser"));
+    auto textbrowser = widget.findChild<MessageViewer::MailSourceViewTextBrowser *>(QStringLiteral("textbrowser"));
     QVERIFY(textbrowser);
     QVERIFY(!textbrowser->isHidden());
-    auto *findbar = widget.findChild<MessageViewer::FindBarSourceView *>(QStringLiteral("findbar"));
+    auto findbar = widget.findChild<MessageViewer::FindBarSourceView *>(QStringLiteral("findbar"));
     QVERIFY(findbar);
     QVERIFY(findbar->isHidden());
 
-    auto *texttospeechwidget = widget.findChild<KPIMTextEdit::TextToSpeechWidget *>(QStringLiteral("texttospeech"));
+    auto texttospeechwidget = widget.findChild<KPIMTextEdit::TextToSpeechWidget *>(QStringLiteral("texttospeech"));
     QVERIFY(texttospeechwidget);
     QVERIFY(texttospeechwidget->isHidden());
 }

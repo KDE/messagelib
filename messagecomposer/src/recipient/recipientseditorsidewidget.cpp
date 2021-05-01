@@ -60,7 +60,7 @@ RecipientsPicker *RecipientsEditorSideWidget::picker() const
 {
     if (!mRecipientPicker) {
         // hacks to allow picker() to be const in the presence of lazy loading
-        auto *non_const_this = const_cast<RecipientsEditorSideWidget *>(this);
+        auto non_const_this = const_cast<RecipientsEditorSideWidget *>(this);
         mRecipientPicker = new RecipientsPicker(non_const_this);
         connect(mRecipientPicker, &RecipientsPicker::pickedRecipient, non_const_this, &RecipientsEditorSideWidget::pickedRecipient);
         mPickerPositioner = new KWindowPositioner(mSelectButton, mRecipientPicker);

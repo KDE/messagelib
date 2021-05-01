@@ -189,7 +189,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
 
     reply.replyAll = true;
 
@@ -241,7 +241,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
     QDateTime date = msg->date()->dateTime();
@@ -290,7 +290,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsyn
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
     QDateTime date = msg->date()->dateTime();
@@ -332,7 +332,7 @@ void MessageFactoryTest::testCreateReplyToListAsync()
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
     QDateTime date = msg->date()->dateTime();
@@ -371,7 +371,7 @@ void MessageFactoryTest::testCreateReplyToAuthorAsync()
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
     QDateTime date = msg->date()->dateTime();
@@ -422,7 +422,7 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
     QDateTime date = msg->date()->dateTime();
@@ -460,7 +460,7 @@ void MessageFactoryTest::testCreateReplyAllAsync()
     factory.createReplyAsync();
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
-    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
     QDateTime date = msg->date()->dateTime();
@@ -491,7 +491,7 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
     factory.createReplyAsync();
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
-    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
     QDateTime date = msg->date()->dateTime().toLocalTime();
@@ -537,7 +537,7 @@ void MessageFactoryTest::testCreateReplyUTF16Base64Async()
     factory.createReplyAsync();
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
-    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
     QDateTime date = msg->date()->dateTime().toLocalTime();
@@ -561,7 +561,7 @@ void MessageFactoryTest::testCreateForwardMultiEmailsAsync()
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-    KMime::Message::Ptr fw = spy.at(0).at(0).value<KMime::Message::Ptr>();
+    auto fw = spy.at(0).at(0).value<KMime::Message::Ptr>();
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
     datetime += QLatin1String(", ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
@@ -605,7 +605,7 @@ void MessageFactoryTest::testCreateForwardAsync()
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-    KMime::Message::Ptr fw = spy.at(0).at(0).value<KMime::Message::Ptr>();
+    auto fw = spy.at(0).at(0).value<KMime::Message::Ptr>();
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
@@ -967,7 +967,7 @@ void MessageFactoryTest::test_multipartAlternative()
     factory.createReplyAsync();
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
-    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));

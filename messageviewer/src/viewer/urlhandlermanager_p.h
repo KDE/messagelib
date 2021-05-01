@@ -37,7 +37,7 @@ public:
 private:
     Q_REQUIRED_RESULT QVector<const Interface::BodyPartURLHandler *> handlersForPart(KMime::Content *node) const;
 
-    typedef QHash<QByteArray, QVector<const Interface::BodyPartURLHandler *>> BodyPartHandlerList;
+    using BodyPartHandlerList = QHash<QByteArray, QVector<const Interface::BodyPartURLHandler *>>;
     BodyPartHandlerList mHandlers;
 };
 

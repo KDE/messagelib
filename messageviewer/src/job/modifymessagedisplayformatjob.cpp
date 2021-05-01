@@ -68,7 +68,7 @@ void ModifyMessageDisplayFormatJob::resetDisplayFormat()
 
 void ModifyMessageDisplayFormatJob::modifyDisplayFormat()
 {
-    auto *attr = mMessageItem.attribute<MessageViewer::MessageDisplayFormatAttribute>(Akonadi::Item::AddIfMissing);
+    auto attr = mMessageItem.attribute<MessageViewer::MessageDisplayFormatAttribute>(Akonadi::Item::AddIfMissing);
     attr->setRemoteContent(mRemoteContent);
     attr->setMessageFormat(mMessageFormat);
     auto modify = new Akonadi::ItemModifyJob(mMessageItem, mSession);

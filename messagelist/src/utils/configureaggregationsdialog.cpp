@@ -203,7 +203,7 @@ void ConfigureAggregationsDialog::Private::okButtonClicked()
         const int c = mAggregationList->count();
         int i = 0;
         while (i < c) {
-            auto *item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
+            auto item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
             if (item) {
                 Manager::instance()->addAggregation(item->aggregation());
                 item->forgetAggregation();
@@ -290,7 +290,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
     const int c = mAggregationList->count();
     int i = 0;
     while (i < c) {
-        auto *item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
+        auto item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
         if (item) {
             if (item->aggregation() != skipAggregation) {
                 if (item->aggregation()->name() == name) {
@@ -308,7 +308,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
     const int c = mAggregationList->count();
     int i = 0;
     while (i < c) {
-        auto *item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
+        auto item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
         if (item) {
             if (item->aggregation()->id() == aggregationId) {
                 return item;
@@ -324,7 +324,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
     const int c = mAggregationList->count();
     int i = 0;
     while (i < c) {
-        auto *item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
+        auto item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->item(i));
         if (item) {
             if (item->aggregation() == set) {
                 return item;
@@ -365,7 +365,7 @@ void ConfigureAggregationsDialog::Private::newAggregationButtonClicked()
 
 void ConfigureAggregationsDialog::Private::cloneAggregationButtonClicked()
 {
-    auto *item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->currentItem());
+    auto item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->currentItem());
     if (!item) {
         return;
     }
@@ -390,7 +390,7 @@ void ConfigureAggregationsDialog::Private::deleteAggregationButtonClicked()
 
     mEditor->editAggregation(nullptr); // forget it
     for (QListWidgetItem *it : list) {
-        auto *item = dynamic_cast<AggregationListWidgetItem *>(it);
+        auto item = dynamic_cast<AggregationListWidgetItem *>(it);
         if (!item) {
             return;
         }
@@ -402,7 +402,7 @@ void ConfigureAggregationsDialog::Private::deleteAggregationButtonClicked()
         }
     }
 
-    auto *newItem = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->currentItem());
+    auto newItem = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->currentItem());
     updateButton(newItem);
 }
 

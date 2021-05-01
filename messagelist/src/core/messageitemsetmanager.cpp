@@ -47,7 +47,7 @@ void MessageItemSetManager::removeSet(MessageItemSetReference ref)
 
 QList<MessageItem *> MessageItemSetManager::messageItems(MessageItemSetReference ref)
 {
-    auto *set = mSets->value(static_cast<ulong>(ref), nullptr);
+    auto set = mSets->value(static_cast<ulong>(ref), nullptr);
     if (!set) {
         return {};
     }

@@ -669,7 +669,7 @@ void AttachmentControllerBase::slotOpenWithDialog()
 
 void AttachmentControllerBase::slotOpenWithAction(QAction *act)
 {
-    KService::Ptr app = act->data().value<KService::Ptr>();
+    auto app = act->data().value<KService::Ptr>();
     Q_ASSERT(d->selectedParts.count() == 1);
 
     openWith(app);

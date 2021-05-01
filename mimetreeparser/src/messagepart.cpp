@@ -753,7 +753,7 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
 
     const QByteArray _mementoName = mementoName();
 
-    auto *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(content(), _mementoName));
+    auto m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(content(), _mementoName));
     Q_ASSERT(!m || mCryptoProto); // No CryptoPlugin and having a bodyPartMemento -> there is something completely wrong
 
     if (!m && mCryptoProto) {

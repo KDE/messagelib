@@ -26,7 +26,7 @@ void DKIMStoreResultJob::start()
         deleteLater();
         return;
     }
-    auto *attr = mItem.attribute<MessageViewer::DKIMResultAttribute>(Akonadi::Item::AddIfMissing);
+    auto attr = mItem.attribute<MessageViewer::DKIMResultAttribute>(Akonadi::Item::AddIfMissing);
     attr->setError(static_cast<int>(mResult.error));
     attr->setWarning(static_cast<int>(mResult.warning));
     attr->setStatus(static_cast<int>(mResult.status));

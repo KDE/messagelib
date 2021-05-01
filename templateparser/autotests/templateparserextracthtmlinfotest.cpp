@@ -26,7 +26,7 @@ void TemplateParserExtractHtmlInfoTest::shouldReturnNullResult()
     QSignalSpy spy(info, &TemplateParser::TemplateParserExtractHtmlInfo::finished);
     info->start();
     QCOMPARE(spy.count(), 1);
-    TemplateParserExtractHtmlInfoResult result = spy.at(0).at(0).value<TemplateParserExtractHtmlInfoResult>();
+    auto result = spy.at(0).at(0).value<TemplateParserExtractHtmlInfoResult>();
     QVERIFY(result.mBodyElement.isEmpty());
     QVERIFY(result.mHeaderElement.isEmpty());
     QVERIFY(result.mHtmlElement.isEmpty());
@@ -42,7 +42,7 @@ void TemplateParserExtractHtmlInfoTest::shouldReturnNullButWithTemplate()
     QSignalSpy spy(info, &TemplateParser::TemplateParserExtractHtmlInfo::finished);
     info->start();
     QCOMPARE(spy.count(), 1);
-    TemplateParserExtractHtmlInfoResult result = spy.at(0).at(0).value<TemplateParserExtractHtmlInfoResult>();
+    auto result = spy.at(0).at(0).value<TemplateParserExtractHtmlInfoResult>();
     QVERIFY(result.mBodyElement.isEmpty());
     QVERIFY(result.mHeaderElement.isEmpty());
     QVERIFY(result.mHtmlElement.isEmpty());

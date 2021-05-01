@@ -22,7 +22,7 @@ void TemplateParserEmailAddressRequesterInterfaceWidgetTest::shouldHaveDefaultVa
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto *mTemplateParserEmailBase = w.findChild<TemplateParser::TemplateParserEmailAddressRequesterBase *>(QStringLiteral("templateparseremailbase"));
+    auto mTemplateParserEmailBase = w.findChild<TemplateParser::TemplateParserEmailAddressRequesterBase *>(QStringLiteral("templateparseremailbase"));
     QVERIFY(mTemplateParserEmailBase);
     QVERIFY(mTemplateParserEmailBase->text().isEmpty());
 }
@@ -31,7 +31,7 @@ void TemplateParserEmailAddressRequesterInterfaceWidgetTest::shouldAssignValues(
 {
     TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget w;
 
-    auto *mTemplateParserEmailBase = w.findChild<TemplateParser::TemplateParserEmailAddressRequesterBase *>(QStringLiteral("templateparseremailbase"));
+    auto mTemplateParserEmailBase = w.findChild<TemplateParser::TemplateParserEmailAddressRequesterBase *>(QStringLiteral("templateparseremailbase"));
     const QString value{QStringLiteral("foo")};
     w.setText(value);
     QCOMPARE(w.text(), value);

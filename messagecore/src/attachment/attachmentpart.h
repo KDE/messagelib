@@ -28,12 +28,12 @@ public:
     /**
      * Defines a pointer to an attachment object.
      */
-    typedef QSharedPointer<AttachmentPart> Ptr;
+    using Ptr = QSharedPointer<AttachmentPart>;
 
     /**
      * Defines a list of pointers to attachment objects.
      */
-    typedef QList<Ptr> List;
+    using List = QList<Ptr>;
 
     /**
      * Creates a new attachment part.

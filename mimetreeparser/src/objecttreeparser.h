@@ -33,8 +33,8 @@ class NodeHelper;
 class MessagePart;
 class MimeMessagePart;
 
-typedef QSharedPointer<MessagePart> MessagePartPtr;
-typedef QSharedPointer<MimeMessagePart> MimeMessagePartPtr;
+using MessagePartPtr = QSharedPointer<MessagePart>;
+using MimeMessagePartPtr = QSharedPointer<MimeMessagePart>;
 /**
  * @brief The ProcessResult class
  */

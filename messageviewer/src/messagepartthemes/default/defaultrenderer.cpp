@@ -695,7 +695,7 @@ void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *
 
     auto end(imports.end());
     for (auto it = imports.begin(); it != end; ++it) {
-        auto *key(new QObject(mp.data()));
+        auto key(new QObject(mp.data()));
         key->setProperty("error", QString::fromLocal8Bit((*it).error().asString()));
         key->setProperty("status", (*it).status());
         key->setProperty("fingerprint", QLatin1String((*it).fingerprint()));

@@ -16,26 +16,26 @@ ViewerTest::ViewerTest()
 
 void ViewerTest::shouldHaveDefaultValuesOnCreation()
 {
-    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
+    auto viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
     viewer->show();
     QVERIFY(QTest::qWaitForWindowExposed(viewer));
 
-    QWidget *mViewer = viewer->findChild<QWidget *>(QStringLiteral("mViewer"));
+    auto mViewer = viewer->findChild<QWidget *>(QStringLiteral("mViewer"));
     QVERIFY(mViewer);
     QCOMPARE(mViewer->isVisible(), true);
 
-    QWidget *sliderContainer = viewer->findChild<QWidget *>(QStringLiteral("slidercontainer"));
+    auto sliderContainer = viewer->findChild<QWidget *>(QStringLiteral("slidercontainer"));
     QVERIFY(sliderContainer);
     QCOMPARE(sliderContainer->isVisible(), false);
 
-    QWidget *colorBar = viewer->findChild<QWidget *>(QStringLiteral("mColorBar"));
+    auto colorBar = viewer->findChild<QWidget *>(QStringLiteral("mColorBar"));
     QVERIFY(colorBar);
 
-    QWidget *scandetectionWidget = viewer->findChild<QWidget *>(QStringLiteral("scandetectionwarning"));
+    auto scandetectionWidget = viewer->findChild<QWidget *>(QStringLiteral("scandetectionwarning"));
     QVERIFY(scandetectionWidget);
     QCOMPARE(scandetectionWidget->isVisible(), false);
 
-    QWidget *opensavefilefolderwidget = viewer->findChild<QWidget *>(QStringLiteral("opensavefilefolderwidget"));
+    auto opensavefilefolderwidget = viewer->findChild<QWidget *>(QStringLiteral("opensavefilefolderwidget"));
     QVERIFY(opensavefilefolderwidget);
     QCOMPARE(opensavefilefolderwidget->isVisible(), false);
 

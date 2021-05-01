@@ -1408,7 +1408,7 @@ void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageCo
 void ComposerViewBase::slotSaveMessage(KJob *job)
 {
     Akonadi::Collection target;
-    Akonadi::Item item = job->property("Akonadi::Item").value<Akonadi::Item>();
+    auto item = job->property("Akonadi::Item").value<Akonadi::Item>();
     if (job->error()) {
         target = defaultSpecialTarget();
     } else {

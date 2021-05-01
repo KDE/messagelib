@@ -26,7 +26,7 @@
 // #define MAXWORDS ((PIXELS * 2 + BITSPERWORD - 1) / BITSPERWORD)
 // #define BITSPERWORD 8
 
-typedef struct guesses {
+using Guesses = struct guesses {
     char g_00[1 << 12];
     char g_01[1 << 7];
     char g_02[1 << 2];
@@ -42,7 +42,7 @@ typedef struct guesses {
     char g_22[1 << 0];
     char g_32[1 << 2];
     char g_42[1 << 2];
-} Guesses;
+};
 
 static const Guesses G = {
     {
@@ -227,10 +227,10 @@ static const Guesses G = {
         1,
     }};
 
-typedef struct prob {
+using Prob = struct prob {
     int p_range;
     int p_offset;
-} Prob;
+};
 
 static const Prob levels[4][3] = {
     {{1, 255}, {251, 0}, {4, 251}}, /* Top of tree almost always grey */
@@ -300,10 +300,10 @@ private:
 
     jmp_buf comp_env;
 
-    typedef struct bigint {
+    using BigInt = struct bigint {
         int b_words;
         unsigned char b_word[MAXWORDS];
-    } BigInt;
+    };
 
     BigInt B;
 

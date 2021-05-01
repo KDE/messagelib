@@ -96,7 +96,7 @@ private:
     QRegExp mThreshold;
     QRegExp mConfidence;
 };
-typedef QVector<SpamAgent> SpamAgents;
+using SpamAgents = QVector<SpamAgent>;
 
 class AntiSpamConfigSingletonProvider;
 

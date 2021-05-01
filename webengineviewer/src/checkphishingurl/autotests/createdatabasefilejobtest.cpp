@@ -69,7 +69,7 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     QSignalSpy spy1(&job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::finished);
     job.parseResult(ba);
     QCOMPARE(spy1.count(), 1);
-    const WebEngineViewer::UpdateDataBaseInfo info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
+    const auto info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName =
         QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/test.db");
@@ -385,7 +385,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     QSignalSpy spy1(&job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::finished);
     job.parseResult(ba);
     QCOMPARE(spy1.count(), 1);
-    const WebEngineViewer::UpdateDataBaseInfo info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
+    const auto info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName =
         QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl") + QLatin1String("/update.db");
@@ -414,7 +414,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     jobUpdate.parseResult(baUpdate);
     QCOMPARE(spy3.count(), 1);
 
-    const WebEngineViewer::UpdateDataBaseInfo infoUpdate = spy3.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
+    const auto infoUpdate = spy3.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     QCOMPARE(infoUpdate.responseType, WebEngineViewer::UpdateDataBaseInfo::PartialUpdate);
 
     WebEngineViewer::CreateDatabaseFileJob databasejob2;

@@ -197,7 +197,7 @@ void ConfigureThemesDialog::Private::okButtonClicked()
     const int c = mThemeList->count();
     int i = 0;
     while (i < c) {
-        auto *item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->item(i));
+        auto item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->item(i));
         if (item) {
             Manager::instance()->addTheme(item->theme());
             item->forgetTheme();
@@ -282,7 +282,7 @@ ThemeListWidgetItem *ConfigureThemesDialog::Private::findThemeItemById(const QSt
     const int c = mThemeList->count();
     int i = 0;
     while (i < c) {
-        auto *item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->item(i));
+        auto item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->item(i));
         if (item) {
             if (item->theme()->id() == themeId) {
                 return item;
@@ -298,7 +298,7 @@ ThemeListWidgetItem *ConfigureThemesDialog::Private::findThemeItemByName(const Q
     const int c = mThemeList->count();
     int i = 0;
     while (i < c) {
-        auto *item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->item(i));
+        auto item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->item(i));
         if (item) {
             if (item->theme() != skipTheme) {
                 if (item->theme()->name() == name) {
@@ -316,7 +316,7 @@ ThemeListWidgetItem *ConfigureThemesDialog::Private::findThemeItemByTheme(Theme 
     const int c = mThemeList->count();
     int i = 0;
     while (i < c) {
-        auto *item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->item(i));
+        auto item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->item(i));
         if (item) {
             if (item->theme() == set) {
                 return item;
@@ -375,7 +375,7 @@ void ConfigureThemesDialog::Private::newThemeButtonClicked()
 
 void ConfigureThemesDialog::Private::cloneThemeButtonClicked()
 {
-    auto *item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->currentItem());
+    auto item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->currentItem());
     if (!item) {
         return;
     }
@@ -410,7 +410,7 @@ void ConfigureThemesDialog::Private::deleteThemeButtonClicked()
                                       i18nc("@title:window", "Delete Theme"))) {
         mEditor->editTheme(nullptr); // forget it
         for (QListWidgetItem *it : list) {
-            auto *item = dynamic_cast<ThemeListWidgetItem *>(it);
+            auto item = dynamic_cast<ThemeListWidgetItem *>(it);
             if (!item) {
                 return;
             }
@@ -422,7 +422,7 @@ void ConfigureThemesDialog::Private::deleteThemeButtonClicked()
             }
         }
 
-        auto *newItem = dynamic_cast<ThemeListWidgetItem *>(mThemeList->currentItem());
+        auto newItem = dynamic_cast<ThemeListWidgetItem *>(mThemeList->currentItem());
         mDeleteThemeButton->setEnabled(newItem && !newItem->theme()->readOnly());
         mExportThemeButton->setEnabled(newItem);
         const int numberOfSelectedItem(mThemeList->selectedItems().count());

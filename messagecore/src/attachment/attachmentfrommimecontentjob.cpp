@@ -49,7 +49,7 @@ void AttachmentFromMimeContentJob::doStart()
     Q_ASSERT(attachmentPart() == nullptr);
 
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
-    auto *content = const_cast<Content *>(d->mMimeContent);
+    auto content = const_cast<Content *>(d->mMimeContent);
     part->setData(content->decodedContent());
 
     // Get the details from the MIME headers.

@@ -99,7 +99,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     d->mSelectionModel = selectionModel;
 
     // Build the proxy stack
-    const auto *proxyModel = qobject_cast<const QAbstractProxyModel *>(d->mSelectionModel->model());
+    const QAbstractProxyModel *proxyModel = qobject_cast<const QAbstractProxyModel *>(d->mSelectionModel->model());
 
     while (proxyModel) {
         if (proxyModel == d->mModel) {
@@ -107,7 +107,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
         }
 
         d->mProxyStack << proxyModel;
-        const auto nextProxyModel = qobject_cast<const QAbstractProxyModel *>(proxyModel->sourceModel());
+        const QAbstractProxyModel *nextProxyModel = qobject_cast<const QAbstractProxyModel *>(proxyModel->sourceModel());
 
         if (!nextProxyModel) {
             // It's the final model in the chain, so it is necessarily the sourceModel.
@@ -177,7 +177,7 @@ Pane::~Pane()
 void Pane::Private::addActivateTabAction(int i)
 {
     const QString actionname = QString::asprintf("activate_tab_%02d", i);
-    QAction *action = new QAction(i18n("Activate Tab %1", i), q);
+    auto action = new QAction(i18n("Activate Tab %1", i), q);
     mXmlGuiClient->actionCollection()->addAction(actionname, action);
     mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(QStringLiteral("Alt+%1").arg(i)));
     connect(action, &QAction::triggered, q, [this]() {
@@ -197,7 +197,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 {
     d->mXmlGuiClient = xmlGuiClient;
 
-    KToggleAction *const showHideQuicksearch = new KToggleAction(i18n("Show Quick Search Bar"), this);
+    auto const showHideQuicksearch = new KToggleAction(i18n("Show Quick Search Bar"), this);
     d->mXmlGuiClient->actionCollection()->setDefaultShortcut(showHideQuicksearch, Qt::CTRL | Qt::Key_H);
     showHideQuicksearch->setChecked(MessageListSettings::showQuickSearch());
 
@@ -224,7 +224,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 
         d->mActionMenu->addSeparator();
 
-        QAction *action = new QAction(i18n("Create New Tab"), this);
+        auto action = new QAction(i18n("Create New Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("create_new_tab"), action);
         d->mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_O));
         connect(action, &QAction::triggered, this, [this]() {
@@ -831,7 +831,7 @@ QItemSelection Pane::Private::mapSelectionFromSource(const QItemSelection &selec
 {
     QItemSelection result = selection;
 
-    typedef QVector<const QAbstractProxyModel *>::ConstIterator Iterator;
+    using Iterator = QVector<const QAbstractProxyModel *>::ConstIterator;
 
     for (Iterator it = mProxyStack.end() - 1; it != mProxyStack.begin(); --it) {
         result = (*it)->mapSelectionFromSource(result);

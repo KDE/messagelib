@@ -80,7 +80,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAn
     w.setHtml(QStringLiteral("<body>foo</body>"));
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
-    const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor>>();
+    const auto resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor>>();
     QCOMPARE(resultLst.count(), 0);
 }
 
@@ -91,7 +91,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnOneAnchor()
     w.setHtml(QStringLiteral("<body>foo<a href=\"http://www.kde.org\">foo</a></body>"));
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
-    const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor>>();
+    const auto resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor>>();
     QCOMPARE(resultLst.count(), 1);
 }
 
@@ -102,7 +102,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnTwoAnchor()
     w.setHtml(QStringLiteral("<body>foo<a href=\"http://www.kde.org\">foo</a><a href=\"http://www.kde.vv\">foo</a></body>"));
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
-    const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor>>();
+    const auto resultLst = accessKeySpy.at(0).at(0).value<QVector<WebEngineViewer::WebEngineAccessKeyAnchor>>();
     QCOMPARE(resultLst.count(), 2);
 }
 

@@ -26,7 +26,7 @@ class MESSAGECOMPOSER_EXPORT JobBase : public KCompositeJob
     Q_OBJECT
 
 public:
-    typedef QList<JobBase *> List;
+    using List = QList<JobBase *>;
 
     enum Error { BugError = UserDefinedError + 1, IncompleteError, UserCancelledError, UserError = UserDefinedError + 42 };
 

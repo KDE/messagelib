@@ -231,7 +231,7 @@ void MessageList::Widget::slotTagsFetched(KJob *job)
             QString iconName = QStringLiteral("mail-tagged");
             const QString label = akonadiTag.name();
             const QString id = akonadiTag.url().url();
-            const auto *attr = akonadiTag.attribute<Akonadi::TagAttribute>();
+            const auto attr = akonadiTag.attribute<Akonadi::TagAttribute>();
             if (attr) {
                 iconName = attr->iconName();
             }

@@ -17,7 +17,7 @@ namespace KMime
 namespace Types
 {
 struct Address;
-typedef QVector<Address> AddressList;
+using AddressList = QVector<Address>;
 class Mailbox;
 }
 namespace Headers

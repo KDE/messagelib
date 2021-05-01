@@ -196,7 +196,7 @@ void DistributionListDialog::slotDelayedSetRecipients(KJob *job)
         bool isFirst = true;
         for (const Akonadi::Item &akItem : qAsConst(akItems)) {
             if (akItem.hasPayload<KContacts::Addressee>()) {
-                const KContacts::Addressee contact = akItem.payload<KContacts::Addressee>();
+                const auto contact = akItem.payload<KContacts::Addressee>();
 
                 auto item = new DistributionListItem(mRecipientsList);
                 item->setAddressee(contact, email);

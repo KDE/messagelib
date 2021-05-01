@@ -135,7 +135,7 @@ Collection::List MessageList::StorageModel::displayedCollections() const
 
     collections.reserve(indexes.count());
     for (const QModelIndex &index : indexes) {
-        Collection c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
+        auto c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
             collections << c;
         }
@@ -151,7 +151,7 @@ QString MessageList::StorageModel::id() const
 
     ids.reserve(indexes.count());
     for (const QModelIndex &index : indexes) {
-        Collection c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
+        auto c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
             ids << QString::number(c.id());
         }
@@ -174,7 +174,7 @@ bool MessageList::StorageModel::containsOutboundMessages() const
     const QModelIndexList indexes = d->mSelectionModel->selectedRows();
 
     for (const QModelIndex &index : indexes) {
-        Collection c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
+        auto c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
             return isOutBoundFolder(c);
         }
@@ -190,7 +190,7 @@ int MessageList::StorageModel::initialUnreadRowCountGuess() const
     int unreadCount = 0;
 
     for (const QModelIndex &index : indexes) {
-        Collection c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
+        auto c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
             unreadCount += c.statistics().unreadCount();
         }
@@ -478,7 +478,7 @@ Collection MessageList::StorageModel::parentCollectionForRow(int row) const
     // We cannot possibly refer to top-level collection
     Q_ASSERT(etmIndex.parent().isValid());
 
-    const Collection col = etmIndex.parent().data(EntityTreeModel::CollectionRole).value<Collection>();
+    const auto col = etmIndex.parent().data(EntityTreeModel::CollectionRole).value<Collection>();
     Q_ASSERT(col.isValid());
 
     return col;

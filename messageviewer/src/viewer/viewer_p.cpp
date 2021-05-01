@@ -496,13 +496,13 @@ void ViewerPrivate::slotOpenWithActionCurrentContent(QAction *act)
     if (!mCurrentContent) {
         return;
     }
-    const KService::Ptr app = act->data().value<KService::Ptr>();
+    const auto app = act->data().value<KService::Ptr>();
     attachmentOpenWith(mCurrentContent, app);
 }
 
 void ViewerPrivate::slotOpenWithAction(QAction *act)
 {
-    const KService::Ptr app = act->data().value<KService::Ptr>();
+    const auto app = act->data().value<KService::Ptr>();
     const auto contents = selectedContents();
     if (contents.count() == 1) {
         attachmentOpenWith(contents.first(), app);
@@ -839,7 +839,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
         }
     }
 
-    auto *message = dynamic_cast<KMime::Message *>(content);
+    auto message = dynamic_cast<KMime::Message *>(content);
     bool onlySingleNode = mMessage.data() != content;
 
     // Pass control to the OTP now, which does the real work
@@ -2912,7 +2912,7 @@ void ViewerPrivate::slotMessageMayBeAScam()
             }
         }
         if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
-            KMime::Message::Ptr message = mMessageItem.payload<KMime::Message::Ptr>();
+            auto message = mMessageItem.payload<KMime::Message::Ptr>();
             const QString email = QLatin1String(KEmailAddress::firstEmailAddress(message->from()->as7BitString(false)));
             const QStringList lst = MessageViewer::MessageViewerSettings::self()->scamDetectionWhiteList();
             if (lst.contains(email)) {
@@ -2926,7 +2926,7 @@ void ViewerPrivate::slotMessageMayBeAScam()
 void ViewerPrivate::slotMessageIsNotAScam()
 {
     if (mMessageItem.isValid()) {
-        auto *attr = mMessageItem.attribute<MessageViewer::ScamAttribute>(Akonadi::Item::AddIfMissing);
+        auto attr = mMessageItem.attribute<MessageViewer::ScamAttribute>(Akonadi::Item::AddIfMissing);
         attr->setIsAScam(false);
         auto modify = new Akonadi::ItemModifyJob(mMessageItem, mSession);
         modify->setIgnorePayload(true);
@@ -2951,7 +2951,7 @@ void ViewerPrivate::slotAddToWhiteList()
 {
     if (mMessageItem.isValid()) {
         if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
-            KMime::Message::Ptr message = mMessageItem.payload<KMime::Message::Ptr>();
+            auto message = mMessageItem.payload<KMime::Message::Ptr>();
             const QString email = QLatin1String(KEmailAddress::firstEmailAddress(message->from()->as7BitString(false)));
             QStringList lst = MessageViewer::MessageViewerSettings::self()->scamDetectionWhiteList();
             if (lst.contains(email)) {

@@ -27,7 +27,7 @@ namespace MessageList
 {
 namespace Core
 {
-typedef long int MessageItemSetReference;
+using MessageItemSetReference = long;
 
 class Aggregation;
 class Delegate;

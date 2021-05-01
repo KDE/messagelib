@@ -53,7 +53,7 @@ void AttachmentVcardFromAddressBookJob::doStart()
 {
     if (d->mItem.isValid()) {
         if (d->mItem.hasPayload<KContacts::Addressee>()) {
-            const KContacts::Addressee contact = d->mItem.payload<KContacts::Addressee>();
+            const auto contact = d->mItem.payload<KContacts::Addressee>();
             if (contact.isEmpty()) {
                 invalidContact();
             } else {
@@ -66,7 +66,7 @@ void AttachmentVcardFromAddressBookJob::doStart()
                 addAttachment(data, attachmentName);
             }
         } else if (d->mItem.hasPayload<KContacts::ContactGroup>()) {
-            const KContacts::ContactGroup group = d->mItem.payload<KContacts::ContactGroup>();
+            const auto group = d->mItem.payload<KContacts::ContactGroup>();
             const QString groupName(group.name());
             const QString attachmentName = (groupName.isEmpty() ? QStringLiteral("vcard") : groupName) + QLatin1String(".vcf");
             auto expandJob = new Akonadi::ContactGroupExpandJob(group, this);

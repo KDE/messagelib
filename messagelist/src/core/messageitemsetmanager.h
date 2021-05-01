@@ -17,7 +17,7 @@ namespace Core
 {
 class MessageItem;
 
-typedef long int MessageItemSetReference;
+using MessageItemSetReference = long;
 
 /**
  * This class manages sets of messageitem references.

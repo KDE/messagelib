@@ -139,7 +139,7 @@ QVector<QPair<QString, int>> SortOrder::enumerateGroupSortDirectionOptions(Aggre
     return ret;
 }
 
-typedef QVector<QPair<QString, int>> OptionList;
+using OptionList = QVector<QPair<QString, int>>;
 static bool optionListHasOption(const OptionList &optionList, int optionValue, int defaultOptionValue)
 {
     for (const auto &pair : optionList) {

@@ -65,7 +65,7 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &RemoteContentConfigureWidget::slotCustomContextMenuRequested);
     connect(mTreeWidget, &QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item) {
         if (item) {
-            auto *rulesItem = static_cast<RemoteContentWidgetItem *>(item);
+            auto rulesItem = static_cast<RemoteContentWidgetItem *>(item);
             modifyRemoteContent(rulesItem);
         }
     });

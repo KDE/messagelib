@@ -100,7 +100,7 @@ private:
     QString mHeader;
     QString mConfidenceHeader;
 };
-typedef QVector<SpamScore> SpamScores;
+using SpamScores = QVector<SpamScore>;
 
 /**
     @short Flyweight for analysing spam headers.

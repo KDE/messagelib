@@ -24,7 +24,7 @@ namespace MessageViewer
 {
 class GlobalContext;
 
-typedef std::function<void(Grantlee::OutputStream *stream)> GrantleeCallback;
+using GrantleeCallback = std::function<void(Grantlee::OutputStream *)>;
 /**
  * @brief The MessagePartRendererManager class
  */

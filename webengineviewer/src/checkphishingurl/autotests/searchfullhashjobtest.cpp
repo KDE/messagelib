@@ -55,7 +55,7 @@ void SearchFullHashJobTest::shouldCreateRequest_data()
 
 void SearchFullHashJobTest::shouldCreateRequest()
 {
-    typedef QHash<QByteArray, QByteArray> hashdef;
+    using hashdef = QHash<QByteArray, QByteArray>;
     QFETCH(hashdef, hash);
     QFETCH(QStringList, databaseHash);
     QFETCH(QString, request);

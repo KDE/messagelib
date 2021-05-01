@@ -61,7 +61,7 @@ public:
     Q_REQUIRED_RESULT QString statusBarMessage(const QUrl &url, ViewerPrivate *w = nullptr) const;
 
 private:
-    typedef QVector<const MimeTreeParser::URLHandler *> HandlerList;
+    using HandlerList = QVector<const MimeTreeParser::URLHandler *>;
     HandlerList mHandlers;
     BodyPartURLHandlerManager *mBodyPartURLHandlerManager = nullptr;
 };

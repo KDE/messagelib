@@ -110,8 +110,7 @@ void DKIMCheckSignatureJobTest::shouldTestMail()
     QTimer::singleShot(10, job, &MessageViewer::DKIMCheckSignatureJob::start);
     QVERIFY(dkimSignatureSpy.wait());
     QCOMPARE(dkimSignatureSpy.count(), 1);
-    const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult info =
-        dkimSignatureSpy.at(0).at(0).value<MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult>();
+    const auto info = dkimSignatureSpy.at(0).at(0).value<MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult>();
     QCOMPARE(info.warning, dkimwarning);
     QCOMPARE(info.error, dkimerror);
     QCOMPARE(info.status, dkimstatus);

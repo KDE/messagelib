@@ -25,7 +25,7 @@ class HtmlWriter;
 class MESSAGEVIEWER_EXPORT HTMLBlock
 {
 public:
-    typedef QSharedPointer<HTMLBlock> Ptr;
+    using Ptr = QSharedPointer<HTMLBlock>;
 
     HTMLBlock();
 

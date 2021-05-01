@@ -15,7 +15,7 @@
 
 using namespace MessageCore;
 
-typedef QString (*MagicDetectorFunc)(const KMime::Message::Ptr &, QByteArray &, QString &);
+using MagicDetectorFunc = QString (*)(const KMime::Message::Ptr &, QByteArray &, QString &);
 
 /* Sender: (owner-([^@]+)|([^@+]-owner)@ */
 static QString check_sender(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
