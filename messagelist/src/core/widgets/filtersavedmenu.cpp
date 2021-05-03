@@ -19,5 +19,7 @@ FilterSavedMenu::~FilterSavedMenu()
 
 void FilterSavedMenu::slotShowMenu()
 {
-    // TODO
+    clear();
+
+    // TODO load filter
 }
