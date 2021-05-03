@@ -25,14 +25,15 @@ using namespace MessageViewer;
 static AttachmentStrategy::Display smartDisplay(KMime::Content *node)
 {
     const auto cd = node->contentDisposition(false);
-
-    if (cd && cd->disposition() == KMime::Headers::CDinline) {
-        // explict "inline" disposition:
-        return AttachmentStrategy::Inline;
-    }
-    if (cd && cd->disposition() == KMime::Headers::CDattachment) {
-        // explicit "attachment" disposition:
-        return AttachmentStrategy::AsIcon;
+    if (cd) {
+        if (cd->disposition() == KMime::Headers::CDinline) {
+            // explict "inline" disposition:
+            return AttachmentStrategy::Inline;
+        }
+        if (cd->disposition() == KMime::Headers::CDattachment) {
+            // explicit "attachment" disposition:
+            return AttachmentStrategy::AsIcon;
+        }
     }
 
     const auto ct = node->contentType(false);
