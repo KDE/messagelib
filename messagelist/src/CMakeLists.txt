@@ -32,6 +32,7 @@ set(libmessagelist_SRCS
     core/widgets/searchlinestatus.cpp
     core/widgets/searchcollectionindexingwarning.cpp
     core/widgets/tablockedwarning.cpp
+    core/widgets/filtersavedmenu.cpp
 
 
     utils/aggregationcombobox.cpp
