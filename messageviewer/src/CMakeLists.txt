@@ -358,7 +358,7 @@ target_link_libraries(KF5MessageViewer
     )
 
 set_target_properties(KF5MessageViewer PROPERTIES
-    VERSION ${MESSAGEVIEWER_VERSION_STRING}
+    VERSION ${MESSAGEVIEWER_VERSION}
     SOVERSION ${MESSAGEVIEWER_SOVERSION}
     EXPORT_NAME MessageViewer
     )

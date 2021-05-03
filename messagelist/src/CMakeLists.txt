@@ -88,7 +88,7 @@ target_link_libraries(KF5MessageList
     )
 
 set_target_properties(KF5MessageList PROPERTIES
-    VERSION ${MESSAGELIST_VERSION_STRING}
+    VERSION ${MESSAGELIST_VERSION}
     SOVERSION ${MESSAGELIST_SOVERSION}
     EXPORT_NAME MessageList
     )

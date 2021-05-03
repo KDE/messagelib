@@ -67,7 +67,7 @@ target_link_libraries(KF5TemplateParser
     KF5::Libkdepim
     )
 set_target_properties(KF5TemplateParser PROPERTIES
-    VERSION ${TEMPLATEPARSER_VERSION_STRING}
+    VERSION ${TEMPLATEPARSER_VERSION}
     SOVERSION ${TEMPLATEPARSER_SOVERSION}
     EXPORT_NAME TemplateParser
     )

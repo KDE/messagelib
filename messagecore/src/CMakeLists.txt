@@ -93,7 +93,7 @@ target_link_libraries(KF5MessageCore
 target_include_directories(KF5MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageCore/;${KDE_INSTALL_INCLUDEDIR_KF5}/messagecore>")
 
 set_target_properties(KF5MessageCore PROPERTIES
-    VERSION ${MESSAGECORE_VERSION_STRING}
+    VERSION ${MESSAGECORE_VERSION}
     SOVERSION ${MESSAGECORE_SOVERSION}
     EXPORT_NAME MessageCore
     )

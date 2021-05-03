@@ -256,7 +256,7 @@ target_link_libraries(KF5MessageComposer
 target_include_directories(KF5MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messagecomposer>")
 
 set_target_properties(KF5MessageComposer PROPERTIES
-    VERSION ${MESSAGECOMPOSER_VERSION_STRING}
+    VERSION ${MESSAGECOMPOSER_VERSION}
     SOVERSION ${MESSAGECOMPOSER_SOVERSION}
     EXPORT_NAME MessageComposer
     )
