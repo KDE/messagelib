@@ -22,4 +22,6 @@ void FilterSavedMenu::slotShowMenu()
     clear();
 
     // TODO load filter
+    // TODO configure
+    // TODO save
 }
