@@ -9,6 +9,7 @@
 #include "messagelist_private_export.h"
 #include <QMenu>
 #include <QObject>
+class QAction;
 namespace MessageList
 {
 namespace Core
@@ -26,6 +27,8 @@ Q_SIGNALS:
 
 private:
     void slotShowMenu();
+    QAction *const mSaveAction;
+    QAction *const mConfigureAction;
 };
 }
 }
