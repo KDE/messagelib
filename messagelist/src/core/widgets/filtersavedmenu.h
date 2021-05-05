@@ -29,6 +29,7 @@ private:
     void slotShowMenu();
     QAction *const mSaveAction;
     QAction *const mConfigureAction;
+    QList<QAction *> mListAction;
 };
 }
 }

@@ -16,6 +16,7 @@ FilterSavedMenu::FilterSavedMenu(QWidget *parent)
 {
     connect(this, &FilterSavedMenu::aboutToShow, this, &FilterSavedMenu::slotShowMenu);
     connect(mSaveAction, &QAction::triggered, this, &FilterSavedMenu::saveFilter);
+    connect(mConfigureAction, &QAction::triggered, this, &FilterSavedMenu::configureFilters);
 }
 
 FilterSavedMenu::~FilterSavedMenu()
@@ -24,9 +25,7 @@ FilterSavedMenu::~FilterSavedMenu()
 
 void FilterSavedMenu::slotShowMenu()
 {
+    // TODO
+    mListAction.clear();
     clear();
-
-    // TODO load filter
-    // TODO configure
-    // TODO save
 }
