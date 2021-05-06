@@ -27,5 +27,10 @@ void FilterSavedMenu::slotShowMenu()
 {
     // TODO
     mListAction.clear();
-    clear();
+    if (isEmpty()) {
+        addSeparator();
+        addAction(mSaveAction);
+        addSeparator();
+        addAction(mConfigureAction);
+    }
 }
