@@ -105,7 +105,7 @@ set(messagecomposer_followupreminder_SRCS
     followupreminder/followupreminder.cpp
     )
 
-qt5_add_dbus_interface(messagecomposer_followupreminder_SRCS
+qt_add_dbus_interface(messagecomposer_followupreminder_SRCS
     followupreminder/org.freedesktop.Akonadi.FollowUpReminder.xml
     followupreminderinterface
     )
@@ -164,7 +164,7 @@ set(messagecomposer_sendlater_SRCS
     sendlater/sendlatertimedatewidget.cpp
 )
 
-qt5_add_dbus_interface(messagecomposer_sendlater_SRCS
+qt_add_dbus_interface(messagecomposer_sendlater_SRCS
     sendlater/org.freedesktop.Akonadi.SendLaterAgent.xml
     sendlaterinterface
 )
