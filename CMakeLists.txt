@@ -12,7 +12,7 @@ option(KDEPIM_RUN_AKONADI_TEST "Enable autotest based on Akonadi." TRUE)
 
 option(MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW "Experimental conversationview (in progress)" FALSE)
 
-set(KF5_MIN_VERSION "5.82.0")
+set(KF5_MIN_VERSION "5.81.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
@@ -104,7 +104,7 @@ set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Sear
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050e00)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055300)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055200)
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
 endif()
