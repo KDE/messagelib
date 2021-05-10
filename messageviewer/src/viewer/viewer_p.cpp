@@ -399,6 +399,10 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
     KMime::Message *modifiedMessage = mNodeHelper->messageWithExtraContent(mMessage.data());
     mMimePartTree->mimePartModel()->setRoot(modifiedMessage);
     mMessageItem.setPayloadFromData(mMessage->encodedContent());
+    // Modifying the payload might change the remote id (e.g. for IMAP) of the item, so don't try to force on it
+    // a potentially old remote id. Without clearing the remote id, deleting multiple attachments from a message
+    // stored on an IMAP server will likely fail with "Invalid attempt to modify the remoteID for item [...]".
+    mMessageItem.setRemoteId({});
     auto job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
     job->disableRevisionCheck();
     connect(job, &KJob::result, this, &ViewerPrivate::itemModifiedResult);
