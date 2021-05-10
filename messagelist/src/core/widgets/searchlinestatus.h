@@ -17,6 +17,7 @@ namespace MessageList
 {
 namespace Core
 {
+class FilterSavedMenu;
 class MESSAGELIST_TESTS_EXPORT SearchLineStatus : public QLineEdit
 {
     Q_OBJECT
@@ -60,6 +61,7 @@ private:
     void clearFilterByAction();
     void changeSearchAgainstFromOrToText();
     void slotClear();
+    void showSavedFiltersMenu();
 
     bool mLocked = false;
     bool mHasFilter = false;
@@ -67,6 +69,7 @@ private:
     QIcon mWithFilter;
     QAction *mLockAction = nullptr;
     QAction *mFiltersAction = nullptr;
+    QAction *mSaveFilterAction = nullptr;
     QMenu *mFilterMenu = nullptr;
     QCompleter *mCompleter = nullptr;
     QList<QAction *> mFilterListActions;
@@ -76,6 +79,7 @@ private:
     QAction *mSearchAgainstFromOrToAction = nullptr;
     QAction *mSearchAgainstBccAction = nullptr;
     QStringListModel *mCompleterListModel = nullptr;
+    FilterSavedMenu *mFilterSavedMenu = nullptr;
     QStringList mListCompetion;
     QString mColorName;
     bool mContainsOutboundMessages = false;

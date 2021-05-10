@@ -5,6 +5,7 @@
 */
 
 #include "searchlinestatus.h"
+#include "filtersavedmenu.h"
 #include "messagelist_debug.h"
 
 #include <KColorScheme>
@@ -106,8 +107,13 @@ void SearchLineStatus::initializeActions()
     mWithoutFilter = QIcon::fromTheme(QStringLiteral("view-filter"));
     mFiltersAction = addAction(mWithoutFilter, QLineEdit::LeadingPosition);
     mFiltersAction->setToolTip(i18n("Filter Mails by Status"));
-
     connect(mFiltersAction, &QAction::triggered, this, &SearchLineStatus::showMenu);
+
+    mSaveFilterAction = addAction(QIcon::fromTheme(QStringLiteral("edit-find")), QLineEdit::LeadingPosition);
+    mSaveFilterAction->setToolTip(i18n("Saved Filter"));
+    mFilterSavedMenu = new FilterSavedMenu(this);
+    mSaveFilterAction->setMenu(mFilterSavedMenu);
+    connect(mSaveFilterAction, &QAction::triggered, this, &SearchLineStatus::showSavedFiltersMenu);
 }
 
 void SearchLineStatus::slotToggledLockAction()
@@ -130,6 +136,13 @@ void SearchLineStatus::updateFilters()
     mHasFilter = !lstStatus.isEmpty();
     Q_EMIT filterActionChanged(lstStatus);
     updateFilterActionIcon();
+}
+
+void SearchLineStatus::showSavedFiltersMenu()
+{
+    if (mFilterSavedMenu->exec(mapToGlobal(QPoint(0, height())))) {
+        // TODO
+    }
 }
 
 void SearchLineStatus::showMenu()
