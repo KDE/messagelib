@@ -17,7 +17,6 @@ FilterSavedMenu::FilterSavedMenu(QWidget *parent)
     connect(this, &FilterSavedMenu::aboutToShow, this, &FilterSavedMenu::slotShowMenu);
     connect(mSaveAction, &QAction::triggered, this, &FilterSavedMenu::saveFilter);
     connect(mConfigureAction, &QAction::triggered, this, &FilterSavedMenu::configureFilters);
-    slotShowMenu();
 }
 
 FilterSavedMenu::~FilterSavedMenu()
