@@ -62,6 +62,8 @@ private:
     void changeSearchAgainstFromOrToText();
     void slotClear();
     void showSavedFiltersMenu();
+    void slotSaveFilter();
+    void slotConfigureFilters();
 
     bool mLocked = false;
     bool mHasFilter = false;

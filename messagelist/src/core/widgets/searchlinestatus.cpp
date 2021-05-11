@@ -16,6 +16,7 @@
 #include <QAction>
 #include <QCompleter>
 #include <QContextMenuEvent>
+#include <QInputDialog>
 #include <QMenu>
 #include <QPushButton>
 #include <QStandardPaths>
@@ -114,6 +115,21 @@ void SearchLineStatus::initializeActions()
     mFilterSavedMenu = new FilterSavedMenu(this);
     mSaveFilterAction->setMenu(mFilterSavedMenu);
     connect(mSaveFilterAction, &QAction::triggered, this, &SearchLineStatus::showSavedFiltersMenu);
+    connect(mFilterSavedMenu, &FilterSavedMenu::saveFilter, this, &SearchLineStatus::slotSaveFilter);
+    connect(mFilterSavedMenu, &FilterSavedMenu::saveFilter, this, &SearchLineStatus::slotConfigureFilters);
+}
+
+void SearchLineStatus::slotConfigureFilters()
+{
+}
+
+void SearchLineStatus::slotSaveFilter()
+{
+    bool ok = false;
+    const QString str = QInputDialog::getText(this, i18n("Filter Name:"), i18n("Name:"), QLineEdit::Normal, {}, &ok);
+    if (ok && !str.trimmed().isEmpty()) {
+        // TODO
+    }
 }
 
 void SearchLineStatus::slotToggledLockAction()
