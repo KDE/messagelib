@@ -121,6 +121,7 @@ void SearchLineStatus::initializeActions()
 
 void SearchLineStatus::slotConfigureFilters()
 {
+    // TODO
 }
 
 void SearchLineStatus::slotSaveFilter()
