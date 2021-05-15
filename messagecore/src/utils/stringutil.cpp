@@ -187,11 +187,16 @@ QVector<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
                 toStr << queryItem.second;
                 indexTo = i;
             } else {
-                QPair<QString, QString> pairElement;
-                pairElement.first = queryItem.first.toLower();
-                pairElement.second = queryItem.second;
-                values.append(pairElement);
-                i++;
+                if (queryItem.second.isEmpty()) {
+                    // Bug 206269 => A%26B => encoded '&'
+                    values[i - 1].second = values[i - 1].second + QStringLiteral("&") + queryItem.first;
+                } else {
+                    QPair<QString, QString> pairElement;
+                    pairElement.first = queryItem.first.toLower();
+                    pairElement.second = queryItem.second;
+                    values.append(pairElement);
+                    i++;
+                }
             }
         }
     }

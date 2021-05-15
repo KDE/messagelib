@@ -728,3 +728,17 @@ void StringUtilTest::test_formatQuotePrefix()
     QFETCH(QString, result);
     QCOMPARE(MessageCore::StringUtil::formatQuotePrefix(quotePattern, from), result);
 }
+
+void StringUtilTest::test_parseMailToBug206269()
+{
+    const QByteArray ba(QByteArrayLiteral("mailto:team@example.com?subject=A%26B&body=D%26C"));
+    QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
+    QVector<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
+    QCOMPARE(data.size(), 3);
+    QCOMPARE(data.at(0).first, QLatin1String("to"));
+    QCOMPARE(data.at(0).second, QLatin1String("team@example.com"));
+    QCOMPARE(data.at(1).first, QLatin1String("subject"));
+    QCOMPARE(data.at(1).second, QLatin1String("A&B"));
+    QCOMPARE(data.at(2).first, QLatin1String("body"));
+    QCOMPARE(data.at(2).second, QLatin1String("D&C"));
+}
