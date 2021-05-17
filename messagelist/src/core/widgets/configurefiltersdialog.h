@@ -21,6 +21,8 @@ public:
     ~ConfigureFiltersDialog() override;
 
 private:
+    void readConfig();
+    void writeConfig();
     ConfigureFiltersWidget *const mConfigureFiltersWidget;
 };
 
