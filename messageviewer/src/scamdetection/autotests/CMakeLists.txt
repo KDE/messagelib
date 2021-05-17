@@ -7,5 +7,5 @@ ecm_add_test(scamattributetest.cpp ../scamattribute.cpp
 ecm_add_test(scamdetectionwebenginetest.cpp
     TEST_NAME scamdetectionwebenginetest
     NAME_PREFIX "messageviewer-scamwebenginedetection-"
-    LINK_LIBRARIES KF5::MessageViewer Qt::Test Qt5::WebEngine Qt5::WebEngineWidgets
+    LINK_LIBRARIES KF5::MessageViewer Qt::Test Qt::WebEngine Qt::WebEngineWidgets
     )

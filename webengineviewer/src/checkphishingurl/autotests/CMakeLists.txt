@@ -84,5 +84,5 @@ ecm_add_test(backoffmodemanagertest.cpp ${testwebengineviewer_webengine_common_S
 ecm_add_test(downloadlocaldatabasethreadtest.cpp ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME downloadlocaldatabasethreadtest
     NAME_PREFIX "webengineview-"
-    LINK_LIBRARIES Qt::Test Qt5::Network KF5::WebEngineViewer
+    LINK_LIBRARIES Qt::Test Qt::Network KF5::WebEngineViewer
     )
