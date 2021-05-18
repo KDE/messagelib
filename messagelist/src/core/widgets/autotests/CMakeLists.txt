@@ -11,4 +11,5 @@ add_messagelist_widget_unittest(quicksearchwarningtest.cpp)
 add_messagelist_widget_unittest(searchlinestatustest.cpp)
 add_messagelist_widget_unittest(searchcollectionindexingwarningtest.cpp)
 add_messagelist_widget_unittest(tablockedwarningtest.cpp)
+add_messagelist_widget_unittest(configurefilterswidgettest.cpp)
 
