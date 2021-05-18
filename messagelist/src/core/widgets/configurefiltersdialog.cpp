@@ -20,6 +20,16 @@ ConfigureFiltersDialog::ConfigureFiltersDialog(QWidget *parent)
     : QDialog(parent)
     , mConfigureFiltersWidget(new ConfigureFiltersWidget(this))
 {
+    auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+
+    mConfigureFiltersWidget->setObjectName(QStringLiteral("mConfigureFiltersWidget"));
+    mainLayout->addWidget(mConfigureFiltersWidget);
+
+    auto button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    mainLayout->addWidget(button);
+    connect(button, &QDialogButtonBox::accepted, this, &ConfigureFiltersDialog::accept);
+    connect(button, &QDialogButtonBox::rejected, this, &ConfigureFiltersDialog::reject);
     readConfig();
 }
 
