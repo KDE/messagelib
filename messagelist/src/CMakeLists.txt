@@ -6,7 +6,9 @@ configure_file(config-messagelist.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-mes
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagelist\")
 
 add_subdirectory(pics)
-
+if(BUILD_TESTING)
+	add_subdirectory(core/widgets/autotests)
+endif()
 set(libmessagelist_SRCS
     core/aggregation.cpp
     core/delegate.cpp
