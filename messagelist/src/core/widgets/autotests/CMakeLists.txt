@@ -3,9 +3,12 @@ macro(add_messagelist_widget_unittest _source)
     ecm_add_test(${_source}
         TEST_NAME ${_name}
         NAME_PREFIX "messagelist-"
-	LINK_LIBRARIES KF5::MessageList Qt::Test
+	LINK_LIBRARIES Qt::Test KF5::MessageCore KF5::MessageList KF5::PimCommon
     )
 endmacro ()
 
-#add_messagelist_widget_unittest(shownextmessagewidgettest.cpp)
+add_messagelist_widget_unittest(quicksearchwarningtest.cpp)
+add_messagelist_widget_unittest(searchlinestatustest.cpp)
+add_messagelist_widget_unittest(searchcollectionindexingwarningtest.cpp)
+add_messagelist_widget_unittest(tablockedwarningtest.cpp)
 

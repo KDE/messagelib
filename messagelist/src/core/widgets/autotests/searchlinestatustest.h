@@ -20,4 +20,3 @@ private Q_SLOTS:
     void shouldAddCompletionItem();
     void shouldClearCompleter();
 };
-

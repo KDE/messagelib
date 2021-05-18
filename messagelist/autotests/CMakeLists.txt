@@ -9,7 +9,3 @@ macro(messagelist_unittest _source)
 endmacro ()
 
 messagelist_unittest(itemsizetest.cpp)
-messagelist_unittest(quicksearchwarningtest.cpp)
-messagelist_unittest(searchlinestatustest.cpp)
-messagelist_unittest(searchcollectionindexingwarningtest.cpp)
-messagelist_unittest(tablockedwarningtest.cpp)
