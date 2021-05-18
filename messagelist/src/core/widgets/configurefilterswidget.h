@@ -8,6 +8,7 @@
 
 #include "messagelist_private_export.h"
 #include <QWidget>
+class QListWidget;
 namespace MessageList
 {
 namespace Core
@@ -18,6 +19,9 @@ class MESSAGELIST_TESTS_EXPORT ConfigureFiltersWidget : public QWidget
 public:
     explicit ConfigureFiltersWidget(QWidget *parent = nullptr);
     ~ConfigureFiltersWidget() override;
+
+private:
+    QListWidget *const mListFiltersWidget;
 };
 
 }
