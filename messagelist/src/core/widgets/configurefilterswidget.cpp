@@ -14,6 +14,7 @@ ConfigureFiltersWidget::ConfigureFiltersWidget(QWidget *parent)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setContentsMargins({});
     mListFiltersWidget->setObjectName(QStringLiteral("mListFiltersWidget"));
     mainLayout->addWidget(mListFiltersWidget);
 }

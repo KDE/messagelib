@@ -5,6 +5,7 @@
 */
 
 #include "searchlinestatus.h"
+#include "configurefiltersdialog.h"
 #include "filtersavedmenu.h"
 #include "messagelist_debug.h"
 
@@ -18,6 +19,7 @@
 #include <QContextMenuEvent>
 #include <QInputDialog>
 #include <QMenu>
+#include <QPointer>
 #include <QPushButton>
 #include <QStandardPaths>
 #include <QStringListModel>
@@ -116,12 +118,16 @@ void SearchLineStatus::initializeActions()
     mSaveFilterAction->setMenu(mFilterSavedMenu);
     connect(mSaveFilterAction, &QAction::triggered, this, &SearchLineStatus::showSavedFiltersMenu);
     connect(mFilterSavedMenu, &FilterSavedMenu::saveFilter, this, &SearchLineStatus::slotSaveFilter);
-    connect(mFilterSavedMenu, &FilterSavedMenu::saveFilter, this, &SearchLineStatus::slotConfigureFilters);
+    connect(mFilterSavedMenu, &FilterSavedMenu::configureFilters, this, &SearchLineStatus::slotConfigureFilters);
 }
 
 void SearchLineStatus::slotConfigureFilters()
 {
-    // TODO
+    QPointer<ConfigureFiltersDialog> dlg = new ConfigureFiltersDialog(this);
+    if (dlg->exec()) {
+        // TODO
+    }
+    delete dlg;
 }
 
 void SearchLineStatus::slotSaveFilter()
