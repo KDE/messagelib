@@ -69,9 +69,6 @@
         "Name[x-test]": "xxDefault Grantlee Header Stylexx",
         "Name[zh_CN]": "默认 Grantlee 头样式",
         "Name[zh_TW]": "預設 Grantlee 標頭檔案樣式",
-        "ServiceTypes": [
-            "MessageViewerHeaderStyle/Plugin"
-        ],
         "Version": "1.0"
     },
     "X-KDE-MessageViewer-Header-Order": "100"
