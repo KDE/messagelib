@@ -24,6 +24,7 @@ public:
 Q_SIGNALS:
     void saveFilter();
     void configureFilters();
+    void filterSelected(const QString &identifier);
 
 private:
     void slotShowMenu();

@@ -163,9 +163,7 @@ void SearchLineStatus::updateFilters()
 
 void SearchLineStatus::showSavedFiltersMenu()
 {
-    if (mFilterSavedMenu->exec(mapToGlobal(QPoint(0, height())))) {
-        // TODO
-    }
+    mFilterSavedMenu->exec(mapToGlobal(QPoint(0, height())));
 }
 
 void SearchLineStatus::showMenu()
