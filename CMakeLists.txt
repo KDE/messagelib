@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(PIM_VERSION "5.17.49")
+set(PIM_VERSION "5.17.50")
 
 if (POLICY CMP0053)
     cmake_policy(SET CMP0053 NEW)

@@ -127,19 +127,16 @@ set(messagecomposer_plugineditorcheckbeforesend_SRCS
    plugineditorcheckbeforesend/plugineditorcheckbeforesend.cpp
    plugineditorcheckbeforesend/plugineditorcheckbeforesendinterface.cpp
    plugineditorcheckbeforesend/plugineditorcheckbeforesendmanager.cpp
-   plugineditorcheckbeforesend/plugineditorcheckbeforesendconfigurewidget.cpp
    plugineditorcheckbeforesend/plugineditorcheckbeforesendparams.cpp
    )
 
 set(messagecomposer_plugineditorinit_SRCS
-   plugineditorinit/plugineditorinitconfigurewidget.cpp
    plugineditorinit/plugineditorinit.cpp
    plugineditorinit/plugineditorinitmanager.cpp
    plugineditorinit/plugineditorinitinterface.cpp
    )
 
 set(messagecomposer_plugineditorconverttext_SRCS
-   plugineditorconverttext/plugineditorconverttextconfigurewidget.cpp
    plugineditorconverttext/plugineditorconverttext.cpp
    plugineditorconverttext/plugineditorconverttextmanager.cpp
    plugineditorconverttext/plugineditorconverttextinterface.cpp
@@ -153,6 +150,7 @@ set(messagecomposer_plugineditorgrammar_SRCS
 
 set(messagecomposer_plugineditorbase_SRCS
    plugineditorbase/plugineditorbase.cpp
+   plugineditorbase/plugineditorconfigurebasewidget.cpp
    )
 set(messagecomposer_sendlater_SRCS
     sendlater/sendlaterinfo.cpp
@@ -298,7 +296,6 @@ ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
 
 ecm_generate_headers(MessageComposer_Camelplugineditorinit_HEADERS
     HEADER_NAMES
-    PluginEditorInitConfigureWidget
     PluginEditorInit
     PluginEditorInitManager
     PluginEditorInitInterface
@@ -310,6 +307,7 @@ ecm_generate_headers(MessageComposer_Camelplugineditorinit_HEADERS
 ecm_generate_headers(MessageComposer_CamelPluginEditorBase_HEADERS
     HEADER_NAMES
     PluginEditorBase
+    PluginEditorConfigureBaseWidget
     REQUIRED_HEADERS MessageComposer_PluginEditorBase_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorbase
@@ -317,7 +315,6 @@ ecm_generate_headers(MessageComposer_CamelPluginEditorBase_HEADERS
 
 ecm_generate_headers(MessageComposer_Camelplugineditorconverttext_HEADERS
     HEADER_NAMES
-    PluginEditorConvertTextConfigureWidget
     PluginEditorConvertText
     PluginEditorConvertTextManager
     PluginEditorConvertTextInterface
@@ -343,7 +340,6 @@ ecm_generate_headers(MessageComposer_Camelplugineditorcheckbeforesend_HEADERS
     PluginEditorCheckBeforeSend
     PluginEditorCheckBeforeSendInterface
     PluginEditorCheckBeforeSendManager
-    PluginEditorCheckBeforeSendConfigureWidget
     PluginEditorCheckBeforeSendParams
     REQUIRED_HEADERS MessageComposer_plugineditorcheckbeforesend_HEADERS
     PREFIX MessageComposer
