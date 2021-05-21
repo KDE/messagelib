@@ -32,7 +32,7 @@ public:
         return m_auditLog;
     }
 
-    GpgME::Error auditLogError() const
+    Q_REQUIRED_RESULT GpgME::Error auditLogError() const
     {
         return m_auditLogError;
     }

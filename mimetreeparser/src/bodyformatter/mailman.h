@@ -20,7 +20,7 @@ public:
     static const Interface::BodyPartFormatter *create();
 
 private:
-    bool isMailmanMessage(KMime::Content *curNode) const;
+    Q_REQUIRED_RESULT bool isMailmanMessage(KMime::Content *curNode) const;
 };
 }
 

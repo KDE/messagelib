@@ -27,12 +27,12 @@ public:
     ~SearchFullHashJob();
 
     void start();
-    bool canStart() const;
+    Q_REQUIRED_RESULT bool canStart() const;
 
     void setDatabaseState(const QStringList &hash);
     void setSearchFullHashForUrl(const QUrl &url);
 
-    QByteArray jsonRequest() const;
+    Q_REQUIRED_RESULT QByteArray jsonRequest() const;
     void parse(const QByteArray &replyStr);
 
     void setSearchHashs(const QHash<QByteArray, QByteArray> &hash);

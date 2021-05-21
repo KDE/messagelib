@@ -16,7 +16,7 @@ struct Addition;
 struct Removal;
 struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     UpdateDataBaseInfo();
-    bool isValid() const;
+    Q_REQUIRED_RESULT bool isValid() const;
 
     enum ResponseType { Unknown = 0, FullUpdate = 1, PartialUpdate = 2 };
 

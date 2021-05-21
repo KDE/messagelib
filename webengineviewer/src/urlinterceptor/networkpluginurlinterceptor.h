@@ -24,7 +24,7 @@ public:
     ~NetworkPluginUrlInterceptor() override;
     virtual NetworkPluginUrlInterceptorInterface *createInterface(QWebEngineView *webEngine, QObject *parent = nullptr) = 0;
 
-    virtual bool hasConfigureDialog() const;
+    virtual Q_REQUIRED_RESULT bool hasConfigureDialog() const;
     virtual void showConfigureDialog(QWidget *parent = nullptr);
 
     void setIsEnabled(bool enabled);

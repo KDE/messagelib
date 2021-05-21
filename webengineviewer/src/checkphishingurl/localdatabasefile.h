@@ -35,12 +35,12 @@ public:
     bool reload();
 
     Q_REQUIRED_RESULT bool isValid() const;
-    quint16 getUint16(int offset) const;
-    quint32 getUint32(int offset) const;
-    quint64 getUint64(int offset) const;
+    Q_REQUIRED_RESULT quint16 getUint16(int offset) const;
+    Q_REQUIRED_RESULT quint32 getUint32(int offset) const;
+    Q_REQUIRED_RESULT quint64 getUint64(int offset) const;
     const char *getCharStar(int offset) const;
 
-    QByteArray searchHash(const QByteArray &hashToSearch);
+    Q_REQUIRED_RESULT QByteArray searchHash(const QByteArray &hashToSearch);
 
     Q_REQUIRED_RESULT bool shouldCheck() const;
     Q_REQUIRED_RESULT bool checkFileChanged();

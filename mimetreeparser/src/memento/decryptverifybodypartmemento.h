@@ -29,7 +29,7 @@ public:
     explicit DecryptVerifyBodyPartMemento(QGpgME::DecryptVerifyJob *job, const QByteArray &cipherText);
     ~DecryptVerifyBodyPartMemento() override;
 
-    bool start() override;
+    Q_REQUIRED_RESULT bool start() override;
     void exec() override;
 
     const QByteArray &plainText() const

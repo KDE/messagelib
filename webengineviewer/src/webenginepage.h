@@ -62,7 +62,7 @@ public:
     void saveHtml(QWebEngineDownloadItem *download);
     Q_REQUIRED_RESULT bool execPrintPreviewPage(QPrinter *printer, int timeout);
 
-    QPoint mapToViewport(const QPoint &pos) const;
+    Q_REQUIRED_RESULT QPoint mapToViewport(const QPoint &pos) const;
 Q_SIGNALS:
     void urlClicked(const QUrl &url);
     void showConsoleMessage(const QString &message);

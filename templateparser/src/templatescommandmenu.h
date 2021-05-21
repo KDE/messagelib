@@ -107,7 +107,7 @@ public:
         CLanguage
     };
 
-    QMenu *menu() const;
+    Q_REQUIRED_RESULT QMenu *menu() const;
     void fillMenu();
     void fillSubMenus();
 
