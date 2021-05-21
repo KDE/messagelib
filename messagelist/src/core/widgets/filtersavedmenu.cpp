@@ -7,11 +7,12 @@
 #include "filtersavedmenu.h"
 #include <KLocalizedString>
 #include <QAction>
+#include <QIcon>
 using namespace MessageList::Core;
 
 FilterSavedMenu::FilterSavedMenu(QWidget *parent)
     : QMenu(parent)
-    , mSaveAction(new QAction(i18n("Save Filter..."), this))
+    , mSaveAction(new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save Filter..."), this))
     , mConfigureAction(new QAction(i18n("Configure..."), this))
 {
     connect(this, &FilterSavedMenu::aboutToShow, this, &FilterSavedMenu::slotShowMenu);
