@@ -16,6 +16,7 @@
 #include "core/model.h"
 #include "core/storagemodelbase.h"
 #include "core/theme.h"
+#include "core/twofingertap.h"
 #include "core/widgetbase.h"
 #include "messagelistsettings.h"
 #include "messagelistutil.h"
@@ -27,12 +28,14 @@
 
 #include <Item>
 #include <QApplication>
+#include <QGestureEvent>
 #include <QHeaderView>
 #include <QHelpEvent>
 #include <QLineEdit>
 #include <QMenu>
 #include <QPainter>
 #include <QScrollBar>
+#include <QScroller>
 #include <QTimer>
 #include <QToolTip>
 
@@ -53,6 +56,11 @@ public:
 
     void expandFullThread(const QModelIndex &index);
     void generalPaletteChanged();
+    void onPressed(QMouseEvent *e);
+    void gestureEvent(QGestureEvent *e);
+    void tapTriggered(QTapGesture *tap);
+    void tapAndHoldTriggered(QTapAndHoldGesture *tap);
+    void twoFingerTapTriggered(TwoFingerTap *tap);
 
     QColor mTextColor;
     View *const q;
@@ -71,6 +79,13 @@ public:
     QTimer *mApplyThemeColumnsTimer = nullptr; ///< Used to trigger a delayed "apply theme columns"
     int mLastViewportWidth = -1;
     bool mIgnoreUpdateGeometries = false; ///< Shall we ignore the "update geometries" calls ?
+    QScroller *mScroller = nullptr;
+    bool mIsTouchEvent = false;
+    bool mMousePressed = false;
+    Qt::MouseEventSource mLastMouseSource = Qt::MouseEventNotSynthesized;
+    bool mTapAndHoldActive = false;
+    QRubberBand *mRubberBand = nullptr;
+    Qt::GestureType mTwoFingerTap = Qt::CustomGesture;
 };
 
 View::View(Widget *pParent)
@@ -90,6 +105,20 @@ View::View(Widget *pParent)
     setAllColumnsShowFocus(true);
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     viewport()->setAcceptDrops(true);
+
+    d->mScroller = QScroller::scroller(viewport());
+    QScrollerProperties scrollerProp;
+    scrollerProp.setScrollMetric(QScrollerProperties::AcceleratingFlickMaximumTime, 0.2);  //QTBUG-88249
+    d->mScroller->setScrollerProperties(scrollerProp);
+    d->mScroller->grabGesture(viewport());
+
+    setAttribute(Qt::WA_AcceptTouchEvents);
+    d->mTwoFingerTap = QGestureRecognizer::registerRecognizer(new TwoFingerTapRecognizer());
+    viewport()->grabGesture(d->mTwoFingerTap);
+    viewport()->grabGesture(Qt::TapGesture);
+    viewport()->grabGesture(Qt::TapAndHoldGesture);
+
+    d->mRubberBand = new QRubberBand(QRubberBand::Rectangle, this);
 
     header()->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(header(), &QWidget::customContextMenuRequested, this, &View::slotHeaderContextMenuRequested);
@@ -2014,139 +2043,22 @@ void View::changeMessageStatus(MessageItem *it, Akonadi::MessageStatus set, Akon
 
 void View::mousePressEvent(QMouseEvent *e)
 {
-    d->mMousePressPosition = QPoint();
+    d->mMousePressed = true;
+    d->mLastMouseSource = e->source();
 
-    // Perform a hit test
-    if (!d->mDelegate->hitTest(e->pos(), true)) {
+    if (d->mIsTouchEvent) {
         return;
     }
 
-    // Something was hit :)
-
-    Item *it = static_cast<Item *>(d->mDelegate->hitItem());
-    if (!it) {
-        return; // should never happen
-    }
-
-    // Abort any pending message pre-selection as the user is probably
-    // already navigating the view (so pre-selection would make his view jump
-    // to an unexpected place).
-    d->mModel->setPreSelectionMode(PreSelectNone);
-
-    switch (it->type()) {
-    case Item::Message:
-        d->mMousePressPosition = e->pos();
-
-        switch (e->button()) {
-        case Qt::LeftButton:
-            // if we have multi selection then the meaning of hitting
-            // the content item is quite unclear.
-            if (d->mDelegate->hitContentItem() && (selectedIndexes().count() > 1)) {
-                qCDebug(MESSAGELIST_LOG) << "Left hit with selectedIndexes().count() == " << selectedIndexes().count();
-
-                switch (d->mDelegate->hitContentItem()->type()) {
-                case Theme::ContentItem::AnnotationIcon:
-                    static_cast<MessageItem *>(it)->editAnnotation(this);
-                    return; // don't select the item
-                    break;
-                case Theme::ContentItem::ActionItemStateIcon:
-                    changeMessageStatus(static_cast<MessageItem *>(it),
-                                        it->status().isToAct() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusToAct(),
-                                        it->status().isToAct() ? Akonadi::MessageStatus::statusToAct() : Akonadi::MessageStatus());
-                    return; // don't select the item
-                    break;
-                case Theme::ContentItem::ImportantStateIcon:
-                    changeMessageStatus(static_cast<MessageItem *>(it),
-                                        it->status().isImportant() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusImportant(),
-                                        it->status().isImportant() ? Akonadi::MessageStatus::statusImportant() : Akonadi::MessageStatus());
-                    return; // don't select the item
-                case Theme::ContentItem::ReadStateIcon:
-                    changeMessageStatusRead(static_cast<MessageItem *>(it), it->status().isRead() ? false : true);
-                    return;
-                    break;
-                case Theme::ContentItem::SpamHamStateIcon:
-                    changeMessageStatus(static_cast<MessageItem *>(it),
-                                        it->status().isSpam()
-                                            ? Akonadi::MessageStatus()
-                                            : (it->status().isHam() ? Akonadi::MessageStatus::statusSpam() : Akonadi::MessageStatus::statusHam()),
-                                        it->status().isSpam() ? Akonadi::MessageStatus::statusSpam()
-                                                              : (it->status().isHam() ? Akonadi::MessageStatus::statusHam() : Akonadi::MessageStatus()));
-                    return; // don't select the item
-                    break;
-                case Theme::ContentItem::WatchedIgnoredStateIcon:
-                    changeMessageStatus(static_cast<MessageItem *>(it),
-                                        it->status().isIgnored()
-                                            ? Akonadi::MessageStatus()
-                                            : (it->status().isWatched() ? Akonadi::MessageStatus::statusIgnored() : Akonadi::MessageStatus::statusWatched()),
-                                        it->status().isIgnored()
-                                            ? Akonadi::MessageStatus::statusIgnored()
-                                            : (it->status().isWatched() ? Akonadi::MessageStatus::statusWatched() : Akonadi::MessageStatus()));
-                    return; // don't select the item
-                    break;
-                default:
-                    // make gcc happy
-                    break;
-                }
-            }
-
-            // Let QTreeView handle the selection and Q_EMIT the appropriate signals (slotSelectionChanged() may be called)
-            QTreeView::mousePressEvent(e);
-
-            break;
-        case Qt::RightButton:
-            // Let QTreeView handle the selection and Q_EMIT the appropriate signals (slotSelectionChanged() may be called)
-            QTreeView::mousePressEvent(e);
-            e->accept();
-            d->mWidget->viewMessageListContextPopupRequest(selectionAsMessageItemList(), viewport()->mapToGlobal(e->pos()));
-
-            break;
-        default:
-            // make gcc happy
-            break;
-        }
-        break;
-    case Item::GroupHeader: {
-        // Don't let QTreeView handle the selection (as it deselects the current messages)
-        auto groupHeaderItem = static_cast<GroupHeaderItem *>(it);
-
-        switch (e->button()) {
-        case Qt::LeftButton: {
-            QModelIndex index = d->mModel->index(groupHeaderItem, 0);
-
-            if (index.isValid()) {
-                setCurrentIndex(index);
-            }
-
-            if (!d->mDelegate->hitContentItem()) {
-                return;
-            }
-
-            if (d->mDelegate->hitContentItem()->type() == Theme::ContentItem::ExpandedStateIcon) {
-                if (groupHeaderItem->childItemCount() > 0) {
-                    // toggle expanded state
-                    setExpanded(d->mDelegate->hitIndex(), !isExpanded(d->mDelegate->hitIndex()));
-                }
-            }
-            break;
-        }
-        case Qt::RightButton:
-            d->mWidget->viewGroupHeaderContextPopupRequest(groupHeaderItem, viewport()->mapToGlobal(e->pos()));
-            break;
-        default:
-            // make gcc happy
-            break;
-        }
-        break;
-    }
-    default:
-        // should never happen
-        Q_ASSERT(false);
-        break;
-    }
+    d->onPressed(e);
 }
 
 void View::mouseMoveEvent(QMouseEvent *e)
 {
+    if (d->mIsTouchEvent && !d->mTapAndHoldActive) {
+        return;
+    }
+
     if (!(e->buttons() & Qt::LeftButton)) {
         QTreeView::mouseMoveEvent(e);
         return;
@@ -2158,6 +2070,11 @@ void View::mouseMoveEvent(QMouseEvent *e)
 
     if ((e->pos() - d->mMousePressPosition).manhattanLength() <= QApplication::startDragDistance()) {
         return;
+    }
+
+    d->mTapAndHoldActive = false;
+    if (d->mRubberBand->isVisible()) {
+        d->mRubberBand->hide();
     }
 
     d->mWidget->viewStartDragRequest();
@@ -2238,6 +2155,18 @@ void View::changeEvent(QEvent *e)
 
 bool View::event(QEvent *e)
 {
+    if (e->type() == QEvent::TouchBegin) {
+        d->mIsTouchEvent = true;
+        d->mMousePressed = false;
+        return false;
+    }
+
+    if (e->type() == QEvent::Gesture) {
+        d->gestureEvent(static_cast<QGestureEvent *>(e));
+        e->accept();
+        return true;
+    }
+
     // We catch ToolTip events and pass everything else
 
     if (e->type() != QEvent::ToolTip) {
@@ -2657,6 +2586,253 @@ void View::setExpandItem(const QModelIndex &index)
 void View::setQuickSearchClickMessage(const QString &msg)
 {
     d->mWidget->quickSearch()->setPlaceholderText(msg);
+}
+
+void View::Private::onPressed(QMouseEvent* e)
+{
+    mMousePressPosition = QPoint();
+
+    // Perform a hit test
+    if (!mDelegate->hitTest(e->pos(), true)) {
+        return;
+    }
+
+    // Something was hit :)
+
+    Item *it = static_cast<Item *>(mDelegate->hitItem());
+    if (!it) {
+        return; // should never happen
+    }
+
+    // Abort any pending message pre-selection as the user is probably
+    // already navigating the view (so pre-selection would make his view jump
+    // to an unexpected place).
+    mModel->setPreSelectionMode(PreSelectNone);
+
+    switch (it->type()) {
+    case Item::Message:
+        mMousePressPosition = e->pos();
+
+        switch (e->button()) {
+        case Qt::LeftButton:
+            // if we have multi selection then the meaning of hitting
+            // the content item is quite unclear.
+            if (mDelegate->hitContentItem() && (q->selectedIndexes().count() > 1)) {
+                qCDebug(MESSAGELIST_LOG) << "Left hit with selectedIndexes().count() == " << q->selectedIndexes().count();
+
+                switch (mDelegate->hitContentItem()->type()) {
+                case Theme::ContentItem::AnnotationIcon:
+                    static_cast<MessageItem *>(it)->editAnnotation(q);
+                    return; // don't select the item
+                    break;
+                case Theme::ContentItem::ActionItemStateIcon:
+                    q->changeMessageStatus(static_cast<MessageItem *>(it),
+                                        it->status().isToAct() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusToAct(),
+                                        it->status().isToAct() ? Akonadi::MessageStatus::statusToAct() : Akonadi::MessageStatus());
+                    return; // don't select the item
+                    break;
+                case Theme::ContentItem::ImportantStateIcon:
+                    q->changeMessageStatus(static_cast<MessageItem *>(it),
+                                        it->status().isImportant() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusImportant(),
+                                        it->status().isImportant() ? Akonadi::MessageStatus::statusImportant() : Akonadi::MessageStatus());
+                    return; // don't select the item
+                case Theme::ContentItem::ReadStateIcon:
+                    q->changeMessageStatusRead(static_cast<MessageItem *>(it), it->status().isRead() ? false : true);
+                    return;
+                    break;
+                case Theme::ContentItem::SpamHamStateIcon:
+                    q->changeMessageStatus(static_cast<MessageItem *>(it),
+                                        it->status().isSpam()
+                                            ? Akonadi::MessageStatus()
+                                            : (it->status().isHam() ? Akonadi::MessageStatus::statusSpam() : Akonadi::MessageStatus::statusHam()),
+                                        it->status().isSpam() ? Akonadi::MessageStatus::statusSpam()
+                                                              : (it->status().isHam() ? Akonadi::MessageStatus::statusHam() : Akonadi::MessageStatus()));
+                    return; // don't select the item
+                    break;
+                case Theme::ContentItem::WatchedIgnoredStateIcon:
+                    q->changeMessageStatus(static_cast<MessageItem *>(it),
+                                        it->status().isIgnored()
+                                            ? Akonadi::MessageStatus()
+                                            : (it->status().isWatched() ? Akonadi::MessageStatus::statusIgnored() : Akonadi::MessageStatus::statusWatched()),
+                                        it->status().isIgnored()
+                                            ? Akonadi::MessageStatus::statusIgnored()
+                                            : (it->status().isWatched() ? Akonadi::MessageStatus::statusWatched() : Akonadi::MessageStatus()));
+                    return; // don't select the item
+                    break;
+                default:
+                    // make gcc happy
+                    break;
+                }
+            }
+
+            // Let QTreeView handle the selection and Q_EMIT the appropriate signals (slotSelectionChanged() may be called)
+            q->QTreeView::mousePressEvent(e);
+
+            break;
+        case Qt::RightButton:
+            // Let QTreeView handle the selection and Q_EMIT the appropriate signals (slotSelectionChanged() may be called)
+            q->QTreeView::mousePressEvent(e);
+            e->accept();
+            mWidget->viewMessageListContextPopupRequest(q->selectionAsMessageItemList(), q->viewport()->mapToGlobal(e->pos()));
+
+            break;
+        default:
+            // make gcc happy
+            break;
+        }
+        break;
+    case Item::GroupHeader: {
+        // Don't let QTreeView handle the selection (as it deselects the current messages)
+        auto groupHeaderItem = static_cast<GroupHeaderItem *>(it);
+
+        switch (e->button()) {
+        case Qt::LeftButton: {
+            QModelIndex index = mModel->index(groupHeaderItem, 0);
+
+            if (index.isValid()) {
+                q->setCurrentIndex(index);
+            }
+
+            if (!mDelegate->hitContentItem()) {
+                return;
+            }
+
+            if (mDelegate->hitContentItem()->type() == Theme::ContentItem::ExpandedStateIcon) {
+                if (groupHeaderItem->childItemCount() > 0) {
+                    // toggle expanded state
+                    q->setExpanded(mDelegate->hitIndex(), !q->isExpanded(mDelegate->hitIndex()));
+                }
+            }
+            break;
+        }
+        case Qt::RightButton:
+            mWidget->viewGroupHeaderContextPopupRequest(groupHeaderItem, q->viewport()->mapToGlobal(e->pos()));
+            break;
+        default:
+            // make gcc happy
+            break;
+        }
+        break;
+    }
+    default:
+        // should never happen
+        Q_ASSERT(false);
+        break;
+    }
+}
+
+void View::Private::gestureEvent(QGestureEvent *e)
+{
+    if (QGesture *gesture = e->gesture(Qt::TapGesture)) {
+        tapTriggered(static_cast<QTapGesture *>(gesture));
+    }
+    if (QGesture *gesture = e->gesture(Qt::TapAndHoldGesture)) {
+        tapAndHoldTriggered(static_cast<QTapAndHoldGesture *>(gesture));
+    }
+    if (QGesture *gesture = e->gesture(mTwoFingerTap)) {
+        twoFingerTapTriggered(static_cast<TwoFingerTap *>(gesture));
+    }
+}
+
+void View::Private::tapTriggered(QTapGesture *tap)
+{
+    static bool scrollerWasScrolling = false;
+
+    if (tap->state() == Qt::GestureStarted) {
+        mTapAndHoldActive = false;
+
+        // if QScroller state is Scrolling or Dragging, the user makes the tap to stop the scrolling
+        if (mScroller->state() == QScroller::Scrolling || mScroller->state() == QScroller::Dragging) {
+            scrollerWasScrolling = true;
+        } else if (mScroller->state() == QScroller::Pressed || mScroller->state() == QScroller::Inactive) {
+            scrollerWasScrolling = false;
+        }
+    }
+
+    if (tap->state() == Qt::GestureFinished && !scrollerWasScrolling) {
+        mIsTouchEvent = false;
+
+        // with touch you can touch multiple widgets at the same time, but only one widget will get a mousePressEvent.
+        // we use this to select the right window
+        if (!mMousePressed) {
+            return;
+        }
+
+        if (mRubberBand->isVisible()) {
+            mRubberBand->hide();
+        }
+
+        // simulate a mousePressEvent, to allow QTreeView to select the items
+        QMouseEvent fakeMousePress(QEvent::MouseButtonPress, tap->position(),
+                                    mTapAndHoldActive ? Qt::RightButton : Qt::LeftButton,
+                                    mTapAndHoldActive ? Qt::RightButton : Qt::LeftButton, Qt::NoModifier);
+        onPressed(&fakeMousePress);
+        mTapAndHoldActive = false;
+    }
+
+    if (tap->state() == Qt::GestureCanceled) {
+        mIsTouchEvent = false;
+        if (mRubberBand->isVisible()) {
+            mRubberBand->hide();
+        }
+        mTapAndHoldActive = false;
+    }
+}
+
+void View::Private::tapAndHoldTriggered(QTapAndHoldGesture *tap)
+{
+    if (tap->state() == Qt::GestureFinished) {
+
+        // with touch you can touch multiple widgets at the same time, but only one widget will get a mousePressEvent.
+        // we use this to select the right window
+        if (!mMousePressed) {
+            return;
+        }
+
+        // the TapAndHoldGesture is triggerable the with mouse, we don't want this
+        if (mLastMouseSource == Qt::MouseEventNotSynthesized) {
+            return;
+        }
+
+        // the TapAndHoldGesture is triggerable the with stylus, we don't want this
+        if (!mIsTouchEvent) {
+            return;
+        }
+
+        mTapAndHoldActive = true;
+        mScroller->stop();
+
+        // simulate a mousePressEvent, to allow QTreeView to select the items
+        const QPoint tapViewportPos(q->viewport()->mapFromGlobal(tap->position().toPoint()));
+        QMouseEvent fakeMousePress(QEvent::MouseButtonPress, tapViewportPos, Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+        onPressed(&fakeMousePress);
+
+        const QPoint tapIndicatorSize(80, 80); // size for the tapAndHold indicator
+        const QPoint pos(q->mapFromGlobal(tap->position().toPoint()));
+        const QRect tapIndicatorRect(pos - (tapIndicatorSize / 2), pos + (tapIndicatorSize / 2));
+        mRubberBand->setGeometry(tapIndicatorRect.normalized());
+        mRubberBand->show();
+    }
+}
+
+void View::Private::twoFingerTapTriggered(TwoFingerTap *tap)
+{
+    if (tap->state() == Qt::GestureFinished) {
+
+        if (mTapAndHoldActive) {
+            return;
+        }
+
+        // with touch you can touch multiple widgets at the same time, but only one widget will get a mousePressEvent.
+        // we use this to select the right window
+        if (!mMousePressed) {
+            return;
+        }
+
+        // simulate a mousePressEvent with Qt::ControlModifier, to allow QTreeView to select the items
+        QMouseEvent fakeMousePress(QEvent::MouseButtonPress, tap->pos(), Qt::LeftButton, Qt::LeftButton, Qt::ControlModifier);
+        onPressed(&fakeMousePress);
+    }
 }
 
 #include "moc_view.cpp"

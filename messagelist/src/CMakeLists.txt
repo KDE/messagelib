@@ -25,6 +25,7 @@ set(libmessagelist_SRCS
     core/theme.cpp
     core/themedelegate.cpp
     core/threadingcache.cpp
+    core/twofingertap.cpp
     core/storagemodelbase.cpp
     core/sortorder.cpp
     core/view.cpp
