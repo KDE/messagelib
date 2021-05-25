@@ -10,12 +10,15 @@ namespace MessageList
 {
 namespace Core
 {
+class Filter;
 class FilterSavedManager : public QObject
 {
     Q_OBJECT
 public:
     explicit FilterSavedManager(QObject *parent = nullptr);
     ~FilterSavedManager() override;
+
+    void saveFilter(MessageList::Core::Filter *filter, const QString &filtername);
 };
 }
 }
