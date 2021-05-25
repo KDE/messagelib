@@ -21,6 +21,8 @@ public:
 
     void saveFilter(MessageList::Core::Filter *filter, const QString &filtername);
     void loadMenu(QMenu *menu);
+Q_SIGNALS:
+    void activateFilter(const QString &identifier);
 };
 }
 }

@@ -14,6 +14,7 @@ namespace MessageList
 {
 namespace Core
 {
+class FilterSavedManager;
 class MESSAGELIST_TESTS_EXPORT FilterSavedMenu : public QMenu
 {
     Q_OBJECT
@@ -31,6 +32,7 @@ private:
     QAction *const mSaveAction;
     QAction *const mConfigureAction;
     QList<QAction *> mListAction;
+    FilterSavedManager *const mFilterSaveManager;
 };
 }
 }
