@@ -6,6 +6,7 @@
 
 #include "searchlinestatus.h"
 #include "configurefiltersdialog.h"
+#include "core/filtersavedmanager.h"
 #include "filtersavedmenu.h"
 #include "messagelist_debug.h"
 
@@ -135,6 +136,7 @@ void SearchLineStatus::slotSaveFilter()
     bool ok = false;
     const QString str = QInputDialog::getText(this, i18n("Filter Name:"), i18n("Name:"), QLineEdit::Normal, {}, &ok);
     if (ok && !str.trimmed().isEmpty()) {
+        // TODO FilterSavedManager::self()->saveFilter(,str);
         // TODO
     }
 }
