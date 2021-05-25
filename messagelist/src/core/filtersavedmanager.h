@@ -16,11 +16,16 @@ class FilterSavedManager : public QObject
 {
     Q_OBJECT
 public:
+    struct FilterInfo {
+        QString filterName;
+        QString identifier;
+    };
     explicit FilterSavedManager(QObject *parent = nullptr);
     ~FilterSavedManager() override;
 
     void saveFilter(MessageList::Core::Filter *filter, const QString &filtername);
     void loadMenu(QMenu *menu);
+    Q_REQUIRED_RESULT QVector<FilterInfo> filterInfos() const;
 
     static FilterSavedManager *self();
 
@@ -29,3 +34,4 @@ Q_SIGNALS:
 };
 }
 }
+Q_DECLARE_TYPEINFO(MessageList::Core::FilterSavedManager::FilterInfo, Q_MOVABLE_TYPE);

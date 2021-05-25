@@ -21,8 +21,8 @@ public:
     ~ConfigureFiltersWidget() override;
 
 private:
+    void init();
     QListWidget *const mListFiltersWidget;
 };
-
 }
 }

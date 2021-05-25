@@ -5,6 +5,7 @@
 */
 
 #include "configurefilterswidget.h"
+#include "core/filtersavedmanager.h"
 #include <QListWidget>
 #include <QVBoxLayout>
 using namespace MessageList::Core;
@@ -17,8 +18,14 @@ ConfigureFiltersWidget::ConfigureFiltersWidget(QWidget *parent)
     mainLayout->setContentsMargins({});
     mListFiltersWidget->setObjectName(QStringLiteral("mListFiltersWidget"));
     mainLayout->addWidget(mListFiltersWidget);
+    init();
 }
 
 ConfigureFiltersWidget::~ConfigureFiltersWidget()
 {
+}
+
+void ConfigureFiltersWidget::init()
+{
+    // TODO load filter
 }

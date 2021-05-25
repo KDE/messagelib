@@ -43,3 +43,9 @@ void FilterSavedManager::loadMenu(QMenu *menu)
         });
     }
 }
+
+QVector<FilterSavedManager::FilterInfo> FilterSavedManager::filterInfos() const
+{
+    // TODO
+    return {};
+}
