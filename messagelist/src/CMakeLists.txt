@@ -30,6 +30,7 @@ set(libmessagelist_SRCS
     core/sortorder.cpp
     core/view.cpp
     core/widgetbase.cpp
+    core/filtersavedmanager.cpp
     core/widgets/quicksearchline.cpp
     core/widgets/quicksearchwarning.cpp
     core/widgets/searchlinestatus.cpp
