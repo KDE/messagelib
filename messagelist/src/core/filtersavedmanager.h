@@ -6,6 +6,7 @@
 #pragma once
 
 #include <QObject>
+class QMenu;
 namespace MessageList
 {
 namespace Core
@@ -19,6 +20,7 @@ public:
     ~FilterSavedManager() override;
 
     void saveFilter(MessageList::Core::Filter *filter, const QString &filtername);
+    void loadMenu(QMenu *menu);
 };
 }
 }

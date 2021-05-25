@@ -21,3 +21,8 @@ void FilterSavedManager::saveFilter(MessageList::Core::Filter *filter, const QSt
 {
     filter->save(KSharedConfig::openConfig(), filtername);
 }
+
+void FilterSavedManager::loadMenu(QMenu *menu)
+{
+    // TODO
+}
