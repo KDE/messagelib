@@ -19,6 +19,12 @@ FilterSavedManager::~FilterSavedManager()
 {
 }
 
+FilterSavedManager *FilterSavedManager::self()
+{
+    static FilterSavedManager s_self;
+    return &s_self;
+}
+
 void FilterSavedManager::saveFilter(MessageList::Core::Filter *filter, const QString &filtername)
 {
     filter->save(KSharedConfig::openConfig(), filtername);
