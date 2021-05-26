@@ -46,8 +46,19 @@ void FilterSavedManager::loadMenu(QMenu *menu)
 
 QVector<FilterSavedManager::FilterInfo> FilterSavedManager::filterInfos() const
 {
-    // TODO
-    return {};
+    KConfigGroup grp(KSharedConfig::openConfig(), "General");
+    const int numberFilter = grp.readEntry("NumberFilter").toInt();
+    QVector<FilterSavedManager::FilterInfo> lst;
+    lst.reserve(numberFilter);
+    for (int i = 0; i < numberFilter; ++i) {
+        KConfigGroup newGroup(KSharedConfig::openConfig(), QStringLiteral("Filter_%1").arg(i));
+
+        FilterSavedManager::FilterInfo info;
+        info.filterName = newGroup.readEntry(QStringLiteral("name"));
+        info.identifier = newGroup.readEntry(QStringLiteral("identifier"));
+        lst << info;
+    }
+    return lst;
 }
 
 void FilterSavedManager::removeFilter(const QString &identifier)
