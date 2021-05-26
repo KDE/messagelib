@@ -21,6 +21,8 @@ public:
     ~ConfigureFiltersWidget() override;
 
 private:
+    void slotCustomContextMenuRequested(const QPoint &pos);
+    void removeFilterInfo(const QString &identifier);
     void init();
     QListWidget *const mListFiltersWidget;
 };
