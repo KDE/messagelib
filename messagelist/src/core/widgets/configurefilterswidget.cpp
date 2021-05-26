@@ -53,5 +53,7 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
 
 void ConfigureFiltersWidget::removeFilterInfo(const QString &identifier)
 {
-    // TODO
+    if (!identifier.isEmpty()) {
+        FilterSavedManager::self()->removeFilter(identifier);
+    }
 }

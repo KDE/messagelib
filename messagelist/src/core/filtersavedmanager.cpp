@@ -49,3 +49,8 @@ QVector<FilterSavedManager::FilterInfo> FilterSavedManager::filterInfos() const
     // TODO
     return {};
 }
+
+void FilterSavedManager::removeFilter(const QString &identifier)
+{
+    // TODO
+}
