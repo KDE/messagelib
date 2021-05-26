@@ -4,7 +4,10 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser\")
 # target_include_directories does not handle empty include paths
 include_directories(${GPGME_INCLUDES})
 
-set(libmimetreeparser_main_SRCS
+add_library(KF5MimeTreeParser)
+add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
+
+target_sources(KF5MimeTreeParser PRIVATE
     bodyformatter/applicationpgpencrypted.cpp
     bodyformatter/applicationpkcs7mime.cpp
     bodyformatter/encrypted.cpp
@@ -33,9 +36,7 @@ set(libmimetreeparser_main_SRCS
     memento/decryptverifybodypartmemento.cpp
     memento/verifydetachedbodypartmemento.cpp
     memento/verifyopaquebodypartmemento.cpp
-    )
 
-set(mimetreeparser_temporaryfile_SRCS
     temporaryfile/attachmenttemporaryfilesdirs.cpp
     )
 
@@ -110,26 +111,20 @@ set(libmimetreeparser_SRCS
     ${mimetreeparser_temporaryfile_SRCS}
     )
 
-ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser
+ecm_qt_declare_logging_category(KF5MimeTreeParser HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser
         DESCRIPTION "messagelib (mimetreeparser)"
         OLD_CATEGORY_NAMES log_mimetreeparser
         EXPORT MESSAGELIB
     )
 
 
-add_library(KF5MimeTreeParser
-    ${libmimetreeparser_SRCS}
-    )
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5MimeTreeParser PROPERTIES UNITY_BUILD ON)
 endif()
 
 
 generate_export_header(KF5MimeTreeParser BASE_NAME mimetreeparser)
-add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
 
-set(mimetreeparser_LINK_LIBRARIES
-   )
 
 target_link_libraries(KF5MimeTreeParser
     PRIVATE

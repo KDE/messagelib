@@ -1,6 +1,9 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer\")
 include_directories(${CMAKE_BINARY_DIR}/webengineviewer/src ${CMAKE_BINARY_DIR}/webengineviewer)
 
+add_library(KF5WebEngineViewer)
+add_library(KF5::WebEngineViewer ALIAS KF5WebEngineViewer)
+
 
 if(BUILD_TESTING)
     add_subdirectory(tests)
@@ -16,7 +19,7 @@ endif()
 
 
 
-set(libwebengineviewer_webengine_SRCS
+target_sources(KF5WebEngineViewer PRIVATE
     networkmanager/interceptormanager.cpp
     webhittestresult.cpp
     webhittest.cpp
@@ -27,10 +30,8 @@ set(libwebengineviewer_webengine_SRCS
     webengineexporthtmlpagejob.cpp
     webenginenavigationrequestinterceptor.cpp
     webengineexportpdfpagejob.cpp
-    )
 
-set(libwebengineviewer_checkphishingurl_SRCS
-   checkphishingurl/checkphishingurljob.cpp
+    checkphishingurl/checkphishingurljob.cpp
    checkphishingurl/checkphishingurlcache.cpp
    checkphishingurl/createphishingurldatabasejob.cpp
    checkphishingurl/localdatabasemanager.cpp
@@ -44,10 +45,8 @@ set(libwebengineviewer_checkphishingurl_SRCS
    checkphishingurl/hashcachemanager.cpp
    checkphishingurl/backoffmodemanager.cpp
    checkphishingurl/downloadlocaldatabasethread.cpp
-   )
 
-set(libwebengineviewer_interceptor_SRCS
-    urlinterceptor/networkurlinterceptor.cpp
+   urlinterceptor/networkurlinterceptor.cpp
     urlinterceptor/networkpluginurlinterceptorinterface.cpp
     urlinterceptor/networkurlinterceptorpluginmanager.cpp
     urlinterceptor/networkpluginurlinterceptor.cpp
@@ -56,64 +55,35 @@ set(libwebengineviewer_interceptor_SRCS
     urlinterceptor/blocktrackingurlinterceptor/blocktrackingurlinterceptor.cpp
     urlinterceptor/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
     urlinterceptor/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.cpp
-    )
 
-set(libwebengineviewer_accesskey_SRCS
     webengineaccesskey/webengineaccesskey.cpp
     webengineaccesskey/webengineaccesskeyanchor.cpp
     webengineaccesskey/webengineaccesskeyutils.cpp
-    )
 
-set(libwebengineviewer_findbar_SRCS
     findbar/findbarbase.cpp
     findbar/findbarwebengineview.cpp
-    )
 
-set(libwebengineviewer_widgets_SRCS
     widgets/zoomactionmenu.cpp
-    )
 
-set(libwebengineviewer_tracking_SRCS
-   widgets/tracking/trackingdetailsdialog.cpp
+    widgets/tracking/trackingdetailsdialog.cpp
    widgets/tracking/trackingwarningwidget.cpp
-   )
 
-set(libwebengineviewer_developertool_SRCS
-    developertool/developertoolwidget.cpp
+   developertool/developertoolwidget.cpp
     developertool/developertooldialog.cpp
-    )
-
-set(libwebengineviewer_submittedform_SRCS
     widgets/submittedformwidgets/submittedformwarningwidget.cpp
     )
 
-set(libwebengineviewer_SRCS
-    ${libwebengineviewer_submittedform_SRCS}
-    ${libwebengineviewer_developertool_SRCS}
-    ${libwebengineviewer_checkphishingurl_SRCS}
-    ${libwebengineviewer_interceptor_SRCS}
-    ${libwebengineviewer_webengine_SRCS}
-    ${libwebengineviewer_findbar_SRCS}
-    ${libwebengineviewer_widgets_SRCS}
-    ${libwebengineviewer_print_SRCS}
-    ${libwebengineviewer_accesskey_SRCS}
-    ${libwebengineviewer_tracking_SRCS}
-    )
-
-ecm_qt_declare_logging_category(libwebengineviewer_webengine_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer
+ecm_qt_declare_logging_category(KF5WebEngineViewer HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer
         DESCRIPTION "messagelib (webengineviewer)"
         EXPORT MESSAGELIB
     )
 
 
-
-add_library(KF5WebEngineViewer ${libwebengineviewer_SRCS} ${libwebengineviewer_webengine_SRCS})
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5WebEngineViewer PROPERTIES UNITY_BUILD ON)
 endif()
 
 generate_export_header(KF5WebEngineViewer BASE_NAME webengineviewer)
-add_library(KF5::WebEngineViewer ALIAS KF5WebEngineViewer)
 
 target_include_directories(KF5WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/webengineviewer>")
 

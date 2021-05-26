@@ -2,6 +2,8 @@
 
 option(KDEPIM_FOLDEROPEN_PROFILE "Enable debug output for timing folder loading" FALSE)
 configure_file(config-messagelist.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messagelist.h)
+add_library(KF5MessageList)
+add_library(KF5::MessageList ALIAS KF5MessageList)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagelist\")
 
@@ -9,7 +11,7 @@ add_subdirectory(pics)
 if(BUILD_TESTING)
 	add_subdirectory(core/widgets/autotests)
 endif()
-set(libmessagelist_SRCS
+target_sources(KF5MessageList PRIVATE
     core/aggregation.cpp
     core/delegate.cpp
     core/filter.cpp
@@ -57,23 +59,21 @@ set(libmessagelist_SRCS
     widget.cpp
     messagelistutil.cpp
     )
-ecm_qt_declare_logging_category(libmessagelist_SRCS HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist
+ecm_qt_declare_logging_category(KF5MessageList HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist
         DESCRIPTION "messagelib (messagelist)"
         OLD_CATEGORY_NAMES log_messagelist
         EXPORT MESSAGELIB
     )
 
-kconfig_add_kcfg_files(libmessagelist_SRCS
+kconfig_add_kcfg_files(KF5MessageList
     core/messagelistsettings.kcfgc
     )
 
-add_library(KF5MessageList ${libmessagelist_SRCS})
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5MessageList PROPERTIES UNITY_BUILD ON)
 endif()
 
 generate_export_header(KF5MessageList BASE_NAME messagelist)
-add_library(KF5::MessageList ALIAS KF5MessageList)
 
 target_include_directories(KF5MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageList/;${KDE_INSTALL_INCLUDEDIR_KF5}/messagelist>")
 

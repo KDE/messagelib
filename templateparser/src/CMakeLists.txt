@@ -1,8 +1,10 @@
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser\")
+add_library(KF5TemplateParser)
+add_library(KF5::TemplateParser ALIAS KF5TemplateParser)
 
 
-set(templateparser_LIB_SRCS
+target_sources(KF5TemplateParser PRIVATE
     templateparserjob.cpp
     defaulttemplates.cpp
     templatesutil.cpp
@@ -24,7 +26,7 @@ set(templateparser_LIB_SRCS
     templateparseremailaddressrequesterinterfacewidget.cpp
     templateconvertcommandjob.cpp
     )
-ecm_qt_declare_logging_category(templateparser_LIB_SRCS HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser
+ecm_qt_declare_logging_category(KF5TemplateParser HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser
         DESCRIPTION "messagelib (templateparser)"
         OLD_CATEGORY_NAMES log_templateparser
         EXPORT MESSAGELIB
@@ -32,25 +34,23 @@ ecm_qt_declare_logging_category(templateparser_LIB_SRCS HEADER templateparser_de
 
 
 
-kconfig_add_kcfg_files(templateparser_LIB_SRCS settings/templatesconfiguration_kfg.kcfgc)
+kconfig_add_kcfg_files(KF5TemplateParser settings/templatesconfiguration_kfg.kcfgc)
 
-kconfig_add_kcfg_files(templateparser_LIB_SRCS
+kconfig_add_kcfg_files(KF5TemplateParser
     settings/customtemplates_kfg.kcfgc
     settings/globalsettings_templateparser.kcfgc
     )
 
-ki18n_wrap_ui(templateparser_LIB_SRCS
+ki18n_wrap_ui(KF5TemplateParser
     ui/templatesconfiguration_base.ui
     ui/customtemplates_base.ui
     )
 
-add_library(KF5TemplateParser ${templateparser_LIB_SRCS})
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5TemplateParser PROPERTIES UNITY_BUILD ON)
 endif()
 
 generate_export_header(KF5TemplateParser BASE_NAME templateparser)
-add_library(KF5::TemplateParser ALIAS KF5TemplateParser)
 
 target_link_libraries(KF5TemplateParser
     PRIVATE

@@ -1,13 +1,14 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
 
+add_library(KF5MessageCore)
+add_library(KF5::MessageCore ALIAS KF5MessageCore)
+
 ########### next target ###############
-set(messagecore_autocrypt_LIB_SRCS
+target_sources(KF5MessageCore PRIVATE
     autocrypt/autocryptutils.cpp
     autocrypt/autocryptrecipient.cpp
     autocrypt/autocryptstorage.cpp
-)
 
-set(messagecore_attachment_LIB_SRCS
     attachment/attachmentcompressjob.cpp
     attachment/attachmentfromfolderjob.cpp
     attachment/attachmentfrommimecontentjob.cpp
@@ -18,60 +19,44 @@ set(messagecore_attachment_LIB_SRCS
     attachment/attachmentpropertiesdialog.cpp
     attachment/attachmentupdatejob.cpp
     attachment/attachmentfromurlutils.cpp
-    )
 
-set(messagecore_misc_LIB_SRCS
     misc/imagecollector.cpp
     misc/mailinglist.cpp
-    )
 
-
-set(messagecore_helper_LIB_SRCS
     helpers/nodehelper.cpp
-    )
 
-set(messagecore_utils_LIB_SRCS
     utils/stringutil.cpp
     utils/util.cpp
     utils/colorutil.cpp
-    )
 
-set(messagecore_LIB_SRCS
-    ${messagecore_autocrypt_LIB_SRCS}
-    ${messagecore_attachment_LIB_SRCS}
-    ${messagecore_misc_LIB_SRCS}
-    ${messagecore_helper_LIB_SRCS}
-    ${messagecore_utils_LIB_SRCS}
     settings/messagecoresettings.cpp
     )
 
-kconfig_add_kcfg_files(messagecore_LIB_SRCS
+kconfig_add_kcfg_files(KF5MessageCore
     settings/globalsettings_messagecore.kcfgc
     )
 
-ki18n_wrap_ui(messagecore_LIB_SRCS
+ki18n_wrap_ui(KF5MessageCore
     attachment/ui/attachmentpropertiesdialog.ui
     attachment/ui/attachmentpropertiesdialog_readonly.ui
     )
 
-ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME org.kde.pim.messagecore
+ecm_qt_declare_logging_category(KF5MessageCore HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME org.kde.pim.messagecore
         DESCRIPTION "messagelib (messagecore)"
         OLD_CATEGORY_NAMES log_messagecore
         EXPORT MESSAGELIB
     )
 
-ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER autocrypt_debug.h IDENTIFIER AUTOCRYPT_LOG CATEGORY_NAME org.kde.pim.messagecore.autocrypt
+ecm_qt_declare_logging_category(KF5MessageCore HEADER autocrypt_debug.h IDENTIFIER AUTOCRYPT_LOG CATEGORY_NAME org.kde.pim.messagecore.autocrypt
         DESCRIPTION "messagelib (messagecore.autocrypt)"
         EXPORT MESSAGELIB
     )
 
-add_library(KF5MessageCore ${messagecore_LIB_SRCS})
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5MessageCore PROPERTIES UNITY_BUILD ON)
 endif()
 
 generate_export_header(KF5MessageCore BASE_NAME messagecore)
-add_library(KF5::MessageCore ALIAS KF5MessageCore)
 
 target_link_libraries(KF5MessageCore
     PUBLIC
