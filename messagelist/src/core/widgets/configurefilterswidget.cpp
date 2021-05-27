@@ -35,7 +35,6 @@ void ConfigureFiltersWidget::init()
     for (const auto &filter : lstFilters) {
         mListFiltersWidget->addItem(filter.filterName);
     }
-    // TODO load filter
 }
 
 void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
@@ -56,4 +55,23 @@ void ConfigureFiltersWidget::removeFilterInfo(const QString &identifier)
     if (!identifier.isEmpty()) {
         FilterSavedManager::self()->removeFilter(identifier);
     }
+}
+
+FilterListWidgetItem::FilterListWidgetItem(QListWidget *parent)
+    : QListWidgetItem(parent)
+{
+}
+
+FilterListWidgetItem::~FilterListWidgetItem()
+{
+}
+
+const QString &FilterListWidgetItem::identifier() const
+{
+    return mIdentifier;
+}
+
+void FilterListWidgetItem::setIdentifier(const QString &newIdentifier)
+{
+    mIdentifier = newIdentifier;
 }
