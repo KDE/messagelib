@@ -27,7 +27,6 @@ FilterSavedMenu::~FilterSavedMenu()
 
 void FilterSavedMenu::slotShowMenu()
 {
-    // TODO load current Filter saved action
     mListAction.clear();
     FilterSavedManager::self()->loadMenu(this);
     if (isEmpty()) {
