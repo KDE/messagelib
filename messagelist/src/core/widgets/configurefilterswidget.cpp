@@ -33,16 +33,19 @@ void ConfigureFiltersWidget::init()
 {
     const QVector<FilterSavedManager::FilterInfo> lstFilters = FilterSavedManager::self()->filterInfos();
     for (const auto &filter : lstFilters) {
-        mListFiltersWidget->addItem(filter.filterName);
+        auto item = new FilterListWidgetItem(mListFiltersWidget);
+        item->setText(filter.filterName);
+        item->setIdentifier(filter.identifier);
+        mListFiltersWidget->addItem(item);
     }
 }
 
 void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
 {
-    auto item = mListFiltersWidget->itemAt(pos);
+    auto item = static_cast<FilterListWidgetItem *>(mListFiltersWidget->itemAt(pos));
     if (item) {
         QMenu menu(this);
-        QString identifier;
+        const QString identifier = item->identifier();
         menu.addAction(i18n("Remove"), this, [this, identifier]() {
             removeFilterInfo(identifier);
         });
