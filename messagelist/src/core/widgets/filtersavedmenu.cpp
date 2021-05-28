@@ -27,9 +27,16 @@ FilterSavedMenu::~FilterSavedMenu()
 
 void FilterSavedMenu::slotShowMenu()
 {
+    for (auto act : qAsConst(mListAction)) {
+        removeAction(act);
+    }
+    qDeleteAll(mListAction);
     mListAction.clear();
+    removeAction(mSaveAction);
+    removeAction(mConfigureAction);
+    clear();
     FilterSavedManager::self()->loadMenu(this);
-    if (isEmpty()) {
+    if (!isEmpty()) {
         addSeparator();
     }
     addAction(mSaveAction);
