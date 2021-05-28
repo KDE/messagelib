@@ -251,6 +251,7 @@ protected Q_SLOTS:
      */
     void slotViewHeaderSectionClicked(int logicalIndex);
     void slotStatusButtonsClicked();
+    void slotSaveFilter(const QString &filterName);
 
 private:
     class Private;

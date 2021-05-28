@@ -39,6 +39,7 @@ Q_SIGNALS:
     void searchOptionChanged();
     void clearButtonClicked();
     void forceLostFocus();
+    void saveFilter(const QString &filterName);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *e) override;

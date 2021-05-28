@@ -9,6 +9,7 @@
 #include "core/widgetbase.h"
 #include "core/aggregation.h"
 #include "core/filter.h"
+#include "core/filtersavedmanager.h"
 #include "core/manager.h"
 #include "core/messageitem.h"
 #include "core/model.h"
@@ -121,6 +122,7 @@ Widget::Widget(QWidget *pParent)
     connect(d->quickSearchLine, &QuickSearchLine::searchOptionChanged, this, &Widget::searchEditTextEdited);
     connect(d->quickSearchLine, &QuickSearchLine::statusButtonsClicked, this, &Widget::slotStatusButtonsClicked);
     connect(d->quickSearchLine, &QuickSearchLine::forceLostFocus, this, &Widget::forceLostFocus);
+    connect(d->quickSearchLine, &QuickSearchLine::saveFilter, this, &Widget::slotSaveFilter);
     g->addWidget(d->quickSearchLine, 0);
     d->quickSearchWarning = new QuickSearchWarning(this);
     g->addWidget(d->quickSearchWarning, 0);
@@ -158,6 +160,13 @@ Widget::~Widget()
     delete d->mStorageModel;
 
     delete d;
+}
+
+void Widget::slotSaveFilter(const QString &filterName)
+{
+    if (d->mFilter) {
+        FilterSavedManager::self()->saveFilter(d->mFilter, filterName);
+    }
 }
 
 void Widget::changeQuicksearchVisibility(bool show)

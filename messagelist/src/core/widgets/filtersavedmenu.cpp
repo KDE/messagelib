@@ -31,8 +31,8 @@ void FilterSavedMenu::slotShowMenu()
     FilterSavedManager::self()->loadMenu(this);
     if (isEmpty()) {
         addSeparator();
-        addAction(mSaveAction);
-        addSeparator();
-        addAction(mConfigureAction);
     }
+    addAction(mSaveAction);
+    addSeparator();
+    addAction(mConfigureAction);
 }
