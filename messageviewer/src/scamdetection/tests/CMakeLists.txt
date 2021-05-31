@@ -4,8 +4,8 @@ include(ECMAddTests)
 
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
 
-set(scamdetectionwebengine_gui_SRCS scamdetectionwebengine_gui.cpp)
-add_executable(scamdetectionwebengine_gui ${scamdetectionwebengine_gui_SRCS})
+add_executable(scamdetectionwebengine_gui)
+target_sources(scamdetectionwebengine_gui PRIVATE scamdetectionwebengine_gui.cpp)
 target_link_libraries(scamdetectionwebengine_gui
     KF5::KIOCore
     KF5::MessageViewer

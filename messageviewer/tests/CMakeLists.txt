@@ -1,8 +1,7 @@
-set(viewertest_gui_SRCS
-   viewertest_gui.cpp
-   ../src/messageviewer_debug.cpp
-)
-add_executable(viewertest_gui ${viewertest_gui_SRCS})
+add_executable(viewertest_gui)
+target_sources(viewertest_gui PRIVATE
+    viewertest_gui.cpp
+    ../src/messageviewer_debug.cpp)
 target_link_libraries(viewertest_gui
   KF5::Mime
   KF5::MessageViewer

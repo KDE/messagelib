@@ -105,12 +105,6 @@ install(FILES
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
     )
 
-set(libmimetreeparser_SRCS
-    ${libmimetreeparser_main_SRCS}
-    ${libmimetreeparser_extra_SRCS}
-    ${mimetreeparser_temporaryfile_SRCS}
-    )
-
 ecm_qt_declare_logging_category(KF5MimeTreeParser HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser
         DESCRIPTION "messagelib (mimetreeparser)"
         OLD_CATEGORY_NAMES log_mimetreeparser

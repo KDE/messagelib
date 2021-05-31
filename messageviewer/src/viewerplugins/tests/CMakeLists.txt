@@ -1,5 +1,5 @@
-set(viewerplugin_gui_SRCS viewerplugin_gui.cpp)
-add_executable(viewerplugin_gui ${viewerplugin_gui_SRCS})
+add_executable(viewerplugin_gui)
+target_sources(viewerplugin_gui PRIVATE viewerplugin_gui.cpp)
 target_link_libraries(viewerplugin_gui
   KF5::MessageViewer
   KF5::XmlGui
