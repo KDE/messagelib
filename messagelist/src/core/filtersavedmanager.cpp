@@ -63,5 +63,5 @@ QVector<FilterSavedManager::FilterInfo> FilterSavedManager::filterInfos() const
 
 void FilterSavedManager::removeFilter(const QString &identifier)
 {
-    // TODO
+    // TODO load filter + remove specific filter + delete it
 }
