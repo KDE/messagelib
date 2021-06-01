@@ -63,5 +63,26 @@ QVector<FilterSavedManager::FilterInfo> FilterSavedManager::filterInfos() const
 
 void FilterSavedManager::removeFilter(const QString &identifier)
 {
+    KConfigGroup grp(KSharedConfig::openConfig(), "General");
+    const int numberFilter = grp.readEntry("NumberFilter").toInt();
+    QVector<Filter *> lst;
+    lst.reserve(numberFilter);
+    for (int i = 0; i < numberFilter; ++i) {
+        Filter *f = Filter::load(KSharedConfig::openConfig(), i);
+        lst << f;
+    }
+
+    int numberOfFilter = 0;
+    for (Filter *f : qAsConst(lst)) {
+#if 0
+        if (f->identifier != identifier) {
+            f->save(KSharedConfig::openConfig(), f->name());
+            numberOfFilter++;
+        }
+#endif
+    }
+    // TODO save number of filter
+    qDeleteAll(lst);
+    lst.clear();
     // TODO load filter + remove specific filter + delete it
 }
