@@ -26,7 +26,7 @@ ConfigureFiltersDialog::ConfigureFiltersDialog(QWidget *parent)
     mConfigureFiltersWidget->setObjectName(QStringLiteral("mConfigureFiltersWidget"));
     mainLayout->addWidget(mConfigureFiltersWidget);
 
-    auto button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::accepted, this, &ConfigureFiltersDialog::accept);
     connect(button, &QDialogButtonBox::rejected, this, &ConfigureFiltersDialog::reject);
