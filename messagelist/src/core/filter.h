@@ -91,6 +91,13 @@ public:
 
     void save(const KSharedConfig::Ptr &config, const QString &filtername);
     static Q_REQUIRED_RESULT Filter *load(const KSharedConfig::Ptr &config, int filternumber);
+    void generateRandomIdentifier();
+    Q_REQUIRED_RESULT QString identifier() const;
+    void setIdentifier(const QString &newIdentifier);
+
+    Q_REQUIRED_RESULT const QString &filterName() const;
+    void setFilterName(const QString &newFilterName);
+
 Q_SIGNALS:
     void finished();
 
@@ -103,6 +110,8 @@ private:
     QSet<qint64> mMatchingItemIds;
     QuickSearchLine::SearchOptions mOptions;
     QStringList mSearchList;
+    QString mIdentifier;
+    QString mFilterName;
 };
 } // namespace Core
 } // namespace MessageList

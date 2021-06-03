@@ -11,12 +11,13 @@
 
 #include <AkonadiSearch/PIM/emailquery.h>
 #include <AkonadiSearch/PIM/resultiterator.h>
-
+#include <KRandom>
 using namespace MessageList::Core;
 
 Filter::Filter(QObject *parent)
     : QObject(parent)
 {
+    generateRandomIdentifier();
 }
 
 bool Filter::containString(const QString &searchInString) const
@@ -31,6 +32,21 @@ bool Filter::containString(const QString &searchInString) const
         }
     }
     return found;
+}
+
+const QString &Filter::filterName() const
+{
+    return mFilterName;
+}
+
+void Filter::setFilterName(const QString &newFilterName)
+{
+    mFilterName = newFilterName;
+}
+
+void Filter::setIdentifier(const QString &newIdentifier)
+{
+    mIdentifier = newIdentifier;
 }
 
 bool Filter::match(const MessageItem *item) const
@@ -134,6 +150,7 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername)
     newGroup.writeEntry("searchOptions", static_cast<int>(mOptions));
     newGroup.writeEntry("tagId", mTagId);
     newGroup.writeEntry("currentFolder", mCurrentFolder.id());
+    newGroup.writeEntry("identifier", mIdentifier);
     // TODO mStatus.toQInt32()
     newGroup.sync();
     grp.writeEntry("NumberFilter", numberFilter);
@@ -150,6 +167,8 @@ Filter *Filter::load(const KSharedConfig::Ptr &config, int filternumber)
         filter->setSearchString(newGroup.readEntry("searchString"), static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
         filter->setCurrentFolder(Akonadi::Collection(newGroup.readEntry("currentFolder").toInt()));
         filter->setTagId(newGroup.readEntry("tagId"));
+        filter->setIdentifier(newGroup.readEntry("identifier"));
+        filter->setFilterName(newGroup.readEntry("name"));
         return filter;
     }
     return nullptr;
@@ -227,4 +246,14 @@ const QString &Filter::tagId() const
 void Filter::setTagId(const QString &tagId)
 {
     mTagId = tagId;
+}
+
+void Filter::generateRandomIdentifier()
+{
+    mIdentifier = KRandom::randomString(16);
+}
+
+QString Filter::identifier() const
+{
+    return mIdentifier;
 }
