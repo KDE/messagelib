@@ -9,6 +9,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QMenu>
+#include <QRegularExpression>
 using namespace MessageList::Core;
 FilterSavedManager::FilterSavedManager(QObject *parent)
     : QObject(parent)
@@ -71,7 +72,11 @@ void FilterSavedManager::removeFilter(const QString &identifier)
         Filter *f = Filter::load(KSharedConfig::openConfig(), i);
         lst << f;
     }
-    // TODO Delete all filters before to save it
+
+    const QStringList list = KSharedConfig::openConfig()->groupList().filter(QRegularExpression(QStringLiteral("Filter_\\d+")));
+    for (const QString &group : list) {
+        KSharedConfig::openConfig()->deleteGroup(group);
+    }
 
     int numberOfFilter = 0;
     for (Filter *f : qAsConst(lst)) {
