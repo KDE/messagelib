@@ -71,10 +71,11 @@ void FilterSavedManager::removeFilter(const QString &identifier)
         Filter *f = Filter::load(KSharedConfig::openConfig(), i);
         lst << f;
     }
+    // TODO Delete all filters before to save it
 
     int numberOfFilter = 0;
     for (Filter *f : qAsConst(lst)) {
-        if (f->identifier() != identifier) {
+        if ((f->identifier() != identifier) && !f->identifier().isEmpty()) {
             f->save(KSharedConfig::openConfig(), f->filterName());
             numberOfFilter++;
         }
