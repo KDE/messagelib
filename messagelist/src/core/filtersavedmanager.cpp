@@ -79,8 +79,8 @@ void FilterSavedManager::removeFilter(const QString &identifier)
             numberOfFilter++;
         }
     }
-    // TODO save number of filter
+    grp.writeEntry("NumberFilter", numberOfFilter);
+    grp.sync();
     qDeleteAll(lst);
     lst.clear();
-    // TODO load filter + remove specific filter + delete it
 }
