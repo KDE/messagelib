@@ -34,6 +34,11 @@ bool Filter::containString(const QString &searchInString) const
     return found;
 }
 
+void Filter::setOptions(const QuickSearchLine::SearchOptions &newOptions)
+{
+    mOptions = newOptions;
+}
+
 const QString &Filter::filterName() const
 {
     return mFilterName;
@@ -169,6 +174,7 @@ Filter *Filter::load(const KSharedConfig::Ptr &config, int filternumber)
         filter->setTagId(newGroup.readEntry("tagId"));
         filter->setIdentifier(newGroup.readEntry("identifier"));
         filter->setFilterName(newGroup.readEntry("name"));
+        filter->setOptions(static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
         return filter;
     }
     return nullptr;

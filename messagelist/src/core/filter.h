@@ -98,6 +98,8 @@ public:
     Q_REQUIRED_RESULT const QString &filterName() const;
     void setFilterName(const QString &newFilterName);
 
+    void setOptions(const QuickSearchLine::SearchOptions &newOptions);
+
 Q_SIGNALS:
     void finished();
 
