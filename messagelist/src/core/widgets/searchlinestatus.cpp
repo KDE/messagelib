@@ -46,6 +46,7 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     } else {
         qCWarning(MESSAGELIST_LOG) << "Clear button name was changed ! Please verify qt code";
     }
+    connect(FilterSavedManager::self(), &FilterSavedManager::activateFilter, this, &SearchLineStatus::slotActivateFilter);
 }
 
 SearchLineStatus::~SearchLineStatus()
@@ -122,13 +123,15 @@ void SearchLineStatus::initializeActions()
     connect(mFilterSavedMenu, &FilterSavedMenu::configureFilters, this, &SearchLineStatus::slotConfigureFilters);
 }
 
+void SearchLineStatus::slotActivateFilter(const QString &identifier)
+{
+    // TODO
+}
+
 void SearchLineStatus::slotConfigureFilters()
 {
-    QPointer<ConfigureFiltersDialog> dlg = new ConfigureFiltersDialog(this);
-    if (dlg->exec()) {
-        // TODO
-    }
-    delete dlg;
+    ConfigureFiltersDialog dlg(this);
+    dlg.exec();
 }
 
 void SearchLineStatus::slotSaveFilter()
@@ -137,8 +140,6 @@ void SearchLineStatus::slotSaveFilter()
     const QString str = QInputDialog::getText(this, i18n("Filter Name:"), i18n("Name:"), QLineEdit::Normal, {}, &ok);
     if (ok && !str.trimmed().isEmpty()) {
         Q_EMIT saveFilter(str);
-        // TODO FilterSavedManager::self()->saveFilter(,str);
-        // TODO
     }
 }
 

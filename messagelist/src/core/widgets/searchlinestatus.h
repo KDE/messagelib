@@ -65,6 +65,7 @@ private:
     void showSavedFiltersMenu();
     void slotSaveFilter();
     void slotConfigureFilters();
+    void slotActivateFilter(const QString &identifier);
 
     bool mLocked = false;
     bool mHasFilter = false;
