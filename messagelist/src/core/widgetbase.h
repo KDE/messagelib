@@ -32,7 +32,7 @@ class GroupHeaderItem;
 class MessageItem;
 class StorageModel;
 class View;
-
+class Filter;
 /**
  * Provides a widget which has the messagelist and the most important helper widgets,
  * like the search line and the comboboxes for changing status filtering, aggregation etc.
@@ -121,6 +121,7 @@ public:
     void aggregationMenuAboutToShow(QMenu *menu);
 
     Q_REQUIRED_RESULT MessageList::Core::QuickSearchLine::SearchOptions currentOptions() const;
+    void setFilter(Filter *filter);
 public Q_SLOTS:
 
     /**
