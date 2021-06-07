@@ -255,6 +255,7 @@ protected Q_SLOTS:
     void slotSaveFilter(const QString &filterName);
 
 private:
+    void slotActivateFilter(Filter *f);
     class Private;
     Private *const d;
 };

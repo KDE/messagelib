@@ -18,6 +18,7 @@ namespace MessageList
 namespace Core
 {
 class SearchLineStatus;
+class Filter;
 /**
  * @brief The QuickSearchLine class
  * @author Laurent Montel <montel@kde.org>
@@ -65,6 +66,7 @@ Q_SIGNALS:
     void statusButtonsClicked();
     void forceLostFocus();
     void saveFilter(const QString &filterName);
+    void activateFilter(Filter *f);
 
 protected:
     bool eventFilter(QObject *object, QEvent *e) override;

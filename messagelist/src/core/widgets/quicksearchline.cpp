@@ -9,6 +9,7 @@
 #include "messagelistsettings.h"
 #include <KStringHandler>
 
+#include "core/filter.h"
 #include "searchlinestatus.h"
 #include <KLocalizedString>
 
@@ -43,6 +44,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     connect(mSearchEdit, &QLineEdit::textChanged, this, &QuickSearchLine::slotSearchEditTextEdited);
     connect(mSearchEdit, &SearchLineStatus::clearButtonClicked, this, &QuickSearchLine::slotClearButtonClicked);
     connect(mSearchEdit, &SearchLineStatus::saveFilter, this, &QuickSearchLine::saveFilter);
+    connect(mSearchEdit, &SearchLineStatus::activateFilter, this, &QuickSearchLine::activateFilter);
 
     hbox->addWidget(mSearchEdit);
 
