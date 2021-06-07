@@ -167,17 +167,22 @@ Filter *Filter::load(const KSharedConfig::Ptr &config, int filternumber)
     KConfigGroup grp(config, "General");
     int numberFilter = grp.readEntry("NumberFilter").toInt();
     if (filternumber < numberFilter) {
-        auto filter = new Filter();
         KConfigGroup newGroup(config, QStringLiteral("Filter_%1").arg(filternumber));
-        filter->setSearchString(newGroup.readEntry("searchString"), static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
-        filter->setCurrentFolder(Akonadi::Collection(newGroup.readEntry("currentFolder").toInt()));
-        filter->setTagId(newGroup.readEntry("tagId"));
-        filter->setIdentifier(newGroup.readEntry("identifier"));
-        filter->setFilterName(newGroup.readEntry("name"));
-        filter->setOptions(static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
-        return filter;
+        return loadFromConfigGroup(newGroup);
     }
     return nullptr;
+}
+
+Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
+{
+    auto filter = new Filter();
+    filter->setSearchString(newGroup.readEntry("searchString"), static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
+    filter->setCurrentFolder(Akonadi::Collection(newGroup.readEntry("currentFolder").toInt()));
+    filter->setTagId(newGroup.readEntry("tagId"));
+    filter->setIdentifier(newGroup.readEntry("identifier"));
+    filter->setFilterName(newGroup.readEntry("name"));
+    filter->setOptions(static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
+    return filter;
 }
 
 void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptions options)

@@ -125,7 +125,12 @@ void SearchLineStatus::initializeActions()
 
 void SearchLineStatus::slotActivateFilter(const QString &identifier)
 {
-    // TODO
+    Filter *f = FilterSavedManager::self()->loadFilter(identifier);
+    if (f) {
+        Q_EMIT activateFilter(f);
+    } else {
+        qCWarning(MESSAGELIST_LOG) << "Impossible to load Filter from identifier :" << identifier;
+    }
 }
 
 void SearchLineStatus::slotConfigureFilters()

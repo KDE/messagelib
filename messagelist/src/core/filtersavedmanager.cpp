@@ -62,6 +62,19 @@ QVector<FilterSavedManager::FilterInfo> FilterSavedManager::filterInfos() const
     return lst;
 }
 
+Filter *FilterSavedManager::loadFilter(const QString &identifier)
+{
+    const QStringList list = KSharedConfig::openConfig()->groupList().filter(QRegularExpression(QStringLiteral("Filter_\\d+")));
+    for (const QString &group : list) {
+        KConfigGroup newGroup(KSharedConfig::openConfig(), group);
+        if (newGroup.readEntry("identifier") == identifier) {
+            Filter *f = Filter::loadFromConfigGroup(newGroup);
+            return f;
+        }
+    }
+    return {};
+}
+
 void FilterSavedManager::removeFilter(const QString &identifier)
 {
     KConfigGroup grp(KSharedConfig::openConfig(), "General");

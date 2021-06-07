@@ -18,6 +18,7 @@ namespace MessageList
 namespace Core
 {
 class FilterSavedMenu;
+class Filter;
 class MESSAGELIST_TESTS_EXPORT SearchLineStatus : public QLineEdit
 {
     Q_OBJECT
@@ -40,6 +41,7 @@ Q_SIGNALS:
     void clearButtonClicked();
     void forceLostFocus();
     void saveFilter(const QString &filterName);
+    void activateFilter(MessageList::Core::Filter *f);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *e) override;

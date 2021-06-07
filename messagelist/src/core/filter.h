@@ -100,6 +100,7 @@ public:
 
     void setOptions(const QuickSearchLine::SearchOptions &newOptions);
 
+    static Q_REQUIRED_RESULT Filter *loadFromConfigGroup(const KConfigGroup &newGroup);
 Q_SIGNALS:
     void finished();
 
