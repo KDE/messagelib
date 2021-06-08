@@ -154,7 +154,6 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername)
     newGroup.writeEntry("searchString", mSearchString);
     newGroup.writeEntry("searchOptions", static_cast<int>(mOptions));
     newGroup.writeEntry("tagId", mTagId);
-    newGroup.writeEntry("currentFolder", mCurrentFolder.id());
     newGroup.writeEntry("identifier", mIdentifier);
     // TODO mStatus.toQInt32()
     newGroup.sync();
@@ -177,7 +176,6 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
 {
     auto filter = new Filter();
     filter->setSearchString(newGroup.readEntry("searchString"), static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
-    filter->setCurrentFolder(Akonadi::Collection(newGroup.readEntry("currentFolder").toInt()));
     filter->setTagId(newGroup.readEntry("tagId"));
     filter->setIdentifier(newGroup.readEntry("identifier"));
     filter->setFilterName(newGroup.readEntry("name"));
