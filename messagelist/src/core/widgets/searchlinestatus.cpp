@@ -361,6 +361,10 @@ QuickSearchLine::SearchOptions SearchLineStatus::searchOptions() const
     return searchOptions;
 }
 
+void SearchLineStatus::setSearchOptions(QuickSearchLine::SearchOptions opts)
+{
+}
+
 void SearchLineStatus::slotFilterActionClicked(QAction *act)
 {
     Q_UNUSED(act)

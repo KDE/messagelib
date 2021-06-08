@@ -59,6 +59,7 @@ public:
     void changeQuicksearchVisibility(bool show);
     void addCompletionItem(const QString &str);
 
+    void setSearchOptions(QuickSearchLine::SearchOptions opts);
 Q_SIGNALS:
     void clearButtonClicked();
     void searchEditTextEdited(const QString &);

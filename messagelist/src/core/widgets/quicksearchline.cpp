@@ -91,6 +91,11 @@ void QuickSearchLine::slotClearButtonClicked()
     Q_EMIT clearButtonClicked();
 }
 
+void QuickSearchLine::setSearchOptions(QuickSearchLine::SearchOptions opts)
+{
+    mSearchEdit->setSearchOptions(opts);
+}
+
 QuickSearchLine::SearchOptions QuickSearchLine::searchOptions() const
 {
     return mSearchEdit->searchOptions();

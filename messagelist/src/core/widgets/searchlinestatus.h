@@ -32,6 +32,7 @@ public:
     void setContainsOutboundMessages(bool containsOutboundMessages);
     Q_REQUIRED_RESULT bool containsOutboundMessages() const;
     Q_REQUIRED_RESULT QuickSearchLine::SearchOptions searchOptions() const;
+    void setSearchOptions(QuickSearchLine::SearchOptions opts);
     void addCompletionItem(const QString &str);
     void slotClearHistory();
     void clearFilterButtonClicked();
