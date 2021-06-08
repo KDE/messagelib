@@ -155,7 +155,12 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername)
     newGroup.writeEntry("searchOptions", static_cast<int>(mOptions));
     newGroup.writeEntry("tagId", mTagId);
     newGroup.writeEntry("identifier", mIdentifier);
-    // TODO mStatus.toQInt32()
+    QList<qint32> lst;
+    lst.reserve(mStatus.count());
+    for (const auto s : qAsConst(mStatus)) {
+        lst << s.toQInt32();
+    }
+    newGroup.writeEntry("status", lst);
     newGroup.sync();
     grp.writeEntry("NumberFilter", numberFilter);
     grp.sync();
@@ -179,6 +184,16 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
     filter->setTagId(newGroup.readEntry("tagId"));
     filter->setIdentifier(newGroup.readEntry("identifier"));
     filter->setFilterName(newGroup.readEntry("name"));
+    QList<qint32> lst;
+    lst = newGroup.readEntry("status", QList<qint32>());
+    QVector<Akonadi::MessageStatus> messageStatusLst;
+    messageStatusLst.reserve(lst.count());
+    for (const auto s : qAsConst(lst)) {
+        Akonadi::MessageStatus status;
+        status.fromQInt32(s);
+        messageStatusLst << status;
+    }
+    filter->setStatus(messageStatusLst);
     filter->setOptions(static_cast<QuickSearchLine::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
     return filter;
 }
