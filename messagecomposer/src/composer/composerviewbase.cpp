@@ -617,7 +617,7 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
     bool needSpecialContext = false;
 
     for (const auto &p : data) {
-        for (const auto k : p.second) {
+        for (const auto &k : p.second) {
             const auto it = autocryptMap.find(k.primaryFingerprint());
             if (it != autocryptMap.end()) {
                 needSpecialContext = true;
@@ -640,7 +640,7 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
     QEventLoop loop;
     int runningJobs = 0;
     for (const auto &p : data) {
-        for (const auto k : p.second) {
+        for (const auto &k : p.second) {
             const auto it = autocryptMap.find(k.primaryFingerprint());
             if (it == autocryptMap.end()) {
                 qDebug() << "Adding " << k.primaryFingerprint() << "via Export/Import";
