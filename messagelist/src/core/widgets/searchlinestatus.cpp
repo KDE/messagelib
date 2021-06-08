@@ -363,6 +363,15 @@ QuickSearchLine::SearchOptions SearchLineStatus::searchOptions() const
 
 void SearchLineStatus::setSearchOptions(QuickSearchLine::SearchOptions opts)
 {
+    mSearchEveryWhereAction->setChecked(opts & QuickSearchLine::SearchEveryWhere);
+    mSearchAgainstBodyAction->setChecked(opts & QuickSearchLine::SearchAgainstBody);
+    mSearchAgainstSubjectAction->setChecked(opts & QuickSearchLine::SearchAgainstSubject);
+    mSearchAgainstBccAction->setChecked(opts & QuickSearchLine::SearchAgainstBcc);
+    if (mContainsOutboundMessages) {
+        mSearchAgainstFromOrToAction->setChecked(opts & QuickSearchLine::SearchAgainstTo);
+    } else {
+        mSearchAgainstFromOrToAction->setChecked(opts & QuickSearchLine::SearchAgainstFrom);
+    }
 }
 
 void SearchLineStatus::slotFilterActionClicked(QAction *act)
