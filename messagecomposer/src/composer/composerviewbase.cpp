@@ -629,7 +629,7 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
         }
     }
 
-    qDebug() << "addKeysToContext: " << needSpecialContext;
+    // qDebug() << "addKeysToContext: " << needSpecialContext;
 
     if (!needSpecialContext) {
         return false;
