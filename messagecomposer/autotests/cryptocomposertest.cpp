@@ -630,7 +630,7 @@ void CryptoComposerTest::testSetGnupgHome()
     }
 
     const std::vector<GpgME::Key> &keys = Test::getKeys();
-    for (const auto key : keys) {
+    for (const auto &key : keys) {
         Test::populateKeyring(dir.path(), key);
     }
 
@@ -695,7 +695,7 @@ void CryptoComposerTest::testAutocryptHeaders()
         QCOMPARE(composer.exec(), false);
     }
 
-    for (const auto key : keys) {
+    for (const auto &key : keys) {
         Test::populateKeyring(dir.path(), key);
     }
 

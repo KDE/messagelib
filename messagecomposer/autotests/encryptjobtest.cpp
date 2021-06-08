@@ -275,7 +275,7 @@ void EncryptJobTest::testSetGnupgHome()
         QCOMPARE(eJob->exec(), false);
     }
 
-    for (const auto key : keys) {
+    for (const auto &key : keys) {
         Test::populateKeyring(dir.path(), key);
     }
     auto eJob = new EncryptJob(&composer);

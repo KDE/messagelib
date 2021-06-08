@@ -210,7 +210,7 @@ void AutocryptHeadersJob::process()
 #endif
 
     const auto keys = d->gossipKeys;
-    for (const auto key : keys) {
+    for (const auto &key : keys) {
         if (QByteArray(key.primaryFingerprint()) == QByteArray(d->recipientKey.primaryFingerprint())) {
             continue;
         }

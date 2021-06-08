@@ -84,7 +84,7 @@ void MessageCore::processAutocryptfromMail(const HeaderMixupNodeHelper &mixup)
                 continue;
             }
             bool invalid = false;
-            for (const auto key : params.keys()) {
+            for (const auto &key : params.keys()) {
                 if (key == "addr") {
                     continue;
                 } else if (key == "prefer-encrypt") {
@@ -127,14 +127,14 @@ void MessageCore::processAutocryptfromMail(const HeaderMixupNodeHelper &mixup)
 
     if (mixup.hasMailHeader("Autocrypt-Gossip")) {
         MimeTreeParser::MessagePart::Ptr messagePart(nullptr);
-        for (const auto mp : mixup.messagePartsOfMailHeader("Autocrypt-Gossip")) {
+        for (const auto &mp : mixup.messagePartsOfMailHeader("Autocrypt-Gossip")) {
             if (mp.staticCast<MimeTreeParser::EncryptedMessagePart>()) {
                 messagePart = mp;
                 break;
             }
         }
         if (messagePart) {
-            for (const auto header : messagePart->headers("Autocrypt-Gossip")) {
+            for (const auto &header : messagePart->headers("Autocrypt-Gossip")) {
                 const auto params = paramsFromAutocryptHeader(header);
                 auto recipient = storage->addRecipient(params.value("addr"));
                 recipient->updateFromGossip(mixup, header);

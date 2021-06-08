@@ -492,7 +492,7 @@ bool NodeHelper::hasMailHeader(const char *header, const KMime::Content *message
 {
     if (mHeaderOverwrite.contains(message)) {
         const auto parts = mHeaderOverwrite.value(message);
-        for (const auto messagePart : parts) {
+        for (const auto &messagePart : parts) {
             if (messagePart->hasHeader(header)) {
                 return true;
             }

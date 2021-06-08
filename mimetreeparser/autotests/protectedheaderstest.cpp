@@ -206,7 +206,7 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
     // test overwrite
     {
         QStringList actual;
-        for (const auto mp : nodeHelper.messagePartsOfMailHeader("from", originalMessage.data())) {
+        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("from", originalMessage.data())) {
             actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, messagePartVector);
@@ -215,7 +215,7 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
     // test protected only headers
     {
         QStringList actual;
-        for (const auto mp : nodeHelper.messagePartsOfMailHeader("message-id", originalMessage.data())) {
+        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("message-id", originalMessage.data())) {
             actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, messagePartVector);
@@ -224,7 +224,7 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
     // test non-existing headers
     {
         QStringList actual;
-        for (const auto mp : nodeHelper.messagePartsOfMailHeader("invalid", originalMessage.data())) {
+        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("invalid", originalMessage.data())) {
             actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, QStringList());
@@ -233,7 +233,7 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
     // test envelope headers
     {
         QStringList actual;
-        for (const auto mp : nodeHelper.messagePartsOfMailHeader("user-agent", originalMessage.data())) {
+        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("user-agent", originalMessage.data())) {
             actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, QStringList());

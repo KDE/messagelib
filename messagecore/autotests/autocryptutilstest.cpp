@@ -106,7 +106,7 @@ void AutocryptUtilsTest::test_gossip()
     auto storage = AutocryptStorage::self();
     QCOMPARE(storage->d_func()->recipients.keys().size(), expectedKeys.size());
 
-    for (const auto addr : expectedKeys) {
+    for (const auto &addr : expectedKeys) {
         QVERIFY2(storage->getRecipient(addr), qPrintable(QStringLiteral("storage missing %1").arg(QString::fromLatin1(addr))));
     }
 
