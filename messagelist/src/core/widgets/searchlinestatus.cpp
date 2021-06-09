@@ -374,6 +374,23 @@ void SearchLineStatus::setSearchOptions(QuickSearchLine::SearchOptions opts)
     }
 }
 
+void SearchLineStatus::setFilterMessageStatus(const QVector<Akonadi::MessageStatus> &newLstStatus)
+{
+    clearFilterAction();
+    clearFilterByAction();
+    // TODO unchecked all checkbox
+    for (const Akonadi::MessageStatus &status : newLstStatus) {
+        for (QAction *act : qAsConst(mFilterListActions)) {
+            if (static_cast<qint32>(act->data().toInt()) == status.toQInt32()) {
+                act->setChecked(true);
+                mHasFilter = true;
+                break;
+            }
+        }
+    }
+    updateFilterActionIcon();
+}
+
 void SearchLineStatus::slotFilterActionClicked(QAction *act)
 {
     Q_UNUSED(act)

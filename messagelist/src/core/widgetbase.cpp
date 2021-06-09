@@ -168,6 +168,7 @@ void Widget::slotActivateFilter(Filter *f)
     setFilter(f);
     d->quickSearchLine->searchEdit()->setText(f->searchString());
     d->quickSearchLine->setSearchOptions(f->currentOptions());
+    d->quickSearchLine->setFilterMessageStatus(f->status());
 }
 
 void Widget::slotSaveFilter(const QString &filterName)

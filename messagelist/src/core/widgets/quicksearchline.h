@@ -60,6 +60,8 @@ public:
     void addCompletionItem(const QString &str);
 
     void setSearchOptions(QuickSearchLine::SearchOptions opts);
+    void setFilterMessageStatus(const QVector<Akonadi::MessageStatus> &newLstStatus);
+
 Q_SIGNALS:
     void clearButtonClicked();
     void searchEditTextEdited(const QString &);

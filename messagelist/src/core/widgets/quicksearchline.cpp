@@ -134,6 +134,12 @@ void QuickSearchLine::slotFilterActionChanged(const QVector<Akonadi::MessageStat
     Q_EMIT statusButtonsClicked();
 }
 
+void QuickSearchLine::setFilterMessageStatus(const QVector<Akonadi::MessageStatus> &newLstStatus)
+{
+    mLstStatus = newLstStatus;
+    mSearchEdit->setFilterMessageStatus(mLstStatus);
+}
+
 QVector<Akonadi::MessageStatus> QuickSearchLine::status() const
 {
     return mLstStatus;
