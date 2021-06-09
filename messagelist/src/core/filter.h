@@ -8,10 +8,12 @@
 
 #pragma once
 
+#include <QDebug>
 #include <QObject>
 #include <QSet>
 #include <QString>
 
+#include "messagelist_export.h"
 #include "widgets/quicksearchline.h"
 #include <Akonadi/KMime/MessageStatus>
 #include <Collection>
@@ -119,3 +121,4 @@ private:
 } // namespace Core
 } // namespace MessageList
 
+MESSAGELIST_EXPORT QDebug operator<<(QDebug d, const MessageList::Core::Filter &t);

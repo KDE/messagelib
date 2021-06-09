@@ -281,3 +281,12 @@ QString Filter::identifier() const
 {
     return mIdentifier;
 }
+
+QDebug operator<<(QDebug d, const MessageList::Core::Filter &t)
+{
+    d << "filtername " << t.filterName();
+    d << "identifier " << t.identifier();
+    d << "search string " << t.searchString();
+    d << "search option " << t.currentOptions();
+    return d;
+}
