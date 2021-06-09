@@ -98,7 +98,7 @@ public:
     Q_REQUIRED_RESULT const QString &filterName() const;
     void setFilterName(const QString &newFilterName);
 
-    void setOptions(const QuickSearchLine::SearchOptions &newOptions);
+    void setOptions(QuickSearchLine::SearchOptions newOptions);
 
     static Q_REQUIRED_RESULT Filter *loadFromConfigGroup(const KConfigGroup &newGroup);
 Q_SIGNALS:

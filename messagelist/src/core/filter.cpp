@@ -34,7 +34,7 @@ bool Filter::containString(const QString &searchInString) const
     return found;
 }
 
-void Filter::setOptions(const QuickSearchLine::SearchOptions &newOptions)
+void Filter::setOptions(QuickSearchLine::SearchOptions newOptions)
 {
     mOptions = newOptions;
 }
