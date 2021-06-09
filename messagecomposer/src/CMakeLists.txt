@@ -105,10 +105,6 @@ set(messagecomposer_followupreminder_SRCS
     followupreminder/followupreminder.cpp
     )
 
-qt_add_dbus_interface(messagecomposer_followupreminder_SRCS
-    followupreminder/org.freedesktop.Akonadi.FollowUpReminder.xml
-    followupreminderinterface
-    )
 
 set(messagecomposer_richtextcomposerng_SRCS
     composer-ng/richtextcomposerng.cpp
@@ -166,6 +162,12 @@ qt_add_dbus_interface(messagecomposer_sendlater_SRCS
     sendlater/org.freedesktop.Akonadi.SendLaterAgent.xml
     sendlaterinterface
 )
+
+qt_add_dbus_interface(messagecomposer_followupreminder_SRCS
+    followupreminder/org.freedesktop.Akonadi.FollowUpReminder.xml
+    followupreminderinterface
+    )
+
 
 set( messagecomposer_src
     ${messagecomposer_snippet_src}
