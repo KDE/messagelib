@@ -164,6 +164,7 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername)
     newGroup.sync();
     grp.writeEntry("NumberFilter", numberFilter);
     grp.sync();
+    config->reparseConfiguration();
 }
 
 Filter *Filter::load(const KSharedConfig::Ptr &config, int filternumber)
@@ -288,5 +289,6 @@ QDebug operator<<(QDebug d, const MessageList::Core::Filter &t)
     d << "identifier " << t.identifier();
     d << "search string " << t.searchString();
     d << "search option " << t.currentOptions();
+    d << "status " << t.status();
     return d;
 }
