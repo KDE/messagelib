@@ -7,7 +7,6 @@
 #include "htmlwriter.h"
 
 #include <QTextStream>
-#include <memory>
 
 using namespace MessageViewer;
 

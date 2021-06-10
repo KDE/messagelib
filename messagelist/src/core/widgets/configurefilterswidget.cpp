@@ -7,7 +7,6 @@
 #include "configurefilterswidget.h"
 #include "core/filtersavedmanager.h"
 #include <KLocalizedString>
-#include <QListWidget>
 #include <QMenu>
 #include <QVBoxLayout>
 using namespace MessageList::Core;
