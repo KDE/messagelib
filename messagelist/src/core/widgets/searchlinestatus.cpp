@@ -142,7 +142,7 @@ void SearchLineStatus::slotConfigureFilters()
 void SearchLineStatus::slotSaveFilter()
 {
     bool ok = false;
-    const QString str = QInputDialog::getText(this, i18n("Filter Name:"), i18n("Name:"), QLineEdit::Normal, {}, &ok);
+    const QString str = QInputDialog::getText(this, i18n("Filter Name"), i18n("Name:"), QLineEdit::Normal, {}, &ok);
     if (ok && !str.trimmed().isEmpty()) {
         Q_EMIT saveFilter(str);
     }
