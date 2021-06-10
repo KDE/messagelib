@@ -32,21 +32,21 @@ target_sources(KF5WebEngineViewer PRIVATE
     webengineexportpdfpagejob.cpp
 
     checkphishingurl/checkphishingurljob.cpp
-   checkphishingurl/checkphishingurlcache.cpp
-   checkphishingurl/createphishingurldatabasejob.cpp
-   checkphishingurl/localdatabasemanager.cpp
-   checkphishingurl/checkphishingurlutil.cpp
-   checkphishingurl/searchfullhashjob.cpp
-   checkphishingurl/localdatabasefile.cpp
-   checkphishingurl/createdatabasefilejob.cpp
-   checkphishingurl/updatedatabaseinfo.cpp
-   checkphishingurl/riceencodingdecoder.cpp
-   checkphishingurl/urlhashing.cpp
-   checkphishingurl/hashcachemanager.cpp
-   checkphishingurl/backoffmodemanager.cpp
-   checkphishingurl/downloadlocaldatabasethread.cpp
+    checkphishingurl/checkphishingurlcache.cpp
+    checkphishingurl/createphishingurldatabasejob.cpp
+    checkphishingurl/localdatabasemanager.cpp
+    checkphishingurl/checkphishingurlutil.cpp
+    checkphishingurl/searchfullhashjob.cpp
+    checkphishingurl/localdatabasefile.cpp
+    checkphishingurl/createdatabasefilejob.cpp
+    checkphishingurl/updatedatabaseinfo.cpp
+    checkphishingurl/riceencodingdecoder.cpp
+    checkphishingurl/urlhashing.cpp
+    checkphishingurl/hashcachemanager.cpp
+    checkphishingurl/backoffmodemanager.cpp
+    checkphishingurl/downloadlocaldatabasethread.cpp
 
-   urlinterceptor/networkurlinterceptor.cpp
+    urlinterceptor/networkurlinterceptor.cpp
     urlinterceptor/networkpluginurlinterceptorinterface.cpp
     urlinterceptor/networkurlinterceptorpluginmanager.cpp
     urlinterceptor/networkpluginurlinterceptor.cpp
@@ -66,9 +66,9 @@ target_sources(KF5WebEngineViewer PRIVATE
     widgets/zoomactionmenu.cpp
 
     widgets/tracking/trackingdetailsdialog.cpp
-   widgets/tracking/trackingwarningwidget.cpp
+    widgets/tracking/trackingwarningwidget.cpp
 
-   developertool/developertoolwidget.cpp
+    developertool/developertoolwidget.cpp
     developertool/developertooldialog.cpp
     widgets/submittedformwidgets/submittedformwarningwidget.cpp
     )
