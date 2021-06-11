@@ -42,7 +42,7 @@ target_sources(KF5MessageList PRIVATE
     core/widgets/configurefiltersdialog.cpp
     core/widgets/configurefilterswidget.cpp
     core/widgets/filternamedialog.cpp
-
+    core/widgets/filternamewidget.cpp
 
     utils/aggregationcombobox.cpp
     utils/aggregationconfigbutton.cpp
