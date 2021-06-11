@@ -13,12 +13,16 @@ namespace MessageList
 {
 namespace Core
 {
+class FilterNameWidget;
 class MESSAGELIST_TESTS_EXPORT FilterNameDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit FilterNameDialog(QWidget *parent = nullptr);
     ~FilterNameDialog() override;
+
+private:
+    FilterNameWidget *const mFilterNameWidget;
 };
 }
 }
