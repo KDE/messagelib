@@ -41,6 +41,7 @@ target_sources(KF5MessageList PRIVATE
     core/widgets/filtersavedmenu.cpp
     core/widgets/configurefiltersdialog.cpp
     core/widgets/configurefilterswidget.cpp
+    core/widgets/filternamedialog.cpp
 
 
     utils/aggregationcombobox.cpp
