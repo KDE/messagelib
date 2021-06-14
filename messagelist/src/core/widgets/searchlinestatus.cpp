@@ -7,6 +7,7 @@
 #include "searchlinestatus.h"
 #include "configurefiltersdialog.h"
 #include "core/filtersavedmanager.h"
+#include "filternamedialog.h"
 #include "filtersavedmenu.h"
 #include "messagelist_debug.h"
 
@@ -18,7 +19,6 @@
 #include <QAction>
 #include <QCompleter>
 #include <QContextMenuEvent>
-#include <QInputDialog>
 #include <QMenu>
 #include <QPointer>
 #include <QPushButton>
@@ -141,11 +141,11 @@ void SearchLineStatus::slotConfigureFilters()
 
 void SearchLineStatus::slotSaveFilter()
 {
-    bool ok = false;
-    const QString str = QInputDialog::getText(this, i18n("Filter Name"), i18n("Name:"), QLineEdit::Normal, {}, &ok);
-    if (ok && !str.trimmed().isEmpty()) {
-        Q_EMIT saveFilter(str);
+    QPointer<FilterNameDialog> dlg = new FilterNameDialog(this);
+    if (dlg->exec()) {
+        Q_EMIT saveFilter(dlg->filterName());
     }
+    delete dlg;
 }
 
 void SearchLineStatus::slotToggledLockAction()

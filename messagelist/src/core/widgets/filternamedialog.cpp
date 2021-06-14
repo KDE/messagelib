@@ -34,3 +34,8 @@ FilterNameDialog::FilterNameDialog(QWidget *parent)
 FilterNameDialog::~FilterNameDialog()
 {
 }
+
+QString FilterNameDialog::filterName() const
+{
+    return mFilterNameWidget->filterName();
+}

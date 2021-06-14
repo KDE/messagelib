@@ -26,8 +26,16 @@ FilterNameWidget::FilterNameWidget(QWidget *parent)
 
     mainLayout->addWidget(label);
     mainLayout->addWidget(mName);
+    connect(mName, &QLineEdit::textChanged, this, [this](const QString &str) {
+        Q_EMIT updateOkButton(!str.trimmed().isEmpty());
+    });
 }
 
 FilterNameWidget::~FilterNameWidget()
 {
+}
+
+QString FilterNameWidget::filterName() const
+{
+    return mName->text();
 }

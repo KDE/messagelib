@@ -21,6 +21,8 @@ public:
     explicit FilterNameDialog(QWidget *parent = nullptr);
     ~FilterNameDialog() override;
 
+    Q_REQUIRED_RESULT QString filterName() const;
+
 private:
     FilterNameWidget *const mFilterNameWidget;
 };

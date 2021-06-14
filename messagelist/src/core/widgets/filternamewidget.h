@@ -19,6 +19,9 @@ class MESSAGELIST_TESTS_EXPORT FilterNameWidget : public QWidget
 public:
     explicit FilterNameWidget(QWidget *parent = nullptr);
     ~FilterNameWidget() override;
+
+    Q_REQUIRED_RESULT QString filterName() const;
+
 Q_SIGNALS:
     void updateOkButton(bool enabled);
 
