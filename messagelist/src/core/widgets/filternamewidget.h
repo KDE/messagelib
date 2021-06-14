@@ -8,6 +8,7 @@
 
 #include "messagelist_private_export.h"
 #include <QWidget>
+class QLineEdit;
 namespace MessageList
 {
 namespace Core
@@ -20,6 +21,9 @@ public:
     ~FilterNameWidget() override;
 Q_SIGNALS:
     void updateOkButton(bool enabled);
+
+private:
+    QLineEdit *const mName;
 };
 }
 }

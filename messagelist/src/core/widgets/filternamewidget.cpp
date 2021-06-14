@@ -6,17 +6,26 @@
 
 #include "filternamewidget.h"
 #include <KLocalizedString>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
-#include <QVBoxLayout>
 
 using namespace MessageList::Core;
 FilterNameWidget::FilterNameWidget(QWidget *parent)
     : QWidget(parent)
+    , mName(new QLineEdit(this))
 {
-    auto mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
+
+    mName->setObjectName(QStringLiteral("mName"));
+
+    auto label = new QLabel(i18n("Name:"), this);
+    label->setObjectName(QStringLiteral("label"));
+
+    mainLayout->addWidget(label);
+    mainLayout->addWidget(mName);
 }
 
 FilterNameWidget::~FilterNameWidget()

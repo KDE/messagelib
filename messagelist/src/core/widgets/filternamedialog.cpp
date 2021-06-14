@@ -8,6 +8,7 @@
 #include "filternamewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 using namespace MessageList::Core;
@@ -25,6 +26,9 @@ FilterNameDialog::FilterNameDialog(QWidget *parent)
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::accepted, this, &FilterNameDialog::accept);
     connect(button, &QDialogButtonBox::rejected, this, &FilterNameDialog::reject);
+    auto okButton = button->button(QDialogButtonBox::Ok);
+    okButton->setEnabled(false);
+    connect(mFilterNameWidget, &FilterNameWidget::updateOkButton, okButton, &QPushButton::setEnabled);
 }
 
 FilterNameDialog::~FilterNameDialog()
