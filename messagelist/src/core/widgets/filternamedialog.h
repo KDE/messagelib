@@ -23,6 +23,8 @@ public:
 
     Q_REQUIRED_RESULT QString filterName() const;
 
+    void setExistingFilterNames(const QStringList &lst);
+
 private:
     FilterNameWidget *const mFilterNameWidget;
 };

@@ -22,10 +22,12 @@ public:
 
     Q_REQUIRED_RESULT QString filterName() const;
 
+    void setExistingFilterNames(const QStringList &lst);
 Q_SIGNALS:
     void updateOkButton(bool enabled);
 
 private:
+    QStringList mFilterListNames;
     QLineEdit *const mName;
 };
 }

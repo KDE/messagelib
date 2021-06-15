@@ -39,3 +39,8 @@ QString FilterNameWidget::filterName() const
 {
     return mName->text();
 }
+
+void FilterNameWidget::setExistingFilterNames(const QStringList &lst)
+{
+    mFilterListNames = lst;
+}
