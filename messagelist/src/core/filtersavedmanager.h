@@ -31,6 +31,8 @@ public:
 
     void removeFilter(const QString &identifier);
     Q_REQUIRED_RESULT Filter *loadFilter(const QString &identifier);
+    Q_REQUIRED_RESULT QStringList existingFilterNames() const;
+
 Q_SIGNALS:
     void activateFilter(const QString &identifier);
 };

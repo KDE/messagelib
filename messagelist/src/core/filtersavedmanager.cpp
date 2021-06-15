@@ -26,6 +26,19 @@ FilterSavedManager *FilterSavedManager::self()
     return &s_self;
 }
 
+QStringList FilterSavedManager::existingFilterNames() const
+{
+    QStringList lst;
+    KConfigGroup grp(KSharedConfig::openConfig(), "General");
+    const int numberFilter = grp.readEntry("NumberFilter").toInt();
+    lst.reserve(numberFilter);
+    for (int i = 0; i < numberFilter; ++i) {
+        KConfigGroup newGroup(KSharedConfig::openConfig(), QStringLiteral("Filter_%1").arg(i));
+        lst << newGroup.readEntry(QStringLiteral("name"));
+    }
+    return lst;
+}
+
 void FilterSavedManager::saveFilter(MessageList::Core::Filter *filter, const QString &filtername)
 {
     filter->save(KSharedConfig::openConfig(), filtername);
