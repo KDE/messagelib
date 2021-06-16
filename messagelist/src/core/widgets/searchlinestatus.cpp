@@ -119,7 +119,7 @@ void SearchLineStatus::initializeActions()
     mFilterSavedMenu = new FilterSavedMenu(this);
     mSaveFilterAction->setMenu(mFilterSavedMenu);
     connect(mSaveFilterAction, &QAction::triggered, this, &SearchLineStatus::showSavedFiltersMenu);
-    connect(mFilterSavedMenu, &FilterSavedMenu::saveFilter, this, &SearchLineStatus::slotSaveFilter);
+    connect(mFilterSavedMenu, &FilterSavedMenu::saveFilter, this, &SearchLineStatus::saveFilter);
     connect(mFilterSavedMenu, &FilterSavedMenu::configureFilters, this, &SearchLineStatus::slotConfigureFilters);
 }
 
@@ -137,17 +137,6 @@ void SearchLineStatus::slotConfigureFilters()
 {
     ConfigureFiltersDialog dlg(this);
     dlg.exec();
-}
-
-void SearchLineStatus::slotSaveFilter()
-{
-    // TODO verify that current filter is valid
-    QPointer<FilterNameDialog> dlg = new FilterNameDialog(this);
-    dlg->setExistingFilterNames(FilterSavedManager::self()->existingFilterNames());
-    if (dlg->exec()) {
-        Q_EMIT saveFilter(dlg->filterName());
-    }
-    delete dlg;
 }
 
 void SearchLineStatus::slotToggledLockAction()

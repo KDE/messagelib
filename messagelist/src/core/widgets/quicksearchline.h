@@ -68,7 +68,7 @@ Q_SIGNALS:
     void searchOptionChanged();
     void statusButtonsClicked();
     void forceLostFocus();
-    void saveFilter(const QString &filterName);
+    void saveFilter();
     void activateFilter(Filter *f);
 
 protected:

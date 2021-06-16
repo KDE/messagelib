@@ -28,12 +28,14 @@
 
 #include <QActionGroup>
 #include <QHeaderView>
+#include <QPointer>
 #include <QTimer>
 #include <QVBoxLayout>
 #include <QVariant>
 
 #include "messagelist_debug.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QAction>
 #include <QComboBox>
 #include <QMenu>
@@ -42,6 +44,7 @@
 
 #include <Akonadi/KMime/MessageStatus>
 #include <collection.h>
+#include <core/widgets/filternamedialog.h>
 
 using namespace MessageList::Core;
 
@@ -171,10 +174,17 @@ void Widget::slotActivateFilter(Filter *f)
     d->quickSearchLine->setFilterMessageStatus(f->status());
 }
 
-void Widget::slotSaveFilter(const QString &filterName)
+void Widget::slotSaveFilter()
 {
     if (d->mFilter) {
-        FilterSavedManager::self()->saveFilter(d->mFilter, filterName);
+        QPointer<FilterNameDialog> dlg = new FilterNameDialog(this);
+        dlg->setExistingFilterNames(FilterSavedManager::self()->existingFilterNames());
+        if (dlg->exec()) {
+            FilterSavedManager::self()->saveFilter(d->mFilter, dlg->filterName());
+        }
+        delete dlg;
+    } else {
+        KMessageBox::information(this, i18n("Any filter defined."), i18n("Create Filter"));
     }
 }
 

@@ -252,7 +252,7 @@ protected Q_SLOTS:
      */
     void slotViewHeaderSectionClicked(int logicalIndex);
     void slotStatusButtonsClicked();
-    void slotSaveFilter(const QString &filterName);
+    void slotSaveFilter();
 
 private:
     void slotActivateFilter(Filter *f);

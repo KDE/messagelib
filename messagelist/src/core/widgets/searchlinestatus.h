@@ -42,7 +42,7 @@ Q_SIGNALS:
     void searchOptionChanged();
     void clearButtonClicked();
     void forceLostFocus();
-    void saveFilter(const QString &filterName);
+    void saveFilter();
     void activateFilter(MessageList::Core::Filter *f);
 
 protected:
@@ -67,7 +67,6 @@ private:
     void changeSearchAgainstFromOrToText();
     void slotClear();
     void showSavedFiltersMenu();
-    void slotSaveFilter();
     void slotConfigureFilters();
     void slotActivateFilter(const QString &identifier);
 
