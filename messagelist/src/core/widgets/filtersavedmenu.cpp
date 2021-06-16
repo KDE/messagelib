@@ -14,7 +14,7 @@ using namespace MessageList::Core;
 FilterSavedMenu::FilterSavedMenu(QWidget *parent)
     : QMenu(parent)
     , mSaveAction(new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save Filter..."), this))
-    , mConfigureAction(new QAction(i18n("Configure..."), this))
+    , mConfigureAction(new QAction(QIcon::fromTheme(QStringLiteral("settings-configure")), i18n("Configure..."), this))
 {
     connect(this, &FilterSavedMenu::aboutToShow, this, &FilterSavedMenu::slotShowMenu);
 }
