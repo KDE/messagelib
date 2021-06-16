@@ -80,7 +80,6 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
-    QSet<QString> unique;
     QVector<int> listOrder;
     while (i.hasPrevious()) {
         ConfigureSettingsPluginInfo info;
@@ -94,10 +93,6 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
         info.metaDataFileName = data.fileName();
         const QString version = data.version();
         if (pluginVersion() == version) {
-            // only load plugins once, even if found multiple times!
-            if (unique.contains(info.metaDataFileNameBaseName)) {
-                continue;
-            }
             const QVariant p = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Configure-Order")).toVariant();
             int order = -1;
             if (p.isValid()) {
@@ -114,7 +109,6 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
             listOrder.insert(pos, order);
             info.plugin = nullptr;
             mPluginList.insert(pos, info);
-            unique.insert(info.metaDataFileNameBaseName);
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }

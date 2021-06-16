@@ -92,7 +92,6 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
-    QSet<QString> unique;
     while (i.hasPrevious()) {
         ViewerPluginInfo info;
 
@@ -108,13 +107,8 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         info.metaDataFileName = data.fileName();
 
         if (pluginVersion() == data.version()) {
-            // only load plugins once, even if found multiple times!
-            if (unique.contains(info.metaDataFileNameBaseName)) {
-                continue;
-            }
             info.plugin = nullptr;
             mPluginList.push_back(info);
-            unique.insert(info.metaDataFileNameBaseName);
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << "Plugin name :" << data.name() << " doesn't have correct plugin version. Please update it";
         }

@@ -83,7 +83,6 @@ void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
-    QSet<QString> unique;
     while (i.hasPrevious()) {
         PluginEditorCheckBeforeSendInfo info;
         const KPluginMetaData data = i.previous();
@@ -97,13 +96,8 @@ void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         if (pluginVersion() == data.version()) {
-            // only load plugins once, even if found multiple times!
-            if (unique.contains(info.metaDataFileNameBaseName)) {
-                continue;
-            }
             info.plugin = nullptr;
             mPluginList.push_back(info);
-            unique.insert(info.metaDataFileNameBaseName);
         } else {
             qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
