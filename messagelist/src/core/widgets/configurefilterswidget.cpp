@@ -45,7 +45,7 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
     if (item) {
         QMenu menu(this);
         const QString identifier = item->identifier();
-        menu.addAction(i18n("Remove"), this, [this, identifier, item]() {
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this, [this, identifier, item]() {
             removeFilterInfo(identifier);
             delete item;
         });
