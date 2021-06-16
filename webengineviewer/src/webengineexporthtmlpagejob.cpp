@@ -18,7 +18,8 @@ template<typename Arg, typename R, typename C> struct InvokeWrapper {
     }
 };
 
-template<typename Arg, typename R, typename C> InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
+template<typename Arg, typename R, typename C>
+InvokeWrapper<Arg, R, C> invokeWebEngineExportHtml(R *receiver, void (C::*memberFun)(Arg))
 {
     InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
     return wrapper;
@@ -40,7 +41,7 @@ void WebEngineExportHtmlPageJob::start()
         deleteLater();
         return;
     }
-    mEngineView->page()->toHtml(invoke(this, &WebEngineExportHtmlPageJob::slotSaveHtmlToPage));
+    mEngineView->page()->toHtml(invokeWebEngineExportHtml(this, &WebEngineExportHtmlPageJob::slotSaveHtmlToPage));
 }
 
 void WebEngineExportHtmlPageJob::slotSaveHtmlToPage(const QString &text)
