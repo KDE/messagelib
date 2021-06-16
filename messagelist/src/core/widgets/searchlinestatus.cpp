@@ -141,6 +141,7 @@ void SearchLineStatus::slotConfigureFilters()
 
 void SearchLineStatus::slotSaveFilter()
 {
+    // TODO verify that current filter is valid
     QPointer<FilterNameDialog> dlg = new FilterNameDialog(this);
     dlg->setExistingFilterNames(FilterSavedManager::self()->existingFilterNames());
     if (dlg->exec()) {
