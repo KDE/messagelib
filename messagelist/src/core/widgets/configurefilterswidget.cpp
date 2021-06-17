@@ -7,6 +7,7 @@
 #include "configurefilterswidget.h"
 #include "core/filtersavedmanager.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QMenu>
 #include <QVBoxLayout>
 using namespace MessageList::Core;
@@ -46,8 +47,10 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
         QMenu menu(this);
         const QString identifier = item->identifier();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this, [this, identifier, item]() {
-            removeFilterInfo(identifier);
-            delete item;
+            if (KMessageBox::questionYesNo(this, i18n("Do you want to delete this filter?"), i18n("Remove Filter")) == KMessageBox::Yes) {
+                removeFilterInfo(identifier);
+                delete item;
+            }
         });
         menu.exec(QCursor::pos());
     }
