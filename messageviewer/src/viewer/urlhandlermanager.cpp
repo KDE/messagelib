@@ -53,6 +53,9 @@
 #include <algorithm>
 
 #include <Libkleo/MessageBox>
+#include <chrono>
+
+using namespace std::chrono_literals;
 
 using std::find;
 using std::for_each;
@@ -871,7 +874,7 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         || (scheme == QLatin1String("ftps")) || (scheme == QLatin1String("sftp")) || (scheme == QLatin1String("help")) || (scheme == QLatin1String("vnc"))
         || (scheme == QLatin1String("smb")) || (scheme == QLatin1String("fish")) || (scheme == QLatin1String("news")) || (scheme == QLatin1String("tel"))) {
         PimCommon::BroadcastStatus::instance()->setTransientStatusMsg(i18n("Opening URL..."));
-        QTimer::singleShot(2000, PimCommon::BroadcastStatus::instance(), &PimCommon::BroadcastStatus::reset);
+        QTimer::singleShot(2s, PimCommon::BroadcastStatus::instance(), &PimCommon::BroadcastStatus::reset);
 
         QMimeDatabase mimeDb;
         auto mime = mimeDb.mimeTypeForUrl(url);

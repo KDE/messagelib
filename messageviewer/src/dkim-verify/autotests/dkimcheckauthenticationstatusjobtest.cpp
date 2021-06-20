@@ -11,6 +11,9 @@
 #include <QSignalSpy>
 #include <QTest>
 #include <QTimer>
+#include <chrono>
+
+using namespace std::chrono_literals;
 
 QTEST_MAIN(DKIMCheckAuthenticationStatusJobTest)
 
@@ -61,7 +64,7 @@ void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()
     job->setHeaderParser(mHeaderParser);
     job->setUseRelaxedParsing(relaxedParsing);
     QSignalSpy dkimSignatureSpy(job, &MessageViewer::DKIMCheckAuthenticationStatusJob::result);
-    QTimer::singleShot(10, job, &MessageViewer::DKIMCheckAuthenticationStatusJob::start);
+    QTimer::singleShot(10ms, job, &MessageViewer::DKIMCheckAuthenticationStatusJob::start);
     QVERIFY(dkimSignatureSpy.wait());
     delete msg;
 }
