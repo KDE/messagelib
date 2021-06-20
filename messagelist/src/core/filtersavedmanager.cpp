@@ -116,3 +116,17 @@ void FilterSavedManager::removeFilter(const QString &identifier)
     qDeleteAll(lst);
     lst.clear();
 }
+
+void FilterSavedManager::renameFilter(const QString &identifier, const QString &newName)
+{
+    KConfigGroup grp(KSharedConfig::openConfig(), "General");
+    const int numberFilter = grp.readEntry("NumberFilter").toInt();
+    for (int i = 0; i < numberFilter; ++i) {
+        KConfigGroup newGroup(KSharedConfig::openConfig(), QStringLiteral("Filter_%1").arg(i));
+        if (newGroup.readEntry("identifier") == identifier) {
+            newGroup.writeEntry("name", newName);
+            newGroup.sync();
+            break;
+        }
+    }
+}

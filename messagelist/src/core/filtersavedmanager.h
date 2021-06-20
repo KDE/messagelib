@@ -30,6 +30,7 @@ public:
     static FilterSavedManager *self();
 
     void removeFilter(const QString &identifier);
+    void renameFilter(const QString &identifier, const QString &newName);
     Q_REQUIRED_RESULT Filter *loadFilter(const QString &identifier);
     Q_REQUIRED_RESULT QStringList existingFilterNames() const;
 

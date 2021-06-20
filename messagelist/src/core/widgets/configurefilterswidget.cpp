@@ -51,7 +51,7 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
             QString newName = QInputDialog::getText(this, i18n("Rename Filter"), i18n("name"), QLineEdit::Normal, item->text());
             newName = newName.trimmed();
             if (!newName.isEmpty()) {
-                // TODO rename
+                renameFilterInfo(identifier, newName);
             }
         });
         menu.addSeparator();
@@ -69,6 +69,13 @@ void ConfigureFiltersWidget::removeFilterInfo(const QString &identifier)
 {
     if (!identifier.isEmpty()) {
         FilterSavedManager::self()->removeFilter(identifier);
+    }
+}
+
+void ConfigureFiltersWidget::renameFilterInfo(const QString &identifier, const QString &newName)
+{
+    if (!identifier.isEmpty()) {
+        FilterSavedManager::self()->renameFilter(identifier, newName);
     }
 }
 
