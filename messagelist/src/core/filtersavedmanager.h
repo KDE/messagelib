@@ -19,11 +19,12 @@ public:
     struct FilterInfo {
         QString filterName;
         QString identifier;
+        QString iconName;
     };
     explicit FilterSavedManager(QObject *parent = nullptr);
     ~FilterSavedManager() override;
 
-    void saveFilter(MessageList::Core::Filter *filter, const QString &filtername);
+    void saveFilter(MessageList::Core::Filter *filter, const QString &filtername, const QString &iconName);
     void loadMenu(QMenu *menu);
     Q_REQUIRED_RESULT QVector<FilterInfo> filterInfos() const;
 

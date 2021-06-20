@@ -34,6 +34,16 @@ bool Filter::containString(const QString &searchInString) const
     return found;
 }
 
+const QString &Filter::iconName() const
+{
+    return mIconName;
+}
+
+void Filter::setIconName(const QString &newIconName)
+{
+    mIconName = newIconName;
+}
+
 void Filter::setOptions(QuickSearchLine::SearchOptions newOptions)
 {
     mOptions = newOptions;
@@ -145,12 +155,15 @@ QuickSearchLine::SearchOptions Filter::currentOptions() const
     return mOptions;
 }
 
-void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername)
+void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername, const QString &iconName)
 {
     KConfigGroup grp(config, "General");
     int numberFilter = grp.readEntry("NumberFilter").toInt();
     KConfigGroup newGroup(config, QStringLiteral("Filter_%1").arg(numberFilter++));
     newGroup.writeEntry("name", filtername);
+    if (!iconName.isEmpty()) {
+        newGroup.writeEntry("iconName", iconName);
+    }
     newGroup.writeEntry("searchString", mSearchString);
     newGroup.writeEntry("searchOptions", static_cast<int>(mOptions));
     newGroup.writeEntry("tagId", mTagId);
@@ -185,6 +198,7 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
     filter->setTagId(newGroup.readEntry("tagId"));
     filter->setIdentifier(newGroup.readEntry("identifier"));
     filter->setFilterName(newGroup.readEntry("name"));
+    filter->setIconName(newGroup.readEntry("iconName"));
     QList<qint32> lst;
     lst = newGroup.readEntry("status", QList<qint32>());
     QVector<Akonadi::MessageStatus> messageStatusLst;

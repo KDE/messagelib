@@ -39,9 +39,9 @@ QStringList FilterSavedManager::existingFilterNames() const
     return lst;
 }
 
-void FilterSavedManager::saveFilter(MessageList::Core::Filter *filter, const QString &filtername)
+void FilterSavedManager::saveFilter(MessageList::Core::Filter *filter, const QString &filtername, const QString &iconName)
 {
-    filter->save(KSharedConfig::openConfig(), filtername);
+    filter->save(KSharedConfig::openConfig(), filtername, iconName);
 }
 
 void FilterSavedManager::loadMenu(QMenu *menu)
@@ -50,7 +50,8 @@ void FilterSavedManager::loadMenu(QMenu *menu)
     const int numberFilter = grp.readEntry("NumberFilter").toInt();
     for (int i = 0; i < numberFilter; ++i) {
         KConfigGroup newGroup(KSharedConfig::openConfig(), QStringLiteral("Filter_%1").arg(i));
-        auto act = menu->addAction(newGroup.readEntry(QStringLiteral("name")));
+        const QString iconName = newGroup.readEntry(QStringLiteral("iconName"));
+        auto act = menu->addAction(QIcon::fromTheme(iconName), newGroup.readEntry(QStringLiteral("name")));
         const QString identifier = newGroup.readEntry(QStringLiteral("identifier"));
         connect(act, &QAction::triggered, this, [this, identifier]() {
             Q_EMIT activateFilter(identifier);
@@ -70,6 +71,7 @@ QVector<FilterSavedManager::FilterInfo> FilterSavedManager::filterInfos() const
         FilterSavedManager::FilterInfo info;
         info.filterName = newGroup.readEntry(QStringLiteral("name"));
         info.identifier = newGroup.readEntry(QStringLiteral("identifier"));
+        info.iconName = newGroup.readEntry(QStringLiteral("iconName"));
         lst << info;
     }
     return lst;
@@ -107,7 +109,7 @@ void FilterSavedManager::removeFilter(const QString &identifier)
     int numberOfFilter = 0;
     for (Filter *f : qAsConst(lst)) {
         if ((f->identifier() != identifier) && !f->identifier().isEmpty()) {
-            f->save(KSharedConfig::openConfig(), f->filterName());
+            f->save(KSharedConfig::openConfig(), f->filterName(), f->iconName());
             numberOfFilter++;
         }
     }

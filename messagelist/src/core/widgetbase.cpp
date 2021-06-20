@@ -180,7 +180,7 @@ void Widget::slotSaveFilter()
         QPointer<FilterNameDialog> dlg = new FilterNameDialog(this);
         dlg->setExistingFilterNames(FilterSavedManager::self()->existingFilterNames());
         if (dlg->exec()) {
-            FilterSavedManager::self()->saveFilter(d->mFilter, dlg->filterName());
+            FilterSavedManager::self()->saveFilter(d->mFilter, dlg->filterName(), dlg->iconName());
         }
         delete dlg;
     } else {

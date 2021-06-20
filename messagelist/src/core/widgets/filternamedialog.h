@@ -25,6 +25,8 @@ public:
 
     void setExistingFilterNames(const QStringList &lst);
 
+    Q_REQUIRED_RESULT QString iconName() const;
+
 private:
     FilterNameWidget *const mFilterNameWidget;
 };
