@@ -23,4 +23,5 @@ void ConfigureFiltersWidgetTest::shouldHaveDefaultValues()
 
     auto mListFiltersWidget = w.findChild<QListWidget *>(QStringLiteral("mListFiltersWidget"));
     QVERIFY(mListFiltersWidget);
+    QCOMPARE(mListFiltersWidget->count(), 0);
 }
