@@ -46,6 +46,10 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
     if (item) {
         QMenu menu(this);
         const QString identifier = item->identifier();
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Rename"), this, [this, identifier, item]() {
+            // TODO
+        });
+        menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this, [this, identifier, item]() {
             if (KMessageBox::questionYesNo(this, i18n("Do you want to delete this filter?"), i18n("Remove Filter")) == KMessageBox::Yes) {
                 removeFilterInfo(identifier);
