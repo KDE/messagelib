@@ -37,6 +37,7 @@ void ConfigureFiltersWidget::init()
         auto item = new FilterListWidgetItem(mListFiltersWidget);
         item->setText(filter.filterName);
         item->setIdentifier(filter.identifier);
+        item->setIcon(QIcon::fromTheme(filter.iconName));
         mListFiltersWidget->addItem(item);
     }
 }
