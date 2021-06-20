@@ -52,6 +52,7 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
             newName = newName.trimmed();
             if (!newName.isEmpty()) {
                 renameFilterInfo(identifier, newName);
+                item->setText(newName);
             }
         });
         menu.addSeparator();
