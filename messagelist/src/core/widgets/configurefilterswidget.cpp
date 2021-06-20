@@ -8,6 +8,7 @@
 #include "core/filtersavedmanager.h"
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QInputDialog>
 #include <QMenu>
 #include <QVBoxLayout>
 using namespace MessageList::Core;
@@ -47,7 +48,11 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
         QMenu menu(this);
         const QString identifier = item->identifier();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Rename"), this, [this, identifier, item]() {
-            // TODO
+            QString newName = QInputDialog::getText(this, i18n("Rename Filter"), i18n("name"));
+            newName = newName.trimmed();
+            if (!newName.isEmpty()) {
+                // TODO rename
+            }
         });
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this, [this, identifier, item]() {
