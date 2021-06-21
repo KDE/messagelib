@@ -6,6 +6,7 @@
 #include "configurefiltersdialog.h"
 #include "configurefilterswidget.h"
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
@@ -20,6 +21,7 @@ ConfigureFiltersDialog::ConfigureFiltersDialog(QWidget *parent)
     : QDialog(parent)
     , mConfigureFiltersWidget(new ConfigureFiltersWidget(this))
 {
+    setWindowTitle(i18nc("@title:window", "Configure Filter"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
