@@ -425,11 +425,7 @@ void ViewerPrivate::scrollToAnchor(const QString &anchor)
 
 void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTypeStr, bool fromCurrentContent)
 {
-#if KIO_VERSION > QT_VERSION_CHECK(5, 82, 0)
     const KService::List offers = KFileItemActions::associatedApplications(QStringList() << contentTypeStr);
-#else
-    const KService::List offers = KFileItemActions::associatedApplications(QStringList() << contentTypeStr, QString());
-#endif
     if (!offers.isEmpty()) {
         QMenu *menu = topMenu;
         auto actionGroup = new QActionGroup(menu);

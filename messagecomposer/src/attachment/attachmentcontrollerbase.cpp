@@ -314,11 +314,7 @@ void AttachmentControllerBase::Private::editDone(MessageViewer::EditorWatcher *w
 void AttachmentControllerBase::Private::createOpenWithMenu(QMenu *topMenu, const AttachmentPart::Ptr &part)
 {
     const QString contentTypeStr = QString::fromLatin1(part->mimeType());
-#if KIO_VERSION < QT_VERSION_CHECK(5, 83, 0)
-    const KService::List offers = KFileItemActions::associatedApplications(QStringList() << contentTypeStr, QString());
-#else
     const KService::List offers = KFileItemActions::associatedApplications(QStringList() << contentTypeStr);
-#endif
     if (!offers.isEmpty()) {
         QMenu *menu = topMenu;
         auto actionGroup = new QActionGroup(menu);
