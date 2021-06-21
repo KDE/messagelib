@@ -1,41 +1,24 @@
-set(webengine_test_SRCS
-    testwebengine.cpp
-    )
-
-add_executable(webenginetest ${webengine_test_SRCS}) 
+add_executable(webenginetest testwebengine.cpp)
 
 target_link_libraries(webenginetest
     Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
     )
 
 #####
-set(webenginescript_test_SRCS
-    testwebenginescript.cpp
-    )
-
-add_executable(webenginescripttest ${webenginescript_test_SRCS})
+add_executable(webenginescripttest testwebenginescript.cpp)
 
 target_link_libraries(webenginescripttest
     Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
     )
 
 ####
-set(selectedtextwebengine_test_SRCS
-    testselectedtextwebengine.cpp
-    )
-
-add_executable(selectedtextwebenginetest ${selectedtextwebengine_test_SRCS})
+add_executable(selectedtextwebenginetest testselectedtextwebengine.cpp)
 
 target_link_libraries(selectedtextwebenginetest
     Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
     )
-
-
-set(testdndwebengine_test_SRCS
-    testdndwebengine.cpp
-    )
-
-add_executable(testdndwebenginetest ${testdndwebengine_test_SRCS})
+####
+add_executable(testdndwebenginetest testdndwebengine.cpp)
 
 target_link_libraries(testdndwebenginetest
     Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
@@ -43,10 +26,7 @@ target_link_libraries(testdndwebenginetest
 
 #####
 
-set(testselectionchangedwebengine_test_SRCS
-    testselectionchangedwebengine.cpp
-    )
-add_executable(testselectionchangedwebengine ${testselectionchangedwebengine_test_SRCS})
+add_executable(testselectionchangedwebengine testselectionchangedwebengine.cpp)
 
 target_link_libraries(testselectionchangedwebengine
     Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
@@ -56,12 +36,11 @@ target_link_libraries(testselectionchangedwebengine
 
 add_definitions(-DPICSRC="${CMAKE_CURRENT_SOURCE_DIR}")
 
-set(testwebengineviewinterceptor_test_SRCS
+add_executable(testwebengineviewinterceptor)
+target_sources(testwebengineviewinterceptor PRIVATE
     testwebengineviewinterceptor.cpp
     testwebengineviewinterceptor.qrc
     )
-
-add_executable(testwebengineviewinterceptor ${testwebengineviewinterceptor_test_SRCS})
 
 target_link_libraries(testwebengineviewinterceptor
     Qt::Widgets Qt::WebEngineWidgets 
