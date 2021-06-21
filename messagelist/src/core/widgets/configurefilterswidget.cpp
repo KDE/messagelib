@@ -48,7 +48,7 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
     if (item) {
         QMenu menu(this);
         const QString identifier = item->identifier();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Rename"), this, [this, identifier, item]() {
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Rename..."), this, [this, identifier, item]() {
             QString newName = QInputDialog::getText(this, i18n("Rename Filter"), i18n("name"), QLineEdit::Normal, item->text());
             newName = newName.trimmed();
             if (!newName.isEmpty()) {
