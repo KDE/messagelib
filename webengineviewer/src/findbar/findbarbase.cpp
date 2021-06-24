@@ -153,9 +153,9 @@ void FindBarBase::setFoundMatch(bool match)
     if (!mSearch->text().isEmpty()) {
         if (mNegativeBackground.isEmpty()) {
             KStatefulBrush bgBrush(KColorScheme::View, KColorScheme::PositiveBackground);
-            mPositiveBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch).color().name());
+            mPositiveBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
             bgBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeBackground);
-            mNegativeBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch).color().name());
+            mNegativeBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
         }
         if (match) {
             styleSheet = mPositiveBackground;
