@@ -227,6 +227,12 @@ set(libmessageviewer_configureplugins_SRCS
     messageviewerconfigureplugins/messageviewerconfiguresettingspluginwidget.cpp
     )
 
+set(libmessageviewer_checkbeforedeltingplugins_SRCS
+    messageviewercheckbeforedeletingplugins/messageviewercheckbeforedeletingplugin.cpp
+    messageviewercheckbeforedeletingplugins/messageviewercheckbeforedeletingpluginmanager.cpp
+    messageviewercheckbeforedeletingplugins/messageviewercheckbeforedeletingpluginwidget.cpp
+    )
+
 set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/converthtmltoplaintext.cpp
     messagepartthemes/default/defaultrenderer.cpp
@@ -257,6 +263,7 @@ set(libmessageviewer_remotecontent
     )
 
 set(libmessageviewer_SRCS
+    ${libmessageviewer_checkbeforedeltingplugins_SRCS}
     ${libmessageviewer_remotecontent}
     ${messageviewer_renderer_SRCS}
     ${libmessageviewer_conversationviewer_SRCS}
