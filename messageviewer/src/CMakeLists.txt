@@ -37,6 +37,10 @@ configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-m
 # target_include_directories does not handle empty include paths
 include_directories(${GPGME_INCLUDES})
 
+add_library(KF5MessageViewer)
+add_library(KF5::MessageViewer ALIAS KF5MessageViewer)
+
+
 if(BUILD_TESTING)
     add_subdirectory(header/autotests)
     add_subdirectory(scamdetection/autotests)
@@ -60,7 +64,7 @@ if (${Qca-qt5_FOUND})
         add_subdirectory(dkim-verify/autotests)
 	add_subdirectory(dkim-verify/tests)
     endif()
-    set(dkim_verify_SRCS
+    target_sources(KF5MessageViewer PRIVATE
         dkim-verify/dkiminfo.cpp
         dkim-verify/dkimmanagerkey.cpp
         dkim-verify/dkimmanagerkeywidget.cpp
@@ -98,15 +102,12 @@ if (${Qca-qt5_FOUND})
         )
 endif()
 
-set(messageviewer_renderer_SRCS
-    viewer/renderer/messageviewerrenderer.cpp
-    )
 
 if(DEBUG_SIGNATURE)
     add_definitions(-DDEBUG_SIGNATURE)
 endif()
 if (MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW)
-    set(libmessageviewer_conversationviewer_SRCS
+    target_sources(KF5MessageViewer PRIVATE
         conversationview/conversationviewwidget.cpp
         )
     if (BUILD_TESTING)
@@ -114,16 +115,13 @@ if (MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW)
         add_subdirectory(conversationview/tests)
     endif()
 endif()
-
-set(libmessageviewer_mailviewer_SRCS
+target_sources(KF5MessageViewer PRIVATE
+    viewer/renderer/messageviewerrenderer.cpp
     viewer/webengine/mailwebengineview.cpp
     viewer/webengine/mailwebenginepage.cpp
     viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
     viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
     viewer/webengine/cidschemehandler/cidschemehandler.cpp
-    )
-
-set(libmessageviewer_viewer_SRCS
     viewer/attachmentstrategy.cpp
     viewer/csshelper.cpp
     viewer/csshelperbase.cpp
@@ -138,9 +136,6 @@ set(libmessageviewer_viewer_SRCS
     viewer/mimeparttree/mimetreemodel.cpp
     viewer/viewerpurposemenuwidget.cpp
     viewer/messagewidgetarea.cpp
-    )
-
-set(libmessageviewer_widgets_SRCS
     widgets/attachmentdialog.cpp
     widgets/configurewidget.cpp
     widgets/printingsettings.cpp
@@ -150,14 +145,7 @@ set(libmessageviewer_widgets_SRCS
     widgets/opensavedfilefolderwidget.cpp
     widgets/mailsourceviewtextbrowserwidget.cpp
     widgets/shownextmessagewidget.cpp
-    )
-
-
-set(libmessageviewer_widgets_webengine_SRCS
     widgets/mailsourcewebengineviewer.cpp
-    )
-
-set(libmessageviewer_header_SRCS
     header/contactdisplaymessagememento.cpp
     header/headerstrategy.cpp
     header/richheaderstrategy.cpp
@@ -172,68 +160,35 @@ set(libmessageviewer_header_SRCS
     header/headerstylepluginmanager.cpp
     header/headerstyleinterface.cpp
     header/headerstylemenumanager.cpp
-    )
-
-set(libmessageviewer_scamdetection_SRCS
     scamdetection/scamdetectionwarningwidget.cpp
     scamdetection/scamdetectiondetailsdialog.cpp
     scamdetection/scamattribute.cpp
     scamdetection/scamcheckshorturl.cpp
     scamdetection/scamexpandurljob.cpp
     scamdetection/scamcheckshorturlmanager.cpp
-    )
-
-set(libmessageviewer_scamdetection_webengine_SRCS
     scamdetection/scamdetectionwebengine.cpp
-    )
-
-set(libmessageviewer_findbar_SRCS
     findbar/findbarsourceview.cpp
-    )
-
-set(libmessageviewer_utils_SRCS
     utils/iconnamecache.cpp
     utils/markmessagereadhandler.cpp
     utils/messageviewerutil.cpp
     utils/mimetype.cpp
-    )
-
-set(libmessageviewer_htmlwriter_SRCS
     htmlwriter/webengineparthtmlwriter.cpp
     htmlwriter/webengineembedpart.cpp
     htmlwriter/bufferedhtmlwriter.cpp
     htmlwriter/filehtmlwriter.cpp
-    )
-
-set(libmessageviewer_antispam_SRCS
     antispam/spamheaderanalyzer.cpp
     antispam/antispamconfig.cpp
-    )
-
-set(libmessageviewer_job_SRCS
     job/modifymessagedisplayformatjob.cpp
-    )
-
-set(libmessageviewer_viewerplugins_SRCS
     viewerplugins/viewerpluginmanager.cpp
     viewerplugins/viewerplugin.cpp
     viewerplugins/viewerplugininterface.cpp
     viewerplugins/viewerplugintoolmanager.cpp
-    )
-
-set(libmessageviewer_configureplugins_SRCS
     messageviewerconfigureplugins/messageviewerconfiguresettingsplugin.cpp
     messageviewerconfigureplugins/messageviewerconfiguresettingspluginmanager.cpp
     messageviewerconfigureplugins/messageviewerconfiguresettingspluginwidget.cpp
-    )
-
-set(libmessageviewer_checkbeforedeltingplugins_SRCS
     messageviewercheckbeforedeletingplugins/messageviewercheckbeforedeletingplugin.cpp
     messageviewercheckbeforedeletingplugins/messageviewercheckbeforedeletingpluginmanager.cpp
     messageviewercheckbeforedeletingplugins/messageviewercheckbeforedeletingpluginwidget.cpp
-    )
-
-set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/converthtmltoplaintext.cpp
     messagepartthemes/default/defaultrenderer.cpp
     messagepartthemes/default/htmlblock.cpp
@@ -245,13 +200,7 @@ set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/messagepartrenderbase.cpp
     messagepartthemes/default/messagepartrenderplugin.cpp
     messagepartthemes/default/messagepartrendererfactory.cpp
-    )
-
-set(libmessageviewer_interfaces_SRCS
     interfaces/htmlwriter.cpp
-    )
-
-set(libmessageviewer_remotecontent
     remote-content/remotecontentmanager.cpp
     remote-content/remotecontentinfo.cpp
     remote-content/remotecontentmenu.cpp
@@ -260,64 +209,37 @@ set(libmessageviewer_remotecontent
     remote-content/remotecontentdialog.cpp
     remote-content/remotecontentwidget.cpp
     remote-content/remotecontentstatustypecombobox.cpp
-    )
-
-set(libmessageviewer_SRCS
-    ${libmessageviewer_checkbeforedeltingplugins_SRCS}
-    ${libmessageviewer_remotecontent}
-    ${messageviewer_renderer_SRCS}
-    ${libmessageviewer_conversationviewer_SRCS}
-    ${dkim_verify_SRCS}
-    ${libmessageviewer_messagepartthemes_default_SRCS}
-    ${libmessageviewer_htmlwriter_SRCS}
-    ${libmessageviewer_messagepartthemes_SRCS}
-    ${libmessageviewer_scamdetection_webengine_SRCS}
-    ${libmessageviewer_widgets_webengine_SRCS}
-    ${libmessageviewer_viewer_SRCS}
-    ${libmessageviewer_widgets_SRCS}
-    ${libmessageviewer_header_SRCS}
-    ${libmessageviewer_scamdetection_SRCS}
-    ${libmessageviewer_findbar_SRCS}
-    ${libmessageviewer_utils_SRCS}
-    ${libmessageviewer_antispam_SRCS}
-    ${libmessageviewer_job_SRCS}
-    ${libmessageviewer_viewerplugins_SRCS}
     settings/messageviewersettings.cpp
-    ${libmessageviewer_mailviewer_SRCS}
-    ${libmessageviewer_interfaces_SRCS}
-    ${libmessageviewer_configureplugins_SRCS}
     messagepartthemes.qrc
     )
 
-ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
+ecm_qt_declare_logging_category(KF5MessageViewer HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
         DESCRIPTION "messagelib (messageviewer)"
         OLD_CATEGORY_NAMES log_messageviewer
         EXPORT MESSAGELIB
     )
-ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_dkimcheckerdebug.h IDENTIFIER MESSAGEVIEWER_DKIMCHECKER_LOG CATEGORY_NAME org.kde.pim.messageviewer_dkimchecker
+ecm_qt_declare_logging_category(KF5MessageViewer HEADER messageviewer_dkimcheckerdebug.h IDENTIFIER MESSAGEVIEWER_DKIMCHECKER_LOG CATEGORY_NAME org.kde.pim.messageviewer_dkimchecker
         DESCRIPTION "messagelib (messageviewer dkim support)"
         EXPORT MESSAGELIB
     )
 
 
-kconfig_add_kcfg_files(libmessageviewer_SRCS
+kconfig_add_kcfg_files(KF5MessageViewer
     settings/globalsettings_messageviewer.kcfgc
     )
 
-ki18n_wrap_ui(libmessageviewer_SRCS
+ki18n_wrap_ui(KF5MessageViewer
     ui/settings.ui
     ui/invitationsettings.ui
     ui/printingsettings.ui
     )
 
 
-add_library(KF5MessageViewer ${libmessageviewer_SRCS})
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5MessageViewer PROPERTIES UNITY_BUILD ON)
 endif()
 
 generate_export_header(KF5MessageViewer BASE_NAME messageviewer)
-add_library(KF5::MessageViewer ALIAS KF5MessageViewer)
 
 if (${Inotify_FOUND})
     target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer>;${Inotify_INCLUDE_DIRS}")
