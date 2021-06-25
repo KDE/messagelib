@@ -6,7 +6,7 @@
 
 #include "messageviewercheckbeforedeletingpluginmanager.h"
 #include "messageviewer_debug.h"
-#include "messageviewerconfiguresettingsplugin.h"
+#include "messageviewercheckbeforedeletingplugin.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KPluginMetaData>
@@ -25,7 +25,7 @@ public:
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
-    MessageViewer::MessageViewerConfigureSettingsPlugin *plugin = nullptr;
+    MessageViewer::MessageViewerCheckBeforeDeletingPlugin *plugin = nullptr;
 };
 
 class MessageViewer::MessageViewerCheckBeforeDeletingPluginManagerPrivate
@@ -36,13 +36,13 @@ public:
     {
     }
 
-    QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
+    QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
     QVector<PimCommon::PluginUtilData> pluginDataList() const;
     void initializePluginList();
     void loadPlugin(ConfigureSettingsPluginInfo *item);
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
-    MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
+    MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
 
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
@@ -119,9 +119,9 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList(
     }
 }
 
-QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> MessageViewerCheckBeforeDeletingPluginManagerPrivate::pluginsList() const
+QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> MessageViewerCheckBeforeDeletingPluginManagerPrivate::pluginsList() const
 {
-    QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> lst;
+    QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> lst;
     QVector<ConfigureSettingsPluginInfo>::ConstIterator end(mPluginList.constEnd());
     for (QVector<ConfigureSettingsPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
@@ -135,14 +135,15 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::loadPlugin(ConfigureS
 {
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<MessageViewer::MessageViewerConfigureSettingsPlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
+        item->plugin =
+            pluginLoader.factory()->create<MessageViewer::MessageViewerCheckBeforeDeletingPlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
         // By default it's true
         item->pluginData.mHasConfigureDialog = true;
         mPluginDataList.append(item->pluginData);
     }
 }
 
-MessageViewerConfigureSettingsPlugin *MessageViewerCheckBeforeDeletingPluginManagerPrivate::pluginFromIdentifier(const QString &id)
+MessageViewerCheckBeforeDeletingPlugin *MessageViewerCheckBeforeDeletingPluginManagerPrivate::pluginFromIdentifier(const QString &id)
 {
     QVector<ConfigureSettingsPluginInfo>::ConstIterator end(mPluginList.constEnd());
     for (QVector<ConfigureSettingsPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
@@ -171,7 +172,7 @@ MessageViewerCheckBeforeDeletingPluginManager::~MessageViewerCheckBeforeDeleting
     delete d;
 }
 
-QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> MessageViewerCheckBeforeDeletingPluginManager::pluginsList() const
+QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> MessageViewerCheckBeforeDeletingPluginManager::pluginsList() const
 {
     return d->pluginsList();
 }
@@ -191,7 +192,7 @@ QVector<PimCommon::PluginUtilData> MessageViewerCheckBeforeDeletingPluginManager
     return d->pluginDataList();
 }
 
-MessageViewerConfigureSettingsPlugin *MessageViewerCheckBeforeDeletingPluginManager::pluginFromIdentifier(const QString &id)
+MessageViewerCheckBeforeDeletingPlugin *MessageViewerCheckBeforeDeletingPluginManager::pluginFromIdentifier(const QString &id)
 {
     return d->pluginFromIdentifier(id);
 }

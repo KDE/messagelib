@@ -11,7 +11,7 @@
 #include <QObject>
 namespace MessageViewer
 {
-class MessageViewerConfigureSettingsPlugin;
+class MessageViewerCheckBeforeDeletingPlugin;
 class MessageViewerCheckBeforeDeletingPluginManagerPrivate;
 /**
  * @brief The MessageViewerCheckBeforeDeletingPluginManager class
@@ -26,12 +26,12 @@ public:
     explicit MessageViewerCheckBeforeDeletingPluginManager(QObject *parent = nullptr);
     ~MessageViewerCheckBeforeDeletingPluginManager();
 
-    Q_REQUIRED_RESULT QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
 
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
+    Q_REQUIRED_RESULT MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
 
 private:
     MessageViewerCheckBeforeDeletingPluginManagerPrivate *const d;
