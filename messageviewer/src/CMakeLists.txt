@@ -510,6 +510,15 @@ ecm_generate_headers(MessageViewer_CamelcaseConfigurePlugins_HEADERS
     RELATIVE messageviewerconfigureplugins
     )
 
+ecm_generate_headers(MessageViewer_CamelcaseCheckBeforeDeletingPlugin_HEADERS
+    HEADER_NAMES
+    MessageViewerCheckBeforeDeletingPlugin
+    MessageViewerCheckBeforeDeletingPluginManager
+    MessageViewerCheckBeforeDeletingPluginWidget
+    REQUIRED_HEADERS MessageViewer_CheckBeforeDeletingPlugin_HEADERS
+    PREFIX MessageViewer
+    RELATIVE messageviewercheckbeforedeletingplugins
+    )
 
 ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
     HEADER_NAMES
@@ -572,6 +581,7 @@ endif()
 
 
 install(FILES
+    ${MessageViewer_CamelcaseCheckBeforeDeletingPlugin_HEADERS}
     ${MessageViewer_CamelcaseConfigurePlugins_HEADERS}
     ${MessageViewer_Camelcasewebengine_HEADERS}
     ${MessageViewer_Camelcaseheader_HEADERS}
@@ -592,6 +602,7 @@ install(FILES
     )
 
 install(FILES
+    ${MessageViewer_CheckBeforeDeletingPlugin_HEADERS}
     ${MessageViewer_ConfigurePlugins_HEADERS}
     ${MessageViewer_webengine_HEADERS}
     ${MessageViewer_scam_HEADERS}
