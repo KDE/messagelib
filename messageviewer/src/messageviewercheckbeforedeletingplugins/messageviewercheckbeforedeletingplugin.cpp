@@ -13,6 +13,7 @@ public:
     MessageViewerCheckBeforeDeletingPluginPrivate()
     {
     }
+    bool mIsEnabled = true;
 };
 
 MessageViewerCheckBeforeDeletingPlugin::MessageViewerCheckBeforeDeletingPlugin(QObject *parent)
@@ -30,4 +31,14 @@ void MessageViewerCheckBeforeDeletingPlugin::showConfigureDialog(QWidget *parent
 {
     Q_UNUSED(parent)
     // Reimplement
+}
+
+void MessageViewerCheckBeforeDeletingPlugin::setIsEnabled(bool enabled)
+{
+    d->mIsEnabled = enabled;
+}
+
+bool MessageViewerCheckBeforeDeletingPlugin::isEnabled() const
+{
+    return d->mIsEnabled;
 }

@@ -6,8 +6,7 @@
 
 #pragma once
 
-#include "messagecomposer_export.h"
-#include "plugineditorcheckbeforesendparams.h"
+#include "messageviewer_export.h"
 #include <QObject>
 
 namespace MessageViewer
@@ -17,7 +16,7 @@ class MessageViewerCheckBeforeDeletingInterfacePrivate;
  * @brief The MessageViewerCheckBeforeDeletingInterface class
  * @author Laurent Montel <montel@kde.org>
  */
-class MESSAGECOMPOSER_EXPORT MessageViewerCheckBeforeDeletingInterface : public QObject
+class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingInterface : public QObject
 {
     Q_OBJECT
 public:

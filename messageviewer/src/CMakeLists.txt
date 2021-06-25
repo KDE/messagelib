@@ -189,6 +189,7 @@ target_sources(KF5MessageViewer PRIVATE
     messageviewercheckbeforedeletingplugins/messageviewercheckbeforedeletingplugin.cpp
     messageviewercheckbeforedeletingplugins/messageviewercheckbeforedeletingpluginmanager.cpp
     messageviewercheckbeforedeletingplugins/messageviewercheckbeforedeletingpluginwidget.cpp
+    messageviewercheckbeforedeletingplugins/messageviewercheckbeforedeletinginterface.cpp
     messagepartthemes/default/converthtmltoplaintext.cpp
     messagepartthemes/default/defaultrenderer.cpp
     messagepartthemes/default/htmlblock.cpp
@@ -437,6 +438,7 @@ ecm_generate_headers(MessageViewer_CamelcaseCheckBeforeDeletingPlugin_HEADERS
     MessageViewerCheckBeforeDeletingPlugin
     MessageViewerCheckBeforeDeletingPluginManager
     MessageViewerCheckBeforeDeletingPluginWidget
+    MessageViewerCheckBeforeDeletingInterface
     REQUIRED_HEADERS MessageViewer_CheckBeforeDeletingPlugin_HEADERS
     PREFIX MessageViewer
     RELATIVE messageviewercheckbeforedeletingplugins

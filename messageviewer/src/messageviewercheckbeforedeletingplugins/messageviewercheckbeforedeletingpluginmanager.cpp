@@ -15,16 +15,17 @@
 
 using namespace MessageViewer;
 
-class ConfigureSettingsPluginInfo
+class CheckBeforeDeletingPluginInfo
 {
 public:
-    ConfigureSettingsPluginInfo()
+    CheckBeforeDeletingPluginInfo()
     {
     }
 
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
+    bool isEnabled = true;
     MessageViewer::MessageViewerCheckBeforeDeletingPlugin *plugin = nullptr;
 };
 
@@ -39,14 +40,14 @@ public:
     QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
     QVector<PimCommon::PluginUtilData> pluginDataList() const;
     void initializePluginList();
-    void loadPlugin(ConfigureSettingsPluginInfo *item);
+    void loadPlugin(CheckBeforeDeletingPluginInfo *item);
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
     MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
 
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
-    QVector<ConfigureSettingsPluginInfo> mPluginList;
+    QVector<CheckBeforeDeletingPluginInfo> mPluginList;
     MessageViewerCheckBeforeDeletingPluginManager *const q;
 };
 
@@ -82,13 +83,17 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList(
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QVector<int> listOrder;
     while (i.hasPrevious()) {
-        ConfigureSettingsPluginInfo info;
+        CheckBeforeDeletingPluginInfo info;
 
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
         info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
+        const bool isPluginActivated =
+            PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        info.isEnabled = isPluginActivated;
+
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         const QString version = data.version();
@@ -113,8 +118,8 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList(
             qCWarning(MESSAGEVIEWER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
-    QVector<ConfigureSettingsPluginInfo>::iterator end(mPluginList.end());
-    for (QVector<ConfigureSettingsPluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
+    QVector<CheckBeforeDeletingPluginInfo>::iterator end(mPluginList.end());
+    for (QVector<CheckBeforeDeletingPluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
 }
@@ -122,8 +127,8 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList(
 QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> MessageViewerCheckBeforeDeletingPluginManagerPrivate::pluginsList() const
 {
     QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> lst;
-    QVector<ConfigureSettingsPluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<ConfigureSettingsPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QVector<CheckBeforeDeletingPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QVector<CheckBeforeDeletingPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
         }
@@ -131,7 +136,7 @@ QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> MessageViewerCh
     return lst;
 }
 
-void MessageViewerCheckBeforeDeletingPluginManagerPrivate::loadPlugin(ConfigureSettingsPluginInfo *item)
+void MessageViewerCheckBeforeDeletingPluginManagerPrivate::loadPlugin(CheckBeforeDeletingPluginInfo *item)
 {
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
@@ -139,14 +144,15 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::loadPlugin(ConfigureS
             pluginLoader.factory()->create<MessageViewer::MessageViewerCheckBeforeDeletingPlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
         // By default it's true
         item->pluginData.mHasConfigureDialog = true;
+        item->plugin->setIsEnabled(item->isEnabled);
         mPluginDataList.append(item->pluginData);
     }
 }
 
 MessageViewerCheckBeforeDeletingPlugin *MessageViewerCheckBeforeDeletingPluginManagerPrivate::pluginFromIdentifier(const QString &id)
 {
-    QVector<ConfigureSettingsPluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<ConfigureSettingsPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    QVector<CheckBeforeDeletingPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QVector<CheckBeforeDeletingPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if ((*it).pluginData.mIdentifier == id) {
             return (*it).plugin;
         }
