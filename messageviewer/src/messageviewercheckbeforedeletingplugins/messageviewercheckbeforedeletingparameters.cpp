@@ -65,3 +65,8 @@ bool MessageViewerCheckBeforeDeletingParameters::operator==(const MessageViewerC
 {
     return (d->mType == other.deleteType()) && (d->mList == other.items());
 }
+
+bool MessageViewerCheckBeforeDeletingParameters::isValid() const
+{
+    return !d->mList.isEmpty() && (d->mType != Unknown);
+}

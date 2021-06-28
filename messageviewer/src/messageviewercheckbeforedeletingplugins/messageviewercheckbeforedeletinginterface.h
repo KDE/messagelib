@@ -7,8 +7,8 @@
 #pragma once
 
 #include "messageviewer_export.h"
+#include <AkonadiCore/Item>
 #include <QObject>
-
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingParameters;
@@ -27,7 +27,7 @@ public:
     void setParentWidget(QWidget *parent);
     Q_REQUIRED_RESULT QWidget *parentWidget() const;
 
-    virtual bool exec() = 0;
+    virtual bool exec(Akonadi::Item::List &list) = 0;
 
     void setParameters(const MessageViewer::MessageViewerCheckBeforeDeletingParameters &params);
     Q_REQUIRED_RESULT MessageViewer::MessageViewerCheckBeforeDeletingParameters parameters() const;

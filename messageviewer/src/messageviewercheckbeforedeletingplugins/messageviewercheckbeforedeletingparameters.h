@@ -33,6 +33,8 @@ public:
     Q_REQUIRED_RESULT Akonadi::Item::List items() const;
     void setItems(const Akonadi::Item::List &items);
 
+    Q_REQUIRED_RESULT bool isValid() const;
+
 private:
     MessageViewerCheckBeforeDeletingParametersPrivate *const d;
 };
