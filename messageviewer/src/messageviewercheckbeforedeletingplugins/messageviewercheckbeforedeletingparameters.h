@@ -6,6 +6,7 @@
 
 #pragma once
 #include "messageviewer_export.h"
+#include <AkonadiCore/Item>
 #include <QString>
 namespace MessageViewer
 {
@@ -28,6 +29,9 @@ public:
 
     MessageViewerCheckBeforeDeletingParameters &operator=(const MessageViewerCheckBeforeDeletingParameters &other);
     Q_REQUIRED_RESULT bool operator==(const MessageViewerCheckBeforeDeletingParameters &other) const;
+
+    Q_REQUIRED_RESULT Akonadi::Item::List items() const;
+    void setItems(const Akonadi::Item::List &items);
 
 private:
     MessageViewerCheckBeforeDeletingParametersPrivate *const d;

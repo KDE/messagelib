@@ -13,6 +13,7 @@ public:
     MessageViewerCheckBeforeDeletingParametersPrivate()
     {
     }
+    Akonadi::Item::List mList;
     MessageViewerCheckBeforeDeletingParameters::DeleteType mType = MessageViewerCheckBeforeDeletingParameters::Unknown;
 };
 
@@ -31,6 +32,16 @@ MessageViewerCheckBeforeDeletingParameters::~MessageViewerCheckBeforeDeletingPar
 {
 }
 
+Akonadi::Item::List MessageViewerCheckBeforeDeletingParameters::items() const
+{
+    return d->mList;
+}
+
+void MessageViewerCheckBeforeDeletingParameters::setItems(const Akonadi::Item::List &items)
+{
+    d->mList = items;
+}
+
 MessageViewerCheckBeforeDeletingParameters::DeleteType MessageViewerCheckBeforeDeletingParameters::deleteType() const
 {
     return d->mType;
@@ -45,11 +56,12 @@ MessageViewerCheckBeforeDeletingParameters &MessageViewerCheckBeforeDeletingPara
 {
     if (this != &other) {
         d->mType = other.deleteType();
+        d->mList = other.items();
     }
     return *this;
 }
 
 bool MessageViewerCheckBeforeDeletingParameters::operator==(const MessageViewerCheckBeforeDeletingParameters &other) const
 {
-    return (d->mType == other.deleteType());
+    return (d->mType == other.deleteType()) && (d->mList == other.items());
 }
