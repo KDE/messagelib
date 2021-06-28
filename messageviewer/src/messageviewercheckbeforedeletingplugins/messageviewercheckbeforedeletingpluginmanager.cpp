@@ -37,13 +37,13 @@ public:
     {
     }
 
-    QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
-    QVector<PimCommon::PluginUtilData> pluginDataList() const;
+    Q_REQUIRED_RESULT QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginDataList() const;
     void initializePluginList();
     void loadPlugin(CheckBeforeDeletingPluginInfo *item);
-    QString configGroupName() const;
-    QString configPrefixSettingKey() const;
-    MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
 
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
@@ -77,7 +77,6 @@ QString MessageViewerCheckBeforeDeletingPluginManagerPrivate::configPrefixSettin
 void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList()
 {
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("messageviewer/checkbeforedeleting"));
-
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());

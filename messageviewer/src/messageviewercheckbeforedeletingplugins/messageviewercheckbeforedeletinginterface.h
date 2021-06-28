@@ -11,6 +11,7 @@
 
 namespace MessageViewer
 {
+class MessageViewerCheckBeforeDeletingParameters;
 class MessageViewerCheckBeforeDeletingInterfacePrivate;
 /**
  * @brief The MessageViewerCheckBeforeDeletingInterface class
@@ -26,7 +27,10 @@ public:
     void setParentWidget(QWidget *parent);
     Q_REQUIRED_RESULT QWidget *parentWidget() const;
 
-    // TODO add virtual method
+    virtual bool exec() = 0;
+
+    void setParameters(const MessageViewer::MessageViewerCheckBeforeDeletingParameters &params);
+    Q_REQUIRED_RESULT MessageViewer::MessageViewerCheckBeforeDeletingParameters parameters() const;
 
 public Q_SLOTS:
     virtual void reloadConfig();

@@ -5,6 +5,7 @@
 */
 
 #include "messageviewercheckbeforedeletinginterface.h"
+#include "messageviewercheckbeforedeletingparameters.h"
 
 using namespace MessageViewer;
 
@@ -15,6 +16,7 @@ public:
     {
     }
 
+    MessageViewer::MessageViewerCheckBeforeDeletingParameters parameters;
     QWidget *mParentWidget = nullptr;
 };
 
@@ -42,4 +44,14 @@ QWidget *MessageViewerCheckBeforeDeletingInterface::parentWidget() const
 void MessageViewerCheckBeforeDeletingInterface::reloadConfig()
 {
     // Reimplement it
+}
+
+void MessageViewerCheckBeforeDeletingInterface::setParameters(const MessageViewer::MessageViewerCheckBeforeDeletingParameters &params)
+{
+    d->parameters = params;
+}
+
+MessageViewer::MessageViewerCheckBeforeDeletingParameters MessageViewerCheckBeforeDeletingInterface::parameters() const
+{
+    return d->parameters;
 }
