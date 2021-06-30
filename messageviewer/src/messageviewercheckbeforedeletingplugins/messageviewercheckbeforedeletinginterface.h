@@ -27,7 +27,7 @@ public:
     void setParentWidget(QWidget *parent);
     Q_REQUIRED_RESULT QWidget *parentWidget() const;
 
-    virtual bool exec(Akonadi::Item::List &list) = 0;
+    virtual Q_REQUIRED_RESULT Akonadi::Item::List exec(const Akonadi::Item::List &list) = 0;
 
     void setParameters(const MessageViewer::MessageViewerCheckBeforeDeletingParameters &params);
     Q_REQUIRED_RESULT MessageViewer::MessageViewerCheckBeforeDeletingParameters parameters() const;
