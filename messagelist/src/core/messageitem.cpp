@@ -556,7 +556,7 @@ QString MessageItem::accessibleText(const Theme *theme, int columnIndex)
         QStringList rightStrings;
         const auto leftItems = row->leftItems();
         leftStrings.reserve(leftItems.count());
-        for (Theme::ContentItem *contentItem : qAsConst(leftItems)) {
+        for (Theme::ContentItem *contentItem : std::as_const(leftItems)) {
             leftStrings.append(accessibleTextForField(contentItem->type()));
         }
 
@@ -579,7 +579,7 @@ void MessageItem::subTreeToList(QVector<MessageItem *> &list)
     if (!childList) {
         return;
     }
-    for (const auto child : qAsConst(*childList)) {
+    for (const auto child : std::as_const(*childList)) {
         Q_ASSERT(child->type() == Item::Message);
         static_cast<MessageItem *>(child)->subTreeToList(list);
     }

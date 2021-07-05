@@ -35,7 +35,7 @@ void HeaderStyleInterface::addHelpTextAction(QAction *act, const QString &text)
 
 void HeaderStyleInterface::addActionToMenu(KActionMenu *menu, QActionGroup *actionGroup)
 {
-    for (KToggleAction *taction : qAsConst(mAction)) {
+    for (KToggleAction *taction : std::as_const(mAction)) {
         menu->addAction(taction);
         actionGroup->addAction(taction);
     }

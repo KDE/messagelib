@@ -44,13 +44,13 @@ void RemoteContentMenu::setUrls(const QStringList &urls)
 
 void RemoteContentMenu::updateMenu()
 {
-    for (auto act : qAsConst(mListAction)) {
+    for (auto act : std::as_const(mListAction)) {
         removeAction(act);
     }
     const int numberOfUrl{mUrls.count()};
     if (numberOfUrl > 0) {
         mListAction.reserve(numberOfUrl + 3);
-        for (const QString &url : qAsConst(mUrls)) {
+        for (const QString &url : std::as_const(mUrls)) {
             QAction *act = addAction(i18n("Authorize %1", url));
             connect(act, &QAction::triggered, this, [this, url]() {
                 authorize(url);
@@ -61,7 +61,7 @@ void RemoteContentMenu::updateMenu()
         mListAction << addSeparator();
         QAction *act = addAction(i18n("Authorize all Urls"));
         connect(act, &QAction::triggered, this, [this]() {
-            for (const QString &url : qAsConst(mUrls)) {
+            for (const QString &url : std::as_const(mUrls)) {
                 authorize(url);
             }
             mUrls.clear();

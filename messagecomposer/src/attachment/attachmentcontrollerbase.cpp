@@ -214,7 +214,7 @@ void AttachmentControllerBase::Private::loadJobResult(KJob *job)
 void AttachmentControllerBase::Private::openSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
-    for (const AttachmentPart::Ptr &part : qAsConst(selectedParts)) {
+    for (const AttachmentPart::Ptr &part : std::as_const(selectedParts)) {
         q->openAttachment(part);
     }
 }
@@ -222,7 +222,7 @@ void AttachmentControllerBase::Private::openSelectedAttachments()
 void AttachmentControllerBase::Private::viewSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
-    for (const AttachmentPart::Ptr &part : qAsConst(selectedParts)) {
+    for (const AttachmentPart::Ptr &part : std::as_const(selectedParts)) {
         q->viewAttachment(part);
     }
 }

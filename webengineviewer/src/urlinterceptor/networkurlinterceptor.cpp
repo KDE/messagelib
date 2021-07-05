@@ -41,7 +41,7 @@ void NetworkUrlInterceptorPrivate::removeInterceptor(NetworkPluginUrlInterceptor
 
 void NetworkUrlInterceptorPrivate::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    for (NetworkPluginUrlInterceptorInterface *inter : qAsConst(listInterceptor)) {
+    for (NetworkPluginUrlInterceptorInterface *inter : std::as_const(listInterceptor)) {
         if (inter->interceptRequest(info)) {
             info.block(true);
             break;

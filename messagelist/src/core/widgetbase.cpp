@@ -416,7 +416,7 @@ void Widget::themeMenuAboutToShow(QMenu *menu)
 
     std::sort(sortedThemes.begin(), sortedThemes.end(), MessageList::Core::Theme::compareName);
 
-    for (const auto theme : qAsConst(sortedThemes)) {
+    for (const auto theme : std::as_const(sortedThemes)) {
         act = menu->addAction(theme->name());
         act->setCheckable(true);
         grp->addAction(act);
@@ -506,7 +506,7 @@ void Widget::aggregationMenuAboutToShow(QMenu *menu)
 
     std::sort(sortedAggregations.begin(), sortedAggregations.end(), MessageList::Core::Aggregation::compareName);
 
-    for (const auto agg : qAsConst(sortedAggregations)) {
+    for (const auto agg : std::as_const(sortedAggregations)) {
         act = menu->addAction(agg->name());
         act->setCheckable(true);
         grp->addAction(act);
@@ -588,7 +588,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
     grp = new QActionGroup(menu);
 
     options = SortOrder::enumerateMessageSortingOptions(d->mAggregation->threading());
-    for (const auto &opt : qAsConst(options)) {
+    for (const auto &opt : std::as_const(options)) {
         act = menu->addAction(opt.first);
         act->setCheckable(true);
         grp->addAction(act);
@@ -604,7 +604,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
         menu->addSection(i18n("Message Sort Direction"));
 
         grp = new QActionGroup(menu);
-        for (const auto &opt : qAsConst(options)) {
+        for (const auto &opt : std::as_const(options)) {
             act = menu->addAction(opt.first);
             act->setCheckable(true);
             grp->addAction(act);
@@ -621,7 +621,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
         menu->addSection(i18n("Group Sort Order"));
 
         grp = new QActionGroup(menu);
-        for (const auto &opt : qAsConst(options)) {
+        for (const auto &opt : std::as_const(options)) {
             act = menu->addAction(opt.first);
             act->setCheckable(true);
             grp->addAction(act);
@@ -638,7 +638,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
         menu->addSection(i18n("Group Sort Direction"));
 
         grp = new QActionGroup(menu);
-        for (const auto &opt : qAsConst(options)) {
+        for (const auto &opt : std::as_const(options)) {
             act = menu->addAction(opt.first);
             act->setCheckable(true);
             grp->addAction(act);
@@ -672,7 +672,7 @@ void Widget::Private::switchMessageSorting(SortOrder::MessageSorting messageSort
 
         // First try with a well defined message sorting.
 
-        for (const auto column : qAsConst(columns)) {
+        for (const auto column : std::as_const(columns)) {
             if (!mView->header()->isSectionHidden(idx)) {
                 if (column->messageSorting() == messageSorting) {
                     // found a visible column with this message sorting
@@ -686,7 +686,7 @@ void Widget::Private::switchMessageSorting(SortOrder::MessageSorting messageSort
         // if still not found, try again with a wider range
         if (logicalHeaderColumnIndex == -1) {
             idx = 0;
-            for (const auto column : qAsConst(columns)) {
+            for (const auto column : std::as_const(columns)) {
                 if (!mView->header()->isSectionHidden(idx)) {
                     if (((column->messageSorting() == SortOrder::SortMessagesBySenderOrReceiver)
                          || (column->messageSorting() == SortOrder::SortMessagesByReceiver) || (column->messageSorting() == SortOrder::SortMessagesBySender))

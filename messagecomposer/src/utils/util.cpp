@@ -274,7 +274,7 @@ void MessageComposer::Util::addSendReplyForwardAction(const KMime::Message::Ptr 
     QVector<Akonadi::Item::Id> originalMessageId;
     QVector<Akonadi::MessageStatus> linkStatus;
     if (MessageComposer::Util::getLinkInformation(message, originalMessageId, linkStatus)) {
-        for (Akonadi::Item::Id id : qAsConst(originalMessageId)) {
+        for (Akonadi::Item::Id id : std::as_const(originalMessageId)) {
             if (linkStatus.first() == Akonadi::MessageStatus::statusReplied()) {
                 qjob->sentActionAttribute().addAction(MailTransport::SentActionAttribute::Action::MarkAsReplied, QVariant(id));
             } else if (linkStatus.first() == Akonadi::MessageStatus::statusForwarded()) {

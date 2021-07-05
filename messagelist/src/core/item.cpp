@@ -46,7 +46,7 @@ void Item::childItemStats(ChildItemStats &stats) const
     Q_ASSERT(d_ptr->mChildItems);
 
     stats.mTotalChildCount += d_ptr->mChildItems->count();
-    for (const auto child : qAsConst(*d_ptr->mChildItems)) {
+    for (const auto child : std::as_const(*d_ptr->mChildItems)) {
         if (!child->status().isRead()) {
             stats.mUnreadChildCount++;
         }
@@ -325,7 +325,7 @@ bool Item::recomputeMaxDate()
     time_t newMaxDate = d_ptr->mDate;
 
     if (d_ptr->mChildItems) {
-        for (auto child : qAsConst(*d_ptr->mChildItems)) {
+        for (auto child : std::as_const(*d_ptr->mChildItems)) {
             if (child->d_ptr->mMaxDate > newMaxDate) {
                 newMaxDate = child->d_ptr->mMaxDate;
             }
@@ -394,11 +394,11 @@ void Item::setViewable(Model *model, bool bViewable)
             d_ptr->mIsViewable = true;
         }
 
-        for (const auto child : qAsConst(*d_ptr->mChildItems)) {
+        for (const auto child : std::as_const(*d_ptr->mChildItems)) {
             child->setViewable(model, bViewable);
         }
     } else {
-        for (const auto child : qAsConst(*d_ptr->mChildItems)) {
+        for (const auto child : std::as_const(*d_ptr->mChildItems)) {
             child->setViewable(model, bViewable);
         }
 
@@ -629,7 +629,7 @@ void Item::dump(const QString &prefix)
         return;
     }
 
-    for (const auto child : qAsConst(*d_ptr->mChildItems)) {
+    for (const auto child : std::as_const(*d_ptr->mChildItems)) {
         child->dump(nPrefix);
     }
 }

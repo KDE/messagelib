@@ -556,13 +556,13 @@ static inline QSize compute_size_hint_for_row(const Theme::Row *r, int iconSize,
 
     // right aligned stuff first
     auto items = r->rightItems();
-    for (const auto it : qAsConst(items)) {
+    for (const auto it : std::as_const(items)) {
         compute_size_hint_for_item(const_cast<Theme::ContentItem *>(it), maxh, totalw, iconSize, item);
     }
 
     // then left aligned stuff
     items = r->leftItems();
-    for (const auto it : qAsConst(items)) {
+    for (const auto it : std::as_const(items)) {
         compute_size_hint_for_item(const_cast<Theme::ContentItem *>(it), maxh, totalw, iconSize, item);
     }
 
@@ -806,7 +806,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
 
     Qt::LayoutDirection layoutDir = mItemView->layoutDirection();
 
-    for (const auto row : qAsConst(*rows)) {
+    for (const auto row : std::as_const(*rows)) {
         QSize rowSizeHint = compute_size_hint_for_row(row, mTheme->iconSize(), item);
 
         int bottom = top + rowSizeHint.height();
@@ -1336,7 +1336,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
 
     Qt::LayoutDirection layoutDir = mItemView->layoutDirection();
 
-    for (const auto row : qAsConst(*rows)) {
+    for (const auto row : std::as_const(*rows)) {
         QSize rowSizeHint = compute_size_hint_for_row(row, mTheme->iconSize(), mHitItem);
 
         if ((viewportPoint.y() < top) && (rowIdx > 0)) {

@@ -351,11 +351,11 @@ Theme::Row::Row()
 
 Theme::Row::Row(const Row &src)
 {
-    for (const auto ci : qAsConst(src.mLeftItems)) {
+    for (const auto ci : std::as_const(src.mLeftItems)) {
         addLeftItem(new ContentItem(*ci));
     }
 
-    for (const auto ci : qAsConst(src.mRightItems)) {
+    for (const auto ci : std::as_const(src.mRightItems)) {
         addRightItem(new ContentItem(*ci));
     }
 }
@@ -425,12 +425,12 @@ void Theme::Row::removeRightItem(Theme::ContentItem *item)
 
 bool Theme::Row::containsTextItems() const
 {
-    for (const auto ci : qAsConst(mLeftItems)) {
+    for (const auto ci : std::as_const(mLeftItems)) {
         if (ci->displaysText()) {
             return true;
         }
     }
-    for (const auto ci : qAsConst(mRightItems)) {
+    for (const auto ci : std::as_const(mRightItems)) {
         if (ci->displaysText()) {
             return true;
         }
@@ -623,11 +623,11 @@ Theme::Column::Column(const Column &src)
 
     mSharedRuntimeData = src.mSharedRuntimeData;
     mSharedRuntimeData->addReference();
-    for (const auto row : qAsConst(src.mMessageRows)) {
+    for (const auto row : std::as_const(src.mMessageRows)) {
         addMessageRow(new Row(*row));
     }
 
-    for (const auto row : qAsConst(src.mGroupHeaderRows)) {
+    for (const auto row : std::as_const(src.mGroupHeaderRows)) {
         addGroupHeaderRow(new Row(*row));
     }
 }
@@ -786,12 +786,12 @@ void Theme::Column::removeGroupHeaderRow(Theme::Row *row)
 
 bool Theme::Column::containsTextItems() const
 {
-    for (const auto row : qAsConst(mMessageRows)) {
+    for (const auto row : std::as_const(mMessageRows)) {
         if (row->containsTextItems()) {
             return true;
         }
     }
-    for (const auto row : qAsConst(mGroupHeaderRows)) {
+    for (const auto row : std::as_const(mGroupHeaderRows)) {
         if (row->containsTextItems()) {
             return true;
         }
@@ -939,7 +939,7 @@ Theme::Theme(const Theme &src)
     mGroupHeaderBackgroundStyle = src.mGroupHeaderBackgroundStyle;
     mViewHeaderPolicy = src.mViewHeaderPolicy;
     mIconSize = src.mIconSize;
-    for (const auto col : qAsConst(src.mColumns)) {
+    for (const auto col : std::as_const(src.mColumns)) {
         addColumn(new Column(*col));
     }
 }
@@ -952,14 +952,14 @@ Theme::~Theme()
 
 void Theme::detach()
 {
-    for (const auto col : qAsConst(mColumns)) {
+    for (const auto col : std::as_const(mColumns)) {
         col->detach();
     }
 }
 
 void Theme::resetColumnState()
 {
-    for (const auto col : qAsConst(mColumns)) {
+    for (const auto col : std::as_const(mColumns)) {
         col->setCurrentlyVisible(col->visibleByDefault());
         col->setCurrentWidth(-1);
     }
@@ -967,7 +967,7 @@ void Theme::resetColumnState()
 
 void Theme::resetColumnSizes()
 {
-    for (const auto col : qAsConst(mColumns)) {
+    for (const auto col : std::as_const(mColumns)) {
         col->setCurrentWidth(-1);
     }
 }

@@ -213,7 +213,7 @@ void MessageFactoryNG::createReplyAsync()
             if (!mMailingListAddresses.isEmpty()) {
                 toList = stripMyAddressesFromAddressList(mOrigMsg->to()->mailboxes(), mIdentityManager);
                 bool addMailingList = true;
-                for (const KMime::Types::Mailbox &m : qAsConst(mMailingListAddresses)) {
+                for (const KMime::Types::Mailbox &m : std::as_const(mMailingListAddresses)) {
                     if (toList.contains(m)) {
                         addMailingList = false;
                         break;
@@ -242,7 +242,7 @@ void MessageFactoryNG::createReplyAsync()
                 }
             }
 
-            for (const KMime::Types::Mailbox &mailbox : qAsConst(ccList)) {
+            for (const KMime::Types::Mailbox &mailbox : std::as_const(ccList)) {
                 msg->cc()->addAddress(mailbox);
             }
         }
@@ -258,7 +258,7 @@ void MessageFactoryNG::createReplyAsync()
         Q_UNREACHABLE();
     }
 
-    for (const KMime::Types::Mailbox &mailbox : qAsConst(toList)) {
+    for (const KMime::Types::Mailbox &mailbox : std::as_const(toList)) {
         msg->to()->addAddress(mailbox);
     }
 
@@ -386,7 +386,7 @@ QPair<KMime::Message::Ptr, QVector<KMime::Content *>> MessageFactoryNG::createAt
     } else {
         // iterate through all the messages to be forwarded
         attachments.reserve(items.count());
-        for (const Akonadi::Item &item : qAsConst(items)) {
+        for (const Akonadi::Item &item : std::as_const(items)) {
             attachments << createForwardAttachmentMessage(MessageComposer::Util::message(item));
             MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
         }
@@ -716,7 +716,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
     digest->fromUnicodeString(mainPartText);
 
     int id = 0;
-    for (const Akonadi::Item &item : qAsConst(items)) {
+    for (const Akonadi::Item &item : std::as_const(items)) {
         KMime::Message::Ptr fMsg = MessageComposer::Util::message(item);
         if (id == 0) {
             if (auto hrd = fMsg->headerByType("X-KMail-Identity")) {

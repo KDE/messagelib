@@ -436,7 +436,7 @@ void MessageList::Widget::viewDropEvent(QDropEvent *e)
     Collection target = collections.at(0);
     Akonadi::Item::List items;
     items.reserve(urls.count());
-    for (const QUrl &url : qAsConst(urls)) {
+    for (const QUrl &url : std::as_const(urls)) {
         items << Akonadi::Item::fromUrl(url);
     }
 
@@ -462,7 +462,7 @@ void MessageList::Widget::viewStartDragRequest()
 
     bool readOnly = false;
 
-    for (const Collection &c : qAsConst(collections)) {
+    for (const Collection &c : std::as_const(collections)) {
         // We won't be able to remove items from this collection
         if ((c.rights() & Collection::CanDeleteItem) == 0) {
             // So the drag will be read-only
@@ -515,7 +515,7 @@ Akonadi::Item::List MessageList::Widget::Private::selectionAsItems() const
     const QVector<Core::MessageItem *> selection = q->view()->selectionAsMessageItemList();
     res.reserve(selection.count());
 
-    for (Core::MessageItem *mi : qAsConst(selection)) {
+    for (Core::MessageItem *mi : std::as_const(selection)) {
         Akonadi::Item i = itemForRow(mi->currentModelIndexRow());
         Q_ASSERT(i.isValid());
         res << i;
@@ -564,7 +564,7 @@ QVector<KMime::Message::Ptr> MessageList::Widget::selectionAsMessageList(bool in
         return lstMiPtr;
     }
     lstMiPtr.reserve(lstMi.count());
-    for (Core::MessageItem *it : qAsConst(lstMi)) {
+    for (Core::MessageItem *it : std::as_const(lstMi)) {
         lstMiPtr.append(d->messageForRow(it->currentModelIndexRow()));
     }
     return lstMiPtr;
@@ -578,7 +578,7 @@ Akonadi::Item::List MessageList::Widget::selectionAsMessageItemList(bool include
         return lstMiPtr;
     }
     lstMiPtr.reserve(lstMi.count());
-    for (Core::MessageItem *it : qAsConst(lstMi)) {
+    for (Core::MessageItem *it : std::as_const(lstMi)) {
         lstMiPtr.append(d->itemForRow(it->currentModelIndexRow()));
     }
     return lstMiPtr;
@@ -592,7 +592,7 @@ QVector<qlonglong> MessageList::Widget::selectionAsMessageItemListId(bool includ
         return lstMiPtr;
     }
     lstMiPtr.reserve(lstMi.count());
-    for (Core::MessageItem *it : qAsConst(lstMi)) {
+    for (Core::MessageItem *it : std::as_const(lstMi)) {
         lstMiPtr.append(d->itemForRow(it->currentModelIndexRow()).id());
     }
     return lstMiPtr;
@@ -606,7 +606,7 @@ QVector<Akonadi::Item::Id> MessageList::Widget::selectionAsListMessageId(bool in
         return lstMiPtr;
     }
     lstMiPtr.reserve(lstMi.count());
-    for (Core::MessageItem *it : qAsConst(lstMi)) {
+    for (Core::MessageItem *it : std::as_const(lstMi)) {
         lstMiPtr.append(d->itemForRow(it->currentModelIndexRow()).id());
     }
     return lstMiPtr;
@@ -620,7 +620,7 @@ Akonadi::Item::List MessageList::Widget::currentThreadAsMessageList() const
         return lstMiPtr;
     }
     lstMiPtr.reserve(lstMi.count());
-    for (Core::MessageItem *it : qAsConst(lstMi)) {
+    for (Core::MessageItem *it : std::as_const(lstMi)) {
         lstMiPtr.append(d->itemForRow(it->currentModelIndexRow()));
     }
     return lstMiPtr;
@@ -669,7 +669,7 @@ bool MessageList::Widget::getSelectionStats(Akonadi::Item::List &selectedItems,
 
     *allSelectedBelongToSameThread = true;
 
-    for (Core::MessageItem *it : qAsConst(selected)) {
+    for (Core::MessageItem *it : std::as_const(selected)) {
         const Akonadi::Item item = d->itemForRow(it->currentModelIndexRow());
         selectedItems.append(item);
         if (view()->isDisplayedWithParentsExpanded(it)) {
@@ -705,7 +705,7 @@ Akonadi::Item::List MessageList::Widget::itemListFromPersistentSet(MessageList::
     const QList<Core::MessageItem *> refList = view()->persistentSetCurrentMessageItemList(ref);
     if (!refList.isEmpty()) {
         lstItem.reserve(refList.count());
-        for (Core::MessageItem *it : qAsConst(refList)) {
+        for (Core::MessageItem *it : std::as_const(refList)) {
             lstItem.append(d->itemForRow(it->currentModelIndexRow()));
         }
     }

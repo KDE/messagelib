@@ -214,7 +214,7 @@ bool AttachmentModel::isEncryptSelected() const
 void AttachmentModel::setEncryptSelected(bool selected)
 {
     d->encryptSelected = selected;
-    for (AttachmentPart::Ptr part : qAsConst(d->parts)) {
+    for (AttachmentPart::Ptr part : std::as_const(d->parts)) {
         part->setEncrypted(selected);
     }
     Q_EMIT dataChanged(index(0, EncryptColumn), index(rowCount() - 1, EncryptColumn));
@@ -228,7 +228,7 @@ bool AttachmentModel::isSignSelected() const
 void AttachmentModel::setSignSelected(bool selected)
 {
     d->signSelected = selected;
-    for (AttachmentPart::Ptr part : qAsConst(d->parts)) {
+    for (AttachmentPart::Ptr part : std::as_const(d->parts)) {
         part->setSigned(selected);
     }
     Q_EMIT dataChanged(index(0, SignColumn), index(rowCount() - 1, SignColumn));
@@ -356,7 +356,7 @@ void AttachmentModel::addAttachment(const AttachmentPart::Ptr &part)
 {
     Q_ASSERT(!d->parts.contains(part));
     if (!part->url().isEmpty()) {
-        for (const AttachmentPart::Ptr &partElement : qAsConst(d->parts)) {
+        for (const AttachmentPart::Ptr &partElement : std::as_const(d->parts)) {
             if (partElement->url() == part->url()) {
                 return;
             }

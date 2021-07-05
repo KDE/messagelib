@@ -113,7 +113,7 @@ void EmailAddressResolveJob::start()
     if (d->mJobCount == 0) {
         emitResult();
     } else {
-        for (AliasesExpandJob *job : qAsConst(jobs)) {
+        for (AliasesExpandJob *job : std::as_const(jobs)) {
             job->start();
         }
     }

@@ -149,7 +149,7 @@ void SearchLineStatus::updateFilters()
 {
     QVector<Akonadi::MessageStatus> lstStatus;
 
-    for (QAction *act : qAsConst(mFilterListActions)) {
+    for (QAction *act : std::as_const(mFilterListActions)) {
         if (act->isChecked()) {
             Akonadi::MessageStatus status;
             status.fromQInt32(static_cast<qint32>(act->data().toInt()));
@@ -175,7 +175,7 @@ void SearchLineStatus::showMenu()
 
 void SearchLineStatus::clearFilterAction()
 {
-    for (QAction *act : qAsConst(mFilterListActions)) {
+    for (QAction *act : std::as_const(mFilterListActions)) {
         act->setChecked(false);
     }
     mHasFilter = false;
@@ -371,7 +371,7 @@ void SearchLineStatus::setFilterMessageStatus(const QVector<Akonadi::MessageStat
     clearFilterByAction();
     // TODO unchecked all checkbox
     for (const Akonadi::MessageStatus &status : newLstStatus) {
-        for (QAction *act : qAsConst(mFilterListActions)) {
+        for (QAction *act : std::as_const(mFilterListActions)) {
             if (static_cast<qint32>(act->data().toInt()) == status.toQInt32()) {
                 act->setChecked(true);
                 mHasFilter = true;

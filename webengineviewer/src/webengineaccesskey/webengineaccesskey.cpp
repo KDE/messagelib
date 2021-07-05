@@ -267,7 +267,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
                 const QKeySequence shortCut = act->shortcut();
                 if (!shortCut.isEmpty()) {
                     auto lstUnusedKeys = unusedKeys;
-                    for (QChar c : qAsConst(unusedKeys)) {
+                    for (QChar c : std::as_const(unusedKeys)) {
                         if (shortCut.matches(QKeySequence(c)) != QKeySequence::NoMatch) {
                             lstUnusedKeys.removeOne(c);
                         }
@@ -279,7 +279,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
     }
     QVector<WebEngineViewer::WebEngineAccessKeyAnchor> unLabeledElements;
     QRect viewport = d->mWebEngine->rect();
-    for (const WebEngineViewer::WebEngineAccessKeyAnchor &element : qAsConst(anchorList)) {
+    for (const WebEngineViewer::WebEngineAccessKeyAnchor &element : std::as_const(anchorList)) {
         const QRect geometry = element.boundingRect();
         if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
             continue;
@@ -314,7 +314,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 
     // Pick an access key first from the letters in the text and then from the
     // list of unused access keys
-    for (const WebEngineViewer::WebEngineAccessKeyAnchor &element : qAsConst(unLabeledElements)) {
+    for (const WebEngineViewer::WebEngineAccessKeyAnchor &element : std::as_const(unLabeledElements)) {
         const QRect geometry = element.boundingRect();
         if (unusedKeys.isEmpty() || geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
             continue;

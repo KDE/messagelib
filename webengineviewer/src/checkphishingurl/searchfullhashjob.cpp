@@ -197,7 +197,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
 
     // clientStates We can support multi database.
     QVariantList clientStatesList;
-    for (const QString &str : qAsConst(d->mDatabaseHashes)) {
+    for (const QString &str : std::as_const(d->mDatabaseHashes)) {
         if (!str.isEmpty()) {
             clientStatesList.append(str);
         }

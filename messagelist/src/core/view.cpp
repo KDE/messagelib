@@ -376,7 +376,7 @@ void View::applyThemeColumns()
 
     int totalVisibleWidthHint = 0;
     QVector<int> lColumnSizeHints;
-    for (const auto col : qAsConst(columns)) {
+    for (const auto col : std::as_const(columns)) {
         if (col->currentlyVisible() || (idx == 0)) {
             // qCDebug(MESSAGELIST_LOG) << "Column " << idx << " will be visible";
             // Column visible
@@ -403,7 +403,7 @@ void View::applyThemeColumns()
     QVector<double> lColumnWidths;
     lColumnWidths.reserve(columns.count());
     int totalVisibleWidth = 0;
-    for (const auto col : qAsConst(columns)) {
+    for (const auto col : std::as_const(columns)) {
         double savedWidth = col->currentWidth();
         double hintWidth = savedWidth > 0 ? savedWidth : lColumnSizeHints.at(idx);
         double realWidth;
@@ -515,7 +515,7 @@ void View::applyThemeColumns()
 
     idx = 0;
 
-    for (const auto col : qAsConst(columns)) {
+    for (const auto col : std::as_const(columns)) {
         bool visible = (idx == 0) || col->currentlyVisible();
         // qCDebug(MESSAGELIST_LOG) << "Column " << idx << " visible " << visible;
         col->setCurrentlyVisible(visible);
@@ -529,7 +529,7 @@ void View::applyThemeColumns()
 
     idx = 0;
 
-    for (const auto col : qAsConst(columns)) {
+    for (const auto col : std::as_const(columns)) {
         if (col->currentlyVisible()) {
             const double columnWidth(lColumnWidths.at(idx));
             col->setCurrentWidth(columnWidth);
@@ -545,7 +545,7 @@ void View::applyThemeColumns()
     idx = 0;
 
     bool bTriggeredQtBug = false;
-    for (const auto col : qAsConst(columns)) {
+    for (const auto col : std::as_const(columns)) {
         if (!header()->isSectionHidden(idx)) {
             if (!col->currentlyVisible()) {
                 bTriggeredQtBug = true;
@@ -602,7 +602,7 @@ void View::saveThemeColumnState()
 
     int idx = 0;
 
-    for (const auto col : qAsConst(columns)) {
+    for (const auto col : std::as_const(columns)) {
         if (header()->isSectionHidden(idx)) {
             // qCDebug(MESSAGELIST_LOG) << "Section " << idx << " is hidden";
             col->setCurrentlyVisible(false);
@@ -750,7 +750,7 @@ void View::slotHeaderContextMenuRequested(const QPoint &pnt)
     QMenu menu;
 
     int idx = 0;
-    for (const auto col : qAsConst(columns)) {
+    for (const auto col : std::as_const(columns)) {
         QAction *act = menu.addAction(col->label());
         act->setCheckable(true);
         act->setChecked(!header()->isSectionHidden(idx));
@@ -902,7 +902,7 @@ QVector<MessageItem *> View::selectionAsMessageItemList(bool includeCollapsedChi
     if (lSelected.isEmpty()) {
         return selectedMessages;
     }
-    for (const auto &idx : qAsConst(lSelected)) {
+    for (const auto &idx : std::as_const(lSelected)) {
         // The asserts below are theoretically valid but at the time
         // of writing they fail because of a bug in QItemSelectionModel::selectedRows()
         // which returns also non-selectable items.
@@ -965,7 +965,7 @@ void View::setChildrenExpanded(const Item *root, bool expand)
     if (!childList) {
         return;
     }
-    for (const auto child : qAsConst(*childList)) {
+    for (const auto child : std::as_const(*childList)) {
         QModelIndex idx = d->mModel->index(child, 0);
         Q_ASSERT(idx.isValid());
         Q_ASSERT(static_cast<Item *>(idx.internalPointer()) == child);
@@ -1054,7 +1054,7 @@ void View::setAllThreadsExpanded(bool expand)
         return;
     }
 
-    for (const auto item : qAsConst(*childList)) {
+    for (const auto item : std::as_const(*childList)) {
         setChildrenExpanded(item, expand);
     }
 }
@@ -1073,7 +1073,7 @@ void View::setAllGroupsExpanded(bool expand)
     }
 
     scheduleDelayedItemsLayout();
-    for (const auto item : qAsConst(*childList)) {
+    for (const auto item : std::as_const(*childList)) {
         Q_ASSERT(item->type() == Item::GroupHeader);
         QModelIndex idx = d->mModel->index(item, 0);
         Q_ASSERT(idx.isValid());

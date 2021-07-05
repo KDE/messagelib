@@ -110,7 +110,7 @@ void AggregationComboBoxPrivate::slotLoadAggregations()
     QList<Aggregation *> aggregations = Manager::instance()->aggregations().values();
     std::sort(aggregations.begin(), aggregations.end(), MessageList::Core::Aggregation::compareName);
 
-    for (const Aggregation *aggregation : qAsConst(aggregations)) {
+    for (const Aggregation *aggregation : std::as_const(aggregations)) {
         q->addItem(aggregation->name(), QVariant(aggregation->id()));
     }
 }

@@ -34,7 +34,7 @@ void RemoteContentManager::clear()
 
 bool RemoteContentManager::isAutorized(const QString &url) const
 {
-    for (const RemoteContentInfo &info : qAsConst(mRemoveContentInfo)) {
+    for (const RemoteContentInfo &info : std::as_const(mRemoveContentInfo)) {
         if (info.url() == url) {
             return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized;
         }
@@ -49,7 +49,7 @@ bool RemoteContentManager::isAutorized(const QUrl &url, bool &contains) const
 
     contains = false;
 
-    for (const RemoteContentInfo &info : qAsConst(mRemoveContentInfo)) {
+    for (const RemoteContentInfo &info : std::as_const(mRemoveContentInfo)) {
         if (info.url() == urlToString) {
             contains = true;
             return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized;
@@ -68,7 +68,7 @@ bool RemoteContentManager::isBlocked(const QUrl &url, bool &contains) const
 
     contains = false;
 
-    for (const RemoteContentInfo &info : qAsConst(mRemoveContentInfo)) {
+    for (const RemoteContentInfo &info : std::as_const(mRemoveContentInfo)) {
         if (info.url() == urlToString) {
             contains = true;
             return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Blocked;
@@ -107,7 +107,7 @@ void RemoteContentManager::writeSettings()
     KConfigGroup group(config, "RemoteContent");
     QStringList blockedUrl;
     QStringList authorizedUrl;
-    for (const RemoteContentInfo &info : qAsConst(mRemoveContentInfo)) {
+    for (const RemoteContentInfo &info : std::as_const(mRemoveContentInfo)) {
         switch (info.status()) {
         case RemoteContentInfo::RemoteContentInfoStatus::Unknown:
             break;
@@ -141,7 +141,7 @@ void RemoteContentManager::addRemoteContent(const RemoteContentInfo &info)
 
 bool RemoteContentManager::isUnique(const RemoteContentInfo &newInfo) const
 {
-    for (const RemoteContentInfo &info : qAsConst(mRemoveContentInfo)) {
+    for (const RemoteContentInfo &info : std::as_const(mRemoveContentInfo)) {
         if (info.url() == newInfo.url()) {
             return false;
         }

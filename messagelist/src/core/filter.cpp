@@ -23,7 +23,7 @@ Filter::Filter(QObject *parent)
 bool Filter::containString(const QString &searchInString) const
 {
     bool found = false;
-    for (const QString &str : qAsConst(mSearchList)) {
+    for (const QString &str : std::as_const(mSearchList)) {
         if (searchInString.contains(str, Qt::CaseInsensitive)) {
             found = true;
         } else {
@@ -67,7 +67,7 @@ void Filter::setIdentifier(const QString &newIdentifier)
 bool Filter::match(const MessageItem *item) const
 {
     if (!mStatus.isEmpty()) {
-        for (Akonadi::MessageStatus status : qAsConst(mStatus)) {
+        for (Akonadi::MessageStatus status : std::as_const(mStatus)) {
             if (!(status & item->status())) {
                 return false;
             }
@@ -170,7 +170,7 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername, c
     newGroup.writeEntry("identifier", mIdentifier);
     QList<qint32> lst;
     lst.reserve(mStatus.count());
-    for (const auto s : qAsConst(mStatus)) {
+    for (const auto s : std::as_const(mStatus)) {
         lst << s.toQInt32();
     }
     newGroup.writeEntry("status", lst);
@@ -203,7 +203,7 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
     lst = newGroup.readEntry("status", QList<qint32>());
     QVector<Akonadi::MessageStatus> messageStatusLst;
     messageStatusLst.reserve(lst.count());
-    for (const auto s : qAsConst(lst)) {
+    for (const auto s : std::as_const(lst)) {
         Akonadi::MessageStatus status;
         status.fromQInt32(s);
         messageStatusLst << status;

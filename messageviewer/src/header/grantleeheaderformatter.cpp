@@ -300,7 +300,7 @@ public:
                        << "resent-From"
                        << "resent-To";
 
-        for (const auto &header : qAsConst(addressHeaders)) {
+        for (const auto &header : std::as_const(addressHeaders)) {
             registerHeaderFormatter(header, QSharedPointer<HeaderFormatter>(new AddressHeaderFormatter(header)));
         }
 
@@ -410,7 +410,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
                    << "list-id"
                    << "date";
 
-    for (const auto &header : qAsConst(defaultHeaders)) {
+    for (const auto &header : std::as_const(defaultHeaders)) {
         QSharedPointer<HeaderFormatter> formatter;
         if (d->headerFormatter.contains(header)) {
             formatter = d->headerFormatter.value(header);
@@ -476,7 +476,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
         headerObject.insert(QStringLiteral("photourl"), xface.photoURL);
     }
 
-    for (QString header : qAsConst(displayExtraHeaders)) {
+    for (QString header : std::as_const(displayExtraHeaders)) {
         const QByteArray baHeader = header.toLocal8Bit();
         if (auto hrd = message->headerByType(baHeader.constData())) {
             // Grantlee doesn't support '-' in variable name => remove it.

@@ -107,7 +107,7 @@ void FilterSavedManager::removeFilter(const QString &identifier)
     }
 
     int numberOfFilter = 0;
-    for (Filter *f : qAsConst(lst)) {
+    for (Filter *f : std::as_const(lst)) {
         if ((f->identifier() != identifier) && !f->identifier().isEmpty()) {
             f->save(KSharedConfig::openConfig(), f->filterName(), f->iconName());
             numberOfFilter++;

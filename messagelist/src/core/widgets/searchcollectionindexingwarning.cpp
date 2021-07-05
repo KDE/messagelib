@@ -116,7 +116,7 @@ void SearchCollectionIndexingWarning::queryCollectionFetchFinished(KJob *job)
 void SearchCollectionIndexingWarning::queryIndexerStatus()
 {
     bool allFullyIndexed = true;
-    for (const Akonadi::Collection &col : qAsConst(mCollections)) {
+    for (const Akonadi::Collection &col : std::as_const(mCollections)) {
         if (col.hasAttribute<Akonadi::EntityHiddenAttribute>()) {
             continue;
         }

@@ -36,7 +36,7 @@ public:
 
     ~RowShift()
     {
-        for (const auto idx : qAsConst(*mInvariantHash)) {
+        for (const auto idx : std::as_const(*mInvariantHash)) {
             idx->d->setRowMapper(nullptr);
         }
         delete mInvariantHash;
@@ -70,7 +70,7 @@ ModelInvariantRowMapper::~ModelInvariantRowMapper()
     }
 
     // FIXME: optimize this (it CAN be optimized)
-    for (const auto idx : qAsConst(*d->mCurrentInvariantHash)) {
+    for (const auto idx : std::as_const(*d->mCurrentInvariantHash)) {
         idx->d->setRowMapper(nullptr);
     }
     delete d->mCurrentInvariantHash;
@@ -550,7 +550,7 @@ void ModelInvariantRowMapper::modelReset()
 {
     // FIXME: optimize this (it probably can be optimized by providing a more complex user interface)
 
-    for (const auto idx : qAsConst(*d->mCurrentInvariantHash)) {
+    for (const auto idx : std::as_const(*d->mCurrentInvariantHash)) {
         idx->d->setRowMapper(nullptr);
     }
     d->mCurrentInvariantHash->clear();

@@ -25,7 +25,7 @@ FilterSavedMenu::~FilterSavedMenu()
 
 void FilterSavedMenu::slotShowMenu()
 {
-    for (auto act : qAsConst(mListAction)) {
+    for (auto act : std::as_const(mListAction)) {
         removeAction(act);
     }
     qDeleteAll(mListAction);

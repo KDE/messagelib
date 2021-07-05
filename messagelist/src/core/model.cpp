@@ -411,7 +411,7 @@ void ModelPrivate::slotApplyFilter()
     QModelIndex idx; // invalid
 
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    for (const auto child : qAsConst(*childList)) {
+    for (const auto child : std::as_const(*childList)) {
         applyFilterToSubtree(child, idx);
     }
 
@@ -439,7 +439,7 @@ bool ModelPrivate::applyFilterToSubtree(Item *item, const QModelIndex &parentInd
     QModelIndex thisIndex = q->index(item, 0);
 
     if (childList) {
-        for (const auto child : qAsConst(*childList)) {
+        for (const auto child : std::as_const(*childList)) {
             if (applyFilterToSubtree(child, thisIndex)) {
                 childrenMatch = true;
             }
@@ -1047,13 +1047,13 @@ void ModelPrivate::clearUnassignedMessageLists()
         // items and *then* delete them without accessing the parented ones.
 
         QList<MessageItem *> parentless;
-        for (const auto mi : qAsConst(mUnassignedMessageListForPass2)) {
+        for (const auto mi : std::as_const(mUnassignedMessageListForPass2)) {
             if (!mi->parent()) {
                 parentless.append(mi);
             }
         }
 
-        for (const auto mi : qAsConst(parentless)) {
+        for (const auto mi : std::as_const(parentless)) {
             delete mi;
         }
 
@@ -1077,17 +1077,17 @@ void ModelPrivate::clearUnassignedMessageLists()
             // We're actually in Pass3: the messiest one.
 
             QSet<MessageItem *> itemsToDelete;
-            for (const auto mi : qAsConst(mUnassignedMessageListForPass3)) {
+            for (const auto mi : std::as_const(mUnassignedMessageListForPass3)) {
                 if (!mi->parent()) {
                     itemsToDelete.insert(mi);
                 }
             }
-            for (const auto mi : qAsConst(mUnassignedMessageListForPass4)) {
+            for (const auto mi : std::as_const(mUnassignedMessageListForPass4)) {
                 if (!mi->parent()) {
                     itemsToDelete.insert(mi);
                 }
             }
-            for (const auto mi : qAsConst(itemsToDelete)) {
+            for (const auto mi : std::as_const(itemsToDelete)) {
                 delete mi;
             }
 
@@ -1099,12 +1099,12 @@ void ModelPrivate::clearUnassignedMessageLists()
         // mUnassignedMessageListForPass4 is empty so we must be at the end of a very special kind of Pass2
         // We have the same problem as in mUnassignedMessageListForPass2.
         QList<MessageItem *> parentless;
-        for (const auto mi : qAsConst(mUnassignedMessageListForPass3)) {
+        for (const auto mi : std::as_const(mUnassignedMessageListForPass3)) {
             if (!mi->parent()) {
                 parentless.append(mi);
             }
         }
-        for (const auto mi : qAsConst(parentless)) {
+        for (const auto mi : std::as_const(parentless)) {
             delete mi;
         }
 
@@ -1118,12 +1118,12 @@ void ModelPrivate::clearUnassignedMessageLists()
 
         // We have the same problem as in mUnassignedMessageListForPass2.
         QList<MessageItem *> parentless;
-        for (const auto mi : qAsConst(mUnassignedMessageListForPass4)) {
+        for (const auto mi : std::as_const(mUnassignedMessageListForPass4)) {
             if (!mi->parent()) {
                 parentless.append(mi);
             }
         }
-        for (const auto mi : qAsConst(parentless)) {
+        for (const auto mi : std::as_const(parentless)) {
             delete mi;
         }
 
@@ -1251,7 +1251,7 @@ void ModelPrivate::saveExpandedStateOfSubtree(Item *root)
     if (!children) {
         return;
     }
-    for (const auto mi : qAsConst(*children)) {
+    for (const auto mi : std::as_const(*children)) {
         if (mi->childItemCount() > 0 // has children
             && mi->isViewable() // is actually attached to the viewable root
             && mView->isExpanded(q->index(mi, 0))) { // is actually expanded
@@ -1280,7 +1280,7 @@ void ModelPrivate::syncExpandedStateOfSubtree(Item *root)
         return;
     }
 
-    for (const auto mi : qAsConst(*children)) {
+    for (const auto mi : std::as_const(*children)) {
         if (mi->initialExpandStatus() == Item::ExpandNeeded) {
             if (mi->childItemCount() > 0) {
                 syncExpandedStateOfSubtree(mi);
@@ -1767,7 +1767,7 @@ MessageItem *ModelPrivate::guessMessageParent(MessageItem *mi)
 
             // FIXME: This might be speed up with an initial binary search (?)
             // ANSWER: No. We can't rely on date order (as it can be updated on the fly...)
-            for (const auto it : qAsConst(*messagesWithTheSameStrippedSubject)) {
+            for (const auto it : std::as_const(*messagesWithTheSameStrippedSubject)) {
                 int delta = mi->date() - it->date();
 
                 // We don't take into account messages with a delta smaller than 120.
@@ -3653,7 +3653,7 @@ void ModelPrivate::printStatistics()
 
     int messagesWithSameSubjectAvg = 0;
     int messagesWithSameSubjectMax = 0;
-    for (const auto messages : qAsConst(mThreadingCacheMessageSubjectMD5ToMessageItem)) {
+    for (const auto messages : std::as_const(mThreadingCacheMessageSubjectMD5ToMessageItem)) {
         if (messages->size() > messagesWithSameSubjectMax) {
             messagesWithSameSubjectMax = messages->size();
         }
@@ -3663,7 +3663,7 @@ void ModelPrivate::printStatistics()
 
     int totalThreads = 0;
     if (!mGroupHeaderItemHash.isEmpty()) {
-        for (const GroupHeaderItem *groupHeader : qAsConst(mGroupHeaderItemHash)) {
+        for (const GroupHeaderItem *groupHeader : std::as_const(mGroupHeaderItemHash)) {
             totalThreads += groupHeader->childItemCount();
         }
     } else {
@@ -3856,7 +3856,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternal()
 
                 auto rootChildItems = mRootItem->childItems();
                 if (rootChildItems) {
-                    for (const auto it : qAsConst(*rootChildItems)) {
+                    for (const auto it : std::as_const(*rootChildItems)) {
                         if (it->initialExpandStatus() == Item::ExpandNeeded) {
                             syncExpandedStateOfSubtree(it);
                         }

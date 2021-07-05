@@ -87,14 +87,14 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
 
     quint64 tmpPos = hashStartPosition;
 
-    for (const Addition &add : qAsConst(itemToStore)) {
+    for (const Addition &add : std::as_const(itemToStore)) {
         mFile.write(reinterpret_cast<const char *>(&tmpPos), sizeof(tmpPos));
         tmpPos += add.prefixSize + 1; // We add +1 as we store '\0'
     }
 
     // 4 add items
     QByteArray newSsha256;
-    for (const Addition &add : qAsConst(itemToStore)) {
+    for (const Addition &add : std::as_const(itemToStore)) {
         const QByteArray storedBa = add.hashString + '\0';
         mFile.write(reinterpret_cast<const char *>(storedBa.constData()), storedBa.size());
         newSsha256 += add.hashString;
@@ -163,7 +163,7 @@ void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Remov
     for (const Removal &removeItem : removalList) {
         switch (removeItem.compressionType) {
         case UpdateDataBaseInfo::RawCompression:
-            for (int id : qAsConst(removeItem.indexes)) {
+            for (int id : std::as_const(removeItem.indexes)) {
                 indexToRemove << id;
             }
             break;

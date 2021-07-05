@@ -2864,7 +2864,7 @@ void ViewerPrivate::slotMessageRendered()
 
     mPreviouslyViewedItemId = mMessageItem.id();
 
-    for (AbstractMessageLoadedHandler *handler : qAsConst(mMessageLoadedHandlers)) {
+    for (AbstractMessageLoadedHandler *handler : std::as_const(mMessageLoadedHandlers)) {
         handler->setItem(mMessageItem);
     }
 }

@@ -194,7 +194,7 @@ void DistributionListDialog::slotDelayedSetRecipients(KJob *job)
         item->setCheckState(0, Qt::Checked);
     } else {
         bool isFirst = true;
-        for (const Akonadi::Item &akItem : qAsConst(akItems)) {
+        for (const Akonadi::Item &akItem : std::as_const(akItems)) {
             if (akItem.hasPayload<KContacts::Addressee>()) {
                 const auto contact = akItem.payload<KContacts::Addressee>();
 

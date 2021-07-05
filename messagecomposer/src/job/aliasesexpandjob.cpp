@@ -34,7 +34,7 @@ void AliasesExpandJob::start()
 {
     // At first we try to expand the recipient to a distribution list
     // or nick name and save the results in a map for later lookup
-    for (const QString &recipient : qAsConst(mRecipients)) {
+    for (const QString &recipient : std::as_const(mRecipients)) {
         // speedup: assume aliases and list names don't contain '@'
         if (recipient.isEmpty() || recipient.contains(QLatin1Char('@'))) {
             continue;
@@ -123,7 +123,7 @@ void AliasesExpandJob::slotNicknameExpansionDone(KJob *job)
 
 void AliasesExpandJob::finishExpansion()
 {
-    for (const QString &recipient : qAsConst(mRecipients)) {
+    for (const QString &recipient : std::as_const(mRecipients)) {
         if (recipient.isEmpty()) {
             continue;
         }

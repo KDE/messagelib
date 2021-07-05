@@ -106,7 +106,7 @@ void ThemeComboBoxPrivate::slotLoadThemes()
     QList<Theme *> themes = Manager::instance()->themes().values();
     std::sort(themes.begin(), themes.end(), MessageList::Core::Theme::compareName);
 
-    for (const Theme *theme : qAsConst(themes)) {
+    for (const Theme *theme : std::as_const(themes)) {
         q->addItem(theme->name(), QVariant(theme->id()));
     }
 }

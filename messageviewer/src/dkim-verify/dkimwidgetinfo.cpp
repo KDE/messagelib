@@ -208,7 +208,7 @@ void DKIMWidgetInfo::updateToolTip()
 
     if (mResult.status != DKIMCheckSignatureJob::DKIMStatus::Invalid) {
         QStringList tooltipList;
-        for (const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &result : qAsConst(mResult.listSignatureAuthenticationResult)) {
+        for (const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &result : std::as_const(mResult.listSignatureAuthenticationResult)) {
             switch (result.status) {
             case DKIMCheckSignatureJob::DKIMStatus::Unknown:
                 break;
