@@ -11,6 +11,7 @@
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
+class MessageViewerCheckBeforeDeletingInterface;
 class MessageViewerCheckBeforeDeletingPluginPrivate;
 /**
  * @brief The MessageViewerCheckBeforeDeletingPlugin class
@@ -23,6 +24,7 @@ public:
     explicit MessageViewerCheckBeforeDeletingPlugin(QObject *parent = nullptr);
     ~MessageViewerCheckBeforeDeletingPlugin();
 
+    virtual MessageViewerCheckBeforeDeletingInterface *createInterface(QObject *parent) = 0;
     virtual void showConfigureDialog(QWidget *parent);
 
     void setIsEnabled(bool enabled);
