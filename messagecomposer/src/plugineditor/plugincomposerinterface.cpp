@@ -27,6 +27,31 @@ void PluginComposerInterface::setComposerViewBase(ComposerViewBase *composerView
     mComposerViewInterface = new MessageComposer::ComposerViewInterface(composerViewBase);
 }
 
+void PluginComposerInterface::setReplyTo(const QString &str)
+{
+    mComposerViewInterface->setReplyTo(str);
+}
+
+void PluginComposerInterface::setSubject(const QString &str)
+{
+    mComposerViewInterface->setSubject(str);
+}
+
+void PluginComposerInterface::setTo(const QStringList &lst)
+{
+    mComposerViewInterface->setTo(lst);
+}
+
+void PluginComposerInterface::setCc(const QStringList &lst)
+{
+    mComposerViewInterface->setCc(lst);
+}
+
+void PluginComposerInterface::setFrom(const QString &str)
+{
+    mComposerViewInterface->setFrom(str);
+}
+
 QString PluginComposerInterface::subject() const
 {
     return mComposerViewInterface->subject();
