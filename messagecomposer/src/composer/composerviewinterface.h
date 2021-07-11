@@ -27,6 +27,7 @@ public:
     Q_REQUIRED_RESULT QString cc() const;
     Q_REQUIRED_RESULT QString bcc() const;
     Q_REQUIRED_RESULT QString from() const;
+    Q_REQUIRED_RESULT QString replyTo() const;
 
     Q_REQUIRED_RESULT MessageComposer::ComposerAttachmentInterface attachments() const;
 

@@ -32,6 +32,11 @@ QString PluginComposerInterface::subject() const
     return mComposerViewInterface->subject();
 }
 
+QString PluginComposerInterface::replyTo() const
+{
+    return mComposerViewInterface->replyTo();
+}
+
 QString PluginComposerInterface::to() const
 {
     return mComposerViewInterface->to();

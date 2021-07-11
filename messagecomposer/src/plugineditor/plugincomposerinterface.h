@@ -24,6 +24,7 @@ public:
     ~PluginComposerInterface();
     void setComposerViewBase(ComposerViewBase *composerViewBase);
 
+    Q_REQUIRED_RESULT QString replyTo() const;
     Q_REQUIRED_RESULT QString subject() const;
     Q_REQUIRED_RESULT QString to() const;
     Q_REQUIRED_RESULT QString cc() const;
