@@ -29,7 +29,7 @@ void ComposerViewInterface::setReplyTo(const QString &str)
 void ComposerViewInterface::setSubject(const QString &str)
 {
     if (mComposerView) {
-        mComposerView->setSubject(str);
+        // mComposerView->setSubject(str);
     }
 }
 
@@ -50,7 +50,7 @@ void ComposerViewInterface::setCc(const QStringList &lst)
 void ComposerViewInterface::setFrom(const QString &str)
 {
     if (mComposerView) {
-        mComposerView->setFrom(str);
+        // mComposerView->setFrom(str);
     }
 }
 
