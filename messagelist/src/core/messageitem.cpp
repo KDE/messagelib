@@ -303,7 +303,8 @@ QString MessageItem::tagListDescription() const
 {
     QString ret;
 
-    foreach (const Tag *tag, tagList()) {
+    const auto tags{tagList()};
+    for (const Tag *tag : tags) {
         if (!ret.isEmpty()) {
             ret += QLatin1String(", ");
         }

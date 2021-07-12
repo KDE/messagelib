@@ -225,7 +225,8 @@ void MessageList::Widget::slotTagsFetched(KJob *job)
                       QString());
 
     QStringList tagFound;
-    foreach (const Akonadi::Tag &akonadiTag, fetchJob->tags()) {
+    const auto tags{fetchJob->tags()};
+    for (const Akonadi::Tag &akonadiTag : tags) {
         if (tagSelectedLst.contains(akonadiTag.url().url())) {
             tagFound.append(akonadiTag.url().url());
             QString iconName = QStringLiteral("mail-tagged");

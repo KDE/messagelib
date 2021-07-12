@@ -898,7 +898,8 @@ void NodeHelper::mergeExtraNodes(KMime::Content *node)
         node->addContent(c);
     }
 
-    Q_FOREACH (KMime::Content *child, node->contents()) {
+    const auto contents{node->contents()};
+    for (KMime::Content *child : contents) {
         mergeExtraNodes(child);
     }
 }
@@ -918,7 +919,8 @@ void NodeHelper::cleanFromExtraNodes(KMime::Content *node)
             }
         }
     }
-    Q_FOREACH (KMime::Content *child, node->contents()) {
+    const auto contents{node->contents()};
+    for (KMime::Content *child : contents) {
         cleanFromExtraNodes(child);
     }
 }

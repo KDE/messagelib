@@ -63,7 +63,7 @@ public:
         @param recipient The recipient(s) you want to add.
         @param type      The recipient type.
     */
-    Q_REQUIRED_RESULT bool addRecipient(const QString &recipient, Recipient::Type type);
+    bool addRecipient(const QString &recipient, Recipient::Type type);
 
     /** Removes the recipient provided it can be found and has the given type.
         @param recipient The recipient(s) you want to remove.

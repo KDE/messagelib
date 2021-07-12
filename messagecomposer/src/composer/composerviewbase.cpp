@@ -112,7 +112,8 @@ bool ComposerViewBase::isComposing() const
 void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecryption)
 {
     if (m_attachmentModel) {
-        foreach (const MessageCore::AttachmentPart::Ptr &attachment, m_attachmentModel->attachments()) {
+        const auto attachments{m_attachmentModel->attachments()};
+        for (const MessageCore::AttachmentPart::Ptr &attachment : attachments) {
             if (!m_attachmentModel->removeAttachment(attachment)) {
                 qCWarning(MESSAGECOMPOSER_LOG) << "Attachment not found.";
             }
@@ -174,10 +175,12 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     otp.parseObjectTree(msgContent);
 
     // Load the attachments
-    foreach (const auto &att, otp.nodeHelper()->attachmentsOfExtraContents()) {
+    const auto attachmentsOfExtraContents{otp.nodeHelper()->attachmentsOfExtraContents()};
+    for (const auto &att : attachmentsOfExtraContents) {
         addAttachmentPart(att);
     }
-    foreach (const auto &att, msgContent->attachments()) {
+    const auto attachments{msgContent->attachments()};
+    for (const auto &att : attachments) {
         addAttachmentPart(att);
     }
 
