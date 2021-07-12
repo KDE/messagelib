@@ -27,7 +27,6 @@ target_sources(KF5MessageList PRIVATE
     core/theme.cpp
     core/themedelegate.cpp
     core/threadingcache.cpp
-    core/twofingertap.cpp
     core/storagemodelbase.cpp
     core/sortorder.cpp
     core/view.cpp

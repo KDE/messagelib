@@ -16,7 +16,6 @@
 #include "core/model.h"
 #include "core/storagemodelbase.h"
 #include "core/theme.h"
-#include "core/twofingertap.h"
 #include "core/widgetbase.h"
 #include "messagelistsettings.h"
 #include "messagelistutil.h"
@@ -27,6 +26,7 @@
 #include <kmime/kmime_dateformatter.h> // kdepimlibs
 
 #include <Item>
+#include <KTwoFingerTap>
 #include <QApplication>
 #include <QGestureEvent>
 #include <QHeaderView>
@@ -60,7 +60,7 @@ public:
     void gestureEvent(QGestureEvent *e);
     void tapTriggered(QTapGesture *tap);
     void tapAndHoldTriggered(QTapAndHoldGesture *tap);
-    void twoFingerTapTriggered(TwoFingerTap *tap);
+    void twoFingerTapTriggered(KTwoFingerTap *tap);
 
     QColor mTextColor;
     View *const q;
@@ -113,7 +113,7 @@ View::View(Widget *pParent)
     d->mScroller->grabGesture(viewport());
 
     setAttribute(Qt::WA_AcceptTouchEvents);
-    d->mTwoFingerTap = QGestureRecognizer::registerRecognizer(new TwoFingerTapRecognizer());
+    d->mTwoFingerTap = QGestureRecognizer::registerRecognizer(new KTwoFingerTapRecognizer());
     viewport()->grabGesture(d->mTwoFingerTap);
     viewport()->grabGesture(Qt::TapGesture);
     viewport()->grabGesture(Qt::TapAndHoldGesture);
@@ -2730,7 +2730,7 @@ void View::Private::gestureEvent(QGestureEvent *e)
         tapAndHoldTriggered(static_cast<QTapAndHoldGesture *>(gesture));
     }
     if (QGesture *gesture = e->gesture(mTwoFingerTap)) {
-        twoFingerTapTriggered(static_cast<TwoFingerTap *>(gesture));
+        twoFingerTapTriggered(static_cast<KTwoFingerTap *>(gesture));
     }
 }
 
@@ -2815,7 +2815,7 @@ void View::Private::tapAndHoldTriggered(QTapAndHoldGesture *tap)
     }
 }
 
-void View::Private::twoFingerTapTriggered(TwoFingerTap *tap)
+void View::Private::twoFingerTapTriggered(KTwoFingerTap *tap)
 {
     if (tap->state() == Qt::GestureFinished) {
 
