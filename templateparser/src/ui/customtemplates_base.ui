@@ -295,7 +295,7 @@
            </item>
            <item>
             <property name="text">
-             <string comment="@item:inlistbox Custom template type for messsage forwards">Forward</string>
+             <string comment="@item:inlistbox Custom template type for message forwards">Forward</string>
             </property>
            </item>
           </widget>

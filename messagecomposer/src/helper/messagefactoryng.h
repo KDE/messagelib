@@ -96,7 +96,7 @@ public:
     Q_REQUIRED_RESULT KMime::Message::Ptr createResend();
 
     /** Create a new message that is a delivery receipt of this message,
-      filling required header fileds with the proper values. The
+      filling required header fields with the proper values. The
       returned message is not stored in any folder. */
     Q_REQUIRED_RESULT KMime::Message::Ptr createDeliveryReceipt();
 

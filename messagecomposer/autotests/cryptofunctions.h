@@ -46,6 +46,6 @@ void verifySignatureAndEncryption(KMime::Content *content,
                                   const QByteArray &origContent,
                                   Kleo::CryptoMessageFormat f,
                                   bool withAttachment = false,
-                                  bool combind = false);
+                                  bool combined = false);
 }
 

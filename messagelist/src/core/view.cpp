@@ -1182,7 +1182,7 @@ Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeF
     while (
         // is not a message (we want messages, don't we ?)
         (below->type() != Item::Message) || // message filter doesn't match
-        (!message_type_matches(below, messageTypeFilter)) || // is hidden (and we don't want hidden items as they arent "officially" in the view)
+        (!message_type_matches(below, messageTypeFilter)) || // is hidden (and we don't want hidden items as they aren't "officially" in the view)
         isRowHidden(belowIndex.row(), parentIndex) || // is not enabled or not selectable
         ((d->mModel->flags(belowIndex) & (Qt::ItemIsSelectable | Qt::ItemIsEnabled)) != (Qt::ItemIsSelectable | Qt::ItemIsEnabled))) {
         // find the next one
@@ -1698,7 +1698,7 @@ void View::markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items,
     // all at once at the latest possible stage.
 
     // A radical approach is needed: we FIRST deal with the selection
-    // by tring to move it away from the messages about to be deleted
+    // by trying to move it away from the messages about to be deleted
     // and THEN mark the (hopefully no longer selected) messages as "about to be deleted".
 
     // First of all, find out if we're going to clear the entire selection (very likely).

@@ -130,7 +130,7 @@ public:
      * This basically applies modelIndexRowToModelInvariantIndex() to a range of elements.
      * The returned pointer can be null if no existing ModelInvariantIndex object were
      * present in the range (this can happen if you don't request some of them). If the returned
-     * value is not 0 then you're responsable of deleting it.
+     * value is not 0 then you're responsible of deleting it.
      */
     QList<ModelInvariantIndex *> *modelIndexRowRangeToModelInvariantIndexList(int startIndexRow, int count);
 
@@ -154,7 +154,7 @@ public:
      * you'll probably want to delete them. The returned pointer can be null
      * if no existing ModelInvariantIndex object were affected by the change
      * (this can happen if you don't request some of them). If the returned
-     * value is not 0 then you're responsable of deleting it.
+     * value is not 0 then you're responsible of deleting it.
      */
     QList<ModelInvariantIndex *> *modelRowsRemoved(int modelIndexRowPosition, int count);
 
@@ -165,7 +165,7 @@ public:
      * reset() or layoutChanged() handlers.
      *
      * This function assumes that all the ModelInvariantIndex
-     * are being invalidated and need to be requeried.
+     * are being invalidated and need to be required.
      */
     void modelReset();
 

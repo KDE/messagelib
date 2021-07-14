@@ -12,7 +12,7 @@
   @li MessageList::StorageModel
 
 
-@section moreInfo More detailed informations
+@section moreInfo More detailed information
 
   The documentation of classes from the MessageList::Core namespace also
   worth a read to get more information on the usage of this library.

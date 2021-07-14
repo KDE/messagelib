@@ -3,7 +3,7 @@ How the composer works:
 Input data:
 
 MessagePart classes represent the data of messages in an abstract way that is very close to
-the way a GUI composer would see the data.  Thus, the composer takes the folowing input data:
+the way a GUI composer would see the data.  Thus, the composer takes the following input data:
 * GlobalPart:
   - The charsets the user prefers.
   - Whether 8bit encoding is allowed.

@@ -33,7 +33,7 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
 {
     KMime::Content *node = part.content();
     if (node->contents().size() != 2) {
-        qCDebug(MIMETREEPARSER_LOG) << "mulitpart/signed must have exactly two child parts!" << Qt::endl << "processing as multipart/mixed";
+        qCDebug(MIMETREEPARSER_LOG) << "multipart/signed must have exactly two child parts!" << Qt::endl << "processing as multipart/mixed";
         if (!node->contents().isEmpty()) {
             return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), node->contents().at(0), false));
         } else {

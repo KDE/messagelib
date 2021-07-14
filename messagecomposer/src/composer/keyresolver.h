@@ -89,7 +89,7 @@ enum Result { Failure = 0, Ok = 1, Canceled = 2 };
 
      This will return a list of recipient-list/key-list pairs that
      each describe a copy of the (possibly signed) message to be
-     encrypted independantly.
+     encrypted independently.
 
      Note that it's only necessary to sign the message once for each
      message format, although it might be necessary to create more

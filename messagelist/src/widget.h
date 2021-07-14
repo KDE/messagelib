@@ -73,7 +73,7 @@ public:
      * messageTypeFilter can be used to restrict the selection to only certain message types.
      *
      * existingSelectionBehaviour specifies how the existing selection
-     * is manipulated. It may be cleared, expanded or grown/shrinked.
+     * is manipulated. It may be cleared, expanded or grown/shrunk.
      *
      * If centerItem is true then the specified item will be positioned
      * at the center of the view, if possible.
@@ -93,7 +93,7 @@ public:
      * messageTypeFilter can be used to restrict the selection to only certain message types.
      *
      * existingSelectionBehaviour specifies how the existing selection
-     * is manipulated. It may be cleared, expanded or grown/shrinked.
+     * is manipulated. It may be cleared, expanded or grown/shrunk.
      *
      * If loop is true then the "previous" algorithm will restart from the end
      * of the list if the beginning is reached, otherwise it will just stop returning false.

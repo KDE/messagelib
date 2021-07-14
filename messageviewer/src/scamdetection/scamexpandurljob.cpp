@@ -81,7 +81,7 @@ void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
         if (longUrlVar.isValid()) {
             longUrl.setUrl(longUrlVar.toString());
         } else {
-            qCWarning(MESSAGEVIEWER_LOG) << "JSon is not corect" << ba;
+            qCWarning(MESSAGEVIEWER_LOG) << "JSon is not correct" << ba;
             PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.", shortUrl.url()));
             deleteLater();
             return;

@@ -42,7 +42,7 @@ class Widget;
 /**
  * The MessageList::View is the real display of the message list. It is
  * based on QTreeView, has a Model that manipulates the underlying message storage
- * and a Delegate that is responsable of painting the items.
+ * and a Delegate that is responsible of painting the items.
  */
 class View : public QTreeView
 {
@@ -242,7 +242,7 @@ public:
      * a certain category of messages.
      *
      * existingSelectionBehaviour specifies how the existing selection
-     * is manipulated. It may be cleared, expanded or grown/shrinked.
+     * is manipulated. It may be cleared, expanded or grown/shrunk.
      *
      * If centerItem is true then the specified item will be positioned
      * at the center of the view, if possible.
@@ -261,7 +261,7 @@ public:
      * a certain category of messages.
      *
      * existingSelectionBehaviour specifies how the existing selection
-     * is manipulated. It may be cleared, expanded or grown/shrinked.
+     * is manipulated. It may be cleared, expanded or grown/shrunk.
      *
      * If centerItem is true then the specified item will be positioned
      * at the center of the view, if possible.

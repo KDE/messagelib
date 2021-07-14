@@ -244,7 +244,7 @@ void ComposerPrivate::composeStep2()
         for (ContentJobBase *job : lstJob) {
             auto eJob = dynamic_cast<EncryptJob *>(job);
             if (eJob && sign) {
-                // When doing Encrypt and Sign move headers only in the singed part
+                // When doing Encrypt and Sign move headers only in the signed part
                 eJob->setProtectedHeaders(false);
             }
             QObject::connect(job, SIGNAL(finished(KJob *)), q, SLOT(contentJobFinished(KJob *)));

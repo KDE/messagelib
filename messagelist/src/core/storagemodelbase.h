@@ -98,7 +98,7 @@ public:
     /**
      * This method should use the inner model implementation to associate the new status
      * to the specified message item. The new status should be stored (but doesn't need
-     * to be set as mi->status() itself as the caller is responsable for this).
+     * to be set as mi->status() itself as the caller is responsible for this).
      */
     virtual void setMessageItemStatus(MessageItem *mi, int row, Akonadi::MessageStatus status) = 0;
 

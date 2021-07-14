@@ -37,13 +37,13 @@ public:
 protected:
     /**
      * Returns the editor for the name of the OptionSet.
-     * Derived classes are responsable of filling this UI element and reading back data from it.
+     * Derived classes are responsible of filling this UI element and reading back data from it.
      */
     QLineEdit *nameEdit() const;
 
     /**
      * Returns the editor for the description of the OptionSet.
-     * Derived classes are responsable of filling this UI element and reading back data from it.
+     * Derived classes are responsible of filling this UI element and reading back data from it.
      */
     KTextEdit *descriptionEdit() const;
 

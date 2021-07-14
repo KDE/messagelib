@@ -178,7 +178,7 @@ writes out a placeholder for the attachment list when it creates the HTML for th
 MimeTreeParser::ObjectTreeParser is finished with the message, injectAttachments() is called. injectAttachments()
 searches for the placeholder and replaces that with the real HTML code for the attachments.
 
-One of the attachment actions is to scoll to the attachment. That action is only available when
+One of the attachment actions is to scroll to the attachment. That action is only available when
 right-clicking the header. The action scrolls to the attachment in the body and draws a yellow frame
 around the attachment. This is done in scrollToAttachment(). The attachment in the body and the div
 which is used for the colored frame are both created by the MimeTreeParser::ObjectTreeParser .

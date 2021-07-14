@@ -337,7 +337,7 @@ void TextMessagePart::parseContent()
          * if one unencrypted part is at the beginning or in the middle
          * because mailmain adds an unencrypted part at the end this should not break the overall status
          *
-         * That's why we first set the tmp status and if one crypted/signed block comes afterwards, than
+         * That's why we first set the tmp status and if one encrypted/signed block comes afterwards, than
          * the status is set to unencrypted
          */
         bool fullySignedOrEncrypted = true;

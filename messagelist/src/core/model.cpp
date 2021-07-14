@@ -838,7 +838,7 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
     //
     //   There are basically two approaches to this. One is the "single big job"
     //   approach. It scans the folder from the beginning to the end in a single job
-    //   entry. The job passes are done only once. It's advantage is that it's simplier
+    //   entry. The job passes are done only once. It's advantage is that it's simpler
     //   and it's less likely to generate imperfect parent threadings. The bad
     //   side is that since the folders are "sort of" date ordered then the most interesting
     //   messages show up at the end of the work. Not nice for large folders.

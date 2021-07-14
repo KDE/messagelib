@@ -27,7 +27,7 @@ static AttachmentStrategy::Display smartDisplay(KMime::Content *node)
     const auto cd = node->contentDisposition(false);
     if (cd) {
         if (cd->disposition() == KMime::Headers::CDinline) {
-            // explict "inline" disposition:
+            // explicit "inline" disposition:
             return AttachmentStrategy::Inline;
         }
         if (cd->disposition() == KMime::Headers::CDattachment) {
@@ -278,7 +278,7 @@ const AttachmentStrategy *AttachmentStrategy::create(Type type)
     case HeaderOnly:
         return headerOnly();
     }
-    qCCritical(MESSAGEVIEWER_LOG) << "Unknown attachment startegy ( type ==" << static_cast<int>(type) << ") requested!";
+    qCCritical(MESSAGEVIEWER_LOG) << "Unknown attachment strategy ( type ==" << static_cast<int>(type) << ") requested!";
     return nullptr; // make compiler happy
 }
 

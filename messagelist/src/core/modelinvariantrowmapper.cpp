@@ -420,7 +420,7 @@ void ModelInvariantRowMapper::modelRowsInserted(int modelIndexRowPosition, int c
     d->mCurrentInvariantHash = new QHash<int, ModelInvariantIndex *>();
 
     if (d->mRowShiftList->count() > 7) { // 7 is heuristic
-        // We start loosing performance as the stack is growing too much.
+        // We start losing performance as the stack is growing too much.
         // Start updating NOW and hope we can get it in few sweeps.
 
         if (d->mUpdateTimer->isActive()) {
@@ -459,7 +459,7 @@ QList<ModelInvariantIndex *> *ModelInvariantRowMapper::modelRowsRemoved(int mode
     //        to item addition which is usually an incremental operation).
 
     // FIXME: HUGE PROBLEM
-    //        When the items arent contiguous or are just out of order it's
+    //        When the items aren't contiguous or are just out of order it's
     //        impossible to merge the shifts. Deleting many messages
     //        generates then a very deep delta stack. Since to delete the
     //        next message you need to traverse the whole stack, this method
@@ -522,7 +522,7 @@ QList<ModelInvariantIndex *> *ModelInvariantRowMapper::modelRowsRemoved(int mode
 
     // trigger updates
     if (d->mRowShiftList->count() > 7) { // 7 is heuristic
-        // We start loosing performance as the stack is growing too much.
+        // We start losing performance as the stack is growing too much.
         // Start updating NOW and hope we can get it in few sweeps.
 
         if (d->mUpdateTimer->isActive()) {

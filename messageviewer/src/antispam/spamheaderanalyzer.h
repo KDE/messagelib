@@ -34,7 +34,7 @@ enum SpamError {
     The score returned is positive if no error has occurred.
     error values indicate the following errors:
       noError                                               Spam Headers successfully parsed
-      uninitializedStructUsed                               Unintialized struct used
+      uninitializedStructUsed                               Uninitialized struct used
       errorExtractingAgentString                            Error extracting agent string
       couldNotConverScoreToFloat                            Couldn't convert score to float
       couldNotConvertThresholdToFloatOrThresholdIsNegative  Couldn't convert threshold to float or threshold is negative

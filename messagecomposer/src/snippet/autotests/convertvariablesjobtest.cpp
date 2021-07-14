@@ -46,7 +46,7 @@ void ConvertVariablesJobTest::shouldConvertVariables()
     job.setComposerViewInterface(interface);
     b.setSubject(QStringLiteral("Subject!!!!"));
     b.setFrom(QStringLiteral("from!!"));
-    // TOOD add CC/BCC/TO
+    // TODO add CC/BCC/TO
 
     job.setText(original);
     QCOMPARE(job.convertVariables(interface, original), expected);

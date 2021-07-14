@@ -164,7 +164,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
                 prop.value = match.captured(3);
                 authStatusInfo.policy.append(prop);
             } else {
-                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Unknow type found " << captured1;
+                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Unknown type found " << captured1;
             }
             index = valueKey.indexOf(reg, 0, &match);
         }

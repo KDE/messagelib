@@ -286,7 +286,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     VERIFYEXEC(sJob);
 
     QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
-    skeletonMessage.to()->from7BitString("owerwrite@example.org");
+    skeletonMessage.to()->from7BitString("overwrite@example.org");
     skeletonMessage.cc()->from7BitString("cc_overwrite@example.org");
     skeletonMessage.bcc()->from7BitString("bcc_overwrite@example.org");
     skeletonMessage.subject()->fromUnicodeString(subject + QStringLiteral("_owerwrite"), "utf-8");

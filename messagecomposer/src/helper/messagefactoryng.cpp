@@ -482,7 +482,7 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
 
     // format the current date to be used in Resent-Date:
     // FIXME: generate datetime the same way as KMime, otherwise we get inconsistency
-    // in unit-tests. Unfortunatelly RFC2822Date is not enough for us, we need the
+    // in unit-tests. Unfortunately RFC2822Date is not enough for us, we need the
     // composition hack below
     const QDateTime dt = QDateTime::currentDateTime();
     const QString newDate = QLocale::c().toString(dt, QStringLiteral("ddd, ")) + dt.toString(Qt::RFC2822Date);

@@ -137,7 +137,7 @@ combination with STL algorithms.
 There are a bunch of smaller classes like AutoQPointer, EditorWatcher, IconNameCache, KCursorSaver,
 KleoJobExecutor, KabcBridge and many more. See the full class list if you're curious.
 
-You should also read the documentation of the following classes, which are extensivly documented:
+You should also read the documentation of the following classes, which are extensively documented:
 \sa MessageViewer::ViewerPrivate
 \sa MessageViewer::ObjectTreeParser
 

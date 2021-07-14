@@ -169,7 +169,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content,
                                                     const QByteArray &origContent,
                                                     Kleo::CryptoMessageFormat f,
                                                     bool withAttachment,
-                                                    bool combind)
+                                                    bool combined)
 {
     Q_UNUSED(withAttachment)
     // store it in a KMime::Message, that's what OTP needs
@@ -193,7 +193,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content,
 
         QVector<KMime::Content *> extra = nh->extraContents(resultMessage.data());
         QCOMPARE(extra.size(), 1);
-        if (combind) {
+        if (combined) {
             QCOMPARE(nh->signatureState(resultMessage.data()), MimeTreeParser::KMMsgFullySigned);
         } else {
             QVector<KMime::Content *> extra = nh->extraContents(resultMessage.data());

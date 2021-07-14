@@ -523,7 +523,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     if (auto contentType = node->contentType(false)) {
         contentTypeStr = QLatin1String(contentType->mimeType());
     }
-    if (contentTypeStr == QStringLiteral("message/global")) { // Not registred in mimetype => it's a message/rfc822
+    if (contentTypeStr == QStringLiteral("message/global")) { // Not registered in mimetype => it's a message/rfc822
         contentTypeStr = QStringLiteral("message/rfc822");
     }
     deletedAttachment = (contentTypeStr == QStringLiteral("text/x-moz-deleted"));
@@ -1127,7 +1127,7 @@ void ViewerPrivate::printMessage(const Akonadi::Item &message)
 {
     disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMessage);
     connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMessage);
-    // need to set htmlLoadExtOverride() when we set Item otherwise this settings is resetted
+    // need to set htmlLoadExtOverride() when we set Item otherwise this settings is reset
     setMessageItem(message, MimeTreeParser::Force, htmlLoadExtOverride());
 }
 
@@ -2855,7 +2855,7 @@ void ViewerPrivate::slotMessageRendered()
 
     /**
      * This slot might be called multiple times for the same message if
-     * some asynchronous mementos are involved in rendering. Therefor we
+     * some asynchronous mementos are involved in rendering. Therefore we
      * have to make sure we execute the MessageLoadedHandlers only once.
      */
     if (mMessageItem.id() == mPreviouslyViewedItemId) {

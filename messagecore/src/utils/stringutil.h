@@ -97,7 +97,7 @@ enum Display { DisplayNameOnly, DisplayFullAddress };
 enum Link { ShowLink, HideLink };
 
 /**
- * Used to determine if the address field should be expandable/collapsable.
+ * Used to determine if the address field should be expandable/collapsible.
  */
 enum AddressMode { ExpandableAddresses, FullAddresses };
 
@@ -184,7 +184,7 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString formatQuotePrefix(const QString &wi
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString cleanFileName(const QString &fileName);
 
 /**
- * Removes the forward and reply markes (e.g. Re: or Fwd:) from a @p subject string.
+ * Removes the forward and reply marks (e.g. Re: or Fwd:) from a @p subject string.
  * Additional markers to act on can be specified in the MessageCore::GlobalSettings
  * object.
  */

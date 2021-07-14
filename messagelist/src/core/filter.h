@@ -26,7 +26,7 @@ namespace Core
 class MessageItem;
 
 /**
- * This class is responsable of matching messages that should be displayed
+ * This class is responsible of matching messages that should be displayed
  * in the View. It's used mainly by Model and Widget.
  */
 class Filter : public QObject

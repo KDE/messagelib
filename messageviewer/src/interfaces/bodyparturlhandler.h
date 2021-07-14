@@ -39,7 +39,7 @@ namespace Interface
  * classes.
  *
  * Implementation-wise, these handlers are called as a nested
- * Chain Of Responsibilty by an internal implementation of
+ * Chain Of Responsibility by an internal implementation of
  * URLHandler.
  *
  * You can create a link whose handling is passed to this handler
