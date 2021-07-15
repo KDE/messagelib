@@ -7,6 +7,8 @@
 #include "messageviewercheckbeforedeletinginterface.h"
 #include "messageviewercheckbeforedeletingparameters.h"
 
+#include <QAction>
+
 using namespace MessageViewer;
 
 class MessageViewer::MessageViewerCheckBeforeDeletingInterfacePrivate
@@ -54,4 +56,10 @@ void MessageViewerCheckBeforeDeletingInterface::setParameters(const MessageViewe
 MessageViewer::MessageViewerCheckBeforeDeletingParameters MessageViewerCheckBeforeDeletingInterface::parameters() const
 {
     return d->parameters;
+}
+
+QList<QAction *> MessageViewerCheckBeforeDeletingInterface::actions() const
+{
+    // Reimplement in subclass
+    return {};
 }
