@@ -28,8 +28,8 @@ Q_SIGNALS:
     void resultScanDetection(bool result);
 
 private:
-    QWebEngineView *mEngineView = nullptr;
-    MessageViewer::ScamDetectionWebEngine *mScamDetectionWebEngine = nullptr;
+    QWebEngineView *const mEngineView;
+    MessageViewer::ScamDetectionWebEngine *const mScamDetectionWebEngine;
 };
 
 class ScamDetectionWebEngineTest : public QObject

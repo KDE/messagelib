@@ -13,10 +13,10 @@
 
 TestWebEngineScamDetection::TestWebEngineScamDetection(QWidget *parent)
     : QWidget(parent)
+    , mEngineView(new QWebEngineView(this))
+    , mScamDetectionWebEngine(new MessageViewer::ScamDetectionWebEngine(this))
 {
     auto hbox = new QHBoxLayout(this);
-    mEngineView = new QWebEngineView(this);
-    mScamDetectionWebEngine = new MessageViewer::ScamDetectionWebEngine(this);
     connect(mScamDetectionWebEngine, &MessageViewer::ScamDetectionWebEngine::resultScanDetection, this, &TestWebEngineScamDetection::resultScanDetection);
     connect(mEngineView, &QWebEngineView::loadFinished, this, &TestWebEngineScamDetection::loadFinished);
     hbox->addWidget(mEngineView);
@@ -129,7 +129,12 @@ void ScamDetectionWebEngineTest::scamtest_data()
         "nUse</a>") << false;
     QTest::newRow("wierd1") << QStringLiteral("<a href=\"http://www.weezevent.com?c=sys_mail\">http://www.weezevent.com?c=sys_mail</a>") << false;
 
-    QTest::newRow("urlwithport") << QStringLiteral("<a href=\"https://example.com:443/blablabla\">https://example.com:443/blablabla</a>") << false;
+    QTest::newRow("urlwithport-special443") << QStringLiteral("<a href=\"https://example.com:443/blablabla\">https://example.com:443/blablabla</a>") << false;
+    QTest::newRow("urlwithport-special443-2") << QStringLiteral("<a href=\"http://example.com:443/blablabla\">http://example.com:443/blablabla</a>") << false;
+    QTest::newRow("urlwithport") << QStringLiteral("<a href=\"https://example.com:465/blablabla\">https://example.com:465/blablabla</a>") << false;
+    QTest::newRow("urlwithport2") << QStringLiteral("<a href=\"https://example.com:11371/blablabla\">https://example.com:11371/blablabla</a>") << false;
+    QTest::newRow("urlwithport3") << QStringLiteral("<a href=\"smtps://example.com:465/blablabla\">smtps://example.com:465/blablabla</a>") << false;
+    QTest::newRow("urlwithport3") << QStringLiteral("<a href=\"imaps://example.com:993/blablabla\">imaps://example.com:993/blablabla</a>") << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
