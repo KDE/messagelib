@@ -11,6 +11,9 @@
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingParametersPrivate;
+/** @brief The MessageViewerCheckBeforeDeletingParameters class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingParameters
 {
 public:
