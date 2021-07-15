@@ -165,8 +165,10 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         }
         if (!foundScam) {
             QUrl displayUrl = QUrl(mapVariant.value(QStringLiteral("text")).toString());
-            // qDebug() << " displayUrl "<< displayUrl;
-            QString text = displayUrl.toDisplayString(QUrl::StripTrailingSlash | QUrl::NormalizePathSegments | QUrl::RemovePort);
+            // Special case if https + port 443 it will return url without port
+            QString text = (displayUrl.port() == 443 && displayUrl.scheme() == QLatin1String("https"))
+                ? displayUrl.toDisplayString(QUrl::StripTrailingSlash | QUrl::NormalizePathSegments | QUrl::RemovePort)
+                : displayUrl.toDisplayString(QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
             if (text.endsWith(QLatin1String("%22"))) {
                 text.chop(3);
             }
@@ -187,6 +189,8 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                                             displayUrl.toDisplayString(QUrl::RemoveQuery | QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
                                         const QString hrefUrlWithoutQuery =
                                             normalizedHrefUrl.toDisplayString(QUrl::RemoveQuery | QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
+                                        // qDebug() << "displayUrlWithoutQuery "  << displayUrlWithoutQuery << " hrefUrlWithoutQuery " << hrefUrlWithoutQuery <<
+                                        // " text " << text;
                                         if (qurlqueryequal && (displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery)) {
                                             d->mDetails += QLatin1String("<li>")
                                                 + i18n("This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is often "
