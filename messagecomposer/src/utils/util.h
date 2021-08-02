@@ -78,6 +78,7 @@ Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool hasMissingAttachments(const QStrin
 
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QStringList cleanEmailList(const QStringList &emails);
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QStringList cleanUpEmailListAndEncoding(const QStringList &emails);
+MESSAGECOMPOSER_EXPORT void addCustomHeaders(const KMime::Message::Ptr &message, const QMap<QByteArray, QString> &customHeader);
 }
 }
 

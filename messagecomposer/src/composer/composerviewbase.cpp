@@ -1063,13 +1063,31 @@ void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageC
     } else {
         qjob->sentBehaviourAttribute().setSentBehaviour(MailTransport::SentBehaviourAttribute::MoveToDefaultSentCollection);
     }
+
+    MailTransport::Transport *transport = MailTransport::TransportManager::self()->transportById(infoPart->transportId());
+    if (transport && transport->specifySenderOverwriteAddress()) {
+        qjob->addressAttribute().setFrom(
+            KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(transport->senderOverwriteAddress())));
+    } else {
+        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from())));
+    }
+    // if this header is not empty, it contains the real recipient of the message, either the primary or one of the
+    //  secondary recipients. so we set that to the transport job, while leaving the message itself alone.
+    if (KMime::Headers::Base *realTo = message->headerByType("X-KMail-EncBccRecipients")) {
+        qjob->addressAttribute().setTo(MessageComposer::Util::cleanUpEmailListAndEncoding(realTo->asUnicodeString().split(QLatin1Char('%'))));
+        message->removeHeader("X-KMail-EncBccRecipients");
+        message->assemble();
+        qCDebug(MESSAGECOMPOSER_LOG) << "sending with-bcc encr mail to a/n recipient:" << qjob->addressAttribute().to();
+    } else {
+        qjob->addressAttribute().setTo(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->to()));
+        qjob->addressAttribute().setCc(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->cc()));
+        qjob->addressAttribute().setBcc(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->bcc()));
+    }
+
     MessageComposer::Util::addSendReplyForwardAction(message, qjob);
-
-    fillQueueJobHeaders(qjob, message, infoPart);
-
     MessageCore::StringUtil::removePrivateHeaderFields(message, false);
 
-    addCustomHeaders(message);
+    MessageComposer::Util::addCustomHeaders(message, m_customHeader);
     message->assemble();
     connect(qjob, &MailTransport::MessageQueueJob::result, this, &ComposerViewBase::slotQueueResult);
     m_pendingQueueJobs++;
@@ -1101,29 +1119,6 @@ void ComposerViewBase::slotQueueResult(KJob *job)
     if (m_pendingQueueJobs == 0) {
         addFollowupReminder(qjob->message()->messageID(false)->asUnicodeString());
         Q_EMIT sentSuccessfully(-1);
-    }
-}
-
-void ComposerViewBase::fillQueueJobHeaders(MailTransport::MessageQueueJob *qjob, KMime::Message::Ptr message, const MessageComposer::InfoPart *infoPart)
-{
-    MailTransport::Transport *transport = MailTransport::TransportManager::self()->transportById(infoPart->transportId());
-    if (transport && transport->specifySenderOverwriteAddress()) {
-        qjob->addressAttribute().setFrom(
-            KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(transport->senderOverwriteAddress())));
-    } else {
-        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from())));
-    }
-    // if this header is not empty, it contains the real recipient of the message, either the primary or one of the
-    //  secondary recipients. so we set that to the transport job, while leaving the message itself alone.
-    if (KMime::Headers::Base *realTo = message->headerByType("X-KMail-EncBccRecipients")) {
-        qjob->addressAttribute().setTo(MessageComposer::Util::cleanUpEmailListAndEncoding(realTo->asUnicodeString().split(QLatin1Char('%'))));
-        message->removeHeader("X-KMail-EncBccRecipients");
-        message->assemble();
-        qCDebug(MESSAGECOMPOSER_LOG) << "sending with-bcc encr mail to a/n recipient:" << qjob->addressAttribute().to();
-    } else {
-        qjob->addressAttribute().setTo(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->to()));
-        qjob->addressAttribute().setCc(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->cc()));
-        qjob->addressAttribute().setBcc(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->bcc()));
     }
 }
 
@@ -1330,17 +1325,6 @@ void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
     message->clear();
 }
 
-void ComposerViewBase::addCustomHeaders(const KMime::Message::Ptr &message)
-{
-    QMapIterator<QByteArray, QString> customHeader(m_customHeader);
-    while (customHeader.hasNext()) {
-        customHeader.next();
-        auto header = new KMime::Headers::Generic(customHeader.key().constData());
-        header->fromUnicodeString(customHeader.value(), "utf-8");
-        message->setHeader(header);
-    }
-}
-
 void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn)
 {
     Akonadi::Collection target;
@@ -1354,7 +1338,7 @@ void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageCo
             }
         }
     }
-    addCustomHeaders(message);
+    MessageComposer::Util::addCustomHeaders(message, m_customHeader);
 
     message->assemble();
 
@@ -1820,7 +1804,7 @@ void ComposerViewBase::collectImages(KMime::Content *root)
 }
 
 //-----------------------------------------------------------------------------
-bool ComposerViewBase::inlineSigningEncryptionSelected()
+bool ComposerViewBase::inlineSigningEncryptionSelected() const
 {
     if (!m_sign && !m_encrypt) {
         return false;
