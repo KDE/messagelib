@@ -75,6 +75,9 @@ Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool isStandaloneMessage(const Akonadi:
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT KMime::Message::Ptr message(const Akonadi::Item &item);
 
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool hasMissingAttachments(const QStringList &attachmentKeywords, QTextDocument *doc, const QString &subj);
+
+Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QStringList cleanEmailList(const QStringList &emails);
+Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QStringList cleanUpEmailListAndEncoding(const QStringList &emails);
 }
 }
 
