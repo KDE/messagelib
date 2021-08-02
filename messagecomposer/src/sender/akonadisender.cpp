@@ -159,10 +159,12 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     const Transport *transport = TransportManager::self()->transportById(transportId);
     if (!transport) {
         qCDebug(MESSAGECOMPOSER_LOG) << " No transport defined. Need to create it";
+        qjob->deleteLater();
         return;
     }
 
     if ((method == MessageComposer::MessageSender::SendImmediate) && !MessageComposer::Util::sendMailDispatcherIsOnline()) {
+        qjob->deleteLater();
         return;
     }
 
@@ -182,6 +184,12 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     qjob->addressAttribute().setTo(to);
     qjob->addressAttribute().setCc(cc);
     qjob->addressAttribute().setBcc(bcc);
+
+    if (qjob->addressAttribute().to().isEmpty()) {
+        qCWarning(MESSAGECOMPOSER_LOG) << " Impossible to specify TO! It's a bug";
+        qjob->deleteLater();
+        return;
+    }
 
     if (transport && transport->specifySenderOverwriteAddress()) {
         qjob->addressAttribute().setFrom(
