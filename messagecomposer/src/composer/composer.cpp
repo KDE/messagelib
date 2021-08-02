@@ -354,9 +354,10 @@ void ComposerPrivate::contentJobFinished(KJob *job)
         headers->assemble();
     } else { // just use the saved headers from before
         if (!encData.isEmpty()) {
-            qCDebug(MESSAGECOMPOSER_LOG) << "setting enc data:" << encData[0].first << "with num keys:" << encData[0].second.size();
-            keys = encData[0].second;
-            recipients = encData[0].first;
+            const auto firstElement = encData.at(0);
+            qCDebug(MESSAGECOMPOSER_LOG) << "setting enc data:" << firstElement.first << "with num keys:" << firstElement.second.size();
+            keys = firstElement.second;
+            recipients = firstElement.first;
         }
 
         headers = skeletonMessage;

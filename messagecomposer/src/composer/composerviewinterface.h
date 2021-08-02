@@ -22,12 +22,6 @@ public:
     explicit ComposerViewInterface(ComposerViewBase *composerView);
     ~ComposerViewInterface();
 
-    void setReplyTo(const QString &str);
-    void setSubject(const QString &str);
-    void setTo(const QStringList &lst);
-    void setCc(const QStringList &lst);
-    void setFrom(const QString &str);
-
     Q_REQUIRED_RESULT QString subject() const;
     Q_REQUIRED_RESULT QString to() const;
     Q_REQUIRED_RESULT QString cc() const;

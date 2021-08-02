@@ -80,7 +80,10 @@ public:
         FoundMissingAttachmentAndCancel
     };
 
-    enum FailedType { Sending, AutoSave };
+    enum FailedType {
+        Sending,
+        AutoSave,
+    };
 
     /**
      * Set the message to be opened in the composer window, and set the internal data structures to
@@ -279,7 +282,10 @@ private:
      */
     void readyForSending();
 
-    enum RecipientExpansion { UseExpandedRecipients, UseUnExpandedRecipients };
+    enum RecipientExpansion {
+        UseExpandedRecipients,
+        UseUnExpandedRecipients,
+    };
     Q_REQUIRED_RESULT QVector<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
     void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
     void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);

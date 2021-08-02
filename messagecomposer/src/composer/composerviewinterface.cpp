@@ -19,41 +19,6 @@ ComposerViewInterface::~ComposerViewInterface()
 {
 }
 
-void ComposerViewInterface::setReplyTo(const QString &str)
-{
-    if (mComposerView) {
-        // mComposerView->setReplyTo(str);
-    }
-}
-
-void ComposerViewInterface::setSubject(const QString &str)
-{
-    if (mComposerView) {
-        // mComposerView->setSubject(str);
-    }
-}
-
-void ComposerViewInterface::setTo(const QStringList &lst)
-{
-    if (mComposerView) {
-        // mComposerView->setTo(lst);
-    }
-}
-
-void ComposerViewInterface::setCc(const QStringList &lst)
-{
-    if (mComposerView) {
-        // mComposerView->setCc(lst);
-    }
-}
-
-void ComposerViewInterface::setFrom(const QString &str)
-{
-    if (mComposerView) {
-        // mComposerView->setFrom(str);
-    }
-}
-
 QString ComposerViewInterface::subject() const
 {
     if (mComposerView) {
