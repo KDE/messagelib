@@ -21,6 +21,7 @@
 
 #include "messagecomposer_debug.h"
 #include <KCharsets>
+#include <KEmailAddress>
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -463,4 +464,29 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
         return false;
     }
     return true;
+}
+
+static QStringList encodeIdn(const QStringList &emails)
+{
+    QStringList encoded;
+    encoded.reserve(emails.count());
+    for (const QString &email : emails) {
+        encoded << KEmailAddress::normalizeAddressesAndEncodeIdn(email);
+    }
+    return encoded;
+}
+
+QStringList MessageComposer::Util::cleanEmailList(const QStringList &emails)
+{
+    QStringList clean;
+    clean.reserve(emails.count());
+    for (const QString &email : emails) {
+        clean << KEmailAddress::extractEmailAddress(email);
+    }
+    return clean;
+}
+
+QStringList MessageComposer::Util::cleanUpEmailListAndEncoding(const QStringList &emails)
+{
+    return cleanEmailList(encodeIdn(emails));
 }

@@ -79,17 +79,6 @@
 
 using namespace MessageComposer;
 
-static QStringList encodeIdn(const QStringList &emails)
-{
-    QStringList encoded;
-    encoded.reserve(emails.count());
-    for (const QString &email : emails) {
-        encoded << KEmailAddress::normalizeAddressesAndEncodeIdn(email);
-    }
-
-    return encoded;
-}
-
 ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
     : QObject(parent)
     , m_msg(KMime::Message::Ptr(new KMime::Message))
@@ -1130,14 +1119,14 @@ void ComposerViewBase::fillQueueJobHeaders(MailTransport::MessageQueueJob *qjob,
     // if this header is not empty, it contains the real recipient of the message, either the primary or one of the
     //  secondary recipients. so we set that to the transport job, while leaving the message itself alone.
     if (KMime::Headers::Base *realTo = message->headerByType("X-KMail-EncBccRecipients")) {
-        qjob->addressAttribute().setTo(cleanEmailList(encodeIdn(realTo->asUnicodeString().split(QLatin1Char('%')))));
+        qjob->addressAttribute().setTo(MessageComposer::Util::cleanUpEmailListAndEncoding(realTo->asUnicodeString().split(QLatin1Char('%'))));
         message->removeHeader("X-KMail-EncBccRecipients");
         message->assemble();
         qCDebug(MESSAGECOMPOSER_LOG) << "sending with-bcc encr mail to a/n recipient:" << qjob->addressAttribute().to();
     } else {
-        qjob->addressAttribute().setTo(cleanEmailList(encodeIdn(infoPart->to())));
-        qjob->addressAttribute().setCc(cleanEmailList(encodeIdn(infoPart->cc())));
-        qjob->addressAttribute().setBcc(cleanEmailList(encodeIdn(infoPart->bcc())));
+        qjob->addressAttribute().setTo(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->to()));
+        qjob->addressAttribute().setCc(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->cc()));
+        qjob->addressAttribute().setBcc(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->bcc()));
     }
 }
 
@@ -1803,16 +1792,6 @@ void ComposerViewBase::setMDNRequested(bool mdnRequested)
 void ComposerViewBase::setUrgent(bool urgent)
 {
     m_urgent = urgent;
-}
-
-QStringList ComposerViewBase::cleanEmailList(const QStringList &emails)
-{
-    QStringList clean;
-    clean.reserve(emails.count());
-    for (const QString &email : emails) {
-        clean << KEmailAddress::extractEmailAddress(email);
-    }
-    return clean;
 }
 
 int ComposerViewBase::autoSaveInterval() const
