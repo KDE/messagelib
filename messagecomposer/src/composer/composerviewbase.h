@@ -265,13 +265,13 @@ private Q_SLOTS:
     void slotSaveMessage(KJob *job);
 
 private:
-    Akonadi::Collection defaultSpecialTarget() const;
+    Q_REQUIRED_RESULT Akonadi::Collection defaultSpecialTarget() const;
     /**
      * Searches the mime tree, where root is the root node, for embedded images,
      * extracts them froom the body and adds them to the editor.
      */
     void collectImages(KMime::Content *root);
-    bool inlineSigningEncryptionSelected();
+    Q_REQUIRED_RESULT bool inlineSigningEncryptionSelected() const;
     /**
      * Applies the user changes to the message object of the composer
      * and signs/encrypts the message if activated.
@@ -280,13 +280,11 @@ private:
     void readyForSending();
 
     enum RecipientExpansion { UseExpandedRecipients, UseUnExpandedRecipients };
-    QVector<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
+    Q_REQUIRED_RESULT QVector<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
     void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
     void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
     void queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer);
     void saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn);
-    void fillQueueJobHeaders(MailTransport::MessageQueueJob *qjob, KMime::Message::Ptr message, const MessageComposer::InfoPart *infoPart);
-    QStringList cleanEmailList(const QStringList &emails);
     void saveRecentAddresses(const KMime::Message::Ptr &ptr);
     void updateRecipients(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, MessageComposer::Recipient::Type type);
 
@@ -318,7 +316,6 @@ private:
     void initAutoSave();
     void addFollowupReminder(const QString &messageId);
     void addSendLaterItem(const Akonadi::Item &item);
-    void addCustomHeaders(const KMime::Message::Ptr &message);
 
     bool addKeysToContext(const QString &gnupgHome,
                           const QVector<QPair<QStringList, std::vector<GpgME::Key>>> &data,

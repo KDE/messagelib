@@ -490,3 +490,14 @@ QStringList MessageComposer::Util::cleanUpEmailListAndEncoding(const QStringList
 {
     return cleanEmailList(encodeIdn(emails));
 }
+
+void MessageComposer::Util::addCustomHeaders(const KMime::Message::Ptr &message, const QMap<QByteArray, QString> &custom)
+{
+    QMapIterator<QByteArray, QString> customHeader(custom);
+    while (customHeader.hasNext()) {
+        customHeader.next();
+        auto header = new KMime::Headers::Generic(customHeader.key().constData());
+        header->fromUnicodeString(customHeader.value(), "utf-8");
+        message->setHeader(header);
+    }
+}
