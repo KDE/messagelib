@@ -289,7 +289,7 @@ AddressList splitAddressField(const QByteArray &text)
     const char *const end = text.begin() + text.length();
 
     if (!parseAddressList(begin, end, result)) {
-        qCDebug(MESSAGECORE_LOG) << "Error in address splitting: parseAddressList returned false!";
+        qCWarning(MESSAGECORE_LOG) << "Error in address splitting: parseAddressList returned false!" << text;
     }
 
     return result;
