@@ -742,3 +742,21 @@ void StringUtilTest::test_parseMailToBug206269()
     QCOMPARE(data.at(2).first, QLatin1String("body"));
     QCOMPARE(data.at(2).second, QLatin1String("D&C"));
 }
+
+void StringUtilTest::test_splitAddressField()
+{
+    {
+        const QByteArray ba(QByteArrayLiteral("foo@kde.org"));
+
+        const QVector<KMime::Types::Address> list = StringUtil::splitAddressField(ba);
+        QCOMPARE(list.count(), 1);
+        QCOMPARE(list.at(0).mailboxList.at(0).address(), QByteArrayLiteral("foo@kde.org"));
+    }
+    {
+        const QByteArray ba(QByteArrayLiteral("\"foo, bla\" <foo@kde.org>"));
+
+        const QVector<KMime::Types::Address> list = StringUtil::splitAddressField(ba);
+        QCOMPARE(list.count(), 1);
+        QCOMPARE(list.at(0).mailboxList.at(0).address(), QByteArrayLiteral("foo@kde.org"));
+    }
+}
