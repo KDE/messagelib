@@ -635,7 +635,7 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
         for (const auto &k : p.second) {
             const auto it = autocryptMap.find(k.primaryFingerprint());
             if (it == autocryptMap.end()) {
-                qDebug() << "Adding " << k.primaryFingerprint() << "via Export/Import";
+                qCDebug(MESSAGECOMPOSER_LOG) << "Adding " << k.primaryFingerprint() << "via Export/Import";
                 auto exportJob = proto->publicKeyExportJob(false);
                 connect(exportJob,
                         &QGpgME::ExportJob::result,
@@ -670,12 +670,12 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
                 exportJob->setExportFlags(GpgME::Context::ExportMinimal);
 #endif
             } else {
-                qDebug() << "Adding " << k.primaryFingerprint() << "from Autocrypt storage";
+                qCDebug(MESSAGECOMPOSER_LOG) << "Adding " << k.primaryFingerprint() << "from Autocrypt storage";
                 const auto recipient = storage->getRecipient(it->second.toUtf8());
                 auto key = recipient->gpgKey();
                 auto keydata = recipient->gpgKeydata();
                 if (QByteArray(key.primaryFingerprint()) != QByteArray(k.primaryFingerprint())) {
-                    qDebug() << "Using gossipkey";
+                    qCDebug(MESSAGECOMPOSER_LOG) << "Using gossipkey";
                     keydata = recipient->gossipKeydata();
                 }
                 auto importJob = proto->importJob();
