@@ -55,7 +55,7 @@ public:
      * Destructor.  If there is a private QWebEngineProfile then it will also
      * be destroyed.
      **/
-    virtual ~WebEnginePage() override = default;
+    ~WebEnginePage() override = default;
 
     WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
 

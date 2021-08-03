@@ -46,7 +46,7 @@ public:
     void setMaximumAllowedSize(qint64 size);
 
 protected Q_SLOTS:
-    virtual void doStart() override = 0;
+    void doStart() override = 0;
 
 private:
     //@cond PRIVATE
