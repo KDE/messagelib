@@ -363,7 +363,7 @@ void ComposerViewBase::readyForSending()
 
     if (!m_composers.isEmpty()) {
         // This may happen if e.g. the autosave timer calls applyChanges.
-        qCDebug(MESSAGECOMPOSER_LOG) << "Called while composer active; ignoring.";
+        qCDebug(MESSAGECOMPOSER_LOG) << "ready for sending: Called while composer active; ignoring. Number of composer " << m_composers.count();
         return;
     }
 
@@ -1230,7 +1230,7 @@ void ComposerViewBase::autoSaveMessage()
 
     if (!m_composers.isEmpty()) {
         // This may happen if e.g. the autosave timer calls applyChanges.
-        qCDebug(MESSAGECOMPOSER_LOG) << "Called while composer active; ignoring.";
+        qCDebug(MESSAGECOMPOSER_LOG) << "Autosave: Called while composer active; ignoring. Number of composer " << m_composers.count();
         return;
     }
 
