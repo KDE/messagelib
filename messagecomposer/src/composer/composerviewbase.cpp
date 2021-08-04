@@ -1203,8 +1203,7 @@ void ComposerViewBase::cleanupAutoSave()
         QDir autoSaveDir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/autosave"));
 
         // Filter out only this composer window's autosave files
-        QStringList autoSaveFilter;
-        autoSaveFilter << m_autoSaveUUID + QLatin1String("*");
+        const QStringList autoSaveFilter{m_autoSaveUUID + QLatin1String("*")};
         autoSaveDir.setNameFilters(autoSaveFilter);
 
         // Return the files to be removed
