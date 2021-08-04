@@ -3976,6 +3976,7 @@ void ModelPrivate::viewItemJobStep()
         if (mLoading) {
             mLoading = false;
             mView->modelFinishedLoading();
+            slotApplyFilter();
         }
 
         // Apply pre-selection, if any
