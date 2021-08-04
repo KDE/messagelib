@@ -70,7 +70,9 @@ static QTextCodec *selectCharset(const QStringList &charsets, const QString &tex
             return codec;
         }
     }
-    qCDebug(TEMPLATEPARSER_LOG) << "No appropriate charset found.";
+    if (!charsets.isEmpty()) {
+        qCDebug(TEMPLATEPARSER_LOG) << "No appropriate charset found.";
+    }
     return KCharsets::charsets()->codecForName(QStringLiteral("utf-8"));
 }
 }
