@@ -15,7 +15,22 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
 
-set( messagecomposer_job_src
+add_library( KF5MessageComposer)
+add_library(KF5::MessageComposer ALIAS KF5MessageComposer)
+
+set(messagecomposer_interface_SRCS)
+qt_add_dbus_interface(messagecomposer_interface_SRCS
+    sendlater/org.freedesktop.Akonadi.SendLaterAgent.xml
+    sendlaterinterface
+)
+
+qt_add_dbus_interface(messagecomposer_interface_SRCS
+    followupreminder/org.freedesktop.Akonadi.FollowUpReminder.xml
+    followupreminderinterface
+    )
+
+target_sources( KF5MessageComposer PRIVATE
+    ${messagecomposer_interface_SRCS}
     job/jobbase.cpp
     job/contentjobbase.cpp
     job/attachmentjob.cpp
@@ -37,13 +52,7 @@ set( messagecomposer_job_src
     job/attachmentclipboardjob.cpp
     job/protectedheadersjob.cpp
     job/autocryptheadersjob.cpp
-    )
-
-set( messagecomposer_statusbarwidget_src
     statusbarwidget/statusbarlabeltoggledstate.cpp
-   )
-
-set( messagecomposer_composer_src
     composer/composer.cpp
     composer/signaturecontroller.cpp
     composer/composerlineedit.cpp
@@ -51,9 +60,6 @@ set( messagecomposer_composer_src
     composer/keyresolver.cpp
     composer/composerviewinterface.cpp
     composer/composerattachmentinterface.cpp
-    )
-
-set( messagecomposer_recipient_src
     recipient/recipientspicker.cpp
     recipient/recipient.cpp
     recipient/recipientline.cpp
@@ -61,94 +67,50 @@ set( messagecomposer_recipient_src
     recipient/recipientseditorsidewidget.cpp
     recipient/kwindowpositioner.cpp
     recipient/distributionlistdialog.cpp
-    )
-
-set( messagecomposer_snippet_src
     snippet/convertsnippetvariablesjob.cpp
     snippet/convertsnippetvariablesutil.cpp
     snippet/convertsnippetvariablemenu.cpp
-    )
-
-set( messagecomposer_imagescaling_src
     imagescaling/imagescaling.cpp
     imagescaling/imagescalingwidget.cpp
     imagescaling/imagescalingutils.cpp
     imagescaling/imagescalingselectformat.cpp
-    )
-
-set( messagecomposer_part_src
     part/messagepart.cpp
     part/globalpart.cpp
     part/infopart.cpp
     part/textpart.cpp
-    )
-
-set( messagecomposer_attachment_src
     attachment/attachmentcontrollerbase.cpp
     attachment/attachmentmodel.cpp
-    )
-
-set( messagecomposer_helper_src
     helper/messagehelper.cpp
     helper/messagefactoryng.cpp
     helper/messagefactoryforwardjob.cpp
     helper/messagefactoryreplyjob.cpp
-    )
-
-set( messagecomposer_sender_src
     sender/akonadisender.cpp
-    )
-
-set(messagecomposer_followupreminder_SRCS
     followupreminder/followupreminderselectdatedialog.cpp
     followupreminder/followupremindercreatejob.cpp
     followupreminder/followupreminder.cpp
-    )
-
-
-set(messagecomposer_richtextcomposerng_SRCS
     composer-ng/richtextcomposerng.cpp
     composer-ng/richtextcomposersignatures.cpp
-    )
-
-set(messagecomposer_plugineditor_SRCS
     plugineditor/plugineditormanager.cpp
     plugineditor/plugineditor.cpp
     plugineditor/plugineditorinterface.cpp
     plugineditor/pluginactiontype.cpp
     plugineditor/plugincomposerinterface.cpp
-    )
-
-set(messagecomposer_plugineditorcheckbeforesend_SRCS
    plugineditorcheckbeforesend/plugineditorcheckbeforesend.cpp
    plugineditorcheckbeforesend/plugineditorcheckbeforesendinterface.cpp
    plugineditorcheckbeforesend/plugineditorcheckbeforesendmanager.cpp
    plugineditorcheckbeforesend/plugineditorcheckbeforesendparams.cpp
-   )
-
-set(messagecomposer_plugineditorinit_SRCS
    plugineditorinit/plugineditorinit.cpp
    plugineditorinit/plugineditorinitmanager.cpp
    plugineditorinit/plugineditorinitinterface.cpp
-   )
-
-set(messagecomposer_plugineditorconverttext_SRCS
    plugineditorconverttext/plugineditorconverttext.cpp
    plugineditorconverttext/plugineditorconverttextmanager.cpp
    plugineditorconverttext/plugineditorconverttextinterface.cpp
    plugineditorconverttext/plugineditorconverterinitialdata.cpp
    plugineditorconverttext/plugineditorconverterbeforeconvertingdata.cpp
-   )
-set(messagecomposer_plugineditorgrammar_SRCS
     plugineditorgrammar/plugineditorgrammarmanager.cpp
     plugineditorgrammar/plugineditorgrammarcustomtoolsviewinterface.cpp
-    )
-
-set(messagecomposer_plugineditorbase_SRCS
    plugineditorbase/plugineditorbase.cpp
    plugineditorbase/plugineditorconfigurebasewidget.cpp
-   )
-set(messagecomposer_sendlater_SRCS
     sendlater/sendlaterinfo.cpp
     sendlater/sendlaterjob.cpp
     sendlater/sendlatercreatejob.cpp
@@ -156,48 +118,17 @@ set(messagecomposer_sendlater_SRCS
     sendlater/sendlaterutil.cpp
     sendlater/sendlaterdialog.cpp
     sendlater/sendlatertimedatewidget.cpp
-)
-
-qt_add_dbus_interface(messagecomposer_sendlater_SRCS
-    sendlater/org.freedesktop.Akonadi.SendLaterAgent.xml
-    sendlaterinterface
-)
-
-qt_add_dbus_interface(messagecomposer_followupreminder_SRCS
-    followupreminder/org.freedesktop.Akonadi.FollowUpReminder.xml
-    followupreminderinterface
-    )
-
-
-set( messagecomposer_src
-    ${messagecomposer_snippet_src}
-    ${messagecomposer_statusbarwidget_src}
-    ${messagecomposer_plugineditorconverttext_SRCS}
-    ${messagecomposer_plugineditorinit_SRCS}
-    ${messagecomposer_plugineditor_SRCS}
-    ${messagecomposer_richtextcomposerng_SRCS}
-    ${messagecomposer_part_src}
-    ${messagecomposer_imagescaling_src}
-    ${messagecomposer_job_src}
-    ${messagecomposer_composer_src}
-    ${messagecomposer_recipient_src}
-    ${messagecomposer_attachment_src}
-    ${messagecomposer_helper_src}
-    ${messagecomposer_sender_src}
-    ${messagecomposer_followupreminder_SRCS}
-    ${messagecomposer_plugineditorcheckbeforesend_SRCS}
-    ${messagecomposer_plugineditorgrammar_SRCS}
-    ${messagecomposer_sendlater_SRCS}
-    ${messagecomposer_plugineditorbase_SRCS}
     utils/util.cpp
     settings/messagecomposersettings.cpp
-    )
 
-ki18n_wrap_ui(messagecomposer_src
+)
+
+
+ki18n_wrap_ui(KF5MessageComposer
     imagescaling/ui/imagescalingwidget.ui
     sendlater/ui/sendlaterwidget.ui
     )
-ecm_qt_declare_logging_category(messagecomposer_src HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer
+ecm_qt_declare_logging_category(KF5MessageComposer HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer
         DESCRIPTION "messagelib (messagecomposer)"
         OLD_CATEGORY_NAMES log_messagecomposer
         EXPORT MESSAGELIB
@@ -214,16 +145,14 @@ endif()
 
 configure_file(settings/messagecomposer.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer.kcfg)
 
-kconfig_add_kcfg_files(messagecomposer_src
+kconfig_add_kcfg_files(KF5MessageComposer
     settings/messagecomposersettings_base.kcfgc
     )
 
-add_library( KF5MessageComposer ${messagecomposer_src} )
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5MessageComposer PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF5MessageComposer BASE_NAME messagecomposer)
-add_library(KF5::MessageComposer ALIAS KF5MessageComposer)
 target_link_libraries(KF5MessageComposer
     PUBLIC
     KF5::Mime
