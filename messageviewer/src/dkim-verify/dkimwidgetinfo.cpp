@@ -91,7 +91,7 @@ void DKIMWidgetInfo::updateInfo()
         break;
     case DKIMCheckSignatureJob::DKIMStatus::Valid:
         if (mResult.sdid.isEmpty()) {
-            qWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mResult.sdid is empty. It's a bug";
+            qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mResult.sdid is empty. It's a bug";
         }
         mLabel->setText(i18n("DKIM: valid (signed by %1)", mResult.sdid));
         pal.setColor(backgroundRole(), (mResult.warning != DKIMCheckSignatureJob::DKIMWarning::Any) ? mWarningColor : mOkColor);

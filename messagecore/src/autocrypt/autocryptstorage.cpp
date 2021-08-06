@@ -95,12 +95,12 @@ void AutocryptStorage::save()
     if (!d->basePath.exists()) {
         QDir parent = d->basePath;
         if (!parent.cdUp()) {
-            qWarning(AUTOCRYPT_LOG) << parent.absolutePath() << "does not exist. Cancel saving Autocrypt storage.";
+            qCWarning(AUTOCRYPT_LOG) << parent.absolutePath() << "does not exist. Cancel saving Autocrypt storage.";
             return;
         }
 
         if (!parent.mkdir(d->basePath.dirName())) {
-            qWarning(AUTOCRYPT_LOG) << "Cancel saving Autocrypt storage, because failed to create" << d->basePath.absolutePath();
+            qCWarning(AUTOCRYPT_LOG) << "Cancel saving Autocrypt storage, because failed to create" << d->basePath.absolutePath();
             return;
         }
     }
