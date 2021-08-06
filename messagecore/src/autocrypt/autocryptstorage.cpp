@@ -34,7 +34,7 @@ AutocryptStorage::Ptr AutocryptStorage::self()
     return mSelf;
 }
 
-QString address2Filename(QByteArray addr)
+QString address2Filename(const QByteArray &addr)
 {
     const auto url = QUrl::toPercentEncoding(QString::fromUtf8(addr));
     return QString::fromLatin1(url + ".json");
