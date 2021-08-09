@@ -21,7 +21,7 @@ void RemoteContentDialogTest::shouldHaveDefaultValues()
 {
     MessageViewer::RemoteContentDialog w;
 
-    QVERIFY(!w.windowTitle().isEmpty());
+    QVERIFY(w.windowTitle().isEmpty());
 
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
