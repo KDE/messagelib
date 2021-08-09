@@ -277,8 +277,9 @@ void MainTextJobTest::testHtmlWithImages()
                 Content *html = alternative->contents().at(1);
                 QCOMPARE(html->contentType()->mimeType(), QByteArray("text/html"));
                 QString data = QString::fromLatin1(html->body());
-                int idx1 = data.indexOf(QStringLiteral("cid:%1").arg(cid1));
-                int idx2 = data.indexOf(QStringLiteral("cid:%1").arg(cid2));
+                const int idx1 = data.indexOf(QStringLiteral("cid:%1").arg(cid1));
+                const int idx2 = data.indexOf(QStringLiteral("cid:%1").arg(cid2));
+                // qDebug() << " cid1 " << cid1 << "cid2 " << cid2 << " data " << data;
                 QVERIFY(idx1 > 0);
                 QVERIFY(idx2 > 0);
                 QVERIFY(idx1 < idx2);
