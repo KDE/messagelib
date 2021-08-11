@@ -182,7 +182,7 @@ void RecipientsPicker::keyPressEvent(QKeyEvent *event)
 
 void RecipientsPicker::readConfig()
 {
-    KSharedConfig::Ptr cfg = KSharedConfig::openConfig();
+    KSharedConfig::Ptr cfg = KSharedConfig::openStateConfig();
     KConfigGroup group(cfg, "RecipientsPicker");
     QSize size = group.readEntry("Size", QSize());
     if (!size.isEmpty()) {
@@ -192,7 +192,7 @@ void RecipientsPicker::readConfig()
 
 void RecipientsPicker::writeConfig()
 {
-    KSharedConfig::Ptr cfg = KSharedConfig::openConfig();
+    KSharedConfig::Ptr cfg = KSharedConfig::openStateConfig();
     KConfigGroup group(cfg, "RecipientsPicker");
     group.writeEntry("Size", size());
 }

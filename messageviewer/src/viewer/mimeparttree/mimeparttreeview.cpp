@@ -48,13 +48,13 @@ MimeTreeModel *MimePartTreeView::mimePartModel() const
 
 void MimePartTreeView::restoreMimePartTreeConfig()
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), myMimePartTreeViewConfigGroupName);
+    KConfigGroup grp(KSharedConfig::openStateConfig(), myMimePartTreeViewConfigGroupName);
     header()->restoreState(grp.readEntry("State", QByteArray()));
 }
 
 void MimePartTreeView::saveMimePartTreeConfig()
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), myMimePartTreeViewConfigGroupName);
+    KConfigGroup grp(KSharedConfig::openStateConfig(), myMimePartTreeViewConfigGroupName);
     grp.writeEntry("State", header()->saveState());
 }
 
