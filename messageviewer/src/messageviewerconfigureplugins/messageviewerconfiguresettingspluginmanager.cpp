@@ -52,7 +52,7 @@ private:
 
 namespace
 {
-QString pluginVersion()
+QString configurePluginVersion()
 {
     return QStringLiteral("1.0");
 }
@@ -92,7 +92,7 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         const QString version = data.version();
-        if (pluginVersion() == version) {
+        if (configurePluginVersion() == version) {
             const QVariant p = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Configure-Order")).toVariant();
             int order = -1;
             if (p.isValid()) {
