@@ -32,6 +32,7 @@ void DKIMManagerRulesTest::shouldAddRules()
     rule.setRuleType(MessageViewer::DKIMRule::RuleType::MustBeSigned);
     r.addRule(rule);
     QVERIFY(!r.isEmpty());
+    r.clear();
 }
 
 void DKIMManagerRulesTest::shouldClearRules()
