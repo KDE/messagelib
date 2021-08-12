@@ -96,7 +96,6 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         // 1) detect if title has a url and title != href
         const QString title = mapVariant.value(QStringLiteral("title")).toString();
         const QString href = mapVariant.value(QStringLiteral("src")).toString();
-        // qDebug() << " href " << href << " title " << title;
         const QUrl url(href);
         if (!title.isEmpty()) {
             if (title.startsWith(QLatin1String("http:")) || title.startsWith(QLatin1String("https:")) || title.startsWith(QLatin1String("www."))) {
@@ -174,7 +173,11 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             }
             const QUrl normalizedHrefUrl = QUrl(href);
             QString normalizedHref = normalizedHrefUrl.toDisplayString(QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
-            normalizedHref.replace(QStringLiteral("%5C"), QStringLiteral("/"));
+            if (text != normalizedHref) {
+                if (normalizedHref.contains(QStringLiteral("%5C"))) {
+                    normalizedHref.replace(QStringLiteral("%5C"), QStringLiteral("/"));
+                }
+            }
             // qDebug() << "text " << text << " href "<<href << " normalizedHref " << normalizedHref;
 
             if (!text.isEmpty()) {
