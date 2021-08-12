@@ -50,7 +50,6 @@ void ScamDetectionWebEngineTest::scamtest_data()
 {
     QTest::addColumn<QString>("html");
     QTest::addColumn<bool>("result");
-
     // No Scam
     QTest::newRow("noscam1") << QStringLiteral("<html><body><a href=\"www.kde.org\">kde</a></body></html>") << false;
     QTest::newRow("noscam2") << QStringLiteral("<html><body><a href=\"http://www.kde.org\" title=\"http://www.kde.org\">kde</a></body></html>") << false;
@@ -122,7 +121,6 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("endwith%22") << QStringLiteral(
         "<a href=\"http://www.kde.org/standards/kcfg/1.0/kcfg.xsd\" \"=\"\">http://www.kde.org/standards/kcfg/1.0/kcfg.xsd\"</a>")
                                 << false;
-
     QTest::newRow("contains%5C") << QStringLiteral(
         "<a "
         "href=\"http://g-ecx.images-amazon.com/images/G/01/barcodes/blank003.jpg%5CnUse\">http://g-ecx.images-amazon.com/images/G/01/barcodes/blank003.jpg/"
@@ -135,6 +133,11 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("urlwithport2") << QStringLiteral("<a href=\"https://example.com:11371/blablabla\">https://example.com:11371/blablabla</a>") << false;
     QTest::newRow("urlwithport3") << QStringLiteral("<a href=\"smtps://example.com:465/blablabla\">smtps://example.com:465/blablabla</a>") << false;
     QTest::newRow("urlwithport3") << QStringLiteral("<a href=\"imaps://example.com:993/blablabla\">imaps://example.com:993/blablabla</a>") << false;
+    // Bug:440635
+    QTest::newRow("scam5C") << QStringLiteral(R"(<a href="https://www.google.com/search?q=%5C">https://www.google.com/search?q=%5C</a>)") << false;
+    QTest::newRow("BUG440635") << QStringLiteral(
+        R"(<a href="https://codereview.qt-project.org/q/topic:%22api-change-review-6.2%22+(status:open%20OR%20status:abandoned">https://codereview.qt-project.org/q/topic:%22api-change-review-6.2%22+(status:open%20OR%20status:abandoned</a>)")
+                               << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
