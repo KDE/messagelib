@@ -917,14 +917,14 @@ QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg,
 
     int idx = 0;
     for (auto match = rx.match(result); match.hasMatch(); match = rx.match(result, idx)) {
-        idx = match.capturedStart(1);
+        idx = match.capturedStart(0);
         const QByteArray ba = match.captured(1).toLatin1();
         if (auto hdr = msg->headerByType(ba.constData())) {
             const auto replacement = hdr->asUnicodeString();
-            result.replace(idx, match.capturedLength(1), replacement);
+            result.replace(idx, match.capturedLength(0), replacement);
             idx += replacement.length();
         } else {
-            result.remove(idx, match.capturedLength(1));
+            result.remove(idx, match.capturedLength(0));
         }
     }
     return result;
