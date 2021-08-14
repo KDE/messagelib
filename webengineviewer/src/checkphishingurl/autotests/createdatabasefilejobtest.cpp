@@ -425,7 +425,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     databasejob2.start();
     QCOMPARE(spy4.count(), 1);
     successCreateDataBase = spy4.at(0).at(0).toBool();
-    QEXPECT_FAIL("successCreateDataBase", "Expected a success but not", Continue);
+    QEXPECT_FAIL("", "Expected a success but not", Continue);
     QVERIFY(successCreateDataBase);
 }
 

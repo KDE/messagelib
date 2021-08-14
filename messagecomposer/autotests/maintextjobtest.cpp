@@ -234,12 +234,6 @@ void MainTextJobTest::testHtmlWithImages()
     editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
     editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image2Path));
     editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image2Path));
-    KPIMTextEdit::ImageList images = editor.composerControler()->composerImages()->embeddedImages();
-    QCOMPARE(images.count(), 2);
-    QString cid1 = images[0]->contentID;
-    QString cid2 = images[1]->contentID;
-    QString name1 = images[0]->imageName;
-    QString name2 = images[1]->imageName;
 
     auto composer = new Composer;
     composer->globalPart()->setGuiEnabled(false);
@@ -248,7 +242,14 @@ void MainTextJobTest::testHtmlWithImages()
     textPart->setWordWrappingEnabled(false);
     textPart->setCleanPlainText(editor.composerControler()->toCleanPlainText());
     textPart->setCleanHtml(editor.composerControler()->toCleanHtml());
-    textPart->setEmbeddedImages(editor.composerControler()->composerImages()->embeddedImages());
+    // only get once, are regenerated on call with new contentID each time
+    const KPIMTextEdit::ImageList images = editor.composerControler()->composerImages()->embeddedImages();
+    QCOMPARE(images.count(), 2);
+    const QString cid1 = images[0]->contentID;
+    const QString cid2 = images[1]->contentID;
+    const QString name1 = images[0]->imageName;
+    const QString name2 = images[1]->imageName;
+    textPart->setEmbeddedImages(images);
     auto mjob = new MainTextJob(textPart, composer);
     QVERIFY(mjob->exec());
     Content *result = mjob->content();
