@@ -135,7 +135,9 @@ void AliasesExpandJob::finishExpansion()
 
         // take prefetched expand distribution list results
         const DistributionListExpansionResult result = mDistListExpansionResults.value(recipient);
-        QString displayName, addrSpec, comment;
+        QString displayName;
+        QString addrSpec;
+        QString comment;
 
         if (result.isEmpty) {
             KEmailAddress::splitAddress(receiver, displayName, addrSpec, comment);

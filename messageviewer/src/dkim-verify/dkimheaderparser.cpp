@@ -83,7 +83,10 @@ QByteArray DKIMHeaderParser::unfoldHeader(const char *header, size_t headerSize)
     result.reserve(headerSize);
 
     const char *end = header + headerSize;
-    const char *pos = header, *foldBegin = nullptr, *foldMid = nullptr, *foldEnd = nullptr;
+    const char *pos = header;
+    const char *foldBegin = nullptr;
+    const char *foldMid = nullptr;
+    const char *foldEnd = nullptr;
     while ((foldMid = strchr(pos, '\n')) && foldMid < end) {
         foldBegin = foldEnd = foldMid;
         // find the first space before the line-break

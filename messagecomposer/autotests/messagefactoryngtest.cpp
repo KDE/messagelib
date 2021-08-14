@@ -71,7 +71,8 @@ template<typename String> String very_simplistic_diff(const String &a, const Str
     const QList<String> al = a.split('\n');
     const QList<String> bl = b.split('\n');
     String result;
-    int ai = 0, bi = 0;
+    int ai = 0;
+    int bi = 0;
     while (ai < al.size() && bi < bl.size()) {
         if (al[ai] == bl[bi]) {
             // qDebug( "found   equal line a@%d x b@%d", ai, bi );

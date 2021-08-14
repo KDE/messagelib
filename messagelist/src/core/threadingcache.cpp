@@ -107,7 +107,8 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
     mParentCache.reserve(cacheHeader.cacheSize);
 
     for (int i = 0; i < cacheHeader.cacheSize; ++i) {
-        qint64 child, parent;
+        qint64 child;
+        qint64 parent;
         stream >> child >> parent;
         if (stream.status() != QDataStream::Ok) {
             // Suspect corrupted cache

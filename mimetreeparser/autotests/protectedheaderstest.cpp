@@ -182,7 +182,8 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader_data()
     QTest::addColumn<QString>("mailFileName");
     QTest::addColumn<QStringList>("messagePartVector");
 
-    QStringList encryptedPart, signedPart;
+    QStringList encryptedPart;
+    QStringList signedPart;
     encryptedPart << QStringLiteral("MimeTreeParser::EncryptedMessagePart");
     signedPart << QStringLiteral("MimeTreeParser::SignedMessagePart");
 

@@ -1776,7 +1776,9 @@ const QTextCodec *ViewerPrivate::overrideCodec() const
 
 static QColor nextColor(const QColor &c)
 {
-    int h, s, v;
+    int h;
+    int s;
+    int v;
     c.getHsv(&h, &s, &v);
     return QColor::fromHsv((h + 50) % 360, qMax(s, 64), v);
 }

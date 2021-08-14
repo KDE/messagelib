@@ -117,7 +117,8 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
     const int length = s.length();
     bool paraIsRTL = false;
     bool startNewPara = true;
-    int pos, beg;
+    int pos;
+    int beg;
 
     // skip leading empty lines
     for (pos = 0; pos < length && s[pos] <= QLatin1Char(' '); ++pos) { }

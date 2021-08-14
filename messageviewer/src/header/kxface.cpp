@@ -333,7 +333,11 @@ void KXFace::BigClear()
 QByteArray KXFace::WriteFace()
 {
     char *s;
-    int i, j, bits, digits, words;
+    int i;
+    int j;
+    int bits;
+    int digits;
+    int words;
     // int digsperword = DIGSPERWORD;
     // int wordsperline = WORDSPERLINE;
     QByteArray t("#define noname_width 48\n#define noname_height 48\nstatic char noname_bits[] = {\n ");
@@ -464,8 +468,10 @@ void KXFace::BigRead(char *fbuf)
 
 void KXFace::ReadFace(char *fbuf)
 {
-    int c, i;
-    char *s, *t;
+    int c;
+    int i;
+    char *s;
+    char *t;
 
     t = s = fbuf;
     for (i = strlen(s); i > 0; --i) {
@@ -531,7 +537,12 @@ void KXFace::UnGenFace()
 // static
 void KXFace::Gen(char *f)
 {
-    int m, l, k, j, i, h;
+    int m;
+    int l;
+    int k;
+    int j;
+    int i;
+    int h;
 
     for (j = 0; j < HEIGHT; ++j) {
         for (i = 0; i < WIDTH; ++i) {
@@ -687,7 +698,8 @@ int KXFace::AllBlack(char *f, int wid, int hei)
 
 int KXFace::Same(char *f, int wid, int hei)
 {
-    char val, *row;
+    char val;
+    char *row;
     int x;
 
     val = *f;

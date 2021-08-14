@@ -59,7 +59,8 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     const QLatin1String delim2("--__--__--\r\n\r\nMessage:");
     const QLatin1String delimZ2("--__--__--\n\n_____________");
     const QLatin1String delimZ1("--__--__--\r\n\r\n_____________");
-    QString partStr, digestHeaderStr;
+    QString partStr;
+    QString digestHeaderStr;
     int thisDelim = str.indexOf(delim1, Qt::CaseInsensitive);
     if (thisDelim == -1) {
         thisDelim = str.indexOf(delim2, Qt::CaseInsensitive);

@@ -202,7 +202,8 @@ KMime::Content::List Util::allContents(const KMime::Content *message)
 
 bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, QList<QUrl> &urlList)
 {
-    QUrl url, dirUrl;
+    QUrl url;
+    QUrl dirUrl;
     QString recentDirClass;
     QUrl currentFolder;
     const bool multiple = (contents.count() > 1);

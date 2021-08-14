@@ -431,7 +431,10 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
                 break;
             }
         }
-        QStringList unExpandedTo, unExpandedCc, unExpandedBcc, unExpandedReplyTo;
+        QStringList unExpandedTo;
+        QStringList unExpandedCc;
+        QStringList unExpandedBcc;
+        QStringList unExpandedReplyTo;
         const auto expandedToLst{resolveJob->expandedTo()};
         for (const QString &exp : expandedToLst) {
             if (!mExpandedTo.contains(exp)) { // this address was expanded, so save it explicitly

@@ -59,7 +59,8 @@ QVector<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg
     }
 
     while (start != -1) {
-        int nextEnd, nextStart;
+        int nextEnd;
+        int nextStart;
 
         // is the PGP block a clearsigned block?
         if (!strncmp(msg.constData() + start + 15, "SIGNED", 6)) {

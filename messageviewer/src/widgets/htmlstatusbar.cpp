@@ -146,7 +146,8 @@ QString HtmlStatusBar::toolTip() const
 QColor HtmlStatusBar::fgColor() const
 {
     KConfigGroup conf(KSharedConfig::openConfig(), myHtmlStatusBarConfigGroupName);
-    QColor defaultColor, color;
+    QColor defaultColor;
+    QColor color;
     switch (mode()) {
     case MimeTreeParser::Util::Html:
     case MimeTreeParser::Util::MultipartHtml:
@@ -173,7 +174,8 @@ QColor HtmlStatusBar::bgColor() const
 {
     KConfigGroup conf(KSharedConfig::openConfig(), myHtmlStatusBarConfigGroupName);
 
-    QColor defaultColor, color;
+    QColor defaultColor;
+    QColor color;
     switch (mode()) {
     case MimeTreeParser::Util::Html:
     case MimeTreeParser::Util::MultipartHtml:

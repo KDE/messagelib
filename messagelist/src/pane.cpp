@@ -241,7 +241,8 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         QList<QKeySequence> nextShortcut;
         QList<QKeySequence> prevShortcut;
 
-        QString nextIcon, prevIcon;
+        QString nextIcon;
+        QString prevIcon;
         if (QApplication::isRightToLeft()) {
             nextShortcut.append(KStandardShortcut::tabPrev());
             prevShortcut.append(KStandardShortcut::tabNext());

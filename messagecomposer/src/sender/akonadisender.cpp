@@ -177,7 +177,9 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     }
 
     // Get addresses.
-    QStringList to, cc, bcc;
+    QStringList to;
+    QStringList cc;
+    QStringList bcc;
     QString from;
     extractSenderToCCAndBcc(message, from, to, cc, bcc);
     qjob->addressAttribute().setFrom(from);

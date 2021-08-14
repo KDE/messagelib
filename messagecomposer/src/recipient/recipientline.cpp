@@ -149,7 +149,9 @@ void RecipientLineNG::dataFromFields()
         return;
     }
     const QString editStr(mEdit->text());
-    QString displayName, addrSpec, comment;
+    QString displayName;
+    QString addrSpec;
+    QString comment;
     if (KEmailAddress::splitAddress(editStr, displayName, addrSpec, comment) == KEmailAddress::AddressOk) {
         mData->setName(displayName);
     }

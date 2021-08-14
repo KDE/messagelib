@@ -122,8 +122,10 @@ void NodeHelperTest::testHREF()
 
     KMime::Content *node = msg->topLevel();
     auto subNode = new KMime::Content();
-    auto subsubNode = new KMime::Content(), subsubNode2 = new KMime::Content();
-    auto extra = new KMime::Content(), extra2 = new KMime::Content();
+    auto subsubNode = new KMime::Content();
+    auto subsubNode2 = new KMime::Content();
+    auto extra = new KMime::Content();
+    auto extra2 = new KMime::Content();
     auto subExtra = new KMime::Content();
     auto subsubExtra = new KMime::Content();
     auto subsubExtraNode = new KMime::Content();
@@ -162,8 +164,10 @@ void NodeHelperTest::testLocalFiles()
 
     KMime::Content *node = msg->topLevel();
     auto subNode = new KMime::Content();
-    auto subsubNode = new KMime::Content(), subsubNode2 = new KMime::Content();
-    auto extra = new KMime::Content(), extra2 = new KMime::Content();
+    auto subsubNode = new KMime::Content();
+    auto subsubNode2 = new KMime::Content();
+    auto extra = new KMime::Content();
+    auto extra2 = new KMime::Content();
     auto subExtra = new KMime::Content();
     auto subsubExtra = new KMime::Content();
     auto subsubExtraNode = new KMime::Content();

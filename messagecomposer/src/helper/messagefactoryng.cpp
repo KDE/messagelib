@@ -971,8 +971,12 @@ void MessageFactoryNG::applyCharset(const KMime::Message::Ptr msg)
 
 QByteArray MessageFactoryNG::getRefStr(const KMime::Message::Ptr &msg)
 {
-    QByteArray firstRef, lastRef, refStr, retRefStr;
-    int i, j;
+    QByteArray firstRef;
+    QByteArray lastRef;
+    QByteArray refStr;
+    QByteArray retRefStr;
+    int i;
+    int j;
 
     if (auto hdr = msg->references(false)) {
         refStr = hdr->as7BitString(false).trimmed();

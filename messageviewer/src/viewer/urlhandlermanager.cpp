@@ -509,7 +509,9 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     if (!url.hasFragment()) {
         return false;
     }
-    QString displayName, libName, keyId;
+    QString displayName;
+    QString libName;
+    QString keyId;
     if (!foundSMIMEData(url.path() + QLatin1Char('#') + QUrl::fromPercentEncoding(url.fragment().toLatin1()), displayName, libName, keyId)) {
         return false;
     }
@@ -527,7 +529,9 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 
 QString SMimeURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
-    QString displayName, libName, keyId;
+    QString displayName;
+    QString libName;
+    QString keyId;
     if (!foundSMIMEData(url.path() + QLatin1Char('#') + QUrl::fromPercentEncoding(url.fragment().toLatin1()), displayName, libName, keyId)) {
         return QString();
     }
@@ -767,9 +771,10 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
         }
         drag->exec();
         return true;
-    } else
+    } else {
 #endif
         return false;
+}
 }
 
 bool AttachmentURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *w) const
