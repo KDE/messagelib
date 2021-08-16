@@ -1,3 +1,12 @@
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF5TemplateParser_QCH
+        FILE KF5TemplateParserQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TemplateParserQchTargets.cmake\")")
+endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser\")
 add_library(KF5TemplateParser)
@@ -131,3 +140,26 @@ install(FILES
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 install(FILES syntax/kmail-template.xml DESTINATION ${KDE_INSTALL_DATADIR}/org.kde.syntax-highlighting/syntax)
+
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF5TemplateParser_QCH
+        NAME KF5TemplateParser
+        BASE_NAME KF5TemplateParser
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+        ${TemplateParser_HEADERS}
+        LINK_QCHS
+            Qt5Core_QCH
+            Qt5Gui_QCH
+            Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            TEMPLATEPARSER_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()

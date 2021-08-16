@@ -1,3 +1,13 @@
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF5WebEngineViewer_QCH
+        FILE KF5WebEngineViewerQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5WebEngineViewerQchTargets.cmake\")")
+endif()
+
 add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer\")
 include_directories(${CMAKE_BINARY_DIR}/webengineviewer/src ${CMAKE_BINARY_DIR}/webengineviewer)
 
@@ -293,3 +303,38 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF5WebEngineViewer_QCH
+        NAME KF5WebEngineViewer
+        BASE_NAME KF5WebEngineViewer
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+        ${WebEngineViewer_submittedformwidget_HEADERS}
+        ${WebEngineViewer_developertool_HEADERS}
+        ${WebEngineViewer_tracking_HEADERS}
+        ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
+        ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
+        ${WebEngineViewer_blocktrackingurlinterceptor_HEADERS}
+        ${WebEngineViewer_webengine_checkurl_HEADERS}
+        ${WebEngineViewer_webengine_accesskey_HEADERS}
+        ${WebEngineViewer_findbar_HEADERS}
+        ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
+        ${WebEngineViewer_webengine_manager_HEADERS}
+        ${WebEngineViewer_webengine_misc_HEADERS}
+        ${WebEngineViewer_widgets_HEADERS}
+        ${WebEngineViewer_print_HEADERS}
+        LINK_QCHS
+            Qt5Core_QCH
+            Qt5Gui_QCH
+            Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            WEBENGINEVIEWER_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()

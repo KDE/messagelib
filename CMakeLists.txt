@@ -50,7 +50,11 @@ include(FeatureSummary)
 include(KDEGitCommitHooks)
 include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
+include(ECMAddQch)
 
+
+option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
+add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Gui Test)

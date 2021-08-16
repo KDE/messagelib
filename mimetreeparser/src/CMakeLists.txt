@@ -1,4 +1,12 @@
-
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF5MimeTreeParser_QCH
+        FILE KF5MimeTreeParserQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MimeTreeParserQchTargets.cmake\")")
+endif()
 add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser\")
 
 # target_include_directories does not handle empty include paths
@@ -148,3 +156,28 @@ ecm_generate_pri_file(BASE_NAME MimeTreeParser
     FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
     )
 
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF5MimeTreeParser_QCH
+        NAME KF5MimeTreeParser
+        BASE_NAME KF5MimeTreeParser
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+        ${MimeTreeParser_utils_HEADERS}
+        ${MimeTreeParser_interfaces_HEADERS}
+        ${MimeTreeParser_main_HEADERS}
+        ${MimeTreeParser_temporaryfile_HEADERS}
+        LINK_QCHS
+            Qt5Core_QCH
+            Qt5Gui_QCH
+            Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            MIMETREEPARSER_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()

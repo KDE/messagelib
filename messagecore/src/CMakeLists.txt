@@ -1,5 +1,15 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
 
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF5MessageCore_QCH
+        FILE KF5MessageCoreQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageComposerQchTargets.cmake\")")
+endif()
+
 add_library(KF5MessageCore)
 add_library(KF5::MessageCore ALIAS KF5MessageCore)
 
@@ -187,4 +197,31 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF5MessageCore_QCH
+        NAME KF5MessageCore
+        BASE_NAME KF5MessageCore
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+        ${MessageCore_HEADERS}
+        ${MessageCore_autocrypt_HEADERS}
+        ${MessageCore_helpers_HEADERS}
+        ${MessageCore_settings_HEADERS}
+        ${MessageCore_utils_HEADERS}
+        ${MessageCore_main_HEADERS}
+        LINK_QCHS
+            Qt5Core_QCH
+            Qt5Gui_QCH
+            Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            MESSAGECORE_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
 

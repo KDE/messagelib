@@ -1,4 +1,12 @@
-
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF5MessageList_QCH
+        FILE KF5MessageListQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageListQchTargets.cmake\")")
+endif()
 
 option(KDEPIM_FOLDEROPEN_PROFILE "Enable debug output for timing folder loading" FALSE)
 configure_file(config-messagelist.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messagelist.h)
@@ -177,4 +185,28 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF5MessageList_QCH
+        NAME KF5MessageList
+        BASE_NAME KF5MessageList
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+        ${MessageList_HEADERS}
+        ${MessageList_widgets_HEADERS}
+        ${MessageList_core_HEADERS}
+        ${MessageList_util_HEADERS}
+        LINK_QCHS
+            Qt5Core_QCH
+            Qt5Gui_QCH
+            Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            MESSAGELIST_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()

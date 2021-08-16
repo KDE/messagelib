@@ -1,6 +1,15 @@
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecomposer\")
 
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF5MessageComposer_QCH
+        FILE KF5MessageComposerQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageComposerQchTargets.cmake\")")
+endif()
 
 
 if(BUILD_TESTING)
@@ -488,3 +497,46 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF5MessageComposer_QCH
+        NAME KF5MessageComposer
+        BASE_NAME KF5MessageComposer
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+        ${MessageComposer_HEADERS}
+        ${MessageComposer_PluginEditorBase_HEADERS}
+        ${MessageComposer_snippet_HEADERS}
+        ${MessageComposer_plugineditorconverttext_HEADERS}
+        ${MessageComposer_plugineditorinit_HEADERS}
+        ${MessageComposer_statusbarwidget_HEADERS}
+        ${MessageComposer_composer_HEADERS}
+        ${MessageComposer_composerng_HEADERS}
+        ${MessageComposer_sender_HEADERS}
+        ${MessageComposer_utils_HEADERS}
+        ${MessageComposer_helper_HEADERS}
+        ${MessageComposer_settings_HEADERS}
+        ${MessageComposer_part_HEADERS}
+        ${MessageComposer_followupreminder_HEADERS}
+        ${MessageComposer_recipient_HEADERS}
+        ${MessageComposer_imagescaling_HEADERS}
+        ${MessageComposer_sendlater_HEADERS}
+        ${MessageComposer_attachement_HEADERS}
+        ${MessageComposer_job_HEADERS}
+        ${MessageComposer_plugineditor_HEADERS}
+        ${MessageComposer_plugineditorcheckbeforesend_HEADERS}
+        ${MessageComposer_plugineditorgrammar_HEADERS}
+        LINK_QCHS
+            Qt5Core_QCH
+            Qt5Gui_QCH
+            Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            MESSAGECOMPOSER_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()

@@ -1,3 +1,12 @@
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF5MessageViewer_QCH
+        FILE KF5MessageViewerQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageViewerQchTargets.cmake\")")
+endif()
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessageviewer\")
 
 add_subdirectory(messagepartthemes/grantlee)
@@ -562,3 +571,42 @@ install(FILES header/data/messageviewer_header_themes.knsrc DESTINATION ${KDE_IN
 
 install(FILES notify/messageviewer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR} )
 install(FILES scamdetection/data/longurlServices.json DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer )
+
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF5MessageViewer_QCH
+        NAME KF5MessageViewer
+        BASE_NAME KF5MessageViewer
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+        ${MessageViewer_CheckBeforeDeletingPlugin_HEADERS}
+        ${MessageViewer_ConfigurePlugins_HEADERS}
+        ${MessageViewer_webengine_HEADERS}
+        ${MessageViewer_scam_HEADERS}
+        ${MessageViewer_viewerplugin_HEADERS}
+        ${MessageViewer_settings_HEADERS}
+        ${MessageViewer_header_HEADERS}
+        ${MessageViewer_utils_HEADERS}
+        ${MessageViewer_interfaces_HEADERS}
+        ${MessageViewer_htmlwriter_HEADERS}
+        ${MessageViewer_HEADERS}
+        ${MessageViewer_viewer_HEADERS}
+        ${MessageViewer_widgets_HEADERS}
+        ${MessageViewer_antispam_HEADERS}
+        ${MessageViewer_findbar_HEADERS}
+        ${MessageViewer_renderer_HEADERS}
+        ${MessageViewer_remotecontent_HEADERS}
+        LINK_QCHS
+            Qt5Core_QCH
+            Qt5Gui_QCH
+            Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            MESSAGEVIEWER_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
