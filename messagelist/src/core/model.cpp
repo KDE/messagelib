@@ -57,6 +57,9 @@
 #include <QTimer>
 
 #include <algorithm>
+#include <chrono>
+
+using namespace std::chrono_literals;
 
 namespace MessageList
 {
@@ -343,7 +346,7 @@ Model::Model(View *pParent)
     });
 
     if (!_k_heartBeatTimer->isActive()) { // First model starts it
-        _k_heartBeatTimer->start(60000); // 1 minute
+        _k_heartBeatTimer->start(1min); // 1 minute
     }
 }
 

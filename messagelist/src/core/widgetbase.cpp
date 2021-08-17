@@ -43,8 +43,11 @@
 #include <QUrl>
 
 #include <Akonadi/KMime/MessageStatus>
+#include <chrono>
 #include <collection.h>
 #include <core/widgets/filternamedialog.h>
+
+using namespace std::chrono_literals;
 
 using namespace MessageList::Core;
 
@@ -961,7 +964,7 @@ void Widget::searchEditTextEdited()
     }
 
     d->mSearchTimer->setSingleShot(true);
-    d->mSearchTimer->start(1000);
+    d->mSearchTimer->start(1s);
 }
 
 void Widget::slotStatusButtonsClicked()
