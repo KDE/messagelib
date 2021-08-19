@@ -5,6 +5,7 @@
 */
 
 #include "plugineditorconverttextmanager.h"
+#include "kcoreaddons_version.h"
 #include "messagecomposer_debug.h"
 #include "plugineditorconverttext.h"
 #include <KPluginFactory>
@@ -25,6 +26,7 @@ public:
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
+    KPluginMetaData data;
     PluginEditorConvertText *plugin = nullptr;
     bool isEnabled = true;
 };
@@ -77,7 +79,11 @@ QVector<PimCommon::PluginUtilData> PluginEditorConvertTextManagerPrivate::plugin
 
 void PluginEditorConvertTextManagerPrivate::initializePlugins()
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail/plugineditorconverttext"));
+#else
+    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kmail/plugineditorconverttext"));
+#endif
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
@@ -95,6 +101,7 @@ void PluginEditorConvertTextManagerPrivate::initializePlugins()
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
+        info.data = data;
         if (pluginVersion() == data.version()) {
             info.plugin = nullptr;
             mPluginList.push_back(info);
@@ -110,6 +117,7 @@ void PluginEditorConvertTextManagerPrivate::initializePlugins()
 
 void PluginEditorConvertTextManagerPrivate::loadPlugin(PluginEditorConvertTextInfo *item)
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
         item->plugin = pluginLoader.factory()->create<PluginEditorConvertText>(q, QVariantList() << item->metaDataFileNameBaseName);
@@ -117,6 +125,14 @@ void PluginEditorConvertTextManagerPrivate::loadPlugin(PluginEditorConvertTextIn
         item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
         mPluginDataList.append(item->pluginData);
     }
+#else
+    if (auto plugin = KPluginFactory::instantiatePlugin<PluginEditorConvertText>(item->data, q, QVariantList() << item->metaDataFileName).plugin) {
+        item->plugin = plugin;
+        item->plugin->setIsEnabled(item->isEnabled);
+        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
+        mPluginDataList.append(item->pluginData);
+    }
+#endif
 }
 
 QVector<PluginEditorConvertText *> PluginEditorConvertTextManagerPrivate::pluginsList() const

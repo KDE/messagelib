@@ -5,6 +5,7 @@
 */
 
 #include "plugineditorgrammarmanager.h"
+#include "kcoreaddons_version.h"
 #include "messagecomposer_debug.h"
 #include "plugineditorgrammarcustomtoolsviewinterface.h"
 #include <KPluginFactory>
@@ -26,6 +27,7 @@ public:
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
+    KPluginMetaData data;
     PimCommon::CustomToolsPlugin *plugin = nullptr;
     bool isEnabled = true;
 };
@@ -78,7 +80,11 @@ QVector<PimCommon::PluginUtilData> PluginEditorGrammarManagerPrivate::pluginsDat
 
 void PluginEditorGrammarManagerPrivate::initializePlugins()
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail/plugineditorgrammar"));
+#else
+    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kmail/plugineditorgrammar"));
+#endif
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
@@ -96,6 +102,7 @@ void PluginEditorGrammarManagerPrivate::initializePlugins()
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
+        info.data = data;
         if (pluginEditorGrammarVersion() == data.version()) {
             info.plugin = nullptr;
             mPluginList.push_back(info);
@@ -111,6 +118,7 @@ void PluginEditorGrammarManagerPrivate::initializePlugins()
 
 void PluginEditorGrammarManagerPrivate::loadPlugin(PluginEditorGrammarInfo *item)
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
         item->plugin = pluginLoader.factory()->create<PimCommon::CustomToolsPlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
@@ -118,6 +126,14 @@ void PluginEditorGrammarManagerPrivate::loadPlugin(PluginEditorGrammarInfo *item
         item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
         mPluginDataList.append(item->pluginData);
     }
+#else
+    if (auto plugin = KPluginFactory::instantiatePlugin<PimCommon::CustomToolsPlugin>(item->data, q, QVariantList() << item->metaDataFileName).plugin) {
+        item->plugin = plugin;
+        item->plugin->setIsEnabled(item->isEnabled);
+        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
+        mPluginDataList.append(item->pluginData);
+    }
+#endif
 }
 
 QVector<PimCommon::CustomToolsPlugin *> PluginEditorGrammarManagerPrivate::pluginsList() const

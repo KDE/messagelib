@@ -5,6 +5,7 @@
 */
 
 #include "networkurlinterceptorpluginmanager.h"
+#include "kcoreaddons_version.h"
 #include "networkpluginurlinterceptor.h"
 #include "webengineviewer_debug.h"
 
@@ -24,6 +25,7 @@ public:
     {
     }
 
+    KPluginMetaData data;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
@@ -79,7 +81,11 @@ QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pl
 
 void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("webengineviewer/urlinterceptor"));
+#else
+    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("webengineviewer/urlinterceptor"));
+#endif
 
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -98,6 +104,7 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
+        info.data = data;
 
         if (pluginVersion() == data.version()) {
             info.plugin = nullptr;
@@ -126,6 +133,7 @@ QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPlu
 
 void NetworkUrlInterceptorPluginManagerPrivate::loadPlugin(MailNetworkUrlInterceptorPluginInfo *item)
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
         item->plugin = pluginLoader.factory()->create<WebEngineViewer::NetworkPluginUrlInterceptor>(q, QVariantList() << item->metaDataFileNameBaseName);
@@ -133,6 +141,15 @@ void NetworkUrlInterceptorPluginManagerPrivate::loadPlugin(MailNetworkUrlInterce
         item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
         mPluginDataList.append(item->pluginData);
     }
+#else
+    if (auto plugin =
+            KPluginFactory::instantiatePlugin<WebEngineViewer::NetworkPluginUrlInterceptor>(item->data, q, QVariantList() << item->metaDataFileName).plugin) {
+        item->plugin = plugin;
+        item->plugin->setIsEnabled(item->isEnabled);
+        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
+        mPluginDataList.append(item->pluginData);
+    }
+#endif
 }
 
 WebEngineViewer::NetworkPluginUrlInterceptor *NetworkUrlInterceptorPluginManagerPrivate::pluginFromIdentifier(const QString &id)

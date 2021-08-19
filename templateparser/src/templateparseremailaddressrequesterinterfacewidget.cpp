@@ -5,6 +5,7 @@
 */
 
 #include "templateparseremailaddressrequesterinterfacewidget.h"
+#include "kcoreaddons_version.h"
 #include "templateparseremailaddressrequesterlineedit.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -25,10 +26,18 @@ TemplateParserEmailAddressRequesterInterfaceWidget::TemplateParserEmailAddressRe
 
 void TemplateParserEmailAddressRequesterInterfaceWidget::initializeEmailWidget()
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     KPluginLoader loader(QStringLiteral("templateparser/templateparseraddressrequesterplugin"));
     KPluginFactory *factory = loader.factory();
     if (factory) {
         mTemplateParserEmailBase = factory->create<TemplateParser::TemplateParserEmailAddressRequesterBase>(this);
+#else
+    const KPluginMetaData editWidgetPlugin(QStringLiteral("templateparser/templateparseraddressrequesterplugin"));
+
+    const auto result = KPluginFactory::instantiatePlugin<TemplateParser::TemplateParserEmailAddressRequesterBase>(editWidgetPlugin, this);
+    if (result) {
+        mTemplateParserEmailBase = result.plugin;
+#endif
     } else {
         mTemplateParserEmailBase = new TemplateParser::TemplateParserEmailAddressRequesterLineEdit(this);
     }

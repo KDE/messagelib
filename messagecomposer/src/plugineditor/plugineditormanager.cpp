@@ -5,9 +5,9 @@
 */
 
 #include "plugineditormanager.h"
+#include "kcoreaddons_version.h"
 #include "messagecomposer_debug.h"
 #include "plugineditor.h"
-
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KPluginMetaData>
@@ -22,6 +22,7 @@ public:
     {
     }
 
+    KPluginMetaData data;
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
@@ -64,7 +65,11 @@ private:
 
 void PluginEditorManagerPrivate::initializePlugins()
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail/plugineditor"));
+#else
+    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kmail/plugineditor"));
+#endif
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
@@ -82,6 +87,7 @@ void PluginEditorManagerPrivate::initializePlugins()
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
+        info.data = data;
         const QVariant p = data.rawData().value(QStringLiteral("X-KDE-KMailEditor-Order")).toVariant();
         int order = -1;
         if (p.isValid()) {
@@ -103,6 +109,7 @@ void PluginEditorManagerPrivate::initializePlugins()
 
 void PluginEditorManagerPrivate::loadPlugin(PluginEditorInfo *item)
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
         item->plugin = pluginLoader.factory()->create<PluginEditor>(q, QVariantList() << item->metaDataFileNameBaseName);
@@ -111,6 +118,15 @@ void PluginEditorManagerPrivate::loadPlugin(PluginEditorInfo *item)
         item->plugin->setOrder(item->order);
         mPluginDataList.append(item->pluginData);
     }
+#else
+    if (auto plugin = KPluginFactory::instantiatePlugin<PluginEditor>(item->data, q, QVariantList() << item->metaDataFileName).plugin) {
+        item->plugin = plugin;
+        item->plugin->setIsEnabled(item->isEnabled);
+        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
+        item->plugin->setOrder(item->order);
+        mPluginDataList.append(item->pluginData);
+    }
+#endif
 }
 
 QVector<PluginEditor *> PluginEditorManagerPrivate::pluginsList() const

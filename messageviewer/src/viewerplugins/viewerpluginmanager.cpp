@@ -5,6 +5,7 @@
 */
 
 #include "viewerpluginmanager.h"
+#include "kcoreaddons_version.h"
 #include "messageviewer_debug.h"
 #include "viewerplugin.h"
 
@@ -24,6 +25,7 @@ public:
     {
     }
 
+    KPluginMetaData data;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
@@ -84,10 +86,17 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         return false;
     }
 
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(pluginDirectory);
 
     // We need common plugin to avoid to duplicate code between akregator/kmail
     plugins += KPluginLoader::findPlugins(QStringLiteral("messageviewer/viewercommonplugin"));
+#else
+    QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(pluginDirectory);
+
+    // We need common plugin to avoid to duplicate code between akregator/kmail
+    plugins += KPluginMetaData::findPlugins(QStringLiteral("messageviewer/viewercommonplugin"));
+#endif
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QVectorIterator<KPluginMetaData> i(plugins);
@@ -105,6 +114,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
+        info.data = data;
 
         if (pluginVersion() == data.version()) {
             info.plugin = nullptr;
@@ -122,6 +132,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
 
 void ViewerPluginManagerPrivate::loadPlugin(ViewerPluginInfo *item)
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
         item->plugin = pluginLoader.factory()->create<MessageViewer::ViewerPlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
@@ -129,6 +140,14 @@ void ViewerPluginManagerPrivate::loadPlugin(ViewerPluginInfo *item)
         item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
         mPluginDataList.append(item->pluginData);
     }
+#else
+    if (auto plugin = KPluginFactory::instantiatePlugin<MessageViewer::ViewerPlugin>(item->data, q, QVariantList() << item->metaDataFileName).plugin) {
+        item->plugin = plugin;
+        item->plugin->setIsEnabled(item->isEnabled);
+        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
+        mPluginDataList.append(item->pluginData);
+    }
+#endif
 }
 
 QVector<ViewerPlugin *> ViewerPluginManagerPrivate::pluginsList() const

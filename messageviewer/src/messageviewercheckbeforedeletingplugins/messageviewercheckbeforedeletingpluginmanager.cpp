@@ -5,6 +5,7 @@
 */
 
 #include "messageviewercheckbeforedeletingpluginmanager.h"
+#include "kcoreaddons_version.h"
 #include "messageviewer_debug.h"
 #include "messageviewercheckbeforedeletingplugin.h"
 #include <KPluginFactory>
@@ -22,6 +23,7 @@ public:
     {
     }
 
+    KPluginMetaData data;
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
@@ -76,7 +78,11 @@ QString MessageViewerCheckBeforeDeletingPluginManagerPrivate::configPrefixSettin
 
 void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList()
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("messageviewer/checkbeforedeleting"));
+#else
+    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("messageviewer/checkbeforedeleting"));
+#endif
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
@@ -92,6 +98,7 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList(
         const bool isPluginActivated =
             PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
+        info.data = data;
 
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -137,6 +144,7 @@ QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> MessageViewerCh
 
 void MessageViewerCheckBeforeDeletingPluginManagerPrivate::loadPlugin(CheckBeforeDeletingPluginInfo *item)
 {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
         item->plugin =
@@ -146,6 +154,17 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::loadPlugin(CheckBefor
         item->plugin->setIsEnabled(item->isEnabled);
         mPluginDataList.append(item->pluginData);
     }
+#else
+    if (auto plugin =
+            KPluginFactory::instantiatePlugin<MessageViewer::MessageViewerCheckBeforeDeletingPlugin>(item->data, q, QVariantList() << item->metaDataFileName)
+                .plugin) {
+        item->plugin = plugin;
+        // By default it's true
+        item->pluginData.mHasConfigureDialog = true;
+        item->plugin->setIsEnabled(item->isEnabled);
+        mPluginDataList.append(item->pluginData);
+    }
+#endif
 }
 
 MessageViewerCheckBeforeDeletingPlugin *MessageViewerCheckBeforeDeletingPluginManagerPrivate::pluginFromIdentifier(const QString &id)
