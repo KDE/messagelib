@@ -36,7 +36,6 @@ class CollectionComboBox;
 namespace MailTransport
 {
 class TransportComboBox;
-class MessageQueueJob;
 }
 
 namespace KIdentityManagement

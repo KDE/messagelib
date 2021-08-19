@@ -12,7 +12,6 @@
 #include <QWidget>
 
 class QComboBox;
-class QToolButton;
 namespace MessageList
 {
 namespace Core

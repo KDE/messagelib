@@ -12,7 +12,6 @@
 namespace MessageComposer
 {
 class PluginEditorBasePrivate;
-class PluginEditorBaseInterface;
 /**
  * @brief The PluginEditorBase class
  * @author Laurent Montel <montel@kde.org>
