@@ -23,6 +23,10 @@
 #include <KMime/Content>
 #include <KMime/Headers>
 
+#include <QByteArray>
+
+#include <map>
+
 using namespace MessageComposer;
 
 class MessageComposer::AutocryptHeadersJobPrivate : public ContentJobBasePrivate
@@ -33,12 +37,24 @@ public:
     {
     }
 
+    ~AutocryptHeadersJobPrivate()
+    {
+        // clean up in case of cancelled job
+        for (const auto &[key, header] : gossipHeaders) {
+            delete header;
+        }
+        gossipHeaders.clear();
+    }
+
     void emitGpgError(const GpgME::Error &error);
     void emitNotFoundError(const QByteArray &addr, const QByteArray &fingerprint);
     void fillHeaderData(KMime::Headers::Generic *header, const QByteArray &addr, bool preferEncrypted, const QByteArray &keydata);
+    void finishOnLastSubJob();
 
     KMime::Content *content = nullptr;
     KMime::Message *skeletonMessage = nullptr;
+    // used to ensure consistent order based on key order, not random one by async subjobs delivering
+    std::map<QByteArray, KMime::Headers::Generic *> gossipHeaders;
 
     bool preferEncrypted = false;
     int subJobs = 0;
@@ -48,6 +64,23 @@ public:
     std::vector<GpgME::Key> gossipKeys;
 
     Q_DECLARE_PUBLIC(AutocryptHeadersJob)
+};
+
+void AutocryptHeadersJobPrivate::finishOnLastSubJob()
+{
+    Q_Q(AutocryptHeadersJob);
+
+    if (subJobs > 0) {
+        return;
+    }
+
+    for (const auto &[key, header] : gossipHeaders) {
+        content->appendHeader(header);
+    }
+    gossipHeaders.clear();
+    resultContent = content;
+
+    q->emitResult();
 };
 
 void AutocryptHeadersJobPrivate::emitGpgError(const GpgME::Error &error)
@@ -198,10 +231,7 @@ void AutocryptHeadersJob::process()
         d->skeletonMessage->setHeader(autocrypt);
         d->skeletonMessage->assemble();
 
-        if (d->subJobs < 1) {
-            d->resultContent = d->content;
-            emitResult();
-        }
+        d->finishOnLastSubJob();
     });
     d->subJobs++;
     job->start(QStringList(QString::fromLatin1(d->recipientKey.primaryFingerprint())));
@@ -240,12 +270,9 @@ void AutocryptHeadersJob::process()
             auto header = new KMime::Headers::Generic("Autocrypt-Gossip");
             d->fillHeaderData(header, key.userID(0).email(), false, keydata);
 
-            d->content->appendHeader(header);
+            d->gossipHeaders.insert({QByteArray(key.primaryFingerprint()), header});
 
-            if (d->subJobs < 1) {
-                d->resultContent = d->content;
-                emitResult();
-            }
+            d->finishOnLastSubJob();
         });
 
         d->subJobs++;
