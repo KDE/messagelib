@@ -151,6 +151,11 @@ void MessageFactoryTest::initTestCase()
     mIdentMan->commit();
 }
 
+void MessageFactoryTest::init()
+{
+    TemplateParser::TemplateParserSettings::self()->setDefaults();
+}
+
 KMime::Message::Ptr MessageFactoryTest::loadMessage(const QString &filename)
 {
     QFile mailFile(filename);
@@ -169,6 +174,8 @@ KMime::Message::Ptr MessageFactoryTest::loadMessage(const QString &filename)
 
 void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
 {
+    TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QStringLiteral("%QUOTE"));
+
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message_and_identity_in_cc.mbox"));
     KMime::Message::Ptr msg = loadMessage(filename);
     KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
@@ -221,6 +228,8 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
 
 void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
 {
+    TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QStringLiteral("%QUOTE"));
+
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message.mbox"));
     KMime::Message::Ptr msg = loadMessage(filename);
     KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
@@ -270,6 +279,8 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
 
 void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsync()
 {
+    TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QStringLiteral("%QUOTE"));
+
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_without_identity_message.mbox"));
     KMime::Message::Ptr msg = loadMessage(filename);
     KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
@@ -319,6 +330,8 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsyn
 
 void MessageFactoryTest::testCreateReplyToListAsync()
 {
+    TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QStringLiteral("%QUOTE"));
+
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/list_message.mbox"));
     KMime::Message::Ptr msg = loadMessage(filename);
 
@@ -411,6 +424,8 @@ void MessageFactoryTest::testCreateReplyToAuthorAsync()
 void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
 {
     KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
+
+    TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QStringLiteral("%QUOTE"));
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
@@ -517,8 +532,6 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("text/plain"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
     QCOMPARE(reply.msg->contents().count(), 0);
-    TemplateParser::TemplateParserSettings::self()->setReplyUsingVisualFormat(true);
-    factory.setReplyAsHtml(true);
     msg.clear();
 }
 
