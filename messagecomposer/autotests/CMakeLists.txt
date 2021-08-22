@@ -92,25 +92,20 @@ add_messagecomposer_cryptotest( encryptjobtest.cpp )
 add_messagecomposer_cryptotest( signencrypttest.cpp )
 add_messagecomposer_cryptotest( signandencrypttest.cpp )
 
-if (KDEPIM_RUN_AKONADI_TEST)
-    set(AKONADI_RUN_POSTGRES_ISOLATED_TESTS FALSE)
-    set(AKONADI_RUN_MYSQL_ISOLATED_TESTS FALSE)
+set(AKONADI_RUN_POSTGRES_ISOLATED_TESTS FALSE)
+set(AKONADI_RUN_MYSQL_ISOLATED_TESTS FALSE)
 
-    add_executable( keyresolvertest
-        cryptofunctions.cpp
-        setupenv.cpp
-        keyresolvertest.cpp
-    )
-    target_link_libraries( keyresolvertest
-            KF5::AkonadiCore
-            KF5::MessageComposer
-            Qt::Test
-    )
-    add_gpg_crypto_akonadi_test(keyresolvertest messagecomposer-keyresolvertest)
-    if (NOT DEFINED AKONADI_RUN_SQLITE_ISOLATED_TESTS OR AKONADI_RUN_SQLITE_ISOLATED_TESTS)
-        set_tests_properties(akonadi-sqlite-messagecomposer-keyresolvertest PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent
-    endif()
-endif()
+add_executable( keyresolvertest
+    cryptofunctions.cpp
+    setupenv.cpp
+    keyresolvertest.cpp
+)
+target_link_libraries( keyresolvertest
+        KF5::AkonadiCore
+        KF5::MessageComposer
+        Qt::Test
+)
+add_gpg_crypto_akonadi_test(keyresolvertest messagecomposer-keyresolvertest)
 
 ecm_add_test(followupreminderselectdatedialogtest.cpp
     NAME_PREFIX "messagecomposer-"

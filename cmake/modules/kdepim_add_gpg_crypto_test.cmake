@@ -143,7 +143,8 @@ macro (ADD_GPG_CRYPTO_AKONADI_TEST _target _testname)
                         LD_LIBRARY_PATH=${CMAKE_LIBRARY_OUTPUT_DIRECTORY}${PATHSEP}$ENV{LD_LIBRARY_PATH}
                     )
                     set_tests_properties(${_test_name} PROPERTIES ENVIRONMENT "${_test_env}")
-                    endif()
+                endif()
+                set_tests_properties(${_test_name} PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent
             endif()
         endif()
     endfunction()
