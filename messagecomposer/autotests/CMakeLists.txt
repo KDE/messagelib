@@ -107,7 +107,9 @@ if (KDEPIM_RUN_AKONADI_TEST)
             Qt::Test
     )
     add_gpg_crypto_akonadi_test(keyresolvertest messagecomposer-keyresolvertest)
-    set_tests_properties(akonadi-sqlite-messagecomposer-keyresolvertest PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent
+    if (NOT DEFINED AKONADI_RUN_SQLITE_ISOLATED_TESTS OR AKONADI_RUN_SQLITE_ISOLATED_TESTS)
+        set_tests_properties(akonadi-sqlite-messagecomposer-keyresolvertest PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent
+    endif()
 endif()
 
 ecm_add_test(followupreminderselectdatedialogtest.cpp
