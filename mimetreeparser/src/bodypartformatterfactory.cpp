@@ -172,14 +172,14 @@ void BodyPartFormatterFactory::loadPlugins()
 #else
     const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("messageviewer/bodypartformatter"));
     for (const auto &md : plugins) {
-        const auto formatterData = md.rawData().value(QLatin1String("MetaData")).toObject().value(QLatin1String("formatter")).toArray();
+        const auto formatterData = md.rawData().value(QLatin1String("formatter")).toArray();
         if (formatterData.isEmpty()) {
-            return;
+            continue;
         }
         QPluginLoader loader(md.fileName());
         auto plugin = qobject_cast<MimeTreeParser::Interface::BodyPartFormatterPlugin *>(loader.instance());
         if (!plugin) {
-            return;
+            continue;
         }
 
         const MimeTreeParser::Interface::BodyPartFormatter *bfp = nullptr;

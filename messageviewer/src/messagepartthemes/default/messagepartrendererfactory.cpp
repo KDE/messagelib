@@ -91,16 +91,16 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
 #else
     const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(m_pluginSubdir);
     for (const auto &md : plugins) {
-        const auto pluginData = md.rawData().value(QLatin1String("MetaData")).toObject().value(QLatin1String("renderer")).toArray();
+        const auto pluginData = md.rawData().value(QLatin1String("renderer")).toArray();
         if (pluginData.isEmpty()) {
             qCWarning(MESSAGEVIEWER_LOG) << "Plugin" << md.fileName() << "has no meta data.";
-            return;
+            continue;
         }
         QPluginLoader loader(md.fileName());
         auto plugin = qobject_cast<MessagePartRenderPlugin *>(loader.instance());
         if (!plugin) {
             qCWarning(MESSAGEVIEWER_LOG) << md.fileName() << "is not a MessagePartRendererPlugin";
-            return;
+            continue;
         }
 
         MessagePartRendererBase *renderer = nullptr;
