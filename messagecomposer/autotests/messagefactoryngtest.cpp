@@ -971,6 +971,8 @@ void MessageFactoryTest::test_multipartAlternative()
     factory.setQuote(true);
     factory.setReplyStrategy(ReplyAll);
     TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QStringLiteral("%QUOTE"));
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingVisualFormat(true);
+    factory.setReplyAsHtml(true);
 
     QString str;
     str = TemplateParser::TemplateParserSettings::self()->templateReplyAll();
