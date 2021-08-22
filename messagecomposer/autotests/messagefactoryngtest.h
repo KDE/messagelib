@@ -24,6 +24,7 @@ public:
 
 private Q_SLOTS:
     void initTestCase();
+    void init();
 
     void testCreateReplyAllAsync();
 
