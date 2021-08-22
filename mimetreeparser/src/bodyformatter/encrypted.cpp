@@ -86,7 +86,7 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
         // if we already have a decrypted node for part.objectTreeParser() encrypted node, don't do the decryption again
         return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, true));
     } else {
-        const auto codec = QTextCodec::codecForName("utf-8");
+        const auto codec = part.nodeHelper()->codec(node);
         mp->startDecryption(node->decodedContent(), codec);
 
         qCDebug(MIMETREEPARSER_LOG) << "decrypted, signed?:" << messagePart->isSigned;
@@ -96,8 +96,8 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
                 return nullptr;
             }
             auto tempNode = new KMime::Content();
-            tempNode->contentType()->setCharset("utf-8");
-            tempNode->setBody(KMime::CRLFtoLF(part.nodeHelper()->codec(node)->fromUnicode(mp->text())));
+            tempNode->setHead("Content-Type: text/plain; charset=\"" + codec->name() + "\"");
+            tempNode->setBody(KMime::CRLFtoLF(codec->fromUnicode(mp->text())));
             tempNode->parse();
             NodeHelper::magicSetType(tempNode);
             if (node->topLevel()->textContent() != node && node->contentDisposition(false) && !tempNode->contentDisposition(false)) {
