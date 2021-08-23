@@ -34,7 +34,7 @@ public:
     void setParameters(const MessageViewer::MessageViewerCheckBeforeDeletingParameters &params);
     Q_REQUIRED_RESULT MessageViewer::MessageViewerCheckBeforeDeletingParameters parameters() const;
 
-    virtual QList<QAction *> actions() const;
+    virtual Q_REQUIRED_RESULT QList<QAction *> actions() const;
 
 public Q_SLOTS:
     virtual void reloadConfig();
