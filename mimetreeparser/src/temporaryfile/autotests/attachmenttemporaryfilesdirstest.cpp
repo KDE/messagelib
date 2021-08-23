@@ -92,7 +92,7 @@ void AttachmentTemporaryFilesDirsTest::shouldCreateDeleteTemporaryFiles()
     QVERIFY(tmpDir.isValid());
     QFile file(tmpDir.path() + QStringLiteral("/foo"));
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        qDebug() << "Can open file";
+        qWarning() << "Can open file: " << file.fileName();
         return;
     }
     tmpDir.setAutoRemove(false);
