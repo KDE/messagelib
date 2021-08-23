@@ -412,7 +412,8 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
         }
     } else { // saved to draft, so keep the old values, not very nice.
         mExpandedFrom = from();
-        foreach (const MessageComposer::Recipient::Ptr &r, m_recipientsEditor->recipients()) {
+        const auto recipients{m_recipientsEditor->recipients()};
+        for (const MessageComposer::Recipient::Ptr &r : recipients) {
             switch (r->type()) {
             case MessageComposer::Recipient::To:
                 mExpandedTo << r->email();

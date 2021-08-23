@@ -198,8 +198,8 @@ void MessageComposer::RecipientsEditor::setRecentAddressConfig(KConfig *config)
 {
     d->mRecentAddressConfig = config;
     if (config) {
-        MultiplyingLine *line;
-        foreach (line, lines()) {
+        const auto linesP{lines()};
+        for (auto line : linesP) {
             auto rec = qobject_cast<RecipientLineNG *>(line);
             if (rec) {
                 rec->setRecentAddressConfig(config);
@@ -349,7 +349,8 @@ void RecipientsEditor::slotCalculateTotal()
         addData();
     }
     int count = 0;
-    foreach (line, lines()) {
+    const auto linesP{lines()};
+    for (auto line : linesP) {
         auto rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if (!rec->isEmpty()) {

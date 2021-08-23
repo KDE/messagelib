@@ -162,7 +162,8 @@ void MessageItemPrivate::invalidateAnnotationCache()
 const MessageItem::Tag *MessageItemPrivate::bestTag() const
 {
     const MessageItem::Tag *best = nullptr;
-    foreach (const MessageItem::Tag *tag, getTagList()) {
+    const auto tagList{getTagList()};
+    for (const MessageItem::Tag *tag : tagList) {
         if (!best || tag->priority() < best->priority()) {
             best = tag;
         }
@@ -285,7 +286,8 @@ void MessageItem::editAnnotation(QWidget *parent)
 
 const MessageItem::Tag *MessageItemPrivate::findTagInternal(const QString &szTagId) const
 {
-    foreach (const MessageItem::Tag *tag, getTagList()) {
+    const auto tagList{getTagList()};
+    for (const MessageItem::Tag *tag : tagList) {
         if (tag->id() == szTagId) {
             return tag;
         }
@@ -723,7 +725,8 @@ void TagCache::onTagsFetched(KJob *job)
         return;
     }
     auto fetchJob = static_cast<Akonadi::TagFetchJob *>(job);
-    Q_FOREACH (const Akonadi::Tag &tag, fetchJob->tags()) {
+    const auto tags{fetchJob->tags()};
+    for (const Akonadi::Tag &tag : tags) {
         mCache.insert(tag.id(), new Akonadi::Tag(tag));
     }
     if (auto m = mRequests.take(fetchJob)) {
