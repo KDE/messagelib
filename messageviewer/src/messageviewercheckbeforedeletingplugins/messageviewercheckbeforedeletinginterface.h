@@ -36,6 +36,9 @@ public:
 
     virtual Q_REQUIRED_RESULT QList<QAction *> actions() const;
 
+Q_SIGNALS:
+    void configure(QWidget *parent);
+
 public Q_SLOTS:
     virtual void reloadConfig();
 
