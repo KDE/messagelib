@@ -63,3 +63,8 @@ QList<QAction *> MessageViewerCheckBeforeDeletingInterface::actions() const
     // Reimplement in subclass
     return {};
 }
+
+void MessageViewerCheckBeforeDeletingInterface::createActions(KActionCollection *ac)
+{
+    Q_UNUSED(ac);
+}

@@ -11,6 +11,7 @@
 #include <QList>
 #include <QObject>
 class QAction;
+class KActionCollection;
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingParameters;
@@ -35,6 +36,8 @@ public:
     Q_REQUIRED_RESULT MessageViewer::MessageViewerCheckBeforeDeletingParameters parameters() const;
 
     virtual Q_REQUIRED_RESULT QList<QAction *> actions() const;
+
+    virtual void createActions(KActionCollection *ac);
 
 Q_SIGNALS:
     void configure(QWidget *parent);
