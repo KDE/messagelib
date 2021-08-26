@@ -9,6 +9,9 @@
 #include <QSignalSpy>
 #include <QTest>
 #include <QTimer>
+
+using namespace std::chrono_literals;
+
 QTEST_MAIN(DKIMCheckSignatureJobTest)
 //#define USE_EXTRA_CHECK 1
 DKIMCheckSignatureJobTest::DKIMCheckSignatureJobTest(QObject *parent)
@@ -107,7 +110,7 @@ void DKIMCheckSignatureJobTest::shouldTestMail()
     pol.setSaveKey(false);
     job->setPolicy(pol);
     QSignalSpy dkimSignatureSpy(job, &MessageViewer::DKIMCheckSignatureJob::result);
-    QTimer::singleShot(10, job, &MessageViewer::DKIMCheckSignatureJob::start);
+    QTimer::singleShot(10ms, job, &MessageViewer::DKIMCheckSignatureJob::start);
     QVERIFY(dkimSignatureSpy.wait());
     QCOMPARE(dkimSignatureSpy.count(), 1);
     const auto info = dkimSignatureSpy.at(0).at(0).value<MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult>();

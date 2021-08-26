@@ -149,7 +149,8 @@
 #include "dkim-verify/dkimwidgetinfo.h"
 
 #include "remote-content/remotecontentmenu.h"
-
+#include <chrono>
+using namespace std::chrono_literals;
 using namespace boost;
 using namespace MailTransport;
 using namespace MessageViewer;
@@ -2196,7 +2197,7 @@ void ViewerPrivate::slotPrintPreview()
         return;
     }
     // Need to delay
-    QTimer::singleShot(1000, this, &ViewerPrivate::slotDelayPrintPreview); // 1 second
+    QTimer::singleShot(1s, this, &ViewerPrivate::slotDelayPrintPreview); // 1 second
 }
 
 void ViewerPrivate::slotDelayPrintPreview()
