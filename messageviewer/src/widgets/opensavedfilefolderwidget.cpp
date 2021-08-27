@@ -12,7 +12,9 @@
 #include <QTimer>
 
 #include <QAction>
+#include <chrono>
 
+using namespace std::chrono_literals;
 using namespace MessageViewer;
 
 OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
@@ -21,7 +23,7 @@ OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
     , mShowFolderAction(new QAction(i18nc("@action", "Open folder where attachment was saved"), this))
 {
     mTimer->setSingleShot(true);
-    mTimer->setInterval(5000); // 5 seconds
+    mTimer->setInterval(5s); // 5 seconds
     connect(mTimer, &QTimer::timeout, this, &OpenSavedFileFolderWidget::slotTimeOut);
     setVisible(false);
     setCloseButtonVisible(true);

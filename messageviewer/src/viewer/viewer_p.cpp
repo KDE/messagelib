@@ -1880,7 +1880,7 @@ void ViewerPrivate::update(MimeTreeParser::UpdateMode updateMode)
         saveRelativePosition();
         updateReaderWin();
     } else if (mUpdateReaderWinTimer.isActive()) {
-        mUpdateReaderWinTimer.setInterval(150);
+        mUpdateReaderWinTimer.setInterval(150ms);
     } else {
         mUpdateReaderWinTimer.start(0);
     }
