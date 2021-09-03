@@ -681,7 +681,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // insert specified content of header from current message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADER(";
                 QRegularExpressionMatch match;
-                const int res = cmd.indexOf(QRegularExpression(QStringLiteral("^HEADER\\((.+)\\)")), 0, &match);
+                static QRegularExpression reg(QStringLiteral("^HEADER\\((.+)\\)"));
+                const int res = cmd.indexOf(reg, 0, &match);
                 if (res != 0) {
                     // something wrong
                     i += strlen("HEADER( ");

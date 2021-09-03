@@ -324,7 +324,8 @@ QString DKIMCheckSignatureJob::headerCanonizationSimple() const
 
     DKIMHeaderParser parser = mHeaderParser;
 
-    for (const QString &header : mDkimInfo.listSignedHeader()) {
+    const auto listSignedHeader{mDkimInfo.listSignedHeader()};
+    for (const QString &header : listSignedHeader) {
         const QString str = parser.headerType(header.toLower());
         if (!str.isEmpty()) {
             if (!headers.isEmpty()) {

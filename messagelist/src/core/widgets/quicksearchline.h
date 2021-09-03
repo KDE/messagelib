@@ -68,7 +68,7 @@ Q_SIGNALS:
     void statusButtonsClicked();
     void forceLostFocus();
     void saveFilter();
-    void activateFilter(Filter *f);
+    void activateFilter(MessageList::Core::Filter *f);
 
 protected:
     bool eventFilter(QObject *object, QEvent *e) override;

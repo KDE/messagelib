@@ -62,7 +62,7 @@ public Q_SLOTS:
     /** Switch to "normal mode". */
     void setNormalMode();
     /** Switch to mode @p m */
-    void setMode(MimeTreeParser::Util::HtmlMode m, UpdateMode mode = Update);
+    void setMode(MimeTreeParser::Util::HtmlMode m, MessageViewer::HtmlStatusBar::UpdateMode mode = Update);
 
 Q_SIGNALS:
     /** The user has clicked the status bar. */

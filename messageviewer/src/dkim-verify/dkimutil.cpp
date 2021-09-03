@@ -56,7 +56,8 @@ QString MessageViewer::DKIMUtil::bodyCanonizationSimple(QString body)
     //       Note that a completely empty or missing body is canonicalized as a
     //       single "CRLF"; that is, the canonicalized length will be 2 octets.
     body.replace(QStringLiteral("\n"), QStringLiteral("\r\n"));
-    body.replace(QRegularExpression(QStringLiteral("((\r\n)+)?$")), QStringLiteral("\r\n"));
+    static const QRegularExpression reg(QStringLiteral("((\r\n)+)?$"));
+    body.replace(reg, QStringLiteral("\r\n"));
     if (body.endsWith(QLatin1String("\r\n"))) { // Remove it from start
         body.chop(2);
     }
@@ -103,9 +104,12 @@ QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &header
     //          colon separator MUST be retained.
     QString newHeaderName = headerName.toLower();
     QString newHeaderValue = headerValue;
-    newHeaderValue.replace(QRegularExpression(QStringLiteral("\r\n[ \t]+")), QStringLiteral(" "));
-    newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]+")), QStringLiteral(" "));
-    newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]+\r\n")), QStringLiteral("\r\n"));
+    static const QRegularExpression reg1(QStringLiteral("\r\n[ \t]+"));
+    newHeaderValue.replace(reg1, QStringLiteral(" "));
+    static const QRegularExpression reg2(QStringLiteral("[ \t]+"));
+    newHeaderValue.replace(reg2, QStringLiteral(" "));
+    static const QRegularExpression reg3(QStringLiteral("[ \t]+\r\n"));
+    newHeaderValue.replace(reg3, QStringLiteral("\r\n"));
     // Perhaps remove tab after headername and before value name
     // newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]*:[ \t]")), QStringLiteral(":"));
     if (newHeaderName == QLatin1String("content-type") && removeQuoteOnContentType) { // Remove quote in charset

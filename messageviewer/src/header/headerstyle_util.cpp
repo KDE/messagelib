@@ -274,10 +274,12 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
             style->nodeHelper()->setBodyPartMemento(message, "contactphoto", photoMemento);
             QObject::connect(photoMemento, SIGNAL(update(MimeTreeParser::UpdateMode)), style->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));
 
+            // clang-format off
             QObject::connect(photoMemento,
-                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage, bool)),
+                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)),
                              style->sourceObject(),
-                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage, bool)));
+                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)));
+            // clang-format on
         }
 
         if (photoMemento->finished()) {

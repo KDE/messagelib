@@ -768,11 +768,11 @@ void MessageFactoryTest::testCreateRedirect()
 
     QString datetime = rdir->date()->asUnicodeString();
 
-    const QRegularExpression rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
+    const QRegularExpression rx(QStringLiteral("Resent-Message-ID: ([^\n]*)"));
     const QRegularExpressionMatch rxMatch = rx.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxMatch.hasMatch());
 
-    const QRegularExpression rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
+    const QRegularExpression rxmessageid(QStringLiteral("Message-ID: ([^\n]+)"));
     const QRegularExpressionMatch rxmessageidMatch = rxmessageid.match(QString::fromLatin1(rdir->head()));
     QVERIFY(rxmessageidMatch.hasMatch());
 

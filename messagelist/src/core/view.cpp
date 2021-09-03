@@ -2357,7 +2357,8 @@ bool View::event(QEvent *e)
                     break;
                 }
             } else {
-                if (ghi->label().contains(QRegularExpression(QStringLiteral("[0-9]")))) {
+                static const QRegularExpression reg(QStringLiteral("[0-9]"));
+                if (ghi->label().contains(reg)) {
                     if (storageModel()->containsOutboundMessages()) {
                         description = i18nc("@info:tooltip Formats to something like 'Messages sent on 2008-12-21'", "Messages sent on %1", ghi->label());
                     } else {
@@ -2476,9 +2477,7 @@ bool View::event(QEvent *e)
                        "<nobr>%2</nobr>"
                        "</td>"
                        "</tr>")
-                       .arg(darkerColorName)
-                       .arg(statsText)
-                       .arg(textDirection);
+                       .arg(darkerColorName, statsText, textDirection);
         }
 
         break;

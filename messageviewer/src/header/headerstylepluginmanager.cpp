@@ -200,7 +200,8 @@ QStringList HeaderStylePluginManager::pluginListName() const
 {
     QStringList lst;
     lst.reserve(d->pluginsList().count());
-    for (MessageViewer::HeaderStylePlugin *plugin : d->pluginsList()) {
+    const auto pluginsList{d->pluginsList()};
+    for (MessageViewer::HeaderStylePlugin *plugin : pluginsList) {
         lst << plugin->name();
     }
     return lst;
