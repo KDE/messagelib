@@ -62,7 +62,6 @@ void HtmlStatusBar::update()
     setPalette(pal);
     setText(message());
     setToolTip(toolTip());
-    setVisible(mMode != MimeTreeParser::Util::Normal);
 }
 
 void HtmlStatusBar::setNormalMode()
@@ -111,7 +110,10 @@ QString HtmlStatusBar::message() const
                      "<qt><b><br />H<br />T<br />M<br />L<br /> "
                      "<br />M<br />e<br />s<br />s<br />a<br />g<br />e</b></qt>");
     case MimeTreeParser::Util::Normal: // normal: "No HTML Message"
-        return QString();
+        return i18nc("'No HTML Message' with html linebreaks between each letter.",
+                     "<qt><br />N<br />o<br /> "
+                     "<br />H<br />T<br />M<br />L<br /> "
+                     "<br />M<br />e<br />s<br />s<br />a<br />g<br />e</qt>");
     case MimeTreeParser::Util::MultipartPlain: // normal: "Plain Message"
         return i18nc("'Plain Message' with html linebreaks between each letter.",
                      "<qt><br />P<br />l<br />a<br />i<br />n<br /> "
