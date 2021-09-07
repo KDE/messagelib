@@ -7,8 +7,8 @@
 #include "modifymessagedisplayformatjob.h"
 #include "messageviewer_debug.h"
 
-#include <AkonadiCore/ItemModifyJob>
-#include <AkonadiCore/Session>
+#include <Akonadi/ItemModifyJob>
+#include <akonadi/session.h>
 
 #include "viewer/messagedisplayformatattribute.h"
 

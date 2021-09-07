@@ -11,7 +11,7 @@
 #include <KMessageBox>
 #include <KSharedConfig>
 
-#include <AkonadiWidgets/CollectionComboBox>
+#include <Akonadi/CollectionComboBox>
 
 #include <KCalendarCore/Todo>
 

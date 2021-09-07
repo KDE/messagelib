@@ -7,7 +7,7 @@
 #include "followupreminder.h"
 #include "followupreminderinterface.h"
 
-#include <AkonadiCore/ServerManager>
+#include <Akonadi/ServerManager>
 #include <servermanager.h>
 
 using namespace MessageComposer;

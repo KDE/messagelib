@@ -24,7 +24,7 @@
 
 #include <MessageCore/StringUtil>
 
-#include <AkonadiCore/itemfetchjob.h>
+#include <Akonadi/ItemFetchJob>
 #include <QIcon>
 #include <kio/jobuidelegate.h>
 #include <kio_version.h>

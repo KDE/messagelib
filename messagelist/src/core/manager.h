@@ -13,7 +13,7 @@
 #include <QMap>
 #include <QObject>
 
-#include <collection.h>
+#include <Akonadi/Collection>
 
 namespace KMime
 {

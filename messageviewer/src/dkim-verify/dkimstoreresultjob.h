@@ -7,7 +7,7 @@
 #pragma once
 
 #include "messageviewer_private_export.h"
-#include <AkonadiCore/Item>
+#include <Akonadi/Item>
 #include <MessageViewer/DKIMCheckSignatureJob>
 #include <QObject>
 class KJob;

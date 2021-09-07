@@ -47,11 +47,11 @@
 #include <MailTransport/TransportManager>
 #include <MailTransportAkonadi/MessageQueueJob>
 
+#include <Akonadi/CollectionComboBox>
+#include <Akonadi/CollectionFetchJob>
+#include <Akonadi/ItemCreateJob>
 #include <Akonadi/KMime/MessageFlags>
 #include <Akonadi/KMime/SpecialMailCollections>
-#include <AkonadiCore/collectionfetchjob.h>
-#include <AkonadiCore/itemcreatejob.h>
-#include <AkonadiWidgets/collectioncombobox.h>
 
 #include <KEmailAddress>
 #include <KIdentityManagement/kidentitymanagement/identitycombo.h>

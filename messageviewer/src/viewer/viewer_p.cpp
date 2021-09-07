@@ -40,9 +40,9 @@
 #include <QPrintPreviewDialog>
 #include <QVBoxLayout>
 
+#include <Akonadi/ItemCreateJob>
+#include <Akonadi/ItemModifyJob>
 #include <Akonadi/KMime/SpecialMailCollections>
-#include <AkonadiCore/ItemCreateJob>
-#include <AkonadiCore/ItemModifyJob>
 #include <KApplicationTrader>
 #include <KEmailAddress>
 #include <KFileItemActions>
@@ -78,12 +78,12 @@
 #include <MessageCore/AttachmentPropertiesDialog>
 #include <PimCommon/BroadcastStatus>
 
+#include <Akonadi/AttributeFactory>
+#include <Akonadi/ItemFetchJob>
+#include <Akonadi/ItemFetchScope>
 #include <Akonadi/KMime/MessageParts>
 #include <Akonadi/KMime/MessageStatus>
-#include <AkonadiCore/attributefactory.h>
 #include <AkonadiCore/collection.h>
-#include <AkonadiCore/itemfetchjob.h>
-#include <AkonadiCore/itemfetchscope.h>
 
 #include <MessageCore/AutocryptUtils>
 #include <KIdentityManagement/Identity>
@@ -122,10 +122,10 @@
 #include <MessageCore/MessageCoreSettings>
 #include <MessageCore/NodeHelper>
 
-#include <AkonadiCore/CollectionFetchJob>
-#include <AkonadiCore/agentinstance.h>
-#include <AkonadiCore/agentmanager.h>
-#include <AkonadiCore/collectionfetchscope.h>
+#include <Akonadi/AgentInstance>
+#include <Akonadi/AgentManager>
+#include <Akonadi/CollectionFetchJob>
+#include <Akonadi/CollectionFetchScope>
 
 #include <KJobWidgets/KJobWidgets>
 #include <KPIMTextEdit/TextToSpeechWidget>

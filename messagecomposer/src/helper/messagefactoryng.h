@@ -12,9 +12,9 @@
 #include <kmime/kmime_mdn.h>
 #include <kmime/kmime_message.h>
 
+#include <Akonadi/Collection>
+#include <Akonadi/Item>
 #include <Akonadi/KMime/MessageStatus>
-#include <Collection>
-#include <Item>
 #include <QVector>
 
 namespace KIdentityManagement

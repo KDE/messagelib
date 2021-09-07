@@ -8,7 +8,7 @@
 
 #include "messageviewer_export.h"
 #include "viewerplugininterface.h"
-#include <Item>
+#include <Akonadi/Item>
 #include <QObject>
 class KActionCollection;
 class QAction;

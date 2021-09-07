@@ -25,7 +25,7 @@
 
 #include <kmime/kmime_dateformatter.h> // kdepimlibs
 
-#include <Item>
+#include <Akonadi/Item>
 #include <KTwoFingerTap>
 #include <QApplication>
 #include <QGestureEvent>

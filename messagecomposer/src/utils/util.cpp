@@ -25,9 +25,9 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
-#include <AkonadiCore/agentinstance.h>
-#include <AkonadiCore/agentinstancecreatejob.h>
-#include <AkonadiCore/agentmanager.h>
+#include <Akonadi/AgentInstance>
+#include <Akonadi/AgentInstanceCreateJob>
+#include <Akonadi/AgentManager>
 #include <MailTransportAkonadi/MessageQueueJob>
 #include <MessageCore/StringUtil>
 #include <kmime/kmime_content.h>

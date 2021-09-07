@@ -9,7 +9,7 @@
 #include "dkimauthenticationstatusinfo.h"
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_private_export.h"
-#include <AkonadiCore/Item>
+#include <Akonadi/Item>
 #include <MessageViewer/DKIMCheckPolicy>
 #include <QObject>
 namespace MessageViewer

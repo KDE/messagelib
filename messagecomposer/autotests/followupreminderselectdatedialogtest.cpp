@@ -5,13 +5,13 @@
 */
 
 #include "followupreminderselectdatedialogtest.h"
-#include <MessageComposer/FollowUpReminderSelectDateDialog>
-#include <AkonadiWidgets/CollectionComboBox>
+#include <Akonadi/CollectionComboBox>
 #include <KDateComboBox>
+#include <MessageComposer/FollowUpReminderSelectDateDialog>
 #include <QLineEdit>
 #include <QTest>
 
-#include <AkonadiCore/EntityTreeModel>
+#include <Akonadi/EntityTreeModel>
 #include <KCalendarCore/Todo>
 #include <QLineEdit>
 #include <QPushButton>

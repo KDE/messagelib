@@ -6,8 +6,7 @@
 
 #pragma once
 
-#include <AkonadiCore/ServerManager>
-#include <AkonadiCore/servermanager.h>
+#include <Akonadi/ServerManager>
 
 namespace MessageComposer
 {

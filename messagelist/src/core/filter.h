@@ -15,8 +15,8 @@
 
 #include "messagelist_export.h"
 #include "widgets/quicksearchline.h"
+#include <Akonadi/Collection>
 #include <Akonadi/KMime/MessageStatus>
-#include <Collection>
 #include <KSharedConfig>
 
 namespace MessageList

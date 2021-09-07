@@ -8,7 +8,7 @@
 
 #include "dkimheaderparser.h"
 #include "messageviewer_private_export.h"
-#include <AkonadiCore/Item>
+#include <Akonadi/Item>
 #include <QObject>
 namespace MessageViewer
 {

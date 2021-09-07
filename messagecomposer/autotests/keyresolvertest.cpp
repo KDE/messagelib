@@ -11,7 +11,7 @@
 #include "qtest_messagecomposer.h"
 #include "setupenv.h"
 
-#include <AkonadiCore/Control>
+#include <Akonadi/Control>
 #include <qtest_akonadi.h>
 
 #include <QDebug>

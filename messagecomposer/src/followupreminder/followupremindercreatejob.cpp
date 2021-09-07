@@ -8,8 +8,8 @@
 #include "followupreminderinterface.h"
 #include "messagecomposer_debug.h"
 
-#include <AkonadiCore/ItemCreateJob>
-#include <AkonadiCore/ServerManager>
+#include <Akonadi/ItemCreateJob>
+#include <Akonadi/ServerManager>
 #include <KCalendarCore/Todo>
 #include <KLocalizedString>
 

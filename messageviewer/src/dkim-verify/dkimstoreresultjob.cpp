@@ -7,7 +7,7 @@
 #include "dkimstoreresultjob.h"
 #include "dkimresultattribute.h"
 #include "messageviewer_dkimcheckerdebug.h"
-#include <AkonadiCore/ItemModifyJob>
+#include <Akonadi/ItemModifyJob>
 
 using namespace MessageViewer;
 DKIMStoreResultJob::DKIMStoreResultJob(QObject *parent)

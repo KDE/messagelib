@@ -9,7 +9,7 @@
 #include "messagecomposer_export.h"
 #include "sendlaterjob.h"
 
-#include <AkonadiCore/Item>
+#include <Akonadi/Item>
 
 namespace MessageComposer
 {

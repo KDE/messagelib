@@ -9,7 +9,7 @@
 
 #include "messageviewer/viewer.h"
 #include "messageviewer_export.h"
-#include <AkonadiCore/attribute.h>
+#include <akonadi/attribute.h>
 namespace MessageViewer
 {
 class MessageDisplayFormatAttributePrivate;

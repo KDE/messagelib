@@ -9,9 +9,9 @@
 #include <messagelist/storagemodelbase.h>
 #include <messagelist_export.h>
 
+#include <Akonadi/Collection>
+#include <Akonadi/Item>
 #include <QVector>
-#include <collection.h>
-#include <item.h>
 #include <kmime/kmime_message.h>
 
 class QAbstractItemModel;

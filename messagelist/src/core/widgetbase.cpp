@@ -42,9 +42,9 @@
 
 #include <QUrl>
 
+#include <Akonadi/Collection>
 #include <Akonadi/KMime/MessageStatus>
 #include <chrono>
-#include <collection.h>
 #include <core/widgets/filternamedialog.h>
 
 using namespace std::chrono_literals;

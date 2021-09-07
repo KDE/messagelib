@@ -12,12 +12,12 @@
 #include <PimCommonAkonadi/AnnotationDialog>
 
 #include "messagelist_debug.h"
+#include <Akonadi/Item>
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <QIcon>
 #include <QPointer>
 #include <entityannotationsattribute.h>
-#include <item.h>
 #include <tagattribute.h>
 #include <tagfetchjob.h>
 #include <tagfetchscope.h>

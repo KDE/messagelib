@@ -10,9 +10,9 @@
 
 #include "item_p.h"
 #include "messageitem.h"
-#include <Item>
+#include <Akonadi/Item>
+#include <Akonadi/Monitor>
 #include <KJob>
-#include <Monitor>
 #include <PimCommonAkonadi/AnnotationDialog>
 #include <QCache>
 #include <Tag>

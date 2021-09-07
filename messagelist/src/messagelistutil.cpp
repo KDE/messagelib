@@ -8,7 +8,7 @@
 #include "messagelistsettings.h"
 #include "messagelistutil_p.h"
 
-#include <Item>
+#include <Akonadi/Item>
 #include <KColorScheme>
 #include <KConfigGroup>
 #include <KLocalizedString>

@@ -8,7 +8,7 @@
 
 #include "dkimchecksignaturejob.h"
 #include "messageviewer_export.h"
-#include <AkonadiCore/Item>
+#include <Akonadi/Item>
 #include <QWidget>
 class QLabel;
 namespace MessageViewer

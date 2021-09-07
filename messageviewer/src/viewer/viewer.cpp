@@ -22,9 +22,9 @@
 #include "viewer_p.h"
 #include "widgets/configurewidget.h"
 #include "widgets/zoomactionmenu.h"
+#include <Akonadi/ItemFetchJob>
+#include <Akonadi/ItemFetchScope>
 #include <Akonadi/KMime/MessageParts>
-#include <AkonadiCore/itemfetchjob.h>
-#include <AkonadiCore/itemfetchscope.h>
 #include <QUrl>
 #include <WebEngineViewer/WebEngineManageScript>
 #include <WebEngineViewer/WebHitTestResult>

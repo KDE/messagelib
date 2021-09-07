@@ -10,7 +10,7 @@
 #include "dkimresultattribute.h"
 #include "messageviewer_dkimcheckerdebug.h"
 #include "settings/messageviewersettings.h"
-#include <AkonadiCore/AttributeFactory>
+#include <Akonadi/AttributeFactory>
 
 using namespace MessageViewer;
 DKIMManager::DKIMManager(QObject *parent)

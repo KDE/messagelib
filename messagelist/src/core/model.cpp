@@ -42,9 +42,8 @@
 #include <config-messagelist.h>
 
 #include "MessageCore/StringUtil"
+#include <Akonadi/Item>
 #include <Akonadi/KMime/MessageStatus>
-#include <AkonadiCore/Item>
-#include <item.h>
 
 #include <KLocalizedString>
 

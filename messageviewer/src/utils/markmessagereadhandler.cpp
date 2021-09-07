@@ -9,9 +9,9 @@
 
 #include "settings/messageviewersettings.h"
 
+#include <Akonadi/ItemModifyJob>
 #include <Akonadi/KMime/MessageFlags>
-#include <AkonadiCore/Session>
-#include <AkonadiCore/itemmodifyjob.h>
+#include <akonadi/session.h>
 
 #include <QTimer>
 

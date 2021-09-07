@@ -11,10 +11,10 @@
 
 #include <QInputDialog>
 
+#include <Akonadi/CollectionDialog>
 #include <Akonadi/Contact/ContactSearchJob>
-#include <AkonadiCore/ItemCreateJob>
-#include <AkonadiCore/ItemModifyJob>
-#include <AkonadiWidgets/CollectionDialog>
+#include <Akonadi/ItemCreateJob>
+#include <Akonadi/ItemModifyJob>
 
 #include "messagecomposer_debug.h"
 #include <QPointer>

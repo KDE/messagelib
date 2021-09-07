@@ -10,7 +10,7 @@
 #include "MessageComposer/Recipient"
 #include "messagecomposer/messagesender.h"
 #include "messagecomposer_export.h"
-#include <AkonadiCore/Item>
+#include <Akonadi/Item>
 #include <AkonadiCore/collection.h>
 #include <KMime/Message>
 

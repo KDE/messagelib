@@ -6,7 +6,7 @@
 
 #pragma once
 #include "messageviewer_export.h"
-#include <AkonadiCore/Item>
+#include <Akonadi/Item>
 #include <QString>
 namespace MessageViewer
 {

@@ -9,8 +9,8 @@
 #pragma once
 
 #include "messagecomposer_export.h"
+#include <Akonadi/Item>
 #include <Akonadi/KMime/MessageStatus>
-#include <AkonadiCore/Item>
 #include <KMime/Message>
 #include <Libkleo/Enum>
 

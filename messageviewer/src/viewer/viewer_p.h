@@ -16,8 +16,8 @@
 #include <PimCommon/ShareServiceUrlManager>
 #include <WebEngineViewer/CheckPhishingUrlUtil>
 
+#include <Akonadi/Monitor>
 #include <AkonadiCore/item.h>
-#include <AkonadiCore/monitor.h>
 #include <AkonadiCore/session.h>
 #include <KMime/Message>
 #include <KService>

@@ -9,7 +9,7 @@
 
 #include "messagecomposer_export.h"
 
-#include <item.h>
+#include <Akonadi/Item>
 #include <kmime/kmime_headers.h>
 #include <kmime/kmime_message.h>
 

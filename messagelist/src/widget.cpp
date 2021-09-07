@@ -6,8 +6,8 @@
 
 #include "widget.h"
 
-#include <collection.h>
-#include <item.h>
+#include <Akonadi/Collection>
+#include <Akonadi/Item>
 #include <itemcopyjob.h>
 #include <itemmovejob.h>
 
@@ -35,11 +35,11 @@
 
 #include "core/groupheaderitem.h"
 
-#include <Monitor>
+#include <Akonadi/Monitor>
+#include <Akonadi/TagFetchScope>
 #include <Tag>
 #include <TagAttribute>
 #include <TagFetchJob>
-#include <TagFetchScope>
 
 namespace MessageList
 {

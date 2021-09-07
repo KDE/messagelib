@@ -8,12 +8,12 @@
 #include "searchcollectionindexingwarning.h"
 #include "messagelist_debug.h"
 
-#include <AkonadiCore/cachepolicy.h>
-#include <AkonadiCore/collectionfetchjob.h>
-#include <AkonadiCore/collectionfetchscope.h>
-#include <AkonadiCore/collectionstatistics.h>
-#include <AkonadiCore/entityhiddenattribute.h>
-#include <AkonadiCore/persistentsearchattribute.h>
+#include <Akonadi/CachePolicy>
+#include <Akonadi/CollectionFetchJob>
+#include <Akonadi/CollectionFetchScope>
+#include <Akonadi/CollectionStatistics>
+#include <Akonadi/EntityHiddenAttribute>
+#include <Akonadi/PersistentSearchAttribute>
 
 #include <PimCommon/PimUtil>
 

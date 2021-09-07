@@ -12,8 +12,8 @@
 #include <messagelist/enums.h>
 #include <messagelist/view.h>
 
-#include <AkonadiCore/Item>
-#include <collection.h>
+#include <Akonadi/Collection>
+#include <Akonadi/Item>
 #include <kmime/kmime_message.h>
 #include <messagelist_export.h>
 

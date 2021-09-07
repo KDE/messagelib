@@ -10,7 +10,7 @@
 #include <MessageList/View>
 #include <MessageList/WidgetBase>
 
-#include <AkonadiCore/Item>
+#include <Akonadi/Item>
 
 #include <kmime/kmime_message.h>
 

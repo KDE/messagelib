@@ -8,10 +8,10 @@
 
 #include "distributionlistdialog.h"
 
+#include <Akonadi/CollectionDialog>
 #include <Akonadi/Contact/ContactGroupSearchJob>
 #include <Akonadi/Contact/ContactSearchJob>
-#include <AkonadiCore/itemcreatejob.h>
-#include <AkonadiWidgets/collectiondialog.h>
+#include <Akonadi/ItemCreateJob>
 #include <KEmailAddress>
 
 #include "messagecomposer_debug.h"
