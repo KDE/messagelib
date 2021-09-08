@@ -12,7 +12,7 @@
 #include "setupenv.h"
 
 #include <Akonadi/Control>
-#include <qtest_akonadi.h>
+#include <akonadi/qtest_akonadi.h>
 
 #include <QDebug>
 #include <QStandardPaths>

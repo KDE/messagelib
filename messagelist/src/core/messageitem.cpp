@@ -17,10 +17,10 @@
 #include <KLocalizedString>
 #include <QIcon>
 #include <QPointer>
-#include <entityannotationsattribute.h>
-#include <tagattribute.h>
-#include <tagfetchjob.h>
-#include <tagfetchscope.h>
+#include <akonadi/entityannotationsattribute.h>
+#include <akonadi/tagattribute.h>
+#include <akonadi/tagfetchjob.h>
+#include <akonadi/tagfetchscope.h>
 using namespace MessageList::Core;
 
 Q_GLOBAL_STATIC(TagCache, s_tagCache)

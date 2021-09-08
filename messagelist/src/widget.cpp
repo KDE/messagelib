@@ -36,10 +36,10 @@
 #include "core/groupheaderitem.h"
 
 #include <Akonadi/Monitor>
+#include <Akonadi/TagFetchJob>
 #include <Akonadi/TagFetchScope>
 #include <Tag>
 #include <TagAttribute>
-#include <TagFetchJob>
 
 namespace MessageList
 {

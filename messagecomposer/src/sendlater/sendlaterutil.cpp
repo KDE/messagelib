@@ -10,7 +10,7 @@
 
 #include <Akonadi/ServerManager>
 
-#include <servermanager.h>
+#include <Akonadi/ServerManager>
 
 using namespace MessageComposer;
 

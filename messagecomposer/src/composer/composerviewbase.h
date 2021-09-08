@@ -10,8 +10,8 @@
 #include "MessageComposer/Recipient"
 #include "messagecomposer/messagesender.h"
 #include "messagecomposer_export.h"
+#include <Akonadi/Collection>
 #include <Akonadi/Item>
-#include <AkonadiCore/collection.h>
 #include <KMime/Message>
 
 #include <Libkleo/Enum>

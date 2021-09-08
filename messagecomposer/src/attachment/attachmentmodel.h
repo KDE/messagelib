@@ -13,7 +13,7 @@
 
 #include <QUrl>
 
-#include <AkonadiCore/item.h>
+#include <Akonadi/Item>
 #include <MessageCore/AttachmentPart>
 
 namespace MessageComposer

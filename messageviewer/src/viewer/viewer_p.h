@@ -16,9 +16,9 @@
 #include <PimCommon/ShareServiceUrlManager>
 #include <WebEngineViewer/CheckPhishingUrlUtil>
 
+#include <Akonadi/Item>
 #include <Akonadi/Monitor>
-#include <AkonadiCore/item.h>
-#include <AkonadiCore/session.h>
+#include <Akonadi/Session>
 #include <KMime/Message>
 #include <KService>
 #include <QPointer>

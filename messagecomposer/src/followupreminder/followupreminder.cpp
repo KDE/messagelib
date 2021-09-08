@@ -8,7 +8,6 @@
 #include "followupreminderinterface.h"
 
 #include <Akonadi/ServerManager>
-#include <servermanager.h>
 
 using namespace MessageComposer;
 

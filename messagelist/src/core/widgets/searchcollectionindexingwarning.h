@@ -8,7 +8,7 @@
 #pragma once
 
 #include "messagelist_private_export.h"
-#include <AkonadiCore/Collection>
+#include <Akonadi/Collection>
 #include <KMessageWidget>
 class KJob;
 

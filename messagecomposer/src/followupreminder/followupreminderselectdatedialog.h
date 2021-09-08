@@ -8,7 +8,7 @@
 
 #include "messagecomposer_export.h"
 
-#include <AkonadiCore/Collection>
+#include <Akonadi/Collection>
 
 #include <QDialog>
 #include <QPushButton>

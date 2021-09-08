@@ -10,13 +10,13 @@
 #include <MessageCore/NodeHelper>
 #include <MessageCore/StringUtil>
 
+#include <Akonadi/CollectionStatistics>
+#include <Akonadi/EntityTreeModel>
+#include <Akonadi/ItemModifyJob>
 #include <Akonadi/KMime/MessageFolderAttribute>
-#include <attributefactory.h>
-#include <collectionstatistics.h>
-#include <entitymimetypefiltermodel.h>
-#include <entitytreemodel.h>
-#include <itemmodifyjob.h>
-#include <selectionproxymodel.h>
+#include <akonadi/attributefactory.h>
+#include <akonadi/entitymimetypefiltermodel.h>
+#include <akonadi/selectionproxymodel.h>
 
 #include "core/messageitem.h"
 #include "messagelist_debug.h"

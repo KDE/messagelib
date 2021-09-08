@@ -79,11 +79,11 @@
 #include <PimCommon/BroadcastStatus>
 
 #include <Akonadi/AttributeFactory>
+#include <Akonadi/Collection>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/KMime/MessageParts>
 #include <Akonadi/KMime/MessageStatus>
-#include <AkonadiCore/collection.h>
 
 #include <MessageCore/AutocryptUtils>
 #include <KIdentityManagement/Identity>

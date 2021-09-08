@@ -13,7 +13,7 @@
 #include "settings/messagecomposersettings.h"
 #include <MessageComposer/Util>
 
-#include <AkonadiCore/Item>
+#include <Akonadi/Item>
 #include <KCursorSaver>
 
 #include <KIdentityManagement/Identity>
