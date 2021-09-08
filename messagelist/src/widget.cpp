@@ -8,8 +8,8 @@
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
+#include <Akonadi/ItemMoveJob>
 #include <itemcopyjob.h>
-#include <itemmovejob.h>
 
 #include "core/messageitem.h"
 #include "core/view.h"
@@ -36,10 +36,10 @@
 #include "core/groupheaderitem.h"
 
 #include <Akonadi/Monitor>
+#include <Akonadi/Tag>
+#include <Akonadi/TagAttribute>
 #include <Akonadi/TagFetchJob>
 #include <Akonadi/TagFetchScope>
-#include <Tag>
-#include <TagAttribute>
 
 namespace MessageList
 {
