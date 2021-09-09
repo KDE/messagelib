@@ -26,6 +26,7 @@ void FilterNameWidgetTest::shouldHaveDefaultValues()
     auto mName = w.findChild<QLineEdit *>(QStringLiteral("mName"));
     QVERIFY(mName);
     QVERIFY(mName->text().isEmpty());
+    QVERIFY(mName->isClearButtonEnabled());
 
     auto mIconButton = w.findChild<KIconButton *>(QStringLiteral("mIconButton"));
     QVERIFY(mIconButton);
