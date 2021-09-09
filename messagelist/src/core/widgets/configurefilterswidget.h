@@ -42,6 +42,7 @@ private:
     void updateFilterInfo(const QString &identifier, const QString &newName, const QString &newIconName = {});
     void slotCustomContextMenuRequested(const QPoint &pos);
     void removeFilterInfo(const QString &identifier);
+    void slotConfigureFilter(QListWidgetItem *item);
     void init();
     QListWidget *const mListFiltersWidget;
 };

@@ -24,6 +24,7 @@ FilterNameWidget::FilterNameWidget(QWidget *parent)
     mainLayout->setContentsMargins({});
 
     mName->setObjectName(QStringLiteral("mName"));
+    mName->setClearButtonEnabled(true);
     mIconButton->setObjectName(QStringLiteral("mIconButton"));
     mIconButton->setFixedSize(32, 32);
     new KPIM::LineEditCatchReturnKey(mName, this);

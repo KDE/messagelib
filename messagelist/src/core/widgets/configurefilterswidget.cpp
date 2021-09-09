@@ -24,6 +24,7 @@ ConfigureFiltersWidget::ConfigureFiltersWidget(QWidget *parent)
     mainLayout->addWidget(mListFiltersWidget);
     mListFiltersWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(mListFiltersWidget, &QListWidget::customContextMenuRequested, this, &ConfigureFiltersWidget::slotCustomContextMenuRequested);
+    connect(mListFiltersWidget, &QListWidget::itemDoubleClicked, this, &ConfigureFiltersWidget::slotConfigureFilter);
     init();
 }
 
@@ -44,31 +45,40 @@ void ConfigureFiltersWidget::init()
     }
 }
 
+void ConfigureFiltersWidget::slotConfigureFilter(QListWidgetItem *widgetItem)
+{
+    if (widgetItem) {
+        auto item = static_cast<FilterListWidgetItem *>(widgetItem);
+        const QString identifier = item->identifier();
+        QPointer<FilterNameDialog> dlg = new FilterNameDialog(this);
+        dlg->setFilterName(item->text());
+        dlg->setIconName(item->iconName());
+        if (dlg->exec()) {
+            QString newName = dlg->filterName();
+            const QString newIconName = dlg->iconName();
+            newName = newName.trimmed();
+            if (!newName.isEmpty() && ((newName != item->text()) || (newIconName != item->iconName()))) {
+                updateFilterInfo(identifier, newName, newIconName);
+                item->setText(newName);
+                item->setIconName(newIconName);
+                item->setIcon(QIcon::fromTheme(newIconName));
+            }
+        }
+        delete dlg;
+    }
+}
+
 void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
 {
     auto item = static_cast<FilterListWidgetItem *>(mListFiltersWidget->itemAt(pos));
     if (item) {
         QMenu menu(this);
-        const QString identifier = item->identifier();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Configure..."), this, [this, identifier, item]() {
-            QPointer<FilterNameDialog> dlg = new FilterNameDialog(this);
-            dlg->setFilterName(item->text());
-            dlg->setIconName(item->iconName());
-            if (dlg->exec()) {
-                QString newName = dlg->filterName();
-                const QString newIconName = dlg->iconName();
-                newName = newName.trimmed();
-                if (!newName.isEmpty() && ((newName != item->text()) || (newIconName != item->iconName()))) {
-                    updateFilterInfo(identifier, newName, newIconName);
-                    item->setText(newName);
-                    item->setIconName(newIconName);
-                    item->setIcon(QIcon::fromTheme(newIconName));
-                }
-            }
-            delete dlg;
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Configure..."), this, [this, item]() {
+            slotConfigureFilter(item);
         });
         menu.addSeparator();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this, [this, identifier, item]() {
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this, [this, item]() {
+            const QString identifier = item->identifier();
             if (KMessageBox::questionYesNo(this, i18n("Do you want to delete this filter?"), i18n("Remove Filter")) == KMessageBox::Yes) {
                 removeFilterInfo(identifier);
                 delete item;
