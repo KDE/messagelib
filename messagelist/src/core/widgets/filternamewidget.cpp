@@ -44,6 +44,16 @@ FilterNameWidget::~FilterNameWidget()
 {
 }
 
+void FilterNameWidget::setFilterName(const QString &str)
+{
+    mName->setText(str);
+}
+
+void FilterNameWidget::setIconName(const QString &icon)
+{
+    mIconButton->setIcon(QIcon::fromTheme(icon));
+}
+
 QString FilterNameWidget::filterName() const
 {
     return mName->text();

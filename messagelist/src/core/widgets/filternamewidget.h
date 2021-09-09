@@ -21,6 +21,9 @@ public:
     explicit FilterNameWidget(QWidget *parent = nullptr);
     ~FilterNameWidget() override;
 
+    void setFilterName(const QString &str);
+    void setIconName(const QString &icon);
+
     Q_REQUIRED_RESULT QString filterName() const;
 
     void setExistingFilterNames(const QStringList &lst);

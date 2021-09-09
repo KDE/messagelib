@@ -35,6 +35,11 @@ FilterNameDialog::~FilterNameDialog()
 {
 }
 
+void FilterNameDialog::setFilterName(const QString &str)
+{
+    mFilterNameWidget->setFilterName(str);
+}
+
 QString FilterNameDialog::filterName() const
 {
     return mFilterNameWidget->filterName();
@@ -48,4 +53,9 @@ QString FilterNameDialog::iconName() const
 void FilterNameDialog::setExistingFilterNames(const QStringList &lst)
 {
     mFilterNameWidget->setExistingFilterNames(lst);
+}
+
+void FilterNameDialog::setIconName(const QString &icon)
+{
+    mFilterNameWidget->setIconName(icon);
 }

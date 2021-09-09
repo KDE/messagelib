@@ -6,10 +6,11 @@
 
 #include "configurefilterswidget.h"
 #include "core/filtersavedmanager.h"
+#include "filternamedialog.h"
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <QInputDialog>
 #include <QMenu>
+#include <QPointer>
 #include <QVBoxLayout>
 using namespace MessageList::Core;
 ConfigureFiltersWidget::ConfigureFiltersWidget(QWidget *parent)
@@ -37,6 +38,7 @@ void ConfigureFiltersWidget::init()
         auto item = new FilterListWidgetItem(mListFiltersWidget);
         item->setText(filter.filterName);
         item->setIdentifier(filter.identifier);
+        item->setIconName(filter.iconName);
         item->setIcon(QIcon::fromTheme(filter.iconName));
         mListFiltersWidget->addItem(item);
     }
@@ -48,16 +50,22 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
     if (item) {
         QMenu menu(this);
         const QString identifier = item->identifier();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Rename..."), this, [this, identifier, item]() {
-            bool ok = false;
-            QString newName = QInputDialog::getText(this, i18n("Rename Filter"), i18n("name"), QLineEdit::Normal, item->text(), &ok);
-            if (ok) {
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Configure..."), this, [this, identifier, item]() {
+            QPointer<FilterNameDialog> dlg = new FilterNameDialog(this);
+            dlg->setFilterName(item->text());
+            dlg->setIconName(item->iconName());
+            if (dlg->exec()) {
+                QString newName = dlg->filterName();
+                const QString newIconName = dlg->iconName();
                 newName = newName.trimmed();
-                if (!newName.isEmpty() && (newName != item->text())) {
-                    updateFilterInfo(identifier, newName);
+                if (!newName.isEmpty() && ((newName != item->text()) || (newIconName != item->iconName()))) {
+                    updateFilterInfo(identifier, newName, newIconName);
                     item->setText(newName);
+                    item->setIconName(newIconName);
+                    item->setIcon(QIcon::fromTheme(newIconName));
                 }
             }
+            delete dlg;
         });
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this, [this, identifier, item]() {
@@ -77,10 +85,10 @@ void ConfigureFiltersWidget::removeFilterInfo(const QString &identifier)
     }
 }
 
-void ConfigureFiltersWidget::updateFilterInfo(const QString &identifier, const QString &newName)
+void ConfigureFiltersWidget::updateFilterInfo(const QString &identifier, const QString &newName, const QString &newIconName)
 {
     if (!identifier.isEmpty()) {
-        FilterSavedManager::self()->updateFilter(identifier, newName);
+        FilterSavedManager::self()->updateFilter(identifier, newName, newIconName);
     }
 }
 
@@ -101,4 +109,14 @@ const QString &FilterListWidgetItem::identifier() const
 void FilterListWidgetItem::setIdentifier(const QString &newIdentifier)
 {
     mIdentifier = newIdentifier;
+}
+
+const QString &FilterListWidgetItem::iconName() const
+{
+    return mIconName;
+}
+
+void FilterListWidgetItem::setIconName(const QString &newIconName)
+{
+    mIconName = newIconName;
 }

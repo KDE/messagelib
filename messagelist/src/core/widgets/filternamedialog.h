@@ -21,10 +21,12 @@ public:
     explicit FilterNameDialog(QWidget *parent = nullptr);
     ~FilterNameDialog() override;
 
+    void setFilterName(const QString &str);
     Q_REQUIRED_RESULT QString filterName() const;
 
     void setExistingFilterNames(const QStringList &lst);
 
+    void setIconName(const QString &icon);
     Q_REQUIRED_RESULT QString iconName() const;
 
 private:

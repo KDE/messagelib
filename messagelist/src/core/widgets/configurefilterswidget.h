@@ -20,11 +20,15 @@ public:
     explicit FilterListWidgetItem(QListWidget *parent = nullptr);
     ~FilterListWidgetItem() override;
 
-    const QString &identifier() const;
+    Q_REQUIRED_RESULT const QString &identifier() const;
     void setIdentifier(const QString &newIdentifier);
+
+    Q_REQUIRED_RESULT const QString &iconName() const;
+    void setIconName(const QString &newIconName);
 
 private:
     QString mIdentifier;
+    QString mIconName;
 };
 
 class MESSAGELIST_TESTS_EXPORT ConfigureFiltersWidget : public QWidget
@@ -35,7 +39,7 @@ public:
     ~ConfigureFiltersWidget() override;
 
 private:
-    void updateFilterInfo(const QString &identifier, const QString &newName);
+    void updateFilterInfo(const QString &identifier, const QString &newName, const QString &newIconName = {});
     void slotCustomContextMenuRequested(const QPoint &pos);
     void removeFilterInfo(const QString &identifier);
     void init();
