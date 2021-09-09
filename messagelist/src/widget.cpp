@@ -8,8 +8,8 @@
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
+#include <Akonadi/ItemCopyJob>
 #include <Akonadi/ItemMoveJob>
-#include <itemcopyjob.h>
 
 #include "core/messageitem.h"
 #include "core/view.h"
