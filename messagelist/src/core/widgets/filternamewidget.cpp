@@ -52,7 +52,7 @@ void FilterNameWidget::setFilterName(const QString &str)
 
 void FilterNameWidget::setIconName(const QString &icon)
 {
-    mIconButton->setIcon(QIcon::fromTheme(icon));
+    mIconButton->setIcon(icon);
 }
 
 QString FilterNameWidget::filterName() const
