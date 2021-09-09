@@ -119,7 +119,7 @@ void FilterSavedManager::removeFilter(const QString &identifier)
     lst.clear();
 }
 
-void FilterSavedManager::updateFilter(const QString &identifier, const QString &newName)
+void FilterSavedManager::updateFilter(const QString &identifier, const QString &newName, const QString &iconName)
 {
     KConfigGroup grp(KSharedConfig::openConfig(), "General");
     const int numberFilter = grp.readEntry("NumberFilter").toInt();
@@ -127,6 +127,9 @@ void FilterSavedManager::updateFilter(const QString &identifier, const QString &
         KConfigGroup newGroup(KSharedConfig::openConfig(), QStringLiteral("Filter_%1").arg(i));
         if (newGroup.readEntry("identifier") == identifier) {
             newGroup.writeEntry("name", newName);
+            if (!iconName.isEmpty()) {
+                newGroup.writeEntry("iconName", iconName);
+            }
             newGroup.sync();
             break;
         }
