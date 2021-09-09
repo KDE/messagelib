@@ -19,8 +19,6 @@ FilterNameDialog::FilterNameDialog(QWidget *parent)
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
-    // TODO allow to change icon ?
-
     mFilterNameWidget->setObjectName(QStringLiteral("mFilterNameWidget"));
     mainLayout->addWidget(mFilterNameWidget);
 
