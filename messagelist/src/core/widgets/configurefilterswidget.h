@@ -35,7 +35,7 @@ public:
     ~ConfigureFiltersWidget() override;
 
 private:
-    void renameFilterInfo(const QString &identifier, const QString &newName);
+    void updateFilterInfo(const QString &identifier, const QString &newName);
     void slotCustomContextMenuRequested(const QPoint &pos);
     void removeFilterInfo(const QString &identifier);
     void init();

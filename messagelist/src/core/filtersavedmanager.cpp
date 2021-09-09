@@ -119,7 +119,7 @@ void FilterSavedManager::removeFilter(const QString &identifier)
     lst.clear();
 }
 
-void FilterSavedManager::renameFilter(const QString &identifier, const QString &newName)
+void FilterSavedManager::updateFilter(const QString &identifier, const QString &newName)
 {
     KConfigGroup grp(KSharedConfig::openConfig(), "General");
     const int numberFilter = grp.readEntry("NumberFilter").toInt();

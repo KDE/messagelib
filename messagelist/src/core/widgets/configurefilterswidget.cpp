@@ -54,7 +54,7 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
             if (ok) {
                 newName = newName.trimmed();
                 if (!newName.isEmpty() && (newName != item->text())) {
-                    renameFilterInfo(identifier, newName);
+                    updateFilterInfo(identifier, newName);
                     item->setText(newName);
                 }
             }
@@ -77,10 +77,10 @@ void ConfigureFiltersWidget::removeFilterInfo(const QString &identifier)
     }
 }
 
-void ConfigureFiltersWidget::renameFilterInfo(const QString &identifier, const QString &newName)
+void ConfigureFiltersWidget::updateFilterInfo(const QString &identifier, const QString &newName)
 {
     if (!identifier.isEmpty()) {
-        FilterSavedManager::self()->renameFilter(identifier, newName);
+        FilterSavedManager::self()->updateFilter(identifier, newName);
     }
 }
 
