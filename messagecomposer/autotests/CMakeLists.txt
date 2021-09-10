@@ -50,7 +50,10 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::Contacts
     )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
-    set_tests_properties(messagecomposer-${_name} PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent
+    set_tests_properties(messagecomposer-${_name} PROPERTIES
+        RUN_SERIAL TRUE # can't be parallelized due to gpg-agent
+        ENVIRONMENT "LANG=C"
+    )
 endmacro()
 
 
