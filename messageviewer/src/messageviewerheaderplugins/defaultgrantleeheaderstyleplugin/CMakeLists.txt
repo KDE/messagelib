@@ -1,16 +1,15 @@
-set(messageviewer_defaultgrantleeheaderstyleplugin_SRCS
+kcoreaddons_add_plugin(messageviewer_defaultgrantleeheaderstyleplugin
+    INSTALL_NAMESPACE messageviewer/headerstyle
+)
+
+target_sources(messageviewer_defaultgrantleeheaderstyleplugin PRIVATE
    defaultgrantleeheaderstyleplugin.cpp
    defaultgrantleeheaderstyleinterface.cpp
    defaultgrantleeheaderstrategy.cpp
 )
 
-kconfig_add_kcfg_files(messageviewer_defaultgrantleeheaderstyleplugin_SRCS
+kconfig_add_kcfg_files(messageviewer_defaultgrantleeheaderstyleplugin
   settings/globalsettings_base.kcfgc
-)
-
-kcoreaddons_add_plugin(messageviewer_defaultgrantleeheaderstyleplugin
-    SOURCES ${messageviewer_defaultgrantleeheaderstyleplugin_SRCS}
-    INSTALL_NAMESPACE messageviewer/headerstyle
 )
 
 target_link_libraries(messageviewer_defaultgrantleeheaderstyleplugin
