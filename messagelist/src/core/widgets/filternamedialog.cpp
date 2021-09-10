@@ -16,6 +16,7 @@ FilterNameDialog::FilterNameDialog(QWidget *parent)
     : QDialog(parent)
     , mFilterNameWidget(new FilterNameWidget(this))
 {
+    setWindowTitle(i18nc("@title:window", "Edit Filter"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
