@@ -25,7 +25,6 @@ using namespace MessageComposer;
 
 void Test::setupEnv()
 {
-    qputenv("LC_ALL", "C");
     qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QLatin1String("/.qttest")).constData());
     QStandardPaths::setTestModeEnabled(true);
 }
