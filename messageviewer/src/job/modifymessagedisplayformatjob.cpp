@@ -8,7 +8,7 @@
 #include "messageviewer_debug.h"
 
 #include <Akonadi/ItemModifyJob>
-#include <akonadi/session.h>
+#include <Akonadi/Session>
 
 #include "viewer/messagedisplayformatattribute.h"
 

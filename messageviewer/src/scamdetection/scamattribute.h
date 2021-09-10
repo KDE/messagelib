@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include <akonadi/attribute.h>
+#include <Akonadi/Attribute>
 namespace MessageViewer
 {
 class ScamAttributePrivate;

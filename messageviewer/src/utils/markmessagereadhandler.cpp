@@ -11,7 +11,7 @@
 
 #include <Akonadi/ItemModifyJob>
 #include <Akonadi/KMime/MessageFlags>
-#include <akonadi/session.h>
+#include <Akonadi/Session>
 
 #include <QTimer>
 

@@ -6,7 +6,7 @@
 #pragma once
 
 #include "messageviewer_private_export.h"
-#include <akonadi/attribute.h>
+#include <Akonadi/Attribute>
 namespace MessageViewer
 {
 class DKIMResultAttributePrivate;

@@ -12,15 +12,15 @@
 #include <PimCommonAkonadi/AnnotationDialog>
 
 #include "messagelist_debug.h"
+#include <Akonadi/EntityAnnotationsAttribute>
 #include <Akonadi/Item>
+#include <Akonadi/TagAttribute>
+#include <Akonadi/TagFetchJob>
+#include <Akonadi/TagFetchScope>
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <QIcon>
 #include <QPointer>
-#include <akonadi/entityannotationsattribute.h>
-#include <akonadi/tagattribute.h>
-#include <akonadi/tagfetchjob.h>
-#include <akonadi/tagfetchscope.h>
 using namespace MessageList::Core;
 
 Q_GLOBAL_STATIC(TagCache, s_tagCache)
