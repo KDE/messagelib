@@ -42,7 +42,7 @@ void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitesp
 {
     int currentSearchPosition = 0;
 
-    forever {
+    for (;;) {
         // Find the text
         const QString text = richTextComposer->document()->toPlainText();
         const int currentMatch = regExp.indexIn(text, currentSearchPosition);
@@ -108,7 +108,7 @@ QVector<QPair<int, int>> RichTextComposerSignatures::RichTextComposerSignaturesP
         QString sigText = sig.toPlainText();
 
         int currentSearchPosition = 0;
-        forever {
+        for (;;) {
             // Find the next occurrence of the signature text
             const QString text = richTextComposer->document()->toPlainText();
             const int currentMatch = text.indexOf(sigText, currentSearchPosition);
@@ -136,7 +136,7 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
     QTextCursor cursor(d->richTextComposer->document());
     cursor.beginEditBlock();
     int currentSearchPosition = 0;
-    forever {
+    for (;;) {
         // Find the next occurrence of the signature text
         const QString text = d->richTextComposer->document()->toPlainText();
         const int currentMatch = text.indexOf(oldSigText, currentSearchPosition);
