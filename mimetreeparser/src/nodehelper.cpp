@@ -100,7 +100,8 @@ void NodeHelper::setNodeUnprocessed(KMime::Content *node, bool recurse)
     // avoid double addition of extra nodes, eg. encrypted attachments
     const QMap<KMime::Content *, QVector<KMime::Content *>>::iterator it = mExtraContents.find(node);
     if (it != mExtraContents.end()) {
-        Q_FOREACH (KMime::Content *c, it.value()) {
+        const auto contents = it.value();
+        for (KMime::Content *c : contents) {
             KMime::Content *p = c->parent();
             if (p) {
                 p->removeContent(c);
@@ -149,7 +150,8 @@ void NodeHelper::clear()
     QMap<KMime::Content *, QVector<KMime::Content *>>::ConstIterator end(mExtraContents.constEnd());
 
     for (QMap<KMime::Content *, QVector<KMime::Content *>>::ConstIterator it = mExtraContents.constBegin(); it != end; ++it) {
-        Q_FOREACH (KMime::Content *c, it.value()) {
+        const auto contents = it.value();
+        for (KMime::Content *c : contents) {
             KMime::Content *p = c->parent();
             if (p) {
                 p->removeContent(c);

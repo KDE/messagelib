@@ -522,7 +522,9 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
     }
     // Compose each message and prepare it for queueing, sending, or storing
 
-    foreach (MessageComposer::Composer *composer, m_composers) {
+    // working copy in case composers instantly emit result
+    const auto composers = m_composers;
+    for (MessageComposer::Composer *composer : composers) {
         fillGlobalPart(composer->globalPart());
         m_editor->fillComposerTextPart(composer->textPart());
         fillInfoPart(composer->infoPart(), UseExpandedRecipients);

@@ -313,8 +313,8 @@ void RecipientsEditor::slotCalculateTotal()
         return;
     }
     int empty = 0;
-    MultiplyingLine *line = nullptr;
-    foreach (line, lines()) {
+    const auto currentLines = lines();
+    for (auto line : currentLines) {
         auto rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if (rec->isEmpty()) {

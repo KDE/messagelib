@@ -722,7 +722,7 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
             }
         }
 
-        foreach (Widget *other, widgets) {
+        for (Widget *other : std::as_const(widgets)) {
             other->saveCurrentSelection();
             delete other;
         }

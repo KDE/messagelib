@@ -713,7 +713,7 @@ void TagCache::retrieveTags(const Akonadi::Tag::List &tags, MessageItemPrivate *
 void TagCache::cancelRequest(MessageItemPrivate *m)
 {
     const QList<KJob *> keys = mRequests.keys(m);
-    Q_FOREACH (KJob *job, keys) { // Don't use for(...:...)
+    for (KJob *job : keys) {
         mRequests.remove(job);
     }
 }
