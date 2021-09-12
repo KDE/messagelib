@@ -32,7 +32,6 @@ macro( add_messagecore_cryptotest _source )
         Qt::Widgets
         )
     add_gpg_crypto_test(${_name} messagecore-${_name})
-    set_tests_properties(messagecore-${_name} PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent
 endmacro()
 
 # Attachment tests.
