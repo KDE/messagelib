@@ -54,6 +54,9 @@ macro (ADD_GPG_CRYPTO_TEST _target _testname)
       add_test(NAME ${_testname} COMMAND ${_executable}.bat)
 
    endif (UNIX)
+
+   # can't be parallelized due to gpg-agent
+   set_tests_properties(${_testname} PROPERTIES RUN_SERIAL TRUE)
 endmacro (ADD_GPG_CRYPTO_TEST)
 
 macro (ADD_GPG_CRYPTO_AKONADI_TEST _target _testname)
