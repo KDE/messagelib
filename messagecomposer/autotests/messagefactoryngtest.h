@@ -22,6 +22,9 @@ public:
     explicit MessageFactoryTest(QObject *parent = nullptr);
     ~MessageFactoryTest() override;
 
+public:
+    static void initMain();
+
 private Q_SLOTS:
     void initTestCase();
     void init();
