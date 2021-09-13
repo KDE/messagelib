@@ -10,14 +10,11 @@
 
 #include <QStandardPaths>
 
-#include <QDir>
-#include <QFile>
 #include <QIcon>
 #include <QLocale>
 
 void MessageViewer::Test::setupEnv()
 {
-    qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QLatin1String("/.qttest")).constData());
     qputenv("TZ", "UTC");
     QStandardPaths::setTestModeEnabled(true);
     QIcon::setThemeName(QStringLiteral("breeze"));

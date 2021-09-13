@@ -21,7 +21,6 @@ namespace Test
 /**
  * setup a environment variables for tests:
  * * set LC_ALL to C
- * * set KDEHOME
  */
 void setupEnv();
 

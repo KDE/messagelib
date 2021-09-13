@@ -44,7 +44,6 @@ QTEST_MAIN(AutocryptRecipientTest)
 void AutocryptRecipientTest::initTestCase()
 {
     qputenv("LC_ALL", "C");
-    qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QLatin1String("/.qttest")).constData());
     QStandardPaths::setTestModeEnabled(true);
 }
 

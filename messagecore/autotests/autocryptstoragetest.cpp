@@ -20,7 +20,6 @@ void AutocryptStorageTest::initTestCase()
 {
     qputenv("LC_ALL", "C");
     QStandardPaths::setTestModeEnabled(true);
-    qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QLatin1String("/.qttest")).constData());
     const QDir genericDataLocation(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     baseDir = QDir(genericDataLocation.filePath(QStringLiteral("autocrypt")));
 }
