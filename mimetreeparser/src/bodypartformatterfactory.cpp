@@ -11,9 +11,7 @@
 #include "bodypartformatterfactory.h"
 #include "bodypartformatterfactory_p.h"
 #include "interfaces/bodypartformatter.h"
-#include "kcoreaddons_version.h"
 #include "mimetreeparser_debug.h"
-#include <KPluginLoader>
 
 #include <KPluginMetaData>
 #include <QJsonArray>
@@ -142,34 +140,6 @@ QVector<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formatte
 
 void BodyPartFormatterFactory::loadPlugins()
 {
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    KPluginLoader::forEachPlugin(QStringLiteral("messageviewer/bodypartformatter"), [this](const QString &path) {
-        QPluginLoader loader(path);
-        const auto formatterData = loader.metaData().value(QLatin1String("MetaData")).toObject().value(QLatin1String("formatter")).toArray();
-        if (formatterData.isEmpty()) {
-            return;
-        }
-
-        auto plugin = qobject_cast<MimeTreeParser::Interface::BodyPartFormatterPlugin *>(loader.instance());
-        if (!plugin) {
-            return;
-        }
-
-        const MimeTreeParser::Interface::BodyPartFormatter *bfp = nullptr;
-        for (int i = 0; (bfp = plugin->bodyPartFormatter(i)) && i < formatterData.size(); ++i) {
-            const auto metaData = formatterData.at(i).toObject();
-            const auto mimetype = metaData.value(QLatin1String("mimetype")).toString();
-            if (mimetype.isEmpty()) {
-                qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterFactory: plugin" << path << "returned empty mimetype specification for index" << i;
-                break;
-            }
-            // priority should always be higher than the built-in ones, otherwise what's the point?
-            const auto priority = metaData.value(QLatin1String("priority")).toInt() + 100;
-            qCDebug(MIMETREEPARSER_LOG) << "plugin for " << mimetype << priority;
-            insert(mimetype, bfp, priority);
-        }
-    });
-#else
     const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("messageviewer/bodypartformatter"));
     for (const auto &md : plugins) {
         const auto formatterData = md.rawData().value(QLatin1String("formatter")).toArray();
@@ -196,5 +166,4 @@ void BodyPartFormatterFactory::loadPlugins()
             insert(mimetype, bfp, priority);
         }
     }
-#endif
 }

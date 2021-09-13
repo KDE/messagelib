@@ -5,11 +5,9 @@
 */
 
 #include "plugineditormanager.h"
-#include "kcoreaddons_version.h"
 #include "messagecomposer_debug.h"
 #include "plugineditor.h"
 #include <KPluginFactory>
-#include <KPluginLoader>
 #include <KPluginMetaData>
 #include <QFileInfo>
 #include <QSet>
@@ -65,11 +63,7 @@ private:
 
 void PluginEditorManagerPrivate::initializePlugins()
 {
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail/plugineditor"));
-#else
     const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kmail/plugineditor"));
-#endif
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
@@ -109,16 +103,6 @@ void PluginEditorManagerPrivate::initializePlugins()
 
 void PluginEditorManagerPrivate::loadPlugin(PluginEditorInfo *item)
 {
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    KPluginLoader pluginLoader(item->metaDataFileName);
-    if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<PluginEditor>(q, QVariantList() << item->metaDataFileNameBaseName);
-        item->plugin->setIsEnabled(item->isEnabled);
-        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
-        item->plugin->setOrder(item->order);
-        mPluginDataList.append(item->pluginData);
-    }
-#else
     if (auto plugin = KPluginFactory::instantiatePlugin<PluginEditor>(item->data, q, QVariantList() << item->metaDataFileName).plugin) {
         item->plugin = plugin;
         item->plugin->setIsEnabled(item->isEnabled);
@@ -126,7 +110,6 @@ void PluginEditorManagerPrivate::loadPlugin(PluginEditorInfo *item)
         item->plugin->setOrder(item->order);
         mPluginDataList.append(item->pluginData);
     }
-#endif
 }
 
 QVector<PluginEditor *> PluginEditorManagerPrivate::pluginsList() const

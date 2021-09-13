@@ -5,11 +5,9 @@
 */
 
 #include "plugineditorcheckbeforesendmanager.h"
-#include "kcoreaddons_version.h"
 #include "messagecomposer_debug.h"
 #include "plugineditorcheckbeforesend.h"
 #include <KPluginFactory>
-#include <KPluginLoader>
 #include <KPluginMetaData>
 #include <QFileInfo>
 #include <QSet>
@@ -79,11 +77,7 @@ QVector<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pl
 
 void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 {
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail/plugincheckbeforesend"));
-#else
     const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kmail/plugincheckbeforesend"));
-#endif
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
@@ -117,22 +111,12 @@ void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 
 void PluginEditorCheckBeforeSendManagerPrivate::loadPlugin(PluginEditorCheckBeforeSendInfo *item)
 {
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    KPluginLoader pluginLoader(item->metaDataFileName);
-    if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<PluginEditorCheckBeforeSend>(q, QVariantList() << item->metaDataFileNameBaseName);
-        item->plugin->setIsEnabled(item->isEnabled);
-        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
-        mPluginDataList.append(item->pluginData);
-    }
-#else
     if (auto plugin = KPluginFactory::instantiatePlugin<PluginEditorCheckBeforeSend>(item->data, q, QVariantList() << item->metaDataFileName).plugin) {
         item->plugin = plugin;
         item->plugin->setIsEnabled(item->isEnabled);
         item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
         mPluginDataList.append(item->pluginData);
     }
-#endif
 }
 
 QVector<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManagerPrivate::pluginsList() const

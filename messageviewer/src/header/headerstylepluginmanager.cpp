@@ -6,10 +6,8 @@
 
 #include "headerstylepluginmanager.h"
 #include "headerstyleplugin.h"
-#include "kcoreaddons_version.h"
 #include "messageviewer_debug.h"
 #include <KPluginFactory>
-#include <KPluginLoader>
 #include <KPluginMetaData>
 #include <QFileInfo>
 #include <QSet>
@@ -78,11 +76,7 @@ QString HeaderStylePluginManagerPrivate::configPrefixSettingKey() const
 
 void HeaderStylePluginManagerPrivate::initializePluginList()
 {
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("messageviewer/headerstyle"));
-#else
     const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("messageviewer/headerstyle"));
-#endif
 
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -144,22 +138,12 @@ QVector<MessageViewer::HeaderStylePlugin *> HeaderStylePluginManagerPrivate::plu
 
 void HeaderStylePluginManagerPrivate::loadPlugin(HeaderStylePluginInfo *item)
 {
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    KPluginLoader pluginLoader(item->metaDataFileName);
-    if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<MessageViewer::HeaderStylePlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
-        item->plugin->setIsEnabled(item->isEnabled);
-        item->pluginData.mHasConfigureDialog = false;
-        mPluginDataList.append(item->pluginData);
-    }
-#else
     if (auto plugin = KPluginFactory::instantiatePlugin<MessageViewer::HeaderStylePlugin>(item->data, q, QVariantList() << item->metaDataFileName).plugin) {
         item->plugin = plugin;
         item->plugin->setIsEnabled(item->isEnabled);
         item->pluginData.mHasConfigureDialog = false;
         mPluginDataList.append(item->pluginData);
     }
-#endif
 }
 
 MessageViewer::HeaderStylePlugin *HeaderStylePluginManagerPrivate::pluginFromIdentifier(const QString &id)

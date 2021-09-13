@@ -6,7 +6,6 @@
 */
 
 #include "messagepartrendererfactory.h"
-#include "kcoreaddons_version.h"
 #include "messagepartrendererbase.h"
 #include "messagepartrendererfactory_p.h"
 #include "messagepartrenderplugin.h"
@@ -17,7 +16,6 @@
 #include "plugins/messagepartrenderer.h"
 #include "plugins/textmessagepartrenderer.h"
 
-#include <KPluginLoader>
 
 #include <KPluginMetaData>
 #include <QJsonArray>
@@ -51,44 +49,6 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
     if (m_pluginSubdir.isEmpty()) {
         return;
     }
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    KPluginLoader::forEachPlugin(m_pluginSubdir, [this](const QString &path) {
-        QPluginLoader loader(path);
-        const auto pluginData = loader.metaData().value(QLatin1String("MetaData")).toObject().value(QLatin1String("renderer")).toArray();
-        if (pluginData.isEmpty()) {
-            qCWarning(MESSAGEVIEWER_LOG) << "Plugin" << path << "has no meta data.";
-            return;
-        }
-
-        auto plugin = qobject_cast<MessagePartRenderPlugin *>(loader.instance());
-        if (!plugin) {
-            qCWarning(MESSAGEVIEWER_LOG) << path << "is not a MessagePartRendererPlugin";
-            return;
-        }
-
-        MessagePartRendererBase *renderer = nullptr;
-        for (int i = 0; (renderer = plugin->renderer(i)) && i < pluginData.size(); ++i) {
-            const auto metaData = pluginData.at(i).toObject();
-            const auto type = metaData.value(QLatin1String("type")).toString().toUtf8();
-            if (type.isEmpty()) {
-                qCWarning(MESSAGEVIEWER_LOG) << path << "returned empty type specification for index" << i;
-                break;
-            }
-            const auto mimetype = metaData.value(QLatin1String("mimetype")).toString().toLower();
-            // priority should always be higher than the built-in ones, otherwise what's the point?
-            const auto priority = metaData.value(QLatin1String("priority")).toInt() + 100;
-            qCDebug(MESSAGEVIEWER_LOG) << "renderer plugin for " << type << mimetype << priority;
-            insert(type, renderer, mimetype, priority);
-        }
-
-        const Interface::BodyPartURLHandler *handler = nullptr;
-        for (int i = 0; (handler = plugin->urlHandler(i)); ++i) {
-            const auto metaData = pluginData.at(i).toObject();
-            const auto mimeType = metaData.value(QLatin1String("mimetype")).toString().toLower();
-            URLHandlerManager::instance()->registerHandler(handler, mimeType);
-        }
-    });
-#else
     const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(m_pluginSubdir);
     for (const auto &md : plugins) {
         const auto pluginData = md.rawData().value(QLatin1String("renderer")).toArray();
@@ -125,7 +85,6 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
             URLHandlerManager::instance()->registerHandler(handler, mimeType);
         }
     }
-#endif
 }
 
 void MessagePartRendererFactoryPrivate::initialize_builtin_renderers()

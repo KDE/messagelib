@@ -5,12 +5,10 @@
 */
 
 #include "networkurlinterceptorpluginmanager.h"
-#include "kcoreaddons_version.h"
 #include "networkpluginurlinterceptor.h"
 #include "webengineviewer_debug.h"
 
 #include <KPluginFactory>
-#include <KPluginLoader>
 #include <KPluginMetaData>
 #include <QFileInfo>
 #include <QSet>
@@ -81,11 +79,7 @@ QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pl
 
 void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("webengineviewer/urlinterceptor"));
-#else
     const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("webengineviewer/urlinterceptor"));
-#endif
 
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -133,15 +127,6 @@ QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPlu
 
 void NetworkUrlInterceptorPluginManagerPrivate::loadPlugin(MailNetworkUrlInterceptorPluginInfo *item)
 {
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    KPluginLoader pluginLoader(item->metaDataFileName);
-    if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<WebEngineViewer::NetworkPluginUrlInterceptor>(q, QVariantList() << item->metaDataFileNameBaseName);
-        item->plugin->setIsEnabled(item->isEnabled);
-        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
-        mPluginDataList.append(item->pluginData);
-    }
-#else
     if (auto plugin =
             KPluginFactory::instantiatePlugin<WebEngineViewer::NetworkPluginUrlInterceptor>(item->data, q, QVariantList() << item->metaDataFileName).plugin) {
         item->plugin = plugin;
@@ -149,7 +134,6 @@ void NetworkUrlInterceptorPluginManagerPrivate::loadPlugin(MailNetworkUrlInterce
         item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
         mPluginDataList.append(item->pluginData);
     }
-#endif
 }
 
 WebEngineViewer::NetworkPluginUrlInterceptor *NetworkUrlInterceptorPluginManagerPrivate::pluginFromIdentifier(const QString &id)
