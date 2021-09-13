@@ -57,7 +57,7 @@ MessageFactoryTest::~MessageFactoryTest()
 void MessageFactoryTest::initMain()
 {
 #ifndef Q_OS_WIN
-    qputenv("LC_ALL", "en_US.utf-8");
+    qputenv("LC_ALL", "en_US.UTF-8");
     qputenv("TZ", "UTC");
 #endif
 }

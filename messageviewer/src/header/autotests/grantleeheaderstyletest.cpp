@@ -84,7 +84,6 @@ KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 void GrantleeHeaderStyleTest::initTestCase()
 {
     QStandardPaths::setTestModeEnabled(true);
-    qputenv("LC_ALL", "C");
     expectedDataLocation = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
     expectedDataLocation += QStringLiteral("/messageviewer/defaultthemes");
     QDir targetDir(expectedDataLocation);

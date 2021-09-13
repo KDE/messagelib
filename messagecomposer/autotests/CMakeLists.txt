@@ -58,7 +58,7 @@ macro( add_messagecomposer_cryptotest _source )
     )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
     set_tests_properties(messagecomposer-${_name} PROPERTIES
-        ENVIRONMENT "LANG=C"
+        ENVIRONMENT "LC_ALL=en_US.UTF-8"
     )
 endmacro()
 

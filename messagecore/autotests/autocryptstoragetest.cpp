@@ -18,7 +18,7 @@ QTEST_MAIN(AutocryptStorageTest)
 
 void AutocryptStorageTest::initTestCase()
 {
-    qputenv("LC_ALL", "C");
+    qputenv("LC_ALL", "en_US.UTF-8");
     QStandardPaths::setTestModeEnabled(true);
     const QDir genericDataLocation(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     baseDir = QDir(genericDataLocation.filePath(QStringLiteral("autocrypt")));

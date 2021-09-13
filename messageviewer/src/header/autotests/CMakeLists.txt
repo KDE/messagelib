@@ -30,5 +30,5 @@ ecm_add_test(grantleeheaderformattertest.cpp grantleeheaderformattertest.h
 set_tests_properties(
     messageviewer-header-grantleeheaderstyletest
     messageviewer-header-grantleeheaderformattertest
-    PROPERTIES ENVIRONMENT "LC_ALL=C;TZ=UTC"
+    PROPERTIES ENVIRONMENT "LC_ALL=en_US.UTF-8;TZ=UTC"
 )

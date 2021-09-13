@@ -43,7 +43,7 @@ QTEST_MAIN(AutocryptRecipientTest)
 
 void AutocryptRecipientTest::initTestCase()
 {
-    qputenv("LC_ALL", "C");
+    qputenv("LC_ALL", "en_US.UTF-8");
     QStandardPaths::setTestModeEnabled(true);
 }
 
