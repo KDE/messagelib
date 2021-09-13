@@ -30,7 +30,6 @@
 #include "htmlwriter/webengineembedpart.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KContacts/VCardConverter>
-#include <kio_version.h>
 // KDE includes
 #include <KActionCollection>
 #include <KActionMenu>

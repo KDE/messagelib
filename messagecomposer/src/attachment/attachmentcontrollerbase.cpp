@@ -27,7 +27,6 @@
 #include <Akonadi/ItemFetchJob>
 #include <QIcon>
 #include <kio/jobuidelegate.h>
-#include <kio_version.h>
 
 #include <QMenu>
 #include <QPointer>
