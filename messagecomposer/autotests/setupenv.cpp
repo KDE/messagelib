@@ -15,7 +15,6 @@
 #include <gpgme++/importresult.h>
 #include <gpgme++/keylistresult.h>
 
-#include <QDir>
 #include <QFile>
 #include <QProcess>
 #include <QStandardPaths>
@@ -25,7 +24,6 @@ using namespace MessageComposer;
 
 void Test::setupEnv()
 {
-    qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QLatin1String("/.qttest")).constData());
     QStandardPaths::setTestModeEnabled(true);
 }
 
