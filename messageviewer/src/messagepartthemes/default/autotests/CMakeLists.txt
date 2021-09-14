@@ -18,6 +18,9 @@ macro(add_messageviewer_crypto_unittest _source)
         KF5::GrantleeTheme
     )
     add_gpg_crypto_test(${_name} messageviewer-messageparttheme-${_name})
+    set_tests_properties(messageviewer-messageparttheme-${_name} PROPERTIES
+        ENVIRONMENT "LC_ALL=en_US.UTF-8"
+    )
 endmacro ()
 
 add_messageviewer_crypto_unittest(objecttreeparsertest.cpp)
