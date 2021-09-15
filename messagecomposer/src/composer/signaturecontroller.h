@@ -13,7 +13,7 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <KIdentityManagement/kidentitymanagement/signature.h>
+#include <KIdentityManagement/Signature>
 #include <QObject>
 
 namespace KIdentityManagement

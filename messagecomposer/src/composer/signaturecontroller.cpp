@@ -15,9 +15,9 @@
 #include "composer-ng/richtextcomposersignatures.h"
 #include "settings/messagecomposersettings.h"
 
-#include <KIdentityManagement/kidentitymanagement/identity.h>
-#include <KIdentityManagement/kidentitymanagement/identitycombo.h>
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
+#include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityCombo>
+#include <KIdentityManagement/IdentityManager>
 
 using namespace MessageComposer;
 

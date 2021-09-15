@@ -54,8 +54,8 @@
 #include <Akonadi/KMime/SpecialMailCollections>
 
 #include <KEmailAddress>
-#include <KIdentityManagement/kidentitymanagement/identitycombo.h>
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
+#include <KIdentityManagement/IdentityCombo>
+#include <KIdentityManagement/IdentityManager>
 
 #include "messagecomposer_debug.h"
 
