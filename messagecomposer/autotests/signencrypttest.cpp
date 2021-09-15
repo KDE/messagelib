@@ -10,7 +10,7 @@
 #include "qtest_messagecomposer.h"
 #include <QTest>
 
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 
 #include <Libkleo/Enum>
 

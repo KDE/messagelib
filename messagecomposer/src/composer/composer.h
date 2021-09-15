@@ -13,7 +13,7 @@
 #include <QStringList>
 #include <QVector>
 
-#include <kmime/kmime_message.h>
+#include <KMime/KMimeMessage>
 
 #include <MessageCore/AttachmentPart>
 

@@ -12,7 +12,7 @@
 #include "core/model.h"
 
 #include <KIO/Global> // for KIO::filesize_t and related functions
-#include <kmime/kmime_dateformatter.h>
+#include <KMime/DateFormatter>
 
 #include <KLocalizedString>
 

@@ -10,8 +10,8 @@
 #include "messagecomposer_export.h"
 
 #include <Akonadi/Item>
-#include <kmime/kmime_headers.h>
-#include <kmime/kmime_message.h>
+#include <KMime/Headers>
+#include <KMime/KMimeMessage>
 
 namespace KIdentityManagement
 {

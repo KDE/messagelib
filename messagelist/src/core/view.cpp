@@ -23,7 +23,7 @@
 
 #include "MessageCore/StringUtil"
 
-#include <kmime/kmime_dateformatter.h> // kdepimlibs
+#include <KMime/DateFormatter> // kdepimlibs
 
 #include <Akonadi/Item>
 #include <KTwoFingerTap>

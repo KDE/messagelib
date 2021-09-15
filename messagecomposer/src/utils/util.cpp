@@ -28,10 +28,10 @@
 #include <Akonadi/AgentInstance>
 #include <Akonadi/AgentInstanceCreateJob>
 #include <Akonadi/AgentManager>
+#include <KMime/Content>
+#include <KMime/Headers>
 #include <MailTransportAkonadi/MessageQueueJob>
 #include <MessageCore/StringUtil>
-#include <kmime/kmime_content.h>
-#include <kmime/kmime_headers.h>
 
 KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
 {

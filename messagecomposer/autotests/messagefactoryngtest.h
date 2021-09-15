@@ -8,8 +8,8 @@
 
 #pragma once
 
+#include <KMime/KMimeMessage>
 #include <QObject>
-#include <kmime/kmime_message.h>
 namespace KIdentityManagement
 {
 class IdentityManager;

@@ -10,7 +10,7 @@
 
 #include <QObject>
 
-#include <kmime/kmime_headers.h>
+#include <KMime/Headers>
 
 namespace MessageComposer
 {

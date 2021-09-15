@@ -7,9 +7,9 @@
 
 #pragma once
 
+#include <KMime/Headers>
 #include <Libkleo/Enum>
 #include <QByteArray>
-#include <kmime/kmime_headers.h>
 
 namespace KMime
 {

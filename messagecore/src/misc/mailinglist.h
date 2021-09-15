@@ -7,8 +7,8 @@
 
 #include "messagecore_export.h"
 
+#include <KMime/KMimeMessage>
 #include <QUrl>
-#include <kmime/kmime_message.h>
 
 #include <QByteArray>
 #include <QSharedDataPointer>

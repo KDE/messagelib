@@ -9,7 +9,7 @@
 
 #include "messagecomposer_debug.h"
 
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 
 using namespace MessageComposer;
 

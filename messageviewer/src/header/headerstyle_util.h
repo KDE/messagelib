@@ -11,8 +11,8 @@
 #include <QVariantHash>
 
 #include "messageviewer/spamheaderanalyzer.h"
-#include <kmime/kmime_dateformatter.h>
-#include <kmime/kmime_message.h>
+#include <KMime/DateFormatter>
+#include <KMime/KMimeMessage>
 
 #include "messageviewer/headerstyle.h"
 #include "messageviewer/viewer.h"

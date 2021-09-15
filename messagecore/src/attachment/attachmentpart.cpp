@@ -7,8 +7,8 @@
 #include "attachmentpart.h"
 
 #include "messagecore_debug.h"
-#include <kmime/kmime_content.h>
-#include <kmime/kmime_util.h>
+#include <KMime/Content>
+#include <KMime/Util>
 
 #include <QUrl>
 

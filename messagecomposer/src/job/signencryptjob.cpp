@@ -15,9 +15,9 @@
 #include <QGpgME/SignEncryptJob>
 
 #include "messagecomposer_debug.h"
-#include <kmime/kmime_content.h>
-#include <kmime/kmime_headers.h>
-#include <kmime/kmime_message.h>
+#include <KMime/Content>
+#include <KMime/Headers>
+#include <KMime/KMimeMessage>
 
 #include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>

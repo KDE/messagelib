@@ -18,7 +18,7 @@
 #include <KCharsets>
 
 #include <KEmailAddress>
-#include <kmime/kmime_message.h>
+#include <KMime/KMimeMessage>
 
 using namespace MessageComposer;
 

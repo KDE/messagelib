@@ -10,8 +10,8 @@
 #include <QDebug>
 #include <QTest>
 
-#include <kmime/kmime_content.h>
-#include <kmime/kmime_headers.h>
+#include <KMime/Content>
+#include <KMime/Headers>
 using namespace KMime;
 
 #include <MessageComposer/AttachmentJob>

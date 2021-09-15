@@ -13,8 +13,8 @@
 #include <MessageCore/StringUtil>
 #include <MimeTreeParser/NodeHelper>
 
-#include <kmime/kmime_dateformatter.h>
-#include <kmime/kmime_message.h>
+#include <KMime/DateFormatter>
+#include <KMime/KMimeMessage>
 
 #include <KColorScheme>
 #include <KIconLoader>

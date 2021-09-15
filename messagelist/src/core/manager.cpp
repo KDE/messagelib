@@ -27,7 +27,7 @@
 #include "messagelistutil.h"
 #include "messagelistutil_p.h"
 
-#include <kmime/kmime_dateformatter.h> // kdepimlibs
+#include <KMime/DateFormatter> // kdepimlibs
 
 #include "messagelist_debug.h"
 #include <KConfig>

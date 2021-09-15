@@ -15,8 +15,8 @@
 #include <QFileDevice>
 #include <QTemporaryDir>
 
-#include <kmime/kmime_headers.h>
-#include <kmime/kmime_util.h>
+#include <KMime/Headers>
+#include <KMime/Util>
 
 #include <KFormat>
 

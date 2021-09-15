@@ -15,9 +15,9 @@
 #include "messagecomposer_debug.h"
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
+#include <KMime/DateFormatter>
+#include <KMime/MDN>
 #include <KMime/Message>
-#include <kmime/kmime_dateformatter.h>
-#include <kmime/kmime_mdn.h>
 
 using namespace MessageCore;
 

@@ -9,7 +9,7 @@
 #include "header/headerstrategy.h"
 #include <GrantleeTheme/GrantleeTheme>
 
-#include <kmime/kmime_message.h>
+#include <KMime/KMimeMessage>
 
 using namespace MessageViewer;
 class MessageViewer::GrantleeHeaderStylePrivate

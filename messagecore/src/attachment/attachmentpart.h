@@ -8,7 +8,7 @@
 
 #include "messagecore_export.h"
 
-#include <kmime/kmime_headers.h>
+#include <KMime/Headers>
 
 #include <QList>
 #include <QMetaType>

@@ -13,7 +13,7 @@
 
 #include <time.h> // for time_t
 
-#include <kmime/kmime_headers.h>
+#include <KMime/Headers>
 
 #include <Akonadi/KMime/MessageStatus>
 

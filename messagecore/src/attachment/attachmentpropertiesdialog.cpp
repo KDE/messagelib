@@ -16,8 +16,8 @@
 #include <KAboutData>
 #include <PimCommon/PimUtil>
 
-#include <kmime/kmime_content.h>
-#include <kmime/kmime_headers.h>
+#include <KMime/Content>
+#include <KMime/Headers>
 
 #include <KFormat>
 #include <KLocalizedString>

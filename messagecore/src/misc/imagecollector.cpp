@@ -13,7 +13,7 @@
 #include "MessageCore/NodeHelper"
 
 #include "messagecore_debug.h"
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 
 static bool isInExclusionList(KMime::Content *node)
 {

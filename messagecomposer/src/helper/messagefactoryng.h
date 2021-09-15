@@ -9,8 +9,8 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <kmime/kmime_mdn.h>
-#include <kmime/kmime_message.h>
+#include <KMime/KMimeMessage>
+#include <KMime/MDN>
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>

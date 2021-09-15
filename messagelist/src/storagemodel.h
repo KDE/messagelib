@@ -11,8 +11,8 @@
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
+#include <KMime/KMimeMessage>
 #include <QVector>
-#include <kmime/kmime_message.h>
 
 class QAbstractItemModel;
 class QItemSelectionModel;

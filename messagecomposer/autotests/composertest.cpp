@@ -11,7 +11,7 @@
 
 #include <QTest>
 
-#include <kmime/kmime_headers.h>
+#include <KMime/Headers>
 using namespace KMime;
 
 #include <MessageComposer/Composer>

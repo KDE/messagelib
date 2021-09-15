@@ -20,7 +20,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 
 using namespace MessageComposer;
 

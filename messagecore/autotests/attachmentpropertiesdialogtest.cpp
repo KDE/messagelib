@@ -14,7 +14,7 @@
 #include <QLineEdit>
 #include <QTest>
 
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 using namespace KMime;
 
 #include <MessageCore/AttachmentPart>

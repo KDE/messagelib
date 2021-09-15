@@ -9,7 +9,7 @@
 #include <QDebug>
 #include <QTest>
 
-#include <kmime/kmime_message.h>
+#include <KMime/KMimeMessage>
 
 #include <MessageComposer/Composer>
 #include <MessageComposer/GlobalPart>
