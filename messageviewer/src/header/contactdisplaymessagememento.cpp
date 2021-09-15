@@ -10,7 +10,7 @@
 #include "settings/messageviewersettings.h"
 #include <Akonadi/Contact/ContactSearchJob>
 #include <Gravatar/GravatarResolvUrlJob>
-#include <kio/transferjob.h>
+#include <KIO/TransferJob>
 
 using namespace MessageViewer;
 

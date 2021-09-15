@@ -9,7 +9,7 @@
 #include "settings/messageviewersettings.h"
 #include <Akonadi/Contact/GrantleeContactViewer>
 
-#include <kcontacts/vcardconverter.h>
+#include <KContacts/VCardConverter>
 using KContacts::Addressee;
 using KContacts::VCardConverter;
 

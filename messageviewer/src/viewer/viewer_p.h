@@ -19,12 +19,12 @@
 #include <Akonadi/Item>
 #include <Akonadi/Monitor>
 #include <Akonadi/Session>
+#include <KIO/Job>
 #include <KMime/Message>
 #include <KService>
 #include <QPointer>
 #include <QUrl>
 #include <QVector>
-#include <kio/job.h>
 
 #include <QObject>
 #include <QTimer>

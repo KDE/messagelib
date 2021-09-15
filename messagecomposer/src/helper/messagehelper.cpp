@@ -13,9 +13,9 @@
 #include "MessageCore/StringUtil"
 
 #include "messagecomposer_debug.h"
+#include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
 #include <KMime/Message>
-#include <kidentitymanagement/identity.h>
-#include <kidentitymanagement/identitymanager.h>
 #include <kmime/kmime_dateformatter.h>
 #include <kmime/kmime_mdn.h>
 

@@ -25,8 +25,8 @@
 #include <MessageCore/StringUtil>
 
 #include <Akonadi/ItemFetchJob>
+#include <KIO/JobUiDelegate>
 #include <QIcon>
-#include <kio/jobuidelegate.h>
 
 #include <QMenu>
 #include <QPointer>

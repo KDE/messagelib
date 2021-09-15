@@ -11,8 +11,8 @@
 
 #include <Akonadi/Contact/EmailAddressSelectionWidget>
 #include <Akonadi/Contact/RecipientsPickerWidget>
+#include <KContacts/ContactGroup>
 #include <PimCommonAkonadi/LdapSearchDialog>
-#include <kcontacts/contactgroup.h>
 
 #include "messagecomposer_debug.h"
 #include <KConfigGroup>

@@ -6,8 +6,8 @@
  */
 
 #pragma once
+#include <KContacts/Addressee>
 #include <QDialog>
-#include <kcontacts/addressee.h>
 
 namespace KAddressBookGrantlee
 {
