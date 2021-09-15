@@ -155,10 +155,10 @@ QuickSearchLine::SearchOptions Filter::currentOptions() const
     return mOptions;
 }
 
-void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername, const QString &iconName)
+void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername, const QString &iconName, int numFilter)
 {
     KConfigGroup grp(config, "General");
-    int numberFilter = grp.readEntry("NumberFilter").toInt();
+    int numberFilter = (numFilter == -1) ? grp.readEntry("NumberFilter").toInt() : numFilter;
     KConfigGroup newGroup(config, QStringLiteral("Filter_%1").arg(numberFilter++));
     newGroup.writeEntry("name", filtername);
     if (!iconName.isEmpty()) {
