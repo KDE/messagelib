@@ -23,11 +23,9 @@
 #include <grantlee/templateloader.h>
 
 #include <QGuiApplication>
-#ifndef COMPILE_WITH_UNITY_CMAKE_SUPPORT
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(const QGpgME::Protocol *)
 Q_DECLARE_METATYPE(GpgME::Key)
-#endif
 
 // Read-only introspection of GpgME::DecryptionResult::Recipient object.
 GRANTLEE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)

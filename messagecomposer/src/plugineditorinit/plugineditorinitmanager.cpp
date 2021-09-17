@@ -31,7 +31,7 @@ public:
 
 namespace
 {
-QString pluginVersion()
+QString pluginEditorInitVersion()
 {
     return QStringLiteral("1.0");
 }
@@ -96,7 +96,7 @@ void PluginEditorInitManagerPrivate::initializePlugins()
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         info.data = data;
-        if (pluginVersion() == data.version()) {
+        if (pluginEditorInitVersion() == data.version()) {
             info.plugin = nullptr;
             mPluginList.push_back(info);
         } else {
