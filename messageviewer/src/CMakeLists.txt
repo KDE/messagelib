@@ -86,6 +86,7 @@ if (${Qca-qt5_FOUND})
         dkim-verify/dkimmanager.cpp
         dkim-verify/dkimresultattribute.cpp
         dkim-verify/dkimwidgetinfo.cpp
+        dkim-verify/dkimmailstatus.cpp
         dkim-verify/dkimstoreresultjob.cpp
         dkim-verify/dkimheaderparser.cpp
         dkim-verify/dkimcheckpolicy.cpp
@@ -482,6 +483,7 @@ if (${Qca-qt5_FOUND})
         DKIMKeyRecord
         DKIMInfo
         DKIMWidgetInfo
+        DKIMMailStatus
         DKIMCheckPolicy
         DKIMManagerRules
         DKIMRule

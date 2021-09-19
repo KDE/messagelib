@@ -174,6 +174,8 @@ ecm_generate_headers(MessageList_Camelcasecore_HEADERS
     HEADER_NAMES
     View
     Enums
+    Item
+    MessageItem
     StorageModelBase
     WidgetBase
     REQUIRED_HEADERS MessageList_core_HEADERS
