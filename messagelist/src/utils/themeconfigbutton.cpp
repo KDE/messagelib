@@ -33,7 +33,7 @@ public:
 void ThemeConfigButtonPrivate::slotConfigureThemes()
 {
     QString currentThemeID;
-    if (mThemeComboBox != nullptr) {
+    if (mThemeComboBox) {
         currentThemeID = mThemeComboBox->currentTheme();
     }
 
@@ -55,7 +55,7 @@ ThemeConfigButton::ThemeConfigButton(QWidget *parent, const ThemeComboBox *theme
     });
 
     // Keep theme combo up-to-date with any changes made in the configure dialog.
-    if (d->mThemeComboBox != nullptr) {
+    if (d->mThemeComboBox) {
         connect(this, &ThemeConfigButton::configureDialogCompleted, d->mThemeComboBox, &ThemeComboBox::slotLoadThemes);
     }
     setEnabled(Manager::instance());
