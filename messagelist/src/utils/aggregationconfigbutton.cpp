@@ -39,7 +39,7 @@ AggregationConfigButton::AggregationConfigButton(QWidget *parent, const Aggregat
     });
 
     // Keep aggregation combo up-to-date with any changes made in the configure dialog.
-    if (d->mAggregationComboBox != nullptr) {
+    if (d->mAggregationComboBox) {
         connect(this, &AggregationConfigButton::configureDialogCompleted, d->mAggregationComboBox, &AggregationComboBox::slotLoadAggregations);
     }
     setEnabled(Manager::instance());
@@ -59,10 +59,9 @@ void AggregationConfigButtonPrivate::slotConfigureAggregations()
 
     auto dialog = new ConfigureAggregationsDialog(q->window());
     dialog->selectAggregation(currentAggregationID);
-
-    QObject::connect(dialog, &ConfigureAggregationsDialog::okClicked, q, &AggregationConfigButton::configureDialogCompleted);
-
-    dialog->show();
+    if (dialog->exec()) {
+        Q_EMIT q->configureDialogCompleted();
+    }
 }
 
 #include "moc_aggregationconfigbutton.cpp"

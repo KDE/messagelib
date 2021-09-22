@@ -39,10 +39,9 @@ void ThemeConfigButtonPrivate::slotConfigureThemes()
 
     auto dialog = new ConfigureThemesDialog(q->window());
     dialog->selectTheme(currentThemeID);
-
-    QObject::connect(dialog, &ConfigureThemesDialog::okClicked, q, &ThemeConfigButton::configureDialogCompleted);
-
-    dialog->show();
+    if (dialog->exec()) {
+        Q_EMIT q->configureDialogCompleted();
+    }
 }
 
 ThemeConfigButton::ThemeConfigButton(QWidget *parent, const ThemeComboBox *themeComboBox)
