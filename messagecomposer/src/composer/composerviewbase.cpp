@@ -1092,9 +1092,7 @@ void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageC
         qjob->addressAttribute().setCc(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->cc()));
         qjob->addressAttribute().setBcc(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->bcc()));
     }
-    qDebug() << " SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs111111111111111111";
     if (m_requestDeleveryConfirmation) {
-        qDebug() << " SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs";
         qjob->addressAttribute().setDeliveryStatusNotification(true);
     }
     MessageComposer::Util::addSendReplyForwardAction(message, qjob);
