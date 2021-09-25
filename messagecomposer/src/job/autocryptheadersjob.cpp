@@ -18,7 +18,7 @@
 #include <gpgme++/context.h>
 #include <gpgme++/gpgmepp_version.h>
 
-#include <KCodecs/KCodecs>
+#include <KCodecs>
 #include <KLocalizedString>
 #include <KMime/Content>
 #include <KMime/Headers>
