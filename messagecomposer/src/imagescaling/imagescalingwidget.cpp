@@ -58,12 +58,12 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
     connect(d->ui->AskBeforeResizing, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->EnlargeImageToMinimum, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->ReduceImageToMaximum, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
-    connect(d->ui->customMaximumWidth, qOverload<int>(&QSpinBox::valueChanged), this, &ImageScalingWidget::changed);
-    connect(d->ui->customMaximumHeight, qOverload<int>(&QSpinBox::valueChanged), this, &ImageScalingWidget::changed);
-    connect(d->ui->customMinimumWidth, qOverload<int>(&QSpinBox::valueChanged), this, &ImageScalingWidget::changed);
-    connect(d->ui->customMinimumHeight, qOverload<int>(&QSpinBox::valueChanged), this, &ImageScalingWidget::changed);
+    connect(d->ui->customMaximumWidth, &QSpinBox::valueChanged, this, &ImageScalingWidget::changed);
+    connect(d->ui->customMaximumHeight, &QSpinBox::valueChanged, this, &ImageScalingWidget::changed);
+    connect(d->ui->customMinimumWidth, &QSpinBox::valueChanged, this, &ImageScalingWidget::changed);
+    connect(d->ui->customMinimumHeight, &QSpinBox::valueChanged, this, &ImageScalingWidget::changed);
     connect(d->ui->skipImageSizeLower, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
-    connect(d->ui->imageSize, qOverload<int>(&QSpinBox::valueChanged), this, &ImageScalingWidget::changed);
+    connect(d->ui->imageSize, &QSpinBox::valueChanged, this, &ImageScalingWidget::changed);
     connect(d->ui->pattern, &QLineEdit::textChanged, this, &ImageScalingWidget::changed);
     connect(d->ui->CBMaximumWidth, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
     connect(d->ui->CBMaximumHeight, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
