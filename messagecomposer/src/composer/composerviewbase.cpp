@@ -977,6 +977,9 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     if (auto hdr = m_msg->headerByType("X-Face")) {
         extras << hdr;
     }
+    if (auto hdr = m_msg->headerByType("Face")) {
+        extras << hdr;
+    }
     if (auto hdr = m_msg->headerByType("X-KMail-FccDisabled")) {
         extras << hdr;
     }
