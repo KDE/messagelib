@@ -525,14 +525,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
     // working copy in case composers instantly emit result
     const auto composers = m_composers;
     for (MessageComposer::Composer *composer : composers) {
-        fillGlobalPart(composer->globalPart());
-        m_editor->fillComposerTextPart(composer->textPart());
-        fillInfoPart(composer->infoPart(), UseExpandedRecipients);
-
-        if (m_attachmentModel) {
-            composer->addAttachmentParts(m_attachmentModel->attachments(), autoresizeImage);
-        }
-
+        fillComposer(composer);
         connect(composer, &MessageComposer::Composer::result, this, &ComposerViewBase::slotSendComposeResult);
         composer->start();
         qCDebug(MESSAGECOMPOSER_LOG) << "Started a composer for sending!";
@@ -1245,7 +1238,8 @@ void ComposerViewBase::autoSaveMessage()
     }
 
     const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
-    MessageComposer::Composer *const composer = createSimpleComposer();
+    auto composer = new Composer();
+    fillComposer(composer);
     composer->setAutoSave(true);
     composer->setAutocryptEnabled(id.autocryptEnabled());
     m_composers.append(composer);
@@ -1515,16 +1509,14 @@ void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
     m_attachmentController->addAttachment(part);
 }
 
-MessageComposer::Composer *ComposerViewBase::createSimpleComposer()
+void ComposerViewBase::fillComposer(MessageComposer::Composer *composer)
 {
-    auto composer = new MessageComposer::Composer;
     fillGlobalPart(composer->globalPart());
     m_editor->fillComposerTextPart(composer->textPart());
     fillInfoPart(composer->infoPart(), UseUnExpandedRecipients);
     if (m_attachmentModel) {
         composer->addAttachmentParts(m_attachmentModel->attachments());
     }
-    return composer;
 }
 
 //-----------------------------------------------------------------------------

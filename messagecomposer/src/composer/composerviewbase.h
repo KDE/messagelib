@@ -109,7 +109,7 @@ public:
     void addAttachment(const QString &name, const QString &filename, const QString &charset, const QByteArray &data, const QByteArray &mimeType);
     void addAttachmentPart(KMime::Content *part);
 
-    MessageComposer::Composer *createSimpleComposer();
+    void fillComposer(MessageComposer::Composer *composer);
 
     /**
      * Header fields in recipients editor.
