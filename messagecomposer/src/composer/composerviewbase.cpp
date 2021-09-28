@@ -14,6 +14,7 @@
 #include "composer.h"
 #include "composer/keyresolver.h"
 #include "composer/signaturecontroller.h"
+#include "draftstatus/draftstatus.h"
 #include "imagescaling/imagescalingutils.h"
 #include "job/emailaddressresolvejob.h"
 #include "part/globalpart.h"
@@ -325,17 +326,11 @@ void ComposerViewBase::send(MessageComposer::MessageSender::SendMethod method, M
     if (m_neverEncrypt && saveIn != MessageComposer::MessageSender::SaveInNone) {
         // we can't use the state of the mail itself, to remember the
         // signing and encryption state, so let's add a header instead
-        auto header = new KMime::Headers::Generic("X-KMail-SignatureActionEnabled");
-        header->fromUnicodeString(m_sign ? QStringLiteral("true") : QStringLiteral("false"), "utf-8");
-        m_msg->setHeader(header);
-        header = new KMime::Headers::Generic("X-KMail-EncryptActionEnabled");
-        header->fromUnicodeString(m_encrypt ? QStringLiteral("true") : QStringLiteral("false"), "utf-8");
-        m_msg->setHeader(header);
-        header = new KMime::Headers::Generic("X-KMail-CryptoMessageFormat");
-        header->fromUnicodeString(QString::number(m_cryptoMessageFormat), "utf-8");
-        m_msg->setHeader(header);
+        DraftSignatureState(m_msg).setState(m_sign);
+        DraftEncryptionState(m_msg).setState(m_sign);
+        DraftCryptoMessageFormatState(m_msg).setState(m_cryptoMessageFormat);
     } else {
-        MessageComposer::Util::removeNotNecessaryHeaders(m_msg);
+        removeDraftCryptoHeaders(m_msg);
     }
 
     if (mSendMethod == MessageComposer::MessageSender::SendImmediate && checkMailDispatcher) {

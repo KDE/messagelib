@@ -11,6 +11,7 @@
 #include "messagefactoryforwardjob.h"
 #include "messagefactoryreplyjob.h"
 #include "settings/messagecomposersettings.h"
+#include "draftstatus/draftstatus.h"
 #include <MessageComposer/Util>
 
 #include <Akonadi/Item>
@@ -108,12 +109,8 @@ void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool 
         msg->setHeader(header);
     }
 
-    if (auto hrd = mOrigMsg->headerByType("X-KMail-EncryptActionEnabled")) {
-        if (hrd->as7BitString(false).contains("true")) {
-            auto header = new KMime::Headers::Generic("X-KMail-EncryptActionEnabled");
-            header->fromUnicodeString(QStringLiteral("true"), "utf-8");
-            msg->setHeader(header);
-        }
+    if (DraftEncryptionState(mOrigMsg).encryptionState()) {
+        DraftEncryptionState(msg).setState(true);
     }
     msg->assemble();
 

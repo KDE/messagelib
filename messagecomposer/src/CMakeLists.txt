@@ -69,6 +69,7 @@ target_sources( KF5MessageComposer PRIVATE
     composer/keyresolver.cpp
     composer/composerviewinterface.cpp
     composer/composerattachmentinterface.cpp
+    draftstatus/draftstatus.cpp
     recipient/recipientspicker.cpp
     recipient/recipient.cpp
     recipient/recipientline.cpp
