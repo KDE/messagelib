@@ -110,6 +110,7 @@ QString FindBarBase::text() const
 void FindBarBase::setText(const QString &text)
 {
     mSearch->setText(text);
+    addToCompletion(text);
 }
 
 void FindBarBase::focusAndSetCursor()
