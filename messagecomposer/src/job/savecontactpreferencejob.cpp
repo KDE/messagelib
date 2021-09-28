@@ -91,8 +91,8 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
 
         item.setPayload<KContacts::Addressee>(contact);
 
-        auto job = new Akonadi::ItemModifyJob(item);
-        connect(job, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
+        auto itemModifyJob = new Akonadi::ItemModifyJob(item);
+        connect(itemModifyJob, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
     }
 }
 

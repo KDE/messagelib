@@ -146,7 +146,6 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
         }
 
         // Select the signature
-        QTextCursor cursor(d->richTextComposer->document());
         cursor.setPosition(currentMatch);
 
         // If the new signature is completely empty, we also want to remove the

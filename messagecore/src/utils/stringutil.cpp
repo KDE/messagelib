@@ -549,7 +549,7 @@ QString smartQuote(const QString &msg, int maxLineLength)
             if (lineStart == 0) {
                 line = msg;
                 needToContinue = false;
-            } else if (lineStart != 0 && lineStart != msg.length()) {
+            } else if (lineStart != msg.length()) {
                 line = msg.mid(lineStart, msg.length() - lineStart);
                 needToContinue = false;
             } else {
@@ -650,13 +650,13 @@ QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayS
                 }
 
                 int j = 0;
-                const int strLength(fromDisplayString.length());
-                for (; j < strLength && fromDisplayString[j] > QLatin1Char(' '); ++j) { }
-                for (; j < strLength && fromDisplayString[j] <= QLatin1Char(' '); ++j) { }
+                const int strLengthFromDisplayString(fromDisplayString.length());
+                for (; j < strLengthFromDisplayString && fromDisplayString[j] > QLatin1Char(' '); ++j) { }
+                for (; j < strLengthFromDisplayString && fromDisplayString[j] <= QLatin1Char(' '); ++j) { }
                 result += fromDisplayString[0];
-                if (j < strLength && fromDisplayString[j] > QLatin1Char(' ')) {
+                if (j < strLengthFromDisplayString && fromDisplayString[j] > QLatin1Char(' ')) {
                     result += fromDisplayString[j];
-                } else if (strLength > 1) {
+                } else if (strLengthFromDisplayString > 1) {
                     if (fromDisplayString[1] > QLatin1Char(' ')) {
                         result += fromDisplayString[1];
                     }

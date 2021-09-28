@@ -69,11 +69,11 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
                         }
                     } else {
                         QByteArray imageData;
-                        KIO::TransferJob *job = KIO::get(url, KIO::NoReload);
-                        QObject::connect(job, &KIO::TransferJob::data, [&imageData](KIO::Job *, const QByteArray &data) {
+                        KIO::TransferJob *jobTransfert = KIO::get(url, KIO::NoReload);
+                        QObject::connect(jobTransfert, &KIO::TransferJob::data, [&imageData](KIO::Job *, const QByteArray &data) {
                             imageData.append(data);
                         });
-                        if (job->exec()) {
+                        if (jobTransfert->exec()) {
                             if (image.loadFromData(imageData)) {
                                 ok = true;
                             }

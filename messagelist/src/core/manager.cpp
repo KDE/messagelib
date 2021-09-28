@@ -519,17 +519,17 @@ static Theme::Column *add_theme_simple_text_column(Theme *s,
     c->addMessageRow(r);
 
     if (addGroupHeaderItem) {
-        auto r = new Theme::Row();
+        auto row = new Theme::Row();
 
-        auto i = new Theme::ContentItem(type);
+        auto iRow = new Theme::ContentItem(type);
 
         if (alignRight) {
-            r->addRightItem(i);
+            row->addRightItem(iRow);
         } else {
-            r->addLeftItem(i);
+            row->addLeftItem(iRow);
         }
 
-        c->addGroupHeaderRow(r);
+        c->addGroupHeaderRow(row);
     }
 
     s->addColumn(c);

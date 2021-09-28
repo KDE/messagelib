@@ -196,7 +196,6 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content,
         if (combined) {
             QCOMPARE(nh->signatureState(resultMessage.data()), MimeTreeParser::KMMsgFullySigned);
         } else {
-            QVector<KMime::Content *> extra = nh->extraContents(resultMessage.data());
             QCOMPARE(extra.size(), 1);
             QCOMPARE(nh->signatureState(extra[0]), MimeTreeParser::KMMsgFullySigned);
         }

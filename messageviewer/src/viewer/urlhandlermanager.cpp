@@ -689,9 +689,9 @@ bool AttachmentURLHandler::handleShiftClick(const QUrl &url, ViewerPrivate *wind
         item.setPayload<KMime::Message::Ptr>(message);
         Akonadi::MessageFlags::copyMessageFlags(*message, item);
         item.setMimeType(KMime::Message::mimeType());
-        QUrl url;
-        if (MessageViewer::Util::saveMessageInMboxAndGetUrl(url, Akonadi::Item::List() << item, window->viewer())) {
-            window->viewer()->showOpenAttachmentFolderWidget(QList<QUrl>() << url);
+        QUrl newUrl;
+        if (MessageViewer::Util::saveMessageInMboxAndGetUrl(newUrl, Akonadi::Item::List() << item, window->viewer())) {
+            window->viewer()->showOpenAttachmentFolderWidget(QList<QUrl>() << newUrl);
         }
     } else {
         QList<QUrl> urlList;

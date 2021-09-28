@@ -245,9 +245,9 @@ void SignEncryptTest::testProtectedHeaders()
     {
         QByteArray plainText;
         auto job = QGpgME::openpgp()->decryptVerifyJob();
-        auto result = job->exec(encPart->encodedBody(), plainText);
+        auto jobResult = job->exec(encPart->encodedBody(), plainText);
 
-        auto signature = result.second.signatures()[0];
+        auto signature = jobResult.second.signatures()[0];
 
         QCOMPARE(signature.fingerprint(), "1BA323932B3FAA826132C79E8D9860C58F246DE6");
         QCOMPARE(signature.status().code(), 0);

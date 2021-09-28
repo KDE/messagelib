@@ -550,7 +550,7 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
 
     const bool fccIsDisabled = ident.disabledFcc();
     if (fccIsDisabled) {
-        auto header = new KMime::Headers::Generic("X-KMail-FccDisabled");
+        header = new KMime::Headers::Generic("X-KMail-FccDisabled");
         header->fromUnicodeString(QStringLiteral("true"), "utf-8");
         msg->setHeader(header);
     } else {

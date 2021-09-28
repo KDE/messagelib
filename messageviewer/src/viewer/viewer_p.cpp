@@ -539,9 +539,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::Open);
     });
-    if (!deletedAttachment) {
-        createOpenWithMenu(&menu, contentTypeStr, true);
-    }
+    createOpenWithMenu(&menu, contentTypeStr, true);
 
     QMimeDatabase mimeDb;
     auto mimetype = mimeDb.mimeTypeForName(contentTypeStr);
