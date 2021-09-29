@@ -1150,7 +1150,6 @@ void ViewerPrivate::resetStateForNewMessage()
     if (mViewer) {
         mViewer->clearRelativePosition();
         mViewer->hideAccessKeys();
-        mFindBar->closeBar();
     }
     if (!mPrinting) {
         setShowSignatureDetails(false);
