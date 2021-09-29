@@ -182,14 +182,8 @@ SortOrder SortOrder::defaultForAggregation(const Aggregation *aggregation, SortO
     bool messageSortingOk = optionListHasOption(messageSortings, oldSortOrder.messageSorting(), SortOrder().messageSorting());
     bool messageSortDirectionOk = false;
     if (messageSortingOk) {
-        OptionList messageSortDirections = enumerateMessageSortDirectionOptions(oldSortOrder.messageSorting());
+        const OptionList messageSortDirections = enumerateMessageSortDirectionOptions(oldSortOrder.messageSorting());
         messageSortDirectionOk = optionListHasOption(messageSortDirections, oldSortOrder.messageSortDirection(), SortOrder().messageSortDirection());
-    }
-
-    //
-    // Ok, if we can partly adopt the old sort order, set the values now.
-    //
-    if (messageSortingOk) {
         newSortOrder.setMessageSorting(oldSortOrder.messageSorting());
     } else {
         newSortOrder.setMessageSorting(SortMessagesByDateTime);

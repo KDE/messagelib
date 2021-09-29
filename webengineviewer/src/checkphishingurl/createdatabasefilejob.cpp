@@ -18,7 +18,7 @@ using namespace WebEngineViewer;
 class WebEngineViewer::CreateDatabaseFileJobPrivate
 {
 public:
-    CreateDatabaseFileJobPrivate(CreateDatabaseFileJob *qq)
+    explicit CreateDatabaseFileJobPrivate(CreateDatabaseFileJob *qq)
         : q(qq)
     {
     }

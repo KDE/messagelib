@@ -240,9 +240,9 @@ QString ConvertSnippetVariablesJob::getNameFromEmail(const QString &address)
     const QStringList lst = address.split(QStringLiteral(", "));
     QStringList resultName;
     for (const QString &str : lst) {
-        KMime::Types::Mailbox address;
-        address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
-        const QString firstName = address.name();
+        KMime::Types::Mailbox mailBoxAddress;
+        mailBoxAddress.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
+        const QString firstName = mailBoxAddress.name();
         if (!firstName.isEmpty()) {
             resultName << firstName;
         }
@@ -257,9 +257,9 @@ QString ConvertSnippetVariablesJob::getFirstNameFromEmail(const QString &address
     const QStringList lst = address.split(QStringLiteral(", "));
     QStringList resultName;
     for (const QString &str : lst) {
-        KMime::Types::Mailbox address;
-        address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
-        const QString firstName = TemplateParser::Util::getFirstNameFromEmail(address.name());
+        KMime::Types::Mailbox mailBoxAddress;
+        mailBoxAddress.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
+        const QString firstName = TemplateParser::Util::getFirstNameFromEmail(mailBoxAddress.name());
         if (!firstName.isEmpty()) {
             resultName << firstName;
         }

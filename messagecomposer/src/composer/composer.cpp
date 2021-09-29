@@ -34,7 +34,7 @@ using MessageCore::AttachmentPart;
 class MessageComposer::ComposerPrivate : public JobBasePrivate
 {
 public:
-    ComposerPrivate(Composer *qq)
+    explicit ComposerPrivate(Composer *qq)
         : JobBasePrivate(qq)
     {
     }
@@ -428,8 +428,8 @@ void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers,
             multiJob->appendSubjob(eJob);
         } else {
             qCDebug(MESSAGECOMPOSER_LOG) << "attaching plain non-crypto attachment";
-            auto attachJob = new AttachmentJob(attachment, q);
-            multiJob->appendSubjob(attachJob);
+            auto attachSecondJob = new AttachmentJob(attachment, q);
+            multiJob->appendSubjob(attachSecondJob);
         }
     }
 
@@ -569,7 +569,7 @@ void Composer::setMessageCryptoFormat(Kleo::CryptoMessageFormat format)
     d->format = format;
 }
 
-void Composer::setSigningKeys(std::vector<GpgME::Key> &signers)
+void Composer::setSigningKeys(const std::vector<GpgME::Key> &signers)
 {
     Q_D(Composer);
 

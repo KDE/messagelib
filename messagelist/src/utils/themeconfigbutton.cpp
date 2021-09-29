@@ -18,7 +18,7 @@ using namespace MessageList::Utils;
 class MessageList::Utils::ThemeConfigButtonPrivate
 {
 public:
-    ThemeConfigButtonPrivate(ThemeConfigButton *owner)
+    explicit ThemeConfigButtonPrivate(ThemeConfigButton *owner)
         : q(owner)
     {
     }

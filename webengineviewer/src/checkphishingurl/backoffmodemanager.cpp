@@ -22,8 +22,8 @@ class WebEngineViewer::BackOffModeManagerPrivate
 public:
     BackOffModeManagerPrivate(BackOffModeManager *qq)
         : q(qq)
+        , mTimer(new QTimer(q))
     {
-        mTimer = new QTimer(q);
         mTimer->setSingleShot(true);
         q->connect(mTimer, &QTimer::timeout, q, &BackOffModeManager::slotTimerFinished);
         load();
@@ -38,7 +38,7 @@ public:
     void slotTimerFinished();
 
     BackOffModeManager *const q;
-    QTimer *mTimer = nullptr;
+    QTimer *const mTimer;
     int mNumberOfHttpFailed = 0;
     bool isInOffMode = false;
 };

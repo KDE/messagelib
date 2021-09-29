@@ -90,16 +90,16 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
     if (mPhoto.isEmpty() && mPhoto.url().isEmpty()) {
         // No url, no photo => search gravatar
         if (Gravatar::GravatarSettings::self()->gravatarSupportEnabled()) {
-            auto job = new Gravatar::GravatarResolvUrlJob(this);
-            job->setEmail(mEmailAddress);
-            job->setUseDefaultPixmap(Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
-            job->setFallbackGravatar(Gravatar::GravatarSettings::self()->fallbackToGravatar());
-            job->setUseLibravatar(Gravatar::GravatarSettings::self()->libravatarSupportEnabled());
-            if (job->canStart()) {
-                connect(job, &Gravatar::GravatarResolvUrlJob::finished, this, &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
-                job->start();
+            auto resolvUrljob = new Gravatar::GravatarResolvUrlJob(this);
+            resolvUrljob->setEmail(mEmailAddress);
+            resolvUrljob->setUseDefaultPixmap(Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
+            resolvUrljob->setFallbackGravatar(Gravatar::GravatarSettings::self()->fallbackToGravatar());
+            resolvUrljob->setUseLibravatar(Gravatar::GravatarSettings::self()->libravatarSupportEnabled());
+            if (resolvUrljob->canStart()) {
+                connect(resolvUrljob, &Gravatar::GravatarResolvUrlJob::finished, this, &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
+                resolvUrljob->start();
             } else {
-                job->deleteLater();
+                resolvUrljob->deleteLater();
             }
         }
     }

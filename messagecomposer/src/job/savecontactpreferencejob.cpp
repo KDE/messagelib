@@ -81,8 +81,8 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
         Akonadi::Item item(KContacts::Addressee::mimeType());
         item.setPayload<KContacts::Addressee>(contact);
 
-        auto job = new Akonadi::ItemCreateJob(item, targetCollection);
-        connect(job, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
+        auto createJob = new Akonadi::ItemCreateJob(item, targetCollection);
+        connect(createJob, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
     } else {
         Akonadi::Item item = items.first();
 

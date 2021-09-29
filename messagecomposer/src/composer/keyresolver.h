@@ -206,7 +206,7 @@ public:
         {
         }
 
-        SplitInfo(const QStringList &r)
+        explicit SplitInfo(const QStringList &r)
             : recipients(r)
         {
         }

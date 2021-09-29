@@ -40,7 +40,7 @@ QString pluginVersion()
 class MessageComposer::PluginEditorCheckBeforeSendManagerPrivate
 {
 public:
-    PluginEditorCheckBeforeSendManagerPrivate(PluginEditorCheckBeforeSendManager *qq)
+    explicit PluginEditorCheckBeforeSendManagerPrivate(PluginEditorCheckBeforeSendManager *qq)
         : q(qq)
     {
         initializePlugins();

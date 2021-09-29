@@ -1363,8 +1363,6 @@ void View::growOrShrinkExistingSelection(const QModelIndex &newSelectedIndex, bo
     int topVisualCoordinate = 0xfffffff; // huuuuuge number
     int bottomVisualCoordinate = -(0xfffffff);
 
-    int candidate;
-
     QModelIndex bottomIndex;
     QModelIndex topIndex;
 
@@ -1388,7 +1386,7 @@ void View::growOrShrinkExistingSelection(const QModelIndex &newSelectedIndex, bo
                 top = bottom;
             }
         }
-        candidate = visualRect(bottom).bottom();
+        int candidate = visualRect(bottom).bottom();
         if (candidate > bottomVisualCoordinate) {
             bottomVisualCoordinate = candidate;
             bottomIndex = range.bottomRight();

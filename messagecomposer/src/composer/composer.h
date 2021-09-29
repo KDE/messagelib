@@ -52,7 +52,7 @@ public:
     void setNoCrypto(bool noCrypto);
     void setSignAndEncrypt(const bool doSign, const bool doEncrypt);
     void setMessageCryptoFormat(Kleo::CryptoMessageFormat format);
-    void setSigningKeys(std::vector<GpgME::Key> &signers);
+    void setSigningKeys(const std::vector<GpgME::Key> &signers);
     void setEncryptionKeys(const QVector<QPair<QStringList, std::vector<GpgME::Key>>> &data);
 
     void setAutocryptEnabled(bool autocryptEnabled);

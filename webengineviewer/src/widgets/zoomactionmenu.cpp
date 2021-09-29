@@ -20,7 +20,7 @@ constexpr qreal zoomBy()
 class WebEngineViewer::ZoomActionMenuPrivate
 {
 public:
-    ZoomActionMenuPrivate(KActionMenu *qq)
+    explicit ZoomActionMenuPrivate(KActionMenu *qq)
         : q(qq)
     {
     }

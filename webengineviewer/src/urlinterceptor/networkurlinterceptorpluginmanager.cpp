@@ -42,7 +42,7 @@ QString pluginVersion()
 class WebEngineViewer::NetworkUrlInterceptorPluginManagerPrivate
 {
 public:
-    NetworkUrlInterceptorPluginManagerPrivate(NetworkUrlInterceptorPluginManager *qq)
+    explicit NetworkUrlInterceptorPluginManagerPrivate(NetworkUrlInterceptorPluginManager *qq)
         : q(qq)
     {
     }

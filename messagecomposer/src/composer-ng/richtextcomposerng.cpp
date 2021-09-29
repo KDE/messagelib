@@ -24,7 +24,7 @@ using namespace MessageComposer;
 class MessageComposer::RichTextComposerNgPrivate
 {
 public:
-    RichTextComposerNgPrivate(RichTextComposerNg *q)
+    explicit RichTextComposerNgPrivate(RichTextComposerNg *q)
         : richtextComposer(q)
     {
         richTextComposerSignatures = new MessageComposer::RichTextComposerSignatures(richtextComposer, richtextComposer);
