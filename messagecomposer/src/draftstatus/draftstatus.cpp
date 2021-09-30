@@ -25,7 +25,7 @@ DraftEncryptionState::DraftEncryptionState(const KMime::Message::Ptr &msg)
 void DraftEncryptionState::setState(bool encrypt)
 {
     auto hdr = new KMime::Headers::Generic("X-KMail-EncryptActionEnabled");
-    hdr->fromUnicodeString(sign ? QStringLiteral("true") : QStringLiteral("false"), "utf-8");
+    hdr->fromUnicodeString(encrypt ? QStringLiteral("true") : QStringLiteral("false"), "utf-8");
     mMsg->setHeader(hdr);
 }
 
