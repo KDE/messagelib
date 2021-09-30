@@ -2625,11 +2625,7 @@ void ViewerPrivate::slotCopyImageLocation()
 
 void ViewerPrivate::slotCopySelectedText()
 {
-#ifndef QT_NO_CLIPBOARD
-    QString selection = mViewer->selectedText();
-    selection.replace(QChar::Nbsp, QLatin1Char(' '));
-    QApplication::clipboard()->setText(selection);
-#endif
+    mViewer->triggerPageAction(QWebEnginePage::Copy);
 }
 
 void ViewerPrivate::viewerSelectionChanged()
