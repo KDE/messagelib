@@ -432,6 +432,15 @@ ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     PREFIX MessageComposer
     RELATIVE job
     )
+
+ecm_generate_headers(MessageComposer_Camelcasedraftstatus_HEADERS
+    HEADER_NAMES
+    DraftStatus
+    REQUIRED_HEADERS MessageComposer_draftstatus_HEADERS
+    PREFIX MessageComposer
+    RELATIVE draftstatus
+    )
+
 ecm_generate_pri_file(BASE_NAME MessageComposer
     LIB_NAME KF5MessageComposer
     DEPS "KMime MessageCore PimCommon Akonadi KIdentityManagement AkonadiMime Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
@@ -459,6 +468,7 @@ install(FILES
     ${MessageComposer_Camelplugineditor_HEADERS}
     ${MessageComposer_Camelplugineditorgrammar_HEADERS}
     ${MessageComposer_Camelstatusbarwidget_HEADERS}
+    ${MessageComposer_Camelcasedraftstatus_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
     COMPONENT Devel
     )
@@ -528,6 +538,7 @@ if (BUILD_QCH)
         ${MessageComposer_plugineditor_HEADERS}
         ${MessageComposer_plugineditorcheckbeforesend_HEADERS}
         ${MessageComposer_plugineditorgrammar_HEADERS}
+        ${MessageComposer_draftstatus_HEADERS}
         LINK_QCHS
             Qt5Core_QCH
             Qt5Gui_QCH
