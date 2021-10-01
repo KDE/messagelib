@@ -16,7 +16,7 @@ namespace MessageComposer
 class MESSAGECOMPOSER_EXPORT DraftEncryptionState
 {
 public:
-    DraftEncryptionState(const KMime::Message::Ptr &msg);
+    explicit DraftEncryptionState(const KMime::Message::Ptr &msg);
 
     void setState(bool encrypt);
     void removeState();
@@ -31,7 +31,7 @@ private:
 class MESSAGECOMPOSER_EXPORT DraftSignatureState
 {
 public:
-    DraftSignatureState(const KMime::Message::Ptr &msg);
+    explicit DraftSignatureState(const KMime::Message::Ptr &msg);
 
     void setState(bool sign);
     void removeState();
@@ -46,7 +46,7 @@ private:
 class MESSAGECOMPOSER_EXPORT DraftCryptoMessageFormatState
 {
 public:
-    DraftCryptoMessageFormatState(const KMime::Message::Ptr &msg);
+    explicit DraftCryptoMessageFormatState(const KMime::Message::Ptr &msg);
 
     void setState(Kleo::CryptoMessageFormat cryptoMessageFormat);
     void removeState();
