@@ -327,7 +327,7 @@ void ComposerViewBase::send(MessageComposer::MessageSender::SendMethod method, M
         // we can't use the state of the mail itself, to remember the
         // signing and encryption state, so let's add a header instead
         DraftSignatureState(m_msg).setState(m_sign);
-        DraftEncryptionState(m_msg).setState(m_sign);
+        DraftEncryptionState(m_msg).setState(m_encrypt);
         DraftCryptoMessageFormatState(m_msg).setState(m_cryptoMessageFormat);
     } else {
         removeDraftCryptoHeaders(m_msg);
