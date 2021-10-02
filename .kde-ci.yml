@@ -12,7 +12,6 @@ Dependencies:
     'kde/pim/akonadi-search' : '@same'
     'kde/pim/grantleetheme' : '@same'
     'kde/pim/kidentitymanagement' : '@same'
-    'kde/pim/kldap' : '@same'
     'kde/pim/kmailtransport' : '@same'
     'kde/pim/kmbox' : '@same'
     'kde/pim/kmime' : '@same'

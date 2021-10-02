@@ -46,7 +46,6 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::IconThemes
         KF5::Completion
         KF5::MailTransport
-        KF5::Ldap
         KF5::Contacts
     )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
