@@ -102,6 +102,8 @@ void DKIMManagerKeyWidget::loadKeys()
     const QVector<MessageViewer::KeyInfo> lst = DKIMManagerKey::self()->keys();
     for (const MessageViewer::KeyInfo &key : lst) {
         auto item = new DKIMManagerKeyTreeWidgetItem(mTreeWidget);
+        item->setStoredAtDateTime(key.storedAtDateTime);
+        item->setLastUsedDateTime(key.lastUsedDateTime);
         item->setText(ManagerKeyTreeWidget::Domain, key.domain);
         item->setText(ManagerKeyTreeWidget::Selector, key.selector);
         item->setText(ManagerKeyTreeWidget::KeyValue, key.keyValue);
@@ -150,12 +152,30 @@ bool DKIMManagerKeyTreeWidgetItem::operator<(const QTreeWidgetItem &other) const
 {
     const int column = treeWidget()->sortColumn();
     if (column == DKIMManagerKeyWidget::ManagerKeyTreeWidget::InsertDate) {
-        return QDateTime::fromString(text(DKIMManagerKeyWidget::ManagerKeyTreeWidget::InsertDate))
-            < QDateTime::fromString(other.text(DKIMManagerKeyWidget::ManagerKeyTreeWidget::InsertDate));
+        return storedAtDateTime() < static_cast<const DKIMManagerKeyTreeWidgetItem *>(&other)->storedAtDateTime();
     }
     if (column == DKIMManagerKeyWidget::ManagerKeyTreeWidget::LastUsedDate) {
-        return QDateTime::fromString(text(DKIMManagerKeyWidget::ManagerKeyTreeWidget::LastUsedDate))
-            < QDateTime::fromString(other.text(DKIMManagerKeyWidget::ManagerKeyTreeWidget::LastUsedDate));
+        return lastUsedDateTime() < static_cast<const DKIMManagerKeyTreeWidgetItem *>(&other)->lastUsedDateTime();
     }
     return QTreeWidgetItem::operator<(other);
+}
+
+const QDateTime &DKIMManagerKeyTreeWidgetItem::storedAtDateTime() const
+{
+    return mStoredAtDateTime;
+}
+
+void DKIMManagerKeyTreeWidgetItem::setStoredAtDateTime(const QDateTime &newStoredAtDateTime)
+{
+    mStoredAtDateTime = newStoredAtDateTime;
+}
+
+const QDateTime &DKIMManagerKeyTreeWidgetItem::lastUsedDateTime() const
+{
+    return mLastUsedDateTime;
+}
+
+void DKIMManagerKeyTreeWidgetItem::setLastUsedDateTime(const QDateTime &newLastUsedDateTime)
+{
+    mLastUsedDateTime = newLastUsedDateTime;
 }

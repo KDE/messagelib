@@ -6,6 +6,7 @@
 #pragma once
 
 #include "messageviewer_export.h"
+#include <QDateTime>
 #include <QTreeWidgetItem>
 #include <QWidget>
 class QTreeWidget;
@@ -17,6 +18,15 @@ public:
     explicit DKIMManagerKeyTreeWidgetItem(QTreeWidget *parent = nullptr);
     ~DKIMManagerKeyTreeWidgetItem() override;
     Q_REQUIRED_RESULT bool operator<(const QTreeWidgetItem &other) const override;
+    Q_REQUIRED_RESULT const QDateTime &storedAtDateTime() const;
+    void setStoredAtDateTime(const QDateTime &newStoredAtDateTime);
+
+    Q_REQUIRED_RESULT const QDateTime &lastUsedDateTime() const;
+    void setLastUsedDateTime(const QDateTime &newLastUsedDateTime);
+
+private:
+    QDateTime mStoredAtDateTime;
+    QDateTime mLastUsedDateTime;
 };
 
 /**
