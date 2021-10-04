@@ -101,18 +101,18 @@ void DKIMManagerKeyWidget::loadKeys()
 {
     const QVector<MessageViewer::KeyInfo> lst = DKIMManagerKey::self()->keys();
     for (const MessageViewer::KeyInfo &key : lst) {
-        auto item = new QTreeWidgetItem(mTreeWidget);
-        item->setText(0, key.domain);
-        item->setText(1, key.selector);
-        item->setText(2, key.keyValue);
-        item->setText(3, key.storedAtDateTime.toString());
-        item->setText(4, key.lastUsedDateTime.toString());
-        item->setToolTip(2, key.keyValue);
+        auto item = new DKIMManagerKeyTreeWidgetItem(mTreeWidget);
+        item->setText(ManagerKeyTreeWidget::Domain, key.domain);
+        item->setText(ManagerKeyTreeWidget::Selector, key.selector);
+        item->setText(ManagerKeyTreeWidget::KeyValue, key.keyValue);
+        item->setText(ManagerKeyTreeWidget::InsertDate, key.storedAtDateTime.toString());
+        item->setText(ManagerKeyTreeWidget::LastUsedDate, key.lastUsedDateTime.toString());
+        item->setToolTip(ManagerKeyTreeWidget::KeyValue, key.keyValue);
     }
     mTreeWidget->setSortingEnabled(true);
     mTreeWidget->header()->setSortIndicatorShown(true);
     mTreeWidget->header()->setSectionsClickable(true);
-    mTreeWidget->sortByColumn(0, Qt::AscendingOrder);
+    mTreeWidget->sortByColumn(ManagerKeyTreeWidget::Domain, Qt::AscendingOrder);
 }
 
 void DKIMManagerKeyWidget::saveKeys()
@@ -121,11 +121,11 @@ void DKIMManagerKeyWidget::saveKeys()
     lst.reserve(mTreeWidget->topLevelItemCount());
     for (int i = 0, total = mTreeWidget->topLevelItemCount(); i < total; ++i) {
         QTreeWidgetItem *item = mTreeWidget->topLevelItem(i);
-        const MessageViewer::KeyInfo info{item->text(2),
-                                          item->text(1),
-                                          item->text(0),
-                                          QDateTime::fromString(item->text(3)),
-                                          QDateTime::fromString(item->text(4))};
+        const MessageViewer::KeyInfo info{item->text(ManagerKeyTreeWidget::KeyValue),
+                                          item->text(ManagerKeyTreeWidget::Selector),
+                                          item->text(ManagerKeyTreeWidget::Domain),
+                                          QDateTime::fromString(item->text(ManagerKeyTreeWidget::InsertDate)),
+                                          QDateTime::fromString(item->text(ManagerKeyTreeWidget::LastUsedDate))};
         lst.append(info);
     }
     DKIMManagerKey::self()->saveKeys(lst);
@@ -135,4 +135,27 @@ void DKIMManagerKeyWidget::resetKeys()
 {
     mTreeWidget->clear();
     loadKeys();
+}
+
+DKIMManagerKeyTreeWidgetItem::DKIMManagerKeyTreeWidgetItem(QTreeWidget *parent)
+    : QTreeWidgetItem(parent)
+{
+}
+
+DKIMManagerKeyTreeWidgetItem::~DKIMManagerKeyTreeWidgetItem()
+{
+}
+
+bool DKIMManagerKeyTreeWidgetItem::operator<(const QTreeWidgetItem &other) const
+{
+    const int column = treeWidget()->sortColumn();
+    if (column == DKIMManagerKeyWidget::ManagerKeyTreeWidget::InsertDate) {
+        return QDateTime::fromString(text(DKIMManagerKeyWidget::ManagerKeyTreeWidget::InsertDate))
+            < QDateTime::fromString(other.text(DKIMManagerKeyWidget::ManagerKeyTreeWidget::InsertDate));
+    }
+    if (column == DKIMManagerKeyWidget::ManagerKeyTreeWidget::LastUsedDate) {
+        return QDateTime::fromString(text(DKIMManagerKeyWidget::ManagerKeyTreeWidget::LastUsedDate))
+            < QDateTime::fromString(other.text(DKIMManagerKeyWidget::ManagerKeyTreeWidget::LastUsedDate));
+    }
+    return QTreeWidgetItem::operator<(other);
 }
