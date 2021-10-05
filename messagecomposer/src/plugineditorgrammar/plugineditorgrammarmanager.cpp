@@ -11,7 +11,6 @@
 #include <KPluginMetaData>
 #include <PimCommon/CustomToolsPlugin>
 #include <QFileInfo>
-#include <QSet>
 
 using namespace MessageComposer;
 

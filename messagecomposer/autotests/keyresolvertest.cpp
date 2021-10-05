@@ -14,7 +14,6 @@
 #include <Akonadi/Control>
 #include <akonadi/qtest_akonadi.h>
 
-#include <QDebug>
 #include <QStandardPaths>
 #include <QTest>
 

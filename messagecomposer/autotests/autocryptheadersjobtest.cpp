@@ -28,7 +28,6 @@
 #include <stdlib.h>
 
 #include <MessageComposer/TransparentJob>
-#include <QDebug>
 #include <QTest>
 #include <decryptionresult.h>
 #include <keylistresult.h>

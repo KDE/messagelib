@@ -8,7 +8,6 @@
 #include "autocryptrecipient_p.h"
 #include "autocryptstorage_p.h"
 
-#include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QStandardPaths>

@@ -12,7 +12,6 @@
 #include <KTreeWidgetSearchLine>
 #include <QApplication>
 #include <QClipboard>
-#include <QDebug>
 #include <QHeaderView>
 #include <QMenu>
 #include <QTreeWidget>

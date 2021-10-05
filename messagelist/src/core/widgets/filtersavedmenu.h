@@ -8,7 +8,6 @@
 
 #include "messagelist_private_export.h"
 #include <QMenu>
-#include <QObject>
 class QAction;
 namespace MessageList
 {

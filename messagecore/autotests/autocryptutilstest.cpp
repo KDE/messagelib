@@ -16,7 +16,6 @@
 #include <QFile>
 #include <QStandardPaths>
 #include <QTest>
-#include <QVector>
 
 using namespace MessageCore;
 

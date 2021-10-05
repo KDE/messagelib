@@ -11,7 +11,6 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KTreeWidgetSearchLine>
-#include <QComboBox>
 #include <QHeaderView>
 #include <QMenu>
 #include <QPointer>

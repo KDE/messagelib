@@ -7,7 +7,6 @@
 
 #include "tablockedwarning.h"
 #include <KLocalizedString>
-#include <QAction>
 using namespace MessageList::Core;
 TabLockedWarning::TabLockedWarning(QWidget *parent)
     : KMessageWidget(parent)

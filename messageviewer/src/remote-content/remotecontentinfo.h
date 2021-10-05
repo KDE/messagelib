@@ -8,7 +8,6 @@
 
 #include "messageviewer_private_export.h"
 #include <QDebug>
-#include <QObject>
 namespace MessageViewer
 {
 /**

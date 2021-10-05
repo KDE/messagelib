@@ -8,7 +8,6 @@
 #include <KIconButton>
 #include <KLocalizedString>
 #include <Libkdepim/LineEditCatchReturnKey>
-#include <QDebug>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>

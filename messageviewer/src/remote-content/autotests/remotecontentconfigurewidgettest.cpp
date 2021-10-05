@@ -6,7 +6,6 @@
 #include "remotecontentconfigurewidgettest.h"
 #include "remote-content/remotecontentconfigurewidget.h"
 #include <KTreeWidgetSearchLine>
-#include <QListWidget>
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>

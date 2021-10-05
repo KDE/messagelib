@@ -10,8 +10,6 @@
 #include "remotecontentinfo.h"
 #include <KLocalizedString>
 #include <QAction>
-#include <QDebug>
-#include <QPointer>
 
 using namespace MessageViewer;
 RemoteContentMenu::RemoteContentMenu(QWidget *parent)

@@ -12,7 +12,6 @@
 #include <KPluginMetaData>
 #include <KSharedConfig>
 #include <QFileInfo>
-#include <QSet>
 
 using namespace MessageViewer;
 

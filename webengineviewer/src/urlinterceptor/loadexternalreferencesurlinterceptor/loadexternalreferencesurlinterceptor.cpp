@@ -5,7 +5,6 @@
 */
 
 #include "loadexternalreferencesurlinterceptor.h"
-#include <QDebug>
 #include <QWebEngineUrlRequestInfo>
 
 using namespace WebEngineViewer;

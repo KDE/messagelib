@@ -20,7 +20,6 @@
 #include <QCompleter>
 #include <QContextMenuEvent>
 #include <QMenu>
-#include <QPointer>
 #include <QPushButton>
 #include <QStandardPaths>
 #include <QStringListModel>

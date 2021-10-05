@@ -6,8 +6,6 @@
 
 #include "loadexternalreferencesurlinterceptor.h"
 #include "remote-content/remotecontentmanager.h"
-#include <QDebug>
-#include <QWebEngineUrlRequestInfo>
 
 using namespace MessageViewer;
 

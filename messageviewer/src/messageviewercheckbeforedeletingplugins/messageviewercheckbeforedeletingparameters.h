@@ -7,7 +7,6 @@
 #pragma once
 #include "messageviewer_export.h"
 #include <Akonadi/Item>
-#include <QString>
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingParametersPrivate;

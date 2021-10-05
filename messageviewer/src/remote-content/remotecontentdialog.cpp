@@ -6,7 +6,6 @@
 
 #include "remotecontentdialog.h"
 #include "remotecontentwidget.h"
-#include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
