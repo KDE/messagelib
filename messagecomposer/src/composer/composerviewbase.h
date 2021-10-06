@@ -109,7 +109,7 @@ public:
     void addAttachment(const QString &name, const QString &filename, const QString &charset, const QByteArray &data, const QByteArray &mimeType);
     void addAttachmentPart(KMime::Content *part);
 
-    MessageComposer::Composer *createSimpleComposer();
+    void fillComposer(MessageComposer::Composer *composer);
 
     /**
      * Header fields in recipients editor.
@@ -285,6 +285,7 @@ private:
         UseExpandedRecipients,
         UseUnExpandedRecipients,
     };
+    void fillComposer(MessageComposer::Composer *composer, ComposerViewBase::RecipientExpansion expansion);
     Q_REQUIRED_RESULT QVector<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
     void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
     void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
