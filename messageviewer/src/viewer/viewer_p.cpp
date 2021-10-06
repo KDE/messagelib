@@ -667,11 +667,9 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
         delete tmpDir;
     }
 
-    QList<QUrl> lst;
     const QFileDevice::Permissions perms = QFile::permissions(name);
     QFile::setPermissions(name, perms | QFileDevice::ReadUser | QFileDevice::WriteUser);
     const QUrl url = QUrl::fromLocalFile(name);
-    lst.append(url);
 
     auto job = new KIO::ApplicationLauncherJob(offer);
     job->setUrls({url});
