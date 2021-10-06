@@ -320,13 +320,6 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
     return false;
 }
 
-void MessageComposer::Util::removeNotNecessaryHeaders(const KMime::Message::Ptr &msg)
-{
-    msg->removeHeader("X-KMail-SignatureActionEnabled");
-    msg->removeHeader("X-KMail-EncryptActionEnabled");
-    msg->removeHeader("X-KMail-CryptoMessageFormat");
-}
-
 KMime::Content *MessageComposer::Util::findTypeInMessage(KMime::Content *data, const QByteArray &mimeType, const QByteArray &subType)
 {
     if (!data->contentType()->isEmpty()) {
