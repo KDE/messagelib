@@ -1558,7 +1558,7 @@ void ViewerPrivate::createActions()
     connect(mViewSourceAction, &QAction::triggered, this, &ViewerPrivate::slotShowMessageSource);
     ac->setDefaultShortcut(mViewSourceAction, QKeySequence(Qt::Key_V));
 
-    mSaveMessageAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("&Save message..."), this);
+    mSaveMessageAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("&Save Message..."), this);
     ac->addAction(QStringLiteral("save_message"), mSaveMessageAction);
     connect(mSaveMessageAction, &QAction::triggered, this, &ViewerPrivate::slotSaveMessage);
     // Laurent: conflict with kmail shortcut
