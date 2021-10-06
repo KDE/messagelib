@@ -499,6 +499,7 @@ install(FILES
     ${MessageComposer_plugineditor_HEADERS}
     ${MessageComposer_plugineditorcheckbeforesend_HEADERS}
     ${MessageComposer_plugineditorgrammar_HEADERS}
+    ${MessageComposer_draftstatus_HEADERS}
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messagecomposer
     COMPONENT Devel
