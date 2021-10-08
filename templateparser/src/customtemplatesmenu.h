@@ -9,6 +9,7 @@
 #include "templateparser_export.h"
 
 #include <QObject>
+#include <memory>
 
 class KActionCollection;
 class KActionMenu;
@@ -46,7 +47,7 @@ private Q_SLOTS:
 
 private:
     void clear();
-    CustomTemplatesMenuPrivate *const d;
+    std::unique_ptr<CustomTemplatesMenuPrivate> const d;
 };
 }
 

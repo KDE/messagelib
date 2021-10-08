@@ -31,9 +31,9 @@ protected Q_SLOTS:
     void doStart() override;
 
 private:
-    class Private;
-    friend class Private;
-    Private *const d;
+    class AttachmentFromPublicKeyJobPrivate;
+    friend class AttachmentFromPublicKeyJobPrivate;
+    std::unique_ptr<AttachmentFromPublicKeyJobPrivate> const d;
 };
 } //
 

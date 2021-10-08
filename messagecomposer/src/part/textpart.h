@@ -68,7 +68,7 @@ Q_SIGNALS:
 
 private:
     class Private;
-    Private *const d;
+    std::unique_ptr<Private> const d;
 };
 } // namespace MessageComposer
 

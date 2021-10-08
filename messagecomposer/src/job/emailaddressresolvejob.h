@@ -99,7 +99,7 @@ private Q_SLOTS:
     void slotAliasExpansionDone(KJob *);
 
 private:
-    EmailAddressResolveJobPrivate *const d;
+    std::unique_ptr<EmailAddressResolveJobPrivate> const d;
 };
 }
 

@@ -30,7 +30,7 @@ private:
     void updateSensitivity(bool sensitivity) override;
 
 private:
-    FindBarWebEngineViewPrivate *const d;
+    std::unique_ptr<FindBarWebEngineViewPrivate> const d;
 };
 }
 

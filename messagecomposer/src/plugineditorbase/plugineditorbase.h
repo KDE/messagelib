@@ -8,7 +8,7 @@
 
 #include "messagecomposer_export.h"
 #include <QObject>
-
+#include <memory>
 namespace MessageComposer
 {
 class PluginEditorBasePrivate;
@@ -38,6 +38,6 @@ Q_SIGNALS:
     void configChanged();
 
 private:
-    PluginEditorBasePrivate *const d;
+    std::unique_ptr<PluginEditorBasePrivate> const d;
 };
 }

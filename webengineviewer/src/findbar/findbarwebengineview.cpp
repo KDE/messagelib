@@ -27,10 +27,7 @@ FindBarWebEngineView::FindBarWebEngineView(QWebEngineView *view, QWidget *parent
 {
 }
 
-FindBarWebEngineView::~FindBarWebEngineView()
-{
-    delete d;
-}
+FindBarWebEngineView::~FindBarWebEngineView() = default;
 
 void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
 {

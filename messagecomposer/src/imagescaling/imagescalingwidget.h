@@ -50,7 +50,7 @@ private:
     void initWriteImageFormat();
     void updateEmailsFilterTypeSettings();
     void updateSettings();
-    ImageScalingWidgetPrivate *const d;
+    std::unique_ptr<ImageScalingWidgetPrivate> const d;
 };
 }
 

@@ -36,10 +36,7 @@ InsertTextFileJob::InsertTextFileJob(QTextEdit *editor, const QUrl &url)
 {
 }
 
-InsertTextFileJob::~InsertTextFileJob()
-{
-    delete d;
-}
+InsertTextFileJob::~InsertTextFileJob() = default;
 
 void InsertTextFileJob::slotFileData(KIO::Job *job, const QByteArray &data)
 {

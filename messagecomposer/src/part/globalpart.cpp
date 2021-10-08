@@ -8,10 +8,10 @@
 
 using namespace MessageComposer;
 
-class Q_DECL_HIDDEN GlobalPart::Private
+class Q_DECL_HIDDEN GlobalPart::GlobalPartPrivate
 {
 public:
-    Private()
+    GlobalPartPrivate()
     {
     }
 
@@ -26,14 +26,11 @@ public:
 
 GlobalPart::GlobalPart(QObject *parent)
     : MessagePart(parent)
-    , d(new Private)
+    , d(new GlobalPartPrivate)
 {
 }
 
-GlobalPart::~GlobalPart()
-{
-    delete d;
-}
+GlobalPart::~GlobalPart() = default;
 
 bool GlobalPart::isGuiEnabled() const
 {

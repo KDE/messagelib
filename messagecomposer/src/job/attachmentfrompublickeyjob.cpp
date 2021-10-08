@@ -20,10 +20,10 @@
 using namespace MessageComposer;
 using MessageCore::AttachmentPart;
 
-class Q_DECL_HIDDEN MessageComposer::AttachmentFromPublicKeyJob::Private
+class Q_DECL_HIDDEN MessageComposer::AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate
 {
 public:
-    Private(AttachmentFromPublicKeyJob *qq);
+    AttachmentFromPublicKeyJobPrivate(AttachmentFromPublicKeyJob *qq);
 
     void exportResult(const GpgME::Error &error, const QByteArray &keyData); // slot
     void emitGpgError(const GpgME::Error &error);
@@ -33,12 +33,12 @@ public:
     QByteArray data;
 };
 
-AttachmentFromPublicKeyJob::Private::Private(AttachmentFromPublicKeyJob *qq)
+AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate::AttachmentFromPublicKeyJobPrivate(AttachmentFromPublicKeyJob *qq)
     : q(qq)
 {
 }
 
-void AttachmentFromPublicKeyJob::Private::exportResult(const GpgME::Error &error, const QByteArray &keyData)
+void AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate::exportResult(const GpgME::Error &error, const QByteArray &keyData)
 {
     if (error) {
         emitGpgError(error);
@@ -56,7 +56,7 @@ void AttachmentFromPublicKeyJob::Private::exportResult(const GpgME::Error &error
     q->emitResult(); // Success.
 }
 
-void AttachmentFromPublicKeyJob::Private::emitGpgError(const GpgME::Error &error)
+void AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate::emitGpgError(const GpgME::Error &error)
 {
     Q_ASSERT(error);
     const QString msg = i18n(
@@ -71,15 +71,12 @@ void AttachmentFromPublicKeyJob::Private::emitGpgError(const GpgME::Error &error
 
 AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJob(const QString &fingerprint, QObject *parent)
     : AttachmentLoadJob(parent)
-    , d(new Private(this))
+    , d(new AttachmentFromPublicKeyJobPrivate(this))
 {
     d->fingerprint = fingerprint;
 }
 
-AttachmentFromPublicKeyJob::~AttachmentFromPublicKeyJob()
-{
-    delete d;
-}
+AttachmentFromPublicKeyJob::~AttachmentFromPublicKeyJob() = default;
 
 QString AttachmentFromPublicKeyJob::fingerprint() const
 {

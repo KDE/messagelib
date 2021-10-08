@@ -8,6 +8,7 @@
 
 #include "webengineviewer/networkpluginurlinterceptor.h"
 #include "webengineviewer_export.h"
+#include <memory>
 class KActionCollection;
 class QWebEngineView;
 class QAction;
@@ -31,6 +32,6 @@ public:
     void removeInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
 
 private:
-    NetworkAccessManagerWebEnginePrivate *const d;
+    std::unique_ptr<NetworkAccessManagerWebEnginePrivate> const d;
 };
 }

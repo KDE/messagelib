@@ -8,7 +8,7 @@
 
 #include "messagecomposer_export.h"
 #include <QString>
-
+#include <memory>
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendParamsPrivate;
@@ -57,6 +57,6 @@ public:
     Q_REQUIRED_RESULT bool operator==(const PluginEditorCheckBeforeSendParams &other) const;
 
 private:
-    PluginEditorCheckBeforeSendParamsPrivate *const d;
+    std::unique_ptr<PluginEditorCheckBeforeSendParamsPrivate> const d;
 };
 }

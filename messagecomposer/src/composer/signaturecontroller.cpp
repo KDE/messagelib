@@ -39,10 +39,7 @@ SignatureController::SignatureController(QObject *parent)
 {
 }
 
-SignatureController::~SignatureController()
-{
-    delete d;
-}
+SignatureController::~SignatureController() = default;
 
 void SignatureController::setEditor(MessageComposer::RichTextComposerNg *editor)
 {

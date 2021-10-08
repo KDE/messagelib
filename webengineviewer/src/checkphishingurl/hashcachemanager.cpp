@@ -178,10 +178,7 @@ HashCacheManager::HashCacheManager(QObject *parent)
 {
 }
 
-HashCacheManager::~HashCacheManager()
-{
-    delete d;
-}
+HashCacheManager::~HashCacheManager() = default;
 
 void HashCacheManager::clearCache()
 {

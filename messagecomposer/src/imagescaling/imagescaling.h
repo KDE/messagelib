@@ -8,6 +8,7 @@
 
 #include "messagecomposer_export.h"
 #include <QByteArray>
+#include <memory>
 
 namespace MessageComposer
 {
@@ -53,7 +54,7 @@ public:
     Q_REQUIRED_RESULT QString generateNewName();
 
 private:
-    ImageScalingPrivate *const d;
+    std::unique_ptr<ImageScalingPrivate> const d;
 };
 }
 

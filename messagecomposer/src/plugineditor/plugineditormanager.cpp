@@ -155,10 +155,7 @@ PluginEditorManager::PluginEditorManager(QObject *parent)
 {
 }
 
-PluginEditorManager::~PluginEditorManager()
-{
-    delete d;
-}
+PluginEditorManager::~PluginEditorManager() = default;
 
 PluginEditorManager *PluginEditorManager::self()
 {

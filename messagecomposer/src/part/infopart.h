@@ -12,6 +12,7 @@
 
 #include <KMime/Headers>
 #include <KMime/KMimeMessage>
+#include <memory>
 namespace MessageComposer
 {
 /**
@@ -105,8 +106,8 @@ Q_SIGNALS:
     void fccChanged();
 
 private:
-    class Private;
-    Private *const d;
+    class InfoPartPrivate;
+    std::unique_ptr<InfoPartPrivate> const d;
 };
 } // namespace MessageComposer
 

@@ -115,10 +115,7 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
     d->ui->help->setContextMenuPolicy(Qt::NoContextMenu);
 }
 
-ImageScalingWidget::~ImageScalingWidget()
-{
-    delete d;
-}
+ImageScalingWidget::~ImageScalingWidget() = default;
 
 void ImageScalingWidget::slotHelpLinkClicked(const QString &)
 {

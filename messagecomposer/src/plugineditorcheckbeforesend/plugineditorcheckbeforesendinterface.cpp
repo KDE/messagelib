@@ -25,10 +25,7 @@ PluginEditorCheckBeforeSendInterface::PluginEditorCheckBeforeSendInterface(QObje
 {
 }
 
-PluginEditorCheckBeforeSendInterface::~PluginEditorCheckBeforeSendInterface()
-{
-    delete d;
-}
+PluginEditorCheckBeforeSendInterface::~PluginEditorCheckBeforeSendInterface() = default;
 
 void PluginEditorCheckBeforeSendInterface::setParentWidget(QWidget *parent)
 {

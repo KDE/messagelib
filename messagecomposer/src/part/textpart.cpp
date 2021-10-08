@@ -29,10 +29,7 @@ TextPart::TextPart(QObject *parent)
 {
 }
 
-TextPart::~TextPart()
-{
-    delete d;
-}
+TextPart::~TextPart() = default;
 
 bool TextPart::isWordWrappingEnabled() const
 {

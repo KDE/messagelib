@@ -8,6 +8,7 @@
 
 #include "messagecomposer_export.h"
 #include <QObject>
+#include <memory>
 namespace KIdentityManagement
 {
 class Signature;
@@ -33,6 +34,6 @@ public:
 
 private:
     class RichTextComposerSignaturesPrivate;
-    RichTextComposerSignaturesPrivate *const d;
+    std::unique_ptr<RichTextComposerSignaturesPrivate> const d;
 };
 }

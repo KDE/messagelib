@@ -32,6 +32,6 @@ private Q_SLOTS:
 private:
     void invalidContact();
     void addAttachment(const QByteArray &data, const QString &attachmentName);
-    AttachmentVcardFromAddressBookJobPrivate *const d;
+    std::unique_ptr<AttachmentVcardFromAddressBookJobPrivate> const d;
 };
 }

@@ -62,7 +62,7 @@ Q_SIGNALS:
     void insertText(const QString &str);
 
 private:
-    PluginEditorInterfacePrivate *const d;
+    std::unique_ptr<PluginEditorInterfacePrivate> const d;
 };
 }
 

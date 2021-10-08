@@ -8,6 +8,7 @@
 
 #include "webengineviewer_export.h"
 #include <QObject>
+#include <memory>
 namespace WebEngineViewer
 {
 class BackOffModeManagerPrivate;
@@ -33,7 +34,7 @@ public Q_SLOTS:
     void slotTimerFinished();
 
 private:
-    BackOffModeManagerPrivate *const d;
+    std::unique_ptr<BackOffModeManagerPrivate> const d;
 };
 }
 

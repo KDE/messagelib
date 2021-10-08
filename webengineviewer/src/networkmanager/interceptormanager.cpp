@@ -38,10 +38,7 @@ InterceptorManager::InterceptorManager(QWebEngineView *webEngine, KActionCollect
     webEngine->page()->profile()->setUrlRequestInterceptor(d->mNetworkUrlInterceptor);
 }
 
-InterceptorManager::~InterceptorManager()
-{
-    delete d;
-}
+InterceptorManager::~InterceptorManager() = default;
 
 void InterceptorManager::addInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor)
 {

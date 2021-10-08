@@ -31,10 +31,7 @@ RichTextComposerSignatures::RichTextComposerSignatures(MessageComposer::RichText
 {
 }
 
-RichTextComposerSignatures::~RichTextComposerSignatures()
-{
-    delete d;
-}
+RichTextComposerSignatures::~RichTextComposerSignatures() = default;
 
 void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitespaceHelper(const QRegExp &regExp,
                                                                                           const QString &newText,

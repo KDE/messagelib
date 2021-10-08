@@ -62,7 +62,6 @@ CustomTemplatesMenu::CustomTemplatesMenu(QWidget *owner, KActionCollection *ac)
 CustomTemplatesMenu::~CustomTemplatesMenu()
 {
     clear();
-    delete d;
 }
 
 KActionMenu *CustomTemplatesMenu::replyActionMenu() const

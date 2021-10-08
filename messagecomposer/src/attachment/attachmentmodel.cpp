@@ -32,11 +32,11 @@ static Qt::CheckState boolToCheckState(bool checked) // local
     }
 }
 
-class Q_DECL_HIDDEN MessageComposer::AttachmentModel::Private
+class Q_DECL_HIDDEN MessageComposer::AttachmentModel::AttachmentModelPrivate
 {
 public:
-    Private(AttachmentModel *qq);
-    ~Private();
+    AttachmentModelPrivate(AttachmentModel *qq);
+    ~AttachmentModelPrivate();
 
     AttachmentPart::List parts;
     QVector<QTemporaryDir *> tempDirs;
@@ -49,12 +49,12 @@ public:
     bool autoDisplayEnabled = false;
 };
 
-AttachmentModel::Private::Private(AttachmentModel *qq)
+AttachmentModel::AttachmentModelPrivate::AttachmentModelPrivate(AttachmentModel *qq)
     : q(qq)
 {
 }
 
-AttachmentModel::Private::~Private()
+AttachmentModel::AttachmentModelPrivate::~AttachmentModelPrivate()
 {
     // There should be an automatic way to manage the lifetime of these...
     qDeleteAll(tempDirs);
@@ -62,14 +62,11 @@ AttachmentModel::Private::~Private()
 
 AttachmentModel::AttachmentModel(QObject *parent)
     : QAbstractItemModel(parent)
-    , d(new Private(this))
+    , d(new AttachmentModelPrivate(this))
 {
 }
 
-AttachmentModel::~AttachmentModel()
-{
-    delete d;
-}
+AttachmentModel::~AttachmentModel() = default;
 
 bool AttachmentModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
 {

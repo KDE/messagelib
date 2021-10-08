@@ -44,10 +44,7 @@ EmailAddressResolveJob::EmailAddressResolveJob(QObject *parent)
 {
 }
 
-EmailAddressResolveJob::~EmailAddressResolveJob()
-{
-    delete d;
-}
+EmailAddressResolveJob::~EmailAddressResolveJob() = default;
 
 static inline bool containsAliases(const QString &address)
 {

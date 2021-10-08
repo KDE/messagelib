@@ -30,10 +30,7 @@ AttachmentVcardFromAddressBookJob::AttachmentVcardFromAddressBookJob(const Akona
 {
 }
 
-AttachmentVcardFromAddressBookJob::~AttachmentVcardFromAddressBookJob()
-{
-    delete d;
-}
+AttachmentVcardFromAddressBookJob::~AttachmentVcardFromAddressBookJob() = default;
 
 void AttachmentVcardFromAddressBookJob::addAttachment(const QByteArray &data, const QString &attachmentName)
 {

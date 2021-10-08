@@ -35,6 +35,6 @@ public:
     Q_REQUIRED_RESULT PluginEditor *pluginFromIdentifier(const QString &id);
 
 private:
-    PluginEditorManagerPrivate *const d;
+    std::unique_ptr<PluginEditorManagerPrivate> const d;
 };
 }

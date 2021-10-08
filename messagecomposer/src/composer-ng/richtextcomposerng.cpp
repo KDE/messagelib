@@ -43,10 +43,7 @@ RichTextComposerNg::RichTextComposerNg(QWidget *parent)
 {
 }
 
-RichTextComposerNg::~RichTextComposerNg()
-{
-    delete d;
-}
+RichTextComposerNg::~RichTextComposerNg() = default;
 
 MessageComposer::RichTextComposerSignatures *RichTextComposerNg::composerSignature() const
 {

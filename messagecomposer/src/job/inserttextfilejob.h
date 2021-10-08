@@ -42,7 +42,7 @@ private Q_SLOTS:
     void slotFileData(KIO::Job *job, const QByteArray &data);
 
 private:
-    InsertTextFileJobPrivate *const d;
+    std::unique_ptr<InsertTextFileJobPrivate> const d;
 };
 }
 

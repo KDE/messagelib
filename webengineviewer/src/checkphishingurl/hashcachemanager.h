@@ -8,6 +8,7 @@
 
 #include "webengineviewer_export.h"
 #include <QObject>
+#include <memory>
 
 namespace WebEngineViewer
 {
@@ -34,7 +35,7 @@ public:
     Q_REQUIRED_RESULT HashCacheManager::UrlStatus hashStatus(const QByteArray &hash);
 
 private:
-    HashCacheManagerPrivate *const d;
+    std::unique_ptr<HashCacheManagerPrivate> const d;
 };
 }
 

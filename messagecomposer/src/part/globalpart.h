@@ -9,6 +9,7 @@
 #include "messagepart.h"
 
 #include <QByteArray>
+#include <memory>
 
 namespace MessageComposer
 {
@@ -45,8 +46,8 @@ public:
     void setRequestDeleveryConfirmation(bool value);
 
 private:
-    class Private;
-    Private *const d;
+    class GlobalPartPrivate;
+    std::unique_ptr<GlobalPartPrivate> const d;
 };
 } // namespace MessageComposer
 

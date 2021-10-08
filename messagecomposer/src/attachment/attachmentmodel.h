@@ -95,9 +95,9 @@ Q_SIGNALS:
     void attachmentCompressRequested(MessageCore::AttachmentPart::Ptr part, bool compress);
 
 private:
-    class Private;
-    friend class Private;
-    Private *const d;
+    class AttachmentModelPrivate;
+    friend class AttachmentModelPrivate;
+    std::unique_ptr<AttachmentModelPrivate> const d;
 };
 } //
 

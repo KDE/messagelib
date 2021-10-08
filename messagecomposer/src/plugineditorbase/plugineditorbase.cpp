@@ -24,10 +24,7 @@ PluginEditorBase::PluginEditorBase(QObject *parent)
 {
 }
 
-PluginEditorBase::~PluginEditorBase()
-{
-    delete d;
-}
+PluginEditorBase::~PluginEditorBase() = default;
 
 bool PluginEditorBase::hasConfigureDialog() const
 {

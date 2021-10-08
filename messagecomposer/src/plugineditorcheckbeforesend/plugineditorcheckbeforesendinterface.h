@@ -9,7 +9,7 @@
 #include "messagecomposer_export.h"
 #include "plugineditorcheckbeforesendparams.h"
 #include <QObject>
-
+#include <memory>
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendInterfacePrivate;
@@ -37,7 +37,7 @@ public Q_SLOTS:
     virtual void reloadConfig();
 
 private:
-    PluginEditorCheckBeforeSendInterfacePrivate *const d;
+    std::unique_ptr<PluginEditorCheckBeforeSendInterfacePrivate> const d;
 };
 }
 

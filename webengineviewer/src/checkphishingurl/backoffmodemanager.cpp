@@ -122,10 +122,7 @@ BackOffModeManager::BackOffModeManager(QObject *parent)
 {
 }
 
-BackOffModeManager::~BackOffModeManager()
-{
-    delete d;
-}
+BackOffModeManager::~BackOffModeManager() = default;
 
 BackOffModeManager *BackOffModeManager::self()
 {

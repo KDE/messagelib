@@ -87,7 +87,7 @@ private Q_SLOTS:
     void identityChanged(uint id);
 
 private:
-    SignatureControllerPrivate *const d;
+    std::unique_ptr<SignatureControllerPrivate> const d;
 };
 }
 

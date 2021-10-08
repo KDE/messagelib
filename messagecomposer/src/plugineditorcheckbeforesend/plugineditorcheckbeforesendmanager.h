@@ -34,6 +34,6 @@ public:
     Q_REQUIRED_RESULT PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 
 private:
-    PluginEditorCheckBeforeSendManagerPrivate *const d;
+    std::unique_ptr<PluginEditorCheckBeforeSendManagerPrivate> const d;
 };
 }

@@ -28,10 +28,7 @@ ImageScaling::ImageScaling()
 {
 }
 
-ImageScaling::~ImageScaling()
-{
-    delete d;
-}
+ImageScaling::~ImageScaling() = default;
 
 bool ImageScaling::loadImageFromData(const QByteArray &data)
 {

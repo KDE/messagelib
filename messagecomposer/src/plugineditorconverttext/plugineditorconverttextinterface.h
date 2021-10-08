@@ -74,7 +74,7 @@ Q_SIGNALS:
     void textReformated();
 
 private:
-    PluginEditorConvertTextInterfacePrivate *const d;
+    std::unique_ptr<PluginEditorConvertTextInterfacePrivate> const d;
 };
 }
 

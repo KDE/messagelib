@@ -35,10 +35,7 @@ PluginEditorConvertTextInterface::PluginEditorConvertTextInterface(QObject *pare
 {
 }
 
-PluginEditorConvertTextInterface::~PluginEditorConvertTextInterface()
-{
-    delete d;
-}
+PluginEditorConvertTextInterface::~PluginEditorConvertTextInterface() = default;
 
 bool PluginEditorConvertTextInterface::reformatText()
 {

@@ -8,10 +8,10 @@
 
 using namespace MessageComposer;
 
-class Q_DECL_HIDDEN InfoPart::Private
+class Q_DECL_HIDDEN InfoPart::InfoPartPrivate
 {
 public:
-    Private()
+    InfoPartPrivate()
     {
     }
 
@@ -32,14 +32,11 @@ public:
 
 InfoPart::InfoPart(QObject *parent)
     : MessagePart(parent)
-    , d(new Private)
+    , d(new InfoPartPrivate)
 {
 }
 
-InfoPart::~InfoPart()
-{
-    delete d;
-}
+InfoPart::~InfoPart() = default;
 
 QString InfoPart::from() const
 {

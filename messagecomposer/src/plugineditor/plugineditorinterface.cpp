@@ -37,10 +37,7 @@ PluginEditorInterface::PluginEditorInterface(QObject *parent)
 {
 }
 
-PluginEditorInterface::~PluginEditorInterface()
-{
-    delete d;
-}
+PluginEditorInterface::~PluginEditorInterface() = default;
 
 void PluginEditorInterface::setActionType(PluginActionType type)
 {

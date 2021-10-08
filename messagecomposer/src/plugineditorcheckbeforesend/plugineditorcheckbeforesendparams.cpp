@@ -38,10 +38,7 @@ PluginEditorCheckBeforeSendParams::PluginEditorCheckBeforeSendParams(const Plugi
     (*this) = other;
 }
 
-PluginEditorCheckBeforeSendParams::~PluginEditorCheckBeforeSendParams()
-{
-    delete d;
-}
+PluginEditorCheckBeforeSendParams::~PluginEditorCheckBeforeSendParams() = default;
 
 PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(const PluginEditorCheckBeforeSendParams &other)
 {

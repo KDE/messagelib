@@ -147,10 +147,7 @@ PluginEditorCheckBeforeSendManager::PluginEditorCheckBeforeSendManager(QObject *
 {
 }
 
-PluginEditorCheckBeforeSendManager::~PluginEditorCheckBeforeSendManager()
-{
-    delete d;
-}
+PluginEditorCheckBeforeSendManager::~PluginEditorCheckBeforeSendManager() = default;
 
 PluginEditorCheckBeforeSendManager *PluginEditorCheckBeforeSendManager::self()
 {

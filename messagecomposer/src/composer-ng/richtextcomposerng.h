@@ -54,7 +54,7 @@ protected:
     bool processModifyText(QKeyEvent *event) override;
 
 private:
-    RichTextComposerNgPrivate *const d;
+    std::unique_ptr<RichTextComposerNgPrivate> const d;
 
     friend class ::RichTextComposerNgTest; // for fixHtmlFontSize
     void fixHtmlFontSize(QString &cleanHtml) const;
