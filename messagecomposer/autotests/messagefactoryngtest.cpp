@@ -157,28 +157,12 @@ void MessageFactoryTest::init()
     TemplateParser::TemplateParserSettings::self()->setDefaults();
 }
 
-KMime::Message::Ptr MessageFactoryTest::loadMessage(const QString &filename)
-{
-    QFile mailFile(filename);
-    if (!mailFile.open(QIODevice::ReadOnly)) {
-        return {};
-    }
-    const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
-    if (mailData.isEmpty()) {
-        return {};
-    }
-    KMime::Message::Ptr origMsg(new KMime::Message);
-    origMsg->setContent(mailData);
-    origMsg->parse();
-    return origMsg;
-}
-
 void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
 {
     TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QStringLiteral("%QUOTE"));
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message_and_identity_in_cc.mbox"));
-    KMime::Message::Ptr msg = loadMessage(filename);
+    KMime::Message::Ptr msg = Test::loadMessage(filename);
     KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
     i1.setFullName(QStringLiteral("foo1"));
     i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
@@ -232,7 +216,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
     TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QStringLiteral("%QUOTE"));
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message.mbox"));
-    KMime::Message::Ptr msg = loadMessage(filename);
+    KMime::Message::Ptr msg = Test::loadMessage(filename);
     KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
     i1.setFullName(QStringLiteral("foo1"));
     i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
@@ -283,7 +267,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsyn
     TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QStringLiteral("%QUOTE"));
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_without_identity_message.mbox"));
-    KMime::Message::Ptr msg = loadMessage(filename);
+    KMime::Message::Ptr msg = Test::loadMessage(filename);
     KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
     i1.setFullName(QStringLiteral("foo1"));
     i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
@@ -334,7 +318,7 @@ void MessageFactoryTest::testCreateReplyToListAsync()
     TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(QStringLiteral("%QUOTE"));
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/list_message.mbox"));
-    KMime::Message::Ptr msg = loadMessage(filename);
+    KMime::Message::Ptr msg = Test::loadMessage(filename);
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
@@ -492,7 +476,7 @@ void MessageFactoryTest::testCreateReplyAllAsync()
 
 void MessageFactoryTest::testCreateReplyHtmlAsync()
 {
-    KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("html_utf8_encoded.mbox"));
+    KMime::Message::Ptr msg = Test::loadMessageFromDataDir(QStringLiteral("html_utf8_encoded.mbox"));
 
     // qDebug() << "html message:" << msg->encodedContent();
 
@@ -538,7 +522,7 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
 
 void MessageFactoryTest::testCreateReplyUTF16Base64Async()
 {
-    KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("plain_utf16.mbox"));
+    KMime::Message::Ptr msg = Test::loadMessageFromDataDir(QStringLiteral("plain_utf16.mbox"));
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
@@ -911,20 +895,6 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
     return message;
 }
 
-KMime::Message::Ptr MessageFactoryTest::loadMessageFromFile(const QString &filename)
-{
-    QFile file(QLatin1String(QByteArray(MAIL_DATA_DIR "/" + filename.toLatin1())));
-    const bool opened = file.open(QIODevice::ReadOnly);
-    Q_ASSERT(opened);
-    Q_UNUSED(opened)
-    const QByteArray data = KMime::CRLFtoLF(file.readAll());
-    Q_ASSERT(!data.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
-    msg->setContent(data);
-    msg->parse();
-    return msg;
-}
-
 void MessageFactoryTest::test_multipartAlternative_data()
 {
     QTest::addColumn<QString>("mailFileName");
@@ -963,7 +933,7 @@ void MessageFactoryTest::test_multipartAlternative()
     QFETCH(QString, selection);
     QFETCH(QString, expected);
 
-    KMime::Message::Ptr origMsg = loadMessage(mailFileName);
+    KMime::Message::Ptr origMsg = Test::loadMessage(mailFileName);
 
     MessageFactoryNG factory(origMsg, 0);
     factory.setIdentityManager(mIdentMan);

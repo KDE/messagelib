@@ -54,9 +54,7 @@ private Q_SLOTS:
 
 private:
     Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessage();
-    Q_REQUIRED_RESULT KMime::Message::Ptr loadMessageFromFile(const QString &filename);
     Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
-    Q_REQUIRED_RESULT KMime::Message::Ptr loadMessage(const QString &filename);
     KIdentityManagement::IdentityManager *mIdentMan = nullptr;
 };
 

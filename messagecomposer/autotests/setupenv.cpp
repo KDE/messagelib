@@ -66,18 +66,22 @@ std::vector<GpgME::Key, std::allocator<GpgME::Key>> Test::getKeys(bool smime)
     return keys;
 }
 
-KMime::Message::Ptr Test::loadMessageFromFile(const QString &filename)
+KMime::Message::Ptr Test::loadMessage(const QString &filename)
 {
-    QFile file(QLatin1String(QByteArray(MAIL_DATA_DIR "/" + filename.toLatin1())));
-    const bool opened = file.open(QIODevice::ReadOnly);
-    Q_ASSERT(opened);
-    Q_UNUSED(opened)
-    const QByteArray data = KMime::CRLFtoLF(file.readAll());
-    Q_ASSERT(!data.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
-    msg->setContent(data);
-    msg->parse();
-    return msg;
+    QFile mailFile(filename);
+    Q_ASSERT(mailFile.open(QIODevice::ReadOnly));
+    const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
+    Q_ASSERT(!mailData.isEmpty());
+
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    origMsg->setContent(mailData);
+    origMsg->parse();
+    return origMsg;
+}
+
+KMime::Message::Ptr Test::loadMessageFromDataDir(const QString &filename)
+{
+    return loadMessage(QLatin1String(QByteArray(MAIL_DATA_DIR "/" + filename.toLatin1())));
 }
 
 void Test::compareFile(KMime::Content *content, const QString &referenceFile)

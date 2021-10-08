@@ -7,7 +7,9 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src/part)
 
 # Convenience macro to add messagecomposer unit tests.
 macro( add_messagecomposer_test _source )
-    ecm_add_test(${_source}
+    get_filename_component( _name ${_source} NAME_WE )
+    ecm_add_test(${ARGV}
+        TEST_NAME ${_name}
         NAME_PREFIX "messagecomposer-"
         LINK_LIBRARIES 
             KF5::Mime
@@ -57,7 +59,7 @@ endmacro()
 
 # Utility stuff.
 add_messagecomposer_test( utiltest.cpp )
-add_messagecomposer_test( messagefactoryngtest.cpp )
+add_messagecomposer_test( messagefactoryngtest.cpp setupenv.cpp)
 add_messagecomposer_test( plugineditorcheckbeforesendparamstest.cpp )
 add_messagecomposer_test( replystrategytest.cpp )
 

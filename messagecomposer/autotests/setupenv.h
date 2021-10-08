@@ -30,7 +30,12 @@ std::vector<GpgME::Key> getKeys(bool smime = false);
 /**
  * Loads a message from filename and returns a message pointer
  */
-KMime::Message::Ptr loadMessageFromFile(const QString &filename);
+KMime::Message::Ptr loadMessage(const QString &filename);
+
+/**
+ * Loads a message from MAIL_DATA_DIR and returns a message pointer
+ */
+KMime::Message::Ptr loadMessageFromDataDir(const QString &filename);
 
 /**
  * compares a KMime::Content against the referenceFile
