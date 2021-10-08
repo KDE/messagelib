@@ -23,6 +23,8 @@ class QTimer;
 class KJob;
 class QWidget;
 
+class ComposerViewBaseTest;
+
 namespace Sonnet
 {
 class DictionaryComboBox;
@@ -374,6 +376,8 @@ private:
     Akonadi::Collection mFollowUpCollection;
 
     std::unique_ptr<SendLaterInfo> mSendLaterInfo;
+
+    friend ComposerViewBaseTest;
 };
 } // namespace
 

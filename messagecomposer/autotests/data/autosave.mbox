@@ -1,0 +1,13 @@
+From: me@me.example
+To: to@to.example
+Date: Tue, 22 Jan 2019 12:56:25 +0100
+Message-ID: <test@autotest.example>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="utf-8"
+
+Hello,
+
+This is a test message
+
+Greez

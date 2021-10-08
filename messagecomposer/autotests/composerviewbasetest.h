@@ -7,6 +7,11 @@
 #pragma once
 
 #include <QObject>
+namespace KIdentityManagement
+{
+class IdentityManager;
+class IdentityCombo;
+}
 
 class ComposerViewBaseTest : public QObject
 {
@@ -15,6 +20,13 @@ public:
     explicit ComposerViewBaseTest(QObject *parent = nullptr);
     ~ComposerViewBaseTest();
 private Q_SLOTS:
+    void cleanupTestCase();
+    void initTestCase();
     void shouldHaveDefaultValue();
+    void testGenerateCryptoMessages();
+    void testAutoSaveMessage();
+private:
+    KIdentityManagement::IdentityManager *mIdentMan = nullptr;
+    KIdentityManagement::IdentityCombo *mIdentCombo = nullptr;
 };
 
