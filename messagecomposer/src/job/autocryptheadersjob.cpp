@@ -81,7 +81,7 @@ void AutocryptHeadersJobPrivate::finishOnLastSubJob()
     resultContent = content;
 
     q->emitResult();
-};
+}
 
 void AutocryptHeadersJobPrivate::emitGpgError(const GpgME::Error &error)
 {
