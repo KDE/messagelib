@@ -58,6 +58,7 @@ endmacro()
 
 
 # Utility stuff.
+add_messagecomposer_test( draftstatustest.cpp )
 add_messagecomposer_test( utiltest.cpp )
 add_messagecomposer_test( messagefactoryngtest.cpp setupenv.cpp)
 add_messagecomposer_test( plugineditorcheckbeforesendparamstest.cpp )
