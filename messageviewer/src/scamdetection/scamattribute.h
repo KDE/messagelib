@@ -8,6 +8,7 @@
 #pragma once
 
 #include <Akonadi/Attribute>
+#include <memory>
 namespace MessageViewer
 {
 class ScamAttributePrivate;
@@ -30,7 +31,7 @@ public:
 
 private:
     friend class ScamAttributePrivate;
-    ScamAttributePrivate *const d;
+    std::unique_ptr<ScamAttributePrivate> const d;
 };
 }
 

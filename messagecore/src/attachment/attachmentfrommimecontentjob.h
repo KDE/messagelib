@@ -9,7 +9,7 @@
 #include "messagecore_private_export.h"
 
 #include "attachmentloadjob.h"
-
+#include <memory>
 namespace KMime
 {
 class Content;
@@ -55,8 +55,8 @@ protected Q_SLOTS:
 
 private:
     //@cond PRIVATE
-    class Private;
-    Private *const d;
+    class AttachmentFromMimeContentJobPrivate;
+    std::unique_ptr<AttachmentFromMimeContentJobPrivate> const d;
     //@endcond
 };
 }

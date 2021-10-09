@@ -15,7 +15,7 @@
 using namespace MessageCore;
 using KMime::Content;
 
-class Q_DECL_HIDDEN MessageCore::AttachmentFromMimeContentJob::Private
+class Q_DECL_HIDDEN MessageCore::AttachmentFromMimeContentJob::AttachmentFromMimeContentJobPrivate
 {
 public:
     const Content *mMimeContent = nullptr;
@@ -23,15 +23,12 @@ public:
 
 AttachmentFromMimeContentJob::AttachmentFromMimeContentJob(const Content *content, QObject *parent)
     : AttachmentLoadJob(parent)
-    , d(new Private)
+    , d(new AttachmentFromMimeContentJobPrivate)
 {
     d->mMimeContent = content;
 }
 
-AttachmentFromMimeContentJob::~AttachmentFromMimeContentJob()
-{
-    delete d;
-}
+AttachmentFromMimeContentJob::~AttachmentFromMimeContentJob() = default;
 
 const Content *AttachmentFromMimeContentJob::mimeContent() const
 {

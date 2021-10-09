@@ -89,10 +89,7 @@ AttachmentCompressJob::AttachmentCompressJob(const AttachmentPart::Ptr &part, QO
     d->mOriginalPart = part;
 }
 
-AttachmentCompressJob::~AttachmentCompressJob()
-{
-    delete d;
-}
+AttachmentCompressJob::~AttachmentCompressJob() = default;
 
 void AttachmentCompressJob::start()
 {

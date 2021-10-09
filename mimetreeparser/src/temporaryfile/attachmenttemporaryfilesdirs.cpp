@@ -31,10 +31,7 @@ AttachmentTemporaryFilesDirs::AttachmentTemporaryFilesDirs(QObject *parent)
 {
 }
 
-AttachmentTemporaryFilesDirs::~AttachmentTemporaryFilesDirs()
-{
-    delete d;
-}
+AttachmentTemporaryFilesDirs::~AttachmentTemporaryFilesDirs() = default;
 
 void AttachmentTemporaryFilesDirs::setDelayRemoveAllInMs(int ms)
 {

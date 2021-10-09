@@ -11,6 +11,7 @@
 #include "attachmentpart.h"
 
 #include <KJob>
+#include <memory>
 
 namespace MessageCore
 {
@@ -67,7 +68,7 @@ public:
 private:
     //@cond PRIVATE
     class Private;
-    Private *const d;
+    std::unique_ptr<Private> const d;
     //@endcond
 };
 }

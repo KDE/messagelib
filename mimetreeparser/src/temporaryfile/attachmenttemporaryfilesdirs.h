@@ -9,7 +9,7 @@
 #include "mimetreeparser_export.h"
 #include <QObject>
 #include <QStringList>
-
+#include <memory>
 namespace MimeTreeParser
 {
 class AttachmentTemporaryFilesDirsPrivate;
@@ -38,7 +38,7 @@ private Q_SLOTS:
     void slotRemoveTempFiles();
 
 private:
-    AttachmentTemporaryFilesDirsPrivate *const d;
+    std::unique_ptr<AttachmentTemporaryFilesDirsPrivate> const d;
 };
 }
 

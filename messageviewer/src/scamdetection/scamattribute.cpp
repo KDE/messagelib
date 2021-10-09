@@ -27,10 +27,7 @@ ScamAttribute::ScamAttribute()
 {
 }
 
-ScamAttribute::~ScamAttribute()
-{
-    delete d;
-}
+ScamAttribute::~ScamAttribute() = default;
 
 ScamAttribute *ScamAttribute::clone() const
 {
