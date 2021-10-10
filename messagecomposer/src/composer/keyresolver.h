@@ -289,8 +289,8 @@ private:
     class SigningPreferenceCounter;
     friend class ::Kleo::KeyResolver::SigningPreferenceCounter;
 
-    struct Private;
-    Private *const d;
+    struct KeyResolverPrivate;
+    std::unique_ptr<KeyResolverPrivate> const d;
 
     bool mEncryptToSelf;
     const bool mShowApprovalDialog : 1;

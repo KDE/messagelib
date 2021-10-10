@@ -590,7 +590,7 @@ struct FormatInfo {
     std::vector<GpgME::Key> signKeys;
 };
 
-struct Q_DECL_HIDDEN Kleo::KeyResolver::Private {
+struct Q_DECL_HIDDEN Kleo::KeyResolver::KeyResolverPrivate {
     bool mAutocryptEnabled;
     std::set<QByteArray> alreadyWarnedFingerprints;
 
@@ -621,7 +621,7 @@ Kleo::KeyResolver::KeyResolver(bool encToSelf,
                                int signWarnThresholdRootCert,
                                int encrWarnThresholdChainCert,
                                int signWarnThresholdChainCert)
-    : d(new Private)
+    : d(new KeyResolverPrivate)
     , mEncryptToSelf(encToSelf)
     , mShowApprovalDialog(showApproval)
     , mOpportunisticEncyption(oppEncryption)
@@ -635,10 +635,7 @@ Kleo::KeyResolver::KeyResolver(bool encToSelf,
 {
 }
 
-Kleo::KeyResolver::~KeyResolver()
-{
-    delete d;
-}
+Kleo::KeyResolver::~KeyResolver() = default;
 
 Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key,
                                                    const char *dontAskAgainName,
@@ -1654,7 +1651,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::signingKeys(CryptoMessageFormat f) co
 
 //
 //
-// Private helper methods below:
+// KeyResolverPrivate helper methods below:
 //
 //
 
