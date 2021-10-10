@@ -21,10 +21,7 @@ MessageViewerConfigureSettingsPlugin::MessageViewerConfigureSettingsPlugin(QObje
 {
 }
 
-MessageViewerConfigureSettingsPlugin::~MessageViewerConfigureSettingsPlugin()
-{
-    delete d;
-}
+MessageViewerConfigureSettingsPlugin::~MessageViewerConfigureSettingsPlugin() = default;
 
 void MessageViewerConfigureSettingsPlugin::showConfigureDialog(QWidget *parent)
 {

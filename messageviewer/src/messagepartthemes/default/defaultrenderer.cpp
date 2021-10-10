@@ -950,10 +950,7 @@ DefaultRenderer::DefaultRenderer(CSSHelperBase *cssHelper)
 {
 }
 
-DefaultRenderer::~DefaultRenderer()
-{
-    delete d;
-}
+DefaultRenderer::~DefaultRenderer() = default;
 
 void DefaultRenderer::setShowOnlyOneMimePart(bool onlyOneMimePart)
 {

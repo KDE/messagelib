@@ -9,6 +9,7 @@
 #include "messagecomposer_export.h"
 #include <PimCommon/PluginUtil>
 #include <QObject>
+#include <memory>
 namespace PimCommon
 {
 class CustomToolsPlugin;
@@ -37,6 +38,6 @@ public:
     Q_REQUIRED_RESULT PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
 
 private:
-    PluginEditorGrammarManagerPrivate *const d;
+    std::unique_ptr<PluginEditorGrammarManagerPrivate> const d;
 };
 }

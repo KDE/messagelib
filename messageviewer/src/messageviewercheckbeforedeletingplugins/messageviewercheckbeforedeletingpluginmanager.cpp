@@ -172,10 +172,7 @@ MessageViewerCheckBeforeDeletingPluginManager::MessageViewerCheckBeforeDeletingP
     d->initializePluginList();
 }
 
-MessageViewerCheckBeforeDeletingPluginManager::~MessageViewerCheckBeforeDeletingPluginManager()
-{
-    delete d;
-}
+MessageViewerCheckBeforeDeletingPluginManager::~MessageViewerCheckBeforeDeletingPluginManager() = default;
 
 QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> MessageViewerCheckBeforeDeletingPluginManager::pluginsList() const
 {

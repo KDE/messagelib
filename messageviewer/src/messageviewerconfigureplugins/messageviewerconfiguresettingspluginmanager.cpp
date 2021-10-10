@@ -167,10 +167,7 @@ MessageViewerConfigureSettingsPluginManager::MessageViewerConfigureSettingsPlugi
     d->initializePluginList();
 }
 
-MessageViewerConfigureSettingsPluginManager::~MessageViewerConfigureSettingsPluginManager()
-{
-    delete d;
-}
+MessageViewerConfigureSettingsPluginManager::~MessageViewerConfigureSettingsPluginManager() = default;
 
 QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> MessageViewerConfigureSettingsPluginManager::pluginsList() const
 {

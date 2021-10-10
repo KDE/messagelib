@@ -53,10 +53,7 @@ ConfigureWidget::ConfigureWidget(QWidget *parent)
     connect(d->mSettingsUi->overrideCharacterEncoding, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConfigureWidget::settingsChanged);
 }
 
-ConfigureWidget::~ConfigureWidget()
-{
-    delete d;
-}
+ConfigureWidget::~ConfigureWidget() = default;
 
 void ConfigureWidget::readConfig()
 {

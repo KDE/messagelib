@@ -38,7 +38,7 @@ Q_SIGNALS:
     void configureDialogCompleted();
 
 private:
-    ThemeConfigButtonPrivate *const d;
+    std::unique_ptr<ThemeConfigButtonPrivate> const d;
 };
 } // namespace Utils
 } // namespace MessageList

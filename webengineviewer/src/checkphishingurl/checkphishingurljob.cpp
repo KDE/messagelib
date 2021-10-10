@@ -39,10 +39,7 @@ CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CheckPhishingUrlJob::slotSslErrors);
 }
 
-CheckPhishingUrlJob::~CheckPhishingUrlJob()
-{
-    delete d;
-}
+CheckPhishingUrlJob::~CheckPhishingUrlJob() = default;
 
 void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
 {

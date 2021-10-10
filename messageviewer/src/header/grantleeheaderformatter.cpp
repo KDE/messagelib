@@ -274,10 +274,10 @@ protected:
     QByteArray header;
 };
 
-class Q_DECL_HIDDEN MessageViewer::GrantleeHeaderFormatter::Private
+class MessageViewer::GrantleeHeaderFormatter::GrantleeHeaderFormatterPrivate
 {
 public:
-    Private()
+    GrantleeHeaderFormatterPrivate()
     {
         Grantlee::registerMetaType<const KMime::Headers::Generics::AddressList *>();
         Grantlee::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
@@ -308,7 +308,7 @@ public:
         registerHeaderFormatter("date", QSharedPointer<HeaderFormatter>(new DateFormatter()));
     }
 
-    ~Private()
+    ~GrantleeHeaderFormatterPrivate()
     {
         delete engine;
     }
@@ -326,14 +326,11 @@ public:
 };
 
 GrantleeHeaderFormatter::GrantleeHeaderFormatter()
-    : d(new GrantleeHeaderFormatter::Private)
+    : d(new GrantleeHeaderFormatter::GrantleeHeaderFormatterPrivate)
 {
 }
 
-GrantleeHeaderFormatter::~GrantleeHeaderFormatter()
-{
-    delete d;
-}
+GrantleeHeaderFormatter::~GrantleeHeaderFormatter() = default;
 
 QString GrantleeHeaderFormatter::toHtml(const GrantleeHeaderFormatter::GrantleeHeaderFormatterSettings &settings) const
 {

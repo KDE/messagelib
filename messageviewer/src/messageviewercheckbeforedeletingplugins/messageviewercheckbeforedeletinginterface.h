@@ -46,6 +46,6 @@ public Q_SLOTS:
     virtual void reloadConfig();
 
 private:
-    MessageViewerCheckBeforeDeletingInterfacePrivate *const d;
+    std::unique_ptr<MessageViewerCheckBeforeDeletingInterfacePrivate> const d;
 };
 }

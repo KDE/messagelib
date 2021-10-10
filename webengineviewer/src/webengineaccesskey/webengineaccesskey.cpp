@@ -167,10 +167,7 @@ WebEngineAccessKey::WebEngineAccessKey(QWebEngineView *webEngine, QObject *paren
     // qDebug() << " WebEngineAccessKey::WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
 }
 
-WebEngineAccessKey::~WebEngineAccessKey()
-{
-    delete d;
-}
+WebEngineAccessKey::~WebEngineAccessKey() = default;
 
 void WebEngineAccessKey::setActionCollection(KActionCollection *ac)
 {

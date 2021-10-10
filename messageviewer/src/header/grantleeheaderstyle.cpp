@@ -34,10 +34,7 @@ GrantleeHeaderStyle::GrantleeHeaderStyle()
 {
 }
 
-GrantleeHeaderStyle::~GrantleeHeaderStyle()
-{
-    delete d;
-}
+GrantleeHeaderStyle::~GrantleeHeaderStyle() = default;
 
 const char *GrantleeHeaderStyle::name() const
 {

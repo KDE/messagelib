@@ -18,10 +18,10 @@
 using namespace MessageViewer;
 Q_GLOBAL_STATIC(Akonadi::Item::List, sListItem)
 
-class Q_DECL_HIDDEN MarkMessageReadHandler::Private
+class MarkMessageReadHandler::MarkMessageReadHandlerPrivate
 {
 public:
-    Private(MarkMessageReadHandler *qq)
+    MarkMessageReadHandlerPrivate(MarkMessageReadHandler *qq)
         : q(qq)
     {
     }
@@ -33,7 +33,7 @@ public:
     QTimer mTimer;
 };
 
-void MarkMessageReadHandler::Private::handleMessages()
+void MarkMessageReadHandler::MarkMessageReadHandlerPrivate::handleMessages()
 {
     Akonadi::Item item = mItemQueue;
 
@@ -48,7 +48,7 @@ void MarkMessageReadHandler::Private::handleMessages()
 
 MarkMessageReadHandler::MarkMessageReadHandler(QObject *parent)
     : QObject(parent)
-    , d(new Private(this))
+    , d(new MarkMessageReadHandlerPrivate(this))
 {
     d->mTimer.setSingleShot(true);
     connect(&d->mTimer, &QTimer::timeout, this, [this]() {
@@ -61,7 +61,6 @@ MarkMessageReadHandler::~MarkMessageReadHandler()
     if (d->mTimer.isActive()) {
         d->mTimer.stop();
     }
-    delete d;
 }
 
 void MarkMessageReadHandler::setItem(const Akonadi::Item &item)

@@ -24,10 +24,7 @@ PluginEditor::PluginEditor(QObject *parent)
 {
 }
 
-PluginEditor::~PluginEditor()
-{
-    delete d;
-}
+PluginEditor::~PluginEditor() = default;
 
 void PluginEditor::setOrder(int order)
 {

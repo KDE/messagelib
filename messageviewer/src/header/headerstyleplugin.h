@@ -9,6 +9,7 @@
 #include <QObject>
 
 #include "messageviewer_export.h"
+#include <memory>
 class KActionCollection;
 class QActionGroup;
 class KActionMenu;
@@ -51,6 +52,6 @@ public:
     virtual Q_REQUIRED_RESULT QString extraCommonCss(const QString &headerFont) const;
 
 private:
-    HeaderStylePluginPrivate *const d;
+    std::unique_ptr<HeaderStylePluginPrivate> const d;
 };
 }

@@ -47,6 +47,6 @@ public:
     void setShowEncryptionDetails(bool showEncryptionDetails);
 
 private:
-    DefaultRendererPrivate *const d;
+    std::unique_ptr<DefaultRendererPrivate> const d;
 };
 }

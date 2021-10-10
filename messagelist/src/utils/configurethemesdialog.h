@@ -30,8 +30,8 @@ Q_SIGNALS:
     void okClicked();
 
 private:
-    class Private;
-    Private *const d;
+    class ConfigureThemesDialogPrivate;
+    std::unique_ptr<ConfigureThemesDialogPrivate> const d;
 };
 } // namespace Utils
 } // namespace MessageList

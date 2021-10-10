@@ -164,10 +164,7 @@ ViewerPluginManager::ViewerPluginManager(QObject *parent)
 {
 }
 
-MessageViewer::ViewerPluginManager::~ViewerPluginManager()
-{
-    delete d;
-}
+MessageViewer::ViewerPluginManager::~ViewerPluginManager() = default;
 
 bool ViewerPluginManager::initializePluginList()
 {

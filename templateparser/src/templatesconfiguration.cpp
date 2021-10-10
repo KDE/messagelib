@@ -84,8 +84,6 @@ TemplatesConfiguration::~TemplatesConfiguration()
     disconnect(textEdit_reply_all->editor(), &QPlainTextEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
     disconnect(textEdit_forward->editor(), &QPlainTextEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
     disconnect(lineEdit_quote, &QLineEdit::textChanged, this, &TemplatesConfiguration::slotTextChanged);
-
-    delete d;
 }
 
 void TemplatesConfiguration::slotHelpLinkClicked(const QString &)

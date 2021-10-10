@@ -25,10 +25,7 @@ PluginEditorInitInterface::PluginEditorInitInterface(QObject *parent)
 {
 }
 
-PluginEditorInitInterface::~PluginEditorInitInterface()
-{
-    delete d;
-}
+PluginEditorInitInterface::~PluginEditorInitInterface() = default;
 
 void PluginEditorInitInterface::setParentWidget(QWidget *parent)
 {

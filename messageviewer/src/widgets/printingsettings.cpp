@@ -39,10 +39,7 @@ PrintingSettings::PrintingSettings(QWidget *parent)
     connect(d->mPrintingUi->alwaysShowEncryptionSignatureDetail, &QCheckBox::toggled, this, &PrintingSettings::changed);
 }
 
-PrintingSettings::~PrintingSettings()
-{
-    delete d;
-}
+PrintingSettings::~PrintingSettings() = default;
 
 void PrintingSettings::save()
 {

@@ -51,7 +51,7 @@ Q_SIGNALS:
 private:
     Q_REQUIRED_RESULT QPlainTextEdit *currentTextEdit() const;
     Q_REQUIRED_RESULT QString strOrBlank(const QString &str);
-    TemplatesConfigurationPrivate *const d;
+    std::unique_ptr<TemplatesConfigurationPrivate> const d;
 };
 }
 

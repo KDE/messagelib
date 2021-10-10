@@ -7,6 +7,7 @@
 
 #include "messageviewer_private_export.h"
 #include <Akonadi/Attribute>
+#include <memory>
 namespace MessageViewer
 {
 class DKIMResultAttributePrivate;
@@ -34,7 +35,7 @@ public:
 
 private:
     friend class DKIMResultAttributePrivate;
-    DKIMResultAttributePrivate *const d;
+    std::unique_ptr<DKIMResultAttributePrivate> const d;
 };
 }
 

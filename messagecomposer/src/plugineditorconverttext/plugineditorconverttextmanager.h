@@ -34,6 +34,6 @@ public:
     Q_REQUIRED_RESULT PluginEditorConvertText *pluginFromIdentifier(const QString &id);
 
 private:
-    PluginEditorConvertTextManagerPrivate *const d;
+    std::unique_ptr<PluginEditorConvertTextManagerPrivate> const d;
 };
 }

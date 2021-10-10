@@ -61,10 +61,7 @@ InvitationSettings::InvitationSettings(QWidget *parent)
     connect(d->mInvitationUi->mAutomaticSending, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
 }
 
-InvitationSettings::~InvitationSettings()
-{
-    delete d;
-}
+InvitationSettings::~InvitationSettings() = default;
 
 void InvitationSettings::slotLegacyBodyInvitesToggled(bool on)
 {

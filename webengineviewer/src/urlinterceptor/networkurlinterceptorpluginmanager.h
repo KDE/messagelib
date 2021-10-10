@@ -33,7 +33,7 @@ public:
     Q_REQUIRED_RESULT WebEngineViewer::NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
 
 private:
-    NetworkUrlInterceptorPluginManagerPrivate *const d;
+    std::unique_ptr<NetworkUrlInterceptorPluginManagerPrivate> const d;
 };
 }
 

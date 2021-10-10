@@ -47,7 +47,7 @@ private Q_SLOTS:
 
 private:
     Q_DISABLE_COPY(SearchFullHashJob)
-    SearchFullHashJobPrivate *const d;
+    std::unique_ptr<SearchFullHashJobPrivate> const d;
 };
 }
 

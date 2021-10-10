@@ -169,10 +169,7 @@ HeaderStylePluginManager::HeaderStylePluginManager(QObject *parent)
     d->initializePluginList();
 }
 
-HeaderStylePluginManager::~HeaderStylePluginManager()
-{
-    delete d;
-}
+HeaderStylePluginManager::~HeaderStylePluginManager() = default;
 
 QVector<MessageViewer::HeaderStylePlugin *> HeaderStylePluginManager::pluginsList() const
 {

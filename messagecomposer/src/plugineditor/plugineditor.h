@@ -8,6 +8,7 @@
 #include "messagecomposer_export.h"
 #include <PimCommon/AbstractGenericPlugin>
 #include <QObject>
+#include <memory>
 namespace MessageComposer
 {
 class PluginEditorPrivate;
@@ -27,6 +28,6 @@ public:
     virtual Q_REQUIRED_RESULT bool canProcessKeyEvent() const;
 
 private:
-    PluginEditorPrivate *const d;
+    std::unique_ptr<PluginEditorPrivate> const d;
 };
 }

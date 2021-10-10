@@ -43,10 +43,7 @@ HeaderStyle::HeaderStyle()
 {
 }
 
-HeaderStyle::~HeaderStyle()
-{
-    delete d;
-}
+HeaderStyle::~HeaderStyle() = default;
 
 void HeaderStyle::setAttachmentHtml(const QString &html)
 {

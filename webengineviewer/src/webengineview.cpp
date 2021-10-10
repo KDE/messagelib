@@ -89,10 +89,7 @@ WebEngineView::WebEngineView(QWidget *parent)
     });
 }
 
-WebEngineView::~WebEngineView()
-{
-    delete d;
-}
+WebEngineView::~WebEngineView() = default;
 
 WebEngineManageScript *WebEngineView::webEngineManagerScript() const
 {

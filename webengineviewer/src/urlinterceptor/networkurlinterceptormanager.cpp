@@ -52,10 +52,7 @@ NetworkUrlInterceptorManager::NetworkUrlInterceptorManager(QWebEngineView *webEn
 {
 }
 
-NetworkUrlInterceptorManager::~NetworkUrlInterceptorManager()
-{
-    delete d;
-}
+NetworkUrlInterceptorManager::~NetworkUrlInterceptorManager() = default;
 
 QVector<WebEngineViewer::NetworkPluginUrlInterceptorInterface *> NetworkUrlInterceptorManager::interfaceList() const
 {

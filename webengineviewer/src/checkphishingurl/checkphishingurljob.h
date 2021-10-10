@@ -45,6 +45,6 @@ private Q_SLOTS:
     void slotCheckUrlFinished(QNetworkReply *reply);
 
 private:
-    CheckPhishingUrlJobPrivate *const d;
+    std::unique_ptr<CheckPhishingUrlJobPrivate> const d;
 };
 }

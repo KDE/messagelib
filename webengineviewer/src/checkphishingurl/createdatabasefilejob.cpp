@@ -202,10 +202,7 @@ CreateDatabaseFileJob::CreateDatabaseFileJob(QObject *parent)
 {
 }
 
-CreateDatabaseFileJob::~CreateDatabaseFileJob()
-{
-    delete d;
-}
+CreateDatabaseFileJob::~CreateDatabaseFileJob() = default;
 
 bool CreateDatabaseFileJob::canStart() const
 {

@@ -30,7 +30,7 @@ Q_SIGNALS:
 
 private:
     void slotLegacyBodyInvitesToggled(bool on);
-    InvitationSettingsPrivate *const d;
+    std::unique_ptr<InvitationSettingsPrivate> const d;
 };
 }
 

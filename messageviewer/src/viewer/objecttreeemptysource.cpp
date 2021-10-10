@@ -38,10 +38,7 @@ EmptySource::EmptySource()
 {
 }
 
-EmptySource::~EmptySource()
-{
-    delete d;
-}
+EmptySource::~EmptySource() = default;
 
 bool EmptySource::decryptMessage() const
 {

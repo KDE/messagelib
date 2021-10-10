@@ -95,7 +95,7 @@ Q_SIGNALS:
     void focusInRecipientLineEdit();
 
 private:
-    RecipientsEditorPrivate *const d;
+    std::unique_ptr<RecipientsEditorPrivate> const d;
 };
 }
 

@@ -31,6 +31,6 @@ Q_SIGNALS:
     void changed();
 
 private:
-    PrintingSettingsPrivate *const d;
+    std::unique_ptr<PrintingSettingsPrivate> const d;
 };
 }

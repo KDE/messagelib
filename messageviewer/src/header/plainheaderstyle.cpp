@@ -52,10 +52,7 @@ PlainHeaderStyle::PlainHeaderStyle()
 {
 }
 
-PlainHeaderStyle::~PlainHeaderStyle()
-{
-    delete d;
-}
+PlainHeaderStyle::~PlainHeaderStyle() = default;
 
 //
 // PlainHeaderStyle:

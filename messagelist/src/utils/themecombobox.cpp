@@ -26,10 +26,7 @@ ThemeComboBox::ThemeComboBox(QWidget *parent)
     }
 }
 
-ThemeComboBox::~ThemeComboBox()
-{
-    delete d;
-}
+ThemeComboBox::~ThemeComboBox() = default;
 
 QString ThemeComboBox::currentTheme() const
 {

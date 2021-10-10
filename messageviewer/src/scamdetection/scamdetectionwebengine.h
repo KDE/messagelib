@@ -10,6 +10,7 @@
 #include "messageviewer_export.h"
 #include <QObject>
 #include <QVariant>
+#include <memory>
 class QWebEnginePage;
 namespace MessageViewer
 {
@@ -38,6 +39,6 @@ Q_SIGNALS:
     void resultScanDetection(bool foundScam);
 
 private:
-    ScamDetectionWebEnginePrivate *const d;
+    std::unique_ptr<ScamDetectionWebEnginePrivate> const d;
 };
 }

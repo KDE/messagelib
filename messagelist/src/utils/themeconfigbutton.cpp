@@ -60,9 +60,6 @@ ThemeConfigButton::ThemeConfigButton(QWidget *parent, const ThemeComboBox *theme
     setEnabled(Manager::instance());
 }
 
-ThemeConfigButton::~ThemeConfigButton()
-{
-    delete d;
-}
+ThemeConfigButton::~ThemeConfigButton() = default;
 
 #include "moc_themeconfigbutton.cpp"

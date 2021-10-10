@@ -27,10 +27,7 @@ MessageDisplayFormatAttribute::MessageDisplayFormatAttribute()
 {
 }
 
-MessageDisplayFormatAttribute::~MessageDisplayFormatAttribute()
-{
-    delete d;
-}
+MessageDisplayFormatAttribute::~MessageDisplayFormatAttribute() = default;
 
 MessageDisplayFormatAttribute *MessageDisplayFormatAttribute::clone() const
 {

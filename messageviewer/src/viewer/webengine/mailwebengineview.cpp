@@ -98,10 +98,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     connect(page(), &QWebEnginePage::scrollPositionChanged, d->mWebViewAccessKey, &WebEngineViewer::WebEngineAccessKey::hideAccessKeys);
 }
 
-MailWebEngineView::~MailWebEngineView()
-{
-    delete d;
-}
+MailWebEngineView::~MailWebEngineView() = default;
 
 void MailWebEngineView::readConfig()
 {

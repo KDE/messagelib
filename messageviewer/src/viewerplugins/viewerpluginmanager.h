@@ -40,7 +40,7 @@ public:
 
 private:
     Q_DISABLE_COPY(ViewerPluginManager)
-    ViewerPluginManagerPrivate *const d;
+    std::unique_ptr<ViewerPluginManagerPrivate> const d;
 };
 }
 

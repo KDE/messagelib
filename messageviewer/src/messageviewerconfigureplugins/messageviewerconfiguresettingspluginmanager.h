@@ -34,6 +34,6 @@ public:
     Q_REQUIRED_RESULT MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
 
 private:
-    MessageViewerConfigureSettingsPluginManagerPrivate *const d;
+    std::unique_ptr<MessageViewerConfigureSettingsPluginManagerPrivate> const d;
 };
 }

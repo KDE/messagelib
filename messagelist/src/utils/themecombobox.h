@@ -6,6 +6,7 @@
 
 #include <Akonadi/Collection>
 #include <QComboBox>
+#include <memory>
 #include <messagelist_export.h>
 namespace MessageList
 {
@@ -45,7 +46,7 @@ public Q_SLOTS:
     void selectDefault();
 
 private:
-    ThemeComboBoxPrivate *const d;
+    std::unique_ptr<ThemeComboBoxPrivate> const d;
 };
 } // namespace Utils
 } // namespace MessageList

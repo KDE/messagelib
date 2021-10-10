@@ -83,7 +83,7 @@ using namespace MessageList::Utils;
 
 ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     : QDialog(parent)
-    , d(new Private(this))
+    , d(new ConfigureThemesDialogPrivate(this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
     auto mainLayout = new QVBoxLayout(this);
@@ -174,10 +174,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     d->fillThemeList();
 }
 
-ConfigureThemesDialog::~ConfigureThemesDialog()
-{
-    delete d;
-}
+ConfigureThemesDialog::~ConfigureThemesDialog() = default;
 
 void ConfigureThemesDialog::selectTheme(const QString &themeId)
 {
@@ -188,7 +185,7 @@ void ConfigureThemesDialog::selectTheme(const QString &themeId)
     }
 }
 
-void ConfigureThemesDialog::Private::okButtonClicked()
+void ConfigureThemesDialog::ConfigureThemesDialogPrivate::okButtonClicked()
 {
     commitEditor();
 
@@ -210,7 +207,7 @@ void ConfigureThemesDialog::Private::okButtonClicked()
     q->close(); // this will delete too
 }
 
-void ConfigureThemesDialog::Private::commitEditor()
+void ConfigureThemesDialog::ConfigureThemesDialogPrivate::commitEditor()
 {
     Theme *editedTheme = mEditor->editedTheme();
     if (!editedTheme) {
@@ -233,7 +230,7 @@ void ConfigureThemesDialog::Private::commitEditor()
     editedItem->setText(goodName);
 }
 
-void ConfigureThemesDialog::Private::editedThemeNameChanged()
+void ConfigureThemesDialog::ConfigureThemesDialogPrivate::editedThemeNameChanged()
 {
     Theme *set = mEditor->editedTheme();
     if (!set) {
@@ -250,7 +247,7 @@ void ConfigureThemesDialog::Private::editedThemeNameChanged()
     it->setText(goodName);
 }
 
-void ConfigureThemesDialog::Private::fillThemeList()
+void ConfigureThemesDialog::ConfigureThemesDialogPrivate::fillThemeList()
 {
     const QMap<QString, Theme *> &sets = Manager::instance()->themes();
 
@@ -260,7 +257,7 @@ void ConfigureThemesDialog::Private::fillThemeList()
     }
 }
 
-void ConfigureThemesDialog::Private::themeListItemClicked(QListWidgetItem *cur)
+void ConfigureThemesDialog::ConfigureThemesDialogPrivate::themeListItemClicked(QListWidgetItem *cur)
 {
     commitEditor();
 
@@ -277,7 +274,7 @@ void ConfigureThemesDialog::Private::themeListItemClicked(QListWidgetItem *cur)
     }
 }
 
-ThemeListWidgetItem *ConfigureThemesDialog::Private::findThemeItemById(const QString &themeId)
+ThemeListWidgetItem *ConfigureThemesDialog::ConfigureThemesDialogPrivate::findThemeItemById(const QString &themeId)
 {
     const int c = mThemeList->count();
     int i = 0;
@@ -293,7 +290,7 @@ ThemeListWidgetItem *ConfigureThemesDialog::Private::findThemeItemById(const QSt
     return nullptr;
 }
 
-ThemeListWidgetItem *ConfigureThemesDialog::Private::findThemeItemByName(const QString &name, Theme *skipTheme)
+ThemeListWidgetItem *ConfigureThemesDialog::ConfigureThemesDialogPrivate::findThemeItemByName(const QString &name, Theme *skipTheme)
 {
     const int c = mThemeList->count();
     int i = 0;
@@ -311,7 +308,7 @@ ThemeListWidgetItem *ConfigureThemesDialog::Private::findThemeItemByName(const Q
     return nullptr;
 }
 
-ThemeListWidgetItem *ConfigureThemesDialog::Private::findThemeItemByTheme(Theme *set)
+ThemeListWidgetItem *ConfigureThemesDialog::ConfigureThemesDialogPrivate::findThemeItemByTheme(Theme *set)
 {
     const int c = mThemeList->count();
     int i = 0;
@@ -327,7 +324,7 @@ ThemeListWidgetItem *ConfigureThemesDialog::Private::findThemeItemByTheme(Theme 
     return nullptr;
 }
 
-QString ConfigureThemesDialog::Private::uniqueNameForTheme(const QString &baseName, Theme *skipTheme)
+QString ConfigureThemesDialog::ConfigureThemesDialogPrivate::uniqueNameForTheme(const QString &baseName, Theme *skipTheme)
 {
     QString ret = baseName;
     if (ret.isEmpty()) {
@@ -345,7 +342,7 @@ QString ConfigureThemesDialog::Private::uniqueNameForTheme(const QString &baseNa
     return ret;
 }
 
-void ConfigureThemesDialog::Private::newThemeButtonClicked()
+void ConfigureThemesDialog::ConfigureThemesDialogPrivate::newThemeButtonClicked()
 {
     const int numberOfSelectedItem(mThemeList->selectedItems().count());
     Theme emptyTheme;
@@ -373,7 +370,7 @@ void ConfigureThemesDialog::Private::newThemeButtonClicked()
     }
 }
 
-void ConfigureThemesDialog::Private::cloneThemeButtonClicked()
+void ConfigureThemesDialog::ConfigureThemesDialogPrivate::cloneThemeButtonClicked()
 {
     auto item = dynamic_cast<ThemeListWidgetItem *>(mThemeList->currentItem());
     if (!item) {
@@ -397,7 +394,7 @@ void ConfigureThemesDialog::Private::cloneThemeButtonClicked()
     mCloneThemeButton->setEnabled(numberOfSelectedItem == 1);
 }
 
-void ConfigureThemesDialog::Private::deleteThemeButtonClicked()
+void ConfigureThemesDialog::ConfigureThemesDialogPrivate::deleteThemeButtonClicked()
 {
     const QList<QListWidgetItem *> list = mThemeList->selectedItems();
     if (list.isEmpty()) {
@@ -430,7 +427,7 @@ void ConfigureThemesDialog::Private::deleteThemeButtonClicked()
     }
 }
 
-void ConfigureThemesDialog::Private::importThemeButtonClicked()
+void ConfigureThemesDialog::ConfigureThemesDialogPrivate::importThemeButtonClicked()
 {
     const QString filename = QFileDialog::getOpenFileName(q, i18n("Import Theme"));
     if (!filename.isEmpty()) {
@@ -460,7 +457,7 @@ void ConfigureThemesDialog::Private::importThemeButtonClicked()
     }
 }
 
-void ConfigureThemesDialog::Private::exportThemeButtonClicked()
+void ConfigureThemesDialog::ConfigureThemesDialogPrivate::exportThemeButtonClicked()
 {
     const QList<QListWidgetItem *> list = mThemeList->selectedItems();
     if (list.isEmpty()) {

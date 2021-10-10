@@ -55,10 +55,7 @@ NetworkUrlInterceptor::NetworkUrlInterceptor(QObject *parent)
 {
 }
 
-NetworkUrlInterceptor::~NetworkUrlInterceptor()
-{
-    delete d;
-}
+NetworkUrlInterceptor::~NetworkUrlInterceptor() = default;
 
 void NetworkUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {

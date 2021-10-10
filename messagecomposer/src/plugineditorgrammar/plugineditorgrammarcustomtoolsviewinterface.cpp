@@ -20,10 +20,7 @@ PluginEditorGrammarCustomToolsViewInterface::PluginEditorGrammarCustomToolsViewI
 {
 }
 
-PluginEditorGrammarCustomToolsViewInterface::~PluginEditorGrammarCustomToolsViewInterface()
-{
-    delete d;
-}
+PluginEditorGrammarCustomToolsViewInterface::~PluginEditorGrammarCustomToolsViewInterface() = default;
 
 void PluginEditorGrammarCustomToolsViewInterface::setParentWidget(QWidget *parent)
 {

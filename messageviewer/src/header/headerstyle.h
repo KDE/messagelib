@@ -13,10 +13,9 @@
 
 #include "messageviewer_export.h"
 
-//#include <GrantleeTheme/GrantleeTheme>
-
 #include <Akonadi/KMime/MessageStatus>
 #include <KMime/Message>
+#include <memory.h>
 
 class QString;
 
@@ -98,7 +97,7 @@ public:
     Q_REQUIRED_RESULT QString attachmentHtml() const;
 
 private:
-    HeaderStylePrivate *const d;
+    std::unique_ptr<HeaderStylePrivate> const d;
 };
 }
 

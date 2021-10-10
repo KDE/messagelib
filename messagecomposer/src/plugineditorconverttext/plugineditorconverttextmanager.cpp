@@ -147,10 +147,7 @@ PluginEditorConvertTextManager::PluginEditorConvertTextManager(QObject *parent)
 {
 }
 
-PluginEditorConvertTextManager::~PluginEditorConvertTextManager()
-{
-    delete d;
-}
+PluginEditorConvertTextManager::~PluginEditorConvertTextManager() = default;
 
 PluginEditorConvertTextManager *PluginEditorConvertTextManager::self()
 {

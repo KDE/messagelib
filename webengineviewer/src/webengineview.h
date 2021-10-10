@@ -52,6 +52,6 @@ protected:
     virtual void forwardMouseReleaseEvent(QMouseEvent *event);
 
 private:
-    WebEngineViewPrivate *const d;
+    std::unique_ptr<WebEngineViewPrivate> const d;
 };
 }

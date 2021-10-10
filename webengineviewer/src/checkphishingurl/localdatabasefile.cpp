@@ -76,10 +76,7 @@ LocalDataBaseFile::LocalDataBaseFile(const QString &filename)
     d->load();
 }
 
-LocalDataBaseFile::~LocalDataBaseFile()
-{
-    delete d;
-}
+LocalDataBaseFile::~LocalDataBaseFile() = default;
 
 void LocalDataBaseFile::close()
 {

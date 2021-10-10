@@ -12,6 +12,7 @@
 #include <QObject>
 #include <QVector>
 #include <WebEngineViewer/WebHitTestResult>
+#include <memory>
 class KActionCollection;
 class QWebEngineView;
 namespace WebEngineViewer
@@ -33,6 +34,6 @@ public:
     Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
 private:
-    NetworkUrlInterceptorManagerPrivate *const d;
+    std::unique_ptr<NetworkUrlInterceptorManagerPrivate> const d;
 };
 }

@@ -159,10 +159,7 @@ NetworkUrlInterceptorPluginManager::NetworkUrlInterceptorPluginManager(QObject *
     d->initializePluginList();
 }
 
-NetworkUrlInterceptorPluginManager::~NetworkUrlInterceptorPluginManager()
-{
-    delete d;
-}
+NetworkUrlInterceptorPluginManager::~NetworkUrlInterceptorPluginManager() = default;
 
 QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPluginManager::pluginsList() const
 {

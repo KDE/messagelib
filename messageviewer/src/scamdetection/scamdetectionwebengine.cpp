@@ -62,10 +62,7 @@ ScamDetectionWebEngine::ScamDetectionWebEngine(QObject *parent)
 {
 }
 
-ScamDetectionWebEngine::~ScamDetectionWebEngine()
-{
-    delete d;
-}
+ScamDetectionWebEngine::~ScamDetectionWebEngine() = default;
 
 void ScamDetectionWebEngine::scanPage(QWebEnginePage *page)
 {

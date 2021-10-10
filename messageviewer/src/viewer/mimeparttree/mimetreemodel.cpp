@@ -24,14 +24,14 @@
 
 using namespace MessageViewer;
 
-class Q_DECL_HIDDEN MimeTreeModel::Private
+class Q_DECL_HIDDEN MimeTreeModel::MimeTreeModelPrivate
 {
 public:
-    Private()
+    MimeTreeModelPrivate()
     {
     }
 
-    ~Private()
+    ~MimeTreeModelPrivate()
     {
         qDeleteAll(tempDirs);
     }
@@ -123,14 +123,11 @@ public:
 
 MimeTreeModel::MimeTreeModel(QObject *parent)
     : QAbstractItemModel(parent)
-    , d(new Private)
+    , d(new MimeTreeModelPrivate)
 {
 }
 
-MimeTreeModel::~MimeTreeModel()
-{
-    delete d;
-}
+MimeTreeModel::~MimeTreeModel() = default;
 
 void MimeTreeModel::setRoot(KMime::Content *root)
 {

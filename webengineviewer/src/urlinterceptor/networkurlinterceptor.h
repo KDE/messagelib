@@ -8,7 +8,7 @@
 
 #include "webengineviewer_export.h"
 #include <QWebEngineUrlRequestInterceptor>
-
+#include <memory>
 namespace WebEngineViewer
 {
 class NetworkUrlInterceptorPrivate;
@@ -30,6 +30,6 @@ public:
     void removeInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
 
 private:
-    NetworkUrlInterceptorPrivate *const d;
+    std::unique_ptr<NetworkUrlInterceptorPrivate> const d;
 };
 }

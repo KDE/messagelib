@@ -8,6 +8,7 @@
 
 #include "messageviewer_export.h"
 #include <QObject>
+#include <memory>
 class KActionCollection;
 
 namespace MessageViewer
@@ -37,6 +38,6 @@ Q_SIGNALS:
     void configChanged();
 
 private:
-    ViewerPluginPrivate *const d;
+    std::unique_ptr<ViewerPluginPrivate> const d;
 };
 }

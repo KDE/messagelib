@@ -60,7 +60,7 @@ public:
     Q_REQUIRED_RESULT GpgME::Key key() const;
 
 private:
-    RecipientPrivate *const d;
+    std::unique_ptr<RecipientPrivate> const d;
 };
 }
 

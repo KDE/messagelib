@@ -44,10 +44,7 @@ ScamExpandUrlJob::ScamExpandUrlJob(QObject *parent)
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &ScamExpandUrlJob::slotExpandFinished);
 }
 
-ScamExpandUrlJob::~ScamExpandUrlJob()
-{
-    delete d;
-}
+ScamExpandUrlJob::~ScamExpandUrlJob() = default;
 
 void ScamExpandUrlJob::expandedUrl(const QUrl &url)
 {

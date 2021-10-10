@@ -24,10 +24,7 @@ ViewerPlugin::ViewerPlugin(QObject *parent)
 {
 }
 
-ViewerPlugin::~ViewerPlugin()
-{
-    delete d;
-}
+ViewerPlugin::~ViewerPlugin() = default;
 
 void ViewerPlugin::showConfigureDialog(QWidget *parent)
 {

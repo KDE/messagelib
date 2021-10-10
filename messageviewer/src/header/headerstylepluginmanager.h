@@ -35,6 +35,6 @@ public:
     Q_REQUIRED_RESULT MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 
 private:
-    HeaderStylePluginManagerPrivate *const d;
+    std::unique_ptr<HeaderStylePluginManagerPrivate> const d;
 };
 }

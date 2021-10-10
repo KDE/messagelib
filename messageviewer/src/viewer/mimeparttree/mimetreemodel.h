@@ -7,7 +7,7 @@
 #pragma once
 
 #include <QAbstractItemModel>
-
+#include <memory>
 namespace KMime
 {
 class Content;
@@ -42,8 +42,8 @@ public:
     Q_REQUIRED_RESULT QStringList mimeTypes() const override;
 
 private:
-    class Private;
-    Private *const d;
+    class MimeTreeModelPrivate;
+    std::unique_ptr<MimeTreeModelPrivate> const d;
 };
 }
 

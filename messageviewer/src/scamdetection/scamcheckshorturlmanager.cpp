@@ -27,10 +27,7 @@ ScamCheckShortUrlManager::ScamCheckShortUrlManager(QObject *parent)
     d->mCheckShortUrl = new ScamCheckShortUrl(this);
 }
 
-ScamCheckShortUrlManager::~ScamCheckShortUrlManager()
-{
-    delete d;
-}
+ScamCheckShortUrlManager::~ScamCheckShortUrlManager() = default;
 
 ScamCheckShortUrlManager *ScamCheckShortUrlManager::self()
 {

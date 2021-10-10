@@ -77,10 +77,7 @@ AkonadiSender::AkonadiSender(QObject *parent)
 {
 }
 
-AkonadiSender::~AkonadiSender()
-{
-    delete d;
-}
+AkonadiSender::~AkonadiSender() = default;
 
 bool AkonadiSender::doSend(const KMime::Message::Ptr &aMsg, short sendNow)
 {

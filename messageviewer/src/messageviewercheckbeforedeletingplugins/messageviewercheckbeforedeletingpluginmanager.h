@@ -34,6 +34,6 @@ public:
     Q_REQUIRED_RESULT MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
 
 private:
-    MessageViewerCheckBeforeDeletingPluginManagerPrivate *const d;
+    std::unique_ptr<MessageViewerCheckBeforeDeletingPluginManagerPrivate> const d;
 };
 }

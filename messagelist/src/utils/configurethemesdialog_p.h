@@ -22,10 +22,10 @@ class ThemeEditor;
 class ThemeListWidget;
 class ThemeListWidgetItem;
 
-class Q_DECL_HIDDEN ConfigureThemesDialog::Private
+class Q_DECL_HIDDEN ConfigureThemesDialog::ConfigureThemesDialogPrivate
 {
 public:
-    Private(ConfigureThemesDialog *owner)
+    ConfigureThemesDialogPrivate(ConfigureThemesDialog *owner)
         : q(owner)
     {
     }

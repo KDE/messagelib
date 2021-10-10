@@ -96,7 +96,7 @@ private Q_SLOTS:
 
 private:
     void runJavaScriptInWordId(const QString &script);
-    MailWebEngineViewPrivate *const d;
+    std::unique_ptr<MailWebEngineViewPrivate> const d;
 };
 }
 

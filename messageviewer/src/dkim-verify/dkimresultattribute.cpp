@@ -25,10 +25,7 @@ DKIMResultAttribute::DKIMResultAttribute()
 {
 }
 
-DKIMResultAttribute::~DKIMResultAttribute()
-{
-    delete d;
-}
+DKIMResultAttribute::~DKIMResultAttribute() = default;
 
 QByteArray DKIMResultAttribute::type() const
 {

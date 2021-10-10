@@ -9,6 +9,7 @@
 
 #include "messageviewer_export.h"
 #include <QObject>
+#include <memory>
 namespace MessageViewer
 {
 class ScamCheckShortUrl;
@@ -27,6 +28,6 @@ public:
     Q_REQUIRED_RESULT ScamCheckShortUrl *scamCheckShortUrl() const;
 
 private:
-    ScamCheckShortUrlManagerPrivate *const d;
+    std::unique_ptr<ScamCheckShortUrlManagerPrivate> const d;
 };
 }

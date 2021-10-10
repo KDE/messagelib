@@ -59,6 +59,6 @@ private Q_SLOTS:
     void queueJobResult(KJob *job);
 
 private:
-    AkonadiSenderPrivate *const d;
+    std::unique_ptr<AkonadiSenderPrivate> const d;
 };
 }

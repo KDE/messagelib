@@ -44,10 +44,7 @@ CreatePhishingUrlDataBaseJob::CreatePhishingUrlDataBaseJob(QObject *parent)
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CreatePhishingUrlDataBaseJob::slotSslErrors);
 }
 
-CreatePhishingUrlDataBaseJob::~CreatePhishingUrlDataBaseJob()
-{
-    delete d;
-}
+CreatePhishingUrlDataBaseJob::~CreatePhishingUrlDataBaseJob() = default;
 
 void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
 {

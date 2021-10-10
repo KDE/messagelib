@@ -9,6 +9,7 @@
 #include "webengineviewer_export.h"
 #include <QObject>
 #include <QUrl>
+#include <memory>
 
 namespace WebEngineViewer
 {
@@ -47,7 +48,7 @@ public:
     void clearCache();
 
 private:
-    CheckPhishingUrlCachePrivate *const d;
+    std::unique_ptr<CheckPhishingUrlCachePrivate> const d;
 };
 }
 

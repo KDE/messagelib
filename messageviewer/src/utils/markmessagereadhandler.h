@@ -43,9 +43,9 @@ public:
 
 private:
     //@cond PRIVATE
-    class Private;
-    friend class Private;
-    Private *const d;
+    class MarkMessageReadHandlerPrivate;
+    friend class MarkMessageReadHandlerPrivate;
+    std::unique_ptr<MarkMessageReadHandlerPrivate> const d;
     //@endcond
 };
 }

@@ -117,10 +117,7 @@ ViewerPluginToolManager::ViewerPluginToolManager(QWidget *parentWidget, QObject 
 {
 }
 
-ViewerPluginToolManager::~ViewerPluginToolManager()
-{
-    delete d;
-}
+ViewerPluginToolManager::~ViewerPluginToolManager() = default;
 
 void ViewerPluginToolManager::closeAllTools()
 {

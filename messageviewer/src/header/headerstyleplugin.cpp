@@ -24,10 +24,7 @@ HeaderStylePlugin::HeaderStylePlugin(QObject *parent)
 {
 }
 
-HeaderStylePlugin::~HeaderStylePlugin()
-{
-    delete d;
-}
+HeaderStylePlugin::~HeaderStylePlugin() = default;
 
 bool HeaderStylePlugin::hasMargin() const
 {

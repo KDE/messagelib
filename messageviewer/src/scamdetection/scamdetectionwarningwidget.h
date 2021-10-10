@@ -39,7 +39,7 @@ private:
     void slotMessageIsNotAScam();
 
 private:
-    ScamDetectionWarningWidgetPrivate *const d;
+    std::unique_ptr<ScamDetectionWarningWidgetPrivate> const d;
 };
 }
 

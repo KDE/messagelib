@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include <QObject>
-
 #include "messageviewer_export.h"
+#include <QObject>
+#include <memory>
 namespace MessageViewer
 {
 class MessageViewerConfigureSettingsPluginPrivate;
@@ -29,6 +29,6 @@ Q_SIGNALS:
     void configChanged();
 
 private:
-    MessageViewerConfigureSettingsPluginPrivate *const d;
+    std::unique_ptr<MessageViewerConfigureSettingsPluginPrivate> const d;
 };
 }

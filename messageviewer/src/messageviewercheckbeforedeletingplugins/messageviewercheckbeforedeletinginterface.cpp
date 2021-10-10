@@ -28,10 +28,7 @@ MessageViewerCheckBeforeDeletingInterface::MessageViewerCheckBeforeDeletingInter
 {
 }
 
-MessageViewerCheckBeforeDeletingInterface::~MessageViewerCheckBeforeDeletingInterface()
-{
-    delete d;
-}
+MessageViewerCheckBeforeDeletingInterface::~MessageViewerCheckBeforeDeletingInterface() = default;
 
 void MessageViewerCheckBeforeDeletingInterface::setParentWidget(QWidget *parent)
 {

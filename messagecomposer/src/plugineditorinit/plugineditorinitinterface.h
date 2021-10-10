@@ -8,7 +8,7 @@
 
 #include "messagecomposer_export.h"
 #include <QObject>
-
+#include <memory>
 namespace KPIMTextEdit
 {
 class RichTextComposer;
@@ -40,7 +40,7 @@ public Q_SLOTS:
     virtual void reloadConfig();
 
 private:
-    PluginEditorInitInterfacePrivate *const d;
+    std::unique_ptr<PluginEditorInitInterfacePrivate> const d;
 };
 }
 

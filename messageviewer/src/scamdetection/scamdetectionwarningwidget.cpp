@@ -55,10 +55,7 @@ ScamDetectionWarningWidget::ScamDetectionWarningWidget(QWidget *parent)
     connect(action, &QAction::triggered, this, &ScamDetectionWarningWidget::slotDisableScamDetection);
 }
 
-ScamDetectionWarningWidget::~ScamDetectionWarningWidget()
-{
-    delete d;
-}
+ScamDetectionWarningWidget::~ScamDetectionWarningWidget() = default;
 
 void ScamDetectionWarningWidget::setUseInTestApps(bool b)
 {

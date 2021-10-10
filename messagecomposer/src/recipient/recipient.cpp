@@ -34,10 +34,7 @@ Recipient::Recipient(const QString &email, Recipient::Type type)
 {
 }
 
-Recipient::~Recipient()
-{
-    delete d;
-}
+Recipient::~Recipient() = default;
 
 void Recipient::setType(Type type)
 {

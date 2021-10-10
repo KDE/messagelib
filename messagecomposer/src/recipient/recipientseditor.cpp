@@ -95,10 +95,7 @@ RecipientsEditor::RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *p
     addData(); // one default line
 }
 
-RecipientsEditor::~RecipientsEditor()
-{
-    delete d;
-}
+RecipientsEditor::~RecipientsEditor() = default;
 
 bool RecipientsEditor::addRecipient(const QString &recipient, Recipient::Type type)
 {

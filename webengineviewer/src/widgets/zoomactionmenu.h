@@ -47,7 +47,7 @@ public Q_SLOTS:
     void slotZoomReset();
 
 private:
-    ZoomActionMenuPrivate *const d;
+    std::unique_ptr<ZoomActionMenuPrivate> const d;
 };
 }
 

@@ -8,6 +8,7 @@
 
 #include "webengineviewer_private_export.h"
 #include <QString>
+#include <memory>
 
 namespace WebEngineViewer
 {
@@ -47,7 +48,7 @@ public:
     Q_REQUIRED_RESULT QVector<WebEngineViewer::Addition> extractAllInfo() const;
 
 private:
-    LocalDataBaseFilePrivate *const d;
+    std::unique_ptr<LocalDataBaseFilePrivate> const d;
 };
 }
 

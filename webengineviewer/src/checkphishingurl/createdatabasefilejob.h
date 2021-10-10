@@ -9,7 +9,7 @@
 #include "updatedatabaseinfo.h"
 #include "webengineviewer_export.h"
 #include <QObject>
-
+#include <memory>
 namespace WebEngineViewer
 {
 class CreateDatabaseFileJobPrivate;
@@ -32,7 +32,7 @@ Q_SIGNALS:
     void finished(bool success, const QString &newStateDatabase, const QString &minimumWaitDurationStr);
 
 private:
-    CreateDatabaseFileJobPrivate *const d;
+    std::unique_ptr<CreateDatabaseFileJobPrivate> const d;
 };
 }
 

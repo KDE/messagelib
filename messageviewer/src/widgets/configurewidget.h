@@ -49,7 +49,7 @@ Q_SIGNALS:
 
 private:
     void readCurrentOverrideCodec();
-    ConfigureWidgetPrivate *const d;
+    std::unique_ptr<ConfigureWidgetPrivate> const d;
 };
 }
 

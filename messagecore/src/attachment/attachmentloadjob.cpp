@@ -22,10 +22,7 @@ AttachmentLoadJob::AttachmentLoadJob(QObject *parent)
 {
 }
 
-AttachmentLoadJob::~AttachmentLoadJob()
-{
-    delete d;
-}
+AttachmentLoadJob::~AttachmentLoadJob() = default;
 
 void AttachmentLoadJob::start()
 {

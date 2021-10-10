@@ -7,8 +7,8 @@
 #pragma once
 
 #include "messageviewer_export.h"
-
 #include <QObject>
+#include <memory>
 class KActionMenu;
 class KActionCollection;
 namespace MessageViewer
@@ -38,6 +38,6 @@ Q_SIGNALS:
     void styleUpdated();
 
 private:
-    HeaderStyleMenuManagerPrivate *const d;
+    std::unique_ptr<HeaderStyleMenuManagerPrivate> const d;
 };
 }

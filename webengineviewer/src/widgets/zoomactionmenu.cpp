@@ -40,10 +40,7 @@ ZoomActionMenu::ZoomActionMenu(QObject *parent)
 {
 }
 
-ZoomActionMenu::~ZoomActionMenu()
-{
-    delete d;
-}
+ZoomActionMenu::~ZoomActionMenu() = default;
 
 void ZoomActionMenu::setActionCollection(KActionCollection *ac)
 {

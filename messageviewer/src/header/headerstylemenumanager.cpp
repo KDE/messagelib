@@ -127,10 +127,7 @@ HeaderStyleMenuManager::HeaderStyleMenuManager(KActionCollection *ac, QObject *p
     d->initialize(ac);
 }
 
-HeaderStyleMenuManager::~HeaderStyleMenuManager()
-{
-    delete d;
-}
+HeaderStyleMenuManager::~HeaderStyleMenuManager() = default;
 
 KActionMenu *HeaderStyleMenuManager::menu() const
 {

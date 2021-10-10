@@ -38,7 +38,7 @@ public:
 
 private:
     friend class MessageDisplayFormatAttributePrivate;
-    MessageDisplayFormatAttributePrivate *const d;
+    std::unique_ptr<MessageDisplayFormatAttributePrivate> const d;
 };
 }
 

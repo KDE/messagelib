@@ -54,7 +54,7 @@ Q_SIGNALS:
     void activatePlugin(MessageViewer::ViewerPluginInterface *);
 
 private:
-    ViewerPluginInterfacePrivate *const d;
+    std::unique_ptr<ViewerPluginInterfacePrivate> const d;
 };
 }
 

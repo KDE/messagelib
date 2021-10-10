@@ -22,10 +22,7 @@ MessageViewerCheckBeforeDeletingPlugin::MessageViewerCheckBeforeDeletingPlugin(Q
 {
 }
 
-MessageViewerCheckBeforeDeletingPlugin::~MessageViewerCheckBeforeDeletingPlugin()
-{
-    delete d;
-}
+MessageViewerCheckBeforeDeletingPlugin::~MessageViewerCheckBeforeDeletingPlugin() = default;
 
 void MessageViewerCheckBeforeDeletingPlugin::showConfigureDialog(QWidget *parent)
 {

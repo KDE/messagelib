@@ -23,10 +23,7 @@ ViewerPluginInterface::ViewerPluginInterface(QObject *parent)
 {
 }
 
-ViewerPluginInterface::~ViewerPluginInterface()
-{
-    delete d;
-}
+ViewerPluginInterface::~ViewerPluginInterface() = default;
 
 void ViewerPluginInterface::execute()
 {

@@ -138,10 +138,7 @@ CheckPhishingUrlCache::CheckPhishingUrlCache(QObject *parent)
 {
 }
 
-CheckPhishingUrlCache::~CheckPhishingUrlCache()
-{
-    delete d;
-}
+CheckPhishingUrlCache::~CheckPhishingUrlCache() = default;
 
 void CheckPhishingUrlCache::addCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime)
 {

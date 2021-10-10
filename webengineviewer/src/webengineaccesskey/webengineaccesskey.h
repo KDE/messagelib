@@ -8,6 +8,7 @@
 
 #include "webengineviewer_export.h"
 #include <QObject>
+#include <memory>
 
 class KActionCollection;
 class QWheelEvent;
@@ -46,7 +47,7 @@ private Q_SLOTS:
     void handleSearchAccessKey(const QVariant &res);
 
 private:
-    WebEngineAccessKeyPrivate *const d;
+    std::unique_ptr<WebEngineAccessKeyPrivate> const d;
 };
 }
 

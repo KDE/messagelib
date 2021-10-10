@@ -123,10 +123,7 @@ MessageList::StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectio
     });
 }
 
-MessageList::StorageModel::~StorageModel()
-{
-    delete d;
-}
+MessageList::StorageModel::~StorageModel() = default;
 
 Collection::List MessageList::StorageModel::displayedCollections() const
 {

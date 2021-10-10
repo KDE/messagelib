@@ -34,7 +34,7 @@ public:
     void setExtraDisplayHeaders(const QStringList &);
 
 private:
-    GrantleeHeaderTestStylePrivate *const d;
+    std::unique_ptr<GrantleeHeaderTestStylePrivate> const d;
 };
 }
 

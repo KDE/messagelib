@@ -27,6 +27,6 @@ public:
     Q_REQUIRED_RESULT QString format(KMime::Message *message) const override;
 
 private:
-    GrantleeHeaderStylePrivate *const d;
+    std::unique_ptr<GrantleeHeaderStylePrivate> const d;
 };
 }

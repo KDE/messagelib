@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include <QObject>
-
 #include "messageviewer_export.h"
+#include <QObject>
+#include <memory>
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingInterface;
@@ -33,6 +33,6 @@ Q_SIGNALS:
     void configChanged();
 
 private:
-    MessageViewerCheckBeforeDeletingPluginPrivate *const d;
+    std::unique_ptr<MessageViewerCheckBeforeDeletingPluginPrivate> const d;
 };
 }

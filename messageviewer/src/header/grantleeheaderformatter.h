@@ -57,8 +57,8 @@ private:
                                      const MessageViewer::HeaderStyle *style,
                                      KMime::Message *message,
                                      bool showEmoticons = true) const;
-    class Private;
-    Private *const d;
+    class GrantleeHeaderFormatterPrivate;
+    std::unique_ptr<GrantleeHeaderFormatterPrivate> const d;
 };
 }
 

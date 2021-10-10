@@ -44,10 +44,7 @@ SearchFullHashJob::SearchFullHashJob(QObject *parent)
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &SearchFullHashJob::slotSslErrors);
 }
 
-SearchFullHashJob::~SearchFullHashJob()
-{
-    delete d;
-}
+SearchFullHashJob::~SearchFullHashJob() = default;
 
 void SearchFullHashJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
 {

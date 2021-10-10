@@ -51,7 +51,7 @@ public:
     virtual int levelQuote() const;
 
 private:
-    EmptySourcePrivate *const d;
+    std::unique_ptr<EmptySourcePrivate> const d;
 };
 }
 

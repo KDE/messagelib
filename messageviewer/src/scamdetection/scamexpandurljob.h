@@ -34,6 +34,6 @@ private:
     void slotExpandFinished(QNetworkReply *reply);
 
 private:
-    ScamExpandUrlJobPrivate *const d;
+    std::unique_ptr<ScamExpandUrlJobPrivate> const d;
 };
 }

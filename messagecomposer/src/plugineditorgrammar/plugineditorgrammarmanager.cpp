@@ -149,10 +149,7 @@ PluginEditorGrammarManager::PluginEditorGrammarManager(QObject *parent)
     qRegisterMetaType<MessageComposer::PluginGrammarAction>();
 }
 
-PluginEditorGrammarManager::~PluginEditorGrammarManager()
-{
-    delete d;
-}
+PluginEditorGrammarManager::~PluginEditorGrammarManager() = default;
 
 PluginEditorGrammarManager *PluginEditorGrammarManager::self()
 {

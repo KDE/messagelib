@@ -55,7 +55,7 @@ private:
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     void slotError(QNetworkReply::NetworkError error);
 
-    CreatePhishingUrlDataBaseJobPrivate *const d;
+    std::unique_ptr<CreatePhishingUrlDataBaseJobPrivate> const d;
 };
 }
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType)
