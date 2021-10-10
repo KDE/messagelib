@@ -446,10 +446,7 @@ AttachmentControllerBase::AttachmentControllerBase(MessageComposer::AttachmentMo
     d->mActionCollection = actionCollection;
 }
 
-AttachmentControllerBase::~AttachmentControllerBase()
-{
-    delete d;
-}
+AttachmentControllerBase::~AttachmentControllerBase() = default;
 
 void AttachmentControllerBase::createActions()
 {

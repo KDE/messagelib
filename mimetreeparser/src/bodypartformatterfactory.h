@@ -13,7 +13,7 @@
 #include "mimetreeparser_export.h"
 
 #include <QVector>
-
+#include <memory>
 namespace MimeTreeParser
 {
 namespace Interface
@@ -45,7 +45,7 @@ protected:
 
 private:
     Q_DISABLE_COPY(BodyPartFormatterFactory)
-    BodyPartFormatterFactoryPrivate *const d;
+    std::unique_ptr<BodyPartFormatterFactoryPrivate> const d;
     friend class BodyPartFormatterFactoryPrivate;
 };
 }

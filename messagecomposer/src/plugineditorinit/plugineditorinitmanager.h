@@ -9,6 +9,7 @@
 #include "messagecomposer_export.h"
 #include <PimCommon/PluginUtil>
 #include <QObject>
+#include <memory>
 namespace MessageComposer
 {
 class PluginEditorInitManagerPrivate;
@@ -34,6 +35,6 @@ public:
     Q_REQUIRED_RESULT PluginEditorInit *pluginFromIdentifier(const QString &id);
 
 private:
-    PluginEditorInitManagerPrivate *const d;
+    std::unique_ptr<PluginEditorInitManagerPrivate> const d;
 };
 }

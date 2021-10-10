@@ -14,7 +14,7 @@ namespace MessageList
 {
 namespace Core
 {
-class ModelInvariantIndex::Private
+class ModelInvariantIndex::ModelInvariantIndexPrivate
 {
 public:
     int mModelIndexRow; ///< The row that this index referenced at the time it was emitted

@@ -29,15 +29,15 @@
 
 using namespace MessageCore;
 
-class Q_DECL_HIDDEN MessageCore::AttachmentPropertiesDialog::Private
+class Q_DECL_HIDDEN MessageCore::AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate
 {
 public:
-    Private(AttachmentPropertiesDialog *qq)
+    AttachmentPropertiesDialogPrivate(AttachmentPropertiesDialog *qq)
         : q(qq)
     {
     }
 
-    ~Private()
+    ~AttachmentPropertiesDialogPrivate()
     {
         delete ui;
         delete uiReadOnly;
@@ -61,7 +61,7 @@ public:
     bool mReadOnly = false;
 };
 
-void AttachmentPropertiesDialog::Private::init(const AttachmentPart::Ptr &part, bool readOnly)
+void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::init(const AttachmentPart::Ptr &part, bool readOnly)
 {
     mReadOnly = readOnly;
     mPart = part;
@@ -84,7 +84,7 @@ void AttachmentPropertiesDialog::Private::init(const AttachmentPart::Ptr &part, 
     loadFromPart();
 }
 
-void AttachmentPropertiesDialog::Private::polishUi()
+void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::polishUi()
 {
     // Tweak the dialog, depending on whether it is read-only or not.
     QDialogButtonBox *buttonBox = nullptr;
@@ -111,7 +111,7 @@ void AttachmentPropertiesDialog::Private::polishUi()
     populateWhatsThis();
 }
 
-void AttachmentPropertiesDialog::Private::mimeTypeChanged(const QString &type)
+void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::mimeTypeChanged(const QString &type)
 {
     QMimeDatabase db;
     const QMimeType mimeType = db.mimeTypeForName(type);
@@ -125,7 +125,7 @@ void AttachmentPropertiesDialog::Private::mimeTypeChanged(const QString &type)
     }
 }
 
-void AttachmentPropertiesDialog::Private::populateWhatsThis()
+void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::populateWhatsThis()
 {
     // FIXME These are such a mess... Make them straightforward and pretty.
 
@@ -203,7 +203,7 @@ void AttachmentPropertiesDialog::Private::populateWhatsThis()
     }
 }
 
-void AttachmentPropertiesDialog::Private::populateEncodings()
+void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::populateEncodings()
 {
     using namespace KMime;
     using namespace KMime::Headers;
@@ -221,7 +221,7 @@ void AttachmentPropertiesDialog::Private::populateEncodings()
     // try to compose the message.)
 }
 
-void AttachmentPropertiesDialog::Private::populateMimeTypes()
+void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::populateMimeTypes()
 {
     const QStringList list = QStringList() << QStringLiteral("text/html") << QStringLiteral("text/plain") << QStringLiteral("image/gif")
                                            << QStringLiteral("image/jpeg") << QStringLiteral("image/png") << QStringLiteral("application/octet-stream")
@@ -230,7 +230,7 @@ void AttachmentPropertiesDialog::Private::populateMimeTypes()
     ui->mimeType->addItems(list);
 }
 
-void AttachmentPropertiesDialog::Private::loadFromPart()
+void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::loadFromPart()
 {
     Q_ASSERT(mPart);
 
@@ -272,7 +272,7 @@ static QString removeNewlines(const QString &input)
     return ret;
 }
 
-void AttachmentPropertiesDialog::Private::saveToPart()
+void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::saveToPart()
 {
     Q_ASSERT(mPart);
     Q_ASSERT(!mReadOnly);
@@ -300,7 +300,7 @@ void AttachmentPropertiesDialog::Private::saveToPart()
 
 AttachmentPropertiesDialog::AttachmentPropertiesDialog(const AttachmentPart::Ptr &part, bool readOnly, QWidget *parent)
     : QDialog(parent)
-    , d(new Private(this))
+    , d(new AttachmentPropertiesDialogPrivate(this))
 {
     d->init(part, readOnly);
     setWindowTitle(i18nc("@title:window", "Attachment Properties"));
@@ -308,7 +308,7 @@ AttachmentPropertiesDialog::AttachmentPropertiesDialog(const AttachmentPart::Ptr
 
 AttachmentPropertiesDialog::AttachmentPropertiesDialog(const KMime::Content *content, QWidget *parent)
     : QDialog(parent)
-    , d(new Private(this))
+    , d(new AttachmentPropertiesDialogPrivate(this))
 {
     auto job = new AttachmentFromMimeContentJob(content, this);
     job->exec();
@@ -321,10 +321,7 @@ AttachmentPropertiesDialog::AttachmentPropertiesDialog(const KMime::Content *con
     setWindowTitle(i18nc("@title:window", "Attachment Properties"));
 }
 
-AttachmentPropertiesDialog::~AttachmentPropertiesDialog()
-{
-    delete d;
-}
+AttachmentPropertiesDialog::~AttachmentPropertiesDialog() = default;
 
 AttachmentPart::Ptr AttachmentPropertiesDialog::attachmentPart() const
 {

@@ -81,10 +81,7 @@ BodyPartFormatterFactory::BodyPartFormatterFactory()
 {
 }
 
-BodyPartFormatterFactory::~BodyPartFormatterFactory()
-{
-    delete d;
-}
+BodyPartFormatterFactory::~BodyPartFormatterFactory() = default;
 
 BodyPartFormatterFactory *BodyPartFormatterFactory::instance()
 {

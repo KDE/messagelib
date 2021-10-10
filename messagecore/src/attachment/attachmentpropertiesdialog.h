@@ -83,8 +83,8 @@ public Q_SLOTS:
 
 private:
     //@cond PRIVATE
-    class Private;
-    Private *const d;
+    class AttachmentPropertiesDialogPrivate;
+    std::unique_ptr<AttachmentPropertiesDialogPrivate> const d;
     //@endcond
 };
 }

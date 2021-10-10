@@ -256,8 +256,8 @@ protected Q_SLOTS:
 
 private:
     void slotActivateFilter(Filter *f);
-    class Private;
-    Private *const d;
+    class WidgetPrivate;
+    std::unique_ptr<WidgetPrivate> const d;
 };
 } // namespace Core
 } // namespace MessageList

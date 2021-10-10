@@ -82,8 +82,6 @@ ModelInvariantRowMapper::~ModelInvariantRowMapper()
 
         delete d->mRowShiftList;
     }
-
-    delete d;
 }
 
 void ModelInvariantRowMapperPrivate::killFirstRowShift()

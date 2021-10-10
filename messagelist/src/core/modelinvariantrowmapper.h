@@ -13,7 +13,7 @@
 #include <QObject>
 
 #include <core/modelinvariantindex.h>
-
+#include <memory>
 namespace MessageList
 {
 namespace Core
@@ -170,7 +170,7 @@ public:
     void modelReset();
 
 private:
-    ModelInvariantRowMapperPrivate *const d;
+    std::unique_ptr<ModelInvariantRowMapperPrivate> const d;
 };
 } // namespace Core
 } // namespace MessageList

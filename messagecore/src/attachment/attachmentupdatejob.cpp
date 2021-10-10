@@ -80,10 +80,7 @@ AttachmentUpdateJob::AttachmentUpdateJob(const AttachmentPart::Ptr &part, QObjec
     d->mOriginalPart = part;
 }
 
-AttachmentUpdateJob::~AttachmentUpdateJob()
-{
-    delete d;
-}
+AttachmentUpdateJob::~AttachmentUpdateJob() = default;
 
 void AttachmentUpdateJob::start()
 {

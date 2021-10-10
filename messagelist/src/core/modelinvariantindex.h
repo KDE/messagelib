@@ -8,8 +8,8 @@
 
 #pragma once
 
+#include <memory>
 #include <qglobal.h> // defines uint, at least.
-
 namespace MessageList
 {
 namespace Core
@@ -54,8 +54,8 @@ public:
     Q_REQUIRED_RESULT int currentModelIndexRow();
 
 private:
-    class Private;
-    Private *const d;
+    class ModelInvariantIndexPrivate;
+    std::unique_ptr<ModelInvariantIndexPrivate> const d;
 };
 } // namespace Core
 } // namespace MessageList

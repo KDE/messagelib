@@ -50,10 +50,10 @@ using namespace std::chrono_literals;
 
 using namespace MessageList::Core;
 
-class Widget::Private
+class Widget::WidgetPrivate
 {
 public:
-    Private(Widget *owner)
+    WidgetPrivate(Widget *owner)
         : q(owner)
     {
     }
@@ -106,7 +106,7 @@ public:
 
 Widget::Widget(QWidget *pParent)
     : QWidget(pParent)
-    , d(new Private(this))
+    , d(new WidgetPrivate(this))
 {
     Manager::registerWidget(this);
     connect(Manager::instance(), &Manager::aggregationsChanged, this, &Widget::aggregationsChanged);
@@ -164,8 +164,6 @@ Widget::~Widget()
     delete d->mAggregation;
     delete d->mFilter;
     delete d->mStorageModel;
-
-    delete d;
 }
 
 void Widget::slotActivateFilter(Filter *f)
@@ -276,7 +274,7 @@ QString Widget::currentFilterTagId() const
     return QString();
 }
 
-void Widget::Private::setDefaultAggregationForStorageModel(const StorageModel *storageModel)
+void Widget::WidgetPrivate::setDefaultAggregationForStorageModel(const StorageModel *storageModel)
 {
     const Aggregation *opt = Manager::instance()->aggregationForStorageModel(storageModel, &mStorageUsesPrivateAggregation);
 
@@ -290,7 +288,7 @@ void Widget::Private::setDefaultAggregationForStorageModel(const StorageModel *s
     mLastAggregationId = opt->id();
 }
 
-void Widget::Private::setDefaultThemeForStorageModel(const StorageModel *storageModel)
+void Widget::WidgetPrivate::setDefaultThemeForStorageModel(const StorageModel *storageModel)
 {
     const Theme *opt = Manager::instance()->themeForStorageModel(storageModel, &mStorageUsesPrivateTheme);
 
@@ -304,7 +302,7 @@ void Widget::Private::setDefaultThemeForStorageModel(const StorageModel *storage
     mLastThemeId = opt->id();
 }
 
-void Widget::Private::checkSortOrder(const StorageModel *storageModel)
+void Widget::WidgetPrivate::checkSortOrder(const StorageModel *storageModel)
 {
     if (storageModel && mAggregation && !mSortOrder.validForAggregation(mAggregation)) {
         qCDebug(MESSAGELIST_LOG) << "Could not restore sort order for folder" << storageModel->id();
@@ -322,7 +320,7 @@ void Widget::Private::checkSortOrder(const StorageModel *storageModel)
     }
 }
 
-void Widget::Private::setDefaultSortOrderForStorageModel(const StorageModel *storageModel)
+void Widget::WidgetPrivate::setDefaultSortOrderForStorageModel(const StorageModel *storageModel)
 {
     // Load the sort order from config and update column headers
     mSortOrder = Manager::instance()->sortOrderForStorageModel(storageModel, &mStorageUsesPrivateSortOrder);
@@ -658,7 +656,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
     connect(act, &QAction::triggered, this, &Widget::setPrivateSortOrderForStorage);
 }
 
-void Widget::Private::switchMessageSorting(SortOrder::MessageSorting messageSorting, SortOrder::SortDirection sortDirection, int logicalHeaderColumnIndex)
+void Widget::WidgetPrivate::switchMessageSorting(SortOrder::MessageSorting messageSorting, SortOrder::SortDirection sortDirection, int logicalHeaderColumnIndex)
 {
     mSortOrder.setMessageSorting(messageSorting);
     mSortOrder.setMessageSortDirection(sortDirection);

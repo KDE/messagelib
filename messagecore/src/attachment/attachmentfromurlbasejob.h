@@ -11,7 +11,7 @@
 #include "attachmentloadjob.h"
 
 #include <QUrl>
-
+#include <memory>
 namespace MessageCore
 {
 /**
@@ -50,7 +50,7 @@ protected Q_SLOTS:
 
 private:
     //@cond PRIVATE
-    class Private;
-    Private *const d;
+    class AttachmentFromUrlBaseJobPrivate;
+    std::unique_ptr<AttachmentFromUrlBaseJobPrivate> const d;
 };
 }

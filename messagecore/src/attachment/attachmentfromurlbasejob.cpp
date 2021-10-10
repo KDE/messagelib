@@ -8,17 +8,17 @@
 
 using namespace MessageCore;
 
-class Q_DECL_HIDDEN AttachmentFromUrlBaseJob::Private
+class Q_DECL_HIDDEN AttachmentFromUrlBaseJob::AttachmentFromUrlBaseJobPrivate
 {
 public:
-    Private(const QUrl &url, AttachmentFromUrlBaseJob *qq);
+    AttachmentFromUrlBaseJobPrivate(const QUrl &url, AttachmentFromUrlBaseJob *qq);
 
     AttachmentFromUrlBaseJob *const q;
     qint64 mMaxSize = -1;
     QUrl mUrl;
 };
 
-AttachmentFromUrlBaseJob::Private::Private(const QUrl &url, AttachmentFromUrlBaseJob *qq)
+AttachmentFromUrlBaseJob::AttachmentFromUrlBaseJobPrivate::AttachmentFromUrlBaseJobPrivate(const QUrl &url, AttachmentFromUrlBaseJob *qq)
     : q(qq)
     , mUrl(url)
 {
@@ -26,14 +26,11 @@ AttachmentFromUrlBaseJob::Private::Private(const QUrl &url, AttachmentFromUrlBas
 
 AttachmentFromUrlBaseJob::AttachmentFromUrlBaseJob(const QUrl &url, QObject *parent)
     : AttachmentLoadJob(parent)
-    , d(new Private(url, this))
+    , d(new AttachmentFromUrlBaseJobPrivate(url, this))
 {
 }
 
-AttachmentFromUrlBaseJob::~AttachmentFromUrlBaseJob()
-{
-    delete d;
-}
+AttachmentFromUrlBaseJob::~AttachmentFromUrlBaseJob() = default;
 
 void AttachmentFromUrlBaseJob::setMaximumAllowedSize(qint64 size)
 {
