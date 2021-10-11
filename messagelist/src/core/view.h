@@ -626,8 +626,8 @@ protected Q_SLOTS:
     void applyThemeColumns();
 
 private:
-    class Private;
-    std::unique_ptr<Private> const d;
+    class ViewPrivate;
+    std::unique_ptr<ViewPrivate> const d;
 }; // class View
 } // namespace Core
 } // namespace MessageList

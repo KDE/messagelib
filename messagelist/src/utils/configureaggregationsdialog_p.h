@@ -29,10 +29,10 @@ class AggregationListWidgetItem;
  * This is managed by MessageList::Manager. Take a look at it first
  * if you want to display this dialog.
  */
-class Q_DECL_HIDDEN ConfigureAggregationsDialog::Private
+class Q_DECL_HIDDEN ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate
 {
 public:
-    Private(ConfigureAggregationsDialog *owner)
+    ConfigureAggregationsDialogPrivate(ConfigureAggregationsDialog *owner)
         : q(owner)
     {
     }

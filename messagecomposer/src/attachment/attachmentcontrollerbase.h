@@ -94,8 +94,8 @@ private:
     void slotOpenWithAction(QAction *act);
 
 private:
-    class Private;
-    std::unique_ptr<Private> const d;
+    class AttachmentControllerBasePrivate;
+    std::unique_ptr<AttachmentControllerBasePrivate> const d;
 };
 } //
 

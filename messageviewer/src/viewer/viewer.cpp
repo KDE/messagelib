@@ -37,14 +37,14 @@
 
 namespace MessageViewer
 {
-class AbstractMessageLoadedHandler::Private
+class AbstractMessageLoadedHandler::AbstractMessageLoadedHandlerPrivate
 {
 public:
     Akonadi::Session *mSession = nullptr;
 };
 
 AbstractMessageLoadedHandler::AbstractMessageLoadedHandler()
-    : d(new Private)
+    : d(new AbstractMessageLoadedHandlerPrivate)
 {
 }
 

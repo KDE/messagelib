@@ -67,8 +67,8 @@ Q_SIGNALS:
     void embeddedImagesChanged();
 
 private:
-    class Private;
-    std::unique_ptr<Private> const d;
+    class TextPartPrivate;
+    std::unique_ptr<TextPartPrivate> const d;
 };
 } // namespace MessageComposer
 

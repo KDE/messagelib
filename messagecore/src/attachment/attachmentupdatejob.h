@@ -29,8 +29,8 @@ public:
 
 private:
     //@cond PRIVATE
-    class Private;
-    std::unique_ptr<Private> const d;
+    class AttachmentUpdateJobPrivate;
+    std::unique_ptr<AttachmentUpdateJobPrivate> const d;
 };
 }
 

@@ -39,8 +39,8 @@ Q_SIGNALS:
     void okClicked();
 
 private:
-    class Private;
-    std::unique_ptr<Private> const d;
+    class ConfigureAggregationsDialogPrivate;
+    std::unique_ptr<ConfigureAggregationsDialogPrivate> const d;
 };
 } // namespace Utils
 } // namespace MessageList

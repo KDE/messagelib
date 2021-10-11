@@ -15,10 +15,10 @@
 
 using namespace MessageCore;
 
-class Q_DECL_HIDDEN MessageCore::AttachmentUpdateJob::Private
+class Q_DECL_HIDDEN MessageCore::AttachmentUpdateJob::AttachmentUpdateJobPrivate
 {
 public:
-    Private(AttachmentUpdateJob *qq);
+    AttachmentUpdateJobPrivate(AttachmentUpdateJob *qq);
 
     void doStart(); // slot
     void loadJobResult(KJob *);
@@ -28,12 +28,12 @@ public:
     AttachmentPart::Ptr mUpdatedPart;
 };
 
-AttachmentUpdateJob::Private::Private(AttachmentUpdateJob *qq)
+AttachmentUpdateJob::AttachmentUpdateJobPrivate::AttachmentUpdateJobPrivate(AttachmentUpdateJob *qq)
     : q(qq)
 {
 }
 
-void AttachmentUpdateJob::Private::doStart()
+void AttachmentUpdateJob::AttachmentUpdateJobPrivate::doStart()
 {
     Q_ASSERT(mOriginalPart);
     if (mOriginalPart->url().isEmpty()) {
@@ -50,7 +50,7 @@ void AttachmentUpdateJob::Private::doStart()
     job->start();
 }
 
-void AttachmentUpdateJob::Private::loadJobResult(KJob *job)
+void AttachmentUpdateJob::AttachmentUpdateJobPrivate::loadJobResult(KJob *job)
 {
     if (job->error()) {
         q->setError(KJob::UserDefinedError);
@@ -75,7 +75,7 @@ void AttachmentUpdateJob::Private::loadJobResult(KJob *job)
 
 AttachmentUpdateJob::AttachmentUpdateJob(const AttachmentPart::Ptr &part, QObject *parent)
     : KJob(parent)
-    , d(new Private(this))
+    , d(new AttachmentUpdateJobPrivate(this))
 {
     d->mOriginalPart = part;
 }

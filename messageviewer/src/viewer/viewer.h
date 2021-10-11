@@ -82,8 +82,8 @@ private:
     void setSession(Akonadi::Session *session);
 
     friend class Viewer;
-    class Private;
-    std::unique_ptr<Private> const d;
+    class AbstractMessageLoadedHandlerPrivate;
+    std::unique_ptr<AbstractMessageLoadedHandlerPrivate> const d;
 };
 
 /**

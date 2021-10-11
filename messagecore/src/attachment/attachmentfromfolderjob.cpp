@@ -18,10 +18,10 @@ static const mode_t archivePermsAttachment = S_IFREG | 0644;
 
 using namespace MessageCore;
 
-class Q_DECL_HIDDEN AttachmentFromFolderJob::Private
+class Q_DECL_HIDDEN AttachmentFromFolderJob::AttachmentLoadJobPrivate
 {
 public:
-    Private(AttachmentFromFolderJob *qq);
+    AttachmentLoadJobPrivate(AttachmentFromFolderJob *qq);
 
     void compressFolder();
     void addEntity(const QFileInfoList &f, const QString &path);
@@ -33,13 +33,13 @@ public:
     QDateTime mArchiveTime = QDateTime::currentDateTime();
 };
 
-AttachmentFromFolderJob::Private::Private(AttachmentFromFolderJob *qq)
+AttachmentFromFolderJob::AttachmentLoadJobPrivate::AttachmentLoadJobPrivate(AttachmentFromFolderJob *qq)
     : q(qq)
     , mZip(nullptr)
 {
 }
 
-void AttachmentFromFolderJob::Private::compressFolder()
+void AttachmentFromFolderJob::AttachmentLoadJobPrivate::compressFolder()
 {
     qCDebug(MESSAGECORE_LOG) << "starting compression";
     QString fileName = q->url().fileName();
@@ -80,7 +80,7 @@ void AttachmentFromFolderJob::Private::compressFolder()
     //  Or leave attachment as uncompressed and let it be compressed again?
 }
 
-void AttachmentFromFolderJob::Private::addEntity(const QFileInfoList &f, const QString &path)
+void AttachmentFromFolderJob::AttachmentLoadJobPrivate::addEntity(const QFileInfoList &f, const QString &path)
 {
     for (const QFileInfo &info : f) {
         qCDebug(MESSAGECORE_LOG) << q->maximumAllowedSize() << "Attachment size : " << mZip->device()->size();
@@ -126,7 +126,7 @@ void AttachmentFromFolderJob::Private::addEntity(const QFileInfoList &f, const Q
 
 AttachmentFromFolderJob::AttachmentFromFolderJob(const QUrl &url, QObject *parent)
     : AttachmentFromUrlBaseJob(url, parent)
-    , d(new Private(this))
+    , d(new AttachmentLoadJobPrivate(this))
 {
 }
 

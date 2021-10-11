@@ -189,8 +189,8 @@ public:
 
 private:
     //@cond PRIVATE
-    class Private;
-    Private *const d;
+    class AttachmentPartPrivate;
+    AttachmentPartPrivate *const d;
     //@endcond
 };
 

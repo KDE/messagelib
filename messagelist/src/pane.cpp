@@ -36,10 +36,10 @@
 
 namespace MessageList
 {
-class Q_DECL_HIDDEN Pane::Private
+class Q_DECL_HIDDEN Pane::PanePrivate
 {
 public:
-    Private(Pane *owner)
+    PanePrivate(Pane *owner)
         : q(owner)
     {
     }
@@ -92,7 +92,7 @@ using namespace MessageList;
 
 Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *selectionModel, QWidget *parent)
     : QTabWidget(parent)
-    , d(new Private(this))
+    , d(new PanePrivate(this))
 {
     setDocumentMode(true);
     d->mModel = model;
@@ -173,7 +173,7 @@ Pane::~Pane()
     writeConfig(true);
 }
 
-void Pane::Private::addActivateTabAction(int i)
+void Pane::PanePrivate::addActivateTabAction(int i)
 {
     const QString actionname = QString::asprintf("activate_tab_%02d", i);
     auto action = new QAction(i18n("Activate Tab %1", i), q);
@@ -184,7 +184,7 @@ void Pane::Private::addActivateTabAction(int i)
     });
 }
 
-void Pane::Private::slotTabCloseRequested(int index)
+void Pane::PanePrivate::slotTabCloseRequested(int index)
 {
     QWidget *w = q->widget(index);
     if (w) {
@@ -486,7 +486,7 @@ void Pane::setQuickSearchClickMessage(const QString &msg)
     }
 }
 
-void Pane::Private::setCurrentFolder(const QModelIndex &etmIndex)
+void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
 {
     if (mPreferEmptyTab) {
         q->createNewTab();
@@ -538,12 +538,12 @@ void Pane::Private::setCurrentFolder(const QModelIndex &etmIndex)
     mPreferEmptyTab = false;
 }
 
-void Pane::Private::activateTab()
+void Pane::PanePrivate::activateTab()
 {
     q->tabBar()->setCurrentIndex(q->sender()->objectName().rightRef(2).toInt() - 1);
 }
 
-void Pane::Private::moveTabRight()
+void Pane::PanePrivate::moveTabRight()
 {
     const int numberOfTab = q->tabBar()->count();
     if (numberOfTab == 1) {
@@ -556,7 +556,7 @@ void Pane::Private::moveTabRight()
     }
 }
 
-void Pane::Private::moveTabLeft()
+void Pane::PanePrivate::moveTabLeft()
 {
     const int numberOfTab = q->tabBar()->count();
     if (numberOfTab == 1) {
@@ -569,7 +569,7 @@ void Pane::Private::moveTabLeft()
     }
 }
 
-void Pane::Private::moveTabForward()
+void Pane::PanePrivate::moveTabForward()
 {
     const int currentIndex = q->tabBar()->currentIndex();
     if (currentIndex == q->tabBar()->count() - 1) {
@@ -578,7 +578,7 @@ void Pane::Private::moveTabForward()
     q->tabBar()->moveTab(currentIndex, currentIndex + 1);
 }
 
-void Pane::Private::moveTabBackward()
+void Pane::PanePrivate::moveTabBackward()
 {
     const int currentIndex = q->tabBar()->currentIndex();
     if (currentIndex == 0) {
@@ -587,7 +587,7 @@ void Pane::Private::moveTabBackward()
     q->tabBar()->moveTab(currentIndex, currentIndex - 1);
 }
 
-void Pane::Private::activateNextTab()
+void Pane::PanePrivate::activateNextTab()
 {
     const int numberOfTab = q->tabBar()->count();
     if (numberOfTab == 1) {
@@ -603,7 +603,7 @@ void Pane::Private::activateNextTab()
     q->tabBar()->setCurrentIndex(indexTab);
 }
 
-void Pane::Private::activatePreviousTab()
+void Pane::PanePrivate::activatePreviousTab()
 {
     const int numberOfTab = q->tabBar()->count();
     if (numberOfTab == 1) {
@@ -619,17 +619,17 @@ void Pane::Private::activatePreviousTab()
     q->tabBar()->setCurrentIndex(indexTab);
 }
 
-void Pane::Private::onNewTabClicked()
+void Pane::PanePrivate::onNewTabClicked()
 {
     q->createNewTab();
 }
 
-void Pane::Private::onCloseTabClicked()
+void Pane::PanePrivate::onCloseTabClicked()
 {
     closeTab(q->currentWidget());
 }
 
-void Pane::Private::closeTab(QWidget *w)
+void Pane::PanePrivate::closeTab(QWidget *w)
 {
     if (!w || (q->count() < 2)) {
         return;
@@ -644,7 +644,7 @@ void Pane::Private::closeTab(QWidget *w)
     updateTabControls();
 }
 
-void Pane::Private::changeQuicksearchVisibility(bool show)
+void Pane::PanePrivate::changeQuicksearchVisibility(bool show)
 {
     for (int i = 0; i < q->count(); ++i) {
         auto w = qobject_cast<Widget *>(q->widget(i));
@@ -665,7 +665,7 @@ bool Pane::eventFilter(QObject *object, QEvent *event)
     return QTabWidget::eventFilter(object, event);
 }
 
-void Pane::Private::onCurrentTabChanged()
+void Pane::PanePrivate::onCurrentTabChanged()
 {
     Q_EMIT q->currentTabChanged();
 
@@ -676,7 +676,7 @@ void Pane::Private::onCurrentTabChanged()
     mSelectionModel->select(mapSelectionFromSource(s->selection()), QItemSelectionModel::ClearAndSelect);
 }
 
-void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
+void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
 {
     QTabBar *bar = q->tabBar();
     if (q->count() <= 1) {
@@ -827,7 +827,7 @@ QItemSelectionModel *Pane::createNewTab()
     return s;
 }
 
-QItemSelection Pane::Private::mapSelectionFromSource(const QItemSelection &selection) const
+QItemSelection Pane::PanePrivate::mapSelectionFromSource(const QItemSelection &selection) const
 {
     QItemSelection result = selection;
 
@@ -841,7 +841,7 @@ QItemSelection Pane::Private::mapSelectionFromSource(const QItemSelection &selec
     return result;
 }
 
-void Pane::Private::updateTabControls()
+void Pane::PanePrivate::updateTabControls()
 {
     const bool enableAction = (q->count() > 1);
     if (enableAction) {

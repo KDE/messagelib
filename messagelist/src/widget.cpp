@@ -43,10 +43,10 @@
 
 namespace MessageList
 {
-class Q_DECL_HIDDEN MessageList::Widget::Private
+class MessageList::Widget::WidgetPrivate
 {
 public:
-    Private(Widget *owner)
+    WidgetPrivate(Widget *owner)
         : q(owner)
     {
     }
@@ -69,7 +69,7 @@ using namespace Akonadi;
 
 MessageList::Widget::Widget(QWidget *parent)
     : Core::Widget(parent)
-    , d(new Private(this))
+    , d(new WidgetPrivate(this))
 {
     populateStatusFilterCombo();
 
@@ -507,7 +507,7 @@ void MessageList::Widget::viewStartDragRequest()
     }
 }
 
-Akonadi::Item::List MessageList::Widget::Private::selectionAsItems() const
+Akonadi::Item::List MessageList::Widget::WidgetPrivate::selectionAsItems() const
 {
     Akonadi::Item::List res;
     const QVector<Core::MessageItem *> selection = q->view()->selectionAsMessageItemList();
@@ -522,12 +522,12 @@ Akonadi::Item::List MessageList::Widget::Private::selectionAsItems() const
     return res;
 }
 
-Akonadi::Item MessageList::Widget::Private::itemForRow(int row) const
+Akonadi::Item MessageList::Widget::WidgetPrivate::itemForRow(int row) const
 {
     return static_cast<const MessageList::StorageModel *>(q->storageModel())->itemForRow(row);
 }
 
-KMime::Message::Ptr MessageList::Widget::Private::messageForRow(int row) const
+KMime::Message::Ptr MessageList::Widget::WidgetPrivate::messageForRow(int row) const
 {
     return static_cast<const MessageList::StorageModel *>(q->storageModel())->messageForRow(row);
 }

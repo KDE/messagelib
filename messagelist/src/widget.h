@@ -401,8 +401,8 @@ Q_SIGNALS:
     void messageStatusChangeRequest(const Akonadi::Item &item, const Akonadi::MessageStatus &set, const Akonadi::MessageStatus &clear);
 
 private:
-    class Private;
-    std::unique_ptr<Private> const d;
+    class WidgetPrivate;
+    std::unique_ptr<WidgetPrivate> const d;
 };
 } // namespace MessageList
 

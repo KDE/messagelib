@@ -10,7 +10,7 @@
 
 using namespace MessageCore;
 
-class Q_DECL_HIDDEN MessageCore::AttachmentLoadJob::Private
+class MessageCore::AttachmentLoadJob::AttachmentLoadJobPrivate
 {
 public:
     AttachmentPart::Ptr mPart;
@@ -18,7 +18,7 @@ public:
 
 AttachmentLoadJob::AttachmentLoadJob(QObject *parent)
     : KJob(parent)
-    , d(new Private)
+    , d(new AttachmentLoadJobPrivate)
 {
 }
 

@@ -47,7 +47,7 @@ protected Q_SLOTS:
 
 private:
     //@cond PRIVATE
-    class Private;
-    std::unique_ptr<Private> const d;
+    class AttachmentLoadJobPrivate;
+    std::unique_ptr<AttachmentLoadJobPrivate> const d;
 };
 }

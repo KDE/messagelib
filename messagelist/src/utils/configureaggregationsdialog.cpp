@@ -88,7 +88,7 @@ using namespace MessageList::Utils;
 
 ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     : QDialog(parent)
-    , d(new Private(this))
+    , d(new ConfigureAggregationsDialogPrivate(this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
@@ -190,7 +190,7 @@ void ConfigureAggregationsDialog::selectAggregation(const QString &aggregationId
     }
 }
 
-void ConfigureAggregationsDialog::Private::okButtonClicked()
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::okButtonClicked()
 {
     if (Manager::instance()) {
         commitEditor();
@@ -214,7 +214,7 @@ void ConfigureAggregationsDialog::Private::okButtonClicked()
     q->close(); // this will delete too
 }
 
-void ConfigureAggregationsDialog::Private::commitEditor()
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::commitEditor()
 {
     Aggregation *editedAggregation = mEditor->editedAggregation();
     if (!editedAggregation) {
@@ -232,7 +232,7 @@ void ConfigureAggregationsDialog::Private::commitEditor()
     editedItem->setText(goodName);
 }
 
-void ConfigureAggregationsDialog::Private::editedAggregationNameChanged()
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::editedAggregationNameChanged()
 {
     Aggregation *set = mEditor->editedAggregation();
     if (!set) {
@@ -249,7 +249,7 @@ void ConfigureAggregationsDialog::Private::editedAggregationNameChanged()
     it->setText(goodName);
 }
 
-void ConfigureAggregationsDialog::Private::fillAggregationList()
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::fillAggregationList()
 {
     if (!Manager::instance()) {
         return;
@@ -261,13 +261,13 @@ void ConfigureAggregationsDialog::Private::fillAggregationList()
     }
 }
 
-void ConfigureAggregationsDialog::Private::aggregationListItemClicked(QListWidgetItem *cur)
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::aggregationListItemClicked(QListWidgetItem *cur)
 {
     commitEditor();
     updateButton(cur);
 }
 
-void ConfigureAggregationsDialog::Private::updateButton(QListWidgetItem *cur)
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::updateButton(QListWidgetItem *cur)
 {
     const int numberOfSelectedItem(mAggregationList->selectedItems().count());
 
@@ -282,7 +282,8 @@ void ConfigureAggregationsDialog::Private::updateButton(QListWidgetItem *cur)
     }
 }
 
-AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregationItemByName(const QString &name, Aggregation *skipAggregation)
+AggregationListWidgetItem *ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::findAggregationItemByName(const QString &name,
+                                                                                                                      Aggregation *skipAggregation)
 {
     const int c = mAggregationList->count();
     int i = 0;
@@ -300,7 +301,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
     return nullptr;
 }
 
-AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregationItemById(const QString &aggregationId)
+AggregationListWidgetItem *ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::findAggregationItemById(const QString &aggregationId)
 {
     const int c = mAggregationList->count();
     int i = 0;
@@ -316,7 +317,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
     return nullptr;
 }
 
-AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregationItemByAggregation(Aggregation *set)
+AggregationListWidgetItem *ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::findAggregationItemByAggregation(Aggregation *set)
 {
     const int c = mAggregationList->count();
     int i = 0;
@@ -332,7 +333,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
     return nullptr;
 }
 
-QString ConfigureAggregationsDialog::Private::uniqueNameForAggregation(const QString &baseName, Aggregation *skipAggregation)
+QString ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::uniqueNameForAggregation(const QString &baseName, Aggregation *skipAggregation)
 {
     QString ret = baseName;
     if (ret.isEmpty()) {
@@ -350,7 +351,7 @@ QString ConfigureAggregationsDialog::Private::uniqueNameForAggregation(const QSt
     return ret;
 }
 
-void ConfigureAggregationsDialog::Private::newAggregationButtonClicked()
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::newAggregationButtonClicked()
 {
     Aggregation emptyAggregation;
     emptyAggregation.setName(uniqueNameForAggregation(i18n("New Aggregation")));
@@ -360,7 +361,7 @@ void ConfigureAggregationsDialog::Private::newAggregationButtonClicked()
     mDeleteAggregationButton->setEnabled(item && !item->aggregation()->readOnly());
 }
 
-void ConfigureAggregationsDialog::Private::cloneAggregationButtonClicked()
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::cloneAggregationButtonClicked()
 {
     auto item = dynamic_cast<AggregationListWidgetItem *>(mAggregationList->currentItem());
     if (!item) {
@@ -378,7 +379,7 @@ void ConfigureAggregationsDialog::Private::cloneAggregationButtonClicked()
     aggregationListItemClicked(item);
 }
 
-void ConfigureAggregationsDialog::Private::deleteAggregationButtonClicked()
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::deleteAggregationButtonClicked()
 {
     const QList<QListWidgetItem *> list = mAggregationList->selectedItems();
     if (list.isEmpty()) {
@@ -403,7 +404,7 @@ void ConfigureAggregationsDialog::Private::deleteAggregationButtonClicked()
     updateButton(newItem);
 }
 
-void ConfigureAggregationsDialog::Private::importAggregationButtonClicked()
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::importAggregationButtonClicked()
 {
     const QString filename = QFileDialog::getOpenFileName(q, i18n("Import Aggregation"));
     if (!filename.isEmpty()) {
@@ -432,7 +433,7 @@ void ConfigureAggregationsDialog::Private::importAggregationButtonClicked()
     }
 }
 
-void ConfigureAggregationsDialog::Private::exportAggregationButtonClicked()
+void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::exportAggregationButtonClicked()
 {
     const QList<QListWidgetItem *> list = mAggregationList->selectedItems();
     if (list.isEmpty()) {

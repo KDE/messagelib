@@ -20,10 +20,10 @@
 
 using namespace MessageCore;
 
-class Q_DECL_HIDDEN MessageCore::AttachmentFromUrlJob::Private
+class Q_DECL_HIDDEN MessageCore::AttachmentFromUrlJob::AttachmentLoadJobPrivate
 {
 public:
-    Private(AttachmentFromUrlJob *qq);
+    AttachmentLoadJobPrivate(AttachmentFromUrlJob *qq);
 
     void transferJobData(KIO::Job *job, const QByteArray &jobData);
     void transferJobResult(KJob *job);
@@ -32,18 +32,18 @@ public:
     QByteArray mData;
 };
 
-AttachmentFromUrlJob::Private::Private(AttachmentFromUrlJob *qq)
+AttachmentFromUrlJob::AttachmentLoadJobPrivate::AttachmentLoadJobPrivate(AttachmentFromUrlJob *qq)
     : q(qq)
 {
 }
 
-void AttachmentFromUrlJob::Private::transferJobData(KIO::Job *job, const QByteArray &jobData)
+void AttachmentFromUrlJob::AttachmentLoadJobPrivate::transferJobData(KIO::Job *job, const QByteArray &jobData)
 {
     Q_UNUSED(job)
     mData += jobData;
 }
 
-void AttachmentFromUrlJob::Private::transferJobResult(KJob *job)
+void AttachmentFromUrlJob::AttachmentLoadJobPrivate::transferJobResult(KJob *job)
 {
     if (job->error()) {
         // TODO this loses useful stuff from KIO, like detailed error descriptions, causes+solutions,
@@ -91,7 +91,7 @@ void AttachmentFromUrlJob::Private::transferJobResult(KJob *job)
 
 AttachmentFromUrlJob::AttachmentFromUrlJob(const QUrl &url, QObject *parent)
     : AttachmentFromUrlBaseJob(url, parent)
-    , d(new Private(this))
+    , d(new AttachmentLoadJobPrivate(this))
 {
 }
 

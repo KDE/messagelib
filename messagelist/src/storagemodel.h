@@ -74,8 +74,8 @@ public:
     void resetModelStorage();
 
 private:
-    class Private;
-    std::unique_ptr<Private> const d;
+    class StorageModelPrivate;
+    std::unique_ptr<StorageModelPrivate> const d;
 };
 } // namespace MessageList
 

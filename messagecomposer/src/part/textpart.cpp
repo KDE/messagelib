@@ -8,10 +8,10 @@
 
 using namespace MessageComposer;
 
-class Q_DECL_HIDDEN TextPart::Private
+class TextPart::TextPartPrivate
 {
 public:
-    Private()
+    TextPartPrivate()
     {
     }
 
@@ -25,7 +25,7 @@ public:
 
 TextPart::TextPart(QObject *parent)
     : MessagePart(parent)
-    , d(new Private)
+    , d(new TextPartPrivate)
 {
 }
 

@@ -50,10 +50,10 @@ static KMime::Headers::contentEncoding bestEncodingForTypeAndData(const QByteArr
     }
 }
 
-class Q_DECL_HIDDEN MessageCore::AttachmentPart::Private
+class MessageCore::AttachmentPart::AttachmentPartPrivate
 {
 public:
-    Private()
+    AttachmentPartPrivate()
     {
     }
 
@@ -74,7 +74,7 @@ public:
 };
 
 AttachmentPart::AttachmentPart()
-    : d(new Private)
+    : d(new AttachmentPartPrivate)
 {
 }
 

@@ -35,7 +35,7 @@
 
 namespace MessageList
 {
-class Q_DECL_HIDDEN StorageModel::Private
+class Q_DECL_HIDDEN StorageModel::StorageModelPrivate
 {
 public:
     void onSourceDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight);
@@ -50,7 +50,7 @@ public:
 
     QHash<Akonadi::Collection::Id, QString> mFolderHash;
 
-    Private(StorageModel *owner)
+    StorageModelPrivate(StorageModel *owner)
         : q(owner)
     {
     }
@@ -76,7 +76,7 @@ static QAtomicInt _k_attributeInitialized;
 
 MessageList::StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent)
     : Core::StorageModel(parent)
-    , d(new Private(this))
+    , d(new StorageModelPrivate(this))
 {
     d->mSelectionModel = selectionModel;
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
@@ -412,18 +412,18 @@ QMimeData *MessageList::StorageModel::mimeData(const QVector<MessageList::Core::
     return data;
 }
 
-void MessageList::StorageModel::Private::onSourceDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
+void MessageList::StorageModel::StorageModelPrivate::onSourceDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
 {
     Q_EMIT q->dataChanged(q->index(topLeft.row(), 0), q->index(bottomRight.row(), 0));
 }
 
-void MessageList::StorageModel::Private::onSelectionChanged()
+void MessageList::StorageModel::StorageModelPrivate::onSelectionChanged()
 {
     mFolderHash.clear();
     Q_EMIT q->headerDataChanged(Qt::Horizontal, 0, q->columnCount() - 1);
 }
 
-void MessageList::StorageModel::Private::loadSettings()
+void MessageList::StorageModel::StorageModelPrivate::loadSettings()
 {
     // Custom/System colors
     MessageListSettings *settings = MessageListSettings::self();

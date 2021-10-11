@@ -53,8 +53,8 @@ public:
         void setPriority(int priority);
 
     private:
-        class Private;
-        std::unique_ptr<Private> const d;
+        class TagPrivate;
+        std::unique_ptr<TagPrivate> const d;
     };
 
     enum ThreadingStatus {

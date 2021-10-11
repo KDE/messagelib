@@ -191,8 +191,8 @@ public:
     void readConfig(const KConfigGroup &group);
 
 private:
-    class Private;
-    QSharedDataPointer<Private> d;
+    class MailingListPrivate;
+    QSharedDataPointer<MailingListPrivate> d;
 };
 }
 

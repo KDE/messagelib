@@ -44,10 +44,10 @@
 
 using namespace MessageList::Core;
 
-class Q_DECL_HIDDEN View::Private
+class View::ViewPrivate
 {
 public:
-    Private(View *owner, Widget *parent)
+    ViewPrivate(View *owner, Widget *parent)
         : q(owner)
         , mWidget(parent)
         , mDelegate(new Delegate(owner))
@@ -90,7 +90,7 @@ public:
 
 View::View(Widget *pParent)
     : QTreeView(pParent)
-    , d(new Private(this, pParent))
+    , d(new ViewPrivate(this, pParent))
 {
     d->mSaveThemeColumnStateTimer = new QTimer();
     connect(d->mSaveThemeColumnStateTimer, &QTimer::timeout, this, &View::saveThemeColumnState);
@@ -984,7 +984,7 @@ void View::setChildrenExpanded(const Item *root, bool expand)
     }
 }
 
-void View::Private::generalPaletteChanged()
+void View::ViewPrivate::generalPaletteChanged()
 {
     const QPalette palette = q->viewport()->palette();
     QColor color = palette.text().color();
@@ -992,7 +992,7 @@ void View::Private::generalPaletteChanged()
     mTextColor = color;
 }
 
-void View::Private::expandFullThread(const QModelIndex &index)
+void View::ViewPrivate::expandFullThread(const QModelIndex &index)
 {
     if (!index.isValid()) {
         return;
@@ -2583,7 +2583,7 @@ void View::setQuickSearchClickMessage(const QString &msg)
     d->mWidget->quickSearch()->setPlaceholderText(msg);
 }
 
-void View::Private::onPressed(QMouseEvent* e)
+void View::ViewPrivate::onPressed(QMouseEvent *e)
 {
     mMousePressPosition = QPoint();
 
@@ -2716,7 +2716,7 @@ void View::Private::onPressed(QMouseEvent* e)
     }
 }
 
-void View::Private::gestureEvent(QGestureEvent *e)
+void View::ViewPrivate::gestureEvent(QGestureEvent *e)
 {
     if (QGesture *gesture = e->gesture(Qt::TapGesture)) {
         tapTriggered(static_cast<QTapGesture *>(gesture));
@@ -2729,7 +2729,7 @@ void View::Private::gestureEvent(QGestureEvent *e)
     }
 }
 
-void View::Private::tapTriggered(QTapGesture *tap)
+void View::ViewPrivate::tapTriggered(QTapGesture *tap)
 {
     static bool scrollerWasScrolling = false;
 
@@ -2774,7 +2774,7 @@ void View::Private::tapTriggered(QTapGesture *tap)
     }
 }
 
-void View::Private::tapAndHoldTriggered(QTapAndHoldGesture *tap)
+void View::ViewPrivate::tapAndHoldTriggered(QTapAndHoldGesture *tap)
 {
     if (tap->state() == Qt::GestureFinished) {
 
@@ -2810,7 +2810,7 @@ void View::Private::tapAndHoldTriggered(QTapAndHoldGesture *tap)
     }
 }
 
-void View::Private::twoFingerTapTriggered(KTwoFingerTap *tap)
+void View::ViewPrivate::twoFingerTapTriggered(KTwoFingerTap *tap)
 {
     if (tap->state() == Qt::GestureFinished) {
 

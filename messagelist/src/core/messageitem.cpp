@@ -25,10 +25,10 @@ using namespace MessageList::Core;
 
 Q_GLOBAL_STATIC(TagCache, s_tagCache)
 
-class Q_DECL_HIDDEN MessageItem::Tag::Private
+class MessageItem::Tag::TagPrivate
 {
 public:
-    Private()
+    TagPrivate()
         : mPriority(0) // Initialize it
     {
     }
@@ -43,7 +43,7 @@ public:
 };
 
 MessageItem::Tag::Tag(const QPixmap &pix, const QString &tagName, const QString &tagId)
-    : d(new Private)
+    : d(new TagPrivate)
 {
     d->mPixmap = pix;
     d->mName = tagName;

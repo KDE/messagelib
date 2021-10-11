@@ -20,10 +20,10 @@
 using namespace MessageCore;
 static const mode_t archivePerms = S_IFREG | 0644;
 
-class Q_DECL_HIDDEN MessageCore::AttachmentCompressJob::Private
+class Q_DECL_HIDDEN MessageCore::AttachmentCompressJob::AttachmentCompressJobPrivate
 {
 public:
-    Private(AttachmentCompressJob *qq);
+    AttachmentCompressJobPrivate(AttachmentCompressJob *qq);
 
     void doStart(); // slot
 
@@ -33,12 +33,12 @@ public:
     bool mCompressedPartLarger = false;
 };
 
-AttachmentCompressJob::Private::Private(AttachmentCompressJob *qq)
+AttachmentCompressJob::AttachmentCompressJobPrivate::AttachmentCompressJobPrivate(AttachmentCompressJob *qq)
     : q(qq)
 {
 }
 
-void AttachmentCompressJob::Private::doStart()
+void AttachmentCompressJob::AttachmentCompressJobPrivate::doStart()
 {
     Q_ASSERT(mOriginalPart);
     const QByteArray decoded = mOriginalPart->data();
@@ -84,7 +84,7 @@ void AttachmentCompressJob::Private::doStart()
 
 AttachmentCompressJob::AttachmentCompressJob(const AttachmentPart::Ptr &part, QObject *parent)
     : KJob(parent)
-    , d(new Private(this))
+    , d(new AttachmentCompressJobPrivate(this))
 {
     d->mOriginalPart = part;
 }

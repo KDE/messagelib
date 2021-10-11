@@ -251,16 +251,16 @@ static QStringList headerToAddress(const QString &header)
     return addresses;
 }
 
-class Q_DECL_HIDDEN MessageCore::MailingList::Private : public QSharedData
+class Q_DECL_HIDDEN MessageCore::MailingList::MailingListPrivate : public QSharedData
 {
 public:
-    Private()
+    MailingListPrivate()
         : mFeatures(None)
         , mHandler(KMail)
     {
     }
 
-    Private(const Private &other)
+    MailingListPrivate(const MailingListPrivate &other)
         : QSharedData(other)
     {
         mFeatures = other.mFeatures;
@@ -347,7 +347,7 @@ QString MailingList::name(const KMime::Message::Ptr &message, QByteArray &header
 }
 
 MailingList::MailingList()
-    : d(new Private)
+    : d(new MailingListPrivate)
 {
 }
 
