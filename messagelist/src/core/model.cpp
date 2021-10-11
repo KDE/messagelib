@@ -366,7 +366,6 @@ Model::~Model()
     delete d->mInvariantRowMapper;
     delete d->mRootItem;
 
-    delete d;
 }
 
 void Model::setAggregation(const Aggregation *aggregation)

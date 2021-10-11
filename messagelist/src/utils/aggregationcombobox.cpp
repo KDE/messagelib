@@ -24,10 +24,7 @@ AggregationComboBox::AggregationComboBox(QWidget *parent)
     }
 }
 
-AggregationComboBox::~AggregationComboBox()
-{
-    delete d;
-}
+AggregationComboBox::~AggregationComboBox() = default;
 
 QString AggregationComboBox::currentAggregation() const
 {

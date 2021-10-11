@@ -48,10 +48,7 @@ AbstractMessageLoadedHandler::AbstractMessageLoadedHandler()
 {
 }
 
-AbstractMessageLoadedHandler::~AbstractMessageLoadedHandler()
-{
-    delete d;
-}
+AbstractMessageLoadedHandler::~AbstractMessageLoadedHandler() = default;
 
 void AbstractMessageLoadedHandler::setSession(Akonadi::Session *session)
 {

@@ -158,8 +158,6 @@ View::~View()
 
     d->mTheme = nullptr;
     d->mAggregation = nullptr;
-
-    delete d;
 }
 
 Model *View::model() const

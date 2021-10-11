@@ -16,6 +16,7 @@
 
 #include <core/enums.h>
 
+#include <memory>
 #include <time.h> // time_t
 
 namespace MessageList
@@ -205,7 +206,7 @@ Q_SIGNALS:
 
 private:
     friend class ModelPrivate;
-    ModelPrivate *const d;
+    std::unique_ptr<ModelPrivate> const d;
 };
 } // namespace Core
 } // namespace MessageList

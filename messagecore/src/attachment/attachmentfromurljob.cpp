@@ -95,10 +95,7 @@ AttachmentFromUrlJob::AttachmentFromUrlJob(const QUrl &url, QObject *parent)
 {
 }
 
-AttachmentFromUrlJob::~AttachmentFromUrlJob()
-{
-    delete d;
-}
+AttachmentFromUrlJob::~AttachmentFromUrlJob() = default;
 
 void AttachmentFromUrlJob::doStart()
 {

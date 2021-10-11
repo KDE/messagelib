@@ -14,7 +14,6 @@
 
 namespace MessageComposer
 {
-class MessagePartPrivate;
 /**
  * @brief The MessagePart class
  */
@@ -25,10 +24,6 @@ class MESSAGECOMPOSER_EXPORT MessagePart : public QObject
 public:
     explicit MessagePart(QObject *parent = nullptr);
     ~MessagePart() override;
-
-private:
-    class Private;
-    Private *const d;
 };
 }
 

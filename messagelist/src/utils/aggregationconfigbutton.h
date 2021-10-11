@@ -38,7 +38,7 @@ Q_SIGNALS:
     void configureDialogCompleted();
 
 private:
-    AggregationConfigButtonPrivate *const d;
+    std::unique_ptr<AggregationConfigButtonPrivate> const d;
 };
 } // namespace Utils
 } // namespace MessageList

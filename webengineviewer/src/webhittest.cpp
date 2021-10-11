@@ -110,10 +110,7 @@ WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &zoomedPos, const QPoi
     page->runJavaScript(js, WebEngineViewer::WebEngineManageScript::scriptWordId(), invoke(this, &WebHitTest::handleHitTest));
 }
 
-WebHitTest::~WebHitTest()
-{
-    delete d;
-}
+WebHitTest::~WebHitTest() = default;
 
 void WebHitTest::handleHitTest(const QVariant &result)
 {

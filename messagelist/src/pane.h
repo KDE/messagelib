@@ -440,7 +440,7 @@ private:
     bool eventFilter(QObject *obj, QEvent *event) override;
 
     class Private;
-    Private *const d;
+    std::unique_ptr<Private> const d;
 };
 } // namespace MessageList
 

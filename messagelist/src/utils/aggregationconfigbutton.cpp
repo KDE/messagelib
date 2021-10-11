@@ -45,10 +45,7 @@ AggregationConfigButton::AggregationConfigButton(QWidget *parent, const Aggregat
     setEnabled(Manager::instance());
 }
 
-AggregationConfigButton::~AggregationConfigButton()
-{
-    delete d;
-}
+AggregationConfigButton::~AggregationConfigButton() = default;
 
 void AggregationConfigButtonPrivate::slotConfigureAggregations()
 {

@@ -9,7 +9,7 @@
 #include "MessageCore/AttachmentFromUrlBaseJob"
 
 #include <KZip>
-
+#include <memory>
 namespace MessageCore
 {
 class AttachmentFromFolderJob : public AttachmentFromUrlBaseJob
@@ -48,6 +48,6 @@ protected Q_SLOTS:
 private:
     //@cond PRIVATE
     class Private;
-    Private *const d;
+    std::unique_ptr<Private> const d;
 };
 }

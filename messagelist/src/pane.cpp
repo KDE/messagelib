@@ -171,7 +171,6 @@ Pane::~Pane()
 {
     saveCurrentSelection();
     writeConfig(true);
-    delete d;
 }
 
 void Pane::Private::addActivateTabAction(int i)

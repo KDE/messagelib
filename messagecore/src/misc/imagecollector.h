@@ -13,8 +13,8 @@
 #include "messagecore_export.h"
 
 #include <QObject>
+#include <memory>
 #include <vector>
-
 namespace KMime
 {
 class Content;
@@ -56,8 +56,8 @@ public:
 
 private:
     //@cond PRIVATE
-    class Private;
-    Private *const d;
+    class ImageCollectorPrivate;
+    std::unique_ptr<ImageCollectorPrivate> const d;
 
     Q_DISABLE_COPY(ImageCollector)
     //@endcond

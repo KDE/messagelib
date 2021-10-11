@@ -45,7 +45,7 @@ public Q_SLOTS:
     void slotLoadAggregations();
 
 private:
-    AggregationComboBoxPrivate *const d;
+    std::unique_ptr<AggregationComboBoxPrivate> const d;
 };
 } // namespace Utils
 } // namespace MessageList

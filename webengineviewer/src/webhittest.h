@@ -9,6 +9,7 @@
 #include "webengineviewer_export.h"
 #include <QObject>
 #include <QPoint>
+#include <memory>
 class QWebEnginePage;
 namespace WebEngineViewer
 {
@@ -32,7 +33,7 @@ private Q_SLOTS:
     void handleHitTest(const QVariant &result);
 
 private:
-    WebHitTestPrivate *const d;
+    std::unique_ptr<WebHitTestPrivate> const d;
 };
 }
 

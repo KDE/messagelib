@@ -17,6 +17,7 @@
 #include <KMime/Message>
 
 #include <QWidget>
+#include <memory>
 
 namespace Akonadi
 {
@@ -82,7 +83,7 @@ private:
 
     friend class Viewer;
     class Private;
-    Private *const d;
+    std::unique_ptr<Private> const d;
 };
 
 /**

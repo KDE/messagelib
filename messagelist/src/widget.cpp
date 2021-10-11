@@ -81,10 +81,7 @@ MessageList::Widget::Widget(QWidget *parent)
     connect(d->mMonitor, &Akonadi::Monitor::tagChanged, this, &Widget::populateStatusFilterCombo);
 }
 
-MessageList::Widget::~Widget()
-{
-    delete d;
-}
+MessageList::Widget::~Widget() = default;
 
 void MessageList::Widget::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 {

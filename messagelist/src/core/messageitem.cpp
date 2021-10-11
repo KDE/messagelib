@@ -50,10 +50,7 @@ MessageItem::Tag::Tag(const QPixmap &pix, const QString &tagName, const QString 
     d->mId = tagId;
 }
 
-MessageItem::Tag::~Tag()
-{
-    delete d;
-}
+MessageItem::Tag::~Tag() = default;
 
 const QPixmap &MessageItem::Tag::pixmap() const
 {

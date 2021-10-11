@@ -104,10 +104,7 @@ WebHitTestResult::WebHitTestResult(const WebHitTestResult &other)
     (*this) = other;
 }
 
-WebHitTestResult::~WebHitTestResult()
-{
-    delete d;
-}
+WebHitTestResult::~WebHitTestResult() = default;
 
 WebHitTestResult &WebHitTestResult::operator=(const WebHitTestResult &other)
 {

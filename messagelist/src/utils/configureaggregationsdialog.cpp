@@ -179,10 +179,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     d->fillAggregationList();
 }
 
-ConfigureAggregationsDialog::~ConfigureAggregationsDialog()
-{
-    delete d;
-}
+ConfigureAggregationsDialog::~ConfigureAggregationsDialog() = default;
 
 void ConfigureAggregationsDialog::selectAggregation(const QString &aggregationId)
 {

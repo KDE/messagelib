@@ -28,6 +28,7 @@
 #include <QString>
 #include <QUrl>
 #include <QVariant>
+#include <memory>
 
 namespace WebEngineViewer
 {
@@ -61,7 +62,7 @@ public:
     WebHitTestResult &operator=(const WebHitTestResult &webHit);
 
 private:
-    WebHitTestResultPrivate *const d;
+    std::unique_ptr<WebHitTestResultPrivate> const d;
 };
 }
 Q_DECLARE_METATYPE(WebEngineViewer::WebHitTestResult)

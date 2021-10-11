@@ -130,10 +130,7 @@ AttachmentFromFolderJob::AttachmentFromFolderJob(const QUrl &url, QObject *paren
 {
 }
 
-AttachmentFromFolderJob::~AttachmentFromFolderJob()
-{
-    delete d;
-}
+AttachmentFromFolderJob::~AttachmentFromFolderJob() = default;
 
 void AttachmentFromFolderJob::setCompression(KZip::Compression compression)
 {

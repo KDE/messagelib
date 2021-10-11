@@ -8,21 +8,9 @@
 
 using namespace MessageComposer;
 
-class Q_DECL_HIDDEN MessagePart::Private
-{
-public:
-    Private()
-    {
-    }
-};
-
 MessagePart::MessagePart(QObject *parent)
     : QObject(parent)
-    , d(new Private)
 {
 }
 
-MessagePart::~MessagePart()
-{
-    delete d;
-}
+MessagePart::~MessagePart() = default;
