@@ -36,7 +36,7 @@
 
 namespace MessageList
 {
-class Q_DECL_HIDDEN Pane::PanePrivate
+class Pane::PanePrivate
 {
 public:
     PanePrivate(Pane *owner)

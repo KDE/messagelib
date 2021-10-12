@@ -8,7 +8,7 @@
 
 using namespace MessageComposer;
 
-class Q_DECL_HIDDEN GlobalPart::GlobalPartPrivate
+class GlobalPart::GlobalPartPrivate
 {
 public:
     GlobalPartPrivate()

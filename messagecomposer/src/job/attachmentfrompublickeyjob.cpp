@@ -20,7 +20,7 @@
 using namespace MessageComposer;
 using MessageCore::AttachmentPart;
 
-class Q_DECL_HIDDEN MessageComposer::AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate
+class MessageComposer::AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate
 {
 public:
     AttachmentFromPublicKeyJobPrivate(AttachmentFromPublicKeyJob *qq);

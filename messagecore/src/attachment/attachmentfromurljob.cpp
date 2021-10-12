@@ -20,10 +20,10 @@
 
 using namespace MessageCore;
 
-class Q_DECL_HIDDEN MessageCore::AttachmentFromUrlJob::AttachmentLoadJobPrivate
+class MessageCore::AttachmentFromUrlJob::AttachmentLoadJobPrivate
 {
 public:
-    AttachmentLoadJobPrivate(AttachmentFromUrlJob *qq);
+    explicit AttachmentLoadJobPrivate(AttachmentFromUrlJob *qq);
 
     void transferJobData(KIO::Job *job, const QByteArray &jobData);
     void transferJobResult(KJob *job);

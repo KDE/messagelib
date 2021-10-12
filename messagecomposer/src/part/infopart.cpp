@@ -8,7 +8,7 @@
 
 using namespace MessageComposer;
 
-class Q_DECL_HIDDEN InfoPart::InfoPartPrivate
+class InfoPart::InfoPartPrivate
 {
 public:
     InfoPartPrivate()

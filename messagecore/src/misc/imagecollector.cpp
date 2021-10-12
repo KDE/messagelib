@@ -33,7 +33,7 @@ static bool isInExclusionList(KMime::Content *node)
     return false;
 }
 
-class Q_DECL_HIDDEN MessageCore::ImageCollector::ImageCollectorPrivate
+class MessageCore::ImageCollector::ImageCollectorPrivate
 {
 public:
     std::vector<KMime::Content *> mImages;

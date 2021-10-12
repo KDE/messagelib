@@ -18,7 +18,7 @@ static const mode_t archivePermsAttachment = S_IFREG | 0644;
 
 using namespace MessageCore;
 
-class Q_DECL_HIDDEN AttachmentFromFolderJob::AttachmentLoadJobPrivate
+class AttachmentFromFolderJob::AttachmentLoadJobPrivate
 {
 public:
     AttachmentLoadJobPrivate(AttachmentFromFolderJob *qq);

@@ -20,7 +20,7 @@
 using namespace MessageCore;
 static const mode_t archivePerms = S_IFREG | 0644;
 
-class Q_DECL_HIDDEN MessageCore::AttachmentCompressJob::AttachmentCompressJobPrivate
+class MessageCore::AttachmentCompressJob::AttachmentCompressJobPrivate
 {
 public:
     AttachmentCompressJobPrivate(AttachmentCompressJob *qq);
