@@ -195,6 +195,7 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
         d->fixHtmlFontSize(cleanHtml);
         textPart->setCleanHtml(cleanHtml);
         // qDebug() << " cleanHtml  grantlee builder" << cleanHtml;
+        // qDebug() << " d->toCleanHtml() " << d->toCleanHtml();
 #else
         QString cleanHtml = d->toCleanHtml();
         d->fixHtmlFontSize(cleanHtml);
