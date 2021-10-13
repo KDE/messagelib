@@ -1475,7 +1475,8 @@ QString TemplateParserJob::quotedHtmlText(const QString &selection) const
     // then the <blockquote> tags below should open and close as when required.
 
     // Add blockquote tag, so that quoted message can be differentiated from normal message
-    content = QLatin1String("<blockquote>") + content + QLatin1String("</blockquote>");
+    // Bug 419978 remove \n by <br>
+    content = QLatin1String("<blockquote>") + content.replace(QStringLiteral("\n"), QStringLiteral("<br>")) + QLatin1String("</blockquote>");
     return content;
 }
 
