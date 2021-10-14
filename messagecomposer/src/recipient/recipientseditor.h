@@ -55,7 +55,7 @@ public:
 
     Q_REQUIRED_RESULT MessageComposer::RecipientsPicker *picker() const;
 
-    void setRecipientString(const QVector<KMime::Types::Mailbox> &mailboxes, Recipient::Type);
+    bool setRecipientString(const QVector<KMime::Types::Mailbox> &mailboxes, Recipient::Type);
     Q_REQUIRED_RESULT QString recipientString(Recipient::Type) const;
     Q_REQUIRED_RESULT QStringList recipientStringList(Recipient::Type) const;
 

@@ -107,7 +107,7 @@ void RecipientsEditor::addRecipient(RecipientLineNG *line, const QString &recipi
     addRecipient(recipient, line->recipientType());
 }
 
-void RecipientsEditor::setRecipientString(const QVector<KMime::Types::Mailbox> &mailboxes, Recipient::Type type)
+bool RecipientsEditor::setRecipientString(const QVector<KMime::Types::Mailbox> &mailboxes, Recipient::Type type)
 {
     int count = 1;
 
@@ -119,15 +119,16 @@ void RecipientsEditor::setRecipientString(const QVector<KMime::Types::Mailbox> &
                                       "Truncating recipients list to %2 of %1 entries.",
                                       mailboxes.count(),
                                       MessageComposer::MessageComposerSettings::self()->maximumRecipients()));
-            break;
+            return true;
         }
         if (!addRecipient(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary), type)) {
             KMessageBox::sorry(
                 this,
                 i18nc("@info:status", "Truncating recipients list to %1.", MessageComposer::MessageComposerSettings::self()->maximumRecipients()));
-            break;
+            return true;
         }
     }
+    return false;
 }
 
 Recipient::List RecipientsEditor::recipients() const

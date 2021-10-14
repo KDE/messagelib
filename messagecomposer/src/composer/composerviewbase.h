@@ -258,6 +258,7 @@ Q_SIGNALS:
      */
     void disableHtml(MessageComposer::ComposerViewBase::Confirmation);
     void enableHtml();
+    void tooManyRecipient(bool);
 
 private Q_SLOTS:
     void slotEmailAddressResolved(KJob *);

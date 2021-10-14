@@ -112,47 +112,69 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     m_msg = msg;
     if (m_recipientsEditor) {
         m_recipientsEditor->clear();
-        m_recipientsEditor->setRecipientString(m_msg->to()->mailboxes(), MessageComposer::Recipient::To);
-        m_recipientsEditor->setRecipientString(m_msg->cc()->mailboxes(), MessageComposer::Recipient::Cc);
-        m_recipientsEditor->setRecipientString(m_msg->bcc()->mailboxes(), MessageComposer::Recipient::Bcc);
-        m_recipientsEditor->setRecipientString(m_msg->replyTo()->mailboxes(), MessageComposer::Recipient::ReplyTo);
+        bool resultTooManyRecipients = m_recipientsEditor->setRecipientString(m_msg->to()->mailboxes(), MessageComposer::Recipient::To);
+        if (!resultTooManyRecipients) {
+            resultTooManyRecipients = m_recipientsEditor->setRecipientString(m_msg->cc()->mailboxes(), MessageComposer::Recipient::Cc);
+        }
+        if (!resultTooManyRecipients) {
+            resultTooManyRecipients = m_recipientsEditor->setRecipientString(m_msg->bcc()->mailboxes(), MessageComposer::Recipient::Bcc);
+        }
+        if (!resultTooManyRecipients) {
+            resultTooManyRecipients = m_recipientsEditor->setRecipientString(m_msg->replyTo()->mailboxes(), MessageComposer::Recipient::ReplyTo);
+        }
         m_recipientsEditor->setFocusBottom();
 
-        // If we are loading from a draft, load unexpanded aliases as well
-        if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-To")) {
-            const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
-            for (const QString &addr : spl) {
-                if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::To)) {
-                    qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+        if (!resultTooManyRecipients) {
+            // If we are loading from a draft, load unexpanded aliases as well
+            if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-To")) {
+                const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
+                for (const QString &addr : spl) {
+                    if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::To)) {
+                        resultTooManyRecipients = true;
+                        qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+                        break;
+                    }
                 }
             }
         }
-        if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-CC")) {
-            const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
-            for (const QString &addr : spl) {
-                if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Cc)) {
-                    qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+        if (!resultTooManyRecipients) {
+            if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-CC")) {
+                const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
+                for (const QString &addr : spl) {
+                    if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Cc)) {
+                        qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+                        resultTooManyRecipients = true;
+                        break;
+                    }
                 }
             }
         }
-        if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-BCC")) {
-            const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
-            for (const QString &addr : spl) {
-                if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc)) {
-                    qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+        if (!resultTooManyRecipients) {
+            if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-BCC")) {
+                const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
+                for (const QString &addr : spl) {
+                    if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc)) {
+                        qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+                        resultTooManyRecipients = true;
+                        break;
+                    }
                 }
             }
         }
-        if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-Reply-To")) {
-            const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
-            for (const QString &addr : spl) {
-                if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::ReplyTo)) {
-                    qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+        if (!resultTooManyRecipients) {
+            if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-Reply-To")) {
+                const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
+                for (const QString &addr : spl) {
+                    if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::ReplyTo)) {
+                        qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+                        resultTooManyRecipients = true;
+                        break;
+                    }
                 }
             }
         }
+        Q_EMIT tooManyRecipient(resultTooManyRecipients);
     }
-
     // First, we copy the message and then parse it to the object tree parser.
     // The otp gets the message text out of it, in textualContent(), and also decrypts
     // the message if necessary.
