@@ -150,9 +150,9 @@ void RecipientsPicker::pick(Recipient::Type type)
     if (count > MessageComposerSettings::self()->maximumRecipients()) {
         KMessageBox::sorry(this,
                            i18np("You selected 1 recipient. The maximum supported number of "
-                                 "recipients is %2. Please adapt the selection.",
+                                 "recipients is %2.\nPlease adapt the selection.",
                                  "You selected %1 recipients. The maximum supported number of "
-                                 "recipients is %2. Please adapt the selection.",
+                                 "recipients is %2.\nPlease adapt the selection.",
                                  count,
                                  MessageComposerSettings::self()->maximumRecipients()));
         return;
