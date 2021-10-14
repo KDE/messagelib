@@ -99,7 +99,7 @@ RecipientsEditor::~RecipientsEditor() = default;
 
 bool RecipientsEditor::addRecipient(const QString &recipient, Recipient::Type type)
 {
-    return addData(Recipient::Ptr(new Recipient(recipient, type)));
+    return addData(Recipient::Ptr(new Recipient(recipient, type)), false);
 }
 
 void RecipientsEditor::addRecipient(RecipientLineNG *line, const QString &recipient)
@@ -346,7 +346,7 @@ void RecipientsEditor::slotCalculateTotal()
     }
     // We always want at least one empty line
     if (empty == 0) {
-        addData();
+        addData({}, false);
     }
     int count = 0;
     const auto linesP{lines()};
