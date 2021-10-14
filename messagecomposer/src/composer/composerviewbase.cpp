@@ -129,7 +129,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-To")) {
                 const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
                 for (const QString &addr : spl) {
-                    if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::To)) {
+                    if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::To)) {
                         resultTooManyRecipients = true;
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
                         break;
