@@ -141,7 +141,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-CC")) {
                 const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
                 for (const QString &addr : spl) {
-                    if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Cc)) {
+                    if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Cc)) {
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
                         resultTooManyRecipients = true;
                         break;
@@ -153,7 +153,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-BCC")) {
                 const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
                 for (const QString &addr : spl) {
-                    if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc)) {
+                    if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc)) {
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
                         resultTooManyRecipients = true;
                         break;
@@ -165,7 +165,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-Reply-To")) {
                 const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
                 for (const QString &addr : spl) {
-                    if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::ReplyTo)) {
+                    if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::ReplyTo)) {
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
                         resultTooManyRecipients = true;
                         break;
