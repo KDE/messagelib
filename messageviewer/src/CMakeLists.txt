@@ -64,7 +64,6 @@ if(BUILD_TESTING)
     add_subdirectory(remote-content/autotests)
 endif()
 add_subdirectory(pics)
-add_subdirectory(kconf_update)
 add_subdirectory(about)
 add_subdirectory(messageviewerheaderplugins)
 
