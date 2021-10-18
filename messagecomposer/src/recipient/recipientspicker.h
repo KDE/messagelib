@@ -60,7 +60,7 @@ protected Q_SLOTS:
     void slotSelectionChanged();
 
 private:
-    Akonadi::RecipientsPickerWidget *mView = nullptr;
+    Akonadi::RecipientsPickerWidget *const mView;
 
     PimCommon::LdapSearchDialog *mLdapSearchDialog = nullptr;
 

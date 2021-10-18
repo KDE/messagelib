@@ -28,16 +28,19 @@
 #include <QVBoxLayout>
 
 using namespace MessageComposer;
-
+namespace
+{
+static const char myRecipientsPickerConfigGroupName[] = "RecipientsPicker";
+}
 RecipientsPicker::RecipientsPicker(QWidget *parent)
     : QDialog(parent)
+    , mView(new Akonadi::RecipientsPickerWidget(true, nullptr, this))
 {
     setObjectName(QStringLiteral("RecipientsPicker"));
     setWindowTitle(i18nc("@title:window", "Select Recipient"));
 
     auto mainLayout = new QVBoxLayout(this);
 
-    mView = new Akonadi::RecipientsPickerWidget(true, nullptr, this);
     mainLayout->addWidget(mView);
     mainLayout->setStretchFactor(mView, 1);
 
@@ -56,13 +59,13 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     }
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    mUser1Button = new QPushButton;
+    mUser1Button = new QPushButton(this);
     buttonBox->addButton(mUser1Button, QDialogButtonBox::ActionRole);
-    mUser2Button = new QPushButton;
+    mUser2Button = new QPushButton(this);
     buttonBox->addButton(mUser2Button, QDialogButtonBox::ActionRole);
-    mUser3Button = new QPushButton;
+    mUser3Button = new QPushButton(this);
     buttonBox->addButton(mUser3Button, QDialogButtonBox::ActionRole);
-    mUser4Button = new QPushButton;
+    mUser4Button = new QPushButton(this);
     buttonBox->addButton(mUser4Button, QDialogButtonBox::ActionRole);
 
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RecipientsPicker::reject);
@@ -183,8 +186,8 @@ void RecipientsPicker::keyPressEvent(QKeyEvent *event)
 void RecipientsPicker::readConfig()
 {
     KSharedConfig::Ptr cfg = KSharedConfig::openStateConfig();
-    KConfigGroup group(cfg, "RecipientsPicker");
-    QSize size = group.readEntry("Size", QSize());
+    const KConfigGroup group(cfg, myRecipientsPickerConfigGroupName);
+    const QSize size = group.readEntry("Size", QSize());
     if (!size.isEmpty()) {
         resize(size);
     }
@@ -193,7 +196,7 @@ void RecipientsPicker::readConfig()
 void RecipientsPicker::writeConfig()
 {
     KSharedConfig::Ptr cfg = KSharedConfig::openStateConfig();
-    KConfigGroup group(cfg, "RecipientsPicker");
+    KConfigGroup group(cfg, myRecipientsPickerConfigGroupName);
     group.writeEntry("Size", size());
 }
 
