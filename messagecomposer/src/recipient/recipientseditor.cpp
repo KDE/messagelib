@@ -194,7 +194,7 @@ void RecipientsEditor::selectRecipients()
     d->mSideWidget->pickRecipient();
 }
 
-void MessageComposer::RecipientsEditor::setRecentAddressConfig(KConfig *config)
+void RecipientsEditor::setRecentAddressConfig(KConfig *config)
 {
     d->mRecentAddressConfig = config;
     if (config) {
@@ -208,7 +208,7 @@ void MessageComposer::RecipientsEditor::setRecentAddressConfig(KConfig *config)
     }
 }
 
-void MessageComposer::RecipientsEditor::slotPickedRecipient(const Recipient &rec, bool &tooManyAddress)
+void RecipientsEditor::slotPickedRecipient(const Recipient &rec, bool &tooManyAddress)
 {
     const Recipient::Type t = rec.type();
     tooManyAddress = addRecipient(rec.email(), t == Recipient::Undefined ? Recipient::To : t);
