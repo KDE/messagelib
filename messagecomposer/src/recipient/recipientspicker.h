@@ -13,7 +13,7 @@
 #include <QDialog>
 
 class QPushButton;
-
+class QLabel;
 namespace PimCommon
 {
 class LdapSearchDialog;
@@ -60,6 +60,7 @@ protected Q_SLOTS:
     void slotSelectionChanged();
 
 private:
+    void updateLabel(int nbSelected);
     Akonadi::RecipientsPickerWidget *const mView;
 
     PimCommon::LdapSearchDialog *mLdapSearchDialog = nullptr;
@@ -69,6 +70,7 @@ private:
     QPushButton *mUser3Button = nullptr;
     QPushButton *mUser2Button = nullptr;
     QPushButton *mUser1Button = nullptr;
+    QLabel *const mSelectedLabel = nullptr;
 };
 }
 

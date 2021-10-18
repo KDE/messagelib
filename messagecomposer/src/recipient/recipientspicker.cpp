@@ -24,6 +24,7 @@
 #include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QKeyEvent>
+#include <QLabel>
 #include <QTreeView>
 #include <QVBoxLayout>
 
@@ -35,6 +36,7 @@ static const char myRecipientsPickerConfigGroupName[] = "RecipientsPicker";
 RecipientsPicker::RecipientsPicker(QWidget *parent)
     : QDialog(parent)
     , mView(new Akonadi::RecipientsPickerWidget(true, nullptr, this))
+    , mSelectedLabel(new QLabel(this))
 {
     setObjectName(QStringLiteral("RecipientsPicker"));
     setWindowTitle(i18nc("@title:window", "Select Recipient"));
@@ -46,6 +48,8 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
 
     connect(mView->view()->selectionModel(), &QItemSelectionModel::selectionChanged, this, &RecipientsPicker::slotSelectionChanged);
     connect(mView->view(), &QAbstractItemView::doubleClicked, this, &RecipientsPicker::slotPicked);
+
+    mainLayout->addWidget(mSelectedLabel);
 
     auto searchLDAPButton = new QPushButton(i18n("Search &Directory Service"), this);
     connect(searchLDAPButton, &QPushButton::clicked, this, &RecipientsPicker::slotSearchLDAP);
@@ -91,13 +95,24 @@ RecipientsPicker::~RecipientsPicker()
     writeConfig();
 }
 
+void RecipientsPicker::updateLabel(int nbSelected)
+{
+    if (nbSelected == 0) {
+        mSelectedLabel->setText({});
+    } else {
+        mSelectedLabel->setText(i18np("%1 selected email", "%1 selected emails", nbSelected));
+    }
+}
+
 void RecipientsPicker::slotSelectionChanged()
 {
-    const bool hasSelection = !mView->emailAddressSelectionWidget()->selectedAddresses().isEmpty();
+    const int selectedItems{mView->emailAddressSelectionWidget()->selectedAddresses().count()};
+    const bool hasSelection = (selectedItems != 0);
     mUser1Button->setEnabled(hasSelection);
     mUser2Button->setEnabled(hasSelection);
     mUser3Button->setEnabled(hasSelection);
     mUser4Button->setEnabled(hasSelection);
+    updateLabel(selectedItems);
 }
 
 void RecipientsPicker::setRecipients(const Recipient::List &)
