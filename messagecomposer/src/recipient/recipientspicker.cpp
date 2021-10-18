@@ -184,6 +184,7 @@ void RecipientsPicker::pick(Recipient::Type type)
 
         Q_EMIT pickedRecipient(recipient, tooManyAddress);
         if (tooManyAddress) {
+            KMessageBox::sorry(this, i18n("You can not add more recipients."));
             break;
         }
     }
