@@ -13,6 +13,7 @@
 #include <Akonadi/Contact/ContactSearchJob>
 #include <Akonadi/ItemCreateJob>
 #include <KEmailAddress>
+#include <kcontacts_version.h>
 
 #include "messagecomposer_debug.h"
 #include <KLocalizedString>
@@ -187,7 +188,11 @@ void DistributionListDialog::slotDelayedSetRecipients(KJob *job)
     if (akItems.isEmpty()) {
         KContacts::Addressee contact;
         contact.setNameFromString(name);
+#if KContacts_VERSION < QT_VERSION_CHECK(5, 88, 0)
         contact.insertEmail(email);
+#else
+        contact.addEmail(KContacts::Email(email));
+#endif
 
         auto item = new DistributionListItem(mRecipientsList);
         item->setAddressee(contact, email);
