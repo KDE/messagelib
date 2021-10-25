@@ -14,7 +14,7 @@ class FollowupReminderSelectDateDialogTest : public QObject
     Q_OBJECT
 public:
     explicit FollowupReminderSelectDateDialogTest(QObject *parent = nullptr);
-    ~FollowupReminderSelectDateDialogTest();
+    ~FollowupReminderSelectDateDialogTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldDisableOkButtonIfDateIsEmpty();

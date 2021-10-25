@@ -19,7 +19,7 @@ class WebEngineViewWithSafeBrowsingSupport : public QWidget
     Q_OBJECT
 public:
     explicit WebEngineViewWithSafeBrowsingSupport(QWidget *parent = nullptr);
-    ~WebEngineViewWithSafeBrowsingSupport();
+    ~WebEngineViewWithSafeBrowsingSupport() override;
 
 private Q_SLOTS:
     void slotUrlClicked(const QUrl &url);

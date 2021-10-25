@@ -13,7 +13,7 @@ class WebHitTestResultTest : public QObject
     Q_OBJECT
 public:
     explicit WebHitTestResultTest(QObject *parent = nullptr);
-    ~WebHitTestResultTest();
+    ~WebHitTestResultTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldAssignPosAndUrl();

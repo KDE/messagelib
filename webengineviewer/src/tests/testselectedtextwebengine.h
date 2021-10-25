@@ -18,7 +18,7 @@ class TestSelectedTextWebEngine : public QWidget
     Q_OBJECT
 public:
     explicit TestSelectedTextWebEngine(QWidget *parent = nullptr);
-    ~TestSelectedTextWebEngine();
+    ~TestSelectedTextWebEngine() override;
 
 private Q_SLOTS:
     void slotSlowSelectedText();

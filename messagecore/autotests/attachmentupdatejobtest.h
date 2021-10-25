@@ -13,7 +13,7 @@ class AttachmentUpdateJobTest : public QObject
     Q_OBJECT
 public:
     explicit AttachmentUpdateJobTest(QObject *parent = nullptr);
-    ~AttachmentUpdateJobTest();
+    ~AttachmentUpdateJobTest() override;
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

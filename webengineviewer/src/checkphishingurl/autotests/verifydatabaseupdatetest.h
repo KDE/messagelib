@@ -13,7 +13,7 @@ class VerifyDataBaseUpdateTest : public QObject
     Q_OBJECT
 public:
     explicit VerifyDataBaseUpdateTest(QObject *parent = nullptr);
-    ~VerifyDataBaseUpdateTest();
+    ~VerifyDataBaseUpdateTest() override;
 private Q_SLOTS:
 
     void shouldVerifyCheckSums();

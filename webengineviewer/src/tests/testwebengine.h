@@ -31,7 +31,7 @@ class TestWebEngine : public QWidget
     Q_OBJECT
 public:
     explicit TestWebEngine(QWidget *parent = nullptr);
-    ~TestWebEngine();
+    ~TestWebEngine() override;
 
 private:
     WebEngineViewer::WebEnginePage *mEnginePage;

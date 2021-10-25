@@ -13,6 +13,6 @@ class TemplateEditorTestWidget : public QWidget
     Q_OBJECT
 public:
     explicit TemplateEditorTestWidget(QWidget *parent = nullptr);
-    ~TemplateEditorTestWidget();
+    ~TemplateEditorTestWidget() override;
 };
 

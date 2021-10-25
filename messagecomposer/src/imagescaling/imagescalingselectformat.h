@@ -36,7 +36,7 @@ class ImageScalingSelectFormat : public QWidget
     Q_OBJECT
 public:
     explicit ImageScalingSelectFormat(QWidget *parent);
-    ~ImageScalingSelectFormat();
+    ~ImageScalingSelectFormat() override;
 
     void setFormat(const QString &format);
     Q_REQUIRED_RESULT QString format() const;

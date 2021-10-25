@@ -13,7 +13,7 @@ class MailSourceViewTextBrowserWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit MailSourceViewTextBrowserWidgetTest(QObject *parent = nullptr);
-    ~MailSourceViewTextBrowserWidgetTest();
+    ~MailSourceViewTextBrowserWidgetTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

@@ -13,7 +13,7 @@ class SearchFullHashJobTest : public QObject
     Q_OBJECT
 public:
     explicit SearchFullHashJobTest(QObject *parent = nullptr);
-    ~SearchFullHashJobTest();
+    ~SearchFullHashJobTest() override;
 
 private Q_SLOTS:
     void shouldNotBeAbleToStartWithEmptyUrl();

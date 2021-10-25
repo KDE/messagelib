@@ -17,7 +17,7 @@ class ViewerPluginTest : public QWidget
     Q_OBJECT
 public:
     explicit ViewerPluginTest(QWidget *parent = nullptr);
-    ~ViewerPluginTest();
+    ~ViewerPluginTest() override;
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);

@@ -13,6 +13,6 @@ class LocalDataBaseManagerTest : public QObject
     Q_OBJECT
 public:
     explicit LocalDataBaseManagerTest(QObject *parent = nullptr);
-    ~LocalDataBaseManagerTest();
+    ~LocalDataBaseManagerTest() override;
 };
 

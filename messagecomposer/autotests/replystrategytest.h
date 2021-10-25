@@ -23,7 +23,7 @@ class ReplyStrategyTest : public QObject
 
 public:
     explicit ReplyStrategyTest(QObject *parent = nullptr);
-    ~ReplyStrategyTest();
+    ~ReplyStrategyTest() override;
 
 private Q_SLOTS:
     void initTestCase();

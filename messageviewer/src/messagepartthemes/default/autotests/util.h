@@ -27,7 +27,7 @@ public:
         }
     }
 
-    virtual ~CSSHelper()
+    ~CSSHelper() override
     {
     }
 

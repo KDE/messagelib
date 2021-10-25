@@ -13,7 +13,7 @@ class UrlHashingTest : public QObject
     Q_OBJECT
 public:
     explicit UrlHashingTest(QObject *parent = nullptr);
-    ~UrlHashingTest();
+    ~UrlHashingTest() override;
 private Q_SLOTS:
     void shouldCanonicalizeUrl();
     void shouldCanonicalizeUrl_data();

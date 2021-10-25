@@ -15,7 +15,7 @@ class CreatePhisingUrlDataBaseGui : public QWidget
     Q_OBJECT
 public:
     explicit CreatePhisingUrlDataBaseGui(QWidget *parent = nullptr);
-    ~CreatePhisingUrlDataBaseGui();
+    ~CreatePhisingUrlDataBaseGui() override;
 private Q_SLOTS:
     void slotResult(const QByteArray &data);
     void slotDownloadFullDatabase();

@@ -24,7 +24,7 @@ public:
     static MessageViewerConfigureSettingsPluginManager *self();
 
     explicit MessageViewerConfigureSettingsPluginManager(QObject *parent = nullptr);
-    ~MessageViewerConfigureSettingsPluginManager();
+    ~MessageViewerConfigureSettingsPluginManager() override;
 
     Q_REQUIRED_RESULT QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
 

@@ -13,7 +13,7 @@ class StatusBarLabelToggledStateTest : public QObject
     Q_OBJECT
 public:
     explicit StatusBarLabelToggledStateTest(QObject *parent = nullptr);
-    ~StatusBarLabelToggledStateTest();
+    ~StatusBarLabelToggledStateTest() override;
 
 private Q_SLOTS:
     void shouldHasDefaultValue();

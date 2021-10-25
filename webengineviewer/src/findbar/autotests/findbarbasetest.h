@@ -13,7 +13,7 @@ class FindBarBaseTest : public QObject
     Q_OBJECT
 public:
     explicit FindBarBaseTest(QObject *parent = nullptr);
-    ~FindBarBaseTest();
+    ~FindBarBaseTest() override;
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

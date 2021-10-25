@@ -272,7 +272,7 @@ class MESSAGEVIEWER_EXPORT KXFace : public QObject
 
 public:
     KXFace();
-    ~KXFace();
+    ~KXFace() override;
 
     /**
      * generates the xface string from @p image

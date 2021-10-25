@@ -37,7 +37,7 @@ public:
     {
     }
 
-    ~AutocryptHeadersJobPrivate()
+    ~AutocryptHeadersJobPrivate() override
     {
         // clean up in case of cancelled job
         for (const auto &[key, header] : gossipHeaders) {

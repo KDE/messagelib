@@ -13,7 +13,7 @@ class WebEngineExportHtmlPageJobTest : public QObject
     Q_OBJECT
 public:
     explicit WebEngineExportHtmlPageJobTest(QObject *parent = nullptr);
-    ~WebEngineExportHtmlPageJobTest();
+    ~WebEngineExportHtmlPageJobTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

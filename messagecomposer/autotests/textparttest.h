@@ -12,7 +12,7 @@ class TextPartTest : public QObject
     Q_OBJECT
 public:
     explicit TextPartTest(QObject *parent = nullptr);
-    ~TextPartTest();
+    ~TextPartTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

@@ -13,7 +13,7 @@ class ImageScalingTest : public QObject
     Q_OBJECT
 public:
     explicit ImageScalingTest(QObject *parent = nullptr);
-    ~ImageScalingTest();
+    ~ImageScalingTest() override;
 private Q_SLOTS:
     void initTestCase();
     void shouldHaveDefaultValue();

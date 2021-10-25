@@ -13,7 +13,7 @@ class TemplateExtractTextFromMailTest : public QObject
     Q_OBJECT
 public:
     explicit TemplateExtractTextFromMailTest(QObject *parent = nullptr);
-    ~TemplateExtractTextFromMailTest();
+    ~TemplateExtractTextFromMailTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldExtractHtml();

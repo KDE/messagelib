@@ -18,7 +18,7 @@ class TestMailWebEngine : public QWidget
     Q_OBJECT
 public:
     explicit TestMailWebEngine(QWidget *parent = nullptr);
-    ~TestMailWebEngine();
+    ~TestMailWebEngine() override;
 private Q_SLOTS:
     void slotScrollUp();
 

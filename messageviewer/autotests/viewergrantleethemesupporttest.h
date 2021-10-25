@@ -13,7 +13,7 @@ class ViewerGrantleeThemeSupportTest : public QObject
     Q_OBJECT
 public:
     explicit ViewerGrantleeThemeSupportTest(QObject *parent = nullptr);
-    ~ViewerGrantleeThemeSupportTest();
+    ~ViewerGrantleeThemeSupportTest() override;
 private Q_SLOTS:
     void initTestCase();
     void shouldUpdateThemeMenu();

@@ -15,7 +15,7 @@ class CheckSignature : public QObject
     Q_OBJECT
 public:
     explicit CheckSignature(const QString &fileName, QObject *parent = nullptr);
-    ~CheckSignature();
+    ~CheckSignature() override;
 
 private:
     void slotResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);

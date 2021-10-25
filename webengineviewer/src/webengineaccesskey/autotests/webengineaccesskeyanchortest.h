@@ -13,7 +13,7 @@ class WebEngineAccessKeyAnchorTest : public QObject
     Q_OBJECT
 public:
     explicit WebEngineAccessKeyAnchorTest(QObject *parent = nullptr);
-    ~WebEngineAccessKeyAnchorTest();
+    ~WebEngineAccessKeyAnchorTest() override;
 private Q_SLOTS:
     void shouldReturnEmptyAccessKeyAnchor();
 };

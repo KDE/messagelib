@@ -19,7 +19,7 @@ class TestWebEngineScamDetection : public QWidget
     Q_OBJECT
 public:
     explicit TestWebEngineScamDetection(QWidget *parent = nullptr);
-    ~TestWebEngineScamDetection();
+    ~TestWebEngineScamDetection() override;
 
     void setHtml(const QString &html);
 private Q_SLOTS:
@@ -37,7 +37,7 @@ class ScamDetectionWebEngineTest : public QObject
     Q_OBJECT
 public:
     explicit ScamDetectionWebEngineTest(QObject *parent = nullptr);
-    ~ScamDetectionWebEngineTest();
+    ~ScamDetectionWebEngineTest() override;
 private Q_SLOTS:
     void scamtest_data();
     void scamtest();

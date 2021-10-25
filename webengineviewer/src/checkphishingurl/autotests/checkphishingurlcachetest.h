@@ -13,7 +13,7 @@ class CheckPhishingUrlCacheTest : public QObject
     Q_OBJECT
 public:
     explicit CheckPhishingUrlCacheTest(QObject *parent = nullptr);
-    ~CheckPhishingUrlCacheTest();
+    ~CheckPhishingUrlCacheTest() override;
 private Q_SLOTS:
     void shouldNotBeAMalware();
 

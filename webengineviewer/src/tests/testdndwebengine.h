@@ -32,7 +32,7 @@ class TestDndWebEngine : public QWidget
     Q_OBJECT
 public:
     explicit TestDndWebEngine(QWidget *parent = nullptr);
-    ~TestDndWebEngine();
+    ~TestDndWebEngine() override;
 
 private:
     WebEngineViewer::WebEngineView *pageView = nullptr;

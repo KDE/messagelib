@@ -83,7 +83,7 @@ public:
                                 CustomTemplates::Type type,
                                 const QString &to,
                                 const QString &cc);
-    ~CustomTemplateItem();
+    ~CustomTemplateItem() override;
     void setCustomType(CustomTemplates::Type type);
     CustomTemplates::Type customType() const;
 

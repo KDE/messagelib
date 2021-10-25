@@ -39,7 +39,7 @@ public:
     {
     }
 
-    ~ComposerPrivate()
+    ~ComposerPrivate() override
     {
         delete skeletonMessage;
     }

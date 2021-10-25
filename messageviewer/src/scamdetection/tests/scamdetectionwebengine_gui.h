@@ -19,7 +19,7 @@ class ScamDetectionWebEngineTestWidget : public QWidget
     Q_OBJECT
 public:
     explicit ScamDetectionWebEngineTestWidget(const QString &filename, QWidget *parent = nullptr);
-    ~ScamDetectionWebEngineTestWidget();
+    ~ScamDetectionWebEngineTestWidget() override;
 
 private Q_SLOTS:
     void slotLoadFinished();

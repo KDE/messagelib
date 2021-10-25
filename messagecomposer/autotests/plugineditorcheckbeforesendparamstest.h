@@ -13,7 +13,7 @@ class PluginEditorCheckBeforeSendParamsTest : public QObject
     Q_OBJECT
 public:
     explicit PluginEditorCheckBeforeSendParamsTest(QObject *parent = nullptr);
-    ~PluginEditorCheckBeforeSendParamsTest();
+    ~PluginEditorCheckBeforeSendParamsTest() override;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

@@ -13,7 +13,7 @@ class MailingListTest : public QObject
     Q_OBJECT
 public:
     explicit MailingListTest(QObject *parent = nullptr);
-    ~MailingListTest();
+    ~MailingListTest() override;
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

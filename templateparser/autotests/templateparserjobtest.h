@@ -13,7 +13,7 @@ class TemplateParserJobTest : public QObject
     Q_OBJECT
 public:
     explicit TemplateParserJobTest(QObject *parent = nullptr);
-    ~TemplateParserJobTest();
+    ~TemplateParserJobTest() override;
 private Q_SLOTS:
     /**
      * checks whether text/plain only mails are converted to a valid HTML

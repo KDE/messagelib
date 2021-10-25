@@ -13,7 +13,7 @@ class CheckPhishingUrlJobTest : public QObject
     Q_OBJECT
 public:
     explicit CheckPhishingUrlJobTest(QObject *parent = nullptr);
-    ~CheckPhishingUrlJobTest();
+    ~CheckPhishingUrlJobTest() override;
 private Q_SLOTS:
     void shouldNotBeAbleToStartWithEmptyUrl();
     void shouldCreateRequest_data();

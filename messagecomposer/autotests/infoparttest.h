@@ -13,7 +13,7 @@ class InfoPartTest : public QObject
     Q_OBJECT
 public:
     explicit InfoPartTest(QObject *parent = nullptr);
-    ~InfoPartTest();
+    ~InfoPartTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

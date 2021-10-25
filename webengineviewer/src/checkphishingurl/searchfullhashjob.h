@@ -24,7 +24,7 @@ class WEBENGINEVIEWER_EXPORT SearchFullHashJob : public QObject
     Q_OBJECT
 public:
     explicit SearchFullHashJob(QObject *parent = nullptr);
-    ~SearchFullHashJob();
+    ~SearchFullHashJob() override;
 
     void start();
     Q_REQUIRED_RESULT bool canStart() const;

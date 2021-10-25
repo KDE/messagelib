@@ -13,6 +13,6 @@ class TemplateConfigureTestWidget : public QWidget
     Q_OBJECT
 public:
     explicit TemplateConfigureTestWidget(QWidget *parent = nullptr);
-    ~TemplateConfigureTestWidget();
+    ~TemplateConfigureTestWidget() override;
 };
 

@@ -13,7 +13,7 @@ class CheckPhishingUrlUtilTest : public QObject
     Q_OBJECT
 public:
     explicit CheckPhishingUrlUtilTest(QObject *parent = nullptr);
-    ~CheckPhishingUrlUtilTest();
+    ~CheckPhishingUrlUtilTest() override;
 private Q_SLOTS:
     void shouldConvertToSecond_data();
     void shouldConvertToSecond();

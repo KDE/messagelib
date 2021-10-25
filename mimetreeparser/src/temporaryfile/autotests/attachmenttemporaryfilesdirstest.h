@@ -13,7 +13,7 @@ class AttachmentTemporaryFilesDirsTest : public QObject
     Q_OBJECT
 public:
     explicit AttachmentTemporaryFilesDirsTest(QObject *parent = nullptr);
-    ~AttachmentTemporaryFilesDirsTest();
+    ~AttachmentTemporaryFilesDirsTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldAddTemporaryFiles();

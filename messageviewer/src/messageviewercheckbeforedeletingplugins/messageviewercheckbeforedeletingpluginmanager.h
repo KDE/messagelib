@@ -24,7 +24,7 @@ public:
     static MessageViewerCheckBeforeDeletingPluginManager *self();
 
     explicit MessageViewerCheckBeforeDeletingPluginManager(QObject *parent = nullptr);
-    ~MessageViewerCheckBeforeDeletingPluginManager();
+    ~MessageViewerCheckBeforeDeletingPluginManager() override;
 
     Q_REQUIRED_RESULT QVector<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
 

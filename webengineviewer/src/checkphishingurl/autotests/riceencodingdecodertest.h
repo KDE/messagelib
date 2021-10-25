@@ -13,7 +13,7 @@ class RiceEncodingDecoderTest : public QObject
     Q_OBJECT
 public:
     explicit RiceEncodingDecoderTest(QObject *parent = nullptr);
-    ~RiceEncodingDecoderTest();
+    ~RiceEncodingDecoderTest() override;
 
 private Q_SLOTS:
     void shouldDecodeRiceIndices_data();

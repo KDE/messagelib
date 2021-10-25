@@ -13,7 +13,7 @@ class CreateDatabaseFileJobTest : public QObject
     Q_OBJECT
 public:
     explicit CreateDatabaseFileJobTest(QObject *parent = nullptr);
-    ~CreateDatabaseFileJobTest();
+    ~CreateDatabaseFileJobTest() override;
 private Q_SLOTS:
     void initTestCase();
     void shouldHaveDefaultValue();

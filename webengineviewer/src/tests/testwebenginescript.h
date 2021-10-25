@@ -54,7 +54,7 @@ class TestWebEngineScript : public QWidget
     Q_OBJECT
 public:
     explicit TestWebEngineScript(QWidget *parent = nullptr);
-    ~TestWebEngineScript();
+    ~TestWebEngineScript() override;
 
 private Q_SLOTS:
     void slotExecuteScript();

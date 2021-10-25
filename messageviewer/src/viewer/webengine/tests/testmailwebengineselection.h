@@ -18,7 +18,7 @@ class TestMailWebEngineSelection : public QWidget
     Q_OBJECT
 public:
     explicit TestMailWebEngineSelection(QWidget *parent = nullptr);
-    ~TestMailWebEngineSelection();
+    ~TestMailWebEngineSelection() override;
 private Q_SLOTS:
     void slotOpenUrl(const QUrl &url);
     void slotSwitchHtml();

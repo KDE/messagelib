@@ -13,7 +13,7 @@ class SendLaterDialogTest : public QObject
     Q_OBJECT
 public:
     explicit SendLaterDialogTest(QObject *parent = nullptr);
-    ~SendLaterDialogTest();
+    ~SendLaterDialogTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void initTestCase();

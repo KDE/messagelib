@@ -33,7 +33,7 @@ public:
     {
     }
 
-    ~TestLocalDataBaseManager()
+    ~TestLocalDataBaseManager() override
     {
         delete d;
     }

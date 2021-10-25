@@ -13,7 +13,7 @@ class DMarcLookUpKey : public QObject
     Q_OBJECT
 public:
     explicit DMarcLookUpKey(QObject *parent = nullptr);
-    ~DMarcLookUpKey();
+    ~DMarcLookUpKey() override;
     void lookUpDomain(const QString &domain);
 };
 

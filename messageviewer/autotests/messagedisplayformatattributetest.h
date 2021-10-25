@@ -13,7 +13,7 @@ class MessageDisplayFormatAttributeTest : public QObject
     Q_OBJECT
 public:
     explicit MessageDisplayFormatAttributeTest(QObject *parent = nullptr);
-    ~MessageDisplayFormatAttributeTest();
+    ~MessageDisplayFormatAttributeTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldChangeRemoteValue();

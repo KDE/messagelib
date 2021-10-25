@@ -15,7 +15,7 @@ class TestWebEngineAccessKey : public QWidget
     Q_OBJECT
 public:
     explicit TestWebEngineAccessKey(QWidget *parent = nullptr);
-    ~TestWebEngineAccessKey();
+    ~TestWebEngineAccessKey() override;
 
     void setHtml(const QString &html);
 private Q_SLOTS:

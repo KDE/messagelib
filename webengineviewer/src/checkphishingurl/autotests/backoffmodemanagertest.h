@@ -13,7 +13,7 @@ class BackOffModeManagerTest : public QObject
     Q_OBJECT
 public:
     explicit BackOffModeManagerTest(QObject *parent = nullptr);
-    ~BackOffModeManagerTest();
+    ~BackOffModeManagerTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldStartBackOffMode();

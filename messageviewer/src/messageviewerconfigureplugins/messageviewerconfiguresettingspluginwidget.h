@@ -20,7 +20,7 @@ class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginWidget : public Q
     Q_OBJECT
 public:
     explicit MessageViewerConfigureSettingsPluginWidget(QWidget *parent = nullptr);
-    ~MessageViewerConfigureSettingsPluginWidget();
+    ~MessageViewerConfigureSettingsPluginWidget() override;
 
     virtual void loadSettings() = 0;
     virtual void saveSettings() = 0;

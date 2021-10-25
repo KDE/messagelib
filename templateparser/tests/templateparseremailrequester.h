@@ -13,6 +13,6 @@ class TemplateParserEmailRequesterTestWidget : public QWidget
     Q_OBJECT
 public:
     explicit TemplateParserEmailRequesterTestWidget(QWidget *parent = nullptr);
-    ~TemplateParserEmailRequesterTestWidget();
+    ~TemplateParserEmailRequesterTestWidget() override;
 };
 

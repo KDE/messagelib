@@ -18,7 +18,7 @@ class TestSelectionChangedEngine : public QWidget
     Q_OBJECT
 public:
     explicit TestSelectionChangedEngine(QWidget *parent = nullptr);
-    ~TestSelectionChangedEngine();
+    ~TestSelectionChangedEngine() override;
 private Q_SLOTS:
     void slotSelectionChanged();
 

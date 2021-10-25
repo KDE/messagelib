@@ -13,7 +13,7 @@ class WebEngineEmbedPartTest : public QObject
     Q_OBJECT
 public:
     explicit WebEngineEmbedPartTest(QObject *parent = nullptr);
-    ~WebEngineEmbedPartTest();
+    ~WebEngineEmbedPartTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldClearValue();

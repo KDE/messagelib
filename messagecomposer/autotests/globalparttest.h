@@ -12,7 +12,7 @@ class GlobalPartTest : public QObject
     Q_OBJECT
 public:
     explicit GlobalPartTest(QObject *parent = nullptr);
-    ~GlobalPartTest();
+    ~GlobalPartTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

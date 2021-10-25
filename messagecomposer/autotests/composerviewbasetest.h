@@ -18,7 +18,7 @@ class ComposerViewBaseTest : public QObject
     Q_OBJECT
 public:
     explicit ComposerViewBaseTest(QObject *parent = nullptr);
-    ~ComposerViewBaseTest();
+    ~ComposerViewBaseTest() override;
 private Q_SLOTS:
     void cleanupTestCase();
     void initTestCase();

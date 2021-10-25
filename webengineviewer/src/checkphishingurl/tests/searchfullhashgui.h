@@ -15,7 +15,7 @@ class SearchFullHashGui : public QWidget
     Q_OBJECT
 public:
     explicit SearchFullHashGui(QWidget *parent = nullptr);
-    ~SearchFullHashGui();
+    ~SearchFullHashGui() override;
 private Q_SLOTS:
     void slotCheckUrl();
     void slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus result);

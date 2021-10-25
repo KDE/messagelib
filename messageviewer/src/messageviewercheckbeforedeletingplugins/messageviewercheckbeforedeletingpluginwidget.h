@@ -20,7 +20,7 @@ class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingPluginWidget : public
     Q_OBJECT
 public:
     explicit MessageViewerCheckBeforeDeletingPluginWidget(QWidget *parent = nullptr);
-    ~MessageViewerCheckBeforeDeletingPluginWidget();
+    ~MessageViewerCheckBeforeDeletingPluginWidget() override;
 
     virtual void loadSettings() = 0;
     virtual void saveSettings() = 0;

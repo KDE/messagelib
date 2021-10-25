@@ -13,7 +13,7 @@ class LocalDataBaseFileTest : public QObject
     Q_OBJECT
 public:
     explicit LocalDataBaseFileTest(QObject *parent = nullptr);
-    ~LocalDataBaseFileTest();
+    ~LocalDataBaseFileTest() override;
 private Q_SLOTS:
     void shouldBeInvalidWithUnExistingFile();
 

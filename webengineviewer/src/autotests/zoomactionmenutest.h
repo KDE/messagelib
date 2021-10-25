@@ -13,7 +13,7 @@ class ZoomActionMenuTest : public QObject
     Q_OBJECT
 public:
     explicit ZoomActionMenuTest(QObject *parent = nullptr);
-    ~ZoomActionMenuTest();
+    ~ZoomActionMenuTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldAssignZoomFactor();

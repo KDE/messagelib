@@ -15,7 +15,7 @@ class CheckPhishingUrlGui : public QWidget
     Q_OBJECT
 public:
     explicit CheckPhishingUrlGui(QWidget *parent = nullptr);
-    ~CheckPhishingUrlGui();
+    ~CheckPhishingUrlGui() override;
 private Q_SLOTS:
     void slotCheckUrl();
     void slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus result, const QUrl &url, uint verifyCacheAfterThisTime);

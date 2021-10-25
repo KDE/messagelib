@@ -21,7 +21,7 @@ class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPlugin : public QObject
     Q_OBJECT
 public:
     explicit MessageViewerConfigureSettingsPlugin(QObject *parent = nullptr);
-    ~MessageViewerConfigureSettingsPlugin();
+    ~MessageViewerConfigureSettingsPlugin() override;
 
     virtual void showConfigureDialog(QWidget *parent);
 

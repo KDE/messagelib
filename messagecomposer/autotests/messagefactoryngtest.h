@@ -20,7 +20,7 @@ class MessageFactoryTest : public QObject
 
 public:
     explicit MessageFactoryTest(QObject *parent = nullptr);
-    ~MessageFactoryTest();
+    ~MessageFactoryTest() override;
 
 private Q_SLOTS:
     void initTestCase();
