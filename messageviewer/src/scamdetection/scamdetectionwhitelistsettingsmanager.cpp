@@ -10,14 +10,26 @@ using namespace MessageViewer;
 ScamDetectionWhiteListSettingsManager::ScamDetectionWhiteListSettingsManager(QObject *parent)
     : QObject{parent}
 {
+    loadSettings();
 }
 
 ScamDetectionWhiteListSettingsManager::~ScamDetectionWhiteListSettingsManager()
 {
+    writeSettings();
 }
 
 ScamDetectionWhiteListSettingsManager *ScamDetectionWhiteListSettingsManager::self()
 {
     static ScamDetectionWhiteListSettingsManager s_self;
     return &s_self;
+}
+
+void ScamDetectionWhiteListSettingsManager::loadSettings()
+{
+    // TODO
+}
+
+void ScamDetectionWhiteListSettingsManager::writeSettings()
+{
+    // TODO
 }

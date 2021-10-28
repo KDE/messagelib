@@ -9,8 +9,10 @@
 
 #include "messageviewer_export.h"
 #include <QObject>
+#include <QVector>
 namespace MessageViewer
 {
+class ScamDetectionInfo;
 class MESSAGEVIEWER_EXPORT ScamDetectionWhiteListSettingsManager : public QObject
 {
     Q_OBJECT
@@ -18,5 +20,10 @@ public:
     explicit ScamDetectionWhiteListSettingsManager(QObject *parent = nullptr);
     ~ScamDetectionWhiteListSettingsManager() override;
     static ScamDetectionWhiteListSettingsManager *self();
+
+private:
+    void loadSettings();
+    void writeSettings();
+    QVector<ScamDetectionInfo> mScamDetectionInfoList;
 };
 }
