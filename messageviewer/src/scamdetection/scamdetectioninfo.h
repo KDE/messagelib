@@ -5,13 +5,30 @@
 
 */
 #pragma once
-
+#include "messageviewer_private_export.h"
+#include <QDebug>
 namespace MessageViewer
 {
-class ScamDetectionInfo
+/**
+ * @brief The ScamDetectionInfo class
+ * @author Laurent Montel <montel@kde.org>
+ */
+class MESSAGEVIEWER_TESTS_EXPORT ScamDetectionInfo
 {
 public:
     ScamDetectionInfo();
     ~ScamDetectionInfo();
+
+    Q_REQUIRED_RESULT const QString &domainOrEmail() const;
+    void setDomainOrEmail(const QString &newDomainOrEmail);
+
+    Q_REQUIRED_RESULT bool enabled() const;
+    void setEnabled(bool newEnabled);
+
+private:
+    QString mDomainOrEmail;
+    bool mEnabled = false;
 };
 }
+Q_DECLARE_TYPEINFO(MessageViewer::ScamDetectionInfo, Q_MOVABLE_TYPE);
+MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::ScamDetectionInfo &t);
