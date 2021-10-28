@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(PIM_VERSION "5.18.45")
+set(PIM_VERSION "5.18.46")
 
 
 project(Messagelib VERSION ${PIM_VERSION})

@@ -175,6 +175,8 @@ target_sources(KF5MessageViewer PRIVATE
     scamdetection/scamexpandurljob.cpp
     scamdetection/scamcheckshorturlmanager.cpp
     scamdetection/scamdetectionwebengine.cpp
+    scamdetection/scamdetectionwhitelistsettingsmanager.cpp
+    scamdetection/scamdetectioninfo.cpp
     findbar/findbarsourceview.cpp
     utils/iconnamecache.cpp
     utils/markmessagereadhandler.cpp
@@ -322,6 +324,7 @@ ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     ScamExpandUrlJob
     ScamCheckShortUrlManager
     ScamCheckShortUrl
+    ScamDetectionWhiteListSettingsManager
     REQUIRED_HEADERS MessageViewer_scam_HEADERS
     PREFIX MessageViewer
     RELATIVE scamdetection
