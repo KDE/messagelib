@@ -8,6 +8,7 @@
 #pragma once
 
 #include "messageviewer_export.h"
+#include "scamdetectioninfo.h"
 #include <QObject>
 #include <QVector>
 namespace MessageViewer
