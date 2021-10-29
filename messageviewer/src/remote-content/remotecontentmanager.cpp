@@ -10,6 +10,10 @@
 #include <KSharedConfig>
 
 using namespace MessageViewer;
+namespace
+{
+static const char myRemoteContentGroupName[] = "RemoteContent";
+}
 RemoteContentManager::RemoteContentManager(QObject *parent)
     : QObject(parent)
 {
@@ -84,7 +88,7 @@ void RemoteContentManager::loadSettings()
 {
     mRemoveContentInfo.clear();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, "RemoteContent");
+    KConfigGroup group(config, myRemoteContentGroupName);
     const QStringList blockedUrl = group.readEntry("Blocked", QStringList());
     const QStringList authorizedUrl = group.readEntry("Authorized", QStringList());
     for (const QString &url : blockedUrl) {
@@ -104,7 +108,7 @@ void RemoteContentManager::loadSettings()
 void RemoteContentManager::writeSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, "RemoteContent");
+    KConfigGroup group(config, myRemoteContentGroupName);
     QStringList blockedUrl;
     QStringList authorizedUrl;
     for (const RemoteContentInfo &info : std::as_const(mRemoveContentInfo)) {
