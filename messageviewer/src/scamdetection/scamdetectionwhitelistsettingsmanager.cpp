@@ -6,6 +6,13 @@
 */
 #include "scamdetectionwhitelistsettingsmanager.h"
 
+#include <KConfigGroup>
+#include <KSharedConfig>
+
+namespace
+{
+static const char myScamDetectionWhiteListGroupName[] = "ScamDetectionWhiteList";
+}
 using namespace MessageViewer;
 ScamDetectionWhiteListSettingsManager::ScamDetectionWhiteListSettingsManager(QObject *parent)
     : QObject{parent}
@@ -26,10 +33,15 @@ ScamDetectionWhiteListSettingsManager *ScamDetectionWhiteListSettingsManager::se
 
 void ScamDetectionWhiteListSettingsManager::loadSettings()
 {
+    mScamDetectionInfoList.clear();
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group(config, myScamDetectionWhiteListGroupName);
     // TODO
 }
 
 void ScamDetectionWhiteListSettingsManager::writeSettings()
 {
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group(config, myScamDetectionWhiteListGroupName);
     // TODO
 }
