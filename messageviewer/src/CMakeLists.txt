@@ -325,6 +325,7 @@ ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     ScamCheckShortUrlManager
     ScamCheckShortUrl
     ScamDetectionWhiteListSettingsManager
+    ScamDetectionInfo
     REQUIRED_HEADERS MessageViewer_scam_HEADERS
     PREFIX MessageViewer
     RELATIVE scamdetection
