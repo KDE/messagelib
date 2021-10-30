@@ -19,4 +19,5 @@ void ScamDetectionInfoTest::shouldHaveDefaultValues()
     MessageViewer::ScamDetectionInfo info;
     QVERIFY(!info.enabled());
     QVERIFY(info.domainOrEmail().isEmpty());
+    QVERIFY(!info.isValid());
 }

@@ -25,6 +25,8 @@ public:
     Q_REQUIRED_RESULT bool enabled() const;
     void setEnabled(bool newEnabled);
 
+    Q_REQUIRED_RESULT bool isValid() const;
+
 private:
     QString mDomainOrEmail;
     bool mEnabled = false;

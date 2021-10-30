@@ -35,6 +35,11 @@ void ScamDetectionInfo::setEnabled(bool newEnabled)
     mEnabled = newEnabled;
 }
 
+bool ScamDetectionInfo::isValid() const
+{
+    return !mDomainOrEmail.isEmpty();
+}
+
 QDebug operator<<(QDebug d, const MessageViewer::ScamDetectionInfo &t)
 {
     d << "Enabled " << t.enabled();
