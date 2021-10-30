@@ -42,6 +42,7 @@ bool ScamDetectionInfo::isValid() const
 
 QDebug operator<<(QDebug d, const MessageViewer::ScamDetectionInfo &t)
 {
+    d << "isValid: " << t.isValid();
     d << "Enabled " << t.enabled();
     d << "DomainOrName " << t.domainOrEmail();
     return d;
