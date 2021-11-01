@@ -40,6 +40,12 @@ bool ScamDetectionInfo::isValid() const
     return !mDomainOrEmail.isEmpty();
 }
 
+ScamDetectionInfo::ScamDetectionFields ScamDetectionInfo::scamChecks() const
+{
+    // TODO
+    return {};
+}
+
 QDebug operator<<(QDebug d, const MessageViewer::ScamDetectionInfo &t)
 {
     d << "isValid: " << t.isValid();

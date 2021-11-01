@@ -36,6 +36,8 @@ public:
 
     Q_REQUIRED_RESULT bool isValid() const;
 
+    Q_REQUIRED_RESULT ScamDetectionInfo::ScamDetectionFields scamChecks() const;
+
 private:
     QString mDomainOrEmail;
     bool mEnabled = false;
