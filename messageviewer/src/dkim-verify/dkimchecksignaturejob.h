@@ -61,7 +61,14 @@ public:
     };
     Q_ENUM(DKIMWarning)
 
-    enum class AuthenticationMethod : int { Unknown = 0, Dkim = 1, Spf = 2, Dmarc = 3, Dkimatps = 4, Auth = 5 };
+    enum class AuthenticationMethod : int {
+        Unknown = 0,
+        Dkim = 1,
+        Spf = 2,
+        Dmarc = 3,
+        Dkimatps = 4,
+        Auth = 5,
+    };
     Q_ENUM(AuthenticationMethod)
 
     struct MESSAGEVIEWER_EXPORT DKIMCheckSignatureAuthenticationResult {

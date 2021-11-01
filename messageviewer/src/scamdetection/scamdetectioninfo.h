@@ -5,7 +5,7 @@
 
 */
 #pragma once
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 #include <QDebug>
 namespace MessageViewer
 {
@@ -13,9 +13,18 @@ namespace MessageViewer
  * @brief The ScamDetectionInfo class
  * @author Laurent Montel <montel@kde.org>
  */
-class MESSAGEVIEWER_TESTS_EXPORT ScamDetectionInfo
+class MESSAGEVIEWER_EXPORT ScamDetectionInfo
 {
 public:
+    enum ScamDetectionField {
+        None = 0,
+        DisableAll = 1,
+        RedirectUrl = 2,
+        HasIp = 4,
+    };
+    Q_ENUMS(ScamDetectionField)
+    Q_DECLARE_FLAGS(ScamDetectionFields, ScamDetectionField)
+
     ScamDetectionInfo();
     ~ScamDetectionInfo();
 
