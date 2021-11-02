@@ -7,7 +7,6 @@
 #include "widget.h"
 
 #include <Akonadi/Collection>
-#include <Akonadi/Item>
 #include <Akonadi/ItemCopyJob>
 #include <Akonadi/ItemMoveJob>
 

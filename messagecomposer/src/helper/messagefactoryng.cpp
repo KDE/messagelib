@@ -14,7 +14,6 @@
 #include "draftstatus/draftstatus.h"
 #include <MessageComposer/Util>
 
-#include <Akonadi/Item>
 #include <KCursorSaver>
 
 #include <KIdentityManagement/Identity>

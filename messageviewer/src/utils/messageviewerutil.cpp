@@ -49,7 +49,6 @@
 #include <Gravatar/GravatarCache>
 #include <gravatar/gravatarsettings.h>
 
-#include <Akonadi/Item>
 
 #include <KMbox/MBox>
 
