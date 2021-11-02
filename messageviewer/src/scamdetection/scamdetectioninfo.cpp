@@ -53,3 +53,8 @@ QDebug operator<<(QDebug d, const MessageViewer::ScamDetectionInfo &t)
     d << "DomainOrName " << t.domainOrEmail();
     return d;
 }
+
+bool ScamDetectionInfo::operator==(const ScamDetectionInfo &other) const
+{
+    return domainOrEmail() == other.domainOrEmail() && enabled() == other.enabled() && scamChecks() == other.scamChecks();
+}
