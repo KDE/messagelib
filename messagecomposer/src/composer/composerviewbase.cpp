@@ -524,8 +524,8 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
                     const int rc = KMessageBox::warningYesNo(m_parentWidget,
                                                              i18n("Do you want to resize images?"),
                                                              i18n("Auto Resize Images"),
-                                                             KStandardGuiItem::yes(),
-                                                             KStandardGuiItem::no());
+                                                             KGuiItem(i18nc("@action:button", "Auto Resize")),
+                                                             KGuiItem(i18nc("@action:button", "Do Not Resize")));
                     if (rc == KMessageBox::Yes) {
                         autoresizeImage = true;
                     } else {

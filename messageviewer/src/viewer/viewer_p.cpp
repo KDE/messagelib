@@ -1945,7 +1945,12 @@ void ViewerPrivate::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::Che
 
 bool ViewerPrivate::urlIsAMalwareButContinue()
 {
-    if (KMessageBox::No == KMessageBox::warningYesNo(mMainWindow, i18n("This web site is a malware, do you want to continue to show it?"), i18n("Malware"))) {
+    if (KMessageBox::No
+        == KMessageBox::warningYesNo(mMainWindow,
+                                     i18n("This web site is a malware, do you want to continue to show it?"),
+                                     i18n("Malware"),
+                                     KStandardGuiItem::cont(),
+                                     KStandardGuiItem::cancel())) {
         return false;
     }
     return true;

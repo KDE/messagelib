@@ -116,10 +116,12 @@ void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &doma
             if (keyStored != key) {
                 // qDebug() << "storeInKeyManager : keyStored  " << keyStored << " key " << key;
                 // qDebug() << "domain " << domain << " selector " << selector;
-                if (KMessageBox::No
-                    == KMessageBox::warningYesNo(nullptr,
-                                                 i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"),
-                                                 i18n("Key Changed"))) {
+                const int answer = KMessageBox::warningYesNo(nullptr,
+                                                             i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"),
+                                                             i18n("Key Changed"),
+                                                             KGuiItem(i18nc("@action:button", "Store")),
+                                                             KStandardGuiItem::discard());
+                if (answer == KMessageBox::No) {
                     return;
                 }
             }

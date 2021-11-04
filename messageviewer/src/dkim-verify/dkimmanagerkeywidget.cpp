@@ -72,10 +72,13 @@ void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
                        i18np("Remove Key", "Remove Keys", selectedItemsCount),
                        this,
                        [this, selectedItemsCount]() {
-                           if (KMessageBox::Yes
-                               == KMessageBox::warningYesNo(this,
-                                                            i18np("Do you want to delete this key?", "Do you want to delete these keys?", selectedItemsCount),
-                                                            i18np("Delete Key", "Delete Keys", selectedItemsCount))) {
+                           const int answer =
+                               KMessageBox::warningYesNo(this,
+                                                         i18np("Do you want to delete this key?", "Do you want to delete these keys?", selectedItemsCount),
+                                                         i18np("Delete Key", "Delete Keys", selectedItemsCount),
+                                                         KStandardGuiItem::del(),
+                                                         KStandardGuiItem::cancel());
+                           if (answer == KMessageBox::Yes) {
                                const auto selectedItems = mTreeWidget->selectedItems();
                                for (QTreeWidgetItem *item : selectedItems) {
                                    delete item;
@@ -86,7 +89,12 @@ void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
     }
     if (mTreeWidget->topLevelItemCount() > 0) {
         menu.addAction(i18n("Delete All"), this, [this]() {
-            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete all keys?"), i18n("Delete Keys"))) {
+            const int answer = KMessageBox::warningYesNo(this,
+                                                         i18n("Do you want to delete all keys?"),
+                                                         i18n("Delete Keys"),
+                                                         KStandardGuiItem::del(),
+                                                         KStandardGuiItem::cancel());
+            if (answer == KMessageBox::Yes) {
                 mTreeWidget->clear();
             }
         });

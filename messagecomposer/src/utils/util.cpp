@@ -292,8 +292,8 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
         const int rc = KMessageBox::warningYesNo(parent,
                                                  i18n("The mail dispatcher is not set up, so mails cannot be sent. Do you want to create a mail dispatcher?"),
                                                  i18n("No mail dispatcher."),
-                                                 KStandardGuiItem::yes(),
-                                                 KStandardGuiItem::no(),
+                                                 KGuiItem(i18nc("@action:button", "Create Mail Dispatcher")),
+                                                 KStandardGuiItem::cancel(),
                                                  QStringLiteral("no_maildispatcher"));
         if (rc == KMessageBox::Yes) {
             const Akonadi::AgentType type = Akonadi::AgentManager::self()->type(QStringLiteral("akonadi_maildispatcher_agent"));
@@ -309,8 +309,8 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
         const int rc = KMessageBox::warningYesNo(parent,
                                                  i18n("The mail dispatcher is offline, so mails cannot be sent. Do you want to make it online?"),
                                                  i18n("Mail dispatcher offline."),
-                                                 KStandardGuiItem::yes(),
-                                                 KStandardGuiItem::no(),
+                                                 KGuiItem(i18nc("@action:button", "Set Online")),
+                                                 KStandardGuiItem::cancel(),
                                                  QStringLiteral("maildispatcher_put_online"));
         if (rc == KMessageBox::Yes) {
             instance.setIsOnline(true);

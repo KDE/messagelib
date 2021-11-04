@@ -196,7 +196,12 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
         });
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
-            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete this rule?"), i18n("Delete Rule"))) {
+            const int answer = KMessageBox::warningYesNo(this,
+                                                         i18n("Do you want to delete this rule?"),
+                                                         i18n("Delete Rule"),
+                                                         KStandardGuiItem::del(),
+                                                         KStandardGuiItem::cancel());
+            if (answer == KMessageBox::Yes) {
                 delete item;
             }
         });
@@ -204,7 +209,12 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
     if (mTreeWidget->topLevelItemCount() > 0) {
         menu.addSeparator();
         menu.addAction(i18n("Delete All"), this, [this]() {
-            if (KMessageBox::Yes == KMessageBox::warningYesNo(this, i18n("Do you want to delete all the rules?"), i18n("Delete Rules"))) {
+            const int answer = KMessageBox::warningYesNo(this,
+                                                         i18n("Do you want to delete all the rules?"),
+                                                         i18n("Delete Rules"),
+                                                         KStandardGuiItem::del(),
+                                                         KStandardGuiItem::cancel());
+            if (answer == KMessageBox::Yes) {
                 mTreeWidget->clear();
             }
         });

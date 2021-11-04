@@ -400,11 +400,9 @@ void ConfigureThemesDialog::ConfigureThemesDialogPrivate::deleteThemeButtonClick
     if (list.isEmpty()) {
         return;
     }
-    if (KMessageBox::Yes
-        == KMessageBox::questionYesNo(q,
-                                      list.count() > 1 ? i18n("Do you want to delete selected themes?")
-                                                       : i18n("Do you want to delete \"%1\"?", list.first()->text()),
-                                      i18nc("@title:window", "Delete Theme"))) {
+    const QString question = list.count() > 1 ? i18n("Do you want to delete selected themes?") : i18n("Do you want to delete \"%1\"?", list.first()->text());
+    const int answer = KMessageBox::questionYesNo(q, question, i18nc("@title:window", "Delete Theme"), KStandardGuiItem::del(), KStandardGuiItem::cancel());
+    if (answer == KMessageBox::Yes) {
         mEditor->editTheme(nullptr); // forget it
         for (QListWidgetItem *it : list) {
             auto item = dynamic_cast<ThemeListWidgetItem *>(it);
