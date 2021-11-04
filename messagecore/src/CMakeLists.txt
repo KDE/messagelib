@@ -40,6 +40,29 @@ target_sources(KF5MessageCore PRIVATE
     utils/colorutil.cpp
 
     settings/messagecoresettings.cpp
+    misc/imagecollector.h
+    misc/mailinglist.h
+    utils/colorutil.h
+    utils/stringutil.h
+    utils/util.h
+    attachment/attachmentloadjob.h
+    attachment/attachmentfrommimecontentjob.h
+    attachment/attachmentfromfolderjob.h
+    attachment/attachmentfromurlbasejob.h
+    attachment/attachmentcompressjob.h
+    attachment/attachmentpart.h
+    attachment/attachmentfromurljob.h
+    attachment/attachmentfromurlutils.h
+    attachment/attachmentpropertiesdialog.h
+    attachment/attachmentupdatejob.h
+    messagecore_private_export.h
+    autocrypt/autocryptutils.h
+    autocrypt/autocryptstorage.h
+    autocrypt/autocryptstorage_p.h
+    autocrypt/autocryptrecipient.h
+    autocrypt/autocryptrecipient_p.h
+    helpers/nodehelper.h
+    settings/messagecoresettings.h
     )
 
 kconfig_add_kcfg_files(KF5MessageCore

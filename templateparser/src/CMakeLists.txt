@@ -34,6 +34,30 @@ target_sources(KF5TemplateParser PRIVATE
     templateparseremailaddressrequesterlineedit.cpp
     templateparseremailaddressrequesterinterfacewidget.cpp
     templateconvertcommandjob.cpp
+
+    templateextracttextfrommail.h
+    templateparserjob.h
+    templatestexteditor.h
+    templateparseremailaddressrequesterbase.h
+    templateparserextracthtmlinforesult.h
+    templatescommandmenu.h
+    templateparserjob_p.h
+    templatestextedit.h
+    templateparser_private_export.h
+    templatesutil_p.h
+    templatesconfiguration.h
+    customtemplates.h
+    templatewebenginepage.h
+    templatesutil.h
+    templateparseremailaddressrequesterinterfacewidget.h
+    templateparserextracthtmlinfo.h
+    defaulttemplates.h
+    templatesinsertcommandpushbutton.h
+    customtemplatesmenu.h
+    templateconvertcommandjob.h
+    templatesinsertcommandaction.h
+    templateextracthtmlelementfrommail.h
+    templateparseremailaddressrequesterlineedit.h
     )
 ecm_qt_declare_logging_category(KF5TemplateParser HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser
         DESCRIPTION "messagelib (templateparser)"

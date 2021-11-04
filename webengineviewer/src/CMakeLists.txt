@@ -81,6 +81,53 @@ target_sources(KF5WebEngineViewer PRIVATE
     developertool/developertoolwidget.cpp
     developertool/developertooldialog.cpp
     widgets/submittedformwidgets/submittedformwarningwidget.cpp
+
+    findbar/findbarwebengineview.h
+    findbar/findbarbase.h
+    webenginenavigationrequestinterceptor.h
+    webhittestresult.h
+    urlinterceptor/networkurlinterceptor.h
+    urlinterceptor/networkpluginurlinterceptorconfigurewidget.h
+    urlinterceptor/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h
+    urlinterceptor/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h
+    urlinterceptor/networkpluginurlinterceptor.h
+    urlinterceptor/blocktrackingurlinterceptor/blocktrackingurlinterceptor.h
+    urlinterceptor/networkurlinterceptorpluginmanager.h
+    urlinterceptor/networkpluginurlinterceptorinterface.h
+    urlinterceptor/networkurlinterceptormanager.h
+    webenginepage.h
+    webhittest.h
+    webenginescript.h
+    webengineexporthtmlpagejob.h
+    webengineviewer_private_export.h
+    webenginemanagescript.h
+    webengineexportpdfpagejob.h
+    webengineview.h
+    widgets/tracking/trackingdetailsdialog.h
+    widgets/tracking/trackingwarningwidget.h
+    widgets/zoomactionmenu.h
+    widgets/submittedformwidgets/submittedformwarningwidget.h
+    checkphishingurl/localdatabasemanager_p.h
+    checkphishingurl/localdatabasemanager.h
+    checkphishingurl/urlhashing.h
+    checkphishingurl/searchfullhashjob.h
+    checkphishingurl/createphishingurldatabasejob.h
+    checkphishingurl/updatedatabaseinfo.h
+    checkphishingurl/backoffmodemanager.h
+    checkphishingurl/localdatabasefile.h
+    checkphishingurl/riceencodingdecoder.h
+    checkphishingurl/hashcachemanager.h
+    checkphishingurl/downloadlocaldatabasethread.h
+    checkphishingurl/checkphishingurljob.h
+    checkphishingurl/checkphishingurlutil.h
+    checkphishingurl/createdatabasefilejob.h
+    checkphishingurl/checkphishingurlcache.h
+    developertool/developertooldialog.h
+    developertool/developertoolwidget.h
+    networkmanager/interceptormanager.h
+    webengineaccesskey/webengineaccesskeyutils.h
+    webengineaccesskey/webengineaccesskey.h
+    webengineaccesskey/webengineaccesskeyanchor.h
     )
 
 ecm_qt_declare_logging_category(KF5WebEngineViewer HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer

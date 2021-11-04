@@ -46,6 +46,38 @@ target_sources(KF5MimeTreeParser PRIVATE
     memento/verifyopaquebodypartmemento.cpp
 
     temporaryfile/attachmenttemporaryfilesdirs.cpp
+
+    job/qgpgmejobexecutor.h
+    partnodebodypart.h
+    bodypartformatterfactory.h
+    utils/util.h
+    temporaryfile/attachmenttemporaryfilesdirs.h
+    enums.h
+    partmetadata.h
+    cryptohelper.h
+    bodyformatter/utils.h
+    bodyformatter/multipartsigned.h
+    bodyformatter/encrypted.h
+    bodyformatter/applicationpgpencrypted.h
+    bodyformatter/texthtml.h
+    bodyformatter/multipartencrypted.h
+    bodyformatter/multipartalternative.h
+    bodyformatter/applicationpkcs7mime.h
+    bodyformatter/textplain.h
+    bodyformatter/multipartmixed.h
+    bodyformatter/mailman.h
+    memento/cryptobodypartmemento.h
+    memento/decryptverifybodypartmemento.h
+    memento/verifydetachedbodypartmemento.h
+    memento/verifyopaquebodypartmemento.h
+    interfaces/bodypart.h
+    interfaces/objecttreesource.h
+    interfaces/bodypartformatter.h
+    simpleobjecttreesource.h
+    messagepart.h
+    bodypartformatterfactory_p.h
+    nodehelper.h
+    objecttreeparser.h
     )
 
 ecm_generate_headers(MimeTreeParser_Camelcasemain_HEADERS

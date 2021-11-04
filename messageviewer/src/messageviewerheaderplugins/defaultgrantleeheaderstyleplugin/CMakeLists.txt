@@ -6,6 +6,9 @@ target_sources(messageviewer_defaultgrantleeheaderstyleplugin PRIVATE
    defaultgrantleeheaderstyleplugin.cpp
    defaultgrantleeheaderstyleinterface.cpp
    defaultgrantleeheaderstrategy.cpp
+   defaultgrantleeheaderstyleplugin.h
+   defaultgrantleeheaderstyleinterface.h
+   defaultgrantleeheaderstrategy.h
 )
 
 kconfig_add_kcfg_files(messageviewer_defaultgrantleeheaderstyleplugin

@@ -66,6 +66,63 @@ target_sources(KF5MessageList PRIVATE
     storagemodel.cpp
     widget.cpp
     messagelistutil.cpp
+    utils/aggregationconfigbutton.h
+    utils/themecombobox_p.h
+    utils/themeconfigbutton.h
+    utils/configureaggregationsdialog_p.h
+    utils/aggregationcombobox_p.h
+    utils/themecombobox.h
+    utils/configureaggregationsdialog.h
+    utils/optionseteditor.h
+    utils/configurethemesdialog.h
+    utils/aggregationeditor.h
+    utils/aggregationcombobox.h
+    utils/comboboxutils.h
+    utils/configurethemesdialog_p.h
+    utils/themeeditor.h
+    messagelist_private_export.h
+    pane.h
+    storagemodel.h
+    widget.h
+    messagelistutil.h
+    messagelistutil_p.h
+    core/groupheaderitem.h
+    core/optionset.h
+    core/item_p.h
+    core/filtersavedmanager.h
+    core/manager.h
+    core/model.h
+    core/messageitem_p.h
+    core/storagemodelbase.h
+    core/aggregation.h
+    core/enums.h
+    core/messageitemsetmanager.h
+    core/modelinvariantrowmapper_p.h
+    core/sortorder.h
+    core/themedelegate.h
+    core/widgetbase.h
+    core/modelinvariantindex.h
+    core/model_p.h
+    core/view.h
+    core/filter.h
+    core/threadingcache.h
+    core/theme.h
+    core/widgets/tablockedwarning.h
+    core/widgets/filtersavedmenu.h
+    core/widgets/quicksearchwarning.h
+    core/widgets/filternamewidget.h
+    core/widgets/filternamedialog.h
+    core/widgets/configurefiltersdialog.h
+    core/widgets/quicksearchline.h
+    core/widgets/searchlinestatus.h
+    core/widgets/searchcollectionindexingwarning.h
+    core/widgets/configurefilterswidget.h
+    core/modelinvariantrowmapper.h
+    core/messageitem.h
+    core/modelinvariantindex_p.h
+    core/delegate.h
+    core/item.h
+
     )
 ecm_qt_declare_logging_category(KF5MessageList HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist
         DESCRIPTION "messagelib (messagelist)"
