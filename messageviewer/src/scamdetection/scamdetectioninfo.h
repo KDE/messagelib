@@ -41,6 +41,7 @@ public:
     Q_REQUIRED_RESULT bool operator==(const ScamDetectionInfo &other) const;
 
 private:
+    ScamDetectionFields mFields;
     QString mDomainOrEmail;
     bool mEnabled = false;
 };

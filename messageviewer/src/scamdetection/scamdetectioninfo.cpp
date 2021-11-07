@@ -42,8 +42,7 @@ bool ScamDetectionInfo::isValid() const
 
 ScamDetectionInfo::ScamDetectionFields ScamDetectionInfo::scamChecks() const
 {
-    // TODO
-    return {};
+    return mFields;
 }
 
 QDebug operator<<(QDebug d, const MessageViewer::ScamDetectionInfo &t)
@@ -51,6 +50,7 @@ QDebug operator<<(QDebug d, const MessageViewer::ScamDetectionInfo &t)
     d << "isValid: " << t.isValid();
     d << "Enabled " << t.enabled();
     d << "DomainOrName " << t.domainOrEmail();
+    d << "scamChecks " << t.scamChecks();
     return d;
 }
 
