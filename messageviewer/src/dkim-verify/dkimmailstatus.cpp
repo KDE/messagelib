@@ -38,14 +38,12 @@ void DKIMMailStatus::setCurrentItemId(Akonadi::Item::Id currentItemId)
 
 void DKIMMailStatus::setResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id)
 {
-    if (mCurrentItemId == id) {
-        if (mResult != checkResult) {
-            mResult = checkResult;
-            Q_EMIT textChanged();
-            Q_EMIT tooltipChanged();
-            Q_EMIT statusChanged();
-            Q_EMIT errorChanged();
-        }
+    if (mCurrentItemId == id && mResult != checkResult) {
+        mResult = checkResult;
+        Q_EMIT textChanged();
+        Q_EMIT tooltipChanged();
+        Q_EMIT statusChanged();
+        Q_EMIT errorChanged();
     }
 }
 
@@ -62,6 +60,9 @@ void DKIMMailStatus::clear()
 
 QString DKIMMailStatus::text() const
 {
+    if (mCurrentItemId == -1 || !mResult.isValid()) {
+        return QString();
+    }
     switch (mResult.status) {
     case DKIMCheckSignatureJob::DKIMStatus::Unknown:
         return i18n("Unknown");
@@ -82,6 +83,9 @@ QString DKIMMailStatus::text() const
 
 QString DKIMMailStatus::tooltip() const
 {
+    if (mCurrentItemId == -1 || !mResult.isValid()) {
+        return QString();
+    }
     QString tooltip;
     if (mResult.status == DKIMCheckSignatureJob::DKIMStatus::Invalid) {
         switch (mResult.error) {
@@ -276,4 +280,9 @@ DKIMCheckSignatureJob::DKIMStatus DKIMMailStatus::status() const
 DKIMCheckSignatureJob::DKIMError DKIMMailStatus::error() const
 {
     return mResult.error;
+}
+
+void DKIMMailStatus::checkDkim(Akonadi::Item messageItem)
+{
+    DKIMManager::self()->checkDKim(messageItem);
 }

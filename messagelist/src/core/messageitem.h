@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include <messagelist/item.h>
-#include <messagelist/modelinvariantindex.h>
+#include "core/item.h"
+#include "core/modelinvariantindex.h"
 
 #include "theme.h"
 #include <QColor>

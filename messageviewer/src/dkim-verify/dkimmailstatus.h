@@ -42,13 +42,15 @@ public:
     DKIMCheckSignatureJob::DKIMStatus status() const;
     DKIMCheckSignatureJob::DKIMError error() const;
 
+    Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result() const;
     void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id);
-    Q_INVOKABLE void clear();
 
     Q_REQUIRED_RESULT Akonadi::Item::Id currentItemId() const;
     void setCurrentItemId(Akonadi::Item::Id currentItemId);
 
-    Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result() const;
+    Q_INVOKABLE void clear();
+
+    void checkDkim(Akonadi::Item messageItem);
 
 Q_SIGNALS:
     void statusChanged();

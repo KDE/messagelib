@@ -10,9 +10,12 @@
 #include "messageviewer_export.h"
 #include <Akonadi/Item>
 #include <QWidget>
+
 class QLabel;
+
 namespace MessageViewer
 {
+class DKIMMailStatus;
 /**
  * @brief The DKIMWidgetInfo class
  * @author Laurent Montel <montel@kde.org>
@@ -31,17 +34,17 @@ public:
 
     Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result() const;
 
+    void onStatusChanged(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
+
 private:
-    void updateInfo();
-    void updateToolTip();
     void initColors();
-    MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;
+
     QLabel *const mLabel;
+    DKIMMailStatus *const mDKIMMailStatus;
     QColor mWarningColor;
     QColor mErrorColor;
     QColor mOkColor;
     QColor mDefaultColor;
-    Akonadi::Item::Id mCurrentItemId = -1;
 };
 }
 
