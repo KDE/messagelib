@@ -209,35 +209,36 @@ void AutocryptHeadersJob::process()
     if (!d->gnupgHome.isEmpty()) {
         QGpgME::Job::context(job)->setEngineHomeDirectory(d->gnupgHome.toUtf8().constData());
     }
+    if (!d->recipientKey.isNull() && !d->recipientKey.isInvalid()) {
+        connect(job, &QGpgME::ExportJob::result, this, [this, d](const GpgME::Error &error, const QByteArray &keydata) {
+            d->subJobs--;
+            if (AutocryptHeadersJob::error()) {
+                // When the job already has failed do nothing.
+                return;
+            }
+            if (error) {
+                d->emitGpgError(error);
+                return;
+            }
+            if (keydata.isEmpty()) {
+                d->emitNotFoundError(d->skeletonMessage->from()->addresses()[0], d->recipientKey.primaryFingerprint());
+                return;
+            }
 
-    connect(job, &QGpgME::ExportJob::result, this, [this, d](const GpgME::Error &error, const QByteArray &keydata) {
-        d->subJobs--;
-        if (AutocryptHeadersJob::error()) {
-            // When the job already has failed do nothing.
-            return;
-        }
-        if (error) {
-            d->emitGpgError(error);
-            return;
-        }
-        if (keydata.isEmpty()) {
-            d->emitNotFoundError(d->skeletonMessage->from()->addresses()[0], d->recipientKey.primaryFingerprint());
-            return;
-        }
+            auto autocrypt = new KMime::Headers::Generic("Autocrypt");
+            d->fillHeaderData(autocrypt, d->skeletonMessage->from()->addresses()[0], d->preferEncrypted, keydata);
 
-        auto autocrypt = new KMime::Headers::Generic("Autocrypt");
-        d->fillHeaderData(autocrypt, d->skeletonMessage->from()->addresses()[0], d->preferEncrypted, keydata);
+            d->skeletonMessage->setHeader(autocrypt);
+            d->skeletonMessage->assemble();
 
-        d->skeletonMessage->setHeader(autocrypt);
-        d->skeletonMessage->assemble();
-
-        d->finishOnLastSubJob();
-    });
-    d->subJobs++;
-    job->start(QStringList(QString::fromLatin1(d->recipientKey.primaryFingerprint())));
+            d->finishOnLastSubJob();
+        });
+        d->subJobs++;
+        job->start(QStringList(QString::fromLatin1(d->recipientKey.primaryFingerprint())));
 #if GPGMEPP_VERSION >= 0x10E00 // 1.14.0
-    job->setExportFlags(GpgME::Context::ExportMinimal);
+        job->setExportFlags(GpgME::Context::ExportMinimal);
 #endif
+    }
 
     const auto keys = d->gossipKeys;
     for (const auto &key : keys) {
@@ -280,5 +281,9 @@ void AutocryptHeadersJob::process()
 #if GPGMEPP_VERSION >= 0x10E00 // 1.14.0
         gossipJob->setExportFlags(GpgME::Context::ExportMinimal);
 #endif
+    }
+    if (d->subJobs == 0) {
+        d->resultContent = d->content;
+        emitResult();
     }
 }
