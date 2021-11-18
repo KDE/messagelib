@@ -123,6 +123,9 @@ public:
     Q_REQUIRED_RESULT QString replyTo() const;
     Q_REQUIRED_RESULT QString subject() const;
 
+    Q_REQUIRED_RESULT const KIdentityManagement::Identity &currentIdentity() const;
+    Q_REQUIRED_RESULT bool autocryptEnabled() const;
+
     /**
      * The following are for setting the various options and widgets in the
      *  composer.

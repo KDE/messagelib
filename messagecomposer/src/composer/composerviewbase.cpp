@@ -256,7 +256,7 @@ void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
 
 void ComposerViewBase::saveMailSettings()
 {
-    const KIdentityManagement::Identity identity = identityManager()->identityForUoid(m_identityCombo->currentIdentity());
+    const auto identity = currentIdentity();
     auto header = new KMime::Headers::Generic("X-KMail-Transport");
     header->fromUnicodeString(QString::number(m_transport->currentTransportId()), "utf-8");
     m_msg->setHeader(header);
@@ -314,7 +314,7 @@ void ComposerViewBase::send(MessageComposer::MessageSender::SendMethod method, M
     mSaveIn = saveIn;
 
     KCursorSaver saver(Qt::WaitCursor);
-    const KIdentityManagement::Identity identity = identityManager()->identityForUoid(m_identityCombo->currentIdentity());
+    const auto identity = currentIdentity();
 
     if (identity.attachVcard() && m_attachmentController->attachOwnVcard()) {
         const QString vcardFileName = identity.vCardFile();
@@ -386,7 +386,7 @@ void ComposerViewBase::readyForSending()
 
     // first, expand all addresses
     auto job = new MessageComposer::EmailAddressResolveJob(this);
-    const KIdentityManagement::Identity identity = identityManager()->identityForUoid(m_identityCombo->currentIdentity());
+    const auto identity = currentIdentity();
     if (!identity.isNull()) {
         job->setDefaultDomainName(identity.defaultDomainName());
     }
@@ -707,7 +707,7 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
 
 QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
 {
-    const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
+    const auto id = currentIdentity();
 
     qCDebug(MESSAGECOMPOSER_LOG) << "filling crypto info";
     QScopedPointer<Kleo::KeyResolver> keyResolver(new Kleo::KeyResolver(encryptToSelf(),
@@ -721,7 +721,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
                                                                         encryptChainCertNearExpiryWarningThresholdInDays(),
                                                                         signingChainCertNearExpiryWarningThresholdInDays()));
 
-    keyResolver->setAutocryptEnabled(id.autocryptEnabled());
+    keyResolver->setAutocryptEnabled(autocryptEnabled());
 
     QStringList encryptToSelfKeys;
     QStringList signKeys;
@@ -853,8 +853,8 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
                     qCDebug(MESSAGECOMPOSER_LOG) << "got resolved keys for:" << it->recipients;
                 }
                 composer->setEncryptionKeys(data);
-                if (concreteFormat & Kleo::OpenPGPMIMEFormat && id.autocryptEnabled()) {
-                    composer->setAutocryptEnabled(id.autocryptEnabled());
+                if (concreteFormat & Kleo::OpenPGPMIMEFormat && autocryptEnabled()) {
+                    composer->setAutocryptEnabled(autocryptEnabled());
                     composer->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(concreteFormat)[0]);
                     QTemporaryDir dir;
                     bool specialGnupgHome = addKeysToContext(dir.path(), data, keyResolver->useAutocrypt());
@@ -1254,11 +1254,10 @@ void ComposerViewBase::autoSaveMessage()
         return;
     }
 
-    const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
     auto composer = new Composer();
     fillComposer(composer);
     composer->setAutoSave(true);
-    composer->setAutocryptEnabled(id.autocryptEnabled());
+    composer->setAutocryptEnabled(autocryptEnabled());
     m_composers.append(composer);
     connect(composer, &MessageComposer::Composer::result, this, &ComposerViewBase::slotAutoSaveComposeResult);
     composer->start();
@@ -1352,7 +1351,7 @@ void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
 void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn)
 {
     Akonadi::Collection target;
-    const KIdentityManagement::Identity identity = identityManager()->identityForUoid(m_identityCombo->currentIdentity());
+    const auto identity = currentIdentity();
     message->date()->setDateTime(QDateTime::currentDateTime());
     if (!identity.isNull()) {
         if (auto header = message->headerByType("X-KMail-Fcc")) {
@@ -1585,6 +1584,16 @@ QString ComposerViewBase::replyTo() const
 QString ComposerViewBase::subject() const
 {
     return MessageComposer::Util::cleanedUpHeaderString(m_subject);
+}
+
+const KIdentityManagement::Identity &ComposerViewBase::currentIdentity() const
+{
+    return m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
+}
+
+bool ComposerViewBase::autocryptEnabled() const
+{
+    return currentIdentity().autocryptEnabled();
 }
 
 void ComposerViewBase::setParentWidgetForGui(QWidget *w)
