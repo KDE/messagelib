@@ -97,6 +97,23 @@ void ComposerViewBaseTest::testAutoSaveMessage()
     editor.setPlainText(QStringLiteral("Hello,\n\nThis is a test message\n\nGreez"));
 
     composerViewBase.autoSaveMessage();
+    if (composerViewBase.m_composers.size() > 0) {
+        QEventLoop loop;
+        bool notFinished = false;
+        for (const auto composer : composerViewBase.m_composers) {
+            if (!composer->finished()) {
+                notFinished = true;
+                connect(composer, &MessageComposer::Composer::result, [&composer, &composerViewBase, &loop] () {
+                    if (composerViewBase.m_composers.size() < 1) {
+                        loop.quit();
+                    }
+                });
+            }
+        }
+        if (notFinished) {
+            loop.exec();
+        }
+    }
 
     const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/autosave/");
     auto msg = Test::loadMessage(autosavePath + fileName);
