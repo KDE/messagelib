@@ -22,6 +22,7 @@
 #include <QGpgME/Protocol>
 
 #include <gpgme++/decryptionresult.h>
+#include <gpgme++/keylistresult.h>
 #include <gpgme++/verificationresult.h>
 
 #include <KCharsets>
@@ -29,8 +30,6 @@
 
 #include <MessageComposer/TransparentJob>
 #include <QTest>
-#include <decryptionresult.h>
-#include <keylistresult.h>
 
 QTEST_MAIN(AutocryptHeadersJobTest)
 
