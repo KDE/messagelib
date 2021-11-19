@@ -140,7 +140,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessages()
     recipientsEditor.setRecipientString({mb}, Recipient::To);
     editor.setPlainText(QStringLiteral("Hello,\n\nThis is a test message\n\nGreez"));
 
-    bool wasCanceled;
+    bool wasCanceled = false;
     auto composers = composerViewBase.generateCryptoMessages(wasCanceled);
     QCOMPARE(wasCanceled, false);
 
