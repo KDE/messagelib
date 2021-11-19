@@ -40,14 +40,14 @@ public:
 
     bool initializePluginList();
     void loadPlugin(ViewerPluginInfo *item);
-    QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
-    QVector<PimCommon::PluginUtilData> pluginDataList() const;
+    Q_REQUIRED_RESULT QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginDataList() const;
 
     QString pluginDirectory;
     QString pluginName;
 
-    QString configGroupName() const;
-    QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     ViewerPlugin *pluginFromIdentifier(const QString &id);
 
 private:

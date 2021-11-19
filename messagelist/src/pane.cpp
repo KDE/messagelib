@@ -60,7 +60,7 @@ public:
     void changeQuicksearchVisibility(bool);
     void addActivateTabAction(int i);
     void slotTabCloseRequested(int index);
-    QItemSelection mapSelectionFromSource(const QItemSelection &selection) const;
+    Q_REQUIRED_RESULT QItemSelection mapSelectionFromSource(const QItemSelection &selection) const;
     void updateTabControls();
 
     Pane *const q;

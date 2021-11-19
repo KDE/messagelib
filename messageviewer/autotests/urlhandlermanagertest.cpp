@@ -23,7 +23,7 @@ using namespace MessageViewer;
 class TestBodyPartURLHandler : public Interface::BodyPartURLHandler
 {
 public:
-    QString name() const override
+    Q_REQUIRED_RESULT QString name() const override
     {
         return QStringLiteral("TestBodyPartURLHandler");
     }

@@ -232,7 +232,7 @@ public:
     }
 
 public:
-    int startIndex() const
+    Q_REQUIRED_RESULT int startIndex() const
     {
         return mStartIndex;
     }
@@ -243,7 +243,7 @@ public:
         mCurrentIndex = startIndex;
     }
 
-    int currentIndex() const
+    Q_REQUIRED_RESULT int currentIndex() const
     {
         return mCurrentIndex;
     }
@@ -253,7 +253,7 @@ public:
         mCurrentIndex = currentIndex;
     }
 
-    int endIndex() const
+    Q_REQUIRED_RESULT int endIndex() const
     {
         return mEndIndex;
     }
@@ -263,7 +263,7 @@ public:
         mEndIndex = endIndex;
     }
 
-    Pass currentPass() const
+    Q_REQUIRED_RESULT Pass currentPass() const
     {
         return mCurrentPass;
     }
@@ -273,27 +273,27 @@ public:
         mCurrentPass = pass;
     }
 
-    int idleInterval() const
+    Q_REQUIRED_RESULT int idleInterval() const
     {
         return mIdleInterval;
     }
 
-    int chunkTimeout() const
+    Q_REQUIRED_RESULT int chunkTimeout() const
     {
         return mChunkTimeout;
     }
 
-    int messageCheckCount() const
+    Q_REQUIRED_RESULT int messageCheckCount() const
     {
         return mMessageCheckCount;
     }
 
-    QList<ModelInvariantIndex *> *invariantIndexList() const
+    Q_REQUIRED_RESULT QList<ModelInvariantIndex *> *invariantIndexList() const
     {
         return mInvariantIndexList;
     }
 
-    bool disconnectUI() const
+    Q_REQUIRED_RESULT bool disconnectUI() const
     {
         return mDisconnectUI;
     }
@@ -681,7 +681,7 @@ public:
         mCounter--;
     }
 
-    bool isRecursive() const
+    Q_REQUIRED_RESULT bool isRecursive() const
     {
         return mCounter > 1;
     }

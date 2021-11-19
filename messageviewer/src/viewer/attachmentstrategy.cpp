@@ -64,12 +64,12 @@ protected:
     }
 
 public:
-    const char *name() const override
+    Q_REQUIRED_RESULT const char *name() const override
     {
         return "iconic";
     }
 
-    bool inlineNestedMessages() const override
+    Q_REQUIRED_RESULT bool inlineNestedMessages() const override
     {
         return false;
     }
@@ -107,12 +107,12 @@ protected:
     }
 
 public:
-    const char *name() const override
+    Q_REQUIRED_RESULT const char *name() const override
     {
         return "smart";
     }
 
-    bool inlineNestedMessages() const override
+    Q_REQUIRED_RESULT bool inlineNestedMessages() const override
     {
         return true;
     }
@@ -143,12 +143,12 @@ protected:
     }
 
 public:
-    const char *name() const override
+    Q_REQUIRED_RESULT const char *name() const override
     {
         return "inlined";
     }
 
-    bool inlineNestedMessages() const override
+    Q_REQUIRED_RESULT bool inlineNestedMessages() const override
     {
         return true;
     }
@@ -179,12 +179,12 @@ protected:
     }
 
 public:
-    const char *name() const override
+    Q_REQUIRED_RESULT const char *name() const override
     {
         return "hidden";
     }
 
-    bool inlineNestedMessages() const override
+    Q_REQUIRED_RESULT bool inlineNestedMessages() const override
     {
         return false;
     }
@@ -223,12 +223,12 @@ protected:
     }
 
 public:
-    const char *name() const override
+    Q_REQUIRED_RESULT const char *name() const override
     {
         return "headerOnly";
     }
 
-    bool inlineNestedMessages() const override
+    Q_REQUIRED_RESULT bool inlineNestedMessages() const override
     {
         return true;
     }
@@ -246,7 +246,7 @@ public:
         return smartDisplay(node);
     }
 
-    bool requiresAttachmentListInHeader() const override
+    Q_REQUIRED_RESULT bool requiresAttachmentListInHeader() const override
     {
         return true;
     }

@@ -27,7 +27,7 @@ public:
     {
     }
 
-    CSSHelperBase *cssHelper() const override
+    Q_REQUIRED_RESULT CSSHelperBase *cssHelper() const override
     {
         return mCssHelper;
     }
@@ -50,42 +50,42 @@ public:
         return MimeTreeParser::IconType::NoIcon;
     }
 
-    bool showEmoticons() const override
+    Q_REQUIRED_RESULT bool showEmoticons() const override
     {
         return false;
     }
 
-    bool isPrinting() const override
+    Q_REQUIRED_RESULT bool isPrinting() const override
     {
         return false;
     }
 
-    bool htmlLoadExternal() const override
+    Q_REQUIRED_RESULT bool htmlLoadExternal() const override
     {
         return false;
     }
 
-    bool showExpandQuotesMark() const override
+    Q_REQUIRED_RESULT bool showExpandQuotesMark() const override
     {
         return mShowExpandQuotesMark;
     }
 
-    bool showOnlyOneMimePart() const override
+    Q_REQUIRED_RESULT bool showOnlyOneMimePart() const override
     {
         return false;
     }
 
-    bool showSignatureDetails() const override
+    Q_REQUIRED_RESULT bool showSignatureDetails() const override
     {
         return false;
     }
 
-    bool showEncryptionDetails() const override
+    Q_REQUIRED_RESULT bool showEncryptionDetails() const override
     {
         return false;
     }
 
-    int levelQuote() const override
+    Q_REQUIRED_RESULT int levelQuote() const override
     {
         return mLevelQuote;
     }

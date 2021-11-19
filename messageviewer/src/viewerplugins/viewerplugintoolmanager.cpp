@@ -29,7 +29,7 @@ public:
     void closeAllTools();
     void setActionCollection(KActionCollection *ac);
     void updateActions(const Akonadi::Item &messageItem);
-    QList<QAction *> actionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
+    Q_REQUIRED_RESULT QList<QAction *> actionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
     QList<MessageViewer::ViewerPluginInterface *> mListInterface;
     KActionCollection *mActionCollection = nullptr;
     QWidget *mParentWidget = nullptr;

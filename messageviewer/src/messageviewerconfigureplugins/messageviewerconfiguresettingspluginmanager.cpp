@@ -35,12 +35,12 @@ public:
     {
     }
 
-    QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
-    QVector<PimCommon::PluginUtilData> pluginDataList() const;
+    Q_REQUIRED_RESULT QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginDataList() const;
     void initializePluginList();
     void loadPlugin(ConfigureSettingsPluginInfo *item);
-    QString configGroupName() const;
-    QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
 
 private:

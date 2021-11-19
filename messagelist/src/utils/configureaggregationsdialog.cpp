@@ -49,7 +49,7 @@ public:
     }
 
 public:
-    Core::Aggregation *aggregation() const
+    Q_REQUIRED_RESULT Core::Aggregation *aggregation() const
     {
         return mAggregation;
     }
@@ -75,7 +75,7 @@ public:
 
 public:
     // need a larger but shorter QListWidget
-    QSize sizeHint() const override
+    Q_REQUIRED_RESULT QSize sizeHint() const override
     {
         return QSize(450, 128);
     }

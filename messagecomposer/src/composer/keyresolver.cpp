@@ -492,7 +492,7 @@ public:
     make_int_accessor(Total) make_int_accessor(InlineOpenPGP) make_int_accessor(OpenPGPMIME) make_int_accessor(SMIME) make_int_accessor(SMIMEOpaque)
 #undef make_int_accessor
 
-        unsigned int numOf(Kleo::CryptoMessageFormat f) const
+        Q_REQUIRED_RESULT unsigned int numOf(Kleo::CryptoMessageFormat f) const
     {
         switch (f) {
 #define CASE(x)                                                                                                                                                \

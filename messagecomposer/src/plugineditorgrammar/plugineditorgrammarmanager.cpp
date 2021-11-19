@@ -47,7 +47,7 @@ public:
     }
 
     void loadPlugin(PluginEditorGrammarInfo *item);
-    QVector<PimCommon::CustomToolsPlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::CustomToolsPlugin *> pluginsList() const;
     void initializePlugins();
     QVector<PluginEditorGrammarInfo> mPluginList;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
