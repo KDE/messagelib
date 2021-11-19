@@ -732,7 +732,6 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     bool doEncryptCompletely = m_encrypt;
 
     // Add encryptionkeys from id to keyResolver
-    qCDebug(MESSAGECOMPOSER_LOG) << id.pgpEncryptionKey().isEmpty() << id.smimeEncryptionKey().isEmpty();
     if (!id.pgpEncryptionKey().isEmpty()) {
         encryptToSelfKeys.push_back(QLatin1String(id.pgpEncryptionKey()));
     }
