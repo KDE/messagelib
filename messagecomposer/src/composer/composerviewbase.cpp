@@ -703,6 +703,11 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
     return true;
 }
 
+void ComposerViewBase::setAkonadiLookupEnabled(bool akonadiLookupEnabled)
+{
+    m_akonadiLookupEnabled = akonadiLookupEnabled;
+}
+
 QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
 {
     const auto id = currentIdentity();
@@ -720,6 +725,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
                                                                         signingChainCertNearExpiryWarningThresholdInDays()));
 
     keyResolver->setAutocryptEnabled(autocryptEnabled());
+    keyResolver->setAkonadiLookupEnabled(m_akonadiLookupEnabled);
 
     QStringList encryptToSelfKeys;
     QStringList signKeys;

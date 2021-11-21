@@ -592,6 +592,7 @@ struct FormatInfo {
 };
 
 struct Q_DECL_HIDDEN Kleo::KeyResolver::KeyResolverPrivate {
+    bool mAkonadiLookupEnabled = true;
     bool mAutocryptEnabled = false;
     std::set<QByteArray> alreadyWarnedFingerprints;
 
@@ -1643,6 +1644,11 @@ std::map<QByteArray, QString> Kleo::KeyResolver::useAutocrypt() const
     return d->mAutocryptMap;
 }
 
+void Kleo::KeyResolver::setAkonadiLookupEnabled(bool akonadiLoopkupEnabled)
+{
+    d->mAkonadiLookupEnabled = akonadiLoopkupEnabled;
+}
+
 std::vector<GpgME::Key> Kleo::KeyResolver::signingKeys(CryptoMessageFormat f) const
 {
     dump();
@@ -1878,13 +1884,18 @@ Kleo::KeyResolver::ContactPreferences Kleo::KeyResolver::lookupContactPreference
         return it->second;
     }
 
+    ContactPreferences pref;
+
+    if (!d->mAkonadiLookupEnabled) {
+        return pref;
+    }
+
     auto job = new Akonadi::ContactSearchJob();
     job->setLimit(1);
     job->setQuery(Akonadi::ContactSearchJob::Email, address);
     job->exec();
 
     const KContacts::Addressee::List res = job->contacts();
-    ContactPreferences pref;
     if (!res.isEmpty()) {
         KContacts::Addressee addr = res.at(0);
         QString encryptPref = addr.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOENCRYPTPREF"));
@@ -1898,6 +1909,7 @@ Kleo::KeyResolver::ContactPreferences Kleo::KeyResolver::lookupContactPreference
     }
     // insert into map and grab resulting iterator
     d->mContactPreferencesMap.insert(std::make_pair(address, pref));
+
     return pref;
 }
 

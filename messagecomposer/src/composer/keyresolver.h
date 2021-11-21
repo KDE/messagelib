@@ -234,6 +234,12 @@ public:
 
     std::map<QByteArray, QString> useAutocrypt() const;
 
+    /** Disable ContactSearchJob in KeyResolver.
+        A usecase is that ests won't fireup an Akonadi instance only for this feature.
+        @default is true: The ContactSearchJob is executed.
+     */
+    void setAkonadiLookupEnabled(bool akonadiLookupEnabled);
+
 private:
     void dump() const;
     std::vector<Item> getEncryptionItems(const QStringList &recipients);
