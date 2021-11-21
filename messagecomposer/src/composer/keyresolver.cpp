@@ -437,7 +437,8 @@ public:
     make_int_accessor(NoKey) make_int_accessor(NeverEncrypt) make_int_accessor(UnknownPreference) make_int_accessor(AlwaysEncrypt)
         make_int_accessor(AlwaysEncryptIfPossible) make_int_accessor(AlwaysAskForEncryption) make_int_accessor(AskWheneverPossible) make_int_accessor(Total)
 #undef make_int_accessor
-            private : EncryptionPreference mDefaultPreference;
+private:
+    EncryptionPreference mDefaultPreference;
     unsigned int mTotal = 0;
     unsigned int mNoKey = 0;
     unsigned int mNeverEncrypt = 0;
