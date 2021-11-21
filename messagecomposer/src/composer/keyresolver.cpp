@@ -592,7 +592,7 @@ struct FormatInfo {
 };
 
 struct Q_DECL_HIDDEN Kleo::KeyResolver::KeyResolverPrivate {
-    bool mAutocryptEnabled;
+    bool mAutocryptEnabled = false;
     std::set<QByteArray> alreadyWarnedFingerprints;
 
     std::vector<GpgME::Key> mOpenPGPSigningKeys; // signing
