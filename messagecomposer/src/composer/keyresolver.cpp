@@ -63,7 +63,7 @@ static inline QString ItemDotAddress(const Kleo::KeyResolver::Item &item)
 
 static inline bool ApprovalNeeded(const Kleo::KeyResolver::Item &item)
 {
-    return item.pref == Kleo::UnknownPreference || item.pref == Kleo::NeverEncrypt || item.keys.empty();
+    return item.pref == Kleo::NeverEncrypt || item.keys.empty();
 }
 
 static inline Kleo::KeyResolver::Item CopyKeysAndEncryptionPreferences(const Kleo::KeyResolver::Item &oldItem, const Kleo::KeyApprovalDialog::Item &newItem)
