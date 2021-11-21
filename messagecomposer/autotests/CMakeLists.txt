@@ -37,6 +37,7 @@ macro( add_messagecomposer_cryptotest _source )
     add_executable( ${_name} ${_test} )
     target_link_libraries(
         ${_name}
+        KF5::I18n
         KF5::Mime
         KF5::MessageComposer
         KF5::MessageViewer
@@ -83,7 +84,7 @@ add_messagecomposer_cryptotest( cryptocomposertest.cpp )
 add_messagecomposer_test( infoparttest.cpp )
 add_messagecomposer_test( textparttest.cpp )
 add_messagecomposer_test( globalparttest.cpp )
-add_messagecomposer_test( composerviewbasetest.cpp setupenv.cpp )
+add_messagecomposer_cryptotest( composerviewbasetest.cpp )
 
 add_messagecomposer_test( recipientseditortest.cpp )
 

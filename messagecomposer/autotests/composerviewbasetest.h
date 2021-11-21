@@ -23,6 +23,7 @@ private Q_SLOTS:
     void cleanupTestCase();
     void initTestCase();
     void shouldHaveDefaultValue();
+    void testGenerateCryptoMessages_data();
     void testGenerateCryptoMessages();
     void testAutoSaveMessage();
 private:

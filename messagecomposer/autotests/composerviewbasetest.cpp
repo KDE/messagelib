@@ -5,13 +5,20 @@
 */
 
 #include "composerviewbasetest.h"
+#include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
 #include "setupenv.h"
 
 #include <MessageComposer/Composer>
 #include <MessageComposer/ComposerViewBase>
+#include <MessageComposer/MessageComposerSettings>
 #include <MessageComposer/RichTextComposerNg>
 #include <MessageComposer/RecipientsEditor>
+
+#include <MessageCore/NodeHelper>
+
+#include <MimeTreeParser/SimpleObjectTreeSource>
+#include <MimeTreeParser/ObjectTreeParser>
 
 #include <KIdentityManagement/KIdentityManagement/Identity>
 #include <KIdentityManagement/KIdentityManagement/IdentityCombo>
@@ -24,10 +31,12 @@
 
 using namespace MessageComposer;
 
+Q_DECLARE_METATYPE(Kleo::CryptoMessageFormat)
+
 ComposerViewBaseTest::ComposerViewBaseTest(QObject *parent)
     : QObject(parent)
 {
-    QStandardPaths::setTestModeEnabled(true);
+    Test::setupEnv();
 }
 
 ComposerViewBaseTest::~ComposerViewBaseTest() = default;
@@ -46,8 +55,12 @@ void ComposerViewBaseTest::initTestCase()
 
     KIdentityManagement::Identity &ident = mIdentMan->modifyIdentityForUoid(mIdentMan->defaultIdentity().uoid());
     ident.setAutocryptEnabled(true);
+    ident.setPGPEncryptionKey("1BA323932B3FAA826132C79E8D9860C58F246DE6");
+    ident.setPGPSigningKey("1BA323932B3FAA826132C79E8D9860C58F246DE6");
     mIdentMan->commit();
     mIdentCombo = new KIdentityManagement::IdentityCombo(mIdentMan);
+
+    MessageComposerSettings::self()->setCryptoShowKeysForApproval(false);
 }
 
 void ComposerViewBaseTest::shouldHaveDefaultValue()
@@ -123,8 +136,28 @@ void ComposerViewBaseTest::testAutoSaveMessage()
     Test::compareFile(msg.data(), QStringLiteral(MAIL_DATA_DIR "/autosave.mbox"));
 }
 
+void ComposerViewBaseTest::testGenerateCryptoMessages_data()
+{
+    QTest::addColumn<QString>("data");
+    QTest::addColumn<bool>("sign");
+    QTest::addColumn<bool>("encrypt");
+    QTest::addColumn<Kleo::CryptoMessageFormat>("format");
+
+    QString data = QStringLiteral("Hello,\n\nThis is a test message\n\nGreez");
+
+    QTest::newRow("Plain") << data << false << false << Kleo::AutoFormat;
+    QTest::newRow("Sign") << data << true << false << Kleo::AutoFormat;
+    QTest::newRow("Encrypt") << data << false << true << Kleo::AutoFormat;
+    QTest::newRow("SignEncrypt") << data << true << true << Kleo::AutoFormat;
+}
+
 void ComposerViewBaseTest::testGenerateCryptoMessages()
 {
+    QFETCH(QString, data);
+    QFETCH(bool, sign);
+    QFETCH(bool, encrypt);
+    QFETCH(Kleo::CryptoMessageFormat, format);
+
     MessageComposer::RichTextComposerNg editor;
     MessageComposer::RecipientsEditor recipientsEditor;
     MailTransport::TransportComboBox transpCombo;
@@ -135,12 +168,15 @@ void ComposerViewBaseTest::testGenerateCryptoMessages()
     composerViewBase.setTransportCombo(&transpCombo);
     composerViewBase.setRecipientsEditor(&recipientsEditor);
     composerViewBase.setFrom(QStringLiteral("me@me.example"));
+    composerViewBase.mExpandedTo << QStringLiteral("you@you.com");
+    composerViewBase.setAkonadiLookupEnabled(false);
     KMime::Types::Mailbox mb;
-    mb.from7BitString("to@to.example");
+    mb.from7BitString("you@you.com");
     recipientsEditor.setRecipientString({mb}, Recipient::To);
-    editor.setPlainText(QStringLiteral("Hello,\n\nThis is a test message\n\nGreez"));
+    editor.setPlainText(data);
 
     bool wasCanceled = false;
+    composerViewBase.setCryptoOptions(sign, encrypt, format, false);
     auto composers = composerViewBase.generateCryptoMessages(wasCanceled);
     QCOMPARE(wasCanceled, false);
 
@@ -154,10 +190,39 @@ void ComposerViewBaseTest::testGenerateCryptoMessages()
     QCOMPARE(composer->resultMessages().size(), 1);
 
     auto msg = composer->resultMessages().first();
-    msg->messageID()->from7BitString("<test@autotest.example>");
-    msg->date()->from7BitString("Tue, 22 Jan 2019 12:56:25 +0100");
     msg->assemble();
-    Test::compareFile(msg.data(), QStringLiteral(MAIL_DATA_DIR "/autosave.mbox"));
+
+    // Every message should have an Autocrypt in the outer message structure
+    // as it should always been possible to start an encrypted reply
+    QCOMPARE(msg->hasHeader("Autocrypt"), true);
+
+    MimeTreeParser::SimpleObjectTreeSource testSource;
+    testSource.setDecryptMessage(true);
+    auto nh = new MimeTreeParser::NodeHelper;
+    MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
+
+    otp.parseObjectTree(msg.data());
+
+    KMime::Content *content = msg.data();
+
+    if (encrypt) {
+        QCOMPARE(nh->encryptionState(msg.data()), MimeTreeParser::KMMsgFullyEncrypted);
+        const auto extra =  nh->extraContents(msg.data());
+        QCOMPARE(extra.size(), 1);
+        content = extra.first();
+    } else {
+        QCOMPARE(nh->encryptionState(msg.data()), MimeTreeParser::KMMsgNotEncrypted);
+    }
+
+    if (sign) {
+        content = MessageCore::NodeHelper::firstChild(content);
+        QCOMPARE(nh->signatureState(content), MimeTreeParser::KMMsgFullySigned);
+    } else {
+        QCOMPARE(nh->signatureState(msg.data()), MimeTreeParser::KMMsgNotSigned);
+    }
+
+    QCOMPARE(QString::fromUtf8(content->decodedContent()), data);
+    QCOMPARE(content->hasHeader("Autocrypt"), true);
 }
 
 QTEST_MAIN(ComposerViewBaseTest)

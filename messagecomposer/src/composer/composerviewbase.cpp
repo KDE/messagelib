@@ -811,9 +811,17 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
         return {};
     }
 
+    QVector<MessageComposer::Composer *> composers;
+
     // No encryption or signing is needed
     if (!signSomething && !encryptSomething) {
-        return QVector<MessageComposer::Composer *>() << new MessageComposer::Composer();
+        auto composer = new MessageComposer::Composer;
+        if (m_cryptoMessageFormat &  Kleo::OpenPGPMIMEFormat) {
+            composer->setAutocryptEnabled(autocryptEnabled());
+            composer->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat)[0]);
+        }
+        composers.append(composer);
+        return composers;
     }
 
     const Kleo::Result kpgpResult = keyResolver->resolveAllKeys(signSomething, encryptSomething);
@@ -826,15 +834,15 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
         Q_EMIT failed(i18n("Failed to resolve keys. Please report a bug."));
         return {};
     }
-    qCDebug(MESSAGECOMPOSER_LOG) << "done resolving keys:";
 
-    QVector<MessageComposer::Composer *> composers;
+    qCDebug(MESSAGECOMPOSER_LOG) << "done resolving keys.";
 
     if (encryptSomething || signSomething) {
         Kleo::CryptoMessageFormat concreteFormat = Kleo::AutoFormat;
         for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
             concreteFormat = concreteCryptoMessageFormats[i];
-            if (keyResolver->encryptionItems(concreteFormat).empty()) {
+            const auto encData = keyResolver->encryptionItems(concreteFormat);
+            if (encData.empty()) {
                 continue;
             }
 
@@ -844,13 +852,11 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
 
             auto composer = new MessageComposer::Composer;
 
-            if (encryptSomething) {
-                std::vector<Kleo::KeyResolver::SplitInfo> encData = keyResolver->encryptionItems(concreteFormat);
-                std::vector<Kleo::KeyResolver::SplitInfo>::iterator it;
+            if (encryptSomething || autocryptEnabled()) {
                 auto end(encData.end());
                 QVector<QPair<QStringList, std::vector<GpgME::Key>>> data;
                 data.reserve(encData.size());
-                for (it = encData.begin(); it != end; ++it) {
+                for (auto it = encData.begin(); it != end; ++it) {
                     QPair<QStringList, std::vector<GpgME::Key>> p(it->recipients, it->keys);
                     data.append(p);
                     qCDebug(MESSAGECOMPOSER_LOG) << "got resolved keys for:" << it->recipients;
