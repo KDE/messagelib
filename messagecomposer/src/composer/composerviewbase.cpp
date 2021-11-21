@@ -637,8 +637,6 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
         }
     }
 
-    // qDebug() << "addKeysToContext: " << needSpecialContext;
-
     if (!needSpecialContext) {
         return false;
     }
@@ -884,7 +882,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     }
 
     if (composers.isEmpty() && (signSomething || encryptSomething)) {
-        Q_ASSERT_X(false, "ComposerViewBase::fillCryptoInfo", "No concrete sign or encrypt method selected");
+        Q_ASSERT_X(false, "ComposerViewBase::generateCryptoMessages", "No concrete sign or encrypt method selected");
     }
 
     return composers;

@@ -1122,7 +1122,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
     //
     // 1. Get keys for all recipients:
     //
-    qCDebug(MESSAGECOMPOSER_LOG) << "resolving enc keys";
+    qCDebug(MESSAGECOMPOSER_LOG) << "resolving enc keys" << d->mPrimaryEncryptionKeys.size();
     for (auto it = d->mPrimaryEncryptionKeys.begin(); it != d->mPrimaryEncryptionKeys.end(); ++it) {
         qCDebug(MESSAGECOMPOSER_LOG) << "checking primary:" << it->address;
         if (!it->needKeys) {

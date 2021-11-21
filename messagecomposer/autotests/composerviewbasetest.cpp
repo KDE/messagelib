@@ -97,6 +97,8 @@ void ComposerViewBaseTest::testAutoSaveMessage()
     editor.setPlainText(QStringLiteral("Hello,\n\nThis is a test message\n\nGreez"));
 
     composerViewBase.autoSaveMessage();
+
+    // It may be possible that we need to wait till the autosave message is ready composed.
     if (composerViewBase.m_composers.size() > 0) {
         QEventLoop loop;
         bool notFinished = false;

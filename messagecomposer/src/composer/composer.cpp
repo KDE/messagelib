@@ -222,7 +222,7 @@ void ComposerPrivate::composeStep2()
         autocryptJob->appendSubjob(mainJob);
         autocryptJob->setSenderKey(senderEncryptionKey);
         if (encrypt && format & Kleo::OpenPGPMIMEFormat) {
-            qDebug() << "Add gossip?" << encData[0].first.size() << encData[0].second.size();
+            qDebug() << "Add gossip: " << encData[0].first.size() << encData[0].second.size();
             if (encData[0].first.size() > 1 && encData[0].second.size() > 2) {
                 autocryptJob->setGossipKeys(encData[0].second);
             }
