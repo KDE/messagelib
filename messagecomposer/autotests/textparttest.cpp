@@ -12,9 +12,7 @@ TextPartTest::TextPartTest(QObject *parent)
 {
 }
 
-TextPartTest::~TextPartTest()
-{
-}
+TextPartTest::~TextPartTest() = default;
 
 void TextPartTest::shouldHaveDefaultValue()
 {

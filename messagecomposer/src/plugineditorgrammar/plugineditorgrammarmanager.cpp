@@ -17,9 +17,7 @@ using namespace MessageComposer;
 class PluginEditorGrammarInfo
 {
 public:
-    PluginEditorGrammarInfo()
-    {
-    }
+    PluginEditorGrammarInfo() = default;
 
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;

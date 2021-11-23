@@ -21,9 +21,7 @@ TemplateParserEmailRequesterTestWidget::TemplateParserEmailRequesterTestWidget(Q
     lay->addWidget(w);
 }
 
-TemplateParserEmailRequesterTestWidget::~TemplateParserEmailRequesterTestWidget()
-{
-}
+TemplateParserEmailRequesterTestWidget::~TemplateParserEmailRequesterTestWidget() = default;
 
 int main(int argc, char **argv)
 {

@@ -25,9 +25,7 @@ TestWebEngine::TestWebEngine(QWidget *parent)
     pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
 }
 
-TestWebEngine::~TestWebEngine()
-{
-}
+TestWebEngine::~TestWebEngine() = default;
 
 TestWebEngineView::TestWebEngineView(QWidget *parent)
     : QWebEngineView(parent)

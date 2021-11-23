@@ -22,9 +22,7 @@ FollowupReminderSelectDateDialogTest::FollowupReminderSelectDateDialogTest(QObje
 {
 }
 
-FollowupReminderSelectDateDialogTest::~FollowupReminderSelectDateDialogTest()
-{
-}
+FollowupReminderSelectDateDialogTest::~FollowupReminderSelectDateDialogTest() = default;
 
 QStandardItemModel *FollowupReminderSelectDateDialogTest::defaultItemModel()
 {

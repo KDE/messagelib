@@ -42,9 +42,7 @@ CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
     layout->addWidget(mJson);
 }
 
-CheckPhishingUrlGui::~CheckPhishingUrlGui()
-{
-}
+CheckPhishingUrlGui::~CheckPhishingUrlGui() = default;
 
 void CheckPhishingUrlGui::slotCheckUrl()
 {

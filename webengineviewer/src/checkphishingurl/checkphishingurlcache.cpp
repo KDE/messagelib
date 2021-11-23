@@ -14,9 +14,7 @@
 using namespace WebEngineViewer;
 
 struct UrlCacheInfo {
-    UrlCacheInfo()
-    {
-    }
+    UrlCacheInfo() = default;
 
     Q_REQUIRED_RESULT bool isMalWare() const;
     Q_REQUIRED_RESULT bool isValid() const;

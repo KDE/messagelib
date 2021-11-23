@@ -25,9 +25,7 @@ ComposerLineEdit::ComposerLineEdit(bool useCompletion, QWidget *parent)
     setEnableBalooSearch(MessageComposerSettings::showBalooSearchInComposer());
 }
 
-ComposerLineEdit::~ComposerLineEdit()
-{
-}
+ComposerLineEdit::~ComposerLineEdit() = default;
 
 //-----------------------------------------------------------------------------
 void ComposerLineEdit::keyPressEvent(QKeyEvent *e)

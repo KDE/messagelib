@@ -18,9 +18,7 @@ WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson = true;
 class WebEngineViewer::CheckPhishingUrlJobPrivate
 {
 public:
-    CheckPhishingUrlJobPrivate()
-    {
-    }
+    CheckPhishingUrlJobPrivate() = default;
 
     QUrl mUrl;
     QNetworkAccessManager *mNetworkAccessManager = nullptr;

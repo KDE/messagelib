@@ -47,9 +47,7 @@ ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString
     lay->addLayout(hbox);
 }
 
-ScamDetectionWebEngineTestWidget::~ScamDetectionWebEngineTestWidget()
-{
-}
+ScamDetectionWebEngineTestWidget::~ScamDetectionWebEngineTestWidget() = default;
 
 void ScamDetectionWebEngineTestWidget::slotLoadFinished()
 {

@@ -41,15 +41,8 @@ Aggregation::Grouping Aggregation::grouping() const
 }
 
 Aggregation::Aggregation(const Aggregation &opt)
-    : OptionSet(opt)
-    , mGrouping(opt.mGrouping)
-    , mGroupExpandPolicy(opt.mGroupExpandPolicy)
-    , mThreading(opt.mThreading)
-    , mThreadLeader(opt.mThreadLeader)
-    , mThreadExpandPolicy(opt.mThreadExpandPolicy)
-    , mFillViewStrategy(opt.mFillViewStrategy)
-{
-}
+
+    = default;
 
 Aggregation::Aggregation()
     : OptionSet()

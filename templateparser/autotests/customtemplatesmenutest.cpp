@@ -14,9 +14,7 @@ CustomTemplatesMenuTest::CustomTemplatesMenuTest(QObject *parent)
 {
 }
 
-CustomTemplatesMenuTest::~CustomTemplatesMenuTest()
-{
-}
+CustomTemplatesMenuTest::~CustomTemplatesMenuTest() = default;
 
 void CustomTemplatesMenuTest::shouldHaveDefaultValue()
 {

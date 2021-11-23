@@ -11,9 +11,7 @@ using namespace MessageComposer;
 class MessageComposer::PluginEditorInitInterfacePrivate
 {
 public:
-    PluginEditorInitInterfacePrivate()
-    {
-    }
+    PluginEditorInitInterfacePrivate() = default;
 
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextComposer *mEditor = nullptr;

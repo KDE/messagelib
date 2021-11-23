@@ -80,9 +80,7 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
     }
 }
 
-CidUrlRequestInterceptor::~CidUrlRequestInterceptor()
-{
-}
+CidUrlRequestInterceptor::~CidUrlRequestInterceptor() = default;
 
 TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
     : QWidget(parent)

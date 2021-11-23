@@ -78,9 +78,7 @@ SignJob::SignJob(QObject *parent)
 {
 }
 
-SignJob::~SignJob()
-{
-}
+SignJob::~SignJob() = default;
 
 void SignJob::setContent(KMime::Content *content)
 {

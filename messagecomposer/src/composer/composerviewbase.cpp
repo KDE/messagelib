@@ -744,7 +744,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     }
     if (keyResolver->setEncryptToSelfKeys(encryptToSelfKeys) != Kleo::Ok) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Failed to set encryptoToSelf keys!";
-        return QVector<MessageComposer::Composer *>();
+        return {};
     }
 
     // Add signingkeys from id to keyResolver
@@ -756,7 +756,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     }
     if (keyResolver->setSigningKeys(signKeys) != Kleo::Ok) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Failed to set signing keys!";
-        return QVector<MessageComposer::Composer *>();
+        return {};
     }
 
     if (m_attachmentModel) {
@@ -793,7 +793,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
             Q_EMIT failed(QString());
         }
         wasCanceled = canceled;
-        return QVector<MessageComposer::Composer *>();
+        return {};
     }
 
     canceled = false;
@@ -808,7 +808,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
         }
 
         wasCanceled = canceled;
-        return QVector<MessageComposer::Composer *>();
+        return {};
     }
 
     // No encryption or signing is needed
@@ -819,12 +819,12 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     const Kleo::Result kpgpResult = keyResolver->resolveAllKeys(signSomething, encryptSomething);
     if (kpgpResult == Kleo::Canceled) {
         qCDebug(MESSAGECOMPOSER_LOG) << "resolveAllKeys: one key resolution canceled by user";
-        return QVector<MessageComposer::Composer *>();
+        return {};
     } else if (kpgpResult != Kleo::Ok) {
         // TODO handle failure
         qCDebug(MESSAGECOMPOSER_LOG) << "resolveAllKeys: failed to resolve keys! oh noes";
         Q_EMIT failed(i18n("Failed to resolve keys. Please report a bug."));
-        return QVector<MessageComposer::Composer *>();
+        return {};
     }
     qCDebug(MESSAGECOMPOSER_LOG) << "done resolving keys:";
 

@@ -31,7 +31,7 @@ MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyP
 {
     KMime::Content *node = part.content();
     if (node->contents().isEmpty()) {
-        return MessagePart::Ptr();
+        return {};
     }
 
     auto preferredMode = part.source()->preferredMode();

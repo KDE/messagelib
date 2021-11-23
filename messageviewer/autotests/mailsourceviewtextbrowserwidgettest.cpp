@@ -15,9 +15,7 @@ MailSourceViewTextBrowserWidgetTest::MailSourceViewTextBrowserWidgetTest(QObject
 {
 }
 
-MailSourceViewTextBrowserWidgetTest::~MailSourceViewTextBrowserWidgetTest()
-{
-}
+MailSourceViewTextBrowserWidgetTest::~MailSourceViewTextBrowserWidgetTest() = default;
 
 void MailSourceViewTextBrowserWidgetTest::shouldHaveDefaultValue()
 {

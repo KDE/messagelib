@@ -56,9 +56,7 @@ class MESSAGECOMPOSER_EXPORT RecipientLineNG : public KPIM::MultiplyingLine
     Q_OBJECT
 public:
     explicit RecipientLineNG(QWidget *parent);
-    ~RecipientLineNG() override
-    {
-    }
+    ~RecipientLineNG() override = default;
 
     void activate() override;
     Q_REQUIRED_RESULT bool isActive() const override;

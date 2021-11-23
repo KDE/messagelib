@@ -14,8 +14,6 @@ DownloadLocalDatabaseThreadTest::DownloadLocalDatabaseThreadTest(QObject *parent
 {
 }
 
-DownloadLocalDatabaseThreadTest::~DownloadLocalDatabaseThreadTest()
-{
-}
+DownloadLocalDatabaseThreadTest::~DownloadLocalDatabaseThreadTest() = default;
 
 QTEST_GUILESS_MAIN(DownloadLocalDatabaseThreadTest)

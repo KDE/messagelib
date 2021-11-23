@@ -161,7 +161,7 @@ MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, ProcessResult
 MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node, bool onlyOneMimePart)
 {
     if (!node) {
-        return MessagePart::Ptr();
+        return {};
     }
 
     // reset pending async jobs state (we'll rediscover pending jobs as we go)

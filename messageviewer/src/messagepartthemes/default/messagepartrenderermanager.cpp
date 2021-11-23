@@ -43,7 +43,7 @@ template<> inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const 
     } else if (property == QLatin1String("displayName")) {
         return object->displayName();
     }
-    return QVariant();
+    return {};
 }
 }
 
@@ -64,7 +64,7 @@ TypeAccessor<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> &>::lookU
     if (property == QLatin1String("mainID")) {
         return QString::fromLatin1(object.second.keyID());
     }
-    return QVariant();
+    return {};
 }
 }
 

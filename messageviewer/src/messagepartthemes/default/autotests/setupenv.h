@@ -162,7 +162,7 @@ public:
     QString createMessageHeader(KMime::Message *message) override
     {
         Q_UNUSED(message)
-        return QString(); // do nothing
+        return {}; // do nothing
     }
 
 private:

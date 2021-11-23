@@ -16,9 +16,7 @@ using namespace MessageViewer;
 class HeaderStylePluginInfo
 {
 public:
-    HeaderStylePluginInfo()
-    {
-    }
+    HeaderStylePluginInfo() = default;
 
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;

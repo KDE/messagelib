@@ -31,9 +31,7 @@ CreateDatabaseFileJobTest::CreateDatabaseFileJobTest(QObject *parent)
     QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl"));
 }
 
-CreateDatabaseFileJobTest::~CreateDatabaseFileJobTest()
-{
-}
+CreateDatabaseFileJobTest::~CreateDatabaseFileJobTest() = default;
 
 void CreateDatabaseFileJobTest::initTestCase()
 {

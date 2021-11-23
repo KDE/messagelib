@@ -22,7 +22,7 @@
 #include <MessageCore/NodeHelper>
 #include <setupenv.h>
 
-#include <stdlib.h>
+#include <cstdlib>
 
 QTEST_MAIN(SignJobTest)
 

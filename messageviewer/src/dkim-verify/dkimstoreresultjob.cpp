@@ -15,9 +15,7 @@ DKIMStoreResultJob::DKIMStoreResultJob(QObject *parent)
 {
 }
 
-DKIMStoreResultJob::~DKIMStoreResultJob()
-{
-}
+DKIMStoreResultJob::~DKIMStoreResultJob() = default;
 
 void DKIMStoreResultJob::start()
 {

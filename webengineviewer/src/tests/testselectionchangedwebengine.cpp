@@ -27,9 +27,7 @@ TestSelectionChangedEngine::TestSelectionChangedEngine(QWidget *parent)
     vbox->addWidget(edit);
 }
 
-TestSelectionChangedEngine::~TestSelectionChangedEngine()
-{
-}
+TestSelectionChangedEngine::~TestSelectionChangedEngine() = default;
 
 void TestSelectionChangedEngine::slotSelectionChanged()
 {

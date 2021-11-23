@@ -67,9 +67,7 @@ SignEncryptJob::SignEncryptJob(QObject *parent)
 {
 }
 
-SignEncryptJob::~SignEncryptJob()
-{
-}
+SignEncryptJob::~SignEncryptJob() = default;
 
 void SignEncryptJob::setContent(KMime::Content *content)
 {

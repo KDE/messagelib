@@ -64,9 +64,7 @@ TestCSSHelper::TestCSSHelper(const QPaintDevice *pd)
     recalculatePGPColors();
 }
 
-TestCSSHelper::~TestCSSHelper()
-{
-}
+TestCSSHelper::~TestCSSHelper() = default;
 
 QString TestCSSHelper::htmlHead(bool fixed) const
 {

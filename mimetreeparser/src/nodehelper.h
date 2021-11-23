@@ -28,7 +28,7 @@ namespace MimeTreeParser
 {
 class AttachmentTemporaryFilesDirs;
 class MessagePart;
-typedef QSharedPointer<MessagePart> MessagePartPtr;
+using MessagePartPtr = QSharedPointer<MessagePart>;
 namespace Interface
 {
 class BodyPartMemento;

@@ -23,9 +23,7 @@ ScamCheckShortUrl::ScamCheckShortUrl(QObject *parent)
     loadLongUrlServices();
 }
 
-ScamCheckShortUrl::~ScamCheckShortUrl()
-{
-}
+ScamCheckShortUrl::~ScamCheckShortUrl() = default;
 
 void ScamCheckShortUrl::expandedUrl(const QUrl &url)
 {

@@ -67,9 +67,7 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     menuBar->addMenu(menu);
 }
 
-ViewerPluginTest::~ViewerPluginTest()
-{
-}
+ViewerPluginTest::~ViewerPluginTest() = default;
 
 void ViewerPluginTest::slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface)
 {

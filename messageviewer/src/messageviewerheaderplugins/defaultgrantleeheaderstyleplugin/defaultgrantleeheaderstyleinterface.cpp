@@ -19,9 +19,7 @@ DefaultGrantleeHeaderStyleInterface::DefaultGrantleeHeaderStyleInterface(Message
 {
 }
 
-DefaultGrantleeHeaderStyleInterface::~DefaultGrantleeHeaderStyleInterface()
-{
-}
+DefaultGrantleeHeaderStyleInterface::~DefaultGrantleeHeaderStyleInterface() = default;
 
 void DefaultGrantleeHeaderStyleInterface::createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac)
 {

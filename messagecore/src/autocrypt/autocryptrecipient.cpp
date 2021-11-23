@@ -17,9 +17,7 @@
 
 using namespace MessageCore;
 
-AutocryptRecipientPrivate::AutocryptRecipientPrivate()
-{
-}
+AutocryptRecipientPrivate::AutocryptRecipientPrivate() = default;
 
 QByteArray AutocryptRecipientPrivate::toJson(QJsonDocument::JsonFormat format) const
 {
@@ -194,7 +192,7 @@ GpgME::Key gpgKey(const QByteArray &keydata)
     GpgME::Data data(&dp);
     auto keys = data.toKeys();
     if (keys.size() == 0) {
-        return GpgME::Key();
+        return {};
     }
     return keys[0];
 }

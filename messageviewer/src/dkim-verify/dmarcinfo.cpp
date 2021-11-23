@@ -8,9 +8,7 @@
 #include "messageviewer_dkimcheckerdebug.h"
 
 using namespace MessageViewer;
-DMARCInfo::DMARCInfo()
-{
-}
+DMARCInfo::DMARCInfo() = default;
 
 bool DMARCInfo::parseDMARC(const QString &key)
 {

@@ -27,9 +27,7 @@ public:
         }
     }
 
-    ~CSSHelper() override
-    {
-    }
+    ~CSSHelper() override = default;
 
     QString nonQuotedFontTag() const
     {

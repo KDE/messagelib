@@ -33,9 +33,7 @@ LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
 {
 }
 
-LocalDataBaseManager::~LocalDataBaseManager()
-{
-}
+LocalDataBaseManager::~LocalDataBaseManager() = default;
 
 void LocalDataBaseManager::initialize()
 {

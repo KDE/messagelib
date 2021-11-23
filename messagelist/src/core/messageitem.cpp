@@ -212,7 +212,7 @@ QList<MessageItem::Tag *> MessageItemPrivate::getTagList() const
 {
     if (!mTagList) {
         s_tagCache->retrieveTags(mAkonadiItem.tags(), const_cast<MessageItemPrivate *>(this));
-        return QList<MessageItem::Tag *>();
+        return {};
     }
 
     return *mTagList;
@@ -235,9 +235,7 @@ MessageItem::MessageItem(MessageItemPrivate *dd)
 {
 }
 
-MessageItem::~MessageItem()
-{
-}
+MessageItem::~MessageItem() = default;
 
 QList<MessageItem::Tag *> MessageItem::tagList() const
 {
@@ -267,7 +265,7 @@ QString MessageItem::annotation() const
             return QString::fromLatin1(annot);
         }
     }
-    return QString();
+    return {};
 }
 
 void MessageItem::editAnnotation(QWidget *parent)
@@ -541,7 +539,7 @@ QString MessageItem::accessibleTextForField(Theme::ContentItem::Type field)
     case Theme::ContentItem::CombinedReadRepliedStateIcon:
         return accessibleTextForField(Theme::ContentItem::ReadStateIcon) + accessibleTextForField(Theme::ContentItem::RepliedStateIcon);
     default:
-        return QString();
+        return {};
     }
 }
 

@@ -235,7 +235,7 @@ MimeTreeParser::MessagePart::Ptr toplevelTextNode(MimeTreeParser::MessagePart::P
             }
         }
     }
-    return MimeTreeParser::MessagePart::Ptr();
+    return {};
 }
 
 void TemplateParserJob::processWithTemplate(const QString &tmpl)
@@ -1082,7 +1082,7 @@ QString TemplateParserJob::getPlainSignature() const
     const KIdentityManagement::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
 
     if (identity.isNull()) {
-        return QString();
+        return {};
     }
 
     KIdentityManagement::Signature signature = const_cast<KIdentityManagement::Identity &>(identity).signature();
@@ -1101,7 +1101,7 @@ QString TemplateParserJob::getHtmlSignature() const
 {
     const KIdentityManagement::Identity &identity = d->m_identityManager->identityForUoid(d->mIdentity);
     if (identity.isNull()) {
-        return QString();
+        return {};
     }
 
     KIdentityManagement::Signature signature = const_cast<KIdentityManagement::Identity &>(identity).signature();
@@ -1278,7 +1278,7 @@ QString TemplateParserJob::findTemplate()
                 break;
             default:
                 qCDebug(TEMPLATEPARSER_LOG) << "Unknown message mode:" << d->mMode;
-                return QString();
+                return {};
             }
             d->mQuoteString = fconf.quoteString();
             if (!tmpl.isEmpty()) {
@@ -1323,7 +1323,7 @@ QString TemplateParserJob::findTemplate()
             break;
         default:
             qCDebug(TEMPLATEPARSER_LOG) << "Unknown message mode:" << d->mMode;
-            return QString();
+            return {};
         }
         d->mQuoteString = iconf.quoteString();
         if (!tmpl.isEmpty()) {
@@ -1346,7 +1346,7 @@ QString TemplateParserJob::findTemplate()
         break;
     default:
         qCDebug(TEMPLATEPARSER_LOG) << "Unknown message mode:" << d->mMode;
-        return QString();
+        return {};
     }
 
     d->mQuoteString = TemplateParserSettings::self()->quoteString();
@@ -1397,7 +1397,7 @@ QString TemplateParserJob::pipe(const QString &cmd, const QString &buf)
     if (success) {
         return QTextCodec::codecForLocale()->toUnicode(process.readAllStandardOutput());
     } else {
-        return QString();
+        return {};
     }
 }
 
@@ -1414,7 +1414,7 @@ QString TemplateParserJob::plainMessageText(bool aStripSignature, AllowSelection
     }
 
     if (!d->mOrigMsg) {
-        return QString();
+        return {};
     }
     const auto mp = toplevelTextNode(d->mOtp->parsedPart());
     QString result = mp->plaintextContent();

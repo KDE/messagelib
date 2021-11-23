@@ -23,9 +23,7 @@ using namespace MessageViewer;
 class MessageViewer::PlainHeaderStylePrivate
 {
 public:
-    PlainHeaderStylePrivate()
-    {
-    }
+    PlainHeaderStylePrivate() = default;
 
     Q_REQUIRED_RESULT QString formatAllMessageHeaders(KMime::Message *message) const;
     MessageViewer::HeaderStyleUtil mHeaderStyleUtil;
@@ -62,7 +60,7 @@ PlainHeaderStyle::~PlainHeaderStyle() = default;
 QString PlainHeaderStyle::format(KMime::Message *message) const
 {
     if (!message) {
-        return QString();
+        return {};
     }
     const HeaderStrategy *strategy = headerStrategy();
     // The direction of the header is determined according to the direction

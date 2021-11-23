@@ -16,9 +16,7 @@ using namespace MessageComposer;
 class PluginEditorCheckBeforeSendInfo
 {
 public:
-    PluginEditorCheckBeforeSendInfo()
-    {
-    }
+    PluginEditorCheckBeforeSendInfo() = default;
 
     KPluginMetaData data;
     PimCommon::PluginUtilData pluginData;

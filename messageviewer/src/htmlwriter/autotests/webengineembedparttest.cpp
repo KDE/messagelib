@@ -13,9 +13,7 @@ WebEngineEmbedPartTest::WebEngineEmbedPartTest(QObject *parent)
 {
 }
 
-WebEngineEmbedPartTest::~WebEngineEmbedPartTest()
-{
-}
+WebEngineEmbedPartTest::~WebEngineEmbedPartTest() = default;
 
 void WebEngineEmbedPartTest::shouldHaveDefaultValue()
 {

@@ -25,9 +25,7 @@ DKIMManageRulesWidgetItem::DKIMManageRulesWidgetItem(QTreeWidget *parent)
     treeWidget()->setItemWidget(this, ColumnType::RuleType, mRuleTypeCombobox);
 }
 
-DKIMManageRulesWidgetItem::~DKIMManageRulesWidgetItem()
-{
-}
+DKIMManageRulesWidgetItem::~DKIMManageRulesWidgetItem() = default;
 
 MessageViewer::DKIMRule DKIMManageRulesWidgetItem::rule() const
 {
@@ -90,9 +88,7 @@ DKIMManageRulesWidget::DKIMManageRulesWidget(QWidget *parent)
     });
 }
 
-DKIMManageRulesWidget::~DKIMManageRulesWidget()
-{
-}
+DKIMManageRulesWidget::~DKIMManageRulesWidget() = default;
 
 void DKIMManageRulesWidget::loadSettings()
 {

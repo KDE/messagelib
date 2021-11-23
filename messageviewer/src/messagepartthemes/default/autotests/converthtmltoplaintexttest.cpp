@@ -14,9 +14,7 @@ ConvertHtmlToPlainTextTest::ConvertHtmlToPlainTextTest(QObject *parent)
 {
 }
 
-ConvertHtmlToPlainTextTest::~ConvertHtmlToPlainTextTest()
-{
-}
+ConvertHtmlToPlainTextTest::~ConvertHtmlToPlainTextTest() = default;
 
 void ConvertHtmlToPlainTextTest::shouldHaveDefaultValue()
 {

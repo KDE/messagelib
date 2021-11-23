@@ -37,9 +37,7 @@ QDataStream &operator>>(QDataStream &stream, CacheHeader &header)
 }
 }
 
-ThreadingCache::ThreadingCache()
-{
-}
+ThreadingCache::ThreadingCache() = default;
 
 ThreadingCache::~ThreadingCache()
 {

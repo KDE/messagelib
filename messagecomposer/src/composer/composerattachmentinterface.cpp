@@ -6,13 +6,9 @@
 
 #include "composerattachmentinterface.h"
 using namespace MessageComposer;
-ComposerAttachmentInterface::ComposerAttachmentInterface()
-{
-}
+ComposerAttachmentInterface::ComposerAttachmentInterface() = default;
 
-ComposerAttachmentInterface::~ComposerAttachmentInterface()
-{
-}
+ComposerAttachmentInterface::~ComposerAttachmentInterface() = default;
 
 QStringList ComposerAttachmentInterface::fileNames() const
 {

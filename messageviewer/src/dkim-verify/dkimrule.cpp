@@ -7,9 +7,7 @@
 #include "dkimrule.h"
 
 using namespace MessageViewer;
-DKIMRule::DKIMRule()
-{
-}
+DKIMRule::DKIMRule() = default;
 
 QString DKIMRule::domain() const
 {

@@ -11,9 +11,7 @@ using namespace MessageViewer;
 class MessageViewer::DKIMResultAttributePrivate
 {
 public:
-    DKIMResultAttributePrivate()
-    {
-    }
+    DKIMResultAttributePrivate() = default;
 
     int error = -1;
     int warning = -1;

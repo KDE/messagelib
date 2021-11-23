@@ -31,9 +31,7 @@ using namespace MessageViewer;
 //
 // Convenience functions:
 //
-HeaderStyleUtil::HeaderStyleUtil()
-{
-}
+HeaderStyleUtil::HeaderStyleUtil() = default;
 
 QString HeaderStyleUtil::directionOf(const QString &str) const
 {

@@ -1781,7 +1781,7 @@ static QColor nextColor(const QColor &c)
 QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgColor) const
 {
     if (!node) {
-        return QString();
+        return {};
     }
 
     QString html;
@@ -2404,7 +2404,7 @@ QList<QAction *> ViewerPrivate::viewerPluginActionList(ViewerPluginInterface::Sp
     if (mViewerPluginToolManager) {
         return mViewerPluginToolManager->viewerPluginActionList(features);
     }
-    return QList<QAction *>();
+    return {};
 }
 
 void ViewerPrivate::slotActivatePlugin(ViewerPluginInterface *interface)

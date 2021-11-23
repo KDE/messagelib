@@ -14,9 +14,7 @@ SearchCollectionIndexingWarningTest::SearchCollectionIndexingWarningTest(QObject
 {
 }
 
-SearchCollectionIndexingWarningTest::~SearchCollectionIndexingWarningTest()
-{
-}
+SearchCollectionIndexingWarningTest::~SearchCollectionIndexingWarningTest() = default;
 
 void SearchCollectionIndexingWarningTest::shouldHaveDefaultValue()
 {

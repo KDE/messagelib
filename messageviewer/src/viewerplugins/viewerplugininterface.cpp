@@ -12,9 +12,7 @@ using namespace MessageViewer;
 class MessageViewer::ViewerPluginInterfacePrivate
 {
 public:
-    ViewerPluginInterfacePrivate()
-    {
-    }
+    ViewerPluginInterfacePrivate() = default;
 };
 
 ViewerPluginInterface::ViewerPluginInterface(QObject *parent)

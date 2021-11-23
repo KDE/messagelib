@@ -31,9 +31,7 @@ DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     initColors();
 }
 
-DKIMWidgetInfo::~DKIMWidgetInfo()
-{
-}
+DKIMWidgetInfo::~DKIMWidgetInfo() = default;
 
 void DKIMWidgetInfo::initColors()
 {

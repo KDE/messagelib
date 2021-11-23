@@ -54,5 +54,5 @@ MessagePart::Ptr MimeTreeParser::toplevelTextNode(MessagePart::Ptr messageTree)
             }
         }
     }
-    return MessagePart::Ptr();
+    return {};
 }

@@ -48,7 +48,7 @@ const char *GrantleeHeaderTestStyle::name() const
 QString GrantleeHeaderTestStyle::format(KMime::Message *message) const
 {
     if (!message) {
-        return QString();
+        return {};
     }
     return d->mGrantleeFormatter->toHtml(d->mExtraDisplay, d->mAbsolutePath, d->mMainFilename, this, message, isPrinting());
 }

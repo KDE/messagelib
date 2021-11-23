@@ -37,7 +37,7 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
         if (!node->contents().isEmpty()) {
             return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), node->contents().at(0), false));
         } else {
-            return MessagePart::Ptr();
+            return {};
         }
     }
 

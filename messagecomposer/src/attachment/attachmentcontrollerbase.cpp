@@ -136,9 +136,7 @@ AttachmentControllerBase::AttachmentControllerBasePrivate::AttachmentControllerB
 {
 }
 
-AttachmentControllerBase::AttachmentControllerBasePrivate::~AttachmentControllerBasePrivate()
-{
-}
+AttachmentControllerBase::AttachmentControllerBasePrivate::~AttachmentControllerBasePrivate() = default;
 
 void AttachmentControllerBase::setSelectedParts(const AttachmentPart::List &selectedParts)
 {

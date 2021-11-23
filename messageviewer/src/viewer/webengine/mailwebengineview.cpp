@@ -48,9 +48,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
 class MessageViewer::MailWebEngineViewPrivate
 {
 public:
-    MailWebEngineViewPrivate()
-    {
-    }
+    MailWebEngineViewPrivate() = default;
 
     QUrl mHoveredUrl;
     QPoint mLastClickPosition;

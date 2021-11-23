@@ -120,17 +120,17 @@ void MessageList::Util::fillViewMenu(QMenu *menu, QObject *receiver)
 QString MessageList::Util::contentSummary(const Akonadi::Item &item)
 {
     if (!item.hasPayload<KMime::Message::Ptr>()) {
-        return QString();
+        return {};
     }
 
     auto message = item.payload<KMime::Message::Ptr>();
     KMime::Content *textContent = message->textContent();
     if (!textContent) {
-        return QString();
+        return {};
     }
     const QString content = textContent->decodedText(true, true);
     if (content.isEmpty()) {
-        return QString();
+        return {};
     }
 
     // Extract the first 5 non-empty, non-quoted lines from the content and return it
@@ -138,7 +138,7 @@ QString MessageList::Util::contentSummary(const Akonadi::Item &item)
     const int maxLines = 5;
     const QStringList lines = content.split(QLatin1Char('\n'));
     if (lines.isEmpty()) {
-        return QString();
+        return {};
     }
     if (lines.count() == 1 && content.length() > 100) {
         return content.left(100);

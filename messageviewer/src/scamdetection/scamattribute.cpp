@@ -15,9 +15,7 @@ using namespace MessageViewer;
 class MessageViewer::ScamAttributePrivate
 {
 public:
-    ScamAttributePrivate()
-    {
-    }
+    ScamAttributePrivate() = default;
 
     bool isAScam = false;
 };

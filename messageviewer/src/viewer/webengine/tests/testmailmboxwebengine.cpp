@@ -26,9 +26,7 @@ TestMailMBoxWebEngine::TestMailMBoxWebEngine(QWidget *parent)
     viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));
 }
 
-TestMailMBoxWebEngine::~TestMailMBoxWebEngine()
-{
-}
+TestMailMBoxWebEngine::~TestMailMBoxWebEngine() = default;
 
 KMime::Message::Ptr TestMailMBoxWebEngine::readAndParseMail(const QString &mailFile)
 {

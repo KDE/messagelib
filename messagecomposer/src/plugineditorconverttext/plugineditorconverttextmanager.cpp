@@ -16,9 +16,7 @@ using namespace MessageComposer;
 class PluginEditorConvertTextInfo
 {
 public:
-    PluginEditorConvertTextInfo()
-    {
-    }
+    PluginEditorConvertTextInfo() = default;
 
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;

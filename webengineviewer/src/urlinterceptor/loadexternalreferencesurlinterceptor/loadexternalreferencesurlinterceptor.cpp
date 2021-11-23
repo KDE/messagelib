@@ -14,9 +14,7 @@ LoadExternalReferencesUrlInterceptor::LoadExternalReferencesUrlInterceptor(QObje
 {
 }
 
-LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor()
-{
-}
+LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor() = default;
 
 bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {

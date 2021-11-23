@@ -16,9 +16,7 @@
 
 using namespace MessageList::Core;
 
-SortOrder::SortOrder()
-{
-}
+SortOrder::SortOrder() = default;
 
 SortOrder::GroupSorting SortOrder::groupSorting() const
 {

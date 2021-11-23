@@ -10,9 +10,7 @@
 
 using namespace MessageViewer;
 
-DKIMInfo::DKIMInfo()
-{
-}
+DKIMInfo::DKIMInfo() = default;
 
 bool DKIMInfo::parseDKIM(const QString &header)
 {

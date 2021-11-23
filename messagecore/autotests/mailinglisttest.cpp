@@ -18,9 +18,7 @@ MailingListTest::MailingListTest(QObject *parent)
 {
 }
 
-MailingListTest::~MailingListTest()
-{
-}
+MailingListTest::~MailingListTest() = default;
 
 void MailingListTest::shouldHaveDefaultValue()
 {

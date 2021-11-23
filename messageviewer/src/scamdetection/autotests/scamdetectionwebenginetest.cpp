@@ -22,9 +22,7 @@ TestWebEngineScamDetection::TestWebEngineScamDetection(QWidget *parent)
     hbox->addWidget(mEngineView);
 }
 
-TestWebEngineScamDetection::~TestWebEngineScamDetection()
-{
-}
+TestWebEngineScamDetection::~TestWebEngineScamDetection() = default;
 
 void TestWebEngineScamDetection::setHtml(const QString &html)
 {
@@ -42,9 +40,7 @@ ScamDetectionWebEngineTest::ScamDetectionWebEngineTest(QObject *parent)
 {
 }
 
-ScamDetectionWebEngineTest::~ScamDetectionWebEngineTest()
-{
-}
+ScamDetectionWebEngineTest::~ScamDetectionWebEngineTest() = default;
 
 void ScamDetectionWebEngineTest::scamtest_data()
 {

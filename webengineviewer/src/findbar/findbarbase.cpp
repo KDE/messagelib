@@ -93,9 +93,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     hide();
 }
 
-FindBarBase::~FindBarBase()
-{
-}
+FindBarBase::~FindBarBase() = default;
 
 QMenu *FindBarBase::optionsMenu() const
 {

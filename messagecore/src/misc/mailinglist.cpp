@@ -23,7 +23,7 @@ static QString check_sender(const KMime::Message::Ptr &message, QByteArray &head
     QString header = message->sender()->asUnicodeString();
 
     if (header.isEmpty()) {
-        return QString();
+        return {};
     }
 
     if (header.left(6) == QLatin1String("owner-")) {
@@ -33,7 +33,7 @@ static QString check_sender(const KMime::Message::Ptr &message, QByteArray &head
     } else {
         const int index = header.indexOf(QLatin1String("-owner@ "));
         if (index == -1) {
-            return QString();
+            return {};
         }
 
         header.truncate(index);
@@ -52,7 +52,7 @@ static QString check_x_beenthere(const KMime::Message::Ptr &message, QByteArray 
         header = hrd->asUnicodeString();
     }
     if (header.isNull() || header.indexOf(QLatin1Char('@')) == -1) {
-        return QString();
+        return {};
     }
 
     headerName = "X-BeenThere";
@@ -70,7 +70,7 @@ static QString check_delivered_to(const KMime::Message::Ptr &message, QByteArray
         header = hrd->asUnicodeString();
     }
     if (header.isNull() || header.left(13) != QLatin1String("mailing list") || header.indexOf(QLatin1Char('@')) == -1) {
-        return QString();
+        return {};
     }
 
     headerName = "Delivered-To";
@@ -87,11 +87,11 @@ static QString check_x_mailing_list(const KMime::Message::Ptr &message, QByteArr
         header = hrd->asUnicodeString();
     }
     if (header.isEmpty()) {
-        return QString();
+        return {};
     }
 
     if (header.indexOf(QLatin1Char('@')) < 1) {
-        return QString();
+        return {};
     }
 
     headerName = "X-Mailing-List";
@@ -113,17 +113,17 @@ static QString check_list_id(const KMime::Message::Ptr &message, QByteArray &hea
         header = hrd->asUnicodeString();
     }
     if (header.isEmpty()) {
-        return QString();
+        return {};
     }
 
     const int leftAnglePos = header.indexOf(QLatin1Char('<'));
     if (leftAnglePos < 0) {
-        return QString();
+        return {};
     }
 
     const int firstDotPos = header.indexOf(QLatin1Char('.'), leftAnglePos);
     if (firstDotPos < 0) {
-        return QString();
+        return {};
     }
 
     headerName = "List-Id";
@@ -141,12 +141,12 @@ static QString check_list_post(const KMime::Message::Ptr &message, QByteArray &h
         header = hrd->asUnicodeString();
     }
     if (header.isEmpty()) {
-        return QString();
+        return {};
     }
 
     int leftAnglePos = header.indexOf(QLatin1String("<mailto:"));
     if (leftAnglePos < 0) {
-        return QString();
+        return {};
     }
 
     headerName = "List-Post";
@@ -165,11 +165,11 @@ static QString check_mailing_list(const KMime::Message::Ptr &message, QByteArray
         header = hrd->asUnicodeString();
     }
     if (header.isEmpty()) {
-        return QString();
+        return {};
     }
 
     if (header.left(5) != QLatin1String("list ") || header.indexOf(QLatin1Char('@')) < 5) {
-        return QString();
+        return {};
     }
 
     headerName = "Mailing-List";
@@ -187,12 +187,12 @@ static QString check_x_loop(const KMime::Message::Ptr &message, QByteArray &head
         header = hrd->asUnicodeString();
     }
     if (header.isEmpty()) {
-        return QString();
+        return {};
     }
 
     const int indexOfHeader(header.indexOf(QLatin1Char('@')));
     if (indexOfHeader < 2) {
-        return QString();
+        return {};
     }
 
     headerName = "X-Loop";
@@ -210,7 +210,7 @@ static QString check_x_ml_name(const KMime::Message::Ptr &message, QByteArray &h
         header = hrd->asUnicodeString();
     }
     if (header.isEmpty()) {
-        return QString();
+        return {};
     }
 
     headerName = "X-ML-Name";
@@ -333,7 +333,7 @@ QString MailingList::name(const KMime::Message::Ptr &message, QByteArray &header
     headerValue.clear();
 
     if (!message) {
-        return QString();
+        return {};
     }
 
     for (const MagicDetectorFunc &detector : magic_detectors) {
@@ -343,7 +343,7 @@ QString MailingList::name(const KMime::Message::Ptr &message, QByteArray &header
         }
     }
 
-    return QString();
+    return {};
 }
 
 MailingList::MailingList()
@@ -352,9 +352,8 @@ MailingList::MailingList()
 }
 
 MailingList::MailingList(const MailingList &other)
-    : d(other.d)
-{
-}
+
+    = default;
 
 MailingList &MailingList::operator=(const MailingList &other)
 {
@@ -372,9 +371,7 @@ bool MailingList::operator==(const MailingList &other) const
         && other.ownerUrls() == d->mOwnerUrls && other.archivedAtUrls() == d->mArchivedAtUrls && other.id() == d->mId;
 }
 
-MailingList::~MailingList()
-{
-}
+MailingList::~MailingList() = default;
 
 MailingList::Features MailingList::features() const
 {

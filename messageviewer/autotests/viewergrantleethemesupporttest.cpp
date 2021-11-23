@@ -18,9 +18,7 @@ ViewerGrantleeThemeSupportTest::ViewerGrantleeThemeSupportTest(QObject *parent)
 {
 }
 
-ViewerGrantleeThemeSupportTest::~ViewerGrantleeThemeSupportTest()
-{
-}
+ViewerGrantleeThemeSupportTest::~ViewerGrantleeThemeSupportTest() = default;
 
 void ViewerGrantleeThemeSupportTest::initTestCase()
 {

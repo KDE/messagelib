@@ -19,9 +19,7 @@ ModifyMessageDisplayFormatJob::ModifyMessageDisplayFormatJob(Akonadi::Session *s
 {
 }
 
-ModifyMessageDisplayFormatJob::~ModifyMessageDisplayFormatJob()
-{
-}
+ModifyMessageDisplayFormatJob::~ModifyMessageDisplayFormatJob() = default;
 
 void ModifyMessageDisplayFormatJob::setRemoteContent(bool remote)
 {

@@ -19,9 +19,7 @@ CidReferencesUrlInterceptor::CidReferencesUrlInterceptor(QObject *parent)
 {
 }
 
-CidReferencesUrlInterceptor::~CidReferencesUrlInterceptor()
-{
-}
+CidReferencesUrlInterceptor::~CidReferencesUrlInterceptor() = default;
 
 bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {

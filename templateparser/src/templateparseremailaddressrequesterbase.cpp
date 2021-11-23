@@ -12,9 +12,7 @@ TemplateParserEmailAddressRequesterBase::TemplateParserEmailAddressRequesterBase
 {
 }
 
-TemplateParserEmailAddressRequesterBase::~TemplateParserEmailAddressRequesterBase()
-{
-}
+TemplateParserEmailAddressRequesterBase::~TemplateParserEmailAddressRequesterBase() = default;
 
 QString TemplateParserEmailAddressRequesterBase::text() const
 {

@@ -21,9 +21,7 @@ SubmittedFormWarningWidget::SubmittedFormWarningWidget(QWidget *parent)
     setText(i18n("Submit form is not allowed in mailer. Please open url in a browser."));
 }
 
-SubmittedFormWarningWidget::~SubmittedFormWarningWidget()
-{
-}
+SubmittedFormWarningWidget::~SubmittedFormWarningWidget() = default;
 
 void SubmittedFormWarningWidget::showWarning()
 {

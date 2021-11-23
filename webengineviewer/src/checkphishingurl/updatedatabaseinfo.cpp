@@ -9,9 +9,7 @@
 
 using namespace WebEngineViewer;
 
-UpdateDataBaseInfo::UpdateDataBaseInfo()
-{
-}
+UpdateDataBaseInfo::UpdateDataBaseInfo() = default;
 
 bool UpdateDataBaseInfo::isValid() const
 {

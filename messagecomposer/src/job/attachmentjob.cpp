@@ -38,9 +38,7 @@ AttachmentJob::AttachmentJob(AttachmentPart::Ptr part, QObject *parent)
     d->part = part;
 }
 
-AttachmentJob::~AttachmentJob()
-{
-}
+AttachmentJob::~AttachmentJob() = default;
 
 AttachmentPart::Ptr AttachmentJob::attachmentPart() const
 {

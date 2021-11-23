@@ -18,9 +18,7 @@ Delegate::Delegate(View *pParent)
 {
 }
 
-Delegate::~Delegate()
-{
-}
+Delegate::~Delegate() = default;
 
 Item *Delegate::itemFromIndex(const QModelIndex &index) const
 {

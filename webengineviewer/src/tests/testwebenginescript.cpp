@@ -72,9 +72,7 @@ TestWebEngineScript::TestWebEngineScript(QWidget *parent)
     connect(page, &TestWebEngineScriptPage::showConsoleMessage, this, &TestWebEngineScript::slotShowConsoleMessage);
 }
 
-TestWebEngineScript::~TestWebEngineScript()
-{
-}
+TestWebEngineScript::~TestWebEngineScript() = default;
 
 void TestWebEngineScript::slotShowConsoleMessage(const QString &msg)
 {

@@ -14,9 +14,7 @@ TemplateExtractTextFromMailTest::TemplateExtractTextFromMailTest(QObject *parent
 {
 }
 
-TemplateExtractTextFromMailTest::~TemplateExtractTextFromMailTest()
-{
-}
+TemplateExtractTextFromMailTest::~TemplateExtractTextFromMailTest() = default;
 
 void TemplateExtractTextFromMailTest::shouldHaveDefaultValue()
 {

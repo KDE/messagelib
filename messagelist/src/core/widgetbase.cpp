@@ -254,7 +254,7 @@ QVector<Akonadi::MessageStatus> Widget::currentFilterStatus() const
     if (d->mFilter) {
         return d->mFilter->status();
     }
-    return QVector<Akonadi::MessageStatus>();
+    return {};
 }
 
 QString Widget::currentFilterSearchString() const
@@ -262,7 +262,7 @@ QString Widget::currentFilterSearchString() const
     if (d->mFilter) {
         return d->mFilter->searchString();
     }
-    return QString();
+    return {};
 }
 
 QString Widget::currentFilterTagId() const
@@ -271,7 +271,7 @@ QString Widget::currentFilterTagId() const
         return d->mFilter->tagId();
     }
 
-    return QString();
+    return {};
 }
 
 void Widget::WidgetPrivate::setDefaultAggregationForStorageModel(const StorageModel *storageModel)

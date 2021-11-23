@@ -56,9 +56,7 @@ namespace Interface
 class BodyPartURLHandler
 {
 public:
-    virtual ~BodyPartURLHandler()
-    {
-    }
+    virtual ~BodyPartURLHandler() = default;
 
     virtual QString name() const = 0;
     /** Called when LMB-clicking on a link in the reader. Should

@@ -41,9 +41,7 @@ ThemeDelegate::ThemeDelegate(QAbstractItemView *parent)
 {
 }
 
-ThemeDelegate::~ThemeDelegate()
-{
-}
+ThemeDelegate::~ThemeDelegate() = default;
 
 void ThemeDelegate::setTheme(const Theme *theme)
 {
@@ -566,7 +564,7 @@ static inline QSize compute_size_hint_for_row(const Theme::Row *r, int iconSize,
         compute_size_hint_for_item(const_cast<Theme::ContentItem *>(it), maxh, totalw, iconSize, item);
     }
 
-    return QSize(totalw, maxh);
+    return {totalw, maxh};
 }
 
 void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
@@ -1853,12 +1851,12 @@ QRect ThemeDelegate::hitContentItemRect() const
 QSize ThemeDelegate::sizeHintForItemTypeAndColumn(Item::Type type, int column, const Item *item) const
 {
     if (!mTheme) {
-        return QSize(16, 16); // bleah
+        return {16, 16}; // bleah
     }
 
     const Theme::Column *skcolumn = mTheme->column(column);
     if (!skcolumn) {
-        return QSize(16, 16); // bleah
+        return {16, 16}; // bleah
     }
 
     const QList<Theme::Row *> *rows; // I'd like to have it as reference, but gcc complains...
@@ -1882,7 +1880,7 @@ QSize ThemeDelegate::sizeHintForItemTypeAndColumn(Item::Type type, int column, c
         marginw = (gGroupHeaderOuterVerticalMargin + gGroupHeaderInnerVerticalMargin) << 1;
         break;
     default:
-        return QSize(16, 16); // bug
+        return {16, 16}; // bug
         break;
     }
 
@@ -1897,18 +1895,18 @@ QSize ThemeDelegate::sizeHintForItemTypeAndColumn(Item::Type type, int column, c
         }
     }
 
-    return QSize(maxw + marginw, totalh + marginh);
+    return {maxw + marginw, totalh + marginh};
 }
 
 QSize ThemeDelegate::sizeHint(const QStyleOptionViewItem &, const QModelIndex &index) const
 {
     if (!mTheme || !index.isValid()) {
-        return QSize(16, 16); // hm hm...
+        return {16, 16}; // hm hm...
     }
 
     Item *item = itemFromIndex(index);
     if (!item) {
-        return QSize(16, 16); // hm...
+        return {16, 16}; // hm...
     }
 
     const Item::Type type = item->type();
@@ -1924,7 +1922,7 @@ QSize ThemeDelegate::sizeHint(const QStyleOptionViewItem &, const QModelIndex &i
         return mCachedGroupHeaderItemSizeHint;
     } else {
         Q_ASSERT(false);
-        return QSize();
+        return {};
     }
 }
 

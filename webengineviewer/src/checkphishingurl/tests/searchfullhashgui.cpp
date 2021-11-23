@@ -50,9 +50,7 @@ SearchFullHashGui::SearchFullHashGui(QWidget *parent)
     layout->addWidget(mJson);
 }
 
-SearchFullHashGui::~SearchFullHashGui()
-{
-}
+SearchFullHashGui::~SearchFullHashGui() = default;
 
 void SearchFullHashGui::slotCheckUrl()
 {

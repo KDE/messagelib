@@ -49,9 +49,7 @@ ContentJobBase::ContentJobBase(ContentJobBasePrivate &dd, QObject *parent)
     d->init(parent);
 }
 
-ContentJobBase::~ContentJobBase()
-{
-}
+ContentJobBase::~ContentJobBase() = default;
 
 void ContentJobBase::start()
 {

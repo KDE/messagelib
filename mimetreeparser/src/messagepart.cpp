@@ -269,7 +269,7 @@ const KMime::Headers::Base *MimeTreeParser::MessagePart::header(const char *head
 QVector<KMime::Headers::Base *> MessagePart::headers(const char *headerType) const
 {
     Q_UNUSED(headerType)
-    return QVector<KMime::Headers::Base *>();
+    return {};
 }
 
 //-----MessagePartList----------------------
@@ -278,9 +278,7 @@ MessagePartList::MessagePartList(ObjectTreeParser *otp)
 {
 }
 
-MessagePartList::~MessagePartList()
-{
-}
+MessagePartList::~MessagePartList() = default;
 
 QString MessagePartList::text() const
 {
@@ -289,12 +287,12 @@ QString MessagePartList::text() const
 
 QString MessagePartList::plaintextContent() const
 {
-    return QString();
+    return {};
 }
 
 QString MessagePartList::htmlContent() const
 {
-    return QString();
+    return {};
 }
 
 //-----TextMessageBlock----------------------
@@ -313,9 +311,7 @@ TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
     parseContent();
 }
 
-TextMessagePart::~TextMessagePart()
-{
-}
+TextMessagePart::~TextMessagePart() = default;
 
 bool TextMessagePart::decryptMessage() const
 {
@@ -459,9 +455,7 @@ AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser *otp, KMime::Conte
 {
 }
 
-AttachmentMessagePart::~AttachmentMessagePart()
-{
-}
+AttachmentMessagePart::~AttachmentMessagePart() = default;
 
 //-----HtmlMessageBlock----------------------
 
@@ -480,9 +474,7 @@ HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node, In
     mCharset = NodeHelper::charset(node);
 }
 
-HtmlMessagePart::~HtmlMessagePart()
-{
-}
+HtmlMessagePart::~HtmlMessagePart() = default;
 
 void HtmlMessagePart::fix() const
 {
@@ -497,7 +489,7 @@ QString HtmlMessagePart::text() const
 
 QString MimeTreeParser::HtmlMessagePart::plaintextContent() const
 {
-    return QString();
+    return {};
 }
 
 bool HtmlMessagePart::isHtml() const
@@ -525,9 +517,7 @@ MimeMessagePart::MimeMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
     parseInternal(node, mOnlyOneMimePart);
 }
 
-MimeMessagePart::~MimeMessagePart()
-{
-}
+MimeMessagePart::~MimeMessagePart() = default;
 
 QString MimeMessagePart::text() const
 {
@@ -536,12 +526,12 @@ QString MimeMessagePart::text() const
 
 QString MimeMessagePart::plaintextContent() const
 {
-    return QString();
+    return {};
 }
 
 QString MimeMessagePart::htmlContent() const
 {
-    return QString();
+    return {};
 }
 
 //-----AlternativeMessagePart----------------------
@@ -596,9 +586,7 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
     }
 }
 
-AlternativeMessagePart::~AlternativeMessagePart()
-{
-}
+AlternativeMessagePart::~AlternativeMessagePart() = default;
 
 Util::HtmlMode AlternativeMessagePart::preferredMode() const
 {
@@ -620,7 +608,7 @@ QString AlternativeMessagePart::text() const
     if (mChildParts.contains(Util::MultipartPlain)) {
         return mChildParts[Util::MultipartPlain]->text();
     }
-    return QString();
+    return {};
 }
 
 void AlternativeMessagePart::fix() const
@@ -683,13 +671,11 @@ CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, co
     mImportResult = executor.exec(import, certData);
 }
 
-CertMessagePart::~CertMessagePart()
-{
-}
+CertMessagePart::~CertMessagePart() = default;
 
 QString CertMessagePart::text() const
 {
-    return QString();
+    return {};
 }
 
 const GpgME::ImportResult &CertMessagePart::importResult() const
@@ -717,9 +703,7 @@ SignedMessagePart::SignedMessagePart(ObjectTreeParser *otp,
     partMetaData()->status_code = GPGME_SIG_STAT_NONE;
 }
 
-SignedMessagePart::~SignedMessagePart()
-{
-}
+SignedMessagePart::~SignedMessagePart() = default;
 
 void SignedMessagePart::setIsSigned(bool isSigned)
 {
@@ -1010,7 +994,7 @@ QString SignedMessagePart::plaintextContent() const
     if (!content()) {
         return MessagePart::text();
     } else {
-        return QString();
+        return {};
     }
 }
 
@@ -1019,7 +1003,7 @@ QString SignedMessagePart::htmlContent() const
     if (!content()) {
         return MessagePart::text();
     } else {
-        return QString();
+        return {};
     }
 }
 
@@ -1054,7 +1038,7 @@ QVector<KMime::Headers::Base *> SignedMessagePart::headers(const char *headerTyp
     if (content()) {
         return content()->headersByType(headerType);
     }
-    return QVector<KMime::Headers::Base *>();
+    return {};
 }
 
 //-----CryptMessageBlock---------------------
@@ -1082,9 +1066,7 @@ EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp,
     partMetaData()->status_code = GPGME_SIG_STAT_NONE;
 }
 
-EncryptedMessagePart::~EncryptedMessagePart()
-{
-}
+EncryptedMessagePart::~EncryptedMessagePart() = default;
 
 void EncryptedMessagePart::setDecryptMessage(bool decrypt)
 {
@@ -1245,7 +1227,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
                     key = found_keys[0];
                 }
             }
-            mDecryptRecipients.push_back(std::make_pair(recipient, key));
+            mDecryptRecipients.emplace_back(recipient, key);
         }
 
         if (!bDecryptionOk && partMetaData()->isSigned) {
@@ -1349,7 +1331,7 @@ QString EncryptedMessagePart::plaintextContent() const
     if (!content()) {
         return MessagePart::text();
     } else {
-        return QString();
+        return {};
     }
 }
 
@@ -1358,7 +1340,7 @@ QString EncryptedMessagePart::htmlContent() const
     if (!content()) {
         return MessagePart::text();
     } else {
-        return QString();
+        return {};
     }
 }
 
@@ -1415,7 +1397,7 @@ QVector<KMime::Headers::Base *> EncryptedMessagePart::headers(const char *header
     if (extraContent) {
         return nodeHelper()->headers(headerType, extraContent);
     }
-    return QVector<KMime::Headers::Base *>();
+    return {};
 }
 
 EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message)
@@ -1442,9 +1424,7 @@ EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *o
     parseInternal(message.data(), false);
 }
 
-EncapsulatedRfc822MessagePart::~EncapsulatedRfc822MessagePart()
-{
-}
+EncapsulatedRfc822MessagePart::~EncapsulatedRfc822MessagePart() = default;
 
 QString EncapsulatedRfc822MessagePart::text() const
 {

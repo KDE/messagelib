@@ -14,9 +14,7 @@ WebEngineExportPdfPageJob::WebEngineExportPdfPageJob(QObject *parent)
 {
 }
 
-WebEngineExportPdfPageJob::~WebEngineExportPdfPageJob()
-{
-}
+WebEngineExportPdfPageJob::~WebEngineExportPdfPageJob() = default;
 
 void WebEngineExportPdfPageJob::start()
 {

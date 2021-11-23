@@ -12,9 +12,7 @@ BlockExternalResourcesUrlInterceptor::BlockExternalResourcesUrlInterceptor(QObje
 {
 }
 
-BlockExternalResourcesUrlInterceptor::~BlockExternalResourcesUrlInterceptor()
-{
-}
+BlockExternalResourcesUrlInterceptor::~BlockExternalResourcesUrlInterceptor() = default;
 
 void BlockExternalResourcesUrlInterceptor::setEnabled(bool enabled)
 {

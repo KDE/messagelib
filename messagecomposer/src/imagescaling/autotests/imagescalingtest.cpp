@@ -15,9 +15,7 @@ ImageScalingTest::ImageScalingTest(QObject *parent)
 {
 }
 
-ImageScalingTest::~ImageScalingTest()
-{
-}
+ImageScalingTest::~ImageScalingTest() = default;
 
 void ImageScalingTest::initTestCase()
 {

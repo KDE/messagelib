@@ -18,9 +18,7 @@ TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
     setMenu(mMenuCommand->menu());
 }
 
-TemplatesInsertCommandAction::~TemplatesInsertCommandAction()
-{
-}
+TemplatesInsertCommandAction::~TemplatesInsertCommandAction() = default;
 
 TemplatesCommandMenu::MenuTypes TemplatesInsertCommandAction::type() const
 {

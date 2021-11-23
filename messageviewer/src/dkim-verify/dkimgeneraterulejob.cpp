@@ -14,9 +14,7 @@ DKIMGenerateRuleJob::DKIMGenerateRuleJob(QObject *parent)
 {
 }
 
-DKIMGenerateRuleJob::~DKIMGenerateRuleJob()
-{
-}
+DKIMGenerateRuleJob::~DKIMGenerateRuleJob() = default;
 
 bool DKIMGenerateRuleJob::canStart() const
 {

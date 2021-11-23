@@ -14,9 +14,7 @@ SearchFullHashJobTest::SearchFullHashJobTest(QObject *parent)
 {
 }
 
-SearchFullHashJobTest::~SearchFullHashJobTest()
-{
-}
+SearchFullHashJobTest::~SearchFullHashJobTest() = default;
 
 void SearchFullHashJobTest::shouldNotBeAbleToStartWithEmptyUrl()
 {

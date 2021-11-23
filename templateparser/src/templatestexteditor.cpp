@@ -38,9 +38,7 @@ TemplatesTextEditor::TemplatesTextEditor(QWidget *parent)
     createHighlighter();
 }
 
-TemplatesTextEditor::~TemplatesTextEditor()
-{
-}
+TemplatesTextEditor::~TemplatesTextEditor() = default;
 
 void TemplatesTextEditor::updateHighLighter()
 {

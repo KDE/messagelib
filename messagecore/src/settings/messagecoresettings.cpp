@@ -19,10 +19,6 @@ MessageCoreSettings *MessageCoreSettings::self()
     return mSelf;
 }
 
-MessageCoreSettings::MessageCoreSettings()
-{
-}
+MessageCoreSettings::MessageCoreSettings() = default;
 
-MessageCoreSettings::~MessageCoreSettings()
-{
-}
+MessageCoreSettings::~MessageCoreSettings() = default;

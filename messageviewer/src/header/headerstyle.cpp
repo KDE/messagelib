@@ -20,9 +20,7 @@ using namespace MessageViewer;
 class MessageViewer::HeaderStylePrivate
 {
 public:
-    HeaderStylePrivate()
-    {
-    }
+    HeaderStylePrivate() = default;
 
     GrantleeTheme::Theme mTheme;
     const HeaderStrategy *mStrategy = nullptr;

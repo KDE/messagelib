@@ -37,9 +37,7 @@ public:
     {
     }
 
-    virtual ~ItemPrivate()
-    {
-    }
+    virtual ~ItemPrivate() = default;
 
     /**
      * Implements "in the middle" insertions of child items.

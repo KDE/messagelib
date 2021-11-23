@@ -11,9 +11,7 @@ using namespace MessageComposer;
 class MessageComposer::PluginEditorCheckBeforeSendParamsPrivate
 {
 public:
-    PluginEditorCheckBeforeSendParamsPrivate()
-    {
-    }
+    PluginEditorCheckBeforeSendParamsPrivate() = default;
 
     QString ccAddresses;
     QString bccAddresses;

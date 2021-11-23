@@ -13,6 +13,4 @@ PluginEditorInit::PluginEditorInit(QObject *parent)
 {
 }
 
-PluginEditorInit::~PluginEditorInit()
-{
-}
+PluginEditorInit::~PluginEditorInit() = default;

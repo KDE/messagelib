@@ -11,9 +11,7 @@ using namespace MessageComposer;
 class TextPart::TextPartPrivate
 {
 public:
-    TextPartPrivate()
-    {
-    }
+    TextPartPrivate() = default;
 
     KPIMTextEdit::ImageList embeddedImages;
     QString cleanPlainText;

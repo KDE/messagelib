@@ -10,9 +10,7 @@
 
 using namespace MessageViewer;
 
-DKIMHeaderParser::DKIMHeaderParser()
-{
-}
+DKIMHeaderParser::DKIMHeaderParser() = default;
 
 DKIMHeaderParser::~DKIMHeaderParser()
 {

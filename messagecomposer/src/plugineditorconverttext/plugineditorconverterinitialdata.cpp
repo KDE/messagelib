@@ -8,9 +8,7 @@
 
 using namespace MessageComposer;
 
-PluginEditorConverterInitialData::PluginEditorConverterInitialData()
-{
-}
+PluginEditorConverterInitialData::PluginEditorConverterInitialData() = default;
 
 bool PluginEditorConverterInitialData::newMessage() const
 {

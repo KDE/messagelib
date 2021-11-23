@@ -62,8 +62,6 @@ protected:
     Q_REQUIRED_RESULT virtual bool doSendQueued(int transportId) = 0;
 };
 
-inline MessageSender::~MessageSender()
-{
-}
+inline MessageSender::~MessageSender() = default;
 }
 

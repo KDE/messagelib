@@ -21,9 +21,7 @@ TrackingWarningWidget::TrackingWarningWidget(QWidget *parent)
     connect(this, &TrackingWarningWidget::linkActivated, this, &TrackingWarningWidget::slotShowDetails);
 }
 
-TrackingWarningWidget::~TrackingWarningWidget()
-{
-}
+TrackingWarningWidget::~TrackingWarningWidget() = default;
 
 void TrackingWarningWidget::slotShowDetails(const QString &content)
 {

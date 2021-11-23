@@ -15,9 +15,7 @@ CryptoBodyPartMemento::CryptoBodyPartMemento()
 {
 }
 
-CryptoBodyPartMemento::~CryptoBodyPartMemento()
-{
-}
+CryptoBodyPartMemento::~CryptoBodyPartMemento() = default;
 
 bool CryptoBodyPartMemento::isRunning() const
 {

@@ -191,9 +191,7 @@ TemplatesCommandMenu::TemplatesCommandMenu(QObject *parent)
 {
 }
 
-TemplatesCommandMenu::~TemplatesCommandMenu()
-{
-}
+TemplatesCommandMenu::~TemplatesCommandMenu() = default;
 
 QMenu *TemplatesCommandMenu::menu() const
 {

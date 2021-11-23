@@ -14,9 +14,7 @@ DKIMDownloadKeyJob::DKIMDownloadKeyJob(QObject *parent)
 {
 }
 
-DKIMDownloadKeyJob::~DKIMDownloadKeyJob()
-{
-}
+DKIMDownloadKeyJob::~DKIMDownloadKeyJob() = default;
 
 bool DKIMDownloadKeyJob::start()
 {

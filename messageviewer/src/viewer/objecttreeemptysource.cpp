@@ -24,9 +24,7 @@ namespace MessageViewer
 class EmptySourcePrivate
 {
 public:
-    EmptySourcePrivate()
-    {
-    }
+    EmptySourcePrivate() = default;
 
     bool mAllowDecryption = false;
 };
@@ -74,7 +72,7 @@ const QTextCodec *EmptySource::overrideCodec()
 QString EmptySource::createMessageHeader(KMime::Message *message)
 {
     Q_UNUSED(message)
-    return QString(); // do nothing
+    return {}; // do nothing
 }
 
 const AttachmentStrategy *EmptySource::attachmentStrategy() const

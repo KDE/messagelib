@@ -12,9 +12,7 @@ GlobalPartTest::GlobalPartTest(QObject *parent)
 {
 }
 
-GlobalPartTest::~GlobalPartTest()
-{
-}
+GlobalPartTest::~GlobalPartTest() = default;
 
 void GlobalPartTest::shouldHaveDefaultValue()
 {

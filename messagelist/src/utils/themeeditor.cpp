@@ -42,7 +42,7 @@
 
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <time.h> // for time_t
+#include <ctime> // for time_t
 
 using namespace MessageList::Utils;
 using namespace MessageList::Core;
@@ -124,9 +124,7 @@ ThemeContentItemSourceLabel::ThemeContentItemSourceLabel(QWidget *parent, Theme:
     setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 }
 
-ThemeContentItemSourceLabel::~ThemeContentItemSourceLabel()
-{
-}
+ThemeContentItemSourceLabel::~ThemeContentItemSourceLabel() = default;
 
 MessageList::Core::Theme::ContentItem::Type ThemeContentItemSourceLabel::type() const
 {
@@ -267,13 +265,11 @@ void ThemePreviewWidget::changeEvent(QEvent *event)
     QTreeWidget::changeEvent(event);
 }
 
-ThemePreviewWidget::~ThemePreviewWidget()
-{
-}
+ThemePreviewWidget::~ThemePreviewWidget() = default;
 
 QSize ThemePreviewWidget::sizeHint() const
 {
-    return QSize(350, 180);
+    return {350, 180};
 }
 
 void ThemePreviewWidget::setReadOnly(bool readOnly)
@@ -1464,9 +1460,7 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     fillViewHeaderPolicyCombo();
 }
 
-ThemeEditor::~ThemeEditor()
-{
-}
+ThemeEditor::~ThemeEditor() = default;
 
 void ThemeEditor::editTheme(Theme *set)
 {

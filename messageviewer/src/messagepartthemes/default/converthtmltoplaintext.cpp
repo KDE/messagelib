@@ -12,13 +12,9 @@
 #include <QTextDocument>
 
 using namespace MimeTreeParser;
-ConvertHtmlToPlainText::ConvertHtmlToPlainText()
-{
-}
+ConvertHtmlToPlainText::ConvertHtmlToPlainText() = default;
 
-ConvertHtmlToPlainText::~ConvertHtmlToPlainText()
-{
-}
+ConvertHtmlToPlainText::~ConvertHtmlToPlainText() = default;
 
 void ConvertHtmlToPlainText::setHtmlString(const QString &htmlString)
 {
@@ -28,7 +24,7 @@ void ConvertHtmlToPlainText::setHtmlString(const QString &htmlString)
 QString ConvertHtmlToPlainText::generatePlainText()
 {
     if (mHtmlString.isEmpty()) {
-        return QString();
+        return {};
     }
     auto pb = new KPIMTextEdit::PlainTextMarkupBuilder();
 

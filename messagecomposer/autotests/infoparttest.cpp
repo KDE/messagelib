@@ -12,9 +12,7 @@ InfoPartTest::InfoPartTest(QObject *parent)
 {
 }
 
-InfoPartTest::~InfoPartTest()
-{
-}
+InfoPartTest::~InfoPartTest() = default;
 
 void InfoPartTest::shouldHaveDefaultValue()
 {

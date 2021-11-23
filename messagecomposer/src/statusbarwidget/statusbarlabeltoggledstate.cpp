@@ -14,9 +14,7 @@ StatusBarLabelToggledState::StatusBarLabelToggledState(QWidget *parent)
     setTextFormat(Qt::PlainText);
 }
 
-StatusBarLabelToggledState::~StatusBarLabelToggledState()
-{
-}
+StatusBarLabelToggledState::~StatusBarLabelToggledState() = default;
 
 void StatusBarLabelToggledState::setStateString(const QString &toggled, const QString &untoggled)
 {

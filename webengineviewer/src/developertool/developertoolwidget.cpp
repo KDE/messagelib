@@ -27,9 +27,7 @@ DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     mWebEngineView->setPage(mEnginePage);
 }
 
-DeveloperToolWidget::~DeveloperToolWidget()
-{
-}
+DeveloperToolWidget::~DeveloperToolWidget() = default;
 
 QWebEnginePage *DeveloperToolWidget::enginePage() const
 {

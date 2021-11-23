@@ -57,7 +57,6 @@
 
 using namespace std::chrono_literals;
 
-using std::find;
 using std::for_each;
 using std::remove;
 using namespace MessageViewer;
@@ -197,7 +196,7 @@ QString BodyPartURLHandlerManager::statusBarMessage(const QUrl &url, ViewerPriva
     QString path;
     KMime::Content *node = partNodeFromXKMailUrl(url, w, &path);
     if (!node) {
-        return QString();
+        return {};
     }
 
     MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().data(), node, w->nodeHelper());
@@ -210,7 +209,7 @@ QString BodyPartURLHandlerManager::statusBarMessage(const QUrl &url, ViewerPriva
             }
         }
     }
-    return QString();
+    return {};
 }
 
 //
@@ -342,7 +341,7 @@ QString URLHandlerManager::statusBarMessage(const QUrl &url, ViewerPrivate *w) c
             return msg;
         }
     }
-    return QString();
+    return {};
 }
 
 //
@@ -421,12 +420,12 @@ QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate
         } else if (urlPath == QLatin1String("hideEncryptionDetails")) {
             return i18n("Hide encryption details.");
         } else {
-            return QString();
+            return {};
         }
     } else if (schemeStr == QLatin1String("help")) {
         return i18n("Open Documentation");
     }
-    return QString();
+    return {};
 }
 
 bool ExpandCollapseQuoteURLManager::handleClick(const QUrl &url, ViewerPrivate *w) const
@@ -464,7 +463,7 @@ QString ExpandCollapseQuoteURLManager::statusBarMessage(const QUrl &url, ViewerP
             }
         }
     }
-    return QString();
+    return {};
 }
 
 bool foundSMIMEData(const QString &aUrl, QString &displayName, QString &libName, QString &keyId)
@@ -533,7 +532,7 @@ QString SMimeURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) cons
     QString libName;
     QString keyId;
     if (!foundSMIMEData(url.path() + QLatin1Char('#') + QUrl::fromPercentEncoding(url.fragment().toLatin1()), displayName, libName, keyId)) {
-        return QString();
+        return {};
     }
     return i18n("Show certificate 0x%1", keyId);
 }
@@ -553,7 +552,7 @@ QString MailToURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) con
     if (url.scheme() == QLatin1String("mailto")) {
         return KEmailAddress::decodeMailtoUrl(url);
     }
-    return QString();
+    return {};
 }
 
 static QString searchFullEmailByUid(const QString &uid)
@@ -622,7 +621,7 @@ QString ContactUidURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *)
     if (url.scheme() == QLatin1String("uid")) {
         return i18n("Lookup the contact in KAddressbook");
     } else {
-        return QString();
+        return {};
     }
 }
 
@@ -792,7 +791,7 @@ QString AttachmentURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *w
 {
     KMime::Content *node = nodeForUrl(url, w);
     if (!node) {
-        return QString();
+        return {};
     }
     const QString name = MimeTreeParser::NodeHelper::fileName(node);
     if (!name.isEmpty()) {
@@ -810,7 +809,7 @@ QString AttachmentURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *w
 static QString extractAuditLog(const QUrl &url)
 {
     if (url.scheme() != QLatin1String("kmail") || url.path() != QLatin1String("showAuditLog")) {
-        return QString();
+        return {};
     }
     QUrlQuery query(url);
     Q_ASSERT(!query.queryItemValue(QStringLiteral("log")).isEmpty());
@@ -837,7 +836,7 @@ bool ShowAuditLogURLHandler::handleContextMenuRequest(const QUrl &url, const QPo
 QString ShowAuditLogURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
     if (extractAuditLog(url).isEmpty()) {
-        return QString();
+        return {};
     } else {
         return i18n("Show GnuPG Audit Log for this operation");
     }

@@ -8,10 +8,6 @@
 
 #include "bodypart.h"
 
-MimeTreeParser::Interface::BodyPartMemento::~BodyPartMemento()
-{
-}
+MimeTreeParser::Interface::BodyPartMemento::~BodyPartMemento() = default;
 
-MimeTreeParser::Interface::BodyPart::~BodyPart()
-{
-}
+MimeTreeParser::Interface::BodyPart::~BodyPart() = default;

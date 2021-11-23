@@ -35,9 +35,7 @@ CreatePhishingUrlDataBaseJobTest::CreatePhishingUrlDataBaseJobTest(QObject *pare
     webengineview_useCompactJson_CreatePhishingUrlDataBaseJob = true;
 }
 
-CreatePhishingUrlDataBaseJobTest::~CreatePhishingUrlDataBaseJobTest()
-{
-}
+CreatePhishingUrlDataBaseJobTest::~CreatePhishingUrlDataBaseJobTest() = default;
 
 void CreatePhishingUrlDataBaseJobTest::initTestCase()
 {

@@ -68,9 +68,7 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     hButtonBox->addWidget(printPreview);
 }
 
-TestMailWebEngine::~TestMailWebEngine()
-{
-}
+TestMailWebEngine::~TestMailWebEngine() = default;
 
 void TestMailWebEngine::slotOpenUrl(const QUrl &url)
 {

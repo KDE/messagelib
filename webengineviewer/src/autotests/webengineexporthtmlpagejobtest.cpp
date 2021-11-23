@@ -14,9 +14,7 @@ WebEngineExportHtmlPageJobTest::WebEngineExportHtmlPageJobTest(QObject *parent)
 {
 }
 
-WebEngineExportHtmlPageJobTest::~WebEngineExportHtmlPageJobTest()
-{
-}
+WebEngineExportHtmlPageJobTest::~WebEngineExportHtmlPageJobTest() = default;
 
 void WebEngineExportHtmlPageJobTest::shouldHaveDefaultValue()
 {

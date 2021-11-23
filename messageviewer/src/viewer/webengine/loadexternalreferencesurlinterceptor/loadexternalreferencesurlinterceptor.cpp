@@ -14,9 +14,7 @@ LoadExternalReferencesUrlInterceptor::LoadExternalReferencesUrlInterceptor(QObje
 {
 }
 
-LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor()
-{
-}
+LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor() = default;
 bool LoadExternalReferencesUrlInterceptor::urlIsBlocked(const QUrl &requestedUrl)
 {
     const QUrl url = requestedUrl.adjusted(QUrl::RemovePath | QUrl::RemovePort | QUrl::RemoveQuery);

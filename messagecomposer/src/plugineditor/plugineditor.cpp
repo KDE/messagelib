@@ -11,9 +11,7 @@ using namespace MessageComposer;
 class MessageComposer::PluginEditorPrivate
 {
 public:
-    PluginEditorPrivate()
-    {
-    }
+    PluginEditorPrivate() = default;
 
     int order = 0;
 };

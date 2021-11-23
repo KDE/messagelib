@@ -13,9 +13,7 @@
 using namespace WebEngineViewer;
 
 struct HashCacheInfo {
-    HashCacheInfo()
-    {
-    }
+    HashCacheInfo() = default;
 
     Q_REQUIRED_RESULT bool isValid() const;
     HashCacheManager::UrlStatus status = HashCacheManager::Unknown;

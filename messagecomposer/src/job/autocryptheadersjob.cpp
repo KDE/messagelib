@@ -142,9 +142,7 @@ AutocryptHeadersJob::AutocryptHeadersJob(QObject *parent)
 {
 }
 
-AutocryptHeadersJob::~AutocryptHeadersJob()
-{
-}
+AutocryptHeadersJob::~AutocryptHeadersJob() = default;
 
 void AutocryptHeadersJob::setContent(KMime::Content *content)
 {

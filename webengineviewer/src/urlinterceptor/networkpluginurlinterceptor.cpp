@@ -13,9 +13,7 @@ NetworkPluginUrlInterceptor::NetworkPluginUrlInterceptor(QObject *parent)
 {
 }
 
-NetworkPluginUrlInterceptor::~NetworkPluginUrlInterceptor()
-{
-}
+NetworkPluginUrlInterceptor::~NetworkPluginUrlInterceptor() = default;
 
 bool NetworkPluginUrlInterceptor::hasConfigureDialog() const
 {

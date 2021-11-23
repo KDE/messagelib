@@ -48,7 +48,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     KMime::Content *curNode = part.content();
 
     if (!isMailmanMessage(curNode)) {
-        return MessagePart::Ptr();
+        return {};
     }
 
     // Latin1 or utf8 ?
@@ -66,7 +66,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         thisDelim = str.indexOf(delim2, Qt::CaseInsensitive);
     }
     if (thisDelim == -1) {
-        return MessagePart::Ptr();
+        return {};
     }
 
     int nextDelim = str.indexOf(delim1, thisDelim + 1, Qt::CaseInsensitive);
@@ -80,7 +80,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         nextDelim = str.indexOf(delimZ2, thisDelim + 1, Qt::CaseInsensitive);
     }
     if (nextDelim < 0) {
-        return MessagePart::Ptr();
+        return {};
     }
 
     // if ( curNode->mRoot )

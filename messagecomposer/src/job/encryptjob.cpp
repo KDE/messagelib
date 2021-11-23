@@ -77,9 +77,7 @@ EncryptJob::EncryptJob(QObject *parent)
 {
 }
 
-EncryptJob::~EncryptJob()
-{
-}
+EncryptJob::~EncryptJob() = default;
 
 void EncryptJob::setContent(KMime::Content *content)
 {

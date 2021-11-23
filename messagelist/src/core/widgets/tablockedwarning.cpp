@@ -19,9 +19,7 @@ TabLockedWarning::TabLockedWarning(QWidget *parent)
     connect(this, &TabLockedWarning::linkActivated, this, &TabLockedWarning::slotLinkActivated);
 }
 
-TabLockedWarning::~TabLockedWarning()
-{
-}
+TabLockedWarning::~TabLockedWarning() = default;
 
 void TabLockedWarning::slotLinkActivated(const QString &contents)
 {

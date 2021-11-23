@@ -454,9 +454,7 @@ CustomTemplateItemDelegate::CustomTemplateItemDelegate(QObject *parent)
 {
 }
 
-CustomTemplateItemDelegate::~CustomTemplateItemDelegate()
-{
-}
+CustomTemplateItemDelegate::~CustomTemplateItemDelegate() = default;
 
 void CustomTemplateItemDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
 {
@@ -493,9 +491,7 @@ CustomTemplateItem::CustomTemplateItem(QTreeWidget *parent,
     setFlags(flags() | Qt::ItemIsEditable);
 }
 
-CustomTemplateItem::~CustomTemplateItem()
-{
-}
+CustomTemplateItem::~CustomTemplateItem() = default;
 
 void CustomTemplateItem::setCustomType(CustomTemplates::Type type)
 {

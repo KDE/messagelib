@@ -18,9 +18,7 @@ WebEngineManageScript::WebEngineManageScript(QObject *parent)
 {
 }
 
-WebEngineManageScript::~WebEngineManageScript()
-{
-}
+WebEngineManageScript::~WebEngineManageScript() = default;
 
 void WebEngineManageScript::addScript(QWebEngineProfile *profile,
                                       const QString &source,

@@ -13,9 +13,7 @@ DKIMManageRulesComboBox::DKIMManageRulesComboBox(QWidget *parent)
     init();
 }
 
-DKIMManageRulesComboBox::~DKIMManageRulesComboBox()
-{
-}
+DKIMManageRulesComboBox::~DKIMManageRulesComboBox() = default;
 
 void DKIMManageRulesComboBox::init()
 {

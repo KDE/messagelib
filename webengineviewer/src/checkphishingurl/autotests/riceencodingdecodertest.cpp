@@ -14,9 +14,7 @@ RiceEncodingDecoderTest::RiceEncodingDecoderTest(QObject *parent)
 {
 }
 
-RiceEncodingDecoderTest::~RiceEncodingDecoderTest()
-{
-}
+RiceEncodingDecoderTest::~RiceEncodingDecoderTest() = default;
 
 void RiceEncodingDecoderTest::shouldDecodeRiceIndices_data()
 {

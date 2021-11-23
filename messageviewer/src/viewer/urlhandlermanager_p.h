@@ -49,9 +49,7 @@ public:
     {
     }
 
-    ~KMailProtocolURLHandler() override
-    {
-    }
+    ~KMailProtocolURLHandler() override = default;
 
     Q_REQUIRED_RESULT bool handleClick(const QUrl &, ViewerPrivate *) const override;
     Q_REQUIRED_RESULT bool handleContextMenuRequest(const QUrl &url, const QPoint &, ViewerPrivate *) const override
@@ -70,9 +68,7 @@ public:
     {
     }
 
-    ~ExpandCollapseQuoteURLManager() override
-    {
-    }
+    ~ExpandCollapseQuoteURLManager() override = default;
 
     Q_REQUIRED_RESULT bool handleClick(const QUrl &, ViewerPrivate *) const override;
     Q_REQUIRED_RESULT bool handleDrag(const QUrl &url, ViewerPrivate *window) const override;
@@ -92,9 +88,7 @@ public:
     {
     }
 
-    ~SMimeURLHandler() override
-    {
-    }
+    ~SMimeURLHandler() override = default;
 
     Q_REQUIRED_RESULT bool handleClick(const QUrl &, ViewerPrivate *) const override;
     Q_REQUIRED_RESULT bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const override
@@ -113,9 +107,7 @@ public:
     {
     }
 
-    ~MailToURLHandler() override
-    {
-    }
+    ~MailToURLHandler() override = default;
 
     Q_REQUIRED_RESULT bool handleClick(const QUrl &, ViewerPrivate *) const override
     {
@@ -138,9 +130,7 @@ public:
     {
     }
 
-    ~ContactUidURLHandler() override
-    {
-    }
+    ~ContactUidURLHandler() override = default;
 
     Q_REQUIRED_RESULT bool handleClick(const QUrl &, ViewerPrivate *) const override;
     Q_REQUIRED_RESULT bool handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *) const override;
@@ -155,9 +145,7 @@ public:
     {
     }
 
-    ~HtmlAnchorHandler() override
-    {
-    }
+    ~HtmlAnchorHandler() override = default;
 
     Q_REQUIRED_RESULT bool handleClick(const QUrl &, ViewerPrivate *) const override;
     Q_REQUIRED_RESULT bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const override
@@ -167,7 +155,7 @@ public:
 
     Q_REQUIRED_RESULT QString statusBarMessage(const QUrl &, ViewerPrivate *) const override
     {
-        return QString();
+        return {};
     }
 };
 
@@ -179,9 +167,7 @@ public:
     {
     }
 
-    ~AttachmentURLHandler() override
-    {
-    }
+    ~AttachmentURLHandler() override = default;
 
     Q_REQUIRED_RESULT bool handleClick(const QUrl &, ViewerPrivate *) const override;
     Q_REQUIRED_RESULT bool handleShiftClick(const QUrl &, ViewerPrivate *window) const override;
@@ -203,9 +189,7 @@ public:
     {
     }
 
-    ~ShowAuditLogURLHandler() override
-    {
-    }
+    ~ShowAuditLogURLHandler() override = default;
 
     Q_REQUIRED_RESULT bool handleClick(const QUrl &, ViewerPrivate *) const override;
     Q_REQUIRED_RESULT bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const override;
@@ -223,9 +207,7 @@ public:
     {
     }
 
-    ~InternalImageURLHandler() override
-    {
-    }
+    ~InternalImageURLHandler() override = default;
 
     Q_REQUIRED_RESULT bool handleDrag(const QUrl &url, ViewerPrivate *window) const override;
     Q_REQUIRED_RESULT bool willHandleDrag(const QUrl &url, ViewerPrivate *window) const override;
@@ -241,7 +223,7 @@ public:
 
     Q_REQUIRED_RESULT QString statusBarMessage(const QUrl &, ViewerPrivate *) const override
     {
-        return QString();
+        return {};
     }
 };
 
@@ -253,9 +235,7 @@ public:
     {
     }
 
-    ~EmbeddedImageURLHandler() override
-    {
-    }
+    ~EmbeddedImageURLHandler() override = default;
 
     Q_REQUIRED_RESULT bool handleDrag(const QUrl &url, ViewerPrivate *window) const override;
     Q_REQUIRED_RESULT bool willHandleDrag(const QUrl &url, ViewerPrivate *window) const override;
@@ -272,7 +252,7 @@ public:
     Q_REQUIRED_RESULT QString statusBarMessage(const QUrl &url, ViewerPrivate *) const override
     {
         Q_UNUSED(url)
-        return QString();
+        return {};
     }
 };
 
@@ -284,9 +264,7 @@ public:
     {
     }
 
-    ~KRunURLHandler() override
-    {
-    }
+    ~KRunURLHandler() override = default;
 
     Q_REQUIRED_RESULT bool handleClick(const QUrl &, ViewerPrivate *) const override;
     Q_REQUIRED_RESULT bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const override
@@ -296,7 +274,7 @@ public:
 
     Q_REQUIRED_RESULT QString statusBarMessage(const QUrl &, ViewerPrivate *) const override
     {
-        return QString();
+        return {};
     }
 };
 }

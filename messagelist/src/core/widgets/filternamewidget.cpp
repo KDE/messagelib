@@ -40,9 +40,7 @@ FilterNameWidget::FilterNameWidget(QWidget *parent)
     });
 }
 
-FilterNameWidget::~FilterNameWidget()
-{
-}
+FilterNameWidget::~FilterNameWidget() = default;
 
 void FilterNameWidget::setFilterName(const QString &str)
 {

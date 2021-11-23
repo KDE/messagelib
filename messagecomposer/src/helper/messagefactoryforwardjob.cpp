@@ -16,9 +16,7 @@ MessageFactoryForwardJob::MessageFactoryForwardJob(QObject *parent)
 {
 }
 
-MessageFactoryForwardJob::~MessageFactoryForwardJob()
-{
-}
+MessageFactoryForwardJob::~MessageFactoryForwardJob() = default;
 
 void MessageFactoryForwardJob::start()
 {

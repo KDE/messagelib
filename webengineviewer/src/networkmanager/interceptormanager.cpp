@@ -15,9 +15,7 @@ using namespace WebEngineViewer;
 class WebEngineViewer::NetworkAccessManagerWebEnginePrivate
 {
 public:
-    NetworkAccessManagerWebEnginePrivate()
-    {
-    }
+    NetworkAccessManagerWebEnginePrivate() = default;
 
     WebEngineViewer::NetworkUrlInterceptorManager *mManager = nullptr;
     WebEngineViewer::NetworkUrlInterceptor *mNetworkUrlInterceptor = nullptr;

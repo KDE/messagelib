@@ -13,9 +13,7 @@ PluginEditorConvertText::PluginEditorConvertText(QObject *parent)
 {
 }
 
-PluginEditorConvertText::~PluginEditorConvertText()
-{
-}
+PluginEditorConvertText::~PluginEditorConvertText() = default;
 
 bool PluginEditorConvertText::canWorkOnHtml() const
 {

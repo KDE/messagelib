@@ -14,9 +14,7 @@ WebEngineNavigationRequestInterceptor::WebEngineNavigationRequestInterceptor(QWe
 {
 }
 
-WebEngineNavigationRequestInterceptor::~WebEngineNavigationRequestInterceptor()
-{
-}
+WebEngineNavigationRequestInterceptor::~WebEngineNavigationRequestInterceptor() = default;
 
 bool WebEngineNavigationRequestInterceptor::acceptNavigationRequest(const QUrl &url, QWebEnginePage::NavigationType type, bool isMainFrame)
 {

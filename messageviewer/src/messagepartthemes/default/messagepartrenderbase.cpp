@@ -10,10 +10,6 @@ using namespace MessageViewer;
 
 RenderContext::~RenderContext() = default;
 
-MessagePartRendererBase::MessagePartRendererBase()
-{
-}
+MessagePartRendererBase::MessagePartRendererBase() = default;
 
-MessagePartRendererBase::~MessagePartRendererBase()
-{
-}
+MessagePartRendererBase::~MessagePartRendererBase() = default;

@@ -48,9 +48,7 @@ TestMailWebEngineSelection::TestMailWebEngineSelection(QWidget *parent)
     hButtonBox->addWidget(showSelection);
 }
 
-TestMailWebEngineSelection::~TestMailWebEngineSelection()
-{
-}
+TestMailWebEngineSelection::~TestMailWebEngineSelection() = default;
 
 void TestMailWebEngineSelection::slotSwitchHtml()
 {

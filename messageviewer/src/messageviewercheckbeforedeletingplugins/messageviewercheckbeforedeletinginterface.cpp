@@ -14,9 +14,7 @@ using namespace MessageViewer;
 class MessageViewer::MessageViewerCheckBeforeDeletingInterfacePrivate
 {
 public:
-    MessageViewerCheckBeforeDeletingInterfacePrivate()
-    {
-    }
+    MessageViewerCheckBeforeDeletingInterfacePrivate() = default;
 
     MessageViewer::MessageViewerCheckBeforeDeletingParameters parameters;
     QWidget *mParentWidget = nullptr;

@@ -58,7 +58,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::loo
                                                                        QStringLiteral("Full") + name + QStringLiteral("AddressList"));
         return val;
     }
-    return QVariant();
+    return {};
 }
 }
 
@@ -108,7 +108,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::loo
                                                                        QStringLiteral("Full") + name + QStringLiteral("AddressList"));
         return val;
     }
-    return QVariant();
+    return {};
 }
 }
 
@@ -151,7 +151,7 @@ template<> inline QVariant TypeAccessor<QDateTime &>::lookUp(const QDateTime &ob
     } else if (property == QLatin1String("localelong")) {
         dateFormat = MessageViewer::HeaderStyleUtil::LongDate;
     } else {
-        return QVariant();
+        return {};
     }
 
     return HeaderStyleUtil::strToHtml(HeaderStyleUtil::dateString(object, dateFormat));
@@ -161,9 +161,7 @@ template<> inline QVariant TypeAccessor<QDateTime &>::lookUp(const QDateTime &ob
 class Q_DECL_HIDDEN HeaderFormatter
 {
 public:
-    virtual ~HeaderFormatter()
-    {
-    }
+    virtual ~HeaderFormatter() = default;
 
     virtual QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) = 0;
     virtual QString i18nName() = 0;
@@ -182,7 +180,7 @@ public:
         if (header == "list-id") {
             return i18n("List-Id:");
         } else {
-            return QString();
+            return {};
         }
     }
 
@@ -260,7 +258,7 @@ public:
         } else if (header == "resent-To") {
             return i18n("resent to:");
         } else {
-            return QString();
+            return {};
         }
     }
 

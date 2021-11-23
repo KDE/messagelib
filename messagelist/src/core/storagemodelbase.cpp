@@ -17,9 +17,7 @@ StorageModel::StorageModel(QObject *parent)
 {
 }
 
-StorageModel::~StorageModel()
-{
-}
+StorageModel::~StorageModel() = default;
 
 int StorageModel::initialUnreadRowCountGuess() const
 {

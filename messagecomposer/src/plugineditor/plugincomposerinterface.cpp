@@ -12,9 +12,7 @@
 #include <MessageComposer/ConvertSnippetVariablesJob>
 using namespace MessageComposer;
 
-PluginComposerInterface::PluginComposerInterface()
-{
-}
+PluginComposerInterface::PluginComposerInterface() = default;
 
 PluginComposerInterface::~PluginComposerInterface()
 {

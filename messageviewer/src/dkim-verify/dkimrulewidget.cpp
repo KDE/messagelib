@@ -60,9 +60,7 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     layout->addRow(i18n("Priority:"), mPriority);
 }
 
-DKIMRuleWidget::~DKIMRuleWidget()
-{
-}
+DKIMRuleWidget::~DKIMRuleWidget() = default;
 
 void DKIMRuleWidget::updateOkButton()
 {

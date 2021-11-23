@@ -66,7 +66,7 @@ KMime::Message::Ptr messageForItem(const Akonadi::Item &item)
 {
     if (!item.hasPayload<KMime::Message::Ptr>()) {
         qCWarning(MESSAGELIST_LOG) << "Not a message" << item.id() << item.remoteId() << item.mimeType();
-        return KMime::Message::Ptr();
+        return {};
     }
     return item.payload<KMime::Message::Ptr>();
 }
@@ -259,7 +259,7 @@ static QByteArray md5Encode(const QByteArray &str)
 {
     auto trimmed = str.trimmed();
     if (trimmed.isEmpty()) {
-        return QByteArray();
+        return {};
     }
 
     QCryptographicHash c(QCryptographicHash::Md5);
@@ -271,7 +271,7 @@ static QByteArray md5Encode(const QString &str)
 {
     auto trimmed = str.trimmed();
     if (trimmed.isEmpty()) {
-        return QByteArray();
+        return {};
     }
 
     QCryptographicHash c(QCryptographicHash::Md5);
@@ -364,7 +364,7 @@ QVariant MessageList::StorageModel::data(const QModelIndex &index, int role) con
     Q_UNUSED(index)
     Q_UNUSED(role)
 
-    return QVariant();
+    return {};
 }
 
 int MessageList::StorageModel::columnCount(const QModelIndex &parent) const
@@ -380,13 +380,13 @@ QModelIndex MessageList::StorageModel::index(int row, int column, const QModelIn
     if (!parent.isValid()) {
         return createIndex(row, column, (void *)nullptr);
     }
-    return QModelIndex(); // this model is flat.
+    return {}; // this model is flat.
 }
 
 QModelIndex MessageList::StorageModel::parent(const QModelIndex &index) const
 {
     Q_UNUSED(index)
-    return QModelIndex(); // this model is flat.
+    return {}; // this model is flat.
 }
 
 int MessageList::StorageModel::rowCount(const QModelIndex &parent) const
@@ -496,7 +496,7 @@ Akonadi::Collection MessageList::StorageModel::collectionForId(Akonadi::Collecti
             }
         }
     }
-    return Akonadi::Collection();
+    return {};
 }
 
 void MessageList::StorageModel::resetModelStorage()

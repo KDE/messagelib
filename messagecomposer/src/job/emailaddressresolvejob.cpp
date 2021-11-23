@@ -24,9 +24,7 @@ using namespace MessageComposer;
 class MessageComposer::EmailAddressResolveJobPrivate
 {
 public:
-    EmailAddressResolveJobPrivate()
-    {
-    }
+    EmailAddressResolveJobPrivate() = default;
 
     QVariantMap mResultMap;
     QString mFrom;

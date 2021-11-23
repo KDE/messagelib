@@ -32,9 +32,7 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
                        "so you want to move your cursor to the desired insertion point first."));
 }
 
-TemplatesInsertCommandPushButton::~TemplatesInsertCommandPushButton()
-{
-}
+TemplatesInsertCommandPushButton::~TemplatesInsertCommandPushButton() = default;
 
 TemplatesCommandMenu::MenuTypes TemplatesInsertCommandPushButton::type() const
 {

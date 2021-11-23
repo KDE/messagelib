@@ -33,7 +33,7 @@
 #include <gpgme++/verificationresult.h>
 
 #include <KCharsets>
-#include <stdlib.h>
+#include <cstdlib>
 
 #include <QTest>
 #include <decryptionresult.h>

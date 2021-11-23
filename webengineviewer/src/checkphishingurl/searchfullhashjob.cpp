@@ -20,9 +20,7 @@ WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_SearchFullHashJob = tru
 class WebEngineViewer::SearchFullHashJobPrivate
 {
 public:
-    SearchFullHashJobPrivate()
-    {
-    }
+    SearchFullHashJobPrivate() = default;
 
     Q_REQUIRED_RESULT bool foundExactHash(const QList<QByteArray> &listLongHash);
     QHash<QByteArray, QByteArray> mHashs;

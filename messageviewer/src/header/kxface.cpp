@@ -17,8 +17,8 @@
 #include <QRegularExpression>
 #include <QString>
 
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 
 #define GEN(g)                                                                                                                                                 \
     F[h] ^= G.g[k];                                                                                                                                            \
@@ -64,14 +64,12 @@ KXFace::KXFace()
     NumProbs = 0;
 }
 
-KXFace::~KXFace()
-{
-}
+KXFace::~KXFace() = default;
 
 QString KXFace::fromImage(const QImage &image)
 {
     if (image.isNull()) {
-        return QString();
+        return {};
     }
 
     QImage scaledImg = image.scaled(48, 48, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
@@ -159,7 +157,7 @@ QString KXFace::fromImage(const QImage &image)
 QImage KXFace::toImage(const QString &xface)
 {
     if (xface.length() > MAX_XFACE_LENGTH) {
-        return QImage();
+        return {};
     }
 
     char *fbuf = (char *)malloc(MAX_XFACE_LENGTH);

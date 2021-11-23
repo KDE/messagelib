@@ -23,9 +23,7 @@ namespace MessageViewer
  * @author Laurent Montel <montel@kde.org>
  */
 struct MESSAGEVIEWER_EXPORT KeyInfo {
-    KeyInfo()
-    {
-    }
+    KeyInfo() = default;
 
     KeyInfo(const QString &key, const QString &sel, const QString &dom, const QDateTime &storedAt = {}, const QDateTime &lastUsed = {})
         : keyValue(key)

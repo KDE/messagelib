@@ -234,7 +234,7 @@ void AttachmentModel::setSignSelected(bool selected)
 QVariant AttachmentModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
-        return QVariant();
+        return {};
     }
 
     const AttachmentPart::Ptr part = d->parts.at(index.row());
@@ -250,7 +250,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
         case MimeTypeColumn:
             return QVariant::fromValue(part->mimeType());
         default:
-            return QVariant();
+            return {};
         }
     } else if (role == Qt::ToolTipRole) {
         return QVariant::fromValue(i18nc("@info:tooltip",
@@ -270,14 +270,14 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
         case AutoDisplayColumn:
             return QVariant::fromValue(int(boolToCheckState(part->isInline())));
         default:
-            return QVariant();
+            return {};
         }
     } else if (role == AttachmentPartRole) {
         if (index.column() == 0) {
             return QVariant::fromValue(part);
         } else {
             qCWarning(MESSAGECOMPOSER_LOG) << "AttachmentPartRole and column != 0.";
-            return QVariant();
+            return {};
         }
     } else if (role == NameRole) {
         return QVariant::fromValue(part->fileName().isEmpty() ? part->name() : part->fileName());
@@ -296,7 +296,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
     } else if (role == AutoDisplayRole) {
         return QVariant::fromValue(part->isInline());
     } else {
-        return QVariant();
+        return {};
     }
 }
 
@@ -432,7 +432,7 @@ Qt::ItemFlags AttachmentModel::flags(const QModelIndex &index) const
 QVariant AttachmentModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     if (orientation != Qt::Horizontal || role != Qt::DisplayRole) {
-        return QVariant();
+        return {};
     }
 
     switch (section) {
@@ -454,20 +454,20 @@ QVariant AttachmentModel::headerData(int section, Qt::Orientation orientation, i
         return i18nc("@title column attachment inlined checkbox.", "Suggest Automatic Display");
     default:
         qCWarning(MESSAGECOMPOSER_LOG) << "Bad column" << section;
-        return QVariant();
+        return {};
     }
 }
 
 QModelIndex AttachmentModel::index(int row, int column, const QModelIndex &parent) const
 {
     if (!hasIndex(row, column, parent)) {
-        return QModelIndex();
+        return {};
     }
     Q_ASSERT(row >= 0 && row < rowCount());
 
     if (parent.isValid()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "Called with weird parent.";
-        return QModelIndex();
+        return {};
     }
 
     return createIndex(row, column);
@@ -476,7 +476,7 @@ QModelIndex AttachmentModel::index(int row, int column, const QModelIndex &paren
 QModelIndex AttachmentModel::parent(const QModelIndex &index) const
 {
     Q_UNUSED(index)
-    return QModelIndex(); // No parent.
+    return {}; // No parent.
 }
 
 int AttachmentModel::rowCount(const QModelIndex &parent) const

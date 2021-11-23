@@ -38,6 +38,4 @@ TemplateWebEnginePage::TemplateWebEnginePage(QObject *parent)
     profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
 }
 
-TemplateWebEnginePage::~TemplateWebEnginePage()
-{
-}
+TemplateWebEnginePage::~TemplateWebEnginePage() = default;

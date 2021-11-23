@@ -13,11 +13,9 @@ PluginEditorConfigureBaseWidget::PluginEditorConfigureBaseWidget(QWidget *parent
 {
 }
 
-PluginEditorConfigureBaseWidget::~PluginEditorConfigureBaseWidget()
-{
-}
+PluginEditorConfigureBaseWidget::~PluginEditorConfigureBaseWidget() = default;
 
 QString PluginEditorConfigureBaseWidget::helpAnchor() const
 {
-    return QString();
+    return {};
 }

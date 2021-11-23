@@ -13,9 +13,7 @@ WebEngineEmbedPart::WebEngineEmbedPart(QObject *parent)
 {
 }
 
-WebEngineEmbedPart::~WebEngineEmbedPart()
-{
-}
+WebEngineEmbedPart::~WebEngineEmbedPart() = default;
 
 WebEngineEmbedPart *WebEngineEmbedPart::self()
 {

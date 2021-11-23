@@ -19,9 +19,7 @@ RichTextComposerNgTest::RichTextComposerNgTest(QObject *parent)
 {
 }
 
-RichTextComposerNgTest::~RichTextComposerNgTest()
-{
-}
+RichTextComposerNgTest::~RichTextComposerNgTest() = default;
 
 void RichTextComposerNgTest::shouldHaveDefaultValue()
 {

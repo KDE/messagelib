@@ -17,9 +17,7 @@ AttachmentTemporaryFilesDirsTest::AttachmentTemporaryFilesDirsTest(QObject *pare
 {
 }
 
-AttachmentTemporaryFilesDirsTest::~AttachmentTemporaryFilesDirsTest()
-{
-}
+AttachmentTemporaryFilesDirsTest::~AttachmentTemporaryFilesDirsTest() = default;
 
 void AttachmentTemporaryFilesDirsTest::shouldHaveDefaultValue()
 {

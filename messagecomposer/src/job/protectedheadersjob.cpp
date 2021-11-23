@@ -38,9 +38,7 @@ ProtectedHeadersJob::ProtectedHeadersJob(QObject *parent)
 {
 }
 
-ProtectedHeadersJob::~ProtectedHeadersJob()
-{
-}
+ProtectedHeadersJob::~ProtectedHeadersJob() = default;
 
 void ProtectedHeadersJob::setContent(KMime::Content *content)
 {

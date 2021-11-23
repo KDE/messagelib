@@ -14,9 +14,7 @@ UrlHashingTest::UrlHashingTest(QObject *parent)
 {
 }
 
-UrlHashingTest::~UrlHashingTest()
-{
-}
+UrlHashingTest::~UrlHashingTest() = default;
 
 void UrlHashingTest::shouldCanonicalizeUrl_data()
 {

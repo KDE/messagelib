@@ -18,9 +18,7 @@ public:
     {
     }
 
-    virtual ~JobBasePrivate()
-    {
-    }
+    virtual ~JobBasePrivate() = default;
 
     JobBase *q_ptr;
     Q_DECLARE_PUBLIC(JobBase)

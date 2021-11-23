@@ -32,9 +32,7 @@ FilterNameDialog::FilterNameDialog(QWidget *parent)
     connect(mFilterNameWidget, &FilterNameWidget::updateOkButton, okButton, &QPushButton::setEnabled);
 }
 
-FilterNameDialog::~FilterNameDialog()
-{
-}
+FilterNameDialog::~FilterNameDialog() = default;
 
 void FilterNameDialog::setFilterName(const QString &str)
 {

@@ -10,9 +10,7 @@ using namespace MessageViewer;
 class MessageViewer::MessageViewerConfigureSettingsPluginPrivate
 {
 public:
-    MessageViewerConfigureSettingsPluginPrivate()
-    {
-    }
+    MessageViewerConfigureSettingsPluginPrivate() = default;
 };
 
 MessageViewerConfigureSettingsPlugin::MessageViewerConfigureSettingsPlugin(QObject *parent)

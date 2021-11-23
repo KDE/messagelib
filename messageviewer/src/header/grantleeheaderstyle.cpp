@@ -44,7 +44,7 @@ const char *GrantleeHeaderStyle::name() const
 QString GrantleeHeaderStyle::format(KMime::Message *message) const
 {
     if (!message) {
-        return QString();
+        return {};
     }
 
     GrantleeHeaderFormatter::GrantleeHeaderFormatterSettings settings;

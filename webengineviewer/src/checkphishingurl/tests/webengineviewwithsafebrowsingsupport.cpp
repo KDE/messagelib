@@ -39,9 +39,7 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
     layout->addWidget(mDebug);
 }
 
-WebEngineViewWithSafeBrowsingSupport::~WebEngineViewWithSafeBrowsingSupport()
-{
-}
+WebEngineViewWithSafeBrowsingSupport::~WebEngineViewWithSafeBrowsingSupport() = default;
 
 void WebEngineViewWithSafeBrowsingSupport::slotUrlClicked(const QUrl &url)
 {

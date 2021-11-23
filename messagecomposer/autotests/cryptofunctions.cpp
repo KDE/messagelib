@@ -20,8 +20,8 @@
 #include <MessageCore/NodeHelper>
 
 #include <QTest>
+#include <cstdlib>
 #include <gpgme++/keylistresult.h>
-#include <stdlib.h>
 
 using namespace MessageComposer;
 

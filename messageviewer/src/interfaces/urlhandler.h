@@ -29,9 +29,7 @@ namespace MimeTreeParser
 class URLHandler
 {
 public:
-    virtual ~URLHandler()
-    {
-    }
+    virtual ~URLHandler() = default;
 
     /**
      * Called when LMB-clicking on a link in the reader. Should start

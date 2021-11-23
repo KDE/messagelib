@@ -32,9 +32,7 @@ ShowNextMessageWidget::ShowNextMessageWidget(QWidget *parent)
     setMaximumHeight(mNextMessage->height() + 4);
 }
 
-ShowNextMessageWidget::~ShowNextMessageWidget()
-{
-}
+ShowNextMessageWidget::~ShowNextMessageWidget() = default;
 
 void ShowNextMessageWidget::updateButton(bool hasPreviousMessage, bool hasNextMessage)
 {

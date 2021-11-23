@@ -26,9 +26,7 @@ TestMailDndAttachment::TestMailDndAttachment(QWidget *parent)
     viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));
 }
 
-TestMailDndAttachment::~TestMailDndAttachment()
-{
-}
+TestMailDndAttachment::~TestMailDndAttachment() = default;
 
 KMime::Message::Ptr TestMailDndAttachment::readAndParseMail(const QString &mailFile)
 {

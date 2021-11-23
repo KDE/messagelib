@@ -16,9 +16,7 @@ BlockTrackingUrlInterceptor::BlockTrackingUrlInterceptor(QObject *parent)
     initializeList();
 }
 
-BlockTrackingUrlInterceptor::~BlockTrackingUrlInterceptor()
-{
-}
+BlockTrackingUrlInterceptor::~BlockTrackingUrlInterceptor() = default;
 
 bool BlockTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {

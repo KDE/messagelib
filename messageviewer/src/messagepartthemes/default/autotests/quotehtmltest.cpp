@@ -23,9 +23,7 @@ QTEST_MAIN(QuoteHtmlTest)
 class MyRenderContext : public MessageViewer::RenderContext
 {
 public:
-    ~MyRenderContext() override
-    {
-    }
+    ~MyRenderContext() override = default;
 
     Q_REQUIRED_RESULT CSSHelperBase *cssHelper() const override
     {

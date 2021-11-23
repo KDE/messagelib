@@ -111,7 +111,7 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
 QString MimeTreeParser::Util::iconNameForContent(KMime::Content *node)
 {
     if (!node) {
-        return QString();
+        return {};
     }
 
     auto ct = node->contentType(); // Create

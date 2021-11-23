@@ -16,9 +16,7 @@ FindBarSourceView::FindBarSourceView(QPlainTextEdit *view, QWidget *parent)
 {
 }
 
-FindBarSourceView::~FindBarSourceView()
-{
-}
+FindBarSourceView::~FindBarSourceView() = default;
 
 void FindBarSourceView::searchText(bool backward, bool isAutoSearch)
 {

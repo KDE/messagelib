@@ -35,7 +35,7 @@ MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interface::BodyPar
 
     if (node->contents().isEmpty()) {
         Q_ASSERT(false);
-        return MessagePart::Ptr();
+        return {};
     }
 
     const QGpgME::Protocol *useThisCryptProto = nullptr;

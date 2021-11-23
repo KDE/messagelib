@@ -13,9 +13,7 @@ using namespace MessageComposer;
 class MessageComposer::ImageScalingPrivate
 {
 public:
-    ImageScalingPrivate()
-    {
-    }
+    ImageScalingPrivate() = default;
 
     QImage mImage;
     QBuffer mBuffer;
@@ -116,7 +114,7 @@ bool ImageScaling::resizeImage()
 QByteArray ImageScaling::mimetype() const
 {
     if (d->mMimeType.isEmpty()) {
-        return QByteArray();
+        return {};
     }
     if ((d->mMimeType == "image/jpeg") || (d->mMimeType == "image/png")) {
         return d->mMimeType;
@@ -149,7 +147,7 @@ QByteArray ImageScaling::imageArray() const
 QString ImageScaling::generateNewName()
 {
     if (d->mName.isEmpty()) {
-        return QString();
+        return {};
     }
 
     // Don't rename it.

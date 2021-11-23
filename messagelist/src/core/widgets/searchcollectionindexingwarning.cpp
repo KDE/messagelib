@@ -36,9 +36,7 @@ SearchCollectionIndexingWarning::SearchCollectionIndexingWarning(QWidget *parent
     setMessageType(Information);
 }
 
-SearchCollectionIndexingWarning::~SearchCollectionIndexingWarning()
-{
-}
+SearchCollectionIndexingWarning::~SearchCollectionIndexingWarning() = default;
 
 Akonadi::CollectionFetchJob *SearchCollectionIndexingWarning::fetchCollections(const Akonadi::Collection::List &cols, bool recursive)
 {

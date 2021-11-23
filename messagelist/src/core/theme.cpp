@@ -57,11 +57,8 @@ Theme::ContentItem::ContentItem(Type type)
 }
 
 Theme::ContentItem::ContentItem(const ContentItem &src)
-    : mType(src.mType)
-    , mFlags(src.mFlags)
-    , mCustomColor(src.mCustomColor)
-{
-}
+
+    = default;
 
 Theme::ContentItem::Type Theme::ContentItem::type() const
 {
@@ -345,9 +342,7 @@ bool Theme::ContentItem::load(QDataStream &stream, int /*themeVersion*/)
     return true;
 }
 
-Theme::Row::Row()
-{
-}
+Theme::Row::Row() = default;
 
 Theme::Row::Row(const Row &src)
 {
@@ -546,9 +541,7 @@ Theme::Column::SharedRuntimeData::SharedRuntimeData(bool currentlyVisible, doubl
 {
 }
 
-Theme::Column::SharedRuntimeData::~SharedRuntimeData()
-{
-}
+Theme::Column::SharedRuntimeData::~SharedRuntimeData() = default;
 
 void Theme::Column::SharedRuntimeData::addReference()
 {

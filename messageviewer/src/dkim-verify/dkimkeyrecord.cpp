@@ -9,9 +9,7 @@
 
 using namespace MessageViewer;
 
-DKIMKeyRecord::DKIMKeyRecord()
-{
-}
+DKIMKeyRecord::DKIMKeyRecord() = default;
 
 bool DKIMKeyRecord::parseKey(const QString &key)
 {

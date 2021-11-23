@@ -13,9 +13,7 @@ using namespace MessageViewer;
 class MessageViewer::ScamCheckShortUrlManagerPrivate
 {
 public:
-    ScamCheckShortUrlManagerPrivate()
-    {
-    }
+    ScamCheckShortUrlManagerPrivate() = default;
 
     ScamCheckShortUrl *mCheckShortUrl = nullptr;
 };

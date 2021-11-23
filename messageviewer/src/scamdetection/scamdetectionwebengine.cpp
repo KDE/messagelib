@@ -48,9 +48,7 @@ static QString addWarningColor(const QString &url)
 class MessageViewer::ScamDetectionWebEnginePrivate
 {
 public:
-    ScamDetectionWebEnginePrivate()
-    {
-    }
+    ScamDetectionWebEnginePrivate() = default;
 
     QString mDetails;
     QPointer<MessageViewer::ScamDetectionDetailsDialog> mDetailsDialog;

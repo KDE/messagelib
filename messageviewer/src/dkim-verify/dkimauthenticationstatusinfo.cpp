@@ -11,9 +11,7 @@
 #include <QRegularExpressionMatch>
 using namespace MessageViewer;
 // see https://tools.ietf.org/html/rfc7601
-DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
-{
-}
+DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo() = default;
 
 bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key, bool relaxingParsing)
 {

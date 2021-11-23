@@ -199,14 +199,14 @@ QString NodeHelper::writeFileToTempFile(KMime::Content *node, const QString &fil
 {
     QString fname = createTempDir(persistentIndex(node));
     if (fname.isEmpty()) {
-        return QString();
+        return {};
     }
     fname += QLatin1Char('/') + filename;
     QFile f(fname);
     if (!f.open(QIODevice::ReadWrite)) {
         qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
         mAttachmentFilesDir->addTempFile(fname);
-        return QString();
+        return {};
     }
     f.write(QByteArray());
     mAttachmentFilesDir->addTempFile(fname);
@@ -230,7 +230,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
 
     QString fname = createTempDir(persistentIndex(node));
     if (fname.isEmpty()) {
-        return QString();
+        return {};
     }
 
     QString fileName = NodeHelper::fileName(node);
@@ -254,7 +254,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
     if (!f.open(QIODevice::ReadWrite)) {
         qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
         mAttachmentFilesDir->addTempFile(fname);
-        return QString();
+        return {};
     }
     f.write(data);
     mAttachmentFilesDir->addTempFile(fname);
@@ -269,7 +269,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
 QUrl NodeHelper::tempFileUrlFromNode(const KMime::Content *node)
 {
     if (!node) {
-        return QUrl();
+        return {};
     }
 
     const QString index = persistentIndex(node);
@@ -287,7 +287,7 @@ QUrl NodeHelper::tempFileUrlFromNode(const KMime::Content *node)
             return QUrl::fromLocalFile(path);
         }
     }
-    return QUrl();
+    return {};
 }
 
 QString NodeHelper::createTempDir(const QString &param)
@@ -302,7 +302,7 @@ QString NodeHelper::createTempDir(const QString &param)
         // Not there or not writable
         if (!QDir().mkpath(fname) || !fFile.setPermissions(QFileDevice::WriteUser | QFileDevice::ReadUser | QFileDevice::ExeUser)) {
             mAttachmentFilesDir->addTempDir(fname);
-            return QString(); // failed create
+            return {}; // failed create
         }
     }
 
@@ -570,7 +570,7 @@ QDateTime NodeHelper::dateHeader(KMime::Content *message) const
     if (dateHeader != nullptr) {
         return static_cast<const KMime::Headers::Date *>(dateHeader)->dateTime();
     }
-    return QDateTime();
+    return {};
 }
 
 void NodeHelper::setOverrideCodec(KMime::Content *node, const QTextCodec *codec)
@@ -698,7 +698,7 @@ void NodeHelper::setNodeDisplayedHidden(KMime::Content *node, bool displayedHidd
 QString NodeHelper::persistentIndex(const KMime::Content *node) const
 {
     if (!node) {
-        return QString();
+        return {};
     }
 
     QString indexStr = node->index().toString();
@@ -803,7 +803,7 @@ QString NodeHelper::extractAttachmentIndex(const QString &path) const
     if (rmatch.hasMatch()) {
         return rmatch.captured(1);
     }
-    return QString();
+    return {};
 }
 
 QString NodeHelper::fixEncoding(const QString &encoding)
@@ -860,7 +860,7 @@ QString NodeHelper::fromAsString(KMime::Content *node) const
         }
     }
 
-    return QString();
+    return {};
 }
 
 void NodeHelper::attachExtraContent(KMime::Content *topLevelNode, KMime::Content *content)
@@ -1098,7 +1098,7 @@ KMime::Message::Ptr NodeHelper::unencryptedMessage(const KMime::Message::Ptr &or
         newMessage->parse();
         return newMessage;
     } else {
-        return KMime::Message::Ptr();
+        return {};
     }
 }
 

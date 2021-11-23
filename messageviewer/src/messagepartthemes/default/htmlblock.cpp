@@ -14,13 +14,9 @@
 
 using namespace MessageViewer;
 
-HTMLBlock::HTMLBlock()
-{
-}
+HTMLBlock::HTMLBlock() = default;
 
-HTMLBlock::~HTMLBlock()
-{
-}
+HTMLBlock::~HTMLBlock() = default;
 
 QString HTMLBlock::dir() const
 {
@@ -33,7 +29,7 @@ QString HTMLBlock::enter()
         entered = true;
         return enterString();
     }
-    return QString();
+    return {};
 }
 
 QString HTMLBlock::exit()
@@ -42,7 +38,7 @@ QString HTMLBlock::exit()
         entered = false;
         return exitString();
     }
-    return QString();
+    return {};
 }
 
 AttachmentMarkBlock::AttachmentMarkBlock(HtmlWriter *writer, KMime::Content *node)

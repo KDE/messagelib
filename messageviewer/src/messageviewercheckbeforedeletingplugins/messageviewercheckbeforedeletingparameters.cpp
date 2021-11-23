@@ -10,9 +10,7 @@ using namespace MessageViewer;
 class MessageViewer::MessageViewerCheckBeforeDeletingParametersPrivate
 {
 public:
-    MessageViewerCheckBeforeDeletingParametersPrivate()
-    {
-    }
+    MessageViewerCheckBeforeDeletingParametersPrivate() = default;
     Akonadi::Item::List mList;
     MessageViewerCheckBeforeDeletingParameters::DeleteType mType = MessageViewerCheckBeforeDeletingParameters::Unknown;
 };
@@ -28,9 +26,7 @@ MessageViewerCheckBeforeDeletingParameters::MessageViewerCheckBeforeDeletingPara
     (*this) = other;
 }
 
-MessageViewerCheckBeforeDeletingParameters::~MessageViewerCheckBeforeDeletingParameters()
-{
-}
+MessageViewerCheckBeforeDeletingParameters::~MessageViewerCheckBeforeDeletingParameters() = default;
 
 Akonadi::Item::List MessageViewerCheckBeforeDeletingParameters::items() const
 {

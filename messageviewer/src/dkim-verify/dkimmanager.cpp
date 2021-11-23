@@ -21,9 +21,7 @@ DKIMManager::DKIMManager(QObject *parent)
     Akonadi::AttributeFactory::registerAttribute<MessageViewer::DKIMResultAttribute>();
 }
 
-DKIMManager::~DKIMManager()
-{
-}
+DKIMManager::~DKIMManager() = default;
 
 DKIMManager *DKIMManager::self()
 {

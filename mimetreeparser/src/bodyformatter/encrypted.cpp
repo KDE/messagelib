@@ -39,7 +39,7 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
 
     if (!node->contents().isEmpty()) {
         Q_ASSERT(false);
-        return MessagePart::Ptr();
+        return {};
     }
 
     QGpgME::QByteArrayDataProvider dp(node->decodedContent());

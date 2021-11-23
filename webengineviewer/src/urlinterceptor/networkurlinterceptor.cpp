@@ -15,9 +15,7 @@ using namespace WebEngineViewer;
 class WebEngineViewer::NetworkUrlInterceptorPrivate
 {
 public:
-    NetworkUrlInterceptorPrivate()
-    {
-    }
+    NetworkUrlInterceptorPrivate() = default;
 
     void addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
     void interceptRequest(QWebEngineUrlRequestInfo &info);

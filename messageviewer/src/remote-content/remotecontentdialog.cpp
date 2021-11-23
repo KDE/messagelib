@@ -32,9 +32,7 @@ RemoteContentDialog::RemoteContentDialog(QWidget *parent)
     });
 }
 
-RemoteContentDialog::~RemoteContentDialog()
-{
-}
+RemoteContentDialog::~RemoteContentDialog() = default;
 
 RemoteContentInfo RemoteContentDialog::info() const
 {

@@ -14,9 +14,7 @@ ZoomActionMenuTest::ZoomActionMenuTest(QObject *parent)
 {
 }
 
-ZoomActionMenuTest::~ZoomActionMenuTest()
-{
-}
+ZoomActionMenuTest::~ZoomActionMenuTest() = default;
 
 void ZoomActionMenuTest::shouldHaveDefaultValue()
 {

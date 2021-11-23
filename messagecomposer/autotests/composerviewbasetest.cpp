@@ -30,9 +30,7 @@ ComposerViewBaseTest::ComposerViewBaseTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-ComposerViewBaseTest::~ComposerViewBaseTest()
-{
-}
+ComposerViewBaseTest::~ComposerViewBaseTest() = default;
 
 void ComposerViewBaseTest::cleanupTestCase()
 {

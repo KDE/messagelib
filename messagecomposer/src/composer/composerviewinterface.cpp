@@ -15,9 +15,7 @@ ComposerViewInterface::ComposerViewInterface(ComposerViewBase *composerView)
 {
 }
 
-ComposerViewInterface::~ComposerViewInterface()
-{
-}
+ComposerViewInterface::~ComposerViewInterface() = default;
 
 QString ComposerViewInterface::subject() const
 {

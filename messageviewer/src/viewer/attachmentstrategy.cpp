@@ -59,9 +59,7 @@ protected:
     {
     }
 
-    ~IconicAttachmentStrategy() override
-    {
-    }
+    ~IconicAttachmentStrategy() override = default;
 
 public:
     Q_REQUIRED_RESULT const char *name() const override
@@ -102,9 +100,7 @@ protected:
     {
     }
 
-    ~SmartAttachmentStrategy() override
-    {
-    }
+    ~SmartAttachmentStrategy() override = default;
 
 public:
     Q_REQUIRED_RESULT const char *name() const override
@@ -138,9 +134,7 @@ protected:
     {
     }
 
-    ~InlinedAttachmentStrategy() override
-    {
-    }
+    ~InlinedAttachmentStrategy() override = default;
 
 public:
     Q_REQUIRED_RESULT const char *name() const override
@@ -174,9 +168,7 @@ protected:
     {
     }
 
-    ~HiddenAttachmentStrategy() override
-    {
-    }
+    ~HiddenAttachmentStrategy() override = default;
 
 public:
     Q_REQUIRED_RESULT const char *name() const override
@@ -218,9 +210,7 @@ protected:
     {
     }
 
-    ~HeaderOnlyAttachmentStrategy() override
-    {
-    }
+    ~HeaderOnlyAttachmentStrategy() override = default;
 
 public:
     Q_REQUIRED_RESULT const char *name() const override
@@ -256,13 +246,9 @@ public:
 // AttachmentStrategy abstract base:
 //
 
-AttachmentStrategy::AttachmentStrategy()
-{
-}
+AttachmentStrategy::AttachmentStrategy() = default;
 
-AttachmentStrategy::~AttachmentStrategy()
-{
-}
+AttachmentStrategy::~AttachmentStrategy() = default;
 
 const AttachmentStrategy *AttachmentStrategy::create(Type type)
 {

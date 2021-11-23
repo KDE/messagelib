@@ -24,9 +24,7 @@ QuickSearchWarning::QuickSearchWarning(QWidget *parent)
     addAction(action);
 }
 
-QuickSearchWarning::~QuickSearchWarning()
-{
-}
+QuickSearchWarning::~QuickSearchWarning() = default;
 
 void QuickSearchWarning::setSearchText(const QString &text)
 {

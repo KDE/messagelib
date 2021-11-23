@@ -29,9 +29,7 @@ SaveContactPreferenceJob::SaveContactPreferenceJob(const QString &email, const K
 {
 }
 
-SaveContactPreferenceJob::~SaveContactPreferenceJob()
-{
-}
+SaveContactPreferenceJob::~SaveContactPreferenceJob() = default;
 
 void SaveContactPreferenceJob::start()
 {

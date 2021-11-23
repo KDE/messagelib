@@ -38,9 +38,7 @@ OpenSavedFileFolderWidget::OpenSavedFileFolderWidget(QWidget *parent)
     addAction(mShowFolderAction);
 }
 
-OpenSavedFileFolderWidget::~OpenSavedFileFolderWidget()
-{
-}
+OpenSavedFileFolderWidget::~OpenSavedFileFolderWidget() = default;
 
 void OpenSavedFileFolderWidget::slotExplicitlyClosed()
 {

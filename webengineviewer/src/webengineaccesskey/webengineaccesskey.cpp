@@ -71,7 +71,7 @@ static QString linkElementKey(const WebEngineViewer::WebEngineAccessKeyAnchor &e
         }
         return linkKey;
     }
-    return QString();
+    return {};
 }
 
 static void

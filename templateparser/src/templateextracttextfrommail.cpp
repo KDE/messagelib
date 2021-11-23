@@ -32,9 +32,7 @@ TemplateExtractTextFromMail::TemplateExtractTextFromMail(QObject *parent)
     connect(mPage, &TemplateWebEnginePage::loadFinished, this, &TemplateExtractTextFromMail::slotLoadFinished);
 }
 
-TemplateExtractTextFromMail::~TemplateExtractTextFromMail()
-{
-}
+TemplateExtractTextFromMail::~TemplateExtractTextFromMail() = default;
 
 void TemplateExtractTextFromMail::setHtmlContent(const QString &html)
 {

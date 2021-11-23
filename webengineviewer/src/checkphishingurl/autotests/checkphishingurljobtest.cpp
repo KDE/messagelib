@@ -16,9 +16,7 @@ CheckPhishingUrlJobTest::CheckPhishingUrlJobTest(QObject *parent)
 {
 }
 
-CheckPhishingUrlJobTest::~CheckPhishingUrlJobTest()
-{
-}
+CheckPhishingUrlJobTest::~CheckPhishingUrlJobTest() = default;
 
 void CheckPhishingUrlJobTest::shouldNotBeAbleToStartWithEmptyUrl()
 {

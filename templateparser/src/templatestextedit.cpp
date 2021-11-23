@@ -13,6 +13,4 @@ TemplatesTextEdit::TemplatesTextEdit(QWidget *parent)
 {
 }
 
-TemplatesTextEdit::~TemplatesTextEdit()
-{
-}
+TemplatesTextEdit::~TemplatesTextEdit() = default;

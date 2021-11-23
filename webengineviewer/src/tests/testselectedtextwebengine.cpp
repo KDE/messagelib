@@ -27,9 +27,7 @@ TestSelectedTextWebEngine::TestSelectedTextWebEngine(QWidget *parent)
     pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
 }
 
-TestSelectedTextWebEngine::~TestSelectedTextWebEngine()
-{
-}
+TestSelectedTextWebEngine::~TestSelectedTextWebEngine() = default;
 
 void TestSelectedTextWebEngine::slotSlowSelectedText()
 {

@@ -21,9 +21,7 @@ namespace MessageComposer
 class AbstractEncryptJob
 {
 public:
-    virtual ~AbstractEncryptJob()
-    {
-    }
+    virtual ~AbstractEncryptJob() = default;
 
     /**
      * Set the list of encryption keys that should be used.

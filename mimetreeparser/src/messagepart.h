@@ -64,7 +64,7 @@ class MIMETREEPARSER_EXPORT MessagePart : public QObject
     Q_PROPERTY(QString attachmentIndex READ attachmentIndex CONSTANT)
     Q_PROPERTY(QString link READ attachmentLink CONSTANT)
 public:
-    typedef QSharedPointer<MessagePart> Ptr;
+    using Ptr = QSharedPointer<MessagePart>;
     MessagePart(ObjectTreeParser *otp, const QString &text);
     ~MessagePart() override;
 
@@ -146,7 +146,7 @@ class MIMETREEPARSER_EXPORT MimeMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<MimeMessagePart> Ptr;
+    using Ptr = QSharedPointer<MimeMessagePart>;
     MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart);
     ~MimeMessagePart() override;
 
@@ -165,7 +165,7 @@ class MIMETREEPARSER_EXPORT MessagePartList : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<MessagePartList> Ptr;
+    using Ptr = QSharedPointer<MessagePartList>;
     explicit MessagePartList(MimeTreeParser::ObjectTreeParser *otp);
     ~MessagePartList() override;
 
@@ -188,7 +188,7 @@ class MIMETREEPARSER_EXPORT TextMessagePart : public MessagePartList
     Q_PROPERTY(QString label READ label CONSTANT)
     Q_PROPERTY(QString comment READ comment CONSTANT)
 public:
-    typedef QSharedPointer<TextMessagePart> Ptr;
+    using Ptr = QSharedPointer<TextMessagePart>;
     TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage);
     ~TextMessagePart() override;
 
@@ -222,7 +222,7 @@ class MIMETREEPARSER_EXPORT AttachmentMessagePart : public TextMessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<AttachmentMessagePart> Ptr;
+    using Ptr = QSharedPointer<AttachmentMessagePart>;
     AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage);
     ~AttachmentMessagePart() override;
 };
@@ -233,7 +233,7 @@ class MIMETREEPARSER_EXPORT HtmlMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<HtmlMessagePart> Ptr;
+    using Ptr = QSharedPointer<HtmlMessagePart>;
     HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, MimeTreeParser::Interface::ObjectTreeSource *source);
     ~HtmlMessagePart() override;
 
@@ -257,7 +257,7 @@ class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<AlternativeMessagePart> Ptr;
+    using Ptr = QSharedPointer<AlternativeMessagePart>;
     AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, Util::HtmlMode preferredMode);
     ~AlternativeMessagePart() override;
 
@@ -290,7 +290,7 @@ class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<CertMessagePart> Ptr;
+    using Ptr = QSharedPointer<CertMessagePart>;
     CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const QGpgME::Protocol *cryptoProto, bool autoImport);
     ~CertMessagePart() override;
 
@@ -310,7 +310,7 @@ class MIMETREEPARSER_EXPORT EncapsulatedRfc822MessagePart : public MessagePart
 {
     Q_OBJECT
 public:
-    typedef QSharedPointer<EncapsulatedRfc822MessagePart> Ptr;
+    using Ptr = QSharedPointer<EncapsulatedRfc822MessagePart>;
     EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message);
     ~EncapsulatedRfc822MessagePart() override;
 
@@ -334,7 +334,7 @@ class MIMETREEPARSER_EXPORT EncryptedMessagePart : public MessagePart
     Q_PROPERTY(bool isNoSecKey READ isNoSecKey)
     Q_PROPERTY(bool passphraseError READ passphraseError)
 public:
-    typedef QSharedPointer<EncryptedMessagePart> Ptr;
+    using Ptr = QSharedPointer<EncryptedMessagePart>;
     EncryptedMessagePart(ObjectTreeParser *otp, const QString &text, const QGpgME::Protocol *cryptoProto, const QString &fromAddress, KMime::Content *node);
 
     ~EncryptedMessagePart() override;
@@ -399,7 +399,7 @@ class MIMETREEPARSER_EXPORT SignedMessagePart : public MessagePart
     Q_OBJECT
     Q_PROPERTY(bool isSigned READ isSigned)
 public:
-    typedef QSharedPointer<SignedMessagePart> Ptr;
+    using Ptr = QSharedPointer<SignedMessagePart>;
     SignedMessagePart(ObjectTreeParser *otp, const QString &text, const QGpgME::Protocol *cryptoProto, const QString &fromAddress, KMime::Content *node);
 
     ~SignedMessagePart() override;

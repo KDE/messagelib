@@ -42,9 +42,7 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     connect(mTreeWidget, &QTreeWidget::customContextMenuRequested, this, &DKIMManagerKeyWidget::slotCustomContextMenuRequested);
 }
 
-DKIMManagerKeyWidget::~DKIMManagerKeyWidget()
-{
-}
+DKIMManagerKeyWidget::~DKIMManagerKeyWidget() = default;
 
 QByteArray DKIMManagerKeyWidget::saveHeaders() const
 {
@@ -151,9 +149,7 @@ DKIMManagerKeyTreeWidgetItem::DKIMManagerKeyTreeWidgetItem(QTreeWidget *parent)
 {
 }
 
-DKIMManagerKeyTreeWidgetItem::~DKIMManagerKeyTreeWidgetItem()
-{
-}
+DKIMManagerKeyTreeWidgetItem::~DKIMManagerKeyTreeWidgetItem() = default;
 
 bool DKIMManagerKeyTreeWidgetItem::operator<(const QTreeWidgetItem &other) const
 {

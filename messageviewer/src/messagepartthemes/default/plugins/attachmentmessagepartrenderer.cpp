@@ -19,13 +19,9 @@
 
 using namespace MessageViewer;
 
-AttachmentMessagePartRenderer::AttachmentMessagePartRenderer()
-{
-}
+AttachmentMessagePartRenderer::AttachmentMessagePartRenderer() = default;
 
-AttachmentMessagePartRenderer::~AttachmentMessagePartRenderer()
-{
-}
+AttachmentMessagePartRenderer::~AttachmentMessagePartRenderer() = default;
 
 bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const
 {

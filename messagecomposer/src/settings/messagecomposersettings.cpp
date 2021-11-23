@@ -42,6 +42,4 @@ void MessageComposerSettings::slotSyncNow()
     config()->sync();
 }
 
-MessageComposerSettings::~MessageComposerSettings()
-{
-}
+MessageComposerSettings::~MessageComposerSettings() = default;

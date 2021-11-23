@@ -20,9 +20,7 @@ using namespace TemplateParser;
 class TemplateParser::TemplatesConfigurationPrivate
 {
 public:
-    TemplatesConfigurationPrivate()
-    {
-    }
+    TemplatesConfigurationPrivate() = default;
 
     QString mHelpString;
 };

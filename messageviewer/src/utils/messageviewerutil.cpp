@@ -684,7 +684,7 @@ QString Util::parseBodyStyle(const QString &style)
             }
         }
     }
-    return QString();
+    return {};
 }
 
 // FIXME this used to go through the full webkit parser to extract the body and head blocks

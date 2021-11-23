@@ -12,9 +12,7 @@ CidSchemeHandler::CidSchemeHandler(QObject *parent)
 {
 }
 
-CidSchemeHandler::~CidSchemeHandler()
-{
-}
+CidSchemeHandler::~CidSchemeHandler() = default;
 
 void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *job)
 {

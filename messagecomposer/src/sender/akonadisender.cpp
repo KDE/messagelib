@@ -63,9 +63,7 @@ static void extractSenderToCCAndBcc(const KMime::Message::Ptr &aMsg, QString &se
 class MessageComposer::AkonadiSenderPrivate
 {
 public:
-    AkonadiSenderPrivate()
-    {
-    }
+    AkonadiSenderPrivate() = default;
 
     QSet<KJob *> mPendingJobs;
     int mCustomTransportId = -1;

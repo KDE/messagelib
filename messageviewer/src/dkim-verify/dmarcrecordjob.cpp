@@ -16,9 +16,7 @@ DMARCRecordJob::DMARCRecordJob(QObject *parent)
 {
 }
 
-DMARCRecordJob::~DMARCRecordJob()
-{
-}
+DMARCRecordJob::~DMARCRecordJob() = default;
 
 bool DMARCRecordJob::start()
 {

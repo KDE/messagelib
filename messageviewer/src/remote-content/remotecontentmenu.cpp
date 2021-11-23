@@ -20,9 +20,7 @@ RemoteContentMenu::RemoteContentMenu(QWidget *parent)
     connect(this, &QMenu::aboutToShow, this, &RemoteContentMenu::updateMenu);
 }
 
-RemoteContentMenu::~RemoteContentMenu()
-{
-}
+RemoteContentMenu::~RemoteContentMenu() = default;
 
 void RemoteContentMenu::slotConfigure()
 {

@@ -31,9 +31,7 @@ AntiSpamConfig::AntiSpamConfig()
     readConfig();
 }
 
-AntiSpamConfig::~AntiSpamConfig()
-{
-}
+AntiSpamConfig::~AntiSpamConfig() = default;
 
 void AntiSpamConfig::readConfig()
 {

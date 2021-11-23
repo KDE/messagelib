@@ -20,9 +20,7 @@ ImageScalingTestWidget::ImageScalingTestWidget(QWidget *parent)
     lay->addWidget(new MessageComposer::ImageScalingWidget(this));
 }
 
-ImageScalingTestWidget::~ImageScalingTestWidget()
-{
-}
+ImageScalingTestWidget::~ImageScalingTestWidget() = default;
 
 int main(int argc, char **argv)
 {

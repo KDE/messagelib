@@ -6,9 +6,7 @@
 
 #include "plugineditorconverterbeforeconvertingdata.h"
 using namespace MessageComposer;
-PluginEditorConverterBeforeConvertingData::PluginEditorConverterBeforeConvertingData()
-{
-}
+PluginEditorConverterBeforeConvertingData::PluginEditorConverterBeforeConvertingData() = default;
 
 bool PluginEditorConverterBeforeConvertingData::newMessage() const
 {

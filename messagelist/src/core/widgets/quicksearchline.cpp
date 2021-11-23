@@ -63,9 +63,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     changeQuicksearchVisibility(MessageListSettings::self()->showQuickSearch());
 }
 
-QuickSearchLine::~QuickSearchLine()
-{
-}
+QuickSearchLine::~QuickSearchLine() = default;
 
 void QuickSearchLine::slotSearchEditTextEdited(const QString &text)
 {

@@ -18,9 +18,7 @@ TemplateConfigureTestWidget::TemplateConfigureTestWidget(QWidget *parent)
     lay->addWidget(new TemplateParser::TemplatesConfiguration(this));
 }
 
-TemplateConfigureTestWidget::~TemplateConfigureTestWidget()
-{
-}
+TemplateConfigureTestWidget::~TemplateConfigureTestWidget() = default;
 
 int main(int argc, char **argv)
 {

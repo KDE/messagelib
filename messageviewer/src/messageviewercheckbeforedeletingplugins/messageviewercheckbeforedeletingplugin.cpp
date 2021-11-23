@@ -10,9 +10,7 @@ using namespace MessageViewer;
 class MessageViewer::MessageViewerCheckBeforeDeletingPluginPrivate
 {
 public:
-    MessageViewerCheckBeforeDeletingPluginPrivate()
-    {
-    }
+    MessageViewerCheckBeforeDeletingPluginPrivate() = default;
     bool mIsEnabled = true;
 };
 

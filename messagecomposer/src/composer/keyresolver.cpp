@@ -222,7 +222,7 @@ struct ByTrustScore {
 static std::vector<GpgME::UserID> matchingUIDs(const std::vector<GpgME::UserID> &uids, const QString &address)
 {
     if (address.isEmpty()) {
-        return std::vector<GpgME::UserID>();
+        return {};
     }
 
     std::vector<GpgME::UserID> result;
@@ -243,7 +243,7 @@ static GpgME::UserID findBestMatchUID(const GpgME::Key &key, const QString &addr
 {
     const std::vector<GpgME::UserID> all = key.userIDs();
     if (all.empty()) {
-        return GpgME::UserID();
+        return {};
     }
     const std::vector<GpgME::UserID> matching = matchingUIDs(all, address.toLower());
     const std::vector<GpgME::UserID> &v = matching.empty() ? all : matching;
@@ -332,7 +332,7 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
     } else {
         canceled = true;
     }
-    return std::vector<GpgME::Key>();
+    return {};
 }
 
 namespace
@@ -371,9 +371,7 @@ struct IsForFormat : std::unary_function<GpgME::Key, bool> {
 class Kleo::KeyResolver::SigningPreferenceCounter : public std::unary_function<Kleo::KeyResolver::Item, void>
 {
 public:
-    SigningPreferenceCounter()
-    {
-    }
+    SigningPreferenceCounter() = default;
 
     void operator()(const Kleo::KeyResolver::Item &item);
 #define make_int_accessor(x)                                                                                                                                   \
@@ -481,9 +479,7 @@ namespace
 class FormatPreferenceCounterBase : public std::unary_function<Kleo::KeyResolver::Item, void>
 {
 public:
-    FormatPreferenceCounterBase()
-    {
-    }
+    FormatPreferenceCounterBase() = default;
 
 #define make_int_accessor(x)                                                                                                                                   \
     unsigned int num##x() const                                                                                                                                \
@@ -977,10 +973,10 @@ std::vector<Kleo::KeyResolver::Item> Kleo::KeyResolver::getEncryptionItems(const
         QString addr = canonicalAddress(*it).toLower();
         const ContactPreferences pref = lookupContactPreferences(addr);
 
-        items.push_back(Item(*it, /*getEncryptionKeys( *it, true ),*/
-                             pref.encryptionPreference,
-                             pref.signingPreference,
-                             pref.cryptoMessageFormat));
+        items.emplace_back(*it, /*getEncryptionKeys( *it, true ),*/
+                           pref.encryptionPreference,
+                           pref.signingPreference,
+                           pref.cryptoMessageFormat);
     }
     return items;
 }
@@ -1092,7 +1088,7 @@ Kleo::Result Kleo::KeyResolver::resolveAllKeys(bool &signingRequested, bool &enc
         // make a dummy entry with all recipients, but no signing or
         // encryption keys to avoid special-casing on the caller side:
         dump();
-        d->mFormatInfoMap[OpenPGPMIMEFormat].splitInfos.push_back(SplitInfo(allRecipients()));
+        d->mFormatInfoMap[OpenPGPMIMEFormat].splitInfos.emplace_back(allRecipients());
         dump();
         return Kleo::Ok;
     }
@@ -1394,7 +1390,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForSigningOnly()
         "available signing keys.\n"
         "Send message without signing?");
     if (KMessageBox::warningContinueCancel(nullptr, msg, i18n("No signing possible"), KStandardGuiItem::cont()) == KMessageBox::Continue) {
-        d->mFormatInfoMap[OpenPGPMIMEFormat].splitInfos.push_back(SplitInfo(allRecipients()));
+        d->mFormatInfoMap[OpenPGPMIMEFormat].splitInfos.emplace_back(allRecipients());
         return Kleo::Failure; // means "Ok, but without signing"
     }
     return Kleo::Canceled;
@@ -1408,7 +1404,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::signingKeysFor(CryptoMessageFormat f)
     if (isSMIME(f)) {
         return d->mSMIMESigningKeys;
     }
-    return std::vector<GpgME::Key>();
+    return {};
 }
 
 std::vector<GpgME::Key> Kleo::KeyResolver::encryptToSelfKeysFor(CryptoMessageFormat f) const
@@ -1419,7 +1415,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::encryptToSelfKeysFor(CryptoMessageFor
     if (isSMIME(f)) {
         return d->mSMIMEEncryptToSelfKeys;
     }
-    return std::vector<GpgME::Key>();
+    return {};
 }
 
 QStringList Kleo::KeyResolver::allRecipients() const
@@ -1678,7 +1674,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::selectKeys(const QString &person, con
 
     if (dlg->exec() != QDialog::Accepted) {
         delete dlg;
-        return std::vector<GpgME::Key>();
+        return {};
     }
 
     std::vector<GpgME::Key> keys = dlg->selectedKeys();
@@ -1722,7 +1718,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
             bool canceled = false;
             keys = trustedOrConfirmed(keys, address, canceled);
             if (canceled) {
-                return std::vector<GpgME::Key>();
+                return {};
             }
 
             if (!keys.empty()) {
@@ -1773,7 +1769,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
         matchingKeys = trustedOrConfirmed(matchingKeys, address, canceled);
     }
     if (canceled) {
-        return std::vector<GpgME::Key>();
+        return {};
     }
     if (quiet || matchingKeys.size() == 1) {
         return matchingKeys;
@@ -1810,7 +1806,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
 std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, bool secret) const
 {
     if (patterns.empty()) {
-        return std::vector<GpgME::Key>();
+        return {};
     }
     qCDebug(MESSAGECOMPOSER_LOG) << "( \"" << patterns.join(QLatin1String("\", \"")) << "\"," << secret << ")";
     std::vector<GpgME::Key> result;
@@ -1930,7 +1926,7 @@ Kleo::KeyResolver::ContactPreferences::ContactPreferences()
 QStringList Kleo::KeyResolver::keysForAddress(const QString &address) const
 {
     if (address.isEmpty()) {
-        return QStringList();
+        return {};
     }
     const QString addr = canonicalAddress(address).toLower();
     const ContactPreferences pref = lookupContactPreferences(addr);

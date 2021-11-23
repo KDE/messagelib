@@ -6,9 +6,7 @@
 
 #include "remotecontentinfo.h"
 using namespace MessageViewer;
-RemoteContentInfo::RemoteContentInfo()
-{
-}
+RemoteContentInfo::RemoteContentInfo() = default;
 
 RemoteContentInfo::~RemoteContentInfo() = default;
 

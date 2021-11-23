@@ -77,7 +77,7 @@ static QString splitLine(QString &line)
 
     // No quote prefix there -> nothing to do
     if (startOfActualText <= 0) {
-        return QString();
+        return {};
     }
 
     // Entire line consists of only the quote prefix
@@ -509,7 +509,7 @@ bool addressIsInAddressList(const QString &address, const QStringList &addresses
 QString guessEmailAddressFromLoginName(const QString &loginName)
 {
     if (loginName.isEmpty()) {
-        return QString();
+        return {};
     }
 
     QString address = loginName;

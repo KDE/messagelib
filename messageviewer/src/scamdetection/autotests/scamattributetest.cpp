@@ -12,9 +12,7 @@ ScamAttributeTest::ScamAttributeTest(QObject *parent)
 {
 }
 
-ScamAttributeTest::~ScamAttributeTest()
-{
-}
+ScamAttributeTest::~ScamAttributeTest() = default;
 
 void ScamAttributeTest::shouldHaveDefaultValue()
 {

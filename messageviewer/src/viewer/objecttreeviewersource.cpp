@@ -24,9 +24,7 @@ MailViewerSource::MailViewerSource(ViewerPrivate *viewer)
 {
 }
 
-MailViewerSource::~MailViewerSource()
-{
-}
+MailViewerSource::~MailViewerSource() = default;
 
 bool MailViewerSource::decryptMessage() const
 {

@@ -11,9 +11,7 @@ using namespace MessageComposer;
 class InfoPart::InfoPartPrivate
 {
 public:
-    InfoPartPrivate()
-    {
-    }
+    InfoPartPrivate() = default;
 
     KMime::Headers::Base::List extraHeaders;
     QStringList to;

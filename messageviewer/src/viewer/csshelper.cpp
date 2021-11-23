@@ -100,9 +100,7 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     recalculatePGPColors();
 }
 
-CSSHelper::~CSSHelper()
-{
-}
+CSSHelper::~CSSHelper() = default;
 
 QString CSSHelper::htmlHead(bool fixed) const
 {

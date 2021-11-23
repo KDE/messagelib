@@ -26,7 +26,7 @@
 #include <gpgme++/verificationresult.h>
 
 #include <KCharsets>
-#include <stdlib.h>
+#include <cstdlib>
 
 #include <MessageComposer/TransparentJob>
 #include <QTest>

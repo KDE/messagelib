@@ -18,9 +18,7 @@ LocalDataBaseFileTest::LocalDataBaseFileTest(QObject *parent)
     QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl"));
 }
 
-LocalDataBaseFileTest::~LocalDataBaseFileTest()
-{
-}
+LocalDataBaseFileTest::~LocalDataBaseFileTest() = default;
 
 void LocalDataBaseFileTest::shouldBeInvalidWithUnExistingFile()
 {

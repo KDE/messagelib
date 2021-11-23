@@ -13,11 +13,9 @@ MessageViewerCheckBeforeDeletingPluginWidget::MessageViewerCheckBeforeDeletingPl
 {
 }
 
-MessageViewerCheckBeforeDeletingPluginWidget::~MessageViewerCheckBeforeDeletingPluginWidget()
-{
-}
+MessageViewerCheckBeforeDeletingPluginWidget::~MessageViewerCheckBeforeDeletingPluginWidget() = default;
 
 QString MessageViewerCheckBeforeDeletingPluginWidget::helpAnchor() const
 {
-    return QString();
+    return {};
 }

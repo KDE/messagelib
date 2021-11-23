@@ -33,9 +33,7 @@ TemplateExtractHtmlElementFromMail::TemplateExtractHtmlElementFromMail(QObject *
     connect(mPage, &TemplateWebEnginePage::loadFinished, this, &TemplateExtractHtmlElementFromMail::slotLoadFinished);
 }
 
-TemplateExtractHtmlElementFromMail::~TemplateExtractHtmlElementFromMail()
-{
-}
+TemplateExtractHtmlElementFromMail::~TemplateExtractHtmlElementFromMail() = default;
 
 void TemplateExtractHtmlElementFromMail::clear()
 {

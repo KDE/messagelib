@@ -17,9 +17,7 @@ using namespace MessageViewer;
 class MessageViewer::ScamDetectionWarningWidgetPrivate
 {
 public:
-    ScamDetectionWarningWidgetPrivate()
-    {
-    }
+    ScamDetectionWarningWidgetPrivate() = default;
 
     bool mUseInTestApps = false;
 };

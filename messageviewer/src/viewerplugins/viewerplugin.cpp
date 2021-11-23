@@ -11,9 +11,7 @@ using namespace MessageViewer;
 class MessageViewer::ViewerPluginPrivate
 {
 public:
-    ViewerPluginPrivate()
-    {
-    }
+    ViewerPluginPrivate() = default;
 
     bool mEnabled = false;
 };

@@ -21,13 +21,9 @@ using namespace MessageViewer;
 class MessageViewer::ScamExpandUrlJobPrivate
 {
 public:
-    ScamExpandUrlJobPrivate()
-    {
-    }
+    ScamExpandUrlJobPrivate() = default;
 
-    ~ScamExpandUrlJobPrivate()
-    {
-    }
+    ~ScamExpandUrlJobPrivate() = default;
 
     QNetworkAccessManager *mNetworkAccessManager = nullptr;
 };

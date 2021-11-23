@@ -29,9 +29,7 @@ MultipartJob::MultipartJob(QObject *parent)
 {
 }
 
-MultipartJob::~MultipartJob()
-{
-}
+MultipartJob::~MultipartJob() = default;
 
 QByteArray MultipartJob::multipartSubtype() const
 {

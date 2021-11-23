@@ -15,9 +15,7 @@ DMARCPolicyJob::DMARCPolicyJob(QObject *parent)
 {
 }
 
-DMARCPolicyJob::~DMARCPolicyJob()
-{
-}
+DMARCPolicyJob::~DMARCPolicyJob() = default;
 
 bool DMARCPolicyJob::canStart() const
 {

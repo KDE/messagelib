@@ -80,9 +80,7 @@ AggregationEditor::AggregationEditor(QWidget *parent)
     fillGroupExpandPolicyCombo();
 }
 
-AggregationEditor::~AggregationEditor()
-{
-}
+AggregationEditor::~AggregationEditor() = default;
 
 void AggregationEditor::editAggregation(Aggregation *set)
 {

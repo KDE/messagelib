@@ -13,9 +13,7 @@ PluginEditorCheckBeforeSendParamsTest::PluginEditorCheckBeforeSendParamsTest(QOb
 {
 }
 
-PluginEditorCheckBeforeSendParamsTest::~PluginEditorCheckBeforeSendParamsTest()
-{
-}
+PluginEditorCheckBeforeSendParamsTest::~PluginEditorCheckBeforeSendParamsTest() = default;
 
 void PluginEditorCheckBeforeSendParamsTest::shouldHaveDefaultValues()
 {

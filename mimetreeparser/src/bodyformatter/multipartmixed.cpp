@@ -28,7 +28,7 @@ const Interface::BodyPartFormatter *MultiPartMixedBodyPartFormatter::create()
 MessagePart::Ptr MultiPartMixedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     if (part.content()->contents().isEmpty()) {
-        return MessagePart::Ptr();
+        return {};
     }
 
     // normal treatment of the parts in the mp/mixed container

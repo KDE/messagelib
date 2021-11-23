@@ -26,9 +26,7 @@ class MESSAGEVIEWER_EXPORT GrantleeHeaderFormatter
 {
 public:
     struct GrantleeHeaderFormatterSettings {
-        GrantleeHeaderFormatterSettings()
-        {
-        }
+        GrantleeHeaderFormatterSettings() = default;
 
         GrantleeTheme::Theme theme;
         bool isPrinting = false;

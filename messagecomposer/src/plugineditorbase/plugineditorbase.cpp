@@ -11,9 +11,7 @@ using namespace MessageComposer;
 class MessageComposer::PluginEditorBasePrivate
 {
 public:
-    PluginEditorBasePrivate()
-    {
-    }
+    PluginEditorBasePrivate() = default;
 
     bool mIsEnabled = false;
 };

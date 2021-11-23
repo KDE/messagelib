@@ -18,9 +18,7 @@ using namespace WebEngineViewer;
 class MailNetworkUrlInterceptorPluginInfo
 {
 public:
-    MailNetworkUrlInterceptorPluginInfo()
-    {
-    }
+    MailNetworkUrlInterceptorPluginInfo() = default;
 
     KPluginMetaData data;
     QString metaDataFileNameBaseName;

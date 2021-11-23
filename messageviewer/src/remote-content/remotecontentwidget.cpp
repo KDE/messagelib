@@ -34,9 +34,7 @@ RemoteContentWidget::RemoteContentWidget(QWidget *parent)
     connect(mLineEdit, &QLineEdit::textChanged, this, &RemoteContentWidget::slotTextChanged);
 }
 
-RemoteContentWidget::~RemoteContentWidget()
-{
-}
+RemoteContentWidget::~RemoteContentWidget() = default;
 
 void RemoteContentWidget::slotTextChanged(const QString &url)
 {

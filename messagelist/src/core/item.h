@@ -11,7 +11,7 @@
 #include <QList>
 #include <QString>
 
-#include <time.h> // for time_t
+#include <ctime> // for time_t
 
 #include <KMime/Headers>
 

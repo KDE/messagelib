@@ -34,6 +34,4 @@ RichHeaderStrategy::RichHeaderStrategy()
 {
 }
 
-RichHeaderStrategy::~RichHeaderStrategy()
-{
-}
+RichHeaderStrategy::~RichHeaderStrategy() = default;

@@ -476,9 +476,7 @@ Composer::Composer(QObject *parent)
     d->init();
 }
 
-Composer::~Composer()
-{
-}
+Composer::~Composer() = default;
 
 QVector<KMime::Message::Ptr> Composer::resultMessages() const
 {

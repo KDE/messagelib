@@ -13,11 +13,9 @@ MessageViewerConfigureSettingsPluginWidget::MessageViewerConfigureSettingsPlugin
 {
 }
 
-MessageViewerConfigureSettingsPluginWidget::~MessageViewerConfigureSettingsPluginWidget()
-{
-}
+MessageViewerConfigureSettingsPluginWidget::~MessageViewerConfigureSettingsPluginWidget() = default;
 
 QString MessageViewerConfigureSettingsPluginWidget::helpAnchor() const
 {
-    return QString();
+    return {};
 }

@@ -77,7 +77,7 @@ public:
     // need a larger but shorter QListWidget
     Q_REQUIRED_RESULT QSize sizeHint() const override
     {
-        return QSize(450, 128);
+        return {450, 128};
     }
 };
 } // namespace Utils

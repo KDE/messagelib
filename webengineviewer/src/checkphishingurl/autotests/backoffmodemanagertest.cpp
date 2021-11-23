@@ -14,9 +14,7 @@ BackOffModeManagerTest::BackOffModeManagerTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-BackOffModeManagerTest::~BackOffModeManagerTest()
-{
-}
+BackOffModeManagerTest::~BackOffModeManagerTest() = default;
 
 void BackOffModeManagerTest::shouldHaveDefaultValue()
 {

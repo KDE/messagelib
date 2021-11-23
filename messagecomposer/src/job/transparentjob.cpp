@@ -32,9 +32,7 @@ TransparentJob::TransparentJob(QObject *parent)
 {
 }
 
-TransparentJob::~TransparentJob()
-{
-}
+TransparentJob::~TransparentJob() = default;
 
 void TransparentJob::setContent(KMime::Content *content)
 {

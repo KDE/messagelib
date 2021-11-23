@@ -10,9 +10,7 @@
 #include "messageviewerrenderer.h"
 #include "viewer/csshelper.h"
 using namespace MessageViewer;
-MessageViewerRenderer::MessageViewerRenderer()
-{
-}
+MessageViewerRenderer::MessageViewerRenderer() = default;
 
 MessageViewerRenderer::~MessageViewerRenderer()
 {

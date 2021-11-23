@@ -73,9 +73,7 @@ MessageFactoryNG::MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::
 {
 }
 
-MessageFactoryNG::~MessageFactoryNG()
-{
-}
+MessageFactoryNG::~MessageFactoryNG() = default;
 
 // Return the addresses to use when replying to the author of msg.
 // See <https://cr.yp.to/proto/replyto.html>.
@@ -450,7 +448,7 @@ KMime::Message::Ptr
 MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, const QString &bccStr, int transportId, const QString &fcc, int identity)
 {
     if (!mOrigMsg) {
-        return KMime::Message::Ptr();
+        return {};
     }
 
     // copy the message 1:1
@@ -566,7 +564,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
         receiptTo = hrd->asUnicodeString();
     }
     if (receiptTo.trimmed().isEmpty()) {
-        return KMime::Message::Ptr();
+        return {};
     }
     receiptTo.remove(QChar::fromLatin1('\n'));
 

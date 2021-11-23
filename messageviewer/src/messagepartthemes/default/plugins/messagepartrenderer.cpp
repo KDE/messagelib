@@ -15,13 +15,9 @@
 
 using namespace MessageViewer;
 
-MessagePartRenderer::MessagePartRenderer()
-{
-}
+MessagePartRenderer::MessagePartRenderer() = default;
 
-MessagePartRenderer::~MessagePartRenderer()
-{
-}
+MessagePartRenderer::~MessagePartRenderer() = default;
 
 bool MessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const
 {

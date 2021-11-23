@@ -13,9 +13,7 @@ QuickSearchWarningTest::QuickSearchWarningTest(QObject *parent)
 {
 }
 
-QuickSearchWarningTest::~QuickSearchWarningTest()
-{
-}
+QuickSearchWarningTest::~QuickSearchWarningTest() = default;
 
 void QuickSearchWarningTest::shouldHaveDefaultValue()
 {

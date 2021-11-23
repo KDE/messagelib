@@ -19,9 +19,7 @@ FindBarBaseTest::FindBarBaseTest(QObject *parent)
 {
 }
 
-FindBarBaseTest::~FindBarBaseTest()
-{
-}
+FindBarBaseTest::~FindBarBaseTest() = default;
 
 void FindBarBaseTest::shouldHaveDefaultValue()
 {

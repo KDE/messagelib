@@ -42,6 +42,4 @@ void MessageViewerSettings::slotSyncNow()
     config()->sync();
 }
 
-MessageViewerSettings::~MessageViewerSettings()
-{
-}
+MessageViewerSettings::~MessageViewerSettings() = default;

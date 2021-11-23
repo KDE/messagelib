@@ -13,9 +13,7 @@ WebHitTestResultTest::WebHitTestResultTest(QObject *parent)
 {
 }
 
-WebHitTestResultTest::~WebHitTestResultTest()
-{
-}
+WebHitTestResultTest::~WebHitTestResultTest() = default;
 
 void WebHitTestResultTest::shouldHaveDefaultValues()
 {

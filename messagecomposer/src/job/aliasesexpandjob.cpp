@@ -26,9 +26,7 @@ AliasesExpandJob::AliasesExpandJob(const QString &recipients, const QString &def
 {
 }
 
-AliasesExpandJob::~AliasesExpandJob()
-{
-}
+AliasesExpandJob::~AliasesExpandJob() = default;
 
 void AliasesExpandJob::start()
 {

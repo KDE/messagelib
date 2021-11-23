@@ -13,9 +13,7 @@ RemoteContentStatusTypeComboBox::RemoteContentStatusTypeComboBox(QWidget *parent
     addItem(i18n("Blocked"), QVariant::fromValue(RemoteContentInfo::RemoteContentInfoStatus::Blocked));
 }
 
-RemoteContentStatusTypeComboBox::~RemoteContentStatusTypeComboBox()
-{
-}
+RemoteContentStatusTypeComboBox::~RemoteContentStatusTypeComboBox() = default;
 
 void RemoteContentStatusTypeComboBox::setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus type)
 {

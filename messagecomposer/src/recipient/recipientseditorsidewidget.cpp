@@ -52,9 +52,7 @@ RecipientsEditorSideWidget::RecipientsEditorSideWidget(RecipientsEditor *view, Q
     updateTotalToolTip();
 }
 
-RecipientsEditorSideWidget::~RecipientsEditorSideWidget()
-{
-}
+RecipientsEditorSideWidget::~RecipientsEditorSideWidget() = default;
 
 RecipientsPicker *RecipientsEditorSideWidget::picker() const
 {

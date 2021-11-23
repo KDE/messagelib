@@ -85,9 +85,7 @@ SinglepartJob::SinglepartJob(QObject *parent)
 {
 }
 
-SinglepartJob::~SinglepartJob()
-{
-}
+SinglepartJob::~SinglepartJob() = default;
 
 QByteArray SinglepartJob::data() const
 {

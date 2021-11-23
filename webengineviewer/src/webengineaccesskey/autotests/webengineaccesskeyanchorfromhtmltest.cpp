@@ -37,9 +37,7 @@ TestWebEngineAccessKey::TestWebEngineAccessKey(QWidget *parent)
     hbox->addWidget(mEngineView);
 }
 
-TestWebEngineAccessKey::~TestWebEngineAccessKey()
-{
-}
+TestWebEngineAccessKey::~TestWebEngineAccessKey() = default;
 
 void TestWebEngineAccessKey::setHtml(const QString &html)
 {

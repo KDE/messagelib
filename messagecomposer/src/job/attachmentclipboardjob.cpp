@@ -17,9 +17,7 @@ AttachmentClipBoardJob::AttachmentClipBoardJob(QObject *parent)
 {
 }
 
-AttachmentClipBoardJob::~AttachmentClipBoardJob()
-{
-}
+AttachmentClipBoardJob::~AttachmentClipBoardJob() = default;
 
 void AttachmentClipBoardJob::addAttachment(const QByteArray &data, const QString &attachmentName)
 {

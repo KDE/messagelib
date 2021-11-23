@@ -202,9 +202,7 @@ public:
     Q_REQUIRED_RESULT std::vector<GpgME::Key> signingKeys(CryptoMessageFormat f) const;
 
     struct SplitInfo {
-        SplitInfo()
-        {
-        }
+        SplitInfo() = default;
 
         explicit SplitInfo(const QStringList &r)
             : recipients(r)

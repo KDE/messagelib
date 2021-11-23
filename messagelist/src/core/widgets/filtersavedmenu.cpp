@@ -19,9 +19,7 @@ FilterSavedMenu::FilterSavedMenu(QWidget *parent)
     connect(this, &FilterSavedMenu::aboutToShow, this, &FilterSavedMenu::slotShowMenu);
 }
 
-FilterSavedMenu::~FilterSavedMenu()
-{
-}
+FilterSavedMenu::~FilterSavedMenu() = default;
 
 void FilterSavedMenu::slotShowMenu()
 {

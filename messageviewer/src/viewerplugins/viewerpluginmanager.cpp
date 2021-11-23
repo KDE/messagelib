@@ -18,9 +18,7 @@ using namespace MessageViewer;
 class ViewerPluginInfo
 {
 public:
-    ViewerPluginInfo()
-    {
-    }
+    ViewerPluginInfo() = default;
 
     KPluginMetaData data;
     QString metaDataFileNameBaseName;

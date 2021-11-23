@@ -20,9 +20,7 @@ using namespace TemplateParser;
 class TemplateParser::CustomTemplatesMenuPrivate
 {
 public:
-    CustomTemplatesMenuPrivate()
-    {
-    }
+    CustomTemplatesMenuPrivate() = default;
 
     ~CustomTemplatesMenuPrivate()
     {

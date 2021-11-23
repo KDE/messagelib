@@ -36,9 +36,7 @@ ImageScalingSelectFormatDialog::ImageScalingSelectFormatDialog(QWidget *parent)
     initialize();
 }
 
-ImageScalingSelectFormatDialog::~ImageScalingSelectFormatDialog()
-{
-}
+ImageScalingSelectFormatDialog::~ImageScalingSelectFormatDialog() = default;
 
 void ImageScalingSelectFormatDialog::addImageFormat(const QString &format, const QString &mimetype)
 {
@@ -98,9 +96,7 @@ ImageScalingSelectFormat::ImageScalingSelectFormat(QWidget *parent)
     lay->addWidget(mSelectFormat);
 }
 
-ImageScalingSelectFormat::~ImageScalingSelectFormat()
-{
-}
+ImageScalingSelectFormat::~ImageScalingSelectFormat() = default;
 
 void ImageScalingSelectFormat::slotSelectFormat()
 {

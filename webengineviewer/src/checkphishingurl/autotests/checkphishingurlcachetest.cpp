@@ -18,9 +18,7 @@ CheckPhishingUrlCacheTest::CheckPhishingUrlCacheTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-CheckPhishingUrlCacheTest::~CheckPhishingUrlCacheTest()
-{
-}
+CheckPhishingUrlCacheTest::~CheckPhishingUrlCacheTest() = default;
 
 void CheckPhishingUrlCacheTest::shouldNotBeAMalware()
 {

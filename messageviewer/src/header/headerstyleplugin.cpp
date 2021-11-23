@@ -10,9 +10,7 @@ using namespace MessageViewer;
 class MessageViewer::HeaderStylePluginPrivate
 {
 public:
-    HeaderStylePluginPrivate()
-    {
-    }
+    HeaderStylePluginPrivate() = default;
 
     bool mIsEnabled = false;
     bool mShowEmoticons = true;

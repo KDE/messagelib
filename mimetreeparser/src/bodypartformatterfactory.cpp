@@ -18,7 +18,7 @@
 #include <QMimeDatabase>
 
 #include <QPluginLoader>
-#include <assert.h>
+#include <cassert>
 
 using namespace MimeTreeParser;
 

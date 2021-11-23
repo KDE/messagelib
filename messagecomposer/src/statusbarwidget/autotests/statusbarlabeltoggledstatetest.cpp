@@ -17,9 +17,7 @@ StatusBarLabelToggledStateTest::StatusBarLabelToggledStateTest(QObject *parent)
 {
 }
 
-StatusBarLabelToggledStateTest::~StatusBarLabelToggledStateTest()
-{
-}
+StatusBarLabelToggledStateTest::~StatusBarLabelToggledStateTest() = default;
 
 void StatusBarLabelToggledStateTest::shouldHasDefaultValue()
 {

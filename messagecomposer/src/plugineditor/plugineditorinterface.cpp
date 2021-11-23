@@ -12,9 +12,7 @@ using namespace MessageComposer;
 class MessageComposer::PluginEditorInterfacePrivate
 {
 public:
-    PluginEditorInterfacePrivate()
-    {
-    }
+    PluginEditorInterfacePrivate() = default;
 
     ~PluginEditorInterfacePrivate()
     {

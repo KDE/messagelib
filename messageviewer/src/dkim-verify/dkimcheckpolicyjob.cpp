@@ -16,9 +16,7 @@ DKIMCheckPolicyJob::DKIMCheckPolicyJob(QObject *parent)
 {
 }
 
-DKIMCheckPolicyJob::~DKIMCheckPolicyJob()
-{
-}
+DKIMCheckPolicyJob::~DKIMCheckPolicyJob() = default;
 
 bool DKIMCheckPolicyJob::canStart() const
 {

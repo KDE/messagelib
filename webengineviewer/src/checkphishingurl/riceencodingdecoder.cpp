@@ -22,13 +22,9 @@ const unsigned int kMaxBitIndex = kBitsPerByte * sizeof(uint32_t);
 }
 
 using namespace WebEngineViewer;
-RiceEncodingDecoder::RiceEncodingDecoder()
-{
-}
+RiceEncodingDecoder::RiceEncodingDecoder() = default;
 
-RiceEncodingDecoder::~RiceEncodingDecoder()
-{
-}
+RiceEncodingDecoder::~RiceEncodingDecoder() = default;
 
 QVector<quint32> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
@@ -40,7 +36,7 @@ QVector<quint32> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncod
     quint64 firstValue = riceDeltaEncoding.firstValue.toInt(&ok);
     if (!ok) {
         qCWarning(WEBENGINEVIEWER_LOG) << "First value is not a int value " << riceDeltaEncoding.firstValue;
-        return QVector<quint32>();
+        return {};
     }
     list.reserve(riceDeltaEncoding.numberEntries + 1);
     list << firstValue;
@@ -54,7 +50,7 @@ QVector<quint32> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncod
         quint32 offset;
         bool result = decoder.nextValue(&offset);
         if (!result) {
-            return QVector<quint32>();
+            return {};
         }
         lastValue += offset;
 #if 0
@@ -88,7 +84,7 @@ QVector<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncod
         quint32 offset;
         bool result = decoder.nextValue(&offset);
         if (!result) {
-            return QVector<quint32>();
+            return {};
         }
 
         lastValue += offset;
@@ -127,9 +123,7 @@ RiceDecoder::RiceDecoder(int riceParameter, int numberEntries, const QByteArray 
     mCurrentWordBitIndex = kMaxBitIndex;
 }
 
-RiceDecoder::~RiceDecoder()
-{
-}
+RiceDecoder::~RiceDecoder() = default;
 
 bool RiceDecoder::hasOtherEntries() const
 {

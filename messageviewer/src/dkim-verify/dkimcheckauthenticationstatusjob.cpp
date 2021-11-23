@@ -15,9 +15,7 @@ DKIMCheckAuthenticationStatusJob::DKIMCheckAuthenticationStatusJob(QObject *pare
 {
 }
 
-DKIMCheckAuthenticationStatusJob::~DKIMCheckAuthenticationStatusJob()
-{
-}
+DKIMCheckAuthenticationStatusJob::~DKIMCheckAuthenticationStatusJob() = default;
 
 void DKIMCheckAuthenticationStatusJob::start()
 {

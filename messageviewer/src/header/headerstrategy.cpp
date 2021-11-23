@@ -15,22 +15,18 @@
 // HeaderStrategy abstract base:
 //
 using namespace MessageViewer;
-HeaderStrategy::HeaderStrategy()
-{
-}
+HeaderStrategy::HeaderStrategy() = default;
 
-HeaderStrategy::~HeaderStrategy()
-{
-}
+HeaderStrategy::~HeaderStrategy() = default;
 
 QStringList HeaderStrategy::headersToDisplay() const
 {
-    return QStringList();
+    return {};
 }
 
 QStringList HeaderStrategy::headersToHide() const
 {
-    return QStringList();
+    return {};
 }
 
 bool HeaderStrategy::showHeader(const QString &header) const

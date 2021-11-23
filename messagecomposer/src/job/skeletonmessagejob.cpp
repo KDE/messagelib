@@ -240,9 +240,7 @@ SkeletonMessageJob::SkeletonMessageJob(InfoPart *infoPart, GlobalPart *globalPar
     d->globalPart = globalPart;
 }
 
-SkeletonMessageJob::~SkeletonMessageJob()
-{
-}
+SkeletonMessageJob::~SkeletonMessageJob() = default;
 
 InfoPart *SkeletonMessageJob::infoPart() const
 {

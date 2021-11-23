@@ -35,9 +35,7 @@ HtmlStatusBar::HtmlStatusBar(QWidget *parent)
     update();
 }
 
-HtmlStatusBar::~HtmlStatusBar()
-{
-}
+HtmlStatusBar::~HtmlStatusBar() = default;
 
 MimeTreeParser::Util::HtmlMode HtmlStatusBar::mode() const
 {
@@ -123,7 +121,7 @@ QString HtmlStatusBar::message() const
                      "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> "
                      "<br />M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>");
     default:
-        return QString();
+        return {};
     }
 }
 
@@ -140,7 +138,7 @@ QString HtmlStatusBar::toolTip() const
         break;
     }
 
-    return QString();
+    return {};
 }
 
 QColor HtmlStatusBar::fgColor() const

@@ -21,9 +21,7 @@ using namespace MessageViewer;
 class MessageViewer::ConfigureWidgetPrivate
 {
 public:
-    ConfigureWidgetPrivate()
-    {
-    }
+    ConfigureWidgetPrivate() = default;
 
     ~ConfigureWidgetPrivate()
     {

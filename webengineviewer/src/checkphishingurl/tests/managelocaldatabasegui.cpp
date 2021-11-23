@@ -28,9 +28,7 @@ ManageLocalDataBaseGui::ManageLocalDataBaseGui(QWidget *parent)
     layout->addWidget(button);
 }
 
-ManageLocalDataBaseGui::~ManageLocalDataBaseGui()
-{
-}
+ManageLocalDataBaseGui::~ManageLocalDataBaseGui() = default;
 
 void ManageLocalDataBaseGui::slotDownloadFullDatabase()
 {

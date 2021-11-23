@@ -14,9 +14,7 @@ CheckPhishingUrlUtilTest::CheckPhishingUrlUtilTest(QObject *parent)
 {
 }
 
-CheckPhishingUrlUtilTest::~CheckPhishingUrlUtilTest()
-{
-}
+CheckPhishingUrlUtilTest::~CheckPhishingUrlUtilTest() = default;
 
 void CheckPhishingUrlUtilTest::shouldConvertToSecond_data()
 {

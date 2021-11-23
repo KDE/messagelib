@@ -57,9 +57,7 @@ int RecipientLineFactory::maximumRecipients()
 class MessageComposer::RecipientsEditorPrivate
 {
 public:
-    RecipientsEditorPrivate()
-    {
-    }
+    RecipientsEditorPrivate() = default;
 
     KConfig *mRecentAddressConfig = nullptr;
     RecipientsEditorSideWidget *mSideWidget = nullptr;

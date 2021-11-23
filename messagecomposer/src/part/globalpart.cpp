@@ -11,9 +11,7 @@ using namespace MessageComposer;
 class GlobalPart::GlobalPartPrivate
 {
 public:
-    GlobalPartPrivate()
-    {
-    }
+    GlobalPartPrivate() = default;
 
     QVector<QByteArray> charsets;
     QWidget *parentWidgetForGui = nullptr;

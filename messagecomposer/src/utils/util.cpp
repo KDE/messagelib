@@ -249,7 +249,7 @@ QByteArray MessageComposer::Util::selectCharset(const QVector<QByteArray> &chars
         }
     }
     qCDebug(MESSAGECOMPOSER_LOG) << "No appropriate charset found.";
-    return QByteArray();
+    return {};
 }
 
 QStringList MessageComposer::Util::AttachmentKeywords()
@@ -419,7 +419,7 @@ KMime::Message::Ptr MessageComposer::Util::message(const Akonadi::Item &item)
 {
     if (!item.hasPayload<KMime::Message::Ptr>()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "Payload is not a MessagePtr!";
-        return KMime::Message::Ptr();
+        return {};
     }
 
     return item.payload<KMime::Message::Ptr>();

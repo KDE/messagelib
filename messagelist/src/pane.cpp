@@ -99,7 +99,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     d->mSelectionModel = selectionModel;
 
     // Build the proxy stack
-    const QAbstractProxyModel *proxyModel = qobject_cast<const QAbstractProxyModel *>(d->mSelectionModel->model());
+    const auto *proxyModel = qobject_cast<const QAbstractProxyModel *>(d->mSelectionModel->model());
 
     while (proxyModel) {
         if (proxyModel == d->mModel) {
@@ -107,7 +107,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
         }
 
         d->mProxyStack << proxyModel;
-        const QAbstractProxyModel *nextProxyModel = qobject_cast<const QAbstractProxyModel *>(proxyModel->sourceModel());
+        const auto *nextProxyModel = qobject_cast<const QAbstractProxyModel *>(proxyModel->sourceModel());
 
         if (!nextProxyModel) {
             // It's the final model in the chain, so it is necessarily the sourceModel.
@@ -888,7 +888,7 @@ Akonadi::Item Pane::currentItem() const
     auto w = static_cast<Widget *>(currentWidget());
 
     if (!w) {
-        return Akonadi::Item();
+        return {};
     }
 
     return w->currentItem();
@@ -899,7 +899,7 @@ KMime::Message::Ptr Pane::currentMessage() const
     auto w = static_cast<Widget *>(currentWidget());
 
     if (!w) {
-        return KMime::Message::Ptr();
+        return {};
     }
 
     return w->currentMessage();
@@ -909,7 +909,7 @@ QVector<KMime::Message::Ptr> Pane::selectionAsMessageList(bool includeCollapsedC
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
-        return QVector<KMime::Message::Ptr>();
+        return {};
     }
     return w->selectionAsMessageList(includeCollapsedChildren);
 }
@@ -918,7 +918,7 @@ Akonadi::Item::List Pane::selectionAsMessageItemList(bool includeCollapsedChildr
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
-        return Akonadi::Item::List();
+        return {};
     }
     return w->selectionAsMessageItemList(includeCollapsedChildren);
 }
@@ -927,7 +927,7 @@ QVector<Akonadi::Item::Id> Pane::selectionAsListMessageId(bool includeCollapsedC
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
-        return QVector<Akonadi::Item::Id>();
+        return {};
     }
     return w->selectionAsListMessageId(includeCollapsedChildren);
 }
@@ -936,7 +936,7 @@ QVector<qlonglong> Pane::selectionAsMessageItemListId(bool includeCollapsedChild
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
-        return QVector<qlonglong>();
+        return {};
     }
     return w->selectionAsMessageItemListId(includeCollapsedChildren);
 }
@@ -945,7 +945,7 @@ Akonadi::Item::List Pane::currentThreadAsMessageList() const
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
-        return Akonadi::Item::List();
+        return {};
     }
     return w->currentThreadAsMessageList();
 }
@@ -956,7 +956,7 @@ Akonadi::Item::List Pane::itemListFromPersistentSet(MessageList::Core::MessageIt
     if (w) {
         return w->itemListFromPersistentSet(ref);
     }
-    return Akonadi::Item::List();
+    return {};
 }
 
 void Pane::deletePersistentSet(MessageList::Core::MessageItemSetReference ref)
@@ -979,7 +979,7 @@ QVector<Akonadi::MessageStatus> Pane::currentFilterStatus() const
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {
-        return QVector<Akonadi::MessageStatus>();
+        return {};
     }
     return w->currentFilterStatus();
 }
@@ -999,7 +999,7 @@ QString Pane::currentFilterSearchString() const
     if (w) {
         return w->currentFilterSearchString();
     }
-    return QString();
+    return {};
 }
 
 bool Pane::isThreaded() const

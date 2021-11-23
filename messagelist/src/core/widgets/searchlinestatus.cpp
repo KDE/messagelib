@@ -48,9 +48,7 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     connect(FilterSavedManager::self(), &FilterSavedManager::activateFilter, this, &SearchLineStatus::slotActivateFilter);
 }
 
-SearchLineStatus::~SearchLineStatus()
-{
-}
+SearchLineStatus::~SearchLineStatus() = default;
 
 void SearchLineStatus::keyPressEvent(QKeyEvent *e)
 {

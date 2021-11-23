@@ -36,12 +36,12 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
     KMime::Content *node = part.content();
 
     if (node->head().isEmpty()) {
-        return MessagePart::Ptr();
+        return {};
     }
 
     const auto smimeCrypto = QGpgME::smime();
     if (!smimeCrypto) {
-        return MessagePart::Ptr();
+        return {};
     }
 
     // we are also registered for octet-stream, in that case stop here if that's not a part for us

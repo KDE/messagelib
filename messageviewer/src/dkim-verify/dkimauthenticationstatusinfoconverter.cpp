@@ -12,13 +12,9 @@
 #include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
 
-DKIMAuthenticationStatusInfoConverter::DKIMAuthenticationStatusInfoConverter()
-{
-}
+DKIMAuthenticationStatusInfoConverter::DKIMAuthenticationStatusInfoConverter() = default;
 
-DKIMAuthenticationStatusInfoConverter::~DKIMAuthenticationStatusInfoConverter()
-{
-}
+DKIMAuthenticationStatusInfoConverter::~DKIMAuthenticationStatusInfoConverter() = default;
 
 MessageViewer::DKIMAuthenticationStatusInfo DKIMAuthenticationStatusInfoConverter::statusInfo() const
 {

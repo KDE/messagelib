@@ -14,9 +14,7 @@ using namespace MessageViewer;
 class MessageViewer::MessageDisplayFormatAttributePrivate
 {
 public:
-    MessageDisplayFormatAttributePrivate()
-    {
-    }
+    MessageDisplayFormatAttributePrivate() = default;
 
     Viewer::DisplayFormatMessage messageFormat = Viewer::UseGlobalSetting;
     bool remoteContent = false;

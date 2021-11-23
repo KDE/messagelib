@@ -27,9 +27,7 @@ using namespace MessageViewer;
 class Q_DECL_HIDDEN MimeTreeModel::MimeTreeModelPrivate
 {
 public:
-    MimeTreeModelPrivate()
-    {
-    }
+    MimeTreeModelPrivate() = default;
 
     ~MimeTreeModelPrivate()
     {
@@ -66,7 +64,7 @@ public:
         if (auto ct = content->contentType(false)) {
             return QString::fromLatin1(ct->mimeType());
         }
-        return QString();
+        return {};
     }
 
     QString typeForContent(KMime::Content *content)
@@ -79,14 +77,14 @@ public:
             }
             return mimeType.comment();
         } else {
-            return QString();
+            return {};
         }
     }
 
     QString sizeOfContent(KMime::Content *content)
     {
         if (content->body().isEmpty()) {
-            return QString();
+            return {};
         }
         return KFormat().formatByteSize(content->body().size());
     }
@@ -110,9 +108,9 @@ public:
                 return QIcon::fromTheme(mimeType.iconName());
             }
 
-            return QIcon();
+            return {};
         } else {
-            return QIcon();
+            return {};
         }
     }
 
@@ -148,14 +146,14 @@ QModelIndex MimeTreeModel::index(int row, int column, const QModelIndex &parent)
 {
     if (!parent.isValid()) {
         if (row != 0) {
-            return QModelIndex();
+            return {};
         }
         return createIndex(row, column, d->root);
     }
 
     auto parentContent = static_cast<KMime::Content *>(parent.internalPointer());
     if (!parentContent || parentContent->contents().count() <= row || row < 0) {
-        return QModelIndex();
+        return {};
     }
     KMime::Content *content = parentContent->contents().at(row);
     return createIndex(row, column, content);
@@ -164,16 +162,16 @@ QModelIndex MimeTreeModel::index(int row, int column, const QModelIndex &parent)
 QModelIndex MimeTreeModel::parent(const QModelIndex &index) const
 {
     if (!index.isValid()) {
-        return QModelIndex();
+        return {};
     }
     auto currentContent = static_cast<KMime::Content *>(index.internalPointer());
     if (!currentContent) {
-        return QModelIndex();
+        return {};
     }
 
     KMime::ContentIndex currentIndex = d->root->indexForContent(currentContent);
     if (!currentIndex.isValid()) {
-        return QModelIndex();
+        return {};
     }
     currentIndex.up();
     KMime::Content *parentContent = d->root->content(currentIndex);
@@ -210,12 +208,12 @@ QVariant MimeTreeModel::data(const QModelIndex &index, int role) const
 {
     auto content = static_cast<KMime::Content *>(index.internalPointer());
     if (!content) {
-        return QVariant();
+        return {};
     }
     if (role == Qt::ToolTipRole) {
         // TODO
         // return d->root->indexForContent( content ).toString();
-        return QVariant();
+        return {};
     }
     if (role == Qt::DisplayRole) {
         switch (index.column()) {
@@ -253,7 +251,7 @@ QVariant MimeTreeModel::data(const QModelIndex &index, int role) const
         }
         return topLevelMsg->mainBodyPart(content->contentType()->mimeType()) == content;
     }
-    return QVariant();
+    return {};
 }
 
 QVariant MimeTreeModel::headerData(int section, Qt::Orientation orientation, int role) const

@@ -21,9 +21,7 @@ DKIMCheckFullJob::DKIMCheckFullJob(QObject *parent)
 {
 }
 
-DKIMCheckFullJob::~DKIMCheckFullJob()
-{
-}
+DKIMCheckFullJob::~DKIMCheckFullJob() = default;
 
 DKIMCheckPolicy DKIMCheckFullJob::policy() const
 {

@@ -13,9 +13,7 @@ MessageDisplayFormatAttributeTest::MessageDisplayFormatAttributeTest(QObject *pa
 {
 }
 
-MessageDisplayFormatAttributeTest::~MessageDisplayFormatAttributeTest()
-{
-}
+MessageDisplayFormatAttributeTest::~MessageDisplayFormatAttributeTest() = default;
 
 void MessageDisplayFormatAttributeTest::shouldHaveDefaultValue()
 {

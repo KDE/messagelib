@@ -15,9 +15,7 @@ using namespace MessageComposer;
 class MessageComposer::PluginEditorConvertTextInterfacePrivate
 {
 public:
-    PluginEditorConvertTextInterfacePrivate()
-    {
-    }
+    PluginEditorConvertTextInterfacePrivate() = default;
 
     QVector<PluginActionType> mActionTypes;
 

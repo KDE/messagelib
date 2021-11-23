@@ -197,9 +197,7 @@ MainTextJob::MainTextJob(TextPart *textPart, QObject *parent)
     d->textPart = textPart;
 }
 
-MainTextJob::~MainTextJob()
-{
-}
+MainTextJob::~MainTextJob() = default;
 
 TextPart *MainTextJob::textPart() const
 {

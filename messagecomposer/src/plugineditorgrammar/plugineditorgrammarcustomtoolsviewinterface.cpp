@@ -42,9 +42,7 @@ void PluginEditorGrammarCustomToolsViewInterface::setRichTextEditor(KPIMTextEdit
     d->mEditor = richTextEditor;
 }
 
-PluginGrammarAction::PluginGrammarAction()
-{
-}
+PluginGrammarAction::PluginGrammarAction() = default;
 
 QString PluginGrammarAction::replacement() const
 {

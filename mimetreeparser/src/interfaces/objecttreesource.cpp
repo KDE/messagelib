@@ -11,10 +11,6 @@
 
 using namespace MimeTreeParser;
 
-Interface::ObjectTreeSource::ObjectTreeSource()
-{
-}
+Interface::ObjectTreeSource::ObjectTreeSource() = default;
 
-Interface::ObjectTreeSource::~ObjectTreeSource()
-{
-}
+Interface::ObjectTreeSource::~ObjectTreeSource() = default;

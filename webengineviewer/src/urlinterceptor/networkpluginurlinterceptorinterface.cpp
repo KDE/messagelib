@@ -13,9 +13,7 @@ NetworkPluginUrlInterceptorInterface::NetworkPluginUrlInterceptorInterface(QObje
 {
 }
 
-NetworkPluginUrlInterceptorInterface::~NetworkPluginUrlInterceptorInterface()
-{
-}
+NetworkPluginUrlInterceptorInterface::~NetworkPluginUrlInterceptorInterface() = default;
 
 void NetworkPluginUrlInterceptorInterface::createActions(KActionCollection *ac)
 {

@@ -53,9 +53,7 @@ static KMime::Headers::contentEncoding bestEncodingForTypeAndData(const QByteArr
 class MessageCore::AttachmentPart::AttachmentPartPrivate
 {
 public:
-    AttachmentPartPrivate()
-    {
-    }
+    AttachmentPartPrivate() = default;
 
     QUrl mUrl;
     QString mName;

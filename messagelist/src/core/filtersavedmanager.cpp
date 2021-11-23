@@ -16,9 +16,7 @@ FilterSavedManager::FilterSavedManager(QObject *parent)
 {
 }
 
-FilterSavedManager::~FilterSavedManager()
-{
-}
+FilterSavedManager::~FilterSavedManager() = default;
 
 FilterSavedManager *FilterSavedManager::self()
 {

@@ -536,7 +536,7 @@ Akonadi::Item MessageList::Widget::currentItem() const
     Core::MessageItem *mi = view()->currentMessageItem();
 
     if (mi == nullptr) {
-        return Akonadi::Item();
+        return {};
     }
 
     return d->itemForRow(mi->currentModelIndexRow());
@@ -547,7 +547,7 @@ KMime::Message::Ptr MessageList::Widget::currentMessage() const
     Core::MessageItem *mi = view()->currentMessageItem();
 
     if (mi == nullptr) {
-        return KMime::Message::Ptr();
+        return {};
     }
 
     return d->messageForRow(mi->currentModelIndexRow());
@@ -731,7 +731,7 @@ Akonadi::Collection MessageList::Widget::currentCollection() const
 {
     Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
     if (collections.size() != 1) {
-        return Akonadi::Collection(); // no folder here or too many (in case we can't decide where the drop will end)
+        return {}; // no folder here or too many (in case we can't decide where the drop will end)
     }
     return collections.first();
 }

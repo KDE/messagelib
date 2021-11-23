@@ -13,6 +13,4 @@ PluginEditorCheckBeforeSend::PluginEditorCheckBeforeSend(QObject *parent)
 {
 }
 
-PluginEditorCheckBeforeSend::~PluginEditorCheckBeforeSend()
-{
-}
+PluginEditorCheckBeforeSend::~PluginEditorCheckBeforeSend() = default;

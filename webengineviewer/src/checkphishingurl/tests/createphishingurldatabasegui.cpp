@@ -51,9 +51,7 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     buttonLayout->addWidget(save);
 }
 
-CreatePhisingUrlDataBaseGui::~CreatePhisingUrlDataBaseGui()
-{
-}
+CreatePhisingUrlDataBaseGui::~CreatePhisingUrlDataBaseGui() = default;
 
 void CreatePhisingUrlDataBaseGui::clear()
 {

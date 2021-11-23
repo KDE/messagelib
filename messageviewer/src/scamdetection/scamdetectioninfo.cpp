@@ -7,13 +7,9 @@
 
 #include "scamdetectioninfo.h"
 using namespace MessageViewer;
-ScamDetectionInfo::ScamDetectionInfo()
-{
-}
+ScamDetectionInfo::ScamDetectionInfo() = default;
 
-ScamDetectionInfo::~ScamDetectionInfo()
-{
-}
+ScamDetectionInfo::~ScamDetectionInfo() = default;
 
 const QString &ScamDetectionInfo::domainOrEmail() const
 {

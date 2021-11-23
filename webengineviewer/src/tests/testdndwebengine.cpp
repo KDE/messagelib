@@ -30,9 +30,7 @@ TestDndWebEngine::TestDndWebEngine(QWidget *parent)
     vbox->addWidget(edit);
 }
 
-TestDndWebEngine::~TestDndWebEngine()
-{
-}
+TestDndWebEngine::~TestDndWebEngine() = default;
 
 int main(int argc, char *argv[])
 {

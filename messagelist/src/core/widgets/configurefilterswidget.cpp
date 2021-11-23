@@ -28,9 +28,7 @@ ConfigureFiltersWidget::ConfigureFiltersWidget(QWidget *parent)
     init();
 }
 
-ConfigureFiltersWidget::~ConfigureFiltersWidget()
-{
-}
+ConfigureFiltersWidget::~ConfigureFiltersWidget() = default;
 
 void ConfigureFiltersWidget::init()
 {
@@ -112,9 +110,7 @@ FilterListWidgetItem::FilterListWidgetItem(QListWidget *parent)
 {
 }
 
-FilterListWidgetItem::~FilterListWidgetItem()
-{
-}
+FilterListWidgetItem::~FilterListWidgetItem() = default;
 
 const QString &FilterListWidgetItem::identifier() const
 {

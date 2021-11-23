@@ -16,9 +16,7 @@ DMarcLookUpKey::DMarcLookUpKey(QObject *parent)
 {
 }
 
-DMarcLookUpKey::~DMarcLookUpKey()
-{
-}
+DMarcLookUpKey::~DMarcLookUpKey() = default;
 
 void DMarcLookUpKey::lookUpDomain(const QString &domain)
 {

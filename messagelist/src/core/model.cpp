@@ -501,7 +501,7 @@ QVariant Model::data(const QModelIndex &index, int role) const
             auto mItem = static_cast<MessageItem *>(item);
             return QVariant::fromValue(mItem->akonadiItem().id());
         } else {
-            return QVariant();
+            return {};
         }
         break;
     case Qt::UserRole + 2: // EntityTreeModel::ItemRole
@@ -509,14 +509,14 @@ QVariant Model::data(const QModelIndex &index, int role) const
             auto mItem = static_cast<MessageItem *>(item);
             return QVariant::fromValue(mItem->akonadiItem());
         } else {
-            return QVariant();
+            return {};
         }
         break;
     case Qt::UserRole + 3: // EntityTreeModel::MimeTypeRole
         if (item->type() == MessageList::Core::Item::Message) {
             return QStringLiteral("message/rfc822");
         } else {
-            return QVariant();
+            return {};
         }
         break;
     case Qt::AccessibleTextRole:
@@ -533,19 +533,19 @@ QVariant Model::data(const QModelIndex &index, int role) const
         return QString();
         break;
     default:
-        return QVariant();
+        return {};
     }
 }
 
 QVariant Model::headerData(int section, Qt::Orientation, int role) const
 {
     if (!d->mTheme) {
-        return QVariant();
+        return {};
     }
 
     auto column = d->mTheme->column(section);
     if (!column) {
-        return QVariant();
+        return {};
     }
 
     if (d->mStorageModel && column->isSenderOrReceiver() && (role == Qt::DisplayRole)) {
@@ -564,17 +564,17 @@ QVariant Model::headerData(int section, Qt::Orientation, int role) const
         return QVariant(QIcon::fromTheme(column->pixmapName()));
     }
 
-    return QVariant();
+    return {};
 }
 
 QModelIndex Model::index(Item *item, int column) const
 {
     if (!d->mModelForItemFunctions) {
-        return QModelIndex(); // called with disconnected UI: the item isn't known on the Qt side, yet
+        return {}; // called with disconnected UI: the item isn't known on the Qt side, yet
     }
 
     if (!item) {
-        return QModelIndex();
+        return {};
     }
     // FIXME: This function is a bottleneck (the caching in indexOfChildItem only works 30% of the time)
     auto par = item->parent();
@@ -582,12 +582,12 @@ QModelIndex Model::index(Item *item, int column) const
         if (item != d->mRootItem) {
             item->dump(QString());
         }
-        return QModelIndex();
+        return {};
     }
 
     const int index = par->indexOfChildItem(item);
     if (index < 0) {
-        return QModelIndex(); // BUG
+        return {}; // BUG
     }
     return createIndex(index, column, item);
 }
@@ -595,7 +595,7 @@ QModelIndex Model::index(Item *item, int column) const
 QModelIndex Model::index(int row, int column, const QModelIndex &parent) const
 {
     if (!d->mModelForItemFunctions) {
-        return QModelIndex(); // called with disconnected UI: the item isn't known on the Qt side, yet
+        return {}; // called with disconnected UI: the item isn't known on the Qt side, yet
     }
 
 #ifdef READD_THIS_IF_YOU_WANT_TO_PASS_MODEL_TEST
@@ -608,19 +608,19 @@ QModelIndex Model::index(int row, int column, const QModelIndex &parent) const
     if (parent.isValid()) {
         item = static_cast<const Item *>(parent.internalPointer());
         if (!item) {
-            return QModelIndex(); // should never happen
+            return {}; // should never happen
         }
     } else {
         item = d->mRootItem;
     }
 
     if (parent.column() > 0) {
-        return QModelIndex(); // parent column is not 0: shouldn't have children (as per Qt documentation)
+        return {}; // parent column is not 0: shouldn't have children (as per Qt documentation)
     }
 
     Item *child = item->childItem(row);
     if (!child) {
-        return QModelIndex(); // no such row in parent
+        return {}; // no such row in parent
     }
     return createIndex(row, column, child);
 }
@@ -630,15 +630,15 @@ QModelIndex Model::parent(const QModelIndex &modelIndex) const
     Q_ASSERT(d->mModelForItemFunctions); // should be never called with disconnected UI
 
     if (!modelIndex.isValid()) {
-        return QModelIndex(); // should never happen
+        return {}; // should never happen
     }
     auto item = static_cast<Item *>(modelIndex.internalPointer());
     if (!item) {
-        return QModelIndex();
+        return {};
     }
     auto par = item->parent();
     if (!par) {
-        return QModelIndex(); // should never happen
+        return {}; // should never happen
     }
     // return index( par, modelIndex.column() );
     return index(par, 0); // parents are always in column 0 (as per Qt documentation)
@@ -4563,7 +4563,7 @@ QList<MessageItem *> Model::persistentSetCurrentMessageItemList(MessageItemSetRe
     if (d->mPersistentSetManager) {
         return d->mPersistentSetManager->messageItems(ref);
     }
-    return QList<MessageItem *>();
+    return {};
 }
 
 void Model::deletePersistentSet(MessageItemSetReference ref)

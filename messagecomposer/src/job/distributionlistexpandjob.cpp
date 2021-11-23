@@ -20,9 +20,7 @@ DistributionListExpandJob::DistributionListExpandJob(const QString &name, QObjec
 {
 }
 
-DistributionListExpandJob::~DistributionListExpandJob()
-{
-}
+DistributionListExpandJob::~DistributionListExpandJob() = default;
 
 void DistributionListExpandJob::start()
 {

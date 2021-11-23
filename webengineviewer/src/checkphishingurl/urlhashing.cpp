@@ -15,9 +15,7 @@ UrlHashing::UrlHashing(const QUrl &url)
 {
 }
 
-UrlHashing::~UrlHashing()
-{
-}
+UrlHashing::~UrlHashing() = default;
 
 QString UrlHashing::canonicalizeUrl(QUrl url)
 {

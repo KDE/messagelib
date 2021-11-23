@@ -26,9 +26,7 @@ RemoteContentWidgetItem::RemoteContentWidgetItem(QTreeWidget *parent)
     treeWidget()->setItemWidget(this, ColumnType::RuleType, mStatusTypeCombobox);
 }
 
-RemoteContentWidgetItem::~RemoteContentWidgetItem()
-{
-}
+RemoteContentWidgetItem::~RemoteContentWidgetItem() = default;
 
 void RemoteContentWidgetItem::setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus type)
 {
@@ -71,9 +69,7 @@ RemoteContentConfigureWidget::RemoteContentConfigureWidget(QWidget *parent)
     readSettings();
 }
 
-RemoteContentConfigureWidget::~RemoteContentConfigureWidget()
-{
-}
+RemoteContentConfigureWidget::~RemoteContentConfigureWidget() = default;
 
 void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &pos)
 {

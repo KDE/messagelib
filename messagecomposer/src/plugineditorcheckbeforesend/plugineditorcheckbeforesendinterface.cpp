@@ -11,9 +11,7 @@ using namespace MessageComposer;
 class MessageComposer::PluginEditorCheckBeforeSendInterfacePrivate
 {
 public:
-    PluginEditorCheckBeforeSendInterfacePrivate()
-    {
-    }
+    PluginEditorCheckBeforeSendInterfacePrivate() = default;
 
     MessageComposer::PluginEditorCheckBeforeSendParams parameters;
     QWidget *mParentWidget = nullptr;

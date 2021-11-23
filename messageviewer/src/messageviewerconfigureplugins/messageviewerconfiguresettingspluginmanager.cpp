@@ -16,9 +16,7 @@ using namespace MessageViewer;
 class ConfigureSettingsPluginInfo
 {
 public:
-    ConfigureSettingsPluginInfo()
-    {
-    }
+    ConfigureSettingsPluginInfo() = default;
 
     KPluginMetaData data;
     PimCommon::PluginUtilData pluginData;

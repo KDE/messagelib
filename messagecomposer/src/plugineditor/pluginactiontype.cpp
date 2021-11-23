@@ -8,9 +8,7 @@
 
 using namespace MessageComposer;
 
-PluginActionType::PluginActionType()
-{
-}
+PluginActionType::PluginActionType() = default;
 
 PluginActionType::PluginActionType(QAction *action, PluginActionType::Type type)
     : mAction(action)
@@ -50,7 +48,7 @@ QString PluginActionType::actionXmlExtension(PluginActionType::Type type)
     case MessageComposer::PluginActionType::View:
         return QStringLiteral("_plugins_view");
     case MessageComposer::PluginActionType::None:
-        return QString();
+        return {};
     }
     return {};
 }

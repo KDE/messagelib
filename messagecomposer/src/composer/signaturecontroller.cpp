@@ -24,9 +24,7 @@ using namespace MessageComposer;
 class MessageComposer::SignatureControllerPrivate
 {
 public:
-    SignatureControllerPrivate()
-    {
-    }
+    SignatureControllerPrivate() = default;
 
     uint m_currentIdentityId = 0;
     KIdentityManagement::IdentityCombo *m_identityCombo = nullptr;

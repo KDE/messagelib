@@ -13,9 +13,7 @@ WebEngineAccessKeyAnchorTest::WebEngineAccessKeyAnchorTest(QObject *parent)
 {
 }
 
-WebEngineAccessKeyAnchorTest::~WebEngineAccessKeyAnchorTest()
-{
-}
+WebEngineAccessKeyAnchorTest::~WebEngineAccessKeyAnchorTest() = default;
 
 void WebEngineAccessKeyAnchorTest::shouldReturnEmptyAccessKeyAnchor()
 {

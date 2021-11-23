@@ -15,7 +15,7 @@
 #include "messageviewer_export.h"
 
 #include <QObject>
-#include <setjmp.h>
+#include <csetjmp>
 
 // #define WIDTH 48
 // #define HEIGHT WIDTH

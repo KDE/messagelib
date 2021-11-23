@@ -15,9 +15,7 @@ MessageFactoryReplyJob::MessageFactoryReplyJob(QObject *parent)
 {
 }
 
-MessageFactoryReplyJob::~MessageFactoryReplyJob()
-{
-}
+MessageFactoryReplyJob::~MessageFactoryReplyJob() = default;
 
 void MessageFactoryReplyJob::start()
 {

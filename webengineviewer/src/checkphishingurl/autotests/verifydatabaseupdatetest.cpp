@@ -16,9 +16,7 @@ VerifyDataBaseUpdateTest::VerifyDataBaseUpdateTest(QObject *parent)
 {
 }
 
-VerifyDataBaseUpdateTest::~VerifyDataBaseUpdateTest()
-{
-}
+VerifyDataBaseUpdateTest::~VerifyDataBaseUpdateTest() = default;
 
 void VerifyDataBaseUpdateTest::shouldVerifyCheckSums_data()
 {

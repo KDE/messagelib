@@ -15,9 +15,7 @@ using namespace MessageComposer;
 class PluginEditorInfo
 {
 public:
-    PluginEditorInfo()
-    {
-    }
+    PluginEditorInfo() = default;
 
     KPluginMetaData data;
     PimCommon::PluginUtilData pluginData;

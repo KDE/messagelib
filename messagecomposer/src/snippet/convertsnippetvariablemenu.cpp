@@ -15,9 +15,7 @@ ConvertSnippetVariableMenu::ConvertSnippetVariableMenu(bool onlyMenuForCustomize
     initializeMenu(onlyMenuForCustomizeAttachmentFileName);
 }
 
-ConvertSnippetVariableMenu::~ConvertSnippetVariableMenu()
-{
-}
+ConvertSnippetVariableMenu::~ConvertSnippetVariableMenu() = default;
 
 void ConvertSnippetVariableMenu::initializeMenu(bool onlyMenuForCustomizeAttachmentFileName)
 {

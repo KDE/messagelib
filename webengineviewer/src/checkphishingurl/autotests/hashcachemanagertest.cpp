@@ -16,9 +16,7 @@ HashCacheManagerTest::HashCacheManagerTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-HashCacheManagerTest::~HashCacheManagerTest()
-{
-}
+HashCacheManagerTest::~HashCacheManagerTest() = default;
 
 void HashCacheManagerTest::shouldBeUnknowByDefault()
 {

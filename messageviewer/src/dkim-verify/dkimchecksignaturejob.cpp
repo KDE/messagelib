@@ -27,9 +27,7 @@ DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)
 {
 }
 
-DKIMCheckSignatureJob::~DKIMCheckSignatureJob()
-{
-}
+DKIMCheckSignatureJob::~DKIMCheckSignatureJob() = default;
 
 MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMCheckSignatureJob::createCheckResult() const
 {

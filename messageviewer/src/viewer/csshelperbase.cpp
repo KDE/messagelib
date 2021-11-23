@@ -77,9 +77,7 @@ CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
     imgHideUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcHide)).url();
 }
 
-CSSHelperBase::~CSSHelperBase()
-{
-}
+CSSHelperBase::~CSSHelperBase() = default;
 
 void CSSHelperBase::recalculatePGPColors()
 {

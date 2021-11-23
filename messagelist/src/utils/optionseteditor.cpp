@@ -48,9 +48,7 @@ OptionSetEditor::OptionSetEditor(QWidget *parent)
     tabg->setRowStretch(2, 1);
 }
 
-OptionSetEditor::~OptionSetEditor()
-{
-}
+OptionSetEditor::~OptionSetEditor() = default;
 
 void OptionSetEditor::setReadOnly(bool readOnly)
 {

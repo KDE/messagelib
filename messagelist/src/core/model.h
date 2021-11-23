@@ -16,8 +16,8 @@
 
 #include <core/enums.h>
 
+#include <ctime> // time_t
 #include <memory>
-#include <time.h> // time_t
 
 namespace MessageList
 {

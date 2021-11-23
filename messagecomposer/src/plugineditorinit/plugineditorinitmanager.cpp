@@ -16,9 +16,7 @@ using namespace MessageComposer;
 class PluginEditorInitInfo
 {
 public:
-    PluginEditorInitInfo()
-    {
-    }
+    PluginEditorInitInfo() = default;
 
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;

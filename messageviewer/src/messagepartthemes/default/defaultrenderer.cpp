@@ -232,9 +232,7 @@ DefaultRendererPrivate::DefaultRendererPrivate(CSSHelperBase *cssHelper, const M
 {
 }
 
-DefaultRendererPrivate::~DefaultRendererPrivate()
-{
-}
+DefaultRendererPrivate::~DefaultRendererPrivate() = default;
 
 CSSHelperBase *DefaultRendererPrivate::cssHelper() const
 {

@@ -16,9 +16,7 @@ using namespace MimeTreeParser;
 class MimeTreeParser::AttachmentTemporaryFilesDirsPrivate
 {
 public:
-    AttachmentTemporaryFilesDirsPrivate()
-    {
-    }
+    AttachmentTemporaryFilesDirsPrivate() = default;
 
     QStringList mTempFiles;
     QStringList mTempDirs;

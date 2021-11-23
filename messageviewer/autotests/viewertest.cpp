@@ -10,9 +10,7 @@
 #include <QTest>
 #include <qtestmouse.h>
 
-ViewerTest::ViewerTest()
-{
-}
+ViewerTest::ViewerTest() = default;
 
 void ViewerTest::shouldHaveDefaultValuesOnCreation()
 {

@@ -16,9 +16,7 @@ using namespace MessageViewer;
 class CheckBeforeDeletingPluginInfo
 {
 public:
-    CheckBeforeDeletingPluginInfo()
-    {
-    }
+    CheckBeforeDeletingPluginInfo() = default;
 
     KPluginMetaData data;
     PimCommon::PluginUtilData pluginData;

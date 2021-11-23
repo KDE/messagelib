@@ -13,9 +13,7 @@ TemplateConvertCommandJob::TemplateConvertCommandJob(QObject *parent)
 {
 }
 
-TemplateConvertCommandJob::~TemplateConvertCommandJob()
-{
-}
+TemplateConvertCommandJob::~TemplateConvertCommandJob() = default;
 
 QString TemplateConvertCommandJob::convertText()
 {

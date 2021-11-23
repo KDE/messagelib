@@ -19,9 +19,7 @@ TemplateEditorTestWidget::TemplateEditorTestWidget(QWidget *parent)
     lay->addWidget(new TemplateParser::TemplatesTextEdit(this));
 }
 
-TemplateEditorTestWidget::~TemplateEditorTestWidget()
-{
-}
+TemplateEditorTestWidget::~TemplateEditorTestWidget() = default;
 
 int main(int argc, char **argv)
 {

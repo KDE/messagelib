@@ -15,9 +15,7 @@ AttachmentVcardFromAddressBookJobTest::AttachmentVcardFromAddressBookJobTest(QOb
 {
 }
 
-AttachmentVcardFromAddressBookJobTest::~AttachmentVcardFromAddressBookJobTest()
-{
-}
+AttachmentVcardFromAddressBookJobTest::~AttachmentVcardFromAddressBookJobTest() = default;
 
 void AttachmentVcardFromAddressBookJobTest::testAttachmentVCardWithInvalidItem()
 {

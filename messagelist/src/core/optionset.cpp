@@ -8,7 +8,7 @@
 
 #include "core/optionset.h"
 
-#include <time.h> // for ::time( time_t * )
+#include <ctime> // for ::time( time_t * )
 
 #include <QDataStream>
 
@@ -25,12 +25,8 @@ OptionSet::OptionSet()
 }
 
 OptionSet::OptionSet(const OptionSet &set)
-    : mId(set.mId)
-    , mName(set.mName)
-    , mDescription(set.mDescription)
-    , mReadOnly(set.mReadOnly)
-{
-}
+
+    = default;
 
 OptionSet::OptionSet(const QString &name, const QString &description, bool readOnly)
     : mName(name)
@@ -40,9 +36,7 @@ OptionSet::OptionSet(const QString &name, const QString &description, bool readO
     generateUniqueId();
 }
 
-OptionSet::~OptionSet()
-{
-}
+OptionSet::~OptionSet() = default;
 
 void OptionSet::generateUniqueId()
 {

@@ -15,9 +15,7 @@ SearchLineStatusTest::SearchLineStatusTest(QObject *parent)
 {
 }
 
-SearchLineStatusTest::~SearchLineStatusTest()
-{
-}
+SearchLineStatusTest::~SearchLineStatusTest() = default;
 
 void SearchLineStatusTest::shouldHaveDefaultValue()
 {

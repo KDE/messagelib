@@ -20,9 +20,7 @@ DKIMManagerKeyDialogTest::DKIMManagerKeyDialogTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-DKIMManagerKeyDialogTest::~DKIMManagerKeyDialogTest()
-{
-}
+DKIMManagerKeyDialogTest::~DKIMManagerKeyDialogTest() = default;
 
 void DKIMManagerKeyDialogTest::shouldHaveDefaultValue()
 {

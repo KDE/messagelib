@@ -16,6 +16,4 @@ MessageWidgetArea::MessageWidgetArea(QWidget *parent)
     mainLayout->setContentsMargins({});
 }
 
-MessageWidgetArea::~MessageWidgetArea()
-{
-}
+MessageWidgetArea::~MessageWidgetArea() = default;

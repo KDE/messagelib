@@ -13,11 +13,9 @@ NetworkPluginUrlInterceptorConfigureWidget::NetworkPluginUrlInterceptorConfigure
 {
 }
 
-NetworkPluginUrlInterceptorConfigureWidget::~NetworkPluginUrlInterceptorConfigureWidget()
-{
-}
+NetworkPluginUrlInterceptorConfigureWidget::~NetworkPluginUrlInterceptorConfigureWidget() = default;
 
 QString NetworkPluginUrlInterceptorConfigureWidget::helpAnchor() const
 {
-    return QString();
+    return {};
 }

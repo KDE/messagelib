@@ -16,9 +16,7 @@ GroupHeaderItem::GroupHeaderItem(const QString &label)
 {
 }
 
-GroupHeaderItem::~GroupHeaderItem()
-{
-}
+GroupHeaderItem::~GroupHeaderItem() = default;
 
 const QString &GroupHeaderItem::label() const
 {

@@ -19,9 +19,7 @@ HeaderStyleInterface::HeaderStyleInterface(MessageViewer::HeaderStylePlugin *hea
 {
 }
 
-HeaderStyleInterface::~HeaderStyleInterface()
-{
-}
+HeaderStyleInterface::~HeaderStyleInterface() = default;
 
 QList<KToggleAction *> HeaderStyleInterface::action() const
 {

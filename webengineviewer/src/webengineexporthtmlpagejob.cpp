@@ -30,9 +30,7 @@ WebEngineExportHtmlPageJob::WebEngineExportHtmlPageJob(QObject *parent)
 {
 }
 
-WebEngineExportHtmlPageJob::~WebEngineExportHtmlPageJob()
-{
-}
+WebEngineExportHtmlPageJob::~WebEngineExportHtmlPageJob() = default;
 
 void WebEngineExportHtmlPageJob::start()
 {
