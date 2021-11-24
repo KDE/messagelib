@@ -98,21 +98,10 @@ add_messagecomposer_cryptotest( signjobtest.cpp )
 add_messagecomposer_cryptotest( encryptjobtest.cpp )
 add_messagecomposer_cryptotest( signencrypttest.cpp )
 add_messagecomposer_cryptotest( signandencrypttest.cpp )
+add_messagecomposer_cryptotest( keyresolvertest.cpp )
 
 set(AKONADI_RUN_POSTGRES_ISOLATED_TESTS FALSE)
 set(AKONADI_RUN_MYSQL_ISOLATED_TESTS FALSE)
-
-add_executable( keyresolvertest
-    cryptofunctions.cpp
-    setupenv.cpp
-    keyresolvertest.cpp
-)
-target_link_libraries( keyresolvertest
-        KF5::AkonadiCore
-        KF5::MessageComposer
-        Qt::Test
-)
-add_gpg_crypto_akonadi_test(keyresolvertest messagecomposer-keyresolvertest)
 
 ecm_add_test(followupreminderselectdatedialogtest.cpp
     NAME_PREFIX "messagecomposer-"

@@ -11,13 +11,10 @@
 #include "qtest_messagecomposer.h"
 #include "setupenv.h"
 
-#include <Akonadi/Control>
-#include <akonadi/qtest_akonadi.h>
-
 #include <QStandardPaths>
 #include <QTest>
 
-QTEST_AKONADIMAIN(KeyResolverTest)
+QTEST_MAIN(KeyResolverTest)
 
 using namespace MessageComposer;
 using namespace Kleo;
@@ -28,9 +25,6 @@ void KeyResolverTest::initTestCase()
 
     const QDir genericDataLocation(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     baseDir = QDir(genericDataLocation.filePath(QStringLiteral("autocrypt")));
-    AkonadiTest::checkTestIsIsolated();
-    Akonadi::Control::start();
-
 }
 
 void KeyResolverTest::init()
@@ -48,6 +42,7 @@ void KeyResolverTest::testAutocrypt()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
     KeyResolver keyResolver(true, false, true, Kleo::OpenPGPMIMEFormat, 0, 0, 0, 0, 0, 0);
+    keyResolver.setAkonadiLookupEnabled(false);
 
     QStringList recipients = {QStringLiteral("recipient@autocrypt.example"), QStringLiteral("recipient2@autocrypt.example")};
 
