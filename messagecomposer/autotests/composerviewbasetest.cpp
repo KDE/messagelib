@@ -33,6 +33,8 @@ using namespace MessageComposer;
 
 Q_DECLARE_METATYPE(Kleo::CryptoMessageFormat)
 
+QTEST_MAIN(ComposerViewBaseTest)
+
 ComposerViewBaseTest::ComposerViewBaseTest(QObject *parent)
     : QObject(parent)
 {
@@ -136,7 +138,7 @@ void ComposerViewBaseTest::testAutoSaveMessage()
     Test::compareFile(msg.data(), QStringLiteral(MAIL_DATA_DIR "/autosave.mbox"));
 }
 
-void ComposerViewBaseTest::testGenerateCryptoMessages_data()
+void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt_data()
 {
     QTest::addColumn<QString>("data");
     QTest::addColumn<bool>("sign");
@@ -151,7 +153,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessages_data()
     QTest::newRow("SignEncrypt") << data << true << true << Kleo::AutoFormat;
 }
 
-void ComposerViewBaseTest::testGenerateCryptoMessages()
+void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
 {
     QFETCH(QString, data);
     QFETCH(bool, sign);
@@ -225,4 +227,44 @@ void ComposerViewBaseTest::testGenerateCryptoMessages()
     QCOMPARE(content->hasHeader("Autocrypt"), true);
 }
 
-QTEST_MAIN(ComposerViewBaseTest)
+void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
+{
+    QString data = QStringLiteral("Hello,\n\nThis is a test message\n\nGreez");
+
+    MessageComposer::RichTextComposerNg editor;
+    MessageComposer::RecipientsEditor recipientsEditor;
+    MailTransport::TransportComboBox transpCombo;
+    ComposerViewBase composerViewBase;
+    composerViewBase.setIdentityCombo(mIdentCombo);
+    composerViewBase.setIdentityManager(mIdentMan);
+    composerViewBase.setEditor(&editor);
+    composerViewBase.setTransportCombo(&transpCombo);
+    composerViewBase.setRecipientsEditor(&recipientsEditor);
+    composerViewBase.setFrom(QStringLiteral("me@me.example"));
+    composerViewBase.mExpandedTo << QStringLiteral("you@you.com");
+    composerViewBase.setAkonadiLookupEnabled(false);
+    KMime::Types::Mailbox mb;
+    mb.from7BitString("you@you.com");
+    recipientsEditor.setRecipientString({mb}, Recipient::To);
+    editor.setPlainText(data);
+
+    bool wasCanceled = false;
+    composerViewBase.setCryptoOptions(false, false, Kleo::AnySMIME, false);
+    auto composers = composerViewBase.generateCryptoMessages(wasCanceled);
+    QCOMPARE(wasCanceled, false);
+
+    QCOMPARE(composers.size(), 1); // No additional composers are created
+
+    auto composer = composers.first();
+    composerViewBase.fillComposer(composer);
+
+    VERIFYEXEC(composer);
+
+    QCOMPARE(composer->resultMessages().size(), 1);
+
+    auto msg = composer->resultMessages().first();
+    msg->assemble();
+
+    QCOMPARE(QString::fromUtf8(msg->decodedContent()), data);
+    QCOMPARE(msg->hasHeader("Autocrypt"), false);
+}

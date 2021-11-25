@@ -23,8 +23,9 @@ private Q_SLOTS:
     void cleanupTestCase();
     void initTestCase();
     void shouldHaveDefaultValue();
-    void testGenerateCryptoMessages_data();
-    void testGenerateCryptoMessages();
+    void testGenerateCryptoMessagesAutocrypt_data();
+    void testGenerateCryptoMessagesAutocrypt();
+    void testGenerateCryptoMessagesAutocryptSMime();
     void testAutoSaveMessage();
 private:
     KIdentityManagement::IdentityManager *mIdentMan = nullptr;
