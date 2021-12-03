@@ -1066,6 +1066,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
         || !TemplateParserSettings::self()->replyUsingVisualFormat() || (!content || !content->hasContent())) {
         htmlBody.clear();
     } else {
+        // qDebug() << "htmlBody********************* " << htmlBody;
         makeValidHtml(htmlBody);
     }
     if (d->mMode == NewMessage && plainBody.isEmpty() && !d->mExtractHtmlInfoResult.mPlainText.isEmpty()) {
