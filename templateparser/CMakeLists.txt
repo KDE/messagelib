@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEMPLATEPARSER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/templateparser_version.h"
