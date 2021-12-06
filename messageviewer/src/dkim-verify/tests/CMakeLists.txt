@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
 set(dkimtest_lookupkey_SRCS main.cpp lookupkey.cpp)
 add_executable(dkimtest_lookupkey ${dkimtest_lookupkey_SRCS})
 target_link_libraries(dkimtest_lookupkey

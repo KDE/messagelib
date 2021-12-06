@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
 ecm_add_test(imagescalingtest.cpp
     NAME_PREFIX "messagecomposer-imagescaling-"
     LINK_LIBRARIES KF5::Mime KF5::MessageComposer KF5::MessageViewer KF5::MessageCore KF5::TemplateParser

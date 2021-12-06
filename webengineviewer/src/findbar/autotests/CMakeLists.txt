@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
 ecm_add_test(findbarbasetest.cpp
     TEST_NAME findbarbasetest
     NAME_PREFIX "webengineviewer-findbar-"

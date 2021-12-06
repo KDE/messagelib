@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
 add_executable(viewertest_gui)
 target_sources(viewertest_gui PRIVATE
     viewertest_gui.cpp

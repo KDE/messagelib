@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
 if (BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KF5WebEngineViewer_QCH

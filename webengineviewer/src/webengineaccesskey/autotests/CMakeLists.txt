@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
 ecm_add_test(webengineaccesskeyanchortest.cpp  ../webengineaccesskeyanchor.cpp ../webengineaccesskeyutils.cpp
     TEST_NAME webengineaccesskeyanchortest
     NAME_PREFIX "messageviewer-webengine-"

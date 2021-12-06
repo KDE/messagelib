@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
 ecm_add_test(scamattributetest.cpp ../scamattribute.cpp
     TEST_NAME scamattributetest
     NAME_PREFIX "messageviewer-scamdetection-"

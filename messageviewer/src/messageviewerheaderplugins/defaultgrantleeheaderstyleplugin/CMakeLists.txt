@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
 kcoreaddons_add_plugin(messageviewer_defaultgrantleeheaderstyleplugin
     INSTALL_NAMESPACE messageviewer/headerstyle
 )
