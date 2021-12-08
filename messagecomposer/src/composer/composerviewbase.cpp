@@ -818,7 +818,9 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
         auto composer = new MessageComposer::Composer;
         if (m_cryptoMessageFormat &  Kleo::OpenPGPMIMEFormat) {
             composer->setAutocryptEnabled(autocryptEnabled());
-            composer->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat)[0]);
+            if (keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat).size() > 0) {
+                composer->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat)[0]);
+            }
         }
         composers.append(composer);
         return composers;
