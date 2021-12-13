@@ -8,166 +8,163 @@
 
 #include "templateparser_debug.h"
 #include <KActionMenu>
+#include <KLazyLocalizedString>
 #include <KLocalizedString>
 #include <QAction>
-
-#undef I18N_NOOP
-#define I18N_NOOP(t) nullptr, t
 
 using namespace TemplateParser;
 
 struct InsertCommand {
-    const char *context;
-    const char *name;
+    const KLazyLocalizedString name;
     const TemplatesCommandMenu::Command command;
 
     Q_REQUIRED_RESULT QString getLocalizedDisplayName() const
     {
-        return i18nc(context, name);
+        return KLocalizedString(name).toString();
     }
 };
 
-static const InsertCommand originalCommands[] = {{I18N_NOOP("Quoted Message Text"), TemplatesCommandMenu::CQuote},
+static const InsertCommand originalCommands[] = {{kli18n("Quoted Message Text"), TemplatesCommandMenu::CQuote},
 
-                                                 {I18N_NOOP("Message Text as Is"), TemplatesCommandMenu::CText},
+                                                 {kli18n("Message Text as Is"), TemplatesCommandMenu::CText},
 
-                                                 {I18N_NOOP("Message Id"), TemplatesCommandMenu::COMsgId},
+                                                 {kli18n("Message Id"), TemplatesCommandMenu::COMsgId},
 
-                                                 {I18N_NOOP("Date"), TemplatesCommandMenu::CODate},
+                                                 {kli18n("Date"), TemplatesCommandMenu::CODate},
 
-                                                 {I18N_NOOP("Date in Short Format"), TemplatesCommandMenu::CODateShort},
+                                                 {kli18n("Date in Short Format"), TemplatesCommandMenu::CODateShort},
 
-                                                 {I18N_NOOP("Date in C Locale"), TemplatesCommandMenu::CODateEn},
+                                                 {kli18n("Date in C Locale"), TemplatesCommandMenu::CODateEn},
 
-                                                 {I18N_NOOP("Day of Week"), TemplatesCommandMenu::CODow},
+                                                 {kli18n("Day of Week"), TemplatesCommandMenu::CODow},
 
-                                                 {I18N_NOOP("Time"), TemplatesCommandMenu::COTime},
+                                                 {kli18n("Time"), TemplatesCommandMenu::COTime},
 
-                                                 {I18N_NOOP("Time in Long Format"), TemplatesCommandMenu::COTimeLong},
+                                                 {kli18n("Time in Long Format"), TemplatesCommandMenu::COTimeLong},
 
-                                                 {I18N_NOOP("Time in C Locale"), TemplatesCommandMenu::COTimeLongEn},
+                                                 {kli18n("Time in C Locale"), TemplatesCommandMenu::COTimeLongEn},
 
-                                                 {I18N_NOOP("To Field Address"), TemplatesCommandMenu::COToAddr},
+                                                 {kli18n("To Field Address"), TemplatesCommandMenu::COToAddr},
 
-                                                 {I18N_NOOP("To Field Name"), TemplatesCommandMenu::COToName},
+                                                 {kli18n("To Field Name"), TemplatesCommandMenu::COToName},
 
-                                                 {I18N_NOOP("To Field First Name"), TemplatesCommandMenu::COToFName},
+                                                 {kli18n("To Field First Name"), TemplatesCommandMenu::COToFName},
 
-                                                 {I18N_NOOP("To Field Last Name"), TemplatesCommandMenu::COToLName},
+                                                 {kli18n("To Field Last Name"), TemplatesCommandMenu::COToLName},
 
-                                                 {I18N_NOOP("CC Field Address"), TemplatesCommandMenu::COCCAddr},
+                                                 {kli18n("CC Field Address"), TemplatesCommandMenu::COCCAddr},
 
-                                                 {I18N_NOOP("CC Field Name"), TemplatesCommandMenu::COCCName},
+                                                 {kli18n("CC Field Name"), TemplatesCommandMenu::COCCName},
 
-                                                 {I18N_NOOP("CC Field First Name"), TemplatesCommandMenu::COCCFName},
+                                                 {kli18n("CC Field First Name"), TemplatesCommandMenu::COCCFName},
 
-                                                 {I18N_NOOP("CC Field Last Name"), TemplatesCommandMenu::COCCLName},
+                                                 {kli18n("CC Field Last Name"), TemplatesCommandMenu::COCCLName},
 
-                                                 {I18N_NOOP("From Field Address"), TemplatesCommandMenu::COFromAddr},
+                                                 {kli18n("From Field Address"), TemplatesCommandMenu::COFromAddr},
 
-                                                 {I18N_NOOP("From Field Name"), TemplatesCommandMenu::COFromName},
+                                                 {kli18n("From Field Name"), TemplatesCommandMenu::COFromName},
 
-                                                 {I18N_NOOP("From Field First Name"), TemplatesCommandMenu::COFromFName},
+                                                 {kli18n("From Field First Name"), TemplatesCommandMenu::COFromFName},
 
-                                                 {I18N_NOOP("From Field Last Name"), TemplatesCommandMenu::COFromLName},
+                                                 {kli18n("From Field Last Name"), TemplatesCommandMenu::COFromLName},
 
-                                                 {I18N_NOOP("Addresses of all recipients"), TemplatesCommandMenu::COAddresseesAddr},
+                                                 {kli18n("Addresses of all recipients"), TemplatesCommandMenu::COAddresseesAddr},
 
-                                                 {I18NC_NOOP("Template value for subject of the message", "Subject"), TemplatesCommandMenu::COFullSubject},
+                                                 {kli18nc("Template value for subject of the message", "Subject"), TemplatesCommandMenu::COFullSubject},
 
-                                                 {I18N_NOOP("Quoted Headers"), TemplatesCommandMenu::CQHeaders},
+                                                 {kli18n("Quoted Headers"), TemplatesCommandMenu::CQHeaders},
 
-                                                 {I18N_NOOP("Headers as Is"), TemplatesCommandMenu::CHeaders},
+                                                 {kli18n("Headers as Is"), TemplatesCommandMenu::CHeaders},
 
-                                                 {I18N_NOOP("Header Content"), TemplatesCommandMenu::COHeader},
+                                                 {kli18n("Header Content"), TemplatesCommandMenu::COHeader},
 
-                                                 {I18N_NOOP("Reply as Quoted Plain Text"), TemplatesCommandMenu::CQuotePlain},
+                                                 {kli18n("Reply as Quoted Plain Text"), TemplatesCommandMenu::CQuotePlain},
 
-                                                 {I18N_NOOP("Reply as Quoted HTML Text"), TemplatesCommandMenu::CQuoteHtml}};
+                                                 {kli18n("Reply as Quoted HTML Text"), TemplatesCommandMenu::CQuoteHtml}};
 static const int originalCommandsCount = sizeof(originalCommands) / sizeof(*originalCommands);
 
-static const InsertCommand currentCommands[] = {{I18N_NOOP("Date"), TemplatesCommandMenu::CDate},
+static const InsertCommand currentCommands[] = {{kli18n("Date"), TemplatesCommandMenu::CDate},
 
-                                                {I18N_NOOP("Date in Short Format"), TemplatesCommandMenu::CDateShort},
+                                                {kli18n("Date in Short Format"), TemplatesCommandMenu::CDateShort},
 
-                                                {I18N_NOOP("Date in C Locale"), TemplatesCommandMenu::CDateEn},
+                                                {kli18n("Date in C Locale"), TemplatesCommandMenu::CDateEn},
 
-                                                {I18N_NOOP("Day of Week"), TemplatesCommandMenu::CDow},
+                                                {kli18n("Day of Week"), TemplatesCommandMenu::CDow},
 
-                                                {I18N_NOOP("Time"), TemplatesCommandMenu::CTime},
+                                                {kli18n("Time"), TemplatesCommandMenu::CTime},
 
-                                                {I18N_NOOP("Time in Long Format"), TemplatesCommandMenu::CTimeLong},
+                                                {kli18n("Time in Long Format"), TemplatesCommandMenu::CTimeLong},
 
-                                                {I18N_NOOP("Time in C Locale"), TemplatesCommandMenu::CTimeLongEn},
-                                                {I18N_NOOP("To Field Address"), TemplatesCommandMenu::CToAddr},
+                                                {kli18n("Time in C Locale"), TemplatesCommandMenu::CTimeLongEn},
+                                                {kli18n("To Field Address"), TemplatesCommandMenu::CToAddr},
 
-                                                {I18N_NOOP("To Field Name"), TemplatesCommandMenu::CToName},
+                                                {kli18n("To Field Name"), TemplatesCommandMenu::CToName},
 
-                                                {I18N_NOOP("To Field First Name"), TemplatesCommandMenu::CToFName},
+                                                {kli18n("To Field First Name"), TemplatesCommandMenu::CToFName},
 
-                                                {I18N_NOOP("To Field Last Name"), TemplatesCommandMenu::CToLName},
+                                                {kli18n("To Field Last Name"), TemplatesCommandMenu::CToLName},
 
-                                                {I18N_NOOP("CC Field Address"), TemplatesCommandMenu::CCCAddr},
+                                                {kli18n("CC Field Address"), TemplatesCommandMenu::CCCAddr},
 
-                                                {I18N_NOOP("CC Field Name"), TemplatesCommandMenu::CCCName},
+                                                {kli18n("CC Field Name"), TemplatesCommandMenu::CCCName},
 
-                                                {I18N_NOOP("CC Field First Name"), TemplatesCommandMenu::CCCFName},
+                                                {kli18n("CC Field First Name"), TemplatesCommandMenu::CCCFName},
 
-                                                {I18N_NOOP("CC Field Last Name"), TemplatesCommandMenu::CCCLName},
+                                                {kli18n("CC Field Last Name"), TemplatesCommandMenu::CCCLName},
 
-                                                {I18N_NOOP("From Field Address"), TemplatesCommandMenu::CFromAddr},
+                                                {kli18n("From Field Address"), TemplatesCommandMenu::CFromAddr},
 
-                                                {I18N_NOOP("From field Name"), TemplatesCommandMenu::CFromName},
+                                                {kli18n("From field Name"), TemplatesCommandMenu::CFromName},
 
-                                                {I18N_NOOP("From Field First Name"), TemplatesCommandMenu::CFromFName},
+                                                {kli18n("From Field First Name"), TemplatesCommandMenu::CFromFName},
 
-                                                {I18N_NOOP("From Field Last Name"), TemplatesCommandMenu::CFromLName},
+                                                {kli18n("From Field Last Name"), TemplatesCommandMenu::CFromLName},
 
-                                                {I18NC_NOOP("Template subject command.", "Subject"), TemplatesCommandMenu::CFullSubject},
+                                                {kli18nc("Template subject command.", "Subject"), TemplatesCommandMenu::CFullSubject},
 
-                                                {I18N_NOOP("Header Content"), TemplatesCommandMenu::CHeader}};
+                                                {kli18n("Header Content"), TemplatesCommandMenu::CHeader}};
 static const int currentCommandsCount = sizeof(currentCommands) / sizeof(*currentCommands);
 
-static const InsertCommand extCommands[] = {{I18N_NOOP("Pipe Original Message Body and Insert Result as Quoted Text"), TemplatesCommandMenu::CQuotePipe},
+static const InsertCommand extCommands[] = {{kli18n("Pipe Original Message Body and Insert Result as Quoted Text"), TemplatesCommandMenu::CQuotePipe},
 
-                                            {I18N_NOOP("Pipe Original Message Body and Insert Result as Is"), TemplatesCommandMenu::CTextPipe},
+                                            {kli18n("Pipe Original Message Body and Insert Result as Is"), TemplatesCommandMenu::CTextPipe},
 
-                                            {I18N_NOOP("Pipe Original Message with Headers and Insert Result as Is"), TemplatesCommandMenu::CMsgPipe},
+                                            {kli18n("Pipe Original Message with Headers and Insert Result as Is"), TemplatesCommandMenu::CMsgPipe},
 
-                                            {I18N_NOOP("Pipe Current Message Body and Insert Result as Is"), TemplatesCommandMenu::CBodyPipe},
+                                            {kli18n("Pipe Current Message Body and Insert Result as Is"), TemplatesCommandMenu::CBodyPipe},
 
-                                            {I18N_NOOP("Pipe Current Message Body and Replace with Result"), TemplatesCommandMenu::CClearPipe}};
+                                            {kli18n("Pipe Current Message Body and Replace with Result"), TemplatesCommandMenu::CClearPipe}};
 
 static const int extCommandsCount = sizeof(extCommands) / sizeof(*extCommands);
 
 static const InsertCommand miscCommands[] = {
-    {I18NC_NOOP("Inserts user signature, also known as footer, into message", "Signature"), TemplatesCommandMenu::CSignature},
+    {kli18nc("Inserts user signature, also known as footer, into message", "Signature"), TemplatesCommandMenu::CSignature},
 
-    {I18N_NOOP("Insert File Content"), TemplatesCommandMenu::CInsert},
+    {kli18n("Insert File Content"), TemplatesCommandMenu::CInsert},
 
-    {I18NC_NOOP("All characters, up to and including the next newline, "
-                "are discarded without performing any macro expansion",
-                "Discard to Next Line"),
+    {kli18nc("All characters, up to and including the next newline, "
+             "are discarded without performing any macro expansion",
+             "Discard to Next Line"),
      TemplatesCommandMenu::CDnl},
 
-    {I18N_NOOP("Template Comment"), TemplatesCommandMenu::CRem},
+    {kli18n("Template Comment"), TemplatesCommandMenu::CRem},
 
-    {I18N_NOOP("No Operation"), TemplatesCommandMenu::CNop},
+    {kli18n("No Operation"), TemplatesCommandMenu::CNop},
 
-    {I18N_NOOP("Clear Generated Message"), TemplatesCommandMenu::CClear},
-    {I18N_NOOP("Cursor position"), TemplatesCommandMenu::CCursor},
+    {kli18n("Clear Generated Message"), TemplatesCommandMenu::CClear},
+    {kli18n("Cursor position"), TemplatesCommandMenu::CCursor},
 
-    {I18N_NOOP("Blank text"), TemplatesCommandMenu::CBlank},
+    {kli18n("Blank text"), TemplatesCommandMenu::CBlank},
 
-    {I18N_NOOP("Dictionary Language"), TemplatesCommandMenu::CDictionaryLanguage},
-    {I18N_NOOP("Language"), TemplatesCommandMenu::CLanguage},
+    {kli18n("Dictionary Language"), TemplatesCommandMenu::CDictionaryLanguage},
+    {kli18n("Language"), TemplatesCommandMenu::CLanguage},
     // TODO add support for custom variable. %CUSTOM="???" ?
 };
 static const int miscCommandsCount = sizeof(miscCommands) / sizeof(*miscCommands);
 
-static const InsertCommand debugCommands[] = {{I18N_NOOP("Turn Debug On"), TemplatesCommandMenu::CDebug},
+static const InsertCommand debugCommands[] = {{kli18n("Turn Debug On"), TemplatesCommandMenu::CDebug},
 
-                                              {I18N_NOOP("Turn Debug Off"), TemplatesCommandMenu::CDebugOff}};
+                                              {kli18n("Turn Debug Off"), TemplatesCommandMenu::CDebugOff}};
 static const int debugCommandsCount = sizeof(debugCommands) / sizeof(*debugCommands);
 
 void TemplatesCommandMenu::fillMenuFromActionMap(const QMap<QString, TemplatesCommandMenu::Command> &map, KActionMenu *menu)
