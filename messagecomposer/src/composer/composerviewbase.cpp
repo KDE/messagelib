@@ -64,7 +64,6 @@
 #include <QGpgME/ImportJob>
 #include <QGpgME/Protocol>
 #include <gpgme++/context.h>
-#include <gpgme++/gpgmepp_version.h>
 #include <gpgme++/importresult.h>
 
 #include <KLocalizedString>
@@ -680,9 +679,7 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
                 patterns << QString::fromUtf8(k.primaryFingerprint());
                 runningJobs++;
                 exportJob->start(patterns);
-#if GPGMEPP_VERSION >= 0x10E00 // 1.14.0
                 exportJob->setExportFlags(GpgME::Context::ExportMinimal);
-#endif
             } else {
                 qCDebug(MESSAGECOMPOSER_LOG) << "Adding " << k.primaryFingerprint() << "from Autocrypt storage";
                 const auto recipient = storage->getRecipient(it->second.toUtf8());

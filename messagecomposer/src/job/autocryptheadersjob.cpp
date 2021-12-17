@@ -16,7 +16,6 @@
 #include <QGpgME/ExportJob>
 #include <QGpgME/Protocol>
 #include <gpgme++/context.h>
-#include <gpgme++/gpgmepp_version.h>
 
 #include <KCodecs>
 #include <KLocalizedString>
@@ -233,9 +232,7 @@ void AutocryptHeadersJob::process()
         });
         d->subJobs++;
         job->start(QStringList(QString::fromLatin1(d->recipientKey.primaryFingerprint())));
-#if GPGMEPP_VERSION >= 0x10E00 // 1.14.0
         job->setExportFlags(GpgME::Context::ExportMinimal);
-#endif
     }
 
     const auto keys = d->gossipKeys;
@@ -276,9 +273,7 @@ void AutocryptHeadersJob::process()
 
         d->subJobs++;
         gossipJob->start(QStringList(QString::fromLatin1(key.primaryFingerprint())));
-#if GPGMEPP_VERSION >= 0x10E00 // 1.14.0
         gossipJob->setExportFlags(GpgME::Context::ExportMinimal);
-#endif
     }
     if (d->subJobs == 0) {
         d->resultContent = d->content;
