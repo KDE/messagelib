@@ -11,6 +11,8 @@
 #include "qtest_messagecomposer.h"
 #include "setupenv.h"
 
+#include <MessageComposer/NearExpiryChecker>
+
 #include <QStandardPaths>
 #include <QTest>
 
@@ -41,7 +43,8 @@ void KeyResolverTest::cleanup()
 void KeyResolverTest::testAutocrypt()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
-    KeyResolver keyResolver(true, false, true, Kleo::OpenPGPMIMEFormat, 0, 0, 0, 0, 0, 0);
+    NearExpiryChecker::Ptr nearExpiryChecker(new NearExpiryChecker(0, 0, 0, 0, 0, 0));
+    KeyResolver keyResolver(true, false, true, Kleo::OpenPGPMIMEFormat, nearExpiryChecker);
     keyResolver.setAkonadiLookupEnabled(false);
 
     QStringList recipients = {QStringLiteral("recipient@autocrypt.example"), QStringLiteral("recipient2@autocrypt.example")};

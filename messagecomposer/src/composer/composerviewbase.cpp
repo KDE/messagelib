@@ -13,6 +13,7 @@
 #include "composer-ng/richtextcomposersignatures.h"
 #include "composer.h"
 #include "composer/keyresolver.h"
+#include "composer/nearexpirychecker.h"
 #include "composer/signaturecontroller.h"
 #include "draftstatus/draftstatus.h"
 #include "imagescaling/imagescalingutils.h"
@@ -709,17 +710,51 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
 {
     const auto id = currentIdentity();
 
+    bool canceled = false;
+
     qCDebug(MESSAGECOMPOSER_LOG) << "filling crypto info";
+    NearExpiryChecker::Ptr nearExpiryChecker(new NearExpiryChecker(encryptKeyNearExpiryWarningThresholdInDays(),
+                                                                   signingKeyNearExpiryWarningThresholdInDays(),
+                                                                   encryptRootCertNearExpiryWarningThresholdInDays(),
+                                                                   signingRootCertNearExpiryWarningThresholdInDays(),
+                                                                   encryptChainCertNearExpiryWarningThresholdInDays(),
+                                                                   signingChainCertNearExpiryWarningThresholdInDays()));
+
+    connect(nearExpiryChecker.data(), &NearExpiryChecker::expiryMessage, this, [&canceled](const GpgME::Key &key, QString msg, NearExpiryChecker::ExpiryInformation info) {
+        if (canceled) {
+            return;
+        }
+        QString title;
+        QString dontAskAgainName;
+        if (info == NearExpiryChecker::OwnKeyExpired || info == NearExpiryChecker::OwnKeyNearExpiry) {
+            dontAskAgainName = QStringLiteral("own key expires soon warning");
+        } else {
+            dontAskAgainName = QStringLiteral("other encryption key near expiry warning");
+        }
+        if (info == NearExpiryChecker::OwnKeyExpired || info == NearExpiryChecker::OtherKeyExpired) {
+            title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expired")
+                                               : i18n("S/MIME Certificate Expired");
+        } else {
+            title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expires Soon")
+                                               : i18n("S/MIME Certificate Expires Soon");
+        }
+        if (KMessageBox::warningContinueCancel(nullptr,
+                                               msg,
+                                               title,
+                                               KStandardGuiItem::cont(),
+                                               KStandardGuiItem::cancel(),
+                                               dontAskAgainName)
+                == KMessageBox::Cancel) {
+                canceled = true;
+            }
+
+    });
+
     QScopedPointer<Kleo::KeyResolver> keyResolver(new Kleo::KeyResolver(encryptToSelf(),
                                                                         showKeyApprovalDialog(),
                                                                         id.pgpAutoEncrypt(),
                                                                         m_cryptoMessageFormat,
-                                                                        encryptKeyNearExpiryWarningThresholdInDays(),
-                                                                        signingKeyNearExpiryWarningThresholdInDays(),
-                                                                        encryptRootCertNearExpiryWarningThresholdInDays(),
-                                                                        signingRootCertNearExpiryWarningThresholdInDays(),
-                                                                        encryptChainCertNearExpiryWarningThresholdInDays(),
-                                                                        signingChainCertNearExpiryWarningThresholdInDays()));
+                                                                        nearExpiryChecker));
 
     keyResolver->setAutocryptEnabled(autocryptEnabled());
     keyResolver->setAkonadiLookupEnabled(m_akonadiLookupEnabled);
@@ -739,7 +774,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     if (!id.smimeEncryptionKey().isEmpty()) {
         encryptToSelfKeys.push_back(QLatin1String(id.smimeEncryptionKey()));
     }
-    if (keyResolver->setEncryptToSelfKeys(encryptToSelfKeys) != Kleo::Ok) {
+    if (canceled || keyResolver->setEncryptToSelfKeys(encryptToSelfKeys) != Kleo::Ok) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Failed to set encryptoToSelf keys!";
         return {};
     }
@@ -751,7 +786,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     if (!id.smimeSigningKey().isEmpty()) {
         signKeys.push_back(QLatin1String(id.smimeSigningKey()));
     }
-    if (keyResolver->setSigningKeys(signKeys) != Kleo::Ok) {
+    if (canceled || keyResolver->setSigningKeys(signKeys) != Kleo::Ok) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Failed to set signing keys!";
         return {};
     }
@@ -779,7 +814,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     keyResolver->setSecondaryRecipients(bcc);
 
     bool result = true;
-    bool canceled = false;
+    canceled = false;
     signSomething = determineWhetherToSign(doSignCompletely, keyResolver.data(), signSomething, result, canceled);
     if (!result) {
         // TODO handle failure
@@ -823,8 +858,9 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
         return composers;
     }
 
+    canceled = false;
     const Kleo::Result kpgpResult = keyResolver->resolveAllKeys(signSomething, encryptSomething);
-    if (kpgpResult == Kleo::Canceled) {
+    if (kpgpResult == Kleo::Canceled || canceled) {
         qCDebug(MESSAGECOMPOSER_LOG) << "resolveAllKeys: one key resolution canceled by user";
         return {};
     } else if (kpgpResult != Kleo::Ok) {

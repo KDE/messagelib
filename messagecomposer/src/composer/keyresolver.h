@@ -22,6 +22,13 @@
 #include <vector>
 
 #include <QStringList>
+#include <QSharedPointer>
+
+namespace MessageComposer
+{
+class NearExpiryChecker;
+using NearExpiryCheckerPtr = QSharedPointer<NearExpiryChecker>;
+}
 
 namespace Kleo
 {
@@ -106,12 +113,7 @@ public:
                 bool showApproval,
                 bool oppEncryption,
                 unsigned int format,
-                int encrKeyNearExpiryThresholdDays,
-                int signKeyNearExpiryThresholdDays,
-                int encrRootCertNearExpiryThresholdDays,
-                int signRootCertNearExpiryThresholdDays,
-                int encrChainCertNearExpiryThresholdDays,
-                int signChainCertNearExpiryThresholdDays);
+                const MessageComposer::NearExpiryCheckerPtr &nearExpiryChecker);
 
     ~KeyResolver();
 
@@ -250,13 +252,6 @@ private:
     Kleo::Result resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted);
     Kleo::Result resolveSigningKeysForEncryption();
     Kleo::Result resolveSigningKeysForSigningOnly();
-    Kleo::Result checkKeyNearExpiry(const GpgME::Key &key,
-                                    const char *dontAskAgainName,
-                                    bool mine,
-                                    bool sign,
-                                    bool ca = false,
-                                    int recurse_limit = 100,
-                                    const GpgME::Key &orig_key = GpgME::Key::null) const;
     void collapseAllSplitInfos();
     void addToAllSplitInfos(const std::vector<GpgME::Key> &keys, unsigned int formats);
     void addKeys(const std::vector<Item> &items, CryptoMessageFormat f);
@@ -275,15 +270,6 @@ private:
     bool encryptToSelf() const;
     bool showApprovalDialog() const;
 
-    int encryptKeyNearExpiryWarningThresholdInDays() const;
-    int signingKeyNearExpiryWarningThresholdInDays() const;
-
-    int encryptRootCertNearExpiryWarningThresholdInDays() const;
-    int signingRootCertNearExpiryWarningThresholdInDays() const;
-
-    int encryptChainCertNearExpiryWarningThresholdInDays() const;
-    int signingChainCertNearExpiryWarningThresholdInDays() const;
-
     ContactPreferences lookupContactPreferences(const QString &address) const;
     void saveContactPreference(const QString &email, const ContactPreferences &pref) const;
 
@@ -300,12 +286,5 @@ private:
     const bool mShowApprovalDialog : 1;
     const bool mOpportunisticEncyption : 1;
     const unsigned int mCryptoMessageFormats;
-
-    const int mEncryptKeyNearExpiryWarningThreshold;
-    const int mSigningKeyNearExpiryWarningThreshold;
-    const int mEncryptRootCertNearExpiryWarningThreshold;
-    const int mSigningRootCertNearExpiryWarningThreshold;
-    const int mEncryptChainCertNearExpiryWarningThreshold;
-    const int mSigningChainCertNearExpiryWarningThreshold;
 };
 } // namespace Kleo

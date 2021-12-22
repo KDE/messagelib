@@ -12,6 +12,7 @@
 */
 
 #include "composer/keyresolver.h"
+#include "composer/nearexpirychecker.h"
 #include "job/savecontactpreferencejob.h"
 
 #include "utils/kleo_util.h"
@@ -607,251 +608,24 @@ struct Q_DECL_HIDDEN Kleo::KeyResolver::KeyResolverPrivate {
     using ContactPreferencesMap = std::map<QString, ContactPreferences>;
     ContactPreferencesMap mContactPreferencesMap;
     std::map<QByteArray, QString> mAutocryptMap;
+    MessageComposer::NearExpiryChecker::Ptr nearExpiryChecker;
 };
 
 Kleo::KeyResolver::KeyResolver(bool encToSelf,
                                bool showApproval,
                                bool oppEncryption,
                                unsigned int f,
-                               int encrWarnThresholdKey,
-                               int signWarnThresholdKey,
-                               int encrWarnThresholdRootCert,
-                               int signWarnThresholdRootCert,
-                               int encrWarnThresholdChainCert,
-                               int signWarnThresholdChainCert)
+                               const MessageComposer::NearExpiryCheckerPtr &nearExpiryChecker)
     : d(new KeyResolverPrivate)
     , mEncryptToSelf(encToSelf)
     , mShowApprovalDialog(showApproval)
     , mOpportunisticEncyption(oppEncryption)
     , mCryptoMessageFormats(f)
-    , mEncryptKeyNearExpiryWarningThreshold(encrWarnThresholdKey)
-    , mSigningKeyNearExpiryWarningThreshold(signWarnThresholdKey)
-    , mEncryptRootCertNearExpiryWarningThreshold(encrWarnThresholdRootCert)
-    , mSigningRootCertNearExpiryWarningThreshold(signWarnThresholdRootCert)
-    , mEncryptChainCertNearExpiryWarningThreshold(encrWarnThresholdChainCert)
-    , mSigningChainCertNearExpiryWarningThreshold(signWarnThresholdChainCert)
 {
+    d->nearExpiryChecker = nearExpiryChecker;
 }
 
 Kleo::KeyResolver::~KeyResolver() = default;
-
-Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key,
-                                                   const char *dontAskAgainName,
-                                                   bool mine,
-                                                   bool sign,
-                                                   bool ca,
-                                                   int recur_limit,
-                                                   const GpgME::Key &orig) const
-{
-    if (recur_limit <= 0) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "Key chain too long (>100 certs)";
-        return Kleo::Ok;
-    }
-    const GpgME::Subkey subkey = key.subkey(0);
-    if (d->alreadyWarnedFingerprints.count(subkey.fingerprint())) {
-        return Kleo::Ok; // already warned about this one (and so about it's issuers)
-    }
-
-    if (subkey.neverExpires()) {
-        return Kleo::Ok;
-    }
-    static const double secsPerDay = 24 * 60 * 60;
-    const double secsTillExpiry = ::difftime(subkey.expirationTime(), time(nullptr));
-    if (secsTillExpiry <= 0) {
-        const int daysSinceExpiry = 1 + int(-secsTillExpiry / secsPerDay);
-        qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.shortKeyID() << " expired less than " << daysSinceExpiry << " days ago";
-        const QString msg = key.protocol() == GpgME::OpenPGP
-            ? (mine ? sign ? ki18np("<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                                    "<p>expired less than a day ago.</p>",
-                                    "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                                    "<p>expired %1 days ago.</p>")
-                           : ki18np("<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                                    "<p>expired less than a day ago.</p>",
-                                    "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                                    "<p>expired %1 days ago.</p>")
-                    : ki18np("<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                             "<p>expired less than a day ago.</p>",
-                             "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                             "<p>expired %1 days ago.</p>"))
-                  .subs(daysSinceExpiry)
-                  .subs(QString::fromUtf8(key.userID(0).id()))
-                  .subs(QString::fromLatin1(key.shortKeyID()))
-                  .toString()
-            : (ca ? (key.isRoot() ? (mine ? sign ? ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
-                                                          "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                          "<p>expired less than a day ago.</p>",
-                                                          "<p>The root certificate</p><p align=center><b>%4</b></p>"
-                                                          "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                          "<p>expired %1 days ago.</p>")
-                                                 : ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
-                                                          "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                          "<p>expired less than a day ago.</p>",
-                                                          "<p>The root certificate</p><p align=center><b>%4</b></p>"
-                                                          "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                          "<p>expired %1 days ago.</p>")
-                                          : ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
-                                                   "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                   "<p>expired less than a day ago.</p>",
-                                                   "<p>The root certificate</p><p align=center><b>%4</b></p>"
-                                                   "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                   "<p>expired %1 days ago.</p>"))
-                                  : (mine ? sign ? ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                                                          "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                          "<p>expired less than a day ago.</p>",
-                                                          "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                                                          "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                          "<p>expired %1 days ago.</p>")
-                                                 : ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                                                          "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                          "<p>expired less than a day ago.</p>",
-                                                          "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                                                          "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                          "<p>expired %1 days ago.</p>")
-                                          : ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                                                   "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                   "<p>expired less than a day ago.</p>",
-                                                   "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                                                   "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                                   "<p>expired %1 days ago.</p>")))
-                        .subs(daysSinceExpiry)
-                        .subs(Kleo::DN(orig.userID(0).id()).prettyDN())
-                        .subs(QString::fromLatin1(orig.issuerSerial()))
-                        .subs(Kleo::DN(key.userID(0).id()).prettyDN())
-                        .toString()
-                  : (mine ? sign ? ki18np("<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                          "<p>expired less than a day ago.</p>",
-                                          "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                          "<p>expired %1 days ago.</p>")
-                                 : ki18np("<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                          "<p>expired less than a day ago.</p>",
-                                          "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                          "<p>expired %1 days ago.</p>")
-                          : ki18np("<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                   "<p>expired less than a day ago.</p>",
-                                   "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number %3)</p>"
-                                   "<p>expired %1 days ago.</p>"))
-                        .subs(daysSinceExpiry)
-                        .subs(Kleo::DN(key.userID(0).id()).prettyDN())
-                        .subs(QString::fromLatin1(key.issuerSerial()))
-                        .toString());
-        d->alreadyWarnedFingerprints.insert(subkey.fingerprint());
-        if (KMessageBox::warningContinueCancel(nullptr,
-                                               msg,
-                                               key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expired") : i18n("S/MIME Certificate Expired"),
-                                               KStandardGuiItem::cont(),
-                                               KStandardGuiItem::cancel(),
-                                               QLatin1String(dontAskAgainName))
-            == KMessageBox::Cancel) {
-            return Kleo::Canceled;
-        }
-    } else {
-        const int daysTillExpiry = 1 + int(secsTillExpiry / secsPerDay);
-        qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.shortKeyID() << "expires in less than" << daysTillExpiry << "days";
-        const int threshold = ca
-            ? (key.isRoot() ? (sign ? signingRootCertNearExpiryWarningThresholdInDays() : encryptRootCertNearExpiryWarningThresholdInDays())
-                            : (sign ? signingChainCertNearExpiryWarningThresholdInDays() : encryptChainCertNearExpiryWarningThresholdInDays()))
-            : (sign ? signingKeyNearExpiryWarningThresholdInDays() : encryptKeyNearExpiryWarningThresholdInDays());
-        if (threshold > -1 && daysTillExpiry <= threshold) {
-            const QString msg = key.protocol() == GpgME::OpenPGP
-                ? (mine ? sign ? ki18np("<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                                        "<p>expires in less than a day.</p>",
-                                        "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                                        "<p>expires in less than %1 days.</p>")
-                               : ki18np("<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                                        "<p>expires in less than a day.</p>",
-                                        "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                                        "<p>expires in less than %1 days.</p>")
-                        : ki18np("<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                                 "<p>expires in less than a day.</p>",
-                                 "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                                 "<p>expires in less than %1 days.</p>"))
-                      .subs(daysTillExpiry)
-                      .subs(QString::fromUtf8(key.userID(0).id()))
-                      .subs(QString::fromLatin1(key.shortKeyID()))
-                      .toString()
-                : (ca ? (key.isRoot()
-                             ? (mine ? sign ? ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                                     "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                                     "<p>expires in less than a day.</p>",
-                                                     "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                                     "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                                     "<p>expires in less than %1 days.</p>")
-                                            : ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                                     "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                                     "<p>expires in less than a day.</p>",
-                                                     "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                                     "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                                     "<p>expires in less than %1 days.</p>")
-                                     : ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                              "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                              "<p>expires in less than a day.</p>",
-                                              "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                              "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                              "<p>expires in less than %1 days.</p>"))
-                             : (mine ? sign ? ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                                     "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                                     "<p>expires in less than a day.</p>",
-                                                     "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                                     "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                                     "<p>expires in less than %1 days.</p>")
-                                            : ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                                     "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                                     "<p>expires in less than a day.</p>",
-                                                     "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                                     "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                                     "<p>expires in less than %1 days.</p>")
-                                     : ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                              "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                              "<p>expires in less than a day.</p>",
-                                              "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                              "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                              "<p>expires in less than %1 days.</p>")))
-                            .subs(daysTillExpiry)
-                            .subs(Kleo::DN(orig.userID(0).id()).prettyDN())
-                            .subs(QString::fromLatin1(orig.issuerSerial()))
-                            .subs(Kleo::DN(key.userID(0).id()).prettyDN())
-                            .toString()
-                      : (mine ? sign ? ki18np("<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                              "<p>expires in less than a day.</p>",
-                                              "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                              "<p>expires in less than %1 days.</p>")
-                                     : ki18np("<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                              "<p>expires in less than a day.</p>",
-                                              "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                              "<p>expires in less than %1 days.</p>")
-                              : ki18np("<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                       "<p>expires in less than a day.</p>",
-                                       "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                       "<p>expires in less than %1 days.</p>"))
-                            .subs(daysTillExpiry)
-                            .subs(Kleo::DN(key.userID(0).id()).prettyDN())
-                            .subs(QString::fromLatin1(key.issuerSerial()))
-                            .toString());
-            d->alreadyWarnedFingerprints.insert(subkey.fingerprint());
-            if (KMessageBox::warningContinueCancel(nullptr,
-                                                   msg,
-                                                   key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expires Soon")
-                                                                                    : i18n("S/MIME Certificate Expires Soon"),
-                                                   KStandardGuiItem::cont(),
-                                                   KStandardGuiItem::cancel(),
-                                                   QLatin1String(dontAskAgainName))
-                == KMessageBox::Cancel) {
-                return Kleo::Canceled;
-            }
-        }
-    }
-    if (key.isRoot()) {
-        return Kleo::Ok;
-    } else if (const char *chain_id = key.chainID()) {
-        const std::vector<GpgME::Key> issuer = lookup(QStringList(QLatin1String(chain_id)), false);
-        if (issuer.empty()) {
-            return Kleo::Ok;
-        } else {
-            return checkKeyNearExpiry(issuer.front(), dontAskAgainName, mine, sign, true, recur_limit - 1, ca ? orig : key);
-        }
-    }
-    return Kleo::Ok;
-}
 
 Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerprints)
 {
@@ -891,17 +665,11 @@ Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerpr
     std::vector<GpgME::Key>::const_iterator end(d->mOpenPGPEncryptToSelfKeys.end());
 
     for (auto it = d->mOpenPGPEncryptToSelfKeys.begin(); it != end; ++it) {
-        const Kleo::Result r = checkKeyNearExpiry(*it, "own encryption key expires soon warning", true, false);
-        if (r != Kleo::Ok) {
-            return r;
-        }
+        d->nearExpiryChecker->checkOwnKey(*it);
     }
     std::vector<GpgME::Key>::const_iterator end2(d->mSMIMEEncryptToSelfKeys.end());
     for (auto it = d->mSMIMEEncryptToSelfKeys.begin(); it != end2; ++it) {
-        const Kleo::Result r = checkKeyNearExpiry(*it, "own encryption key expires soon warning", true, false);
-        if (r != Kleo::Ok) {
-            return r;
-        }
+        d->nearExpiryChecker->checkOwnKey(*it);
     }
 
     return Kleo::Ok;
@@ -938,17 +706,11 @@ Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
     // check for near expiry:
 
     for (auto it = d->mOpenPGPSigningKeys.begin(), total = d->mOpenPGPSigningKeys.end(); it != total; ++it) {
-        const Kleo::Result r = checkKeyNearExpiry(*it, "signing key expires soon warning", true, true);
-        if (r != Kleo::Ok) {
-            return r;
-        }
+        d->nearExpiryChecker->checkOwnSigningKey(*it);
     }
 
     for (auto it = d->mSMIMESigningKeys.begin(), total = d->mSMIMESigningKeys.end(); it != total; ++it) {
-        const Kleo::Result r = checkKeyNearExpiry(*it, "signing key expires soon warning", true, true);
-        if (r != Kleo::Ok) {
-            return r;
-        }
+        d->nearExpiryChecker->checkOwnSigningKey(*it);
     }
 
     return Kleo::Ok;
@@ -1214,10 +976,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
         const std::vector<SplitInfo> si_list = encryptionItems(concreteCryptoMessageFormats[i]);
         for (auto sit = si_list.begin(), total = si_list.end(); sit != total; ++sit) {
             for (auto kit = sit->keys.begin(); kit != sit->keys.end(); ++kit) {
-                const Kleo::Result r = checkKeyNearExpiry(*kit, "other encryption key near expiry warning", false, false);
-                if (r != Kleo::Ok) {
-                    return r;
-                }
+                d->nearExpiryChecker->checkKey(*kit);
             }
         }
     }
@@ -1952,34 +1711,4 @@ bool Kleo::KeyResolver::encryptToSelf() const
 bool Kleo::KeyResolver::showApprovalDialog() const
 {
     return mShowApprovalDialog;
-}
-
-int Kleo::KeyResolver::encryptKeyNearExpiryWarningThresholdInDays() const
-{
-    return mEncryptKeyNearExpiryWarningThreshold;
-}
-
-int Kleo::KeyResolver::signingKeyNearExpiryWarningThresholdInDays() const
-{
-    return mSigningKeyNearExpiryWarningThreshold;
-}
-
-int Kleo::KeyResolver::encryptRootCertNearExpiryWarningThresholdInDays() const
-{
-    return mEncryptRootCertNearExpiryWarningThreshold;
-}
-
-int Kleo::KeyResolver::signingRootCertNearExpiryWarningThresholdInDays() const
-{
-    return mSigningRootCertNearExpiryWarningThreshold;
-}
-
-int Kleo::KeyResolver::encryptChainCertNearExpiryWarningThresholdInDays() const
-{
-    return mEncryptChainCertNearExpiryWarningThreshold;
-}
-
-int Kleo::KeyResolver::signingChainCertNearExpiryWarningThresholdInDays() const
-{
-    return mSigningChainCertNearExpiryWarningThreshold;
 }

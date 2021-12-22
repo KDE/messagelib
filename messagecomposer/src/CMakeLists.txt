@@ -59,6 +59,7 @@ target_sources( KF5MessageComposer PRIVATE
     composer/composerlineedit.cpp
     composer/composerviewbase.cpp
     composer/keyresolver.cpp
+    composer/nearexpirychecker.cpp
     composer/composerviewinterface.cpp
     composer/composerattachmentinterface.cpp
     draftstatus/draftstatus.cpp
@@ -403,6 +404,7 @@ ecm_generate_headers(MessageComposer_Camelcasecomposer_HEADERS
     ComposerViewBase
     ComposerViewInterface
     ComposerAttachmentInterface
+    NearExpiryChecker
     SignatureController
     REQUIRED_HEADERS MessageComposer_composer_HEADERS
     PREFIX MessageComposer
