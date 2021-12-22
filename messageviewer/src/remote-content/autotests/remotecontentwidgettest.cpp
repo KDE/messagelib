@@ -21,7 +21,7 @@ void RemoteContentWidgetTest::shouldHaveDefaultValues()
     MessageViewer::RemoteContentWidget w;
     auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
-    QCOMPARE(mainLayout->contentsMargins(), {});
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
     auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mLineEdit"));
     QVERIFY(mLineEdit);

@@ -21,7 +21,7 @@ void FilterNameWidgetTest::shouldHaveDefaultValues()
     MessageList::Core::FilterNameWidget w;
     auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
-    QCOMPARE(mainLayout->contentsMargins(), {});
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
     auto mName = w.findChild<QLineEdit *>(QStringLiteral("mName"));
     QVERIFY(mName);
