@@ -243,8 +243,6 @@ public:
             return i18n("To:");
         } else if (header == "reply-To") {
             return i18n("Reply To:");
-        } else if (header == "replyFrom") {
-            return i18n("Reply From:");
         } else if (header == "cc") {
             return i18n("CC:");
         } else if (header == "bcc") {
@@ -290,7 +288,6 @@ public:
         QVector<QByteArray> addressHeaders;
         addressHeaders << "to"
                        << "reply-To"
-                       << "reply-From"
                        << "cc"
                        << "bcc"
                        << "from"
@@ -393,7 +390,6 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     QVector<QByteArray> defaultHeaders;
     defaultHeaders << "to"
                    << "reply-To"
-                   << "reply-From"
                    << "cc"
                    << "bcc"
                    << "from"
