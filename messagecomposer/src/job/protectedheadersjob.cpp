@@ -133,6 +133,14 @@ void ProtectedHeadersJob::process()
         if (headerType.startsWith("Content-")) {
             continue;
         }
+        // A workaround for #439958
+        // KMime strips sometimes the newlines from long headers, if those
+        // headers are in the signature block, this breaks the signature.
+        // The simplest workaround is not to sign those headers until this
+        // get fixed in KMime.
+        if (header->as7BitString().length() > 70) {
+            continue;
+        }
         auto copyHeader = KMime::Headers::createHeader(headerType);
         if (!copyHeader) {
             copyHeader = new KMime::Headers::Generic(headerType.constData(), headerType.size());
