@@ -6,7 +6,9 @@
 
 #pragma once
 
+#include <QDir>
 #include <QObject>
+
 namespace KIdentityManagement
 {
 class IdentityManager;
@@ -22,13 +24,17 @@ public:
 private Q_SLOTS:
     void cleanupTestCase();
     void initTestCase();
+    void init();
+    void cleanup();
     void shouldHaveDefaultValue();
     void testGenerateCryptoMessagesAutocrypt_data();
     void testGenerateCryptoMessagesAutocrypt();
     void testGenerateCryptoMessagesAutocryptSMime();
     void testAutoSaveMessage();
+    void testAutocryptKey();
 private:
     KIdentityManagement::IdentityManager *mIdentMan = nullptr;
     KIdentityManagement::IdentityCombo *mIdentCombo = nullptr;
+    QDir autocryptDir;
 };
 

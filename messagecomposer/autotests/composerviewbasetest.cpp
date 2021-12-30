@@ -63,6 +63,20 @@ void ComposerViewBaseTest::initTestCase()
     mIdentCombo = new KIdentityManagement::IdentityCombo(mIdentMan);
 
     MessageComposerSettings::self()->setCryptoShowKeysForApproval(false);
+
+    const QDir genericDataLocation(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
+    autocryptDir = QDir(genericDataLocation.filePath(QStringLiteral("autocrypt")));
+}
+
+void ComposerViewBaseTest::init()
+{
+    autocryptDir.removeRecursively();
+    autocryptDir.mkpath(QStringLiteral("."));
+}
+
+void ComposerViewBaseTest::cleanup()
+{
+    autocryptDir.removeRecursively();
 }
 
 void ComposerViewBaseTest::shouldHaveDefaultValue()
@@ -267,4 +281,72 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
 
     QCOMPARE(QString::fromUtf8(msg->decodedContent()), data);
     QCOMPARE(msg->hasHeader("Autocrypt"), false);
+}
+
+void ComposerViewBaseTest::testAutocryptKey()
+{
+    QFile file(QLatin1String(MESSAGECORE_DATA_DIR) + QStringLiteral("/autocrypt/recipient.json"));
+    QVERIFY(file.copy(autocryptDir.path() + QStringLiteral("/recipient%40autocrypt.example.json")));
+
+    qDebug() << autocryptDir.path();
+
+    QString data = QStringLiteral("Hello,\n\nThis is a test message\n\nGreez");
+
+    MessageComposer::RichTextComposerNg editor;
+    MessageComposer::RecipientsEditor recipientsEditor;
+    MailTransport::TransportComboBox transpCombo;
+    ComposerViewBase composerViewBase;
+    composerViewBase.setIdentityCombo(mIdentCombo);
+    composerViewBase.setIdentityManager(mIdentMan);
+    composerViewBase.setEditor(&editor);
+    composerViewBase.setTransportCombo(&transpCombo);
+    composerViewBase.setRecipientsEditor(&recipientsEditor);
+    composerViewBase.setFrom(QStringLiteral("me@me.example"));
+    composerViewBase.mExpandedTo << QStringLiteral("recipient@autocrypt.example");
+    composerViewBase.setAkonadiLookupEnabled(false);
+    KMime::Types::Mailbox mb;
+    mb.from7BitString("recipient@autocrypt.example");
+    recipientsEditor.setRecipientString({mb}, Recipient::To);
+    editor.setPlainText(data);
+
+    bool wasCanceled = false;
+    composerViewBase.setCryptoOptions(false, true, Kleo::AutoFormat, false);
+    auto composers = composerViewBase.generateCryptoMessages(wasCanceled);
+    QCOMPARE(wasCanceled, false);
+
+    QCOMPARE(composers.size(), 1); // No additional composers are created
+
+    auto composer = composers.first();
+    composerViewBase.fillComposer(composer);
+
+    VERIFYEXEC(composer);
+
+    QCOMPARE(composer->resultMessages().size(), 1);
+
+    // The key for recipient@autocrypt.example is only available in Autocrypt
+    // test is we created a special GNUPGHOME to contain all needed keys.
+    QVERIFY(!composer->gnupgHome().isEmpty());
+
+    auto msg = composer->resultMessages().first();
+    msg->assemble();
+
+    // Every message should have an Autocrypt in the outer message structure
+    // as it should always been possible to start an encrypted reply
+    QCOMPARE(msg->hasHeader("Autocrypt"), true);
+
+    MimeTreeParser::SimpleObjectTreeSource testSource;
+    testSource.setDecryptMessage(true);
+    auto nh = new MimeTreeParser::NodeHelper;
+    MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
+
+    otp.parseObjectTree(msg.data());
+
+    KMime::Content *content = msg.data();
+
+    QCOMPARE(nh->encryptionState(msg.data()), MimeTreeParser::KMMsgFullyEncrypted);
+    const auto extra =  nh->extraContents(msg.data());
+    QCOMPARE(extra.size(), 1);
+    content = extra.first();
+
+    QCOMPARE(QString::fromUtf8(content->decodedContent()), data);
 }
