@@ -915,7 +915,7 @@ void MessageFactoryTest::test_multipartAlternative_data()
             << QString(dir.path() + QLatin1Char('/') + file) << 1 << ""
             << "<html><head></head><body>"
                "<blockquote>This <i>is</i> the <b>message</b> text <u>from</u> Sudhendu Kumar&lt;dontspamme@yoohoo.com&gt;<br>"
-               "<br>-- <br>Thanks &amp; Regards<br>Sudhendu Kumar<br>\n</blockquote><br/></body></html>";
+               "<br>-- <br>Thanks &amp; Regards<br>Sudhendu Kumar<br><br></blockquote><br/></body></html>";
 
         QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 0 << "This *is* the *message* text *from*"
                                                    << "> This *is* the *message* text *from*";
