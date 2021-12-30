@@ -122,9 +122,6 @@ void ProtectedHeadersJob::process()
         if (headerType.startsWith("X-KMail-")) {
             continue;
         }
-        if (headerType == "MIME-Version") {
-            continue;
-        }
         if (headerType == "Bcc") {
             continue;
         }
