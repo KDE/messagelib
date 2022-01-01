@@ -1,6 +1,6 @@
 /* This file is part of the KDE project
    SPDX-FileCopyrightText: 2002 Daniel Molkentin <molkentin@kde.org>
-   SPDX-FileCopyrightText: 2013-2021 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2013-2022 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: GPL-2.0-or-later
  */
