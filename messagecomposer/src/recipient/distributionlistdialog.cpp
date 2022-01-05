@@ -335,10 +335,15 @@ void DistributionListDialog::slotTitleChanged(const QString &text)
     mUser1Button->setEnabled(!text.trimmed().isEmpty());
 }
 
+namespace
+{
+static const char myDistributionListDialogGroupName[] = "DistributionListDialog";
+}
+
 void DistributionListDialog::readConfig()
 {
     KSharedConfig::Ptr cfg = KSharedConfig::openStateConfig();
-    KConfigGroup group(cfg, "DistributionListDialog");
+    KConfigGroup group(cfg, myDistributionListDialogGroupName);
     const QSize size = group.readEntry("Size", QSize());
     if (!size.isEmpty()) {
         resize(size);
@@ -349,7 +354,7 @@ void DistributionListDialog::readConfig()
 void DistributionListDialog::writeConfig()
 {
     KSharedConfig::Ptr cfg = KSharedConfig::openStateConfig();
-    KConfigGroup group(cfg, "DistributionListDialog");
+    KConfigGroup group(cfg, myDistributionListDialogGroupName);
     group.writeEntry("Size", size());
     group.writeEntry("Header", mRecipientsList->header()->saveState());
 }
