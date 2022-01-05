@@ -4,7 +4,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 add_definitions( -DHEADER_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 add_definitions( -DGRANTLEETHEME_DATA_DIR="${CMAKE_SOURCE_DIR}/messageviewer/src/messageviewerheaderplugins/defaultgrantleeheaderstyleplugin/theme/" )
 
-ecm_add_test(grantleeheaderstyletest.cpp
+ecm_add_test(grantleeheaderstyletest.cpp grantleeheaderstyletest.h
     TEST_NAME grantleeheaderstyletest
     NAME_PREFIX "messageviewer-header-"
     LINK_LIBRARIES
@@ -15,7 +15,7 @@ ecm_add_test(grantleeheaderstyletest.cpp
         Qt::Test
 )
 
-ecm_add_test(grantleeheaderformattertest.cpp
+ecm_add_test(grantleeheaderformattertest.cpp grantleeheaderformattertest.h
     TEST_NAME grantleeheaderformattertest
     NAME_PREFIX "messageviewer-header-"
     LINK_LIBRARIES
