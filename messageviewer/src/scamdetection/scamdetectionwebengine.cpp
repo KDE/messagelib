@@ -175,6 +175,9 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                     normalizedHref.replace(QStringLiteral("%5C"), QStringLiteral("/"));
                 }
             }
+            if (normalizedHref.endsWith(QLatin1String("%22"))) {
+                normalizedHref.chop(3);
+            }
             // qDebug() << "text " << text << " href "<<href << " normalizedHref " << normalizedHref;
 
             if (!text.isEmpty()) {

@@ -50,6 +50,7 @@ void ScamDetectionWebEngineTest::scamtest_data()
 {
     QTest::addColumn<QString>("html");
     QTest::addColumn<bool>("result");
+
     // No Scam
     QTest::newRow("noscam1") << QStringLiteral("<html><body><a href=\"www.kde.org\">kde</a></body></html>") << false;
     QTest::newRow("noscam2") << QStringLiteral("<html><body><a href=\"http://www.kde.org\" title=\"http://www.kde.org\">kde</a></body></html>") << false;
@@ -137,6 +138,10 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("scam5C") << QStringLiteral(R"(<a href="https://www.google.com/search?q=%5C">https://www.google.com/search?q=%5C</a>)") << false;
     QTest::newRow("BUG440635") << QStringLiteral(
         R"(<a href="https://codereview.qt-project.org/q/topic:%22api-change-review-6.2%22+(status:open%20OR%20status:abandoned">https://codereview.qt-project.org/q/topic:%22api-change-review-6.2%22+(status:open%20OR%20status:abandoned</a>)")
+                               << false;
+
+    QTest::newRow("BUG448029") << QStringLiteral(
+        R"(<a href="https://bugreports.qt.io/issues/?jql=text%20~%20%22gadget%20qml%22">https://bugreports.qt.io/issues/?jql=text%20~%20%22gadget%20qml%22</a>)")
                                << false;
 }
 
