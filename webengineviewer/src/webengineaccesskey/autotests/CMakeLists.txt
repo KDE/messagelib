@@ -9,5 +9,5 @@ ecm_add_test(webengineaccesskeyanchortest.cpp  ../webengineaccesskeyanchor.cpp .
 ecm_add_test(webengineaccesskeyanchorfromhtmltest.cpp  ../webengineaccesskeyanchor.cpp ../webengineaccesskeyutils.cpp
     TEST_NAME webengineaccesskeyanchorfromhtmltest
     NAME_PREFIX "messageviewer-webengine-"
-    LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test KF5::WebEngineViewer Qt${QT_MAJOR_VERSION}::WebEngine Qt${QT_MAJOR_VERSION}::WebEngineWidgets
+    LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test KF5::WebEngineViewer  Qt${QT_MAJOR_VERSION}::WebEngineWidgets
 )

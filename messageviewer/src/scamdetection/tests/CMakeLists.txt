@@ -11,7 +11,6 @@ target_sources(scamdetectionwebengine_gui PRIVATE scamdetectionwebengine_gui.cpp
 target_link_libraries(scamdetectionwebengine_gui
     KF5::KIOCore
     KF5::MessageViewer
-    Qt${QT_MAJOR_VERSION}::WebEngine
     Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     KF5::I18n
     )
