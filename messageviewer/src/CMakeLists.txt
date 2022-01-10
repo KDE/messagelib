@@ -396,9 +396,9 @@ endif()
 generate_export_header(KF5MessageViewer BASE_NAME messageviewer)
 
 if (${Inotify_FOUND})
-    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer>;${Inotify_INCLUDE_DIRS}")
+    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer>;${Inotify_INCLUDE_DIRS}")
 else()
-    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer>")
+    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer>")
 endif()
 
 if (${Qca-qt5_FOUND})
@@ -418,7 +418,7 @@ target_link_libraries(KF5MessageViewer
     PRIVATE
     KF5::SyntaxHighlighting
     KF5::ItemViews
-    Qt::Network
+    Qt${QT_MAJOR_VERSION}::Network
     KF5::WebEngineViewer
     KF5::GrantleeTheme
     KF5::MailTransportAkonadi
@@ -434,7 +434,7 @@ target_link_libraries(KF5MessageViewer
     KF5::XmlGui
     KF5::AkonadiContact
     Grantlee5::Templates
-    Qt::PrintSupport
+    Qt${QT_MAJOR_VERSION}::PrintSupport
     QGpgme
     ${Inotify_LIBRARIES}
     ${OPTIONAL_PRIVATE}
@@ -643,18 +643,18 @@ ecm_generate_headers(MessageViewer_Camelcaserenderer_HEADERS
 
 ecm_generate_pri_file(BASE_NAME MessageViewer
     LIB_NAME KF5MessageViewer
-    DEPS "PimCommon MessageCore AkonadiCore AkonadiMime KContacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
+    DEPS "PimCommon MessageCore AkonadiCore AkonadiMime KContacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer
     )
 if (${Qca-qt5_FOUND})
     install(FILES
         ${MessageViewer_Cameldkimverify_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer
         COMPONENT Devel
         )
 
     install(FILES
         ${MessageViewer_dkimverify_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer
         COMPONENT Devel
         )
 endif()
@@ -677,7 +677,7 @@ install(FILES
     ${MessageViewer_Camelfindbar_HEADERS}
     ${MessageViewer_Camelcasescam_HEADERS}
     ${MessageViewer_Camelcaserenderer_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer
     COMPONENT Devel
     )
 
@@ -703,7 +703,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h
     ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer
     COMPONENT Devel
     )
 

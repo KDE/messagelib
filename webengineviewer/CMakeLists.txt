@@ -27,7 +27,7 @@ install(EXPORT KF5WebEngineViewerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5} COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF} COMPONENT Devel
     )
 include_directories(${Messagelib_BINARY_DIR})
 add_subdirectory(src)

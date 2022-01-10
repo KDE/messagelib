@@ -144,11 +144,11 @@ endif()
 
 generate_export_header(KF5WebEngineViewer BASE_NAME webengineviewer)
 
-target_include_directories(KF5WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/webengineviewer>")
+target_include_directories(KF5WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer/;${KDE_INSTALL_INCLUDEDIR_KF}/webengineviewer>")
 
 target_link_libraries(KF5WebEngineViewer
     PUBLIC
-    Qt::WebEngineWidgets
+    Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     KF5::PimCommon
     KF5::PimTextEdit
     PRIVATE
@@ -305,7 +305,7 @@ ecm_generate_headers(WebEngineViewer_Camelsubmittedformwidget_HEADERS
 
 ecm_generate_pri_file(BASE_NAME WebEngineViewer
     LIB_NAME KF5WebEngineViewer
-    DEPS "webenginewidgets PimCommon" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
+    DEPS "webenginewidgets PimCommon" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer
     )
 
 
@@ -324,7 +324,7 @@ install(FILES
     ${WebEngineViewer_Camelfindbar_HEADERS}
     ${WebEngineViewer_Camelcasewidgets_HEADERS}
     ${WebEngineViewer_Camelprint_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer
     COMPONENT Devel
     )
 
@@ -344,7 +344,7 @@ install(FILES
     ${WebEngineViewer_widgets_HEADERS}
     ${WebEngineViewer_print_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/webengineviewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/webengineviewer
     COMPONENT Devel
     )
 

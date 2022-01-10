@@ -98,7 +98,7 @@ target_link_libraries(KF5TemplateParser
     KF5::I18n
     KF5::SonnetUi
     KF5::SyntaxHighlighting
-    Qt::WebEngineWidgets
+    Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     KF5::Libkdepim
     )
 set_target_properties(KF5TemplateParser PROPERTIES
@@ -107,7 +107,7 @@ set_target_properties(KF5TemplateParser PROPERTIES
     EXPORT_NAME TemplateParser
     )
 
-target_include_directories(KF5TemplateParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/TemplateParser/;${KDE_INSTALL_INCLUDEDIR_KF5}/templateparser;${KDE_INSTALL_INCLUDEDIR_KF5}>")
+target_include_directories(KF5TemplateParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TemplateParser/;${KDE_INSTALL_INCLUDEDIR_KF}/templateparser;${KDE_INSTALL_INCLUDEDIR_KF}>")
 
 install(FILES
     settings/customtemplates_kfg.kcfg
@@ -136,7 +136,7 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
 
 ecm_generate_pri_file(BASE_NAME TemplateParser
     LIB_NAME KF5TemplateParser
-    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/TemplateParser
+    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/TemplateParser
     )
 
 
@@ -146,7 +146,7 @@ install(TARGETS KF5TemplateParser EXPORT KF5TemplateParserTargets ${KDE_INSTALL_
 
 install(FILES
     ${TemplateParser_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/TemplateParser
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TemplateParser
     COMPONENT Devel
     )
 
@@ -157,7 +157,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/customtemplates_kfg.h
     ${CMAKE_CURRENT_BINARY_DIR}/ui_templatesconfiguration_base.h
     ${CMAKE_CURRENT_BINARY_DIR}/templatesconfiguration_kfg.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/templateparser
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/templateparser
     COMPONENT Devel
     )
 

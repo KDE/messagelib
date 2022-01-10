@@ -3,27 +3,27 @@
 add_executable(webenginetest testwebengine.cpp)
 
 target_link_libraries(webenginetest
-    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
+    Qt${QT_MAJOR_VERSION}::Widgets KF5::WebEngineViewer Qt${QT_MAJOR_VERSION}::WebEngine Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     )
 
 #####
 add_executable(webenginescripttest testwebenginescript.cpp)
 
 target_link_libraries(webenginescripttest
-    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
+    Qt${QT_MAJOR_VERSION}::Widgets KF5::WebEngineViewer Qt${QT_MAJOR_VERSION}::WebEngine Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     )
 
 ####
 add_executable(selectedtextwebenginetest testselectedtextwebengine.cpp)
 
 target_link_libraries(selectedtextwebenginetest
-    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
+    Qt${QT_MAJOR_VERSION}::Widgets KF5::WebEngineViewer Qt${QT_MAJOR_VERSION}::WebEngine Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     )
 ####
 add_executable(testdndwebenginetest testdndwebengine.cpp)
 
 target_link_libraries(testdndwebenginetest
-    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets
+    Qt${QT_MAJOR_VERSION}::Widgets KF5::WebEngineViewer Qt${QT_MAJOR_VERSION}::WebEngine Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     )
 
 #####
@@ -31,7 +31,7 @@ target_link_libraries(testdndwebenginetest
 add_executable(testselectionchangedwebengine testselectionchangedwebengine.cpp)
 
 target_link_libraries(testselectionchangedwebengine
-    Qt::Widgets KF5::WebEngineViewer Qt::WebEngine Qt::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    Qt${QT_MAJOR_VERSION}::Widgets KF5::WebEngineViewer Qt${QT_MAJOR_VERSION}::WebEngine Qt${QT_MAJOR_VERSION}::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )
 
 ####
@@ -45,6 +45,6 @@ target_sources(testwebengineviewinterceptor PRIVATE
     )
 
 target_link_libraries(testwebengineviewinterceptor
-    Qt::Widgets Qt::WebEngineWidgets 
+    Qt${QT_MAJOR_VERSION}::Widgets Qt${QT_MAJOR_VERSION}::WebEngineWidgets 
     )
 

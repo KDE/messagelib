@@ -103,14 +103,14 @@ target_link_libraries(KF5MessageCore
     KF5::PimTextEdit
     KF5::Archive
     KF5::ConfigWidgets
-    Qt::Network
+    Qt${QT_MAJOR_VERSION}::Network
     KF5::I18n
     KF5::IdentityManagement
     KF5::MimeTreeParser
     KF5::PimCommon
     )
 
-target_include_directories(KF5MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageCore/;${KDE_INSTALL_INCLUDEDIR_KF5}/messagecore>")
+target_include_directories(KF5MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore/;${KDE_INSTALL_INCLUDEDIR_KF}/messagecore>")
 
 set_target_properties(KF5MessageCore PROPERTIES
     VERSION ${MESSAGECORE_VERSION}
@@ -187,7 +187,7 @@ ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
 
 ecm_generate_pri_file(BASE_NAME MessageCore
     LIB_NAME KF5MessageCore
-    DEPS "KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageCore
+    DEPS "KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore
     )
 
 
@@ -200,7 +200,7 @@ install(FILES
     ${MessageCore_Camelcaseattachment_HEADERS}
     ${MessageCore_Camelcasemisc_HEADERS}
     ${MessageCore_Camelcasemain_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageCore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore
     COMPONENT Devel
     )
 
@@ -215,7 +215,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messagecore.h
     ${MessageCore_attachment_HEADERS}
     ${MessageCore_misc_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messagecore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messagecore
     COMPONENT Devel
     )
 install(FILES

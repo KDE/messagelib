@@ -11,7 +11,7 @@ macro(add_mimetreeparser_unittest _source)
     ecm_add_test(${_source} util.cpp setupenv.cpp
         TEST_NAME ${_name}
         NAME_PREFIX "mimetreeparser-"
-        LINK_LIBRARIES KF5::MimeTreeParser Qt::Test KF5::Mime Gpgmepp
+        LINK_LIBRARIES KF5::MimeTreeParser Qt${QT_MAJOR_VERSION}::Test KF5::Mime Gpgmepp
     )
 endmacro ()
 
@@ -20,7 +20,7 @@ macro(add_mimetreeparser_class_unittest _source _additionalSource)
     ecm_add_test(${_source} ${_additionalSource}
         TEST_NAME ${_name}
         NAME_PREFIX "mimetreeparser-"
-        LINK_LIBRARIES KF5::MimeTreeParser Qt::Test KF5::Mime Gpgmepp
+        LINK_LIBRARIES KF5::MimeTreeParser Qt${QT_MAJOR_VERSION}::Test KF5::Mime Gpgmepp
     )
 endmacro ()
 
@@ -31,7 +31,7 @@ macro(add_mimetreeparser_crypto_unittest _source)
     ecm_mark_as_test(mimetreeparser-${_name})
     target_link_libraries( ${_name}
         KF5::MimeTreeParser
-        Qt::Test
+        Qt${QT_MAJOR_VERSION}::Test
         KF5::Mime
         QGpgme
     )

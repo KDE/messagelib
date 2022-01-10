@@ -142,7 +142,7 @@ endif()
 
 generate_export_header(KF5MessageList BASE_NAME messagelist)
 
-target_include_directories(KF5MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageList/;${KDE_INSTALL_INCLUDEDIR_KF5}/messagelist>")
+target_include_directories(KF5MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageList/;${KDE_INSTALL_INCLUDEDIR_KF}/messagelist>")
 
 target_link_libraries(KF5MessageList
     PUBLIC
@@ -217,7 +217,7 @@ ecm_generate_headers(MessageList_CamelCase_HEADERS
 
 ecm_generate_pri_file(BASE_NAME MessageList
     LIB_NAME KF5MessageList
-    DEPS "AkonadiCore AkonadiMime KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageList
+    DEPS "AkonadiCore AkonadiMime KMime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/MessageList
     )
 
 
@@ -226,7 +226,7 @@ install(FILES
     ${MessageList_CamelCase_HEADERS}
     ${MessageList_Camelcasecore_HEADERS}
     ${MessageList_Camelcaseutil_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageList
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageList
     COMPONENT Devel
     )
 
@@ -237,7 +237,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagelistsettings.h
     ${MessageList_core_HEADERS}
     ${MessageList_util_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messagelist
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messagelist
     COMPONENT Devel
     )
 install(FILES

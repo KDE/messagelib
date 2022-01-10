@@ -3,6 +3,6 @@
 ecm_add_test(webengineembedparttest.cpp  ../webengineembedpart.cpp webengineembedparttest.h
     TEST_NAME webengineembedparttest
     NAME_PREFIX "messageviewer-webengine-"
-    LINK_LIBRARIES Qt::Test Qt::Core
+    LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test Qt${QT_MAJOR_VERSION}::Core
     )
 
