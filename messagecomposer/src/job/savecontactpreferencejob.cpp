@@ -18,7 +18,6 @@
 
 #include "messagecomposer_debug.h"
 #include <QPointer>
-#include <kcontacts_version.h>
 
 using namespace MessageComposer;
 
@@ -74,13 +73,9 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
 
         KContacts::Addressee contact;
         contact.setNameFromString(fullName);
-#if KContacts_VERSION < QT_VERSION_CHECK(5, 88, 0)
-        contact.insertEmail(mEmail, true);
-#else
         KContacts::Email email(mEmail);
         email.setPreferred(true);
         contact.addEmail(email);
-#endif
         writeCustomContactProperties(contact, mPref);
 
         Akonadi::Item item(KContacts::Addressee::mimeType());
