@@ -37,11 +37,10 @@ public:
     void keyReleaseEvent(QKeyEvent *e);
 
     void showAccessKeys();
+    void hideAccessKeys();
 
 Q_SIGNALS:
     void openUrl(const QUrl &url);
-public Q_SLOTS:
-    void hideAccessKeys();
 
 private Q_SLOTS:
     void handleSearchAccessKey(const QVariant &res);

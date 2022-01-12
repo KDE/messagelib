@@ -18,8 +18,6 @@ class WEBENGINEVIEWER_EXPORT SubmittedFormWarningWidget : public KMessageWidget
 public:
     explicit SubmittedFormWarningWidget(QWidget *parent = nullptr);
     ~SubmittedFormWarningWidget() override;
-
-public Q_SLOTS:
     void showWarning();
 };
 }
