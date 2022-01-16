@@ -129,7 +129,7 @@ QByteArray CheckPhishingUrlJob::jsonRequest() const
 
 void CheckPhishingUrlJob::start()
 {
-    if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
+    if (!PimCommon::NetworkManager::self()->isOnline()) {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork, d->mUrl);
         deleteLater();
     } else if (canStart()) {

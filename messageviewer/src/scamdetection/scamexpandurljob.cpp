@@ -44,7 +44,7 @@ ScamExpandUrlJob::~ScamExpandUrlJob() = default;
 
 void ScamExpandUrlJob::expandedUrl(const QUrl &url)
 {
-    if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
+    if (!PimCommon::NetworkManager::self()->isOnline()) {
         PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("No network connection detected, we cannot expand url."));
         deleteLater();
         return;

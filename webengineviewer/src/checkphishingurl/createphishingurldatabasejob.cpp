@@ -54,7 +54,7 @@ void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QLi
 
 void CreatePhishingUrlDataBaseJob::start()
 {
-    if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
+    if (!PimCommon::NetworkManager::self()->isOnline()) {
         Q_EMIT finished(UpdateDataBaseInfo(), BrokenNetwork);
         deleteLater();
     } else {
