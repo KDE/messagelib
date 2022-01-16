@@ -795,10 +795,10 @@ QString stripOffPrefixes(const QString &subject)
 
     static QRegularExpression regex;
 
-    regex.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
     if (regex.pattern() != bigRegExp) {
         // the prefixes have changed, so update the regexp
         regex.setPattern(bigRegExp);
+        regex.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
     }
 
     if (regex.isValid()) {
