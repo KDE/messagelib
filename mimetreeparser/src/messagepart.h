@@ -71,11 +71,11 @@ public:
     void setParentPart(MessagePart *parentPart);
     MessagePart *parentPart() const;
 
-    virtual Q_REQUIRED_RESULT QString text() const;
+    Q_REQUIRED_RESULT virtual QString text() const;
     void setText(const QString &text);
 
-    virtual Q_REQUIRED_RESULT QString plaintextContent() const;
-    virtual Q_REQUIRED_RESULT QString htmlContent() const;
+    Q_REQUIRED_RESULT virtual QString plaintextContent() const;
+    Q_REQUIRED_RESULT virtual QString htmlContent() const;
 
     /** The KMime::Content* node that's represented by this part.
      *  Can be @c nullptr, e.g. for sub-parts of an inline signed body part.
@@ -126,7 +126,7 @@ public:
     Interface::ObjectTreeSource *source() const;
     NodeHelper *nodeHelper() const;
 
-    virtual Q_REQUIRED_RESULT bool hasHeader(const char *headerType) const;
+    Q_REQUIRED_RESULT virtual bool hasHeader(const char *headerType) const;
     virtual const KMime::Headers::Base *header(const char *headerType) const;
     virtual QVector<KMime::Headers::Base *> headers(const char *headerType) const;
 

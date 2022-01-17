@@ -24,8 +24,8 @@ Q_SIGNALS:
     void urlBlocked(const QUrl &url);
 
 protected:
-    virtual Q_REQUIRED_RESULT bool urlIsAuthorized(const QUrl &requestedUrl);
-    virtual Q_REQUIRED_RESULT bool urlIsBlocked(const QUrl &requestedUrl);
+    Q_REQUIRED_RESULT virtual bool urlIsAuthorized(const QUrl &requestedUrl);
+    Q_REQUIRED_RESULT virtual bool urlIsBlocked(const QUrl &requestedUrl);
 
 private:
     bool mAllowLoadExternalReference = false;

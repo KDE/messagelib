@@ -52,9 +52,9 @@ public:
 
     Q_REQUIRED_RESULT QString directionOf(const QString &str) const;
 
-    static Q_REQUIRED_RESULT QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
-    static Q_REQUIRED_RESULT QString dateString(KMime::Message *message, HeaderStyleUtilDateFormat dateFormat);
-    static Q_REQUIRED_RESULT QString dateString(const QDateTime &date, HeaderStyleUtilDateFormat dateFormat);
+    Q_REQUIRED_RESULT static QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
+    Q_REQUIRED_RESULT static QString dateString(KMime::Message *message, HeaderStyleUtilDateFormat dateFormat);
+    Q_REQUIRED_RESULT static QString dateString(const QDateTime &date, HeaderStyleUtilDateFormat dateFormat);
 
     Q_REQUIRED_RESULT QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
@@ -62,13 +62,13 @@ public:
 
     Q_REQUIRED_RESULT QString spamStatus(KMime::Message *message) const;
 
-    static Q_REQUIRED_RESULT QString dateStr(const QDateTime &dateTime);
+    Q_REQUIRED_RESULT static QString dateStr(const QDateTime &dateTime);
 
-    static Q_REQUIRED_RESULT QString dateShortStr(const QDateTime &dateTime);
+    Q_REQUIRED_RESULT static QString dateShortStr(const QDateTime &dateTime);
 
-    MESSAGEVIEWER_DEPRECATED static Q_REQUIRED_RESULT QSharedPointer<KMime::Headers::Generics::MailboxList> resentFromList(KMime::Message *message);
+    MESSAGEVIEWER_DEPRECATED Q_REQUIRED_RESULT static QSharedPointer<KMime::Headers::Generics::MailboxList> resentFromList(KMime::Message *message);
 
-    MESSAGEVIEWER_DEPRECATED static Q_REQUIRED_RESULT QSharedPointer<KMime::Headers::Generics::MailboxList> resentToList(KMime::Message *message);
+    MESSAGEVIEWER_DEPRECATED Q_REQUIRED_RESULT static QSharedPointer<KMime::Headers::Generics::MailboxList> resentToList(KMime::Message *message);
 
     Q_REQUIRED_RESULT xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
 

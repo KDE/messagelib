@@ -26,7 +26,7 @@ public:
     explicit ScamCheckShortUrl(QObject *parent = nullptr);
     ~ScamCheckShortUrl() override;
 
-    static Q_REQUIRED_RESULT bool isShortUrl(const QUrl &url);
+    Q_REQUIRED_RESULT static bool isShortUrl(const QUrl &url);
 
     void expandedUrl(const QUrl &url);
 

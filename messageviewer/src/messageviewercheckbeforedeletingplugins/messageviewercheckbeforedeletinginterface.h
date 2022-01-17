@@ -30,12 +30,12 @@ public:
     void setParentWidget(QWidget *parent);
     Q_REQUIRED_RESULT QWidget *parentWidget() const;
 
-    virtual Q_REQUIRED_RESULT Akonadi::Item::List exec(const Akonadi::Item::List &list) = 0;
+    Q_REQUIRED_RESULT virtual Akonadi::Item::List exec(const Akonadi::Item::List &list) = 0;
 
     void setParameters(const MessageViewer::MessageViewerCheckBeforeDeletingParameters &params);
     Q_REQUIRED_RESULT MessageViewer::MessageViewerCheckBeforeDeletingParameters parameters() const;
 
-    virtual Q_REQUIRED_RESULT QList<QAction *> actions() const;
+    Q_REQUIRED_RESULT virtual QList<QAction *> actions() const;
 
     virtual void createActions(KActionCollection *ac);
 

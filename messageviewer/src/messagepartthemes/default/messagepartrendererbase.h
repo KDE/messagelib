@@ -40,19 +40,19 @@ public:
 
     virtual void renderSubParts(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter) = 0;
 
-    virtual Q_REQUIRED_RESULT bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
-    virtual Q_REQUIRED_RESULT MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
-    virtual Q_REQUIRED_RESULT bool showEmoticons() const = 0;
-    virtual Q_REQUIRED_RESULT bool isPrinting() const = 0;
-    virtual Q_REQUIRED_RESULT bool htmlLoadExternal() const = 0;
-    virtual Q_REQUIRED_RESULT bool showExpandQuotesMark() const = 0;
-    virtual Q_REQUIRED_RESULT bool showOnlyOneMimePart() const = 0;
-    virtual Q_REQUIRED_RESULT bool showSignatureDetails() const = 0;
-    virtual Q_REQUIRED_RESULT bool showEncryptionDetails() const = 0;
-    virtual Q_REQUIRED_RESULT int levelQuote() const = 0;
+    Q_REQUIRED_RESULT virtual bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
+    Q_REQUIRED_RESULT virtual MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
+    Q_REQUIRED_RESULT virtual bool showEmoticons() const = 0;
+    Q_REQUIRED_RESULT virtual bool isPrinting() const = 0;
+    Q_REQUIRED_RESULT virtual bool htmlLoadExternal() const = 0;
+    Q_REQUIRED_RESULT virtual bool showExpandQuotesMark() const = 0;
+    Q_REQUIRED_RESULT virtual bool showOnlyOneMimePart() const = 0;
+    Q_REQUIRED_RESULT virtual bool showSignatureDetails() const = 0;
+    Q_REQUIRED_RESULT virtual bool showEncryptionDetails() const = 0;
+    Q_REQUIRED_RESULT virtual int levelQuote() const = 0;
 
 protected:
-    virtual Q_REQUIRED_RESULT bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) = 0;
+    Q_REQUIRED_RESULT virtual bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) = 0;
 };
 /**
  * @brief The MessagePartRendererBase class
@@ -62,6 +62,6 @@ class MESSAGEVIEWER_EXPORT MessagePartRendererBase
 public:
     MessagePartRendererBase();
     virtual ~MessagePartRendererBase();
-    virtual Q_REQUIRED_RESULT bool render(const MimeTreeParser::MessagePart::Ptr &, HtmlWriter *htmlWriter, RenderContext *context) const = 0;
+    Q_REQUIRED_RESULT virtual bool render(const MimeTreeParser::MessagePart::Ptr &, HtmlWriter *htmlWriter, RenderContext *context) const = 0;
 };
 }

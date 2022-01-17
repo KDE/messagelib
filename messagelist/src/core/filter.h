@@ -92,7 +92,7 @@ public:
     Q_REQUIRED_RESULT QuickSearchLine::SearchOptions currentOptions() const;
 
     void save(const KSharedConfig::Ptr &config, const QString &filtername, const QString &iconName, int numFilter = -1);
-    static Q_REQUIRED_RESULT Filter *load(const KSharedConfig::Ptr &config, int filternumber);
+    Q_REQUIRED_RESULT static Filter *load(const KSharedConfig::Ptr &config, int filternumber);
     void generateRandomIdentifier();
     Q_REQUIRED_RESULT QString identifier() const;
     void setIdentifier(const QString &newIdentifier);
@@ -102,7 +102,7 @@ public:
 
     void setOptions(QuickSearchLine::SearchOptions newOptions);
 
-    static Q_REQUIRED_RESULT Filter *loadFromConfigGroup(const KConfigGroup &newGroup);
+    Q_REQUIRED_RESULT static Filter *loadFromConfigGroup(const KConfigGroup &newGroup);
     Q_REQUIRED_RESULT const QString &iconName() const;
     void setIconName(const QString &newIconName);
 
