@@ -11,7 +11,6 @@
 #include <PimCommon/NetworkManager>
 
 #include <QJsonDocument>
-#include <QNetworkConfigurationManager>
 #include <QUrlQuery>
 
 using namespace WebEngineViewer;

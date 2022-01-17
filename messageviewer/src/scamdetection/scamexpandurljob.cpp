@@ -15,7 +15,6 @@
 
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
-#include <QNetworkConfigurationManager>
 
 using namespace MessageViewer;
 class MessageViewer::ScamExpandUrlJobPrivate

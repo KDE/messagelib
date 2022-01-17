@@ -9,7 +9,6 @@
 #include <PimCommon/NetworkManager>
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
-#include <QNetworkConfigurationManager>
 #include <QUrlQuery>
 #include <webengineviewer_debug.h>
 
