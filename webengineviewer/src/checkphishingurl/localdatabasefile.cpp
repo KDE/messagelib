@@ -121,13 +121,13 @@ QByteArray LocalDataBaseFile::searchHash(const QByteArray &hashToSearch)
      * - one getUint64 => number of item
      * => 12
      */
-    int posListOffset = 12;
     const int numHash = getUint64(4);
     int end = numHash - 1;
     QByteArray previousValue;
     if (end > 0) {
         QByteArray currentValue;
         int begin = 0;
+        int posListOffset = 12;
         do {
             previousValue = currentValue;
             const int medium = (begin + end) / 2;

@@ -59,7 +59,7 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     if ((mOpenWithOption == OpenWithDialog) || !offer) {
         std::unique_ptr<KOpenWithDialog> dlg(new KOpenWithDialog(list, i18n("Edit with:"), QString(), mParentWidget));
         const int dlgrc = dlg->exec();
-        if (dlgrc && dlg) {
+        if (dlgrc) {
             offer = dlg->service();
         }
         if (!dlgrc) {
