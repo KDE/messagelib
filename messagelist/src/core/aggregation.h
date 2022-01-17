@@ -128,7 +128,7 @@ public:
                          ThreadExpandPolicy threadExpandPolicy,
                          FillViewStrategy fillViewStrategy,
                          bool readOnly);
-    static Q_REQUIRED_RESULT bool compareName(Aggregation *agg1, Aggregation *agg2)
+    Q_REQUIRED_RESULT static bool compareName(Aggregation *agg1, Aggregation *agg2)
     {
         return agg1->name() < agg2->name();
     }

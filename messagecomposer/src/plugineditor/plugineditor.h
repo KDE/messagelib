@@ -25,7 +25,7 @@ public:
     void setOrder(int order);
     Q_REQUIRED_RESULT int order() const;
 
-    virtual Q_REQUIRED_RESULT bool canProcessKeyEvent() const;
+    Q_REQUIRED_RESULT virtual bool canProcessKeyEvent() const;
 
 private:
     std::unique_ptr<PluginEditorPrivate> const d;

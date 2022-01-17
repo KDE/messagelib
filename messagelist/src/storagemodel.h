@@ -48,7 +48,7 @@ public:
     Q_REQUIRED_RESULT QString id() const override;
     Q_REQUIRED_RESULT bool containsOutboundMessages() const override;
 
-    virtual Q_REQUIRED_RESULT bool isOutBoundFolder(const Akonadi::Collection &c) const;
+    Q_REQUIRED_RESULT virtual bool isOutBoundFolder(const Akonadi::Collection &c) const;
 
     Q_REQUIRED_RESULT int initialUnreadRowCountGuess() const override;
     Q_REQUIRED_RESULT bool initializeMessageItem(MessageList::Core::MessageItem *mi, int row, bool bUseReceiver) const override;

@@ -336,7 +336,7 @@ private:
      * Does the necessary conversions like escaping characters, changing "\n" to
      * breakline tag before appending text to htmlBody.
      */
-    static Q_REQUIRED_RESULT QString plainTextToHtml(const QString &body);
+    Q_REQUIRED_RESULT static QString plainTextToHtml(const QString &body);
 
     /**
      * Make a HTML content valid by adding missing html/head/body tag.
