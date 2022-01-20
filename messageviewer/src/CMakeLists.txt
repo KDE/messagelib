@@ -70,48 +70,46 @@ add_subdirectory(pics)
 add_subdirectory(about)
 add_subdirectory(messageviewerheaderplugins)
 
-if (${Qca-qt5_FOUND})
-    if (BUILD_TESTING)
-        add_subdirectory(dkim-verify/autotests)
-	add_subdirectory(dkim-verify/tests)
-    endif()
-    target_sources(KF5MessageViewer PRIVATE
-        dkim-verify/dkiminfo.cpp
-        dkim-verify/dkimmanagerkey.cpp
-        dkim-verify/dkimmanagerkeywidget.cpp
-        dkim-verify/dkimmanagerkeydialog.cpp
-        dkim-verify/dkimdownloadkeyjob.cpp
-        dkim-verify/dkimchecksignaturejob.cpp
-        dkim-verify/dkimcheckauthenticationstatusjob.cpp
-        dkim-verify/dkimauthenticationstatusinfo.cpp
-        dkim-verify/dkimutil.cpp
-        dkim-verify/dkimkeyrecord.cpp
-        dkim-verify/dkimmanager.cpp
-        dkim-verify/dkimresultattribute.cpp
-        dkim-verify/dkimwidgetinfo.cpp
-        dkim-verify/dkimstoreresultjob.cpp
-        dkim-verify/dkimheaderparser.cpp
-        dkim-verify/dkimcheckpolicy.cpp
-        dkim-verify/dmarcrecordjob.cpp
-        dkim-verify/dmarcinfo.cpp
-        dkim-verify/dmarcpolicyjob.cpp
-        dkim-verify/dkimcheckpolicyjob.cpp
-        dkim-verify/dkimrule.cpp
-        dkim-verify/dkimmanagerrules.cpp
-        dkim-verify/dkimgeneraterulejob.cpp
-        dkim-verify/dkimauthenticationstatusinfoutil.cpp
-        dkim-verify/dkimcheckfulljob.cpp
-        dkim-verify/dkimauthenticationstatusinfoconverter.cpp
-        dkim-verify/dkimmanagerauthenticationserver.cpp
-        dkim-verify/dkimviewermenu.cpp
-        dkim-verify/dkimmanagerulescombobox.cpp
-        dkim-verify/dkimmanagerulesdialog.cpp
-        dkim-verify/dkimmanageruleswidget.cpp
-        dkim-verify/dkimruledialog.cpp
-        dkim-verify/dkimrulewidget.cpp
-        dkim-verify/dmarcmanager.cpp
-        )
+if (BUILD_TESTING)
+    add_subdirectory(dkim-verify/autotests)
+    add_subdirectory(dkim-verify/tests)
 endif()
+target_sources(KF5MessageViewer PRIVATE
+    dkim-verify/dkiminfo.cpp
+    dkim-verify/dkimmanagerkey.cpp
+    dkim-verify/dkimmanagerkeywidget.cpp
+    dkim-verify/dkimmanagerkeydialog.cpp
+    dkim-verify/dkimdownloadkeyjob.cpp
+    dkim-verify/dkimchecksignaturejob.cpp
+    dkim-verify/dkimcheckauthenticationstatusjob.cpp
+    dkim-verify/dkimauthenticationstatusinfo.cpp
+    dkim-verify/dkimutil.cpp
+    dkim-verify/dkimkeyrecord.cpp
+    dkim-verify/dkimmanager.cpp
+    dkim-verify/dkimresultattribute.cpp
+    dkim-verify/dkimwidgetinfo.cpp
+    dkim-verify/dkimstoreresultjob.cpp
+    dkim-verify/dkimheaderparser.cpp
+    dkim-verify/dkimcheckpolicy.cpp
+    dkim-verify/dmarcrecordjob.cpp
+    dkim-verify/dmarcinfo.cpp
+    dkim-verify/dmarcpolicyjob.cpp
+    dkim-verify/dkimcheckpolicyjob.cpp
+    dkim-verify/dkimrule.cpp
+    dkim-verify/dkimmanagerrules.cpp
+    dkim-verify/dkimgeneraterulejob.cpp
+    dkim-verify/dkimauthenticationstatusinfoutil.cpp
+    dkim-verify/dkimcheckfulljob.cpp
+    dkim-verify/dkimauthenticationstatusinfoconverter.cpp
+    dkim-verify/dkimmanagerauthenticationserver.cpp
+    dkim-verify/dkimviewermenu.cpp
+    dkim-verify/dkimmanagerulescombobox.cpp
+    dkim-verify/dkimmanagerulesdialog.cpp
+    dkim-verify/dkimmanageruleswidget.cpp
+    dkim-verify/dkimruledialog.cpp
+    dkim-verify/dkimrulewidget.cpp
+    dkim-verify/dmarcmanager.cpp
+)
 
 
 if(DEBUG_SIGNATURE)
@@ -402,10 +400,6 @@ else()
     target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer>")
 endif()
 
-if (${Qca-qt5_FOUND})
-    set(OPTIONAL_PRIVATE qca-qt5)
-endif()
-
 target_link_libraries(KF5MessageViewer
     PUBLIC
     KF5::MessageCore
@@ -438,7 +432,7 @@ target_link_libraries(KF5MessageViewer
     Qt${QT_MAJOR_VERSION}::PrintSupport
     QGpgme
     ${Inotify_LIBRARIES}
-    ${OPTIONAL_PRIVATE}
+    qca-qt5
     )
 
 set_target_properties(KF5MessageViewer PROPERTIES
@@ -474,30 +468,28 @@ ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     RELATIVE scamdetection
     )
 
-if (${Qca-qt5_FOUND})
-    ecm_generate_headers(MessageViewer_Cameldkimverify_HEADERS
-        HEADER_NAMES
-        DKIMManagerKey
-        DKIMCheckSignatureJob
-        DKIMManager
-        DKIMManagerKeyWidget
-        DKIMManagerKeyDialog
-        DKIMKeyRecord
-        DKIMInfo
-        DKIMWidgetInfo
-        DKIMCheckPolicy
-        DKIMManagerRules
-        DKIMRule
-        DKIMHeaderParser
-        DKIMManagerAuthenticationServer
-        DKIMViewerMenu
-        DKIMManageRulesDialog
-        DKIMManageRulesWidget
-        REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
-        PREFIX MessageViewer
-        RELATIVE dkim-verify
-        )
-endif()
+ecm_generate_headers(MessageViewer_Cameldkimverify_HEADERS
+    HEADER_NAMES
+    DKIMManagerKey
+    DKIMCheckSignatureJob
+    DKIMManager
+    DKIMManagerKeyWidget
+    DKIMManagerKeyDialog
+    DKIMKeyRecord
+    DKIMInfo
+    DKIMWidgetInfo
+    DKIMCheckPolicy
+    DKIMManagerRules
+    DKIMRule
+    DKIMHeaderParser
+    DKIMManagerAuthenticationServer
+    DKIMViewerMenu
+    DKIMManageRulesDialog
+    DKIMManageRulesWidget
+    REQUIRED_HEADERS MessageViewer_dkimverify_HEADERS
+    PREFIX MessageViewer
+    RELATIVE dkim-verify
+)
 
 ecm_generate_headers(MessageViewer_Camelremotecontent_HEADERS
     HEADER_NAMES
@@ -646,19 +638,17 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
     LIB_NAME KF5MessageViewer
     DEPS "PimCommon MessageCore AkonadiCore AkonadiMime KContacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer
     )
-if (${Qca-qt5_FOUND})
-    install(FILES
-        ${MessageViewer_Cameldkimverify_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer
-        COMPONENT Devel
-        )
+install(FILES
+    ${MessageViewer_Cameldkimverify_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer
+    COMPONENT Devel
+)
 
-    install(FILES
-        ${MessageViewer_dkimverify_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer
-        COMPONENT Devel
-        )
-endif()
+install(FILES
+    ${MessageViewer_dkimverify_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer
+    COMPONENT Devel
+)
 
 
 install(FILES
