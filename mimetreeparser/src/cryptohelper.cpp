@@ -13,7 +13,9 @@ using namespace MimeTreeParser;
 PGPBlockType Block::determineType() const
 {
     const QByteArray data = text();
-    if (data.startsWith("-----BEGIN PGP SIGNED")) {
+    if (data.startsWith("-----BEGIN PGP PUBLIC KEY BLOCK-----")) {
+        return NoPgpBlock;
+    } else if (data.startsWith("-----BEGIN PGP SIGNED")) {
         return ClearsignedBlock;
     } else if (data.startsWith("-----BEGIN PGP SIGNATURE")) {
         return SignatureBlock;
@@ -45,6 +47,9 @@ QVector<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg
     const int length = msg.length();
 
     if (msg.isEmpty()) {
+        return blocks;
+    }
+    if (msg.startsWith("-----BEGIN PGP PUBLIC KEY BLOCK-----")) {
         return blocks;
     }
 
