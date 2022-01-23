@@ -6,7 +6,7 @@ macro(messagelist_unittest _source)
     ecm_add_test(${_source} 
         TEST_NAME ${_name}
         NAME_PREFIX "messagelist-"
-        LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test KF5::MessageCore KF5::MessageList KF5::PimCommon
+        LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test KF5::MessageCore KF5::MessageList KF5::PimCommonAkonadi
     )
 endmacro ()
 
