@@ -28,7 +28,7 @@ install(EXPORT KF5MessageListTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FI
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagelist_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF} COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageList COMPONENT Devel
     )
 
 add_subdirectory(src)

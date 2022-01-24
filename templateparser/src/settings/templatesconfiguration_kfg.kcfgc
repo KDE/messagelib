@@ -4,5 +4,5 @@ NameSpace=TemplateParser
 Mutators=true
 ItemAccessors=true
 Visibility=TEMPLATEPARSER_EXPORT
-IncludeFiles=templateparser_export.h
+IncludeFiles=\"templateparser_export.h\"
 

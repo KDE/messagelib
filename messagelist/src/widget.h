@@ -14,8 +14,8 @@
 
 #include <KMime/KMimeMessage>
 
+#include "messagelist_export.h"
 #include <QVector>
-#include <messagelist_export.h>
 class KXMLGUIClient;
 class QWidget;
 class KJob;

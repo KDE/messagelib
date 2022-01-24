@@ -292,7 +292,7 @@ target_link_libraries(KF5MessageComposer
     KF5::GuiAddons
     )
 
-target_include_directories(KF5MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer/;${KDE_INSTALL_INCLUDEDIR_KF}/messagecomposer>")
+target_include_directories(KF5MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer/>")
 
 set_target_properties(KF5MessageComposer PROPERTIES
     VERSION ${MESSAGECOMPOSER_VERSION}
@@ -569,7 +569,7 @@ install(FILES
     ${MessageComposer_Camelplugineditorgrammar_HEADERS}
     ${MessageComposer_Camelstatusbarwidget_HEADERS}
     ${MessageComposer_Camelcasedraftstatus_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer/MessageComposer
     COMPONENT Devel
     )
 
@@ -601,7 +601,7 @@ install(FILES
     ${MessageComposer_plugineditorgrammar_HEADERS}
     ${MessageComposer_draftstatus_HEADERS}
 
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messagecomposer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer/messagecomposer
     COMPONENT Devel
     )
 

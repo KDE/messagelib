@@ -400,9 +400,9 @@ endif()
 generate_export_header(KF5MessageViewer BASE_NAME messageviewer)
 
 if (${Inotify_FOUND})
-    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer>;${Inotify_INCLUDE_DIRS}")
+    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/;${Inotify_INCLUDE_DIRS}>")
 else()
-    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer>")
+    target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/>")
 endif()
 
 target_link_libraries(KF5MessageViewer
@@ -654,13 +654,13 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
     )
 install(FILES
     ${MessageViewer_Cameldkimverify_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/MessageViewer
     COMPONENT Devel
 )
 
 install(FILES
     ${MessageViewer_dkimverify_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/messageviewer
     COMPONENT Devel
 )
 
@@ -683,7 +683,7 @@ install(FILES
     ${MessageViewer_Camelcasescam_HEADERS}
     ${MessageViewer_Camelcaserenderer_HEADERS}
     ${MessageViewer_Camelopenurlwith_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/MessageViewer
     COMPONENT Devel
     )
 
@@ -710,7 +710,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h
     ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messageviewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer/messageviewer
     COMPONENT Devel
     )
 

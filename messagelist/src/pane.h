@@ -12,10 +12,10 @@
 #include <messagelist/enums.h>
 #include <messagelist/view.h>
 
+#include "messagelist_export.h"
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
 #include <KMime/KMimeMessage>
-#include <messagelist_export.h>
 
 class KXMLGUIClient;
 class QAbstractItemModel;

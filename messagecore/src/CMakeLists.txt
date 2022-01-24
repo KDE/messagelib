@@ -110,7 +110,7 @@ target_link_libraries(KF5MessageCore
     KF5::PimCommon
     )
 
-target_include_directories(KF5MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore/;${KDE_INSTALL_INCLUDEDIR_KF}/messagecore>")
+target_include_directories(KF5MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore/>")
 
 set_target_properties(KF5MessageCore PROPERTIES
     VERSION ${MESSAGECORE_VERSION}
@@ -200,7 +200,7 @@ install(FILES
     ${MessageCore_Camelcaseattachment_HEADERS}
     ${MessageCore_Camelcasemisc_HEADERS}
     ${MessageCore_Camelcasemain_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore/MessageCore
     COMPONENT Devel
     )
 
@@ -215,7 +215,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messagecore.h
     ${MessageCore_attachment_HEADERS}
     ${MessageCore_misc_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messagecore
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore/messagecore
     COMPONENT Devel
     )
 install(FILES

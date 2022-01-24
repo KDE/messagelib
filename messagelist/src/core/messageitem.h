@@ -11,12 +11,12 @@
 #include "core/item.h"
 #include "core/modelinvariantindex.h"
 
+#include "messagelist_export.h"
 #include "theme.h"
 #include <QColor>
 #include <QFont>
 #include <QPixmap>
 #include <QString>
-#include <messagelist_export.h>
 
 namespace Akonadi
 {

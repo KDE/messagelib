@@ -4,9 +4,9 @@
 */
 #pragma once
 
+#include "messagelist_export.h"
 #include <Akonadi/Collection>
 #include <QComboBox>
-#include <messagelist_export.h>
 namespace MessageList
 {
 namespace Core

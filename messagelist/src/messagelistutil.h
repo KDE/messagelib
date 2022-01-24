@@ -7,9 +7,9 @@
 
 #pragma once
 
+#include "messagelist_export.h"
 #include <QColor>
 #include <QString>
-#include <messagelist_export.h>
 
 namespace Akonadi
 {

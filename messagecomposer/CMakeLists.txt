@@ -26,7 +26,7 @@ install(EXPORT KF5MessageComposerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF} COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer COMPONENT Devel
     )
 
 add_subdirectory(src)

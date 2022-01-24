@@ -127,7 +127,7 @@ install(FILES
     ${MimeTreeParser_Camelcaseinterfaces_HEADERS}
     ${MimeTreeParser_Camelcasemain_HEADERS}
     ${MimeTreeParser_Camelcasetemporaryfile_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MimeTreeParser
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MimeTreeParser/MimeTreeParser
     COMPONENT Devel
     )
 
@@ -138,7 +138,7 @@ install(FILES
     ${MimeTreeParser_temporaryfile_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_export.h
 
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/mimetreeparser
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MimeTreeParser/mimetreeparser
     COMPONENT Devel
     )
 
@@ -183,7 +183,7 @@ set_target_properties(KF5MimeTreeParser PROPERTIES
     EXPORT_NAME MimeTreeParser
     )
 
-target_include_directories(KF5MimeTreeParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MimeTreeParser/;${KDE_INSTALL_INCLUDEDIR_KF}/mimetreeparser>")
+target_include_directories(KF5MimeTreeParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MimeTreeParser/>")
 
 ecm_generate_pri_file(BASE_NAME MimeTreeParser
     LIB_NAME KF5MimeTreeParser

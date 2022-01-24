@@ -144,7 +144,7 @@ endif()
 
 generate_export_header(KF5WebEngineViewer BASE_NAME webengineviewer)
 
-target_include_directories(KF5WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer/;${KDE_INSTALL_INCLUDEDIR_KF}/webengineviewer>")
+target_include_directories(KF5WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer/>")
 
 target_link_libraries(KF5WebEngineViewer
     PUBLIC
@@ -324,7 +324,7 @@ install(FILES
     ${WebEngineViewer_Camelfindbar_HEADERS}
     ${WebEngineViewer_Camelcasewidgets_HEADERS}
     ${WebEngineViewer_Camelprint_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer/WebEngineViewer
     COMPONENT Devel
     )
 
@@ -344,7 +344,7 @@ install(FILES
     ${WebEngineViewer_widgets_HEADERS}
     ${WebEngineViewer_print_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/webengineviewer
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/WebEngineViewer/webengineviewer
     COMPONENT Devel
     )
 

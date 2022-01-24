@@ -4,8 +4,8 @@
 */
 #pragma once
 
+#include "messagelist_export.h"
 #include <QPushButton>
-#include <messagelist_export.h>
 
 namespace MessageList
 {

@@ -142,7 +142,7 @@ endif()
 
 generate_export_header(KF5MessageList BASE_NAME messagelist)
 
-target_include_directories(KF5MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageList/;${KDE_INSTALL_INCLUDEDIR_KF}/messagelist>")
+target_include_directories(KF5MessageList INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageList/>")
 
 target_link_libraries(KF5MessageList
     PUBLIC
@@ -226,7 +226,7 @@ install(FILES
     ${MessageList_CamelCase_HEADERS}
     ${MessageList_Camelcasecore_HEADERS}
     ${MessageList_Camelcaseutil_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageList
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageList/MessageList
     COMPONENT Devel
     )
 
@@ -237,7 +237,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagelistsettings.h
     ${MessageList_core_HEADERS}
     ${MessageList_util_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/messagelist
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageList/messagelist
     COMPONENT Devel
     )
 install(FILES

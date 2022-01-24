@@ -30,7 +30,7 @@ install(EXPORT KF5MessageViewerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" 
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF} COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer COMPONENT Devel
     )
 
 include_directories(${Messagelib_BINARY_DIR})

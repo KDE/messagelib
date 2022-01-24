@@ -28,7 +28,7 @@ install(EXPORT KF5MimeTreeParserTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF} COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MimeTreeParser COMPONENT Devel
     )
 
 add_subdirectory(src)
