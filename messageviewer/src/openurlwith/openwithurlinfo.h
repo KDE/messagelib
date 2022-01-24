@@ -19,6 +19,18 @@ class OpenWithUrlInfo
 public:
     OpenWithUrlInfo();
     ~OpenWithUrlInfo();
+
+    Q_REQUIRED_RESULT const QString &command() const;
+    void setCommand(const QString &newCommand);
+
+    Q_REQUIRED_RESULT const QString &url() const;
+    void setUrl(const QString &newUrl);
+
+    Q_REQUIRED_RESULT bool isValid() const;
+
+private:
+    QString mCommand;
+    QString mUrl;
 };
 }
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::OpenWithUrlInfo &t);
