@@ -367,6 +367,8 @@ target_sources(KF5MessageViewer PRIVATE
 
     openurlwith/openwithurlinfo.h
     openurlwith/openwithurlinfo.cpp
+    openurlwith/openurlwithmanager.h
+    openurlwith/openurlwithmanager.cpp
     )
 
 ecm_qt_declare_logging_category(KF5MessageViewer HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
@@ -501,6 +503,15 @@ ecm_generate_headers(MessageViewer_Camelremotecontent_HEADERS
     REQUIRED_HEADERS MessageViewer_remotecontent_HEADERS
     PREFIX MessageViewer
     RELATIVE remote-content
+    )
+
+ecm_generate_headers(MessageViewer_Camelopenurlwith_HEADERS
+    HEADER_NAMES
+    OpenWithUrlInfo
+    OpenUrlWithManager
+    REQUIRED_HEADERS MessageViewer_openurlwith_HEADERS
+    PREFIX MessageViewer
+    RELATIVE openurlwith
     )
 
 
@@ -671,6 +682,7 @@ install(FILES
     ${MessageViewer_Camelfindbar_HEADERS}
     ${MessageViewer_Camelcasescam_HEADERS}
     ${MessageViewer_Camelcaserenderer_HEADERS}
+    ${MessageViewer_Camelopenurlwith_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/MessageViewer
     COMPONENT Devel
     )
@@ -693,6 +705,7 @@ install(FILES
     ${MessageViewer_findbar_HEADERS}
     ${MessageViewer_renderer_HEADERS}
     ${MessageViewer_remotecontent_HEADERS}
+    ${MessageViewer_openurlwith_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h

@@ -5,6 +5,7 @@
 */
 
 #include "openwithurlinfotest.h"
+#include "openurlwith/openwithurlinfo.h"
 #include <QTest>
 QTEST_MAIN(OpenWithUrlInfoTest)
 OpenWithUrlInfoTest::OpenWithUrlInfoTest(QObject *parent)
@@ -14,5 +15,8 @@ OpenWithUrlInfoTest::OpenWithUrlInfoTest(QObject *parent)
 
 void OpenWithUrlInfoTest::shouldHaveDefaultValues()
 {
-    // TODO
+    MessageViewer::OpenWithUrlInfo info;
+    QVERIFY(!info.isValid());
+    QVERIFY(info.url().isEmpty());
+    QVERIFY(info.command().isEmpty());
 }

@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 #include <QDebug>
 namespace MessageViewer
 {
@@ -13,7 +13,7 @@ namespace MessageViewer
  * @brief The OpenWithUrlInfo class
  * @author Laurent Montel <montel@kde.org>
  */
-class OpenWithUrlInfo
+class MESSAGEVIEWER_EXPORT OpenWithUrlInfo
 {
     Q_GADGET
 public:
