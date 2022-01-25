@@ -33,4 +33,5 @@ private:
     QString mUrl;
 };
 }
+Q_DECLARE_TYPEINFO(MessageViewer::OpenWithUrlInfo, Q_MOVABLE_TYPE);
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::OpenWithUrlInfo &t);

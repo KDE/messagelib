@@ -7,7 +7,9 @@
 #pragma once
 
 #include "messageviewer_export.h"
+#include "openwithurlinfo.h"
 #include <QObject>
+#include <QVector>
 namespace MessageViewer
 {
 class MESSAGEVIEWER_EXPORT OpenUrlWithManager : public QObject
@@ -18,5 +20,16 @@ public:
     ~OpenUrlWithManager() override;
 
     static OpenUrlWithManager *self();
+
+    void clear();
+
+    Q_REQUIRED_RESULT const QVector<OpenWithUrlInfo> &openWithUrlInfo() const;
+    void setOpenWithUrlInfo(const QVector<OpenWithUrlInfo> &newOpenWithUrlInfo);
+
+private:
+    void loadSettings();
+    void writeSettings();
+
+    QVector<OpenWithUrlInfo> mOpenWithUrlInfo;
 };
 }
