@@ -10,3 +10,4 @@ macro(add_messageviewer_openurlwith_unittest _source)
 endmacro ()
 
 add_messageviewer_openurlwith_unittest(openwithurlinfotest.cpp)
+add_messageviewer_openurlwith_unittest(openurlwithmanagertest.cpp)
