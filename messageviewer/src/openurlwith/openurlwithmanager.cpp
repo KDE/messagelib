@@ -37,10 +37,10 @@ void OpenUrlWithManager::clear()
 
 void OpenUrlWithManager::loadSettings()
 {
-#if 0
-    mRemoveContentInfo.clear();
+    mOpenWithUrlInfo.clear();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, myRemoteContentGroupName);
+    KConfigGroup group(config, myOpenUrlWithGroupName);
+#if 0
     const QStringList blockedUrl = group.readEntry("Blocked", QStringList());
     const QStringList authorizedUrl = group.readEntry("Authorized", QStringList());
     for (const QString &url : blockedUrl) {
@@ -49,23 +49,15 @@ void OpenUrlWithManager::loadSettings()
         info.setStatus(RemoteContentInfo::RemoteContentInfoStatus::Blocked);
         mRemoveContentInfo.append(info);
     }
-    for (const QString &url : authorizedUrl) {
-        RemoteContentInfo info;
-        info.setUrl(url);
-        info.setStatus(RemoteContentInfo::RemoteContentInfoStatus::Authorized);
-        mRemoveContentInfo.append(info);
-    }
 #endif
 }
 
 void OpenUrlWithManager::writeSettings()
 {
-#if 0
-    KConfigGroup group(config, myRemoteContentGroupName);
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    QStringList blockedUrl;
-    QStringList authorizedUrl;
-    for (const RemoteContentInfo &info : std::as_const(mRemoveContentInfo)) {
+    KConfigGroup group(config, myOpenUrlWithGroupName);
+#if 0
+    for (const OpenWithUrlInfo &info : std::as_const(mOpenWithUrlInfo)) {
         switch (info.status()) {
         case RemoteContentInfo::RemoteContentInfoStatus::Unknown:
             break;
