@@ -274,6 +274,7 @@ class MessageViewer::GrantleeHeaderFormatter::GrantleeHeaderFormatterPrivate
 {
 public:
     GrantleeHeaderFormatterPrivate()
+        : engine(new Grantlee::Engine)
     {
         Grantlee::registerMetaType<const KMime::Headers::Generics::AddressList *>();
         Grantlee::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
@@ -281,7 +282,6 @@ public:
         Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::AddressList>>();
         Grantlee::registerMetaType<QDateTime>();
         iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
-        engine = new Grantlee::Engine;
         templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader);
         engine->addTemplateLoader(templateLoader);
 
@@ -315,8 +315,10 @@ public:
 
     QSharedPointer<Grantlee::FileSystemTemplateLoader> templateLoader;
     QMap<QByteArray, QSharedPointer<HeaderFormatter>> headerFormatter;
-    Grantlee::Engine *engine = nullptr;
+    Grantlee::Engine *const engine;
     MessageViewer::HeaderStyleUtil headerStyleUtil;
+    QColor activeColor;
+
     int iconSize;
 };
 
@@ -446,11 +448,14 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     // colors depend on if it is encapsulated or not
     QColor fontColor(Qt::white);
     QString linkColor = QStringLiteral("white");
-    const QColor activeColor = KColorScheme(QPalette::Active, KColorScheme::Selection).background().color();
-    QColor activeColorDark = activeColor.darker(130);
+
+    if (!d->activeColor.isValid()) {
+        d->activeColor = KColorScheme(QPalette::Active, KColorScheme::Selection).background().color();
+    }
+    QColor activeColorDark = d->activeColor.darker(130);
     // reverse colors for encapsulated
     if (!style->isTopLevel()) {
-        activeColorDark = activeColor.darker(50);
+        activeColorDark = d->activeColor.darker(50);
         fontColor = QColor(Qt::black);
         linkColor = QStringLiteral("black");
     }
