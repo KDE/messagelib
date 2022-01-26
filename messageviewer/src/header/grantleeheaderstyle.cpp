@@ -16,8 +16,8 @@ class MessageViewer::GrantleeHeaderStylePrivate
 {
 public:
     GrantleeHeaderStylePrivate()
+        : mGrantleeFormatter(new GrantleeHeaderFormatter)
     {
-        mGrantleeFormatter = new GrantleeHeaderFormatter;
     }
 
     ~GrantleeHeaderStylePrivate()
@@ -25,7 +25,7 @@ public:
         delete mGrantleeFormatter;
     }
 
-    GrantleeHeaderFormatter *mGrantleeFormatter = nullptr;
+    GrantleeHeaderFormatter *const mGrantleeFormatter;
 };
 
 GrantleeHeaderStyle::GrantleeHeaderStyle()
