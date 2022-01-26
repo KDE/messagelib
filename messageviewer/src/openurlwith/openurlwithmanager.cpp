@@ -40,39 +40,30 @@ void OpenUrlWithManager::loadSettings()
     mOpenWithUrlInfo.clear();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group(config, myOpenUrlWithGroupName);
-#if 0
-    const QStringList blockedUrl = group.readEntry("Blocked", QStringList());
-    const QStringList authorizedUrl = group.readEntry("Authorized", QStringList());
-    for (const QString &url : blockedUrl) {
-        RemoteContentInfo info;
-        info.setUrl(url);
-        info.setStatus(RemoteContentInfo::RemoteContentInfoStatus::Blocked);
-        mRemoveContentInfo.append(info);
+    const QStringList openWithUrls = group.readEntry("Urls", QStringList());
+    const QStringList commands = group.readEntry("Commands", QStringList());
+    for (int i = 0; i < openWithUrls.count(); ++i) {
+        OpenWithUrlInfo info;
+        info.setCommand(commands.at(i));
+        info.setUrl(openWithUrls.at(i));
+        mOpenWithUrlInfo.append(info);
     }
-#endif
 }
 
 void OpenUrlWithManager::writeSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group(config, myOpenUrlWithGroupName);
-#if 0
-    for (const OpenWithUrlInfo &info : std::as_const(mOpenWithUrlInfo)) {
-        switch (info.status()) {
-        case RemoteContentInfo::RemoteContentInfoStatus::Unknown:
-            break;
-        case RemoteContentInfo::RemoteContentInfoStatus::Blocked:
-            blockedUrl.append(info.url());
-            break;
-        case RemoteContentInfo::RemoteContentInfoStatus::Authorized:
-            authorizedUrl.append(info.url());
-            break;
-        }
+    QStringList openWithUrls;
+    QStringList commands;
+
+    for (int i = 0; i < mOpenWithUrlInfo.count(); ++i) {
+        commands.append(mOpenWithUrlInfo.at(i).command());
+        openWithUrls.append(mOpenWithUrlInfo.at(i).url());
     }
-    group.writeEntry("Blocked", blockedUrl);
-    group.writeEntry("Authorized", authorizedUrl);
+    group.writeEntry("Urls", openWithUrls);
+    group.writeEntry("Commands", commands);
     group.sync();
-#endif
 }
 
 const QVector<OpenWithUrlInfo> &OpenUrlWithManager::openWithUrlInfo() const
