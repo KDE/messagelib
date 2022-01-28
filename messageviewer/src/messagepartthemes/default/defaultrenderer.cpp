@@ -44,11 +44,11 @@
 
 using namespace MimeTreeParser;
 using namespace MessageViewer;
-
+#ifndef COMPILE_WITH_UNITY_CMAKE_SUPPORT
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(GpgME::Key)
 Q_DECLARE_METATYPE(const QGpgME::Protocol *)
-
+#endif
 static const int SIG_FRAME_COL_UNDEF = 99;
 #define SIG_FRAME_COL_RED -1
 #define SIG_FRAME_COL_YELLOW 0
