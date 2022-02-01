@@ -42,6 +42,7 @@ void OpenUrlWithManager::loadSettings()
     KConfigGroup group(config, myOpenUrlWithGroupName);
     const QStringList openWithUrls = group.readEntry("Urls", QStringList());
     const QStringList commands = group.readEntry("Commands", QStringList());
+    mOpenWithUrlInfo.reserve(commands.count());
     for (int i = 0; i < openWithUrls.count(); ++i) {
         OpenWithUrlInfo info;
         info.setCommand(commands.at(i));
@@ -56,8 +57,10 @@ void OpenUrlWithManager::writeSettings()
     KConfigGroup group(config, myOpenUrlWithGroupName);
     QStringList openWithUrls;
     QStringList commands;
-
-    for (int i = 0; i < mOpenWithUrlInfo.count(); ++i) {
+    const int nbElement{mOpenWithUrlInfo.count()};
+    openWithUrls.reserve(nbElement);
+    commands.reserve(nbElement);
+    for (int i = 0; i < nbElement; ++i) {
         commands.append(mOpenWithUrlInfo.at(i).command());
         openWithUrls.append(mOpenWithUrlInfo.at(i).url());
     }
