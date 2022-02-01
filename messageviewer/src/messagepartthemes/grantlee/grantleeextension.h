@@ -5,11 +5,15 @@
 */
 
 #pragma once
+#include <QObject>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <grantlee/node.h>
 #include <grantlee/taglibraryinterface.h>
-
-#include <QObject>
+#else
+#include <KTextTemplate/node.h>
+#include <KTextTemplate/taglibraryinterface.h>
+#endif
 
 #include <functional>
 

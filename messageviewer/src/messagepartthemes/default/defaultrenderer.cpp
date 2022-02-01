@@ -35,12 +35,19 @@
 #include <KLocalizedString>
 
 #include <QUrl>
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <grantlee/context.h>
 #include <grantlee/engine.h>
 #include <grantlee/metatype.h>
 #include <grantlee/template.h>
 #include <grantlee/templateloader.h>
+#else
+#include <KTextTemplate/context.h>
+#include <KTextTemplate/engine.h>
+#include <KTextTemplate/metatype.h>
+#include <KTextTemplate/template.h>
+#include <KTextTemplate/templateloader.h>
+#endif
 
 using namespace MimeTreeParser;
 using namespace MessageViewer;
