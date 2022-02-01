@@ -19,10 +19,7 @@ OpenUrlWithManager::OpenUrlWithManager(QObject *parent)
     loadSettings();
 }
 
-OpenUrlWithManager::~OpenUrlWithManager()
-{
-    writeSettings();
-}
+OpenUrlWithManager::~OpenUrlWithManager() = default;
 
 OpenUrlWithManager *OpenUrlWithManager::self()
 {
@@ -51,7 +48,7 @@ void OpenUrlWithManager::loadSettings()
     }
 }
 
-void OpenUrlWithManager::writeSettings()
+void OpenUrlWithManager::saveRules()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group(config, myOpenUrlWithGroupName);

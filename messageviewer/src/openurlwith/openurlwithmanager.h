@@ -28,7 +28,7 @@ public:
 
 private:
     void loadSettings();
-    void writeSettings();
+    void saveRules();
 
     QVector<OpenWithUrlInfo> mOpenWithUrlInfo;
 };
