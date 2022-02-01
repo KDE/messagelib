@@ -19,7 +19,7 @@ ecm_add_test(grantleeheaderformattertest.cpp grantleeheaderformattertest.h
     TEST_NAME grantleeheaderformattertest
     NAME_PREFIX "messageviewer-header-"
     LINK_LIBRARIES
-        Grantlee5::Templates
+        ${TEMPLATES_LIB}
         KF5::GrantleeTheme
         KF5::IconThemes
         KF5::MessageViewer

@@ -19,9 +19,13 @@
 #include <KColorScheme>
 #include <KIconLoader>
 #include <KLocalizedString>
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <grantlee/engine.h>
 #include <grantlee/metatype.h>
+#else
+#include <KTextTemplate/engine.h>
+#include <KTextTemplate/metatype.h>
+#endif
 
 using namespace MessageCore;
 

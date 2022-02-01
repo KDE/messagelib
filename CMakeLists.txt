@@ -86,7 +86,13 @@ find_package(KF5SyntaxHighlighting ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5DBusAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5GuiAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
-find_package(Grantlee5 "5.2" CONFIG REQUIRED) #Use KF5_VERSION in the future
+if (QT_MAJOR_VERSION STREQUAL "5")
+    find_package(Grantlee5 "5.2" CONFIG REQUIRED)
+    set(TEMPLATES_LIB Grantlee5::Templates)
+else()
+    find_package(KF6TextTemplate ${KF5_MIN_VERSION} CONFIG REQUIRED)
+    set(TEMPLATES_LIB KF6TextTemplate::Templates)
+endif()
 
 find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(KF5AkonadiMime ${AKONADIMIME_LIB_VERSION} CONFIG REQUIRED)

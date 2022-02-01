@@ -433,7 +433,7 @@ target_link_libraries(KF5MessageViewer
     KF5::KIOWidgets
     KF5::XmlGui
     KF5::AkonadiContact
-    Grantlee5::Templates
+    ${TEMPLATES_LIB}
     Qt${QT_MAJOR_VERSION}::PrintSupport
     QGpgme
     ${Inotify_LIBRARIES}
