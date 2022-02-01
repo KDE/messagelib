@@ -25,10 +25,10 @@ public:
 
     Q_REQUIRED_RESULT const QVector<OpenWithUrlInfo> &openWithUrlInfo() const;
     void setOpenWithUrlInfo(const QVector<OpenWithUrlInfo> &newOpenWithUrlInfo);
+    void saveRules();
 
 private:
     void loadSettings();
-    void saveRules();
 
     QVector<OpenWithUrlInfo> mOpenWithUrlInfo;
 };
