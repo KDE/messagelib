@@ -96,7 +96,7 @@ void FollowupReminderCreateJob::slotCreateNewTodo(KJob *job)
     if (job->error()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "Error during create new Todo " << job->errorString();
         setError(job->error());
-        setErrorText(i18n("Failed to store a new reminder: an error occurred while trying to create a new Todo in your calendar: %1", job->errorString()));
+        setErrorText(i18n("Failed to store a new reminder: an error occurred while trying to create a new to-do in your calendar: %1", job->errorString()));
         emitResult();
         return;
     }
