@@ -134,7 +134,6 @@
 #include <WebEngineViewer/DeveloperToolDialog>
 #include <WebEngineViewer/TrackingWarningWidget>
 #include <WebEngineViewer/ZoomActionMenu>
-#include <boost/bind.hpp>
 #include <header/headerstyleplugin.h>
 #include <viewerplugins/viewerplugininterface.h>
 
@@ -150,7 +149,6 @@
 #include "remote-content/remotecontentmenu.h"
 #include <chrono>
 using namespace std::chrono_literals;
-using namespace boost;
 using namespace MailTransport;
 using namespace MessageViewer;
 using namespace MessageCore;
