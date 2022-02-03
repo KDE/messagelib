@@ -517,12 +517,16 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     QStringList lst;
     lst << QStringLiteral("--parent-windowid") << QString::number(static_cast<qlonglong>(w->viewer()->mainWindow()->winId())) << QStringLiteral("--query")
         << keyId;
-    if (!QProcess::startDetached(QStringLiteral("kleopatra"), lst)) {
+    const QString exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra"));
+    if (exec.isEmpty()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Could not find kleopatra executable in PATH";
         KMessageBox::error(w->mMainWindow,
                            i18n("Could not start certificate manager. "
                                 "Please check your installation."),
                            i18n("KMail Error"));
+        return false;
     }
+    QProcess::startDetached(exec, lst);
     return true;
 }
 
