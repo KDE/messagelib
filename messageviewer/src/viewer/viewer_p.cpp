@@ -23,6 +23,7 @@
 
 #include "messageviewer/headerstrategy.h"
 #include "messageviewer/headerstyle.h"
+#include "openurlwith/openurlwithmanager.h"
 #include <KPIMTextEdit/SlideContainer>
 
 #include "job/modifymessagedisplayformatjob.h"
@@ -1888,7 +1889,11 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     if (!url.isEmpty()) {
         mClickedUrl = url;
     }
-
+    const OpenWithUrlInfo openWithInfo = OpenUrlWithManager::self()->openWith(url);
+    if (openWithInfo.isValid()) {
+        // TODO
+        // return;
+    }
     // First, let's see if the URL handler manager can handle the URL. If not, try KRun for some
     // known URLs, otherwise fallback to emitting a signal.
     // That signal is caught by KMail, and in case of mailto URLs, a composer is shown.

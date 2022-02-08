@@ -27,6 +27,8 @@ public:
     void setOpenWithUrlInfo(const QVector<OpenWithUrlInfo> &newOpenWithUrlInfo);
     void saveRules();
 
+    Q_REQUIRED_RESULT OpenWithUrlInfo openWith(const QUrl &url);
+
 private:
     void loadSettings();
 

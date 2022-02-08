@@ -66,6 +66,12 @@ void OpenUrlWithManager::saveRules()
     group.sync();
 }
 
+OpenWithUrlInfo OpenUrlWithManager::openWith(const QUrl &url)
+{
+    // TODO
+    return {};
+}
+
 const QVector<OpenWithUrlInfo> &OpenUrlWithManager::openWithUrlInfo() const
 {
     return mOpenWithUrlInfo;
