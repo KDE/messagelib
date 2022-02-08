@@ -369,6 +369,8 @@ target_sources(KF5MessageViewer PRIVATE
     openurlwith/openwithurlinfo.cpp
     openurlwith/openurlwithmanager.h
     openurlwith/openurlwithmanager.cpp
+    openurlwith/openurlwithjob.h
+    openurlwith/openurlwithjob.cpp
     )
 
 ecm_qt_declare_logging_category(KF5MessageViewer HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
