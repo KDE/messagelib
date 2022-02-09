@@ -291,7 +291,7 @@ private:
         UseExpandedRecipients,
         UseUnExpandedRecipients,
     };
-    void fillComposer(MessageComposer::Composer *composer, ComposerViewBase::RecipientExpansion expansion);
+    void fillComposer(MessageComposer::Composer *composer, ComposerViewBase::RecipientExpansion expansion, bool autoresize);
     Q_REQUIRED_RESULT QVector<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
     void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
     void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
