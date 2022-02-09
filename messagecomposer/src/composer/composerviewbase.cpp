@@ -542,7 +542,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
     // working copy in case composers instantly emit result
     const auto composers = m_composers;
     for (MessageComposer::Composer *composer : composers) {
-        fillComposer(composer, UseExpandedRecipients);
+        fillComposer(composer, UseExpandedRecipients, autoresizeImage);
         connect(composer, &MessageComposer::Composer::result, this, &ComposerViewBase::slotSendComposeResult);
         composer->start();
         qCDebug(MESSAGECOMPOSER_LOG) << "Started a composer for sending!";
@@ -1529,16 +1529,16 @@ void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
 
 void ComposerViewBase::fillComposer(MessageComposer::Composer *composer)
 {
-    fillComposer(composer, UseUnExpandedRecipients);
+    fillComposer(composer, UseUnExpandedRecipients, false);
 }
 
-void ComposerViewBase::fillComposer(MessageComposer::Composer *composer, ComposerViewBase::RecipientExpansion expansion)
+void ComposerViewBase::fillComposer(MessageComposer::Composer *composer, ComposerViewBase::RecipientExpansion expansion, bool autoresize)
 {
     fillGlobalPart(composer->globalPart());
     m_editor->fillComposerTextPart(composer->textPart());
     fillInfoPart(composer->infoPart(), expansion);
     if (m_attachmentModel) {
-        composer->addAttachmentParts(m_attachmentModel->attachments());
+        composer->addAttachmentParts(m_attachmentModel->attachments(), autoresize);
     }
 }
 
