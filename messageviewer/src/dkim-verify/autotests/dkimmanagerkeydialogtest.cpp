@@ -34,5 +34,5 @@ void DKIMManagerKeyDialogTest::shouldHaveDefaultValue()
 
     auto buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
     QVERIFY(buttonBox);
-    QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Close});
+    QCOMPARE(buttonBox->standardButtons(), QDialogButtonBox::StandardButtons{QDialogButtonBox::Close});
 }
