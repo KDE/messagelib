@@ -188,7 +188,7 @@ void ImageScalingWidget::initComboBox(QComboBox *combo)
 {
     const QVector<int> size = {240, 320, 512, 640, 800, 1024, 1600, 2048};
     for (int val : size) {
-        combo->addItem(QString::number(val), val);
+        combo->addItem(QStringLiteral("%1 px").arg(QString::number(val)), val);
     }
     combo->addItem(i18n("Custom"), -1);
 }
