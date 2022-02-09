@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "openwithurlinfo.h"
+
 #include <QObject>
 namespace MessageViewer
 {
@@ -19,5 +21,11 @@ public:
     Q_REQUIRED_RESULT bool canStart() const;
 
     void start();
+
+    const OpenWithUrlInfo &info() const;
+    void setInfo(const OpenWithUrlInfo &newInfo);
+
+private:
+    OpenWithUrlInfo mInfo;
 };
 }

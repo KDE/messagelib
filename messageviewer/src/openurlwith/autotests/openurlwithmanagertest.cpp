@@ -21,3 +21,9 @@ void OpenUrlWithManagerTest::shouldHaveDefaultValues()
     MessageViewer::OpenUrlWithManager w;
     QVERIFY(w.openWithUrlInfo().isEmpty());
 }
+
+void OpenUrlWithManagerTest::shouldSearchOpenWithInfo()
+{
+    MessageViewer::OpenUrlWithManager w;
+    // TODO
+}

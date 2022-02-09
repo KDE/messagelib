@@ -5,6 +5,7 @@
 */
 
 #include "openurlwithjob.h"
+#include "messageviewer_debug.h"
 using namespace MessageViewer;
 OpenUrlWithJob::OpenUrlWithJob(QObject *parent)
     : QObject{parent}
@@ -17,11 +18,26 @@ OpenUrlWithJob::~OpenUrlWithJob()
 
 bool OpenUrlWithJob::canStart() const
 {
-    // TODO
-    return false;
+    return mInfo.isValid();
 }
 
 void OpenUrlWithJob::start()
 {
+    if (!canStart()) {
+        deleteLater();
+        qCWarning(MESSAGEVIEWER_LOG) << " Impossible to start OpenUrlWithJob";
+        return;
+    }
     // TODO
+    deleteLater();
+}
+
+const OpenWithUrlInfo &OpenUrlWithJob::info() const
+{
+    return mInfo;
+}
+
+void OpenUrlWithJob::setInfo(const OpenWithUrlInfo &newInfo)
+{
+    mInfo = newInfo;
 }

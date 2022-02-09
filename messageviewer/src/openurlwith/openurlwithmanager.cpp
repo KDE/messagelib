@@ -8,6 +8,7 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QUrl>
 using namespace MessageViewer;
 namespace
 {
@@ -68,7 +69,12 @@ void OpenUrlWithManager::saveRules()
 
 OpenWithUrlInfo OpenUrlWithManager::openWith(const QUrl &url)
 {
-    // TODO
+    // TODO extract path from url. => add autotest.
+    for (const OpenWithUrlInfo &info : std::as_const(mOpenWithUrlInfo)) {
+        if (info.url() == url.path()) {
+            return info;
+        }
+    }
     return {};
 }
 

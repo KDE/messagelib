@@ -16,4 +16,5 @@ public:
     ~OpenUrlWithManagerTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldSearchOpenWithInfo();
 };
