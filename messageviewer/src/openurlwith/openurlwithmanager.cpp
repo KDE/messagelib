@@ -69,7 +69,6 @@ void OpenUrlWithManager::saveRules()
 
 OpenWithUrlInfo OpenUrlWithManager::openWith(const QUrl &url)
 {
-    // TODO extract path from url. => add autotest.
     for (const OpenWithUrlInfo &info : std::as_const(mOpenWithUrlInfo)) {
         qDebug() << " info.url()" << info.url() << " url.host() " << url.host();
         if (QUrl(info.url()).host() == url.host()) {
