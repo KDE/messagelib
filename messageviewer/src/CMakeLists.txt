@@ -37,8 +37,8 @@ else()
     set(HAVE_SYS_INOTIFY_H 0)
 endif()
 
-find_package(Qca-qt5 2.2.0 CONFIG REQUIRED)
-set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
+find_package(Qca-qt${QT_MAJOR_VERSION} 2.2.0 CONFIG REQUIRED)
+set_package_properties(Qca-qt${QT_MAJOR_VERSION} PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
                    URL "https://invent.kde.org/libraries/qca" TYPE REQUIRED
                    PURPOSE "Needed for dkim support.")
 
@@ -439,7 +439,7 @@ target_link_libraries(KF5MessageViewer
     Qt${QT_MAJOR_VERSION}::PrintSupport
     QGpgme
     ${Inotify_LIBRARIES}
-    qca-qt5
+    qca-qt${QT_MAJOR_VERSION}
     )
 
 set_target_properties(KF5MessageViewer PROPERTIES
