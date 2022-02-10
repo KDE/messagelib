@@ -18,7 +18,7 @@ include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
 
 macro( add_messagecore_cryptotest _source )
     get_filename_component( _name ${_source} NAME_WE )
-    add_executable( ${_name} ${_source} )
+    add_executable( ${_name} ${_source} ${_name}.h)
     target_link_libraries(
         ${_name}
         KF5::Archive

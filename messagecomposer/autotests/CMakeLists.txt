@@ -37,7 +37,7 @@ endmacro()
 macro( add_messagecomposer_cryptotest _source )
     set( _test cryptofunctions.cpp setupenv.cpp ${_source} )
     get_filename_component( _name ${_source} NAME_WE )
-    add_executable( ${_name} ${_test} )
+    add_executable( ${_name} ${_test}  ${_name}.h )
     target_link_libraries(
         ${_name}
         KF5::I18n
