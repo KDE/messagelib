@@ -24,6 +24,16 @@ void OpenUrlWithManagerTest::shouldHaveDefaultValues()
 
 void OpenUrlWithManagerTest::shouldSearchOpenWithInfo()
 {
+    QFETCH(QUrl, url);
+    QFETCH(bool, openWithInfoIsValid);
     MessageViewer::OpenUrlWithManager w;
-    // TODO
+    QCOMPARE(w.openWith(url).isValid(), openWithInfoIsValid);
+}
+
+void OpenUrlWithManagerTest::shouldSearchOpenWithInfo_data()
+{
+    QTest::addColumn<QUrl>("url");
+    QTest::addColumn<bool>("openWithInfoIsValid");
+
+    QTest::newRow("empty") << QUrl() << false;
 }
