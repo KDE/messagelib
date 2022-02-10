@@ -10,7 +10,7 @@ ecm_qt_declare_logging_category(test_libmessageviewer_SRCS HEADER messageviewer_
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
-    ecm_add_test(${_source} setupenv.cpp util.cpp
+    ecm_add_test(${_source} setupenv.cpp util.cpp ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo QGpgme Qt${QT_MAJOR_VERSION}::Test KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::WebEngineViewer
@@ -19,7 +19,7 @@ endmacro ()
 
 macro(add_messageviewer_class_unittest _source _additionalSource)
     get_filename_component(_name ${_source} NAME_WE)
-    ecm_add_test(${_source} ${_additionalSource}
+    ecm_add_test(${_source} ${_additionalSource} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES KF5::MessageViewer Qt${QT_MAJOR_VERSION}::Test KF5::IconThemes KF5::XmlGui KF5::I18n
@@ -31,7 +31,7 @@ add_messageviewer_unittest( messagedisplayformatattributetest.cpp )
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
-    ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp ${test_libmessageviewer_SRCS}
+    ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp ${test_libmessageviewer_SRCS} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test Qt${QT_MAJOR_VERSION}::Gui Qt${QT_MAJOR_VERSION}::Widgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::PimTextEdit KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer KF5::SyntaxHighlighting KF5::I18n KF5::IconThemes

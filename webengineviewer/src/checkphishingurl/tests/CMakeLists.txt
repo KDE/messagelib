@@ -15,7 +15,7 @@ target_link_libraries(checkphishingurlgui
     KF5::I18n
     )
 
-add_executable(searchfullhashgui searchfullhashgui.cpp)
+add_executable(searchfullhashgui searchfullhashgui.cpp searchfullhashgui.h)
 target_link_libraries(searchfullhashgui
     KF5::KIOCore
     KF5::WebEngineViewer
@@ -24,7 +24,7 @@ target_link_libraries(searchfullhashgui
     KF5::I18n
     )
 
-add_executable(createphishingurldatabasegui createphishingurldatabasegui.cpp)
+add_executable(createphishingurldatabasegui createphishingurldatabasegui.cpp createphishingurldatabasegui.h)
 target_link_libraries(createphishingurldatabasegui
     KF5::KIOCore
     KF5::WebEngineViewer
@@ -33,7 +33,7 @@ target_link_libraries(createphishingurldatabasegui
     KF5::I18n
     )
 
-add_executable(managelocaldatabasegui managelocaldatabasegui.cpp)
+add_executable(managelocaldatabasegui managelocaldatabasegui.cpp managelocaldatabasegui.h)
 target_link_libraries(managelocaldatabasegui
     KF5::KIOCore
     KF5::WebEngineViewer
@@ -42,7 +42,7 @@ target_link_libraries(managelocaldatabasegui
     KF5::I18n
     )
 
-add_executable(webengineviewwithsafebrowsingsupport webengineviewwithsafebrowsingsupport.cpp)
+add_executable(webengineviewwithsafebrowsingsupport webengineviewwithsafebrowsingsupport.cpp webengineviewwithsafebrowsingsupport.h)
 target_link_libraries(webengineviewwithsafebrowsingsupport
     KF5::KIOCore
     KF5::WebEngineViewer

@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
-ecm_add_test(findbarbasetest.cpp
+ecm_add_test(findbarbasetest.cpp findbarbasetest.h
     TEST_NAME findbarbasetest
     NAME_PREFIX "webengineviewer-findbar-"
     LINK_LIBRARIES KF5WebEngineViewer Qt${QT_MAJOR_VERSION}::Test Qt${QT_MAJOR_VERSION}::Widgets Qt${QT_MAJOR_VERSION}::Gui KF5::Completion KF5::I18n KF5::ConfigWidgets KF5::PimCommon

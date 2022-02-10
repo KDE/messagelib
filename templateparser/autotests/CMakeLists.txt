@@ -11,7 +11,7 @@ include ( ${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake )
 macro(add_templateparser_unittest _source)
   set(_test ${_source})
   get_filename_component(_name ${_source} NAME_WE)
-  add_executable( ${_name} ${_test} )
+  add_executable( ${_name} ${_test} ${_name}.h)
   ecm_mark_as_test(templateparser-${_name})
   target_link_libraries(${_name}
     KF5::Libkleo

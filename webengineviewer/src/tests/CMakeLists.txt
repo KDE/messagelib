@@ -1,26 +1,26 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
-add_executable(webenginetest testwebengine.cpp)
+add_executable(webenginetest testwebengine.cpp testwebengine.h)
 
 target_link_libraries(webenginetest
     Qt${QT_MAJOR_VERSION}::Widgets KF5::WebEngineViewer  Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     )
 
 #####
-add_executable(webenginescripttest testwebenginescript.cpp)
+add_executable(webenginescripttest testwebenginescript.cpp testwebenginescript.h)
 
 target_link_libraries(webenginescripttest
     Qt${QT_MAJOR_VERSION}::Widgets KF5::WebEngineViewer  Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     )
 
 ####
-add_executable(selectedtextwebenginetest testselectedtextwebengine.cpp)
+add_executable(selectedtextwebenginetest testselectedtextwebengine.cpp testselectedtextwebengine.h)
 
 target_link_libraries(selectedtextwebenginetest
     Qt${QT_MAJOR_VERSION}::Widgets KF5::WebEngineViewer  Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     )
 ####
-add_executable(testdndwebenginetest testdndwebengine.cpp)
+add_executable(testdndwebenginetest testdndwebengine.cpp testdndwebengine.h)
 
 target_link_libraries(testdndwebenginetest
     Qt${QT_MAJOR_VERSION}::Widgets KF5::WebEngineViewer  Qt${QT_MAJOR_VERSION}::WebEngineWidgets
@@ -28,7 +28,7 @@ target_link_libraries(testdndwebenginetest
 
 #####
 
-add_executable(testselectionchangedwebengine testselectionchangedwebengine.cpp)
+add_executable(testselectionchangedwebengine testselectionchangedwebengine.cpp testselectionchangedwebengine.h)
 
 target_link_libraries(testselectionchangedwebengine
     Qt${QT_MAJOR_VERSION}::Widgets KF5::WebEngineViewer  Qt${QT_MAJOR_VERSION}::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
@@ -41,6 +41,7 @@ add_definitions(-DPICSRC="${CMAKE_CURRENT_SOURCE_DIR}")
 add_executable(testwebengineviewinterceptor)
 target_sources(testwebengineviewinterceptor PRIVATE
     testwebengineviewinterceptor.cpp
+    testwebengineviewinterceptor.h
     testwebengineviewinterceptor.qrc
     )
 
