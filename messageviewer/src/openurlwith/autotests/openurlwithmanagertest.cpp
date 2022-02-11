@@ -51,5 +51,6 @@ void OpenUrlWithManagerTest::shouldSearchOpenWithInfo_data()
         QTest::newRow("empty-1") << lst << QUrl() << false;
 
         QTest::newRow("valid-1") << lst << QUrl(QStringLiteral("http://www.kde.org")) << true;
+        QTest::newRow("invalid-1") << lst << QUrl(QStringLiteral("http://www.bla.org")) << false;
     }
 }

@@ -28,6 +28,7 @@ void OpenUrlWithJob::start()
         qCWarning(MESSAGEVIEWER_LOG) << " Impossible to start OpenUrlWithJob";
         return;
     }
+    // Use KIO::CommandLauncherJob
     // TODO
     deleteLater();
 }
