@@ -15,6 +15,8 @@
 #include <PimCommon/AutoCorrection>
 #include <part/textpart.h>
 
+#include <KMessageBox>
+
 #include <QRegularExpression>
 
 #define USE_TEXTHTML_BUILDER 1
@@ -346,10 +348,16 @@ void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &s
 {
     if (signature.isEnabledSignature()) {
         QString signatureStr;
+        bool ok = false;
+        QString errorMessage;
         if (addedText & KIdentityManagement::Signature::AddSeparator) {
-            signatureStr = signature.withSeparator();
+            signatureStr = signature.withSeparator(&ok, &errorMessage);
         } else {
-            signatureStr = signature.rawText();
+            signatureStr = signature.rawText(&ok, &errorMessage);
+        }
+
+        if (!ok && !errorMessage.isEmpty()) {
+            KMessageBox::error(nullptr, errorMessage);
         }
 
         insertSignatureHelper(signatureStr,
