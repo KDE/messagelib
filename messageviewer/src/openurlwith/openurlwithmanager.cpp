@@ -46,7 +46,9 @@ void OpenUrlWithManager::loadSettings()
         OpenWithUrlInfo info;
         info.setCommand(commands.at(i));
         info.setUrl(openWithUrls.at(i));
-        info.setCommandLine(commandLines.at(i));
+        if (i < commandLines.count()) {
+            info.setCommandLine(commandLines.at(i));
+        }
         mOpenWithUrlInfo.append(info);
     }
 }
