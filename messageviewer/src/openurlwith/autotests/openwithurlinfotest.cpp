@@ -19,4 +19,5 @@ void OpenWithUrlInfoTest::shouldHaveDefaultValues()
     QVERIFY(!info.isValid());
     QVERIFY(info.url().isEmpty());
     QVERIFY(info.command().isEmpty());
+    QVERIFY(info.commandLine().isEmpty());
 }

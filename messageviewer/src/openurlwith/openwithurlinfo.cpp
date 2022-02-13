@@ -14,6 +14,7 @@ OpenWithUrlInfo::~OpenWithUrlInfo() = default;
 QDebug operator<<(QDebug d, const MessageViewer::OpenWithUrlInfo &t)
 {
     d << "command " << t.command();
+    d << "command line " << t.commandLine();
     d << "url " << t.url();
     return d;
 }
@@ -41,4 +42,14 @@ void OpenWithUrlInfo::setUrl(const QString &newUrl)
 bool OpenWithUrlInfo::isValid() const
 {
     return !mUrl.isEmpty() && !mCommand.isEmpty();
+}
+
+const QString &OpenWithUrlInfo::commandLine() const
+{
+    return mCommandLine;
+}
+
+void OpenWithUrlInfo::setCommandLine(const QString &newCommandLine)
+{
+    mCommandLine = newCommandLine;
 }

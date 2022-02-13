@@ -28,7 +28,11 @@ public:
 
     Q_REQUIRED_RESULT bool isValid() const;
 
+    Q_REQUIRED_RESULT const QString &commandLine() const;
+    void setCommandLine(const QString &newCommandLine);
+
 private:
+    QString mCommandLine;
     QString mCommand;
     QString mUrl;
 };
