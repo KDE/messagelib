@@ -100,6 +100,7 @@ target_link_libraries(KF5TemplateParser
     KF5::SyntaxHighlighting
     Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     KF5::Libkdepim
+    KF5::PimTextEdit
     )
 set_target_properties(KF5TemplateParser PROPERTIES
     VERSION ${TEMPLATEPARSER_VERSION}

@@ -20,9 +20,9 @@
 #include <MimeTreeParser/SimpleObjectTreeSource>
 #include <MimeTreeParser/ObjectTreeParser>
 
-#include <KIdentityManagement/KIdentityManagement/Identity>
-#include <KIdentityManagement/KIdentityManagement/IdentityCombo>
-#include <KIdentityManagement/KIdentityManagement/IdentityManager>
+#include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityCombo>
+#include <KIdentityManagement/IdentityManager>
 
 #include <MailTransport/TransportComboBox>
 
