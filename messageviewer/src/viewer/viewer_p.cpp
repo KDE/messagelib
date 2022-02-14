@@ -1403,11 +1403,11 @@ void ViewerPrivate::createWidgets()
     mOpenSavedFileFolderWidget = new OpenSavedFileFolderWidget(readerBox);
     mOpenSavedFileFolderWidget->setObjectName(QStringLiteral("opensavefilefolderwidget"));
     readerBoxVBoxLayout->addWidget(mOpenSavedFileFolderWidget);
-
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(readerBox);
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
     readerBoxVBoxLayout->addWidget(mTextToSpeechWidget);
-
+#endif
     mViewer = new MailWebEngineView(mActionCollection, readerBox);
     mViewer->setViewer(this);
     readerBoxVBoxLayout->addWidget(mViewer);
@@ -1609,12 +1609,12 @@ void ViewerPrivate::createActions()
     ac->setDefaultShortcut(loadExternalReferenceAction, QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_R));
     connect(loadExternalReferenceAction, &QAction::triggered, this, &ViewerPrivate::slotLoadExternalReference);
     MessageViewer::Util::addHelpTextAction(loadExternalReferenceAction, i18n("Load external references from the Internet for this message."));
-
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     mSpeakTextAction = new QAction(i18n("Speak Text"), this);
     mSpeakTextAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
     ac->addAction(QStringLiteral("speak_text"), mSpeakTextAction);
     connect(mSpeakTextAction, &QAction::triggered, this, &ViewerPrivate::slotSpeakText);
-
+#endif
     auto purposeMenuWidget = new MailfilterPurposeMenuWidget(mViewer, this);
     mShareTextAction = new QAction(i18n("Share Text..."), this);
     mShareTextAction->setMenu(purposeMenuWidget->menu());
@@ -2605,10 +2605,12 @@ void ViewerPrivate::replyMessage(KMime::Content *atmNode, bool replyToAll)
 
 void ViewerPrivate::slotSpeakText()
 {
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     const QString text = mViewer->selectedText();
     if (!text.isEmpty()) {
         mTextToSpeechWidget->say(text);
     }
+#endif
 }
 
 QUrl ViewerPrivate::imageUrl() const

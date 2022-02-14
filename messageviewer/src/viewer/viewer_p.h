@@ -13,18 +13,18 @@
 #include "messageviewer_private_export.h"
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer
 #include "widgets/opensavedfilefolderwidget.h"
-#include <PimCommon/ShareServiceUrlManager>
-#include <WebEngineViewer/CheckPhishingUrlUtil>
-
 #include <Akonadi/Item>
 #include <Akonadi/Monitor>
 #include <Akonadi/Session>
 #include <KIO/Job>
 #include <KMime/Message>
 #include <KService>
+#include <PimCommon/ShareServiceUrlManager>
 #include <QPointer>
 #include <QUrl>
 #include <QVector>
+#include <WebEngineViewer/CheckPhishingUrlUtil>
+#include <kpimtextedit/kpimtextedit-texttospeech.h>
 
 #include <QObject>
 #include <QTimer>
@@ -695,7 +695,9 @@ public:
     MessageViewer::OpenSavedFileFolderWidget *mOpenSavedFileFolderWidget = nullptr;
     WebEngineViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
     WebEngineViewer::TrackingWarningWidget *mMailTrackingWarning = nullptr;
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
+#endif
     Viewer::DisplayFormatMessage mDisplayFormatMessageOverwrite;
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
     PimCommon::ShareServiceUrlManager *mShareServiceManager = nullptr;
