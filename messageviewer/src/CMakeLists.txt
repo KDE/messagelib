@@ -440,6 +440,7 @@ target_link_libraries(KF5MessageViewer
     QGpgme
     ${Inotify_LIBRARIES}
     qca-qt${QT_MAJOR_VERSION}
+    KF5::Notifications
     )
 
 set_target_properties(KF5MessageViewer PROPERTIES

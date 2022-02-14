@@ -85,6 +85,7 @@ find_package(KF5XmlGui ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5SyntaxHighlighting ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5DBusAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5GuiAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5Notifications ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
 if (QT_MAJOR_VERSION STREQUAL "5")
     find_package(Grantlee5 "5.2" CONFIG REQUIRED)

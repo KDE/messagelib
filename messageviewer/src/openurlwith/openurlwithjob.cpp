@@ -6,6 +6,8 @@
 
 #include "openurlwithjob.h"
 #include "messageviewer_debug.h"
+#include <KIO/CommandLauncherJob>
+#include <KNotificationJobUiDelegate>
 using namespace MessageViewer;
 OpenUrlWithJob::OpenUrlWithJob(QObject *parent)
     : QObject{parent}
@@ -28,8 +30,9 @@ void OpenUrlWithJob::start()
         qCWarning(MESSAGEVIEWER_LOG) << " Impossible to start OpenUrlWithJob";
         return;
     }
-    // Use KIO::CommandLauncherJob
-    // TODO
+    auto job = new KIO::CommandLauncherJob(mInfo.command(), QStringList() << mInfo.commandLine());
+    job->setUiDelegate(new KNotificationJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled));
+    job->start();
     deleteLater();
 }
 
