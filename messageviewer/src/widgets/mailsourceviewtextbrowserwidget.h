@@ -12,6 +12,8 @@
 #include <KSyntaxHighlighting/Repository>
 #include <QPlainTextEdit>
 #include <QSyntaxHighlighter>
+#include <kpimtextedit/kpimtextedit-texttospeech.h>
+
 namespace KPIMTextEdit
 {
 class SlideContainer;
@@ -50,14 +52,19 @@ private:
     MailSourceViewTextBrowser *mTextBrowser = nullptr;
     FindBarSourceView *mFindBar = nullptr;
     KPIMTextEdit::SlideContainer *const mSliderContainer;
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     KPIMTextEdit::TextToSpeechWidget *const mTextToSpeechWidget;
+#endif
 };
 
 class MailSourceViewTextBrowser : public QPlainTextEdit
 {
     Q_OBJECT
 public:
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     explicit MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent = nullptr);
+#endif
+    explicit MailSourceViewTextBrowser(QWidget *parent);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
@@ -67,6 +74,8 @@ Q_SIGNALS:
 private:
     void slotSpeakText();
     void slotSaveAs();
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     KPIMTextEdit::TextToSpeechInterface *mTextToSpeechInterface = nullptr;
+#endif
 };
 }

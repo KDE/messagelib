@@ -38,16 +38,20 @@ using namespace MessageViewer;
 MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
     : QWidget(parent)
     , mSliderContainer(new KPIMTextEdit::SlideContainer(this))
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     , mTextToSpeechWidget(new KPIMTextEdit::TextToSpeechWidget(this))
+#endif
 {
     auto lay = new QVBoxLayout(this);
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     lay->setContentsMargins({});
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeech"));
     lay->addWidget(mTextToSpeechWidget);
-
     auto textToSpeechInterface = new KPIMTextEdit::TextToSpeechInterface(mTextToSpeechWidget, this);
-
     mTextBrowser = new MailSourceViewTextBrowser(textToSpeechInterface);
+#else
+    mTextBrowser = new MailSourceViewTextBrowser(this);
+#endif
     mTextBrowser->setObjectName(QStringLiteral("textbrowser"));
     mTextBrowser->setLineWrapMode(QPlainTextEdit::NoWrap);
     mTextBrowser->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
@@ -104,10 +108,15 @@ MessageViewer::MailSourceViewTextBrowser *MailSourceViewTextBrowserWidget::textB
 {
     return mTextBrowser;
 }
-
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
 MailSourceViewTextBrowser::MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent)
     : QPlainTextEdit(parent)
     , mTextToSpeechInterface(textToSpeechInterface)
+{
+}
+#endif
+MailSourceViewTextBrowser::MailSourceViewTextBrowser(QWidget *parent)
+    : QPlainTextEdit(parent)
 {
 }
 
@@ -117,6 +126,7 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
     if (popup) {
         popup->addSeparator();
         popup->addAction(KStandardAction::find(this, &MailSourceViewTextBrowser::findText, this));
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
         // Code from KTextBrowser
         if (mTextToSpeechInterface->isReady()) {
             popup->addSeparator();
@@ -125,6 +135,7 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
                              this,
                              &MailSourceViewTextBrowser::slotSpeakText);
         }
+#endif
         popup->addSeparator();
         popup->addAction(KStandardAction::saveAs(this, &MailSourceViewTextBrowser::slotSaveAs, this));
 
@@ -140,6 +151,7 @@ void MailSourceViewTextBrowser::slotSaveAs()
 
 void MailSourceViewTextBrowser::slotSpeakText()
 {
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     QString text;
     if (textCursor().hasSelection()) {
         text = textCursor().selectedText();
@@ -147,4 +159,5 @@ void MailSourceViewTextBrowser::slotSpeakText()
         text = toPlainText();
     }
     mTextToSpeechInterface->say(text);
+#endif
 }
