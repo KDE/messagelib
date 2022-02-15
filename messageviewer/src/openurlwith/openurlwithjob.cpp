@@ -20,7 +20,7 @@ OpenUrlWithJob::~OpenUrlWithJob()
 
 bool OpenUrlWithJob::canStart() const
 {
-    return mInfo.isValid();
+    return mInfo.isValid() && !mUrl.isEmpty();
 }
 
 void OpenUrlWithJob::start()
@@ -30,7 +30,13 @@ void OpenUrlWithJob::start()
         qCWarning(MESSAGEVIEWER_LOG) << " Impossible to start OpenUrlWithJob";
         return;
     }
-    auto job = new KIO::CommandLauncherJob(mInfo.command(), QStringList() << mInfo.commandLine());
+    QString commandLine = mInfo.commandLine();
+    if (commandLine.contains(QStringLiteral("%u"))) {
+        commandLine = commandLine.replace(QStringLiteral("%u"), mUrl);
+    } else {
+        commandLine += QLatin1Char(' ') + mUrl;
+    }
+    auto job = new KIO::CommandLauncherJob(mInfo.command(), QStringList() << commandLine);
     job->setUiDelegate(new KNotificationJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled));
     job->start();
     deleteLater();
@@ -44,4 +50,9 @@ const OpenWithUrlInfo &OpenUrlWithJob::info() const
 void OpenUrlWithJob::setInfo(const OpenWithUrlInfo &newInfo)
 {
     mInfo = newInfo;
+}
+
+void OpenUrlWithJob::setUrl(const QString &url)
+{
+    mUrl = url;
 }

@@ -24,8 +24,10 @@ public:
 
     const OpenWithUrlInfo &info() const;
     void setInfo(const OpenWithUrlInfo &newInfo);
+    void setUrl(const QString &url);
 
 private:
     OpenWithUrlInfo mInfo;
+    QString mUrl;
 };
 }
