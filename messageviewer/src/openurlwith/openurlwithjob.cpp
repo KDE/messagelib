@@ -32,9 +32,9 @@ void OpenUrlWithJob::start()
     }
     QString commandLine = mInfo.commandLine();
     if (commandLine.contains(QStringLiteral("%u"))) {
-        commandLine = commandLine.replace(QStringLiteral("%u"), mUrl);
+        commandLine = commandLine.replace(QStringLiteral("%u"), mUrl.toString());
     } else {
-        commandLine += QLatin1Char(' ') + mUrl;
+        commandLine += QLatin1Char(' ') + mUrl.toString();
     }
     auto job = new KIO::CommandLauncherJob(mInfo.command(), QStringList() << commandLine);
     job->setUiDelegate(new KNotificationJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled));
@@ -52,7 +52,7 @@ void OpenUrlWithJob::setInfo(const OpenWithUrlInfo &newInfo)
     mInfo = newInfo;
 }
 
-void OpenUrlWithJob::setUrl(const QString &url)
+void OpenUrlWithJob::setUrl(const QUrl &url)
 {
     mUrl = url;
 }

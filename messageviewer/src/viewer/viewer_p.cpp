@@ -92,6 +92,7 @@
 // own includes
 #include "csshelper.h"
 #include "messageviewer/messageviewerutil.h"
+#include "openurlwith/openurlwithjob.h"
 #include "settings/messageviewersettings.h"
 #include "utils/messageviewerutil_p.h"
 #include "viewer/attachmentstrategy.h"
@@ -1891,8 +1892,11 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     }
     const OpenWithUrlInfo openWithInfo = OpenUrlWithManager::self()->openWith(url);
     if (openWithInfo.isValid()) {
-        // TODO
-        // return;
+        auto job = new OpenUrlWithJob(this);
+        job->setInfo(openWithInfo);
+        job->setUrl(mClickedUrl);
+        job->start();
+        return;
     }
     // First, let's see if the URL handler manager can handle the URL. If not, try KRun for some
     // known URLs, otherwise fallback to emitting a signal.
