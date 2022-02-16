@@ -1879,8 +1879,8 @@ ComposerViewBase::MissingAttachment ComposerViewBase::checkForMissingAttachments
                                                   "attached file but you have not attached anything.\n"
                                                   "Do you want to attach a file to your message?"),
                                              i18n("File Attachment Reminder"),
-                                             KGuiItem(i18n("&Attach File...")),
-                                             KGuiItem(i18n("&Send as Is")));
+                                             KGuiItem(i18n("&Attach File..."), QLatin1String("mail-attachment")),
+                                             KGuiItem(i18n("&Send as Is"), QLatin1String("mail-send")));
     if (rc == KMessageBox::Cancel) {
         return FoundMissingAttachmentAndCancel;
     }
