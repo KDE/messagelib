@@ -7,7 +7,9 @@
 #include "openurlwithjob.h"
 #include "messageviewer_debug.h"
 #include <KIO/CommandLauncherJob>
+#include <KMacroExpander>
 #include <KNotificationJobUiDelegate>
+#include <KShell>
 using namespace MessageViewer;
 OpenUrlWithJob::OpenUrlWithJob(QObject *parent)
     : QObject{parent}
@@ -30,13 +32,14 @@ void OpenUrlWithJob::start()
         qCWarning(MESSAGEVIEWER_LOG) << " Impossible to start OpenUrlWithJob";
         return;
     }
-    QString commandLine = mInfo.commandLine();
-    if (commandLine.contains(QStringLiteral("%u"))) {
-        commandLine = commandLine.replace(QStringLiteral("%u"), mUrl.toString());
-    } else {
-        commandLine += QLatin1Char(' ') + mUrl.toString();
-    }
-    auto job = new KIO::CommandLauncherJob(mInfo.command(), QStringList() << commandLine);
+    QHash<QChar, QString> map;
+    map.insert(QLatin1Char('u'), mUrl.toString());
+
+    const QString commandLine = mInfo.commandLine();
+    const QString cmd = KMacroExpander::expandMacrosShellQuote(commandLine, map);
+    const QStringList arg = KShell::splitArgs(cmd);
+    // qDebug() << " cmd " << cmd << " arg " << arg << " mInfo.command() " << mInfo.command();
+    auto job = new KIO::CommandLauncherJob(mInfo.command(), QStringList() << arg);
     job->setUiDelegate(new KNotificationJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled));
     job->start();
     deleteLater();
