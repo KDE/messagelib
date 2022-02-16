@@ -760,3 +760,19 @@ void StringUtilTest::test_splitAddressField()
         QCOMPARE(list.at(0).mailboxList.at(0).address(), QByteArrayLiteral("foo@kde.org"));
     }
 }
+
+void StringUtilTest::test_normalizeText()
+{
+    {
+        const QString str(QStringLiteral("foo"));
+        QCOMPARE(StringUtil::normalize(QStringView(str)), QStringLiteral("foo"));
+    }
+    {
+        const QString str(QStringLiteral("numérique"));
+        QCOMPARE(StringUtil::normalize(QStringView(str)), QStringLiteral("numerique"));
+    }
+    {
+        const QString str(QStringLiteral("téléphone"));
+        QCOMPARE(StringUtil::normalize(QStringView(str)), QStringLiteral("telephone"));
+    }
+}

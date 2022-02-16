@@ -820,5 +820,31 @@ void setEncodingFile(QUrl &url, const QString &encoding)
     query.addQueryItem(QStringLiteral("charset"), encoding);
     url.setQuery(query);
 }
+// code from kitinerary/src/lib/stringutil.cpp
+QChar normalize(QChar c)
+{
+    // case folding
+    const auto n = c.toCaseFolded();
+
+    // if the character has a canonical decomposition use that and skip the
+    // combining diacritic markers following it
+    // see https://en.wikipedia.org/wiki/Unicode_equivalence
+    // see https://en.wikipedia.org/wiki/Combining_character
+    if (n.decompositionTag() == QChar::Canonical) {
+        return n.decomposition().at(0);
+    }
+
+    return n;
+}
+
+QString normalize(QStringView str)
+{
+    QString out;
+    out.reserve(str.size());
+    for (const auto c : str) {
+        out.push_back(normalize(c));
+    }
+    return out;
+}
 }
 }
