@@ -53,3 +53,8 @@ void OpenWithUrlInfo::setCommandLine(const QString &newCommandLine)
 {
     mCommandLine = newCommandLine;
 }
+
+bool OpenWithUrlInfo::operator==(const OpenWithUrlInfo &other) const
+{
+    return mCommandLine == other.commandLine() && mCommand == other.command() && mUrl == other.url();
+}

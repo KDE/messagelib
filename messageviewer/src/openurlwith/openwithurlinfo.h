@@ -31,6 +31,8 @@ public:
     Q_REQUIRED_RESULT const QString &commandLine() const;
     void setCommandLine(const QString &newCommandLine);
 
+    Q_REQUIRED_RESULT bool operator==(const OpenWithUrlInfo &other) const;
+
 private:
     QString mCommandLine;
     QString mCommand;
