@@ -199,8 +199,7 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
     filter->setIdentifier(newGroup.readEntry("identifier"));
     filter->setFilterName(newGroup.readEntry("name"));
     filter->setIconName(newGroup.readEntry("iconName"));
-    QList<qint32> lst;
-    lst = newGroup.readEntry("status", QList<qint32>());
+    const QList<qint32> lst = newGroup.readEntry("status", QList<qint32>());
     QVector<Akonadi::MessageStatus> messageStatusLst;
     messageStatusLst.reserve(lst.count());
     for (const auto s : std::as_const(lst)) {
