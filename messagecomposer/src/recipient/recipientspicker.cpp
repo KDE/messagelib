@@ -9,8 +9,8 @@
 #include "recipientspicker.h"
 #include "settings/messagecomposersettings.h"
 
-#include <Akonadi/Contact/EmailAddressSelectionWidget>
-#include <Akonadi/Contact/RecipientsPickerWidget>
+#include <Akonadi/EmailAddressSelectionWidget>
+#include <Akonadi/RecipientsPickerWidget>
 #include <KContacts/ContactGroup>
 #include <PimCommonAkonadi/LdapSearchDialog>
 

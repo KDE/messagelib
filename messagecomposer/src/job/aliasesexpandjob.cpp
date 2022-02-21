@@ -11,8 +11,8 @@
 
 #include "distributionlistexpandjob.h"
 
-#include <Akonadi/Contact/ContactGroupExpandJob>
-#include <Akonadi/Contact/ContactSearchJob>
+#include <Akonadi/ContactGroupExpandJob>
+#include <Akonadi/ContactSearchJob>
 #include <KEmailAddress>
 
 #include <MessageCore/StringUtil>

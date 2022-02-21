@@ -9,8 +9,8 @@
 
 #include "distributionlistexpandjob.h"
 
-#include <akonadi/contact/contactgroupexpandjob.h>
-#include <akonadi/contact/contactgroupsearchjob.h>
+#include <Akonadi/ContactGroupExpandJob>
+#include <Akonadi/ContactGroupSearchJob>
 
 using namespace MessageComposer;
 

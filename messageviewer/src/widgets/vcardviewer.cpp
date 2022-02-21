@@ -7,16 +7,16 @@
 
 #include "vcardviewer.h"
 #include "settings/messageviewersettings.h"
-#include <Akonadi/Contact/GrantleeContactViewer>
+#include <Akonadi/GrantleeContactViewer>
 
 #include <KContacts/VCardConverter>
 using KContacts::Addressee;
 using KContacts::VCardConverter;
 
-#include <Akonadi/Contact/ContactDefaultActions>
+#include <Akonadi/ContactDefaultActions>
 #include <KLocalizedString>
 
-#include <Akonadi/Contact/AddContactJob>
+#include <Akonadi/AddContactJob>
 #include <KConfigGroup>
 #include <KGuiItem>
 #include <QDialogButtonBox>

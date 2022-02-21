@@ -28,7 +28,7 @@
 #include <gpgme++/keylistresult.h>
 
 #include "messagecomposer_debug.h"
-#include <Akonadi/Contact/ContactSearchJob>
+#include <Akonadi/ContactSearchJob>
 #include <KLocalizedString>
 #include <KMessageBox>
 

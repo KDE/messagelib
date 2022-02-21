@@ -51,8 +51,8 @@
 #include "attachment/attachmentfrommimecontentjob.h"
 #include "attachment/attachmentfromurljob.h"
 #include "messagecore/attachmentupdatejob.h"
-#include <Akonadi/Contact/EmailAddressSelectionDialog>
-#include <Akonadi/Contact/EmailAddressSelectionWidget>
+#include <Akonadi/EmailAddressSelectionDialog>
+#include <Akonadi/EmailAddressSelectionWidget>
 #include <KIO/Job>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>

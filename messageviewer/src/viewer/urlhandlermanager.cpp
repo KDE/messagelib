@@ -22,11 +22,11 @@
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/PartNodeBodyPart>
 
-#include <Akonadi/Contact/OpenEmailAddressJob>
+#include <Akonadi/OpenEmailAddressJob>
 #include <MessageCore/StringUtil>
 #include <PimCommon/BroadcastStatus>
 
-#include <Akonadi/Contact/ContactSearchJob>
+#include <Akonadi/ContactSearchJob>
 
 #include <Akonadi/MessageFlags>
 #include <KEmailAddress>

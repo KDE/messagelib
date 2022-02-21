@@ -12,7 +12,7 @@
 #include <QInputDialog>
 
 #include <Akonadi/CollectionDialog>
-#include <Akonadi/Contact/ContactSearchJob>
+#include <Akonadi/ContactSearchJob>
 #include <Akonadi/ItemCreateJob>
 #include <Akonadi/ItemModifyJob>
 

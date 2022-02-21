@@ -5,11 +5,11 @@
 */
 
 #include "attachmentvcardfromaddressbookjob.h"
+#include <Akonadi/ContactGroupExpandJob>
 #include <KContacts/Addressee>
 #include <KContacts/ContactGroup>
 #include <KContacts/VCardConverter>
 #include <KLocalizedString>
-#include <akonadi/contact/contactgroupexpandjob.h>
 
 using namespace MessageComposer;
 

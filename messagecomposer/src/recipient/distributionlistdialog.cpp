@@ -9,8 +9,8 @@
 #include "distributionlistdialog.h"
 
 #include <Akonadi/CollectionDialog>
-#include <Akonadi/Contact/ContactGroupSearchJob>
-#include <Akonadi/Contact/ContactSearchJob>
+#include <Akonadi/ContactGroupSearchJob>
+#include <Akonadi/ContactSearchJob>
 #include <Akonadi/ItemCreateJob>
 #include <KEmailAddress>
 
