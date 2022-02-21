@@ -15,7 +15,7 @@
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemModifyJob>
-#include <Akonadi/KMime/MessageFolderAttribute>
+#include <Akonadi/MessageFolderAttribute>
 #include <Akonadi/SelectionProxyModel>
 
 #include "core/messageitem.h"

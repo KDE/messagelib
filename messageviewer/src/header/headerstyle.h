@@ -13,7 +13,7 @@
 
 #include "messageviewer_export.h"
 
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageStatus>
 #include <KMime/Message>
 #include <memory.h>
 

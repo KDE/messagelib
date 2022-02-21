@@ -8,7 +8,7 @@
 #pragma once
 
 #include "messagelist_export.h"
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageStatus>
 #include <QWidget>
 
 class QComboBox;

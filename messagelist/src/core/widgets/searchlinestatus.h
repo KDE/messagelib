@@ -8,7 +8,7 @@
 
 #include "messagelist_private_export.h"
 #include "quicksearchline.h"
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageStatus>
 #include <QIcon>
 #include <QLineEdit>
 class QStringListModel;

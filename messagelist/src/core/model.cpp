@@ -43,7 +43,7 @@
 
 #include "MessageCore/StringUtil"
 #include <Akonadi/Item>
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageStatus>
 
 #include <KLocalizedString>
 

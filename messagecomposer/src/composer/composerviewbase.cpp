@@ -51,8 +51,8 @@
 #include <Akonadi/CollectionComboBox>
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/ItemCreateJob>
-#include <Akonadi/KMime/MessageFlags>
-#include <Akonadi/KMime/SpecialMailCollections>
+#include <Akonadi/MessageFlags>
+#include <Akonadi/SpecialMailCollections>
 
 #include <KEmailAddress>
 #include <KIdentityManagement/IdentityCombo>

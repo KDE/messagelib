@@ -14,7 +14,7 @@
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageStatus>
 #include <QVector>
 
 namespace KIdentityManagement

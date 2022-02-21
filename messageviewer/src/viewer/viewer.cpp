@@ -24,7 +24,7 @@
 #include "widgets/zoomactionmenu.h"
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
-#include <Akonadi/KMime/MessageParts>
+#include <Akonadi/MessageParts>
 #include <QUrl>
 #include <WebEngineViewer/WebEngineManageScript>
 #include <WebEngineViewer/WebHitTestResult>

@@ -13,7 +13,7 @@
 #include "core/modelinvariantrowmapper.h"
 #include "utils/comboboxutils.h"
 
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageStatus>
 
 #include <KTextEdit>
 

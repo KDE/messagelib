@@ -15,7 +15,7 @@
 
 #include <KMime/Headers>
 
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageStatus>
 
 #include "messagelist_export.h"
 #include <core/model.h>

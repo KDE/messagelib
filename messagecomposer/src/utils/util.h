@@ -10,7 +10,7 @@
 
 #include "messagecomposer_export.h"
 #include <Akonadi/Item>
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageStatus>
 #include <KMime/Message>
 #include <Libkleo/Enum>
 

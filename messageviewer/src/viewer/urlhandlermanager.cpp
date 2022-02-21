@@ -28,7 +28,7 @@
 
 #include <Akonadi/Contact/ContactSearchJob>
 
-#include "messageflags.h"
+#include <Akonadi/MessageFlags>
 #include <KEmailAddress>
 #include <KMbox/MBox>
 #include <KMime/Content>

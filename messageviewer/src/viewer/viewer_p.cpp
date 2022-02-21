@@ -42,7 +42,8 @@
 
 #include <Akonadi/ItemCreateJob>
 #include <Akonadi/ItemModifyJob>
-#include <Akonadi/KMime/SpecialMailCollections>
+#include <Akonadi/MessageFlags>
+#include <Akonadi/SpecialMailCollections>
 #include <KApplicationTrader>
 #include <KEmailAddress>
 #include <KFileItemActions>
@@ -62,7 +63,6 @@
 #include <QMenu>
 #include <QMimeData>
 #include <QTemporaryDir>
-#include <messageflags.h>
 
 // Qt includes
 #include <QClipboard>
@@ -82,8 +82,8 @@
 #include <Akonadi/Collection>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
-#include <Akonadi/KMime/MessageParts>
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageParts>
+#include <Akonadi/MessageStatus>
 
 #include <MessageCore/AutocryptUtils>
 #include <KIdentityManagement/Identity>

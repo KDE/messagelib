@@ -42,7 +42,7 @@
 
 
 #include <Akonadi/Collection>
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageStatus>
 #include <chrono>
 #include <core/widgets/filternamedialog.h>
 

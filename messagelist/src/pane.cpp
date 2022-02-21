@@ -32,7 +32,7 @@
 #include "messagelistutil_p.h"
 #include "storagemodel.h"
 #include "widget.h"
-#include <Akonadi/KMime/MessageStatus>
+#include <Akonadi/MessageStatus>
 
 namespace MessageList
 {
