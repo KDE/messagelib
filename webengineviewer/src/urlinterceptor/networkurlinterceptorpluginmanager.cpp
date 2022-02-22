@@ -78,7 +78,11 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
     const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("webengineviewer/urlinterceptor"));
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QVectorIterator<KPluginMetaData> i(plugins);
+#else
+    QListIterator<KPluginMetaData> i(plugins);
+#endif
     i.toBack();
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 

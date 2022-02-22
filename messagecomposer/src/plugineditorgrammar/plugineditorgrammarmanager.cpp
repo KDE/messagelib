@@ -79,7 +79,11 @@ void PluginEditorGrammarManagerPrivate::initializePlugins()
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QVectorIterator<KPluginMetaData> i(plugins);
+#else
+    QListIterator<KPluginMetaData> i(plugins);
+#endif
     i.toBack();
     while (i.hasPrevious()) {
         PluginEditorGrammarInfo info;
