@@ -13,11 +13,19 @@ namespace MimeTreeParser
 {
 class EncryptedBodyPartFormatter : public Interface::BodyPartFormatter
 {
-    static const EncryptedBodyPartFormatter *self;
-
 public:
-    MessagePartPtr process(Interface::BodyPart &part) const override;
-    static const Interface::BodyPartFormatter *create();
-};
-}
+    enum EncryptionFlag {
+        AutoPGP = 0x0, ///< Detect PGP data automatically
+        ForcePGP = 0x1 ///< Always decode PGP data
+    };
+    Q_DECLARE_FLAGS(EncryptionFlags, EncryptionFlag)
 
+    MessagePartPtr process(Interface::BodyPart &part) const override;
+    static const Interface::BodyPartFormatter *create(EncryptionFlags flags);
+
+private:
+    EncryptionFlags mFlags;
+};
+
+Q_DECLARE_OPERATORS_FOR_FLAGS(EncryptedBodyPartFormatter::EncryptionFlags)
+}

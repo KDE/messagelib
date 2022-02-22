@@ -23,13 +23,10 @@
 
 using namespace MimeTreeParser;
 
-const EncryptedBodyPartFormatter *EncryptedBodyPartFormatter::self;
-
-const Interface::BodyPartFormatter *EncryptedBodyPartFormatter::create()
+const Interface::BodyPartFormatter *EncryptedBodyPartFormatter::create(EncryptedBodyPartFormatter::EncryptionFlags flags)
 {
-    if (!self) {
-        self = new EncryptedBodyPartFormatter();
-    }
+    auto self = new EncryptedBodyPartFormatter;
+    self->mFlags = flags;
     return self;
 }
 
@@ -42,11 +39,30 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
         return {};
     }
 
-    QGpgME::QByteArrayDataProvider dp(node->decodedContent());
-    GpgME::Data data(&dp);
-
-    if (data.type() == GpgME::Data::Unknown) {
+    const QByteArray content(node->decodedContent());
+    if (content.isEmpty()) {
         return nullptr;
+    }
+
+    if (!(mFlags & EncryptedBodyPartFormatter::ForcePGP)) {
+        // If not forcing the data to be interpreted as PGP encrypted,
+        // only check for encryption if it starts with a 7-bit ASCII
+        // character.  Valid armored PGP data always starts with an
+        // ASCII character, so if the first byte has bit 8 set then it
+        // cannot be PGP armored.  This way we retain support for armored
+        // inline PGP data, but avoid random binary data being detected
+        // as PGP data.  See bug 390002 and messagelib!83.
+        unsigned char firstByte = content[0];
+        if ((firstByte & 0x80) != 0) {
+            return nullptr;
+        }
+
+        QGpgME::QByteArrayDataProvider dp(content);
+        GpgME::Data data(&dp);
+
+        if (data.type() == GpgME::Data::Unknown) {
+            return nullptr;
+        }
     }
 
     const QGpgME::Protocol *useThisCryptProto = nullptr;
@@ -62,6 +78,7 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
     mp->setIsEncrypted(true);
     mp->setDecryptMessage(part.source()->decryptMessage());
     PartMetaData *messagePart(mp->partMetaData());
+
     if (!part.source()->decryptMessage()) {
         part.nodeHelper()->setNodeProcessed(node, false); // Set the data node to done to prevent it from being processed
     } else if (KMime::Content *newNode = part.nodeHelper()->decryptedNodeForContent(node)) {

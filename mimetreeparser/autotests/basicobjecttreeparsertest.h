@@ -15,6 +15,7 @@ class ObjectTreeParserTest : public QObject
 private Q_SLOTS:
     void initTestCase();
     void testMailWithoutEncryption();
+    void testBinaryAttachmentNotPGP();
     void testSMIMESignedEncrypted();
     void testOpenPGPSignedEncrypted();
     void testOpenPGPEncryptedAndSigned();

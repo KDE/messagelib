@@ -73,6 +73,23 @@ void ObjectTreeParserTest::testMailWithoutEncryption()
     QVERIFY(!nodeHelper.unencryptedMessage(originalMessage));
 }
 
+void ObjectTreeParserTest::testBinaryAttachmentNotPGP()
+{
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("binary-attachment-not-pgp.mbox"));
+    NodeHelper nodeHelper;
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource, &nodeHelper);
+    otp.parseObjectTree(originalMessage.data());
+
+    QCOMPARE(originalMessage->contentType()->mimeType().data(), "multipart/mixed");
+    QCOMPARE(originalMessage->contents().size(), 2);
+    QCOMPARE(originalMessage->contents().at(0)->contentType()->mimeType().data(), "text/plain");
+    QCOMPARE(originalMessage->contents().at(1)->contentType()->mimeType().data(), "application/msword");
+
+    QCOMPARE(nodeHelper.encryptionState(originalMessage->contents().at(0)), KMMsgNotEncrypted);
+    QCOMPARE(nodeHelper.encryptionState(originalMessage->contents().at(1)), KMMsgNotEncrypted);
+}
+
 void ObjectTreeParserTest::testSignedForwardedOpenPGPSignedEncrypted()
 {
     KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("signed-forward-openpgp-signed-encrypted.mbox"));
