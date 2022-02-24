@@ -41,7 +41,6 @@
 #include "MessageCore/StringUtil"
 #include "messageviewer_debug.h"
 #include "messageviewerutil_p.h"
-#include <KPIMTextEdit/TextToSpeech>
 #include <MimeTreeParser/NodeHelper>
 
 #include <PimCommon/RenameFileDialog>

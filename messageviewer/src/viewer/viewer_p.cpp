@@ -129,7 +129,9 @@
 #include <Akonadi/CollectionFetchScope>
 
 #include <KJobWidgets/KJobWidgets>
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEdit/TextToSpeechWidget>
+#endif
 #include <QApplication>
 #include <QStandardPaths>
 #include <QWebEngineSettings>

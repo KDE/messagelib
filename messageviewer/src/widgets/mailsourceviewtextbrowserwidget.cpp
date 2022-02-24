@@ -13,8 +13,10 @@
 #include "messageviewer/messageviewerutil.h"
 #include "messageviewer_debug.h"
 #include <KPIMTextEdit/SlideContainer>
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEdit/TextToSpeechInterface>
 #include <KPIMTextEdit/TextToSpeechWidget>
+#endif
 #include <PimCommon/PimUtil>
 
 #include <KSyntaxHighlighting/Definition>
