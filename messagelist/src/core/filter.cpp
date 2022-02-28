@@ -9,9 +9,9 @@
 #include "core/filter.h"
 #include "core/messageitem.h"
 
-#include <AkonadiSearch/PIM/emailquery.h>
-#include <AkonadiSearch/PIM/resultiterator.h>
 #include <KRandom>
+#include <PIM/emailquery.h>
+#include <PIM/resultiterator.h>
 using namespace MessageList::Core;
 
 Filter::Filter(QObject *parent)

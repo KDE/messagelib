@@ -19,7 +19,7 @@
 
 #include <KLocalizedString>
 
-#include <AkonadiSearch/PIM/indexeditems.h>
+#include <PIM/indexeditems.h>
 
 using namespace MessageList::Core;
 
