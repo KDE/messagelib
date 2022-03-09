@@ -823,7 +823,6 @@ void Widget::setFilter(Filter *filter)
 {
     resetFilter();
     d->mFilter = filter;
-    // TODO
     d->mView->model()->setFilter(d->mFilter);
 }
 
