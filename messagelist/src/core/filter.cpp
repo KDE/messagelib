@@ -8,37 +8,12 @@
 
 #include "core/filter.h"
 #include "core/messageitem.h"
+#include <MessageCore/StringUtil>
 
 #include <KRandom>
 #include <PIM/emailquery.h>
 #include <PIM/resultiterator.h>
 using namespace MessageList::Core;
-
-static QString normalize(QStringView str)
-{
-    QString out;
-    out.reserve(str.size());
-    for (const auto c : str) {
-        // case folding
-        const auto n = c.toCaseFolded();
-
-        // if the character has a canonical decomposition use that and skip the
-        // combining diacritic markers following it
-        // see https://en.wikipedia.org/wiki/Unicode_equivalence
-        // see https://en.wikipedia.org/wiki/Combining_character
-        if (n.decompositionTag() == QChar::Canonical) {
-            out.push_back(n.decomposition().at(0));
-        }
-        // handle compatibility compositions such as ligatures
-        // see https://en.wikipedia.org/wiki/Unicode_compatibility_characters
-        else if (n.decompositionTag() == QChar::Compat && n.isLetter() && n.script() == QChar::Script_Latin) {
-            out.append(n.decomposition());
-        } else {
-            out.push_back(n);
-        }
-    }
-    return out;
-}
 
 Filter::Filter(QObject *parent)
     : QObject(parent)
@@ -49,9 +24,9 @@ Filter::Filter(QObject *parent)
 bool Filter::containString(const QString &searchInString) const
 {
     bool found = false;
-    const QString searchInStringNormalize{normalize(searchInString)};
+    const QString searchInStringNormalize{MessageCore::StringUtil::normalize(searchInString)};
     for (const QString &str : std::as_const(mSearchList)) {
-        if (searchInStringNormalize.contains(normalize(str), Qt::CaseInsensitive)) {
+        if (searchInStringNormalize.contains(MessageCore::StringUtil::normalize(str), Qt::CaseInsensitive)) {
             found = true;
         } else {
             found = false;
