@@ -35,6 +35,7 @@ private Q_SLOTS:
     void testProtectedHeaders();
 
     void testProtectedHeadersOverwrite();
+    void testProtectedHeadersSkipLong();
 
 private:
     void checkSignJob(MessageComposer::SignJob *sJob);
