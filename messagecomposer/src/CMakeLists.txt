@@ -2,17 +2,6 @@
 # SPDX-FileCopyrightText: none
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecomposer\")
 
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF5MessageComposer_QCH
-        FILE KF5MessageComposerQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageComposerQchTargets.cmake\")")
-endif()
-
-
 if(BUILD_TESTING)
     add_subdirectory( imagescaling/autotests )
     add_subdirectory( imagescaling/tests )
@@ -654,4 +643,13 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
+
+    ecm_install_qch_export(
+        TARGETS KF5MessageComposer_QCH
+        FILE KF5MessageComposerQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageComposerQchTargets.cmake\")")
+
 endif()

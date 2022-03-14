@@ -1,14 +1,5 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF5WebEngineViewer_QCH
-        FILE KF5WebEngineViewerQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5WebEngineViewerQchTargets.cmake\")")
-endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer\")
 include_directories(${CMAKE_BINARY_DIR}/webengineviewer/src ${CMAKE_BINARY_DIR}/webengineviewer)
@@ -386,4 +377,12 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
+
+    ecm_install_qch_export(
+        TARGETS KF5WebEngineViewer_QCH
+        FILE KF5WebEngineViewerQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5WebEngineViewerQchTargets.cmake\")")
 endif()

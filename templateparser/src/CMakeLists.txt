@@ -1,14 +1,5 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF5TemplateParser_QCH
-        FILE KF5TemplateParserQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TemplateParserQchTargets.cmake\")")
-endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser\")
 add_library(KF5TemplateParser)
@@ -190,4 +181,12 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
+
+    ecm_install_qch_export(
+        TARGETS KF5TemplateParser_QCH
+        FILE KF5TemplateParserQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TemplateParserQchTargets.cmake\")")
 endif()
