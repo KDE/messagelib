@@ -128,7 +128,7 @@ int RecipientLineNG::recipientsCount() const
 void RecipientLineNG::setData(const MultiplyingLineData::Ptr &data)
 {
     Recipient::Ptr rec = qSharedPointerDynamicCast<Recipient>(data);
-    if (!rec) {
+    if (rec.isNull()) {
         return;
     }
     mData = rec;

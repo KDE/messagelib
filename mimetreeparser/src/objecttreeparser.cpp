@@ -146,7 +146,7 @@ MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, ProcessResult
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
 
         const MessagePart::Ptr result = formatter->process(part);
-        if (!result) {
+        if (result.isNull()) {
             continue;
         }
 

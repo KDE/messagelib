@@ -132,7 +132,7 @@ Recipient::List RecipientsEditor::recipients() const
     Recipient::List recList;
     for (const MultiplyingLineData::Ptr &datum : dataList) {
         Recipient::Ptr rec = qSharedPointerDynamicCast<Recipient>(datum);
-        if (!rec) {
+        if (rec.isNull()) {
             continue;
         }
         recList << rec;
