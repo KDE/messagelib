@@ -122,6 +122,7 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     titleLayout->addWidget(label);
 
     mTitleEdit = new QLineEdit(topFrame);
+    mTitleEdit->setPlaceholderText(i18n("Name of Distribution List"));
     titleLayout->addWidget(mTitleEdit);
     mTitleEdit->setFocus();
     mTitleEdit->setClearButtonEnabled(true);
