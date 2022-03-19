@@ -15,7 +15,10 @@ class OpenSavedFileFolderWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
-    enum class FileType { Attachment, Pdf };
+    enum class FileType {
+        Attachment,
+        Pdf,
+    };
 
     explicit OpenSavedFileFolderWidget(QWidget *parent = nullptr);
     ~OpenSavedFileFolderWidget() override;
