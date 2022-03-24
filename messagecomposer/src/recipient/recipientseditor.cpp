@@ -336,6 +336,7 @@ void RecipientsEditor::slotCalculateTotal()
                     setFocusBottom(); // focus next empty entry
                     d->mSkipTotal = false;
                     if (maximumElementFound) {
+                        d->mSideWidget->setTotal(lines().count(), lines().count());
                         return;
                     }
                 }
