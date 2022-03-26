@@ -23,4 +23,3 @@ private Q_SLOTS:
 private:
     QDir baseDir;
 };
-

@@ -73,4 +73,3 @@ private:
     std::unique_ptr<GrantleeHeaderFormatterPrivate> const d;
 };
 }
-

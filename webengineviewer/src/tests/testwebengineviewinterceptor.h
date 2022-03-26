@@ -17,4 +17,3 @@ public:
 private:
     QWebEngineView *mWebEngineView = nullptr;
 };
-

@@ -15,4 +15,3 @@ public:
     explicit TemplateEditorTestWidget(QWidget *parent = nullptr);
     ~TemplateEditorTestWidget() override;
 };
-

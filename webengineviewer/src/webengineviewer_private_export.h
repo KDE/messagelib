@@ -16,4 +16,3 @@
 #else /* not compiling tests */
 #define WEBENGINEVIEWER_TESTS_EXPORT
 #endif
-

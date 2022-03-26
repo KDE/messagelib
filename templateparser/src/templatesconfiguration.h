@@ -54,4 +54,3 @@ private:
     std::unique_ptr<TemplatesConfigurationPrivate> const d;
 };
 }
-

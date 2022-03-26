@@ -23,4 +23,3 @@ private Q_SLOTS:
     void shouldConvertToPlainText_data();
     void shouldConvertToPlainText();
 };
-

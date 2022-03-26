@@ -24,4 +24,3 @@ private Q_SLOTS:
     void testProtectedHeaders_data();
     void testProtectedHeaders();
 };
-

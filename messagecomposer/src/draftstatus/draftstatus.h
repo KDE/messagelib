@@ -53,6 +53,7 @@ public:
 
     Q_REQUIRED_RESULT Kleo::CryptoMessageFormat cryptoMessageFormatState() const;
     Q_REQUIRED_RESULT bool isDefined() const;
+
 private:
     KMime::Message::Ptr mMsg;
 };
@@ -60,4 +61,3 @@ private:
 void MESSAGECOMPOSER_EXPORT removeDraftCryptoHeaders(const KMime::Message::Ptr &msg);
 
 }
-

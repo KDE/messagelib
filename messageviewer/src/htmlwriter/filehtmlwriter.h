@@ -37,4 +37,3 @@ private:
     QFile mFile;
 };
 } // namespace MessageViewer
-

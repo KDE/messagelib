@@ -29,4 +29,3 @@ private:
     RemoteContentConfigureWidget *const mRemoteContentConfigureWidget;
 };
 }
-

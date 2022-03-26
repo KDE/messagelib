@@ -49,4 +49,3 @@ private:
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
 }
-

@@ -57,4 +57,3 @@ private:
 }
 Q_DECLARE_METATYPE(MessageViewer::DKIMKeyRecord)
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMKeyRecord &t);
-

@@ -42,4 +42,3 @@ private:
     friend class ::AutocryptUtilsTest;
 };
 }
-

@@ -36,4 +36,3 @@ public:
     QHash<QString, std::vector<FormatterInfo>> registry;
 };
 }
-

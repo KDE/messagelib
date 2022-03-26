@@ -90,4 +90,3 @@ private:
     Q_DECLARE_PRIVATE(ContentJobBase)
 };
 } // namespace MessageComposer
-

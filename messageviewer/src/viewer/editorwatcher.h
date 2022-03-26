@@ -70,4 +70,3 @@ private:
     bool mDone = false;
 };
 }
-

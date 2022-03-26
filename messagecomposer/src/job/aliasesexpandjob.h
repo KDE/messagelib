@@ -86,4 +86,3 @@ private:
     QMap<QString, QString> mNicknameExpansionResults;
 };
 }
-

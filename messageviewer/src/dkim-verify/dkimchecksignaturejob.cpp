@@ -166,9 +166,7 @@ void DKIMCheckSignatureJob::start()
     }
 
     // compare body hash
-    qDebug(MESSAGEVIEWER_DKIMCHECKER_LOG)
-        << "resultHash " << resultHash << "mDkimInfo.bodyHash()"
-        << mDkimInfo.bodyHash();
+    qDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "resultHash " << resultHash << "mDkimInfo.bodyHash()" << mDkimInfo.bodyHash();
     if (resultHash != mDkimInfo.bodyHash().toLatin1()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Corrupted body hash";
         mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash;
@@ -489,7 +487,7 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         deleteLater();
         return;
     } else {
-      qDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Success loading public key";
+        qDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Success loading public key";
     }
     QCA::RSAPublicKey rsaPublicKey = publicKey.toRSA();
     // qDebug() << "publicKey.modulus" << rsaPublicKey.n().toString();

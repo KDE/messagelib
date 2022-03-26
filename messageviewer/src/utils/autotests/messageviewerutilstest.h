@@ -33,4 +33,3 @@ private Q_SLOTS:
     void shouldUseCorrectCodec();
     void shouldUseCorrectCodec_data();
 };
-

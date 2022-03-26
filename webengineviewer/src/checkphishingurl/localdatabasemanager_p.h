@@ -139,4 +139,3 @@ public:
     QPointer<WebEngineViewer::DownloadLocalDatabaseThread> downloadLocalDatabaseThread;
 };
 }
-

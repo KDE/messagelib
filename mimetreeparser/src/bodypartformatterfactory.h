@@ -49,4 +49,3 @@ private:
     friend class BodyPartFormatterFactoryPrivate;
 };
 }
-

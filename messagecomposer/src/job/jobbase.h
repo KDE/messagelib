@@ -44,4 +44,3 @@ private:
     Q_DECLARE_PRIVATE(JobBase)
 };
 } // namespace MessageComposer
-

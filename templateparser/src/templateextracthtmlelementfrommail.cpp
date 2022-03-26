@@ -9,7 +9,8 @@
 #include "templatewebenginepage.h"
 #include <QWebEngineScript>
 
-template<typename Arg, typename R, typename C> struct InvokeWrapperFunction {
+template<typename Arg, typename R, typename C>
+struct InvokeWrapperFunction {
     R *receiver;
     void (C::*memberFun)(Arg);
     void operator()(Arg result)
@@ -18,7 +19,8 @@ template<typename Arg, typename R, typename C> struct InvokeWrapperFunction {
     }
 };
 
-template<typename Arg, typename R, typename C> InvokeWrapperFunction<Arg, R, C> invokeFunction(R *receiver, void (C::*memberFun)(Arg))
+template<typename Arg, typename R, typename C>
+InvokeWrapperFunction<Arg, R, C> invokeFunction(R *receiver, void (C::*memberFun)(Arg))
 {
     InvokeWrapperFunction<Arg, R, C> wrapper = {receiver, memberFun};
     return wrapper;

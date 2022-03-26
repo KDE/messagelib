@@ -20,4 +20,3 @@ private Q_SLOTS:
     void shouldCheckHashBinaryFile_data();
     void shouldCheckHashBinaryFile();
 };
-

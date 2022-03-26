@@ -40,4 +40,3 @@ private:
     std::unique_ptr<PluginEditorCheckBeforeSendInterfacePrivate> const d;
 };
 }
-

@@ -28,4 +28,3 @@ private Q_SLOTS:
 private:
     void fillComposerData(MessageComposer::Composer *composer);
 };
-

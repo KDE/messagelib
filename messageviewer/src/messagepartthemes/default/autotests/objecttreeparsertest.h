@@ -18,4 +18,3 @@ private Q_SLOTS:
     void test_HTMLExternal();
     void test_Alternative();
 };
-

@@ -266,4 +266,3 @@ private:
 
 Q_DECLARE_METATYPE(MessageComposer::ReplyStrategy)
 Q_DECLARE_METATYPE(MessageComposer::MessageFactoryNG::MessageReply)
-

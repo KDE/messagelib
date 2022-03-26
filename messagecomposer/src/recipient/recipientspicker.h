@@ -73,4 +73,3 @@ private:
     QLabel *const mSelectedLabel = nullptr;
 };
 }
-

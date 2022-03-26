@@ -18,4 +18,3 @@ Q_REQUIRED_RESULT QStringList keywordsWithArgs();
 TEMPLATEPARSER_TESTS_EXPORT Q_REQUIRED_RESULT QString removeSpaceAtBegin(const QString &selection);
 }
 }
-

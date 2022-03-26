@@ -78,4 +78,3 @@ private:
     std::unique_ptr<StorageModelPrivate> const d;
 };
 } // namespace MessageList
-

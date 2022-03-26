@@ -27,4 +27,3 @@ private:
     WebEngineViewer::WebEnginePage *mEnginePage;
     WebEngineViewer::WebEngineView *pageView;
 };
-

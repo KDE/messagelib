@@ -73,4 +73,3 @@ private:
     GpgME::Key m_key;
 };
 }
-

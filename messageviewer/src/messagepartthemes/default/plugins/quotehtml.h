@@ -15,4 +15,3 @@ class RenderContext;
 }
 
 void quotedHTML(const QString &s, MessageViewer::RenderContext *context, MessageViewer::HtmlWriter *htmlWriter);
-

@@ -33,4 +33,3 @@ private:
     MimeTreeModel *const mMimePartModel;
 };
 }
-

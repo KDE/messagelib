@@ -19,4 +19,3 @@ private Q_SLOTS:
     void shouldVerifyCheckSums();
     void shouldVerifyCheckSums_data();
 };
-

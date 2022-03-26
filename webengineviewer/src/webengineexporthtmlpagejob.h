@@ -38,4 +38,3 @@ private:
     QWebEngineView *mEngineView = nullptr;
 };
 }
-

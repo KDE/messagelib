@@ -65,4 +65,3 @@ private:
     std::unique_ptr<PluginEditorInterfacePrivate> const d;
 };
 }
-

@@ -51,4 +51,3 @@ private:
     std::unique_ptr<LocalDataBaseFilePrivate> const d;
 };
 }
-

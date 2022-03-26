@@ -32,4 +32,3 @@ private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
     qreal mZoom;
 };
-

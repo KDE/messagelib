@@ -120,4 +120,3 @@ public:
     void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const override;
 };
 }
-

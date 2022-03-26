@@ -56,4 +56,3 @@ private:
     QTreeWidget *const mTreeWidget;
 };
 }
-

@@ -90,4 +90,3 @@ private:
     std::unique_ptr<SignatureControllerPrivate> const d;
 };
 }
-

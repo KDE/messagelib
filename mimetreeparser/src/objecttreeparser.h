@@ -348,4 +348,3 @@ private:
     friend class ApplicationPkcs7MimeBodyPartFormatter;
 };
 }
-

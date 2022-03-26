@@ -27,4 +27,3 @@ MESSAGELIST_EXPORT QColor todoDefaultMessageColor();
 MESSAGELIST_EXPORT QString contentSummary(const Akonadi::Item &item);
 }
 }
-

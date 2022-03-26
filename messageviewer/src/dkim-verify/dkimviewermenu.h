@@ -36,4 +36,3 @@ private:
     QAction *mUpdateDKIMKey = nullptr;
 };
 }
-

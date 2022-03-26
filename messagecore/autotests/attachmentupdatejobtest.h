@@ -25,4 +25,3 @@ private Q_SLOTS:
     void shouldNotUpdateWhenUrlIsEmpty();
     void shouldHaveSameInlineStatus();
 };
-

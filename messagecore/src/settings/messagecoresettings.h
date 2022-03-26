@@ -27,4 +27,3 @@ private:
     static MessageCoreSettings *mSelf;
 };
 }
-

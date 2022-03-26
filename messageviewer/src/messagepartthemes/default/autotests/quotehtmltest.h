@@ -21,4 +21,3 @@ private:
     QString mCollapseIcon;
     QString mExpandIcon;
 };
-

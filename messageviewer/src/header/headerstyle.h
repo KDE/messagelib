@@ -100,4 +100,3 @@ private:
     std::unique_ptr<HeaderStylePrivate> const d;
 };
 }
-

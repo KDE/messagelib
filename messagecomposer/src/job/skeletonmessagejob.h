@@ -47,4 +47,3 @@ private:
     Q_PRIVATE_SLOT(d_func(), void doStart())
 };
 } // namespace MessageComposer
-

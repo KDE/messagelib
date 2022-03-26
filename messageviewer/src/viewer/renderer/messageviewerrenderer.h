@@ -32,4 +32,3 @@ private:
     QWidget *mCurrentWidget = nullptr;
 };
 }
-

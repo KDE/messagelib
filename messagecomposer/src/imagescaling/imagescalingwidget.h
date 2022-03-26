@@ -53,4 +53,3 @@ private:
     std::unique_ptr<ImageScalingWidgetPrivate> const d;
 };
 }
-

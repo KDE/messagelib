@@ -9,4 +9,3 @@
 #include <KMime/Message>
 
 KMime::Message::Ptr readAndParseMail(const QString &mailFile);
-

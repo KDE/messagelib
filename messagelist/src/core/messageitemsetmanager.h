@@ -50,4 +50,3 @@ public:
 };
 } // namespace Core
 } // namespace MessageList
-

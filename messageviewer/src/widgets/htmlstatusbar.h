@@ -81,4 +81,3 @@ private:
     QList<MimeTreeParser::Util::HtmlMode> mAvailableModes;
 };
 }
-

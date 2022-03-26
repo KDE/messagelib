@@ -38,4 +38,3 @@ private:
     QAction *const mShowFolderAction;
 };
 }
-

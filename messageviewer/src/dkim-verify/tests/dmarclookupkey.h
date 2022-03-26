@@ -16,4 +16,3 @@ public:
     ~DMarcLookUpKey() override;
     void lookUpDomain(const QString &domain);
 };
-

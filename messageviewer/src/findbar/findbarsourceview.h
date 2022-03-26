@@ -35,4 +35,3 @@ private:
     QPlainTextEdit *const mView;
 };
 }
-

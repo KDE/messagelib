@@ -10,8 +10,6 @@
 
 #include "autocrypt_debug.h"
 
-
-
 #include <QHash>
 
 using namespace MessageCore;

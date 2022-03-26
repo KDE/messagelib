@@ -66,4 +66,3 @@ private:
 }
 
 MESSAGECOMPOSER_EXPORT QDebug operator<<(QDebug debug, const MessageComposer::SendLaterInfo &info);
-

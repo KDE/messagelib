@@ -42,4 +42,3 @@ private:
     void testRender();
     void testRenderTree(const MimeTreeParser::MessagePart::Ptr &messagePart);
 };
-

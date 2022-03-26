@@ -19,4 +19,3 @@ public:
 private:
     KMime::Message::Ptr readAndParseMail(const QString &mailFile);
 };
-

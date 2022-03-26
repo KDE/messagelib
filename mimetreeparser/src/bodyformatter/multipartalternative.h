@@ -20,4 +20,3 @@ public:
     static const Interface::BodyPartFormatter *create();
 };
 }
-

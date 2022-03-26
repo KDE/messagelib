@@ -26,4 +26,3 @@ private Q_SLOTS:
     void test_gossipKey();
     void test_getters();
 };
-

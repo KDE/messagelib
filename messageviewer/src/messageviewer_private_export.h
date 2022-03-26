@@ -16,4 +16,3 @@
 #else /* not compiling tests */
 #define MESSAGEVIEWER_TESTS_EXPORT
 #endif
-

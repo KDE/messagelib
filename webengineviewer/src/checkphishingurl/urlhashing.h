@@ -30,4 +30,3 @@ private:
     const QUrl mUrl;
 };
 }
-

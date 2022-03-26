@@ -29,4 +29,3 @@ Q_REQUIRED_RESULT QString storageModelSelectedMessageGroup();
 void fillViewMenu(QMenu *menu, QObject *receiver);
 }
 }
-

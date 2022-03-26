@@ -15,4 +15,3 @@ public:
     explicit TemplateParserEmailRequesterTestWidget(QWidget *parent = nullptr);
     ~TemplateParserEmailRequesterTestWidget() override;
 };
-

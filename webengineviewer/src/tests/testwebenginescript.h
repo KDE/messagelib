@@ -65,4 +65,3 @@ private:
     TestScriptWidget *mTestScriptWidget;
     TestWebEngineScriptView *mTestWebEngine;
 };
-

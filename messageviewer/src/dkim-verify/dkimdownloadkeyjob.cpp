@@ -60,8 +60,7 @@ void DKIMDownloadKeyJob::setSelectorName(const QString &selectorName)
 QString DKIMDownloadKeyJob::resolvDnsValue() const
 {
     const QString name = mSelectorName + QLatin1String("._domainkey.") + mDomainName;
-    qDebug(MESSAGEVIEWER_DKIMCHECKER_LOG)
-        << "DKIMDownloadKeyJob::resolvDnsValue" << name;
+    qDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMDownloadKeyJob::resolvDnsValue" << name;
     return name;
 }
 

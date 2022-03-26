@@ -28,7 +28,8 @@
 #include <WebEngineViewer/WebHitTestResult>
 
 using namespace MessageViewer;
-template<typename Arg, typename R, typename C> struct InvokeWrapper {
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
     R *receiver;
     void (C::*memberFunction)(Arg);
     void operator()(Arg result)

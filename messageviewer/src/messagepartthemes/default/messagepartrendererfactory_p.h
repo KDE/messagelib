@@ -35,4 +35,3 @@ public:
     QString m_pluginSubdir = QStringLiteral("messageviewer/bodypartformatter");
 };
 }
-

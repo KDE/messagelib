@@ -53,4 +53,3 @@ private:
     mutable MessageComposer::KWindowPositioner *mPickerPositioner = nullptr;
 };
 }
-

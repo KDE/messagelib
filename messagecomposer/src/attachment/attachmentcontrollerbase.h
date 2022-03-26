@@ -98,4 +98,3 @@ private:
     std::unique_ptr<AttachmentControllerBasePrivate> const d;
 };
 } //
-

@@ -36,4 +36,3 @@ private:
     std::unique_ptr<AttachmentFromPublicKeyJobPrivate> const d;
 };
 } //
-

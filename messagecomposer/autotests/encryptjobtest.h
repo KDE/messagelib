@@ -35,4 +35,3 @@ private Q_SLOTS:
 private:
     void checkEncryption(MessageComposer::EncryptJob *eJob);
 };
-

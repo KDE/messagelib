@@ -72,4 +72,3 @@ protected:
     void addToCompletion(const QString &text);
 };
 }
-

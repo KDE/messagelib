@@ -40,4 +40,3 @@ private Q_SLOTS:
 private:
     void checkSignJob(MessageComposer::SignJob *sJob);
 };
-

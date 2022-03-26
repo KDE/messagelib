@@ -15,4 +15,3 @@ class AttachmentFromMimeContentJobTest : public QObject
 private Q_SLOTS:
     void testAttachment();
 };
-

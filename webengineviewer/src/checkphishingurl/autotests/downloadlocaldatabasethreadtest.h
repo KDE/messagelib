@@ -15,4 +15,3 @@ public:
     explicit DownloadLocalDatabaseThreadTest(QObject *parent = nullptr);
     ~DownloadLocalDatabaseThreadTest() override;
 };
-

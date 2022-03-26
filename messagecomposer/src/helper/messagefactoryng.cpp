@@ -8,10 +8,10 @@
 
 #include "messagefactoryng.h"
 
+#include "draftstatus/draftstatus.h"
 #include "messagefactoryforwardjob.h"
 #include "messagefactoryreplyjob.h"
 #include "settings/messagecomposersettings.h"
-#include "draftstatus/draftstatus.h"
 #include <MessageComposer/Util>
 
 #include <KCursorSaver>

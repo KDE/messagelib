@@ -16,4 +16,3 @@
 #else /* not compiling tests */
 #define TEMPLATEPARSER_TESTS_EXPORT
 #endif
-

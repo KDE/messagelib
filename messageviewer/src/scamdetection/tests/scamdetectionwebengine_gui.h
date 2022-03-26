@@ -30,4 +30,3 @@ private:
     MessageViewer::ScamDetectionWebEngine *mScamDetection;
     QWebEngineView *mWebEngineView;
 };
-

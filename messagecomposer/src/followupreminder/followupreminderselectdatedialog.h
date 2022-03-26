@@ -45,4 +45,3 @@ private:
     std::unique_ptr<FollowUpReminderSelectDateDialogPrivate> const d;
 };
 }
-

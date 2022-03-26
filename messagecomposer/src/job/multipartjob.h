@@ -34,4 +34,3 @@ private:
     Q_DECLARE_PRIVATE(MultipartJob)
 };
 }
-

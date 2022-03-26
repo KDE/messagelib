@@ -59,4 +59,3 @@ public:
 }
 
 Q_DECLARE_INTERFACE(MimeTreeParser::Interface::BodyPartFormatterPlugin, "org.kde.messageviewer.bodypartformatter/1.1")
-

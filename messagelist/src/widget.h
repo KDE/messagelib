@@ -405,4 +405,3 @@ private:
     std::unique_ptr<WidgetPrivate> const d;
 };
 } // namespace MessageList
-

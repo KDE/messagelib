@@ -16,4 +16,3 @@
 #else /* not compiling tests */
 #define MESSAGELIST_TESTS_EXPORT
 #endif
-

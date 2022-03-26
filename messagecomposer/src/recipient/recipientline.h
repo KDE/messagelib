@@ -126,4 +126,3 @@ private:
     QSharedPointer<Recipient> mData;
 };
 }
-

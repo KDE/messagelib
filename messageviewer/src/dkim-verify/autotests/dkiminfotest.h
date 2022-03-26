@@ -20,4 +20,3 @@ private Q_SLOTS:
     void shouldTestExtractDkimInfo_data();
     void shouldHaveDefaultValue();
 };
-

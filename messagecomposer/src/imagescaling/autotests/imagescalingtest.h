@@ -23,4 +23,3 @@ private Q_SLOTS:
     void shouldHaveChangeMimetype_data();
     void shouldHaveChangeMimetype();
 };
-

@@ -24,4 +24,3 @@ public:
     Q_DECLARE_PUBLIC(JobBase)
 };
 }
-

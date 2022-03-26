@@ -49,4 +49,3 @@ private:
     const QStringList mHeadersToDisplay;
 };
 }
-

@@ -408,4 +408,3 @@ protected:
 };
 } // namespace Core
 } // namespace MessageList
-

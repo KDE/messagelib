@@ -18,4 +18,3 @@ TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString getLastNameFromEmail(const QStri
 TEMPLATEPARSER_EXPORT Q_REQUIRED_RESULT QString getFirstNameFromEmail(const QString &str);
 }
 }
-

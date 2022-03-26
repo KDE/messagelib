@@ -37,4 +37,3 @@ private:
     QPushButton *const mUser3Button;
 };
 }
-

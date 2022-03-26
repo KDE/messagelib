@@ -66,7 +66,8 @@ Q_CONSTRUCTOR_FUNCTION(initLocale)
 
 namespace
 {
-template<typename String> String very_simplistic_diff(const String &a, const String &b)
+template<typename String>
+String very_simplistic_diff(const String &a, const String &b)
 {
     const QList<String> al = a.split('\n');
     const QList<String> bl = b.split('\n');

@@ -46,4 +46,3 @@ private:
     std::unique_ptr<MimeTreeModelPrivate> const d;
 };
 }
-

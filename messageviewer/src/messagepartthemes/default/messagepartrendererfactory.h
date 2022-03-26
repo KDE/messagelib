@@ -44,4 +44,3 @@ private:
     std::unique_ptr<MessagePartRendererFactoryPrivate> d;
 };
 }
-

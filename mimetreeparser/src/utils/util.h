@@ -52,4 +52,3 @@ MIMETREEPARSER_EXPORT Q_REQUIRED_RESULT QString iconNameForMimetype(const QStrin
 MIMETREEPARSER_EXPORT Q_REQUIRED_RESULT QString iconNameForContent(KMime::Content *node);
 }
 }
-

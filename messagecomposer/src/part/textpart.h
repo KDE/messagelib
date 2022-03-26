@@ -71,4 +71,3 @@ private:
     std::unique_ptr<TextPartPrivate> const d;
 };
 } // namespace MessageComposer
-

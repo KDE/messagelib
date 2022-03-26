@@ -30,4 +30,3 @@ public:
     Q_REQUIRED_RESULT QString endBodyHtml() const;
 };
 }
-

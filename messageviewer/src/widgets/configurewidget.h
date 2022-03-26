@@ -52,4 +52,3 @@ private:
     std::unique_ptr<ConfigureWidgetPrivate> const d;
 };
 }
-

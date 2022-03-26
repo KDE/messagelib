@@ -48,7 +48,6 @@
 #include <Gravatar/GravatarCache>
 #include <gravatar/gravatarsettings.h>
 
-
 #include <KMbox/MBox>
 
 #include <KCharsets>

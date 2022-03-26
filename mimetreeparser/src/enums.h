@@ -32,4 +32,3 @@ typedef enum {
     KMMsgSignatureProblematic = 'X'
 } KMMsgSignatureState;
 }
-

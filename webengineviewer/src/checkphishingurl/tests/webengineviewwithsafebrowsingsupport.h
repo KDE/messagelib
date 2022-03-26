@@ -29,4 +29,3 @@ private:
     QPlainTextEdit *mDebug = nullptr;
     WebEngineViewer::WebEngineView *pageView = nullptr;
 };
-

@@ -47,4 +47,3 @@ private:
     Q_DECLARE_PRIVATE(ProtectedHeadersJob)
 };
 }
-

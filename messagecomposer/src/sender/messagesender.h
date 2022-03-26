@@ -64,4 +64,3 @@ protected:
 
 inline MessageSender::~MessageSender() = default;
 }
-

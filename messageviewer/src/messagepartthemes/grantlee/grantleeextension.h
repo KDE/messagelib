@@ -51,4 +51,3 @@ public:
 }
 
 Q_DECLARE_METATYPE(MessageViewer::GrantleeCallback)
-

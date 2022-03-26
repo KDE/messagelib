@@ -96,4 +96,3 @@ private Q_SLOTS:
 };
 } // namespace Utils
 } // namespace MessageList
-

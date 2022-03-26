@@ -36,4 +36,3 @@ public:
 private:
     WebEngineViewer::WebEnginePage *mEnginePage;
 };
-

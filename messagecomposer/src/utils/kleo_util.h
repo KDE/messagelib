@@ -63,4 +63,3 @@ static inline bool containsOpenPGP(unsigned int f)
 {
     return f & (Kleo::OpenPGPMIMEFormat | Kleo::InlineOpenPGPFormat);
 }
-

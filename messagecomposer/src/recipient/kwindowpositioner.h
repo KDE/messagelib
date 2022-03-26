@@ -28,4 +28,3 @@ private:
     const Mode mMode = Bottom;
 };
 }
-

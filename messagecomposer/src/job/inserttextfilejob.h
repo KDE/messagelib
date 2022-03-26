@@ -45,4 +45,3 @@ private:
     std::unique_ptr<InsertTextFileJobPrivate> const d;
 };
 }
-

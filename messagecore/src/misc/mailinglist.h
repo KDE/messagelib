@@ -198,4 +198,3 @@ private:
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(MessageCore::MailingList::Features)
 Q_DECLARE_METATYPE(MessageCore::MailingList::Features)
-

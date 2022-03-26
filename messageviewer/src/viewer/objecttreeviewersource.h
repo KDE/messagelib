@@ -44,4 +44,3 @@ private:
     ViewerPrivate *const mViewer;
 };
 }
-

@@ -43,4 +43,3 @@ private:
     QVector<RemoteContentInfo> mRemoveContentInfo;
 };
 }
-

@@ -44,4 +44,3 @@ KMime::Message::Ptr readAndParseMail(const QString &mailFile);
 void compareFile(const QString &outFile, const QString &referenceFile);
 }
 }
-

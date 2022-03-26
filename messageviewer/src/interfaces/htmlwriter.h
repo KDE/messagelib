@@ -83,4 +83,3 @@ private:
     mutable std::unique_ptr<QTextStream> m_stream;
 };
 }
-

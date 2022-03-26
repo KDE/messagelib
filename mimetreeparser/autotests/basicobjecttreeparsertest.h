@@ -38,4 +38,3 @@ private Q_SLOTS:
     void testHTMLasText();
     void testHTMLOnly();
 };
-

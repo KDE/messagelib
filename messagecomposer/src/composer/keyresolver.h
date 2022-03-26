@@ -309,4 +309,3 @@ private:
     const int mSigningChainCertNearExpiryWarningThreshold;
 };
 } // namespace Kleo
-

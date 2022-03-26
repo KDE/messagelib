@@ -52,4 +52,3 @@ private Q_SLOTS:
     void test_makeValidHtml_data();
     void test_makeValidHtml();
 };
-

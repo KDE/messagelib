@@ -75,7 +75,8 @@ public:
      * With this attribute, instead, gcc doesn't complain at all and the inner comparisons
      * *seem* to be inlined correctly (there is no sign of them in the symbol table).
      */
-    template<class ItemComparator, bool bAscending> int GCC_DONT_INLINE_THIS insertChildItem(Model *model, Item *child)
+    template<class ItemComparator, bool bAscending>
+    int GCC_DONT_INLINE_THIS insertChildItem(Model *model, Item *child)
     {
         if (!mChildItems) {
             return q->appendChildItem(model, child);
@@ -173,7 +174,8 @@ public:
      * Returns false if the item is already in the right position
      * and no re-sorting is needed.
      */
-    template<class ItemComparator, bool bAscending> bool childItemNeedsReSorting(Item *child)
+    template<class ItemComparator, bool bAscending>
+    bool childItemNeedsReSorting(Item *child)
     {
         if (!mChildItems) {
             return false; // not my child! (ugh... should assert ?)
@@ -490,4 +492,3 @@ public:
 };
 } // namespace Core
 } // namespace MessageList
-

@@ -42,4 +42,3 @@ private:
     QBuffer m_buffer;
 };
 }
-

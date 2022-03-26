@@ -11,7 +11,6 @@
 
 using namespace MessageComposer;
 
-
 class DraftStatusTest : public QObject
 {
     Q_OBJECT
@@ -34,7 +33,6 @@ private Q_SLOTS:
             QCOMPARE(formatState.isDefined(), false);
             QCOMPARE(formatState.cryptoMessageFormatState(), Kleo::AutoFormat);
         }
-
     }
 
     void setRemoveState()
@@ -85,7 +83,6 @@ private Q_SLOTS:
         QCOMPARE(signState.isDefined(), false);
         QCOMPARE(formatState.isDefined(), false);
     }
-
 };
 QTEST_MAIN(DraftStatusTest)
 #include "draftstatustest.moc"

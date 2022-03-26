@@ -110,4 +110,3 @@ private:
     std::unique_ptr<InfoPartPrivate> const d;
 };
 } // namespace MessageComposer
-

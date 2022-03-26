@@ -71,4 +71,3 @@ Q_DECLARE_METATYPE(WebEngineViewer::UpdateDataBaseInfo::CompressionType)
 Q_DECLARE_TYPEINFO(WebEngineViewer::Addition, Q_MOVABLE_TYPE);
 Q_DECLARE_TYPEINFO(WebEngineViewer::Removal, Q_MOVABLE_TYPE);
 Q_DECLARE_TYPEINFO(WebEngineViewer::RiceDeltaEncoding, Q_MOVABLE_TYPE);
-

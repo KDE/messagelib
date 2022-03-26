@@ -11,7 +11,8 @@
 
 namespace MessageViewer
 {
-template<typename T> struct DeleteAndSetToZero {
+template<typename T>
+struct DeleteAndSetToZero {
     void operator()(const T *&t)
     {
         delete t;
@@ -19,4 +20,3 @@ template<typename T> struct DeleteAndSetToZero {
     }
 };
 }
-

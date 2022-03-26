@@ -25,4 +25,3 @@ private:
     QWebEnginePage *const mTargetPage;
 };
 }
-

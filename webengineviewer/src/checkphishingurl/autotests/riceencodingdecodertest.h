@@ -22,4 +22,3 @@ private Q_SLOTS:
     void shouldDecodeRiceHashes_data();
     void shouldDecodeRiceHashes();
 };
-

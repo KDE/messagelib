@@ -50,4 +50,3 @@ private:
     ProcessResult *const mProcessResult;
 };
 }
-

@@ -27,4 +27,3 @@ private:
     const Akonadi::Item::Id mItem;
 };
 }
-

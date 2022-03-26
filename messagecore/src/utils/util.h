@@ -29,4 +29,3 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT const KIdentityManagement::Identity &
 identityForMessage(KMime::Message *msg, const KIdentityManagement::IdentityManager *const identMgr, uint folderIdentityId);
 }
 }
-

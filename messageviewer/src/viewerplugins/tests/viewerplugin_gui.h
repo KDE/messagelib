@@ -22,4 +22,3 @@ public:
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
 };
-

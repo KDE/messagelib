@@ -20,4 +20,3 @@ private Q_SLOTS:
     void shouldCreateRequest_data();
     void shouldCreateRequest();
 };
-

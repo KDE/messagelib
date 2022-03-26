@@ -631,4 +631,3 @@ private:
 }; // class View
 } // namespace Core
 } // namespace MessageList
-

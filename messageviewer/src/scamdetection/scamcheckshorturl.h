@@ -36,4 +36,3 @@ private:
     static QStringList sSupportedServices;
 };
 }
-

@@ -29,4 +29,3 @@ private Q_SLOTS:
     void testMessagePartsOfMailHeader_data();
     void testMessagePartsOfMailHeader();
 };
-

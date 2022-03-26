@@ -33,4 +33,3 @@ private Q_SLOTS:
     void checkRiceDeltaEncoding_data();
     void checkRiceDeltaEncoding();
 };
-

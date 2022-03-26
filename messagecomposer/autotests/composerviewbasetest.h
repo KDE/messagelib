@@ -32,9 +32,9 @@ private Q_SLOTS:
     void testGenerateCryptoMessagesAutocryptSMime();
     void testAutoSaveMessage();
     void testAutocryptKey();
+
 private:
     KIdentityManagement::IdentityManager *mIdentMan = nullptr;
     KIdentityManagement::IdentityCombo *mIdentCombo = nullptr;
     QDir autocryptDir;
 };
-

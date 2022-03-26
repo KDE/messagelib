@@ -42,4 +42,3 @@ private:
     QTimer *mConfigSyncTimer = nullptr;
 };
 }
-

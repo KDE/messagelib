@@ -31,4 +31,3 @@ private:
     QStringList mServerList;
 };
 }
-

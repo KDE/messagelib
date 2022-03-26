@@ -15,4 +15,3 @@ public:
     explicit DKIMManagerTest(QObject *parent = nullptr);
     ~DKIMManagerTest() override = default;
 };
-

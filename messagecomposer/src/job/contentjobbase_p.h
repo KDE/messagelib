@@ -31,4 +31,3 @@ public:
     Q_DECLARE_PUBLIC(ContentJobBase)
 };
 }
-

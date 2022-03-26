@@ -15,4 +15,3 @@ public:
     explicit ImageScalingTestWidget(QWidget *parent = nullptr);
     ~ImageScalingTestWidget() override;
 };
-

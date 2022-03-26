@@ -41,4 +41,3 @@ private:
     std::unique_ptr<AttachmentTemporaryFilesDirsPrivate> const d;
 };
 }
-

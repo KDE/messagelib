@@ -21,4 +21,3 @@ private:
     QDnsLookup *mDnsLookup = nullptr;
     QString mAddress;
 };
-

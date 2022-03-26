@@ -133,4 +133,3 @@ private:
     const HeaderStylePlugin *mHeaderPlugin = nullptr;
 };
 }
-

@@ -24,4 +24,3 @@ KMime::Content *findTypeInDirectChilds(KMime::Content *content, const QByteArray
 
 MessagePart::Ptr toplevelTextNode(MessagePart::Ptr messageTree);
 }
-

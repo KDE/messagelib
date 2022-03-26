@@ -53,4 +53,3 @@ public:
     static QVector<quint32> decodeRiceHashesDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
 };
 }
-

@@ -39,4 +39,3 @@ private Q_SLOTS:
     void shouldReturnOneAnchor();
     void shouldReturnTwoAnchor();
 };
-

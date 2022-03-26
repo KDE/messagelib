@@ -102,4 +102,3 @@ private:
     std::unique_ptr<EmailAddressResolveJobPrivate> const d;
 };
 }
-

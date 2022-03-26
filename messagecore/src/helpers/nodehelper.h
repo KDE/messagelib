@@ -44,4 +44,3 @@ MESSAGECORE_EXPORT KMime::Content *next(KMime::Content *node, bool allowChildren
 MESSAGECORE_EXPORT KMime::Content *firstChild(const KMime::Content *node);
 }
 }
-

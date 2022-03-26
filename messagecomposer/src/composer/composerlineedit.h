@@ -32,4 +32,3 @@ protected:
     void keyPressEvent(QKeyEvent *) override;
 };
 }
-

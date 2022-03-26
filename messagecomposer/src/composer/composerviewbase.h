@@ -387,4 +387,3 @@ private:
     friend ComposerViewBaseTest;
 };
 } // namespace
-

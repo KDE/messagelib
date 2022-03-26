@@ -30,4 +30,3 @@ protected:
     virtual QString getErrorString(Error error, const QString &desc) const = 0;
 };
 }
-

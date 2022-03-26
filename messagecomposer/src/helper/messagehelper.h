@@ -55,4 +55,3 @@ MESSAGECOMPOSER_EXPORT KMime::Types::AddrSpecList extractAddrSpecs(const KMime::
     attachments / multiple body parts. */
 void setAutomaticFields(const KMime::Message::Ptr &msg, bool isMultipart = false);
 }
-

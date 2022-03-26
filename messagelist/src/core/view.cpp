@@ -108,7 +108,7 @@ View::View(Widget *pParent)
 
     d->mScroller = QScroller::scroller(viewport());
     QScrollerProperties scrollerProp;
-    scrollerProp.setScrollMetric(QScrollerProperties::AcceleratingFlickMaximumTime, 0.2);  //QTBUG-88249
+    scrollerProp.setScrollMetric(QScrollerProperties::AcceleratingFlickMaximumTime, 0.2); // QTBUG-88249
     d->mScroller->setScrollerProperties(scrollerProp);
     d->mScroller->grabGesture(viewport());
 
@@ -2622,14 +2622,14 @@ void View::ViewPrivate::onPressed(QMouseEvent *e)
                     break;
                 case Theme::ContentItem::ActionItemStateIcon:
                     q->changeMessageStatus(static_cast<MessageItem *>(it),
-                                        it->status().isToAct() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusToAct(),
-                                        it->status().isToAct() ? Akonadi::MessageStatus::statusToAct() : Akonadi::MessageStatus());
+                                           it->status().isToAct() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusToAct(),
+                                           it->status().isToAct() ? Akonadi::MessageStatus::statusToAct() : Akonadi::MessageStatus());
                     return; // don't select the item
                     break;
                 case Theme::ContentItem::ImportantStateIcon:
                     q->changeMessageStatus(static_cast<MessageItem *>(it),
-                                        it->status().isImportant() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusImportant(),
-                                        it->status().isImportant() ? Akonadi::MessageStatus::statusImportant() : Akonadi::MessageStatus());
+                                           it->status().isImportant() ? Akonadi::MessageStatus() : Akonadi::MessageStatus::statusImportant(),
+                                           it->status().isImportant() ? Akonadi::MessageStatus::statusImportant() : Akonadi::MessageStatus());
                     return; // don't select the item
                 case Theme::ContentItem::ReadStateIcon:
                     q->changeMessageStatusRead(static_cast<MessageItem *>(it), it->status().isRead() ? false : true);
@@ -2637,21 +2637,21 @@ void View::ViewPrivate::onPressed(QMouseEvent *e)
                     break;
                 case Theme::ContentItem::SpamHamStateIcon:
                     q->changeMessageStatus(static_cast<MessageItem *>(it),
-                                        it->status().isSpam()
-                                            ? Akonadi::MessageStatus()
-                                            : (it->status().isHam() ? Akonadi::MessageStatus::statusSpam() : Akonadi::MessageStatus::statusHam()),
-                                        it->status().isSpam() ? Akonadi::MessageStatus::statusSpam()
-                                                              : (it->status().isHam() ? Akonadi::MessageStatus::statusHam() : Akonadi::MessageStatus()));
+                                           it->status().isSpam()
+                                               ? Akonadi::MessageStatus()
+                                               : (it->status().isHam() ? Akonadi::MessageStatus::statusSpam() : Akonadi::MessageStatus::statusHam()),
+                                           it->status().isSpam() ? Akonadi::MessageStatus::statusSpam()
+                                                                 : (it->status().isHam() ? Akonadi::MessageStatus::statusHam() : Akonadi::MessageStatus()));
                     return; // don't select the item
                     break;
                 case Theme::ContentItem::WatchedIgnoredStateIcon:
                     q->changeMessageStatus(static_cast<MessageItem *>(it),
-                                        it->status().isIgnored()
-                                            ? Akonadi::MessageStatus()
-                                            : (it->status().isWatched() ? Akonadi::MessageStatus::statusIgnored() : Akonadi::MessageStatus::statusWatched()),
-                                        it->status().isIgnored()
-                                            ? Akonadi::MessageStatus::statusIgnored()
-                                            : (it->status().isWatched() ? Akonadi::MessageStatus::statusWatched() : Akonadi::MessageStatus()));
+                                           it->status().isIgnored()
+                                               ? Akonadi::MessageStatus()
+                                               : (it->status().isWatched() ? Akonadi::MessageStatus::statusIgnored() : Akonadi::MessageStatus::statusWatched()),
+                                           it->status().isIgnored()
+                                               ? Akonadi::MessageStatus::statusIgnored()
+                                               : (it->status().isWatched() ? Akonadi::MessageStatus::statusWatched() : Akonadi::MessageStatus()));
                     return; // don't select the item
                     break;
                 default:
@@ -2758,9 +2758,11 @@ void View::ViewPrivate::tapTriggered(QTapGesture *tap)
         }
 
         // simulate a mousePressEvent, to allow QTreeView to select the items
-        QMouseEvent fakeMousePress(QEvent::MouseButtonPress, tap->position(),
-                                    mTapAndHoldActive ? Qt::RightButton : Qt::LeftButton,
-                                    mTapAndHoldActive ? Qt::RightButton : Qt::LeftButton, Qt::NoModifier);
+        QMouseEvent fakeMousePress(QEvent::MouseButtonPress,
+                                   tap->position(),
+                                   mTapAndHoldActive ? Qt::RightButton : Qt::LeftButton,
+                                   mTapAndHoldActive ? Qt::RightButton : Qt::LeftButton,
+                                   Qt::NoModifier);
         onPressed(&fakeMousePress);
         mTapAndHoldActive = false;
     }
@@ -2777,7 +2779,6 @@ void View::ViewPrivate::tapTriggered(QTapGesture *tap)
 void View::ViewPrivate::tapAndHoldTriggered(QTapAndHoldGesture *tap)
 {
     if (tap->state() == Qt::GestureFinished) {
-
         // with touch you can touch multiple widgets at the same time, but only one widget will get a mousePressEvent.
         // we use this to select the right window
         if (!mMousePressed) {
@@ -2813,7 +2814,6 @@ void View::ViewPrivate::tapAndHoldTriggered(QTapAndHoldGesture *tap)
 void View::ViewPrivate::twoFingerTapTriggered(KTwoFingerTap *tap)
 {
     if (tap->state() == Qt::GestureFinished) {
-
         if (mTapAndHoldActive) {
             return;
         }

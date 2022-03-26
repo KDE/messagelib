@@ -717,4 +717,3 @@ public:
     RemoteContentMenu *mRemoteContentMenu = nullptr;
 };
 }
-

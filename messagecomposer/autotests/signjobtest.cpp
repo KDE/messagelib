@@ -316,17 +316,18 @@ void SignJobTest::testProtectedHeadersSkipLong()
 
     KMime::Message skeletonMessage;
     auto face = new KMime::Headers::Generic("Face");
-    face->from7BitString("iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEX9/ftIS5IsNImXjKgc\n"
- " I3Dh29sdnA7JAAAB60lEQVR4nI2US5ajMAxFXeF4HtlhXlZ7AdCCBWCcORTx/rfSkgyEyqg14uii\n"
- " pw8SpnzaRmrm/8yWD0dZqn80G5WlUOVEnsCPNKp6D2w98JsWHcJuiOiCPnXGNPDIU/U7BuKPGe7G\n"
- " fAW/rNPhl+A4bqkC6IZDiwOwXb0CnKBtpjMJhgZoB96bXl5Gtftfr+AHJ4LlhRm8VOvmJlCvwM3U\n"
- " d41f9maX1dOADG4cQe1lDD3RAzVH+DXMhhUTfjOIkWexvAHRkCSiyZmuYBWlGpGfV0CihDyrW8yh\n"
- " bOYDaFU5d+8AU8YXqtQNEz5P92KskWFq54h/ONWs4OtpbDoiGCzmNatc05rmBE6AtQpKsdsOfoLD\n"
- " UBgci6JAqgqI8bI2F+AwjleAew6OwFYSWA8CVgFdrQqfCnIW8MKAdexscwWTbOML8Q0myV4y8218\n"
- " 7FIKomwvf5bO0ph+gZFbZCD7q2DZAc7nyQxv4FSLTcHjkLo5KS/Ox41lPHIExyEZRb4lP5zgR7c8\n"
- " BV822d6UTiAjiQnGVfyyIZfpYmZg+gpiTvHsg4EzHOIVsMC9lsvP0He2B+qHmHOO6fsAAehpqSc+\n"
- " yBNIF1wUgOXzCJDVBIB0Icfd2vKAN2jAubRfOvt3INsO+3XvdgGBgAH/OepfoIJ/RyuNKjhmbCAA\n"
- " AAAASUVORK5CYII=");
+    face->from7BitString(
+        "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEX9/ftIS5IsNImXjKgc\n"
+        " I3Dh29sdnA7JAAAB60lEQVR4nI2US5ajMAxFXeF4HtlhXlZ7AdCCBWCcORTx/rfSkgyEyqg14uii\n"
+        " pw8SpnzaRmrm/8yWD0dZqn80G5WlUOVEnsCPNKp6D2w98JsWHcJuiOiCPnXGNPDIU/U7BuKPGe7G\n"
+        " fAW/rNPhl+A4bqkC6IZDiwOwXb0CnKBtpjMJhgZoB96bXl5Gtftfr+AHJ4LlhRm8VOvmJlCvwM3U\n"
+        " d41f9maX1dOADG4cQe1lDD3RAzVH+DXMhhUTfjOIkWexvAHRkCSiyZmuYBWlGpGfV0CihDyrW8yh\n"
+        " bOYDaFU5d+8AU8YXqtQNEz5P92KskWFq54h/ONWs4OtpbDoiGCzmNatc05rmBE6AtQpKsdsOfoLD\n"
+        " UBgci6JAqgqI8bI2F+AwjleAew6OwFYSWA8CVgFdrQqfCnIW8MKAdexscwWTbOML8Q0myV4y8218\n"
+        " 7FIKomwvf5bO0ph+gZFbZCD7q2DZAc7nyQxv4FSLTcHjkLo5KS/Ox41lPHIExyEZRb4lP5zgR7c8\n"
+        " BV822d6UTiAjiQnGVfyyIZfpYmZg+gpiTvHsg4EzHOIVsMC9lsvP0He2B+qHmHOO6fsAAehpqSc+\n"
+        " yBNIF1wUgOXzCJDVBIB0Icfd2vKAN2jAubRfOvt3INsO+3XvdgGBgAH/OepfoIJ/RyuNKjhmbCAA\n"
+        " AAAASUVORK5CYII=");
     skeletonMessage.contentType(true)->setMimeType("foo/bla");
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");

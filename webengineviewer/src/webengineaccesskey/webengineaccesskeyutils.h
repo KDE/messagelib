@@ -14,4 +14,3 @@ namespace WebEngineAccessKeyUtils
 Q_REQUIRED_RESULT QString script();
 }
 }
-

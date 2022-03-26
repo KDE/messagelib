@@ -19,4 +19,3 @@ private Q_SLOTS:
     void shouldExtractHtml_data();
     void shouldExtractHtml();
 };
-

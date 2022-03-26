@@ -85,9 +85,9 @@
 #include <Akonadi/MessageParts>
 #include <Akonadi/MessageStatus>
 
-#include <MessageCore/AutocryptUtils>
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
+#include <MessageCore/AutocryptUtils>
 
 // own includes
 #include "csshelper.h"
@@ -159,7 +159,8 @@ using namespace MessageCore;
 
 static QAtomicInt _k_attributeInitialized;
 
-template<typename Arg, typename R, typename C> struct InvokeWrapper {
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
     R *receiver;
     void (C::*memberFun)(Arg);
     void operator()(Arg result)
@@ -168,7 +169,8 @@ template<typename Arg, typename R, typename C> struct InvokeWrapper {
     }
 };
 
-template<typename Arg, typename R, typename C> InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
+template<typename Arg, typename R, typename C>
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 {
     InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
     return wrapper;

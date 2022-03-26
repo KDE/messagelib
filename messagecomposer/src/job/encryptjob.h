@@ -61,4 +61,3 @@ private:
     Q_DECLARE_PRIVATE(EncryptJob)
 };
 }
-

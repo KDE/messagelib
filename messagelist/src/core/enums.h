@@ -51,4 +51,3 @@ enum ExistingSelectionBehaviour {
 };
 }
 }
-

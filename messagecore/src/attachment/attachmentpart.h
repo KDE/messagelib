@@ -199,4 +199,3 @@ MESSAGECORE_EXPORT uint qHash(const QSharedPointer<MessageCore::AttachmentPart> 
 }
 
 Q_DECLARE_METATYPE(MessageCore::AttachmentPart::Ptr)
-

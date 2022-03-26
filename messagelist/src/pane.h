@@ -443,4 +443,3 @@ private:
     std::unique_ptr<PanePrivate> const d;
 };
 } // namespace MessageList
-

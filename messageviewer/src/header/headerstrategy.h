@@ -45,4 +45,3 @@ public:
     static QStringList stringList(const char *const headers[], int numHeaders);
 };
 }
-

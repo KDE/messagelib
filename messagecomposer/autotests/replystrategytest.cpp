@@ -59,7 +59,8 @@ static KMime::Message::Ptr basicMessage(const QString &fromAddress, const QStrin
         return;                                                                                                                                                \
     }
 
-template<class T> bool compareAddresses(const T *actual, const QStringList &expected)
+template<class T>
+bool compareAddresses(const T *actual, const QStringList &expected)
 {
     auto addresses{actual->addresses()};
     if (addresses.length() != expected.length()) {

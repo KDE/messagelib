@@ -42,4 +42,3 @@ private Q_SLOTS:
     void scamtest_data();
     void scamtest();
 };
-

@@ -44,4 +44,3 @@ private:
     Akonadi::Item::Id mCurrentItemId = -1;
 };
 }
-

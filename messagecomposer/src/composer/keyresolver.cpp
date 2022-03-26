@@ -422,7 +422,8 @@ public:
 
     void operator()(Item &item);
 
-    template<typename Container> void process(Container &c)
+    template<typename Container>
+    void process(Container &c)
     {
         *this = std::for_each(c.begin(), c.end(), *this);
     }
@@ -435,8 +436,7 @@ public:
     make_int_accessor(NoKey) make_int_accessor(NeverEncrypt) make_int_accessor(UnknownPreference) make_int_accessor(AlwaysEncrypt)
         make_int_accessor(AlwaysEncryptIfPossible) make_int_accessor(AlwaysAskForEncryption) make_int_accessor(AskWheneverPossible) make_int_accessor(Total)
 #undef make_int_accessor
-private:
-    EncryptionPreference mDefaultPreference;
+            private : EncryptionPreference mDefaultPreference;
     unsigned int mTotal = 0;
     unsigned int mNoKey = 0;
     unsigned int mNeverEncrypt = 0;
@@ -543,15 +543,15 @@ void EncryptionFormatPreferenceCounter::operator()(const Kleo::KeyResolver::Item
 {
     if (item.format & (Kleo::InlineOpenPGPFormat | Kleo::OpenPGPMIMEFormat)
         && std::any_of(item.keys.begin(),
-                        item.keys.end(),
-                        ValidTrustedOpenPGPEncryptionKey)) { // -= trusted?
+                       item.keys.end(),
+                       ValidTrustedOpenPGPEncryptionKey)) { // -= trusted?
         CASE(OpenPGPMIME);
         CASE(InlineOpenPGP);
     }
     if (item.format & (Kleo::SMIMEFormat | Kleo::SMIMEOpaqueFormat)
         && std::any_of(item.keys.begin(),
-                        item.keys.end(),
-                        ValidTrustedSMIMEEncryptionKey)) { // -= trusted?
+                       item.keys.end(),
+                       ValidTrustedSMIMEEncryptionKey)) { // -= trusted?
         CASE(SMIME);
         CASE(SMIMEOpaque);
     }
@@ -1495,8 +1495,7 @@ void Kleo::KeyResolver::dump() const
 
 Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypted)
 {
-    const bool showKeysForApproval = showApprovalDialog()
-        || std::any_of(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(), ApprovalNeeded)
+    const bool showKeysForApproval = showApprovalDialog() || std::any_of(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(), ApprovalNeeded)
         || std::any_of(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(), ApprovalNeeded);
 
     if (!showKeysForApproval) {
@@ -1700,7 +1699,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
         if (!keys.empty()) {
             // Check if all of the keys are trusted and valid encryption keys
             if (std::any_of(keys.begin(), keys.end(),
-                             NotValidTrustedEncryptionKey)) { // -= trusted?
+                            NotValidTrustedEncryptionKey)) { // -= trusted?
                 // not ok, let the user select: this is not conditional on !quiet,
                 // since it's a bug in the configuration and the user should be
                 // notified about it as early as possible:

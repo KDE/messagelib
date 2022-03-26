@@ -20,4 +20,3 @@ private Q_SLOTS:
     void shouldTestMail_data();
     void initTestCase();
 };
-

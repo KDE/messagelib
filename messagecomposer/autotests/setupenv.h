@@ -61,4 +61,3 @@ void populateKeyring(const QString &gnupgHome, const GpgME::Key &key);
 
 }
 }
-

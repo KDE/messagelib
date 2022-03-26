@@ -31,4 +31,3 @@ private:
     DKIMManagerKeyWidget *const mManagerWidget;
 };
 }
-

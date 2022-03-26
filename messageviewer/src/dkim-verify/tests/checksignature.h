@@ -21,4 +21,3 @@ private:
     void slotResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     QCA::Initializer *mQcaInitializer = nullptr;
 };
-

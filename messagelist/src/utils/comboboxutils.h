@@ -42,4 +42,3 @@ void setIntegerOptionComboValue(QComboBox *combo, int value);
 } // namespace ComboBoxUtils
 } // namespace Utils
 } // namespace MessageList
-

@@ -17,4 +17,3 @@ namespace FollowUpReminder
 Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT bool isAvailableAndEnabled();
 }
 }
-

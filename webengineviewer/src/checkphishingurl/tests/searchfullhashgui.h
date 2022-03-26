@@ -27,4 +27,3 @@ private:
     QPlainTextEdit *mJson;
     QPlainTextEdit *mResult;
 };
-

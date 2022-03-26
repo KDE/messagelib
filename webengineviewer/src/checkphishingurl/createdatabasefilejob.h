@@ -35,4 +35,3 @@ private:
     std::unique_ptr<CreateDatabaseFileJobPrivate> const d;
 };
 }
-

@@ -15,4 +15,3 @@ public:
     explicit TemplateConfigureTestWidget(QWidget *parent = nullptr);
     ~TemplateConfigureTestWidget() override;
 };
-

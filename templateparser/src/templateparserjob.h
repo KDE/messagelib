@@ -346,4 +346,3 @@ private:
     std::unique_ptr<TemplateParserJobPrivate> d;
 };
 }
-

@@ -40,7 +40,6 @@
 #include <QComboBox>
 #include <QMenu>
 
-
 #include <Akonadi/Collection>
 #include <Akonadi/MessageStatus>
 #include <chrono>

@@ -32,4 +32,3 @@ private:
     KPIMTextEdit::RichTextEditorWidget *const mDetails;
 };
 }
-

@@ -77,4 +77,3 @@ private:
     std::unique_ptr<PluginEditorConvertTextInterfacePrivate> const d;
 };
 }
-

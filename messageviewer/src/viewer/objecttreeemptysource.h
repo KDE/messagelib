@@ -54,4 +54,3 @@ private:
     std::unique_ptr<EmptySourcePrivate> const d;
 };
 }
-

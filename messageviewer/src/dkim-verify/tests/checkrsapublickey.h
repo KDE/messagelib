@@ -14,4 +14,3 @@ class CheckRSAPublicKey : public QObject
 public:
     explicit CheckRSAPublicKey(QObject *parent = nullptr);
 };
-

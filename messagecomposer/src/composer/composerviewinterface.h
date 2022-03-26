@@ -41,4 +41,3 @@ private:
     ComposerViewBase *const mComposerView;
 };
 }
-

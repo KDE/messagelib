@@ -37,4 +37,3 @@ private:
     bool mUseRelaxedParsing = false;
 };
 }
-

@@ -15,4 +15,3 @@ public:
     explicit LocalDataBaseManagerTest(QObject *parent = nullptr);
     ~LocalDataBaseManagerTest() override;
 };
-

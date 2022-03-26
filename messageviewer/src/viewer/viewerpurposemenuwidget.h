@@ -24,4 +24,3 @@ private:
     MailWebEngineView *mViewer = nullptr;
 };
 }
-

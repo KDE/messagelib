@@ -57,4 +57,3 @@ private:
     Q_REQUIRED_RESULT KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
     KIdentityManagement::IdentityManager *mIdentMan = nullptr;
 };
-

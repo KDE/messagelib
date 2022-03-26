@@ -28,4 +28,3 @@ private:
     QPushButton *const mPreviousMessage;
 };
 }
-

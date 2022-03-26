@@ -53,4 +53,3 @@ private:
     std::unique_ptr<FollowupReminderCreateJobPrivate> const d;
 };
 }
-

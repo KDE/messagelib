@@ -26,4 +26,3 @@ private:
     GrantleeTheme::Theme mDefaultTheme;
 };
 }
-

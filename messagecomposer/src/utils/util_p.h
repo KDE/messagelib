@@ -55,4 +55,3 @@ bool makeMultiMime(Kleo::CryptoMessageFormat f, bool sign);
 void addSendReplyForwardAction(const KMime::Message::Ptr &message, MailTransport::MessageQueueJob *qjob);
 }
 }
-

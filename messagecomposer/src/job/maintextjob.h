@@ -35,4 +35,3 @@ private:
     Q_DECLARE_PRIVATE(MainTextJob)
 };
 } // namespace MessageComposer
-

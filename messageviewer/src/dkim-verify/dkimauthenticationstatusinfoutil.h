@@ -43,4 +43,3 @@ MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString domainName_p();
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString regexMatchO(const QString &regularExpressionStr);
 }
 }
-

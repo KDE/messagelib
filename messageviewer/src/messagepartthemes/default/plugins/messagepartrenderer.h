@@ -20,4 +20,3 @@ public:
     bool render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const override;
 };
 }
-

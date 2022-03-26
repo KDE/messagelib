@@ -28,4 +28,3 @@ private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
     int mNumber;
 };
-

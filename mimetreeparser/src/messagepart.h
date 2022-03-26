@@ -447,4 +447,3 @@ protected:
     friend EncryptedMessagePart;
 };
 }
-

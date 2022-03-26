@@ -411,4 +411,3 @@ protected:
     ViewerPrivate *const d_ptr;
 };
 }
-

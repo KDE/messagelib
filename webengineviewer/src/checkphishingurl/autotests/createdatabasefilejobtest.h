@@ -28,4 +28,3 @@ private Q_SLOTS:
     void shouldRemoveElementInDataBase();
     void shouldRemoveElementInDataBase_data();
 };
-

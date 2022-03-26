@@ -16,7 +16,6 @@
 #include "plugins/messagepartrenderer.h"
 #include "plugins/textmessagepartrenderer.h"
 
-
 #include <KPluginMetaData>
 #include <QJsonArray>
 #include <QMimeDatabase>

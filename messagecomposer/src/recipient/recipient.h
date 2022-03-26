@@ -63,4 +63,3 @@ private:
     std::unique_ptr<RecipientPrivate> const d;
 };
 }
-

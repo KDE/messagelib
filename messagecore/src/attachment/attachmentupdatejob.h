@@ -33,4 +33,3 @@ private:
     std::unique_ptr<AttachmentUpdateJobPrivate> const d;
 };
 }
-

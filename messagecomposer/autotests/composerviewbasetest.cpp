@@ -12,13 +12,13 @@
 #include <MessageComposer/Composer>
 #include <MessageComposer/ComposerViewBase>
 #include <MessageComposer/MessageComposerSettings>
-#include <MessageComposer/RichTextComposerNg>
 #include <MessageComposer/RecipientsEditor>
+#include <MessageComposer/RichTextComposerNg>
 
 #include <MessageCore/NodeHelper>
 
-#include <MimeTreeParser/SimpleObjectTreeSource>
 #include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/SimpleObjectTreeSource>
 
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityCombo>
@@ -100,7 +100,6 @@ void ComposerViewBaseTest::shouldHaveDefaultValue()
     QVERIFY(composerViewBase.subject().isEmpty());
     QCOMPARE(composerViewBase.autoSaveInterval(), 60000);
 }
-
 
 void ComposerViewBaseTest::testAutoSaveMessage()
 {
@@ -223,7 +222,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
 
     if (encrypt) {
         QCOMPARE(nh->encryptionState(msg.data()), MimeTreeParser::KMMsgFullyEncrypted);
-        const auto extra =  nh->extraContents(msg.data());
+        const auto extra = nh->extraContents(msg.data());
         QCOMPARE(extra.size(), 1);
         content = extra.first();
     } else {
@@ -344,7 +343,7 @@ void ComposerViewBaseTest::testAutocryptKey()
     KMime::Content *content = msg.data();
 
     QCOMPARE(nh->encryptionState(msg.data()), MimeTreeParser::KMMsgFullyEncrypted);
-    const auto extra =  nh->extraContents(msg.data());
+    const auto extra = nh->extraContents(msg.data());
     QCOMPARE(extra.size(), 1);
     content = extra.first();
 

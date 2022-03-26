@@ -32,4 +32,3 @@ private Q_SLOTS:
 private:
     WebEngineViewer::MailWebEngineView *mTestWebEngine = nullptr;
 };
-

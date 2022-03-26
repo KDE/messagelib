@@ -36,4 +36,3 @@ private:
     std::unique_ptr<WebHitTestPrivate> const d;
 };
 }
-

@@ -9,7 +9,8 @@
 #include <QWebEngineView>
 
 using namespace WebEngineViewer;
-template<typename Arg, typename R, typename C> struct InvokeWrapper {
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
     R *receiver;
     void (C::*memberFun)(Arg);
     void operator()(Arg result)

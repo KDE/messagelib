@@ -79,4 +79,3 @@ private:
     Q_REQUIRED_RESULT QString imgToDataUrl(const QImage &image) const;
 };
 }
-

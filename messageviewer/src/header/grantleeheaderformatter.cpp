@@ -153,7 +153,8 @@ KTEXTTEMPLATE_END_LOOKUP
 
 namespace Grantlee
 {
-template<> inline QVariant TypeAccessor<QDateTime &>::lookUp(const QDateTime &object, const QString &property)
+template<>
+inline QVariant TypeAccessor<QDateTime &>::lookUp(const QDateTime &object, const QString &property)
 {
     MessageViewer::HeaderStyleUtil::HeaderStyleUtilDateFormat dateFormat;
     if (property == QLatin1String("str")) {

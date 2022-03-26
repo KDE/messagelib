@@ -26,4 +26,3 @@ public:
     ~MessagePart() override;
 };
 }
-

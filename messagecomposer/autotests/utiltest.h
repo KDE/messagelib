@@ -19,4 +19,3 @@ private Q_SLOTS:
     void shouldTestHasMissingAttachment();
     void shouldTestHasMissingAttachment_data();
 };
-

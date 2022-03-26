@@ -26,4 +26,3 @@ private:
     QPlainTextEdit *mResult;
     WebEngineViewer::LocalDataBaseManager *mDbManager;
 };
-

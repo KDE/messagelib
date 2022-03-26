@@ -79,4 +79,3 @@ private:
     // convenience, shared code
     void runSMIMETest(bool sign, bool enc, bool opaque);
 };
-

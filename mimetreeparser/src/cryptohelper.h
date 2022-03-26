@@ -49,4 +49,3 @@ QVector<Block> prepareMessageForDecryption(const QByteArray &msg);
 } // namespace MimeTreeParser
 
 Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_MOVABLE_TYPE);
-

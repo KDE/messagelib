@@ -15,4 +15,3 @@
  * in the output in case of a failure.
  */
 #define VERIFYEXEC(job) QVERIFY2(job->exec(), job->errorString().toUtf8().constData())
-

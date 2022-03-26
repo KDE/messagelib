@@ -80,4 +80,3 @@ Q_REQUIRED_RESULT MESSAGECOMPOSER_EXPORT QStringList cleanUpEmailListAndEncoding
 MESSAGECOMPOSER_EXPORT void addCustomHeaders(const KMime::Message::Ptr &message, const QMap<QByteArray, QString> &customHeader);
 }
 }
-

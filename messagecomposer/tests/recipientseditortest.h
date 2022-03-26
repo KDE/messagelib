@@ -26,4 +26,3 @@ public Q_SLOTS:
 private:
     MessageComposer::RecipientsEditor *const mRecipients;
 };
-

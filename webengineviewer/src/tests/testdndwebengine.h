@@ -38,4 +38,3 @@ private:
     WebEngineViewer::WebEngineView *pageView = nullptr;
     WebEngineViewBase *webEngineView = nullptr;
 };
-

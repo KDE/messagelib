@@ -220,4 +220,3 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replacePrefixes(const QString &str,
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString normalize(QStringView str);
 }
 }
-

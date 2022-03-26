@@ -42,4 +42,3 @@ private:
 };
 } // namespace Utils
 } // namespace MessageList
-

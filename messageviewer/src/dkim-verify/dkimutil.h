@@ -28,4 +28,3 @@ MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT QString convertAuthenticationMethod
 MESSAGEVIEWER_TESTS_EXPORT Q_REQUIRED_RESULT DKIMCheckSignatureJob::AuthenticationMethod convertAuthenticationMethodStringToEnum(const QString &str);
 }
 }
-

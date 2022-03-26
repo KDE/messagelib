@@ -27,4 +27,3 @@ private:
     const SendLaterInfo mInfo;
 };
 }
-

@@ -66,4 +66,3 @@ private:
 Q_DECLARE_METATYPE(MessageViewer::DKIMRule)
 Q_DECLARE_TYPEINFO(MessageViewer::DKIMRule, Q_MOVABLE_TYPE);
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMRule &t);
-

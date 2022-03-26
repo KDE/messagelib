@@ -52,4 +52,3 @@ private:
     QPushButton *mSelectFormat = nullptr;
 };
 }
-

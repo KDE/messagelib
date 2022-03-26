@@ -37,4 +37,3 @@ private:
     std::unique_ptr<BackOffModeManagerPrivate> const d;
 };
 }
-

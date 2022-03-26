@@ -36,4 +36,3 @@ private:
     QDnsLookup *mDnsLookup = nullptr;
 };
 }
-

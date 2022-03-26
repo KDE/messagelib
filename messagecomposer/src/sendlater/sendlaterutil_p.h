@@ -16,4 +16,3 @@ Q_REQUIRED_RESULT QString agentServiceName();
 Q_REQUIRED_RESULT QString dbusPath();
 }
 }
-

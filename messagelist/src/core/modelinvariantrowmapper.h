@@ -174,4 +174,3 @@ private:
 };
 } // namespace Core
 } // namespace MessageList
-

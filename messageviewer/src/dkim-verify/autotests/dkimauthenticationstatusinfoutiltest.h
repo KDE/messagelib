@@ -15,4 +15,3 @@ public:
     explicit DKIMAuthenticationStatusInfoUtilTest(QObject *parent = nullptr);
     ~DKIMAuthenticationStatusInfoUtilTest() override = default;
 };
-

@@ -19,4 +19,3 @@ private Q_SLOTS:
     void shouldRemoveSpaceAtBegin_data();
     void shouldRemoveSpaceAtBegin();
 };
-

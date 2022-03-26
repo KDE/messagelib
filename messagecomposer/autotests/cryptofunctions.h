@@ -48,4 +48,3 @@ void verifySignatureAndEncryption(KMime::Content *content,
                                   bool withAttachment = false,
                                   bool combined = false);
 }
-

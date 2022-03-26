@@ -20,7 +20,8 @@
 
 using namespace MessageViewer;
 
-template<typename Arg, typename R, typename C> struct InvokeWrapper {
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
     QPointer<R> receiver;
     void (C::*memberFunction)(Arg);
     void operator()(Arg result)

@@ -15,4 +15,3 @@ namespace Test
 KMime::Message::Ptr readAndParseMail(const QString &mailFile);
 }
 }
-

@@ -15,4 +15,3 @@ private Q_SLOTS:
     void testMultipartMixed();
     void test8BitPropagation();
 };
-

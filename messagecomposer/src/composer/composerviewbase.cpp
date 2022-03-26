@@ -813,7 +813,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     // No encryption or signing is needed
     if (!signSomething && !encryptSomething) {
         auto composer = new MessageComposer::Composer;
-        if (m_cryptoMessageFormat &  Kleo::OpenPGPMIMEFormat) {
+        if (m_cryptoMessageFormat & Kleo::OpenPGPMIMEFormat) {
             composer->setAutocryptEnabled(autocryptEnabled());
             if (keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat).size() > 0) {
                 composer->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat)[0]);
@@ -1532,7 +1532,6 @@ void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
     }
     m_attachmentController->addAttachment(part);
 }
-
 
 void ComposerViewBase::fillComposer(MessageComposer::Composer *composer)
 {

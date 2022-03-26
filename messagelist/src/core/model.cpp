@@ -365,7 +365,6 @@ Model::~Model()
     // It's faster since the items will not need to call the invariant
     delete d->mInvariantRowMapper;
     delete d->mRootItem;
-
 }
 
 void Model::setAggregation(const Aggregation *aggregation)

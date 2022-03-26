@@ -98,4 +98,3 @@ private:
     std::unique_ptr<RecipientsEditorPrivate> const d;
 };
 }
-

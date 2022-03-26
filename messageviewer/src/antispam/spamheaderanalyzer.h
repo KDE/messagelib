@@ -117,4 +117,3 @@ public:
     static SpamScores getSpamScores(KMime::Message *message);
 };
 }
-

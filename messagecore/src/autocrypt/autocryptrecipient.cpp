@@ -8,7 +8,6 @@
 #include "autocryptrecipient_p.h"
 #include "autocryptutils.h"
 
-
 #include <KCodecs>
 #include <QGpgME/DataProvider>
 #include <QGpgME/Protocol>
