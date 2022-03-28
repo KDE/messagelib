@@ -32,9 +32,11 @@ public Q_SLOTS:
 private:
     void slotOpenSavedFileFolder();
     void slotTimeOut();
+    void slotOpenFile();
     void slotExplicitlyClosed();
     QList<QUrl> mUrls;
     QTimer *const mTimer;
     QAction *const mShowFolderAction;
+    QAction *const mOpenFileAction;
 };
 }
