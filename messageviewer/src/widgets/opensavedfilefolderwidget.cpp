@@ -6,8 +6,11 @@
 
 #include "opensavedfilefolderwidget.h"
 
+#include <KIO/JobUiDelegate>
 #include <KIO/OpenFileManagerWindowJob>
+#include <KIO/OpenUrlJob>
 #include <KLocalizedString>
+#include <KMessageBox>
 
 #include <QTimer>
 
@@ -65,8 +68,17 @@ void OpenSavedFileFolderWidget::setUrls(const QList<QUrl> &urls, FileType fileTy
 
 void OpenSavedFileFolderWidget::slotOpenFile()
 {
-    if (!mUrls.isEmpty()) { }
-    // TODO
+    for (const auto &url : std::as_const(mUrls)) {
+        auto job = new KIO::OpenUrlJob(url);
+        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+        job->setDeleteTemporaryFile(true);
+        connect(job, &KIO::OpenUrlJob::result, this, [this](KJob *job) {
+            if (job->error() == KIO::ERR_USER_CANCELED) {
+                KMessageBox::sorry(this, i18n("KMail was unable to open the attachment."), job->errorString());
+            }
+        });
+        job->start();
+    }
 }
 
 void OpenSavedFileFolderWidget::slotOpenSavedFileFolder()
