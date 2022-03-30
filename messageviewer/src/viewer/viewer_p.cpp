@@ -866,8 +866,8 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     // of messages that were parsed at least once
     // store encrypted/signed status information in the KMMessage
     //  - this can only be done *after* calling parseObjectTree()
-    MimeTreeParser::KMMsgEncryptionState encryptionState = mNodeHelper->overallEncryptionState(content);
-    MimeTreeParser::KMMsgSignatureState signatureState = mNodeHelper->overallSignatureState(content);
+    const MimeTreeParser::KMMsgEncryptionState encryptionState = mNodeHelper->overallEncryptionState(content);
+    const MimeTreeParser::KMMsgSignatureState signatureState = mNodeHelper->overallSignatureState(content);
     mNodeHelper->setEncryptionState(content, encryptionState);
     // Don't reset the signature state to "not signed" (e.g. if one canceled the
     // decryption of a signed messages which has already been decrypted before).

@@ -238,7 +238,7 @@ QString stripSignature(const QString &msg)
         int posNewLine = -1;
 
         // Look for the SB beginning
-        int posSignatureBlock = res.indexOf(QLatin1Char('-'), posDeletingStart);
+        const int posSignatureBlock = res.indexOf(QLatin1Char('-'), posDeletingStart);
         // The prefix before "-- "$
         if (res.at(posDeletingStart) == QLatin1Char('\n')) {
             ++posDeletingStart;
