@@ -38,8 +38,7 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPa
         return true;
     }
 
-    const auto tmpAsIcon = context->displayHint(msgPart);
-    if (tmpAsIcon != MimeTreeParser::NoIcon) {
+    if (context->displayHint(msgPart) != MimeTreeParser::NoIcon) {
         return context->renderWithFactory<MimeTreeParser::AttachmentMessagePart>(mp, htmlWriter);
     }
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
