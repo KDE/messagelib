@@ -132,7 +132,7 @@ public:
 
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
-    QString renderInternalText() const;
+    Q_REQUIRED_RESULT QString renderInternalText() const;
 
     ObjectTreeParser *mOtp = nullptr;
 
