@@ -31,7 +31,7 @@ MessageViewer::Util::AttachmentDisplayInfo MessageViewer::Util::attachmentDispla
     info.icon = iconPathForContent(node, KIconLoader::Small);
     info.label = MimeTreeParser::Util::labelForContent(node);
 
-    bool typeBlacklisted = MimeTreeParser::Util::isTypeBlacklisted(node);
+    const bool typeBlacklisted = MimeTreeParser::Util::isTypeBlacklisted(node);
     info.displayInHeader = !info.label.isEmpty() && !info.icon.isEmpty() && !typeBlacklisted;
     return info;
 }

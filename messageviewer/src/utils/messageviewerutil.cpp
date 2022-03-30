@@ -86,7 +86,7 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
     int httpsPos = str.indexOf(QLatin1String("\"https:"), Qt::CaseInsensitive);
     while (httpPos >= 0 || httpsPos >= 0) {
         // pos = index of next occurrence of "http: or "https: whichever comes first
-        int pos = (httpPos < httpsPos) ? ((httpPos >= 0) ? httpPos : httpsPos) : ((httpsPos >= 0) ? httpsPos : httpPos);
+        const int pos = (httpPos < httpsPos) ? ((httpPos >= 0) ? httpPos : httpsPos) : ((httpsPos >= 0) ? httpsPos : httpPos);
         // look backwards for "href"
         if (pos > 5) {
             int hrefPos = str.lastIndexOf(QLatin1String("href"), pos - 5, Qt::CaseInsensitive);
@@ -270,7 +270,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
             }
             // Rename the file if we have already saved one with the same name:
             // try appending a number before extension (e.g. "pic.jpg" => "pic_2.jpg")
-            QString origFile = curUrl.fileName();
+            const QString origFile = curUrl.fileName();
             QString file = origFile;
 
             while (renameNumbering.contains(file)) {
