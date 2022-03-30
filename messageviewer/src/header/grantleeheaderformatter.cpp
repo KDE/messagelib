@@ -181,7 +181,7 @@ class Q_DECL_HIDDEN HeaderFormatter
 public:
     virtual ~HeaderFormatter() = default;
 
-    virtual QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) = 0;
+    virtual QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) = 0;
     virtual QString i18nName() = 0;
 };
 
@@ -202,8 +202,9 @@ public:
         }
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) override
     {
+        Q_UNUSED(showEmoticons);
         return nodeHelper->mailHeaderAsBase(header.constData(), message)->asUnicodeString();
     }
 
@@ -219,14 +220,13 @@ public:
         return i18n("Subject:");
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) override
     {
         KTextToHTML::Options flags = KTextToHTML::PreserveSpaces;
-        // TODO: somehow, we need to get settings from format method.
-        // if (showEmoticons) {
-        //    flags |= KTextToHTML::ReplaceSmileys;
-        //}
-        auto subjectStr = nodeHelper->mailHeaderAsBase("subject", message)->asUnicodeString();
+        if (showEmoticons) {
+            flags |= KTextToHTML::ReplaceSmileys;
+        }
+        const auto subjectStr = nodeHelper->mailHeaderAsBase("subject", message)->asUnicodeString();
 
         return HeaderStyleUtil::strToHtml(subjectStr, flags);
     }
@@ -240,8 +240,9 @@ public:
         return i18n("Date:");
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) override
     {
+        Q_UNUSED(showEmoticons);
         const auto value = nodeHelper->dateHeader(message);
         return value;
     }
@@ -278,8 +279,9 @@ public:
         }
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) override
     {
+        Q_UNUSED(showEmoticons);
         const auto value = nodeHelper->mailHeaderAsAddressList(header.constData(), message);
         return QVariant::fromValue(value);
     }
@@ -461,7 +463,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
         const auto i18nName = formatter->i18nName();
         const auto objectName = QString::fromUtf8(header).remove(QLatin1Char('-'));
         if (nodeHelper->hasMailHeader(header.constData(), message)) {
-            const auto value = formatter->format(message, nodeHelper);
+            const auto value = formatter->format(message, nodeHelper, showEmoticons);
             headerObject.insert(objectName, value);
         }
         if (!i18nName.isEmpty()) {
