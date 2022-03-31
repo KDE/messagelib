@@ -19,6 +19,7 @@ class SimpleObjectTreeSourcePrivate
 public:
     bool mDecryptMessage = false;
     Util::HtmlMode mPreferredMode = Util::Html;
+    QTextCodec *mCodec = nullptr;
 };
 }
 
@@ -59,9 +60,14 @@ MimeTreeParser::Util::HtmlMode SimpleObjectTreeSource::preferredMode() const
     return d->mPreferredMode;
 }
 
+void SimpleObjectTreeSource::setOverrideCodec(QTextCodec *codec)
+{
+    d->mCodec = codec;
+}
+
 const QTextCodec *SimpleObjectTreeSource::overrideCodec()
 {
-    return nullptr;
+    return d->mCodec;
 }
 
 void SimpleObjectTreeSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)

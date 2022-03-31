@@ -34,6 +34,7 @@ public:
     void setPreferredMode(MimeTreeParser::Util::HtmlMode mode);
     Q_REQUIRED_RESULT MimeTreeParser::Util::HtmlMode preferredMode() const override;
 
+    void setOverrideCodec(QTextCodec *codec);
     const QTextCodec *overrideCodec() override;
 
 private:
