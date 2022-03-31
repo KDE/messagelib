@@ -95,6 +95,7 @@ target_link_libraries(KF5TemplateParser
     KF5::MessageCore
     KF5::XmlGui
     KF5::Completion
+    KF5::CoreAddons
     KF5::I18n
     KF5::SonnetUi
     KF5::SyntaxHighlighting
