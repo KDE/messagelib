@@ -1,0 +1,30 @@
+From unknown@example.org Tue Oct 03 10:05:19 2017
+Return-Path: <unknown@example.org>
+To: konqi@example.org
+Subject: only an encrypted attachment with iso-8859-15 encoding
+X-PHP-Originating-Script: 1008:rcube.php
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="=_XXXXXXXXXXXXXX"
+Date: Tue, 03 Oct 2017 12:13:14 +0000
+From: unknown@example.org
+Message-ID: <XXXXXXXXXXXXXX12345@example.org>
+X-Sender: unknown@example.org
+User-Agent: Roundcube Webmail/1.1.9
+
+--=_XXXXXXXXXXXXXX
+Content-Transfer-Encoding: base64
+Content-Type: text/PGP
+Content-Disposition: attachment;
+ filename=encrypted.txt.pgp
+
+hIwDGJlthTT7oq0BA/9OUBr6T4JJ6wbsc93YPu3xHJXPifSGmavEDBCFJ2fqt5/j
+HcciOM8N7l0kBkjWVRXKU4ddRZMRbkEMpNViIt7yt1JSoeQQkXU7bwBNSOvnXYXE
+rkL6BI7vaSJJEx/Jkv6hgoT4/NJ6kLA07f6fV40ew5Skxdjswx/ln/vXscA0EdKd
+AUyFfmHmKkoywoqE0012A00uY3RMPiROf0Z5Bm0mjuNg5qYn5Far4YdPkeT9r8lF
+1azGqpG2/SEsNV8jFyLwzWfbP2fxb/L1QNiU4q7Qyck2jKFluaZASipph6TQunMf
+RY/lB3ghKCsrLm4eNzv3kKpMjxAxx6uXAAI4QUtcu31Y41e9vfYrPuVwHHK1m76S
+qge1wxs4YbLjvatiiA==
+=zH6Q
+
+--=_XXXXXXXXXXXXXX--

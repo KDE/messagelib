@@ -23,6 +23,7 @@ private Q_SLOTS:
     void testSignedForwardedOpenPGPSignedEncrypted();
     void testOpenPGPEncrypted();
     void testOpenPGPEncryptedNotDecrypted();
+    void testOpenPGPEncryptedOverrideEncoding();
     void testAsync_data();
     void testAsync();
     void testHtmlContent_data();
