@@ -86,9 +86,17 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
         // if we already have a decrypted node for part.objectTreeParser() encrypted node, don't do the decryption again
         return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, true));
     } else {
-        const auto codec = part.nodeHelper()->codec(node);
-        mp->startDecryption(node->decodedContent(), codec);
+        // Codec of the decrypted content is not delivered.
+        // Gnupgp tells that you should use UTF-8 by default.
+        // The user has the possibility to override the default charset.
 
+        QByteArray codecName = "utf-8";
+        if (part.source()->overrideCodec()) {
+            codecName = part.source()->overrideCodec()->name();
+        }
+
+        const auto codec =  QTextCodec::codecForName(codecName);
+        mp->startDecryption(node->decodedContent(), codec);
         qCDebug(MIMETREEPARSER_LOG) << "decrypted, signed?:" << messagePart->isSigned;
 
         if (!messagePart->inProgress) {
@@ -96,9 +104,12 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
                 return nullptr;
             }
             auto tempNode = new KMime::Content();
-            tempNode->setHead("Content-Type: text/plain; charset=\"" + codec->name() + "\"");
-            tempNode->setBody(KMime::CRLFtoLF(codec->fromUnicode(mp->text())));
+            tempNode->setBody(KMime::CRLFtoLF(mp->text().toUtf8()));
             tempNode->parse();
+            // inside startDecryption we use toCodec and we
+            // converted the decoded text to utf-8 already.
+	    tempNode->contentType()->setCharset("utf-8");
+
             NodeHelper::magicSetType(tempNode);
             if (node->topLevel()->textContent() != node && node->contentDisposition(false) && !tempNode->contentDisposition(false)) {
                 tempNode->contentDisposition()->setDisposition(node->contentDisposition()->disposition());
