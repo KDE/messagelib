@@ -33,6 +33,7 @@ const Interface::BodyPartFormatter *EncryptedBodyPartFormatter::create(Encrypted
 MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();
+    const auto nodeHelper = part.nodeHelper();
 
     if (!node->contents().isEmpty()) {
         Q_ASSERT(false);
@@ -71,17 +72,17 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
 
     // TODO: Load correct crypto Proto
 
-    part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
+    nodeHelper->setEncryptionState(node, KMMsgFullyEncrypted);
 
     EncryptedMessagePart::Ptr mp(
-        new EncryptedMessagePart(part.objectTreeParser(), node->decodedText(), useThisCryptProto, part.nodeHelper()->fromAsString(node), node));
+        new EncryptedMessagePart(part.objectTreeParser(), node->decodedText(), useThisCryptProto, nodeHelper->fromAsString(node), node));
     mp->setIsEncrypted(true);
     mp->setDecryptMessage(part.source()->decryptMessage());
     PartMetaData *messagePart(mp->partMetaData());
 
     if (!part.source()->decryptMessage()) {
-        part.nodeHelper()->setNodeProcessed(node, false); // Set the data node to done to prevent it from being processed
-    } else if (KMime::Content *newNode = part.nodeHelper()->decryptedNodeForContent(node)) {
+        nodeHelper->setNodeProcessed(node, false); // Set the data node to done to prevent it from being processed
+    } else if (KMime::Content *newNode = nodeHelper->decryptedNodeForContent(node)) {
         // if we already have a decrypted node for part.objectTreeParser() encrypted node, don't do the decryption again
         return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, true));
     } else {
@@ -112,14 +113,14 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
             }
             tempNode->assemble();
 
-            part.nodeHelper()->cleanExtraContent(node);
+            nodeHelper->cleanExtraContent(node);
             mp->clearSubParts();
 
-            part.nodeHelper()->attachExtraContent(node, tempNode);
+            nodeHelper->attachExtraContent(node, tempNode);
 
             mp->parseInternal(tempNode, false);
 
-            part.nodeHelper()->setNodeProcessed(node, false); // Set the data node to done to prevent it from being processed
+            nodeHelper->setNodeProcessed(node, false); // Set the data node to done to prevent it from being processed
         }
     }
     return mp;
