@@ -58,6 +58,7 @@ protected Q_SLOTS:
     void slotClearSearch();
 
 protected:
+    void updatePalette();
     QString mNotFoundString;
     QString mPositiveBackground;
     QString mNegativeBackground;

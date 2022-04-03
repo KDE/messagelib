@@ -17,6 +17,8 @@
 #include <QIcon>
 #include <QLineEdit>
 
+#include <QApplication>
+#include <QDebug>
 #include <QEvent>
 #include <QHBoxLayout>
 #include <QKeyEvent>
@@ -96,6 +98,9 @@ FindBarBase::FindBarBase(QWidget *parent)
 
     setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
     hide();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    connect(qApp, &QApplication::paletteChanged, this, &FindBarBase::updatePalette);
+#endif
 }
 
 FindBarBase::~FindBarBase() = default;
@@ -149,6 +154,14 @@ void FindBarBase::slotSearchText(bool backward, bool isAutoSearch)
     searchText(backward, isAutoSearch);
 }
 
+void FindBarBase::updatePalette()
+{
+    KStatefulBrush bgBrush(KColorScheme::View, KColorScheme::PositiveBackground);
+    mPositiveBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
+    bgBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeBackground);
+    mNegativeBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
+}
+
 void FindBarBase::setFoundMatch(bool match)
 {
 #ifndef QT_NO_STYLE_STYLESHEET
@@ -156,10 +169,7 @@ void FindBarBase::setFoundMatch(bool match)
 
     if (!mSearch->text().isEmpty()) {
         if (mNegativeBackground.isEmpty()) {
-            KStatefulBrush bgBrush(KColorScheme::View, KColorScheme::PositiveBackground);
-            mPositiveBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
-            bgBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeBackground);
-            mNegativeBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
+            updatePalette();
         }
         if (match) {
             styleSheet = mPositiveBackground;
@@ -261,5 +271,10 @@ bool FindBarBase::event(QEvent *e)
             return true;
         }
     }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    if (e->type() == QEvent::ApplicationPaletteChange) {
+        updatePalette();
+    }
+#endif
     return QWidget::event(e);
 }
