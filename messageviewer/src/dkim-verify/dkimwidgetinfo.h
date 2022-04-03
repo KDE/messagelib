@@ -31,10 +31,14 @@ public:
 
     Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result() const;
 
+protected:
+    Q_REQUIRED_RESULT bool event(QEvent *e) override;
+
 private:
     void updateInfo();
     void updateToolTip();
     void initColors();
+    void updatePalette();
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;
     QLabel *const mLabel;
     QColor mWarningColor;
