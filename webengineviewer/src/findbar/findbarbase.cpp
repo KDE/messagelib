@@ -155,7 +155,6 @@ void FindBarBase::updatePalette()
     mPositiveBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
     bgBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeBackground);
     mNegativeBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
-    qDebug() << "FindBarBase::updatePalette  ";
 }
 
 void FindBarBase::setFoundMatch(bool match)
