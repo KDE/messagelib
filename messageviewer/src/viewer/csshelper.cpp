@@ -35,9 +35,8 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     : CSSHelperBase(pd)
 {
     // initialize with defaults - should match the corresponding application defaults
-    mForegroundColor = QApplication::palette().color(QPalette::Text);
+    updateColor();
     mLinkColor = MessageCore::ColorUtil::self()->linkColor();
-    mBackgroundColor = QApplication::palette().color(QPalette::Base);
     for (const auto &msgColor : inlineMessageColors) {
         cInlineMessage[msgColor.type] = KColorScheme(QPalette::Active).foreground(msgColor.role).color();
     }
@@ -101,6 +100,14 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
 }
 
 CSSHelper::~CSSHelper() = default;
+
+void CSSHelper::updateColor()
+{
+    // KColorScheme(QPalette::Active).background().color();
+
+    mForegroundColor = KColorScheme(QPalette::Active).foreground().color(); // QApplication::palette().color(QPalette::Text);
+    mBackgroundColor = KColorScheme(QPalette::Active).background().color(); // QApplication::palette().color(QPalette::Base);
+}
 
 QString CSSHelper::htmlHead(bool fixed) const
 {

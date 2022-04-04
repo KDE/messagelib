@@ -2326,13 +2326,26 @@ HeaderStylePlugin *ViewerPrivate::headerStylePlugin() const
     return mHeaderStylePlugin;
 }
 
+void ViewerPrivate::updatePalette()
+{
+    updateColorFromScheme();
+    cssHelper()->updateColor();
+    recreateCssHelper();
+    update(MimeTreeParser::Force);
+}
+
+void ViewerPrivate::updateColorFromScheme()
+{
+    const KColorScheme scheme = KColorScheme(QPalette::Active, KColorScheme::View);
+    mForegroundError = scheme.foreground(KColorScheme::NegativeText).color();
+    mBackgroundError = scheme.background(KColorScheme::NegativeBackground).color();
+    mBackgroundAttachment = scheme.background().color();
+}
+
 void ViewerPrivate::initializeColorFromScheme()
 {
     if (!mForegroundError.isValid()) {
-        const KColorScheme scheme = KColorScheme(QPalette::Active, KColorScheme::View);
-        mForegroundError = scheme.foreground(KColorScheme::NegativeText).color();
-        mBackgroundError = scheme.background(KColorScheme::NegativeBackground).color();
-        mBackgroundAttachment = scheme.background().color();
+        updateColorFromScheme();
     }
 }
 
