@@ -376,6 +376,7 @@ Q_SIGNALS:
 
 private:
     void initialize();
+    void slotGeneralPaletteChanged();
 
 public Q_SLOTS:
 

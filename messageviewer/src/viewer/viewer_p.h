@@ -286,6 +286,8 @@ private:
     void createOpenWithMenu(QMenu *topMenu, const QString &contentTypeStr, bool fromCurrentContent);
 
 public:
+    void updatePalette();
+
     void itemFetchResult(KJob *job);
 
     /** Read settings from app's config file. */
@@ -613,6 +615,7 @@ private:
     bool mHtmlLoadExternalDefaultSetting = false;
     bool mHtmlLoadExtOverride = false;
     void slotUrlBlocked(const QUrl &url);
+    void updateColorFromScheme();
 
 public:
     KMime::Message::Ptr mMessage; // the current message, if it was set manually
