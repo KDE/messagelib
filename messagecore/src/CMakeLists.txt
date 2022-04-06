@@ -2,16 +2,6 @@
 # SPDX-FileCopyrightText: none
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore\")
 
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF5MessageCore_QCH
-        FILE KF5MessageCoreQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageComposerQchTargets.cmake\")")
-endif()
-
 add_library(KF5MessageCore)
 add_library(KF5::MessageCore ALIAS KF5MessageCore)
 
@@ -248,5 +238,13 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
+
+    ecm_install_qch_export(
+        TARGETS KF5MessageCore_QCH
+        FILE KF5MessageCoreQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageCoreQchTargets.cmake\")")
 endif()
 

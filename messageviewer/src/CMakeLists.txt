@@ -1,14 +1,6 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF5MessageViewer_QCH
-        FILE KF5MessageViewerQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageViewerQchTargets.cmake\")")
-endif()
+
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessageviewer\")
 
 add_subdirectory(messagepartthemes/grantlee)
@@ -764,4 +756,12 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
+
+    ecm_install_qch_export(
+        TARGETS KF5MessageViewer_QCH
+        FILE KF5MessageViewerQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5MessageViewerQchTargets.cmake\")")
 endif()
