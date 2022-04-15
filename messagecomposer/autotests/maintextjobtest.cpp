@@ -46,7 +46,7 @@ void MainTextJobTest::testPlainText()
              << "utf-8";
     composer.globalPart()->setCharsets(charsets);
     auto textPart = new TextPart;
-    QString data = QStringLiteral("they said their nevers they slept their dream");
+    QString data = QStringLiteral("they said their never they slept their dream");
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, &composer);
     QVERIFY(mjob->exec());
@@ -67,7 +67,7 @@ void MainTextJobTest::testWrappingErrors()
         composer.globalPart()->setGuiEnabled(false);
         composer.globalPart()->setFallbackCharsetEnabled(true);
         auto textPart = new TextPart;
-        QString data = QStringLiteral("they said their nevers they slept their dream");
+        QString data = QStringLiteral("they said their never they slept their dream");
         textPart->setWordWrappingEnabled(false);
         textPart->setWrappedPlainText(data);
         auto mjob = new MainTextJob(textPart, &composer);
@@ -81,7 +81,7 @@ void MainTextJobTest::testWrappingErrors()
         composer.globalPart()->setFallbackCharsetEnabled(true);
         auto textPart = new TextPart;
         textPart->setWordWrappingEnabled(true);
-        QString data = QStringLiteral("they said their nevers they slept their dream");
+        QString data = QStringLiteral("they said their never they slept their dream");
         textPart->setCleanPlainText(data);
         auto mjob = new MainTextJob(textPart, &composer);
         QVERIFY(!mjob->exec()); // error: UseWrapping but given only clean text

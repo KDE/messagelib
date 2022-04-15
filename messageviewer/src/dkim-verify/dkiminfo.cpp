@@ -124,32 +124,32 @@ void DKIMInfo::setIDomain(const QString &iDomain)
 void DKIMInfo::parseCanonicalization(const QString &str)
 {
     if (!str.isEmpty()) {
-        const QStringList canonicalizations = str.split(QLatin1Char('/'));
-        // qDebug() << " canonicalizations "<< canonicalizations;
-        if (canonicalizations.count() >= 1) {
-            if (canonicalizations.at(0) == QLatin1String("relaxed")) {
+        const QStringList canonicalization = str.split(QLatin1Char('/'));
+        // qDebug() << " canonicalization "<< canonicalization;
+        if (canonicalization.count() >= 1) {
+            if (canonicalization.at(0) == QLatin1String("relaxed")) {
                 mHeaderCanonization = DKIMInfo::Relaxed;
-            } else if (canonicalizations.at(0) == QLatin1String("simple")) {
+            } else if (canonicalization.at(0) == QLatin1String("simple")) {
                 mHeaderCanonization = DKIMInfo::Simple;
             } else {
-                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "canonicalizations for header unknown " << canonicalizations.at(0);
+                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "canonicalization for header unknown " << canonicalization.at(0);
                 mHeaderCanonization = DKIMInfo::Unknown;
                 return;
             }
-            if (canonicalizations.count() == 1) {
+            if (canonicalization.count() == 1) {
                 mBodyCanonization = DKIMInfo::Simple;
-            } else if (canonicalizations.count() == 2) {
-                if (canonicalizations.at(1) == QLatin1String("relaxed")) {
+            } else if (canonicalization.count() == 2) {
+                if (canonicalization.at(1) == QLatin1String("relaxed")) {
                     mBodyCanonization = DKIMInfo::Relaxed;
-                } else if (canonicalizations.at(1) == QLatin1String("simple")) {
+                } else if (canonicalization.at(1) == QLatin1String("simple")) {
                     mBodyCanonization = DKIMInfo::Simple;
                 } else {
-                    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "canonicalizations for body unknown " << canonicalizations.at(1);
+                    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "canonicalization for body unknown " << canonicalization.at(1);
                     mBodyCanonization = DKIMInfo::Unknown;
                     return;
                 }
             } else {
-                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Problem during parsing canonicalizations " << str;
+                qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " Problem during parsing canonicalization " << str;
                 mHeaderCanonization = DKIMInfo::Unknown;
                 mBodyCanonization = DKIMInfo::Unknown;
             }

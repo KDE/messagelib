@@ -32,18 +32,18 @@ void SearchFullHashJobTest::shouldCreateRequest_data()
     QTest::newRow("no hash") << QHash<QByteArray, QByteArray>() << QStringList() << QString() << QUrl() << false;
     QTest::newRow("database hash but not hash and not url")
         << QHash<QByteArray, QByteArray>() << QStringList{QStringLiteral("boo")} << QString() << QUrl() << false;
-    QHash<QByteArray, QByteArray> hashs;
-    hashs.insert(QByteArrayLiteral("bla"), QByteArrayLiteral("bla"));
-    QTest::newRow("database hash but hash and not url") << hashs << QStringList{QStringLiteral("boo")} << QString() << QUrl() << false;
+    QHash<QByteArray, QByteArray> hashes;
+    hashes.insert(QByteArrayLiteral("bla"), QByteArrayLiteral("bla"));
+    QTest::newRow("database hash but hash and not url") << hashes << QStringList{QStringLiteral("boo")} << QString() << QUrl() << false;
     QTest::newRow("database hash and hash")
-        << hashs << QStringList{QStringLiteral("boo")}
+        << hashes << QStringList{QStringLiteral("boo")}
         << QStringLiteral(
                "{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"clientStates\":[\"boo\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],"
                "\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}")
                .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps())
         << QUrl(QStringLiteral("http://www.kde.org")) << true;
     QTest::newRow("multi database hash and hash")
-        << hashs << (QStringList() << QStringLiteral("boo") << QStringLiteral("bli"))
+        << hashes << (QStringList() << QStringLiteral("boo") << QStringLiteral("bli"))
         << QStringLiteral(
                "{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"clientStates\":[\"boo\",\"bli\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],"
                "\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}")
