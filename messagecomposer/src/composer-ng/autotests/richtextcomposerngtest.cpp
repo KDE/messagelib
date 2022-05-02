@@ -12,11 +12,13 @@
 #include <KPIMTextEdit/RichTextComposerControler>
 
 #include <PimCommon/AutoCorrection>
+#include <QStandardPaths>
 #include <QTest>
 
 RichTextComposerNgTest::RichTextComposerNgTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 RichTextComposerNgTest::~RichTextComposerNgTest() = default;

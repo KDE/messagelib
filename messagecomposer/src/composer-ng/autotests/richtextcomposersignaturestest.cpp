@@ -8,6 +8,7 @@
 #include "../richtextcomposerng.h"
 #include "../richtextcomposersignatures.h"
 #include <KActionCollection>
+#include <QStandardPaths>
 #include <QTest>
 
 QTEST_MAIN(RichTextComposerSignaturesTest)
@@ -15,6 +16,7 @@ QTEST_MAIN(RichTextComposerSignaturesTest)
 RichTextComposerSignaturesTest::RichTextComposerSignaturesTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void RichTextComposerSignaturesTest::shouldCleanSignature()
