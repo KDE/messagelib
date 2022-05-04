@@ -22,3 +22,5 @@ Dependencies:
     'pim/pimcommon' : '@same'
     'third-party/grantlee' : '@stable'
     'kdesupport/qca' : '@latest'
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD']
