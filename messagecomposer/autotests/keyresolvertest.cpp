@@ -21,7 +21,7 @@ using namespace Kleo;
 
 void KeyResolverTest::initTestCase()
 {
-    qputenv("LC_ALL", "en_US.UTF-8");
+    Test::setupFullEnv();
 
     const QDir genericDataLocation(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     baseDir = QDir(genericDataLocation.filePath(QStringLiteral("autocrypt")));

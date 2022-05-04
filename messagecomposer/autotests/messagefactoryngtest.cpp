@@ -44,7 +44,6 @@ using namespace MessageComposer;
 MessageFactoryTest::MessageFactoryTest(QObject *parent)
     : QObject(parent)
 {
-    QStandardPaths::setTestModeEnabled(true);
 }
 
 MessageFactoryTest::~MessageFactoryTest()
@@ -57,8 +56,9 @@ MessageFactoryTest::~MessageFactoryTest()
 void MessageFactoryTest::initMain()
 {
 #ifndef Q_OS_WIN
-    qputenv("LC_ALL", "en_US.UTF-8");
-    qputenv("TZ", "UTC");
+    Test::setupFullEnv();
+#else
+    Test::setupEnv();
 #endif
 }
 

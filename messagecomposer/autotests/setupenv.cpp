@@ -27,6 +27,13 @@ void Test::setupEnv()
     QStandardPaths::setTestModeEnabled(true);
 }
 
+void Test::setupFullEnv()
+{
+    setupEnv();
+    qputenv("LC_ALL", "en_US.UTF-8");
+    qputenv("TZ", "UTC");
+}
+
 std::vector<GpgME::Key, std::allocator<GpgME::Key>> Test::getKeys(bool smime)
 {
     QGpgME::KeyListJob *job = nullptr;

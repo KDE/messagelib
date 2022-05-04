@@ -16,9 +16,6 @@ class RenderTest : public QObject
 public:
     static void initMain();
 
-public Q_SLOTS:
-    void initTestCase();
-
 private Q_SLOTS:
     void testRenderSmart_data();
     void testRenderSmart();

@@ -17,10 +17,17 @@ namespace Test
 {
 /**
  * setup a environment variables for tests:
- * * set LC_ALL to en_US.UTF-8
- * * verify that Kleo has correctly loaded all backends
+ * QStandardPaths::setTestModeEnabled(true)
  */
 void setupEnv();
+
+/**
+ * setup a full environment variables for tests:
+ * setupEnv
+ * set LC_ALL to en_US.UTF-8
+ * set TZ to UTC
+ */
+void setupFullEnv();
 
 /**
  * Returns list of keys used in various crypto routines

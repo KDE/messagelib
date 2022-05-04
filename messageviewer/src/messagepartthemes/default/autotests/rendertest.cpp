@@ -24,15 +24,10 @@ using namespace MessageViewer;
 
 void RenderTest::initMain()
 {
+    Test::setupEnv();
 #ifndef Q_OS_WIN
     qputenv("LC_ALL", "en_US.UTF-8");
-    qputenv("TZ", "UTC");
 #endif
-}
-
-void RenderTest::initTestCase()
-{
-    Test::setupEnv();
 }
 
 void RenderTest::testRenderSmart_data()
