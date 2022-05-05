@@ -184,9 +184,6 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
 
     reply.replyAll = true;
 
-    QDateTime date = msg->date()->dateTime();
-    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
@@ -237,9 +234,6 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
     auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
-    QDateTime date = msg->date()->dateTime();
-    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
@@ -288,9 +282,6 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsyn
     auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
-    QDateTime date = msg->date()->dateTime();
-    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
@@ -424,9 +415,6 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
     auto reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 
-    QDateTime date = msg->date()->dateTime();
-    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
 
     QString replyTo = reply.msg->inReplyTo()->asUnicodeString();
