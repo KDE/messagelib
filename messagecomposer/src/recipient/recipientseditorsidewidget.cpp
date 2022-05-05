@@ -26,7 +26,7 @@ RecipientsEditorSideWidget::RecipientsEditorSideWidget(RecipientsEditor *view, Q
     : QWidget(parent)
     , mEditor(view)
 {
-    QBoxLayout *topLayout = new QVBoxLayout(this);
+    auto topLayout = new QVBoxLayout(this);
 
     topLayout->setContentsMargins({});
     topLayout->addStretch(1);
