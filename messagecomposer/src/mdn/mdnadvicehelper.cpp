@@ -5,7 +5,7 @@
 */
 
 #include "mdnadvicehelper.h"
-//#include "filter/mdnadvicedialog.h"
+#include "mdnadvicedialog.h"
 #include "messagecomposer_debug.h"
 #include <Akonadi/ItemModifyJob>
 #include <KCursorSaver>
@@ -66,7 +66,6 @@ static const int numMdnMessageBoxes = sizeof mdnMessageBoxes / sizeof *mdnMessag
 MDNAdviceHelper *MDNAdviceHelper::s_instance = nullptr;
 MessageComposer::MDNAdvice MDNAdviceHelper::questionIgnoreSend(const QString &text, bool canDeny)
 {
-#if 0 // TODO
     MessageComposer::MDNAdvice rc = MessageComposer::MDNIgnore;
     QPointer<MDNAdviceDialog> dlg(new MDNAdviceDialog(text, canDeny));
     dlg->exec();
@@ -75,8 +74,6 @@ MessageComposer::MDNAdvice MDNAdviceHelper::questionIgnoreSend(const QString &te
     }
     delete dlg;
     return rc;
-#endif
-    return {};
 }
 
 QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend)

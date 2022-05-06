@@ -5,15 +5,14 @@
 */
 
 #pragma once
-
-#include "messagecomposer/mdnstateattribute.h"
-#include <QObject>
-//#include <KMime/KMimeMessage>
+#include "messagecomposer_export.h"
+#include <MessageComposer/MDNStateAttribute>
 #include <MessageComposer/MessageFactoryNG>
+#include <QObject>
 
 namespace MessageComposer
 {
-class MDNAdviceHelper : public QObject
+class MESSAGECOMPOSER_EXPORT MDNAdviceHelper : public QObject
 {
     Q_OBJECT
 public:

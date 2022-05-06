@@ -11,6 +11,7 @@ if(BUILD_TESTING)
     add_subdirectory( composer/autotests )
     add_subdirectory( snippet/autotests )
     add_subdirectory( mdn/autotests )
+    add_subdirectory( mdn/tests )
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
@@ -225,6 +226,8 @@ target_sources( KF5MessageComposer PRIVATE
     mdn/mdnadvicehelper.h
     mdn/mdnstateattribute.cpp
     mdn/mdnstateattribute.h
+    mdn/mdnadvicedialog.cpp
+    mdn/mdnadvicedialog.h
 )
 
 
@@ -541,6 +544,7 @@ ecm_generate_headers(MessageComposer_CamelcaseMdn_HEADERS
     HEADER_NAMES
     MDNAdviceHelper
     MDNStateAttribute
+    MDNAdviceDialog
     REQUIRED_HEADERS MessageComposer_mdn_HEADERS
     PREFIX MessageComposer
     RELATIVE mdn
