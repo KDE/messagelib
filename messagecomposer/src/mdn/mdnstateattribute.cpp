@@ -13,7 +13,7 @@
 
 #include <QByteArray>
 
-using namespace MailCommon;
+using namespace MessageComposer;
 
 /**
  *  @internal
@@ -154,7 +154,7 @@ namespace
 {
 bool dummyMDNStateAttribute()
 {
-    using namespace MailCommon;
+    using namespace MessageComposer;
     Akonadi::AttributeFactory::registerAttribute<MDNStateAttribute>();
     return true;
 }

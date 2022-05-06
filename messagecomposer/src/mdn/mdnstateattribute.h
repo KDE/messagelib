@@ -8,13 +8,12 @@
  *****************************************************************************/
 
 #pragma once
-
-#include "mailcommon_export.h"
+#include "messagecomposer_export.h"
 
 #include <Akonadi/Attribute>
 #include <memory>
 
-namespace MailCommon
+namespace MessageComposer
 {
 /**
  * @short An Attribute that keeps track of the MDN state of a mail message.
@@ -26,7 +25,7 @@ namespace MailCommon
  * @see Akonadi::Attribute
  * @since 4.6
  */
-class MAILCOMMON_EXPORT MDNStateAttribute : public Akonadi::Attribute
+class MESSAGECOMPOSER_EXPORT MDNStateAttribute : public Akonadi::Attribute
 {
 public:
     /**

@@ -6,12 +6,12 @@
 
 #pragma once
 
-#include "mailcommon/mdnstateattribute.h"
+#include "messagecomposer/mdnstateattribute.h"
 #include <QObject>
 //#include <KMime/KMimeMessage>
 #include <MessageComposer/MessageFactoryNG>
 
-namespace MailCommon
+namespace MessageComposer
 {
 class MDNAdviceHelper : public QObject
 {
@@ -38,7 +38,7 @@ public:
      */
     Q_REQUIRED_RESULT QPair<bool, KMime::MDN::SendingMode> checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend = false);
 
-    Q_REQUIRED_RESULT MailCommon::MDNStateAttribute::MDNSentState dispositionToSentState(KMime::MDN::DispositionType d);
+    Q_REQUIRED_RESULT MessageComposer::MDNStateAttribute::MDNSentState dispositionToSentState(KMime::MDN::DispositionType d);
 
 private:
     explicit MDNAdviceHelper(QObject *parent = nullptr)

@@ -17,34 +17,34 @@ MDNStateAttributeTest::~MDNStateAttributeTest() = default;
 
 void MDNStateAttributeTest::shouldHaveDefaultValue()
 {
-    MailCommon::MDNStateAttribute attr;
-    QCOMPARE(attr.mdnState(), MailCommon::MDNStateAttribute::MDNStateUnknown);
+    MessageComposer::MDNStateAttribute attr;
+    QCOMPARE(attr.mdnState(), MessageComposer::MDNStateAttribute::MDNStateUnknown);
 }
 
 void MDNStateAttributeTest::shouldHaveType()
 {
-    MailCommon::MDNStateAttribute attr;
+    MessageComposer::MDNStateAttribute attr;
     QCOMPARE(attr.type(), QByteArray("MDNStateAttribute"));
 }
 
 void MDNStateAttributeTest::shouldSerializedAttribute()
 {
-    MailCommon::MDNStateAttribute attr;
+    MessageComposer::MDNStateAttribute attr;
 
-    attr.setMDNState(MailCommon::MDNStateAttribute::MDNDenied);
-    QCOMPARE(attr.mdnState(), MailCommon::MDNStateAttribute::MDNDenied);
+    attr.setMDNState(MessageComposer::MDNStateAttribute::MDNDenied);
+    QCOMPARE(attr.mdnState(), MessageComposer::MDNStateAttribute::MDNDenied);
     const QByteArray ba = attr.serialized();
-    MailCommon::MDNStateAttribute result;
+    MessageComposer::MDNStateAttribute result;
     result.deserialize(ba);
     QVERIFY(attr == result);
 }
 
 void MDNStateAttributeTest::shouldCloneAttribute()
 {
-    MailCommon::MDNStateAttribute attr;
-    attr.setMDNState(MailCommon::MDNStateAttribute::MDNDenied);
+    MessageComposer::MDNStateAttribute attr;
+    attr.setMDNState(MessageComposer::MDNStateAttribute::MDNDenied);
 
-    MailCommon::MDNStateAttribute *result = attr.clone();
+    MessageComposer::MDNStateAttribute *result = attr.clone();
     QVERIFY(attr == *result);
     delete result;
 }

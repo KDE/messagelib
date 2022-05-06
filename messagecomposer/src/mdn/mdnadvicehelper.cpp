@@ -5,8 +5,8 @@
 */
 
 #include "mdnadvicehelper.h"
-#include "filter/mdnadvicedialog.h"
-#include "mailcommon_debug.h"
+//#include "filter/mdnadvicedialog.h"
+#include "messagecomposer_debug.h"
 #include <Akonadi/ItemModifyJob>
 #include <KCursorSaver>
 #include <KLazyLocalizedString>
@@ -15,7 +15,7 @@
 #include <MessageViewer/MessageViewerSettings>
 #include <QPointer>
 using MessageComposer::MessageFactoryNG;
-using namespace MailCommon;
+using namespace MessageComposer;
 
 static const struct {
     const char *dontAskAgainID;
@@ -66,6 +66,7 @@ static const int numMdnMessageBoxes = sizeof mdnMessageBoxes / sizeof *mdnMessag
 MDNAdviceHelper *MDNAdviceHelper::s_instance = nullptr;
 MessageComposer::MDNAdvice MDNAdviceHelper::questionIgnoreSend(const QString &text, bool canDeny)
 {
+#if 0 // TODO
     MessageComposer::MDNAdvice rc = MessageComposer::MDNIgnore;
     QPointer<MDNAdviceDialog> dlg(new MDNAdviceDialog(text, canDeny));
     dlg->exec();
@@ -74,6 +75,8 @@ MessageComposer::MDNAdvice MDNAdviceHelper::questionIgnoreSend(const QString &te
     }
     delete dlg;
     return rc;
+#endif
+    return {};
 }
 
 QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend)
@@ -85,12 +88,12 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
     // has been issued on behalf of a recipient, no further MDNs may be
     // issued on behalf of that recipient, even if another disposition
     // is performed on the message.
-    if (item.hasAttribute<MailCommon::MDNStateAttribute>()
-        && item.attribute<MailCommon::MDNStateAttribute>()->mdnState() != MailCommon::MDNStateAttribute::MDNStateUnknown) {
+    if (item.hasAttribute<MessageComposer::MDNStateAttribute>()
+        && item.attribute<MessageComposer::MDNStateAttribute>()->mdnState() != MessageComposer::MDNStateAttribute::MDNStateUnknown) {
         // if already dealt with, don't do it again.
         return QPair<bool, KMime::MDN::SendingMode>(false, KMime::MDN::SentAutomatically);
     }
-    auto *mdnStateAttr = new MailCommon::MDNStateAttribute(MailCommon::MDNStateAttribute::MDNStateUnknown);
+    auto *mdnStateAttr = new MessageComposer::MDNStateAttribute(MessageComposer::MDNStateAttribute::MDNStateUnknown);
 
     KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
     bool doSend = false;
@@ -101,7 +104,7 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
     } else {
         if (!mode || (mode < 0) || (mode > 3)) {
             // early out for ignore:
-            mdnStateAttr->setMDNState(MailCommon::MDNStateAttribute::MDNIgnore);
+            mdnStateAttr->setMDNState(MessageComposer::MDNStateAttribute::MDNIgnore);
             s = KMime::MDN::SentManually;
         } else {
             if (MessageFactoryNG::MDNMDNUnknownOption(msg)) {
@@ -140,13 +143,13 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
 
     // RFC 2298: An MDN MUST NOT be generated in response to an MDN.
     if (MessageComposer::Util::findTypeInMessage(msg.data(), "message", "disposition-notification")) {
-        mdnStateAttr->setMDNState(MailCommon::MDNStateAttribute::MDNIgnore);
+        mdnStateAttr->setMDNState(MessageComposer::MDNStateAttribute::MDNIgnore);
     } else if (mode == 0) { // ignore
         doSend = false;
-        mdnStateAttr->setMDNState(MailCommon::MDNStateAttribute::MDNIgnore);
+        mdnStateAttr->setMDNState(MessageComposer::MDNStateAttribute::MDNIgnore);
     } else if (mode == 2) { // denied
         doSend = true;
-        mdnStateAttr->setMDNState(MailCommon::MDNStateAttribute::MDNDenied);
+        mdnStateAttr->setMDNState(MessageComposer::MDNStateAttribute::MDNDenied);
     } else if (mode == 3) { // the user wants to send. let's make sure we can, according to the RFC.
         doSend = true;
         mdnStateAttr->setMDNState(dispositionToSentState(d));
@@ -163,23 +166,23 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
     return QPair<bool, KMime::MDN::SendingMode>(doSend, s);
 }
 
-MailCommon::MDNStateAttribute::MDNSentState MDNAdviceHelper::dispositionToSentState(KMime::MDN::DispositionType d)
+MDNStateAttribute::MDNSentState MDNAdviceHelper::dispositionToSentState(KMime::MDN::DispositionType d)
 {
     switch (d) {
     case KMime::MDN::Displayed:
-        return MailCommon::MDNStateAttribute::MDNDisplayed;
+        return MessageComposer::MDNStateAttribute::MDNDisplayed;
     case KMime::MDN::Deleted:
-        return MailCommon::MDNStateAttribute::MDNDeleted;
+        return MessageComposer::MDNStateAttribute::MDNDeleted;
     case KMime::MDN::Dispatched:
-        return MailCommon::MDNStateAttribute::MDNDispatched;
+        return MessageComposer::MDNStateAttribute::MDNDispatched;
     case KMime::MDN::Processed:
-        return MailCommon::MDNStateAttribute::MDNProcessed;
+        return MessageComposer::MDNStateAttribute::MDNProcessed;
     case KMime::MDN::Denied:
-        return MailCommon::MDNStateAttribute::MDNDenied;
+        return MessageComposer::MDNStateAttribute::MDNDenied;
     case KMime::MDN::Failed:
-        return MailCommon::MDNStateAttribute::MDNFailed;
+        return MessageComposer::MDNStateAttribute::MDNFailed;
     default:
-        return MailCommon::MDNStateAttribute::MDNStateUnknown;
+        return MessageComposer::MDNStateAttribute::MDNStateUnknown;
     }
 }
 
@@ -203,6 +206,6 @@ int MDNAdviceHelper::requestAdviceOnMDN(const char *what)
             }
         }
     }
-    qCWarning(MAILCOMMON_LOG) << "didn't find data for message box \"" << what << "\"";
+    qCWarning(MESSAGECOMPOSER_LOG) << "didn't find data for message box \"" << what << "\"";
     return MessageComposer::MDNIgnore;
 }

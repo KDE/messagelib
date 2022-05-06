@@ -10,6 +10,7 @@ if(BUILD_TESTING)
     add_subdirectory( plugineditor/autotests )
     add_subdirectory( composer/autotests )
     add_subdirectory( snippet/autotests )
+    add_subdirectory( mdn/autotests )
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
@@ -26,7 +27,7 @@ qt_add_dbus_interface(messagecomposer_interface_SRCS
 qt_add_dbus_interface(messagecomposer_interface_SRCS
     followupreminder/org.freedesktop.Akonadi.FollowUpReminder.xml
     followupreminderinterface
-    )
+)
 
 target_sources( KF5MessageComposer PRIVATE
     ${messagecomposer_interface_SRCS}
@@ -95,22 +96,22 @@ target_sources( KF5MessageComposer PRIVATE
     plugineditor/plugineditorinterface.cpp
     plugineditor/pluginactiontype.cpp
     plugineditor/plugincomposerinterface.cpp
-   plugineditorcheckbeforesend/plugineditorcheckbeforesend.cpp
-   plugineditorcheckbeforesend/plugineditorcheckbeforesendinterface.cpp
-   plugineditorcheckbeforesend/plugineditorcheckbeforesendmanager.cpp
-   plugineditorcheckbeforesend/plugineditorcheckbeforesendparams.cpp
-   plugineditorinit/plugineditorinit.cpp
-   plugineditorinit/plugineditorinitmanager.cpp
-   plugineditorinit/plugineditorinitinterface.cpp
-   plugineditorconverttext/plugineditorconverttext.cpp
-   plugineditorconverttext/plugineditorconverttextmanager.cpp
-   plugineditorconverttext/plugineditorconverttextinterface.cpp
-   plugineditorconverttext/plugineditorconverterinitialdata.cpp
-   plugineditorconverttext/plugineditorconverterbeforeconvertingdata.cpp
+    plugineditorcheckbeforesend/plugineditorcheckbeforesend.cpp
+    plugineditorcheckbeforesend/plugineditorcheckbeforesendinterface.cpp
+    plugineditorcheckbeforesend/plugineditorcheckbeforesendmanager.cpp
+    plugineditorcheckbeforesend/plugineditorcheckbeforesendparams.cpp
+    plugineditorinit/plugineditorinit.cpp
+    plugineditorinit/plugineditorinitmanager.cpp
+    plugineditorinit/plugineditorinitinterface.cpp
+    plugineditorconverttext/plugineditorconverttext.cpp
+    plugineditorconverttext/plugineditorconverttextmanager.cpp
+    plugineditorconverttext/plugineditorconverttextinterface.cpp
+    plugineditorconverttext/plugineditorconverterinitialdata.cpp
+    plugineditorconverttext/plugineditorconverterbeforeconvertingdata.cpp
     plugineditorgrammar/plugineditorgrammarmanager.cpp
     plugineditorgrammar/plugineditorgrammarcustomtoolsviewinterface.cpp
-   plugineditorbase/plugineditorbase.cpp
-   plugineditorbase/plugineditorconfigurebasewidget.cpp
+    plugineditorbase/plugineditorbase.cpp
+    plugineditorbase/plugineditorconfigurebasewidget.cpp
     sendlater/sendlaterinfo.cpp
     sendlater/sendlaterjob.cpp
     sendlater/sendlatercreatejob.cpp
@@ -220,18 +221,22 @@ target_sources( KF5MessageComposer PRIVATE
     sender/akonadisender.h
     sender/messagesender.h
 
+    mdn/mdnadvicehelper.cpp
+    mdn/mdnadvicehelper.h
+    mdn/mdnstateattribute.cpp
+    mdn/mdnstateattribute.h
 )
 
 
 ki18n_wrap_ui(KF5MessageComposer
     imagescaling/ui/imagescalingwidget.ui
     sendlater/ui/sendlaterwidget.ui
-    )
+)
 ecm_qt_declare_logging_category(KF5MessageComposer HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer
-        DESCRIPTION "messagelib (messagecomposer)"
-        OLD_CATEGORY_NAMES log_messagecomposer
-        EXPORT MESSAGELIB
-    )
+    DESCRIPTION "messagelib (messagecomposer)"
+    OLD_CATEGORY_NAMES log_messagecomposer
+    EXPORT MESSAGELIB
+)
 
 
 if(KDEPIM_ENTERPRISE_BUILD)
@@ -532,12 +537,22 @@ ecm_generate_headers(MessageComposer_Camelcasedraftstatus_HEADERS
     RELATIVE draftstatus
     )
 
+ecm_generate_headers(MessageComposer_CamelcaseMdn_HEADERS
+    HEADER_NAMES
+    MDNAdviceHelper
+    MDNStateAttribute
+    REQUIRED_HEADERS MessageComposer_mdn_HEADERS
+    PREFIX MessageComposer
+    RELATIVE mdn
+    )
+
 ecm_generate_pri_file(BASE_NAME MessageComposer
     LIB_NAME KF5MessageComposer
     DEPS "KMime MessageCore PimCommon Akonadi KIdentityManagement AkonadiMime Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer
     )
 
 install(FILES
+    ${MessageComposer_CamelcaseMdn_HEADERS}
     ${MessageComposer_CamelPluginEditorBase_HEADERS}
     ${MessageComposer_Camelsnippet_HEADERS}
     ${MessageComposer_Camelplugineditorconverttext_HEADERS}
@@ -565,6 +580,7 @@ install(FILES
     )
 
 install(FILES
+    ${MessageComposer_mdn_HEADERS}
     ${MessageComposer_HEADERS}
     ${MessageComposer_PluginEditorBase_HEADERS}
     ${MessageComposer_snippet_HEADERS}
