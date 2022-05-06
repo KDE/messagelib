@@ -13,4 +13,10 @@ class MDNWarningWidget : public KMessageWidget
 public:
     explicit MDNWarningWidget(QWidget *parent = nullptr);
     ~MDNWarningWidget() override;
+
+private:
+    void slotSend();
+    void slotIgnore();
+    QAction *const mIgnoreAction;
+    QAction *const mSendAction;
 };

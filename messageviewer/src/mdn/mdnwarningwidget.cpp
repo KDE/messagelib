@@ -6,9 +6,12 @@
 
 #include "mdnwarningwidget.h"
 #include <KLocalizedString>
+#include <QAction>
 
 MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     : KMessageWidget(parent)
+    , mIgnoreAction(new QAction(i18nc("@action", "Ignore"), this))
+    , mSendAction(new QAction(i18nc("@action", "Send"), this))
 {
     setVisible(false);
     setCloseButtonVisible(true);
@@ -16,6 +19,20 @@ MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     setWordWrap(true);
     // TODO
     // setText(i18n("This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"));
+    connect(mIgnoreAction, &QAction::triggered, this, &MDNWarningWidget::slotIgnore);
+    addAction(mIgnoreAction);
+    connect(mSendAction, &QAction::triggered, this, &MDNWarningWidget::slotSend);
+    addAction(mSendAction);
 }
 
 MDNWarningWidget::~MDNWarningWidget() = default;
+
+void MDNWarningWidget::slotSend()
+{
+    // TODO
+}
+
+void MDNWarningWidget::slotIgnore()
+{
+    // TODO
+}
