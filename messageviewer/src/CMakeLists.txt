@@ -57,6 +57,7 @@ if(BUILD_TESTING)
     add_subdirectory(viewer/renderer/autotests)
     add_subdirectory(remote-content/autotests)
     add_subdirectory(openurlwith/autotests)
+    add_subdirectory(mdn/autotests)
 endif()
 add_subdirectory(pics)
 add_subdirectory(about)
@@ -363,6 +364,9 @@ target_sources(KF5MessageViewer PRIVATE
     openurlwith/openurlwithmanager.cpp
     openurlwith/openurlwithjob.h
     openurlwith/openurlwithjob.cpp
+
+    mdn/mdnwarningwidget.cpp
+    mdn/mdnwarningwidget.h
     )
 
 ecm_qt_declare_logging_category(KF5MessageViewer HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
