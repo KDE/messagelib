@@ -5,9 +5,16 @@
 */
 
 #pragma once
+#include "messageviewer_private_export.h"
 #include <KMessageWidget>
 
-class MDNWarningWidget : public KMessageWidget
+namespace MessageViewer
+{
+/**
+ * @brief The RemoteContentInfo class
+ * @author Laurent Montel <montel@kde.org>
+ */
+class MESSAGEVIEWER_TESTS_EXPORT MDNWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
@@ -20,3 +27,4 @@ private:
     QAction *const mIgnoreAction;
     QAction *const mSendAction;
 };
+}

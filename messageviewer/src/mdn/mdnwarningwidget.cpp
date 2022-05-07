@@ -8,6 +8,7 @@
 #include <KLocalizedString>
 #include <QAction>
 
+using namespace MessageViewer;
 MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     : KMessageWidget(parent)
     , mIgnoreAction(new QAction(i18nc("@action", "Ignore"), this))
