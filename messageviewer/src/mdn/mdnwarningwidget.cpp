@@ -30,10 +30,10 @@ MDNWarningWidget::~MDNWarningWidget() = default;
 
 void MDNWarningWidget::slotSend()
 {
-    // TODO
+    Q_EMIT sendMdn();
 }
 
 void MDNWarningWidget::slotIgnore()
 {
-    // TODO
+    Q_EMIT ignoreMdn();
 }

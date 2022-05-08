@@ -21,6 +21,10 @@ public:
     explicit MDNWarningWidget(QWidget *parent = nullptr);
     ~MDNWarningWidget() override;
 
+Q_SIGNALS:
+    void ignoreMdn();
+    void sendMdn();
+
 private:
     void slotSend();
     void slotIgnore();
