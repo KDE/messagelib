@@ -23,6 +23,8 @@ MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     addAction(mIgnoreAction);
     connect(mSendAction, &QAction::triggered, this, &MDNWarningWidget::slotSend);
     addAction(mSendAction);
+    mIgnoreAction->setObjectName(QStringLiteral("mIgnoreAction"));
+    mSendAction->setObjectName(QStringLiteral("mSendAction"));
 }
 
 MDNWarningWidget::~MDNWarningWidget() = default;

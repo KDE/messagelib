@@ -18,5 +18,11 @@ MDNWarningWidgetTest::MDNWarningWidgetTest(QObject *parent)
 void MDNWarningWidgetTest::shouldHaveDefaultValues()
 {
     MessageViewer::MDNWarningWidget w;
-    // TODO
+    QVERIFY(!w.isVisible());
+    QVERIFY(w.wordWrap());
+
+    QCOMPARE(w.messageType(), KMessageWidget::Information);
+    // mIgnoreAction->setObjectName(QStringLiteral("mIgnoreAction"));
+    //  mSendAction->setObjectName(QStringLiteral("mSendAction"));
+    //  TODO
 }
