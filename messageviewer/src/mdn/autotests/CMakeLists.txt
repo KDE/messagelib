@@ -8,3 +8,5 @@ macro(add_messageviewer_mdn_unittest _source)
         LINK_LIBRARIES KF5::MessageViewer Qt${QT_MAJOR_VERSION}::Test
     )
 endmacro ()
+
+add_messageviewer_mdn_unittest(mdnwarningwidgettest.cpp)
