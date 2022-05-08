@@ -15,8 +15,7 @@ MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     , mSendAction(new QAction(i18nc("@action", "Send"), this))
 {
     setVisible(false);
-    setCloseButtonVisible(true);
-    setMessageType(Warning);
+    setMessageType(Information);
     setWordWrap(true);
     // TODO
     // setText(i18n("This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"));
