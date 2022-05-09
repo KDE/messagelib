@@ -21,14 +21,19 @@ public:
     explicit MDNWarningWidget(QWidget *parent = nullptr);
     ~MDNWarningWidget() override;
 
+    void setCanDeny(bool deny);
+
 Q_SIGNALS:
     void ignoreMdn();
     void sendMdn();
+    void sendDeny();
 
 private:
     void slotSend();
     void slotIgnore();
+    void slotSendDeny();
     QAction *const mIgnoreAction;
     QAction *const mSendAction;
+    QAction *const mSendDenyAction;
 };
 }

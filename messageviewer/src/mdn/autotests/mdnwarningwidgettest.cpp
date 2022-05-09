@@ -24,9 +24,9 @@ void MDNWarningWidgetTest::shouldHaveDefaultValues()
     QVERIFY(w.wordWrap());
 
     QCOMPARE(w.messageType(), KMessageWidget::Information);
-    QCOMPARE(w.actions().count(), 2);
+    QCOMPARE(w.actions().count(), 3);
     const auto acts{w.actions()};
-    for (const auto &name : {QStringLiteral("mIgnoreAction"), QStringLiteral("mSendAction")}) {
+    for (const auto &name : {QStringLiteral("mIgnoreAction"), QStringLiteral("mSendAction"), QStringLiteral("mSendDenyAction")}) {
         bool found = false;
         for (auto a : acts) {
             if (a->objectName() == name) {
@@ -60,6 +60,17 @@ void MDNWarningWidgetTest::shouldEmitSignals()
             QSignalSpy sendMdn(&w, &MessageViewer::MDNWarningWidget::sendMdn);
             a->trigger();
             QCOMPARE(sendMdn.count(), 1);
+            break;
+        }
+    }
+
+    found = false;
+    for (auto a : acts) {
+        if (a->objectName() == QStringLiteral("mSendDenyAction")) {
+            found = true;
+            QSignalSpy sendDeny(&w, &MessageViewer::MDNWarningWidget::sendDeny);
+            a->trigger();
+            QCOMPARE(sendDeny.count(), 1);
             break;
         }
     }
