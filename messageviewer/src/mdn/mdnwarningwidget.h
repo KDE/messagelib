@@ -11,7 +11,7 @@
 namespace MessageViewer
 {
 /**
- * @brief The RemoteContentInfo class
+ * @brief The MDNWarningWidget class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_TESTS_EXPORT MDNWarningWidget : public KMessageWidget
