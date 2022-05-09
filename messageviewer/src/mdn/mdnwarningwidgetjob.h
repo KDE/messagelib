@@ -28,6 +28,8 @@ public:
     Q_REQUIRED_RESULT const Akonadi::Item &item() const;
     void setItem(const Akonadi::Item &newItem);
 
+    Q_REQUIRED_RESULT bool canStart() const;
+
 private:
     Akonadi::Item mItem;
 };

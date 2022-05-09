@@ -18,6 +18,10 @@ MDNWarningWidgetJob::~MDNWarningWidgetJob()
 
 void MDNWarningWidgetJob::start()
 {
+    if (!canStart()) {
+        deleteLater();
+        return;
+    }
     // TODO
 }
 
@@ -29,4 +33,9 @@ const Akonadi::Item &MDNWarningWidgetJob::item() const
 void MDNWarningWidgetJob::setItem(const Akonadi::Item &newItem)
 {
     mItem = newItem;
+}
+
+bool MDNWarningWidgetJob::canStart() const
+{
+    return mItem.isValid();
 }
