@@ -18,8 +18,6 @@ MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     setVisible(false);
     setMessageType(Information);
     setWordWrap(true);
-    // TODO
-    // setText(i18n("This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"));
     connect(mIgnoreAction, &QAction::triggered, this, &MDNWarningWidget::slotIgnore);
     addAction(mIgnoreAction);
     connect(mSendAction, &QAction::triggered, this, &MDNWarningWidget::slotSend);
@@ -30,6 +28,7 @@ MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     mIgnoreAction->setObjectName(QStringLiteral("mIgnoreAction"));
     mSendAction->setObjectName(QStringLiteral("mSendAction"));
     mSendDenyAction->setObjectName(QStringLiteral("mSendDenyAction"));
+    // TODO add text
 }
 
 MDNWarningWidget::~MDNWarningWidget() = default;
