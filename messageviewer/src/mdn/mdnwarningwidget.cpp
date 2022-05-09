@@ -40,15 +40,18 @@ void MDNWarningWidget::setCanDeny(bool deny)
 
 void MDNWarningWidget::slotSend()
 {
+    animatedHide();
     Q_EMIT sendMdn();
 }
 
 void MDNWarningWidget::slotIgnore()
 {
+    animatedHide();
     Q_EMIT ignoreMdn();
 }
 
 void MDNWarningWidget::slotSendDeny()
 {
+    animatedHide();
     Q_EMIT sendDeny();
 }
