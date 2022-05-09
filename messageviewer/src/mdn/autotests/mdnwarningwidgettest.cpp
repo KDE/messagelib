@@ -7,6 +7,7 @@
 #include "mdn/mdnwarningwidget.h"
 
 #include <QAction>
+#include <QSignalSpy>
 #include <QTest>
 
 QTEST_MAIN(MDNWarningWidgetTest)
@@ -35,4 +36,33 @@ void MDNWarningWidgetTest::shouldHaveDefaultValues()
         }
         QVERIFY(found);
     }
+}
+
+void MDNWarningWidgetTest::shouldEmitSignals()
+{
+    MessageViewer::MDNWarningWidget w;
+    const auto acts{w.actions()};
+    bool found = false;
+    for (auto a : acts) {
+        if (a->objectName() == QStringLiteral("mIgnoreAction")) {
+            found = true;
+            QSignalSpy ignoreMdn(&w, &MessageViewer::MDNWarningWidget::ignoreMdn);
+            a->trigger();
+            QCOMPARE(ignoreMdn.count(), 1);
+            break;
+        }
+    }
+
+    found = false;
+    for (auto a : acts) {
+        if (a->objectName() == QStringLiteral("mSendAction")) {
+            found = true;
+            QSignalSpy sendMdn(&w, &MessageViewer::MDNWarningWidget::sendMdn);
+            a->trigger();
+            QCOMPARE(sendMdn.count(), 1);
+            break;
+        }
+    }
+
+    QVERIFY(found);
 }
