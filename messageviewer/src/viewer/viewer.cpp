@@ -67,10 +67,8 @@ Viewer::Viewer(QWidget *aParent, QWidget *mainWindow, KActionCollection *actionC
     initialize();
 }
 
-Viewer::~Viewer()
-{
-    // the d_ptr is automatically deleted
-}
+// the d_ptr is automatically deleted
+Viewer::~Viewer() = default;
 
 void Viewer::initialize()
 {

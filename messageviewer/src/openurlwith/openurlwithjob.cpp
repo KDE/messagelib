@@ -16,9 +16,7 @@ OpenUrlWithJob::OpenUrlWithJob(QObject *parent)
 {
 }
 
-OpenUrlWithJob::~OpenUrlWithJob()
-{
-}
+OpenUrlWithJob::~OpenUrlWithJob() = default;
 
 bool OpenUrlWithJob::canStart() const
 {
