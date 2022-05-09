@@ -28,7 +28,6 @@ MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     mIgnoreAction->setObjectName(QStringLiteral("mIgnoreAction"));
     mSendAction->setObjectName(QStringLiteral("mSendAction"));
     mSendDenyAction->setObjectName(QStringLiteral("mSendDenyAction"));
-    // TODO add text
 }
 
 MDNWarningWidget::~MDNWarningWidget() = default;
