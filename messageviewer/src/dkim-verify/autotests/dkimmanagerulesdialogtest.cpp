@@ -8,6 +8,7 @@
 #include "dkim-verify/dkimmanagerulesdialog.h"
 #include "dkim-verify/dkimmanageruleswidget.h"
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(DKIMManageRulesDialogTest)
@@ -31,4 +32,17 @@ void DKIMManageRulesDialogTest::shouldHaveDefaultValues()
     auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), QDialogButtonBox::StandardButtons{QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
+
+    auto addButton = w.findChild<QPushButton *>(QStringLiteral("addButton"));
+    QVERIFY(addButton);
+    QVERIFY(!addButton->text().isEmpty());
+
+    auto importButton = w.findChild<QPushButton *>(QStringLiteral("importButton"));
+    QVERIFY(importButton);
+    QVERIFY(!importButton->text().isEmpty());
+
+    auto mExportButton = w.findChild<QPushButton *>(QStringLiteral("mExportButton"));
+    QVERIFY(mExportButton);
+    QVERIFY(!mExportButton->text().isEmpty());
+    QVERIFY(!mExportButton->isEnabled());
 }
