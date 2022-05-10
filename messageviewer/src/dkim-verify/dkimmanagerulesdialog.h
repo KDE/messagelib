@@ -7,6 +7,8 @@
 
 #include "messageviewer_export.h"
 #include <QDialog>
+
+class QPushButton;
 namespace MessageViewer
 {
 class DKIMManageRulesWidget;
@@ -28,5 +30,6 @@ private:
     void slotImport();
     void slotExport();
     DKIMManageRulesWidget *const mRulesWidget;
+    QPushButton *mExportButton = nullptr;
 };
 }

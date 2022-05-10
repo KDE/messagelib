@@ -46,12 +46,14 @@ DKIMManageRulesDialog::DKIMManageRulesDialog(QWidget *parent)
     buttonBox->addButton(importButton, QDialogButtonBox::ActionRole);
     connect(importButton, &QPushButton::clicked, this, &DKIMManageRulesDialog::slotImport);
 
-    auto exportButton = new QPushButton(i18n("Export..."), this);
-    buttonBox->addButton(exportButton, QDialogButtonBox::ActionRole);
-    connect(exportButton, &QPushButton::clicked, this, &DKIMManageRulesDialog::slotExport);
+    mExportButton = new QPushButton(i18n("Export..."), this);
+    buttonBox->addButton(mExportButton, QDialogButtonBox::ActionRole);
+    connect(mExportButton, &QPushButton::clicked, this, &DKIMManageRulesDialog::slotExport);
 
     connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMManageRulesDialog::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMManageRulesDialog::reject);
+    connect(mRulesWidget, &DKIMManageRulesWidget::updateExportButton, mExportButton, &QPushButton::setEnabled);
+    mExportButton->setEnabled(false);
     mRulesWidget->loadSettings();
     readConfig();
 }

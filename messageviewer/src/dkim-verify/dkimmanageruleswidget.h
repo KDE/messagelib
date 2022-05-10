@@ -60,6 +60,9 @@ public:
     void addRule();
     Q_REQUIRED_RESULT QVector<MessageViewer::DKIMRule> rules() const;
 
+Q_SIGNALS:
+    void updateExportButton(bool enabled);
+
 private:
     void modifyRule(DKIMManageRulesWidgetItem *rulesItem);
     void slotCustomContextMenuRequested(const QPoint &);

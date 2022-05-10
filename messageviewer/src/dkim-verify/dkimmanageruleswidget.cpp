@@ -102,6 +102,7 @@ void DKIMManageRulesWidget::loadSettings()
     mTreeWidget->header()->setSortIndicatorShown(true);
     mTreeWidget->header()->setSectionsClickable(true);
     mTreeWidget->sortByColumn(0, Qt::AscendingOrder);
+    Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
 }
 
 QVector<MessageViewer::DKIMRule> DKIMManageRulesWidget::rules() const
@@ -140,6 +141,7 @@ void DKIMManageRulesWidget::addRule()
         if (rule.isValid()) {
             auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
             item->setRule(rule);
+            Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
         } else {
             qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Rule is not valid";
         }
@@ -156,6 +158,7 @@ void DKIMManageRulesWidget::duplicateRule(DKIMManageRulesWidgetItem *rulesItem)
         if (rule.isValid()) {
             auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
             item->setRule(rule);
+            Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
         }
     }
     delete dlg;
@@ -199,6 +202,7 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
                                                          KStandardGuiItem::cancel());
             if (answer == KMessageBox::Yes) {
                 delete item;
+                Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
             }
         });
     }
@@ -212,6 +216,7 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
                                                          KStandardGuiItem::cancel());
             if (answer == KMessageBox::Yes) {
                 mTreeWidget->clear();
+                Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
             }
         });
     }
