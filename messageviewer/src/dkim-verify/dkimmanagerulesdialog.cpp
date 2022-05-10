@@ -91,6 +91,8 @@ void DKIMManageRulesDialog::slotImport()
     if (!fileName.isEmpty()) {
         if (MessageViewer::DKIMManagerRules::self()->importRules(fileName) == 0) {
             KMessageBox::error(this, i18n("No rules imported."), i18n("Import Rules"));
+        } else {
+            mRulesWidget->updateRules();
         }
     }
 }

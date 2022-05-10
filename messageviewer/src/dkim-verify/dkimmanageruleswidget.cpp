@@ -90,7 +90,7 @@ DKIMManageRulesWidget::DKIMManageRulesWidget(QWidget *parent)
 
 DKIMManageRulesWidget::~DKIMManageRulesWidget() = default;
 
-void DKIMManageRulesWidget::loadSettings()
+void DKIMManageRulesWidget::updateRules()
 {
     const QVector<MessageViewer::DKIMRule> rules = MessageViewer::DKIMManagerRules::self()->rules();
 
@@ -98,11 +98,16 @@ void DKIMManageRulesWidget::loadSettings()
         auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
         item->setRule(rule);
     }
+    Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
+}
+
+void DKIMManageRulesWidget::loadSettings()
+{
     mTreeWidget->setSortingEnabled(true);
     mTreeWidget->header()->setSortIndicatorShown(true);
     mTreeWidget->header()->setSectionsClickable(true);
     mTreeWidget->sortByColumn(0, Qt::AscendingOrder);
-    Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
+    updateRules();
 }
 
 QVector<MessageViewer::DKIMRule> DKIMManageRulesWidget::rules() const

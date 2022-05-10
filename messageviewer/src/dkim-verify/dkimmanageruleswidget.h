@@ -60,6 +60,7 @@ public:
     void addRule();
     Q_REQUIRED_RESULT QVector<MessageViewer::DKIMRule> rules() const;
 
+    void updateRules();
 Q_SIGNALS:
     void updateExportButton(bool enabled);
 
