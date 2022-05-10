@@ -68,6 +68,7 @@ private:
     void modifyRule(DKIMManageRulesWidgetItem *rulesItem);
     void slotCustomContextMenuRequested(const QPoint &);
     void duplicateRule(DKIMManageRulesWidgetItem *rulesItem);
+    void emitUpdateExportButton();
     QTreeWidget *const mTreeWidget;
 };
 }

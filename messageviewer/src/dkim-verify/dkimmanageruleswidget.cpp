@@ -98,7 +98,7 @@ void DKIMManageRulesWidget::updateRules()
         auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
         item->setRule(rule);
     }
-    Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
+    emitUpdateExportButton();
 }
 
 void DKIMManageRulesWidget::loadSettings()
@@ -146,7 +146,7 @@ void DKIMManageRulesWidget::addRule()
         if (rule.isValid()) {
             auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
             item->setRule(rule);
-            Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
+            emitUpdateExportButton();
         } else {
             qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Rule is not valid";
         }
@@ -163,10 +163,15 @@ void DKIMManageRulesWidget::duplicateRule(DKIMManageRulesWidgetItem *rulesItem)
         if (rule.isValid()) {
             auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
             item->setRule(rule);
-            Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
+            emitUpdateExportButton();
         }
     }
     delete dlg;
+}
+
+void DKIMManageRulesWidget::emitUpdateExportButton()
+{
+    Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
 }
 
 void DKIMManageRulesWidget::modifyRule(DKIMManageRulesWidgetItem *rulesItem)
@@ -207,7 +212,7 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
                                                          KStandardGuiItem::cancel());
             if (answer == KMessageBox::Yes) {
                 delete item;
-                Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
+                emitUpdateExportButton();
             }
         });
     }
@@ -221,7 +226,7 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
                                                          KStandardGuiItem::cancel());
             if (answer == KMessageBox::Yes) {
                 mTreeWidget->clear();
-                Q_EMIT updateExportButton(mTreeWidget->topLevelItemCount() > 0);
+                emitUpdateExportButton();
             }
         });
     }
