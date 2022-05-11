@@ -5,6 +5,7 @@
 */
 
 #include "composer/nearexpirychecker.h"
+#include "composer/nearexpirychecker_p.h"
 
 #include "messagecomposer_debug.h"
 
@@ -19,22 +20,7 @@
 
 #include <QString>
 
-#include <set>
-
 using namespace MessageComposer;
-
-class MessageComposer::NearExpiryCheckerPrivate {
-public:
-    int encryptKeyNearExpiryWarningThreshold;
-    int signingKeyNearExpiryWarningThreshold;
-    int encryptRootCertNearExpiryWarningThreshold;
-    int signingRootCertNearExpiryWarningThreshold;
-    int encryptChainCertNearExpiryWarningThreshold;
-    int signingChainCertNearExpiryWarningThreshold;
-    
-    std::set<QByteArray> alreadyWarnedFingerprints;
-};
-
 
 NearExpiryChecker::NearExpiryChecker(int encrKeyNearExpiryThresholdDays,
                                      int signKeyNearExpiryThresholdDays,
