@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "messageviewer_private_export.h"
+#include "messageviewer_export.h"
 #include <KMessageWidget>
 
 namespace MessageViewer
@@ -14,7 +14,7 @@ namespace MessageViewer
  * @brief The MDNWarningWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class MESSAGEVIEWER_TESTS_EXPORT MDNWarningWidget : public KMessageWidget
+class MESSAGEVIEWER_EXPORT MDNWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
