@@ -52,6 +52,7 @@ private:
     void slotCustomContextMenuRequested(const QPoint &);
     void modifyRemoteContent(RemoteContentWidgetItem *rulesItem);
     void slotAdd();
+    void fillContentInfo(const RemoteContentInfo &info, RemoteContentWidgetItem *item);
     void readSettings();
     QTreeWidget *const mTreeWidget;
 };

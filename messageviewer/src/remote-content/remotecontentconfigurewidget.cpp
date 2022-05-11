@@ -110,8 +110,7 @@ void RemoteContentConfigureWidget::modifyRemoteContent(RemoteContentWidgetItem *
     if (dlg->exec()) {
         info = dlg->info();
         RemoteContentManager::self()->addRemoteContent(info);
-        rulesItem->setText(0, info.url());
-        rulesItem->setStatus(info.status());
+        fillContentInfo(info, rulesItem);
     }
     delete dlg;
 }
@@ -170,6 +169,12 @@ void RemoteContentConfigureWidget::readSettings()
 void RemoteContentConfigureWidget::insertRemoteContentInfo(const RemoteContentInfo &info)
 {
     auto item = new RemoteContentWidgetItem(mTreeWidget);
+    fillContentInfo(info, item);
+}
+
+void RemoteContentConfigureWidget::fillContentInfo(const RemoteContentInfo &info, RemoteContentWidgetItem *item)
+{
     item->setText(0, info.url());
+    item->setToolTip(0, info.url());
     item->setStatus(info.status());
 }
