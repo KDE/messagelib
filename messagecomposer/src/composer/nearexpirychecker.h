@@ -47,6 +47,7 @@ public:
         OtherKeyExpired,
         OtherKeyNearExpiry
     };
+    Q_ENUM(ExpiryInformation)
 
     void checkOwnSigningKey(const GpgME::Key& key) const;
     void checkOwnKey(const GpgME::Key& key) const;
@@ -68,3 +69,4 @@ private:
                             const GpgME::Key& orig_key = GpgME::Key::null) const;
 };
 }
+Q_DECLARE_METATYPE(GpgME::Key)
