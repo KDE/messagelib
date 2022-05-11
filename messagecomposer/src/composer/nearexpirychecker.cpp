@@ -76,7 +76,7 @@ QString formatOpenPGPMessage(const GpgME::Key& key, int secsTillExpiry, bool isO
     static const double secsPerDay = 24 * 60 * 60;
     const int daysTillExpiry = 1 + int(abs(secsTillExpiry) / secsPerDay);
     if (secsTillExpiry <= 0) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.shortKeyID() << " expired " << daysTillExpiry << " days ago";
+        qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.keyID() << " expired " << daysTillExpiry << " days ago";
         if (isSigningKey) {
             msg = ki18np("<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
                             "<p>expired less than a day ago.</p>",
@@ -94,7 +94,7 @@ QString formatOpenPGPMessage(const GpgME::Key& key, int secsTillExpiry, bool isO
                          "<p>expired %1 days ago.</p>");
         }
     } else {
-        qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.shortKeyID() << " expires in less than " << daysTillExpiry << " days";
+        qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.keyID() << " expires in less than " << daysTillExpiry << " days";
         if (isSigningKey) {
             msg = ki18np("<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
                          "<p>expires in less than a day.</p>",
@@ -114,7 +114,7 @@ QString formatOpenPGPMessage(const GpgME::Key& key, int secsTillExpiry, bool isO
     }
     return msg.subs(daysTillExpiry)
                 .subs(QString::fromUtf8(key.userID(0).id()))
-                .subs(QString::fromLatin1(key.shortKeyID()))
+                .subs(QString::fromLatin1(key.keyID()))
                 .toString();
 }
 
@@ -124,7 +124,7 @@ QString formatSMIMEMessage(const GpgME::Key& key, const GpgME::Key& orig_key, in
     static const double secsPerDay = 24 * 60 * 60;
     const int daysTillExpiry = 1 + int(abs(secsTillExpiry) / secsPerDay);
     if (secsTillExpiry <= 0) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.shortKeyID() << " expired " << daysTillExpiry << " days ago";
+        qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.keyID() << " expired " << daysTillExpiry << " days ago";
         if (ca) {
             if (key.isRoot()) {
                 if (isSigningKey) {
@@ -201,7 +201,7 @@ QString formatSMIMEMessage(const GpgME::Key& key, const GpgME::Key& orig_key, in
                       .toString();
         }
     } else {
-        qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.shortKeyID() << " expires in less than " << daysTillExpiry << " days";
+        qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.keyID() << " expires in less than " << daysTillExpiry << " days";
         if (ca) {
             if (key.isRoot()) {
                 if (isSigningKey) {
