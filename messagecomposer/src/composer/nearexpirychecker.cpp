@@ -96,19 +96,19 @@ QString formatOpenPGPMessage(const GpgME::Key& key, int secsTillExpiry, bool isO
     } else {
         qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.keyID() << " expires in less than " << daysTillExpiry << " days";
         if (isSigningKey) {
-            msg = ki18np("<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+            msg = ki18np("<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
                          "<p>expires in less than a day.</p>",
-                         "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+                         "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
                          "<p>expires in less than %1 days.</p>");
         } else if (isOwnKey) {
-            msg = ki18np("<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+            msg = ki18np("<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
                          "<p>expires in less than a day.</p>",
-                         "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+                         "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
                          "<p>expires in less than %1 days.</p>");
         } else {
-            msg = ki18np("<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+            msg = ki18np("<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
                          "<p>expires in less than a day.</p>",
-                         "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+                         "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
                          "<p>expires in less than %1 days.</p>");
         }
     }
@@ -205,48 +205,48 @@ QString formatSMIMEMessage(const GpgME::Key& key, const GpgME::Key& orig_key, in
         if (ca) {
             if (key.isRoot()) {
                 if (isSigningKey) {
-                    msg = ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                    msg = ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than a day.</p>",
-                                 "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                                 "<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than %1 days.</p>");
                 } else if (isOwnKey) {
-                    msg = ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                    msg = ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than a day.</p>",
-                                 "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                                 "<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than %1 days.</p>");
                 } else {
-                    msg = ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                    msg = ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than a day.</p>",
-                                 "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                                 "<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than %1 days.</p>");
 
                 }
             } else {
                 if (isSigningKey) {
-                    msg = ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                    msg = ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than a day.</p>",
-                                 "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                                 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than %1 days.</p>");
                 } else if (isOwnKey) {
-                    msg = ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                    msg = ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than a day.</p>",
-                                 "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                                 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than %1 days.</p>");
                 } else {
-                    msg = ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                 "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                    msg = ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                 "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than a day.</p>",
-                                 "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
+                                 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
                                  "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                                  "<p>expires in less than %1 days.</p>");
                 }
@@ -258,19 +258,19 @@ QString formatSMIMEMessage(const GpgME::Key& key, const GpgME::Key& orig_key, in
                        .toString();
         } else {
             if (isSigningKey) {
-                msg = ki18np("<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                msg = ki18np("<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                              "<p>expires in less than a day.</p>",
-                             "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                             "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                              "<p>expires in less than %1 days.</p>");
             } else if (isOwnKey) {
-                msg = ki18np("<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                msg = ki18np("<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                              "<p>expires in less than a day.</p>",
-                             "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                             "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3);</p>"
                              "<p>expires in less than %1 days.</p>");
             } else {
-                msg = ki18np("<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                msg = ki18np("<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number %3);</p>"
                              "<p>expires in less than a day.</p>",
-                             "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial number %3);</p>"
+                             "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number %3);</p>"
                              "<p>expires in less than %1 days.</p>");
 
             }
