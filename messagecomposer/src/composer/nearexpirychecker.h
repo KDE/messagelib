@@ -14,6 +14,8 @@
 
 #include <memory>
 
+class NearExpiryCheckerTest;
+
 namespace MessageComposer
 {
 class NearExpiryCheckerPrivate;
@@ -57,6 +59,8 @@ Q_SIGNALS:
     void expiryMessage(const GpgME::Key &key, QString msg, MessageComposer::NearExpiryChecker::ExpiryInformation info) const;
 
 private:
+    friend class ::NearExpiryCheckerTest;
+
     std::unique_ptr<NearExpiryCheckerPrivate> const d;
 
     double calculateSecsTillExpiriy(const GpgME::Subkey& key) const;

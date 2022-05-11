@@ -3,6 +3,7 @@
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 add_definitions( -DMESSAGECORE_DATA_DIR="${CMAKE_SOURCE_DIR}/messagecore/autotests/data" )
 add_definitions( -DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
+add_definitions( -DGNUPGHOME="${CMAKE_BINARY_DIR}/messagecore/autotests/gnupg_home")
 
 include( ${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake )
 
@@ -102,6 +103,15 @@ add_messagecomposer_cryptotest( encryptjobtest.cpp )
 add_messagecomposer_cryptotest( signencrypttest.cpp )
 add_messagecomposer_cryptotest( signandencrypttest.cpp )
 add_messagecomposer_cryptotest( keyresolvertest.cpp )
+
+ecm_add_test( nearexpirycheckertest.cpp setupenv.cpp
+        TEST_NAME "nearexpirycheckertest"
+        NAME_PREFIX "messagecomposer-"
+        LINK_LIBRARIES
+            KF5::MessageComposer
+            Qt${QT_MAJOR_VERSION}::Test
+            KF5::Libkleo
+    )
 
 set(AKONADI_RUN_POSTGRES_ISOLATED_TESTS FALSE)
 set(AKONADI_RUN_MYSQL_ISOLATED_TESTS FALSE)
