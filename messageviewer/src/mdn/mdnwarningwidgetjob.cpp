@@ -27,12 +27,14 @@ void MDNWarningWidgetJob::start()
     if (collection.isValid()
         && (CommonKernel->folderIsSentMailFolder(collection) || CommonKernel->folderIsTrash(collection) || CommonKernel->folderIsDraftOrOutbox(collection)
             || CommonKernel->folderIsTemplates(collection))) {
-        continue;
+        deleteLater();
+        return;
     }
 
     const KMime::Message::Ptr message = MessageComposer::Util::message(item);
     if (!message) {
-        continue;
+        deleteLater();
+        return;
     }
 
     const QPair<bool, KMime::MDN::SendingMode> mdnSend = MessageComposer::MDNAdviceHelper::instance()->checkAndSetMDNInfo(item, KMime::MDN::Displayed);
