@@ -5,7 +5,11 @@
 */
 
 #include "mdnwarningwidgetjob.h"
-
+#include <Akonadi/Item>
+#include <Akonadi/ItemModifyJob>
+#ifdef ENABLE_JOB
+#include <MessageComposer/MDNStateAttribute>
+#endif
 using namespace MessageViewer;
 MDNWarningWidgetJob::MDNWarningWidgetJob(QObject *parent)
     : QObject{parent}
@@ -70,4 +74,19 @@ void MDNWarningWidgetJob::setItem(const Akonadi::Item &newItem)
 bool MDNWarningWidgetJob::canStart() const
 {
     return mItem.isValid();
+}
+
+void MDNWarningWidgetJob::modifyItem()
+{
+#ifdef ENABLE_JOB
+    auto mdnStateAttr = new MessageComposer::MDNStateAttribute(MessageComposer::MDNStateAttribute::MDNStateUnknown);
+    // create a minimal version of item with just the attribute we want to change
+    Akonadi::Item i(mItem.id());
+    i.setRevision(mItem.revision());
+    i.setMimeType(mItem.mimeType());
+    i.addAttribute(mdnStateAttr);
+    auto modify = new Akonadi::ItemModifyJob(i);
+    modify->setIgnorePayload(true);
+    modify->disableRevisionCheck();
+#endif
 }

@@ -31,6 +31,7 @@ public:
     Q_REQUIRED_RESULT bool canStart() const;
 
 private:
+    void modifyItem();
     Akonadi::Item mItem;
 };
 }
