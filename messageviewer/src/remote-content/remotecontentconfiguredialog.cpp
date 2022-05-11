@@ -29,7 +29,7 @@ RemoteContentConfigureDialog::RemoteContentConfigureDialog(QWidget *parent)
     mRemoteContentConfigureWidget->setObjectName(QStringLiteral("mRemoteContentConfigureWidget"));
     mainLayout->addWidget(mRemoteContentConfigureWidget);
 
-    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     connect(buttonBox, &QDialogButtonBox::accepted, this, &RemoteContentConfigureDialog::slotAccept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RemoteContentConfigureDialog::reject);
