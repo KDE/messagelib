@@ -90,7 +90,7 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
         // if already dealt with, don't do it again.
         return QPair<bool, KMime::MDN::SendingMode>(false, KMime::MDN::SentAutomatically);
     }
-    auto *mdnStateAttr = new MessageComposer::MDNStateAttribute(MessageComposer::MDNStateAttribute::MDNStateUnknown);
+    auto mdnStateAttr = new MessageComposer::MDNStateAttribute(MessageComposer::MDNStateAttribute::MDNStateUnknown);
 
     KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
     bool doSend = false;

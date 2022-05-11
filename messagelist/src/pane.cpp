@@ -107,7 +107,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
         }
 
         d->mProxyStack << proxyModel;
-        const auto *nextProxyModel = qobject_cast<const QAbstractProxyModel *>(proxyModel->sourceModel());
+        const auto nextProxyModel = qobject_cast<const QAbstractProxyModel *>(proxyModel->sourceModel());
 
         if (!nextProxyModel) {
             // It's the final model in the chain, so it is necessarily the sourceModel.
