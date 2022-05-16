@@ -15,7 +15,11 @@
 #include <QPointer>
 #include <QPrinter>
 #include <QTimer>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QWebEngineDownloadItem>
+#else
+#include <QWebEngineDownloadRequest>
+#endif
 #include <QWebEngineProfile>
 
 using namespace WebEngineViewer;
@@ -63,11 +67,19 @@ QPoint WebEnginePage::mapToViewport(const QPoint &pos) const
     return QPoint(pos.x() / zoomFactor(), pos.y() / zoomFactor());
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void WebEnginePage::saveHtml(QWebEngineDownloadItem *download)
+#else
+void WebEnginePage::saveHtml(QWebEngineDownloadRequest *download)
+#endif
 {
     const QString fileName = QFileDialog::getSaveFileName(view(), i18n("Save HTML Page"));
     if (!fileName.isEmpty()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
+#else
+        download->setSavePageFormat(QWebEngineDownloadRequest::SingleHtmlSaveFormat);
+#endif
         download->setDownloadDirectory(QFileInfo(fileName).path());
         download->setDownloadFileName(QFileInfo(fileName).fileName());
         download->accept();
