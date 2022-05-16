@@ -55,7 +55,7 @@ void ConvertHtmlToPlainText::toCleanPlainText(QString &text)
 
     // Get rid of embedded images, see QTextImageFormat documentation:
     // "Inline images are represented by an object replacement character (0xFFFC in Unicode) "
-    text.remove(0xFFFC);
+    text.remove(QChar(0xFFFC));
 
     // In plaintext mode, each space is non-breaking.
     text.replace(QChar::Nbsp, QChar::fromLatin1(' '));
