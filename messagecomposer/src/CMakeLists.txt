@@ -292,6 +292,10 @@ target_link_libraries(KF5MessageComposer
     KF5::GuiAddons
     )
 
+if (TARGET Qt6::Core5Compat)
+    target_link_libraries(KF5MessageComposer PRIVATE Qt6::Core5Compat)
+endif()
+
 target_include_directories(KF5MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageComposer/>")
 
 set_target_properties(KF5MessageComposer PROPERTIES

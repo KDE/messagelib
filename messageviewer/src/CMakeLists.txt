@@ -441,6 +441,9 @@ target_link_libraries(KF5MessageViewer
     qca-qt${QT_MAJOR_VERSION}
     KF5::Notifications
     )
+if (TARGET Qt6::Core5Compat)
+    target_link_libraries(KF5MessageViewer PRIVATE Qt6::Core5Compat) 
+endif()
 
 set_target_properties(KF5MessageViewer PROPERTIES
     VERSION ${MESSAGEVIEWER_VERSION}
