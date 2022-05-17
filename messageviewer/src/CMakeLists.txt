@@ -367,9 +367,6 @@ target_sources(KF5MessageViewer PRIVATE
 
     mdn/mdnwarningwidget.cpp
     mdn/mdnwarningwidget.h
-
-    mdn/mdnwarningwidgetjob.cpp
-    mdn/mdnwarningwidgetjob.h
     )
 
 ecm_qt_declare_logging_category(KF5MessageViewer HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
