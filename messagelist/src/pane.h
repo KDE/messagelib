@@ -434,7 +434,7 @@ Q_SIGNALS:
     void forceLostFocus();
 
 private:
-    void restoreHeaderSettings(int index);
+    void restoreHeaderSettings(int index, bool restoreSession);
     void readConfig(bool restoreSession);
 
     bool eventFilter(QObject *obj, QEvent *event) override;

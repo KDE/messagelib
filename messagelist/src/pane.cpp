@@ -32,6 +32,7 @@
 #include "messagelistutil_p.h"
 #include "storagemodel.h"
 #include "widget.h"
+#include <Akonadi/ETMViewStateSaver>
 #include <Akonadi/MessageStatus>
 
 namespace MessageList
@@ -1148,38 +1149,33 @@ void Pane::readConfig(bool restoreSession)
         } else {
             for (int i = 0; i < numberOfTab; ++i) {
                 createNewTab();
-                restoreHeaderSettings(i);
-                if (restoreSession) {
-#if 0 // TODO fix me
-                    Akonadi::Collection::Id id = grp.readEntry(QStringLiteral("collectionId"), -1);
-                    ETMViewStateSaver *saver = new ETMViewStateSaver;
-                    saver->setSelectionModel(selectionModel);
-
-                    if (id != -1) {
-                        ETMViewStateSaver *saver = new ETMViewStateSaver;
-                        saver->setSelectionModel(selectionModel);
-                        saver->restoreState(grp);
-                        saver->selectCollections(Akonadi::Collection::List() << Akonadi::Collection(id));
-                        saver->restoreCurrentItem(QString::fromLatin1("c%1").arg(id));
-                    }
-#endif
-                }
+                restoreHeaderSettings(i, restoreSession);
             }
             setCurrentIndex(conf.readEntry(QStringLiteral("currentIndex"), 0));
         }
     } else {
         createNewTab();
-        restoreHeaderSettings(0);
+        restoreHeaderSettings(0, false);
     }
 }
 
-void Pane::restoreHeaderSettings(int index)
+void Pane::restoreHeaderSettings(int index, bool restoreSession)
 {
     KConfigGroup grp(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListTab%1").arg(index));
     if (grp.exists()) {
         auto w = qobject_cast<Widget *>(widget(index));
         if (w) {
             w->view()->header()->restoreState(grp.readEntry(QStringLiteral("HeaderState"), QByteArray()));
+        }
+        if (restoreSession) {
+            const Akonadi::Collection::Id id = grp.readEntry(QStringLiteral("collectionId"), -1);
+            if (id != -1) {
+                Akonadi::ETMViewStateSaver *saver = new Akonadi::ETMViewStateSaver;
+                saver->setSelectionModel(d->mSelectionModel);
+                saver->selectCollections(Akonadi::Collection::List() << Akonadi::Collection(id));
+                saver->restoreCurrentItem(QString::fromLatin1("c%1").arg(id));
+                saver->restoreState(grp);
+            }
         }
     }
 }
