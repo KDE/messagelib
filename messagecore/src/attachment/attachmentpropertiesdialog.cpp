@@ -20,6 +20,7 @@
 #include <KMime/Headers>
 
 #include <KFormat>
+#include <KIO/Global>
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QMimeDatabase>
@@ -237,7 +238,7 @@ void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::loadFromPart
     if (mReadOnly) {
         uiReadOnly->mimeType->setText(QString::fromLatin1(mPart->mimeType()));
         mimeTypeChanged(QString::fromLatin1(mPart->mimeType()));
-        uiReadOnly->size->setText(KFormat().formatByteSize(mPart->size()));
+        uiReadOnly->size->setText(KIO::convertSize(mPart->size()));
         uiReadOnly->name->setText(mPart->name().isEmpty() ? mPart->fileName() : mPart->name());
         if (mPart->description().isEmpty()) {
             uiReadOnly->description->hide();
@@ -255,7 +256,7 @@ void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::loadFromPart
         } else {
             ui->mimeType->setCurrentIndex(index);
         }
-        ui->size->setText(KFormat().formatByteSize(mPart->size()));
+        ui->size->setText(KIO::convertSize(mPart->size()));
         ui->name->setText(mPart->name().isEmpty() ? mPart->fileName() : mPart->name());
         ui->description->setText(mPart->description());
         ui->encoding->setCurrentIndex(int(mPart->encoding()));
