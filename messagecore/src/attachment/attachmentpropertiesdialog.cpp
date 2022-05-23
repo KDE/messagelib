@@ -19,7 +19,6 @@
 #include <KMime/Content>
 #include <KMime/Headers>
 
-#include <KFormat>
 #include <KIO/Global>
 #include <KLocalizedString>
 #include <QDialogButtonBox>

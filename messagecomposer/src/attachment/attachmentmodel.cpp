@@ -19,8 +19,6 @@
 #include <KMime/Headers>
 #include <KMime/Util>
 
-#include <KFormat>
-
 using namespace MessageComposer;
 using namespace MessageCore;
 
