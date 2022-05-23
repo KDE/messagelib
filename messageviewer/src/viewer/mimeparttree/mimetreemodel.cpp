@@ -13,7 +13,7 @@
 #include <KMime/Content>
 #include <KMime/Message>
 
-#include <KFormat>
+#include <KIO/Global>
 #include <KLocalizedString>
 
 #include <QIcon>
@@ -86,7 +86,7 @@ public:
         if (content->body().isEmpty()) {
             return {};
         }
-        return KFormat().formatByteSize(content->body().size());
+        return KIO::convertSize(content->body().size());
     }
 
     QIcon iconForContent(KMime::Content *content)

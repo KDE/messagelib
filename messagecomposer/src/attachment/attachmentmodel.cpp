@@ -11,6 +11,7 @@
 #include <QUrl>
 
 #include "messagecomposer_debug.h"
+#include <KIO/Global>
 #include <KLocalizedString>
 #include <QFileDevice>
 #include <QTemporaryDir>
@@ -244,7 +245,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
         case NameColumn:
             return QVariant::fromValue(part->name().isEmpty() ? part->fileName() : part->name());
         case SizeColumn:
-            return QVariant::fromValue(KFormat().formatByteSize(part->size()));
+            return QVariant::fromValue(KIO::convertSize(part->size()));
         case EncodingColumn:
             return QVariant::fromValue(KMime::nameForEncoding(part->encoding()));
         case MimeTypeColumn:
@@ -256,7 +257,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue(i18nc("@info:tooltip",
                                          "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4",
                                          part->name().isEmpty() ? part->fileName() : part->name(),
-                                         KFormat().formatByteSize(part->size()),
+                                         KIO::convertSize(part->size()),
                                          KMime::nameForEncoding(part->encoding()),
                                          QString::fromLatin1(part->mimeType().data())));
     } else if (role == Qt::CheckStateRole) {
@@ -282,7 +283,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
     } else if (role == NameRole) {
         return QVariant::fromValue(part->fileName().isEmpty() ? part->name() : part->fileName());
     } else if (role == SizeRole) {
-        return QVariant::fromValue(KFormat().formatByteSize(part->size()));
+        return QVariant::fromValue(KIO::convertSize(part->size()));
     } else if (role == EncodingRole) {
         return QVariant::fromValue(KMime::nameForEncoding(part->encoding()));
     } else if (role == MimeTypeRole) {
