@@ -11,6 +11,7 @@
 #include <KActionMenu>
 #include <KToggleAction>
 #include <QAction>
+#include <QActionGroup>
 using namespace MessageViewer;
 
 HeaderStyleInterface::HeaderStyleInterface(MessageViewer::HeaderStylePlugin *headerStylePlugin, QObject *parent)

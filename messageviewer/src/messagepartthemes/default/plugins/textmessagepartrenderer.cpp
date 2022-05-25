@@ -50,9 +50,16 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPa
 #endif
     c.insert(QStringLiteral("block"), msgPart.data());
     c.insert(QStringLiteral("showOnlyOneMimePart"), context->showOnlyOneMimePart());
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([mp, htmlWriter, context](Grantlee::OutputStream *) {
                  context->renderSubParts(mp, htmlWriter);
              }));
+#else
+    c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([mp, htmlWriter, context](KTextTemplate::OutputStream *) {
+                 context->renderSubParts(mp, htmlWriter);
+             }));
+#endif
+
     t = MessagePartRendererManager::self()->loadByName(QStringLiteral("textmessagepart.html"));
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::OutputStream s(htmlWriter->stream());

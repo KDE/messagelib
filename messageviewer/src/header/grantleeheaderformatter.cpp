@@ -38,7 +38,11 @@ Q_DECLARE_METATYPE(QSharedPointer<KMime::Headers::Generics::MailboxList>)
 Q_DECLARE_METATYPE(QDateTime)
 
 // Read-only introspection of KMime::Headers::Generics::AddressList object.
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 namespace Grantlee
+#else
+namespace KTextTemplate
+#endif
 {
 template<>
 inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::lookUp(const KMime::Headers::Generics::AddressList *const object,
@@ -95,7 +99,11 @@ KTEXTTEMPLATE_END_LOOKUP
 #endif
 
 // Read-only introspection of KMime::Headers::Generics::MailboxList object.
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 namespace Grantlee
+#else
+namespace KTextTemplate
+#endif
 {
 template<>
 inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::lookUp(const KMime::Headers::Generics::MailboxList *const object,
@@ -125,7 +133,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::loo
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 GRANTLEE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::AddressList>)
 #else
-KTEXTTEMPLATE_LOOKUP(QSharedPointer<KMime::Headers::Generics::AddressList>)
+KTEXTTEMPLATE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::AddressList>)
 #endif
 if (property == QLatin1String("nameOnly")) {
     return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
@@ -150,8 +158,11 @@ GRANTLEE_END_LOOKUP
 #else
 KTEXTTEMPLATE_END_LOOKUP
 #endif
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 namespace Grantlee
+#else
+namespace KTextTemplate
+#endif
 {
 template<>
 inline QVariant TypeAccessor<QDateTime &>::lookUp(const QDateTime &object, const QString &property)
@@ -378,7 +389,11 @@ QString GrantleeHeaderFormatter::toHtml(const GrantleeHeaderFormatter::GrantleeH
         return errorMessage;
     }
     d->templateLoader->setTemplateDirs(QStringList() << settings.theme.absolutePath());
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::Template headerTemplate = d->engine->loadByName(settings.theme.themeFilename());
+#else
+    KTextTemplate::Template headerTemplate = d->engine->loadByName(settings.theme.themeFilename());
+#endif
     if (headerTemplate->error()) {
         errorMessage = headerTemplate->errorString();
         return errorMessage;
@@ -400,7 +415,11 @@ QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders,
                                         bool isPrinting) const
 {
     d->templateLoader->setTemplateDirs(QStringList() << absolutPath);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::Template headerTemplate = d->engine->loadByName(filename);
+#else
+    KTextTemplate::Template headerTemplate = d->engine->loadByName(filename);
+#endif
     if (headerTemplate->error()) {
         return headerTemplate->errorString();
     }

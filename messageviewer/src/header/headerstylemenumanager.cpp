@@ -18,6 +18,8 @@
 #include <KActionMenu>
 #include <KLocalizedString>
 
+#include <QActionGroup>
+
 using namespace MessageViewer;
 
 class MessageViewer::HeaderStyleMenuManagerPrivate

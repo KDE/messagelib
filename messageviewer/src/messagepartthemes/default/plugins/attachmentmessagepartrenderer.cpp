@@ -41,8 +41,13 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
         return context->renderWithFactory<MimeTreeParser::TextMessagePart>(mp, htmlWriter);
     }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("asiconpart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
+#else
+    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("asiconpart.html"));
+    KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
+#endif
     c.insert(QStringLiteral("block"), msgPart.data());
 
     msgPart->setProperty("inline", (tmpAsIcon == MimeTreeParser::IconInline));
@@ -58,8 +63,11 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
         }
     }
     msgPart->setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::OutputStream s(htmlWriter->stream());
+#else
+    KTextTemplate::OutputStream s(htmlWriter->stream());
+#endif
     t->render(&s, &c);
     return true;
 }
