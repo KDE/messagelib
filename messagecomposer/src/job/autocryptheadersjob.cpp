@@ -124,7 +124,7 @@ void AutocryptHeadersJobPrivate::fillHeaderData(KMime::Headers::Generic *header,
     auto start = 0;
     auto column = 1;
     while (start < length) {
-        const auto midLength = std::min(length - start, lineLength - column);
+        const auto midLength = std::min<int>(length - start, lineLength - column);
         parameters += encoded.mid(start, midLength);
         start += midLength;
         column += midLength;
