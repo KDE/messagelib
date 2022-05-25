@@ -11,8 +11,8 @@
 #include <QStringLiteral>
 #include <QTest>
 
-#include <KIdentityManagement/KIdentityManagement/Identity>
-#include <KIdentityManagement/KIdentityManagement/IdentityManager>
+#include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
 
 #include <MessageComposer/Composer>
 #include <MessageComposer/GlobalPart>

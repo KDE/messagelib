@@ -25,8 +25,8 @@
 
 #include <KMime/DateFormatter>
 
-#include <KIdentityManagement/KIdentityManagement/Identity>
-#include <KIdentityManagement/KIdentityManagement/IdentityManager>
+#include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
 
 #include "globalsettings_templateparser.h"
 

@@ -64,6 +64,7 @@
 #include <KJob>
 #include <KMime/Content>
 
+#include <QActionGroup>
 #include <QFileDialog>
 
 using namespace MessageComposer;

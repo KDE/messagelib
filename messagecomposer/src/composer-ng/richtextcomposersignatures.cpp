@@ -9,6 +9,7 @@
 
 #include "messagecomposer_debug.h"
 #include <KIdentityManagement/Signature>
+#include <QRegExp>
 #include <QTextBlock>
 using namespace MessageComposer;
 
