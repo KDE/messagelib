@@ -22,6 +22,7 @@
 #include <QWebEngineProfile>
 #include <WebEngineViewer/WebHitTest>
 
+#include <QPainter>
 #include <QPrinter>
 #include <QWebEngineUrlScheme>
 

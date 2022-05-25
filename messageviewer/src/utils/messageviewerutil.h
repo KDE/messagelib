@@ -40,6 +40,7 @@
 #include <Akonadi/Item>
 #include <KMime/Content>
 #include <KService>
+#include <QTextCodec>
 
 class QUrl;
 class QWidget;

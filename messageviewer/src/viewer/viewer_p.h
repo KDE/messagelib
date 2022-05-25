@@ -28,7 +28,7 @@
 
 #include <QObject>
 #include <QTimer>
-
+class QTextCodec;
 namespace KIO
 {
 class Job;

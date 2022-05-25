@@ -8,6 +8,7 @@
 #include "messagedisplayformatattribute.h"
 #include <QByteArray>
 #include <QDataStream>
+#include <QIODevice>
 
 using namespace MessageViewer;
 

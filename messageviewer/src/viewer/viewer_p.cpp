@@ -65,6 +65,7 @@
 #include <QTemporaryDir>
 
 // Qt includes
+#include <QActionGroup>
 #include <QClipboard>
 #include <QItemSelectionModel>
 #include <QMimeDatabase>
@@ -128,7 +129,7 @@
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
 
-#include <KJobWidgets/KJobWidgets>
+#include <KJobWidgets>
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEdit/TextToSpeechWidget>
 #endif

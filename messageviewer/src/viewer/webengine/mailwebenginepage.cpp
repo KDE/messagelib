@@ -5,6 +5,7 @@
 */
 #include "mailwebenginepage.h"
 #include <QFontDatabase>
+#include <QFontInfo>
 #include <QWebEngineProfile>
 #include <QWebEngineSettings>
 
