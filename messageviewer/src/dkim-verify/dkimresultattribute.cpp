@@ -6,6 +6,7 @@
 
 #include "dkimresultattribute.h"
 #include <QDataStream>
+#include <QIODevice>
 
 using namespace MessageViewer;
 class MessageViewer::DKIMResultAttributePrivate

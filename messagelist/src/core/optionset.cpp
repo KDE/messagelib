@@ -11,6 +11,7 @@
 #include <ctime> // for ::time( time_t * )
 
 #include <QDataStream>
+#include <QIODevice>
 
 static const int gOptionSetInitialMarker = 0xcafe; // don't change
 static const int gOptionSetFinalMarker = 0xbabe; // don't change

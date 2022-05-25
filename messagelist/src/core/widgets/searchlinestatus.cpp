@@ -18,6 +18,7 @@
 #include <KLocalizedString>
 #include <QAbstractItemView>
 #include <QAction>
+#include <QActionGroup>
 #include <QCompleter>
 #include <QContextMenuEvent>
 #include <QMenu>

@@ -144,7 +144,7 @@ int TemplateParserJob::parseQuotes(const QString &prefix, const QString &str, QS
 
     // Also allow the german lower double-quote sign as quote separator, not only
     // the standard ASCII quote ("). This fixes bug 166728.
-    const QList<QChar> quoteChars = {QLatin1Char('"'), 0x201C};
+    const QList<QChar> quoteChars = {QLatin1Char('"'), QChar(0x201C)};
 
     QChar prev(QChar::Null);
 

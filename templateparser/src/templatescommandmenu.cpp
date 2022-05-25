@@ -11,6 +11,7 @@
 #include <KLazyLocalizedString>
 #include <KLocalizedString>
 #include <QAction>
+#include <QMenu>
 
 using namespace TemplateParser;
 

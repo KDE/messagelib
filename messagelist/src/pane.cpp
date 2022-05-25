@@ -541,7 +541,11 @@ void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
 
 void Pane::PanePrivate::activateTab()
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     q->tabBar()->setCurrentIndex(q->sender()->objectName().rightRef(2).toInt() - 1);
+#else
+    q->tabBar()->setCurrentIndex(QStringView(q->sender()->objectName()).right(2).toInt() - 1);
+#endif
 }
 
 void Pane::PanePrivate::moveTabRight()

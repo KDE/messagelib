@@ -5,6 +5,7 @@
 */
 
 #include "templatesinsertcommandaction.h"
+#include <QMenu>
 using namespace TemplateParser;
 
 TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)

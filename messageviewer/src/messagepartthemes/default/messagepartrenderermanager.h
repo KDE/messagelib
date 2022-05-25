@@ -27,7 +27,11 @@ namespace MessageViewer
 {
 class GlobalContext;
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 using GrantleeCallback = std::function<void(Grantlee::OutputStream *)>;
+#else
+using GrantleeCallback = std::function<void(KTextTemplate::OutputStream *)>;
+#endif
 /**
  * @brief The MessagePartRendererManager class
  */

@@ -35,13 +35,25 @@ Q_DECLARE_METATYPE(const QGpgME::Protocol *)
 Q_DECLARE_METATYPE(GpgME::Key)
 
 // Read-only introspection of GpgME::DecryptionResult::Recipient object.
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 GRANTLEE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
+#else
+KTEXTTEMPLATE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
+#endif
 if (property == QLatin1String("keyID")) {
     return QString::fromLatin1(object.keyID());
 }
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 GRANTLEE_END_LOOKUP
+#else
+KTEXTTEMPLATE_END_LOOKUP
+#endif
 // Read-only introspection of QGpgME::Protocol object.
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 namespace Grantlee
+#else
+namespace KTextTemplate
+#endif
 {
 template<>
 inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object, const QString &property)
@@ -56,7 +68,11 @@ inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Pro
 }
 
 // Read-only introspection of std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> object.
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 namespace Grantlee
+#else
+namespace KTextTemplate
+#endif
 {
 template<>
 inline QVariant
