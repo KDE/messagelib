@@ -25,9 +25,7 @@ OptionSet::OptionSet()
     generateUniqueId();
 }
 
-OptionSet::OptionSet(const OptionSet &set)
-
-    = default;
+OptionSet::OptionSet(const OptionSet &set) = default;
 
 OptionSet::OptionSet(const QString &name, const QString &description, bool readOnly)
     : mName(name)
