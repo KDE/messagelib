@@ -281,11 +281,19 @@ QUrl NodeHelper::tempFileUrlFromNode(const KMime::Content *node)
         if (left != -1) {
             left += 7;
         }
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef storedIndex(&path, left, right - left);
         if (left != -1 && storedIndex == index) {
             return QUrl::fromLocalFile(path);
         }
+#else
+        const QStringView strView(path);
+        const QStringView storedIndex = strView.sliced(left, right - left);
+        if (left != -1 && storedIndex == index) {
+            return QUrl::fromLocalFile(path);
+        }
+
+#endif
     }
     return {};
 }
