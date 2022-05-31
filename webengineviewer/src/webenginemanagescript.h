@@ -23,8 +23,6 @@ class WEBENGINEVIEWER_EXPORT WebEngineManageScript : public QObject
 public:
     explicit WebEngineManageScript(QObject *parent = nullptr);
     ~WebEngineManageScript() override;
-    void addScript(QWebEngineProfile *profile, const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
-
     static quint32 scriptWordId()
     {
         return QWebEngineScript::UserWorld + 1;

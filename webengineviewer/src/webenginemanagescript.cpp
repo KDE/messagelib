@@ -19,30 +19,3 @@ WebEngineManageScript::WebEngineManageScript(QObject *parent)
 }
 
 WebEngineManageScript::~WebEngineManageScript() = default;
-
-void WebEngineManageScript::addScript(QWebEngineProfile *profile,
-                                      const QString &source,
-                                      const QString &scriptName,
-                                      QWebEngineScript::InjectionPoint injectionPoint)
-{
-    if (profile) {
-        QWebEngineScript script;
-        const QList<QWebEngineScript> collectionScripts = profile->scripts()->findScripts(scriptName);
-        if (!collectionScripts.isEmpty()) {
-            script = collectionScripts.first();
-        }
-        for (const QWebEngineScript &s : collectionScripts) {
-            profile->scripts()->remove(s);
-        }
-
-        if (script.isNull()) {
-            script.setName(scriptName);
-            script.setInjectionPoint(injectionPoint);
-            script.setRunsOnSubFrames(true);
-            script.setWorldId(scriptWordId());
-        }
-        script.setSourceCode(source);
-        profile->scripts()->insert(script);
-        // qCDebug(WEBENGINEVIEWER_LOG) << " void WebEngineManageScript::addScript profile:" << profile;
-    }
-}

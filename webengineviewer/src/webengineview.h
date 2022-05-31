@@ -31,8 +31,6 @@ public:
     void saveRelativePosition();
     Q_REQUIRED_RESULT qreal relativePosition() const;
 
-    void addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
-
     Q_REQUIRED_RESULT WebEngineManageScript *webEngineManagerScript() const;
 
     Q_REQUIRED_RESULT WebEngineViewer::LocalDataBaseManager *phishingDatabase() const;

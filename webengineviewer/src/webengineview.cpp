@@ -96,11 +96,6 @@ WebEngineManageScript *WebEngineView::webEngineManagerScript() const
     return d->mManagerScript;
 }
 
-void WebEngineView::addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint)
-{
-    d->mManagerScript->addScript(page()->profile(), source, scriptName, injectionPoint);
-}
-
 void WebEngineView::forwardWheelEvent(QWheelEvent *event)
 {
     Q_UNUSED(event)
