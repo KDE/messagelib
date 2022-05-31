@@ -59,7 +59,7 @@ void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
     QTreeWidgetItem *item = mTreeWidget->itemAt(pos);
     QMenu menu(this);
     if (item) {
-        const int selectedItemsCount{mTreeWidget->selectedItems().count()};
+        const auto selectedItemsCount{mTreeWidget->selectedItems().count()};
         if (selectedItemsCount == 1) {
             menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [item]() {
                 QApplication::clipboard()->setText(item->text(2));

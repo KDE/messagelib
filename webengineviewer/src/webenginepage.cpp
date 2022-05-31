@@ -73,6 +73,8 @@ void WebEnginePage::saveHtml(QWebEngineDownloadItem *download)
 void WebEnginePage::saveHtml(QWebEngineDownloadRequest *download)
 #endif
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+
     const QString fileName = QFileDialog::getSaveFileName(view(), i18n("Save HTML Page"));
     if (!fileName.isEmpty()) {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -84,6 +86,9 @@ void WebEnginePage::saveHtml(QWebEngineDownloadRequest *download)
         download->setDownloadFileName(QFileInfo(fileName).fileName());
         download->accept();
     }
+#else
+#pragma "QT6: NEED TO REIMPLEMENT it"
+#endif
 }
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)
@@ -109,8 +114,9 @@ void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMe
 
 bool WebEnginePage::execPrintPreviewPage(QPrinter *printer, int timeout)
 {
-    QPointer<QEventLoop> loop = new QEventLoop;
     bool result = false;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    QPointer<QEventLoop> loop = new QEventLoop;
     QTimer::singleShot(timeout, loop.data(), &QEventLoop::quit);
 
     print(printer, [loop, &result](bool res) {
@@ -122,6 +128,8 @@ bool WebEnginePage::execPrintPreviewPage(QPrinter *printer, int timeout)
 
     loop->exec();
     delete loop;
-
+#else
+#pragma "QT6: NEED TO REIMPLEMENT it"
+#endif
     return result;
 }

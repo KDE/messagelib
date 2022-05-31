@@ -2288,7 +2288,11 @@ void ViewerPrivate::slotPrintMessage()
         connect(mViewer->page(), &QWebEnginePage::pdfPrintingFinished, this, &ViewerPrivate::slotPdfPrintingFinished);
         mViewer->page()->printToPdf(dialog->printer()->outputFileName(), dialog->printer()->pageLayout());
     } else {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         mViewer->page()->print(mCurrentPrinter, invoke(this, &ViewerPrivate::slotHandlePagePrinted));
+#else
+#pragma "QT6: need to reimplement it";
+#endif
     }
     delete dialog;
 }
