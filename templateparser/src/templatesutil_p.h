@@ -15,6 +15,6 @@ namespace Util
 {
 Q_REQUIRED_RESULT QStringList keywords();
 Q_REQUIRED_RESULT QStringList keywordsWithArgs();
-TEMPLATEPARSER_TESTS_EXPORT Q_REQUIRED_RESULT QString removeSpaceAtBegin(const QString &selection);
+Q_REQUIRED_RESULT TEMPLATEPARSER_TESTS_EXPORT QString removeSpaceAtBegin(const QString &selection);
 }
 }

@@ -37,18 +37,18 @@ enum HtmlMode {
     MultipartIcal ///< A multipart/alternative message, the ICal part is currently displayed
 };
 
-MIMETREEPARSER_EXPORT Q_REQUIRED_RESULT QString htmlModeToString(Util::HtmlMode mode);
+Q_REQUIRED_RESULT MIMETREEPARSER_EXPORT QString htmlModeToString(Util::HtmlMode mode);
 
-MIMETREEPARSER_EXPORT Q_REQUIRED_RESULT bool isTypeBlacklisted(KMime::Content *node);
+Q_REQUIRED_RESULT MIMETREEPARSER_EXPORT bool isTypeBlacklisted(KMime::Content *node);
 
-MIMETREEPARSER_EXPORT Q_REQUIRED_RESULT QString labelForContent(KMime::Content *node);
+Q_REQUIRED_RESULT MIMETREEPARSER_EXPORT QString labelForContent(KMime::Content *node);
 
-MIMETREEPARSER_EXPORT Q_REQUIRED_RESULT QMimeType mimetype(const QString &name);
+Q_REQUIRED_RESULT MIMETREEPARSER_EXPORT QMimeType mimetype(const QString &name);
 
-MIMETREEPARSER_EXPORT Q_REQUIRED_RESULT QString iconNameForMimetype(const QString &mimeType,
+Q_REQUIRED_RESULT MIMETREEPARSER_EXPORT QString iconNameForMimetype(const QString &mimeType,
                                                                     const QString &fallbackFileName1 = QString(),
                                                                     const QString &fallbackFileName2 = QString());
 
-MIMETREEPARSER_EXPORT Q_REQUIRED_RESULT QString iconNameForContent(KMime::Content *node);
+Q_REQUIRED_RESULT MIMETREEPARSER_EXPORT QString iconNameForContent(KMime::Content *node);
 }
 }
