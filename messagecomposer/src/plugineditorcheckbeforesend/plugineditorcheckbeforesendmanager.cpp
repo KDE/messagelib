@@ -74,7 +74,8 @@ QVector<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pl
 
 void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kmail/plugincheckbeforesend"));
+    const QVector<KPluginMetaData> plugins =
+        KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/kmail/plugincheckbeforesend"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 

@@ -76,7 +76,8 @@ QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pl
 
 void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
-    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("webengineviewer/urlinterceptor"));
+    const QVector<KPluginMetaData> plugins =
+        KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/webengineviewer/urlinterceptor"));
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QVectorIterator<KPluginMetaData> i(plugins);

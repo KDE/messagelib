@@ -75,7 +75,8 @@ QVector<PimCommon::PluginUtilData> PluginEditorGrammarManagerPrivate::pluginsDat
 
 void PluginEditorGrammarManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("kmail/plugineditorgrammar"));
+    const QVector<KPluginMetaData> plugins =
+        KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/kmail/plugineditorgrammar"));
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
