@@ -137,7 +137,8 @@ QVector<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formatte
 
 void BodyPartFormatterFactory::loadPlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("messageviewer/bodypartformatter"));
+    const QVector<KPluginMetaData> plugins =
+        KPluginMetaData::findPlugins(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer/bodypartformatter"));
     for (const auto &md : plugins) {
         const auto formatterData = md.rawData().value(QLatin1String("formatter")).toArray();
         if (formatterData.isEmpty()) {
