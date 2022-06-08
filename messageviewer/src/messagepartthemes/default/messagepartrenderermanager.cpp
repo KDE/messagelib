@@ -150,8 +150,9 @@ void MessagePartRendererManager::initializeRenderer()
 #endif
     m_engine = new GrantleeTheme::Engine;
     const auto libraryPaths = QCoreApplication::libraryPaths();
+    const QString subPath = QStringLiteral("/pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/messageviewer");
     for (const auto &p : libraryPaths) {
-        m_engine->addPluginPath(p + QStringLiteral("/messageviewer"));
+        m_engine->addPluginPath(p + subPath);
     }
     m_engine->addDefaultLibrary(QStringLiteral("messageviewer_grantlee_extension"));
     m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
