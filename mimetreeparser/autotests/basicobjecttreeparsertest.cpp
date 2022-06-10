@@ -14,9 +14,9 @@
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
-#include <QTextCodec>
 #include <QProcess>
 #include <QTest>
+#include <QTextCodec>
 
 using namespace MimeTreeParser;
 
@@ -260,13 +260,14 @@ void ObjectTreeParserTest::testOpenPGPEncryptedOverrideEncoding()
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
     testSource.setDecryptMessage(true);
-    const QString data = QStringLiteral("german umlauts ISO-8859-15:\n\u00c3\u20ac - a with two dots - utf-8: U+00C3 U20AC\n\u00c3\u009f - eszett or \"sharp s\" - utf-8: U+00C3 U+009F\n");
+    const QString data = QStringLiteral(
+        "german umlauts ISO-8859-15:\n\u00c3\u20ac - a with two dots - utf-8: U+00C3 U20AC\n\u00c3\u009f - eszett or \"sharp s\" - utf-8: U+00C3 U+009F\n");
     ObjectTreeParser otp(&testSource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
 
     QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgFullyEncrypted);
 
-    QVERIFY(otp.plainTextContent() != data);    // it is not utf-8
+    QVERIFY(otp.plainTextContent() != data); // it is not utf-8
 
     testSource.setOverrideCodec(QTextCodec::codecForName("iso-8859-15"));
     otp.parseObjectTree(originalMessage.data());

@@ -95,7 +95,7 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
             codecName = part.source()->overrideCodec()->name();
         }
 
-        const auto codec =  QTextCodec::codecForName(codecName);
+        const auto codec = QTextCodec::codecForName(codecName);
         mp->startDecryption(node->decodedContent(), codec);
         qCDebug(MIMETREEPARSER_LOG) << "decrypted, signed?:" << messagePart->isSigned;
 
@@ -108,7 +108,7 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
             tempNode->parse();
             // inside startDecryption we use toCodec and we
             // converted the decoded text to utf-8 already.
-	    tempNode->contentType()->setCharset("utf-8");
+            tempNode->contentType()->setCharset("utf-8");
 
             NodeHelper::magicSetType(tempNode);
             if (node->topLevel()->textContent() != node && node->contentDisposition(false) && !tempNode->contentDisposition(false)) {

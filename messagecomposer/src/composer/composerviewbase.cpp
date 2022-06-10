@@ -720,41 +720,33 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
                                                                    encryptChainCertNearExpiryWarningThresholdInDays(),
                                                                    signingChainCertNearExpiryWarningThresholdInDays()));
 
-    connect(nearExpiryChecker.data(), &NearExpiryChecker::expiryMessage, this, [&canceled](const GpgME::Key &key, QString msg, NearExpiryChecker::ExpiryInformation info) {
-        if (canceled) {
-            return;
-        }
-        QString title;
-        QString dontAskAgainName;
-        if (info == NearExpiryChecker::OwnKeyExpired || info == NearExpiryChecker::OwnKeyNearExpiry) {
-            dontAskAgainName = QStringLiteral("own key expires soon warning");
-        } else {
-            dontAskAgainName = QStringLiteral("other encryption key near expiry warning");
-        }
-        if (info == NearExpiryChecker::OwnKeyExpired || info == NearExpiryChecker::OtherKeyExpired) {
-            title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expired")
-                                               : i18n("S/MIME Certificate Expired");
-        } else {
-            title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expires Soon")
-                                               : i18n("S/MIME Certificate Expires Soon");
-        }
-        if (KMessageBox::warningContinueCancel(nullptr,
-                                               msg,
-                                               title,
-                                               KStandardGuiItem::cont(),
-                                               KStandardGuiItem::cancel(),
-                                               dontAskAgainName)
-                == KMessageBox::Cancel) {
-                canceled = true;
-            }
+    connect(nearExpiryChecker.data(),
+            &NearExpiryChecker::expiryMessage,
+            this,
+            [&canceled](const GpgME::Key &key, QString msg, NearExpiryChecker::ExpiryInformation info) {
+                if (canceled) {
+                    return;
+                }
+                QString title;
+                QString dontAskAgainName;
+                if (info == NearExpiryChecker::OwnKeyExpired || info == NearExpiryChecker::OwnKeyNearExpiry) {
+                    dontAskAgainName = QStringLiteral("own key expires soon warning");
+                } else {
+                    dontAskAgainName = QStringLiteral("other encryption key near expiry warning");
+                }
+                if (info == NearExpiryChecker::OwnKeyExpired || info == NearExpiryChecker::OtherKeyExpired) {
+                    title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expired") : i18n("S/MIME Certificate Expired");
+                } else {
+                    title = key.protocol() == GpgME::OpenPGP ? i18n("OpenPGP Key Expires Soon") : i18n("S/MIME Certificate Expires Soon");
+                }
+                if (KMessageBox::warningContinueCancel(nullptr, msg, title, KStandardGuiItem::cont(), KStandardGuiItem::cancel(), dontAskAgainName)
+                    == KMessageBox::Cancel) {
+                    canceled = true;
+                }
+            });
 
-    });
-
-    QScopedPointer<Kleo::KeyResolver> keyResolver(new Kleo::KeyResolver(encryptToSelf(),
-                                                                        showKeyApprovalDialog(),
-                                                                        id.pgpAutoEncrypt(),
-                                                                        m_cryptoMessageFormat,
-                                                                        nearExpiryChecker));
+    QScopedPointer<Kleo::KeyResolver> keyResolver(
+        new Kleo::KeyResolver(encryptToSelf(), showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, nearExpiryChecker));
 
     keyResolver->setAutocryptEnabled(autocryptEnabled());
     keyResolver->setAkonadiLookupEnabled(m_akonadiLookupEnabled);

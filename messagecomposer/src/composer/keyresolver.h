@@ -21,8 +21,8 @@
 
 #include <vector>
 
-#include <QStringList>
 #include <QSharedPointer>
+#include <QStringList>
 
 namespace MessageComposer
 {
@@ -109,11 +109,7 @@ enum Result { Failure = 0, Ok = 1, Canceled = 2 };
 class MESSAGECOMPOSER_EXPORT KeyResolver
 {
 public:
-    KeyResolver(bool encToSelf,
-                bool showApproval,
-                bool oppEncryption,
-                unsigned int format,
-                const MessageComposer::NearExpiryCheckerPtr &nearExpiryChecker);
+    KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, const MessageComposer::NearExpiryCheckerPtr &nearExpiryChecker);
 
     ~KeyResolver();
 

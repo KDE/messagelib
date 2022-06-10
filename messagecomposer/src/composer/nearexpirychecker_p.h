@@ -10,9 +10,11 @@
 
 #include <set>
 
-namespace MessageComposer {
+namespace MessageComposer
+{
 
-class NearExpiryCheckerPrivate {
+class NearExpiryCheckerPrivate
+{
 public:
     int encryptKeyNearExpiryWarningThreshold;
     int signingKeyNearExpiryWarningThreshold;
@@ -20,7 +22,7 @@ public:
     int signingRootCertNearExpiryWarningThreshold;
     int encryptChainCertNearExpiryWarningThreshold;
     int signingChainCertNearExpiryWarningThreshold;
-    
+
     std::set<QByteArray> alreadyWarnedFingerprints;
     bool testMode = false;
     double difftime = 0;
