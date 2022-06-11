@@ -60,7 +60,7 @@ void OpenUrlWithManager::saveRules()
     QStringList openWithUrls;
     QStringList commands;
     QStringList commandLines;
-    const int nbElement{mOpenWithUrlInfo.count()};
+    const auto nbElement{mOpenWithUrlInfo.count()};
     openWithUrls.reserve(nbElement);
     commands.reserve(nbElement);
     for (int i = 0; i < nbElement; ++i) {

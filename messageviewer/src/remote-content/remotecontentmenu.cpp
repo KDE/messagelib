@@ -43,7 +43,7 @@ void RemoteContentMenu::updateMenu()
     for (auto act : std::as_const(mListAction)) {
         removeAction(act);
     }
-    const int numberOfUrl{mUrls.count()};
+    const auto numberOfUrl{mUrls.count()};
     if (numberOfUrl > 0) {
         mListAction.reserve(numberOfUrl + 3);
         for (const QString &url : std::as_const(mUrls)) {

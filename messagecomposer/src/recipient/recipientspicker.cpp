@@ -106,7 +106,7 @@ void RecipientsPicker::updateLabel(int nbSelected)
 
 void RecipientsPicker::slotSelectionChanged()
 {
-    const int selectedItems{mView->emailAddressSelectionWidget()->selectedAddresses().count()};
+    const auto selectedItems{mView->emailAddressSelectionWidget()->selectedAddresses().count()};
     const bool hasSelection = (selectedItems != 0);
     mUser1Button->setEnabled(hasSelection);
     mUser2Button->setEnabled(hasSelection);
