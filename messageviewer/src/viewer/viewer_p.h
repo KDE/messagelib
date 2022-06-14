@@ -94,6 +94,7 @@ class ViewerPluginToolManager;
 class MailSourceWebEngineViewer;
 class ShowNextMessageWidget;
 class RemoteContentMenu;
+class MDNWarningWidget;
 /**
 \brief Private class for the Viewer, the main widget in the messageviewer library.
 
@@ -718,5 +719,6 @@ public:
     MessageViewer::MessageViewerRenderer *mMessageViewerRenderer = nullptr;
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
     RemoteContentMenu *mRemoteContentMenu = nullptr;
+    MessageViewer::MDNWarningWidget *mMdnWarning = nullptr;
 };
 }

@@ -10,6 +10,7 @@
 #include "viewer_p.h"
 #include "viewerpurposemenuwidget.h"
 
+#include "mdn/mdnwarningwidget.h"
 #include "messagedisplayformatattribute.h"
 #include "messageviewer_debug.h"
 #include "scamdetection/scamattribute.h"
@@ -1405,6 +1406,10 @@ void ViewerPrivate::createWidgets()
     mScamDetectionWarning = new ScamDetectionWarningWidget(readerBox);
     mScamDetectionWarning->setObjectName(QStringLiteral("scandetectionwarning"));
     readerBoxVBoxLayout->addWidget(mScamDetectionWarning);
+
+    mMdnWarning = new MDNWarningWidget(readerBox);
+    mMdnWarning->setObjectName(QStringLiteral("mMdnWarning"));
+    readerBoxVBoxLayout->addWidget(mMdnWarning);
 
     mOpenSavedFileFolderWidget = new OpenSavedFileFolderWidget(readerBox);
     mOpenSavedFileFolderWidget->setObjectName(QStringLiteral("opensavefilefolderwidget"));
