@@ -8,7 +8,6 @@
 #include "webengineviewer_debug.h"
 
 #include <QWebEngineProfile>
-#include <QWebEngineScript>
 #include <QWebEngineScriptCollection>
 
 using namespace WebEngineViewer;
