@@ -56,6 +56,7 @@ class CSSHelper;
 class ViewerPrivate;
 class Viewer;
 class RemoteContentMenu;
+class MDNWarningWidget;
 
 /**
  * An interface to plug in a handler that is called when
@@ -333,6 +334,7 @@ public:
 
     void setIdentityManager(KIdentityManagement::IdentityManager *ident);
     void setFolderIdentity(uint folderIdentity);
+    Q_REQUIRED_RESULT MessageViewer::MDNWarningWidget *mdnWarning() const;
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);

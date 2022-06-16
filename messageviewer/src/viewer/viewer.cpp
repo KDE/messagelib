@@ -676,6 +676,12 @@ RemoteContentMenu *Viewer::remoteContentMenu() const
     return d->remoteContentMenu();
 }
 
+MessageViewer::MDNWarningWidget *Viewer::mdnWarning() const
+{
+    Q_D(const Viewer);
+    return d->mdnWarning();
+}
+
 void Viewer::setPluginName(const QString &pluginName)
 {
     Q_D(Viewer);

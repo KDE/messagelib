@@ -2354,6 +2354,11 @@ void ViewerPrivate::updateColorFromScheme()
     mBackgroundAttachment = scheme.background().color();
 }
 
+MessageViewer::MDNWarningWidget *ViewerPrivate::mdnWarning() const
+{
+    return mMdnWarning;
+}
+
 void ViewerPrivate::initializeColorFromScheme()
 {
     if (!mForegroundError.isValid()) {

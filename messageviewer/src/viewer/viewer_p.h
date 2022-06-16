@@ -444,7 +444,8 @@ public:
     void setIdentityManager(KIdentityManagement::IdentityManager *ident);
     void setFolderIdentity(uint folderIdentity);
 
-    RemoteContentMenu *remoteContentMenu() const;
+    Q_REQUIRED_RESULT RemoteContentMenu *remoteContentMenu() const;
+    Q_REQUIRED_RESULT MessageViewer::MDNWarningWidget *mdnWarning() const;
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
