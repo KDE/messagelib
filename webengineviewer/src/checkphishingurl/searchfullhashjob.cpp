@@ -98,7 +98,8 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
             // const QString minimumWaitDuration = answer.value(QStringLiteral("minimumWaitDuration")).toString();
             // const QString negativeCacheDuration = answer.value(QStringLiteral("negativeCacheDuration")).toString();
             // Implement multi match ?
-            if (info.count() == 1) {
+            const int numberOfInfo{info.count()};
+            if (numberOfInfo == 1) {
                 const QVariantMap map = info.at(0).toMap();
                 const QString threatTypeStr = map[QStringLiteral("threatType")].toString();
 
@@ -127,6 +128,8 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                 } else {
                     qCWarning(WEBENGINEVIEWER_LOG) << " SearchFullHashJob::parse threatTypeStr : " << threatTypeStr;
                 }
+            } else if (numberOfInfo == 0) {
+                Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Ok, d->mUrl);
             } else {
                 qCWarning(WEBENGINEVIEWER_LOG) << " SearchFullHashJob::parse matches multi element : " << info.count();
                 Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Unknown, d->mUrl);
