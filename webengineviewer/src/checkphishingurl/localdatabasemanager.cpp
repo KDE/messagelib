@@ -60,7 +60,7 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
         if (conflictHashs.isEmpty()) {
             Q_EMIT checkUrlFinished(url, WebEngineViewer::CheckPhishingUrlUtil::Ok);
         } else {
-            qCWarning(WEBENGINEVIEWER_LOG) << " We need to Check Server Database";
+            // qCWarning(WEBENGINEVIEWER_LOG) << " We need to Check Server Database";
             if (d->mNewClientState.isEmpty()) {
                 qCWarning(WEBENGINEVIEWER_LOG) << "Database client state is unknown";
                 Q_EMIT checkUrlFinished(url, WebEngineViewer::CheckPhishingUrlUtil::Unknown);
