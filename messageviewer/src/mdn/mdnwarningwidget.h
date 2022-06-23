@@ -23,6 +23,8 @@ public:
 
     void setCanDeny(bool deny);
 
+    void setInformation(const QString &str);
+
 Q_SIGNALS:
     void ignoreMdn();
     void sendMdn();

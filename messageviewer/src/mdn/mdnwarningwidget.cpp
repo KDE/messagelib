@@ -37,6 +37,11 @@ void MDNWarningWidget::setCanDeny(bool deny)
     mSendDenyAction->setVisible(deny);
 }
 
+void MDNWarningWidget::setInformation(const QString &str)
+{
+    setText(str);
+}
+
 void MDNWarningWidget::slotSend()
 {
     animatedHide();
