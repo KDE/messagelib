@@ -22,6 +22,7 @@ void MDNWarningWidgetTest::shouldHaveDefaultValues()
     MessageViewer::MDNWarningWidget w;
     QVERIFY(!w.isVisible());
     QVERIFY(w.wordWrap());
+    QVERIFY(w.text().isEmpty());
 
     QCOMPARE(w.messageType(), KMessageWidget::Information);
     QCOMPARE(w.actions().count(), 3);
@@ -76,4 +77,12 @@ void MDNWarningWidgetTest::shouldEmitSignals()
     }
 
     QVERIFY(found);
+}
+
+void MDNWarningWidgetTest::shouldChangeInformation()
+{
+    MessageViewer::MDNWarningWidget w;
+    const QString str{QStringLiteral("bla-bla")};
+    w.setInformation(str);
+    QCOMPARE(w.text(), str);
 }
