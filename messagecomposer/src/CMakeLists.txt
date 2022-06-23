@@ -229,6 +229,8 @@ target_sources( KF5MessageComposer PRIVATE
     mdn/mdnstateattribute.h
     mdn/mdnadvicedialog.cpp
     mdn/mdnadvicedialog.h
+    mdn/mdnwarningwidgetjob.cpp
+    mdn/mdnwarningwidgetjob.h
 )
 
 
@@ -551,6 +553,7 @@ ecm_generate_headers(MessageComposer_CamelcaseMdn_HEADERS
     MDNAdviceHelper
     MDNStateAttribute
     MDNAdviceDialog
+    MDNWarningWidgetJob
     REQUIRED_HEADERS MessageComposer_mdn_HEADERS
     PREFIX MessageComposer
     RELATIVE mdn
