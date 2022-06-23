@@ -183,26 +183,36 @@ MDNStateAttribute::MDNSentState MDNAdviceHelper::dispositionToSentState(KMime::M
     }
 }
 
-int MDNAdviceHelper::requestAdviceOnMDN(const char *what)
+QPair<QString, bool> MDNAdviceHelper::mdnMessageText(const char *what)
 {
     for (int i = 0; i < numMdnMessageBoxes; ++i) {
         if (!qstrcmp(what, mdnMessageBoxes[i].dontAskAgainID)) {
-            KCursorSaver saver(Qt::ArrowCursor);
-            const MessageComposer::MDNAdvice answer = questionIgnoreSend(mdnMessageBoxes[i].text.toString(), mdnMessageBoxes[i].canDeny);
-            switch (answer) {
-            case MessageComposer::MDNSend:
-                return 3;
-
-            case MessageComposer::MDNSendDenied:
-                return 2;
-
-            // don't use 1, as that's used for 'default ask" in checkMDNHeaders
-            default:
-            case MessageComposer::MDNIgnore:
-                return 0;
-            }
+            return {mdnMessageBoxes[i].text.toString(), mdnMessageBoxes[i].canDeny};
         }
     }
-    qCWarning(MESSAGECOMPOSER_LOG) << "didn't find data for message box \"" << what << "\"";
-    return MessageComposer::MDNIgnore;
+    return {};
+}
+
+int MDNAdviceHelper::requestAdviceOnMDN(const char *what)
+{
+    const QPair<QString, bool> mdnInfo = mdnMessageText(what);
+    if (mdnInfo.first.isEmpty()) {
+        qCWarning(MESSAGECOMPOSER_LOG) << "didn't find data for message box \"" << what << "\"";
+        return MessageComposer::MDNIgnore;
+    } else {
+        KCursorSaver saver(Qt::ArrowCursor);
+        const MessageComposer::MDNAdvice answer = questionIgnoreSend(mdnInfo.first, mdnInfo.second);
+        switch (answer) {
+        case MessageComposer::MDNSend:
+            return 3;
+
+        case MessageComposer::MDNSendDenied:
+            return 2;
+
+        // don't use 1, as that's used for 'default ask" in checkMDNHeaders
+        default:
+        case MessageComposer::MDNIgnore:
+            return 0;
+        }
+    }
 }

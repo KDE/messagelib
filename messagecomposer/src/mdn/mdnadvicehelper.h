@@ -39,6 +39,8 @@ public:
 
     Q_REQUIRED_RESULT MessageComposer::MDNStateAttribute::MDNSentState dispositionToSentState(KMime::MDN::DispositionType d);
 
+    Q_REQUIRED_RESULT QPair<QString, bool> mdnMessageText(const char *what);
+
 private:
     explicit MDNAdviceHelper(QObject *parent = nullptr)
         : QObject(parent)
