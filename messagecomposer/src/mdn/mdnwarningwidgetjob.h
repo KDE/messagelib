@@ -22,7 +22,7 @@ public:
     explicit MDNWarningWidgetJob(QObject *parent = nullptr);
     ~MDNWarningWidgetJob() override;
 
-    void start();
+    Q_REQUIRED_RESULT bool start();
 
     Q_REQUIRED_RESULT const Akonadi::Item &item() const;
     void setItem(const Akonadi::Item &newItem);

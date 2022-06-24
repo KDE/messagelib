@@ -24,9 +24,10 @@ bool MDNWarningWidgetJob::canStart() const
     return mItem.isValid();
 }
 
-void MDNWarningWidgetJob::start()
+bool MDNWarningWidgetJob::start()
 {
     QPair<QString, bool> mdnInfo;
+    bool result = false;
     if (canStart()) {
         KMime::Message::Ptr msg = MessageComposer::Util::message(mItem);
         int mode = MessageViewer::MessageViewerSettings::self()->defaultPolicy();
@@ -65,11 +66,13 @@ void MDNWarningWidgetJob::start()
                 mode = 0;
             }
         }
+        result = true;
     } else {
         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to start job";
     }
     Q_EMIT showMdnInfo(mdnInfo);
     deleteLater();
+    return result;
 }
 
 const Akonadi::Item &MDNWarningWidgetJob::item() const
