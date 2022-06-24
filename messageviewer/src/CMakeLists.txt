@@ -639,6 +639,14 @@ ecm_generate_headers(MessageViewer_Camelcaseviewerplugin_HEADERS
     RELATIVE viewerplugins
     )
 
+ecm_generate_headers(MessageViewer_Camelcasemdnwarningwidget_HEADERS
+    HEADER_NAMES
+    MDNWarningWidget
+    REQUIRED_HEADERS MessageViewer_mdnwarningwidget_HEADERS
+    PREFIX MessageViewer
+    RELATIVE mdn
+    )
+
 ecm_generate_headers(MessageViewer_Camelcaserenderer_HEADERS
     HEADER_NAMES
     HtmlBlock
@@ -668,6 +676,7 @@ install(FILES
 
 
 install(FILES
+    ${MessageViewer_Camelcasemdnwarningwidget_HEADERS}
     ${MessageViewer_CamelcaseCheckBeforeDeletingPlugin_HEADERS}
     ${MessageViewer_CamelcaseConfigurePlugins_HEADERS}
     ${MessageViewer_Camelcasewebengine_HEADERS}
@@ -690,6 +699,7 @@ install(FILES
     )
 
 install(FILES
+    ${MessageViewer_mdnwarningwidget_HEADERS}
     ${MessageViewer_CheckBeforeDeletingPlugin_HEADERS}
     ${MessageViewer_ConfigurePlugins_HEADERS}
     ${MessageViewer_webengine_HEADERS}
