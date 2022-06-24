@@ -45,17 +45,17 @@ void MDNWarningWidget::setInformation(const QString &str)
 void MDNWarningWidget::slotSend()
 {
     animatedHide();
-    Q_EMIT sendMdn();
+    Q_EMIT sendResponse(MessageViewer::MDNWarningWidget::ResponseType::Send);
 }
 
 void MDNWarningWidget::slotIgnore()
 {
     animatedHide();
-    Q_EMIT ignoreMdn();
+    Q_EMIT sendResponse(MessageViewer::MDNWarningWidget::ResponseType::Ignore);
 }
 
 void MDNWarningWidget::slotSendDeny()
 {
     animatedHide();
-    Q_EMIT sendDeny();
+    Q_EMIT sendResponse(MessageViewer::MDNWarningWidget::ResponseType::SendDeny);
 }

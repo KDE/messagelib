@@ -18,6 +18,11 @@ class MESSAGEVIEWER_EXPORT MDNWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
+    enum ResponseType {
+        Ignore = 0,
+        Send = 1,
+        SendDeny = 2,
+    };
     explicit MDNWarningWidget(QWidget *parent = nullptr);
     ~MDNWarningWidget() override;
 
@@ -26,9 +31,7 @@ public:
     void setInformation(const QString &str);
 
 Q_SIGNALS:
-    void ignoreMdn();
-    void sendMdn();
-    void sendDeny();
+    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type);
 
 private:
     void slotSend();

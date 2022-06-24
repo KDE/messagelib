@@ -11,7 +11,7 @@
 #include <QTest>
 
 QTEST_MAIN(MDNWarningWidgetTest)
-
+Q_DECLARE_METATYPE(MessageViewer::MDNWarningWidget::ResponseType)
 MDNWarningWidgetTest::MDNWarningWidgetTest(QObject *parent)
     : QObject{parent}
 {
@@ -19,6 +19,7 @@ MDNWarningWidgetTest::MDNWarningWidgetTest(QObject *parent)
 
 void MDNWarningWidgetTest::shouldHaveDefaultValues()
 {
+    qRegisterMetaType<MessageViewer::MDNWarningWidget::ResponseType>();
     MessageViewer::MDNWarningWidget w;
     QVERIFY(!w.isVisible());
     QVERIFY(w.wordWrap());
@@ -47,9 +48,10 @@ void MDNWarningWidgetTest::shouldEmitSignals()
     for (auto a : acts) {
         if (a->objectName() == QStringLiteral("mIgnoreAction")) {
             found = true;
-            QSignalSpy ignoreMdn(&w, &MessageViewer::MDNWarningWidget::ignoreMdn);
+            QSignalSpy ignoreMdn(&w, &MessageViewer::MDNWarningWidget::sendResponse);
             a->trigger();
             QCOMPARE(ignoreMdn.count(), 1);
+            QCOMPARE(ignoreMdn.at(0).at(0).value<MessageViewer::MDNWarningWidget::ResponseType>(), MessageViewer::MDNWarningWidget::ResponseType::Ignore);
             break;
         }
     }
@@ -58,9 +60,10 @@ void MDNWarningWidgetTest::shouldEmitSignals()
     for (auto a : acts) {
         if (a->objectName() == QStringLiteral("mSendAction")) {
             found = true;
-            QSignalSpy sendMdn(&w, &MessageViewer::MDNWarningWidget::sendMdn);
+            QSignalSpy sendMdn(&w, &MessageViewer::MDNWarningWidget::sendResponse);
             a->trigger();
             QCOMPARE(sendMdn.count(), 1);
+            QCOMPARE(sendMdn.at(0).at(0).value<MessageViewer::MDNWarningWidget::ResponseType>(), MessageViewer::MDNWarningWidget::ResponseType::Send);
             break;
         }
     }
@@ -69,9 +72,10 @@ void MDNWarningWidgetTest::shouldEmitSignals()
     for (auto a : acts) {
         if (a->objectName() == QStringLiteral("mSendDenyAction")) {
             found = true;
-            QSignalSpy sendDeny(&w, &MessageViewer::MDNWarningWidget::sendDeny);
+            QSignalSpy sendDeny(&w, &MessageViewer::MDNWarningWidget::sendResponse);
             a->trigger();
             QCOMPARE(sendDeny.count(), 1);
+            QCOMPARE(sendDeny.at(0).at(0).value<MessageViewer::MDNWarningWidget::ResponseType>(), MessageViewer::MDNWarningWidget::ResponseType::SendDeny);
             break;
         }
     }
