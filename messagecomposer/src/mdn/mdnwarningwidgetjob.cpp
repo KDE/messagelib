@@ -10,7 +10,7 @@
 #include <MessageComposer/MessageFactoryNG>
 #include <MessageComposer/Util>
 #include <MessageViewer/MessageViewerSettings>
-using namespace MessageViewer;
+using namespace MessageComposer;
 
 MDNWarningWidgetJob::MDNWarningWidgetJob(QObject *parent)
     : QObject{parent}

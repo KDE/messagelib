@@ -9,7 +9,7 @@
 #include "messagecomposer_export.h"
 #include <Akonadi/Item>
 #include <QObject>
-namespace MessageViewer
+namespace MessageComposer
 {
 /**
  * @brief The MDNWarningWidget class
