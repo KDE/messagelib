@@ -85,12 +85,12 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
     // has been issued on behalf of a recipient, no further MDNs may be
     // issued on behalf of that recipient, even if another disposition
     // is performed on the message.
-    if (item.hasAttribute<MessageComposer::MDNStateAttribute>()
-        && item.attribute<MessageComposer::MDNStateAttribute>()->mdnState() != MessageComposer::MDNStateAttribute::MDNStateUnknown) {
+    if (item.hasAttribute<Akonadi::MDNStateAttribute>()
+        && item.attribute<Akonadi::MDNStateAttribute>()->mdnState() != Akonadi::MDNStateAttribute::MDNStateUnknown) {
         // if already dealt with, don't do it again.
         return QPair<bool, KMime::MDN::SendingMode>(false, KMime::MDN::SentAutomatically);
     }
-    auto mdnStateAttr = new MessageComposer::MDNStateAttribute(MessageComposer::MDNStateAttribute::MDNStateUnknown);
+    auto mdnStateAttr = new Akonadi::MDNStateAttribute(Akonadi::MDNStateAttribute::MDNStateUnknown);
 
     KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
     bool doSend = false;
@@ -101,7 +101,7 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
     } else {
         if (!mode || (mode < 0) || (mode > 3)) {
             // early out for ignore:
-            mdnStateAttr->setMDNState(MessageComposer::MDNStateAttribute::MDNIgnore);
+            mdnStateAttr->setMDNState(Akonadi::MDNStateAttribute::MDNIgnore);
             s = KMime::MDN::SentManually;
         } else {
             if (MessageFactoryNG::MDNMDNUnknownOption(msg)) {
@@ -140,13 +140,13 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
 
     // RFC 2298: An MDN MUST NOT be generated in response to an MDN.
     if (MessageComposer::Util::findTypeInMessage(msg.data(), "message", "disposition-notification")) {
-        mdnStateAttr->setMDNState(MessageComposer::MDNStateAttribute::MDNIgnore);
+        mdnStateAttr->setMDNState(Akonadi::MDNStateAttribute::MDNIgnore);
     } else if (mode == 0) { // ignore
         doSend = false;
-        mdnStateAttr->setMDNState(MessageComposer::MDNStateAttribute::MDNIgnore);
+        mdnStateAttr->setMDNState(Akonadi::MDNStateAttribute::MDNIgnore);
     } else if (mode == 2) { // denied
         doSend = true;
-        mdnStateAttr->setMDNState(MessageComposer::MDNStateAttribute::MDNDenied);
+        mdnStateAttr->setMDNState(Akonadi::MDNStateAttribute::MDNDenied);
     } else if (mode == 3) { // the user wants to send. let's make sure we can, according to the RFC.
         doSend = true;
         mdnStateAttr->setMDNState(dispositionToSentState(d));
@@ -163,23 +163,23 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
     return QPair<bool, KMime::MDN::SendingMode>(doSend, s);
 }
 
-MDNStateAttribute::MDNSentState MDNAdviceHelper::dispositionToSentState(KMime::MDN::DispositionType d)
+Akonadi::MDNStateAttribute::MDNSentState MDNAdviceHelper::dispositionToSentState(KMime::MDN::DispositionType d)
 {
     switch (d) {
     case KMime::MDN::Displayed:
-        return MessageComposer::MDNStateAttribute::MDNDisplayed;
+        return Akonadi::MDNStateAttribute::MDNDisplayed;
     case KMime::MDN::Deleted:
-        return MessageComposer::MDNStateAttribute::MDNDeleted;
+        return Akonadi::MDNStateAttribute::MDNDeleted;
     case KMime::MDN::Dispatched:
-        return MessageComposer::MDNStateAttribute::MDNDispatched;
+        return Akonadi::MDNStateAttribute::MDNDispatched;
     case KMime::MDN::Processed:
-        return MessageComposer::MDNStateAttribute::MDNProcessed;
+        return Akonadi::MDNStateAttribute::MDNProcessed;
     case KMime::MDN::Denied:
-        return MessageComposer::MDNStateAttribute::MDNDenied;
+        return Akonadi::MDNStateAttribute::MDNDenied;
     case KMime::MDN::Failed:
-        return MessageComposer::MDNStateAttribute::MDNFailed;
+        return Akonadi::MDNStateAttribute::MDNFailed;
     default:
-        return MessageComposer::MDNStateAttribute::MDNStateUnknown;
+        return Akonadi::MDNStateAttribute::MDNStateUnknown;
     }
 }
 

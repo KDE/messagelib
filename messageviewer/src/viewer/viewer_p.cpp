@@ -134,6 +134,7 @@
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEdit/TextToSpeechWidget>
 #endif
+#include <Akonadi/MDNStateAttribute>
 #include <QApplication>
 #include <QStandardPaths>
 #include <QWebEngineSettings>
@@ -238,6 +239,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     fs.fetchAttribute<MessageViewer::MessageDisplayFormatAttribute>();
     fs.fetchAttribute<MessageViewer::ScamAttribute>();
     fs.fetchAttribute<MessageViewer::DKIMResultAttribute>();
+    fs.fetchAttribute<Akonadi::MDNStateAttribute>();
     mMonitor.setItemFetchScope(fs);
     connect(&mMonitor, &Akonadi::Monitor::itemChanged, this, &ViewerPrivate::slotItemChanged);
     connect(&mMonitor, &Akonadi::Monitor::itemRemoved, this, &ViewerPrivate::slotClear);

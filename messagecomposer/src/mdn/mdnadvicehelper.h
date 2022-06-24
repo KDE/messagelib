@@ -6,7 +6,7 @@
 
 #pragma once
 #include "messagecomposer_export.h"
-#include <MessageComposer/MDNStateAttribute>
+#include <Akonadi/MDNStateAttribute>
 #include <MessageComposer/MessageFactoryNG>
 #include <QObject>
 
@@ -32,12 +32,12 @@ public:
      * Returns whether to send an MDN or not, and the sending mode for the MDN
      * to be created.
      *
-     * Will also set the MailCommon::MDNStateAttribute on the given item
+     * Will also set the Akonadi::MDNStateAttribute on the given item
      * to what the user has selected.
      */
     Q_REQUIRED_RESULT QPair<bool, KMime::MDN::SendingMode> checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend = false);
 
-    Q_REQUIRED_RESULT MessageComposer::MDNStateAttribute::MDNSentState dispositionToSentState(KMime::MDN::DispositionType d);
+    Q_REQUIRED_RESULT Akonadi::MDNStateAttribute::MDNSentState dispositionToSentState(KMime::MDN::DispositionType d);
 
     Q_REQUIRED_RESULT QPair<QString, bool> mdnMessageText(const char *what);
 
