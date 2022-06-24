@@ -35,6 +35,8 @@
 
 #include <QAction>
 
+#include <Akonadi/MDNStateAttribute>
+
 namespace MessageViewer
 {
 class AbstractMessageLoadedHandler::AbstractMessageLoadedHandlerPrivate
@@ -537,6 +539,7 @@ Akonadi::ItemFetchJob *Viewer::createFetchJob(const Akonadi::Item &item)
     job->fetchScope().fetchFullPayload(true);
     job->fetchScope().setFetchRelations(true); // needed to know if we have notes or not
     job->fetchScope().fetchAttribute<MailTransport::ErrorAttribute>();
+    job->fetchScope().fetchAttribute<Akonadi::MDNStateAttribute>();
     return job;
 }
 
