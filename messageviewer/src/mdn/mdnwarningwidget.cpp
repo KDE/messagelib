@@ -40,6 +40,7 @@ void MDNWarningWidget::setCanDeny(bool deny)
 void MDNWarningWidget::setInformation(const QString &str)
 {
     setText(str);
+    animatedShow();
 }
 
 void MDNWarningWidget::slotSend()
