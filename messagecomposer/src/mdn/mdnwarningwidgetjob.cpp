@@ -5,6 +5,7 @@
 */
 
 #include "mdnwarningwidgetjob.h"
+#include "messagecomposer_debug.h"
 #include <MessageComposer/MDNAdviceHelper>
 #include <MessageComposer/MessageFactoryNG>
 #include <MessageComposer/Util>
@@ -25,47 +26,47 @@ bool MDNWarningWidgetJob::canStart() const
 
 void MDNWarningWidgetJob::start()
 {
-    if (canStart()) {
-        deleteLater();
-        return;
-    }
-    KMime::Message::Ptr msg = MessageComposer::Util::message(mItem);
-    int mode = MessageViewer::MessageViewerSettings::self()->defaultPolicy();
-    KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
     QPair<QString, bool> mdnInfo;
-    if (!mode || (mode < 0) || (mode > 3)) {
-        // Nothing
-    } else {
-        if (MessageComposer::MessageFactoryNG::MDNMDNUnknownOption(msg)) {
-            mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnUnknownOption");
-            s = KMime::MDN::SentManually;
-            // TODO set type to Failed as well
-            //      and clear modifiers
-        }
-
-        if (MessageComposer::MessageFactoryNG::MDNConfirmMultipleRecipients(msg)) {
-            mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnMultipleAddressesInReceiptTo");
-            s = KMime::MDN::SentManually;
-        }
-
-        if (MessageComposer::MessageFactoryNG::MDNReturnPathEmpty(msg)) {
-            mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnReturnPathEmpty");
-            s = KMime::MDN::SentManually;
-        }
-
-        if (MessageComposer::MessageFactoryNG::MDNReturnPathNotInRecieptTo(msg)) {
-            mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnReturnPathNotInReceiptTo");
-            s = KMime::MDN::SentManually;
-        }
-
-        if (MessageComposer::MessageFactoryNG::MDNRequested(msg)) {
-            if (s != KMime::MDN::SentManually) {
-                // don't ask again if user has already been asked. use the users' decision
-                mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnNormalAsk");
+    if (canStart()) {
+        KMime::Message::Ptr msg = MessageComposer::Util::message(mItem);
+        int mode = MessageViewer::MessageViewerSettings::self()->defaultPolicy();
+        KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
+        if (!mode || (mode < 0) || (mode > 3)) {
+            // Nothing
+        } else {
+            if (MessageComposer::MessageFactoryNG::MDNMDNUnknownOption(msg)) {
+                mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnUnknownOption");
+                s = KMime::MDN::SentManually;
+                // TODO set type to Failed as well
+                //      and clear modifiers
             }
-        } else { // if message doesn't have a disposition header, never send anything.
-            mode = 0;
+
+            if (MessageComposer::MessageFactoryNG::MDNConfirmMultipleRecipients(msg)) {
+                mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnMultipleAddressesInReceiptTo");
+                s = KMime::MDN::SentManually;
+            }
+
+            if (MessageComposer::MessageFactoryNG::MDNReturnPathEmpty(msg)) {
+                mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnReturnPathEmpty");
+                s = KMime::MDN::SentManually;
+            }
+
+            if (MessageComposer::MessageFactoryNG::MDNReturnPathNotInRecieptTo(msg)) {
+                mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnReturnPathNotInReceiptTo");
+                s = KMime::MDN::SentManually;
+            }
+
+            if (MessageComposer::MessageFactoryNG::MDNRequested(msg)) {
+                if (s != KMime::MDN::SentManually) {
+                    // don't ask again if user has already been asked. use the users' decision
+                    mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnNormalAsk");
+                }
+            } else { // if message doesn't have a disposition header, never send anything.
+                mode = 0;
+            }
         }
+    } else {
+        qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to start job";
     }
     Q_EMIT showMdnInfo(mdnInfo);
     deleteLater();

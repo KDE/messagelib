@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "messageviewer_export.h"
+#include "messagecomposer_export.h"
 #include <Akonadi/Item>
 #include <QObject>
 namespace MessageViewer
@@ -15,7 +15,7 @@ namespace MessageViewer
  * @brief The MDNWarningWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class MESSAGEVIEWER_EXPORT MDNWarningWidgetJob : public QObject
+class MESSAGECOMPOSER_EXPORT MDNWarningWidgetJob : public QObject
 {
     Q_OBJECT
 public:
