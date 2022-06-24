@@ -3,5 +3,12 @@
 ecm_add_test(mdnstateattributetest.cpp
     TEST_NAME mdnattributetest
     NAME_PREFIX "messagecomposer-mdn-"
-    LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test Qt${QT_MAJOR_VERSION}::Gui KF5::AkonadiCore KF5::MessageComposer
+    LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test KF5::AkonadiCore KF5::MessageComposer
+)
+
+####
+ecm_add_test(mdnwarningwidgetjobtest.cpp
+    TEST_NAME mdnwarningwidgetjobtest
+    NAME_PREFIX "messagecomposer-mdn-"
+    LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test KF5::AkonadiCore KF5::MessageComposer
 )
