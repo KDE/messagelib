@@ -5,7 +5,7 @@
 */
 
 #include "mdnstateattributetest.h"
-#include "../mdnstateattribute.h"
+#include "messagecomposer/mdnstateattribute.h"
 #include <QTest>
 
 MDNStateAttributeTest::MDNStateAttributeTest(QObject *parent)
