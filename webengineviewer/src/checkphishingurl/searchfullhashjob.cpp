@@ -98,7 +98,7 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
             // const QString minimumWaitDuration = answer.value(QStringLiteral("minimumWaitDuration")).toString();
             // const QString negativeCacheDuration = answer.value(QStringLiteral("negativeCacheDuration")).toString();
             // Implement multi match ?
-            const int numberOfInfo{info.count()};
+            const auto numberOfInfo{info.count()};
             if (numberOfInfo == 1) {
                 const QVariantMap map = info.at(0).toMap();
                 const QString threatTypeStr = map[QStringLiteral("threatType")].toString();
