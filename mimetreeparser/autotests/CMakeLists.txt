@@ -36,7 +36,7 @@ macro(add_mimetreeparser_crypto_unittest _source)
         QGpgme
     )
     if (QT_MAJOR_VERSION STREQUAL "6")
-        target_link_libraries(${_name} Qt6Core5Compat)
+        target_link_libraries(${_name} Qt6::Core5Compat)
     endif()
     add_gpg_crypto_test(${_name} mimetreeparser-${_name})
 endmacro ()
