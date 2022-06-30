@@ -1,11 +1,16 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
+if (QT_MAJOR_VERSION STREQUAL "6")
+    set(qgpgme_lib QGpgmeQt6)
+else()
+    set(qgpgme_lib QGpgme)
+endif()
 macro(add_messageviewer_remote_contents_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer KF5::WebEngineViewer KF5::Libkleo QGpgme Qt${QT_MAJOR_VERSION}::Test qca-qt${QT_MAJOR_VERSION} KF5::ItemViews
+        LINK_LIBRARIES KF5::MessageViewer KF5::WebEngineViewer KF5::Libkleo ${qgpgme_lib} Qt${QT_MAJOR_VERSION}::Test qca-qt${QT_MAJOR_VERSION} KF5::ItemViews
     )
 endmacro ()
 

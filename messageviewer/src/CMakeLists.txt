@@ -433,11 +433,15 @@ target_link_libraries(KF5MessageViewer
     KF5::AkonadiContact
     ${TEMPLATES_LIB}
     Qt${QT_MAJOR_VERSION}::PrintSupport
-    QGpgme
     ${Inotify_LIBRARIES}
     qca-qt${QT_MAJOR_VERSION}
     KF5::Notifications
     )
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(KF5MessageViewer PRIVATE QGpgmeQt6)
+else()
+    target_link_libraries(KF5MessageViewer PRIVATE QGpgme)
+endif()
 if (TARGET Qt6::Core5Compat)
     target_link_libraries(KF5MessageViewer PRIVATE Qt6::Core5Compat) 
 endif()

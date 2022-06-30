@@ -87,7 +87,6 @@ target_link_libraries(KF5MessageCore
     PUBLIC
     KF5::Mime
     PRIVATE
-    QGpgme
     KF5::KIOCore
     KF5::Codecs
     KF5::PimTextEdit
@@ -99,6 +98,11 @@ target_link_libraries(KF5MessageCore
     KF5::MimeTreeParser
     KF5::PimCommon
     )
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(KF5MessageCore PRIVATE QGpgmeQt6)
+else()
+    target_link_libraries(KF5MessageCore PRIVATE QGpgme)
+endif()
 
 target_include_directories(KF5MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/MessageCore/>")
 

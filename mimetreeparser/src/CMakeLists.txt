@@ -156,13 +156,17 @@ generate_export_header(KF5MimeTreeParser BASE_NAME mimetreeparser)
 
 target_link_libraries(KF5MimeTreeParser
     PRIVATE
-    QGpgme
     KF5::Codecs
     KF5::I18n
     KF5::CoreAddons
     KF5::Mime
     Qt${QT_MAJOR_VERSION}::Gui
     )
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(KF5MimeTreeParser PRIVATE QGpgmeQt6)
+else()
+    target_link_libraries(KF5MimeTreeParser PRIVATE QGpgme)
+endif()
 
 install(TARGETS
     KF5MimeTreeParser

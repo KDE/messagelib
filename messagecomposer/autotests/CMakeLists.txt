@@ -51,12 +51,16 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::PimTextEdit
         KF5::AkonadiCore
         Qt${QT_MAJOR_VERSION}::Test
-        QGpgme
         KF5::IconThemes
         KF5::Completion
         KF5::MailTransport
         KF5::Contacts
     )
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(${_name} QGpgmeQt6)
+else()
+    target_link_libraries(${_name} QGpgme)
+endif()
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
     set_tests_properties(messagecomposer-${_name} PROPERTIES
         ENVIRONMENT "LC_ALL=en_US.UTF-8"
