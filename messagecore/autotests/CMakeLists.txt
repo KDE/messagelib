@@ -29,7 +29,6 @@ macro( add_messagecore_cryptotest _source )
         KF5::Libkleo
         KF5::MessageCore
         KF5::MimeTreeParser
-        QGpgme
         Qt${QT_MAJOR_VERSION}::Test
         Qt${QT_MAJOR_VERSION}::Widgets
         )
