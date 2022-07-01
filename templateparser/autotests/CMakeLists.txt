@@ -6,11 +6,6 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 
 include ( ${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake )
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(qgpgme_lib QGpgmeQt6)
-else()
-    set(qgpgme_lib QGpgme)
-endif()
 # convenience macro to add qtest unit tests
 macro(add_templateparser_unittest _source)
   set(_test ${_source})
@@ -21,7 +16,6 @@ macro(add_templateparser_unittest _source)
     KF5::Libkleo
     KF5::TemplateParser
     KF5::MimeTreeParser
-    ${qgpgme_lib}
     Qt${QT_MAJOR_VERSION}::Test
     KF5::KIOCore
     KF5::Mime
