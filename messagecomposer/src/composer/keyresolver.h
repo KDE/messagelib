@@ -32,7 +32,11 @@ using NearExpiryCheckerPtr = QSharedPointer<NearExpiryChecker>;
 
 namespace Kleo
 {
-enum Result { Failure = 0, Ok = 1, Canceled = 2 };
+enum Result {
+    Failure = 0,
+    Ok = 1,
+    Canceled = 2,
+};
 /**
      \short A class to resolve signing/encryption keys w.r.t. per-recipient preferences
 

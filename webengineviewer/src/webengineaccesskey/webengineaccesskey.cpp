@@ -39,7 +39,11 @@ InvokeWrapperWebAccessKey<Arg, R, C> invokeWebAccessKey(R *receiver, void (C::*m
 class WebEngineViewer::WebEngineAccessKeyPrivate
 {
 public:
-    enum AccessKeyState { NotActivated, PreActivated, Activated };
+    enum AccessKeyState {
+        NotActivated,
+        PreActivated,
+        Activated,
+    };
 
     WebEngineAccessKeyPrivate(WebEngineAccessKey *qq, QWebEngineView *webEngine)
         : mWebEngine(webEngine)

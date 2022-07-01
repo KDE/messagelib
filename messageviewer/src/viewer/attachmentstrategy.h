@@ -55,7 +55,11 @@ public:
     // Behavioral:
     //
 
-    enum Display { None, AsIcon, Inline };
+    enum Display {
+        None,
+        AsIcon,
+        Inline,
+    };
 
     virtual bool inlineNestedMessages() const = 0;
     virtual Display defaultDisplay(KMime::Content *node) const = 0;

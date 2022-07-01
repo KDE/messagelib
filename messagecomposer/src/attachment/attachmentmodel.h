@@ -26,7 +26,17 @@ class MESSAGECOMPOSER_EXPORT AttachmentModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
-    enum { AttachmentPartRole = Qt::UserRole, NameRole, SizeRole, EncodingRole, MimeTypeRole, CompressRole, EncryptRole, SignRole, AutoDisplayRole };
+    enum {
+        AttachmentPartRole = Qt::UserRole,
+        NameRole,
+        SizeRole,
+        EncodingRole,
+        MimeTypeRole,
+        CompressRole,
+        EncryptRole,
+        SignRole,
+        AutoDisplayRole,
+    };
 
     /**
      * @todo: get rid of columns and use the roles instead.
@@ -40,7 +50,7 @@ public:
         EncryptColumn,
         SignColumn,
         AutoDisplayColumn,
-        LastColumn ///< @internal
+        LastColumn, ///< @internal
     };
 
     explicit AttachmentModel(QObject *parent);

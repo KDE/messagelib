@@ -30,7 +30,12 @@ class MESSAGECOMPOSER_EXPORT PluginEditorInterface : public PimCommon::AbstractG
 {
     Q_OBJECT
 public:
-    enum ApplyOnFieldType { Composer = 1, EmailFields = 2, SubjectField = 4, All = Composer | EmailFields | SubjectField };
+    enum ApplyOnFieldType {
+        Composer = 1,
+        EmailFields = 2,
+        SubjectField = 4,
+        All = Composer | EmailFields | SubjectField,
+    };
     Q_FLAG(ApplyOnFieldType)
     Q_DECLARE_FLAGS(ApplyOnFieldTypes, ApplyOnFieldType)
 

@@ -23,7 +23,7 @@ enum PGPBlockType {
     SignatureBlock = 3, // BEGIN PGP SIGNATURE
     ClearsignedBlock = 4, // BEGIN PGP SIGNED MESSAGE
     PublicKeyBlock = 5, // BEGIN PGP PUBLIC KEY BLOCK
-    PrivateKeyBlock = 6 // BEGIN PGP PRIVATE KEY BLOCK (PGP 2.x: ...SECRET...)
+    PrivateKeyBlock = 6, // BEGIN PGP PRIVATE KEY BLOCK (PGP 2.x: ...SECRET...)
 };
 
 class Block

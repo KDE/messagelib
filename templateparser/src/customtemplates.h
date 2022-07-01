@@ -27,7 +27,12 @@ class TEMPLATEPARSER_EXPORT CustomTemplates : public QWidget
 {
     Q_OBJECT
 public:
-    enum Type { TUniversal, TReply, TReplyAll, TForward };
+    enum Type {
+        TUniversal,
+        TReply,
+        TReplyAll,
+        TForward,
+    };
 
 public:
     explicit CustomTemplates(const QList<KActionCollection *> &actionCollection, QWidget *parent = nullptr);

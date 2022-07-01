@@ -26,8 +26,17 @@ class MESSAGEVIEWER_EXPORT EditorWatcher : public QObject
 {
     Q_OBJECT
 public:
-    enum OpenWithOption { OpenWithDialog, NoOpenWithDialog };
-    enum ErrorEditorWatcher { Unknown = 0, Canceled, NoServiceFound, CannotStart, NoError };
+    enum OpenWithOption {
+        OpenWithDialog,
+        NoOpenWithDialog,
+    };
+    enum ErrorEditorWatcher {
+        Unknown = 0,
+        Canceled,
+        NoServiceFound,
+        CannotStart,
+        NoError,
+    };
 
     /**
      * Constructs an EditorWatcher.

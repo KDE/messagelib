@@ -89,17 +89,26 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT QByteArray headerAsSendableString(const KMi
  * Used to determine if the visible part of the anchor contains
  * only the name part and not the given emailAddr or the full address.
  */
-enum Display { DisplayNameOnly, DisplayFullAddress };
+enum Display {
+    DisplayNameOnly,
+    DisplayFullAddress,
+};
 
 /**
  * Used to determine if the address should be a link or not.
  */
-enum Link { ShowLink, HideLink };
+enum Link {
+    ShowLink,
+    HideLink,
+};
 
 /**
  * Used to determine if the address field should be expandable/collapsible.
  */
-enum AddressMode { ExpandableAddresses, FullAddresses };
+enum AddressMode {
+    ExpandableAddresses,
+    FullAddresses,
+};
 
 /**
  * Converts the email address(es) to (a) nice HTML mailto: anchor(s).

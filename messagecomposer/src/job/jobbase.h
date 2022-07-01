@@ -28,7 +28,12 @@ class MESSAGECOMPOSER_EXPORT JobBase : public KCompositeJob
 public:
     using List = QList<JobBase *>;
 
-    enum Error { BugError = UserDefinedError + 1, IncompleteError, UserCancelledError, UserError = UserDefinedError + 42 };
+    enum Error {
+        BugError = UserDefinedError + 1,
+        IncompleteError,
+        UserCancelledError,
+        UserError = UserDefinedError + 42,
+    };
 
     explicit JobBase(QObject *parent = nullptr);
     ~JobBase() override;

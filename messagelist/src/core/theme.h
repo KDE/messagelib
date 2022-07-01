@@ -799,7 +799,7 @@ public:
     enum GroupHeaderBackgroundMode {
         Transparent, ///< No background at all: use style default
         AutoColor, ///< Automatically determine the color (somewhere in the middle between background and text)
-        CustomColor ///< Use a custom color
+        CustomColor, ///< Use a custom color
     };
 
     /**
@@ -813,7 +813,7 @@ public:
         GradientRect, ///< One rounded gradient filled rect per column
         GradientJoinedRect, ///< One big rounded gradient rect for all the columns
         StyledRect, ///< One styled rect per column
-        StyledJoinedRect ///< One big styled rect per column
+        StyledJoinedRect, ///< One big styled rect per column
     };
 
     /**
@@ -821,7 +821,7 @@ public:
      */
     enum ViewHeaderPolicy {
         ShowHeaderAlways,
-        NeverShowHeader
+        NeverShowHeader,
         // ShowWhenMoreThanOneColumn,  ///< This doesn't work at the moment (since without header we don't have means for showing columns back)
     };
 

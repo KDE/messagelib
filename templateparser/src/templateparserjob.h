@@ -135,11 +135,23 @@ class TEMPLATEPARSER_EXPORT TemplateParserJob : public QObject
     friend class TemplateParserJobTest;
 
 public:
-    enum Mode { NewMessage, Reply, ReplyAll, Forward };
+    enum Mode {
+        NewMessage,
+        Reply,
+        ReplyAll,
+        Forward,
+    };
 
-    enum AllowSelection { SelectionAllowed, NoSelectionAllowed };
+    enum AllowSelection {
+        SelectionAllowed,
+        NoSelectionAllowed,
+    };
 
-    enum Quotes { ReplyAsOriginalMessage, ReplyAsPlain, ReplyAsHtml };
+    enum Quotes {
+        ReplyAsOriginalMessage,
+        ReplyAsPlain,
+        ReplyAsHtml,
+    };
 
 public:
     explicit TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode, QObject *parent = nullptr);

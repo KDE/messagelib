@@ -47,7 +47,10 @@ public:
      * If you add values here please look at the implementations of the enumerate* functions
      * and add appropriate descriptors.
      */
-    enum SortDirection { Ascending, Descending };
+    enum SortDirection {
+        Ascending,
+        Descending,
+    };
 
     /**
      * The available message sorting options.
@@ -66,7 +69,7 @@ public:
         SortMessagesByActionItemStatus, ///< Sort the messages by the "Action Item" flag of status
         SortMessagesByUnreadStatus, ///< Sort the messages by the "Unread" flags of status
         SortMessagesByImportantStatus, /// Sort the messages By "Important" flags of status
-        SortMessagesByAttachmentStatus /// Sort the messages By "Attachment" flags of status
+        SortMessagesByAttachmentStatus, /// Sort the messages By "Attachment" flags of status
         // Warning: Never add enum entries in the middle: always add them at the end (numeric values are stored in configuration)
     };
 

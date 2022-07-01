@@ -13,7 +13,13 @@ namespace WebEngineViewer
 {
 namespace CheckPhishingUrlUtil
 {
-enum UrlStatus { Ok = 0, MalWare = 1, BrokenNetwork = 2, InvalidUrl = 3, Unknown = 4 };
+enum UrlStatus {
+    Ok = 0,
+    MalWare = 1,
+    BrokenNetwork = 2,
+    InvalidUrl = 3,
+    Unknown = 4,
+};
 
 Q_REQUIRED_RESULT QString apiKey();
 Q_REQUIRED_RESULT WEBENGINEVIEWER_EXPORT QString versionApps();

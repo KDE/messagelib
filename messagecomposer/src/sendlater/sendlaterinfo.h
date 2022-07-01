@@ -19,7 +19,12 @@ class MESSAGECOMPOSER_EXPORT SendLaterInfo
 public:
     explicit SendLaterInfo() = default;
 
-    enum RecurrenceUnit { Days = 0, Weeks, Months, Years };
+    enum RecurrenceUnit {
+        Days = 0,
+        Weeks,
+        Months,
+        Years,
+    };
 
     Q_REQUIRED_RESULT bool isValid() const;
 

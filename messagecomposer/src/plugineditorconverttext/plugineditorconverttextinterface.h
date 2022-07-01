@@ -34,7 +34,11 @@ public:
     explicit PluginEditorConvertTextInterface(QObject *parent = nullptr);
     ~PluginEditorConvertTextInterface() override;
 
-    enum class ConvertTextStatus { NotConverted, Converted, Error };
+    enum class ConvertTextStatus {
+        NotConverted,
+        Converted,
+        Error,
+    };
 
     virtual bool reformatText();
 

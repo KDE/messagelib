@@ -79,7 +79,7 @@ enum FontType {
     Italic,
     BoldItalic,
 
-    FontTypesCount
+    FontTypesCount,
 };
 
 static QFont sFontCache[FontTypesCount];

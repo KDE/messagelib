@@ -24,7 +24,13 @@ class MESSAGEVIEWER_EXPORT DKIMCheckSignatureJob : public QObject
 {
     Q_OBJECT
 public:
-    enum class DKIMStatus : int { Unknown = 0, Valid = 1, Invalid = 2, EmailNotSigned = 3, NeedToBeSigned = 4 };
+    enum class DKIMStatus : int {
+        Unknown = 0,
+        Valid = 1,
+        Invalid = 2,
+        EmailNotSigned = 3,
+        NeedToBeSigned = 4,
+    };
     Q_ENUM(DKIMStatus)
 
     enum class DKIMError : int {

@@ -41,7 +41,10 @@ class HtmlStatusBar : public QLabel
 {
     Q_OBJECT
 public:
-    enum UpdateMode { NoUpdate, Update };
+    enum UpdateMode {
+        NoUpdate,
+        Update,
+    };
 
     explicit HtmlStatusBar(QWidget *parent = nullptr);
     ~HtmlStatusBar() override;

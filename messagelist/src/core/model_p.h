@@ -61,7 +61,10 @@ public:
     void attachMessageToGroupHeader(MessageItem *mi);
     void attachGroup(GroupHeaderItem *ghi);
 
-    enum ViewItemJobResult { ViewItemJobCompleted, ViewItemJobInterrupted };
+    enum ViewItemJobResult {
+        ViewItemJobCompleted,
+        ViewItemJobInterrupted,
+    };
     ViewItemJobResult viewItemJobStepInternal();
     ViewItemJobResult viewItemJobStepInternalForJob(ViewItemJob *job, QElapsedTimer elapsedTimer);
 
@@ -110,7 +113,7 @@ public:
         ActionItemStatusChanged = (1 << 2),
         UnreadStatusChanged = (1 << 3),
         ImportantStatusChanged = (1 << 4),
-        AttachmentStatusChanged = (1 << 5)
+        AttachmentStatusChanged = (1 << 5),
     };
 
     /**

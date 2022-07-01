@@ -30,7 +30,13 @@ public:
     using Ptr = QSharedPointer<Recipient>;
     using List = QVector<Recipient::Ptr>;
 
-    enum Type { To, Cc, Bcc, ReplyTo, Undefined };
+    enum Type {
+        To,
+        Cc,
+        Bcc,
+        ReplyTo,
+        Undefined,
+    };
 
     Recipient(const QString &email = QString(), Type type = To); // krazy:exclude=explicit
     ~Recipient() override;

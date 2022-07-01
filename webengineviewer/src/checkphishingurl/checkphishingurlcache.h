@@ -24,7 +24,11 @@ class WEBENGINEVIEWER_EXPORT CheckPhishingUrlCache : public QObject
 public:
     static CheckPhishingUrlCache *self();
 
-    enum UrlStatus { UrlOk = 0, MalWare = 1, Unknown = 2 };
+    enum UrlStatus {
+        UrlOk = 0,
+        MalWare = 1,
+        Unknown = 2,
+    };
 
     explicit CheckPhishingUrlCache(QObject *parent = nullptr);
     ~CheckPhishingUrlCache() override;

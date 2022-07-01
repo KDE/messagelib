@@ -32,10 +32,14 @@ enum ReplyStrategy {
     ReplyAuthor, //< Reply to the author of the message (possibly NOT the mailing list, if any)
     ReplyList, //< Reply to the mailing list (and not the author of the message)
     ReplyAll, //< Reply to author and all the recipients in CC
-    ReplyNone //< Don't set reply addresses: they will be set manually
+    ReplyNone, //< Don't set reply addresses: they will be set manually
 };
 
-enum MDNAdvice { MDNIgnore, MDNSendDenied, MDNSend };
+enum MDNAdvice {
+    MDNIgnore,
+    MDNSendDenied,
+    MDNSend,
+};
 /**
  * Contains various factory methods for creating new messages such as replies, MDNs, forwards, etc.
  */

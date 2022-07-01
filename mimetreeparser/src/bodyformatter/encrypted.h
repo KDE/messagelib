@@ -16,7 +16,7 @@ class EncryptedBodyPartFormatter : public Interface::BodyPartFormatter
 public:
     enum EncryptionFlag {
         AutoPGP = 0x0, ///< Detect PGP data automatically
-        ForcePGP = 0x1 ///< Always decode PGP data
+        ForcePGP = 0x1, ///< Always decode PGP data
     };
     Q_DECLARE_FLAGS(EncryptionFlags, EncryptionFlag)
 

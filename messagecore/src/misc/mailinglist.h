@@ -36,7 +36,7 @@ public:
      */
     enum Handler {
         KMail, ///< The list is handled by KMail
-        Browser ///< The list is handled by a browser.
+        Browser, ///< The list is handled by a browser.
     };
 
     /**

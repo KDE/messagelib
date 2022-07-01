@@ -18,9 +18,17 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     UpdateDataBaseInfo();
     Q_REQUIRED_RESULT bool isValid() const;
 
-    enum ResponseType { Unknown = 0, FullUpdate = 1, PartialUpdate = 2 };
+    enum ResponseType {
+        Unknown = 0,
+        FullUpdate = 1,
+        PartialUpdate = 2,
+    };
 
-    enum CompressionType { UnknownCompression = 0, RiceCompression = 1, RawCompression = 2 };
+    enum CompressionType {
+        UnknownCompression = 0,
+        RiceCompression = 1,
+        RawCompression = 2,
+    };
 
     QVector<Addition> additionList;
     QVector<Removal> removalList;

@@ -30,7 +30,7 @@ public:
         External = 4,
         Misc = 8,
         Debug = 16,
-        Default = ReplyForwardMessage | CurrentMessage | External | Misc | Debug
+        Default = ReplyForwardMessage | CurrentMessage | External | Misc | Debug,
     };
     Q_FLAG(MenuType)
     Q_DECLARE_FLAGS(MenuTypes, MenuType)
@@ -104,7 +104,7 @@ public:
         CQuotePlain,
         CQuoteHtml,
         CDictionaryLanguage,
-        CLanguage
+        CLanguage,
     };
 
     Q_REQUIRED_RESULT QMenu *menu() const;

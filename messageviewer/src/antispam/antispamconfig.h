@@ -24,7 +24,7 @@ enum SpamAgentTypes {
     SpamAgentBool, //!< Simple Yes or No (Razor)
     SpamAgentFloat, //!< For straight percentages between 0.0 and 1.0 (BogoFilter)
     SpamAgentFloatLarge, //!< For straight percentages between 0.0 and 100.0
-    SpamAgentAdjustedFloat //!< Use this when we need to compare against a threshold (SpamAssasssin)
+    SpamAgentAdjustedFloat, //!< Use this when we need to compare against a threshold (SpamAssasssin)
 };
 
 class SpamAgent

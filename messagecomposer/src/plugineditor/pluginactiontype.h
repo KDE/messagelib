@@ -19,7 +19,18 @@ namespace MessageComposer
 class MESSAGECOMPOSER_EXPORT PluginActionType
 {
 public:
-    enum Type { Tools = 0, Edit = 1, File = 2, Action = 3, PopupMenu = 4, ToolBar = 5, Options = 6, None = 7, Insert = 8, View = 9 };
+    enum Type {
+        Tools = 0,
+        Edit = 1,
+        File = 2,
+        Action = 3,
+        PopupMenu = 4,
+        ToolBar = 5,
+        Options = 6,
+        None = 7,
+        Insert = 8,
+        View = 9,
+    };
     PluginActionType();
 
     PluginActionType(QAction *action, Type type);

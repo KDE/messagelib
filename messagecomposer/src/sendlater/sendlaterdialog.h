@@ -27,7 +27,12 @@ class MESSAGECOMPOSER_EXPORT SendLaterDialog : public QDialog
 {
     Q_OBJECT
 public:
-    enum SendLaterAction { Unknown = 0, SendDeliveryAtTime = 1, Canceled = 2, PutInOutbox = 3 };
+    enum SendLaterAction {
+        Unknown = 0,
+        SendDeliveryAtTime = 1,
+        Canceled = 2,
+        PutInOutbox = 3,
+    };
 
     explicit SendLaterDialog(SendLaterInfo *info, QWidget *parent = nullptr);
     ~SendLaterDialog() override;

@@ -73,12 +73,15 @@ public:
     explicit ComposerViewBase(QObject *parent = nullptr, QWidget *widget = nullptr);
     ~ComposerViewBase() override;
 
-    enum Confirmation { LetUserConfirm, NoConfirmationNeeded };
+    enum Confirmation {
+        LetUserConfirm,
+        NoConfirmationNeeded,
+    };
     enum MissingAttachment {
         NoMissingAttachmentFound,
         FoundMissingAttachmentAndSending,
         FoundMissingAttachmentAndAddedAttachment,
-        FoundMissingAttachmentAndCancel
+        FoundMissingAttachmentAndCancel,
     };
 
     enum FailedType {

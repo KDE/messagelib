@@ -30,7 +30,7 @@ enum PreSelectionMode {
     PreSelectLastSelected, //< pre-select the last message that was selected in this folder (default)
     PreSelectFirstUnreadCentered, //< pre-select the first unread message and center it
     PreSelectNewestCentered, //< pre-select the newest message, by date
-    PreSelectOldestCentered //< pre-select the oldest message, by date
+    PreSelectOldestCentered, //< pre-select the oldest message, by date
 };
 
 /**
@@ -38,7 +38,7 @@ enum PreSelectionMode {
  */
 enum MessageTypeFilter {
     MessageTypeAny, //< Select any message
-    MessageTypeUnreadOnly //< Select only unread messages
+    MessageTypeUnreadOnly, //< Select only unread messages
 };
 
 /**

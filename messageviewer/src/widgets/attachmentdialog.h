@@ -24,7 +24,12 @@ class AttachmentDialog : public QObject
 
 public:
     /// returncodes for exec()
-    enum { Save = 2, Open, OpenWith, Cancel };
+    enum {
+        Save = 2,
+        Open,
+        OpenWith,
+        Cancel,
+    };
 
     // if @offer is non-null, the "open with <application>" button will also be shown,
     // otherwise only save, open with, cancel
