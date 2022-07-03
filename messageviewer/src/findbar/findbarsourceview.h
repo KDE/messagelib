@@ -20,11 +20,7 @@ public:
     ~FindBarSourceView() override;
 
 private:
-    explicit FindBarSourceView(QWidget *parent)
-        : mView(nullptr)
-    {
-        Q_UNUSED(parent)
-    }
+    FindBarSourceView(QWidget *parent) = delete;
 
     void clearSelections() override;
     void searchText(bool backward, bool isAutoSearch) override;
