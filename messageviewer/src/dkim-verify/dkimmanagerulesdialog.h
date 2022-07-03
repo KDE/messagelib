@@ -30,6 +30,6 @@ private:
     void slotImport();
     void slotExport();
     DKIMManageRulesWidget *const mRulesWidget;
-    QPushButton *mExportButton = nullptr;
+    QPushButton *const mExportButton;
 };
 }
