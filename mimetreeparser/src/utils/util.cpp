@@ -19,7 +19,7 @@ using namespace MimeTreeParser::Util;
 
 bool MimeTreeParser::Util::isTypeBlacklisted(KMime::Content *node)
 {
-    auto contentType = node->contentType(); // Create
+    const auto contentType = node->contentType(); // Create
     const QByteArray mediaTypeLower = contentType->mediaType().toLower();
     bool typeBlacklisted = mediaTypeLower == QByteArrayLiteral("multipart");
     if (!typeBlacklisted) {
