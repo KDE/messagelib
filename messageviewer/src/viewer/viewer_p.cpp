@@ -2273,6 +2273,23 @@ void ViewerPrivate::slotExportHtmlPageFailed()
     Q_EMIT printingFinished();
 }
 
+static QString filterCharsFromFilename(const QString &name)
+{
+    QString value = name;
+
+    value.replace(QLatin1Char('/'), QLatin1Char('-'));
+    value.remove(QLatin1Char('\\'));
+    value.remove(QLatin1Char(':'));
+    value.remove(QLatin1Char('*'));
+    value.remove(QLatin1Char('?'));
+    value.remove(QLatin1Char('"'));
+    value.remove(QLatin1Char('<'));
+    value.remove(QLatin1Char('>'));
+    value.remove(QLatin1Char('|'));
+
+    return value;
+}
+
 void ViewerPrivate::slotPrintMessage()
 {
     disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMessage);
@@ -2284,6 +2301,7 @@ void ViewerPrivate::slotPrintMessage()
         return;
     }
     mCurrentPrinter = new QPrinter();
+    mCurrentPrinter->setDocName(filterCharsFromFilename(mMessage->subject()->asUnicodeString()));
     QPointer<QPrintDialog> dialog = new QPrintDialog(mCurrentPrinter, mMainWindow);
     dialog->setWindowTitle(i18nc("@title:window", "Print Document"));
     if (dialog->exec() != QDialog::Accepted) {
