@@ -25,6 +25,10 @@ macro(add_templateparser_unittest _source)
     Qt${QT_MAJOR_VERSION}::WebEngineWidgets
   )
   add_gpg_crypto_test(${_name} templateparser-${_name})
+  # needed for the CI to run webengine-related tests
+  # the CI runs as root, and webengine insists on disabling sandboxing in that case
+  set_tests_properties(templateparser-${_name} PROPERTIES ENVIRONMENT "QTWEBENGINE_DISABLE_SANDBOX=1")
+
 endmacro()
 
 add_templateparser_unittest(customtemplatesmenutest.cpp)

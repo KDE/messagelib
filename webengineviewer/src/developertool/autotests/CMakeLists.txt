@@ -7,6 +7,10 @@ macro(add_webengineviewer_widget_unittest _source)
         NAME_PREFIX "webengineviewer-"
         LINK_LIBRARIES KF5::WebEngineViewer Qt${QT_MAJOR_VERSION}::Test
     )
+    # needed for the CI to run webengine-related tests
+    # the CI runs as root, and webengine insists on disabling sandboxing in that case
+    set_tests_properties(webengineviewer-${_name} PROPERTIES ENVIRONMENT "QTWEBENGINE_DISABLE_SANDBOX=1")
+
 endmacro ()
 
 add_webengineviewer_widget_unittest(developertooldialogtest.cpp)
