@@ -91,7 +91,10 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
 
         // 1) detect if title has a url and title != href
         const QString title = mapVariant.value(QStringLiteral("title")).toString();
-        const QString href = mapVariant.value(QStringLiteral("src")).toString();
+        QString href = mapVariant.value(QStringLiteral("src")).toString();
+        if (!QUrl(href).toString().contains(QLatin1String("kmail:showAuditLog"))) {
+            href = href.toLower();
+        }
         const QUrl url(href);
         if (!title.isEmpty()) {
             if (title.startsWith(QLatin1String("http:")) || title.startsWith(QLatin1String("https:")) || title.startsWith(QLatin1String("www."))) {
@@ -167,7 +170,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             if (text.endsWith(QLatin1String("%22"))) {
                 text.chop(3);
             }
-            const QUrl normalizedHrefUrl = QUrl(href);
+            const QUrl normalizedHrefUrl = QUrl(href.toLower());
             QString normalizedHref = normalizedHrefUrl.toDisplayString(QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
             if (text != normalizedHref) {
                 if (normalizedHref.contains(QStringLiteral("%5C"))) {
@@ -181,26 +184,29 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
 
             if (!text.isEmpty()) {
                 if (text.startsWith(QLatin1String("http:/")) || text.startsWith(QLatin1String("https:/"))) {
-                    if (text != normalizedHref) {
-                        if (normalizedHref != (text + QLatin1Char('/'))) {
-                            if (normalizedHref.toHtmlEscaped() != text) {
-                                if (QString::fromUtf8(QUrl(text).toEncoded()) != normalizedHref) {
-                                    if (QUrl(normalizedHref).toDisplayString() != text) {
-                                        const bool qurlqueryequal = displayUrl.query() == normalizedHrefUrl.query();
-                                        const QString displayUrlWithoutQuery =
-                                            displayUrl.toDisplayString(QUrl::RemoveQuery | QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
-                                        const QString hrefUrlWithoutQuery =
-                                            normalizedHrefUrl.toDisplayString(QUrl::RemoveQuery | QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
-                                        // qDebug() << "displayUrlWithoutQuery "  << displayUrlWithoutQuery << " hrefUrlWithoutQuery " << hrefUrlWithoutQuery <<
-                                        // " text " << text;
-                                        if (qurlqueryequal && (displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery)) {
-                                            d->mDetails += QLatin1String("<li>")
-                                                + i18n("This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is often "
-                                                       "the case in scam emails to mislead the recipient",
-                                                       addWarningColor(text),
-                                                       addWarningColor(normalizedHref))
-                                                + QLatin1String("</li>");
-                                            foundScam = true;
+                    if (text.toLower() != normalizedHref.toLower()) {
+                        if (text != normalizedHref) {
+                            if (normalizedHref != (text + QLatin1Char('/'))) {
+                                if (normalizedHref.toHtmlEscaped() != text) {
+                                    if (QString::fromUtf8(QUrl(text).toEncoded()) != normalizedHref) {
+                                        if (QUrl(normalizedHref).toDisplayString() != text) {
+                                            const bool qurlqueryequal = displayUrl.query() == normalizedHrefUrl.query();
+                                            const QString displayUrlWithoutQuery =
+                                                displayUrl.toDisplayString(QUrl::RemoveQuery | QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
+                                            const QString hrefUrlWithoutQuery =
+                                                normalizedHrefUrl.toDisplayString(QUrl::RemoveQuery | QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
+                                            // qDebug() << "displayUrlWithoutQuery "  << displayUrlWithoutQuery << " hrefUrlWithoutQuery " <<
+                                            // hrefUrlWithoutQuery << " text " << text;
+                                            if (qurlqueryequal && (displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery)) {
+                                                d->mDetails += QLatin1String("<li>")
+                                                    + i18n("This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is "
+                                                           "often "
+                                                           "the case in scam emails to mislead the recipient",
+                                                           addWarningColor(text),
+                                                           addWarningColor(normalizedHref))
+                                                    + QLatin1String("</li>");
+                                                foundScam = true;
+                                            }
                                         }
                                     }
                                 }
