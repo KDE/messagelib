@@ -68,7 +68,6 @@
 #include <QRegularExpression>
 #include <QTemporaryFile>
 #include <QWidget>
-#include <ktoolinvocation.h>
 
 using namespace MessageViewer;
 /** Checks whether @p str contains external references. To be precise,
