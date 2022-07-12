@@ -15,7 +15,6 @@
 #include <QLineEdit>
 
 #include <QApplication>
-#include <QDebug>
 #include <QEvent>
 #include <QHBoxLayout>
 #include <QKeyEvent>

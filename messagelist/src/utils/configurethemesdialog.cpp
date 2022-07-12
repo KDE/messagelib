@@ -26,6 +26,7 @@
 #include <QDialogButtonBox>
 #include <QFileDialog>
 #include <QIcon>
+#include <QListWidget>
 #include <QVBoxLayout>
 
 namespace MessageList

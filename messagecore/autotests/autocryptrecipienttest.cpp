@@ -22,7 +22,6 @@
 #include <QJsonObject>
 #include <QStandardPaths>
 #include <QTest>
-#include <QUrl>
 
 KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {

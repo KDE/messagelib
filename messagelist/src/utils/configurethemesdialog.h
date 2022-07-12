@@ -10,8 +10,6 @@
 
 #include <QDialog>
 
-#include <QListWidget>
-
 namespace MessageList
 {
 namespace Utils

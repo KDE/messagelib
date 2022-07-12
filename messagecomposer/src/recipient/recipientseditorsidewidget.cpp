@@ -15,10 +15,9 @@
 #include "recipientspicker.h"
 
 #include <KLocalizedString>
-#include <QPushButton>
-
-#include <QBoxLayout>
 #include <QLabel>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 using namespace MessageComposer;
 

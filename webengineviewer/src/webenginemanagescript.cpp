@@ -7,9 +7,6 @@
 #include "webenginemanagescript.h"
 #include "webengineviewer_debug.h"
 
-#include <QWebEngineProfile>
-#include <QWebEngineScriptCollection>
-
 using namespace WebEngineViewer;
 
 WebEngineManageScript::WebEngineManageScript(QObject *parent)

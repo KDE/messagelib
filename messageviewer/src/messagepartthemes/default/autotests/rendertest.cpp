@@ -18,7 +18,6 @@
 #include <QDir>
 #include <QProcess>
 #include <QTest>
-#include <QtGlobal>
 
 using namespace MessageViewer;
 

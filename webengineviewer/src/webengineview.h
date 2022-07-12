@@ -7,7 +7,6 @@
 #pragma once
 
 #include "webengineviewer_export.h"
-#include <QWebEngineScript>
 #include <QWebEngineView>
 #include <WebEngineViewer/BlockTrackingUrlInterceptor>
 namespace WebEngineViewer
