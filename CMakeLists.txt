@@ -10,7 +10,7 @@ option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branc
 
 option(MESSAGEVIEWER_EXPERIMENTAL_CONVERSATIONVIEW "Experimental conversationview (in progress)" FALSE)
 
-set(KF5_MIN_VERSION "5.95.0")
+set(KF5_MIN_VERSION "5.96.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
