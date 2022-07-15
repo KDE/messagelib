@@ -6,13 +6,16 @@ add_definitions( -DMAIL_DATA_DIR="${CMAKE_SOURCE_DIR}/mimetreeparser/autotests/d
 add_definitions( -DDATA_DIR="${CMAKE_SOURCE_DIR}/messagecore/autotests/data" )
 
 # Convenience macro to add unit tests.
-macro(add_messagecore_test _source )
+macro(add_messagecore_test _source)
     add_definitions(-DKDESRCDIR="${CMAKE_CURRENT_SOURCE_DIR}")
-    ecm_add_test(${_source}
-        NAME_PREFIX "messagecore-"
-        LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test KF5::Libkleo KF5::MessageCore Qt${QT_MAJOR_VERSION}::Widgets KF5::Archive KF5::Completion KF5::ConfigCore KF5::CoreAddons
-    )
+    set( _test ${_source})
+    get_filename_component( _name ${_source} NAME_WE )
+    add_executable( ${_name} ${_test} ${_name}.h)
+    add_test(NAME ${_name} COMMAND ${_name} )
+    ecm_mark_as_test(${_name})
+    target_link_libraries( ${_name} Qt${QT_MAJOR_VERSION}::Test KF5::Libkleo KF5::MessageCore Qt${QT_MAJOR_VERSION}::Widgets KF5::Archive KF5::Completion KF5::ConfigCore KF5::CoreAddons)
 endmacro()
+
 
 include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
 
