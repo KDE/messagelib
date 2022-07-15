@@ -83,7 +83,7 @@ public:
     Q_REQUIRED_RESULT bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
 
     void addAttachment(const MessageCore::AttachmentPart::Ptr &part);
-    Q_REQUIRED_RESULT bool updateAttachment(const MessageCore::AttachmentPart::Ptr &part);
+    bool updateAttachment(const MessageCore::AttachmentPart::Ptr &part);
     Q_REQUIRED_RESULT bool replaceAttachment(const MessageCore::AttachmentPart::Ptr &oldPart, const MessageCore::AttachmentPart::Ptr &newPart);
     Q_REQUIRED_RESULT bool removeAttachment(const MessageCore::AttachmentPart::Ptr &part);
     Q_REQUIRED_RESULT MessageCore::AttachmentPart::List attachments() const;
