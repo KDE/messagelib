@@ -110,7 +110,7 @@ bool RecipientsEditor::setRecipientString(const QVector<KMime::Types::Mailbox> &
     int count = 1;
     for (const KMime::Types::Mailbox &mailbox : mailboxes) {
         if (count++ > MessageComposer::MessageComposerSettings::self()->maximumRecipients()) {
-            KMessageBox::sorry(this,
+            KMessageBox::error(this,
                                i18ncp("@info:status",
                                       "Truncating recipients list to %2 of %1 entry.",
                                       "Truncating recipients list to %2 of %1 entries.",

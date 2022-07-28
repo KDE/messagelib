@@ -74,7 +74,7 @@ void OpenSavedFileFolderWidget::slotOpenFile()
         job->setDeleteTemporaryFile(true);
         connect(job, &KIO::OpenUrlJob::result, this, [this](KJob *job) {
             if (job->error() == KIO::ERR_USER_CANCELED) {
-                KMessageBox::sorry(this, i18n("KMail was unable to open the attachment."), job->errorString());
+                KMessageBox::error(this, i18n("KMail was unable to open the attachment."), job->errorString());
             }
         });
         job->start();

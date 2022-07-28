@@ -166,7 +166,7 @@ void RecipientsPicker::pick(Recipient::Type type)
     }
 
     if (count > MessageComposerSettings::self()->maximumRecipients()) {
-        KMessageBox::sorry(this,
+        KMessageBox::error(this,
                            i18np("You selected 1 recipient. The maximum supported number of "
                                  "recipients is %2.\nPlease adapt the selection.",
                                  "You selected %1 recipients. The maximum supported number of "
@@ -184,7 +184,7 @@ void RecipientsPicker::pick(Recipient::Type type)
 
         Q_EMIT pickedRecipient(recipient, tooManyAddress);
         if (tooManyAddress) {
-            KMessageBox::sorry(this, i18n("You can not add more recipients."));
+            KMessageBox::error(this, i18n("You can not add more recipients."));
             break;
         }
     }
