@@ -37,7 +37,7 @@ public:
      */
     Q_REQUIRED_RESULT QPair<bool, KMime::MDN::SendingMode> checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend = false);
 
-    Q_REQUIRED_RESULT Akonadi::MDNStateAttribute::MDNSentState dispositionToSentState(KMime::MDN::DispositionType d);
+    Q_REQUIRED_RESULT static Akonadi::MDNStateAttribute::MDNSentState dispositionToSentState(KMime::MDN::DispositionType d);
 
     Q_REQUIRED_RESULT QPair<QString, bool> mdnMessageText(const char *what);
 
