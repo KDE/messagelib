@@ -18,6 +18,7 @@ MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     setVisible(false);
     setMessageType(Information);
     setWordWrap(true);
+    setCloseButtonVisible(false);
     connect(mIgnoreAction, &QAction::triggered, this, &MDNWarningWidget::slotIgnore);
     addAction(mIgnoreAction);
     connect(mSendAction, &QAction::triggered, this, &MDNWarningWidget::slotSend);
