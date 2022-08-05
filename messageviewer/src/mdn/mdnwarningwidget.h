@@ -7,6 +7,7 @@
 #pragma once
 #include "messageviewer_export.h"
 #include <KMessageWidget>
+#include <KMime/MDN>
 
 namespace MessageViewer
 {
@@ -30,8 +31,11 @@ public:
 
     void setInformation(const QString &str);
 
+    Q_REQUIRED_RESULT KMime::MDN::SendingMode sendingMode() const;
+    void setSendingMode(KMime::MDN::SendingMode newSendingMode);
+
 Q_SIGNALS:
-    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type);
+    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
 
 private:
     void slotSend();
@@ -40,5 +44,6 @@ private:
     QAction *const mIgnoreAction;
     QAction *const mSendAction;
     QAction *const mSendDenyAction;
+    KMime::MDN::SendingMode mSendingMode = KMime::MDN::SentAutomatically;
 };
 }

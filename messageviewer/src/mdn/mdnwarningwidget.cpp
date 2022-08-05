@@ -46,17 +46,27 @@ void MDNWarningWidget::setInformation(const QString &str)
 void MDNWarningWidget::slotSend()
 {
     animatedHide();
-    Q_EMIT sendResponse(MessageViewer::MDNWarningWidget::ResponseType::Send);
+    Q_EMIT sendResponse(MessageViewer::MDNWarningWidget::ResponseType::Send, mSendingMode);
 }
 
 void MDNWarningWidget::slotIgnore()
 {
     animatedHide();
-    Q_EMIT sendResponse(MessageViewer::MDNWarningWidget::ResponseType::Ignore);
+    Q_EMIT sendResponse(MessageViewer::MDNWarningWidget::ResponseType::Ignore, mSendingMode);
 }
 
 void MDNWarningWidget::slotSendDeny()
 {
     animatedHide();
-    Q_EMIT sendResponse(MessageViewer::MDNWarningWidget::ResponseType::SendDeny);
+    Q_EMIT sendResponse(MessageViewer::MDNWarningWidget::ResponseType::SendDeny, mSendingMode);
+}
+
+KMime::MDN::SendingMode MDNWarningWidget::sendingMode() const
+{
+    return mSendingMode;
+}
+
+void MDNWarningWidget::setSendingMode(KMime::MDN::SendingMode newSendingMode)
+{
+    mSendingMode = newSendingMode;
 }
