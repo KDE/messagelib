@@ -24,6 +24,7 @@ void MDNWarningWidgetTest::shouldHaveDefaultValues()
     QVERIFY(!w.isVisible());
     QVERIFY(w.wordWrap());
     QVERIFY(w.text().isEmpty());
+    QVERIFY(!w.isCloseButtonVisible());
 
     QCOMPARE(w.messageType(), KMessageWidget::Information);
     QCOMPARE(w.actions().count(), 3);
