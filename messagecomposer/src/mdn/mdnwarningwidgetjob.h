@@ -8,6 +8,7 @@
 
 #include "messagecomposer_export.h"
 #include <Akonadi/Item>
+#include <KMime/MDN>
 #include <QObject>
 namespace MessageComposer
 {
@@ -30,7 +31,7 @@ public:
     Q_REQUIRED_RESULT bool canStart() const;
 
 Q_SIGNALS:
-    void showMdnInfo(const QPair<QString, bool> &mdnInfo);
+    void showMdnInfo(const QPair<QString, bool> &mdnInfo, KMime::MDN::SendingMode s);
 
 private:
     Akonadi::Item mItem;

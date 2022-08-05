@@ -27,11 +27,11 @@ bool MDNWarningWidgetJob::canStart() const
 bool MDNWarningWidgetJob::start()
 {
     QPair<QString, bool> mdnInfo;
+    KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
     bool result = false;
     if (canStart()) {
         KMime::Message::Ptr msg = MessageComposer::Util::message(mItem);
         int mode = MessageViewer::MessageViewerSettings::self()->defaultPolicy();
-        KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
         if (!mode || (mode < 0) || (mode > 3)) {
             // Nothing
         } else {
@@ -70,7 +70,7 @@ bool MDNWarningWidgetJob::start()
     } else {
         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to start job";
     }
-    Q_EMIT showMdnInfo(mdnInfo);
+    Q_EMIT showMdnInfo(mdnInfo, s);
     deleteLater();
     return result;
 }
