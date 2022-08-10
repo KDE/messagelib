@@ -71,6 +71,11 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
     mGrouping = aggregation->grouping();
     mEnabled = true;
 
+    if (id.isEmpty()) {
+        qCDebug(MESSAGELIST_LOG) << "Invalid collection: id is empty";
+        return;
+    }
+
     const QString cacheFileName =
         QStandardPaths::locate(QStandardPaths::CacheLocation, QStringLiteral("messagelist/threading/%1").arg(id), QStandardPaths::LocateFile);
     if (cacheFileName.isEmpty()) {
