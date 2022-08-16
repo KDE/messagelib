@@ -421,8 +421,9 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
         deleteLater();
         return;
     }
-    if ((mDkimKeyRecord.keyType() != QLatin1String("rsa")) && (mDkimKeyRecord.keyType() != QLatin1String("ed25519"))) {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord key type is unknown " << mDkimKeyRecord.keyType() << " str " << str;
+    const QString keyType{mDkimKeyRecord.keyType()};
+    if ((keyType != QLatin1String("rsa")) && (keyType != QLatin1String("ed25519"))) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord key type is unknown " << keyType << " str " << str;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
         Q_EMIT result(createCheckResult());
         deleteLater();
@@ -477,12 +478,13 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
 
 void DKIMCheckSignatureJob::verifySignature()
 {
-    if (mDkimKeyRecord.keyType() == QLatin1String("rsa")) {
+    const QString keyType{mDkimKeyRecord.keyType()};
+    if (keyType == QLatin1String("rsa")) {
         verifyRSASignature();
-    } else if (mDkimKeyRecord.keyType() == QLatin1String("ed25519")) {
+    } else if (keyType == QLatin1String("ed25519")) {
         verifyEd25519Signature();
     } else {
-        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " It's a bug " << mDkimKeyRecord.keyType();
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " It's a bug " << keyType;
     }
 }
 
