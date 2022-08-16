@@ -18,7 +18,7 @@ StatusBarLabelToggledState::~StatusBarLabelToggledState() = default;
 
 void StatusBarLabelToggledState::setStateString(const QString &toggled, const QString &untoggled)
 {
-    if (toggled.isEmpty() || untoggled.isEmpty()) {
+    if (toggled.isEmpty() && untoggled.isEmpty()) {
         qCWarning(MESSAGECOMPOSER_LOG) << " State string is empty. Need to fix it";
     }
     mToggled = toggled;
