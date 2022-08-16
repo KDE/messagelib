@@ -148,7 +148,9 @@ private:
     Q_REQUIRED_RESULT QString bodyCanonizationRelaxed() const;
     Q_REQUIRED_RESULT QString bodyCanonizationSimple() const;
     Q_REQUIRED_RESULT MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult() const;
+    void verifySignature();
     void verifyRSASignature();
+    void verifyEd25519Signature();
     void computeHeaderCanonization(bool removeQuoteOnContentType);
     QVector<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> mCheckSignatureAuthenticationResult;
     DKIMCheckPolicy mPolicy;

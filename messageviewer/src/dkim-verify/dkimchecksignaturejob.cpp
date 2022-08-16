@@ -421,7 +421,7 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
         deleteLater();
         return;
     }
-    if (mDkimKeyRecord.keyType() != QLatin1String("rsa")) {
+    if ((mDkimKeyRecord.keyType() != QLatin1String("rsa")) && (mDkimKeyRecord.keyType() != QLatin1String("ed25519"))) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mDkimKeyRecord key type is unknown " << mDkimKeyRecord.keyType() << " str " << str;
         mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
         Q_EMIT result(createCheckResult());
@@ -445,6 +445,8 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
             return;
         }
     }
+    // TODO add support for ed25119
+
     // check that the testing flag is not set
     if (mDkimKeyRecord.flags().contains(QLatin1String("y"))) {
         if (!mPolicy.verifySignatureWhenOnlyTest()) {
@@ -470,7 +472,28 @@ void DKIMCheckSignatureJob::parseDKIMKeyRecord(const QString &str, const QString
         Q_EMIT storeKey(str, domain, selector);
     }
 
-    verifyRSASignature();
+    verifySignature();
+}
+
+void DKIMCheckSignatureJob::verifySignature()
+{
+    if (mDkimKeyRecord.keyType() == QLatin1String("rsa")) {
+        verifyRSASignature();
+    } else if (mDkimKeyRecord.keyType() == QLatin1String("ed25519")) {
+        verifyEd25519Signature();
+    } else {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " It's a bug " << mDkimKeyRecord.keyType();
+    }
+}
+
+void DKIMCheckSignatureJob::verifyEd25519Signature()
+{
+    // TODO implement it.
+    qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "it's a Ed25519 signed email";
+    mError = MessageViewer::DKIMCheckSignatureJob::DKIMError::PublicKeyConversionError;
+    mStatus = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::Invalid;
+    Q_EMIT result(createCheckResult());
+    deleteLater();
 }
 
 void DKIMCheckSignatureJob::verifyRSASignature()
