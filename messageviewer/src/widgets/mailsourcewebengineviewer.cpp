@@ -37,10 +37,10 @@ static const char myMailSourceWebEngineViewerConfigGroupName[] = "MailSourceWebE
 }
 MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     : QDialog(parent)
+    , mRawBrowser(new MailSourceViewTextBrowserWidget(QStringLiteral("Email"), this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
     auto mainLayout = new QVBoxLayout(this);
-    mRawBrowser = new MailSourceViewTextBrowserWidget(QStringLiteral("Email"), this);
 #ifndef NDEBUG
     mShowHtmlSource = true;
 #endif
