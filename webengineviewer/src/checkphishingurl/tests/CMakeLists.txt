@@ -11,7 +11,7 @@ target_link_libraries(checkphishingurlgui
     KF5::KIOCore
     KF5::WebEngineViewer
     
-    Qt${QT_MAJOR_VERSION}::WebEngineWidgets
+    Qt::WebEngineWidgets
     KF5::I18n
     )
 
@@ -20,7 +20,7 @@ target_link_libraries(searchfullhashgui
     KF5::KIOCore
     KF5::WebEngineViewer
     
-    Qt${QT_MAJOR_VERSION}::WebEngineWidgets
+    Qt::WebEngineWidgets
     KF5::I18n
     )
 
@@ -29,7 +29,7 @@ target_link_libraries(createphishingurldatabasegui
     KF5::KIOCore
     KF5::WebEngineViewer
     
-    Qt${QT_MAJOR_VERSION}::WebEngineWidgets
+    Qt::WebEngineWidgets
     KF5::I18n
     )
 
@@ -38,7 +38,7 @@ target_link_libraries(managelocaldatabasegui
     KF5::KIOCore
     KF5::WebEngineViewer
     
-    Qt${QT_MAJOR_VERSION}::WebEngineWidgets
+    Qt::WebEngineWidgets
     KF5::I18n
     )
 
@@ -47,6 +47,6 @@ target_link_libraries(webengineviewwithsafebrowsingsupport
     KF5::KIOCore
     KF5::WebEngineViewer
     
-    Qt${QT_MAJOR_VERSION}::WebEngineWidgets
+    Qt::WebEngineWidgets
     KF5::I18n
     )

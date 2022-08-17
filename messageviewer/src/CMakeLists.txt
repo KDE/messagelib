@@ -416,7 +416,7 @@ target_link_libraries(KF5MessageViewer
     PRIVATE
     KF5::SyntaxHighlighting
     KF5::ItemViews
-    Qt${QT_MAJOR_VERSION}::Network
+    Qt::Network
     KF5::WebEngineViewer
     KF5::GrantleeTheme
     KF5::MailTransportAkonadi
@@ -432,7 +432,7 @@ target_link_libraries(KF5MessageViewer
     KF5::XmlGui
     KF5::AkonadiContact
     ${TEMPLATES_LIB}
-    Qt${QT_MAJOR_VERSION}::PrintSupport
+    Qt::PrintSupport
     ${Inotify_LIBRARIES}
     qca-qt${QT_MAJOR_VERSION}
     KF5::Notifications

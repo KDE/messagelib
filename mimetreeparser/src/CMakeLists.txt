@@ -160,7 +160,7 @@ target_link_libraries(KF5MimeTreeParser
     KF5::I18n
     KF5::CoreAddons
     KF5::Mime
-    Qt${QT_MAJOR_VERSION}::Gui
+    Qt::Gui
     )
 if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(KF5MimeTreeParser PRIVATE QGpgmeQt6)

@@ -139,7 +139,7 @@ target_include_directories(KF5WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${K
 
 target_link_libraries(KF5WebEngineViewer
     PUBLIC
-    Qt${QT_MAJOR_VERSION}::WebEngineWidgets
+    Qt::WebEngineWidgets
     KF5::PimCommon
     KF5::PimTextEdit
     PRIVATE

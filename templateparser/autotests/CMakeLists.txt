@@ -16,13 +16,13 @@ macro(add_templateparser_unittest _source)
     KF5::Libkleo
     KF5::TemplateParser
     KF5::MimeTreeParser
-    Qt${QT_MAJOR_VERSION}::Test
+    Qt::Test
     KF5::KIOCore
     KF5::Mime
     KF5::IdentityManagement
     KF5::XmlGui
     KF5::IconThemes
-    Qt${QT_MAJOR_VERSION}::WebEngineWidgets
+    Qt::WebEngineWidgets
   )
   add_gpg_crypto_test(${_name} templateparser-${_name})
   # needed for the CI to run webengine-related tests

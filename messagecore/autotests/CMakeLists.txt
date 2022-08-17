@@ -13,7 +13,7 @@ macro(add_messagecore_test _source)
     add_executable( ${_name} ${_test} ${_name}.h)
     add_test(NAME ${_name} COMMAND ${_name} )
     ecm_mark_as_test(${_name})
-    target_link_libraries( ${_name} Qt${QT_MAJOR_VERSION}::Test KF5::Libkleo KF5::MessageCore Qt${QT_MAJOR_VERSION}::Widgets KF5::Archive KF5::Completion KF5::ConfigCore KF5::CoreAddons)
+    target_link_libraries( ${_name} Qt::Test KF5::Libkleo KF5::MessageCore Qt::Widgets KF5::Archive KF5::Completion KF5::ConfigCore KF5::CoreAddons)
 endmacro()
 
 
@@ -32,8 +32,8 @@ macro( add_messagecore_cryptotest _source )
         KF5::Libkleo
         KF5::MessageCore
         KF5::MimeTreeParser
-        Qt${QT_MAJOR_VERSION}::Test
-        Qt${QT_MAJOR_VERSION}::Widgets
+        Qt::Test
+        Qt::Widgets
         )
     add_gpg_crypto_test(${_name} messagecore-${_name})
 endmacro()

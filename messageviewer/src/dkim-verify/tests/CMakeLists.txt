@@ -3,21 +3,21 @@
 set(dkimtest_lookupkey_SRCS main.cpp lookupkey.cpp)
 add_executable(dkimtest_lookupkey ${dkimtest_lookupkey_SRCS})
 target_link_libraries(dkimtest_lookupkey
-	Qt${QT_MAJOR_VERSION}::Network
+	Qt::Network
 )
 
 
 set(dkimtest_checkrsapublickey_SRCS checkrsapublickey.cpp)
 add_executable(dkimtest_checkrsapublickey ${dkimtest_checkrsapublickey_SRCS})
 target_link_libraries(dkimtest_checkrsapublickey
-        Qt${QT_MAJOR_VERSION}::Network
+        Qt::Network
         qca-qt${QT_MAJOR_VERSION}
 )
 
 set(dkimtest_checksignature_SRCS checksignature.cpp)
 add_executable(dkimtest_checksignature ${dkimtest_checksignature_SRCS})
 target_link_libraries(dkimtest_checksignature
-        Qt${QT_MAJOR_VERSION}::Network
+        Qt::Network
         KF5::MessageViewer
         qca-qt${QT_MAJOR_VERSION}
 )
@@ -25,7 +25,7 @@ target_link_libraries(dkimtest_checksignature
 set(dkimtest_dmarclookupkey_SRCS dmarclookupkey.cpp)
 add_executable(dkimtest_dmarclookupkey ${dkimtest_dmarclookupkey_SRCS})
 target_link_libraries(dkimtest_dmarclookupkey
-        Qt${QT_MAJOR_VERSION}::Network
+        Qt::Network
         KF5::MessageViewer
         qca-qt${QT_MAJOR_VERSION}
 )

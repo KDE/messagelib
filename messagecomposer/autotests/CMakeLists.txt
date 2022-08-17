@@ -24,7 +24,7 @@ macro( add_messagecomposer_test _source )
             KF5::MessageCore
             KF5::TemplateParser
             KF5::PimTextEdit
-            Qt${QT_MAJOR_VERSION}::Test
+            Qt::Test
             KF5::IdentityManagementWidgets
             KF5::Contacts
             KF5::AkonadiCore
@@ -50,7 +50,7 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::Libkdepim
         KF5::PimTextEdit
         KF5::AkonadiCore
-        Qt${QT_MAJOR_VERSION}::Test
+        Qt::Test
         KF5::IconThemes
         KF5::Completion
         KF5::MailTransport
@@ -108,7 +108,7 @@ ecm_add_test( nearexpirycheckertest.cpp setupenv.cpp
         NAME_PREFIX "messagecomposer-"
         LINK_LIBRARIES
             KF5::MessageComposer
-            Qt${QT_MAJOR_VERSION}::Test
+            Qt::Test
             KF5::Libkleo
     )
 
@@ -122,7 +122,7 @@ ecm_add_test(followupreminderselectdatedialogtest.cpp
         KF5::AkonadiWidgets
         KF5::CalendarCore
         KF5::MessageComposer
-        Qt${QT_MAJOR_VERSION}::Test
+        Qt::Test
 )
 
 ecm_add_test(attachmentvcardfromaddressbookjobtest.cpp
@@ -130,5 +130,5 @@ ecm_add_test(attachmentvcardfromaddressbookjobtest.cpp
     LINK_LIBRARIES
         KF5::Contacts
         KF5::MessageComposer
-        Qt${QT_MAJOR_VERSION}::Test
+        Qt::Test
 )
