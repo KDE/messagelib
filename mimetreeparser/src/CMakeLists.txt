@@ -170,7 +170,7 @@ endif()
 
 install(TARGETS
     KF5MimeTreeParser
-    EXPORT KF5MimeTreeParserTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KF5MimeTreeParserTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 set_target_properties(KF5MimeTreeParser PROPERTIES

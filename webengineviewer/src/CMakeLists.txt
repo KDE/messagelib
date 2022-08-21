@@ -162,7 +162,7 @@ set_target_properties(KF5WebEngineViewer PROPERTIES
 
 install(TARGETS
     KF5WebEngineViewer
-    EXPORT KF5WebEngineViewerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KF5WebEngineViewerTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(WebEngineViewer_Camelfindbar_HEADERS

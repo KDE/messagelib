@@ -114,7 +114,7 @@ set_target_properties(KF5MessageCore PROPERTIES
 
 install(TARGETS
     KF5MessageCore
-    EXPORT KF5MessageCoreTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KF5MessageCoreTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(MessageCore_Camelcasemisc_HEADERS
