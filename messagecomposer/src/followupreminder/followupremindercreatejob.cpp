@@ -38,29 +38,64 @@ FollowupReminderCreateJob::FollowupReminderCreateJob(QObject *parent)
 
 FollowupReminderCreateJob::~FollowupReminderCreateJob() = default;
 
+QDate FollowupReminderCreateJob::followUpReminderDate() const
+{
+    return d->mFollowupDate;
+}
+
 void FollowupReminderCreateJob::setFollowUpReminderDate(const QDate &date)
 {
+    Q_EMIT followUpReminderDateChanged();
     d->mFollowupDate = date;
+}
+
+Akonadi::Item::Id FollowupReminderCreateJob::originalMessageItemId() const
+{
+    return d->mOriginalMessageItemId;
 }
 
 void FollowupReminderCreateJob::setOriginalMessageItemId(Akonadi::Item::Id value)
 {
+    Q_EMIT originalMessageItemIdChanged();
     d->mOriginalMessageItemId = value;
+}
+
+QString FollowupReminderCreateJob::messageId() const
+{
+    return d->mMessageId;
 }
 
 void FollowupReminderCreateJob::setMessageId(const QString &messageId)
 {
+    Q_EMIT messageIdChanged();
     d->mMessageId = messageId;
+}
+
+QString FollowupReminderCreateJob::to() const
+{
+    return d->mTo;
 }
 
 void FollowupReminderCreateJob::setTo(const QString &to)
 {
+    Q_EMIT toChanged();
     d->mTo = to;
+}
+
+QString FollowupReminderCreateJob::subject() const
+{
+    return d->mSubject;
 }
 
 void FollowupReminderCreateJob::setSubject(const QString &subject)
 {
+    Q_EMIT subjectChanged();
     d->mSubject = subject;
+}
+
+Akonadi::Collection FollowupReminderCreateJob::collectionToDo() const
+{
+    return d->mCollection;
 }
 
 void FollowupReminderCreateJob::setCollectionToDo(const Akonadi::Collection &collection)

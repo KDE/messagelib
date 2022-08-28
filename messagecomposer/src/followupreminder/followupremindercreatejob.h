@@ -26,23 +26,40 @@ class FollowupReminderCreateJobPrivate;
 class MESSAGECOMPOSER_EXPORT FollowupReminderCreateJob : public KJob
 {
     Q_OBJECT
+    Q_PROPERTY(QDate followUpReminderDate READ followUpReminderDate WRITE setFollowUpReminderDate NOTIFY followUpReminderDateChanged)
+    Q_PROPERTY(Akonadi::Item::Id originalMessageItemId READ originalMessageItemId WRITE setOriginalMessageItemId NOTIFY originalMessageItemIdChanged)
+
 public:
     explicit FollowupReminderCreateJob(QObject *parent = nullptr);
     ~FollowupReminderCreateJob() override;
 
+    QDate followUpReminderDate() const;
     void setFollowUpReminderDate(const QDate &date);
 
+    Akonadi::Item::Id originalMessageItemId() const;
     void setOriginalMessageItemId(Akonadi::Item::Id value);
 
+    QString messageId() const;
     void setMessageId(const QString &messageId);
 
+    QString to() const;
     void setTo(const QString &to);
 
+    QString subject() const;
     void setSubject(const QString &subject);
 
+    Akonadi::Collection collectionToDo() const;
     void setCollectionToDo(const Akonadi::Collection &collection);
 
-    void start() override;
+    Q_INVOKABLE void start() override;
+
+Q_SIGNALS:
+    void collectionToDoChanged();
+    void subjectChanged();
+    void toChanged();
+    void messageIdChanged();
+    void originalMessageItemIdChanged();
+    void followUpReminderDateChanged();
 
 private Q_SLOTS:
     void slotCreateNewTodo(KJob *job);
