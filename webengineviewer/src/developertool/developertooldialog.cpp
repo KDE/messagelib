@@ -6,6 +6,7 @@
 #include "developertooldialog.h"
 #include "developertoolwidget.h"
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
@@ -20,6 +21,7 @@ DeveloperToolDialog::DeveloperToolDialog(QWidget *parent)
     : QDialog(parent)
     , mDeveloperToolWidget(new DeveloperToolWidget(this))
 {
+    setWindowTitle(i18nc("@title:window", "Developer Tool"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
