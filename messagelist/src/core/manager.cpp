@@ -39,10 +39,9 @@ Manager *Manager::mInstance = nullptr;
 
 Manager::Manager()
     : QObject()
+    , mDateFormatter(new KMime::DateFormatter())
 {
     mInstance = this;
-
-    mDateFormatter = new KMime::DateFormatter();
 
     mCachedLocalizedUnknownText = i18nc("Unknown date", "Unknown");
 

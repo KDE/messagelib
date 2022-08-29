@@ -78,14 +78,14 @@ private:
     QAction *mFiltersAction = nullptr;
     QAction *mSaveFilterAction = nullptr;
     QMenu *mFilterMenu = nullptr;
-    QCompleter *mCompleter = nullptr;
+    QCompleter *const mCompleter;
     QList<QAction *> mFilterListActions;
     QAction *mSearchEveryWhereAction = nullptr;
     QAction *mSearchAgainstBodyAction = nullptr;
     QAction *mSearchAgainstSubjectAction = nullptr;
     QAction *mSearchAgainstFromOrToAction = nullptr;
     QAction *mSearchAgainstBccAction = nullptr;
-    QStringListModel *mCompleterListModel = nullptr;
+    QStringListModel *const mCompleterListModel;
     FilterSavedMenu *mFilterSavedMenu = nullptr;
     QStringList mListCompetion;
     QString mColorName;

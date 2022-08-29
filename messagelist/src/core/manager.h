@@ -53,7 +53,7 @@ private:
     QList<Widget *> mWidgetList;
     QMap<QString, Aggregation *> mAggregations;
     QMap<QString, Theme *> mThemes;
-    KMime::DateFormatter *mDateFormatter = nullptr;
+    KMime::DateFormatter *const mDateFormatter;
     QString mCachedLocalizedUnknownText;
 
 public:
