@@ -25,6 +25,7 @@ DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     mEnginePage->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
 
     mWebEngineView->setPage(mEnginePage);
+    connect(mEnginePage, &QWebEnginePage::windowCloseRequested, this, &DeveloperToolWidget::closeRequested);
 }
 
 DeveloperToolWidget::~DeveloperToolWidget() = default;

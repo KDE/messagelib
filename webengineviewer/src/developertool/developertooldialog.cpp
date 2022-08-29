@@ -29,6 +29,7 @@ DeveloperToolDialog::DeveloperToolDialog(QWidget *parent)
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DeveloperToolDialog::reject);
+    connect(mDeveloperToolWidget, &DeveloperToolWidget::closeRequested, this, &DeveloperToolDialog::reject);
     mainLayout->addWidget(buttonBox);
     readConfig();
 }
