@@ -95,10 +95,9 @@ public:
      * Returns the expanded Reply-To field
      */
     Q_REQUIRED_RESULT QStringList expandedReplyTo() const;
-private Q_SLOTS:
-    void slotAliasExpansionDone(KJob *);
 
 private:
+    void slotAliasExpansionDone(KJob *);
     std::unique_ptr<EmailAddressResolveJobPrivate> const d;
 };
 }

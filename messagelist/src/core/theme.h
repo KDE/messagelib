@@ -244,7 +244,7 @@ public:
         /**
          * Returns the type of this content item
          */
-        Type type() const;
+        Q_REQUIRED_RESULT Type type() const;
 
         /**
          * Returns true if this ContentItem can be in a "disabled" state.
@@ -252,38 +252,38 @@ public:
          * message has no attachments. For such items the HideWhenDisabled
          * and SoftenByBlendingWhenDisabled flags are meaningful.
          */
-        bool canBeDisabled() const;
+        Q_REQUIRED_RESULT bool canBeDisabled() const;
 
         /**
          * Returns true if this ContentItem can make use of a custom color.
          */
-        bool canUseCustomColor() const;
+        Q_REQUIRED_RESULT bool canUseCustomColor() const;
 
         /**
          * Returns true if this item displays some kind of text.
          * Items that display text make use of the customFont() setting.
          */
-        bool displaysText() const;
+        Q_REQUIRED_RESULT bool displaysText() const;
 
         /**
          * Returns true if this item displays a long text.
          * The returned value makes sense only if displaysText() returned true.
          */
-        bool displaysLongText() const;
+        Q_REQUIRED_RESULT bool displaysLongText() const;
 
         /**
          * Returns true if this item displays an icon.
          */
-        bool isIcon() const;
+        Q_REQUIRED_RESULT bool isIcon() const;
         /**
          * Returns true if clicking on this kind of item can perform an action
          */
-        bool isClickable() const;
+        Q_REQUIRED_RESULT bool isClickable() const;
 
         /**
          * Returns true if this item is a small spacer
          */
-        bool isSpacer() const;
+        Q_REQUIRED_RESULT bool isSpacer() const;
 
         /**
          * Static test that returns true if an instance of ContentItem with the

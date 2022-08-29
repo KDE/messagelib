@@ -78,7 +78,7 @@ public:
     /**
      * Returns the GroupSorting
      */
-    GroupSorting groupSorting() const;
+    Q_REQUIRED_RESULT GroupSorting groupSorting() const;
 
     /**
      * Sets the GroupSorting option.
@@ -90,7 +90,7 @@ public:
     /**
      * Returns the current group SortDirection.
      */
-    SortDirection groupSortDirection() const;
+    Q_REQUIRED_RESULT SortDirection groupSortDirection() const;
 
     /**
      * Sets the SortDirection for the groups.
@@ -101,7 +101,7 @@ public:
     /**
      * Returns the current message sorting option
      */
-    MessageSorting messageSorting() const;
+    Q_REQUIRED_RESULT MessageSorting messageSorting() const;
 
     /**
      * Sets the current message sorting option
@@ -111,7 +111,7 @@ public:
     /**
      * Returns the current message SortDirection.
      */
-    SortDirection messageSortDirection() const;
+    Q_REQUIRED_RESULT SortDirection messageSortDirection() const;
 
     /**
      * Sets the SortDirection for the message.
@@ -124,7 +124,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    static QVector<QPair<QString, int>> enumerateMessageSortingOptions(Aggregation::Threading t);
+    Q_REQUIRED_RESULT static QVector<QPair<QString, int>> enumerateMessageSortingOptions(Aggregation::Threading t);
 
     /**
      * Enumerates the available message sorting directions for the specified MessageSorting option.
@@ -132,7 +132,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    static QVector<QPair<QString, int>> enumerateMessageSortDirectionOptions(MessageSorting ms);
+    Q_REQUIRED_RESULT static QVector<QPair<QString, int>> enumerateMessageSortDirectionOptions(MessageSorting ms);
 
     /**
      * Enumerates the group sorting options compatible with the specified Grouping.
@@ -140,7 +140,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    static QVector<QPair<QString, int>> enumerateGroupSortingOptions(Aggregation::Grouping g);
+    Q_REQUIRED_RESULT static QVector<QPair<QString, int>> enumerateGroupSortingOptions(Aggregation::Grouping g);
 
     /**
      * Enumerates the group sort direction options compatible with the specified Grouping and GroupSorting.
@@ -148,7 +148,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    static QVector<QPair<QString, int>> enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting groupSorting);
+    Q_REQUIRED_RESULT static QVector<QPair<QString, int>> enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting groupSorting);
 
     /**
      * Checks if this sort order can be used in combination with the given aggregation.
@@ -164,7 +164,7 @@ public:
      *                     will be based on that old sort order, i.e. the message sorting and
      *                     message sort direction is adopted.
      */
-    static SortOrder defaultForAggregation(const Aggregation *aggregation, SortOrder oldSortOrder);
+    Q_REQUIRED_RESULT static SortOrder defaultForAggregation(const Aggregation *aggregation, SortOrder oldSortOrder);
 
     /**
      * Returns true if the ms parameter specifies a valid MessageSorting option.

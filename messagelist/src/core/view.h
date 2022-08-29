@@ -193,7 +193,7 @@ public:
      * but may contain less (even 0) if these MessageItem object were removed
      * from the view for some reason.
      */
-    QList<MessageItem *> persistentSetCurrentMessageItemList(MessageItemSetReference ref);
+    Q_REQUIRED_RESULT QList<MessageItem *> persistentSetCurrentMessageItemList(MessageItemSetReference ref);
 
     /**
      * Deletes the persistent set pointed by the specified reference.

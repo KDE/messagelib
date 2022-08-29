@@ -40,12 +40,10 @@ Q_SIGNALS:
     void replyAllTemplateSelected(const QString &tmpl);
     void forwardTemplateSelected(const QString &tmpl);
 
-private Q_SLOTS:
+private:
     void slotReplySelected(int idx);
     void slotReplyAllSelected(int idx);
     void slotForwardSelected(int idx);
-
-private:
     void clear();
     std::unique_ptr<CustomTemplatesMenuPrivate> const d;
 };

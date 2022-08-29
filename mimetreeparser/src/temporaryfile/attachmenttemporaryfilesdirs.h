@@ -34,10 +34,8 @@ public:
 
     void setDelayRemoveAllInMs(int ms);
 
-private Q_SLOTS:
-    void slotRemoveTempFiles();
-
 private:
+    void slotRemoveTempFiles();
     std::unique_ptr<AttachmentTemporaryFilesDirsPrivate> const d;
 };
 }

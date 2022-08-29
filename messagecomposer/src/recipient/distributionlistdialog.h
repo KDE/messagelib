@@ -29,12 +29,10 @@ public Q_SLOTS:
     void slotUser1();
     void slotTitleChanged(const QString &);
 
-private Q_SLOTS:
+private:
     void slotDelayedSetRecipients(KJob *);
     void slotDelayedUser1(KJob *);
     void slotContactGroupCreateJobResult(KJob *);
-
-private:
     void readConfig();
     void writeConfig();
 

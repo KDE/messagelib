@@ -39,12 +39,10 @@ Q_SIGNALS:
     void result(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url, uint verifyCacheAfterThisTime = 0);
     void debugJson(const QByteArray &ba);
 
-private Q_SLOTS:
+private:
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
-
-private:
     std::unique_ptr<CheckPhishingUrlJobPrivate> const d;
 };
 }

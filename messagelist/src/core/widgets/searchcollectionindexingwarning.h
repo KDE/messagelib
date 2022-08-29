@@ -39,11 +39,9 @@ public:
 
     void setCollection(const Akonadi::Collection &collection);
 
-private Q_SLOTS:
+private:
     void queryRootCollectionFetchFinished(KJob *job);
     void queryCollectionFetchFinished(KJob *job);
-
-private:
     Akonadi::CollectionFetchJob *fetchCollections(const Akonadi::Collection::List &cols, bool recursive);
     void queryIndexerStatus();
 

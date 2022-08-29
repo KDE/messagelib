@@ -42,13 +42,11 @@ public Q_SLOTS:
     void slotInsertCommand(const QString &cmd, int adjustCursor = 0);
     void slotTextChanged();
 
-private Q_SLOTS:
-    void slotHelpLinkClicked(const QString &);
-
 Q_SIGNALS:
     void changed();
 
 private:
+    void slotHelpLinkClicked(const QString &);
     Q_REQUIRED_RESULT QPlainTextEdit *currentTextEdit() const;
     Q_REQUIRED_RESULT QString strOrBlank(const QString &str);
     std::unique_ptr<TemplatesConfigurationPrivate> const d;

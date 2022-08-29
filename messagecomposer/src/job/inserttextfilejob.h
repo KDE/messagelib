@@ -33,15 +33,11 @@ public:
     ~InsertTextFileJob() override;
 
     void setEncoding(const QString &encoding);
-
     void start() override;
 
-private Q_SLOTS:
-
+private:
     void slotGetJobFinished(KJob *job);
     void slotFileData(KIO::Job *job, const QByteArray &data);
-
-private:
     std::unique_ptr<InsertTextFileJobPrivate> const d;
 };
 }

@@ -55,10 +55,7 @@ private:
     */
     void sendOrQueueMessage(const KMime::Message::Ptr &msg, MessageComposer::MessageSender::SendMethod method = MessageComposer::MessageSender::SendDefault);
 
-private Q_SLOTS:
     void queueJobResult(KJob *job);
-
-private:
     std::unique_ptr<AkonadiSenderPrivate> const d;
 };
 }

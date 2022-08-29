@@ -49,12 +49,10 @@ protected:
     void contextMenuEvent(QContextMenuEvent *e) override;
     void keyPressEvent(QKeyEvent *e) override;
 
-private Q_SLOTS:
+private:
     void slotToggledLockAction();
     void showMenu();
     void slotFilterActionClicked(QAction *act);
-
-private:
     void clearFilterAction();
     void createFilterAction(const QIcon &icon, const QString &text, int value);
     void createMenuSearch();

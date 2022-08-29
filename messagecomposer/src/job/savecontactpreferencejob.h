@@ -20,12 +20,9 @@ public:
     ~SaveContactPreferenceJob() override;
     void start();
 
-private Q_SLOTS:
-    void slotSearchContact(KJob *job);
-
-    void slotModifyCreateItem(KJob *job);
-
 private:
+    void slotSearchContact(KJob *job);
+    void slotModifyCreateItem(KJob *job);
     void writeCustomContactProperties(KContacts::Addressee &contact, const Kleo::KeyResolver::ContactPreferences &pref) const;
     const QString mEmail;
     const Kleo::KeyResolver::ContactPreferences mPref;

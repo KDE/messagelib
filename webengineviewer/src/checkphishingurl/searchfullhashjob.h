@@ -40,12 +40,11 @@ Q_SIGNALS:
     void result(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url);
     void debugJson(const QByteArray &ba);
 
-private Q_SLOTS:
+private:
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
 
-private:
     Q_DISABLE_COPY(SearchFullHashJob)
     std::unique_ptr<SearchFullHashJobPrivate> const d;
 };
