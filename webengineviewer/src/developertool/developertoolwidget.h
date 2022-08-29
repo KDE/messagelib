@@ -20,6 +20,9 @@ public:
     ~DeveloperToolWidget() override;
     Q_REQUIRED_RESULT QWebEnginePage *enginePage() const;
 
+Q_SIGNALS:
+    void closeRequested();
+
 private:
     QWebEngineView *const mWebEngineView;
     QWebEnginePage *mEnginePage = nullptr;
