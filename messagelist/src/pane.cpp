@@ -163,7 +163,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
         d->updateTabControls();
     });
 
-    connect(this, &QTabWidget::tabBarDoubleClicked, this, &Pane::createNewTab);
+    // connect(this, &QTabWidget::tabBarDoubleClicked, this, &Pane::createNewTab);
 
     tabBar()->installEventFilter(this);
 }
