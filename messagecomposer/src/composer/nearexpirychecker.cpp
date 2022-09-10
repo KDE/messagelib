@@ -311,9 +311,8 @@ void NearExpiryChecker::checkKeyNearExpiry(const GpgME::Key &key, bool isOwnKey,
         return;
     }
     const GpgME::Subkey subkey = key.subkey(0);
-    if (d->alreadyWarnedFingerprints.count(subkey.fingerprint())) {
-        return; // already warned about this one (and so about it's issuers)
-    }
+
+    const bool newMessage = !d->alreadyWarnedFingerprints.count(subkey.fingerprint());
 
     if (subkey.neverExpires()) {
         return;
@@ -324,7 +323,7 @@ void NearExpiryChecker::checkKeyNearExpiry(const GpgME::Key &key, bool isOwnKey,
         const QString msg = key.protocol() == GpgME::OpenPGP ? formatOpenPGPMessage(key, secsTillExpiry, isOwnKey, isSigningKey)
                                                              : formatSMIMEMessage(key, orig_key, secsTillExpiry, isOwnKey, isSigningKey, ca);
         d->alreadyWarnedFingerprints.insert(subkey.fingerprint());
-        Q_EMIT expiryMessage(key, msg, isOwnKey ? OwnKeyExpired : OtherKeyExpired);
+        Q_EMIT expiryMessage(key, msg, isOwnKey ? OwnKeyExpired : OtherKeyExpired, newMessage);
     } else {
         const int daysTillExpiry = 1 + int(secsTillExpiry / secsPerDay);
         const int threshold = ca
@@ -335,7 +334,7 @@ void NearExpiryChecker::checkKeyNearExpiry(const GpgME::Key &key, bool isOwnKey,
             const QString msg = key.protocol() == GpgME::OpenPGP ? formatOpenPGPMessage(key, secsTillExpiry, isOwnKey, isSigningKey)
                                                                  : formatSMIMEMessage(key, orig_key, secsTillExpiry, isOwnKey, isSigningKey, ca);
             d->alreadyWarnedFingerprints.insert(subkey.fingerprint());
-            Q_EMIT expiryMessage(key, msg, isOwnKey ? OwnKeyNearExpiry : OtherKeyNearExpiry);
+            Q_EMIT expiryMessage(key, msg, isOwnKey ? OwnKeyNearExpiry : OtherKeyNearExpiry, newMessage);
         }
     }
     if (key.isRoot()) {

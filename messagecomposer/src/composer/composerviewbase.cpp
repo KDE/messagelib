@@ -722,7 +722,11 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     connect(nearExpiryChecker.data(),
             &NearExpiryChecker::expiryMessage,
             this,
-            [&canceled](const GpgME::Key &key, QString msg, NearExpiryChecker::ExpiryInformation info) {
+            [&canceled](const GpgME::Key &key, QString msg, NearExpiryChecker::ExpiryInformation info, bool isNewMessage) {
+                if (!isNewMessage) {
+                    return;
+                }
+
                 if (canceled) {
                     return;
                 }

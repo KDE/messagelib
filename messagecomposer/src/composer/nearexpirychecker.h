@@ -51,7 +51,7 @@ public:
     void checkKey(const GpgME::Key &key) const;
 
 Q_SIGNALS:
-    void expiryMessage(const GpgME::Key &key, QString msg, MessageComposer::NearExpiryChecker::ExpiryInformation info) const;
+    void expiryMessage(const GpgME::Key &key, QString msg, MessageComposer::NearExpiryChecker::ExpiryInformation info, bool isNewMessage) const;
 
 private:
     friend class ::NearExpiryCheckerTest;
