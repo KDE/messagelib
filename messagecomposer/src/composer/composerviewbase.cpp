@@ -712,14 +712,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
     bool canceled = false;
 
     qCDebug(MESSAGECOMPOSER_LOG) << "filling crypto info";
-    NearExpiryChecker::Ptr nearExpiryChecker(new NearExpiryChecker(encryptKeyNearExpiryWarningThresholdInDays(),
-                                                                   signingKeyNearExpiryWarningThresholdInDays(),
-                                                                   encryptRootCertNearExpiryWarningThresholdInDays(),
-                                                                   signingRootCertNearExpiryWarningThresholdInDays(),
-                                                                   encryptChainCertNearExpiryWarningThresholdInDays(),
-                                                                   signingChainCertNearExpiryWarningThresholdInDays()));
-
-    connect(nearExpiryChecker.data(),
+    connect(nearExpiryChecker().data(),
             &NearExpiryChecker::expiryMessage,
             this,
             [&canceled](const GpgME::Key &key, QString msg, NearExpiryChecker::ExpiryInformation info, bool isNewMessage) {
@@ -749,7 +742,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
             });
 
     QScopedPointer<Kleo::KeyResolver> keyResolver(
-        new Kleo::KeyResolver(encryptToSelf(), showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, nearExpiryChecker));
+        new Kleo::KeyResolver(encryptToSelf(), showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, nearExpiryChecker()));
 
     keyResolver->setAutocryptEnabled(autocryptEnabled());
     keyResolver->setAkonadiLookupEnabled(m_akonadiLookupEnabled);
@@ -2238,4 +2231,17 @@ void ComposerViewBase::setRequestDeleveryConfirmation(bool requestDeleveryConfir
 KMime::Message::Ptr ComposerViewBase::msg() const
 {
     return m_msg;
+}
+
+NearExpiryChecker::Ptr ComposerViewBase::nearExpiryChecker()
+{
+    if (!mNearExpiryChecker) {
+     mNearExpiryChecker = NearExpiryChecker::Ptr(new NearExpiryChecker(encryptKeyNearExpiryWarningThresholdInDays(),
+                                                signingKeyNearExpiryWarningThresholdInDays(),
+                                                encryptRootCertNearExpiryWarningThresholdInDays(),
+                                                signingRootCertNearExpiryWarningThresholdInDays(),
+                                                encryptChainCertNearExpiryWarningThresholdInDays(),
+                                                signingChainCertNearExpiryWarningThresholdInDays()));
+    }
+    return mNearExpiryChecker;
 }

@@ -14,6 +14,8 @@
 #include <Akonadi/Item>
 #include <KMime/Message>
 
+#include <MessageComposer/NearExpiryChecker>
+
 #include <Libkleo/Enum>
 #include <QObject>
 #include <QUrl>
@@ -233,6 +235,8 @@ public:
     Q_REQUIRED_RESULT bool requestDeleveryConfirmation() const;
     void setRequestDeleveryConfirmation(bool requestDeleveryConfirmation);
 
+    Q_REQUIRED_RESULT NearExpiryChecker::Ptr nearExpiryChecker();
+
 public Q_SLOTS:
     void identityChanged(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, bool msgCleared = false);
 
@@ -381,6 +385,8 @@ private:
 
     MessageComposer::MessageSender::SendMethod mSendMethod;
     MessageComposer::MessageSender::SaveIn mSaveIn;
+
+    NearExpiryChecker::Ptr mNearExpiryChecker;
 
     QDate mFollowUpDate;
     Akonadi::Collection mFollowUpCollection;
