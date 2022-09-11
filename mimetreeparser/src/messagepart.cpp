@@ -880,11 +880,11 @@ void SignedMessagePart::sigStatusToMetaData()
         if (key.numUserIDs() > 0 && key.userID(0).id()) {
             partMetaData()->signer = prettifyDN(key.userID(0).id());
         }
-        for (uint iMail = 0; iMail < key.numUserIDs(); ++iMail) {
+        for (const auto &uid: key.userIDs()) {
             // The following if /should/ always result in TRUE but we
             // won't trust implicitly the plugin that gave us these data.
-            if (key.userID(iMail).email()) {
-                QString email = QString::fromUtf8(key.userID(iMail).email());
+            if (uid.email()) {
+                QString email = QString::fromUtf8(uid.email());
                 if (!email.isEmpty()) {
                     partMetaData()->signerMailAddresses.append(email);
                 }
