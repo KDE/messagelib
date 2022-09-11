@@ -843,9 +843,11 @@ void SignedMessagePart::sigStatusToMetaData()
         partMetaData()->sigSummary = signature.summary();
 
         if (partMetaData()->isGoodSignature && !key.keyID()) {
-            // Search for the key by its fingerprint so that we can check for
-            // trust etc.
+            // We havn't found a good userID matching the signature, so just try to use the first user id.
             key = Kleo::KeyCache::instance()->findByFingerprint(signature.fingerprint());
+            if (key.numUserIDs() > 0) {
+                userId = key.userID(0);
+            }
             if (key.isNull()) {
                 qCDebug(MIMETREEPARSER_LOG) << "Found no Key for Fingerprint" << signature.fingerprint();
             }
