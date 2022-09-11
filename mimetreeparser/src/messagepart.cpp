@@ -20,7 +20,6 @@
 
 #include <QGpgME/DN>
 #include <QGpgME/ImportJob>
-#include <QGpgME/KeyListJob>
 #include <QGpgME/Protocol>
 #include <QGpgME/VerifyDetachedJob>
 #include <QGpgME/VerifyOpaqueJob>
@@ -846,27 +845,9 @@ void SignedMessagePart::sigStatusToMetaData()
         if (partMetaData()->isGoodSignature && !key.keyID()) {
             // Search for the key by its fingerprint so that we can check for
             // trust etc.
-            QGpgME::KeyListJob *job = mCryptoProto->keyListJob(false, false, false); // local, no sigs
-            if (!job) {
-                qCDebug(MIMETREEPARSER_LOG) << "The Crypto backend does not support listing keys. ";
-            } else {
-                std::vector<GpgME::Key> found_keys;
-                // As we are local it is ok to make this synchronous
-                GpgME::KeyListResult res = job->exec(QStringList(QLatin1String(signature.fingerprint())), false, found_keys);
-                if (res.error()) {
-                    qCDebug(MIMETREEPARSER_LOG) << "Error while searching key for Fingerprint: " << signature.fingerprint();
-                }
-                if (found_keys.size() > 1) {
-                    // Should not Happen
-                    qCDebug(MIMETREEPARSER_LOG) << "Oops: Found more then one Key for Fingerprint: " << signature.fingerprint();
-                }
-                if (found_keys.size() != 1) {
-                    // Should not Happen at this point
-                    qCDebug(MIMETREEPARSER_LOG) << "Oops: Found no Key for Fingerprint: " << signature.fingerprint();
-                } else {
-                    key = found_keys[0];
-                }
-                delete job;
+            key = Kleo::KeyCache::instance()->findByFingerprint(signature.fingerprint());
+            if (key.isNull()) {
+                qCDebug(MIMETREEPARSER_LOG) << "Found no Key for Fingerprint" << signature.fingerprint();
             }
         }
 
@@ -1201,25 +1182,14 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
                 bDecryptionOk = true;
             }
             GpgME::Key key;
-            QGpgME::KeyListJob *job = mCryptoProto->keyListJob(false, false, false); // local, no sigs
-            if (!job) {
-                qCDebug(MIMETREEPARSER_LOG) << "The Crypto backend does not support listing keys. ";
-            } else {
-                std::vector<GpgME::Key> found_keys;
-                // As we are local it is ok to make this synchronous
-                GpgME::KeyListResult res = job->exec(QStringList(QLatin1String(recipient.keyID())), false, found_keys);
-                if (res.error()) {
-                    qCDebug(MIMETREEPARSER_LOG) << "Error while searching key for Fingerprint: " << recipient.keyID();
+            key = Kleo::KeyCache::instance()->findByKeyIDOrFingerprint(recipient.keyID());
+            if (key.isNull()) {
+                auto ret = Kleo::KeyCache::instance()->findSubkeysByKeyID({recipient.keyID()});
+                if (ret.size() == 1) {
+                    key = ret.front().parent();
                 }
-                if (found_keys.size() > 1) {
-                    // Should not Happen
-                    qCDebug(MIMETREEPARSER_LOG) << "Oops: Found more then one Key for Fingerprint: " << recipient.keyID();
-                }
-                if (found_keys.size() != 1) {
-                    // Should not Happen at this point
-                    qCDebug(MIMETREEPARSER_LOG) << "Oops: Found no Key for Fingerprint: " << recipient.keyID();
-                } else {
-                    key = found_keys[0];
+                if (key.isNull()) {
+                    qCDebug(MIMETREEPARSER_LOG) << "Found no Key for KeyID " << recipient.keyID();
                 }
             }
             mDecryptRecipients.emplace_back(recipient, key);
