@@ -49,12 +49,7 @@
 #include <KEmailAddress>
 #include <KFileItemActions>
 #include <KIO/ApplicationLauncherJob>
-#include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
 #include <KIO/JobUiDelegateFactory>
-#else
-#include <KIO/JobUiDelegate>
-#endif
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -284,11 +279,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
         if (ct->mimeType() == "message/external-body") {
             if (ct->hasParameter(QStringLiteral("url"))) {
                 auto job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"));
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
                 job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
-#else
-                job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
-#endif
                 job->start();
                 return;
             }
@@ -689,11 +680,7 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
 
     auto job = new KIO::ApplicationLauncherJob(offer);
     job->setUrls({url});
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, mMainWindow));
-#else
-    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, mMainWindow));
-#endif
     job->start();
     connect(job, &KJob::result, this, [url, job]() {
         if (job->error()) {
@@ -1945,11 +1932,7 @@ void ViewerPrivate::executeRunner(const QUrl &url)
 {
     if (!MessageViewer::Util::handleUrlWithQDesktopServices(url)) {
         auto job = new KIO::OpenUrlJob(url);
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
         job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, viewer()));
-#else
-        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, viewer()));
-#endif
         job->setRunExecutables(false);
         job->start();
     }
@@ -2276,11 +2259,7 @@ void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
 {
     const QUrl url(QUrl::fromLocalFile(filename));
     auto job = new KIO::OpenUrlJob(url, QStringLiteral("text/html"), q);
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
-#else
-    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
-#endif
     job->setDeleteTemporaryFile(true);
     job->start();
 

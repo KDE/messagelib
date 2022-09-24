@@ -6,12 +6,7 @@
 
 #include "opensavedfilefolderwidget.h"
 
-#include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
 #include <KIO/JobUiDelegateFactory>
-#else
-#include <KIO/JobUiDelegate>
-#endif
 #include <KIO/OpenFileManagerWindowJob>
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>
@@ -75,11 +70,7 @@ void OpenSavedFileFolderWidget::slotOpenFile()
 {
     for (const auto &url : std::as_const(mUrls)) {
         auto job = new KIO::OpenUrlJob(url);
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
         job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-#else
-        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-#endif
         job->setDeleteTemporaryFile(true);
         connect(job, &KIO::OpenUrlJob::result, this, [this](KJob *job) {
             if (job->error() == KIO::ERR_USER_CANCELED) {

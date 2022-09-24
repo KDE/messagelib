@@ -101,7 +101,7 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
     }
     return res;
 }
-
+#include <QDebug>
 QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
 {
     // simple logic:
@@ -134,6 +134,7 @@ QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
             }
         }
     }
+    qDebug() << " res " << res;
     return res;
 }
 

@@ -276,6 +276,7 @@ QString ConvertSnippetVariablesJob::getLastNameFromEmail(const QString &address)
     for (const QString &str : lst) {
         KMime::Types::Mailbox newAddress;
         newAddress.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
+        qDebug() << "newAddress.name()  " << newAddress.name();
         const QString lastName = TemplateParser::Util::getLastNameFromEmail(newAddress.name());
         if (!lastName.isEmpty()) {
             resultName << lastName;

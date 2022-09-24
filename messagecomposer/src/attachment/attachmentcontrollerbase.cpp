@@ -25,12 +25,7 @@
 #include <MessageCore/StringUtil>
 
 #include <Akonadi/ItemFetchJob>
-#include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
 #include <KIO/JobUiDelegateFactory>
-#else
-#include <KIO/JobUiDelegate>
-#endif
 #include <QIcon>
 
 #include <QMenu>
@@ -688,11 +683,7 @@ void AttachmentControllerBase::openWith(const KService::Ptr &offer)
     // If offer is null, this will show the "open with" dialog
     auto job = new KIO::ApplicationLauncherJob(offer);
     job->setUrls({url});
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
-#else
-    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
-#endif
     job->start();
     connect(job, &KJob::result, this, [tempFile, job]() {
         if (job->error()) {
@@ -713,11 +704,7 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
     }
     tempFile->setPermissions(QFile::ReadUser);
     auto job = new KIO::OpenUrlJob(QUrl::fromLocalFile(tempFile->fileName()), QString::fromLatin1(part->mimeType()));
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
-#else
-    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
-#endif
     job->setDeleteTemporaryFile(true);
     connect(job, &KIO::OpenUrlJob::result, this, [this, tempFile](KJob *job) {
         if (job->error() == KIO::ERR_USER_CANCELED) {
