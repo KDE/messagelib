@@ -8,7 +8,6 @@
 #include "dkim-verify/dkimmanagerrules.h"
 #include "dkim-verify/dmarcmanager.h"
 #include "messageviewer_dkimcheckerdebug.h"
-#include "settings/messageviewersettings.h"
 
 using namespace MessageViewer;
 DKIMCheckPolicyJob::DKIMCheckPolicyJob(QObject *parent)

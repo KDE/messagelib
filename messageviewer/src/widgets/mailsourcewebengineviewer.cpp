@@ -8,7 +8,6 @@
 
 using namespace MessageViewer;
 
-#include "findbar/findbarsourceview.h"
 #include "mailsourceviewtextbrowserwidget.h"
 #include "messageviewer/messageviewerutil.h"
 #include <KPIMTextEdit/SlideContainer>

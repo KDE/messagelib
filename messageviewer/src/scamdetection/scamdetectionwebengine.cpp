@@ -6,7 +6,6 @@
 */
 #include "scamdetectionwebengine.h"
 #include "MessageViewer/ScamCheckShortUrl"
-#include "scamcheckshorturlmanager.h"
 #include "scamdetectiondetailsdialog.h"
 #include "settings/messageviewersettings.h"
 #include "webengineviewer/webenginescript.h"

@@ -7,7 +7,6 @@
 #include "richtextcomposersignatures.h"
 #include "richtextcomposerng.h"
 
-#include "messagecomposer_debug.h"
 #include <KIdentityManagement/Signature>
 #include <QRegExp>
 #include <QTextBlock>

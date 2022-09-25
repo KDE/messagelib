@@ -6,7 +6,6 @@
 
 #include "attachmentpart.h"
 
-#include "messagecore_debug.h"
 #include <KMime/Content>
 #include <KMime/Util>
 

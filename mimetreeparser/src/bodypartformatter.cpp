@@ -7,8 +7,6 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "mimetreeparser_debug.h"
-
 #include "bodyformatter/applicationpgpencrypted.h"
 #include "bodyformatter/applicationpkcs7mime.h"
 #include "bodyformatter/encrypted.h"
@@ -23,7 +21,6 @@
 #include "interfaces/bodypart.h"
 #include "interfaces/bodypartformatter.h"
 
-#include "bodypartformatterfactory.h"
 #include "bodypartformatterfactory_p.h"
 
 #include "messagepart.h"

@@ -6,8 +6,6 @@
 
 #include "applicationpkcs7mime.h"
 
-#include "utils.h"
-
 #include "messagepart.h"
 #include "objecttreeparser.h"
 

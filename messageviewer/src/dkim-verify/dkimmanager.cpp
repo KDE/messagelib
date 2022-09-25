@@ -9,7 +9,6 @@
 #include "dkimmanagerkey.h"
 #include "dkimresultattribute.h"
 #include "messageviewer_dkimcheckerdebug.h"
-#include "settings/messageviewersettings.h"
 #include <Akonadi/AttributeFactory>
 
 using namespace MessageViewer;

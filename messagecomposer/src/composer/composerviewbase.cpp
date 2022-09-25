@@ -29,7 +29,6 @@
 #include "sendlater/sendlatercreatejob.h"
 #include "sendlater/sendlaterinfo.h"
 
-#include "helper/messagehelper.h"
 #include <PimCommonAkonadi/RecentAddresses>
 
 #include "settings/messagecomposersettings.h"

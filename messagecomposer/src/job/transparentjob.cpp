@@ -9,7 +9,6 @@
 
 #include "contentjobbase_p.h"
 
-#include "messagecomposer_debug.h"
 #include <KMime/Content>
 #include <KMime/KMimeMessage>
 using namespace MessageComposer;

@@ -8,7 +8,6 @@
 
 #include "core/themedelegate.h"
 #include "core/groupheaderitem.h"
-#include "core/manager.h"
 #include "core/messageitem.h"
 #include "messagelistsettings.h"
 

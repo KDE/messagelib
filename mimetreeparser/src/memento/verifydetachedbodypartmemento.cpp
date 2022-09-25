@@ -5,7 +5,6 @@
 */
 
 #include "verifydetachedbodypartmemento.h"
-#include "mimetreeparser_debug.h"
 
 #include <QGpgME/KeyListJob>
 #include <QGpgME/VerifyDetachedJob>

@@ -8,7 +8,6 @@
 
 #include "attachmentcompressjob.h"
 
-#include "messagecore_debug.h"
 #include <KLocalizedString>
 #include <KZip>
 

@@ -6,8 +6,6 @@
 
 #include "encrypted.h"
 
-#include "utils.h"
-
 #include "messagepart.h"
 #include "objecttreeparser.h"
 

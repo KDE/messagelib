@@ -6,7 +6,6 @@
 */
 
 #include "utils/mimetype.h"
-#include "messageviewer_debug.h"
 #include "utils/iconnamecache.h"
 
 #include <MimeTreeParser/NodeHelper>

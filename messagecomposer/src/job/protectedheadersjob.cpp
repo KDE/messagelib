@@ -8,9 +8,6 @@
 
 #include "contentjobbase_p.h"
 #include "job/singlepartjob.h"
-#include "utils/util_p.h"
-
-#include "messagecomposer_debug.h"
 
 #include <KMime/Content>
 #include <KMime/KMimeMessage>

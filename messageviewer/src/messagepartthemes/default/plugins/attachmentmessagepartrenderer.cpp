@@ -6,8 +6,6 @@
 
 #include "attachmentmessagepartrenderer.h"
 
-#include "quotehtml.h"
-
 #include "../messagepartrenderermanager.h"
 #include "utils/mimetype.h"
 

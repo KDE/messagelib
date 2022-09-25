@@ -26,11 +26,9 @@
 //   Copyright: (c) 2004 Till Adam < adam at kde dot org >
 //
 #include "core/model.h"
-#include "core/delegate.h"
 #include "core/filter.h"
 #include "core/groupheaderitem.h"
 #include "core/item_p.h"
-#include "core/manager.h"
 #include "core/messageitem.h"
 #include "core/messageitemsetmanager.h"
 #include "core/model_p.h"

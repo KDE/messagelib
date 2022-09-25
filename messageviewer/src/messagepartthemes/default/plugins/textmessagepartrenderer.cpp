@@ -6,8 +6,6 @@
 
 #include "textmessagepartrenderer.h"
 
-#include "quotehtml.h"
-
 #include "../messagepartrenderermanager.h"
 
 #include "interfaces/htmlwriter.h"

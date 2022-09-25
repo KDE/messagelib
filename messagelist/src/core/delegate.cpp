@@ -7,8 +7,6 @@
  *******************************************************************************/
 
 #include "core/delegate.h"
-#include "core/groupheaderitem.h"
-#include "core/messageitem.h"
 #include "core/view.h"
 
 using namespace MessageList::Core;

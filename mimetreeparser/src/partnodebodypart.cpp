@@ -9,7 +9,6 @@
 */
 
 #include "partnodebodypart.h"
-#include "mimetreeparser_debug.h"
 #include "nodehelper.h"
 #include "objecttreeparser.h"
 #include <KMime/Content>

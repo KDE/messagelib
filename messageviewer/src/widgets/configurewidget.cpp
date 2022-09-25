@@ -9,7 +9,6 @@
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
 #include "ui_settings.h"
-#include "utils/messageviewerutil.h"
 #include <MimeTreeParser/NodeHelper>
 
 #include "MessageCore/MessageCoreSettings"

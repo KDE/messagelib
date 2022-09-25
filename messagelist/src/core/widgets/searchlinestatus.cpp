@@ -7,7 +7,6 @@
 #include "searchlinestatus.h"
 #include "configurefiltersdialog.h"
 #include "core/filtersavedmanager.h"
-#include "filternamedialog.h"
 #include "filtersavedmenu.h"
 #include "messagelist_debug.h"
 #include <KStatefulBrush>

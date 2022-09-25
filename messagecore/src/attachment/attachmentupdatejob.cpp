@@ -6,8 +6,6 @@
 
 #include "attachmentupdatejob.h"
 #include "MessageCore/AttachmentFromUrlBaseJob"
-#include "attachmentfromfolderjob.h"
-#include "attachmentfromurljob.h"
 #include "attachmentfromurlutils.h"
 #include "messagecore_debug.h"
 #include <KLocalizedString>

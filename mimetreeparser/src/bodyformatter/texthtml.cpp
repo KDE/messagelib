@@ -11,8 +11,6 @@
 
 #include <KMime/Content>
 
-#include "mimetreeparser_debug.h"
-
 using namespace MimeTreeParser;
 
 const TextHtmlBodyPartFormatter *TextHtmlBodyPartFormatter::self;

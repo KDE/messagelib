@@ -15,12 +15,10 @@
 #include "viewer.h"
 #include "csshelper.h"
 #include "dkim-verify/dkimwidgetinfo.h"
-#include "settings/messageviewersettings.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include "viewer/webengine/mailwebengineview.h"
 #include "viewer_p.h"
-#include "widgets/configurewidget.h"
 #include "widgets/zoomactionmenu.h"
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>

@@ -16,7 +16,6 @@
 #include <WebEngineViewer/InterceptorManager>
 #include <WebEngineViewer/WebEngineManageScript>
 
-#include "scamdetection/scamcheckshorturl.h"
 #include "scamdetection/scamdetectionwebengine.h"
 #include <QContextMenuEvent>
 #include <QWebEngineProfile>

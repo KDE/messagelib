@@ -11,7 +11,6 @@
 #include "core/delegate.h"
 #include "core/groupheaderitem.h"
 #include "core/item.h"
-#include "core/manager.h"
 #include "core/messageitem.h"
 #include "core/model.h"
 #include "core/storagemodelbase.h"

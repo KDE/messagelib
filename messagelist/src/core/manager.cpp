@@ -9,22 +9,14 @@
 #include "core/manager.h"
 
 #include "core/aggregation.h"
-#include "core/model.h"
-#include "core/model_p.h"
 #include "core/storagemodelbase.h"
 #include "core/theme.h"
 #include "core/view.h"
 #include "core/widgetbase.h"
 #include "messagelistsettings.h"
 
-#include "utils/configureaggregationsdialog.h"
-#include "utils/configureaggregationsdialog_p.h"
-#include "utils/configurethemesdialog.h"
-#include "utils/configurethemesdialog_p.h"
-
 #include "MessageCore/MessageCoreSettings"
 
-#include "messagelistutil.h"
 #include "messagelistutil_p.h"
 
 #include <KMime/DateFormatter> // kdepimlibs

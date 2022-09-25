@@ -6,14 +6,10 @@
 
 #include "multipartalternative.h"
 
-#include "utils.h"
-
 #include "messagepart.h"
 #include "objecttreeparser.h"
 
 #include <KMime/Content>
-
-#include "mimetreeparser_debug.h"
 
 using namespace MimeTreeParser;
 

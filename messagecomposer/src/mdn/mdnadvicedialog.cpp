@@ -6,7 +6,6 @@
 */
 
 #include "mdnadvicedialog.h"
-#include "messagecomposer_debug.h"
 
 #include <KLocalizedString>
 #include <KMessageBox>

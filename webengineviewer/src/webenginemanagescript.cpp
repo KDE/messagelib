@@ -5,7 +5,6 @@
 */
 
 #include "webenginemanagescript.h"
-#include "webengineviewer_debug.h"
 
 using namespace WebEngineViewer;
 

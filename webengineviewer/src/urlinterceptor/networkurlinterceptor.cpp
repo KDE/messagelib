@@ -6,7 +6,6 @@
 
 #include "networkurlinterceptor.h"
 #include "networkpluginurlinterceptorinterface.h"
-#include "webengineviewer_debug.h"
 
 #include <QVector>
 

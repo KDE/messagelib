@@ -25,7 +25,6 @@
 #include <QTabBar>
 #include <QToolButton>
 
-#include "core/manager.h"
 #include "core/model.h"
 #include "core/widgets/quicksearchline.h"
 #include "messagelistsettings.h"

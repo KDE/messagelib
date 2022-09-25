@@ -10,7 +10,6 @@
 */
 
 #include "headerstyle.h"
-#include "messageviewer_debug.h"
 #include <GrantleeTheme/GrantleeTheme>
 
 using namespace MessageViewer;

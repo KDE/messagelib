@@ -6,8 +6,6 @@
 */
 
 #include "objecttreesource.h"
-#include "bodypartformatter.h"
-#include "messagepart.h"
 
 using namespace MimeTreeParser;
 

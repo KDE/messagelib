@@ -6,7 +6,6 @@
 
 #include "grantleeheaderstyle.h"
 #include "header/grantleeheaderformatter.h"
-#include "header/headerstrategy.h"
 #include <GrantleeTheme/GrantleeTheme>
 
 #include <KMime/KMimeMessage>

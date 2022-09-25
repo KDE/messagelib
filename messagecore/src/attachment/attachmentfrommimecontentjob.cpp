@@ -9,7 +9,6 @@
 
 #include "attachmentfrommimecontentjob.h"
 
-#include "messagecore_debug.h"
 #include <KMime/Content>
 
 using namespace MessageCore;

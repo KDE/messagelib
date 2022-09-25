@@ -6,7 +6,6 @@
 
 #include "core/manager.h"
 #include "utils/aggregationcombobox.h"
-#include "utils/aggregationcombobox_p.h"
 #include "utils/configureaggregationsdialog.h"
 
 #include <KLocalizedString>

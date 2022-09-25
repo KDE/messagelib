@@ -5,10 +5,8 @@
 #include "utils/themeconfigbutton.h"
 
 #include "core/manager.h"
-#include "core/theme.h"
 #include "utils/configurethemesdialog.h"
 #include "utils/themecombobox.h"
-#include "utils/themecombobox_p.h"
 
 #include <KLocalizedString>
 

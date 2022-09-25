@@ -5,8 +5,6 @@
 */
 
 #include "headerstylemenumanager.h"
-#include "header/headerstrategy.h"
-#include "header/headerstyle.h"
 #include "headerstyleinterface.h"
 #include "headerstyleplugin.h"
 #include "headerstylepluginmanager.h"

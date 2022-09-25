@@ -5,7 +5,6 @@
 */
 
 #include "dkimheaderparser.h"
-#include "messageviewer_dkimcheckerdebug.h"
 #include <QChar>
 
 using namespace MessageViewer;

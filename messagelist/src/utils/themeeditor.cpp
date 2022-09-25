@@ -8,7 +8,6 @@
 
 #include "utils/themeeditor.h"
 #include "core/groupheaderitem.h"
-#include "core/manager.h"
 #include "core/messageitem.h"
 #include "core/modelinvariantrowmapper.h"
 #include "utils/comboboxutils.h"

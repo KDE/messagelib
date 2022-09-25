@@ -7,12 +7,10 @@
 
 #include "messagehelper.h"
 #include "settings/messagecomposersettings.h"
-#include "utils/util.h"
 
 #include "MessageCore/MailingList"
 #include "MessageCore/StringUtil"
 
-#include "messagecomposer_debug.h"
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
 #include <KMime/DateFormatter>

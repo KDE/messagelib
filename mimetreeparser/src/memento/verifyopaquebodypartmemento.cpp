@@ -5,7 +5,6 @@
 */
 
 #include "verifyopaquebodypartmemento.h"
-#include "mimetreeparser_debug.h"
 
 #include <QGpgME/KeyListJob>
 #include <QGpgME/VerifyOpaqueJob>

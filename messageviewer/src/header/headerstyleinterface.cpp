@@ -5,7 +5,6 @@
 */
 
 #include "headerstyleinterface.h"
-#include "headerstyle.h"
 #include "headerstyleplugin.h"
 #include "utils/messageviewerutil_p.h"
 #include <KActionMenu>
