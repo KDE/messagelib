@@ -26,6 +26,7 @@
 
 namespace MessageComposer
 {
+class ContactPreference;
 class NearExpiryChecker;
 using NearExpiryCheckerPtr = QSharedPointer<NearExpiryChecker>;
 }
@@ -116,15 +117,6 @@ public:
     KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, const MessageComposer::NearExpiryCheckerPtr &nearExpiryChecker);
 
     ~KeyResolver();
-
-    struct ContactPreferences {
-        ContactPreferences();
-        Kleo::EncryptionPreference encryptionPreference;
-        Kleo::SigningPreference signingPreference;
-        Kleo::CryptoMessageFormat cryptoMessageFormat;
-        QStringList pgpKeyFingerprints;
-        QStringList smimeCertFingerprints;
-    };
 
     struct Item : public KeyApprovalDialog::Item {
         Item()
@@ -270,8 +262,8 @@ private:
     bool encryptToSelf() const;
     bool showApprovalDialog() const;
 
-    ContactPreferences lookupContactPreferences(const QString &address) const;
-    void saveContactPreference(const QString &email, const ContactPreferences &pref) const;
+    MessageComposer::ContactPreference lookupContactPreferences(const QString &address) const;
+    void saveContactPreference(const QString &email, const MessageComposer::ContactPreference &pref) const;
 
 private:
     class EncryptionPreferenceCounter;

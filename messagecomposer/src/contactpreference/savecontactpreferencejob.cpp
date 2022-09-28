@@ -21,10 +21,26 @@
 
 using namespace MessageComposer;
 
-SaveContactPreferenceJob::SaveContactPreferenceJob(const QString &email, const Kleo::KeyResolver::ContactPreferences &pref, QObject *parent)
+class MessageComposer::SaveContactPreferenceJobPrivate
+{
+public:
+    explicit SaveContactPreferenceJobPrivate(SaveContactPreferenceJob *qq, const QString &email, const ContactPreference &pref)
+        : q_ptr(qq)
+        , mEmail(email)
+        , mPref(pref)
+    {
+    }
+
+    SaveContactPreferenceJob *q_ptr;
+    Q_DECLARE_PUBLIC(SaveContactPreferenceJob)
+    
+    const QString mEmail;
+    const ContactPreference mPref;
+};
+
+SaveContactPreferenceJob::SaveContactPreferenceJob(const QString &email, const ContactPreference &pref, QObject *parent)
     : QObject(parent)
-    , mEmail(email)
-    , mPref(pref)
+    , d_ptr(std::unique_ptr<SaveContactPreferenceJobPrivate>(new SaveContactPreferenceJobPrivate(this, email, pref)))
 {
 }
 
@@ -32,15 +48,18 @@ SaveContactPreferenceJob::~SaveContactPreferenceJob() = default;
 
 void SaveContactPreferenceJob::start()
 {
+    Q_D(SaveContactPreferenceJob);
+    
     auto job = new Akonadi::ContactSearchJob(this);
     connect(job, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotSearchContact);
     job->setLimit(1);
-    job->setQuery(Akonadi::ContactSearchJob::Email, mEmail);
+    job->setQuery(Akonadi::ContactSearchJob::Email, d->mEmail);
     job->start();
 }
 
 void SaveContactPreferenceJob::slotSearchContact(KJob *job)
 {
+    Q_D(SaveContactPreferenceJob);
     auto contactSearchJob = qobject_cast<Akonadi::ContactSearchJob *>(job);
 
     const Akonadi::Item::List items = contactSearchJob->items();
@@ -49,7 +68,7 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
         bool ok = true;
         const QString fullName = QInputDialog::getText(nullptr,
                                                        i18n("Name Selection"),
-                                                       i18n("Which name shall the contact '%1' have in your address book?", mEmail),
+                                                       i18n("Which name shall the contact '%1' have in your address book?", d->mEmail),
                                                        QLineEdit::Normal,
                                                        QString(),
                                                        &ok);
@@ -73,10 +92,10 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
 
         KContacts::Addressee contact;
         contact.setNameFromString(fullName);
-        KContacts::Email email(mEmail);
+        KContacts::Email email(d->mEmail);
         email.setPreferred(true);
         contact.addEmail(email);
-        writeCustomContactProperties(contact, mPref);
+        d->mPref.fillAddressee(contact);
 
         Akonadi::Item item(KContacts::Addressee::mimeType());
         item.setPayload<KContacts::Addressee>(contact);
@@ -87,7 +106,7 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
         Akonadi::Item item = items.first();
 
         auto contact = item.payload<KContacts::Addressee>();
-        writeCustomContactProperties(contact, mPref);
+        d->mPref.fillAddressee(contact);
 
         item.setPayload<KContacts::Addressee>(contact);
 
@@ -96,20 +115,6 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
     }
 }
 
-void SaveContactPreferenceJob::writeCustomContactProperties(KContacts::Addressee &contact, const Kleo::KeyResolver::ContactPreferences &pref) const
-{
-    contact.insertCustom(QStringLiteral("KADDRESSBOOK"),
-                         QStringLiteral("CRYPTOENCRYPTPREF"),
-                         QLatin1String(Kleo::encryptionPreferenceToString(pref.encryptionPreference)));
-    contact.insertCustom(QStringLiteral("KADDRESSBOOK"),
-                         QStringLiteral("CRYPTOSIGNPREF"),
-                         QLatin1String(Kleo::signingPreferenceToString(pref.signingPreference)));
-    contact.insertCustom(QStringLiteral("KADDRESSBOOK"),
-                         QStringLiteral("CRYPTOPROTOPREF"),
-                         QLatin1String(cryptoMessageFormatToString(pref.cryptoMessageFormat)));
-    contact.insertCustom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("OPENPGPFP"), pref.pgpKeyFingerprints.join(QLatin1Char(',')));
-    contact.insertCustom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("SMIMEFP"), pref.smimeCertFingerprints.join(QLatin1Char(',')));
-}
 
 void SaveContactPreferenceJob::slotModifyCreateItem(KJob *job)
 {

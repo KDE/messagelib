@@ -48,7 +48,6 @@ target_sources( KF5MessageComposer PRIVATE
     job/emailaddressresolvejob.cpp
     job/attachmentfrompublickeyjob.cpp
     job/distributionlistexpandjob.cpp
-    job/savecontactpreferencejob.cpp
     job/attachmentvcardfromaddressbookjob.cpp
     job/attachmentclipboardjob.cpp
     job/protectedheadersjob.cpp
@@ -62,6 +61,8 @@ target_sources( KF5MessageComposer PRIVATE
     composer/nearexpirychecker.cpp
     composer/composerviewinterface.cpp
     composer/composerattachmentinterface.cpp
+    contactpreference/contactpreference.cpp
+    contactpreference/savecontactpreferencejob.cpp
     draftstatus/draftstatus.cpp
     recipient/recipientspicker.cpp
     recipient/recipient.cpp
@@ -139,7 +140,6 @@ target_sources( KF5MessageComposer PRIVATE
     job/signencryptjob.h
     job/inserttextfilejob.h
     job/emailaddressresolvejob.h
-    job/savecontactpreferencejob.h
     job/singlepartjob.h
     job/attachmentjob.h
     job/jobbase_p.h
@@ -424,6 +424,15 @@ ecm_generate_headers(MessageComposer_Camelcasecomposerng_HEADERS
     RELATIVE composer-ng
     )
 
+ecm_generate_headers(MessageComposer_Camelcasecontactpreference_HEADERS
+    HEADER_NAMES
+    SaveContactPreferenceJob
+    ContactPreference
+    REQUIRED_HEADERS MessageComposer_contactpreference_HEADERS
+    PREFIX MessageComposer
+    RELATIVE contactpreference
+    )
+
 ecm_generate_headers(MessageComposer_Camelcasesender_HEADERS
     HEADER_NAMES
     AkonadiSender
@@ -570,6 +579,7 @@ install(FILES
     ${MessageComposer_Camelplugineditorcheckbeforesend_HEADERS}
     ${MessageComposer_Camelcasecomposer_HEADERS}
     ${MessageComposer_Camelcasecomposerng_HEADERS}
+    ${MessageComposer_Camelcasecontactpreference_HEADERS}
     ${MessageComposer_Camelcasesender_HEADERS}
     ${MessageComposer_Camelcaseutils_HEADERS}
     ${MessageComposer_Camelcasehelper_HEADERS}
@@ -602,6 +612,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_debug.h
     ${MessageComposer_composer_HEADERS}
     ${MessageComposer_composerng_HEADERS}
+    ${MessageComposer_contactpreference_HEADERS}
     ${MessageComposer_sender_HEADERS}
     ${MessageComposer_utils_HEADERS}
     ${MessageComposer_helper_HEADERS}
