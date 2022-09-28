@@ -1510,8 +1510,6 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
         // Accept any autocrypt key, as the validility is not used in Autocrypt.
         if (matchingKeys.size() == 1) {
             if (recipient->prefer_encrypt()) {
-                d->mContactPreferencesMap[address].encryptionPreference = AlwaysEncrypt;
-            } else {
                 d->mContactPreferencesMap[address].encryptionPreference = AlwaysEncryptIfPossible;
             }
             d->mAutocryptMap[matchingKeys[0].primaryFingerprint()] = address;
