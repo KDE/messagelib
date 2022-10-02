@@ -1,0 +1,2503 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# g.sora <g.sora@tiscali.it>, 2010, 2011, 2012, 2013, 2014, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2020-02-12 14:11+0100\n"
+"Last-Translator: giovanni <g.sora@tiscali.it>\n"
+"Language-Team: Interlingua <kde-i18n-it@kde.org>\n"
+"Language: ia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 18.12.3\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "non nominate"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Errate Plug-in de Crypto"
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Necun plug-in de Crypto appropriate esseva trovate."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "Necun plug-in %1 esseva trovate."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "Plug-in de Crypto \"%1\" non pote verificar signaturas."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"Le message es signate, ma le validitate de signatura non pote esser "
+"verificate. <br />Motivo: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Plug-in de Crypto \"%1\" non pote decryptar messages."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Plug-in de Crypto \"%1\" non poteva decryptar datos."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Error:%1"
+
+#, fuzzy
+#~| msgid "Sorry, certificate could not be imported.<br />Reason: %1"
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "Desolate, certificato non pote esser importate.<br />Motivo: %1"
+
+#~ msgid "Reason: %1"
+#~ msgstr "Motivo: %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Desolate, necun certificato esseva trovate in iste message."
+
+#~ msgid "Certificate import status:"
+#~ msgstr "Stato de importar de certificato:"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "1 nove certificato esseva importate"
+#~ msgstr[1] "%1 nove certificatos esseva importate"
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "1 certificato esseva sin modifica"
+#~ msgstr[1] "%1 certificatos esseva sin modifica"
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "1 nove clave secrete esseva importate"
+#~ msgstr[1] "%1 nove claves secrete esseva importate"
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "1 clave secrete esseva sin modifica"
+#~ msgstr[1] "%1 claves secrete esseva sin modifica"
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr ""
+#~ "Desolate, necun detalios super le importation de certificato disponibile"
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Detalios de importar certificato:"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Fallite: %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "Message Encapsulate"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "Fin de message encapsulate"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "Iste message es cryptate."
+
+#~ msgid "Decrypt Message"
+#~ msgstr "Decryptar Message"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Pro favor tu attende durante que le message es decryptate ..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "Message Cryptate"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "Message Cryptate(decryption non es possibile)"
+
+#, fuzzy
+#~| msgid "Reason: %1"
+#~ msgid "Reason: "
+#~ msgstr "Motivo: %1"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Il non pote decryptar datos."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "Fin de message cryptate"
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~| "HTML code is shown. If you trust the sender of this message then you can "
+#~| "activate formatted HTML display for this message <a href=\"kmail:showHTML"
+#~| "\">by clicking here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~ "HTML code is shown. If you trust the sender of this message then you can "
+#~ "activate formatted HTML display for this message <a href=kmail:"
+#~ "showHTML>by clicking here</a>."
+#~ msgstr ""
+#~ "<b>Nota::</b> Isto es un message HTML. Pro motivos de securitate, "
+#~ "solmente le codice crude de HTML es monstrate. Si tu ha fiducia del "
+#~ "mittente de iste message alora tu pote activar monstra de formato HTML "
+#~ "pro iste message <a href=\"kmail:showHTML\"> per pulsar hic</a>."
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This HTML message may contain external references to images "
+#~| "etc. For security/privacy reasons external references are not loaded. If "
+#~| "you trust the sender of this message then you can load the external "
+#~| "references for this message <a href=\"kmail:loadExternal\">by clicking "
+#~| "here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This HTML message may contain external references to images "
+#~ "etc. For security/privacy reasons external references are not loaded. If "
+#~ "you trust the sender of this message then you can load the external "
+#~ "references for this message <a href=kmail:loadExternal>by clicking here</"
+#~ "a>."
+#~ msgstr ""
+#~ "<b>Nota:</b> Iste message HTML pote continer referentias externe a "
+#~ "imagines etc.  Pro motivos de securitate/discretion referentias externe "
+#~ "non es cargate. Si tu ha fiducia con le mittente de iste message alora tu "
+#~ "pote cargar referentias externe pro iste message <a href=\"kmail:"
+#~ "loadExternal\"> per pulsar hic</a>."
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Pro favor tu attende durante que le signatura es verificate ..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Information insufficiente pro verificar signatura. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Message esseva signate per %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Message esseva signate con clave incognite."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Message esseva signate con clave %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Message esseva signate per %3 sur %1 con clave %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Message esseva signate sur %1 con clave %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Message esseva signate per %2 con clave %1."
+
+#~ msgid "Status: "
+#~ msgstr "Stato: "
+
+#~ msgid "Hide Details"
+#~ msgstr "Celar detalios"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Message esseva signate sur %1 con clave incognite %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Message esseva signate con clave incognite %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Le validitate del signature non pote esser verificate."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Message esseva signate per %2 (ID de clave: %1)."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Le signatura es valide, ma le validitate del clave es incognite."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Le signatura es valide e le clave es marginalmente credibile."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Le signatura es valide e le clave es completemente credibile."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Le signatura es valide e le clave es in fin credibile."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Le signatura es valide, ma le clave non es credibile."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Aviso: Le signatura es mal."
+
+#~ msgid "Invalid signature."
+#~ msgstr "Signatura invalide."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "Information insufficiente pro verificar validitate de signatura."
+
+#, fuzzy
+#~| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#~ msgid "Signed by <a href=mailto:%1>%2</a>."
+#~ msgstr "Signate per <a href=\"mailto:%1\">%2</a>"
+
+#~ msgid "Signature is valid."
+#~ msgstr "Signatura es valide."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Stato de signatura incognite"
+
+#~ msgid "Show Details"
+#~ msgstr "Monstrar Detalios"
+
+#~ msgid "End of signed message"
+#~ msgstr "Fin de message signate"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Error: signatura non verificate"
+
+#~ msgid "Good signature"
+#~ msgstr "Bon signatura"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Mal</b> signatura"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "necun clave public pro verificar le signatura"
+
+#~ msgid "No signature found"
+#~ msgstr "necun signatura trovate"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Error durante que il verificava le signatura"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Resultatos differente pro signaturas"
+
+#~ msgid "No status information available."
+#~ msgstr "Necun information de stato disponibile."
+
+#~ msgid "Good signature."
+#~ msgstr "Bon signatura."
+
+#~ msgid "One key has expired."
+#~ msgstr "Un clave ha expirate."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Le signatura ha expirate."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Incapace de verificar: clave mancante."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL non disponibile."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "CRL disponibile es nimie vetule."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Un politica non esseva attingite."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Il occurreva un error de systema"
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Un clave ha essite revocate."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Mal</b> signatura."
+
+#~ msgid "certificate"
+#~ msgstr "Certificato"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Aviso:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "Le adresse de mittente de e-posta non es immagazinate in le %1 usate per "
+#~ "signar."
+
+#~ msgid "sender: "
+#~ msgstr "Mittente: "
+
+#~ msgid "stored: "
+#~ msgstr "immagazinate: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "necun adresse de e-posta es immagazinate in le %1 usate pro signar, assi "
+#~ "que nos non pote comparar lo a le adresse del mittente %2."
+
+#~ msgid "Grantlee theme \"%1\" is not valid."
+#~ msgstr "Thema de Grantlee \"%1\" es invalide."
+
+#~ msgid "Subject:"
+#~ msgstr "Subjecto:"
+
+#~ msgid "To:"
+#~ msgstr "A:"
+
+#~ msgid "Reply to:"
+#~ msgstr "Responde a: "
+
+#~ msgid "CC:"
+#~ msgstr "CC:"
+
+#~ msgid "BCC:"
+#~ msgstr "BCC:"
+
+#~ msgid "From:"
+#~ msgstr "Ex:"
+
+#~ msgid "Spam Status:"
+#~ msgstr "Stato de Spam:"
+
+#~ msgid "Date:"
+#~ msgstr "Data: "
+
+#~ msgid "resent from"
+#~ msgstr "re-inviate ex"
+
+#~ msgid "receiver was"
+#~ msgid_plural "receivers were"
+#~ msgstr[0] "destinatario  esseva"
+#~ msgstr[1] "destinatarios esseva"
+
+#~ msgid "Printing mode"
+#~ msgstr "Modo de imprimer"
+
+#~ msgid "[vcard]"
+#~ msgstr "[vcard]"
+
+#~ msgctxt "Unknown date"
+#~ msgid "Unknown"
+#~ msgstr "Incognite"
+
+#~ msgid "No Subject"
+#~ msgstr "Necun Subjecto"
+
+#~ msgid ""
+#~ "%1% probability of being spam with confidence %3%.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2\n"
+#~ "Confidence=%4"
+#~ msgstr ""
+#~ "%1% probabilitate de esser spam con confidentia %3%.\n"
+#~ "\n"
+#~ "Reporto Complete:\n"
+#~ "Probabilitate=%2\n"
+#~ "Confidentia=%4"
+
+#~ msgid ""
+#~ "%1% probability of being spam.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2"
+#~ msgstr ""
+#~ "%1% probabilitate de esser spam.\n"
+#~ "\n"
+#~ "Reporto complete:\n"
+#~ "Probabilitate=%2"
+
+#~ msgid "No Spam agent"
+#~ msgstr "Necun Agente de Spam"
+
+#~ msgid "Spam filter score not a number"
+#~ msgstr "Punctuage de filtro de spam non un numero"
+
+#~ msgid "Threshold not a valid number"
+#~ msgstr "Limine non un numero valide"
+
+#~ msgid "Spam filter score could not be extracted from header"
+#~ msgstr "Punctuage de filtro de spam non pote esser extrahite ex capite"
+
+#~ msgid "Threshold could not be extracted from header"
+#~ msgstr "Limine non pote esser extrahite ex capite"
+
+#~ msgid "Error evaluating spam score"
+#~ msgstr "Error in valutar punctuage de spam"
+
+#~ msgid ""
+#~ "%1.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1.\n"
+#~ "\n"
+#~ "Reporto complete:\n"
+#~ "%2"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Move a corbe"
+
+#, fuzzy
+#~| msgid "Reply to:"
+#~ msgid "Reply"
+#~ msgstr "Responde a: "
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply to All"
+#~ msgstr "Responder a: "
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "New Message"
+#~ msgstr "Salveguarda message"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview"
+#~ msgstr "Salveguarda message"
+
+#~ msgctxt "View->"
+#~ msgid "&Headers"
+#~ msgstr "&Capites"
+
+#~ msgid "Choose display style of message headers"
+#~ msgstr "Seliger stilo de monstrar del capites de messages"
+
+#~ msgid "Date: "
+#~ msgstr "Data: "
+
+#~ msgid "From: "
+#~ msgstr "Ex: "
+
+#~ msgid "[vCard]"
+#~ msgstr "[vCard]"
+
+#~ msgctxt "To-field of the mailheader."
+#~ msgid "To: "
+#~ msgstr "A: "
+
+#~ msgid "CC: "
+#~ msgstr "CC: "
+
+#~ msgid "BCC: "
+#~ msgstr "BCC: "
+
+#~ msgid "Reply to: "
+#~ msgstr "Responder a: "
+
+#~ msgid ""
+#~ "Modifying an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr ""
+#~ "Modificar un attachamento poterea invalidar omne signatura digital sur "
+#~ "iste message."
+
+#~ msgid "Edit Attachment"
+#~ msgstr "Editar attachamento"
+
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "Capites &Standard"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "Monstrar lista standard de capites de messages"
+
+#~ msgid "Details"
+#~ msgstr "Detalios"
+
+#~ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
+#~ msgstr ""
+#~ "Iste message poterea esser un scam. <a href=\"scamdetails"
+#~ "\">(Detalios...)</a>"
+
+#~ msgid "I confirm it's not a scam"
+#~ msgstr "Io confirma que isto non es un scam"
+
+#~ msgid "Add email to whitelist"
+#~ msgstr "Adde message de e-posta a lista blanc"
+
+#~ msgid "Disable scam detection for all messages"
+#~ msgstr "Dishabilita discoperta de scam pro omne messages"
+
+#~ msgid "Details:"
+#~ msgstr "Detalios:"
+
+#~ msgid ""
+#~ "This email contains a link which reads as '%1' in the text, but actually "
+#~ "points to '%2'. This is often the case in scam emails to mislead the "
+#~ "recipient"
+#~ msgstr ""
+#~ "Iste message contine un ligamine que es legite como '%1' in le texto, ma "
+#~ "in realitate il puncta a '%2'. Sovente isto es le caso de messages scam "
+#~ "pro confunder le destinatario"
+
+#~ msgid ""
+#~ "This email contains a link which points to a numerical IP address (%1) "
+#~ "instead of a typical textual website address. This is often the case in "
+#~ "scam emails."
+#~ msgstr ""
+#~ "Iste message contine un ligamine que puncta a un adresse numeric (%1) in "
+#~ "loco de un typic adresse textual de sito web. Sovente isto es un caso de "
+#~ "messages de e-posta de typo scam."
+
+#~ msgid ""
+#~ "This email contains a link which points to a hexadecimal IP address (%1) "
+#~ "instead of a typical textual website address. This is often the case in "
+#~ "scam emails."
+#~ msgstr ""
+#~ "Iste message contine un ligamine que puncta a un adresse hexadecinal (%1) "
+#~ "in loco de un typic adresse textual de sito web. Sovente isto es un caso "
+#~ "de messages de e-posta de typo scam."
+
+#~ msgid "This email contains a link (%1) which has a redirection"
+#~ msgstr ""
+#~ "Iste message de e-posta contine un ligamine (%1) que ha un redirection"
+
+#~ msgid ""
+#~ "This email contains a link (%1) which contains multiple http://. This is "
+#~ "often the case in scam emails."
+#~ msgstr ""
+#~ "Iste message contine un ligamine (%1) que contine multiple http://. "
+#~ "Sovente isto es un caso de messages de e-posta de typo scam."
+
+#~ msgid ""
+#~ "This email contains a shorturl (%1). It can redirect to another server."
+#~ msgstr ""
+#~ "Iste message de e-posta contine un url brev (%1). Illo pote esser "
+#~ "redirecte a un altere servitior."
+
+#~ msgid ""
+#~ "Message contains form element. This is often the case in scam emails."
+#~ msgstr ""
+#~ "Message contine elemento de forma. Sovente isto es le caso de messages de "
+#~ "typo scam."
+
+#~ msgid "No network connection detected, we cannot expand url."
+#~ msgstr ""
+#~ "Il non relevava alcun connexion de rete, nos non pote expander le url."
+
+#~ msgid "Short url '%1' redirects to '%2'."
+#~ msgstr "Url breve '%1' redirige a '%2'."
+
+#~ msgid "Only print selected text in viewer"
+#~ msgstr "Solmente imprime texto selectionate in visor"
+
+#, fuzzy
+#~| msgid "Respect expand collapse quote mark defined settings when printing"
+#~ msgid ""
+#~ "Respect expand/collapse quote mark which is defined in settings during "
+#~ "printing."
+#~ msgstr "Respecta preferentias definite de marcas citatequando on imprime"
+
+#~ msgid ""
+#~ "Specifies whether the background color and images are also drawn when the "
+#~ "page is printed."
+#~ msgstr ""
+#~ "Il specifica si le color de fundo e image etiam es  designate quando le "
+#~ "pagina es imprimite."
+
+#~ msgid "When we render html do not use font size inferior to minimum size."
+#~ msgstr ""
+#~ "Quando on rende html non usa grandor de font inferior al dimension minime."
+
+#, fuzzy
+#~| msgid "Show HTML status bar"
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "Monstrar barra de stato HTML"
+
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "Monstrar stato de spam in capite phantasia"
+
+#~ msgid "Replace smileys by emoticons"
+#~ msgstr "Reimplaciar smileys &per emoticones"
+
+#~ msgid ""
+#~ "Enable this if you want smileys like :-) appearing in the message text to "
+#~ "be replaced by emoticons (small pictures)."
+#~ msgstr ""
+#~ "Tu activa isto si tu vole que smileys como :-) appare in le message de "
+#~ "texto reimplaciate per emoticones (parve imagines)."
+
+#~ msgid "Show expand/collapse quote marks"
+#~ msgstr "Monstrar marcas de citation de Expander/Plicar"
+
+#~ msgid ""
+#~ "Enable this option to show different levels of quoted text. Disable to "
+#~ "hide the levels of quoted text."
+#~ msgstr ""
+#~ "Activar iste option pro monstrar nivellos differente de texto citate. De-"
+#~ "activar pro celar le nivellos de texto citate."
+
+#~ msgid "Automatic collapse level:"
+#~ msgstr "Nivello de plicar automatic:"
+
+#~ msgid "Reduce font size for quoted text"
+#~ msgstr "Reducer dimension de font per texto citate"
+
+#~ msgid "Enable this option to show quoted text with a smaller font."
+#~ msgstr ""
+#~ "Activar iste option pro monstrar  texto citate con un font plus parve."
+
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "Monstrar agente de usage in capites de phantasia"
+
+#~ msgid ""
+#~ "Enable this option to get the User-Agent and X-Mailer header lines "
+#~ "displayed when using fancy headers."
+#~ msgstr ""
+#~ "Tu activa iste option pro obtener que le lineas de capite de Agente de "
+#~ "Usator e X-Mailer sia monstrate quando on usa capite phantasia."
+
+#~ msgid "Allow to edit attachments of existing mails."
+#~ msgstr "Permitter de editar attachamentos de e-postas existente."
+
+#~ msgid "Always decrypt messages when viewing or ask before decrypting"
+#~ msgstr ""
+#~ "Sempre Decryptar messages quando on vide o demandar prime de decryptar "
+
+#~ msgid "Message Structure Viewer"
+#~ msgstr "Visor de Structura de Message"
+
+#~ msgid "Show never"
+#~ msgstr "Monstrar Nunquam"
+
+#~ msgid "Show always"
+#~ msgstr "Monstrar Sempre"
+
+#~ msgid "What style of headers should be displayed"
+#~ msgstr "Qual stilo de capites deberea esser monstrate"
+
+#~ msgid "How much of headers should be displayed"
+#~ msgstr "Quanto de capites deberea esser monstrate"
+
+#~ msgid "Prefer HTML to plain text"
+#~ msgstr "Preferer HTML a texto plan"
+
+#~ msgid "Allow messages to load external references from the Internet"
+#~ msgstr "Permitter a messages de cargar referentias externe ab le internet"
+
+#~ msgid "How attachments are shown"
+#~ msgstr "Como attachamentos es monstrate"
+
+#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+#~ msgstr ""
+#~ "Il specifica si on debe usar de nove le color de citation, ultra le 3tie "
+#~ "nivello"
+
+#~ msgid "Activate Access Key"
+#~ msgstr "Activa Clave de accesso"
+
+#~ msgid ""
+#~ "KMail can analyze messages for suspected email scams by looking for "
+#~ "common techniques used to deceive you"
+#~ msgstr ""
+#~ "KMail pote analysar messages pro suspecte scams de e-posta per cercar "
+#~ "technicas commun usate pro illuder te"
+
+#~ msgid "List of emails in scam white list"
+#~ msgstr "Lista de messages de e-posta in le lista blanc de scam"
+
+#~ msgid "Enabled ad block"
+#~ msgstr "Habilita bloco de reclamos (ad block)"
+
+#~ msgid "Hide advertisement enabled"
+#~ msgstr "Cela reclamo habilitate"
+
+#~ msgid "Update interval list of adblock"
+#~ msgstr "Actualisa lista de adblock (lista de reclamo)"
+
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "Non inviar MDNs in responsa a messages cryptate"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr ""
+#~ "Il specifica le politica predefinite de usar per le Notificationes de "
+#~ "Disposition de Messages (solmente pro uso interne)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr ""
+#~ "Il specifica le predefinite action de citation de prender quando on "
+#~ "responde a un message (solmente pro uso interne)"
+
+#~ msgid "Mangle From:/To: headers in replies to replies"
+#~ msgstr "Deformar Ex:/A: capites in responsas a responsas"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your replies, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook ha un numero de vias breve in su implementation del "
+#~ "standard de iCalendar: iste option circumfere un de illos. Si tu ha "
+#~ "problemas con usatores de Outlook que non pote obtener tu responsas, tu "
+#~ "prova fixar iste option."
+
+#~ msgid "Send groupware invitations in the mail body"
+#~ msgstr "Inviar invitationes de groupware in le corpore de e-posta"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your invitations, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook ha un numero de vias breve in su implementation del "
+#~ "standard de iCalendar: iste option circumfere un de illos. Si tu ha "
+#~ "problemas con usatores de Outlook que non pote obtener tu invitationes, "
+#~ "tu prova fixar iste option."
+
+#~ msgid "Exchange-compatible invitation naming"
+#~ msgstr "Nominar attachamento de modo compatibile con Exchange"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server, has a problem understanding standards-compliant groupware email. "
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "Microsoft Outlook, quando usate in combination con un servitor de "
+#~ "Microsoft\n"
+#~ "Exchange, ha un problema a comprender e-posta de groupware conforme a\n"
+#~ "standards,\n"
+#~ "Tu activa iste option pro inviar invitationes de groupware in un modo que "
+#~ "Microsoft Exchange comprende. "
+
+#~ msgid "Outlook compatible invitation reply comments"
+#~ msgstr "Commentos de responsa de invitation compatibile con Outlook"
+
+#~ msgid ""
+#~ "When replying to invitations, send the reply comment in way that "
+#~ "Microsoft Outlook understands."
+#~ msgstr ""
+#~ "Quando on responde a invitationes, il invia commento de responsa in modo "
+#~ "que Microsoft Outlook comprende."
+
+#~ msgid "Show invitation update differences in the Outlook style"
+#~ msgstr ""
+#~ "Monstrar differentias de actualisation de invitation in le stilo de "
+#~ "Outlook"
+
+#~ msgid ""
+#~ "When viewing invitation updates, show the differences in the Microsoft "
+#~ "Outlook style."
+#~ msgstr ""
+#~ "Quando on vide actualisationes de invitation, il monstra le differentias "
+#~ "in le stilo de Microsoft Outlook."
+
+#~ msgid "Automatic invitation sending"
+#~ msgstr "Inviante Automaticamente invitation"
+
+#~ msgid ""
+#~ "When this is checked, you will not see the mail composer window. Instead, "
+#~ "all invitation mails are sent automatically. If you want to see the mail "
+#~ "before sending it, you can uncheck this option. However, be aware that "
+#~ "the text in the composer window is in iCalendar syntax, and you should "
+#~ "not try modifying it by hand."
+#~ msgstr ""
+#~ "Quando isto es marcate, tu non videra le fenestra de compositor de e-"
+#~ "posta. In vice, omne e-postas de invitation es inviate automaticamente. "
+#~ "Si tu vole vider le e-posta ante que inviar lo, tu pote non marcar iste "
+#~ "option. Totevia, tu debe notar que le texto in le fenestra de compositor "
+#~ "es in syntaxe de iCalendar, e tu non deberea modificar lo per mano."
+
+#~ msgid "Delete invitation emails after the reply to them has been sent"
+#~ msgstr ""
+#~ "Deler e-postas de invitation postea que le responsa a illes ha essite "
+#~ "inviate"
+
+#~ msgid ""
+#~ "When this is checked, received invitation emails that have been replied "
+#~ "to will be moved to the Trash folder, once the reply has been "
+#~ "successfully sent."
+#~ msgstr ""
+#~ "Quando isto es marcate, e-postas de invitation recipite que ha habite un "
+#~ "responsa essera movite al dossier de Corbe, un vice que le responsa ha "
+#~ "essite inviate con successo."
+
+#~ msgid "Use Fi&xed Font"
+#~ msgstr "Usar Font Fi&xate"
+
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "Le dossier plus recente seligite usanter Activitate de facer (Todo)"
+
+#, fuzzy
+#~| msgid "The most recent selected folder using for Todo."
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "Le dossier plus recente seligite usanter Activitate de facer (Todo)"
+
+#, fuzzy
+#~| msgid "The most recent selected folder using for Todo."
+#~ msgid "The most recent selected folder using for Notes."
+#~ msgstr "Le dossier plus recente seligite usanter Activitate de facer (Todo)"
+
+#~ msgid "Groupware Compatibility && Legacy Options"
+#~ msgstr "Compatibilitate con Groupware && Optiones hereditate"
+
+#~ msgid ""
+#~ "Turn this option on in order to make Outlook(tm) understand your answers "
+#~ "to invitation replies"
+#~ msgstr ""
+#~ "Tu activa iste option pro face que Outlook(tm) comprende tu responsas a "
+#~ "responsas de invitation"
+
+#~ msgid "&Mangle From:/To: headers in replies to invitations"
+#~ msgstr "&Deformar Ex:/A: capites in responsas a invitationes"
+
+#~ msgid ""
+#~ "Turn this option on in order to make Outlook(tm) understand your answers "
+#~ "to invitations"
+#~ msgstr ""
+#~ "Activar iste option pro facer que Outlook(tm) pote comprender tu "
+#~ "responsas a invitationes"
+
+#~ msgid "Send &invitations in the mail body"
+#~ msgstr "Inviar &invitationes in le corpore de e-posta"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server,\n"
+#~ "has a problem understanding standards-compliant groupware email.\n"
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "Microsoft Outlook, quando usate in combination con un servitor de "
+#~ "Microsoft\n"
+#~ "Exchange, ha un problema a comprender e-posta de groupware conforme a\n"
+#~ "standards,\n"
+#~ "Tu activa iste option pro inviar invitationes de groupware in un modo que "
+#~ "Microsoft Exchange comprende. "
+
+#~ msgid "Exchange-compatible invitation &naming"
+#~ msgstr "Modo de poner &nomine de invitation compatibile con Exchange"
+
+#~ msgid ""
+#~ "Send invitation reply comments in a way that Microsoft Outlook(tm) "
+#~ "understands."
+#~ msgstr ""
+#~ "Inviar commentos de responsa de invitation in un modo que Microsoft "
+#~ "Outlook(tm) comprende."
+
+#~ msgid ""
+#~ "Display invitation update differences in the Microsoft Outlook(tm) style."
+#~ msgstr ""
+#~ "Monstrar differentias de actualisation de invitation in le stilo de "
+#~ "Microsoft Outlook(tm)."
+
+#~ msgid ""
+#~ "When this is on, the user will not see the mail composer window. "
+#~ "Invitation mails are sent automatically."
+#~ msgstr ""
+#~ "Quando isto es active, le usator non videra le fenestra de compositor de "
+#~ "e-posta. E-postas de invitation es inviate automaticamente."
+
+#~ msgid "&Automatic invitation sending"
+#~ msgstr "Inviante invitation &Automatic"
+
+#~ msgid "Options"
+#~ msgstr "Optiones"
+
+#~ msgid "Print only selected text"
+#~ msgstr "Imprime solmente texto seligite"
+
+#~ msgid "Respect &expand/collapse quote marks settings"
+#~ msgstr "Respecta preferentias de marcas citate per &expander/plicar"
+
+#~ msgid "Print background color and images"
+#~ msgstr "Imprime color de fundo e imagines"
+
+#~ msgid "Viewer settings"
+#~ msgstr "Preferentias de visor"
+
+#, fuzzy
+#~| msgid "&Override character encoding:"
+#~ msgid "O&verride character encoding:"
+#~ msgstr "&Ignorar codifica de character:"
+
+#~ msgid "Enable access key"
+#~ msgstr "Habilita clave de accesso"
+
+#, fuzzy
+#~| msgid "Show &HTML status bar"
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "Monstrar barra de stato de &HTML"
+
+#~ msgid "Replace smileys &by emoticons"
+#~ msgstr "Reimplaciar smileys &per emoticones"
+
+#~ msgid "Reduce font size for &quoted text"
+#~ msgstr "Reducer dimension de font per texto &citate"
+
+#~ msgid "Show &expand/collapse quote marks"
+#~ msgstr "Monstrar marcas citate de &expander/plicar"
+
+#, fuzzy
+#~| msgid "Automatic collapse level:"
+#~ msgid "Automatic collapse &level:"
+#~ msgstr "Nivello de plicar automatic:"
+
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "Monstrar stato de spam &in capites phantasia "
+
+#, fuzzy
+#~| msgid "Minimum font size:"
+#~ msgid "&Minimum font size:"
+#~ msgstr "Grandor de font minime:"
+
+#~ msgid ""
+#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr ""
+#~ "Un file de nomine \"%1\" jam existe. Vos es secur que vos vole super "
+#~ "scriber lo?"
+
+#~ msgid "Overwrite File?"
+#~ msgstr "Super scriber le file?"
+
+#~ msgid "Save Attachments To"
+#~ msgstr "Salvar Attachamento a"
+
+#~ msgctxt "filename for an unnamed attachment"
+#~ msgid "attachment.1"
+#~ msgstr "Attachamento.1"
+
+#~ msgid "Save Attachment"
+#~ msgstr "Salvar Attachamento"
+
+#~ msgctxt "filename for the %1-th unnamed attachment"
+#~ msgid "attachment.%1"
+#~ msgstr "Attachamento.%1"
+
+#~ msgid ""
+#~ "The part %1 of the message is encrypted. Do you want to keep the "
+#~ "encryption when saving?"
+#~ msgstr ""
+#~ "Le parte %1 del message es cryptate. Tu vole mantener le cryptation "
+#~ "quando on salva?"
+
+#~ msgid "KMail Question"
+#~ msgstr "Demanda de KMail"
+
+#~ msgid "Keep Encryption"
+#~ msgstr "Mantener Cryption"
+
+#~ msgid "Do Not Keep"
+#~ msgstr "Non mantener"
+
+#~ msgid ""
+#~ "The part %1 of the message is signed. Do you want to keep the signature "
+#~ "when saving?"
+#~ msgstr ""
+#~ "Le parte %1 del message es signate Tu vole mantener le signatura quando "
+#~ "on salva?"
+
+#~ msgid "Keep Signature"
+#~ msgstr "mantener Signatura"
+
+#~ msgctxt "1 = file name, 2 = error string"
+#~ msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
+#~ msgstr ""
+#~ "<qt>On non pote scriber a file <br><filename>%1</filename><br><br>%2"
+
+#~ msgid "Error saving attachment"
+#~ msgstr "Error durante que on salvava attachamento"
+
+#~ msgid "Found no attachments to save."
+#~ msgstr "Trovate necun attachamento de salvar."
+
+#~ msgid "message"
+#~ msgstr "message"
+
+#, fuzzy
+#~| msgid ""
+#~| "*.mbox|email messages (*.mbox)\n"
+#~| "*|all files (*)"
+#~ msgid "email messages (*.mbox);;all files (*)"
+#~ msgstr ""
+#~ "*.mbox|message de e-posta (*.mbox)\n"
+#~ "*"
+
+#~ msgid "Save Message"
+#~ msgid_plural "Save Messages"
+#~ msgstr[0] "Salveguarda message"
+#~ msgstr[1] "Salveguarda messages"
+
+#~ msgid "File %1 could not be loaded."
+#~ msgstr "Le file %1 non pote esser cargate."
+
+#~ msgid "Error loading message"
+#~ msgstr "Error durante que il cargava message"
+
+#~ msgid "File %1 could not be created."
+#~ msgstr "File %1 non poteva esser create"
+
+#~ msgid "Error saving message"
+#~ msgstr "Error durante que on salveguardava message"
+
+#~ msgid "We cannot save message."
+#~ msgstr "Nos non pote salveguardar message."
+
+#~ msgid "Open &with %1"
+#~ msgstr "Aperi &con %1"
+
+#~ msgctxt "@item:inmenu Open With, %1 is application name"
+#~ msgid "%1"
+#~ msgstr "%1"
+
+#~ msgid "Edit with:"
+#~ msgstr "Edita con:"
+
+#~ msgid ""
+#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
+#~ "loss, editing the attachment will be aborted."
+#~ msgstr ""
+#~ "KMail es incapace de relevar quando le editor seligite es claudite. Pro "
+#~ "evitar perdita de datos, le editar de attachamento essera abortate."
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "Incapace de editar attachamento"
+
+#~ msgid "body part"
+#~ msgstr "Parte de corpore"
+
+#~ msgid "Description"
+#~ msgstr "Description"
+
+#~ msgid "Type"
+#~ msgstr "Typo"
+
+#~ msgid "Size"
+#~ msgstr "Dimension"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "Plugin sin nomine"
+
+#~ msgid "No description available"
+#~ msgstr "Necun Description disponibile"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgid "Move To Trash"
+#~ msgstr "Move a corbe"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply To All"
+#~ msgstr "Responder a: "
+
+#, fuzzy
+#~| msgid "Decrypt Message"
+#~ msgid "Print Message"
+#~ msgstr "Decryptar Message"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview Message"
+#~ msgstr "Salveguarda message"
+
+#~ msgid "Turn on HTML rendering for this message."
+#~ msgstr "Activar le render HTML pro iste message"
+
+#~ msgid "Load external references from the Internet for this message."
+#~ msgstr "Cargar referentias externe ex le internet pro ist emessage."
+
+#~ msgid "Work online."
+#~ msgstr "Travaliar in linea."
+
+#~ msgid "Make account online."
+#~ msgstr "Face conto in linea."
+
+#~ msgid "Decrypt message."
+#~ msgstr "Decryptar Message."
+
+#~ msgid "Show signature details."
+#~ msgstr "Monstrar detalios de signatura."
+
+#~ msgid "Hide signature details."
+#~ msgstr "Celar detalios de signatura."
+
+#~ msgid "Show attachment list."
+#~ msgstr "Monstrar lista de attachamento."
+
+#~ msgid "Hide attachment list."
+#~ msgstr "Celar lista de attachamento."
+
+#~ msgid "Show full \"To\" list"
+#~ msgstr "Monstrar lista complete de \"A\""
+
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "Celar lista complete de \"A\""
+
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "Monstrar lista complete de \"CC\""
+
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "Celar lista complete de \"CC\""
+
+#~ msgid "Expand all quoted text."
+#~ msgstr "Expander omne texto citate."
+
+#~ msgid "Collapse quoted text."
+#~ msgstr "Plicar texto citate."
+
+#~ msgid "Could not start certificate manager. Please check your installation."
+#~ msgstr ""
+#~ "Il non pote initiar gestion de certificato; pro favor tu verifica tu "
+#~ "installation."
+
+#~ msgid "KMail Error"
+#~ msgstr "Error de KMail"
+
+#~ msgid "Show certificate 0x%1"
+#~ msgstr "Monstrar certificato 0x%1"
+
+#~ msgid "&Open in Address Book"
+#~ msgstr "&Aperir Agenda de Adresse"
+
+#~ msgid "&Copy Email Address"
+#~ msgstr "&Copiar adresse de e-posta"
+
+#~ msgid "Address copied to clipboard."
+#~ msgstr "Adresse copiate a Area de transferentia (clipboard)."
+
+#~ msgid "Lookup the contact in KAddressbook"
+#~ msgstr "Cercar le contacto in Kaddressbook"
+
+#~ msgid "Attachment: %1"
+#~ msgstr "Attachamento: %1"
+
+#~ msgid "Encapsulated Message (Subject: %1)"
+#~ msgstr "Message encaopsulate (Subjecto: %1)"
+
+#~ msgid "Encapsulated Message"
+#~ msgstr "Message Encapsulate"
+
+#~ msgid "Unnamed attachment"
+#~ msgstr "Attachamento sin nomine"
+
+#~ msgid "Show GnuPG Audit Log for this operation"
+#~ msgstr "Monstrar registro de Audit GnuPG pro iste operation"
+
+#~ msgid "Opening URL..."
+#~ msgstr "Aperir URL..."
+
+#~ msgctxt "@info"
+#~ msgid "Do you really want to execute <filename>%1</filename>?"
+#~ msgstr "Tu realmente vole executar <filename>%1</filename>?"
+
+#~ msgid "Execute"
+#~ msgstr "Executar"
+
+#~ msgid "Loading message..."
+#~ msgstr "Cargante Message ..."
+
+#~ msgid ""
+#~ "Deleting an attachment from an encrypted or old-style mailman message is "
+#~ "not supported."
+#~ msgstr ""
+#~ "Deler un attachamento ex un message cryptate o mailman de vetule style "
+#~ "non es supportate."
+
+#~ msgid "Delete Attachment"
+#~ msgstr "Deler Attachamento"
+
+#~ msgid ""
+#~ "Deleting an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr ""
+#~ "Deler un attachamento poterea invalidar omne signatura digital sur iste "
+#~ "message."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Aperi con"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "A&ltere..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Aperi con..."
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "Aperir"
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "Vider"
+
+#~ msgid "Scroll To"
+#~ msgstr "Rolar a"
+
+#~ msgid "Save As..."
+#~ msgstr "Salvar como..."
+
+#~ msgid "Copy"
+#~ msgstr "Copiar"
+
+#~ msgid "Properties"
+#~ msgstr "Proprietates"
+
+#, fuzzy
+#~| msgid "KMail Error"
+#~ msgid "KMail"
+#~ msgstr "Error de KMail"
+
+#, fuzzy
+#~| msgid "The KDE email client."
+#~ msgid "The KDE Mail Client"
+#~ msgstr "Le cliente de e-posta de KDE."
+
+#~ msgid "View Attachment: %1"
+#~ msgstr "Vider Attachamento: %1"
+
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "&Attachamentos"
+
+#~ msgid "Choose display style of attachments"
+#~ msgstr "Seliger stilo de monstrar de attachamentos"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&As Icons"
+#~ msgstr "&Como Icones"
+
+#~ msgid "Show all attachments as icons. Click to see them."
+#~ msgstr "Monstrar omne attachamentos como icones. Tu pulsa pro vider los."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Smart"
+#~ msgstr "&Intelligente"
+
+#~ msgid "Show attachments as suggested by sender."
+#~ msgstr "Monstrar attachamentos como suggestionate per mittente."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Inline"
+#~ msgstr "&In Linea"
+
+#~ msgid "Show all attachments inline (if possible)"
+#~ msgstr "Monstrar omne attachamentos in linea (si possibile)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "&Celar"
+
+#~ msgid "Do not show attachments in the message viewer"
+#~ msgstr "Non monstrar attachamentos in le visor de message"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "In Header Only"
+#~ msgstr "Solmente in Capite"
+
+#~ msgid "Show Attachments only in the header of the mail"
+#~ msgstr "Monstrar Attachamentos solmente in capite del e-posta"
+
+#~ msgid "&Set Encoding"
+#~ msgstr "&Fixar codifica"
+
+#~ msgid "Auto"
+#~ msgstr "Auto"
+
+#~ msgid "Select All Text"
+#~ msgstr "Seliger omne texto"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Copiar le adresse de ligamine"
+
+#~ msgid "Open URL"
+#~ msgstr "Aperir URL"
+
+#~ msgid "Show Message Structure"
+#~ msgstr "Monstrar Structura de Message"
+
+#~ msgid "&View Source"
+#~ msgstr "&Vider Fonte"
+
+#~ msgid "&Save message..."
+#~ msgstr "&Salveguardamessage"
+
+#~ msgid "&Save Display Format"
+#~ msgstr "&Salveguarda formato de monstrar"
+
+#~ msgid "&Reset Display Format"
+#~ msgstr "&Refixa formato de monstrar"
+
+#~ msgid "Scroll Message Up"
+#~ msgstr "Rolar Message in alto"
+
+#~ msgid "Scroll Message Down"
+#~ msgstr "Rolar Message a Basso"
+
+#~ msgid "Scroll Message Up (More)"
+#~ msgstr "Rolar Message in alto (altere)"
+
+#~ msgid "Scroll Message Down (More)"
+#~ msgstr "Rolar Message a Basso (altere)"
+
+#~ msgid "Toggle HTML Display Mode"
+#~ msgstr "Alternar modo de Monstrator HTML"
+
+#~ msgid "Toggle display mode between HTML and plain text"
+#~ msgstr "Alternar modo de Monstrator inter texto plan e HTML"
+
+#~ msgid "Load external references"
+#~ msgstr "Carga referentias externe"
+
+#~ msgid "Speak Text"
+#~ msgstr "Pronuncia texto"
+
+#~ msgid "Copy Image Location"
+#~ msgstr "Copia location del imagine"
+
+#~ msgid "&Find in Message..."
+#~ msgstr "&Trova in message ..."
+
+#~ msgid "Save &As..."
+#~ msgstr "S&alvar como ..."
+
+#~ msgid "Open With..."
+#~ msgstr "Aperir con..."
+
+#~ msgid "Save All Attachments..."
+#~ msgstr "Salvar omne Attachamentos..."
+
+#~ msgid "Copy Email Address"
+#~ msgstr "Copiar adresse de e-posta"
+
+#~ msgid "Message as Plain Text"
+#~ msgstr "Message como texto Plan"
+
+#~ msgid "Attachments:"
+#~ msgstr "Attachamentos:"
+
+#~ msgid "URL copied to clipboard."
+#~ msgstr "URL copiate a area de transferentia."
+
+#~ msgid "Hide full address list"
+#~ msgstr "Celar lista complete de adresse"
+
+#~ msgid "Show full address list"
+#~ msgstr "Monstrar lista complete de adresse"
+
+#~ msgid "Message loading failed: %1."
+#~ msgstr "Il falleva a cargar message: %1."
+
+#~ msgid "Message not found."
+#~ msgstr "Message non trovate."
+
+#~ msgid ""
+#~ "Open attachment '%1'?\n"
+#~ "Note that opening an attachment may compromise your system's security."
+#~ msgstr ""
+#~ "Aperir attachamento '%1'?\n"
+#~ "Tu nota que aperir un attachamento pote compromitter le securitate de tu "
+#~ "systema."
+
+#~ msgid "Open Attachment?"
+#~ msgstr "Aperir Attachamento?"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr "&Aperir con '%1'"
+
+#~ msgid "&Open With..."
+#~ msgstr "&Aperir con..."
+
+#~ msgid "Do not ask again"
+#~ msgstr "Non demanda de nove"
+
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+#~ msgstr ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+
+#~ msgctxt "'No HTML Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#~ ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#~ msgstr ""
+#~ "<qt><br />N<br />e<br />c<br />u<br />n<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e<br /> <br />H<br />T<br />M<br />L</qt>"
+
+#~ msgctxt "'Plain Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e<br /></qt>"
+#~ msgstr ""
+#~ "<qt><br />M<br />e<br />s<br />s<br />a<br />g<br />e<br /> <br />P<br /"
+#~ ">l<br />a<br />n<br /></qt>"
+
+#~ msgid "Click to toggle between HTML and plain text."
+#~ msgstr "Pulsar pro alternar inter  HTML e Texto Plan"
+
+#~ msgid ""
+#~ "<qt>Invitations are normally sent as attachments to a mail. This switch "
+#~ "changes the invitation mails to be sent in the text of the mail instead; "
+#~ "this is necessary to send invitations and replies to Microsoft Outlook."
+#~ "<br />But, when you do this, you no longer get descriptive text that mail "
+#~ "programs can read; so, to people who have email programs that do not "
+#~ "understand the invitations, the resulting messages look very odd.<br /"
+#~ ">People that have email programs that do understand invitations will "
+#~ "still be able to work with this.</qt>"
+#~ msgstr ""
+#~ "<qt>Invitationes es normalmente inviate como attachamentos a un e-posta. "
+#~ "Iste commutator face assi que e-postas de invitation sia inviate in vice "
+#~ "in le texto: Isto es necessari pro inviar invitationes e responsas a "
+#~ "Microsoft Outlook.<br /> Ma, quando tu face isto, tu non pote plus "
+#~ "obtener texto descriptive que programmas de e-posta pote leger: assi, pro "
+#~ "personas que ha programmas de e-postas que non comprende le invitationes, "
+#~ "le messages resultante es multe bizarre.<br /> Personas que ha programmas "
+#~ "que comprende invitationes ancora essera capace de travaliar con isto.</"
+#~ "qt> "
+
+#~ msgctxt "Unchanged mail message"
+#~ msgid "Raw Source"
+#~ msgstr "Fonte brute"
+
+#~ msgid ""
+#~ "Raw, unmodified mail as it is stored on the filesystem or on the server"
+#~ msgstr ""
+#~ "Brute, e-posta sin modifica como il es immagazinate sur le systema de "
+#~ "file o sur le servitor"
+
+#~ msgctxt "Mail message as shown, in HTML format"
+#~ msgid "HTML Source"
+#~ msgstr "Fonte HTML"
+
+#~ msgid "HTML code for displaying the message to the user"
+#~ msgstr "Codice HTML pro monstrar le message a le usator"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgstr "Aperi dossier ubi le attachamento esseva salveguardate"
+
+#~ msgid "vCard Viewer"
+#~ msgstr "Visor de VCard"
+
+#~ msgid "&Import"
+#~ msgstr "&Importar"
+
+#, fuzzy
+#~| msgid "&Next Card"
+#~ msgid "&Next Card"
+#~ msgstr "Proxime &Card"
+
+#, fuzzy
+#~| msgid "&Previous Card"
+#~ msgid "&Previous Card"
+#~ msgstr "&Previe Card"
+
+#~ msgid "&Zoom In"
+#~ msgstr "&Zoom In (aggrandir)"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "Zoom&Out (diminue)"
+
+#~ msgid "Reset"
+#~ msgstr "Reinitialisa"
+
+#, fuzzy
+#~| msgid "&Zoom In"
+#~ msgid "Zoom"
+#~ msgstr "&Zoom In (aggrandir)"
+
+#~ msgid "Close"
+#~ msgstr "Claude"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "Tro&va:"
+
+#~ msgid "Text to search for"
+#~ msgstr "Texto de cercar"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Proxime"
+
+#~ msgid "Jump to next match"
+#~ msgstr "Il salta a le proxime objecto equal"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Precedente"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "Il salta a le previe objecto equal"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "Modificar comportamento de cerca"
+
+#~ msgid "Case sensitive"
+#~ msgstr "Sensibile a le Caso"
+
+#, fuzzy
+#~| msgid "Message not found."
+#~ msgid "Phrase not found"
+#~ msgstr "Message non trovate."
+
+#~ msgid "Blockable Items"
+#~ msgstr "Elementos blocabile"
+
+#~ msgid "No blockable element found."
+#~ msgstr "Il trovava necun elemento blocabile"
+
+#~ msgid "Filter"
+#~ msgstr "Filtro"
+
+#~ msgid "Address"
+#~ msgstr "Adresse"
+
+#~ msgid "Search..."
+#~ msgstr "Il cerca ..."
+
+#~ msgid "Image"
+#~ msgstr "Imagine"
+
+#~ msgid "Script"
+#~ msgstr "Script"
+
+#~ msgid "Stylesheet"
+#~ msgstr "Folio de stilo"
+
+#~ msgid "Font"
+#~ msgstr "Font"
+
+#~ msgid "Frame"
+#~ msgstr "Quadro"
+
+#~ msgid "XML Request"
+#~ msgstr "Requesta XML"
+
+#~ msgid "Object"
+#~ msgstr "Objecto"
+
+#~ msgid "Audio/Video"
+#~ msgstr " Audio/ Video"
+
+#~ msgid "Popup window"
+#~ msgstr "Fenestra de Popup"
+
+#~ msgid "Unknown"
+#~ msgstr "Incognite"
+
+#~ msgid "Copy url"
+#~ msgstr "Copia URL"
+
+#~ msgid "Copy filter"
+#~ msgstr "Copia filtro"
+
+#~ msgid "Block item..."
+#~ msgstr "Bloca elemento..."
+
+#~ msgid "Open"
+#~ msgstr "Aperi"
+
+#~ msgid "Remove filter"
+#~ msgstr "Remove filtro"
+
+#~ msgid "Download new ad-block list was failed."
+#~ msgstr "Il falleva discargar nove ad-block."
+
+#~ msgid "Download new ad-block list was done."
+#~ msgstr "Il terminava discargar nove lista de ad-block."
+
+#~ msgid "Add subscription"
+#~ msgstr "Adde subscription"
+
+#~ msgid "Select List:"
+#~ msgstr "Selige lista:"
+
+#, fuzzy
+#~| msgid "Show List..."
+#~ msgid "Show List"
+#~ msgstr "Monstra lista..."
+
+#~ msgid "Use default"
+#~ msgstr "Usa valores predefinite"
+
+#~ msgid "Yes"
+#~ msgstr "Si"
+
+#~ msgid "Not"
+#~ msgstr "Non"
+
+#~ msgid "Not subscription added..."
+#~ msgstr "Necun subscription addite..."
+
+#~ msgid ""
+#~ "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">more information</a>):"
+#~ msgstr ""
+#~ "<qt>Filtra expression (p.ex. <tt>http://www.example.com/ad/*</tt>, <a "
+#~ "href=\"filterhelp\">altere information</a>):"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " die"
+#~ msgstr[1] "dies"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~| "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~| "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~| "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~| "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~| "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes "
+#~| "priority over any blacklist (blocking) filter."
+#~ msgid ""
+#~ "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~ "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~ "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~ "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~ "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~ "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes priority "
+#~ "over any blacklist (blocking) filter.<br><a href='%1'>%2</a></qt>"
+#~ msgstr ""
+#~ "<qt><p>Inserta un expression de filtrar. Filtros pote esser definite sia "
+#~ "como:<ul><li>un wildcard de stilo shell, p.ex. <tt>http://www.example.com/"
+#~ "ads*</tt>, le wildcardes <tt>*?[]</tt> essera usate</li><li>un integre "
+#~ "expression regular per circumferer le catena con '<tt>/</tt>', p.ex. <tt>/"
+#~ "\\/(ad|banner)\\./</tt></li></ul><p>Omne catena de filtro pote esser "
+#~ "precedite per '<tt>@@</tt>' a lista blanc (permittente) omne URL "
+#~ "coincidente, que il prende prioritate super omne lista nigre (blocante) "
+#~ "de filtro."
+
+#~ msgid "Do you want to delete list \"%1\"?"
+#~ msgstr "Tu vole deler lista \"%1\"?"
+
+#~ msgid "Delete current list"
+#~ msgstr "Dele lista currente"
+
+#, fuzzy
+#~| msgid "*|all files (*)"
+#~ msgid "All Files (*)"
+#~ msgstr "*|Omne files (*)"
+
+#~ msgid "Import Filters"
+#~ msgstr "Importa filtros"
+
+#~ msgid "Export Filters"
+#~ msgstr "Exporta filtros"
+
+#~ msgid "Show adblock list"
+#~ msgstr "Monstra lista de adblock (bloco de reclamos)"
+
+#, fuzzy
+#~| msgid "Delete current list"
+#~ msgid "Delete List"
+#~ msgstr "Dele lista currente"
+
+#~ msgid "Download..."
+#~ msgstr "Discarga..."
+
+#~ msgid "An error occurs during download list: \"%1\""
+#~ msgstr "Un error occurreva quando on discargava lista: \"%1\""
+
+#~ msgid "Filters:"
+#~ msgstr "Filtros:"
+
+#, fuzzy
+#~| msgid "Blocking filter"
+#~ msgid "&Blocking filter"
+#~ msgstr "Blocante filtro"
+
+#~ msgid "Exception Filter"
+#~ msgstr "Filtro de exception"
+
+#~ msgid "Pattern"
+#~ msgstr "Patrono"
+
+#~ msgid "custom"
+#~ msgstr "personalisate"
+
+#~ msgid "Accept pattern only"
+#~ msgstr "Accepta solmente patrono"
+
+#~ msgid "At the beginning of the address"
+#~ msgstr "Al initio del adresse"
+
+#~ msgid "At the end of address"
+#~ msgstr "Al fin del adresse"
+
+#~ msgid "First-part only"
+#~ msgstr "Solmente le prime parte"
+
+#~ msgid "Match case"
+#~ msgstr "Distingue inter majusculas e minusculas"
+
+#~ msgid "Restrict to domain"
+#~ msgstr "Restringe a dominio"
+
+#~ msgid "Apply to:"
+#~ msgstr "Applica  a:"
+
+#~ msgid "Collapse blocked:"
+#~ msgstr "Plicar blocate:"
+
+#~ msgid "&Enable Ad Block"
+#~ msgstr "&Habilita Bloco de reclamos"
+
+#~ msgid "&Hide filtered elements"
+#~ msgstr "&Cela elementos filtrate"
+
+#~ msgid "Automatic Filters"
+#~ msgstr "Filtros automatic"
+
+#~ msgid "Add Filters subscriptions..."
+#~ msgstr "Adde subscriptiones de filtros..."
+
+#~ msgid "Remove subscription"
+#~ msgstr "Remove subscription"
+
+#~ msgid "Update enabled automatic filters every:"
+#~ msgstr "Actualisa filtros automatic habilitate omne:"
+
+#~ msgid "Show List..."
+#~ msgstr "Monstra lista..."
+
+#~ msgid "Manual Filters"
+#~ msgstr "Filtros manual"
+
+#~ msgid "Add filter expression"
+#~ msgstr "Adde expression de filtro"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Import Filters..."
+#~ msgstr "Importa filtros..."
+
+#~ msgid "Export filters..."
+#~ msgstr "Exporta filtros..."
+
+#~ msgid "Search:"
+#~ msgstr "Cerca:"
+
+#~ msgid "Remove filter expression"
+#~ msgstr "Remove expresion de filtro"
+
+#~ msgid "Remove Filter"
+#~ msgstr "Remove filtro"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "Evidentiar omne coincidentias"
+
+#~ msgid "Zoom only text"
+#~ msgstr "Aggrandi solmente texto"
+
+#~ msgid "Block image"
+#~ msgstr "Bloca imagine "
+
+#~ msgid "Open Blockable Items..."
+#~ msgstr "Aperi elementos blocabile..."
+
+#~ msgid "Blocked by ad filter"
+#~ msgstr "Blocate per filtro de annuncios"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "Aggrandi solmente texto"
+
+#~ msgid "No Audit Log available"
+#~ msgstr "Necun registro de Audit disponibile"
+
+#~ msgid "Error Retrieving Audit Log: %1"
+#~ msgstr "Error durante que on recuperava registro de Audit: %1"
+
+#~ msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+#~ msgid "Show Audit Log"
+#~ msgstr "Monstrar Registro de Audit"
+
+#~ msgid "The crypto engine returned no cleartext data."
+#~ msgstr "Le motor de crypto retornava necun datos de texto clar."
+
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "(Incognite)"
+
+#~ msgid "New or changed: %1 (secret key available)"
+#~ msgstr "Nove o Modificate: %1 (clave secrete disponibile)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "Nove o modificate: %1"
+
+#~ msgid "Crypto plug-in \"%1\" is not initialized."
+#~ msgstr "Plug-in de Crypto \"%1\" non es initialisate."
+
+#~ msgid "Expand Short URL"
+#~ msgstr "Expande Url breve "
+
+#~ msgid "Headers:"
+#~ msgstr "Capites:"
+
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "Configura capites personalisate..."
+
+#~ msgid "Only show the headers listed below"
+#~ msgstr "Monstra solmente le capites listate a basso"
+
+#~ msgid "Show all but hide the headers listed below"
+#~ msgstr "Monstra toto ma cela le capites listate a basso"
+
+#~ msgid "A&dd..."
+#~ msgstr "A&dde..."
+
+#~ msgid "Remo&ve"
+#~ msgstr "Remo&ve"
+
+#~ msgid "&Modify..."
+#~ msgstr "&Modifica..."
+
+#~ msgid "Header:"
+#~ msgstr "Capite:"
+
+#, fuzzy
+#~| msgid "Create Todo"
+#~ msgid "Create ToDo"
+#~ msgstr "Crea De Facer"
+
+#, fuzzy
+#~| msgid "Create Todo"
+#~ msgid "Create To-Do"
+#~ msgstr "Crea De Facer"
+
+#~ msgid "Au&tomatic collapse level:"
+#~ msgstr "Nivello au&tomatic de plicar:"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "&Omne Capites"
+
+#~ msgid "Show all message headers"
+#~ msgstr "Monstrar omne capites de message"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "Capites &Breve"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "Monstrar lista breve de capites de messages"
+
+#~ msgid "%1: "
+#~ msgstr "%1: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "&Capites personalisate"
+
+#~ msgid "Show custom headers"
+#~ msgstr "Monstra capites personalisate"
+
+#~ msgid "To: "
+#~ msgstr "A: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "Capites &Enterprise"
+
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "Monstrar le lista de capites in stilo Enterprise"
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(re-inviate ex %1)"
+
+#~ msgid "(receiver was %1)"
+#~ msgstr "(destinatario  esseva %1)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "A: "
+
+#~ msgid "User-Agent: "
+#~ msgstr "Agente de Usator: "
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-Mailer: "
+
+#~ msgid "Bugzilla: "
+#~ msgstr "Bugzilla: "
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "MDN To: "
+#~ msgstr "A: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "Capites de &Phantasia"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "Monstrar le lista de capites in un formato phantasia"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "Capites &Longe"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "Monstrar lista longe de capites de message"
+
+#~ msgid "Event:"
+#~ msgstr "Evento:"
+
+#~ msgid "Start:"
+#~ msgstr "Initia:"
+
+#~ msgid "Select start time for event."
+#~ msgstr "Selige tempore de initio per le evento."
+
+#~ msgid "End:"
+#~ msgstr "Termina:"
+
+#~ msgid "Select end time for event."
+#~ msgstr "Selige tempore de fin per le evento."
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Open &editor..."
+#~ msgstr "Aperir con..."
+
+#, fuzzy
+#~| msgid "Close widget to create new Todo"
+#~ msgid "Close the widget for creating new events."
+#~ msgstr "Crea widget per crear nove action de facer (Todo)"
+
+#, fuzzy
+#~| msgid "Create Event"
+#~ msgid "Create Event..."
+#~ msgstr "Crea  evento"
+
+#~ msgid "Create Event"
+#~ msgstr "Crea  evento"
+
+#, fuzzy
+#~| msgid "Close widget to create new Todo"
+#~ msgid "Close the widget for creating new notes."
+#~ msgstr "Crea widget per crear nove action de facer (Todo)"
+
+#, fuzzy
+#~| msgid "Edit with:"
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "Edita con:"
+
+#, fuzzy
+#~| msgid "Create Todo"
+#~ msgctxt "create a new note out of this message"
+#~ msgid "Create Note"
+#~ msgstr "Crea De Facer"
+
+#, fuzzy
+#~| msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgid "Allows you to create a note from this message"
+#~ msgstr ""
+#~ "Il permitte te de crear un calendario de facer o memento ex iste message"
+
+#, fuzzy
+#~| msgid ""
+#~| "This option starts the KOrganizer to-do editor with initial values taken "
+#~| "from the currently selected message. Then you can edit the to-do to your "
+#~| "liking before saving it to your calendar."
+#~ msgid ""
+#~ "This option starts an editor to create a note. Then you can edit the note "
+#~ "to your liking before saving it."
+#~ msgstr ""
+#~ "Iste option initia le editor de-facer de KOrganizer con valores initial "
+#~ "prendite ex le message currentemente selectionate. Postea tu pote "
+#~ "modificar le de-facer a tu placer ante que salvar lo in tu calendario."
+
+#~ msgid "Todo:"
+#~ msgstr "De facer:"
+
+#, fuzzy
+#~| msgid "Close widget to create new Todo"
+#~ msgid "Close the widget for creating new todos."
+#~ msgstr "Crea widget per crear nove action de facer (Todo)"
+
+#~ msgid "Reply to \"%1\""
+#~ msgstr "Responde a \"%1\" "
+
+#~ msgid "Create To-do"
+#~ msgstr "Crea de-facer(To-do)"
+
+#~ msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgstr ""
+#~ "Il permitte te de crear un calendario de facer o memento ex iste message"
+
+#~ msgid ""
+#~ "This option starts the KOrganizer to-do editor with initial values taken "
+#~ "from the currently selected message. Then you can edit the to-do to your "
+#~ "liking before saving it to your calendar."
+#~ msgstr ""
+#~ "Iste option initia le editor de-facer de KOrganizer con valores initial "
+#~ "prendite ex le message currentemente selectionate. Postea tu pote "
+#~ "modificar le de-facer a tu placer ante que salvar lo in tu calendario."
+
+#~ msgid "Translate..."
+#~ msgstr "Traduce..."
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-obtain-keys\" function. Please "
+#~ "report this bug."
+#~ msgstr ""
+#~ "Retro parte de Chiasmus non offere le function \"x-obtain-keys\". Pro "
+#~ "favor tu reporta iste bug."
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "Error de retro parte de Chiasmus"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-obtain-keys\" "
+#~ "function did not return a string list. Please report this bug."
+#~ msgstr ""
+#~ "Valor de retorno non expectate ex Retro parte de Chiasmus. Le function "
+#~ "\"x-obtain-keys\" non retornava un lista de corda. Pro favor tu reporta "
+#~ "iste bug."
+
+#~ msgid ""
+#~ "No keys have been found. Please check that a valid key path has been set "
+#~ "in the Chiasmus configuration."
+#~ msgstr ""
+#~ "Necun clave ha essite trovate. Pro favor, tu verifica que un valide "
+#~ "percurso de clave ha essite fixate in le configuration de Chiasmus."
+
+#~ msgid "Chiasmus Decryption Key Selection"
+#~ msgstr "Selection de Clave de Deryption de Chiasmus"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-decrypt\" function. Please report "
+#~ "this bug."
+#~ msgstr ""
+#~ "Retro parte de Chiasmus non offere le function \"x-decrypt\". Pro favor "
+#~ "tu reporta iste bug."
+
+#~ msgid ""
+#~ "The \"x-decrypt\" function does not accept the expected parameters. "
+#~ "Please report this bug."
+#~ msgstr ""
+#~ "Le function \"x-decrypt\" non da acceptation pro le parametros expectate. "
+#~ "Pro favor, tu reporta iste bug."
+
+#~ msgid "Chiasmus Decryption Error"
+#~ msgstr "Error de decryptation de Chiasmus"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-decrypt\" function "
+#~ "did not return a byte array. Please report this bug."
+#~ msgstr ""
+#~ "Valor de retorno non expectate ex Retro parte de Chiasmus Le function \"x-"
+#~ "decrypt\" non retornava un array de byte. Pro favor tu reporta iste bug."
+
+#~ msgid "Please select the Chiasmus key file to use:"
+#~ msgstr "Pro favor tu selige le file de clave de Chiasmus de usar:"
+
+#~ msgid "Additional arguments for chiasmus:"
+#~ msgstr "Argumentos additional pro chiasmus:"
+
+#~ msgid "Decrypt With Chiasmus..."
+#~ msgstr "Decryptar  con Chiasmus..."
+
+#, fuzzy
+#~| msgid "Use default"
+#~ msgid "Use Default Image"
+#~ msgstr "Usa valores predefinite"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgctxt "add space before image"
+#~ msgid " image"
+#~ msgid_plural " images"
+#~ msgstr[0] "Imagine"
+#~ msgstr[1] "Imagine"
+
+#, fuzzy
+#~| msgid "Configure Custom Headers..."
+#~ msgid "Configure..."
+#~ msgstr "Configura capites personalisate..."
+
+#~ msgid "Toggle Caret Browsing"
+#~ msgstr "Commuta cerca de symbolo de omission (caret)"
+
+#~ msgid "Caret Browsing will be activated. Switch off with F7 shortcut."
+#~ msgstr ""
+#~ "cerca de symbolo de omission (caret) essera activate. Tu pot edeactivar "
+#~ "lo con l evia breve F7."
+
+#~ msgid "Activate Caret Browsing"
+#~ msgstr "Activa cerca de symbolo de omission (caret)"
+
+#~ msgid "Allow to delete attachments of existing mails."
+#~ msgstr "Permitter de deler attachamentos de e-postas existente."
+
+#~ msgid "Message Structure Viewer Placement"
+#~ msgstr "Placiamento de Visor de Structura de Message"
+
+#~ msgid "Above the message pane"
+#~ msgstr "Supra le vitro de message"
+
+#~ msgid "Below the message pane"
+#~ msgstr "Infra le vitro de message"
+
+#~ msgid "Number of addresses to show before collapsing"
+#~ msgstr "Numero de adresse de monstrar prime de plicar"
+
+#~ msgid "Fallback character e&ncoding:"
+#~ msgstr "Codifica de &character de recurso:"
+
+#~ msgid ""
+#~ "When encountering a Toltec scheduling message, display a custom "
+#~ "replacement text for it."
+#~ msgstr ""
+#~ "Quando on incontra un message de planification de Toltec, il monstra un "
+#~ "texto de reimplaciamento personalisate pro illo."
+
+#~ msgid ""
+#~ "The text that will be displayed as a replacement when encountering Toltec "
+#~ "scheduling messages."
+#~ msgstr ""
+#~ "Le texto que essera monstrate como reimplaciamento quando on incontra "
+#~ "messages de planification de Toltec."
+
+#~ msgid ""
+#~ "This message is a <i>Toltec</i> Groupware object, it can only be viewed "
+#~ "with Microsoft Outlook in combination with the Toltec connector."
+#~ msgstr ""
+#~ "Isto message es un objecto de <i>Toltec</i> Groupware. Il pote esser "
+#~ "vidite solmente per Microsoft Outlook in combination con le connector "
+#~ "Toltec. "
+
+#~ msgid "Show Raw Message"
+#~ msgstr "Monstrar message brute"
+
+#, fuzzy
+#~| msgid "*|all files (*)"
+#~ msgid "all files (*)"
+#~ msgstr "*|Omne files (*)"
+
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Il falleva a initiar le servicio texto-a-Voce Jovie"
+
+#~ msgid "sent: "
+#~ msgstr "inviate: "
+
+#~ msgid "Encrypted data not shown"
+#~ msgstr "Datos Cryptate non monstrate"
+
+#~ msgid ""
+#~ "Beginning of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Initio de message attingite.\n"
+#~ "Phrase '%1' non poteva esser trovate."
+
+#~ msgid ""
+#~ "End of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Fin de message attingite.\n"
+#~ "Phrase '%1' non poteva esser trovate."
+
+#, fuzzy
+#~| msgid "The most recent selected folder using for Todo."
+#~ msgid "The most recently selected folder used for Todos."
+#~ msgstr "Le dossier plus recente seligite usanter Activitate de facer (Todo)"
+
+#~ msgid "The message could not be decrypted."
+#~ msgstr "Le message non poteva esser decryptate."
+
+#~ msgid ""
+#~ "Could not write the file %1:\n"
+#~ "\"%2\" is the detailed error description."
+#~ msgstr ""
+#~ "Il non pote scriber le file %1:\n"
+#~ "\"%2\" es le detaliate description de error."
+
+#~ msgid "View Source Error"
+#~ msgstr "Vide error de fonte"
+
+#, fuzzy
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "Header to show:"
+#~ msgstr "&Capites"
+
+#, fuzzy
+#~| msgid "Message Structure Viewer Placement"
+#~ msgid "Message contains form element"
+#~ msgstr "Placiamento de Visor de Structura de Message"
+
+#, fuzzy
+#~| msgid "This message is encrypted."
+#~ msgid "This message may be a scam."
+#~ msgstr "Iste message es cryptate."
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "Monstrar Detalios"
+
+#~ msgid "File Already Exists"
+#~ msgstr "File Jam Existe"
+
+#~ msgid ""
+#~ "A file named <filename>%1</filename> already exists. Do you want to "
+#~ "overwrite it?"
+#~ msgstr ""
+#~ "Un file de nomine <filename>%1</filename> jam existe.Tu vole super "
+#~ "scriber lo?"
+
+#~ msgid "Suggest New &Name"
+#~ msgstr "Suggere nove &nomine"
+
+#~ msgid "&Overwrite"
+#~ msgstr "&Super scriber"
+
+#~ msgid "&Ignore"
+#~ msgstr "&Ignora"
+
+#~ msgid "&Rename"
+#~ msgstr "&Renomina"
+
+#~ msgid "Appl&y to All"
+#~ msgstr "Appl&ica a omne"
+
+#~ msgid "Detect language"
+#~ msgstr "Releva linguage"
+
+#~ msgid "English"
+#~ msgstr "Anglese"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "Chinese Simplificate)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "Chinese Traditional)"
+
+#~ msgid "Dutch"
+#~ msgstr "Hollandese "
+
+#~ msgid "French"
+#~ msgstr "Francese"
+
+#~ msgid "German"
+#~ msgstr "Germano "
+
+#~ msgid "Greek"
+#~ msgstr "Greco"
+
+#~ msgid "Italian"
+#~ msgstr "Italiano "
+
+#~ msgid "Japanese"
+#~ msgstr "Japonese "
+
+#~ msgid "Korean"
+#~ msgstr "Coreano "
+
+#~ msgid "Portuguese"
+#~ msgstr "Portugese"
+
+#~ msgid "Russian"
+#~ msgstr "Russo"
+
+#~ msgid "Spanish"
+#~ msgstr "Espaniol "
+
+#~ msgid "Afrikaans"
+#~ msgstr "Afrikaans "
+
+#~ msgid "Albanian"
+#~ msgstr "Albanese"
+
+#~ msgid "Arabic"
+#~ msgstr "Arabic"
+
+#~ msgid "Armenian"
+#~ msgstr "Armenio"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "Azerbaijano"
+
+#~ msgid "Basque"
+#~ msgstr "Basco "
+
+#~ msgid "Belarusian"
+#~ msgstr "Bielorusso"
+
+#~ msgid "Bulgarian"
+#~ msgstr "Bulgaro "
+
+#~ msgid "Catalan"
+#~ msgstr "Catalan "
+
+#~ msgid "Croatian"
+#~ msgstr "Croato"
+
+#~ msgid "Czech"
+#~ msgstr "Tchech"
+
+#~ msgid "Danish"
+#~ msgstr "Danese"
+
+#~ msgid "Estonian"
+#~ msgstr "Estonian"
+
+#~ msgid "Filipino"
+#~ msgstr "Filipino"
+
+#~ msgid "Finnish"
+#~ msgstr "Finnese"
+
+#~ msgid "Galician"
+#~ msgstr "Galleco "
+
+#~ msgid "Georgian"
+#~ msgstr "Georgian "
+
+#~ msgid "Haitian Creole"
+#~ msgstr "Creolo Haitiano"
+
+#~ msgid "Hebrew"
+#~ msgstr "Hebreo"
+
+#~ msgid "Hindi"
+#~ msgstr "Hindi"
+
+#~ msgid "Hungarian"
+#~ msgstr "Hungaro"
+
+#~ msgid "Icelandic"
+#~ msgstr "Islandese"
+
+#~ msgid "Indonesian"
+#~ msgstr "Indonesiano "
+
+#~ msgid "Irish"
+#~ msgstr "Irlandese "
+
+#~ msgid "Latvian"
+#~ msgstr "Letton"
+
+#~ msgid "Lithuanian"
+#~ msgstr "Lituano"
+
+#~ msgid "Macedonian"
+#~ msgstr "Macedone"
+
+#~ msgid "Malay"
+#~ msgstr "Malay"
+
+#~ msgid "Maltese"
+#~ msgstr "Maltese"
+
+#~ msgid "Norwegian"
+#~ msgstr "Norvegiano"
+
+#~ msgid "Persian"
+#~ msgstr "Farsi (Perse)"
+
+#~ msgid "Polish"
+#~ msgstr "Polonese"
+
+#~ msgid "Romanian"
+#~ msgstr "Romaniano"
+
+#~ msgid "Serbian"
+#~ msgstr "Serbo"
+
+#~ msgid "Slovak"
+#~ msgstr "Slovaco "
+
+#~ msgid "Slovenian"
+#~ msgstr "Sloveno"
+
+#~ msgid "Swahili"
+#~ msgstr "Swahili"
+
+#~ msgid "Swedish"
+#~ msgstr "Svedese"
+
+#~ msgid "Thai"
+#~ msgstr "Thai"
+
+#~ msgid "Turkish"
+#~ msgstr "Turco"
+
+#~ msgid "Ukrainian"
+#~ msgstr "Ucrainiano"
+
+#~ msgid "Urdu"
+#~ msgstr "Urdu"
+
+#~ msgid "Vietnamese"
+#~ msgstr "Vietnamese"
+
+#~ msgid "Welsh"
+#~ msgstr "Gallese "
+
+#~ msgid "Yiddish"
+#~ msgstr "Yiddish"
+
+#~ msgctxt ""
+#~ "Invert language choices so that from becomes to and to becomes from"
+#~ msgid "Invert"
+#~ msgstr "Inverte"
+
+#~ msgid "Clear"
+#~ msgstr "Netta"
+
+#~ msgid "Translate"
+#~ msgstr "Traduce"
+
+#~ msgid "Drag text that you want to translate."
+#~ msgstr "Trahe texto que tu vole traducer"
+
+#~ msgid "Overwrite &All"
+#~ msgstr "Super scriber &Omne"
+
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid "<b><br />M<br />e<br />s<br />s<br />a<br />g<br />e</b></qt>"
+#~ msgstr "<b><br />M<br />e<br />s<br />s<br />a<br />g<br />e</b></qt>"
+
+#~ msgid "Viewertest_Gui"
+#~ msgstr "Gui de Viewertest"
+
+#~ msgid "Test for MessageViewer"
+#~ msgstr "Essayo pro Visor de Message"
+
+#~ msgid "File containing an email"
+#~ msgstr "File continente un e-posta"
+
+#~ msgid "Header Strategy: [all|rich|standard|brief|custom]"
+#~ msgstr "Strategia de Capite: [all|rich|standard|brief|custom]"
+
+#~ msgid "Header Style: [brief|plain|enterprise|mobile|fancy]"
+#~ msgstr "Style de Capite: [brief|plain|enterprise|mobile|fancy]"

@@ -1,0 +1,186 @@
+# Translation of libwebengineviewer.po to Brazilian Portuguese
+# Copyright (C) 2016 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2016.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: libwebengineviewer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-30 00:47+0000\n"
+"PO-Revision-Date: 2021-04-14 13:52-0300\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#: developertool/developertooldialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Developer Tool"
+msgstr ""
+
+#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "Fechar"
+
+#: findbar/findbarbase.cpp:48
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "Local&izar:"
+
+#: findbar/findbarbase.cpp:53
+#, kde-format
+msgid "Text to search for"
+msgstr "Texto a pesquisar"
+
+#: findbar/findbarbase.cpp:58
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "Próxima"
+
+#: findbar/findbarbase.cpp:59
+#, kde-format
+msgid "Jump to next match"
+msgstr "Ir para a próxima ocorrência"
+
+#: findbar/findbarbase.cpp:64
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "Anterior"
+
+#: findbar/findbarbase.cpp:65
+#, kde-format
+msgid "Jump to previous match"
+msgstr "Ir para a ocorrência anterior"
+
+#: findbar/findbarbase.cpp:71
+#, kde-format
+msgid "Options"
+msgstr "Opções"
+
+#: findbar/findbarbase.cpp:72
+#, kde-format
+msgid "Modify search behavior"
+msgstr "Modificar o comportamento da pesquisa"
+
+#: findbar/findbarbase.cpp:74
+#, kde-format
+msgid "Case sensitive"
+msgstr "Diferenciar maiúsculas de minúsculas"
+
+#: findbar/findbarbase.cpp:91
+#, kde-format
+msgid "Phrase not found"
+msgstr "Frase não encontrada"
+
+#: webenginepage.cpp:78
+#, kde-format
+msgid "Save HTML Page"
+msgstr "Salvar página HTML"
+
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:21
+#, kde-format
+msgid "Submit form is not allowed in mailer. Please open url in a browser."
+msgstr ""
+"Não é permitido o envio de formulários ao enviar e-mails. Use um navegador "
+"para abrir a URL."
+
+#: widgets/tracking/trackingdetailsdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr "Detalhes"
+
+#: widgets/tracking/trackingwarningwidget.cpp:20
+#, kde-format
+msgid ""
+"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+"\">(Details...)"
+msgstr ""
+"Um sistema de rastreamento de mensagens foi detectado e bloqueado.<a href="
+"\"mailtrackingdetails\">(Detalhes...)"
+
+#: widgets/tracking/trackingwarningwidget.cpp:39
+#, kde-format
+msgid "Details:"
+msgstr "Detalhes:"
+
+#: widgets/tracking/trackingwarningwidget.cpp:45
+#, kde-format
+msgid "1 tracker from the company %2 (%3)"
+msgid_plural "%1 trackers from the company %2 (%3)"
+msgstr[0] "1 rastreador da empresa %2 (%3)"
+msgstr[1] "%1 rastreadores da empresa %2 (%3)"
+
+#: widgets/zoomactionmenu.cpp:127
+#, kde-format
+msgid "Zoom"
+msgstr "Zoom"
+
+#~ msgid "Reset"
+#~ msgstr "Redefinir"
+
+#~ msgid "&Zoom In"
+#~ msgstr "&Ampliar"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "&Reduzir"
+
+#~ msgid "Open In Browser"
+#~ msgstr "Abrir no navegador"
+
+#, fuzzy
+#~| msgid "Print"
+#~ msgid "Print Setup"
+#~ msgstr "Imprimir"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Select Print Layout"
+#~ msgstr "Selecione o layout de impressão"
+
+#~ msgid "Print Layout: %1, %2"
+#~ msgstr "Layout de impressão: %1, %2"
+
+#~ msgid "Portrait"
+#~ msgstr "Retrato"
+
+#~ msgid "Landscape"
+#~ msgstr "Paisagem"
+
+#~ msgid "Preview"
+#~ msgstr "Visualização"
+
+#~ msgid "Print"
+#~ msgstr "Imprimir"
+
+#~ msgid "Page:"
+#~ msgstr "Página:"
+
+#~ msgid "Unable to open file \"%1\""
+#~ msgstr "Não foi possível abrir o arquivo \"%1\""
+
+#~ msgid "Open file error"
+#~ msgstr "Erro ao abrir o arquivo"
+
+#, fuzzy
+#~| msgid "Page:"
+#~ msgid "Page %1"
+#~ msgstr "Página:"
+
+#~ msgid "Print Preview"
+#~ msgstr "Visualizar impressão"
+
+#~ msgid "Printing WebEngine is limited for the moment."
+#~ msgstr "A impressão no Mecanismo Web está limitada neste momento."

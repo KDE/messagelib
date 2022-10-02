@@ -1,0 +1,1964 @@
+# translation of libmessagelist.po to Khmer
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Auk Piseth <piseth_dv@khmeros.info>, 2008, 2009.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2008, 2009, 2010.
+# Sophea <sophea@khmeros.info>, 2012.
+# sutha <sutha@khmeros.info>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessagelist\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2012-12-28 16:26+0700\n"
+"Last-Translator: sutha <sutha@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: WordForge 0.8 RC1\n"
+"X-Language: km-KH\n"
+
+#: core/aggregation.cpp:178
+#, kde-format
+msgctxt "No grouping of messages"
+msgid "None"
+msgstr "គ្មាន"
+
+#: core/aggregation.cpp:179
+#, kde-format
+msgid "By Exact Date (of Thread Leaders)"
+msgstr "តាម​កាលបរិច្ឆេទ​ជាក់លាក់ (នៃ​ក្បាល​ខ្សែ​ស្រឡាយ)"
+
+#: core/aggregation.cpp:180
+#, kde-format
+msgid "By Smart Date Ranges (of Thread Leaders)"
+msgstr "តាម​ជួរ​កាលបរិច្ឆេទ​ឆ្លាត (នៃ​ក្បាលសែស្រឡាយ)"
+
+#: core/aggregation.cpp:181 core/sortorder.cpp:70
+#, kde-format
+msgid "By Smart Sender/Receiver"
+msgstr "តាម​អ្នក​ផ្ញើ/អ្នក​ទទួល​ឆ្លាត"
+
+#: core/aggregation.cpp:182 core/sortorder.cpp:68
+#, kde-format
+msgid "By Sender"
+msgstr "តាម​​អ្នក​ផ្ញើ"
+
+#: core/aggregation.cpp:183 core/sortorder.cpp:69
+#, kde-format
+msgid "By Receiver"
+msgstr "តាម​អ្នកទទួល"
+
+#: core/aggregation.cpp:192
+#, kde-format
+msgid "Never Expand Groups"
+msgstr "កុំ​ពន្លា​ក្រុម"
+
+#: core/aggregation.cpp:194
+#, kde-format
+msgid "Expand Recent Groups"
+msgstr "ពង្រីក​ក្រុម​ថ្មីៗ"
+
+#: core/aggregation.cpp:196
+#, kde-format
+msgid "Always Expand Groups"
+msgstr "ពង្រីក​ក្រុម​ជានិច្ច"
+
+#: core/aggregation.cpp:202
+#, kde-format
+msgctxt "No threading of messages"
+msgid "None"
+msgstr "គ្មាន"
+
+#: core/aggregation.cpp:203
+#, kde-format
+msgid "Perfect Only"
+msgstr "តែ​ល្អ​ឥត​ខ្ចោះ​ប៉ុណ្ណោះ"
+
+#: core/aggregation.cpp:204
+#, kde-format
+msgid "Perfect and by References"
+msgstr "ល្អ​ឥត​ខ្ចោះ និង​តាម​សេចក្ដី​យោង"
+
+#: core/aggregation.cpp:205
+#, kde-format
+msgid "Perfect, by References and by Subject"
+msgstr "ល្អឥត​ខ្ចោះ ដោយ​សេចក្ដី​យោង និង​តាម​ប្រធានបទ"
+
+#: core/aggregation.cpp:214
+#, kde-format
+msgid "Topmost Message"
+msgstr "សារ​លើ​គេ​បំផុត"
+
+#: core/aggregation.cpp:218
+#, kde-format
+msgid "Most Recent Message"
+msgstr "សារ​ថ្មីៗ​បំផុត"
+
+#: core/aggregation.cpp:228
+#, kde-format
+msgid "Never Expand Threads"
+msgstr "កុំ​ពន្លា​ខ្សែ​ស្រឡាយ"
+
+#: core/aggregation.cpp:229
+#, kde-format
+msgid "Expand Threads With Unread Messages"
+msgstr "ពន្លា​ខ្សែ​ស្រឡាយ​ជាមួយ​សារ​មិន​ទាន់​អាន"
+
+#: core/aggregation.cpp:230
+#, kde-format
+msgid "Expand Threads With Unread or Important Messages"
+msgstr "ពន្លា​ខ្សែ​ស្រឡាយ​ដែល​មាន​សារ​សំខាន់ ឬ​មិន​ទាន់អាន"
+
+#: core/aggregation.cpp:231
+#, kde-format
+msgid "Always Expand Threads"
+msgstr "ពន្លា​ខ្សែ​ស្រឡាយ​ជានិច្ច"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Interactivity"
+msgstr "អន្តរសកម្មភាព​​ពេញចិត្ត"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Speed"
+msgstr "ល្បឿន​ដែល​ពេញចិត្ត"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Batch Job (No Interactivity)"
+msgstr "ការងារ​កញ្ចប់ (គ្មាន​អន្តរ​សកម្មភាព)"
+
+#: core/item.cpp:252 core/messageitem.cpp:538
+#, kde-format
+msgctxt "Status of an item"
+msgid "Read"
+msgstr "បាន​អាន"
+
+#: core/item.cpp:254 core/messageitem.cpp:538
+#, kde-format
+msgctxt "Status of an item"
+msgid "Unread"
+msgstr "មិនទាន់​អាន"
+
+#: core/item.cpp:258
+#, kde-format
+msgctxt "Status of an item"
+msgid "Has Attachment"
+msgstr "មាន​ឯកសារ​ភ្ជាប់"
+
+#: core/item.cpp:262
+#, kde-format
+msgctxt "Status of an item"
+msgid "Action Item"
+msgstr "ធាតុ​សកម្មភាព"
+
+#: core/item.cpp:266 core/messageitem.cpp:536
+#, kde-format
+msgctxt "Status of an item"
+msgid "Replied"
+msgstr "បាន​ឆ្លើយ​តប"
+
+#: core/item.cpp:270
+#, kde-format
+msgctxt "Status of an item"
+msgid "Forwarded"
+msgstr "បាន​បញ្ជូនបន្ត"
+
+#: core/item.cpp:274
+#, kde-format
+msgctxt "Status of an item"
+msgid "Sent"
+msgstr "បាន​ផ្ញើ"
+
+#: core/item.cpp:278
+#, kde-format
+msgctxt "Status of an item"
+msgid "Important"
+msgstr "សំខាន់"
+
+#: core/item.cpp:282
+#, kde-format
+msgctxt "Status of an item"
+msgid "Spam"
+msgstr "​សារ​ឥត​បាន​ការ"
+
+#: core/item.cpp:286
+#, kde-format
+msgctxt "Status of an item"
+msgid "Ham"
+msgstr "សារ​បន្លំ"
+
+#: core/item.cpp:290
+#, kde-format
+msgctxt "Status of an item"
+msgid "Watched"
+msgstr "បានឃ្លាំមើល"
+
+#: core/item.cpp:294
+#, kde-format
+msgctxt "Status of an item"
+msgid "Ignored"
+msgstr "បាន​មិន​អើពើ"
+
+#: core/manager.cpp:38 core/model.cpp:332
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "មិន​ស្គាល់"
+
+#: core/manager.cpp:206
+#, kde-format
+msgid "Current Activity, Threaded"
+msgstr "សកម្មភាព​បច្ចុប្បន្ន ដាក់​ជា​សែ​"
+
+#: core/manager.cpp:207
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are threaded. So for "
+"example, in \"Today\" you will find all the messages arrived today and all "
+"the threads that have been active today."
+msgstr ""
+"ទិដ្ឋភាព​នេះ​ប្រើ​ក្រុម​ជួរ​កាលបរិច្ឆេទ​ឆ្លាត ។ សារ​គឺ​ត្រូវបាន​ក្រង​ជា​ខ្សែ​ស្រឡាយ ។ ឧទាហរណ៍ នៅ​ក្នុង \"ថ្ងៃ​"
+"នេះ\" អ្នក​នឹង​ឃើញ​សារ​ទាំងអស់​ដែល​បាន​ទទួល​នៅ​ថ្ងៃ​នេះ និង​ខ្សែ​ស្រឡាយ​ទាំងអស់ ដែល​ត្រូវបាន​ធ្វើ​ឲ្យ​សកម្ម​នៅ​"
+"ថ្ងៃ​នេះ ។"
+
+#: core/manager.cpp:219
+#, kde-format
+msgid "Current Activity, Flat"
+msgstr "សកម្មភាព​បច្ចុប្បន្ន ធម្មតា"
+
+#: core/manager.cpp:220
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are not threaded. So for "
+"example, in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+"ទិដ្ឋភាព​នេះ​ប្រើ​ក្រុម​ជួរ​កាលបរិច្ឆេទ​ឆ្លាត ។ សារ​មិនត្រូវបាន​ដាក់​ជា​ខ្សែស្រឡាយ​ទេ ។ ឧទាហរណ៍ នៅ​ក្នុង "
+"\"ថ្ងៃនេះ\" អ្នក​នឹង​ឃើញ​សារ​ទាំងអស់​ដែល​ទទួលបាន​នៅ​ថ្ងៃ​នេះ ។"
+
+#: core/manager.cpp:231
+#, kde-format
+msgid "Activity by Date, Threaded"
+msgstr "សកម្មភាព​តាម​កាលបរិច្ឆេទ ក្រង​ជា​ខ្សែ​ស្រឡាយ"
+
+#: core/manager.cpp:232
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are threaded. So for example, in "
+"\"Today\" you will find all the messages arrived today and all the threads "
+"that have been active today."
+msgstr ""
+"ទិដ្ឋភាព​នេះ​ប្រើ​ក្រុម​ ពី​មួយ​ថ្ងៃ​ទៅ​មួយ​ថ្ងៃ ។ សារ​គឺ​ត្រូវបាន​ក្រង​ជា​ខ្សែ​ស្រឡាយ ។ ឧទាហរណ៍ នៅ​ក្នុង \"ថ្ងៃ​"
+"នេះ\" អ្នក​នឹង​រកឃើញ​សារ​ដែល​ទទួលបាន​នៅ​ថ្ងៃ​នេះ និង​ខ្សែស្រឡាយ​ទាំងអស់​ដែល​បាន​ធ្វើ​ឲ្យ​សកម្ម​នៅ​ថ្ងៃ​នេះ ។"
+
+#: core/manager.cpp:244
+#, kde-format
+msgid "Activity by Date, Flat"
+msgstr "សកម្មភាព​តាម​កាលបរិច្ឆេទ ធម្មតា"
+
+#: core/manager.cpp:245
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are not threaded. So for example, "
+"in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+"ទិដ្ឋភាព​នេះ ប្រើ​ក្រុម ពី​មួយ​ថ្ងៃ​ទៅ​មួយ​ថ្ងៃ ។ សារ​មិនត្រូវបាន​ក្រង​ទេ ។ ឧទាហរណ៍ នៅ​ក្នុង \"ថ្ងៃនេះ\" "
+"អ្នក​នឹង​រកឃើញ​សារ​ទាំងអស់​ដែល​ទទួល​បាន​ថ្ងៃ​នេះ ។"
+
+#: core/manager.cpp:256
+#, kde-format
+msgid "Standard Mailing List"
+msgstr "បញ្ជី​សំបុត្រ​រួម​ស្តង់ដារ"
+
+#: core/manager.cpp:257
+#, kde-format
+msgid ""
+"This is a plain and old mailing list view: no groups and heavy threading."
+msgstr "នេះ​ជា​ទិដ្ឋភាព​បញ្ជី​សំបុត្រ​រួម​ចាស់ និង​ធម្មតា ៖ គ្មាន​ក្រុម និង​ខ្សែ​ស្រឡាយ​ធំៗ"
+
+#: core/manager.cpp:266
+#, kde-format
+msgid "Flat Date View"
+msgstr "ទិដ្ឋភាព​កាលបរិច្ឆេទ​ស្មើ"
+
+#: core/manager.cpp:267
+#, kde-format
+msgid ""
+"This is a plain and old list of messages sorted by date: no groups and no "
+"threading."
+msgstr ""
+"នេះ​ជា​បញ្ជី​សារ​ចាស់ៗ​ និង​ធម្មតា​ដែល​បាន​តម្រៀប​តាម​កាលបរិច្ឆេទ ៖ គ្មាន​ក្រុម និង​គ្មាន​ខ្សែស្រឡាយ​ទេ"
+
+#: core/manager.cpp:278
+#, kde-format
+msgid "Senders/Receivers, Flat"
+msgstr "អ្នក​ផ្ញើ​/អ្នក​ទទួល ធម្មតា"
+
+#: core/manager.cpp:279
+#, kde-format
+msgid ""
+"This view groups the messages by senders or receivers (depending on the "
+"folder type). Messages are not threaded."
+msgstr ""
+"ទិដ្ឋភាព​នេះ​ដាក់​ក្រុម​សារ​តាម​អ្នក​ផ្ញើ និង​អ្នក​ទទួល (អាស្រ័យលើ​ប្រភេទ​ថត) ។ សារ​គឺ​មិនត្រូវបាន​ក្រង​ជា​ខ្សែ​"
+"ស្រឡាយ​ទេ ។"
+
+#: core/manager.cpp:290
+#, kde-format
+msgid "Thread Starters"
+msgstr "កម្មវិធី​ចាប់ផ្ដើម​ខ្សែ​ស្រឡាយ"
+
+#: core/manager.cpp:291
+#, kde-format
+msgid ""
+"This view groups the messages in threads and then groups the threads by the "
+"starting user."
+msgstr ""
+"ទិដ្ឋភាព​នេះ​ដាក់​សារ​ជា​ក្រុម​ក្នុង​​សែស្រឡាយ​ ហើយ​បន្ទាប់​មក​ដាក់​ក្រុម​សែស្រឡាយ​​ដោយ​ចាប់ផ្ដើម​អ្នកប្រើ ។"
+
+#: core/manager.cpp:567
+#, kde-format
+msgctxt "Default theme name"
+msgid "Classic"
+msgstr "ក្លាស៊ីក"
+
+#: core/manager.cpp:567
+#, kde-format
+msgid "A simple, backward compatible, single row theme"
+msgstr "ស្បែក​ជួរ​ដេក​ទោល ឆប​គ្នា​ខាងក្រោយ និង​សាមញ្ញ"
+
+#: core/manager.cpp:571
+#, kde-format
+msgctxt "@title:column Subject of messages"
+msgid "Subject"
+msgstr "ប្រធាន​បទ"
+
+#: core/manager.cpp:607 core/theme.cpp:113
+#, kde-format
+msgid "Sender/Receiver"
+msgstr "អ្នកផ្ញើ​/​អ្នកទទួល"
+
+#: core/manager.cpp:614
+#, kde-format
+msgctxt "Sender of a message"
+msgid "Sender"
+msgstr "​អ្នក​ផ្ញើ"
+
+#: core/manager.cpp:616
+#, kde-format
+msgctxt "Receiver of a message"
+msgid "Receiver"
+msgstr "អ្នកទទួល"
+
+#: core/manager.cpp:622
+#, kde-format
+msgctxt "Date of a message"
+msgid "Date"
+msgstr "កាលបរិច្ឆេទ"
+
+#: core/manager.cpp:624
+#, kde-format
+msgid "Most Recent Date"
+msgstr "កាលបរិច្ឆេទ​ថ្មី​បំផុត"
+
+#: core/manager.cpp:630
+#, kde-format
+msgctxt "Size of a message"
+msgid "Size"
+msgstr "ទំហំ"
+
+#: core/manager.cpp:632
+#, fuzzy, kde-format
+#| msgctxt "Attachement indication"
+#| msgid "Attachment"
+msgctxt "Attachment indication"
+msgid "Attachment"
+msgstr "​ឯកសារ​ភ្ជាប់"
+
+#: core/manager.cpp:638
+#, kde-format
+msgid "Read/Unread"
+msgstr "អាន/​មិន​ទាន់​អាន"
+
+#: core/manager.cpp:643
+#, kde-format
+msgid "Replied"
+msgstr "បានឆ្លើយតប"
+
+#: core/manager.cpp:645
+#, kde-format
+msgctxt "Message importance indication"
+msgid "Important"
+msgstr "សំខាន់"
+
+#: core/manager.cpp:651
+#, kde-format
+msgid "Action Item"
+msgstr "ធាតុ​សកម្មភាព"
+
+#: core/manager.cpp:657
+#, kde-format
+msgid "Spam/Ham"
+msgstr "សារ​ឥតបានការ/សារ​បន្លំ"
+
+#: core/manager.cpp:663
+#, kde-format
+msgid "Watched/Ignored"
+msgstr "បានឃ្លាំមើល/មិនអើពើ"
+
+#: core/manager.cpp:669
+#, kde-format
+msgid "Encryption"
+msgstr "​ការ​អ៊ិនគ្រីប"
+
+#: core/manager.cpp:675
+#, kde-format
+msgid "Signature"
+msgstr "​ហត្ថលេខា"
+
+#: core/manager.cpp:680
+#, kde-format
+msgid "Tag List"
+msgstr "បញ្ជី​ស្លាក"
+
+#: core/manager.cpp:688
+#, kde-format
+msgid "Smart"
+msgstr ""
+
+#: core/manager.cpp:688
+#, fuzzy, kde-format
+#| msgid "A fancy multiline and multi item theme"
+msgid "A smart multiline and multi item theme"
+msgstr "បន្ទាត់​ច្រើន​មាន​ក្បាច់ក្បូរ និង​ស្បែក​ធាតុ​ច្រើន"
+
+#: core/manager.cpp:692
+#, kde-format
+msgid "Message"
+msgstr "សារ"
+
+#: core/manager.cpp:776
+#, fuzzy, kde-format
+#| msgid "Fancy with Clickable Status"
+msgid "Smart with Clickable Status"
+msgstr "ស្អាត​មាន​ស្ថានភាព​ដែល​អាច​ចុច​បាន"
+
+#: core/manager.cpp:777
+#, fuzzy, kde-format
+#| msgid ""
+#| "A fancy multiline and multi item theme with a clickable status column"
+msgid "A smart multiline and multi item theme with a clickable status column"
+msgstr "បន្ទាត់​ច្រើន​ស្អាត និង​ស្បែក​ធាតុ​ច្រើន​ដែល​មាន​ជួរ​ឈរ​ដែល​អាច​ចុច​បាន"
+
+#: core/manager.cpp:781 core/view.cpp:2263 core/view.cpp:2267
+#, kde-format
+msgid "Status"
+msgstr "​ស្ថានភាព"
+
+#: core/model.cpp:330
+#, kde-format
+msgid "Today"
+msgstr "ថ្ងៃ​នេះ"
+
+#: core/model.cpp:331
+#, kde-format
+msgid "Yesterday"
+msgstr "ម្សិលម៉ិញ"
+
+#: core/model.cpp:333
+#, kde-format
+msgid "Last Week"
+msgstr "សប្ដាហ៍​មុន"
+
+#: core/model.cpp:334
+#, kde-format
+msgid "Two Weeks Ago"
+msgstr "២ សប្ដាហ៍​កន្លង​ទៅ"
+
+#: core/model.cpp:335
+#, kde-format
+msgid "Three Weeks Ago"
+msgstr "៣ សប្ដាហ៍​កន្លង​ទៅ"
+
+#: core/model.cpp:336
+#, kde-format
+msgid "Four Weeks Ago"
+msgstr "៤ សប្ដាហ៍​កន្លង​ទៅ"
+
+#: core/model.cpp:337
+#, kde-format
+msgid "Five Weeks Ago"
+msgstr "៥ សប្ដាហ៍​កន្លង​ទៅ"
+
+#: core/model.cpp:550 utils/themeeditor.cpp:185
+#, kde-format
+msgid "Receiver"
+msgstr "អ្នកទទួល"
+
+#: core/model.cpp:552 utils/themeeditor.cpp:184
+#, kde-format
+msgid "Sender"
+msgstr "​អ្នក​ផ្ញើ"
+
+#: core/model.cpp:1367
+#, kde-format
+msgctxt "Message Aggregation Group Header: Month name and Year number"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: core/model.cpp:3787
+#, kde-format
+msgid "Processed 1 Message of %2"
+msgid_plural "Processed %1 Messages of %2"
+msgstr[0] "បាន​ចូល​ដំណើរការ​សារ %1 នៃ %2"
+
+#: core/model.cpp:3793 core/model.cpp:3799
+#, kde-format
+msgid "Threaded 1 Message of %2"
+msgid_plural "Threaded %1 Messages of %2"
+msgstr[0] "បាន​ក្រង​ខ្សែស្រឡាយ​សារ %1 នៃ %2"
+
+#: core/model.cpp:3805
+#, kde-format
+msgid "Grouped 1 Thread of %2"
+msgid_plural "Grouped %1 Threads of %2"
+msgstr[0] "បាន​ដាក់ក្រុម​ខ្សែស្រឡាយ %1 នៃ %2"
+
+#: core/model.cpp:3811
+#, kde-format
+msgid "Updated 1 Group of %2"
+msgid_plural "Updated %1 Groups of %2"
+msgstr[0] "បាន​ធ្វើ​​បច្ចុប្បន្នភាព​ក្រុម %1 នៃ %2 "
+
+#: core/model.cpp:3903
+#, kde-format
+msgctxt "@info:status Finished view fill"
+msgid "Ready"
+msgstr "រួចរាល់"
+
+#. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:11
+#, kde-format
+msgid "Display tooltips for messages and group headers"
+msgstr "បង្ហាញ​ព័ត៌មាន​ជំនួយ​សម្រាប់​បឋមកថា​សារ និង​ក្រុម"
+
+#. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:12
+#, kde-format
+msgid ""
+"Enable this option to display tooltips when hovering over an item in the "
+"message list."
+msgstr "បើក​ជម្រើស​នេះ ដើម្បី​បង្ហាញ​ព័ត៌មាន​ជំនួយ នៅពេល​ដាក់​ប៊ូតុង​កណ្ដុរ​លើ​ធាតុ​មួយ​នៅ​ក្នុង​បញ្ជី​សារ ។"
+
+#: core/sortorder.cpp:63 core/sortorder.cpp:107
+#, kde-format
+msgid "None (Storage Order)"
+msgstr "គ្មាន (លំដាប់​ឧបករណ៍​ផ្ទុក)"
+
+#: core/sortorder.cpp:64
+#, kde-format
+msgid "By Date/Time"
+msgstr "តាម​កាលបរិច្ឆេទ​/​ពេលវេលា"
+
+#: core/sortorder.cpp:66
+#, kde-format
+msgid "By Date/Time of Most Recent in Subtree"
+msgstr "តាម​កាលបរិច្ឆេទ​/ពេលវេលា​របស់​សារ​ថ្មី​បំផុត​នៅ​ក្នុង​មែកធាង​រង"
+
+#: core/sortorder.cpp:71
+#, kde-format
+msgid "By Subject"
+msgstr "តាម​ប្រធាន​បទ"
+
+#: core/sortorder.cpp:72
+#, kde-format
+msgid "By Size"
+msgstr "តាមទំហំ"
+
+#: core/sortorder.cpp:73
+#, kde-format
+msgid "By Action Item Status"
+msgstr "តាម​​ស្ថានភាព​ធាតុ​អំពើ"
+
+#: core/sortorder.cpp:74
+#, kde-format
+msgid "By Unread Status"
+msgstr "តាម​ស្ថានភាព​មិនទាន់​អាន​​"
+
+#: core/sortorder.cpp:75
+#, kde-format
+msgid "By Important Status"
+msgstr "តាម​ស្ថានភាព​សំខាន់"
+
+#: core/sortorder.cpp:76
+#, fuzzy, kde-format
+#| msgid "By Important Status"
+msgid "By Attachment Status"
+msgstr "តាម​ស្ថានភាព​សំខាន់"
+
+#: core/sortorder.cpp:88 core/sortorder.cpp:130
+#, kde-format
+msgid "Least Recent on Top"
+msgstr "ថ្មី​ៗ​នៅ​កំពូល"
+
+#: core/sortorder.cpp:89 core/sortorder.cpp:131
+#, kde-format
+msgid "Most Recent on Top"
+msgstr "ថ្មី​បំផុត​នៅ​កំពូល"
+
+#: core/sortorder.cpp:93
+#, kde-format
+msgctxt "Sort order for messages"
+msgid "Ascending"
+msgstr "លំដាប់​ឡើង"
+
+#: core/sortorder.cpp:94
+#, kde-format
+msgctxt "Sort order for messages"
+msgid "Descending"
+msgstr "លំដាប់​ចុះ"
+
+#: core/sortorder.cpp:105
+#, kde-format
+msgid "by Date/Time"
+msgstr "តាម​កាលបរិច្ឆេទ​/​ពេលវេលា"
+
+#: core/sortorder.cpp:108
+#, kde-format
+msgid "by Date/Time of Most Recent Message in Group"
+msgstr "តាម​កាលបរិច្ឆេទ​/​ពេលវេលា​របស់​សារ​ថ្មីៗ​បំផុត​នៅ​ក្នុង​ក្រុម"
+
+#: core/sortorder.cpp:112
+#, kde-format
+msgid "by Sender/Receiver"
+msgstr "តាម​អ្នកផ្ញើ​/​អ្នកទទួល"
+
+#: core/sortorder.cpp:114
+#, kde-format
+msgid "by Sender"
+msgstr "តាម​​អ្នក​ផ្ញើ"
+
+#: core/sortorder.cpp:116
+#, kde-format
+msgid "by Receiver"
+msgstr "តាម​អ្នកទទួល"
+
+#: core/sortorder.cpp:134
+#, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Ascending"
+msgstr "តាម​លំដាប់​កើន"
+
+#: core/sortorder.cpp:135
+#, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Descending"
+msgstr "តាម​លំដាប់​ចុះ"
+
+#: core/theme.cpp:107
+#, kde-format
+msgctxt "Description of Type Subject"
+msgid "Subject"
+msgstr "ប្រធាន​បទ"
+
+#: core/theme.cpp:110
+#, kde-format
+msgctxt "Description of Type Date"
+msgid "Date"
+msgstr "កាលបរិច្ឆេទ"
+
+#: core/theme.cpp:116
+#, kde-format
+msgctxt "Description of Type Sender"
+msgid "Sender"
+msgstr "​អ្នក​ផ្ញើ"
+
+#: core/theme.cpp:119
+#, kde-format
+msgctxt "Description of Type Receiver"
+msgid "Receiver"
+msgstr "អ្នកទទួល"
+
+#: core/theme.cpp:122
+#, kde-format
+msgctxt "Description of Type Size"
+msgid "Size"
+msgstr "ទំហំ"
+
+#: core/theme.cpp:125
+#, kde-format
+msgid "Unread/Read Icon"
+msgstr "រូប​តំណាង​ មិនទាន់​អាន​​/​អាន​"
+
+#: core/theme.cpp:128
+#, kde-format
+msgid "Attachment Icon"
+msgstr "រូបតំណាង​ឯកសារ​ភ្ជាប់"
+
+#: core/theme.cpp:131
+#, kde-format
+msgid "Replied/Forwarded Icon"
+msgstr "រូបតំណាង​បាន​ឆ្លើយតប/បញ្ជូន​បន្ត"
+
+#: core/theme.cpp:134
+#, kde-format
+msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
+msgstr "បាន​បញ្ចូល​រូបតំណាង ថ្មី/​មិន​បាន​អាន/បាន​អាន/បាន​ឆ្លើយតប/បាន​បញ្ជូន​បន្ត"
+
+#: core/theme.cpp:137
+#, kde-format
+msgid "Action Item Icon"
+msgstr "រូបតំណាង​ធាតុ​អំពើ"
+
+#: core/theme.cpp:140
+#, kde-format
+msgid "Important Icon"
+msgstr "រូបតំណាង​សំខាន់"
+
+#: core/theme.cpp:143
+#, kde-format
+msgid "Group Header Label"
+msgstr "ស្លាក​បឋមកថា​ក្រុម"
+
+#: core/theme.cpp:146
+#, kde-format
+msgid "Spam/Ham Icon"
+msgstr "រូបតំណាង​​សារ​ឥតបានការ/សារ​បន្លំ"
+
+#: core/theme.cpp:149
+#, kde-format
+msgid "Watched/Ignored Icon"
+msgstr "រូបតំណាង​បានឃ្លាំមើល/មិនអើពើ"
+
+#: core/theme.cpp:152
+#, kde-format
+msgid "Group Header Expand/Collapse Icon"
+msgstr "រូបតំណាង​វេញ​/ពន្លា​បឋមកថា​ក្រុម"
+
+#: core/theme.cpp:155
+#, kde-format
+msgid "Encryption State Icon"
+msgstr "រូបតំណាង​សភាព​ការ​អ៊ិនគ្រីប"
+
+#: core/theme.cpp:158
+#, kde-format
+msgid "Signature State Icon"
+msgstr "រូបតំណាង​សភាព​ហត្ថលេខា"
+
+#: core/theme.cpp:161
+#, kde-format
+msgid "Vertical Separation Line"
+msgstr "បន្ទាត់​ចែក​បញ្ឈរ"
+
+#: core/theme.cpp:164
+#, kde-format
+msgid "Horizontal Spacer"
+msgstr "ចន្លោះ​ផ្ដេក"
+
+#: core/theme.cpp:167
+#, kde-format
+msgid "Max Date"
+msgstr "កាលបរិច្ឆេទ​អតិ."
+
+#: core/theme.cpp:170
+#, kde-format
+msgid "Message Tags"
+msgstr "ស្លាក​សារ"
+
+#: core/theme.cpp:173
+#, kde-format
+msgid "Note Icon"
+msgstr "រូបតំណាង​ចំណាំ​"
+
+#: core/theme.cpp:175
+#, kde-format
+msgid "Invitation Icon"
+msgstr "រូប​តំណាង​ការ​អញ្ជើញ"
+
+#: core/theme.cpp:177
+#, kde-format
+msgctxt "Description of Type Folder"
+msgid "Folder"
+msgstr ""
+
+#: core/theme.cpp:179
+#, kde-format
+msgctxt "Description for an Unknown Type"
+msgid "Unknown"
+msgstr "មិន​ស្គាល់"
+
+#: core/theme.cpp:853
+#, kde-format
+msgid "Unread"
+msgstr "មិនទាន់​អាន​"
+
+#: core/theme.cpp:1047
+#, kde-format
+msgid "Never Show"
+msgstr "កុំ​បង្ហាញ"
+
+#: core/theme.cpp:1047
+#, kde-format
+msgid "Always Show"
+msgstr "បង្ហាញ​ជា​និច្ច"
+
+#: core/theme.cpp:1052
+#, kde-format
+msgid "Plain Rectangles"
+msgstr "ចតុកោណ​កែង​សាមញ្ញ"
+
+#: core/theme.cpp:1053
+#, kde-format
+msgid "Plain Joined Rectangle"
+msgstr "Plain Joined Rectangle"
+
+#: core/theme.cpp:1054
+#, kde-format
+msgid "Rounded Rectangles"
+msgstr "Rounded Rectangles"
+
+#: core/theme.cpp:1055
+#, kde-format
+msgid "Rounded Joined Rectangle"
+msgstr "Rounded Joined Rectangle"
+
+#: core/theme.cpp:1056
+#, kde-format
+msgid "Gradient Rectangles"
+msgstr "Gradient Rectangles"
+
+#: core/theme.cpp:1057
+#, kde-format
+msgid "Gradient Joined Rectangle"
+msgstr "Gradient Joined Rectangle"
+
+#: core/theme.cpp:1058
+#, kde-format
+msgid "Styled Rectangles"
+msgstr "Styled Rectangles"
+
+#: core/theme.cpp:1059
+#, kde-format
+msgid "Styled Joined Rectangles"
+msgstr "Styled Joined Rectangles"
+
+#: core/view.cpp:682
+#, kde-format
+msgid "No result found"
+msgstr ""
+
+#: core/view.cpp:766
+#, kde-format
+msgid "Adjust Column Sizes"
+msgstr "លៃតម្រូវ​ទំហំ​ជួរ​ឈរ"
+
+#: core/view.cpp:770
+#, kde-format
+msgid "Show Default Columns"
+msgstr "បង្ហាញ​ជួរ​ឈរ​លំនាំដើម"
+
+#: core/view.cpp:775
+#, kde-format
+msgid "Display Tooltips"
+msgstr "បង្ហាញ​ព័ត៌មាន​ជំនួយ"
+
+#: core/view.cpp:2244 core/view.cpp:2248 core/widgets/searchlinestatus.cpp:324
+#, kde-format
+msgid "From"
+msgstr "ពី"
+
+#: core/view.cpp:2245 core/view.cpp:2249
+#, kde-format
+msgctxt "Receiver of the email"
+msgid "To"
+msgstr "​ជូន​ចំពោះ"
+
+#: core/view.cpp:2246 core/view.cpp:2250
+#, kde-format
+msgid "Date"
+msgstr "កាលបរិច្ឆេទ"
+
+#: core/view.cpp:2264 core/view.cpp:2268
+#, kde-format
+msgid "Size"
+msgstr "ទំហំ"
+
+#: core/view.cpp:2265 core/view.cpp:2269 utils/themeeditor.cpp:187
+#, kde-format
+msgid "Folder"
+msgstr ""
+
+#: core/view.cpp:2274 core/view.cpp:2276
+#, kde-format
+msgid "Note"
+msgstr "ចំណាំ​"
+
+#: core/view.cpp:2283 core/view.cpp:2285
+#, kde-format
+msgid "Preview"
+msgstr "មុន​"
+
+#: core/view.cpp:2302
+#, kde-format
+msgid "<b>%1</b> reply"
+msgid_plural "<b>%1</b> replies"
+msgstr[0] "<b>%1</b> ចម្លើយតប"
+
+#: core/view.cpp:2305
+#, kde-format
+msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
+msgstr[0] "<b>%1</b> សារ​នៅក្នុង​មែកធាងរង​​ (<b>%2</b> មិនទាន់​អាន​)"
+
+#: core/view.cpp:2342
+#, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
+msgid "Threads started on %1"
+msgstr "បាន​ចាប់ផ្ដើម​ខ្សែ​ស្រឡាយ​នៅ %1"
+
+#: core/view.cpp:2344
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
+msgid "Threads started %1"
+msgstr "បាន​ចាប់ផ្ដើម​ខ្សែ​ស្រឡាយ %1"
+
+#: core/view.cpp:2348
+#, kde-format
+msgid "Threads with messages dated %1"
+msgstr "ខ្សែ​ស្រឡាយ​ដែល​មាន​សារ​មាន​កាលបរិច្ឆេទ %1"
+
+#: core/view.cpp:2358
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
+msgid "Messages sent on %1"
+msgstr "សារ​ត្រូវបាន​ផ្ញើ​នៅ %1។"
+
+#: core/view.cpp:2361
+#, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
+msgid "Messages received on %1"
+msgstr "បាន​ទទួល​សារ​នៅ %1"
+
+#: core/view.cpp:2365
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
+msgid "Messages sent %1"
+msgstr "សារ​បាន​ផ្ញើ %1"
+
+#: core/view.cpp:2367
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
+msgid "Messages received %1"
+msgstr "បាន​ទទួលសារ %1"
+
+#: core/view.cpp:2376
+#, kde-format
+msgid "Threads started within %1"
+msgstr "ខ្សែ​ស្រឡាយ​បាន​ចាប់ផ្ដើម​នៅ​ក្នុង %1"
+
+#: core/view.cpp:2379
+#, kde-format
+msgid "Threads containing messages with dates within %1"
+msgstr "ខ្សែ​ស្រឡាយ​មាន​សារ​ដែល​មាន​កាលបរិច្ឆេទ​ក្នុង %1"
+
+#: core/view.cpp:2387
+#, kde-format
+msgid "Messages sent within %1"
+msgstr "សារ​ត្រូវបាន​ផ្ញើ​នៅ​ក្នុង %1"
+
+#: core/view.cpp:2389
+#, kde-format
+msgid "Messages received within %1"
+msgstr "សារ​ត្រូវ​បាន​ទទួល​នៅ​ក្នុង %1"
+
+#: core/view.cpp:2398
+#, kde-format
+msgid "Threads started by %1"
+msgstr "ខ្សែស្រឡាយ​ត្រូវបាន​ចាប់ផ្ដើម​ដោយ %1"
+
+#: core/view.cpp:2401
+#, kde-format
+msgid "Threads with most recent message by %1"
+msgstr "ខ្សែស្រឡាយ​ដែល​មាន​សារ​ថ្មីៗ​បំផុត​ដោយ %1"
+
+#: core/view.cpp:2410 core/view.cpp:2434
+#, kde-format
+msgid "Messages sent to %1"
+msgstr "សារ​ត្រូវបាន​ផ្ញើ​ទៅ %1"
+
+#: core/view.cpp:2412
+#, kde-format
+msgid "Messages sent by %1"
+msgstr "សារ​ត្រូវ​បាន​ផ្ញើ​ដោយ %1"
+
+#: core/view.cpp:2415
+#, kde-format
+msgid "Messages received from %1"
+msgstr "បាន​ទទួល​សារ​ពី %1"
+
+#: core/view.cpp:2423
+#, kde-format
+msgid "Threads directed to %1"
+msgstr "ខ្សែស្រឡាយ​បាន​បញ្ជូន​ទៅ %1"
+
+#: core/view.cpp:2426
+#, kde-format
+msgid "Threads with most recent message directed to %1"
+msgstr "ខ្សែ​ស្រឡាយ​ដែល​មាន​សារ​ថ្មីៗ​បំផុត​ត្រូវបាន​បញ្ជូន​ទៅ %1"
+
+#: core/view.cpp:2436
+#, kde-format
+msgid "Messages received by %1"
+msgstr "បាន​ទទួល​សារ​ដោយ %1"
+
+#: core/view.cpp:2462
+#, kde-format
+msgid "<b>%1</b> thread"
+msgid_plural "<b>%1</b> threads"
+msgstr[0] "ខ្សែ​ស្រឡាយ <b>%1</b>"
+
+#: core/view.cpp:2467
+#, kde-format
+msgid "<b>%1</b> message (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
+msgstr[0] "<b>%1</b> សារ​​ (<b>%2</b> មិនទាន់​អាន​​)​"
+
+#: core/widgetbase.cpp:186
+#, kde-format
+msgid "Any filter defined."
+msgstr ""
+
+#: core/widgetbase.cpp:186
+#, kde-format
+msgid "Create Filter"
+msgstr ""
+
+#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#, kde-format
+msgid "Theme"
+msgstr "ស្បែក"
+
+#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
+#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
+#: utils/themeconfigbutton.cpp:46
+#, kde-format
+msgid "Configure..."
+msgstr "កំណត់​រចនា​សម្ព័ន្ធ..."
+
+#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#, kde-format
+msgid "Aggregation"
+msgstr "ការ​រួមបញ្ចូល​គ្នា"
+
+#: core/widgetbase.cpp:581
+#, kde-format
+msgid "Message Sort Order"
+msgstr "លំដាប់​តម្រៀប​សារ"
+
+#: core/widgetbase.cpp:603
+#, kde-format
+msgid "Message Sort Direction"
+msgstr "ទិសដៅ​តម្រៀប​សារ"
+
+#: core/widgetbase.cpp:620
+#, kde-format
+msgid "Group Sort Order"
+msgstr "លំដាប់​តម្រៀប​ក្រុម"
+
+#: core/widgetbase.cpp:637
+#, kde-format
+msgid "Group Sort Direction"
+msgstr "ទិស​តម្រៀប​ក្រុម"
+
+#: core/widgetbase.cpp:652
+#, kde-format
+msgid "Folder Always Uses This Sort Order"
+msgstr "ថត​ប្រើ​លំដាប់​តម្រៀប​នេះ​ជានិច្ច"
+
+#: core/widgets/configurefiltersdialog.cpp:24
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgctxt "@title:window"
+msgid "Configure Filter"
+msgstr "កំណត់​រចនា​សម្ព័ន្ធ..."
+
+#: core/widgets/configurefilterswidget.cpp:78
+#, kde-format
+msgid "Remove"
+msgstr ""
+
+#: core/widgets/configurefilterswidget.cpp:81
+#, kde-format
+msgid "Do you want to delete this filter?"
+msgstr ""
+
+#: core/widgets/configurefilterswidget.cpp:82
+#, kde-format
+msgid "Remove Filter"
+msgstr ""
+
+#: core/widgets/filternamedialog.cpp:19
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Filter"
+msgstr ""
+
+#: core/widgets/filternamewidget.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox Name of the option"
+#| msgid "Name:"
+msgid "Name:"
+msgstr "ឈ្មោះ ៖"
+
+#: core/widgets/filtersavedmenu.cpp:16
+#, kde-format
+msgid "Save Filter..."
+msgstr ""
+
+#: core/widgets/quicksearchline.cpp:40
+#, kde-format
+msgctxt "Search for messages."
+msgid "Search"
+msgstr "ស្វែងរក"
+
+#: core/widgets/quicksearchwarning.cpp:20
+#, kde-format
+msgid "The words less than 3 letters are ignored."
+msgstr ""
+
+#: core/widgets/quicksearchwarning.cpp:21
+#, kde-format
+msgid "Do not show again"
+msgstr ""
+
+#: core/widgets/searchcollectionindexingwarning.cpp:33
+#, kde-format
+msgid ""
+"Some of the search folders in this query are still being indexed or are "
+"excluded from indexing completely. The results below may be incomplete."
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:78
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Prevent the quick search field from being cleared when changing folders"
+msgstr "បង្ហាញ​វាល​ស្វែងរក​រហ័ស​ពី​ការ​​​សម្អាត នៅ​ពេល​ផ្លាស់ប្ដូរ​ថត"
+
+#: core/widgets/searchlinestatus.cpp:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Clear the quick search field when changing folders"
+msgstr "សម្អាត​វាល​ស្វែងរក​រហ័ស នៅ​ពេល​ផ្លាស់ប្ដូរ​ថត"
+
+#: core/widgets/searchlinestatus.cpp:101
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Toggle this button if you want to keep your quick search locked when moving "
+"to other folders or when narrowing the search by message status."
+msgstr ""
+"បិទ/បើក​ប៊ូតុង​នេះ​ប្រសិនបើ​អ្នក​ចង់​រក្សា​ការ​ស្វែងរក​រហ័ស​របស់​អ្នក​ឲ្យ​នៅ​ចាក់សោ នៅ​ពេល​ផ្លាស់ទី​ទៅកាន់​ថត​"
+"ផ្សេងទៀត ឬ​នៅ​ពេល​ស្វែងរក​តូច​ដោយ​ស្ថានភាព​សារ ។"
+
+#: core/widgets/searchlinestatus.cpp:112
+#, kde-format
+msgid "Filter Mails by Status"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:116
+#, kde-format
+msgid "Saved Filter"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:215
+#, kde-format
+msgid "Clear Filter"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:221
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "មិន​ទាន់​អាន"
+
+#: core/widgets/searchlinestatus.cpp:225
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "បានឆ្លើយតប"
+
+#: core/widgets/searchlinestatus.cpp:229
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr "បាន​បញ្ជូនបន្ត"
+
+#: core/widgets/searchlinestatus.cpp:233
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr "សំខាន់"
+
+#: core/widgets/searchlinestatus.cpp:237
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr "ធាតុ​សកម្មភាព​"
+
+#: core/widgets/searchlinestatus.cpp:241
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr "បាន​ឃ្លាំមើល"
+
+#: core/widgets/searchlinestatus.cpp:245
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr "បាន​មិន​អើពើ​"
+
+#: core/widgets/searchlinestatus.cpp:249
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr "មាន​ឯកសារ​ភ្ជាប់​"
+
+#: core/widgets/searchlinestatus.cpp:253
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr "មាន​ការ​អញ្ជើញ​​"
+
+#: core/widgets/searchlinestatus.cpp:257
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr "​សារ​ឥត​បាន​ការ​"
+
+#: core/widgets/searchlinestatus.cpp:261
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr "បន្លំ"
+
+#: core/widgets/searchlinestatus.cpp:271
+#, fuzzy, kde-format
+#| msgid "Message"
+msgid "Full Message"
+msgstr "សារ"
+
+#: core/widgets/searchlinestatus.cpp:278
+#, kde-format
+msgid "Body"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:283
+#, fuzzy, kde-format
+#| msgctxt "@title:column Subject of messages"
+#| msgid "Subject"
+msgid "Subject"
+msgstr "ប្រធាន​បទ"
+
+#: core/widgets/searchlinestatus.cpp:294
+#, kde-format
+msgid "BCC"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:322
+#, fuzzy, kde-format
+#| msgctxt "Receiver of the email"
+#| msgid "To"
+msgid "To"
+msgstr "​ជូន​ចំពោះ"
+
+#: core/widgets/searchlinestatus.cpp:404
+#, kde-format
+msgid "Clear History"
+msgstr ""
+
+#: core/widgets/tablockedwarning.cpp:17
+#, kde-format
+msgid "Current Tab is locked."
+msgstr ""
+
+#: core/widgets/tablockedwarning.cpp:17
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Lock search"
+msgid "(Unlock it)"
+msgstr "បិទ​ការ​ស្វែងរក"
+
+#: messagelistutil.cpp:104
+#, kde-format
+msgid "Sorting"
+msgstr "តម្រៀប​"
+
+#: pane.cpp:123
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open a new tab"
+msgstr "បើក​ផ្ទាំង​ថ្មី"
+
+#: pane.cpp:125
+#, kde-format
+msgid "New tab"
+msgstr "ផ្ទាំង​ថ្មី"
+
+#: pane.cpp:135
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close the current tab"
+msgstr "បិទ​ផ្ទាំង​បច្ចុប្បន្ន"
+
+#: pane.cpp:137
+#, kde-format
+msgid "Close tab"
+msgstr "បិទ​ផ្ទាំង"
+
+#: pane.cpp:179
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "ធ្វើឲ្យ​ផ្ទាំង %1 សកម្ម"
+
+#: pane.cpp:199
+#, kde-format
+msgid "Show Quick Search Bar"
+msgstr "បង្ហាញ​របារ​ស្វែងរក​រហ័ស​"
+
+#: pane.cpp:220
+#, kde-format
+msgid "Message List"
+msgstr "បញ្ជី​សារ"
+
+#: pane.cpp:226
+#, fuzzy, kde-format
+#| msgid "Create new tab"
+msgid "Create New Tab"
+msgstr "បង្កើរ​ផ្ទាំង​ថ្មី"
+
+#: pane.cpp:257
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "ធ្វើឲ្យ​ផ្ទាំង​បន្ទាប់​សកម្ម"
+
+#: pane.cpp:267
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "ធ្វើឲ្យ​ផ្ទាំង​មិន​សកម្ម"
+
+#: pane.cpp:279
+#, kde-format
+msgid "Move Tab Left"
+msgstr "ផ្លាស់ទី​ផ្ទាំង​ទៅ​ឆ្វេង"
+
+#: pane.cpp:287
+#, kde-format
+msgid "Move Tab Right"
+msgstr "ផ្លាស់ទី​ផ្ទាំង​ទៅ​ស្ដាំ"
+
+#: pane.cpp:297
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Close Tab"
+msgid "Close Tab"
+msgstr "បិទ​ផ្ទាំង"
+
+#: pane.cpp:517 pane.cpp:798
+#, kde-format
+msgctxt "@title:tab Empty messagelist"
+msgid "Empty"
+msgstr "ទទេ"
+
+#: pane.cpp:702
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close Tab"
+msgstr "បិទ​ផ្ទាំង"
+
+#: pane.cpp:705
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close All Other Tabs"
+msgstr "បិទ​ផ្ទាំង​ផ្សេងទៀត​ទាំងអស់"
+
+#: pane.cpp:708
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Lock search"
+msgctxt "@action:inmenu"
+msgid "Unlock Tab"
+msgstr "បិទ​ការ​ស្វែងរក"
+
+#: pane.cpp:708
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Lock search"
+msgctxt "@action:inmenu"
+msgid "Lock Tab"
+msgstr "បិទ​ការ​ស្វែងរក"
+
+#: storagemodel.cpp:219
+#, kde-format
+msgctxt "displayed as subject when the subject of a mail is empty"
+msgid "No Subject"
+msgstr "​គ្មាន​ប្រធាន​បទ"
+
+#: storagemodel.cpp:220
+#, kde-format
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr "មិនស្គាល់"
+
+#: utils/aggregationeditor.cpp:31
+#, kde-format
+msgid "Groups && Threading"
+msgstr "ដាក់​ក្រុម និង​ក្រង​ជា​ខ្សែ​ស្រឡាយ"
+
+#: utils/aggregationeditor.cpp:35
+#, kde-format
+msgid "Grouping:"
+msgstr "ដាក់ក្រុម ៖"
+
+#: utils/aggregationeditor.cpp:41
+#, kde-format
+msgid "Group expand policy:"
+msgstr "គោលការណ៍​ពន្លា​ក្រុម ៖"
+
+#: utils/aggregationeditor.cpp:45
+#, kde-format
+msgid "Threading:"
+msgstr "ការ​ចង​ខ្សែ​ស្រឡាយ "
+
+#: utils/aggregationeditor.cpp:51
+#, kde-format
+msgid "Thread leader:"
+msgstr "ក្បាល​ខ្សែ​ស្រឡាយ ៖"
+
+#: utils/aggregationeditor.cpp:55
+#, kde-format
+msgid "Thread expand policy:"
+msgstr "គោលការណ៍​ពន្លា​ខ្សែ​ស្រឡាយ ៖"
+
+#: utils/aggregationeditor.cpp:64
+#, kde-format
+msgctxt "@title:tab Advanced settings tab for aggregation mode"
+msgid "Advanced"
+msgstr "​កម្រិត​ខ្ពស់"
+
+#: utils/aggregationeditor.cpp:68
+#, kde-format
+msgid "Fill view strategy:"
+msgstr "បំពេញ​យុទ្ធសាស្ដ្រ​ទិដ្ឋភាព ៖"
+
+#: utils/configureaggregationsdialog.cpp:100
+#, fuzzy, kde-format
+#| msgid "Customize Message Aggregation Modes"
+msgctxt "@title:window"
+msgid "Customize Message Aggregation Modes"
+msgstr "ប្ដូរ​របៀប​រួមបញ្ចូល​សារ​តាម​បំណង"
+
+#: utils/configureaggregationsdialog.cpp:118
+#: utils/configureaggregationsdialog.cpp:357
+#, kde-format
+msgid "New Aggregation"
+msgstr "ការ​រួមបញ្ចូល​ថ្មី"
+
+#: utils/configureaggregationsdialog.cpp:126
+#, kde-format
+msgid "Clone Aggregation"
+msgstr "ការ​រួមបញ្ចូល​ក្លូន"
+
+#: utils/configureaggregationsdialog.cpp:139
+#, kde-format
+msgid "Export Aggregation..."
+msgstr "នាំចេញ​​ការ​រួម​បញ្ចូល​គ្នា..."
+
+#: utils/configureaggregationsdialog.cpp:146
+#, kde-format
+msgid "Import Aggregation..."
+msgstr "នាំចូល​ការ​រួម​បញ្ចូល..."
+
+#: utils/configureaggregationsdialog.cpp:157
+#, kde-format
+msgid "Delete Aggregation"
+msgstr "លុប​ការ​រួមបញ្ចូល"
+
+#: utils/configureaggregationsdialog.cpp:340
+#, kde-format
+msgid "Unnamed Aggregation"
+msgstr "ការ​រួមបញ្ចូល​គ្មាន​ឈ្មោះ"
+
+#: utils/configureaggregationsdialog.cpp:409
+#, kde-format
+msgid "Import Aggregation"
+msgstr "នាំចូល​ការ​រួមបញ្ចូល​គ្នា"
+
+#: utils/configureaggregationsdialog.cpp:442
+#, kde-format
+msgid "Export Aggregation"
+msgstr "នាំចេញ​ការ​រួមបញ្ចូល​គ្នា"
+
+#: utils/configureaggregationsdialog.cpp:442
+#: utils/configurethemesdialog.cpp:465
+#, kde-format
+msgid "All Files (*)"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:96
+#, fuzzy, kde-format
+#| msgid "Customize Themes"
+msgctxt "@title:window"
+msgid "Customize Themes"
+msgstr "ប្ដូរ​ស្បែក​តាម​បំណង"
+
+#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#, kde-format
+msgid "New Theme"
+msgstr "ស្បែក​ថ្មី"
+
+#: utils/configurethemesdialog.cpp:122
+#, kde-format
+msgid "Clone Theme"
+msgstr "ស្បែក​ក្លូន"
+
+#: utils/configurethemesdialog.cpp:135
+#, kde-format
+msgid "Export Theme..."
+msgstr "នាំចេញ​រូបរាង..."
+
+#: utils/configurethemesdialog.cpp:142
+#, kde-format
+msgid "Import Theme..."
+msgstr "នាំចូល​រូបរាង..."
+
+#: utils/configurethemesdialog.cpp:153
+#, kde-format
+msgid "Delete Theme"
+msgstr "លុប​ស្បែក"
+
+#: utils/configurethemesdialog.cpp:332
+#, kde-format
+msgid "Unnamed Theme"
+msgstr "ស្បែក​គ្មាន​ឈ្មោះ"
+
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#, kde-format
+msgid "New Column"
+msgstr "ជួរ​ឈរ​ថ្មី"
+
+#: utils/configurethemesdialog.cpp:404
+#, kde-format
+msgid "Do you want to delete selected themes?"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:404
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:405
+#, fuzzy, kde-format
+#| msgid "Delete Theme"
+msgctxt "@title:window"
+msgid "Delete Theme"
+msgstr "លុប​ស្បែក"
+
+#: utils/configurethemesdialog.cpp:431
+#, kde-format
+msgid "Import Theme"
+msgstr "នាំចូល​រូបរាង"
+
+#: utils/configurethemesdialog.cpp:465
+#, kde-format
+msgid "Export Theme"
+msgstr "នាំចេញ​រូបរាង"
+
+#: utils/optionseteditor.cpp:27
+#, kde-format
+msgctxt "@title:tab General options of a view mode"
+msgid "General"
+msgstr "ទូទៅ"
+
+#: utils/optionseteditor.cpp:31
+#, kde-format
+msgctxt "@label:textbox Name of the option"
+msgid "Name:"
+msgstr "ឈ្មោះ ៖"
+
+#: utils/optionseteditor.cpp:40
+#, kde-format
+msgctxt "@label:textbox Description of the option"
+msgid "Description:"
+msgstr "​ការ​ពិពណ៌នា ៖"
+
+#: utils/themeeditor.cpp:69
+#, kde-format
+msgctxt "@label:textbox Property name"
+msgid "Name:"
+msgstr "ឈ្មោះ ៖"
+
+#: utils/themeeditor.cpp:73
+#, kde-format
+msgid "The label that will be displayed in the column header."
+msgstr "ស្លាក​ដែល​នឹង​ត្រូវបាន​បង្ហាញ​​នៅ​ក្នុង​បឋមកថា​ជួរ​ឈរ ។"
+
+#: utils/themeeditor.cpp:76
+#, kde-format
+msgid "Header click sorts messages:"
+msgstr "សារ​តម្រៀប​តាម​ការ​ចុច​បឋមកថា ៖"
+
+#: utils/themeeditor.cpp:80
+#, kde-format
+msgid "The sorting order that clicking on this column header will switch to."
+msgstr "លំដាប់​តម្រៀប​ដែល​ចុច​លើ​បឋមកថា​ជួរឈរ​នឹង​ត្រូវ​ប្ដូរ​ទៅ ។"
+
+#: utils/themeeditor.cpp:83
+#, kde-format
+msgid "Visible by default"
+msgstr "មើល​ឃើញ​តាម​លំនាំដើម"
+
+#: utils/themeeditor.cpp:84
+#, kde-format
+msgid "Check this if this column should be visible when the theme is selected."
+msgstr "ពិនិត្យ​មើល​វា ប្រសិន​បើ​ជួរឈរ​នេះ​គួរ​តែ​មើលឃើញ នៅពេល​ដែល​បាន​ជ្រើស​ស្បែក ។"
+
+#: utils/themeeditor.cpp:87
+#, kde-format
+msgid "Contains \"Sender or Receiver\" field"
+msgstr "មាន​វាល \"អ្នក​ផ្ញើ ឬ​អ្នក​ទទួល\""
+
+#: utils/themeeditor.cpp:88
+#, kde-format
+msgid ""
+"Check this if this column label should be updated depending on the folder "
+"\"inbound\"/\"outbound\" type."
+msgstr ""
+"ពិនិត្យ​វា ប្រសិន​បើ​ស្លាក​ជួរ​ឈរ​នេះ​គួរ​តែ​ត្រូវ​បាន​ធ្វើ​បច្ចុប្បន្នភាព ដោយ​ផ្អែក​លើ​ថត​ប្រភេទ \"inbound\"/"
+"\"outbound\" ។"
+
+#: utils/themeeditor.cpp:108
+#, kde-format
+msgid "Unnamed Column"
+msgstr "ជួរ​ឈរ​គ្មាន​ឈ្មោះ"
+
+#: utils/themeeditor.cpp:173
+#, kde-format
+msgid "Message Group"
+msgstr "ក្រុម​សារ"
+
+#: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
+#, kde-format
+msgid ""
+"Very long subject very long subject very long subject very long subject very "
+"long subject very long"
+msgstr "ប្រធានបទ​វែង​ណាស់..."
+
+#: utils/themeeditor.cpp:192
+#, kde-format
+msgid "Sample Tag 1"
+msgstr "ស្លាក​គំរូ ១"
+
+#: utils/themeeditor.cpp:193
+#, kde-format
+msgid "Sample Tag 2"
+msgstr "ស្លាក​គំរូ ២"
+
+#: utils/themeeditor.cpp:194
+#, kde-format
+msgid "Sample Tag 3"
+msgstr "ស្លាក​គំរូ ៣"
+
+#: utils/themeeditor.cpp:409
+#, kde-format
+msgctxt "Indicates whether or not a header label is visible"
+msgid "Visible"
+msgstr "មើល​ឃើញ"
+
+#: utils/themeeditor.cpp:851
+#, kde-format
+msgctxt "@action:inmenu soften the text color"
+msgid "Soften"
+msgstr "ធ្វើ​ឲ្យ​ស្រទន់"
+
+#: utils/themeeditor.cpp:858
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Bold"
+msgstr ""
+
+#: utils/themeeditor.cpp:862
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Italic"
+msgstr ""
+
+#: utils/themeeditor.cpp:869
+#, kde-format
+msgid "Font"
+msgstr "ពុម្ពអក្សរ"
+
+#: utils/themeeditor.cpp:877
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Default"
+msgstr "លំនាំដើម"
+
+#: utils/themeeditor.cpp:882
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Custom..."
+msgstr "ផ្ទាល់ខ្លួន..."
+
+#: utils/themeeditor.cpp:890
+#, kde-format
+msgid "Foreground Color"
+msgstr "ព័ត៌​ផ្ទៃ​ខាង​មុខ"
+
+#: utils/themeeditor.cpp:899
+#, kde-format
+msgctxt ""
+"Hide a mark if the mail does not have the attribute, e.g. Important mark on "
+"a non important mail"
+msgid "Hide"
+msgstr "លាក់"
+
+#: utils/themeeditor.cpp:906
+#, kde-format
+msgctxt ""
+"Keep a empty space in the list if the mail does not have the attribute, e.g. "
+"Important mark on a non important mail"
+msgid "Keep Empty Space"
+msgstr "ទុក​ចន្លោះ​ទទេ"
+
+#: utils/themeeditor.cpp:913
+#, kde-format
+msgctxt ""
+"Show the icon softened in the list if the mail does not have the attribute, "
+"e.g. Important mark on a non important mail"
+msgid "Keep Softened Icon"
+msgstr "រក្សាទុក​រូបតំណាង​ធ្វើ​ឲ្យ​ស្រទន់"
+
+#: utils/themeeditor.cpp:921
+#, kde-format
+msgid "When Disabled"
+msgstr "នៅពេល​បិទ"
+
+#: utils/themeeditor.cpp:927
+#, kde-format
+msgid "Group Header"
+msgstr "បឋមកថា​ក្រុម"
+
+#: utils/themeeditor.cpp:934
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "None"
+msgstr "គ្មាន"
+
+#: utils/themeeditor.cpp:939
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Automatic"
+msgstr "ស្វ័យប្រវត្តិ"
+
+#: utils/themeeditor.cpp:944
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Custom..."
+msgstr "ផ្ទាល់ខ្លួន..."
+
+#: utils/themeeditor.cpp:952
+#, kde-format
+msgid "Background Color"
+msgstr "ពណ៌​ផ្ទៃ​ខាងក្រោម"
+
+#: utils/themeeditor.cpp:972
+#, kde-format
+msgid "Background Style"
+msgstr "រចនាប័ទ្ម​ផ្ទៃ​ខាងក្រោយ"
+
+#: utils/themeeditor.cpp:1158
+#, kde-format
+msgid "Column Properties..."
+msgstr "លក្ខណ​សម្បត្តិ​ជួរឈរ..."
+
+#: utils/themeeditor.cpp:1161
+#, kde-format
+msgid "Add Column..."
+msgstr "បន្ថែម​ជួរ​ឈរ"
+
+#: utils/themeeditor.cpp:1164
+#, kde-format
+msgid "Delete Column"
+msgstr "លុប​ជួរ​ឈរ"
+
+#: utils/themeeditor.cpp:1170
+#, kde-format
+msgid "Move Column to Left"
+msgstr "ផ្លាស់ទី​ជួរឈរ​ទៅ​ឆ្វេង"
+
+#: utils/themeeditor.cpp:1174
+#, kde-format
+msgid "Move Column to Right"
+msgstr "ផ្លាស់ទី​ជួរឈរ​ទៅ​ស្ដាំ"
+
+#: utils/themeeditor.cpp:1223
+#, kde-format
+msgid "Add New Column"
+msgstr "បន្ថែម​ជួរ​ឈរ​ថ្មី"
+
+#: utils/themeeditor.cpp:1247
+#, kde-format
+msgid "Column Properties"
+msgstr "លក្ខណៈ​សម្បត្តិ​ជួរ​ឈរ"
+
+#: utils/themeeditor.cpp:1289
+#, kde-format
+msgid "Appearance"
+msgstr "រូបរាង"
+
+#: utils/themeeditor.cpp:1293
+#, kde-format
+msgid "Content Items"
+msgstr "ធាតុ​មាតិកា"
+
+#: utils/themeeditor.cpp:1425
+#, kde-format
+msgid ""
+"Right click on the header to add or modify columns. Drag the content items "
+"and drop them on the columns in order to compose your theme. Right click on "
+"the items inside the view for more options."
+msgstr ""
+"ចុច​កណ្ដុរ​ខាង​ស្ដាំ​លើ​បឋមកថា ដើម្បី​បន្ថែម ឬ​កែប្រែ​ជួរ​ឈរ ។ អូស​ធាតុ​មាតិកា ហើយ​ទម្លាក់​វា​នៅ​លើ​ជួរ​ឈរ​ដើម្បី​"
+"បង្កើត​ស្បែក​របស់​អ្នក ។ ចុច​កណ្ដុរ​ស្ដាំ​លើ​ធាតុ​នៅ​ក្នុង​ទិដ្ឋភាព ដើម្បី​បង្ហាញ​ជម្រើស​បន្ថែម ។"
+
+#: utils/themeeditor.cpp:1435
+#, kde-format
+msgctxt "@title:tab Advanced theme settings"
+msgid "Advanced"
+msgstr "​កម្រិត​ខ្ពស់"
+
+#: utils/themeeditor.cpp:1439
+#, kde-format
+msgid "Header:"
+msgstr "បឋមកថា ៖"
+
+#: utils/themeeditor.cpp:1445
+#, kde-format
+msgid "Icon size:"
+msgstr "ទំហំ​រូបតំណាង ៖"
+
+#: utils/themeeditor.cpp:1451
+#, kde-format
+msgctxt "suffix in a spinbox"
+msgid " pixel"
+msgid_plural " pixels"
+msgstr[0] "ភីកសែល​"
+
+#: widget.cpp:220
+#, kde-format
+msgctxt "Item in list of Akonadi tags, to show all e-mails"
+msgid "All"
+msgstr ""
+
+#: widget.cpp:345
+#, kde-format
+msgid "Collapse Group"
+msgstr "វេញ​ក្រុម"
+
+#: widget.cpp:348
+#, kde-format
+msgid "Expand Group"
+msgstr "ពន្លា​ក្រុម"
+
+#: widget.cpp:354
+#, kde-format
+msgid "Expand All Groups"
+msgstr "ពន្លា​ក្រុម​ទាំងអស់"
+
+#: widget.cpp:357
+#, kde-format
+msgid "Collapse All Groups"
+msgstr "វេញ​ក្រុម​ទាំងអស់"
+
+#: widget.cpp:413
+#, kde-format
+msgid "&Move Here"
+msgstr "​ផ្លាស់ទី​មក​ទីនេះ"
+
+#: widget.cpp:414
+#, kde-format
+msgid "&Copy Here"
+msgstr "​ចម្លង​មក​ទីនេះ"
+
+#: widget.cpp:416
+#, kde-format
+msgid "C&ancel"
+msgstr "​បោះបង់"
+
+#~ msgid "Show close button on each tab"
+#~ msgstr "បង្ហាញ​ប៊ូតុង​បិទ​នៅ​លើ​ផ្ទាំង​នីមួយៗ"
+
+#~ msgid "Enable this option if you want to have a close button on each tab."
+#~ msgstr "បើក​ជម្រើស​នេះ​ប្រសិនបើ​អ្នក​ចង់​មាន​ប៊ូតុង​បិទ​នៅ​លើ​ផ្ទាំង​នីមួយៗ ។"
+
+#~ msgid "Hide tab bar when only one tab is open"
+#~ msgstr "លាក់​របារ​ផ្ទាំង​នៅ​ពេល​តែ​បើក​ផ្ទាំង​មួយ​ប៉ុណ្ណោះ"
+
+#~ msgid ""
+#~ "With this option enabled the tab bar will be displayed only when there "
+#~ "are two or more tabs. With this option disabled the tab bar will be "
+#~ "always shown. When the tab bar is hidden you can always open a folder in "
+#~ "a new tab by middle-clicking it."
+#~ msgstr ""
+#~ "ដោយ​បាន​អនុញ្ញាត​ជម្រើស​នេះ របារ​ផ្ទាំង​នឹង​ត្រូវ​បាន​បង្ហាញ​តែ​នៅ​ពេល​ដែល​មាន​ផ្ទាំង​ពីរ ឬ​ច្រើន​ប៉ុណ្ណោះ "
+#~ "។ បើ​បិទ​ជម្រើស​នេះ របារ​ផ្ទាំង​នឹង​ត្រូវ​បាន​បង្ហាញ​ជានិច្ច ។ នៅ​ពេល​ដែល​របារ​ផ្ទាំង​ត្រូវ​បាន​លាក់​នោះ "
+#~ "អ្នក​នឹង​អាច​បើក​ថត​នៅ​ក្នុង​ផ្ទាំង​ថ្មី​បាន​ជា​និច្ច​ដោយ​ចុច​ប៊ូតុង​កណ្ដុរ​កណ្ដាល​លើ​វា ។"
+
+#, fuzzy
+#~| msgid "Configure..."
+#~ msgid "More..."
+#~ msgstr "កំណត់​រចនា​សម្ព័ន្ធ..."
+
+#~ msgctxt "@action:inmenu Font setting"
+#~ msgid "Default"
+#~ msgstr "លំនាំដើម"
+
+#~ msgctxt "@action:inmenu Font setting"
+#~ msgid "Custom..."
+#~ msgstr "ផ្ទាល់ខ្លួន..."
+
+#~ msgid "Open Full Search"
+#~ msgstr "បើក​ការ​ស្វែងរក​ពេញលេញ"
+
+#~ msgid "Any Status"
+#~ msgstr "ស្ថាន​ភាព​ណាមួយ"
+
+#~ msgid "Fancy"
+#~ msgstr "ស្អាត"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Unlock search"
+#~ msgstr "ដោះ​សោ​ស្វែងរក"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Lock search"
+#~ msgstr "ចាក់សោ​ស្វែងរក"
+
+#~ msgid "Expand Threads With New Messages"
+#~ msgstr "ពន្លា​ខ្សែ​ស្រឡាយ​ជាមួយ​សារ​ថ្មី"
+
+#~ msgctxt "Status of an item"
+#~ msgid "New"
+#~ msgstr "ថ្មី"
+
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "New"
+#~ msgstr "ថ្មី"

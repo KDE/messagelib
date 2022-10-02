@@ -1,0 +1,7564 @@
+# Irish translation of kmail
+# Copyright (C) 2009 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kmail package.
+# Kevin Scannell <kscanne@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdepim/kmail.po\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2004-12-03 14:52-0500\n"
+"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
+"3 : 4\n"
+
+#: messagepartthemes/default/templates/certmessagepart.html:2
+#, fuzzy
+#| msgid "1 new certificate was imported."
+#| msgid_plural "%1 new certificates were imported."
+msgid "Sorry, certificate could not be imported."
+msgstr "Iompórtáladh %1 teastas nua."
+
+#: messagepartthemes/default/templates/certmessagepart.html:4
+#, kde-format
+msgid "Reason: %1"
+msgstr "Fáth: %1"
+
+#: messagepartthemes/default/templates/certmessagepart.html:7
+#, fuzzy
+#| msgid "1 new certificate was imported."
+#| msgid_plural "%1 new certificates were imported."
+msgid "Sorry, no certificates were found in this message."
+msgstr "Iompórtáladh %1 teastas nua."
+
+#: messagepartthemes/default/templates/certmessagepart.html:9
+#, fuzzy
+#| msgid "1 new certificate was imported."
+#| msgid_plural "%1 new certificates were imported."
+msgid "Certificate import status:"
+msgstr "Iompórtáladh %1 teastas nua."
+
+#: messagepartthemes/default/templates/certmessagepart.html:13
+#, kde-format
+msgid "1 new certificate was imported."
+msgid_plural "%1 new certificates were imported."
+msgstr[0] "Iompórtáladh %1 teastas nua."
+msgstr[1] "Iompórtáladh %1 theastas nua."
+msgstr[2] "Iompórtáladh %1 theastas nua."
+msgstr[3] "Iompórtáladh %1 dteastas nua."
+msgstr[4] "Iompórtáladh %1 teastas nua."
+
+#: messagepartthemes/default/templates/certmessagepart.html:16
+#, kde-format
+msgid "1 certificate was unchanged."
+msgid_plural "%1 certificates were unchanged."
+msgstr[0] "%1 teastas gan athrú."
+msgstr[1] "%1 theastas gan athrú."
+msgstr[2] "%1 theastas gan athrú."
+msgstr[3] "%1 dteastas gan athrú."
+msgstr[4] "%1 teastas gan athrú."
+
+#: messagepartthemes/default/templates/certmessagepart.html:19
+#, kde-format
+msgid "1 new secret key was imported."
+msgid_plural "%1 new secret keys were imported."
+msgstr[0] "Iompórtáladh %1 eochair nua rúnda."
+msgstr[1] "Iompórtáladh %1 eochair nua rúnda."
+msgstr[2] "Iompórtáladh %1 eochair nua rúnda."
+msgstr[3] "Iompórtáladh %1 n-eochair nua rúnda."
+msgstr[4] "Iompórtáladh %1 eochair nua rúnda."
+
+#: messagepartthemes/default/templates/certmessagepart.html:22
+#, kde-format
+msgid "1 secret key was unchanged."
+msgid_plural "%1 secret keys were unchanged."
+msgstr[0] "%1 eochair rúnda gan athrú."
+msgstr[1] "%1 eochair rúnda gan athrú."
+msgstr[2] "%1 eochair rúnda gan athrú."
+msgstr[3] "%1 n-eochair rúnda gan athrú."
+msgstr[4] "%1 eochair rúnda gan athrú."
+
+#: messagepartthemes/default/templates/certmessagepart.html:28
+msgid "Sorry, no details on certificate import available."
+msgstr ""
+
+#: messagepartthemes/default/templates/certmessagepart.html:30
+#, fuzzy
+#| msgid "1 new certificate was imported."
+#| msgid_plural "%1 new certificates were imported."
+msgid "Certificate import details:"
+msgstr "Iompórtáladh %1 teastas nua."
+
+#: messagepartthemes/default/templates/certmessagepart.html:34
+#, kde-format
+msgctxt "Certificate import failed."
+msgid "Failed: %1 (%2)"
+msgstr "Teipthe: %1 (%2)"
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:5
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:7
+#, fuzzy
+#| msgid "Encapsulated Message"
+msgid "Encapsulated message"
+msgstr "Teachtaireacht Chuimsithe"
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:19
+#, fuzzy
+#| msgid "Encapsulated Message"
+msgid "End of encapsulated message"
+msgstr "Teachtaireacht Chuimsithe"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:3
+msgid "This message is encrypted."
+msgstr "Tá an teachtaireacht seo criptithe."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:7
+msgid "Decrypt Message"
+msgstr "Díchriptigh an Teachtaireacht"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:14
+#, fuzzy
+#| msgid "Please wait while the message is transferred"
+#| msgid_plural "Please wait while the %1 messages are transferred"
+msgid "Please wait while the message is being decrypted..."
+msgstr "Fan go fóill; %1 teachtaireacht á aistriú"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:18
+#, fuzzy
+#| msgid "This message is encrypted."
+msgid "The message is encrypted for the following keys:"
+msgstr "Tá an teachtaireacht seo criptithe."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:72
+#: messagepartthemes/default/templates/signedmessagepart.html:135
+msgid "Hide Details"
+msgstr "Folaigh Mionsonraí"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:27
+#: messagepartthemes/default/templates/encryptedmessagepart.html:62
+#, fuzzy
+#| msgid "unknown"
+msgid "unknown key"
+msgstr "anaithnid"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:34
+msgid "Encrypted message"
+msgstr "Teachtaireacht chriptithe"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:158
+msgid "Show Details"
+msgstr "Taispeáin Mionsonraí"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:41
+msgid "Encrypted message (decryption not possible)"
+msgstr "Teachtaireacht chriptithe (ní féidir díchriptiú)"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:44
+#, fuzzy
+#| msgid "Reason: %1"
+msgid "Reason: "
+msgstr "Fáth: %1"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:56
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:67
+#, fuzzy
+#| msgid "Could not decrypt the data."
+msgid "Could not decrypt the data."
+msgstr "Níorbh fhéidir na sonraí a dhíchriptiú."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+#, fuzzy
+#| msgid "Encrypted message"
+msgid "End of encrypted message"
+msgstr "Teachtaireacht chriptithe"
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:6
+msgid ""
+"<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+"HTML code is shown. If you trust the sender of this message then you can "
+"activate formatted HTML display for this message <a href='kmail:showHTML'>by "
+"clicking here</a>."
+msgstr ""
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:12
+msgid ""
+"<b>Note:</b> This HTML message may contain external references to images "
+"etc. For security/privacy reasons external references are not loaded. If you "
+"trust the sender of this message then you can load the external references "
+"for this message <a href='kmail:loadExternal'>by clicking here</a>."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:5
+#, fuzzy
+#| msgid "Please wait while the message is transferred"
+#| msgid_plural "Please wait while the %1 messages are transferred"
+msgid "Please wait while the signature is being verified..."
+msgstr "Fan go fóill; %1 teachtaireacht á aistriú"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:15
+#, kde-format
+msgid "Not enough information to check signature. %1"
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:108
+#: messagepartthemes/default/templates/signedmessagepart.html:127
+#, fuzzy, kde-format
+#| msgid "Message was signed with key %1."
+msgid "Message was signed by %1."
+msgstr "Bhí an teachtaireacht sínithe le heochair %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:22
+#: messagepartthemes/default/templates/signedmessagepart.html:92
+msgid "Message was signed with unknown key."
+msgstr "Bhí an teachtaireacht sínithe le heochair anaithnid."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:28
+#: messagepartthemes/default/templates/signedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:48
+#, kde-format
+msgid "Message was signed with key %1."
+msgstr "Bhí an teachtaireacht sínithe le heochair %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:31
+#, kde-format
+msgid "Message was signed by %3 on %1 with key %2"
+msgstr "Bhí an teachtaireacht sínithe ag %3 ar %1 le heochair %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:39
+#, kde-format
+msgid "Message was signed on %1 with key %2."
+msgstr "Bhí an teachtaireacht sínithe ar %1 le heochair %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:45
+#, kde-format
+msgid "Message was signed by %2 with key %1."
+msgstr "Bhí an teachtaireacht sínithe ag %2 le heochair %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:57
+#: messagepartthemes/default/templates/signedmessagepart.html:98
+msgid "Status: "
+msgstr "Stádas:"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:85
+#, kde-format
+msgid "Message was signed on %1 with unknown key %2."
+msgstr "Bhí an teachtaireacht sínithe ar %1 le heochair anaithnid %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#, kde-format
+msgid "Message was signed with unknown key %1."
+msgstr "Bhí an teachtaireacht sínithe le heochair anaithnid %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:95
+#, fuzzy
+#| msgid "Please wait while the message is transferred"
+#| msgid_plural "Please wait while the %1 messages are transferred"
+msgid "The validity of the signature cannot be verified."
+msgstr "Fan go fóill; %1 teachtaireacht á aistriú"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:105
+#: messagepartthemes/default/templates/signedmessagepart.html:124
+#, fuzzy, kde-format
+#| msgid "Message was signed by %2 with key %1."
+msgid "Message was signed by %2 (Key ID: %1)."
+msgstr "Bhí an teachtaireacht sínithe ag %2 le heochair %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+msgid "The signature is valid, but the key's validity is unknown."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:114
+msgid "The signature is valid and the key is marginally trusted."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:116
+msgid "The signature is valid and the key is fully trusted."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:118
+msgid "The signature is valid and the key is ultimately trusted."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:120
+msgid "The signature is valid, but the key is untrusted."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:130
+msgid "Warning: The signature is bad."
+msgstr "Rabhadh: Drochshíniú."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:143
+msgid "Invalid signature."
+msgstr "Síniú neamhbhailí."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:145
+msgid "Not enough information to check signature validity."
+msgstr ""
+
+#: messagepartthemes/default/templates/signedmessagepart.html:148
+#, fuzzy, kde-format
+#| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+msgid "Signed by <a href='mailto:%1'>%1</a>."
+msgstr "Sínithe ag <a href=\"mailto:%1\">%2</a>."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:151
+msgid "Signature is valid."
+msgstr "Síniú bailí."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
+#, fuzzy
+#| msgid "Show signature details."
+msgid "Unknown signature state"
+msgstr "Taispeáin mionsonraí an tsínithe."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:170
+#, fuzzy
+#| msgid "Error saving message"
+msgid "End of signed message"
+msgstr "Earráid agus teachtaireacht á sábháil"
+
+#: dkim-verify/dkimcheckfulljob.cpp:118
+#, kde-format
+msgid ""
+"Stored DKIM key is different from the current one. Do you want to store this "
+"one too?"
+msgstr ""
+
+#: dkim-verify/dkimcheckfulljob.cpp:119
+#, kde-format
+msgid "Key Changed"
+msgstr ""
+
+#: dkim-verify/dkimcheckfulljob.cpp:120
+#, fuzzy, kde-format
+#| msgid "stored: "
+msgctxt "@action:button"
+msgid "Store"
+msgstr "stóráilte: "
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "SDID"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, fuzzy, kde-format
+#| msgid "Select Folder"
+msgid "Selector"
+msgstr "Roghnaigh Fillteán"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "DKIM Key"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, fuzzy, kde-format
+#| msgid "&Insert"
+msgid "Inserted"
+msgstr "&Ionsáigh"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, fuzzy, kde-format
+#| msgid "Last Search"
+msgid "Last Used"
+msgstr "Cuardach Is Déanaí"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:64
+#, fuzzy, kde-format
+#| msgid "&Copy To"
+msgid "Copy Key"
+msgstr "&Cóipeáil Go"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:70
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Remove Key"
+msgid_plural "Remove Keys"
+msgstr[0] "Bain"
+msgstr[1] "Bain"
+msgstr[2] "Bain"
+msgstr[3] "Bain"
+msgstr[4] "Bain"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:75
+#, kde-format
+msgid "Do you want to delete this key?"
+msgid_plural "Do you want to delete these keys?"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:76
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Delete"
+msgid "Delete Key"
+msgid_plural "Delete Keys"
+msgstr[0] "Scrios"
+msgstr[1] "Scrios"
+msgstr[2] "Scrios"
+msgstr[3] "Scrios"
+msgstr[4] "Scrios"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:89
+#: dkim-verify/dkimmanageruleswidget.cpp:221
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgid "Delete All"
+msgstr "Scrios"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:91
+#, kde-format
+msgid "Do you want to delete all keys?"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:92
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Delete"
+msgid "Delete Keys"
+msgstr "Scrios"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:20
+#, fuzzy, kde-format
+#| msgid "Message will be signed"
+msgid "Must be signed"
+msgstr "Beidh an teachtaireacht sínithe"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:21
+#, fuzzy, kde-format
+#| msgid "Message will be signed"
+msgid "Can be signed"
+msgstr "Beidh an teachtaireacht sínithe"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:22
+#, fuzzy, kde-format
+#| msgid "Message will not be signed"
+msgid "Ignore if not signed"
+msgstr "Ní bheidh an teachtaireacht sínithe"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:29
+#, kde-format
+msgid "Export..."
+msgstr "Easpórtáil..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:31
+#, fuzzy, kde-format
+#| msgid "Configure Account"
+msgctxt "@title:window"
+msgid "Configure Rule"
+msgstr "Cumraigh Cuntas"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:42
+#, fuzzy, kde-format
+#| msgid "Add G&roup..."
+msgid "Add Rule..."
+msgstr "Cuir G&rúpa Leis..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:47
+#, kde-format
+msgid "Import..."
+msgstr "Iompórtáil..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, fuzzy, kde-format
+#| msgid "No signature found"
+msgid "No rules found"
+msgstr "Níor aimsíodh aon síniú"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
+#, fuzzy, kde-format
+#| msgid "Export Filters"
+msgid "Export Rules"
+msgstr "Easpórtáil Scagairí"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "Import Filters"
+msgid "Import Rules"
+msgstr "Iompórtáil Scagairí"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, fuzzy, kde-format
+#| msgid "No signature found"
+msgid "No rules imported."
+msgstr "Níor aimsíodh aon síniú"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: remote-content/remotecontentconfigurewidget.cpp:51
+#, kde-format
+msgid "Domain"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Active"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "List-ID"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "From"
+msgstr "Ó"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, fuzzy, kde-format
+#| msgid "Folder type:"
+msgid "Rule type"
+msgstr "Cineál an fhillteáin:"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Priority"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:194
+#: remote-content/remotecontentconfigurewidget.cpp:78
+#, kde-format
+msgid "Add..."
+msgstr "Cuir Leis..."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:199
+#: remote-content/remotecontentconfigurewidget.cpp:81
+#, kde-format
+msgid "Modify..."
+msgstr "Athraigh..."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:203
+#, fuzzy, kde-format
+#| msgid "Filter Rules"
+msgid "Duplicate Rule"
+msgstr "Rialacha Scagtha"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:207
+#: remote-content/remotecontentconfigurewidget.cpp:85
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Remove Rule"
+msgstr "Bain"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:209
+#, kde-format
+msgid "Do you want to delete this rule?"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:210
+#: remote-content/remotecontentconfigurewidget.cpp:88
+#, fuzzy, kde-format
+#| msgid "Filter Rules"
+msgid "Delete Rule"
+msgstr "Rialacha Scagtha"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:223
+#, kde-format
+msgid "Do you want to delete all the rules?"
+msgstr ""
+
+#: dkim-verify/dkimmanageruleswidget.cpp:224
+#, fuzzy, kde-format
+#| msgid "Filter Rules"
+msgid "Delete Rules"
+msgstr "Rialacha Scagtha"
+
+#: dkim-verify/dkimruledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Rule"
+msgstr ""
+
+#: dkim-verify/dkimruledialog.cpp:73
+#, fuzzy, kde-format
+#| msgid "Modify Account"
+msgctxt "@title:window"
+msgid "Modify Rule"
+msgstr "Athraigh Cuntas"
+
+#: dkim-verify/dkimrulewidget.cpp:18
+#, fuzzy, kde-format
+#| msgid "Enable"
+msgid "Enabled"
+msgstr "Cumasaigh"
+
+#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#, fuzzy, kde-format
+#| msgid "Defaul&t domain:"
+msgid "Domain:"
+msgstr "Fearann réamhshocrai&the:"
+
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#, kde-format
+msgid "List-Id:"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#, fuzzy, kde-format
+#| msgctxt "Translate from language"
+#| msgid "From:"
+msgid "From:"
+msgstr "Ó: "
+
+#: dkim-verify/dkimrulewidget.cpp:46
+#, kde-format
+msgid "Use '*' to specify all emails from domain"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:51
+#, kde-format
+msgid "SDID:"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:54
+#, kde-format
+msgid "Rule:"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:60
+#, kde-format
+msgid "Priority:"
+msgstr ""
+
+#: dkim-verify/dkimviewermenu.cpp:14
+#, kde-format
+msgid "DKIM"
+msgstr ""
+
+#: dkim-verify/dkimviewermenu.cpp:36
+#, fuzzy, kde-format
+#| msgid "Signature"
+msgid "Recheck DKIM Signature"
+msgstr "Síniú"
+
+#: dkim-verify/dkimviewermenu.cpp:39
+#, kde-format
+msgid "Update DKIM key"
+msgstr ""
+
+#: dkim-verify/dkimviewermenu.cpp:43
+#, kde-format
+msgid "Rules..."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:97
+#, fuzzy, kde-format
+#| msgctxt "Unknown date"
+#| msgid "Unknown"
+msgid "Unknown"
+msgstr "Anaithnid"
+
+#: dkim-verify/dkimwidgetinfo.cpp:103
+#, fuzzy, kde-format
+#| msgid "Message was signed with key %1."
+msgid "DKIM: valid (signed by %1)"
+msgstr "Bhí an teachtaireacht sínithe le heochair %1."
+
+#: dkim-verify/dkimwidgetinfo.cpp:110
+#, kde-format
+msgid "DKIM: invalid"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:113
+#, fuzzy, kde-format
+#| msgid "Send Unsigned?"
+msgid "DKIM: Not signed"
+msgstr "Seol Gan Síniú?"
+
+#: dkim-verify/dkimwidgetinfo.cpp:118
+#, kde-format
+msgid "DKIM: Should Be Signed by %1"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:134
+#, kde-format
+msgid "Body Hash was corrupted."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:137
+#, kde-format
+msgid "The domain doesn't exist."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:140
+#, kde-format
+msgid "Missing header From."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:143
+#, fuzzy, kde-format
+#| msgid "Good signature."
+msgid "Missing signature."
+msgstr "Síniú maith."
+
+#: dkim-verify/dkimwidgetinfo.cpp:146
+#, fuzzy, kde-format
+#| msgid "Invalid signature."
+msgid "Invalid query method."
+msgstr "Síniú neamhbhailí."
+
+#: dkim-verify/dkimwidgetinfo.cpp:149
+#, kde-format
+msgid "Invalid header canonicalization."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:152
+#, kde-format
+msgid "Invalid body canonicalization."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:155
+#, kde-format
+msgid "Unknown Body Hash Algorithm."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:158
+#, fuzzy, kde-format
+#| msgid "Signature is valid."
+msgid "Signature algorithm is invalid."
+msgstr "Síniú bailí."
+
+#: dkim-verify/dkimwidgetinfo.cpp:161
+#, fuzzy, kde-format
+#| msgid "One key has been revoked."
+msgid "The public key was revoked."
+msgstr "Cealaíodh eochair amháin."
+
+#: dkim-verify/dkimwidgetinfo.cpp:164
+#, fuzzy, kde-format
+#| msgid "Signature is valid."
+msgid "Signature is too large."
+msgstr "Síniú bailí."
+
+#: dkim-verify/dkimwidgetinfo.cpp:167
+#, fuzzy, kde-format
+#| msgid "This charset is not supported."
+msgid "Hash Algorithm is unsupported."
+msgstr "Ní thacaítear leis an tacar carachtar seo."
+
+#: dkim-verify/dkimwidgetinfo.cpp:170
+#, kde-format
+msgid "Public key is too small."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:173
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgid "Impossible to verify signature."
+msgstr "Earráid agus iatán á shábháil"
+
+#: dkim-verify/dkimwidgetinfo.cpp:176
+#, kde-format
+msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:179
+#, kde-format
+msgid "The signing domain is only testing DKIM."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:182
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgid "Impossible to download key."
+msgstr "Earráid agus iatán á shábháil"
+
+#: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
+#, fuzzy, kde-format
+#| msgid "This charset is not supported."
+msgid "Hash Algorithm unsafe (sha1)"
+msgstr "Ní thacaítear leis an tacar carachtar seo."
+
+#: dkim-verify/dkimwidgetinfo.cpp:188
+#, kde-format
+msgid "AUID is not in a subdomain of SDID"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:191
+#, kde-format
+msgid "Problem during converting public key"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:200
+#, fuzzy, kde-format
+#| msgid "The signature has expired."
+msgid "Signature expired"
+msgstr "Tá an síniú as dáta."
+
+#: dkim-verify/dkimwidgetinfo.cpp:203
+#, kde-format
+msgid "Signature created in the future"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:206
+#, fuzzy, kde-format
+#| msgid "Signature is valid."
+msgid "Signature too small"
+msgstr "Síniú bailí."
+
+#: dkim-verify/dkimwidgetinfo.cpp:212
+#, fuzzy, kde-format
+#| msgid "Signature is valid."
+msgid "Public Key too small"
+msgstr "Síniú bailí."
+
+#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:279
+#, kde-format
+msgctxt "method name: info about it from parsing"
+msgid "%1: %2"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:256
+#, fuzzy, kde-format
+#| msgctxt "Permissions"
+#| msgid "None"
+msgid "%1: None"
+msgstr "Gan Chead"
+
+#: dkim-verify/dkimwidgetinfo.cpp:271
+#, fuzzy, kde-format
+#| msgid "Message was signed with key %1."
+msgid "%1: Valid (Signed by %2)"
+msgstr "Bhí an teachtaireacht sínithe le heochair %1."
+
+#: dkim-verify/dkimwidgetinfo.cpp:291
+#, kde-format
+msgid "%1: Valid"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:306
+#, fuzzy, kde-format
+#| msgid "Do &Not Sign"
+msgid "Not Signed"
+msgstr "&Ná Sínigh"
+
+#: header/grantleeheaderformatter.cpp:232
+#, fuzzy, kde-format
+#| msgctxt "@title:column Subject of the found message."
+#| msgid "Subject"
+msgid "Subject:"
+msgstr "Ábhar"
+
+#: header/grantleeheaderformatter.cpp:252
+#, fuzzy, kde-format
+#| msgid "Date: "
+msgid "Date:"
+msgstr "Dáta: "
+
+#: header/grantleeheaderformatter.cpp:274
+#, fuzzy, kde-format
+#| msgctxt "Translate to language"
+#| msgid "To:"
+msgid "To:"
+msgstr "Go:"
+
+#: header/grantleeheaderformatter.cpp:276
+#, fuzzy, kde-format
+#| msgid "Reply"
+msgid "Reply To:"
+msgstr "Freagair"
+
+#: header/grantleeheaderformatter.cpp:278
+#, fuzzy, kde-format
+#| msgid "CC: "
+msgid "CC:"
+msgstr "CC: "
+
+#: header/grantleeheaderformatter.cpp:280
+#, fuzzy, kde-format
+#| msgid "BCC: "
+msgid "BCC:"
+msgstr "BCC: "
+
+#: header/grantleeheaderformatter.cpp:284
+#, fuzzy, kde-format
+#| msgid "Sender"
+msgid "Sender:"
+msgstr "Seoltóir"
+
+#: header/grantleeheaderformatter.cpp:286
+#, fuzzy, kde-format
+#| msgid "(resent from %1)"
+msgid "resent from:"
+msgstr "(athsheolta ó %1)"
+
+#: header/grantleeheaderformatter.cpp:288
+#, fuzzy, kde-format
+#| msgid "(resent from %1)"
+msgid "resent to:"
+msgstr "(athsheolta ó %1)"
+
+#: header/grantleeheaderformatter.cpp:388
+#, fuzzy, kde-format
+#| msgid "The signature file is not valid"
+msgid "Grantlee theme \"%1\" is not valid."
+msgstr "Is neamhbhailí é an comhad sínithe"
+
+#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
+#, kde-format
+msgid "No Subject"
+msgstr "Gan Ábhar"
+
+#: header/grantleeheaderformatter.cpp:500
+#, kde-format
+msgid "Spam Status:"
+msgstr "Stádas Dramhphoist:"
+
+#: header/grantleeheaderformatter.cpp:512
+#, fuzzy, kde-format
+#| msgid "Printing Output"
+msgid "Printing mode"
+msgstr "Aschur Priontála"
+
+#: header/grantleeheaderformatter.cpp:554
+#, fuzzy, kde-format
+#| msgid "[vCard]"
+msgid "[vcard]"
+msgstr "[v-Chárta]"
+
+#: header/grantleeheaderformatter.cpp:561
+#, kde-format
+msgid "Attachments:"
+msgstr "Iatáin:"
+
+#: header/grantleeheaderformatter.cpp:590
+#, fuzzy, kde-format
+#| msgid "Security"
+msgid "Security:"
+msgstr "Slándáil"
+
+#: header/headerstyle_util.cpp:55
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "Anaithnid"
+
+#: header/headerstyle_util.cpp:146
+#, kde-format
+msgid ""
+"%1% probability of being spam with confidence %3%.\n"
+"\n"
+"Full report:\n"
+"Probability=%2\n"
+"Confidence=%4"
+msgstr ""
+
+#: header/headerstyle_util.cpp:155
+#, kde-format
+msgid ""
+"%1% probability of being spam.\n"
+"\n"
+"Full report:\n"
+"Probability=%2"
+msgstr ""
+
+#: header/headerstyle_util.cpp:164
+#, kde-format
+msgid "No Spam agent"
+msgstr ""
+
+#: header/headerstyle_util.cpp:167
+#, kde-format
+msgid "Spam filter score not a number"
+msgstr ""
+
+#: header/headerstyle_util.cpp:170
+#, kde-format
+msgid "Threshold not a valid number"
+msgstr ""
+
+#: header/headerstyle_util.cpp:173
+#, kde-format
+msgid "Spam filter score could not be extracted from header"
+msgstr ""
+
+#: header/headerstyle_util.cpp:176
+#, kde-format
+msgid "Threshold could not be extracted from header"
+msgstr ""
+
+#: header/headerstyle_util.cpp:179
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgid "Error evaluating spam score"
+msgstr "Earráid agus teachtaireacht á luchtú"
+
+#: header/headerstyle_util.cpp:184
+#, kde-format
+msgid ""
+"%1.\n"
+"\n"
+"Full report:\n"
+"%2"
+msgstr ""
+
+#: header/headerstylemenumanager.cpp:105
+#, kde-format
+msgctxt "View->"
+msgid "&Headers"
+msgstr "&Ceanntásca"
+
+#: header/headerstylemenumanager.cpp:109
+#, fuzzy, kde-format
+#| msgid "Show long list of message headers"
+msgid "Choose display style of message headers"
+msgstr "Taispeáin liosta fada de cheanntásca na dteachtaireachtaí"
+
+#: header/plainheaderstyle.cpp:103
+#, kde-format
+msgid "Date: "
+msgstr "Dáta: "
+
+#: header/plainheaderstyle.cpp:107
+#, kde-format
+msgid "From: "
+msgstr "Ó: "
+
+#: header/plainheaderstyle.cpp:109
+#, kde-format
+msgid "[vCard]"
+msgstr "[v-Chárta]"
+
+#: header/plainheaderstyle.cpp:119
+#, kde-format
+msgctxt "To-field of the mailheader."
+msgid "To: "
+msgstr "Chuig: "
+
+#: header/plainheaderstyle.cpp:126
+#, kde-format
+msgid "CC: "
+msgstr "CC: "
+
+#: header/plainheaderstyle.cpp:133
+#, kde-format
+msgid "BCC: "
+msgstr "BCC: "
+
+#: header/plainheaderstyle.cpp:138
+#, fuzzy, kde-format
+#| msgid "Reply"
+msgid "Reply to: "
+msgstr "Freagair"
+
+#: mdn/mdnwarningwidget.cpp:14
+#, fuzzy, kde-format
+#| msgid "Ignore"
+msgctxt "@action"
+msgid "Ignore"
+msgstr "Déan neamhaird de"
+
+#: mdn/mdnwarningwidget.cpp:15
+#, fuzzy, kde-format
+#| msgid "Send"
+msgctxt "@action"
+msgid "Send"
+msgstr "Seol"
+
+#: mdn/mdnwarningwidget.cpp:16
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox Show sender."
+#| msgid "Sender"
+msgctxt "@action"
+msgid "Send Deny"
+msgstr "Seoltóir"
+
+#: messagepartthemes/default/defaultrenderer.cpp:76
+#, kde-format
+msgid "Error: Signature not verified"
+msgstr "Earráid: Síniú gan deimhniú"
+
+#: messagepartthemes/default/defaultrenderer.cpp:80
+#, kde-format
+msgid "Good signature"
+msgstr "Síniú maith"
+
+#: messagepartthemes/default/defaultrenderer.cpp:84
+#, fuzzy, kde-format
+#| msgid "Good signature"
+msgid "Bad signature"
+msgstr "Síniú maith"
+
+#: messagepartthemes/default/defaultrenderer.cpp:88
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgid "No public key to verify the signature"
+msgstr "Earráid agus iatán á shábháil"
+
+#: messagepartthemes/default/defaultrenderer.cpp:92
+#, kde-format
+msgid "No signature found"
+msgstr "Níor aimsíodh aon síniú"
+
+#: messagepartthemes/default/defaultrenderer.cpp:96
+#, fuzzy, kde-format
+#| msgid "Error saving attachment"
+msgid "Error verifying the signature"
+msgstr "Earráid agus iatán á shábháil"
+
+#: messagepartthemes/default/defaultrenderer.cpp:100
+#, kde-format
+msgid "Different results for signatures"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#, kde-format
+msgid "No status information available."
+msgstr "Níl eolas stádais ar fáil"
+
+#: messagepartthemes/default/defaultrenderer.cpp:127
+#: messagepartthemes/default/defaultrenderer.cpp:212
+#, kde-format
+msgid "Good signature."
+msgstr "Síniú maith."
+
+#: messagepartthemes/default/defaultrenderer.cpp:148
+#, fuzzy, kde-format
+#| msgid "One key has been revoked."
+msgid "One key has expired."
+msgstr "Cealaíodh eochair amháin."
+
+#: messagepartthemes/default/defaultrenderer.cpp:152
+#, kde-format
+msgid "The signature has expired."
+msgstr "Tá an síniú as dáta."
+
+#: messagepartthemes/default/defaultrenderer.cpp:157
+#, kde-format
+msgid "Unable to verify: key missing."
+msgstr "Ní féidir deimhniú: eochair ar iarraidh."
+
+#: messagepartthemes/default/defaultrenderer.cpp:164
+#, fuzzy, kde-format
+#| msgid "Not available."
+msgid "CRL not available."
+msgstr "Níl ar Fáil."
+
+#: messagepartthemes/default/defaultrenderer.cpp:168
+#, kde-format
+msgid "Available CRL is too old."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:172
+#, kde-format
+msgid "A policy was not met."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:176
+#, kde-format
+msgid "A system error occurred."
+msgstr "Tharla earráid chórais."
+
+#: messagepartthemes/default/defaultrenderer.cpp:187
+#, kde-format
+msgid "One key has been revoked."
+msgstr "Cealaíodh eochair amháin."
+
+#: messagepartthemes/default/defaultrenderer.cpp:214
+#, fuzzy, kde-format
+#| msgid "Good signature."
+msgid "Bad signature."
+msgstr "Síniú maith."
+
+#: messagepartthemes/default/defaultrenderer.cpp:598
+#: messagepartthemes/default/defaultrenderer.cpp:600
+#, kde-format
+msgid "certificate"
+msgstr "teastas"
+
+#: messagepartthemes/default/defaultrenderer.cpp:605
+#: messagepartthemes/default/defaultrenderer.cpp:624
+#, kde-format
+msgctxt "Start of warning message."
+msgid "Warning:"
+msgstr "Rabhadh:"
+
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#, kde-format
+msgid "Sender's mail address is not stored in the %1 used for signing."
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#, kde-format
+msgid "sender: "
+msgstr "seoltóir: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:607
+#, kde-format
+msgid "stored: "
+msgstr "stóráilte: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:625
+#, kde-format
+msgid ""
+"No mail address is stored in the %1 used for signing, so we cannot compare "
+"it to the sender's address %2."
+msgstr ""
+
+#: remote-content/remotecontentconfiguredialog.cpp:25
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgctxt "@title:window"
+msgid "Configure Remote Content"
+msgstr "&Bain an tIatán"
+
+#: remote-content/remotecontentconfigurewidget.cpp:51
+#, kde-format
+msgid "Status"
+msgstr "Stádas"
+
+#: remote-content/remotecontentconfigurewidget.cpp:87
+#, kde-format
+msgid "Do you want to delete this rule '%1'?"
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:105
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgctxt "@title:window"
+msgid "Edit Remote Content"
+msgstr "&Bain an tIatán"
+
+#: remote-content/remotecontentconfigurewidget.cpp:121
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgctxt "@title:window"
+msgid "Add Remote Content"
+msgstr "&Bain an tIatán"
+
+#: remote-content/remotecontentconfigurewidget.cpp:130
+#, kde-format
+msgid "An entry already defines this url. Please modify it."
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:130
+#, fuzzy, kde-format
+#| msgid "Add new tag"
+msgid "Add new Url"
+msgstr "Cuir clib nua leis"
+
+#: remote-content/remotecontentmenu.cpp:17
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgid "Configure"
+msgstr "Cumraigh..."
+
+#: remote-content/remotecontentmenu.cpp:19
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgid "Remote Content"
+msgstr "&Bain an tIatán"
+
+#: remote-content/remotecontentmenu.cpp:50
+#, kde-format
+msgid "Authorize %1"
+msgstr ""
+
+#: remote-content/remotecontentmenu.cpp:58
+#, kde-format
+msgid "Authorize all Urls"
+msgstr ""
+
+#: remote-content/remotecontentstatustypecombobox.cpp:12
+#, kde-format
+msgid "Authorized"
+msgstr ""
+
+#: remote-content/remotecontentstatustypecombobox.cpp:13
+#, kde-format
+msgid "Blocked"
+msgstr ""
+
+#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#, fuzzy, kde-format
+#| msgid "[Details]"
+msgctxt "@title:window"
+msgid "Details"
+msgstr "[Mionsonraí]"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:33
+#, kde-format
+msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
+msgstr ""
+
+#: scamdetection/scamdetectionwarningwidget.cpp:38
+#, kde-format
+msgid "Move to Trash"
+msgstr "Bog go dtí an Bruscar"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:43
+#, kde-format
+msgid "I confirm it's not a scam"
+msgstr ""
+
+#: scamdetection/scamdetectionwarningwidget.cpp:47
+#, kde-format
+msgid "Add email to whitelist"
+msgstr ""
+
+#: scamdetection/scamdetectionwarningwidget.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Delete all messages"
+msgid "Disable scam detection for all messages"
+msgstr "Scrios gach teachtaireacht"
+
+#: scamdetection/scamdetectionwebengine.cpp:115
+#: scamdetection/scamdetectionwebengine.cpp:201
+#, kde-format
+msgid ""
+"This email contains a link which reads as '%1' in the text, but actually "
+"points to '%2'. This is often the case in scam emails to mislead the "
+"recipient"
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:128
+#, kde-format
+msgid ""
+"This email contains a link which points to a numerical IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:135
+#, kde-format
+msgid ""
+"This email contains a link which points to a hexadecimal IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:141
+#, kde-format
+msgid "This email contains a link (%1) which has a redirection"
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:148
+#, kde-format
+msgid ""
+"This email contains a link (%1) which contains multiple http://. This is "
+"often the case in scam emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:159
+#, kde-format
+msgid "This email contains a shorturl (%1). It can redirect to another server."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:220
+#, kde-format
+msgid "Message contains form element. This is often the case in scam emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:224
+#, fuzzy, kde-format
+#| msgid "[Details]"
+msgid "Details:"
+msgstr "[Mionsonraí]"
+
+#: scamdetection/scamexpandurljob.cpp:47
+#, kde-format
+msgid "No network connection detected, we cannot expand url."
+msgstr ""
+
+#: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
+#, kde-format
+msgid "Impossible to expand '%1'."
+msgstr ""
+
+#: scamdetection/scamexpandurljob.cpp:81
+#, kde-format
+msgid "Short url '%1' redirects to '%2'."
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.cmake:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr ""
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.cmake:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.cmake:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.cmake:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr ""
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr ""
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.cmake:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr ""
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.cmake:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.cmake:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.cmake:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.cmake:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.cmake:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "Laghdaigh an chlómhéid le haghaidh téacs athluaite"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.cmake:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.cmake:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr ""
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:91
+#, fuzzy, kde-format
+#| msgid "Show Message Structure"
+msgid "Message Structure Viewer"
+msgstr "Taispeáin Struchtúr na Teachtaireachta"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:94
+#, kde-format
+msgid "Show never"
+msgstr "Ná taispeáin riamh"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:97
+#, kde-format
+msgid "Show always"
+msgstr "Taispeáin i gcónaí"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.cmake:109 settings/messageviewer.kcfg.cmake:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr ""
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.cmake:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr ""
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.cmake:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr ""
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.cmake:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr ""
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.cmake:131
+#, fuzzy, kde-format
+#| msgid "Show attachment list."
+msgid "How attachments are shown"
+msgstr "Taispeáin liosta na n-iatán."
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.cmake:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr ""
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr ""
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.cmake:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr ""
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr ""
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.cmake:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr ""
+
+#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
+#: settings/messageviewer.kcfg.cmake:161
+#, kde-format
+msgid ""
+"Specifies the default policy to use, for the Message Disposition "
+"Notifications (for internal use only)"
+msgstr ""
+
+#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
+#: settings/messageviewer.kcfg.cmake:165
+#, kde-format
+msgid ""
+"Specifies the default quoting action to take, when replying to a message "
+"(for internal use only)"
+msgstr ""
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:181
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:182
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:187
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:188
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:193
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:194
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:199
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:200
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.cmake:205 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:206
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1554
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "Ú&sáid Cló Aonleithid"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.cmake:237
+#, kde-format
+msgid "The most recent selected folder using for Todo."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.cmake:243
+#, kde-format
+msgid "The most recent selected folder using for Event."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.cmake:249
+#, kde-format
+msgid "The most recent selected folder using for Notes."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/invitationsettings.ui:17
+#, kde-format
+msgid "Groupware Compatibility && Legacy Options"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:23
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitation replies"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:26
+#, kde-format
+msgid "&Mangle From:/To: headers in replies to invitations"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:33
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitations"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:36
+#, kde-format
+msgid "Send &invitations in the mail body"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:45
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server,\n"
+"has a problem understanding standards-compliant groupware email.\n"
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:48
+#, kde-format
+msgid "Exchange-compatible invitation &naming"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:55
+#, kde-format
+msgid ""
+"When this is on, the user will not see the mail composer window. Invitation "
+"mails are sent automatically."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:58
+#, kde-format
+msgid "&Automatic invitation sending"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/invitationsettings.ui:68
+#, kde-format
+msgid "Options"
+msgstr "Roghanna"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
+#: ui/printingsettings.ui:17
+#, kde-format
+msgid "Print only selected text"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
+#: ui/printingsettings.ui:24
+#, kde-format
+msgid "Respect &expand/collapse quote marks settings"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
+#: ui/printingsettings.ui:31
+#, kde-format
+msgid "Print background color and images"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
+#: ui/printingsettings.ui:38
+#, fuzzy, kde-format
+#| msgid "Hide signature details."
+msgid "Always show encryption/signature details"
+msgstr "Folaigh mionsonraí an tsínithe."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
+#: ui/settings.ui:31
+#, kde-format
+msgid "Viewer settings"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/settings.ui:59
+#, fuzzy, kde-format
+#| msgid "&Override character encoding:"
+msgid "O&verride character encoding:"
+msgstr "&Sáraigh ionchódú na gcarachtar:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
+#: ui/settings.ui:91
+#, kde-format
+msgid "Enable access key"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
+#: ui/settings.ui:98
+#, kde-format
+msgid "Reduce font size for &quoted text"
+msgstr "Laghdaigh an chlómhéid le haghaidh téacs &athluaite"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
+#: ui/settings.ui:105
+#, kde-format
+msgid "Show &expand/collapse quote marks"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
+#: ui/settings.ui:133
+#, kde-format
+msgid "Automatic collapse &level:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/settings.ui:202
+#, fuzzy, kde-format
+#| msgid "Minimum font size:"
+msgid "&Minimum font size:"
+msgstr "Clómhéid is lú:"
+
+#: utils/messageviewerutil.cpp:156
+#, kde-format
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr ""
+"Tá comhad darb ainm \"%1\" ann cheana. An bhfuil tú cinnte gur mian leat "
+"scríobh air?"
+
+#: utils/messageviewerutil.cpp:159
+#, kde-format
+msgid "Overwrite File?"
+msgstr "Forscríobh an Comhad?"
+
+#: utils/messageviewerutil.cpp:209
+#, fuzzy, kde-format
+#| msgid "Save Attachment"
+msgid "Save Attachments To"
+msgstr "Sábháil Iatán"
+
+#: utils/messageviewerutil.cpp:226
+#, kde-format
+msgctxt "filename for an unnamed attachment"
+msgid "attachment.1"
+msgstr "iatán.1"
+
+#: utils/messageviewerutil.cpp:232
+#, kde-format
+msgid "Save Attachment"
+msgstr "Sábháil Iatán"
+
+#: utils/messageviewerutil.cpp:256
+#, kde-format
+msgctxt "filename for the %1-th unnamed attachment"
+msgid "attachment.%1"
+msgstr "iatán.%1"
+
+#: utils/messageviewerutil.cpp:354
+#, kde-format
+msgid ""
+"The part %1 of the message is encrypted. Do you want to keep the encryption "
+"when saving?"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
+#, kde-format
+msgid "KMail Question"
+msgstr "Ceist KMail"
+
+#: utils/messageviewerutil.cpp:356
+#, kde-format
+msgid "Keep Encryption"
+msgstr "Coinnigh Criptiú"
+
+#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
+#, kde-format
+msgid "Do Not Keep"
+msgstr "Ná Coinnigh"
+
+#: utils/messageviewerutil.cpp:367
+#, kde-format
+msgid ""
+"The part %1 of the message is signed. Do you want to keep the signature when "
+"saving?"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:369
+#, fuzzy, kde-format
+#| msgid "Signature"
+msgid "Keep Signature"
+msgstr "Síniú"
+
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
+#, fuzzy, kde-kuit-format
+#| msgctxt "1 = file name, 2 = error string"
+#| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
+msgctxt "1 = file name, 2 = error string"
+msgid ""
+"<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
+"qt>"
+msgstr ""
+"<qt>Níorbh fhéidir an comhad a scríobh<br><filename>%1</filename><br><br>%2"
+
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
+#: utils/messageviewerutil.cpp:472
+#, fuzzy, kde-format
+#| msgid "has an attachment"
+msgid "Error saving attachment"
+msgstr "a bhfuil iatán aige"
+
+#: utils/messageviewerutil.cpp:485
+#, kde-format
+msgid "Found no attachments to save."
+msgstr "Níor aimsíodh aon iatáin le sábháil."
+
+#: utils/messageviewerutil.cpp:500
+#, kde-format
+msgid "message"
+msgstr "teachtaireacht"
+
+#: utils/messageviewerutil.cpp:522
+#, fuzzy, kde-format
+#| msgid ""
+#| "*.mbox|email messages (*.mbox)\n"
+#| "*|all files (*)"
+msgid "email messages (*.mbox);;all files (*)"
+msgstr ""
+"*.mbox|teachtaireachtaí ríomhphoist (*.mbox)\n"
+"*|gach comhad (*)"
+
+#: utils/messageviewerutil.cpp:533
+#, kde-format
+msgid "Save Message"
+msgid_plural "Save Messages"
+msgstr[0] "Sábháil Teachtaireacht"
+msgstr[1] "Sábháil Teachtaireachtaí"
+msgstr[2] "Sábháil Teachtaireachtaí"
+msgstr[3] "Sábháil Teachtaireachtaí"
+msgstr[4] "Sábháil Teachtaireachtaí"
+
+#: utils/messageviewerutil.cpp:558
+#, kde-format
+msgid "File %1 could not be loaded."
+msgstr "Níorbh fhéidir comhad %1 a luchtú."
+
+#: utils/messageviewerutil.cpp:558
+#, kde-format
+msgid "Error loading message"
+msgstr "Earráid agus teachtaireacht á luchtú"
+
+#: utils/messageviewerutil.cpp:560
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Níorbh fhéidir comhad %1 a chruthú."
+
+#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:591
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgid "Error saving message"
+msgstr "Earráid agus teachtaireacht á luchtú"
+
+#: utils/messageviewerutil.cpp:571
+#, fuzzy, kde-format
+#| msgid "We can not save message."
+msgid "We cannot save message."
+msgstr "Ní féidir an teachtaireacht a shábháil."
+
+#: utils/messageviewerutil.cpp:612
+#, kde-format
+msgid "Open &with %1"
+msgstr "&Oscail le %1"
+
+#: utils/messageviewerutil.cpp:614
+#, kde-format
+msgctxt "@item:inmenu Open With, %1 is application name"
+msgid "%1"
+msgstr "%1"
+
+#: viewer/editorwatcher.cpp:60
+#, kde-format
+msgid "Edit with:"
+msgstr "Cuir in eagar le:"
+
+#: viewer/editorwatcher.cpp:194
+#, kde-format
+msgid ""
+"KMail is unable to detect when the chosen editor is closed. To avoid data "
+"loss, editing the attachment will be aborted."
+msgstr ""
+
+#: viewer/editorwatcher.cpp:196
+#, kde-format
+msgid "Unable to edit attachment"
+msgstr "Ní féidir an t-iatán a chur in eagar"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:59
+#, kde-format
+msgid "body part"
+msgstr ""
+
+#: viewer/mimeparttree/mimetreemodel.cpp:262
+#, kde-format
+msgid "Description"
+msgstr "Cur Síos"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:264
+#, kde-format
+msgid "Type"
+msgstr "Cineál"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:266
+#, kde-format
+msgid "Size"
+msgstr "Méid"
+
+#: viewer/urlhandlermanager.cpp:405
+#, kde-format
+msgid "Turn on HTML rendering for this message."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1623
+#, kde-format
+msgid "Load external references from the Internet for this message."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:409
+#, kde-format
+msgid "Work online."
+msgstr "Oibrigh ar líne."
+
+#: viewer/urlhandlermanager.cpp:411
+#, kde-format
+msgid "Make account online."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:413
+#, kde-format
+msgid "Decrypt message."
+msgstr "Díchriptigh an teachtaireacht."
+
+#: viewer/urlhandlermanager.cpp:415
+#, fuzzy, kde-format
+#| msgid "Hide signature details."
+msgid "Show signature details."
+msgstr "Folaigh mionsonraí an tsínithe."
+
+#: viewer/urlhandlermanager.cpp:417
+#, kde-format
+msgid "Hide signature details."
+msgstr "Folaigh mionsonraí an tsínithe."
+
+#: viewer/urlhandlermanager.cpp:419
+#, fuzzy, kde-format
+#| msgid "Hide signature details."
+msgid "Show encryption details."
+msgstr "Folaigh mionsonraí an tsínithe."
+
+#: viewer/urlhandlermanager.cpp:421
+#, fuzzy, kde-format
+#| msgid "Hide signature details."
+msgid "Hide encryption details."
+msgstr "Folaigh mionsonraí an tsínithe."
+
+#: viewer/urlhandlermanager.cpp:426
+#, fuzzy, kde-format
+#| msgid "Documentation"
+msgid "Open Documentation"
+msgstr "Doiciméadú"
+
+#: viewer/urlhandlermanager.cpp:460
+#, kde-format
+msgid "Expand all quoted text."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:462
+#, kde-format
+msgid "Collapse quoted text."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:524
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:526
+#, kde-format
+msgid "KMail Error"
+msgstr "Earráid KMail"
+
+#: viewer/urlhandlermanager.cpp:541
+#, kde-format
+msgid "Show certificate 0x%1"
+msgstr "Taispeáin an teastas 0x%1"
+
+#: viewer/urlhandlermanager.cpp:600
+#, kde-format
+msgid "&Open in Address Book"
+msgstr "&Oscail sa Leabhar Seoltaí"
+
+#: viewer/urlhandlermanager.cpp:602
+#, kde-format
+msgid "&Copy Email Address"
+msgstr "&Cóipeáil an Seoladh Ríomhphoist"
+
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2713
+#, kde-format
+msgid "Address copied to clipboard."
+msgstr "Cóipeáladh an seoladh go dtí an ghearrthaisce."
+
+#: viewer/urlhandlermanager.cpp:626
+#, fuzzy, kde-format
+#| msgid "&Open in Address Book"
+msgid "Lookup the contact in KAddressbook"
+msgstr "&Oscail sa Leabhar Seoltaí"
+
+#: viewer/urlhandlermanager.cpp:802
+#, kde-format
+msgid "Attachment: %1"
+msgstr "Iatán: %1"
+
+#: viewer/urlhandlermanager.cpp:805
+#, fuzzy, kde-format
+#| msgid "Encapsulated Message"
+msgid "Encapsulated Message (Subject: %1)"
+msgstr "Teachtaireacht Chuimsithe"
+
+#: viewer/urlhandlermanager.cpp:807
+#, fuzzy, kde-format
+#| msgid "Encapsulated Message"
+msgid "Encapsulated Message"
+msgstr "Teachtaireacht Chuimsithe"
+
+#: viewer/urlhandlermanager.cpp:810
+#, kde-format
+msgid "Unnamed attachment"
+msgstr "Iatán gan ainm"
+
+#: viewer/urlhandlermanager.cpp:845
+#, kde-format
+msgid "Show GnuPG Audit Log for this operation"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:885
+#, kde-format
+msgid "Opening URL..."
+msgstr "URL á Oscailt..."
+
+#: viewer/urlhandlermanager.cpp:893
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to execute <filename>%1</filename>?"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:895
+#, kde-format
+msgid "Execute"
+msgstr "Rith"
+
+#: viewer/viewer.cpp:138
+#, kde-format
+msgid "Loading message..."
+msgstr "Teachtaireacht á luchtú..."
+
+#: viewer/viewer_p.cpp:358
+#, kde-format
+msgid ""
+"Deleting an attachment from an encrypted or old-style mailman message is not "
+"supported."
+msgstr ""
+
+#: viewer/viewer_p.cpp:359 viewer/viewer_p.cpp:366 viewer/viewer_p.cpp:588
+#: viewer/viewer_p.cpp:1726
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Scrios an tIatán"
+
+#: viewer/viewer_p.cpp:365
+#, kde-format
+msgid ""
+"Deleting an attachment might invalidate any digital signature on this "
+"message."
+msgstr ""
+
+#: viewer/viewer_p.cpp:447
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr "&Oscail Le"
+
+#: viewer/viewer_p.cpp:465
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr "&Eile..."
+
+#: viewer/viewer_p.cpp:467 viewer/viewer_p.cpp:480
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr "&Oscail Le..."
+
+#: viewer/viewer_p.cpp:544 viewer/viewer_p.cpp:1704
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Oscail"
+
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1711
+#, kde-format
+msgctxt "to view something"
+msgid "View"
+msgstr "Amharc"
+
+#: viewer/viewer_p.cpp:566
+#, kde-format
+msgid "Scroll To"
+msgstr ""
+
+#: viewer/viewer_p.cpp:571
+#, kde-format
+msgid "Save As..."
+msgstr "Sábháil Mar..."
+
+#: viewer/viewer_p.cpp:577 viewer/viewer_p.cpp:1721
+#, kde-format
+msgid "Copy"
+msgstr "Cóipeáil"
+
+#: viewer/viewer_p.cpp:599
+#, fuzzy, kde-format
+#| msgid "Appl&y to All"
+msgid "Reply To Author"
+msgstr "Cuir i bhfeidhm &ar gach rud"
+
+#: viewer/viewer_p.cpp:607
+#, fuzzy, kde-format
+#| msgid "Appl&y to All"
+msgid "Reply To All"
+msgstr "Cuir i bhfeidhm &ar gach rud"
+
+#: viewer/viewer_p.cpp:613 viewer/viewer_p.cpp:1731
+#, kde-format
+msgid "Properties"
+msgstr "Airíonna"
+
+#: viewer/viewer_p.cpp:750
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: viewer/viewer_p.cpp:751
+#, fuzzy, kde-format
+#| msgid "The KDE email client."
+msgid "The KDE Mail Client"
+msgstr "Cliant ríomhphoist KDE."
+
+#: viewer/viewer_p.cpp:1287
+#, fuzzy, kde-format
+#| msgid "View Attachment: %1"
+msgctxt "@title:window"
+msgid "View Attachment: %1"
+msgstr "Amharc ar Iatán: %1"
+
+#: viewer/viewer_p.cpp:1475
+#, kde-format
+msgctxt "View->"
+msgid "&Attachments"
+msgstr "I&atáin"
+
+#: viewer/viewer_p.cpp:1477
+#, fuzzy, kde-format
+#| msgid "has no attachment"
+msgid "Choose display style of attachments"
+msgstr "nach bhfuil iatán aige"
+
+#: viewer/viewer_p.cpp:1480
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&As Icons"
+msgstr "M&ar Dheilbhíní"
+
+#: viewer/viewer_p.cpp:1483
+#, kde-format
+msgid "Show all attachments as icons. Click to see them."
+msgstr "Taispeáin gach iatán mar dheilbhín. Cliceáil chun é a fheiceáil."
+
+#: viewer/viewer_p.cpp:1487
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Smart"
+msgstr "&Cliste"
+
+#: viewer/viewer_p.cpp:1490
+#, fuzzy, kde-format
+#| msgid "Show attachment list."
+msgid "Show attachments as suggested by sender."
+msgstr "Taispeáin liosta na n-iatán."
+
+#: viewer/viewer_p.cpp:1494
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Inline"
+msgstr "&Inlíne"
+
+#: viewer/viewer_p.cpp:1497
+#, kde-format
+msgid "Show all attachments inline (if possible)"
+msgstr "Taispeáin iatáin inlíne (más féidir)"
+
+#: viewer/viewer_p.cpp:1501
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Hide"
+msgstr "Folaig&h"
+
+#: viewer/viewer_p.cpp:1504
+#, kde-format
+msgid "Do not show attachments in the message viewer"
+msgstr "Ná taispeáin iatáin in amharcán na dteachtaireachtaí"
+
+#: viewer/viewer_p.cpp:1508
+#, kde-format
+msgctxt "View->attachments->"
+msgid "In Header Only"
+msgstr "Sa Cheanntásc Amháin"
+
+#: viewer/viewer_p.cpp:1511
+#, kde-format
+msgid "Show Attachments only in the header of the mail"
+msgstr "Taispeáin iatáin i gceanntásc na teachtaireachta amháin"
+
+#: viewer/viewer_p.cpp:1516
+#, kde-format
+msgid "&Set Encoding"
+msgstr "&Socraigh Ionchódú"
+
+#: viewer/viewer_p.cpp:1521 widgets/configurewidget.cpp:43
+#: widgets/configurewidget.cpp:77
+#, kde-format
+msgid "Auto"
+msgstr "Uathoibríoch"
+
+#: viewer/viewer_p.cpp:1531
+#, fuzzy, kde-format
+#| msgid "&Copy To"
+msgid "Copy Text"
+msgstr "&Cóipeáil Go"
+
+#: viewer/viewer_p.cpp:1538
+#, kde-format
+msgid "Select All Text"
+msgstr "Roghnaigh Téacs Uile"
+
+#: viewer/viewer_p.cpp:1544 viewer/viewer_p.cpp:2025
+#, kde-format
+msgid "Copy Link Address"
+msgstr "Cóipeáil Seoladh an Naisc"
+
+#: viewer/viewer_p.cpp:1549
+#, kde-format
+msgid "Open URL"
+msgstr "Oscail URL"
+
+#: viewer/viewer_p.cpp:1560
+#, kde-format
+msgid "Show Message Structure"
+msgstr "Taispeáin Struchtúr na Teachtaireachta"
+
+#: viewer/viewer_p.cpp:1565
+#, kde-format
+msgid "&View Source"
+msgstr "&Féach Foinse"
+
+#: viewer/viewer_p.cpp:1570
+#, fuzzy, kde-format
+#| msgid "&Save message..."
+msgid "&Save Message..."
+msgstr "&Sábháil teachtaireacht..."
+
+#: viewer/viewer_p.cpp:1576
+#, fuzzy, kde-format
+#| msgid "&Save as Draft"
+msgid "&Save Display Format"
+msgstr "&Sábháil mar Dhréacht"
+
+#: viewer/viewer_p.cpp:1580
+#, fuzzy, kde-format
+#| msgid "&Save as Draft"
+msgid "&Reset Display Format"
+msgstr "&Sábháil mar Dhréacht"
+
+#: viewer/viewer_p.cpp:1587
+#, kde-format
+msgid "Scroll Message Up"
+msgstr "Scrollaigh an Teachtaireacht Suas"
+
+#: viewer/viewer_p.cpp:1592
+#, kde-format
+msgid "Scroll Message Down"
+msgstr "Scrollaigh an Teachtaireacht Síos"
+
+#: viewer/viewer_p.cpp:1597
+#, fuzzy, kde-format
+#| msgid "Scroll Message Up"
+msgid "Scroll Message Up (More)"
+msgstr "Scrollaigh an Teachtaireacht Suas"
+
+#: viewer/viewer_p.cpp:1602
+#, fuzzy, kde-format
+#| msgid "Scroll Message Down"
+msgid "Scroll Message Down (More)"
+msgstr "Scrollaigh an Teachtaireacht Síos"
+
+#: viewer/viewer_p.cpp:1612
+#, kde-format
+msgid "Toggle HTML Display Mode"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1616
+#, kde-format
+msgid "Toggle display mode between HTML and plain text"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1619
+#, kde-format
+msgid "Load external references"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1625 widgets/mailsourceviewtextbrowserwidget.cpp:136
+#, kde-format
+msgid "Speak Text"
+msgstr "Léigh an Téacs"
+
+#: viewer/viewer_p.cpp:1631
+#, fuzzy, kde-format
+#| msgid "Speak Text"
+msgid "Share Text..."
+msgstr "Léigh an Téacs"
+
+#: viewer/viewer_p.cpp:1637
+#, kde-format
+msgid "Copy Image Location"
+msgstr "Cóipeáil Suíomh na hÍomhá"
+
+#: viewer/viewer_p.cpp:1643
+#, kde-format
+msgid "&Find in Message..."
+msgstr "&Aimsigh i dTeachtaireacht..."
+
+#: viewer/viewer_p.cpp:1652
+#, kde-format
+msgid "Disable Emoticon"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1701
+#, kde-format
+msgid "Save &As..."
+msgstr "Sábháil M&ar..."
+
+#: viewer/viewer_p.cpp:1709
+#, kde-format
+msgid "Open With..."
+msgstr "Oscail Le..."
+
+#: viewer/viewer_p.cpp:1716
+#, fuzzy, kde-format
+#| msgid "Save Attachments..."
+msgid "Save All Attachments..."
+msgstr "Sábháil Iatáin..."
+
+#: viewer/viewer_p.cpp:1945
+#, kde-format
+msgid "The network is broken."
+msgstr ""
+
+#: viewer/viewer_p.cpp:1945 viewer/viewer_p.cpp:1948
+#, kde-format
+msgid "Check Phishing URL"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1948
+#, fuzzy, kde-format
+#| msgid "The signature file is not valid"
+msgid "The URL %1 is not valid."
+msgstr "Is neamhbhailí é an comhad sínithe"
+
+#: viewer/viewer_p.cpp:1968
+#, kde-format
+msgid "This web site is a malware, do you want to continue to show it?"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1969
+#, kde-format
+msgid "Malware"
+msgstr ""
+
+#: viewer/viewer_p.cpp:2023
+#, kde-format
+msgid "Copy Email Address"
+msgstr "Cóipeáil an Seoladh Ríomhphoist"
+
+#: viewer/viewer_p.cpp:2104
+#, fuzzy, kde-format
+#| msgid "Message as Plain Text"
+msgctxt "@title:window"
+msgid "Message as Plain Text"
+msgstr "Teachtaireacht mar Ghnáth-théacs"
+
+#: viewer/viewer_p.cpp:2305
+#, fuzzy, kde-format
+#| msgid "Documentation"
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr "Doiciméadú"
+
+#: viewer/viewer_p.cpp:2719
+#, kde-format
+msgid "URL copied to clipboard."
+msgstr "Cóipeáladh an URL go dtí an ghearrthaisce."
+
+#: viewer/viewer_p.cpp:2871
+#, fuzzy, kde-format
+#| msgid "Message was signed by %1."
+msgid "Message loading failed: %1."
+msgstr "Bhí an teachtaireacht sínithe ag %1."
+
+#: viewer/viewer_p.cpp:2876
+#, kde-format
+msgid "Message not found."
+msgstr "Teachtaireacht gan aimsiú."
+
+#: widgets/attachmentdialog.cpp:27
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
+"may compromise your system's security."
+msgstr ""
+
+#: widgets/attachmentdialog.cpp:32
+#, fuzzy, kde-format
+#| msgid "Open Attachment?"
+msgctxt "@title:window"
+msgid "Open Attachment?"
+msgstr "Oscail an tIatán?"
+
+#: widgets/attachmentdialog.cpp:39
+#, fuzzy, kde-format
+#| msgid "&Open with '%1'"
+msgid "&Open With '%1'"
+msgstr "&Oscail le '%1'"
+
+#: widgets/attachmentdialog.cpp:46
+#, fuzzy, kde-format
+#| msgid "Open With..."
+msgid "Open &With..."
+msgstr "Oscail Le..."
+
+#: widgets/attachmentdialog.cpp:68
+#, kde-format
+msgid "Do not ask again"
+msgstr "Ná fiafraigh díom arís"
+
+#: widgets/htmlstatusbar.cpp:108
+#, kde-format
+msgctxt ""
+"'HTML Message' with html linebreaks between each letter and in bold text."
+msgid ""
+"<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
+">a<br />g<br />e</b></qt>"
+msgstr ""
+"<qt><b><br />T<br />c<br />h<br />t<br /> <br />g<br />a<br />n<br /> <br /"
+">H<br />T<br />M<br />L</b></qt>"
+
+#: widgets/htmlstatusbar.cpp:112
+#, kde-format
+msgctxt "'No HTML Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+">e<br />s<br />s<br />a<br />g<br />e</qt>"
+msgstr ""
+"<qt><br />T<br />c<br />h<br />t<br /> <br />g<br />a<br />n<br /> <br /"
+">H<br />T<br />M<br />L</qt>"
+
+#: widgets/htmlstatusbar.cpp:117
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "'HTML Message' with html linebreaks between each letter and in bold text."
+#| msgid ""
+#| "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#| ">s<br />a<br />g<br />e</b></qt>"
+msgctxt "'Plain Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+">s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+"<qt><b><br />T<br />c<br />h<br />t<br /> <br />g<br />a<br />n<br /> <br /"
+">H<br />T<br />M<br />L</b></qt>"
+
+#: widgets/htmlstatusbar.cpp:121
+#, fuzzy, kde-format
+#| msgctxt "'No HTML Message' with html linebreaks between each letter."
+#| msgid ""
+#| "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#| ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+msgctxt "'Calendar Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
+">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+"<qt><br />T<br />c<br />h<br />t<br /> <br />g<br />a<br />n<br /> <br /"
+">H<br />T<br />M<br />L</qt>"
+
+#: widgets/htmlstatusbar.cpp:135
+#, kde-format
+msgid "Click to toggle between HTML, plain text and calendar."
+msgstr ""
+
+#: widgets/invitationsettings.cpp:70
+#, kde-format
+msgid ""
+"<qt>Invitations are normally sent as attachments to a mail. This switch "
+"changes the invitation mails to be sent in the text of the mail instead; "
+"this is necessary to send invitations and replies to Microsoft Outlook.<br /"
+">But, when you do this, you no longer get descriptive text that mail "
+"programs can read; so, to people who have email programs that do not "
+"understand the invitations, the resulting messages look very odd.<br /"
+">People that have email programs that do understand invitations will still "
+"be able to work with this.</qt>"
+msgstr ""
+
+#: widgets/mailsourcewebengineviewer.cpp:51
+#, kde-format
+msgctxt "Unchanged mail message"
+msgid "Raw Source"
+msgstr "Amhfhoinse"
+
+#: widgets/mailsourcewebengineviewer.cpp:52
+#, kde-format
+msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
+msgstr ""
+
+#: widgets/mailsourcewebengineviewer.cpp:55
+#, kde-format
+msgctxt "Mail message as shown, in HTML format"
+msgid "HTML Source"
+msgstr "Foinse HTML"
+
+#: widgets/mailsourcewebengineviewer.cpp:56
+#, kde-format
+msgid "HTML code for displaying the message to the user"
+msgstr ""
+
+#: widgets/opensavedfilefolderwidget.cpp:26
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where attachment was saved"
+msgstr ""
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, fuzzy, kde-format
+#| msgid "Open Full Search"
+msgctxt "@action"
+msgid "Open File"
+msgstr "Oscail Cuardach Lán"
+
+#: widgets/opensavedfilefolderwidget.cpp:61
+#, kde-format
+msgid "Open folder where attachment was saved"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: widgets/opensavedfilefolderwidget.cpp:64
+#, kde-format
+msgid "Open folder where PDF file was saved"
+msgstr ""
+
+#: widgets/opensavedfilefolderwidget.cpp:77
+#, fuzzy, kde-format
+#| msgid "Unable to edit attachment"
+msgid "KMail was unable to open the attachment."
+msgstr "Ní féidir an t-iatán a chur in eagar"
+
+#: widgets/shownextmessagewidget.cpp:15
+#, fuzzy, kde-format
+#| msgid "&Next Message"
+msgid "Next Message"
+msgstr "A&n Chéad Teachtaireacht Eile"
+
+#: widgets/shownextmessagewidget.cpp:16
+#, fuzzy, kde-format
+#| msgid "Current Message"
+msgid "Previous Message"
+msgstr "Teachtaireacht Reatha"
+
+#: widgets/vcardviewer.cpp:37
+#, fuzzy, kde-format
+#| msgid "vCard Viewer"
+msgctxt "@title:window"
+msgid "vCard Viewer"
+msgstr "Amharcán v-Chártaí"
+
+#: widgets/vcardviewer.cpp:48
+#, kde-format
+msgid "&Import"
+msgstr "&Iompórtáil"
+
+#: widgets/vcardviewer.cpp:49
+#, fuzzy, kde-format
+#| msgid "&Next Card"
+msgid "&Next Card"
+msgstr "An Chéa&d Chárta Eile"
+
+#: widgets/vcardviewer.cpp:50
+#, fuzzy, kde-format
+#| msgid "&Previous Card"
+msgid "&Previous Card"
+msgstr "An Cárta &Roimhe Seo"
+
+#, fuzzy
+#~| msgid "Reply"
+#~ msgid "Reply From:"
+#~ msgstr "Freagair"
+
+#~ msgid "&Open With..."
+#~ msgstr "&Oscail Le..."
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgid "receiver was"
+#~ msgid_plural "receivers were"
+#~ msgstr[0] "Glacadóir"
+#~ msgstr[1] "Glacadóir"
+#~ msgstr[2] "Glacadóir"
+#~ msgstr[3] "Glacadóir"
+#~ msgstr[4] "Glacadóir"
+
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "Folaigh an liosta iomlán \"Chuig\""
+
+#~ msgid "Show full \"To\" list"
+#~ msgstr "Taispeáin an liosta iomlán \"Chuig\""
+
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "Folaigh an liosta iomlán \"Cc\""
+
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "Taispeáin an liosta iomlán \"Cc\""
+
+#~ msgid "Hide attachment list."
+#~ msgstr "Folaigh liosta na n-iatán."
+
+#~ msgid "Show attachment list."
+#~ msgstr "Taispeáin liosta na n-iatán."
+
+#~ msgid "Edit Attachment"
+#~ msgstr "Cuir an tIatán in Eagar"
+
+#~ msgid "Edit"
+#~ msgstr "Eagar"
+
+#, fuzzy
+#~| msgid "Show HTML Code"
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "Taispeáin Cód HTML"
+
+#, fuzzy
+#~| msgid "Show HTML Code"
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "Taispeáin Cód HTML"
+
+#, fuzzy
+#~| msgid "Show long list of message headers"
+#~ msgid "Show user agent"
+#~ msgstr "Taispeáin liosta fada de cheanntásca na dteachtaireachtaí"
+
+#, fuzzy
+#~| msgid "Show long list of message headers"
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "Taispeáin liosta fada de cheanntásca na dteachtaireachtaí"
+
+#~ msgctxt "display name for an unnamed attachment"
+#~ msgid "Unnamed"
+#~ msgstr "Gan ainm"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "Breiseán gan ainm"
+
+#~ msgid "No description available"
+#~ msgstr "Níl cur síos ar fáil"
+
+#, fuzzy
+#~| msgctxt "Message->"
+#~| msgid "Reply"
+#~ msgid "Reply"
+#~ msgstr "Freagair"
+
+#, fuzzy
+#~| msgid "Appl&y to All"
+#~ msgid "Reply to All"
+#~ msgstr "Cuir i bhfeidhm &ar gach rud"
+
+#, fuzzy
+#~| msgctxt "Message->"
+#~| msgid "Forward"
+#~ msgid "Forward"
+#~ msgstr "Cuir Ar Aghaidh"
+
+#~ msgid "New Message"
+#~ msgstr "Teachtaireacht Nua"
+
+#, fuzzy
+#~| msgid "&Previous Message"
+#~ msgid "Print Preview"
+#~ msgstr "Teachtaireacht &Roimhe Seo"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgid "Move To Trash"
+#~ msgstr "Bog go dtí an Bruscar"
+
+#, fuzzy
+#~| msgid "&Previous Message"
+#~ msgid "Print Preview Message"
+#~ msgstr "Teachtaireacht &Roimhe Seo"
+
+#~ msgid "Replace smileys by emoticons"
+#~ msgstr "Cuir straoiseoga grafacha in ionad straoiseoga téacs"
+
+#~ msgid "Replace smileys &by emoticons"
+#~ msgstr "Cuir straoiseoga grafacha in &ionad straoiseoga téacs"
+
+#, fuzzy
+#~| msgid "Hide full \"To\" list"
+#~ msgid "Hide full address list"
+#~ msgstr "Folaigh an liosta iomlán \"Chuig\""
+
+#, fuzzy
+#~| msgid "Show full \"To\" list"
+#~ msgid "Show full address list"
+#~ msgstr "Taispeáin an liosta iomlán \"Chuig\""
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "Ceanntásca &Caighdeánacha"
+
+#, fuzzy
+#~| msgid "Show long list of message headers"
+#~ msgid "Show standard list of message headers"
+#~ msgstr "Taispeáin liosta fada de cheanntásca na dteachtaireachtaí"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Droch</b>shíniú"
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Droch</b>shíniú."
+
+#, fuzzy
+#~| msgid "Show all message headers"
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "Taispeáin ceanntásca uile na dteachtaireachtaí"
+
+#, fuzzy
+#~| msgid "Show all message headers"
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "Taispeáin ceanntásca uile na dteachtaireachtaí"
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Breiseán Mícheart Criptithe."
+
+#~ msgid "No appropriate crypto plug-in was found."
+#~ msgstr "Níor aimsíodh breiseán criptiúcháin."
+
+#, fuzzy
+#~| msgid "Could not decrypt the data."
+#~ msgid "Crypto plug-in \"%1\" could not decrypt the data."
+#~ msgstr "Níorbh fhéidir na sonraí a dhíchriptiú."
+
+#~ msgid "Error: %1"
+#~ msgstr "Earráid: %1"
+
+#, fuzzy
+#~| msgid "No appropriate crypto plug-in was found."
+#~ msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+#~ msgid "No %1 plug-in was found."
+#~ msgstr "Níor aimsíodh breiseán criptiúcháin."
+
+#, fuzzy
+#~| msgid "Could not decrypt the data."
+#~ msgid "Crypto plug-in \"%1\" cannot verify signatures."
+#~ msgstr "Níorbh fhéidir na sonraí a dhíchriptiú."
+
+#~ msgid "Show HTML status bar"
+#~ msgstr "Taispeáin an barra stádais HTML"
+
+#~ msgid "Show &HTML status bar"
+#~ msgstr "Taispeáin an &barra stádais HTML"
+
+#~ msgid "&Zoom In"
+#~ msgstr "&Súmáil Isteach"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "Súmáil &Amach"
+
+#~ msgid "Reset"
+#~ msgstr "Athshocraigh"
+
+#, fuzzy
+#~| msgid "&Zoom In"
+#~ msgid "Zoom"
+#~ msgstr "&Súmáil Isteach"
+
+#~ msgid "Close"
+#~ msgstr "Dún"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "A&imsigh:"
+
+#~ msgid "Text to search for"
+#~ msgstr "Téacs le lorg"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Ar Aghaidh"
+
+#~ msgid "Jump to next match"
+#~ msgstr "Léim go dtí an chéad toradh eile"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Roimhe Seo"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "Léim go dtí an ceann roimhe seo"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "Athraigh oibriú an chuardaigh"
+
+#~ msgid "Case sensitive"
+#~ msgstr "Cásíogair"
+
+#, fuzzy
+#~| msgid "Message not found."
+#~ msgid "Phrase not found"
+#~ msgstr "Teachtaireacht gan aimsiú."
+
+#, fuzzy
+#~| msgid "No duplicate messages found."
+#~ msgid "No blockable element found."
+#~ msgstr "Níor aimsíodh teachtaireachtaí dúbailte."
+
+#, fuzzy
+#~| msgid "Filter %1"
+#~ msgid "Filter"
+#~ msgstr "Scagaire %1"
+
+#, fuzzy
+#~| msgid "&Address Book"
+#~ msgid "Address"
+#~ msgstr "Le&abhar Seoltaí"
+
+#, fuzzy
+#~| msgctxt "type of folder storage"
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Cuardach"
+
+#, fuzzy
+#~| msgid "Delete Script"
+#~ msgid "Script"
+#~ msgstr "Scrios Script"
+
+#~ msgid "Font"
+#~ msgstr "Cló"
+
+#, fuzzy
+#~| msgctxt "Settings regarding the subject when composing a message."
+#~| msgid "Subject"
+#~ msgid "Object"
+#~ msgstr "Ábhar"
+
+#, fuzzy
+#~| msgid "&Copy Here"
+#~ msgid "Copy url"
+#~ msgstr "&Cóipeáil Anseo"
+
+#, fuzzy
+#~| msgid "Copy Folder"
+#~ msgid "Copy filter"
+#~ msgstr "Cóipeáil an Fillteán"
+
+#, fuzzy
+#~| msgctxt "to open"
+#~| msgid "Open"
+#~ msgid "Open"
+#~ msgstr "Oscail"
+
+#, fuzzy
+#~| msgid "Rename Filter"
+#~ msgid "Remove filter"
+#~ msgstr "Athainmnigh Scagaire"
+
+#, fuzzy
+#~| msgid "Subscription"
+#~ msgid "Add subscription"
+#~ msgstr "Síntiús"
+
+#, fuzzy
+#~| msgid "Select Font"
+#~ msgid "Select List:"
+#~ msgstr "Roghnaigh Cló"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Save List..."
+#~ msgid "Show List"
+#~ msgstr "Sábháil Liosta..."
+
+#, fuzzy
+#~| msgid "Set Default"
+#~ msgid "Use default"
+#~ msgstr "Socraigh mar Réamhshocrú"
+
+#, fuzzy
+#~| msgctxt "type of folder content"
+#~| msgid "Notes"
+#~ msgid "Not"
+#~ msgstr "Nótaí"
+
+#, fuzzy
+#~| msgid "Add Permissions"
+#~ msgid "Not subscription added..."
+#~ msgstr "Cuir Ceadanna Leis"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " lá"
+#~ msgstr[1] " lá"
+#~ msgstr[2] " lá"
+#~ msgstr[3] " lá"
+#~ msgstr[4] " lá"
+
+#, fuzzy
+#~| msgid "Server Information"
+#~ msgid "More information"
+#~ msgstr "Eolas faoin bhfreastalaí"
+
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Close the current tab"
+#~ msgid "Delete current list"
+#~ msgstr "Dún an cluaisín reatha"
+
+#, fuzzy
+#~| msgid "&All Fields"
+#~ msgid "All Files (*)"
+#~ msgstr "G&ach Réimse"
+
+#, fuzzy
+#~| msgid "Show full \"To\" list"
+#~ msgid "Show adblock list"
+#~ msgstr "Taispeáin an liosta iomlán \"Chuig\""
+
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Close the current tab"
+#~ msgid "Delete List"
+#~ msgstr "Dún an cluaisín reatha"
+
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Download Now"
+#~ msgid "Download..."
+#~ msgstr "Íosluchtaigh Anois"
+
+#, fuzzy
+#~| msgid "Filter %1"
+#~ msgid "Filters:"
+#~ msgstr "Scagaire %1"
+
+#, fuzzy
+#~| msgid "Export Filters"
+#~ msgid "Exception Filter"
+#~ msgstr "Easpórtáil Scagairí"
+
+#, fuzzy
+#~| msgctxt "@action:inmenu Foreground color setting"
+#~| msgid "Custom..."
+#~ msgid "custom"
+#~ msgstr "Saincheaptha..."
+
+#, fuzzy
+#~| msgid "Reply"
+#~ msgid "Apply to:"
+#~ msgstr "Freagair"
+
+#, fuzzy
+#~| msgctxt "@action:inmenu Group header background color setting"
+#~| msgid "Automatic"
+#~ msgid "Automatic Filters"
+#~ msgstr "Uathoibríoch"
+
+#, fuzzy
+#~| msgid "Add Permissions"
+#~ msgid "Add Filters subscriptions..."
+#~ msgstr "Cuir Ceadanna Leis"
+
+#, fuzzy
+#~| msgid "Subscription"
+#~ msgid "Remove subscription"
+#~ msgstr "Síntiús"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Save List..."
+#~ msgid "Show List..."
+#~ msgstr "Sábháil Liosta..."
+
+#, fuzzy
+#~| msgid "Available Filters"
+#~ msgid "Manual Filters"
+#~ msgstr "Scagairí atá ar fáil"
+
+#, fuzzy
+#~| msgid "Add Permissions"
+#~ msgid "Add filter expression"
+#~ msgstr "Cuir Ceadanna Leis"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#, fuzzy
+#~| msgid "Import Filters"
+#~ msgid "Import Filters..."
+#~ msgstr "Iompórtáil Scagairí"
+
+#, fuzzy
+#~| msgid "Export Filters"
+#~ msgid "Export filters..."
+#~ msgstr "Easpórtáil Scagairí"
+
+#, fuzzy
+#~| msgctxt "Search for recipient."
+#~| msgid "Search:"
+#~ msgid "Search:"
+#~ msgstr "Cuardaigh:"
+
+#, fuzzy
+#~| msgid "Rename Filter"
+#~ msgid "Remove Filter"
+#~ msgstr "Athainmnigh Scagaire"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "Aibhsigh gach rud comhoiriúnach"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "Súmáil Téacs Amháin"
+
+#~ msgid "No Audit Log available"
+#~ msgstr "Níl Logchomhad Iniúchta ar fáil"
+
+#~ msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+#~ msgid "Show Audit Log"
+#~ msgstr "Taispeáin an Logchomhad Iniúchta"
+
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "(anaithnid)"
+
+#~ msgid "New or changed: %1 (secret key available)"
+#~ msgstr "Nua nó athraithe: %1 (eochair rúnda le fáil)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "Nua nó athraithe: %1"
+
+#, fuzzy
+#~| msgid "Export Filters"
+#~ msgid "Expand Short URL"
+#~ msgstr "Easpórtáil Scagairí"
+
+#, fuzzy
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "Headers:"
+#~ msgstr "&Ceanntásca"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Long Headers"
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "Ceanntásca &Fada"
+
+#~ msgid "A&dd..."
+#~ msgstr "C&uir Leis..."
+
+#~ msgid "Remo&ve"
+#~ msgstr "&Bain"
+
+#~ msgid "&Modify..."
+#~ msgstr "&Athraigh..."
+
+#, fuzzy
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "Header:"
+#~ msgstr "&Ceanntásca"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Create ToDo"
+#~ msgstr "&Cruthaigh Scagaire"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Create To-Do"
+#~ msgstr "&Cruthaigh Scagaire"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "G&ach Ceanntásc"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "Ceanntásca &Gonta"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Long Headers"
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "Ceanntásca &Fada"
+
+#~ msgid "To: "
+#~ msgstr "Chuig: "
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(athsheolta ó %1)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Chuig: "
+
+#~ msgid "User-Agent: "
+#~ msgstr "User-Agent: "
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-Mailer: "
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "MDN To: "
+#~ msgstr "Chuig: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "Ceanntásca &Maisiúla"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "Ceanntásca &Fada"
+
+#, fuzzy
+#~| msgid "sent: "
+#~ msgid "Event:"
+#~ msgstr "seolta: "
+
+#, fuzzy
+#~| msgctxt "Start kmail even when another instance is running."
+#~| msgid "Start %1"
+#~ msgid "Start:"
+#~ msgstr "Tosaigh %1"
+
+#, fuzzy
+#~| msgctxt "@label:listbox"
+#~| msgid "Select type of recipient"
+#~ msgid "Select start time for event."
+#~ msgstr "Roghnaigh cineál an fhaighteora"
+
+#, fuzzy
+#~| msgctxt "@label:listbox"
+#~| msgid "Select type of recipient"
+#~ msgid "Select end time for event."
+#~ msgstr "Roghnaigh cineál an fhaighteora"
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Open &editor..."
+#~ msgstr "Oscail Le..."
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Create Event..."
+#~ msgstr "&Cruthaigh Scagaire"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Create Event"
+#~ msgstr "&Cruthaigh Scagaire"
+
+#, fuzzy
+#~| msgid "Edit with:"
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "Cuir in eagar le:"
+
+#, fuzzy
+#~| msgid "Todo"
+#~ msgid "Todo:"
+#~ msgstr "Le Déanamh"
+
+#, fuzzy
+#~| msgid "Reply"
+#~ msgid "Reply to \"%1\""
+#~ msgstr "Freagair"
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "Earráid Inneall Chiasmus"
+
+#~ msgid "Chiasmus Decryption Key Selection"
+#~ msgstr "Roghnú Eochrach Díchriptithe Chiasmus"
+
+#~ msgid "Decrypt With Chiasmus..."
+#~ msgstr "Díchriptigh Le Chiasmus..."
+
+#, fuzzy
+#~| msgid "Configure..."
+#~ msgid "Configure Gravatar"
+#~ msgstr "Cumraigh..."
+
+#, fuzzy
+#~| msgid "Set Default"
+#~ msgid "Use Default Image"
+#~ msgstr "Socraigh mar Réamhshocrú"
+
+#, fuzzy
+#~| msgid "Use HTML"
+#~ msgid "Use HTTPS"
+#~ msgstr "Úsáid HTML"
+
+#~ msgid "Above the message pane"
+#~ msgstr "Os cionn an pána teachtaireachta"
+
+#~ msgid "Below the message pane"
+#~ msgstr "Faoin phána teachtaireachta"
+
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Níorbh fhéidir Seirbhís Téacs-go-Caint Jovie a thosú"
+
+#~ msgid "sent: "
+#~ msgstr "seolta: "
+
+#~ msgid "&Cancel"
+#~ msgstr "&Cealaigh"
+
+#~ msgid "The message could not be decrypted."
+#~ msgstr "Níorbh fhéidir an teachtaireacht a chriptiú."
+
+# no "ag"
+#, fuzzy
+#~| msgid "&Settings"
+#~ msgctxt "@title:window"
+#~ msgid "Ad Block Settings"
+#~ msgstr "&Socruithe"
+
+#, fuzzy
+#~| msgid "&View Source"
+#~ msgid "View Source Error"
+#~ msgstr "&Féach Foinse"
+
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Download Later"
+#~ msgid "Download New Themes..."
+#~ msgstr "Íosluchtaigh Ar Ball"
+
+#, fuzzy
+#~| msgid "Headers"
+#~ msgid "Header to show:"
+#~ msgstr "Ceanntásca"
+
+#, fuzzy
+#~| msgid "Header:"
+#~ msgid "Header to hide:"
+#~ msgstr "Ceanntásc:"
+
+#, fuzzy
+#~| msgid "This message is encrypted."
+#~ msgid "This message may be a scam."
+#~ msgstr "Tá an teachtaireacht seo criptithe."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Séamus Ó Ciardhuáin,Kevin Scannell"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "seoc@iolfree.ie,kscanne@gmail.com"
+
+#, fuzzy
+#~| msgid "N&ormal:"
+#~ msgid "F&ormat"
+#~ msgstr "&Gnách:"
+
+#, fuzzy
+#~| msgid "Align Left"
+#~ msgid "&Alignment"
+#~ msgstr "Ailínigh Ar Chlé"
+
+#, fuzzy
+#~| msgid "HTML Toolbar"
+#~ msgid "Text Toolbar"
+#~ msgstr "Barra Uirlisí HTML"
+
+#, fuzzy
+#~| msgid "Main Toolbar"
+#~ msgid "Format Toolbar"
+#~ msgstr "Príomhbharra Uirlisí"
+
+#, fuzzy
+#~| msgctxt "General options for the message list."
+#~| msgid "General"
+#~ msgid "General"
+#~ msgstr "Ginearálta"
+
+#~ msgid "File Already Exists"
+#~ msgstr "Tá an comhad ann cheana"
+
+#~ msgid ""
+#~ "A file named <filename>%1</filename> already exists. Do you want to "
+#~ "overwrite it?"
+#~ msgstr ""
+#~ "Tá comhad darb ainm <filename>%1</filename> ann cheana. An bhfuil fonn "
+#~ "ort scríobh air?"
+
+#~ msgid "Suggest New &Name"
+#~ msgstr "Tabhair Ai&nm Nua"
+
+#~ msgid "&Overwrite"
+#~ msgstr "F&orscríobh"
+
+#~ msgid "&Ignore"
+#~ msgstr "Déan neamha&ird de"
+
+#~ msgid "&Rename"
+#~ msgstr "&Athainmnigh"
+
+#~ msgid "Detect language"
+#~ msgstr "Braith an teanga"
+
+#~ msgid "English"
+#~ msgstr "Béarla"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "Sínis (Simplithe)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "Sínis (Traidisiúnta)"
+
+#~ msgid "Dutch"
+#~ msgstr "Ollainnis"
+
+#~ msgid "French"
+#~ msgstr "Fraincis"
+
+#~ msgid "German"
+#~ msgstr "Gearmáinis"
+
+#~ msgid "Greek"
+#~ msgstr "Gréigis"
+
+#~ msgid "Italian"
+#~ msgstr "Iodáilis"
+
+#~ msgid "Japanese"
+#~ msgstr "Seapáinis"
+
+#~ msgid "Korean"
+#~ msgstr "Cóiréis"
+
+#~ msgid "Portuguese"
+#~ msgstr "Portaingéilis"
+
+#~ msgid "Russian"
+#~ msgstr "Rúisis"
+
+#~ msgid "Spanish"
+#~ msgstr "Spáinnis"
+
+#~ msgid "Afrikaans"
+#~ msgstr "Afracáinis"
+
+#~ msgid "Albanian"
+#~ msgstr "Albáinis"
+
+#~ msgid "Arabic"
+#~ msgstr "Araibis"
+
+#~ msgid "Armenian"
+#~ msgstr "Airméinis"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "Asarbaiseáinis"
+
+#~ msgid "Basque"
+#~ msgstr "Bascais"
+
+#~ msgid "Belarusian"
+#~ msgstr "Bealarúisis"
+
+#~ msgid "Bulgarian"
+#~ msgstr "Bulgáiris"
+
+#~ msgid "Catalan"
+#~ msgstr "Catalóinis"
+
+#~ msgid "Croatian"
+#~ msgstr "Cróitis"
+
+#~ msgid "Czech"
+#~ msgstr "Seicis"
+
+#~ msgid "Danish"
+#~ msgstr "Danmhairgis"
+
+#~ msgid "Estonian"
+#~ msgstr "Eastóinis"
+
+#~ msgid "Filipino"
+#~ msgstr "Tagálaigis"
+
+#~ msgid "Finnish"
+#~ msgstr "Fionlainnis"
+
+#~ msgid "Galician"
+#~ msgstr "Gailísis"
+
+#~ msgid "Georgian"
+#~ msgstr "Seoirsis"
+
+#~ msgid "Haitian Creole"
+#~ msgstr "Criól Háítíoch"
+
+#~ msgid "Hebrew"
+#~ msgstr "Eabhrais"
+
+#~ msgid "Hindi"
+#~ msgstr "Hiondúis"
+
+#~ msgid "Hungarian"
+#~ msgstr "Ungáiris"
+
+#~ msgid "Icelandic"
+#~ msgstr "Íoslainnis"
+
+#~ msgid "Indonesian"
+#~ msgstr "Indinéisis"
+
+#~ msgid "Irish"
+#~ msgstr "Gaeilge"
+
+#~ msgid "Latvian"
+#~ msgstr "Laitvis"
+
+#~ msgid "Lithuanian"
+#~ msgstr "Liotuáinis"
+
+#~ msgid "Macedonian"
+#~ msgstr "Macadóinis"
+
+#~ msgid "Malay"
+#~ msgstr "Malaeis"
+
+#~ msgid "Maltese"
+#~ msgstr "Máltais"
+
+#~ msgid "Norwegian"
+#~ msgstr "Ioruais"
+
+#~ msgid "Persian"
+#~ msgstr "Peirsis"
+
+#~ msgid "Polish"
+#~ msgstr "Polainnis"
+
+#~ msgid "Romanian"
+#~ msgstr "Rómáinis"
+
+#~ msgid "Serbian"
+#~ msgstr "Seirbis"
+
+#~ msgid "Slovak"
+#~ msgstr "Slóvaicis"
+
+#~ msgid "Slovenian"
+#~ msgstr "Slóivéinis"
+
+#~ msgid "Swahili"
+#~ msgstr "Svahaílis"
+
+#~ msgid "Swedish"
+#~ msgstr "Sualainnis"
+
+#~ msgid "Thai"
+#~ msgstr "Téalainnis"
+
+#~ msgid "Turkish"
+#~ msgstr "Tuircis"
+
+#~ msgid "Ukrainian"
+#~ msgstr "Úcráinis"
+
+#~ msgid "Urdu"
+#~ msgstr "Urdúis"
+
+#~ msgid "Vietnamese"
+#~ msgstr "Vítneamais"
+
+#~ msgid "Welsh"
+#~ msgstr "Breatnais"
+
+#~ msgid "Yiddish"
+#~ msgstr "Giúdais"
+
+#~ msgid "Clear"
+#~ msgstr "Glan"
+
+#~ msgid "Translate"
+#~ msgstr "Aistrigh"
+
+#~ msgid "Drag text that you want to translate."
+#~ msgstr "Tarraing an téacs ba mhaith leat aistriú."
+
+#~ msgid "Overwrite &All"
+#~ msgstr "Forscríobh &Uile"
+
+#~| msgctxt "type of folder storage"
+#~| msgid "Maildir"
+#~ msgid "Mailreader"
+#~ msgstr "Maildir"
+
+#~ msgctxt "To field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Chuig: "
+
+#~ msgid "Failed to parse vCard."
+#~ msgstr "Níorbh fhéidir an v-Chárta a pharsáil."
+
+#~ msgid "Attachment #%1 (unnamed)"
+#~ msgstr "Iatán #%1 (gan ainm)"
+
+#~ msgctxt "file name of the attachment."
+#~ msgid "&Name:"
+#~ msgstr "Ai&nm:"
+
+#~ msgid "&Description:"
+#~ msgstr "&Cur Síos:"
+
+#~ msgid "&Encoding:"
+#~ msgstr "&Ionchódú:"
+
+#~ msgctxt "%1: a filesize incl. unit (e.g. \"1.3 KB\")"
+#~ msgid "%1 (est.)"
+#~ msgstr "%1 (measta)"
+
+#~ msgid "contains"
+#~ msgstr "ina bhfuil"
+
+#~ msgid "does not contain"
+#~ msgstr "nach bhfuil ann"
+
+#~ msgid "equals"
+#~ msgstr "cothrom le"
+
+#~ msgid "matches regular expr."
+#~ msgstr "atá comhoiriúnach do shlonn ionad."
+
+#~ msgid "does not match reg. expr."
+#~ msgstr "nach bhfuil comhoiriúnach do shlonn ionad."
+
+#~ msgid "is in address book"
+#~ msgstr "atá i leabhar seoltaí"
+
+#~ msgid "is not in address book"
+#~ msgstr "nach bhfuil i leabhar seoltaí"
+
+#~ msgid "is in category"
+#~ msgstr "atá i gcatagóir"
+
+#~ msgid "is not in category"
+#~ msgstr "nach bhfuil i gcatagóir"
+
+#  next batch are untranslatable --KPS
+#~ msgid "is"
+#~ msgstr "atá"
+
+#~ msgid "is not"
+#~ msgstr "nach bhfuil"
+
+#~ msgid "is greater than"
+#~ msgstr "atá níos mó ná"
+
+#~ msgid "is less than"
+#~ msgstr "atá níos lú ná"
+
+#~ msgid " bytes"
+#~ msgstr " beart"
+
+#~ msgctxt "Unit suffix where units are days."
+#~ msgid " days"
+#~ msgstr " lá"
+
+#~ msgid "<qt>Error while creating file <b>%1</b>:<br />%2</qt>"
+#~ msgstr "<qt>Earráid agus comhad <b>%1</b> á chruthú:<br />%2</qt>"
+
+#~ msgid "Failed to create folder"
+#~ msgstr "Theip ar chruthú na comhadlainne."
+
+#~ msgid "Do Not OpenPGP-Sign"
+#~ msgstr "Ná Sínigh le hOpenPGP"
+
+#~ msgid "Do Not S/MIME-Sign"
+#~ msgstr "Ná Sínigh le S/MIME"
+
+#~ msgid "No signing possible"
+#~ msgstr "Ní féidir síniú"
+
+#~ msgid "Missing Key Warning"
+#~ msgstr "Rabhadh: Eochair Ar Iarraidh"
+
+#~ msgid "&Encrypt"
+#~ msgstr "&Criptigh"
+
+#~ msgid "Send &Unencrypted"
+#~ msgstr "Seol &Gan Criptiú"
+
+#~ msgid "Name Selection"
+#~ msgstr "Roghnú Ainm"
+
+#~ msgid "Logging Details"
+#~ msgstr "Mionsonraí Logála"
+
+#~ msgctxt "@label:spinbox Set the size of the logfile to unlimited."
+#~ msgid "unlimited"
+#~ msgstr "gan teorainn"
+
+#~ msgid "Friend"
+#~ msgstr "Cara"
+
+#~ msgid "Business"
+#~ msgstr "Gnó"
+
+#~ msgid "Later"
+#~ msgstr "Níos Déanaí"
+
+#~ msgid "KWallet Not Available"
+#~ msgstr "Níl KWallet ar Fáil"
+
+#~ msgid "Store Password"
+#~ msgstr "Sábháil an Focal Faire"
+
+#~ msgid "Do Not Store Password"
+#~ msgstr "Ná Sábháil an Focal Faire"
+
+#~ msgid "Location:"
+#~ msgstr "Suíomh:"
+
+#~ msgid "Incoming server:"
+#~ msgstr "Freastalaí isteach:"
+
+#~ msgid "Welcome to KMail's account wizard"
+#~ msgstr "Fáilte go dtí Treoraí Cuntas KMail"
+
+#~ msgid "Create a new identity"
+#~ msgstr "Cruthaigh aitheantas nua"
+
+#~ msgid "Account Wizard"
+#~ msgstr "Treoraí Cuntas"
+
+#~ msgid "Select what kind of account you would like to create"
+#~ msgstr "Roghnaigh cineál an chuntais is mian leat a chruthú"
+
+#~ msgid "Account Type"
+#~ msgstr "Cineál Cuntais"
+
+#~ msgid "Real name:"
+#~ msgstr "Fíorainm:"
+
+#~ msgid "E-mail address:"
+#~ msgstr "Seoladh ríomhphoist:"
+
+#~ msgid "Organization:"
+#~ msgstr "Eagras:"
+
+#~ msgid "Account Information"
+#~ msgstr "Eolas faoin Chuntas"
+
+#~ msgid "Login name:"
+#~ msgstr "Ainm logála isteach:"
+
+#~ msgid "Password:"
+#~ msgstr "Focal Faire:"
+
+#~ msgid "Login Information"
+#~ msgstr "Eolas Logála Isteach"
+
+#~ msgid "Choose..."
+#~ msgstr "Roghnaigh..."
+
+#~ msgid "Outgoing server:"
+#~ msgstr "Freastalaí amach:"
+
+#~ msgid "Use local delivery"
+#~ msgstr "Úsáid seachadadh logánta"
+
+#~ msgctxt "Default name for new email accounts/identities."
+#~ msgid "Unnamed"
+#~ msgstr "Gan ainm"
+
+#~ msgid "Sendmail"
+#~ msgstr "Sendmail"
+
+#~ msgid "Local Account"
+#~ msgstr "Cuntas Logánta"
+
+#~ msgid "------------------------------------------------------------\n"
+#~ msgstr "------------------------------------------------------------\n"
+
+#~ msgid ""
+#~ "(This script is empty.)\n"
+#~ "\n"
+#~ msgstr ""
+#~ "(Tá an script seo folamh.)\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "------------------------------------------------------------\n"
+#~ "%1\n"
+#~ "------------------------------------------------------------\n"
+#~ "\n"
+#~ msgstr ""
+#~ "------------------------------------------------------------\n"
+#~ "%1\n"
+#~ "------------------------------------------------------------\n"
+#~ "\n"
+
+#~ msgid "Available Sieve scripts:\n"
+#~ msgstr "Scripteanna Sieve atá ar fáil:\n"
+
+#~ msgid ""
+#~ "Active script: %1\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Script bheo: %1\n"
+#~ "\n"
+
+#~ msgid "New Folder"
+#~ msgstr "Fillteán Nua"
+
+#~ msgid "New Subfolder of %1"
+#~ msgstr "Fofhillteán Nua de %1"
+
+#~ msgctxt "@label:textbox Name of the new folder."
+#~ msgid "&Name:"
+#~ msgstr "Ai&nm:"
+
+#~ msgctxt "type of folder content"
+#~ msgid "Mail"
+#~ msgstr "Ríomhphost"
+
+#~ msgctxt "type of folder content"
+#~ msgid "Calendar"
+#~ msgstr "Féilire"
+
+#~ msgctxt "type of folder content"
+#~ msgid "Contacts"
+#~ msgstr "Teagmhálacha"
+
+#~ msgctxt "type of folder content"
+#~ msgid "Tasks"
+#~ msgstr "Tascanna"
+
+#~ msgctxt "type of folder content"
+#~ msgid "Journal"
+#~ msgstr "Dialann"
+
+#~ msgid "No Name Specified"
+#~ msgstr "Níor Sonraíodh Ainm"
+
+#~ msgid "<qt>Failed to create folder <b>%1</b>, folder already exists.</qt>"
+#~ msgstr ""
+#~ "<qt>Theip ar chruthú na comhadlainne <b>%1</b>, tá an fillteán ann cheana."
+#~ "</qt> "
+
+#~ msgid "<qt>Failed to create folder <b>%1</b>.</qt> "
+#~ msgstr "<qt>Theip ar chruthú na comhadlainne <b>%1</b>.</qt> "
+
+#~ msgctxt "Permissions"
+#~ msgid "Read"
+#~ msgstr "Léamh"
+
+#~ msgctxt "Permissions"
+#~ msgid "Append"
+#~ msgstr "Iarcheangal"
+
+#~ msgctxt "Permissions"
+#~ msgid "Write"
+#~ msgstr "Scríobh"
+
+#~ msgctxt "Permissions"
+#~ msgid "All"
+#~ msgstr "Uile"
+
+#~ msgid "Permissions"
+#~ msgstr "Ceadanna"
+
+#~ msgid "Custom Permissions"
+#~ msgstr "Ceadanna Saincheaptha"
+
+#~ msgid "Custom Permissions (%1)"
+#~ msgstr "Ceadanna Saincheaptha (%1)"
+
+#~ msgid "User Id"
+#~ msgstr "Aitheantas an Úsáideora"
+
+#~ msgid "Add Entry..."
+#~ msgstr "Cuir Iontráil Leis..."
+
+#~ msgid "Modify Entry..."
+#~ msgstr "Mionathraigh an Iontráil..."
+
+#~ msgid "Remove Entry"
+#~ msgstr "Bain Iontráil"
+
+#~ msgid "Error retrieving user permissions."
+#~ msgstr "Earráid agus ceadanna an úsáideora á bhfáil."
+
+#~ msgid "Connecting to server %1, please wait..."
+#~ msgstr "Ag ceangal le freastalaí %1, fan go fóill..."
+
+#~ msgid "Modify Permissions"
+#~ msgstr "Athraigh Ceadanna"
+
+#~ msgid "&New Subfolder..."
+#~ msgstr "Fofhillteán &Nua..."
+
+#~ msgid "&New Folder..."
+#~ msgstr "Fillteán &Nua..."
+
+#~ msgid "&Copy Folders To"
+#~ msgstr "&Cóipeáil Fillteáin Go"
+
+#~ msgid "&Copy Folder To"
+#~ msgstr "&Cóipeáil Fillteán Go"
+
+#~ msgid "&Move Folders To"
+#~ msgstr "&Bog Fillteáin Go"
+
+#~ msgid "&Move Folder To"
+#~ msgstr "&Bog Fillteán Go"
+
+#~ msgid "New Messages In"
+#~ msgstr "Teachtaireachtaí Nua I"
+
+#~ msgid "KMail - There are no unread messages"
+#~ msgstr "KMail - Níl aon teachtaireacht gan léamh"
+
+#~ msgid "KMail - 1 unread message"
+#~ msgid_plural "KMail - %1 unread messages"
+#~ msgstr[0] "KMail - Tá %1 teachtaireacht gan léamh ann."
+#~ msgstr[1] "KMail - Tá %1 theachtaireacht gan léamh ann."
+#~ msgstr[2] "KMail - Tá %1 theachtaireacht gan léamh ann."
+#~ msgstr[3] "KMail - Tá %1 dteachtaireacht gan léamh ann."
+#~ msgstr[4] "KMail - Tá %1 teachtaireacht gan léamh ann."
+
+#~ msgid "Find Messages"
+#~ msgstr "Aimsigh Teachtaireachtaí"
+
+#~ msgctxt "@action:button Search for messags"
+#~ msgid "&Search"
+#~ msgstr "&Cuardaigh"
+
+#~ msgid "Search in &all local folders"
+#~ msgstr "Cuardaigh i ngach fillteán logánta"
+
+#~ msgid "I&nclude sub-folders"
+#~ msgstr "Cuir fofhillteái&n san áireamh"
+
+#~ msgctxt "@title:column Sender of the found message."
+#~ msgid "Sender/Receiver"
+#~ msgstr "Seoltóir/Faighteoir"
+
+#~ msgctxt "@title:column date of receival ofthe found message."
+#~ msgid "Date"
+#~ msgstr "Dáta"
+
+#~ msgctxt "@title:column Folder in which the message is found."
+#~ msgid "Folder"
+#~ msgstr "Fillteán"
+
+#~ msgid "Op&en Search Folder"
+#~ msgstr "&Oscail Fillteán Cuardaigh"
+
+#~ msgid "Open &Message"
+#~ msgstr "Oscail &Teachtaireacht"
+
+#~ msgid "AMiddleLengthText..."
+#~ msgstr "TéacsMeasarthaFada..."
+
+#~ msgctxt "@info:status finished searching."
+#~ msgid "Ready."
+#~ msgstr "Réidh."
+
+#~ msgid "&Reply..."
+#~ msgstr "&Freagair..."
+
+#~ msgctxt "Message->"
+#~ msgid "&Forward"
+#~ msgstr "Ar A&ghaidh"
+
+#~ msgctxt "@action:inmenu Forward message inline."
+#~ msgid "&Inline..."
+#~ msgstr "&Inlíne..."
+
+#~ msgid "Clear Selection"
+#~ msgstr "Glan Roghnúchán"
+
+#~ msgctxt "Search finished."
+#~ msgid "Done"
+#~ msgstr "Críochnaithe"
+
+#~ msgid "%1 message processed"
+#~ msgid_plural "%1 messages processed"
+#~ msgstr[0] "Próiseáladh %1 teachtaireacht"
+#~ msgstr[1] "Próiseáladh %1 theachtaireacht"
+#~ msgstr[2] "Próiseáladh %1 theachtaireacht"
+#~ msgstr[3] "Próiseáladh %1 dteachtaireacht"
+#~ msgstr[4] "Próiseáladh %1 teachtaireacht"
+
+#~ msgid "Search canceled"
+#~ msgstr "Cealaíodh an cuardach"
+
+#~ msgid "&Move To"
+#~ msgstr "&Bog Go"
+
+#~ msgid "Folder"
+#~ msgstr "Fillteán"
+
+#~ msgid "Path"
+#~ msgstr "Conair"
+
+#~ msgid "Chiasmus Encryption Error"
+#~ msgstr "Earráid Criptithe Chiasmus"
+
+#~ msgid "Use Inline OpenPGP"
+#~ msgstr "Úsáid OpenPGP Inlíne"
+
+#~ msgid "Use OpenPGP/MIME"
+#~ msgstr "Úsáid OpenPGP/MIME"
+
+#~ msgid "Sign Message?"
+#~ msgstr "Sínigh an Teachtaireacht?"
+
+#~ msgctxt "to sign"
+#~ msgid "&Sign"
+#~ msgstr "&Sínigh"
+
+#~ msgid "Send &Unsigned"
+#~ msgstr "Seol &Gan Síniú"
+
+#~ msgid "&Sign All Parts"
+#~ msgstr "&Sínigh Gach Páirt"
+
+#~ msgid "&Sign"
+#~ msgstr "&Sínigh"
+
+#~ msgid "Send &As Is"
+#~ msgstr "Seol M&ar Atá"
+
+#~ msgid "Encrypt Message?"
+#~ msgstr "Criptigh an Teachtaireacht?"
+
+#~ msgid "Sign && &Encrypt"
+#~ msgstr "Sínigh agus &Criptigh"
+
+#~ msgid "&Sign Only"
+#~ msgstr "&Sínigh Amháin"
+
+#~ msgid "&Send As-Is"
+#~ msgstr "&Seol Mar Atá"
+
+#~ msgid "Do &Not Encrypt"
+#~ msgstr "&Ná Criptigh"
+
+#~ msgid "Send Unencrypted?"
+#~ msgstr "Seol Gan Criptiú?"
+
+#~ msgid "&Encrypt All Parts"
+#~ msgstr "&Criptigh Gach Páirt"
+
+#~ msgid "Encoding"
+#~ msgstr "Ionchódú"
+
+#~ msgid "Error while renaming a folder."
+#~ msgstr "Earráid agus fillteán á athainmniú."
+
+#~ msgid "Error while deleting messages on the server: "
+#~ msgstr "Earráid agus teachtaireachtaí á scriosadh ón fhreastalaí: "
+
+#~ msgid "Error while retrieving message on the server: "
+#~ msgstr "Earráid agus teachtaireachtaí á n-íosluchtú ón fhreastalaí: "
+
+#~ msgid "Error while uploading folder"
+#~ msgstr "Earráid agus fillteán á uasluchtú"
+
+#~ msgid "Could not make the folder <b>%1</b> on the server."
+#~ msgstr "Níorbh fhéidir fillteán <b>%1</b> a chruthú ar an fhreastalaí."
+
+#~ msgid "Error while deleting folder %1 on the server: "
+#~ msgstr "Earráid agus fillteán %1 á scriosadh ón fhreastalaí: "
+
+#~ msgid "Error while reading folder %1 on the server: "
+#~ msgstr "Earráid agus fillteán %1 á léamh ón fhreastalaí: "
+
+#~ msgid "Error while trying to rename folder %1"
+#~ msgstr "Earráid agus fillteán %1 á athainmniú"
+
+#~ msgid "Old Folders"
+#~ msgstr "Seanfhillteáin"
+
+#~ msgid "Folders"
+#~ msgstr "Fillteáin"
+
+#~ msgid "Favorite Folders"
+#~ msgstr "Fillteáin Is Ansa Leat"
+
+#~ msgid "Remove Duplicate Messages"
+#~ msgstr "Bain Teachtaireachtaí Dúbailte"
+
+#~ msgid "Move Message to Folder"
+#~ msgstr "Bog Teachtaireacht go Fillteán"
+
+#~ msgid "(no templates)"
+#~ msgstr "(gan teimpléid)"
+
+#~ msgid "Empty Trash"
+#~ msgstr "Folmhaigh an Bosca Bruscair"
+
+#~ msgid "Delete Search"
+#~ msgstr "Scrios Cuardach"
+
+#~ msgctxt "@action:button Delete search"
+#~ msgid "&Delete"
+#~ msgstr "&Scrios"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Scrios Fillteán"
+
+#~ msgid "<qt>Are you sure you want to delete the empty folder <b>%1</b>?</qt>"
+#~ msgstr ""
+#~ "<qt>An bhfuil tú cinnte gur mian leat an chomhadlann fholamh <b>'%1'</b> "
+#~ "a scriosadh?</qt>"
+
+#~ msgctxt "@action:button Delete folder"
+#~ msgid "&Delete"
+#~ msgstr "&Scrios"
+
+#~ msgid "The index of folder %1 has been recreated."
+#~ msgstr "Cruthaíodh innéacs fillteáin %1."
+
+#~ msgid "Refresh IMAP Cache"
+#~ msgstr "Athnuaigh an taisce IMAP"
+
+#~ msgid "&Refresh"
+#~ msgstr "&Athnuaigh"
+
+#~ msgid "Security Warning"
+#~ msgstr "Rabhadh Slándála"
+
+#~ msgid "Delete Messages"
+#~ msgstr "Scrios Teachtaireachtaí"
+
+#~ msgid "Delete Message"
+#~ msgstr "Scrios Teachtaireacht"
+
+#~ msgid "Deleting messages..."
+#~ msgstr "Teachtaireachtaí á scriosadh..."
+
+#~ msgid "Messages deleted successfully."
+#~ msgstr "D'éirigh le scriosadh na dteachtaireachtaí."
+
+#~ msgid "Messages moved successfully."
+#~ msgstr "D'éirigh le bogadh na dteachtaireachtaí."
+
+#~ msgid "Move Messages to Folder"
+#~ msgstr "Bog Teachtaireachtaí go Fillteán"
+
+#~ msgid "Copying messages..."
+#~ msgstr "Teachtaireachtaí á gcóipeáil..."
+
+#~ msgid "Messages copied successfully."
+#~ msgstr "D'éirigh le cóipeáil na dteachtaireachtaí."
+
+#~ msgid "Moving messages to trash..."
+#~ msgstr "Teachtaireachtaí á mbogadh go dtí an Bruscar..."
+
+#~ msgid "Messages moved to trash successfully."
+#~ msgstr "D'éirigh le bogadh na dteachtaireachtaí go dtí an Bruscar."
+
+#~ msgid "Unable to process messages: "
+#~ msgstr "Ní féidir na teachtaireachtaí a phróiseáil: "
+
+#~ msgctxt "tab title when loading an IMAP folder"
+#~ msgid "Loading..."
+#~ msgstr "Á Luchtú..."
+
+#~ msgid "&Compact All Folders"
+#~ msgstr "&Comhdhlúthaigh Gach Fillteán"
+
+#~ msgid "&Expire All Folders"
+#~ msgstr "Cuir Gach Fillteán As &Feidhm"
+
+#~ msgid "&Refresh Local IMAP Cache"
+#~ msgstr "&Athnuaigh an Taisce Logánta IMAP"
+
+#~ msgid "Empty All &Trash Folders"
+#~ msgstr "Folmhaigh Gach Fillteán &Bruscair"
+
+#~ msgid "&Send Queued Messages"
+#~ msgstr "&Seol Teachtaireachtaí Ciúáilte"
+
+#~ msgid "Online status (unknown)"
+#~ msgstr "Stádas ar líne (anaithnid)"
+
+#~ msgid "Send Queued Messages Via"
+#~ msgstr "Seol Teachtaireachtaí Ciúáilte Trí"
+
+#~ msgid "Certificate Manager"
+#~ msgstr "Bainisteoir na dTeastas"
+
+#~ msgid "GnuPG Log Viewer"
+#~ msgstr "Amharcán Logchomhad GnuPG"
+
+#~ msgid "&Import Messages"
+#~ msgstr "&Iompórtáil Teachtaireachtaí"
+
+#~ msgid "&Anti-Spam Wizard..."
+#~ msgstr "&Treoraí Frith-Dhramhphoist..."
+
+#~ msgid "&Anti-Virus Wizard..."
+#~ msgstr "&Treoraí Frithvíris..."
+
+#~ msgid "&Account Wizard..."
+#~ msgstr "&Treoraí Cuntas..."
+
+#~ msgid "Edit \"Out of Office\" Replies..."
+#~ msgstr "Cuir Freagraí \"As Láthair Ón Oifig\" in Eagar..."
+
+#~ msgid "&Move to Trash"
+#~ msgstr "&Bog go dtí an Bruscar"
+
+#~ msgctxt "@action:intoolbar Move to Trash"
+#~ msgid "Trash"
+#~ msgstr "Cuir sa Bhruscar"
+
+#~ msgid "Move message to trashcan"
+#~ msgstr "Bog Teachtaireacht go dtí an Bruscar"
+
+#~ msgctxt "@action Hard delete, bypassing trash"
+#~ msgid "&Delete"
+#~ msgstr "&Scrios"
+
+#~ msgid "M&ove Thread to Trash"
+#~ msgstr "B&og snáithe go dtí an Bruscar"
+
+#~ msgid "Move thread to trashcan"
+#~ msgstr "Bog snáithe go dtí an Bruscar"
+
+#~ msgid "Delete T&hread"
+#~ msgstr "Scrios Snáit&he"
+
+#~ msgid "Select &All Messages"
+#~ msgstr "Roghnaigh G&ach Teachtaireacht"
+
+#~ msgid "&Properties"
+#~ msgstr "&Airíonna"
+
+#~ msgid "Cut Folder"
+#~ msgstr "Gearr an Fillteán"
+
+#~ msgid "Paste Folder"
+#~ msgstr "Greamaigh an Fillteán"
+
+#~ msgid "Copy Messages"
+#~ msgstr "Cóipeáil Teachtaireachtaí"
+
+#~ msgid "Cut Messages"
+#~ msgstr "Gearr Teachtaireachtaí"
+
+#~ msgid "Paste Messages"
+#~ msgstr "Greamaigh Teachtaireachtaí"
+
+#~ msgid "&New Message..."
+#~ msgstr "Teachtaireacht &Nua..."
+
+#~ msgctxt "@action:intoolbar New Empty Message"
+#~ msgid "New"
+#~ msgstr "Nua"
+
+#~ msgid "Send A&gain..."
+#~ msgstr "Seol A&rís..."
+
+#~ msgid "Save A&ttachments..."
+#~ msgstr "Sábháil Ia&táin..."
+
+#~ msgid "A&pply Filter"
+#~ msgstr "Cuir Scagaire i bh&Feidhm"
+
+#~ msgid "&Display Message"
+#~ msgstr "&Taispeáin Teachtaireacht"
+
+#~ msgid "Go to the next message"
+#~ msgstr "Téigh go dtí an chéad teachtaireacht eile"
+
+#~ msgid "Next &Unread Message"
+#~ msgstr "An Chéad Teachtaireacht &Neamhléite Eile"
+
+#~ msgid "Configure &Filters..."
+#~ msgstr "Cumraigh &Scagairí..."
+
+#~ msgid "Configure &POP Filters..."
+#~ msgstr "Cumraigh Scagairí &POP..."
+
+#~ msgid "Manage &Sieve Scripts..."
+#~ msgstr "Bainistigh Scripteanna Sieve..."
+
+#~ msgid "KMail &Introduction"
+#~ msgstr "Tús &Eolais ar KMail"
+
+#~ msgid "Display KMail's Welcome Page"
+#~ msgstr "Taispeáin Leathanach Fáilte KMail"
+
+#~ msgid "Configure &Notifications..."
+#~ msgstr "C&umraigh Fógairt..."
+
+#~ msgid "&Configure KMail..."
+#~ msgstr "&Cumraigh KMail..."
+
+#~ msgid "E&mpty Trash"
+#~ msgstr "Fol&mhaigh an Bosca Bruscair"
+
+#~ msgid "&Move All Messages to Trash"
+#~ msgstr "Cuir Gach Teachtaireacht sa &Bhruscar"
+
+#~ msgid "&Delete Search"
+#~ msgstr "Scrios Cuar&dach"
+
+#~ msgid "&Delete Folder"
+#~ msgstr "&Scrios an Fillteán"
+
+#~ msgid "Message Tag %1"
+#~ msgstr "Clib Theachtaireachta %1"
+
+#~ msgid "Removed %1 duplicate message."
+#~ msgid_plural "Removed %1 duplicate messages."
+#~ msgstr[0] "Baineadh %1 teachtaireacht dhúblach."
+#~ msgstr[1] "Baineadh %1 theachtaireacht dhúblach."
+#~ msgstr[2] "Baineadh %1 theachtaireacht dhúblach."
+#~ msgstr[3] "Baineadh %1 dteachtaireacht dhúblach."
+#~ msgstr[4] "Baineadh %1 teachtaireacht dhúblach."
+
+#~ msgid "Local Subscription"
+#~ msgstr "Síntiús Logánta"
+
+#~ msgid "Out of office reply active"
+#~ msgstr "Freagra \"As Láthair Ón Oifig\" in úsáid"
+
+#~ msgid "Remove Identity"
+#~ msgstr "Bain an tAitheantas"
+
+#~ msgid "&Remove"
+#~ msgstr "&Bain"
+
+#~ msgid "Set as Default"
+#~ msgstr "Socraigh mar Réamhshocrú"
+
+#~ msgid "Outgoing accounts (add at least one):"
+#~ msgstr "Cuntais amach (cuir ceann leis ar a laghad):"
+
+#~ msgid "Common Options"
+#~ msgstr "Roghanna Coitianta"
+
+#~ msgid "Send Now"
+#~ msgstr "Seol Anois"
+
+#~ msgid "Send Later"
+#~ msgstr "Seol Níos Déanaí"
+
+#~ msgid "Allow 8-bit"
+#~ msgstr "Ceadaigh 8-giotán"
+
+#~ msgid "Unable to create account"
+#~ msgstr "Ní féidir an cuntas a chruthú"
+
+#~ msgid "Add Account"
+#~ msgstr "Cuir Cuntas Leis"
+
+#~ msgid "Unable to locate account"
+#~ msgstr "Ní féidir an cuntas a aimsiú"
+
+#~ msgid "<qt>Unable to locate account <b>%1</b>.</qt>"
+#~ msgstr "<qt>Ní féidir an cuntas <b>%1</b> a aimsiú.</qt>"
+
+#~ msgid "Fonts"
+#~ msgstr "Clónna"
+
+#~ msgid "Layout"
+#~ msgstr "Leagan Amach"
+
+#~ msgid "Message List"
+#~ msgstr "Liosta Teachtaireachtaí"
+
+#~ msgid "Message Window"
+#~ msgstr "Fuinneog Theachtaireachta"
+
+#~ msgid "System Tray"
+#~ msgstr "Tráidire an Chórais"
+
+#~ msgid "Message Tags"
+#~ msgstr "Clibeanna Teachtaireachta"
+
+#~ msgid "Message List - New Messages"
+#~ msgstr "Liosta Teachtaireachtaí - Teachtaireachtaí Nua"
+
+#~ msgid "Message List - Unread Messages"
+#~ msgstr "Liosta Teachtaireachtaí - Teachtaireachtaí Gan Léamh"
+
+#~ msgid "Message List - Important Messages"
+#~ msgstr "Liosta Teachtaireachtaí - Teachtaireachtaí Tábhachtacha"
+
+#~ msgid "Folder List"
+#~ msgstr "Liosta Fillteán"
+
+#~ msgid "Quoted Text - First Level"
+#~ msgstr "Téacs Athfhriotail - An Chéad Leibhéal"
+
+#~ msgid "Quoted Text - Second Level"
+#~ msgstr "Téacs Athfhriotail - An Dara Leibhéal"
+
+#~ msgid "Quoted Text - Third Level"
+#~ msgstr "Téacs Athfhriotail - An Tríú Leibhéal"
+
+#~ msgid "Fixed Width Font"
+#~ msgstr "Cló Aonleithid"
+
+#~ msgid "Composer"
+#~ msgstr "Cumadóir"
+
+#~ msgid "&Use custom fonts"
+#~ msgstr "Úsáid clónna &saincheaptha"
+
+#~ msgid "Link"
+#~ msgstr "Nasc"
+
+#~ msgid "Followed Link"
+#~ msgstr "Nasc Leanta"
+
+#~ msgid "Misspelled Words"
+#~ msgstr "Focail Mílitrithe"
+
+#~ msgid "Unread Message"
+#~ msgstr "Teachtaireacht Gan Léamh"
+
+#~ msgid "Important Message"
+#~ msgstr "Teachtaireacht Tábhachtach"
+
+#~ msgid "OpenPGP Message - Encrypted"
+#~ msgstr "Teachtaireacht OpenPGP - Criptithe"
+
+#~ msgid "OpenPGP Message - Valid Signature with Trusted Key"
+#~ msgstr "Teachtaireacht OpenPGP - Síniú Bailí le hEochair Iontaofa"
+
+#~ msgid "OpenPGP Message - Valid Signature with Untrusted Key"
+#~ msgstr "Teachtaireacht OpenPGP - Síniú Bailí le hEochair Neamhiontaofa"
+
+#~ msgid "OpenPGP Message - Unchecked Signature"
+#~ msgstr "Teachtaireacht OpenPGP - Síniú Gan Seiceáil"
+
+#~ msgid "OpenPGP Message - Bad Signature"
+#~ msgstr "Teachtaireacht OpenPGP - Drochshíniú"
+
+#~ msgid "&Use custom colors"
+#~ msgstr "Úsáid dathanna &saincheaptha"
+
+#~ msgid "Sta&ndard format (%1)"
+#~ msgstr "Formáid chaighdeá&nach (%1)"
+
+#~ msgid "Locali&zed format (%1)"
+#~ msgstr "&Formáid lógánaithe (%1)"
+
+#~ msgid "Fancy for&mat (%1)"
+#~ msgstr "For&máid mhaisiúil (%1)"
+
+#~ msgid "C&ustom format:"
+#~ msgstr "&Formáid shaincheaptha:"
+
+#~ msgid "Date Display"
+#~ msgstr "Taispeáint an Dáta"
+
+#~ msgid "Enable system tray icon"
+#~ msgstr "Cumasaigh deilbhín i dtráidire an chórais"
+
+#~ msgid "Always show KMail in system tray"
+#~ msgstr "Taispeáin KMail i dtráidire an chórais i gcónaí"
+
+#~ msgid "A&vailable Tags"
+#~ msgstr "Clibeanna atá ar fáil"
+
+#~ msgid "Remove selected tag"
+#~ msgstr "Bain an chlib roghnaithe"
+
+#~ msgid "Ta&g Settings"
+#~ msgstr "Socruithe &Clibe"
+
+#~ msgctxt "@label:listbox Name of the tag"
+#~ msgid "Name:"
+#~ msgstr "Ainm:"
+
+#~ msgid "Change te&xt color:"
+#~ msgstr "Athraigh dath an téa&cs:"
+
+#~ msgid "Change fo&nt:"
+#~ msgstr "Athraigh a&n chló:"
+
+#~ msgid "Message tag &icon:"
+#~ msgstr "De&ilbhín na clibe teachtaireachta:"
+
+#~ msgid "Shortc&ut:"
+#~ msgstr "&Aicearra:"
+
+#~ msgctxt "General settings for the composer."
+#~ msgid "General"
+#~ msgstr "Ginearálta"
+
+#~ msgid "Standard Templates"
+#~ msgstr "Teimpléid Chaighdeánacha"
+
+#~ msgid "Custom Templates"
+#~ msgstr "Teimpléid Shaincheaptha"
+
+#~ msgid "Charset"
+#~ msgstr "Tacar carachtar"
+
+#~ msgctxt "Config->Composer->Attachments"
+#~ msgid "Attachments"
+#~ msgstr "Iatáin"
+
+#~ msgid "No autosave"
+#~ msgstr "Ná sábháil go huathoibríoch"
+
+#~ msgid " min"
+#~ msgstr " nóiméad"
+
+#~ msgid "Default Forwarding Type:"
+#~ msgstr "Cineál Réamhshocraithe Curtha Ar Aghaidh:"
+
+#~ msgid "As Attachment"
+#~ msgstr "Mar Iatán"
+
+#~ msgid "Configure Completion Order..."
+#~ msgstr "Cumraigh Ord Comhlíonta..."
+
+#~ msgid "Edit Recent Addresses..."
+#~ msgstr "Cuir seoltaí is déanaí in eagar..."
+
+#~ msgid "External Editor"
+#~ msgstr "Eagarthóir Seachtrach"
+
+#~ msgid "<b>%f</b> will be replaced with the filename to edit."
+#~ msgstr "Cuirfear ainm an chomhaid le cur in eagar in ionad <b>%f</b>."
+
+#~ msgid "Re&move"
+#~ msgstr "Ba&in"
+
+#~ msgid "Mod&ify..."
+#~ msgstr "Athra&igh..."
+
+#~ msgid "Enter charset:"
+#~ msgstr "Iontráil tacar carachtar:"
+
+#~ msgctxt "@title:column Name of the mime header."
+#~ msgid "Name"
+#~ msgstr "Ainm"
+
+#~ msgctxt "@title:column Value of the mimeheader."
+#~ msgid "Value"
+#~ msgstr "Luach"
+
+#~ msgctxt "@action:button Add new mime header field."
+#~ msgid "Ne&w"
+#~ msgstr "N&ua"
+
+#~ msgctxt "@label:textbox Name of the mime header."
+#~ msgid "&Name:"
+#~ msgstr "Ai&nm:"
+
+#~ msgid "&Value:"
+#~ msgstr "&Luach:"
+
+#~ msgid "Enter new key word:"
+#~ msgstr "Iontráil lorgfhocal nua:"
+
+#~ msgid "Reading"
+#~ msgstr "Léamh"
+
+#~ msgid "Composing"
+#~ msgstr "Cumadh"
+
+#~ msgid "Warnings"
+#~ msgstr "Rabhaidh"
+
+#~ msgid "S/MIME Validation"
+#~ msgstr "Bailíochtú S/MIME"
+
+#~ msgid "Crypto Backends"
+#~ msgstr "Innill Chriptithe"
+
+#~ msgid "no proxy"
+#~ msgstr "gan seachfhreastalaí"
+
+#~ msgid "(Current system setting: %1)"
+#~ msgstr "(Socrú reatha an chórais: %1)"
+
+#~ msgid "Groupware"
+#~ msgstr "Grúpearraí"
+
+#~ msgid "<Choose a Folder>"
+#~ msgstr "<Roghnaigh Fillteán>"
+
+#~ msgid "Edit Identity"
+#~ msgstr "Cuir Aitheantas in Eagar"
+
+#~ msgctxt "@title:tab General identity settings."
+#~ msgid "General"
+#~ msgstr "Ginearálta"
+
+#~ msgid "&Your name:"
+#~ msgstr "&D'ainm:"
+
+#~ msgid "Organi&zation:"
+#~ msgstr "Eagra&s:"
+
+#~ msgid "&Email address:"
+#~ msgstr "S&eoladh Ríomhphoist:"
+
+#~ msgid "Cryptography"
+#~ msgstr "Cripteagrafaíocht"
+
+#~ msgid "Chang&e..."
+#~ msgstr "&Athraigh..."
+
+#~ msgid "OpenPGP signing key:"
+#~ msgstr "Eochair shínithe OpenPGP:"
+
+#~ msgid "Your OpenPGP Encryption Key"
+#~ msgstr "D'Eochair chriptithe OpenPGP"
+
+#~ msgid "OpenPGP encryption key:"
+#~ msgstr "Eochair criptithe OpenPGP:"
+
+#~ msgid "Your S/MIME Signature Certificate"
+#~ msgstr "Do theastas sínithe S/MIME"
+
+#~ msgid "S/MIME signing certificate:"
+#~ msgstr "Teastas sínithe S/MIME:"
+
+#~ msgid "Your S/MIME Encryption Certificate"
+#~ msgstr "Do theastas criptiúcháin S/MIME"
+
+#~ msgid "S/MIME encryption certificate:"
+#~ msgstr "Teastas criptiúcháin S/MIME:"
+
+#~ msgctxt "@title:tab Advanced identity settings."
+#~ msgid "Advanced"
+#~ msgstr "Casta"
+
+#~ msgid "&BCC addresses:"
+#~ msgstr "Seoltaí &BCC:"
+
+#~ msgid "D&ictionary:"
+#~ msgstr "Focló&ir:"
+
+#~ msgid "Sent-mail &folder:"
+#~ msgstr "&Fillteán na dteachtaireachtaí seolta:"
+
+#~ msgid "&Drafts folder:"
+#~ msgstr "Fillteán na n&Dréachtanna:"
+
+#~ msgid "Templates"
+#~ msgstr "Teimpléid"
+
+#~ msgid "Picture"
+#~ msgstr "Pictiúr"
+
+#~ msgid "Invalid Email Address"
+#~ msgstr "Ríomhsheoladh neamhbhailí"
+
+#~ msgid "Edit Identity \"%1\""
+#~ msgstr "Cuir Aitheantas \"%1\" in Eagar"
+
+#~ msgid "You need to supply a username and a password to access this mailbox."
+#~ msgstr ""
+#~ "Is gá ainm úsáideora agus focal faire a sholáthar chun an bosca "
+#~ "ríomhphoist seo a rochtain."
+
+#~ msgid "Authorization Dialog"
+#~ msgstr "Dialóg Údaraithe"
+
+#~ msgid "Account:"
+#~ msgstr "Cuntas:"
+
+#~ msgid "Error while trying to subscribe to %1:"
+#~ msgstr "Earráid le linn liostála le %1:"
+
+#~ msgid "Retrieving Namespaces"
+#~ msgstr "Ainmspásanna á bhFáil"
+
+#~ msgctxt "Unknown subject."
+#~ msgid "<placeholder>unknown</placeholder>"
+#~ msgstr "<placeholder>anaithnid</placeholder>"
+
+#~ msgctxt "Unknown sender."
+#~ msgid "<placeholder>unknown</placeholder>"
+#~ msgstr "<placeholder>anaithnid</placeholder>"
+
+#~ msgid "The destination folder was: <b>%1</b>."
+#~ msgstr "Spriocfhillteán: <b>%1</b>."
+
+#~ msgid "Error"
+#~ msgstr "Earráid"
+
+#~ msgid "The connection to account %1 was broken."
+#~ msgstr "Briseadh an nasc le cuntas %1."
+
+#~ msgid "The connection to account %1 timed out."
+#~ msgstr "D'imigh an nasc le cuntas %1 thar am."
+
+#~ msgid "retrieving folders"
+#~ msgstr "fillteáin á bhfáil"
+
+#~ msgid "Mark As"
+#~ msgstr "Marcáil Mar"
+
+#~ msgctxt "msg status"
+#~ msgid "Important"
+#~ msgstr "Tábhachtach"
+
+#~ msgctxt "msg status"
+#~ msgid "Read"
+#~ msgstr "Léite"
+
+#~ msgctxt "msg status"
+#~ msgid "Unread"
+#~ msgstr "Gan Léamh"
+
+#~ msgctxt "msg status"
+#~ msgid "Replied"
+#~ msgstr "Freagartha"
+
+#~ msgctxt "msg status"
+#~ msgid "Old"
+#~ msgstr "Sean"
+
+#~ msgctxt "msg status"
+#~ msgid "New"
+#~ msgstr "Nua"
+
+#~ msgctxt "msg status"
+#~ msgid "Ignored"
+#~ msgstr "Neamhaird tugtha air"
+
+#~ msgctxt "msg status"
+#~ msgid "Spam"
+#~ msgstr "Dramhphost"
+
+#~ msgctxt "msg status"
+#~ msgid "Ham"
+#~ msgstr "Dea-Phost"
+
+#~ msgctxt "MDN type"
+#~ msgid "Ignore"
+#~ msgstr "Déan neamhaird de"
+
+#~ msgctxt "MDN type"
+#~ msgid "Deleted"
+#~ msgstr "Scriosta"
+
+#~ msgctxt "MDN type"
+#~ msgid "Failed"
+#~ msgstr "Teipthe"
+
+#~ msgid "Replace:"
+#~ msgstr "Ionadaigh:"
+
+#~ msgid "With:"
+#~ msgstr "Le:"
+
+#~ msgid "Move Into Folder"
+#~ msgstr "Bog go Fillteán"
+
+#~ msgid "Copy Into Folder"
+#~ msgstr "Cóipeáil go Fillteán"
+
+#~ msgid "Execute Command"
+#~ msgstr "Rith Ordú"
+
+#~ msgid "Play Sound"
+#~ msgstr "Seinn Fuaim"
+
+#~ msgid "Add to Address Book"
+#~ msgstr "Cuir leis an Leabhar Seoltaí"
+
+#~ msgid "CC"
+#~ msgstr "CC"
+
+#~ msgctxt "Continue search button."
+#~ msgid "&Search"
+#~ msgstr "&Cuardaigh"
+
+#~ msgid "URL: %1"
+#~ msgstr "URL: %1"
+
+#~ msgid "Executing precommand %1"
+#~ msgstr "Réamhordú %1 á rith"
+
+#~ msgid "Could not execute precommand '%1'."
+#~ msgstr "Níorbh fhéidir réamhordú '%1' a rith."
+
+#~ msgid "Local Folders"
+#~ msgstr "Comhaid Logánta"
+
+#~ msgid "Remove From Favorites"
+#~ msgstr "Bain ó na Ceanáin"
+
+#~ msgctxt "@label:textbox New name of the folder."
+#~ msgid "Name:"
+#~ msgstr "Ainm:"
+
+#~ msgid "Receipt: "
+#~ msgstr "Fáltas: "
+
+#~ msgid "This attachment has been deleted."
+#~ msgstr "Scriosadh an t-iatán seo."
+
+#~ msgctxt "message status"
+#~ msgid "Important"
+#~ msgstr "Tábhachtach"
+
+#~ msgctxt "message status"
+#~ msgid "New"
+#~ msgstr "Nua"
+
+#~ msgctxt "message status"
+#~ msgid "Unread"
+#~ msgstr "Gan léamh"
+
+#~ msgctxt "message status"
+#~ msgid "Read"
+#~ msgstr "Léite"
+
+#~ msgctxt "message status"
+#~ msgid "Deleted"
+#~ msgstr "Scriosta"
+
+#~ msgctxt "message status"
+#~ msgid "Replied"
+#~ msgstr "Freagartha"
+
+#~ msgctxt "message status"
+#~ msgid "Forwarded"
+#~ msgstr "Curtha Ar Aghaidh"
+
+#~ msgctxt "message status"
+#~ msgid "Queued"
+#~ msgstr "Curtha ar Chiú"
+
+#~ msgctxt "message status"
+#~ msgid "Sent"
+#~ msgstr "Seolta"
+
+#~ msgctxt "message status"
+#~ msgid "Ignored"
+#~ msgstr "Neamhaird tugtha air"
+
+#~ msgctxt "message status"
+#~ msgid "Spam"
+#~ msgstr "Dramhphost"
+
+#~ msgctxt "message status"
+#~ msgid "Ham"
+#~ msgstr "Dea-Phost"
+
+#~ msgctxt "message status"
+#~ msgid "Has Attachment"
+#~ msgstr "Le hIatán"
+
+#~ msgid "<a href=\"whatsthis\">How does this work?</a>"
+#~ msgstr "<a href=\"whatsthis\">Conas a oibríonn seo?</a>"
+
+#~ msgctxt ""
+#~ "Default reply template.%1: date of original message, %2: time of original "
+#~ "message, %3: quoted text of original message, %4: cursor Position"
+#~ msgid ""
+#~ "On %1 %2 you wrote:\n"
+#~ "%3\n"
+#~ "%4"
+#~ msgstr ""
+#~ "Ar %1 %2, scríobh tú:\n"
+#~ "%3\n"
+#~ "%4"
+
+#~ msgctxt ""
+#~ "Default reply all template: %1: date, %2: time, %3: name of original "
+#~ "sender, %4: quoted text of original message, %5: cursor position"
+#~ msgid ""
+#~ "On %1 %2 %3 wrote:\n"
+#~ "%4\n"
+#~ "%5"
+#~ msgstr ""
+#~ "Ar %1 %2, scríobh %3:\n"
+#~ "%4\n"
+#~ "%5"
+
+#~ msgctxt "@title:column Column showing the number of unread email messages."
+#~ msgid "Unread"
+#~ msgstr "Gan Léamh"
+
+#~ msgctxt "@title:column Column showing the total number of messages"
+#~ msgid "Total"
+#~ msgstr "Iomlán"
+
+#~ msgctxt "@title:column Size of the folder."
+#~ msgid "Size"
+#~ msgstr "Méid"
+
+#~ msgid "Searches"
+#~ msgstr "Cuardaigh"
+
+#~ msgid "Total Messages"
+#~ msgstr "Teachtaireachtaí Iomlána"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Teachtaireachtaí Gan Léamh"
+
+#~ msgid "Quota"
+#~ msgstr "Cuóta"
+
+#~ msgid "Storage Size"
+#~ msgstr "Méid Stórála"
+
+#~ msgid "Icon Size"
+#~ msgstr "Méid na nDeilbhíní"
+
+#~ msgctxt "@action:inmenu Always display tooltips"
+#~ msgid "Always"
+#~ msgstr "I gcónaí"
+
+#~ msgctxt "@action:inmenu Never display tooltips."
+#~ msgid "Never"
+#~ msgstr "Riamh"
+
+#~ msgid "Refresh Folder List"
+#~ msgstr "Athnuaigh Liosta na bhFillteán"
+
+#~ msgid "Go to Next Unread Message"
+#~ msgstr "An Chéad Teachtaireacht Neamhléite Eile"
+
+#~ msgid "Go To"
+#~ msgstr "Téigh Go"
+
+#~ msgid "Do Not Go To"
+#~ msgstr "Ná Téigh Go"
+
+#~ msgid "&Move Here"
+#~ msgstr "&Bog Anseo"
+
+#~ msgid "C&ancel"
+#~ msgstr "C&ealaigh"
+
+#~ msgid "Copy or Move Messages to %1"
+#~ msgstr "Cóipeáil nó Bog Teachtaireachtaí go %1"
+
+#~ msgid "Writing index file"
+#~ msgstr "Comhad innéacs á scríobh"
+
+#~ msgid "1 email address"
+#~ msgid_plural "%1 email addresses"
+#~ msgstr[0] "Aon sheoladh ríomhphoist"
+#~ msgstr[1] "Dhá sheoladh ríomhphoist"
+#~ msgstr[2] "%1 sheoladh ríomhphoist"
+#~ msgstr[3] "%1 seoladh ríomhphoist"
+#~ msgstr[4] "%1 seoladh ríomhphoist"
+
+#~ msgid "Distribution List %1"
+#~ msgstr "Liosta Dáilte %1"
+
+#~ msgid "Select Recipient"
+#~ msgstr "Roghnaigh Faighteoir"
+
+#~ msgid "Address book:"
+#~ msgstr "Leabhar seoltaí:"
+
+#~ msgctxt "@title:column Name of the recipient."
+#~ msgid "Name"
+#~ msgstr "Ainm"
+
+#~ msgctxt "@title:column Email of the recipient."
+#~ msgid "Email"
+#~ msgstr "Ríomhphost"
+
+#~ msgctxt "@title:column"
+#~ msgid "->"
+#~ msgstr "->"
+
+#~ msgid "Search &Directory Service"
+#~ msgstr "Cuardaigh Seirbhís &Eolaire"
+
+#~ msgid "Add as &To"
+#~ msgstr "Cuir Leis mar &Chuig"
+
+#~ msgid "Add as CC"
+#~ msgstr "Cuir Leis mar CC"
+
+#~ msgid "Add as &BCC"
+#~ msgstr "Cuir Leis mar &BCC"
+
+#~ msgctxt "All collections containing recipients."
+#~ msgid "All"
+#~ msgstr "Uile"
+
+#~ msgid "Distribution Lists"
+#~ msgstr "Liostaí Dáilte"
+
+#~ msgid "Recent Addresses"
+#~ msgstr "Seoltaí Is Déanaí"
+
+#~ msgid "KB"
+#~ msgstr "kB"
+
+#~ msgid "MB"
+#~ msgstr "MB"
+
+#~ msgid "GB"
+#~ msgstr "GB"
+
+#~ msgid "Click on the widgets below to obtain help on the input methods."
+#~ msgstr ""
+#~ "Cliceáil na giuirléidí thíos chun cabhair a fháil ar na modhanna "
+#~ "ionchurtha."
+
+#~ msgid "Select File..."
+#~ msgstr "Roghnaigh Comhad..."
+
+#~ msgid "Set From Address Book"
+#~ msgstr "Socraigh ón Leabhar Seoltaí"
+
+#~ msgid "No Picture"
+#~ msgstr "Gan Pictiúr"
+
+#~ msgctxt "Do not start another kmail instance."
+#~ msgid "Exit"
+#~ msgstr "Scoir"
+
+#~ msgid "inbox"
+#~ msgstr "post isteach"
+
+#~ msgid "Do Not Enable"
+#~ msgstr "Ná Cumasaigh"
+
+#~ msgctxt "@title:window"
+#~ msgid "Save Distribution List"
+#~ msgstr "Sábháil an Liosta Dáilte"
+
+#~ msgctxt "@action:button"
+#~ msgid "Save List"
+#~ msgstr "Sábháil an Liosta"
+
+#~ msgctxt "@label:textbox Name of the distribution list."
+#~ msgid "&Name:"
+#~ msgstr "Ai&nm:"
+
+#~ msgctxt "@title:column Name of the recipient"
+#~ msgid "Name"
+#~ msgstr "Ainm"
+
+#~ msgctxt "@title:column Email of the recipient"
+#~ msgid "Email"
+#~ msgstr "Ríomhphost"
+
+#~ msgctxt "@title:window"
+#~ msgid "New Distribution List"
+#~ msgstr "Liosta Dáilte Nua"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Please enter name:"
+#~ msgstr "Iontráil ainm le do thoil:"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "<para>Distribution list with the given name <resource>%1</resource> "
+#~ "already exists. Please select a different name.</para>"
+#~ msgstr ""
+#~ "<para>Tá liosta dáilte darb ainm <resource>%1</resource> ann cheana. "
+#~ "Roghnaigh ainm eile.</para>"
+
+#~ msgid "New Identity"
+#~ msgstr "Aitheantas Nua"
+
+#~ msgid "&New identity:"
+#~ msgstr "Aitheantas &nua:"
+
+#~ msgid "&With empty fields"
+#~ msgstr "&Le réimsí folmha"
+
+#~ msgid "&Existing identities:"
+#~ msgstr "Aith&eantais atá ann:"
+
+#~ msgid "New entry:"
+#~ msgstr "Iontráil Nua:"
+
+#~ msgid "&Add..."
+#~ msgstr "&Cuir Leis..."
+
+#~ msgid "New Value"
+#~ msgstr "Luach Nua"
+
+#~ msgid "Change Value"
+#~ msgstr "Athraigh Luach"
+
+#~ msgid "Detect Automatically"
+#~ msgstr "Braith go hUathoibríoch"
+
+#~ msgid "Browser"
+#~ msgstr "Brabhsálaí"
+
+#~ msgid "&Address type:"
+#~ msgstr "Cineál &an tseolaidh:"
+
+#~ msgid "Subscribe to List"
+#~ msgstr "Liostáil leis an Liosta"
+
+#~ msgid "Unsubscribe From List"
+#~ msgstr "Díliostáil ón Liosta"
+
+#~ msgid "List Archives"
+#~ msgstr "Cartlanna an Liosta"
+
+#~ msgid "List Help"
+#~ msgstr "Cabhair leis an Liosta"
+
+#~ msgid "Not available"
+#~ msgstr "Níl ar Fáil"
+
+#~ msgid "Permissions (ACL)"
+#~ msgstr "Ceadanna (ACL)"
+
+#~ msgctxt "@title:tab General settings for a folder."
+#~ msgid "General"
+#~ msgstr "Ginearálta"
+
+#~ msgid "Access Control"
+#~ msgstr "Rialú Rochtana"
+
+#~ msgid "Maintenance"
+#~ msgstr "Cothú"
+
+#~ msgctxt "type of folder content"
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#~ msgctxt "type of folder storage"
+#~ msgid "Mailbox"
+#~ msgstr "Bosca Poist"
+
+#~ msgctxt "type of folder storage"
+#~ msgid "Disconnected IMAP"
+#~ msgstr "IMAP Dícheangailte"
+
+#~ msgctxt "type of folder storage"
+#~ msgid "IMAP"
+#~ msgstr "IMAP"
+
+#~ msgctxt "type of folder storage"
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#~ msgctxt "@label:textbox Name of the folder."
+#~ msgid "&Name:"
+#~ msgstr "Ai&nm:"
+
+#~ msgid "unnamed"
+#~ msgstr "gan ainm"
+
+#~ msgid "Use &default identity"
+#~ msgstr "Úsái&d an t-aitheantas réamhshocraithe"
+
+#~ msgid "&Sender identity:"
+#~ msgstr "A&itheantas an tseoltóra:"
+
+#~ msgid "Use custom &icons"
+#~ msgstr "Úsáid deilbhíní sa&incheaptha"
+
+#~ msgctxt "Icon used for folders with no unread messages."
+#~ msgid "&Normal:"
+#~ msgstr "G&nách:"
+
+#~ msgctxt "Icon used for folders which do have unread messages."
+#~ msgid "&Unread:"
+#~ msgstr "&Gan léamh:"
+
+#~ msgid "Sho&w column:"
+#~ msgstr "Tai&speáin colún:"
+
+#~ msgctxt "@item:inlistbox Show default value."
+#~ msgid "Default"
+#~ msgstr "Réamhshocrú"
+
+#~ msgctxt "@item:inlistbox Show receiver."
+#~ msgid "Receiver"
+#~ msgstr "Glacadóir"
+
+#~ msgid "Aggregation"
+#~ msgstr "Comhbhailiúchán"
+
+#~ msgid "Theme"
+#~ msgstr "Téama"
+
+#~ msgid "Files"
+#~ msgstr "Comhaid"
+
+#~ msgctxt "folder size"
+#~ msgid "Not available"
+#~ msgstr "Níl ar fáil"
+
+#~ msgid "Size:"
+#~ msgstr "Méid:"
+
+#~ msgid "Index:"
+#~ msgstr "Innéacs:"
+
+#~ msgid "Rebuild Local IMAP Cache"
+#~ msgstr "Atóg an Taisce Logánta IMAP"
+
+#~ msgid "Messages"
+#~ msgstr "Teachtaireachtaí"
+
+#~ msgid "Total messages:"
+#~ msgstr "Líon iomlán na dteachtaireachtaí:"
+
+#~ msgid "Unread messages:"
+#~ msgstr "Teachtaireachtaí gan léamh:"
+
+#~ msgctxt "compaction status"
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#~ msgctxt "File size in bytes"
+#~ msgid "%1 B"
+#~ msgstr "%1 B"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgctxt "compaction status"
+#~ msgid "Possible"
+#~ msgstr "Indéanta"
+
+#~ msgid "&Alternate URL:"
+#~ msgstr "URL M&alartach:"
+
+#~ msgctxt "@title:column Column containing message subjects"
+#~ msgid "Subject"
+#~ msgstr "Ábhar"
+
+#~ msgctxt "@title:column"
+#~ msgid "Sender"
+#~ msgstr "Seoltóir"
+
+#~ msgctxt "@title:column"
+#~ msgid "Receiver"
+#~ msgstr "Glacadóir"
+
+#~ msgctxt "@title:column"
+#~ msgid "Date"
+#~ msgstr "Dáta"
+
+#~ msgctxt "@title:column"
+#~ msgid "Size"
+#~ msgstr "Méid"
+
+#~ msgctxt "@action:button"
+#~ msgid "Download all messages now"
+#~ msgstr "Íosluchtaigh gach teachtaireacht anois"
+
+#~ msgctxt "@action:button"
+#~ msgid "Download all messages later"
+#~ msgstr "Íosluchtaigh na teachtaireachtaí uile ar ball"
+
+#~ msgctxt "@title:window"
+#~ msgid "POP Filter"
+#~ msgstr "Scagaire POP"
+
+#~ msgctxt "@title:group"
+#~ msgid "Ruleset Filtered Messages: none"
+#~ msgstr "Teachtaireachtaí Scagtha ag Tacar Rialacha: faic"
+
+#~ msgctxt "@option:check"
+#~ msgid "Show messages matched by a ruleset and tagged 'Download' or 'Delete'"
+#~ msgstr ""
+#~ "Taispeáin teachtaireachtaí scagtha ag tacar rialacha agus a bhfuil clib "
+#~ "'Íosluchtaigh' nó 'Scrios' orthu"
+
+#~ msgctxt "@option:check"
+#~ msgid "Show messages matched by a filter ruleset"
+#~ msgstr "Taispeáin teachtaireachtaí scagtha ag tacar rialacha"
+
+#~ msgctxt "@title:group"
+#~ msgid "Ruleset Filtered Messages: %1"
+#~ msgstr "Teachtaireachtaí Scagtha ag Tacar Rialacha: %1"
+
+#~ msgctxt "@item:intext"
+#~ msgid "No Subject"
+#~ msgstr "Gan Ábhar"
+
+#~ msgctxt "@item:intext Sender of message is unknown"
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#~ msgctxt "@item:intext Receiver of message is unknown"
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#~ msgid "Uploading message data"
+#~ msgstr "Sonraí teachtaireachta á n-uasluchtú"
+
+#~ msgid "Server operation"
+#~ msgstr "Oibríocht fhreastalaí"
+
+#~ msgid "Source folder: %1 - Destination folder: %2"
+#~ msgstr "Fillteán foinseach: %1 - Spriocfhillteán: %2"
+
+#~ msgid "Downloading message data"
+#~ msgstr "Sonraí teachtaireachta á n-íosluchtú"
+
+#~ msgid "Message with subject: "
+#~ msgstr "Teachtaireacht le hábhar: "
+
+#~ msgid "Error while retrieving messages from the server."
+#~ msgstr "Earráid agus teachtaireachtaí á n-íosluchtú ón fhreastalaí."
+
+#~ msgid "Uploading message data failed."
+#~ msgstr "Theip ar uasluchtú sonraí teachtaireachta."
+
+#~ msgid "Error while copying messages."
+#~ msgstr "Earráid agus teachtaireachtaí á gcóipeáil."
+
+#~ msgid "<b>Evaluating filter rules:</b> "
+#~ msgstr "<b>Rialacha scagtha á luacháil:</b> "
+
+#~ msgid "<b>Filter rules have matched.</b>"
+#~ msgstr "<b>Comhoiriúnaíodh rialacha scagaire.</b>"
+
+#~ msgid "<b>Applying filter action:</b> %1"
+#~ msgstr "<b>Gníomh scagaire á chur i bhfeidhm:</b> %1"
+
+#~ msgid "<qt>Cannot open folder <b>%1</b>.</qt>"
+#~ msgstr "<qt>Níorbh fhéidir fillteán <b>%1</b> a oscailt.</qt>"
+
+#~ msgid "Moving message %1 of %2 from %3."
+#~ msgstr "Teachtaireacht %1 de %2 á bogadh ó %3."
+
+#~ msgctxt "Message->"
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#~ msgid "Show Quick Search"
+#~ msgstr "Taispeáin Mearchuardach"
+
+#~ msgid "Default Theme"
+#~ msgstr "Téama Réamhshocraithe"
+
+#~ msgid "Default Sort Order"
+#~ msgstr "Ord Réamhshocraithe Sórtála"
+
+#~ msgctxt "@title:tab Empty messagelist"
+#~ msgid "Empty"
+#~ msgstr "Folamh"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Close Tab"
+#~ msgstr "Dún Cluaisín"
+
+#~ msgctxt "displayed as subject when the subject of a mail is empty"
+#~ msgid "No Subject"
+#~ msgstr "Gan Ábhar"
+
+#~ msgctxt "displayed when a mail has unknown sender, receiver or date"
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#~ msgid "Folder \"%1\" successfully compacted"
+#~ msgstr "D'éirigh le dlúthú fillteáin \"%1\""
+
+#~ msgid "Redirect Message"
+#~ msgstr "Athsheol an Teachtaireacht"
+
+#~ msgid "&Send Now"
+#~ msgstr "&Seol Anois"
+
+#~ msgid "Send &Later"
+#~ msgstr "Seo&l Níos Déanaí"
+
+#~ msgctxt "@label:listbox General group for often used snippets in mail."
+#~ msgid "General"
+#~ msgstr "Ginearálta"
+
+#~ msgid "Snippet %1"
+#~ msgstr "Blúire %1"
+
+#~ msgid "Add Group"
+#~ msgstr "Cuir Grúpa Leis"
+
+#~ msgid "&Apply"
+#~ msgstr "&Cuir i bhFeidhm"
+
+#~ msgid "Edit Snippet"
+#~ msgstr "Cuir Blúire in Eagar"
+
+#~ msgid "Edit Group"
+#~ msgstr "Cuir Grúpa in Eagar"
+
+#~ msgid "Edit &group..."
+#~ msgstr "Cuir &grúpa in eagar..."
+
+#~ msgid "&Paste"
+#~ msgstr "&Greamaigh"
+
+#~ msgid "&Edit..."
+#~ msgstr "&Eagar..."
+
+#~ msgid "Text Snippets"
+#~ msgstr "Blúirí Téacs"
+
+#~ msgid "&Add Snippet..."
+#~ msgstr "Cuir &Blúire Leis..."
+
+#~ msgid "Enter Values for Variables"
+#~ msgstr "Iontráil Luachanna ar Athróga"
+
+#~ msgid "Make value &default"
+#~ msgstr "Socraigh mar &réamhshocrú"
+
+#~ msgid "Answer: "
+#~ msgstr "Freagra: "
+
+#~ msgctxt "Accepted the invitation."
+#~ msgid "Accepted: %1"
+#~ msgstr "Glactha: %1"
+
+#~ msgid "Could Not Create Folder"
+#~ msgstr "Níorbh Fhéidir an Fillteán a Chruthú"
+
+#~ msgid "New &Window"
+#~ msgstr "&Fuinneog Nua"
+
+#~ msgid "Starting..."
+#~ msgstr "Á Thosú..."
+
+#~ msgid "Root:"
+#~ msgstr "Fréamh:"
+
+#~ msgid "Usage:"
+#~ msgstr "Úsáid:"
+
+#~ msgid "Select Size"
+#~ msgstr "Roghnaigh Méid"
+
+#~ msgctxt "name used for a virgin filter"
+#~ msgid "unknown"
+#~ msgstr "anaithnid"
+
+#~ msgid "internal part"
+#~ msgstr "cuid inmheánach"
+
+#~ msgid "&File"
+#~ msgstr "&Comhad"
+
+#~ msgctxt "@title:menu for new-message and new-from-template"
+#~ msgid "New"
+#~ msgstr "Nua"
+
+#~ msgid "&Edit"
+#~ msgstr "&Eagar"
+
+#~ msgid "&View"
+#~ msgstr "&Amharc"
+
+#~ msgid "&Go"
+#~ msgstr "&Téigh"
+
+#~ msgid "F&older"
+#~ msgstr "F&illteán"
+
+#~ msgid "&Message"
+#~ msgstr "&Teachtaireacht"
+
+#~ msgid "Reply Special"
+#~ msgstr "Freagra Speisialta"
+
+#~ msgid "&Forward"
+#~ msgstr "Ar A&ghaidh"
+
+#~ msgid "&Tools"
+#~ msgstr "&Uirlisí"
+
+#~ msgid "&Help"
+#~ msgstr "Cab&hair"
+
+#~ msgid "&Options"
+#~ msgstr "R&oghanna"
+
+#~ msgid "&Attach"
+#~ msgstr "Ce&angail"
+
+#~ msgctxt "@title:menu New message, folder or new window."
+#~ msgid "New"
+#~ msgstr "Nua"
+
+#~ msgid "Signing"
+#~ msgstr "Á Shíniú"
+
+#~ msgid "&Automatically sign messages"
+#~ msgstr "Sínigh te&achtaireachtaí go huathoibríoch"
+
+#~ msgid "Encrypting"
+#~ msgstr "Criptiú"
+
+#~ msgid "Store sent messages encry&pted"
+#~ msgstr "Stóráil teachtaireachtaí seolta i bhfoirm chri&ptithe"
+
+#~ msgid "Check to store messages encrypted "
+#~ msgstr ""
+#~ "Ticeáil anseo más mian leat teachtaireachtaí seolta a stóráil i bhfoirm "
+#~ "chriptithe "
+
+#~ msgid "Always show the encryption keys &for approval"
+#~ msgstr "Taispeáin na heochracha criptithe i gcónaí lena g&ceadú"
+
+#~ msgid "Automatically encrypt &messages whenever possible"
+#~ msgstr "Criptigh te&achtaireachtaí go huathoibríoch nuair is féidir"
+
+#~ msgid "Account &name:"
+#~ msgstr "Ai&nm an chuntais:"
+
+#~ msgid "Incoming mail &server:"
+#~ msgstr "Frea&stalaí isteach:"
+
+#~ msgid "&Port:"
+#~ msgstr "&Port:"
+
+#~ msgid "&Login:"
+#~ msgstr "&Logáil isteach:"
+
+#~ msgid "P&assword:"
+#~ msgstr "Foc&al Faire:"
+
+#~ msgid "Sto&re IMAP Password"
+#~ msgstr "Sábháil an focal fai&re IMAP"
+
+#~ msgid "Check inter&val:"
+#~ msgstr "Eatra&mh idir sheiceáil:"
+
+#~ msgid "Automaticall&y compact folders (expunges deleted messages)"
+#~ msgstr ""
+#~ "&Dlúthaigh fillteáin go huathoibríoch (léirscriosfar teachtaireachtaí "
+#~ "scriosta)"
+
+#~ msgid "Sho&w hidden folders"
+#~ msgstr "Taispeáin Comhaid atá i bh&Folach"
+
+#~ msgid "Show only &locally subscribed folders"
+#~ msgstr "Taispeáin fillteáin liostáilte &logánta amháin"
+
+#~ msgid "Load attach&ments on demand"
+#~ msgstr "Luchtaigh iatáin ar éilea&mh"
+
+#~ msgid "List only open folders"
+#~ msgstr "Ná taispeáin ach fillteáin atá oscailte"
+
+#~ msgid "Trash folder:"
+#~ msgstr "Fillteán bruscair:"
+
+#~ msgid "Identity:"
+#~ msgstr "Aitheantas:"
+
+#~ msgid "Namespaces:"
+#~ msgstr "Ainmspásanna:"
+
+#~ msgid "Reload the namespaces from the server. This overwrites any changes."
+#~ msgstr ""
+#~ "Athluchtaigh na hainmspásanna ón fhreastalaí. Forscríobhfar ar athrú ar "
+#~ "bith."
+
+#~ msgid "Encryption"
+#~ msgstr "Criptiú"
+
+#~ msgid "&None"
+#~ msgstr "&Neamhní"
+
+#~ msgid "Use &SSL for secure mail download"
+#~ msgstr "Íosluchtú daingean ríomhphoist le &SSL"
+
+#~ msgid "Use &TLS for secure mail download"
+#~ msgstr "Íosluchtú daingean ríomhphoist le &TLS"
+
+#~ msgid "Authentication Method"
+#~ msgstr "Modh Fíordheimhnithe"
+
+#~ msgid "Clear te&xt"
+#~ msgstr "Glan téacs"
+
+#~ msgid "CRAM-MD&5"
+#~ msgstr "CRAM-MD&5"
+
+#~ msgid "&DIGEST-MD5"
+#~ msgstr "&DIGEST-MD5"
+
+#~ msgid "&NTLM"
+#~ msgstr "&NTLM"
+
+#~ msgid "&GSSAPI"
+#~ msgstr "&GSSAPI"
+
+#~ msgid "&Anonymous"
+#~ msgstr "Gan &ainm"
+
+#~ msgid "Check to be warned when sending unencrypted messages."
+#~ msgstr ""
+#~ "Cuir tic anseo más mian leat rabhadh a fháil nuair a bhainfidh tú triail "
+#~ "as teachtaireachtaí a sheoladh gan chriptiú."
+
+#~ msgid "Account Type: POP Account"
+#~ msgstr "Cineál Cuntais: Cuntas POP"
+
+#~ msgid "Sto&re POP password"
+#~ msgstr "Sábháil focal fai&re POP"
+
+#~ msgid "Chec&k interval:"
+#~ msgstr "Eatramh idir &sheiceáil:"
+
+#~ msgid "Lea&ve fetched messages on the server"
+#~ msgstr "Fág teachtaireachtaí faighte ar an bhfreastalaí"
+
+#~ msgid "Leave messages on the server for"
+#~ msgstr "Fág teachtaireachtaí ar an bhfreastalaí do"
+
+#~ msgctxt "Number of days that the message will be left on the server."
+#~ msgid " days"
+#~ msgstr " lá"
+
+#~ msgid "Keep onl&y the last"
+#~ msgstr "&Coimeád an ceann deiridh amháin"
+
+#~ msgid "Keep only the last"
+#~ msgstr "Coimeád an ceann deiridh amháin"
+
+#~ msgid " MB"
+#~ msgstr " MB"
+
+#~ msgid "&Filter messages if they are greater than"
+#~ msgstr "Scag &teachtaireachtaí má tá siad níos mó ná"
+
+#~ msgid "Des&tination folder:"
+#~ msgstr "Spriocfhill&teán:"
+
+#~ msgid "Pre-com&mand:"
+#~ msgstr "Réa&mhordú:"
+
+#~ msgid "&Use pipelining for faster mail download"
+#~ msgstr "Ú&sáid píopáil chun ríomhphost a íosluchtú níos gasta"
+
+#~ msgid "NTL&M"
+#~ msgstr "NTL&M"
+
+#~ msgid "&APOP"
+#~ msgstr "&APOP"
+
+#~ msgid "Set as &Default"
+#~ msgstr "Socraigh mar &Réamhshocrú"
+
+#~ msgid "HTML Messages"
+#~ msgstr "Teachtaireachtaí HTML"
+
+#~ msgid "Send policy:"
+#~ msgstr "Seoc polasaí:"
+
+#~ msgid "Ask"
+#~ msgstr "Fiafraigh díom"
+
+#~ msgid "Deny"
+#~ msgstr "Diúltaigh"
+
+#~ msgid "Always send"
+#~ msgstr "Seol i gcónaí"
+
+#~ msgid "Nothing"
+#~ msgstr "Neamhní"
+
+#~ msgid "Full message"
+#~ msgstr "Teachtaireacht iomlán"
+
+#~ msgid "Only headers"
+#~ msgstr "Ceanntásca amháin"
+
+#~ msgctxt "Name of the custom template."
+#~ msgid "Name"
+#~ msgstr "Ainm"
+
+#~ msgctxt "Universal custom template type."
+#~ msgid "Universal"
+#~ msgstr "Uilíoch"
+
+#~ msgctxt "Template type for forwarding messages."
+#~ msgid "Forward"
+#~ msgstr "Cuir Ar Aghaidh"
+
+#~ msgid "&Template type:"
+#~ msgstr "Cineál an &teimpléid:"
+
+#~ msgid "Add Snippet"
+#~ msgstr "Cuir Blúire Leis"
+
+#~ msgid "&Name:"
+#~ msgstr "Ai&nm:"
+
+#~ msgctxt "Group to which the snippet belongs."
+#~ msgid "Group:"
+#~ msgstr "Grúpa:"
+
+#~ msgid "&Snippet:"
+#~ msgstr "&Blúire:"
+
+#~ msgid "Sh&ortcut:"
+#~ msgstr "&Aicearra:"
+
+#~ msgid "&Add"
+#~ msgstr "&Cuir Leis"
+
+#~ msgctxt "@title Message template"
+#~ msgid "New Message"
+#~ msgstr "Teachtaireacht Nua"
+
+#~ msgid "Account Type: Local Account"
+#~ msgstr "Cineál Cuntais: Cuntas Logánta"
+
+#~ msgid "File location:"
+#~ msgstr "Suíomh an chomhaid:"
+
+#~ msgid "Choo&se..."
+#~ msgstr "&Roghnaigh..."
+
+#~ msgid "Locking Method"
+#~ msgstr "Modh Glasála"
+
+#~ msgid "Procmail loc&kfile:"
+#~ msgstr "Glas&chomhad Procmail:"
+
+#~ msgid "&Mutt dotlock"
+#~ msgstr "Poncghlasáil &Mutt"
+
+#~ msgid "M&utt dotlock privileged"
+#~ msgstr "Poncghlasáil &Mutt faoi phribhléid"
+
+#~ msgid "&FCNTL"
+#~ msgstr "&FCNTL"
+
+#~ msgid "Non&e (use with care)"
+#~ msgstr "N&eamhní (bí cúramach)"
+
+#~ msgid "Destination folder:"
+#~ msgstr "Spriocfhillteán:"
+
+#~ msgid "&Pre-command"
+#~ msgstr "&Réamhordú"
+
+#~ msgid "R&emove"
+#~ msgstr "&Bain"
+
+#~ msgid "Chec&k mail on startup"
+#~ msgstr "Sei&ceáil ríomhphost ag am tosaithe"
+
+#~ msgid "&Beep"
+#~ msgstr "&Bíp"
+
+#~ msgid "Account Type: Maildir Account"
+#~ msgstr "Cineál Cuntais: Cuntas Maildir"
+
+#~ msgid "Folder location:"
+#~ msgstr "Suíomh an fhillteáin:"
+
+#~ msgid "&Pre-command:"
+#~ msgstr "&Réamhordú:"
+
+#~ msgid "Do not Loop"
+#~ msgstr "Ná Lúb"
+
+#~ msgid "Loop in Current Folder"
+#~ msgstr "Lúb san Fhillteán Reatha"
+
+#~ msgid "Loop in All Folders"
+#~ msgstr "Lúb i nGach Fillteán"
+
+#~ msgid "Jump to First New Message"
+#~ msgstr "Téigh go dtí an Chéad Teachtaireacht Nua"
+
+#~ msgid "Jump to First Unread or New Message"
+#~ msgstr "Téigh go dtí an Chéad Teachtaireacht Nua nó Gan Léamh"
+
+#~ msgid "Jump to Last Selected Message"
+#~ msgstr "Téigh go dtí an Teachtaireacht Deiridh Roghnaithe"
+
+#~ msgid " sec"
+#~ msgstr " s"
+
+#~ msgid "Flat Files (\"mbox\" format)"
+#~ msgstr "Téacschomhaid Shimplí (formáid \"mbox\")"
+
+#~ msgid "Directories (\"maildir\" format)"
+#~ msgstr "Comhadlanna (formáid \"maildir\")"
+
+#~ msgid "Open this folder on &startup:"
+#~ msgstr "Oscail an chomhadlann seo ag am to&saithe:"
+
+#~ msgid "Empty local &trash folder on program exit"
+#~ msgstr "Folmhaigh an fill&teán logánta bruscair ag am scortha"
+
+#~ msgid "Specify e&ditor:"
+#~ msgstr "Sonraigh eagarthóir:"
+
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "C&uir síniú isteach go huathoibríoch"
+
+#~ msgid "Word &wrap at column:"
+#~ msgstr "&Timfhilleadh focal ag colún:"
+
+#~ msgid "Autosave interval:"
+#~ msgstr "Eatramh idir sábháil:"
+
+#~ msgid "Message Id"
+#~ msgstr "Aitheantas na Teachtaireachta"
+
+#~ msgid "Date"
+#~ msgstr "Dáta"
+
+#~ msgid "Time"
+#~ msgstr "Am"
+
+#~ msgctxt "Template value for subject of the message"
+#~ msgid "Subject"
+#~ msgstr "Ábhar"
+
+#~ msgctxt "Template subject command."
+#~ msgid "Subject"
+#~ msgstr "Ábhar"
+
+#~ msgid "No Operation"
+#~ msgstr "Gan Oibríocht"
+
+#~ msgctxt "Miscellaneous template commands menu"
+#~ msgid "Miscellaneous"
+#~ msgstr "Orduithe éagsúla"
+
+#~ msgctxt "@label:listbox Scope used when rebuilding index."
+#~ msgid "Scope:"
+#~ msgstr "Scóip:"
+
+#~ msgid "Only Current Folder"
+#~ msgstr "Fillteán Reatha Amháin"
+
+#~ msgid "The index of this folder has been recreated."
+#~ msgstr "Cruthaíodh innéacs an fhillteáin seo."
+
+#~ msgid "Connecting to %1"
+#~ msgstr "Ag dul i dteagmháil le %1"
+
+#~ msgid "Renaming folder"
+#~ msgstr "Fillteán á athainmniú"
+
+#~ msgid "No messages to delete..."
+#~ msgstr "Níl teachtaireachtaí ann le scriosadh..."
+
+#~ msgid "Retrieving new messages"
+#~ msgstr "Teachtaireachtaí nua á fháil"
+
+#~ msgid "Updating cache file"
+#~ msgstr "Comhad taisce á nuashonrú"
+
+#~ msgid "Synchronization done"
+#~ msgstr "Sioncrónú curtha i gcrích"
+
+#~ msgid "Checking folder validity"
+#~ msgstr "Seiceáil bailíocht na comhadlainne"
+
+#~ msgid "lost+found"
+#~ msgstr "earraí caillte"
+
+#~ msgid "Move"
+#~ msgstr "Bog"
+
+#~ msgid "Do Not Move"
+#~ msgstr "Ná Bog É"
+
+#~ msgid "Source URL is malformed"
+#~ msgstr "Tá an URL foinseach míchumtha"
+
+#~ msgid "Kioslave Error Message"
+#~ msgstr "Teachtaireacht Earráide Sclábhaí KIO"
+
+#~ msgid "Fetched 1 message from %2. Deleting messages from server..."
+#~ msgid_plural "Fetched %1 messages from %2. Deleting messages from server..."
+#~ msgstr[0] ""
+#~ "Fuarthas %1 teachtaireacht ó %2. Teachtaireachtaí á scriosadh ón "
+#~ "fhreastalaí..."
+#~ msgstr[1] ""
+#~ "Fuarthas %1 theachtaireacht ó %2. Teachtaireachtaí á scriosadh ón "
+#~ "fhreastalaí..."
+#~ msgstr[2] ""
+#~ "Fuarthas %1 theachtaireacht ó %2. Teachtaireachtaí á scriosadh ón "
+#~ "fhreastalaí..."
+#~ msgstr[3] ""
+#~ "Fuarthas %1 dteachtaireacht ó %2. Teachtaireachtaí á scriosadh ón "
+#~ "fhreastalaí..."
+#~ msgstr[4] ""
+#~ "Fuarthas %1 teachtaireacht ó %2. Teachtaireachtaí á scriosadh ón "
+#~ "fhreastalaí..."
+
+#~ msgid ""
+#~ "Fetching message %1 of %2 (%3 of %4 KB) for %5@%6 (%7 KB remain on the "
+#~ "server)."
+#~ msgstr ""
+#~ "Teachtaireacht %1 as %2 (%3 as %4 kB) á fáil le haghaidh %5@%6 (%7 kB "
+#~ "fágtha ar an bhfreastalaí)."
+
+#~ msgid "Fetching message %1 of %2 (%3 of %4 KB) for %5@%6."
+#~ msgstr "Teachtaireacht %1 as %2 (%3 as %4 kB) á fáil le haghaidh %5@%6."
+
+#~ msgid "Unable to complete LIST operation."
+#~ msgstr "Ní féidir oibríocht LIST a chur i gcrích."
+
+#~ msgctxt ""
+#~ "%1: identity name. Used in the config dialog, section Identity, to "
+#~ "indicate the default identity"
+#~ msgid "%1 (Default)"
+#~ msgstr "%1 (Réamhshocrú)"
+
+#~ msgid "Identity Name"
+#~ msgstr "Ainm an Aitheantais"
+
+#~ msgid "Pa&ste as Quotation"
+#~ msgstr "&Greamaigh mar Athfhriotal"
+
+#~ msgid "Name of the attachment:"
+#~ msgstr "Ainm an iatáin:"
+
+#~ msgctxt "@label:listbox Recipient of an email message."
+#~ msgid "To"
+#~ msgstr "Chuig"
+
+#~ msgctxt "@label:listbox Carbon Copy recipient of an email message."
+#~ msgid "CC"
+#~ msgstr "CC"
+
+#~ msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+#~ msgid "BCC"
+#~ msgstr "BCC"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Save recipients as distribution list"
+#~ msgstr "Sábháil na faighteoirí mar liosta dáilte"
+
+#~ msgctxt "@action:button Open recipient selection dialog."
+#~ msgid "Se&lect..."
+#~ msgstr "&Roghnaigh..."
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select recipients from address book"
+#~ msgstr "Roghnaigh faighteoirí ón leabhar seoltaí"
+
+#~ msgctxt "@info:status No recipients selected"
+#~ msgid "No recipients"
+#~ msgstr "Gan faighteoirí"
+
+#~ msgctxt "@info:status Number of recipients selected"
+#~ msgid "1 recipient"
+#~ msgid_plural "%1 recipients"
+#~ msgstr[0] "1 fhaighteoir"
+#~ msgstr[1] "%1 fhaighteoir"
+#~ msgstr[2] "%1 fhaighteoir"
+#~ msgstr[3] "%1 bhfaighteoir"
+#~ msgstr[4] "%1 faighteoir"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>To:</interface><nl/>%1"
+#~ msgstr "<interface>Chuig:</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>CC:</interface><nl/>%1"
+#~ msgstr "<interface>CC:</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>BCC:</interface><nl/>%1"
+#~ msgstr "<interface>BCC:</interface><nl/>%1"
+
+#~ msgid "Maintainer"
+#~ msgstr "Cothaitheoir"
+
+#~ msgid "Original author"
+#~ msgstr "An chéad údar"
+
+#~ msgid "Former maintainer"
+#~ msgstr "Iarchothaitheoir"
+
+#~ msgid "Former co-maintainer"
+#~ msgstr "Iar-comhchothaitheoir"
+
+#~ msgid "Core developer"
+#~ msgstr "Bunfhorbróir"
+
+#~ msgid "system tray notification"
+#~ msgstr "fógairt i dtráidire an chórais"
+
+#~ msgid "PGP 6 support and further enhancements of the encryption support"
+#~ msgstr "Tacaíocht PGP 6 agus feabhsúcháin eile ar thacaíocht chriptithe"
+
+#~ msgid "Original encryption support<br/>PGP 2 and PGP 5 support"
+#~ msgstr "Tacaíocht bunúsach chriptithe<br/>Tacaíocht PGP 2 agus PGP 5"
+
+#~ msgid "GnuPG support"
+#~ msgstr "Tacaíocht GnuPG"
+
+#~ msgid "Anti-virus support"
+#~ msgstr "Tacaíocht fhrithvíris"
+
+#~ msgid "POP filters"
+#~ msgstr "Scagairí POP"
+
+#~ msgid "Usability tests and improvements"
+#~ msgstr "Tástáil agus feabhsúcháin inúsáidteachta"
+
+#~ msgid "Ägypten and Kroupware project management"
+#~ msgstr "Bainisteoireacht tionscadail Ägypten agus Kroupware"
+
+#~ msgid "beta testing of PGP 6 support"
+#~ msgstr "béite-thástáil den tacaíocht PGP 6"
+
+#~ msgid "timestamp for 'Transmission completed' status messages"
+#~ msgstr "Stampa ama ar theachtaireachtaí stádais 'Tarchur críochnaithe'"
+
+#~ msgid "multiple encryption keys per address"
+#~ msgstr "il-eochracha criptithe le haghaidh seoladh amháin"
+
+#~ msgid "(c) 1997-2009, The KMail developers"
+#~ msgstr "© 1997-2009, Forbróirí KMail"
+
+#~ msgid "KMail is set to be offline; all network jobs are suspended"
+#~ msgstr "Tá KMail as líne; tá gach jab líonra curtha ar fionraí"
+
+#~ msgid "Online/Offline"
+#~ msgstr "Ar Líne/As Líne"
+
+#~ msgid "outbox"
+#~ msgstr "post amach"
+
+# don't change - see kalarm.po
+#~ msgid "sent-mail"
+#~ msgstr "seolta"
+
+#~ msgid "trash"
+#~ msgstr "bruscar"
+
+#~ msgid "drafts"
+#~ msgstr "dréachtanna"
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "Tá comhad %1 ann cheana.\n"
+#~ "An bhfuil fonn ort scríobh air?"
+
+#~ msgid "Save to File"
+#~ msgstr "Sábháil go Comhad"
+
+#~ msgid "&Replace"
+#~ msgstr "&Ionadaigh"
+
+#~ msgid "New Message To..."
+#~ msgstr "Teachtaireacht Nua Chuig..."
+
+#~ msgid "Bookmark This Link"
+#~ msgstr "Cruthaigh Leabharmharc don Nasc Seo"
+
+#~ msgid "Save Link As..."
+#~ msgstr "Sábháil an Nasc Mar..."
+
+#~ msgid "<li>%1</li>\n"
+#~ msgstr "<li>%1</li>\n"
+
+#~ msgid "Please wait"
+#~ msgstr "Fan go fóill, le do thoil"
+
+#~ msgctxt "@info"
+#~ msgid "File <filename>%1</filename> exists.<nl/>Do you want to replace it?"
+#~ msgstr ""
+#~ "Tá comhad <filename>%1</filename> ann.<nl/>An bhfuil fonn ort scríobh air?"
+
+#~ msgid "Open Message"
+#~ msgstr "Oscail Teachtaireacht"
+
+#~ msgid "The file does not contain a message."
+#~ msgstr "Níl aon teachtaireacht sa chomhad."
+
+#~ msgid "Send As Digest"
+#~ msgstr "Seol Mar Dhíolaim"
+
+#~ msgid "Send Individually"
+#~ msgstr "Seol Ceann ar Cheann"
+
+#~ msgid "Not enough free disk space?"
+#~ msgstr "B'fhéidir nach bhfuil go leor spás diosca saor?"
+
+#~ msgid "Deleting messages"
+#~ msgstr "Teachtaireachtaí á scriosadh"
+
+#~ msgid ""
+#~ "From: %1\n"
+#~ "To: %2\n"
+#~ "Subject: %3"
+#~ msgstr ""
+#~ "Ó: %1\n"
+#~ "Chuig: %2\n"
+#~ "Ábhar: %3"
+
+#~ msgid "Mail: %1"
+#~ msgstr "Ríomhphost: %1"
+
+#~ msgid "&Identity:"
+#~ msgstr "A&itheantas:"
+
+#~ msgid "&Dictionary:"
+#~ msgstr "&Foclóir:"
+
+#~ msgctxt "sender address field"
+#~ msgid "&From:"
+#~ msgstr "Ó:"
+
+#~ msgctxt "@option:check Sticky identity."
+#~ msgid "Sticky"
+#~ msgstr "Greamaitheach"
+
+#~ msgid "Autosaving Failed"
+#~ msgstr "Theip ar Uathshábháil"
+
+#~ msgid "&Send Mail"
+#~ msgstr "&Seol Post"
+
+#~ msgid "&Send Mail Via"
+#~ msgstr "&Seol Post Trí"
+
+#~ msgid "Send &Later Via"
+#~ msgstr "Seol &Níos Déanaí Trí"
+
+#~ msgid "Queue"
+#~ msgstr "Ciú"
+
+#~ msgid "Save as &Draft"
+#~ msgstr "Sábháil mar &Dhréacht"
+
+#~ msgid "Save as &Template"
+#~ msgstr "Sábháil mar &Theimpléad"
+
+#~ msgid "&Insert File..."
+#~ msgstr "&Ionsáigh Comhad..."
+
+#~ msgid "&New Composer"
+#~ msgstr "Cumadóir &Nua"
+
+#~ msgid "New Main &Window"
+#~ msgstr "Príomhfhuinneog &Nua"
+
+#~ msgid "Save &Distribution List..."
+#~ msgstr "Sábháil Liosta &Dáilte..."
+
+#~ msgid "Cl&ean Spaces"
+#~ msgstr "G&lan Spásanna"
+
+#~ msgctxt "@action:inmenu Mark the email as urgent."
+#~ msgid "&Urgent"
+#~ msgstr "&Práinneach"
+
+#~ msgid "Se&t Encoding"
+#~ msgstr "S&ocraigh Ionchódú"
+
+#~ msgid "&Wordwrap"
+#~ msgstr "&Timfhilleadh Focal"
+
+#~ msgid "Auto-Detect"
+#~ msgstr "Braith go hUathoibríoch"
+
+#~ msgid "Formatting (HTML)"
+#~ msgstr "Formáidiú (HTML)"
+
+#~ msgid "HTML"
+#~ msgstr "HTML"
+
+#~ msgid "&Identity"
+#~ msgstr "A&itheantas"
+
+#~ msgid "&Dictionary"
+#~ msgstr "&Foclóir"
+
+#~ msgid "&From"
+#~ msgstr "&Ó"
+
+#~ msgctxt "@action:inmenu Show the subject in the composer window."
+#~ msgid "S&ubject"
+#~ msgstr "Á&bhar"
+
+#~ msgid "&Attach File..."
+#~ msgstr "Ce&angail Comhad..."
+
+#~ msgid "Attach"
+#~ msgstr "Ceangail"
+
+#~ msgid "&Save Attachment As..."
+#~ msgstr "&Sábháil Iatán Mar..."
+
+#~ msgid "&Spellchecker..."
+#~ msgstr "&Litreoir..."
+
+#~ msgid "Spellchecker"
+#~ msgstr "Litreoir"
+
+#~ msgid "Encrypt"
+#~ msgstr "Criptigh"
+
+#~ msgid "Sign"
+#~ msgstr "Sínigh"
+
+#~ msgid "Configure KMail..."
+#~ msgstr "Cumraigh KMail..."
+
+#~ msgid " Column: %1 "
+#~ msgstr " Colún: %1 "
+
+#~ msgctxt "Shows the linenumber of the cursor position."
+#~ msgid " Line: %1 "
+#~ msgstr " Líne: %1 "
+
+#~ msgid "Re&save as Template"
+#~ msgstr "Ath&shábháil mar Theimpléad"
+
+#~ msgid "Do you want to save the message for later or discard it?"
+#~ msgstr ""
+#~ "An bhfuil fonn ort an teachtaireacht a shábháil chun é a chur in eagar ar "
+#~ "ball?"
+
+#~ msgid "&Send as Is"
+#~ msgstr "&Seol mar atá"
+
+#~ msgid "Attach File"
+#~ msgstr "Cuir Comhad Leis"
+
+#~ msgctxt "to view"
+#~ msgid "View"
+#~ msgstr "Amharc"
+
+#~ msgid "Edit With..."
+#~ msgstr "Cuir in Eagar le..."
+
+#~ msgid "Add Attachment..."
+#~ msgstr "Cuir Iatán Leis..."
+
+#~ msgctxt "Do not compress"
+#~ msgid "Keep"
+#~ msgstr "Coinnigh"
+
+#~ msgid "Compress"
+#~ msgstr "Comhbhrúigh"
+
+#~ msgid "Save Attachment As"
+#~ msgstr "Sábháil an tIatán Mar"
+
+#~ msgid "Undefined Signing Key"
+#~ msgstr "Eochair shínithe neamhshainithe"
+
+#~ msgid "No Subject Specified"
+#~ msgstr "Níor sonraíodh ábhar"
+
+#~ msgid "S&end as Is"
+#~ msgstr "S&eol mar atá"
+
+#~ msgid "Send Confirmation"
+#~ msgstr "Seol Deimhniú"
+
+#~ msgid "&Edit Recipients"
+#~ msgstr "Cuir na Faighteoirí in &Eagar"
+
+#~ msgid "Spellcheck: on"
+#~ msgstr "Litreoir: ann"
+
+#~ msgid "Spellcheck: off"
+#~ msgstr "Litreoir: as"
+
+#~ msgid "No Chiasmus Keys Found"
+#~ msgstr "Níor Aimsíodh Aon Eochair Chiasmus"
+
+#~ msgid "Message will be encrypted"
+#~ msgstr "Beidh an teachtaireacht criptithe"
+
+#~ msgid "Message will not be encrypted"
+#~ msgstr "Ní bheidh an teachtaireacht criptithe"
+
+#~ msgid "POP3 Filter Rules"
+#~ msgstr "Rialacha Scagtha POP3"
+
+#~ msgctxt "General mail filter settings."
+#~ msgid "General"
+#~ msgstr "Ginearálta"
+
+#~ msgctxt "Advanced mail filter settings."
+#~ msgid "Advanced"
+#~ msgstr "Casta"
+
+#~ msgid "Filter Action"
+#~ msgstr "Gníomh Scagaire"
+
+#~ msgid "Global Options"
+#~ msgstr "Roghanna Comhchoiteanna"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Ardroghanna"
+
+#~ msgid "Apply this filter to incoming messages:"
+#~ msgstr "Cuir an scagaire seo i bhfeidhm ar theachtaireachtaí isteach:"
+
+#~ msgid "from all accounts"
+#~ msgstr "ó gach cuntas"
+
+#~ msgid "Account Name"
+#~ msgstr "Ainm an Chuntais"
+
+#~ msgid "Apply this filter to &sent messages"
+#~ msgstr "Cuir an scagaire seo i bhfeidhm ar theachtaireachtaí &amach"
+
+#~ msgid "Shortcut:"
+#~ msgstr "Aicearra:"
+
+#~ msgctxt "Move selected filter up."
+#~ msgid "Up"
+#~ msgstr "Suas"
+
+#~ msgctxt "Move selected filter down."
+#~ msgid "Down"
+#~ msgstr "Síos"
+
+#~ msgid "Rename..."
+#~ msgstr "Athainmnigh..."
+
+#~ msgctxt "@action:button in filter list manipulator"
+#~ msgid "New"
+#~ msgstr "Nua"
+
+#~ msgid "Please select an action."
+#~ msgstr "Roghnaigh gníomh le do thoil."
+
+#~ msgid "&Download mail"
+#~ msgstr "Í&osluchtaigh ríomhphost..."
+
+#~ msgid "Edit..."
+#~ msgstr "Eagar..."
+
+#~ msgid "Unknown folder '%1'"
+#~ msgstr "Fillteán anaithnid: '%1'"
+
+#~ msgid "No Folder Selected"
+#~ msgstr "Níl Aon Fhillteán Roghnaithe"
+
+#~ msgid "Account type is not supported."
+#~ msgstr "Ní thacaítear leis an chineál cuntais seo."
+
+#~ msgid "Account Type: Disconnected IMAP Account"
+#~ msgstr "Cineál Cuntais: Cuntas dínasctha IMAP"
+
+#~ msgid "Account Type: IMAP Account"
+#~ msgstr "Cineál Cuntais: Cuntas IMAP"
+
+#~ msgid "Filtering"
+#~ msgstr "Scagadh"
+
+#~ msgid "Please specify a server and port on the General tab first."
+#~ msgstr ""
+#~ "Roghnaigh freastalaí agus port ar an gcluaisín `Ginearálta' ar dtús."
+
+#~ msgid " byte"
+#~ msgid_plural " bytes"
+#~ msgstr[0] " beart"
+#~ msgstr[1] " bheart"
+#~ msgstr[2] " bheart"
+#~ msgstr[3] " mbeart"
+#~ msgstr[4] " beart"
+
+#~ msgid "Only local files are currently supported."
+#~ msgstr "Ní thacaítear faoi láthair ach le comhaid logánta."
+
+#~ msgid "Fetching Namespaces..."
+#~ msgstr "Ainmspásanna á bhFáil..."
+
+#~ msgctxt "Empty namespace string."
+#~ msgid "Empty"
+#~ msgstr "Folamh"
+
+#~ msgctxt "Namespace accessible for others."
+#~ msgid "Other Users"
+#~ msgstr "Úsáideoirí Eile"
+
+#~ msgid "Shared"
+#~ msgstr "Comhroinnte"
+
+#~ msgid "Edit Namespace '%1'"
+#~ msgstr "Cuir Ainmspás '%1' in Eagar"
+
+#~ msgid "Anti-Spam Wizard"
+#~ msgstr "Treoraí Frith-Dhramhphoist"
+
+#~ msgid "Anti-Virus Wizard"
+#~ msgstr "Treoraí Frithvíris"
+
+#~ msgid "Welcome to the KMail Anti-Spam Wizard"
+#~ msgstr "Fáilte go dtí Treoraí Frith-Dhramhphoist KMail"
+
+#~ msgid "Welcome to the KMail Anti-Virus Wizard"
+#~ msgstr "Fáilte go dtí Treoraí Frithvíris KMail"
+
+#~ msgid "Spam Handling"
+#~ msgstr "Láimhseáil Dramhphoist"
+
+#~ msgid "Classify as Spam"
+#~ msgstr "Aicmigh mar Dhramhphost"
+
+#~ msgid "Spam"
+#~ msgstr "Dramhphost"
+
+#~ msgid "Ham"
+#~ msgstr "Dea-Phost"
+
+#~ msgid "<p>The wizard will create the following filters:<ul>%1</ul></p>"
+#~ msgstr "<p>Cruthóidh an treoraí na scagairí seo a leanas:<ul>%1</ul></p>"
+
+#~ msgid "<p>The wizard will replace the following filters:<ul>%1</ul></p>"
+#~ msgstr "<p>Ionadóidh an treoraí na scagairí seo a leanas:<ul>%1</ul></p>"
+
+#~ msgid "Check messages using the anti-virus tools"
+#~ msgstr "Seiceáil teachtaireachtaí leis na huirlisí frithvíris"
+
+#~ msgid "Move detected viral messages to the selected folder"
+#~ msgstr "Bog teachtaireachtaí víreasacha go dtí an fillteán roghnaithe"
+
+#~ msgctxt "@info:status Number of emails retrieved."
+#~ msgid " completed"
+#~ msgstr " críochnaithe"
+
+#~ msgctxt "@info:status"
+#~ msgid "Unable to process messages: "
+#~ msgstr "Ní féidir na teachtaireachtaí a phróiseáil: "
+
+#~ msgid "Account %1"
+#~ msgstr "Cuntas %1"
+
+#~ msgid "IMAP Account"
+#~ msgstr "Cuntas IMAP"
+
+#~ msgctxt ""
+#~ "%1: name; %2: number appended to it to make it uniqueamong a list of names"
+#~ msgid "%1 #%2"
+#~ msgstr "%1 #%2"
+
+#~ msgctxt "Message->"
+#~ msgid "&Reply"
+#~ msgstr "&Freagair"
+
+#~ msgid "&Edit Message"
+#~ msgstr "Cuir an Teachtaireacht in &Eagar"
+
+#~ msgctxt "@action:inmenu Message->Forward->"
+#~ msgid "&Inline..."
+#~ msgstr "&Inlíne..."
+
+#~ msgid "Sending messages"
+#~ msgstr "Teachtaireachtaí á seoladh"
+
+#~ msgid "Sending failed"
+#~ msgstr "Theip ar sheoladh"
+
+#~ msgid "Send Unencrypted"
+#~ msgstr "Seol Gan Criptiú"
+
+#~ msgctxt "%3: subject of message"
+#~ msgid "Sending message %1 of %2: %3"
+#~ msgstr "Teachtaireacht %1 as %2 á seoladh: %3"
+
+#~ msgid "Select Filters"
+#~ msgstr "Roghnaigh Scagairí"
+
+#~ msgid "Default folder"
+#~ msgstr "Fillteán réamhshocraithe"
+
+#~ msgid "You do not have read/write permission to your %1 folder."
+#~ msgstr "Níl cead léamh/scríofa agat ar d'fhillteán %1."
+
+#~ msgid "You do not have read/write permission to your folder."
+#~ msgstr "Níl cead léamh/scríofa agat ar d'fhillteán."
+
+#~ msgid "Complete Message"
+#~ msgstr "Teachtaireacht Iomlán"
+
+#~ msgid "Body of Message"
+#~ msgstr "Corp na Teachtaireachta"
+
+#~ msgid "Anywhere in Headers"
+#~ msgstr "Áit Ar Bith sa Cheanntásca"
+
+#~ msgid "All Recipients"
+#~ msgstr "Gach Faighteoir"
+
+#~ msgid "Message Status"
+#~ msgstr "Stádas na Teachtaireachta"
+
+#~ msgctxt "Subject of an email."
+#~ msgid "Subject"
+#~ msgstr "Ábhar"
+
+#~ msgctxt "Receiver of an email."
+#~ msgid "To"
+#~ msgstr "Chuig"
+
+#~ msgid "Search Criteria"
+#~ msgstr "Critéir Chuardaigh"
+
+#~ msgid "Removing 1 old message from folder %2..."
+#~ msgid_plural "Removing %1 old messages from folder %2..."
+#~ msgstr[0] "%1 seanteachtaireacht á baint as fillteán %2..."
+#~ msgstr[1] "%1 sheanteachtaireacht á mbaint as fillteán %2..."
+#~ msgstr[2] "%1 sheanteachtaireacht á mbaint as fillteán %2..."
+#~ msgstr[3] "%1 seanteachtaireacht á mbaint as fillteán %2..."
+#~ msgstr[4] "%1 seanteachtaireacht á mbaint as fillteán %2..."
+
+#~ msgid "Moving 1 old message from folder %2 to folder %3..."
+#~ msgid_plural "Moving %1 old messages from folder %2 to folder %3..."
+#~ msgstr[0] ""
+#~ "%1 seanteachtaireacht á bogadh ó fhillteán %2 go dtí fillteán %3..."
+#~ msgstr[1] ""
+#~ "%1 sheanteachtaireacht á mbogadh ó fhillteán %2 go dtí fillteán %3..."
+#~ msgstr[2] ""
+#~ "%1 sheanteachtaireacht á mbogadh ó fhillteán %2 go dtí fillteán %3..."
+#~ msgstr[3] ""
+#~ "%1 seanteachtaireacht á mbogadh ó fhillteán %2 go dtí fillteán %3..."
+#~ msgstr[4] ""
+#~ "%1 seanteachtaireacht á mbogadh ó fhillteán %2 go dtí fillteán %3..."
+
+#~ msgid "Removed 1 old message from folder %2."
+#~ msgid_plural "Removed %1 old messages from folder %2."
+#~ msgstr[0] "Baineadh %1 seanteachtaireacht as fillteán %2."
+#~ msgstr[1] "Baineadh %1 sheanteachtaireacht as fillteán %2."
+#~ msgstr[2] "Baineadh %1 sheanteachtaireacht as fillteán %2."
+#~ msgstr[3] "Baineadh %1 seanteachtaireacht as fillteán %2."
+#~ msgstr[4] "Baineadh %1 seanteachtaireacht as fillteán %2."
+
+#~ msgid ""
+#~ "Cannot open file \"%1\":\n"
+#~ "%2"
+#~ msgstr ""
+#~ "Ní féidir an comhad \"%1\" a oscailt:\n"
+#~ "%2"
+
+#~ msgid "Configure \"Out of Office\" Replies"
+#~ msgstr "Cumraigh Freagraí \"As Láthair Ón Oifig\""
+
+#~ msgctxt "@info:status Number of folders for which update is completed."
+#~ msgid " completed"
+#~ msgstr " críochnaithe"
+
+#~ msgid "vCard Import Failed"
+#~ msgstr "Theip ar Iompórtáil v-Chárta"
+
+#~ msgid "<qt>Unable to access <b>%1</b>.</qt>"
+#~ msgstr "<qt>Ní féidir <b>%1</b> a rochtain.</qt>"
+
+#~ msgid "Cannot open file:"
+#~ msgstr "Ní féidir an comhad a oscailt:"
+
+#~ msgid "<qt>Cannot remove mail from mailbox <b>%1</b>:<br />%2</qt>"
+#~ msgstr ""
+#~ "<qt>Níorbh fhéidir ríomhphost a fháil ó bhosca <b>%1</b>:<br />%2</qt>"
+
+#~ msgctxt "@info:status"
+#~ msgid "Cannot insert content from file %1: %2"
+#~ msgstr "Ní féidir ábhar ó chomhad %1 a ionsá: %2"
+
+#~ msgid "Manage Sieve Scripts"
+#~ msgstr "Bainistigh Scripteanna Sieve"
+
+#~ msgid "Available Scripts"
+#~ msgstr "Scripteanna atá ar fáil"
+
+#~ msgid "Edit Script..."
+#~ msgstr "Cuir Script in Eagar..."
+
+#~ msgid "Deactivate Script"
+#~ msgstr "Díghníomhachtaigh Script"
+
+#~ msgid "New Script..."
+#~ msgstr "Script Nua..."
+
+#~ msgid "New Sieve Script"
+#~ msgstr "Script Nua Sieve"
+
+#~ msgid "Edit Sieve Script"
+#~ msgstr "Cuir Script Sieve in Eagar"
+
+#~ msgid "Select Sound File"
+#~ msgstr "Roghnaigh Comhad Fuaime"
+
+#~ msgid "by Sender"
+#~ msgstr "de réir Seoltóra"
+
+#~ msgid "by Receiver"
+#~ msgstr "de réir Glacadóra"
+
+#~ msgid "Senders/Receivers, Flat"
+#~ msgstr "Seoltóirí/Faighteoirí, Cothrom"
+
+#~ msgctxt "@title:column Subject of messages"
+#~ msgid "Subject"
+#~ msgstr "Ábhar"
+
+#~ msgid "Sender/Receiver"
+#~ msgstr "Seoltóir/Faighteoir"
+
+#~ msgctxt "Sender of a message"
+#~ msgid "Sender"
+#~ msgstr "Seoltóir"
+
+#~ msgctxt "Receiver of a message"
+#~ msgid "Receiver"
+#~ msgstr "Glacadóir"
+
+#~ msgctxt "Date of a message"
+#~ msgid "Date"
+#~ msgstr "Dáta"
+
+#~ msgctxt "Size of a message"
+#~ msgid "Size"
+#~ msgstr "Méid"
+
+#~ msgctxt "Attachement indication"
+#~ msgid "Attachment"
+#~ msgstr "Iatán"
+
+#~ msgid "New/Unread"
+#~ msgstr "Nua/Gan Léamh"
+
+#~ msgid "Replied"
+#~ msgstr "Freagartha"
+
+#~ msgctxt "Message importance indication"
+#~ msgid "Important"
+#~ msgstr "Tábhachtach"
+
+#~ msgid "Spam/Ham"
+#~ msgstr "Dramhphost/Dea-phost"
+
+#~ msgid "Message"
+#~ msgstr "Teachtaireacht"
+
+#~ msgid "Customize Themes"
+#~ msgstr "Téamaí Saincheaptha"
+
+#~ msgid "New Theme"
+#~ msgstr "Téama Nua"
+
+#~ msgid "Delete Theme"
+#~ msgstr "Scrios Téama"
+
+#~ msgid "Unnamed Theme"
+#~ msgstr "Téama Gan Ainm"
+
+#~ msgid "New Column"
+#~ msgstr "Colún Nua"
+
+#~ msgid "Today"
+#~ msgstr "Inniu"
+
+#~ msgid "Yesterday"
+#~ msgstr "Inné"
+
+#~ msgctxt "@info:status Finished view fill"
+#~ msgid "Ready"
+#~ msgstr "Réidh"
+
+#~ msgctxt "Description of Type Subject"
+#~ msgid "Subject"
+#~ msgstr "Ábhar"
+
+#~ msgctxt "Description of Type Date"
+#~ msgid "Date"
+#~ msgstr "Dáta"
+
+#~ msgctxt "Description of Type Sender"
+#~ msgid "Sender"
+#~ msgstr "Seoltóir"
+
+#~ msgctxt "Description of Type Receiver"
+#~ msgid "Receiver"
+#~ msgstr "Glacadóir"
+
+#~ msgctxt "Description of Type Size"
+#~ msgid "Size"
+#~ msgstr "Méid"
+
+#~ msgid "Attachment Icon"
+#~ msgstr "Deilbhín Iatáin"
+
+#~ msgid "Important Icon"
+#~ msgstr "Deilbhín 'Tábhachtach'"
+
+#~ msgid "Spam/Ham Icon"
+#~ msgstr "Deilbhín Dramhphoist/Dea-phoist"
+
+#~ msgctxt "Description for an Unknown Type"
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#~ msgid "Never Show"
+#~ msgstr "Ná Taispeáin Riamh"
+
+#~ msgid "Always Show"
+#~ msgstr "Taispeáin I gCónaí"
+
+#~ msgctxt "Search for messages."
+#~ msgid "Search"
+#~ msgstr "Cuardaigh"
+
+#~ msgid "Any Status"
+#~ msgstr "Stádas Ar Bith"
+
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "New"
+#~ msgstr "Nua"
+
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "Unread"
+#~ msgstr "Gan Léamh"
+
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "Replied"
+#~ msgstr "Freagartha"
+
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "Forwarded"
+#~ msgstr "Curtha Ar Aghaidh"
+
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "Important"
+#~ msgstr "Tábhachtach"
+
+#~ msgid "Ignored"
+#~ msgstr "Neamhaird tugtha air"
+
+#~ msgid "Has Attachment"
+#~ msgstr "Le hIatán"
+
+#~ msgctxt "No grouping of messages"
+#~ msgid "None"
+#~ msgstr "Gan Grúpáil"
+
+#~ msgctxt "No threading of messages"
+#~ msgid "None"
+#~ msgstr "Gan Snáithiú"
+
+#~ msgid "Most Recent Message"
+#~ msgstr "An Teachtaireacht Is Déanaí"
+
+#~ msgid "Grouping:"
+#~ msgstr "Grúpáil:"
+
+#~ msgid "Threading:"
+#~ msgstr "Snáithiú:"
+
+#~ msgctxt "@title:tab Advanced settings tab for aggregation mode"
+#~ msgid "Advanced"
+#~ msgstr "Casta"
+
+#~ msgctxt "Status of an item"
+#~ msgid "New"
+#~ msgstr "Nua"
+
+#~ msgctxt "Status of an item"
+#~ msgid "Unread"
+#~ msgstr "Gan Léamh"
+
+#~ msgctxt "Status of an item"
+#~ msgid "Read"
+#~ msgstr "Léite"
+
+#~ msgctxt "Status of an item"
+#~ msgid "Has Attachment"
+#~ msgstr "Le hIatán"
+
+#~ msgctxt "Status of an item"
+#~ msgid "Replied"
+#~ msgstr "Freagartha"
+
+#~ msgctxt "Status of an item"
+#~ msgid "Forwarded"
+#~ msgstr "Curtha Ar Aghaidh"
+
+#~ msgctxt "Status of an item"
+#~ msgid "Sent"
+#~ msgstr "Seolta"
+
+#~ msgctxt "Status of an item"
+#~ msgid "Important"
+#~ msgstr "Tábhachtach"
+
+#~ msgctxt "Status of an item"
+#~ msgid "Spam"
+#~ msgstr "Dramhphost"
+
+#~ msgctxt "Status of an item"
+#~ msgid "Ham"
+#~ msgstr "Dea-Phost"
+
+#~ msgctxt "Status of an item"
+#~ msgid "Ignored"
+#~ msgstr "Neamhaird tugtha air"
+
+#~ msgctxt "@label:textbox Property name"
+#~ msgid "Name:"
+#~ msgstr "Ainm:"
+
+#~ msgid "Sample Tag 1"
+#~ msgstr "Clib Shamplach 1"
+
+#~ msgid "Sample Tag 2"
+#~ msgstr "Clib Shamplach 2"
+
+#~ msgid "Sample Tag 3"
+#~ msgstr "Clib Shamplach 3"
+
+#~ msgctxt "Indicates whether or not a header label is visible"
+#~ msgid "Visible"
+#~ msgstr "Infheicthe"
+
+#~ msgctxt "@action:inmenu Font setting"
+#~ msgid "Default"
+#~ msgstr "Réamhshocrú"
+
+#~ msgctxt "@action:inmenu Foreground color setting"
+#~ msgid "Default"
+#~ msgstr "Réamhshocrú"
+
+#~ msgid "Foreground Color"
+#~ msgstr "Dath an Tulra"
+
+#~ msgctxt ""
+#~ "Hide a mark if the mail does not have the attribute, e.g. Important mark "
+#~ "on a non important mail"
+#~ msgid "Hide"
+#~ msgstr "Folaigh"
+
+#~ msgctxt "@action:inmenu Group header background color setting"
+#~ msgid "Custom..."
+#~ msgstr "Saincheaptha..."
+
+#~ msgid "Background Color"
+#~ msgstr "Dath an Chúlra"
+
+#~ msgid "Column Properties"
+#~ msgstr "Airíonna an Cholúin"
+
+#~ msgid "Add Column..."
+#~ msgstr "Cuir Colún Leis..."
+
+#~ msgid "Delete Column"
+#~ msgstr "Scrios Colún"
+
+#~ msgid "Add New Column"
+#~ msgstr "Cuir Colún Leis"
+
+#~ msgid "Appearance"
+#~ msgstr "Cuma"
+
+#~ msgctxt "@title:tab Advanced theme settings"
+#~ msgid "Advanced"
+#~ msgstr "Casta"
+
+#~ msgctxt "@title:tab General options of a view mode"
+#~ msgid "General"
+#~ msgstr "Ginearálta"
+
+#~ msgctxt "@label:textbox Name of the option"
+#~ msgid "Name:"
+#~ msgstr "Ainm:"
+
+#~ msgctxt "@label:textbox Description of the option"
+#~ msgid "Description:"
+#~ msgstr "Cur Síos:"
+
+#~ msgid "Show Default Columns"
+#~ msgstr "Taispeáin Colúin Réamhshocraithe"
+
+#~ msgctxt "Receiver of the emial"
+#~ msgid "To"
+#~ msgstr "Chuig"
+
+#~ msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
+#~ msgid "Messages sent %1"
+#~ msgstr "Teachtaireachtaí a seoladh %1"
+
+#~ msgctxt ""
+#~ "@info:tooltip Formats to something like 'Messages received Yesterday'"
+#~ msgid "Messages received %1"
+#~ msgstr "Teachtaireachtaí a fuarthas %1"
+
+#~ msgid "<b>%1</b> thread"
+#~ msgid_plural "<b>%1</b> threads"
+#~ msgstr[0] "<b>%1</b> snáithe"
+#~ msgstr[1] "<b>%1</b> shnáithe"
+#~ msgstr[2] "<b>%1</b> shnáithe"
+#~ msgstr[3] "<b>%1</b> snáithe"
+#~ msgstr[4] "<b>%1</b> snáithe"
+
+#~ msgid "0 unsent"
+#~ msgstr "0 gan seoladh"
+
+#~ msgctxt "Number of unread messages"
+#~ msgid "1 unread"
+#~ msgid_plural "%1 unread"
+#~ msgstr[0] "1 gan léamh"
+#~ msgstr[1] "%1 gan léamh"
+#~ msgstr[2] "%1 gan léamh"
+#~ msgstr[3] "%1 gan léamh"
+#~ msgstr[4] "%1 gan léamh"
+
+#~ msgctxt "No unread messages"
+#~ msgid "0 unread"
+#~ msgstr "0 gan léamh"
+
+#~ msgctxt "Number of unread messages"
+#~ msgid "1 message, %2."
+#~ msgid_plural "%1 messages, %2."
+#~ msgstr[0] "1 teachtaireacht, %2."
+#~ msgstr[1] "%1 theachtaireacht, %2."
+#~ msgstr[2] "%1 theachtaireacht, %2."
+#~ msgstr[3] "%1 dteachtaireacht, %2."
+#~ msgstr[4] "%1 teachtaireacht, %2."
+
+#~ msgctxt "No unread messages"
+#~ msgid "0 messages"
+#~ msgstr "0 teachtaireacht"
+
+#~ msgid "Lose Characters"
+#~ msgstr "Caill Carachtair"
+
+#~ msgid "Change Encoding"
+#~ msgstr "Athraigh an tIonchódú"
+
+#~ msgid "Form"
+#~ msgstr "Foirm"
+
+#~ msgid "Message List - Date Field"
+#~ msgstr "Liosta Teachtaireachtaí - Réimse Dáta"
+
+#~ msgid "Invalid Response From Server"
+#~ msgstr "Freagra Neamhbhailí Ón Fhreastalaí"
+
+#~ msgid "Show Columns"
+#~ msgstr "Taispeáin Colúin"
+
+#~ msgid "&Load Profile..."
+#~ msgstr "&Luchtaigh Próifíl..."
+
+#~ msgid "Use smaller font for quoted text"
+#~ msgstr "Taispeáin téacs athluaite le cló beag"
+
+#~ msgid "Load Profile"
+#~ msgstr "Luchtaigh Próifíl"
+
+#~ msgid "Available Profiles"
+#~ msgstr "Próifílí atá ar fáil"
+
+#~ msgid "&Select a profile and click 'OK' to load its settings:"
+#~ msgstr "Roghnaigh próifíl agus cliceáil 'OK' chun a socruithe a luchtú:"
+
+#~ msgctxt "Missing profile name placeholder"
+#~ msgid "Unnamed"
+#~ msgstr "Gan ainm"
+
+#~ msgctxt "Missing profile description placeholder"
+#~ msgid "Not available"
+#~ msgstr "Níl ar fáil"
+
+#~ msgid "Aborted"
+#~ msgstr "Tobscortha"
+
+#~ msgctxt "@title collumn attachment name."
+#~ msgid "Name"
+#~ msgstr "Ainm"
+
+#~ msgctxt "@title collumn attachment size."
+#~ msgid "Size"
+#~ msgstr "Méid"
+
+#~ msgctxt "@title collumn attachment encoding."
+#~ msgid "Encoding"
+#~ msgstr "Ionchódú"
+
+#~ msgctxt "@title collumn attachment type."
+#~ msgid "Type"
+#~ msgstr "Cineál"
+
+#~ msgctxt "@title collumn attachment compression checkbox."
+#~ msgid "Compress"
+#~ msgstr "Comhbhrúigh"
+
+#~ msgctxt "@title collumn attachment encryption checkbox."
+#~ msgid "Encrypt"
+#~ msgstr "Criptigh"
+
+#~ msgctxt "@title collumn attachment signed checkbox."
+#~ msgid "Sign"
+#~ msgstr "Sínigh"
+
+#~ msgid "&Send"
+#~ msgstr "&Seol"
+
+#~ msgid "My %1 (%2)"
+#~ msgstr "Mo %1 (%2)"
+
+#~ msgid "Column Properties..."
+#~ msgstr "Airíonna an Cholúin..."
+
+#~ msgid "day"
+#~ msgid_plural "days"
+#~ msgstr[0] "lá"
+#~ msgstr[1] "lá"
+#~ msgstr[2] "lá"
+#~ msgstr[3] "lá"
+#~ msgstr[4] "lá"
+
+#~ msgid "Ho&st:"
+#~ msgstr "Ó&stríomhaire:"
+
+#~ msgctxt "@action:inmenu Forward current message inline."
+#~ msgid "&Inline..."
+#~ msgstr "&Inlíne..."
+
+#~ msgid "Choo&se.."
+#~ msgstr "&Roghnaigh..."
+
+#~ msgctxt ""
+#~ "Number of days the signature certificate should be valid without issuing "
+#~ "a warning. "
+#~ msgid " days"
+#~ msgstr " lá"
+
+#~ msgctxt ""
+#~ "the minimum number of days the encryption certificate should be valid "
+#~ "without issuing a warning."
+#~ msgid " days"
+#~ msgstr " lá"
+
+#~ msgctxt ""
+#~ "The minimum number of days all certificates in the chain should be valid"
+#~ msgid " days"
+#~ msgstr " lá"
+
+#~ msgctxt "The minimum number of days the CA certificate should be valid"
+#~ msgid " days"
+#~ msgstr " lá"
+
+#~ msgctxt "The minimum number of days the root certificate should be valid"
+#~ msgid " days"
+#~ msgstr " lá"
+
+#~ msgctxt "the minimum number of days the root certificate should be valid"
+#~ msgid " days"
+#~ msgstr " lá"
+
+#~ msgctxt "Unit label of the expiry time."
+#~ msgid "days"
+#~ msgstr "lá"
+
+#~ msgid "&General"
+#~ msgstr "&Ginearálta"
+
+#~ msgid "&Advanced"
+#~ msgstr "&Casta"
+
+#~ msgid "Gene&ral"
+#~ msgstr "Ginea&rálta"
+
+#~ msgid "Show crypto &icons"
+#~ msgstr "Taispeáin de&ilbhíní criptiúcháin"
+
+#~ msgid "Local Inbox"
+#~ msgstr "Bosca Logánta"
+
+#~ msgid "Stat&us:"
+#~ msgstr "Stád&as:"
+
+#~ msgid "Total Column"
+#~ msgstr "Colún Iomlán"
+
+#~ msgctxt "Column that shows the size"
+#~ msgid "Size Column"
+#~ msgstr "Colún Méide"
+
+#~ msgid " (Status)"
+#~ msgstr "(Stádas)"
+
+#~ msgid "<unknown>"
+#~ msgstr "<anaithnid>"
+
+#~ msgid "On %D, you wrote:"
+#~ msgstr "Ar %D, scríobh tú:"
+
+#~ msgid "On %D, %F wrote:"
+#~ msgstr "Ar %D, scríobh %F:"
+
+#~ msgid "<b>To:</b><br/>"
+#~ msgstr "<b>Chuig:</b><br/>"
+
+#~ msgid "<b>CC:</b><br/>"
+#~ msgstr "<b>CC:</b><br/>"
+
+#~ msgid "<b>BCC:</b><br/>"
+#~ msgstr "<b>BCC:</b><br/>"
+
+#~ msgid "M&essage List"
+#~ msgstr "Liosta T&eachtaireachtaí"
+
+#~ msgid "&Subject"
+#~ msgstr "&Ábhar"
+
+#~ msgid "&Signature"
+#~ msgstr "&Síniú"
+
+#~ msgid "A&dvanced"
+#~ msgstr "&Casta"
+
+#~ msgid "Lang&uage:"
+#~ msgstr "&Teanga:"
+
+#~ msgid "&Forward:"
+#~ msgstr "Ar A&ghaidh"
+
+#~ msgid ">%_"
+#~ msgstr ">%_"
+
+#~ msgid "Choose &language:"
+#~ msgstr "Roghnaigh &teanga:"
+
+#~ msgid "No More Languages Available"
+#~ msgstr "Níl teangacha eile ar fáil"
+
+#~ msgid "Standard (Ical / Vcard)"
+#~ msgstr "Caighdeánach (Ical / v-Chárta)"
+
+#~ msgid "Welcome to KMail"
+#~ msgstr "Fáilte go KMail"
+
+#~ msgid "Welcome"
+#~ msgstr "Fáilte"
+
+#~ msgid "Op&en"
+#~ msgstr "Osca&il"
+
+#~ msgid ""
+#~ "On %ODATEEN %OTIMELONGEN %OFROMNAME wrote:\n"
+#~ "%QUOTE\n"
+#~ "%CURSOR"
+#~ msgstr ""
+#~ "Ar %ODATEEN %OTIMELONGEN, scríobh %OFROMNAME:\n"
+#~ "%QUOTE\n"
+#~ "%CURSOR"
+
+#~ msgid "General Options"
+#~ msgstr "Roghanna Ginearálta"
+
+#~ msgid "C&ustom format (Shift+F1 for help):"
+#~ msgstr "F&ormáid saincheaptha (Shift+F1 = cabhair):"
+
+#~ msgid "Message List - Todo Messages"
+#~ msgstr "Liosta Teachtaireachtaí - Teachtaireachtaí Le Déanamh"
+
+#~ msgctxt "message status"
+#~ msgid "Old"
+#~ msgstr "Sean"
+
+#~ msgid "Adopter and co-maintainer"
+#~ msgstr "Uchtaitheoir agus comhchothaitheoir"
+
+#~ msgid "Composer Background"
+#~ msgstr "Cúlra an Chumadóra"
+
+#~ msgid "Normal Text"
+#~ msgstr "Gnáth-théacs"
+
+#~ msgid "&Address Book..."
+#~ msgstr "Le&abhar Seoltaí..."
+
+#~ msgid "KMail Error Message"
+#~ msgstr "Teachtaireacht Earráide KMail"
+
+#~ msgid "&Extras"
+#~ msgstr "Rudaí Breis&e"
+
+#~ msgid "Align Right"
+#~ msgstr "Ailínigh Ar Dheis"
+
+#~ msgid "Right"
+#~ msgstr "Ar Dheis"
+
+#~ msgid "Center"
+#~ msgstr "Sa Lár"
+
+#~ msgid "&Bold"
+#~ msgstr "Cló &Trom"
+
+#~ msgid "&Underline"
+#~ msgstr "&Líne Faoi"
+
+#~ msgid "Text Color..."
+#~ msgstr "Dath Téacs..."
+
+#~ msgid "Text Color"
+#~ msgstr "Dath Téacs"
+
+#~ msgid "Manage Link..."
+#~ msgstr "Bainistigh an Nasc..."
+
+#~ msgctxt "Short toolbar text for the \"Manage Link...\" action"
+#~ msgid "Link"
+#~ msgstr "Nasc"
+
+#~ msgid "&Use HTML"
+#~ msgstr "Ú&sáid HTML"
+
+#~ msgid "Show HTML"
+#~ msgstr "Taispeáin HTML"
+
+#~ msgid "S&pecify file:"
+#~ msgstr "Son&raigh comhad:"
+
+#~ msgid "Edit &File"
+#~ msgstr "Cuir &Comhad in Eagar"
+
+#~ msgid "S&pecify command:"
+#~ msgstr "Son&raigh ordú:"
+
+#~ msgid "Shortc&ut"
+#~ msgstr "&Aicearra"
+
+#~ msgid "Account for semiautomatic resource handling"
+#~ msgstr "Cuntas do láimhseáil leath-uathoibríoch na n-acmhainní"
+
+#~ msgid "Use secure connection (SSL)"
+#~ msgstr "Úsáid nasc daingean (SSL)"
+
+#~ msgid "Unable to start external editor."
+#~ msgstr "Ní féidir an t-eagarthóir seachtrach a thosú."
+
+#~ msgid "Delimiter:"
+#~ msgstr "Teormharcóir:"
+
+#~ msgid "Alt+A"
+#~ msgstr "Alt+L"
+
+#~ msgid "Alt+C"
+#~ msgstr "Alt+C"
+
+#~ msgid "no subject"
+#~ msgstr "gan ábhar"
+
+#~ msgid "<message>"
+#~ msgstr "<teachtaireacht>"
+
+#~ msgid "<recipients>"
+#~ msgstr "<faighteoirí>"
+
+#~ msgid "<status>"
+#~ msgstr "<stádas>"
+
+#~ msgid "Select email address(es)"
+#~ msgstr "Roghnaigh seoladh/seoltaí ríomhphoist"
+
+#~ msgctxt "recipient address field"
+#~ msgid "&To:"
+#~ msgstr "Chui&g:"
+
+#~ msgid "&To"
+#~ msgstr "Chui&g"
+
+#~ msgid "&CC"
+#~ msgstr "&CC"
+
+#~ msgid "&BCC"
+#~ msgstr "&BCC"
+
+#~ msgid "&Important"
+#~ msgstr "&Tábhachtach"
+
+#~ msgid "&To-do"
+#~ msgstr "&Le Déanamh"
+
+#~ msgid "Insert File"
+#~ msgstr "Ionsáigh Comhad"
+
+#~ msgid ""
+#~ "End of document reached.\n"
+#~ "Continue from the beginning?"
+#~ msgstr ""
+#~ "Tá deireadh na cáipéise sroichte.\n"
+#~ "Lean ar aghaidh ón tús?"
+
+#~ msgid "Find"
+#~ msgstr "Aimsigh"
+
+#~ msgid ""
+#~ "Beginning of document reached.\n"
+#~ "Continue from the end?"
+#~ msgstr ""
+#~ "Tá tús na cáipéise sroichte.\n"
+#~ "Lean ar aghaidh ón deireadh?"
+
+#~ msgid "Replace"
+#~ msgstr "Ionadaigh"
+
+#~ msgid "Find &backwards"
+#~ msgstr "&Roimhe Seo"
+
+#~ msgid "Replace with:"
+#~ msgstr "Ionadaigh le:"
+
+#~ msgid "Go to Line"
+#~ msgstr "Téigh go Líne"
+
+#~ msgid "Standard"
+#~ msgstr "Caighdeánach"
+
+#~ msgid "Spellcheck - KMail"
+#~ msgstr "Litreoir - KMail"
+
+#~ msgid "No misspellings encountered."
+#~ msgstr "Níor aimsíodh aon fhocal mílitrithe."
+
+#~ msgid "Key Conflict"
+#~ msgstr "Coimhlint Eochrach"
+
+#~ msgid "Launch IM"
+#~ msgstr "Tosaigh IM"
+
+#~ msgid "Chat &With..."
+#~ msgstr "Déan Comhrá &Le..."
+
+#~ msgid "Encryption &algorithm:"
+#~ msgstr "&Algartam criptithe:"
+
+#~ msgid "Selects the encryption algorithm"
+#~ msgstr "Roghnaíonn an t-algartam criptiúcháin"
+
+#~ msgid "Selects which certificates to send"
+#~ msgstr "Roghnaíonn na teastais atá le seoladh"
+
+#~ msgid "Send &your own certificate"
+#~ msgstr "Seol do theastas &féin"
+
+#~ msgid "Selects the signature algorithm"
+#~ msgstr "Roghnaíonn an t-algartam sínithe"
+
+#~ msgid "RSA + SHA-1"
+#~ msgstr "RSA + SHA-1"
+
+#~ msgid "Signature &algorithm:"
+#~ msgstr "&Algartam sínithe:"
+
+#~ msgid "Standa&rd MIME"
+#~ msgstr "MIME &Caighdeánach"
+
+#~ msgid "Once per session"
+#~ msgstr "Uair amháin sa seisiún"
+
+#~ msgid "After"
+#~ msgstr "Tar éis"
+
+#~ msgid "POP3"
+#~ msgstr "POP3"
+
+#~ msgid "Maildir mailbox"
+#~ msgstr "Bosca poist maildir"
+
+#~ msgid "&Local mailbox"
+#~ msgstr "&Bosca poist logánta"
+
+#~ msgid "&POP3"
+#~ msgstr "&POP3"
+
+#~ msgid "&IMAP"
+#~ msgstr "&IMAP"
+
+#~ msgid "&Disconnected IMAP"
+#~ msgstr "&IMAP dínasctha"
+
+#~ msgid "&Maildir mailbox"
+#~ msgstr "&Bosca poist maildir"
+
+#~ msgid "Unknown account type selected"
+#~ msgstr "Roghnaíodh cineál anaithnid cuntais"
+
+#~ msgid " Initializing..."
+#~ msgstr " Tús á chur..."
+
+#~ msgid "Move to:"
+#~ msgstr "Bog go:"
+
+#~ msgid "smtp (Default)"
+#~ msgstr "smtp (Réamhshocrú)"
+
+#~ msgid "sendmail (Default)"
+#~ msgstr "sendmail (Réamhshocrú)"
+
+#~ msgctxt ""
+#~ "%1: type of transport. Result used in Configure->Accounts->Sending "
+#~ "listview, \"type\" column, first row, to indicate that this is the "
+#~ "default transport"
+#~ msgid "%1 (Default)"
+#~ msgstr "%1 (Réamhshocrú)"
+
+#~ msgid "Sendmail exited abnormally."
+#~ msgstr "Stad sendmail go mínormálta."
+
+#~ msgid ""
+#~ "You need to supply a username and a password to use this SMTP server."
+#~ msgstr ""
+#~ "Is gá ainm úsáideora agus focal faire a sholáthar chun an freastalaí SMTP "
+#~ "seo a rochtain."
+
+#~ msgid "SM&TP"
+#~ msgstr "SM&TP"
+
+#~ msgid "&Sendmail"
+#~ msgstr "&Sendmail"
+
+#~ msgid "Transport: Sendmail"
+#~ msgstr "Iompar: Sendmail"
+
+#~ msgid "&Location:"
+#~ msgstr "&Suíomh:"
+
+#~ msgid "Choos&e..."
+#~ msgstr "&Roghnaigh..."
+
+#~ msgid "Transport: SMTP"
+#~ msgstr "Iompar: SMTP"
+
+#~ msgid "&Host:"
+#~ msgstr "Óst&ríomhaire:"
+
+#~ msgid "Preco&mmand:"
+#~ msgstr "Réa&mhordú:"
+
+#~ msgid "&Store SMTP password"
+#~ msgstr "&Sábháil an focal faire SMTP"
+
+#~ msgid "Sen&d custom hostname to server"
+#~ msgstr "Seol óstainm saincheaptha go &dtí an freastalaí"
+
+#~ msgid "Hos&tname:"
+#~ msgstr "Ós&tainm:"
+
+#~ msgid "&SSL"
+#~ msgstr "&SSL"
+
+#~ msgid "&TLS"
+#~ msgstr "&TLS"
+
+#~ msgid "Only local files allowed."
+#~ msgstr "Ní cheadaítear ach comhaid logánta."
+
+#~ msgid "Invalid Hostname or Address"
+#~ msgstr "Seoladh nó Óstainm Neamhbhailí"
+
+#~ msgid "List &address:"
+#~ msgstr "Seol&adh an liosta:"
+
+#~ msgid "Unr&ead:"
+#~ msgstr "Gan léamh:"
+
+#~ msgid "Day(s)"
+#~ msgstr "Lá"
+
+#~ msgid "Week(s)"
+#~ msgstr "Seachtain"
+
+#~ msgid "Month(s)"
+#~ msgstr "Mí"
+
+#~ msgid "Sender identit&y:"
+#~ msgstr "&Aitheantas an tseoltóra:"
+
+#~ msgid "Edit Recent Addresses"
+#~ msgstr "Cuir Seoltaí is Déanaí in Eagar"
+
+#~ msgid "S&earch:"
+#~ msgstr "C&uardaigh:"
+
+#~ msgid "Offline mode"
+#~ msgstr "Mód as líne"

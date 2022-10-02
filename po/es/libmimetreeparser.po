@@ -1,0 +1,82 @@
+# translation of libmessageviewer.po to Spanish
+# translation of kmail.po to
+# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+#
+# Jaime Robles <jaime@kde.org>, 2003, 2009.
+# Pablo de Vicente <pvicentea@wanadoo.es>, 2004.
+# Juan Manuel Garcia Molina <juanma@superiodico.net>, 2003, 2004, 2005, 2006, 2007.
+# Pablo de Vicente <p.devicente@wanadoo.es>, 2005.
+# Pablo de Vicente <pablo.devicente@gmail.com>, 2005, 2006.
+# Juan Manuel García Molina <juanma@superiodico.net>, 2006, 2007.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2008, 2009, 2010, 2014.
+# Franco Mariluis <fmariluis@gmail.com>, 2008, 2009.
+# Dario Andres Rodriguez <andrebajotierra@gmail.com>, 2009.
+# Javier Vinal <fjvinalgmail.com>, 2009, 2010, 2011.
+# Javier Viñal <fjvinal@gmail.com>, 2010, 2012, 2013, 2014.
+# Javier Vinal <fjvinalgmail.com>, 2010, 2012, 2014, 2015, 2016, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessageviewer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2017-10-22 23:03+0100\n"
+"Last-Translator: Javier Vinal <fjvinal²gmail.com>\n"
+"Language-Team: Spanish <l10n-kde-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"First-Translator: Jaime Robles <jaime@kde.org>\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "sin nombre"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Complemento de cifrado incorrecto."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "No se encontró un complemento de cifrado adecuado."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "No se encontró el complemento %1."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "El complemento de cifrado «%1» no puede verificar firmas."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"El mensaje está firmado, pero no se pudo verificar la validez de la firma."
+"<br />Motivo: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "El complemento de cifrado «%1» no puede descifrar mensajes."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "El complemento de cifrado «%1» no pudo descifrar los datos."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Error: %1"

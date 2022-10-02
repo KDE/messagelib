@@ -1,0 +1,126 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+#
+# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: messagelib\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-30 00:47+0000\n"
+"PO-Revision-Date: 2022-08-31 19:28+0200\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.08.0\n"
+
+#: developertool/developertooldialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Developer Tool"
+msgstr "Инструмент за разработка"
+
+#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "Затваряне"
+
+#: findbar/findbarbase.cpp:48
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "&Намиране:"
+
+#: findbar/findbarbase.cpp:53
+#, kde-format
+msgid "Text to search for"
+msgstr "Текст за търсене"
+
+#: findbar/findbarbase.cpp:58
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "Следващ"
+
+#: findbar/findbarbase.cpp:59
+#, kde-format
+msgid "Jump to next match"
+msgstr "Преминаване към следващото съвпадение"
+
+#: findbar/findbarbase.cpp:64
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "Предишно"
+
+#: findbar/findbarbase.cpp:65
+#, kde-format
+msgid "Jump to previous match"
+msgstr "Преминаване към предишното съвпадение"
+
+#: findbar/findbarbase.cpp:71
+#, kde-format
+msgid "Options"
+msgstr "Опции"
+
+#: findbar/findbarbase.cpp:72
+#, kde-format
+msgid "Modify search behavior"
+msgstr "Промяна на поведение на търсене"
+
+#: findbar/findbarbase.cpp:74
+#, kde-format
+msgid "Case sensitive"
+msgstr "С отчитане на регистъра"
+
+#: findbar/findbarbase.cpp:91
+#, kde-format
+msgid "Phrase not found"
+msgstr "Фразата не е намерена"
+
+#: webenginepage.cpp:78
+#, kde-format
+msgid "Save HTML Page"
+msgstr "Запазване на Html страницата"
+
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:21
+#, kde-format
+msgid "Submit form is not allowed in mailer. Please open url in a browser."
+msgstr ""
+"Формата за изпращане не е разрешена в пощенска програма. Моля, отворете URL "
+"в браузър."
+
+#: widgets/tracking/trackingdetailsdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr "Подробности"
+
+#: widgets/tracking/trackingwarningwidget.cpp:20
+#, kde-format
+msgid ""
+"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+"\">(Details...)"
+msgstr ""
+"Намерен е и е блокиран някакъв Mail Tracker. <a href=\"mailtrackingdetails"
+"\"> (Подробности ...)"
+
+#: widgets/tracking/trackingwarningwidget.cpp:39
+#, kde-format
+msgid "Details:"
+msgstr "Подробности:"
+
+#: widgets/tracking/trackingwarningwidget.cpp:45
+#, kde-format
+msgid "1 tracker from the company %2 (%3)"
+msgid_plural "%1 trackers from the company %2 (%3)"
+msgstr[0] "%1 тракер от компания %2 (%3)"
+msgstr[1] "%1 тракера от компания %2 (%3)"
+
+#: widgets/zoomactionmenu.cpp:127
+#, kde-format
+msgid "Zoom"
+msgstr "Мащаб"

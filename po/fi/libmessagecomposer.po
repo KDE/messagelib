@@ -1,0 +1,3379 @@
+# Copyright © 2011, 2012 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdepim package.
+# Tommi Nieminen <translator@legisign.org>, 2011, 2012, 2013, 2017, 2018, 2020, 2021, 2022.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016.
+#
+# KDE Finnish translation sprint participants:
+# Author: Lliehu
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessagecomposer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2022-06-05 20:14+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2013-01-13 20:43:22+0000\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: attachment/attachmentcontrollerbase.cpp:168
+#, kde-format
+msgid "Failed to compress attachment"
+msgstr "Liitteen pakkaus epäonnistui"
+
+#: attachment/attachmentcontrollerbase.cpp:179
+#, kde-format
+msgid ""
+"The compressed attachment is larger than the original. Do you want to keep "
+"the original one?"
+msgstr ""
+"Pakattu liite on alkuperäistä suurempi. Haluatko säilyttää alkuperäisen?"
+
+#: attachment/attachmentcontrollerbase.cpp:182
+#, kde-format
+msgctxt "Do not compress"
+msgid "Keep"
+msgstr "Säilytä"
+
+#: attachment/attachmentcontrollerbase.cpp:183
+#, kde-format
+msgid "Compress"
+msgstr "Pakkaa"
+
+#: attachment/attachmentcontrollerbase.cpp:202
+#, kde-format
+msgid "Failed to attach file"
+msgstr "Tiedoston liittäminen epäonnistui"
+
+#: attachment/attachmentcontrollerbase.cpp:275
+#, kde-format
+msgid "Failed to reload attachment"
+msgstr "Liitteen uudelleenlataaminen epäonnistui"
+
+#: attachment/attachmentcontrollerbase.cpp:322
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr "&Avaa ohjelmalla"
+
+#: attachment/attachmentcontrollerbase.cpp:342
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr "&Muu…"
+
+#: attachment/attachmentcontrollerbase.cpp:344
+#: attachment/attachmentcontrollerbase.cpp:352
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr "Avaa &ohjelmalla…"
+
+#: attachment/attachmentcontrollerbase.cpp:378
+#, kde-format
+msgid "Failed to attach public key"
+msgstr "Julkisen avaimen liittäminen epäonnistui"
+
+#: attachment/attachmentcontrollerbase.cpp:392
+#, kde-format
+msgid "Failed to attach vCard"
+msgstr "vCardin liittäminen epäonnistui"
+
+#: attachment/attachmentcontrollerbase.cpp:405
+#, kde-format
+msgid "Failed to attach text from clipboard"
+msgstr "Leikepöydän tekstin liittäminen epäonnistui"
+
+#: attachment/attachmentcontrollerbase.cpp:453
+#, kde-format
+msgid "Attach &Public Key..."
+msgstr "Liitä &julkinen avain…"
+
+#: attachment/attachmentcontrollerbase.cpp:456
+#, kde-format
+msgid "Attach &My Public Key"
+msgstr "Liitä &julkinen avaimeni"
+
+#: attachment/attachmentcontrollerbase.cpp:459
+#: attachment/attachmentcontrollerbase.cpp:464
+#: attachment/attachmentcontrollerbase.cpp:470
+#: attachment/attachmentcontrollerbase.cpp:479
+#, kde-format
+msgid "Attach"
+msgstr "Liitä"
+
+#: attachment/attachmentcontrollerbase.cpp:463
+#: composer/composerviewbase.cpp:1908
+#, kde-format
+msgid "&Attach File..."
+msgstr "&Liitä tiedosto…"
+
+#: attachment/attachmentcontrollerbase.cpp:465
+#, kde-format
+msgid "Add Attachment..."
+msgstr "Lisää liite…"
+
+#: attachment/attachmentcontrollerbase.cpp:469
+#, kde-format
+msgid "&Attach Directory..."
+msgstr "&Liitä kansio…"
+
+#: attachment/attachmentcontrollerbase.cpp:473
+#, kde-format
+msgid "Attach Own vCard"
+msgstr "Liitä oma vCard"
+
+#: attachment/attachmentcontrollerbase.cpp:474
+#, kde-format
+msgid "Own vCard"
+msgstr "Oma vCard"
+
+#: attachment/attachmentcontrollerbase.cpp:478
+#, kde-format
+msgid "&Attach vCards..."
+msgstr "&Liitä vCardeja…"
+
+#: attachment/attachmentcontrollerbase.cpp:482
+#, kde-format
+msgid "&Attach Text From Clipboard..."
+msgstr "L&iitä tekstiä leikepöydältä…"
+
+#: attachment/attachmentcontrollerbase.cpp:483
+#, kde-format
+msgid "Attach Text From Clipboard"
+msgstr "Liitä teksti leikepöydältä"
+
+#: attachment/attachmentcontrollerbase.cpp:495
+#, kde-format
+msgid "&Remove Attachment"
+msgstr "&Poista liite"
+
+#: attachment/attachmentcontrollerbase.cpp:496
+#, kde-format
+msgid "Remove"
+msgstr "Poista"
+
+#: attachment/attachmentcontrollerbase.cpp:504
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Avaa"
+
+#: attachment/attachmentcontrollerbase.cpp:509
+#, kde-format
+msgctxt "to view"
+msgid "View"
+msgstr "Näytä"
+
+#: attachment/attachmentcontrollerbase.cpp:514
+#, kde-format
+msgctxt "to edit"
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: attachment/attachmentcontrollerbase.cpp:519
+#, kde-format
+msgid "Edit With..."
+msgstr "Muokkaa sovelluksella…"
+
+#: attachment/attachmentcontrollerbase.cpp:524
+#, kde-format
+msgid "&Save Attachment As..."
+msgstr "&Tallenna liite nimellä…"
+
+#: attachment/attachmentcontrollerbase.cpp:525
+#, kde-format
+msgid "Save As..."
+msgstr "Tallenna nimellä…"
+
+#: attachment/attachmentcontrollerbase.cpp:533
+#, kde-format
+msgid "Attachment Pr&operties..."
+msgstr "Liitteen &ominaisuudet"
+
+#: attachment/attachmentcontrollerbase.cpp:534
+#, kde-format
+msgid "Properties"
+msgstr "Ominaisuudet"
+
+#: attachment/attachmentcontrollerbase.cpp:542
+#, kde-format
+msgid "Select All"
+msgstr "Valitse kaikki"
+
+#: attachment/attachmentcontrollerbase.cpp:545
+#, kde-format
+msgid "Reload"
+msgstr "Lataa uudelleen"
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:702
+#: attachment/attachmentcontrollerbase.cpp:751
+#, kde-format
+msgid "KMail was unable to write the attachment to a temporary file."
+msgstr "KMail ei kyennyt kirjoittamaan liitettä väliaikaistiedostoon."
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:702
+#, kde-format
+msgid "Unable to open attachment"
+msgstr "Liitettä ei voi avata."
+
+#: attachment/attachmentcontrollerbase.cpp:711
+#, kde-format
+msgid "KMail was unable to open the attachment."
+msgstr "KMail ei kyennyt avaamaan liitettä."
+
+#: attachment/attachmentcontrollerbase.cpp:751
+#, kde-format
+msgid "Unable to edit attachment"
+msgstr "Liitettä ei voi muokata"
+
+#: attachment/attachmentcontrollerbase.cpp:792
+#, kde-format
+msgid "unnamed"
+msgstr "nimetön"
+
+#: attachment/attachmentcontrollerbase.cpp:795
+#, kde-format
+msgid "Save Attachment As"
+msgstr "Tallenna liite nimellä"
+
+#: attachment/attachmentcontrollerbase.cpp:818
+#, kde-format
+msgid ""
+"File %1 exists.\n"
+"Do you want to replace it?"
+msgstr ""
+"Tiedosto %1 on olemassa.\n"
+"Korvataanko se?"
+
+#: attachment/attachmentcontrollerbase.cpp:819
+#, kde-format
+msgid "Save to File"
+msgstr "Tallenna tiedostoon"
+
+#: attachment/attachmentcontrollerbase.cpp:820
+#, kde-format
+msgid "&Replace"
+msgstr "&Korvaa"
+
+#: attachment/attachmentcontrollerbase.cpp:847
+#: attachment/attachmentcontrollerbase.cpp:905
+#, kde-format
+msgid "Do you really want to attach this directory \"%1\"?"
+msgstr "Haluatko varmasti liittää tämän kansion ”%1”?"
+
+#: attachment/attachmentcontrollerbase.cpp:848
+#: attachment/attachmentcontrollerbase.cpp:906
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach directory"
+msgstr "Liitä kansio"
+
+#: attachment/attachmentcontrollerbase.cpp:849
+#: attachment/attachmentcontrollerbase.cpp:907
+#, kde-format
+msgctxt "@action:button"
+msgid "Attach"
+msgstr "Liitä"
+
+#: attachment/attachmentcontrollerbase.cpp:884
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach Directory"
+msgstr "Liitä kansio"
+
+#: attachment/attachmentcontrollerbase.cpp:893
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach File"
+msgstr "Liitä tiedosto"
+
+#: attachment/attachmentcontrollerbase.cpp:936
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to attach file"
+msgstr "Tiedoston liittäminen epäonnistui"
+
+#: attachment/attachmentcontrollerbase.cpp:960
+#, kde-format
+msgid "Attach Public OpenPGP Key"
+msgstr "Liitä julkinen OpenPGP-avain"
+
+#: attachment/attachmentcontrollerbase.cpp:961
+#, kde-format
+msgid "Select the public key which should be attached."
+msgstr "Valitse liitettävä julkinen avain."
+
+#: attachment/attachmentmodel.cpp:122
+#, kde-format
+msgid "unnamed attachment"
+msgstr "nimetön liite"
+
+#: attachment/attachmentmodel.cpp:256
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
+msgstr ""
+"Nimi: %1<br>Koko: %2<br>Koodaus: %3<br>\n"
+"MIME-tyyppi=%4"
+
+#: attachment/attachmentmodel.cpp:439
+#, kde-format
+msgctxt "@title column attachment name."
+msgid "Name"
+msgstr "Nimi"
+
+#: attachment/attachmentmodel.cpp:441
+#, kde-format
+msgctxt "@title column attachment size."
+msgid "Size"
+msgstr "Koko"
+
+#: attachment/attachmentmodel.cpp:443
+#, kde-format
+msgctxt "@title column attachment encoding."
+msgid "Encoding"
+msgstr "Merkistö"
+
+#: attachment/attachmentmodel.cpp:445
+#, kde-format
+msgctxt "@title column attachment type."
+msgid "Type"
+msgstr "Tyyppi"
+
+#: attachment/attachmentmodel.cpp:447
+#, kde-format
+msgctxt "@title column attachment compression checkbox."
+msgid "Compress"
+msgstr "Pakkaus"
+
+#: attachment/attachmentmodel.cpp:449
+#, kde-format
+msgctxt "@title column attachment encryption checkbox."
+msgid "Encrypt"
+msgstr "Salaus"
+
+#: attachment/attachmentmodel.cpp:451
+#, kde-format
+msgctxt "@title column attachment signed checkbox."
+msgid "Sign"
+msgstr "Allekirjoitus"
+
+#: attachment/attachmentmodel.cpp:453
+#, kde-format
+msgctxt "@title column attachment inlined checkbox."
+msgid "Suggest Automatic Display"
+msgstr "Ehdota automaattista näkymää"
+
+#: composer/composer.cpp:276
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Vastaanottajille ei löytynyt avaimia."
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not sign/encrypt"
+msgstr "Säilytä &merkkaus, älä allekirjoita/salaa"
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not encrypt"
+msgstr "Säilytä &merkkaus, älä salaa"
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not sign"
+msgstr "Säilytä &merkkaus, älä allekirjoita"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Sign/Encrypt (delete markup)"
+msgstr "Salaa/Allekirjoita (poista merkkaus)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Encrypt (delete markup)"
+msgstr "Salaa (poista merkkaus)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Sign (delete markup)"
+msgstr "Allekirjoita (poista merkkaus)"
+
+#: composer/composerviewbase.cpp:331
+#, kde-format
+msgid ""
+"<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
+"you want to delete your markup?</p></qt>"
+msgstr ""
+"<qt><p>HTML-viestiin ei voi sisällyttää salausta tai allekirjoitusta.</"
+"p><p>Haluatko poistaa tekstin muotoilun?</p></qt>"
+
+#: composer/composerviewbase.cpp:333
+#, kde-format
+msgid "Sign/Encrypt Message?"
+msgstr "Allekirjoitetaanko tai salataanko viesti?"
+
+#: composer/composerviewbase.cpp:514
+#, kde-format
+msgid "It was not possible to create a message composer."
+msgstr "Viestinkirjoitusikkunan luominen ei ollut mahdollista."
+
+#: composer/composerviewbase.cpp:524
+#, kde-format
+msgid "Do you want to resize images?"
+msgstr "Haluatko muuttaa kuvien kokoa?"
+
+#: composer/composerviewbase.cpp:525
+#, kde-format
+msgid "Auto Resize Images"
+msgstr "Muuta kuvien kokoa automaattisesti"
+
+#: composer/composerviewbase.cpp:526
+#, kde-format
+msgctxt "@action:button"
+msgid "Auto Resize"
+msgstr "Muuta kokoa automaattisesti"
+
+#: composer/composerviewbase.cpp:527
+#, kde-format
+msgctxt "@action:button"
+msgid "Do Not Resize"
+msgstr "Älä muuta kokoa"
+
+#: composer/composerviewbase.cpp:737
+#, kde-format
+msgid "OpenPGP Key Expired"
+msgstr "OpenPGP-avain vanhentunut"
+
+#: composer/composerviewbase.cpp:737
+#, kde-format
+msgid "S/MIME Certificate Expired"
+msgstr "S/MIME-varmenne vanhentunut"
+
+#: composer/composerviewbase.cpp:739
+#, kde-format
+msgid "OpenPGP Key Expires Soon"
+msgstr "OpenPGP-avain vanhenee pian"
+
+#: composer/composerviewbase.cpp:739
+#, kde-format
+msgid "S/MIME Certificate Expires Soon"
+msgstr "S/MIME-varmenne vanhenee pian"
+
+#: composer/composerviewbase.cpp:814 composer/composerviewbase.cpp:828
+#: composer/composerviewbase.cpp:860
+#, kde-format
+msgid "Failed to resolve keys. Please report a bug."
+msgstr "Avaimia ei saatu ratkaistuksi: ilmoita viasta."
+
+#: composer/composerviewbase.cpp:1066 composer/composerviewbase.cpp:1331
+#, kde-format
+msgid "Job cancelled by the user"
+msgstr "Käyttäjä perui työn"
+
+#: composer/composerviewbase.cpp:1071
+#, kde-format
+msgid ""
+"Could not compose message: %1 \n"
+" Please report this bug."
+msgstr ""
+"Viestiä ei voi luoda: %1 \n"
+" Ilmoita tämä virheenä."
+
+#: composer/composerviewbase.cpp:1073
+#, kde-format
+msgid "Could not compose message: %1"
+msgstr "Viestiä ei voitu luoda: %1"
+
+#: composer/composerviewbase.cpp:1170
+#, kde-format
+msgid "There were problems trying to queue the message for sending: %1"
+msgstr "Viestin asettamisessa jonoon sattui virheitä: %1"
+
+#: composer/composerviewbase.cpp:1334
+#, kde-format
+msgid "Could not autosave message: %1"
+msgstr "Viestiä ei voitu automaattitallentaa: %1"
+
+#: composer/composerviewbase.cpp:1353
+#, kde-format
+msgid "Could not write all data to file."
+msgstr "Kaikkea dataa ei voitu kirjoittaa tiedostoon."
+
+#: composer/composerviewbase.cpp:1356
+#, kde-format
+msgid "Could not finalize the file."
+msgstr "Tiedostoa ei voitu viimeistellä."
+
+#: composer/composerviewbase.cpp:1360
+#, kde-format
+msgid "Could not open file."
+msgstr "Tiedostoa ei voitu avata."
+
+#: composer/composerviewbase.cpp:1367
+#, kde-format
+msgid ""
+"Autosaving the message as %1 failed.\n"
+"%2\n"
+"Reason: %3"
+msgstr ""
+"Viestin automaattitallennus nimellä %1 epäonnistui.\n"
+"%2\n"
+"Syy: %3"
+
+#: composer/composerviewbase.cpp:1373
+#, kde-format
+msgid "Autosaving Message Failed"
+msgstr "Viestin automaattitallennus epäonnistui"
+
+#: composer/composerviewbase.cpp:1486
+#, kde-format
+msgid "Failed to save the message: %1"
+msgstr "Viestiä ei voitu tallentaa: %1"
+
+#: composer/composerviewbase.cpp:1904
+#, kde-format
+msgid ""
+"The message you have composed seems to refer to an attached file but you "
+"have not attached anything.\n"
+"Do you want to attach a file to your message?"
+msgstr ""
+"Luomasi viesti näyttää viittaavan liitetiedostoon, muttet ole liittänyt "
+"mitään.\n"
+"Haluatko liittää tiedoston viestiisi?"
+
+#: composer/composerviewbase.cpp:1907
+#, kde-format
+msgid "File Attachment Reminder"
+msgstr "Tiedostoliitemuistutus"
+
+#: composer/composerviewbase.cpp:1909
+#, kde-format
+msgid "&Send as Is"
+msgstr "&Lähetä sellaisenaan"
+
+#: composer/composerviewbase.cpp:1961
+#, kde-format
+msgid ""
+"Examination of the recipient's signing preferences yielded that you be asked "
+"whether or not to sign this message.\n"
+"Sign this message?"
+msgstr ""
+"Vastaanottajan allekirjoitusasetusten tarkastelun perusteella sinun pitäisi "
+"päättää, allekirjoittaako viesti.\n"
+"Allekirjoitetaanko viesti?"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgid "Sign Message?"
+msgstr "Allekirjoitetaanko viesti?"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgctxt "to sign"
+msgid "&Sign"
+msgstr "&Allekirjoita"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgid "Do &Not Sign"
+msgstr "&Älä allekirjoita"
+
+#: composer/composerviewbase.cpp:1987
+#, kde-format
+msgid ""
+"There are conflicting signing preferences for these recipients.\n"
+"Sign this message?"
+msgstr ""
+"Vastaanottajien allekirjoitusasetuksissa on ristiriitoja.\n"
+"Allekirjoitetaanko viesti?"
+
+#: composer/composerviewbase.cpp:2011
+#, kde-format
+msgid ""
+"You have requested to sign this message, but no valid signing keys have been "
+"configured for this identity."
+msgstr ""
+"Olet pyytänyt allekirjoittaa viestin, mutta tälle henkilöydelle ei ole "
+"määritetty kelvollisia allekirjoitusavaimia."
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgid "Send Unsigned?"
+msgstr "Lähetetäänkö allekirjoittamatta?"
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgid "Send &Unsigned"
+msgstr "Lähetä &allekirjoittamatta"
+
+#: composer/composerviewbase.cpp:2028
+#, kde-format
+msgid ""
+"Some parts of this message will not be signed.\n"
+"Sending only partially signed messages might violate site policy.\n"
+"Sign all parts instead?"
+msgstr ""
+"Joitakin viestin osia ei voida allekirjoittaa.\n"
+"Osin allekirjoittamattomien viestien lähettäminen voi olla "
+"palvelinkäytänteiden vastaista.\n"
+"Allekirjoitetaanko siis kaikki osat?"
+
+#: composer/composerviewbase.cpp:2032
+#, kde-format
+msgid ""
+"This message will not be signed.\n"
+"Sending unsigned message might violate site policy.\n"
+"Sign message instead?"
+msgstr ""
+"Viestiä ei voida allekirjoittaa.\n"
+"Allekirjoittamattoman viestin lähettäminen voi olla palvelinkäytänteiden "
+"vastaista.\n"
+"Allekirjoitetaanko siis viesti?"
+
+#: composer/composerviewbase.cpp:2035
+#, kde-format
+msgid "&Sign All Parts"
+msgstr "&Allekirjoita kaikki osat"
+
+#: composer/composerviewbase.cpp:2035
+#, kde-format
+msgid "&Sign"
+msgstr "Allekirjoita"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "Unsigned-Message Warning"
+msgstr "Varoitus allekirjoittamattomasta viestistä"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "Send &As Is"
+msgstr "Lähetä &sellaisenaan"
+
+#: composer/composerviewbase.cpp:2084
+#, kde-format
+msgid ""
+"Valid trusted encryption keys were found for all recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"Kaikille vastaanottajille löytyi kelvollinen luotettava salausavain.\n"
+"Salataanko viesti?"
+
+#: composer/composerviewbase.cpp:2087
+#, kde-format
+msgid ""
+"Examination of the recipient's encryption preferences yielded that you be "
+"asked whether or not to encrypt this message.\n"
+"Encrypt this message?"
+msgstr ""
+"Vastaanottajan salausasetusten tarkastelun perusteella sinun pitäisi "
+"päättää, salataanko viesti.\n"
+"Salataanko viesti?"
+
+#: composer/composerviewbase.cpp:2093 composer/composerviewbase.cpp:2119
+#, kde-format
+msgid "Encrypt Message?"
+msgstr "Salataanko viesti?"
+
+#: composer/composerviewbase.cpp:2094
+#, kde-format
+msgid "Sign && &Encrypt"
+msgstr "Allekirjoita ja salaa"
+
+#: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2119
+#: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1317
+#: composer/keyresolver.cpp:1353
+#, kde-format
+msgid "&Encrypt"
+msgstr "&Salaa"
+
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#, kde-format
+msgid "&Sign Only"
+msgstr "&Vain allekirjoita"
+
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#, kde-format
+msgid "&Send As-Is"
+msgstr "Lähetä &sellaisenaan"
+
+#: composer/composerviewbase.cpp:2116
+#, kde-format
+msgid ""
+"There are conflicting encryption preferences for these recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"Vastaanottajien salausasetuksissa on ristiriitoja.\n"
+"Salataanko viesti?"
+
+#: composer/composerviewbase.cpp:2119
+#, kde-format
+msgid "Do &Not Encrypt"
+msgstr "&Älä salaa"
+
+#: composer/composerviewbase.cpp:2139
+#, kde-format
+msgid ""
+"You have requested to encrypt this message, and to encrypt a copy to "
+"yourself, but no valid trusted encryption keys have been configured for this "
+"identity."
+msgstr ""
+"Olet pyytänyt salata viestin ja kopion itsellesi, mutta tälle henkilöydelle "
+"ei ole määritetty kelvollisia salausavaimia."
+
+#: composer/composerviewbase.cpp:2143
+#, kde-format
+msgid "Send Unencrypted?"
+msgstr "Lähetetäänkö salaamattomana?"
+
+#: composer/composerviewbase.cpp:2143 composer/keyresolver.cpp:1339
+#, kde-format
+msgid "Send &Unencrypted"
+msgstr "Lähetä salaamatt&omana"
+
+#: composer/composerviewbase.cpp:2157
+#, kde-format
+msgid ""
+"Some parts of this message will not be encrypted.\n"
+"Sending only partially encrypted messages might violate site policy and/or "
+"leak sensitive information.\n"
+"Encrypt all parts instead?"
+msgstr ""
+"Joitakin viestin osia ei voida salata.\n"
+"Osin salaamattoman viestin lähettäminen voi olla palvelinkäytänteiden "
+"vastaista ja aiheuttaa tietovuodon.\n"
+"Salataanko siis kaikki osat?"
+
+#: composer/composerviewbase.cpp:2162
+#, kde-format
+msgid ""
+"This message will not be encrypted.\n"
+"Sending unencrypted messages might violate site policy and/or leak sensitive "
+"information.\n"
+"Encrypt messages instead?"
+msgstr ""
+"Tätä viestiä ei salata.\n"
+"Salaamattoman viestin lähettäminen voi olla palvelinkäytänteiden vastaista "
+"ja aiheuttaa tietovuodon.\n"
+"Salataanko viesti kuitenkin?"
+
+#: composer/composerviewbase.cpp:2166
+#, kde-format
+msgid "&Encrypt All Parts"
+msgstr "&Salaa kaikki osat"
+
+#: composer/composerviewbase.cpp:2169
+#, kde-format
+msgid "Unencrypted Message Warning"
+msgstr "Varoitus salaamattomasta viestistä"
+
+#: composer/keyresolver.cpp:302
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not fully trusted for encryption."
+msgstr ""
+"Yhtä tai useampaa asettamistasi OpenPGP-salausavaimista tai S/MIME-"
+"varmenteista ei pidetä täysin luotettavana salaukseen."
+
+#: composer/keyresolver.cpp:306
+#, kde-format
+msgid ""
+"One or more of the OpenPGP encryption keys or S/MIME certificates for "
+"recipient \"%1\" is not fully trusted for encryption."
+msgstr ""
+"Yhtä tai useampaa asettamistasi OpenPGP-salausavaimista tai S/MIME-"
+"varmenteista vastaanottajalle ”%1” ei pidetä täysin luotettavana salaukseen."
+
+#: composer/keyresolver.cpp:313
+#, kde-format
+msgid ""
+"\n"
+"The following keys are only marginally trusted: \n"
+msgstr ""
+"\n"
+"Seuraaviin avaimiin luotetaan vain marginaalisesti:\n"
+
+#: composer/keyresolver.cpp:317
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates have unknown trust level: \n"
+msgstr ""
+"\n"
+"Seuraavien avainten tai varmenteiden luotettavuutta ei tiedetä:\n"
+
+#: composer/keyresolver.cpp:321
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates are <b>revoked</b>: \n"
+msgstr ""
+"\n"
+"Seuraavat avaimet tai varmenteet on <b>peruttu</b>: \n"
+
+#: composer/keyresolver.cpp:327
+#, kde-format
+msgid "Not Fully Trusted Encryption Keys"
+msgstr "Salausavaimia, joihin ei luoteta täysin"
+
+#: composer/keyresolver.cpp:645
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not usable for encryption. Please reconfigure your "
+"encryption keys and certificates for this identity in the identity "
+"configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"Yksi tai useampi asettamistasi OpenPGP-salausavaimista tai S/MIME-"
+"varmenteista ei kelpaa salaukseen. Aseta tämän henkilöyden salausavaimet ja "
+"varmenteet uudelleen henkilöyksien asetusikkunassa.\n"
+"Jos kuitenkin jatkat ja avaimia tuonnempana tarvitaan, sinulta kysytään "
+"käytettäviä avaimia."
+
+#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
+#: composer/keyresolver.cpp:1037
+#, kde-format
+msgid "Unusable Encryption Keys"
+msgstr "Käyttökelvottomia salausavaimia"
+
+#: composer/keyresolver.cpp:687
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP signing keys or S/MIME signing "
+"certificates is not usable for signing. Please reconfigure your signing keys "
+"and certificates for this identity in the identity configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"Yksi tai useampi asettamistasi OpenPGP-salausavaimista tai S/MIME-"
+"allekirjoitusvarmenteista ei kelpaa allekirjoittamiseen. Aseta tämän "
+"henkilöyden allekirjoitusavaimet ja varmenteet uudelleen henkilöyksien "
+"asetusikkunassa.\n"
+"Jos kuitenkin jatkat ja avaimia tarvitaan tuonnempana, sinulta kysytään "
+"käytettävät avaimet."
+
+#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
+#: composer/keyresolver.cpp:1084
+#, kde-format
+msgid "Unusable Signing Keys"
+msgstr "Käyttökelvottomia allekirjoitusavaimia"
+
+#: composer/keyresolver.cpp:998
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid trusted OpenPGP encryption keys for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"Vastaanottajan salausasetusten tarkastelu ohjeistaa salaamaan viestin "
+"OpenPGP:llä ainakin joillekuille vastaanottajista.\n"
+"Et kuitenkaan ole asettanut kelvollista, luotettua OpenPGP-salausavainta "
+"tälle henkilöydelle.\n"
+"Voit jatkaa salaamatta viestiä itsellesi, mutta muista, ettet enää voi lukea "
+"omaa viestiäsi siinä tapauksessa."
+
+#: composer/keyresolver.cpp:1027
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME encryption certificates for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"Vastaanottajan allekirjoitusasetusten tarkastelu ohjeistaa salaamaan viestin "
+"S/MIME-tavalla ainakin joillekuille vastaanottajista.\n"
+"Et kuitenkaan ole asettanut kelvollista S/MIME-salausvarmennetta tälle "
+"henkilöydelle.\n"
+"Voit jatkaa salaamatta viestiä itsellesi, mutta muista, ettet enää voi lukea "
+"omaa viestiäsi siinä tapauksessa."
+
+#: composer/keyresolver.cpp:1059
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid OpenPGP signing certificates for this "
+"identity."
+msgstr ""
+"Vastaanottajan allekirjoitusasetusten tarkastelu ohjeistaa allekirjoittamaan "
+"viestisi OpenPGP-tavalla ainakin joillekuille vastaanottajista.\n"
+"Et kuitenkaan ole asettanut kelvollista OpenPGP-allekirjoitusvarmennetta "
+"tälle henkilöydelle."
+
+#: composer/keyresolver.cpp:1067
+#, kde-format
+msgid "Do Not OpenPGP-Sign"
+msgstr "Älä OpenPGP-allekirjoita"
+
+#: composer/keyresolver.cpp:1077
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME signing certificates for this "
+"identity."
+msgstr ""
+"Vastaanottajan allekirjoitusasetusten tarkastelu ohjeistaa allekirjoittamaan "
+"viestisi S/MIME-tavalla ainakin joillekuille vastaanottajista.\n"
+"Et kuitenkaan ole asettanut kelvollista S/MIME-allekirjoitusvarmennetta "
+"tälle henkilöydelle."
+
+#: composer/keyresolver.cpp:1085
+#, kde-format
+msgid "Do Not S/MIME-Sign"
+msgstr "Älä S/MIME-allekirjoita"
+
+#: composer/keyresolver.cpp:1147
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences showed no common type of "
+"signature matching your available signing keys.\n"
+"Send message without signing?"
+msgstr ""
+"Vastaanottajan allekirjoitusasetuksia tarkastelemalla ei löytynyt saatavilla "
+"olevia allekirjoitusavaimiasi vastaavaa allekirjoitustyyppiä.\n"
+"Lähetetäänkö viesti allekirjoittamatta?"
+
+#: composer/keyresolver.cpp:1151
+#, kde-format
+msgid "No signing possible"
+msgstr "Allekirjoittaminen ei mahdollista"
+
+#: composer/keyresolver.cpp:1314
+#, kde-format
+msgid ""
+"You did not select an encryption key for yourself (encrypt to self). You "
+"will not be able to decrypt your own message if you encrypt it."
+msgstr ""
+"Et valinnut omaa salausavaintasi. Et voi enää purkaa viestisi salausta, jos "
+"salaat sen."
+
+#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
+#: composer/keyresolver.cpp:1353
+#, kde-format
+msgid "Missing Key Warning"
+msgstr "Varoitus puuttuvasta avaimesta"
+
+#: composer/keyresolver.cpp:1332
+#, kde-format
+msgid ""
+"You did not select an encryption key for the recipient of this message; "
+"therefore, the message will not be encrypted."
+msgstr ""
+"Et valinnut viestin vastaanottajan salausavainta, joten viestiä ei salata."
+
+#: composer/keyresolver.cpp:1336
+#, kde-format
+msgid ""
+"You did not select an encryption key for any of the recipients of this "
+"message; therefore, the message will not be encrypted."
+msgstr ""
+"Et valinnut yhdenkään viestisi vastaanottajan salausavainta, joten viestiä "
+"ei salata."
+
+#: composer/keyresolver.cpp:1345
+#, kde-format
+msgid ""
+"You did not select an encryption key for one of the recipients: this person "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"Et valinnut salausavainta yhdelle vastaanottajistasi: hän ei voi purkaa "
+"viestiäsi, jos salaat sen."
+
+#: composer/keyresolver.cpp:1349
+#, kde-format
+msgid ""
+"You did not select encryption keys for some of the recipients: these persons "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"Et valinnut salausavaimia kaikille vastaanottajistasi: kaikki eivät voi "
+"purkaa viestiäsi, jos salaat sen."
+
+#: composer/keyresolver.cpp:1425
+#, kde-format
+msgid "Encryption Key Selection"
+msgstr "Salausavaimen valinta"
+
+#: composer/keyresolver.cpp:1469
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"There is a problem with the encryption certificate(s) for \"%1\".\n"
+"\n"
+"Please re-select the certificate(s) which should be used for this recipient."
+msgstr ""
+"Vastaanottajan ”%1” salausvarmenteissa oli ongelma.\n"
+"\n"
+"Valitse uudelleen varmenne tai varmenteet, joita tälle vastaanottajalle "
+"tulisi käyttää."
+
+#: composer/keyresolver.cpp:1543
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"<qt>No valid and trusted encryption certificate was found for \"%1\".<br/"
+"><br/>Select the certificate(s) which should be used for this recipient. If "
+"there is no suitable certificate in the list you can also search for "
+"external certificates by clicking the button: search for external "
+"certificates.</qt>"
+msgstr ""
+"<qt>Vastaanottajalle ”%1” ei löytynyt kelvollista, luotettua "
+"salausvarmennetta.<br/><br/>Valitse varmenne tai varmenteet, joita tälle "
+"vastaanottajalle tulisi käyttää. Ellei luettelossa ole sopivaa, voit etsiä "
+"ulkoisia varmenteita napsauttamalla painiketta ”Etsi ulkoisia varmenteita”.</"
+"qt>"
+
+#: composer/keyresolver.cpp:1553
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"More than one certificate matches \"%1\".\n"
+"\n"
+"Select the certificate(s) which should be used for this recipient."
+msgstr ""
+"Useampi varmenne vastaa hakua ”%1”.\n"
+"\n"
+"Valitse varmenne tai varmenteet, joita tälle vastaanottajalle tulisi käyttää."
+
+#: composer/nearexpirychecker.cpp:82
+#, kde-format
+msgid ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>OpenPGP-allekirjoitusavaimesi</p><p align=center><b>%2</b> (avaimen "
+"tunniste 0x%3)</p><p>vanheni alle vuorokausi sitten.</p>"
+msgstr[1] ""
+"<p>OpenPGP-allekirjoitusavaimesi</p><p align=center><b>%2</b> (avaimen "
+"tunniste 0x%3)</p><p>vanheni %1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:88
+#, kde-format
+msgid ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>OpenPGP-salausavaimesi</p><p align=center><b>%2</b> (avaimen tunniste 0x"
+"%3)</p><p>vanheni alle vuorokausi sitten.</p>"
+msgstr[1] ""
+"<p>OpenPGP-salausavaimesi</p><p align=center><b>%2</b> (avaimen tunniste 0x"
+"%3)</p><p>vanheni %1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:94
+#, kde-format
+msgid ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>OpenPGP-avaimesi vastaanottajalle</p><p align=center><b>%2</b> (avaimen "
+"tunniste 0x%3)</p><p>vanheni alle vuorokausi sitten.</p>"
+msgstr[1] ""
+"<p>OpenPGP-avaimesi vastaanottajalle</p><p align=center><b>%2</b> (avaimen "
+"tunniste 0x%3)</p><p>vanheni %1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:103
+#, kde-format
+msgid ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>OpenPGP-allekirjoitusavaimesi</p><p align=\"center\"><b>%2</b> (avaimen "
+"tunniste 0x%3)</p><p>vanhenee alle vuorokaudessa.</p>"
+msgstr[1] ""
+"<p>OpenPGP-allekirjoitusavaimesi</p><p align=\"center\"><b>%2</b> (avaimen "
+"tunniste 0x%3)</p><p>vanhenee %1 päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:109
+#, kde-format
+msgid ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Vastaanottajan</p><p align=\"center\"><b>%2</b> (avaintunniste 0x%3)</"
+"p><p>OpenPGP-salausavaimesi vanhenee vuorokauden sisään.</p>"
+msgstr[1] ""
+"<p>Vastaanottajan</p><p align=\"center\"><b>%2</b> (avaintunniste 0x%3)</"
+"p><p>OpenPGP-salausavaimesi vanhenee %1 päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:115
+#, kde-format
+msgid ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Vastaanottajan</p><p align=\"center\"><b>%2</b> (avaintunniste 0x%3)</"
+"p><p>OpenPGP-avain vanhenee vuorokauden sisään.</p>"
+msgstr[1] ""
+"<p>Vastaanottajan</p><p align=\"center\"><b>%2</b> (avaintunniste 0x%3)</"
+"p><p>OpenPGP-avain vanhenee %1 päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:135
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=\"center\"><b>%2</b> "
+"(sarjanumero %3)</p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></"
+"p><p>vanheni alle vuorokausi sitten.</p>"
+msgstr[1] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=\"center\"><b>%2</b> "
+"(sarjanumero %3)</p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></"
+"p><p>vanheni %1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:143
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=center><b>%2</b> (sarjanumero %3)</"
+"p><p>juurivarmenne</p><p align=center>%4</p><p>vanheni alle vuorokausi "
+"sitten.</p>"
+msgstr[1] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=center><b>%2</b> (sarjanumero %3)</"
+"p> <p>juurivarmenne</p><p align=center>%4</p><p>vanheni %1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:151
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+"less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired %1 "
+"days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME-varmenteesi</p><p align=center><b>%2</b> (sarjanumero %3)</p> "
+"<p>juurivarmenne</p><p align=center><b>%4</b></p><p>vanheni alle vuorokausi "
+"sitten.</p>"
+msgstr[1] ""
+"<p>S/MIME-varmenteesi</p><p align=center><b>%2</b> (sarjanumero %3)</p> "
+"<p>juurivarmenne</p><p align=center><b>%4</b></p><p>vanheni %1 päivää sitten."
+"</p>"
+
+#: composer/nearexpirychecker.cpp:161
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=center><b>%2</b> (sarjanumero "
+"%3)</p><p>välillinen CA-varmenne</p><p align=center<b>%4</b></p> <p>vanheni "
+"alle vuorokausi sitten.</p>"
+msgstr[1] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=center><b>%2</b> (sarjanumero "
+"%3)</p><p>välillinen CA-varmenne</p><p align=center<b>%4</b></p> <p>vanheni "
+"alle %1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:169
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=center><b>%2</b> (sarjanumero %3</"
+"p><p>välillinen CA-varmenne</p><p align=center><b>%4</b></p><p>vanheni alle "
+"vuorokausi sitten.</p>"
+msgstr[1] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=center><b>%2</b> (sarjanumero %3</"
+"p><p>välillinen CA-varmenne</p><p align=center><b>%4</b></p><p>vanheni alle "
+"%1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:177
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME-varmenteen</p><p align=center><b>%2</b> (sarjanumero %3)</"
+"p><p>välillinen CA-varmenne</p><p align=center><b>%4</b></p><p>vanheni alle "
+"vuorokausi sitten.</p>"
+msgstr[1] ""
+"<p>S/MIME-varmenteen</p><p align=center><b>%2</b> (sarjanumero %3)</"
+"p><p>välillinen CA-varmenne</p><p align=center><b>%4</b></p><p>vanheni alle "
+"%1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:193
+#, kde-format
+msgid ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=center><b>%2</b> (sarjanumero "
+"%3)</p><p>vanheni alle vuorokausi sitten.</p>"
+msgstr[1] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=center><b>%2</b> (sarjanumero "
+"%3)</p><p>vanheni alle %1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:199
+#, kde-format
+msgid ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=center><b>%2</b> (sarjanumero %3)</"
+"p><p>vanheni alle vuorokausi sitten.</p>"
+msgstr[1] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=center><b>%2</b> (sarjanumero %3)</"
+"p><p>vanheni alle %1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:205
+#, kde-format
+msgid ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME-varmenteesi vastaanottajalle</p><p align=center><b>%2</b> "
+"(sarjanumero %3)</p><p>vanheni alle vuorokausi sitten.</p>"
+msgstr[1] ""
+"<p>S/MIME-varmenteesi vastaanottajalle</p><p align=center><b>%2</b> "
+"(sarjanumero %3)</p><p>vanheni %1 päivää sitten.</p>"
+
+#: composer/nearexpirychecker.cpp:218
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=\"center\"><b>%2</b> "
+"(sarjanumero %3)</p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></"
+"p><p>vanhenee vuorokauden sisään.</p>"
+msgstr[1] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=\"center\"><b>%2</b> "
+"(sarjanumero %3)</p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></"
+"p><p>vanhenee %1 päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:226
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=\"center\"><b>%2</b> (sarjanumero "
+"%3)</p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></p><p>vanhenee "
+"vuorokauden sisään.</p>"
+msgstr[1] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=\"center\"><b>%2</b> (sarjanumero "
+"%3)</p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></p><p>vanhenee "
+"vuorokauden %1 päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:234
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
+"in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
+"in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME-varmenteen</p><p align=\"center\"><b>%2</b> (sarjanumero %3)</"
+"p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></p><p>vanhenee alle "
+"vuorokaudessa.</p>"
+msgstr[1] ""
+"<p>S/MIME-varmenteen</p><p align=\"center\"><b>%2</b> (sarjanumero %3)</"
+"p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></p><p>vanhenee %1 "
+"päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:244
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=\"center\"><b>%2</b> "
+"(sarjanumero %3)</p><p>välillinen CA-varmenne</p><p align=\"center\"><b>%4</"
+"b></p><p>vanhenee vuorokauden sisään.</p>"
+msgstr[1] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=\"center\"><b>%2</b> "
+"(sarjanumero %3)</p><p>välillinen CA-varmenne</p><p align=\"center\"><b>%4</"
+"b></p><p>vanhenee vuorokauden %1 päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:252
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=\"center\"><b>%2</b> (sarjanumero "
+"%3)</p><p>välillinen CA-varmenne</p><p align=\"center\"><b>%4</b></"
+"p><p>vanhenee vuorokauden sisään.</p>"
+msgstr[1] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=\"center\"><b>%2</b> (sarjanumero "
+"%3)</p><p>välillinen CA-varmenne</p><p align=\"center\"><b>%4</b></"
+"p><p>vanhenee %1 päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:260
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME-varmenteen</p><p align=\"center\"><b>%2</b> (sarjanumero %3)</"
+"p><p>välillinen CA-varmenne</p><p align=\"center\"><b>%4</b></p><p>vanhenee "
+"alle vuorokauden sisään.</p>"
+msgstr[1] ""
+"<p>S/MIME-varmenteen</p><p align=\"center\"><b>%2</b> (sarjanumero %3)</"
+"p><p>välillinen CA-varmenne</p><p align=\"center\"><b>%4</b></p><p>vanhenee "
+"%1 päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:276
+#, kde-format
+msgid ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=\"center\"><b>%2</b> "
+"(sarjanumero %3)</p><p>vanhenee vuorokauden sisään.</p>"
+msgstr[1] ""
+"<p>S/MIME-allekirjoitusvarmenteesi</p><p align=\"center\"><b>%2</b> "
+"(sarjanumero %3)</p><p>vanhenee %1 päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:282
+#, kde-format
+msgid ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=\"center\"><b>%2</b> (sarjanumero "
+"%3)</p><p>vanhenee vuorokauden sisään.</p>"
+msgstr[1] ""
+"<p>S/MIME-salausvarmenteesi</p><p align=\"center\"><b>%2</b> (sarjanumero "
+"%3)</p><p>vanhenee %1 päivässä.</p>"
+
+#: composer/nearexpirychecker.cpp:288
+#, kde-format
+msgid ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Vastaanottajan</p><p align=\"center\"><b>%2</b> (sarjanumero %3)</p><p>S/"
+"MIME-varmenne vanhenee vuorokauden sisään.</p>"
+msgstr[1] ""
+"<p>Vastaanottajan</p><p align=\"center\"><b>%2</b> (sarjanumero %3)</p><p>S/"
+"MIME-varmenne vanhenee %1 päivässä.</p>"
+
+#: followupreminder/followupremindercreatejob.cpp:76
+#, kde-format
+msgid "Wait answer from \"%1\" send to \"%2\""
+msgstr "Odota vastausta aiheesta ”%1” osoitteeseen ”%2”"
+
+#: followupreminder/followupremindercreatejob.cpp:99
+#, kde-format
+msgid ""
+"Failed to store a new reminder: an error occurred while trying to create a "
+"new to-do in your calendar: %1"
+msgstr ""
+"Uuden muistutuksen tallennus epäonnistui: yritettäessä luoda uutta tehtävää "
+"kalenteriin sattui virhe: %1"
+
+#: followupreminder/followupremindercreatejob.cpp:131
+#, kde-format
+msgid "Failed to store a new reminder: %1"
+msgstr "Uutta muistutusta ei voitu tallentaa: %1"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Date"
+msgstr "Valitse päivä"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:63
+#, kde-format
+msgid "Date:"
+msgstr "Päivä:"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:71
+#, kde-format
+msgid "Store to-do in:"
+msgstr "Tallenna tehtävä kokoelmaan:"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "The selected date must be greater than the current date."
+msgstr "Valitun päivän täytyy olla nykyistä päivää myöhempi."
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "Invalid date"
+msgstr "Virheellinen päivä"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "The selected folder is not valid."
+msgstr "Valittu kansio ei ole kelvollinen."
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "Invalid folder"
+msgstr "Virheellinen kansio"
+
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#, kde-format
+msgid "forwarded message"
+msgstr "välitetty viesti"
+
+#: helper/messagefactoryng.cpp:575
+#, kde-format
+msgid "Receipt: "
+msgstr "Kuittaus: "
+
+#: helper/messagefactoryng.cpp:702
+#, kde-format
+msgid ""
+"\n"
+"This is a MIME digest forward. The content of the message is contained in "
+"the attachment(s).\n"
+"\n"
+"\n"
+msgstr ""
+"\n"
+"Tämä on MIME-koostevälitys. Viestin sisältö on liitteenä/liitteinä.\n"
+"\n"
+"\n"
+
+#: imagescaling/imagescalingselectformat.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Image Format"
+msgstr "Valitse kuvamuoto"
+
+#: imagescaling/imagescalingselectformat.cpp:94
+#, kde-format
+msgid "Select Format..."
+msgstr "Valitse muoto…"
+
+#: imagescaling/imagescalingwidget.cpp:113
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">Kuinka tämä toimii?</a>"
+
+#: imagescaling/imagescalingwidget.cpp:123
+#, kde-format
+msgid ""
+"<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
+"current time</li><li>%d set current date</li><li>%n original filename</"
+"li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
+msgstr ""
+"<qt> <p>Tässä voit määrittää kuvan nimen. Voit käyttää muuttujia:</p> <ul> "
+"<li>%t kellonaika</li> <li>%d päivämäärä</li> <li>%n alkuperäinen "
+"tiedostonimi</li> <li>%e alkuperäinen tunnisteosa</li> <li>%x uusi "
+"tunnisteosa</li> </ul> </qt>"
+
+#: imagescaling/imagescalingwidget.cpp:193
+#, kde-format
+msgid "Custom"
+msgstr "Mukautettu"
+
+#: imagescaling/imagescalingwidget.cpp:321
+#, kde-format
+msgid "Please verify minimum and maximum values."
+msgstr "Tarkista vähimmäis- ja enimmäisarvot."
+
+# Ikkunan otsikko virheilmoituksessa, joka näytetään, jos vähimmäisarvo  ≥ enimmäisarvo.
+#: imagescaling/imagescalingwidget.cpp:321
+#, kde-format
+msgid "Error in minimum Maximum value"
+msgstr "Virhe vähimmäis- ja enimmäisarvoissa"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
+#: imagescaling/ui/imagescalingwidget.ui:17
+#, kde-format
+msgid "Automatically resize images"
+msgstr "Muuta kuvien kokoa automaattisesti"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: imagescaling/ui/imagescalingwidget.ui:28
+#, kde-format
+msgid "General"
+msgstr "Yleistä"
+
+#. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
+#: imagescaling/ui/imagescalingwidget.ui:34
+#, kde-format
+msgid "Keep ratio"
+msgstr "Säilytä suhteet"
+
+#. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
+#: imagescaling/ui/imagescalingwidget.ui:41
+#, kde-format
+msgid "Ask before resizing"
+msgstr "Kysy ennen koon muuttamista"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: imagescaling/ui/imagescalingwidget.ui:50
+#, kde-format
+msgid "Fallback to format:"
+msgstr "Käytä varalla muotoa:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: imagescaling/ui/imagescalingwidget.ui:89
+#, kde-format
+msgid "Image"
+msgstr "Kuva"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ReduceImageToMaximum)
+#: imagescaling/ui/imagescalingwidget.ui:95
+#, kde-format
+msgid "Reduce image to maximum dimension:"
+msgstr "Aseta kuvan kooksi enintään:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: imagescaling/ui/imagescalingwidget.ui:109
+#, kde-format
+msgid "Maximum width:"
+msgstr "Enimmäisleveys:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: imagescaling/ui/imagescalingwidget.ui:116
+#, kde-format
+msgid "Maximum height:"
+msgstr "Enimmäiskorkeus:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumHeight)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumHeight)
+#: imagescaling/ui/imagescalingwidget.ui:133
+#: imagescaling/ui/imagescalingwidget.ui:146
+#: imagescaling/ui/imagescalingwidget.ui:198
+#: imagescaling/ui/imagescalingwidget.ui:211
+#, kde-format
+msgid " px"
+msgstr " px"
+
+#. i18n: ectx: property (text), widget (QCheckBox, EnlargeImageToMinimum)
+#: imagescaling/ui/imagescalingwidget.ui:163
+#, kde-format
+msgid "Enlarge image to minimum dimension"
+msgstr "Aseta kuvan kooksi vähintään:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: imagescaling/ui/imagescalingwidget.ui:174
+#, kde-format
+msgid "Minimum width:"
+msgstr "Vähimmäisleveys:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: imagescaling/ui/imagescalingwidget.ui:181
+#, kde-format
+msgid "Minimum height:"
+msgstr "Vähimmäiskorkeus:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, skipImageSizeLower)
+#: imagescaling/ui/imagescalingwidget.ui:230
+#, kde-format
+msgid "Skip image whose size of the source file is lower than:"
+msgstr "Ohita kuva, jonka lähdetiedoston koko on pienempi kuin:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
+#: imagescaling/ui/imagescalingwidget.ui:237
+#, kde-format
+msgid " KiB"
+msgstr " KiB"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: imagescaling/ui/imagescalingwidget.ui:263
+#, kde-format
+msgid "Filename"
+msgstr "Tiedostonimi"
+
+#. i18n: ectx: property (title), widget (QGroupBox, filterSourceGroupBox)
+#: imagescaling/ui/imagescalingwidget.ui:269
+#, kde-format
+msgid "Source filter"
+msgstr "Lähdesuodatin"
+
+#. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
+#: imagescaling/ui/imagescalingwidget.ui:275
+#, kde-format
+msgid "Do not filter (All files are included)"
+msgstr "Älä suodata (kaikki tiedostot sisällytetään)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:285
+#, kde-format
+msgid "Include all files whose names contains one of the patterns"
+msgstr "Sisällytä kaikki tiedostot, joiden nimet sisältävät yhden hahmoista"
+
+#. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:292
+#, kde-format
+msgid "Exclude all files whose names contains one of the patterns"
+msgstr "Jätä pois tiedostot, joiden nimet sisältävät yhden hahmoista"
+
+#. i18n: ectx: property (text), widget (QLabel, patternLabel)
+#: imagescaling/ui/imagescalingwidget.ui:301
+#, kde-format
+msgid "Pattern:"
+msgstr "Hahmo:"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, pattern)
+#: imagescaling/ui/imagescalingwidget.ui:308
+#, kde-format
+msgid "This line allows to define several pattern. Separate them with ';'."
+msgstr "Tällä rivillä voit antaa useita hahmoja. Erota ne puolipistein (”;”)."
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, doNotResizePattern)
+#: imagescaling/ui/imagescalingwidget.ui:311
+#: imagescaling/ui/imagescalingwidget.ui:419
+#: imagescaling/ui/imagescalingwidget.ui:443
+#, kde-format
+msgid "Specify patterns separate with ';'"
+msgstr "Määritä hahmot puolipistein (”;”) erotettuna"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: imagescaling/ui/imagescalingwidget.ui:326
+#, kde-format
+msgid "Image Format"
+msgstr "Kuvatiedoston muoto"
+
+#. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
+#: imagescaling/ui/imagescalingwidget.ui:332
+#, kde-format
+msgid "Resize all images with one of these formats"
+msgstr "Muuta kaikkien näiden kuvamuotojen kuvien kokoa"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: imagescaling/ui/imagescalingwidget.ui:345
+#, kde-format
+msgid "Resize filename"
+msgstr "Uusi tiedostonimi"
+
+#. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
+#: imagescaling/ui/imagescalingwidget.ui:371
+#, kde-format
+msgid "Rename resized images with following pattern:"
+msgstr "Nimeä muuttuneet tiedostot seuraavien hahmojen mukaan:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
+#: imagescaling/ui/imagescalingwidget.ui:389
+#, kde-format
+msgid "Recipients"
+msgstr "Vastaanottajat"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotFilterRecipients)
+#: imagescaling/ui/imagescalingwidget.ui:395
+#, kde-format
+msgid "Do not filter (All recipients are allowed)"
+msgstr "Älä suodata (kaikki vastaanottajat sallitaan)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:405
+#, kde-format
+msgid "Resize if each emails address contains one of the pattern"
+msgstr "Muuta kokoa, jos jokainen sähköpostiosoite sisältää yhden hahmoista"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:412
+#, kde-format
+msgid "Resize if one emails address contains one of the pattern"
+msgstr "Muuta kokoa, jos jokin sähköpostiosoitteista sisältää yhden hahmoista"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:429
+#, kde-format
+msgid "Do not resize if each emails address contains one of the pattern"
+msgstr ""
+"Älä muuta kokoa, jos jokainen sähköpostiosoite sisältää yhden hahmoista"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:436
+#, kde-format
+msgid "Do not resize if one emails address contains one of the pattern"
+msgstr "Älä muuta kokoa, jos jokin sähköpostiosoite sisältää yhden hahmoista"
+
+#: job/attachmentclipboardjob.cpp:42
+#, kde-format
+msgid "No text found in Clipboard"
+msgstr "Leikepöydältä ei löytynyt tekstiä"
+
+#: job/attachmentclipboardjob.cpp:46
+#, kde-format
+msgid "Define Attachment Name"
+msgstr "Määritä liitteen nimi"
+
+#: job/attachmentclipboardjob.cpp:46
+#, kde-format
+msgid "Attachment Name:"
+msgstr "Liitteen nimi:"
+
+#: job/attachmentclipboardjob.cpp:49
+#, kde-format
+msgid "Clipboard Text"
+msgstr "Leikepöydän teksti"
+
+#: job/attachmentfrompublickeyjob.cpp:50
+#, kde-format
+msgid "OpenPGP key 0x%1"
+msgstr "OpenPGP-avain 0x%1"
+
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#, kde-format
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>%1</b></p>"
+msgstr ""
+"<p>Sattui virhe yritettäessä viedä avainta taustaosasta:</p><p><b>%1</b></p>"
+
+#: job/attachmentfrompublickeyjob.cpp:107
+#, kde-format
+msgid "Exporting key..."
+msgstr "Viedään avainta…"
+
+#: job/attachmentvcardfromaddressbookjob.cpp:75
+#, kde-format
+msgid "Unknown Contact Type"
+msgstr "Tuntematon yhteystiedon tyyppi"
+
+#: job/attachmentvcardfromaddressbookjob.cpp:86
+#, kde-format
+msgid "Invalid Contact"
+msgstr "Virheellinen yhteystieto"
+
+#: job/attachmentvcardfromaddressbookjob.cpp:102
+#, kde-format
+msgid "Impossible to generate vCard."
+msgstr "vCardin luominen on mahdotonta."
+
+#: job/autocryptheadersjob.cpp:104
+#, kde-format
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>No valid key found for user %1 (%2)</b></p>"
+msgstr ""
+"<p>Sattui virhe yritettäessä viedä avainta taustaosasta:</p><p><b>Ei "
+"kelvollista avainta käyttäjälle %1 (%2)</b></p>"
+
+#: job/maintextjob.cpp:60
+#, kde-format
+msgid "Asked to use word wrapping, but not given wrapped plain text."
+msgstr "Pyydetty rivittämään, muttei annettu rivitettyä paljasta tekstiä."
+
+#: job/maintextjob.cpp:67
+#, kde-format
+msgid "Asked not to use word wrapping, but not given clean plain text."
+msgstr "Pyydetty rivittämään, muttei annettu paljasta tekstiä."
+
+#: job/maintextjob.cpp:82
+#, kde-format
+msgid ""
+"No charsets were available for encoding. Please check your configuration and "
+"make sure it contains at least one charset for sending."
+msgstr ""
+"Käytettävää merkistökoodausta ei ole saatavilla. Tarkista asetus ja "
+"varmista, että lähetykselle on asetettu vähintään yksi merkistökoodaus."
+
+#: job/maintextjob.cpp:100
+#, kde-format
+msgid ""
+"Encoding the message with %1 will lose some characters.\n"
+"Do you want to continue?"
+msgstr ""
+"Viestin koodaaminen merkistöön %1 hukkaa joitakin merkkejä.\n"
+"Haluatko jatkaa?"
+
+#: job/maintextjob.cpp:103
+#, kde-format
+msgid "Some Characters Will Be Lost"
+msgstr "Joitakin merkkejä menetetään"
+
+#: job/maintextjob.cpp:104
+#, kde-format
+msgid "Lose Characters"
+msgstr "Hukkaa merkkejä"
+
+#: job/maintextjob.cpp:105
+#, kde-format
+msgid "Change Encoding"
+msgstr "Vaihda merkistöä"
+
+#: job/maintextjob.cpp:108
+#, kde-format
+msgid "User decided to change the encoding."
+msgstr "Käyttäjä päätti vaihtaa merkistöä."
+
+#: job/maintextjob.cpp:118
+#, kde-format
+msgid "The selected encoding (%1) cannot fully encode the message."
+msgstr "Valittu merkistö (%1) ei kykene täysin koodaamaan viestiä."
+
+#: job/maintextjob.cpp:143
+#, kde-format
+msgid "Could not get text codec for charset \"%1\"."
+msgstr "Ei saatu tekstikoodekkia merkistölle ”%1”."
+
+#: job/savecontactpreferencejob.cpp:51
+#, kde-format
+msgid "Name Selection"
+msgstr "Nimen valinta"
+
+#: job/savecontactpreferencejob.cpp:52
+#, kde-format
+msgid "Which name shall the contact '%1' have in your address book?"
+msgstr "Mikä nimi yhteystiedolle ”%1” annetaan osoitekirjassasi?"
+
+#: job/savecontactpreferencejob.cpp:64
+#, kde-format
+msgid "Select the address book folder to store the new contact in:"
+msgstr "Valitse osoitekirja, johon uusi yhteystieto tallennetaan:"
+
+#: job/singlepartjob.cpp:67
+#, kde-format
+msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
+msgstr "Content-Transfer-Encoding %1 ei voi koodata tätä viestiä oikein."
+
+#: mdn/mdnadvicedialog.cpp:21
+#, kde-format
+msgctxt "@title:window"
+msgid "Message Disposition Notification Request"
+msgstr "Viestinvälityksen ilmoituspyyntö"
+
+#: mdn/mdnadvicedialog.cpp:30
+#, kde-format
+msgid "Send \"&denied\""
+msgstr "Lähetä ”&estetty”"
+
+#: mdn/mdnadvicedialog.cpp:32
+#, kde-format
+msgid "&Ignore"
+msgstr "S&ivuuta"
+
+#: mdn/mdnadvicedialog.cpp:34
+#, kde-format
+msgid "&Send"
+msgstr "&Lähetä"
+
+#: mdn/mdnadvicehelper.cpp:27
+msgid ""
+"This message contains a request to return a notification about your "
+"reception of the message.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"Viesti sisältää pyynnön lähettää ilmoitus, kun vastaanotat viestin.\n"
+"Pyynnön voi joko sivuuttaa tai antaa ohjelman lähettää vastata ”estetty” tai "
+"kuten tavallisesti."
+
+#: mdn/mdnadvicehelper.cpp:33
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message.\n"
+"It contains a processing instruction that is marked as \"required\", but "
+"which is unknown to the mail program.\n"
+"You can either ignore the request or let the mail program send a \"failed\" "
+"response."
+msgstr ""
+"Viesti sisältää pyynnön lähettää ilmoitus, kun vastaanotat viestin.\n"
+"Se sisältää käsittelyohjeen, joka on merkitty ”vaadituksi” mutta jota "
+"sähköpostiohjelma ei tunne.\n"
+"Voit joko sivuuttaa pyynnön tai antaa ohjelman lähettää vastaukseksi "
+"”epäonnistui”."
+
+#: mdn/mdnadvicehelper.cpp:41
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but it is requested to send the notification to more than one address.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"Viesti sisältää pyynnön lähettää ilmoitus, kun vastaanotat viestin,\n"
+"mutta ilmoitus on pyydetty useampaan osoitteeseen.\n"
+"Voit joko sivuuttaa pyynnön tai antaa ohjelman vastata ”estetty” tai kuten "
+"tavallisesti."
+
+#: mdn/mdnadvicehelper.cpp:49
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but there is no return-path set.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"Viesti sisältää pyynnön lähettää ilmoitus, kun vastaanotat viestin,\n"
+"mutta palautusosoitetta ei ole asetettu.\n"
+"Voit joko sivuuttaa pyynnön tai antaa ohjelman vastata ”estetty” tai kuten "
+"tavallisesti."
+
+#: mdn/mdnadvicehelper.cpp:56
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but the return-path address differs from the address the notification was "
+"requested to be sent to.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"Viesti sisältää pyynnön lähettää ilmoitus, kun vastaanotat viestin,\n"
+"mutta palautusosoite eroaa osoitteesta, johon ilmoitus on pyydetty "
+"lähettämään.\n"
+"Voit joko sivuuttaa pyynnön tai antaa ohjelman vastata ”estetty” tai kuten "
+"tavallisesti."
+
+#: recipient/distributionlistdialog.cpp:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Distribution List"
+msgstr "Tallenna jakelulista"
+
+#: recipient/distributionlistdialog.cpp:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List"
+msgstr "Tallenna lista"
+
+#: recipient/distributionlistdialog.cpp:121
+#, kde-format
+msgctxt "@label:textbox Name of the distribution list."
+msgid "&Name:"
+msgstr "&Nimi:"
+
+#: recipient/distributionlistdialog.cpp:125
+#, kde-format
+msgid "Name of Distribution List"
+msgstr "Jakelulistan nimi"
+
+#: recipient/distributionlistdialog.cpp:132
+#, kde-format
+msgctxt "@title:column Name of the recipient"
+msgid "Name"
+msgstr "Nimi"
+
+#: recipient/distributionlistdialog.cpp:133
+#, kde-format
+msgctxt "@title:column Email of the recipient"
+msgid "Email"
+msgstr "Sähköposti"
+
+#: recipient/distributionlistdialog.cpp:240
+#, kde-format
+msgctxt "@info"
+msgid ""
+"There are no recipients in your list. First select some recipients, then try "
+"again."
+msgstr ""
+"Viestilläsi ei ole vastaanottajia. Valitse ensin vastaanottajat ja yritä "
+"sitten uudelleen."
+
+#: recipient/distributionlistdialog.cpp:251
+#, kde-format
+msgctxt "@title:window"
+msgid "New Distribution List"
+msgstr "Uusi jakelulista"
+
+#: recipient/distributionlistdialog.cpp:252
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Please enter name:"
+msgstr "Anna nimi:"
+
+#: recipient/distributionlistdialog.cpp:276
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Distribution list with the given name <resource>%1</resource> already "
+"exists. Please select a different name.</para>"
+msgstr ""
+"<para>On olemassa jo jakelulista nimeltä <resource>%1</resource>. Valitse "
+"toinen nimi.</para>"
+
+#: recipient/distributionlistdialog.cpp:285
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Address Book"
+msgstr "Valitse osoitekirja"
+
+#: recipient/distributionlistdialog.cpp:286
+#, kde-format
+msgid "Select the address book folder to store the contact group in:"
+msgstr "Valitse osoitekirja, johon yhteystietoryhmä tallennetaan:"
+
+#: recipient/distributionlistdialog.cpp:322
+#, kde-format
+msgid "Unable to create distribution list: %1"
+msgstr "Jakelulistaa ei voi luoda: %1"
+
+#: recipient/recipient.cpp:99
+#, kde-format
+msgctxt "@label:listbox Recipient of an email message."
+msgid "To"
+msgstr "Vastaanottaja"
+
+#: recipient/recipient.cpp:101
+#, kde-format
+msgctxt "@label:listbox Carbon Copy recipient of an email message."
+msgid "CC"
+msgstr "Kopio"
+
+#: recipient/recipient.cpp:103
+#, kde-format
+msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+msgid "BCC"
+msgstr "Piilokopio"
+
+#: recipient/recipient.cpp:105
+#, kde-format
+msgctxt "@label:listbox Reply-To recipient of an email message."
+msgid "Reply-To"
+msgstr "Vastausosoite"
+
+#: recipient/recipient.cpp:110
+#, kde-kuit-format
+msgctxt "@label:listbox"
+msgid "<placeholder>Undefined Recipient Type</placeholder>"
+msgstr "<placeholder>Vastaanottajatyyppiä ei määritetty</placeholder>"
+
+#: recipient/recipientline.cpp:70
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Select type of recipient"
+msgstr "Valitse vastaanottajatyyppi"
+
+#: recipient/recipientline.cpp:72
+#, kde-format
+msgid "Set the list of email addresses to receive this message"
+msgstr "Aseta tämän viestin vastaanottavien sähköpostiosoitteiden lista"
+
+#: recipient/recipientseditor.cpp:115
+#, kde-format
+msgctxt "@info:status"
+msgid "Truncating recipients list to %2 of %1 entry."
+msgid_plural "Truncating recipients list to %2 of %1 entries."
+msgstr[0] "Katkaistaan vastaanottajalista %2:een %1:stä vastaanottajasta."
+msgstr[1] "Katkaistaan vastaanottajalista %2:een %1:stä vastaanottajasta."
+
+#: recipient/recipientseditorsidewidget.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List..."
+msgstr "Tallenna lista…"
+
+#: recipient/recipientseditorsidewidget.cpp:45
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "Tallenna vastaanottajat jakelulistaksi"
+
+#: recipient/recipientseditorsidewidget.cpp:47
+#, kde-format
+msgctxt "@action:button Open recipient selection dialog."
+msgid "Se&lect..."
+msgstr "&Valitse…"
+
+#: recipient/recipientseditorsidewidget.cpp:50
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select recipients from address book"
+msgstr "Valitse vastaanottajat osoitekirjasta"
+
+#: recipient/recipientseditorsidewidget.cpp:77
+#, kde-format
+msgctxt "@info:status No recipients selected"
+msgid "No recipients"
+msgstr "Ei vastaanottajia"
+
+#: recipient/recipientseditorsidewidget.cpp:79
+#, kde-format
+msgctxt "@info:status Number of recipients selected"
+msgid "1 recipient"
+msgid_plural "%1 recipients"
+msgstr[0] "1 vastaanottaja"
+msgstr[1] "%1 vastaanottajaa"
+
+#: recipient/recipientseditorsidewidget.cpp:129
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "To:%1"
+msgstr "Vastaanottaja: %1"
+
+#: recipient/recipientseditorsidewidget.cpp:131
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "CC:%1"
+msgstr "Kopio: %1"
+
+#: recipient/recipientseditorsidewidget.cpp:134
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "BCC:%1"
+msgstr "Piilokopio: %1"
+
+#: recipient/recipientseditorsidewidget.cpp:137
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "Reply-To:%1"
+msgstr "Vastausosoite: %1"
+
+#: recipient/recipientspicker.cpp:42
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Recipient"
+msgstr "Valitse vastaanottaja"
+
+#: recipient/recipientspicker.cpp:54
+#, kde-format
+msgid "Search &Directory Service"
+msgstr "Etsi &hakemistopalvelusta"
+
+#: recipient/recipientspicker.cpp:77
+#, kde-format
+msgid "Add as &Reply-To"
+msgstr "Lisää &vastausosoitteeksi"
+
+#: recipient/recipientspicker.cpp:78
+#, kde-format
+msgid "Add as &To"
+msgstr "Lisää &vastaanottajaksi"
+
+#: recipient/recipientspicker.cpp:79
+#, kde-format
+msgid "Add as CC"
+msgstr "Lisää kopionsaajaksi"
+
+#: recipient/recipientspicker.cpp:80
+#, kde-format
+msgid "Add as &BCC"
+msgstr "Lisää piilokopionsaajaksi"
+
+#: recipient/recipientspicker.cpp:103
+#, kde-format
+msgid "%1 selected email"
+msgid_plural "%1 selected emails"
+msgstr[0] "%1 valittu viesti"
+msgstr[1] "%1 valittua viestiä"
+
+#: recipient/recipientspicker.cpp:170
+#, kde-format
+msgid ""
+"You selected 1 recipient. The maximum supported number of recipients is %2.\n"
+"Please adapt the selection."
+msgid_plural ""
+"You selected %1 recipients. The maximum supported number of recipients is "
+"%2.\n"
+"Please adapt the selection."
+msgstr[0] ""
+"Valitsit 1 vastaanottajan. Vastaanottajien suurin tuettu määrä on %2.\n"
+"Mukauta valintaa."
+msgstr[1] ""
+"Valitsit %1 vastaanottajaa. Vastaanottajien suurin tuettu määrä on %2.\n"
+"Mukauta valintaa."
+
+#: recipient/recipientspicker.cpp:187
+#, kde-format
+msgid "You can not add more recipients."
+msgstr "Vastaanottajia ei voi lisätä enempää."
+
+#: sendlater/sendlatercreatejob.cpp:33
+#, kde-format
+msgid "Failed to schedule message for sending later: %1"
+msgstr "Viestin ajastaminen myöhemmin lähetettäväksi epäonnistui: %1"
+
+#: sendlater/sendlaterdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Send Later"
+msgstr "Lähetä myöhemmin"
+
+#: sendlater/sendlaterdialog.cpp:48
+#, kde-format
+msgid "Send Later"
+msgstr "Lähetä myöhemmin"
+
+#: sendlater/sendlaterdialog.cpp:49
+#, kde-format
+msgid "Delay"
+msgstr "Viive"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Days"
+msgstr "Päivät"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Weeks"
+msgstr "Viikot"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Months"
+msgstr "Kuukaudet"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Years"
+msgstr "Vuodet"
+
+#: sendlater/sendlaterjob.cpp:32
+#, kde-format
+msgid "The Send Later agent is not running."
+msgstr "Lähetä myöhemmin -agentti ei ole käynnissä."
+
+#: sendlater/sendlaterremovejob.cpp:27
+#, kde-format
+msgid "Failed to removed message from send later schedule: %1"
+msgstr "Viestin poistaminen lähetysjonosta epäonnistui: %1"
+
+#: sendlater/sendlatertimedatewidget.cpp:35
+#, kde-format
+msgid "You cannot select a date prior to the current date."
+msgstr "Valitun päivän täytyy olla nykyistä päivää myöhempi."
+
+#. i18n: ectx: property (text), widget (QLabel, mLabel)
+#: sendlater/ui/sendlaterwidget.ui:29
+#, kde-format
+msgid "Send at:"
+msgstr "Lähetysaika:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
+#: sendlater/ui/sendlaterwidget.ui:39
+#, kde-format
+msgid "Repeat every:"
+msgstr "Toista joka:"
+
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Lainaa vain valittu teksti vastattaessa"
+
+#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:23
+#, kde-format
+msgid "Keep original charset when replying or forwarding if possible"
+msgstr ""
+"&Käytä alkuperäistä merkistöä vastattaessa tai välitettäessä, jos mahdollista"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:32
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "Lisää &allekirjoitus automaattisesti"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:36
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Lisää allekirjoitus ennen lainattua tekstiä"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:40
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Lisää erotin allekirjoituksen edelle"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:45
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "Käytä viesteistä indeksoituja osoitteita automaattitäydennyksessä"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:46
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Poista tämä asetus käytöstä, jos haluat vain osoitekirjassa olevien "
+"yhteystietojen ilmestyvän viestinkirjoitusikkunan osoitekenttien "
+"automaattitäydennysluetteloon."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:52
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr "Salli puolipisteen (;) käyttö erottimena viestinkirjoitusikkunassa"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:55
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Käytä viimeaikaisia osoitteita automaattitäydennyksessä"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:56
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"Poista tämä asetus käytöstä, ellet halua viimeaikaisten osoitteiden "
+"ilmestyvän viestinkirjoitusikkunan osoitekenttien "
+"automaattitäydennysluetteloon."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:61
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "Vastaanottajakenttien enimmäismäärä:"
+
+#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:66
+#, kde-format
+msgid "Outlook-compatible attachment naming"
+msgstr "Outlook-yhteensopiva liitteiden nimeäminen"
+
+#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:67
+#, kde-format
+msgid ""
+"Turn this option on to make Outlook &#8482; understand attachment names "
+"containing non-English characters"
+msgstr ""
+"Käytä tätä asetusta jos haluat Outlookin &#8242; ymmärtävän liitteet, joiden "
+"nimissä on muita kuin englannin kielen merkkejä"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:71
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "&Rivinvaihto sarakkeessa:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:81
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "Kohenna HTML-viestin tekstiversiota"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:85
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Varoita ennen salaamattomien viestien lähettämistä"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:89
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Varoita ennen allekirjoittamattomien viestien lähettämistä"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:93
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Varoita, jos varmenteet/avaimet vanhentuvat pian (aseta kynnysarvot alla)"
+
+#. i18n: ectx: label, entry (CryptoWarnSignKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:97
+#, kde-format
+msgid ""
+"The minimum number of days that the signature certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Allekirjoitusvarmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
+"antamista"
+
+#. i18n: ectx: label, entry (CryptoWarnSignChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:101
+#, kde-format
+msgid ""
+"The minimum number of days that the CA certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"CA-varmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen antamista"
+
+#. i18n: ectx: label, entry (CryptoWarnSignRootNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:105
+#: settings/messagecomposer.kcfg.cmake:117
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Juurivarmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
+"antamista"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:109
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Salausvarmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
+"antamista"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:113
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Ketjun kaikkien varmenteiden kelpoisuuden vähimmäisaika päivinä ennen "
+"varoituksen antamista"
+
+#. i18n: ectx: label, entry (CryptoEncryptToSelf), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:121
+#, kde-format
+msgid ""
+"When encrypting emails, always also encrypt to the certificate of my own "
+"identity"
+msgstr ""
+"Salattaessa sähköposteja salaa aina myös oman henkilöyteni varmenteeseen"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:125
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr "Näytä aina salausavainten luettelo käytettävän valitsemiseksi"
+
+#: snippet/convertsnippetvariablemenu.cpp:27
+#, kde-format
+msgid "To"
+msgstr "Vastaanottaja"
+
+#: snippet/convertsnippetvariablemenu.cpp:28
+#, kde-format
+msgid "To Field Address"
+msgstr "Vastaanottajan osoitekenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:31
+#, kde-format
+msgid "To Field Last Name"
+msgstr "Vastaanottajan sukunimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:34
+#, kde-format
+msgid "To Field First Name"
+msgstr "Vastaanottajan etunimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:37
+#, kde-format
+msgid "To Field Name"
+msgstr "Vastaanottajan nimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:42
+#, kde-format
+msgid "From"
+msgstr "Lähettäjä"
+
+#: snippet/convertsnippetvariablemenu.cpp:43
+#, kde-format
+msgid "From Field Address"
+msgstr "Lähettäjän osoitekenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:46
+#, kde-format
+msgid "From Field Last Name"
+msgstr "Lähettäjän sukunimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:49
+#, kde-format
+msgid "From Field First Name"
+msgstr "Lähettäjän etunimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:52
+#, kde-format
+msgid "From Field Name"
+msgstr "Lähettäjän nimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:57
+#, kde-format
+msgid "CC"
+msgstr "Kopio"
+
+#: snippet/convertsnippetvariablemenu.cpp:58
+#, kde-format
+msgid "CC Field Address"
+msgstr "Kopionsaajan osoitekenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:61
+#, kde-format
+msgid "CC Field Last Name"
+msgstr "Kopionsaajan sukunimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:64
+#, kde-format
+msgid "CC Field First Name"
+msgstr "Kopionsaajan etunimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:67
+#, kde-format
+msgid "CC Field Name"
+msgstr "Kopionsaajan nimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:73
+#, kde-format
+msgid "Bcc"
+msgstr "Piilokopio"
+
+#: snippet/convertsnippetvariablemenu.cpp:74
+#, kde-format
+msgid "BCC Field Address"
+msgstr "Piilokopionsaajan osoitekenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:77
+#, kde-format
+msgid "BCC Field Last Name"
+msgstr "Piilokopionsaajan sukunimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:80
+#, kde-format
+msgid "BCC Field First Name"
+msgstr "Piilokopionsaajan etunimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:83
+#, kde-format
+msgid "BCC Field Name"
+msgstr "Piilokopionsaajan nimikenttä"
+
+#: snippet/convertsnippetvariablemenu.cpp:89
+#, kde-format
+msgid "Attachment"
+msgstr "Liite"
+
+#: snippet/convertsnippetvariablemenu.cpp:90
+#, kde-format
+msgid "Number Of Attachments"
+msgstr "Liitteiden määrä"
+
+#: snippet/convertsnippetvariablemenu.cpp:93
+#, kde-format
+msgid "Names"
+msgstr "Nimet"
+
+#: snippet/convertsnippetvariablemenu.cpp:96
+#, kde-format
+msgid "Filenames"
+msgstr "Tiedostonimet"
+
+#: snippet/convertsnippetvariablemenu.cpp:99
+#, kde-format
+msgid "Names and Sizes"
+msgstr "Nimet ja koot"
+
+#: snippet/convertsnippetvariablemenu.cpp:103
+#: snippet/convertsnippetvariablemenu.cpp:123
+#, kde-format
+msgid "Date/Time"
+msgstr "Päivä/aika"
+
+#: snippet/convertsnippetvariablemenu.cpp:104
+#: snippet/convertsnippetvariablemenu.cpp:151
+#, kde-format
+msgid "Day Of Week (%1)"
+msgstr "Viikonpäivä (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:107
+#, kde-format
+msgid "Date (%1)"
+msgstr "Päivä (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:110
+#, kde-format
+msgid "Long Date (%1)"
+msgstr "Pitkä päiväys (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:113
+#, kde-format
+msgid "Short Time (%1)"
+msgstr "Lyhyt päiväys (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:116
+#, kde-format
+msgid "Time (%1)"
+msgstr "Aika (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:119
+#, kde-format
+msgid "Year (%1)"
+msgstr "Vuosi (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:127
+#, kde-format
+msgid "Last Year (%1)"
+msgstr "Viime vuosi (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:130
+#, kde-format
+msgid "Next Year (%1)"
+msgstr "Ensi vuosi (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:133
+#, kde-format
+msgid "Month Number (%1)"
+msgstr "Kuukauden numero (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:136
+#, kde-format
+msgid "Day Of Month (%1)"
+msgstr "Kuukaudenpäivä (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:139
+#, kde-format
+msgid "Week Number (%1)"
+msgstr "Viikkonumero (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:142
+#, kde-format
+msgid "Month Name Short (%1)"
+msgstr "Lyhyt kuukaudennimi (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:145
+#, kde-format
+msgid "Month Name Long (%1)"
+msgstr "Pitkä kuukaudennimi (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:148
+#, kde-format
+msgid "Last Month Name Long (%1)"
+msgstr "Viime kuun pitkä kuukaudennimi (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:154
+#, kde-format
+msgid "Day Of Week Name Short (%1)"
+msgstr "Lyhyt viikonpäivännimi (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, kde-format
+msgid "Day Of Week Name Long (%1)"
+msgstr "Pitkä viikonpäivännimi (%1)"
+
+# *** TARKISTA: Käsittämätön id. ”Vuosi viimeinen kuukausi”?
+#: snippet/convertsnippetvariablemenu.cpp:160
+#, kde-format
+msgid "Year Last Month (%1)"
+msgstr "Vuosi viime kuu (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:165
+#, kde-format
+msgid "Misc"
+msgstr "Sekalaista"
+
+#: snippet/convertsnippetvariablemenu.cpp:166
+#, kde-format
+msgid "Subject"
+msgstr "Aihe"
+
+#: utils/util.cpp:260
+#, kde-format
+msgctxt ""
+"comma-separated list of keywords that are used to detect whether the user "
+"forgot to attach his attachment. Do not add space between words."
+msgid "attachment,attached"
+msgstr "liite,liitetty"
+
+#: utils/util.cpp:293
+#, kde-format
+msgid ""
+"The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
+"create a mail dispatcher?"
+msgstr ""
+"Viestinvälitystä ei ole asetettu, joten postia ei voi lähettää. Haluatko "
+"määrittää viestinvälityksen?"
+
+#: utils/util.cpp:294
+#, kde-format
+msgid "No mail dispatcher."
+msgstr "Ei viestinvälitystä."
+
+#: utils/util.cpp:295
+#, kde-format
+msgctxt "@action:button"
+msgid "Create Mail Dispatcher"
+msgstr "Luo viestinvälitys"
+
+#: utils/util.cpp:310
+#, kde-format
+msgid ""
+"The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
+"it online?"
+msgstr ""
+"Viestinvälitys ei ole verkossa, joten postia ei voi lähettää. Haluatko "
+"yhdistää viestinvälityksen verkkoon?"
+
+#: utils/util.cpp:311
+#, kde-format
+msgid "Mail dispatcher offline."
+msgstr "Viestinvälitys ei toiminnassa."
+
+#: utils/util.cpp:312
+#, kde-format
+msgctxt "@action:button"
+msgid "Set Online"
+msgstr "Aseta verkkoon"
+
+#, fuzzy
+#~| msgctxt "@info:status"
+#~| msgid "Truncating recipients list to %2 of %1 entry."
+#~| msgid_plural "Truncating recipients list to %2 of %1 entries."
+#~ msgctxt "@info:status"
+#~ msgid "Truncating recipients list to %1."
+#~ msgstr "Katkaistaan vastaanottajalista %2:een %1:stä vastaanottajasta."
+
+#~ msgid "Year"
+#~ msgstr "Vuosi"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>To:</interface><nl/>%1"
+#~ msgstr "<interface>Vastaanottaja:</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>CC:</interface><nl/>%1"
+#~ msgstr "<interface>Kopio:</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>BCC:</interface><nl/>%1"
+#~ msgstr "<interface>Piilokopio:</interface><nl/>%1"
+
+#~ msgid "Warn if the receiver's address is not in the certificate"
+#~ msgstr "Varoita, ellei vastaanottajan osoitetta ole varmenteessa"
+
+#~ msgid "Replace recognized prefi&x with \"Re:\""
+#~ msgstr "Korvaa tunnistettu etuliite &jonolla ”Re:”"
+
+#~ msgid "Replace recognized prefix with \"&Fwd:\""
+#~ msgstr "Korvaa tunnistettu etuliite jonolla ”&Fwd:”"
+
+#~ msgid "AutoDetect Language"
+#~ msgstr "Tunnista kieli automaattisesti"
+
+#~ msgid "Use Baloo search for autocompletion"
+#~ msgstr "Käytä Baloo-hakua automaattitäydennyksessä"
+
+#~ msgid ""
+#~ "Disable this option if you do not want baloo search addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Poista tämä asetus käytöstä, ellet halua Baloo-haun osoitteiden "
+#~ "ilmestyvän viestinkirjoitusikkunan osoitekenttien "
+#~ "automaattitäydennysluetteloon."
+
+#~ msgid "Select email from contact"
+#~ msgstr "Valitse yhteystiedon sähköposti"
+
+#~ msgid "vCard Import Failed"
+#~ msgstr "vCard-tuonti epäonnistui"
+
+#~ msgid "<qt>Unable to access <b>%1</b>.</qt>"
+#~ msgstr "<qt>Ei saantioikeuksia kohteeseen <b>%1</b>.</qt>"
+
+#~ msgid "Configure Completion..."
+#~ msgstr "Muokkaa täydennyksen asetuksia…"
+
+#~ msgid "Automatically expand groups"
+#~ msgstr "Laajenna ryhmät automaattisesti"
+
+#~ msgid "Expand Groups..."
+#~ msgstr "Laajenna ryhmät…"
+
+#~ msgid "Recent Addresses"
+#~ msgstr "Viimeaikaiset osoitteet"
+
+#~ msgctxt "@title:window"
+#~ msgid "Insert HTML"
+#~ msgstr "Lisää HTML:ää"
+
+#~ msgid "Insert HTML tags and texts:"
+#~ msgstr "Lisää HTML-tunnisteita ja tekstiä:"
+
+#~ msgid "Example: <i> Hello word </i>"
+#~ msgstr "Esimerkki: <i>Hei maailma</i>"
+
+#~ msgctxt "@action:button"
+#~ msgid "Insert"
+#~ msgstr "Lisää"
+
+#~ msgid "Manage Link"
+#~ msgstr "Muokkaa linkkiä"
+
+#~ msgid "Link Text:"
+#~ msgstr "Linkin teksti:"
+
+#~ msgid "Link URL:"
+#~ msgstr "Linkin osoite:"
+
+#~ msgctxt "@action"
+#~ msgid "Align &Left"
+#~ msgstr "Sijoita &vasemmalle"
+
+#~ msgctxt "@label left justify"
+#~ msgid "Left"
+#~ msgstr "Vasemmalle"
+
+#~ msgctxt "@action"
+#~ msgid "Align &Center"
+#~ msgstr "Sijoita &keskelle"
+
+#~ msgctxt "@label center justify"
+#~ msgid "Center"
+#~ msgstr "Keskitys"
+
+#~ msgctxt "@action"
+#~ msgid "Align &Right"
+#~ msgstr "Sijoita &oikealle"
+
+#~ msgctxt "@label right justify"
+#~ msgid "Right"
+#~ msgstr "Oikealle"
+
+#~ msgctxt "@action"
+#~ msgid "&Justify"
+#~ msgstr "&Tasaa"
+
+#~ msgctxt "@label justify fill"
+#~ msgid "Justify"
+#~ msgstr "Tasaa"
+
+#~ msgctxt "@action"
+#~ msgid "Left-to-Right"
+#~ msgstr "Vasemmalta oikealle"
+
+#~ msgctxt "@label left-to-right"
+#~ msgid "Left-to-Right"
+#~ msgstr "Vasemmalta oikealle"
+
+#~ msgctxt "@action"
+#~ msgid "Right-to-Left"
+#~ msgstr "Oikealta vasemmalle"
+
+#~ msgctxt "@label right-to-left"
+#~ msgid "Right-to-Left"
+#~ msgstr "Oikealta vasemmalle"
+
+#~ msgctxt "@action"
+#~ msgid "Subscript"
+#~ msgstr "Alaindeksointi"
+
+#~ msgctxt "@action"
+#~ msgid "Superscript"
+#~ msgstr "Yläindeksointi"
+
+#~ msgctxt "@action boldify selected text"
+#~ msgid "&Bold"
+#~ msgstr "&Lihavoi"
+
+#~ msgctxt "@action italicize selected text"
+#~ msgid "&Italic"
+#~ msgstr "&Kursivoi"
+
+#~ msgctxt "@action underline selected text"
+#~ msgid "&Underline"
+#~ msgstr "&Alleviivaa"
+
+#~ msgctxt "@action"
+#~ msgid "&Strike Out"
+#~ msgstr "&Yliviivaa"
+
+#~ msgctxt "@action"
+#~ msgid "&Font"
+#~ msgstr "&Fontti"
+
+#~ msgctxt "@action"
+#~ msgid "Font &Size"
+#~ msgstr "Fontti&koko"
+
+#~ msgctxt "@action"
+#~ msgid "Insert Rule Line"
+#~ msgstr "Lisää vaakasuora viiva"
+
+#~ msgctxt "@action"
+#~ msgid "Text &Color..."
+#~ msgstr "Tekstin &väri…"
+
+#~ msgctxt "@label stroke color"
+#~ msgid "Color"
+#~ msgstr "Väri"
+
+#~ msgctxt "@action"
+#~ msgid "Text &Highlight..."
+#~ msgstr "Tekstin &korostus…"
+
+#~ msgctxt "@action"
+#~ msgid "Link"
+#~ msgstr "Lisää linkki"
+
+#~ msgctxt "@action"
+#~ msgid "Increase Indent"
+#~ msgstr "Lisää sisennystä"
+
+#~ msgctxt "@action"
+#~ msgid "Decrease Indent"
+#~ msgstr "Vähennä sisennystä"
+
+#~ msgctxt "@title:menu"
+#~ msgid "List Style"
+#~ msgstr "Luettelon tyyli"
+
+#~ msgctxt "@item:inmenu no list style"
+#~ msgid "None"
+#~ msgstr "Ei tyyliä"
+
+#~ msgctxt "@item:inmenu disc list style"
+#~ msgid "Disc"
+#~ msgstr "Kiekko"
+
+#~ msgctxt "@item:inmenu circle list style"
+#~ msgid "Circle"
+#~ msgstr "Ympyrä"
+
+#~ msgctxt "@item:inmenu square list style"
+#~ msgid "Square"
+#~ msgstr "Neliö"
+
+#~ msgctxt "@item:inmenu numbered lists"
+#~ msgid "123"
+#~ msgstr "123"
+
+#~ msgctxt "@item:inmenu lowercase abc lists"
+#~ msgid "abc"
+#~ msgstr "abc"
+
+#~ msgctxt "@item:inmenu uppercase abc lists"
+#~ msgid "ABC"
+#~ msgstr "ABC"
+
+#~ msgctxt "@item:inmenu lower case roman numerals"
+#~ msgid "i ii iii"
+#~ msgstr "i ii iii"
+
+#~ msgctxt "@item:inmenu upper case roman numerals"
+#~ msgid "I II III"
+#~ msgstr "I II III"
+
+#~ msgid "Pa&ste as Quotation"
+#~ msgstr "L&iitä lainauksena"
+
+#~ msgid "Add &Quote Characters"
+#~ msgstr "Lisää &lainausmerkit"
+
+#~ msgid "Re&move Quote Characters"
+#~ msgstr "P&oista lainausmerkit"
+
+#~ msgid "Paste Without Formatting"
+#~ msgstr "Liitä muotoiluitta"
+
+#~ msgid "Add Image"
+#~ msgstr "Lisää kuva"
+
+#~ msgid "Insert HTML"
+#~ msgstr "Lisää HTML:ää"
+
+#~ msgid "Table"
+#~ msgstr "Taulukko"
+
+#~ msgid "Delete Line"
+#~ msgstr "Poista rivi"
+
+#~ msgid "Reset Font Settings"
+#~ msgstr "Alusta fonttiasetukset"
+
+#~ msgid "Reset Font"
+#~ msgstr "Alusta fontti"
+
+#~ msgctxt "@action"
+#~ msgid "Format Painter"
+#~ msgstr "Muotomaalaaja"
+
+#~ msgid "I've linked 1 file to this email:"
+#~ msgstr "Olen linkittänyt yhden tiedoston tähän sähköpostiin:"
+
+#~ msgid "Only local files are supported."
+#~ msgstr "Vain paikallisia tiedostoja tuetaan."
+
+#~ msgctxt "@info"
+#~ msgid "Unable to load image <filename>%1</filename>."
+#~ msgstr "Kuvaa <filename>%1</filename> ei voi ladata."
+
+#~ msgctxt "Start of the filename for an image"
+#~ msgid "image"
+#~ msgstr "kuva"
+
+#~ msgid "Command line is empty. Please verify settings."
+#~ msgstr "Komentorivi on tyhjä. Tarkista asetukset."
+
+#~ msgid "Empty command line"
+#~ msgstr "Tyhjä komentorivi"
+
+#~ msgid "External editor cannot be started. Please verify command \"%1\""
+#~ msgstr "Ulkoista muokkainta ei voida käynnistää. Tarkista komento ”%1”"
+
+#~ msgid "Error was found when we started external editor."
+#~ msgstr "Huomattiin virhe, kun ulkoinen muokkain käynnistettiin."
+
+#~ msgid "External Editor Closed"
+#~ msgstr "Ulkoinen muokkain suljettiin"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The external editor is still running.<nl/>Do you want to stop the editor "
+#~ "or keep it running?<nl/><warning>Stopping the editor will cause all your "
+#~ "unsaved changes to be lost.</warning>"
+#~ msgstr ""
+#~ "Ulkoinen muokkain on yhä käynnissä.<nl/>Haluatko pysäyttää muokkaimen vai "
+#~ "pitää sen käynnissä?<nl/><warning>Menetät kaikki tallentamattomat "
+#~ "muutokset pysäyttäessäsi muokkaimen.</warning>"
+
+#~ msgctxt "@title:window"
+#~ msgid "External Editor Running"
+#~ msgstr "Ulkoinen muokkain on käynnissä"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop Editor"
+#~ msgstr "Pysäytä muokkain"
+
+#~ msgctxt "@action:button"
+#~ msgid "Keep Editor Running"
+#~ msgstr "Pidä muokkain käynnissä"
+
+#~ msgid "Write to format"
+#~ msgstr "Tallenna muotoon"
+
+#~ msgid "Current word has already a replacement."
+#~ msgstr "Nykyisellä sanalla on jo korvaus."
+
+#~ msgid "Add New Autocorrect"
+#~ msgstr "Uuden automaattikorjauksen lisääminen"
+
+#~ msgctxt "@title:window"
+#~ msgid "Insert File"
+#~ msgstr "Lisää tiedosto"
+
+#~ msgid "Edit Recent Addresses..."
+#~ msgstr "Muokkaa viimeaikaisia osoitteita…"
+
+#~ msgid "&Attach"
+#~ msgstr "&Liitä"
+
+# Bitteinä?! Todella?
+#~ msgid ""
+#~ "The maximum size in bits that email attachments are allowed to have (-1 "
+#~ "for no limit)"
+#~ msgstr ""
+#~ "Sähköpostiliitteen sallittu enimmäiskoko bitteinä (–1 = ei rajoitusta)"
+
+#~ msgid "LibreOffice Autocorrection"
+#~ msgstr "LibreOfficen automaattikorjaus"
+
+#~ msgid "KMail/Calligra Autocorrection"
+#~ msgstr "KMailin/Calligran automaattikorjaus"
+
+#~ msgid "\"Replace\" string is the same as \"Find\" string."
+#~ msgstr "Korvattava merkkijono on sama kuin etsittävä jono."
+
+#~ msgid "&Modify"
+#~ msgstr "&Muokkaa"
+
+#~ msgid "&Add"
+#~ msgstr "&Lisää"
+
+#~ msgid "Import LibreOffice Autocorrection"
+#~ msgstr "Tuo LibreOfficen automaattikorjaukset"
+
+#~ msgid "Import KMail Autocorrection"
+#~ msgstr "Tuo KMailin automaattikorjaukset"
+
+#~ msgid ""
+#~ "Language was changed, do you want to save config for previous language?"
+#~ msgstr "Kieltä muutettiin: haluatko tallentaa edellisen kielen asetukset?"
+
+#~ msgid "Save config"
+#~ msgstr "Tallenna asetukset"
+
+#~ msgid "Export Autocorrection File"
+#~ msgstr "Vie automaattikorjaustiedosto"
+
+#~ msgid "Archive cannot be opened in read mode."
+#~ msgstr "Arkistoa ei saatu avattua luettavaksi."
+
+#~ msgid "Import LibreOffice Autocorrection File"
+#~ msgstr "Tuo LibreOfficen automaattikorjaustiedosto"
+
+#~ msgid "Enable autocorrection"
+#~ msgstr "Käytä automaattikorjausta"
+
+# ???
+#~ msgid "Replacement and exception for language:"
+#~ msgstr "Korvaus ja poikkeus kielelle:"
+
+#~ msgid "Si&mple Autocorrection"
+#~ msgstr "&Yksinkertainen automaattikorjaus"
+
+#~ msgid ""
+#~ "Detect when a new sentence is started and always ensure that the first "
+#~ "character is an uppercase character"
+#~ msgstr ""
+#~ "Havaitse uuden virkkeen aloitus ja varmista, että ensimmäinen kirjain on "
+#~ "aina suuraakkonenHavaitse uuden virkkeen aloitus ja varmista, että "
+#~ "ensimmäinen kirjain on aina suuraakkonen"
+
+#~ msgid ""
+#~ "Convert &first letter of a sentence automatically to uppercase\n"
+#~ "(e.g. \"my house. in this town\" to \"my house. In this town\")"
+#~ msgstr ""
+#~ "Muuta virkkeen &ensimmäinen kirjain suuraakkoseksi\n"
+#~ "(esim. ”asuntoni. tässä kaupungissa” -&gt; ”asuntoni. Tässä kaupungissa.”)"
+
+#~ msgid ""
+#~ "All words are checked for the common mistake of holding the shift key "
+#~ "down a bit too long. If some words must have two uppercase characters, "
+#~ "then those exceptions should be added in the 'Exceptions' tab."
+#~ msgstr ""
+#~ "Kaikkien sanojen osalta tarkistetaan, ettei vaihtonäppäintä ole "
+#~ "vahingossa painettu liian pitkään. Jos sana alkaa kahdella "
+#~ "suuraakkosella, se on lisättävä Poikkeukset-välilehdelle.Kaikkien sanojen "
+#~ "osalta tarkistetaan, ettei vaihtonäppäintä ole vahingossa painettu liian "
+#~ "pitkään. Jos sana alkaa kahdella suuraakkosella, se on lisättävä "
+#~ "Poikkeukset-välilehdelle."
+
+#~ msgid ""
+#~ "Convert &two uppercase characters to one uppercase and one lowercase "
+#~ "character\n"
+#~ " (e.g. PErfect to Perfect)"
+#~ msgstr ""
+#~ "Muuta kaksi suuraakkosta yhdeksi suur- ja yhdeksi pienaakkoseksi\n"
+#~ " (esim. KOrjaus muotoon Korjaus)"
+
+#~ msgid ""
+#~ "Make sure that more than one space cannot be typed, as this is a common "
+#~ "mistake which is quite hard to find in formatted text."
+#~ msgstr ""
+#~ "Varmista, ettei välilyöntejä ole useampaa peräkkäin, koska tämä on "
+#~ "yleinen virhe, jota muotoillusta tekstistä on vaikea havaita.Varmista, "
+#~ "ettei välilyöntejä ole useampaa peräkkäin, koska tämä on yleinen virhe, "
+#~ "jota muotoillusta tekstistä on vaikea havaita."
+
+#~ msgid "&Suppress double spaces"
+#~ msgstr "&Estä peräkkäiset välilyönnit"
+
+#~ msgid "Most standard fraction notations will be converted when available"
+#~ msgstr "Useimmat tavalliset murto-osamerkinnät muutetaan, kun mahdollista"
+
+#~ msgid "Re&place 1/2... with ½..."
+#~ msgstr "&Muuta 1/2 muotoon ½..."
+
+#~ msgid "Capitalize name of days"
+#~ msgstr "Kirjoita &viikonpäivien nimet isolla alkukirjaimella"
+
+#~ msgid ""
+#~ "Detect when a URL (Uniform Resource Locator) is typed and provide "
+#~ "formatting that matches the way an Internet browser would show a URL."
+#~ msgstr ""
+#~ "Havaitse verkko-osoitteet (URL) ja muuta ne muotoon, jota verkkoselainkin "
+#~ "käyttää osoitteiden esittämiseksi.Havaitse verkko-osoitteet (URL) ja "
+#~ "muuta se muotoon, jota verkkoselainkin käyttää osoitteiden esittämiseksi."
+
+#~ msgid "Autoformat &URLs (HTML mode)"
+#~ msgstr "Muotoile verkko-&osoitteet automaattisesti (HTML-tila)"
+
+#~ msgid ""
+#~ "When you use _underline_ or *bold*, the text between the underscores or "
+#~ "asterisks will be converted to underlined or bold text."
+#~ msgstr ""
+#~ "Käyttäessäsi _alleviivausta_ tai *lihavointia*, merkkien välissä oleva "
+#~ "teksti alleviivataan tai lihavoidaan.Käyttäessäsi _alleviivausta_ tai "
+#~ "*lihavointia*, merkkien välissä oleva teksti alleviivataan tai "
+#~ "lihavoidaan."
+
+#~ msgid ""
+#~ "Automatically do &bold, strikeout and underline formatting (HTML mode)"
+#~ msgstr "&Lihavoi, alle- ja yliviivaa automaattisesti (HTML-tila)"
+
+#~ msgid "Replace 1st... with 1^st... (HTML mode)"
+#~ msgstr "Yläindeksoi ”st” merkinnöissä kuten ”1st” ... (HTML-tila)"
+
+#~ msgid "Custom &Quotes"
+#~ msgstr "Mukautetut &lainausmerkit"
+
+#~ msgid "Replace &single quotes with typographical quotes"
+#~ msgstr ""
+#~ "Korvaa &puolilainausmerkit typografisilla (kaarevilla) "
+#~ "puolilainausmerkeillä"
+
+#~ msgid "Replace &double quotes with typographical quotes"
+#~ msgstr "Korvaa &lainausmerkit typografisilla (kaarevilla) lainausmerkeillä"
+
+#~ msgid "Default"
+#~ msgstr "Oletus"
+
+#~ msgid ""
+#~ "Add non breaking space before specific punctuation marks in french text"
+#~ msgstr ""
+#~ "Lisää sitova sanaväli ennen tiettyjä välimerkkejä ranskankielisessä "
+#~ "tekstissä"
+
+#~ msgid "Ad&vanced Autocorrection"
+#~ msgstr "Automaattikorjauksen lisäasetukset"
+
+#~ msgid "&Enable word replacement"
+#~ msgstr "Käytä &sanojen korvausta"
+
+#~ msgid "&Find"
+#~ msgstr "&Etsi"
+
+#~ msgid "Re&place"
+#~ msgstr "&Korvaa"
+
+#~ msgid "Find"
+#~ msgstr "Etsi"
+
+#~ msgid "Replace"
+#~ msgstr "Korvaa"
+
+#~ msgid "E&xceptions"
+#~ msgstr "&Poikkeukset"
+
+#~ msgid "Do not treat as the end of a sentence:"
+#~ msgstr "Älä tulkitse virkkeen lopuksi:"
+
+#~ msgid "R&emove"
+#~ msgstr "&Poista"
+
+#~ msgid "Accept two uppercase letters in:"
+#~ msgstr "Hyväksy kaksi isoa alkukirjainta:"
+
+#, fuzzy
+#~| msgid "&Add"
+#~ msgid "Add"
+#~ msgstr "&Lisää"
+
+#~ msgid "Export..."
+#~ msgstr "Vie..."
+
+#~ msgid "Import..."
+#~ msgstr "Automaattikorjaus käytössä"
+
+#~ msgid "A&dd"
+#~ msgstr "L&isää"
+
+#~ msgid "Enabled Auto Resize Image"
+#~ msgstr "Kuvan koon automaattinen muuttaminen käytössä"
+
+#~ msgid "Select Special Characters"
+#~ msgstr "Valitse erikoismerkit"
+
+#, fuzzy
+#~| msgid "Could not open file."
+#~ msgid "Do not filter"
+#~ msgstr "Tiedostoa ei voitu avata."
+
+#~ msgid "&Cancel"
+#~ msgstr "&Peru"
+
+#~ msgid "No default collection for %1"
+#~ msgstr "Ei oletuskokoelmaa kohteelle %1"
+
+#~ msgid "No charsets were available for encoding."
+#~ msgstr "Merkistöjä ei ollut saatavilla koodaukseen."

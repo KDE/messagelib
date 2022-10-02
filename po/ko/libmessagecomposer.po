@@ -1,0 +1,3080 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Shinjo Park <kde@peremen.name>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2022-07-13 12:17+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: attachment/attachmentcontrollerbase.cpp:168
+#, kde-format
+msgid "Failed to compress attachment"
+msgstr "첨부 파일을 압축할 수 없음"
+
+#: attachment/attachmentcontrollerbase.cpp:179
+#, kde-format
+msgid ""
+"The compressed attachment is larger than the original. Do you want to keep "
+"the original one?"
+msgstr "압축된 첨부 파일이 원본 파일보다 큽니다. 원래 파일을 유지하시겠습니까?"
+
+#: attachment/attachmentcontrollerbase.cpp:182
+#, kde-format
+msgctxt "Do not compress"
+msgid "Keep"
+msgstr "유지"
+
+#: attachment/attachmentcontrollerbase.cpp:183
+#, kde-format
+msgid "Compress"
+msgstr "압축"
+
+#: attachment/attachmentcontrollerbase.cpp:202
+#, kde-format
+msgid "Failed to attach file"
+msgstr "파일을 첨부할 수 없음"
+
+#: attachment/attachmentcontrollerbase.cpp:275
+#, kde-format
+msgid "Failed to reload attachment"
+msgstr "첨부 파일을 다시 불러올 수 없음"
+
+#: attachment/attachmentcontrollerbase.cpp:322
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr "다음으로 열기(&O)"
+
+#: attachment/attachmentcontrollerbase.cpp:342
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr "기타(&O)..."
+
+#: attachment/attachmentcontrollerbase.cpp:344
+#: attachment/attachmentcontrollerbase.cpp:352
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr "다음으로 열기(&O)..."
+
+#: attachment/attachmentcontrollerbase.cpp:378
+#, kde-format
+msgid "Failed to attach public key"
+msgstr "공개 키를 첨부할 수 없음"
+
+#: attachment/attachmentcontrollerbase.cpp:392
+#, kde-format
+msgid "Failed to attach vCard"
+msgstr "vCard를 첨부할 수 없음"
+
+#: attachment/attachmentcontrollerbase.cpp:405
+#, kde-format
+msgid "Failed to attach text from clipboard"
+msgstr "클립보드에 있는 텍스트를 첨부할 수 없음"
+
+#: attachment/attachmentcontrollerbase.cpp:453
+#, kde-format
+msgid "Attach &Public Key..."
+msgstr "공개 키 첨부(&P)..."
+
+#: attachment/attachmentcontrollerbase.cpp:456
+#, kde-format
+msgid "Attach &My Public Key"
+msgstr "내 공개 키 첨부(&M)"
+
+#: attachment/attachmentcontrollerbase.cpp:459
+#: attachment/attachmentcontrollerbase.cpp:464
+#: attachment/attachmentcontrollerbase.cpp:470
+#: attachment/attachmentcontrollerbase.cpp:479
+#, kde-format
+msgid "Attach"
+msgstr "첨부"
+
+#: attachment/attachmentcontrollerbase.cpp:463
+#: composer/composerviewbase.cpp:1908
+#, kde-format
+msgid "&Attach File..."
+msgstr "파일 첨부(&A)..."
+
+#: attachment/attachmentcontrollerbase.cpp:465
+#, kde-format
+msgid "Add Attachment..."
+msgstr "첨부 파일 추가..."
+
+#: attachment/attachmentcontrollerbase.cpp:469
+#, kde-format
+msgid "&Attach Directory..."
+msgstr "디렉터리 첨부(&A)..."
+
+#: attachment/attachmentcontrollerbase.cpp:473
+#, kde-format
+msgid "Attach Own vCard"
+msgstr "내 vCard 추가"
+
+#: attachment/attachmentcontrollerbase.cpp:474
+#, kde-format
+msgid "Own vCard"
+msgstr "내 vCard"
+
+#: attachment/attachmentcontrollerbase.cpp:478
+#, kde-format
+msgid "&Attach vCards..."
+msgstr "vCard 첨부(&A)..."
+
+#: attachment/attachmentcontrollerbase.cpp:482
+#, kde-format
+msgid "&Attach Text From Clipboard..."
+msgstr "클립보드에서 텍스트 첨부(&A)..."
+
+#: attachment/attachmentcontrollerbase.cpp:483
+#, kde-format
+msgid "Attach Text From Clipboard"
+msgstr "클립보드에서 텍스트 첨부"
+
+#: attachment/attachmentcontrollerbase.cpp:495
+#, kde-format
+msgid "&Remove Attachment"
+msgstr "첨부 삭제(&R)"
+
+#: attachment/attachmentcontrollerbase.cpp:496
+#, kde-format
+msgid "Remove"
+msgstr "삭제"
+
+#: attachment/attachmentcontrollerbase.cpp:504
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "열기"
+
+#: attachment/attachmentcontrollerbase.cpp:509
+#, kde-format
+msgctxt "to view"
+msgid "View"
+msgstr "보기"
+
+#: attachment/attachmentcontrollerbase.cpp:514
+#, kde-format
+msgctxt "to edit"
+msgid "Edit"
+msgstr "편집"
+
+#: attachment/attachmentcontrollerbase.cpp:519
+#, kde-format
+msgid "Edit With..."
+msgstr "다음으로 편집..."
+
+#: attachment/attachmentcontrollerbase.cpp:524
+#, kde-format
+msgid "&Save Attachment As..."
+msgstr "다른 이름으로 첨부 파일 저장(&S)..."
+
+#: attachment/attachmentcontrollerbase.cpp:525
+#, kde-format
+msgid "Save As..."
+msgstr "다른 이름으로 저장..."
+
+#: attachment/attachmentcontrollerbase.cpp:533
+#, kde-format
+msgid "Attachment Pr&operties..."
+msgstr "첨부 속성(&O)..."
+
+#: attachment/attachmentcontrollerbase.cpp:534
+#, kde-format
+msgid "Properties"
+msgstr "속성"
+
+#: attachment/attachmentcontrollerbase.cpp:542
+#, kde-format
+msgid "Select All"
+msgstr "모두 선택"
+
+#: attachment/attachmentcontrollerbase.cpp:545
+#, kde-format
+msgid "Reload"
+msgstr "새로 고침"
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:702
+#: attachment/attachmentcontrollerbase.cpp:751
+#, kde-format
+msgid "KMail was unable to write the attachment to a temporary file."
+msgstr "KMail이 임시 파일에 첨부를 저장할 수 없습니다."
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:702
+#, kde-format
+msgid "Unable to open attachment"
+msgstr "첨부 파일을 열 수 없음"
+
+#: attachment/attachmentcontrollerbase.cpp:711
+#, kde-format
+msgid "KMail was unable to open the attachment."
+msgstr "KMail에서 첨부 파일을 열 수 없습니다."
+
+#: attachment/attachmentcontrollerbase.cpp:751
+#, kde-format
+msgid "Unable to edit attachment"
+msgstr "첨부 파일을 편집할 수 없음"
+
+#: attachment/attachmentcontrollerbase.cpp:792
+#, kde-format
+msgid "unnamed"
+msgstr "이름 없음"
+
+#: attachment/attachmentcontrollerbase.cpp:795
+#, kde-format
+msgid "Save Attachment As"
+msgstr "다른 이름으로 첨부 파일 저장"
+
+#: attachment/attachmentcontrollerbase.cpp:818
+#, kde-format
+msgid ""
+"File %1 exists.\n"
+"Do you want to replace it?"
+msgstr ""
+"파일 %1이(가) 존재합니다.\n"
+"파일을 덮어쓰시겠습니까?"
+
+#: attachment/attachmentcontrollerbase.cpp:819
+#, kde-format
+msgid "Save to File"
+msgstr "파일로 저장"
+
+#: attachment/attachmentcontrollerbase.cpp:820
+#, kde-format
+msgid "&Replace"
+msgstr "바꾸기(&R)"
+
+#: attachment/attachmentcontrollerbase.cpp:847
+#: attachment/attachmentcontrollerbase.cpp:905
+#, kde-format
+msgid "Do you really want to attach this directory \"%1\"?"
+msgstr "디렉터리 \"%1\"을(를) 첨부하시겠습니까?"
+
+#: attachment/attachmentcontrollerbase.cpp:848
+#: attachment/attachmentcontrollerbase.cpp:906
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach directory"
+msgstr "디렉터리 첨부"
+
+#: attachment/attachmentcontrollerbase.cpp:849
+#: attachment/attachmentcontrollerbase.cpp:907
+#, kde-format
+msgctxt "@action:button"
+msgid "Attach"
+msgstr "첨부"
+
+#: attachment/attachmentcontrollerbase.cpp:884
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach Directory"
+msgstr "디렉터리 첨부"
+
+#: attachment/attachmentcontrollerbase.cpp:893
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach File"
+msgstr "파일 첨부"
+
+#: attachment/attachmentcontrollerbase.cpp:936
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to attach file"
+msgstr "파일을 첨부할 수 없음"
+
+#: attachment/attachmentcontrollerbase.cpp:960
+#, kde-format
+msgid "Attach Public OpenPGP Key"
+msgstr "공개 OpenPGP 키 첨부"
+
+#: attachment/attachmentcontrollerbase.cpp:961
+#, kde-format
+msgid "Select the public key which should be attached."
+msgstr "첨부할 공개 키를 선택하십시오."
+
+#: attachment/attachmentmodel.cpp:122
+#, kde-format
+msgid "unnamed attachment"
+msgstr "이름 없는 첨부"
+
+#: attachment/attachmentmodel.cpp:256
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
+msgstr "이름: %1<br>크기: %2<br>인코딩: %3<br>MimeType=%4"
+
+#: attachment/attachmentmodel.cpp:439
+#, kde-format
+msgctxt "@title column attachment name."
+msgid "Name"
+msgstr "이름"
+
+#: attachment/attachmentmodel.cpp:441
+#, kde-format
+msgctxt "@title column attachment size."
+msgid "Size"
+msgstr "크기"
+
+#: attachment/attachmentmodel.cpp:443
+#, kde-format
+msgctxt "@title column attachment encoding."
+msgid "Encoding"
+msgstr "인코딩"
+
+#: attachment/attachmentmodel.cpp:445
+#, kde-format
+msgctxt "@title column attachment type."
+msgid "Type"
+msgstr "종류"
+
+#: attachment/attachmentmodel.cpp:447
+#, kde-format
+msgctxt "@title column attachment compression checkbox."
+msgid "Compress"
+msgstr "압축"
+
+#: attachment/attachmentmodel.cpp:449
+#, kde-format
+msgctxt "@title column attachment encryption checkbox."
+msgid "Encrypt"
+msgstr "암호화"
+
+#: attachment/attachmentmodel.cpp:451
+#, kde-format
+msgctxt "@title column attachment signed checkbox."
+msgid "Sign"
+msgstr "서명"
+
+#: attachment/attachmentmodel.cpp:453
+#, kde-format
+msgctxt "@title column attachment inlined checkbox."
+msgid "Suggest Automatic Display"
+msgstr "자동 표시 제안"
+
+#: composer/composer.cpp:276
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "받는 사람의 키를 찾을 수 없습니다."
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not sign/encrypt"
+msgstr "마크업 유지, 서명/암호화하지 않음(&K)"
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not encrypt"
+msgstr "마크업 유지, 암호화하지 않음(&K)"
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not sign"
+msgstr "마크업 유지, 서명하지 않음(&K)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Sign/Encrypt (delete markup)"
+msgstr "서명/암호화(마크업 삭제)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Encrypt (delete markup)"
+msgstr "암호화(마크업 삭제)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Sign (delete markup)"
+msgstr "서명(마크업 삭제)"
+
+#: composer/composerviewbase.cpp:331
+#, kde-format
+msgid ""
+"<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
+"you want to delete your markup?</p></qt>"
+msgstr ""
+"<qt><p>HTML 메시지의 인라인 서명/암호화는 불가능합니다.</p><p>마크업을 삭제하"
+"시겠습니까?</p></qt>"
+
+#: composer/composerviewbase.cpp:333
+#, kde-format
+msgid "Sign/Encrypt Message?"
+msgstr "메시지 서명/암호화?"
+
+#: composer/composerviewbase.cpp:514
+#, kde-format
+msgid "It was not possible to create a message composer."
+msgstr "메시지 작성기를 만들 수 없습니다."
+
+#: composer/composerviewbase.cpp:524
+#, kde-format
+msgid "Do you want to resize images?"
+msgstr "그림 크기를 조정하시겠습니까?"
+
+#: composer/composerviewbase.cpp:525
+#, kde-format
+msgid "Auto Resize Images"
+msgstr "그림 크기 자동 조절"
+
+#: composer/composerviewbase.cpp:526
+#, kde-format
+msgctxt "@action:button"
+msgid "Auto Resize"
+msgstr "자동 크기 조정"
+
+#: composer/composerviewbase.cpp:527
+#, kde-format
+msgctxt "@action:button"
+msgid "Do Not Resize"
+msgstr "크기 조정하지 않음"
+
+#: composer/composerviewbase.cpp:737
+#, kde-format
+msgid "OpenPGP Key Expired"
+msgstr "OpenPGP 키 만료됨"
+
+#: composer/composerviewbase.cpp:737
+#, kde-format
+msgid "S/MIME Certificate Expired"
+msgstr "S/MIME 인증서 만료됨"
+
+#: composer/composerviewbase.cpp:739
+#, kde-format
+msgid "OpenPGP Key Expires Soon"
+msgstr "OpenPGP 키가 곧 만료됨"
+
+#: composer/composerviewbase.cpp:739
+#, kde-format
+msgid "S/MIME Certificate Expires Soon"
+msgstr "S/MIME 인증서가 곧 만료됨"
+
+#: composer/composerviewbase.cpp:814 composer/composerviewbase.cpp:828
+#: composer/composerviewbase.cpp:860
+#, kde-format
+msgid "Failed to resolve keys. Please report a bug."
+msgstr "키를 찾을 수 없습니다. 버그를 보고해 주십시오."
+
+#: composer/composerviewbase.cpp:1066 composer/composerviewbase.cpp:1331
+#, kde-format
+msgid "Job cancelled by the user"
+msgstr "사용자가 작업을 취소함"
+
+#: composer/composerviewbase.cpp:1071
+#, kde-format
+msgid ""
+"Could not compose message: %1 \n"
+" Please report this bug."
+msgstr ""
+"메시지를 작성할 수 없음: %1\n"
+" 버그를 보고해 주십시오."
+
+#: composer/composerviewbase.cpp:1073
+#, kde-format
+msgid "Could not compose message: %1"
+msgstr "메시지를 작성할 수 없음: %1"
+
+#: composer/composerviewbase.cpp:1170
+#, kde-format
+msgid "There were problems trying to queue the message for sending: %1"
+msgstr "보낼 메시지를 대기열에 등록할 수 없음: %1"
+
+#: composer/composerviewbase.cpp:1334
+#, kde-format
+msgid "Could not autosave message: %1"
+msgstr "메시지를 자동으로 저장할 수 없음: %1"
+
+#: composer/composerviewbase.cpp:1353
+#, kde-format
+msgid "Could not write all data to file."
+msgstr "모든 데이터를 파일로 저장할 수 없습니다."
+
+#: composer/composerviewbase.cpp:1356
+#, kde-format
+msgid "Could not finalize the file."
+msgstr "파일을 끝마칠 수 없습니다."
+
+#: composer/composerviewbase.cpp:1360
+#, kde-format
+msgid "Could not open file."
+msgstr "파일을 열 수 없습니다."
+
+#: composer/composerviewbase.cpp:1367
+#, kde-format
+msgid ""
+"Autosaving the message as %1 failed.\n"
+"%2\n"
+"Reason: %3"
+msgstr ""
+"메시지를 %1(으)로 저장할 수 없습니다.\n"
+"%2\n"
+"이유: %3"
+
+#: composer/composerviewbase.cpp:1373
+#, kde-format
+msgid "Autosaving Message Failed"
+msgstr "메시지를 자동으로 저장할 수 없음"
+
+#: composer/composerviewbase.cpp:1486
+#, kde-format
+msgid "Failed to save the message: %1"
+msgstr "메시지를 저장할 수 없음: %1"
+
+#: composer/composerviewbase.cpp:1904
+#, kde-format
+msgid ""
+"The message you have composed seems to refer to an attached file but you "
+"have not attached anything.\n"
+"Do you want to attach a file to your message?"
+msgstr ""
+"작성한 메시지에서 첨부 파일을 언급했으나 실제 첨부된 파일이 없습니다.\n"
+"메시지에 파일을 첨부하시겠습니까?"
+
+#: composer/composerviewbase.cpp:1907
+#, kde-format
+msgid "File Attachment Reminder"
+msgstr "파일 첨부 알림"
+
+#: composer/composerviewbase.cpp:1909
+#, kde-format
+msgid "&Send as Is"
+msgstr "그대로 보내기(&S)"
+
+#: composer/composerviewbase.cpp:1961
+#, kde-format
+msgid ""
+"Examination of the recipient's signing preferences yielded that you be asked "
+"whether or not to sign this message.\n"
+"Sign this message?"
+msgstr ""
+"받는 사람의 서명 선호도에 의하면 서명 여부를 선택할 수 있습니다.\n"
+"이 메시지에 서명하시겠습니까?"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgid "Sign Message?"
+msgstr "메시지에 서명하기?"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgctxt "to sign"
+msgid "&Sign"
+msgstr "서명(&S)"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgid "Do &Not Sign"
+msgstr "서명하지 않음(&N)"
+
+#: composer/composerviewbase.cpp:1987
+#, kde-format
+msgid ""
+"There are conflicting signing preferences for these recipients.\n"
+"Sign this message?"
+msgstr ""
+"다음 수신자에 대한 서명 선호가 충돌합니다.\n"
+"이 메시지에 서명하시겠습니까?"
+
+#: composer/composerviewbase.cpp:2011
+#, kde-format
+msgid ""
+"You have requested to sign this message, but no valid signing keys have been "
+"configured for this identity."
+msgstr "메시지 서명을 요청했지만 프로필에 대한 올바른 서명 키가 없습니다."
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgid "Send Unsigned?"
+msgstr "서명하지 않고 보내기?"
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgid "Send &Unsigned"
+msgstr "서명하지 않고 보내기(&U)"
+
+#: composer/composerviewbase.cpp:2028
+#, kde-format
+msgid ""
+"Some parts of this message will not be signed.\n"
+"Sending only partially signed messages might violate site policy.\n"
+"Sign all parts instead?"
+msgstr ""
+"이 메시지의 일부를 서명하지 않습니다.\n"
+"부분적으로 서명한 메시지는 사이트 정책을 위반할 수도 있습니다.\n"
+"모든 부분에 서명하시겠습니까?"
+
+#: composer/composerviewbase.cpp:2032
+#, kde-format
+msgid ""
+"This message will not be signed.\n"
+"Sending unsigned message might violate site policy.\n"
+"Sign message instead?"
+msgstr ""
+"이 메시지를 서명하지 않습니다.\n"
+"서명하지 않은 메시지는 사이트 정책을 위반할 수도 있습니다.\n"
+"메시지에 서명하시겠습니까?"
+
+#: composer/composerviewbase.cpp:2035
+#, kde-format
+msgid "&Sign All Parts"
+msgstr "모두 서명하기(&S)"
+
+#: composer/composerviewbase.cpp:2035
+#, kde-format
+msgid "&Sign"
+msgstr "서명(&S)"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "Unsigned-Message Warning"
+msgstr "서명 없는 메시지 경고"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "Send &As Is"
+msgstr "그대로 보내기(&A)"
+
+#: composer/composerviewbase.cpp:2084
+#, kde-format
+msgid ""
+"Valid trusted encryption keys were found for all recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"모든 수신자의 올바른 신뢰할 수 있는 암호 키를 찾았습니다.\n"
+"메시지를 암호화하시겠습니까?"
+
+#: composer/composerviewbase.cpp:2087
+#, kde-format
+msgid ""
+"Examination of the recipient's encryption preferences yielded that you be "
+"asked whether or not to encrypt this message.\n"
+"Encrypt this message?"
+msgstr ""
+"받는 사람의 암호화 선호도에 의하면 암호화 여부를 선택할 수 있습니다.\n"
+"이 메시지를 암호화하시겠습니까?"
+
+#: composer/composerviewbase.cpp:2093 composer/composerviewbase.cpp:2119
+#, kde-format
+msgid "Encrypt Message?"
+msgstr "메시지 암호화?"
+
+#: composer/composerviewbase.cpp:2094
+#, kde-format
+msgid "Sign && &Encrypt"
+msgstr "서명 및 암호화"
+
+#: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2119
+#: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1317
+#: composer/keyresolver.cpp:1353
+#, kde-format
+msgid "&Encrypt"
+msgstr "암호화(&E)"
+
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#, kde-format
+msgid "&Sign Only"
+msgstr "서명만(&S)"
+
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#, kde-format
+msgid "&Send As-Is"
+msgstr "그대로 보내기(&S)"
+
+#: composer/composerviewbase.cpp:2116
+#, kde-format
+msgid ""
+"There are conflicting encryption preferences for these recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"다음 수신자에 대한 암호화 선호가 충돌합니다.\n"
+"이 메시지를 암호화하시겠습니까?"
+
+#: composer/composerviewbase.cpp:2119
+#, kde-format
+msgid "Do &Not Encrypt"
+msgstr "암호화하지 않음(&N)"
+
+#: composer/composerviewbase.cpp:2139
+#, kde-format
+msgid ""
+"You have requested to encrypt this message, and to encrypt a copy to "
+"yourself, but no valid trusted encryption keys have been configured for this "
+"identity."
+msgstr ""
+"메시지 암호화를 요청했고 자기 자신에게 복사본을 보내기로 했지만 이 프로필에 "
+"대한 올바른 신뢰할 수 있는 암호화 키를 찾지 못했습니다."
+
+#: composer/composerviewbase.cpp:2143
+#, kde-format
+msgid "Send Unencrypted?"
+msgstr "암호화하지 않고 보내기?"
+
+#: composer/composerviewbase.cpp:2143 composer/keyresolver.cpp:1339
+#, kde-format
+msgid "Send &Unencrypted"
+msgstr "암호화하지 않고 보냄(&U)"
+
+#: composer/composerviewbase.cpp:2157
+#, kde-format
+msgid ""
+"Some parts of this message will not be encrypted.\n"
+"Sending only partially encrypted messages might violate site policy and/or "
+"leak sensitive information.\n"
+"Encrypt all parts instead?"
+msgstr ""
+"이 메시지의 일부를 암호화하지 않습니다.\n"
+"부분적으로 암호화된 메시지는 사이트 정책을 위반하거나 민감한 정보를 누출시킬 "
+"수 있습니다.\n"
+"모든 부분을 암호화하시겠습니까?"
+
+#: composer/composerviewbase.cpp:2162
+#, kde-format
+msgid ""
+"This message will not be encrypted.\n"
+"Sending unencrypted messages might violate site policy and/or leak sensitive "
+"information.\n"
+"Encrypt messages instead?"
+msgstr ""
+"이 메시지를 암호화하지 않습니다.\n"
+"암호화되지 않은 메시지는 사이트 정책을 위반하거나 민감한 정보를 누출시킬 수 "
+"있습니다.\n"
+"메시지를 암호화하시겠습니까?"
+
+#: composer/composerviewbase.cpp:2166
+#, kde-format
+msgid "&Encrypt All Parts"
+msgstr "모두 암호화(&E)"
+
+#: composer/composerviewbase.cpp:2169
+#, kde-format
+msgid "Unencrypted Message Warning"
+msgstr "암호화되지 않은 메시지 경고"
+
+#: composer/keyresolver.cpp:302
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not fully trusted for encryption."
+msgstr ""
+"하나 이상의 설정한 OpenPGP 암호화 키 및 S/MIME 인증서를 암호화용으로 신뢰할 "
+"수 없습니다."
+
+#: composer/keyresolver.cpp:306
+#, kde-format
+msgid ""
+"One or more of the OpenPGP encryption keys or S/MIME certificates for "
+"recipient \"%1\" is not fully trusted for encryption."
+msgstr ""
+"수신자 \"%1\"에 대한 하나 이상의 설정한 OpenPGP 암호화 키 및 S/MIME 인증서를 "
+"암호화용으로 신뢰할 수 없습니다."
+
+#: composer/keyresolver.cpp:313
+#, kde-format
+msgid ""
+"\n"
+"The following keys are only marginally trusted: \n"
+msgstr ""
+"\n"
+"다음 키를 최소한으로만 신뢰합니다: \n"
+
+#: composer/keyresolver.cpp:317
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates have unknown trust level: \n"
+msgstr ""
+"\n"
+"다음 키나 인증서의 신뢰도를 알 수 없습니다: \n"
+
+#: composer/keyresolver.cpp:321
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates are <b>revoked</b>: \n"
+msgstr ""
+"\n"
+"다음 키나 인증서의 신뢰도가 <b>취소되었습니다</b>: \n"
+
+#: composer/keyresolver.cpp:327
+#, kde-format
+msgid "Not Fully Trusted Encryption Keys"
+msgstr "완전히 믿을 수 없는 암호화 키"
+
+#: composer/keyresolver.cpp:645
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not usable for encryption. Please reconfigure your "
+"encryption keys and certificates for this identity in the identity "
+"configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"하나 이상의 설정된 OpenPGP 키나 S/MIME 키를 암호화용으로 사용할 수 없습니다. "
+"프로필 설정 대화 상자에서 이 프로필에 대한 암호화 키 및 인증서를 다시 설정하"
+"십시오.\n"
+"계속 진행하기로 선택했고 나중에 키가 필요하면 사용할 키를 물어보게 됩니다."
+
+#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
+#: composer/keyresolver.cpp:1037
+#, kde-format
+msgid "Unusable Encryption Keys"
+msgstr "사용할 수 없는 암호화 키"
+
+#: composer/keyresolver.cpp:687
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP signing keys or S/MIME signing "
+"certificates is not usable for signing. Please reconfigure your signing keys "
+"and certificates for this identity in the identity configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"하나 이상의 설정된 OpenPGP 키나 S/MIME 키를 서명용으로 사용할 수 없습니다 프"
+"로필 설정 대화 상자에서 이 프로필에 대한 서명 키 및 인증서를 다시 설정하십시"
+"오.\n"
+"계속 진행하기로 선택했고 나중에 키가 필요하면 사용할 키를 물어보게 됩니다."
+
+#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
+#: composer/keyresolver.cpp:1084
+#, kde-format
+msgid "Unusable Signing Keys"
+msgstr "사용할 수 없는 서명 키"
+
+#: composer/keyresolver.cpp:998
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid trusted OpenPGP encryption keys for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"받는 사람의 암호화 선호도에 의하면 최소한 일부 받는 사람에 대해서 OpenPGP 암"
+"호화를 사용할 수 있습니다.\n"
+"이 프로필에 대한 올바른 믿을 수 있는 OpenPGP 암호화 키를 설정하지 않았습니"
+"다.\n"
+"자기 자신에게 암호화하지 않고 진행할 수 있지만 나중에 보낸 메시지를 읽을 수 "
+"없습니다."
+
+#: composer/keyresolver.cpp:1027
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME encryption certificates for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"받는 사람의 암호화 선호도에 의하면 최소한 일부 받는 사람에 대해서 S/MIME 암호"
+"화를 사용할 수 있습니다.\n"
+"이 프로필에 대한 올바른 믿을 수 있는 S/MIME 암호화 키를 설정하지 않았습니"
+"다.\n"
+"자기 자신에게 암호화하지 않고 진행할 수 있지만 나중에 보낸 메시지를 읽을 수 "
+"없습니다."
+
+#: composer/keyresolver.cpp:1059
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid OpenPGP signing certificates for this "
+"identity."
+msgstr ""
+"받는 사람의 서명 선호도에 의하면 최소한 일부 받는 사람에 대해서 OpenPGP 서명"
+"을 사용할 수 있습니다.\n"
+"이 프로필에 대한 올바른 믿을 수 있는 OpenPGP 서명 키를 설정하지 않았습니다."
+
+#: composer/keyresolver.cpp:1067
+#, kde-format
+msgid "Do Not OpenPGP-Sign"
+msgstr "OpenPGP 서명 하지 않음"
+
+#: composer/keyresolver.cpp:1077
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME signing certificates for this "
+"identity."
+msgstr ""
+"받는 사람의 서명 선호도에 의하면 최소한 일부 받는 사람에 대해서 S/MIME 서명"
+"을 사용할 수 있습니다.\n"
+"이 프로필에 대한 올바른 믿을 수 있는 S/MIME 서명 키를 설정하지 않았습니다."
+
+#: composer/keyresolver.cpp:1085
+#, kde-format
+msgid "Do Not S/MIME-Sign"
+msgstr "S/MIME 서명 하지 않음"
+
+#: composer/keyresolver.cpp:1147
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences showed no common type of "
+"signature matching your available signing keys.\n"
+"Send message without signing?"
+msgstr ""
+"받는 사람의 서명 선호도에 의하면 사용할 수 있는 서명 키와 일치하는 종류의 공"
+"통된 서명 방식을 사용할 수 없습니다.\n"
+"서명하지 않고 메시지를 보내시겠습니까?"
+
+#: composer/keyresolver.cpp:1151
+#, kde-format
+msgid "No signing possible"
+msgstr "서명할 수 없음"
+
+#: composer/keyresolver.cpp:1314
+#, kde-format
+msgid ""
+"You did not select an encryption key for yourself (encrypt to self). You "
+"will not be able to decrypt your own message if you encrypt it."
+msgstr ""
+"자기 자신의 암호화 키를 선택하지 않았습니다. 메시지를 암호화한 후에 복호화할 "
+"수 없습니다."
+
+#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
+#: composer/keyresolver.cpp:1353
+#, kde-format
+msgid "Missing Key Warning"
+msgstr "빠진 키 오류"
+
+#: composer/keyresolver.cpp:1332
+#, kde-format
+msgid ""
+"You did not select an encryption key for the recipient of this message; "
+"therefore, the message will not be encrypted."
+msgstr ""
+"이 메시지의 받는 사람의 암호화 키를 선택하지 않았으므로 메시지를 암호화하지 "
+"않습니다."
+
+#: composer/keyresolver.cpp:1336
+#, kde-format
+msgid ""
+"You did not select an encryption key for any of the recipients of this "
+"message; therefore, the message will not be encrypted."
+msgstr ""
+"이 메시지의 받는 모든 사람의 암호화 키를 선택하지 않았으므로 메시지를 암호화"
+"하지 않습니다."
+
+#: composer/keyresolver.cpp:1345
+#, kde-format
+msgid ""
+"You did not select an encryption key for one of the recipients: this person "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"이 메시지를 받는 사람 중 한 사람의 암호화 키를 선택하지 않았으므로 해당하는 "
+"사람은 메시지를 암호화한 경우 복호화할 수 없습니다."
+
+#: composer/keyresolver.cpp:1349
+#, kde-format
+msgid ""
+"You did not select encryption keys for some of the recipients: these persons "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"이 메시지를 받는 사람 중 일부 사람의 암호화 키를 선택하지 않았으므로 해당하"
+"는 사람은 메시지를 암호화한 경우 복호화할 수 없습니다."
+
+#: composer/keyresolver.cpp:1425
+#, kde-format
+msgid "Encryption Key Selection"
+msgstr "암호화 키 선택"
+
+#: composer/keyresolver.cpp:1469
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"There is a problem with the encryption certificate(s) for \"%1\".\n"
+"\n"
+"Please re-select the certificate(s) which should be used for this recipient."
+msgstr ""
+"\"%1\"의 서명 인증서에 문제가 있습니다.\n"
+"\n"
+"이 수신자의 인증서를 다시 선택하십시오."
+
+#: composer/keyresolver.cpp:1543
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"<qt>No valid and trusted encryption certificate was found for \"%1\".<br/"
+"><br/>Select the certificate(s) which should be used for this recipient. If "
+"there is no suitable certificate in the list you can also search for "
+"external certificates by clicking the button: search for external "
+"certificates.</qt>"
+msgstr ""
+"<qt>\"%1\"에 대한 올바른 신뢰할 수 있는 암호화 인증서를 찾을 수 없습니다.<br/"
+"><br/>수신자에게 사용할 인증서를 선택하십시오. 목록에 올바른 인증서가 없으면 "
+"외부 인증서 검색 단추를 클릭해서 외부 인증서를 찾아볼 수 있습니다.</qt>"
+
+#: composer/keyresolver.cpp:1553
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"More than one certificate matches \"%1\".\n"
+"\n"
+"Select the certificate(s) which should be used for this recipient."
+msgstr ""
+"\"%1\"의 키가 하나 이상 존재합니다.\n"
+"\n"
+"이 수신자의 인증서를 선택하십시오."
+
+#: composer/nearexpirychecker.cpp:82
+#, kde-format
+msgid ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>OpenPGP 서명 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) %1 "
+"전에 만료되었습니다.</p>"
+
+#: composer/nearexpirychecker.cpp:88
+#, kde-format
+msgid ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>OpenPGP 암호화 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) "
+"%1 전에 만료되었습니다.</p>"
+
+#: composer/nearexpirychecker.cpp:94
+#, kde-format
+msgid ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>OpenPGP 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) %1 전에 "
+"만료되었습니다.</p>"
+
+#: composer/nearexpirychecker.cpp:103
+#, kde-format
+msgid ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>OpenPGP 서명 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) %1"
+"일 안에 만료됩니다.</p>"
+
+#: composer/nearexpirychecker.cpp:109
+#, kde-format
+msgid ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>OpenPGP 암호화 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) %1"
+"일 안에 만료됩니다.</p>"
+
+#: composer/nearexpirychecker.cpp:115
+#, kde-format
+msgid ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>OpenPGP 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) %1일 안"
+"에 만료됩니다.</p>"
+
+#: composer/nearexpirychecker.cpp:135
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME 서명 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 대"
+"한 루트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료되었습"
+"니다.</p>"
+
+#: composer/nearexpirychecker.cpp:143
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME 암호화 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 "
+"대한 루트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료되었"
+"습니다.</p>"
+
+#: composer/nearexpirychecker.cpp:151
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+"less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired %1 "
+"days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 대한 루"
+"트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료되었습니다."
+"</p>"
+
+#: composer/nearexpirychecker.cpp:161
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME 서명 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 대"
+"한 중간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료되"
+"었습니다.</p>"
+
+#: composer/nearexpirychecker.cpp:169
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME 암호화 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 "
+"대한 중간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료"
+"되었습니다.</p>"
+
+#: composer/nearexpirychecker.cpp:177
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 대한 중"
+"간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료되었습니"
+"다.</p>"
+
+#: composer/nearexpirychecker.cpp:193
+#, kde-format
+msgid ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME 서명 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이"
+"(가) %1일 전에 만료되었습니다.</p>"
+
+#: composer/nearexpirychecker.cpp:199
+#, kde-format
+msgid ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME 암호화 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이"
+"(가) %1일 전에 만료되었습니다.</p>"
+
+#: composer/nearexpirychecker.cpp:205
+#, kde-format
+msgid ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>S/MIME 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이(가) %1"
+"일 전에 만료되었습니다.</p>"
+
+#: composer/nearexpirychecker.cpp:218
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME 서명 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 대"
+"한 루트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료됩니"
+"다.</p>"
+
+#: composer/nearexpirychecker.cpp:226
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME 암호화 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 "
+"대한 루트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료됩니"
+"다.</p>"
+
+#: composer/nearexpirychecker.cpp:234
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
+"in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
+"in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 대한 루"
+"트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료됩니다.</p>"
+
+#: composer/nearexpirychecker.cpp:244
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME 서명 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 대"
+"한 중간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료됩"
+"니다.</p>"
+
+#: composer/nearexpirychecker.cpp:252
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME 암호화 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 "
+"대한 중간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료"
+"됩니다.</p>"
+
+#: composer/nearexpirychecker.cpp:260
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 대한 중"
+"간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료됩니다."
+"</p>"
+
+#: composer/nearexpirychecker.cpp:276
+#, kde-format
+msgid ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME 서명 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이"
+"(가) %1일 안에 만료됩니다.</p>"
+
+#: composer/nearexpirychecker.cpp:282
+#, kde-format
+msgid ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME 암호화 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이"
+"(가) %1일 안에 만료됩니다.</p>"
+
+#: composer/nearexpirychecker.cpp:288
+#, kde-format
+msgid ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>S/MIME 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이(가) %1"
+"일 안에 만료됩니다.</p>"
+
+#: followupreminder/followupremindercreatejob.cpp:76
+#, kde-format
+msgid "Wait answer from \"%1\" send to \"%2\""
+msgstr "\"%1\" 님의 응답을 \"%2\" 님에게 보내는 것 대기 중"
+
+#: followupreminder/followupremindercreatejob.cpp:99
+#, kde-format
+msgid ""
+"Failed to store a new reminder: an error occurred while trying to create a "
+"new to-do in your calendar: %1"
+msgstr ""
+"새 알림을 저장할 수 없음: 내 달력에 새로운 할 일을 만드는 중 오류 발생: %1"
+
+#: followupreminder/followupremindercreatejob.cpp:131
+#, kde-format
+msgid "Failed to store a new reminder: %1"
+msgstr "새 알림을 저장할 수 없음: %1"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Date"
+msgstr "날짜 선택"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:63
+#, kde-format
+msgid "Date:"
+msgstr "날짜:"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:71
+#, kde-format
+msgid "Store to-do in:"
+msgstr "할 일 저장 위치:"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "The selected date must be greater than the current date."
+msgstr "선택한 날짜는 오늘 이후여야 합니다."
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "Invalid date"
+msgstr "잘못된 날짜"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "The selected folder is not valid."
+msgstr "선택한 폴더가 올바르지 않습니다."
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "Invalid folder"
+msgstr "잘못된 폴더"
+
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#, kde-format
+msgid "forwarded message"
+msgstr "전달된 메시지"
+
+#: helper/messagefactoryng.cpp:575
+#, kde-format
+msgid "Receipt: "
+msgstr "영수증: "
+
+#: helper/messagefactoryng.cpp:702
+#, kde-format
+msgid ""
+"\n"
+"This is a MIME digest forward. The content of the message is contained in "
+"the attachment(s).\n"
+"\n"
+"\n"
+msgstr ""
+"\n"
+"MIME 다이제스트 전달입니다. 메시지 내용은 첨부 파일에 저장되어 있습니다.\n"
+"\n"
+"\n"
+
+#: imagescaling/imagescalingselectformat.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Image Format"
+msgstr "그림 형식 선택"
+
+#: imagescaling/imagescalingselectformat.cpp:94
+#, kde-format
+msgid "Select Format..."
+msgstr "형식 선택..."
+
+#: imagescaling/imagescalingwidget.cpp:113
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">어떻게 작동하나요?</a>"
+
+#: imagescaling/imagescalingwidget.cpp:123
+#, kde-format
+msgid ""
+"<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
+"current time</li><li>%d set current date</li><li>%n original filename</"
+"li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
+msgstr ""
+"<qt><p>그림 파일 이름을 정할 수 있습니다. 다음을 사용할 수 있습니다:</"
+"p><ul><li>%t 현재 시간 사용</li><li>%d 오늘 날짜 사용</li><li>%n 원래 파일 이"
+"름</li><li>%e 원래 파일 확장자</li><li>%x 새 파일 확장자</li></ul></qt>"
+
+#: imagescaling/imagescalingwidget.cpp:193
+#, kde-format
+msgid "Custom"
+msgstr "사용자 정의"
+
+#: imagescaling/imagescalingwidget.cpp:321
+#, kde-format
+msgid "Please verify minimum and maximum values."
+msgstr "최댓값과 최솟값을 확인하십시오."
+
+#: imagescaling/imagescalingwidget.cpp:321
+#, kde-format
+msgid "Error in minimum Maximum value"
+msgstr "최대 최솟값에 오류 발생"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
+#: imagescaling/ui/imagescalingwidget.ui:17
+#, kde-format
+msgid "Automatically resize images"
+msgstr "자동으로 그림 크기 조절"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: imagescaling/ui/imagescalingwidget.ui:28
+#, kde-format
+msgid "General"
+msgstr "일반"
+
+#. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
+#: imagescaling/ui/imagescalingwidget.ui:34
+#, kde-format
+msgid "Keep ratio"
+msgstr "비율 유지"
+
+#. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
+#: imagescaling/ui/imagescalingwidget.ui:41
+#, kde-format
+msgid "Ask before resizing"
+msgstr "크기 조절 전에 묻기"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: imagescaling/ui/imagescalingwidget.ui:50
+#, kde-format
+msgid "Fallback to format:"
+msgstr "폴백 형식:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: imagescaling/ui/imagescalingwidget.ui:89
+#, kde-format
+msgid "Image"
+msgstr "그림"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ReduceImageToMaximum)
+#: imagescaling/ui/imagescalingwidget.ui:95
+#, kde-format
+msgid "Reduce image to maximum dimension:"
+msgstr "그림 조절 최대 크기:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: imagescaling/ui/imagescalingwidget.ui:109
+#, kde-format
+msgid "Maximum width:"
+msgstr "최대 너비:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: imagescaling/ui/imagescalingwidget.ui:116
+#, kde-format
+msgid "Maximum height:"
+msgstr "최대 높이:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumHeight)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumHeight)
+#: imagescaling/ui/imagescalingwidget.ui:133
+#: imagescaling/ui/imagescalingwidget.ui:146
+#: imagescaling/ui/imagescalingwidget.ui:198
+#: imagescaling/ui/imagescalingwidget.ui:211
+#, kde-format
+msgid " px"
+msgstr " 픽셀"
+
+#. i18n: ectx: property (text), widget (QCheckBox, EnlargeImageToMinimum)
+#: imagescaling/ui/imagescalingwidget.ui:163
+#, kde-format
+msgid "Enlarge image to minimum dimension"
+msgstr "최소 크기로 그림 확대"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: imagescaling/ui/imagescalingwidget.ui:174
+#, kde-format
+msgid "Minimum width:"
+msgstr "최소 너비:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: imagescaling/ui/imagescalingwidget.ui:181
+#, kde-format
+msgid "Minimum height:"
+msgstr "최소 높이:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, skipImageSizeLower)
+#: imagescaling/ui/imagescalingwidget.ui:230
+#, kde-format
+msgid "Skip image whose size of the source file is lower than:"
+msgstr "파일 크기가 다음보다 작은 그림의 크기 조절 안 함:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
+#: imagescaling/ui/imagescalingwidget.ui:237
+#, kde-format
+msgid " KiB"
+msgstr " KiB"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: imagescaling/ui/imagescalingwidget.ui:263
+#, kde-format
+msgid "Filename"
+msgstr "파일 이름"
+
+#. i18n: ectx: property (title), widget (QGroupBox, filterSourceGroupBox)
+#: imagescaling/ui/imagescalingwidget.ui:269
+#, kde-format
+msgid "Source filter"
+msgstr "원본 필터"
+
+#. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
+#: imagescaling/ui/imagescalingwidget.ui:275
+#, kde-format
+msgid "Do not filter (All files are included)"
+msgstr "필터하지 않음(모두 포함됨)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:285
+#, kde-format
+msgid "Include all files whose names contains one of the patterns"
+msgstr "파일 이름이 다음 패턴에 일치하는 파일 포함"
+
+#. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:292
+#, kde-format
+msgid "Exclude all files whose names contains one of the patterns"
+msgstr "파일 이름이 다음 패턴에 일치하는 파일 제외"
+
+#. i18n: ectx: property (text), widget (QLabel, patternLabel)
+#: imagescaling/ui/imagescalingwidget.ui:301
+#, kde-format
+msgid "Pattern:"
+msgstr "패턴:"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, pattern)
+#: imagescaling/ui/imagescalingwidget.ui:308
+#, kde-format
+msgid "This line allows to define several pattern. Separate them with ';'."
+msgstr "이 줄에서 패턴을 정의할 수 있습니다. ';' 기호로 구분하십시오."
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, doNotResizePattern)
+#: imagescaling/ui/imagescalingwidget.ui:311
+#: imagescaling/ui/imagescalingwidget.ui:419
+#: imagescaling/ui/imagescalingwidget.ui:443
+#, kde-format
+msgid "Specify patterns separate with ';'"
+msgstr "패턴 구분 기호는 ';'입니다"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: imagescaling/ui/imagescalingwidget.ui:326
+#, kde-format
+msgid "Image Format"
+msgstr "그림 형식"
+
+#. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
+#: imagescaling/ui/imagescalingwidget.ui:332
+#, kde-format
+msgid "Resize all images with one of these formats"
+msgstr "다음 형식의 그림은 모두 크기 조절"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: imagescaling/ui/imagescalingwidget.ui:345
+#, kde-format
+msgid "Resize filename"
+msgstr "크기 조절 파일 이름"
+
+#. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
+#: imagescaling/ui/imagescalingwidget.ui:371
+#, kde-format
+msgid "Rename resized images with following pattern:"
+msgstr "다음 패턴으로 크기 조정된 그림 파일 이름 변경:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
+#: imagescaling/ui/imagescalingwidget.ui:389
+#, kde-format
+msgid "Recipients"
+msgstr "받는 사람"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotFilterRecipients)
+#: imagescaling/ui/imagescalingwidget.ui:395
+#, kde-format
+msgid "Do not filter (All recipients are allowed)"
+msgstr "필터하지 않음(모두 포함됨)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:405
+#, kde-format
+msgid "Resize if each emails address contains one of the pattern"
+msgstr "각각 이메일 주소가 다음 패턴과 일치하는 경우 크기 조정"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:412
+#, kde-format
+msgid "Resize if one emails address contains one of the pattern"
+msgstr "하나의 이메일 주소가 다음 패턴과 일치하는 경우 크기 조정"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:429
+#, kde-format
+msgid "Do not resize if each emails address contains one of the pattern"
+msgstr "각각 이메일 주소가 다음 패턴과 일치하지 않는 경우 크기 조정"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:436
+#, kde-format
+msgid "Do not resize if one emails address contains one of the pattern"
+msgstr "하나의 이메일 주소가 다음 패턴과 일치하지 않는 경우 크기 조정"
+
+#: job/attachmentclipboardjob.cpp:42
+#, kde-format
+msgid "No text found in Clipboard"
+msgstr "클립보드에 텍스트 없음"
+
+#: job/attachmentclipboardjob.cpp:46
+#, kde-format
+msgid "Define Attachment Name"
+msgstr "첨부 파일 이름 지정"
+
+#: job/attachmentclipboardjob.cpp:46
+#, kde-format
+msgid "Attachment Name:"
+msgstr "첨부 파일 이름:"
+
+#: job/attachmentclipboardjob.cpp:49
+#, kde-format
+msgid "Clipboard Text"
+msgstr "클립보드 텍스트"
+
+#: job/attachmentfrompublickeyjob.cpp:50
+#, kde-format
+msgid "OpenPGP key 0x%1"
+msgstr "OpenPGP 키 0x%1"
+
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#, kde-format
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>%1</b></p>"
+msgstr ""
+"<p>백엔드에서 키를 내보내는 중 오류가 발생했습니다:</p><p><b>%1</b></p>"
+
+#: job/attachmentfrompublickeyjob.cpp:107
+#, kde-format
+msgid "Exporting key..."
+msgstr "키 내보내는 중..."
+
+#: job/attachmentvcardfromaddressbookjob.cpp:75
+#, kde-format
+msgid "Unknown Contact Type"
+msgstr "알 수 없는 연락처 종류"
+
+#: job/attachmentvcardfromaddressbookjob.cpp:86
+#, kde-format
+msgid "Invalid Contact"
+msgstr "잘못된 연락처"
+
+#: job/attachmentvcardfromaddressbookjob.cpp:102
+#, kde-format
+msgid "Impossible to generate vCard."
+msgstr "vCard를 생성할 수 없습니다."
+
+#: job/autocryptheadersjob.cpp:104
+#, kde-format
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>No valid key found for user %1 (%2)</b></p>"
+msgstr ""
+"<p>백엔드에서 키를 내보내는 중 오류가 발생했습니다:</p><p><b>사용자 %1(%2)의 "
+"유효한 키 없음</b></p>"
+
+#: job/maintextjob.cpp:60
+#, kde-format
+msgid "Asked to use word wrapping, but not given wrapped plain text."
+msgstr "자동 줄 바꿈을 선택했지만 둘러싸인 일반 텍스트가 주어지지 않았습니다."
+
+#: job/maintextjob.cpp:67
+#, kde-format
+msgid "Asked not to use word wrapping, but not given clean plain text."
+msgstr ""
+"자동 줄 바꿈을 선택하지 않았지만 깨끗한 일반 텍스트가 주어지지 않았습니다."
+
+#: job/maintextjob.cpp:82
+#, kde-format
+msgid ""
+"No charsets were available for encoding. Please check your configuration and "
+"make sure it contains at least one charset for sending."
+msgstr ""
+"인코딩할 문자 집합을 지정하지 않았습니다. 설치 상태를 확인하고 최소한 하나의 "
+"문자 집합이 있는지 확인하십시오."
+
+#: job/maintextjob.cpp:100
+#, kde-format
+msgid ""
+"Encoding the message with %1 will lose some characters.\n"
+"Do you want to continue?"
+msgstr ""
+"메시지를 %1(으)로 인코딩하면 일부 글자가 손실됩니다.\n"
+"계속 진행하시겠습니까?"
+
+#: job/maintextjob.cpp:103
+#, kde-format
+msgid "Some Characters Will Be Lost"
+msgstr "일부 글자가 손실됨"
+
+#: job/maintextjob.cpp:104
+#, kde-format
+msgid "Lose Characters"
+msgstr "글자 손실"
+
+#: job/maintextjob.cpp:105
+#, kde-format
+msgid "Change Encoding"
+msgstr "인코딩 변경"
+
+#: job/maintextjob.cpp:108
+#, kde-format
+msgid "User decided to change the encoding."
+msgstr "사용자가 인코딩을 변경했습니다."
+
+#: job/maintextjob.cpp:118
+#, kde-format
+msgid "The selected encoding (%1) cannot fully encode the message."
+msgstr "선택한 인코딩(%1)은 메시지를 완벽히 표현할 수 없습니다."
+
+#: job/maintextjob.cpp:143
+#, kde-format
+msgid "Could not get text codec for charset \"%1\"."
+msgstr "문자 집합 \"%1\"에 대한 텍스트 코덱을 가져올 수 없습니다."
+
+#: job/savecontactpreferencejob.cpp:51
+#, kde-format
+msgid "Name Selection"
+msgstr "이름 선택"
+
+#: job/savecontactpreferencejob.cpp:52
+#, kde-format
+msgid "Which name shall the contact '%1' have in your address book?"
+msgstr "주소록에 연락처 '%1'을(를) 어떤 이름으로 저장하시겠습니까?"
+
+#: job/savecontactpreferencejob.cpp:64
+#, kde-format
+msgid "Select the address book folder to store the new contact in:"
+msgstr "새 연락처를 저장할 주소록 폴더를 선택하십시오:"
+
+#: job/singlepartjob.cpp:67
+#, kde-format
+msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
+msgstr ""
+"%1 Content-Transfer-Encoding은 이 메시지를 올바르게 인코딩할 수 없습니다."
+
+#: mdn/mdnadvicedialog.cpp:21
+#, kde-format
+msgctxt "@title:window"
+msgid "Message Disposition Notification Request"
+msgstr "메시지 읽음 확인 요청"
+
+#: mdn/mdnadvicedialog.cpp:30
+#, kde-format
+msgid "Send \"&denied\""
+msgstr "\"거부됨\" 보냄(&D)"
+
+#: mdn/mdnadvicedialog.cpp:32
+#, kde-format
+msgid "&Ignore"
+msgstr "무시(&I)"
+
+#: mdn/mdnadvicedialog.cpp:34
+#, kde-format
+msgid "&Send"
+msgstr "보내기(&S)"
+
+#: mdn/mdnadvicehelper.cpp:27
+msgid ""
+"This message contains a request to return a notification about your "
+"reception of the message.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"이 메시지에서 수신 상태에 대한 답장을 보내 줄 것을 요청하고 있습니다.\n"
+"이 요청을 무시하거나 메일 프로그램에서 \"거부됨\"이나 일반적인 응답을 보낼 "
+"수 있습니다."
+
+#: mdn/mdnadvicehelper.cpp:33
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message.\n"
+"It contains a processing instruction that is marked as \"required\", but "
+"which is unknown to the mail program.\n"
+"You can either ignore the request or let the mail program send a \"failed\" "
+"response."
+msgstr ""
+"이 메시지에서 수신 상태에 대한 답장을 보내 줄 것을 요청하고 있습니다.\n"
+"\"필수\"로 표시된 처리 과정이 들어 있으나 메일 프로그램에서 알 수 없습니다.\n"
+"이 요청을 무시하거나 메일 프로그램에서 \"실패\" 답장을 보낼 수 있습니다."
+
+#: mdn/mdnadvicehelper.cpp:41
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but it is requested to send the notification to more than one address.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"이 메시지에서 수신 상태에 대한 답장을 보내 줄 것을 요청하고 있습니다.\n"
+"답장을 보낼 주소가 하나 이상입니다.\n"
+"이 요청을 무시하거나 메일 프로그램에서 \"거부됨\"이나 일반적인 응답을 보낼 "
+"수 있습니다."
+
+#: mdn/mdnadvicehelper.cpp:49
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but there is no return-path set.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"이 메시지에서 수신 상태에 대한 답장을 보내 줄 것을 요청하고 있습니다.\n"
+"메시지에 Return-Path가 설정되어 있지 않습니다.\n"
+"이 요청을 무시하거나 메일 프로그램에서 \"거부됨\"이나 일반적인 응답을 보낼 "
+"수 있습니다."
+
+#: mdn/mdnadvicehelper.cpp:56
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but the return-path address differs from the address the notification was "
+"requested to be sent to.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"이 메시지에서 수신 상태에 대한 답장을 보내 줄 것을 요청하고 있습니다\n"
+"Return-Path 주소가 알림을 보낼 주소와 다릅니다.\n"
+"이 요청을 무시하거나 메일 프로그램에서 \"거부됨\"이나 일반적인 응답을 보낼 "
+"수 있습니다."
+
+#: recipient/distributionlistdialog.cpp:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Distribution List"
+msgstr "분배 목록 저장"
+
+#: recipient/distributionlistdialog.cpp:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List"
+msgstr "목록 저장"
+
+#: recipient/distributionlistdialog.cpp:121
+#, kde-format
+msgctxt "@label:textbox Name of the distribution list."
+msgid "&Name:"
+msgstr "이름(&N):"
+
+#: recipient/distributionlistdialog.cpp:125
+#, kde-format
+msgid "Name of Distribution List"
+msgstr "분배 목록 이름"
+
+#: recipient/distributionlistdialog.cpp:132
+#, kde-format
+msgctxt "@title:column Name of the recipient"
+msgid "Name"
+msgstr "이름"
+
+#: recipient/distributionlistdialog.cpp:133
+#, kde-format
+msgctxt "@title:column Email of the recipient"
+msgid "Email"
+msgstr "이메일"
+
+#: recipient/distributionlistdialog.cpp:240
+#, kde-format
+msgctxt "@info"
+msgid ""
+"There are no recipients in your list. First select some recipients, then try "
+"again."
+msgstr "목록에 받는 사람이 없습니다. 받는 사람을 선택한 후 다시 시도하십시오."
+
+#: recipient/distributionlistdialog.cpp:251
+#, kde-format
+msgctxt "@title:window"
+msgid "New Distribution List"
+msgstr "새 분배 목록"
+
+#: recipient/distributionlistdialog.cpp:252
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Please enter name:"
+msgstr "이름 입력:"
+
+#: recipient/distributionlistdialog.cpp:276
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Distribution list with the given name <resource>%1</resource> already "
+"exists. Please select a different name.</para>"
+msgstr ""
+"<para>이름이 <resource>%1</resource>인 분배 목록이 이미 존재합니다. 다른 이름"
+"을 입력하십시오.</para>"
+
+#: recipient/distributionlistdialog.cpp:285
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Address Book"
+msgstr "주소록 선택"
+
+#: recipient/distributionlistdialog.cpp:286
+#, kde-format
+msgid "Select the address book folder to store the contact group in:"
+msgstr "연락처 그룹을 저장할 주소록 폴더 선택:"
+
+#: recipient/distributionlistdialog.cpp:322
+#, kde-format
+msgid "Unable to create distribution list: %1"
+msgstr "분배 목록을 만들 수 없음: %1"
+
+#: recipient/recipient.cpp:99
+#, kde-format
+msgctxt "@label:listbox Recipient of an email message."
+msgid "To"
+msgstr "받는 사람"
+
+#: recipient/recipient.cpp:101
+#, kde-format
+msgctxt "@label:listbox Carbon Copy recipient of an email message."
+msgid "CC"
+msgstr "참조"
+
+#: recipient/recipient.cpp:103
+#, kde-format
+msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+msgid "BCC"
+msgstr "숨은 참조"
+
+#: recipient/recipient.cpp:105
+#, kde-format
+msgctxt "@label:listbox Reply-To recipient of an email message."
+msgid "Reply-To"
+msgstr "답장 받을 주소"
+
+#: recipient/recipient.cpp:110
+#, kde-kuit-format
+msgctxt "@label:listbox"
+msgid "<placeholder>Undefined Recipient Type</placeholder>"
+msgstr "<placeholder>알 수 없는 수신자 종류</placeholder>"
+
+#: recipient/recipientline.cpp:70
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Select type of recipient"
+msgstr "수신자 종류 선택"
+
+#: recipient/recipientline.cpp:72
+#, kde-format
+msgid "Set the list of email addresses to receive this message"
+msgstr "이 메시지를 받을 이메일 주소 목록 선택"
+
+#: recipient/recipientseditor.cpp:115
+#, kde-format
+msgctxt "@info:status"
+msgid "Truncating recipients list to %2 of %1 entry."
+msgid_plural "Truncating recipients list to %2 of %1 entries."
+msgstr[0] "수신자 목록을 항목 %2개 중 %1개로 자르는 중."
+
+#: recipient/recipientseditorsidewidget.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List..."
+msgstr "목록 저장..."
+
+#: recipient/recipientseditorsidewidget.cpp:45
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "받는 사람을 분배 목록으로 저장"
+
+#: recipient/recipientseditorsidewidget.cpp:47
+#, kde-format
+msgctxt "@action:button Open recipient selection dialog."
+msgid "Se&lect..."
+msgstr "선택(&L)..."
+
+#: recipient/recipientseditorsidewidget.cpp:50
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select recipients from address book"
+msgstr "주소록에서 받는 사람 선택"
+
+#: recipient/recipientseditorsidewidget.cpp:77
+#, kde-format
+msgctxt "@info:status No recipients selected"
+msgid "No recipients"
+msgstr "받는 사람 없음"
+
+#: recipient/recipientseditorsidewidget.cpp:79
+#, kde-format
+msgctxt "@info:status Number of recipients selected"
+msgid "1 recipient"
+msgid_plural "%1 recipients"
+msgstr[0] "받는 사람 %1명"
+
+#: recipient/recipientseditorsidewidget.cpp:129
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "To:%1"
+msgstr "수신: %1"
+
+#: recipient/recipientseditorsidewidget.cpp:131
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "CC:%1"
+msgstr "참조: %1"
+
+#: recipient/recipientseditorsidewidget.cpp:134
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "BCC:%1"
+msgstr "숨은 참조: %1"
+
+#: recipient/recipientseditorsidewidget.cpp:137
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "Reply-To:%1"
+msgstr "답장 주소: %1"
+
+#: recipient/recipientspicker.cpp:42
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Recipient"
+msgstr "받는 사람 선택"
+
+#: recipient/recipientspicker.cpp:54
+#, kde-format
+msgid "Search &Directory Service"
+msgstr "디렉터리 서비스 검색(&D)"
+
+#: recipient/recipientspicker.cpp:77
+#, kde-format
+msgid "Add as &Reply-To"
+msgstr "답장 받을 주소로 추가(&R)"
+
+#: recipient/recipientspicker.cpp:78
+#, kde-format
+msgid "Add as &To"
+msgstr "받는 사람으로 추가(&T)"
+
+#: recipient/recipientspicker.cpp:79
+#, kde-format
+msgid "Add as CC"
+msgstr "참조로 추가"
+
+#: recipient/recipientspicker.cpp:80
+#, kde-format
+msgid "Add as &BCC"
+msgstr "숨은 참조로 추가(&B)"
+
+#: recipient/recipientspicker.cpp:103
+#, kde-format
+msgid "%1 selected email"
+msgid_plural "%1 selected emails"
+msgstr[0] "선택한 이메일 %1개"
+
+#: recipient/recipientspicker.cpp:170
+#, kde-format
+msgid ""
+"You selected 1 recipient. The maximum supported number of recipients is %2.\n"
+"Please adapt the selection."
+msgid_plural ""
+"You selected %1 recipients. The maximum supported number of recipients is "
+"%2.\n"
+"Please adapt the selection."
+msgstr[0] ""
+"받는 사람 %1명을 선택했습니다. 최대로 지원하는 받는 사람 수는 %2명입니다.\n"
+"선택을 조정하십시오."
+
+#: recipient/recipientspicker.cpp:187
+#, kde-format
+msgid "You can not add more recipients."
+msgstr "받는 사람을 추가할 수 없습니다."
+
+#: sendlater/sendlatercreatejob.cpp:33
+#, kde-format
+msgid "Failed to schedule message for sending later: %1"
+msgstr "나중에 보내려고 메시지를 예약할 수 없음: %1"
+
+#: sendlater/sendlaterdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Send Later"
+msgstr "나중에 보내기"
+
+#: sendlater/sendlaterdialog.cpp:48
+#, kde-format
+msgid "Send Later"
+msgstr "나중에 보내기"
+
+#: sendlater/sendlaterdialog.cpp:49
+#, kde-format
+msgid "Delay"
+msgstr "지연 시간"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Days"
+msgstr "일"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Weeks"
+msgstr "주"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Months"
+msgstr "개월"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Years"
+msgstr "년"
+
+#: sendlater/sendlaterjob.cpp:32
+#, kde-format
+msgid "The Send Later agent is not running."
+msgstr "나중에 보내기 에이전트가 실행 중이 아닙니다."
+
+#: sendlater/sendlaterremovejob.cpp:27
+#, kde-format
+msgid "Failed to removed message from send later schedule: %1"
+msgstr "나중에 보내기 일정에서 메시지를 삭제할 수 없음: %1"
+
+#: sendlater/sendlatertimedatewidget.cpp:35
+#, kde-format
+msgid "You cannot select a date prior to the current date."
+msgstr "오늘보다 빠른 날짜를 선택할 수 없습니다."
+
+#. i18n: ectx: property (text), widget (QLabel, mLabel)
+#: sendlater/ui/sendlaterwidget.ui:29
+#, kde-format
+msgid "Send at:"
+msgstr "보낼 시간:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
+#: sendlater/ui/sendlaterwidget.ui:39
+#, kde-format
+msgid "Repeat every:"
+msgstr "다음마다 반복:"
+
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "답장할 때 선택한 텍스트만 인용"
+
+#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:23
+#, kde-format
+msgid "Keep original charset when replying or forwarding if possible"
+msgstr "가능한 경우 답장하거나 전달할 때 원본 문자 인코딩 사용하기"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:32
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "자동으로 서명 삽입(&U)"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:36
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "인용문 위에 서명 삽입"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:40
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "서명 앞에 구분선 삽입"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:45
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "자동 완성에 이메일에 포함된 주소 사용"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:46
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"이 옵션을 사용하지 않으면 작성기의 주소 입력란에 주소록에 저장된 주소만 표시"
+"합니다."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:52
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr "쌍반점 글자(';')를 메시지 작성기에서 구분자로 사용할 수 있도록 허용"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:55
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "자동 완성에 최근 주소 사용"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:56
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"이 옵션을 사용하지 않으면 최근에 사용한 주소가 작성기의 주소 필드에 나타나지 "
+"않습니다."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:61
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "최대 받는 사람 항목 수:"
+
+#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:66
+#, kde-format
+msgid "Outlook-compatible attachment naming"
+msgstr "Outlook 호환 첨부 파일 이름 사용"
+
+#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:67
+#, kde-format
+msgid ""
+"Turn this option on to make Outlook &#8482; understand attachment names "
+"containing non-English characters"
+msgstr ""
+"Outlook &#8482; 사용자가 비 영어 문자열로 되어 있는 첨부 파일 이름을 볼 수 있"
+"도록 합니다"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:71
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "다음 열에서 자동 줄 바꿈(&W):"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:81
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "HTML 메시지의 텍스트 버전 개선"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:85
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "암호화되지 않은 메시지를 보내기 전에 알림"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:89
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "서명되지 않은 메시지를 보내기 전에 알림"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:93
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr "인증서나 키가 곧 만료될 때 알림(아래에서 기한 설정)"
+
+#. i18n: ectx: label, entry (CryptoWarnSignKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:97
+#, kde-format
+msgid ""
+"The minimum number of days that the signature certificate should be valid "
+"before issuing a warning"
+msgstr "서명 인증서 만료를 표시할 최소 날짜 수"
+
+#. i18n: ectx: label, entry (CryptoWarnSignChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:101
+#, kde-format
+msgid ""
+"The minimum number of days that the CA certificate should be valid before "
+"issuing a warning"
+msgstr "CA 인증서 만료를 표시할 최소 날짜 수"
+
+#. i18n: ectx: label, entry (CryptoWarnSignRootNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:105
+#: settings/messagecomposer.kcfg.cmake:117
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr "루트 인증서 만료를 표시할 최소 날짜 수"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:109
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr "암호화 인증서 만료를 표시할 최소 날짜 수"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:113
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr "인증서 체인의 모든 인증서 만료를 표시할 최소 날짜 수"
+
+#. i18n: ectx: label, entry (CryptoEncryptToSelf), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:121
+#, kde-format
+msgid ""
+"When encrypting emails, always also encrypt to the certificate of my own "
+"identity"
+msgstr "메일을 암호화할 때 내 프로필에 있는 인증서로 같이 암호화"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:125
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr "항상 암호화 키 선택 목록 표시"
+
+#: snippet/convertsnippetvariablemenu.cpp:27
+#, kde-format
+msgid "To"
+msgstr "받는 사람"
+
+#: snippet/convertsnippetvariablemenu.cpp:28
+#, kde-format
+msgid "To Field Address"
+msgstr "받는 사람 필드 주소"
+
+#: snippet/convertsnippetvariablemenu.cpp:31
+#, kde-format
+msgid "To Field Last Name"
+msgstr "받는 사람 필드 이름"
+
+#: snippet/convertsnippetvariablemenu.cpp:34
+#, kde-format
+msgid "To Field First Name"
+msgstr "받는 사람 필드 성"
+
+#: snippet/convertsnippetvariablemenu.cpp:37
+#, kde-format
+msgid "To Field Name"
+msgstr "받는 사람 필드 전체 이름"
+
+#: snippet/convertsnippetvariablemenu.cpp:42
+#, kde-format
+msgid "From"
+msgstr "보낸 사람"
+
+#: snippet/convertsnippetvariablemenu.cpp:43
+#, kde-format
+msgid "From Field Address"
+msgstr "보내는 사람 필드 주소"
+
+#: snippet/convertsnippetvariablemenu.cpp:46
+#, kde-format
+msgid "From Field Last Name"
+msgstr "보내는 사람 필드 이름"
+
+#: snippet/convertsnippetvariablemenu.cpp:49
+#, kde-format
+msgid "From Field First Name"
+msgstr "보내는 사람 필드 성"
+
+#: snippet/convertsnippetvariablemenu.cpp:52
+#, kde-format
+msgid "From Field Name"
+msgstr "보내는 사람 필드 전체 이름"
+
+#: snippet/convertsnippetvariablemenu.cpp:57
+#, kde-format
+msgid "CC"
+msgstr "참조"
+
+#: snippet/convertsnippetvariablemenu.cpp:58
+#, kde-format
+msgid "CC Field Address"
+msgstr "참조 필드 주소"
+
+#: snippet/convertsnippetvariablemenu.cpp:61
+#, kde-format
+msgid "CC Field Last Name"
+msgstr "참조 필드 이름"
+
+#: snippet/convertsnippetvariablemenu.cpp:64
+#, kde-format
+msgid "CC Field First Name"
+msgstr "참조 필드 성"
+
+#: snippet/convertsnippetvariablemenu.cpp:67
+#, kde-format
+msgid "CC Field Name"
+msgstr "참조 필드 전체 이름"
+
+#: snippet/convertsnippetvariablemenu.cpp:73
+#, kde-format
+msgid "Bcc"
+msgstr "숨은 참조"
+
+#: snippet/convertsnippetvariablemenu.cpp:74
+#, kde-format
+msgid "BCC Field Address"
+msgstr "숨은 참조 필드 주소"
+
+#: snippet/convertsnippetvariablemenu.cpp:77
+#, kde-format
+msgid "BCC Field Last Name"
+msgstr "숨은 참조 필드 이름"
+
+#: snippet/convertsnippetvariablemenu.cpp:80
+#, kde-format
+msgid "BCC Field First Name"
+msgstr "숨은 참조 필드 성"
+
+#: snippet/convertsnippetvariablemenu.cpp:83
+#, kde-format
+msgid "BCC Field Name"
+msgstr "숨은 참조 필드 전체 이름"
+
+#: snippet/convertsnippetvariablemenu.cpp:89
+#, kde-format
+msgid "Attachment"
+msgstr "첨부"
+
+#: snippet/convertsnippetvariablemenu.cpp:90
+#, kde-format
+msgid "Number Of Attachments"
+msgstr "첨부 파일 개수"
+
+#: snippet/convertsnippetvariablemenu.cpp:93
+#, kde-format
+msgid "Names"
+msgstr "이름"
+
+#: snippet/convertsnippetvariablemenu.cpp:96
+#, kde-format
+msgid "Filenames"
+msgstr "파일 이름"
+
+#: snippet/convertsnippetvariablemenu.cpp:99
+#, kde-format
+msgid "Names and Sizes"
+msgstr "이름과 크기"
+
+#: snippet/convertsnippetvariablemenu.cpp:103
+#: snippet/convertsnippetvariablemenu.cpp:123
+#, kde-format
+msgid "Date/Time"
+msgstr "날짜와 시간"
+
+#: snippet/convertsnippetvariablemenu.cpp:104
+#: snippet/convertsnippetvariablemenu.cpp:151
+#, kde-format
+msgid "Day Of Week (%1)"
+msgstr "요일(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:107
+#, kde-format
+msgid "Date (%1)"
+msgstr "날짜(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:110
+#, kde-format
+msgid "Long Date (%1)"
+msgstr "긴 날짜(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:113
+#, kde-format
+msgid "Short Time (%1)"
+msgstr "짧은 시간(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:116
+#, kde-format
+msgid "Time (%1)"
+msgstr "시간(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:119
+#, kde-format
+msgid "Year (%1)"
+msgstr "연도(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:127
+#, kde-format
+msgid "Last Year (%1)"
+msgstr "작년(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:130
+#, kde-format
+msgid "Next Year (%1)"
+msgstr "다음 해(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:133
+#, kde-format
+msgid "Month Number (%1)"
+msgstr "달 번호(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:136
+#, kde-format
+msgid "Day Of Month (%1)"
+msgstr "달의 날짜(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:139
+#, kde-format
+msgid "Week Number (%1)"
+msgstr "주 번호(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:142
+#, kde-format
+msgid "Month Name Short (%1)"
+msgstr "짧은 달 이름(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:145
+#, kde-format
+msgid "Month Name Long (%1)"
+msgstr "긴 달 이름(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:148
+#, kde-format
+msgid "Last Month Name Long (%1)"
+msgstr "긴 지난 달 이름(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:154
+#, kde-format
+msgid "Day Of Week Name Short (%1)"
+msgstr "짧은 요일 이름(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, kde-format
+msgid "Day Of Week Name Long (%1)"
+msgstr "긴 요일 이름(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:160
+#, kde-format
+msgid "Year Last Month (%1)"
+msgstr "한 해의 마지막 달(%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:165
+#, kde-format
+msgid "Misc"
+msgstr "기타"
+
+#: snippet/convertsnippetvariablemenu.cpp:166
+#, kde-format
+msgid "Subject"
+msgstr "제목"
+
+#: utils/util.cpp:260
+#, kde-format
+msgctxt ""
+"comma-separated list of keywords that are used to detect whether the user "
+"forgot to attach his attachment. Do not add space between words."
+msgid "attachment,attached"
+msgstr "attachment,attached,첨부"
+
+#: utils/util.cpp:293
+#, kde-format
+msgid ""
+"The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
+"create a mail dispatcher?"
+msgstr ""
+"메일 전송기가 설정되지 않아서 메시지를 보낼 수 없습니다. 메일 전송기를 설정하"
+"시겠습니까?"
+
+#: utils/util.cpp:294
+#, kde-format
+msgid "No mail dispatcher."
+msgstr "메일 전송기 없음."
+
+#: utils/util.cpp:295
+#, kde-format
+msgctxt "@action:button"
+msgid "Create Mail Dispatcher"
+msgstr "메일 전송기 만들기"
+
+#: utils/util.cpp:310
+#, kde-format
+msgid ""
+"The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
+"it online?"
+msgstr ""
+"메일 전송기가 오프라인이어서 메시지를 보낼 수 없습니다. 온라인으로 전환하시겠"
+"습니까?"
+
+#: utils/util.cpp:311
+#, kde-format
+msgid "Mail dispatcher offline."
+msgstr "메일 전송기 오프라인."
+
+#: utils/util.cpp:312
+#, kde-format
+msgctxt "@action:button"
+msgid "Set Online"
+msgstr "온라인으로 설정"
+
+#, fuzzy
+#~| msgctxt "@info:status"
+#~| msgid "Truncating recipients list to %2 of %1 entry."
+#~| msgid_plural "Truncating recipients list to %2 of %1 entries."
+#~ msgctxt "@info:status"
+#~ msgid "Truncating recipients list to %1."
+#~ msgstr "수신자 목록을 항목 %2개 중 %1개로 자르는 중."
+
+#~ msgid "Year"
+#~ msgstr "연도"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>To:</interface><nl/>%1"
+#~ msgstr "<interface>받는 사람:</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>CC:</interface><nl/>%1"
+#~ msgstr "<interface>참조:</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>BCC:</interface><nl/>%1"
+#~ msgstr "<interface>숨은 참조:</interface><nl/>%1"
+
+#~ msgid "Warn if the receiver's address is not in the certificate"
+#~ msgstr "받는 사람의 주소가 인증서에 없을 때 알림"
+
+#~ msgid "Replace recognized prefi&x with \"Re:\""
+#~ msgstr "알려진 접두사를 \"Re:\"로 교체(&X)"
+
+#~ msgid "Replace recognized prefix with \"&Fwd:\""
+#~ msgstr "알려진 접두사를 \"Fwd:\"로 교체(&F)"
+
+#~ msgid "Use Baloo search for autocompletion"
+#~ msgstr "Baloo 찾기로 자동 완성 사용"
+
+#~ msgid ""
+#~ "Disable this option if you do not want baloo search addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "이 옵션을 사용하지 않으면 Baloo 찾기 주소가 작성기의 주소 필드에 나타나지 "
+#~ "않습니다."
+
+#~ msgid "Select email from contact"
+#~ msgstr "연락처에서 이메일 선택"
+
+#~ msgid "vCard Import Failed"
+#~ msgstr "vCard를 가져올 수 없음"
+
+#~ msgid "<qt>Unable to access <b>%1</b>.</qt>"
+#~ msgstr "<qt><b>%1</b>에 접근할 수 없습니다.</qt>"
+
+#~ msgid "Configure Completion..."
+#~ msgstr "완성 설정..."
+
+#~ msgid "Automatically expand groups"
+#~ msgstr "자동으로 그룹 확장"
+
+#~ msgid "Expand Groups..."
+#~ msgstr "그룹 확장..."
+
+#~ msgid "Recent Addresses"
+#~ msgstr "최근 주소"
+
+#~ msgctxt "@title:window"
+#~ msgid "Insert HTML"
+#~ msgstr "HTML 삽입"
+
+#~ msgid "Insert HTML tags and texts:"
+#~ msgstr "HTML 태그와 텍스트 삽입:"
+
+#~ msgid "Example: <i> Hello word </i>"
+#~ msgstr "예: <i>안녕 세상아</i>"
+
+#~ msgctxt "@action:button"
+#~ msgid "Insert"
+#~ msgstr "삽입"
+
+#~ msgid "Manage Link"
+#~ msgstr "링크 관리"
+
+#~ msgid "Link Text:"
+#~ msgstr "링크 텍스트:"
+
+#~ msgid "Link URL:"
+#~ msgstr "링크 URL:"
+
+#~ msgctxt "@action"
+#~ msgid "Align &Left"
+#~ msgstr "왼쪽 정렬(&L)"
+
+#~ msgctxt "@label left justify"
+#~ msgid "Left"
+#~ msgstr "왼쪽"
+
+#~ msgctxt "@action"
+#~ msgid "Align &Center"
+#~ msgstr "가운데 정렬(&C)"
+
+#~ msgctxt "@label center justify"
+#~ msgid "Center"
+#~ msgstr "가운데"
+
+#~ msgctxt "@action"
+#~ msgid "Align &Right"
+#~ msgstr "오른쪽 정렬(&R)"
+
+#~ msgctxt "@label right justify"
+#~ msgid "Right"
+#~ msgstr "오른쪽"
+
+#~ msgctxt "@action"
+#~ msgid "&Justify"
+#~ msgstr "양쪽 정렬(&J)"
+
+#~ msgctxt "@label justify fill"
+#~ msgid "Justify"
+#~ msgstr "양쪽"
+
+#~ msgctxt "@action"
+#~ msgid "Left-to-Right"
+#~ msgstr "왼쪽에서 오른쪽으로"
+
+#~ msgctxt "@label left-to-right"
+#~ msgid "Left-to-Right"
+#~ msgstr "왼쪽에서 오른쪽으로"
+
+#~ msgctxt "@action"
+#~ msgid "Right-to-Left"
+#~ msgstr "오른쪽에서 왼쪽으로"
+
+#~ msgctxt "@label right-to-left"
+#~ msgid "Right-to-Left"
+#~ msgstr "오른쪽에서 왼쪽으로"
+
+#~ msgctxt "@action"
+#~ msgid "Subscript"
+#~ msgstr "아래 첨자"
+
+#~ msgctxt "@action"
+#~ msgid "Superscript"
+#~ msgstr "위 첨자"
+
+#~ msgctxt "@action boldify selected text"
+#~ msgid "&Bold"
+#~ msgstr "굵게(&B)"
+
+#~ msgctxt "@action italicize selected text"
+#~ msgid "&Italic"
+#~ msgstr "이탤릭(&I)"
+
+#~ msgctxt "@action underline selected text"
+#~ msgid "&Underline"
+#~ msgstr "밑줄(&U)"
+
+#~ msgctxt "@action"
+#~ msgid "&Strike Out"
+#~ msgstr "취소선(&S)"
+
+#~ msgctxt "@action"
+#~ msgid "&Font"
+#~ msgstr "글꼴(&F)"
+
+#~ msgctxt "@action"
+#~ msgid "Font &Size"
+#~ msgstr "글꼴 크기(&S)"
+
+#~ msgctxt "@action"
+#~ msgid "Insert Rule Line"
+#~ msgstr "규칙 줄 삽입하기"
+
+#~ msgctxt "@action"
+#~ msgid "Text &Color..."
+#~ msgstr "텍스트 색상(&C)..."
+
+#~ msgctxt "@label stroke color"
+#~ msgid "Color"
+#~ msgstr "색상"
+
+#~ msgctxt "@action"
+#~ msgid "Text &Highlight..."
+#~ msgstr "텍스트 구문 강조(&H)..."
+
+#~ msgctxt "@action"
+#~ msgid "Link"
+#~ msgstr "링크"
+
+#~ msgctxt "@action"
+#~ msgid "Increase Indent"
+#~ msgstr "들여쓰기"
+
+#~ msgctxt "@action"
+#~ msgid "Decrease Indent"
+#~ msgstr "내어쓰기"
+
+#~ msgctxt "@title:menu"
+#~ msgid "List Style"
+#~ msgstr "목록 스타일"
+
+#~ msgctxt "@item:inmenu no list style"
+#~ msgid "None"
+#~ msgstr "없음"
+
+#~ msgctxt "@item:inmenu disc list style"
+#~ msgid "Disc"
+#~ msgstr "빈 원형"
+
+#~ msgctxt "@item:inmenu circle list style"
+#~ msgid "Circle"
+#~ msgstr "원형"
+
+#~ msgctxt "@item:inmenu square list style"
+#~ msgid "Square"
+#~ msgstr "사각형"
+
+#~ msgctxt "@item:inmenu numbered lists"
+#~ msgid "123"
+#~ msgstr "123"
+
+#~ msgctxt "@item:inmenu lowercase abc lists"
+#~ msgid "abc"
+#~ msgstr "abc"
+
+#~ msgctxt "@item:inmenu uppercase abc lists"
+#~ msgid "ABC"
+#~ msgstr "ABC"
+
+#~ msgctxt "@item:inmenu lower case roman numerals"
+#~ msgid "i ii iii"
+#~ msgstr "i ii iii"
+
+#~ msgctxt "@item:inmenu upper case roman numerals"
+#~ msgid "I II III"
+#~ msgstr "I II III"
+
+#~ msgid "Pa&ste as Quotation"
+#~ msgstr "인용문으로 붙여넣기(&S)"
+
+#~ msgid "Add &Quote Characters"
+#~ msgstr "인용 부호 더하기(&Q)"
+
+#~ msgid "Re&move Quote Characters"
+#~ msgstr "인용 부호 지우기(&M)"
+
+#~ msgid "Paste Without Formatting"
+#~ msgstr "서식 없이 붙여넣기"
+
+#~ msgid "Add Image"
+#~ msgstr "그림 추가"
+
+#~ msgid "Insert HTML"
+#~ msgstr "HTML 삽입"
+
+#~ msgid "Table"
+#~ msgstr "표"
+
+#~ msgid "Delete Line"
+#~ msgstr "줄 삭제"
+
+#~ msgid "Reset Font Settings"
+#~ msgstr "글꼴 설정 초기화"
+
+#~ msgid "Reset Font"
+#~ msgstr "글꼴 초기화"
+
+#~ msgctxt "@action"
+#~ msgid "Format Painter"
+#~ msgstr "형식 페인터"
+
+#~ msgid "I've linked 1 file to this email:"
+#~ msgstr "이 메일에 1개의 파일을 링크했습니다:"
+
+#~ msgctxt "@info"
+#~ msgid "Unable to load image <filename>%1</filename>."
+#~ msgstr "그림 <filename>%1</filename>을(를) 불러올 수 없습니다."
+
+#~ msgctxt "Start of the filename for an image"
+#~ msgid "image"
+#~ msgstr "그림"
+
+#~ msgid "Command line is empty. Please verify settings."
+#~ msgstr "명령줄이 비었습니다. 설정을 확인하십시오."
+
+#~ msgid "Empty command line"
+#~ msgstr "명령줄이 비어 있음"
+
+#~ msgid "External editor cannot be started. Please verify command \"%1\""
+#~ msgstr "외부 편집기를 시작할 수 없습니다. 명령 \"%1\"을(를) 확인하십시오."
+
+#~ msgid "Error was found when we started external editor."
+#~ msgstr "외부 편집기를 시작할 때 오류가 발생했습니다."
+
+#~ msgid "External Editor Closed"
+#~ msgstr "외부 편집기 종료됨"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The external editor is still running.<nl/>Do you want to stop the editor "
+#~ "or keep it running?<nl/><warning>Stopping the editor will cause all your "
+#~ "unsaved changes to be lost.</warning>"
+#~ msgstr ""
+#~ "외부 편집기가 실행 중입니다.<nl/>편집기를 종료하거나 계속 실행하시겠습니"
+#~ "까?<nl/><warning>편집기를 종료하면 저장되지 않은 모든 변경 사항은 손실됩니"
+#~ "다.</warning>"
+
+#~ msgctxt "@title:window"
+#~ msgid "External Editor Running"
+#~ msgstr "외부 편집기 실행 중"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop Editor"
+#~ msgstr "편집기 중지"
+
+#~ msgctxt "@action:button"
+#~ msgid "Keep Editor Running"
+#~ msgstr "편집기 계속 실행"
+
+#~ msgid "Write to format"
+#~ msgstr "저장할 형식"
+
+#~ msgid "Current word has already a replacement."
+#~ msgstr "현재 단어에 이미 대체 단어가 있습니다."
+
+#~ msgid "Add New Autocorrect"
+#~ msgstr "자동 고침 항목 추가"
+
+#~ msgctxt "@title:window"
+#~ msgid "Insert File"
+#~ msgstr "파일 삽입"
+
+#~ msgid "Edit Recent Addresses..."
+#~ msgstr "최근 주소 편집..."
+
+#~ msgid "&Attach"
+#~ msgstr "첨부(&A)"
+
+#~ msgid ""
+#~ "The maximum size in bits that email attachments are allowed to have (-1 "
+#~ "for no limit)"
+#~ msgstr "이메일 첨부 파일의 최대 크기 설정(-1은 무제한)"
+
+#, fuzzy
+#~ msgid "&Modify"
+#~ msgstr "수정..."
+
+#~ msgid "&Add"
+#~ msgstr "추가(&A)"
+
+#~ msgid "Archive cannot be opened in read mode."
+#~ msgstr "읽기 모드로 보관 파일을 열 수 없습니다."
+
+#, fuzzy
+#~ msgid "Default"
+#~ msgstr "기본값"
+
+#~ msgid "&Find"
+#~ msgstr "찾기(&F)"
+
+#, fuzzy
+#~ msgid "Find"
+#~ msgstr "찾기(&F):"
+
+#, fuzzy
+#~ msgid "E&xceptions"
+#~ msgstr "예외:"
+
+#~ msgid "R&emove"
+#~ msgstr "삭제(&E)"
+
+#, fuzzy
+#~| msgid "&Add"
+#~ msgid "Add"
+#~ msgstr "추가(&A)"
+
+#, fuzzy
+#~| msgid "Import..."
+#~ msgid "Export..."
+#~ msgstr "가져오기..."
+
+#~ msgid "Import..."
+#~ msgstr "가져오기..."
+
+#, fuzzy
+#~ msgid "A&dd"
+#~ msgstr "추가"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Resize Image"
+#~ msgstr "그림 크기를 조정하시겠습니까?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Resize"
+#~ msgstr "크기 조정"
+
+#~ msgid "Width:"
+#~ msgstr "너비:"

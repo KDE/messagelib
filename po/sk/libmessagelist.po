@@ -1,0 +1,1972 @@
+# translation of libmessagelist.po to Slovak
+# Stanislav Visnovsky <visnovsky@nenya.ms.mff.cuni.cz>, 2000-2002.
+# Stanislav Visnovsky <visnovsky@kde.org>, 2003, 2004.
+# Richard Fric <Richard.Fric@kdemail.net>, 2006, 2007, 2009.
+# Jozef Riha <jose1711@gmail.com>, 2006, 2007.
+# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017.
+# Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessagelist\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2021-01-26 11:41+0100\n"
+"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.12.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: core/aggregation.cpp:178
+#, kde-format
+msgctxt "No grouping of messages"
+msgid "None"
+msgstr "Žiadne"
+
+#: core/aggregation.cpp:179
+#, kde-format
+msgid "By Exact Date (of Thread Leaders)"
+msgstr "Podľa presného dátumu (vedúcich vlákien)"
+
+#: core/aggregation.cpp:180
+#, kde-format
+msgid "By Smart Date Ranges (of Thread Leaders)"
+msgstr "Podľa inteligentných rozsahov dátumu (vedúcich vlákien)"
+
+#: core/aggregation.cpp:181 core/sortorder.cpp:70
+#, kde-format
+msgid "By Smart Sender/Receiver"
+msgstr "Podľa inteligentného odosielateľa/prijímateľa"
+
+#: core/aggregation.cpp:182 core/sortorder.cpp:68
+#, kde-format
+msgid "By Sender"
+msgstr "podľa odosielateľa"
+
+#: core/aggregation.cpp:183 core/sortorder.cpp:69
+#, kde-format
+msgid "By Receiver"
+msgstr "podľa prijímateľa"
+
+#: core/aggregation.cpp:192
+#, kde-format
+msgid "Never Expand Groups"
+msgstr "Nikdy nerozvinúť skupiny"
+
+#: core/aggregation.cpp:194
+#, kde-format
+msgid "Expand Recent Groups"
+msgstr "Rozvinúť nedávne skupiny"
+
+#: core/aggregation.cpp:196
+#, kde-format
+msgid "Always Expand Groups"
+msgstr "Vždy rozvinúť skupiny"
+
+#: core/aggregation.cpp:202
+#, kde-format
+msgctxt "No threading of messages"
+msgid "None"
+msgstr "Žiadne"
+
+#: core/aggregation.cpp:203
+#, kde-format
+msgid "Perfect Only"
+msgstr "Iba dokonalé"
+
+#: core/aggregation.cpp:204
+#, kde-format
+msgid "Perfect and by References"
+msgstr "Dokonalé a podľa odkazov"
+
+#: core/aggregation.cpp:205
+#, kde-format
+msgid "Perfect, by References and by Subject"
+msgstr "Dokonalé, podľa odkazov a podľa predmetu"
+
+#: core/aggregation.cpp:214
+#, kde-format
+msgid "Topmost Message"
+msgstr "Najvyššia správa"
+
+#: core/aggregation.cpp:218
+#, kde-format
+msgid "Most Recent Message"
+msgstr "Posledná správa"
+
+#: core/aggregation.cpp:228
+#, kde-format
+msgid "Never Expand Threads"
+msgstr "Nikdy nerozvinúť vlákna"
+
+#: core/aggregation.cpp:229
+#, kde-format
+msgid "Expand Threads With Unread Messages"
+msgstr "Rozvinúť vlákna s neprečítanými správami"
+
+#: core/aggregation.cpp:230
+#, kde-format
+msgid "Expand Threads With Unread or Important Messages"
+msgstr "Rozvinúť vlákna s neprečítanými alebo dôležitými správami"
+
+#: core/aggregation.cpp:231
+#, kde-format
+msgid "Always Expand Threads"
+msgstr "Vždy rozvinúť vlákna"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Interactivity"
+msgstr "Uprednostniť interaktivitu"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Speed"
+msgstr "Uprednostniť rýchlosť"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Batch Job (No Interactivity)"
+msgstr "Dávková úloha (žiadna interaktivita)"
+
+#: core/item.cpp:252 core/messageitem.cpp:538
+#, kde-format
+msgctxt "Status of an item"
+msgid "Read"
+msgstr "Prečítané"
+
+#: core/item.cpp:254 core/messageitem.cpp:538
+#, kde-format
+msgctxt "Status of an item"
+msgid "Unread"
+msgstr "Neprečítané"
+
+#: core/item.cpp:258
+#, kde-format
+msgctxt "Status of an item"
+msgid "Has Attachment"
+msgstr "Má prílohu"
+
+#: core/item.cpp:262
+#, kde-format
+msgctxt "Status of an item"
+msgid "Action Item"
+msgstr "Akčná položka"
+
+#: core/item.cpp:266 core/messageitem.cpp:536
+#, kde-format
+msgctxt "Status of an item"
+msgid "Replied"
+msgstr "Odpovedané"
+
+#: core/item.cpp:270
+#, kde-format
+msgctxt "Status of an item"
+msgid "Forwarded"
+msgstr "Presmerované"
+
+#: core/item.cpp:274
+#, kde-format
+msgctxt "Status of an item"
+msgid "Sent"
+msgstr "Odoslané"
+
+#: core/item.cpp:278
+#, kde-format
+msgctxt "Status of an item"
+msgid "Important"
+msgstr "Dôležité"
+
+#: core/item.cpp:282
+#, kde-format
+msgctxt "Status of an item"
+msgid "Spam"
+msgstr "Spam"
+
+#: core/item.cpp:286
+#, kde-format
+msgctxt "Status of an item"
+msgid "Ham"
+msgstr "Ham"
+
+#: core/item.cpp:290
+#, kde-format
+msgctxt "Status of an item"
+msgid "Watched"
+msgstr "Sledované"
+
+#: core/item.cpp:294
+#, kde-format
+msgctxt "Status of an item"
+msgid "Ignored"
+msgstr "Ignorované"
+
+#: core/manager.cpp:38 core/model.cpp:332
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "Neznáme"
+
+#: core/manager.cpp:206
+#, kde-format
+msgid "Current Activity, Threaded"
+msgstr "Aktuálna aktivita, vlákna"
+
+#: core/manager.cpp:207
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are threaded. So for "
+"example, in \"Today\" you will find all the messages arrived today and all "
+"the threads that have been active today."
+msgstr ""
+"Toto zobrazenie používa skupiny inteligentných rozsahov dátumu. Správy "
+"tvoria vlákna. Tak napríklad, v \"Dnes\" nájdete všetky správy, ktoré dnes "
+"prišli a všetky vlákna, ktoré boli dnes aktívne."
+
+#: core/manager.cpp:219
+#, kde-format
+msgid "Current Activity, Flat"
+msgstr "Aktuálna aktivitu, jednoducho"
+
+#: core/manager.cpp:220
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are not threaded. So for "
+"example, in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+"Toto zobrazenie používa skupiny inteligentných rozsahov dátumu. Správy "
+"netvoria vlákna. Tak napríklad, v \"Dnes\" jednoducho nájdete všetky správy, "
+"ktoré dnes prišli."
+
+#: core/manager.cpp:231
+#, kde-format
+msgid "Activity by Date, Threaded"
+msgstr "Aktivita podľa dátumu, vlákna"
+
+#: core/manager.cpp:232
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are threaded. So for example, in "
+"\"Today\" you will find all the messages arrived today and all the threads "
+"that have been active today."
+msgstr ""
+"Toto zobrazenie používa skupiny deň za dňom. Správy tvoria vlákna. Tak "
+"napríklad, v \"Dnes\" nájdete všetky správy, ktoré dnes prišli a všetky "
+"vlákna, ktoré boli dnes aktívne."
+
+#: core/manager.cpp:244
+#, kde-format
+msgid "Activity by Date, Flat"
+msgstr "Aktivita podľa dátumu, jednoducho"
+
+#: core/manager.cpp:245
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are not threaded. So for example, "
+"in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+"Toto zobrazenie používa skupiny deň za dňom. Správy netvoria vlákna. Tak "
+"napríklad, v \"Dnes\" jednoducho nájdete všetky správy, ktoré dnes prišli."
+
+#: core/manager.cpp:256
+#, kde-format
+msgid "Standard Mailing List"
+msgstr "Štandardná e-mailová konferencia"
+
+#: core/manager.cpp:257
+#, kde-format
+msgid ""
+"This is a plain and old mailing list view: no groups and heavy threading."
+msgstr ""
+"Toto je jednoduché a staré zobrazenie e-mailovej konferencie: žiadne skupiny "
+"a ťažkopádna tvorba vlákien."
+
+#: core/manager.cpp:266
+#, kde-format
+msgid "Flat Date View"
+msgstr "Jednoduché zobrazenie dátumu"
+
+#: core/manager.cpp:267
+#, kde-format
+msgid ""
+"This is a plain and old list of messages sorted by date: no groups and no "
+"threading."
+msgstr ""
+"Toto je jednoduchý a starý zoznam správ triedených podľa dátumu: žiadne "
+"skupiny a žiadna tvorba vlákien."
+
+#: core/manager.cpp:278
+#, kde-format
+msgid "Senders/Receivers, Flat"
+msgstr "Odosielatelia/Prijímatelia, jednoducho"
+
+#: core/manager.cpp:279
+#, kde-format
+msgid ""
+"This view groups the messages by senders or receivers (depending on the "
+"folder type). Messages are not threaded."
+msgstr ""
+"Toto zobrazenie zoskupuje správy podľa odosielateľov alebo prijímateľov (v "
+"závislosti na type priečinka). Správy netvoria vlákna."
+
+#: core/manager.cpp:290
+#, kde-format
+msgid "Thread Starters"
+msgstr "Začínajúci vlákno"
+
+#: core/manager.cpp:291
+#, kde-format
+msgid ""
+"This view groups the messages in threads and then groups the threads by the "
+"starting user."
+msgstr ""
+"Toto zobrazenie zoskupí správy vo vláknach a potom zoskupí vlákna podľa "
+"začínajúceho používateľa."
+
+#: core/manager.cpp:567
+#, kde-format
+msgctxt "Default theme name"
+msgid "Classic"
+msgstr "Klasika"
+
+#: core/manager.cpp:567
+#, kde-format
+msgid "A simple, backward compatible, single row theme"
+msgstr "Jednoduchá, spätne kompatibilná, téma jedného riadka"
+
+#: core/manager.cpp:571
+#, kde-format
+msgctxt "@title:column Subject of messages"
+msgid "Subject"
+msgstr "Predmet"
+
+#: core/manager.cpp:607 core/theme.cpp:113
+#, kde-format
+msgid "Sender/Receiver"
+msgstr "Odosielateľ/prijímateľ"
+
+#: core/manager.cpp:614
+#, kde-format
+msgctxt "Sender of a message"
+msgid "Sender"
+msgstr "Odosielateľ"
+
+#: core/manager.cpp:616
+#, kde-format
+msgctxt "Receiver of a message"
+msgid "Receiver"
+msgstr "Príjemca"
+
+#: core/manager.cpp:622
+#, kde-format
+msgctxt "Date of a message"
+msgid "Date"
+msgstr "Dátum"
+
+#: core/manager.cpp:624
+#, kde-format
+msgid "Most Recent Date"
+msgstr "Najnovší dátum"
+
+#: core/manager.cpp:630
+#, kde-format
+msgctxt "Size of a message"
+msgid "Size"
+msgstr "Veľkosť"
+
+#: core/manager.cpp:632
+#, kde-format
+msgctxt "Attachment indication"
+msgid "Attachment"
+msgstr "Príloha"
+
+#: core/manager.cpp:638
+#, kde-format
+msgid "Read/Unread"
+msgstr "Prečítané/neprečítané"
+
+#: core/manager.cpp:643
+#, kde-format
+msgid "Replied"
+msgstr "Odpovedané"
+
+#: core/manager.cpp:645
+#, kde-format
+msgctxt "Message importance indication"
+msgid "Important"
+msgstr "Dôležité"
+
+#: core/manager.cpp:651
+#, kde-format
+msgid "Action Item"
+msgstr "Akčná položka"
+
+#: core/manager.cpp:657
+#, kde-format
+msgid "Spam/Ham"
+msgstr "Spam/Ham"
+
+#: core/manager.cpp:663
+#, kde-format
+msgid "Watched/Ignored"
+msgstr "Sledované/Ignorované"
+
+#: core/manager.cpp:669
+#, kde-format
+msgid "Encryption"
+msgstr "Šifrovanie"
+
+#: core/manager.cpp:675
+#, kde-format
+msgid "Signature"
+msgstr "Podpis"
+
+#: core/manager.cpp:680
+#, kde-format
+msgid "Tag List"
+msgstr "Zoznam značiek"
+
+#: core/manager.cpp:688
+#, kde-format
+msgid "Smart"
+msgstr "Inteligentné"
+
+#: core/manager.cpp:688
+#, kde-format
+msgid "A smart multiline and multi item theme"
+msgstr "Inteligentná viacriadková a viacpoložková téma"
+
+#: core/manager.cpp:692
+#, kde-format
+msgid "Message"
+msgstr "Správa"
+
+#: core/manager.cpp:776
+#, kde-format
+msgid "Smart with Clickable Status"
+msgstr "Inteligentné s klikateľným stavom"
+
+#: core/manager.cpp:777
+#, kde-format
+msgid "A smart multiline and multi item theme with a clickable status column"
+msgstr ""
+"Inteligentná viacriadková a viacpoložková téma s klikateľným stavovým stĺpcom"
+
+#: core/manager.cpp:781 core/view.cpp:2263 core/view.cpp:2267
+#, kde-format
+msgid "Status"
+msgstr "Stav"
+
+#: core/model.cpp:330
+#, kde-format
+msgid "Today"
+msgstr "Dnes"
+
+#: core/model.cpp:331
+#, kde-format
+msgid "Yesterday"
+msgstr "Včera"
+
+#: core/model.cpp:333
+#, kde-format
+msgid "Last Week"
+msgstr "Minulý týždeň"
+
+#: core/model.cpp:334
+#, kde-format
+msgid "Two Weeks Ago"
+msgstr "Pred dvoma týždňami"
+
+#: core/model.cpp:335
+#, kde-format
+msgid "Three Weeks Ago"
+msgstr "Pred troma týždňami"
+
+#: core/model.cpp:336
+#, kde-format
+msgid "Four Weeks Ago"
+msgstr "Pred štyrmi týždňami"
+
+#: core/model.cpp:337
+#, kde-format
+msgid "Five Weeks Ago"
+msgstr "Pred piatimi týždňami"
+
+#: core/model.cpp:550 utils/themeeditor.cpp:185
+#, kde-format
+msgid "Receiver"
+msgstr "Príjemca"
+
+#: core/model.cpp:552 utils/themeeditor.cpp:184
+#, kde-format
+msgid "Sender"
+msgstr "Odosielateľ"
+
+#: core/model.cpp:1367
+#, kde-format
+msgctxt "Message Aggregation Group Header: Month name and Year number"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: core/model.cpp:3787
+#, kde-format
+msgid "Processed 1 Message of %2"
+msgid_plural "Processed %1 Messages of %2"
+msgstr[0] "Spracovaná 1 správa z %2"
+msgstr[1] "Spracované %1 správy z %2"
+msgstr[2] "Spracovaných %1 správ z %2"
+
+#: core/model.cpp:3793 core/model.cpp:3799
+#, kde-format
+msgid "Threaded 1 Message of %2"
+msgid_plural "Threaded %1 Messages of %2"
+msgstr[0] "Vytvorené vlákno 1 správy z %2"
+msgstr[1] "Vytvorené vlákno %1 správ z %2"
+msgstr[2] "Vytvorené vlákno %1 správ z %2"
+
+#: core/model.cpp:3805
+#, kde-format
+msgid "Grouped 1 Thread of %2"
+msgid_plural "Grouped %1 Threads of %2"
+msgstr[0] "Zoskupené 1 vlákno z %2"
+msgstr[1] "Zoskupené %1 vlákna z %2"
+msgstr[2] "Zoskupených %1 vlákien z %2"
+
+#: core/model.cpp:3811
+#, kde-format
+msgid "Updated 1 Group of %2"
+msgid_plural "Updated %1 Groups of %2"
+msgstr[0] "Aktualizovaná 1 skupina z %2"
+msgstr[1] "Aktualizované %1 skupiny z %2"
+msgstr[2] "Aktualizovaných %1 skupín z %2"
+
+#: core/model.cpp:3903
+#, kde-format
+msgctxt "@info:status Finished view fill"
+msgid "Ready"
+msgstr "Pripravený"
+
+#. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:11
+#, kde-format
+msgid "Display tooltips for messages and group headers"
+msgstr "Zobraziť popisky pre správy a hlavičky skupín"
+
+#. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:12
+#, kde-format
+msgid ""
+"Enable this option to display tooltips when hovering over an item in the "
+"message list."
+msgstr ""
+"Povoľte túto možnosť pre zobrazenie bublinkovej nápovedy pri prechode myšou "
+"nad položkou v zozname správ."
+
+#: core/sortorder.cpp:63 core/sortorder.cpp:107
+#, kde-format
+msgid "None (Storage Order)"
+msgstr "Žiadne (poradie ukladania)"
+
+#: core/sortorder.cpp:64
+#, kde-format
+msgid "By Date/Time"
+msgstr "podľa dátumu/času"
+
+#: core/sortorder.cpp:66
+#, kde-format
+msgid "By Date/Time of Most Recent in Subtree"
+msgstr "Podľa dátumu/času najnovšieho v podstrome"
+
+#: core/sortorder.cpp:71
+#, kde-format
+msgid "By Subject"
+msgstr "podľa predmetu"
+
+#: core/sortorder.cpp:72
+#, kde-format
+msgid "By Size"
+msgstr "Podľa veľkosti"
+
+#: core/sortorder.cpp:73
+#, kde-format
+msgid "By Action Item Status"
+msgstr "Podľa stavu akčnej položky"
+
+#: core/sortorder.cpp:74
+#, kde-format
+msgid "By Unread Status"
+msgstr "Podľa neprečítaného stavu"
+
+#: core/sortorder.cpp:75
+#, kde-format
+msgid "By Important Status"
+msgstr "Podľa stavu dôležitosti"
+
+#: core/sortorder.cpp:76
+#, kde-format
+msgid "By Attachment Status"
+msgstr "Podľa stavu prílohy"
+
+#: core/sortorder.cpp:88 core/sortorder.cpp:130
+#, kde-format
+msgid "Least Recent on Top"
+msgstr "Najmenej nedávne najvyššie"
+
+#: core/sortorder.cpp:89 core/sortorder.cpp:131
+#, kde-format
+msgid "Most Recent on Top"
+msgstr "Najnovšie najvyššie"
+
+#: core/sortorder.cpp:93
+#, kde-format
+msgctxt "Sort order for messages"
+msgid "Ascending"
+msgstr "Vzostupne"
+
+#: core/sortorder.cpp:94
+#, kde-format
+msgctxt "Sort order for messages"
+msgid "Descending"
+msgstr "Zostupne"
+
+#: core/sortorder.cpp:105
+#, kde-format
+msgid "by Date/Time"
+msgstr "podľa dátumu/času"
+
+#: core/sortorder.cpp:108
+#, kde-format
+msgid "by Date/Time of Most Recent Message in Group"
+msgstr "podľa dátumu/času najnovšej správy v skupine"
+
+#: core/sortorder.cpp:112
+#, kde-format
+msgid "by Sender/Receiver"
+msgstr "podľa odosielateľa/prijímateľa"
+
+#: core/sortorder.cpp:114
+#, kde-format
+msgid "by Sender"
+msgstr "podľa odosielateľa"
+
+#: core/sortorder.cpp:116
+#, kde-format
+msgid "by Receiver"
+msgstr "podľa prijímateľa"
+
+#: core/sortorder.cpp:134
+#, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Ascending"
+msgstr "Vzostupne"
+
+#: core/sortorder.cpp:135
+#, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Descending"
+msgstr "Zostupne"
+
+#: core/theme.cpp:107
+#, kde-format
+msgctxt "Description of Type Subject"
+msgid "Subject"
+msgstr "Predmet"
+
+#: core/theme.cpp:110
+#, kde-format
+msgctxt "Description of Type Date"
+msgid "Date"
+msgstr "Dátum"
+
+#: core/theme.cpp:116
+#, kde-format
+msgctxt "Description of Type Sender"
+msgid "Sender"
+msgstr "Odosielateľ"
+
+#: core/theme.cpp:119
+#, kde-format
+msgctxt "Description of Type Receiver"
+msgid "Receiver"
+msgstr "Príjemca"
+
+#: core/theme.cpp:122
+#, kde-format
+msgctxt "Description of Type Size"
+msgid "Size"
+msgstr "Veľkosť"
+
+#: core/theme.cpp:125
+#, kde-format
+msgid "Unread/Read Icon"
+msgstr "Ikona neprečítaná/prečítaná"
+
+#: core/theme.cpp:128
+#, kde-format
+msgid "Attachment Icon"
+msgstr "Ikona prílohy"
+
+#: core/theme.cpp:131
+#, kde-format
+msgid "Replied/Forwarded Icon"
+msgstr "Ikona odpovedaná/preposlaná"
+
+#: core/theme.cpp:134
+#, kde-format
+msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
+msgstr "Združená ikona nová/neprečítaná/čítaná/odpovedaná/preposlaná"
+
+#: core/theme.cpp:137
+#, kde-format
+msgid "Action Item Icon"
+msgstr "Ikona akčnej položky"
+
+#: core/theme.cpp:140
+#, kde-format
+msgid "Important Icon"
+msgstr "Ikona dôležité"
+
+#: core/theme.cpp:143
+#, kde-format
+msgid "Group Header Label"
+msgstr "Popis hlavičky skupiny"
+
+#: core/theme.cpp:146
+#, kde-format
+msgid "Spam/Ham Icon"
+msgstr "Ikona spam/ham"
+
+#: core/theme.cpp:149
+#, kde-format
+msgid "Watched/Ignored Icon"
+msgstr "Ikona sledované/ignorované"
+
+#: core/theme.cpp:152
+#, kde-format
+msgid "Group Header Expand/Collapse Icon"
+msgstr "Ikona rozvinúť/zbaleliť hlavičku skupiny"
+
+#: core/theme.cpp:155
+#, kde-format
+msgid "Encryption State Icon"
+msgstr "Ikona stavu šifrovania"
+
+#: core/theme.cpp:158
+#, kde-format
+msgid "Signature State Icon"
+msgstr "Ikona stavu podpisu"
+
+#: core/theme.cpp:161
+#, kde-format
+msgid "Vertical Separation Line"
+msgstr "Zvislá oddeľovacia čiara"
+
+#: core/theme.cpp:164
+#, kde-format
+msgid "Horizontal Spacer"
+msgstr "Vodorovná medzera"
+
+#: core/theme.cpp:167
+#, kde-format
+msgid "Max Date"
+msgstr "Maximálny dátum"
+
+#: core/theme.cpp:170
+#, kde-format
+msgid "Message Tags"
+msgstr "Značky správ"
+
+#: core/theme.cpp:173
+#, kde-format
+msgid "Note Icon"
+msgstr "Ikona poznámky"
+
+#: core/theme.cpp:175
+#, kde-format
+msgid "Invitation Icon"
+msgstr "Ikona pozvánky"
+
+#: core/theme.cpp:177
+#, kde-format
+msgctxt "Description of Type Folder"
+msgid "Folder"
+msgstr "Priečinok"
+
+#: core/theme.cpp:179
+#, kde-format
+msgctxt "Description for an Unknown Type"
+msgid "Unknown"
+msgstr "Neznáme"
+
+#: core/theme.cpp:853
+#, kde-format
+msgid "Unread"
+msgstr "Neprečítané"
+
+#: core/theme.cpp:1047
+#, kde-format
+msgid "Never Show"
+msgstr "Nikdy nezobraziť"
+
+#: core/theme.cpp:1047
+#, kde-format
+msgid "Always Show"
+msgstr "Vždy zobraziť"
+
+#: core/theme.cpp:1052
+#, kde-format
+msgid "Plain Rectangles"
+msgstr "Jednoduché obdĺžniky"
+
+#: core/theme.cpp:1053
+#, kde-format
+msgid "Plain Joined Rectangle"
+msgstr "Jednoduchý pripojený obdĺžnik"
+
+#: core/theme.cpp:1054
+#, kde-format
+msgid "Rounded Rectangles"
+msgstr "Zaoblené obdĺžniky"
+
+#: core/theme.cpp:1055
+#, kde-format
+msgid "Rounded Joined Rectangle"
+msgstr "Zaoblený pripojený obdĺžnik"
+
+#: core/theme.cpp:1056
+#, kde-format
+msgid "Gradient Rectangles"
+msgstr "Obdĺžniky s prechodom"
+
+#: core/theme.cpp:1057
+#, kde-format
+msgid "Gradient Joined Rectangle"
+msgstr "Pripojený obdĺžnik s prechodom"
+
+#: core/theme.cpp:1058
+#, kde-format
+msgid "Styled Rectangles"
+msgstr "Štylizované obdĺžniky"
+
+#: core/theme.cpp:1059
+#, kde-format
+msgid "Styled Joined Rectangles"
+msgstr "Štylizovaný pripojený obdĺžnik"
+
+#: core/view.cpp:682
+#, kde-format
+msgid "No result found"
+msgstr "Výsledok sa nenašiel"
+
+#: core/view.cpp:766
+#, kde-format
+msgid "Adjust Column Sizes"
+msgstr "Upraviť veľkosti stĺpca"
+
+#: core/view.cpp:770
+#, kde-format
+msgid "Show Default Columns"
+msgstr "Zobraziť predvolené stĺpce"
+
+#: core/view.cpp:775
+#, kde-format
+msgid "Display Tooltips"
+msgstr "Zobrazovať popisky"
+
+#: core/view.cpp:2244 core/view.cpp:2248 core/widgets/searchlinestatus.cpp:324
+#, kde-format
+msgid "From"
+msgstr "Od"
+
+#: core/view.cpp:2245 core/view.cpp:2249
+#, kde-format
+msgctxt "Receiver of the email"
+msgid "To"
+msgstr "Pre"
+
+#: core/view.cpp:2246 core/view.cpp:2250
+#, kde-format
+msgid "Date"
+msgstr "Dátum"
+
+#: core/view.cpp:2264 core/view.cpp:2268
+#, kde-format
+msgid "Size"
+msgstr "Veľkosť"
+
+#: core/view.cpp:2265 core/view.cpp:2269 utils/themeeditor.cpp:187
+#, kde-format
+msgid "Folder"
+msgstr "Priečinok"
+
+#: core/view.cpp:2274 core/view.cpp:2276
+#, kde-format
+msgid "Note"
+msgstr "Poznámka"
+
+#: core/view.cpp:2283 core/view.cpp:2285
+#, kde-format
+msgid "Preview"
+msgstr "Náhľad"
+
+#: core/view.cpp:2302
+#, kde-format
+msgid "<b>%1</b> reply"
+msgid_plural "<b>%1</b> replies"
+msgstr[0] "<b>%1</b> odpoveď"
+msgstr[1] "<b>%1</b> odpovede"
+msgstr[2] "<b>%1</b> odpovedí"
+
+#: core/view.cpp:2305
+#, kde-format
+msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
+msgstr[0] "<b>%1</b> správa v podstrome (<b>%2</b> neprečítaná)"
+msgstr[1] "<b>%1</b> správy v podstrome (<b>%2</b> neprečítané)"
+msgstr[2] "<b>%1</b> správ v podstrome (<b>%2</b> neprečítaných)"
+
+#: core/view.cpp:2342
+#, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
+msgid "Threads started on %1"
+msgstr "Vlákna začínajúce na %1"
+
+#: core/view.cpp:2344
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
+msgid "Threads started %1"
+msgstr "Vlákna začínajúce %1"
+
+#: core/view.cpp:2348
+#, kde-format
+msgid "Threads with messages dated %1"
+msgstr "Vlákna so správami datovanými %1"
+
+#: core/view.cpp:2358
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
+msgid "Messages sent on %1"
+msgstr "Správy poslané %1"
+
+#: core/view.cpp:2361
+#, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
+msgid "Messages received on %1"
+msgstr "Správy prijaté %1"
+
+#: core/view.cpp:2365
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
+msgid "Messages sent %1"
+msgstr "Správy poslané %1"
+
+#: core/view.cpp:2367
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
+msgid "Messages received %1"
+msgstr "Správy prijaté %1"
+
+#: core/view.cpp:2376
+#, kde-format
+msgid "Threads started within %1"
+msgstr "Vlákna začínajúce od %1"
+
+#: core/view.cpp:2379
+#, kde-format
+msgid "Threads containing messages with dates within %1"
+msgstr "Vlákna obsahujúce správy s dátumami od %1"
+
+#: core/view.cpp:2387
+#, kde-format
+msgid "Messages sent within %1"
+msgstr "Správy poslané od %1"
+
+#: core/view.cpp:2389
+#, kde-format
+msgid "Messages received within %1"
+msgstr "Správy prijaté od %1"
+
+#: core/view.cpp:2398
+#, kde-format
+msgid "Threads started by %1"
+msgstr "Vlákna začínajúce %1"
+
+#: core/view.cpp:2401
+#, kde-format
+msgid "Threads with most recent message by %1"
+msgstr "Vlákna s najnovšou správou od %1"
+
+#: core/view.cpp:2410 core/view.cpp:2434
+#, kde-format
+msgid "Messages sent to %1"
+msgstr "Správy poslané do %1"
+
+#: core/view.cpp:2412
+#, kde-format
+msgid "Messages sent by %1"
+msgstr "Správy poslané %1"
+
+#: core/view.cpp:2415
+#, kde-format
+msgid "Messages received from %1"
+msgstr "Správy prijaté od %1"
+
+#: core/view.cpp:2423
+#, kde-format
+msgid "Threads directed to %1"
+msgstr "Vlákna smerujúce do %1"
+
+#: core/view.cpp:2426
+#, kde-format
+msgid "Threads with most recent message directed to %1"
+msgstr "Vlákna s najnovšou správou smerujúce do %1"
+
+#: core/view.cpp:2436
+#, kde-format
+msgid "Messages received by %1"
+msgstr "Správy prijaté %1"
+
+#: core/view.cpp:2462
+#, kde-format
+msgid "<b>%1</b> thread"
+msgid_plural "<b>%1</b> threads"
+msgstr[0] "<b>%1</b> vlákno"
+msgstr[1] "%1 vlákna"
+msgstr[2] "%1 vlákien"
+
+#: core/view.cpp:2467
+#, kde-format
+msgid "<b>%1</b> message (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
+msgstr[0] "<b>%1</b> správa (<b>%2</b> neprečítaná)"
+msgstr[1] "%2 správy, %1 neprečítané"
+msgstr[2] "%2 správy, %1 neprečítané"
+
+#: core/widgetbase.cpp:186
+#, kde-format
+msgid "Any filter defined."
+msgstr ""
+
+#: core/widgetbase.cpp:186
+#, fuzzy, kde-format
+#| msgid "Clear Filter"
+msgid "Create Filter"
+msgstr "Vyčistiť filter"
+
+#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#, kde-format
+msgid "Theme"
+msgstr "Téma"
+
+#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
+#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
+#: utils/themeconfigbutton.cpp:46
+#, kde-format
+msgid "Configure..."
+msgstr "Nastaviť..."
+
+#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#, kde-format
+msgid "Aggregation"
+msgstr "Agregácia"
+
+#: core/widgetbase.cpp:581
+#, kde-format
+msgid "Message Sort Order"
+msgstr "Poradie triedenia správ"
+
+#: core/widgetbase.cpp:603
+#, kde-format
+msgid "Message Sort Direction"
+msgstr "Smer triedenia správ"
+
+#: core/widgetbase.cpp:620
+#, kde-format
+msgid "Group Sort Order"
+msgstr "Poradie triedenia skupín"
+
+#: core/widgetbase.cpp:637
+#, kde-format
+msgid "Group Sort Direction"
+msgstr "Smer triedenia skupín"
+
+#: core/widgetbase.cpp:652
+#, kde-format
+msgid "Folder Always Uses This Sort Order"
+msgstr "Priečinok používa vždy toto poradie triedenia"
+
+#: core/widgets/configurefiltersdialog.cpp:24
+#, fuzzy, kde-format
+#| msgid "Clear Filter"
+msgctxt "@title:window"
+msgid "Configure Filter"
+msgstr "Vyčistiť filter"
+
+#: core/widgets/configurefilterswidget.cpp:78
+#, kde-format
+msgid "Remove"
+msgstr ""
+
+#: core/widgets/configurefilterswidget.cpp:81
+#, fuzzy, kde-format
+#| msgid "Do you want to delete \"%1\"?"
+msgid "Do you want to delete this filter?"
+msgstr "Chcete vymazať \"%1\"?"
+
+#: core/widgets/configurefilterswidget.cpp:82
+#, fuzzy, kde-format
+#| msgid "Clear Filter"
+msgid "Remove Filter"
+msgstr "Vyčistiť filter"
+
+#: core/widgets/filternamedialog.cpp:19
+#, fuzzy, kde-format
+#| msgid "Clear Filter"
+msgctxt "@title:window"
+msgid "Edit Filter"
+msgstr "Vyčistiť filter"
+
+#: core/widgets/filternamewidget.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox Name of the option"
+#| msgid "Name:"
+msgid "Name:"
+msgstr "Názov:"
+
+#: core/widgets/filtersavedmenu.cpp:16
+#, fuzzy, kde-format
+#| msgid "Clear Filter"
+msgid "Save Filter..."
+msgstr "Vyčistiť filter"
+
+#: core/widgets/quicksearchline.cpp:40
+#, kde-format
+msgctxt "Search for messages."
+msgid "Search"
+msgstr "Hľadať"
+
+#: core/widgets/quicksearchwarning.cpp:20
+#, kde-format
+msgid "The words less than 3 letters are ignored."
+msgstr "Slová s menej ako 3 písmenami sú ignorované."
+
+#: core/widgets/quicksearchwarning.cpp:21
+#, kde-format
+msgid "Do not show again"
+msgstr "Znovu nezobrazovať"
+
+#: core/widgets/searchcollectionindexingwarning.cpp:33
+#, kde-format
+msgid ""
+"Some of the search folders in this query are still being indexed or are "
+"excluded from indexing completely. The results below may be incomplete."
+msgstr ""
+"Niektoré z prehľadaných priečinkov sú stále indexované alebo vylúčené z "
+"indexovania. Výsledky môžu byť nekompletné."
+
+#: core/widgets/searchlinestatus.cpp:78
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Prevent the quick search field from being cleared when changing folders"
+msgstr "Zabrániť vymazaniu poľa rýchleho hľadania pri zmene priečinka"
+
+#: core/widgets/searchlinestatus.cpp:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Clear the quick search field when changing folders"
+msgstr "Vyčistiť pole rýchleho hľadania pri zmene priečinka"
+
+#: core/widgets/searchlinestatus.cpp:101
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Toggle this button if you want to keep your quick search locked when moving "
+"to other folders or when narrowing the search by message status."
+msgstr ""
+"Prepnite toto tlačidlo, ak chcete ponechať vaše rýchle vyhľadávanie "
+"uzamknuté pri prechode do iného priečinka alebo pri zúžení vyhľadávania "
+"podľa stavu správ."
+
+#: core/widgets/searchlinestatus.cpp:112
+#, kde-format
+msgid "Filter Mails by Status"
+msgstr "Filtrovať maily podľa stavu"
+
+#: core/widgets/searchlinestatus.cpp:116
+#, fuzzy, kde-format
+#| msgid "Clear Filter"
+msgid "Saved Filter"
+msgstr "Vyčistiť filter"
+
+#: core/widgets/searchlinestatus.cpp:215
+#, kde-format
+msgid "Clear Filter"
+msgstr "Vyčistiť filter"
+
+#: core/widgets/searchlinestatus.cpp:221
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "Neprečítané"
+
+#: core/widgets/searchlinestatus.cpp:225
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "Odpovedané"
+
+#: core/widgets/searchlinestatus.cpp:229
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr "Presmerované"
+
+#: core/widgets/searchlinestatus.cpp:233
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr "Dôležité"
+
+#: core/widgets/searchlinestatus.cpp:237
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr "Akčná položka"
+
+#: core/widgets/searchlinestatus.cpp:241
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr "Sledované"
+
+#: core/widgets/searchlinestatus.cpp:245
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr "Ignorované"
+
+#: core/widgets/searchlinestatus.cpp:249
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr "Má prílohu"
+
+#: core/widgets/searchlinestatus.cpp:253
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr "Má pozvánku"
+
+#: core/widgets/searchlinestatus.cpp:257
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr "Spam"
+
+#: core/widgets/searchlinestatus.cpp:261
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr "Ham"
+
+#: core/widgets/searchlinestatus.cpp:271
+#, kde-format
+msgid "Full Message"
+msgstr "Plná správa"
+
+#: core/widgets/searchlinestatus.cpp:278
+#, kde-format
+msgid "Body"
+msgstr "Telo"
+
+#: core/widgets/searchlinestatus.cpp:283
+#, kde-format
+msgid "Subject"
+msgstr "Predmet"
+
+#: core/widgets/searchlinestatus.cpp:294
+#, kde-format
+msgid "BCC"
+msgstr "Skrytá kópia"
+
+#: core/widgets/searchlinestatus.cpp:322
+#, kde-format
+msgid "To"
+msgstr "Pre"
+
+#: core/widgets/searchlinestatus.cpp:404
+#, kde-format
+msgid "Clear History"
+msgstr "Vyčistiť históriu"
+
+#: core/widgets/tablockedwarning.cpp:17
+#, kde-format
+msgid "Current Tab is locked."
+msgstr "Aktuálna karta je zamknutá."
+
+#: core/widgets/tablockedwarning.cpp:17
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Unlock Tab"
+msgid "(Unlock it)"
+msgstr "Odomknúť kartu"
+
+#: messagelistutil.cpp:104
+#, kde-format
+msgid "Sorting"
+msgstr "Triedenie"
+
+#: pane.cpp:123
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open a new tab"
+msgstr "Otvoriť novú kartu"
+
+#: pane.cpp:125
+#, kde-format
+msgid "New tab"
+msgstr "Nová karta"
+
+#: pane.cpp:135
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close the current tab"
+msgstr "Zavrieť aktuálnu kartu"
+
+#: pane.cpp:137
+#, kde-format
+msgid "Close tab"
+msgstr "Zatvoriť kartu"
+
+#: pane.cpp:179
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "Aktivovať kartu %1"
+
+#: pane.cpp:199
+#, kde-format
+msgid "Show Quick Search Bar"
+msgstr "Zobraziť panel rýchleho hľadania"
+
+#: pane.cpp:220
+#, kde-format
+msgid "Message List"
+msgstr "Zoznam správ"
+
+#: pane.cpp:226
+#, kde-format
+msgid "Create New Tab"
+msgstr "Vytvoriť novú kartu"
+
+#: pane.cpp:257
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "Aktivovať nasledujúcu kartu"
+
+#: pane.cpp:267
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "Aktivovať predchádzajúcu kartu"
+
+#: pane.cpp:279
+#, kde-format
+msgid "Move Tab Left"
+msgstr "Presunúť kartu vľavo"
+
+#: pane.cpp:287
+#, kde-format
+msgid "Move Tab Right"
+msgstr "Presunúť kartu vpravo"
+
+#: pane.cpp:297
+#, kde-format
+msgid "Close Tab"
+msgstr "Zavrieť kartu"
+
+#: pane.cpp:517 pane.cpp:798
+#, kde-format
+msgctxt "@title:tab Empty messagelist"
+msgid "Empty"
+msgstr "Prázdne"
+
+#: pane.cpp:702
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close Tab"
+msgstr "Zavrieť kartu"
+
+#: pane.cpp:705
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close All Other Tabs"
+msgstr "Zatvoriť všetky ostatné karty"
+
+#: pane.cpp:708
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Unlock Tab"
+msgstr "Odomknúť kartu"
+
+#: pane.cpp:708
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Lock Tab"
+msgstr "Zamknúť kartu"
+
+#: storagemodel.cpp:219
+#, kde-format
+msgctxt "displayed as subject when the subject of a mail is empty"
+msgid "No Subject"
+msgstr "Bez predmetu"
+
+#: storagemodel.cpp:220
+#, kde-format
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr "Neznáme"
+
+#: utils/aggregationeditor.cpp:31
+#, kde-format
+msgid "Groups && Threading"
+msgstr "Skupiny && tvorba vlákien"
+
+#: utils/aggregationeditor.cpp:35
+#, kde-format
+msgid "Grouping:"
+msgstr "Zoskupovanie:"
+
+#: utils/aggregationeditor.cpp:41
+#, kde-format
+msgid "Group expand policy:"
+msgstr "Pravidlá rozbalenia skupiny:"
+
+#: utils/aggregationeditor.cpp:45
+#, kde-format
+msgid "Threading:"
+msgstr "Tvorba vlákna:"
+
+#: utils/aggregationeditor.cpp:51
+#, kde-format
+msgid "Thread leader:"
+msgstr "Vedúci vlákna:"
+
+#: utils/aggregationeditor.cpp:55
+#, kde-format
+msgid "Thread expand policy:"
+msgstr "Pravidlá rozbalenia vlákna:"
+
+#: utils/aggregationeditor.cpp:64
+#, kde-format
+msgctxt "@title:tab Advanced settings tab for aggregation mode"
+msgid "Advanced"
+msgstr "Pokročilé"
+
+#: utils/aggregationeditor.cpp:68
+#, kde-format
+msgid "Fill view strategy:"
+msgstr "Vyplniť strátegiu zobrazenia:"
+
+#: utils/configureaggregationsdialog.cpp:100
+#, fuzzy, kde-format
+#| msgid "Customize Message Aggregation Modes"
+msgctxt "@title:window"
+msgid "Customize Message Aggregation Modes"
+msgstr "Vlastné režimy zoskupovania správ"
+
+#: utils/configureaggregationsdialog.cpp:118
+#: utils/configureaggregationsdialog.cpp:357
+#, kde-format
+msgid "New Aggregation"
+msgstr "Nová agregácia"
+
+#: utils/configureaggregationsdialog.cpp:126
+#, kde-format
+msgid "Clone Aggregation"
+msgstr "Klonovať agregáciu"
+
+#: utils/configureaggregationsdialog.cpp:139
+#, kde-format
+msgid "Export Aggregation..."
+msgstr "Exportovať agregáciu..."
+
+#: utils/configureaggregationsdialog.cpp:146
+#, kde-format
+msgid "Import Aggregation..."
+msgstr "Importovať agregáciu..."
+
+#: utils/configureaggregationsdialog.cpp:157
+#, kde-format
+msgid "Delete Aggregation"
+msgstr "Vymazať agregáciu"
+
+#: utils/configureaggregationsdialog.cpp:340
+#, kde-format
+msgid "Unnamed Aggregation"
+msgstr "Nepomenovaná agregácia"
+
+#: utils/configureaggregationsdialog.cpp:409
+#, kde-format
+msgid "Import Aggregation"
+msgstr "Importovať agregáciu"
+
+#: utils/configureaggregationsdialog.cpp:442
+#, kde-format
+msgid "Export Aggregation"
+msgstr "Exportovať agregáciu"
+
+#: utils/configureaggregationsdialog.cpp:442
+#: utils/configurethemesdialog.cpp:465
+#, kde-format
+msgid "All Files (*)"
+msgstr "Všetky súbory (*)"
+
+#: utils/configurethemesdialog.cpp:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Customize Themes"
+msgstr "Prispôsobiť témy"
+
+#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#, kde-format
+msgid "New Theme"
+msgstr "Nová téma"
+
+#: utils/configurethemesdialog.cpp:122
+#, kde-format
+msgid "Clone Theme"
+msgstr "Klonovať tému"
+
+#: utils/configurethemesdialog.cpp:135
+#, kde-format
+msgid "Export Theme..."
+msgstr "Exportovať tému..."
+
+#: utils/configurethemesdialog.cpp:142
+#, kde-format
+msgid "Import Theme..."
+msgstr "Importovať tému..."
+
+#: utils/configurethemesdialog.cpp:153
+#, kde-format
+msgid "Delete Theme"
+msgstr "Zmazať tému"
+
+#: utils/configurethemesdialog.cpp:332
+#, kde-format
+msgid "Unnamed Theme"
+msgstr "Nepomenovaná téma"
+
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#, kde-format
+msgid "New Column"
+msgstr "Nový stĺpec"
+
+#: utils/configurethemesdialog.cpp:404
+#, kde-format
+msgid "Do you want to delete selected themes?"
+msgstr "Chcete vymazať vybrané témy?"
+
+#: utils/configurethemesdialog.cpp:404
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr "Chcete vymazať \"%1\"?"
+
+#: utils/configurethemesdialog.cpp:405
+#, kde-format
+msgctxt "@title:window"
+msgid "Delete Theme"
+msgstr "Vymazať tému"
+
+#: utils/configurethemesdialog.cpp:431
+#, kde-format
+msgid "Import Theme"
+msgstr "Importovať tému"
+
+#: utils/configurethemesdialog.cpp:465
+#, kde-format
+msgid "Export Theme"
+msgstr "Exportovať tému"
+
+#: utils/optionseteditor.cpp:27
+#, kde-format
+msgctxt "@title:tab General options of a view mode"
+msgid "General"
+msgstr "Všeobecné"
+
+#: utils/optionseteditor.cpp:31
+#, kde-format
+msgctxt "@label:textbox Name of the option"
+msgid "Name:"
+msgstr "Názov:"
+
+#: utils/optionseteditor.cpp:40
+#, kde-format
+msgctxt "@label:textbox Description of the option"
+msgid "Description:"
+msgstr "Popis:"
+
+#: utils/themeeditor.cpp:69
+#, kde-format
+msgctxt "@label:textbox Property name"
+msgid "Name:"
+msgstr "Názov:"
+
+#: utils/themeeditor.cpp:73
+#, kde-format
+msgid "The label that will be displayed in the column header."
+msgstr "Popis, ktorý sa zobrazí v hlavičke stĺpca."
+
+#: utils/themeeditor.cpp:76
+#, kde-format
+msgid "Header click sorts messages:"
+msgstr "Kliknutie na hlavičku triedi správy:"
+
+#: utils/themeeditor.cpp:80
+#, kde-format
+msgid "The sorting order that clicking on this column header will switch to."
+msgstr "Poradie triedenia pri kliknutí na hlavičku stĺpca sa prepne do."
+
+#: utils/themeeditor.cpp:83
+#, kde-format
+msgid "Visible by default"
+msgstr "Štandardne viditeľné"
+
+#: utils/themeeditor.cpp:84
+#, kde-format
+msgid "Check this if this column should be visible when the theme is selected."
+msgstr ""
+"Toto zaškrtnúť, ak by mal byť tento stĺpec viditeľný, keď je zvolená téma."
+
+#: utils/themeeditor.cpp:87
+#, kde-format
+msgid "Contains \"Sender or Receiver\" field"
+msgstr "Obsahuje pole \"Odosielateľ alebo prijímateľ\""
+
+#: utils/themeeditor.cpp:88
+#, kde-format
+msgid ""
+"Check this if this column label should be updated depending on the folder "
+"\"inbound\"/\"outbound\" type."
+msgstr ""
+"Toto zaškrtnúť, ak by mal byť tento popis stĺpca aktualizovaný v závislosti "
+"od toho, či je typ priečinka \"prichádzajúci\"/\"odchádzajúci\"."
+
+#: utils/themeeditor.cpp:108
+#, kde-format
+msgid "Unnamed Column"
+msgstr "Nepomenovaný stĺpec"
+
+#: utils/themeeditor.cpp:173
+#, kde-format
+msgid "Message Group"
+msgstr "Skupina správ"
+
+#: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
+#, kde-format
+msgid ""
+"Very long subject very long subject very long subject very long subject very "
+"long subject very long"
+msgstr ""
+"Veľmi dlhý predmet veľmi dlhý predmet veľmi dlhý predmet veľmi dlhý predmet "
+"veľmi dlhý predmet"
+
+#: utils/themeeditor.cpp:192
+#, kde-format
+msgid "Sample Tag 1"
+msgstr "Vzorová značka 1"
+
+#: utils/themeeditor.cpp:193
+#, kde-format
+msgid "Sample Tag 2"
+msgstr "Vzorová značka 2"
+
+#: utils/themeeditor.cpp:194
+#, kde-format
+msgid "Sample Tag 3"
+msgstr "Vzorová značka 3"
+
+#: utils/themeeditor.cpp:409
+#, kde-format
+msgctxt "Indicates whether or not a header label is visible"
+msgid "Visible"
+msgstr "Viditeľné"
+
+#: utils/themeeditor.cpp:851
+#, kde-format
+msgctxt "@action:inmenu soften the text color"
+msgid "Soften"
+msgstr "Zjemniť"
+
+#: utils/themeeditor.cpp:858
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Bold"
+msgstr "Tučné"
+
+#: utils/themeeditor.cpp:862
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Italic"
+msgstr "Kurzíva"
+
+#: utils/themeeditor.cpp:869
+#, kde-format
+msgid "Font"
+msgstr "Písmo"
+
+#: utils/themeeditor.cpp:877
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Default"
+msgstr "Predvolené"
+
+#: utils/themeeditor.cpp:882
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Custom..."
+msgstr "Vlastné..."
+
+#: utils/themeeditor.cpp:890
+#, kde-format
+msgid "Foreground Color"
+msgstr "Farba popredia"
+
+#: utils/themeeditor.cpp:899
+#, kde-format
+msgctxt ""
+"Hide a mark if the mail does not have the attribute, e.g. Important mark on "
+"a non important mail"
+msgid "Hide"
+msgstr "Skryť"
+
+#: utils/themeeditor.cpp:906
+#, kde-format
+msgctxt ""
+"Keep a empty space in the list if the mail does not have the attribute, e.g. "
+"Important mark on a non important mail"
+msgid "Keep Empty Space"
+msgstr "Ponechať prázdne miesto"
+
+#: utils/themeeditor.cpp:913
+#, kde-format
+msgctxt ""
+"Show the icon softened in the list if the mail does not have the attribute, "
+"e.g. Important mark on a non important mail"
+msgid "Keep Softened Icon"
+msgstr "Ponechať rozmazanú ikonu"
+
+#: utils/themeeditor.cpp:921
+#, kde-format
+msgid "When Disabled"
+msgstr "Keď je zakázané"
+
+#: utils/themeeditor.cpp:927
+#, kde-format
+msgid "Group Header"
+msgstr "Hlavička skupiny"
+
+#: utils/themeeditor.cpp:934
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "None"
+msgstr "Žiadne"
+
+#: utils/themeeditor.cpp:939
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Automatic"
+msgstr "Automaticky"
+
+#: utils/themeeditor.cpp:944
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Custom..."
+msgstr "Vlastné..."
+
+#: utils/themeeditor.cpp:952
+#, kde-format
+msgid "Background Color"
+msgstr "Farba pozadia"
+
+#: utils/themeeditor.cpp:972
+#, kde-format
+msgid "Background Style"
+msgstr "Štýl pozadia"
+
+#: utils/themeeditor.cpp:1158
+#, kde-format
+msgid "Column Properties..."
+msgstr "Vlastnosti stĺpca..."
+
+#: utils/themeeditor.cpp:1161
+#, kde-format
+msgid "Add Column..."
+msgstr "Pridať stĺpec..."
+
+#: utils/themeeditor.cpp:1164
+#, kde-format
+msgid "Delete Column"
+msgstr "Odstrániť stĺpec"
+
+#: utils/themeeditor.cpp:1170
+#, kde-format
+msgid "Move Column to Left"
+msgstr "Presunúť stĺpec vľavo"
+
+#: utils/themeeditor.cpp:1174
+#, kde-format
+msgid "Move Column to Right"
+msgstr "Presunúť stĺpec vpravo"
+
+#: utils/themeeditor.cpp:1223
+#, kde-format
+msgid "Add New Column"
+msgstr "Pridať nový stĺpec"
+
+#: utils/themeeditor.cpp:1247
+#, kde-format
+msgid "Column Properties"
+msgstr "Vlastnosti stĺpca"
+
+#: utils/themeeditor.cpp:1289
+#, kde-format
+msgid "Appearance"
+msgstr "Vzhľad"
+
+#: utils/themeeditor.cpp:1293
+#, kde-format
+msgid "Content Items"
+msgstr "Položky obsahu"
+
+#: utils/themeeditor.cpp:1425
+#, kde-format
+msgid ""
+"Right click on the header to add or modify columns. Drag the content items "
+"and drop them on the columns in order to compose your theme. Right click on "
+"the items inside the view for more options."
+msgstr ""
+"Kliknite pravým tlačidlom myši na hlavičku pre pridanie alebo úpravu stĺpca. "
+"Presuňte položky obsahu a pustite ich na stĺpcoch za účelom vytvorenia vašej "
+"témy. Pre viac možností kliknite pravým tlačidlom myši na položky vo vnútri "
+"zobrazenia."
+
+#: utils/themeeditor.cpp:1435
+#, kde-format
+msgctxt "@title:tab Advanced theme settings"
+msgid "Advanced"
+msgstr "Pokročilé"
+
+#: utils/themeeditor.cpp:1439
+#, kde-format
+msgid "Header:"
+msgstr "Hlavička:"
+
+#: utils/themeeditor.cpp:1445
+#, kde-format
+msgid "Icon size:"
+msgstr "Veľkosť ikon:"
+
+#: utils/themeeditor.cpp:1451
+#, kde-format
+msgctxt "suffix in a spinbox"
+msgid " pixel"
+msgid_plural " pixels"
+msgstr[0] " pixel"
+msgstr[1] " pixely"
+msgstr[2] " pixelov"
+
+#: widget.cpp:220
+#, kde-format
+msgctxt "Item in list of Akonadi tags, to show all e-mails"
+msgid "All"
+msgstr "Všetko"
+
+#: widget.cpp:345
+#, kde-format
+msgid "Collapse Group"
+msgstr "Zvinúť skupinu"
+
+#: widget.cpp:348
+#, kde-format
+msgid "Expand Group"
+msgstr "Rozvinúť skupinu"
+
+#: widget.cpp:354
+#, kde-format
+msgid "Expand All Groups"
+msgstr "Rozvinúť všetky skupiny"
+
+#: widget.cpp:357
+#, kde-format
+msgid "Collapse All Groups"
+msgstr "Zvinúť všetky skupiny"
+
+#: widget.cpp:413
+#, kde-format
+msgid "&Move Here"
+msgstr "&Presunúť sem"
+
+#: widget.cpp:414
+#, kde-format
+msgid "&Copy Here"
+msgstr "&Kopírovať sem"
+
+#: widget.cpp:416
+#, kde-format
+msgid "C&ancel"
+msgstr "&Zrušiť"
+
+#, fuzzy
+#~| msgid "Clear Filter"
+#~ msgid "Rename Filter"
+#~ msgstr "Vyčistiť filter"
+
+#, fuzzy
+#~| msgid "Filter message by:"
+#~ msgid "Filter Name"
+#~ msgstr "Filtrovať správy podľa:"
+
+#~ msgid "Show close button on each tab"
+#~ msgstr "Zobraziť tlačidlo zatvorenia na každej karte"
+
+#~ msgid "Enable this option if you want to have a close button on each tab."
+#~ msgstr ""
+#~ "Povoľte túto možnosť, ak chcete mať tlačidlo pre zatvorenie na každej "
+#~ "záložke."
+
+#~ msgid "Hide tab bar when only one tab is open"
+#~ msgstr "Skryť panel kariet ak je otvorená iba jedna karta"
+
+#~ msgid ""
+#~ "With this option enabled the tab bar will be displayed only when there "
+#~ "are two or more tabs. With this option disabled the tab bar will be "
+#~ "always shown. When the tab bar is hidden you can always open a folder in "
+#~ "a new tab by middle-clicking it."
+#~ msgstr ""
+#~ "Ak je táto voľba povolená, panel sa zobrazí len vtedy, keď sú tam dve "
+#~ "alebo viac kariet. Ak je táto voľba vypnutá, panel bude zobrazený vždy. "
+#~ "Keď je panel skrytý, vždy môžete otvoriť priečinok na novej záložke "
+#~ "kliknutím prostredného tlačidla myši naň."
+
+#~ msgid "bcc"
+#~ msgstr "Skrytá kópia"
+
+#~ msgid "Quick Filter:"
+#~ msgstr "Rýchly filter:"
+
+#~ msgid "More..."
+#~ msgstr "Viac..."
+
+#~ msgctxt "@action:inmenu Font setting"
+#~ msgid "Default"
+#~ msgstr "Predvolené"
+
+#~ msgctxt "@action:inmenu Font setting"
+#~ msgid "Custom..."
+#~ msgstr "Vlastné..."

@@ -1,0 +1,300 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2009, 2010.
+# Franklin Weng <franklin@goodhorse.idv.tw>, 2010, 2011, 2013, 2014, 2015.
+# pan93412 <pan93412@gmail.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2019-03-22 00:36+0800\n"
+"Last-Translator: pan93412 <pan93412@gmail.com>\n"
+"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 18.12.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Franklin Weng"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "franklin@goodhorse.idv.tw"
+
+#: attachment/attachmentcompressjob.cpp:50
+#, kde-format
+msgid "Could not initiate attachment compression."
+msgstr "無法初始化附件壓縮。"
+
+#: attachment/attachmentcompressjob.cpp:60
+#, kde-format
+msgid "Could not compress the attachment."
+msgstr "無法壓縮附件。"
+
+#: attachment/attachmentfromfolderjob.cpp:51
+#, kde-format
+msgid "Could not create compressed file."
+msgstr "無法建立壓縮檔。"
+
+#: attachment/attachmentfromfolderjob.cpp:90
+#, kde-format
+msgid ""
+"The resulting attachment would be larger than the maximum allowed size, "
+"aborting."
+msgstr "結果的附件會超過允許的最大大小，因此將中止動作。"
+
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
+#, kde-format
+msgid "Could not add %1 to the archive"
+msgstr "無法將 %1 新增到歸檔。"
+
+#: attachment/attachmentfromfolderjob.cpp:113
+#, kde-format
+msgid "Could not open %1 for reading."
+msgstr "無法開啟讀取 %1。"
+
+#: attachment/attachmentfromurljob.cpp:69
+#, kde-format
+msgctxt "a file called 'unknown.ext'"
+msgid "unknown%1"
+msgstr "不明的%1"
+
+#: attachment/attachmentfromurljob.cpp:71
+#, kde-format
+msgctxt "a file called 'unknown'"
+msgid "unknown"
+msgstr "未知"
+
+#: attachment/attachmentfromurljob.cpp:103
+#, kde-format
+msgid "\"%1\" not found. Please specify the full path."
+msgstr "找不到 %1。請指定完整路徑。"
+
+#: attachment/attachmentfromurljob.cpp:112
+#, kde-format
+msgid "You may not attach files bigger than %1. Share it with storage service."
+msgstr "您可能不能附加大於 %1 的檔案。請使用儲存服務分享。"
+
+#: attachment/attachmentpropertiesdialog.cpp:133
+#, kde-format
+msgid ""
+"<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
+"touch this setting, since the type of the file is automatically checked; "
+"but, sometimes, %1 may not detect the type correctly -- here is where you "
+"can fix that.</p>"
+msgstr ""
+"<p>檔案的 <em>MIME 型態</em>：</p> <p>通常您不需要去改變這個設定，系統會自動"
+"偵測檔案型態。但是有時候 %1 無法正確偵測，您可以在這裡修正。</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:141
+#, kde-format
+msgid ""
+"<p>The estimated size of the attachment:</p><p>Note that, in an email "
+"message, a binary file encoded with base64 will take up four thirds the "
+"actual size of the file.</p>"
+msgstr ""
+"<p>附件的估計大小：</p> <p>注意，在信件中，用 base64 編碼一個非文字檔時，產生"
+"的大小會比原來的大四分之三。</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:146
+#, kde-format
+msgid ""
+"<p>The file name of the part:</p><p>Although this defaults to the name of "
+"the attached file, it does not specify the file to be attached; rather, it "
+"suggests a file name to be used by the recipient's mail agent when saving "
+"the part to disk.</p>"
+msgstr ""
+"<p>此部份的檔案名稱</p> <p>雖然通常是指附檔本身的檔名，但是並不盡然。更正確地"
+"說，它只是用於建議收件者在儲存的時候使用什麼名稱。</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:153
+#, kde-format
+msgid ""
+"<p>A description of the part:</p><p>This is just an informational "
+"description of the part, much like the Subject is for the whole message; "
+"most mail agents will show this information in their message previews "
+"alongside the attachment's icon.</p>"
+msgstr ""
+"<p>此部份的說明：</p> <p>這是一些關於此部份的資訊，通常會顯示在附件圖示的說"
+"明。</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:160
+#, kde-format
+msgid ""
+"<p>The transport encoding of this part:</p><p>Normally, you do not need to "
+"change this, since %1 will use a decent default encoding, depending on the "
+"MIME type; yet, sometimes, you can significantly reduce the size of the "
+"resulting message, e.g. if a PostScript file does not contain binary data, "
+"but consists of pure text -- in this case, choosing \"quoted-printable\" "
+"over the default \"base64\" will save up to 25% in resulting message size.</"
+"p>"
+msgstr ""
+"<p>此部份的傳送編碼方式</p> <p>通常您不需要去修改它，%1 會根據 MIME 型態來判"
+"斷使用哪一種編碼方式。但是您還是可以自行指定。有時自行指定可以節省一些空間，"
+"例如 PostScript 檔內以文字為主，使用 quoted-printable 而不是預設的 base64 可"
+"以省下約 25% 的大小。</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:171
+#, kde-format
+msgid ""
+"<p>Check this option if you want to suggest to the recipient the automatic "
+"(inline) display of this part in the message preview, instead of the default "
+"icon view;</p><p>Technically, this is carried out by setting this part's "
+"<em>Content-Disposition</em> header field to \"inline\" instead of the "
+"default \"attachment\".</p>"
+msgstr ""
+"<p>如果您要讓收件者那一端自動顯示出這部份的預覽，而不是只顯示圖示，就勾選這個"
+"選項。</p> <p>技術上，這只消在 <em>Content-Disposition</em> 標頭上使用 "
+"inline 而不是用 attachment 即可。</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:179
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be signed.</p><p>The "
+"signature will be made with the key that you associated with the currently-"
+"selected identity.</p>"
+msgstr ""
+"<p>如果您要簽署這部份，就勾選這個選項。</p> <p>系統會使用您發信的身份指定的簽"
+"章來簽署。</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:185
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be encrypted.</"
+"p><p>The part will be encrypted for the recipients of this message.</p>"
+msgstr "<p>如果您要將這部份加密，就勾選此選項。</p> <p>這部份將會被加密。</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:306
+#: attachment/attachmentpropertiesdialog.cpp:321
+#, fuzzy, kde-format
+#| msgid "Attachment Properties"
+msgctxt "@title:window"
+msgid "Attachment Properties"
+msgstr "附件內容"
+
+#: attachment/attachmentupdatejob.cpp:40
+#, kde-format
+msgid "URL is empty."
+msgstr "網址是空的。"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: attachment/ui/attachmentpropertiesdialog.ui:39
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:60
+#, kde-format
+msgctxt "MIME type of this attachment"
+msgid "Type:"
+msgstr "類型："
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: attachment/ui/attachmentpropertiesdialog.ui:82
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:87
+#, kde-format
+msgctxt "size of the attachment"
+msgid "Size:"
+msgstr "大小："
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: attachment/ui/attachmentpropertiesdialog.ui:109
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:114
+#, kde-format
+msgctxt "file name of the attachment"
+msgid "Name:"
+msgstr "名稱："
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: attachment/ui/attachmentpropertiesdialog.ui:139
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:134
+#, kde-format
+msgctxt "description of the attachment"
+msgid "Description:"
+msgstr "描述："
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: attachment/ui/attachmentpropertiesdialog.ui:169
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:154
+#, kde-format
+msgctxt "encoding of the attachment"
+msgid "Encoding:"
+msgstr "編碼："
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoDisplay)
+#: attachment/ui/attachmentpropertiesdialog.ui:187
+#, kde-format
+msgid "Suggest automatic display"
+msgstr "建議自動顯示"
+
+#. i18n: ectx: property (text), widget (QCheckBox, encrypt)
+#: attachment/ui/attachmentpropertiesdialog.ui:194
+#, kde-format
+msgid "Encrypt this attachment"
+msgstr "加密此附件"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sign)
+#: attachment/ui/attachmentpropertiesdialog.ui:201
+#, kde-format
+msgid "Sign this attachment"
+msgstr "簽署此附件"
+
+#. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
+#: settings/messagecore.kcfg:34
+#, kde-format
+msgid ""
+"Changing this from its default 'Auto' will force the use of the specified "
+"encoding for all emails, regardless of what they specify themselves."
+msgstr ""
+"改變這個選項不使用「自動」的話，系統會不管信件中的指示，使用您所設定的字元"
+"集。"
+
+#. i18n: ectx: label, entry (QuotedText3), group (Reader)
+#: settings/messagecore.kcfg:37
+#, kde-format
+msgid "This is the color used in the 3rd level of quoted text"
+msgstr "第三層引言文字所使用的顏色"
+
+#. i18n: ectx: label, entry (QuotedText2), group (Reader)
+#: settings/messagecore.kcfg:41
+#, kde-format
+msgid "This is the color used in the 2nd level of quoted text"
+msgstr "第二層引言文字所使用的顏色"
+
+#. i18n: ectx: label, entry (QuotedText1), group (Reader)
+#: settings/messagecore.kcfg:45
+#, kde-format
+msgid "This is the color used in the 1st level of quoted text"
+msgstr "第一層引言文字所使用的顏色"
+
+#. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
+#: settings/messagecore.kcfg:56
+#, kde-format
+msgid "Replace recognized prefi&x with \"Re:\""
+msgstr "將識別前綴取代成「Re:」(&X)"
+
+#. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
+#: settings/messagecore.kcfg:64
+#, kde-format
+msgid "Replace recognized prefix with \"&Fwd:\""
+msgstr "將識別前綴取代成「&Fwd:」"
+
+#. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
+#: settings/messagecore.kcfg:69
+#, kde-format
+msgid ""
+"The maximum size in bits that email attachments are allowed to have (-1 for "
+"no limit)"
+msgstr "電子郵件允許附件大小（以位元為單位，-1 表示不限制）"
+
+#: utils/stringutil.cpp:418
+#, kde-format
+msgctxt "signal that this email is defined in my identity"
+msgid "Me"
+msgstr "我"

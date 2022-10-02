@@ -1,0 +1,1001 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Jean Cayron <jean.cayron@base.be>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-26 00:45+0000\n"
+"PO-Revision-Date: 2011-08-15 08:44+0200\n"
+"Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
+"Language: wa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: customtemplates.cpp:72 customtemplates.cpp:123
+#, kde-format
+msgctxt "Message->"
+msgid "Universal"
+msgstr "Univiersel"
+
+#: customtemplates.cpp:73 customtemplates.cpp:129
+#, kde-format
+msgctxt "Message->"
+msgid "Reply"
+msgstr "Responde"
+
+#: customtemplates.cpp:74 customtemplates.cpp:132
+#, kde-format
+msgctxt "Message->"
+msgid "Reply to All"
+msgstr "Responde a tertos"
+
+#: customtemplates.cpp:75 customtemplates.cpp:135
+#, kde-format
+msgctxt "Message->"
+msgid "Forward"
+msgstr "Ricassî"
+
+#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">Comint ç' ki ça rote ?</a>"
+
+#: customtemplates.cpp:87
+#, kde-format
+msgid ""
+"<qt><p>Here you can add, edit, and delete custom message templates to use "
+"when you compose a reply or forwarding message. Create the custom template "
+"by typing the name into the input box and press the '+' button. Also, you "
+"can bind a keyboard combination to the template for faster operations.</"
+"p><p>Message templates support substitution commands, by simply typing them "
+"or selecting them from the <i>Insert command</i> menu.</p><p>There are four "
+"types of custom templates: used to <i>Reply</i>, <i>Reply to All</i>, "
+"<i>Forward</i>, and <i>Universal</i> which can be used for all kinds of "
+"operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
+"templates.</p></qt>"
+msgstr ""
+
+#: customtemplates.cpp:138
+#, kde-format
+msgctxt "Message->"
+msgid "Unknown"
+msgstr "Nén cnoxhou"
+
+#: customtemplates.cpp:252
+#, kde-format
+msgid "A template with same name already exists."
+msgstr ""
+
+#: customtemplates.cpp:252
+#, fuzzy, kde-format
+#| msgid "(no custom templates)"
+msgid "Cannot create template"
+msgstr "(pont d' modele a vosse môde)"
+
+#: customtemplates.cpp:344
+#, kde-format
+msgctxt "@info"
+msgid "Do you really want to remove template \"%1\"?"
+msgstr ""
+
+#: customtemplates.cpp:345
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Template?"
+msgstr ""
+
+#: customtemplatesmenu.cpp:48
+#, kde-format
+msgid "With Custom Template"
+msgstr "Avou modele a vosse môde"
+
+#: customtemplatesmenu.cpp:51
+#, kde-format
+msgid "Reply With Custom Template"
+msgstr "Responde avou on modele a vosse môde"
+
+#: customtemplatesmenu.cpp:54
+#, kde-format
+msgid "Reply to All With Custom Template"
+msgstr "Responde a tertos avou on modele a vosse môde"
+
+#: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
+#: customtemplatesmenu.cpp:189
+#, kde-format
+msgid "(no custom templates)"
+msgstr "(pont d' modele a vosse môde)"
+
+#: defaulttemplates.cpp:16
+#, kde-format
+msgid "Default new message template"
+msgstr "Novea modele prémetou di messaedje"
+
+#: defaulttemplates.cpp:21
+#, kde-format
+msgid "Default reply template"
+msgstr "Modele prémetou di response"
+
+#: defaulttemplates.cpp:26
+#, kde-format
+msgctxt ""
+"Default reply template.%1: date of original message, %2: time of original "
+"message, %3: quoted text of original message, %4: cursor Position"
+msgid ""
+"On %1 %2 you wrote:\n"
+"%3\n"
+"%4"
+msgstr ""
+"Li %1 a %2 vos avoz scrît :\n"
+"%3\n"
+"%4"
+
+#: defaulttemplates.cpp:37
+#, kde-format
+msgid "Default reply all template"
+msgstr "Modele prémetou di response a tertos"
+
+#: defaulttemplates.cpp:41
+#, kde-format
+msgctxt ""
+"Default reply all template: %1: date, %2: time, %3: name of original sender, "
+"%4: quoted text of original message, %5: cursor position"
+msgid ""
+"On %1 %2 %3 wrote:\n"
+"%4\n"
+"%5"
+msgstr ""
+"Li %1 a %2 %3 a scrît :\n"
+"%4\n"
+"%5"
+
+#: defaulttemplates.cpp:53
+#, kde-format
+msgid "Default forward template"
+msgstr "Modele prémetou di rcassaedje"
+
+#: defaulttemplates.cpp:60
+#, kde-format
+msgctxt ""
+"Default forward template: %1: subject of original message, %2: date of "
+"original message, %3: time of original message, %4: mail address of original "
+"sender, %5: original message text"
+msgid ""
+"\n"
+"----------  Forwarded Message  ----------\n"
+"\n"
+"Subject: %1\n"
+"Date: %2, %3\n"
+"From: %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-----------------------------------------"
+msgstr ""
+"\n"
+"----------  Messaedje ricassî  ----------\n"
+"\n"
+"Sudjet : %1\n"
+"Date : %2 a %3\n"
+"Di : %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-----------------------------------------"
+
+#. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:13
+#, kde-format
+msgid "Template content"
+msgstr "Çou k' i gn a dins l' modele"
+
+#. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:17
+#, kde-format
+msgid "Template shortcut"
+msgstr "Rascourti do modele"
+
+#. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:21
+#, kde-format
+msgid "Template type"
+msgstr "Sôre di modele"
+
+#. i18n: ectx: label, entry (StripSignature), group (TemplateParser)
+#: settings/templateparser.kcfg:11
+#, kde-format
+msgid "Remove the signature when replying"
+msgstr "Oister l' sinateure dins les responses"
+
+#. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
+#: settings/templateparser.kcfg:15
+#, kde-format
+msgid "Use smart &quoting"
+msgstr "Si siervi del malene &direye"
+
+#. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
+#: settings/templateparser.kcfg:19
+#, kde-format
+msgid ""
+"Reply or forward using the same visual format as the original message (plain "
+"text or HTML)"
+msgstr ""
+
+#. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
+#: settings/templateparser.kcfg:26
+#, kde-format
+msgid "Message template for new message"
+msgstr "Modele di messaedje po noû messaedje"
+
+#. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
+#: settings/templateparser.kcfg:30
+#, kde-format
+msgid "Message template for reply"
+msgstr "Modele di messaedje po response"
+
+#. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
+#: settings/templateparser.kcfg:34
+#, kde-format
+msgid "Message template for reply to all"
+msgstr "Modele di messaedje po response a tertos"
+
+#. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
+#: settings/templateparser.kcfg:38
+#, kde-format
+msgid "Message template for forward"
+msgstr "Modele di messaedje po rcassaedje"
+
+#. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
+#: settings/templateparser.kcfg:42
+#, kde-format
+msgid "Quote characters"
+msgstr "Wiyemets"
+
+#: templateparserjob.cpp:350
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Cannot insert content from file %1: %2"
+msgctxt "@info"
+msgid "Cannot insert content from file %1: %2"
+msgstr "Dji n' sai stitchî l' ådvins a pårti do fitchî %1 : %2"
+
+#: templateparserjob.cpp:520
+#, fuzzy, kde-format
+#| msgid "To:"
+msgctxt "@item:intext email To"
+msgid "To:"
+msgstr "A :"
+
+#: templateparserjob.cpp:531
+#, fuzzy, kde-format
+#| msgid "CC:"
+msgctxt "@item:intext email CC"
+msgid "CC:"
+msgstr "CC :"
+
+#: templateparserjob.cpp:1186
+#, fuzzy, kde-format
+#| msgid "Attachment %1"
+msgctxt "@item:intext"
+msgid "Attachment %1"
+msgstr "Ataetchmint %1"
+
+#: templateparserjob.cpp:1395
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Pipe command <command>%1</command> failed."
+msgstr "Li cmande pupe <command>%1</command> a fwait berwete."
+
+#: templatescommandmenu.cpp:28
+msgid "Quoted Message Text"
+msgstr "Scrijhaedje do messaedje ridit"
+
+#: templatescommandmenu.cpp:30
+msgid "Message Text as Is"
+msgstr "Scrijhaedje do messaedje come il est"
+
+#: templatescommandmenu.cpp:32
+msgid "Message Id"
+msgstr "Id do messaedje"
+
+#: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
+msgid "Date"
+msgstr "Date"
+
+#: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
+msgid "Date in Short Format"
+msgstr "Date e coûte cogne"
+
+#: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
+msgid "Date in C Locale"
+msgstr "Date e locåle C"
+
+#: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
+msgid "Day of Week"
+msgstr "Djoû del samwinne"
+
+#: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
+msgid "Time"
+msgstr "Eure"
+
+#: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
+msgid "Time in Long Format"
+msgstr "Eure e longue cogne"
+
+#: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
+msgid "Time in C Locale"
+msgstr "Eure e locåle C"
+
+#: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
+msgid "To Field Address"
+msgstr "Adresse do tchamp A"
+
+#: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
+msgid "To Field Name"
+msgstr "No do tchamp A"
+
+#: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
+msgid "To Field First Name"
+msgstr "Pitit no do tchamp A"
+
+#: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
+msgid "To Field Last Name"
+msgstr "No d' famile do tchamp A"
+
+#: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
+msgid "CC Field Address"
+msgstr "Adresse do tchamp CC"
+
+#: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
+msgid "CC Field Name"
+msgstr "No do tchamp CC"
+
+#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
+msgid "CC Field First Name"
+msgstr "Pitit no do tchamp CC"
+
+#: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
+msgid "CC Field Last Name"
+msgstr "No d' famile do tchamp CC"
+
+#: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
+msgid "From Field Address"
+msgstr "Adresse do tchamp Di"
+
+#: templatescommandmenu.cpp:66
+msgid "From Field Name"
+msgstr "No do tchamp Di"
+
+#: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
+msgid "From Field First Name"
+msgstr "Pitit no do tchamp Di"
+
+#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
+msgid "From Field Last Name"
+msgstr "No d' famile do tchamp Di"
+
+#: templatescommandmenu.cpp:72
+msgid "Addresses of all recipients"
+msgstr "Adresses di tos les rçuveus"
+
+#: templatescommandmenu.cpp:74
+msgctxt "Template value for subject of the message"
+msgid "Subject"
+msgstr "Sudjet"
+
+#: templatescommandmenu.cpp:76
+msgid "Quoted Headers"
+msgstr "Tiestires ridites"
+
+#: templatescommandmenu.cpp:78
+msgid "Headers as Is"
+msgstr "Tiestires come ele sont"
+
+#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
+msgid "Header Content"
+msgstr "Ådvins del tiestire"
+
+#: templatescommandmenu.cpp:82
+msgid "Reply as Quoted Plain Text"
+msgstr ""
+
+#: templatescommandmenu.cpp:84
+msgid "Reply as Quoted HTML Text"
+msgstr ""
+
+#: templatescommandmenu.cpp:118
+msgid "From field Name"
+msgstr "No do tchamp Di"
+
+#: templatescommandmenu.cpp:124
+msgctxt "Template subject command."
+msgid "Subject"
+msgstr "Sudjet"
+
+#: templatescommandmenu.cpp:129
+msgid "Pipe Original Message Body and Insert Result as Quoted Text"
+msgstr ""
+"Puper l' coir do prumî messaedje eyet stitchî l' rizultat come scrijhaedje "
+"ridit"
+
+#: templatescommandmenu.cpp:131
+msgid "Pipe Original Message Body and Insert Result as Is"
+msgstr ""
+"Puper l' coir do prumî messaedje eyet stitchî l' rizultat come scrijhaedje "
+"come il est"
+
+#: templatescommandmenu.cpp:133
+msgid "Pipe Original Message with Headers and Insert Result as Is"
+msgstr ""
+"Puper l' prumî messaedje avou les tiestires eyet stitchî l' rizultat come "
+"scrijhaedje come il est"
+
+#: templatescommandmenu.cpp:135
+msgid "Pipe Current Message Body and Insert Result as Is"
+msgstr ""
+"Puper l' coir do messaedje do moumint eyet stitchî l' rizultat come "
+"scrijhaedje come il est"
+
+#: templatescommandmenu.cpp:137
+msgid "Pipe Current Message Body and Replace with Result"
+msgstr "Puper l' coir do messaedje do moumint eyet mete li rzultat al plaece"
+
+#: templatescommandmenu.cpp:142
+msgctxt "Inserts user signature, also known as footer, into message"
+msgid "Signature"
+msgstr "Sinateure"
+
+#: templatescommandmenu.cpp:144
+msgid "Insert File Content"
+msgstr "Sititchî çou k' i gn a e fitchî"
+
+#: templatescommandmenu.cpp:148
+msgctxt ""
+"All characters, up to and including the next newline, are discarded without "
+"performing any macro expansion"
+msgid "Discard to Next Line"
+msgstr "Abandner diska l' roye shuvante"
+
+#: templatescommandmenu.cpp:151
+msgid "Template Comment"
+msgstr "Rawete sol modele"
+
+#: templatescommandmenu.cpp:153
+msgid "No Operation"
+msgstr "Nole operåcion"
+
+#: templatescommandmenu.cpp:155
+msgid "Clear Generated Message"
+msgstr "Netyî messaedje fwait"
+
+#: templatescommandmenu.cpp:156
+msgid "Cursor position"
+msgstr "Eplaeçmint do cursoe"
+
+#: templatescommandmenu.cpp:158
+msgid "Blank text"
+msgstr "Vude sicrijhaedje"
+
+#: templatescommandmenu.cpp:160
+msgid "Dictionary Language"
+msgstr ""
+
+#: templatescommandmenu.cpp:161
+msgid "Language"
+msgstr ""
+
+#: templatescommandmenu.cpp:166
+msgid "Turn Debug On"
+msgstr "Aloumer l' disbugaedje"
+
+#: templatescommandmenu.cpp:168
+msgid "Turn Debug Off"
+msgstr "Arester l' disbugaedje"
+
+#: templatescommandmenu.cpp:201
+#, kde-format
+msgid "Insert Command"
+msgstr "Taper comande"
+
+#: templatescommandmenu.cpp:214
+#, kde-format
+msgid "Original Message"
+msgstr "Prumî messaedje"
+
+#: templatescommandmenu.cpp:228
+#, kde-format
+msgid "Current Message"
+msgstr "Messaedje do moumint"
+
+#: templatescommandmenu.cpp:241
+#, kde-format
+msgid "Process with External Programs"
+msgstr "Traitî avou des dfoûtrins programes"
+
+#: templatescommandmenu.cpp:254
+#, kde-format
+msgctxt "Miscellaneous template commands menu"
+msgid "Miscellaneous"
+msgstr "Totes sôres"
+
+#: templatescommandmenu.cpp:268
+#, kde-format
+msgctxt "Debug template commands menu"
+msgid "Debug"
+msgstr ""
+
+#: templatesconfiguration.cpp:50
+#, kde-format
+msgid ""
+"<p>Here you can create and manage templates to use when composing new "
+"messages, replies or forwarded messages.</p><p>The message templates support "
+"substitution commands, either simply type them or select them from the "
+"<i>Insert command</i> menu.</p>"
+msgstr ""
+
+#: templatesconfiguration.cpp:58
+#, kde-format
+msgid ""
+"<p>Templates specified here are folder-specific. They override both global "
+"templates and per-identity templates.</p>"
+msgstr ""
+
+#: templatesconfiguration.cpp:63
+#, kde-format
+msgid ""
+"<p>Templates specified here are identity-specific. They override global "
+"templates, but can be overridden by per-folder templates if they are "
+"specified.</p>"
+msgstr ""
+
+#: templatesconfiguration.cpp:68
+#, kde-format
+msgid ""
+"<p>These are global (default) templates. They can be overridden by per-"
+"identity templates or per-folder templates if they are specified.</p>"
+msgstr ""
+
+#: templatesconfiguration.cpp:100
+#, kde-format
+msgid "Do you want to reset current template or all templates to default?"
+msgstr ""
+
+#: templatesconfiguration.cpp:101
+#, kde-format
+msgid "Reset to default"
+msgstr ""
+
+#: templatesconfiguration.cpp:102
+#, fuzzy, kde-format
+#| msgid "With Custom Template"
+msgid "Reset Current Template"
+msgstr "Avou modele a vosse môde"
+
+#: templatesconfiguration.cpp:103
+#, fuzzy, kde-format
+#| msgid "Reply to All With Custom Template"
+msgid "Reset All Templates"
+msgstr "Responde a tertos avou on modele a vosse môde"
+
+#: templatesconfiguration.cpp:361
+#, kde-format
+msgid ""
+"Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
+"not correct. Use only one of the aforementioned commands with \" Reply as "
+"Quoted Message command\" as per your need\n"
+"(a)Reply using plain text for quotes to be strictly in plain text\n"
+"(b)Reply using HTML text for quotes being in HTML format if present"
+msgstr ""
+
+#: templatesinsertcommandpushbutton.cpp:20
+#, kde-format
+msgid "&Insert Command"
+msgstr "&Taper comande"
+
+#: templatesinsertcommandpushbutton.cpp:28
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select a command to insert into the template"
+msgstr ""
+
+#: templatesinsertcommandpushbutton.cpp:30
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Traverse this menu to find a command to insert into the current template "
+"being edited.  The command will be inserted at the cursor location, so you "
+"want to move your cursor to the desired insertion point first."
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
+#: ui/customtemplates_base.ui:86
+#, fuzzy, kde-format
+#| msgid "(no custom templates)"
+msgctxt "@info:tooltip"
+msgid "Enter a name for the custom template"
+msgstr "(pont d' modele a vosse môde)"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mName)
+#: ui/customtemplates_base.ui:89
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"To create a custom template, first enter a name for that template and press "
+"the '+' button."
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
+#: ui/customtemplates_base.ui:96
+#, fuzzy, kde-format
+#| msgid "(no custom templates)"
+msgctxt "@info:tooltip"
+msgid "Add a new custom template"
+msgstr "(pont d' modele a vosse môde)"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mAdd)
+#: ui/customtemplates_base.ui:99
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to create a new custom template with the "
+"specified name"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
+#: ui/customtemplates_base.ui:106
+#, fuzzy, kde-format
+#| msgid "Reply With Custom Template"
+msgctxt "@info:tooltip"
+msgid "Remove the selected custom template"
+msgstr "Responde avou on modele a vosse môde"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mRemove)
+#: ui/customtemplates_base.ui:109
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to remove the currently selected custom "
+"template"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
+#: ui/customtemplates_base.ui:116
+#, fuzzy, kde-format
+#| msgid "Reply With Custom Template"
+msgctxt "@info:tooltip"
+msgid "Duplicate the selected custom template"
+msgstr "Responde avou on modele a vosse môde"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mDuplicate)
+#: ui/customtemplates_base.ui:119
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to duplicate the currently selected custom "
+"template"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:134
+#, fuzzy, kde-format
+#| msgid "(no custom templates)"
+msgctxt "@info:tooltip"
+msgid "List of custom templates available"
+msgstr "(pont d' modele a vosse môde)"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:137
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is a list of all the custom templates available."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:147
+#, fuzzy, kde-format
+#| msgid "Type"
+msgctxt "@title:column Type of custom template"
+msgid "Type"
+msgstr "Sôre"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:152
+#, fuzzy, kde-format
+#| msgctxt "Name of the custom template."
+#| msgid "Name"
+msgctxt "@title:column Name of the custom template."
+msgid "Name"
+msgstr "No"
+
+#. i18n: ectx: property (text), widget (QLabel, mToLabel)
+#: ui/customtemplates_base.ui:195
+#, kde-format
+msgctxt "@label:textbox Recipient mail address"
+msgid "To:"
+msgstr "A :"
+
+#. i18n: ectx: property (text), widget (QLabel, mCCLabel)
+#: ui/customtemplates_base.ui:202
+#, fuzzy, kde-format
+#| msgid "CC:"
+msgctxt "@label"
+msgid "CC:"
+msgstr "CC :"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
+#: ui/customtemplates_base.ui:219
+#, fuzzy, kde-format
+#| msgid "Additional recipients of the message"
+msgctxt "@info:tooltip"
+msgid "Additional recipients of the message"
+msgstr "Ôtes riçuveus do messaedje"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
+#: ui/customtemplates_base.ui:222
+#, fuzzy, kde-format
+#| msgid ""
+#| "When using this template, the default recipients are those you enter "
+#| "here. This is a comma-separated list of mail addresses."
+msgctxt "@info:whatsthis"
+msgid ""
+"When using this template, the default recipients are those you enter here.  "
+"This is a comma-separated list of mail addresses."
+msgstr ""
+"Cwand vos vs siervoz di ç' modele cial, les rçuveus prémetous sont les cis "
+"k' vos tapez cial. C' est ene djivêye d' adresses emile metowes a pårt avou "
+"des comas."
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
+#: ui/customtemplates_base.ui:235
+#, fuzzy, kde-format
+#| msgid "Additional recipients who get a copy of the message"
+msgctxt "@info:tooltip"
+msgid "Additional recipients who get a copy of the message"
+msgstr "Ôtes riçuveus k' riçuvèt ene copeye do messaedje"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
+#: ui/customtemplates_base.ui:238
+#, fuzzy, kde-format
+#| msgid ""
+#| "When using this template, the recipients you enter here will by default "
+#| "get a copy of this message. This is a comma-separated list of mail "
+#| "addresses."
+msgctxt "@info:whatsthis"
+msgid ""
+"When using this template, the recipients you enter here will by default get "
+"a copy of this message.  This is a comma-separated list of mail addresses."
+msgstr ""
+"Cwand vos vs siervoz di ç' modele cial, les rçuveus k' vos tapez cial "
+"riçuront ene copeye d' ci messaedje cial d' ene façon prémetowe. C' est ene "
+"djivêye d' adresses emile metowes a pårt avou des comas."
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
+#: ui/customtemplates_base.ui:255
+#, fuzzy, kde-format
+#| msgid "(no custom templates)"
+msgctxt "@info:tooltip"
+msgid "The custom template"
+msgstr "(pont d' modele a vosse môde)"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, mEdit)
+#: ui/customtemplates_base.ui:258
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This area contains the associated custom template."
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:283
+#, fuzzy, kde-format
+#| msgctxt "Message->"
+#| msgid "Universal"
+msgctxt "@item:inlistbox Universal custom template type."
+msgid "Universal"
+msgstr "Univiersel"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:288
+#, fuzzy, kde-format
+#| msgid "Reply"
+msgctxt "@item:inlistbox Custom template type for message replies"
+msgid "Reply"
+msgstr "Responde"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:293
+#, fuzzy, kde-format
+#| msgid "Reply to All"
+msgctxt "@item:inlistbox Custom template type for reply-to-all messages"
+msgid "Reply to All"
+msgstr "Responde a tertos"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:298
+#, fuzzy, kde-format
+#| msgctxt "Message->"
+#| msgid "Forward"
+msgctxt "@item:inlistbox Custom template type for message forwards"
+msgid "Forward"
+msgstr "Ricassî"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: ui/customtemplates_base.ui:306
+#, fuzzy, kde-format
+#| msgid "Shortc&ut:"
+msgctxt "@label"
+msgid "Shortc&ut:"
+msgstr "Rasco&urti :"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: ui/customtemplates_base.ui:325
+#, fuzzy, kde-format
+#| msgid "&Template type:"
+msgctxt "@label"
+msgid "&Template type:"
+msgstr "&Sôre di modele :"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TemplatesConfigurationBase)
+#: ui/templatesconfiguration_base.ui:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Template Configuration"
+msgstr "Apontiaedje do modele"
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_new)
+#: ui/templatesconfiguration_base.ui:77
+#, kde-format
+msgctxt "@title Message template"
+msgid "New Message"
+msgstr "Novea messaedje "
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
+#: ui/templatesconfiguration_base.ui:89
+#, fuzzy, kde-format
+#| msgid "Message template for new message"
+msgctxt "@info:tooltip"
+msgid "Create the template for new messages"
+msgstr "Modele di messaedje po noû messaedje"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
+#: ui/templatesconfiguration_base.ui:92
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for new email messages.  For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_reply)
+#: ui/templatesconfiguration_base.ui:108
+#, kde-format
+msgctxt "@title Message template"
+msgid "Reply to Sender"
+msgstr "Responde a l' evoyeu"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
+#: ui/templatesconfiguration_base.ui:146
+#, fuzzy, kde-format
+#| msgid "Message template for new message"
+msgctxt "@info:tooltip"
+msgid "Create the template for message replies"
+msgstr "Modele di messaedje po noû messaedje"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
+#: ui/templatesconfiguration_base.ui:149
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for messages replies. For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
+#: ui/templatesconfiguration_base.ui:165
+#, kde-format
+msgctxt "@title Message template"
+msgid "Reply to All / Reply to List"
+msgstr "Responde a tertos / Responde al djivêye"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
+#: ui/templatesconfiguration_base.ui:203
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for replying to all recipients or to a mailing list"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
+#: ui/templatesconfiguration_base.ui:206
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for reply-to-all messages or replies to "
+"a mailing list.  For more information about how to create the template, "
+"press the \"How does this work?\" link on this dialog."
+msgstr ""
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_forward)
+#: ui/templatesconfiguration_base.ui:222
+#, kde-format
+msgctxt "@title Message template"
+msgid "Forward Message"
+msgstr "Ricassî messaedje"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
+#: ui/templatesconfiguration_base.ui:260
+#, fuzzy, kde-format
+#| msgid "Message template for forward"
+msgctxt "@info:tooltip"
+msgid "Create the template for message forwards"
+msgstr "Modele di messaedje po rcassaedje"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
+#: ui/templatesconfiguration_base.ui:263
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for message forwards.  For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: ui/templatesconfiguration_base.ui:303
+#, kde-format
+msgctxt "@label:textbox Prefix for quoted message lines"
+msgid "&Quote indicator:"
+msgstr "Mostreu d' &direye :"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
+#: ui/templatesconfiguration_base.ui:316
+#, fuzzy, kde-format
+#| msgid "Message template for new message"
+msgctxt "@info:tooltip"
+msgid "Set the Prefix for quoted message lines"
+msgstr "Modele di messaedje po noû messaedje"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
+#: ui/templatesconfiguration_base.ui:326
+#, no-c-format, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"\n"
+"             <qt>The following placeholders are supported in the quote "
+"indicator:\n"
+"             <ul>\n"
+"             <li>%f: sender's initials</li>\n"
+"             <li>%%: percent sign</li>\n"
+"             <li>%_: space</li>\n"
+"             </ul></qt>\n"
+"           "
+msgstr ""
+"\n"
+"             <qt>Les secwinces shuvantes sont sopoirtêyes e mostreu d' "
+"direye :\n"
+"             <ul>\n"
+"             <li>%f : iniciåles di l' evoyeu</li>\n"
+"             <li>%% : sine d' åcintaedje</li>\n"
+"             <li>%_ : espåce</li>\n"
+"             </ul></qt>\n"
+"           "
+
+#, fuzzy
+#~| msgctxt "Message->"
+#~| msgid "Forward"
+#~ msgctxt "@item:inlistbox Custom template type for messsage forwards"
+#~ msgid "Forward"
+#~ msgstr "Ricassî"
+
+#~ msgctxt "Universal custom template type."
+#~ msgid "Universal"
+#~ msgstr "Univiersel"
+
+#~ msgctxt "Template type for forwarding messages."
+#~ msgid "Forward"
+#~ msgstr "Ricassî"

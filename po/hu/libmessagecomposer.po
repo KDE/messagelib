@@ -1,0 +1,3313 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013, 2014.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2014, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2021-01-05 20:41+0100\n"
+"Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.03.70\n"
+
+#: attachment/attachmentcontrollerbase.cpp:168
+#, kde-format
+msgid "Failed to compress attachment"
+msgstr "Nem sikerült tömöríteni a mellékletet"
+
+#: attachment/attachmentcontrollerbase.cpp:179
+#, kde-format
+msgid ""
+"The compressed attachment is larger than the original. Do you want to keep "
+"the original one?"
+msgstr ""
+"A tömörített melléklet mérete nagyobb, mint az eredeti. Szeretné megtartani "
+"az eredetit?"
+
+#: attachment/attachmentcontrollerbase.cpp:182
+#, kde-format
+msgctxt "Do not compress"
+msgid "Keep"
+msgstr "Megtartás"
+
+#: attachment/attachmentcontrollerbase.cpp:183
+#, kde-format
+msgid "Compress"
+msgstr "Tömörítés"
+
+#: attachment/attachmentcontrollerbase.cpp:202
+#, kde-format
+msgid "Failed to attach file"
+msgstr "Nem sikerült csatolni a fájlt"
+
+#: attachment/attachmentcontrollerbase.cpp:275
+#, kde-format
+msgid "Failed to reload attachment"
+msgstr "Nem sikerült újratölteni a mellékletet"
+
+#: attachment/attachmentcontrollerbase.cpp:322
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr "&Megnyitás ezzel"
+
+#: attachment/attachmentcontrollerbase.cpp:342
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr "&Egyéb…"
+
+#: attachment/attachmentcontrollerbase.cpp:344
+#: attachment/attachmentcontrollerbase.cpp:352
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr "&Megnyitás ezzel…"
+
+#: attachment/attachmentcontrollerbase.cpp:378
+#, kde-format
+msgid "Failed to attach public key"
+msgstr "Nem sikerült csatolni a nyilvános kulcsot"
+
+#: attachment/attachmentcontrollerbase.cpp:392
+#, kde-format
+msgid "Failed to attach vCard"
+msgstr "Nem sikerült csatolni a vCardot"
+
+#: attachment/attachmentcontrollerbase.cpp:405
+#, kde-format
+msgid "Failed to attach text from clipboard"
+msgstr "Nem sikerült csatolni a szöveget a vágólapról"
+
+#: attachment/attachmentcontrollerbase.cpp:453
+#, kde-format
+msgid "Attach &Public Key..."
+msgstr "&Nyilvános kulcs csatolása…"
+
+#: attachment/attachmentcontrollerbase.cpp:456
+#, kde-format
+msgid "Attach &My Public Key"
+msgstr "A saját n&yilvános kulcs csatolása"
+
+#: attachment/attachmentcontrollerbase.cpp:459
+#: attachment/attachmentcontrollerbase.cpp:464
+#: attachment/attachmentcontrollerbase.cpp:470
+#: attachment/attachmentcontrollerbase.cpp:479
+#, kde-format
+msgid "Attach"
+msgstr "Csatolás"
+
+#: attachment/attachmentcontrollerbase.cpp:463
+#: composer/composerviewbase.cpp:1908
+#, kde-format
+msgid "&Attach File..."
+msgstr "Fájl cs&atolása…"
+
+#: attachment/attachmentcontrollerbase.cpp:465
+#, kde-format
+msgid "Add Attachment..."
+msgstr "Melléklet hozzáadása…"
+
+#: attachment/attachmentcontrollerbase.cpp:469
+#, kde-format
+msgid "&Attach Directory..."
+msgstr "Mappa cs&atolása…"
+
+#: attachment/attachmentcontrollerbase.cpp:473
+#, kde-format
+msgid "Attach Own vCard"
+msgstr "Saját vCard csatolása"
+
+#: attachment/attachmentcontrollerbase.cpp:474
+#, kde-format
+msgid "Own vCard"
+msgstr "Saját vCard"
+
+#: attachment/attachmentcontrollerbase.cpp:478
+#, kde-format
+msgid "&Attach vCards..."
+msgstr "vCardok cs&atolása…"
+
+#: attachment/attachmentcontrollerbase.cpp:482
+#, kde-format
+msgid "&Attach Text From Clipboard..."
+msgstr "Szöveg cs&atolása a vágólapról…"
+
+#: attachment/attachmentcontrollerbase.cpp:483
+#, kde-format
+msgid "Attach Text From Clipboard"
+msgstr "Szöveg csatolása a vágólapról"
+
+#: attachment/attachmentcontrollerbase.cpp:495
+#, kde-format
+msgid "&Remove Attachment"
+msgstr "Melléklet &eltávolítása"
+
+#: attachment/attachmentcontrollerbase.cpp:496
+#, kde-format
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#: attachment/attachmentcontrollerbase.cpp:504
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Megnyitás"
+
+#: attachment/attachmentcontrollerbase.cpp:509
+#, kde-format
+msgctxt "to view"
+msgid "View"
+msgstr "Megjelenítés"
+
+#: attachment/attachmentcontrollerbase.cpp:514
+#, kde-format
+msgctxt "to edit"
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: attachment/attachmentcontrollerbase.cpp:519
+#, kde-format
+msgid "Edit With..."
+msgstr "Szerkesztés ezzel…"
+
+#: attachment/attachmentcontrollerbase.cpp:524
+#, kde-format
+msgid "&Save Attachment As..."
+msgstr "&Melléklet mentése másként…"
+
+#: attachment/attachmentcontrollerbase.cpp:525
+#, kde-format
+msgid "Save As..."
+msgstr "Mentés másként…"
+
+#: attachment/attachmentcontrollerbase.cpp:533
+#, kde-format
+msgid "Attachment Pr&operties..."
+msgstr "A melléklet tulajd&onságai…"
+
+#: attachment/attachmentcontrollerbase.cpp:534
+#, kde-format
+msgid "Properties"
+msgstr "Tulajdonságok"
+
+#: attachment/attachmentcontrollerbase.cpp:542
+#, kde-format
+msgid "Select All"
+msgstr "Összes kijelölése"
+
+#: attachment/attachmentcontrollerbase.cpp:545
+#, kde-format
+msgid "Reload"
+msgstr "Újratöltés"
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:702
+#: attachment/attachmentcontrollerbase.cpp:751
+#, kde-format
+msgid "KMail was unable to write the attachment to a temporary file."
+msgstr "A KMail nem tudta a mellékletet az átmeneti fájlba írni."
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:702
+#, kde-format
+msgid "Unable to open attachment"
+msgstr "A melléklet nem nyitható meg"
+
+#: attachment/attachmentcontrollerbase.cpp:711
+#, kde-format
+msgid "KMail was unable to open the attachment."
+msgstr "A KMail nem tudta megnyitni a mellékletet."
+
+#: attachment/attachmentcontrollerbase.cpp:751
+#, kde-format
+msgid "Unable to edit attachment"
+msgstr "A melléklet nem szerkeszthető"
+
+#: attachment/attachmentcontrollerbase.cpp:792
+#, kde-format
+msgid "unnamed"
+msgstr "névtelen"
+
+#: attachment/attachmentcontrollerbase.cpp:795
+#, kde-format
+msgid "Save Attachment As"
+msgstr "Melléklet mentése másként"
+
+#: attachment/attachmentcontrollerbase.cpp:818
+#, kde-format
+msgid ""
+"File %1 exists.\n"
+"Do you want to replace it?"
+msgstr ""
+"Már létezik %1 nevű fájl.\n"
+"Szeretné lecserélni?"
+
+#: attachment/attachmentcontrollerbase.cpp:819
+#, kde-format
+msgid "Save to File"
+msgstr "Mentés fájlba"
+
+#: attachment/attachmentcontrollerbase.cpp:820
+#, kde-format
+msgid "&Replace"
+msgstr "Cse&re"
+
+#: attachment/attachmentcontrollerbase.cpp:847
+#: attachment/attachmentcontrollerbase.cpp:905
+#, kde-format
+msgid "Do you really want to attach this directory \"%1\"?"
+msgstr "Biztosan csatolni szeretné ezt a mappát: „%1”?"
+
+#: attachment/attachmentcontrollerbase.cpp:848
+#: attachment/attachmentcontrollerbase.cpp:906
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach directory"
+msgstr "Mappa csatolása"
+
+#: attachment/attachmentcontrollerbase.cpp:849
+#: attachment/attachmentcontrollerbase.cpp:907
+#, fuzzy, kde-format
+#| msgid "Attach"
+msgctxt "@action:button"
+msgid "Attach"
+msgstr "Csatolás"
+
+#: attachment/attachmentcontrollerbase.cpp:884
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach Directory"
+msgstr "Mappa csatolása"
+
+#: attachment/attachmentcontrollerbase.cpp:893
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach File"
+msgstr "Fájl csatolása"
+
+#: attachment/attachmentcontrollerbase.cpp:936
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to attach file"
+msgstr "A fájl csatolása meghiúsult"
+
+#: attachment/attachmentcontrollerbase.cpp:960
+#, kde-format
+msgid "Attach Public OpenPGP Key"
+msgstr "Nyilvános OpenPGP kulcs csatolása"
+
+#: attachment/attachmentcontrollerbase.cpp:961
+#, kde-format
+msgid "Select the public key which should be attached."
+msgstr "Válassza ki a csatolni kívánt nyilvános kulcsot."
+
+#: attachment/attachmentmodel.cpp:122
+#, kde-format
+msgid "unnamed attachment"
+msgstr "névtelen melléklet"
+
+#: attachment/attachmentmodel.cpp:256
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
+msgstr "Név: %1<br>Méret: %2<br>Kódolás: %3<br>MimeType=%4"
+
+#: attachment/attachmentmodel.cpp:439
+#, kde-format
+msgctxt "@title column attachment name."
+msgid "Name"
+msgstr "Név"
+
+#: attachment/attachmentmodel.cpp:441
+#, kde-format
+msgctxt "@title column attachment size."
+msgid "Size"
+msgstr "Méret"
+
+#: attachment/attachmentmodel.cpp:443
+#, kde-format
+msgctxt "@title column attachment encoding."
+msgid "Encoding"
+msgstr "Kódolás"
+
+#: attachment/attachmentmodel.cpp:445
+#, kde-format
+msgctxt "@title column attachment type."
+msgid "Type"
+msgstr "Típus"
+
+#: attachment/attachmentmodel.cpp:447
+#, kde-format
+msgctxt "@title column attachment compression checkbox."
+msgid "Compress"
+msgstr "Tömörítés"
+
+#: attachment/attachmentmodel.cpp:449
+#, kde-format
+msgctxt "@title column attachment encryption checkbox."
+msgid "Encrypt"
+msgstr "Titkosítás"
+
+#: attachment/attachmentmodel.cpp:451
+#, kde-format
+msgctxt "@title column attachment signed checkbox."
+msgid "Sign"
+msgstr "Aláírás"
+
+#: attachment/attachmentmodel.cpp:453
+#, kde-format
+msgctxt "@title column attachment inlined checkbox."
+msgid "Suggest Automatic Display"
+msgstr "Automatikus megjelenítés javaslása"
+
+#: composer/composer.cpp:276
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Nem találhatók kulcsadatok a címzettekhez."
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not sign/encrypt"
+msgstr "A HTML-kód meg&tartása, aláírás és titkosítás nélkül"
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not encrypt"
+msgstr "A HTML-kód megtartása, titk&osítás nélkül"
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not sign"
+msgstr "A HTML-kód megtartása, a&láírás nélkül"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Sign/Encrypt (delete markup)"
+msgstr "Aláírás és titkosítás (a HTML-kód törlése)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Encrypt (delete markup)"
+msgstr "Titkosítás (a HTML-kód törlése)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Sign (delete markup)"
+msgstr "Aláírás (a HTML-kód törlése)"
+
+#: composer/composerviewbase.cpp:331
+#, kde-format
+msgid ""
+"<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
+"you want to delete your markup?</p></qt>"
+msgstr ""
+"<qt><p>HTML-es üzeneteket nem lehet közvetlenül, beágyazva aláírni vagy "
+"titkosítani.</p><p>Szeretné eltávolítani a HTML-kódot?</p></qt>"
+
+#: composer/composerviewbase.cpp:333
+#, kde-format
+msgid "Sign/Encrypt Message?"
+msgstr "Az üzenet aláírása és titkosítása?"
+
+#: composer/composerviewbase.cpp:514
+#, kde-format
+msgid "It was not possible to create a message composer."
+msgstr "Az üzenetszerkesztő létrehozása nem lehetséges."
+
+#: composer/composerviewbase.cpp:524
+#, kde-format
+msgid "Do you want to resize images?"
+msgstr "Szeretné átméretezni a képeket?"
+
+#: composer/composerviewbase.cpp:525
+#, kde-format
+msgid "Auto Resize Images"
+msgstr "Képek automatikus átméretezése"
+
+#: composer/composerviewbase.cpp:526
+#, fuzzy, kde-format
+#| msgid "Auto Resize Images"
+msgctxt "@action:button"
+msgid "Auto Resize"
+msgstr "Képek automatikus átméretezése"
+
+#: composer/composerviewbase.cpp:527
+#, fuzzy, kde-format
+#| msgid "Do &Not Sign"
+msgctxt "@action:button"
+msgid "Do Not Resize"
+msgstr "&Ne írja alá"
+
+#: composer/composerviewbase.cpp:737
+#, kde-format
+msgid "OpenPGP Key Expired"
+msgstr "Egy OpenPGP kulcs lejárt"
+
+#: composer/composerviewbase.cpp:737
+#, kde-format
+msgid "S/MIME Certificate Expired"
+msgstr "Egy S/MIME tanúsítvány lejárt"
+
+#: composer/composerviewbase.cpp:739
+#, kde-format
+msgid "OpenPGP Key Expires Soon"
+msgstr "Egy OpenPGP kulcs hamarosan lejár"
+
+#: composer/composerviewbase.cpp:739
+#, kde-format
+msgid "S/MIME Certificate Expires Soon"
+msgstr "Egy S/MIME tanúsítvány hamarosan lejár"
+
+#: composer/composerviewbase.cpp:814 composer/composerviewbase.cpp:828
+#: composer/composerviewbase.cpp:860
+#, kde-format
+msgid "Failed to resolve keys. Please report a bug."
+msgstr "Nem sikerült feloldani a kulcsokat. Jelentse a hibát."
+
+#: composer/composerviewbase.cpp:1066 composer/composerviewbase.cpp:1331
+#, kde-format
+msgid "Job cancelled by the user"
+msgstr "A felhasználó megszakította a feladatot"
+
+#: composer/composerviewbase.cpp:1071
+#, kde-format
+msgid ""
+"Could not compose message: %1 \n"
+" Please report this bug."
+msgstr ""
+"Nem lehet szerkeszteni az üzenetet: %1 \n"
+" Jelentse ezt a hibát."
+
+#: composer/composerviewbase.cpp:1073
+#, kde-format
+msgid "Could not compose message: %1"
+msgstr "Nem lehet szerkeszteni az üzenetet: %1"
+
+#: composer/composerviewbase.cpp:1170
+#, kde-format
+msgid "There were problems trying to queue the message for sending: %1"
+msgstr "Hiba történt az üzenet sorba állításakor küldéshez: %1"
+
+#: composer/composerviewbase.cpp:1334
+#, kde-format
+msgid "Could not autosave message: %1"
+msgstr "Nem lehet automatikusan menteni az üzenetet: %1"
+
+#: composer/composerviewbase.cpp:1353
+#, kde-format
+msgid "Could not write all data to file."
+msgstr "Nem lehet írni minden adatot a fájlba."
+
+#: composer/composerviewbase.cpp:1356
+#, kde-format
+msgid "Could not finalize the file."
+msgstr "Nem lehet befejezni a fájlt."
+
+#: composer/composerviewbase.cpp:1360
+#, kde-format
+msgid "Could not open file."
+msgstr "Nem lehet megnyitni a fájlt."
+
+#: composer/composerviewbase.cpp:1367
+#, kde-format
+msgid ""
+"Autosaving the message as %1 failed.\n"
+"%2\n"
+"Reason: %3"
+msgstr ""
+"Az üzenet automatikus mentése mint %1 sikertelen.\n"
+"%2\n"
+"Ok: %3"
+
+#: composer/composerviewbase.cpp:1373
+#, kde-format
+msgid "Autosaving Message Failed"
+msgstr "Az üzenet automatikus mentése nem sikerült"
+
+#: composer/composerviewbase.cpp:1486
+#, kde-format
+msgid "Failed to save the message: %1"
+msgstr "Nem sikerült menteni az üzenetet: %1"
+
+#: composer/composerviewbase.cpp:1904
+#, kde-format
+msgid ""
+"The message you have composed seems to refer to an attached file but you "
+"have not attached anything.\n"
+"Do you want to attach a file to your message?"
+msgstr ""
+"Az üzenetben hivatkozás található egy csatolt fájlra, de valójában egy fájl "
+"sincs csatolva.\n"
+"Szeretne csatolni egy fájlt az üzenethez?"
+
+#: composer/composerviewbase.cpp:1907
+#, kde-format
+msgid "File Attachment Reminder"
+msgstr "Emlékeztető a mellékletekre"
+
+#: composer/composerviewbase.cpp:1909
+#, kde-format
+msgid "&Send as Is"
+msgstr "Elküldés a m&ostani állapotban"
+
+#: composer/composerviewbase.cpp:1961
+#, kde-format
+msgid ""
+"Examination of the recipient's signing preferences yielded that you be asked "
+"whether or not to sign this message.\n"
+"Sign this message?"
+msgstr ""
+"A címzetthez beállított aláírási értékek szerint Ön azt kérte, hogy a "
+"program kérdezzen rá, alá szeretné-e írni az üzenetet.\n"
+"Alá szeretné írni az üzenetet?"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgid "Sign Message?"
+msgstr "Aláírja az üzenetet?"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgctxt "to sign"
+msgid "&Sign"
+msgstr "&Aláírás"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgid "Do &Not Sign"
+msgstr "&Ne írja alá"
+
+#: composer/composerviewbase.cpp:1987
+#, kde-format
+msgid ""
+"There are conflicting signing preferences for these recipients.\n"
+"Sign this message?"
+msgstr ""
+"A címzett aláírási beállításai nem egyértelműek.\n"
+"Alá szeretné írni az üzenetet?"
+
+#: composer/composerviewbase.cpp:2011
+#, kde-format
+msgid ""
+"You have requested to sign this message, but no valid signing keys have been "
+"configured for this identity."
+msgstr ""
+"Az üzenet aláírását kérte, de nincs beállítva érvényes aláírási kulcs ehhez "
+"az azonosítóhoz."
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgid "Send Unsigned?"
+msgstr "Küldés aláírás nélkül?"
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgid "Send &Unsigned"
+msgstr "Elkül&dés aláírás nélkül"
+
+#: composer/composerviewbase.cpp:2028
+#, kde-format
+msgid ""
+"Some parts of this message will not be signed.\n"
+"Sending only partially signed messages might violate site policy.\n"
+"Sign all parts instead?"
+msgstr ""
+"Az üzenet néhány része nem lesz aláírva.\n"
+"Lehet, hogy ez az Önnél érvényes biztonsági előírások megsértését jelenti.\n"
+"Inkább minden üzenetrészt alá szeretne írni?"
+
+#: composer/composerviewbase.cpp:2032
+#, kde-format
+msgid ""
+"This message will not be signed.\n"
+"Sending unsigned message might violate site policy.\n"
+"Sign message instead?"
+msgstr ""
+"Ez az üzenet nem lesz aláírva.\n"
+"Lehet, hogy ez az Önnél érvényes biztonsági előírások megsértését jelenti.\n"
+"Inkább alá szeretné írni az üzenetet?"
+
+#: composer/composerviewbase.cpp:2035
+#, kde-format
+msgid "&Sign All Parts"
+msgstr "Minden rész &aláírása"
+
+#: composer/composerviewbase.cpp:2035
+#, kde-format
+msgid "&Sign"
+msgstr "&Aláírás"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "Unsigned-Message Warning"
+msgstr "Figyelmeztetés - az üzenet nincs aláírva"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "Send &As Is"
+msgstr "Elkül&dés így"
+
+#: composer/composerviewbase.cpp:2084
+#, kde-format
+msgid ""
+"Valid trusted encryption keys were found for all recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"Mindegyik címzetthez választható megbízható titkosítási kulcs.\n"
+"Titkosítani szeretné az üzenetet?"
+
+#: composer/composerviewbase.cpp:2087
+#, kde-format
+msgid ""
+"Examination of the recipient's encryption preferences yielded that you be "
+"asked whether or not to encrypt this message.\n"
+"Encrypt this message?"
+msgstr ""
+"A címzetthez beállított titkosítási értékek szerint Ön azt kérte, hogy a "
+"program kérdezzen rá, titkosítani szeretné-e az üzenetet.\n"
+"Titkosítani szeretné az üzenetet?"
+
+#: composer/composerviewbase.cpp:2093 composer/composerviewbase.cpp:2119
+#, kde-format
+msgid "Encrypt Message?"
+msgstr "Titkosítani szeretné az üzenetet?"
+
+#: composer/composerviewbase.cpp:2094
+#, kde-format
+msgid "Sign && &Encrypt"
+msgstr "Aláírás és titkosítás"
+
+#: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2119
+#: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1317
+#: composer/keyresolver.cpp:1353
+#, kde-format
+msgid "&Encrypt"
+msgstr "&Titkosítás"
+
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#, kde-format
+msgid "&Sign Only"
+msgstr "&Csak aláírás"
+
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#, kde-format
+msgid "&Send As-Is"
+msgstr "Elküldés í&gy"
+
+#: composer/composerviewbase.cpp:2116
+#, kde-format
+msgid ""
+"There are conflicting encryption preferences for these recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"Ezeknél a címzetteknél nem egyértelműek a titkosítási beállítások.\n"
+"Titkosítani szeretné az üzenetet?"
+
+#: composer/composerviewbase.cpp:2119
+#, kde-format
+msgid "Do &Not Encrypt"
+msgstr "T&itkosítás nélkül"
+
+#: composer/composerviewbase.cpp:2139
+#, kde-format
+msgid ""
+"You have requested to encrypt this message, and to encrypt a copy to "
+"yourself, but no valid trusted encryption keys have been configured for this "
+"identity."
+msgstr ""
+"Az üzenet titkosítását és saját kulccsal titkosított másolatot is kért, de "
+"nem található az azonosítóhoz beállított érvényes, megbízható titkosítási "
+"kulcs."
+
+#: composer/composerviewbase.cpp:2143
+#, kde-format
+msgid "Send Unencrypted?"
+msgstr "Elküldés titkosítás nélkül?"
+
+#: composer/composerviewbase.cpp:2143 composer/keyresolver.cpp:1339
+#, kde-format
+msgid "Send &Unencrypted"
+msgstr "Küldés titkosítatlan&ul"
+
+#: composer/composerviewbase.cpp:2157
+#, kde-format
+msgid ""
+"Some parts of this message will not be encrypted.\n"
+"Sending only partially encrypted messages might violate site policy and/or "
+"leak sensitive information.\n"
+"Encrypt all parts instead?"
+msgstr ""
+"Az üzenet egyes részei nem lesznek titkosítva.\n"
+"Lehet, hogy ez az Önnél érvényes biztonsági előírások megsértését, bizalmas "
+"adatok kikerülését jelenti.\n"
+"Inkább minden üzenetrészt titkosítani szeretne?"
+
+#: composer/composerviewbase.cpp:2162
+#, kde-format
+msgid ""
+"This message will not be encrypted.\n"
+"Sending unencrypted messages might violate site policy and/or leak sensitive "
+"information.\n"
+"Encrypt messages instead?"
+msgstr ""
+"Az üzenet nem lesz titkosítva.\n"
+"Lehet, hogy a titkosítás nélküli üzenetküldés megsérti az Önnél érvényes "
+"biztonsági előírásokat.\n"
+"Inkább titkosítani szeretné az üzenetet?"
+
+#: composer/composerviewbase.cpp:2166
+#, kde-format
+msgid "&Encrypt All Parts"
+msgstr "Az összes üzenetrész &titkosítása"
+
+#: composer/composerviewbase.cpp:2169
+#, kde-format
+msgid "Unencrypted Message Warning"
+msgstr "Figyelmeztetés nem titkosított üzenetre"
+
+#: composer/keyresolver.cpp:302
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not fully trusted for encryption."
+msgstr ""
+"Egy vagy több beállított OpenPGP kulcsa vagy S/MIME tanúsítványa nem "
+"teljesen megbízható titkosításra."
+
+#: composer/keyresolver.cpp:306
+#, kde-format
+msgid ""
+"One or more of the OpenPGP encryption keys or S/MIME certificates for "
+"recipient \"%1\" is not fully trusted for encryption."
+msgstr ""
+"Legalább egy a titkosítási OpenPGP kulcsok vagy S/MIME tanúsítványok közül "
+"nem teljesen megbízható titkosításra a következő címzett esetében: „%1”."
+
+#: composer/keyresolver.cpp:313
+#, kde-format
+msgid ""
+"\n"
+"The following keys are only marginally trusted: \n"
+msgstr ""
+"\n"
+"A következő kulcsok megbízhatósága igen alacsony: \n"
+
+#: composer/keyresolver.cpp:317
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates have unknown trust level: \n"
+msgstr ""
+"\n"
+"A következő kulcsok vagy tanúsítványok megbízhatósági foka ismeretlen: \n"
+
+#: composer/keyresolver.cpp:321
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates are <b>revoked</b>: \n"
+msgstr ""
+"\n"
+"A következő kulcsokat és tanúsítványokat <b>visszavonták</b>: \n"
+
+#: composer/keyresolver.cpp:327
+#, kde-format
+msgid "Not Fully Trusted Encryption Keys"
+msgstr "Nem teljesen megbízható titkosítási kulcsok"
+
+#: composer/keyresolver.cpp:645
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not usable for encryption. Please reconfigure your "
+"encryption keys and certificates for this identity in the identity "
+"configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"Legalább egy beállított OpenPGP titkosítási kulcs vagy S/MIME tanúsítvány "
+"nem használható titkosításra. Ellenőrizze az azonosítóhoz beállított "
+"titkosítási kulcsokat és tanúsítványokat az azonosító beállítóablakában.\n"
+"Ha kívánja, továbbléphet – ebben az esetben, ha szükség van a kulcsok "
+"használatára, a program meg fogja kérdezni, melyik kulcsokat szeretné "
+"kiválasztani."
+
+#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
+#: composer/keyresolver.cpp:1037
+#, kde-format
+msgid "Unusable Encryption Keys"
+msgstr "Nem használható titkosítási kulcsok"
+
+#: composer/keyresolver.cpp:687
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP signing keys or S/MIME signing "
+"certificates is not usable for signing. Please reconfigure your signing keys "
+"and certificates for this identity in the identity configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"Legalább egy beállított OpenPGP aláírási kulcs vagy S/MIME tanúsítvány nem "
+"használható aláírásra. Ellenőrizze az azonosítóhoz beállított aláírási "
+"kulcsokat és tanúsítványokat az azonosító beállítóablakában.\n"
+"Ha kívánja, továbbléphet – ebben az esetben, ha szükség van a kulcsok "
+"használatára, a program meg fogja kérdezni, melyik kulcsokat szeretné "
+"kiválasztani."
+
+#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
+#: composer/keyresolver.cpp:1084
+#, kde-format
+msgid "Unusable Signing Keys"
+msgstr "Nem használható aláírási kulcsok"
+
+#: composer/keyresolver.cpp:998
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid trusted OpenPGP encryption keys for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"A címzetthez beállított titkosítási értékek alapján úgy tűnik, hogy legalább "
+"egy címzettnél a titkosítást OpenPGP-vel kell elvégezni,\n"
+"azonban nincs beállítva megbízható OpenPGP titkosítási kulcs ehhez az "
+"azonosítóhoz.\n"
+"Nem kötelező saját kulccsal titkosított másolatot készíteni az üzenetből, de "
+"ebben az esetben Ön nem fogja tudni elolvasni a saját elküldött üzeneteit."
+
+#: composer/keyresolver.cpp:1027
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME encryption certificates for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"A címzetthez beállított titkosítási értékek alapján úgy tűnik, hogy legalább "
+"egy címzettnél a titkosítást S/MIME-mal kell elvégezni,\n"
+"azonban nincs beállítva megbízható S/MIME titkosítási tanúsítvány ehhez az "
+"azonosítóhoz.\n"
+"Nem kötelező saját tanúsítvánnyal titkosított másolatot készíteni az "
+"üzenetből, de ebben az esetben Ön nem fogja tudni elolvasni a saját "
+"elküldött üzeneteit."
+
+#: composer/keyresolver.cpp:1059
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid OpenPGP signing certificates for this "
+"identity."
+msgstr ""
+"A címzetthez beállított aláírási értékek alapján úgy tűnik, hogy legalább "
+"egy címzettnél az aláírást OpenPGP-vel kell elvégezni,\n"
+"azonban nincs beállítva megbízható OpenPGP aláírási tanúsítvány ehhez az "
+"azonosítóhoz."
+
+#: composer/keyresolver.cpp:1067
+#, kde-format
+msgid "Do Not OpenPGP-Sign"
+msgstr "Nem kell OpenPGP aláírás"
+
+#: composer/keyresolver.cpp:1077
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME signing certificates for this "
+"identity."
+msgstr ""
+"A címzetthez beállított aláírási értékek alapján úgy tűnik, hogy legalább "
+"egy címzettnél az aláírást S/MIME-mal kell elvégezni,\n"
+"azonban nincs beállítva érvényes S/MIME aláírási tanúsítvány ehhez az "
+"azonosítóhoz."
+
+#: composer/keyresolver.cpp:1085
+#, kde-format
+msgid "Do Not S/MIME-Sign"
+msgstr "Nem kell S/MIME aláírás"
+
+#: composer/keyresolver.cpp:1147
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences showed no common type of "
+"signature matching your available signing keys.\n"
+"Send message without signing?"
+msgstr ""
+"A címzett aláírási preferenciái alapján nincs olyan aláírási mód, amely "
+"megfelelne a rendelkezésre álló kulcsoknak.\n"
+"Elküldi az üzenetet aláírás nélkül?"
+
+#: composer/keyresolver.cpp:1151
+#, kde-format
+msgid "No signing possible"
+msgstr "Nem lehet aláírni"
+
+#: composer/keyresolver.cpp:1314
+#, kde-format
+msgid ""
+"You did not select an encryption key for yourself (encrypt to self). You "
+"will not be able to decrypt your own message if you encrypt it."
+msgstr ""
+"Nem választott ki titkosítási kulcsot a saját célra való titkosításhoz. A "
+"saját titkosított üzeneteinek másolatát nem fogja tudni dekódolni."
+
+#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
+#: composer/keyresolver.cpp:1353
+#, kde-format
+msgid "Missing Key Warning"
+msgstr "Figyelmeztetés – hiányzik egy kulcs"
+
+#: composer/keyresolver.cpp:1332
+#, kde-format
+msgid ""
+"You did not select an encryption key for the recipient of this message; "
+"therefore, the message will not be encrypted."
+msgstr ""
+"Nem választott ki titkosítási kulcsot a címzetthez, ezért az üzenet nem lesz "
+"titkosítva."
+
+#: composer/keyresolver.cpp:1336
+#, kde-format
+msgid ""
+"You did not select an encryption key for any of the recipients of this "
+"message; therefore, the message will not be encrypted."
+msgstr ""
+"Nem választott ki titkosítási kulcsot egyik címzetthez sem, ezért az üzenet "
+"nem lesz titkosítva."
+
+#: composer/keyresolver.cpp:1345
+#, kde-format
+msgid ""
+"You did not select an encryption key for one of the recipients: this person "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"Nem választott ki titkosítási kulcsot egyik címzetthez sem, ezért ha az "
+"üzenetet titkosítva küldi el, a címzett nem fogja tudni elolvasni."
+
+#: composer/keyresolver.cpp:1349
+#, kde-format
+msgid ""
+"You did not select encryption keys for some of the recipients: these persons "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"Nem választott ki titkosítási kulcsot néhány címzetthez: ezek a személyek "
+"nem fogják tudni elolvasni az üzenetet, ha azt titkosítva küldi el."
+
+#: composer/keyresolver.cpp:1425
+#, kde-format
+msgid "Encryption Key Selection"
+msgstr "Titkosítási kulcs kiválasztása"
+
+#: composer/keyresolver.cpp:1469
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"There is a problem with the encryption certificate(s) for \"%1\".\n"
+"\n"
+"Please re-select the certificate(s) which should be used for this recipient."
+msgstr ""
+"Hiba történt „%1” titkosítási tanúsítványaival.\n"
+"\n"
+"Válassz ki újra a tanúsítványokat ehhez a címzetthez."
+
+#: composer/keyresolver.cpp:1543
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"<qt>No valid and trusted encryption certificate was found for \"%1\".<br/"
+"><br/>Select the certificate(s) which should be used for this recipient. If "
+"there is no suitable certificate in the list you can also search for "
+"external certificates by clicking the button: search for external "
+"certificates.</qt>"
+msgstr ""
+"<qt>Nem található érvényes és megbízható titkosítási tanúsítvány ehhez: „%1”."
+"<br/><br/>Válassza ki tanúsítványokat ehhez a címzetthez. Ha nincs megfelelő "
+"tanúsítvány a listában, a Külső tanúsítványok keresése gombra kattintva "
+"külső tanúsítványokat is kereshet.</qt>"
+
+#: composer/keyresolver.cpp:1553
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"More than one certificate matches \"%1\".\n"
+"\n"
+"Select the certificate(s) which should be used for this recipient."
+msgstr ""
+"Több mint egy tanúsítvány illeszkedik erre: „%1”.\n"
+"\n"
+"Válassza ki a tanúsítványokat ehhez a címzetthez."
+
+#: composer/nearexpirychecker.cpp:82
+#, kde-format
+msgid ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Az Ön OpenPGP aláírási kulcsa</p><p align=center><b>%2</b> (azonosító: 0x"
+"%3)</p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>Az Ön OpenPGP aláírási kulcsa</p><p align=center><b>%2</b> (azonosító: 0x"
+"%3)</p><p>%1 nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:88
+#, kde-format
+msgid ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Az Ön OpenPGP titkosítási kulcsa</p><p align=center><b>%2</b> (azonosító: "
+"0x%3)</p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>Az Ön OpenPGP titkosítási kulcsa</p><p align=center><b>%2</b> (azonosító: "
+"0x%3)</p><p>%1 nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:94
+#, kde-format
+msgid ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Az Ön OpenPGP kulcsa</p><p align=center><b>%2</b> (azonosító: 0x%3)</"
+"p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>Az Ön OpenPGP kulcsa</p><p align=center><b>%2</b> (azonosító: 0x%3)</p><p>"
+"%1 nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:103
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#| "%3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#| "%3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Az Ön OpenPGP aláírási kulcsa</p><p align=\"center\"><b>%2</b> "
+"(Azonosító: 0x%3)</p><p>kevesebb mint egy nap múlva lejár.</p>"
+msgstr[1] ""
+"<p>Az Ön OpenPGP aláírási kulcsa</p><p align=\"center\"><b>%2</b> "
+"(Azonosító: 0x%3)</p><p>kevesebb mint %1 nap múlva lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:109
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#| "%3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#| "%3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Az Ön OpenPGP titkosítási kulcsa</p><p align=\"center\"><b>%2</b> "
+"(Azonosító: 0x%3)</p><p>kevesebb mint egy nap múlva lejár.</p>"
+msgstr[1] ""
+"<p>Az Ön OpenPGP titkosítási kulcsa</p><p align=\"center\"><b>%2</b> "
+"(Azonosító: 0x%3)</p><p>kevesebb mint %1 nap múlva lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:115
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+#| "p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+#| "p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Az Ön OpenPGP kulcsa</p><p align=\"center\"><b>%2</b> (Azonosító: 0x%3)</"
+"p><p>kevesebb mint egy nap múlva lejár.</p>"
+msgstr[1] ""
+"<p>Az Ön OpenPGP kulcsa</p><p align=\"center\"><b>%2</b> (Azonosító: 0x%3)</"
+"p><p>kevesebb mint %1 nap múlva lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:135
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>A gyökértanúsítvány</p><p align=center><b>%4</b></p><p>, mely az Ön S/"
+"MIME aláírási tanúsítványához tartozik</p><p align=center><b>%2</b> "
+"(sorozatszám: %3)</p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>A gyökértanúsítvány</p><p align=center><b>%4</b></p><p>, mely az Ön S/"
+"MIME aláírási tanúsítványához tartozik</p><p align=center><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:143
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>A gyökértanúsítvány</p><p align=center><b>%4</b></p><p>, mely az Ön S/"
+"MIME titkosítási tanúsítványához tartozik</p><p align=center><b>%2</b> "
+"(sorozatszám: %3)</p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>A gyökértanúsítvány</p><p align=center><b>%4</b></p><p>, mely az Ön S/"
+"MIMEs titkosítási tanúsítványához tartozik</p><p align=center><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:151
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+"less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired %1 "
+"days ago.</p>"
+msgstr[0] ""
+"<p>A gyökértanúsítvány</p><p align=center><b>%4</b></p><p>az S/MIME "
+"tanúsítványhoz</p><p align=center><b>%2</b> (sorozatszám: %3)</p><p>kevesebb "
+"mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>A gyökértanúsítvány</p><p align=center><b>%4</b></p><p>az S/MIME "
+"tanúsítványhoz</p><p align=center><b>%2</b> (sorozatszám: %3)</p><p>%1 "
+"nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:161
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>A köztes CA tanúsítvány</p><p align=center><b>%4</b></p><p>, mely az Ön S/"
+"MIME aláírási tanúsítványához tartozik</p><p align=center><b>%2</b> "
+"(sorozatszám: %3)</p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>A köztes CAtanúsítvány</p><p align=center><b>%4</b></p><p>, mely az Ön S/"
+"MIME aláírási tanúsítványához tartozik</p><p align=center><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:169
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>A köztes CA tanúsítvány</p><p align=center><b>%4</b></p><p>, mely az Ön S/"
+"MIME titkosítási tanúsítványához tartozik</p><p align=center><b>%2</b> "
+"(sorozatszám: %3)</p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>A köztes CA tanúsítvány</p><p align=center><b>%4</b></p><p>, mely az Ön S/"
+"MIME titkosítási tanúsítványához tartozik</p><p align=center><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:177
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>A köztes CA tanúsítvány</p><p align=center><b>%4</b></p><p>, mely az Ön S/"
+"MIME tanúsítványához tartozik</p><p align=center><b>%2</b> (sorozatszám: "
+"%3)</p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>A köztes CA tanúsítvány</p><p align=center><b>%4</b></p><p>, mely az Ön S/"
+"MIME tanúsítványához tartozik</p><p align=center><b>%2</b> (sorozatszám: "
+"%3)</p><p>%1 ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:193
+#, kde-format
+msgid ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Az Ön S/MIME aláírási tanúsítványa</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>Az Ön S/MIME aláírási tanúsítványa</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:199
+#, kde-format
+msgid ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Az Ön S/MIME titkosítási tanúsítványa</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>Az Ön S/MIME titkosítási tanúsítványa</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:205
+#, kde-format
+msgid ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Az Ön S/MIME tanúsítványa</p><p align=\"center\"><b>%2</b> (sorozatszám: "
+"%3)</p><p>kevesebb mint egy nappal ezelőtt lejárt.</p>"
+msgstr[1] ""
+"<p>Az Ön S/MIME tanúsítványa</p><p align=\"center\"><b>%2</b> (sorozatszám: "
+"%3)</p><p>%1 nappal ezelőtt lejárt.</p>"
+
+#: composer/nearexpirychecker.cpp:218
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
+#| "MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number "
+#| "%3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
+#| "MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number "
+#| "%3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>A gyökértanúsítvány</p><p align=\"center\"><b>%4</b></p><p>, mely az Ön S/"
+"MIME aláírási tanúsítványához tartozik</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>egy napon belül lejár.</p>"
+msgstr[1] ""
+"<p>A gyökértanúsítvány</p><p align=\"center\"><b>%4</b></p><p>, mely az Ön S/"
+"MIME aláírási tanúsítványához tartozik</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 napon belül lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:226
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
+#| "MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
+#| "MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>A gyökértanúsítvány</p><p align=\"center\"><b>%4</b></p><p>, mely az Ön S/"
+"MIME titkosítási tanúsítványához tartozik</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>egy napon belül lejár.</p>"
+msgstr[1] ""
+"<p>A gyökértanúsítvány</p><p align=\"center\"><b>%4</b></p><p>, mely az Ön S/"
+"MIME titkosítási tanúsítványához tartozik</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 napon belül lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:234
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/MIME "
+#| "certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
+#| "p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/MIME "
+#| "certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
+#| "p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
+"in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
+"in less than %1 days.</p>"
+msgstr[0] ""
+"<p>A gyökértanúsítvány</p><p align=\"center\"><b>%4</b></p><p>az S/MIME "
+"tanúsítványhoz</p><p align=\"center\"><b>%2</b> (sorozatszám: %3)</p><p>egy "
+"napon belül lejár.</p>"
+msgstr[1] ""
+"<p>A gyökértanúsítvány</p><p align=\"center\"><b>%4</b></p><p>az S/MIME "
+"tanúsítványhoz</p><p align=\"center\"><b>%2</b> (sorozatszám: %3)</p><p>%1 "
+"napon belül lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:244
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>A köztes CA tanúsítvány</p><p align=\"center\"><b>%4</b></p><p>, mely az "
+"Ön S/MIME aláírási tanúsítványához tartozik</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>egy napon belül lejár.</p>"
+msgstr[1] ""
+"<p>A köztes CA tanúsítvány</p><p align=\"center\"><b>%4</b></p><p>, mely az "
+"Ön S/MIME aláírási tanúsítványához tartozik</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 napon belül lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:252
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</"
+#| "b> (serial number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</"
+#| "b> (serial number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>A köztes CA tanúsítvány</p><p align=\"center\"><b>%4</b></p><p>, mely az "
+"Ön S/MIME titkosítási tanúsítványához tartozik</p><p align=\"center\"><b>%2</"
+"b> (sorozatszám: %3)</p><p>egy napon belül lejár.</p>"
+msgstr[1] ""
+"<p>A köztes CA tanúsítvány</p><p align=\"center\"><b>%4</b></p><p>, mely az "
+"Ön S/MIME titkosítási tanúsítványához tartozik</p><p align=\"center\"><b>%2</"
+"b> (sorozatszám: %3)</p><p>%1 napon belül lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:260
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>A köztes CA tanúsítvány</p><p align=\"center\"><b>%4</b></p><p>, mely az "
+"S/MIME tanúsítványhoz tartozik</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>egy napon belül lejár.</p>"
+msgstr[1] ""
+"<p>A köztes CA tanúsítvány</p><p align=\"center\"><b>%4</b></p><p>, mely az "
+"S/MIME tanúsítványhoz tartozik</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 napon belül lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:276
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Az Ön S/MIME aláírási tanúsítványa</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>egy napon belül lejár.</p>"
+msgstr[1] ""
+"<p>Az Ön S/MIME aláírási tanúsítványa</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 napon belül lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:282
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Az Ön S/MIME titkosítási tanúsítványa</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>egy napon belül lejár.</p>"
+msgstr[1] ""
+"<p>Az Ön S/MIME titkosítási tanúsítványa</p><p align=\"center\"><b>%2</b> "
+"(sorozatszám: %3)</p><p>%1 napon belül lejár.</p>"
+
+#: composer/nearexpirychecker.cpp:288
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Az S/MIME tanúsítvány -</p><p align=\"center\"><b>%2</b> (sorozatszám: "
+"%3)</p><p>egy napon belül lejár.</p>"
+msgstr[1] ""
+"<p>Az S/MIME tanúsítvány -</p><p align=\"center\"><b>%2</b> (sorozatszám: "
+"%3)</p><p>%1 napon belül lejár.</p>"
+
+#: followupreminder/followupremindercreatejob.cpp:76
+#, kde-format
+msgid "Wait answer from \"%1\" send to \"%2\""
+msgstr ""
+
+#: followupreminder/followupremindercreatejob.cpp:99
+#, kde-format
+msgid ""
+"Failed to store a new reminder: an error occurred while trying to create a "
+"new to-do in your calendar: %1"
+msgstr ""
+
+#: followupreminder/followupremindercreatejob.cpp:131
+#, kde-format
+msgid "Failed to store a new reminder: %1"
+msgstr "Az új emlékeztető tárolása meghiúsult: %1"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:35
+#, fuzzy, kde-format
+#| msgid "Select"
+msgctxt "@title:window"
+msgid "Select Date"
+msgstr "Kijelölés"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:63
+#, kde-format
+msgid "Date:"
+msgstr "Dátum:"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:71
+#, kde-format
+msgid "Store to-do in:"
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "The selected date must be greater than the current date."
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "Invalid date"
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "The selected folder is not valid."
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "Invalid folder"
+msgstr ""
+
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#, kde-format
+msgid "forwarded message"
+msgstr "továbbított üzenet"
+
+#: helper/messagefactoryng.cpp:575
+#, kde-format
+msgid "Receipt: "
+msgstr "Címzett: "
+
+#: helper/messagefactoryng.cpp:702
+#, kde-format
+msgid ""
+"\n"
+"This is a MIME digest forward. The content of the message is contained in "
+"the attachment(s).\n"
+"\n"
+"\n"
+msgstr ""
+"\n"
+"Ez egy továbbított MIME összefoglaló. Az üzenet tartalma a mellékletekben "
+"található.\n"
+"\n"
+"\n"
+
+#: imagescaling/imagescalingselectformat.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Image Format"
+msgstr "Képformátum kiválasztása"
+
+#: imagescaling/imagescalingselectformat.cpp:94
+#, kde-format
+msgid "Select Format..."
+msgstr "Formátum kiválasztása…"
+
+#: imagescaling/imagescalingwidget.cpp:113
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">Hogyan működik ez?</a>"
+
+#: imagescaling/imagescalingwidget.cpp:123
+#, kde-format
+msgid ""
+"<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
+"current time</li><li>%d set current date</li><li>%n original filename</"
+"li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
+msgstr ""
+"<qt><p>Itt határozhatja meg a képfájl nevét. Amit használhat:</p><ul><li>%t "
+"aktuális idő beállítása</li><li>%d aktuális dátum beállítása</li><li>%n "
+"eredeti fájlnév</li><li>%e eredeti kiterjesztés</li><li>%x új kiterjesztés</"
+"li></ul></qt>"
+
+#: imagescaling/imagescalingwidget.cpp:193
+#, kde-format
+msgid "Custom"
+msgstr "Egyéni"
+
+#: imagescaling/imagescalingwidget.cpp:321
+#, kde-format
+msgid "Please verify minimum and maximum values."
+msgstr "Ellenőrizze a minimum és a maximum értékeket."
+
+#: imagescaling/imagescalingwidget.cpp:321
+#, kde-format
+msgid "Error in minimum Maximum value"
+msgstr "Hiba a legkisebb Maximum értékben"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
+#: imagescaling/ui/imagescalingwidget.ui:17
+#, kde-format
+msgid "Automatically resize images"
+msgstr "Képek automatikus átméretezése"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: imagescaling/ui/imagescalingwidget.ui:28
+#, kde-format
+msgid "General"
+msgstr "Általános"
+
+#. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
+#: imagescaling/ui/imagescalingwidget.ui:34
+#, kde-format
+msgid "Keep ratio"
+msgstr "Méretarány megőrzése"
+
+#. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
+#: imagescaling/ui/imagescalingwidget.ui:41
+#, kde-format
+msgid "Ask before resizing"
+msgstr "Kérdezzen átméretezés előtt"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: imagescaling/ui/imagescalingwidget.ui:50
+#, kde-format
+msgid "Fallback to format:"
+msgstr ""
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: imagescaling/ui/imagescalingwidget.ui:89
+#, kde-format
+msgid "Image"
+msgstr "Kép"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ReduceImageToMaximum)
+#: imagescaling/ui/imagescalingwidget.ui:95
+#, kde-format
+msgid "Reduce image to maximum dimension:"
+msgstr "Kép csökkentése a maximális dimenzióra:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: imagescaling/ui/imagescalingwidget.ui:109
+#, kde-format
+msgid "Maximum width:"
+msgstr "Maximális szélesség:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: imagescaling/ui/imagescalingwidget.ui:116
+#, kde-format
+msgid "Maximum height:"
+msgstr "Maximális magasság:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumHeight)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumHeight)
+#: imagescaling/ui/imagescalingwidget.ui:133
+#: imagescaling/ui/imagescalingwidget.ui:146
+#: imagescaling/ui/imagescalingwidget.ui:198
+#: imagescaling/ui/imagescalingwidget.ui:211
+#, kde-format
+msgid " px"
+msgstr " képpont"
+
+#. i18n: ectx: property (text), widget (QCheckBox, EnlargeImageToMinimum)
+#: imagescaling/ui/imagescalingwidget.ui:163
+#, kde-format
+msgid "Enlarge image to minimum dimension"
+msgstr "Kép növelése a minimális dimenzióra"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: imagescaling/ui/imagescalingwidget.ui:174
+#, kde-format
+msgid "Minimum width:"
+msgstr "Minimális szélesség:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: imagescaling/ui/imagescalingwidget.ui:181
+#, kde-format
+msgid "Minimum height:"
+msgstr "Minimális magasság:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, skipImageSizeLower)
+#: imagescaling/ui/imagescalingwidget.ui:230
+#, kde-format
+msgid "Skip image whose size of the source file is lower than:"
+msgstr "Kép kihagyása, amely forrásfájljának mérete kisebb mint:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
+#: imagescaling/ui/imagescalingwidget.ui:237
+#, kde-format
+msgid " KiB"
+msgstr " KiB"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: imagescaling/ui/imagescalingwidget.ui:263
+#, kde-format
+msgid "Filename"
+msgstr "Fájlnév"
+
+#. i18n: ectx: property (title), widget (QGroupBox, filterSourceGroupBox)
+#: imagescaling/ui/imagescalingwidget.ui:269
+#, kde-format
+msgid "Source filter"
+msgstr "Forrás szűrő"
+
+#. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
+#: imagescaling/ui/imagescalingwidget.ui:275
+#, kde-format
+msgid "Do not filter (All files are included)"
+msgstr "Ne szűrje (minden fájlt tartalmaz)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:285
+#, kde-format
+msgid "Include all files whose names contains one of the patterns"
+msgstr "Minden fájl felvétele, amelyek neve tartalmazza a minták egyikét"
+
+#. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:292
+#, kde-format
+msgid "Exclude all files whose names contains one of the patterns"
+msgstr "Minden fájl kihagyása, amelyek neve tartalmazza a minták egyikét"
+
+#. i18n: ectx: property (text), widget (QLabel, patternLabel)
+#: imagescaling/ui/imagescalingwidget.ui:301
+#, kde-format
+msgid "Pattern:"
+msgstr "Minta:"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, pattern)
+#: imagescaling/ui/imagescalingwidget.ui:308
+#, kde-format
+msgid "This line allows to define several pattern. Separate them with ';'."
+msgstr ""
+"Ez a sor lehetővé teszi különféle minták meghatározását. A „;” karakterrel "
+"válassza el azokat."
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, doNotResizePattern)
+#: imagescaling/ui/imagescalingwidget.ui:311
+#: imagescaling/ui/imagescalingwidget.ui:419
+#: imagescaling/ui/imagescalingwidget.ui:443
+#, kde-format
+msgid "Specify patterns separate with ';'"
+msgstr "Adja meg a mintákat „;” karakterrel elválasztva"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: imagescaling/ui/imagescalingwidget.ui:326
+#, kde-format
+msgid "Image Format"
+msgstr "Képformátum"
+
+#. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
+#: imagescaling/ui/imagescalingwidget.ui:332
+#, kde-format
+msgid "Resize all images with one of these formats"
+msgstr "Minden kép átméretezése ezen formátumok egyikével"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: imagescaling/ui/imagescalingwidget.ui:345
+#, kde-format
+msgid "Resize filename"
+msgstr "Fájlnév átméretezése"
+
+#. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
+#: imagescaling/ui/imagescalingwidget.ui:371
+#, kde-format
+msgid "Rename resized images with following pattern:"
+msgstr "Átméretezett képek átnevezése a következő mintával:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
+#: imagescaling/ui/imagescalingwidget.ui:389
+#, kde-format
+msgid "Recipients"
+msgstr "Címzettek"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotFilterRecipients)
+#: imagescaling/ui/imagescalingwidget.ui:395
+#, kde-format
+msgid "Do not filter (All recipients are allowed)"
+msgstr "Ne szűrje (minden címzett engedélyezve)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:405
+#, kde-format
+msgid "Resize if each emails address contains one of the pattern"
+msgstr "Átméretezés, ha minden e-mail cím tartalmazza a minta egyikét"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:412
+#, kde-format
+msgid "Resize if one emails address contains one of the pattern"
+msgstr "Átméretezés, ha egy e-mail cím tartalmazza a minta egyikét"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:429
+#, kde-format
+msgid "Do not resize if each emails address contains one of the pattern"
+msgstr "Ne méretezze át, ha minden e-mail cím tartalmazza a minta egyikét"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:436
+#, kde-format
+msgid "Do not resize if one emails address contains one of the pattern"
+msgstr "Ne méretezze át, ha egy e-mail cím tartalmazza a minta egyikét"
+
+#: job/attachmentclipboardjob.cpp:42
+#, kde-format
+msgid "No text found in Clipboard"
+msgstr ""
+
+#: job/attachmentclipboardjob.cpp:46
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgid "Define Attachment Name"
+msgstr "Emlékeztető a mellékletekre"
+
+#: job/attachmentclipboardjob.cpp:46
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgid "Attachment Name:"
+msgstr "Emlékeztető a mellékletekre"
+
+#: job/attachmentclipboardjob.cpp:49
+#, kde-format
+msgid "Clipboard Text"
+msgstr ""
+
+#: job/attachmentfrompublickeyjob.cpp:50
+#, kde-format
+msgid "OpenPGP key 0x%1"
+msgstr "OpenPGP kulcs - 0x%1"
+
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#, kde-format
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>%1</b></p>"
+msgstr ""
+"<p>Hiba történt a kulcsnak a modulból történő exportálásakor:</p><p><b>%1</"
+"b></p>"
+
+#: job/attachmentfrompublickeyjob.cpp:107
+#, kde-format
+msgid "Exporting key..."
+msgstr "Kulcs exportálása…"
+
+#: job/attachmentvcardfromaddressbookjob.cpp:75
+#, kde-format
+msgid "Unknown Contact Type"
+msgstr ""
+
+#: job/attachmentvcardfromaddressbookjob.cpp:86
+#, kde-format
+msgid "Invalid Contact"
+msgstr ""
+
+#: job/attachmentvcardfromaddressbookjob.cpp:102
+#, kde-format
+msgid "Impossible to generate vCard."
+msgstr ""
+
+#: job/autocryptheadersjob.cpp:104
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>An error occurred while trying to export the key from the backend:</"
+#| "p><p><b>%1</b></p>"
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>No valid key found for user %1 (%2)</b></p>"
+msgstr ""
+"<p>Hiba történt a kulcsnak a modulból történő exportálásakor:</p><p><b>%1</"
+"b></p>"
+
+#: job/maintextjob.cpp:60
+#, kde-format
+msgid "Asked to use word wrapping, but not given wrapped plain text."
+msgstr "Szótördelés használatát kérte, de nem adott meg tördelt szöveget."
+
+#: job/maintextjob.cpp:67
+#, kde-format
+msgid "Asked not to use word wrapping, but not given clean plain text."
+msgstr ""
+"Azt kérte, ne legyen szótördelés, de nem adott meg tiszta, sima szöveget."
+
+#: job/maintextjob.cpp:82
+#, kde-format
+msgid ""
+"No charsets were available for encoding. Please check your configuration and "
+"make sure it contains at least one charset for sending."
+msgstr ""
+"Nem érhetők el karakterkészletek a kódoláshoz. Ellenőrizze a beállításait és "
+"bizonyosodjon meg arról, hogy legalább egy karakterkészletet tartalmaznak a "
+"küldéshez."
+
+#: job/maintextjob.cpp:100
+#, kde-format
+msgid ""
+"Encoding the message with %1 will lose some characters.\n"
+"Do you want to continue?"
+msgstr ""
+"A(z) %1 használatával az üzenet kódolásakor néhány karakter elveszik.\n"
+"Szeretné folytatni?"
+
+#: job/maintextjob.cpp:103
+#, kde-format
+msgid "Some Characters Will Be Lost"
+msgstr "Néhány karakter el fog veszni a szövegből"
+
+#: job/maintextjob.cpp:104
+#, kde-format
+msgid "Lose Characters"
+msgstr "A nem megfelelő karakterek eldobása"
+
+#: job/maintextjob.cpp:105
+#, kde-format
+msgid "Change Encoding"
+msgstr "A kódolás megváltoztatása"
+
+#: job/maintextjob.cpp:108
+#, kde-format
+msgid "User decided to change the encoding."
+msgstr "A felhasználó megváltoztatta a kódolást."
+
+#: job/maintextjob.cpp:118
+#, kde-format
+msgid "The selected encoding (%1) cannot fully encode the message."
+msgstr "A kiválasztott kódolás (%1) nem tudja teljesen kódolni az üzenetet."
+
+#: job/maintextjob.cpp:143
+#, kde-format
+msgid "Could not get text codec for charset \"%1\"."
+msgstr "Nem kérhető szövegkodek a(z) „%1” karakterkészlethez."
+
+#: job/savecontactpreferencejob.cpp:51
+#, kde-format
+msgid "Name Selection"
+msgstr "Névválasztás"
+
+#: job/savecontactpreferencejob.cpp:52
+#, kde-format
+msgid "Which name shall the contact '%1' have in your address book?"
+msgstr "Milyen néven kerüljön be a(z) „%1” névjegy a címjegyzékbe?"
+
+#: job/savecontactpreferencejob.cpp:64
+#, kde-format
+msgid "Select the address book folder to store the new contact in:"
+msgstr "Válassza ki, melyik címjegyzékmappába kerüljön az új névjegy:"
+
+#: job/singlepartjob.cpp:67
+#, kde-format
+msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
+msgstr ""
+"A(z) %1 Content-Transfer-Encoding nem tudja megfelelően kódolni ezt az "
+"üzenetet."
+
+#: mdn/mdnadvicedialog.cpp:21
+#, kde-format
+msgctxt "@title:window"
+msgid "Message Disposition Notification Request"
+msgstr ""
+
+#: mdn/mdnadvicedialog.cpp:30
+#, fuzzy, kde-format
+#| msgid "Send &Unsigned"
+msgid "Send \"&denied\""
+msgstr "Elkül&dés aláírás nélkül"
+
+#: mdn/mdnadvicedialog.cpp:32
+#, kde-format
+msgid "&Ignore"
+msgstr ""
+
+#: mdn/mdnadvicedialog.cpp:34
+#, fuzzy, kde-format
+#| msgid "&Send as Is"
+msgid "&Send"
+msgstr "Elküldés a m&ostani állapotban"
+
+#: mdn/mdnadvicehelper.cpp:27
+msgid ""
+"This message contains a request to return a notification about your "
+"reception of the message.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+
+#: mdn/mdnadvicehelper.cpp:33
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message.\n"
+"It contains a processing instruction that is marked as \"required\", but "
+"which is unknown to the mail program.\n"
+"You can either ignore the request or let the mail program send a \"failed\" "
+"response."
+msgstr ""
+
+#: mdn/mdnadvicehelper.cpp:41
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but it is requested to send the notification to more than one address.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+
+#: mdn/mdnadvicehelper.cpp:49
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but there is no return-path set.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+
+#: mdn/mdnadvicehelper.cpp:56
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but the return-path address differs from the address the notification was "
+"requested to be sent to.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Distribution List"
+msgstr "A címlista mentése"
+
+#: recipient/distributionlistdialog.cpp:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List"
+msgstr "Lista mentése"
+
+#: recipient/distributionlistdialog.cpp:121
+#, kde-format
+msgctxt "@label:textbox Name of the distribution list."
+msgid "&Name:"
+msgstr "&Név:"
+
+#: recipient/distributionlistdialog.cpp:125
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Distribution List"
+msgid "Name of Distribution List"
+msgstr "Új címlista"
+
+#: recipient/distributionlistdialog.cpp:132
+#, kde-format
+msgctxt "@title:column Name of the recipient"
+msgid "Name"
+msgstr "Név"
+
+#: recipient/distributionlistdialog.cpp:133
+#, kde-format
+msgctxt "@title:column Email of the recipient"
+msgid "Email"
+msgstr "E-mail cím"
+
+#: recipient/distributionlistdialog.cpp:240
+#, kde-format
+msgctxt "@info"
+msgid ""
+"There are no recipients in your list. First select some recipients, then try "
+"again."
+msgstr ""
+"Egy címzett sincs a listában. Előbb válasszon ki néhány címzettet, majd "
+"próbálja meg újra."
+
+#: recipient/distributionlistdialog.cpp:251
+#, kde-format
+msgctxt "@title:window"
+msgid "New Distribution List"
+msgstr "Új címlista"
+
+#: recipient/distributionlistdialog.cpp:252
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Please enter name:"
+msgstr "Adja meg a nevet:"
+
+#: recipient/distributionlistdialog.cpp:276
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Distribution list with the given name <resource>%1</resource> already "
+"exists. Please select a different name.</para>"
+msgstr ""
+"<para>Már létezik <resource>%1</resource> nevű címlista, válasszon másik "
+"nevet.</para>"
+
+#: recipient/distributionlistdialog.cpp:285
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Address Book"
+msgstr "Címjegyzék kiválasztása"
+
+#: recipient/distributionlistdialog.cpp:286
+#, kde-format
+msgid "Select the address book folder to store the contact group in:"
+msgstr ""
+"Válassza ki a címjegyzékmappát, amelybe a névjegycsoportot tárolni kell:"
+
+#: recipient/distributionlistdialog.cpp:322
+#, kde-format
+msgid "Unable to create distribution list: %1"
+msgstr "Nem lehet létrehozni a címlistát: %1"
+
+#: recipient/recipient.cpp:99
+#, kde-format
+msgctxt "@label:listbox Recipient of an email message."
+msgid "To"
+msgstr "Címzett"
+
+#: recipient/recipient.cpp:101
+#, kde-format
+msgctxt "@label:listbox Carbon Copy recipient of an email message."
+msgid "CC"
+msgstr "Másolat"
+
+#: recipient/recipient.cpp:103
+#, kde-format
+msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+msgid "BCC"
+msgstr "Titkos másolat"
+
+#: recipient/recipient.cpp:105
+#, kde-format
+msgctxt "@label:listbox Reply-To recipient of an email message."
+msgid "Reply-To"
+msgstr ""
+
+#: recipient/recipient.cpp:110
+#, kde-kuit-format
+msgctxt "@label:listbox"
+msgid "<placeholder>Undefined Recipient Type</placeholder>"
+msgstr "<placeholder>Nem definiált címzett-típus</placeholder>"
+
+#: recipient/recipientline.cpp:70
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Select type of recipient"
+msgstr "A címzett típusa"
+
+#: recipient/recipientline.cpp:72
+#, kde-format
+msgid "Set the list of email addresses to receive this message"
+msgstr "Adja meg a címzettek e-mail címeinek listáját"
+
+#: recipient/recipientseditor.cpp:115
+#, kde-format
+msgctxt "@info:status"
+msgid "Truncating recipients list to %2 of %1 entry."
+msgid_plural "Truncating recipients list to %2 of %1 entries."
+msgstr[0] "Címzettlista csonkolása %2 / %1 bejegyzésre"
+msgstr[1] "Címzettlista csonkolása %2 / %1 bejegyzésre"
+
+#: recipient/recipientseditorsidewidget.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List..."
+msgstr "A lista mentése…"
+
+#: recipient/recipientseditorsidewidget.cpp:45
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "A címzettek mentése címlistaként"
+
+#: recipient/recipientseditorsidewidget.cpp:47
+#, kde-format
+msgctxt "@action:button Open recipient selection dialog."
+msgid "Se&lect..."
+msgstr "Ki&választás…"
+
+#: recipient/recipientseditorsidewidget.cpp:50
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select recipients from address book"
+msgstr "Címzettek kiválasztása címjegyzékből"
+
+#: recipient/recipientseditorsidewidget.cpp:77
+#, kde-format
+msgctxt "@info:status No recipients selected"
+msgid "No recipients"
+msgstr "Nincsenek címzettek"
+
+#: recipient/recipientseditorsidewidget.cpp:79
+#, kde-format
+msgctxt "@info:status Number of recipients selected"
+msgid "1 recipient"
+msgid_plural "%1 recipients"
+msgstr[0] "1 címzett"
+msgstr[1] "%1 címzett"
+
+#: recipient/recipientseditorsidewidget.cpp:129
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "To:%1"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:131
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "CC:%1"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:134
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "BCC:%1"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:137
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "Reply-To:%1"
+msgstr ""
+
+#: recipient/recipientspicker.cpp:42
+#, fuzzy, kde-format
+#| msgid "Select Recipient"
+msgctxt "@title:window"
+msgid "Select Recipient"
+msgstr "Címzett kiválasztása"
+
+#: recipient/recipientspicker.cpp:54
+#, kde-format
+msgid "Search &Directory Service"
+msgstr "Keresés cí&mtárszolgáltatásban"
+
+#: recipient/recipientspicker.cpp:77
+#, fuzzy, kde-format
+#| msgid "Add as &To"
+msgid "Add as &Reply-To"
+msgstr "Hozzáadás &címzettként"
+
+#: recipient/recipientspicker.cpp:78
+#, kde-format
+msgid "Add as &To"
+msgstr "Hozzáadás &címzettként"
+
+#: recipient/recipientspicker.cpp:79
+#, kde-format
+msgid "Add as CC"
+msgstr "Hozzáadás másolatként"
+
+#: recipient/recipientspicker.cpp:80
+#, kde-format
+msgid "Add as &BCC"
+msgstr "Hozzáadás tit&kos másolatként"
+
+#: recipient/recipientspicker.cpp:103
+#, kde-format
+msgid "%1 selected email"
+msgid_plural "%1 selected emails"
+msgstr[0] ""
+msgstr[1] ""
+
+#: recipient/recipientspicker.cpp:170
+#, fuzzy, kde-format
+#| msgid ""
+#| "You selected 1 recipient. The maximum supported number of recipients is "
+#| "%2. Please adapt the selection."
+#| msgid_plural ""
+#| "You selected %1 recipients. The maximum supported number of recipients is "
+#| "%2. Please adapt the selection."
+msgid ""
+"You selected 1 recipient. The maximum supported number of recipients is %2.\n"
+"Please adapt the selection."
+msgid_plural ""
+"You selected %1 recipients. The maximum supported number of recipients is "
+"%2.\n"
+"Please adapt the selection."
+msgstr[0] ""
+"1 címzettet választott ki. A megengedett maximális szám azonban %2. "
+"Módosítsa a kijelölést."
+msgstr[1] ""
+"%1 címzettet választott ki. A megengedett maximális szám azonban %2. "
+"Módosítsa a kijelölést."
+
+#: recipient/recipientspicker.cpp:187
+#, fuzzy, kde-format
+#| msgid "No key data for recipients found."
+msgid "You can not add more recipients."
+msgstr "Nem találhatók kulcsadatok a címzettekhez."
+
+#: sendlater/sendlatercreatejob.cpp:33
+#, fuzzy, kde-format
+#| msgid "Failed to save the message: %1"
+msgid "Failed to schedule message for sending later: %1"
+msgstr "Nem sikerült menteni az üzenetet: %1"
+
+#: sendlater/sendlaterdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Send Later"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:48
+#, kde-format
+msgid "Send Later"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:49
+#, kde-format
+msgid "Delay"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Days"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Weeks"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Months"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Years"
+msgstr ""
+
+#: sendlater/sendlaterjob.cpp:32
+#, kde-format
+msgid "The Send Later agent is not running."
+msgstr ""
+
+#: sendlater/sendlaterremovejob.cpp:27
+#, kde-format
+msgid "Failed to removed message from send later schedule: %1"
+msgstr ""
+
+#: sendlater/sendlatertimedatewidget.cpp:35
+#, kde-format
+msgid "You cannot select a date prior to the current date."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, mLabel)
+#: sendlater/ui/sendlaterwidget.ui:29
+#, fuzzy, kde-format
+#| msgid "&Send as Is"
+msgid "Send at:"
+msgstr "Elküldés a m&ostani állapotban"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
+#: sendlater/ui/sendlaterwidget.ui:39
+#, kde-format
+msgid "Repeat every:"
+msgstr ""
+
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Válasz esetén csak a kijelölt szöveget idézze"
+
+#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:23
+#, kde-format
+msgid "Keep original charset when replying or forwarding if possible"
+msgstr ""
+"Az eredeti karakterkészlet megőrzése válasznál és továbbításnál (ha "
+"lehetséges)"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:32
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "A&utomatikus aláírásbeszúrás"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:36
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Aláírás beszúrása az idézett szöveg fölé"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:40
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Elválasztó az aláírás elé"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:45
+#, fuzzy, kde-format
+#| msgid "Use recent addresses for autocompletion"
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "Nemrég használt címek használata automatikus kiegészítéshez"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:46
+#, fuzzy, kde-format
+#| msgid ""
+#| "Disable this option if you do not want recently used addresses to appear "
+#| "in the autocompletion list in the composer's address fields."
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Kapcsolja ki ezt az opciót, ha nem szeretné, hogy a nemrég használt címek "
+"megjelenjenek az üzenetszerkesztő címmezőinél a kiegészítési listában."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:52
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr ""
+"A pontosvessző („;”) használatának engedélyezése elválasztóként az "
+"üzenetszerkesztőben"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:55
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Nemrég használt címek használata automatikus kiegészítéshez"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:56
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"Kapcsolja ki ezt az opciót, ha nem szeretné, hogy a nemrég használt címek "
+"megjelenjenek az üzenetszerkesztő címmezőinél a kiegészítési listában."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:61
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "A címzett bejegyzések maximális száma:"
+
+#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:66
+#, kde-format
+msgid "Outlook-compatible attachment naming"
+msgstr "Outlook-kompatibilis mellékletnevek"
+
+#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:67
+#, kde-format
+msgid ""
+"Turn this option on to make Outlook &#8482; understand attachment names "
+"containing non-English characters"
+msgstr ""
+"Jelölje be ezt az opciót, ha azt szeretné, hogy az Outlook &#8482; "
+"levelezőprogram fel tudja dolgozni a mellékletnevekben a nem angol "
+"karaktereket"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:71
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "A szótör&delés oszlopa:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:81
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "A HTML üzenet egyszerű szöveges verziójának feljavítása"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:85
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Figyelmeztetés titkosítatlan üzenetek küldése előtt"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:89
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Figyelmeztetés aláíratlan üzenetek küldése előtt"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:93
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Figyelmeztetés, ha egy tanúsítvány vagy kulcs rövidesen lejár (az időérték "
+"beállítása alább)"
+
+#. i18n: ectx: label, entry (CryptoWarnSignKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:97
+#, kde-format
+msgid ""
+"The minimum number of days that the signature certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Legalább ennyi napig legyen érvényes az aláírás tanúsítvány, mielőtt "
+"figyelmeztet"
+
+#. i18n: ectx: label, entry (CryptoWarnSignChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:101
+#, kde-format
+msgid ""
+"The minimum number of days that the CA certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Legalább ennyi napig legyen érvényes a CA tanúsítvány, mielőtt figyelmeztet"
+
+#. i18n: ectx: label, entry (CryptoWarnSignRootNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:105
+#: settings/messagecomposer.kcfg.cmake:117
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Legalább ennyi napig legyen érvényes a gyökértanúsítvány, mielőtt "
+"figyelmeztet"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:109
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Legalább ennyi napig legyen érvényes a titkosítási tanúsítvány, mielőtt "
+"figyelmeztet"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:113
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Legalább ennyi napig legyen érvényes az összes tanúsítvány a láncban, "
+"mielőtt figyelmeztet"
+
+#. i18n: ectx: label, entry (CryptoEncryptToSelf), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:121
+#, kde-format
+msgid ""
+"When encrypting emails, always also encrypt to the certificate of my own "
+"identity"
+msgstr ""
+"E-mailek titkosításakor mindig titkosítsa a saját azonosító tanúsítványát is."
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:125
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr ""
+"Mindig jelenjen meg a titkosítási kulcsok listája a használandó kulcs "
+"kiválasztásához"
+
+#: snippet/convertsnippetvariablemenu.cpp:27
+#, kde-format
+msgid "To"
+msgstr "Címzett"
+
+#: snippet/convertsnippetvariablemenu.cpp:28
+#, kde-format
+msgid "To Field Address"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:31
+#, kde-format
+msgid "To Field Last Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:34
+#, kde-format
+msgid "To Field First Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:37
+#, kde-format
+msgid "To Field Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:42
+#, kde-format
+msgid "From"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:43
+#, kde-format
+msgid "From Field Address"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:46
+#, kde-format
+msgid "From Field Last Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:49
+#, kde-format
+msgid "From Field First Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:52
+#, kde-format
+msgid "From Field Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:57
+#, kde-format
+msgid "CC"
+msgstr "Másolat"
+
+#: snippet/convertsnippetvariablemenu.cpp:58
+#, kde-format
+msgid "CC Field Address"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:61
+#, kde-format
+msgid "CC Field Last Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:64
+#, kde-format
+msgid "CC Field First Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:67
+#, kde-format
+msgid "CC Field Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:73
+#, kde-format
+msgid "Bcc"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:74
+#, kde-format
+msgid "BCC Field Address"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:77
+#, kde-format
+msgid "BCC Field Last Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:80
+#, kde-format
+msgid "BCC Field First Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:83
+#, kde-format
+msgid "BCC Field Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:89
+#, kde-format
+msgid "Attachment"
+msgstr "Melléklet"
+
+#: snippet/convertsnippetvariablemenu.cpp:90
+#, kde-format
+msgid "Number Of Attachments"
+msgstr "Mellékletek száma"
+
+#: snippet/convertsnippetvariablemenu.cpp:93
+#, kde-format
+msgid "Names"
+msgstr "Nevek"
+
+#: snippet/convertsnippetvariablemenu.cpp:96
+#, kde-format
+msgid "Filenames"
+msgstr "Fájlnevek"
+
+#: snippet/convertsnippetvariablemenu.cpp:99
+#, kde-format
+msgid "Names and Sizes"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:103
+#: snippet/convertsnippetvariablemenu.cpp:123
+#, kde-format
+msgid "Date/Time"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:104
+#: snippet/convertsnippetvariablemenu.cpp:151
+#, kde-format
+msgid "Day Of Week (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:107
+#, kde-format
+msgid "Date (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:110
+#, kde-format
+msgid "Long Date (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:113
+#, kde-format
+msgid "Short Time (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:116
+#, kde-format
+msgid "Time (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:119
+#, kde-format
+msgid "Year (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:127
+#, kde-format
+msgid "Last Year (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:130
+#, kde-format
+msgid "Next Year (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:133
+#, kde-format
+msgid "Month Number (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:136
+#, kde-format
+msgid "Day Of Month (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:139
+#, kde-format
+msgid "Week Number (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:142
+#, kde-format
+msgid "Month Name Short (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:145
+#, kde-format
+msgid "Month Name Long (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:148
+#, kde-format
+msgid "Last Month Name Long (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:154
+#, kde-format
+msgid "Day Of Week Name Short (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, kde-format
+msgid "Day Of Week Name Long (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:160
+#, kde-format
+msgid "Year Last Month (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:165
+#, kde-format
+msgid "Misc"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:166
+#, kde-format
+msgid "Subject"
+msgstr ""
+
+#: utils/util.cpp:260
+#, kde-format
+msgctxt ""
+"comma-separated list of keywords that are used to detect whether the user "
+"forgot to attach his attachment. Do not add space between words."
+msgid "attachment,attached"
+msgstr "melléklet,csatolva"
+
+#: utils/util.cpp:293
+#, kde-format
+msgid ""
+"The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
+"create a mail dispatcher?"
+msgstr ""
+"A levélküldő nincs beállítva, így a leveleket nem lehet elküldeni. Szeretne "
+"létrehozni egy levélküldőt?"
+
+#: utils/util.cpp:294
+#, kde-format
+msgid "No mail dispatcher."
+msgstr "Nincs levélküldő."
+
+#: utils/util.cpp:295
+#, fuzzy, kde-format
+#| msgid "No mail dispatcher."
+msgctxt "@action:button"
+msgid "Create Mail Dispatcher"
+msgstr "Nincs levélküldő."
+
+#: utils/util.cpp:310
+#, kde-format
+msgid ""
+"The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
+"it online?"
+msgstr ""
+"A levélküldő ki van kapcsolva, a levelek nem küldhetők el. Szeretné "
+"bekapcsolni?"
+
+#: utils/util.cpp:311
+#, kde-format
+msgid "Mail dispatcher offline."
+msgstr "A levélküldő ki van kapcsolva."
+
+#: utils/util.cpp:312
+#, kde-format
+msgctxt "@action:button"
+msgid "Set Online"
+msgstr ""
+
+#, fuzzy
+#~| msgctxt "@info:status"
+#~| msgid "Truncating recipients list to %2 of %1 entry."
+#~| msgid_plural "Truncating recipients list to %2 of %1 entries."
+#~ msgctxt "@info:status"
+#~ msgid "Truncating recipients list to %1."
+#~ msgstr "Címzettlista csonkolása %2 / %1 bejegyzésre"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>To:</interface><nl/>%1"
+#~ msgstr "<interface>Címzett:</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>CC:</interface><nl/>%1"
+#~ msgstr "<interface>Másolat:</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>BCC:</interface><nl/>%1"
+#~ msgstr "<interface>Titkos másolat:</interface><nl/>%1"
+
+#~ msgid "Warn if the receiver's address is not in the certificate"
+#~ msgstr "Figyelmeztetés, ha a címzett címe nincs a tanúsítványban"
+
+#~ msgid "Replace recognized prefi&x with \"Re:\""
+#~ msgstr "A felismert e&lőtagok helyettesítése „Re:”-vel"
+
+#~ msgid "Replace recognized prefix with \"&Fwd:\""
+#~ msgstr "A felismert előtagok helyettesítése „&Fwd:”-vel"
+
+#, fuzzy
+#~| msgid "Use recent addresses for autocompletion"
+#~ msgid "Use Baloo search for autocompletion"
+#~ msgstr "Nemrég használt címek használata automatikus kiegészítéshez"
+
+#, fuzzy
+#~| msgid ""
+#~| "Disable this option if you do not want recently used addresses to appear "
+#~| "in the autocompletion list in the composer's address fields."
+#~ msgid ""
+#~ "Disable this option if you do not want baloo search addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Kapcsolja ki ezt az opciót, ha nem szeretné, hogy a nemrég használt címek "
+#~ "megjelenjenek az üzenetszerkesztő címmezőinél a kiegészítési listában."
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Select Image Format"
+#~ msgid "Select email from contact"
+#~ msgstr "Képformátum kiválasztása"
+
+#~ msgid "vCard Import Failed"
+#~ msgstr "A vCard importálása nem sikerült"
+
+#~ msgid "<qt>Unable to access <b>%1</b>.</qt>"
+#~ msgstr "<qt>Nem sikerült elérni: <b>%1</b>.</qt>"
+
+#, fuzzy
+#~| msgid "Automatically resize images"
+#~ msgid "Automatically expand groups"
+#~ msgstr "Képek automatikus átméretezése"
+
+#~ msgid "Recent Addresses"
+#~ msgstr "A legutóbbi címek"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "&Insert"
+#~ msgctxt "@title:window"
+#~ msgid "Insert HTML"
+#~ msgstr "&Beszúrás"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "&Insert"
+#~ msgctxt "@action:button"
+#~ msgid "Insert"
+#~ msgstr "&Beszúrás"
+
+#, fuzzy
+#~| msgid "Height:"
+#~ msgctxt "@label right justify"
+#~ msgid "Right"
+#~ msgstr "Magasság:"
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Insert File"
+#~ msgctxt "@action"
+#~ msgid "Insert Rule Line"
+#~ msgstr "Fájl beszúrása"
+
+#, fuzzy
+#~| msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+#~| msgid "BCC"
+#~ msgctxt "@item:inmenu uppercase abc lists"
+#~ msgid "ABC"
+#~ msgstr "Titkos másolat"
+
+#, fuzzy
+#~| msgid "Lose Characters"
+#~ msgid "Add &Quote Characters"
+#~ msgstr "A nem megfelelő karakterek eldobása"
+
+#, fuzzy
+#~| msgid "Lose Characters"
+#~ msgid "Re&move Quote Characters"
+#~ msgstr "A nem megfelelő karakterek eldobása"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgid "Add Image"
+#~ msgstr "Kép"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "&Insert"
+#~ msgid "Insert HTML"
+#~ msgstr "&Beszúrás"
+
+#~ msgid "I've linked 1 file to this email:"
+#~ msgstr "1 fájlt csatoltam ehhez az e-mailhez:"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgctxt "Start of the filename for an image"
+#~ msgid "image"
+#~ msgstr "Kép"
+
+#~ msgid "External editor cannot be started. Please verify command \"%1\""
+#~ msgstr ""
+#~ "A külső szerkesztőt nem sikerült elindítani. Kérjük ellenőrizze a "
+#~ "parancsot: „%1”"
+
+#~ msgid "Error was found when we started external editor."
+#~ msgstr "Hiba történt a külső szerkesztő indításakor."
+
+#~ msgid "External Editor Closed"
+#~ msgstr "Külső szerkesztő bezárva"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The external editor is still running.<nl/>Do you want to stop the editor "
+#~ "or keep it running?<nl/><warning>Stopping the editor will cause all your "
+#~ "unsaved changes to be lost.</warning>"
+#~ msgstr ""
+#~ "A külső szerkesztő még fut.<nl/>Szeretné leállítani a szerkesztőt, vagy "
+#~ "hagyja futni?<nl/><warning>A szerkesztő leállításával a mentetlen "
+#~ "módosítások elveszhetnek.</warning>"
+
+#~ msgctxt "@title:window"
+#~ msgid "External Editor Running"
+#~ msgstr "A külső szerkesztő fut"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop Editor"
+#~ msgstr "Szerkesztő leállítása"
+
+#~ msgctxt "@action:button"
+#~ msgid "Keep Editor Running"
+#~ msgstr "A szerkesztő maradjon nyitva"
+
+#~ msgid "Write to format"
+#~ msgstr "Formátumba írás"
+
+#~ msgid "Current word has already a replacement."
+#~ msgstr "A jelenlegi szó már egy csere."
+
+#~ msgid "Add New Autocorrect"
+#~ msgstr "Automatikus javítás bejegyzés hozzáadása"
+
+#~ msgctxt "@title:window"
+#~ msgid "Insert File"
+#~ msgstr "Fájl beszúrása"
+
+#~ msgid "Edit Recent Addresses..."
+#~ msgstr "A legutóbbi címek szerkesztése…"
+
+#~ msgid "&Attach"
+#~ msgstr "&Csatolás"
+
+#~ msgid ""
+#~ "The maximum size in bits that email attachments are allowed to have (-1 "
+#~ "for no limit)"
+#~ msgstr ""
+#~ "Legfeljebb ekkora (bit) mellékletek lehetnek az üzenetekben (-1 esetén "
+#~ "nincs korlát)"
+
+#~ msgid "LibreOffice Autocorrection"
+#~ msgstr "LibreOffice automatikus javítás"
+
+#~ msgid "KMail/Calligra Autocorrection"
+#~ msgstr "KMail/Calligra automatikus javítás"
+
+#~ msgid "&Modify"
+#~ msgstr "&Módosítás"
+
+#~ msgid "&Add"
+#~ msgstr "&Hozzáadás"
+
+#~ msgid "Import LibreOffice Autocorrection"
+#~ msgstr "LibreOffice automatikus javítás importálása"
+
+#~ msgid "Import KMail Autocorrection"
+#~ msgstr "KMail automatikus javítás importálása"
+
+#~ msgid ""
+#~ "Language was changed, do you want to save config for previous language?"
+#~ msgstr ""
+#~ "A nyelv megváltozott, szeretné elmenteni az előző nyelv beállítását?"
+
+#~ msgid "Save config"
+#~ msgstr "Beállítás mentése"
+
+#~ msgid "Export Autocorrection File"
+#~ msgstr "Automatikus javítás fájl exportálása"
+
+#~ msgid "Archive cannot be opened in read mode."
+#~ msgstr "Az archívum nem nyitható meg olvasásmódban."
+
+#~ msgid "Import LibreOffice Autocorrection File"
+#~ msgstr "LibreOffice automatikus javítás fájl importálása"
+
+#~ msgid "Enable autocorrection"
+#~ msgstr "Automatikus javítás engedélyezése"
+
+#~ msgid "Replacement and exception for language:"
+#~ msgstr "Csere és kivétel a nyelvhez:"
+
+#~ msgid "Si&mple Autocorrection"
+#~ msgstr "Egys&zerű automatikus javítás"
+
+#~ msgid ""
+#~ "Detect when a new sentence is started and always ensure that the first "
+#~ "character is an uppercase character"
+#~ msgstr ""
+#~ "Ismerje fel, ha egy új mondtad kezdődik és mindig biztosítsa, hogy az "
+#~ "első karakter nagybetűs legyen"
+
+#~ msgid ""
+#~ "Convert &first letter of a sentence automatically to uppercase\n"
+#~ "(e.g. \"my house. in this town\" to \"my house. In this town\")"
+#~ msgstr ""
+#~ "A mondat &első betűjének automatikus átalakítása nagybetűssé\n"
+#~ "(például „ház. ebben a városban” helyett „ház. Ebben a városban”)"
+
+#~ msgid ""
+#~ "All words are checked for the common mistake of holding the shift key "
+#~ "down a bit too long. If some words must have two uppercase characters, "
+#~ "then those exceptions should be added in the 'Exceptions' tab."
+#~ msgstr ""
+#~ "Minden szó ellenőrizve legyen a gyakori hibák ellen a shift billentyű "
+#~ "kicsivel hosszabb lenyomásával. Ha néhány szónak két nagybetűs karaktert "
+#~ "kell tartalmaznia, akkor azokat a kivételeket a „Kivételek” lapon adhatja "
+#~ "hozzá."
+
+#~ msgid ""
+#~ "Convert &two uppercase characters to one uppercase and one lowercase "
+#~ "character\n"
+#~ " (e.g. PErfect to Perfect)"
+#~ msgstr ""
+#~ "&Két nagybetűs karakter átalakítása egy nagybetűs és egy kisbetűs "
+#~ "karakterre\n"
+#~ "(például TÖkéletes helyett Tökéletes)"
+
+#~ msgid ""
+#~ "Make sure that more than one space cannot be typed, as this is a common "
+#~ "mistake which is quite hard to find in formatted text."
+#~ msgstr ""
+#~ "Biztosítsa, hogy egynél több szóközt ne lehessen leütni, mert ez olyan "
+#~ "gyakori hiba, amelyet elég nehéz megtalálni egy formázott szövegben."
+
+#~ msgid "&Suppress double spaces"
+#~ msgstr "&Dupla szóközök tiltása"
+
+#~ msgid "Most standard fraction notations will be converted when available"
+#~ msgstr ""
+#~ "A legáltalánosabb törtjelölések átalakításra kerülnek, ha lehetséges"
+
+#~ msgid "Re&place 1/2... with ½..."
+#~ msgstr "1/2... &cserélje erre: ½..."
+
+#~ msgid "Capitalize name of days"
+#~ msgstr "Napok nevének nagybetűssé tétele"
+
+#~ msgid ""
+#~ "Detect when a URL (Uniform Resource Locator) is typed and provide "
+#~ "formatting that matches the way an Internet browser would show a URL."
+#~ msgstr ""
+#~ "Hivatkozások (URL) felismerése és átalakítása a böngészők által "
+#~ "megjelenített formátumra."
+
+#~ msgid "Autoformat &URLs (HTML mode)"
+#~ msgstr "&URL-ek automatikus formázása (HTML mód)"
+
+#~ msgid ""
+#~ "When you use _underline_ or *bold*, the text between the underscores or "
+#~ "asterisks will be converted to underlined or bold text."
+#~ msgstr ""
+#~ "_Aláhúzott_ vagy *félkövér* szöveg használatakor az aláhúzások vagy a "
+#~ "csillagok közti szöveg át lesz alakítva aláhúzott vagy félkövér szöveggé."
+
+#~ msgid ""
+#~ "Automatically do &bold, strikeout and underline formatting (HTML mode)"
+#~ msgstr "Automatikus &félkövér, áthúzott és aláhúzott formázás (HTML mód)"
+
+#~ msgid "Replace 1st... with 1^st... (HTML mode)"
+#~ msgstr "1st... cseréje erre: 1^st... (HTML mód)"
+
+#~ msgid "Custom &Quotes"
+#~ msgstr "Egyéni &idézetek"
+
+#~ msgid "Replace &single quotes with typographical quotes"
+#~ msgstr "&Szimpla idézőjelek cseréje tipográfiai idézetekre"
+
+#~ msgid "Replace &double quotes with typographical quotes"
+#~ msgstr "&Idézőjelek cseréje tipográfiai idézetekre"
+
+#~ msgid "Default"
+#~ msgstr "Alapértelmezett"
+
+#~ msgid "Ad&vanced Autocorrection"
+#~ msgstr "&Speciális automatikus javítás"
+
+#~ msgid "&Enable word replacement"
+#~ msgstr "Szó&csere engedélyezése"
+
+#~ msgid "&Find"
+#~ msgstr "&Keresés"
+
+#~ msgid "Re&place"
+#~ msgstr "Cse&re"
+
+#~ msgid "Find"
+#~ msgstr "Keresés"
+
+#~ msgid "Replace"
+#~ msgstr "Csere"
+
+#~ msgid "E&xceptions"
+#~ msgstr "Ki&vételek"
+
+#~ msgid "Do not treat as the end of a sentence:"
+#~ msgstr "Ne kezelje mondat végeként:"
+
+#~ msgid "R&emove"
+#~ msgstr "&Eltávolítás"
+
+#~ msgid "Accept two uppercase letters in:"
+#~ msgstr "Két nagybetű elfogadása itt:"
+
+#, fuzzy
+#~| msgid "&Add"
+#~ msgid "Add"
+#~ msgstr "&Hozzáadás"
+
+#~ msgid "Export..."
+#~ msgstr "Exportálás…"
+
+#~ msgid "Import..."
+#~ msgstr "Importálás…"
+
+#~ msgid "A&dd"
+#~ msgstr "&Hozzáadás"
+
+#~ msgid " pt"
+#~ msgstr " pt"
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Resize Image"
+#~ msgid "Enabled Auto Resize Image"
+#~ msgstr "Kép átméretezése"
+
+#~ msgctxt "@title:window"
+#~ msgid "Resize Image"
+#~ msgstr "Kép átméretezése"
+
+#~ msgctxt "@action:button"
+#~ msgid "Resize"
+#~ msgstr "Átméretezés"
+
+#~ msgid "Keep Original Size"
+#~ msgstr "Eredeti méret megőrzése"
+
+#~ msgid "Width:"
+#~ msgstr "Szélesség:"
+
+#~ msgid "Select Special Characters"
+#~ msgstr "Speciális karakterek kijelölése"
+
+#, fuzzy
+#~| msgid "Could not open file."
+#~ msgid "Do not filter"
+#~ msgstr "Nem lehet megnyitni a fájlt."
+
+#~ msgid "&Cancel"
+#~ msgstr "&Mégsem"

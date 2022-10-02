@@ -1,0 +1,296 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# A S Alam <aalam@users.sf.net>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2010-12-26 08:55+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ (A S Alam)"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "aalam@users.sf.net"
+
+#: attachment/attachmentcompressjob.cpp:50
+#, kde-format
+msgid "Could not initiate attachment compression."
+msgstr ""
+
+#: attachment/attachmentcompressjob.cpp:60
+#, kde-format
+msgid "Could not compress the attachment."
+msgstr ""
+
+#: attachment/attachmentfromfolderjob.cpp:51
+#, kde-format
+msgid "Could not create compressed file."
+msgstr ""
+
+#: attachment/attachmentfromfolderjob.cpp:90
+#, kde-format
+msgid ""
+"The resulting attachment would be larger than the maximum allowed size, "
+"aborting."
+msgstr ""
+
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
+#, kde-format
+msgid "Could not add %1 to the archive"
+msgstr ""
+
+#: attachment/attachmentfromfolderjob.cpp:113
+#, kde-format
+msgid "Could not open %1 for reading."
+msgstr ""
+
+#: attachment/attachmentfromurljob.cpp:69
+#, kde-format
+msgctxt "a file called 'unknown.ext'"
+msgid "unknown%1"
+msgstr "ਅਣਜਾਣ%1"
+
+#: attachment/attachmentfromurljob.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "a filed called 'unknown'"
+#| msgid "unknown"
+msgctxt "a file called 'unknown'"
+msgid "unknown"
+msgstr "ਅਣਜਾਣ"
+
+#: attachment/attachmentfromurljob.cpp:103
+#, kde-format
+msgid "\"%1\" not found. Please specify the full path."
+msgstr ""
+
+#: attachment/attachmentfromurljob.cpp:112
+#, kde-format
+msgid "You may not attach files bigger than %1. Share it with storage service."
+msgstr ""
+
+#: attachment/attachmentpropertiesdialog.cpp:133
+#, kde-format
+msgid ""
+"<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
+"touch this setting, since the type of the file is automatically checked; "
+"but, sometimes, %1 may not detect the type correctly -- here is where you "
+"can fix that.</p>"
+msgstr ""
+
+#: attachment/attachmentpropertiesdialog.cpp:141
+#, kde-format
+msgid ""
+"<p>The estimated size of the attachment:</p><p>Note that, in an email "
+"message, a binary file encoded with base64 will take up four thirds the "
+"actual size of the file.</p>"
+msgstr ""
+
+#: attachment/attachmentpropertiesdialog.cpp:146
+#, kde-format
+msgid ""
+"<p>The file name of the part:</p><p>Although this defaults to the name of "
+"the attached file, it does not specify the file to be attached; rather, it "
+"suggests a file name to be used by the recipient's mail agent when saving "
+"the part to disk.</p>"
+msgstr ""
+
+#: attachment/attachmentpropertiesdialog.cpp:153
+#, kde-format
+msgid ""
+"<p>A description of the part:</p><p>This is just an informational "
+"description of the part, much like the Subject is for the whole message; "
+"most mail agents will show this information in their message previews "
+"alongside the attachment's icon.</p>"
+msgstr ""
+
+#: attachment/attachmentpropertiesdialog.cpp:160
+#, kde-format
+msgid ""
+"<p>The transport encoding of this part:</p><p>Normally, you do not need to "
+"change this, since %1 will use a decent default encoding, depending on the "
+"MIME type; yet, sometimes, you can significantly reduce the size of the "
+"resulting message, e.g. if a PostScript file does not contain binary data, "
+"but consists of pure text -- in this case, choosing \"quoted-printable\" "
+"over the default \"base64\" will save up to 25% in resulting message size.</"
+"p>"
+msgstr ""
+
+#: attachment/attachmentpropertiesdialog.cpp:171
+#, kde-format
+msgid ""
+"<p>Check this option if you want to suggest to the recipient the automatic "
+"(inline) display of this part in the message preview, instead of the default "
+"icon view;</p><p>Technically, this is carried out by setting this part's "
+"<em>Content-Disposition</em> header field to \"inline\" instead of the "
+"default \"attachment\".</p>"
+msgstr ""
+
+#: attachment/attachmentpropertiesdialog.cpp:179
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be signed.</p><p>The "
+"signature will be made with the key that you associated with the currently-"
+"selected identity.</p>"
+msgstr ""
+
+#: attachment/attachmentpropertiesdialog.cpp:185
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be encrypted.</"
+"p><p>The part will be encrypted for the recipients of this message.</p>"
+msgstr ""
+
+#: attachment/attachmentpropertiesdialog.cpp:306
+#: attachment/attachmentpropertiesdialog.cpp:321
+#, fuzzy, kde-format
+#| msgid "Attachment Properties"
+msgctxt "@title:window"
+msgid "Attachment Properties"
+msgstr "ਅਟੈਚਮੈਂਟ ਵਿਸ਼ੇਸਤਾ"
+
+#: attachment/attachmentupdatejob.cpp:40
+#, kde-format
+msgid "URL is empty."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: attachment/ui/attachmentpropertiesdialog.ui:39
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:60
+#, kde-format
+msgctxt "MIME type of this attachment"
+msgid "Type:"
+msgstr "ਕਿਸਮ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: attachment/ui/attachmentpropertiesdialog.ui:82
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:87
+#, kde-format
+msgctxt "size of the attachment"
+msgid "Size:"
+msgstr "ਸਾਈਜ਼:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: attachment/ui/attachmentpropertiesdialog.ui:109
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:114
+#, kde-format
+msgctxt "file name of the attachment"
+msgid "Name:"
+msgstr "ਨਾਂ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: attachment/ui/attachmentpropertiesdialog.ui:139
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:134
+#, kde-format
+msgctxt "description of the attachment"
+msgid "Description:"
+msgstr "ਵੇਰਵਾ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: attachment/ui/attachmentpropertiesdialog.ui:169
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:154
+#, kde-format
+msgctxt "encoding of the attachment"
+msgid "Encoding:"
+msgstr "ਇੰਕੋਡਿੰਗ:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoDisplay)
+#: attachment/ui/attachmentpropertiesdialog.ui:187
+#, kde-format
+msgid "Suggest automatic display"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, encrypt)
+#: attachment/ui/attachmentpropertiesdialog.ui:194
+#, kde-format
+msgid "Encrypt this attachment"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, sign)
+#: attachment/ui/attachmentpropertiesdialog.ui:201
+#, kde-format
+msgid "Sign this attachment"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
+#: settings/messagecore.kcfg:34
+#, kde-format
+msgid ""
+"Changing this from its default 'Auto' will force the use of the specified "
+"encoding for all emails, regardless of what they specify themselves."
+msgstr ""
+
+#. i18n: ectx: label, entry (QuotedText3), group (Reader)
+#: settings/messagecore.kcfg:37
+#, kde-format
+msgid "This is the color used in the 3rd level of quoted text"
+msgstr ""
+
+#. i18n: ectx: label, entry (QuotedText2), group (Reader)
+#: settings/messagecore.kcfg:41
+#, kde-format
+msgid "This is the color used in the 2nd level of quoted text"
+msgstr ""
+
+#. i18n: ectx: label, entry (QuotedText1), group (Reader)
+#: settings/messagecore.kcfg:45
+#, kde-format
+msgid "This is the color used in the 1st level of quoted text"
+msgstr ""
+
+#. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
+#: settings/messagecore.kcfg:56
+#, kde-format
+msgid "Replace recognized prefi&x with \"Re:\""
+msgstr ""
+
+#. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
+#: settings/messagecore.kcfg:64
+#, kde-format
+msgid "Replace recognized prefix with \"&Fwd:\""
+msgstr ""
+
+#. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
+#: settings/messagecore.kcfg:69
+#, kde-format
+msgid ""
+"The maximum size in bits that email attachments are allowed to have (-1 for "
+"no limit)"
+msgstr ""
+
+#: utils/stringutil.cpp:418
+#, kde-format
+msgctxt "signal that this email is defined in my identity"
+msgid "Me"
+msgstr ""
+
+#~ msgid "Edit Note"
+#~ msgstr "ਨੋਟ ਸੋਧ"
+
+#~ msgid "Delete Note"
+#~ msgstr "ਨੋਟ ਹਟਾਓ"
+
+#~ msgid "Add Note"
+#~ msgstr "ਨੋਟ ਸ਼ਾਮਲ"
+
+#~ msgid "Delete Note?"
+#~ msgstr "ਨੋਟ ਹਟਾਉਣਾ?"
+
+#~ msgid "Delete"
+#~ msgstr "ਹਟਾਓ"

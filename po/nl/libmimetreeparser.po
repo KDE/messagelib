@@ -1,0 +1,339 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2016-06-01 12:33+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Naamloos"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Onjuiste crypto-plug-in."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Geen geschikte Crypto-plug-in gevonden."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "Geen %1-plug-in gevonden."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "Crypto-plug-in \"%1\" kan geen handtekeningen verifiëren."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"Het bericht is ondertekend, maar de geldigheid van de ondertekening kon niet "
+"worden geverifieerd.<br />Reden: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Crypto-plug-in \"%1\" kan geen berichten ontcijferen."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "De crypto-plug-in \"%1\" kon de gegevens niet ontcijferen."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Fout: %1"
+
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "Het certificaat kon helaas niet geïmporteerd worden."
+
+#~ msgid "Reason: %1"
+#~ msgstr "Reden:%1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Er zijn helaas geen certificaten gevonden in dit bericht."
+
+#~ msgid "Certificate import status:"
+#~ msgstr "Importstatus certificaat:"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "1 nieuw certificaat werd geïmporteerd."
+#~ msgstr[1] "%1 nieuwe certificaten werden geïmporteerd."
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "1 certificaat is ongewijzigd."
+#~ msgstr[1] "%1 certificaten zijn ongewijzigd."
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "1 nieuwe geheime sleutel werd geïmporteerd."
+#~ msgstr[1] "%1 nieuwe geheime sleutels werden geïmporteerd."
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "1 geheime sleutel is ongewijzigd."
+#~ msgstr[1] "%1 geheime sleutels zijn ongewijzigd."
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr ""
+#~ "Er zijn helaas geen details beschikbaar over het importeren van "
+#~ "certificaten."
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Importdetails certificaat:"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Mislukt: %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "Ingebed bericht"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "Einde van ingebed bericht"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "Dit bericht is versleuteld."
+
+#~ msgid "Decrypt Message"
+#~ msgstr "Bericht ontcijferen"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Wacht even terwijl het bericht wordt ontcijferd..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "Versleuteld bericht"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "Versleuteld bericht (ontcijferen onmogelijk)"
+
+#~ msgid "Reason: "
+#~ msgstr "Reden: "
+
+#~ msgid ""
+#~ "No secret key found to encrypt the message. It is encrypted for following "
+#~ "keys:"
+#~ msgstr ""
+#~ "Geen geheime sleutel gevonden om het bericht te versleutelen. Het is "
+#~ "versleuteld voor de volgende sleutels:"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Kon de gegevens niet ontcijferen."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "Einde van versleuteld bericht"
+
+#~ msgid ""
+#~ "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~ "HTML code is shown. If you trust the sender of this message then you can "
+#~ "activate formatted HTML display for this message <a href=kmail:"
+#~ "showHTML>by clicking here</a>."
+#~ msgstr ""
+#~ "<b>Opmerking:</b> dit is een HTML-bericht. Om veiligheidsredenen wordt "
+#~ "alleen de ruwe HTML-code getoond. Als u de afzender van dit bericht "
+#~ "vertrouwt kunt u de HTML-opmaak voor dit bericht activeren <a href=kmail:"
+#~ "showHTML>door hier te klikken</a>."
+
+#~ msgid ""
+#~ "<b>Note:</b> This HTML message may contain external references to images "
+#~ "etc. For security/privacy reasons external references are not loaded. If "
+#~ "you trust the sender of this message then you can load the external "
+#~ "references for this message <a href=kmail:loadExternal>by clicking here</"
+#~ "a>."
+#~ msgstr ""
+#~ "<b>Opmerking:</b> dit HTML-bericht kan externe verwijzingen naar "
+#~ "afbeeldingen bevatten. Om veiligheids/privé-redenen worden deze externe "
+#~ "verwijzingen niet opgehaald. Als u de afzender van dit bericht vertrouwt "
+#~ "kunt u de externe verwijzingen voor dit bericht laden <a href=kmail:"
+#~ "loadExternal>door hier te klikken</a>."
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Wacht even terwijl de handtekening wordt geverifieerd..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Onvoldoende informatie om de handtekening te controleren. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Bericht was ondertekend door %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Bericht was ondertekend met een onbekende sleutel."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Bericht was ondertekend met sleutel %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Bericht was ondertekend door %3 op %1 met sleutel %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Bericht was ondertekend door %1 met sleutel %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Bericht was ondertekend door %2 met sleutel %1."
+
+#~ msgid "Status: "
+#~ msgstr "Status: "
+
+#~ msgid "Hide Details"
+#~ msgstr "Details verbergen"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Bericht was op %1 ondertekend met onbekende sleutel %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Bericht was ondertekend met onbekende sleutel %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "De geldigheid van de ondertekening kan niet worden geverifieerd."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Bericht was ondertekend door %2 (sleutel-id: %1)."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr ""
+#~ "De ondertekening is geldig, maar de geldigheid van de sleutel is onbekend."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr ""
+#~ "De ondertekening is geldig en de sleutel is gedeeltelijk betrouwbaar."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "De ondertekening is geldig en de sleutel is volledig betrouwbaar."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "De ondertekening is geldig en de sleutel is uiterst betrouwbaar."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "De ondertekening is geldig, maar de sleutel is onbetrouwbaar."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Waarschuwing: ongeldige ondertekening."
+
+#~ msgid "Invalid signature."
+#~ msgstr "Ongeldige ondertekening."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr ""
+#~ "Onvoldoende informatie om de geldigheid van de ondertekening te "
+#~ "controleren."
+
+#~ msgid "Signed by <a href=mailto:%1>%2</a>."
+#~ msgstr "Ondertekend door <a href=mailto:%1>%2</a>."
+
+#~ msgid "Signature is valid."
+#~ msgstr "Ondertekening is geldig."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Onbekende ondertekeningsstatus"
+
+#~ msgid "Show Details"
+#~ msgstr "Details tonen"
+
+#~ msgid "End of signed message"
+#~ msgstr "Einde van ondertekend bericht"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Fout: ondertekening is niet geverifieerd"
+
+#~ msgid "Good signature"
+#~ msgstr "Correcte ondertekening"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Ongeldige</b> ondertekening"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Geen publieke sleutel om de ondertekening te verifiëren"
+
+#~ msgid "No signature found"
+#~ msgstr "Geen ondertekening gevonden"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Fout bij het verifiëren van de ondertekening"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Verschillende resultaten voor ondertekeningen"
+
+#~ msgid "No status information available."
+#~ msgstr "Geen statusinformatie beschikbaar."
+
+#~ msgid "Good signature."
+#~ msgstr "Correcte ondertekening."
+
+#~ msgid "One key has expired."
+#~ msgstr "Eén sleutel is verlopen."
+
+#~ msgid "The signature has expired."
+#~ msgstr "De ondertekening is verlopen."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Verificatie onmogelijk: sleutel ontbreekt."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL (lijst ingetrokken certificaten) niet beschikbaar."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Beschikbare CRL (lijst ingetrokken certificaten) is te oud."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Niet voldaan aan alle regels."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Er deed zich een systeemfout voor."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Eén sleutel is ingetrokken."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Ongeldige</b> ondertekening."
+
+#~ msgid "certificate"
+#~ msgstr "certificaat"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Waarschuwing:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "Het e-mailadres van de afzender is niet opgeslagen in de %1, die gebruikt "
+#~ "wordt voor het ondertekenen."
+
+#~ msgid "sender: "
+#~ msgstr "afzender: "
+
+#~ msgid "stored: "
+#~ msgstr "opgeslagen: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Er is geen e-mailadres opgeslagen in de %1, die wordt gebruikt voor het "
+#~ "ondertekenen. Hierdoor kunnen we die niet vergelijken met het "
+#~ "afzenderadres %2."

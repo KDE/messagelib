@@ -1,0 +1,193 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrej Mernik <andrejm@ubuntu.si>, 2016, 2018.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-30 00:47+0000\n"
+"PO-Revision-Date: 2022-09-03 09:35+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: developertool/developertooldialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Developer Tool"
+msgstr "Razvojno orodje"
+
+#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "Zapri"
+
+#: findbar/findbarbase.cpp:48
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "Najd&i:"
+
+#: findbar/findbarbase.cpp:53
+#, kde-format
+msgid "Text to search for"
+msgstr "Besedilo, ki naj se išče"
+
+#: findbar/findbarbase.cpp:58
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "Naslednje"
+
+#: findbar/findbarbase.cpp:59
+#, kde-format
+msgid "Jump to next match"
+msgstr "Pojdi na naslednje ujemanje"
+
+#: findbar/findbarbase.cpp:64
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "Predhodno"
+
+#: findbar/findbarbase.cpp:65
+#, kde-format
+msgid "Jump to previous match"
+msgstr "Pojdi na predhodno ujemanje"
+
+#: findbar/findbarbase.cpp:71
+#, kde-format
+msgid "Options"
+msgstr "Možnosti"
+
+#: findbar/findbarbase.cpp:72
+#, kde-format
+msgid "Modify search behavior"
+msgstr "Spremeni obnašanje iskanja"
+
+#: findbar/findbarbase.cpp:74
+#, kde-format
+msgid "Case sensitive"
+msgstr "Ločevanje velikosti črk"
+
+#: findbar/findbarbase.cpp:91
+#, kde-format
+msgid "Phrase not found"
+msgstr "Izraza ni mogoče najti"
+
+#: webenginepage.cpp:78
+#, kde-format
+msgid "Save HTML Page"
+msgstr "Shrani stran HTML"
+
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:21
+#, kde-format
+msgid "Submit form is not allowed in mailer. Please open url in a browser."
+msgstr ""
+"Obrazec za oddajo ni dovoljen v poštnem sporočilu. Odprite url v brskalniku."
+
+#: widgets/tracking/trackingdetailsdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: widgets/tracking/trackingwarningwidget.cpp:20
+#, kde-format
+msgid ""
+"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+"\">(Details...)"
+msgstr ""
+"Najden je bil sledilnik pošte in je bil blokiran.<a href="
+"\"mailtrackingdetails\">(Podrobnosti...)"
+
+#: widgets/tracking/trackingwarningwidget.cpp:39
+#, kde-format
+msgid "Details:"
+msgstr "Podrobnosti:"
+
+#: widgets/tracking/trackingwarningwidget.cpp:45
+#, kde-format
+msgid "1 tracker from the company %2 (%3)"
+msgid_plural "%1 trackers from the company %2 (%3)"
+msgstr[0] "%1 sledilnik iz podjetja %2 (%3)"
+msgstr[1] "%1 sledilnika iz podjetja %2 (%3)"
+msgstr[2] "%1 sledilniki iz podjetja %2 (%3)"
+msgstr[3] "%1 sledilnikov iz podjetja %2 (%3)"
+
+#: widgets/zoomactionmenu.cpp:127
+#, kde-format
+msgid "Zoom"
+msgstr "Približanje"
+
+#~ msgid "Reset"
+#~ msgstr "Ponastavi"
+
+#~ msgid "&Zoom In"
+#~ msgstr "&Približaj"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "&Oddalji"
+
+#~ msgid "Print Status Information"
+#~ msgstr "Natisni podrobnosti o stanju"
+
+#~ msgid ""
+#~ "WebEngine printing support is limited for the moment. An external browser "
+#~ "will be used for printing."
+#~ msgstr ""
+#~ "Podpora tiskanja za WebEngine je trenutno omejena, zato bo za tiskanje "
+#~ "uporabljen zunanji brskalnik."
+
+#~ msgid "Open In Browser"
+#~ msgstr "Odpri v brskalniku"
+
+#~ msgid "Print Setup"
+#~ msgstr "Nastavitve tiskanja"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Select Print Layout"
+#~ msgstr "Izberite postavitev tiska"
+
+#~ msgid "Print Layout: %1, %2"
+#~ msgstr "Postavitev tiska: %1, %2"
+
+#~ msgid "Portrait"
+#~ msgstr "Pokončno"
+
+#~ msgid "Landscape"
+#~ msgstr "Ležeče"
+
+#~ msgid "Preview"
+#~ msgstr "Predogled"
+
+#~ msgid "Print"
+#~ msgstr "Natisni"
+
+#~ msgid "Page:"
+#~ msgstr "Stran:"
+
+#~ msgid "Unable to open file \"%1\""
+#~ msgstr "Datoteke »%1« ni mogoče odpreti"
+
+#~ msgid "Open file error"
+#~ msgstr "Napaka med odpiranjem datoteke"
+
+#~ msgid "Page %1"
+#~ msgstr "Stran %1"
+
+#~ msgid "Print Preview"
+#~ msgstr "Predogled tiskanja"
+
+#~ msgid "Printing WebEngine is limited for the moment."
+#~ msgstr "Tiskanje WebEngine je trenutno omejeno."

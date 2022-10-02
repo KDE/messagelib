@@ -1,0 +1,1997 @@
+# translation of libmessagelist.po to Italian
+# Alessandro Astarita <aleast@capri.it>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Andrea Rizzi <rizzi@kde.org>, 2004.
+# Federico Zenith <federico.zenith@member.fsf.org>, 2004, 2005.
+# Giovanni Venturi <jumpyj@tiscali.it>, 2005, 2006.
+# Alessandro Pasotti <ale.pas@tiscalinet.it>, 2006.
+# Vincenzo Reale <smart2128vr@gmail.com>, 2007, 2008.
+# Nicola Ruggero <nicola@nxnt.org>, 2007.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessagelist\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2021-09-14 23:32+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.08.0\n"
+
+#: core/aggregation.cpp:178
+#, kde-format
+msgctxt "No grouping of messages"
+msgid "None"
+msgstr "Nessuno"
+
+#: core/aggregation.cpp:179
+#, kde-format
+msgid "By Exact Date (of Thread Leaders)"
+msgstr "Per data esatta (inizio conversazioni)"
+
+#: core/aggregation.cpp:180
+#, kde-format
+msgid "By Smart Date Ranges (of Thread Leaders)"
+msgstr ""
+"Per intervalli \"intelligenti\" di date (relative all'origine delle "
+"conversazioni)"
+
+#: core/aggregation.cpp:181 core/sortorder.cpp:70
+#, kde-format
+msgid "By Smart Sender/Receiver"
+msgstr "Per mittente/destinatario in modo intelligente"
+
+#: core/aggregation.cpp:182 core/sortorder.cpp:68
+#, kde-format
+msgid "By Sender"
+msgstr "Per mittente"
+
+#: core/aggregation.cpp:183 core/sortorder.cpp:69
+#, kde-format
+msgid "By Receiver"
+msgstr "Per destinatario"
+
+#: core/aggregation.cpp:192
+#, kde-format
+msgid "Never Expand Groups"
+msgstr "Non espandere mai i gruppi"
+
+#: core/aggregation.cpp:194
+#, kde-format
+msgid "Expand Recent Groups"
+msgstr "Espandi i gruppi recenti"
+
+#: core/aggregation.cpp:196
+#, kde-format
+msgid "Always Expand Groups"
+msgstr "Espandi sempre i gruppi"
+
+#: core/aggregation.cpp:202
+#, kde-format
+msgctxt "No threading of messages"
+msgid "None"
+msgstr "Nessuna"
+
+#: core/aggregation.cpp:203
+#, kde-format
+msgid "Perfect Only"
+msgstr "Solo perfetta"
+
+#: core/aggregation.cpp:204
+#, kde-format
+msgid "Perfect and by References"
+msgstr "Perfetta e per riferimento"
+
+#: core/aggregation.cpp:205
+#, kde-format
+msgid "Perfect, by References and by Subject"
+msgstr "Perfetta, per riferimento e per oggetto"
+
+#: core/aggregation.cpp:214
+#, kde-format
+msgid "Topmost Message"
+msgstr "Messaggio più in alto"
+
+#: core/aggregation.cpp:218
+#, kde-format
+msgid "Most Recent Message"
+msgstr "Messaggio più recente"
+
+#: core/aggregation.cpp:228
+#, kde-format
+msgid "Never Expand Threads"
+msgstr "Non espandere mai le conversazioni"
+
+#: core/aggregation.cpp:229
+#, kde-format
+msgid "Expand Threads With Unread Messages"
+msgstr "Espandi conversazioni con messaggi non letti"
+
+#: core/aggregation.cpp:230
+#, kde-format
+msgid "Expand Threads With Unread or Important Messages"
+msgstr "Espandi conversazioni con messaggi non letti o importanti"
+
+#: core/aggregation.cpp:231
+#, kde-format
+msgid "Always Expand Threads"
+msgstr "Espandi sempre le conversazioni"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Interactivity"
+msgstr "Favorisci l'interattività"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Speed"
+msgstr "Favorisci la velocità"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Batch Job (No Interactivity)"
+msgstr "Operazione batch (nessuna interattività)"
+
+#: core/item.cpp:252 core/messageitem.cpp:538
+#, kde-format
+msgctxt "Status of an item"
+msgid "Read"
+msgstr "Letto"
+
+#: core/item.cpp:254 core/messageitem.cpp:538
+#, kde-format
+msgctxt "Status of an item"
+msgid "Unread"
+msgstr "Non letto"
+
+#: core/item.cpp:258
+#, kde-format
+msgctxt "Status of an item"
+msgid "Has Attachment"
+msgstr "Ha allegati"
+
+#: core/item.cpp:262
+#, kde-format
+msgctxt "Status of an item"
+msgid "Action Item"
+msgstr "Compito"
+
+#: core/item.cpp:266 core/messageitem.cpp:536
+#, kde-format
+msgctxt "Status of an item"
+msgid "Replied"
+msgstr "Risposto"
+
+#: core/item.cpp:270
+#, kde-format
+msgctxt "Status of an item"
+msgid "Forwarded"
+msgstr "Inoltrato"
+
+#: core/item.cpp:274
+#, kde-format
+msgctxt "Status of an item"
+msgid "Sent"
+msgstr "Inviato"
+
+#: core/item.cpp:278
+#, kde-format
+msgctxt "Status of an item"
+msgid "Important"
+msgstr "Importante"
+
+#: core/item.cpp:282
+#, kde-format
+msgctxt "Status of an item"
+msgid "Spam"
+msgstr "Spam"
+
+#: core/item.cpp:286
+#, kde-format
+msgctxt "Status of an item"
+msgid "Ham"
+msgstr "Ham"
+
+#: core/item.cpp:290
+#, kde-format
+msgctxt "Status of an item"
+msgid "Watched"
+msgstr "Sorvegliato"
+
+#: core/item.cpp:294
+#, kde-format
+msgctxt "Status of an item"
+msgid "Ignored"
+msgstr "Ignorato"
+
+#: core/manager.cpp:38 core/model.cpp:332
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "Sconosciuta"
+
+#: core/manager.cpp:206
+#, kde-format
+msgid "Current Activity, Threaded"
+msgstr "Attività attuale, per conversazione"
+
+#: core/manager.cpp:207
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are threaded. So for "
+"example, in \"Today\" you will find all the messages arrived today and all "
+"the threads that have been active today."
+msgstr ""
+"Questa vista utilizza gruppi di intervalli \"intelligenti\" di date. I "
+"messaggi sono raggruppati per discussione. Così, ad esempio, in \"Oggi\" "
+"troverai tutti i messaggi arrivati oggi e tutte le discussioni attive oggi."
+
+#: core/manager.cpp:219
+#, kde-format
+msgid "Current Activity, Flat"
+msgstr "Attività attuale, piatta"
+
+#: core/manager.cpp:220
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are not threaded. So for "
+"example, in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+"Questa vista utilizza gruppi di intervalli \"intelligenti\" di date. I "
+"messaggi non sono raggruppati per discussione. Così, ad esempio, in \"Oggi\" "
+"troverai semplicemente tutti i messaggi arrivati oggi."
+
+#: core/manager.cpp:231
+#, kde-format
+msgid "Activity by Date, Threaded"
+msgstr "Attività per data, per conversazione"
+
+#: core/manager.cpp:232
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are threaded. So for example, in "
+"\"Today\" you will find all the messages arrived today and all the threads "
+"that have been active today."
+msgstr ""
+"Questa vista utilizza gruppi divisi per giorno. I messaggi sono raggruppati "
+"per discussione. Così, ad esempio, in \"Oggi\" troverai tutti i messaggi "
+"arrivati oggi e tutte le discussioni attive oggi."
+
+#: core/manager.cpp:244
+#, kde-format
+msgid "Activity by Date, Flat"
+msgstr "Attività per data, piatta"
+
+#: core/manager.cpp:245
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are not threaded. So for example, "
+"in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+"Questa vista utilizza gruppi divisi per giorno. I messaggi non sono "
+"raggruppati per discussione. Così, ad esempio, in \"Oggi\" troverai "
+"semplicemente tutti i messaggi arrivati oggi."
+
+#: core/manager.cpp:256
+#, kde-format
+msgid "Standard Mailing List"
+msgstr "Mailing list standard"
+
+#: core/manager.cpp:257
+#, kde-format
+msgid ""
+"This is a plain and old mailing list view: no groups and heavy threading."
+msgstr ""
+"Questa è una vista semplice e classica per mailing list: nessun gruppo e "
+"raggruppamento per discussioni."
+
+#: core/manager.cpp:266
+#, kde-format
+msgid "Flat Date View"
+msgstr "Vista piatta per data"
+
+#: core/manager.cpp:267
+#, kde-format
+msgid ""
+"This is a plain and old list of messages sorted by date: no groups and no "
+"threading."
+msgstr ""
+"Questo è un semplice e classico elenco di messaggi ordinati per date: nessun "
+"gruppo e nessun raggruppamento per discussioni."
+
+#: core/manager.cpp:278
+#, kde-format
+msgid "Senders/Receivers, Flat"
+msgstr "Mittente/destinatario, piatta"
+
+#: core/manager.cpp:279
+#, kde-format
+msgid ""
+"This view groups the messages by senders or receivers (depending on the "
+"folder type). Messages are not threaded."
+msgstr ""
+"Questa vista raggruppa i messaggi per mittente o destinatario (in base al "
+"tipo della cartella). I messaggi non sono raggruppati per conversazione."
+
+#: core/manager.cpp:290
+#, kde-format
+msgid "Thread Starters"
+msgstr "Origine conversazione"
+
+#: core/manager.cpp:291
+#, kde-format
+msgid ""
+"This view groups the messages in threads and then groups the threads by the "
+"starting user."
+msgstr ""
+"Questa vista raggruppa i messaggi per conversazione e successivamente "
+"raggruppa le conversazioni in base all'utente che le ha avviate."
+
+#: core/manager.cpp:567
+#, kde-format
+msgctxt "Default theme name"
+msgid "Classic"
+msgstr "Classico"
+
+#: core/manager.cpp:567
+#, kde-format
+msgid "A simple, backward compatible, single row theme"
+msgstr "Un tema semplice, retrocompatibile, su una sola riga"
+
+#: core/manager.cpp:571
+#, kde-format
+msgctxt "@title:column Subject of messages"
+msgid "Subject"
+msgstr "Oggetto"
+
+#: core/manager.cpp:607 core/theme.cpp:113
+#, kde-format
+msgid "Sender/Receiver"
+msgstr "Mittente/Destinatario"
+
+#: core/manager.cpp:614
+#, kde-format
+msgctxt "Sender of a message"
+msgid "Sender"
+msgstr "Mittente"
+
+#: core/manager.cpp:616
+#, kde-format
+msgctxt "Receiver of a message"
+msgid "Receiver"
+msgstr "Destinatario"
+
+#: core/manager.cpp:622
+#, kde-format
+msgctxt "Date of a message"
+msgid "Date"
+msgstr "Data"
+
+#: core/manager.cpp:624
+#, kde-format
+msgid "Most Recent Date"
+msgstr "Data più recente"
+
+#: core/manager.cpp:630
+#, kde-format
+msgctxt "Size of a message"
+msgid "Size"
+msgstr "Dimensione"
+
+#: core/manager.cpp:632
+#, kde-format
+msgctxt "Attachment indication"
+msgid "Attachment"
+msgstr "Allegato"
+
+#: core/manager.cpp:638
+#, kde-format
+msgid "Read/Unread"
+msgstr "Letto/non letto"
+
+#: core/manager.cpp:643
+#, kde-format
+msgid "Replied"
+msgstr "Risposto"
+
+#: core/manager.cpp:645
+#, kde-format
+msgctxt "Message importance indication"
+msgid "Important"
+msgstr "Importante"
+
+#: core/manager.cpp:651
+#, kde-format
+msgid "Action Item"
+msgstr "Compito"
+
+#: core/manager.cpp:657
+#, kde-format
+msgid "Spam/Ham"
+msgstr "Spam/Ham"
+
+#: core/manager.cpp:663
+#, kde-format
+msgid "Watched/Ignored"
+msgstr "Sorvegliato/ignorato"
+
+#: core/manager.cpp:669
+#, kde-format
+msgid "Encryption"
+msgstr "Cifratura"
+
+#: core/manager.cpp:675
+#, kde-format
+msgid "Signature"
+msgstr "Firma"
+
+#: core/manager.cpp:680
+#, kde-format
+msgid "Tag List"
+msgstr "Lista etichette"
+
+#: core/manager.cpp:688
+#, kde-format
+msgid "Smart"
+msgstr "Intelligente"
+
+#: core/manager.cpp:688
+#, kde-format
+msgid "A smart multiline and multi item theme"
+msgstr "Un tema intelligente su più righe e con diversi elementi"
+
+#: core/manager.cpp:692
+#, kde-format
+msgid "Message"
+msgstr "Messaggio"
+
+#: core/manager.cpp:776
+#, kde-format
+msgid "Smart with Clickable Status"
+msgstr "Intelligente con stato selezionabile"
+
+#: core/manager.cpp:777
+#, kde-format
+msgid "A smart multiline and multi item theme with a clickable status column"
+msgstr ""
+"Un tema intelligente su più righe e con diversi elementi, con colonna di "
+"stato selezionabile"
+
+#: core/manager.cpp:781 core/view.cpp:2263 core/view.cpp:2267
+#, kde-format
+msgid "Status"
+msgstr "Stato"
+
+#: core/model.cpp:330
+#, kde-format
+msgid "Today"
+msgstr "oggi"
+
+#: core/model.cpp:331
+#, kde-format
+msgid "Yesterday"
+msgstr "ieri"
+
+#: core/model.cpp:333
+#, kde-format
+msgid "Last Week"
+msgstr "Settimana scorsa"
+
+#: core/model.cpp:334
+#, kde-format
+msgid "Two Weeks Ago"
+msgstr "Due settimane fa"
+
+#: core/model.cpp:335
+#, kde-format
+msgid "Three Weeks Ago"
+msgstr "Tre settimane fa"
+
+#: core/model.cpp:336
+#, kde-format
+msgid "Four Weeks Ago"
+msgstr "Quattro settimane fa"
+
+#: core/model.cpp:337
+#, kde-format
+msgid "Five Weeks Ago"
+msgstr "Cinque settimane fa"
+
+#: core/model.cpp:550 utils/themeeditor.cpp:185
+#, kde-format
+msgid "Receiver"
+msgstr "Destinatario"
+
+#: core/model.cpp:552 utils/themeeditor.cpp:184
+#, kde-format
+msgid "Sender"
+msgstr "Mittente"
+
+#: core/model.cpp:1367
+#, kde-format
+msgctxt "Message Aggregation Group Header: Month name and Year number"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: core/model.cpp:3787
+#, kde-format
+msgid "Processed 1 Message of %2"
+msgid_plural "Processed %1 Messages of %2"
+msgstr[0] "Elaborato un messaggio su %2"
+msgstr[1] "Elaborati %1 messaggi su %2"
+
+#: core/model.cpp:3793 core/model.cpp:3799
+#, kde-format
+msgid "Threaded 1 Message of %2"
+msgid_plural "Threaded %1 Messages of %2"
+msgstr[0] "Diviso per conversazione un messaggio su %2"
+msgstr[1] "Divisi per conversazione %1 messaggi su %2"
+
+#: core/model.cpp:3805
+#, kde-format
+msgid "Grouped 1 Thread of %2"
+msgid_plural "Grouped %1 Threads of %2"
+msgstr[0] "Raggruppata una discussione su %2"
+msgstr[1] "Raggruppate %1 discussioni su %2"
+
+#: core/model.cpp:3811
+#, kde-format
+msgid "Updated 1 Group of %2"
+msgid_plural "Updated %1 Groups of %2"
+msgstr[0] "Aggiornato un gruppo su %2"
+msgstr[1] "Aggiornati %1 gruppi su %2"
+
+#: core/model.cpp:3903
+#, kde-format
+msgctxt "@info:status Finished view fill"
+msgid "Ready"
+msgstr "Pronto"
+
+#. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:11
+#, kde-format
+msgid "Display tooltips for messages and group headers"
+msgstr "Mostra suggerimenti per messaggi e intestazioni di gruppo"
+
+#. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:12
+#, kde-format
+msgid ""
+"Enable this option to display tooltips when hovering over an item in the "
+"message list."
+msgstr ""
+"Abilita questa opzione per mostrare i suggerimenti al passaggio del mouse "
+"sugli elementi dell'elenco dei messaggi."
+
+#: core/sortorder.cpp:63 core/sortorder.cpp:107
+#, kde-format
+msgid "None (Storage Order)"
+msgstr "No (ordine di memorizzazione)"
+
+#: core/sortorder.cpp:64
+#, kde-format
+msgid "By Date/Time"
+msgstr "Per data/ora"
+
+#: core/sortorder.cpp:66
+#, kde-format
+msgid "By Date/Time of Most Recent in Subtree"
+msgstr "Per data/ora del più recente nel sottoalbero"
+
+#: core/sortorder.cpp:71
+#, kde-format
+msgid "By Subject"
+msgstr "Per oggetto"
+
+#: core/sortorder.cpp:72
+#, kde-format
+msgid "By Size"
+msgstr "Per dimensione"
+
+#: core/sortorder.cpp:73
+#, kde-format
+msgid "By Action Item Status"
+msgstr "Per stato del compito"
+
+#: core/sortorder.cpp:74
+#, kde-format
+msgid "By Unread Status"
+msgstr "Per stato non letto"
+
+#: core/sortorder.cpp:75
+#, kde-format
+msgid "By Important Status"
+msgstr "Per stato importante"
+
+#: core/sortorder.cpp:76
+#, kde-format
+msgid "By Attachment Status"
+msgstr "Per stato dell'allegato"
+
+#: core/sortorder.cpp:88 core/sortorder.cpp:130
+#, kde-format
+msgid "Least Recent on Top"
+msgstr "Meno recente in alto"
+
+#: core/sortorder.cpp:89 core/sortorder.cpp:131
+#, kde-format
+msgid "Most Recent on Top"
+msgstr "Più recente in alto"
+
+#: core/sortorder.cpp:93
+#, kde-format
+msgctxt "Sort order for messages"
+msgid "Ascending"
+msgstr "Crescente"
+
+#: core/sortorder.cpp:94
+#, kde-format
+msgctxt "Sort order for messages"
+msgid "Descending"
+msgstr "Decrescente"
+
+#: core/sortorder.cpp:105
+#, kde-format
+msgid "by Date/Time"
+msgstr "per data/ora"
+
+#: core/sortorder.cpp:108
+#, kde-format
+msgid "by Date/Time of Most Recent Message in Group"
+msgstr "per data/ora del messaggio più recente del gruppo"
+
+#: core/sortorder.cpp:112
+#, kde-format
+msgid "by Sender/Receiver"
+msgstr "per mittente/destinatario"
+
+#: core/sortorder.cpp:114
+#, kde-format
+msgid "by Sender"
+msgstr "per mittente"
+
+#: core/sortorder.cpp:116
+#, kde-format
+msgid "by Receiver"
+msgstr "per destinatario"
+
+#: core/sortorder.cpp:134
+#, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Ascending"
+msgstr "Crescente"
+
+#: core/sortorder.cpp:135
+#, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Descending"
+msgstr "Decrescente"
+
+#: core/theme.cpp:107
+#, kde-format
+msgctxt "Description of Type Subject"
+msgid "Subject"
+msgstr "Oggetto"
+
+#: core/theme.cpp:110
+#, kde-format
+msgctxt "Description of Type Date"
+msgid "Date"
+msgstr "Data"
+
+#: core/theme.cpp:116
+#, kde-format
+msgctxt "Description of Type Sender"
+msgid "Sender"
+msgstr "Mittente"
+
+#: core/theme.cpp:119
+#, kde-format
+msgctxt "Description of Type Receiver"
+msgid "Receiver"
+msgstr "Destinatario"
+
+#: core/theme.cpp:122
+#, kde-format
+msgctxt "Description of Type Size"
+msgid "Size"
+msgstr "Dimensione"
+
+#: core/theme.cpp:125
+#, kde-format
+msgid "Unread/Read Icon"
+msgstr "Icona non letto/letto"
+
+#: core/theme.cpp:128
+#, kde-format
+msgid "Attachment Icon"
+msgstr "Icona allegato"
+
+#: core/theme.cpp:131
+#, kde-format
+msgid "Replied/Forwarded Icon"
+msgstr "Icona risposto/inoltrato"
+
+#: core/theme.cpp:134
+#, kde-format
+msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
+msgstr "Icona combinata nuovo/non letto/letto/risposto/inoltrato"
+
+#: core/theme.cpp:137
+#, kde-format
+msgid "Action Item Icon"
+msgstr "Icona compito"
+
+#: core/theme.cpp:140
+#, kde-format
+msgid "Important Icon"
+msgstr "Icona importante"
+
+#: core/theme.cpp:143
+#, kde-format
+msgid "Group Header Label"
+msgstr "Etichetta intestazione gruppo"
+
+#: core/theme.cpp:146
+#, kde-format
+msgid "Spam/Ham Icon"
+msgstr "Icona spam/ham"
+
+#: core/theme.cpp:149
+#, kde-format
+msgid "Watched/Ignored Icon"
+msgstr "Icona sorvegliato/ignorato"
+
+#: core/theme.cpp:152
+#, kde-format
+msgid "Group Header Expand/Collapse Icon"
+msgstr "Icona espandi/riduci intestazione di gruppo"
+
+#: core/theme.cpp:155
+#, kde-format
+msgid "Encryption State Icon"
+msgstr "Icona stato cifratura"
+
+#: core/theme.cpp:158
+#, kde-format
+msgid "Signature State Icon"
+msgstr "Icona stato firma"
+
+#: core/theme.cpp:161
+#, kde-format
+msgid "Vertical Separation Line"
+msgstr "Linea di separazione verticale"
+
+#: core/theme.cpp:164
+#, kde-format
+msgid "Horizontal Spacer"
+msgstr "Spaziatore orizzontale"
+
+#: core/theme.cpp:167
+#, kde-format
+msgid "Max Date"
+msgstr "Data max"
+
+#: core/theme.cpp:170
+#, kde-format
+msgid "Message Tags"
+msgstr "Etichette messaggio"
+
+#: core/theme.cpp:173
+#, kde-format
+msgid "Note Icon"
+msgstr "Icona nota"
+
+#: core/theme.cpp:175
+#, kde-format
+msgid "Invitation Icon"
+msgstr "Icona di invito"
+
+#: core/theme.cpp:177
+#, kde-format
+msgctxt "Description of Type Folder"
+msgid "Folder"
+msgstr "Cartella"
+
+#: core/theme.cpp:179
+#, kde-format
+msgctxt "Description for an Unknown Type"
+msgid "Unknown"
+msgstr "Sconosciuto"
+
+#: core/theme.cpp:853
+#, kde-format
+msgid "Unread"
+msgstr "Non letto"
+
+#: core/theme.cpp:1047
+#, kde-format
+msgid "Never Show"
+msgstr "Non mostrare mai"
+
+#: core/theme.cpp:1047
+#, kde-format
+msgid "Always Show"
+msgstr "Mostra sempre"
+
+#: core/theme.cpp:1052
+#, kde-format
+msgid "Plain Rectangles"
+msgstr "Rettangoli semplici"
+
+#: core/theme.cpp:1053
+#, kde-format
+msgid "Plain Joined Rectangle"
+msgstr "Rettangoli uniti semplici"
+
+#: core/theme.cpp:1054
+#, kde-format
+msgid "Rounded Rectangles"
+msgstr "Rettangoli arrotondati"
+
+#: core/theme.cpp:1055
+#, kde-format
+msgid "Rounded Joined Rectangle"
+msgstr "Rettangoli uniti e arrotondati"
+
+#: core/theme.cpp:1056
+#, kde-format
+msgid "Gradient Rectangles"
+msgstr "Rettangoli con sfumature"
+
+#: core/theme.cpp:1057
+#, kde-format
+msgid "Gradient Joined Rectangle"
+msgstr "Rettangoli uniti e con sfumature"
+
+#: core/theme.cpp:1058
+#, kde-format
+msgid "Styled Rectangles"
+msgstr "Rettangoli secondo lo stile"
+
+#: core/theme.cpp:1059
+#, kde-format
+msgid "Styled Joined Rectangles"
+msgstr "Rettangoli uniti e secondo lo stile"
+
+#: core/view.cpp:682
+#, kde-format
+msgid "No result found"
+msgstr "Nessun risultato trovato"
+
+#: core/view.cpp:766
+#, kde-format
+msgid "Adjust Column Sizes"
+msgstr "Adatta dimensioni colonne"
+
+#: core/view.cpp:770
+#, kde-format
+msgid "Show Default Columns"
+msgstr "Mostra colonne predefinite"
+
+#: core/view.cpp:775
+#, kde-format
+msgid "Display Tooltips"
+msgstr "Mostra suggerimenti"
+
+#: core/view.cpp:2244 core/view.cpp:2248 core/widgets/searchlinestatus.cpp:324
+#, kde-format
+msgid "From"
+msgstr "Da"
+
+#: core/view.cpp:2245 core/view.cpp:2249
+#, kde-format
+msgctxt "Receiver of the email"
+msgid "To"
+msgstr "A"
+
+#: core/view.cpp:2246 core/view.cpp:2250
+#, kde-format
+msgid "Date"
+msgstr "Data"
+
+#: core/view.cpp:2264 core/view.cpp:2268
+#, kde-format
+msgid "Size"
+msgstr "Dimensione"
+
+#: core/view.cpp:2265 core/view.cpp:2269 utils/themeeditor.cpp:187
+#, kde-format
+msgid "Folder"
+msgstr "Cartella"
+
+#: core/view.cpp:2274 core/view.cpp:2276
+#, kde-format
+msgid "Note"
+msgstr "Nessuno"
+
+#: core/view.cpp:2283 core/view.cpp:2285
+#, kde-format
+msgid "Preview"
+msgstr "Anteprima"
+
+#: core/view.cpp:2302
+#, kde-format
+msgid "<b>%1</b> reply"
+msgid_plural "<b>%1</b> replies"
+msgstr[0] "<b>%1</b> risposta"
+msgstr[1] "<b>%1</b> risposte"
+
+#: core/view.cpp:2305
+#, kde-format
+msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
+msgstr[0] "<b>%1</b> messaggio nel sottoalbero (<b>%2</b> non letti)"
+msgstr[1] "<b>%1</b> messaggi nel sottoalbero (<b>%2</b> non letti)"
+
+#: core/view.cpp:2342
+#, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
+msgid "Threads started on %1"
+msgstr "Conversazioni iniziate in data %1"
+
+#: core/view.cpp:2344
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
+msgid "Threads started %1"
+msgstr "Conversazioni iniziate %1"
+
+#: core/view.cpp:2348
+#, kde-format
+msgid "Threads with messages dated %1"
+msgstr "Conversazioni con messaggi in data %1"
+
+#: core/view.cpp:2358
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
+msgid "Messages sent on %1"
+msgstr "Messaggi inviati in data %1"
+
+#: core/view.cpp:2361
+#, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
+msgid "Messages received on %1"
+msgstr "Messaggi ricevuti in data %1"
+
+#: core/view.cpp:2365
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
+msgid "Messages sent %1"
+msgstr "Messaggi inviati %1"
+
+#: core/view.cpp:2367
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
+msgid "Messages received %1"
+msgstr "Messaggi ricevuti %1"
+
+#: core/view.cpp:2376
+#, kde-format
+msgid "Threads started within %1"
+msgstr "Conversazioni iniziate nel periodo %1"
+
+#: core/view.cpp:2379
+#, kde-format
+msgid "Threads containing messages with dates within %1"
+msgstr "Conversazioni contenenti messaggi nel periodo %1"
+
+#: core/view.cpp:2387
+#, kde-format
+msgid "Messages sent within %1"
+msgstr "Messaggi inviati nel periodo %1"
+
+#: core/view.cpp:2389
+#, kde-format
+msgid "Messages received within %1"
+msgstr "Messaggi ricevuti nel periodo %1"
+
+#: core/view.cpp:2398
+#, kde-format
+msgid "Threads started by %1"
+msgstr "Conversazioni iniziate da %1"
+
+#: core/view.cpp:2401
+#, kde-format
+msgid "Threads with most recent message by %1"
+msgstr "Conversazioni con messaggio più recente di %1"
+
+#: core/view.cpp:2410 core/view.cpp:2434
+#, kde-format
+msgid "Messages sent to %1"
+msgstr "Messaggi inviati a %1"
+
+#: core/view.cpp:2412
+#, kde-format
+msgid "Messages sent by %1"
+msgstr "Messaggi inviati da %1"
+
+#: core/view.cpp:2415
+#, kde-format
+msgid "Messages received from %1"
+msgstr "Messaggi ricevuti da %1"
+
+#: core/view.cpp:2423
+#, kde-format
+msgid "Threads directed to %1"
+msgstr "Conversazioni indirizzate a %1"
+
+#: core/view.cpp:2426
+#, kde-format
+msgid "Threads with most recent message directed to %1"
+msgstr "Conversazioni il cui messaggio più recente è indirizzato a %1"
+
+#: core/view.cpp:2436
+#, kde-format
+msgid "Messages received by %1"
+msgstr "Messaggi ricevuti da %1"
+
+#: core/view.cpp:2462
+#, kde-format
+msgid "<b>%1</b> thread"
+msgid_plural "<b>%1</b> threads"
+msgstr[0] "<b>%1</b> conversazione"
+msgstr[1] "<b>%1</b> conversazioni"
+
+#: core/view.cpp:2467
+#, kde-format
+msgid "<b>%1</b> message (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
+msgstr[0] "<b>%1</b> messaggio (<b>%2</b> non letti)"
+msgstr[1] "<b>%1</b> messaggi (<b>%2</b> non letti)"
+
+#: core/widgetbase.cpp:186
+#, kde-format
+msgid "Any filter defined."
+msgstr "Qualsiasi filtro definito."
+
+#: core/widgetbase.cpp:186
+#, kde-format
+msgid "Create Filter"
+msgstr "Crea filtro"
+
+#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#, kde-format
+msgid "Theme"
+msgstr "Tema"
+
+#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
+#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
+#: utils/themeconfigbutton.cpp:46
+#, kde-format
+msgid "Configure..."
+msgstr "Configura..."
+
+#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#, kde-format
+msgid "Aggregation"
+msgstr "Aggregazione"
+
+#: core/widgetbase.cpp:581
+#, kde-format
+msgid "Message Sort Order"
+msgstr "Criterio di ordinamento messaggi"
+
+#: core/widgetbase.cpp:603
+#, kde-format
+msgid "Message Sort Direction"
+msgstr "Direzione ordinamento messaggi"
+
+#: core/widgetbase.cpp:620
+#, kde-format
+msgid "Group Sort Order"
+msgstr "Criterio di ordinamento gruppi"
+
+#: core/widgetbase.cpp:637
+#, kde-format
+msgid "Group Sort Direction"
+msgstr "Direzione ordinamento gruppi"
+
+#: core/widgetbase.cpp:652
+#, kde-format
+msgid "Folder Always Uses This Sort Order"
+msgstr "La cartella usa sempre questo criterio di ordinamento"
+
+#: core/widgets/configurefiltersdialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Filter"
+msgstr "Configura il filtro"
+
+#: core/widgets/configurefilterswidget.cpp:78
+#, kde-format
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: core/widgets/configurefilterswidget.cpp:81
+#, kde-format
+msgid "Do you want to delete this filter?"
+msgstr "Vuoi eliminare questo filtro?"
+
+#: core/widgets/configurefilterswidget.cpp:82
+#, kde-format
+msgid "Remove Filter"
+msgstr "Rimuovi filtro"
+
+#: core/widgets/filternamedialog.cpp:19
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Filter"
+msgstr "Modifica filtro"
+
+#: core/widgets/filternamewidget.cpp:31
+#, kde-format
+msgid "Name:"
+msgstr "Nome:"
+
+#: core/widgets/filtersavedmenu.cpp:16
+#, kde-format
+msgid "Save Filter..."
+msgstr "Salva filtro..."
+
+#: core/widgets/quicksearchline.cpp:40
+#, kde-format
+msgctxt "Search for messages."
+msgid "Search"
+msgstr "Cerca"
+
+#: core/widgets/quicksearchwarning.cpp:20
+#, kde-format
+msgid "The words less than 3 letters are ignored."
+msgstr "Le parole più corte di tre lettere sono ignorate."
+
+#: core/widgets/quicksearchwarning.cpp:21
+#, kde-format
+msgid "Do not show again"
+msgstr "Non mostrare di nuovo"
+
+#: core/widgets/searchcollectionindexingwarning.cpp:33
+#, kde-format
+msgid ""
+"Some of the search folders in this query are still being indexed or are "
+"excluded from indexing completely. The results below may be incomplete."
+msgstr ""
+"Alcune cartelle di ricerca in questa ricerca sono ancora in corso di "
+"indicizzazione o sono state completamente escluse dall'indicizzazione. I "
+"risultati di seguito potrebbero essere incompleti."
+
+#: core/widgets/searchlinestatus.cpp:78
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Prevent the quick search field from being cleared when changing folders"
+msgstr ""
+"Impedisce che il campo di ricerca veloce sia cancellato quando si cambia la "
+"cartella"
+
+#: core/widgets/searchlinestatus.cpp:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Clear the quick search field when changing folders"
+msgstr "Cancella il campo di ricerca veloce quando si cambia la cartella"
+
+#: core/widgets/searchlinestatus.cpp:101
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Toggle this button if you want to keep your quick search locked when moving "
+"to other folders or when narrowing the search by message status."
+msgstr ""
+"Commuta questo pulsante se vuoi mantenere bloccata la ricerca rapida quando "
+"ti sposti in altre cartelle o quando restringi la ricerca in base allo stato "
+"del messaggio."
+
+#: core/widgets/searchlinestatus.cpp:112
+#, kde-format
+msgid "Filter Mails by Status"
+msgstr "Filtra messaggi per stato"
+
+#: core/widgets/searchlinestatus.cpp:116
+#, kde-format
+msgid "Saved Filter"
+msgstr "Filtro salvato"
+
+#: core/widgets/searchlinestatus.cpp:215
+#, kde-format
+msgid "Clear Filter"
+msgstr "Pulisci filtro"
+
+#: core/widgets/searchlinestatus.cpp:221
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "Non letto"
+
+#: core/widgets/searchlinestatus.cpp:225
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "Risposto"
+
+#: core/widgets/searchlinestatus.cpp:229
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr "Inoltrato"
+
+#: core/widgets/searchlinestatus.cpp:233
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr "Importante"
+
+#: core/widgets/searchlinestatus.cpp:237
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr "Compito"
+
+#: core/widgets/searchlinestatus.cpp:241
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr "Sorvegliato"
+
+#: core/widgets/searchlinestatus.cpp:245
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr "Ignorato"
+
+#: core/widgets/searchlinestatus.cpp:249
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr "Ha allegati"
+
+#: core/widgets/searchlinestatus.cpp:253
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr "Ha un invito"
+
+#: core/widgets/searchlinestatus.cpp:257
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr "Spam"
+
+#: core/widgets/searchlinestatus.cpp:261
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr "Ham"
+
+#: core/widgets/searchlinestatus.cpp:271
+#, kde-format
+msgid "Full Message"
+msgstr "Messaggio completo"
+
+#: core/widgets/searchlinestatus.cpp:278
+#, kde-format
+msgid "Body"
+msgstr "Corpo"
+
+#: core/widgets/searchlinestatus.cpp:283
+#, kde-format
+msgid "Subject"
+msgstr "Oggetto"
+
+#: core/widgets/searchlinestatus.cpp:294
+#, kde-format
+msgid "BCC"
+msgstr "CCN"
+
+#: core/widgets/searchlinestatus.cpp:322
+#, kde-format
+msgid "To"
+msgstr "A"
+
+#: core/widgets/searchlinestatus.cpp:404
+#, kde-format
+msgid "Clear History"
+msgstr "Cancella cronologia"
+
+#: core/widgets/tablockedwarning.cpp:17
+#, kde-format
+msgid "Current Tab is locked."
+msgstr "La scheda corrente è bloccata."
+
+#: core/widgets/tablockedwarning.cpp:17
+#, kde-format
+msgid "(Unlock it)"
+msgstr "(sbloccala)"
+
+#: messagelistutil.cpp:104
+#, kde-format
+msgid "Sorting"
+msgstr "Ordinamento"
+
+#: pane.cpp:123
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open a new tab"
+msgstr "Apri una nuova scheda"
+
+#: pane.cpp:125
+#, kde-format
+msgid "New tab"
+msgstr "Nuova scheda"
+
+#: pane.cpp:135
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close the current tab"
+msgstr "Chiudi la scheda corrente"
+
+#: pane.cpp:137
+#, kde-format
+msgid "Close tab"
+msgstr "Chiudi scheda"
+
+#: pane.cpp:179
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "Attiva la scheda %1"
+
+#: pane.cpp:199
+#, kde-format
+msgid "Show Quick Search Bar"
+msgstr "Mostra la barra di ricerca rapida"
+
+#: pane.cpp:220
+#, kde-format
+msgid "Message List"
+msgstr "Elenco dei messaggi"
+
+#: pane.cpp:226
+#, kde-format
+msgid "Create New Tab"
+msgstr "Crea una nuova scheda"
+
+#: pane.cpp:257
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "Attiva scheda successiva"
+
+#: pane.cpp:267
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "Attiva scheda precedente"
+
+#: pane.cpp:279
+#, kde-format
+msgid "Move Tab Left"
+msgstr "Sposta la scheda a sinistra"
+
+#: pane.cpp:287
+#, kde-format
+msgid "Move Tab Right"
+msgstr "Sposta la scheda a destra"
+
+#: pane.cpp:297
+#, kde-format
+msgid "Close Tab"
+msgstr "Chiudi scheda"
+
+#: pane.cpp:517 pane.cpp:798
+#, kde-format
+msgctxt "@title:tab Empty messagelist"
+msgid "Empty"
+msgstr "Vuota"
+
+#: pane.cpp:702
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close Tab"
+msgstr "Chiudi scheda"
+
+#: pane.cpp:705
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close All Other Tabs"
+msgstr "Chiudi tutte le altre schede"
+
+#: pane.cpp:708
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Unlock Tab"
+msgstr "Sblocca scheda"
+
+#: pane.cpp:708
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Lock Tab"
+msgstr "Blocca scheda"
+
+#: storagemodel.cpp:219
+#, kde-format
+msgctxt "displayed as subject when the subject of a mail is empty"
+msgid "No Subject"
+msgstr "Senza oggetto"
+
+#: storagemodel.cpp:220
+#, kde-format
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr "Sconosciuto"
+
+#: utils/aggregationeditor.cpp:31
+#, kde-format
+msgid "Groups && Threading"
+msgstr "Gruppi e conversazioni"
+
+#: utils/aggregationeditor.cpp:35
+#, kde-format
+msgid "Grouping:"
+msgstr "Raggruppamento:"
+
+#: utils/aggregationeditor.cpp:41
+#, kde-format
+msgid "Group expand policy:"
+msgstr "Politica di espansione gruppi:"
+
+#: utils/aggregationeditor.cpp:45
+#, kde-format
+msgid "Threading:"
+msgstr "Raggruppamento per conversazione:"
+
+#: utils/aggregationeditor.cpp:51
+#, kde-format
+msgid "Thread leader:"
+msgstr "Messaggio di riferimento conversazione:"
+
+#: utils/aggregationeditor.cpp:55
+#, kde-format
+msgid "Thread expand policy:"
+msgstr "Politica di espansione conversazioni:"
+
+#: utils/aggregationeditor.cpp:64
+#, kde-format
+msgctxt "@title:tab Advanced settings tab for aggregation mode"
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: utils/aggregationeditor.cpp:68
+#, kde-format
+msgid "Fill view strategy:"
+msgstr "Strategia riempimento vista:"
+
+#: utils/configureaggregationsdialog.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Customize Message Aggregation Modes"
+msgstr "Personalizza modalità di aggregazione dei messaggi"
+
+#: utils/configureaggregationsdialog.cpp:118
+#: utils/configureaggregationsdialog.cpp:357
+#, kde-format
+msgid "New Aggregation"
+msgstr "Nuova aggregazione"
+
+#: utils/configureaggregationsdialog.cpp:126
+#, kde-format
+msgid "Clone Aggregation"
+msgstr "Duplica aggregazione"
+
+#: utils/configureaggregationsdialog.cpp:139
+#, kde-format
+msgid "Export Aggregation..."
+msgstr "Esporta aggregazione..."
+
+#: utils/configureaggregationsdialog.cpp:146
+#, kde-format
+msgid "Import Aggregation..."
+msgstr "Importa aggregazione..."
+
+#: utils/configureaggregationsdialog.cpp:157
+#, kde-format
+msgid "Delete Aggregation"
+msgstr "Elimina aggregazione"
+
+#: utils/configureaggregationsdialog.cpp:340
+#, kde-format
+msgid "Unnamed Aggregation"
+msgstr "Aggregazione senza nome"
+
+#: utils/configureaggregationsdialog.cpp:409
+#, kde-format
+msgid "Import Aggregation"
+msgstr "Importa aggregazione"
+
+#: utils/configureaggregationsdialog.cpp:442
+#, kde-format
+msgid "Export Aggregation"
+msgstr "Esporta aggregazione"
+
+#: utils/configureaggregationsdialog.cpp:442
+#: utils/configurethemesdialog.cpp:465
+#, kde-format
+msgid "All Files (*)"
+msgstr "Tutti i file (*)"
+
+#: utils/configurethemesdialog.cpp:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Customize Themes"
+msgstr "Personalizza temi"
+
+#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#, kde-format
+msgid "New Theme"
+msgstr "Nuovo tema"
+
+#: utils/configurethemesdialog.cpp:122
+#, kde-format
+msgid "Clone Theme"
+msgstr "Duplica tema"
+
+#: utils/configurethemesdialog.cpp:135
+#, kde-format
+msgid "Export Theme..."
+msgstr "Esporta tema..."
+
+#: utils/configurethemesdialog.cpp:142
+#, kde-format
+msgid "Import Theme..."
+msgstr "Importa tema..."
+
+#: utils/configurethemesdialog.cpp:153
+#, kde-format
+msgid "Delete Theme"
+msgstr "Elimina tema"
+
+#: utils/configurethemesdialog.cpp:332
+#, kde-format
+msgid "Unnamed Theme"
+msgstr "Tema senza nome"
+
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#, kde-format
+msgid "New Column"
+msgstr "Nuova colonna"
+
+#: utils/configurethemesdialog.cpp:404
+#, kde-format
+msgid "Do you want to delete selected themes?"
+msgstr "Vuoi eliminare i temi selezionati?"
+
+#: utils/configurethemesdialog.cpp:404
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr "Vuoi eliminare «%1»?"
+
+#: utils/configurethemesdialog.cpp:405
+#, kde-format
+msgctxt "@title:window"
+msgid "Delete Theme"
+msgstr "Elimina tema"
+
+#: utils/configurethemesdialog.cpp:431
+#, kde-format
+msgid "Import Theme"
+msgstr "Importa tema"
+
+#: utils/configurethemesdialog.cpp:465
+#, kde-format
+msgid "Export Theme"
+msgstr "Esporta tema"
+
+#: utils/optionseteditor.cpp:27
+#, kde-format
+msgctxt "@title:tab General options of a view mode"
+msgid "General"
+msgstr "Generale"
+
+#: utils/optionseteditor.cpp:31
+#, kde-format
+msgctxt "@label:textbox Name of the option"
+msgid "Name:"
+msgstr "Nome:"
+
+#: utils/optionseteditor.cpp:40
+#, kde-format
+msgctxt "@label:textbox Description of the option"
+msgid "Description:"
+msgstr "Descrizione:"
+
+#: utils/themeeditor.cpp:69
+#, kde-format
+msgctxt "@label:textbox Property name"
+msgid "Name:"
+msgstr "Nome:"
+
+#: utils/themeeditor.cpp:73
+#, kde-format
+msgid "The label that will be displayed in the column header."
+msgstr "L'etichetta che sarà mostrata nell'intestazione di colonna."
+
+#: utils/themeeditor.cpp:76
+#, kde-format
+msgid "Header click sorts messages:"
+msgstr "Un clic sull'intestazione ordina i messaggi:"
+
+#: utils/themeeditor.cpp:80
+#, kde-format
+msgid "The sorting order that clicking on this column header will switch to."
+msgstr ""
+"Il criterio di ordinamento che viene impostato facendo clic "
+"sull'intestazione di questa colonna."
+
+#: utils/themeeditor.cpp:83
+#, kde-format
+msgid "Visible by default"
+msgstr "Visibile in modo predefinito"
+
+#: utils/themeeditor.cpp:84
+#, kde-format
+msgid "Check this if this column should be visible when the theme is selected."
+msgstr ""
+"Marca la casella se questa colonna deve essere visibile quando il tema è "
+"selezionato."
+
+#: utils/themeeditor.cpp:87
+#, kde-format
+msgid "Contains \"Sender or Receiver\" field"
+msgstr "Contiene campo \"Mittente o destinatario\""
+
+#: utils/themeeditor.cpp:88
+#, kde-format
+msgid ""
+"Check this if this column label should be updated depending on the folder "
+"\"inbound\"/\"outbound\" type."
+msgstr ""
+"Marca la casella se l'etichetta della colonna deve essere aggiornata in base "
+"al tipo \"in arrivo\"/\"in uscita\" della cartella."
+
+#: utils/themeeditor.cpp:108
+#, kde-format
+msgid "Unnamed Column"
+msgstr "Colonna senza nome"
+
+#: utils/themeeditor.cpp:173
+#, kde-format
+msgid "Message Group"
+msgstr "Gruppo messaggio"
+
+#: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
+#, kde-format
+msgid ""
+"Very long subject very long subject very long subject very long subject very "
+"long subject very long"
+msgstr ""
+"Oggetto molto lungo oggetto molto lungo oggetto molto lungo oggetto molto "
+"lungo oggetto molto lungo"
+
+#: utils/themeeditor.cpp:192
+#, kde-format
+msgid "Sample Tag 1"
+msgstr "Etichetta di esempio 1"
+
+#: utils/themeeditor.cpp:193
+#, kde-format
+msgid "Sample Tag 2"
+msgstr "Etichetta di esempio 2"
+
+#: utils/themeeditor.cpp:194
+#, kde-format
+msgid "Sample Tag 3"
+msgstr "Etichetta di esempio 3"
+
+#: utils/themeeditor.cpp:409
+#, kde-format
+msgctxt "Indicates whether or not a header label is visible"
+msgid "Visible"
+msgstr "Visibile"
+
+#: utils/themeeditor.cpp:851
+#, kde-format
+msgctxt "@action:inmenu soften the text color"
+msgid "Soften"
+msgstr "Sfoca"
+
+#: utils/themeeditor.cpp:858
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Bold"
+msgstr "Grassetto"
+
+#: utils/themeeditor.cpp:862
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Italic"
+msgstr "Corsivo"
+
+#: utils/themeeditor.cpp:869
+#, kde-format
+msgid "Font"
+msgstr "Carattere"
+
+#: utils/themeeditor.cpp:877
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Default"
+msgstr "Predefinito"
+
+#: utils/themeeditor.cpp:882
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Custom..."
+msgstr "Personalizzato..."
+
+#: utils/themeeditor.cpp:890
+#, kde-format
+msgid "Foreground Color"
+msgstr "Colore di primo piano"
+
+#: utils/themeeditor.cpp:899
+#, kde-format
+msgctxt ""
+"Hide a mark if the mail does not have the attribute, e.g. Important mark on "
+"a non important mail"
+msgid "Hide"
+msgstr "Nascondi"
+
+#: utils/themeeditor.cpp:906
+#, kde-format
+msgctxt ""
+"Keep a empty space in the list if the mail does not have the attribute, e.g. "
+"Important mark on a non important mail"
+msgid "Keep Empty Space"
+msgstr "Mostra uno spazio vuoto"
+
+#: utils/themeeditor.cpp:913
+#, kde-format
+msgctxt ""
+"Show the icon softened in the list if the mail does not have the attribute, "
+"e.g. Important mark on a non important mail"
+msgid "Keep Softened Icon"
+msgstr "Mostra l'icona sfocata"
+
+#: utils/themeeditor.cpp:921
+#, kde-format
+msgid "When Disabled"
+msgstr "Se disabilitato"
+
+#: utils/themeeditor.cpp:927
+#, kde-format
+msgid "Group Header"
+msgstr "Intestazione di gruppo"
+
+#: utils/themeeditor.cpp:934
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "None"
+msgstr "Nessuno"
+
+#: utils/themeeditor.cpp:939
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Automatic"
+msgstr "Automatico"
+
+#: utils/themeeditor.cpp:944
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Custom..."
+msgstr "Personalizzato..."
+
+#: utils/themeeditor.cpp:952
+#, kde-format
+msgid "Background Color"
+msgstr "Colore di sfondo"
+
+#: utils/themeeditor.cpp:972
+#, kde-format
+msgid "Background Style"
+msgstr "Stile sfondo"
+
+#: utils/themeeditor.cpp:1158
+#, kde-format
+msgid "Column Properties..."
+msgstr "Proprietà della colonna..."
+
+#: utils/themeeditor.cpp:1161
+#, kde-format
+msgid "Add Column..."
+msgstr "Aggiungi colonna..."
+
+#: utils/themeeditor.cpp:1164
+#, kde-format
+msgid "Delete Column"
+msgstr "Elimina colonna"
+
+#: utils/themeeditor.cpp:1170
+#, kde-format
+msgid "Move Column to Left"
+msgstr "Sposta la colonna a sinistra"
+
+#: utils/themeeditor.cpp:1174
+#, kde-format
+msgid "Move Column to Right"
+msgstr "Sposta la colonna a destra"
+
+#: utils/themeeditor.cpp:1223
+#, kde-format
+msgid "Add New Column"
+msgstr "Aggiungi nuova colonna"
+
+#: utils/themeeditor.cpp:1247
+#, kde-format
+msgid "Column Properties"
+msgstr "Proprietà colonna"
+
+#: utils/themeeditor.cpp:1289
+#, kde-format
+msgid "Appearance"
+msgstr "Aspetto"
+
+#: utils/themeeditor.cpp:1293
+#, kde-format
+msgid "Content Items"
+msgstr "Elementi contenuto"
+
+#: utils/themeeditor.cpp:1425
+#, kde-format
+msgid ""
+"Right click on the header to add or modify columns. Drag the content items "
+"and drop them on the columns in order to compose your theme. Right click on "
+"the items inside the view for more options."
+msgstr ""
+"Fai clic col pulsante destro sull'intestazione per aggiungere o modificare "
+"colonne. Trascina i vari contenuti sulle colonne per comporre il tema. Fai "
+"clic con il pulsante destro sugli elementi all'interno della vista per "
+"ulteriori opzioni."
+
+#: utils/themeeditor.cpp:1435
+#, kde-format
+msgctxt "@title:tab Advanced theme settings"
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: utils/themeeditor.cpp:1439
+#, kde-format
+msgid "Header:"
+msgstr "Intestazione:"
+
+# XXX Icona o icone? ML
+#: utils/themeeditor.cpp:1445
+#, kde-format
+msgid "Icon size:"
+msgstr "Dimensione icona:"
+
+#: utils/themeeditor.cpp:1451
+#, kde-format
+msgctxt "suffix in a spinbox"
+msgid " pixel"
+msgid_plural " pixels"
+msgstr[0] " pixel"
+msgstr[1] " pixel"
+
+#: widget.cpp:220
+#, kde-format
+msgctxt "Item in list of Akonadi tags, to show all e-mails"
+msgid "All"
+msgstr "Tutti"
+
+#: widget.cpp:345
+#, kde-format
+msgid "Collapse Group"
+msgstr "Riduci gruppo"
+
+#: widget.cpp:348
+#, kde-format
+msgid "Expand Group"
+msgstr "Espandi gruppo"
+
+#: widget.cpp:354
+#, kde-format
+msgid "Expand All Groups"
+msgstr "Espandi tutti i gruppi"
+
+#: widget.cpp:357
+#, kde-format
+msgid "Collapse All Groups"
+msgstr "Riduci tutti i gruppi"
+
+#: widget.cpp:413
+#, kde-format
+msgid "&Move Here"
+msgstr "&Sposta qui"
+
+#: widget.cpp:414
+#, kde-format
+msgid "&Copy Here"
+msgstr "&Copia qui"
+
+#: widget.cpp:416
+#, kde-format
+msgid "C&ancel"
+msgstr "&Annulla"
+
+#~ msgid "Rename..."
+#~ msgstr "Rinomina..."
+
+#~ msgid "Rename Filter"
+#~ msgstr "Rinomina filtro"
+
+#~ msgid "name"
+#~ msgstr "nome"
+
+#, fuzzy
+#~| msgid "Filter Name:"
+#~ msgid "Filter Name"
+#~ msgstr "Nome del filtro:"
+
+#~ msgid "Show close button on each tab"
+#~ msgstr "Mostra i pulsanti di chiusura su ciascuna scheda"
+
+#~ msgid "Enable this option if you want to have a close button on each tab."
+#~ msgstr ""
+#~ "Abilita questa opzione se vuoi avere il pulsante di chiusura in ogni "
+#~ "scheda."
+
+#~ msgid "Hide tab bar when only one tab is open"
+#~ msgstr "Nascondi la barra delle schede quando è aperta una sola scheda"
+
+#~ msgid ""
+#~ "With this option enabled the tab bar will be displayed only when there "
+#~ "are two or more tabs. With this option disabled the tab bar will be "
+#~ "always shown. When the tab bar is hidden you can always open a folder in "
+#~ "a new tab by middle-clicking it."
+#~ msgstr ""
+#~ "Se questa opzione è abilitata, la barra delle schede verrà mostrata solo "
+#~ "in presenza di due o più schede. Se è disabilitata, la barra delle schede "
+#~ "verrà sempre mostrata. Quando la barra delle schede è nascosta puoi "
+#~ "sempre aprire una cartella in una nuova scheda facendo clic su di essa "
+#~ "con il tasto centrale."
+
+#~ msgid "bcc"
+#~ msgstr "CCN"
+
+#~ msgid "Quick Filter:"
+#~ msgstr "Filtro rapido:"
+
+#~ msgid "More..."
+#~ msgstr "Altro..."
+
+#~ msgctxt "@action:inmenu Font setting"
+#~ msgid "Default"
+#~ msgstr "Predefinito"
+
+#~ msgctxt "@action:inmenu Font setting"
+#~ msgid "Custom..."
+#~ msgstr "Personalizzato..."
+
+#~ msgid "Open Full Search"
+#~ msgstr "Apri ricerca completa"
+
+#~ msgid "Any Status"
+#~ msgstr "Ogni stato"
+
+#~ msgid "Fancy"
+#~ msgstr "Elegante"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Unlock search"
+#~ msgstr "Sblocca ricerca"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Lock search"
+#~ msgstr "Blocca ricerca"
+
+#~ msgid "Expand Threads With New Messages"
+#~ msgstr "Espandi conversazioni con nuovi messaggi"
+
+#~ msgctxt "Status of an item"
+#~ msgid "New"
+#~ msgstr "Nuovo"
+
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "New"
+#~ msgstr "Nuovo"

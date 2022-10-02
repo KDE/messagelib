@@ -1,0 +1,550 @@
+# translation of libmessageviewer.po to Maithili
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Rajesh Ranjan <rajesh672@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessageviewer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2010-09-24 16:29+0530\n"
+"Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
+"Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
+"Language: mai\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "बेनाम"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr ""
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr ""
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr ""
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr ""
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr ""
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr ""
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "त्रुटि: %1"
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "Encapsulated message"
+#~ msgstr "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "End of encapsulated message"
+#~ msgstr "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "Decrypt Message"
+#~ msgstr "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "Encrypted message"
+#~ msgstr "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "End of encrypted message"
+#~ msgstr "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Hide Details"
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Hide Details"
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "विवरणसभ नुकाबू"
+
+#, fuzzy
+#~| msgid "Hide Details"
+#~ msgid "Invalid signature."
+#~ msgstr "विवरणसभ नुकाबू"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Signature is valid."
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Unknown signature state"
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Show Details"
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "End of signed message"
+#~ msgstr "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "No signature found"
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Error verifying the signature"
+#~ msgstr "संलग्नक सहेजू"
+
+#, fuzzy
+#~| msgid "No description available"
+#~ msgid "No status information available."
+#~ msgstr "केओ विवरण उपलब्ध नहि"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Good signature."
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Hide Details"
+#~ msgid "The signature has expired."
+#~ msgstr "विवरणसभ नुकाबू"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "चेतावनी:"
+
+#, fuzzy
+#~| msgid "Date: "
+#~ msgid "Date:"
+#~ msgstr "दिनांक: "
+
+#, fuzzy
+#~| msgctxt "Status of message unknown."
+#~| msgid "(unknown)"
+#~ msgctxt "Unknown date"
+#~ msgid "Unknown"
+#~ msgstr "(अज्ञात)"
+
+#~ msgid "Date: "
+#~ msgstr "दिनांक: "
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "Edit Attachment"
+#~ msgstr "संलग्नकः"
+
+#~ msgid "Edit"
+#~ msgstr "संपादन"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Details:"
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Show always"
+#~ msgstr "विवरण देखाबू"
+
+#~ msgid "Options"
+#~ msgstr "विकल्प"
+
+#~ msgid ""
+#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr ""
+#~ "फाइल नाम \"%1\"  पहिने सँ अस्तित्व मे अछि. की अहाँ एकर उप्पर मेटाकए लिखनाइ चाहब?"
+
+#~ msgid "Overwrite File?"
+#~ msgstr "फाइल केर उप्पर लिखू?"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Save Attachments To"
+#~ msgstr "संलग्नक सहेजू"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgctxt "filename for an unnamed attachment"
+#~ msgid "attachment.1"
+#~ msgstr "संलग्नकः"
+
+#~ msgid "Save Attachment"
+#~ msgstr "संलग्नक सहेजू"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgctxt "filename for the %1-th unnamed attachment"
+#~ msgid "attachment.%1"
+#~ msgstr "संलग्नकः"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Keep Encryption"
+#~ msgstr "विवरण"
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "message"
+#~ msgstr "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "Save Message"
+#~ msgid_plural "Save Messages"
+#~ msgstr[0] "एहन सहेजू..."
+#~ msgstr[1] "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "We cannot save message."
+#~ msgstr "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "&Open with '%1'"
+#~ msgid "Open &with %1"
+#~ msgstr " '%1' केर सँग खोलू (&O)"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgid "Edit with:"
+#~ msgstr "संपादन"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Unable to edit attachment"
+#~ msgstr "संलग्नक सहेजू"
+
+#~ msgid "Description"
+#~ msgstr "विवरण"
+
+#~ msgid "Type"
+#~ msgstr "प्रकार"
+
+#~ msgid "Size"
+#~ msgstr "आकार"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "बेनाम प्लगइन"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Show attachment list."
+#~ msgstr "संलग्नक सहेजू"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Hide attachment list."
+#~ msgstr "संलग्नक सहेजू"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Open in Address Book"
+#~ msgstr "लिंक पता नकल करू"
+
+#, fuzzy
+#~| msgid "Copy Email Address"
+#~ msgid "&Copy Email Address"
+#~ msgstr "इ-मेल पता नकल करू"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "Lookup the contact in KAddressbook"
+#~ msgstr "लिंक पता नकल करू"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "Attachment: %1"
+#~ msgstr "संलग्नकः"
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "Encapsulated Message (Subject: %1)"
+#~ msgstr "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Unnamed attachment"
+#~ msgstr "संलग्नक सहेजू"
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Opening URL..."
+#~ msgstr "एकरासँ खोलू…"
+
+#~ msgid "Execute"
+#~ msgstr "चलाउ"
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "Loading message..."
+#~ msgstr "एहन सहेजू..."
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Delete Attachment"
+#~ msgstr "संलग्नक सहेजू"
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "के सँग खोलू...(&O)"
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "के सँग खोलू...(&O)"
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "खोलू"
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "दृश्य"
+
+#~ msgid "Save As..."
+#~ msgstr "एहन सहेजू..."
+
+#~ msgid "Copy"
+#~ msgstr "कापी करू"
+
+#~ msgid "Properties"
+#~ msgstr "गुण"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "View Attachment: %1"
+#~ msgstr "संलग्नकः"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "संलग्नकः"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "नुकाबू (&H)"
+
+#~ msgid "Auto"
+#~ msgstr "स्वचालित"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "लिंक पता नकल करू"
+
+#, fuzzy
+#~| msgctxt "to open"
+#~| msgid "Open"
+#~ msgid "Open URL"
+#~ msgstr "खोलू"
+
+#, fuzzy
+#~| msgctxt "Mail message as shown, in HTML format"
+#~| msgid "HTML Source"
+#~ msgid "&View Source"
+#~ msgstr "HTML मूल"
+
+#, fuzzy
+#~| msgid "Save As..."
+#~ msgid "&Save message..."
+#~ msgstr "एहन सहेजू..."
+
+#~ msgid "Save &As..."
+#~ msgstr "एहिना सहेजू... (&A)..."
+
+#~ msgid "Open With..."
+#~ msgstr "एकरासँ खोलू…"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Save All Attachments..."
+#~ msgstr "संलग्नक सहेजू"
+
+#~ msgid "Copy Email Address"
+#~ msgstr "इ-मेल पता नकल करू"
+
+#~ msgid "Attachments:"
+#~ msgstr "संलग्नकः"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Open Attachment?"
+#~ msgstr "संलग्नक सहेजू"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr " '%1' केर सँग खोलू (&O)"
+
+#~ msgid "&Open With..."
+#~ msgstr "के सँग खोलू...(&O)"
+
+#~ msgid "Do not ask again"
+#~ msgstr "फिनु नहि पूछू"
+
+#, fuzzy
+#~| msgctxt "Mail message as shown, in HTML format"
+#~| msgid "HTML Source"
+#~ msgctxt "Unchanged mail message"
+#~ msgid "Raw Source"
+#~ msgstr "HTML मूल"
+
+#~ msgctxt "Mail message as shown, in HTML format"
+#~ msgid "HTML Source"
+#~ msgstr "HTML मूल"
+
+#~ msgid "&Import"
+#~ msgstr "आयात करू (&I)"
+
+#, fuzzy
+#~| msgctxt "Find and go to the next search match"
+#~| msgid "Next"
+#~ msgid "&Next Card"
+#~ msgstr "अगिला"
+
+#, fuzzy
+#~| msgctxt "Find and go to the previous search match"
+#~| msgid "Previous"
+#~ msgid "&Previous Card"
+#~ msgstr "पछिला"
+
+#~ msgid "Close"
+#~ msgstr "बन्न करू"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "खोजू (&i):"
+
+#~ msgid "Text to search for"
+#~ msgstr "खोजल जाएबला पाठ"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "अगिला"
+
+#~ msgid "Jump to next match"
+#~ msgstr "अगिला मेल-खाएत पाठ मे जाउ"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "पछिला"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "पिछले मेल-खाएत पाठ मे जाउ"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "खोजक आचरण बदलू"
+
+#~ msgid "Case sensitive"
+#~ msgstr "स्थितिक प्रति संवेदनशील"
+
+#, fuzzy
+#~| msgctxt "Status of message unknown."
+#~| msgid "(unknown)"
+#~ msgid "Unknown"
+#~ msgstr "(अज्ञात)"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copy url"
+#~ msgstr "कापी करू"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copy filter"
+#~ msgstr "कापी करू"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Add subscription"
+#~ msgstr "विवरण"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Show List"
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Not subscription added..."
+#~ msgstr "विवरण"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Remove subscription"
+#~ msgstr "विवरण"
+
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "(अज्ञात)"
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Open &editor..."
+#~ msgstr "एकरासँ खोलू…"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "विवरण देखाबू"
+
+#~ msgid "File Already Exists"
+#~ msgstr "फाइल पहिने सँ अस्तित्व मे अछि. "
+
+#, fuzzy
+#~| msgid ""
+#~| "A file named \"%1\" already exists. Are you sure you want to overwrite "
+#~| "it?"
+#~ msgid ""
+#~ "A file named <filename>%1</filename> already exists. Do you want to "
+#~ "overwrite it?"
+#~ msgstr ""
+#~ "फाइल नाम \"%1\"  पहिने सँ अस्तित्व मे अछि. की अहाँ एकर उप्पर मेटाकए लिखनाइ चाहब?"
+
+#~ msgid "&Overwrite"
+#~ msgstr "मेटाकए लिखू (&O)"

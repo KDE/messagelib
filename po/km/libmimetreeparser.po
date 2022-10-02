@@ -1,0 +1,1998 @@
+# translation of libmessageviewer.po to Khmer
+# Auk Piseth <piseth_dv@khmeros.info>, 2008, 2009.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2008, 2009, 2012.
+# Sophea <sophea@khmeros.info>, 2012.
+# sutha <sutha@khmeros.info>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessageviewer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2012-12-31 11:12+0700\n"
+"Last-Translator: sutha <sutha@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: WordForge 0.8 RC1\n"
+"X-Language: km-KH\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "គ្មានឈ្មោះ"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "ខុស​កម្មវិធី​ជំនួយ Crypto ។"
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "គ្មាន​រកឃើញ​កម្មវិធី​ជំនួយ​​ដែល​សមរម្យ​ឡើយ ។"
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "រក​មិនឃើញ​​កម្មវិធី​ជំនួយ​ %1 ឡើយ ។"
+
+#: src/messagepart.cpp:798
+#, fuzzy, kde-format
+#| msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "កម្មវិធី​ជំនួយ Crypto \"%1\" មិនអាច​ផ្ទៀងផ្ទាត់​ហត្ថលេខា​បានឡើយ ។"
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"សារ​ត្រូវបាន​ចុះហត្ថលេខា​ ប៉ុន្តែ​សុពលភាព​របស់​ហត្ថលេខា​​មិនអាច​ត្រូវបាន​ផ្ទៀងផ្ទាត់​បានទេ ។<br /"
+">មូលហេតុ ៖ %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "កម្មវិធី​ជំនួយ Crypto \"%1\" មិនអាច​ឌិគ្រីប​សារ​បានឡើយ ។"
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "កម្មវិធី​ជំនួយ Crypto \"%1\" មិន​អាច​ឌិគ្រីប​ទិន្នន័យ​បាន​ឡើយ ។"
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "​កំហុស ៖ %1"
+
+#, fuzzy
+#~| msgid "Sorry, certificate could not be imported.<br />Reason: %1"
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "សូម​អភ័យ​ទោស វិញ្ញាបនបត្រ​មិន​អាច​ត្រូវ​បាន​នាំចូល​បានទេ ។<br />មូលហេតុ ៖ %1"
+
+#~ msgid "Reason: %1"
+#~ msgstr "ហេតុផល ៖ %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "សូម​ទោស គ្មាន​វិញ្ញាបនបត្រ​ដែល​បាន​រកឃើញ​នៅក្នុង​សារនេះ​ទេ ។"
+
+#~ msgid "Certificate import status:"
+#~ msgstr "ស្ថានភាព​នាំចូល​វិញ្ញាបនបត្រ ៖"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "វិញ្ញាបនបត្រ​ថ្មី %1 ត្រូវ​បាន​នាំចូល ។"
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "វិញ្ញាបនបត្រ %1 មិន​ត្រូវ​បាន​ផ្លាស់ប្ដូរ ។"
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "កូនសោ​សម្ងាត់​ថ្មី %1 ត្រូវ​បាន​នាំចូល ។"
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "កូនសោ​សម្ងាត់ %1 មិន​ត្រូវ​បាន​ផ្លាស់ប្ដូរ ។"
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr "សូម​ទោស​ មិនមាន​សេចក្ដីលម្អិត​នៅលើ​ការ​នាំចូល​វិញ្ញាបនបត្រឡើយ ។"
+
+#~ msgid "Certificate import details:"
+#~ msgstr "សេចក្ដី​លម្អិត​អំពី​ការនាំចូល​វិញ្ញាបនបត្រ ៖"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "បាន​បរាជ័យ ៖ %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "សារ​ដែល​បាន​ស្រោប"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "ខាងចុង​សារ​ដែល​បាន​ស្រោប"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "សារ​នេះ​ត្រូវ​បាន​អ៊ិនគ្រីប ។"
+
+#~ msgid "Decrypt Message"
+#~ msgstr "ឌិគ្រីប​សារ"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "សូម​រង់​ចាំ​ខណៈ​ពេល​សារ​កំពុង​ត្រូវ​ឌិគ្រីប​​..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "សារ​ដែល​បាន​អ៊ិនគ្រីប"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "សារ​ដែល​បាន​អ៊ិនគ្រីប (មិនអាច​ធ្វើការ​ឌិគ្រីប​បាន)"
+
+#, fuzzy
+#~| msgid "Reason: %1"
+#~ msgid "Reason: "
+#~ msgstr "ហេតុផល ៖ %1"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "មិនអាច​ឌិគ្រីប​ទិន្នន័យ​បានទេ ។"
+
+#~ msgid "End of encrypted message"
+#~ msgstr "ខាងចុង​សារដែលបាន​អ៊ិនគ្រីប"
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~| "HTML code is shown. If you trust the sender of this message then you can "
+#~| "activate formatted HTML display for this message <a href=\"kmail:showHTML"
+#~| "\">by clicking here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~ "HTML code is shown. If you trust the sender of this message then you can "
+#~ "activate formatted HTML display for this message <a href=kmail:"
+#~ "showHTML>by clicking here</a>."
+#~ msgstr ""
+#~ "<b>ចំណាំ ៖</b> នេះ​ជា​សារ​ HTML ។ ដោយសារ​ហេតុផល​សុវត្ថិភាព គឺ​មានតែ​កូដ​ HTML ដើម​ប៉ុណ្ណោះ​ដែល​"
+#~ "ត្រូវ​បាន​បង្ហាញ ។ ប្រសិនបើ​អ្នក​ទុកចិត្ត​លើ​អ្នក​ផ្ញើ​សារ​នេះ នោះ​អ្នក​អាច​ធ្វើ​ឲ្យ​ការ​បង្ហាញ​ទ្រង់ទ្រាយ "
+#~ "HTML សកម្ម​បាន​សម្រាប់​សារ​នេះ <a href=\"kmail:showHTML\">ដោយ​ចុច​នៅ​ត្រង់​នេះ</a> ។"
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This HTML message may contain external references to images "
+#~| "etc. For security/privacy reasons external references are not loaded. If "
+#~| "you trust the sender of this message then you can load the external "
+#~| "references for this message <a href=\"kmail:loadExternal\">by clicking "
+#~| "here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This HTML message may contain external references to images "
+#~ "etc. For security/privacy reasons external references are not loaded. If "
+#~ "you trust the sender of this message then you can load the external "
+#~ "references for this message <a href=kmail:loadExternal>by clicking here</"
+#~ "a>."
+#~ msgstr ""
+#~ "<b>ចំណាំ ៖</b> សារ​ HTML នេះ​អាច​មាន​សេចក្ដី​យោង​​​ខាងក្រៅដែលទៅកាន់​រូបភាព ។ល។ ចំពោះ​ហេតុផល "
+#~ "សុវត្ថិភាព​/ភាព​ជា​ឯកជន សេចក្ដី​យោង​ខាងក្រៅគឺមិនត្រូវបាន​ផ្ទុក​ឡើយ ។ ប្រសិន​បើអ្នកទុកចិត្ត​លើអ្នក​ផ្ញើ​"
+#~ "សារនេះ ពេលនោះ​អ្នក​អាច​ផ្ទុក​សេចក្ដី​យោង​ខាងក្រៅ​​សម្រាប់​សារ​នេះ <a href=\"kmail:"
+#~ "loadExternal\">ដោយ​ចុច​នៅទីនេះ</a> ។"
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "សូម​រង់ចាំ​ខណៈ​ពេល​ដែល​ហត្ថលេខា​កំពុង​ត្រូវ​បាន​ផ្ទៀងផ្ទាត់​​..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "គ្មាន​ព័ត៌មាន​គ្រប់គ្រាន់​ដើម្បី​ពិនិត្យ​ហត្ថលេខាទេ ។ %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​ដោយ %1 ។"
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "សារត្រូវបាន​ចុះហត្ថលេខា​ដោយ​ប្រើ​សោ​មិនស្គាល់ ។"
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "សារ​ត្រូវបាន​ចុះហត្ថលេខា​ដោយប្រើសោ %1 ។"
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​ដោយ %3 នៅ​លើ %1 ដោយ​ប្រើ​សោ %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​នៅ​លើ %1 ដោយ​ប្រើ​សោ %2 ។"
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​ដោយ %2 ដោយ​ប្រើ %1 ។"
+
+#~ msgid "Status: "
+#~ msgstr "ស្ថានភាព ៖ "
+
+#~ msgid "Hide Details"
+#~ msgstr "លាក់​សេចក្តី​លម្អិត"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​នៅ​លើ %1 ដោយ​ប្រើ​សោ​មិន​ស្គាល់ %2 ។"
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "សារ​ត្រូវ​បាន​ចុះហត្ថលេខា​ដោយ​សោ​មិន​ស្គាល់ %1 ។"
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "មិនអាច​ផ្ទៀងផ្ទាត់​សុពលភាព​របស់​ហត្ថលេខា​បានឡើយ ។"
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "ហត្ថលេខា​ត្រូវ​បាន​ចុះ​ហត្ថលេខា​ដោយ %2 (លេខ​សម្គាល់​សោ ៖ %1) ។"
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ប៉ុន្តែ​មិនស្គាល់​សុពលភាព​របស់​សោទេ ។"
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ហើយ សោ​មិនទាន់​បាន​ទុកចិត្ត​គ្របគ្រាន់ទេ ។"
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ​ ហើយ សោ​គឺ​ត្រូវ​បាន​ទុក​ចិត្ត​យ៉ាងពេញលេញ ។"
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ហើយ​ សោ​គឺ​ត្រូវ​បាន​ទុក​ចិត្ត​ជាទីបំផុត ។"
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ប៉ុន្តែ​សារ​មិនត្រូវបាន​ទុក​ចិត្តឡើយ ។"
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "ព្រមាន ៖ ហត្ថលេខា​គឺអាក្រក់ ។"
+
+#~ msgid "Invalid signature."
+#~ msgstr "ហត្ថលេខា​មិន​ត្រឹមត្រូវ ។"
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "មិន​មាន​ព័ត៌មាន​គ្រប់គ្រាន់​ដើម្បី​ពិនិត្យ​មើល​សុពលភាព​របស់​ហត្ថលេខា​ឡើយ ។"
+
+#, fuzzy
+#~| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#~ msgid "Signed by <a href=mailto:%1>%2</a>."
+#~ msgstr "បាន​ចុះហត្ថលេខា​ដោយ <a href=\"mailto:%1\">%2</a> ។"
+
+#~ msgid "Signature is valid."
+#~ msgstr "ហត្ថលេខា​គឺ​ត្រឹមត្រូវ ។"
+
+#~ msgid "Unknown signature state"
+#~ msgstr "មិន​ស្គាល់​ស្ថានភាព​ហត្ថលេខា"
+
+#~ msgid "Show Details"
+#~ msgstr "បង្ហាញសេចក្តី​​​លម្អិត"
+
+#~ msgid "End of signed message"
+#~ msgstr "ខាងចុង​សារ​ដែលបាន​ចុះហត្ថលេខា"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "មាន​កំហុស ៖ មិនបាន​បញ្ជាក់​ហត្ថលេខាឡើយ"
+
+#~ msgid "Good signature"
+#~ msgstr "ហត្ថលេខា​ដែល​ល្អ"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "ហត្ថលេខា<b>អាក្រក់</b>"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "គ្មាន​សាធារណៈ​ដែល​ត្រូវ​ផ្ទៀងផ្ទាត់​ហត្ថលេខាឡើយ"
+
+#~ msgid "No signature found"
+#~ msgstr "គ្មាន​ហត្ថលេខា​ដែល​រកឃើញ​ឡើយ"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "មាន​កំហុស​នៅខណៈ​ពេល​ដែល​កំពុង​ផ្ទៀងផ្ទាត់​ហត្ថលេខា"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "លទ្ធផល​ផ្សេងគ្នា​ សម្រាប់​ហត្ថលេខា"
+
+#~ msgid "No status information available."
+#~ msgstr "មិនមាន​ព័ត៌មាន​ស្ថានភាពឡើយ ។"
+
+#~ msgid "Good signature."
+#~ msgstr "ហត្ថលេខា​ល្អ ។"
+
+#~ msgid "One key has expired."
+#~ msgstr "សោ​មួយ​បាន​ផុតកំណត់​ហើយ ។"
+
+#~ msgid "The signature has expired."
+#~ msgstr "ហត្ថលេខា​បាន​ផុត​កំណត់​ហើយ ។"
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "មិនអាចផ្ទៀងផ្ទាត់បាន ៖ បាត់បង់សោ ។"
+
+#~ msgid "CRL not available."
+#~ msgstr "មិនមាន CRL ។"
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "CRL ដែល​មាន​ គឺ​ចាស់​ពេក ។"
+
+#~ msgid "A policy was not met."
+#~ msgstr "មិបានជួប​គោលការណ៍ឡើយ ។"
+
+#~ msgid "A system error occurred."
+#~ msgstr "កំហុស​ប្រព័ន្ធ​បាន​កើត​មានឡើយ ។"
+
+#~ msgid "One key has been revoked."
+#~ msgstr "សោ​មួយ​ត្រូវបាន​ដកហូតវិញ ។"
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "ហត្ថលេខា<b>មិន​ត្រឹមត្រូវ</b> ។"
+
+#~ msgid "certificate"
+#~ msgstr "​វិញ្ញាបនបត្រ"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "​ការព្រមាន ៖"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "អាសយដ្ឋាន​សំបុត្រ​របស់អ្នកផ្ញើ គឺ​​មិនត្រូវបាន​ទុក​នៅក្នុង​ %1 ដែលត្រូវបាន​ប្រើសម្រាប់​ការចុះហត្ថលេខាឡើយ​"
+#~ " ។"
+
+#~ msgid "sender: "
+#~ msgstr "អ្នកផ្ញើ ៖ "
+
+#~ msgid "stored: "
+#~ msgstr "បានទុក ៖ "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "គ្មាន​​អាសយដ្ឋាន​សំបុត្រ​​​បាន​ទុក​នៅក្នុង %1 ដែលបានប្រើ​សម្រាប់​ការចុះហត្ថលេខាឡើយ ដូច្នេះ​យើង​មិនអាច​"
+#~ "ប្រៀបធៀប​វា​ទៅកាន់​អាសយដ្ឋាន​របស់​អ្នក​ផ្ញើ​ %2 ទេ ។"
+
+#, fuzzy
+#~| msgid "No Subject"
+#~ msgid "Subject:"
+#~ msgstr "​គ្មាន​ប្រធាន​បទ"
+
+#, fuzzy
+#~| msgctxt "Translate to language"
+#~| msgid "To:"
+#~ msgid "To:"
+#~ msgstr "ជូន​ចំពោះ ៖​"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply to:"
+#~ msgstr "ឆ្លើយតប​ទៅ ៖ "
+
+#, fuzzy
+#~| msgid "CC: "
+#~ msgid "CC:"
+#~ msgstr "ចម្លងជូន ៖ "
+
+#, fuzzy
+#~| msgid "BCC: "
+#~ msgid "BCC:"
+#~ msgstr "ចម្លងជាសម្ងាត់ជូន ៖ "
+
+#, fuzzy
+#~| msgctxt "Translate from language"
+#~| msgid "From:"
+#~ msgid "From:"
+#~ msgstr "ពី ៖"
+
+#~ msgid "Spam Status:"
+#~ msgstr "ស្ថានភាព​សារ​ឥតបានការ ៖"
+
+#, fuzzy
+#~| msgid "Date: "
+#~ msgid "Date:"
+#~ msgstr "កាលបរិច្ឆេទ ៖ "
+
+#, fuzzy
+#~| msgid "(resent from %1)"
+#~ msgid "resent from"
+#~ msgstr "(បានផ្ញើ​ឡើងវិញ​ពី %1)"
+
+#, fuzzy
+#~| msgid "[vCard]"
+#~ msgid "[vcard]"
+#~ msgstr "[vCard]"
+
+#~ msgctxt "Unknown date"
+#~ msgid "Unknown"
+#~ msgstr "​(មិន​ស្គាល់)"
+
+#~ msgid "No Subject"
+#~ msgstr "​គ្មាន​ប្រធាន​បទ"
+
+#~ msgid ""
+#~ "%1% probability of being spam with confidence %3%.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2\n"
+#~ "Confidence=%4"
+#~ msgstr ""
+#~ "%1% ប្រហែលជា​សារ​ឥតបានការ​ដែល​មាន​សេចក្ដីទុកចិត្ត %3% ។\n"
+#~ "\n"
+#~ "របាយការណ៍​ពេញលេញ ៖\n"
+#~ "ប្រហែលជា=%2\n"
+#~ "សេចក្ដីទុកចិត្ត=%4"
+
+#~ msgid ""
+#~ "%1% probability of being spam.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2"
+#~ msgstr ""
+#~ "%1% ប្រហែល​ជា​សារ​ឥតបានការ ។\n"
+#~ "\n"
+#~ "របាយការណ៍​ពេញលេញ ៖\n"
+#~ "ប្រហែល​ជា​=%2"
+
+#~ msgid "No Spam agent"
+#~ msgstr "គ្មាន​ភ្នាក់​ងារ​សារ​ឥត​បាន​ការ"
+
+#~ msgid "Spam filter score not a number"
+#~ msgstr "ពិន្ទុ​​តម្រង​សារ​ឥត​បាន​ការ​មិនមែន​ជា​លេខ​ទេ"
+
+#~ msgid "Threshold not a valid number"
+#~ msgstr "កម្រិត​ពន្លឺ​មិនមែន​ជា​លេខ​ត្រឹមត្រូវ​ឡើយ"
+
+#~ msgid "Spam filter score could not be extracted from header"
+#~ msgstr "ពិន្ទុ​តម្រង​សារ​ឥត​បាន​ការ​មិន​​អាច​ត្រូវ​បាន​ស្រង់​ចេញពី​បឋមកថា​ឡើយ​​"
+
+#~ msgid "Threshold could not be extracted from header"
+#~ msgstr "កម្រិត​ពន្លឺ​មិន​អាច​ត្រូវ​បាន​ស្រង់​ចេញ​ពី​បឋមកថា​ទេ"
+
+#~ msgid "Error evaluating spam score"
+#~ msgstr "កំហុស​ក្នុង​ការ​វាយ​តម្លៃ​ពិន្ទុ​សារ​ឥតបានការ"
+
+#~ msgid ""
+#~ "%1.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1.\n"
+#~ "\n"
+#~ "របាយការណ៍​ពេញ​ ៖​\n"
+#~ "%2​"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply"
+#~ msgstr "ឆ្លើយតប​ទៅ ៖ "
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply to All"
+#~ msgstr "ឆ្លើយតប​ទៅ ៖ "
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "New Message"
+#~ msgstr "រក្សា​ទុក​សារ​"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview"
+#~ msgstr "រក្សា​ទុក​សារ​"
+
+#~ msgctxt "View->"
+#~ msgid "&Headers"
+#~ msgstr "បឋមកថា"
+
+#~ msgid "Choose display style of message headers"
+#~ msgstr "ជ្រើស​រចនាប័ទ្ម​បង្ហាញ​នៃ​បឋមកថា​របស់សារ"
+
+#~ msgid "Date: "
+#~ msgstr "កាលបរិច្ឆេទ ៖ "
+
+#~ msgid "From: "
+#~ msgstr "ពី ៖ "
+
+#~ msgid "[vCard]"
+#~ msgstr "[vCard]"
+
+#~ msgctxt "To-field of the mailheader."
+#~ msgid "To: "
+#~ msgstr "ជូនចំពោះ ៖"
+
+#~ msgid "CC: "
+#~ msgstr "ចម្លងជូន ៖ "
+
+#~ msgid "BCC: "
+#~ msgstr "ចម្លងជាសម្ងាត់ជូន ៖ "
+
+#~ msgid "Reply to: "
+#~ msgstr "ឆ្លើយតប​ទៅ ៖ "
+
+#~ msgid ""
+#~ "Modifying an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr "កែប្រែ​ឯកសារ​ភ្ជាប់​អាច​គ្មាន​សុពលភាព​លើ​ហត្ថលេខា​ឌីជីថល​ណា​មួយ នៅ​លើ​សារ​នេះ ។"
+
+#~ msgid "Edit Attachment"
+#~ msgstr "កែសម្រួល​ឯកសារ​ភ្ជាប់"
+
+#~ msgid "Edit"
+#~ msgstr "កែសម្រួល"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "បឋមកថា​ខ្នាត​គំរូ"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "បង្ហាញ​បញ្ជី​​ខ្នាត​គំរូ​នៃ​បឋមកថា​សារ"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Details"
+#~ msgstr "បង្ហាញសេចក្តី​​​លម្អិត"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Details:"
+#~ msgstr "បង្ហាញសេចក្តី​​​លម្អិត"
+
+#, fuzzy
+#~| msgid "Show &expand/collapse quote marks"
+#~ msgid ""
+#~ "Respect expand/collapse quote mark which is defined in settings during "
+#~ "printing."
+#~ msgstr "បង្ហាញ​សញ្ញា​ដកស្រង់​ពង្រីក​/វេញ​"
+
+#~ msgid "When we render html do not use font size inferior to minimum size."
+#~ msgstr "នៅ​ពេល​យើង​បង្ហាញ​ html មិនប្រើ​ការ​ជ្រៀតជ្រែក​ពុម្ពអក្សរ​​ចំពោះ​ទំហំ​អប្បបរមា ។"
+
+#, fuzzy
+#~| msgid "Show HTML status bar"
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "បង្ហាញ​របា​រ​ស្ថានភាព​របស់​ HTML "
+
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "បង្ហាញ​ស្ថាន​ភាព​សារ​ឥតបានការ នៅ​ក្នុង​បឋមកថា​ស្អាតបាត"
+
+#~ msgid "Replace smileys by emoticons"
+#~ msgstr "ជំនួស​និម្មិត​​សញ្ញា​អារម្មណ៍​ដោយ​​សញ្ញា​អារម្មណ៍"
+
+#~ msgid ""
+#~ "Enable this if you want smileys like :-) appearing in the message text to "
+#~ "be replaced by emoticons (small pictures)."
+#~ msgstr ""
+#~ "បើក​វា ប្រសិនបើ អ្នក​ចង់​ឲ្យ​និម្មិត​សញ្ញា​អារម្មណ៍​ដូចជា :-) លេចចេញ​នៅ​ក្នុង​អត្ថបទ​សារ ដើម្បី​​ជំនួស​ដោយ​"
+#~ "សញ្ញា​អារម្មណ៍ (រូបភាព​តូច) ។"
+
+#~ msgid "Show expand/collapse quote marks"
+#~ msgstr "បង្ហាញ​សញ្ញា​ដកស្រង់​បន្លាយ/វេញ"
+
+#~ msgid ""
+#~ "Enable this option to show different levels of quoted text. Disable to "
+#~ "hide the levels of quoted text."
+#~ msgstr ""
+#~ "បើក​ជម្រើស​នេះ ​​ដើម្បី​បង្ហាញ​កម្រិត​ផ្សេងគ្នា​នៃ​អត្ថបទ​ដក​ស្រង់ ។ បិទ​វា​ដើម្បី​លាក់​កម្រិត​នៃ​អត្ថបទ​"
+#~ "ដកស្រង់ ។"
+
+#~ msgid "Automatic collapse level:"
+#~ msgstr "កម្រិត​វេញ​ស្វ័យប្រវត្តិ ៖"
+
+#~ msgid "Reduce font size for quoted text"
+#~ msgstr "បន្ថយ​ទំហំ​ពុម្ព​អក្សរ​សម្រាប់​អត្ថបទ​ដកស្រង់"
+
+#~ msgid "Enable this option to show quoted text with a smaller font."
+#~ msgstr "បើក​ជម្រើស​នេះ​ដើម្បី​បង្ហាញ​អត្ថបទ​ដកស្រង់​ដោយ​ពុម្ព​អក្សរ​តូចជាងមុន ។​"
+
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "បង្ហាញ​ភ្នាក់ងារ​អ្នក​ប្រើ​ក្នុង​បឋមកថា​ស្អាតបាត"
+
+#~ msgid ""
+#~ "Enable this option to get the User-Agent and X-Mailer header lines "
+#~ "displayed when using fancy headers."
+#~ msgstr ""
+#~ "បើក​ជម្រើស​នេះ​ដើម្បី​ទទួល​បន្ទាត់​បឋមកថា​ភ្នាក់ងារ​អ្នក​ប្រើ និង​​កម្មវិធី​សំបុត្រ X​ ដែល​បាន​បង្ហាញ​ដោយ​ប្រើ​"
+#~ "បឋមកថា​ស្អាត​បាត ។"
+
+#~ msgid "Allow to edit attachments of existing mails."
+#~ msgstr "អនុញ្ញាត​ឲ្យ​កែសម្រួល​ឯកសារ​ភ្ជាប់​របស់​សំបុត្រ​ដែល​មាន​ស្រាប់ ។"
+
+#~ msgid "Always decrypt messages when viewing or ask before decrypting"
+#~ msgstr "តែងតែ​ឌិគ្រីប​សារ នៅ​ពេល​មើល ឬ​សួរ​មុន​ពេល​​ការ​ឌិគ្រីប"
+
+#~ msgid "Message Structure Viewer"
+#~ msgstr "កម្មវិធី​មើល​រចនាសម្ព័ន្ធ​សារ"
+
+#~ msgid "Show never"
+#~ msgstr "មិន​ដែល​បង្ហាញ​​"
+
+#~ msgid "Show always"
+#~ msgstr "បង្ហាញ​ជានិច្ច​"
+
+#~ msgid "What style of headers should be displayed"
+#~ msgstr "ប្រភេទ​បឋមកថា​អ្វី​គួរ​តែ​ត្រូវ​បាន​បង្ហាញ​"
+
+#~ msgid "How much of headers should be displayed"
+#~ msgstr "ចំនួន​បឋមកថា​ប៉ុន្មាន​គួរតែ​ត្រូវ​បាន​បង្ហាញ​"
+
+#~ msgid "Prefer HTML to plain text"
+#~ msgstr "HTML ដែលចូលចិត្ត​ទៅជា​អត្ថបទ​ធម្មតា"
+
+#~ msgid "Allow messages to load external references from the Internet"
+#~ msgstr "អនុញ្ញាត​ឲ្យសារ​ផ្ទុក​សេចក្ដីយោង​ខាង​ក្រៅ​ពី​អ៊ីនធឺណិត"
+
+#~ msgid "How attachments are shown"
+#~ msgstr "របៀប​ឯកសារ​ភ្ជាប់​ត្រូវ​បាន​បង្ហាញ​"
+
+#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+#~ msgstr "បញ្ជាក់​ថាតើ ត្រូវ​ប្រើ​ពណ៌​សម្រង់​​ឡើង​វិញ នៅ​កម្រិត​​ទី ៣"
+
+#~ msgid "Activate Access Key"
+#~ msgstr "ធ្វើ​ឲ្យ​គ្រាប់​ចុច​ចូល​ដំណើរការ​សកម្ម"
+
+#, fuzzy
+#~| msgid "Activate Access Key"
+#~ msgid "Enabled ad block"
+#~ msgstr "ធ្វើ​ឲ្យ​គ្រាប់​ចុច​ចូល​ដំណើរការ​សកម្ម"
+
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "កុំផ្ញើ MDNs នៅក្នុង​ចម្លើយតប ទៅ​សារ​ដែល​បាន​អ៊ិនគ្រីប"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr ""
+#~ "បញ្ជាក់​​គោលនយោបាយ​លំនាំដើម​ត្រូវ​ប្រើ សម្រាប់​ការ​ជូន​ដំណឹង​បណ្ដោះ​អាសន្ន​​នៃ​សារ (សម្រាប់​តែ​ការ​ប្រើ​ខាង​"
+#~ "ក្នុង​ប៉ុណ្ណោះ)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr "បញ្ជាក់​សកម្មភាព​សម្រង់​​លំនាំដើម នៅ​ពេល​ឆ្លើយ​តប​សារ (សម្រាប់​តែ​ការ​ប្រើ​ខាង​ក្នុង​ប៉ុណ្ណោះ)"
+
+#~ msgid "Mangle From:/To: headers in replies to replies"
+#~ msgstr "កាត់​ពី ៖/ទៅ ៖ បឋមកថា​នៅក្នុង​ការឆ្លើយតប ដើម្បី​ឆ្លើយតប"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your replies, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook មាន​ចំនួន​នៃ shortcomings នៅ​ក្នុង​ការប្រតិបត្តិ​នៃ​ខ្នាត​គំរូ iCalendar "
+#~ "។ ជម្រើស​នេះ​ធ្វើការ​នៅ​ជុំវិញ​ពួក​វា​មួយ ។ ប្រសិនបើ​អ្នក​មាន​បញ្ហា​ជាមួយ Outlook អ្នកប្រើ​មិន​អាច​ទទួល​"
+#~ "ការ​ឆ្លើយតប​របស់​អ្នក​បាន​ឡើយ សូម​ព្យាយាម​កំណត់​ជម្រើស​នេះ ។"
+
+#~ msgid "Send groupware invitations in the mail body"
+#~ msgstr "ផ្ញើ​ការអញ្ជើញ​កម្មវិធី​ពហុអ្នកប្រើ​នៅក្នុង​តួ​សំបុត្រ"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your invitations, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook មាន​ចំនួន​នៃ shortcomings នៅ​ក្នុង​ការ​ប្រតិបត្តិ​នៃ​ស្តង់ដារ iCalendar "
+#~ "។ ជម្រើស​នេះ​ធ្វើការ​នៅ​ជុំវិញ​ពួកវាមួយ ។ ប្រសិនបើ​អ្នក​មាន​បញ្ហា​ជាមួយ Outlook អ្នកប្រើ​មិន​អាច​ទទួល​"
+#~ "ការ​អញ្ជើញ​​របស់​អ្នក​បាន​ឡើយ សូម​ព្យាយាម​កំណត់​ជម្រើស​នេះ ។"
+
+#~ msgid "Exchange-compatible invitation naming"
+#~ msgstr "ផ្លាស់ប្ដូរ​ការ​ដាក់​​ឈ្មោះ​អញ្ជើញ​ដែល​ឆបគ្នា"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server, has a problem understanding standards-compliant groupware email. "
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "Microsoft Outlook នៅ​ពេល​បាន​ប្រើ​ដោយ​បន្សំ​ជា​មួយ​ម៉ាស៊ីន​បម្រើ Microsoft Exchange មាន​"
+#~ "បញ្ហា​ ដោយ​យល់​ថា​អ៊ីមែល groupware ដែល​ត្រូវ​គ្នា​តាម​ស្តង់ដារ ។ បើក​ជម្រើស​នេះ ដើម្បី​ផ្ញើ​ការ​"
+#~ "អញ្ជើញ groupware តាម​វិធី​ដែល​ Microsoft Exchange យល់ ។"
+
+#~ msgid "Outlook compatible invitation reply comments"
+#~ msgstr "សេចក្ដី​អធិប្បាយ​ឆ្លើយ​តប​ការ​អញ្ជើញ​របស់​ Outlook ដែល​ឆបគ្នា​"
+
+#~ msgid ""
+#~ "When replying to invitations, send the reply comment in way that "
+#~ "Microsoft Outlook understands."
+#~ msgstr ""
+#~ "នៅ​ពេល​ឆ្លើយតប​​ទៅកាន់​ការ​អញ្ជើញ​​ ផ្ញើ​សេចក្ដី​អធិប្បាយ​ឆ្លើយតប​ក្នុង​មធ្យោបាយ​ដែល​យល់​អំពី​​ Microsoft "
+#~ "Outlook ។"
+
+#~ msgid "Show invitation update differences in the Outlook style"
+#~ msgstr "បង្ហាញ​ភាព​ខុស​គ្នា​បច្ចុប្បន្នភាព​ការ​អញ្ជើញ​ក្នុង​រចនាប័ទ្ម​របស់​​ Outlook​"
+
+#~ msgid ""
+#~ "When viewing invitation updates, show the differences in the Microsoft "
+#~ "Outlook style."
+#~ msgstr ""
+#~ "នៅ​ពេល​មើល​បច្ចុប្បន្នភាព​ការ​អញ្ជើញ​​ ​បង្ហាញ​ភាព​ខុសគ្នា​ក្នុង​រចនាប័ទ្ម​របស់​ Microsoft Outlook ។"
+
+#~ msgid "Automatic invitation sending"
+#~ msgstr "ផ្ញើការអញ្ជើញ​ដោយ​ស្វ័យប្រវត្តិ"
+
+#~ msgid ""
+#~ "When this is checked, you will not see the mail composer window. Instead, "
+#~ "all invitation mails are sent automatically. If you want to see the mail "
+#~ "before sending it, you can uncheck this option. However, be aware that "
+#~ "the text in the composer window is in iCalendar syntax, and you should "
+#~ "not try modifying it by hand."
+#~ msgstr ""
+#~ "នៅ​ពេល​ដែល​អ្នក​បាន​ធីក​​វា អ្នក​នឹង​មិន​ឃើញ​បង្អួច​កម្មវិធី​តែង​​សំបុត្រ​ទេ ។ ដោយ​ជំនួស សំបុត្រ​អញ្ជើញ​ទាំង​អស់​គឺ​"
+#~ "ត្រូវ​បាន​ផ្ញើ​ដោយស្វ័យប្រវត្តិ ។ ប្រសិនបើ​អ្នក​ចង់​មើល​សំបុត្រ​មុន​ពេល​ផ្ញើ​វា អ្នក​អាច​ដោះ​ធីក​ជម្រើស​នេះ​វិញ "
+#~ "។ ទោះជាយ៉ាងណាក៏ដោយ សូម​ដឹង​ថា​អត្ថបទ​នៅ​ក្នុង​បង្អួច​កម្មវិធី​តែង​គឺ​នៅ​ក្នុង​វាក្យសម្ពន្ធ Calendar ហើយ​"
+#~ "អ្នក​មិន​គួរ​ព្យាយាម​កែប្រែ​វា​ដោយដៃ​ទេ ។"
+
+#~ msgid "Delete invitation emails after the reply to them has been sent"
+#~ msgstr "លុប​អ៊ីមែល​ការ​អញ្ជើញ បន្ទាប់​ពី​ការ​ឆ្លើយតប​ទៅកាន់​ពួកគេ​ត្រូវ​បាន​ផ្ញើ"
+
+#~ msgid ""
+#~ "When this is checked, received invitation emails that have been replied "
+#~ "to will be moved to the Trash folder, once the reply has been "
+#~ "successfully sent."
+#~ msgstr ""
+#~ "នៅ​ពេល​ដែល​បាន​ធីក​វា អ៊ីមែល​អញ្ជើញ​ដែល​បាន​ទទួល​ដែល​បាន​ឆ្លើយតប និង​ត្រូវ​បាន​ផ្លាស់ទី​ទៅ​ថត​ធុងសំរាម នៅ​"
+#~ "ពេល​ដែល​ការ​ឆ្លើយតប​ត្រូវ​បាន​ផ្ញើ​ដោយ​ជោគជ័យ ។"
+
+#~ msgid "Use Fi&xed Font"
+#~ msgstr "ប្រើពុម្ពអក្សរថេរ"
+
+#~ msgid "Groupware Compatibility && Legacy Options"
+#~ msgstr "ជម្រើស​ចាស់ និង ភាព​ឆបគ្នា​នៃ​របស់​ប្រើ​ជា​ក្រុម"
+
+#~ msgid ""
+#~ "Turn this option on in order to make Outlook(tm) understand your answers "
+#~ "to invitation replies"
+#~ msgstr ""
+#~ "បើក​ជម្រើស​នេះ​ដើម្បី​ធ្វើឲ្យ Outlook(tm) ដឹង​អំពី​ចម្លើយ​របស់​អ្នក​ទៅកាន់​ចម្លើយ​តប​ការ​អញ្ជើញ"
+
+#~ msgid "&Mangle From:/To: headers in replies to invitations"
+#~ msgstr "ធ្វើ​ឲ្យ​បឋមកថា ពី ៖/ជូនចំពោះ ៖ ខុស​ពី​ភាព​ដើម នៅ​ក្នុង​ការ​ឆ្លើយតប​ទៅ​កាន់​សេចក្ដី​អញ្ជើញ"
+
+#~ msgid ""
+#~ "Turn this option on in order to make Outlook(tm) understand your answers "
+#~ "to invitations"
+#~ msgstr "បើក​ជម្រើស​នេះ​ដើម្បី​ធ្វើ​ឲ្យ​ Outlook(tm) ដឹង​អំពី​ចម្លើយ​របស់​អ្នក​ទៅ​ការ​អញ្ជើញ"
+
+#~ msgid "Send &invitations in the mail body"
+#~ msgstr "ផ្ញើ​ការ​អញ្ជើញ​នៅ​ក្នុង​តួ​សំបុត្រ"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server,\n"
+#~ "has a problem understanding standards-compliant groupware email.\n"
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "Microsoft Outlook នៅ​ពេល​បាន​ប្រើ​ដោយ​បន្សំ​ជា​មួយ​ម៉ាស៊ីន​បម្រើ Microsoft Exchange\n"
+#~ " មាន​បញ្ហា​ ដោយ​យល់​ថា​អ៊ីមែល groupware ដែល​ត្រូវ​គ្នា​តាម​ស្តង់ដារ ។\n"
+#~ "បើក​ជម្រើស​នេះ ដើម្បី​ផ្ញើ​ការ​អញ្ជើញ groupware តាម​វិធី​ដែល​ Microsoft Exchange យល់ ។"
+
+#~ msgid "Exchange-compatible invitation &naming"
+#~ msgstr "ផ្លាស់ប្ដូរ​ការ​ដាក់​​ឈ្មោះ​អញ្ជើញ​ដែល​ឆបគ្នា"
+
+#~ msgid ""
+#~ "Send invitation reply comments in a way that Microsoft Outlook(tm) "
+#~ "understands."
+#~ msgstr ""
+#~ "ផ្ញើ​សេចក្ដី​អធិប្បាយ​ឆ្លើយតប​ការ​អញ្ជើញ​​ក្នុង​មធ្យោបាយ​ដែល​យល់​​អំពី​​ Microsoft Outlook(tm) ។"
+
+#~ msgid ""
+#~ "Display invitation update differences in the Microsoft Outlook(tm) style."
+#~ msgstr ""
+#~ "បង្ហាញ​ភាព​ខុស​គ្នា​អំពី​បច្ចុប្បន្ន​ភាព​ការ​អញ្ជើញ​ក្នុង​រចនាប័ទ្ម​​​របស់​ Microsoft Outlook(tm) ។"
+
+#~ msgid ""
+#~ "When this is on, the user will not see the mail composer window. "
+#~ "Invitation mails are sent automatically."
+#~ msgstr ""
+#~ "នៅ​ពេល​ដែល​វា​បើក អ្នកប្រើ​នឹង​មិន​ឃើញ​បង្អួច​កម្មវិធី​តែង​សំបុត្រឡើយ ។ សំបុត្រ​អញ្ជើញ​គឺ​ត្រូវ​បាន​ផ្ញើ​"
+#~ "ដោយស្វ័យប្រវត្តិ ។"
+
+#~ msgid "&Automatic invitation sending"
+#~ msgstr "ផ្ញើ​ការ​អញ្ជើញ​ដោយ​ស្វ័យប្រវត្តិ"
+
+#~ msgid "Options"
+#~ msgstr "ជម្រើស​"
+
+#, fuzzy
+#~| msgid "Show &expand/collapse quote marks"
+#~ msgid "Respect &expand/collapse quote marks settings"
+#~ msgstr "បង្ហាញ​សញ្ញា​ដកស្រង់​ពង្រីក​/វេញ​"
+
+#~ msgid "Viewer settings"
+#~ msgstr "ការ​កំណត់​កម្មវិធី​មើល​"
+
+#, fuzzy
+#~| msgid "&Override character encoding:"
+#~ msgid "O&verride character encoding:"
+#~ msgstr "បដិសេធ​ការ​អ៊ិនកូដ​តួ​អក្សរ ៖​​"
+
+#, fuzzy
+#~| msgid "Activate Access Key"
+#~ msgid "Enable access key"
+#~ msgstr "ធ្វើ​ឲ្យ​គ្រាប់​ចុច​ចូល​ដំណើរការ​សកម្ម"
+
+#, fuzzy
+#~| msgid "Show &HTML status bar"
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "បង្ហាញ​របា​រ​ស្ថានភាព​របស់​ HTML"
+
+#~ msgid "Replace smileys &by emoticons"
+#~ msgstr "ជំនួស​អក្សរ​និម្មិត​សញ្ញា​អារម្មណ៍​ដោយ​សញ្ញា​អារម្មណ៍​"
+
+#~ msgid "Reduce font size for &quoted text"
+#~ msgstr "បន្ថយ​ទំហំ​ពុម្ព​អក្សរ ​សម្រាប់​អត្ថបទ​ដែល​បាន​​ដកស្រង់"
+
+#~ msgid "Show &expand/collapse quote marks"
+#~ msgstr "បង្ហាញ​សញ្ញា​ដកស្រង់​ពង្រីក​/វេញ​"
+
+#, fuzzy
+#~| msgid "Automatic collapse level:"
+#~ msgid "Automatic collapse &level:"
+#~ msgstr "កម្រិត​វេញ​ស្វ័យប្រវត្តិ ៖"
+
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "បង្ហាញ​ស្ថាន​ភាព​សារ​ឥតបានការ នៅ​ក្នុង​បឋមកថា​ស្អាតបាត​​"
+
+#, fuzzy
+#~| msgid "Minimum font size:"
+#~ msgid "&Minimum font size:"
+#~ msgstr "ទំហំ​ពុម្ពអក្សរ​អប្បបរមា ៖"
+
+#~ msgid ""
+#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr "មាន​ឯកសារឈ្មោះ \"%1\" រួច​ហើយ ។ តើ​អ្នក​ពិត​ជា​ចង់​សរសេរ​ជាន់​លើ​វា​ឬ ?"
+
+#~ msgid "Overwrite File?"
+#~ msgstr "សរសេរ​ជាន់​លើ​ឯកសារឬ ?"
+
+#~ msgid "Save Attachments To"
+#~ msgstr "រក្សាទុក​ឯកសារ​ភ្ជាប់ទៅ"
+
+#~ msgctxt "filename for an unnamed attachment"
+#~ msgid "attachment.1"
+#~ msgstr "ឯកសារភ្ជាប់ 1"
+
+#~ msgid "Save Attachment"
+#~ msgstr "រក្សាទុក​ឯកសារ​ភ្ជាប់"
+
+#~ msgctxt "filename for the %1-th unnamed attachment"
+#~ msgid "attachment.%1"
+#~ msgstr "ឯកសារភ្ជាប់ ។ %1"
+
+#~ msgid ""
+#~ "The part %1 of the message is encrypted. Do you want to keep the "
+#~ "encryption when saving?"
+#~ msgstr "ផ្នែក %1 របស់សារ គឺត្រូវបាន​អ៊ិនគ្រីប ។ តើអ្នកចង់​ទុក​ការអ៊ិនគ្រីប ពេល​រក្សាទុក​ឬ ?"
+
+#~ msgid "KMail Question"
+#~ msgstr "សំណួរ KMail"
+
+#~ msgid "Keep Encryption"
+#~ msgstr "ទុក​ការអ៊ិនគ្រីប"
+
+#~ msgid "Do Not Keep"
+#~ msgstr "កុំទុក"
+
+#~ msgid ""
+#~ "The part %1 of the message is signed. Do you want to keep the signature "
+#~ "when saving?"
+#~ msgstr "ផ្នែក %1 របស់សារគឺ​ត្រូវបាន​ចុះហត្ថលេខា ។ តើអ្នក​ចង់​ទុក​ហត្ថលេខា ពេល​រក្សាទុក​ឬ ?"
+
+#~ msgid "Keep Signature"
+#~ msgstr "ទុក​ហត្ថលេខា"
+
+#~ msgctxt "1 = file name, 2 = error string"
+#~ msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
+#~ msgstr "<qt>មិនអាច​សរសេរ​ទៅកាន់<br><filename>%1</filename><br><br>%2 បានទេ"
+
+#~ msgid "Error saving attachment"
+#~ msgstr "មាន​កំហុស​ក្នុង​ការ​រក្សាទុក​ឯកសារ​ភ្ជាប់"
+
+#~ msgid "Found no attachments to save."
+#~ msgstr "រក​មិន​ឃើញ​ឯកសារភ្ជាប់ ដើម្បី​រក្សាទុក ។"
+
+#~ msgid "message"
+#~ msgstr "សារ​"
+
+#, fuzzy
+#~| msgid ""
+#~| "*.mbox|email messages (*.mbox)\n"
+#~| "*|all files (*)"
+#~ msgid "email messages (*.mbox);;all files (*)"
+#~ msgstr ""
+#~ "*.mbox|email messages (*.mbox)\n"
+#~ "*|all files (*)"
+
+#~ msgid "Save Message"
+#~ msgid_plural "Save Messages"
+#~ msgstr[0] "រក្សា​ទុក​សារ​"
+
+#~ msgid "File %1 could not be loaded."
+#~ msgstr "មិន​អាច​ផ្ទុក​ឯកសារ %1 បាន​ទេ ។"
+
+#~ msgid "Error loading message"
+#~ msgstr "កំហុស​ក្នុង​ការ​ផ្ទុក​សារ​​..."
+
+#~ msgid "File %1 could not be created."
+#~ msgstr "ឯកសារ %1 មិន​អាច​ត្រូវ​បាន​បង្កើត​ទេ ។"
+
+#~ msgid "Error saving message"
+#~ msgstr "កំហុស​ក្នុង​ការ​រក្សាទុក​ឯកសារ"
+
+#, fuzzy
+#~| msgid "We can not save message."
+#~ msgid "We cannot save message."
+#~ msgstr "មិន​អាច​រក្សាទុក​សារ​បាន​ទេ ។"
+
+#~ msgid "Open &with %1"
+#~ msgstr "បើក​ជាមួយ %1"
+
+#~ msgctxt "@item:inmenu Open With, %1 is application name"
+#~ msgid "%1"
+#~ msgstr "%1"
+
+#~ msgid "Edit with:"
+#~ msgstr "កែសម្រួល​ជា​មួយ ៖"
+
+#~ msgid ""
+#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
+#~ "loss, editing the attachment will be aborted."
+#~ msgstr ""
+#~ "KMail មិន​អាច​រក​ឃើញ​​នៅ​ពេល​បាន​បិទ​កម្មវិធី​និពន្ធ​ដែល​បាន​ជ្រើស ។ ដើម្បី​ជៀស​វាង​ពី​កា​រ​បាត់បង់​ទិន្នន័យ "
+#~ "កា​រ​កែសម្រួល​ឯកសារ​ភ្ជាប់​នឹង​ត្រូវ​បាន​បោះបង់ ។"
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "មិន​អាច​កែសម្រួល​ឯកសារ​ភ្ជាប់"
+
+#~ msgid "body part"
+#~ msgstr "ផ្នែក​តួ"
+
+#~ msgid "Description"
+#~ msgstr "សេចក្ដី​ពិពណ៌នា"
+
+#~ msgid "Type"
+#~ msgstr "ប្រភេទ"
+
+#~ msgid "Size"
+#~ msgstr "ទំហំ"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "កម្ម​វិធី​ជំនួយ​ដែល​គ្មាន​ឈ្មោះ​"
+
+#~ msgid "No description available"
+#~ msgstr "គ្មាន​សេចក្ដី​ពិពណ៌នា​ឡើយ​"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply To All"
+#~ msgstr "ឆ្លើយតប​ទៅ ៖ "
+
+#, fuzzy
+#~| msgid "Decrypt Message"
+#~ msgid "Print Message"
+#~ msgstr "ឌិគ្រីប​សារ"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview Message"
+#~ msgstr "រក្សា​ទុក​សារ​"
+
+#~ msgid "Turn on HTML rendering for this message."
+#~ msgstr "បើក​ការបង្ហាញ HTML សម្រាប់​សារ​នេះ ។"
+
+#~ msgid "Load external references from the Internet for this message."
+#~ msgstr "ផ្ទុក​សេចក្ដី​យោង​ខាងក្រៅ​ពី អ៊ីនធឺណិត​សម្រាប់សារនេះ ។"
+
+#~ msgid "Work online."
+#~ msgstr "ធ្វើការ​​លើ​បណ្ដាញ"
+
+#~ msgid "Make account online."
+#~ msgstr "បង្កើត​គណនី​លើ​បណ្ដាញ ។"
+
+#~ msgid "Decrypt message."
+#~ msgstr "ឌិគ្រីប​សារ"
+
+#~ msgid "Show signature details."
+#~ msgstr "បង្ហាញ​សេចក្ដី​លម្អិត​ហត្ថលេខា ។"
+
+#~ msgid "Hide signature details."
+#~ msgstr "លាក់​សេចក្ដី​លម្អិត​ហត្ថលេខា"
+
+#~ msgid "Show attachment list."
+#~ msgstr "បង្ហាញ​បញ្ជី​ឯកសារ​ភ្ជាប់ ។"
+
+#~ msgid "Hide attachment list."
+#~ msgstr "លាក់​បញ្ជី​ឯកសារ​ភ្ជាប់ ។"
+
+#~ msgid "Show full \"To\" list"
+#~ msgstr "បង្ហាញ​បញ្ជី​ \"To\" ពេញលេញ"
+
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "លាក់​បញ្ជី​​ \"To\" ពេញលេញ"
+
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "បង្ហាញ​បញ្ជី​ពេញ​ \"Cc\""
+
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "លាក់​បញ្ជី​ពេញ​ \"Cc\""
+
+#~ msgid "Expand all quoted text."
+#~ msgstr "ពង្រីកអត្ថបទ​ដកស្រង់ទាំងអស់ ។"
+
+#~ msgid "Collapse quoted text."
+#~ msgstr "វេញ​អត្ថបទ​ដកស្រង់ ។"
+
+#~ msgid "Could not start certificate manager. Please check your installation."
+#~ msgstr "មិនអាច​ចាប់ផ្ដើម​កម្មវិធី​គ្រប់គ្រង​វិញ្ញាបនបត្រ​បានឡើយ ។ សូម​ពិនិត្យ្រ​មើល​កដំឡើង​របស់អ្នក ។n."
+
+#~ msgid "KMail Error"
+#~ msgstr "កំហុស KMail"
+
+#~ msgid "Show certificate 0x%1"
+#~ msgstr "បង្ហាញ​វិញ្ញាបនបត្រ 0x%1"
+
+#~ msgid "&Open in Address Book"
+#~ msgstr "បើក​នៅ​ក្នុង​សៀវភៅ​អាសយដ្ឋាន"
+
+#~ msgid "&Copy Email Address"
+#~ msgstr "ចម្លង​អាសយដ្ឋាន​អ៊ីមែល​"
+
+#~ msgid "Address copied to clipboard."
+#~ msgstr "បាន​ចម្លង​អាសយដ្ឋាន​ទៅ​ក្ដារតម្បៀតខ្ទាស់ ។"
+
+#~ msgid "Lookup the contact in KAddressbook"
+#~ msgstr "ស្វែងរក​ទាក់ទង​ក្នុង​​ KAddressbook"
+
+#~ msgid "Attachment: %1"
+#~ msgstr "ឯកសារភ្ជាប់ ៖ %1"
+
+#~ msgid "Encapsulated Message (Subject: %1)"
+#~ msgstr "សារ​ដែល​បាន​ស្រោប​​ (​ប្រធាន​បទ​ ៖​​ %1)"
+
+#~ msgid "Encapsulated Message"
+#~ msgstr "សារ​ដែល​បាន​ស្រោប​"
+
+#~ msgid "Unnamed attachment"
+#~ msgstr "ឯកសារ​ភ្ជាប់​ដែល​គ្មានឈ្មោះ​"
+
+#~ msgid "Show GnuPG Audit Log for this operation"
+#~ msgstr "បង្ហាញ​កំណត់ហេតុ​ត្រួតពិនិត្យ​ GnuPG សម្រាប់ប្រតិបត្តិការ​នេះ"
+
+#~ msgid "Opening URL..."
+#~ msgstr "កំពុង​បើក URL..."
+
+#~ msgctxt "@info"
+#~ msgid "Do you really want to execute <filename>%1</filename>?"
+#~ msgstr "តើ​អ្នក​​ពិត​ជា​ចង់​ប្រតិបត្តិ <filename>%1</filename>?"
+
+#~ msgid "Execute"
+#~ msgstr "​ប្រតិបត្តិ"
+
+#~ msgid "Loading message..."
+#~ msgstr "កំពុង​ផ្ទុក​សារ​​..."
+
+#~ msgid ""
+#~ "Deleting an attachment from an encrypted or old-style mailman message is "
+#~ "not supported."
+#~ msgstr "លុប​ឯកសារ​ភ្ជាប់​ពី​អ៊ិនគ្រីប​ ឬ​សារ​អ្នក​រត់​សំបុត្រ​រចនាប័ទ្ម​ចាស់​​មិន​ត្រូវ​បា​ន​គាំ​ទ្រ​ ។"
+
+#~ msgid "Delete Attachment"
+#~ msgstr "លុប​ឯកសារ​ភ្ជាប់"
+
+#~ msgid ""
+#~ "Deleting an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr "លុប​ឯកសារ​ភ្ជាប់​អាច​គ្មាន​សុពលភាព​លើ​ហត្ថលេខា​ឌីជីថល​ណាមួយ​នៅ​លើ​សារ​នេះ ។"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "​បើក​ជា​មួយ..."
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "ផ្សេងទៀត..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "​បើក​ជា​មួយ..."
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "បើក"
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "មើល"
+
+#~ msgid "Scroll To"
+#~ msgstr "រមូរ​ទៅកាន់​"
+
+#~ msgid "Save As..."
+#~ msgstr "​រក្សាទុកជា..."
+
+#~ msgid "Copy"
+#~ msgstr "ចម្លង"
+
+#~ msgid "Properties"
+#~ msgstr "​លក្ខណៈ​សម្បត្តិ"
+
+#, fuzzy
+#~| msgid "KMail Error"
+#~ msgid "KMail"
+#~ msgstr "កំហុស KMail"
+
+#, fuzzy
+#~| msgid "The KDE email client."
+#~ msgid "The KDE Mail Client"
+#~ msgstr "កម្មវិធី​អ៊ីមែល​របស់ KDE view"
+
+#~ msgid "View Attachment: %1"
+#~ msgstr "មើល​ឯកសារ​ភ្ជាប់ ៖ %1"
+
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "ឯកសារ​ភ្ជាប់"
+
+#~ msgid "Choose display style of attachments"
+#~ msgstr "ជ្រើស​រចនាប័ទ្ម​បង្ហាញ​នៃ​ឯកសារ​ភ្ជាប់"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&As Icons"
+#~ msgstr "ជា​រូបតំណាង"
+
+#~ msgid "Show all attachments as icons. Click to see them."
+#~ msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់ទាំងអស់​ជា​រូបតំណាង ។ ចុច​ដើម្បី​មើល​ពួកវា ។"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Smart"
+#~ msgstr "ឆ្លាត"
+
+#~ msgid "Show attachments as suggested by sender."
+#~ msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់​ថា​បាន​ផ្ដល់យោបល់​ដោល​អ្នកផ្ញើ ។"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Inline"
+#~ msgstr "នៅក្នុង​បណ្ដាញ"
+
+#~ msgid "Show all attachments inline (if possible)"
+#~ msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់​ទាំងអស់​នៅ​ក្នុង​បណ្ដាញ (ប្រសិន​បើ​អាច​ធ្វើ​ទៅ​បាន)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "លាក់"
+
+#~ msgid "Do not show attachments in the message viewer"
+#~ msgstr "កុំ​បង្ហាញ​ឯកសារ​ភ្ជាប់​នៅក្នុង​កម្មវិធី​មើល​សារ"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "In Header Only"
+#~ msgstr "នៅ​ក្នុង​បឋមកថា​ប៉ុណ្ណោះ​"
+
+#~ msgid "Show Attachments only in the header of the mail"
+#~ msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់​នៅ​ក្នុង​បឋមកថា​របស់​សំបុត្រ​តែ​ប៉ុណ្ណោះ​​"
+
+#~ msgid "&Set Encoding"
+#~ msgstr "កំណត់​អ៊ិនកូឌីង"
+
+#~ msgid "Auto"
+#~ msgstr "ស្វ័យប្រវត្តិ"
+
+#~ msgid "Select All Text"
+#~ msgstr "ជ្រើស​អត្ថបទ​ទាំងអស់"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "ចម្លង​អាសយដ្ឋាន​តំណ"
+
+#~ msgid "Open URL"
+#~ msgstr "​បើក URL"
+
+#~ msgid "Show Message Structure"
+#~ msgstr "បង្ហាញ​រចនាសម្ព័ន្ធ​សារ​"
+
+#~ msgid "&View Source"
+#~ msgstr "មើល​ប្រភព"
+
+#~ msgid "&Save message..."
+#~ msgstr "រក្សាទុក​សារ..."
+
+#~ msgid "Scroll Message Up"
+#~ msgstr "រមូរ​សារ​ឡើងលើ"
+
+#~ msgid "Scroll Message Down"
+#~ msgstr "រមូរ​សារ​ចុះក្រោម"
+
+#~ msgid "Scroll Message Up (More)"
+#~ msgstr "រមូរ​សា​រ​ឡើង​លើ​ (បន្ថែម​ទៀត)"
+
+#~ msgid "Scroll Message Down (More)"
+#~ msgstr "រមូរ​សារ​ចុះក្រោម (បន្ថែម​ទៀត)"
+
+#~ msgid "Toggle HTML Display Mode"
+#~ msgstr "បិទ/បើក​របៀប​បង្ហាញ​របស់​ HTML "
+
+#~ msgid "Toggle display mode between HTML and plain text"
+#~ msgstr "បិទ/​បើក​របៀប​បង្ហាញ​រវាង​អត្ថបទ​ធម្មតា​ និង​ HTML"
+
+#~ msgid "Speak Text"
+#~ msgstr "អត្ថបទ​សំឡេង"
+
+#~ msgid "Copy Image Location"
+#~ msgstr "ចម្លង​ទីតាំង​រូបភាព"
+
+#~ msgid "&Find in Message..."
+#~ msgstr "រក​​នៅ​ក្នុង​សារ..."
+
+#~ msgid "Save &As..."
+#~ msgstr "​រក្សាទុកជា..."
+
+#~ msgid "Open With..."
+#~ msgstr "​បើក​ជាមួយ..."
+
+#~ msgid "Save All Attachments..."
+#~ msgstr "រក្សាទុក​ឯកសារភ្ជាប់​ទាំងអស់..."
+
+#~ msgid "Copy Email Address"
+#~ msgstr "ចម្លង​អាសយដ្ឋាន​អ៊ីមែល​"
+
+#~ msgid "Message as Plain Text"
+#~ msgstr "សារ​ជា​អត្ថបទ​ធម្មតា"
+
+#~ msgid "Attachments:"
+#~ msgstr "ឯកសារ​ភ្ជាប់ ៖"
+
+#~ msgid "URL copied to clipboard."
+#~ msgstr "បាន​ចម្លង URL ទៅ​ក្ដារតម្បៀតខ្ទាស់ ។"
+
+#~ msgid "Hide full address list"
+#~ msgstr "លាក់​បញ្ជី​​អាសយដ្ឋាន​ពេញលេញ"
+
+#~ msgid "Show full address list"
+#~ msgstr "បង្ហាញ​បញ្ជី​អាសយដ្ឋាន​ពេញ​លេញ"
+
+#~ msgid "Message loading failed: %1."
+#~ msgstr "បាន​បរាជ័យ​ផ្ទុក​សារ​ ៖​ %1 ។​"
+
+#~ msgid "Message not found."
+#~ msgstr "រក​មិន​ឃើញ​សារ​ ។"
+
+#~ msgid ""
+#~ "Open attachment '%1'?\n"
+#~ "Note that opening an attachment may compromise your system's security."
+#~ msgstr ""
+#~ "បើក​ឯក​សារ​ភ្ជាប់ '%1'?\n"
+#~ "ចំណាំ​ថា​ការ​បើក​ឯកសារ​ភ្ជាប់​មួយ​អាច​សម្រុះ​សម្រួល​សុវត្ថិភាព​ប្រព័ន្ធ​របស់អ្នក ។"
+
+#~ msgid "Open Attachment?"
+#~ msgstr "បើក​ឯកសារភ្ជាប់​ឬ ?"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr "​បើក​ជាមួយ '%1'"
+
+#~ msgid "&Open With..."
+#~ msgstr "​បើក​ជា​មួយ..."
+
+#~ msgid "Do not ask again"
+#~ msgstr "កុំ​សួរ​ម្ដង​ទៀត​"
+
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+#~ msgstr ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+
+#~ msgctxt "'No HTML Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#~ ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#~ msgstr ""
+#~ "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#~ ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+
+#~ msgctxt "'Plain Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e<br /></qt>"
+#~ msgstr ""
+#~ "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e<br /></qt>"
+
+#~ msgid "Click to toggle between HTML and plain text."
+#~ msgstr "ចុច​ បិទ/បើក​​រវាង​អត្ថបទ​ធម្មតា​ និង HTML ។​"
+
+#~ msgid ""
+#~ "<qt>Invitations are normally sent as attachments to a mail. This switch "
+#~ "changes the invitation mails to be sent in the text of the mail instead; "
+#~ "this is necessary to send invitations and replies to Microsoft Outlook."
+#~ "<br />But, when you do this, you no longer get descriptive text that mail "
+#~ "programs can read; so, to people who have email programs that do not "
+#~ "understand the invitations, the resulting messages look very odd.<br /"
+#~ ">People that have email programs that do understand invitations will "
+#~ "still be able to work with this.</qt>"
+#~ msgstr ""
+#~ "<qt>ការ​អញ្ជើញ​តាម​ធម្មតា​ត្រូវ​បានផ្ញើ​ជា​ឯកសា​រភ្ជាប់​ទៅ​សំបុត្រ ។ វា​ប្ដូរ​កា​រផ្លាស់ប្ដូរ​សំបុត្រ​អញ្ជើញ​"
+#~ "ត្រូវ​បានផ្ញើ​ក្នុងអត្ថបទ​របស់​សំបុត្រ​ជំនួសវា​ចាំបាច់​ដើម្បី​ផ្ញើ​ការ​អញ្ជើញ និង​ឆ្លើយតប​ទៅ Microsoft "
+#~ "Outlook ។<br />ប៉ុន្តែ​ នៅ​ពេល​ដែល​អ្នក​ធ្វើ​ដូចនេះ អ្នក​​មិនបានទទួល​អត្ថបទ​ពន្យល់​ទៀត​ទេ ដែល​កម្មវិធី​"
+#~ "អ៊ីមែល​អាច​អាន ដូច្នេះ ទៅ​អ្នក​ដែលមាន​កម្មវិធី​អ៊ីមែល ដែល​មិន​យល់​ការ​អញ្ជើញ សារ​លទ្ធផល​មើល​ទៅប្លែក​"
+#~ "ណាស ។<br />អ្នក​ដែល​មាន​កម្មវិធី​អ៊ីមែល​ដែល​យល់​កា​រអញ្ជើញ​នឹង​នៅ​តែអាច​ដំណើរការ​ជា​មួយ​វា​បាន ។</qt>"
+
+#~ msgctxt "Unchanged mail message"
+#~ msgid "Raw Source"
+#~ msgstr "ប្រភព​មិន​ទាន់​ច្នៃ​"
+
+#~ msgid ""
+#~ "Raw, unmodified mail as it is stored on the filesystem or on the server"
+#~ msgstr "ដើម ​សំបុត្រ​ដែល​មិន​បាន​កែប្រែ​ វា​ត្រូវ​បាន​​ទុក​លើ​​ប្រព័ន្ធ​ឯកសារ​ ឬ​លើ​ម៉ាស៊ីន​បម្រើ​​"
+
+#~ msgctxt "Mail message as shown, in HTML format"
+#~ msgid "HTML Source"
+#~ msgstr "ប្រភព​របស់​ HTML"
+
+#~ msgid "HTML code for displaying the message to the user"
+#~ msgstr "កូដ HTML សម្រាប់​បង្ហាញ​សារ​ទៅកាន់​អ្នក​ប្រើ​"
+
+#, fuzzy
+#~| msgid "VCard Viewer"
+#~ msgid "vCard Viewer"
+#~ msgstr "កម្មវិធីមើល VCard"
+
+#~ msgid "&Import"
+#~ msgstr "នាំចូល"
+
+#, fuzzy
+#~| msgid "&Next Card"
+#~ msgid "&Next Card"
+#~ msgstr "កាត​បន្ទាប់"
+
+#, fuzzy
+#~| msgid "&Previous Card"
+#~ msgid "&Previous Card"
+#~ msgstr "កាត​មុន"
+
+#~ msgid "&Zoom In"
+#~ msgstr "ពង្រីក"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "បង្រួម"
+
+#~ msgid "Reset"
+#~ msgstr "កំណត់​ឡើងវិញ"
+
+#, fuzzy
+#~| msgid "&Zoom In"
+#~ msgid "Zoom"
+#~ msgstr "ពង្រីក"
+
+#~ msgid "Close"
+#~ msgstr "បិទ​"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "ស្វែងរក​ ៖​"
+
+#~ msgid "Text to search for"
+#~ msgstr "អត្ថបទ​ត្រូវ​ស្វែងរក​"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "បន្ទាប់​"
+
+#~ msgid "Jump to next match"
+#~ msgstr "លោត​ទៅ​កាន់​ដំណូច​បន្ទាប់​"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "មុន​"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "លោត​ទៅកាន់​ដំណូច​មុន​"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "កែប្រែ​ឥរិយាបថ​ស្វែងរក"
+
+#~ msgid "Case sensitive"
+#~ msgstr "ប្រកាន់​តួ​អក្សរ​​តូច​ធំ​"
+
+#, fuzzy
+#~| msgid "Message not found."
+#~ msgid "Phrase not found"
+#~ msgstr "រក​មិន​ឃើញ​សារ​ ។"
+
+#, fuzzy
+#~| msgid "No Subject"
+#~ msgid "Object"
+#~ msgstr "​គ្មាន​ប្រធាន​បទ"
+
+#, fuzzy
+#~| msgctxt "Unknown date"
+#~| msgid "Unknown"
+#~ msgid "Unknown"
+#~ msgstr "​(មិន​ស្គាល់)"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copy url"
+#~ msgstr "ចម្លង"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copy filter"
+#~ msgstr "ចម្លង"
+
+#, fuzzy
+#~| msgctxt "to open"
+#~| msgid "Open"
+#~ msgid "Open"
+#~ msgstr "បើក"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Add subscription"
+#~ msgstr "សេចក្ដី​ពិពណ៌នា"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Show List"
+#~ msgstr "បង្ហាញសេចក្តី​​​លម្អិត"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Not subscription added..."
+#~ msgstr "សេចក្ដី​ពិពណ៌នា"
+
+#, fuzzy
+#~| msgid "Delete Attachment"
+#~ msgid "Delete current list"
+#~ msgstr "លុប​ឯកសារ​ភ្ជាប់"
+
+#, fuzzy
+#~| msgid "Show full \"To\" list"
+#~ msgid "Show adblock list"
+#~ msgstr "បង្ហាញ​បញ្ជី​ \"To\" ពេញលេញ"
+
+#, fuzzy
+#~| msgid "Delete Attachment"
+#~ msgid "Delete List"
+#~ msgstr "លុប​ឯកសារ​ភ្ជាប់"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Apply to:"
+#~ msgstr "ឆ្លើយតប​ទៅ ៖ "
+
+#, fuzzy
+#~| msgid "Collapse quoted text."
+#~ msgid "Collapse blocked:"
+#~ msgstr "វេញ​អត្ថបទ​ដកស្រង់ ។"
+
+#, fuzzy
+#~| msgid "Activate Access Key"
+#~ msgid "&Enable Ad Block"
+#~ msgstr "ធ្វើ​ឲ្យ​គ្រាប់​ចុច​ចូល​ដំណើរការ​សកម្ម"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Remove subscription"
+#~ msgstr "សេចក្ដី​ពិពណ៌នា"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "បន្លិច​គ្រប់​ដំណូច​ទាំងអស់​"
+
+#~ msgid "Zoom only text"
+#~ msgstr "ពង្រីក​តែ​អត្ថបទ"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "ពង្រីក​តែ​អត្ថបទ​ប៉ុណ្ណោះ"
+
+#~ msgid "No Audit Log available"
+#~ msgstr "គ្មាន​កំណត់​ត្រួតពិនិត្យ"
+
+#~ msgid "Error Retrieving Audit Log: %1"
+#~ msgstr "កំហុស​ក្នុង​ការ​ទៅយក​កំណត់​ហេតុ​ការ​ត្រួត​ពិនិត្យ ៖ %1"
+
+#~ msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+#~ msgid "Show Audit Log"
+#~ msgstr "បង្ហាញ​កំណត់ហេតុ​ត្រួតពិនិត្យ"
+
+#~ msgid "The crypto engine returned no cleartext data."
+#~ msgstr "ម៉ាស៊ីន crypto បាន​ត្រឡប់​ទិន្នន័យ​ដែល​​គ្មាន​ទិន្នន័យ​អត្ថបទ​សម្អាត ។"
+
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "​(មិន​ស្គាល់)"
+
+#~ msgid "New or changed: %1 (secret key available)"
+#~ msgstr "ថ្មី ឬ បាន​ផ្លាស់ប្ដូរ ៖ %1 (មាន​សោ​សម្ងាត់)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "ថ្មី​ ឬ​បាន​ផ្លាស់ប្ដូរ ៖ %1"
+
+#~ msgid "Crypto plug-in \"%1\" is not initialized."
+#~ msgstr "កម្មវិធី​ជំនួយ Crypto \"%1\" គឺ​មិនត្រូវបាន​ចាប់ផ្ដើម​ឡើយ ។"
+
+#, fuzzy
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "Headers:"
+#~ msgstr "បឋមកថា"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Long Headers"
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "បឋមកថា​វែង"
+
+#, fuzzy
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "Header:"
+#~ msgstr "បឋមកថា"
+
+#~ msgid "Au&tomatic collapse level:"
+#~ msgstr "កម្រិត​វេញ​ស្វ័យប្រវត្តិ ៖ "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "បឋមកថា​ទាំងអស់"
+
+#~ msgid "Show all message headers"
+#~ msgstr "បង្ហាញ​បឋមកថា​សារទាំងអស់"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "បឋមកថា​សង្ខេប"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "បង្ហាញ​បញ្ជី​សង្ខេប​នៃ​បឋមកថា​សារ"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Long Headers"
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "បឋមកថា​វែង"
+
+#, fuzzy
+#~| msgid "Show long list of message headers"
+#~ msgid "Show custom headers"
+#~ msgstr "បង្ហាញ​បញ្ជី​ដែល​វែង​នៃ​បឋមកថា​សារ"
+
+#~ msgid "To: "
+#~ msgstr "ទៅកាន់​ ៖​"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "បឋមកថា​​សហគ្រាស"
+
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "បង្ហាញ​បញ្ជី​បឋមកថា​នៅ​ក្នុង​រចនាប័ទ្ម​សហគ្រាស"
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(បានផ្ញើ​ឡើងវិញ​ពី %1)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "ជូនចំពោះ ៖"
+
+#~ msgid "User-Agent: "
+#~ msgstr "ភ្នាក់ងារ​អ្នកប្រើ ៖ "
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-Mailer ៖ "
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "MDN To: "
+#~ msgstr "ទៅកាន់​ ៖​"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "បឋមកថា​ដែល​ល្អ"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "បង្ហាញ​បញ្ជី​នៃ​បឋមកថា​​នៅក្នុង​ទ្រង់ទ្រាយ​ដែល​ល្អ"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "បឋមកថា​វែង"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "បង្ហាញ​បញ្ជី​ដែល​វែង​នៃ​បឋមកថា​សារ"
+
+#, fuzzy
+#~| msgid "sent: "
+#~ msgid "Event:"
+#~ msgstr "បាន​ផ្ញើ ៖"
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Open &editor..."
+#~ msgstr "​បើក​ជាមួយ..."
+
+#, fuzzy
+#~| msgid "Edit with:"
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "កែសម្រួល​ជា​មួយ ៖"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply to \"%1\""
+#~ msgstr "ឆ្លើយតប​ទៅ ៖ "
+
+#~ msgid "Translate..."
+#~ msgstr "បកប្រែ..."
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-obtain-keys\" function. Please "
+#~ "report this bug."
+#~ msgstr ""
+#~ "កម្មវិធីខាងក្រោយ Chiasmus មិនផ្ដល់មុខងារ \"x-obtain-keys\" ឡើយ ។ សូមរាយការណ៍​កំហុស​នេះ ។"
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "កំហុស​កម្មវិធី​ខាងក្រោយ Chiasmus"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-obtain-keys\" "
+#~ "function did not return a string list. Please report this bug."
+#~ msgstr ""
+#~ "ត្រឡប់​តម្លៃ​ដែល​មិនបានរំពឹង​ពី​កម្មវិធីខាងក្រោយ Chiasmus ៖ អនុគមន៍ \"x-obtain-keys\" មិនបាន​"
+#~ "ត្រឡប់​បញ្ជី​ខ្សែអក្សរ​ឡើយ ។ សូមរាយការកំហុស ។"
+
+#~ msgid ""
+#~ "No keys have been found. Please check that a valid key path has been set "
+#~ "in the Chiasmus configuration."
+#~ msgstr ""
+#~ "រកមិន​ឃើញ​កូនសោ​ឡើយ ។ សូម​ពិនិត្យ​ថា ផ្លូវសោ​ដែល​ត្រឹមត្រូវ​បាន​កំណត់​នៅក្នុង​ការកំណត់រចនាសម្ព័ន្ធ​ "
+#~ "Chiasmus ។"
+
+#~ msgid "Chiasmus Decryption Key Selection"
+#~ msgstr "ជម្រើស​កូនសោ​​ឌិគ្រីប​ Chiasmus"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-decrypt\" function. Please report "
+#~ "this bug."
+#~ msgstr ""
+#~ "កម្មវិធីខាងក្រោយ Chiasmus មិន​ផ្ដល់​អនុគមន៍ \"x-decrypt\" ឡើយ ។ សូម​រាយការណ៍​កំហុស​នេះ ។"
+
+#~ msgid ""
+#~ "The \"x-decrypt\" function does not accept the expected parameters. "
+#~ "Please report this bug."
+#~ msgstr "អនុគមន៍ \"x-decrypt\" មិន​ទទួលយក​ប៉ារ៉ាម៉ែត្រ​ដែល​រំពឹង​ឡើយ ។ សូម​រាយការណ៍​កំហុស​នេះ ។"
+
+#~ msgid "Chiasmus Decryption Error"
+#~ msgstr "កំហុស​ការឌិគ្រីប Chiasmus"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-decrypt\" function "
+#~ "did not return a byte array. Please report this bug."
+#~ msgstr ""
+#~ "ត្រឡប់​តម្លៃ​ដែល​មិនបាន​រំពឹង​ពី​កម្មវិធី​ខាងក្រោយ Chiasmus ៖ មុខងារ \"x-decrypt\" មិនបានត្រឡប់​"
+#~ "អារេ​បៃឡើយ ។ សូមរាយការណ៍​កំហុស ។"
+
+#~ msgid "Please select the Chiasmus key file to use:"
+#~ msgstr "សូម​ជ្រើស​ឯកសារសោ Chiasmus ដែលត្រូវប្រើ ៖"
+
+#~ msgid "Additional arguments for chiasmus:"
+#~ msgstr "អាគុយម៉ង់បន្ថែម​សម្រាប់​ chiasmus ៖"
+
+#~ msgid "Decrypt With Chiasmus..."
+#~ msgstr "ឌិគ្រីបជាមួយ Chiasmus..."
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Long Headers"
+#~ msgid "Configure..."
+#~ msgstr "បឋមកថា​វែង"
+
+#~ msgid "Toggle Caret Browsing"
+#~ msgstr "បិទ​/​បើក​ការ​រុករក​ Caret"
+
+#~ msgid "Caret Browsing will be activated. Switch off with F7 shortcut."
+#~ msgstr "ការ​រុក​រក Caret នឹង​ត្រូវ​បាន​ធ្វើ​ឲ្យ​សកម្ម ។ បិទ​ផ្លូវ​កាត់​ដោយ​ប្រើ F7 ។"
+
+#~ msgid "Activate Caret Browsing"
+#~ msgstr "ធ្វើ​ឲ្យ​ការ​រុក​រក Caret"
+
+#~ msgid "Allow to delete attachments of existing mails."
+#~ msgstr "អនុញ្ញាត​ឲ្យ​លុប​ឯកសារ​ភ្ជាប់​របស់​សំបុត្រ​ដែល​មាន​ស្រាប់ ។"
+
+#~ msgid "Message Structure Viewer Placement"
+#~ msgstr "ការ​កំណត់​ទីតាំង​កម្មវិធី​មើល​រចនាសម្ព័ន្ធ​សារ"
+
+#~ msgid "Above the message pane"
+#~ msgstr "នៅ​ខាងលើ​ស្លាបព្រិល​​សារ"
+
+#~ msgid "Below the message pane"
+#~ msgstr "នៅ​ខាងក្រោម​ស្លាបព្រិល​សារ"
+
+#~ msgid "Number of addresses to show before collapsing"
+#~ msgstr "ចំនួន​អាសយដ្ឋាន​ត្រូវ​បង្ហាញ​មុន​ពេល​ដែល​ធ្លាក់​ចុះ"
+
+#~ msgid "Fallback character e&ncoding:"
+#~ msgstr "ត្រឡប់​ការ​អ៊ិនកូដ​តួ​អក្សរ ៖​"
+
+#~ msgid ""
+#~ "When encountering a Toltec scheduling message, display a custom "
+#~ "replacement text for it."
+#~ msgstr "នៅ​ពេល​ដែល​ជួបប្រទះ​​សារ​កំណត់​ពេល​​របស់​​ Toltec​ បង្ហាញ​​​​ជំនួស​អត្ថបទ​ផ្ទាល់ខ្លួន​​សម្រាប់​វា​ ។"
+
+#~ msgid ""
+#~ "The text that will be displayed as a replacement when encountering Toltec "
+#~ "scheduling messages."
+#~ msgstr "អត្ថបទ​ដែល​នឹង​ត្រូវ​បាន​បង្ហាញ​​ជា​ការ​ជំនួស​ នៅ​ពេល​ជួប​ប្រទះ​សារ​កំណត់​ពេល​របស់​ Toltec ។"
+
+#~ msgid ""
+#~ "This message is a <i>Toltec</i> Groupware object, it can only be viewed "
+#~ "with Microsoft Outlook in combination with the Toltec connector."
+#~ msgstr ""
+#~ "សារ​នេះ​​ជា​វត្ថុ​ <i>Toltec</i> Groupware ​វា​អាច​ត្រូវ​បាន​មើល​តែ​ជាមួយ Microsoft "
+#~ "Outlook ប៉ុណ្ណោះ​ក្នុង​បន្សំ​ជា​មួយ​ការ​តភ្ជាប់ Toltec ។"
+
+#~ msgid "Show Raw Message"
+#~ msgstr "បង្ហាញ​សារ​​ដើម"
+
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ចាប់ផ្ដើម​សេវា Jovie Text-to-Speech"
+
+#~ msgid "sent: "
+#~ msgstr "បាន​ផ្ញើ ៖"
+
+#~ msgid "Encrypted data not shown"
+#~ msgstr "មិន​បាន​បង្ហាញ​ទិន្នន័យ​ដែល​បាន​អ៊ិនគ្រីប​ឡើយ​"
+
+#~ msgid ""
+#~ "Beginning of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "បាន​មកដល់​ចំណុច​ចាប់ផ្ដើម​របស់​សារ ។\n"
+#~ "រក​មិន​ឃើញ​ឃ្លា '%1' ទេ ។"
+
+#~ msgid ""
+#~ "End of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "បាន​មកដល់​ចុង​របស់​សារ ។\n"
+#~ "រក​មិន​ឃើញ​ឃ្លា '%1' ទេ ។"
+
+#~ msgid "The message could not be decrypted."
+#~ msgstr "សារ​មិនអាច​ត្រូវបាន​ឌិគ្រីប​បានទេ ។"
+
+#, fuzzy
+#~| msgid "&View Source"
+#~ msgid "View Source Error"
+#~ msgstr "មើល​ប្រភព"
+
+#, fuzzy
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "Header to show:"
+#~ msgstr "បឋមកថា"
+
+#, fuzzy
+#~| msgid "Message Structure Viewer Placement"
+#~ msgid "Message contains form element"
+#~ msgstr "ការ​កំណត់​ទីតាំង​កម្មវិធី​មើល​រចនាសម្ព័ន្ធ​សារ"
+
+#, fuzzy
+#~| msgid "This message is encrypted."
+#~ msgid "This message may be a scam."
+#~ msgstr "សារ​នេះ​ត្រូវ​បាន​អ៊ិនគ្រីប ។"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "បង្ហាញសេចក្តី​​​លម្អិត"
+
+#~ msgid "File Already Exists"
+#~ msgstr "​មាន​ឯកសារ​រួច​ហើយ"
+
+#~ msgid ""
+#~ "A file named <filename>%1</filename> already exists. Do you want to "
+#~ "overwrite it?"
+#~ msgstr ""
+#~ "ឯកសារ​ឈ្មោះ <filename>%1</filename>មាន​រួចហើយ ។ តើ​អ្នក​ចង់​សរសេរ​ជាន់​លើ​វា​ដែរ​ឬទេ ?"
+
+#~ msgid "Suggest New &Name"
+#~ msgstr "ស្នើ​ឈ្មោះ​ថ្មី"
+
+#~ msgid "&Overwrite"
+#~ msgstr "សរសេរ​ជាន់លើ"
+
+#~ msgid "&Ignore"
+#~ msgstr "មិន​អើពើ"
+
+#~ msgid "&Rename"
+#~ msgstr "ប្ដូរ​ឈ្មោះ"
+
+#~ msgid "Appl&y to All"
+#~ msgstr "ឆ្លើយតប​ទៅ​ទាំងអស់ ៖"
+
+#~ msgid "Detect language"
+#~ msgstr "រក​ឃើញ​ភាសា"
+
+#~ msgid "English"
+#~ msgstr "អង់គ្លេស"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "អក្សរ​ចិន​កាត់"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "អក្សរ​ចិន​ពេញ"
+
+#~ msgid "Dutch"
+#~ msgstr "ហុល្លង់"
+
+#~ msgid "French"
+#~ msgstr "បារាំង"
+
+#~ msgid "German"
+#~ msgstr "អាល្លឺម៉ង់"
+
+#~ msgid "Greek"
+#~ msgstr "ក្រិក"
+
+#~ msgid "Italian"
+#~ msgstr "អ៊ីតាលី"
+
+#~ msgid "Japanese"
+#~ msgstr "ជប៉ុន"
+
+#~ msgid "Korean"
+#~ msgstr "កូរ៉េ"
+
+#~ msgid "Portuguese"
+#~ msgstr "ព័រទុយហ្គាល់"
+
+#~ msgid "Russian"
+#~ msgstr "រុស្ស៊ី"
+
+#~ msgid "Spanish"
+#~ msgstr "អេស្ប៉ាញ"
+
+#~ msgid "Afrikaans"
+#~ msgstr "ហាហ្វ្រីកាអាន"
+
+#~ msgid "Albanian"
+#~ msgstr "អាល់បានី"
+
+#~ msgid "Arabic"
+#~ msgstr "អារ៉ាប់"
+
+#~ msgid "Armenian"
+#~ msgstr "អារមេនី"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "អាហ្ស៊ែរបែហ្សង់"
+
+#~ msgid "Basque"
+#~ msgstr "បាស្កេ"
+
+#~ msgid "Belarusian"
+#~ msgstr "បេឡារូស្ស"
+
+#~ msgid "Bulgarian"
+#~ msgstr "ប៊ុលហ្ការី"
+
+#~ msgid "Catalan"
+#~ msgstr "កាតាឡាន"
+
+#~ msgid "Croatian"
+#~ msgstr "ក្រូអាត"
+
+#~ msgid "Czech"
+#~ msgstr "ឆេក"
+
+#~ msgid "Danish"
+#~ msgstr "ដាណឹម៉ាក"
+
+#~ msgid "Estonian"
+#~ msgstr "អេស្តូនី"
+
+#~ msgid "Filipino"
+#~ msgstr "ហ្វ៊ីលីពីន"
+
+#~ msgid "Finnish"
+#~ msgstr "ហ្វាំងឡង់"
+
+#~ msgid "Galician"
+#~ msgstr "ហ្គាលីសាន"
+
+#~ msgid "Georgian"
+#~ msgstr "ហ្សកហ្ស៊ី"
+
+#~ msgid "Haitian Creole"
+#~ msgstr "Haitian Creole"
+
+#~ msgid "Hebrew"
+#~ msgstr "ហេប្រូ"
+
+#~ msgid "Hindi"
+#~ msgstr "ហិណ្ឌូ"
+
+#~ msgid "Hungarian"
+#~ msgstr "ហុងគ្រី"
+
+#~ msgid "Icelandic"
+#~ msgstr "អ៊ីស្លង់"
+
+#~ msgid "Indonesian"
+#~ msgstr "ឥណ្ឌូនេស៊ី"
+
+#~ msgid "Irish"
+#~ msgstr "អៀរឡង់"
+
+#~ msgid "Latvian"
+#~ msgstr "ឡាតវីយ៉ា"
+
+#~ msgid "Lithuanian"
+#~ msgstr "លីទុយអានី"
+
+#~ msgid "Macedonian"
+#~ msgstr "ម៉ាសេដូនី"
+
+#~ msgid "Malay"
+#~ msgstr "ម៉ាឡេស៊ី"
+
+#~ msgid "Maltese"
+#~ msgstr "ម៉ាល់តា"
+
+#~ msgid "Norwegian"
+#~ msgstr "ន័រវែស"
+
+#~ msgid "Persian"
+#~ msgstr "ពីស៊ាន"
+
+#~ msgid "Polish"
+#~ msgstr "ប៉ូឡូញ"
+
+#~ msgid "Romanian"
+#~ msgstr "រ៉ូម៉ានី"
+
+#~ msgid "Serbian"
+#~ msgstr "សែប៊ី"
+
+#~ msgid "Slovak"
+#~ msgstr "ស្លូវ៉ាគី"
+
+#~ msgid "Slovenian"
+#~ msgstr "ស្លូវ៉ានី"
+
+#~ msgid "Swahili"
+#~ msgstr "ស្វាហ៊ីលី"
+
+#~ msgid "Swedish"
+#~ msgstr "ស៊ុយអែដ"
+
+#~ msgid "Thai"
+#~ msgstr "ថៃ"
+
+#~ msgid "Turkish"
+#~ msgstr "ទួរគី"
+
+#~ msgid "Ukrainian"
+#~ msgstr "អ៊ុយក្រែន"
+
+#~ msgid "Urdu"
+#~ msgstr "អ៊ូរ្ឌូ"
+
+#~ msgid "Vietnamese"
+#~ msgstr "រៀតណាម"
+
+#~ msgid "Welsh"
+#~ msgstr "វែល"
+
+#~ msgid "Yiddish"
+#~ msgstr "យីឌីហ្ស"
+
+#~ msgctxt ""
+#~ "Invert language choices so that from becomes to and to becomes from"
+#~ msgid "Invert"
+#~ msgstr "ដាក់​បញ្ច្រាស"
+
+#~ msgid "Clear"
+#~ msgstr "សម្អាត"
+
+#~ msgid "Translate"
+#~ msgstr "បកប្រែ"
+
+#~ msgid "Drag text that you want to translate."
+#~ msgstr "អូស​អត្ថបទ​ដែល​អ្នក​ចង់​បកប្រែ ។"

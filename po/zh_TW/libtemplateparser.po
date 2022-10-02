@@ -1,0 +1,976 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2010.
+# Franklin Weng <franklin@goodhorse.idv.tw>, 2011, 2012, 2013, 2015.
+# pan93412 <pan93412@gmail.com>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-26 00:45+0000\n"
+"PO-Revision-Date: 2018-12-21 19:37+0800\n"
+"Last-Translator: pan93412 <pan93412@gmail.com>\n"
+"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"dot tw>\n"
+"X-Generator: Lokalize 18.12.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: customtemplates.cpp:72 customtemplates.cpp:123
+#, kde-format
+msgctxt "Message->"
+msgid "Universal"
+msgstr "通用"
+
+#: customtemplates.cpp:73 customtemplates.cpp:129
+#, kde-format
+msgctxt "Message->"
+msgid "Reply"
+msgstr "回覆"
+
+#: customtemplates.cpp:74 customtemplates.cpp:132
+#, kde-format
+msgctxt "Message->"
+msgid "Reply to All"
+msgstr "全部回覆"
+
+#: customtemplates.cpp:75 customtemplates.cpp:135
+#, kde-format
+msgctxt "Message->"
+msgid "Forward"
+msgstr "轉寄"
+
+#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">這是怎麼運作的？</a>"
+
+#: customtemplates.cpp:87
+#, kde-format
+msgid ""
+"<qt><p>Here you can add, edit, and delete custom message templates to use "
+"when you compose a reply or forwarding message. Create the custom template "
+"by typing the name into the input box and press the '+' button. Also, you "
+"can bind a keyboard combination to the template for faster operations.</"
+"p><p>Message templates support substitution commands, by simply typing them "
+"or selecting them from the <i>Insert command</i> menu.</p><p>There are four "
+"types of custom templates: used to <i>Reply</i>, <i>Reply to All</i>, "
+"<i>Forward</i>, and <i>Universal</i> which can be used for all kinds of "
+"operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
+"templates.</p></qt>"
+msgstr ""
+"<qt><p>您可以在此新增、編輯與刪除自訂信件樣本，以用於編寫回覆或轉寄信件。在輸"
+"入盒中輸入名稱後按下 + 鍵以建立自訂樣本。此外，您也可以指定樣本的組合鍵以提高"
+"效率。</p> <p>信件樣本支援替代指令，只要輸入或從選單中選取<i>插入指令</i>即"
+"可。</p> <p>有四種型態的自訂樣本：<i>回覆</i>、<i>全部回覆</i>、<i>轉寄</i>與"
+"<i>通用</i>。您無法指定<i>通用</i>的樣本。</p></qt>"
+
+#: customtemplates.cpp:138
+#, kde-format
+msgctxt "Message->"
+msgid "Unknown"
+msgstr "未知"
+
+#: customtemplates.cpp:252
+#, kde-format
+msgid "A template with same name already exists."
+msgstr "已經有同名的樣本存在。"
+
+#: customtemplates.cpp:252
+#, kde-format
+msgid "Cannot create template"
+msgstr "無法建立樣本"
+
+#: customtemplates.cpp:344
+#, kde-format
+msgctxt "@info"
+msgid "Do you really want to remove template \"%1\"?"
+msgstr "您確定要移除樣本 %1 嗎？"
+
+#: customtemplates.cpp:345
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Template?"
+msgstr "要移除樣本嗎？"
+
+#: customtemplatesmenu.cpp:48
+#, kde-format
+msgid "With Custom Template"
+msgstr "以自訂樣本"
+
+#: customtemplatesmenu.cpp:51
+#, kde-format
+msgid "Reply With Custom Template"
+msgstr "以自訂樣本回覆"
+
+#: customtemplatesmenu.cpp:54
+#, kde-format
+msgid "Reply to All With Custom Template"
+msgstr "以自訂樣本全部回覆"
+
+#: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
+#: customtemplatesmenu.cpp:189
+#, kde-format
+msgid "(no custom templates)"
+msgstr "（沒有自訂樣本）"
+
+#: defaulttemplates.cpp:16
+#, kde-format
+msgid "Default new message template"
+msgstr "預設新信件樣本"
+
+#: defaulttemplates.cpp:21
+#, kde-format
+msgid "Default reply template"
+msgstr "預設回覆樣本"
+
+#: defaulttemplates.cpp:26
+#, kde-format
+msgctxt ""
+"Default reply template.%1: date of original message, %2: time of original "
+"message, %3: quoted text of original message, %4: cursor Position"
+msgid ""
+"On %1 %2 you wrote:\n"
+"%3\n"
+"%4"
+msgstr ""
+"在 %1 %2，您寫道:\n"
+"%3\n"
+"%4"
+
+#: defaulttemplates.cpp:37
+#, kde-format
+msgid "Default reply all template"
+msgstr "預設全部回覆樣本"
+
+#: defaulttemplates.cpp:41
+#, kde-format
+msgctxt ""
+"Default reply all template: %1: date, %2: time, %3: name of original sender, "
+"%4: quoted text of original message, %5: cursor position"
+msgid ""
+"On %1 %2 %3 wrote:\n"
+"%4\n"
+"%5"
+msgstr ""
+"在 %1 %2，%3 寫道:\n"
+"%4\n"
+"%5"
+
+#: defaulttemplates.cpp:53
+#, kde-format
+msgid "Default forward template"
+msgstr "預設轉寄樣本"
+
+#: defaulttemplates.cpp:60
+#, kde-format
+msgctxt ""
+"Default forward template: %1: subject of original message, %2: date of "
+"original message, %3: time of original message, %4: mail address of original "
+"sender, %5: original message text"
+msgid ""
+"\n"
+"----------  Forwarded Message  ----------\n"
+"\n"
+"Subject: %1\n"
+"Date: %2, %3\n"
+"From: %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-----------------------------------------"
+msgstr ""
+"\n"
+"----------  Forwarded Message  ----------\n"
+"\n"
+"Subject: %1\n"
+"Date: %2, %3\n"
+"From: %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-------------------------------------------------------"
+
+#. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:13
+#, kde-format
+msgid "Template content"
+msgstr "樣本內容"
+
+#. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:17
+#, kde-format
+msgid "Template shortcut"
+msgstr "樣本快捷鍵"
+
+#. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:21
+#, kde-format
+msgid "Template type"
+msgstr "樣本型態"
+
+#. i18n: ectx: label, entry (StripSignature), group (TemplateParser)
+#: settings/templateparser.kcfg:11
+#, kde-format
+msgid "Remove the signature when replying"
+msgstr "回覆時移除簽名"
+
+#. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
+#: settings/templateparser.kcfg:15
+#, kde-format
+msgid "Use smart &quoting"
+msgstr "使用智慧引言功能(&Q)"
+
+#. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
+#: settings/templateparser.kcfg:19
+#, kde-format
+msgid ""
+"Reply or forward using the same visual format as the original message (plain "
+"text or HTML)"
+msgstr ""
+
+#. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
+#: settings/templateparser.kcfg:26
+#, kde-format
+msgid "Message template for new message"
+msgstr "新信件的樣本"
+
+#. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
+#: settings/templateparser.kcfg:30
+#, kde-format
+msgid "Message template for reply"
+msgstr "回覆信件的樣本"
+
+#. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
+#: settings/templateparser.kcfg:34
+#, kde-format
+msgid "Message template for reply to all"
+msgstr "全部回覆信件的樣本"
+
+#. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
+#: settings/templateparser.kcfg:38
+#, kde-format
+msgid "Message template for forward"
+msgstr "轉寄信件的樣本"
+
+#. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
+#: settings/templateparser.kcfg:42
+#, kde-format
+msgid "Quote characters"
+msgstr "加入引言符號"
+
+#: templateparserjob.cpp:350
+#, kde-format
+msgctxt "@info"
+msgid "Cannot insert content from file %1: %2"
+msgstr "無法從檔案 %1 插入內容：%2"
+
+#: templateparserjob.cpp:520
+#, kde-format
+msgctxt "@item:intext email To"
+msgid "To:"
+msgstr "收件者："
+
+#: templateparserjob.cpp:531
+#, kde-format
+msgctxt "@item:intext email CC"
+msgid "CC:"
+msgstr "副本："
+
+#: templateparserjob.cpp:1186
+#, kde-format
+msgctxt "@item:intext"
+msgid "Attachment %1"
+msgstr "附件 %1"
+
+#: templateparserjob.cpp:1395
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Pipe command <command>%1</command> failed."
+msgstr "管線指令 <command>%1</command> 失敗。"
+
+#: templatescommandmenu.cpp:28
+msgid "Quoted Message Text"
+msgstr "引言信件文字"
+
+#: templatescommandmenu.cpp:30
+msgid "Message Text as Is"
+msgstr "直接用信件文字"
+
+#: templatescommandmenu.cpp:32
+msgid "Message Id"
+msgstr "信件代碼"
+
+#: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
+msgid "Date"
+msgstr "日期"
+
+#: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
+msgid "Date in Short Format"
+msgstr "短格式日期"
+
+#: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
+msgid "Date in C Locale"
+msgstr "C locale 格式日期"
+
+#: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
+msgid "Day of Week"
+msgstr "星期幾"
+
+#: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
+msgid "Time"
+msgstr "時間"
+
+#: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
+msgid "Time in Long Format"
+msgstr "長格式時間"
+
+#: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
+msgid "Time in C Locale"
+msgstr "C locale 格式時間"
+
+#: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
+msgid "To Field Address"
+msgstr "收件人地址"
+
+#: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
+msgid "To Field Name"
+msgstr "收件人姓名"
+
+#: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
+msgid "To Field First Name"
+msgstr "收件人的名"
+
+#: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
+msgid "To Field Last Name"
+msgstr "收件人的姓"
+
+#: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
+msgid "CC Field Address"
+msgstr "密件副本地址"
+
+#: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
+msgid "CC Field Name"
+msgstr "密件副本姓名"
+
+#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
+msgid "CC Field First Name"
+msgstr "密件副本名"
+
+#: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
+msgid "CC Field Last Name"
+msgstr "密件副本姓"
+
+#: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
+msgid "From Field Address"
+msgstr "發信人地址"
+
+#: templatescommandmenu.cpp:66
+msgid "From Field Name"
+msgstr "發信人姓名"
+
+#: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
+msgid "From Field First Name"
+msgstr "發信人的名"
+
+#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
+msgid "From Field Last Name"
+msgstr "發信人的姓"
+
+#: templatescommandmenu.cpp:72
+msgid "Addresses of all recipients"
+msgstr "所有收件者地址"
+
+#: templatescommandmenu.cpp:74
+msgctxt "Template value for subject of the message"
+msgid "Subject"
+msgstr "主題"
+
+#: templatescommandmenu.cpp:76
+msgid "Quoted Headers"
+msgstr "引入的標頭"
+
+#: templatescommandmenu.cpp:78
+msgid "Headers as Is"
+msgstr "直接使用標頭"
+
+#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
+msgid "Header Content"
+msgstr "標頭內容"
+
+#: templatescommandmenu.cpp:82
+msgid "Reply as Quoted Plain Text"
+msgstr "以純文字回覆"
+
+#: templatescommandmenu.cpp:84
+msgid "Reply as Quoted HTML Text"
+msgstr "以 HTML 回覆"
+
+#: templatescommandmenu.cpp:118
+msgid "From field Name"
+msgstr "寄件者欄位名稱"
+
+#: templatescommandmenu.cpp:124
+msgctxt "Template subject command."
+msgid "Subject"
+msgstr "主題"
+
+#: templatescommandmenu.cpp:129
+msgid "Pipe Original Message Body and Insert Result as Quoted Text"
+msgstr "將原始信件本文透過管線將結果做成引言插入"
+
+#: templatescommandmenu.cpp:131
+msgid "Pipe Original Message Body and Insert Result as Is"
+msgstr "將原始信件本文透過管線將結果插入"
+
+#: templatescommandmenu.cpp:133
+msgid "Pipe Original Message with Headers and Insert Result as Is"
+msgstr "將原始信件包含標頭透過管線將結果插入"
+
+#: templatescommandmenu.cpp:135
+msgid "Pipe Current Message Body and Insert Result as Is"
+msgstr "將目前信件本文透過管線將結果插入"
+
+#: templatescommandmenu.cpp:137
+msgid "Pipe Current Message Body and Replace with Result"
+msgstr "將目前信件本文透過管線並以結果取代"
+
+#: templatescommandmenu.cpp:142
+msgctxt "Inserts user signature, also known as footer, into message"
+msgid "Signature"
+msgstr "簽名"
+
+#: templatescommandmenu.cpp:144
+msgid "Insert File Content"
+msgstr "插入檔案內容"
+
+#: templatescommandmenu.cpp:148
+msgctxt ""
+"All characters, up to and including the next newline, are discarded without "
+"performing any macro expansion"
+msgid "Discard to Next Line"
+msgstr "丟棄至下一行"
+
+#: templatescommandmenu.cpp:151
+msgid "Template Comment"
+msgstr "樣本註解"
+
+#: templatescommandmenu.cpp:153
+msgid "No Operation"
+msgstr "無動作"
+
+#: templatescommandmenu.cpp:155
+msgid "Clear Generated Message"
+msgstr "清除產生的信件"
+
+#: templatescommandmenu.cpp:156
+msgid "Cursor position"
+msgstr "游標位置"
+
+#: templatescommandmenu.cpp:158
+msgid "Blank text"
+msgstr "空白文字"
+
+#: templatescommandmenu.cpp:160
+msgid "Dictionary Language"
+msgstr "字典語言"
+
+#: templatescommandmenu.cpp:161
+msgid "Language"
+msgstr "語言"
+
+#: templatescommandmenu.cpp:166
+msgid "Turn Debug On"
+msgstr "開啟除錯"
+
+#: templatescommandmenu.cpp:168
+msgid "Turn Debug Off"
+msgstr "關閉除錯"
+
+#: templatescommandmenu.cpp:201
+#, kde-format
+msgid "Insert Command"
+msgstr "插入命令"
+
+#: templatescommandmenu.cpp:214
+#, kde-format
+msgid "Original Message"
+msgstr "原始信件"
+
+#: templatescommandmenu.cpp:228
+#, kde-format
+msgid "Current Message"
+msgstr "目前信件"
+
+#: templatescommandmenu.cpp:241
+#, kde-format
+msgid "Process with External Programs"
+msgstr "以外部程式處理"
+
+#: templatescommandmenu.cpp:254
+#, kde-format
+msgctxt "Miscellaneous template commands menu"
+msgid "Miscellaneous"
+msgstr "雜項"
+
+#: templatescommandmenu.cpp:268
+#, kde-format
+msgctxt "Debug template commands menu"
+msgid "Debug"
+msgstr "偵錯"
+
+#: templatesconfiguration.cpp:50
+#, kde-format
+msgid ""
+"<p>Here you can create and manage templates to use when composing new "
+"messages, replies or forwarded messages.</p><p>The message templates support "
+"substitution commands, either simply type them or select them from the "
+"<i>Insert command</i> menu.</p>"
+msgstr ""
+"<p>您可以在此建立與管理用於編寫、回覆與轉寄信件時的信件樣本。</p> <p>信件樣本"
+"支援替代指令，只要輸入或從選單中選取<i>插入指令</i>即可。</p>"
+
+#: templatesconfiguration.cpp:58
+#, kde-format
+msgid ""
+"<p>Templates specified here are folder-specific. They override both global "
+"templates and per-identity templates.</p>"
+msgstr ""
+"<p>在此指定的樣本為個別資料夾指定的樣本。它們會覆蓋全域樣本與每個身份的樣本的"
+"設定。</p>"
+
+#: templatesconfiguration.cpp:63
+#, kde-format
+msgid ""
+"<p>Templates specified here are identity-specific. They override global "
+"templates, but can be overridden by per-folder templates if they are "
+"specified.</p>"
+msgstr ""
+"<p>在此指定的樣本為個別身份指定的樣本。它們會覆蓋全域樣本與每個資料夾的樣本的"
+"設定。</p>"
+
+#: templatesconfiguration.cpp:68
+#, kde-format
+msgid ""
+"<p>These are global (default) templates. They can be overridden by per-"
+"identity templates or per-folder templates if they are specified.</p>"
+msgstr ""
+"<p>在此指定的樣本為全域（預設）樣本。它們會被每個資料夾與每個身份的樣本的設定"
+"覆蓋掉。</p>"
+
+#: templatesconfiguration.cpp:100
+#, kde-format
+msgid "Do you want to reset current template or all templates to default?"
+msgstr "您確定要重置目前的樣本或所有的樣本回到預設值嗎？"
+
+#: templatesconfiguration.cpp:101
+#, kde-format
+msgid "Reset to default"
+msgstr "重置到預設值"
+
+#: templatesconfiguration.cpp:102
+#, kde-format
+msgid "Reset Current Template"
+msgstr "重置目前的樣本"
+
+#: templatesconfiguration.cpp:103
+#, kde-format
+msgid "Reset All Templates"
+msgstr "重置所有的樣本"
+
+#: templatesconfiguration.cpp:361
+#, kde-format
+msgid ""
+"Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
+"not correct. Use only one of the aforementioned commands with \" Reply as "
+"Quoted Message command\" as per your need\n"
+"(a)Reply using plain text for quotes to be strictly in plain text\n"
+"(b)Reply using HTML text for quotes being in HTML format if present"
+msgstr ""
+"「用純文字回覆」與「用 HTML 回覆」不能同時使用。這兩個只能其中一個與「用引言"
+"文字格式回覆」\n"
+"(a) 選擇用純文字回覆時，引言會是純文字\n"
+"(b) 選擇用 HTML 回覆時，會看引言原本的格式，若為 HTML 則用 HTML 格式"
+
+#: templatesinsertcommandpushbutton.cpp:20
+#, kde-format
+msgid "&Insert Command"
+msgstr "插入命令(&I)"
+
+#: templatesinsertcommandpushbutton.cpp:28
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select a command to insert into the template"
+msgstr "選擇要插入此樣本的指令"
+
+#: templatesinsertcommandpushbutton.cpp:30
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Traverse this menu to find a command to insert into the current template "
+"being edited.  The command will be inserted at the cursor location, so you "
+"want to move your cursor to the desired insertion point first."
+msgstr ""
+"在此選單中找到要插入目前編輯中樣本的指令。指令會被插在目前游標的位置，所以您"
+"要先將游標移動到您想放置指令的位置。"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
+#: ui/customtemplates_base.ui:86
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Enter a name for the custom template"
+msgstr "輸入自訂樣本的名稱"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mName)
+#: ui/customtemplates_base.ui:89
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"To create a custom template, first enter a name for that template and press "
+"the '+' button."
+msgstr "要建立自訂樣本，先輸入樣本名稱後按下 '+' 鍵"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
+#: ui/customtemplates_base.ui:96
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add a new custom template"
+msgstr "（新增自訂樣本）"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mAdd)
+#: ui/customtemplates_base.ui:99
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to create a new custom template with the "
+"specified name"
+msgstr "按下此按鈕會以指定的名稱來產生新的自訂樣本。"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
+#: ui/customtemplates_base.ui:106
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove the selected custom template"
+msgstr "移除選取的自訂樣本"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mRemove)
+#: ui/customtemplates_base.ui:109
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to remove the currently selected custom "
+"template"
+msgstr "按下此按鍵將選取的自訂樣本移除"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
+#: ui/customtemplates_base.ui:116
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Duplicate the selected custom template"
+msgstr "複製選取的自訂樣本"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mDuplicate)
+#: ui/customtemplates_base.ui:119
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to duplicate the currently selected custom "
+"template"
+msgstr "按下此按鍵將複製選取的自訂樣本"
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:134
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "List of custom templates available"
+msgstr "可用的自訂樣本清單"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:137
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is a list of all the custom templates available."
+msgstr "這是可用的自訂樣本清單。"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:147
+#, kde-format
+msgctxt "@title:column Type of custom template"
+msgid "Type"
+msgstr "類型"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:152
+#, kde-format
+msgctxt "@title:column Name of the custom template."
+msgid "Name"
+msgstr "名稱"
+
+#. i18n: ectx: property (text), widget (QLabel, mToLabel)
+#: ui/customtemplates_base.ui:195
+#, kde-format
+msgctxt "@label:textbox Recipient mail address"
+msgid "To:"
+msgstr "收件者："
+
+#. i18n: ectx: property (text), widget (QLabel, mCCLabel)
+#: ui/customtemplates_base.ui:202
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "副本："
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
+#: ui/customtemplates_base.ui:219
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Additional recipients of the message"
+msgstr "額外收件者"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
+#: ui/customtemplates_base.ui:222
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"When using this template, the default recipients are those you enter here.  "
+"This is a comma-separated list of mail addresses."
+msgstr ""
+"您在此輸入的是使用此樣本時預設的收件者。若為多個電子郵件地址，請用逗號分隔。"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
+#: ui/customtemplates_base.ui:235
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Additional recipients who get a copy of the message"
+msgstr "要多送一份副本給誰"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
+#: ui/customtemplates_base.ui:238
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"When using this template, the recipients you enter here will by default get "
+"a copy of this message.  This is a comma-separated list of mail addresses."
+msgstr ""
+"您在此輸入的是使用此樣本預設會收到副本的收件者。若為多個電子郵件地址，請用逗"
+"號分隔。"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
+#: ui/customtemplates_base.ui:255
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The custom template"
+msgstr "自訂樣本"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, mEdit)
+#: ui/customtemplates_base.ui:258
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This area contains the associated custom template."
+msgstr "此區域包含相關的自訂樣本。"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:283
+#, kde-format
+msgctxt "@item:inlistbox Universal custom template type."
+msgid "Universal"
+msgstr "通用"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:288
+#, kde-format
+msgctxt "@item:inlistbox Custom template type for message replies"
+msgid "Reply"
+msgstr "回覆"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:293
+#, kde-format
+msgctxt "@item:inlistbox Custom template type for reply-to-all messages"
+msgid "Reply to All"
+msgstr "全部回覆"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:298
+#, fuzzy, kde-format
+#| msgctxt "Message->"
+#| msgid "Forward"
+msgctxt "@item:inlistbox Custom template type for message forwards"
+msgid "Forward"
+msgstr "轉寄"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: ui/customtemplates_base.ui:306
+#, kde-format
+msgctxt "@label"
+msgid "Shortc&ut:"
+msgstr "快捷鍵(&U)："
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: ui/customtemplates_base.ui:325
+#, kde-format
+msgctxt "@label"
+msgid "&Template type:"
+msgstr "樣本型態(&T)："
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TemplatesConfigurationBase)
+#: ui/templatesconfiguration_base.ui:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Template Configuration"
+msgstr "樣本設定"
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_new)
+#: ui/templatesconfiguration_base.ui:77
+#, kde-format
+msgctxt "@title Message template"
+msgid "New Message"
+msgstr "新的信件"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
+#: ui/templatesconfiguration_base.ui:89
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for new messages"
+msgstr "建立新信件的樣本"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
+#: ui/templatesconfiguration_base.ui:92
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for new email messages.  For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"在這個區域您可以建立新信件所使用的樣本。關於如何建立樣本，請按下「這是怎麼運"
+"作的？」的連結。"
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_reply)
+#: ui/templatesconfiguration_base.ui:108
+#, kde-format
+msgctxt "@title Message template"
+msgid "Reply to Sender"
+msgstr "回覆寄件者"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
+#: ui/templatesconfiguration_base.ui:146
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for message replies"
+msgstr "建立回覆信件的樣本"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
+#: ui/templatesconfiguration_base.ui:149
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for messages replies. For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"在這個區域您可以建立回覆所使用的樣本。關於如何建立樣本，請按下「這是怎麼運作"
+"的？」的連結。"
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
+#: ui/templatesconfiguration_base.ui:165
+#, kde-format
+msgctxt "@title Message template"
+msgid "Reply to All / Reply to List"
+msgstr "全部回覆/回覆到清單中"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
+#: ui/templatesconfiguration_base.ui:203
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for replying to all recipients or to a mailing list"
+msgstr "建立全部回覆或回覆到郵件論壇的信件樣本"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
+#: ui/templatesconfiguration_base.ui:206
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for reply-to-all messages or replies to "
+"a mailing list.  For more information about how to create the template, "
+"press the \"How does this work?\" link on this dialog."
+msgstr ""
+"在這個區域您可以建立全部回覆或回覆到郵件論壇時所使用的樣本。關於如何建立樣"
+"本，請按下「這是怎麼運作的？」的連結。"
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_forward)
+#: ui/templatesconfiguration_base.ui:222
+#, kde-format
+msgctxt "@title Message template"
+msgid "Forward Message"
+msgstr "轉寄信件"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
+#: ui/templatesconfiguration_base.ui:260
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for message forwards"
+msgstr "建立轉寄信件的樣本"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
+#: ui/templatesconfiguration_base.ui:263
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for message forwards.  For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"在這個區域您可以建立轉寄信件時所使用的樣本。關於如何建立樣本，請按下「這是怎"
+"麼運作的？」的連結。"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: ui/templatesconfiguration_base.ui:303
+#, kde-format
+msgctxt "@label:textbox Prefix for quoted message lines"
+msgid "&Quote indicator:"
+msgstr "引文符號(&Q)："
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
+#: ui/templatesconfiguration_base.ui:316
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Set the Prefix for quoted message lines"
+msgstr "設定引言文字行的前置符號"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
+#: ui/templatesconfiguration_base.ui:326
+#, no-c-format, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"\n"
+"             <qt>The following placeholders are supported in the quote "
+"indicator:\n"
+"             <ul>\n"
+"             <li>%f: sender's initials</li>\n"
+"             <li>%%: percent sign</li>\n"
+"             <li>%_: space</li>\n"
+"             </ul></qt>\n"
+"           "
+msgstr ""
+"\n"
+"<qt>以下的取代符可用於引言提示中：\n"
+"<ul>\n"
+"<li>%f：寄件者的縮寫</li>\n"
+"<li>%%：百分比符號</li>\n"
+"<li>%_：空白</li>\n"
+"</ul></qt>\n"
+"           "
+
+#~ msgctxt "@item:inlistbox Custom template type for messsage forwards"
+#~ msgid "Forward"
+#~ msgstr "轉寄"
+
+#, fuzzy
+#~| msgid "Reply or forward using HTML if present"
+#~ msgid "Reply or forward using HTML based on Visual Format"
+#~ msgstr "如果有的話使用 HTML 回覆或轉寄"

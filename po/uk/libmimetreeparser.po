@@ -1,0 +1,342 @@
+# Translation of libmimetreeparser.po to Ukrainian
+# Copyright (C) 2016 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmimetreeparser\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2016-06-01 18:45+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Без назви"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Неправильний додаток шифрування."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Не знайдено відповідного додатка шифрування."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "Не було знайдено додатка %1."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "Додаток шифрування «%1» не може перевірити підписи."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"Повідомлення підписане, але чинність підпису неможливо перевірити.<br /"
+">Причина: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Додатку шифрування «%1» не вдалося розшифрувати повідомлення."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Додатку шифрування «%1» не вдалося розшифрувати дані."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Помилка: %1"
+
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "Вибачте, не вдалося імпортувати сертифікат."
+
+#~ msgid "Reason: %1"
+#~ msgstr "Причина: %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Вибачте, але у цьому повідомленні не знайдено жодного сертифіката."
+
+#~ msgid "Certificate import status:"
+#~ msgstr "Стан імпорту сертифікатів:"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "Було імпортовано %1 новий сертифікат."
+#~ msgstr[1] "Було імпортовано %1 нових сертифікати."
+#~ msgstr[2] "Було імпортовано %1 нових сертифікатів."
+#~ msgstr[3] "Було імпортовано один новий сертифікат."
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "Залишено без змін %1 сертифікат."
+#~ msgstr[1] "Залишено без змін %1 сертифікати."
+#~ msgstr[2] "Залишено без змін %1 сертифікатів."
+#~ msgstr[3] "Залишено без змін один сертифікат."
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "Було імпортовано %1 новий закритий ключ."
+#~ msgstr[1] "Було імпортовано %1 нових закритих ключі."
+#~ msgstr[2] "Було імпортовано %1 нових закритих ключів."
+#~ msgstr[3] "Було імпортовано один новий закритий ключ."
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "Залишено без змін %1 закритий ключ."
+#~ msgstr[1] "Залишено без змін %1 закритих ключі."
+#~ msgstr[2] "Залишено без змін %1 закритих ключів."
+#~ msgstr[3] "Залишено без змін один закритий ключ."
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr "Вибачте, але додаткової інформації про імпорт сертифікатів немає."
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Додаткова інформація про імпорт сертифікатів:"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Невдача: %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "Вмонтоване повідомлення"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "Кінець вмонтованого повідомлення"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "Це повідомлення зашифровано."
+
+#~ msgid "Decrypt Message"
+#~ msgstr "Розшифрувати повідомлення"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Будь ласка, зачекайте, доки повідомлення буде розшифровано..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "Зашифроване повідомлення"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "Зашифроване повідомлення (розшифрування неможливе)"
+
+#~ msgid "Reason: "
+#~ msgstr "Причина: "
+
+#~ msgid ""
+#~ "No secret key found to encrypt the message. It is encrypted for following "
+#~ "keys:"
+#~ msgstr ""
+#~ "Не знайдено закритого ключа для шифрування повідомлення. Повідомлення "
+#~ "зашифровано для таких ключів:"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Не вдалося розшифрувати дані."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "Кінець зашифрованого повідомлення"
+
+#~ msgid ""
+#~ "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~ "HTML code is shown. If you trust the sender of this message then you can "
+#~ "activate formatted HTML display for this message <a href=kmail:"
+#~ "showHTML>by clicking here</a>."
+#~ msgstr ""
+#~ "<b>Примітка:</b> Це повідомлення у HTML-форматі. З міркувань безпеки буде "
+#~ "показано лише сам HTML-код. Якщо ви довіряєте тому, хто надіслав вам "
+#~ "листа, ви можете увімкнути показ HTML для цього повідомлення: натисніть "
+#~ "<a href=kmail:showHTML>тут</a>."
+
+#~ msgid ""
+#~ "<b>Note:</b> This HTML message may contain external references to images "
+#~ "etc. For security/privacy reasons external references are not loaded. If "
+#~ "you trust the sender of this message then you can load the external "
+#~ "references for this message <a href=kmail:loadExternal>by clicking here</"
+#~ "a>."
+#~ msgstr ""
+#~ "<b>Примітка:</b> Це повідомлення у HTML-форматі може містити зовнішні "
+#~ "посилання на зображення тощо. З міркувань безпеки та збереження особистих "
+#~ "даних зовнішні посилання не завантажуються. Якщо ви довіряєте тому, хто "
+#~ "надіслав вам листа, то можете ввімкнути завантаження зовнішніх посилань "
+#~ "цього повідомлення: натисніть <a href=kmail:loadExternal>тут</a>."
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Будь ласка, зачекайте, доки підпис буде перевірено..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Недостатньо інформації для перевірки підпису. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Повідомлення підписане %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Повідомлення підписане невідомим ключем."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Повідомлення підписане ключем %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Повідомлення підписане %1, підписав %3, ключ %2."
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Повідомлення підписане %1, ключ %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Повідомлення підписане %2 ключем %1."
+
+#~ msgid "Status: "
+#~ msgstr "Стан: "
+
+#~ msgid "Hide Details"
+#~ msgstr "Сховати подробиці"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Повідомлення підписане %1, невідомий ключ %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Повідомлення підписане невідомим ключем %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Не вдалося перевірити коректність підпису."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Повідомлення підписане %2 (Ід. ключа: %1)."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Підпис коректний, але невідомо коректний ключ чи ні."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Підпис коректний, надійність ключа є обмеженою."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Підпис коректний, надійність ключа повна."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Підпис коректний, надійність ключа необмежена."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Підпис коректний, але ключ не є надійним."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Попередження: неправильний підпис."
+
+#~ msgid "Invalid signature."
+#~ msgstr "Некоректний підпис."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "Недостатньо інформації для перевірки підпису."
+
+#~ msgid "Signed by <a href=mailto:%1>%2</a>."
+#~ msgstr "Підписано <a href=mailto:%1>%2</a>."
+
+#~ msgid "Signature is valid."
+#~ msgstr "Підпис є коректним."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Невідомий стан підпису"
+
+#~ msgid "Show Details"
+#~ msgstr "Показати подробиці"
+
+#~ msgid "End of signed message"
+#~ msgstr "Кінець підписаного повідомлення"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Помилка: підпис не перевірено"
+
+#~ msgid "Good signature"
+#~ msgstr "Придатний підпис"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Неправильний</b> підпис"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Немає відкритого ключа, щоб перевірити підпис"
+
+#~ msgid "No signature found"
+#~ msgstr "Підпис не знайдено"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Помилка при перевірці підпису"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Різні результати для підписів"
+
+#~ msgid "No status information available."
+#~ msgstr "Інформація щодо стану відсутня."
+
+#~ msgid "Good signature."
+#~ msgstr "Придатний підпис"
+
+#~ msgid "One key has expired."
+#~ msgstr "Один ключ застарів."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Підпис застарів."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Не вдається перевірити: ключ відсутній."
+
+#~ msgid "CRL not available."
+#~ msgstr "САС не доступні."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Доступний CRL є надто старим."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Умова не була задоволена."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Виникла системна помилка."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Один ключ було анульовано."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Неправильний</b> підпис."
+
+#~ msgid "certificate"
+#~ msgstr "сертифікат"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Попередження:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "Для підписування використано адресу відправника, що не зберігається у %1."
+
+#~ msgid "sender: "
+#~ msgstr "відправник: "
+
+#~ msgid "stored: "
+#~ msgstr "збережено: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Електронна адреса, що збережена у %1, та використана для підписування, "
+#~ "відсутня, тому неможливо порівняти її з адресою відправника %2."

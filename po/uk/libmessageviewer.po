@@ -1,0 +1,4144 @@
+# Translation of libmessageviewer.po to Ukrainian
+# Copyright (C) 2009-2021 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# I. Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessageviewer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2022-05-10 06:35+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#: messagepartthemes/default/templates/certmessagepart.html:2
+msgid "Sorry, certificate could not be imported."
+msgstr "Вибачте, не вдалося імпортувати сертифікат."
+
+#: messagepartthemes/default/templates/certmessagepart.html:4
+#, kde-format
+msgid "Reason: %1"
+msgstr "Причина: %1"
+
+#: messagepartthemes/default/templates/certmessagepart.html:7
+msgid "Sorry, no certificates were found in this message."
+msgstr "Вибачте, але у цьому повідомленні не знайдено жодного сертифіката."
+
+#: messagepartthemes/default/templates/certmessagepart.html:9
+msgid "Certificate import status:"
+msgstr "Стан імпорту сертифікатів:"
+
+#: messagepartthemes/default/templates/certmessagepart.html:13
+#, kde-format
+msgid "1 new certificate was imported."
+msgid_plural "%1 new certificates were imported."
+msgstr[0] "Було імпортовано %1 новий сертифікат."
+msgstr[1] "Було імпортовано %1 нових сертифікати."
+msgstr[2] "Було імпортовано %1 нових сертифікатів."
+msgstr[3] "Було імпортовано %1 новий сертифікат."
+
+#: messagepartthemes/default/templates/certmessagepart.html:16
+#, kde-format
+msgid "1 certificate was unchanged."
+msgid_plural "%1 certificates were unchanged."
+msgstr[0] "Залишено без змін %1 сертифікат."
+msgstr[1] "Залишено без змін %1 сертифікати."
+msgstr[2] "Залишено без змін %1 сертифікатів."
+msgstr[3] "Залишено без змін %1 сертифікат."
+
+#: messagepartthemes/default/templates/certmessagepart.html:19
+#, kde-format
+msgid "1 new secret key was imported."
+msgid_plural "%1 new secret keys were imported."
+msgstr[0] "Було імпортовано %1 новий закритий ключ."
+msgstr[1] "Було імпортовано %1 нових закритих ключі."
+msgstr[2] "Було імпортовано %1 нових закритих ключів."
+msgstr[3] "Було імпортовано %1 новий закритий ключ."
+
+#: messagepartthemes/default/templates/certmessagepart.html:22
+#, kde-format
+msgid "1 secret key was unchanged."
+msgid_plural "%1 secret keys were unchanged."
+msgstr[0] "Залишено без змін %1 закритий ключ."
+msgstr[1] "Залишено без змін %1 закритих ключі."
+msgstr[2] "Залишено без змін %1 закритих ключів."
+msgstr[3] "Залишено без змін %1 закритий ключ."
+
+#: messagepartthemes/default/templates/certmessagepart.html:28
+msgid "Sorry, no details on certificate import available."
+msgstr "Вибачте, але додаткової інформації про імпорт сертифікатів немає."
+
+#: messagepartthemes/default/templates/certmessagepart.html:30
+msgid "Certificate import details:"
+msgstr "Додаткова інформація про імпорт сертифікатів:"
+
+#: messagepartthemes/default/templates/certmessagepart.html:34
+#, kde-format
+msgctxt "Certificate import failed."
+msgid "Failed: %1 (%2)"
+msgstr "Невдача: %1 (%2)"
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:5
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:7
+msgid "Encapsulated message"
+msgstr "Вмонтоване повідомлення"
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:19
+msgid "End of encapsulated message"
+msgstr "Кінець вмонтованого повідомлення"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:3
+msgid "This message is encrypted."
+msgstr "Це повідомлення зашифровано."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:7
+msgid "Decrypt Message"
+msgstr "Розшифрувати повідомлення"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:14
+msgid "Please wait while the message is being decrypted..."
+msgstr "Будь ласка, зачекайте, доки повідомлення буде розшифровано..."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:18
+msgid "The message is encrypted for the following keys:"
+msgstr "Повідомлення зашифровано для таких ключів:"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:72
+#: messagepartthemes/default/templates/signedmessagepart.html:135
+msgid "Hide Details"
+msgstr "Сховати подробиці"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:27
+#: messagepartthemes/default/templates/encryptedmessagepart.html:62
+msgid "unknown key"
+msgstr "невідомий ключ"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:34
+msgid "Encrypted message"
+msgstr "Зашифроване повідомлення"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:158
+msgid "Show Details"
+msgstr "Показати подробиці"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:41
+msgid "Encrypted message (decryption not possible)"
+msgstr "Зашифроване повідомлення (розшифрування неможливе)"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:44
+msgid "Reason: "
+msgstr "Причина: "
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:56
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr ""
+"Не знайдено закритого ключа для розшифровування повідомлення. Повідомлення "
+"зашифровано для таких ключів:"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:67
+msgid "Could not decrypt the data."
+msgstr "Не вдалося розшифрувати дані."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+msgid "End of encrypted message"
+msgstr "Кінець зашифрованого повідомлення"
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:6
+msgid ""
+"<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+"HTML code is shown. If you trust the sender of this message then you can "
+"activate formatted HTML display for this message <a href='kmail:showHTML'>by "
+"clicking here</a>."
+msgstr ""
+"<b>Примітка:</b> Це повідомлення у HTML-форматі. З міркувань безпеки буде "
+"показано лише сам HTML-код. Якщо ви довіряєте тому, хто надіслав вам листа, "
+"ви можете увімкнути показ HTML для цього повідомлення: натисніть <a "
+"href='kmail:showHTML'>тут</a>."
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:12
+msgid ""
+"<b>Note:</b> This HTML message may contain external references to images "
+"etc. For security/privacy reasons external references are not loaded. If you "
+"trust the sender of this message then you can load the external references "
+"for this message <a href='kmail:loadExternal'>by clicking here</a>."
+msgstr ""
+"<b>Зауваження:</b> Це повідомлення у HTML-форматі може містити зовнішні "
+"посилання на зображення тощо. З міркувань безпеки та збереження особистих "
+"даних зовнішні посилання не завантажуються. Якщо ви довіряєте тому, хто "
+"надіслав вам листа, то можете ввімкнути завантаження зовнішніх посилань "
+"цього повідомлення: натисніть <a href='kmail:loadExternal'>тут</a>."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:5
+msgid "Please wait while the signature is being verified..."
+msgstr "Будь ласка, зачекайте, доки підпис буде перевірено..."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:15
+#, kde-format
+msgid "Not enough information to check signature. %1"
+msgstr "Недостатньо інформації для перевірки підпису. %1"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:108
+#: messagepartthemes/default/templates/signedmessagepart.html:127
+#, kde-format
+msgid "Message was signed by %1."
+msgstr "Повідомлення підписане %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:22
+#: messagepartthemes/default/templates/signedmessagepart.html:92
+msgid "Message was signed with unknown key."
+msgstr "Повідомлення підписане невідомим ключем."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:28
+#: messagepartthemes/default/templates/signedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:48
+#, kde-format
+msgid "Message was signed with key %1."
+msgstr "Повідомлення підписане ключем %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:31
+#, kde-format
+msgid "Message was signed by %3 on %1 with key %2"
+msgstr "Повідомлення підписане %1, підписав %3, ключ %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:39
+#, kde-format
+msgid "Message was signed on %1 with key %2."
+msgstr "Повідомлення підписане %1, ключ %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:45
+#, kde-format
+msgid "Message was signed by %2 with key %1."
+msgstr "Повідомлення підписане %2 ключем %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:57
+#: messagepartthemes/default/templates/signedmessagepart.html:98
+msgid "Status: "
+msgstr "Стан:"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:85
+#, kde-format
+msgid "Message was signed on %1 with unknown key %2."
+msgstr "Повідомлення підписане %1, невідомий ключ %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#, kde-format
+msgid "Message was signed with unknown key %1."
+msgstr "Повідомлення підписане невідомим ключем %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:95
+msgid "The validity of the signature cannot be verified."
+msgstr "Не вдалося перевірити коректність підпису."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:105
+#: messagepartthemes/default/templates/signedmessagepart.html:124
+#, kde-format
+msgid "Message was signed by %2 (Key ID: %1)."
+msgstr "Повідомлення підписане %2 (Ід. ключа: %1)."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+msgid "The signature is valid, but the key's validity is unknown."
+msgstr "Підпис коректний, але невідомо коректний ключ чи ні."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:114
+msgid "The signature is valid and the key is marginally trusted."
+msgstr "Підпис коректний, надійність ключа є обмеженою."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:116
+msgid "The signature is valid and the key is fully trusted."
+msgstr "Підпис коректний, надійність ключа повна."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:118
+msgid "The signature is valid and the key is ultimately trusted."
+msgstr "Підпис коректний, надійність ключа необмежена."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:120
+msgid "The signature is valid, but the key is untrusted."
+msgstr "Підпис коректний, але ключ не є надійним."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:130
+msgid "Warning: The signature is bad."
+msgstr "Попередження: неправильний підпис."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:143
+msgid "Invalid signature."
+msgstr "Некоректний підпис."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:145
+msgid "Not enough information to check signature validity."
+msgstr "Недостатньо інформації для перевірки підпису."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:148
+#, kde-format
+msgid "Signed by <a href='mailto:%1'>%1</a>."
+msgstr "Підписано <a href='mailto:%1'>%1</a>."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:151
+msgid "Signature is valid."
+msgstr "Підпис є коректним."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
+msgid "Unknown signature state"
+msgstr "Невідомий стан підпису"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:170
+msgid "End of signed message"
+msgstr "Кінець підписаного повідомлення"
+
+#: dkim-verify/dkimcheckfulljob.cpp:118
+#, kde-format
+msgid ""
+"Stored DKIM key is different from the current one. Do you want to store this "
+"one too?"
+msgstr ""
+"Збережений ключ DKIM відрізняється від поточного. Хочете зберегти і цей ключ?"
+
+#: dkim-verify/dkimcheckfulljob.cpp:119
+#, kde-format
+msgid "Key Changed"
+msgstr "Ключ змінено"
+
+#: dkim-verify/dkimcheckfulljob.cpp:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Store"
+msgstr "Зберегти"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "SDID"
+msgstr "SDID"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Selector"
+msgstr "Селектор"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "DKIM Key"
+msgstr "Ключ DKIM"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Inserted"
+msgstr "Вставлено"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Last Used"
+msgstr "Востаннє використано"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:64
+#, kde-format
+msgid "Copy Key"
+msgstr "Скопіювати ключ"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:70
+#, kde-format
+msgid "Remove Key"
+msgid_plural "Remove Keys"
+msgstr[0] "Вилучити ключі"
+msgstr[1] "Вилучити ключі"
+msgstr[2] "Вилучити ключі"
+msgstr[3] "Вилучити ключ"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:75
+#, kde-format
+msgid "Do you want to delete this key?"
+msgid_plural "Do you want to delete these keys?"
+msgstr[0] "Хочете вилучити ці ключі?"
+msgstr[1] "Хочете вилучити ці ключі?"
+msgstr[2] "Хочете вилучити ці ключі?"
+msgstr[3] "Хочете вилучити цей ключ?"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:76
+#, kde-format
+msgid "Delete Key"
+msgid_plural "Delete Keys"
+msgstr[0] "Вилучення ключів"
+msgstr[1] "Вилучення ключів"
+msgstr[2] "Вилучення ключів"
+msgstr[3] "Вилучення ключа"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:89
+#: dkim-verify/dkimmanageruleswidget.cpp:221
+#, kde-format
+msgid "Delete All"
+msgstr "Вилучити усе"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:91
+#, kde-format
+msgid "Do you want to delete all keys?"
+msgstr "Хочете вилучити усі ключі?"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:92
+#, kde-format
+msgid "Delete Keys"
+msgstr "Вилучити ключі"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:20
+#, kde-format
+msgid "Must be signed"
+msgstr "Має бути підписано"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:21
+#, kde-format
+msgid "Can be signed"
+msgstr "Може бути підписано"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:22
+#, kde-format
+msgid "Ignore if not signed"
+msgstr "Ігнорувати, якщо не підписано"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:29
+#, kde-format
+msgid "Export..."
+msgstr "Експортувати…"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Rule"
+msgstr "Налаштовування правила"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:42
+#, kde-format
+msgid "Add Rule..."
+msgstr "Додати правило…"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:47
+#, kde-format
+msgid "Import..."
+msgstr "Імпортувати…"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, kde-format
+msgid "No rules found"
+msgstr "Не знайдено жодного правила"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
+#, kde-format
+msgid "Export Rules"
+msgstr "Експортування правил"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "Import Rules"
+msgstr "Імпортування правил"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "No rules imported."
+msgstr "Не імпортовано жодного правила"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: remote-content/remotecontentconfigurewidget.cpp:51
+#, kde-format
+msgid "Domain"
+msgstr "Домен"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Active"
+msgstr "Активний"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "List-ID"
+msgstr "Ід. списку"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "From"
+msgstr "Відправник"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Rule type"
+msgstr "Тип правила"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Priority"
+msgstr "Пріоритетність"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:194
+#: remote-content/remotecontentconfigurewidget.cpp:78
+#, kde-format
+msgid "Add..."
+msgstr "Додати…"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:199
+#: remote-content/remotecontentconfigurewidget.cpp:81
+#, kde-format
+msgid "Modify..."
+msgstr "Змінити…"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:203
+#, kde-format
+msgid "Duplicate Rule"
+msgstr "Здублювати правило"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:207
+#: remote-content/remotecontentconfigurewidget.cpp:85
+#, kde-format
+msgid "Remove Rule"
+msgstr "Вилучити правило"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:209
+#, kde-format
+msgid "Do you want to delete this rule?"
+msgstr "Хочете вилучити це правило?"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:210
+#: remote-content/remotecontentconfigurewidget.cpp:88
+#, kde-format
+msgid "Delete Rule"
+msgstr "Вилучити правило"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:223
+#, kde-format
+msgid "Do you want to delete all the rules?"
+msgstr "Хочете вилучити усі правила?"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:224
+#, kde-format
+msgid "Delete Rules"
+msgstr "Вилучення правил"
+
+#: dkim-verify/dkimruledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Rule"
+msgstr "Додавання правила"
+
+#: dkim-verify/dkimruledialog.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Modify Rule"
+msgstr "Зміна правила"
+
+#: dkim-verify/dkimrulewidget.cpp:18
+#, kde-format
+msgid "Enabled"
+msgstr "Увімкнено"
+
+#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#, kde-format
+msgid "Domain:"
+msgstr "Домен:"
+
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#, kde-format
+msgid "List-Id:"
+msgstr "Ід. списку:"
+
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#, kde-format
+msgid "From:"
+msgstr "Від:"
+
+#: dkim-verify/dkimrulewidget.cpp:46
+#, kde-format
+msgid "Use '*' to specify all emails from domain"
+msgstr "Скористайтеся «*», щоб вказати усі повідомлення з домену"
+
+#: dkim-verify/dkimrulewidget.cpp:51
+#, kde-format
+msgid "SDID:"
+msgstr "SDID:"
+
+#: dkim-verify/dkimrulewidget.cpp:54
+#, kde-format
+msgid "Rule:"
+msgstr "Правило:"
+
+#: dkim-verify/dkimrulewidget.cpp:60
+#, kde-format
+msgid "Priority:"
+msgstr "Пріоритетність:"
+
+#: dkim-verify/dkimviewermenu.cpp:14
+#, kde-format
+msgid "DKIM"
+msgstr "DKIM"
+
+#: dkim-verify/dkimviewermenu.cpp:36
+#, kde-format
+msgid "Recheck DKIM Signature"
+msgstr "Повторно перевірити підпис DKIM"
+
+#: dkim-verify/dkimviewermenu.cpp:39
+#, kde-format
+msgid "Update DKIM key"
+msgstr "Оновити ключ DKIM"
+
+#: dkim-verify/dkimviewermenu.cpp:43
+#, kde-format
+msgid "Rules..."
+msgstr "Правила…"
+
+#: dkim-verify/dkimwidgetinfo.cpp:97
+#, kde-format
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: dkim-verify/dkimwidgetinfo.cpp:103
+#, kde-format
+msgid "DKIM: valid (signed by %1)"
+msgstr "DKIM: чинний (підписано %1)"
+
+#: dkim-verify/dkimwidgetinfo.cpp:110
+#, kde-format
+msgid "DKIM: invalid"
+msgstr "DKIM: некоректний"
+
+#: dkim-verify/dkimwidgetinfo.cpp:113
+#, kde-format
+msgid "DKIM: Not signed"
+msgstr "DKIM: не підписано"
+
+#: dkim-verify/dkimwidgetinfo.cpp:118
+#, kde-format
+msgid "DKIM: Should Be Signed by %1"
+msgstr "DKIM: має бути підписано %1"
+
+#: dkim-verify/dkimwidgetinfo.cpp:134
+#, kde-format
+msgid "Body Hash was corrupted."
+msgstr "Хеш-суму вмісту пошкоджено."
+
+#: dkim-verify/dkimwidgetinfo.cpp:137
+#, kde-format
+msgid "The domain doesn't exist."
+msgstr "Домену не існує"
+
+#: dkim-verify/dkimwidgetinfo.cpp:140
+#, kde-format
+msgid "Missing header From."
+msgstr "Немає заголовка «From»."
+
+#: dkim-verify/dkimwidgetinfo.cpp:143
+#, kde-format
+msgid "Missing signature."
+msgstr "Немає підпису."
+
+#: dkim-verify/dkimwidgetinfo.cpp:146
+#, kde-format
+msgid "Invalid query method."
+msgstr "Некоректний метод опитування."
+
+#: dkim-verify/dkimwidgetinfo.cpp:149
+#, kde-format
+msgid "Invalid header canonicalization."
+msgstr "Некоректна канонізація заголовка."
+
+#: dkim-verify/dkimwidgetinfo.cpp:152
+#, kde-format
+msgid "Invalid body canonicalization."
+msgstr "Некоректна канонізація вмісту повідомлення."
+
+#: dkim-verify/dkimwidgetinfo.cpp:155
+#, kde-format
+msgid "Unknown Body Hash Algorithm."
+msgstr "Невідомий алгоритм хешування вмісту повідомлення."
+
+#: dkim-verify/dkimwidgetinfo.cpp:158
+#, kde-format
+msgid "Signature algorithm is invalid."
+msgstr "Некоректний алгоритм підписування."
+
+#: dkim-verify/dkimwidgetinfo.cpp:161
+#, kde-format
+msgid "The public key was revoked."
+msgstr "Відкритий ключ було відкликано."
+
+#: dkim-verify/dkimwidgetinfo.cpp:164
+#, kde-format
+msgid "Signature is too large."
+msgstr "Підпис є надто великим."
+
+#: dkim-verify/dkimwidgetinfo.cpp:167
+#, kde-format
+msgid "Hash Algorithm is unsupported."
+msgstr "Алгоритм хешування є непідтримуваним."
+
+#: dkim-verify/dkimwidgetinfo.cpp:170
+#, kde-format
+msgid "Public key is too small."
+msgstr "Відкритий ключ є надто малим."
+
+#: dkim-verify/dkimwidgetinfo.cpp:173
+#, kde-format
+msgid "Impossible to verify signature."
+msgstr "Не вдалося перевірити підпис."
+
+#: dkim-verify/dkimwidgetinfo.cpp:176
+#, kde-format
+msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
+msgstr ""
+"AUID має належати тому самому домену, що і SDID (у записі ключа встановлено "
+"s-прапорець)."
+
+#: dkim-verify/dkimwidgetinfo.cpp:179
+#, kde-format
+msgid "The signing domain is only testing DKIM."
+msgstr "Доменом підписування є лише тестовий DKIM."
+
+#: dkim-verify/dkimwidgetinfo.cpp:182
+#, kde-format
+msgid "Impossible to download key."
+msgstr "Неможливо отримати ключ."
+
+#: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
+#, kde-format
+msgid "Hash Algorithm unsafe (sha1)"
+msgstr "Алгоритм хешування не є безпечним (sha1)"
+
+#: dkim-verify/dkimwidgetinfo.cpp:188
+#, kde-format
+msgid "AUID is not in a subdomain of SDID"
+msgstr "AUID не є піддоменом SDID"
+
+#: dkim-verify/dkimwidgetinfo.cpp:191
+#, kde-format
+msgid "Problem during converting public key"
+msgstr "Проблема під час перетворення відкритого ключа"
+
+#: dkim-verify/dkimwidgetinfo.cpp:200
+#, kde-format
+msgid "Signature expired"
+msgstr "Строк дії підпису збіг"
+
+#: dkim-verify/dkimwidgetinfo.cpp:203
+#, kde-format
+msgid "Signature created in the future"
+msgstr "Підпис створено у майбутньому"
+
+#: dkim-verify/dkimwidgetinfo.cpp:206
+#, kde-format
+msgid "Signature too small"
+msgstr "Підпис є надто малим"
+
+#: dkim-verify/dkimwidgetinfo.cpp:212
+#, kde-format
+msgid "Public Key too small"
+msgstr "Відкритий ключ є надто малим"
+
+#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:279
+#, kde-format
+msgctxt "method name: info about it from parsing"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: dkim-verify/dkimwidgetinfo.cpp:256
+#, kde-format
+msgid "%1: None"
+msgstr "%1: немає"
+
+#: dkim-verify/dkimwidgetinfo.cpp:271
+#, kde-format
+msgid "%1: Valid (Signed by %2)"
+msgstr "%1: чинний (підписано %2)"
+
+#: dkim-verify/dkimwidgetinfo.cpp:291
+#, kde-format
+msgid "%1: Valid"
+msgstr "%1: чинний"
+
+#: dkim-verify/dkimwidgetinfo.cpp:306
+#, kde-format
+msgid "Not Signed"
+msgstr "Не підписано"
+
+#: header/grantleeheaderformatter.cpp:232
+#, kde-format
+msgid "Subject:"
+msgstr "Тема:"
+
+#: header/grantleeheaderformatter.cpp:252
+#, kde-format
+msgid "Date:"
+msgstr "Дата:"
+
+#: header/grantleeheaderformatter.cpp:274
+#, kde-format
+msgid "To:"
+msgstr "Кому:"
+
+#: header/grantleeheaderformatter.cpp:276
+#, kde-format
+msgid "Reply To:"
+msgstr "Отримувач відповіді:"
+
+#: header/grantleeheaderformatter.cpp:278
+#, kde-format
+msgid "CC:"
+msgstr "Копія: "
+
+#: header/grantleeheaderformatter.cpp:280
+#, kde-format
+msgid "BCC:"
+msgstr "Прихована копія:"
+
+#: header/grantleeheaderformatter.cpp:284
+#, kde-format
+msgid "Sender:"
+msgstr "Відправник:"
+
+#: header/grantleeheaderformatter.cpp:286
+#, kde-format
+msgid "resent from:"
+msgstr "переслано від:"
+
+#: header/grantleeheaderformatter.cpp:288
+#, kde-format
+msgid "resent to:"
+msgstr "переслано до:"
+
+#: header/grantleeheaderformatter.cpp:388
+#, kde-format
+msgid "Grantlee theme \"%1\" is not valid."
+msgstr "Тема Grantlee «%1» є некоректною."
+
+#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
+#, kde-format
+msgid "No Subject"
+msgstr "Без теми"
+
+#: header/grantleeheaderformatter.cpp:500
+#, kde-format
+msgid "Spam Status:"
+msgstr "Стан спаму: "
+
+#: header/grantleeheaderformatter.cpp:512
+#, kde-format
+msgid "Printing mode"
+msgstr "Режим друку"
+
+#: header/grantleeheaderformatter.cpp:554
+#, kde-format
+msgid "[vcard]"
+msgstr "[vcard]"
+
+#: header/grantleeheaderformatter.cpp:561
+#, kde-format
+msgid "Attachments:"
+msgstr "Долучення:"
+
+#: header/grantleeheaderformatter.cpp:590
+#, kde-format
+msgid "Security:"
+msgstr "Захист:"
+
+#: header/headerstyle_util.cpp:55
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "Невідома"
+
+#: header/headerstyle_util.cpp:146
+#, kde-format
+msgid ""
+"%1% probability of being spam with confidence %3%.\n"
+"\n"
+"Full report:\n"
+"Probability=%2\n"
+"Confidence=%4"
+msgstr ""
+"Ймовірність що це спам — %1% з певністю — %3.\n"
+"\n"
+"Повний звіт:\n"
+"Ймовірність=%2\n"
+"Впевненість=%4"
+
+#: header/headerstyle_util.cpp:155
+#, kde-format
+msgid ""
+"%1% probability of being spam.\n"
+"\n"
+"Full report:\n"
+"Probability=%2"
+msgstr ""
+"Ймовірність що це спам — %1%.\n"
+"\n"
+"Повний звіт:\n"
+"Ймовірність=%2"
+
+#: header/headerstyle_util.cpp:164
+#, kde-format
+msgid "No Spam agent"
+msgstr "Агент «Ні спаму!»"
+
+#: header/headerstyle_util.cpp:167
+#, kde-format
+msgid "Spam filter score not a number"
+msgstr "Оцінка фільтра спаму не є числом"
+
+#: header/headerstyle_util.cpp:170
+#, kde-format
+msgid "Threshold not a valid number"
+msgstr "Вказано некоректне порогове значення"
+
+#: header/headerstyle_util.cpp:173
+#, kde-format
+msgid "Spam filter score could not be extracted from header"
+msgstr "Не вдалося видобути оцінку фільтра спаму з заголовка"
+
+#: header/headerstyle_util.cpp:176
+#, kde-format
+msgid "Threshold could not be extracted from header"
+msgstr "Не вдалося видобути порогове значення з заголовка"
+
+#: header/headerstyle_util.cpp:179
+#, kde-format
+msgid "Error evaluating spam score"
+msgstr "Помилка під час обчислення оцінки спаму"
+
+#: header/headerstyle_util.cpp:184
+#, kde-format
+msgid ""
+"%1.\n"
+"\n"
+"Full report:\n"
+"%2"
+msgstr ""
+"%1.\n"
+"\n"
+"Повний звіт:\n"
+"%2"
+
+#: header/headerstylemenumanager.cpp:105
+#, kde-format
+msgctxt "View->"
+msgid "&Headers"
+msgstr "&Заголовки"
+
+#: header/headerstylemenumanager.cpp:109
+#, kde-format
+msgid "Choose display style of message headers"
+msgstr "Вибір стилю показу заголовків повідомлення"
+
+#: header/plainheaderstyle.cpp:103
+#, kde-format
+msgid "Date: "
+msgstr "Дата:"
+
+#: header/plainheaderstyle.cpp:107
+#, kde-format
+msgid "From: "
+msgstr "Від:"
+
+#: header/plainheaderstyle.cpp:109
+#, kde-format
+msgid "[vCard]"
+msgstr "[vCard]"
+
+#: header/plainheaderstyle.cpp:119
+#, kde-format
+msgctxt "To-field of the mailheader."
+msgid "To: "
+msgstr "До:"
+
+#: header/plainheaderstyle.cpp:126
+#, kde-format
+msgid "CC: "
+msgstr "Копія: "
+
+#: header/plainheaderstyle.cpp:133
+#, kde-format
+msgid "BCC: "
+msgstr "Потайна копія: "
+
+#: header/plainheaderstyle.cpp:138
+#, kde-format
+msgid "Reply to: "
+msgstr "Відповісти: "
+
+#: mdn/mdnwarningwidget.cpp:14
+#, kde-format
+msgctxt "@action"
+msgid "Ignore"
+msgstr "Ігнорувати"
+
+#: mdn/mdnwarningwidget.cpp:15
+#, kde-format
+msgctxt "@action"
+msgid "Send"
+msgstr "Надіслати"
+
+#: mdn/mdnwarningwidget.cpp:16
+#, kde-format
+msgctxt "@action"
+msgid "Send Deny"
+msgstr "Надіслати відмову"
+
+#: messagepartthemes/default/defaultrenderer.cpp:76
+#, kde-format
+msgid "Error: Signature not verified"
+msgstr "Помилка: підпис не перевірено"
+
+#: messagepartthemes/default/defaultrenderer.cpp:80
+#, kde-format
+msgid "Good signature"
+msgstr "Придатний підпис"
+
+#: messagepartthemes/default/defaultrenderer.cpp:84
+#, kde-format
+msgid "Bad signature"
+msgstr "Непридатний підпис"
+
+#: messagepartthemes/default/defaultrenderer.cpp:88
+#, kde-format
+msgid "No public key to verify the signature"
+msgstr "Немає відкритого ключа, щоб перевірити підпис"
+
+#: messagepartthemes/default/defaultrenderer.cpp:92
+#, kde-format
+msgid "No signature found"
+msgstr "Підпис не знайдено"
+
+#: messagepartthemes/default/defaultrenderer.cpp:96
+#, kde-format
+msgid "Error verifying the signature"
+msgstr "Помилка при перевірці підпису"
+
+#: messagepartthemes/default/defaultrenderer.cpp:100
+#, kde-format
+msgid "Different results for signatures"
+msgstr "Різні результати для підписів"
+
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#, kde-format
+msgid "No status information available."
+msgstr "Інформація щодо стану відсутня."
+
+#: messagepartthemes/default/defaultrenderer.cpp:127
+#: messagepartthemes/default/defaultrenderer.cpp:212
+#, kde-format
+msgid "Good signature."
+msgstr "Придатний підпис"
+
+#: messagepartthemes/default/defaultrenderer.cpp:148
+#, kde-format
+msgid "One key has expired."
+msgstr "Один ключ застарів."
+
+#: messagepartthemes/default/defaultrenderer.cpp:152
+#, kde-format
+msgid "The signature has expired."
+msgstr "Підпис застарів."
+
+#: messagepartthemes/default/defaultrenderer.cpp:157
+#, kde-format
+msgid "Unable to verify: key missing."
+msgstr "Не вдається перевірити: ключ відсутній."
+
+#: messagepartthemes/default/defaultrenderer.cpp:164
+#, kde-format
+msgid "CRL not available."
+msgstr "САС не доступні."
+
+#: messagepartthemes/default/defaultrenderer.cpp:168
+#, kde-format
+msgid "Available CRL is too old."
+msgstr "Поточний CRL є застарілим."
+
+#: messagepartthemes/default/defaultrenderer.cpp:172
+#, kde-format
+msgid "A policy was not met."
+msgstr "Умова не була задоволена."
+
+#: messagepartthemes/default/defaultrenderer.cpp:176
+#, kde-format
+msgid "A system error occurred."
+msgstr "Виникла системна помилка."
+
+#: messagepartthemes/default/defaultrenderer.cpp:187
+#, kde-format
+msgid "One key has been revoked."
+msgstr "Один ключ було анульовано."
+
+#: messagepartthemes/default/defaultrenderer.cpp:214
+#, kde-format
+msgid "Bad signature."
+msgstr "Непридатний підпис."
+
+#: messagepartthemes/default/defaultrenderer.cpp:598
+#: messagepartthemes/default/defaultrenderer.cpp:600
+#, kde-format
+msgid "certificate"
+msgstr "сертифікат"
+
+#: messagepartthemes/default/defaultrenderer.cpp:605
+#: messagepartthemes/default/defaultrenderer.cpp:624
+#, kde-format
+msgctxt "Start of warning message."
+msgid "Warning:"
+msgstr "Попередження:"
+
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#, kde-format
+msgid "Sender's mail address is not stored in the %1 used for signing."
+msgstr ""
+"Для підписування використано адресу відправника, що не зберігається у %1."
+
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#, kde-format
+msgid "sender: "
+msgstr "відправник: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:607
+#, kde-format
+msgid "stored: "
+msgstr "збережено: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:625
+#, kde-format
+msgid ""
+"No mail address is stored in the %1 used for signing, so we cannot compare "
+"it to the sender's address %2."
+msgstr ""
+"Електронна адреса, що збережена у %1, та використана для підписування, "
+"відсутня, тому неможливо порівняти її з адресою відправника %2."
+
+#: remote-content/remotecontentconfiguredialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Remote Content"
+msgstr "Налаштовування віддалених даних"
+
+#: remote-content/remotecontentconfigurewidget.cpp:51
+#, kde-format
+msgid "Status"
+msgstr "Стан"
+
+#: remote-content/remotecontentconfigurewidget.cpp:87
+#, kde-format
+msgid "Do you want to delete this rule '%1'?"
+msgstr "Хочете вилучити правило «%1»?"
+
+#: remote-content/remotecontentconfigurewidget.cpp:105
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Remote Content"
+msgstr "Редагування віддалених даних"
+
+#: remote-content/remotecontentconfigurewidget.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Remote Content"
+msgstr "Додавання віддалених даних"
+
+#: remote-content/remotecontentconfigurewidget.cpp:130
+#, kde-format
+msgid "An entry already defines this url. Please modify it."
+msgstr "Запис вже визначає цю адресу. Будь ласка, змініть його."
+
+#: remote-content/remotecontentconfigurewidget.cpp:130
+#, kde-format
+msgid "Add new Url"
+msgstr "Додати нову адресу"
+
+#: remote-content/remotecontentmenu.cpp:17
+#, kde-format
+msgid "Configure"
+msgstr "Налаштувати"
+
+#: remote-content/remotecontentmenu.cpp:19
+#, kde-format
+msgid "Remote Content"
+msgstr "Віддалені дані"
+
+#: remote-content/remotecontentmenu.cpp:50
+#, kde-format
+msgid "Authorize %1"
+msgstr "Уповноважити %1"
+
+#: remote-content/remotecontentmenu.cpp:58
+#, kde-format
+msgid "Authorize all Urls"
+msgstr "Уповноважити усі адреси"
+
+#: remote-content/remotecontentstatustypecombobox.cpp:12
+#, kde-format
+msgid "Authorized"
+msgstr "Уповноважено"
+
+#: remote-content/remotecontentstatustypecombobox.cpp:13
+#, kde-format
+msgid "Blocked"
+msgstr "Заблоковано"
+
+#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr "Подробиці"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:33
+#, kde-format
+msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
+msgstr ""
+"Це повідомлення може бути небажаним. <a href=\"scamdetails\">(Подробиці…)</a>"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:38
+#, kde-format
+msgid "Move to Trash"
+msgstr "Пересунути до смітника"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:43
+#, kde-format
+msgid "I confirm it's not a scam"
+msgstr "Підтверджую, що це бажане повідомлення"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:47
+#, kde-format
+msgid "Add email to whitelist"
+msgstr "Додати повідомлення до «білого» списку"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:51
+#, kde-format
+msgid "Disable scam detection for all messages"
+msgstr "Вимкнути виявлення всіх небажаних повідомлень"
+
+#: scamdetection/scamdetectionwebengine.cpp:115
+#: scamdetection/scamdetectionwebengine.cpp:201
+#, kde-format
+msgid ""
+"This email contains a link which reads as '%1' in the text, but actually "
+"points to '%2'. This is often the case in scam emails to mislead the "
+"recipient"
+msgstr ""
+"У цьому повідомленні міститься посилання, яке виглядає як «%1» у тексті, але "
+"насправді вказує на сторінку «%2». Такі посилання є однією з ознак небажаної "
+"кореспонденції, їх призначено для введення отримувача в оману."
+
+#: scamdetection/scamdetectionwebengine.cpp:128
+#, kde-format
+msgid ""
+"This email contains a link which points to a numerical IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+"У цьому повідомленні електронної пошти міститься посилання на числову IP-"
+"адресу (%1) замість типової текстової адреси сторінки. Такі посилання є "
+"однією з ознак небажаної кореспонденції."
+
+#: scamdetection/scamdetectionwebengine.cpp:135
+#, kde-format
+msgid ""
+"This email contains a link which points to a hexadecimal IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+"У цьому повідомленні електронної пошти міститься посилання на шістнадцяткову "
+"IP-адресу (%1) замість типової текстової адреси сторінки. Такі посилання є "
+"однією з ознак небажаної кореспонденції."
+
+#: scamdetection/scamdetectionwebengine.cpp:141
+#, kde-format
+msgid "This email contains a link (%1) which has a redirection"
+msgstr ""
+"У цьому повідомленні електронної пошти міститься посилання (%1), за яким "
+"відбувається переспрямовування"
+
+#: scamdetection/scamdetectionwebengine.cpp:148
+#, kde-format
+msgid ""
+"This email contains a link (%1) which contains multiple http://. This is "
+"often the case in scam emails."
+msgstr ""
+"У цьому повідомленні електронної пошти міститься посилання (%1) з декількома "
+"записами http://. Такі посилання є однією з ознак небажаної кореспонденції."
+
+#: scamdetection/scamdetectionwebengine.cpp:159
+#, kde-format
+msgid "This email contains a shorturl (%1). It can redirect to another server."
+msgstr ""
+"У цьому повідомленні електронної пошти міститься скорочене посилання (%1), "
+"за яким відбувається переспрямовування на інший сервер."
+
+#: scamdetection/scamdetectionwebengine.cpp:220
+#, kde-format
+msgid "Message contains form element. This is often the case in scam emails."
+msgstr ""
+"Повідомлення містить елемент form. Такі елементи є однією з ознак небажаної "
+"кореспонденції."
+
+#: scamdetection/scamdetectionwebengine.cpp:224
+#, kde-format
+msgid "Details:"
+msgstr "Подробиці:"
+
+#: scamdetection/scamexpandurljob.cpp:47
+#, kde-format
+msgid "No network connection detected, we cannot expand url."
+msgstr ""
+"З’єднання з мережею недоступне, тому розгорнути скорочену адресу зараз не "
+"можна."
+
+#: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
+#, kde-format
+msgid "Impossible to expand '%1'."
+msgstr "Неможливо розгорнути «%1»."
+
+#: scamdetection/scamexpandurljob.cpp:81
+#, kde-format
+msgid "Short url '%1' redirects to '%2'."
+msgstr "Скорочена адреса «%1» переспрямує вас до «%2»."
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.cmake:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "Надрукувати лише позначений у вікні перегляду текст"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.cmake:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr ""
+"Зважати на параметри розкриття/згортання цитат, визначені у налаштуваннях "
+"програми, під час друку."
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.cmake:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr "Визначає, чи слід друкувати кольорове тло та зображення."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.cmake:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr ""
+"Завжди показувати параметри шифрування та підписів під час друку повідомлення"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+"Під час показу html не використовувати розміри шрифтів, менші за вказаний "
+"мінімальний."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "Визначає шрифт, який буде використано для тексту повідомлення"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "Визначає шрифт, який буде використано для друку"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.cmake:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "Перевіряти, чи є адреса шахрайською"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.cmake:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr "Закрити вікно повідомлення після відповіді або спрямування"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.cmake:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "Показувати позначки розкриття/згортання цитат"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.cmake:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"Позначте цей пункт для показу різних рівнів цитування. Зніміть позначку, щоб "
+"сховати рівні."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.cmake:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "Рівень автоматичного згортання:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.cmake:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "Зменшити шрифт для цитат"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.cmake:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr "Позначте цей пункт, щоб програма показувала цитати меншим шрифтом."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.cmake:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr ""
+"Завжди розшифровувати листи, якщо їх переглядають, або питати перед "
+"розшифруванням"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "Перегляд структури повідомлення"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:94
+#, kde-format
+msgid "Show never"
+msgstr "Не показувати"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:97
+#, kde-format
+msgid "Show always"
+msgstr "Завжди показувати"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.cmake:109 settings/messageviewer.kcfg.cmake:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "Стиль заголовків, який має бути використано"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.cmake:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "Кількість заголовків, які має бути показано"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.cmake:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "Надавати перевагу HTML над простим текстом"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.cmake:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "Дозволити повідомленням завантаження зовнішніх посилань з інтернету"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.cmake:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "Спосіб показу долучень"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.cmake:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr ""
+"Визначає, чи слід повторювати колір цитованого тексту для рівнів, нижчих за "
+"третій"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "Задіяти клавіші доступу"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"KMail може аналізувати повідомлення і виявляти серед них небажані за "
+"допомогою типових методик захисту від таких повідомлень"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.cmake:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "Список повідомлень у «білому» списку кореспонденції"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "Шукати у повідомленнях адреси для стеження за користувачем"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.cmake:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr ""
+"Не надсилати сповіщення про долю повідомлення для зашифрованих повідомлень"
+
+#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
+#: settings/messageviewer.kcfg.cmake:161
+#, kde-format
+msgid ""
+"Specifies the default policy to use, for the Message Disposition "
+"Notifications (for internal use only)"
+msgstr ""
+"Визначає типові правила для сповіщень щодо зміни розташування повідомлень "
+"(лише для внутрішнього використання)"
+
+#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
+#: settings/messageviewer.kcfg.cmake:165
+#, kde-format
+msgid ""
+"Specifies the default quoting action to take, when replying to a message "
+"(for internal use only)"
+msgstr ""
+"Визначає типову дію з цитування під час створення відповіді на повідомлення "
+"(лише для внутрішнього використання)"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:181
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "Перекручувати заголовки Від:/Кому: у відповідях на запрошення"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:182
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"Програма Microsoft Outlook має декілька дефектів у реалізації стандарту i-"
+"календаря; цей параметр враховує один з них. Якщо ті, хто використовує "
+"Outlook, не можуть отримати ваші відповіді, спробуйте позначити цей пункт."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:187
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "Надсилати групові запрошення в тілі листа"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:188
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"Програма Microsoft Outlook має декілька дефектів у реалізації стандарту "
+"iCalendar; цей параметр враховує один з них. Якщо ті, хто використовує "
+"Outlook, не можуть отримати ваші запрошення, спробуйте позначити цей пункт."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:193
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "Сумісне з Exchange іменування запрошень"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:194
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, коли його використовують разом з сервером Microsoft "
+"Exchange, має проблеми з розпізнаванням стандартних групових листів "
+"електронної пошти. Позначте цей пункт, щоб надсилати групові запрошення, які "
+"розумітиме Microsoft Exchange."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:199
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "Автоматичне надсилання запрошень"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:200
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"Якщо буде позначено, ви не будете бачити вікно редактора. Замість цього, всі "
+"запрошення будуть надсилатися автоматично. Якщо ви бажаєте переглядати "
+"повідомлення перед надсиланням, ви можете зняти позначення з цього пункту. "
+"Однак, пам'ятайте, текст у редакторі буде в форматі iCalendar, вам не слід "
+"змінювати його вручну."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.cmake:205 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "Вилучати листи-запрошення після надсилання відповіді на них"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:206
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"Якщо позначено цей елемент, отримані листи-запрошення, на які слід "
+"відповідати, буде пересунуто до теки смітника, тільки-но відповідь на них "
+"буде успішно надіслано."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1554
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "&Моноширинний шрифт"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.cmake:237
+#, kde-format
+msgid "The most recent selected folder using for Todo."
+msgstr "Остання вибрана тека для завдань."
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.cmake:243
+#, kde-format
+msgid "The most recent selected folder using for Event."
+msgstr "Остання вибрана тека для записів подій."
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.cmake:249
+#, kde-format
+msgid "The most recent selected folder using for Notes."
+msgstr "Остання вибрана тека для нотаток."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/invitationsettings.ui:17
+#, kde-format
+msgid "Groupware Compatibility && Legacy Options"
+msgstr "Параметри сумісності групової роботи та успадковані параметри"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:23
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitation replies"
+msgstr ""
+"Позначте цей пункт, щоб програма Outlook™ могла зрозуміти ваші відповіді на "
+"запрошення"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:26
+#, kde-format
+msgid "&Mangle From:/To: headers in replies to invitations"
+msgstr "&Перекручувати заголовки Від:/Кому: у відповідях на запрошення"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:33
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitations"
+msgstr ""
+"Позначте цей пункт, щоб програма Outlook™ могла зрозуміти ваші відповіді на "
+"запрошення"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:36
+#, kde-format
+msgid "Send &invitations in the mail body"
+msgstr "Надсилати &запрошення в тілі листа"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:45
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server,\n"
+"has a problem understanding standards-compliant groupware email.\n"
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, коли його використовують разом з сервером Microsoft "
+"Exchange,\n"
+" має проблеми з розпізнаванням стандартних групових листів електронної "
+"пошти.\n"
+"Позначте цей пункт, щоб надсилати групові запрошення, які розумітиме "
+"Microsoft Exchange."
+
+#. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:48
+#, kde-format
+msgid "Exchange-compatible invitation &naming"
+msgstr "Сумісне з Exchange &іменування запрошень"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:55
+#, kde-format
+msgid ""
+"When this is on, the user will not see the mail composer window. Invitation "
+"mails are sent automatically."
+msgstr ""
+"Якщо буде позначено, користувач не буде бачити вікно редактора повідомлень. "
+"Листи з запрошеннями надсилатимуться автоматично."
+
+#. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:58
+#, kde-format
+msgid "&Automatic invitation sending"
+msgstr "&Автоматичне надсилання запрошень"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/invitationsettings.ui:68
+#, kde-format
+msgid "Options"
+msgstr "Параметри"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
+#: ui/printingsettings.ui:17
+#, kde-format
+msgid "Print only selected text"
+msgstr "Надрукувати лише позначений текст"
+
+#. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
+#: ui/printingsettings.ui:24
+#, kde-format
+msgid "Respect &expand/collapse quote marks settings"
+msgstr "Зважати на параметри &розкриття/згортання цитат"
+
+#. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
+#: ui/printingsettings.ui:31
+#, kde-format
+msgid "Print background color and images"
+msgstr "Друкувати кольорове тло та зображення"
+
+#. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
+#: ui/printingsettings.ui:38
+#, kde-format
+msgid "Always show encryption/signature details"
+msgstr "Завжди показувати параметри шифрування та підписування"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
+#: ui/settings.ui:31
+#, kde-format
+msgid "Viewer settings"
+msgstr "Параметри перегляду"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/settings.ui:59
+#, kde-format
+msgid "O&verride character encoding:"
+msgstr "&Кодування символів:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
+#: ui/settings.ui:91
+#, kde-format
+msgid "Enable access key"
+msgstr "Задіяти клавішу доступу"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
+#: ui/settings.ui:98
+#, kde-format
+msgid "Reduce font size for &quoted text"
+msgstr "Зменшити шрифт &цитованого тексту"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
+#: ui/settings.ui:105
+#, kde-format
+msgid "Show &expand/collapse quote marks"
+msgstr "Показувати позначки &розкриття/згортання цитат"
+
+#. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
+#: ui/settings.ui:133
+#, kde-format
+msgid "Automatic collapse &level:"
+msgstr "Рівень автоматичного з&гортання:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/settings.ui:202
+#, kde-format
+msgid "&Minimum font size:"
+msgstr "&Мінімальний розмір шрифту:"
+
+#: utils/messageviewerutil.cpp:156
+#, kde-format
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr "Файл з назвою «%1» вже існує. Хочете його перезаписати?"
+
+#: utils/messageviewerutil.cpp:159
+#, kde-format
+msgid "Overwrite File?"
+msgstr "Перезаписати файл?"
+
+#: utils/messageviewerutil.cpp:209
+#, kde-format
+msgid "Save Attachments To"
+msgstr "Зберегти долучення до"
+
+#: utils/messageviewerutil.cpp:226
+#, kde-format
+msgctxt "filename for an unnamed attachment"
+msgid "attachment.1"
+msgstr "долучення.1"
+
+#: utils/messageviewerutil.cpp:232
+#, kde-format
+msgid "Save Attachment"
+msgstr "Зберегти долучення"
+
+#: utils/messageviewerutil.cpp:256
+#, kde-format
+msgctxt "filename for the %1-th unnamed attachment"
+msgid "attachment.%1"
+msgstr "долучення.%1"
+
+#: utils/messageviewerutil.cpp:354
+#, kde-format
+msgid ""
+"The part %1 of the message is encrypted. Do you want to keep the encryption "
+"when saving?"
+msgstr ""
+"Частину %1 повідомлення зашифровано. Зберегти шифрування при збереженні?"
+
+#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
+#, kde-format
+msgid "KMail Question"
+msgstr "Питання KMail"
+
+#: utils/messageviewerutil.cpp:356
+#, kde-format
+msgid "Keep Encryption"
+msgstr "Зберегти шифрування"
+
+#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
+#, kde-format
+msgid "Do Not Keep"
+msgstr "Не шифрувати"
+
+#: utils/messageviewerutil.cpp:367
+#, kde-format
+msgid ""
+"The part %1 of the message is signed. Do you want to keep the signature when "
+"saving?"
+msgstr "Частину %1 повідомлення підписано. Зберегти підпис при збереженні?"
+
+#: utils/messageviewerutil.cpp:369
+#, kde-format
+msgid "Keep Signature"
+msgstr "Зберегти підпис"
+
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
+#, kde-kuit-format
+msgctxt "1 = file name, 2 = error string"
+msgid ""
+"<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
+"qt>"
+msgstr ""
+"<qt>Не вдалося записати дані до файла<br /><filename>%1</filename><br /><br /"
+">%2</qt>"
+
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
+#: utils/messageviewerutil.cpp:472
+#, kde-format
+msgid "Error saving attachment"
+msgstr "Помилка під час спроби збереження долучення"
+
+#: utils/messageviewerutil.cpp:485
+#, kde-format
+msgid "Found no attachments to save."
+msgstr "Не знайдено долучень для збереження."
+
+#: utils/messageviewerutil.cpp:500
+#, kde-format
+msgid "message"
+msgstr "повідомлення"
+
+#: utils/messageviewerutil.cpp:522
+#, kde-format
+msgid "email messages (*.mbox);;all files (*)"
+msgstr "поштові повідомлення (*.mbox);;усі файли (*)"
+
+#: utils/messageviewerutil.cpp:533
+#, kde-format
+msgid "Save Message"
+msgid_plural "Save Messages"
+msgstr[0] "Зберегти повідомлення"
+msgstr[1] "Зберегти повідомлення"
+msgstr[2] "Зберегти повідомлення"
+msgstr[3] "Зберегти повідомлення"
+
+#: utils/messageviewerutil.cpp:558
+#, kde-format
+msgid "File %1 could not be loaded."
+msgstr "Не вдалося завантажити файл %1."
+
+#: utils/messageviewerutil.cpp:558
+#, kde-format
+msgid "Error loading message"
+msgstr "Помилка під час спроби завантажити повідомлення"
+
+#: utils/messageviewerutil.cpp:560
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Не вдалося створити файл %1."
+
+#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:591
+#, kde-format
+msgid "Error saving message"
+msgstr "Помилка під час спроби збереження повідомлення"
+
+#: utils/messageviewerutil.cpp:571
+#, kde-format
+msgid "We cannot save message."
+msgstr "Не вдалося зберегти повідомлення."
+
+#: utils/messageviewerutil.cpp:612
+#, kde-format
+msgid "Open &with %1"
+msgstr "В&ідкрити за допомогою «%1»"
+
+#: utils/messageviewerutil.cpp:614
+#, kde-format
+msgctxt "@item:inmenu Open With, %1 is application name"
+msgid "%1"
+msgstr "%1"
+
+#: viewer/editorwatcher.cpp:60
+#, kde-format
+msgid "Edit with:"
+msgstr "Редагувати за допомогою:"
+
+#: viewer/editorwatcher.cpp:194
+#, kde-format
+msgid ""
+"KMail is unable to detect when the chosen editor is closed. To avoid data "
+"loss, editing the attachment will be aborted."
+msgstr ""
+"KMail не може визначити момент закриття вибраного редактора. Щоб уникнути "
+"втратам даних, редагування долучення буде припинено."
+
+#: viewer/editorwatcher.cpp:196
+#, kde-format
+msgid "Unable to edit attachment"
+msgstr "Редагувати долучення неможливо"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:59
+#, kde-format
+msgid "body part"
+msgstr "тіло повідомлення"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:262
+#, kde-format
+msgid "Description"
+msgstr "Опис"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:264
+#, kde-format
+msgid "Type"
+msgstr "Тип"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:266
+#, kde-format
+msgid "Size"
+msgstr "Розмір"
+
+#: viewer/urlhandlermanager.cpp:405
+#, kde-format
+msgid "Turn on HTML rendering for this message."
+msgstr "Ввімкнути показ HTML для цього повідомлення."
+
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1623
+#, kde-format
+msgid "Load external references from the Internet for this message."
+msgstr "Отримати зовнішні посилання з інтернету для цього повідомлення."
+
+#: viewer/urlhandlermanager.cpp:409
+#, kde-format
+msgid "Work online."
+msgstr "Працювати в мережі."
+
+#: viewer/urlhandlermanager.cpp:411
+#, kde-format
+msgid "Make account online."
+msgstr "Перевести обліковий запис у режим з’єднання."
+
+#: viewer/urlhandlermanager.cpp:413
+#, kde-format
+msgid "Decrypt message."
+msgstr "Розшифрувати повідомлення."
+
+#: viewer/urlhandlermanager.cpp:415
+#, kde-format
+msgid "Show signature details."
+msgstr "Показати подробиці про підпис."
+
+#: viewer/urlhandlermanager.cpp:417
+#, kde-format
+msgid "Hide signature details."
+msgstr "Сховати подробиці про підпис."
+
+#: viewer/urlhandlermanager.cpp:419
+#, kde-format
+msgid "Show encryption details."
+msgstr "Показати подробиці щодо шифрування."
+
+#: viewer/urlhandlermanager.cpp:421
+#, kde-format
+msgid "Hide encryption details."
+msgstr "Приховати подробиці щодо шифрування."
+
+#: viewer/urlhandlermanager.cpp:426
+#, kde-format
+msgid "Open Documentation"
+msgstr "Відкрити документацію"
+
+#: viewer/urlhandlermanager.cpp:460
+#, kde-format
+msgid "Expand all quoted text."
+msgstr "Розгорнути всі цитовані фрагменти."
+
+#: viewer/urlhandlermanager.cpp:462
+#, kde-format
+msgid "Collapse quoted text."
+msgstr "Згорнути цитований текст."
+
+#: viewer/urlhandlermanager.cpp:524
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+"Не вдається запустити програму керування сертифікатами. Будь ласка, "
+"перевірте, чи належним чином встановлено програму."
+
+#: viewer/urlhandlermanager.cpp:526
+#, kde-format
+msgid "KMail Error"
+msgstr "Помилка KMail"
+
+#: viewer/urlhandlermanager.cpp:541
+#, kde-format
+msgid "Show certificate 0x%1"
+msgstr "Показати сертифікат 0x%1"
+
+#: viewer/urlhandlermanager.cpp:600
+#, kde-format
+msgid "&Open in Address Book"
+msgstr "&Відкрити в адресній книзі"
+
+#: viewer/urlhandlermanager.cpp:602
+#, kde-format
+msgid "&Copy Email Address"
+msgstr "С&копіювати адресу ел. пошти"
+
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2713
+#, kde-format
+msgid "Address copied to clipboard."
+msgstr "Адресу скопійовано до буфера даних."
+
+#: viewer/urlhandlermanager.cpp:626
+#, kde-format
+msgid "Lookup the contact in KAddressbook"
+msgstr "Шукати запис контакту у KAddressbook"
+
+#: viewer/urlhandlermanager.cpp:802
+#, kde-format
+msgid "Attachment: %1"
+msgstr "Долучення: %1"
+
+#: viewer/urlhandlermanager.cpp:805
+#, kde-format
+msgid "Encapsulated Message (Subject: %1)"
+msgstr "Вмонтоване повідомлення (Тема: %1)"
+
+#: viewer/urlhandlermanager.cpp:807
+#, kde-format
+msgid "Encapsulated Message"
+msgstr "Вмонтоване повідомлення"
+
+#: viewer/urlhandlermanager.cpp:810
+#, kde-format
+msgid "Unnamed attachment"
+msgstr "Долучення без назви"
+
+#: viewer/urlhandlermanager.cpp:845
+#, kde-format
+msgid "Show GnuPG Audit Log for this operation"
+msgstr "Показати журнал перевірки GnuPG для цієї дії"
+
+#: viewer/urlhandlermanager.cpp:885
+#, kde-format
+msgid "Opening URL..."
+msgstr "Відкриття адреси..."
+
+#: viewer/urlhandlermanager.cpp:893
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to execute <filename>%1</filename>?"
+msgstr "Ви дійсно хочете виконати <filename>%1</filename>?"
+
+#: viewer/urlhandlermanager.cpp:895
+#, kde-format
+msgid "Execute"
+msgstr "Виконати"
+
+#: viewer/viewer.cpp:138
+#, kde-format
+msgid "Loading message..."
+msgstr "Завантаження повідомлення…"
+
+#: viewer/viewer_p.cpp:358
+#, kde-format
+msgid ""
+"Deleting an attachment from an encrypted or old-style mailman message is not "
+"supported."
+msgstr ""
+"Підтримки вилучення долучень з зашифрованих повідомлень та повідомлень у "
+"застарілому форматі mailman не передбачено."
+
+#: viewer/viewer_p.cpp:359 viewer/viewer_p.cpp:366 viewer/viewer_p.cpp:588
+#: viewer/viewer_p.cpp:1726
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Вилучити долучення"
+
+#: viewer/viewer_p.cpp:365
+#, kde-format
+msgid ""
+"Deleting an attachment might invalidate any digital signature on this "
+"message."
+msgstr "Вилучення долучення може позбавити лист коректного цифрового підпису."
+
+#: viewer/viewer_p.cpp:447
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr "В&ідкрити за допомогою"
+
+#: viewer/viewer_p.cpp:465
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr "&Інша програма…"
+
+#: viewer/viewer_p.cpp:467 viewer/viewer_p.cpp:480
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr "В&ідкрити за допомогою…"
+
+#: viewer/viewer_p.cpp:544 viewer/viewer_p.cpp:1704
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Відкрити"
+
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1711
+#, kde-format
+msgctxt "to view something"
+msgid "View"
+msgstr "Переглянути"
+
+#: viewer/viewer_p.cpp:566
+#, kde-format
+msgid "Scroll To"
+msgstr "Гортати до"
+
+#: viewer/viewer_p.cpp:571
+#, kde-format
+msgid "Save As..."
+msgstr "Зберегти як..."
+
+#: viewer/viewer_p.cpp:577 viewer/viewer_p.cpp:1721
+#, kde-format
+msgid "Copy"
+msgstr "Копіювати"
+
+#: viewer/viewer_p.cpp:599
+#, kde-format
+msgid "Reply To Author"
+msgstr "Відповісти автору"
+
+#: viewer/viewer_p.cpp:607
+#, kde-format
+msgid "Reply To All"
+msgstr "Відповісти усім"
+
+#: viewer/viewer_p.cpp:613 viewer/viewer_p.cpp:1731
+#, kde-format
+msgid "Properties"
+msgstr "Властивості"
+
+#: viewer/viewer_p.cpp:750
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: viewer/viewer_p.cpp:751
+#, kde-format
+msgid "The KDE Mail Client"
+msgstr "Клієнт електронної пошти KDE"
+
+#: viewer/viewer_p.cpp:1287
+#, kde-format
+msgctxt "@title:window"
+msgid "View Attachment: %1"
+msgstr "Перегляд долучення: %1"
+
+#: viewer/viewer_p.cpp:1475
+#, kde-format
+msgctxt "View->"
+msgid "&Attachments"
+msgstr "До&лучення"
+
+#: viewer/viewer_p.cpp:1477
+#, kde-format
+msgid "Choose display style of attachments"
+msgstr "Вибір стилю показу долучень"
+
+#: viewer/viewer_p.cpp:1480
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&As Icons"
+msgstr "&Як піктограми"
+
+#: viewer/viewer_p.cpp:1483
+#, kde-format
+msgid "Show all attachments as icons. Click to see them."
+msgstr ""
+"Показувати долучення як піктограми. Для перегляду їх слід буде натиснути."
+
+#: viewer/viewer_p.cpp:1487
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Smart"
+msgstr "&Кмітливо"
+
+#: viewer/viewer_p.cpp:1490
+#, kde-format
+msgid "Show attachments as suggested by sender."
+msgstr "Показувати долучення, як запропоновано відправником."
+
+#: viewer/viewer_p.cpp:1494
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Inline"
+msgstr "&У тілі повідомлення"
+
+#: viewer/viewer_p.cpp:1497
+#, kde-format
+msgid "Show all attachments inline (if possible)"
+msgstr "Показувати всі долучення в тілі повідомлення (якщо можливо)"
+
+#: viewer/viewer_p.cpp:1501
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Hide"
+msgstr "&Сховати"
+
+#: viewer/viewer_p.cpp:1504
+#, kde-format
+msgid "Do not show attachments in the message viewer"
+msgstr "Не показувати долучення в переглядачі повідомлення"
+
+#: viewer/viewer_p.cpp:1508
+#, kde-format
+msgctxt "View->attachments->"
+msgid "In Header Only"
+msgstr "лише у заголовках"
+
+#: viewer/viewer_p.cpp:1511
+#, kde-format
+msgid "Show Attachments only in the header of the mail"
+msgstr "Показувати долучення лише у заголовку повідомлення"
+
+#: viewer/viewer_p.cpp:1516
+#, kde-format
+msgid "&Set Encoding"
+msgstr "Встановити &кодування"
+
+#: viewer/viewer_p.cpp:1521 widgets/configurewidget.cpp:43
+#: widgets/configurewidget.cpp:77
+#, kde-format
+msgid "Auto"
+msgstr "Авто"
+
+#: viewer/viewer_p.cpp:1531
+#, kde-format
+msgid "Copy Text"
+msgstr "Скопіювати текст"
+
+#: viewer/viewer_p.cpp:1538
+#, kde-format
+msgid "Select All Text"
+msgstr "Позначити увесь текст"
+
+#: viewer/viewer_p.cpp:1544 viewer/viewer_p.cpp:2025
+#, kde-format
+msgid "Copy Link Address"
+msgstr "Копіювати адресу посилання"
+
+#: viewer/viewer_p.cpp:1549
+#, kde-format
+msgid "Open URL"
+msgstr "Відкрити URL"
+
+#: viewer/viewer_p.cpp:1560
+#, kde-format
+msgid "Show Message Structure"
+msgstr "Показати структуру повідомлення"
+
+#: viewer/viewer_p.cpp:1565
+#, kde-format
+msgid "&View Source"
+msgstr "Переглянути &код"
+
+#: viewer/viewer_p.cpp:1570
+#, kde-format
+msgid "&Save Message..."
+msgstr "&Зберегти повідомлення…"
+
+#: viewer/viewer_p.cpp:1576
+#, kde-format
+msgid "&Save Display Format"
+msgstr "&Зберегти формат показу"
+
+#: viewer/viewer_p.cpp:1580
+#, kde-format
+msgid "&Reset Display Format"
+msgstr "&Скинути формат показу"
+
+#: viewer/viewer_p.cpp:1587
+#, kde-format
+msgid "Scroll Message Up"
+msgstr "Гортати повідомлення вгору"
+
+#: viewer/viewer_p.cpp:1592
+#, kde-format
+msgid "Scroll Message Down"
+msgstr "Гортати повідомлення вниз"
+
+#: viewer/viewer_p.cpp:1597
+#, kde-format
+msgid "Scroll Message Up (More)"
+msgstr "Гортати повідомлення вгору (Більше)"
+
+#: viewer/viewer_p.cpp:1602
+#, kde-format
+msgid "Scroll Message Down (More)"
+msgstr "Гортати повідомлення вниз (Більше)"
+
+#: viewer/viewer_p.cpp:1612
+#, kde-format
+msgid "Toggle HTML Display Mode"
+msgstr "Увімкнути або вимкнути режим показу HTML"
+
+#: viewer/viewer_p.cpp:1616
+#, kde-format
+msgid "Toggle display mode between HTML and plain text"
+msgstr "Перемкнути режим показу між показом HTML і показом звичайного тексту"
+
+#: viewer/viewer_p.cpp:1619
+#, kde-format
+msgid "Load external references"
+msgstr "Завантажувати зовнішні посилання"
+
+#: viewer/viewer_p.cpp:1625 widgets/mailsourceviewtextbrowserwidget.cpp:136
+#, kde-format
+msgid "Speak Text"
+msgstr "Декламувати текст"
+
+#: viewer/viewer_p.cpp:1631
+#, kde-format
+msgid "Share Text..."
+msgstr "Оприлюднити текст…"
+
+#: viewer/viewer_p.cpp:1637
+#, kde-format
+msgid "Copy Image Location"
+msgstr "Копіювати адресу зображення"
+
+#: viewer/viewer_p.cpp:1643
+#, kde-format
+msgid "&Find in Message..."
+msgstr "&Знайти у повідомленні…"
+
+#: viewer/viewer_p.cpp:1652
+#, kde-format
+msgid "Disable Emoticon"
+msgstr "Вимкнути емоційку"
+
+#: viewer/viewer_p.cpp:1701
+#, kde-format
+msgid "Save &As..."
+msgstr "Зберегти &як..."
+
+#: viewer/viewer_p.cpp:1709
+#, kde-format
+msgid "Open With..."
+msgstr "Відкрити за допомогою..."
+
+#: viewer/viewer_p.cpp:1716
+#, kde-format
+msgid "Save All Attachments..."
+msgstr "Зберегти всі долучення..."
+
+#: viewer/viewer_p.cpp:1945
+#, kde-format
+msgid "The network is broken."
+msgstr "Мережа не працює."
+
+#: viewer/viewer_p.cpp:1945 viewer/viewer_p.cpp:1948
+#, kde-format
+msgid "Check Phishing URL"
+msgstr "Перевірка шахрайських адрес"
+
+#: viewer/viewer_p.cpp:1948
+#, kde-format
+msgid "The URL %1 is not valid."
+msgstr "Адреса %1 є некоректною."
+
+#: viewer/viewer_p.cpp:1968
+#, kde-format
+msgid "This web site is a malware, do you want to continue to show it?"
+msgstr ""
+"З цього сайта розповсюджується зловмисне програмне забезпечення. Хочете "
+"продовжити його перегляд попри це?"
+
+#: viewer/viewer_p.cpp:1969
+#, kde-format
+msgid "Malware"
+msgstr "Зловмисне програмне забезпечення"
+
+#: viewer/viewer_p.cpp:2023
+#, kde-format
+msgid "Copy Email Address"
+msgstr "Копіювати адресу електронної пошти"
+
+#: viewer/viewer_p.cpp:2104
+#, kde-format
+msgctxt "@title:window"
+msgid "Message as Plain Text"
+msgstr "Повідомлення як простий текст"
+
+#: viewer/viewer_p.cpp:2305
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr "Друк документа"
+
+#: viewer/viewer_p.cpp:2719
+#, kde-format
+msgid "URL copied to clipboard."
+msgstr "URL скопійовано до буфера даних."
+
+#: viewer/viewer_p.cpp:2871
+#, kde-format
+msgid "Message loading failed: %1."
+msgstr "Помилка під час завантаження повідомлення: %1."
+
+#: viewer/viewer_p.cpp:2876
+#, kde-format
+msgid "Message not found."
+msgstr "Повідомлення не знайдено."
+
+#: widgets/attachmentdialog.cpp:27
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
+"may compromise your system's security."
+msgstr ""
+"Відкрити долучення <filename>%1</filename>?<nl/>Відкриття долучення може "
+"бути джерелом проблем з безпекою у системі."
+
+#: widgets/attachmentdialog.cpp:32
+#, kde-format
+msgctxt "@title:window"
+msgid "Open Attachment?"
+msgstr "Відкрити долучення?"
+
+#: widgets/attachmentdialog.cpp:39
+#, kde-format
+msgid "&Open With '%1'"
+msgstr "В&ідкрити за допомогою «%1»"
+
+#: widgets/attachmentdialog.cpp:46
+#, kde-format
+msgid "Open &With..."
+msgstr "Відк&рити за допомогою..."
+
+#: widgets/attachmentdialog.cpp:68
+#, kde-format
+msgid "Do not ask again"
+msgstr "Більше не питати"
+
+#: widgets/htmlstatusbar.cpp:108
+#, kde-format
+msgctxt ""
+"'HTML Message' with html linebreaks between each letter and in bold text."
+msgid ""
+"<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
+">a<br />g<br />e</b></qt>"
+msgstr ""
+"<qt><b><br />H<br />T<br />M<br />L<br />-<br />П<br />о<br />в<br />і<br /"
+">д<br />о<br />м<br />л<br />е<br />н<br />н<br />я<br /></b></qt>"
+
+#: widgets/htmlstatusbar.cpp:112
+#, kde-format
+msgctxt "'No HTML Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+">e<br />s<br />s<br />a<br />g<br />e</qt>"
+msgstr ""
+"<qt><br />П<br />о<br />в<br />і<br />д<br />о<br />м<br />л<br />е<br /"
+">н<br />н<br />я<br /><br />б<br />е<br />з<br /><br />H<br />T<br />M<br /"
+">L</qt>"
+
+#: widgets/htmlstatusbar.cpp:117
+#, kde-format
+msgctxt "'Plain Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+">s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+"<qt><br />З<br />в<br />и<br />ч<br />а<br />й<br />н<br />и<br />й<br /"
+"><br />т<br />е<br />к<br />с<br />т<br /></qt>"
+
+#: widgets/htmlstatusbar.cpp:121
+#, kde-format
+msgctxt "'Calendar Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
+">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+"<qt><br />П<br />о<br />в<br />і<br />д<br />о<br />м<br />л<br />е<br /"
+">н<br />н<br />я<br /> <br />к<br />а<br />л<br />е<br />н<br />д<br />а<br /"
+"><br />р<br />я<br /></qt>"
+
+#: widgets/htmlstatusbar.cpp:135
+#, kde-format
+msgid "Click to toggle between HTML, plain text and calendar."
+msgstr ""
+"Натисніть, щоб перемкнути редактор між режимами HTML, звичайного тексту та "
+"календаря."
+
+#: widgets/invitationsettings.cpp:70
+#, kde-format
+msgid ""
+"<qt>Invitations are normally sent as attachments to a mail. This switch "
+"changes the invitation mails to be sent in the text of the mail instead; "
+"this is necessary to send invitations and replies to Microsoft Outlook.<br /"
+">But, when you do this, you no longer get descriptive text that mail "
+"programs can read; so, to people who have email programs that do not "
+"understand the invitations, the resulting messages look very odd.<br /"
+">People that have email programs that do understand invitations will still "
+"be able to work with this.</qt>"
+msgstr ""
+"<qt>Типово запрошення надсилаються як долучення в середині листа. Цей "
+"параметр змушує надсилати запрошення в тілі листа; це потрібно для "
+"надсилання запрошень та відповідей на запрошення до програми Microsoft "
+"Outlook.<br />Якщо буде позначено цей пункт, листи не будуть містити тексту "
+"опису придатного для читання. Тому ті, хто користується поштовими "
+"програмами, що не розуміють запрошення, будуть бачити повідомлення, яке "
+"виглядає дуже дивно.<br />А ті, хто використовує поштові програми, що "
+"розуміють запрошення, зможуть працювати з вашими запрошеннями.</qt>"
+
+#: widgets/mailsourcewebengineviewer.cpp:51
+#, kde-format
+msgctxt "Unchanged mail message"
+msgid "Raw Source"
+msgstr "Код без обробки"
+
+#: widgets/mailsourcewebengineviewer.cpp:52
+#, kde-format
+msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
+msgstr ""
+"Без обробки, дані пошти у форматі, у якому вони зберігаються у файловій "
+"системі або на сервері"
+
+#: widgets/mailsourcewebengineviewer.cpp:55
+#, kde-format
+msgctxt "Mail message as shown, in HTML format"
+msgid "HTML Source"
+msgstr "Код HTML"
+
+#: widgets/mailsourcewebengineviewer.cpp:56
+#, kde-format
+msgid "HTML code for displaying the message to the user"
+msgstr "Код HTML для показу повідомлення користувачеві"
+
+#: widgets/opensavedfilefolderwidget.cpp:26
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where attachment was saved"
+msgstr "Відкрити теку, до якої було збережено долучення"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr "Відкрити файл"
+
+#: widgets/opensavedfilefolderwidget.cpp:61
+#, kde-format
+msgid "Open folder where attachment was saved"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Відкрити теку, до якої було збережено долучення"
+msgstr[1] "Відкрити теку, до якої було збережено долучення"
+msgstr[2] "Відкрити теку, до якої було збережено долучення"
+msgstr[3] "Відкрити теку, до якої було збережено долучення"
+
+#: widgets/opensavedfilefolderwidget.cpp:64
+#, kde-format
+msgid "Open folder where PDF file was saved"
+msgstr "Відкрити теку, до якої було збережено файл PDF"
+
+#: widgets/opensavedfilefolderwidget.cpp:77
+#, kde-format
+msgid "KMail was unable to open the attachment."
+msgstr "KMail не вдалося відкрити долучення."
+
+#: widgets/shownextmessagewidget.cpp:15
+#, kde-format
+msgid "Next Message"
+msgstr "Наступне повідомлення"
+
+#: widgets/shownextmessagewidget.cpp:16
+#, kde-format
+msgid "Previous Message"
+msgstr "Попереднє повідомлення"
+
+#: widgets/vcardviewer.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "vCard Viewer"
+msgstr "Перегляд vCard"
+
+#: widgets/vcardviewer.cpp:48
+#, kde-format
+msgid "&Import"
+msgstr "&Імпортувати"
+
+#: widgets/vcardviewer.cpp:49
+#, kde-format
+msgid "&Next Card"
+msgstr "&Наступна картка"
+
+#: widgets/vcardviewer.cpp:50
+#, kde-format
+msgid "&Previous Card"
+msgstr "Попередн&я картка"
+
+#~ msgid "Reply From:"
+#~ msgstr "Відправник відповіді:"
+
+#~ msgid "Submit form is not allowed in mailer. Please open url in a browser."
+#~ msgstr ""
+#~ "Програма для керування електронною поштою не може надсилати форми. Будь "
+#~ "ласка, відкрийте цю адресу у програмі для перегляду інтернету."
+
+#~ msgid ""
+#~ "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+#~ "\">(Details...)"
+#~ msgstr ""
+#~ "Виявлено і заблоковано засіб стеження за поштою.<a href="
+#~ "\"mailtrackingdetails\">(Подробиці…)"
+
+#~ msgid "1 tracker from the company %2 (%3)"
+#~ msgid_plural "%1 trackers from the company %2 (%3)"
+#~ msgstr[0] "%1 засіб стеження від компанії %2 (%3)"
+#~ msgstr[1] "%1 засоби стеження від компанії %2 (%3)"
+#~ msgstr[2] "%1 засобів стеження від компанії %2 (%3)"
+#~ msgstr[3] "%1 засіб стеження від компанії %2 (%3)"
+
+#~ msgid "Url:"
+#~ msgstr "Адреса:"
+
+#~ msgid "Url"
+#~ msgstr "Адреса"
+
+#~ msgid "&Open With..."
+#~ msgstr "В&ідкрити за допомогою..."
+
+#~ msgid "Do you want to all rules?"
+#~ msgstr "Хочете вилучити усі правила?"
+
+#~ msgid "KDIM: valid"
+#~ msgstr "KDIM: коректний"
+
+#~ msgid "Enable Mail Tracking Url"
+#~ msgstr "Увімкнути адресу стеження за поштою"
+
+#~ msgid "receiver was"
+#~ msgid_plural "receivers were"
+#~ msgstr[0] "отримувачі"
+#~ msgstr[1] "отримувачі"
+#~ msgstr[2] "отримувачі"
+#~ msgstr[3] "отримувач"
+
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "Сховати повний список адрес «Кому»"
+
+#~ msgid "Show full \"To\" list"
+#~ msgstr "Показати повний список адрес «Кому»"
+
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "Сховати повний список адрес «Копія»"
+
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "Показати повний список адрес «Копія»"
+
+#~ msgid "Hide attachment list."
+#~ msgstr "Сховати список долучень."
+
+#~ msgid "Show attachment list."
+#~ msgstr "Показати список долучень."
+
+#~ msgid ""
+#~ "Modifying an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr "Зміна долучення може позбавити лист коректного цифрового підпису."
+
+#~ msgid "Edit Attachment"
+#~ msgstr "Редагувати долучення"
+
+#~ msgid "Edit"
+#~ msgstr "Редагувати"
+
+#~ msgid "Allow to edit attachments of existing mails."
+#~ msgstr "Дозволити змінювати долучення до існуючих листів."
+
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "Показувати бічну панель HTML"
+
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "Показувати &бічну панель HTML"
+
+#~ msgid "Show user agent"
+#~ msgstr "Показувати агент користувача"
+
+#~ msgid ""
+#~ "Enable this option to get the User-Agent and X-Mailer header lines "
+#~ "displayed."
+#~ msgstr ""
+#~ "Позначте цей пункт, щоб бачити рядки заголовка User-Agent and X-Mailer."
+
+#~ msgid "Hide advertisement enabled"
+#~ msgstr "Увімкнено приховування реклами"
+
+#~ msgid "Update interval list of adblock"
+#~ msgstr "Проміжок між оновленням списку блокування реклами"
+
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "Показувати агент користувача у вишуканих заголовках"
+
+#~ msgctxt "display name for an unnamed attachment"
+#~ msgid "Unnamed"
+#~ msgstr "Без назви"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "Додаток без назви"
+
+#~ msgid "No description available"
+#~ msgstr "Немає опису"
+
+#~ msgid "Reply"
+#~ msgstr "Відповісти"
+
+#~ msgid "Reply to All"
+#~ msgstr "Відповісти усім"
+
+#~ msgid "Forward"
+#~ msgstr "Переспрямувати"
+
+#~ msgid "Print"
+#~ msgstr "Друк"
+
+#~ msgid "Print Preview"
+#~ msgstr "Перегляд друку"
+
+#~ msgid "Move To Trash"
+#~ msgstr "Пересунути до смітника"
+
+#~ msgid "Print Preview Message"
+#~ msgstr "Перегляд друку повідомлення"
+
+#~ msgid "Replace smileys by emoticons"
+#~ msgstr "Заміна символьних емоційок на піктограми"
+
+#~ msgid ""
+#~ "Enable this if you want smileys like :-) appearing in the message text to "
+#~ "be replaced by emoticons (small pictures)."
+#~ msgstr ""
+#~ "Позначте, якщо ви бажаєте, щоб в тексті повідомлення символьні емоційки, "
+#~ "наприклад «:-)», було замінено на піктограми."
+
+#~ msgid "Replace smileys &by emoticons"
+#~ msgstr "Заміна символьних емоці&йок на піктограми"
+
+#~ msgid "Hide full address list"
+#~ msgstr "Сховати повний список адрес"
+
+#~ msgid "Show full address list"
+#~ msgstr "Показати повний список адрес"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "&Стандартні заголовки"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "Показувати стандартний набір заголовків повідомлення"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Неправильний</b> підпис"
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Неправильний</b> підпис."
+
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "Показувати стан спаму у вишуканих заголовках"
+
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "Показувати стан спаму &у вишуканих заголовках"
+
+#~ msgid "Outlook compatible invitation reply comments"
+#~ msgstr "Сумісні з Outlook відповіді на запрошення"
+
+#~ msgid ""
+#~ "When replying to invitations, send the reply comment in way that "
+#~ "Microsoft Outlook understands."
+#~ msgstr ""
+#~ "Під час роботи з відповідями на запрошення, надсилати відповідь у "
+#~ "форматі, який розуміє Microsoft Outlook."
+
+#~ msgid "Show invitation update differences in the Outlook style"
+#~ msgstr "Показувати відмінності під час оновлення запрошень у стилі Outlook"
+
+#~ msgid ""
+#~ "When viewing invitation updates, show the differences in the Microsoft "
+#~ "Outlook style."
+#~ msgstr ""
+#~ "Під час роботи з оновленнями запрошень показувати відмінності у форматі "
+#~ "Microsoft Outlook."
+
+#~ msgid ""
+#~ "Send invitation reply comments in a way that Microsoft Outlook(tm) "
+#~ "understands."
+#~ msgstr ""
+#~ "Надіслати коментарі щодо відповіді на запрошення у спосіб, який розуміє "
+#~ "Microsoft Outlook™."
+
+#~ msgid ""
+#~ "Display invitation update differences in the Microsoft Outlook(tm) style."
+#~ msgstr ""
+#~ "Показувати відмінності у оновлених запрошеннях у стилі Microsoft Outlook™."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Неправильний додаток шифрування."
+
+#~ msgid "No appropriate crypto plug-in was found."
+#~ msgstr "Не знайдено відповідного додатка шифрування."
+
+#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#~ msgstr "Додатку шифрування «%1» не вдалося розшифрувати повідомлення."
+
+#~ msgid "Crypto plug-in \"%1\" could not decrypt the data."
+#~ msgstr "Додатку шифрування «%1» не вдалося розшифрувати дані."
+
+#~ msgid "Error: %1"
+#~ msgstr "Помилка: %1"
+
+#~ msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+#~ msgid "No %1 plug-in was found."
+#~ msgstr "Не було знайдено додатка %1."
+
+#~ msgid "Crypto plug-in \"%1\" cannot verify signatures."
+#~ msgstr "Додаток шифрування «%1» не може перевірити підписи."
+
+#~ msgid ""
+#~ "The message is signed, but the validity of the signature cannot be "
+#~ "verified.<br />Reason: %1"
+#~ msgstr ""
+#~ "Повідомлення підписане, але чинність підпису неможливо перевірити.<br /"
+#~ ">Причина: %1"
+
+#~ msgid "&Zoom In"
+#~ msgstr "З&більшити"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "З&меншити"
+
+#~ msgid "Reset"
+#~ msgstr "Відновити"
+
+#~ msgid "Zoom"
+#~ msgstr "Масштаб"
+
+#~ msgid "Close"
+#~ msgstr "Закрити"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "З&найти:"
+
+#~ msgid "Text to search for"
+#~ msgstr "Текст, який слід шукати"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Наступний"
+
+#~ msgid "Jump to next match"
+#~ msgstr "Перейти до наступного збігу"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Попередній"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "Перейти до попереднього збігу"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "Змінити поведінку пошуку"
+
+#~ msgid "Case sensitive"
+#~ msgstr "З врахуванням регістру"
+
+#~ msgid "Phrase not found"
+#~ msgstr "Фразу не знайдено"
+
+#~ msgid "Blockable Items"
+#~ msgstr "Елементи блокування"
+
+#~ msgid "No blockable element found."
+#~ msgstr "Елементів блокування не знайдено."
+
+#~ msgid "Filter"
+#~ msgstr "Фільтр"
+
+#~ msgid "Address"
+#~ msgstr "Адреса"
+
+#~ msgid "Search..."
+#~ msgstr "Шукати…"
+
+#~ msgid "Image"
+#~ msgstr "Зображення"
+
+#~ msgid "Script"
+#~ msgstr "Скрипт"
+
+#~ msgid "Stylesheet"
+#~ msgstr "Таблиця стилів"
+
+#~ msgid "Font"
+#~ msgstr "Шрифт"
+
+#~ msgid "Frame"
+#~ msgstr "Фрейм"
+
+#~ msgid "XML Request"
+#~ msgstr "Запит XML"
+
+#~ msgid "Object"
+#~ msgstr "Об’єкт"
+
+#~ msgid "Audio/Video"
+#~ msgstr "Звук/Відео"
+
+#~ msgid "Popup window"
+#~ msgstr "Контекстне вікно"
+
+#~ msgid "Copy url"
+#~ msgstr "Копіювати адресу"
+
+#~ msgid "Copy filter"
+#~ msgstr "Копіювати фільтр"
+
+#~ msgid "Block item..."
+#~ msgstr "Заблокувати елемент…"
+
+#~ msgid "Open"
+#~ msgstr "Відкрити"
+
+#~ msgid "Remove filter"
+#~ msgstr "Вилучити фільтр"
+
+#~ msgid "Download new ad-block list was failed."
+#~ msgstr "Не вдалося отримати новий список блокування реклами."
+
+#~ msgid "Download new ad-block list was done."
+#~ msgstr "Отримано новий список блокування реклами."
+
+#~ msgid "Add subscription"
+#~ msgstr "Додати підписку"
+
+#~ msgid "Show List"
+#~ msgstr "Показати список"
+
+#~ msgid "Use default"
+#~ msgstr "Зробити типовим"
+
+#~ msgid "Yes"
+#~ msgstr "Так"
+
+#~ msgid "Not"
+#~ msgstr "Ні"
+
+#~ msgid "Not subscription added..."
+#~ msgstr "Підписок ще не додано…"
+
+#~ msgid ""
+#~ "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">more information</a>):"
+#~ msgstr ""
+#~ "<qt>Ключ фільтрування (наприклад <tt>http://www.example.com/ad/*</tt>, <a "
+#~ "href=\"filterhelp\">додаткові відомості</a>):"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " день"
+#~ msgstr[1] " дні"
+#~ msgstr[2] " днів"
+#~ msgstr[3] " день"
+
+#~ msgid ""
+#~ "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~ "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~ "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~ "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~ "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~ "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes priority "
+#~ "over any blacklist (blocking) filter.<br><a href='%1'>%2</a></qt>"
+#~ msgstr ""
+#~ "<qt><p>Введіть вираз-фільтр. Фільтри можна визначити у декілька способів:"
+#~ "<ul><li>у стилі шаблону командної оболонки, наприклад, <tt>http://www."
+#~ "example.com/ads*</tt>, можна використовувати шаблони заміни <tt>*?[]</"
+#~ "tt></li><li>як повноцінний формальний вираз (для цього рядок слід "
+#~ "обмежити символами «<tt>/</tt>», наприклад, <tt>/\\/(ad|banner)\\./</tt></"
+#~ "li></ul><p>Перед будь-яким з рядків-фільтрів можна вказати «<tt>@@</tt>», "
+#~ "щоб додати до «білого» списку всі відповідні адреси. Подібні фільтри "
+#~ "отримуватимуть вищий пріоритет, ніж фільтри «чорного» списку (списку "
+#~ "блокування).<br><a href='%1'>%2</a></qt>"
+
+#~ msgid "More information"
+#~ msgstr "Докладніше"
+
+#~ msgid "Delete current list"
+#~ msgstr "Вилучити поточний список"
+
+#~ msgid "All Files (*)"
+#~ msgstr "усі файли (*)"
+
+#~ msgid "Show adblock list"
+#~ msgstr "Показати список блокування реклами"
+
+#~ msgid "Download..."
+#~ msgstr "Отримати…"
+
+#~ msgid "An error occurs during download list: \"%1\""
+#~ msgstr "Під час спроби отримання списку сталася помилка: «%1»"
+
+#~ msgid "Filters:"
+#~ msgstr "Фільтри:"
+
+#~ msgid "&Blocking filter"
+#~ msgstr "Фільтр &блокування"
+
+#~ msgid "Exception Filter"
+#~ msgstr "Фільтр виключень"
+
+#~ msgid "Pattern"
+#~ msgstr "Взірець"
+
+#~ msgid "custom"
+#~ msgstr "нетиповий"
+
+#~ msgid "Accept pattern only"
+#~ msgstr "Приймати лише за зразками"
+
+#~ msgid "At the beginning of the address"
+#~ msgstr "На початку адреси"
+
+#~ msgid "At the end of address"
+#~ msgstr "Наприкінці адреси"
+
+#~ msgid "First-part only"
+#~ msgstr "Лише перша частина"
+
+#~ msgid "Match case"
+#~ msgstr "Враховувати регістр"
+
+#~ msgid "Restrict to domain"
+#~ msgstr "Обмежити доменом"
+
+#~ msgid "Apply to:"
+#~ msgstr "Об’єкт застосування:"
+
+#~ msgid "Collapse blocked:"
+#~ msgstr "Згортати заблоковані:"
+
+#~ msgid "&Enable Ad Block"
+#~ msgstr "&Увімкнути блокування реклами"
+
+#~ msgid "&Hide filtered elements"
+#~ msgstr "При&ховати фільтровані елементи"
+
+#~ msgid "Automatic Filters"
+#~ msgstr "Автоматичне фільтрування"
+
+#~ msgid "Add Filters subscriptions..."
+#~ msgstr "Додати підписки на фільтри…"
+
+#~ msgid "Remove subscription"
+#~ msgstr "Вилучити підписку"
+
+#~ msgid "Update enabled automatic filters every:"
+#~ msgstr "Оновлювати увімкнені автоматичні фільтри кожні:"
+
+#~ msgid "Show List..."
+#~ msgstr "Показати список…"
+
+#~ msgid "Manual Filters"
+#~ msgstr "Фільтрування вручну"
+
+#~ msgid "Add filter expression"
+#~ msgstr "Додати правило фільтрування"
+
+#~ msgid "..."
+#~ msgstr "…"
+
+#~ msgid "Import Filters..."
+#~ msgstr "Імпортувати фільтри…"
+
+#~ msgid "Search:"
+#~ msgstr "Шукати:"
+
+#~ msgid "Remove filter expression"
+#~ msgstr "Вилучити правило фільтрування"
+
+#~ msgid "Remove Filter"
+#~ msgstr "Вилучити фільтр"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "Підсвітити всі відповідники"
+
+#~ msgid "Find in selection first"
+#~ msgstr "Шукати спочатку у позначеному"
+
+#~ msgid "Zoom only text"
+#~ msgstr "Масштабувати лише текст"
+
+#~ msgid "Open Blockable Items..."
+#~ msgstr "Відкрити список блокованих елементів…"
+
+#~ msgid "Blocked by ad filter"
+#~ msgstr "Заблоковано фільтром реклами"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "Масштабувати лише текст"
+
+#~ msgid "No Audit Log available"
+#~ msgstr "Немає журналу перевірки"
+
+#~ msgid "Error Retrieving Audit Log: %1"
+#~ msgstr "Помилка під час отримання журналу перевірки: %1"
+
+#~ msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+#~ msgid "Show Audit Log"
+#~ msgstr "Показати журнал перевірки"
+
+#~ msgid "The crypto engine returned no cleartext data."
+#~ msgstr "Механізм шифрування не повернув звичайного тексту."
+
+#~ msgid "New or changed: %1 (secret key available)"
+#~ msgstr "Нових чи змінених: %1 (закритий ключ наявний)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "Нових чи змінених: %1"
+
+#~ msgid "Crypto plug-in \"%1\" is not initialized."
+#~ msgstr "Додаток шифрування «%1» не ініціалізовано."
+
+#~ msgid "Expand Short URL"
+#~ msgstr "Розгорнути скорочену адресу"
+
+#~ msgid "Headers:"
+#~ msgstr "Заголовки:"
+
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "Налаштувати нетипові заголовки…"
+
+#~ msgid "Only show the headers listed below"
+#~ msgstr "Показувати лише вказані нижче заголовки"
+
+#~ msgid "Show all but hide the headers listed below"
+#~ msgstr "Показувати всі заголовки, окрім вказаних нижче"
+
+#~ msgid "Header:"
+#~ msgstr "Заголовок:"
+
+#~ msgid "Create ToDo"
+#~ msgstr "Створити запис завдання"
+
+#~| msgid "Create ToDo"
+#~ msgid "Create To-Do"
+#~ msgstr "Створити запис завдання"
+
+#~ msgid ""
+#~ "Show HTML colored quote (It can take some time on specific html email)"
+#~ msgstr ""
+#~ "Показувати розфарбовані за допомогою HTML цитати (може потребувати "
+#~ "певного часу для деяких повідомлень з HTML)"
+
+#~ msgid "Au&tomatic collapse level:"
+#~ msgstr "Рівень &автоматичного згортання:"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "&Всі заголовки"
+
+#~ msgid "Show all message headers"
+#~ msgstr "Показувати всі заголовки повідомлення"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "&Короткі заголовки"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "Показувати скорочений набір заголовків повідомлення"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "&Нетипові заголовки"
+
+#~ msgid "Show custom headers"
+#~ msgstr "Показувати нетипові заголовки"
+
+#~ msgid "To: "
+#~ msgstr "Кому: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "&Бізнес-заголовки"
+
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "Показати список заголовків у бізнес-стилі"
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(переслано від %1)"
+
+#~ msgid "(receiver was %1)"
+#~ msgstr "(отримувач — %1)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "До:"
+
+#~ msgid "User-Agent: "
+#~ msgstr "Агент користувача: "
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-Mailer: "
+
+#~ msgid "Bugzilla: "
+#~ msgstr "Bugzilla: "
+
+#~ msgid "MDN To: "
+#~ msgstr "Кому повертати: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "Ви&шукані заголовки"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "Показувати заголовки у вишуканому форматі"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "&Довгі заголовки"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "Показувати розширений набір заголовків повідомлення"
+
+#~ msgid "Event:"
+#~ msgstr "Подія:"
+
+#~ msgid "Calendar where the new event will be stored."
+#~ msgstr "Календар, до якого слід зберігати нові записи подій."
+
+#~ msgid "Calendar where the new event will be stored"
+#~ msgstr "Календар, до якого слід зберігати нові записи подій"
+
+#~ msgid "Start:"
+#~ msgstr "Початок:"
+
+#~ msgid "Select start time for event."
+#~ msgstr "Виберіть час початку події."
+
+#~ msgid "End:"
+#~ msgstr "Завершення:"
+
+#~ msgid "Select end time for event."
+#~ msgstr "Виберіть час завершення події."
+
+#~ msgid "&Save"
+#~ msgstr "&Зберегти"
+
+#~ msgid "Create new event and close this widget."
+#~ msgstr "Створити завдання і закрити цей віджет."
+
+#~ msgid "Open &editor..."
+#~ msgstr "Відкрити &редактор…"
+
+#~ msgid "Open event editor, where more details can be changed."
+#~ msgstr "Відкрити редактор завдань для внесення змін до параметрів."
+
+#~ msgid "Close the widget for creating new events."
+#~ msgstr "Закрити віджет для створення нових записів подій."
+
+#~ msgid "Create Event..."
+#~ msgstr "Створити запис події…"
+
+#~ msgid "Create Event"
+#~ msgstr "Створити запис події"
+
+#~ msgid "Allows you to create a calendar Event"
+#~ msgstr "Надає вам змогу створити запис завдання у календарі"
+
+#~ msgid "Note:"
+#~ msgstr "Нотатка:"
+
+#~ msgid "Create new note and close this widget."
+#~ msgstr "Створити нотатку і закрити цей віджет."
+
+#~ msgid "Close the widget for creating new notes."
+#~ msgstr "Закрити віджет для створення нових нотаток."
+
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "Змінити нотатку"
+
+#~ msgctxt "create a new note out of this message"
+#~ msgid "Create Note"
+#~ msgstr "Створити нотатку"
+
+#~ msgid "Allows you to create a note from this message"
+#~ msgstr "Надає вам змогу створити нотатку на основі цього повідомлення"
+
+#~ msgid ""
+#~ "This option starts an editor to create a note. Then you can edit the note "
+#~ "to your liking before saving it."
+#~ msgstr ""
+#~ "За допомогою цього пункту можна запустити редактор для створення нотатки. "
+#~ "Після цього ви можете редагувати нотатку, а потім зберегти її."
+
+#~ msgid "Todo:"
+#~ msgstr "Завдання:"
+
+#~ msgid "Todo list where the new task will be stored."
+#~ msgstr "Список завдань, до якого слід зберегти новий запис завдання."
+
+#~ msgid "Todo list where the new task will be stored"
+#~ msgstr "Список завдань, до якого слід зберегти новий запис завдання"
+
+#~ msgid "Create new todo and close this widget."
+#~ msgstr "Створити новий запис завдання і закрити цей віджет."
+
+#~ msgid "Open todo editor, where more details can be changed."
+#~ msgstr "Відкрити редактор завдань для внесення змін до параметрів."
+
+#~ msgid "Close the widget for creating new todos."
+#~ msgstr "Закрити віджет для створення нових записів завдань."
+
+#~ msgid "Reply to \"%1\""
+#~ msgstr "Відповідь «%1»"
+
+#~ msgctxt ""
+#~ "%1 is summary of the todo, %2 is name of the folder in which it is stored"
+#~ msgid "New todo '%1' was added to task list '%2'"
+#~ msgstr "Новий запис завдання, «%1», було додано до списку завдань «%2»"
+
+#~ msgid "Create To-do"
+#~ msgstr "Створити запис завдання"
+
+#~ msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgstr ""
+#~ "Надає вам змогу створити запис завдання у календарі або нагадування на "
+#~ "основі цього повідомлення"
+
+#~ msgid ""
+#~ "This option starts the KOrganizer to-do editor with initial values taken "
+#~ "from the currently selected message. Then you can edit the to-do to your "
+#~ "liking before saving it to your calendar."
+#~ msgstr ""
+#~ "За допомогою цього пункту можна запустити редактор завдань KOrganizer, у "
+#~ "якому початкові значення для запису буде заповнено даними з позначеного "
+#~ "повідомлення. Після цього ви можете редагувати запис, а потім зберегти "
+#~ "його до вашого календаря."
+
+#~ msgid "Translate..."
+#~ msgstr "Перекласти…"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-obtain-keys\" function. Please "
+#~ "report this bug."
+#~ msgstr ""
+#~ "Рушій Chiasmus не надає функцію «x-obtain-keys». Будь ласка, повідомте "
+#~ "розробників про цю помилку."
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "Помилка рушія Chiasmus"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-obtain-keys\" "
+#~ "function did not return a string list. Please report this bug."
+#~ msgstr ""
+#~ "Рушій Chiasmus повернув неочікуване значення: функція «x-obtain-keys» не "
+#~ "повернула список рядків. Будь ласка, повідомте розробників про цю помилку."
+
+#~ msgid ""
+#~ "No keys have been found. Please check that a valid key path has been set "
+#~ "in the Chiasmus configuration."
+#~ msgstr ""
+#~ "Ключі не знайдено. Будь ласка, перевірте коректність адреси теки ключів у "
+#~ "налаштуваннях Chiasmus."
+
+#~ msgid "Chiasmus Decryption Key Selection"
+#~ msgstr "Вибір ключа розшифровування Chiasmus"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-decrypt\" function. Please report "
+#~ "this bug."
+#~ msgstr ""
+#~ "Рушій Chiasmus не надає функцію «x-decrypt». Будь ласка, повідомте "
+#~ "розробників про цю помилку."
+
+#~ msgid ""
+#~ "The \"x-decrypt\" function does not accept the expected parameters. "
+#~ "Please report this bug."
+#~ msgstr ""
+#~ "Функція «x-decrypt» не приймає очікувані параметри. Будь ласка, повідомте "
+#~ "розробників про цю помилку."
+
+#~ msgid "Chiasmus Decryption Error"
+#~ msgstr "Помилка розшифровування Chiasmus"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-decrypt\" function "
+#~ "did not return a byte array. Please report this bug."
+#~ msgstr ""
+#~ "Рушій Chiasmus повернув неочікуване значення: Функція «x-decrypt» не "
+#~ "повернула масив байтів. Будь ласка, повідомте розробників про цю помилку."
+
+#~ msgid "Please select the Chiasmus key file to use:"
+#~ msgstr "Будь ласка, виберіть файл ключа Chiasmus:"
+
+#~ msgid "Additional arguments for chiasmus:"
+#~ msgstr "Додаткові параметри для chiasmus:"
+
+#~ msgid "Decrypt With Chiasmus..."
+#~ msgstr "Розшифрувати за допомогою Chiasmus..."
+
+#~ msgid "Event about to \"%1\""
+#~ msgstr "Подія «%1»"
+
+#~ msgid "Configure Gravatar"
+#~ msgstr "Налаштування Gravatar"
+
+#~ msgid "Use Default Image"
+#~ msgstr "Використовувати типове зображення"
+
+#~ msgid "Use HTTPS"
+#~ msgstr "Використовувати HTTPS"
+
+#~ msgid "Use Libravatar"
+#~ msgstr "Використовувати Libravatar"
+
+#~ msgid "Fallback to Gravatar"
+#~ msgstr "Резервний Gravatar"
+
+#~ msgid "Gravatar Cache Size:"
+#~ msgstr "Розмір кешу Gravatar:"
+
+#~ msgctxt "add space before image"
+#~ msgid " image"
+#~ msgid_plural " images"
+#~ msgstr[0] " зображення"
+#~ msgstr[1] " зображення"
+#~ msgstr[2] " зображень"
+#~ msgstr[3] " зображення"
+
+#~ msgid "Clear Gravatar Cache"
+#~ msgstr "Спорожнити кеш Gravatar"
+
+#~ msgid "Enable Gravatar Support"
+#~ msgstr "Увімкнути підтримку Gravatar"
+
+#~ msgid "Toggle Caret Browsing"
+#~ msgstr "Увімкнути або вимкнути режим активного вказівника"
+
+#~ msgid "Caret Browsing will be activated. Switch off with F7 shortcut."
+#~ msgstr ""
+#~ "Буде увімкнено режим активного вказівника. Вимкнути режим можна за "
+#~ "допомогою натискання клавіші F7."
+
+#~ msgid "Activate Caret Browsing"
+#~ msgstr "Режим активного вказівника"
+
+#~ msgid "Allow to delete attachments of existing mails."
+#~ msgstr "Дозволити вилучати долучення з існуючих листів."
+
+#~ msgid "Message Structure Viewer Placement"
+#~ msgstr "Розташування перегляду структури повідомлення"
+
+#~ msgid "Above the message pane"
+#~ msgstr "Вище панелі повідомлення"
+
+#~ msgid "Below the message pane"
+#~ msgstr "Нижче панелі повідомлення"
+
+#~ msgid "Number of addresses to show before collapsing"
+#~ msgstr "Кількість адрес, які буде показано до згортання"
+
+#~ msgid "Fallback character e&ncoding:"
+#~ msgstr "Запасне ко&дування:"
+
+#~ msgid ""
+#~ "When encountering a Toltec scheduling message, display a custom "
+#~ "replacement text for it."
+#~ msgstr ""
+#~ "Якщо буде виявлено повідомлення розкладу Toltec, показувати нетиповий "
+#~ "текст заміни для цього повідомлення."
+
+#~ msgid ""
+#~ "The text that will be displayed as a replacement when encountering Toltec "
+#~ "scheduling messages."
+#~ msgstr ""
+#~ "Текст, який буде показано як замінник, якщо буде виявлено повідомлення "
+#~ "розкладу Toltec."
+
+#~ msgid ""
+#~ "This message is a <i>Toltec</i> Groupware object, it can only be viewed "
+#~ "with Microsoft Outlook in combination with the Toltec connector."
+#~ msgstr ""
+#~ "Це повідомлення є об’єктом групової роботи <i>Toltec</i>, його можна "
+#~ "переглянути лише за допомогою Microsoft Outlook у поєднанні зі "
+#~ "з’єднувачем Toltec."
+
+#~ msgid "Show Raw Message"
+#~ msgstr "Показати дані без обробки"
+
+#~ msgid "Use Https"
+#~ msgstr "Використовувати HTTPS"
+
+#~| msgid "*|all files (*)"
+#~ msgid "all files (*)"
+#~ msgstr "усі файли (*)"
+
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Не вдалося запусти службу озвучування тексту Jovie"
+
+#~ msgid "sent: "
+#~ msgstr "надіслано: "
+
+#~ msgid "Encrypted data not shown"
+#~ msgstr "Розшифровані дані не показано"
+
+#~ msgid ""
+#~ "Beginning of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Досягнуто початку повідомлення.\n"
+#~ "Не вдалося знайти фрази «%1»."
+
+#~ msgid ""
+#~ "End of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Досягнуто кінця повідомлення.\n"
+#~ "Не вдалося знайти фрази «%1»."
+
+#~ msgid "&Cancel"
+#~ msgstr "&Скасувати"
+
+#~ msgid "The most recently selected folder used for Events."
+#~ msgstr "Остання вибрана тека, використана для записів подій."
+
+#~ msgid "The most recently selected folder used for Todos."
+#~ msgstr "Остання вибрана тека, використана для завдань."
+
+#~ msgid "Select collection where Todo will stored."
+#~ msgstr "Виберіть збірку, до якої буде збережено запис завдання."
+
+#~ msgid "The message could not be decrypted."
+#~ msgstr "Не вдалося розшифрувати повідомлення."
+
+#~ msgid ""
+#~ "<html><head/><body><p><span style=\" font-weight:600;\">Blocked elements</"
+#~ "span></p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p><span style=\" font-weight:600;\">Заблоковані "
+#~ "елементи</span></p></body></html>"
+
+#~ msgid "<b>Hidden elements</b>"
+#~ msgstr "<b>Приховані елементи</b>"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgctxt "@title:window"
+#~ msgid "Ad Block Settings"
+#~ msgstr "Параметри блокування реклами"
+
+#~ msgid ""
+#~ "Could not write the file %1:\n"
+#~ "\"%2\" is the detailed error description."
+#~ msgstr ""
+#~ "Не вдалося виконати запис до файла %1.\n"
+#~ "Докладний звіт про помилку «%2»."
+
+#~ msgid "View Source Error"
+#~ msgstr "Переглянути текст помилки"
+
+#~ msgid "Header to show:"
+#~ msgstr "Заголовок, який слід показати:"
+
+#~ msgid "Header to hide:"
+#~ msgstr "Заголовок, який слід приховати:"
+
+#~ msgid "Hostname from href defines ip '%1'"
+#~ msgstr "Назва вузла з href визначає IP-адресу «%1»"
+
+#~ msgid "Hostname from href contains hexadecimal value '%1'"
+#~ msgstr "Назва вузла з href містить шістнадцяткове значення «%1»"
+
+#~ msgid "Href '%1' has a redirection"
+#~ msgstr "Href «%1» містить переспрямування"
+
+#~ msgid "Href '%1' contains multiple http://"
+#~ msgstr "Href «%1» містить декілька http://"
+
+#~ msgid "Message contains form element"
+#~ msgstr "Повідомлення містить елемент form"
+
+#~ msgid "This message may be a scam."
+#~ msgstr "Це повідомлення може належати до небажаної кореспонденції."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Юрій Чорноіван"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "yurchor@ukr.net"
+
+#~ msgid "F&ormat"
+#~ msgstr "&Формат"
+
+#~ msgid "&Alignment"
+#~ msgstr "&Вирівнювання"
+
+#~ msgid "Text Toolbar"
+#~ msgstr "Панель тексту"
+
+#~ msgid "Format Toolbar"
+#~ msgstr "Панель форматування"
+
+#~ msgid "General"
+#~ msgstr "Загальне"
+
+#~ msgid "File Already Exists"
+#~ msgstr "Файл вже існує"
+
+#~ msgid ""
+#~ "A file named <filename>%1</filename> already exists. Do you want to "
+#~ "overwrite it?"
+#~ msgstr ""
+#~ "Файл з назвою <filename>%1</filename> вже існує. Хочете його перезаписати?"
+
+#~ msgid "Suggest New &Name"
+#~ msgstr "Запропонувати нову &назву"
+
+#~ msgid "&Overwrite"
+#~ msgstr "&Перезаписати"
+
+#~ msgid "&Rename"
+#~ msgstr "Пере&йменувати"
+
+#~ msgid "Appl&y to All"
+#~ msgstr "Зас&тосувати до всіх"
+
+#~ msgid "Detect language"
+#~ msgstr "Визначення мови"
+
+#~ msgid "English"
+#~ msgstr "англійська"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "китайська (спрощений запис)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "китайська (традиційний запис)"
+
+#~ msgid "Dutch"
+#~ msgstr "Голландська"
+
+#~ msgid "French"
+#~ msgstr "французька"
+
+#~ msgid "German"
+#~ msgstr "німецька"
+
+#~ msgid "Greek"
+#~ msgstr "грецька"
+
+#~ msgid "Italian"
+#~ msgstr "італійська"
+
+#~ msgid "Japanese"
+#~ msgstr "японська"
+
+#~ msgid "Korean"
+#~ msgstr "корейська"
+
+#~ msgid "Portuguese"
+#~ msgstr "португальська"
+
+#~ msgid "Russian"
+#~ msgstr "російська"
+
+#~ msgid "Spanish"
+#~ msgstr "іспанська"
+
+#~ msgid "Afrikaans"
+#~ msgstr "африкаанс"
+
+#~ msgid "Albanian"
+#~ msgstr "албанська"
+
+#~ msgid "Arabic"
+#~ msgstr "арабська"
+
+#~ msgid "Armenian"
+#~ msgstr "вірменська"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "азербайджанська"
+
+#~ msgid "Basque"
+#~ msgstr "баскська"
+
+#~ msgid "Belarusian"
+#~ msgstr "білоруська"
+
+#~ msgid "Bulgarian"
+#~ msgstr "болгарська"
+
+#~ msgid "Catalan"
+#~ msgstr "каталонська"
+
+#~ msgid "Croatian"
+#~ msgstr "хорватська"
+
+#~ msgid "Czech"
+#~ msgstr "чеська"
+
+#~ msgid "Danish"
+#~ msgstr "данська"
+
+#~ msgid "Estonian"
+#~ msgstr "естонська"
+
+#~ msgid "Filipino"
+#~ msgstr "філіппінська"
+
+#~ msgid "Finnish"
+#~ msgstr "фінська"
+
+#~ msgid "Galician"
+#~ msgstr "галісійська"
+
+#~ msgid "Georgian"
+#~ msgstr "грузинська"
+
+#~ msgid "Haitian Creole"
+#~ msgstr "гаїтянська креольська"
+
+#~ msgid "Hebrew"
+#~ msgstr "іврит"
+
+#~ msgid "Hindi"
+#~ msgstr "хінді"
+
+#~ msgid "Hungarian"
+#~ msgstr "угорська"
+
+#~ msgid "Icelandic"
+#~ msgstr "ісландська"
+
+#~ msgid "Indonesian"
+#~ msgstr "індонезійська"
+
+#~ msgid "Irish"
+#~ msgstr "ірландська"
+
+#~ msgid "Latvian"
+#~ msgstr "латиська"
+
+#~ msgid "Lithuanian"
+#~ msgstr "литовська"
+
+#~ msgid "Macedonian"
+#~ msgstr "македонська"
+
+#~ msgid "Malay"
+#~ msgstr "малайська"
+
+#~ msgid "Maltese"
+#~ msgstr "мальтійська"
+
+#~ msgid "Norwegian"
+#~ msgstr "норвезька"
+
+#~ msgid "Persian"
+#~ msgstr "перська"
+
+#~ msgid "Polish"
+#~ msgstr "польська"
+
+#~ msgid "Romanian"
+#~ msgstr "румунська"
+
+#~ msgid "Serbian"
+#~ msgstr "сербська"
+
+#~ msgid "Slovak"
+#~ msgstr "словацька"
+
+#~ msgid "Slovenian"
+#~ msgstr "словенська"
+
+#~ msgid "Swahili"
+#~ msgstr "суахілі"
+
+#~ msgid "Swedish"
+#~ msgstr "шведська"
+
+#~ msgid "Thai"
+#~ msgstr "тайська"
+
+#~ msgid "Turkish"
+#~ msgstr "турецька"
+
+#~ msgid "Ukrainian"
+#~ msgstr "українська"
+
+#~ msgid "Urdu"
+#~ msgstr "урду"
+
+#~ msgid "Vietnamese"
+#~ msgstr "в'єтнамська"
+
+#~ msgid "Welsh"
+#~ msgstr "валлійська"
+
+#~ msgid "Yiddish"
+#~ msgstr "ідиш"
+
+#~ msgctxt ""
+#~ "Invert language choices so that from becomes to and to becomes from"
+#~ msgid "Invert"
+#~ msgstr "Обернути"
+
+#~ msgid "Clear"
+#~ msgstr "Спорожнити"
+
+#~ msgid "Translate"
+#~ msgstr "Перекласти"
+
+#~ msgid "Drag text that you want to translate."
+#~ msgstr "Перетягніть текст, який слід перекласти."
+
+#~ msgid "Overwrite &All"
+#~ msgstr "Перезаписати &всі"
+
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid "<b><br />M<br />e<br />s<br />s<br />a<br />g<br />e</b></qt>"
+#~ msgstr ""
+#~ "<b><br />П<br />о<br />в<br />і<br />д<br />о<br />м<br />л<br />е<br /"
+#~ ">н<br />н<br />я</b></qt>"
+
+#~ msgid "Viewertest_Gui"
+#~ msgstr "Viewertest_Gui"
+
+#~ msgid "Test for MessageViewer"
+#~ msgstr "Тест для MessageViewer"
+
+#~ msgid "File containing an email"
+#~ msgstr "Файл, який містить ел. пошту"
+
+#~ msgid "Header Strategy: [all|rich|standard|brief|custom]"
+#~ msgstr "Стратегія заголовка: [all|rich|standard|brief|custom]"
+
+#~ msgid "Header Style: [brief|plain|enterprise|mobile|fancy]"
+#~ msgstr "Стиль заголовка: [brief|plain|enterprise|mobile|fancy]"
+
+#~ msgid "Mailreader"
+#~ msgstr "Mailreader"
+
+#~ msgid "( body part )"
+#~ msgstr "( тіло повідомлення )"
+
+#~ msgid ""
+#~ "[KMail: Attachment contains binary data. Trying to show first character.]"
+#~ msgid_plural ""
+#~ "[KMail: Attachment contains binary data. Trying to show first %1 "
+#~ "characters.]"
+#~ msgstr[0] ""
+#~ "[KMail: Долучення містить двійкові дані. Спроба показати перший %1 "
+#~ "символ.]"
+#~ msgstr[1] ""
+#~ "[KMail: Долучення містить двійкові дані. Спроба показати перші %1 "
+#~ "символи.]"
+#~ msgstr[2] ""
+#~ "[KMail: Долучення містить двійкові дані. Спроба показати перші %1 "
+#~ "символів.]"
+#~ msgstr[3] ""
+#~ "[KMail: Долучення містить двійкові дані. Спроба показати перший %1 "
+#~ "символ.]"
+
+#~ msgctxt ""
+#~ "Mail message after being processed, might be alterred from original"
+#~ msgid "Processed Source"
+#~ msgstr "Оброблені дані"
+
+#~ msgid ""
+#~ "Processed mail, for example after decrypting an encrypted part of the mail"
+#~ msgstr ""
+#~ "Оброблені дані пошти, наприклад, після дешифрування зашифрованої частини"
+
+#~ msgctxt "To field of the mail header."
+#~ msgid "To: "
+#~ msgstr "До:"
+
+#~ msgid ""
+#~ "Some emails, especially those generated automatically, do not specify the "
+#~ "character encoding which needs to be used to properly display them. In "
+#~ "such cases a fallback character encoding will be used, which you can "
+#~ "configure here. Set it to the character encoding most commonly used in "
+#~ "your part of the world. As a default the encoding configured for the "
+#~ "whole system is used."
+#~ msgstr ""
+#~ "В деяких листах електронної пошти, особливо в створених автоматично, не "
+#~ "вказано кодування, яке потрібно використовувати для правильно показу цих "
+#~ "листів. У таких випадках буде використано запасне кодування, яке можна "
+#~ "вказати тут. Встановіть кодування, яке є найуживанішим у частині світу, в "
+#~ "якій ви знаходитесь. Типове значення — це системне кодування."
+
+#~ msgid ""
+#~ "Changing this from its default 'Auto' will force the use of the specified "
+#~ "encoding for all emails, regardless of what they specify themselves."
+#~ msgstr ""
+#~ "Зміна значення з «Автоматично» змусить програму використовувати вказане "
+#~ "кодування для всіх листів електронної пошти, незалежно від кодування "
+#~ "вказаного в самих листах."
+
+#~ msgid ""
+#~ "The VCard's primary email address is already in your address book; "
+#~ "however, you may save the VCard into a file and import it into the "
+#~ "address book manually."
+#~ msgstr ""
+#~ "Основну адресу електронної пошти візитки VCard вже записано до вашої "
+#~ "адресної книги. Ви можете зберегти VCard у файл і потім вручну "
+#~ "імпортувати дані в адресну книгу."
+
+#~ msgid "Select the address book the new contact shall be saved in:"
+#~ msgstr "Виберіть адресну книгу, у якій слід зберегти новий запис контакту:"
+
+#~ msgid ""
+#~ "The VCard was added to your address book; you can add more information to "
+#~ "this entry by opening the address book."
+#~ msgstr ""
+#~ "Візитка VCard була додана до вашої адресної книги. Можна відкрити адресну "
+#~ "книгу і додати до відповідного запису більше інформації."
+
+#~ msgid "Failed to parse vCard."
+#~ msgstr "Помилка обробки vCard."
+
+#~ msgid "The email client for the K Desktop Environment."
+#~ msgstr "Поштовий клієнт для KDE."
+
+#~ msgid "Attachment #%1 (unnamed)"
+#~ msgstr "Долучення: №%1 (без назви)"
+
+#~ msgctxt "message encoding type"
+#~ msgid "None (7-bit text)"
+#~ msgstr "Відсутній (7-бітовий текст)"
+
+#~ msgctxt "message encoding type"
+#~ msgid "None (8-bit text)"
+#~ msgstr "Відсутній (8-бітовий текст)"
+
+#~ msgctxt "message encoding type"
+#~ msgid "Quoted Printable"
+#~ msgstr "Quoted Printable"
+
+#~ msgctxt "message encoding type"
+#~ msgid "Base 64"
+#~ msgstr "Base 64"
+
+#~ msgid "Message Part Properties"
+#~ msgstr "Властивості частини повідомлення"
+
+#~ msgid ""
+#~ "<qt><p>The <em>MIME type</em> of the file:</p><p>normally, you do not "
+#~ "need to touch this setting, since the type of the file is automatically "
+#~ "checked; but, sometimes, %1 may not detect the type correctly -- here is "
+#~ "where you can fix that.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p><em>Тип MIME</em> файла:</p><p>здебільшого, вам не потрібно "
+#~ "змінювати цей параметр, оскільки тип файла визначається автоматично. Але "
+#~ "іноді %1 може помилково визначати тип. За допомогою цього параметра ви "
+#~ "можете виправити його.</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>The size of the part:</p><p>sometimes, %1 will only give an "
+#~ "estimated size here, because calculating the exact size would take too "
+#~ "much time; when this is the case, it will be made visible by adding "
+#~ "\"(est.)\" to the size displayed.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Розмір долучення:</p><p>іноді %1 показує приблизний розмір, "
+#~ "оскільки обчислення точного розміру може тривати досить довго. У такому "
+#~ "разі до рядка з розміром розділу буде додано «(прибл.)».</p></qt>"
+
+#~ msgctxt "file name of the attachment."
+#~ msgid "&Name:"
+#~ msgstr "&Назва:"
+
+#~ msgid ""
+#~ "<qt><p>The file name of the part:</p><p>although this defaults to the "
+#~ "name of the attached file, it does not specify the file to be attached; "
+#~ "rather, it suggests a file name to be used by the recipient's mail agent "
+#~ "when saving the part to disk.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Назва файла частини:</p><p>хоча типовим значенням цього параметра "
+#~ "є назва долученого файла, але сам параметр не є назвою файла, який "
+#~ "долучено. Скоріше, це значення пропонує назву файла для поштової програми "
+#~ "під час збереження цього розділу на диск.</p></qt>"
+
+#~ msgid "&Description:"
+#~ msgstr "&Опис:"
+
+#~ msgid ""
+#~ "<qt><p>A description of the part:</p><p>this is just an informational "
+#~ "description of the part, much like the Subject is for the whole message; "
+#~ "most mail agents will show this information in their message previews "
+#~ "alongside the attachment's icon.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Опис частини повідомлення:</p><p>Це просто якась загальна "
+#~ "інформація про частину, подібна до теми для повідомлення. Більшість "
+#~ "поштових програм показують цю інформацію в перегляді повідомлення, разом "
+#~ "з піктограмою долучення.</p></qt>"
+
+#~ msgid "&Encoding:"
+#~ msgstr "&Кодування:"
+
+#~ msgid ""
+#~ "<qt><p>The transport encoding of this part:</p><p>normally, you do not "
+#~ "need to change this, since %1 will use a decent default encoding, "
+#~ "depending on the MIME type; yet, sometimes, you can significantly reduce "
+#~ "the size of the resulting message, e.g. if a PostScript file does not "
+#~ "contain binary data, but consists of pure text -- in this case, choosing "
+#~ "\"quoted-printable\" over the default \"base64\" will save up to 25% in "
+#~ "resulting message size.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Кодування частини повідомлення:</p> <p>здебільшого, потреби у "
+#~ "зміні цього параметра не виникатиме, оскільки %1 типово використовує "
+#~ "найкраще кодування в залежності від MIME типу. Але іноді можна значно "
+#~ "зменшити розмір повідомлення. Наприклад, якщо файл PostScript не містить "
+#~ "двійкових даних, а містить лише текст латиницею, вибір «quoted-printable» "
+#~ "замість типового «base64» зменшить розмір повідомлення на 25%.</p></qt>"
+
+#~ msgid "Suggest &automatic display"
+#~ msgstr "Запропонувати &автоматичний перегляд"
+
+#~ msgid ""
+#~ "<qt><p>Check this option if you want to suggest to the recipient the "
+#~ "automatic (inline) display of this part in the message preview, instead "
+#~ "of the default icon view;</p><p>technically, this is carried out by "
+#~ "setting this part's <em>Content-Disposition</em> header field to \"inline"
+#~ "\" instead of the default \"attachment\".</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Якщо бажаєте запропонувати отримувачу автоматичний перегляд "
+#~ "(перегляд в тілі повідомлення) цієї частини повідомлення, замість "
+#~ "піктограми, позначте цей пункт.</p><p>Технічно, відповідне завдання "
+#~ "виконується зміною значення заголовка <em>Content-Disposition</em> на "
+#~ "«inline» замість типового значення «attachment».</p></qt>"
+
+#~ msgid "&Sign this part"
+#~ msgstr "&Підписати цю частину"
+
+#~ msgid ""
+#~ "<qt><p>Check this option if you want this message part to be signed;</"
+#~ "p><p>the signature will be made with the key that you associated with the "
+#~ "currently-selected identity.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Позначте цей пункт, якщо ви бажаєте підписати частину повідомлення."
+#~ "</p><p>Для підпису буде застосовано ключ, який встановлено для поточного "
+#~ "профілю.</p></qt>"
+
+#~ msgid "Encr&ypt this part"
+#~ msgstr "З&ашифрувати цю частину"
+
+#~ msgid ""
+#~ "<qt><p>Check this option if you want this message part to be encrypted;</"
+#~ "p><p>the part will be encrypted for the recipients of this message</p></"
+#~ "qt>"
+#~ msgstr ""
+#~ "<qt><p>Позначте цей пункт, якщо бажаєте зашифрувати цю частину "
+#~ "повідомлення.</p><p>Після цього програма зашифрує відповідну частину для "
+#~ "отримувачів цього повідомлення</p></qt>"
+
+#~ msgctxt "%1: a filesize incl. unit (e.g. \"1.3 KB\")"
+#~ msgid "%1 (est.)"
+#~ msgstr "%1 (прибл.)"

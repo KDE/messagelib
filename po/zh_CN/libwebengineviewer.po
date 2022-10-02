@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-30 00:47+0000\n"
+"PO-Revision-Date: 2022-09-20 01:56\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/messagelib/libwebengineviewer.pot\n"
+"X-Crowdin-File-ID: 3980\n"
+
+#: developertool/developertooldialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Developer Tool"
+msgstr ""
+
+#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "关闭"
+
+#: findbar/findbarbase.cpp:48
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "查找(&I)："
+
+#: findbar/findbarbase.cpp:53
+#, kde-format
+msgid "Text to search for"
+msgstr "要搜索的文本"
+
+#: findbar/findbarbase.cpp:58
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "下一个"
+
+#: findbar/findbarbase.cpp:59
+#, kde-format
+msgid "Jump to next match"
+msgstr "跳到下一个匹配"
+
+#: findbar/findbarbase.cpp:64
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "上一个"
+
+#: findbar/findbarbase.cpp:65
+#, kde-format
+msgid "Jump to previous match"
+msgstr "跳到上一个匹配"
+
+#: findbar/findbarbase.cpp:71
+#, kde-format
+msgid "Options"
+msgstr "选项"
+
+#: findbar/findbarbase.cpp:72
+#, kde-format
+msgid "Modify search behavior"
+msgstr "修改搜索行为"
+
+#: findbar/findbarbase.cpp:74
+#, kde-format
+msgid "Case sensitive"
+msgstr "区分大小写"
+
+#: findbar/findbarbase.cpp:91
+#, kde-format
+msgid "Phrase not found"
+msgstr "词语未找到"
+
+#: webenginepage.cpp:78
+#, kde-format
+msgid "Save HTML Page"
+msgstr "保存 HTML 页"
+
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:21
+#, kde-format
+msgid "Submit form is not allowed in mailer. Please open url in a browser."
+msgstr "不能在邮件程序中提交表单。请在浏览器中打开链接。"
+
+#: widgets/tracking/trackingdetailsdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr "详细信息"
+
+#: widgets/tracking/trackingwarningwidget.cpp:20
+#, kde-format
+msgid ""
+"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+"\">(Details...)"
+msgstr ""
+"发现了一些邮件跟踪器，它们已被屏蔽。<a href=\"mailtrackingdetails\">(详细信"
+"息...)"
+
+#: widgets/tracking/trackingwarningwidget.cpp:39
+#, kde-format
+msgid "Details:"
+msgstr "详细信息："
+
+#: widgets/tracking/trackingwarningwidget.cpp:45
+#, kde-format
+msgid "1 tracker from the company %2 (%3)"
+msgid_plural "%1 trackers from the company %2 (%3)"
+msgstr[0] "来自企业 %2 的 %1 个跟踪器 (%3)"
+
+#: widgets/zoomactionmenu.cpp:127
+#, kde-format
+msgid "Zoom"
+msgstr "缩放"

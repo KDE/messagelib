@@ -1,0 +1,4103 @@
+# translation of libmessageviewer.po to Dutch
+# translation of kmail.po to
+# Nederlandse vertaling van kmail
+# Copyright (C) 2000-2002 KDE e.v.
+# KDE-vertaalgroep Nederlands <i18n@kde.nl),
+# Fabrice Mous <fabrice@kde.nl>, 2003.
+# Wilbert Berendsen <wbsoft@xs4all.nl>, 2003, 2004.
+# Bram Schoenmakers <bramschoenmakers@kde.nl>, 2004, 2005, 2006, 2007, 2009.
+# Tom Albers <tomalbers@kde.nl>, 2004.
+# Rinse de Vries <rinsedevries@kde.nl>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+# Wilbert Berendsen <wilbert@kde.nl>, 2005.
+# Antoon Tolboom <atolboo@casema.nl>, 2008.
+# Antoon Tolboom <atolboo@gmail.com>, 2008.
+# Kristof Bal <kristof.bal@gmail.com>, 2009.
+# Freek de Kruijf <f.de.kruijf@hetnet.nl>, 2009.
+# Jaap Woldringh <jjh punt woldringh op planet punt nl>, 2009.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010.
+# Hannie Dumoleyn <hannie@kde.nl>, 2010.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2011, 2012.
+# Freek de Kruijf <f.de.kruijf@gmail.com>, 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessageviewer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2022-05-10 11:28+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.04.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: messagepartthemes/default/templates/certmessagepart.html:2
+msgid "Sorry, certificate could not be imported."
+msgstr "Certificaat kon niet geïmporteerd worden."
+
+#: messagepartthemes/default/templates/certmessagepart.html:4
+#, kde-format
+msgid "Reason: %1"
+msgstr "Reden:%1"
+
+#: messagepartthemes/default/templates/certmessagepart.html:7
+msgid "Sorry, no certificates were found in this message."
+msgstr "Er zijn helaas geen certificaten gevonden in dit bericht."
+
+#: messagepartthemes/default/templates/certmessagepart.html:9
+msgid "Certificate import status:"
+msgstr "Importstatus certificaat:"
+
+#: messagepartthemes/default/templates/certmessagepart.html:13
+#, kde-format
+msgid "1 new certificate was imported."
+msgid_plural "%1 new certificates were imported."
+msgstr[0] "1 nieuw certificaat werd geïmporteerd."
+msgstr[1] "%1 nieuwe certificaten werden geïmporteerd."
+
+#: messagepartthemes/default/templates/certmessagepart.html:16
+#, kde-format
+msgid "1 certificate was unchanged."
+msgid_plural "%1 certificates were unchanged."
+msgstr[0] "1 certificaat is ongewijzigd."
+msgstr[1] "%1 certificaten zijn ongewijzigd."
+
+#: messagepartthemes/default/templates/certmessagepart.html:19
+#, kde-format
+msgid "1 new secret key was imported."
+msgid_plural "%1 new secret keys were imported."
+msgstr[0] "1 nieuwe geheime sleutel werd geïmporteerd."
+msgstr[1] "%1 nieuwe geheime sleutels werden geïmporteerd."
+
+#: messagepartthemes/default/templates/certmessagepart.html:22
+#, kde-format
+msgid "1 secret key was unchanged."
+msgid_plural "%1 secret keys were unchanged."
+msgstr[0] "1 geheime sleutel is ongewijzigd."
+msgstr[1] "%1 geheime sleutels zijn ongewijzigd."
+
+#: messagepartthemes/default/templates/certmessagepart.html:28
+msgid "Sorry, no details on certificate import available."
+msgstr ""
+"Er zijn helaas geen details beschikbaar over het importeren van certificaten."
+
+#: messagepartthemes/default/templates/certmessagepart.html:30
+msgid "Certificate import details:"
+msgstr "Importdetails certificaat:"
+
+#: messagepartthemes/default/templates/certmessagepart.html:34
+#, kde-format
+msgctxt "Certificate import failed."
+msgid "Failed: %1 (%2)"
+msgstr "Mislukt: %1 (%2)"
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:5
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:7
+msgid "Encapsulated message"
+msgstr "Ingebed bericht"
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:19
+msgid "End of encapsulated message"
+msgstr "Einde van ingebed bericht"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:3
+msgid "This message is encrypted."
+msgstr "Dit bericht is versleuteld."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:7
+msgid "Decrypt Message"
+msgstr "Bericht ontcijferen"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:14
+msgid "Please wait while the message is being decrypted..."
+msgstr "Wacht even terwijl het bericht wordt ontcijferd..."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:18
+msgid "The message is encrypted for the following keys:"
+msgstr "Het bericht is versleuteld voor de volgende sleutels:"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:72
+#: messagepartthemes/default/templates/signedmessagepart.html:135
+msgid "Hide Details"
+msgstr "Details verbergen"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:27
+#: messagepartthemes/default/templates/encryptedmessagepart.html:62
+msgid "unknown key"
+msgstr "onbekende sleutel"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:34
+msgid "Encrypted message"
+msgstr "Versleuteld bericht"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:158
+msgid "Show Details"
+msgstr "Details tonen"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:41
+msgid "Encrypted message (decryption not possible)"
+msgstr "Versleuteld bericht (ontcijferen onmogelijk)"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:44
+msgid "Reason: "
+msgstr "Reden: "
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:56
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr ""
+"Geen geheime sleutel gevonden om het bericht te ontsleutelen. Het bericht is "
+"versleuteld voor de volgende sleutels:"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:67
+msgid "Could not decrypt the data."
+msgstr "Kon de gegevens niet ontcijferen."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+msgid "End of encrypted message"
+msgstr "Einde van versleuteld bericht"
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:6
+msgid ""
+"<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+"HTML code is shown. If you trust the sender of this message then you can "
+"activate formatted HTML display for this message <a href='kmail:showHTML'>by "
+"clicking here</a>."
+msgstr ""
+"<b>Opmerking:</b> dit is een HTML-bericht. Om veiligheidsredenen wordt "
+"alleen de ruwe HTML-code getoond. Als u de afzender van dit bericht "
+"vertrouwt kunt u de HTML-opmaak voor dit bericht activeren <a href='kmail:"
+"showHTML'>door hier te klikken</a>."
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:12
+msgid ""
+"<b>Note:</b> This HTML message may contain external references to images "
+"etc. For security/privacy reasons external references are not loaded. If you "
+"trust the sender of this message then you can load the external references "
+"for this message <a href='kmail:loadExternal'>by clicking here</a>."
+msgstr ""
+"<b>Opmerking:</b> dit HTML-bericht kan externe verwijzingen naar "
+"afbeeldingen bevatten. Om veiligheids/privé-redenen worden deze externe "
+"verwijzingen niet opgehaald. Als u de afzender van dit bericht vertrouwt "
+"kunt u de externe verwijzingen voor dit bericht laden <a href='kmail:"
+"loadExternal'>door hier te klikken</a>."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:5
+msgid "Please wait while the signature is being verified..."
+msgstr "Wacht even terwijl de handtekening wordt geverifieerd..."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:15
+#, kde-format
+msgid "Not enough information to check signature. %1"
+msgstr "Onvoldoende informatie om de handtekening te controleren. %1"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:108
+#: messagepartthemes/default/templates/signedmessagepart.html:127
+#, kde-format
+msgid "Message was signed by %1."
+msgstr "Bericht was ondertekend door %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:22
+#: messagepartthemes/default/templates/signedmessagepart.html:92
+msgid "Message was signed with unknown key."
+msgstr "Bericht was ondertekend met een onbekende sleutel."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:28
+#: messagepartthemes/default/templates/signedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:48
+#, kde-format
+msgid "Message was signed with key %1."
+msgstr "Bericht was ondertekend met sleutel %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:31
+#, kde-format
+msgid "Message was signed by %3 on %1 with key %2"
+msgstr "Bericht was ondertekend door %3 op %1 met sleutel %2"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:39
+#, kde-format
+msgid "Message was signed on %1 with key %2."
+msgstr "Bericht was ondertekend door %1 met sleutel %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:45
+#, kde-format
+msgid "Message was signed by %2 with key %1."
+msgstr "Bericht was ondertekend door %2 met sleutel %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:57
+#: messagepartthemes/default/templates/signedmessagepart.html:98
+msgid "Status: "
+msgstr "Status: "
+
+#: messagepartthemes/default/templates/signedmessagepart.html:85
+#, kde-format
+msgid "Message was signed on %1 with unknown key %2."
+msgstr "Bericht was op %1 ondertekend met onbekende sleutel %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#, kde-format
+msgid "Message was signed with unknown key %1."
+msgstr "Bericht was ondertekend met onbekende sleutel %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:95
+msgid "The validity of the signature cannot be verified."
+msgstr "De geldigheid van de ondertekening kon niet worden geverifieerd."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:105
+#: messagepartthemes/default/templates/signedmessagepart.html:124
+#, kde-format
+msgid "Message was signed by %2 (Key ID: %1)."
+msgstr "Bericht was ondertekend door %2 (sleutel-id: %1)."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+msgid "The signature is valid, but the key's validity is unknown."
+msgstr ""
+"De ondertekening is geldig, maar de geldigheid van de sleutel is onbekend."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:114
+msgid "The signature is valid and the key is marginally trusted."
+msgstr "De ondertekening is geldig en de sleutel is gedeeltelijk betrouwbaar."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:116
+msgid "The signature is valid and the key is fully trusted."
+msgstr "De ondertekening is geldig en de sleutel is volledig betrouwbaar."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:118
+msgid "The signature is valid and the key is ultimately trusted."
+msgstr "De ondertekening is geldig en de sleutel is uiterst betrouwbaar."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:120
+msgid "The signature is valid, but the key is untrusted."
+msgstr "De ondertekening is geldig, maar de sleutel is onbetrouwbaar."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:130
+msgid "Warning: The signature is bad."
+msgstr "Waarschuwing: ongeldige ondertekening."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:143
+msgid "Invalid signature."
+msgstr "Ongeldige ondertekening."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:145
+msgid "Not enough information to check signature validity."
+msgstr ""
+"Onvoldoende informatie om de geldigheid van de ondertekening te controleren."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:148
+#, kde-format
+msgid "Signed by <a href='mailto:%1'>%1</a>."
+msgstr "Ondertekend door <a href='mailto:%1'>%1</a>."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:151
+msgid "Signature is valid."
+msgstr "Ondertekening is geldig."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
+msgid "Unknown signature state"
+msgstr "Onbekende ondertekeningsstatus"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:170
+msgid "End of signed message"
+msgstr "Einde van ondertekend bericht"
+
+#: dkim-verify/dkimcheckfulljob.cpp:118
+#, kde-format
+msgid ""
+"Stored DKIM key is different from the current one. Do you want to store this "
+"one too?"
+msgstr ""
+"De opgeslagen DKIM sleutel verschilt van de huidige. Wilt u deze ook opslaan?"
+
+#: dkim-verify/dkimcheckfulljob.cpp:119
+#, kde-format
+msgid "Key Changed"
+msgstr "Sleutel gewijzigd"
+
+#: dkim-verify/dkimcheckfulljob.cpp:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Store"
+msgstr "Opslaan"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "SDID"
+msgstr "SDID"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Selector"
+msgstr "Selector"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "DKIM Key"
+msgstr "DKIM-sleutel"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Inserted"
+msgstr "Ingevoegd"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Last Used"
+msgstr "Laatst gebruikt"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:64
+#, kde-format
+msgid "Copy Key"
+msgstr "Sleutel kopiëren"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:70
+#, kde-format
+msgid "Remove Key"
+msgid_plural "Remove Keys"
+msgstr[0] "Sleutel verwijderen"
+msgstr[1] "Sleutel verwijderen"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:75
+#, kde-format
+msgid "Do you want to delete this key?"
+msgid_plural "Do you want to delete these keys?"
+msgstr[0] "Wilt u deze sleutel verwijderen?"
+msgstr[1] "Wilt u deze sleutels verwijderen?"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:76
+#, kde-format
+msgid "Delete Key"
+msgid_plural "Delete Keys"
+msgstr[0] "Sleutel verwijderen"
+msgstr[1] "Sleutels verwijderen"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:89
+#: dkim-verify/dkimmanageruleswidget.cpp:221
+#, kde-format
+msgid "Delete All"
+msgstr "Alles verwijderen"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:91
+#, kde-format
+msgid "Do you want to delete all keys?"
+msgstr "Wilt u alle sleutels verwijderen?"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:92
+#, kde-format
+msgid "Delete Keys"
+msgstr "Sleutels verwijderen"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:20
+#, kde-format
+msgid "Must be signed"
+msgstr "Moet worden ondertekend"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:21
+#, kde-format
+msgid "Can be signed"
+msgstr "Kan worden ondertekend"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:22
+#, kde-format
+msgid "Ignore if not signed"
+msgstr "Negeren indien niet ondertekend"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:29
+#, kde-format
+msgid "Export..."
+msgstr "Exporteren..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Rule"
+msgstr "Regel configureren"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:42
+#, kde-format
+msgid "Add Rule..."
+msgstr "Regel toevoegen..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:47
+#, kde-format
+msgid "Import..."
+msgstr "Importeren..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, kde-format
+msgid "No rules found"
+msgstr "Geen regels gevonden"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
+#, kde-format
+msgid "Export Rules"
+msgstr "Regels exporteren"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "Import Rules"
+msgstr "Regels importeren"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "No rules imported."
+msgstr "Geen regels geïmporteerd."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: remote-content/remotecontentconfigurewidget.cpp:51
+#, kde-format
+msgid "Domain"
+msgstr "Domein"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Active"
+msgstr "Actief"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "List-ID"
+msgstr "Lijst-id"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "From"
+msgstr "Van"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Rule type"
+msgstr "Type regel"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Priority"
+msgstr "Prioriteit"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:194
+#: remote-content/remotecontentconfigurewidget.cpp:78
+#, kde-format
+msgid "Add..."
+msgstr "Toevoegen..."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:199
+#: remote-content/remotecontentconfigurewidget.cpp:81
+#, kde-format
+msgid "Modify..."
+msgstr "Wijzigen..."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:203
+#, kde-format
+msgid "Duplicate Rule"
+msgstr "Regel dupliceren"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:207
+#: remote-content/remotecontentconfigurewidget.cpp:85
+#, kde-format
+msgid "Remove Rule"
+msgstr "Regel verwijderen"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:209
+#, kde-format
+msgid "Do you want to delete this rule?"
+msgstr "Wilt u deze regel verwijderen?"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:210
+#: remote-content/remotecontentconfigurewidget.cpp:88
+#, kde-format
+msgid "Delete Rule"
+msgstr "Regel verwijderen"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:223
+#, kde-format
+msgid "Do you want to delete all the rules?"
+msgstr "Wilt u alle regels verwijderen?"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:224
+#, kde-format
+msgid "Delete Rules"
+msgstr "Regels verwijderen"
+
+#: dkim-verify/dkimruledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Rule"
+msgstr "Regel toevoegen"
+
+#: dkim-verify/dkimruledialog.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Modify Rule"
+msgstr "Regel wijzigen"
+
+#: dkim-verify/dkimrulewidget.cpp:18
+#, kde-format
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#, kde-format
+msgid "Domain:"
+msgstr "Domein:"
+
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#, kde-format
+msgid "List-Id:"
+msgstr "Lijst-Id:"
+
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#, kde-format
+msgid "From:"
+msgstr "Van:"
+
+#: dkim-verify/dkimrulewidget.cpp:46
+#, kde-format
+msgid "Use '*' to specify all emails from domain"
+msgstr "'*' gebruiken om alle e-mailberichten uit domein te specificeren"
+
+#: dkim-verify/dkimrulewidget.cpp:51
+#, kde-format
+msgid "SDID:"
+msgstr "SDID:"
+
+#: dkim-verify/dkimrulewidget.cpp:54
+#, kde-format
+msgid "Rule:"
+msgstr "Regel:"
+
+#: dkim-verify/dkimrulewidget.cpp:60
+#, kde-format
+msgid "Priority:"
+msgstr "Prioriteit:"
+
+#: dkim-verify/dkimviewermenu.cpp:14
+#, kde-format
+msgid "DKIM"
+msgstr "DKIM"
+
+#: dkim-verify/dkimviewermenu.cpp:36
+#, kde-format
+msgid "Recheck DKIM Signature"
+msgstr "DKIM-ondertekening opnieuw controleer"
+
+#: dkim-verify/dkimviewermenu.cpp:39
+#, kde-format
+msgid "Update DKIM key"
+msgstr "DKIM-sleutel bijwerken"
+
+#: dkim-verify/dkimviewermenu.cpp:43
+#, kde-format
+msgid "Rules..."
+msgstr "Regels..."
+
+#: dkim-verify/dkimwidgetinfo.cpp:97
+#, kde-format
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: dkim-verify/dkimwidgetinfo.cpp:103
+#, kde-format
+msgid "DKIM: valid (signed by %1)"
+msgstr "DKIM: geldig (ondertekend door %1)"
+
+#: dkim-verify/dkimwidgetinfo.cpp:110
+#, kde-format
+msgid "DKIM: invalid"
+msgstr "DKIM: ongeldig"
+
+#: dkim-verify/dkimwidgetinfo.cpp:113
+#, kde-format
+msgid "DKIM: Not signed"
+msgstr "DKIM: niet-ondertekend"
+
+#: dkim-verify/dkimwidgetinfo.cpp:118
+#, kde-format
+msgid "DKIM: Should Be Signed by %1"
+msgstr "DKIM: zou ondertekend moeten worden door %1"
+
+#: dkim-verify/dkimwidgetinfo.cpp:134
+#, kde-format
+msgid "Body Hash was corrupted."
+msgstr "Hash van inhoud was beschadigd."
+
+#: dkim-verify/dkimwidgetinfo.cpp:137
+#, kde-format
+msgid "The domain doesn't exist."
+msgstr "Het domein bestaat niet."
+
+#: dkim-verify/dkimwidgetinfo.cpp:140
+#, kde-format
+msgid "Missing header From."
+msgstr "Kop From (Van) ontbreekt."
+
+#: dkim-verify/dkimwidgetinfo.cpp:143
+#, kde-format
+msgid "Missing signature."
+msgstr "Ontbrekende ondertekening."
+
+#: dkim-verify/dkimwidgetinfo.cpp:146
+#, kde-format
+msgid "Invalid query method."
+msgstr "Ongeldige methode van opvragen."
+
+#: dkim-verify/dkimwidgetinfo.cpp:149
+#, kde-format
+msgid "Invalid header canonicalization."
+msgstr "Header canoniek maken is ongeldig."
+
+#: dkim-verify/dkimwidgetinfo.cpp:152
+#, kde-format
+msgid "Invalid body canonicalization."
+msgstr "Inhoud canoniek maken is ongeldig."
+
+#: dkim-verify/dkimwidgetinfo.cpp:155
+#, kde-format
+msgid "Unknown Body Hash Algorithm."
+msgstr "Onbekend hash-algoritme voor inhoud."
+
+#: dkim-verify/dkimwidgetinfo.cpp:158
+#, kde-format
+msgid "Signature algorithm is invalid."
+msgstr "Handtekeningalgoritme is ongeldig."
+
+#: dkim-verify/dkimwidgetinfo.cpp:161
+#, kde-format
+msgid "The public key was revoked."
+msgstr "De publieke sleutel is ingetrokken."
+
+#: dkim-verify/dkimwidgetinfo.cpp:164
+#, kde-format
+msgid "Signature is too large."
+msgstr "Ondertekening is te groot."
+
+#: dkim-verify/dkimwidgetinfo.cpp:167
+#, kde-format
+msgid "Hash Algorithm is unsupported."
+msgstr "Algorithm voor hash wordt niet-ondersteund."
+
+#: dkim-verify/dkimwidgetinfo.cpp:170
+#, kde-format
+msgid "Public key is too small."
+msgstr "Publieke sleutel is te klein."
+
+#: dkim-verify/dkimwidgetinfo.cpp:173
+#, kde-format
+msgid "Impossible to verify signature."
+msgstr "Ondertekening verifiëren is onmogelijk"
+
+#: dkim-verify/dkimwidgetinfo.cpp:176
+#, kde-format
+msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
+msgstr ""
+"AUID moet in hetzelfde domein zijn als SDID (s-flag gezet in sleutelrecord)."
+
+#: dkim-verify/dkimwidgetinfo.cpp:179
+#, kde-format
+msgid "The signing domain is only testing DKIM."
+msgstr "Het domein voor ondertekening is DKIM slechts aan het testen."
+
+#: dkim-verify/dkimwidgetinfo.cpp:182
+#, kde-format
+msgid "Impossible to download key."
+msgstr "Downloaden van sleutel is onmogelijk."
+
+#: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
+#, kde-format
+msgid "Hash Algorithm unsafe (sha1)"
+msgstr "Hash-algoritme is onveilig (sha1)"
+
+#: dkim-verify/dkimwidgetinfo.cpp:188
+#, kde-format
+msgid "AUID is not in a subdomain of SDID"
+msgstr "AUID is niet in een subdomein van SDID"
+
+#: dkim-verify/dkimwidgetinfo.cpp:191
+#, kde-format
+msgid "Problem during converting public key"
+msgstr "Probleem bij converteren van publieke sleutel"
+
+#: dkim-verify/dkimwidgetinfo.cpp:200
+#, kde-format
+msgid "Signature expired"
+msgstr "Handtekening verlopen"
+
+#: dkim-verify/dkimwidgetinfo.cpp:203
+#, kde-format
+msgid "Signature created in the future"
+msgstr "Handtekening is aangemaakt in de toekomst"
+
+#: dkim-verify/dkimwidgetinfo.cpp:206
+#, kde-format
+msgid "Signature too small"
+msgstr "Ondertekening is te klein."
+
+#: dkim-verify/dkimwidgetinfo.cpp:212
+#, kde-format
+msgid "Public Key too small"
+msgstr "Publieke sleutel is te klein"
+
+#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:279
+#, kde-format
+msgctxt "method name: info about it from parsing"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: dkim-verify/dkimwidgetinfo.cpp:256
+#, kde-format
+msgid "%1: None"
+msgstr "%1: geen"
+
+#: dkim-verify/dkimwidgetinfo.cpp:271
+#, kde-format
+msgid "%1: Valid (Signed by %2)"
+msgstr "%1: geldig (ondertekend door %2)"
+
+#: dkim-verify/dkimwidgetinfo.cpp:291
+#, kde-format
+msgid "%1: Valid"
+msgstr "%1: geldig"
+
+#: dkim-verify/dkimwidgetinfo.cpp:306
+#, kde-format
+msgid "Not Signed"
+msgstr "Niet-ondertekend"
+
+#: header/grantleeheaderformatter.cpp:232
+#, kde-format
+msgid "Subject:"
+msgstr "Onderwerp:"
+
+#: header/grantleeheaderformatter.cpp:252
+#, kde-format
+msgid "Date:"
+msgstr "Datum:"
+
+#: header/grantleeheaderformatter.cpp:274
+#, kde-format
+msgid "To:"
+msgstr "Aan:"
+
+#: header/grantleeheaderformatter.cpp:276
+#, kde-format
+msgid "Reply To:"
+msgstr "Beantwoorden aan:"
+
+#: header/grantleeheaderformatter.cpp:278
+#, kde-format
+msgid "CC:"
+msgstr "Cc:"
+
+#: header/grantleeheaderformatter.cpp:280
+#, kde-format
+msgid "BCC:"
+msgstr "Bcc:"
+
+#: header/grantleeheaderformatter.cpp:284
+#, kde-format
+msgid "Sender:"
+msgstr "Afzender:"
+
+#: header/grantleeheaderformatter.cpp:286
+#, kde-format
+msgid "resent from:"
+msgstr "opnieuw verzonden door:"
+
+#: header/grantleeheaderformatter.cpp:288
+#, kde-format
+msgid "resent to:"
+msgstr "opnieuw verzonden naar:"
+
+#: header/grantleeheaderformatter.cpp:388
+#, kde-format
+msgid "Grantlee theme \"%1\" is not valid."
+msgstr "Thema \"%1\" van Grantlee is niet geldig."
+
+#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
+#, kde-format
+msgid "No Subject"
+msgstr "Geen onderwerp"
+
+#: header/grantleeheaderformatter.cpp:500
+#, kde-format
+msgid "Spam Status:"
+msgstr "Spamstatus:"
+
+#: header/grantleeheaderformatter.cpp:512
+#, kde-format
+msgid "Printing mode"
+msgstr "Afdrukmodus"
+
+#: header/grantleeheaderformatter.cpp:554
+#, kde-format
+msgid "[vcard]"
+msgstr "[vcard]"
+
+#: header/grantleeheaderformatter.cpp:561
+#, kde-format
+msgid "Attachments:"
+msgstr "Bijlagen:"
+
+#: header/grantleeheaderformatter.cpp:590
+#, kde-format
+msgid "Security:"
+msgstr "Beveiliging:"
+
+#: header/headerstyle_util.cpp:55
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: header/headerstyle_util.cpp:146
+#, kde-format
+msgid ""
+"%1% probability of being spam with confidence %3%.\n"
+"\n"
+"Full report:\n"
+"Probability=%2\n"
+"Confidence=%4"
+msgstr ""
+"%1% kans dat dit spam is (zekerheid %3%).\n"
+"\n"
+"Volledig rapport:\n"
+"Kans=%2\n"
+"Zekerheid=%4"
+
+#: header/headerstyle_util.cpp:155
+#, kde-format
+msgid ""
+"%1% probability of being spam.\n"
+"\n"
+"Full report:\n"
+"Probability=%2"
+msgstr ""
+"%1% kans dat dit spam is.\n"
+"\n"
+"Volledig rapport:\n"
+"Zekerheid=%2"
+
+#: header/headerstyle_util.cpp:164
+#, kde-format
+msgid "No Spam agent"
+msgstr "Geen spamassistent"
+
+#: header/headerstyle_util.cpp:167
+#, kde-format
+msgid "Spam filter score not a number"
+msgstr "De score van het spamfilter is geen getal"
+
+#: header/headerstyle_util.cpp:170
+#, kde-format
+msgid "Threshold not a valid number"
+msgstr "Drempelwaarde is geen geldig getal"
+
+#: header/headerstyle_util.cpp:173
+#, kde-format
+msgid "Spam filter score could not be extracted from header"
+msgstr "De score van het spamfilter kon niet uit de header worden gehaald"
+
+#: header/headerstyle_util.cpp:176
+#, kde-format
+msgid "Threshold could not be extracted from header"
+msgstr "Drempelwaarde kon niet uit de header worden gehaald"
+
+#: header/headerstyle_util.cpp:179
+#, kde-format
+msgid "Error evaluating spam score"
+msgstr "Fout bij het evalueren van de spamscore"
+
+#: header/headerstyle_util.cpp:184
+#, kde-format
+msgid ""
+"%1.\n"
+"\n"
+"Full report:\n"
+"%2"
+msgstr ""
+"%1.\n"
+"\n"
+"Volledig rapport:\n"
+"%2"
+
+#: header/headerstylemenumanager.cpp:105
+#, kde-format
+msgctxt "View->"
+msgid "&Headers"
+msgstr "Beric&htkoppen"
+
+#: header/headerstylemenumanager.cpp:109
+#, kde-format
+msgid "Choose display style of message headers"
+msgstr "Kies de wijze waarop berichtkoppen worden getoond"
+
+#: header/plainheaderstyle.cpp:103
+#, kde-format
+msgid "Date: "
+msgstr "Datum: "
+
+#: header/plainheaderstyle.cpp:107
+#, kde-format
+msgid "From: "
+msgstr "Van: "
+
+#: header/plainheaderstyle.cpp:109
+#, kde-format
+msgid "[vCard]"
+msgstr "[vCard]"
+
+#: header/plainheaderstyle.cpp:119
+#, kde-format
+msgctxt "To-field of the mailheader."
+msgid "To: "
+msgstr "Aan: "
+
+#: header/plainheaderstyle.cpp:126
+#, kde-format
+msgid "CC: "
+msgstr "CC: "
+
+#: header/plainheaderstyle.cpp:133
+#, kde-format
+msgid "BCC: "
+msgstr "BCC: "
+
+#: header/plainheaderstyle.cpp:138
+#, kde-format
+msgid "Reply to: "
+msgstr "Beantwoorden aan: "
+
+#: mdn/mdnwarningwidget.cpp:14
+#, kde-format
+msgctxt "@action"
+msgid "Ignore"
+msgstr "Negeren"
+
+#: mdn/mdnwarningwidget.cpp:15
+#, kde-format
+msgctxt "@action"
+msgid "Send"
+msgstr "Verzenden"
+
+#: mdn/mdnwarningwidget.cpp:16
+#, kde-format
+msgctxt "@action"
+msgid "Send Deny"
+msgstr "Afwijzing verzenden"
+
+#: messagepartthemes/default/defaultrenderer.cpp:76
+#, kde-format
+msgid "Error: Signature not verified"
+msgstr "Fout: ondertekening is niet geverifieerd"
+
+#: messagepartthemes/default/defaultrenderer.cpp:80
+#, kde-format
+msgid "Good signature"
+msgstr "Correcte ondertekening"
+
+#: messagepartthemes/default/defaultrenderer.cpp:84
+#, kde-format
+msgid "Bad signature"
+msgstr "Ongeldige ondertekening"
+
+#: messagepartthemes/default/defaultrenderer.cpp:88
+#, kde-format
+msgid "No public key to verify the signature"
+msgstr "Geen publieke sleutel om de ondertekening te verifiëren"
+
+#: messagepartthemes/default/defaultrenderer.cpp:92
+#, kde-format
+msgid "No signature found"
+msgstr "Geen ondertekening gevonden"
+
+#: messagepartthemes/default/defaultrenderer.cpp:96
+#, kde-format
+msgid "Error verifying the signature"
+msgstr "Fout bij het verifiëren van de ondertekening"
+
+#: messagepartthemes/default/defaultrenderer.cpp:100
+#, kde-format
+msgid "Different results for signatures"
+msgstr "Verschillende resultaten voor ondertekeningen"
+
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#, kde-format
+msgid "No status information available."
+msgstr "Geen statusinformatie beschikbaar."
+
+#: messagepartthemes/default/defaultrenderer.cpp:127
+#: messagepartthemes/default/defaultrenderer.cpp:212
+#, kde-format
+msgid "Good signature."
+msgstr "Correcte ondertekening."
+
+#: messagepartthemes/default/defaultrenderer.cpp:148
+#, kde-format
+msgid "One key has expired."
+msgstr "Eén sleutel is verlopen."
+
+#: messagepartthemes/default/defaultrenderer.cpp:152
+#, kde-format
+msgid "The signature has expired."
+msgstr "De ondertekening is verlopen."
+
+#: messagepartthemes/default/defaultrenderer.cpp:157
+#, kde-format
+msgid "Unable to verify: key missing."
+msgstr "Verificatie onmogelijk: sleutel ontbreekt."
+
+#: messagepartthemes/default/defaultrenderer.cpp:164
+#, kde-format
+msgid "CRL not available."
+msgstr "CRL (lijst ingetrokken certificaten) niet beschikbaar."
+
+#: messagepartthemes/default/defaultrenderer.cpp:168
+#, kde-format
+msgid "Available CRL is too old."
+msgstr "Beschikbare CRL (lijst ingetrokken certificaten) is te oud."
+
+#: messagepartthemes/default/defaultrenderer.cpp:172
+#, kde-format
+msgid "A policy was not met."
+msgstr "Niet voldaan aan alle regels."
+
+#: messagepartthemes/default/defaultrenderer.cpp:176
+#, kde-format
+msgid "A system error occurred."
+msgstr "Er deed zich een systeemfout voor."
+
+#: messagepartthemes/default/defaultrenderer.cpp:187
+#, kde-format
+msgid "One key has been revoked."
+msgstr "Eén sleutel is ingetrokken."
+
+#: messagepartthemes/default/defaultrenderer.cpp:214
+#, kde-format
+msgid "Bad signature."
+msgstr "Ongeldige ondertekening."
+
+#: messagepartthemes/default/defaultrenderer.cpp:598
+#: messagepartthemes/default/defaultrenderer.cpp:600
+#, kde-format
+msgid "certificate"
+msgstr "certificaat"
+
+#: messagepartthemes/default/defaultrenderer.cpp:605
+#: messagepartthemes/default/defaultrenderer.cpp:624
+#, kde-format
+msgctxt "Start of warning message."
+msgid "Warning:"
+msgstr "Waarschuwing:"
+
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#, kde-format
+msgid "Sender's mail address is not stored in the %1 used for signing."
+msgstr ""
+"Het e-mailadres van de afzender is niet opgeslagen in de %1, die gebruikt "
+"wordt voor het ondertekenen."
+
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#, kde-format
+msgid "sender: "
+msgstr "afzender: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:607
+#, kde-format
+msgid "stored: "
+msgstr "opgeslagen: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:625
+#, kde-format
+msgid ""
+"No mail address is stored in the %1 used for signing, so we cannot compare "
+"it to the sender's address %2."
+msgstr ""
+"Er is geen e-mailadres opgeslagen in de %1, die wordt gebruikt voor het "
+"ondertekenen. Hierdoor kunnen we die niet vergelijken met het afzenderadres "
+"%2."
+
+#: remote-content/remotecontentconfiguredialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Remote Content"
+msgstr "Inhoud op afstand configureren"
+
+#: remote-content/remotecontentconfigurewidget.cpp:51
+#, kde-format
+msgid "Status"
+msgstr "Status"
+
+#: remote-content/remotecontentconfigurewidget.cpp:87
+#, kde-format
+msgid "Do you want to delete this rule '%1'?"
+msgstr "Wilt u deze regel '%1' verwijderen?"
+
+#: remote-content/remotecontentconfigurewidget.cpp:105
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Remote Content"
+msgstr "Inhoud op afstand bewerken"
+
+#: remote-content/remotecontentconfigurewidget.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Remote Content"
+msgstr "Inhoud op afstand toevoegen"
+
+#: remote-content/remotecontentconfigurewidget.cpp:130
+#, kde-format
+msgid "An entry already defines this url. Please modify it."
+msgstr "Er is al een item dat deze URL definieert. Wijzig het."
+
+#: remote-content/remotecontentconfigurewidget.cpp:130
+#, kde-format
+msgid "Add new Url"
+msgstr "Nieuwe URL toevoegen"
+
+#: remote-content/remotecontentmenu.cpp:17
+#, kde-format
+msgid "Configure"
+msgstr "Configureren"
+
+#: remote-content/remotecontentmenu.cpp:19
+#, kde-format
+msgid "Remote Content"
+msgstr "Inhoud op afstand"
+
+#: remote-content/remotecontentmenu.cpp:50
+#, kde-format
+msgid "Authorize %1"
+msgstr "%1 autoriseren"
+
+#: remote-content/remotecontentmenu.cpp:58
+#, kde-format
+msgid "Authorize all Urls"
+msgstr "Alle URL's autoriseren"
+
+#: remote-content/remotecontentstatustypecombobox.cpp:12
+#, kde-format
+msgid "Authorized"
+msgstr "Geautoriseerd"
+
+#: remote-content/remotecontentstatustypecombobox.cpp:13
+#, kde-format
+msgid "Blocked"
+msgstr "Geblokkeerd"
+
+#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr "Details"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:33
+#, kde-format
+msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
+msgstr ""
+"Dit bericht kan vervalst zijn. <a href=\"scamdetails\">(Details...)</a>"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:38
+#, kde-format
+msgid "Move to Trash"
+msgstr "Naar prullenbak verplaatsen"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:43
+#, kde-format
+msgid "I confirm it's not a scam"
+msgstr "Ik bevestig dat het geen misleiding is"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:47
+#, kde-format
+msgid "Add email to whitelist"
+msgstr "E-mail aan witte lijst toevoegen"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:51
+#, kde-format
+msgid "Disable scam detection for all messages"
+msgstr "Detectie van scams voor alle berichten uitschakelen"
+
+#: scamdetection/scamdetectionwebengine.cpp:115
+#: scamdetection/scamdetectionwebengine.cpp:201
+#, kde-format
+msgid ""
+"This email contains a link which reads as '%1' in the text, but actually "
+"points to '%2'. This is often the case in scam emails to mislead the "
+"recipient"
+msgstr ""
+"Dit e-mailbericht bevat een koppeling die leest als '%1' maar in "
+"werkelijkheid naar '%2' wijst. Dit is vaak het geval in vervalste e-"
+"mailberichten."
+
+#: scamdetection/scamdetectionwebengine.cpp:128
+#, kde-format
+msgid ""
+"This email contains a link which points to a numerical IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+"Dit e-mailbericht bevat een koppeling die wijst naar een numeriek IP-adres "
+"(%1) in plaats van een typisch tekstueel websiteadres. Dit is vaak het geval "
+"in vervalste e-mailberichten."
+
+#: scamdetection/scamdetectionwebengine.cpp:135
+#, kde-format
+msgid ""
+"This email contains a link which points to a hexadecimal IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+"Dit e-mailbericht bevat een koppeling die wijst naar een hexadecimaal IP-"
+"adres (%1) in plaats van een typisch tekstueel websiteadres. Dit is vaak het "
+"geval in vervalste e-mailberichten."
+
+#: scamdetection/scamdetectionwebengine.cpp:141
+#, kde-format
+msgid "This email contains a link (%1) which has a redirection"
+msgstr "Dit e-mailbericht bevat een koppeling (%1) met een doorverwijzing"
+
+#: scamdetection/scamdetectionwebengine.cpp:148
+#, kde-format
+msgid ""
+"This email contains a link (%1) which contains multiple http://. This is "
+"often the case in scam emails."
+msgstr ""
+"Dit e-mailbericht bevat een koppeling (%1) die meerdere keren http:// bevat. "
+"Dit is vaak het geval in vervalste e-mailberichten."
+
+#: scamdetection/scamdetectionwebengine.cpp:159
+#, kde-format
+msgid "This email contains a shorturl (%1). It can redirect to another server."
+msgstr ""
+"Dit e-mailbericht bevat een korte URL (%1). Het kan doorverwijzen naar een "
+"andere server."
+
+#: scamdetection/scamdetectionwebengine.cpp:220
+#, kde-format
+msgid "Message contains form element. This is often the case in scam emails."
+msgstr ""
+"Bericht bevat een element van een formulier. Dit is vaak het geval in "
+"vervalste e-mailberichten."
+
+#: scamdetection/scamdetectionwebengine.cpp:224
+#, kde-format
+msgid "Details:"
+msgstr "Details:"
+
+#: scamdetection/scamexpandurljob.cpp:47
+#, kde-format
+msgid "No network connection detected, we cannot expand url."
+msgstr ""
+"Geen netwerkverbinding gedetecteerd, een korte URL kan niet geëxpandeerd "
+"worden."
+
+#: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
+#, kde-format
+msgid "Impossible to expand '%1'."
+msgstr "Uitvouwen van '%1' is niet mogelijk."
+
+#: scamdetection/scamexpandurljob.cpp:81
+#, kde-format
+msgid "Short url '%1' redirects to '%2'."
+msgstr "Korte URL '%1' verwijst naar '%2'."
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.cmake:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "Alleen in viewer geselecteerde tekst afdrukken"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.cmake:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr ""
+"Respecteer gedefinieerde instellingen van invouw/uitklapmarkeringen bij "
+"afdrukken."
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.cmake:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+"Specificeert of de achtergrondkleuren en afbeeldingen ook getekend worden "
+"indien de pagina afgedrukt wordt."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.cmake:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr ""
+"Altijd details van versleuteling/ondertekening tonen wanneer we het bericht "
+"afdrukken"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+"Bij het gebruiken van html gebruik dan geen grootte van lettertypen minder "
+"dan de minimum grootte."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "Specificeert het te gebruiken lettertype voor het eigenlijke bericht"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "Specificeer het te gebruiken lettertype voor afdrukken"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.cmake:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "Controleren of URL phishing kan zijn"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.cmake:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr ""
+"Sluit het berichtenvenster na beantwoorden of doorsturen van het bericht"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.cmake:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "Invouw/uitklapmarkeringen tonen"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.cmake:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"Schakel deze optie in om de verschillende niveaus van aangehaalde tekst te "
+"tonen. Schakel deze optie uit om de verschillende niveaus te verbergen."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.cmake:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "Automatisch invouwen bij niveau:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.cmake:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "Lettergrootte verkleinen van aangehaalde tekst"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.cmake:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+"Schakel deze optie in om aangehaalde tekst te tonen in een kleiner "
+"lettertype."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.cmake:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr ""
+"Berichten altijd ontcijferen bij het bekijken of vragen voordat er wordt "
+"ontcijferd"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "Berichtenstructuurweergave"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:94
+#, kde-format
+msgid "Show never"
+msgstr "Nooit tonen"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:97
+#, kde-format
+msgid "Show always"
+msgstr "Altijd tonen"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.cmake:109 settings/messageviewer.kcfg.cmake:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "Welke kopstijlen er getoond moeten worden"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.cmake:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "Hoeveel van de koppen er getoond moeten worden"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.cmake:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "HTML boven platte tekst verkiezen"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.cmake:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "Externe verwijzingen voor dit bericht ophalen van het internet."
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.cmake:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "De wijze waarop bijlagen worden getoond"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.cmake:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr ""
+"Specificeert of kleur voor aanhalen hergebruikt moet worden verder dan het "
+"3de niveau"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "Toegangsleutel activeren"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"KMail kan verdachte e-mailberichten analyseren op e-mail-scams door te "
+"kijken naar algemeen gebruikte technieken om u misleiden"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.cmake:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "Lijst met e-mailberichten in witte lijst van scams"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "E-mails scannen voor volgen van URL's"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.cmake:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "Stuur geen MDN's in antwoord op versleutelde berichten"
+
+#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
+#: settings/messageviewer.kcfg.cmake:161
+#, kde-format
+msgid ""
+"Specifies the default policy to use, for the Message Disposition "
+"Notifications (for internal use only)"
+msgstr ""
+"Specificeert het standaard te gebruiken beleid voor de meldingen over wat er "
+"met berichten moet worden gedaan (alleen voor intern gebruik)"
+
+#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
+#: settings/messageviewer.kcfg.cmake:165
+#, kde-format
+msgid ""
+"Specifies the default quoting action to take, when replying to a message "
+"(for internal use only)"
+msgstr ""
+"Specificeert de standaard te gebruiken actie bij het antwoorden op een "
+"bericht (alleen voor intern gebruik)"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:181
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "De berichtkoppen Van:/Aan: aanpassen in antwoorden op antwoorden"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:182
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"Microsoft Outlook heeft een aantal tekortkomingen bij de implementatie van "
+"de iCalendar-standaard; deze optie omzeilt één daarvan. Als u ondervindt dat "
+"Outlookgebruikers uw antwoorden niet kunnen ontvangen, probeer dan deze "
+"optie in te stellen."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:187
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "Uitnodigingen in het tekstdeel van het bericht sturen"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:188
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"Microsoft Outlook heeft een aantal tekortkomingen bij de implementatie van "
+"de iCalendar-standaard; deze optie omzeilt één daarvan. Als u ondervindt dat "
+"Outlookgebruikers uw uitnodigingen niet kunnen ontvangen, probeer dan deze "
+"optie in te stellen."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:193
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "Exchange-compatibele uitnodigingbenaming"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:194
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, indien gebruikt in combinatie met een Microsoft Exchange-"
+"server, kan niet overweg met norm-conforme groupware-e-mailberichten. "
+"Activeer deze optie om groupware-uitnodigingen zo te versturen dat Microsoft "
+"Exchange ermee overweg kan."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:199
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "Uitnodiging automatisch verzenden"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:200
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"Indien dit aangevinkt is, dan ziet u het venster \"Bericht opstellen\" niet. "
+"In plaatst daarvan zullen alle uitnodigingen automatisch verstuurd worden. "
+"Als u het bericht wilt zien voordat het verzonden wordt, dan kunt u het "
+"vinkje bij deze optie weghalen. Wees er wel van bewust dat de tekst in het "
+"venster \"Bericht opstellen\" in iCalendar-stijl staat; probeer hem niet met "
+"de hand te wijzigen."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.cmake:205 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "Uitnodigingsberichten verwijderen nadat het antwoord erop is verstuurd"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:206
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"Wanneer dit aangevinkt is, zullen ontvangen uitnodigingsberichten waarop "
+"geantwoord is, naar de prullenbak worden verplaatst nadat het antwoord met "
+"succes is verzonden."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1554
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "Vast lettertype gebr&uiken"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.cmake:237
+#, kde-format
+msgid "The most recent selected folder using for Todo."
+msgstr "De meest recent geselecteerde map gebruikt voor een te-doen."
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.cmake:243
+#, kde-format
+msgid "The most recent selected folder using for Event."
+msgstr "De meest recent geselecteerde map gebruikt voor een gebeurtenis."
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.cmake:249
+#, kde-format
+msgid "The most recent selected folder using for Notes."
+msgstr "De meest recent geselecteerde map gebruikt voor notities."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/invitationsettings.ui:17
+#, kde-format
+msgid "Groupware Compatibility && Legacy Options"
+msgstr "Groupware-compatibiliteit && legacy-opties"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:23
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitation replies"
+msgstr ""
+"Activeer deze optie opdat Outlook(tm) uw antwoorden op uitnodigingsberichten "
+"begrijpt"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:26
+#, kde-format
+msgid "&Mangle From:/To: headers in replies to invitations"
+msgstr "De berichtkoppen Van:/Aan: &aanpassen in antwoorden op uitnodigingen"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:33
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitations"
+msgstr ""
+"Activeer deze optie opdat Outlook(tm) uw antwoorden op uitnodigingen begrijpt"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:36
+#, kde-format
+msgid "Send &invitations in the mail body"
+msgstr "&Uitnodigingen in het tekstdeel van het bericht sturen"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:45
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server,\n"
+"has a problem understanding standards-compliant groupware email.\n"
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, indien gebruikt in combinatie met een Microsoft Exchange-"
+"server,\n"
+"kan niet overweg met norm-conforme groupware-e-mailberichten.\n"
+"Activeer deze optie om groupware-uitnodigingen zo te versturen dat Microsoft "
+"Exchange ermee overweg kan."
+
+#. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:48
+#, kde-format
+msgid "Exchange-compatible invitation &naming"
+msgstr "Exchange-compatibele uitnodiging&benaming"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:55
+#, kde-format
+msgid ""
+"When this is on, the user will not see the mail composer window. Invitation "
+"mails are sent automatically."
+msgstr ""
+"Wanneer dit geactiveerd is, krijgt de gebruiker het venster Bericht "
+"opstellen niet te zien. Uitnodigingsberichten worden automatisch verstuurd."
+
+#. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:58
+#, kde-format
+msgid "&Automatic invitation sending"
+msgstr "Uitnodiging &Automatisch versturen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/invitationsettings.ui:68
+#, kde-format
+msgid "Options"
+msgstr "Opties"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
+#: ui/printingsettings.ui:17
+#, kde-format
+msgid "Print only selected text"
+msgstr "Alleen geselecteerde tekst afdrukken"
+
+#. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
+#: ui/printingsettings.ui:24
+#, kde-format
+msgid "Respect &expand/collapse quote marks settings"
+msgstr "Respecteer instellingen van invouw/&uitklapmarkeringen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
+#: ui/printingsettings.ui:31
+#, kde-format
+msgid "Print background color and images"
+msgstr "Achtergrondkleur en -afbeeldingen afdrukken"
+
+#. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
+#: ui/printingsettings.ui:38
+#, kde-format
+msgid "Always show encryption/signature details"
+msgstr "Altijd details van versleuteling/ondertekening tonen"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
+#: ui/settings.ui:31
+#, kde-format
+msgid "Viewer settings"
+msgstr "Viewerinstellingen"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/settings.ui:59
+#, kde-format
+msgid "O&verride character encoding:"
+msgstr "Tekensetcodering o&verschrijven:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
+#: ui/settings.ui:91
+#, kde-format
+msgid "Enable access key"
+msgstr "Toegangsleutel inschakelen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
+#: ui/settings.ui:98
+#, kde-format
+msgid "Reduce font size for &quoted text"
+msgstr "Lettergrootte verkleinen van &aangehaalde tekst"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
+#: ui/settings.ui:105
+#, kde-format
+msgid "Show &expand/collapse quote marks"
+msgstr "Invouw/&uitklapmarkeringen tonen"
+
+#. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
+#: ui/settings.ui:133
+#, kde-format
+msgid "Automatic collapse &level:"
+msgstr "Automatisch &niveau bij invouwen:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/settings.ui:202
+#, kde-format
+msgid "&Minimum font size:"
+msgstr "&Minimale lettertypegrootte:"
+
+#: utils/messageviewerutil.cpp:156
+#, kde-format
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr "Een bestand met de naam \"%1\" bestaat al. Wilt u het overschrijven?"
+
+#: utils/messageviewerutil.cpp:159
+#, kde-format
+msgid "Overwrite File?"
+msgstr "Bestand overschrijven?"
+
+#: utils/messageviewerutil.cpp:209
+#, kde-format
+msgid "Save Attachments To"
+msgstr "Bijlage opslaan als"
+
+#: utils/messageviewerutil.cpp:226
+#, kde-format
+msgctxt "filename for an unnamed attachment"
+msgid "attachment.1"
+msgstr "bijlage.1"
+
+#: utils/messageviewerutil.cpp:232
+#, kde-format
+msgid "Save Attachment"
+msgstr "Bijlage opslaan"
+
+#: utils/messageviewerutil.cpp:256
+#, kde-format
+msgctxt "filename for the %1-th unnamed attachment"
+msgid "attachment.%1"
+msgstr "bijlage.%1"
+
+#: utils/messageviewerutil.cpp:354
+#, kde-format
+msgid ""
+"The part %1 of the message is encrypted. Do you want to keep the encryption "
+"when saving?"
+msgstr ""
+"Het deel %1 van het bericht is versleuteld. Wilt u de versleuteling bij het "
+"opslaan behouden?"
+
+#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
+#, kde-format
+msgid "KMail Question"
+msgstr "KMail - vraag"
+
+#: utils/messageviewerutil.cpp:356
+#, kde-format
+msgid "Keep Encryption"
+msgstr "Versleuteling behouden"
+
+#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
+#, kde-format
+msgid "Do Not Keep"
+msgstr "Niet behouden"
+
+#: utils/messageviewerutil.cpp:367
+#, kde-format
+msgid ""
+"The part %1 of the message is signed. Do you want to keep the signature when "
+"saving?"
+msgstr ""
+"Het deel %1 van het bericht is ondertekend. Wilt u de ondertekening behouden "
+"bij het opslaan?"
+
+#: utils/messageviewerutil.cpp:369
+#, kde-format
+msgid "Keep Signature"
+msgstr "Ondertekening behouden"
+
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
+#, kde-kuit-format
+msgctxt "1 = file name, 2 = error string"
+msgid ""
+"<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
+"qt>"
+msgstr ""
+"<qt>Kon niet schrijven naar het bestand<br /><filename>%1</filename><br /"
+"><br />%2</qt>"
+
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
+#: utils/messageviewerutil.cpp:472
+#, kde-format
+msgid "Error saving attachment"
+msgstr "Fout bij opslaan bijlage"
+
+#: utils/messageviewerutil.cpp:485
+#, kde-format
+msgid "Found no attachments to save."
+msgstr "Er zijn geen bijlagen gevonden om op te slaan."
+
+#: utils/messageviewerutil.cpp:500
+#, kde-format
+msgid "message"
+msgstr "bericht"
+
+#: utils/messageviewerutil.cpp:522
+#, kde-format
+msgid "email messages (*.mbox);;all files (*)"
+msgstr "e-mailberichten (*.mbox);;alle bestanden (*)"
+
+#: utils/messageviewerutil.cpp:533
+#, kde-format
+msgid "Save Message"
+msgid_plural "Save Messages"
+msgstr[0] "Bericht opslaan"
+msgstr[1] "Berichten opslaan"
+
+#: utils/messageviewerutil.cpp:558
+#, kde-format
+msgid "File %1 could not be loaded."
+msgstr "Bestand %1 kan niet worden geladen."
+
+#: utils/messageviewerutil.cpp:558
+#, kde-format
+msgid "Error loading message"
+msgstr "Fout bij laden van bericht"
+
+#: utils/messageviewerutil.cpp:560
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Bestand %1 kan niet worden aangemaakt."
+
+#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:591
+#, kde-format
+msgid "Error saving message"
+msgstr "Fout bij opslaan van bericht"
+
+#: utils/messageviewerutil.cpp:571
+#, kde-format
+msgid "We cannot save message."
+msgstr "Bericht kan niet worden opgeslagen."
+
+#: utils/messageviewerutil.cpp:612
+#, kde-format
+msgid "Open &with %1"
+msgstr "Openen &met %1"
+
+#: utils/messageviewerutil.cpp:614
+#, kde-format
+msgctxt "@item:inmenu Open With, %1 is application name"
+msgid "%1"
+msgstr "%1"
+
+#: viewer/editorwatcher.cpp:60
+#, kde-format
+msgid "Edit with:"
+msgstr "Bewerken met:"
+
+#: viewer/editorwatcher.cpp:194
+#, kde-format
+msgid ""
+"KMail is unable to detect when the chosen editor is closed. To avoid data "
+"loss, editing the attachment will be aborted."
+msgstr ""
+"KMail merkt het niet wanneer de geselecteerde editor wordt afgesloten. Om "
+"gegevensverlies te voorkomen zal het bewerken van de bijlage worden "
+"afgebroken."
+
+#: viewer/editorwatcher.cpp:196
+#, kde-format
+msgid "Unable to edit attachment"
+msgstr "Kon de bijlage niet bewerken"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:59
+#, kde-format
+msgid "body part"
+msgstr "tekstdeel"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:262
+#, kde-format
+msgid "Description"
+msgstr "Beschrijving"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:264
+#, kde-format
+msgid "Type"
+msgstr "Type"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:266
+#, kde-format
+msgid "Size"
+msgstr "Grootte"
+
+#: viewer/urlhandlermanager.cpp:405
+#, kde-format
+msgid "Turn on HTML rendering for this message."
+msgstr "HTML-weergave voor dit bericht activeren."
+
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1623
+#, kde-format
+msgid "Load external references from the Internet for this message."
+msgstr "Externe verwijzingen voor dit bericht ophalen van het internet."
+
+#: viewer/urlhandlermanager.cpp:409
+#, kde-format
+msgid "Work online."
+msgstr "Online werken."
+
+#: viewer/urlhandlermanager.cpp:411
+#, kde-format
+msgid "Make account online."
+msgstr "Zet account online."
+
+#: viewer/urlhandlermanager.cpp:413
+#, kde-format
+msgid "Decrypt message."
+msgstr "Bericht ontcijferen."
+
+#: viewer/urlhandlermanager.cpp:415
+#, kde-format
+msgid "Show signature details."
+msgstr "Ondertekeningsdetails tonen."
+
+#: viewer/urlhandlermanager.cpp:417
+#, kde-format
+msgid "Hide signature details."
+msgstr "Ondertekeningsdetails verbergen."
+
+#: viewer/urlhandlermanager.cpp:419
+#, kde-format
+msgid "Show encryption details."
+msgstr "Versleutelingsdetails tonen."
+
+#: viewer/urlhandlermanager.cpp:421
+#, kde-format
+msgid "Hide encryption details."
+msgstr "Versleutilingsdetails verbergen."
+
+#: viewer/urlhandlermanager.cpp:426
+#, kde-format
+msgid "Open Documentation"
+msgstr "Documentatie openen"
+
+#: viewer/urlhandlermanager.cpp:460
+#, kde-format
+msgid "Expand all quoted text."
+msgstr "Aangehaalde tekst uitvouwen."
+
+#: viewer/urlhandlermanager.cpp:462
+#, kde-format
+msgid "Collapse quoted text."
+msgstr "Aangehaalde tekst invouwen."
+
+#: viewer/urlhandlermanager.cpp:524
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+"Het Certificaatbeheer kon niet worden gestart. Controleer uw installatie."
+
+#: viewer/urlhandlermanager.cpp:526
+#, kde-format
+msgid "KMail Error"
+msgstr "KMail - foutmelding"
+
+#: viewer/urlhandlermanager.cpp:541
+#, kde-format
+msgid "Show certificate 0x%1"
+msgstr "Certificaat 0x%1 tonen"
+
+#: viewer/urlhandlermanager.cpp:600
+#, kde-format
+msgid "&Open in Address Book"
+msgstr "In adresboek &openen"
+
+#: viewer/urlhandlermanager.cpp:602
+#, kde-format
+msgid "&Copy Email Address"
+msgstr "E-mailadres &kopiëren"
+
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2713
+#, kde-format
+msgid "Address copied to clipboard."
+msgstr "Adres gekopieerd naar het klembord."
+
+#: viewer/urlhandlermanager.cpp:626
+#, kde-format
+msgid "Lookup the contact in KAddressbook"
+msgstr "De contactpersoon opzoeken in KAddressbook"
+
+#: viewer/urlhandlermanager.cpp:802
+#, kde-format
+msgid "Attachment: %1"
+msgstr "Bijlage: %1"
+
+#: viewer/urlhandlermanager.cpp:805
+#, kde-format
+msgid "Encapsulated Message (Subject: %1)"
+msgstr "Ingebed bericht (Onderwerp: %1)"
+
+#: viewer/urlhandlermanager.cpp:807
+#, kde-format
+msgid "Encapsulated Message"
+msgstr "Ingebed bericht"
+
+#: viewer/urlhandlermanager.cpp:810
+#, kde-format
+msgid "Unnamed attachment"
+msgstr "Naamloze bijlage"
+
+#: viewer/urlhandlermanager.cpp:845
+#, kde-format
+msgid "Show GnuPG Audit Log for this operation"
+msgstr "GnuPG-auditlog tonen voor deze handeling"
+
+#: viewer/urlhandlermanager.cpp:885
+#, kde-format
+msgid "Opening URL..."
+msgstr "URL-adres openen..."
+
+#: viewer/urlhandlermanager.cpp:893
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to execute <filename>%1</filename>?"
+msgstr "Wilt u werkelijk <filename>%1</filename> uitvoeren?"
+
+#: viewer/urlhandlermanager.cpp:895
+#, kde-format
+msgid "Execute"
+msgstr "Uitvoeren"
+
+#: viewer/viewer.cpp:138
+#, kde-format
+msgid "Loading message..."
+msgstr "Bericht laden..."
+
+#: viewer/viewer_p.cpp:358
+#, kde-format
+msgid ""
+"Deleting an attachment from an encrypted or old-style mailman message is not "
+"supported."
+msgstr ""
+"Het verwijderen van een bijlage uit een versleuteld bericht of een mailman-"
+"bericht oude stijl wordt niet ondersteund."
+
+#: viewer/viewer_p.cpp:359 viewer/viewer_p.cpp:366 viewer/viewer_p.cpp:588
+#: viewer/viewer_p.cpp:1726
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Bijlage verwijderen"
+
+#: viewer/viewer_p.cpp:365
+#, kde-format
+msgid ""
+"Deleting an attachment might invalidate any digital signature on this "
+"message."
+msgstr ""
+"Het verwijderen van een bijlage kan een eventuele digitale ondertekening van "
+"het bericht ongeldig maken."
+
+#: viewer/viewer_p.cpp:447
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr "&Openen met..."
+
+#: viewer/viewer_p.cpp:465
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr "&Overig..."
+
+#: viewer/viewer_p.cpp:467 viewer/viewer_p.cpp:480
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr "&Openen met..."
+
+#: viewer/viewer_p.cpp:544 viewer/viewer_p.cpp:1704
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Openen"
+
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1711
+#, kde-format
+msgctxt "to view something"
+msgid "View"
+msgstr "Tonen"
+
+#: viewer/viewer_p.cpp:566
+#, kde-format
+msgid "Scroll To"
+msgstr "Schuif naar"
+
+#: viewer/viewer_p.cpp:571
+#, kde-format
+msgid "Save As..."
+msgstr "Opslaan als..."
+
+#: viewer/viewer_p.cpp:577 viewer/viewer_p.cpp:1721
+#, kde-format
+msgid "Copy"
+msgstr "Kopiëren"
+
+#: viewer/viewer_p.cpp:599
+#, kde-format
+msgid "Reply To Author"
+msgstr "Auteur beantwoorden"
+
+#: viewer/viewer_p.cpp:607
+#, kde-format
+msgid "Reply To All"
+msgstr "Aan allen beantwoorden"
+
+#: viewer/viewer_p.cpp:613 viewer/viewer_p.cpp:1731
+#, kde-format
+msgid "Properties"
+msgstr "Eigenschappen"
+
+#: viewer/viewer_p.cpp:750
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: viewer/viewer_p.cpp:751
+#, kde-format
+msgid "The KDE Mail Client"
+msgstr "De e-mailclient van KDE"
+
+#: viewer/viewer_p.cpp:1287
+#, kde-format
+msgctxt "@title:window"
+msgid "View Attachment: %1"
+msgstr "Bijlage tonen: %1"
+
+#: viewer/viewer_p.cpp:1475
+#, kde-format
+msgctxt "View->"
+msgid "&Attachments"
+msgstr "Bijl&agen"
+
+#: viewer/viewer_p.cpp:1477
+#, kde-format
+msgid "Choose display style of attachments"
+msgstr "Kies de wijze waarop bijlagen worden getoond"
+
+#: viewer/viewer_p.cpp:1480
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&As Icons"
+msgstr "&Als pictogrammen"
+
+#: viewer/viewer_p.cpp:1483
+#, kde-format
+msgid "Show all attachments as icons. Click to see them."
+msgstr "Toon alle bijlagen als pictogrammen. Klik er op om ze te bekijken."
+
+#: viewer/viewer_p.cpp:1487
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Smart"
+msgstr "In&telligent"
+
+#: viewer/viewer_p.cpp:1490
+#, kde-format
+msgid "Show attachments as suggested by sender."
+msgstr "Toon de bijlagen zoals wordt aanbevolen door de afzender."
+
+#: viewer/viewer_p.cpp:1494
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Inline"
+msgstr "&Ingebed"
+
+#: viewer/viewer_p.cpp:1497
+#, kde-format
+msgid "Show all attachments inline (if possible)"
+msgstr "Toon alle bijlagen ingebed in het bericht zelf (indien mogelijk)"
+
+#: viewer/viewer_p.cpp:1501
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Hide"
+msgstr "&Verborgen"
+
+#: viewer/viewer_p.cpp:1504
+#, kde-format
+msgid "Do not show attachments in the message viewer"
+msgstr "Geen bijlagen in de berichtenweergave tonen"
+
+#: viewer/viewer_p.cpp:1508
+#, kde-format
+msgctxt "View->attachments->"
+msgid "In Header Only"
+msgstr "Alleen in de koptekst"
+
+#: viewer/viewer_p.cpp:1511
+#, kde-format
+msgid "Show Attachments only in the header of the mail"
+msgstr "Bijlagen alleen tonen in de kop de e-mail"
+
+#: viewer/viewer_p.cpp:1516
+#, kde-format
+msgid "&Set Encoding"
+msgstr "Codering in&stellen"
+
+#: viewer/viewer_p.cpp:1521 widgets/configurewidget.cpp:43
+#: widgets/configurewidget.cpp:77
+#, kde-format
+msgid "Auto"
+msgstr "Auto"
+
+#: viewer/viewer_p.cpp:1531
+#, kde-format
+msgid "Copy Text"
+msgstr "Tekst kopiëren"
+
+#: viewer/viewer_p.cpp:1538
+#, kde-format
+msgid "Select All Text"
+msgstr "Alle tekst selecteren"
+
+#: viewer/viewer_p.cpp:1544 viewer/viewer_p.cpp:2025
+#, kde-format
+msgid "Copy Link Address"
+msgstr "Koppelingslocatie kopiëren"
+
+#: viewer/viewer_p.cpp:1549
+#, kde-format
+msgid "Open URL"
+msgstr "URL-adres openen"
+
+#: viewer/viewer_p.cpp:1560
+#, kde-format
+msgid "Show Message Structure"
+msgstr "Berichtenstructuur tonen"
+
+#: viewer/viewer_p.cpp:1565
+#, kde-format
+msgid "&View Source"
+msgstr "Bron &tonen"
+
+#: viewer/viewer_p.cpp:1570
+#, kde-format
+msgid "&Save Message..."
+msgstr "Bericht op&slaan..."
+
+#: viewer/viewer_p.cpp:1576
+#, kde-format
+msgid "&Save Display Format"
+msgstr "Weergave-indeling op&slaan"
+
+#: viewer/viewer_p.cpp:1580
+#, kde-format
+msgid "&Reset Display Format"
+msgstr "Weergave-indeling &resetten"
+
+#: viewer/viewer_p.cpp:1587
+#, kde-format
+msgid "Scroll Message Up"
+msgstr "Bericht omhoog schuiven"
+
+#: viewer/viewer_p.cpp:1592
+#, kde-format
+msgid "Scroll Message Down"
+msgstr "Bericht omlaag schuiven"
+
+#: viewer/viewer_p.cpp:1597
+#, kde-format
+msgid "Scroll Message Up (More)"
+msgstr "Bericht omhoog schuiven (meer)"
+
+#: viewer/viewer_p.cpp:1602
+#, kde-format
+msgid "Scroll Message Down (More)"
+msgstr "Bericht omlaag schuiven (meer)"
+
+#: viewer/viewer_p.cpp:1612
+#, kde-format
+msgid "Toggle HTML Display Mode"
+msgstr "HTML-weergavemodus aan/uit"
+
+#: viewer/viewer_p.cpp:1616
+#, kde-format
+msgid "Toggle display mode between HTML and plain text"
+msgstr "Weergavemodus wisselen tussen HTML en platte tekst"
+
+#: viewer/viewer_p.cpp:1619
+#, kde-format
+msgid "Load external references"
+msgstr "Externe referenties ophalen"
+
+#: viewer/viewer_p.cpp:1625 widgets/mailsourceviewtextbrowserwidget.cpp:136
+#, kde-format
+msgid "Speak Text"
+msgstr "Tekst uitspreken"
+
+#: viewer/viewer_p.cpp:1631
+#, kde-format
+msgid "Share Text..."
+msgstr "Tekst delen..."
+
+#: viewer/viewer_p.cpp:1637
+#, kde-format
+msgid "Copy Image Location"
+msgstr "Afbeeldingslocatie kopiëren"
+
+#: viewer/viewer_p.cpp:1643
+#, kde-format
+msgid "&Find in Message..."
+msgstr "In bericht &zoeken..."
+
+#: viewer/viewer_p.cpp:1652
+#, kde-format
+msgid "Disable Emoticon"
+msgstr "Emoticon uitschakelen"
+
+#: viewer/viewer_p.cpp:1701
+#, kde-format
+msgid "Save &As..."
+msgstr "Opslaan a&ls..."
+
+#: viewer/viewer_p.cpp:1709
+#, kde-format
+msgid "Open With..."
+msgstr "Openen met..."
+
+#: viewer/viewer_p.cpp:1716
+#, kde-format
+msgid "Save All Attachments..."
+msgstr "Alle bijlagen opslaan..."
+
+#: viewer/viewer_p.cpp:1945
+#, kde-format
+msgid "The network is broken."
+msgstr "Het netwerk is gebroken."
+
+#: viewer/viewer_p.cpp:1945 viewer/viewer_p.cpp:1948
+#, kde-format
+msgid "Check Phishing URL"
+msgstr "Phishing URL controleren"
+
+#: viewer/viewer_p.cpp:1948
+#, kde-format
+msgid "The URL %1 is not valid."
+msgstr "De URL %1 is niet geldig."
+
+#: viewer/viewer_p.cpp:1968
+#, kde-format
+msgid "This web site is a malware, do you want to continue to show it?"
+msgstr ""
+"deze website bevat schadelijke software (malware), wilt u doorgaan met het "
+"weergeven?"
+
+#: viewer/viewer_p.cpp:1969
+#, kde-format
+msgid "Malware"
+msgstr "Schadelijke software (malware)"
+
+#: viewer/viewer_p.cpp:2023
+#, kde-format
+msgid "Copy Email Address"
+msgstr "E-mailadres kopiëren"
+
+#: viewer/viewer_p.cpp:2104
+#, kde-format
+msgctxt "@title:window"
+msgid "Message as Plain Text"
+msgstr "Bericht als platte tekst"
+
+#: viewer/viewer_p.cpp:2305
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr "Document afdrukken"
+
+#: viewer/viewer_p.cpp:2719
+#, kde-format
+msgid "URL copied to clipboard."
+msgstr "URL-adres gekopieerd naar het klembord."
+
+#: viewer/viewer_p.cpp:2871
+#, kde-format
+msgid "Message loading failed: %1."
+msgstr "Laden van bericht mislukt: %1."
+
+#: viewer/viewer_p.cpp:2876
+#, kde-format
+msgid "Message not found."
+msgstr "Bericht niet gevonden."
+
+#: widgets/attachmentdialog.cpp:27
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
+"may compromise your system's security."
+msgstr ""
+"Bijlage <filename>%1</filename> openen?<nl/>Bedenk dat het openen van een "
+"bijlage de veiligheid van uw systeem in gevaar kan brengen."
+
+#: widgets/attachmentdialog.cpp:32
+#, kde-format
+msgctxt "@title:window"
+msgid "Open Attachment?"
+msgstr "Bijlage openen?"
+
+#: widgets/attachmentdialog.cpp:39
+#, kde-format
+msgid "&Open With '%1'"
+msgstr "&Openen met '%1'"
+
+#: widgets/attachmentdialog.cpp:46
+#, kde-format
+msgid "Open &With..."
+msgstr "Openen &met..."
+
+#: widgets/attachmentdialog.cpp:68
+#, kde-format
+msgid "Do not ask again"
+msgstr "Deze vraag niet meer stellen"
+
+#: widgets/htmlstatusbar.cpp:108
+#, kde-format
+msgctxt ""
+"'HTML Message' with html linebreaks between each letter and in bold text."
+msgid ""
+"<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
+">a<br />g<br />e</b></qt>"
+msgstr ""
+"<qt><b><br />H<br />T<br />M<br />L<br />-<br />b<br />e<br />r<br />i<br /"
+">c<br />h<br />t</b></qt>"
+
+#: widgets/htmlstatusbar.cpp:112
+#, kde-format
+msgctxt "'No HTML Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+">e<br />s<br />s<br />a<br />g<br />e</qt>"
+msgstr ""
+"<qt><br />G<br />e<br />e<br />n<br /> <br />H<br />T<br />M<br />L<br /> "
+"<br />b<br />e<br />r<br />i<br />c<br />h<br />t</qt>"
+
+#: widgets/htmlstatusbar.cpp:117
+#, kde-format
+msgctxt "'Plain Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+">s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+"<qt><br />P<br />l<br />a<br />t<br />t<br />e<br /> <br />t<br />e<br /"
+">k<br />s<br />t<br /> <br />b<br />e<br />r<br />i<br />c<br />h<br />t<br /"
+"></qt>"
+
+#: widgets/htmlstatusbar.cpp:121
+#, kde-format
+msgctxt "'Calendar Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
+">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+"<qt><br />A<br />g<br />e<br />n<br />d<br />a<br />b<br />e<br />r<br /"
+">i<br />c<br />h<br />t<br /></qt>"
+
+#: widgets/htmlstatusbar.cpp:135
+#, kde-format
+msgid "Click to toggle between HTML, plain text and calendar."
+msgstr "Klik om te wisselen tussen HTML, platte tekst en agenda."
+
+#: widgets/invitationsettings.cpp:70
+#, kde-format
+msgid ""
+"<qt>Invitations are normally sent as attachments to a mail. This switch "
+"changes the invitation mails to be sent in the text of the mail instead; "
+"this is necessary to send invitations and replies to Microsoft Outlook.<br /"
+">But, when you do this, you no longer get descriptive text that mail "
+"programs can read; so, to people who have email programs that do not "
+"understand the invitations, the resulting messages look very odd.<br /"
+">People that have email programs that do understand invitations will still "
+"be able to work with this.</qt>"
+msgstr ""
+"<qt>Uitnodigingen worden normaalgesproken verstuurd als bijlage bij een e-"
+"mail. Met deze knop worden de uitnodigingsberichten in de tekst van het e-"
+"mailbericht opgenomen; dit is nodig om uitnodigingen en antwoorden te "
+"versturen naar Microsoft Outlook.<br />Maar wanneer u dit doet, krijgt u "
+"niet langer beschrijvende tekst die gelezen kan worden door e-"
+"mailprogramma's; dus voor mensen die e-mailprogramma's hebben die de "
+"uitnodigingen niet begrijpen zien de berichten er heel vreemd uit.<br /"
+">Mensen die e-mailprogramma's hebben die wel uitnodigingen begrijpen zullen "
+"nog steeds hiermee kunnen werken.</qt>"
+
+#: widgets/mailsourcewebengineviewer.cpp:51
+#, kde-format
+msgctxt "Unchanged mail message"
+msgid "Raw Source"
+msgstr "Onbewerkte bron"
+
+#: widgets/mailsourcewebengineviewer.cpp:52
+#, kde-format
+msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
+msgstr ""
+"Onbewerkte, ongewijzigde e-mail zoals die bewaard is op het bestandssysteem "
+"of op de server"
+
+#: widgets/mailsourcewebengineviewer.cpp:55
+#, kde-format
+msgctxt "Mail message as shown, in HTML format"
+msgid "HTML Source"
+msgstr "HTML-broncode"
+
+#: widgets/mailsourcewebengineviewer.cpp:56
+#, kde-format
+msgid "HTML code for displaying the message to the user"
+msgstr "HTML-code voor het tonen van het bericht aan de gebruiker"
+
+#: widgets/opensavedfilefolderwidget.cpp:26
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where attachment was saved"
+msgstr "Map openen waar de bijlage is opgeslagen"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr "Bestand openen"
+
+#: widgets/opensavedfilefolderwidget.cpp:61
+#, kde-format
+msgid "Open folder where attachment was saved"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Map openen waar de bijlage is opgeslagen"
+msgstr[1] "Map openen waar de bijlage is opgeslagen"
+
+#: widgets/opensavedfilefolderwidget.cpp:64
+#, kde-format
+msgid "Open folder where PDF file was saved"
+msgstr "Map openen waar PDF-bestand is opgeslagen"
+
+#: widgets/opensavedfilefolderwidget.cpp:77
+#, kde-format
+msgid "KMail was unable to open the attachment."
+msgstr "Kmail kon de bijlage niet openen."
+
+#: widgets/shownextmessagewidget.cpp:15
+#, kde-format
+msgid "Next Message"
+msgstr "Volgende bericht"
+
+#: widgets/shownextmessagewidget.cpp:16
+#, kde-format
+msgid "Previous Message"
+msgstr "Vorige bericht"
+
+#: widgets/vcardviewer.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "vCard Viewer"
+msgstr "vCard-weergaveprogramma"
+
+#: widgets/vcardviewer.cpp:48
+#, kde-format
+msgid "&Import"
+msgstr "&Importeren"
+
+#: widgets/vcardviewer.cpp:49
+#, kde-format
+msgid "&Next Card"
+msgstr "&Volgende kaart"
+
+#: widgets/vcardviewer.cpp:50
+#, kde-format
+msgid "&Previous Card"
+msgstr "Vori&ge kaart"
+
+#~ msgid "Reply From:"
+#~ msgstr "Beantwoorden van:"
+
+#~ msgid "Submit form is not allowed in mailer. Please open url in a browser."
+#~ msgstr ""
+#~ "Formulier inleveren is niet toegestaan in e-mailprogramma. Open de url "
+#~ "aub in een browser."
+
+#~ msgid ""
+#~ "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+#~ "\">(Details...)"
+#~ msgstr ""
+#~ "Een e-mailtracker is gevonden en is geblokkeerd.<a href="
+#~ "\"mailtrackingdetails\">(Details...)"
+
+#~ msgid "1 tracker from the company %2 (%3)"
+#~ msgid_plural "%1 trackers from the company %2 (%3)"
+#~ msgstr[0] "1 tracker van het bedrijf %2 (%3)"
+#~ msgstr[1] "%1 trackers van het bedrijf %2 (%3)"
+
+#~ msgid "Url:"
+#~ msgstr "Url:"
+
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgid "&Open With..."
+#~ msgstr "&Openen met..."
+
+#~ msgid "Do you want to all rules?"
+#~ msgstr "Wilt u alle regels verwijderen?"
+
+#~ msgid "KDIM: valid"
+#~ msgstr "KDIM: geldig"
+
+#~ msgid "Enable Mail Tracking Url"
+#~ msgstr "E-mail volgen URL inschakelen"
+
+#~ msgid "receiver was"
+#~ msgid_plural "receivers were"
+#~ msgstr[0] "ontvanger was"
+#~ msgstr[1] "ontvangers waren"
+
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "Volledige \"Aan\"-lijst verbergen"
+
+#~ msgid "Show full \"To\" list"
+#~ msgstr "Volledige \"Aan\"-lijst tonen"
+
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "Volledige \"Cc\"-lijst verbergen"
+
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "Volledige \"Cc\"-lijst tonen"
+
+#~ msgid "Hide attachment list."
+#~ msgstr "Lijst van bijlagen verbergen."
+
+#~ msgid "Show attachment list."
+#~ msgstr "Lijst van bijlagen tonen."
+
+#~ msgid ""
+#~ "Modifying an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr ""
+#~ "Het aanpassen van de bijlage kan een eventuele digitale handtekening van "
+#~ "dit bericht ongeldig maken."
+
+#~ msgid "Edit Attachment"
+#~ msgstr "Bijlage bewerken"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerken"
+
+#~ msgid "Allow to edit attachments of existing mails."
+#~ msgstr "Bewerken van bijlagen van bestaande e-mailberichten toestaan."
+
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "HTML-zijbalk tonen"
+
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "&HTML-zijbalk tonen"
+
+#~ msgid "Show user agent"
+#~ msgstr "E-mailprogramma tonen"
+
+#~ msgid ""
+#~ "Enable this option to get the User-Agent and X-Mailer header lines "
+#~ "displayed."
+#~ msgstr ""
+#~ "Schakel deze optie in om het gebruikte e-mailprogramma en kopregels van X-"
+#~ "Mailer te tonen."
+
+#~ msgid "Hide advertisement enabled"
+#~ msgstr "Advertenties verbergen ingeschakeld"
+
+#~ msgid "Update interval list of adblock"
+#~ msgstr "Intervallijst van adblock bijwerken"
+
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "E-mailprogramma tonen in elegante berichtkoppen"
+
+#~ msgctxt "display name for an unnamed attachment"
+#~ msgid "Unnamed"
+#~ msgstr "Naamloos"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "Naamloze plug-in"
+
+#~ msgid "No description available"
+#~ msgstr "Geen beschrijving beschikbaar"
+
+#~ msgid "Reply"
+#~ msgstr "Beantwoorden"
+
+#~ msgid "Reply to All"
+#~ msgstr "Allen beantwoorden"
+
+#~ msgid "Forward"
+#~ msgstr "Doorsturen"
+
+#~ msgid "Print"
+#~ msgstr "Afdrukken"
+
+#~ msgid "Print Preview"
+#~ msgstr "Afdrukvoorbeeld"
+
+#~ msgid "Move To Trash"
+#~ msgstr "Naar prullenbak verplaatsen"
+
+#~ msgid "Print Preview Message"
+#~ msgstr "Afdrukvoorbeeld afdrukken"
+
+#~ msgid "Replace smileys by emoticons"
+#~ msgstr "Smileys vervangen door emoticons"
+
+#~ msgid ""
+#~ "Enable this if you want smileys like :-) appearing in the message text to "
+#~ "be replaced by emoticons (small pictures)."
+#~ msgstr ""
+#~ "Schakel deze optie in om smileys zoals :-) in de tekst te laten vervangen "
+#~ "door emoticons (kleine pictogrammetjes)."
+
+#~ msgid "Replace smileys &by emoticons"
+#~ msgstr "Smileys vervangen &door emoticons"
+
+#~ msgid "Hide full address list"
+#~ msgstr "Volledige adreslijst verbergen"
+
+#~ msgid "Show full address list"
+#~ msgstr "Volledige adreslijst tonen"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "&Standaard"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "Toon de standaardlijst met berichtkoppen"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Ongeldige</b> ondertekening"
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Ongeldige</b> ondertekening."
+
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "Spamstatus in elegante berichtkoppen tonen"
+
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "Spamstatus &in elegante berichtkoppen tonen"
+
+#~ msgid "Outlook compatible invitation reply comments"
+#~ msgstr "Outlook-compatibel commentaar in antwoorden op uitnodigingen"
+
+#~ msgid ""
+#~ "When replying to invitations, send the reply comment in way that "
+#~ "Microsoft Outlook understands."
+#~ msgstr ""
+#~ "Commentaar in antwoorden op uitnodigingen zo versturen dat Microsoft "
+#~ "Outlook(tm) het begrijpt."
+
+#~ msgid "Show invitation update differences in the Outlook style"
+#~ msgstr "Bijwerkverschillen van invitaties tonen in de Outlook-stijl"
+
+#~ msgid ""
+#~ "When viewing invitation updates, show the differences in the Microsoft "
+#~ "Outlook style."
+#~ msgstr ""
+#~ "Bij bekijken van het bijwerken van uitnodigingen, de verschillen tonen in "
+#~ "de Microsoft Outlook-stijl."
+
+#~ msgid ""
+#~ "Send invitation reply comments in a way that Microsoft Outlook(tm) "
+#~ "understands."
+#~ msgstr ""
+#~ "Commentaar in antwoorden op uitnodigingen zo versturen dat Microsoft "
+#~ "Outlook(tm) het begrijpt."
+
+#~ msgid ""
+#~ "Display invitation update differences in the Microsoft Outlook(tm) style."
+#~ msgstr ""
+#~ "Bijwerkverschillen van uitnodigingen tonen in de Microsoft Outlook(tm)-"
+#~ "stijl."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Onjuiste crypto-plug-in."
+
+#~ msgid "No appropriate crypto plug-in was found."
+#~ msgstr "Geen geschikte Crypto-plug-in gevonden."
+
+#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#~ msgstr "Crypto-plug-in \"%1\" kan geen berichten ontcijferen."
+
+#~ msgid "Crypto plug-in \"%1\" could not decrypt the data."
+#~ msgstr "De crypto-plug-in \"%1\" kon de gegevens niet ontcijferen."
+
+#~ msgid "Error: %1"
+#~ msgstr "Fout: %1"
+
+#~ msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+#~ msgid "No %1 plug-in was found."
+#~ msgstr "Geen %1-plug-in gevonden."
+
+#~ msgid "Crypto plug-in \"%1\" cannot verify signatures."
+#~ msgstr "Crypto-plug-in \"%1\" kan geen handtekeningen verifiëren."
+
+#~ msgid ""
+#~ "The message is signed, but the validity of the signature cannot be "
+#~ "verified.<br />Reason: %1"
+#~ msgstr ""
+#~ "Het bericht is ondertekend, maar de geldigheid van de ondertekening kon "
+#~ "niet worden geverifieerd.<br />Reden: %1"
+
+#~ msgid "&Zoom In"
+#~ msgstr "In&zoomen"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "&Uitzoomen"
+
+#~ msgid "Reset"
+#~ msgstr "Resetten"
+
+#~ msgid "Zoom"
+#~ msgstr "Zoomen"
+
+#~ msgid "Close"
+#~ msgstr "Sluiten"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "&Zoeken:"
+
+#~ msgid "Text to search for"
+#~ msgstr "Te zoeken tekst"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Volgende"
+
+#~ msgid "Jump to next match"
+#~ msgstr "Spring naar volgende overeenkomst"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Vorige"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "Spring naar vorige overeenkomst"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "Wijzig zoekgedrag"
+
+#~ msgid "Case sensitive"
+#~ msgstr "Hoofdlettergevoelig"
+
+#~ msgid "Phrase not found"
+#~ msgstr "Uitdrukking niet gevonden"
+
+#~ msgid "Blockable Items"
+#~ msgstr "Blokkeerbare items"
+
+#~ msgid "No blockable element found."
+#~ msgstr "Geen te blokkeren element gevonden."
+
+#~ msgid "Filter"
+#~ msgstr "Filter"
+
+#~ msgid "Address"
+#~ msgstr "Adres"
+
+#~ msgid "Search..."
+#~ msgstr "Zoeken..."
+
+#~ msgid "Image"
+#~ msgstr "Afbeelding"
+
+#~ msgid "Script"
+#~ msgstr "Script"
+
+#~ msgid "Stylesheet"
+#~ msgstr "Stylesheet"
+
+#~ msgid "Font"
+#~ msgstr "Lettertype"
+
+#~ msgid "Frame"
+#~ msgstr "Frame"
+
+#~ msgid "XML Request"
+#~ msgstr "XML-request"
+
+#~ msgid "Object"
+#~ msgstr "Object"
+
+#~ msgid "Audio/Video"
+#~ msgstr "Audio/Video"
+
+#~ msgid "Popup window"
+#~ msgstr "Popup-venster"
+
+#~ msgid "Copy url"
+#~ msgstr "URL-adres kopiëren"
+
+#~ msgid "Copy filter"
+#~ msgstr "Filter kopiëren"
+
+#~ msgid "Block item..."
+#~ msgstr "Item blokkeren..."
+
+#~ msgid "Open"
+#~ msgstr "Openen"
+
+#~ msgid "Remove filter"
+#~ msgstr "Filter verwijderen"
+
+#~ msgid "Download new ad-block list was failed."
+#~ msgstr "Downloaden van nieuwe lijst voor Ad-Block is mislukt."
+
+#~ msgid "Download new ad-block list was done."
+#~ msgstr "Downloaden van nieuwe lijst voor Ad-Block gedaan."
+
+#~ msgid "Add subscription"
+#~ msgstr "Inschrijving toevoegen"
+
+#~ msgid "Show List"
+#~ msgstr "Lijst tonen"
+
+#~ msgid "Use default"
+#~ msgstr "Gebruik standaard"
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgid "Not"
+#~ msgstr "Nee"
+
+#~ msgid "Not subscription added..."
+#~ msgstr "Geen inschrijvingen toegevoegd..."
+
+#~ msgid ""
+#~ "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">more information</a>):"
+#~ msgstr ""
+#~ "<qt>Filterexpressie (bijv. <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">meer informatie</a>):"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " dag"
+#~ msgstr[1] " dagen"
+
+#~ msgid ""
+#~ "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~ "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~ "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~ "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~ "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~ "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes priority "
+#~ "over any blacklist (blocking) filter.<br><a href='%1'>%2</a></qt>"
+#~ msgstr ""
+#~ "<qt><p>Voer een filterexpressie in. Filters kunnen gedefinieerd worden "
+#~ "als ofwel:<ul><li>een shell-stijl joker, bijv. <tt>http://www.example.com/"
+#~ "ads*</tt>, de jokers<tt>*?[]</tt> kunnen worden gebruikt</li><li>een "
+#~ "volledige reguliere expressie door de tekenreeks te omgeven met '<tt>/</"
+#~ "tt>', bijv. <tt>/\\/(ad|banner)\\./ </tt></li></ul><p>Elke "
+#~ "filtertekenreeks kan worden voorafgegaan door '<tt>@@</tt>'als item op de "
+#~ "wittelijst (toestaan) elke overeenkomende URL, wat voorrang heeft over "
+#~ "een zwartelijst (blokkerings) filter.<br><a href='%1'>%2</a></qt>"
+
+#~ msgid "More information"
+#~ msgstr "Meer informatie"
+
+#~ msgid "Delete current list"
+#~ msgstr "Huidige lijst verwijderen"
+
+#~ msgid "All Files (*)"
+#~ msgstr "Alle bestanden (*)"
+
+#~ msgid "Show adblock list"
+#~ msgstr "Lijst met adblock's tonen"
+
+#~ msgid "Download..."
+#~ msgstr "Downloaden..."
+
+#~ msgid "An error occurs during download list: \"%1\""
+#~ msgstr "Er deed zich een fout voor tijdens het downloaden van lijst: \"%1\""
+
+#~ msgid "Filters:"
+#~ msgstr "Filters:"
+
+#~ msgid "&Blocking filter"
+#~ msgstr "Filter voor &blokkeren"
+
+#~ msgid "Exception Filter"
+#~ msgstr "Filter voor uitzonderingen"
+
+#~ msgid "Pattern"
+#~ msgstr "Patroon"
+
+#~ msgid "custom"
+#~ msgstr "aangepast"
+
+#~ msgid "Accept pattern only"
+#~ msgstr "Alleen patroon accepteren"
+
+#~ msgid "At the beginning of the address"
+#~ msgstr "Aan het begin van het adres"
+
+#~ msgid "At the end of address"
+#~ msgstr "Aan het eind van het adres"
+
+#~ msgid "First-part only"
+#~ msgstr "Alleen eerste deel"
+
+#~ msgid "Match case"
+#~ msgstr "Hoofd- kleine lettergevoelig"
+
+#~ msgid "Restrict to domain"
+#~ msgstr "Tot domein beperken"
+
+#~ msgid "Apply to:"
+#~ msgstr "Toepassen op:"
+
+#~ msgid "Collapse blocked:"
+#~ msgstr "Invouwen geblokkeerd:"
+
+#~ msgid "&Enable Ad Block"
+#~ msgstr "Ad-Block &inschakelen"
+
+#~ msgid "&Hide filtered elements"
+#~ msgstr "&Gefilterde afbeeldingen verbergen"
+
+#~ msgid "Automatic Filters"
+#~ msgstr "Automatische filters"
+
+#~ msgid "Add Filters subscriptions..."
+#~ msgstr "Inschrijvingen op filters toevoegen"
+
+#~ msgid "Remove subscription"
+#~ msgstr "Inschrijving verwijderen"
+
+#~ msgid "Update enabled automatic filters every:"
+#~ msgstr "Ingeschakelde automatische filters bijwerken elke:"
+
+#~ msgid "Show List..."
+#~ msgstr "Lijst tonen..."
+
+#~ msgid "Manual Filters"
+#~ msgstr "Handmatige filters"
+
+#~ msgid "Add filter expression"
+#~ msgstr "Filter-expressie toevoegen"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Import Filters..."
+#~ msgstr "Filters importeren..."
+
+#~ msgid "Search:"
+#~ msgstr "Zoeken:"
+
+#~ msgid "Remove filter expression"
+#~ msgstr "Filter-expressie verwijderen"
+
+#~ msgid "Remove Filter"
+#~ msgstr "Filter verwijderen"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "Alle overeenkomsten markeren"
+
+#~ msgid "Find in selection first"
+#~ msgstr "Eerst in selectie zoeken"
+
+#~ msgid "Zoom only text"
+#~ msgstr "Alleen tekst zoomen"
+
+#~ msgid "Open Blockable Items..."
+#~ msgstr "Blokkeerbare items openen"
+
+#~ msgid "Blocked by ad filter"
+#~ msgstr "Geblokkeerd door adv-filter"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "Alleen tekst zoomen"
+
+#~ msgid "No Audit Log available"
+#~ msgstr "Geen audit-log beschikbaar"
+
+#~ msgid "Error Retrieving Audit Log: %1"
+#~ msgstr "Fout bij het ophalen van de audit-log: %1"
+
+#~ msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+#~ msgid "Show Audit Log"
+#~ msgstr "Audit-log tonen"
+
+#~ msgid "The crypto engine returned no cleartext data."
+#~ msgstr "De crypto-engine gaf geen leesbare tekst terug."
+
+#~ msgid "New or changed: %1 (secret key available)"
+#~ msgstr "Nieuw of veranderd: %1 (geheime sleutel beschikbaar)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "Nieuw of veranderd: %1"
+
+#~ msgid "Crypto plug-in \"%1\" is not initialized."
+#~ msgstr "Crypto-plug-in %1 is niet geïnitialiseerd."
+
+#~ msgid "Expand Short URL"
+#~ msgstr "Expandeer ingekorte URL"
+
+#~ msgid "Headers:"
+#~ msgstr "Berichtkoppen:"
+
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "Eigen berichtkoppen instellen..."
+
+#~ msgid "Only show the headers listed below"
+#~ msgstr "Alleen de onderstaande berichtkoppen tonen"
+
+#~ msgid "Show all but hide the headers listed below"
+#~ msgstr "Alle behalve de onderstaande berichtkoppen tonen"
+
+#~ msgid "Header:"
+#~ msgstr "Berichtkop:"
+
+#~ msgid "Create ToDo"
+#~ msgstr "Te-doen aanmaken"
+
+#~| msgid "Create ToDo"
+#~ msgid "Create To-Do"
+#~ msgstr "Te-doen aanmaken"
+
+#~ msgid ""
+#~ "Show HTML colored quote (It can take some time on specific html email)"
+#~ msgstr ""
+#~ "HTML gekleurde aanhaling tonen (het kan enige tijd kosten bij specifieke "
+#~ "e-mail in HTML)"
+
+#~ msgid "Au&tomatic collapse level:"
+#~ msgstr "Au&tomatisch invouwen bij niveau:"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "&Alles"
+
+#~ msgid "Show all message headers"
+#~ msgstr "Toon alle berichtkoppen"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "&Beknopt"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "Toon een beknopte lijst van de berichtkoppen"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "&Eigen berichtkoppen"
+
+#~ msgid "Show custom headers"
+#~ msgstr "Toon eigen berichtkoppen"
+
+#~ msgid "To: "
+#~ msgstr "Aan: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "Zak&elijk"
+
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "Toon de lijst met berichtkoppen in een zakelijke opmaak"
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(opnieuw verzonden door %1)"
+
+#~ msgid "(receiver was %1)"
+#~ msgstr "(ontvanger was %1)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Aan: "
+
+#~ msgid "User-Agent: "
+#~ msgstr "Programma: "
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-Mailer: "
+
+#~ msgid "Bugzilla: "
+#~ msgstr "Bugzilla: "
+
+#~ msgid "MDN To: "
+#~ msgstr "MDN aan: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "E&legant"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "Toon de lijst met berichtkoppen in een elegante opmaak"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "&Uitgebreid"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "Toon een uitgebreide lijst met berichtkoppen"
+
+#~ msgid "Event:"
+#~ msgstr "Afspraak:"
+
+#~ msgid "Calendar where the new event will be stored."
+#~ msgstr "Agenda waar de nieuwe afspraak zal worden opgeslagen."
+
+#~ msgid "Calendar where the new event will be stored"
+#~ msgstr "Agenda waar de nieuwe afspraak zal worden opgeslagen"
+
+#~ msgid "Start:"
+#~ msgstr "Begin:"
+
+#~ msgid "Select start time for event."
+#~ msgstr "Begintijd van gebeurtenis selecteren."
+
+#~ msgid "End:"
+#~ msgstr "Einde:"
+
+#~ msgid "Select end time for event."
+#~ msgstr "Eindtijd van gebeurtenis selecteren."
+
+#~ msgid "&Save"
+#~ msgstr "Op&slaan"
+
+#~ msgid "Create new event and close this widget."
+#~ msgstr "Nieuwe afspraak maken en dit widget sluiten."
+
+#~ msgid "Open &editor..."
+#~ msgstr "&Editor openen..."
+
+#~ msgid "Open event editor, where more details can be changed."
+#~ msgstr ""
+#~ "Editor voor afspraak openen, waar meer details kunnen worden gewijzigd."
+
+#~ msgid "Close the widget for creating new events."
+#~ msgstr "Widget sluiten om nieuwe afspraak aan te maken."
+
+#~ msgid "Create Event..."
+#~ msgstr "Gebeurtenis aanmaken..."
+
+#~ msgid "Create Event"
+#~ msgstr "Gebeurtenis aanmaken"
+
+#~ msgid "Allows you to create a calendar Event"
+#~ msgstr "Maakt het mogelijk om een agendagebeurtenis aan te maken"
+
+#~ msgid "Note:"
+#~ msgstr "Notitie:"
+
+#~ msgid "Create new note and close this widget."
+#~ msgstr "Nieuwe notitie maken en dit widget sluiten."
+
+#~ msgid "Close the widget for creating new notes."
+#~ msgstr "Widget voor nieuwe notities aanmaken sluiten."
+
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "Notitie bewerken"
+
+#~ msgctxt "create a new note out of this message"
+#~ msgid "Create Note"
+#~ msgstr "Notitie aanmaken"
+
+#~ msgid "Allows you to create a note from this message"
+#~ msgstr "Maakt het mogelijk om met dit bericht een notitie aan te maken"
+
+#~ msgid ""
+#~ "This option starts an editor to create a note. Then you can edit the note "
+#~ "to your liking before saving it."
+#~ msgstr ""
+#~ "Deze optie start een tekstbewerker om een notitie aan te maken. Daarna "
+#~ "kunt u de notitie naar wens aanpassen voordat u deze opslaat."
+
+#~ msgid "Todo:"
+#~ msgstr "Te-doen:"
+
+#~ msgid "Todo list where the new task will be stored."
+#~ msgstr "Takenlijst waar de nieuwe taak zal worden opgeslagen."
+
+#~ msgid "Todo list where the new task will be stored"
+#~ msgstr "Takenlijst waar de nieuwe taak zal worden opgeslagen"
+
+#~ msgid "Create new todo and close this widget."
+#~ msgstr "Nieuwe taak aanmaken en dit widget sluiten."
+
+#~ msgid "Open todo editor, where more details can be changed."
+#~ msgstr "Editor voor taak openen, waar meer details kunnen worden gewijzigd."
+
+#~ msgid "Close the widget for creating new todos."
+#~ msgstr "Widget sluiten om nieuwe taken aan te maken"
+
+#~ msgid "Reply to \"%1\""
+#~ msgstr "Beantwoorden aan \"%1\""
+
+#~ msgctxt ""
+#~ "%1 is summary of the todo, %2 is name of the folder in which it is stored"
+#~ msgid "New todo '%1' was added to task list '%2'"
+#~ msgstr "Nieuwe taak '%1' is toegevoegd aan takenlijst '%2'"
+
+#~ msgid "Create To-do"
+#~ msgstr "Te-doen aanmaken"
+
+#~ msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgstr ""
+#~ "Maakt het mogelijk om met dit bericht een agendataak of herinnering aan "
+#~ "te maken"
+
+#~ msgid ""
+#~ "This option starts the KOrganizer to-do editor with initial values taken "
+#~ "from the currently selected message. Then you can edit the to-do to your "
+#~ "liking before saving it to your calendar."
+#~ msgstr ""
+#~ "Deze optie start de takenbewerker van KOrganizer met de gegevens uit het "
+#~ "huidige geselecteerde bericht. Daarna kunt u de taak naar wens aanpassen "
+#~ "voordat u die in uw agenda opslaat."
+
+#~ msgid "Translate..."
+#~ msgstr "Vertalen..."
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-obtain-keys\" function. Please "
+#~ "report this bug."
+#~ msgstr ""
+#~ "Het Chiasmus-backend biedt geen functie \"x-obtain-keys\". Rapporteer "
+#~ "deze bug a.u.b."
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "Fout in Chiasmus-backend"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-obtain-keys\" "
+#~ "function did not return a string list. Please report this bug."
+#~ msgstr ""
+#~ "Het Chiasmus-backend retourneerde een onverwachte waarde. De functie \"x-"
+#~ "obtain-keys\" resulteerde niet in een lijst met strings. Rapporteer deze "
+#~ "bug a.u.b."
+
+#~ msgid ""
+#~ "No keys have been found. Please check that a valid key path has been set "
+#~ "in the Chiasmus configuration."
+#~ msgstr ""
+#~ "Er zijn geen sleutels gevonden. Controleer of een geldig pad naar de "
+#~ "sleutels is opgegeven bij het instellen van Chiasmus."
+
+#~ msgid "Chiasmus Decryption Key Selection"
+#~ msgstr "Chiasmus-ontcijferingssleutelselectie"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-decrypt\" function. Please report "
+#~ "this bug."
+#~ msgstr ""
+#~ "Het Chiasmus-backend biedt geen functie \"x-decrypt\". Rapporteer deze "
+#~ "bug a.u.b."
+
+#~ msgid ""
+#~ "The \"x-decrypt\" function does not accept the expected parameters. "
+#~ "Please report this bug."
+#~ msgstr ""
+#~ "De functie \"x-decrypt\" accepteert niet de verwachte parameters. "
+#~ "Rapporteer a.u.b. deze bug."
+
+#~ msgid "Chiasmus Decryption Error"
+#~ msgstr "Ontcijferingsfout in Chiasmus"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-decrypt\" function "
+#~ "did not return a byte array. Please report this bug."
+#~ msgstr ""
+#~ "Onverwachte uitvoerwaarde van het Chiasmus-backend. De functie \"x-decrypt"
+#~ "\" resulteerde niet in een byte array. Rapporteer deze bug a.u.b."
+
+#~ msgid "Please select the Chiasmus key file to use:"
+#~ msgstr "Selecteer het Chiasmus-sleutelbestand voor het gebruik van:"
+
+#~ msgid "Additional arguments for chiasmus:"
+#~ msgstr "Extra argumenten voor chiasmus:"
+
+#~ msgid "Decrypt With Chiasmus..."
+#~ msgstr "Ontcijferen met Chiasmus..."
+
+#~ msgid "Event about to \"%1\""
+#~ msgstr "Afspraak op het punt te \"%1\""
+
+#~ msgid "Configure Gravatar"
+#~ msgstr "Gravatar instellen"
+
+#~ msgid "Use Default Image"
+#~ msgstr "Standaard afbeelding gebruiken"
+
+#~ msgid "Use HTTPS"
+#~ msgstr "HTTPS gebruiken"
+
+#~ msgid "Use Libravatar"
+#~ msgstr "Libravatar gebruiken"
+
+#~ msgid "Fallback to Gravatar"
+#~ msgstr "Op Gravatar terugvallen"
+
+#~ msgid "Gravatar Cache Size:"
+#~ msgstr "Gravatar-cachegrootte:"
+
+#~ msgctxt "add space before image"
+#~ msgid " image"
+#~ msgid_plural " images"
+#~ msgstr[0] " afbeelding"
+#~ msgstr[1] " afbeeldingen"
+
+#~ msgid "Clear Gravatar Cache"
+#~ msgstr "Gravatar-cache legen"
+
+#~ msgid "Enable Gravatar Support"
+#~ msgstr "Gravatar-ondersteuning activeren"
+
+#~ msgid "Toggle Caret Browsing"
+#~ msgstr "Caret-bladeren omschakelen"
+
+#~ msgid "Caret Browsing will be activated. Switch off with F7 shortcut."
+#~ msgstr ""
+#~ "Caret-browsing zal geactiveerd worden. Schakel dit uit met de F7-"
+#~ "sneltoets."
+
+#~ msgid "Activate Caret Browsing"
+#~ msgstr "Caret-browsing activeren"
+
+#~ msgid "Allow to delete attachments of existing mails."
+#~ msgstr "Verwijderen van bijlagen van bestaande e-mailberichten toestaan."
+
+#~ msgid "Message Structure Viewer Placement"
+#~ msgstr "Plaatsing van berichtenstructuurweergave"
+
+#~ msgid "Above the message pane"
+#~ msgstr "Boven het berichtvak"
+
+#~ msgid "Below the message pane"
+#~ msgstr "Onder het berichtvak"
+
+#~ msgid "Number of addresses to show before collapsing"
+#~ msgstr "Aantal te tonen adressen vóór invouwen"
+
+#~ msgid "Fallback character e&ncoding:"
+#~ msgstr "Secu&ndaire tekensetcodering:"
+
+#~ msgid ""
+#~ "When encountering a Toltec scheduling message, display a custom "
+#~ "replacement text for it."
+#~ msgstr ""
+#~ "Toon een aangepaste vervangende tekst in plaats van een aangetroffen "
+#~ "Toltec-taakplanningbericht."
+
+#~ msgid ""
+#~ "The text that will be displayed as a replacement when encountering Toltec "
+#~ "scheduling messages."
+#~ msgstr ""
+#~ "De tekst die getoond wordt als vervanging, wanneer er een Toltec-"
+#~ "taakplanningbericht aangetroffen wordt."
+
+#~ msgid ""
+#~ "This message is a <i>Toltec</i> Groupware object, it can only be viewed "
+#~ "with Microsoft Outlook in combination with the Toltec connector."
+#~ msgstr ""
+#~ "Dit bericht is een <i>Toltec</i> groupware-object; het kan alleen bekeken "
+#~ "worden met Microsoft Outlook in combinatie met de toltec-connector."
+
+#~ msgid "Show Raw Message"
+#~ msgstr "Toon onbewerkt bericht"
+
+#~ msgid "Use Https"
+#~ msgstr "HTTPS gebruiken"
+
+#~| msgid "*|all files (*)"
+#~ msgid "all files (*)"
+#~ msgstr "Alle bestanden (*)"
+
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Opstarten van tekst-naar-spraak-service van Jovie is mislukt"
+
+#~ msgid "sent: "
+#~ msgstr "verzonden: "
+
+#~ msgid "Encrypted data not shown"
+#~ msgstr "Versleutelde gegevens worden niet getoond"
+
+#~ msgid ""
+#~ "Beginning of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Begin van bericht bereikt.\n"
+#~ "Frase '%1' is niet gevonden."
+
+#~ msgid ""
+#~ "End of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Einde van bericht bereikt.\n"
+#~ "Frase '%1' is niet gevonden."
+
+#~ msgid "&Cancel"
+#~ msgstr "&Annuleren"
+
+#~ msgid "The most recently selected folder used for Events."
+#~ msgstr "De meest recent geselecteerde map gebruikt voor gebeurtenissen."
+
+#~ msgid "The most recently selected folder used for Todos."
+#~ msgstr "De meest recent geselecteerde map gebruikt voor Te-doen's."
+
+#~ msgid "Select collection where Todo will stored."
+#~ msgstr "De verzameling selecteren waar de te-doen zal worden opgeslagen."
+
+#~ msgid "The message could not be decrypted."
+#~ msgstr "Het bericht kon niet worden ontcijferd."
+
+#~ msgid ""
+#~ "<html><head/><body><p><span style=\" font-weight:600;\">Blocked elements</"
+#~ "span></p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p><span style=\" font-weight:600;\">Geblokkeerde "
+#~ "elementen</span></p></body></html>"
+
+#~ msgid "<b>Hidden elements</b>"
+#~ msgstr "<b>Verborgen elementen</b>"
+
+#~ msgid "TextLabel"
+#~ msgstr "Tekstlabel"
+
+#~ msgctxt "@title:window"
+#~ msgid "Ad Block Settings"
+#~ msgstr "Ad-Block instellingen"
+
+#~ msgid ""
+#~ "Could not write the file %1:\n"
+#~ "\"%2\" is the detailed error description."
+#~ msgstr ""
+#~ "Kon bestand %1 niet wegschrijven:\n"
+#~ "\"%2\" is de gedetailleerde foutbeschrijving."
+
+#~ msgid "View Source Error"
+#~ msgstr "Fout in bron tonen"
+
+#~ msgid "Header to show:"
+#~ msgstr "Te tonen berichtkop:"
+
+#~ msgid "Header to hide:"
+#~ msgstr "Te verbergen berichtkop:"
+
+#~ msgid "Hostname from href defines ip '%1'"
+#~ msgstr "Hostnaam uit href definieert IP-adres '%1'"
+
+#~ msgid "Hostname from href contains hexadecimal value '%1'"
+#~ msgstr "Hostnaam uit href bevat hexadecimale waarde '%1'"
+
+#~ msgid "Href '%1' has a redirection"
+#~ msgstr "Href '%1' heeft een doorverwijzing"
+
+#~ msgid "Href '%1' contains multiple http://"
+#~ msgstr "Href '%1' bevat meerdere http://"
+
+#~ msgid "Message contains form element"
+#~ msgstr "Bericht bevat een element van een formulier"
+
+#~ msgid "This message may be a scam."
+#~ msgstr "Dit bericht is mogelijk vals."
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "Details tonen"
+
+#~ msgid "General"
+#~ msgstr "Algemeen"
+
+#~ msgid "File Already Exists"
+#~ msgstr "Bestand bestaat reeds"
+
+#~ msgid ""
+#~ "A file named <filename>%1</filename> already exists. Do you want to "
+#~ "overwrite it?"
+#~ msgstr ""
+#~ "Een bestand met de naam <filename>%1</filename> bestaat al. Wilt u het "
+#~ "overschrijven?"
+
+#~ msgid "Suggest New &Name"
+#~ msgstr "Nieuwe &naam voorstellen"
+
+#~ msgid "&Overwrite"
+#~ msgstr "&Overschrijven"
+
+#~ msgid "&Rename"
+#~ msgstr "He&rnoemen"
+
+#~ msgid "Appl&y to All"
+#~ msgstr "Op &alles toepassen"
+
+#~ msgid "Detect language"
+#~ msgstr "Taal detecteren"
+
+#~ msgid "English"
+#~ msgstr "Engels"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "Vereenvoudigd Chinees"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "Traditioneel Chinees"
+
+#~ msgid "Dutch"
+#~ msgstr "Nederlands"
+
+#~ msgid "French"
+#~ msgstr "Frans"
+
+#~ msgid "German"
+#~ msgstr "Duits"
+
+#~ msgid "Greek"
+#~ msgstr "Grieks"
+
+#~ msgid "Italian"
+#~ msgstr "Italiaans"
+
+#~ msgid "Japanese"
+#~ msgstr "Japans"
+
+#~ msgid "Korean"
+#~ msgstr "Koreaans"
+
+#~ msgid "Portuguese"
+#~ msgstr "Portugees"
+
+#~ msgid "Russian"
+#~ msgstr "Russisch"
+
+#~ msgid "Spanish"
+#~ msgstr "Spaans"
+
+#~ msgid "Afrikaans"
+#~ msgstr "Afrikaans"
+
+#~ msgid "Albanian"
+#~ msgstr "Albanisch"
+
+#~ msgid "Arabic"
+#~ msgstr "Arabisch"
+
+#~ msgid "Armenian"
+#~ msgstr "Armeens"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "Azerbeidjaans"
+
+#~ msgid "Basque"
+#~ msgstr "Baskisch"
+
+#~ msgid "Belarusian"
+#~ msgstr "Witrussisch"
+
+#~ msgid "Bulgarian"
+#~ msgstr "Bulgaars"
+
+#~ msgid "Catalan"
+#~ msgstr "Catalaans"
+
+#~ msgid "Croatian"
+#~ msgstr "Kroatisch"
+
+#~ msgid "Czech"
+#~ msgstr "Tsjechisch"
+
+#~ msgid "Danish"
+#~ msgstr "Deens"
+
+#~ msgid "Estonian"
+#~ msgstr "Estlands"
+
+#~ msgid "Filipino"
+#~ msgstr "Filipijns"
+
+#~ msgid "Finnish"
+#~ msgstr "Fins"
+
+#~ msgid "Galician"
+#~ msgstr "Galicisch"
+
+#~ msgid "Georgian"
+#~ msgstr "Georgisch"
+
+#~ msgid "Haitian Creole"
+#~ msgstr "Haïtiaans Creools"
+
+#~ msgid "Hebrew"
+#~ msgstr "Hebreeuws"
+
+#~ msgid "Hindi"
+#~ msgstr "Hindi"
+
+#~ msgid "Hungarian"
+#~ msgstr "Hongaars"
+
+#~ msgid "Icelandic"
+#~ msgstr "IJslands"
+
+#~ msgid "Indonesian"
+#~ msgstr "Indonesisch"
+
+#~ msgid "Irish"
+#~ msgstr "Iers"
+
+#~ msgid "Latvian"
+#~ msgstr "Lets"
+
+#~ msgid "Lithuanian"
+#~ msgstr "Litouws"
+
+#~ msgid "Macedonian"
+#~ msgstr "Macedonisch"
+
+#~ msgid "Malay"
+#~ msgstr "Maleis"
+
+#~ msgid "Maltese"
+#~ msgstr "Maltees"
+
+#~ msgid "Norwegian"
+#~ msgstr "Noors"
+
+#~ msgid "Persian"
+#~ msgstr "Perzisch"
+
+#~ msgid "Polish"
+#~ msgstr "Pools"
+
+#~ msgid "Romanian"
+#~ msgstr "Roemeens"
+
+#~ msgid "Serbian"
+#~ msgstr "Servisch"
+
+#~ msgid "Slovak"
+#~ msgstr "Slowaaks"
+
+#~ msgid "Slovenian"
+#~ msgstr "Sloveens"
+
+#~ msgid "Swahili"
+#~ msgstr "Swahili"
+
+#~ msgid "Swedish"
+#~ msgstr "Zweeds"
+
+#~ msgid "Thai"
+#~ msgstr "Thais"
+
+#~ msgid "Turkish"
+#~ msgstr "Turks"
+
+#~ msgid "Ukrainian"
+#~ msgstr "Oekraïens"
+
+#~ msgid "Urdu"
+#~ msgstr "Urdu"
+
+#~ msgid "Vietnamese"
+#~ msgstr "Vietnamees"
+
+#~ msgid "Welsh"
+#~ msgstr "Welsh"
+
+#~ msgid "Yiddish"
+#~ msgstr "Yiddish"
+
+#~ msgctxt ""
+#~ "Invert language choices so that from becomes to and to becomes from"
+#~ msgid "Invert"
+#~ msgstr "Omkeren"
+
+#~ msgid "Clear"
+#~ msgstr "Wissen"
+
+#~ msgid "Translate"
+#~ msgstr "Vertalen"
+
+#~ msgid "Drag text that you want to translate."
+#~ msgstr "Tekst verslepen die u wilt vertalen."
+
+#~ msgid "Overwrite &All"
+#~ msgstr "&Alles overschrijven"
+
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid "<b><br />M<br />e<br />s<br />s<br />a<br />g<br />e</b></qt>"
+#~ msgstr "<b><br />B<br />e<br />r<br />i<br />c<br />h<br />t</b></qt>"
+
+#, fuzzy
+#~| msgid "Viewer settings"
+#~ msgid "Viewertest_Gui"
+#~ msgstr "Viewerinstellingen"
+
+#~ msgid "Mailreader"
+#~ msgstr "E-maillezer"
+
+#~ msgid "( body part )"
+#~ msgstr "( inhoud )"
+
+#~ msgid ""
+#~ "[KMail: Attachment contains binary data. Trying to show first character.]"
+#~ msgid_plural ""
+#~ "[KMail: Attachment contains binary data. Trying to show first %1 "
+#~ "characters.]"
+#~ msgstr[0] ""
+#~ "[KMail: de bijlage bevat binaire gegevens. Geprobeerd wordt het eerste "
+#~ "teken te tonen.]"
+#~ msgstr[1] ""
+#~ "[KMail: de bijlage bevat binaire gegevens. Geprobeerd wordt de eerste %1 "
+#~ "tekens te tonen.]"
+
+#~ msgctxt "To field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Aan: "
+
+#, fuzzy
+#~| msgid ""
+#~| "Some emails, especially those generated automatically, do not specify "
+#~| "the character encoding which needs to be used to properly display them. "
+#~| "In such cases a fallback character encoding will be used, which you can "
+#~| "configure here. Set it to the character encoding most commonly used in "
+#~| "your part of the world. As a default the encoding configured for the "
+#~| "whole system is used."
+#~ msgid ""
+#~ "Some emails, especially those generated automatically, do not specify the "
+#~ "character encoding which needs to be used to properly display them. In "
+#~ "such cases a fallback character encoding will be used, which you can "
+#~ "configure here. Set it to the character encoding most commonly used in "
+#~ "your part of the world. As a default the encoding configured for the "
+#~ "whole system is used."
+#~ msgstr ""
+#~ "Sommige (vooral automatisch gegenereerde) e-mailberichten geven niet op "
+#~ "welke tekensetcodering is gebruikt, die nodig is om zo'n bericht goed "
+#~ "weer te geven. In zulke gevallen kunt u hier een vervangende codering "
+#~ "instellen. Stel de codering in die het meest gebruikt wordt in uw deel "
+#~ "van de wereld. Als standaard wordt de codering ingesteld voor het hele "
+#~ "systeem gebruikt."
+
+#, fuzzy
+#~| msgid ""
+#~| "Changing this from its default 'Auto' will force the use of the "
+#~| "specified encoding for all emails, regardless of what they specify "
+#~| "themselves."
+#~ msgid ""
+#~ "Changing this from its default 'Auto' will force the use of the specified "
+#~ "encoding for all emails, regardless of what they specify themselves."
+#~ msgstr ""
+#~ "Wanneer u dit op iets anders instelt dan de standaard, zal door 'Auto' de "
+#~ "opgegeven tekensetcodering worden afgedwongen voor alle e-mailberichten, "
+#~ "ongeacht wat in die berichten zelf is opgegeven."
+
+#~ msgid "Failed to parse vCard."
+#~ msgstr "Kon vCard niet lezen."
+
+#~ msgid "The email client for the K Desktop Environment."
+#~ msgstr "Het e-mailprogramma van de K Desktop Environment."
+
+#~ msgctxt "message encoding type"
+#~ msgid "None (7-bit text)"
+#~ msgstr "Geen (7-bits tekst)"
+
+#~ msgctxt "message encoding type"
+#~ msgid "None (8-bit text)"
+#~ msgstr "Geen (8-bits tekst)"
+
+#~ msgctxt "message encoding type"
+#~ msgid "Quoted Printable"
+#~ msgstr "\"Quoted Printable\""
+
+#~ msgctxt "message encoding type"
+#~ msgid "Base 64"
+#~ msgstr "Base 64"
+
+#~ msgid "Message Part Properties"
+#~ msgstr "Eigenschappen van berichtonderdelen"
+
+#~ msgid ""
+#~ "<qt><p>The <em>MIME type</em> of the file:</p><p>normally, you do not "
+#~ "need to touch this setting, since the type of the file is automatically "
+#~ "checked; but, sometimes, %1 may not detect the type correctly -- here is "
+#~ "where you can fix that.</p></qt>"
+#~ msgstr ""
+#~ "<qt> <p>Het <em>MIME-bestandstype</em>.</p> <p>Normaal gesproken hoeft u "
+#~ "deze instelling niet te wijzigen, aangezien het bestandstype automatisch "
+#~ "wordt gecontroleerd. Maar soms detecteert %1 het type niet correct. Hier "
+#~ "kunt u dat dan herstellen.</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>The size of the part:</p><p>sometimes, %1 will only give an "
+#~ "estimated size here, because calculating the exact size would take too "
+#~ "much time; when this is the case, it will be made visible by adding "
+#~ "\"(est.)\" to the size displayed.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p> De grootte van het berichtonderdeel.</p> <p>Soms zal %1 alleen "
+#~ "een geschatte grootte geven, omdat het berekenen van de exacte grootte "
+#~ "teveel tijd vergt. Als dit het geval is, wordt \"(ca.)\" vermeld bij de "
+#~ "weergegeven grootte.</p></qt>"
+
+#~ msgctxt "file name of the attachment."
+#~ msgid "&Name:"
+#~ msgstr "&Naam:"
+
+#~ msgid ""
+#~ "<qt><p>The file name of the part:</p><p>although this defaults to the "
+#~ "name of the attached file, it does not specify the file to be attached; "
+#~ "rather, it suggests a file name to be used by the recipient's mail agent "
+#~ "when saving the part to disk.</p></qt>"
+#~ msgstr ""
+#~ "<qt> <p>De bestandsnaam van het berichtonderdeel:</p> <p>Alhoewel dit "
+#~ "standaard de naam is van het bijgevoegde bestand, wordt hiermee niet het "
+#~ "bestand bedoeld dat moet worden bijgevoegd, maar suggereert dit een "
+#~ "bestandsnaam die gebruikt moet worden door het e-mailprogramma van de "
+#~ "geadresseerde als deze de berichtonderdeel op de schijf opslaat.</p></qt>"
+
+#~ msgid "&Description:"
+#~ msgstr "B&eschrijving:"
+
+#~ msgid ""
+#~ "<qt><p>A description of the part:</p><p>this is just an informational "
+#~ "description of the part, much like the Subject is for the whole message; "
+#~ "most mail agents will show this information in their message previews "
+#~ "alongside the attachment's icon.</p></qt>"
+#~ msgstr ""
+#~ "<qt> <p>Een beschrijving van het berichtonderdeel:</p> <p>Dit is gewoon "
+#~ "een informele beschrijving van het onderdeel, ongeveer zoals het "
+#~ "onderwerp van het gehele e-mailbericht. De meeste e-mailprogramma's "
+#~ "zullen deze informatie vermelden in hun berichtvoorbeeld, naast het "
+#~ "pictogram van de bijlage.</p></qt>"
+
+#~ msgid "&Encoding:"
+#~ msgstr "Cod&ering:"
+
+#~ msgid ""
+#~ "<qt><p>The transport encoding of this part:</p><p>normally, you do not "
+#~ "need to change this, since %1 will use a decent default encoding, "
+#~ "depending on the MIME type; yet, sometimes, you can significantly reduce "
+#~ "the size of the resulting message, e.g. if a PostScript file does not "
+#~ "contain binary data, but consists of pure text -- in this case, choosing "
+#~ "\"quoted-printable\" over the default \"base64\" will save up to 25% in "
+#~ "resulting message size.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>De transportcodering voor dit berichtonderdeel.</p> <p>Normaal "
+#~ "gesproken hoeft u die niet te wijzigen, aangezien %1 een nette "
+#~ "standaardcodering gebruikt, gebaseerd op het MIME-type. Toch kunt u soms "
+#~ "de grootte van het uiteindelijke bericht aanzienlijk verkleinen. "
+#~ "Bijvoorbeeld, als een PostScript-bestand geen binaire gegevens bevat, "
+#~ "maar alleen pure tekst --in dat geval bespaart u tot 25% van de grootte "
+#~ "van het bericht door de standaardcodering \"base64\" te vervangen door "
+#~ "\"quoted-printable\".</p></qt>"
+
+#~ msgid "Suggest &automatic display"
+#~ msgstr "&Automatische weergave voorstellen"
+
+#~ msgid ""
+#~ "<qt><p>Check this option if you want to suggest to the recipient the "
+#~ "automatic (inline) display of this part in the message preview, instead "
+#~ "of the default icon view;</p><p>technically, this is carried out by "
+#~ "setting this part's <em>Content-Disposition</em> header field to \"inline"
+#~ "\" instead of the default \"attachment\".</p></qt>"
+#~ msgstr ""
+#~ "<qt> <p>Selecteer deze optie als u de geadresseerde wilt voorstellen om "
+#~ "het berichtonderdeel automatisch (ingebed) te laten weergeven in het "
+#~ "voorbeeldvenster, in plaats van het standaard pictogram. </p><p> "
+#~ "Technisch gezien wordt dit gedaan door het kopschriftveld <em>Content-"
+#~ "Disposition</em> van dit onderdeel  op \"in de tekst\" te zetten in "
+#~ "plaats van het standaard gebruikte \"aanhangsel\".</p></qt>"
+
+#~ msgid "&Sign this part"
+#~ msgstr "Dit berichtonderdeel &ondertekenen"
+
+#~ msgid ""
+#~ "<qt><p>Check this option if you want this message part to be signed;</"
+#~ "p><p>the signature will be made with the key that you associated with the "
+#~ "currently-selected identity.</p></qt>"
+#~ msgstr ""
+#~ "<qt> <p>Selecteer deze optie als u wilt dat dit berichtonderdeel wordt "
+#~ "ondertekend.</p> <p>De ondertekening wordt gemaakt met de sleutel die is "
+#~ "geassocieerd met de momenteel geselecteerde identiteit.</p></qt>"
+
+#~ msgid "Encr&ypt this part"
+#~ msgstr "Dit bericht&onderdeel versleutelen"
+
+#~ msgid ""
+#~ "<qt><p>Check this option if you want this message part to be encrypted;</"
+#~ "p><p>the part will be encrypted for the recipients of this message</p></"
+#~ "qt>"
+#~ msgstr ""
+#~ "<qt> <p>Selecteer deze optie als u wilt dat dit berichtonderdeel wordt "
+#~ "versleuteld.</p> <p>Het berichtonderdeel zal worden versleuteld voor de "
+#~ "geadresseerden van dit bericht.</p></qt>"
+
+#~ msgctxt "%1: a filesize incl. unit (e.g. \"1.3 KB\")"
+#~ msgid "%1 (est.)"
+#~ msgstr "%1 (gesch.)"
+
+#~ msgid "Attachment #%1 (unnamed)"
+#~ msgstr "Bijlage #%1 (naamloos)"

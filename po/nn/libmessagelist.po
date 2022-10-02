@@ -1,0 +1,1898 @@
+# Translation of libmessagelist to Norwegian Nynorsk
+#
+# Gaute Hvoslef Kvalnes <gaute@verdsveven.com>, 1999, 2000, 2002, 2003, 2004, 2005.
+# Axel Bojer <fri_programvare@bojer.no>, 2004.
+# Håvard Korsvoll <korsvoll@skulelinux.no>, 2004.
+# Karl Ove Hufthammer <karl@huftis.org>, 2005, 2006, 2007, 2008, 2009, 2012, 2021.
+# Eirik U. Birkeland <eirbir@gmail.com>, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2021-02-28 20:11+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.12.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: core/aggregation.cpp:178
+#, kde-format
+msgctxt "No grouping of messages"
+msgid "None"
+msgstr "Ingen"
+
+#: core/aggregation.cpp:179
+#, kde-format
+msgid "By Exact Date (of Thread Leaders)"
+msgstr "Etter nøyaktig dato (på trådleiarar)"
+
+#: core/aggregation.cpp:180
+#, kde-format
+msgid "By Smart Date Ranges (of Thread Leaders)"
+msgstr "Etter avanserte datoområde (på trådleiarar)"
+
+#: core/aggregation.cpp:181 core/sortorder.cpp:70
+#, kde-format
+msgid "By Smart Sender/Receiver"
+msgstr "Etter avansert sendar og mottakar"
+
+#: core/aggregation.cpp:182 core/sortorder.cpp:68
+#, kde-format
+msgid "By Sender"
+msgstr "Etter avsendar"
+
+#: core/aggregation.cpp:183 core/sortorder.cpp:69
+#, kde-format
+msgid "By Receiver"
+msgstr "Etter mottakar"
+
+#: core/aggregation.cpp:192
+#, kde-format
+msgid "Never Expand Groups"
+msgstr "Utvid aldri grupper"
+
+#: core/aggregation.cpp:194
+#, kde-format
+msgid "Expand Recent Groups"
+msgstr "Utvid nyleg aktive grupper"
+
+#: core/aggregation.cpp:196
+#, kde-format
+msgid "Always Expand Groups"
+msgstr "Utvid alltid grupper"
+
+#: core/aggregation.cpp:202
+#, kde-format
+msgctxt "No threading of messages"
+msgid "None"
+msgstr "Ingen"
+
+#: core/aggregation.cpp:203
+#, kde-format
+msgid "Perfect Only"
+msgstr "Berre fullstendig"
+
+#: core/aggregation.cpp:204
+#, kde-format
+msgid "Perfect and by References"
+msgstr "Fullstendig og etter referansar"
+
+#: core/aggregation.cpp:205
+#, kde-format
+msgid "Perfect, by References and by Subject"
+msgstr "Fullstendig, etter referansar og emne"
+
+#: core/aggregation.cpp:214
+#, kde-format
+msgid "Topmost Message"
+msgstr "Øvste melding"
+
+#: core/aggregation.cpp:218
+#, kde-format
+msgid "Most Recent Message"
+msgstr "Mest nylege melding"
+
+#: core/aggregation.cpp:228
+#, kde-format
+msgid "Never Expand Threads"
+msgstr "Utvid aldri trådar"
+
+#: core/aggregation.cpp:229
+#, kde-format
+msgid "Expand Threads With Unread Messages"
+msgstr "Utvid trådar med ulesne meldingar"
+
+#: core/aggregation.cpp:230
+#, kde-format
+msgid "Expand Threads With Unread or Important Messages"
+msgstr "Utvid trådar med ulesne eller viktige meldingar"
+
+#: core/aggregation.cpp:231
+#, kde-format
+msgid "Always Expand Threads"
+msgstr "Utvid alltid trådar"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Interactivity"
+msgstr "Føretrekk interaktivitet"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Speed"
+msgstr "Føretrekk fart"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Batch Job (No Interactivity)"
+msgstr "Ikkje interaktiv"
+
+#: core/item.cpp:252 core/messageitem.cpp:538
+#, kde-format
+msgctxt "Status of an item"
+msgid "Read"
+msgstr "Lesen"
+
+#: core/item.cpp:254 core/messageitem.cpp:538
+#, kde-format
+msgctxt "Status of an item"
+msgid "Unread"
+msgstr "Ulesen"
+
+#: core/item.cpp:258
+#, kde-format
+msgctxt "Status of an item"
+msgid "Has Attachment"
+msgstr "Har vedlegg"
+
+#: core/item.cpp:262
+#, kde-format
+msgctxt "Status of an item"
+msgid "Action Item"
+msgstr "Handlingselement"
+
+#: core/item.cpp:266 core/messageitem.cpp:536
+#, kde-format
+msgctxt "Status of an item"
+msgid "Replied"
+msgstr "Svara på"
+
+#: core/item.cpp:270
+#, kde-format
+msgctxt "Status of an item"
+msgid "Forwarded"
+msgstr "Send vidare"
+
+#: core/item.cpp:274
+#, kde-format
+msgctxt "Status of an item"
+msgid "Sent"
+msgstr "Send"
+
+#: core/item.cpp:278
+#, kde-format
+msgctxt "Status of an item"
+msgid "Important"
+msgstr "Viktig"
+
+#: core/item.cpp:282
+#, kde-format
+msgctxt "Status of an item"
+msgid "Spam"
+msgstr "Søppelpost"
+
+#: core/item.cpp:286
+#, kde-format
+msgctxt "Status of an item"
+msgid "Ham"
+msgstr "Ikkje søppelpost"
+
+#: core/item.cpp:290
+#, kde-format
+msgctxt "Status of an item"
+msgid "Watched"
+msgstr "Overvaka"
+
+#: core/item.cpp:294
+#, kde-format
+msgctxt "Status of an item"
+msgid "Ignored"
+msgstr "Oversett"
+
+#: core/manager.cpp:38 core/model.cpp:332
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "Ukjend"
+
+#: core/manager.cpp:206
+#, kde-format
+msgid "Current Activity, Threaded"
+msgstr "Gjeldande aktivitet, trådordna"
+
+#: core/manager.cpp:207
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are threaded. So for "
+"example, in \"Today\" you will find all the messages arrived today and all "
+"the threads that have been active today."
+msgstr ""
+"Denne visinga brukar avanserte datoområde. Meldingane er trådordna. For "
+"eksempel vil du finna alle meldingar som har komme i dag og alle trådar som "
+"har vore aktive i dag under «I dag»."
+
+#: core/manager.cpp:219
+#, kde-format
+msgid "Current Activity, Flat"
+msgstr "Gjeldande aktivitet, ikkje trådordna"
+
+#: core/manager.cpp:220
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are not threaded. So for "
+"example, in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+"Denne visinga brukar avanserte datoområde. Meldingane er ikkje trådordna. "
+"For eksempel vil du enkelt og greitt finna alle meldingar som har komme i "
+"dag under «I dag»."
+
+#: core/manager.cpp:231
+#, kde-format
+msgid "Activity by Date, Threaded"
+msgstr "Aktivitet etter dato, trådordna"
+
+#: core/manager.cpp:232
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are threaded. So for example, in "
+"\"Today\" you will find all the messages arrived today and all the threads "
+"that have been active today."
+msgstr ""
+"Denne visinga brukar dag-for-dag-grupper. Meldingane er trådordna. For "
+"eksempel vil du finna alle meldingar som har komme i dag og alle trådar som "
+"har vore aktive i dag under  «I dag»."
+
+#: core/manager.cpp:244
+#, kde-format
+msgid "Activity by Date, Flat"
+msgstr "Aktivitet etter dato, ikkje trådordna"
+
+#: core/manager.cpp:245
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are not threaded. So for example, "
+"in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+"Denne visinga brukar dag-for-dag-grupper. Meldingane er ikkje trådordna. For "
+"eksempel vil du enkelt og greitt finna alle meldingar som har komme i dag "
+"under «I dag»."
+
+#: core/manager.cpp:256
+#, kde-format
+msgid "Standard Mailing List"
+msgstr "Standard e-postliste"
+
+#: core/manager.cpp:257
+#, kde-format
+msgid ""
+"This is a plain and old mailing list view: no groups and heavy threading."
+msgstr ""
+"Dette er ei enkel og gammaldags e-postlistevising. Ho har ingen grupper og "
+"tung trådordning."
+
+#: core/manager.cpp:266
+#, kde-format
+msgid "Flat Date View"
+msgstr "Enkel datovising"
+
+#: core/manager.cpp:267
+#, kde-format
+msgid ""
+"This is a plain and old list of messages sorted by date: no groups and no "
+"threading."
+msgstr ""
+"Dette er ei enkel og gammaldags liste over meldingar som er sortert etter "
+"dato. Ho har ingen grupper og inga trådordning."
+
+#: core/manager.cpp:278
+#, kde-format
+msgid "Senders/Receivers, Flat"
+msgstr "Avsendar/mottakar, ikkje trådordna"
+
+#: core/manager.cpp:279
+#, kde-format
+msgid ""
+"This view groups the messages by senders or receivers (depending on the "
+"folder type). Messages are not threaded."
+msgstr ""
+"Denne visinga grupperer meldingane etter avsendarar eller mottakarar, "
+"avhengig av mappetype. Meldingane er ikkje trådordna."
+
+#: core/manager.cpp:290
+#, kde-format
+msgid "Thread Starters"
+msgstr "Trådstartarar"
+
+#: core/manager.cpp:291
+#, kde-format
+msgid ""
+"This view groups the messages in threads and then groups the threads by the "
+"starting user."
+msgstr ""
+"Denne visinga grupperer meldingar i trådar og deretter etter trådstartar."
+
+#: core/manager.cpp:567
+#, kde-format
+msgctxt "Default theme name"
+msgid "Classic"
+msgstr "Klassisk"
+
+#: core/manager.cpp:567
+#, kde-format
+msgid "A simple, backward compatible, single row theme"
+msgstr "Eit enkelt, bakoverkompatibelt tema med éi rad"
+
+#: core/manager.cpp:571
+#, kde-format
+msgctxt "@title:column Subject of messages"
+msgid "Subject"
+msgstr "Emne"
+
+#: core/manager.cpp:607 core/theme.cpp:113
+#, kde-format
+msgid "Sender/Receiver"
+msgstr "Avsendar/mottakar"
+
+#: core/manager.cpp:614
+#, kde-format
+msgctxt "Sender of a message"
+msgid "Sender"
+msgstr "Avsendar"
+
+#: core/manager.cpp:616
+#, kde-format
+msgctxt "Receiver of a message"
+msgid "Receiver"
+msgstr "Mottakar"
+
+#: core/manager.cpp:622
+#, kde-format
+msgctxt "Date of a message"
+msgid "Date"
+msgstr "Dato"
+
+#: core/manager.cpp:624
+#, kde-format
+msgid "Most Recent Date"
+msgstr "Nyaste dato"
+
+#: core/manager.cpp:630
+#, kde-format
+msgctxt "Size of a message"
+msgid "Size"
+msgstr "Storleik"
+
+#: core/manager.cpp:632
+#, kde-format
+msgctxt "Attachment indication"
+msgid "Attachment"
+msgstr ""
+
+#: core/manager.cpp:638
+#, kde-format
+msgid "Read/Unread"
+msgstr ""
+
+#: core/manager.cpp:643
+#, kde-format
+msgid "Replied"
+msgstr "Svara på"
+
+#: core/manager.cpp:645
+#, kde-format
+msgctxt "Message importance indication"
+msgid "Important"
+msgstr "Viktig"
+
+#: core/manager.cpp:651
+#, kde-format
+msgid "Action Item"
+msgstr "Handlingselement"
+
+#: core/manager.cpp:657
+#, kde-format
+msgid "Spam/Ham"
+msgstr "Søppel/ikkje-søppel"
+
+#: core/manager.cpp:663
+#, kde-format
+msgid "Watched/Ignored"
+msgstr "Overvaka/ignorert"
+
+#: core/manager.cpp:669
+#, kde-format
+msgid "Encryption"
+msgstr "Kryptering"
+
+#: core/manager.cpp:675
+#, kde-format
+msgid "Signature"
+msgstr "Signatur"
+
+#: core/manager.cpp:680
+#, kde-format
+msgid "Tag List"
+msgstr "Liste over merkelappar"
+
+#: core/manager.cpp:688
+#, kde-format
+msgid "Smart"
+msgstr "Smart"
+
+#: core/manager.cpp:688
+#, kde-format
+msgid "A smart multiline and multi item theme"
+msgstr ""
+
+#: core/manager.cpp:692
+#, kde-format
+msgid "Message"
+msgstr "Melding"
+
+#: core/manager.cpp:776
+#, kde-format
+msgid "Smart with Clickable Status"
+msgstr ""
+
+#: core/manager.cpp:777
+#, kde-format
+msgid "A smart multiline and multi item theme with a clickable status column"
+msgstr ""
+
+#: core/manager.cpp:781 core/view.cpp:2263 core/view.cpp:2267
+#, kde-format
+msgid "Status"
+msgstr "Status"
+
+#: core/model.cpp:330
+#, kde-format
+msgid "Today"
+msgstr "I dag"
+
+#: core/model.cpp:331
+#, kde-format
+msgid "Yesterday"
+msgstr "I går"
+
+#: core/model.cpp:333
+#, kde-format
+msgid "Last Week"
+msgstr "Førre veke"
+
+#: core/model.cpp:334
+#, kde-format
+msgid "Two Weeks Ago"
+msgstr "To veker sidan"
+
+#: core/model.cpp:335
+#, kde-format
+msgid "Three Weeks Ago"
+msgstr "Tre veker sidan"
+
+#: core/model.cpp:336
+#, kde-format
+msgid "Four Weeks Ago"
+msgstr "Fire veker sidan"
+
+#: core/model.cpp:337
+#, kde-format
+msgid "Five Weeks Ago"
+msgstr "Fem veker sidan"
+
+#: core/model.cpp:550 utils/themeeditor.cpp:185
+#, kde-format
+msgid "Receiver"
+msgstr "Mottakar"
+
+#: core/model.cpp:552 utils/themeeditor.cpp:184
+#, kde-format
+msgid "Sender"
+msgstr "Avsendar"
+
+#: core/model.cpp:1367
+#, kde-format
+msgctxt "Message Aggregation Group Header: Month name and Year number"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: core/model.cpp:3787
+#, kde-format
+msgid "Processed 1 Message of %2"
+msgid_plural "Processed %1 Messages of %2"
+msgstr[0] "Handsama 1 av %2 meldingar"
+msgstr[1] "Handsama %1 av %2 meldingar"
+
+#: core/model.cpp:3793 core/model.cpp:3799
+#, kde-format
+msgid "Threaded 1 Message of %2"
+msgid_plural "Threaded %1 Messages of %2"
+msgstr[0] "Trådordna 1 av %2 meldingar"
+msgstr[1] "Trådordna %1 av %2 meldingar"
+
+#: core/model.cpp:3805
+#, kde-format
+msgid "Grouped 1 Thread of %2"
+msgid_plural "Grouped %1 Threads of %2"
+msgstr[0] "Grupperte 1 av %2 trådar"
+msgstr[1] "Grupperte %1 av %2 trådar"
+
+#: core/model.cpp:3811
+#, kde-format
+msgid "Updated 1 Group of %2"
+msgid_plural "Updated %1 Groups of %2"
+msgstr[0] "Oppdaterte 1 av %2 grupper"
+msgstr[1] "Oppdaterte %1 av %2 grupper"
+
+#: core/model.cpp:3903
+#, kde-format
+msgctxt "@info:status Finished view fill"
+msgid "Ready"
+msgstr "Klar"
+
+#. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:11
+#, kde-format
+msgid "Display tooltips for messages and group headers"
+msgstr "Vis hjelpebobler for meldingar og gruppehovud"
+
+#. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:12
+#, kde-format
+msgid ""
+"Enable this option to display tooltips when hovering over an item in the "
+"message list."
+msgstr ""
+"Kryss av her for å visa hjelpebobler når peikaren er over eit element i "
+"meldingslista."
+
+#: core/sortorder.cpp:63 core/sortorder.cpp:107
+#, kde-format
+msgid "None (Storage Order)"
+msgstr "Inga (sorteringsrekkjefølgje)"
+
+#: core/sortorder.cpp:64
+#, kde-format
+msgid "By Date/Time"
+msgstr "Etter dato/tid"
+
+#: core/sortorder.cpp:66
+#, kde-format
+msgid "By Date/Time of Most Recent in Subtree"
+msgstr "Etter dato/klokkeslett på nyaste i undertre"
+
+#: core/sortorder.cpp:71
+#, kde-format
+msgid "By Subject"
+msgstr "Etter emne"
+
+#: core/sortorder.cpp:72
+#, kde-format
+msgid "By Size"
+msgstr "Etter storleik"
+
+#: core/sortorder.cpp:73
+#, kde-format
+msgid "By Action Item Status"
+msgstr "Etter status på handlingselement"
+
+#: core/sortorder.cpp:74
+#, kde-format
+msgid "By Unread Status"
+msgstr ""
+
+#: core/sortorder.cpp:75
+#, kde-format
+msgid "By Important Status"
+msgstr ""
+
+#: core/sortorder.cpp:76
+#, kde-format
+msgid "By Attachment Status"
+msgstr ""
+
+#: core/sortorder.cpp:88 core/sortorder.cpp:130
+#, kde-format
+msgid "Least Recent on Top"
+msgstr "Eldste øvst"
+
+#: core/sortorder.cpp:89 core/sortorder.cpp:131
+#, kde-format
+msgid "Most Recent on Top"
+msgstr "Nyaste øvst"
+
+#: core/sortorder.cpp:93
+#, kde-format
+msgctxt "Sort order for messages"
+msgid "Ascending"
+msgstr "Stigande"
+
+#: core/sortorder.cpp:94
+#, kde-format
+msgctxt "Sort order for messages"
+msgid "Descending"
+msgstr "Synkande"
+
+#: core/sortorder.cpp:105
+#, kde-format
+msgid "by Date/Time"
+msgstr "Etter dato/tid"
+
+#: core/sortorder.cpp:108
+#, kde-format
+msgid "by Date/Time of Most Recent Message in Group"
+msgstr "Etter dato/klokkeslett på den nyaste meldinga i gruppa"
+
+#: core/sortorder.cpp:112
+#, kde-format
+msgid "by Sender/Receiver"
+msgstr "Etter avsendar/mottakar"
+
+#: core/sortorder.cpp:114
+#, kde-format
+msgid "by Sender"
+msgstr "Etter avsendar"
+
+#: core/sortorder.cpp:116
+#, kde-format
+msgid "by Receiver"
+msgstr "Etter mottakar"
+
+#: core/sortorder.cpp:134
+#, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Ascending"
+msgstr "Stigande"
+
+#: core/sortorder.cpp:135
+#, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Descending"
+msgstr "Synkande"
+
+#: core/theme.cpp:107
+#, kde-format
+msgctxt "Description of Type Subject"
+msgid "Subject"
+msgstr "Emne"
+
+#: core/theme.cpp:110
+#, kde-format
+msgctxt "Description of Type Date"
+msgid "Date"
+msgstr "Dato"
+
+#: core/theme.cpp:116
+#, kde-format
+msgctxt "Description of Type Sender"
+msgid "Sender"
+msgstr "Avsendar"
+
+#: core/theme.cpp:119
+#, kde-format
+msgctxt "Description of Type Receiver"
+msgid "Receiver"
+msgstr "Mottakar"
+
+#: core/theme.cpp:122
+#, kde-format
+msgctxt "Description of Type Size"
+msgid "Size"
+msgstr "Storleik"
+
+#: core/theme.cpp:125
+#, kde-format
+msgid "Unread/Read Icon"
+msgstr ""
+
+#: core/theme.cpp:128
+#, kde-format
+msgid "Attachment Icon"
+msgstr "Ikon for vedlegg"
+
+#: core/theme.cpp:131
+#, kde-format
+msgid "Replied/Forwarded Icon"
+msgstr "Ikon for svara på / send vidare"
+
+#: core/theme.cpp:134
+#, kde-format
+msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
+msgstr "Kombinert ikon for ny / ulesen /lesen / svara på / send vidare"
+
+#: core/theme.cpp:137
+#, kde-format
+msgid "Action Item Icon"
+msgstr "Ikon for handlingselement"
+
+#: core/theme.cpp:140
+#, kde-format
+msgid "Important Icon"
+msgstr "Ikon for viktig"
+
+#: core/theme.cpp:143
+#, kde-format
+msgid "Group Header Label"
+msgstr "Merkelapp for gruppehovud"
+
+#: core/theme.cpp:146
+#, kde-format
+msgid "Spam/Ham Icon"
+msgstr "Ikon for søppel/ikkje-søppel"
+
+#: core/theme.cpp:149
+#, kde-format
+msgid "Watched/Ignored Icon"
+msgstr "Ikon for overvaka/ignorert"
+
+#: core/theme.cpp:152
+#, kde-format
+msgid "Group Header Expand/Collapse Icon"
+msgstr "Ikon for utvid / fald saman gruppehovud"
+
+#: core/theme.cpp:155
+#, kde-format
+msgid "Encryption State Icon"
+msgstr "Ikon for krypteringsstatus"
+
+#: core/theme.cpp:158
+#, kde-format
+msgid "Signature State Icon"
+msgstr "Ikon for signaturstatus"
+
+#: core/theme.cpp:161
+#, kde-format
+msgid "Vertical Separation Line"
+msgstr "Loddrett skiljelinje"
+
+#: core/theme.cpp:164
+#, kde-format
+msgid "Horizontal Spacer"
+msgstr "Vassrett mellomrom"
+
+#: core/theme.cpp:167
+#, kde-format
+msgid "Max Date"
+msgstr "Nyaste dato"
+
+#: core/theme.cpp:170
+#, kde-format
+msgid "Message Tags"
+msgstr "Merkelappar"
+
+#: core/theme.cpp:173
+#, kde-format
+msgid "Note Icon"
+msgstr "Notatikon"
+
+#: core/theme.cpp:175
+#, kde-format
+msgid "Invitation Icon"
+msgstr ""
+
+#: core/theme.cpp:177
+#, kde-format
+msgctxt "Description of Type Folder"
+msgid "Folder"
+msgstr ""
+
+#: core/theme.cpp:179
+#, kde-format
+msgctxt "Description for an Unknown Type"
+msgid "Unknown"
+msgstr "Ukjend"
+
+#: core/theme.cpp:853
+#, kde-format
+msgid "Unread"
+msgstr "Ulesne"
+
+#: core/theme.cpp:1047
+#, kde-format
+msgid "Never Show"
+msgstr "Vis aldri"
+
+#: core/theme.cpp:1047
+#, kde-format
+msgid "Always Show"
+msgstr "Vis alltid"
+
+#: core/theme.cpp:1052
+#, kde-format
+msgid "Plain Rectangles"
+msgstr "Enkel firkant"
+
+#: core/theme.cpp:1053
+#, kde-format
+msgid "Plain Joined Rectangle"
+msgstr "Enkel firkant utan kantskilje"
+
+#: core/theme.cpp:1054
+#, kde-format
+msgid "Rounded Rectangles"
+msgstr "Avrunda firkant"
+
+#: core/theme.cpp:1055
+#, kde-format
+msgid "Rounded Joined Rectangle"
+msgstr "Avrunda firkant utan kantskilje"
+
+#: core/theme.cpp:1056
+#, kde-format
+msgid "Gradient Rectangles"
+msgstr "Fargeovergangsfirkant"
+
+#: core/theme.cpp:1057
+#, kde-format
+msgid "Gradient Joined Rectangle"
+msgstr "Fargeovergangsfirkant utan kantskilje"
+
+#: core/theme.cpp:1058
+#, kde-format
+msgid "Styled Rectangles"
+msgstr "Stilisert firkant"
+
+#: core/theme.cpp:1059
+#, kde-format
+msgid "Styled Joined Rectangles"
+msgstr "Stilisert firkant utan kantskilje"
+
+#: core/view.cpp:682
+#, kde-format
+msgid "No result found"
+msgstr ""
+
+#: core/view.cpp:766
+#, kde-format
+msgid "Adjust Column Sizes"
+msgstr "Juster kolonnestorleikar"
+
+#: core/view.cpp:770
+#, kde-format
+msgid "Show Default Columns"
+msgstr "Vis standardkolonnar"
+
+#: core/view.cpp:775
+#, kde-format
+msgid "Display Tooltips"
+msgstr "Vis hjelpebobler"
+
+#: core/view.cpp:2244 core/view.cpp:2248 core/widgets/searchlinestatus.cpp:324
+#, kde-format
+msgid "From"
+msgstr "Frå"
+
+#: core/view.cpp:2245 core/view.cpp:2249
+#, kde-format
+msgctxt "Receiver of the email"
+msgid "To"
+msgstr ""
+
+#: core/view.cpp:2246 core/view.cpp:2250
+#, kde-format
+msgid "Date"
+msgstr "Dato"
+
+#: core/view.cpp:2264 core/view.cpp:2268
+#, kde-format
+msgid "Size"
+msgstr "Storleik"
+
+#: core/view.cpp:2265 core/view.cpp:2269 utils/themeeditor.cpp:187
+#, kde-format
+msgid "Folder"
+msgstr ""
+
+#: core/view.cpp:2274 core/view.cpp:2276
+#, kde-format
+msgid "Note"
+msgstr "Merknad"
+
+#: core/view.cpp:2283 core/view.cpp:2285
+#, kde-format
+msgid "Preview"
+msgstr "Førehandsvising"
+
+#: core/view.cpp:2302
+#, kde-format
+msgid "<b>%1</b> reply"
+msgid_plural "<b>%1</b> replies"
+msgstr[0] "<b>%1</b> svar"
+msgstr[1] "<b>%1</b> svar"
+
+#: core/view.cpp:2305
+#, kde-format
+msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/view.cpp:2342
+#, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
+msgid "Threads started on %1"
+msgstr "Trådar som vart starta %1"
+
+#: core/view.cpp:2344
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
+msgid "Threads started %1"
+msgstr "Trådar som vart starta %1"
+
+#: core/view.cpp:2348
+#, kde-format
+msgid "Threads with messages dated %1"
+msgstr "Trådar med meldingar frå %1"
+
+#: core/view.cpp:2358
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
+msgid "Messages sent on %1"
+msgstr "Meldingar sende %1"
+
+#: core/view.cpp:2361
+#, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
+msgid "Messages received on %1"
+msgstr "Meldingar mottekne %1"
+
+#: core/view.cpp:2365
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
+msgid "Messages sent %1"
+msgstr "Meldingar sende %1"
+
+#: core/view.cpp:2367
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
+msgid "Messages received %1"
+msgstr "Meldingar mottekne %1"
+
+#: core/view.cpp:2376
+#, kde-format
+msgid "Threads started within %1"
+msgstr "Trådar som vart starta %1"
+
+#: core/view.cpp:2379
+#, kde-format
+msgid "Threads containing messages with dates within %1"
+msgstr "Trådar som inneheld datoar før %1"
+
+#: core/view.cpp:2387
+#, kde-format
+msgid "Messages sent within %1"
+msgstr "Meldingar som vart sende før %1"
+
+#: core/view.cpp:2389
+#, kde-format
+msgid "Messages received within %1"
+msgstr "Meldingar mottekne før %1"
+
+#: core/view.cpp:2398
+#, kde-format
+msgid "Threads started by %1"
+msgstr "Trådar som vart starta av %1"
+
+#: core/view.cpp:2401
+#, kde-format
+msgid "Threads with most recent message by %1"
+msgstr "Trådar med siste melding av %1"
+
+#: core/view.cpp:2410 core/view.cpp:2434
+#, kde-format
+msgid "Messages sent to %1"
+msgstr "Meldingar sende til %1"
+
+#: core/view.cpp:2412
+#, kde-format
+msgid "Messages sent by %1"
+msgstr "Meldingar sende av %1."
+
+#: core/view.cpp:2415
+#, kde-format
+msgid "Messages received from %1"
+msgstr "Meldingar mottekne frå %1"
+
+#: core/view.cpp:2423
+#, kde-format
+msgid "Threads directed to %1"
+msgstr "Trådar dirigerte til %1"
+
+#: core/view.cpp:2426
+#, kde-format
+msgid "Threads with most recent message directed to %1"
+msgstr "Trådar med nyaste melding dirigert til %1"
+
+#: core/view.cpp:2436
+#, kde-format
+msgid "Messages received by %1"
+msgstr "Meldingar mottekne av %1"
+
+#: core/view.cpp:2462
+#, kde-format
+msgid "<b>%1</b> thread"
+msgid_plural "<b>%1</b> threads"
+msgstr[0] "<b>%1</b> tråd"
+msgstr[1] "<b>%1</b> trådar"
+
+#: core/view.cpp:2467
+#, kde-format
+msgid "<b>%1</b> message (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/widgetbase.cpp:186
+#, kde-format
+msgid "Any filter defined."
+msgstr ""
+
+#: core/widgetbase.cpp:186
+#, kde-format
+msgid "Create Filter"
+msgstr ""
+
+#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#, kde-format
+msgid "Theme"
+msgstr "Tema"
+
+#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
+#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
+#: utils/themeconfigbutton.cpp:46
+#, kde-format
+msgid "Configure..."
+msgstr "Set opp …"
+
+#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#, kde-format
+msgid "Aggregation"
+msgstr "Samanstilling"
+
+#: core/widgetbase.cpp:581
+#, kde-format
+msgid "Message Sort Order"
+msgstr "Sorteringsrekkjefølgje for meldingar"
+
+#: core/widgetbase.cpp:603
+#, kde-format
+msgid "Message Sort Direction"
+msgstr "Sorteringsretning for meldingar"
+
+#: core/widgetbase.cpp:620
+#, kde-format
+msgid "Group Sort Order"
+msgstr "Sorteringsrekkjefølgje for grupper"
+
+#: core/widgetbase.cpp:637
+#, kde-format
+msgid "Group Sort Direction"
+msgstr "Sorteringsretning for grupper"
+
+#: core/widgetbase.cpp:652
+#, kde-format
+msgid "Folder Always Uses This Sort Order"
+msgstr "Mappa brukar alltid denne sorteringsrekkjefølgja"
+
+#: core/widgets/configurefiltersdialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Filter"
+msgstr ""
+
+#: core/widgets/configurefilterswidget.cpp:78
+#, kde-format
+msgid "Remove"
+msgstr ""
+
+#: core/widgets/configurefilterswidget.cpp:81
+#, kde-format
+msgid "Do you want to delete this filter?"
+msgstr ""
+
+#: core/widgets/configurefilterswidget.cpp:82
+#, kde-format
+msgid "Remove Filter"
+msgstr ""
+
+#: core/widgets/filternamedialog.cpp:19
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Filter"
+msgstr ""
+
+#: core/widgets/filternamewidget.cpp:31
+#, kde-format
+msgid "Name:"
+msgstr ""
+
+#: core/widgets/filtersavedmenu.cpp:16
+#, kde-format
+msgid "Save Filter..."
+msgstr ""
+
+#: core/widgets/quicksearchline.cpp:40
+#, kde-format
+msgctxt "Search for messages."
+msgid "Search"
+msgstr "Søk"
+
+#: core/widgets/quicksearchwarning.cpp:20
+#, kde-format
+msgid "The words less than 3 letters are ignored."
+msgstr ""
+
+#: core/widgets/quicksearchwarning.cpp:21
+#, kde-format
+msgid "Do not show again"
+msgstr ""
+
+#: core/widgets/searchcollectionindexingwarning.cpp:33
+#, kde-format
+msgid ""
+"Some of the search folders in this query are still being indexed or are "
+"excluded from indexing completely. The results below may be incomplete."
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:78
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Prevent the quick search field from being cleared when changing folders"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Clear the quick search field when changing folders"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:101
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Toggle this button if you want to keep your quick search locked when moving "
+"to other folders or when narrowing the search by message status."
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:112
+#, kde-format
+msgid "Filter Mails by Status"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:116
+#, kde-format
+msgid "Saved Filter"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:215
+#, kde-format
+msgid "Clear Filter"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:221
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "Ulesen"
+
+#: core/widgets/searchlinestatus.cpp:225
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "Svara på"
+
+#: core/widgets/searchlinestatus.cpp:229
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr "Send vidare"
+
+#: core/widgets/searchlinestatus.cpp:233
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr "Viktig"
+
+#: core/widgets/searchlinestatus.cpp:237
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:241
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:245
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:249
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:253
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:257
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:261
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:271
+#, kde-format
+msgid "Full Message"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:278
+#, kde-format
+msgid "Body"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:283
+#, kde-format
+msgid "Subject"
+msgstr "Emne"
+
+#: core/widgets/searchlinestatus.cpp:294
+#, kde-format
+msgid "BCC"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:322
+#, kde-format
+msgid "To"
+msgstr "Til"
+
+#: core/widgets/searchlinestatus.cpp:404
+#, kde-format
+msgid "Clear History"
+msgstr ""
+
+#: core/widgets/tablockedwarning.cpp:17
+#, kde-format
+msgid "Current Tab is locked."
+msgstr ""
+
+#: core/widgets/tablockedwarning.cpp:17
+#, kde-format
+msgid "(Unlock it)"
+msgstr ""
+
+#: messagelistutil.cpp:104
+#, kde-format
+msgid "Sorting"
+msgstr "Sortering"
+
+#: pane.cpp:123
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open a new tab"
+msgstr "Opna ei ny fane"
+
+#: pane.cpp:125
+#, kde-format
+msgid "New tab"
+msgstr ""
+
+#: pane.cpp:135
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close the current tab"
+msgstr "Lukk den gjeldande fana"
+
+#: pane.cpp:137
+#, kde-format
+msgid "Close tab"
+msgstr "Lukk fane"
+
+#: pane.cpp:179
+#, kde-format
+msgid "Activate Tab %1"
+msgstr "Gå til fane %1"
+
+#: pane.cpp:199
+#, kde-format
+msgid "Show Quick Search Bar"
+msgstr ""
+
+#: pane.cpp:220
+#, kde-format
+msgid "Message List"
+msgstr ""
+
+#: pane.cpp:226
+#, kde-format
+msgid "Create New Tab"
+msgstr ""
+
+#: pane.cpp:257
+#, kde-format
+msgid "Activate Next Tab"
+msgstr "Gå til neste fane"
+
+#: pane.cpp:267
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr "Gå til førre fane"
+
+#: pane.cpp:279
+#, kde-format
+msgid "Move Tab Left"
+msgstr "Flytt fane til venstre"
+
+#: pane.cpp:287
+#, kde-format
+msgid "Move Tab Right"
+msgstr "Flytt fane til høgre"
+
+#: pane.cpp:297
+#, kde-format
+msgid "Close Tab"
+msgstr "Lukk fane"
+
+#: pane.cpp:517 pane.cpp:798
+#, kde-format
+msgctxt "@title:tab Empty messagelist"
+msgid "Empty"
+msgstr "Tom"
+
+#: pane.cpp:702
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close Tab"
+msgstr "Lukk fane"
+
+#: pane.cpp:705
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close All Other Tabs"
+msgstr "Lukk andre faner"
+
+#: pane.cpp:708
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Unlock Tab"
+msgstr ""
+
+#: pane.cpp:708
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Lock Tab"
+msgstr ""
+
+#: storagemodel.cpp:219
+#, kde-format
+msgctxt "displayed as subject when the subject of a mail is empty"
+msgid "No Subject"
+msgstr "Ingen emne"
+
+#: storagemodel.cpp:220
+#, kde-format
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr "Ukjend"
+
+#: utils/aggregationeditor.cpp:31
+#, kde-format
+msgid "Groups && Threading"
+msgstr "Grupper og trådar"
+
+#: utils/aggregationeditor.cpp:35
+#, kde-format
+msgid "Grouping:"
+msgstr "Gruppering:"
+
+#: utils/aggregationeditor.cpp:41
+#, kde-format
+msgid "Group expand policy:"
+msgstr "Utvidingspraksis for grupper:"
+
+#: utils/aggregationeditor.cpp:45
+#, kde-format
+msgid "Threading:"
+msgstr "Trådordning:"
+
+#: utils/aggregationeditor.cpp:51
+#, kde-format
+msgid "Thread leader:"
+msgstr "Trådleiar:"
+
+#: utils/aggregationeditor.cpp:55
+#, kde-format
+msgid "Thread expand policy:"
+msgstr "Trådutvidingspraksis:"
+
+#: utils/aggregationeditor.cpp:64
+#, kde-format
+msgctxt "@title:tab Advanced settings tab for aggregation mode"
+msgid "Advanced"
+msgstr "Avansert"
+
+#: utils/aggregationeditor.cpp:68
+#, kde-format
+msgid "Fill view strategy:"
+msgstr "Strategi for å fylla visinga:"
+
+#: utils/configureaggregationsdialog.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Customize Message Aggregation Modes"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:118
+#: utils/configureaggregationsdialog.cpp:357
+#, kde-format
+msgid "New Aggregation"
+msgstr "Ny samanstilling"
+
+#: utils/configureaggregationsdialog.cpp:126
+#, kde-format
+msgid "Clone Aggregation"
+msgstr "Klon samanstilling"
+
+#: utils/configureaggregationsdialog.cpp:139
+#, kde-format
+msgid "Export Aggregation..."
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:146
+#, kde-format
+msgid "Import Aggregation..."
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:157
+#, kde-format
+msgid "Delete Aggregation"
+msgstr "Slett samanstilling"
+
+#: utils/configureaggregationsdialog.cpp:340
+#, kde-format
+msgid "Unnamed Aggregation"
+msgstr "Namnlaus samanstilling"
+
+#: utils/configureaggregationsdialog.cpp:409
+#, kde-format
+msgid "Import Aggregation"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:442
+#, kde-format
+msgid "Export Aggregation"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:442
+#: utils/configurethemesdialog.cpp:465
+#, kde-format
+msgid "All Files (*)"
+msgstr "Alle filer (*)"
+
+#: utils/configurethemesdialog.cpp:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Customize Themes"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#, kde-format
+msgid "New Theme"
+msgstr "Nytt tema"
+
+#: utils/configurethemesdialog.cpp:122
+#, kde-format
+msgid "Clone Theme"
+msgstr "Klon tema"
+
+#: utils/configurethemesdialog.cpp:135
+#, kde-format
+msgid "Export Theme..."
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:142
+#, kde-format
+msgid "Import Theme..."
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:153
+#, kde-format
+msgid "Delete Theme"
+msgstr "Slett tema"
+
+#: utils/configurethemesdialog.cpp:332
+#, kde-format
+msgid "Unnamed Theme"
+msgstr "Namnlaust tema"
+
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#, kde-format
+msgid "New Column"
+msgstr "Ny kolonne"
+
+#: utils/configurethemesdialog.cpp:404
+#, kde-format
+msgid "Do you want to delete selected themes?"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:404
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:405
+#, kde-format
+msgctxt "@title:window"
+msgid "Delete Theme"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:431
+#, kde-format
+msgid "Import Theme"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:465
+#, kde-format
+msgid "Export Theme"
+msgstr ""
+
+#: utils/optionseteditor.cpp:27
+#, kde-format
+msgctxt "@title:tab General options of a view mode"
+msgid "General"
+msgstr "Generelt"
+
+#: utils/optionseteditor.cpp:31
+#, kde-format
+msgctxt "@label:textbox Name of the option"
+msgid "Name:"
+msgstr "Namn:"
+
+#: utils/optionseteditor.cpp:40
+#, kde-format
+msgctxt "@label:textbox Description of the option"
+msgid "Description:"
+msgstr "Skildring:"
+
+#: utils/themeeditor.cpp:69
+#, kde-format
+msgctxt "@label:textbox Property name"
+msgid "Name:"
+msgstr "Namn:"
+
+#: utils/themeeditor.cpp:73
+#, kde-format
+msgid "The label that will be displayed in the column header."
+msgstr "Merkelappen som skal visast i kolonnehovudet."
+
+#: utils/themeeditor.cpp:76
+#, kde-format
+msgid "Header click sorts messages:"
+msgstr "Trykk på hovud sorterer meldingane:"
+
+#: utils/themeeditor.cpp:80
+#, kde-format
+msgid "The sorting order that clicking on this column header will switch to."
+msgstr "Sorteringsrekkjefølgja eit trykk på dette kolonnehovudet byter til."
+
+#: utils/themeeditor.cpp:83
+#, kde-format
+msgid "Visible by default"
+msgstr "Synleg som standard"
+
+#: utils/themeeditor.cpp:84
+#, kde-format
+msgid "Check this if this column should be visible when the theme is selected."
+msgstr "Kryss av her dersom denne kolonnen skal vera synleg når tema er valt."
+
+#: utils/themeeditor.cpp:87
+#, kde-format
+msgid "Contains \"Sender or Receiver\" field"
+msgstr "Inneheld «Avsendar/mottakar»-felt"
+
+#: utils/themeeditor.cpp:88
+#, kde-format
+msgid ""
+"Check this if this column label should be updated depending on the folder "
+"\"inbound\"/\"outbound\" type."
+msgstr ""
+"Kryss av her viss denne kolonnemerkelappen skal oppdaterast avhengig av "
+"mappetypen «ta imot/send»."
+
+#: utils/themeeditor.cpp:108
+#, kde-format
+msgid "Unnamed Column"
+msgstr "Namnlaus kolonne"
+
+#: utils/themeeditor.cpp:173
+#, kde-format
+msgid "Message Group"
+msgstr "Meldingsgruppe"
+
+#: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
+#, kde-format
+msgid ""
+"Very long subject very long subject very long subject very long subject very "
+"long subject very long"
+msgstr ""
+"Svært langt emne. Svært langt emne. Svært langt emne. Svært langt emne. "
+"Svært langt emne."
+
+#: utils/themeeditor.cpp:192
+#, kde-format
+msgid "Sample Tag 1"
+msgstr "Merkelappeksempel 1"
+
+#: utils/themeeditor.cpp:193
+#, kde-format
+msgid "Sample Tag 2"
+msgstr "Merkelappeksempel 2"
+
+#: utils/themeeditor.cpp:194
+#, kde-format
+msgid "Sample Tag 3"
+msgstr "Merkelappeksempel 3"
+
+#: utils/themeeditor.cpp:409
+#, kde-format
+msgctxt "Indicates whether or not a header label is visible"
+msgid "Visible"
+msgstr "Synleg"
+
+#: utils/themeeditor.cpp:851
+#, kde-format
+msgctxt "@action:inmenu soften the text color"
+msgid "Soften"
+msgstr "Gjer mjukare"
+
+#: utils/themeeditor.cpp:858
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Bold"
+msgstr ""
+
+#: utils/themeeditor.cpp:862
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Italic"
+msgstr ""
+
+#: utils/themeeditor.cpp:869
+#, kde-format
+msgid "Font"
+msgstr "Skrift"
+
+#: utils/themeeditor.cpp:877
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Default"
+msgstr "Standard"
+
+#: utils/themeeditor.cpp:882
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Custom..."
+msgstr "Tilpassa …"
+
+#: utils/themeeditor.cpp:890
+#, kde-format
+msgid "Foreground Color"
+msgstr "Framgrunnsfarge"
+
+#: utils/themeeditor.cpp:899
+#, kde-format
+msgctxt ""
+"Hide a mark if the mail does not have the attribute, e.g. Important mark on "
+"a non important mail"
+msgid "Hide"
+msgstr "Gøym"
+
+#: utils/themeeditor.cpp:906
+#, kde-format
+msgctxt ""
+"Keep a empty space in the list if the mail does not have the attribute, e.g. "
+"Important mark on a non important mail"
+msgid "Keep Empty Space"
+msgstr "Ta vare på ekstra mellomrom"
+
+#: utils/themeeditor.cpp:913
+#, kde-format
+msgctxt ""
+"Show the icon softened in the list if the mail does not have the attribute, "
+"e.g. Important mark on a non important mail"
+msgid "Keep Softened Icon"
+msgstr "Behald mjukt ikon"
+
+# skip-rule: komma-leddsetning-viss
+#: utils/themeeditor.cpp:921
+#, kde-format
+msgid "When Disabled"
+msgstr "Viss avslått"
+
+#: utils/themeeditor.cpp:927
+#, kde-format
+msgid "Group Header"
+msgstr "Gruppehovud"
+
+#: utils/themeeditor.cpp:934
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "None"
+msgstr "Ingen"
+
+#: utils/themeeditor.cpp:939
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Automatic"
+msgstr "Automatisk"
+
+#: utils/themeeditor.cpp:944
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Custom..."
+msgstr "Tilpassa …"
+
+#: utils/themeeditor.cpp:952
+#, kde-format
+msgid "Background Color"
+msgstr "Bakgrunnsfarge"
+
+#: utils/themeeditor.cpp:972
+#, kde-format
+msgid "Background Style"
+msgstr "Bakgrunnstema"
+
+#: utils/themeeditor.cpp:1158
+#, kde-format
+msgid "Column Properties..."
+msgstr ""
+
+#: utils/themeeditor.cpp:1161
+#, kde-format
+msgid "Add Column..."
+msgstr "Legg til kolonne …"
+
+#: utils/themeeditor.cpp:1164
+#, kde-format
+msgid "Delete Column"
+msgstr "Slett kolonne"
+
+#: utils/themeeditor.cpp:1170
+#, kde-format
+msgid "Move Column to Left"
+msgstr ""
+
+#: utils/themeeditor.cpp:1174
+#, kde-format
+msgid "Move Column to Right"
+msgstr ""
+
+#: utils/themeeditor.cpp:1223
+#, kde-format
+msgid "Add New Column"
+msgstr "Legg til ny kolonne"
+
+#: utils/themeeditor.cpp:1247
+#, kde-format
+msgid "Column Properties"
+msgstr "Kolonneeigenskapar"
+
+#: utils/themeeditor.cpp:1289
+#, kde-format
+msgid "Appearance"
+msgstr "Utsjånad"
+
+#: utils/themeeditor.cpp:1293
+#, kde-format
+msgid "Content Items"
+msgstr "Innhaldselement"
+
+#: utils/themeeditor.cpp:1425
+#, kde-format
+msgid ""
+"Right click on the header to add or modify columns. Drag the content items "
+"and drop them on the columns in order to compose your theme. Right click on "
+"the items inside the view for more options."
+msgstr ""
+"Høgreklikk på meldingshovudet for å leggja til eller endra kolonnar. Dra "
+"innhaldselementa og slepp dei på kolonnane for å laga temaet ditt. "
+"Høgreklikk på elementa i visinga for fleire val."
+
+#: utils/themeeditor.cpp:1435
+#, kde-format
+msgctxt "@title:tab Advanced theme settings"
+msgid "Advanced"
+msgstr "Avansert"
+
+#: utils/themeeditor.cpp:1439
+#, kde-format
+msgid "Header:"
+msgstr "Meldingshovud:"
+
+#: utils/themeeditor.cpp:1445
+#, kde-format
+msgid "Icon size:"
+msgstr "Ikonstorleik:"
+
+#: utils/themeeditor.cpp:1451
+#, kde-format
+msgctxt "suffix in a spinbox"
+msgid " pixel"
+msgid_plural " pixels"
+msgstr[0] " piksel"
+msgstr[1] " pikslar"
+
+#: widget.cpp:220
+#, kde-format
+msgctxt "Item in list of Akonadi tags, to show all e-mails"
+msgid "All"
+msgstr ""
+
+#: widget.cpp:345
+#, kde-format
+msgid "Collapse Group"
+msgstr "Fald saman gruppe"
+
+#: widget.cpp:348
+#, kde-format
+msgid "Expand Group"
+msgstr "Utvid gruppe"
+
+#: widget.cpp:354
+#, kde-format
+msgid "Expand All Groups"
+msgstr "Utvid alle"
+
+#: widget.cpp:357
+#, kde-format
+msgid "Collapse All Groups"
+msgstr "Fald saman alle"
+
+#: widget.cpp:413
+#, kde-format
+msgid "&Move Here"
+msgstr "&Flytt hit"
+
+#: widget.cpp:414
+#, kde-format
+msgid "&Copy Here"
+msgstr "&Kopier hit"
+
+#: widget.cpp:416
+#, kde-format
+msgid "C&ancel"
+msgstr "&Avbryt"

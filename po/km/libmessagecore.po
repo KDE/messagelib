@@ -1,0 +1,371 @@
+# translation of libmessagecore.po to Khmer
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2011.
+# Sophea <sophea@khmeros.info>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessagecore\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2012-06-19 09:11+0700\n"
+"Last-Translator: Sophea <sophea@khmeros.info>\n"
+"Language-Team: Khmer <>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: WordForge 0.8 RC1\n"
+"X-Language: km-KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា, ចាន់ សម្បត្តិរតនៈ, សុខ សុភា"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info,"
+"ratanak@khmeros.info,sophea@khmeros.info"
+
+#: attachment/attachmentcompressjob.cpp:50
+#, kde-format
+msgid "Could not initiate attachment compression."
+msgstr "មិន​អាច​ចាប់ផ្ដើម​ការ​បង្ហាប់​ឯកសារ​ភ្ជាប់ ។"
+
+#: attachment/attachmentcompressjob.cpp:60
+#, kde-format
+msgid "Could not compress the attachment."
+msgstr "មិន​អាច​បង្ហាប់​ឯកសារ​ភ្ជាប់ ។"
+
+#: attachment/attachmentfromfolderjob.cpp:51
+#, kde-format
+msgid "Could not create compressed file."
+msgstr "មិន​អាច​បង្កើត​ឯកសារ​បង្ហាប់ ។"
+
+#: attachment/attachmentfromfolderjob.cpp:90
+#, kde-format
+msgid ""
+"The resulting attachment would be larger than the maximum allowed size, "
+"aborting."
+msgstr "ការ​បង្ហាញ​ឯកសារ​ភ្ជាប់​គួរតែ​ធំជាង​ទំហំ​អតិបរមា​ដែល​បាន​អនុញ្ញាត ការ​បោះបង់ ។"
+
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
+#, kde-format
+msgid "Could not add %1 to the archive"
+msgstr "មិន​អាច​បន្ថែម %1 ទៅកាន់​ប័ណ្ណសារ​បានទេ"
+
+#: attachment/attachmentfromfolderjob.cpp:113
+#, kde-format
+msgid "Could not open %1 for reading."
+msgstr "មិន​អាច​បើក %1 សម្រាប់​អាន​បាន​ទេ ។"
+
+#: attachment/attachmentfromurljob.cpp:69
+#, kde-format
+msgctxt "a file called 'unknown.ext'"
+msgid "unknown%1"
+msgstr "មិន​ស្គាល់%1"
+
+#: attachment/attachmentfromurljob.cpp:71
+#, kde-format
+msgctxt "a file called 'unknown'"
+msgid "unknown"
+msgstr "មិន​ស្គាល់"
+
+#: attachment/attachmentfromurljob.cpp:103
+#, kde-format
+msgid "\"%1\" not found. Please specify the full path."
+msgstr "រក​មិន​ឃើញ \"%1\" ។ សូម​បញ្ជាក់​ផ្លូវ​ពេញ ។"
+
+#: attachment/attachmentfromurljob.cpp:112
+#, fuzzy, kde-format
+#| msgid "You may not attach files bigger than %1."
+msgid "You may not attach files bigger than %1. Share it with storage service."
+msgstr "អ្នក​មិន​អាច​ភ្ជាប់​ឯកសារ​ធំជាង %1 បាន​ទេ ។"
+
+#: attachment/attachmentpropertiesdialog.cpp:133
+#, kde-format
+msgid ""
+"<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
+"touch this setting, since the type of the file is automatically checked; "
+"but, sometimes, %1 may not detect the type correctly -- here is where you "
+"can fix that.</p>"
+msgstr ""
+"<p>ប្រភេទ <em>MIME</em> របស់​ឯកសារ ៖</p><p>ជាទូទៅ​អ្នក​មិន​ចាំបាច់​ប៉ះ​ការ​កំណត់​ទេ ព្រោះ​ប្រភេទ​"
+"ឯកសារ​នេះ​ត្រូវ​បាន​ពិនិត្យមើល​ដោយ​ស្វ័យប្រវត្តិ ប៉ុន្តែ​ពេល​ខ្លះ %1 អាច​រក​មិន​ឃើញ​ប្រភេទ​មិន​ត្រឹមត្រូវ -- "
+"ទីនេះ​អ្នក​អាច​ជួសជុល​វា​បាន ។</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:141
+#, kde-format
+msgid ""
+"<p>The estimated size of the attachment:</p><p>Note that, in an email "
+"message, a binary file encoded with base64 will take up four thirds the "
+"actual size of the file.</p>"
+msgstr ""
+"<p>ទំហំ​ប៉ាន់ស្មាន​របស់​ឯកសារ ៖</p><p>ចងចាំ​ថា នៅ​ក្នុង​សារ​អ៊ីមែល ឯកសារ​គោល​ពីរ​ត្រូវ​បាន​អ៊ិនកូដ​ជាមួយ "
+"base64 ដែល​នឹង​ត្រូវ​ឡើង​ដល់​បួន​ភាគ​បី​នៃ​ទំហំ​ឯកសារ​សារ​ជាក់ស្ដែង ។</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:146
+#, kde-format
+msgid ""
+"<p>The file name of the part:</p><p>Although this defaults to the name of "
+"the attached file, it does not specify the file to be attached; rather, it "
+"suggests a file name to be used by the recipient's mail agent when saving "
+"the part to disk.</p>"
+msgstr ""
+"<p>ឈ្មោះ​ឯកសារ​របស់​ផ្នែក ៖</p><p>ថ្វីបើ​វា​មាន​លំនាំដើម​ជា​ឈ្មោះ​របស់​ឯកសារ​ភ្ជាប់​ក៏ដោយ តែ​វា​មិន​បញ្ជាក់​"
+"ឯកសារ​ដែល​បាន​ភ្ជាប់​ទេ ជាងនេះ​ទៅទៀត វា​ស្នើ​ឈ្មោះ​ឯកសារ​ដែល​ត្រូវ​បាន​ប្រើ​ដោយ​ភ្នាក់ងារ​សំបុត្រ​របស់​"
+"អ្នកទទួល ពេល​រក្សាទុក​ផ្នែក​ទៅកាន់​ថាស ។</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:153
+#, kde-format
+msgid ""
+"<p>A description of the part:</p><p>This is just an informational "
+"description of the part, much like the Subject is for the whole message; "
+"most mail agents will show this information in their message previews "
+"alongside the attachment's icon.</p>"
+msgstr ""
+"<p>សេចក្ដី​ពណ៌នា​របស់​ផ្នែក ៖</p><p>នេះ​គ្រាន់តែ​ជា​សេចក្ដី​ពណ៌នា​បន្ថែម​របស់​ផ្នែក​ប៉ុណ្ណោះ វា​ដូចគ្នា​ទៅ​នឹង​"
+"ប្រធានបទ​សម្រាប់​សារ​ទាំងមូល ភ្នាក់ងារ​សារ​ភាគច្រើន​បង្ហាញ​ព័ត៌មាន​នេះ​នៅ​ក្នុង​ការ​មើល​សារ​ជាមុន​របស់​ពួកគេ​"
+"ដែល​ក្បែរ​រូបតំណាង​របស់​ឯកសារ​ភ្ជាប់ ។</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:160
+#, kde-format
+msgid ""
+"<p>The transport encoding of this part:</p><p>Normally, you do not need to "
+"change this, since %1 will use a decent default encoding, depending on the "
+"MIME type; yet, sometimes, you can significantly reduce the size of the "
+"resulting message, e.g. if a PostScript file does not contain binary data, "
+"but consists of pure text -- in this case, choosing \"quoted-printable\" "
+"over the default \"base64\" will save up to 25% in resulting message size.</"
+"p>"
+msgstr ""
+"<p>ការ​បញ្ជូន​អ៊ិនកូដ​របស់​ផ្នែក​នេះ ៖</p><p>ជាទូទៅ​អ្នក​មិន​ចាំបាច់​ផ្លាស់ប្ដូរ​វា​ទេ ព្រោះ %1 នឹង​ប្រើ​ការ​"
+"អ៊ិនកូដ​លំនាំដើម​សមរម្យ អាស្រ័យ​តាម​ប្រភេទ MIME ពេល​ខ្លះ​អ្នក​អាច​កាត់បន្ថយ​ទំហំ​ជា​ចាំបាច់​នៃ​ការ​បង្ហាញ​សារ "
+"ឧ. ប្រសិនបើ​ឯកសារ PostScript មិន​មាន​ទិន្នន័យ​គោល​ពីរ ប៉ុន្តែ​មាន​អត្ថបទ​សុទ្ធ -- ក្នុង​ករណី​នេះ​ការ​"
+"ជ្រើស \"សម្រង់​ដែល​អាច​បោះពុម្ព​បាន\" តាម​លំនាំដើម \"base64\" នឹង​សន្សំ​រហូតដល់ ២៥% នៅ​ក្នុង​ការ​"
+"បង្ហាញ​ទំហំសារ ។</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:171
+#, kde-format
+msgid ""
+"<p>Check this option if you want to suggest to the recipient the automatic "
+"(inline) display of this part in the message preview, instead of the default "
+"icon view;</p><p>Technically, this is carried out by setting this part's "
+"<em>Content-Disposition</em> header field to \"inline\" instead of the "
+"default \"attachment\".</p>"
+msgstr ""
+"<p>ធីក​ជម្រើស​នេះ​ប្រសិនបើ​អ្នក​ចង់​ផ្ដល់​យោបល់​ទៅកាន់​ការ​បង្ហាញ (ក្នុង​តួ) ដោយ​ស្វ័យប្រវត្តិ​របស់​អ្នកទទួល​នៃ​"
+"ផ្នែក​នេះ​នៅ​ក្នុង​សារ​មើល​ជាមុន ជំនួស​ឲ្យ​ទិដ្ឋភាព​រូបតំណាង​លំនាំដើម</p><p>តាម​បច្ចេកទេស វា​ត្រូវ​បាន​"
+"ដោះស្រាយ​ដោយ​ការ​កំណត់​វាល​បឋមកថា <em>ការ​ចែកចាយ​មាតិកា</em> របស់​ផ្នែក​នេះ​ទៅកាន់ \"ក្នុង​តួ\" "
+"ជំនួស​ឲ្យ​លំនាំដើម \"ឯកសារ​ភ្ជាប់\" ។</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:179
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be signed.</p><p>The "
+"signature will be made with the key that you associated with the currently-"
+"selected identity.</p>"
+msgstr ""
+"<p>ធីក​ជម្រើស​នេះ​ប្រសិនបើ​អ្នក​ចង់​ឲ្យ​ផ្នែក​របស់​សារ​នេះ​ត្រូវ​បាន​ចុះហត្ថលេខា ។</p><p>ហត្ថលេខា​ត្រូវ​បាន​"
+"បង្កើត​ឡើង​ជាមួយ​គ្រាប់ចុច​ដែល​អ្នក​បាន​ជាប់​ទាក់ទង​នឹង​អត្តសញ្ញាណ​ដែល​បាន​ជ្រើស​បច្ចុប្បន្ន ។</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:185
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be encrypted.</"
+"p><p>The part will be encrypted for the recipients of this message.</p>"
+msgstr ""
+"<p>ធីក​ជម្រើស​នេះ​ប្រសិនបើ​អ្នក​ចង់​ឲ្យ​ផ្នែក​របស់​សារ​នេះ​ត្រូវ​បាន​អ៊ិនគ្រីប ។</p><p>ផ្នែក​នេះ​នឹង​ត្រូវ​បាន​"
+"អ៊ិនគ្រីប​សម្រាប់​អ្នកទទួល​សារ​នេះ ។</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:306
+#: attachment/attachmentpropertiesdialog.cpp:321
+#, fuzzy, kde-format
+#| msgid "Attachment Properties"
+msgctxt "@title:window"
+msgid "Attachment Properties"
+msgstr "លក្ខណសម្បត្តិ​របស់​ឯកសារ​ភ្ជាប់"
+
+#: attachment/attachmentupdatejob.cpp:40
+#, kde-format
+msgid "URL is empty."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: attachment/ui/attachmentpropertiesdialog.ui:39
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:60
+#, kde-format
+msgctxt "MIME type of this attachment"
+msgid "Type:"
+msgstr "ប្រភេទ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: attachment/ui/attachmentpropertiesdialog.ui:82
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:87
+#, kde-format
+msgctxt "size of the attachment"
+msgid "Size:"
+msgstr "ទំហំ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: attachment/ui/attachmentpropertiesdialog.ui:109
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:114
+#, kde-format
+msgctxt "file name of the attachment"
+msgid "Name:"
+msgstr "ឈ្មោះ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: attachment/ui/attachmentpropertiesdialog.ui:139
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:134
+#, kde-format
+msgctxt "description of the attachment"
+msgid "Description:"
+msgstr "សេចក្ដី​ពណ៌នា ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: attachment/ui/attachmentpropertiesdialog.ui:169
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:154
+#, kde-format
+msgctxt "encoding of the attachment"
+msgid "Encoding:"
+msgstr "ការ​អ៊ិនកូដ ៖"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoDisplay)
+#: attachment/ui/attachmentpropertiesdialog.ui:187
+#, kde-format
+msgid "Suggest automatic display"
+msgstr "ផ្ដល់​យោបល់​ការ​បង្ហាញ​ស្វ័យប្រវត្តិ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, encrypt)
+#: attachment/ui/attachmentpropertiesdialog.ui:194
+#, kde-format
+msgid "Encrypt this attachment"
+msgstr "អ៊ិនគ្រីប​ឯកសារ​ភ្ជាប់​នេះ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sign)
+#: attachment/ui/attachmentpropertiesdialog.ui:201
+#, kde-format
+msgid "Sign this attachment"
+msgstr "ចុះហត្ថលេខា​ឯកសារ​ភ្ជាប់​នេះ"
+
+#. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
+#: settings/messagecore.kcfg:34
+#, kde-format
+msgid ""
+"Changing this from its default 'Auto' will force the use of the specified "
+"encoding for all emails, regardless of what they specify themselves."
+msgstr ""
+"ការ​ប្ដូរ​វា​​ពី​លំនាំដើម​របស់​វា \"ស្វ័យប្រវត្តិ\" នឹង​បង្ខំ​ការ​ប្រើ​ការ​អ៊ិនកូដ​ដែល​បាន​បញ្ជាក់​សម្រាប់​អ៊ីមែល​"
+"ទាំងអស់ ដោយ​មិន​គិត​ពី​អ្វី​ដែល​ពួកគេ​បញ្ជាក់​ដោយ​ខ្លួន​គេ​ឡើយ ។"
+
+#. i18n: ectx: label, entry (QuotedText3), group (Reader)
+#: settings/messagecore.kcfg:37
+#, kde-format
+msgid "This is the color used in the 3rd level of quoted text"
+msgstr "នេះ​ជា​ពណ៌​ដែល​ត្រូវ​បាន​ប្រើ​នៅ​ក្នុង​កម្រិត​ទី​បី​របស់​អត្ថបទ​ដកស្រង់"
+
+#. i18n: ectx: label, entry (QuotedText2), group (Reader)
+#: settings/messagecore.kcfg:41
+#, kde-format
+msgid "This is the color used in the 2nd level of quoted text"
+msgstr "នេះ​ជា​ពណ៌​ដែល​ត្រូវ​បាន​ប្រើ​នៅ​ក្នុង​កម្រិត​ទី​ពីរ​របស់​អត្ថបទ​ដកស្រង់"
+
+#. i18n: ectx: label, entry (QuotedText1), group (Reader)
+#: settings/messagecore.kcfg:45
+#, kde-format
+msgid "This is the color used in the 1st level of quoted text"
+msgstr "នេះ​ជា​ពណ៌​ដែល​ត្រូវ​បាន​ប្រើ​នៅ​ក្នុង​កម្រិត​ទី​មួយ​របស់​អត្ថបទ​ដកស្រង់"
+
+#. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
+#: settings/messagecore.kcfg:56
+#, kde-format
+msgid "Replace recognized prefi&x with \"Re:\""
+msgstr ""
+
+#. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
+#: settings/messagecore.kcfg:64
+#, kde-format
+msgid "Replace recognized prefix with \"&Fwd:\""
+msgstr ""
+
+#. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
+#: settings/messagecore.kcfg:69
+#, kde-format
+msgid ""
+"The maximum size in bits that email attachments are allowed to have (-1 for "
+"no limit)"
+msgstr ""
+
+#: utils/stringutil.cpp:418
+#, kde-format
+msgctxt "signal that this email is defined in my identity"
+msgid "Me"
+msgstr ""
+
+#~ msgid "This is the color used to highlight misspelled words"
+#~ msgstr "នេះ​ជា​ពណ៌​ដែល​ត្រូវ​បាន​ប្រើ​ដើម្បី​រំលេច​ពាក្យ​ដែល​ប្រកប​ខុស"
+
+#~ msgid "Specifies the font to use for the message body"
+#~ msgstr "បញ្ជាក់​ពុម្ពអក្សរ​ដែល​ត្រូវ​ប្រើ​សម្រាប់​តួ​សារ"
+
+#~ msgid "Specifies the font to use for printing"
+#~ msgstr "បញ្ជាក់​ពុម្ពអក្សរ​ដែល​ត្រូវ​ប្រើ​សម្រាប់​ការ​បោះពុម្ព"
+
+#~ msgid "This is the color used for highlighting all signed messages"
+#~ msgstr "នេះ​ជា​ពណ៌​ដែល​ត្រូវ​បាន​ប្រើ​ដើម្បី​រំលេច​សារ​ដែល​បាន​ចុះហត្ថលេខា​ទាំងអស់"
+
+#~ msgid "This is the color used for highlighting all encrypted messages"
+#~ msgstr "នេះ​ជា​ពណ៌​ដែល​ត្រូវ​បាន​ប្រើ​ដើម្បី​រំលេច​សារ​ដែល​បាន​អ៊ិនគ្រីប​ទាំងអស់"
+
+#~ msgid ""
+#~ "Disregard the user's umask setting and use \"read-write for the user only"
+#~ "\" instead"
+#~ msgstr ""
+#~ "បដិសេធ​ការ​កំណត់ umask របស់​អ្នក​ប្រើ​នេះ រួច​ប្រើ \"អាន-សរសេរ​សម្រាប់​អ្នកប្រើ​តែប៉ុណ្ណោះ\" ជំនួស​វិញ"
+
+#~ msgid ""
+#~ "Some emails, especially those generated automatically, do not specify the "
+#~ "character encoding which needs to be used to properly display them. In "
+#~ "such cases a fallback character encoding will be used, which you can "
+#~ "configure here. Set it to the character encoding most commonly used in "
+#~ "your part of the world. As a default the encoding configured for the "
+#~ "whole system is used."
+#~ msgstr ""
+#~ "អ៊ីមែល​មួយ​ចំនួន ជាពិសេស​​អ៊ីមែល​ដែល​បាន​បង្កើត​ដោយ​ស្វ័យប្រវត្តិ មិន​បញ្ជាក់​ការ​អ៊ិនកូដ​តួអក្សរ​​ដែល​ចាំបាច់​ត្រូវ​"
+#~ "ប្រើ​ក្នុង​ការ​បង្ហាញ​ត្រឹមត្រូវ​ទេ ។ ក្នុង​ករណី​នេះ​ការ​អ៊ិនកូដ​តួអក្សរ​ថយក្រោយ​នឹង​ត្រូវ​បាន​ប្រើ ហើយ​អ្នក​អាច​"
+#~ "កំណត់​រចនាសម្ព័ន្ធ​នៅ​ទីនេះ​បាន ។ កំណត់​វា​ទៅកាន់​ការ​អ៊ិនកូដ​តួអក្សរ​ដែល​ត្រូវ​បាន​ប្រើ​ជា​ទូទៅ​នៅ​ក្នុង​ផ្នែក​នៃ​"
+#~ "ពិភពលោក ។ នៅ​ពេល​បាន​ប្រើ​ការ​អ៊ិនកូដ​លំនាំដើម​ដែល​បាន​កំណត់​រចនាសម្ព័ន្ធ​សម្រាប់​ប្រព័ន្ធ​ទាំងមូល​ ។"
+
+#~ msgid "Could not read file %1."
+#~ msgstr "មិន​អាច​អាន​ឯកសារ %1 បានទេ ។"
+
+#~ msgid "Edit Note"
+#~ msgstr " កែសម្រួល​ចំណាំ"
+
+#~ msgid "Delete Note"
+#~ msgstr "លុប​ចំណាំ"
+
+#~ msgid "Add Note"
+#~ msgstr "បន្ថែម​ចំណាំ"
+
+#~ msgid "Enter the text that should be stored as a note to the mail:"
+#~ msgstr "បញ្ចូល​អត្ថបទ​ដែល​គួរ​ត្រូវ​បាន​ទុក​ជា​ចំណាំ​នៅ​ក្នុង​សំបុត្រ ៖"
+
+#~ msgid "Do you really want to delete this note?"
+#~ msgstr "តើ​ពិតជា​ចង់​លុប​ចំណាំ​នេះ​មែន​ឬ ?"
+
+#~ msgid "Delete Note?"
+#~ msgstr "លុប​ចំណាំ​ឬ ?"
+
+#~ msgid "Delete"
+#~ msgstr "លុប"
+
+#~ msgid "Open Address Book"
+#~ msgstr "បើក​សៀវភៅ​អាសយដ្ឋាន"

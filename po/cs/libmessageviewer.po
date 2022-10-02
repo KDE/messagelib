@@ -1,0 +1,2608 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Lukáš Tinkl <ltinkl@redhat.com>, 2010, 2011.
+# Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
+# Vit Pelcak <vpelcak@suse.cz>, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2022-04-06 11:28+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: messagepartthemes/default/templates/certmessagepart.html:2
+msgid "Sorry, certificate could not be imported."
+msgstr "Bohužel, certifikát nelze importovat."
+
+#: messagepartthemes/default/templates/certmessagepart.html:4
+#, kde-format
+msgid "Reason: %1"
+msgstr "Příčina: %1"
+
+#: messagepartthemes/default/templates/certmessagepart.html:7
+msgid "Sorry, no certificates were found in this message."
+msgstr "V této zprávě nebyly nalezeny žádné certifikáty."
+
+#: messagepartthemes/default/templates/certmessagepart.html:9
+msgid "Certificate import status:"
+msgstr "Stav importu certifikátu:"
+
+#: messagepartthemes/default/templates/certmessagepart.html:13
+#, kde-format
+msgid "1 new certificate was imported."
+msgid_plural "%1 new certificates were imported."
+msgstr[0] "Importován 1 nový certifikát."
+msgstr[1] "Importovány %1 nové certifikáty."
+msgstr[2] "Importováno %1 nových certifikátů."
+
+#: messagepartthemes/default/templates/certmessagepart.html:16
+#, kde-format
+msgid "1 certificate was unchanged."
+msgid_plural "%1 certificates were unchanged."
+msgstr[0] "Jeden certifikát nebyl změněn."
+msgstr[1] "%1 certifikáty nebyly změněny."
+msgstr[2] "%1 certifikátů nebylo změněno."
+
+#: messagepartthemes/default/templates/certmessagepart.html:19
+#, kde-format
+msgid "1 new secret key was imported."
+msgid_plural "%1 new secret keys were imported."
+msgstr[0] "Jeden soukromý klíč byl importován."
+msgstr[1] "%1 soukromé klíče byly importovány."
+msgstr[2] "%1 soukromých klíčů bylo importováno."
+
+#: messagepartthemes/default/templates/certmessagepart.html:22
+#, kde-format
+msgid "1 secret key was unchanged."
+msgid_plural "%1 secret keys were unchanged."
+msgstr[0] "Jeden soukromý klíč nebyl změněn."
+msgstr[1] "%1 soukromé klíče nebyly změněny."
+msgstr[2] "%1 soukromých klíčů nebylo změněno."
+
+#: messagepartthemes/default/templates/certmessagepart.html:28
+msgid "Sorry, no details on certificate import available."
+msgstr "Nejsou dostupné žádné podrobnosti o importu certifikátů."
+
+#: messagepartthemes/default/templates/certmessagepart.html:30
+msgid "Certificate import details:"
+msgstr "Podrobnosti o importu certifikátů:"
+
+#: messagepartthemes/default/templates/certmessagepart.html:34
+#, kde-format
+msgctxt "Certificate import failed."
+msgid "Failed: %1 (%2)"
+msgstr "Selhání: %1 (%2)"
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:5
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:7
+msgid "Encapsulated message"
+msgstr "Zapouzdřená zpráva"
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:19
+msgid "End of encapsulated message"
+msgstr "Konec zapouzdřené zprávy"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:3
+msgid "This message is encrypted."
+msgstr "Tato zpráva je šifrovaná."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:7
+msgid "Decrypt Message"
+msgstr "Dešifrovat zprávu"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:14
+msgid "Please wait while the message is being decrypted..."
+msgstr "Prosím, počkejte než bude zpráva dešifrována..."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:18
+msgid "The message is encrypted for the following keys:"
+msgstr "Zpráva je šifrována pro následující klíče:"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:72
+#: messagepartthemes/default/templates/signedmessagepart.html:135
+msgid "Hide Details"
+msgstr "Skrýt podrobnosti"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:27
+#: messagepartthemes/default/templates/encryptedmessagepart.html:62
+msgid "unknown key"
+msgstr "Neznámý klíč"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:34
+msgid "Encrypted message"
+msgstr "Zašifrovaná zpráva"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:158
+msgid "Show Details"
+msgstr "Zobrazit podrobnosti"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:41
+msgid "Encrypted message (decryption not possible)"
+msgstr "Zašifrovaná zpráva (dešifrování není možné)"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:44
+msgid "Reason: "
+msgstr "Důvod: "
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:56
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr ""
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:67
+msgid "Could not decrypt the data."
+msgstr "Nelze dešifrovat data."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+msgid "End of encrypted message"
+msgstr "Konec šifrované zprávy"
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:6
+msgid ""
+"<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+"HTML code is shown. If you trust the sender of this message then you can "
+"activate formatted HTML display for this message <a href='kmail:showHTML'>by "
+"clicking here</a>."
+msgstr ""
+"<b>Poznámka:</b> Toto je zpráva v HTML. Z bezpečnostních důvodů je zobrazen "
+"pouze čistý HTML kód. Pokud odesilateli této zprávy důvěřujete, můžete "
+"aktivovat zobrazování formátovaného HTML pro tuto zprávu kliknutím <a "
+"href='kmail:showHTML'>zde</a>."
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:12
+msgid ""
+"<b>Note:</b> This HTML message may contain external references to images "
+"etc. For security/privacy reasons external references are not loaded. If you "
+"trust the sender of this message then you can load the external references "
+"for this message <a href='kmail:loadExternal'>by clicking here</a>."
+msgstr ""
+"<b>Poznámka:</b> Tato HTML zpráva může obsahovat externí odkazy na obrázky, "
+"soubory atd. Z bezpečnostních důvodů a z důvodu ochrany soukromí nejsou tyto "
+"odkazy načteny. Pokud odesílateli důvěřujete, můžete aktivovat zobrazování "
+"externích odkazů kliknutím <a href='kmail:loadExternal'>zde</a>."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:5
+msgid "Please wait while the signature is being verified..."
+msgstr "Prosím, počkejte než bude ověřen podpis..."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:15
+#, kde-format
+msgid "Not enough information to check signature. %1"
+msgstr "Málo informací k ověření podpisu. %1"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:108
+#: messagepartthemes/default/templates/signedmessagepart.html:127
+#, kde-format
+msgid "Message was signed by %1."
+msgstr "Zprávu byla podepsal(a) %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:22
+#: messagepartthemes/default/templates/signedmessagepart.html:92
+msgid "Message was signed with unknown key."
+msgstr "Zpráva byla podepsána neznámým klíčem."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:28
+#: messagepartthemes/default/templates/signedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:48
+#, kde-format
+msgid "Message was signed with key %1."
+msgstr "Zpráva byla podepsána klíčem %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:31
+#, kde-format
+msgid "Message was signed by %3 on %1 with key %2"
+msgstr "Zprávu podepsal(a) %3 dne %1 klíčem %2"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:39
+#, kde-format
+msgid "Message was signed on %1 with key %2."
+msgstr "Zprávu byla podepsána dne %1 klíčem %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:45
+#, kde-format
+msgid "Message was signed by %2 with key %1."
+msgstr "Zprávu podepsal(a) %2 klíčem %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:57
+#: messagepartthemes/default/templates/signedmessagepart.html:98
+msgid "Status: "
+msgstr "Stav: "
+
+#: messagepartthemes/default/templates/signedmessagepart.html:85
+#, kde-format
+msgid "Message was signed on %1 with unknown key %2."
+msgstr "Zpráva byla podepsána neznámým klíčem %2 dne %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#, kde-format
+msgid "Message was signed with unknown key %1."
+msgstr "Zpráva byla podepsána neznámým klíčem %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:95
+msgid "The validity of the signature cannot be verified."
+msgstr "Platnost podpisu nemůže být ověřena."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:105
+#: messagepartthemes/default/templates/signedmessagepart.html:124
+#, kde-format
+msgid "Message was signed by %2 (Key ID: %1)."
+msgstr "Zprávu podepsal(a) %2 (ID klíče: %1)."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+msgid "The signature is valid, but the key's validity is unknown."
+msgstr "Podpis je v pořádku, ale platnost klíče je neznámá."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:114
+msgid "The signature is valid and the key is marginally trusted."
+msgstr "Podpis je v pořádku a klíč je na hranici důvěryhodnosti."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:116
+msgid "The signature is valid and the key is fully trusted."
+msgstr "Podpis je v pořádku a klíč je plně důvěryhodný."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:118
+msgid "The signature is valid and the key is ultimately trusted."
+msgstr "Podpis je v pořádku a klíč je naprosto důvěryhodný."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:120
+msgid "The signature is valid, but the key is untrusted."
+msgstr "Podpis je v pořádku, ale klíč není důvěryhodný."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:130
+msgid "Warning: The signature is bad."
+msgstr "Pozor: Podpis není v pořádku."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:143
+msgid "Invalid signature."
+msgstr "Neplatný podpis."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:145
+msgid "Not enough information to check signature validity."
+msgstr "Málo informací k ověření pravosti podpisu."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:148
+#, kde-format
+msgid "Signed by <a href='mailto:%1'>%1</a>."
+msgstr "Podepsal(a) <a href='mailto:%1'>%1</a>."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:151
+msgid "Signature is valid."
+msgstr "Podpis je platný."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
+msgid "Unknown signature state"
+msgstr "Neznámý stav podpisu"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:170
+msgid "End of signed message"
+msgstr "Konec podepsané zprávy"
+
+#: dkim-verify/dkimcheckfulljob.cpp:118
+#, kde-format
+msgid ""
+"Stored DKIM key is different from the current one. Do you want to store this "
+"one too?"
+msgstr ""
+
+#: dkim-verify/dkimcheckfulljob.cpp:119
+#, kde-format
+msgid "Key Changed"
+msgstr "Klíč byl změněn"
+
+#: dkim-verify/dkimcheckfulljob.cpp:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Store"
+msgstr "Uložit"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "SDID"
+msgstr "SDID"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Selector"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "DKIM Key"
+msgstr "Klíč DKIM"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Inserted"
+msgstr "Vloženo"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Last Used"
+msgstr "Naposledy použité"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:64
+#, kde-format
+msgid "Copy Key"
+msgstr "Kopírovat klíč"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:70
+#, kde-format
+msgid "Remove Key"
+msgid_plural "Remove Keys"
+msgstr[0] "Odstranit klíč"
+msgstr[1] "Odstranit klíče"
+msgstr[2] "Odstranit klíče"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:75
+#, kde-format
+msgid "Do you want to delete this key?"
+msgid_plural "Do you want to delete these keys?"
+msgstr[0] "Přejete si skutečně smazat tento klíč?"
+msgstr[1] "Přejete si skutečně smazat tyto klíče?"
+msgstr[2] "Přejete si skutečně smazat tyto klíče?"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:76
+#, kde-format
+msgid "Delete Key"
+msgid_plural "Delete Keys"
+msgstr[0] "Smazat klíč"
+msgstr[1] "Smazat klíče"
+msgstr[2] "Smazat klíče"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:89
+#: dkim-verify/dkimmanageruleswidget.cpp:221
+#, kde-format
+msgid "Delete All"
+msgstr "Smazat vše"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:91
+#, kde-format
+msgid "Do you want to delete all keys?"
+msgstr "Přejete si smazat všechny klíče?"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:92
+#, kde-format
+msgid "Delete Keys"
+msgstr "Smazat klíče"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:20
+#, kde-format
+msgid "Must be signed"
+msgstr "Musí být podepsán"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:21
+#, kde-format
+msgid "Can be signed"
+msgstr "Může být podepsán"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:22
+#, kde-format
+msgid "Ignore if not signed"
+msgstr "Ignorovat pokud není podepsán"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:29
+#, kde-format
+msgid "Export..."
+msgstr "Exportovat..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Rule"
+msgstr "Nastavit pravidlo"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:42
+#, kde-format
+msgid "Add Rule..."
+msgstr "Přidat pravidlo..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:47
+#, kde-format
+msgid "Import..."
+msgstr "Importovat..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, kde-format
+msgid "No rules found"
+msgstr "Nenalezeny žádná pravidla"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
+#, kde-format
+msgid "Export Rules"
+msgstr "Exportovat pravidla"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "Import Rules"
+msgstr "Importovat pravidla"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "No rules imported."
+msgstr "Žádná pravidla nebyla importována."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: remote-content/remotecontentconfigurewidget.cpp:51
+#, kde-format
+msgid "Domain"
+msgstr "Doména"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Active"
+msgstr "Aktivní"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "List-ID"
+msgstr "Seznam ID"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "From"
+msgstr "Od"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Rule type"
+msgstr "Typ pravidla"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Priority"
+msgstr "Priorita"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:194
+#: remote-content/remotecontentconfigurewidget.cpp:78
+#, kde-format
+msgid "Add..."
+msgstr "Přidat..."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:199
+#: remote-content/remotecontentconfigurewidget.cpp:81
+#, kde-format
+msgid "Modify..."
+msgstr "Změnit..."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:203
+#, kde-format
+msgid "Duplicate Rule"
+msgstr "Duplikovat pravidlo"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:207
+#: remote-content/remotecontentconfigurewidget.cpp:85
+#, kde-format
+msgid "Remove Rule"
+msgstr "Odstranit pravidlo"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:209
+#, kde-format
+msgid "Do you want to delete this rule?"
+msgstr "Přejete si skutečně smazat toto pravidlo?"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:210
+#: remote-content/remotecontentconfigurewidget.cpp:88
+#, kde-format
+msgid "Delete Rule"
+msgstr "Smazat pravidlo"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:223
+#, kde-format
+msgid "Do you want to delete all the rules?"
+msgstr "Opravdu si přejete smazat všechna pravidla?"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:224
+#, kde-format
+msgid "Delete Rules"
+msgstr "Smazat pravidla"
+
+#: dkim-verify/dkimruledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Rule"
+msgstr "Přidat pravidlo"
+
+#: dkim-verify/dkimruledialog.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Modify Rule"
+msgstr "Upravit pravidlo"
+
+#: dkim-verify/dkimrulewidget.cpp:18
+#, kde-format
+msgid "Enabled"
+msgstr "Povoleno"
+
+#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#, kde-format
+msgid "Domain:"
+msgstr "Doména:"
+
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#, kde-format
+msgid "List-Id:"
+msgstr "Seznam ID:"
+
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#, kde-format
+msgid "From:"
+msgstr "Z:"
+
+#: dkim-verify/dkimrulewidget.cpp:46
+#, kde-format
+msgid "Use '*' to specify all emails from domain"
+msgstr ""
+
+#: dkim-verify/dkimrulewidget.cpp:51
+#, kde-format
+msgid "SDID:"
+msgstr "SDID:"
+
+#: dkim-verify/dkimrulewidget.cpp:54
+#, kde-format
+msgid "Rule:"
+msgstr "Pravidlo:"
+
+#: dkim-verify/dkimrulewidget.cpp:60
+#, kde-format
+msgid "Priority:"
+msgstr "Priorita:"
+
+#: dkim-verify/dkimviewermenu.cpp:14
+#, kde-format
+msgid "DKIM"
+msgstr "DKIM"
+
+#: dkim-verify/dkimviewermenu.cpp:36
+#, kde-format
+msgid "Recheck DKIM Signature"
+msgstr "Znovu zkontrolovat pravidlo DKIM"
+
+#: dkim-verify/dkimviewermenu.cpp:39
+#, kde-format
+msgid "Update DKIM key"
+msgstr "Aktualizovat klíč DKIM"
+
+#: dkim-verify/dkimviewermenu.cpp:43
+#, kde-format
+msgid "Rules..."
+msgstr "Pravidla..."
+
+#: dkim-verify/dkimwidgetinfo.cpp:97
+#, kde-format
+msgid "Unknown"
+msgstr "Neznámý"
+
+#: dkim-verify/dkimwidgetinfo.cpp:103
+#, kde-format
+msgid "DKIM: valid (signed by %1)"
+msgstr "DKIM: platný (podepsal %1)"
+
+#: dkim-verify/dkimwidgetinfo.cpp:110
+#, kde-format
+msgid "DKIM: invalid"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:113
+#, kde-format
+msgid "DKIM: Not signed"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:118
+#, kde-format
+msgid "DKIM: Should Be Signed by %1"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:134
+#, kde-format
+msgid "Body Hash was corrupted."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:137
+#, kde-format
+msgid "The domain doesn't exist."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:140
+#, kde-format
+msgid "Missing header From."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:143
+#, kde-format
+msgid "Missing signature."
+msgstr "Chybějící podpis."
+
+#: dkim-verify/dkimwidgetinfo.cpp:146
+#, kde-format
+msgid "Invalid query method."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:149
+#, kde-format
+msgid "Invalid header canonicalization."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:152
+#, kde-format
+msgid "Invalid body canonicalization."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:155
+#, kde-format
+msgid "Unknown Body Hash Algorithm."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:158
+#, kde-format
+msgid "Signature algorithm is invalid."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:161
+#, kde-format
+msgid "The public key was revoked."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:164
+#, kde-format
+msgid "Signature is too large."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:167
+#, kde-format
+msgid "Hash Algorithm is unsupported."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:170
+#, kde-format
+msgid "Public key is too small."
+msgstr "Veřejný klíč je příliš malý."
+
+#: dkim-verify/dkimwidgetinfo.cpp:173
+#, kde-format
+msgid "Impossible to verify signature."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:176
+#, kde-format
+msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:179
+#, kde-format
+msgid "The signing domain is only testing DKIM."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:182
+#, kde-format
+msgid "Impossible to download key."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
+#, kde-format
+msgid "Hash Algorithm unsafe (sha1)"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:188
+#, kde-format
+msgid "AUID is not in a subdomain of SDID"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:191
+#, kde-format
+msgid "Problem during converting public key"
+msgstr "Problém při konverzi veřejného klíče"
+
+#: dkim-verify/dkimwidgetinfo.cpp:200
+#, kde-format
+msgid "Signature expired"
+msgstr "Podpis vypršel"
+
+#: dkim-verify/dkimwidgetinfo.cpp:203
+#, kde-format
+msgid "Signature created in the future"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:206
+#, kde-format
+msgid "Signature too small"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:212
+#, kde-format
+msgid "Public Key too small"
+msgstr "Veřejný klíč je příliš malý"
+
+#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:279
+#, kde-format
+msgctxt "method name: info about it from parsing"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: dkim-verify/dkimwidgetinfo.cpp:256
+#, kde-format
+msgid "%1: None"
+msgstr "%1: Žádný"
+
+#: dkim-verify/dkimwidgetinfo.cpp:271
+#, kde-format
+msgid "%1: Valid (Signed by %2)"
+msgstr "%1: Platný (Podepsal %2)"
+
+#: dkim-verify/dkimwidgetinfo.cpp:291
+#, kde-format
+msgid "%1: Valid"
+msgstr "%1: Platný"
+
+#: dkim-verify/dkimwidgetinfo.cpp:306
+#, kde-format
+msgid "Not Signed"
+msgstr "Nepodepsán"
+
+#: header/grantleeheaderformatter.cpp:232
+#, kde-format
+msgid "Subject:"
+msgstr "Předmět:"
+
+#: header/grantleeheaderformatter.cpp:252
+#, kde-format
+msgid "Date:"
+msgstr "Datum:"
+
+#: header/grantleeheaderformatter.cpp:274
+#, kde-format
+msgid "To:"
+msgstr "Do:"
+
+#: header/grantleeheaderformatter.cpp:276
+#, kde-format
+msgid "Reply To:"
+msgstr "Odpovědět komu:"
+
+#: header/grantleeheaderformatter.cpp:278
+#, kde-format
+msgid "CC:"
+msgstr "Kopie: "
+
+#: header/grantleeheaderformatter.cpp:280
+#, kde-format
+msgid "BCC:"
+msgstr "Skrytá kopie:"
+
+#: header/grantleeheaderformatter.cpp:284
+#, kde-format
+msgid "Sender:"
+msgstr "Odesílatel:"
+
+#: header/grantleeheaderformatter.cpp:286
+#, kde-format
+msgid "resent from:"
+msgstr "přeposláno od:"
+
+#: header/grantleeheaderformatter.cpp:288
+#, kde-format
+msgid "resent to:"
+msgstr "přeposlat komu:"
+
+#: header/grantleeheaderformatter.cpp:388
+#, kde-format
+msgid "Grantlee theme \"%1\" is not valid."
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
+#, kde-format
+msgid "No Subject"
+msgstr "Žádný předmět"
+
+#: header/grantleeheaderformatter.cpp:500
+#, kde-format
+msgid "Spam Status:"
+msgstr "Stav spamu:"
+
+#: header/grantleeheaderformatter.cpp:512
+#, kde-format
+msgid "Printing mode"
+msgstr "Režim tisku"
+
+#: header/grantleeheaderformatter.cpp:554
+#, kde-format
+msgid "[vcard]"
+msgstr "[Vizitka]"
+
+#: header/grantleeheaderformatter.cpp:561
+#, kde-format
+msgid "Attachments:"
+msgstr "Přílohy:"
+
+#: header/grantleeheaderformatter.cpp:590
+#, kde-format
+msgid "Security:"
+msgstr "Zabezpečení:"
+
+#: header/headerstyle_util.cpp:55
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "Neznámý"
+
+#: header/headerstyle_util.cpp:146
+#, kde-format
+msgid ""
+"%1% probability of being spam with confidence %3%.\n"
+"\n"
+"Full report:\n"
+"Probability=%2\n"
+"Confidence=%4"
+msgstr ""
+"%1% pravděpodobnost spamu s jistotou %3%.\n"
+"\n"
+"Celá zpráva:\n"
+"Pravděpodobnost=%2\n"
+"Jistota=%4"
+
+#: header/headerstyle_util.cpp:155
+#, kde-format
+msgid ""
+"%1% probability of being spam.\n"
+"\n"
+"Full report:\n"
+"Probability=%2"
+msgstr ""
+"%1% pravděpodobnost spamu.\n"
+"\n"
+"Celá zpráva:\n"
+"Pravděpodobnost=%2"
+
+#: header/headerstyle_util.cpp:164
+#, kde-format
+msgid "No Spam agent"
+msgstr "Žádný spam agent"
+
+#: header/headerstyle_util.cpp:167
+#, kde-format
+msgid "Spam filter score not a number"
+msgstr ""
+
+#: header/headerstyle_util.cpp:170
+#, kde-format
+msgid "Threshold not a valid number"
+msgstr ""
+
+#: header/headerstyle_util.cpp:173
+#, kde-format
+msgid "Spam filter score could not be extracted from header"
+msgstr ""
+
+#: header/headerstyle_util.cpp:176
+#, kde-format
+msgid "Threshold could not be extracted from header"
+msgstr ""
+
+#: header/headerstyle_util.cpp:179
+#, kde-format
+msgid "Error evaluating spam score"
+msgstr "Chyba při vyhodnocování skóre spamu"
+
+#: header/headerstyle_util.cpp:184
+#, kde-format
+msgid ""
+"%1.\n"
+"\n"
+"Full report:\n"
+"%2"
+msgstr ""
+"%1.\n"
+"\n"
+"Plné hlášení:\n"
+"%2"
+
+#: header/headerstylemenumanager.cpp:105
+#, kde-format
+msgctxt "View->"
+msgid "&Headers"
+msgstr "&Hlavičky"
+
+#: header/headerstylemenumanager.cpp:109
+#, kde-format
+msgid "Choose display style of message headers"
+msgstr "Vybrat styl zobrazení hlaviček zpráv"
+
+#: header/plainheaderstyle.cpp:103
+#, kde-format
+msgid "Date: "
+msgstr "Datum: "
+
+#: header/plainheaderstyle.cpp:107
+#, kde-format
+msgid "From: "
+msgstr "Od: "
+
+#: header/plainheaderstyle.cpp:109
+#, kde-format
+msgid "[vCard]"
+msgstr "[Vizitka]"
+
+#: header/plainheaderstyle.cpp:119
+#, kde-format
+msgctxt "To-field of the mailheader."
+msgid "To: "
+msgstr "Komu: "
+
+#: header/plainheaderstyle.cpp:126
+#, kde-format
+msgid "CC: "
+msgstr "Kopie: "
+
+#: header/plainheaderstyle.cpp:133
+#, kde-format
+msgid "BCC: "
+msgstr "Skrytá kopie: "
+
+#: header/plainheaderstyle.cpp:138
+#, kde-format
+msgid "Reply to: "
+msgstr "Odpovědět na: "
+
+#: mdn/mdnwarningwidget.cpp:14
+#, kde-format
+msgctxt "@action"
+msgid "Ignore"
+msgstr "Ignorovat"
+
+#: mdn/mdnwarningwidget.cpp:15
+#, kde-format
+msgctxt "@action"
+msgid "Send"
+msgstr ""
+
+#: mdn/mdnwarningwidget.cpp:16
+#, kde-format
+msgctxt "@action"
+msgid "Send Deny"
+msgstr ""
+
+#: messagepartthemes/default/defaultrenderer.cpp:76
+#, kde-format
+msgid "Error: Signature not verified"
+msgstr "Chyba: Podpis neověřen"
+
+#: messagepartthemes/default/defaultrenderer.cpp:80
+#, kde-format
+msgid "Good signature"
+msgstr "Správný podpis"
+
+#: messagepartthemes/default/defaultrenderer.cpp:84
+#, kde-format
+msgid "Bad signature"
+msgstr "Chybný podpis"
+
+#: messagepartthemes/default/defaultrenderer.cpp:88
+#, kde-format
+msgid "No public key to verify the signature"
+msgstr "Není k dispozici veřejný klíč k ověření podpisu"
+
+#: messagepartthemes/default/defaultrenderer.cpp:92
+#, kde-format
+msgid "No signature found"
+msgstr "Nebyl nalezen podpis"
+
+#: messagepartthemes/default/defaultrenderer.cpp:96
+#, kde-format
+msgid "Error verifying the signature"
+msgstr "Chyba při ověřování podpisu"
+
+#: messagepartthemes/default/defaultrenderer.cpp:100
+#, kde-format
+msgid "Different results for signatures"
+msgstr "Rozdílné výsledky pro podpisy"
+
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#, kde-format
+msgid "No status information available."
+msgstr "Není k dispozici informace o stavu."
+
+#: messagepartthemes/default/defaultrenderer.cpp:127
+#: messagepartthemes/default/defaultrenderer.cpp:212
+#, kde-format
+msgid "Good signature."
+msgstr "Správný podpis."
+
+#: messagepartthemes/default/defaultrenderer.cpp:148
+#, kde-format
+msgid "One key has expired."
+msgstr "Jeden klíč vypršel."
+
+#: messagepartthemes/default/defaultrenderer.cpp:152
+#, kde-format
+msgid "The signature has expired."
+msgstr "Podpis vypršel."
+
+#: messagepartthemes/default/defaultrenderer.cpp:157
+#, kde-format
+msgid "Unable to verify: key missing."
+msgstr "Nelze ověřit: chybí klíč."
+
+#: messagepartthemes/default/defaultrenderer.cpp:164
+#, kde-format
+msgid "CRL not available."
+msgstr "Není k dispozici CRL."
+
+#: messagepartthemes/default/defaultrenderer.cpp:168
+#, kde-format
+msgid "Available CRL is too old."
+msgstr "Dostupné CRL je příliš staré."
+
+#: messagepartthemes/default/defaultrenderer.cpp:172
+#, kde-format
+msgid "A policy was not met."
+msgstr "Zásada nebyla dodržena."
+
+#: messagepartthemes/default/defaultrenderer.cpp:176
+#, kde-format
+msgid "A system error occurred."
+msgstr "Vyskytla se systémová chyba."
+
+#: messagepartthemes/default/defaultrenderer.cpp:187
+#, kde-format
+msgid "One key has been revoked."
+msgstr "Jeden klíč byl zrušen."
+
+#: messagepartthemes/default/defaultrenderer.cpp:214
+#, kde-format
+msgid "Bad signature."
+msgstr "Chybný podpis."
+
+#: messagepartthemes/default/defaultrenderer.cpp:598
+#: messagepartthemes/default/defaultrenderer.cpp:600
+#, kde-format
+msgid "certificate"
+msgstr "certifikát"
+
+#: messagepartthemes/default/defaultrenderer.cpp:605
+#: messagepartthemes/default/defaultrenderer.cpp:624
+#, kde-format
+msgctxt "Start of warning message."
+msgid "Warning:"
+msgstr "Varování:"
+
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#, kde-format
+msgid "Sender's mail address is not stored in the %1 used for signing."
+msgstr "Adresa odesilatele není uložena v %1, použitém pro podepisování."
+
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#, kde-format
+msgid "sender: "
+msgstr "odesílatel: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:607
+#, kde-format
+msgid "stored: "
+msgstr "uloženo: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:625
+#, kde-format
+msgid ""
+"No mail address is stored in the %1 used for signing, so we cannot compare "
+"it to the sender's address %2."
+msgstr ""
+"Žádná adresa není uložená v %1, použitém pro podepisování, takže ji nelze "
+"porovnat s adresou odesílatele %2."
+
+#: remote-content/remotecontentconfiguredialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Remote Content"
+msgstr "Nastavit vzdálený obsah"
+
+#: remote-content/remotecontentconfigurewidget.cpp:51
+#, kde-format
+msgid "Status"
+msgstr "Stav"
+
+#: remote-content/remotecontentconfigurewidget.cpp:87
+#, kde-format
+msgid "Do you want to delete this rule '%1'?"
+msgstr "Přejete si skutečně smazat toto pravidlo '%1'?"
+
+#: remote-content/remotecontentconfigurewidget.cpp:105
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Remote Content"
+msgstr "Upravit vzdálený obsah"
+
+#: remote-content/remotecontentconfigurewidget.cpp:121
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Remote Content"
+msgstr "Přidat vzdálený obsah"
+
+#: remote-content/remotecontentconfigurewidget.cpp:130
+#, kde-format
+msgid "An entry already defines this url. Please modify it."
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:130
+#, kde-format
+msgid "Add new Url"
+msgstr "Přidat novou URL"
+
+#: remote-content/remotecontentmenu.cpp:17
+#, kde-format
+msgid "Configure"
+msgstr "Nastavit"
+
+#: remote-content/remotecontentmenu.cpp:19
+#, kde-format
+msgid "Remote Content"
+msgstr "Vzdálený obsah"
+
+#: remote-content/remotecontentmenu.cpp:50
+#, kde-format
+msgid "Authorize %1"
+msgstr "Udělit oprávnění %1"
+
+#: remote-content/remotecontentmenu.cpp:58
+#, kde-format
+msgid "Authorize all Urls"
+msgstr "Udělit oprávnění všem URL"
+
+#: remote-content/remotecontentstatustypecombobox.cpp:12
+#, kde-format
+msgid "Authorized"
+msgstr "Přístup povolen"
+
+#: remote-content/remotecontentstatustypecombobox.cpp:13
+#, kde-format
+msgid "Blocked"
+msgstr "Blokován"
+
+#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:33
+#, kde-format
+msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
+msgstr ""
+"Toto může být podvodná zpráva <a href=\"scamdetails\">(Podrobnosti...)</a>"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:38
+#, kde-format
+msgid "Move to Trash"
+msgstr "Přesunout do koše"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:43
+#, kde-format
+msgid "I confirm it's not a scam"
+msgstr "Potvrzuji, že nejde o podvodnou zprávu"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:47
+#, kde-format
+msgid "Add email to whitelist"
+msgstr "Přidat e-mail na bílou listinu"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:51
+#, kde-format
+msgid "Disable scam detection for all messages"
+msgstr "Úplně vypnout detekci podvodných zpráv"
+
+#: scamdetection/scamdetectionwebengine.cpp:115
+#: scamdetection/scamdetectionwebengine.cpp:201
+#, kde-format
+msgid ""
+"This email contains a link which reads as '%1' in the text, but actually "
+"points to '%2'. This is often the case in scam emails to mislead the "
+"recipient"
+msgstr ""
+"Tato zpráva obsahuje odkaz jenž lze přečíst jako '%1' ale ve skutečnosti "
+"ukazuje na '%2'. To často bývá součástí podvodných zpráv."
+
+#: scamdetection/scamdetectionwebengine.cpp:128
+#, kde-format
+msgid ""
+"This email contains a link which points to a numerical IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+"Tato zpráva obsahuje odkaz jenž ukazuje na číselnou IP adresu (%1) namísto "
+"klasické textové adresy. To často bývá součástí podvodných zpráv."
+
+#: scamdetection/scamdetectionwebengine.cpp:135
+#, kde-format
+msgid ""
+"This email contains a link which points to a hexadecimal IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+"Tato zpráva obsahuje odkaz jenž ukazuje na šestnáctkovou IP adresu (%1) "
+"namísto klasické textové adresy. To často bývá součástí podvodných zpráv."
+
+#: scamdetection/scamdetectionwebengine.cpp:141
+#, kde-format
+msgid "This email contains a link (%1) which has a redirection"
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:148
+#, kde-format
+msgid ""
+"This email contains a link (%1) which contains multiple http://. This is "
+"often the case in scam emails."
+msgstr ""
+"Tato zpráva obsahuje odkaz (%1) jenž obsahuje vícero http://. Ten často bývá "
+"součástí podvodných zpráv."
+
+#: scamdetection/scamdetectionwebengine.cpp:159
+#, kde-format
+msgid "This email contains a shorturl (%1). It can redirect to another server."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:220
+#, kde-format
+msgid "Message contains form element. This is often the case in scam emails."
+msgstr "Zpráva obsahuje formulář. Ten často bývá součástí podvodných zpráv."
+
+#: scamdetection/scamdetectionwebengine.cpp:224
+#, kde-format
+msgid "Details:"
+msgstr "Podrobnosti:"
+
+#: scamdetection/scamexpandurljob.cpp:47
+#, kde-format
+msgid "No network connection detected, we cannot expand url."
+msgstr ""
+
+#: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
+#, kde-format
+msgid "Impossible to expand '%1'."
+msgstr "Nelze rozvinout '%1'."
+
+#: scamdetection/scamexpandurljob.cpp:81
+#, kde-format
+msgid "Short url '%1' redirects to '%2'."
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.cmake:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr ""
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.cmake:15
+#, kde-format
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr ""
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.cmake:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.cmake:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr ""
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr ""
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "Určuje font pro tělo zprávy"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "Určuje font pro tisk"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.cmake:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr ""
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.cmake:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr "Zavřít okno se zprávou po odpovědi či přesměrování"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.cmake:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "Umožnit rozvinout/svinout citace"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.cmake:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"Tuto volbu povolte, pokud si přejete zobrazovat různé úrovně citovaného "
+"textu. V opačném případě ji zakažte."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.cmake:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "Automatická úroveň sbalení:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.cmake:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "Zmenšit velikost písma citovaného textu"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.cmake:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+"Tuto volbu povolte, pokud si přejete zobrazovat citovaný text menším písmem."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.cmake:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr "Vždy dešifrovat zprávy při prohlížení nebo se před dešifrováním zeptat"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "Prohlížeč struktury zprávy"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:94
+#, kde-format
+msgid "Show never"
+msgstr "Nikdy nezobrazovat"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:97
+#, kde-format
+msgid "Show always"
+msgstr "Vždy zobrazit"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.cmake:109 settings/messageviewer.kcfg.cmake:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr ""
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.cmake:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr ""
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.cmake:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "Upřednostňovat HTML před čistým textem"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.cmake:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "Umožnit zprávám načítat externí odkazy z Internetu"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.cmake:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "Jak jsou přílohy zobrazeny"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.cmake:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr ""
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "Aktivovat přístupový klíč"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"KMail může analyzovat zprávy pro podezření na podvodnou zprávu hledáním "
+"technik obvykle používaných k vašemu oklamání"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.cmake:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "Seznam adres na bílé listině"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "Kontrolovat e-maily na sledující URL"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.cmake:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "Neodesílat MDN oznámení o šifrovaných zprávách"
+
+#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
+#: settings/messageviewer.kcfg.cmake:161
+#, kde-format
+msgid ""
+"Specifies the default policy to use, for the Message Disposition "
+"Notifications (for internal use only)"
+msgstr ""
+
+#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
+#: settings/messageviewer.kcfg.cmake:165
+#, kde-format
+msgid ""
+"Specifies the default quoting action to take, when replying to a message "
+"(for internal use only)"
+msgstr ""
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:181
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "Upravit hlavičky 'Od/Komu' v odpovědích na odpovědi"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:182
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"Implementace standardu iCalendar v aplikaci Microsoft Outlook je nedokonalá. "
+"Tato volba řeší jednu z chyb. Pokud uživatelé Outlooku nedostávají vaše "
+"odpovědi, povolte tuto volbu."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:187
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "Posílat groupwarové pozvánky v těle zprávy"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:188
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"Implementace standardu iCalendar v aplikaci Microsoft Outlook je nedokonalá. "
+"Tato volba řeší jednu z chyb. Pokud uživatelé Outlooku nedostávají vaše "
+"pozvánky, povolte tuto volbu."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:193
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "Pojmenování pozvánek kompatibilní s Exchange"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:194
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, pokud je používán v kombinaci s Microsoft Exchange "
+"serverem, má problémy s porozuměním standardních groupwarových zpráv. "
+"Zapněte tuto funkci, pokud si přejete odesílat groupwarové pozvánky tak, aby "
+"jim rozuměl i Microsoft Exchange."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:199
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "Automatické posílání pozvánek"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:200
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"Pokud je zapnuta tato volba, nezobrazuje se okno editoru zpráv, všechny "
+"pozvánky jsou odesílány automaticky. Pokud si přejete zprávu před odesláním "
+"vidět, volbu vypněte. Text však musí zůstat v iCalendar formátu, a proto "
+"byste jej neměli ručně upravovat."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.cmake:205 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "Smazat e-mail s pozvánkou po té, kdy byla odeslána odpověď"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:206
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"Pokud je tato volba zapnuta, přijaté zprávy s pozvánkou budou přesunuty do "
+"koše jakmile na ně odpovíte a tato odpověď bude úspěšně doručena."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1554
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "&Použít neproporcionální font"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.cmake:237
+#, kde-format
+msgid "The most recent selected folder using for Todo."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.cmake:243
+#, kde-format
+msgid "The most recent selected folder using for Event."
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.cmake:249
+#, kde-format
+msgid "The most recent selected folder using for Notes."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/invitationsettings.ui:17
+#, kde-format
+msgid "Groupware Compatibility && Legacy Options"
+msgstr "Možnosti kompatibility groupware"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:23
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitation replies"
+msgstr ""
+"Zapněte tuto možnost, aby Outlook(tm) pochopil vaše odpovědi na pozvánky"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:26
+#, kde-format
+msgid "&Mangle From:/To: headers in replies to invitations"
+msgstr "Zahrnout hlavičky 'Od/Ko&mu' do odpovědí na pozvánky"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:33
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitations"
+msgstr ""
+"Zapněte tuto možnost, aby Outlook(tm) pochopil vaše odpovědi na pozvánky"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:36
+#, kde-format
+msgid "Send &invitations in the mail body"
+msgstr "Posí&lat pozvánky v těle zprávy"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:45
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server,\n"
+"has a problem understanding standards-compliant groupware email.\n"
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, pokud je používán v kombinaci s Microsoft Exchange "
+"serverem, má problémy s porozuměním standardních groupwarových zpráv. "
+"Zapněte tuto funkci, pokud si přejete odesílat groupwarové pozvánky tak, aby "
+"jim rozuměl i Microsoft Exchange."
+
+#. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:48
+#, kde-format
+msgid "Exchange-compatible invitation &naming"
+msgstr "Pojme&nování pozvánek kompatibilní s Exchange"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:55
+#, kde-format
+msgid ""
+"When this is on, the user will not see the mail composer window. Invitation "
+"mails are sent automatically."
+msgstr ""
+"Pokud zvolíte, uživatel neuvidí okno editoru. Pozvánky se odešlou automaticky"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:58
+#, kde-format
+msgid "&Automatic invitation sending"
+msgstr "&Automatické posílání pozvánek"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/invitationsettings.ui:68
+#, kde-format
+msgid "Options"
+msgstr "Možnosti"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
+#: ui/printingsettings.ui:17
+#, kde-format
+msgid "Print only selected text"
+msgstr "Vytisknout pouze vybraný text"
+
+#. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
+#: ui/printingsettings.ui:24
+#, kde-format
+msgid "Respect &expand/collapse quote marks settings"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
+#: ui/printingsettings.ui:31
+#, kde-format
+msgid "Print background color and images"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
+#: ui/printingsettings.ui:38
+#, kde-format
+msgid "Always show encryption/signature details"
+msgstr "Vždy zobrazit podrobnosti šifrování/podpisu"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
+#: ui/settings.ui:31
+#, kde-format
+msgid "Viewer settings"
+msgstr "Nastavení prohlížeče"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/settings.ui:59
+#, kde-format
+msgid "O&verride character encoding:"
+msgstr "Obejít kódo&vání znaků:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
+#: ui/settings.ui:91
+#, kde-format
+msgid "Enable access key"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
+#: ui/settings.ui:98
+#, kde-format
+msgid "Reduce font size for &quoted text"
+msgstr "Zmenšit velikost písma citovaného t&extu"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
+#: ui/settings.ui:105
+#, kde-format
+msgid "Show &expand/collapse quote marks"
+msgstr "Umožnit rozbalit/sbalit citac&e"
+
+#. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
+#: ui/settings.ui:133
+#, kde-format
+msgid "Automatic collapse &level:"
+msgstr "Automatická úroveň sba&lení:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/settings.ui:202
+#, kde-format
+msgid "&Minimum font size:"
+msgstr "&Minimální velikost písma:"
+
+#: utils/messageviewerutil.cpp:156
+#, kde-format
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr "Soubor s názvem \"%1\" již existuje. Opravdu si jej přejete přepsat?"
+
+#: utils/messageviewerutil.cpp:159
+#, kde-format
+msgid "Overwrite File?"
+msgstr "Přepsat soubor?"
+
+#: utils/messageviewerutil.cpp:209
+#, kde-format
+msgid "Save Attachments To"
+msgstr "Uložit přílohy do"
+
+#: utils/messageviewerutil.cpp:226
+#, kde-format
+msgctxt "filename for an unnamed attachment"
+msgid "attachment.1"
+msgstr "příloha.1"
+
+#: utils/messageviewerutil.cpp:232
+#, kde-format
+msgid "Save Attachment"
+msgstr "Uložit přílohu"
+
+#: utils/messageviewerutil.cpp:256
+#, kde-format
+msgctxt "filename for the %1-th unnamed attachment"
+msgid "attachment.%1"
+msgstr "příloha.%1"
+
+#: utils/messageviewerutil.cpp:354
+#, kde-format
+msgid ""
+"The part %1 of the message is encrypted. Do you want to keep the encryption "
+"when saving?"
+msgstr ""
+"Část zprávy '%1' je šifrována. Přejete si šifrování ponechat při uložení?"
+
+#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
+#, kde-format
+msgid "KMail Question"
+msgstr "Dotaz KMailu"
+
+#: utils/messageviewerutil.cpp:356
+#, kde-format
+msgid "Keep Encryption"
+msgstr "Ponechat šifrování"
+
+#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
+#, kde-format
+msgid "Do Not Keep"
+msgstr "Neponechávat"
+
+#: utils/messageviewerutil.cpp:367
+#, kde-format
+msgid ""
+"The part %1 of the message is signed. Do you want to keep the signature when "
+"saving?"
+msgstr "Část zprávy '%1' je podepsána. Přejete si podpis ponechat při uložení?"
+
+#: utils/messageviewerutil.cpp:369
+#, kde-format
+msgid "Keep Signature"
+msgstr "Ponechat podpis"
+
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
+#, kde-kuit-format
+msgctxt "1 = file name, 2 = error string"
+msgid ""
+"<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
+"qt>"
+msgstr ""
+"<qt>Nelze zapsat soubor <br /><filename>%1</filename><br /><br />%2</qt>"
+
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
+#: utils/messageviewerutil.cpp:472
+#, kde-format
+msgid "Error saving attachment"
+msgstr "Chyba při ukládání přílohy"
+
+#: utils/messageviewerutil.cpp:485
+#, kde-format
+msgid "Found no attachments to save."
+msgstr "Nenalezeny žádné přílohy k uložení."
+
+#: utils/messageviewerutil.cpp:500
+#, kde-format
+msgid "message"
+msgstr "zpráva"
+
+#: utils/messageviewerutil.cpp:522
+#, kde-format
+msgid "email messages (*.mbox);;all files (*)"
+msgstr "zprávy pošty (*.mbox);;všechny soubory (*)"
+
+#: utils/messageviewerutil.cpp:533
+#, kde-format
+msgid "Save Message"
+msgid_plural "Save Messages"
+msgstr[0] "Uložit zprávu"
+msgstr[1] "Uložit zprávy"
+msgstr[2] "Uložit zprávy"
+
+#: utils/messageviewerutil.cpp:558
+#, kde-format
+msgid "File %1 could not be loaded."
+msgstr "Soubor %1 nelze načíst."
+
+#: utils/messageviewerutil.cpp:558
+#, kde-format
+msgid "Error loading message"
+msgstr "Chyba při načítání zprávy"
+
+#: utils/messageviewerutil.cpp:560
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Soubor %1 nelze vytvořit."
+
+#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:591
+#, kde-format
+msgid "Error saving message"
+msgstr "Chyba při ukládání zprávy"
+
+#: utils/messageviewerutil.cpp:571
+#, kde-format
+msgid "We cannot save message."
+msgstr "Zprávu nemůžeme uložit."
+
+#: utils/messageviewerutil.cpp:612
+#, kde-format
+msgid "Open &with %1"
+msgstr "Otevřít &pomocí %1"
+
+#: utils/messageviewerutil.cpp:614
+#, kde-format
+msgctxt "@item:inmenu Open With, %1 is application name"
+msgid "%1"
+msgstr "%1"
+
+#: viewer/editorwatcher.cpp:60
+#, kde-format
+msgid "Edit with:"
+msgstr "Upravit pomocí:"
+
+#: viewer/editorwatcher.cpp:194
+#, kde-format
+msgid ""
+"KMail is unable to detect when the chosen editor is closed. To avoid data "
+"loss, editing the attachment will be aborted."
+msgstr ""
+"KMail nedokáže poznat kdy zvolený editor ukončíte. Aby se předešlo ztrátě "
+"dat, úprava přílohy bude zrušena."
+
+#: viewer/editorwatcher.cpp:196
+#, kde-format
+msgid "Unable to edit attachment"
+msgstr "Nelze upravit přílohu"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:59
+#, kde-format
+msgid "body part"
+msgstr "část těla"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:262
+#, kde-format
+msgid "Description"
+msgstr "Popis"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:264
+#, kde-format
+msgid "Type"
+msgstr "Typ"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:266
+#, kde-format
+msgid "Size"
+msgstr "Velikost"
+
+#: viewer/urlhandlermanager.cpp:405
+#, kde-format
+msgid "Turn on HTML rendering for this message."
+msgstr "Zapnout interpretaci HTML pro tuto zprávu."
+
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1623
+#, kde-format
+msgid "Load external references from the Internet for this message."
+msgstr "Pro tuto zprávu načíst externí odkazy z Internetu."
+
+#: viewer/urlhandlermanager.cpp:409
+#, kde-format
+msgid "Work online."
+msgstr "Pracovat připojen."
+
+#: viewer/urlhandlermanager.cpp:411
+#, kde-format
+msgid "Make account online."
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:413
+#, kde-format
+msgid "Decrypt message."
+msgstr "Dešifrovat zprávu."
+
+#: viewer/urlhandlermanager.cpp:415
+#, kde-format
+msgid "Show signature details."
+msgstr "Zobrazit podrobnosti podpisu."
+
+#: viewer/urlhandlermanager.cpp:417
+#, kde-format
+msgid "Hide signature details."
+msgstr "Skrýt podrobnosti podpisu."
+
+#: viewer/urlhandlermanager.cpp:419
+#, kde-format
+msgid "Show encryption details."
+msgstr "Zobrazit podrobnosti šifrování."
+
+#: viewer/urlhandlermanager.cpp:421
+#, kde-format
+msgid "Hide encryption details."
+msgstr "Skrýt podrobnosti šifrování."
+
+#: viewer/urlhandlermanager.cpp:426
+#, kde-format
+msgid "Open Documentation"
+msgstr ""
+
+#: viewer/urlhandlermanager.cpp:460
+#, kde-format
+msgid "Expand all quoted text."
+msgstr "Rozbalit všechen citovaný text."
+
+#: viewer/urlhandlermanager.cpp:462
+#, kde-format
+msgid "Collapse quoted text."
+msgstr "Sbalit citovaný text."
+
+#: viewer/urlhandlermanager.cpp:524
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+"Nelze spustit správce certifikátů. Prosím zkontrolujte svoji instalaci."
+
+#: viewer/urlhandlermanager.cpp:526
+#, kde-format
+msgid "KMail Error"
+msgstr "Chyba KMailu"
+
+#: viewer/urlhandlermanager.cpp:541
+#, kde-format
+msgid "Show certificate 0x%1"
+msgstr "Zobrazit certifikát 0x%1"
+
+#: viewer/urlhandlermanager.cpp:600
+#, kde-format
+msgid "&Open in Address Book"
+msgstr "&Otevřít v knize adres"
+
+#: viewer/urlhandlermanager.cpp:602
+#, kde-format
+msgid "&Copy Email Address"
+msgstr "&Kopírovat e-mailovou adresu"
+
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2713
+#, kde-format
+msgid "Address copied to clipboard."
+msgstr "Adresa zkopírována do schránky."
+
+#: viewer/urlhandlermanager.cpp:626
+#, kde-format
+msgid "Lookup the contact in KAddressbook"
+msgstr "Vyhledat kontakt v Knize adres"
+
+#: viewer/urlhandlermanager.cpp:802
+#, kde-format
+msgid "Attachment: %1"
+msgstr "Příloha: %1"
+
+#: viewer/urlhandlermanager.cpp:805
+#, kde-format
+msgid "Encapsulated Message (Subject: %1)"
+msgstr "Zapouzdřená zpráva (předmět: %1)"
+
+#: viewer/urlhandlermanager.cpp:807
+#, kde-format
+msgid "Encapsulated Message"
+msgstr "Zapouzdřená zpráva"
+
+#: viewer/urlhandlermanager.cpp:810
+#, kde-format
+msgid "Unnamed attachment"
+msgstr "Nepojmenovaná příloha"
+
+#: viewer/urlhandlermanager.cpp:845
+#, kde-format
+msgid "Show GnuPG Audit Log for this operation"
+msgstr "Zobrazit GnuPG Audit záznamy pro tuto operaci"
+
+#: viewer/urlhandlermanager.cpp:885
+#, kde-format
+msgid "Opening URL..."
+msgstr "Otevírání URL..."
+
+#: viewer/urlhandlermanager.cpp:893
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to execute <filename>%1</filename>?"
+msgstr "Opravdu si přejete spustit <filename>%1</filename>?"
+
+#: viewer/urlhandlermanager.cpp:895
+#, kde-format
+msgid "Execute"
+msgstr "Spustit"
+
+#: viewer/viewer.cpp:138
+#, kde-format
+msgid "Loading message..."
+msgstr "Načítá se zpráva..."
+
+#: viewer/viewer_p.cpp:358
+#, kde-format
+msgid ""
+"Deleting an attachment from an encrypted or old-style mailman message is not "
+"supported."
+msgstr ""
+
+#: viewer/viewer_p.cpp:359 viewer/viewer_p.cpp:366 viewer/viewer_p.cpp:588
+#: viewer/viewer_p.cpp:1726
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Smazat přílohu"
+
+#: viewer/viewer_p.cpp:365
+#, kde-format
+msgid ""
+"Deleting an attachment might invalidate any digital signature on this "
+"message."
+msgstr ""
+"Odstranění přílohy může zneplatnit jakýkoliv digitální podpis v této zprávě."
+
+#: viewer/viewer_p.cpp:447
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr "&Otevřít pomocí"
+
+#: viewer/viewer_p.cpp:465
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr "&Ostatní..."
+
+#: viewer/viewer_p.cpp:467 viewer/viewer_p.cpp:480
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr "&Otevřít pomocí..."
+
+#: viewer/viewer_p.cpp:544 viewer/viewer_p.cpp:1704
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Otevřít"
+
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1711
+#, kde-format
+msgctxt "to view something"
+msgid "View"
+msgstr "Zobrazit"
+
+#: viewer/viewer_p.cpp:566
+#, kde-format
+msgid "Scroll To"
+msgstr "Rolovat na"
+
+#: viewer/viewer_p.cpp:571
+#, kde-format
+msgid "Save As..."
+msgstr "Uložit jako..."
+
+#: viewer/viewer_p.cpp:577 viewer/viewer_p.cpp:1721
+#, kde-format
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: viewer/viewer_p.cpp:599
+#, kde-format
+msgid "Reply To Author"
+msgstr "Odpovědět autorovi"
+
+#: viewer/viewer_p.cpp:607
+#, kde-format
+msgid "Reply To All"
+msgstr "Odpověď všem"
+
+#: viewer/viewer_p.cpp:613 viewer/viewer_p.cpp:1731
+#, kde-format
+msgid "Properties"
+msgstr "Vlastnosti"
+
+#: viewer/viewer_p.cpp:750
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: viewer/viewer_p.cpp:751
+#, kde-format
+msgid "The KDE Mail Client"
+msgstr "Poštovní klient KDE."
+
+#: viewer/viewer_p.cpp:1287
+#, kde-format
+msgctxt "@title:window"
+msgid "View Attachment: %1"
+msgstr "Zobrazit přílohu: %1"
+
+#: viewer/viewer_p.cpp:1475
+#, kde-format
+msgctxt "View->"
+msgid "&Attachments"
+msgstr "Přílo&hy "
+
+#: viewer/viewer_p.cpp:1477
+#, kde-format
+msgid "Choose display style of attachments"
+msgstr "Vybrat styl zobrazení příloh"
+
+#: viewer/viewer_p.cpp:1480
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&As Icons"
+msgstr "&Jako ikony"
+
+#: viewer/viewer_p.cpp:1483
+#, kde-format
+msgid "Show all attachments as icons. Click to see them."
+msgstr "Zobrazit všechny přílohy jako ikony. Klikněte pro zobrazení."
+
+#: viewer/viewer_p.cpp:1487
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Smart"
+msgstr "&Inteligentně"
+
+#: viewer/viewer_p.cpp:1490
+#, kde-format
+msgid "Show attachments as suggested by sender."
+msgstr "Zobrazit přílohy, jak doporučil odesilatel."
+
+#: viewer/viewer_p.cpp:1494
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Inline"
+msgstr "Vl&oženě"
+
+#: viewer/viewer_p.cpp:1497
+#, kde-format
+msgid "Show all attachments inline (if possible)"
+msgstr "Zobrazit přílohy, pokud možno, vloženě"
+
+#: viewer/viewer_p.cpp:1501
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Hide"
+msgstr "&Skrýt"
+
+#: viewer/viewer_p.cpp:1504
+#, kde-format
+msgid "Do not show attachments in the message viewer"
+msgstr "Nezobrazovat přílohy v prohlížeči zpráv"
+
+#: viewer/viewer_p.cpp:1508
+#, kde-format
+msgctxt "View->attachments->"
+msgid "In Header Only"
+msgstr "Pouze v záhlaví"
+
+#: viewer/viewer_p.cpp:1511
+#, kde-format
+msgid "Show Attachments only in the header of the mail"
+msgstr "Zobrazit přílohy pouze v záhlaví emailu"
+
+#: viewer/viewer_p.cpp:1516
+#, kde-format
+msgid "&Set Encoding"
+msgstr "Nastavení &kódování"
+
+#: viewer/viewer_p.cpp:1521 widgets/configurewidget.cpp:43
+#: widgets/configurewidget.cpp:77
+#, kde-format
+msgid "Auto"
+msgstr "Automaticky"
+
+#: viewer/viewer_p.cpp:1531
+#, kde-format
+msgid "Copy Text"
+msgstr "Kopírovat text"
+
+#: viewer/viewer_p.cpp:1538
+#, kde-format
+msgid "Select All Text"
+msgstr "Vybrat všechen text"
+
+#: viewer/viewer_p.cpp:1544 viewer/viewer_p.cpp:2025
+#, kde-format
+msgid "Copy Link Address"
+msgstr "Kopírovat adresu adresu"
+
+#: viewer/viewer_p.cpp:1549
+#, kde-format
+msgid "Open URL"
+msgstr "Otevřít URL"
+
+#: viewer/viewer_p.cpp:1560
+#, kde-format
+msgid "Show Message Structure"
+msgstr "Zobrazit strukturu zprávy"
+
+#: viewer/viewer_p.cpp:1565
+#, kde-format
+msgid "&View Source"
+msgstr "Zobrazit zdro&j"
+
+#: viewer/viewer_p.cpp:1570
+#, kde-format
+msgid "&Save Message..."
+msgstr "Uložit zp&rávu..."
+
+#: viewer/viewer_p.cpp:1576
+#, kde-format
+msgid "&Save Display Format"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1580
+#, kde-format
+msgid "&Reset Display Format"
+msgstr ""
+
+#: viewer/viewer_p.cpp:1587
+#, kde-format
+msgid "Scroll Message Up"
+msgstr "Rolovat zprávu nahoru"
+
+#: viewer/viewer_p.cpp:1592
+#, kde-format
+msgid "Scroll Message Down"
+msgstr "Rolovat zprávu dolů"
+
+#: viewer/viewer_p.cpp:1597
+#, kde-format
+msgid "Scroll Message Up (More)"
+msgstr "Rolovat zprávu nahoru (více)"
+
+#: viewer/viewer_p.cpp:1602
+#, kde-format
+msgid "Scroll Message Down (More)"
+msgstr "Rolovat zprávu dolů (více)"
+
+#: viewer/viewer_p.cpp:1612
+#, kde-format
+msgid "Toggle HTML Display Mode"
+msgstr "Přepnout režim HTML zobrazení"
+
+#: viewer/viewer_p.cpp:1616
+#, kde-format
+msgid "Toggle display mode between HTML and plain text"
+msgstr "Přepnout režim zobrazení mezi HTML a prostým textem"
+
+#: viewer/viewer_p.cpp:1619
+#, kde-format
+msgid "Load external references"
+msgstr "Načíst externí odkazy"
+
+#: viewer/viewer_p.cpp:1625 widgets/mailsourceviewtextbrowserwidget.cpp:136
+#, kde-format
+msgid "Speak Text"
+msgstr "Přečíst text"
+
+#: viewer/viewer_p.cpp:1631
+#, kde-format
+msgid "Share Text..."
+msgstr "Sdílet text..."
+
+#: viewer/viewer_p.cpp:1637
+#, kde-format
+msgid "Copy Image Location"
+msgstr "Kopírovat umístění obrázku"
+
+#: viewer/viewer_p.cpp:1643
+#, kde-format
+msgid "&Find in Message..."
+msgstr "Nají&t ve zprávě..."
+
+#: viewer/viewer_p.cpp:1652
+#, kde-format
+msgid "Disable Emoticon"
+msgstr "Zakázat emotikon"
+
+#: viewer/viewer_p.cpp:1701
+#, kde-format
+msgid "Save &As..."
+msgstr "Uložit j&ako..."
+
+#: viewer/viewer_p.cpp:1709
+#, kde-format
+msgid "Open With..."
+msgstr "Otevřít pomocí..."
+
+#: viewer/viewer_p.cpp:1716
+#, kde-format
+msgid "Save All Attachments..."
+msgstr "Uložit všechny přílohy..."
+
+#: viewer/viewer_p.cpp:1945
+#, kde-format
+msgid "The network is broken."
+msgstr "Síť je přerušena."
+
+#: viewer/viewer_p.cpp:1945 viewer/viewer_p.cpp:1948
+#, kde-format
+msgid "Check Phishing URL"
+msgstr "Zkontrolovat URL Phishing "
+
+#: viewer/viewer_p.cpp:1948
+#, kde-format
+msgid "The URL %1 is not valid."
+msgstr "URL %1 je neplatné."
+
+#: viewer/viewer_p.cpp:1968
+#, kde-format
+msgid "This web site is a malware, do you want to continue to show it?"
+msgstr "Tato webová stránka je malware, chcete pokračovat s jejím zobrazením?"
+
+#: viewer/viewer_p.cpp:1969
+#, kde-format
+msgid "Malware"
+msgstr "Malware"
+
+#: viewer/viewer_p.cpp:2023
+#, kde-format
+msgid "Copy Email Address"
+msgstr "Zkopírovat e-mailovou adresu"
+
+#: viewer/viewer_p.cpp:2104
+#, kde-format
+msgctxt "@title:window"
+msgid "Message as Plain Text"
+msgstr "Zpráva ve formátu čistého textu"
+
+#: viewer/viewer_p.cpp:2305
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr "Vytisknout dokument"
+
+#: viewer/viewer_p.cpp:2719
+#, kde-format
+msgid "URL copied to clipboard."
+msgstr "URL zkopírováno do schránky."
+
+#: viewer/viewer_p.cpp:2871
+#, kde-format
+msgid "Message loading failed: %1."
+msgstr "Načtení zprávy selhalo: %1."
+
+#: viewer/viewer_p.cpp:2876
+#, kde-format
+msgid "Message not found."
+msgstr "Zpráva nenalezena."
+
+#: widgets/attachmentdialog.cpp:27
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
+"may compromise your system's security."
+msgstr ""
+"Otevřít přílohu <filename>%1</filename>?<nl/>Upozornění: otevřením přílohy "
+"můžete ohrozit bezpečnost svého systému."
+
+#: widgets/attachmentdialog.cpp:32
+#, kde-format
+msgctxt "@title:window"
+msgid "Open Attachment?"
+msgstr "Otevřít přílohu?"
+
+#: widgets/attachmentdialog.cpp:39
+#, kde-format
+msgid "&Open With '%1'"
+msgstr "&Otevřít pomocí '%1'"
+
+#: widgets/attachmentdialog.cpp:46
+#, kde-format
+msgid "Open &With..."
+msgstr "Otevřít &pomocí..."
+
+#: widgets/attachmentdialog.cpp:68
+#, kde-format
+msgid "Do not ask again"
+msgstr "Znovu se nedotazovat"
+
+#: widgets/htmlstatusbar.cpp:108
+#, kde-format
+msgctxt ""
+"'HTML Message' with html linebreaks between each letter and in bold text."
+msgid ""
+"<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
+">a<br />g<br />e</b></qt>"
+msgstr ""
+"<qt><b><br />H<br />T<br />M<br />L<br /> <br />z<br />p<br />r<br />á<br /"
+">v<br />a</b></qt>"
+
+#: widgets/htmlstatusbar.cpp:112
+#, kde-format
+msgctxt "'No HTML Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+">e<br />s<br />s<br />a<br />g<br />e</qt>"
+msgstr ""
+"<qt><br />N<br />e<br /> <br />H<br />T<br />M<br />L<br /> <br />Z<br /"
+">p<br />r<br />á<br />v<br />a</qt>"
+
+#: widgets/htmlstatusbar.cpp:117
+#, kde-format
+msgctxt "'Plain Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+">s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+"<qt><br />H<br />T<br />M<br />L<br /> <br />z<br />p<br />r<br />á<br /"
+">v<br />a<br /></qt>"
+
+#: widgets/htmlstatusbar.cpp:121
+#, kde-format
+msgctxt "'Calendar Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
+">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+"<qt><br />Z<br />p<br />r<br />á<br />v<br />a<br /> <br />k<br />a<br /"
+">l<br />e<br />d<br />á<br />ř<br />e<br /></qt>"
+
+#: widgets/htmlstatusbar.cpp:135
+#, kde-format
+msgid "Click to toggle between HTML, plain text and calendar."
+msgstr "Kliknutím přepnete mezi HTML, prostým textem a kalendářem."
+
+#: widgets/invitationsettings.cpp:70
+#, kde-format
+msgid ""
+"<qt>Invitations are normally sent as attachments to a mail. This switch "
+"changes the invitation mails to be sent in the text of the mail instead; "
+"this is necessary to send invitations and replies to Microsoft Outlook.<br /"
+">But, when you do this, you no longer get descriptive text that mail "
+"programs can read; so, to people who have email programs that do not "
+"understand the invitations, the resulting messages look very odd.<br /"
+">People that have email programs that do understand invitations will still "
+"be able to work with this.</qt>"
+msgstr ""
+"<qt>Pozvánky jsou obvykle odesílány jako přílohy. Zde můžete provést změnu, "
+"která zajistí odeslání přímo v těle zprávy. To je důležité především pro "
+"odesílání pozvání a odpovědí Microsoft Outlooku. <br />Pokud toto nastavení "
+"provedete, nebudou zprávy obsahovat popisný text pro poštovní klienty. "
+"Uživatelé, kteří používají poštovní klienty nepoužívající pozvánky, uvidí "
+"nesrozumitelný text. <br />Uživatelé používající poštovní klienty se "
+"schopností pracovat s pozvánkami nebudou mít žádné problémy pracovat ani s "
+"touto verzí.</qt>"
+
+#: widgets/mailsourcewebengineviewer.cpp:51
+#, kde-format
+msgctxt "Unchanged mail message"
+msgid "Raw Source"
+msgstr "Zdroj"
+
+#: widgets/mailsourcewebengineviewer.cpp:52
+#, kde-format
+msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
+msgstr ""
+
+#: widgets/mailsourcewebengineviewer.cpp:55
+#, kde-format
+msgctxt "Mail message as shown, in HTML format"
+msgid "HTML Source"
+msgstr "HTML zdroj"
+
+#: widgets/mailsourcewebengineviewer.cpp:56
+#, kde-format
+msgid "HTML code for displaying the message to the user"
+msgstr ""
+
+#: widgets/opensavedfilefolderwidget.cpp:26
+#, kde-format
+msgctxt "@action"
+msgid "Open folder where attachment was saved"
+msgstr "Otevřít složku, kam byla příloha uložena"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr "Otevřít soubor"
+
+#: widgets/opensavedfilefolderwidget.cpp:61
+#, kde-format
+msgid "Open folder where attachment was saved"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Otevřít složku, kam byla příloha uložena"
+msgstr[1] "Otevřít složku, kam byly přílohy uloženy"
+msgstr[2] "Otevřít složku, kam byly přílohy uloženy"
+
+#: widgets/opensavedfilefolderwidget.cpp:64
+#, kde-format
+msgid "Open folder where PDF file was saved"
+msgstr "Otevřít složku, kam byl soubor PDF uložen"
+
+#: widgets/opensavedfilefolderwidget.cpp:77
+#, kde-format
+msgid "KMail was unable to open the attachment."
+msgstr "KMail nemohl otevřít přílohu."
+
+#: widgets/shownextmessagewidget.cpp:15
+#, kde-format
+msgid "Next Message"
+msgstr "Následující zpráva"
+
+#: widgets/shownextmessagewidget.cpp:16
+#, kde-format
+msgid "Previous Message"
+msgstr "Předchozí zpráva"
+
+#: widgets/vcardviewer.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "vCard Viewer"
+msgstr "Prohlížeč vizitek"
+
+#: widgets/vcardviewer.cpp:48
+#, kde-format
+msgid "&Import"
+msgstr "&Importovat"
+
+#: widgets/vcardviewer.cpp:49
+#, kde-format
+msgid "&Next Card"
+msgstr "&Následující vizitka"
+
+#: widgets/vcardviewer.cpp:50
+#, kde-format
+msgid "&Previous Card"
+msgstr "&Předchozí vizitka"

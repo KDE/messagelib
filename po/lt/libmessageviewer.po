@@ -1,0 +1,3372 @@
+# translation of kmail.po to Lithuanian
+# Ričardas Čepas <rch@online.lt>, 2003.
+# Donatas Glodenis <dgvirtual@akl.lt>, 2004-2009.
+# Andrius Štikonas <andrius@stikonas.eu>, 2008-2009.
+# Remigijus Jarmalavičius, 2011.
+# Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2011, 2012, 2013, 2014.
+# Liudas Alisauskas <liudas@akmc.lt>, 2013.
+# Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>, 2015, 2016, 2017.
+# tomas.straupis <tomasstraupis@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessageviewer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2020-02-06 14:01+0200\n"
+"Last-Translator: tomas.straupis <tomasstraupis@gmail.com>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 19.04.3\n"
+
+#: messagepartthemes/default/templates/certmessagepart.html:2
+msgid "Sorry, certificate could not be imported."
+msgstr "Deja, liudijimo importuoti nepavyko."
+
+#: messagepartthemes/default/templates/certmessagepart.html:4
+#, kde-format
+msgid "Reason: %1"
+msgstr "Priežastis: %1"
+
+#: messagepartthemes/default/templates/certmessagepart.html:7
+msgid "Sorry, no certificates were found in this message."
+msgstr "Atsiprašome, šiam laiškui liudijimų nerasta"
+
+#: messagepartthemes/default/templates/certmessagepart.html:9
+msgid "Certificate import status:"
+msgstr "Liudijimų importo būsena:"
+
+#: messagepartthemes/default/templates/certmessagepart.html:13
+#, kde-format
+msgid "1 new certificate was imported."
+msgid_plural "%1 new certificates were imported."
+msgstr[0] "Importuotas %1 naujas liudijimas."
+msgstr[1] "Importuoti %1 nauji liudijimai."
+msgstr[2] "Importuota %1 naujų liudijimų."
+msgstr[3] "Importuotas %1 naujas liudijimas."
+
+#: messagepartthemes/default/templates/certmessagepart.html:16
+#, kde-format
+msgid "1 certificate was unchanged."
+msgid_plural "%1 certificates were unchanged."
+msgstr[0] "%1 liudijimas liko nepakeistas."
+msgstr[1] "%1 liudijimai liko nepakeisti."
+msgstr[2] "%1 liudijimų liko nepakeista."
+msgstr[3] "%1 liudijimas liko nepakeistas."
+
+#: messagepartthemes/default/templates/certmessagepart.html:19
+#, kde-format
+msgid "1 new secret key was imported."
+msgid_plural "%1 new secret keys were imported."
+msgstr[0] "Importuotas %1 naujas slaptasis raktas."
+msgstr[1] "Importuoti %1 nauji slaptieji raktai."
+msgstr[2] "Importuota %1 naujų slaptųjų raktų."
+msgstr[3] "Importuotas %1 naujas slaptasis raktas."
+
+#: messagepartthemes/default/templates/certmessagepart.html:22
+#, kde-format
+msgid "1 secret key was unchanged."
+msgid_plural "%1 secret keys were unchanged."
+msgstr[0] "%1 slaptas raktas liko nepakeistas."
+msgstr[1] "%1 slapti raktai liko nepakeisti."
+msgstr[2] "%1 slaptų raktų liko nepakeista."
+msgstr[3] "%1 slaptas raktas liko nepakeistas."
+
+#: messagepartthemes/default/templates/certmessagepart.html:28
+msgid "Sorry, no details on certificate import available."
+msgstr "Deja, nėra jokių detalių apie liudijimų importavimą."
+
+#: messagepartthemes/default/templates/certmessagepart.html:30
+msgid "Certificate import details:"
+msgstr "Liudijimų importo detalės:"
+
+#: messagepartthemes/default/templates/certmessagepart.html:34
+#, kde-format
+msgctxt "Certificate import failed."
+msgid "Failed: %1 (%2)"
+msgstr "Nepavyko: %1 (%2)"
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:5
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:7
+msgid "Encapsulated message"
+msgstr "Įdėtas viduje laiškas"
+
+#: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:19
+msgid "End of encapsulated message"
+msgstr "Įdėto laiško pabaiga"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:3
+msgid "This message is encrypted."
+msgstr "Šis laiškas yra užšifruotas."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:7
+msgid "Decrypt Message"
+msgstr "Iššifruoti laišką"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:14
+msgid "Please wait while the message is being decrypted..."
+msgstr "Palaukite kol iššifruojamas laiškas..."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:18
+msgid "The message is encrypted for the following keys:"
+msgstr "Šis laiškas yra užšifruotas šiems raktams:"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:72
+#: messagepartthemes/default/templates/signedmessagepart.html:135
+msgid "Hide Details"
+msgstr "Slėpti detales"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:27
+#: messagepartthemes/default/templates/encryptedmessagepart.html:62
+msgid "unknown key"
+msgstr "nežinomas raktas"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:34
+msgid "Encrypted message"
+msgstr "Užšifruotas laiškas"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:158
+msgid "Show Details"
+msgstr "Rodyti detales"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:41
+msgid "Encrypted message (decryption not possible)"
+msgstr "Užšifruotas laiškas (iššifravimas negalimas)"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:44
+msgid "Reason: "
+msgstr "Priežastis: "
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:56
+msgid ""
+"No secret key found to decrypt the message. The message is encrypted for the "
+"following keys:"
+msgstr ""
+"Nerastas slaptas raktas pranešimo iššifravimui. Pranešimas užšifruotas šiems "
+"raktams:"
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:67
+msgid "Could not decrypt the data."
+msgstr "Nepavyko iššifruoti duomenų."
+
+#: messagepartthemes/default/templates/encryptedmessagepart.html:74
+msgid "End of encrypted message"
+msgstr "Šifruoto laiško pabaiga"
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:6
+msgid ""
+"<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+"HTML code is shown. If you trust the sender of this message then you can "
+"activate formatted HTML display for this message <a href='kmail:showHTML'>by "
+"clicking here</a>."
+msgstr ""
+"<b>Pastaba:</b> Tai yra HTML laiškas.  Saugumo sumetimais rodomas tik HTML "
+"kodas. Jei pasitikite laiško siuntėju, galite aktyvuoti formatuoto HTML "
+"rodymą šiam laiškui <a href='kmail:showHTML'>spragtelėdami čia</a>."
+
+#: messagepartthemes/default/templates/htmlmessagepart.html:12
+msgid ""
+"<b>Note:</b> This HTML message may contain external references to images "
+"etc. For security/privacy reasons external references are not loaded. If you "
+"trust the sender of this message then you can load the external references "
+"for this message <a href='kmail:loadExternal'>by clicking here</a>."
+msgstr ""
+"<b>Pastaba:</b> Šiame HTML laiške gali būti nuorodų į išorinius "
+"paveikslėlius ir pan. Saugumo/privatumo sumetimais šie objektai iš išorės "
+"neįkeliami.  Jei pasitikite laiško siuntėju, galite įkelti išorinius "
+"objektus šiam laiškui <a href='kmail:loadExternal'>spragtelėdami čia</a>."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:5
+msgid "Please wait while the signature is being verified..."
+msgstr "Prašome palaukti kol parašas bus patikrintas..."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:15
+#, kde-format
+msgid "Not enough information to check signature. %1"
+msgstr "Neužtenka informacijos parašo tikrinimui. %1"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:20
+#: messagepartthemes/default/templates/signedmessagepart.html:108
+#: messagepartthemes/default/templates/signedmessagepart.html:127
+#, kde-format
+msgid "Message was signed by %1."
+msgstr "Laišką pasirašė %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:22
+#: messagepartthemes/default/templates/signedmessagepart.html:92
+msgid "Message was signed with unknown key."
+msgstr "Laiškas buvo pasirašytas nežinomu raktu."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:28
+#: messagepartthemes/default/templates/signedmessagepart.html:36
+#: messagepartthemes/default/templates/signedmessagepart.html:48
+#, kde-format
+msgid "Message was signed with key %1."
+msgstr "Laiškas buvo pasirašytas naudojant raktą %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:31
+#, kde-format
+msgid "Message was signed by %3 on %1 with key %2"
+msgstr "Laiškas buvo pasirašytas %1 data %3 asmens raktu %2"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:39
+#, kde-format
+msgid "Message was signed on %1 with key %2."
+msgstr "Laiškas buvo pasirašytas %1 raktu %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:45
+#, kde-format
+msgid "Message was signed by %2 with key %1."
+msgstr "Laišką pasirašė %1 raktu %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:57
+#: messagepartthemes/default/templates/signedmessagepart.html:98
+msgid "Status: "
+msgstr "Būsena: "
+
+#: messagepartthemes/default/templates/signedmessagepart.html:85
+#, kde-format
+msgid "Message was signed on %1 with unknown key %2."
+msgstr "Laiškas pasirašytas %1 nežinomu raktu %2."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:88
+#, kde-format
+msgid "Message was signed with unknown key %1."
+msgstr "Laiškas pasirašytas nežinomu raktu %1."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:95
+msgid "The validity of the signature cannot be verified."
+msgstr "Parašo galiojimas negali būti patikrintas."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:105
+#: messagepartthemes/default/templates/signedmessagepart.html:124
+#, kde-format
+msgid "Message was signed by %2 (Key ID: %1)."
+msgstr "Laiškas pasirašytas %2 (rakto ID: %1)."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:112
+msgid "The signature is valid, but the key's validity is unknown."
+msgstr "Parašas yra teisingas, bet rakto patikimumas nežinomas."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:114
+msgid "The signature is valid and the key is marginally trusted."
+msgstr "Parašas yra geras, o raktas sąlyginai patikimas."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:116
+msgid "The signature is valid and the key is fully trusted."
+msgstr "Parašas yra geras, o raktas visiškai patikimas."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:118
+msgid "The signature is valid and the key is ultimately trusted."
+msgstr "Parašas yra geras, o raktas yra absoliučiai patikimas."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:120
+msgid "The signature is valid, but the key is untrusted."
+msgstr "Parašas yra geras, bet raktas yra nepatikimas."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:130
+msgid "Warning: The signature is bad."
+msgstr "Įspėjimas: Blogas parašas"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:143
+msgid "Invalid signature."
+msgstr "Parašas negalioja."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:145
+msgid "Not enough information to check signature validity."
+msgstr "Neužtenka informacijos parašo galiojimo patikrinimui."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:148
+#, kde-format
+msgid "Signed by <a href='mailto:%1'>%1</a>."
+msgstr "Pasirašė <a href='mailto:%1'>%1</a>."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:151
+msgid "Signature is valid."
+msgstr "Parašas galioja."
+
+#: messagepartthemes/default/templates/signedmessagepart.html:154
+msgid "Unknown signature state"
+msgstr "Nežinoma parašo būsena"
+
+#: messagepartthemes/default/templates/signedmessagepart.html:170
+msgid "End of signed message"
+msgstr "Pasirašyto laiško pabaiga"
+
+#: dkim-verify/dkimcheckfulljob.cpp:118
+#, kde-format
+msgid ""
+"Stored DKIM key is different from the current one. Do you want to store this "
+"one too?"
+msgstr ""
+"Įrašytas DKIM raktas skiriasi nuo dabartinio. Ar norite įrašyti ir šitą?"
+
+#: dkim-verify/dkimcheckfulljob.cpp:119
+#, kde-format
+msgid "Key Changed"
+msgstr "Raktas pakeistas"
+
+#: dkim-verify/dkimcheckfulljob.cpp:120
+#, fuzzy, kde-format
+#| msgid "stored: "
+msgctxt "@action:button"
+msgid "Store"
+msgstr "išsaugota: "
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "SDID"
+msgstr "SDID"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Selector"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "DKIM Key"
+msgstr "DKIM raktas"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Inserted"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#, kde-format
+msgid "Last Used"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:64
+#, kde-format
+msgid "Copy Key"
+msgstr "Kopijuoti raktą"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:70
+#, fuzzy, kde-format
+#| msgid "Remove Key"
+msgid "Remove Key"
+msgid_plural "Remove Keys"
+msgstr[0] "Pašalinti raktą"
+msgstr[1] "Pašalinti raktą"
+msgstr[2] "Pašalinti raktą"
+msgstr[3] "Pašalinti raktą"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:75
+#, fuzzy, kde-format
+#| msgid "Do you want to delete this key?"
+msgid "Do you want to delete this key?"
+msgid_plural "Do you want to delete these keys?"
+msgstr[0] "Ar norite ištrinti šį raktą?"
+msgstr[1] "Ar norite ištrinti šį raktą?"
+msgstr[2] "Ar norite ištrinti šį raktą?"
+msgstr[3] "Ar norite ištrinti šį raktą?"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:76
+#, fuzzy, kde-format
+#| msgid "Delete Key"
+msgid "Delete Key"
+msgid_plural "Delete Keys"
+msgstr[0] "Trinti raktą"
+msgstr[1] "Trinti raktą"
+msgstr[2] "Trinti raktą"
+msgstr[3] "Trinti raktą"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:89
+#: dkim-verify/dkimmanageruleswidget.cpp:221
+#, kde-format
+msgid "Delete All"
+msgstr "Trinti viską"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:91
+#, fuzzy, kde-format
+#| msgid "Do you want to delete all rules?"
+msgid "Do you want to delete all keys?"
+msgstr "Ar norite ištrinti visas taisykles?"
+
+#: dkim-verify/dkimmanagerkeywidget.cpp:92
+#, fuzzy, kde-format
+#| msgid "Delete Key"
+msgid "Delete Keys"
+msgstr "Trinti raktą"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:20
+#, kde-format
+msgid "Must be signed"
+msgstr "Turi būti pasirašytas"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:21
+#, kde-format
+msgid "Can be signed"
+msgstr "Gali būti pasirašytas"
+
+#: dkim-verify/dkimmanagerulescombobox.cpp:22
+#, kde-format
+msgid "Ignore if not signed"
+msgstr "Ignoruoti, jei nepasirašytas"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:29
+#, kde-format
+msgid "Export..."
+msgstr "Eksportuoti..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Rule"
+msgstr "Konfigūruoti taisyklę"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:42
+#, kde-format
+msgid "Add Rule..."
+msgstr "Pridėti taisyklę..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:47
+#, kde-format
+msgid "Import..."
+msgstr "Importuoti..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#, kde-format
+msgid "No rules found"
+msgstr "Nerasta taisyklių"
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:82
+#, kde-format
+msgid "Export Rules"
+msgstr "Eksportuoti taisykles..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:90
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "Import Rules"
+msgstr "Importuoti taisykles..."
+
+#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#, kde-format
+msgid "No rules imported."
+msgstr "Neimportuotos jokios taisyklės."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: remote-content/remotecontentconfigurewidget.cpp:51
+#, kde-format
+msgid "Domain"
+msgstr "Domenas"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Active"
+msgstr "Aktyvi"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "List-ID"
+msgstr "Sąrašo-ID"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "From"
+msgstr "Nuo"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Rule type"
+msgstr "Taisyklės tipas"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:72
+#, kde-format
+msgid "Priority"
+msgstr "Prioritetas"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:194
+#: remote-content/remotecontentconfigurewidget.cpp:78
+#, kde-format
+msgid "Add..."
+msgstr "Pridėti..."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:199
+#: remote-content/remotecontentconfigurewidget.cpp:81
+#, kde-format
+msgid "Modify..."
+msgstr "Keisti..."
+
+#: dkim-verify/dkimmanageruleswidget.cpp:203
+#, kde-format
+msgid "Duplicate Rule"
+msgstr "Kopijuoti taisyklę"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:207
+#: remote-content/remotecontentconfigurewidget.cpp:85
+#, kde-format
+msgid "Remove Rule"
+msgstr "Pašalinti taisyklę"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:209
+#, kde-format
+msgid "Do you want to delete this rule?"
+msgstr "Ar norite ištrinti šią taisyklę?"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:210
+#: remote-content/remotecontentconfigurewidget.cpp:88
+#, kde-format
+msgid "Delete Rule"
+msgstr "Pašalinti taisyklę"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:223
+#, kde-format
+msgid "Do you want to delete all the rules?"
+msgstr "Ar norite pašalinti visas taisykle?"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:224
+#, kde-format
+msgid "Delete Rules"
+msgstr "Trinti taisykles"
+
+#: dkim-verify/dkimruledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Rule"
+msgstr "Pridėti taisyklę"
+
+#: dkim-verify/dkimruledialog.cpp:73
+#, kde-format
+msgctxt "@title:window"
+msgid "Modify Rule"
+msgstr "Keisti taisyklę"
+
+#: dkim-verify/dkimrulewidget.cpp:18
+#, kde-format
+msgid "Enabled"
+msgstr "Įgalinta"
+
+#: dkim-verify/dkimrulewidget.cpp:36 remote-content/remotecontentwidget.cpp:28
+#, kde-format
+msgid "Domain:"
+msgstr "Domenas:"
+
+#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:211
+#, kde-format
+msgid "List-Id:"
+msgstr "Sąrašo-Id:"
+
+#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:282
+#, kde-format
+msgid "From:"
+msgstr "Nuo:"
+
+#: dkim-verify/dkimrulewidget.cpp:46
+#, kde-format
+msgid "Use '*' to specify all emails from domain"
+msgstr "Naudokite „*“, kad nurodytumėte visus domeno e-laiškus"
+
+#: dkim-verify/dkimrulewidget.cpp:51
+#, kde-format
+msgid "SDID:"
+msgstr "SDID:"
+
+#: dkim-verify/dkimrulewidget.cpp:54
+#, kde-format
+msgid "Rule:"
+msgstr "Taisyklė:"
+
+#: dkim-verify/dkimrulewidget.cpp:60
+#, kde-format
+msgid "Priority:"
+msgstr "Prioritetas:"
+
+#: dkim-verify/dkimviewermenu.cpp:14
+#, kde-format
+msgid "DKIM"
+msgstr "DKIM"
+
+#: dkim-verify/dkimviewermenu.cpp:36
+#, kde-format
+msgid "Recheck DKIM Signature"
+msgstr "Iš naujo patikrinti DKIM parašą"
+
+#: dkim-verify/dkimviewermenu.cpp:39
+#, kde-format
+msgid "Update DKIM key"
+msgstr "Atnaujinti DKIM raktą"
+
+#: dkim-verify/dkimviewermenu.cpp:43
+#, kde-format
+msgid "Rules..."
+msgstr "Taisyklės..."
+
+#: dkim-verify/dkimwidgetinfo.cpp:97
+#, kde-format
+msgid "Unknown"
+msgstr "Nežinomas"
+
+#: dkim-verify/dkimwidgetinfo.cpp:103
+#, kde-format
+msgid "DKIM: valid (signed by %1)"
+msgstr "DKIM: tinkamas (pasirašė %1)"
+
+#: dkim-verify/dkimwidgetinfo.cpp:110
+#, kde-format
+msgid "DKIM: invalid"
+msgstr "DKIM: netinkamas"
+
+#: dkim-verify/dkimwidgetinfo.cpp:113
+#, kde-format
+msgid "DKIM: Not signed"
+msgstr "DKIM: nepasirašytas"
+
+#: dkim-verify/dkimwidgetinfo.cpp:118
+#, kde-format
+msgid "DKIM: Should Be Signed by %1"
+msgstr "DKIM: turi pasirašyti %1"
+
+#: dkim-verify/dkimwidgetinfo.cpp:134
+#, kde-format
+msgid "Body Hash was corrupted."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:137
+#, kde-format
+msgid "The domain doesn't exist."
+msgstr "Domenas neegzistuoja."
+
+#: dkim-verify/dkimwidgetinfo.cpp:140
+#, kde-format
+msgid "Missing header From."
+msgstr "Nėra antraštės „Nuo“."
+
+#: dkim-verify/dkimwidgetinfo.cpp:143
+#, kde-format
+msgid "Missing signature."
+msgstr "Nėra prašo."
+
+#: dkim-verify/dkimwidgetinfo.cpp:146
+#, kde-format
+msgid "Invalid query method."
+msgstr "Netinkamas užklausos metodas."
+
+#: dkim-verify/dkimwidgetinfo.cpp:149
+#, kde-format
+msgid "Invalid header canonicalization."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:152
+#, kde-format
+msgid "Invalid body canonicalization."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:155
+#, kde-format
+msgid "Unknown Body Hash Algorithm."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:158
+#, kde-format
+msgid "Signature algorithm is invalid."
+msgstr "Netinkamas parašo algoritmas."
+
+#: dkim-verify/dkimwidgetinfo.cpp:161
+#, kde-format
+msgid "The public key was revoked."
+msgstr "Viešas raktas buvo atšauktas."
+
+#: dkim-verify/dkimwidgetinfo.cpp:164
+#, kde-format
+msgid "Signature is too large."
+msgstr "Parašas per didelis."
+
+#: dkim-verify/dkimwidgetinfo.cpp:167
+#, kde-format
+msgid "Hash Algorithm is unsupported."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:170
+#, kde-format
+msgid "Public key is too small."
+msgstr "Viešas raktas per mažas."
+
+#: dkim-verify/dkimwidgetinfo.cpp:173
+#, kde-format
+msgid "Impossible to verify signature."
+msgstr "Neįmanoma patikrinti parašo."
+
+#: dkim-verify/dkimwidgetinfo.cpp:176
+#, kde-format
+msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
+msgstr "AUID turi būti toks pat kaip SDID (s-žyma nustatyta rakto įraše)."
+
+#: dkim-verify/dkimwidgetinfo.cpp:179
+#, kde-format
+msgid "The signing domain is only testing DKIM."
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:182
+#, kde-format
+msgid "Impossible to download key."
+msgstr "Neįmanoma atsisiųsti rakto."
+
+#: dkim-verify/dkimwidgetinfo.cpp:185 dkim-verify/dkimwidgetinfo.cpp:209
+#, kde-format
+msgid "Hash Algorithm unsafe (sha1)"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:188
+#, kde-format
+msgid "AUID is not in a subdomain of SDID"
+msgstr "AUID nėra SDID subdomenas"
+
+#: dkim-verify/dkimwidgetinfo.cpp:191
+#, kde-format
+msgid "Problem during converting public key"
+msgstr "Problema konvertuojant viešą raktą"
+
+#: dkim-verify/dkimwidgetinfo.cpp:200
+#, kde-format
+msgid "Signature expired"
+msgstr "Parašo galiojimas baigėsi"
+
+#: dkim-verify/dkimwidgetinfo.cpp:203
+#, kde-format
+msgid "Signature created in the future"
+msgstr "Parašas sukurtas ateityje"
+
+#: dkim-verify/dkimwidgetinfo.cpp:206
+#, kde-format
+msgid "Signature too small"
+msgstr "Parašas per mažas"
+
+#: dkim-verify/dkimwidgetinfo.cpp:212
+#, kde-format
+msgid "Public Key too small"
+msgstr "Viešas raktas per mažas"
+
+#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:279
+#, kde-format
+msgctxt "method name: info about it from parsing"
+msgid "%1: %2"
+msgstr ""
+
+#: dkim-verify/dkimwidgetinfo.cpp:256
+#, kde-format
+msgid "%1: None"
+msgstr "%1: Jokio"
+
+#: dkim-verify/dkimwidgetinfo.cpp:271
+#, kde-format
+msgid "%1: Valid (Signed by %2)"
+msgstr "%1: Tinkamas (pasirašė %2)"
+
+#: dkim-verify/dkimwidgetinfo.cpp:291
+#, kde-format
+msgid "%1: Valid"
+msgstr "%1: Tinkamas"
+
+#: dkim-verify/dkimwidgetinfo.cpp:306
+#, kde-format
+msgid "Not Signed"
+msgstr "Nepasirašyta"
+
+#: header/grantleeheaderformatter.cpp:232
+#, kde-format
+msgid "Subject:"
+msgstr "Tema:"
+
+#: header/grantleeheaderformatter.cpp:252
+#, kde-format
+msgid "Date:"
+msgstr "Nuo:"
+
+#: header/grantleeheaderformatter.cpp:274
+#, kde-format
+msgid "To:"
+msgstr "Kam:"
+
+#: header/grantleeheaderformatter.cpp:276
+#, kde-format
+msgid "Reply To:"
+msgstr "Kam atsakyti:"
+
+#: header/grantleeheaderformatter.cpp:278
+#, kde-format
+msgid "CC:"
+msgstr "Kopija:"
+
+#: header/grantleeheaderformatter.cpp:280
+#, kde-format
+msgid "BCC:"
+msgstr "Slapta kopija:"
+
+#: header/grantleeheaderformatter.cpp:284
+#, kde-format
+msgid "Sender:"
+msgstr "Siuntėjas: "
+
+#: header/grantleeheaderformatter.cpp:286
+#, kde-format
+msgid "resent from:"
+msgstr "persiųsta iš:"
+
+#: header/grantleeheaderformatter.cpp:288
+#, kde-format
+msgid "resent to:"
+msgstr "persiųsti kam:"
+
+#: header/grantleeheaderformatter.cpp:388
+#, kde-format
+msgid "Grantlee theme \"%1\" is not valid."
+msgstr ""
+
+#: header/grantleeheaderformatter.cpp:495 header/headerstyle_util.cpp:81
+#: header/headerstyle_util.cpp:86 header/headerstyle_util.cpp:97
+#, kde-format
+msgid "No Subject"
+msgstr "Nėra temos"
+
+#: header/grantleeheaderformatter.cpp:500
+#, kde-format
+msgid "Spam Status:"
+msgstr "Šlamšto statusas:"
+
+#: header/grantleeheaderformatter.cpp:512
+#, kde-format
+msgid "Printing mode"
+msgstr "Spausdinimo būdas"
+
+#: header/grantleeheaderformatter.cpp:554
+#, kde-format
+msgid "[vcard]"
+msgstr "[vcard]"
+
+#: header/grantleeheaderformatter.cpp:561
+#, kde-format
+msgid "Attachments:"
+msgstr "Priedai:"
+
+#: header/grantleeheaderformatter.cpp:590
+#, kde-format
+msgid "Security:"
+msgstr "Saugumas:"
+
+#: header/headerstyle_util.cpp:55
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "Nežinoma"
+
+#: header/headerstyle_util.cpp:146
+#, kde-format
+msgid ""
+"%1% probability of being spam with confidence %3%.\n"
+"\n"
+"Full report:\n"
+"Probability=%2\n"
+"Confidence=%4"
+msgstr ""
+"%1% tikimybė, kad tai - šlamštas su užtikrintumu %3%.\n"
+"\n"
+"Pilna ataskaita:\n"
+"Tikimybė=%2\n"
+"Užtikrintumas=%4"
+
+#: header/headerstyle_util.cpp:155
+#, kde-format
+msgid ""
+"%1% probability of being spam.\n"
+"\n"
+"Full report:\n"
+"Probability=%2"
+msgstr ""
+"%1% tikimybė, kad tai - šlamštas.\n"
+"\n"
+"Pilna ataskaita:\n"
+"Tikimybė=%2"
+
+#: header/headerstyle_util.cpp:164
+#, kde-format
+msgid "No Spam agent"
+msgstr "Nėra brukalo agento"
+
+#: header/headerstyle_util.cpp:167
+#, kde-format
+msgid "Spam filter score not a number"
+msgstr "Šlamšto filtro įvertinimas nėra skaičius"
+
+#: header/headerstyle_util.cpp:170
+#, kde-format
+msgid "Threshold not a valid number"
+msgstr "Netinkamas skaičius slenksčiai"
+
+#: header/headerstyle_util.cpp:173
+#, kde-format
+msgid "Spam filter score could not be extracted from header"
+msgstr "Šlamšto filtro įvertinimo nepavyko ištraukti iš antraštės"
+
+#: header/headerstyle_util.cpp:176
+#, kde-format
+msgid "Threshold could not be extracted from header"
+msgstr ""
+
+#: header/headerstyle_util.cpp:179
+#, kde-format
+msgid "Error evaluating spam score"
+msgstr "1Įkeliamas laiškas..."
+
+#: header/headerstyle_util.cpp:184
+#, kde-format
+msgid ""
+"%1.\n"
+"\n"
+"Full report:\n"
+"%2"
+msgstr ""
+"%1.\n"
+"\n"
+"Pilna ataskaita:\n"
+"%2"
+
+#: header/headerstylemenumanager.cpp:105
+#, kde-format
+msgctxt "View->"
+msgid "&Headers"
+msgstr "&Antraštės"
+
+#: header/headerstylemenumanager.cpp:109
+#, kde-format
+msgid "Choose display style of message headers"
+msgstr "Pasirinkite laiško antraščių rodymo stilių"
+
+#: header/plainheaderstyle.cpp:103
+#, kde-format
+msgid "Date: "
+msgstr "Data: "
+
+#: header/plainheaderstyle.cpp:107
+#, kde-format
+msgid "From: "
+msgstr "Nuo: "
+
+#: header/plainheaderstyle.cpp:109
+#, kde-format
+msgid "[vCard]"
+msgstr "[vCard]"
+
+#: header/plainheaderstyle.cpp:119
+#, kde-format
+msgctxt "To-field of the mailheader."
+msgid "To: "
+msgstr "Kam: "
+
+#: header/plainheaderstyle.cpp:126
+#, kde-format
+msgid "CC: "
+msgstr "Kopija: "
+
+#: header/plainheaderstyle.cpp:133
+#, kde-format
+msgid "BCC: "
+msgstr "Slapta kopija: "
+
+#: header/plainheaderstyle.cpp:138
+#, kde-format
+msgid "Reply to: "
+msgstr "Kam atsakyti: "
+
+#: mdn/mdnwarningwidget.cpp:14
+#, kde-format
+msgctxt "@action"
+msgid "Ignore"
+msgstr ""
+
+#: mdn/mdnwarningwidget.cpp:15
+#, fuzzy, kde-format
+#| msgid "Sender:"
+msgctxt "@action"
+msgid "Send"
+msgstr "Siuntėjas: "
+
+#: mdn/mdnwarningwidget.cpp:16
+#, fuzzy, kde-format
+#| msgid "Sender:"
+msgctxt "@action"
+msgid "Send Deny"
+msgstr "Siuntėjas: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:76
+#, kde-format
+msgid "Error: Signature not verified"
+msgstr "Klaida: parašas nepatikrintas"
+
+#: messagepartthemes/default/defaultrenderer.cpp:80
+#, kde-format
+msgid "Good signature"
+msgstr "Geras parašas"
+
+#: messagepartthemes/default/defaultrenderer.cpp:84
+#, kde-format
+msgid "Bad signature"
+msgstr "Blogas parašas"
+
+#: messagepartthemes/default/defaultrenderer.cpp:88
+#, kde-format
+msgid "No public key to verify the signature"
+msgstr "Nėra viešo rakto parašo tikrinimui"
+
+#: messagepartthemes/default/defaultrenderer.cpp:92
+#, kde-format
+msgid "No signature found"
+msgstr "Nerasta parašo"
+
+#: messagepartthemes/default/defaultrenderer.cpp:96
+#, kde-format
+msgid "Error verifying the signature"
+msgstr "Klaida tikrinant parašą"
+
+#: messagepartthemes/default/defaultrenderer.cpp:100
+#, kde-format
+msgid "Different results for signatures"
+msgstr "Skirtingi rezultatai parašams"
+
+#: messagepartthemes/default/defaultrenderer.cpp:120
+#, kde-format
+msgid "No status information available."
+msgstr "Nėra būsenos informacijos."
+
+#: messagepartthemes/default/defaultrenderer.cpp:127
+#: messagepartthemes/default/defaultrenderer.cpp:212
+#, kde-format
+msgid "Good signature."
+msgstr "Geras parašas."
+
+#: messagepartthemes/default/defaultrenderer.cpp:148
+#, kde-format
+msgid "One key has expired."
+msgstr "Vieno rakto galiojimas baigėsi."
+
+#: messagepartthemes/default/defaultrenderer.cpp:152
+#, kde-format
+msgid "The signature has expired."
+msgstr "Parašo galiojimas baigėsi."
+
+#: messagepartthemes/default/defaultrenderer.cpp:157
+#, kde-format
+msgid "Unable to verify: key missing."
+msgstr "Neįmanoma patikrinti: trūksta rakto."
+
+#: messagepartthemes/default/defaultrenderer.cpp:164
+#, kde-format
+msgid "CRL not available."
+msgstr "Neprieinamas CRL."
+
+#: messagepartthemes/default/defaultrenderer.cpp:168
+#, kde-format
+msgid "Available CRL is too old."
+msgstr "Prieinamas CRL per senas."
+
+#: messagepartthemes/default/defaultrenderer.cpp:172
+#, kde-format
+msgid "A policy was not met."
+msgstr "Taisyklės neatitikimas."
+
+#: messagepartthemes/default/defaultrenderer.cpp:176
+#, kde-format
+msgid "A system error occurred."
+msgstr "Įvyko sistemos klaida."
+
+#: messagepartthemes/default/defaultrenderer.cpp:187
+#, kde-format
+msgid "One key has been revoked."
+msgstr "Vienas raktas buvo atšauktas."
+
+#: messagepartthemes/default/defaultrenderer.cpp:214
+#, kde-format
+msgid "Bad signature."
+msgstr "Blogas parašas."
+
+#: messagepartthemes/default/defaultrenderer.cpp:598
+#: messagepartthemes/default/defaultrenderer.cpp:600
+#, kde-format
+msgid "certificate"
+msgstr "liudijimas"
+
+#: messagepartthemes/default/defaultrenderer.cpp:605
+#: messagepartthemes/default/defaultrenderer.cpp:624
+#, kde-format
+msgctxt "Start of warning message."
+msgid "Warning:"
+msgstr "Dėmesio:"
+
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#, kde-format
+msgid "Sender's mail address is not stored in the %1 used for signing."
+msgstr "Siuntėjo pašto adresas nėra išsaugotas %1, naudojamame pasirašymui."
+
+#: messagepartthemes/default/defaultrenderer.cpp:606
+#, kde-format
+msgid "sender: "
+msgstr "siuntėjas: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:607
+#, kde-format
+msgid "stored: "
+msgstr "išsaugota: "
+
+#: messagepartthemes/default/defaultrenderer.cpp:625
+#, kde-format
+msgid ""
+"No mail address is stored in the %1 used for signing, so we cannot compare "
+"it to the sender's address %2."
+msgstr ""
+"Pašto adresas nėra išsaugotas %1, naudojamame pasirašymui, todėl mes "
+"negalime sulyginti jo su siuntėjo adresu %2."
+
+#: remote-content/remotecontentconfiguredialog.cpp:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Rule"
+msgctxt "@title:window"
+msgid "Configure Remote Content"
+msgstr "Konfigūruoti taisyklę"
+
+#: remote-content/remotecontentconfigurewidget.cpp:51
+#, fuzzy, kde-format
+#| msgid "Status: "
+msgid "Status"
+msgstr "Būsena: "
+
+#: remote-content/remotecontentconfigurewidget.cpp:87
+#, fuzzy, kde-format
+#| msgid "Do you want to delete this rule?"
+msgid "Do you want to delete this rule '%1'?"
+msgstr "Ar norite ištrinti šią taisyklę?"
+
+#: remote-content/remotecontentconfigurewidget.cpp:105
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Remote Content"
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:121
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Rule"
+msgctxt "@title:window"
+msgid "Add Remote Content"
+msgstr "Konfigūruoti taisyklę"
+
+#: remote-content/remotecontentconfigurewidget.cpp:130
+#, kde-format
+msgid "An entry already defines this url. Please modify it."
+msgstr ""
+
+#: remote-content/remotecontentconfigurewidget.cpp:130
+#, kde-format
+msgid "Add new Url"
+msgstr ""
+
+#: remote-content/remotecontentmenu.cpp:17
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Rule"
+msgid "Configure"
+msgstr "Konfigūruoti taisyklę"
+
+#: remote-content/remotecontentmenu.cpp:19
+#, kde-format
+msgid "Remote Content"
+msgstr ""
+
+#: remote-content/remotecontentmenu.cpp:50
+#, kde-format
+msgid "Authorize %1"
+msgstr ""
+
+#: remote-content/remotecontentmenu.cpp:58
+#, kde-format
+msgid "Authorize all Urls"
+msgstr ""
+
+#: remote-content/remotecontentstatustypecombobox.cpp:12
+#, kde-format
+msgid "Authorized"
+msgstr ""
+
+#: remote-content/remotecontentstatustypecombobox.cpp:13
+#, fuzzy, kde-format
+#| msgid "Block image"
+msgid "Blocked"
+msgstr "Blokuoti paveikslėlį"
+
+#: scamdetection/scamdetectiondetailsdialog.cpp:38
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr "Detalės"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:33
+#, kde-format
+msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
+msgstr ""
+"Šis pranešimas gali būti sukčiavimas. <a href=\"scamdetails\">(Detalės...)</"
+"a>"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:38
+#, kde-format
+msgid "Move to Trash"
+msgstr "Perkelti į šiukšlinę"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:43
+#, kde-format
+msgid "I confirm it's not a scam"
+msgstr "Patvirtinu, kad tai nėra sukčiavimas."
+
+#: scamdetection/scamdetectionwarningwidget.cpp:47
+#, kde-format
+msgid "Add email to whitelist"
+msgstr "Pridėti laišką į baltąjį sąrašą"
+
+#: scamdetection/scamdetectionwarningwidget.cpp:51
+#, kde-format
+msgid "Disable scam detection for all messages"
+msgstr "Išjungti sukčiavimo aptikimą visiems laiškams"
+
+#: scamdetection/scamdetectionwebengine.cpp:115
+#: scamdetection/scamdetectionwebengine.cpp:201
+#, kde-format
+msgid ""
+"This email contains a link which reads as '%1' in the text, but actually "
+"points to '%2'. This is often the case in scam emails to mislead the "
+"recipient"
+msgstr ""
+"Šiame laiške yra nuoroda, kuri tekste skaitoma kaip „%1“, bet iš tikrųjų "
+"rodo į „%2“. Taip dažnai daroma sukčiavimo laiškuose, bandant apgauti gavėją"
+
+#: scamdetection/scamdetectionwebengine.cpp:128
+#, kde-format
+msgid ""
+"This email contains a link which points to a numerical IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+"Šiame laiške yra nuoroda, kuri rodo į skaitmeninį IP adresą (%1) vietoje "
+"įprasto svetainės adreso. Taip dažnai daroma sukčiavimo laiškuose."
+
+#: scamdetection/scamdetectionwebengine.cpp:135
+#, kde-format
+msgid ""
+"This email contains a link which points to a hexadecimal IP address (%1) "
+"instead of a typical textual website address. This is often the case in scam "
+"emails."
+msgstr ""
+"Šiame laiške yra nuoroda, rodanti į šešioliktainį IP adresą (%1) vietoje "
+"įprasto tekstinio svetainės adreso. Taip dažnai daroma sukčiavimo laiškuose."
+
+#: scamdetection/scamdetectionwebengine.cpp:141
+#, kde-format
+msgid "This email contains a link (%1) which has a redirection"
+msgstr "Šiame laiške yra nuoroda (%1), kuri yra peradresavimas"
+
+#: scamdetection/scamdetectionwebengine.cpp:148
+#, kde-format
+msgid ""
+"This email contains a link (%1) which contains multiple http://. This is "
+"often the case in scam emails."
+msgstr ""
+"Šiame laiške yra nuoroda (%1), kurioje yra keli http://. Taip dažnai daroma "
+"sukčiavimo laiškuose."
+
+#: scamdetection/scamdetectionwebengine.cpp:159
+#, kde-format
+msgid "This email contains a shorturl (%1). It can redirect to another server."
+msgstr ""
+"Šiame laiške yra trumpas url (%1). Jis gali peradresuoti į kitą serverį."
+
+#: scamdetection/scamdetectionwebengine.cpp:220
+#, kde-format
+msgid "Message contains form element. This is often the case in scam emails."
+msgstr "Laiške yra formos elementas. Taip dažnai daroma sukčiavimo laiškuose."
+
+#: scamdetection/scamdetectionwebengine.cpp:224
+#, kde-format
+msgid "Details:"
+msgstr "Detalės:"
+
+#: scamdetection/scamexpandurljob.cpp:47
+#, kde-format
+msgid "No network connection detected, we cannot expand url."
+msgstr "Nerastas tinklo ryšys, negalima išplėsti url."
+
+#: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
+#, kde-format
+msgid "Impossible to expand '%1'."
+msgstr "Neįmanoma išplėsti „%1“."
+
+#: scamdetection/scamexpandurljob.cpp:81
+#, kde-format
+msgid "Short url '%1' redirects to '%2'."
+msgstr "Trumpas url „%1“ peradresuoja į „%2“."
+
+#. i18n: ectx: label, entry (PrintSelectedText), group (Print)
+#: settings/messageviewer.kcfg.cmake:11
+#, kde-format
+msgid "Only print selected text in viewer"
+msgstr "Rodyme spausdinti tik pažymėtą tekstą"
+
+#. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
+#: settings/messageviewer.kcfg.cmake:15
+#, fuzzy, kde-format
+#| msgid "Show &expand/collapse quote marks"
+msgid ""
+"Respect expand/collapse quote mark which is defined in settings during "
+"printing."
+msgstr "Rodyti citatų žymių suskleidimą/išskleidimą"
+
+#. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
+#: settings/messageviewer.kcfg.cmake:19
+#, kde-format
+msgid ""
+"Specifies whether the background color and images are also drawn when the "
+"page is printed."
+msgstr ""
+"Nurodo, ar spausdinant puslapį taipogi spausdinti fono spalvą ir piešinius."
+
+#. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
+#: settings/messageviewer.kcfg.cmake:23
+#, kde-format
+msgid "Always show encryption/signature details when we print message"
+msgstr "Spausdinant laišką visada rodyti šifravimo/parašo informaciją"
+
+#. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:34
+#, kde-format
+msgid "When we render html do not use font size inferior to minimum size."
+msgstr "Paišant html, niekada nenaudoti šrifto dydžio, mažesnius už minimalų."
+
+#. i18n: ectx: label, entry (BodyFont), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:38
+#, kde-format
+msgid "Specifies the font to use for the message body"
+msgstr "Nurodo laiško tekstui naudotiną šriftą"
+
+#. i18n: ectx: label, entry (PrintFont), group (Fonts)
+#: settings/messageviewer.kcfg.cmake:42
+#, kde-format
+msgid "Specifies the font to use for printing"
+msgstr "Nurodo spausdinimui skirtą šriftą"
+
+#. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
+#: settings/messageviewer.kcfg.cmake:49
+#, kde-format
+msgid "Check if url can be a phishing"
+msgstr "Tikrinti, ar url gali būti sukčiavimas"
+
+#. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
+#: settings/messageviewer.kcfg.cmake:55
+#, kde-format
+msgid "Close message window after replying or forwarding"
+msgstr "Uždaryti laiško langą atsakius ar persiuntus"
+
+#. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.cmake:72
+#, kde-format
+msgid "Show expand/collapse quote marks"
+msgstr "Rodyti citatų sutraukimo/išplėtimo žymes"
+
+#. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
+#: settings/messageviewer.kcfg.cmake:73
+#, kde-format
+msgid ""
+"Enable this option to show different levels of quoted text. Disable to hide "
+"the levels of quoted text."
+msgstr ""
+"Įgalinkite šią parinktį jei norite, kad būtų matomi skirtingi cituojamo "
+"teksto lygiai. Išjunkite norėdami paslėpti skirtingus cituojamo teksto "
+"lygius."
+
+#. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
+#: settings/messageviewer.kcfg.cmake:76
+#, kde-format
+msgid "Automatic collapse level:"
+msgstr "Automatinio sutraukimo lygmuo:"
+
+#. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.cmake:83
+#, kde-format
+msgid "Reduce font size for quoted text"
+msgstr "Sumažinti cituojamo teksto šrifto dydį"
+
+#. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
+#: settings/messageviewer.kcfg.cmake:84
+#, kde-format
+msgid "Enable this option to show quoted text with a smaller font."
+msgstr ""
+"Įgalinkite šią parinktį jei norite, kad cituojamas  tekstas būtų rodomas "
+"smulkesniu šriftu."
+
+#. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
+#: settings/messageviewer.kcfg.cmake:88
+#, kde-format
+msgid "Always decrypt messages when viewing or ask before decrypting"
+msgstr ""
+"Visuomet iššifruoti laiškus peržiūrint, arba klausti prieš iššifruojant"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:91
+#, kde-format
+msgid "Message Structure Viewer"
+msgstr "Žinūtės struktūros žiūryklė"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:94
+#, kde-format
+msgid "Show never"
+msgstr "Nerodyti niekada"
+
+#. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
+#: settings/messageviewer.kcfg.cmake:97
+#, kde-format
+msgid "Show always"
+msgstr "Visada rodyti"
+
+#. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
+#. i18n: ectx: label, entry (headerStyle), group (Reader)
+#: settings/messageviewer.kcfg.cmake:109 settings/messageviewer.kcfg.cmake:115
+#, kde-format
+msgid "What style of headers should be displayed"
+msgstr "Kokio stiliaus antraštės turėtų būti rodomos"
+
+#. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
+#: settings/messageviewer.kcfg.cmake:119
+#, kde-format
+msgid "How much of headers should be displayed"
+msgstr "Kiek antraščių rodyti"
+
+#. i18n: ectx: label, entry (htmlMail), group (Reader)
+#: settings/messageviewer.kcfg.cmake:123
+#, kde-format
+msgid "Prefer HTML to plain text"
+msgstr "Pirmenybė HTML prieš įprastą tekstą"
+
+#. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
+#: settings/messageviewer.kcfg.cmake:127
+#, kde-format
+msgid "Allow messages to load external references from the Internet"
+msgstr "Leisti laiškams įkelti išorines nuorodas iš interneto"
+
+#. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
+#: settings/messageviewer.kcfg.cmake:131
+#, kde-format
+msgid "How attachments are shown"
+msgstr "Kaip rodomi priedai"
+
+#. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
+#: settings/messageviewer.kcfg.cmake:135
+#, kde-format
+msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+msgstr "Nurodo ar naudoti citavimo spalvą, toliau nei 3 lygyje"
+
+#. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:139
+#, kde-format
+msgid "Activate Access Key"
+msgstr "Aktyvuoti prieigos raktą"
+
+#. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:143
+#, kde-format
+msgid ""
+"KMail can analyze messages for suspected email scams by looking for common "
+"techniques used to deceive you"
+msgstr ""
+"KMail gali analizuoti laiškus dėl įtariamo sukčiavimo ieškant įprastų būdų "
+"jus apgauti"
+
+#. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
+#: settings/messageviewer.kcfg.cmake:147
+#, kde-format
+msgid "List of emails in scam white list"
+msgstr "E-pašto adresų baltasis sąrašas"
+
+#. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
+#: settings/messageviewer.kcfg.cmake:151
+#, kde-format
+msgid "Scan emails for tracking URLs"
+msgstr "Ieškoti laiškuose sekimo URL"
+
+#. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
+#: settings/messageviewer.kcfg.cmake:157
+#, kde-format
+msgid "Do not send MDNs in response to encrypted messages"
+msgstr "Nesiųsti PLP atsakant į užšifruotus laiškus"
+
+#. i18n: ectx: label, entry (DefaultPolicy), group (MDN)
+#: settings/messageviewer.kcfg.cmake:161
+#, kde-format
+msgid ""
+"Specifies the default policy to use, for the Message Disposition "
+"Notifications (for internal use only)"
+msgstr ""
+"Nustato numatytas naudotinas taisykles laiškams būdingiems pranešimams (tik "
+"vidiniam naudojimui)"
+
+#. i18n: ectx: label, entry (QuoteMessage), group (MDN)
+#: settings/messageviewer.kcfg.cmake:165
+#, kde-format
+msgid ""
+"Specifies the default quoting action to take, when replying to a message "
+"(for internal use only)"
+msgstr ""
+"Nustato numatytą naudotiną citavimo veiksmą, kai atsakoma į laišką (tik "
+"vidiniam naudojimui)"
+
+#. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:181
+#, kde-format
+msgid "Mangle From:/To: headers in replies to replies"
+msgstr "Atskirti Nuo:/Kam: antraštes atsakymuose į kvietimus"
+
+#. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:182
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your replies, try setting "
+"this option."
+msgstr ""
+"Microsoft Outlook turi keletą neapgalvotų dalykų jų iCaldendar standarto "
+"įgyvendinime; ši parinktis apeina vieną iš jų. Jei turite problemų su "
+"Outlook naudotojais, kurie negali atsakyti į jūsų laiškus, pabandykite "
+"įjungti šią parinktį."
+
+#. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:187
+#, kde-format
+msgid "Send groupware invitations in the mail body"
+msgstr "Siųsti grupinius kvietimus laiške"
+
+#. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:188
+#, kde-format
+msgid ""
+"Microsoft Outlook has a number of shortcomings in its implementation of the "
+"iCalendar standard; this option works around one of them. If you have "
+"problems with Outlook users not being able to get your invitations, try "
+"setting this option."
+msgstr ""
+"Microsoft Outlook turi keletą neapgalvotų dalykų jų iCalendar standarto "
+"įgyvendinime; ši parinktis apeina vieną iš jų. Jei turite problemų su "
+"Outlook naudotojais, kurie negali gauti jūsų pakvietimų, pabandykite ją "
+"įjungti."
+
+#. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:193
+#, kde-format
+msgid "Exchange-compatible invitation naming"
+msgstr "Su Outlook suderinami &pakvietimų pavadinimai"
+
+#. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:194
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server, has a problem understanding standards-compliant groupware email. "
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, kai naudojamas su Microsoft Exchnange serveriu, turi "
+"problemų suprantant standartų besilaikančių grupinio darbo priemonių "
+"laiškus. Įjunkite šią parinktį, kad siųstumėte grupinius kvietimus tokiu "
+"būdu, kurį supranta Microsoft Exchange."
+
+#. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:199
+#, kde-format
+msgid "Automatic invitation sending"
+msgstr "Automatinis kvietimų siuntimas"
+
+#. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:200
+#, kde-format
+msgid ""
+"When this is checked, you will not see the mail composer window. Instead, "
+"all invitation mails are sent automatically. If you want to see the mail "
+"before sending it, you can uncheck this option. However, be aware that the "
+"text in the composer window is in iCalendar syntax, and you should not try "
+"modifying it by hand."
+msgstr ""
+"Įjungus šią parinktį jūs nebematysite laiško kūrimo lango. Vietoje jo visi "
+"pakvietimų laiškai bus siunčiami automatiškai. Jei norite matyti laiškus "
+"prieš juos išsiųsdami, išjunkite šią parinktį. Kaip ten bebūtų, žinokite, "
+"kad tekstas kūrimo lange yra iCalendar sintaksėje ir jums nereikėtų bandyti "
+"jo keisti rankomis."
+
+#. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
+#: settings/messageviewer.kcfg.cmake:205 ui/invitationsettings.ui:74
+#, kde-format
+msgid "Delete invitation emails after the reply to them has been sent"
+msgstr "Ištrinti kvietimo el. laiškus kai atsakymas jiems buvo išsiųstas"
+
+#. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
+#: settings/messageviewer.kcfg.cmake:206
+#, kde-format
+msgid ""
+"When this is checked, received invitation emails that have been replied to "
+"will be moved to the Trash folder, once the reply has been successfully sent."
+msgstr ""
+"Įjungus šią parinktį, gauti pakvietimų laiškai, į kuriuos buvo atsakyta, bus "
+"perkelti į šiukšliadėžės aplanką, kai tik laiškas bus sėkmingai išsiųstas."
+
+#. i18n: ectx: label, entry (UseFixedFont), group (Composer)
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1554
+#, kde-format
+msgid "Use Fi&xed Font"
+msgstr "Naudoti ne&kintamo pločio šriftą"
+
+#. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
+#: settings/messageviewer.kcfg.cmake:237
+#, kde-format
+msgid "The most recent selected folder using for Todo."
+msgstr "Paskutinis pažymėtas aplankas naudotas darytiniems darbams."
+
+#. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
+#: settings/messageviewer.kcfg.cmake:243
+#, kde-format
+msgid "The most recent selected folder using for Event."
+msgstr "Paskutinis pažymėtas aplankas naudotas įvykiams."
+
+#. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
+#: settings/messageviewer.kcfg.cmake:249
+#, kde-format
+msgid "The most recent selected folder using for Notes."
+msgstr "Paskutinis pažymėtas aplankas naudotas pastaboms."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/invitationsettings.ui:17
+#, kde-format
+msgid "Groupware Compatibility && Legacy Options"
+msgstr "Grupinės įrangos suderinamumo &ir legalumo nuostatos"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:23
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitation replies"
+msgstr ""
+"Įjunkite šią parinktį, kad Outlook(tm) suprastų jūsų atsakymus į pakvietimo "
+"atsakymus"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyMangleFromTo)
+#: ui/invitationsettings.ui:26
+#, kde-format
+msgid "&Mangle From:/To: headers in replies to invitations"
+msgstr "&Atskirti Nuo:/Kam: antraštes atsakymuose į kvietimus"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:33
+#, kde-format
+msgid ""
+"Turn this option on in order to make Outlook(tm) understand your answers to "
+"invitations"
+msgstr ""
+"Įjunkite šią parinktį, kad Outlook(tm) suprastų jūsų atsakymus į pakvietimus"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mLegacyBodyInvites)
+#: ui/invitationsettings.ui:36
+#, kde-format
+msgid "Send &invitations in the mail body"
+msgstr "Siųsti kvietimus laiške"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:45
+#, kde-format
+msgid ""
+"Microsoft Outlook, when used in combination with a Microsoft Exchange "
+"server,\n"
+"has a problem understanding standards-compliant groupware email.\n"
+"Turn this option on to send groupware invitations in a way that Microsoft "
+"Exchange understands."
+msgstr ""
+"Microsoft Outlook, kai naudojamas kartu su Microsoft Exchange serveriu,\n"
+"turi problemų suprantant pagal standartus veikiančių grupinio darbo "
+"priemonių laiškus.\n"
+"Įjunkite šią parinktį, kad siųstumėte grupinio darbo pakvietimus taip, kad "
+"Microsoft Exchange juos suprastų."
+
+#. i18n: ectx: property (text), widget (QCheckBox, mExchangeCompatibleInvitations)
+#: ui/invitationsettings.ui:48
+#, kde-format
+msgid "Exchange-compatible invitation &naming"
+msgstr "Su Outlook suderinami &pakvietimų pavadinimai"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:55
+#, kde-format
+msgid ""
+"When this is on, the user will not see the mail composer window. Invitation "
+"mails are sent automatically."
+msgstr ""
+"Kai įjungta, naudotojas nematys laiško kūrimo lango. Pakvietimų laiškai bus "
+"siunčiami automatiškai."
+
+#. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
+#: ui/invitationsettings.ui:58
+#, kde-format
+msgid "&Automatic invitation sending"
+msgstr "&Automatinis kvietimų siuntimas"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/invitationsettings.ui:68
+#, kde-format
+msgid "Options"
+msgstr "Nuostatos"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mPrintEmptySelectedText)
+#: ui/printingsettings.ui:17
+#, kde-format
+msgid "Print only selected text"
+msgstr "Spausdinti tik pažymėtą tekstą"
+
+#. i18n: ectx: property (text), widget (QCheckBox, respectExpandCollapseSettings)
+#: ui/printingsettings.ui:24
+#, kde-format
+msgid "Respect &expand/collapse quote marks settings"
+msgstr "Vykdyti citatų žymių suskleidimo/išskleidimo nustatymus"
+
+#. i18n: ectx: property (text), widget (QCheckBox, printBackgroundColorAndImages)
+#: ui/printingsettings.ui:31
+#, kde-format
+msgid "Print background color and images"
+msgstr "Spausdinti fono spalvą ir piešinius"
+
+#. i18n: ectx: property (text), widget (QCheckBox, alwaysShowEncryptionSignatureDetail)
+#: ui/printingsettings.ui:38
+#, kde-format
+msgid "Always show encryption/signature details"
+msgstr "Visada rodyti šifravimo/pasirašymo informaciją"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
+#: ui/settings.ui:31
+#, kde-format
+msgid "Viewer settings"
+msgstr "Žiūryklės nuostatos"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/settings.ui:59
+#, kde-format
+msgid "O&verride character encoding:"
+msgstr "&Permušti koduotę:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
+#: ui/settings.ui:91
+#, kde-format
+msgid "Enable access key"
+msgstr "Įgalinti prieigos raktą"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
+#: ui/settings.ui:98
+#, kde-format
+msgid "Reduce font size for &quoted text"
+msgstr "Sumažinti cituojamo teksto šrifto dydį"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
+#: ui/settings.ui:105
+#, kde-format
+msgid "Show &expand/collapse quote marks"
+msgstr "Rodyti citatų žymių suskleidimą/išskleidimą"
+
+#. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
+#: ui/settings.ui:133
+#, kde-format
+msgid "Automatic collapse &level:"
+msgstr "Automatinio sutraukimo &lygmuo:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/settings.ui:202
+#, kde-format
+msgid "&Minimum font size:"
+msgstr "&Mažiausias šrifto dydis:"
+
+#: utils/messageviewerutil.cpp:156
+#, kde-format
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr "Failas pavadinimu „%1“ jau yra. Ar norite jį perrašyti?"
+
+#: utils/messageviewerutil.cpp:159
+#, kde-format
+msgid "Overwrite File?"
+msgstr "Perrašyti failą?"
+
+#: utils/messageviewerutil.cpp:209
+#, kde-format
+msgid "Save Attachments To"
+msgstr "Įrašyti priedą į"
+
+#: utils/messageviewerutil.cpp:226
+#, kde-format
+msgctxt "filename for an unnamed attachment"
+msgid "attachment.1"
+msgstr "priedas.1"
+
+#: utils/messageviewerutil.cpp:232
+#, kde-format
+msgid "Save Attachment"
+msgstr "Išsaugoti priedą"
+
+#: utils/messageviewerutil.cpp:256
+#, kde-format
+msgctxt "filename for the %1-th unnamed attachment"
+msgid "attachment.%1"
+msgstr "priedas.%1"
+
+#: utils/messageviewerutil.cpp:354
+#, kde-format
+msgid ""
+"The part %1 of the message is encrypted. Do you want to keep the encryption "
+"when saving?"
+msgstr ""
+"Laiško dalis %1 yra užšifruota.  Ar Jūs norite ją įrašyti užšifruotame "
+"pavidale?"
+
+#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
+#, kde-format
+msgid "KMail Question"
+msgstr "KMail klausimas"
+
+#: utils/messageviewerutil.cpp:356
+#, kde-format
+msgid "Keep Encryption"
+msgstr "Išlaikyti šifravimą"
+
+#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
+#, kde-format
+msgid "Do Not Keep"
+msgstr "Neišlaikyti"
+
+#: utils/messageviewerutil.cpp:367
+#, kde-format
+msgid ""
+"The part %1 of the message is signed. Do you want to keep the signature when "
+"saving?"
+msgstr "Laiško dalis %1 yra pasirašyta.  Ar Jūs norite ją išsaugoti su parašu?"
+
+#: utils/messageviewerutil.cpp:369
+#, kde-format
+msgid "Keep Signature"
+msgstr "Išlaikyti parašą"
+
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
+#, kde-kuit-format
+msgctxt "1 = file name, 2 = error string"
+msgid ""
+"<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
+"qt>"
+msgstr ""
+"<qt>Nepavyko rašyti į failą<br /><filename>%1</filename><br /><br />%2</qt>"
+
+#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
+#: utils/messageviewerutil.cpp:472
+#, kde-format
+msgid "Error saving attachment"
+msgstr "Klaida išsaugant priedą"
+
+#: utils/messageviewerutil.cpp:485
+#, kde-format
+msgid "Found no attachments to save."
+msgstr "Neradau priedų išsaugojimui."
+
+#: utils/messageviewerutil.cpp:500
+#, kde-format
+msgid "message"
+msgstr "laiškas"
+
+#: utils/messageviewerutil.cpp:522
+#, kde-format
+msgid "email messages (*.mbox);;all files (*)"
+msgstr "el. laiškai (*.mbox);;visi failai (*)"
+
+#: utils/messageviewerutil.cpp:533
+#, kde-format
+msgid "Save Message"
+msgid_plural "Save Messages"
+msgstr[0] "Įrašyti laišką"
+msgstr[1] "&Išsaugoti laišką"
+msgstr[2] "&Išsaugoti laišką"
+msgstr[3] "&Išsaugoti laišką"
+
+#: utils/messageviewerutil.cpp:558
+#, kde-format
+msgid "File %1 could not be loaded."
+msgstr "Nepavyko įkelti %1 failo."
+
+#: utils/messageviewerutil.cpp:558
+#, kde-format
+msgid "Error loading message"
+msgstr "Klaida įkeliant laišką"
+
+#: utils/messageviewerutil.cpp:560
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Nepavyko sukurti %1 failo."
+
+#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:591
+#, kde-format
+msgid "Error saving message"
+msgstr "Klaida įrašant laišką"
+
+#: utils/messageviewerutil.cpp:571
+#, kde-format
+msgid "We cannot save message."
+msgstr "Nepavyksta įrašyti laiško."
+
+#: utils/messageviewerutil.cpp:612
+#, kde-format
+msgid "Open &with %1"
+msgstr "Atverti &su %1"
+
+#: utils/messageviewerutil.cpp:614
+#, kde-format
+msgctxt "@item:inmenu Open With, %1 is application name"
+msgid "%1"
+msgstr "„%1“"
+
+#: viewer/editorwatcher.cpp:60
+#, kde-format
+msgid "Edit with:"
+msgstr "Redaguoti su:"
+
+#: viewer/editorwatcher.cpp:194
+#, kde-format
+msgid ""
+"KMail is unable to detect when the chosen editor is closed. To avoid data "
+"loss, editing the attachment will be aborted."
+msgstr ""
+"KMail nesugeba suprasti, kada buvo uždarytas pasirinktas redaktorius. Norint "
+"išvengti duomenų praradimo, priedų redagavimas nutrauktas."
+
+#: viewer/editorwatcher.cpp:196
+#, kde-format
+msgid "Unable to edit attachment"
+msgstr "Negalima keisti priedo"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:59
+#, kde-format
+msgid "body part"
+msgstr "laiško kūno dalis"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:262
+#, kde-format
+msgid "Description"
+msgstr "Aprašymas"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:264
+#, kde-format
+msgid "Type"
+msgstr "Tipas"
+
+#: viewer/mimeparttree/mimetreemodel.cpp:266
+#, kde-format
+msgid "Size"
+msgstr "Dydis"
+
+#: viewer/urlhandlermanager.cpp:405
+#, kde-format
+msgid "Turn on HTML rendering for this message."
+msgstr "Įjungti laiško HTML formatavimą."
+
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1623
+#, kde-format
+msgid "Load external references from the Internet for this message."
+msgstr "Įkelti išorines nuorodas iš Interneto šiam laiškui."
+
+#: viewer/urlhandlermanager.cpp:409
+#, kde-format
+msgid "Work online."
+msgstr "Dirbti atsijungus."
+
+#: viewer/urlhandlermanager.cpp:411
+#, kde-format
+msgid "Make account online."
+msgstr "Sukurti internetinę paskyrą."
+
+#: viewer/urlhandlermanager.cpp:413
+#, kde-format
+msgid "Decrypt message."
+msgstr "Iššifruoti laišką."
+
+#: viewer/urlhandlermanager.cpp:415
+#, kde-format
+msgid "Show signature details."
+msgstr "Rodyti parašo detales."
+
+#: viewer/urlhandlermanager.cpp:417
+#, kde-format
+msgid "Hide signature details."
+msgstr "Slėpti parašo detales."
+
+#: viewer/urlhandlermanager.cpp:419
+#, kde-format
+msgid "Show encryption details."
+msgstr "Rodyti šifravimo detales."
+
+#: viewer/urlhandlermanager.cpp:421
+#, kde-format
+msgid "Hide encryption details."
+msgstr "Slėpti šifravimo detales."
+
+#: viewer/urlhandlermanager.cpp:426
+#, kde-format
+msgid "Open Documentation"
+msgstr "Atveri dokumentaciją"
+
+#: viewer/urlhandlermanager.cpp:460
+#, kde-format
+msgid "Expand all quoted text."
+msgstr "Išskleisti visą cituojamą tekstą."
+
+#: viewer/urlhandlermanager.cpp:462
+#, kde-format
+msgid "Collapse quoted text."
+msgstr "Sutraukti cituojamą tekstą."
+
+#: viewer/urlhandlermanager.cpp:524
+#, kde-format
+msgid "Could not start certificate manager. Please check your installation."
+msgstr ""
+"Nepavyko startuoti sertifikavimo tvarkyklės. Patikrinkite, ar ji įdiegta."
+
+#: viewer/urlhandlermanager.cpp:526
+#, kde-format
+msgid "KMail Error"
+msgstr "KMail klaida"
+
+#: viewer/urlhandlermanager.cpp:541
+#, kde-format
+msgid "Show certificate 0x%1"
+msgstr "Rodyti liudijimą 0x%1"
+
+#: viewer/urlhandlermanager.cpp:600
+#, kde-format
+msgid "&Open in Address Book"
+msgstr "&Atverti su adresų knygele"
+
+#: viewer/urlhandlermanager.cpp:602
+#, kde-format
+msgid "&Copy Email Address"
+msgstr "&Kopijuoti el. pašto adresą"
+
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2713
+#, kde-format
+msgid "Address copied to clipboard."
+msgstr "Adresas nukopijuotas į talpyklę."
+
+#: viewer/urlhandlermanager.cpp:626
+#, kde-format
+msgid "Lookup the contact in KAddressbook"
+msgstr "Ieškoti kontakto KAddressbook'e"
+
+#: viewer/urlhandlermanager.cpp:802
+#, kde-format
+msgid "Attachment: %1"
+msgstr "Priedas: %1"
+
+#: viewer/urlhandlermanager.cpp:805
+#, kde-format
+msgid "Encapsulated Message (Subject: %1)"
+msgstr "Įdėtas viduje laiškas (tema: %1)"
+
+#: viewer/urlhandlermanager.cpp:807
+#, kde-format
+msgid "Encapsulated Message"
+msgstr "Sutrumpintas laiškas"
+
+#: viewer/urlhandlermanager.cpp:810
+#, kde-format
+msgid "Unnamed attachment"
+msgstr "Bevardis priedas"
+
+#: viewer/urlhandlermanager.cpp:845
+#, kde-format
+msgid "Show GnuPG Audit Log for this operation"
+msgstr "Rodyti šio veiksmo GnuPG audito žurnalą"
+
+#: viewer/urlhandlermanager.cpp:885
+#, kde-format
+msgid "Opening URL..."
+msgstr "Atveriamas URL..."
+
+#: viewer/urlhandlermanager.cpp:893
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to execute <filename>%1</filename>?"
+msgstr "Ar Jūs tikrai norite vykdyti <filename>%1</filename>? "
+
+#: viewer/urlhandlermanager.cpp:895
+#, kde-format
+msgid "Execute"
+msgstr "Vykdyti"
+
+#: viewer/viewer.cpp:138
+#, kde-format
+msgid "Loading message..."
+msgstr "Įkeliamas laiškas..."
+
+#: viewer/viewer_p.cpp:358
+#, kde-format
+msgid ""
+"Deleting an attachment from an encrypted or old-style mailman message is not "
+"supported."
+msgstr ""
+"Priedo trynimas iš užšifruoto arba seno-stiliaus mailman pranešimo "
+"nepalaikomas."
+
+#: viewer/viewer_p.cpp:359 viewer/viewer_p.cpp:366 viewer/viewer_p.cpp:588
+#: viewer/viewer_p.cpp:1726
+#, kde-format
+msgid "Delete Attachment"
+msgstr "Trinti priedą"
+
+#: viewer/viewer_p.cpp:365
+#, kde-format
+msgid ""
+"Deleting an attachment might invalidate any digital signature on this "
+"message."
+msgstr "Priedo trynimas gali sugadinti bet kurį šio pranešimo parašą."
+
+#: viewer/viewer_p.cpp:447
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr "&Atverti su"
+
+#: viewer/viewer_p.cpp:465
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr "&Kita..."
+
+#: viewer/viewer_p.cpp:467 viewer/viewer_p.cpp:480
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr "&Atverti su..."
+
+#: viewer/viewer_p.cpp:544 viewer/viewer_p.cpp:1704
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Atverti"
+
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1711
+#, kde-format
+msgctxt "to view something"
+msgid "View"
+msgstr "Žiūrėti"
+
+#: viewer/viewer_p.cpp:566
+#, kde-format
+msgid "Scroll To"
+msgstr "Slinkti į"
+
+#: viewer/viewer_p.cpp:571
+#, kde-format
+msgid "Save As..."
+msgstr "Įrašyti kaip..."
+
+#: viewer/viewer_p.cpp:577 viewer/viewer_p.cpp:1721
+#, kde-format
+msgid "Copy"
+msgstr "Kopijuoti"
+
+#: viewer/viewer_p.cpp:599
+#, kde-format
+msgid "Reply To Author"
+msgstr "Atsakyti autoriui"
+
+#: viewer/viewer_p.cpp:607
+#, kde-format
+msgid "Reply To All"
+msgstr "Atsakyti visiems"
+
+#: viewer/viewer_p.cpp:613 viewer/viewer_p.cpp:1731
+#, kde-format
+msgid "Properties"
+msgstr "Savybės"
+
+#: viewer/viewer_p.cpp:750
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: viewer/viewer_p.cpp:751
+#, kde-format
+msgid "The KDE Mail Client"
+msgstr "KDE elektroninio pašto klientas"
+
+#: viewer/viewer_p.cpp:1287
+#, kde-format
+msgctxt "@title:window"
+msgid "View Attachment: %1"
+msgstr "Žiūrėti priedą: %1"
+
+#: viewer/viewer_p.cpp:1475
+#, kde-format
+msgctxt "View->"
+msgid "&Attachments"
+msgstr "&Priedai"
+
+#: viewer/viewer_p.cpp:1477
+#, kde-format
+msgid "Choose display style of attachments"
+msgstr "Pasirinkite priedų rodymo stilių"
+
+#: viewer/viewer_p.cpp:1480
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&As Icons"
+msgstr "Ž&enkliukai"
+
+#: viewer/viewer_p.cpp:1483
+#, kde-format
+msgid "Show all attachments as icons. Click to see them."
+msgstr ""
+"Rodyti visus priedus kaip ženkliukus. Ženkliuko spragtelėjimas parodo priedą."
+
+#: viewer/viewer_p.cpp:1487
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Smart"
+msgstr "&Išmoningai"
+
+#: viewer/viewer_p.cpp:1490
+#, kde-format
+msgid "Show attachments as suggested by sender."
+msgstr "Rodyti priedus taip, kaip rekomenduoja siuntėjas."
+
+#: viewer/viewer_p.cpp:1494
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Inline"
+msgstr "Į&dėtas tekste"
+
+#: viewer/viewer_p.cpp:1497
+#, kde-format
+msgid "Show all attachments inline (if possible)"
+msgstr "Rodyti visus priedus laiško tekste (jei įmanoma)"
+
+#: viewer/viewer_p.cpp:1501
+#, kde-format
+msgctxt "View->attachments->"
+msgid "&Hide"
+msgstr "&Slėpti"
+
+#: viewer/viewer_p.cpp:1504
+#, kde-format
+msgid "Do not show attachments in the message viewer"
+msgstr "Nerodyti priedų laiškų žiūriklėje"
+
+#: viewer/viewer_p.cpp:1508
+#, kde-format
+msgctxt "View->attachments->"
+msgid "In Header Only"
+msgstr "Tik antraštėje"
+
+#: viewer/viewer_p.cpp:1511
+#, kde-format
+msgid "Show Attachments only in the header of the mail"
+msgstr "Rodyti priedus tik laiško antraštėje"
+
+#: viewer/viewer_p.cpp:1516
+#, kde-format
+msgid "&Set Encoding"
+msgstr "Nus&tatyti koduotę"
+
+#: viewer/viewer_p.cpp:1521 widgets/configurewidget.cpp:43
+#: widgets/configurewidget.cpp:77
+#, kde-format
+msgid "Auto"
+msgstr "Automatiškai"
+
+#: viewer/viewer_p.cpp:1531
+#, kde-format
+msgid "Copy Text"
+msgstr "Kopijuoti tekstą"
+
+#: viewer/viewer_p.cpp:1538
+#, kde-format
+msgid "Select All Text"
+msgstr "Žymėti visą tekstą"
+
+#: viewer/viewer_p.cpp:1544 viewer/viewer_p.cpp:2025
+#, kde-format
+msgid "Copy Link Address"
+msgstr "Kopijuoti nuorodos adresą"
+
+#: viewer/viewer_p.cpp:1549
+#, kde-format
+msgid "Open URL"
+msgstr "Atverti URL"
+
+#: viewer/viewer_p.cpp:1560
+#, kde-format
+msgid "Show Message Structure"
+msgstr "Rodyti laiško struktūrą"
+
+#: viewer/viewer_p.cpp:1565
+#, kde-format
+msgid "&View Source"
+msgstr "R&odyti išeities tekstą"
+
+#: viewer/viewer_p.cpp:1570
+#, fuzzy, kde-format
+#| msgid "&Save message..."
+msgid "&Save Message..."
+msgstr "&Išsaugoti laišką..."
+
+#: viewer/viewer_p.cpp:1576
+#, kde-format
+msgid "&Save Display Format"
+msgstr "Į&rašyti rodymo formatą"
+
+#: viewer/viewer_p.cpp:1580
+#, kde-format
+msgid "&Reset Display Format"
+msgstr "&Atstatyti rodymo formatą"
+
+#: viewer/viewer_p.cpp:1587
+#, kde-format
+msgid "Scroll Message Up"
+msgstr "Slinkti laišką aukštyn"
+
+#: viewer/viewer_p.cpp:1592
+#, kde-format
+msgid "Scroll Message Down"
+msgstr "Slinkti laišką žemyn"
+
+#: viewer/viewer_p.cpp:1597
+#, kde-format
+msgid "Scroll Message Up (More)"
+msgstr "Slinkti laišką aukštyn (daugiau)"
+
+#: viewer/viewer_p.cpp:1602
+#, kde-format
+msgid "Scroll Message Down (More)"
+msgstr "Slinkti laišką žemyn (mažiau)"
+
+#: viewer/viewer_p.cpp:1612
+#, kde-format
+msgid "Toggle HTML Display Mode"
+msgstr "Perjungti HTML ekrano veikseną"
+
+#: viewer/viewer_p.cpp:1616
+#, kde-format
+msgid "Toggle display mode between HTML and plain text"
+msgstr "Perjungti ekrano veikseną tarp HTML ir paprasto teksto"
+
+#: viewer/viewer_p.cpp:1619
+#, kde-format
+msgid "Load external references"
+msgstr "Įkelti nuorodas iš išorės"
+
+#: viewer/viewer_p.cpp:1625 widgets/mailsourceviewtextbrowserwidget.cpp:136
+#, kde-format
+msgid "Speak Text"
+msgstr "Kalbėti tekstą"
+
+#: viewer/viewer_p.cpp:1631
+#, fuzzy, kde-format
+#| msgid "Speak Text"
+msgid "Share Text..."
+msgstr "Kalbėti tekstą"
+
+#: viewer/viewer_p.cpp:1637
+#, kde-format
+msgid "Copy Image Location"
+msgstr "Kopijuoti piešinio vietą"
+
+#: viewer/viewer_p.cpp:1643
+#, kde-format
+msgid "&Find in Message..."
+msgstr "&Ieškoti laiške..."
+
+#: viewer/viewer_p.cpp:1652
+#, kde-format
+msgid "Disable Emoticon"
+msgstr "uždrausti jaustukus"
+
+#: viewer/viewer_p.cpp:1701
+#, kde-format
+msgid "Save &As..."
+msgstr "Įrašyti &kaip..."
+
+#: viewer/viewer_p.cpp:1709
+#, kde-format
+msgid "Open With..."
+msgstr "Atverti su..."
+
+#: viewer/viewer_p.cpp:1716
+#, kde-format
+msgid "Save All Attachments..."
+msgstr "Įrašyti visus priedus..."
+
+#: viewer/viewer_p.cpp:1945
+#, kde-format
+msgid "The network is broken."
+msgstr "Tinklo ryšio klaida."
+
+#: viewer/viewer_p.cpp:1945 viewer/viewer_p.cpp:1948
+#, kde-format
+msgid "Check Phishing URL"
+msgstr "Tikrinti, ar URL apgaulingas"
+
+#: viewer/viewer_p.cpp:1948
+#, kde-format
+msgid "The URL %1 is not valid."
+msgstr "URL %1 nėra tinkamas"
+
+#: viewer/viewer_p.cpp:1968
+#, kde-format
+msgid "This web site is a malware, do you want to continue to show it?"
+msgstr "Ši svetainė kenksminga, tikrai norite ją atverti?"
+
+#: viewer/viewer_p.cpp:1969
+#, kde-format
+msgid "Malware"
+msgstr "Kenkimo programinė įranga"
+
+#: viewer/viewer_p.cpp:2023
+#, kde-format
+msgid "Copy Email Address"
+msgstr "Kopijuoti el. pašto adresą"
+
+#: viewer/viewer_p.cpp:2104
+#, kde-format
+msgctxt "@title:window"
+msgid "Message as Plain Text"
+msgstr "Laiškas įprastu tekstu"
+
+#: viewer/viewer_p.cpp:2305
+#, kde-format
+msgctxt "@title:window"
+msgid "Print Document"
+msgstr "Spausdinti dokumentą"
+
+#: viewer/viewer_p.cpp:2719
+#, kde-format
+msgid "URL copied to clipboard."
+msgstr "URL nukopijuotas į talpyklę."
+
+#: viewer/viewer_p.cpp:2871
+#, kde-format
+msgid "Message loading failed: %1."
+msgstr "Nepavyko įkelti laiško: %1."
+
+#: viewer/viewer_p.cpp:2876
+#, kde-format
+msgid "Message not found."
+msgstr "Laiškas nerastas."
+
+#: widgets/attachmentdialog.cpp:27
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
+"may compromise your system's security."
+msgstr ""
+"Ar atverti priedą <filename>%1</filename>?<nl/>Atminkite, kad atverdami "
+"priedą, galite pažeisti sistemos saugumą."
+
+#: widgets/attachmentdialog.cpp:32
+#, kde-format
+msgctxt "@title:window"
+msgid "Open Attachment?"
+msgstr "Atverti priedą?"
+
+#: widgets/attachmentdialog.cpp:39
+#, kde-format
+msgid "&Open With '%1'"
+msgstr "&Atverti su „%1“"
+
+#: widgets/attachmentdialog.cpp:46
+#, fuzzy, kde-format
+#| msgid "Open With..."
+msgid "Open &With..."
+msgstr "Atverti su..."
+
+#: widgets/attachmentdialog.cpp:68
+#, kde-format
+msgid "Do not ask again"
+msgstr "Daugiau nebeklausti"
+
+#: widgets/htmlstatusbar.cpp:108
+#, kde-format
+msgctxt ""
+"'HTML Message' with html linebreaks between each letter and in bold text."
+msgid ""
+"<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
+">a<br />g<br />e</b></qt>"
+msgstr ""
+"<qt><b><br />H<br />T<br />M<br />L<br /> <br />L<br />a<br />i<br />š<br /"
+">k<br />a<br />s</b></qt>"
+
+#: widgets/htmlstatusbar.cpp:112
+#, kde-format
+msgctxt "'No HTML Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+">e<br />s<br />s<br />a<br />g<br />e</qt>"
+msgstr ""
+"<qt><br />N<br />e<br /><br />H<br />T<br />M<br />l<br /> <br />l<br /"
+">a<br />i<br />š<br />k<br />a<br />s</qt>"
+
+#: widgets/htmlstatusbar.cpp:117
+#, kde-format
+msgctxt "'Plain Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+">s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+"<qt><br />P<br />a<br />p<br />r<br />a<br />s<br />t<br />a<br />s<br /> "
+"<br />l<br />a<br />i<br />š<br />k<br />a<br />s<br /></qt>"
+
+#: widgets/htmlstatusbar.cpp:121
+#, kde-format
+msgctxt "'Calendar Message' with html linebreaks between each letter."
+msgid ""
+"<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
+">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
+msgstr ""
+"<qt><br />K<br />a<br />l<br />e<br />n<br />d<br />o<br />r<br />i<br /"
+">a<br />u<br />s<br /> <br />p<br />r<br />a<br />n<br />e<br />š<br />i<br /"
+">m<br />a<br />s</qt>"
+
+#: widgets/htmlstatusbar.cpp:135
+#, kde-format
+msgid "Click to toggle between HTML, plain text and calendar."
+msgstr "Paspauskite, jei norite perjungti tarp HTML ir paprasto teksto."
+
+#: widgets/invitationsettings.cpp:70
+#, kde-format
+msgid ""
+"<qt>Invitations are normally sent as attachments to a mail. This switch "
+"changes the invitation mails to be sent in the text of the mail instead; "
+"this is necessary to send invitations and replies to Microsoft Outlook.<br /"
+">But, when you do this, you no longer get descriptive text that mail "
+"programs can read; so, to people who have email programs that do not "
+"understand the invitations, the resulting messages look very odd.<br /"
+">People that have email programs that do understand invitations will still "
+"be able to work with this.</qt>"
+msgstr ""
+"<qt>Pakvietimai paprastai siunčiami kaip laiško priedai. Šis jungiklis "
+"įjungia pakvietimų siuntimą kaip laiško tekstą; šito reikia siunčiant "
+"pakvietimus ar atsakymus skirtus Microsoft Outlook.<br />Bet kai taip "
+"darote, jūs daugiau nebegaunate aprašančio teksto, kurį galėtų perskaityti "
+"pašto programos; taigi žmonėms, kurių pašto programos nesupranta pakvietimų, "
+"gaus keistai atrodančius laiškus.<br />Žmonės, kurių pašto programos "
+"supranta pakvietimus vis dar galės su tuo dirbti.</qt>"
+
+#: widgets/mailsourcewebengineviewer.cpp:51
+#, kde-format
+msgctxt "Unchanged mail message"
+msgid "Raw Source"
+msgstr "Pilnas šaltinis"
+
+#: widgets/mailsourcewebengineviewer.cpp:52
+#, kde-format
+msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
+msgstr ""
+"Žalias, nepakeistas laiškas, toks, koks jis laikomas failų sistemoje "
+"serveryje"
+
+#: widgets/mailsourcewebengineviewer.cpp:55
+#, kde-format
+msgctxt "Mail message as shown, in HTML format"
+msgid "HTML Source"
+msgstr "HTML šaltinis"
+
+#: widgets/mailsourcewebengineviewer.cpp:56
+#, kde-format
+msgid "HTML code for displaying the message to the user"
+msgstr "HTML kodas laiško rodymui naudotojui"
+
+#: widgets/opensavedfilefolderwidget.cpp:26
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+msgctxt "@action"
+msgid "Open folder where attachment was saved"
+msgstr "Atverti aplanką, kur buvo įrašytas priedas"
+
+#: widgets/opensavedfilefolderwidget.cpp:27
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "&Open With"
+msgctxt "@action"
+msgid "Open File"
+msgstr "&Atverti su"
+
+#: widgets/opensavedfilefolderwidget.cpp:61
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+msgid "Open folder where attachment was saved"
+msgid_plural "Open folder where attachments were saved"
+msgstr[0] "Atverti aplanką, kur buvo įrašytas priedas"
+msgstr[1] "Atverti aplanką, kur buvo įrašytas priedas"
+msgstr[2] "Atverti aplanką, kur buvo įrašytas priedas"
+msgstr[3] "Atverti aplanką, kur buvo įrašytas priedas"
+
+#: widgets/opensavedfilefolderwidget.cpp:64
+#, fuzzy, kde-format
+#| msgid "Open folder where attachment was saved"
+msgid "Open folder where PDF file was saved"
+msgstr "Atverti aplanką, kur buvo įrašytas priedas"
+
+#: widgets/opensavedfilefolderwidget.cpp:77
+#, fuzzy, kde-format
+#| msgid "Unable to edit attachment"
+msgid "KMail was unable to open the attachment."
+msgstr "Negalima keisti priedo"
+
+#: widgets/shownextmessagewidget.cpp:15
+#, kde-format
+msgid "Next Message"
+msgstr "Kitas laiškas"
+
+#: widgets/shownextmessagewidget.cpp:16
+#, kde-format
+msgid "Previous Message"
+msgstr "Ankstesnis laiškas"
+
+#: widgets/vcardviewer.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "vCard Viewer"
+msgstr "vCard žiūryklė"
+
+#: widgets/vcardviewer.cpp:48
+#, kde-format
+msgid "&Import"
+msgstr "&Importuoti"
+
+#: widgets/vcardviewer.cpp:49
+#, kde-format
+msgid "&Next Card"
+msgstr "&Tolesnė kortelė"
+
+#: widgets/vcardviewer.cpp:50
+#, kde-format
+msgid "&Previous Card"
+msgstr "&Ankstesnė kortelė"
+
+#~ msgid "Reply From:"
+#~ msgstr "Nuo ko atsakyti:"
+
+#~ msgid "Submit form is not allowed in mailer. Please open url in a browser."
+#~ msgstr ""
+#~ "Formos pateikimas pašto programoje negalima. Prašome atverti url "
+#~ "naršyklėje."
+
+#~ msgid ""
+#~ "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+#~ "\">(Details...)"
+#~ msgstr ""
+#~ "Rastas ir užblokuotas kažkoks pašto sekiklis.<a href=\"mailtrackingdetails"
+#~ "\">(Informacija...)"
+
+#~ msgid "&Open With..."
+#~ msgstr "&Atverti su..."
+
+#~ msgid "receiver was"
+#~ msgid_plural "receivers were"
+#~ msgstr[0] "siuntė"
+#~ msgstr[1] "siuntė"
+#~ msgstr[2] "siuntė"
+#~ msgstr[3] "siuntė"
+
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "Slėpti visą „Kam“ sąrašą"
+
+#~ msgid "Show full \"To\" list"
+#~ msgstr "Rodyti visą „Kam“ sąrašą"
+
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "Slėpti gaunančius kopiją"
+
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "Rodyti gaunančius kopiją"
+
+#~ msgid "Hide attachment list."
+#~ msgstr "Slėpti priedų sąrašą."
+
+#~ msgid "Show attachment list."
+#~ msgstr "Rodyti priedų sąrašą."
+
+#~ msgid "Edit Attachment"
+#~ msgstr "Keisti priedą"
+
+#~ msgid "Edit"
+#~ msgstr "Keisti"
+
+#~ msgid "Allow to edit attachments of existing mails."
+#~ msgstr "Leisti redaguoti esamų laiškų priedus."
+
+#, fuzzy
+#~| msgid "Show HTML status bar"
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "Rodyti HTML būsenos juostą"
+
+#, fuzzy
+#~| msgid "Show &HTML status bar"
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "Rodyti &HTML būsenos juostą"
+
+#~ msgid "Show user agent"
+#~ msgstr "Rodyti siuntėjo programos pavadinimą"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enable this option to get the User-Agent and X-Mailer header lines "
+#~ "displayed."
+#~ msgstr ""
+#~ "Įjunkite šią parinktį jei norite matyti „User-Agent“ ir „X-Mailer“ laiško "
+#~ "eilutes įmantriose antraštėse."
+
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "Įmantriose antraštėse rodyti siuntėjo programos pavadinimą"
+
+#~ msgctxt "display name for an unnamed attachment"
+#~ msgid "Unnamed"
+#~ msgstr "Nepavadintas"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "Bevardis papildinys"
+
+#~ msgid "No description available"
+#~ msgstr "Nėra aprašymo"
+
+#~ msgid "Reply"
+#~ msgstr "Atsakyti"
+
+#~ msgid "Reply to All"
+#~ msgstr "Atsakyti visiems"
+
+#~ msgid "Print"
+#~ msgstr "Spausdinti"
+
+#~ msgid "Print Preview"
+#~ msgstr "Spaudinio peržiūra"
+
+#~ msgid "Move To Trash"
+#~ msgstr "Perkelti į šiukšlinę"
+
+#~ msgid "Print Preview Message"
+#~ msgstr "Laiško spaudinio peržiūra"
+
+#~ msgid "Replace smileys by emoticons"
+#~ msgstr "Pakeisti šypsenėles emotikonais"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enable this if you want smileys like :-) appearing in the message text to "
+#~ "be replaced by emoticons (small pictures)."
+#~ msgstr ""
+#~ "Įgalinkite šią parinktį jei norite kad šypsenėlės, tokios, kaip :-) , "
+#~ "būtų laiškuose rodomos kaip „emocijos“ (maži paveikslėliai)."
+
+#~ msgid "Replace smileys &by emoticons"
+#~ msgstr "Pakeisti šypsenėles &emotikonais"
+
+#~ msgid "Hide full address list"
+#~ msgstr "Slėpti visą adresatų sąrašą"
+
+#~ msgid "Show full address list"
+#~ msgstr "Rodyti visą adresatų sąrašą"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "&Standartinės antraštės"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "Rodyti standartinį laiškų antraščių sąrašą"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Blogas</b> parašas"
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Blogas</b> parašas."
+
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "Rodyti brukalo būseną Įmantriose antraštėse"
+
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "Rodyti &brukalo būseną įmantriose antraštėse"
+
+#~ msgid "Show invitation update differences in the Outlook style"
+#~ msgstr "Rodyti kvietimo atnaujinimo skirtumus Outlook stiliuje"
+
+#, fuzzy
+#~| msgid "Show invitation update differences in the Outlook style"
+#~ msgid ""
+#~ "When viewing invitation updates, show the differences in the Microsoft "
+#~ "Outlook style."
+#~ msgstr "Rodyti kvietimo atnaujinimo skirtumus Outlook stiliuje"
+
+#, fuzzy
+#~| msgid "Show invitation update differences in the Outlook style"
+#~ msgid ""
+#~ "Display invitation update differences in the Microsoft Outlook(tm) style."
+#~ msgstr "Rodyti kvietimo atnaujinimo skirtumus Outlook stiliuje"
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Blogas šifravimo priedas."
+
+#~ msgid "No appropriate crypto plug-in was found."
+#~ msgstr "Nerastas tinkamas šifravimo priedas."
+
+#~ msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+#~ msgstr "Šifravimo priedas „%1“ negali iššifruoti jokių laiškų."
+
+#~ msgid "Crypto plug-in \"%1\" could not decrypt the data."
+#~ msgstr "Šifravimo priedas „%1“ negali iššifruoti duomenų."
+
+#~ msgid "Error: %1"
+#~ msgstr "Klaida: %1"
+
+#~ msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+#~ msgid "No %1 plug-in was found."
+#~ msgstr "Nerastas %1 priedas."
+
+#, fuzzy
+#~| msgid "Crypto plug-in \"%1\" cannot verify signatures."
+#~ msgid "Crypto plug-in \"%1\" cannot verify signatures."
+#~ msgstr "Šifravimo priedas %1 negali patikrinti parašų."
+
+#~ msgid ""
+#~ "The message is signed, but the validity of the signature cannot be "
+#~ "verified.<br />Reason: %1"
+#~ msgstr ""
+#~ "Laiškas pasirašytas, tačiau parašo galiojimas negali būti patikrintas."
+#~ "<br />Priežastis: %1"
+
+#~ msgid "&Zoom In"
+#~ msgstr "&Padidinti"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "Su&mažinti"
+
+#~ msgid "Reset"
+#~ msgstr "Atstatyti"
+
+#, fuzzy
+#~| msgid "&Zoom In"
+#~ msgid "Zoom"
+#~ msgstr "&Padidinti"
+
+#~ msgid "Close"
+#~ msgstr "Užverti"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "Rasti:"
+
+#~ msgid "Text to search for"
+#~ msgstr "Tekstas paieškai"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Kitas"
+
+#~ msgid "Jump to next match"
+#~ msgstr "Eiti prie kito sutapimo"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Ankstesnis"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "Eiti prie ankstesnio sutapimo"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "Keisti paieškos elgseną"
+
+#~ msgid "Case sensitive"
+#~ msgstr "Skirti raidžių dydį"
+
+#, fuzzy
+#~| msgid "Message not found."
+#~ msgid "Phrase not found"
+#~ msgstr "Laiškas nerastas."
+
+#~ msgid "Blockable Items"
+#~ msgstr "Blokuojami objektai"
+
+#~ msgid "Filter"
+#~ msgstr "Filtras"
+
+#~ msgid "Address"
+#~ msgstr "Adresas"
+
+#~ msgid "Search..."
+#~ msgstr "Ieškoti..."
+
+#~ msgid "Image"
+#~ msgstr "Paveikslėlis"
+
+#~ msgid "Script"
+#~ msgstr "Scenarijus"
+
+#~ msgid "Stylesheet"
+#~ msgstr "Stiliaus aprašas"
+
+#~ msgid "Font"
+#~ msgstr "Šriftas"
+
+#~ msgid "Frame"
+#~ msgstr "Kadras"
+
+#~ msgid "Object"
+#~ msgstr "Objektas"
+
+#~ msgid "Audio/Video"
+#~ msgstr "Garsas / vaizdas"
+
+#~ msgid "Copy url"
+#~ msgstr "Kopijuoti URL"
+
+#~ msgid "Copy filter"
+#~ msgstr "Kopijuoti filtrą"
+
+#~ msgid "Open"
+#~ msgstr "Atverti"
+
+#~ msgid "Remove filter"
+#~ msgstr "Pašalinti filtrą"
+
+#~ msgid "Add subscription"
+#~ msgstr "Pridėti užsakymą"
+
+#, fuzzy
+#~ msgid "Show List"
+#~ msgstr "Rodyti sąrašą"
+
+#~ msgid "Use default"
+#~ msgstr "Naudoti numatytąjį"
+
+#~ msgid "Yes"
+#~ msgstr "Taip"
+
+#~ msgid "Not"
+#~ msgstr "Ne"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Not subscription added..."
+#~ msgstr "Aprašymas"
+
+#~ msgid ""
+#~ "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">more information</a>):"
+#~ msgstr ""
+#~ "<qt>Filtro išraiška (pavyzdžiui <tt>http://www.example.com/ad/*</tt>, <a "
+#~ "href=\"filterhelp\">daugiau informacijos</a>):"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " diena"
+#~ msgstr[1] " dienos"
+#~ msgstr[2] " dienų"
+#~ msgstr[3] " diena"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~| "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~| "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~| "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~| "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~| "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes "
+#~| "priority over any blacklist (blocking) filter."
+#~ msgid ""
+#~ "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~ "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~ "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~ "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~ "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~ "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes priority "
+#~ "over any blacklist (blocking) filter.<br><a href='%1'>%2</a></qt>"
+#~ msgstr ""
+#~ "<qt><p>Įveskite filtro išraišką. Filtrus galima aprašyti kaip:"
+#~ "<ul><li>apvalkalo šablonus, pavyzdžiui <tt>http://www.example.com/ads*</"
+#~ "tt>, gali būti naudojami šablonai <tt>*?[]</tt></li><li>pilnas reguliarus "
+#~ "reiškinys, apgaubtas simboliais '<tt>/</tt>', pavyzdžiui <tt>/\\/(ad|"
+#~ "banner)\\./</tt></li></ul><p>Prieš kiekvieną filtro eilutę galima rašyti "
+#~ "'<tt>@@</tt>', norite leisti rodyti atitinkantį URL ir tai yra aukštesnio "
+#~ "prioriteto nurodymas nei draudimas."
+
+#~ msgid "Delete current list"
+#~ msgstr "Pašalinti dabartinį sąrašą"
+
+#, fuzzy
+#~| msgid "*|all files (*)"
+#~ msgid "All Files (*)"
+#~ msgstr "*|visi failai (*)"
+
+#~ msgid "Show adblock list"
+#~ msgstr "Rodyti adblock sąrašą"
+
+#~ msgid "Download..."
+#~ msgstr "Atsisiųsti..."
+
+#~ msgid "Filters:"
+#~ msgstr "Filtrai:"
+
+#, fuzzy
+#~| msgid "Blocked by ad filter"
+#~ msgid "&Blocking filter"
+#~ msgstr "Užblokavo reklamų filtras"
+
+#~ msgid "Pattern"
+#~ msgstr "Šablonas"
+
+#~ msgid "custom"
+#~ msgstr "pasirinktinis"
+
+#~ msgid "Match case"
+#~ msgstr "Skirti didžiąsias ir mažąsias raides"
+
+#~ msgid "Apply to:"
+#~ msgstr "Kam pritaikyti:"
+
+#, fuzzy
+#~| msgid "Collapse quoted text."
+#~ msgid "Collapse blocked:"
+#~ msgstr "Sutraukti cituojamą tekstą."
+
+#~ msgid "&Hide filtered elements"
+#~ msgstr "&Slėpti filtruojamus elementus"
+
+#~ msgid "Automatic Filters"
+#~ msgstr "Automatiniai filtrai"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Remove subscription"
+#~ msgstr "&Panaikinti prenumeratą"
+
+#~ msgid "Update enabled automatic filters every:"
+#~ msgstr "Atnaujinti įjungtus automatinius filtrus kas:"
+
+#, fuzzy
+#~ msgid "Show List..."
+#~ msgstr "Rodyti sąrašą"
+
+#~ msgid "Manual Filters"
+#~ msgstr "Rankiniai filtrai"
+
+#~ msgid "Add filter expression"
+#~ msgstr "Pridėti filtro išraišką"
+
+#~ msgid "Import Filters..."
+#~ msgstr "Importuoti filtrus..."
+
+#~ msgid "Search:"
+#~ msgstr "Ieškoti:"
+
+#~ msgid "Remove filter expression"
+#~ msgstr "Pašalinti filtro išraišką"
+
+#~ msgid "Remove Filter"
+#~ msgstr "Šalinti filtrą"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "Paryškinti visus atitikmenis"
+
+#~ msgid "Blocked by ad filter"
+#~ msgstr "Užblokavo reklamų filtras"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "Didinti tik tekstą"
+
+#~ msgid "No Audit Log available"
+#~ msgstr "Nepasiekiamas audito žurnalas"
+
+#~ msgid "Error Retrieving Audit Log: %1"
+#~ msgstr "Klaida gaunant audito ataskaitą: %1"
+
+#~ msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+#~ msgid "Show Audit Log"
+#~ msgstr "Rodyti audito ataskaitą"
+
+#~ msgid "The crypto engine returned no cleartext data."
+#~ msgstr "Šifravimo variklis negrąžino atviro teksto duomenų."
+
+#~ msgid "New or changed: %1 (secret key available)"
+#~ msgstr "Nauja ar pakeista: %1 (yra slaptas raktas)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "Nauja ar pakeista: %1"
+
+#~ msgid "Crypto plug-in \"%1\" is not initialized."
+#~ msgstr "Šifravimo priedas %1 negali nėra paleistas."
+
+#~ msgid "Headers:"
+#~ msgstr "Antraštės:"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Custom Headers"
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "&Savitos antraštės"
+
+#~ msgid "Header:"
+#~ msgstr "Antraštė:"
+
+#, fuzzy
+#~| msgid "Create To-do"
+#~ msgid "Create ToDo"
+#~ msgstr "Kurti priminimą"
+
+#, fuzzy
+#~| msgid "Create To-do"
+#~ msgid "Create To-Do"
+#~ msgstr "Kurti priminimą"
+
+#~ msgid "Au&tomatic collapse level:"
+#~ msgstr "Au&tomatinio sutraukimo lygmuo:"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "&Visos antraštės"
+
+#~ msgid "Show all message headers"
+#~ msgstr "Rodyti visas laiško antraštes"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "&Trumpos antraštės"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "Rodyti trumpą laiškų antraščių sąrašą"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "&Savitos antraštės"
+
+#~ msgid "Show custom headers"
+#~ msgstr "Rodyti savitas antraštes"
+
+#~ msgid "To: "
+#~ msgstr "Kam: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "&Įmonės antraštės"
+
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "Rodyti antraščių sąrašą įmantriu formatu"
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(tęsti nuo %1)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Kam: "
+
+#~ msgid "User-Agent: "
+#~ msgstr "Programa:"
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-Mailer: "
+
+#~ msgid "Bugzilla: "
+#~ msgstr "Bugzilla: "
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "MDN To: "
+#~ msgstr "Kam: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "Į&mantrios antraštės"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "Rodyti antraščių sąrašą įmantriu formatu"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "&Ilgos antraštės"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "Rodyti ilgą laiškų antraščių sąrašą"
+
+#, fuzzy
+#~| msgid "sent: "
+#~ msgid "Event:"
+#~ msgstr "išsiųstas: "
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Open &editor..."
+#~ msgstr "Atverti su..."
+
+#, fuzzy
+#~| msgid "Create To-do"
+#~ msgid "Create Event..."
+#~ msgstr "Kurti priminimą"
+
+#, fuzzy
+#~| msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgid "Allows you to create a calendar Event"
+#~ msgstr ""
+#~ "Leis sukurti kalendoriaus darbo įrašą arba priminimą iš šios žinutės"
+
+#, fuzzy
+#~| msgid "Edit with:"
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "Redaguoti su:"
+
+#, fuzzy
+#~| msgid "Create To-do"
+#~ msgctxt "create a new note out of this message"
+#~ msgid "Create Note"
+#~ msgstr "Kurti priminimą"
+
+#, fuzzy
+#~| msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgid "Allows you to create a note from this message"
+#~ msgstr ""
+#~ "Leis sukurti kalendoriaus darbo įrašą arba priminimą iš šios žinutės"
+
+#~ msgid "Todo:"
+#~ msgstr "Atlikti:"
+
+#~ msgid "Reply to \"%1\""
+#~ msgstr "Kam atsakyti: „%1“"
+
+#~ msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgstr ""
+#~ "Leis sukurti kalendoriaus darbo įrašą arba priminimą iš šios žinutės"
+
+#~ msgid "Translate..."
+#~ msgstr "Versti..."
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-obtain-keys\" function. Please "
+#~ "report this bug."
+#~ msgstr ""
+#~ "Chiasmus programinė sąsaja nepateikia „x-obtain-keys“ funkcijos. Prašome "
+#~ "pranešti apie šią programos programos klaidą."
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "Chiasmus programinės sąsajos klaida"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-obtain-keys\" "
+#~ "function did not return a string list. Please report this bug."
+#~ msgstr ""
+#~ "Netikėta reikšmė iš Chiasmus programinės sąsajos: „x-obtain-keys“ "
+#~ "funkcija nepateikė eilučių sąrašo. Prašome pranešti apie šią programos "
+#~ "klaidą."
+
+#~ msgid ""
+#~ "No keys have been found. Please check that a valid key path has been set "
+#~ "in the Chiasmus configuration."
+#~ msgstr ""
+#~ "Raktų nerasta. Prašome patikrinti, ar Chiasmus konfigūracijoje nurodytas "
+#~ "teisingas kelias iki raktų."
+
+#~ msgid "Chiasmus Decryption Key Selection"
+#~ msgstr "Chiasmus šifravimo rakto pasirinkimas"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-decrypt\" function. Please report "
+#~ "this bug."
+#~ msgstr ""
+#~ "Chiasmus programinė sąsaja nepateikia „x-decrypt“ funkcijos. Prašome "
+#~ "pranešti apie šią programos klaidą."
+
+#~ msgid ""
+#~ "The \"x-decrypt\" function does not accept the expected parameters. "
+#~ "Please report this bug."
+#~ msgstr ""
+#~ "„x-decrypt“ funkcija nepriima lauktų parametrų. Prašome pranešti apie šią "
+#~ "ydą."
+
+#~ msgid "Chiasmus Decryption Error"
+#~ msgstr "Chiasmus dešifravimo klaida"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-decrypt\" function "
+#~ "did not return a byte array. Please report this bug."
+#~ msgstr ""
+#~ "Netikėta reikšmė iš Chiasmus programinės sąsajos: „x-decrypt“ funkcija "
+#~ "nepateikė baitų masyvo. Prašome pranešti apie šią programos klaidą."
+
+#~ msgid "Please select the Chiasmus key file to use:"
+#~ msgstr "Prašom pasirinkti naudojimui Chiasmus rakto failą:"
+
+#~ msgid "Additional arguments for chiasmus:"
+#~ msgstr "Papildomi Chiasmus argumentai:"
+
+#~ msgid "Decrypt With Chiasmus..."
+#~ msgstr "Dešifruoti naudojant Chiasmus..."
+
+#, fuzzy
+#~| msgid "Use default"
+#~ msgid "Use Default Image"
+#~ msgstr "Naudoti numatytąjį"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgctxt "add space before image"
+#~ msgid " image"
+#~ msgid_plural " images"
+#~ msgstr[0] "Paveikslėlis"
+#~ msgstr[1] "Paveikslėlis"
+#~ msgstr[2] "Paveikslėlis"
+#~ msgstr[3] "Paveikslėlis"
+
+#~ msgid "Allow to delete attachments of existing mails."
+#~ msgstr "Leisti trinti esamų laiškų priedus."
+
+#~ msgid "Message Structure Viewer Placement"
+#~ msgstr "Laiško struktūros žiūryklės rodymo vieta"
+
+#, fuzzy
+#~ msgid "Above the message pane"
+#~ msgstr "Vi&rš laiško"
+
+#, fuzzy
+#~ msgid "Below the message pane"
+#~ msgstr "Že&miau laiško lango"
+
+#~ msgid "Fallback character e&ncoding:"
+#~ msgstr "Atsarginė simbolių koduotė:"
+
+#~ msgid "Show Raw Message"
+#~ msgstr "Rodyti pilną laišką"
+
+#, fuzzy
+#~| msgid "*|all files (*)"
+#~ msgid "all files (*)"
+#~ msgstr "*|visi failai (*)"
+
+#, fuzzy
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Nepavyko paleisti Jovie (teksto vertimo į kalbą) tarnybos"
+
+#~ msgid "sent: "
+#~ msgstr "išsiųstas: "

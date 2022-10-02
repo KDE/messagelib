@@ -1,0 +1,331 @@
+# translation of libmimetreeparser.po to Slovak
+# Roman Paholík <wizzardsk@gmail.com>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmimetreeparser\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2016-06-02 18:34+0100\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Nepomenované"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Chybný šifrovací modul."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Nenájdený vhodný šifrovací modul."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "Nenájdený modul %1."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "Šifrovací modul \"%1\" nemôže overovať podpisy."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"Správa je podpísaná, ale platnosť podpisu nie je možné overiť.<br />Dôvod: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Šifrovací modul \"%1\" nemôže dešifrovať správy."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Šifrovací modul %1 nemohol odšifrovať údaje."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Chyba: %1"
+
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "Prepáčte, certifikát nebolo možné importovať."
+
+#~ msgid "Reason: %1"
+#~ msgstr "Dôvod %1:"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Ľutujem, v tejto správe neboli nájdené certifikáty."
+
+#~ msgid "Certificate import status:"
+#~ msgstr "Stav importu certifikátu:"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "naimportovaný %1 nový certifikát."
+#~ msgstr[1] "naimportované %1 nové certifikáty."
+#~ msgstr[2] "naimportovaných %1 nových certifikátov."
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "%1 certifikát bol nezmenený."
+#~ msgstr[1] "%1 certifikáty boli nezmenené."
+#~ msgstr[2] "%1 certifikátov bolo nezmenených."
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "%1 nový tajný kľúč bol naimportovaný."
+#~ msgstr[1] "%1 nové tajné kľúče boli naimportované."
+#~ msgstr[2] "%1 nových tajných kľúčov bol naimportovaných."
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "%1 nový tajný kľúč bol nezmenený."
+#~ msgstr[1] "%1 nové tajné kľúče boli nezmenené."
+#~ msgstr[2] "%1 nových tajných kľúčov bol nezmenených."
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr "Ľutujem, ale detaily o importe certifikátu nie sú dostupné."
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Detaily importu certifikátu:"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Zlyhalo: %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "Vložená správa"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "Koniec vloženej správy"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "Táto správa je šifrovaná."
+
+#~ msgid "Decrypt Message"
+#~ msgstr "Dešifrovať správu"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Čakajte prosím, kým sa správa dešifruje..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "Zašifrovaná správa"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "Šifrovaná správa (dešifrovanie nie je možné)"
+
+#~ msgid "Reason: "
+#~ msgstr "Dôvod: "
+
+#~ msgid ""
+#~ "No secret key found to encrypt the message. It is encrypted for following "
+#~ "keys:"
+#~ msgstr ""
+#~ "Nenašiel sa žiadny tajný kľúč na dešifrovanie správy. Je zašifrovaná "
+#~ "nasledovným kľúčom:"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Nie je možné dešifrovať dáta."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "Koniec šifrovanej správy"
+
+#~ msgid ""
+#~ "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~ "HTML code is shown. If you trust the sender of this message then you can "
+#~ "activate formatted HTML display for this message <a href=kmail:"
+#~ "showHTML>by clicking here</a>."
+#~ msgstr ""
+#~ "<b>Poznámka:</b> Toto je HTML správa. Z bezpečnostných dôvodov je "
+#~ "zobrazený čistý HTML kód. Ak dôverujete odosielateľovi tejto správy tak "
+#~ "aktivujte formátované HTML zobrazenie pre túto správu kliknutím <a href="
+#~ "\"kmail:showHTML\">na tento odkaz</a>."
+
+#~ msgid ""
+#~ "<b>Note:</b> This HTML message may contain external references to images "
+#~ "etc. For security/privacy reasons external references are not loaded. If "
+#~ "you trust the sender of this message then you can load the external "
+#~ "references for this message <a href=kmail:loadExternal>by clicking here</"
+#~ "a>."
+#~ msgstr ""
+#~ "<b>Poznámka:</b> Táto HTML správa môže obsahovať externé odkazy na "
+#~ "obrázky a pod. Z bezpečnostných dôvodov sa externé odkazy nenačítajú. Ak "
+#~ "dôverujete odosielateľovi tejto správy tak môžete externé odkazy načítať "
+#~ "<a href=\"kmail:loadExternal\">kliknutím sem</a>."
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Čakajte prosím, kým sa overí podpis..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Nedostatočné informácie pre overenie podpisu. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Správu podpísal %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Správa bola podpísaná neznámym kľúčom."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Správa bola podpísaná kľúčom %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Správa bola podpísaná %3 dňa %1 s kľúčom %2."
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Správa bola podpísaná dňa %1 s kľúčom %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Správa bola podpísaná %2 s kľúčom %1."
+
+#~ msgid "Status: "
+#~ msgstr "Stav:"
+
+#~ msgid "Hide Details"
+#~ msgstr "Skryť detaily"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Správa bola podpísaná dňa %1 neznámym kľúčom %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Správa bola podpísaná neznámym kľúčom %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Platnosť podpisu nie je možné overiť."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Správu bola podpísaná %2 (ID kľúča: %1)."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Podpis je platný, ale bezpečnosť kľúča nie je známa."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Podpis je platný a kľúč je  čiastočne bezpečný."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Podpis je platný a kľúč je  plne bezpečný."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Podpis je platný a kľúč je nekonečne bezpečný."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Podpis je platný, ale kľúč nie je považovaný za bezpečný."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Pozor: Chybný podpis."
+
+#~ msgid "Invalid signature."
+#~ msgstr "Neplatný podpis."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "Nedostatočné informácie pre overenie podpisu."
+
+#~ msgid "Signed by <a href=mailto:%1>%2</a>."
+#~ msgstr "Podpísal <a href=mailto:%1>%2</a>."
+
+#~ msgid "Signature is valid."
+#~ msgstr "Podpis je platný."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Neznámy stav podpisu"
+
+#~ msgid "Show Details"
+#~ msgstr "Zobraziť detaily"
+
+#~ msgid "End of signed message"
+#~ msgstr "Koniec podpísanej správy"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Chyba: Signatúra nebola overená"
+
+#~ msgid "Good signature"
+#~ msgstr "Dobrý podpis"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Zlý</b> podpis"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Nemám verejný kľúč pre overenie podpisu"
+
+#~ msgid "No signature found"
+#~ msgstr "Podpis nebol nájdený"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Chyba pri overovaní podpisu"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Rôzne výsledky pre podpisy"
+
+#~ msgid "No status information available."
+#~ msgstr "Nie sú k dispozícii informácie o stave."
+
+#~ msgid "Good signature."
+#~ msgstr "Dobrý podpis."
+
+#~ msgid "One key has expired."
+#~ msgstr "Jeden kľúč už stratil platnosť."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Podpis stratil časovú platnosť."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Nemôžem overiť: chýba kľúč."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL nie je k dispozícii."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Dostupné CRL je príliš staré."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Politika nedodržaná."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Vyskytla sa systémová chyba."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Jeden kľúč bol odvolaný."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Zlý</b> podpis."
+
+#~ msgid "certificate"
+#~ msgstr "certifikát"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Upozornenie:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "E-mailová adresa odosielateľa nie je uložená v %1 použitého pre podpis."
+
+#~ msgid "sender: "
+#~ msgstr "odosielateľ:"
+
+#~ msgid "stored: "
+#~ msgstr "uložené:"
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "V %1, ktorý sa používa pre podpis, nie je uložená žiadna e-mailová "
+#~ "adresa, preto nie je čo porovnať s adresou odosielateľa %2."

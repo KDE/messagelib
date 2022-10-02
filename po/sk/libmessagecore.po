@@ -1,0 +1,386 @@
+# translation of libmessagecore.po to Slovak
+# Richard Fric <Richard.Fric@kdemail.net>, 2009.
+# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014, 2015, 2016.
+# Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessagecore\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2020-10-20 17:18+0200\n"
+"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: attachment/attachmentcompressjob.cpp:50
+#, kde-format
+msgid "Could not initiate attachment compression."
+msgstr "Nemôžem spustiť komprimáciu prílohy."
+
+#: attachment/attachmentcompressjob.cpp:60
+#, kde-format
+msgid "Could not compress the attachment."
+msgstr "Nemôžem skomprimovať prílohu."
+
+#: attachment/attachmentfromfolderjob.cpp:51
+#, kde-format
+msgid "Could not create compressed file."
+msgstr "Nemôžem vytvoriť komprimovaný súbor."
+
+#: attachment/attachmentfromfolderjob.cpp:90
+#, kde-format
+msgid ""
+"The resulting attachment would be larger than the maximum allowed size, "
+"aborting."
+msgstr "Výsledná príloha by bola väčšia ako maximálna povolená veľkosť, ruším."
+
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
+#, kde-format
+msgid "Could not add %1 to the archive"
+msgstr "Nepodarilo sa pridať %1 do archívu"
+
+#: attachment/attachmentfromfolderjob.cpp:113
+#, kde-format
+msgid "Could not open %1 for reading."
+msgstr "Nepodarilo sa otvoriť %1 pre čítanie."
+
+#: attachment/attachmentfromurljob.cpp:69
+#, kde-format
+msgctxt "a file called 'unknown.ext'"
+msgid "unknown%1"
+msgstr "neznáme%1"
+
+#: attachment/attachmentfromurljob.cpp:71
+#, kde-format
+msgctxt "a file called 'unknown'"
+msgid "unknown"
+msgstr "neznáme"
+
+#: attachment/attachmentfromurljob.cpp:103
+#, kde-format
+msgid "\"%1\" not found. Please specify the full path."
+msgstr "\"%1\" nenájdené. Prosím, zadajte celú cestu."
+
+#: attachment/attachmentfromurljob.cpp:112
+#, kde-format
+msgid "You may not attach files bigger than %1. Share it with storage service."
+msgstr ""
+"Nemali by ste prikladať súbory väčšie ako %1. Zdieľajte ich na úložnej "
+"službe."
+
+#: attachment/attachmentpropertiesdialog.cpp:133
+#, kde-format
+msgid ""
+"<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
+"touch this setting, since the type of the file is automatically checked; "
+"but, sometimes, %1 may not detect the type correctly -- here is where you "
+"can fix that.</p>"
+msgstr ""
+"<p><em>MIME typ</em> súboru:</p><p>Obyčajne netreba meniť toto nastavenie, "
+"keďže typ súboru sa kontroluje automaticky; ale niekedy, %1 nemusí detekovať "
+"typ správne -- tu to môžete opraviť.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:141
+#, kde-format
+msgid ""
+"<p>The estimated size of the attachment:</p><p>Note that, in an email "
+"message, a binary file encoded with base64 will take up four thirds the "
+"actual size of the file.</p>"
+msgstr ""
+"<p>Odhadovaná veľkosť prílohy:</p><p>Pripomíname, že v e-mailovej správe, "
+"binárny súbor kódovaný pomocou base64 zaberá do štyroch tretín pôvodnej "
+"veľkosti súboru.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:146
+#, kde-format
+msgid ""
+"<p>The file name of the part:</p><p>Although this defaults to the name of "
+"the attached file, it does not specify the file to be attached; rather, it "
+"suggests a file name to be used by the recipient's mail agent when saving "
+"the part to disk.</p>"
+msgstr ""
+"<p>Názov súboru časti:</p><p>Hoci je to predvolene názov priloženého súboru, "
+"neurčuje to priložený súbor; namiesto toho to navrhuje názov súboru na "
+"použitie pri ukladaní časti na disk cez prijímateľov poštový klient.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:153
+#, kde-format
+msgid ""
+"<p>A description of the part:</p><p>This is just an informational "
+"description of the part, much like the Subject is for the whole message; "
+"most mail agents will show this information in their message previews "
+"alongside the attachment's icon.</p>"
+msgstr ""
+"<p>Popis časti:</p><p>Toto je iba informačný popis časti, podobne ako "
+"Predmet pre celú správu; väčšina poštových klientov zobrazí túto informáciu "
+"vo svojom náhľade správy spolu s ikonou prílohy.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:160
+#, kde-format
+msgid ""
+"<p>The transport encoding of this part:</p><p>Normally, you do not need to "
+"change this, since %1 will use a decent default encoding, depending on the "
+"MIME type; yet, sometimes, you can significantly reduce the size of the "
+"resulting message, e.g. if a PostScript file does not contain binary data, "
+"but consists of pure text -- in this case, choosing \"quoted-printable\" "
+"over the default \"base64\" will save up to 25% in resulting message size.</"
+"p>"
+msgstr ""
+"<p>Prenosové kódovanie tejto časti:</p><p>Obyčajne to netreba meniť, pretože "
+"%1 použije predvolené kódovanie, v závislosti od MIME typu; no niekedy "
+"môžete významne znížiť veľkosť výslednej správy, napr. ak súbor PostScript "
+"neobsahuje binárne dáta, ale obsahuje iba čistý text -- v tomto prípade, "
+"výber \"quoted-printable\" namiesto predvoleného \"base64\" ušetrí do 25% vo "
+"výslednej veľkosti súboru.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:171
+#, kde-format
+msgid ""
+"<p>Check this option if you want to suggest to the recipient the automatic "
+"(inline) display of this part in the message preview, instead of the default "
+"icon view;</p><p>Technically, this is carried out by setting this part's "
+"<em>Content-Disposition</em> header field to \"inline\" instead of the "
+"default \"attachment\".</p>"
+msgstr ""
+"<p>Zaškrtnite túto voľbu, ak chcete navrhnúť prijímateľovi automatické "
+"(vnútorné) zobrazenie časti tejto správy v náhľade správy, namiesto "
+"predvolenéhozobrazenia ikony;</p><p>Technicky sa to robí nastavením poľa "
+"hlavičky tejto časti <em>Content-Disposition</em> na \"inline\" namiesto "
+"predvoleného \"attachment\".</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:179
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be signed.</p><p>The "
+"signature will be made with the key that you associated with the currently-"
+"selected identity.</p>"
+msgstr ""
+"<p>Zaškrtnite túto voľbu, ak chcete túto časť správy podpísať.</p><p> Podpis "
+"bude urobený kľúčom, ktorý ste asociovali s aktuálne vybranou identitou.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:185
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be encrypted.</"
+"p><p>The part will be encrypted for the recipients of this message.</p>"
+msgstr ""
+"<p>Zaškrtnite túto voľbu, ak chcete túto časť správy šifrovať. </p><p>Časť "
+"bude zašifrovaná pre prijímateľov správy.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:306
+#: attachment/attachmentpropertiesdialog.cpp:321
+#, kde-format
+msgctxt "@title:window"
+msgid "Attachment Properties"
+msgstr "Vlastnosti príloh"
+
+#: attachment/attachmentupdatejob.cpp:40
+#, kde-format
+msgid "URL is empty."
+msgstr "URL je prázdne."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: attachment/ui/attachmentpropertiesdialog.ui:39
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:60
+#, kde-format
+msgctxt "MIME type of this attachment"
+msgid "Type:"
+msgstr "Typ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: attachment/ui/attachmentpropertiesdialog.ui:82
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:87
+#, kde-format
+msgctxt "size of the attachment"
+msgid "Size:"
+msgstr "Veľkosť:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: attachment/ui/attachmentpropertiesdialog.ui:109
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:114
+#, kde-format
+msgctxt "file name of the attachment"
+msgid "Name:"
+msgstr "Názov:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: attachment/ui/attachmentpropertiesdialog.ui:139
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:134
+#, kde-format
+msgctxt "description of the attachment"
+msgid "Description:"
+msgstr "Popis:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: attachment/ui/attachmentpropertiesdialog.ui:169
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:154
+#, kde-format
+msgctxt "encoding of the attachment"
+msgid "Encoding:"
+msgstr "Kódovanie:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoDisplay)
+#: attachment/ui/attachmentpropertiesdialog.ui:187
+#, kde-format
+msgid "Suggest automatic display"
+msgstr "Naznačiť automatické zobrazenie"
+
+#. i18n: ectx: property (text), widget (QCheckBox, encrypt)
+#: attachment/ui/attachmentpropertiesdialog.ui:194
+#, kde-format
+msgid "Encrypt this attachment"
+msgstr "Šifrovať túto prílohu"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sign)
+#: attachment/ui/attachmentpropertiesdialog.ui:201
+#, kde-format
+msgid "Sign this attachment"
+msgstr "Podpísať túto prílohu"
+
+#. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
+#: settings/messagecore.kcfg:34
+#, kde-format
+msgid ""
+"Changing this from its default 'Auto' will force the use of the specified "
+"encoding for all emails, regardless of what they specify themselves."
+msgstr ""
+"Zmena tohto z predvoleného 'Auto' vynúti použitie daného kódovania pre "
+"všetky maily, bez ohľadu čo majú samy nastavené."
+
+#. i18n: ectx: label, entry (QuotedText3), group (Reader)
+#: settings/messagecore.kcfg:37
+#, kde-format
+msgid "This is the color used in the 3rd level of quoted text"
+msgstr "Toto je farba použitá v 3. úrovni citovaného textu"
+
+#. i18n: ectx: label, entry (QuotedText2), group (Reader)
+#: settings/messagecore.kcfg:41
+#, kde-format
+msgid "This is the color used in the 2nd level of quoted text"
+msgstr "Toto je farba použitá v 2. úrovni citovaného textu"
+
+#. i18n: ectx: label, entry (QuotedText1), group (Reader)
+#: settings/messagecore.kcfg:45
+#, kde-format
+msgid "This is the color used in the 1st level of quoted text"
+msgstr "Toto je farba použitá v 1. úrovni citovaného textu"
+
+#. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
+#: settings/messagecore.kcfg:56
+#, kde-format
+msgid "Replace recognized prefi&x with \"Re:\""
+msgstr "Nahradiť rozpoznanú predponu s \"Re:\""
+
+#. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
+#: settings/messagecore.kcfg:64
+#, kde-format
+msgid "Replace recognized prefix with \"&Fwd:\""
+msgstr "Nahradiť rozpoznanú predponu s \"&Fwd:\""
+
+#. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
+#: settings/messagecore.kcfg:69
+#, kde-format
+msgid ""
+"The maximum size in bits that email attachments are allowed to have (-1 for "
+"no limit)"
+msgstr ""
+"Maximálna veľkosť v bitoch, ktorú môžu mať poštové prílohy (-1 pre žiadny "
+"limit)"
+
+#: utils/stringutil.cpp:418
+#, kde-format
+msgctxt "signal that this email is defined in my identity"
+msgid "Me"
+msgstr "Ja"
+
+#~ msgid "TextLabel"
+#~ msgstr "Textový štítok"
+
+#~ msgid "This is the color used to highlight misspelled words"
+#~ msgstr "Toto je farba použitá na zvýraznenie zle napísaných slov"
+
+#~ msgid "Specifies the font to use for the message body"
+#~ msgstr "Určuje písmo na použitie v tele správy"
+
+#~ msgid "Specifies the font to use for printing"
+#~ msgstr "Určite písmo použité na tlač"
+
+#~ msgid "This is the color used for highlighting all signed messages"
+#~ msgstr "Toto je farba použitá na zvýraznenie všetkých podpísaných správ"
+
+#~ msgid "This is the color used for highlighting all encrypted messages"
+#~ msgstr "Toto je farba použitá na zvýraznenie všetkých šifrovaných správ"
+
+#~ msgid ""
+#~ "Disregard the user's umask setting and use \"read-write for the user only"
+#~ "\" instead"
+#~ msgstr ""
+#~ "Nevšímať si používateľské nastavenia umask a použiť \"čítanie a zápis iba "
+#~ "pre používateľa\" namiesto toho"
+
+#~ msgid ""
+#~ "Some emails, especially those generated automatically, do not specify the "
+#~ "character encoding which needs to be used to properly display them. In "
+#~ "such cases a fallback character encoding will be used, which you can "
+#~ "configure here. Set it to the character encoding most commonly used in "
+#~ "your part of the world. As a default the encoding configured for the "
+#~ "whole system is used."
+#~ msgstr ""
+#~ "Niektoré maily, hlavne tie generované automaticky, neudávajú kódovanie "
+#~ "znakov ktoré sa má použiť na ich správne zobrazenie. V takých prípadoch "
+#~ "sa použije záchranné kódovanie, ktoré môžete nastaviť tu. Nastavte ho na "
+#~ "kódovanie, ktoré sa najčastejšie používa vo vašej časti sveta. Predvolene "
+#~ "sa použije kódovanie, ktoré je nastavené pre celý systém."
+
+#~ msgid "Could not read file %1."
+#~ msgstr "Nepodarilo sa čítať súbor %1."
+
+#~ msgid "Edit Note"
+#~ msgstr "Upraviť poznámku"
+
+#~ msgid "Delete Note"
+#~ msgstr "Odstrániť poznámku"
+
+#~ msgid "Add Note"
+#~ msgstr "Pridať poznámku"
+
+#~ msgid "Enter the text that should be stored as a note to the mail:"
+#~ msgstr "Zadajte text, ktorý sa má uložiť ako poznámka k mailu:"
+
+#~ msgid "Note type:"
+#~ msgstr "Typ poznámky:"
+
+#~ msgid "Private note"
+#~ msgstr "Súkromná poznámka"
+
+#~ msgid "Shared note"
+#~ msgstr "Zdieľaná poznámka"
+
+#~ msgid "Do you really want to delete this note?"
+#~ msgstr "Naozaj chcete odstrániť túto poznámku?"
+
+#~ msgid "Delete Note?"
+#~ msgstr "Odstrániť poznámku?"
+
+#~ msgid "Delete"
+#~ msgstr "Vymazať"
+
+#~ msgid "Open Address Book"
+#~ msgstr "Otvoriť adresár"

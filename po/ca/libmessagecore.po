@@ -1,0 +1,323 @@
+# Translation of libmessagecore.po to Catalan
+# Copyright (C) 2009-2020 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Manuel Tortosa Moreno <manutortosa@gmail.com>, 2009, 2010, 2011.
+# Josep M. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2015, 2017, 2018.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2016, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: messagelib\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2020-08-17 23:09+0200\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manuel Tortosa Moreno,Antoni Bella"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "manutortosa@gmail.com,antonibella5@yahoo.com"
+
+#: attachment/attachmentcompressjob.cpp:50
+#, kde-format
+msgid "Could not initiate attachment compression."
+msgstr "No s'ha pogut iniciar la compressió de l'adjunt."
+
+#: attachment/attachmentcompressjob.cpp:60
+#, kde-format
+msgid "Could not compress the attachment."
+msgstr "No s'ha pogut comprimir l'adjunt."
+
+#: attachment/attachmentfromfolderjob.cpp:51
+#, kde-format
+msgid "Could not create compressed file."
+msgstr "No s'ha pogut crear el fitxer comprimit."
+
+#: attachment/attachmentfromfolderjob.cpp:90
+#, kde-format
+msgid ""
+"The resulting attachment would be larger than the maximum allowed size, "
+"aborting."
+msgstr ""
+"L'adjunt resultant serà més gran que la mida màxima permesa, s'interromp."
+
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
+#, kde-format
+msgid "Could not add %1 to the archive"
+msgstr "No s'ha pogut afegir %1 a l'arxiu"
+
+#: attachment/attachmentfromfolderjob.cpp:113
+#, kde-format
+msgid "Could not open %1 for reading."
+msgstr "No s'ha pogut obrir %1 per a lectura."
+
+#: attachment/attachmentfromurljob.cpp:69
+#, kde-format
+msgctxt "a file called 'unknown.ext'"
+msgid "unknown%1"
+msgstr "desconegut%1"
+
+#: attachment/attachmentfromurljob.cpp:71
+#, kde-format
+msgctxt "a file called 'unknown'"
+msgid "unknown"
+msgstr "desconegut"
+
+#: attachment/attachmentfromurljob.cpp:103
+#, kde-format
+msgid "\"%1\" not found. Please specify the full path."
+msgstr "No s'ha trobat «%1». Si us plau, especifiqueu el camí complet."
+
+#: attachment/attachmentfromurljob.cpp:112
+#, kde-format
+msgid "You may not attach files bigger than %1. Share it with storage service."
+msgstr ""
+"No podeu adjuntar fitxers més grans que %1. Compartiu-lo amb el servei "
+"d'emmagatzematge."
+
+#: attachment/attachmentpropertiesdialog.cpp:133
+#, kde-format
+msgid ""
+"<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
+"touch this setting, since the type of the file is automatically checked; "
+"but, sometimes, %1 may not detect the type correctly -- here is where you "
+"can fix that.</p>"
+msgstr ""
+"<p>El <em>tipus MIME</em> del fitxer:</p><p>normalment no necessitareu tocar "
+"aquesta opció, ja que el tipus de fitxer es comprova automàticament, però a "
+"vegades %1 pot no detectar el tipus de fitxer correctament. Aquí és on "
+"podreu solucionar-ho.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:141
+#, kde-format
+msgid ""
+"<p>The estimated size of the attachment:</p><p>Note that, in an email "
+"message, a binary file encoded with base64 will take up four thirds the "
+"actual size of the file.</p>"
+msgstr ""
+"<p>La mida estimada de l'adjunt:</p><p>Cal tenir present que, en un missatge "
+"de correu electrònic, un fitxer binari codificat amb base64 prendrà més de "
+"quatre terços de la mida real del fitxer.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:146
+#, kde-format
+msgid ""
+"<p>The file name of the part:</p><p>Although this defaults to the name of "
+"the attached file, it does not specify the file to be attached; rather, it "
+"suggests a file name to be used by the recipient's mail agent when saving "
+"the part to disk.</p>"
+msgstr ""
+"<p>El nom del fitxer de la part:</p><p>tot i que el valor predeterminat és "
+"el nom del fitxer adjunt, no s'especifica el fitxer que s'adjuntarà: tan "
+"sols se suggereix un nom perquè el programa de correu del destinatari l'usi "
+"en desar aquesta part al disc.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:153
+#, kde-format
+msgid ""
+"<p>A description of the part:</p><p>This is just an informational "
+"description of the part, much like the Subject is for the whole message; "
+"most mail agents will show this information in their message previews "
+"alongside the attachment's icon.</p>"
+msgstr ""
+"<p>Una descripció de la part:</p><p>això tan sols és una descripció "
+"informativa de la part, com ara l'Assumpte ho és per al mateix missatge. La "
+"majoria dels programes de correu mostraran aquesta informació en la vista "
+"prèvia del missatge, al costat de la icona de l'adjunt.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:160
+#, kde-format
+msgid ""
+"<p>The transport encoding of this part:</p><p>Normally, you do not need to "
+"change this, since %1 will use a decent default encoding, depending on the "
+"MIME type; yet, sometimes, you can significantly reduce the size of the "
+"resulting message, e.g. if a PostScript file does not contain binary data, "
+"but consists of pure text -- in this case, choosing \"quoted-printable\" "
+"over the default \"base64\" will save up to 25% in resulting message size.</"
+"p>"
+msgstr ""
+"<p>La codificació del transport d'aquesta part:</p><p>normalment no "
+"necessitareu canviar això, atès que, %1 emprarà una codificació "
+"predeterminada decent, depenent del tipus MIME. Així i tot, algunes vegades, "
+"podríeu reduir significativament la mida del missatge, p. ex. si un fitxer "
+"PostScript no conté dades binàries, sinó només text. En aquest cas, "
+"escollint «quoted printable» en comptes de «base64» estalviareu fins al 25% "
+"de la mida del missatge.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:171
+#, kde-format
+msgid ""
+"<p>Check this option if you want to suggest to the recipient the automatic "
+"(inline) display of this part in the message preview, instead of the default "
+"icon view;</p><p>Technically, this is carried out by setting this part's "
+"<em>Content-Disposition</em> header field to \"inline\" instead of the "
+"default \"attachment\".</p>"
+msgstr ""
+"<p>Marqueu aquesta opció si desitgeu suggerir al destinatari que vegi "
+"automàticament (dins del missatge) d'aquesta part en comptes de la vista "
+"predeterminada en la icona.</p><p>Tècnicament això es fa posant la capçalera "
+"<em>Content-Disposition</em> d'aquesta part com a «inline» (inclosa) en "
+"comptes del valor predeterminat que és «attachment» (adjunta).</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:179
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be signed.</p><p>The "
+"signature will be made with the key that you associated with the currently-"
+"selected identity.</p>"
+msgstr ""
+"<p>Marqueu aquesta opció si voleu que aquesta part del missatge sigui "
+"signada.</p><p>La signatura es farà amb la clau que teniu associada amb la "
+"identitat seleccionada.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:185
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be encrypted.</"
+"p><p>The part will be encrypted for the recipients of this message.</p>"
+msgstr ""
+"<p>Marqueu aquesta opció si desitgeu que aquesta part del missatge "
+"s'encripti.</p><p>La part s'encriptarà per als destinataris del missatge.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:306
+#: attachment/attachmentpropertiesdialog.cpp:321
+#, kde-format
+msgctxt "@title:window"
+msgid "Attachment Properties"
+msgstr "Propietats de l'adjunt"
+
+#: attachment/attachmentupdatejob.cpp:40
+#, kde-format
+msgid "URL is empty."
+msgstr "L'URL està buit."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: attachment/ui/attachmentpropertiesdialog.ui:39
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:60
+#, kde-format
+msgctxt "MIME type of this attachment"
+msgid "Type:"
+msgstr "Tipus:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: attachment/ui/attachmentpropertiesdialog.ui:82
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:87
+#, kde-format
+msgctxt "size of the attachment"
+msgid "Size:"
+msgstr "Mida:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: attachment/ui/attachmentpropertiesdialog.ui:109
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:114
+#, kde-format
+msgctxt "file name of the attachment"
+msgid "Name:"
+msgstr "Nom:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: attachment/ui/attachmentpropertiesdialog.ui:139
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:134
+#, kde-format
+msgctxt "description of the attachment"
+msgid "Description:"
+msgstr "Descripció:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: attachment/ui/attachmentpropertiesdialog.ui:169
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:154
+#, kde-format
+msgctxt "encoding of the attachment"
+msgid "Encoding:"
+msgstr "Codificació:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoDisplay)
+#: attachment/ui/attachmentpropertiesdialog.ui:187
+#, kde-format
+msgid "Suggest automatic display"
+msgstr "Suggereix mostrar automàticament"
+
+#. i18n: ectx: property (text), widget (QCheckBox, encrypt)
+#: attachment/ui/attachmentpropertiesdialog.ui:194
+#, kde-format
+msgid "Encrypt this attachment"
+msgstr "Encripta aquest adjunt"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sign)
+#: attachment/ui/attachmentpropertiesdialog.ui:201
+#, kde-format
+msgid "Sign this attachment"
+msgstr "Signa aquest adjunt"
+
+#. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
+#: settings/messagecore.kcfg:34
+#, kde-format
+msgid ""
+"Changing this from its default 'Auto' will force the use of the specified "
+"encoding for all emails, regardless of what they specify themselves."
+msgstr ""
+"En canviar el valor predeterminat «Auto», es forçarà l'ús de la codificació "
+"especificada per a tots els correus, independentment del que s'hi "
+"especifiqui."
+
+#. i18n: ectx: label, entry (QuotedText3), group (Reader)
+#: settings/messagecore.kcfg:37
+#, kde-format
+msgid "This is the color used in the 3rd level of quoted text"
+msgstr "Aquest és el color usat en el 3r nivell del text citat"
+
+#. i18n: ectx: label, entry (QuotedText2), group (Reader)
+#: settings/messagecore.kcfg:41
+#, kde-format
+msgid "This is the color used in the 2nd level of quoted text"
+msgstr "Aquest és el color usat en el 2n nivell del text citat"
+
+#. i18n: ectx: label, entry (QuotedText1), group (Reader)
+#: settings/messagecore.kcfg:45
+#, kde-format
+msgid "This is the color used in the 1st level of quoted text"
+msgstr "Aquest és el color usat en el 1r nivell del text citat"
+
+#. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
+#: settings/messagecore.kcfg:56
+#, kde-format
+msgid "Replace recognized prefi&x with \"Re:\""
+msgstr "Substitueix el prefi&x reconegut per «Re:»"
+
+#. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
+#: settings/messagecore.kcfg:64
+#, kde-format
+msgid "Replace recognized prefix with \"&Fwd:\""
+msgstr "Substitueix el prefix reconegut per «&Fwd:»"
+
+#. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
+#: settings/messagecore.kcfg:69
+#, kde-format
+msgid ""
+"The maximum size in bits that email attachments are allowed to have (-1 for "
+"no limit)"
+msgstr ""
+"Mida màxima en bits que es permet en els adjunts del correu (-1 per a sense "
+"límit)"
+
+#: utils/stringutil.cpp:418
+#, kde-format
+msgctxt "signal that this email is defined in my identity"
+msgid "Me"
+msgstr "Jo"

@@ -1,0 +1,2468 @@
+# translation of kmail.po to galician
+# Copyright (C) 2003, 2004, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+#
+# Xabi García <xabigf@gmx.net>, 2003, 2004.
+# Xabier García Feal <xabigf@gmx.net>, 2004.
+# Xabi G. Feal <xabigf@gmx.net>, 2006, 2007.
+# Xosé Calvo <xosecalvo@gmail.com>, 2008.
+# Xosé <xosecalvo@gmail.com>, 2008.
+# mvillarino <mvillarino@users.sourceforge.net>, 2008, 2009.
+# Xosé <xosecalvo@gmail.com>, 2008, 2009.
+# Miguel Branco <mgl.branco@gmail.com>, 2008.
+# Xosé <xosecalvo@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+# Marce Villarino <mvillarino@users.sourceforge.net>, 2009.
+# Marce Villarino <mvillarino@gmail.com>, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013, 2014.
+# Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2016, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2018-04-22 10:53+0100\n"
+"Last-Translator: Adrian Chaves <adrian@chaves.io>\n"
+"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Sen nome"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "O complemento de cifrado é incorrecto."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Non se atopou ningún complemento de cifrado axeitado."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "Non se atopou o complemento %1."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "O complemento de cifrado «%1» non pode verificar sinaturas."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"A mensaxe está asinada pero non se pode verificar a validez da sinatura. "
+"<br />Razón: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "O complemento de cifrado «%1» non pode descifrar mensaxes."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "O complemento de cifrado «%1» non puido descifrar os datos."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Erro: %1"
+
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "Desculpas, non foi posíbel importar o certificado."
+
+#~ msgid "Reason: %1"
+#~ msgstr "Razón: %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Desculpas, non se atoparon certificados nesta mensaxe."
+
+#~ msgid "Certificate import status:"
+#~ msgstr "Estado da importación do certificado:"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "Importouse 1 novo certificado."
+#~ msgstr[1] "Importáronse %1 novos certificados."
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "Non se cambiou 1 certificado."
+#~ msgstr[1] "Non se cambiaron %1 certificados."
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "Importouse 1 nova chave secreta."
+#~ msgstr[1] "Importáronse %1 novas chaves secretas."
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "Non se cambiou 1 chave secreta."
+#~ msgstr[1] "Non se cambiaron %1 chaves secretas."
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr "Desculpas, non hai detalles sobre a importación do certificado."
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Detalles da importación do certificado:"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Fallou: %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "Mensaxe encapsulada"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "Fin da mensaxe encapsulada"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "A mensaxe está cifrada."
+
+#~ msgid "Decrypt Message"
+#~ msgstr "Descifrar a mensaxe"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Agarde, por favor, mentres se descifra a mensaxe..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "Mensaxe cifrada"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "Mensaxe cifrada (non é posíbel descifrala)"
+
+#~ msgid "Reason: "
+#~ msgstr "Motivo: "
+
+#~ msgid ""
+#~ "No secret key found to encrypt the message. It is encrypted for following "
+#~ "keys:"
+#~ msgstr ""
+#~ "Non se atopou ningunha chave secreta para cifrar a mensaxe. Está cifrada "
+#~ "para as seguintes chaves:"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Non foi posíbel descifrar os datos."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "Fin da mensaxe cifrada"
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~| "HTML code is shown. If you trust the sender of this message then you can "
+#~| "activate formatted HTML display for this message <a href=\"kmail:showHTML"
+#~| "\">by clicking here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~ "HTML code is shown. If you trust the sender of this message then you can "
+#~ "activate formatted HTML display for this message <a href=kmail:"
+#~ "showHTML>by clicking here</a>."
+#~ msgstr ""
+#~ "<b>Nota:</b> Esta é unha mensaxe HTML. Por razóns de seguranza, só se "
+#~ "mostra o código HTML. Se confía no remitente da mensaxe, pode activar o "
+#~ "formato real HTML para esta mensaxe <a href=\"kmail:showHTML\">premendo "
+#~ "aquí</a>."
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This HTML message may contain external references to images "
+#~| "etc. For security/privacy reasons external references are not loaded. If "
+#~| "you trust the sender of this message then you can load the external "
+#~| "references for this message <a href=\"kmail:loadExternal\">by clicking "
+#~| "here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This HTML message may contain external references to images "
+#~ "etc. For security/privacy reasons external references are not loaded. If "
+#~ "you trust the sender of this message then you can load the external "
+#~ "references for this message <a href=kmail:loadExternal>by clicking here</"
+#~ "a>."
+#~ msgstr ""
+#~ "<b>Nota:</b> Esta mensaxe HTML podería conter referencias externas a "
+#~ "imaxes e outras cousas. Por razóns de seguranza/privacidade non se han de "
+#~ "cargar as referencias externas. Se confía no remitente da mensaxes pode "
+#~ "entón cargar as referencias externas desta mensaxes premendo <a href="
+#~ "\"kmail:loadExternal\">aquí</a>."
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Agarde, por favor, mentres se verifica a sinatura..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Non hai información para comprobar a sinatura. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "A mensaxe asinouna %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "A mensaxe asinouse cunha chave descoñecida."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "A mensaxe asinouse coa chave %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "A mensaxe asinouna %3 o %1 coa chave %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "A mensaxe asinouse o %1 coa chave %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "A mensaxe asinouna %2 coa chave %1."
+
+#~ msgid "Status: "
+#~ msgstr "Estado: "
+
+#~ msgid "Hide Details"
+#~ msgstr "Agochar os detalles"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "A mensaxe asinouse o %1 coa chave descoñecida %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "A mensaxe asinouse coa chave descoñecida %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Non é posíbel comprobar a validez da sinatura."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "A mensaxe asinouna %2 (Identificador da chave: %1)."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "A sinatura é correcta, pero descoñécese a validez da chave."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "A sinatura é correcta e a chave é de confianza marxinal."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "A sinatura é correcta e a chave é de confianza absoluta."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "A sinatura é correcta e a chave é de confianza total."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "A sinatura é correcta, mais a chave non é de confianza."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Advertencia: A sinatura é mala."
+
+#~ msgid "Invalid signature."
+#~ msgstr "A sinatura non é válida."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "Non hai información para comprobar a validez da sinatura."
+
+#, fuzzy
+#~| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#~ msgid "Signed by <a href=mailto:%1>%2</a>."
+#~ msgstr "Asinado por <a href=\"mailto:%1\">%2</a>."
+
+#~ msgid "Signature is valid."
+#~ msgstr "A sinatura é correcta."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "O estado da sinatura é descoñecido"
+
+#~ msgid "Show Details"
+#~ msgstr "Mostrar os detalles"
+
+#~ msgid "End of signed message"
+#~ msgstr "Fin da mensaxe asinada"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Erro: A sinatura non está verificada"
+
+#~ msgid "Good signature"
+#~ msgstr "Boa sinatura"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Mala</b> sinatura"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Non hai chave pública para verificar a sinatura"
+
+#~ msgid "No signature found"
+#~ msgstr "Non se atopou ningunha sinatura"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Produciuse un erro ao verificar a sinatura"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Diferentes resultados para as sinaturas"
+
+#~ msgid "No status information available."
+#~ msgstr "Non hai información dispoñíbel de estado."
+
+#~ msgid "Good signature."
+#~ msgstr "Boa sinatura."
+
+#~ msgid "One key has expired."
+#~ msgstr "Caducou unha chave."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Caducou a sinatura."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Non é posíbel comprobar: falta a chave."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL non dispoñíbel."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "A CRL dispoñíbel é demasiado vella."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Non se cumpriu unha política."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Produciuse un erro no sistema."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Revogouse unha chave."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Mala</b> sinatura."
+
+#~ msgid "certificate"
+#~ msgstr "certificado"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Coidado:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "O enderezo do remitente non se garda na %1 empregada para asinar."
+
+#~ msgid "sender: "
+#~ msgstr "remitente: "
+
+#~ msgid "stored: "
+#~ msgstr "gardado: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Non se garda ningún enderezo no %1 empregado para asinar, así que non é "
+#~ "posíbel comparalo co enderezo do remitente %2."
+
+#~ msgid "Grantlee theme \"%1\" is not valid."
+#~ msgstr "O tema de Grantlee «%1» non é correcto."
+
+#~ msgid "Subject:"
+#~ msgstr "Asunto:"
+
+#~ msgid "To:"
+#~ msgstr "Para:"
+
+#~ msgid "Reply to:"
+#~ msgstr "Respostar a:"
+
+#~ msgid "CC:"
+#~ msgstr "Copia:"
+
+#~ msgid "BCC:"
+#~ msgstr "Copia oculta:"
+
+#~ msgid "From:"
+#~ msgstr "De:"
+
+#~ msgid "Spam Status:"
+#~ msgstr "Estado do correo lixo:"
+
+#~ msgid "Date:"
+#~ msgstr "Data:"
+
+#~ msgid "resent from"
+#~ msgstr "reenviado desde"
+
+#~ msgid "receiver was"
+#~ msgid_plural "receivers were"
+#~ msgstr[0] "o destinatario foi"
+#~ msgstr[1] "os destinatarios foron"
+
+#~ msgid "Printing mode"
+#~ msgstr "Modo de impresión"
+
+#~ msgid "[vcard]"
+#~ msgstr "[vcard]"
+
+#~ msgctxt "Unknown date"
+#~ msgid "Unknown"
+#~ msgstr "Descoñecida"
+
+#~ msgid "No Subject"
+#~ msgstr "Sen asunto"
+
+#~ msgid ""
+#~ "%1% probability of being spam with confidence %3%.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2\n"
+#~ "Confidence=%4"
+#~ msgstr ""
+#~ "%1% de probabilidade de ser seguro correo non desexado %3%.\n"
+#~ "\n"
+#~ "Informe completo:\n"
+#~ "Probabilidade=%2|n Fiabilidade=%4"
+
+#~ msgid ""
+#~ "%1% probability of being spam.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2"
+#~ msgstr ""
+#~ "%1% de probabilidade de ser correo non desexado.\n"
+#~ "\n"
+#~ "Informe completo:\n"
+#~ "Probabilidade=%2"
+
+#~ msgid "No Spam agent"
+#~ msgstr "Non hai axente de correo lixo"
+
+#~ msgid "Spam filter score not a number"
+#~ msgstr "A puntuación do filtro de correo lixo non é un número"
+
+#~ msgid "Threshold not a valid number"
+#~ msgstr "O limiar non é un número correcto"
+
+#~ msgid "Spam filter score could not be extracted from header"
+#~ msgstr ""
+#~ "Non foi posíbel extraer do cabezallo a puntuación do filtro de correo lixo"
+
+#~ msgid "Threshold could not be extracted from header"
+#~ msgstr "Non foi posíbel extraer do cabezallo o limiar"
+
+#~ msgid "Error evaluating spam score"
+#~ msgstr "Produciuse un erro ao avaliar a puntuación de correo lixo"
+
+#~ msgid ""
+#~ "%1.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1.\n"
+#~ "\n"
+#~ "Informe completo:\n"
+#~ "%2"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Deitar no lixo"
+
+#~ msgid "Reply"
+#~ msgstr "Resposta"
+
+#~ msgid "Reply to All"
+#~ msgstr "Respostar a todos"
+
+#~ msgid "Forward"
+#~ msgstr "Adiante"
+
+#~ msgid "New Message"
+#~ msgstr "Mensaxe nova"
+
+#~ msgid "Print"
+#~ msgstr "Imprimir"
+
+#~ msgid "Print Preview"
+#~ msgstr "Vista previa do impreso"
+
+#~ msgctxt "View->"
+#~ msgid "&Headers"
+#~ msgstr "&Cabeceiras"
+
+#~ msgid "Choose display style of message headers"
+#~ msgstr "Escoller o formato do estilo das cabeceiras das mensaxes"
+
+#~ msgid "Date: "
+#~ msgstr "Data: "
+
+#~ msgid "From: "
+#~ msgstr "De: "
+
+#~ msgid "[vCard]"
+#~ msgstr "[vCard]"
+
+#~ msgctxt "To-field of the mailheader."
+#~ msgid "To: "
+#~ msgstr "Para: "
+
+#~ msgid "CC: "
+#~ msgstr "Copia: "
+
+#~ msgid "BCC: "
+#~ msgstr "Copia oculta: "
+
+#~ msgid "Reply to: "
+#~ msgstr "Respostar a: "
+
+#~ msgid ""
+#~ "Modifying an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr ""
+#~ "Modificar un ficheiro anexo podería invalidar a sinatura dixital desta "
+#~ "mensaxe."
+
+#~ msgid "Edit Attachment"
+#~ msgstr "Editar o ficheiro anexo"
+
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "Cabeceira&s normais"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "Mostrar a lista normal de cabeceiras de mensaxes"
+
+#~ msgid "Details"
+#~ msgstr "Detalles"
+
+#~ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
+#~ msgstr ""
+#~ "Esta mensaxe pode ser un timo. <a href=\"scamdetails\">(Detalles...)</a>"
+
+#~ msgid "I confirm it's not a scam"
+#~ msgstr "Confirmo que non se trata dun timo"
+
+#~ msgid "Add email to whitelist"
+#~ msgstr "Engadir a mensaxe á lista branca"
+
+#~ msgid "Disable scam detection for all messages"
+#~ msgstr "Desactivar a detección de timos para todas as mensaxes"
+
+#~ msgid "Details:"
+#~ msgstr "Detalles:"
+
+#~ msgid ""
+#~ "This email contains a link which reads as '%1' in the text, but actually "
+#~ "points to '%2'. This is often the case in scam emails to mislead the "
+#~ "recipient"
+#~ msgstr ""
+#~ "Esta mensaxe contén unha ligazón que aparece como «%1» no texto mais que "
+#~ "en realidade apunta para «%2». Isto é frecuente nas mensaxes timo para "
+#~ "enganar o destinatario"
+
+#~ msgid ""
+#~ "This email contains a link which points to a numerical IP address (%1) "
+#~ "instead of a typical textual website address. This is often the case in "
+#~ "scam emails."
+#~ msgstr ""
+#~ "Esta mensaxe contén unha ligazón que apunta para un enderezo de IP "
+#~ "numérico (%1) mais que en realidade apunta para un enderezo de sitio web "
+#~ "de texto típico. Isto é frecuente nas mensaxes timo."
+
+#~ msgid ""
+#~ "This email contains a link which points to a hexadecimal IP address (%1) "
+#~ "instead of a typical textual website address. This is often the case in "
+#~ "scam emails."
+#~ msgstr ""
+#~ "Esta mensaxe contén unha ligazón que apunta para un enderezo de IP "
+#~ "hexadecimal (%1) mais que en realidade apunta para un enderezo de sitio "
+#~ "web de texto típico. Isto é frecuente nas mensaxes timo."
+
+#~ msgid "This email contains a link (%1) which has a redirection"
+#~ msgstr "Esta mensaxe contén unha ligazón (%1) que ten un encamiñamento"
+
+#~ msgid ""
+#~ "This email contains a link (%1) which contains multiple http://. This is "
+#~ "often the case in scam emails."
+#~ msgstr ""
+#~ "Esta mensaxe contén unha ligazón (%1) que contén varios http://. Isto é "
+#~ "frecuente nas mensaxes timo."
+
+#~ msgid ""
+#~ "This email contains a shorturl (%1). It can redirect to another server."
+#~ msgstr ""
+#~ "Esta mensaxe contén un URL curto (%1). Pode encamiñar a un servidor "
+#~ "distinto."
+
+#~ msgid ""
+#~ "Message contains form element. This is often the case in scam emails."
+#~ msgstr ""
+#~ "A mensaxe contén un elemento de formulario. Isto é frecuente nas mensaxe "
+#~ "timo."
+
+#~ msgid "No network connection detected, we cannot expand url."
+#~ msgstr ""
+#~ "Non se detectou ningunha conexión de rede; non é posíbel expandir o URL."
+
+#~ msgid "Short url '%1' redirects to '%2'."
+#~ msgstr "O URL curto «%1» encamiña a «%2»."
+
+#~ msgid "Only print selected text in viewer"
+#~ msgstr "Imprimir só o texto seleccionado no visor"
+
+#~ msgid ""
+#~ "Respect expand/collapse quote mark which is defined in settings during "
+#~ "printing."
+#~ msgstr ""
+#~ "Respectar as marcas para despregar e contraer citas de texto que se "
+#~ "definen na configuración de impresión."
+
+#~ msgid ""
+#~ "Specifies whether the background color and images are also drawn when the "
+#~ "page is printed."
+#~ msgstr ""
+#~ "Indica se se desexa que tamén se debuxen a cor e as imaxes do fondo ao "
+#~ "imprimir a páxina."
+
+#~ msgid "When we render html do not use font size inferior to minimum size."
+#~ msgstr ""
+#~ "Cando se mostre html non empregar un tamaño de letra inferior ao mínimo."
+
+#~ msgid "Specifies the font to use for the message body"
+#~ msgstr "Indica o tipo de letra que se emprega no corpo da mensaxe."
+
+#~ msgid "Specifies the font to use for printing"
+#~ msgstr "Indica o tipo de letra que se emprega para imprimir"
+
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "Mostrar a barra lateral de HTML."
+
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "Mostrar se é correo lixo ou non nas cabeceiras decorativas"
+
+#~ msgid "Replace smileys by emoticons"
+#~ msgstr "Substituír os sorrisos por emoticonas"
+
+#~ msgid ""
+#~ "Enable this if you want smileys like :-) appearing in the message text to "
+#~ "be replaced by emoticons (small pictures)."
+#~ msgstr ""
+#~ "Active isto se quere que os sorrisos tipo :-) que aparezan no texto das "
+#~ "mensaxes se substitúan por emoticonas (imaxes pequeniñas)."
+
+#~ msgid "Show expand/collapse quote marks"
+#~ msgstr "Mostrar marcas para despregar/contraer citas de texto"
+
+#~ msgid ""
+#~ "Enable this option to show different levels of quoted text. Disable to "
+#~ "hide the levels of quoted text."
+#~ msgstr ""
+#~ "Active esta opción para mostrar os diferentes niveis de citas textuais. "
+#~ "Desactívea para agochar os niveis de citas textuais."
+
+#~ msgid "Automatic collapse level:"
+#~ msgstr "Recoller automaticamente o nivel:"
+
+#~ msgid "Reduce font size for quoted text"
+#~ msgstr "Reducir o tamaño de letra do texto citado"
+
+#~ msgid "Enable this option to show quoted text with a smaller font."
+#~ msgstr ""
+#~ "Active esta opción para mostrar as citas textuais cun tipo de letra máis "
+#~ "pequeno."
+
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "Mostrar o axente de usuario nas cabeceiras decorativas"
+
+#~ msgid ""
+#~ "Enable this option to get the User-Agent and X-Mailer header lines "
+#~ "displayed when using fancy headers."
+#~ msgstr ""
+#~ "Active esta opción para que se mostren as liñas das cabeceiras User-Agent "
+#~ "e X-Mailer cando empregue cabeceiras decorativas."
+
+#~ msgid "Allow to edit attachments of existing mails."
+#~ msgstr "Permitir a edición dos anexos das mensaxes existentes."
+
+#~ msgid "Always decrypt messages when viewing or ask before decrypting"
+#~ msgstr ""
+#~ "Descifrar sempre as mensaxes ao velas ou preguntar antes de as descifrar"
+
+#~ msgid "Message Structure Viewer"
+#~ msgstr "Visor da estrutura da mensaxe"
+
+#~ msgid "Show never"
+#~ msgstr "Non mostrar nunca"
+
+#~ msgid "Show always"
+#~ msgstr "Mostrar sempre"
+
+#~ msgid "What style of headers should be displayed"
+#~ msgstr "Que estilo de cabezallos quere mostrar"
+
+#~ msgid "How much of headers should be displayed"
+#~ msgstr "Cantos cabezallos quere mostrar"
+
+#~ msgid "Prefer HTML to plain text"
+#~ msgstr "Preferir HTML a texto simple"
+
+#~ msgid "Allow messages to load external references from the Internet"
+#~ msgstr "Permitir que as mensaxes carguen contidos externos desde Internet"
+
+#~ msgid "How attachments are shown"
+#~ msgstr "Como aparecen os anexos"
+
+#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+#~ msgstr "Indica se reutilizar a cor das citas por baixo do terceiro nivel"
+
+#~ msgid "Activate Access Key"
+#~ msgstr "Activar o atallo"
+
+#~ msgid ""
+#~ "KMail can analyze messages for suspected email scams by looking for "
+#~ "common techniques used to deceive you"
+#~ msgstr ""
+#~ "O KMail pode analizar as mensaxes por se conteñen timos de correo "
+#~ "procurando técnicas das empregadas frecuentemente para enganar"
+
+#~ msgid "List of emails in scam white list"
+#~ msgstr "Lista de correos da lista de correo de timos"
+
+#~ msgid "Enabled ad block"
+#~ msgstr "Activar o filtro de publicidade"
+
+#~ msgid "Hide advertisement enabled"
+#~ msgstr "Activouse que se agochen os anuncios"
+
+#~ msgid "Update interval list of adblock"
+#~ msgstr "Intervalo de actualización da lista de bloqueo de publicidade"
+
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "Non enviar MDN en resposta a mensaxes cifradas"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr ""
+#~ "Indica a política por omisión que utilizar para as Notificacións de "
+#~ "Entrega de Mensaxes (só para uso interno)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr ""
+#~ "Indica a acción por omisión que tomar sobre as citas ao respostar a unha "
+#~ "mensaxes (só para uso interno)"
+
+#~ msgid "Mangle From:/To: headers in replies to replies"
+#~ msgstr "Xestionar cabeceiras De:/Para: nas respostas a respostas"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your replies, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook ten un número de defectos na súa implementación do "
+#~ "estándar iCalendar; esta opción elude un deles. Se ten problemas cos "
+#~ "usuarios de Outlook que non son quen de obter as súas respostas, tente "
+#~ "activando esta opción."
+
+#~ msgid "Send groupware invitations in the mail body"
+#~ msgstr "Enviar convites a grupos no corpo da mensaxe"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your invitations, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook ten un número de defectos na súa implementación do "
+#~ "estándar iCalendar; esta opción elude un deles. Se ten problemas cos "
+#~ "usuarios de Outlook que non son quen de obter as súas invitacións, tente "
+#~ "activando esta opción."
+
+#~ msgid "Exchange-compatible invitation naming"
+#~ msgstr "Nomes de convites compatíbeis con Exchange"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server, has a problem understanding standards-compliant groupware email. "
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "O Outlook de Microsoft, empregado en combinación cun servidor Exchange de "
+#~ "Microsoft, ten problemas para comprender o correo electrónico de grupos "
+#~ "respectuosos co estándar. Active esta opción para enviar convites de "
+#~ "grupos de xeito que o comprenda o Exchange de Microsoft."
+
+#~ msgid "Outlook compatible invitation reply comments"
+#~ msgstr "comentarios de resposta a convites compatíbeis co Outlook"
+
+#~ msgid ""
+#~ "When replying to invitations, send the reply comment in way that "
+#~ "Microsoft Outlook understands."
+#~ msgstr ""
+#~ "Ao respostar aos convites, enviar o comentario de resposta de xeito que o "
+#~ "comprenda o Outlook da Microsoft."
+
+#~ msgid "Show invitation update differences in the Outlook style"
+#~ msgstr ""
+#~ "Mostrar as diferenzas na actualización do convite co estilo do Outlook"
+
+#~ msgid ""
+#~ "When viewing invitation updates, show the differences in the Microsoft "
+#~ "Outlook style."
+#~ msgstr ""
+#~ "Ao ver actualizacións de convites, mostrar as diferenzas no estilo do "
+#~ "Outlook da Microsoft."
+
+#~ msgid "Automatic invitation sending"
+#~ msgstr "Envío automático de convites"
+
+#~ msgid ""
+#~ "When this is checked, you will not see the mail composer window. Instead, "
+#~ "all invitation mails are sent automatically. If you want to see the mail "
+#~ "before sending it, you can uncheck this option. However, be aware that "
+#~ "the text in the composer window is in iCalendar syntax, and you should "
+#~ "not try modifying it by hand."
+#~ msgstr ""
+#~ "Cando se activa, non se ve a xanela de edición da mensaxe. No seu lugar, "
+#~ "envíanse automaticamente todos os correos de convite. Se quere ver o "
+#~ "correo antes de envialo, pode desactivar esta opción. Porén, sexa "
+#~ "consciente de que o texto na xanela de edición da mensaxe está en sintaxe "
+#~ "iCalendar e que non debería polo tanto tentar modificalo manualmente."
+
+#~ msgid "Delete invitation emails after the reply to them has been sent"
+#~ msgstr "Eliminar os correos de convite unha vez enviada a resposta"
+
+#~ msgid ""
+#~ "When this is checked, received invitation emails that have been replied "
+#~ "to will be moved to the Trash folder, once the reply has been "
+#~ "successfully sent."
+#~ msgstr ""
+#~ "Cando se selecciona isto, as mensaxes de convite recibidas ás que se "
+#~ "respostou moveranse ao cartafol do Lixo unha vez enviada "
+#~ "satisfactoriamente a resposta."
+
+#~ msgid "Use Fi&xed Font"
+#~ msgstr "Empregar un tipo de letra de largura fixa"
+
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "O cartafol seleccionado máis recentemente para tarefas pendentes."
+
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "O cartafol seleccionado máis recentemente para actividades."
+
+#~ msgid "The most recent selected folder using for Notes."
+#~ msgstr "O cartafol seleccionado máis recentemente para notas."
+
+#~ msgid "Groupware Compatibility && Legacy Options"
+#~ msgstr "Opcións de compatibilidade e antigas de traballo en grupo"
+
+#~ msgid ""
+#~ "Turn this option on in order to make Outlook(tm) understand your answers "
+#~ "to invitation replies"
+#~ msgstr ""
+#~ "Escolla esta opción para facer que Outlook(tm) comprenda as súas "
+#~ "respostas aos convites"
+
+#~ msgid "&Mangle From:/To: headers in replies to invitations"
+#~ msgstr "Xestionar as cabeceiras De:/Para: nas respostas aos convites"
+
+#~ msgid ""
+#~ "Turn this option on in order to make Outlook(tm) understand your answers "
+#~ "to invitations"
+#~ msgstr ""
+#~ "Escolla esta opción para facer que Outlook(tm) comprenda as súas "
+#~ "respostas aos convites"
+
+#~ msgid "Send &invitations in the mail body"
+#~ msgstr "Enviar os conv&ites no corpo da mensaxe"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server,\n"
+#~ "has a problem understanding standards-compliant groupware email.\n"
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "O Outlook da Microsoft, empregado en combinación cun servidor Exchange da "
+#~ "Microsoft,\n"
+#~ "ten problemas para comprender o correo electrónico de grupos respectuosos "
+#~ "co estándar. Active esta opción para enviar convites de grupos de xeito "
+#~ "que o comprenda o Exchange de Microsoft."
+
+#~ msgid "Exchange-compatible invitation &naming"
+#~ msgstr "&Nomes de convites compatíbeis con Exchange"
+
+#~ msgid ""
+#~ "Send invitation reply comments in a way that Microsoft Outlook(tm) "
+#~ "understands."
+#~ msgstr ""
+#~ "Enviar comentarios de resposta aos convites de xeito que os comprenda o "
+#~ "Outlook(tm) da Microsoft(tm)."
+
+#~ msgid ""
+#~ "Display invitation update differences in the Microsoft Outlook(tm) style."
+#~ msgstr ""
+#~ "Mostrar as diferenzas nas actualizacións dos convites no estilo do "
+#~ "Outlook(tm) da Microsoft(tm)."
+
+#~ msgid ""
+#~ "When this is on, the user will not see the mail composer window. "
+#~ "Invitation mails are sent automatically."
+#~ msgstr ""
+#~ "Ao activar isto isto, o usuario non ha ver a xanela de edición dos "
+#~ "correos. Os correos de convites hanse enviar automaticamente."
+
+#~ msgid "&Automatic invitation sending"
+#~ msgstr "Envío &automático de convites"
+
+#~ msgid "Options"
+#~ msgstr "Opcións"
+
+#~ msgid "Print only selected text"
+#~ msgstr "Imprimir só o texto seleccionado"
+
+#~ msgid "Respect &expand/collapse quote marks settings"
+#~ msgstr "Respectar as marcas para d&espregar/contraer as citas de texto"
+
+#~ msgid "Print background color and images"
+#~ msgstr "Imprimir a cor e as imaxes do fondo"
+
+#~ msgid "Viewer settings"
+#~ msgstr "Configuración do visualizador"
+
+#~ msgid "O&verride character encoding:"
+#~ msgstr "I&gnorar a codificación de caracteres:"
+
+#~ msgid "Enable access key"
+#~ msgstr "Activar a tecla de acceso"
+
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "Mostrar a barra lateral de &HTML."
+
+#~ msgid "Replace smileys &by emoticons"
+#~ msgstr "Su&bstituír os sorrisos por emoticonas"
+
+#~ msgid "Reduce font size for &quoted text"
+#~ msgstr "Reducir o tama&ño de letra do texto citado"
+
+#~ msgid "Show &expand/collapse quote marks"
+#~ msgstr "Mostrar marcas para d&espregar/contraer as citas de texto"
+
+#~ msgid "Automatic collapse &level:"
+#~ msgstr "Recoller automaticamente o nive&l:"
+
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "Mostrar se é correo l&ixo ou non nas cabeceiras decorativas"
+
+#~ msgid "&Minimum font size:"
+#~ msgstr "Tamaño &mínimo da letra:"
+
+#~ msgid ""
+#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr ""
+#~ "Xa existe un ficheiro chamado «%1». Confirma que desexa substituílo?"
+
+#~ msgid "Overwrite File?"
+#~ msgstr "Substituír este ficheiro?"
+
+#~ msgid "Save Attachments To"
+#~ msgstr "Gravar os anexos en"
+
+#~ msgctxt "filename for an unnamed attachment"
+#~ msgid "attachment.1"
+#~ msgstr "anexo.1"
+
+#~ msgid "Save Attachment"
+#~ msgstr "Gravar o anexo"
+
+#~ msgctxt "filename for the %1-th unnamed attachment"
+#~ msgid "attachment.%1"
+#~ msgstr "anexo.%1"
+
+#~ msgid ""
+#~ "The part %1 of the message is encrypted. Do you want to keep the "
+#~ "encryption when saving?"
+#~ msgstr ""
+#~ "A parte %1 da mensaxe está cifrada. Quere salvagardar o cifrado cando se "
+#~ "garde?"
+
+#~ msgid "KMail Question"
+#~ msgstr "Pregunta do KMail"
+
+#~ msgid "Keep Encryption"
+#~ msgstr "Manter o cifrado"
+
+#~ msgid "Do Not Keep"
+#~ msgstr "Non manter"
+
+#~ msgid ""
+#~ "The part %1 of the message is signed. Do you want to keep the signature "
+#~ "when saving?"
+#~ msgstr ""
+#~ "A parte %1 de mensaxe está asinada. Quere manter a sinatura cando se "
+#~ "garde?"
+
+#~ msgid "Keep Signature"
+#~ msgstr "Manter a sinatura"
+
+#~ msgctxt "1 = file name, 2 = error string"
+#~ msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
+#~ msgstr ""
+#~ "<qt>Non foi posíbel escribir o ficheiro<br><filename>%1</filename><br><br>"
+#~ "%2"
+
+#~ msgid "Error saving attachment"
+#~ msgstr "Produciuse un erro ao gravar o anexo"
+
+#~ msgid "Found no attachments to save."
+#~ msgstr "Non se atoparon ficheiros anexos que gardar."
+
+#~ msgid "message"
+#~ msgstr "mensaxe"
+
+#~ msgid "email messages (*.mbox);;all files (*)"
+#~ msgstr "mensaxes de correo (*.mbox);;todos os ficheiros (*)"
+
+#~ msgid "Save Message"
+#~ msgid_plural "Save Messages"
+#~ msgstr[0] "Gardar a mensaxe"
+#~ msgstr[1] "Gardar as mensaxes"
+
+#~ msgid "File %1 could not be loaded."
+#~ msgstr "Non foi posíbel cargar o ficheiro %1."
+
+#~ msgid "Error loading message"
+#~ msgstr "Produciuse un erro ao cargar a mensaxe"
+
+#~ msgid "File %1 could not be created."
+#~ msgstr "Non foi posíbel crear o ficheiro %1."
+
+#~ msgid "Error saving message"
+#~ msgstr "Produciuse un erro ao gravar a mensaxe"
+
+#~ msgid "We cannot save message."
+#~ msgstr "Non podemos gardar a mensaxe."
+
+#~ msgid "Open &with %1"
+#~ msgstr "Abrir &con %1"
+
+#~ msgctxt "@item:inmenu Open With, %1 is application name"
+#~ msgid "%1"
+#~ msgstr "%1"
+
+#~ msgid "Edit with:"
+#~ msgstr "Editar con:"
+
+#~ msgid ""
+#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
+#~ "loss, editing the attachment will be aborted."
+#~ msgstr ""
+#~ "KMail non pode detectar cando está pechado o editor escollido. Para "
+#~ "evitar que se perdan datos hase interromper a edición do anexo."
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "Non foi posíbel editar o anexo"
+
+#~ msgid "body part"
+#~ msgstr "parte do corpo"
+
+#~ msgid "Description"
+#~ msgstr "Descrición"
+
+#~ msgid "Type"
+#~ msgstr "Tipo"
+
+#~ msgid "Size"
+#~ msgstr "Tamaño"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "Engadido sen nome"
+
+#~ msgid "No description available"
+#~ msgstr "Non hai ningunha descrición dispoñíbel"
+
+#~ msgid "Move To Trash"
+#~ msgstr "Deitar no lixo"
+
+#~ msgid "Reply To All"
+#~ msgstr "Responder a todos"
+
+#~ msgid "Print Message"
+#~ msgstr "Imprimir a mensaxe"
+
+#~ msgid "Print Preview Message"
+#~ msgstr "Vista previa de impresión da mensaxe"
+
+#~ msgid "Turn on HTML rendering for this message."
+#~ msgstr "Activar a visualización HTML para esta mensaxe."
+
+#~ msgid "Load external references from the Internet for this message."
+#~ msgstr "Cargar desde Internet as referencias externas desta mensaxe."
+
+#~ msgid "Work online."
+#~ msgstr "Traballar en liña."
+
+#~ msgid "Make account online."
+#~ msgstr "Conectar a conta."
+
+#~ msgid "Decrypt message."
+#~ msgstr "Descifrar a mensaxe."
+
+#~ msgid "Show signature details."
+#~ msgstr "Mostrar os detalles da sinatura."
+
+#~ msgid "Hide signature details."
+#~ msgstr "Agochar os detalles da sinatura."
+
+#~ msgid "Show attachment list."
+#~ msgstr "Mostrar a lista de anexos."
+
+#~ msgid "Hide attachment list."
+#~ msgstr "Agochar a lista de anexos."
+
+#~ msgid "Show full \"To\" list"
+#~ msgstr "Mostrar a lista de «Para» completa"
+
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "Agochar a lista de «Para» completa"
+
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "Mostrar a lista de «Copia» completa"
+
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "Agochar a lista de «Copia» completa"
+
+#~ msgid "Open Documentation"
+#~ msgstr "Abrir a documentación"
+
+#~ msgid "Expand all quoted text."
+#~ msgstr "Expandir todo o texto citado."
+
+#~ msgid "Collapse quoted text."
+#~ msgstr "Contraer o texto citado."
+
+#~ msgid "Could not start certificate manager. Please check your installation."
+#~ msgstr ""
+#~ "Non foi posíbel iniciar o xestor de certificados. Comprobe a instalación."
+
+#~ msgid "KMail Error"
+#~ msgstr "Erro do KMail"
+
+#~ msgid "Show certificate 0x%1"
+#~ msgstr "Mostrar o certificado 0x%1"
+
+#~ msgid "&Open in Address Book"
+#~ msgstr "&Abrir no caderno de enderezos"
+
+#~ msgid "&Copy Email Address"
+#~ msgstr "&Copiar o enderezo de correo"
+
+#~ msgid "Address copied to clipboard."
+#~ msgstr "Copiouse o enderezo no portarretallos."
+
+#~ msgid "Lookup the contact in KAddressbook"
+#~ msgstr "Abrir no caderno de enderezos"
+
+#~ msgid "Attachment: %1"
+#~ msgstr "Ficheiro anexo: %1"
+
+#~ msgid "Encapsulated Message (Subject: %1)"
+#~ msgstr "Mensaxe encapsulada (Asunto: %1)"
+
+#~ msgid "Encapsulated Message"
+#~ msgstr "Mensaxe encapsulada"
+
+#~ msgid "Unnamed attachment"
+#~ msgstr "Anexo sen nome"
+
+#~ msgid "Show GnuPG Audit Log for this operation"
+#~ msgstr "Mostrar o rexistro de auditoría de GnuPG desta operación"
+
+#~ msgid "Opening URL..."
+#~ msgstr "Abrindo URL..."
+
+#~ msgctxt "@info"
+#~ msgid "Do you really want to execute <filename>%1</filename>?"
+#~ msgstr "Desexa realmente executar <filename>%1</filename>?"
+
+#~ msgid "Execute"
+#~ msgstr "Executar"
+
+#~ msgid "Loading message..."
+#~ msgstr "Estase a cargar a mensaxe..."
+
+#~ msgid ""
+#~ "Deleting an attachment from an encrypted or old-style mailman message is "
+#~ "not supported."
+#~ msgstr ""
+#~ "Non se admite a eliminación de anexos das mensaxes cifradas ou que estean "
+#~ "no formato mailman antigo."
+
+#~ msgid "Delete Attachment"
+#~ msgstr "Eliminar o ficheiro anexo"
+
+#~ msgid ""
+#~ "Deleting an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr ""
+#~ "Eliminar un ficheiro anexo podería invalidar a sinatura dixital desta "
+#~ "mensaxe."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Abrir con"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Outro..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Abrir con..."
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "Abrir"
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "Ver"
+
+#~ msgid "Scroll To"
+#~ msgstr "Baixar até"
+
+#~ msgid "Save As..."
+#~ msgstr "Gravar como..."
+
+#~ msgid "Copy"
+#~ msgstr "Copiar"
+
+#~ msgid "Properties"
+#~ msgstr "Propiedades"
+
+#~ msgid "KMail"
+#~ msgstr "KMail"
+
+#~ msgid "The KDE Mail Client"
+#~ msgstr "O cliente de correo de KDE."
+
+#~ msgid "View Attachment: %1"
+#~ msgstr "Ver o ficheiro anexo: %1"
+
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "&Anexos"
+
+#~ msgid "Choose display style of attachments"
+#~ msgstr "Escoller o estilo de exhibición dos arquivos anexos"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&As Icons"
+#~ msgstr "Com&o iconas"
+
+#~ msgid "Show all attachments as icons. Click to see them."
+#~ msgstr "Mostrar todos os anexos como iconas. Prema para velos."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Smart"
+#~ msgstr "Inteli&xente"
+
+#~ msgid "Show attachments as suggested by sender."
+#~ msgstr "Mostrar os anexos como o suxira o remitente."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Inline"
+#~ msgstr "&Inseridos"
+
+#~ msgid "Show all attachments inline (if possible)"
+#~ msgstr "Mostrar todos os ficheiros anexos inseridos (se for posíbel)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "&Agochar"
+
+#~ msgid "Do not show attachments in the message viewer"
+#~ msgstr "Non mostrar os arquivos anexos na vista da mensaxe"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "In Header Only"
+#~ msgstr "Só na cabeceira"
+
+#~ msgid "Show Attachments only in the header of the mail"
+#~ msgstr "Mostrar os anexos só no cabezallo do correo"
+
+#~ msgid "&Set Encoding"
+#~ msgstr "E&stabelecer a codificación"
+
+#~ msgid "Auto"
+#~ msgstr "Automática"
+
+#~ msgid "Select All Text"
+#~ msgstr "Seleccionar todo o texto"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Copiar o enderezo da ligazón"
+
+#~ msgid "Open URL"
+#~ msgstr "Abrir URL"
+
+#~ msgid "Show Message Structure"
+#~ msgstr "Mostrar a estrutura da mensaxe"
+
+#~ msgid "&View Source"
+#~ msgstr "&Ver a fonte"
+
+#~ msgid "&Save message..."
+#~ msgstr "&Gardar a mensaxe…"
+
+#~ msgid "&Save Display Format"
+#~ msgstr "&Gardar o formato de exhibición"
+
+#~ msgid "&Reset Display Format"
+#~ msgstr "Restau&rar o formato da exhibición"
+
+#~ msgid "Scroll Message Up"
+#~ msgstr "Subir na mensaxe"
+
+#~ msgid "Scroll Message Down"
+#~ msgstr "Baixar na mensaxe"
+
+#~ msgid "Scroll Message Up (More)"
+#~ msgstr "Subir na mensaxe (máis)"
+
+#~ msgid "Scroll Message Down (More)"
+#~ msgstr "Baixar na mensaxe (máis)"
+
+#~ msgid "Toggle HTML Display Mode"
+#~ msgstr "Alternar o modo de exhibición de HTML"
+
+#~ msgid "Toggle display mode between HTML and plain text"
+#~ msgstr "Alterar o modo de exhibición entre o texto HTML e o simple"
+
+#~ msgid "Load external references"
+#~ msgstr "Cargar as referencias externas"
+
+#~ msgid "Speak Text"
+#~ msgstr "Ler o texto"
+
+#~ msgid "Copy Image Location"
+#~ msgstr "Copiar o enderezo da imaxe"
+
+#~ msgid "&Find in Message..."
+#~ msgstr "&Atopar na mensaxe…"
+
+#~ msgid "Save &As..."
+#~ msgstr "Gravar &como..."
+
+#~ msgid "Open With..."
+#~ msgstr "Abrir con..."
+
+#~ msgid "Save All Attachments..."
+#~ msgstr "Gravar todos os anexos..."
+
+#~ msgid "Copy Email Address"
+#~ msgstr "Copiar o enderezo de correo"
+
+#~ msgid "Message as Plain Text"
+#~ msgstr "Mensaxe como texto simple"
+
+#~ msgid "Attachments:"
+#~ msgstr "Anexos:"
+
+#~ msgid "URL copied to clipboard."
+#~ msgstr "URL copiado no portarretallos."
+
+#~ msgid "Hide full address list"
+#~ msgstr "Agochar a lista de enderezos completos"
+
+#~ msgid "Show full address list"
+#~ msgstr "Mostrar a lista de enderezos completos"
+
+#~ msgid "Message loading failed: %1."
+#~ msgstr "Fallou o cargado da mensaxe: %1."
+
+#~ msgid "Message not found."
+#~ msgstr "Non se atopou a mensaxe."
+
+#~ msgid ""
+#~ "Open attachment '%1'?\n"
+#~ "Note that opening an attachment may compromise your system's security."
+#~ msgstr ""
+#~ "Desexa abrir o arquivo anexo «%1»?\n"
+#~ "Lembre que abrir os ficheiros anexos podería comprometer a seguranza do "
+#~ "sistema."
+
+#~ msgid "Open Attachment?"
+#~ msgstr "Abrir o anexo?"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr "&Abrir con «%1»"
+
+#~ msgid "&Open With..."
+#~ msgstr "&Abrir con..."
+
+#~ msgid "Do not ask again"
+#~ msgstr "Non preguntar máis"
+
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+#~ msgstr ""
+#~ "<qt><b><br />M<br />e<br />n<br />s<br />a<br />x<br />e<br /><br />H<br /"
+#~ ">T<br />M<br />L</b></qt>"
+
+#~ msgctxt "'No HTML Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#~ ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#~ msgstr ""
+#~ "<qt><br />M<br />e<br />n<br />s<br />a<br />x<br />e<br /><br />n<br /"
+#~ ">o<br />n<br /><br />H<br />T<br />M<br />L</qt>"
+
+#~ msgctxt "'Plain Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e<br /></qt>"
+#~ msgstr ""
+#~ "<qt><br />M<br />e<br />n<br />s<br />a<br />x<br />e<br /><br />s<br /"
+#~ ">i<br />m<br />p<br />l<br />e<br /></qt>"
+
+#~ msgid "Click to toggle between HTML and plain text."
+#~ msgstr "Prema para alternar entre o texto HTML e o simple."
+
+#~ msgid ""
+#~ "<qt>Invitations are normally sent as attachments to a mail. This switch "
+#~ "changes the invitation mails to be sent in the text of the mail instead; "
+#~ "this is necessary to send invitations and replies to Microsoft Outlook."
+#~ "<br />But, when you do this, you no longer get descriptive text that mail "
+#~ "programs can read; so, to people who have email programs that do not "
+#~ "understand the invitations, the resulting messages look very odd.<br /"
+#~ ">People that have email programs that do understand invitations will "
+#~ "still be able to work with this.</qt>"
+#~ msgstr ""
+#~ "<qt>Os convites envíanse normalmente como anexos ao correo electrónico. "
+#~ "Esta alteración fai que, no canto diso, as mensaxes de convite se envíen "
+#~ "no texto da mensaxe; isto é preciso para enviar convites e respostas ao "
+#~ "Outlook de Microsoft. <br />Pero, cando faga isto, non terá un texto "
+#~ "descritivo que poidan ler os programas de correo electrónico; de xeito "
+#~ "que, para as persoas que teñan programas de correo electrónico que non "
+#~ "entendan os convites, as mensaxes resultantes terán unha aparencia rara. "
+#~ "<br />A xente que teña programas de correo electrónico que si entenda os "
+#~ "convites será quen de traballar con isto.</qt>"
+
+#~ msgctxt "Unchanged mail message"
+#~ msgid "Raw Source"
+#~ msgstr "Fonte crúa"
+
+#~ msgid ""
+#~ "Raw, unmodified mail as it is stored on the filesystem or on the server"
+#~ msgstr ""
+#~ "Mensaxe crúa, sen modificar, tal e como se almacena no sistema de "
+#~ "ficheiros ou no servidor"
+
+#~ msgctxt "Mail message as shown, in HTML format"
+#~ msgid "HTML Source"
+#~ msgstr "Fonte en HTML"
+
+#~ msgid "HTML code for displaying the message to the user"
+#~ msgstr "Código HTML para lle mostrar a mensaxe ao usuario"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgstr "Abrir o cartafol no que se gardou o anexo"
+
+#~ msgid "vCard Viewer"
+#~ msgstr "Visor de VCard"
+
+#~ msgid "&Import"
+#~ msgstr "&Importar"
+
+#~ msgid "&Next Card"
+#~ msgstr "Tarxeta segui&nte"
+
+#~ msgid "&Previous Card"
+#~ msgstr "Tarxeta &previa"
+
+#~ msgid "&Zoom In"
+#~ msgstr "&Achegar"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "A&fastar"
+
+#~ msgid "Reset"
+#~ msgstr "Restabelecer"
+
+#~ msgid "Zoom"
+#~ msgstr "Ampliación"
+
+#~ msgid "Close"
+#~ msgstr "Pechar"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "A&topar:"
+
+#~ msgid "Text to search for"
+#~ msgstr "Texto que buscar"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Seguinte"
+
+#~ msgid "Jump to next match"
+#~ msgstr "Pasar á seguinte coincidencia"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Anterior"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "Pasar á coincidencia anterior"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "Modificar o comportamento da busca"
+
+#~ msgid "Case sensitive"
+#~ msgstr "Diferenciar as maiúsculas das minúsculas"
+
+#~ msgid "Phrase not found"
+#~ msgstr "Non se atopou a frase"
+
+#~ msgid "Blockable Items"
+#~ msgstr "Elementos bloqueábeis"
+
+#~ msgid "No blockable element found."
+#~ msgstr "Non se atopou ningún elemento bloqueábel."
+
+#~ msgid "Filter"
+#~ msgstr "Filtro"
+
+#~ msgid "Address"
+#~ msgstr "Enderezo"
+
+#~ msgid "Search..."
+#~ msgstr "Buscar..."
+
+#~ msgid "Image"
+#~ msgstr "Imaxe"
+
+#~ msgid "Script"
+#~ msgstr "Script"
+
+#~ msgid "Stylesheet"
+#~ msgstr "Folla de estilos"
+
+#~ msgid "Font"
+#~ msgstr "Tipo de letra"
+
+#~ msgid "Frame"
+#~ msgstr "Marco"
+
+#~ msgid "XML Request"
+#~ msgstr "Solicitude XML"
+
+#~ msgid "Object"
+#~ msgstr "Obxecto"
+
+#~ msgid "Audio/Video"
+#~ msgstr "Son/Vídeo"
+
+#~ msgid "Popup window"
+#~ msgstr "Xanela emerxente"
+
+#~ msgid "Unknown"
+#~ msgstr "Descoñecida"
+
+#~ msgid "Copy url"
+#~ msgstr "Copiar o URL"
+
+#~ msgid "Copy filter"
+#~ msgstr "Copiar o filtro"
+
+#~ msgid "Block item..."
+#~ msgstr "Bloquear elemento..."
+
+#~ msgid "Open"
+#~ msgstr "Abrir"
+
+#~ msgid "Remove filter"
+#~ msgstr "Retirar o filtro"
+
+#~ msgid "Download new ad-block list was failed."
+#~ msgstr "Non foi posíbel descargar a lista nova de bloqueo de publicidade."
+
+#~ msgid "Download new ad-block list was done."
+#~ msgstr "Realizouse a descarga da lista nova de bloqueo de publicidade."
+
+#~ msgid "Add subscription"
+#~ msgstr "Engadir unha subscrición"
+
+#~ msgid "Select List:"
+#~ msgstr "Seleccionar a lista:"
+
+#~| msgid "Show List..."
+#~ msgid "Show List"
+#~ msgstr "Mostrar a lista"
+
+#~ msgid "Use default"
+#~ msgstr "Usar o predeterminado"
+
+#~ msgid "Yes"
+#~ msgstr "Si"
+
+#~ msgid "Not"
+#~ msgstr "Non"
+
+#~ msgid "Not subscription added..."
+#~ msgstr "Non se engadiu ningunha subscrición..."
+
+#~ msgid ""
+#~ "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">more information</a>):"
+#~ msgstr ""
+#~ "<qt>Expresión de filtrado (por exemplo <tt>http://www.exemplo.gal/ad/*</"
+#~ "tt>, <a href=\"filterhelp\">máis información</a>):"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " día"
+#~ msgstr[1] " días"
+
+#~| msgid ""
+#~| "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~| "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~| "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~| "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~| "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~| "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes "
+#~| "priority over any blacklist (blocking) filter."
+#~ msgid ""
+#~ "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~ "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~ "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~ "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~ "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~ "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes priority "
+#~ "over any blacklist (blocking) filter.<br><a href='%1'>%2</a></qt>"
+#~ msgstr ""
+#~ "<qt><p>Escriba unha expresión a filtrar. Os filtros poden ser:"
+#~ "<ul><li>Expresións estilo consola, como <tt>http://www.example.com/ads*</"
+#~ "tt>. Poden empregarse os símbolos <tt>*?[]</tt>.</li><li>Expresións "
+#~ "regulares, delimitadas por barras inclinadas («<tt>/</tt>»), como <tt>/\\/"
+#~ "(ad|banner)\\./</tt></li></ul><p>Calquera expresión de filtrado pode "
+#~ "precederse de «<tt>@@</tt>» para permitir os enderezos URL que se "
+#~ "correspondan con ela. As expresións de filtrado de enderezos permitidos "
+#~ "teñen prioridade sobre as de enderezos prohibidos.<br><a href='%1'>%2</"
+#~ "a></qt>"
+
+#~ msgid "More information"
+#~ msgstr "Máis información"
+
+#~ msgid "Do you want to delete list \"%1\"?"
+#~ msgstr "Desexa eliminar a lista «%1»?"
+
+#~ msgid "Delete current list"
+#~ msgstr "Eliminar esta lista"
+
+#~ msgid "All Files (*)"
+#~ msgstr "Todos os ficheiros (*)"
+
+#~ msgid "Import Filters"
+#~ msgstr "Importar filtros"
+
+#~ msgid "Export Filters"
+#~ msgstr "Exportar filtros"
+
+#~ msgid "Show adblock list"
+#~ msgstr "Mostrar a lista de bloqueo de publicidade"
+
+#~ msgid "Delete List"
+#~ msgstr "Eliminar esta lista"
+
+#~ msgid "Download..."
+#~ msgstr "Descargar..."
+
+#~ msgid "An error occurs during download list: \"%1\""
+#~ msgstr "Produciuse un erro durante a descarga da lista: «%1»"
+
+#~ msgid "Filters:"
+#~ msgstr "Filtros:"
+
+#~| msgid "Blocking filter"
+#~ msgid "&Blocking filter"
+#~ msgstr "Filtro de &bloqueo"
+
+#~ msgid "Exception Filter"
+#~ msgstr "Filtro de excepcións"
+
+#~ msgid "Pattern"
+#~ msgstr "Padrón"
+
+#~ msgid "custom"
+#~ msgstr "personalizado"
+
+#~ msgid "Accept pattern only"
+#~ msgstr "Aceptar só padróns"
+
+#~ msgid "At the beginning of the address"
+#~ msgstr "No inicio do enderezo"
+
+#~ msgid "At the end of address"
+#~ msgstr "No final do enderezo"
+
+#~ msgid "First-part only"
+#~ msgstr "Só na primeira parte"
+
+#~ msgid "Match case"
+#~ msgstr "Diferenciar maiúsculas de minúsculas"
+
+#~ msgid "Restrict to domain"
+#~ msgstr "Restrinxir ao dominio"
+
+#~ msgid "Apply to:"
+#~ msgstr "Aplicar a:"
+
+#~ msgid "Collapse blocked:"
+#~ msgstr "Contraer o bloqueado:"
+
+#~ msgid "&Enable Ad Block"
+#~ msgstr "&Activar o bloqueo de publicidade"
+
+#~ msgid "&Hide filtered elements"
+#~ msgstr "&Agochar os elementos filtrados"
+
+#~ msgid "Automatic Filters"
+#~ msgstr "Filtros automáticos"
+
+#~ msgid "Add Filters subscriptions..."
+#~ msgstr "Engadir subscricións a filtros..."
+
+#~ msgid "Remove subscription"
+#~ msgstr "Retirar a subscrición"
+
+#~ msgid "Update enabled automatic filters every:"
+#~ msgstr "Actualizar os filtros automáticos activados cada:"
+
+#~ msgid "Show List..."
+#~ msgstr "Mostrar a lista..."
+
+#~ msgid "Manual Filters"
+#~ msgstr "Filtros manuais"
+
+#~ msgid "Add filter expression"
+#~ msgstr "Engadir a expresión de filtrado"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Import Filters..."
+#~ msgstr "Importar filtros..."
+
+#~ msgid "Export filters..."
+#~ msgstr "Exportar filtros..."
+
+#~ msgid "Search:"
+#~ msgstr "Buscar:"
+
+#~ msgid "Remove filter expression"
+#~ msgstr "Retirar a expresión de filtrado"
+
+#~ msgid "Remove Filter"
+#~ msgstr "Retirar o filtro"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "Realzar todas as coincidencias"
+
+#~ msgid "Find in selection first"
+#~ msgstr "Atopar primeiro na selección"
+
+#~ msgid "Zoom only text"
+#~ msgstr "Achegar só o texto"
+
+#~ msgid "Block image"
+#~ msgstr "Bloquear a imaxe"
+
+#~ msgid "Open Blockable Items..."
+#~ msgstr "Abrir os elementos bloqueábeis..."
+
+#~ msgid "Blocked by ad filter"
+#~ msgstr "Bloqueado polo filtro de publicidade."
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "Achegar só o texto"
+
+#~ msgid "No Audit Log available"
+#~ msgstr "Non se dispón de rexistro de auditoría"
+
+#~ msgid "Error Retrieving Audit Log: %1"
+#~ msgstr "Erro ao obter o rexistro de auditoría: %1"
+
+#~ msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+#~ msgid "Show Audit Log"
+#~ msgstr "Mostrar o rexistro de auditoría"
+
+#~ msgid "The crypto engine returned no cleartext data."
+#~ msgstr "O mecanismo de cifrado non devolveu os datos en claro."
+
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "(descoñecido)"
+
+#~ msgid "New or changed: %1 (secret key available)"
+#~ msgstr "Novo ou cambiado: %1 (chave secreta dispoñíbel)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "Novo ou cambiado: %1"
+
+#~ msgid "Crypto plug-in \"%1\" is not initialized."
+#~ msgstr "O engadido de cifrado «%1» non está inicializado."
+
+#~ msgid "Expand Short URL"
+#~ msgstr "Expandir o URL curto"
+
+#~ msgid "Headers:"
+#~ msgstr "Cabeceiras:"
+
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "Configurar as cabeceiras personalizadas..."
+
+#~ msgid "Only show the headers listed below"
+#~ msgstr "Mostrar só as cabeceiras que se enumeran aquí embaixo"
+
+#~ msgid "Show all but hide the headers listed below"
+#~ msgstr ""
+#~ "Mostrar todo mais agochar as cabeceiras que se enumeran aquí embaixo"
+
+#~ msgid "A&dd..."
+#~ msgstr "Enga&dir..."
+
+#~ msgid "Remo&ve"
+#~ msgstr "Re&tirar"
+
+#~ msgid "&Modify..."
+#~ msgstr "&Modificar..."
+
+#~ msgid "Header:"
+#~ msgstr "Cabeceira:"
+
+#~ msgid "Create ToDo"
+#~ msgstr "Crear unha tarefa pendente"
+
+#~| msgid "Create ToDo"
+#~ msgid "Create To-Do"
+#~ msgstr "Crear unha tarefa"
+
+#~ msgid ""
+#~ "Show HTML colored quote (It can take some time on specific html email)"
+#~ msgstr ""
+#~ "Mostrar cita con cores de HTML (Pode ler algún tempo nalgunhas mensaxes "
+#~ "en HTML)"
+
+#~ msgid "Au&tomatic collapse level:"
+#~ msgstr "Recoller au&tomaticamente o nivel:"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "Tod&as as cabeceiras"
+
+#~ msgid "Show all message headers"
+#~ msgstr "Mostrar todas as cabeceiras das mensaxes"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "Cabeceiras &breves"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "Mostrar unha lista breve das cabeceiras das mensaxes"
+
+#~ msgid "%1: "
+#~ msgstr "%1: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "&Cabeceiras personalizadas"
+
+#~ msgid "Show custom headers"
+#~ msgstr "Mostrar as cabeceiras personalizadas"
+
+#~ msgid "To: "
+#~ msgstr "Para: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "Cabeceiras de &Empresa"
+
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "Mostrar a lista de cabeceiras no formato Empresa"
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(reenviado desde %1)"
+
+#~ msgid "(receiver was %1)"
+#~ msgstr "(o destinatario foi %1)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Para: "
+
+#~ msgid "User-Agent: "
+#~ msgstr "Axente de usuario: "
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-Mailer: "
+
+#~ msgid "Bugzilla: "
+#~ msgstr "Bugzilla: "
+
+#~ msgid "MDN To: "
+#~ msgstr "MDN para: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "Cabeceiras &decoradas"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "Mostrar a lista de cabeceiras nun formato decorado"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "Cabeceiras &longas"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "Mostrar lista longa de cabeceiras de mensaxes"
+
+#~ msgid "Event:"
+#~ msgstr "Actividade:"
+
+#~ msgid "Calendar where the new event will be stored."
+#~ msgstr "Calendario no que almacenar a actividade."
+
+#~ msgid "Calendar where the new event will be stored"
+#~ msgstr "Calendario no que almacenar a actividade."
+
+#~ msgid "Start:"
+#~ msgstr "Inicio:"
+
+#~ msgid "Select start time for event."
+#~ msgstr "Seleccione a hora de inicio da actividade."
+
+#~ msgid "End:"
+#~ msgstr "Fin:"
+
+#~ msgid "Select end time for event."
+#~ msgstr "Seleccione a hora de remate da actividade."
+
+#~ msgid "&Save"
+#~ msgstr "&Gardar"
+
+#~ msgid "Create new event and close this widget."
+#~ msgstr "Crear unha actividade nova e pechar este widget."
+
+#~ msgid "Open &editor..."
+#~ msgstr "Abrir o &editor..."
+
+#~ msgid "Open event editor, where more details can be changed."
+#~ msgstr "Abrir un editor de actividades no que poder cambiar máis detalles."
+
+#~ msgid "Close the widget for creating new events."
+#~ msgstr "Pechar o widget para crear actividades novas."
+
+#~ msgid "Create Event..."
+#~ msgstr "Crear un acontecemento…"
+
+#~ msgid "Create Event"
+#~ msgstr "Crear unha actividade"
+
+#~ msgid "Allows you to create a calendar Event"
+#~ msgstr "Permite crear unha actividade no calendario"
+
+#~ msgid "Note:"
+#~ msgstr "Nota:"
+
+#~ msgid "Create new note and close this widget."
+#~ msgstr "Crear unha nova nota e pechar este trebello."
+
+#~ msgid "Close the widget for creating new notes."
+#~ msgstr "Pechar este trebello de creación de novas notas."
+
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "Editar a nota"
+
+#~ msgctxt "create a new note out of this message"
+#~ msgid "Create Note"
+#~ msgstr "Crear unha nota"
+
+#~ msgid "Allows you to create a note from this message"
+#~ msgstr "Permítelle crear unha nota para esta mensaxe."
+
+#~ msgid ""
+#~ "This option starts an editor to create a note. Then you can edit the note "
+#~ "to your liking before saving it."
+#~ msgstr ""
+#~ "Esta opción inicia o editor para crear unha nota. A continuación pode "
+#~ "editar a tarefa como queira antes de gardala."
+
+#~ msgid "Todo:"
+#~ msgstr "Tarefa pendente:"
+
+#~ msgid "Todo list where the new task will be stored."
+#~ msgstr "Lista de tarefas na que almacenar a nova tarefa"
+
+#~ msgid "Todo list where the new task will be stored"
+#~ msgstr "Lista de tarefas na que almacenar a nova tarefa."
+
+#~ msgid "Create new todo and close this widget."
+#~ msgstr "Crear unha tarefa nova e pechar este widget."
+
+#~ msgid "Open todo editor, where more details can be changed."
+#~ msgstr "Abrir un editor de tarefas no que poder cambiar máis detalles."
+
+#~ msgid "Close the widget for creating new todos."
+#~ msgstr "Pechar o widget para crear tarefas novas."
+
+#~ msgid "Reply to \"%1\""
+#~ msgstr "Respostar a «%1»"
+
+#~ msgctxt ""
+#~ "%1 is summary of the todo, %2 is name of the folder in which it is stored"
+#~ msgid "New todo '%1' was added to task list '%2'"
+#~ msgstr "Engadiuse a tarefa nova «%1» á lista de tarefas «%2»"
+
+#~ msgid "Create To-do"
+#~ msgstr "Crear unha tarefa"
+
+#~ msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgstr ""
+#~ "Permítelle crear unha tarefa ou lembranza no calendario para esta mensaxe."
+
+#~ msgid ""
+#~ "This option starts the KOrganizer to-do editor with initial values taken "
+#~ "from the currently selected message. Then you can edit the to-do to your "
+#~ "liking before saving it to your calendar."
+#~ msgstr ""
+#~ "Esta opción inicia o editor de tarefas de KOrganizer tomando os valores "
+#~ "iniciais da mensaxe seleccionada nese momento. A continuación pode editar "
+#~ "a tarefa como queira antes de a gardar no calendario."
+
+#~ msgid "Translate..."
+#~ msgstr "Traducir..."
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-obtain-keys\" function. Please "
+#~ "report this bug."
+#~ msgstr ""
+#~ "A infraestrutura de Chiasmus non ofrece a función «x-obtain-keys». "
+#~ "Informe deste fallo, por favor."
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "Erro da infraestrutura de Chiasmus"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-obtain-keys\" "
+#~ "function did not return a string list. Please report this bug."
+#~ msgstr ""
+#~ "Valor de retorno non agardado desde a infraestrutura de Chiasmus. A "
+#~ "función «x-obtain-keys» non devolveu unha lista de cadeas. Informe deste "
+#~ "fallo, por favor."
+
+#~ msgid ""
+#~ "No keys have been found. Please check that a valid key path has been set "
+#~ "in the Chiasmus configuration."
+#~ msgstr ""
+#~ "Non se atoparon chaves. Por favor, comprobe que se especificou unha ruta "
+#~ "correcto ás chaves na configuración de Chiasmus."
+
+#~ msgid "Chiasmus Decryption Key Selection"
+#~ msgstr "Selección de chave de descifrado de Chiasmus"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-decrypt\" function. Please report "
+#~ "this bug."
+#~ msgstr ""
+#~ "A infraestrutura de Chiasmus non ofrece a función «x-decrypt». Informe "
+#~ "deste fallo, por favor."
+
+#~ msgid ""
+#~ "The \"x-decrypt\" function does not accept the expected parameters. "
+#~ "Please report this bug."
+#~ msgstr ""
+#~ "A función «x-decrypt» non acepta os parámetros agardados. Informe deste "
+#~ "fallo, por favor."
+
+#~ msgid "Chiasmus Decryption Error"
+#~ msgstr "Erro de descifrado de Chiasmus"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-decrypt\" function "
+#~ "did not return a byte array. Please report this bug."
+#~ msgstr ""
+#~ "Valor de retorno non agardado desde a infraestrutura de Chiasmus: A "
+#~ "función «x-decrypt» non devolveu unha matriz de bytes. Informe deste "
+#~ "fallo, por favor."
+
+#~ msgid "Please select the Chiasmus key file to use:"
+#~ msgstr "Escolla o ficheiro de chave Chiasmus que empregar:"
+
+#~ msgid "Additional arguments for chiasmus:"
+#~ msgstr "Argumentos adicionais para chiasmus:"
+
+#~ msgid "Decrypt With Chiasmus..."
+#~ msgstr "Descifrar con Chiasmus..."
+
+#~ msgid "Configure Gravatar"
+#~ msgstr "Configurar Gravatar"
+
+#~ msgid "Use Default Image"
+#~ msgstr "Usar unha imaxe predeterminada."
+
+#~ msgid "Use HTTPS"
+#~ msgstr "Usar HTTPS."
+
+#~ msgid "Use Libravatar"
+#~ msgstr "Usar Libravatar."
+
+#~ msgid "Fallback to Gravatar"
+#~ msgstr "Usar Gravatar se falla."
+
+#~ msgid "Gravatar Cache Size:"
+#~ msgstr "Tamaño da caché de Gravatar:"
+
+#~ msgctxt "add space before image"
+#~ msgid " image"
+#~ msgid_plural " images"
+#~ msgstr[0] "imaxe"
+#~ msgstr[1] "imaxes"
+
+#~ msgid "Clear Gravatar Cache"
+#~ msgstr "Limpar a caché de Gravatar"
+
+#~ msgid "Enable Gravatar Support"
+#~ msgstr "Activar a integración con Gravatar."
+
+#~ msgid "Configure..."
+#~ msgstr "Configurar…"
+
+#~ msgid "Toggle Caret Browsing"
+#~ msgstr "Alternar a navegación co cursor"
+
+#~ msgid "Caret Browsing will be activated. Switch off with F7 shortcut."
+#~ msgstr "Activarase a navegación co cursor. Pódea desactivar coa tecla F7."
+
+#~ msgid "Activate Caret Browsing"
+#~ msgstr "Activar a navegación co cursor"
+
+#~ msgid "Allow to delete attachments of existing mails."
+#~ msgstr "Permitir a eliminación dos anexos das mensaxes existentes."
+
+#~ msgid "Message Structure Viewer Placement"
+#~ msgstr "Colocación do visor da estrutura da mensaxe"
+
+#~ msgid "Above the message pane"
+#~ msgstr "Enriba do panel de mensaxes"
+
+#~ msgid "Below the message pane"
+#~ msgstr "Embaixo do panel de mensaxes"
+
+#~ msgid "Number of addresses to show before collapsing"
+#~ msgstr "Número de enderezos que mostrar antes de recoller"
+
+#~ msgid "Fallback character e&ncoding:"
+#~ msgstr "Codificación de c&aracteres de reserva:"
+
+#~ msgid ""
+#~ "When encountering a Toltec scheduling message, display a custom "
+#~ "replacement text for it."
+#~ msgstr ""
+#~ "Ao atopar unha mensaxe de planificación de Toltec mostrar un texto "
+#~ "substitutivo personalizado para ela."
+
+#~ msgid ""
+#~ "The text that will be displayed as a replacement when encountering Toltec "
+#~ "scheduling messages."
+#~ msgstr ""
+#~ "O texto que aparece como substituto ao atopar mensaxes de planificación "
+#~ "de Toltec."
+
+#~ msgid ""
+#~ "This message is a <i>Toltec</i> Groupware object, it can only be viewed "
+#~ "with Microsoft Outlook in combination with the Toltec connector."
+#~ msgstr ""
+#~ "Esta mensaxe é un obxecto de Groupware de <i>Toltec</i>; só se pode ver "
+#~ "co Outlook da Microsoft xunto co conector de Toltec."
+
+#~ msgid "Show Raw Message"
+#~ msgstr "Mostrar a mensaxe en bruto"
+
+#, fuzzy
+#~| msgid "*|all files (*)"
+#~ msgid "all files (*)"
+#~ msgstr "*|todos os ficheiros (*)"
+
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Fallou o arranque do servizo Jovie de texto lido"
+
+#~ msgid "sent: "
+#~ msgstr "enviada: "
+
+#~ msgid "Encrypted data not shown"
+#~ msgstr "Non se mostran os datos cifrados"
+
+#~ msgid ""
+#~ "Beginning of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Chegouse ao principio da mensaxe.\n"
+#~ "Non foi posíbel atopar a frase «%1»."
+
+#~ msgid ""
+#~ "End of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Chegouse ao fin da mensaxe.\n"
+#~ "Non foi posíbel atopar a frase «%1»."
+
+#~ msgid "The message could not be decrypted."
+#~ msgstr "Non se puido descifrar a mensaxe."
+
+#, fuzzy
+#~| msgid "&View Source"
+#~ msgid "View Source Error"
+#~ msgstr "&Ver a fonte"
+
+#, fuzzy
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "Header to show:"
+#~ msgstr "&Cabeceiras"
+
+#, fuzzy
+#~| msgid "Message Structure Viewer Placement"
+#~ msgid "Message contains form element"
+#~ msgstr "Colocación do visor da estrutura da mensaxe"
+
+#, fuzzy
+#~| msgid "This message is encrypted."
+#~ msgid "This message may be a scam."
+#~ msgstr "A mensaxe está cifrada."
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "Mostrar os detalles"
+
+#~ msgid "File Already Exists"
+#~ msgstr "Xa existe o ficheiro"
+
+#~ msgid ""
+#~ "A file named <filename>%1</filename> already exists. Do you want to "
+#~ "overwrite it?"
+#~ msgstr ""
+#~ "Xa existe un ficheiro chamado <filename>%1</filename>. Quéreo "
+#~ "sobrescribir?"
+
+#~ msgid "Suggest New &Name"
+#~ msgstr "Suxerir un &nome novo"
+
+#~ msgid "&Overwrite"
+#~ msgstr "S&obrescribir"
+
+#~ msgid "&Ignore"
+#~ msgstr "&Ignorar"
+
+#~ msgid "&Rename"
+#~ msgstr "&Mudar o nome"
+
+#~ msgid "Appl&y to All"
+#~ msgstr "Apl&icar a todo"
+
+#~ msgid "Detect language"
+#~ msgstr "Detectar o idioma"
+
+#~ msgid "English"
+#~ msgstr "Inglés"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "Chinés (simplificado)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "Chinés (tradicional)"
+
+#~ msgid "Dutch"
+#~ msgstr "Holandés"
+
+#~ msgid "French"
+#~ msgstr "Francés"
+
+#~ msgid "German"
+#~ msgstr "Alemán"
+
+#~ msgid "Greek"
+#~ msgstr "Grego"
+
+#~ msgid "Italian"
+#~ msgstr "Italiano"
+
+#~ msgid "Japanese"
+#~ msgstr "Xaponés"
+
+#~ msgid "Korean"
+#~ msgstr "Coreano"
+
+#~ msgid "Portuguese"
+#~ msgstr "Portugués"
+
+#~ msgid "Russian"
+#~ msgstr "Ruso"
+
+#~ msgid "Spanish"
+#~ msgstr "Español"
+
+#~ msgid "Afrikaans"
+#~ msgstr "Africano"
+
+#~ msgid "Albanian"
+#~ msgstr "Albanés"
+
+#~ msgid "Arabic"
+#~ msgstr "Árabe"
+
+#~ msgid "Armenian"
+#~ msgstr "Armenio"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "Azerí"
+
+#~ msgid "Basque"
+#~ msgstr "Éuscara"
+
+#~ msgid "Belarusian"
+#~ msgstr "Bielorruso"
+
+#~ msgid "Bulgarian"
+#~ msgstr "Búlgaro"
+
+#~ msgid "Catalan"
+#~ msgstr "Catalán"
+
+#~ msgid "Croatian"
+#~ msgstr "Croata"
+
+#~ msgid "Czech"
+#~ msgstr "Checo"
+
+#~ msgid "Danish"
+#~ msgstr "Dinamarqués"
+
+#~ msgid "Estonian"
+#~ msgstr "Estoniano"
+
+#~ msgid "Filipino"
+#~ msgstr "Filipino"
+
+#~ msgid "Finnish"
+#~ msgstr "Finés"
+
+#~ msgid "Galician"
+#~ msgstr "Galego"
+
+#~ msgid "Georgian"
+#~ msgstr "Xeorxiano"
+
+#~ msgid "Haitian Creole"
+#~ msgstr "Crioulo haitiano"
+
+#~ msgid "Hebrew"
+#~ msgstr "Hebreo"
+
+#~ msgid "Hindi"
+#~ msgstr "Hindi"
+
+#~ msgid "Hungarian"
+#~ msgstr "Húngaro"
+
+#~ msgid "Icelandic"
+#~ msgstr "Islandés"
+
+#~ msgid "Indonesian"
+#~ msgstr "Indonesio"
+
+#~ msgid "Irish"
+#~ msgstr "Irlandés"
+
+#~ msgid "Latvian"
+#~ msgstr "Letón"
+
+#~ msgid "Lithuanian"
+#~ msgstr "Lituano"
+
+#~ msgid "Macedonian"
+#~ msgstr "Macedonio"
+
+#~ msgid "Malay"
+#~ msgstr "Malaio"
+
+#~ msgid "Maltese"
+#~ msgstr "Maltés"
+
+#~ msgid "Norwegian"
+#~ msgstr "Noruegués"
+
+#~ msgid "Persian"
+#~ msgstr "Persa"
+
+#~ msgid "Polish"
+#~ msgstr "Polaco"
+
+#~ msgid "Romanian"
+#~ msgstr "Romanés"
+
+#~ msgid "Serbian"
+#~ msgstr "Serbio"
+
+#~ msgid "Slovak"
+#~ msgstr "Eslovaco"
+
+#~ msgid "Slovenian"
+#~ msgstr "Esloveno"
+
+#~ msgid "Swahili"
+#~ msgstr "Suahili"
+
+#~ msgid "Swedish"
+#~ msgstr "Sueco"
+
+#~ msgid "Thai"
+#~ msgstr "Tailandés"
+
+#~ msgid "Turkish"
+#~ msgstr "Turco"
+
+#~ msgid "Ukrainian"
+#~ msgstr "Ucraíno"
+
+#~ msgid "Urdu"
+#~ msgstr "Urdú"
+
+#~ msgid "Vietnamese"
+#~ msgstr "Vietnamita"
+
+#~ msgid "Welsh"
+#~ msgstr "Galés"
+
+#~ msgid "Yiddish"
+#~ msgstr "Yiddish"
+
+#~ msgctxt ""
+#~ "Invert language choices so that from becomes to and to becomes from"
+#~ msgid "Invert"
+#~ msgstr "Inverter"
+
+#~ msgid "Clear"
+#~ msgstr "Limpar"
+
+#~ msgid "Translate"
+#~ msgstr "Traducir"
+
+#~ msgid "Drag text that you want to translate."
+#~ msgstr "Arrastre o texto que desexe traducir."

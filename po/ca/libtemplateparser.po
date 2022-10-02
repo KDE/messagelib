@@ -1,0 +1,1015 @@
+# Translation of libtemplateparser.po to Catalan
+# Copyright (C) 2011-2021 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Josep M. Ferrer <txemaq@gmail.com>, 2011, 2012, 2014, 2015, 2020, 2021.
+# Manuel Tortosa <manutortosa@chakra-project.org>, 2011.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2015, 2018, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: messagelib\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-26 00:45+0000\n"
+"PO-Revision-Date: 2021-10-22 20:52+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.12.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+#: customtemplates.cpp:72 customtemplates.cpp:123
+#, kde-format
+msgctxt "Message->"
+msgid "Universal"
+msgstr "Universal"
+
+#: customtemplates.cpp:73 customtemplates.cpp:129
+#, kde-format
+msgctxt "Message->"
+msgid "Reply"
+msgstr "Respon"
+
+#: customtemplates.cpp:74 customtemplates.cpp:132
+#, kde-format
+msgctxt "Message->"
+msgid "Reply to All"
+msgstr "Respon a tots"
+
+#: customtemplates.cpp:75 customtemplates.cpp:135
+#, kde-format
+msgctxt "Message->"
+msgid "Forward"
+msgstr "Reenvia"
+
+#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">Com funciona això?</a>"
+
+#: customtemplates.cpp:87
+#, kde-format
+msgid ""
+"<qt><p>Here you can add, edit, and delete custom message templates to use "
+"when you compose a reply or forwarding message. Create the custom template "
+"by typing the name into the input box and press the '+' button. Also, you "
+"can bind a keyboard combination to the template for faster operations.</"
+"p><p>Message templates support substitution commands, by simply typing them "
+"or selecting them from the <i>Insert command</i> menu.</p><p>There are four "
+"types of custom templates: used to <i>Reply</i>, <i>Reply to All</i>, "
+"<i>Forward</i>, and <i>Universal</i> which can be used for all kinds of "
+"operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
+"templates.</p></qt>"
+msgstr ""
+"<qt><p>Aquí podeu afegir, editar i suprimir plantilles de missatge "
+"personalitzades a usar en redactar una resposta o en reenviar un missatge. "
+"Creeu la plantilla personalitzada escrivint el nom al quadre d'entrada de "
+"text i premeu el botó «+». També podeu assignar una combinació de teclat a "
+"la plantilla per a operacions més ràpides.</p><p>Les plantilles de missatge "
+"permeten ordres de substitució, simplement escrivint-les o seleccionant-les "
+"des del menú <i>Insereix ordre</i>.</p><p>Hi ha quatre tipus de plantilla "
+"personalitzada: la usada per a <i>respondre</i>, <i>respondre a tots</i>, "
+"<i>reenviar</i> i la <i>universal</i> que es pot usar per a qualsevol tipus "
+"d'operació. No podeu assignar una drecera de teclat a les plantilles de "
+"tipus <i>universal</i>.</p></qt>"
+
+#: customtemplates.cpp:138
+#, kde-format
+msgctxt "Message->"
+msgid "Unknown"
+msgstr "Desconegut"
+
+#: customtemplates.cpp:252
+#, kde-format
+msgid "A template with same name already exists."
+msgstr "Ja existeix una plantilla amb el mateix nom."
+
+#: customtemplates.cpp:252
+#, kde-format
+msgid "Cannot create template"
+msgstr "No s'ha pogut crear la plantilla"
+
+#: customtemplates.cpp:344
+#, kde-format
+msgctxt "@info"
+msgid "Do you really want to remove template \"%1\"?"
+msgstr "Realment voleu eliminar la plantilla «%1»?"
+
+#: customtemplates.cpp:345
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Template?"
+msgstr "Elimino la plantilla?"
+
+#: customtemplatesmenu.cpp:48
+#, kde-format
+msgid "With Custom Template"
+msgstr "Amb una plantilla personalitzada"
+
+#: customtemplatesmenu.cpp:51
+#, kde-format
+msgid "Reply With Custom Template"
+msgstr "Respon amb una plantilla personalitzada"
+
+#: customtemplatesmenu.cpp:54
+#, kde-format
+msgid "Reply to All With Custom Template"
+msgstr "Respon a tots amb una plantilla personalitzada"
+
+#: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
+#: customtemplatesmenu.cpp:189
+#, kde-format
+msgid "(no custom templates)"
+msgstr "(cap plantilla personalitzada)"
+
+#: defaulttemplates.cpp:16
+#, kde-format
+msgid "Default new message template"
+msgstr "Plantilla predeterminada de missatge nou"
+
+#: defaulttemplates.cpp:21
+#, kde-format
+msgid "Default reply template"
+msgstr "Plantilla predeterminada de resposta"
+
+#: defaulttemplates.cpp:26
+#, kde-format
+msgctxt ""
+"Default reply template.%1: date of original message, %2: time of original "
+"message, %3: quoted text of original message, %4: cursor Position"
+msgid ""
+"On %1 %2 you wrote:\n"
+"%3\n"
+"%4"
+msgstr ""
+"El %1, a les %2, vau escriure:\n"
+"%3\n"
+"%4"
+
+#: defaulttemplates.cpp:37
+#, kde-format
+msgid "Default reply all template"
+msgstr "Plantilla predeterminada de resposta a tots"
+
+#: defaulttemplates.cpp:41
+#, kde-format
+msgctxt ""
+"Default reply all template: %1: date, %2: time, %3: name of original sender, "
+"%4: quoted text of original message, %5: cursor position"
+msgid ""
+"On %1 %2 %3 wrote:\n"
+"%4\n"
+"%5"
+msgstr ""
+"El %1, a les %2, %3 va escriure:\n"
+"%4\n"
+"%5"
+
+#: defaulttemplates.cpp:53
+#, kde-format
+msgid "Default forward template"
+msgstr "Plantilla predeterminada de reenviament"
+
+#: defaulttemplates.cpp:60
+#, kde-format
+msgctxt ""
+"Default forward template: %1: subject of original message, %2: date of "
+"original message, %3: time of original message, %4: mail address of original "
+"sender, %5: original message text"
+msgid ""
+"\n"
+"----------  Forwarded Message  ----------\n"
+"\n"
+"Subject: %1\n"
+"Date: %2, %3\n"
+"From: %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-----------------------------------------"
+msgstr ""
+"\n"
+"----------  Missatge reenviat  ----------\n"
+"\n"
+"Assumpte: %1\n"
+"Data: %2, %3\n"
+"De: %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-----------------------------------------"
+
+#. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:13
+#, kde-format
+msgid "Template content"
+msgstr "Contingut de la plantilla"
+
+#. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:17
+#, kde-format
+msgid "Template shortcut"
+msgstr "Drecera de la plantilla"
+
+#. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:21
+#, kde-format
+msgid "Template type"
+msgstr "Tipus de plantilla"
+
+#. i18n: ectx: label, entry (StripSignature), group (TemplateParser)
+#: settings/templateparser.kcfg:11
+#, kde-format
+msgid "Remove the signature when replying"
+msgstr "Elimina la signatura en respondre"
+
+#. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
+#: settings/templateparser.kcfg:15
+#, kde-format
+msgid "Use smart &quoting"
+msgstr "Empra el &citat intel·ligent"
+
+#. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
+#: settings/templateparser.kcfg:19
+#, kde-format
+msgid ""
+"Reply or forward using the same visual format as the original message (plain "
+"text or HTML)"
+msgstr ""
+"Respon o reenvia usant el mateix format visual com el missatge original "
+"(text net o HTML)"
+
+#. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
+#: settings/templateparser.kcfg:26
+#, kde-format
+msgid "Message template for new message"
+msgstr "Plantilla de missatge per als missatges nous"
+
+#. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
+#: settings/templateparser.kcfg:30
+#, kde-format
+msgid "Message template for reply"
+msgstr "Plantilla de missatge per a les respostes"
+
+#. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
+#: settings/templateparser.kcfg:34
+#, kde-format
+msgid "Message template for reply to all"
+msgstr "Plantilla de missatge per a les respostes a tots"
+
+#. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
+#: settings/templateparser.kcfg:38
+#, kde-format
+msgid "Message template for forward"
+msgstr "Plantilla de missatge per als reenviaments"
+
+#. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
+#: settings/templateparser.kcfg:42
+#, kde-format
+msgid "Quote characters"
+msgstr "Caràcters de citació"
+
+#: templateparserjob.cpp:350
+#, kde-format
+msgctxt "@info"
+msgid "Cannot insert content from file %1: %2"
+msgstr "No es pot inserir el contingut del fitxer %1: %2"
+
+#: templateparserjob.cpp:520
+#, kde-format
+msgctxt "@item:intext email To"
+msgid "To:"
+msgstr "A:"
+
+#: templateparserjob.cpp:531
+#, kde-format
+msgctxt "@item:intext email CC"
+msgid "CC:"
+msgstr "CC:"
+
+#: templateparserjob.cpp:1186
+#, kde-format
+msgctxt "@item:intext"
+msgid "Attachment %1"
+msgstr "Adjunt %1"
+
+#: templateparserjob.cpp:1395
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Pipe command <command>%1</command> failed."
+msgstr "Ha fallat la canalització de l'ordre <command>%1</command>."
+
+#: templatescommandmenu.cpp:28
+msgid "Quoted Message Text"
+msgstr "Text citat del missatge"
+
+#: templatescommandmenu.cpp:30
+msgid "Message Text as Is"
+msgstr "Missatge de text tal com és"
+
+#: templatescommandmenu.cpp:32
+msgid "Message Id"
+msgstr "ID del missatge"
+
+#: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
+msgid "Date"
+msgstr "Data"
+
+#: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
+msgid "Date in Short Format"
+msgstr "Data en format curt"
+
+#: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
+msgid "Date in C Locale"
+msgstr "Data en format de configuració regional C"
+
+#: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
+msgid "Day of Week"
+msgstr "Dia de la setmana"
+
+#: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
+msgid "Time"
+msgstr "Temps"
+
+#: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
+msgid "Time in Long Format"
+msgstr "Temps en format llarg"
+
+#: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
+msgid "Time in C Locale"
+msgstr "Temps en format configuració regional C"
+
+#: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
+msgid "To Field Address"
+msgstr "Adreça al camp A"
+
+#: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
+msgid "To Field Name"
+msgstr "Nom al camp A"
+
+#: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
+msgid "To Field First Name"
+msgstr "Primer nom al camp A"
+
+#: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
+msgid "To Field Last Name"
+msgstr "Cognom al camp A"
+
+#: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
+msgid "CC Field Address"
+msgstr "Adreça al camp CC"
+
+#: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
+msgid "CC Field Name"
+msgstr "Nom al camp CC"
+
+#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
+msgid "CC Field First Name"
+msgstr "Primer nom al camp CC"
+
+#: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
+msgid "CC Field Last Name"
+msgstr "Cognom al camp CC"
+
+#: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
+msgid "From Field Address"
+msgstr "Adreça al camp De"
+
+#: templatescommandmenu.cpp:66
+msgid "From Field Name"
+msgstr "Nom al camp De"
+
+#: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
+msgid "From Field First Name"
+msgstr "Primer nom al camp De"
+
+#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
+msgid "From Field Last Name"
+msgstr "Cognom al camp De"
+
+#: templatescommandmenu.cpp:72
+msgid "Addresses of all recipients"
+msgstr "Adreces de tots els destinataris"
+
+#: templatescommandmenu.cpp:74
+msgctxt "Template value for subject of the message"
+msgid "Subject"
+msgstr "Assumpte"
+
+#: templatescommandmenu.cpp:76
+msgid "Quoted Headers"
+msgstr "Capçaleres citades"
+
+#: templatescommandmenu.cpp:78
+msgid "Headers as Is"
+msgstr "Capçaleres tal com són"
+
+#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
+msgid "Header Content"
+msgstr "Contingut de la capçalera"
+
+#: templatescommandmenu.cpp:82
+msgid "Reply as Quoted Plain Text"
+msgstr "Respon com a text net citat"
+
+#: templatescommandmenu.cpp:84
+msgid "Reply as Quoted HTML Text"
+msgstr "Respon com a text HTML citat"
+
+#: templatescommandmenu.cpp:118
+msgid "From field Name"
+msgstr "Nom al camp De"
+
+#: templatescommandmenu.cpp:124
+msgctxt "Template subject command."
+msgid "Subject"
+msgstr "Assumpte"
+
+#: templatescommandmenu.cpp:129
+msgid "Pipe Original Message Body and Insert Result as Quoted Text"
+msgstr ""
+"Canalitza el cos del missatge original i insereix el resultat com a text "
+"citat"
+
+#: templatescommandmenu.cpp:131
+msgid "Pipe Original Message Body and Insert Result as Is"
+msgstr ""
+"Canalitza el cos del missatge original i insereix el resultat tal com és"
+
+#: templatescommandmenu.cpp:133
+msgid "Pipe Original Message with Headers and Insert Result as Is"
+msgstr ""
+"Canalitza el missatge original amb les capçaleres i insereix el resultat tal "
+"com és"
+
+#: templatescommandmenu.cpp:135
+msgid "Pipe Current Message Body and Insert Result as Is"
+msgstr ""
+"Canalitza el cos del missatge original i insereix el resultat tal com és"
+
+#: templatescommandmenu.cpp:137
+msgid "Pipe Current Message Body and Replace with Result"
+msgstr ""
+"Canalitza el cos del missatge original i el substitueix amb el resultat"
+
+#: templatescommandmenu.cpp:142
+msgctxt "Inserts user signature, also known as footer, into message"
+msgid "Signature"
+msgstr "Signatura"
+
+#: templatescommandmenu.cpp:144
+msgid "Insert File Content"
+msgstr "Insereix el contingut d'un fitxer"
+
+#: templatescommandmenu.cpp:148
+msgctxt ""
+"All characters, up to and including the next newline, are discarded without "
+"performing any macro expansion"
+msgid "Discard to Next Line"
+msgstr "Descarta fins a la propera línia"
+
+#: templatescommandmenu.cpp:151
+msgid "Template Comment"
+msgstr "Comentari de la plantilla"
+
+#: templatescommandmenu.cpp:153
+msgid "No Operation"
+msgstr "Cap operació"
+
+#: templatescommandmenu.cpp:155
+msgid "Clear Generated Message"
+msgstr "Neteja el missatge generat"
+
+#: templatescommandmenu.cpp:156
+msgid "Cursor position"
+msgstr "Posició del cursor"
+
+#: templatescommandmenu.cpp:158
+msgid "Blank text"
+msgstr "Text en blanc"
+
+#: templatescommandmenu.cpp:160
+msgid "Dictionary Language"
+msgstr "Idioma del diccionari"
+
+#: templatescommandmenu.cpp:161
+msgid "Language"
+msgstr "Idioma"
+
+#: templatescommandmenu.cpp:166
+msgid "Turn Debug On"
+msgstr "Habilita la depuració"
+
+#: templatescommandmenu.cpp:168
+msgid "Turn Debug Off"
+msgstr "Inhabilita la depuració"
+
+#: templatescommandmenu.cpp:201
+#, kde-format
+msgid "Insert Command"
+msgstr "Insereix una ordre"
+
+#: templatescommandmenu.cpp:214
+#, kde-format
+msgid "Original Message"
+msgstr "Missatge original"
+
+#: templatescommandmenu.cpp:228
+#, kde-format
+msgid "Current Message"
+msgstr "Missatge actual"
+
+#: templatescommandmenu.cpp:241
+#, kde-format
+msgid "Process with External Programs"
+msgstr "Processa amb programes externs"
+
+#: templatescommandmenu.cpp:254
+#, kde-format
+msgctxt "Miscellaneous template commands menu"
+msgid "Miscellaneous"
+msgstr "Miscel·lània"
+
+#: templatescommandmenu.cpp:268
+#, kde-format
+msgctxt "Debug template commands menu"
+msgid "Debug"
+msgstr "Depura"
+
+#: templatesconfiguration.cpp:50
+#, kde-format
+msgid ""
+"<p>Here you can create and manage templates to use when composing new "
+"messages, replies or forwarded messages.</p><p>The message templates support "
+"substitution commands, either simply type them or select them from the "
+"<i>Insert command</i> menu.</p>"
+msgstr ""
+"<p>Aquí podeu crear i gestionar les plantilles per a usar-les en editar "
+"missatges nous, respostes o reenviar els missatges.</p><p> Les plantilles de "
+"missatge permeten substitució d'ordres, simplement escrivint-les o "
+"seleccionant-les des del menú <i>Insereix una ordre</i>.</p>"
+
+#: templatesconfiguration.cpp:58
+#, kde-format
+msgid ""
+"<p>Templates specified here are folder-specific. They override both global "
+"templates and per-identity templates.</p>"
+msgstr ""
+"<p>Les plantilles seleccionades són específiques de la carpeta. Superposen "
+"les plantilles globals i les plantilles per identitat.</p>"
+
+#: templatesconfiguration.cpp:63
+#, kde-format
+msgid ""
+"<p>Templates specified here are identity-specific. They override global "
+"templates, but can be overridden by per-folder templates if they are "
+"specified.</p>"
+msgstr ""
+"<p>Les plantilles especificades aquí són específiques d'identitat. Només "
+"superposen les plantilles globals, però poden esdevenir superposades per les "
+"plantilles de carpeta si s'han especificat.</p>"
+
+#: templatesconfiguration.cpp:68
+#, kde-format
+msgid ""
+"<p>These are global (default) templates. They can be overridden by per-"
+"identity templates or per-folder templates if they are specified.</p>"
+msgstr ""
+"<p>Aquestes són les plantilles globals (predeterminades). Poden ser "
+"substituïdes per les plantilles per identitat o per carpeta si s'han "
+"especificat.</p>"
+
+#: templatesconfiguration.cpp:100
+#, kde-format
+msgid "Do you want to reset current template or all templates to default?"
+msgstr ""
+"Voleu restablir la plantilla actual o totes les plantilles al valor "
+"predeterminat?"
+
+#: templatesconfiguration.cpp:101
+#, kde-format
+msgid "Reset to default"
+msgstr "Restableix als valors predeterminats"
+
+#: templatesconfiguration.cpp:102
+#, kde-format
+msgid "Reset Current Template"
+msgstr "Restaura la plantilla personalitzada"
+
+#: templatesconfiguration.cpp:103
+#, kde-format
+msgid "Reset All Templates"
+msgstr "Restaura totes les plantilles"
+
+#: templatesconfiguration.cpp:361
+#, kde-format
+msgid ""
+"Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
+"not correct. Use only one of the aforementioned commands with \" Reply as "
+"Quoted Message command\" as per your need\n"
+"(a)Reply using plain text for quotes to be strictly in plain text\n"
+"(b)Reply using HTML text for quotes being in HTML format if present"
+msgstr ""
+"L'ús de «Respon usant només text» i «Respon usant text HTML» per parelles no "
+"és correcte. Useu només una de les ordres mencionades amb «Respon com a "
+"missatge citat» d'acord amb les vostres necessitats\n"
+"(a) Respon usant text perquè les cites s'ajustin estrictament al text\n"
+"(b) Respon usant text HTML perquè les cites estiguin en format HTML (si n'hi "
+"ha)"
+
+#: templatesinsertcommandpushbutton.cpp:20
+#, kde-format
+msgid "&Insert Command"
+msgstr "&Insereix una ordre"
+
+#: templatesinsertcommandpushbutton.cpp:28
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select a command to insert into the template"
+msgstr "Seleccioneu una ordre a inserir en la plantilla"
+
+#: templatesinsertcommandpushbutton.cpp:30
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Traverse this menu to find a command to insert into the current template "
+"being edited.  The command will be inserted at the cursor location, so you "
+"want to move your cursor to the desired insertion point first."
+msgstr ""
+"Passeu per aquest menú per a trobar una ordre a inserir a la plantilla que "
+"s'està editant. L'ordre s'inserirà a la posició del cursor, per tant, abans "
+"desitjareu moure el cursor al punt d'inserció desitjat."
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
+#: ui/customtemplates_base.ui:86
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Enter a name for the custom template"
+msgstr "Introduïu un nom personalitzat per a la plantilla"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mName)
+#: ui/customtemplates_base.ui:89
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"To create a custom template, first enter a name for that template and press "
+"the '+' button."
+msgstr ""
+"Per a crear una plantilla personalitzada, primer introduïu un nom per a "
+"aquesta plantilla i premeu el botó «+»."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
+#: ui/customtemplates_base.ui:96
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add a new custom template"
+msgstr "Afegeix una plantilla personalitzada nova"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mAdd)
+#: ui/customtemplates_base.ui:99
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to create a new custom template with the "
+"specified name"
+msgstr ""
+"Premeu aquest botó per a crear una plantilla personalitzada nova amb el nom "
+"especificat"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
+#: ui/customtemplates_base.ui:106
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove the selected custom template"
+msgstr "Elimina la plantilla personalitzada seleccionada"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mRemove)
+#: ui/customtemplates_base.ui:109
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to remove the currently selected custom "
+"template"
+msgstr ""
+"Premeu aquest botó si voleu eliminar la plantilla personalitzada seleccionada"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
+#: ui/customtemplates_base.ui:116
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Duplicate the selected custom template"
+msgstr "Duplica la plantilla personalitzada seleccionada"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mDuplicate)
+#: ui/customtemplates_base.ui:119
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to duplicate the currently selected custom "
+"template"
+msgstr ""
+"Premeu aquest botó si voleu duplicar la plantilla personalitzada seleccionada"
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:134
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "List of custom templates available"
+msgstr "Llista de plantilles personalitzades disponibles"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:137
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is a list of all the custom templates available."
+msgstr ""
+"Aquesta és una llista de totes les plantilles personalitzades disponibles."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:147
+#, kde-format
+msgctxt "@title:column Type of custom template"
+msgid "Type"
+msgstr "Tipus"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:152
+#, kde-format
+msgctxt "@title:column Name of the custom template."
+msgid "Name"
+msgstr "Nom"
+
+#. i18n: ectx: property (text), widget (QLabel, mToLabel)
+#: ui/customtemplates_base.ui:195
+#, kde-format
+msgctxt "@label:textbox Recipient mail address"
+msgid "To:"
+msgstr "A:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCCLabel)
+#: ui/customtemplates_base.ui:202
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "CC:"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
+#: ui/customtemplates_base.ui:219
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Additional recipients of the message"
+msgstr "Destinataris addicionals del missatge"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
+#: ui/customtemplates_base.ui:222
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"When using this template, the default recipients are those you enter here.  "
+"This is a comma-separated list of mail addresses."
+msgstr ""
+"En usar aquesta plantilla, els destinataris predeterminats seran aquells que "
+"introduïu aquí. Aquesta és una llista separada per comes de les adreces de "
+"correu."
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
+#: ui/customtemplates_base.ui:235
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Additional recipients who get a copy of the message"
+msgstr "Destinataris addicionals que rebran una còpia del missatge"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
+#: ui/customtemplates_base.ui:238
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"When using this template, the recipients you enter here will by default get "
+"a copy of this message.  This is a comma-separated list of mail addresses."
+msgstr ""
+"En usar aquesta plantilla, els destinataris que introduïu aquí rebran de "
+"manera predeterminada una còpia del missatge. Aquesta és una llista separada "
+"per comes de les adreces de correu."
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
+#: ui/customtemplates_base.ui:255
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The custom template"
+msgstr "La plantilla personalitzada"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, mEdit)
+#: ui/customtemplates_base.ui:258
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This area contains the associated custom template."
+msgstr "Aquesta àrea conté la plantilla personalitzada associada."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:283
+#, kde-format
+msgctxt "@item:inlistbox Universal custom template type."
+msgid "Universal"
+msgstr "Universal"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:288
+#, kde-format
+msgctxt "@item:inlistbox Custom template type for message replies"
+msgid "Reply"
+msgstr "Respon"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:293
+#, kde-format
+msgctxt "@item:inlistbox Custom template type for reply-to-all messages"
+msgid "Reply to All"
+msgstr "Respon a tots"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:298
+#, kde-format
+msgctxt "@item:inlistbox Custom template type for message forwards"
+msgid "Forward"
+msgstr "Reenvia"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: ui/customtemplates_base.ui:306
+#, kde-format
+msgctxt "@label"
+msgid "Shortc&ut:"
+msgstr "&Drecera:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: ui/customtemplates_base.ui:325
+#, kde-format
+msgctxt "@label"
+msgid "&Template type:"
+msgstr "&Tipus de plantilla:"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TemplatesConfigurationBase)
+#: ui/templatesconfiguration_base.ui:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Template Configuration"
+msgstr "Configuració de la plantilla"
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_new)
+#: ui/templatesconfiguration_base.ui:77
+#, kde-format
+msgctxt "@title Message template"
+msgid "New Message"
+msgstr "Missatge nou"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
+#: ui/templatesconfiguration_base.ui:89
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for new messages"
+msgstr "Crea la plantilla per als missatges nous"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
+#: ui/templatesconfiguration_base.ui:92
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for new email messages.  For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"En aquesta àrea podeu crear la plantilla per als missatges de correu nous. "
+"Per a més informació sobre com crear la plantilla, premeu l'enllaç «Com "
+"funciona això?» d'aquest diàleg."
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_reply)
+#: ui/templatesconfiguration_base.ui:108
+#, kde-format
+msgctxt "@title Message template"
+msgid "Reply to Sender"
+msgstr "Resposta al remitent"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
+#: ui/templatesconfiguration_base.ui:146
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for message replies"
+msgstr "Crea la plantilla per als missatges de resposta"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
+#: ui/templatesconfiguration_base.ui:149
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for messages replies. For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"En aquesta àrea podeu crear la plantilla per als missatges de resposta. Per "
+"a més informació sobre com crear la plantilla, premeu l'enllaç «Com funciona "
+"això?» d'aquest diàleg."
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
+#: ui/templatesconfiguration_base.ui:165
+#, kde-format
+msgctxt "@title Message template"
+msgid "Reply to All / Reply to List"
+msgstr "Resposta a tots/resposta a la llista"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
+#: ui/templatesconfiguration_base.ui:203
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for replying to all recipients or to a mailing list"
+msgstr ""
+"Crea la plantilla per a respondre a tots els destinataris o a una llista de "
+"correu"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
+#: ui/templatesconfiguration_base.ui:206
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for reply-to-all messages or replies to "
+"a mailing list.  For more information about how to create the template, "
+"press the \"How does this work?\" link on this dialog."
+msgstr ""
+"En aquesta àrea podeu crear la plantilla per als missatges de resposta a "
+"tots o les respostes a una llista de correu. Per a més informació sobre com "
+"crear la plantilla, premeu l'enllaç «Com funciona això?» d'aquest diàleg."
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_forward)
+#: ui/templatesconfiguration_base.ui:222
+#, kde-format
+msgctxt "@title Message template"
+msgid "Forward Message"
+msgstr "Missatge reenviat"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
+#: ui/templatesconfiguration_base.ui:260
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for message forwards"
+msgstr "Crea la plantilla per al reenviament de missatges"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
+#: ui/templatesconfiguration_base.ui:263
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for message forwards.  For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"En aquesta àrea podeu crear la plantilla per al reenviament de missatges. "
+"Per a més informació sobre com crear la plantilla, premeu l'enllaç «Com "
+"funciona això?» d'aquest diàleg."
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: ui/templatesconfiguration_base.ui:303
+#, kde-format
+msgctxt "@label:textbox Prefix for quoted message lines"
+msgid "&Quote indicator:"
+msgstr "Indicador de &citació:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
+#: ui/templatesconfiguration_base.ui:316
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Set the Prefix for quoted message lines"
+msgstr "Defineix el prefix per a les línies de missatge citades"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
+#: ui/templatesconfiguration_base.ui:326
+#, no-c-format, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"\n"
+"             <qt>The following placeholders are supported in the quote "
+"indicator:\n"
+"             <ul>\n"
+"             <li>%f: sender's initials</li>\n"
+"             <li>%%: percent sign</li>\n"
+"             <li>%_: space</li>\n"
+"             </ul></qt>\n"
+"           "
+msgstr ""
+"\n"
+"             <qt>Estan permesos els següents contenidors a l'indicador de "
+"citació:\n"
+"             <ul>\n"
+"             <li>%f: inicials del remitent</li>\n"
+"             <li>%%: signe de percentatge</li>\n"
+"             <li>%_: espai</li>\n"
+"             </ul></qt>\n"
+"           "
+
+#~ msgctxt "@item:inlistbox Custom template type for messsage forwards"
+#~ msgid "Forward"
+#~ msgstr "Reenvia"
+
+#~ msgid "Reply or forward using HTML based on Visual Format"
+#~ msgstr "Respon o reenvia usant HTML basat en el format visual"

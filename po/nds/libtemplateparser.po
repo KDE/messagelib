@@ -1,0 +1,1015 @@
+# translation of libtemplateparser.po to Low Saxon
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Manfred Wiese <m.j.wiese@web.de>, 2010, 2011.
+# Sönke Dibbern <s_dibbern@web.de>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libtemplateparser\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-26 00:45+0000\n"
+"PO-Revision-Date: 2014-06-18 00:35+0200\n"
+"Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: customtemplates.cpp:72 customtemplates.cpp:123
+#, kde-format
+msgctxt "Message->"
+msgid "Universal"
+msgstr "Allmeen"
+
+#: customtemplates.cpp:73 customtemplates.cpp:129
+#, kde-format
+msgctxt "Message->"
+msgid "Reply"
+msgstr "Antern"
+
+#: customtemplates.cpp:74 customtemplates.cpp:132
+#, kde-format
+msgctxt "Message->"
+msgid "Reply to All"
+msgstr "Na all antern"
+
+#: customtemplates.cpp:75 customtemplates.cpp:135
+#, kde-format
+msgctxt "Message->"
+msgid "Forward"
+msgstr "Wiederledden"
+
+#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">Wodennig funkscheneert dat?</a>"
+
+#: customtemplates.cpp:87
+#, kde-format
+msgid ""
+"<qt><p>Here you can add, edit, and delete custom message templates to use "
+"when you compose a reply or forwarding message. Create the custom template "
+"by typing the name into the input box and press the '+' button. Also, you "
+"can bind a keyboard combination to the template for faster operations.</"
+"p><p>Message templates support substitution commands, by simply typing them "
+"or selecting them from the <i>Insert command</i> menu.</p><p>There are four "
+"types of custom templates: used to <i>Reply</i>, <i>Reply to All</i>, "
+"<i>Forward</i>, and <i>Universal</i> which can be used for all kinds of "
+"operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
+"templates.</p></qt>"
+msgstr ""
+"<qt><p>Hier kannst Du egen Narichtenvörlagen för't Antern oder Wiederledden "
+"tofögen, bewerken oder wegdoon. Egen Vörlagen laat sik över den "
+"Ingaavdialoog opstellen: Giff dor den Naam in un klick op den \"+\"-Knoop. "
+"Du kannst de Vörlagen ok Tastkombinatschonen toornen, so dat Du dor gauer "
+"mit arbeiden kannst.</p><p>Binnen Narichtenvörlagen kannst Du "
+"Utwesselbefehlen bruken, de Du eenfach ingeven oder binnen dat Menü "
+"<i>Befehl infögen</i> utsöken kannst.</p><p>Dat gifft veer Vörlaagtypen: "
+"<i>Antern</i>, <i>Na all antern</i>, <i>Wiederledden</i> un <i>Allmeen</i>. "
+"De Vörlagen vun den Typ <i>Allmeen</i> laat sik för allens bruken, man Du "
+"kannst se keen Tastkombinatschoon towiesen.</p></qt>"
+
+#: customtemplates.cpp:138
+#, kde-format
+msgctxt "Message->"
+msgid "Unknown"
+msgstr "Nich begäng"
+
+#: customtemplates.cpp:252
+#, kde-format
+msgid "A template with same name already exists."
+msgstr "Dat gifft al en Vörlaag mit dissen Naam."
+
+#: customtemplates.cpp:252
+#, kde-format
+msgid "Cannot create template"
+msgstr "Vörlaag lett sik nich opstellen"
+
+#: customtemplates.cpp:344
+#, kde-format
+msgctxt "@info"
+msgid "Do you really want to remove template \"%1\"?"
+msgstr "Wullt Du de Vörlaag \"%1\" redig wegmaken?"
+
+#: customtemplates.cpp:345
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Template?"
+msgstr "Vörlaag wegmaken?"
+
+#: customtemplatesmenu.cpp:48
+#, kde-format
+msgid "With Custom Template"
+msgstr "Mit egen Vörlaag"
+
+#: customtemplatesmenu.cpp:51
+#, kde-format
+msgid "Reply With Custom Template"
+msgstr "Mit egen Vörlaag antern"
+
+#: customtemplatesmenu.cpp:54
+#, kde-format
+msgid "Reply to All With Custom Template"
+msgstr "Na all mit egen Vörlaag antern"
+
+#: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
+#: customtemplatesmenu.cpp:189
+#, kde-format
+msgid "(no custom templates)"
+msgstr "(keen egen Vörlagen)"
+
+#: defaulttemplates.cpp:16
+#, kde-format
+msgid "Default new message template"
+msgstr "Standardvörlaag för niege Narichten"
+
+#: defaulttemplates.cpp:21
+#, kde-format
+msgid "Default reply template"
+msgstr "Standard-Antwoortvörlaag"
+
+#: defaulttemplates.cpp:26
+#, kde-format
+msgctxt ""
+"Default reply template.%1: date of original message, %2: time of original "
+"message, %3: quoted text of original message, %4: cursor Position"
+msgid ""
+"On %1 %2 you wrote:\n"
+"%3\n"
+"%4"
+msgstr ""
+"Op %1, hest Du Klock %2 schreven:\n"
+"%3\n"
+"%4"
+
+#: defaulttemplates.cpp:37
+#, kde-format
+msgid "Default reply all template"
+msgstr "Standardvörlaag för Antwoorden na all"
+
+#: defaulttemplates.cpp:41
+#, kde-format
+msgctxt ""
+"Default reply all template: %1: date, %2: time, %3: name of original sender, "
+"%4: quoted text of original message, %5: cursor position"
+msgid ""
+"On %1 %2 %3 wrote:\n"
+"%4\n"
+"%5"
+msgstr ""
+"Op %1, hett %3 Klock %2 schreven:\n"
+"%4\n"
+"%5"
+
+#: defaulttemplates.cpp:53
+#, kde-format
+msgid "Default forward template"
+msgstr "Standardvörlaag för Wiederledden"
+
+#: defaulttemplates.cpp:60
+#, kde-format
+msgctxt ""
+"Default forward template: %1: subject of original message, %2: date of "
+"original message, %3: time of original message, %4: mail address of original "
+"sender, %5: original message text"
+msgid ""
+"\n"
+"----------  Forwarded Message  ----------\n"
+"\n"
+"Subject: %1\n"
+"Date: %2, %3\n"
+"From: %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-----------------------------------------"
+msgstr ""
+"\n"
+"----------  Wiederleddt Naricht  ----------\n"
+"\n"
+"Bedröppt: %1\n"
+"Datum: %2, %3\n"
+"Vun: %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-----------------------------------------"
+
+#. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:13
+#, kde-format
+msgid "Template content"
+msgstr "Vörlaag-Inholt"
+
+#. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:17
+#, kde-format
+msgid "Template shortcut"
+msgstr "Vörlaag-Tastkombinatschoon"
+
+#. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:21
+#, kde-format
+msgid "Template type"
+msgstr "Vörlaag-Typ"
+
+#. i18n: ectx: label, entry (StripSignature), group (TemplateParser)
+#: settings/templateparser.kcfg:11
+#, kde-format
+msgid "Remove the signature when replying"
+msgstr "De Ünnerschrift bi't Antern wegmaken"
+
+#. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
+#: settings/templateparser.kcfg:15
+#, kde-format
+msgid "Use smart &quoting"
+msgstr "Plietsch &ziteren"
+
+#. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
+#: settings/templateparser.kcfg:19
+#, kde-format
+msgid ""
+"Reply or forward using the same visual format as the original message (plain "
+"text or HTML)"
+msgstr ""
+
+#. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
+#: settings/templateparser.kcfg:26
+#, kde-format
+msgid "Message template for new message"
+msgstr "Narichtenvörlaag för nieg Naricht"
+
+#. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
+#: settings/templateparser.kcfg:30
+#, kde-format
+msgid "Message template for reply"
+msgstr "Narichtenvörlaag för Antwoort"
+
+#. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
+#: settings/templateparser.kcfg:34
+#, kde-format
+msgid "Message template for reply to all"
+msgstr "Narichtenvörlaag för Antwoort na all"
+
+#. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
+#: settings/templateparser.kcfg:38
+#, kde-format
+msgid "Message template for forward"
+msgstr "Narichtenvörlaag för Wiederledden"
+
+#. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
+#: settings/templateparser.kcfg:42
+#, kde-format
+msgid "Quote characters"
+msgstr "Zitaattekens"
+
+#: templateparserjob.cpp:350
+#, kde-format
+msgctxt "@info"
+msgid "Cannot insert content from file %1: %2"
+msgstr "Inholt ut Datei \"%1\" lett sik nich infögen: %2"
+
+#: templateparserjob.cpp:520
+#, kde-format
+msgctxt "@item:intext email To"
+msgid "To:"
+msgstr "Na:"
+
+#: templateparserjob.cpp:531
+#, kde-format
+msgctxt "@item:intext email CC"
+msgid "CC:"
+msgstr "Kopie:"
+
+#: templateparserjob.cpp:1186
+#, kde-format
+msgctxt "@item:intext"
+msgid "Attachment %1"
+msgstr "Bilaag %1"
+
+#: templateparserjob.cpp:1395
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Pipe command <command>%1</command> failed."
+msgstr "Wiederledden mit Befehl <command>%1</command> fehlslaan."
+
+#: templatescommandmenu.cpp:28
+msgid "Quoted Message Text"
+msgstr "Ziteert Narichttext"
+
+#: templatescommandmenu.cpp:30
+msgid "Message Text as Is"
+msgstr "Narichtentext as he is"
+
+#: templatescommandmenu.cpp:32
+msgid "Message Id"
+msgstr "Narichten-ID"
+
+#: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
+msgid "Date"
+msgstr "Datum"
+
+#: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
+msgid "Date in Short Format"
+msgstr "Datum in Kortformaat"
+
+#: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
+msgid "Date in C Locale"
+msgstr "Datum in't Formaat vun de C-Lokale"
+
+#: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
+msgid "Day of Week"
+msgstr "Wekendag"
+
+#: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
+msgid "Time"
+msgstr "Tiet"
+
+#: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
+msgid "Time in Long Format"
+msgstr "Tiet in Langformaat"
+
+#: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
+msgid "Time in C Locale"
+msgstr "Tiet in't Formaat vun de C-Lokale"
+
+#: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
+msgid "To Field Address"
+msgstr "Adressaat-Adress"
+
+#: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
+msgid "To Field Name"
+msgstr "Adressaat-Naam"
+
+#: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
+msgid "To Field First Name"
+msgstr "Adressaat-Vörnaam"
+
+#: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
+msgid "To Field Last Name"
+msgstr "Adressaat-Familiennaam"
+
+#: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
+msgid "CC Field Address"
+msgstr "Kopieadressaat-Adress"
+
+#: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
+msgid "CC Field Name"
+msgstr "Kopieadressaat-Naam"
+
+#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
+msgid "CC Field First Name"
+msgstr "Kopieadressaat-Vörnaam"
+
+#: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
+msgid "CC Field Last Name"
+msgstr "Kopieadressaat-Familiennaam"
+
+#: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
+msgid "From Field Address"
+msgstr "Senner-Adress"
+
+#: templatescommandmenu.cpp:66
+msgid "From Field Name"
+msgstr "Senner-Naam"
+
+#: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
+msgid "From Field First Name"
+msgstr "Senner-Vörnaam"
+
+#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
+msgid "From Field Last Name"
+msgstr "Senner-Familiennaam"
+
+#: templatescommandmenu.cpp:72
+msgid "Addresses of all recipients"
+msgstr "Adressen vun all Adressaten"
+
+#: templatescommandmenu.cpp:74
+msgctxt "Template value for subject of the message"
+msgid "Subject"
+msgstr "Bedröppt"
+
+#: templatescommandmenu.cpp:76
+msgid "Quoted Headers"
+msgstr "Ziteert Koppregen"
+
+#: templatescommandmenu.cpp:78
+msgid "Headers as Is"
+msgstr "Koppregen as se sünd"
+
+#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
+msgid "Header Content"
+msgstr "Koppreeg-Inholt"
+
+#: templatescommandmenu.cpp:82
+msgid "Reply as Quoted Plain Text"
+msgstr "Mit Eenfachtext för Zitaten antern"
+
+#: templatescommandmenu.cpp:84
+msgid "Reply as Quoted HTML Text"
+msgstr "Mit HTML för Zitaten antern"
+
+#: templatescommandmenu.cpp:118
+msgid "From field Name"
+msgstr "Senner-Naam"
+
+#: templatescommandmenu.cpp:124
+msgctxt "Template subject command."
+msgid "Subject"
+msgstr "Bedröppt"
+
+#: templatescommandmenu.cpp:129
+msgid "Pipe Original Message Body and Insert Result as Quoted Text"
+msgstr ""
+"Hööftdeel vun Orginaalnaricht dör Programm ledden un Utgaav as ziteert Text "
+"infögen"
+
+#: templatescommandmenu.cpp:131
+msgid "Pipe Original Message Body and Insert Result as Is"
+msgstr ""
+"Hööftdeel vun Orginaalnaricht dör Programm ledden un Utgaav infögen, as se is"
+
+#: templatescommandmenu.cpp:133
+msgid "Pipe Original Message with Headers and Insert Result as Is"
+msgstr ""
+"Orginaalnaricht mit Koppregen dör Programm ledden un Utgaav infögen, as se is"
+
+#: templatescommandmenu.cpp:135
+msgid "Pipe Current Message Body and Insert Result as Is"
+msgstr ""
+"Hööftdeel vun disse Naricht dör Programm ledden un Utgaav infögen, as se is"
+
+#: templatescommandmenu.cpp:137
+msgid "Pipe Current Message Body and Replace with Result"
+msgstr ""
+"Hööftdeel vun disse Naricht dör Programm ledden un mit de Utgaav utwesseln"
+
+#: templatescommandmenu.cpp:142
+msgctxt "Inserts user signature, also known as footer, into message"
+msgid "Signature"
+msgstr "Signatuur"
+
+#: templatescommandmenu.cpp:144
+msgid "Insert File Content"
+msgstr "Dateiinholt infögen"
+
+#: templatescommandmenu.cpp:148
+msgctxt ""
+"All characters, up to and including the next newline, are discarded without "
+"performing any macro expansion"
+msgid "Discard to Next Line"
+msgstr "Bet na Reegümbrook wegdoon"
+
+#: templatescommandmenu.cpp:151
+msgid "Template Comment"
+msgstr "Vörlaagkommentar"
+
+#: templatescommandmenu.cpp:153
+msgid "No Operation"
+msgstr "Keen Akschoon"
+
+#: templatescommandmenu.cpp:155
+msgid "Clear Generated Message"
+msgstr "Opstellt Naricht wegmaken"
+
+#: templatescommandmenu.cpp:156
+msgid "Cursor position"
+msgstr "Blinkerpositschoon"
+
+#: templatescommandmenu.cpp:158
+msgid "Blank text"
+msgstr "Text wegmaken"
+
+#: templatescommandmenu.cpp:160
+msgid "Dictionary Language"
+msgstr ""
+
+#: templatescommandmenu.cpp:161
+msgid "Language"
+msgstr ""
+
+#: templatescommandmenu.cpp:166
+msgid "Turn Debug On"
+msgstr "Fehlersöök anmaken"
+
+#: templatescommandmenu.cpp:168
+msgid "Turn Debug Off"
+msgstr "Fehlersöök utmaken"
+
+#: templatescommandmenu.cpp:201
+#, kde-format
+msgid "Insert Command"
+msgstr "Befehl infögen"
+
+#: templatescommandmenu.cpp:214
+#, kde-format
+msgid "Original Message"
+msgstr "Orginaalnaricht"
+
+#: templatescommandmenu.cpp:228
+#, kde-format
+msgid "Current Message"
+msgstr "Disse Naricht"
+
+#: templatescommandmenu.cpp:241
+#, kde-format
+msgid "Process with External Programs"
+msgstr "Mit extern Programmen verarbeiden"
+
+#: templatescommandmenu.cpp:254
+#, kde-format
+msgctxt "Miscellaneous template commands menu"
+msgid "Miscellaneous"
+msgstr "Anner Saken"
+
+#: templatescommandmenu.cpp:268
+#, kde-format
+msgctxt "Debug template commands menu"
+msgid "Debug"
+msgstr ""
+
+#: templatesconfiguration.cpp:50
+#, kde-format
+msgid ""
+"<p>Here you can create and manage templates to use when composing new "
+"messages, replies or forwarded messages.</p><p>The message templates support "
+"substitution commands, either simply type them or select them from the "
+"<i>Insert command</i> menu.</p>"
+msgstr ""
+"<p>Hier kannst Du Narichtenvörlagen för niege Narichten, Antwoorden un "
+"Wiederledden opstellen.</p><p>Binnen Narichtenvörlagen kannst Du "
+"Utwesselbefehlen bruken, de Du eenfach ingeven oder binnen dat Menü "
+"<i>Befehl infögen</i> utsöken kannst.</p>"
+
+#: templatesconfiguration.cpp:58
+#, kde-format
+msgid ""
+"<p>Templates specified here are folder-specific. They override both global "
+"templates and per-identity templates.</p>"
+msgstr ""
+"<p>Hier angeven Vörlagen gellt för den Orner, se warrt ansteed vun all "
+"globale oder Identiteet-Vörlagen bruukt.</p>"
+
+#: templatesconfiguration.cpp:63
+#, kde-format
+msgid ""
+"<p>Templates specified here are identity-specific. They override global "
+"templates, but can be overridden by per-folder templates if they are "
+"specified.</p>"
+msgstr ""
+"<p>Hier angeven Vörlagen gellt för de Identiteet; wenn angeven, warrt se "
+"ansteed vun globale Vörlagen bruukt, wenn nich ok Orner-Vörlagen angeven "
+"sünd.</p>"
+
+#: templatesconfiguration.cpp:68
+#, kde-format
+msgid ""
+"<p>These are global (default) templates. They can be overridden by per-"
+"identity templates or per-folder templates if they are specified.</p>"
+msgstr ""
+"<p>Dit sünd globaal (Standard-)Vörlagen; se warrt bruukt, wenn keen "
+"Identiteet- oder Orner-Vörlagen angeven sünd.</p>"
+
+#: templatesconfiguration.cpp:100
+#, kde-format
+msgid "Do you want to reset current template or all templates to default?"
+msgstr ""
+"Wullt Du de aktuelle oder all Vörlagen op de Standardweerten torüchsetten?"
+
+#: templatesconfiguration.cpp:101
+#, kde-format
+msgid "Reset to default"
+msgstr "Op Standardweerten torüchsetten"
+
+#: templatesconfiguration.cpp:102
+#, kde-format
+msgid "Reset Current Template"
+msgstr "Aktuell Vörlaag"
+
+#: templatesconfiguration.cpp:103
+#, kde-format
+msgid "Reset All Templates"
+msgstr "All Vörlagen"
+
+#: templatesconfiguration.cpp:361
+#, kde-format
+msgid ""
+"Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
+"not correct. Use only one of the aforementioned commands with \" Reply as "
+"Quoted Message command\" as per your need\n"
+"(a)Reply using plain text for quotes to be strictly in plain text\n"
+"(b)Reply using HTML text for quotes being in HTML format if present"
+msgstr ""
+"\"Mit Eenfachtext antern\" un \"Mit HTML antern\" laat sik nich tosamen "
+"bruken. Bruuk dor bloots een vun tosamen mit \"Mit ziteert Text antern\" na "
+"Dien Möög.\n"
+"a) Anter mit Eenfachtext för Zitaten, wenn Du redig bloots eenfach Text "
+"bruken wullt\n"
+"b) Anter mit HTML för Zitaten, wenn Du HTML bruken wullt, wenn dat "
+"verföögbor is"
+
+#: templatesinsertcommandpushbutton.cpp:20
+#, kde-format
+msgid "&Insert Command"
+msgstr "Befehl &infögen"
+
+#: templatesinsertcommandpushbutton.cpp:28
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select a command to insert into the template"
+msgstr "En Befehl utsöken, den Du na de Vörlaag infögen wullt"
+
+#: templatesinsertcommandpushbutton.cpp:30
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Traverse this menu to find a command to insert into the current template "
+"being edited.  The command will be inserted at the cursor location, so you "
+"want to move your cursor to the desired insertion point first."
+msgstr ""
+"Kiek binnen dit Menü na den Befehl, den Du na Vörlaag, de Du opstunns "
+"bewerken deist, infögen wullt. De Befehl warrt an de Steed vun den Blinker "
+"inföögt, also wullt Du villicht eerstmaal den Blinker na de richtige Steed "
+"verschuven."
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
+#: ui/customtemplates_base.ui:86
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Enter a name for the custom template"
+msgstr "Bitte den Naam för Dien Vörlaagt ingeven"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mName)
+#: ui/customtemplates_base.ui:89
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"To create a custom template, first enter a name for that template and press "
+"the '+' button."
+msgstr ""
+"Wenn Du en egen Vörlaag opstellen wullt, giff bitte toeerst en Naam dor för "
+"in un Klick op den \"+\"-Knoop."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
+#: ui/customtemplates_base.ui:96
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add a new custom template"
+msgstr "En nieg Vörlaag tofögen"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mAdd)
+#: ui/customtemplates_base.ui:99
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to create a new custom template with the "
+"specified name"
+msgstr ""
+"Klick op dissen Knoop, wenn Du en nieg Vörlaag mit den angeven Naam "
+"opstellen wullt"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
+#: ui/customtemplates_base.ui:106
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove the selected custom template"
+msgstr "De utsöchte Vörlaag wegmaken"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mRemove)
+#: ui/customtemplates_base.ui:109
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to remove the currently selected custom "
+"template"
+msgstr ""
+"Klick op dissen Knoop, wenn Du de opstunns utsöchte Vörlaag wegmaken wullt"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
+#: ui/customtemplates_base.ui:116
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Duplicate the selected custom template"
+msgstr "De utsöchte Vörlaag verdubbeln"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mDuplicate)
+#: ui/customtemplates_base.ui:119
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to duplicate the currently selected custom "
+"template"
+msgstr ""
+"Klick op dissen Knoop, wenn Du de opstunns utsöchte Vörlaag verdubbeln wullt"
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:134
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "List of custom templates available"
+msgstr "List mit de verföögboren egen Vörlagen"
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:137
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is a list of all the custom templates available."
+msgstr "Dat is De List mit all de verföögboren egen Vörlagen."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:147
+#, kde-format
+msgctxt "@title:column Type of custom template"
+msgid "Type"
+msgstr "Typ"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:152
+#, kde-format
+msgctxt "@title:column Name of the custom template."
+msgid "Name"
+msgstr "Naam"
+
+#. i18n: ectx: property (text), widget (QLabel, mToLabel)
+#: ui/customtemplates_base.ui:195
+#, kde-format
+msgctxt "@label:textbox Recipient mail address"
+msgid "To:"
+msgstr "Na:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCCLabel)
+#: ui/customtemplates_base.ui:202
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "Kopie:"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
+#: ui/customtemplates_base.ui:219
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Additional recipients of the message"
+msgstr "Anner Adressaten för de Naricht"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
+#: ui/customtemplates_base.ui:222
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"When using this template, the default recipients are those you enter here.  "
+"This is a comma-separated list of mail addresses."
+msgstr ""
+"Bruukst Du disse Vörlaag, kannst Du hier de Standard-Adressaten as List vun "
+"mit Kommas trennte Nettpostadressen ingeven."
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
+#: ui/customtemplates_base.ui:235
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Additional recipients who get a copy of the message"
+msgstr "Anner Adressaten, de en Kopie vun de Naricht tostüert warrt"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
+#: ui/customtemplates_base.ui:238
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"When using this template, the recipients you enter here will by default get "
+"a copy of this message.  This is a comma-separated list of mail addresses."
+msgstr ""
+"Bruukst Du disse Vörlaag, warrt de Adressaten, de ehr Nettpostadressen Du "
+"hier mit Kommas as Trennteken ingeven kannst, standardwies en Kopie vun de "
+"Naricht tostüert."
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
+#: ui/customtemplates_base.ui:255
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The custom template"
+msgstr "De egen Vörlaag"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, mEdit)
+#: ui/customtemplates_base.ui:258
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This area contains the associated custom template."
+msgstr "Dit Rebeet bargt de tohören egen Vörlaag"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:283
+#, kde-format
+msgctxt "@item:inlistbox Universal custom template type."
+msgid "Universal"
+msgstr "Allmeen"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:288
+#, kde-format
+msgctxt "@item:inlistbox Custom template type for message replies"
+msgid "Reply"
+msgstr "Antern"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:293
+#, kde-format
+msgctxt "@item:inlistbox Custom template type for reply-to-all messages"
+msgid "Reply to All"
+msgstr "Na all antern"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:298
+#, fuzzy, kde-format
+#| msgctxt "Message->"
+#| msgid "Forward"
+msgctxt "@item:inlistbox Custom template type for message forwards"
+msgid "Forward"
+msgstr "Wiederledden"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: ui/customtemplates_base.ui:306
+#, kde-format
+msgctxt "@label"
+msgid "Shortc&ut:"
+msgstr "&Tastkombinatschoon:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: ui/customtemplates_base.ui:325
+#, kde-format
+msgctxt "@label"
+msgid "&Template type:"
+msgstr "&Vörlaag-Typ:"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TemplatesConfigurationBase)
+#: ui/templatesconfiguration_base.ui:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Template Configuration"
+msgstr "Vörlagen instellen"
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_new)
+#: ui/templatesconfiguration_base.ui:77
+#, kde-format
+msgctxt "@title Message template"
+msgid "New Message"
+msgstr "Nieg Naricht"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
+#: ui/templatesconfiguration_base.ui:89
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for new messages"
+msgstr "Narichtenvörlaag för nieg Narichten opstellen"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
+#: ui/templatesconfiguration_base.ui:92
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for new email messages.  For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"Hier kannst Du en Vörlaag för nieg Nettbreven opstellen. Wenn Du mehr dor "
+"över weten wullt, woans dat geiht, klick op den \"Wodennig funkscheneert dat?"
+"\"-Link binnen den Dialoog."
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_reply)
+#: ui/templatesconfiguration_base.ui:108
+#, kde-format
+msgctxt "@title Message template"
+msgid "Reply to Sender"
+msgstr "Antwoort na Senner"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
+#: ui/templatesconfiguration_base.ui:146
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for message replies"
+msgstr "Narichtenvörlaag för't Antern opstellen"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
+#: ui/templatesconfiguration_base.ui:149
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for messages replies. For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"Hier kannst Du en Vörlaag för Antwoorden op Nettbreven opstellen. Wenn Du "
+"mehr dor över weten wullt, woans dat geiht, klick op den \"Wodennig "
+"funkscheneert dat?\"-Link binnen den Dialoog."
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
+#: ui/templatesconfiguration_base.ui:165
+#, kde-format
+msgctxt "@title Message template"
+msgid "Reply to All / Reply to List"
+msgstr "Na all antern / Na List antern"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
+#: ui/templatesconfiguration_base.ui:203
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for replying to all recipients or to a mailing list"
+msgstr "Narichtenvörlaag för't Antern na all oder na Nettpostlisten opstellen"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
+#: ui/templatesconfiguration_base.ui:206
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for reply-to-all messages or replies to "
+"a mailing list.  For more information about how to create the template, "
+"press the \"How does this work?\" link on this dialog."
+msgstr ""
+"Hier kannst Du en Vörlaag för Antwoorden na all oder na Nettpostlisten "
+"opstellen. Wenn Du mehr dor över weten wullt, woans dat geiht, klick op den "
+"\"Wodennig funkscheneert dat?\"-Link binnen den Dialoog."
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_forward)
+#: ui/templatesconfiguration_base.ui:222
+#, kde-format
+msgctxt "@title Message template"
+msgid "Forward Message"
+msgstr "Naricht wiederledden"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
+#: ui/templatesconfiguration_base.ui:260
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for message forwards"
+msgstr "Narichtenvörlaag för't Wiederledden opstellen"
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
+#: ui/templatesconfiguration_base.ui:263
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for message forwards.  For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"Hier kannst Du en Vörlaag för't Wiederledden vun Nettbreven opstellen. Wenn "
+"Du mehr dor över weten wullt, woans dat geiht, klick op den \"Wodennig "
+"funkscheneert dat?\"-Link binnen den Dialoog."
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: ui/templatesconfiguration_base.ui:303
+#, kde-format
+msgctxt "@label:textbox Prefix for quoted message lines"
+msgid "&Quote indicator:"
+msgstr "&Zitaatmark:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
+#: ui/templatesconfiguration_base.ui:316
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Set the Prefix for quoted message lines"
+msgstr "De Vöranstellen för ziteert Regen fastleggen"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
+#: ui/templatesconfiguration_base.ui:326
+#, no-c-format, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"\n"
+"             <qt>The following placeholders are supported in the quote "
+"indicator:\n"
+"             <ul>\n"
+"             <li>%f: sender's initials</li>\n"
+"             <li>%%: percent sign</li>\n"
+"             <li>%_: space</li>\n"
+"             </ul></qt>\n"
+"           "
+msgstr ""
+"\n"
+"             <qt>Du kannst disse Platzhollers binnen de Zitaatmark bruken:\n"
+"             <ul>\n"
+"             <li>%f: Den Senner sien Anfangbookstaven</li>\n"
+"             <li>%%: Perzentteken</li>\n"
+"             <li>%_: Freeteken</li>\n"
+"             </ul></qt>\n"
+"           "
+
+#~ msgctxt "@item:inlistbox Custom template type for messsage forwards"
+#~ msgid "Forward"
+#~ msgstr "Wiederledden"
+
+#, fuzzy
+#~| msgid "Reply or forward using HTML if present"
+#~ msgid "Reply or forward using HTML based on Visual Format"
+#~ msgstr "Mit HTML antern oder wiederledden, wenn verföögbor"
+
+#~ msgctxt "Universal custom template type."
+#~ msgid "Universal"
+#~ msgstr "Allmeen"
+
+#~ msgctxt "Template type for forwarding messages."
+#~ msgid "Forward"
+#~ msgstr "Wiederledden"

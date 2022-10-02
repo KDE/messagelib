@@ -1,0 +1,323 @@
+# translation of kmail.po to Français
+# translation of kmail.po to
+# traduction de kmail.po en Français
+#
+# Copyright (C) 2002,2003,2004, 2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+# Gérard Delafond <gerard@delafond.org>, 2002, 2004, 2006.
+# Gilles CAULIER <caulier.gilles@free.fr>, 2002,2003.
+# Robert Jacolin <rjacolin@ifrance.com>, 2003,2004.
+# Matthieu Robin <kde@macolu.org>, 2003, 2004.
+# Jean-Marc DUVAL <shadowcatcher@free.fr>, 2003,2004.
+# Matthieu Robin <kde@macolu.org>, 2004, 2005, 2006.
+# Joëlle Cornavin <jcornavi@kde-france.org>, 2004.
+# Nicolas Ternisien <nicolast@libertysurf.fr>, 2004, 2005.
+# JC <JCF@JC>, 2005.
+# Nicolas Ternisien <nicolas.ternisien@gmail.com>, 2005, 2006, 2007, 2008, 2009.
+# Matthieu Robin <matthieu@macolu.org>, 2005.
+# Ludovic Grossard <grossard@kde.org>, 2006.
+# Mickael Sibelle <kimael@gmail.com>, 2008.
+# Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008, 2009.
+# Anne-Marie Mahfouf <annemarie.mahfouf@free.fr>, 2009.
+# Geoffray Levasseur <geoffray.levasseurbrandin@numericable.fr>, 2009, 2010, 2011, 2012, 2013.
+# Sebastien Renard <Sebastien.Renard@digitalfox.org>, 2009, 2013.
+# xavier <xavier.besnard@neuf.fr>, 2012.
+# Vincent PINON <vpinon@kde.org>, 2013, 2014, 2015, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2016-03-25 08:36+0100\n"
+"Last-Translator: Vincent Pinon <vpinon@kde.org>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 2.0\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Sans nom"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Mauvais module externe de cryptographie."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Aucun module externe de cryptographie n'a été trouvé."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "Aucun module externe « %1 » n'a été trouvé."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr ""
+"Le module externe de cryptographie « %1 » ne peut pas vérifier les "
+"signatures."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"Le message est signé, mais il est impossible de vérifier la validité de la "
+"signature.<br />La cause est : %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr ""
+"Le module externe de cryptographie « %1 » ne peut déchiffrer les messages."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr ""
+"Le module externe de cryptographie « %1 » ne peut pas déchiffrer les données."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Erreur : %1"
+
+#~ msgid "Reason: %1"
+#~ msgstr "Raison : %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Désolé, aucun certificat n'a été trouvé dans ce message."
+
+#~ msgid "Certificate import status:"
+#~ msgstr "État de l'importation des certificats :"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "1 nouveau certificat importé."
+#~ msgstr[1] "%1 nouveaux certificats importés."
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "1 certificat non modifié."
+#~ msgstr[1] "%1 certificats non modifiés."
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "1 nouvelle clé secrète importée."
+#~ msgstr[1] "%1 nouvelles clés secrètes importées."
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "1 clé secrète non modifiée."
+#~ msgstr[1] "%1 clés secrètes non modifiées."
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr ""
+#~ "Désolé, il n'y a pas de précisions sur l'importation des certificats."
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Précisions sur l'importation des certificats :"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Échec : %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "Message encapsulé"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "Fin du message encapsulé"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "Ce message est chiffré."
+
+#~ msgid "Decrypt Message"
+#~ msgstr "Déchiffrer le message"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Veuillez patienter pendant le déchiffrement du message..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "Message chiffré"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "Message chiffré (déchiffrage indisponible)"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Impossible de déchiffrer les données."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "Fin du message chiffré"
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Veuillez patienter pendant la vérification de la signature..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Pas assez d'informations pour vérifier la signature. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Le message a été signé par « %1 »."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Le message a été signé avec une clé inconnue."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Le message a été signé avec la clé « %1 »."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Le message a été signé par « %3 » le %1 avec la clé « %2 »."
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Le message a été signé le %1 avec la clé « %2 »."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Le message a été signé par « %2 » avec la clé « %1 »."
+
+#~ msgid "Status: "
+#~ msgstr "État : "
+
+#~ msgid "Hide Details"
+#~ msgstr "Masquer les détails"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Le message a été signé le %1 avec la clé inconnue « %2 »."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Le message a été signé avec la clé inconnue « %1 »."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Impossible de vérifier la validité de la signature."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Le message a été signé par « %2 » (clé numéro : %1)."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr ""
+#~ "La signature est valable, mais il est impossible de déterminer la "
+#~ "validité de la clé."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "La signature est valable et la clé est moyennement sûre."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "La signature est valable et la clé est sûre."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "La signature est valable et la clé est totalement sûre."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "La signature est valable mais la clé n'est pas sûre."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Attention : la signature n'est pas valable."
+
+#~ msgid "Invalid signature."
+#~ msgstr "Signature non valable."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "Pas assez d'informations pour vérifier la signature."
+
+#~ msgid "Signature is valid."
+#~ msgstr "La signature est valable."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "État inconnu de la signature"
+
+#~ msgid "Show Details"
+#~ msgstr "Afficher les détails"
+
+#~ msgid "End of signed message"
+#~ msgstr "Fin du message signé"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Erreur : signature non vérifiée"
+
+#~ msgid "Good signature"
+#~ msgstr "Signature correcte"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "Signature <b>incorrecte</b>"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Pas de clé publique pour vérifier la signature"
+
+#~ msgid "No signature found"
+#~ msgstr "Aucune signature n'a été trouvée"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Erreur en vérifiant la signature"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Résultats différents pour les signatures"
+
+#~ msgid "No status information available."
+#~ msgstr "Aucune information d'état n'est disponible."
+
+#~ msgid "Good signature."
+#~ msgstr "Signature correcte."
+
+#~ msgid "One key has expired."
+#~ msgstr "Une clé a expiré."
+
+#~ msgid "The signature has expired."
+#~ msgstr "La signature est expirée."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Impossible de vérifier : clé manquante."
+
+#~ msgid "CRL not available."
+#~ msgstr "Liste de révocation de certificats non disponible."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "La liste de révocation de certificats est trop ancienne."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Impossible de trouver une politique."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Une erreur système est survenue."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Une clé a été révoquée."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "Signature <b>incorrecte</b>."
+
+#~ msgid "certificate"
+#~ msgstr "certificat"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Avertissement :"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "L'adresse de l'expéditeur n'est pas stockée dans le %1 utilisé pour "
+#~ "signer."
+
+#~ msgid "sender: "
+#~ msgstr "Expéditeur : "
+
+#~ msgid "stored: "
+#~ msgstr "stocké : "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Aucune adresse électronique n'est stockée dans le « %1 » utilisé pour "
+#~ "signer. De ce fait, il est impossible de la comparer avec l'adresse de "
+#~ "l'expéditeur « %2 »."

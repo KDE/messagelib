@@ -1,0 +1,390 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Xosé <xosecalvo@gmail.com>, 2009, 2010, 2011, 2012, 2013.
+# Marce Villarino <mvillarino@kde-espana.org>, 2014.
+# Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015, 2016, 2017.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2019-02-17 19:10+0100\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xosé Calvo"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xosecalvo@gmail.com"
+
+#: attachment/attachmentcompressjob.cpp:50
+#, kde-format
+msgid "Could not initiate attachment compression."
+msgstr "Non se puido iniciar a compresión do anexo."
+
+#: attachment/attachmentcompressjob.cpp:60
+#, kde-format
+msgid "Could not compress the attachment."
+msgstr "Non se puido comprimir o anexo."
+
+#: attachment/attachmentfromfolderjob.cpp:51
+#, kde-format
+msgid "Could not create compressed file."
+msgstr "Non se puido crear un ficheiro comprimido."
+
+#: attachment/attachmentfromfolderjob.cpp:90
+#, kde-format
+msgid ""
+"The resulting attachment would be larger than the maximum allowed size, "
+"aborting."
+msgstr ""
+"O anexo resultante sería máis grande do que o tamaño máximo permitido; "
+"interrómpese."
+
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
+#, kde-format
+msgid "Could not add %1 to the archive"
+msgstr "Non se puido engadir %1 ao arquivo"
+
+#: attachment/attachmentfromfolderjob.cpp:113
+#, kde-format
+msgid "Could not open %1 for reading."
+msgstr "Non se puido abrir %1 para ler."
+
+#: attachment/attachmentfromurljob.cpp:69
+#, kde-format
+msgctxt "a file called 'unknown.ext'"
+msgid "unknown%1"
+msgstr "descoñecido%1"
+
+#: attachment/attachmentfromurljob.cpp:71
+#, kde-format
+msgctxt "a file called 'unknown'"
+msgid "unknown"
+msgstr "descoñecido"
+
+#: attachment/attachmentfromurljob.cpp:103
+#, kde-format
+msgid "\"%1\" not found. Please specify the full path."
+msgstr "Non foi posíbel atopar «%1». Indique a ruta completa."
+
+#: attachment/attachmentfromurljob.cpp:112
+#, kde-format
+msgid "You may not attach files bigger than %1. Share it with storage service."
+msgstr ""
+"Non é posíbel anexar ficheiros que superen %1. Compártao co servizo de "
+"almacenamento."
+
+#: attachment/attachmentpropertiesdialog.cpp:133
+#, kde-format
+msgid ""
+"<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
+"touch this setting, since the type of the file is automatically checked; "
+"but, sometimes, %1 may not detect the type correctly -- here is where you "
+"can fix that.</p>"
+msgstr ""
+"<p>O <em>tipo MIME</em> do ficheiro:</p><p>Normalmente, non hai que tocar "
+"esta opción, dado que se comproba automaticamente o tipo de ficheiro; ás "
+"veces, porén, %1 pode non detectar o tipo correctamente -- aquí é onde se "
+"pode solucionar iso.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:141
+#, kde-format
+msgid ""
+"<p>The estimated size of the attachment:</p><p>Note that, in an email "
+"message, a binary file encoded with base64 will take up four thirds the "
+"actual size of the file.</p>"
+msgstr ""
+"<p>O tamaño estimado do anexo:</p><p>Lembre que nas mensaxes de correo un "
+"ficheiro binario codificado con base54 ocupa catro quintas partes do tamaño "
+"real do ficheiro.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:146
+#, kde-format
+msgid ""
+"<p>The file name of the part:</p><p>Although this defaults to the name of "
+"the attached file, it does not specify the file to be attached; rather, it "
+"suggests a file name to be used by the recipient's mail agent when saving "
+"the part to disk.</p>"
+msgstr ""
+"<p>O nome de ficheiro da parte:</p><p>Aínda que de maneira predeterminada é "
+"o nome do ficheiro anexado, non especifica o ficheiro que se anexa; no canto "
+"disto, suxire un nome de ficheiro para que utilice o axente de correo do "
+"destinatario ao gardar a parte no disco.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:153
+#, kde-format
+msgid ""
+"<p>A description of the part:</p><p>This is just an informational "
+"description of the part, much like the Subject is for the whole message; "
+"most mail agents will show this information in their message previews "
+"alongside the attachment's icon.</p>"
+msgstr ""
+"<p>Unha descrición da parte:</p><p>Isto é simplemente unha descrición "
+"informativa da parte, similar ao que é o asunto para a mensaxe completa; a "
+"maioría dos axentes de correo mostran esta información nas vistas previas da "
+"mensaxe xunto coa icona do anexo.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:160
+#, kde-format
+msgid ""
+"<p>The transport encoding of this part:</p><p>Normally, you do not need to "
+"change this, since %1 will use a decent default encoding, depending on the "
+"MIME type; yet, sometimes, you can significantly reduce the size of the "
+"resulting message, e.g. if a PostScript file does not contain binary data, "
+"but consists of pure text -- in this case, choosing \"quoted-printable\" "
+"over the default \"base64\" will save up to 25% in resulting message size.</"
+"p>"
+msgstr ""
+"<p>A codificación do transporte desta parte:</p><p>Normalmente, non hai que "
+"cambiar isto, dado que %1 emprega unha codificación decente de maneira "
+"predeterminada, dependendo do tipo MIME; porén, ás veces, pódese reducir de "
+"maneira significativa o tamaño da mensaxe resultante, por exemplo se un "
+"ficheiro PostScript non contén datos binarios, senón que consiste só en "
+"texto -- neste caso, escoller «imprimíbel entre aspas» no canto do valor "
+"predeterminado («base64») aforra ata un 25% no tamaño da mensaxe resultante."
+"</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:171
+#, kde-format
+msgid ""
+"<p>Check this option if you want to suggest to the recipient the automatic "
+"(inline) display of this part in the message preview, instead of the default "
+"icon view;</p><p>Technically, this is carried out by setting this part's "
+"<em>Content-Disposition</em> header field to \"inline\" instead of the "
+"default \"attachment\".</p>"
+msgstr ""
+"<p>Marque esta opción se lle quere suxerir ao destinatario a exhibición "
+"automática (na liña) desta parte ao previsualizar a mensaxe, no canto da "
+"vista con iconas predeterminada;</p><p>Tecnicamente, isto realízase "
+"configurando o campo da cabeceira <em>Content-Disposition</em> da parte como "
+"«inline» no canto de «attachment».</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:179
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be signed.</p><p>The "
+"signature will be made with the key that you associated with the currently-"
+"selected identity.</p>"
+msgstr ""
+"<p>Marque esta opción se quere que esta parte da mensaxe vaia asinada.</"
+"p><p>A sinatura faise coa chave asociada coa identidade seleccionada.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:185
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be encrypted.</"
+"p><p>The part will be encrypted for the recipients of this message.</p>"
+msgstr ""
+"<p>Marque esta opción se quere que esta parte da mensaxe vaia cifrada.</"
+"p><p>A parte cífrase para os destinatarios da mensaxe.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:306
+#: attachment/attachmentpropertiesdialog.cpp:321
+#, fuzzy, kde-format
+#| msgid "Attachment Properties"
+msgctxt "@title:window"
+msgid "Attachment Properties"
+msgstr "Propiedades do anexo"
+
+#: attachment/attachmentupdatejob.cpp:40
+#, kde-format
+msgid "URL is empty."
+msgstr "O enderezo URL está baleiro."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: attachment/ui/attachmentpropertiesdialog.ui:39
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:60
+#, kde-format
+msgctxt "MIME type of this attachment"
+msgid "Type:"
+msgstr "Tipo:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: attachment/ui/attachmentpropertiesdialog.ui:82
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:87
+#, kde-format
+msgctxt "size of the attachment"
+msgid "Size:"
+msgstr "Tamaño:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: attachment/ui/attachmentpropertiesdialog.ui:109
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:114
+#, kde-format
+msgctxt "file name of the attachment"
+msgid "Name:"
+msgstr "Nome:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: attachment/ui/attachmentpropertiesdialog.ui:139
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:134
+#, kde-format
+msgctxt "description of the attachment"
+msgid "Description:"
+msgstr "Descrición:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: attachment/ui/attachmentpropertiesdialog.ui:169
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:154
+#, kde-format
+msgctxt "encoding of the attachment"
+msgid "Encoding:"
+msgstr "Codificación:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoDisplay)
+#: attachment/ui/attachmentpropertiesdialog.ui:187
+#, kde-format
+msgid "Suggest automatic display"
+msgstr "Suxerir que se mostre automaticamente"
+
+#. i18n: ectx: property (text), widget (QCheckBox, encrypt)
+#: attachment/ui/attachmentpropertiesdialog.ui:194
+#, kde-format
+msgid "Encrypt this attachment"
+msgstr "Cifrar este anexo"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sign)
+#: attachment/ui/attachmentpropertiesdialog.ui:201
+#, kde-format
+msgid "Sign this attachment"
+msgstr "Asinar este anexo"
+
+#. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
+#: settings/messagecore.kcfg:34
+#, kde-format
+msgid ""
+"Changing this from its default 'Auto' will force the use of the specified "
+"encoding for all emails, regardless of what they specify themselves."
+msgstr ""
+"Se cambia o valor predeterminado «Automático», obrígase a empregar a "
+"codificación específica para todos os correos electrónicos, omitindo o que "
+"eles mesmos especifiquen."
+
+#. i18n: ectx: label, entry (QuotedText3), group (Reader)
+#: settings/messagecore.kcfg:37
+#, kde-format
+msgid "This is the color used in the 3rd level of quoted text"
+msgstr "Esta é a cor empregada no terceiro nivel do texto citado"
+
+#. i18n: ectx: label, entry (QuotedText2), group (Reader)
+#: settings/messagecore.kcfg:41
+#, kde-format
+msgid "This is the color used in the 2nd level of quoted text"
+msgstr "Esta é a cor empregada no segundo nivel do texto citado"
+
+#. i18n: ectx: label, entry (QuotedText1), group (Reader)
+#: settings/messagecore.kcfg:45
+#, kde-format
+msgid "This is the color used in the 1st level of quoted text"
+msgstr "Esta é a cor empregada no primeiro nivel do texto citado"
+
+#. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
+#: settings/messagecore.kcfg:56
+#, kde-format
+msgid "Replace recognized prefi&x with \"Re:\""
+msgstr "Substituír o prefi&xo recoñecido por «Re:»"
+
+#. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
+#: settings/messagecore.kcfg:64
+#, kde-format
+msgid "Replace recognized prefix with \"&Fwd:\""
+msgstr "Substituír o prefixo recoñecido por «&Fwd:»"
+
+#. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
+#: settings/messagecore.kcfg:69
+#, kde-format
+msgid ""
+"The maximum size in bits that email attachments are allowed to have (-1 for "
+"no limit)"
+msgstr ""
+"O tamaño máximo en bits que se lles permite ter aos ficheiros anexos (-1 "
+"significa sen límite)."
+
+#: utils/stringutil.cpp:418
+#, kde-format
+msgctxt "signal that this email is defined in my identity"
+msgid "Me"
+msgstr "Eu"
+
+#~ msgid "TextLabel"
+#~ msgstr "Etiqueta de texto"
+
+#~ msgid "This is the color used to highlight misspelled words"
+#~ msgstr ""
+#~ "Esta é a cor empregada para realzar as palabras con erros ortográficos"
+
+#~ msgid "Specifies the font to use for the message body"
+#~ msgstr "Indica o tipo de letra que se emprega no corpo da mensaxe"
+
+#~ msgid "Specifies the font to use for printing"
+#~ msgstr "Indica o tipo de letra que se emprega para imprimir"
+
+#~ msgid "This is the color used for highlighting all signed messages"
+#~ msgstr "Esta é a cor empregada para realzar todas as mensaxes asinadas"
+
+#~ msgid "This is the color used for highlighting all encrypted messages"
+#~ msgstr "Esta é a cor empregada para realzar todas as mensaxes cifradas"
+
+#~ msgid ""
+#~ "Disregard the user's umask setting and use \"read-write for the user only"
+#~ "\" instead"
+#~ msgstr ""
+#~ "Non considerar a configuración umask do usuario e empregar no seu canto "
+#~ "«lectura-escritura só para o usuario»"
+
+#~ msgid ""
+#~ "Some emails, especially those generated automatically, do not specify the "
+#~ "character encoding which needs to be used to properly display them. In "
+#~ "such cases a fallback character encoding will be used, which you can "
+#~ "configure here. Set it to the character encoding most commonly used in "
+#~ "your part of the world. As a default the encoding configured for the "
+#~ "whole system is used."
+#~ msgstr ""
+#~ "Algúns correos electrónicos, especialmente os xerados automaticamente, "
+#~ "non especifican a codificación de caracteres que precisan usar para que "
+#~ "se mostren axeitadamente. Neses casos emprégase a codificación de "
+#~ "caracteres predefinida, que se pode configurar aquí. Póñao na "
+#~ "codificación de caracteres máis empregada na súa rexión. Emprégase por "
+#~ "omisión a configuración xeral do sistema."
+
+#~ msgid "Could not read file %1."
+#~ msgstr "Non foi posíbel ler o ficheiro %1."
+
+#~ msgid "Edit Note"
+#~ msgstr "Editar a nota"
+
+#~ msgid "Delete Note"
+#~ msgstr "Eliminar a nota"
+
+#~ msgid "Add Note"
+#~ msgstr "Engadir unha nota"
+
+#~ msgid "Enter the text that should be stored as a note to the mail:"
+#~ msgstr "Escriba o texto que desexe almacenar como nota sobre o correo:"
+
+#~ msgid "Do you really want to delete this note?"
+#~ msgstr "Desexa realmente eliminar esta nota?"
+
+#~ msgid "Delete Note?"
+#~ msgstr "Eliminar esta nota?"
+
+#~ msgid "Delete"
+#~ msgstr "Eliminar"
+
+#~ msgid "Open Address Book"
+#~ msgstr "Abrir o caderno de enderezos"

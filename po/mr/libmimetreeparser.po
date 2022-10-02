@@ -1,0 +1,853 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Chetan Khona <chetan@kompkin.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2013-04-12 15:14+0530\n"
+"Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
+"Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
+"Language: mr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "निनावी"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr ""
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr ""
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr ""
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr ""
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr ""
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr ""
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "त्रुटी : %1"
+
+#~ msgid "Reason: %1"
+#~ msgstr "कारण : %1"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "अपयशी झाले: %1 (%2)"
+
+#, fuzzy
+#~| msgid "&Save message..."
+#~ msgid "Encapsulated message"
+#~ msgstr "संदेश साठवा (&S)..."
+
+#, fuzzy
+#~| msgid "&Save message..."
+#~ msgid "End of encapsulated message"
+#~ msgstr "संदेश साठवा (&S)..."
+
+#, fuzzy
+#~| msgid "message"
+#~ msgid "Decrypt Message"
+#~ msgstr "संदेश"
+
+#, fuzzy
+#~| msgid "message"
+#~ msgid "Encrypted message"
+#~ msgstr "संदेश"
+
+#, fuzzy
+#~| msgid "Reason: %1"
+#~ msgid "Reason: "
+#~ msgstr "कारण : %1"
+
+#, fuzzy
+#~| msgid "message"
+#~ msgid "End of encrypted message"
+#~ msgstr "संदेश"
+
+#~ msgid "Status: "
+#~ msgstr "स्थिती : "
+
+#, fuzzy
+#~| msgid "message"
+#~ msgid "End of signed message"
+#~ msgstr "संदेश"
+
+#, fuzzy
+#~| msgid "No description available"
+#~ msgid "No status information available."
+#~ msgstr "वर्णन उपलब्ध नाही"
+
+#, fuzzy
+#~| msgid "certificate"
+#~ msgid "certificate"
+#~ msgstr "प्रमाणपत्र"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "इशारा :"
+
+#, fuzzy
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "sender: "
+#~ msgstr "हेडर्स (&H)"
+
+#~ msgid "Subject:"
+#~ msgstr "विषय :"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "To:"
+#~ msgstr "पर्यंत : "
+
+#~ msgid "Reply to:"
+#~ msgstr "यास उत्तर द्या :"
+
+#~ msgid "CC:"
+#~ msgstr "CC:"
+
+#~ msgid "BCC:"
+#~ msgstr "BCC:"
+
+#~ msgid "From:"
+#~ msgstr "पासून :"
+
+#~ msgid "Spam Status:"
+#~ msgstr "स्पाम स्थिती :"
+
+#~ msgid "Date:"
+#~ msgstr "दिनांक :"
+
+#, fuzzy
+#~| msgid "(resent from %1)"
+#~ msgid "resent from"
+#~ msgstr "(अलिकडील पासून  %1)"
+
+#, fuzzy
+#~| msgid "[vCard]"
+#~ msgid "[vcard]"
+#~ msgstr "[व्ही-कार्ड]"
+
+#~ msgctxt "Unknown date"
+#~ msgid "Unknown"
+#~ msgstr "अपरिचीत"
+
+#~ msgid "No Subject"
+#~ msgstr "विषय नाही"
+
+#~ msgid "No Spam agent"
+#~ msgstr "स्पाम प्रतिनिधी नाही"
+
+#~ msgid ""
+#~ "%1.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1.\n"
+#~ "\n"
+#~ "पूर्ण अहवाल :\n"
+#~ "%2"
+
+#, fuzzy
+#~| msgid "Reply to:"
+#~ msgid "Reply"
+#~ msgstr "यास उत्तर द्या :"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply to All"
+#~ msgstr "यास उत्तर द्या : "
+
+#, fuzzy
+#~| msgid "message"
+#~ msgid "New Message"
+#~ msgstr "संदेश"
+
+#, fuzzy
+#~| msgid "message"
+#~ msgid "Print Preview"
+#~ msgstr "संदेश"
+
+#~ msgctxt "View->"
+#~ msgid "&Headers"
+#~ msgstr "हेडर्स (&H)"
+
+#~ msgid "Choose display style of message headers"
+#~ msgstr "संदेश हेडर्स ची दृश्य शैली निवडा"
+
+#~ msgid "Date: "
+#~ msgstr "दिनांक : "
+
+#~ msgid "From: "
+#~ msgstr "पासून : "
+
+#~ msgid "[vCard]"
+#~ msgstr "[व्ही-कार्ड]"
+
+#~ msgctxt "To-field of the mailheader."
+#~ msgid "To: "
+#~ msgstr "पर्यंत : "
+
+#~ msgid "CC: "
+#~ msgstr "CC: "
+
+#~ msgid "BCC: "
+#~ msgstr "BCC: "
+
+#~ msgid "Reply to: "
+#~ msgstr "यास उत्तर द्या : "
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "Edit Attachment"
+#~ msgstr "अटॅचमेंट :"
+
+#~ msgid "Edit"
+#~ msgstr "संपादन"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "प्रमाणित हेडर्स (&S)"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "संदेश हेडर्स ची प्रमाणित यादी दर्शवा "
+
+#, fuzzy
+#~| msgid "Show HTML status bar"
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "एचटीएमएल स्थिती पट्टी दर्शवा"
+
+#, fuzzy
+#~| msgid "Show all message headers"
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "सर्व संदेश हेडर्स दर्शवा "
+
+#, fuzzy
+#~| msgid "Show custom headers"
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "ऐच्छिक हेडर्स दर्शवा"
+
+#, fuzzy
+#~| msgid "Show Message Structure"
+#~ msgid "Message Structure Viewer"
+#~ msgstr "संदेश रचना दर्शवा"
+
+#~ msgid "Options"
+#~ msgstr "पर्याय"
+
+#, fuzzy
+#~| msgid "Show HTML status bar"
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "एचटीएमएल स्थिती पट्टी दर्शवा"
+
+#, fuzzy
+#~| msgid "Show all message headers"
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "सर्व संदेश हेडर्स दर्शवा "
+
+#, fuzzy
+#~| msgid "Minimum font size:"
+#~ msgid "&Minimum font size:"
+#~ msgstr "किमान फॉन्ट आकार :"
+
+#~ msgid ""
+#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr ""
+#~ "\"%1\" नावाची फाईल आधीपासूनच अस्तित्वात आहे. तुम्हाला ती खोडून पुन्हा लिहायची आहे "
+#~ "का?"
+
+#~ msgid "Overwrite File?"
+#~ msgstr "फाईल खोडून पुन्हा लिहायची का?"
+
+#, fuzzy
+#~| msgid "Save All Attachments..."
+#~ msgid "Save Attachments To"
+#~ msgstr "सर्व अटॅचमेंट साठवा..."
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgctxt "filename for an unnamed attachment"
+#~ msgid "attachment.1"
+#~ msgstr "अटॅचमेंट :"
+
+#, fuzzy
+#~| msgid "Save All Attachments..."
+#~ msgid "Save Attachment"
+#~ msgstr "सर्व अटॅचमेंट साठवा..."
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgctxt "filename for the %1-th unnamed attachment"
+#~ msgid "attachment.%1"
+#~ msgstr "अटॅचमेंट :"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Keep Encryption"
+#~ msgstr "वर्णन"
+
+#~ msgid "message"
+#~ msgstr "संदेश"
+
+#, fuzzy
+#~| msgid "&Save message..."
+#~ msgid "Save Message"
+#~ msgid_plural "Save Messages"
+#~ msgstr[0] "संदेश साठवा (&S)..."
+#~ msgstr[1] "संदेश साठवा (&S)..."
+
+#, fuzzy
+#~| msgid "&Save message..."
+#~ msgid "We cannot save message."
+#~ msgstr "संदेश साठवा (&S)..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "%1 सह उघडा (&w)"
+
+#, fuzzy
+#~| msgid "%1: "
+#~ msgctxt "@item:inmenu Open With, %1 is application name"
+#~ msgid "%1"
+#~ msgstr "%1: "
+
+#~ msgid "Edit with:"
+#~ msgstr "याने संपादित करा :"
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "अटॅचमेंट संपादित करू शकत नाही"
+
+#~ msgid "Description"
+#~ msgstr "वर्णन"
+
+#~ msgid "Type"
+#~ msgstr "प्रकार"
+
+#~ msgid "Size"
+#~ msgstr "आकार"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "निनावी प्लगइन"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply To All"
+#~ msgstr "यास उत्तर द्या : "
+
+#, fuzzy
+#~| msgid "message"
+#~ msgid "Print Message"
+#~ msgstr "संदेश"
+
+#, fuzzy
+#~| msgid "message"
+#~ msgid "Print Preview Message"
+#~ msgstr "संदेश"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "Show attachment list."
+#~ msgstr "अटॅचमेंट :"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "Hide attachment list."
+#~ msgstr "अटॅचमेंट :"
+
+#, fuzzy
+#~| msgid "Copy Link Address"
+#~ msgid "&Open in Address Book"
+#~ msgstr "लिंकच्या पत्त्याची प्रत करा"
+
+#~ msgid "&Copy Email Address"
+#~ msgstr "इमेल पत्त्याची प्रत करा (&C)"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "Attachment: %1"
+#~ msgstr "अटॅचमेंट :"
+
+#, fuzzy
+#~| msgid "&Save message..."
+#~ msgid "Encapsulated Message (Subject: %1)"
+#~ msgstr "संदेश साठवा (&S)..."
+
+#, fuzzy
+#~| msgid "Unable to edit attachment"
+#~ msgid "Unnamed attachment"
+#~ msgstr "अटॅचमेंट संपादित करू शकत नाही"
+
+#, fuzzy
+#~| msgid "Open URL"
+#~ msgid "Opening URL..."
+#~ msgstr "URL उघडा"
+
+#~ msgctxt "@info"
+#~ msgid "Do you really want to execute <filename>%1</filename>?"
+#~ msgstr "तुम्हाला नक्की '<filename>%1</filename> कार्यान्वित करायचे आहे का?"
+
+#~ msgid "Execute"
+#~ msgstr "कार्यान्वित करा"
+
+#, fuzzy
+#~| msgid "&Save message..."
+#~ msgid "Loading message..."
+#~ msgstr "संदेश साठवा (&S)..."
+
+#, fuzzy
+#~| msgid "Open Attachment?"
+#~ msgid "Delete Attachment"
+#~ msgstr "अटॅचमेंट उघडायची का?"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "याच्यासह उघडा (&O)"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "इतर (&O)..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "यामध्ये उघडा (&O)..."
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "उघडा"
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "दृश्य"
+
+#~ msgid "Save As..."
+#~ msgstr "असे साठवा..."
+
+#~ msgid "Copy"
+#~ msgstr "प्रत करा"
+
+#~ msgid "Properties"
+#~ msgstr "गुणधर्म"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "View Attachment: %1"
+#~ msgstr "अटॅचमेंट :"
+
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "अटॅचमेंट (&A)"
+
+#, fuzzy
+#~| msgid "Choose display style of message headers"
+#~ msgid "Choose display style of attachments"
+#~ msgstr "संदेश हेडर्स ची दृश्य शैली निवडा"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&As Icons"
+#~ msgstr "चिन्हा प्रमाणे (&A)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Smart"
+#~ msgstr "हुशार (&S)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Inline"
+#~ msgstr "इनलाइन (&I)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "लपवा (&H)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "In Header Only"
+#~ msgstr "फक्त शिर्षकात"
+
+#~ msgid "&Set Encoding"
+#~ msgstr "एन्कोडिंग निश्चित करा (&S)"
+
+#~ msgid "Auto"
+#~ msgstr "स्वयंचलित"
+
+#~ msgid "Select All Text"
+#~ msgstr "सर्व मजकूर निवडा"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "लिंकच्या पत्त्याची प्रत करा"
+
+#~ msgid "Open URL"
+#~ msgstr "URL उघडा"
+
+#~ msgid "Show Message Structure"
+#~ msgstr "संदेश रचना दर्शवा"
+
+#~ msgid "&View Source"
+#~ msgstr "स्रोत पहा (&V)"
+
+#~ msgid "&Save message..."
+#~ msgstr "संदेश साठवा (&S)..."
+
+#, fuzzy
+#~| msgid "message"
+#~ msgid "Scroll Message Up"
+#~ msgstr "संदेश"
+
+#~ msgid "Speak Text"
+#~ msgstr "मजकूर बोला"
+
+#~ msgid "Copy Image Location"
+#~ msgstr "प्रतिमेच्या ठिकाणाची प्रत करा"
+
+#, fuzzy
+#~| msgid "&Save message..."
+#~ msgid "&Find in Message..."
+#~ msgstr "संदेश साठवा (&S)..."
+
+#~ msgid "Save &As..."
+#~ msgstr "असे साठवा (&A)..."
+
+#~ msgid "Open With..."
+#~ msgstr "यामध्ये उघडा..."
+
+#~ msgid "Save All Attachments..."
+#~ msgstr "सर्व अटॅचमेंट साठवा..."
+
+#~ msgid "Copy Email Address"
+#~ msgstr "इमेल पत्ता प्रतिकृत करा"
+
+#~ msgid "Attachments:"
+#~ msgstr "अटॅचमेंट :"
+
+#~ msgid "Open Attachment?"
+#~ msgstr "अटॅचमेंट उघडायची का?"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr "यामध्ये उघडा (&O) '%1'"
+
+#~ msgid "&Open With..."
+#~ msgstr "यामध्ये उघडा (&O)..."
+
+#~ msgid "Do not ask again"
+#~ msgstr "पुन्हा विचारु नका"
+
+#~ msgctxt "Unchanged mail message"
+#~ msgid "Raw Source"
+#~ msgstr "कच्चा स्रोत"
+
+#~ msgctxt "Mail message as shown, in HTML format"
+#~ msgid "HTML Source"
+#~ msgstr "एचटीएमएल स्रोत"
+
+#~ msgid "&Import"
+#~ msgstr "आयात (&I)"
+
+#, fuzzy
+#~| msgctxt "Find and go to the next search match"
+#~| msgid "Next"
+#~ msgid "&Next Card"
+#~ msgstr "पुढील"
+
+#, fuzzy
+#~| msgctxt "Find and go to the previous search match"
+#~| msgid "Previous"
+#~ msgid "&Previous Card"
+#~ msgstr "मागील"
+
+#~ msgid "&Zoom In"
+#~ msgstr "मोठे करा (&Z)"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "लहान करा (&O)"
+
+#~ msgid "Reset"
+#~ msgstr "पुन्हस्थापित करा"
+
+#, fuzzy
+#~| msgid "&Zoom In"
+#~ msgid "Zoom"
+#~ msgstr "मोठे करा (&Z)"
+
+#~ msgid "Close"
+#~ msgstr "बंद करा"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "शोधा (&I):"
+
+#~ msgid "Text to search for"
+#~ msgstr "शोधावयाचा मजकूर"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "पुढील"
+
+#~ msgid "Jump to next match"
+#~ msgstr "पुढील जुळणीवर थेट जा"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "मागील"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "आधीच्या जुळणीवर थेट जा"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "शोध पध्दती सुधारा"
+
+#~ msgid "Case sensitive"
+#~ msgstr "अक्षर आकार संवेदनशील"
+
+#, fuzzy
+#~| msgid "Subject:"
+#~ msgid "Object"
+#~ msgstr "विषय :"
+
+#, fuzzy
+#~| msgctxt "Unknown date"
+#~| msgid "Unknown"
+#~ msgid "Unknown"
+#~ msgstr "अपरिचीत"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copy url"
+#~ msgstr "प्रत करा"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Copy filter"
+#~ msgstr "काढून टाका (&V)"
+
+#, fuzzy
+#~| msgctxt "to open"
+#~| msgid "Open"
+#~ msgid "Open"
+#~ msgstr "उघडा"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Remove filter"
+#~ msgstr "काढून टाका (&V)"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Add subscription"
+#~ msgstr "वर्णन"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Not subscription added..."
+#~ msgstr "वर्णन"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Import Filters"
+#~ msgstr "काढून टाका (&V)"
+
+#, fuzzy
+#~| msgid "Download new themes..."
+#~ msgid "Download..."
+#~ msgstr "नवीन शैली डाउनलोड करा..."
+
+#, fuzzy
+#~| msgid "Reply to:"
+#~ msgid "Apply to:"
+#~ msgstr "यास उत्तर द्या :"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Remove subscription"
+#~ msgstr "वर्णन"
+
+#, fuzzy
+#~| msgid "A&dd..."
+#~ msgid "..."
+#~ msgstr "जोडा (&D)..."
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Remove Filter"
+#~ msgstr "काढून टाका (&V)"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "सर्व जुळण्या ठळक करा"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "फक्त पाठ्य झूम करा"
+
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "(अपरिचीत)"
+
+#, fuzzy
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "Headers:"
+#~ msgstr "हेडर्स (&H)"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Custom Headers"
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "ऐच्छिक हेडर्स (&H)"
+
+#~ msgid "A&dd..."
+#~ msgstr "जोडा (&D)..."
+
+#~ msgid "Remo&ve"
+#~ msgstr "काढून टाका (&V)"
+
+#~ msgid "&Modify..."
+#~ msgstr "बदला (&M)..."
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "सर्व हेडर्स (&A)"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "संक्षिप्त हेडर्स (&B)"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "संदेश हेडर्स ची संक्षिप्त यादी दर्शवा "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "ऐच्छिक हेडर्स (&H)"
+
+#~ msgid "To: "
+#~ msgstr "पर्यंत : "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "एंटरप्राइस हेडर्स (&E)"
+
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "हेडर्स ची यादी एंटरप्राइस स्वरूपात दर्शवा"
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(अलिकडील पासून  %1)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "पर्यंत : "
+
+#~ msgid "User-Agent: "
+#~ msgstr "वापरकर्ता प्रतिनिधी : "
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-मेलर : "
+
+#~ msgid "Bugzilla: "
+#~ msgstr "बगझिल्ला : "
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "MDN To: "
+#~ msgstr "पर्यंत : "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "नक्षीदार हेडर्स (&F)"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "हेडर्स ची यादी नक्षीदार स्वरूपात दर्शवा"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "लांब हेडर्स (&L)"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "संदेश हेडर्स ची लांब यादी दर्शवा "
+
+#, fuzzy
+#~| msgid "sent: "
+#~ msgid "Event:"
+#~ msgstr "पाठविले : "
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Open &editor..."
+#~ msgstr "यामध्ये उघडा..."
+
+#, fuzzy
+#~| msgid "Edit with:"
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "याने संपादित करा :"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply to \"%1\""
+#~ msgstr "यास उत्तर द्या : "
+
+#~ msgid "Translate..."
+#~ msgstr "भाषांतर..."
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Custom Headers"
+#~ msgid "Configure..."
+#~ msgstr "ऐच्छिक हेडर्स (&H)"
+
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "जोव्ही (मजकूर बोलून दाखवणारी सेवा) सुरु करण्यास अपयश"
+
+#~ msgid "sent: "
+#~ msgstr "पाठविले : "
+
+#~ msgid "View Source Error"
+#~ msgstr "स्रोत त्रुटी पहा"
+
+#~ msgid "Header to show:"
+#~ msgstr "दर्शविण्याचे हेडर्स (&H)"
+
+#~ msgid "Header to hide:"
+#~ msgstr "लपविण्याचे हेडर्स :"
+
+#~ msgid "&Overwrite"
+#~ msgstr "खोडून पुन्हा लिहा (&O)"
+
+#~ msgid "&Ignore"
+#~ msgstr "दुर्लक्ष करा (&I)"
+
+#~ msgid "&Rename"
+#~ msgstr "नाव बदला (&R)"

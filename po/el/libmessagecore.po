@@ -1,0 +1,403 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Dimitrios Glentadakis <dglent@gmail.com>, 2011, 2014.
+# Stelios <sstavra@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2021-07-12 08:12+0300\n"
+"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.04.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Δημήτριος Γλενταδάκης"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "dglent@gmail.com"
+
+#: attachment/attachmentcompressjob.cpp:50
+#, kde-format
+msgid "Could not initiate attachment compression."
+msgstr "Αδύνατη η αρχικοποίηση συμπίεσης των συνημμένων."
+
+#: attachment/attachmentcompressjob.cpp:60
+#, kde-format
+msgid "Could not compress the attachment."
+msgstr "Δεν ήταν δυνατή η συμπίεση του συνημμένου."
+
+#: attachment/attachmentfromfolderjob.cpp:51
+#, kde-format
+msgid "Could not create compressed file."
+msgstr "Δεν ήταν δυνατή η δημιουργία του συμπιεσμένου αρχείου."
+
+#: attachment/attachmentfromfolderjob.cpp:90
+#, kde-format
+msgid ""
+"The resulting attachment would be larger than the maximum allowed size, "
+"aborting."
+msgstr ""
+"Το τελικό συνημμένο θα είναι μεγαλύτερο από το μέγιστο επιτρεπόμενο μέγεθος, "
+"εγκατάλειψις."
+
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
+#, kde-format
+msgid "Could not add %1 to the archive"
+msgstr "Αδύνατη η προσθήκη του %1 στην αρχειοθήκη"
+
+#: attachment/attachmentfromfolderjob.cpp:113
+#, kde-format
+msgid "Could not open %1 for reading."
+msgstr "Αδύνατο το άνοιγμα %1 για ανάγνωση."
+
+#: attachment/attachmentfromurljob.cpp:69
+#, kde-format
+msgctxt "a file called 'unknown.ext'"
+msgid "unknown%1"
+msgstr "άγνωστο%1"
+
+#: attachment/attachmentfromurljob.cpp:71
+#, kde-format
+msgctxt "a file called 'unknown'"
+msgid "unknown"
+msgstr "άγνωστο"
+
+#: attachment/attachmentfromurljob.cpp:103
+#, kde-format
+msgid "\"%1\" not found. Please specify the full path."
+msgstr "Δεν βρέθηκε το «%1». Παρακαλώ ορίστε την πλήρη διαδρομή."
+
+#: attachment/attachmentfromurljob.cpp:112
+#, kde-format
+msgid "You may not attach files bigger than %1. Share it with storage service."
+msgstr ""
+"Ίσως να μην μπορείτε να επισυνάψετε αρχεία μεγαλύτερα από %1. Διαμοιραστείτε "
+"τα μέσω της υπηρεσίας αποθήκευσης."
+
+#: attachment/attachmentpropertiesdialog.cpp:133
+#, kde-format
+msgid ""
+"<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
+"touch this setting, since the type of the file is automatically checked; "
+"but, sometimes, %1 may not detect the type correctly -- here is where you "
+"can fix that.</p>"
+msgstr ""
+"<p>Ο <em>τύπος MIME</em> του αρχείου:</p><p>Κανονικά, δεν χρειάζεται να "
+"αγγίξετε αυτήν τη ρύθμιση, από την στιγμή που ο τύπος του αρχείου ελέγχεται "
+"αυτόματα. Ωστόσο, μερικές φορές, το %1 μπορεί να μην ανιχνεύσει σωστά τον "
+"τύπο -- εδώ λοιπόν είναι που μπορείτε να το διορθώσετε.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:141
+#, kde-format
+msgid ""
+"<p>The estimated size of the attachment:</p><p>Note that, in an email "
+"message, a binary file encoded with base64 will take up four thirds the "
+"actual size of the file.</p>"
+msgstr ""
+"<p>Το εκτιμώμενο μέγεθος του συνημμένου:</p><p>Σημειώστε ότι, σε ένα μήνυμα "
+"αλληλογραφίας, ένα δυαδικό αρχείο κωδικοποιημένο σε base64 θα καταλάβει ως "
+"και τέσσερα τρίτα του πραγματικού μεγέθους του αρχείου.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:146
+#, kde-format
+msgid ""
+"<p>The file name of the part:</p><p>Although this defaults to the name of "
+"the attached file, it does not specify the file to be attached; rather, it "
+"suggests a file name to be used by the recipient's mail agent when saving "
+"the part to disk.</p>"
+msgstr ""
+"<p>Το όνομα αρχείου του συνημμένου:</p><p>Ενώ αναφέρεται στο όνομα του "
+"συνημμένου αρχείου, δεν καθορίζει την επισύναψη του αρχείου. Αντιθέτως, "
+"προτείνει ένα όνομα αρχείου για να χρησιμοποιηθεί από το πρόγραμμα "
+"αλληλογραφίας του παραλήπτη κατά την αποθήκευση του συνημμένου στον δίσκο.</"
+"p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:153
+#, kde-format
+msgid ""
+"<p>A description of the part:</p><p>This is just an informational "
+"description of the part, much like the Subject is for the whole message; "
+"most mail agents will show this information in their message previews "
+"alongside the attachment's icon.</p>"
+msgstr ""
+"<p>Μια περιγραφή του συνημμένου:</p><p>Πρόκειται για μια πληροφοριακή "
+"περιγραφή του συνημμένου, ότι είναι το Θέμα για ολόκληρο το μήνυμα. Τα "
+"περισσότερα προγράμματα αλληλογραφίας θα εμφανίσουν αυτήν την πληροφορία "
+"στην προεπισκόπηση του μηνύματος παράλληλα με το εικονίδιο του συνημμένου.</"
+"p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:160
+#, kde-format
+msgid ""
+"<p>The transport encoding of this part:</p><p>Normally, you do not need to "
+"change this, since %1 will use a decent default encoding, depending on the "
+"MIME type; yet, sometimes, you can significantly reduce the size of the "
+"resulting message, e.g. if a PostScript file does not contain binary data, "
+"but consists of pure text -- in this case, choosing \"quoted-printable\" "
+"over the default \"base64\" will save up to 25% in resulting message size.</"
+"p>"
+msgstr ""
+"<p>Η κωδικοποίηση για την αποστολή του συνημμένου:</p><p>Κανονικά, δεν "
+"χρειάζεται να το αλλάξετε αυτό, από τη στιγμή που το %1 θα χρησιμοποιήσει "
+"την σωστή κωδικοποίηση ανάλογα με τον τύπο MIME. Ωστόσο, μερικές φορές, "
+"μπορείτε να μειώσετε χαρακτηριστικά το μέγεθος του τελικού μηνύματος , π.χ. "
+"αν ένα αρχείο PostScript δεν περιέχει δυαδικά δεδομένα, αλλά αποτελείται από "
+"απλό κείμενο -- σε αυτήν την περίπτωση, επιλέγοντας «quoted-printable» αντί "
+"του προκαθορισμένου «base64» θα εξοικονομηθεί έως και 25% του μεγέθους στο "
+"τελικό μήνυμα.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:171
+#, kde-format
+msgid ""
+"<p>Check this option if you want to suggest to the recipient the automatic "
+"(inline) display of this part in the message preview, instead of the default "
+"icon view;</p><p>Technically, this is carried out by setting this part's "
+"<em>Content-Disposition</em> header field to \"inline\" instead of the "
+"default \"attachment\".</p>"
+msgstr ""
+"<p>Επιλέξτε αυτήν την επιλογή αν επιθυμείτε να προτείνετε στον παραλήπτη την "
+"αυτόματη (εμβόλιμη) προβολή του συνημμένου στην προεπισκόπηση του μηνύματος, "
+"αντί για της προκαθορισμένης προβολής εικονιδίου.</p><p>Τεχνικά, αυτό "
+"πραγματοποιείται ορίζοντας το πεδίο επικεφαλίδας του συνημμένου <em>Content-"
+"Disposition</em> σε «inline» αντί για «attachment».</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:179
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be signed.</p><p>The "
+"signature will be made with the key that you associated with the currently-"
+"selected identity.</p>"
+msgstr ""
+"<p>Επιλέξτε αυτήν την επιλογή αν επιθυμείτε το συνημμένο του μηνύματος να "
+"υπογραφεί.</p><p>Η υπογραφή θα δημιουργηθεί με το κλειδί που έχετε "
+"συσχετίσει με την τρέχουσα επιλεγμένη ταυτότητα.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:185
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be encrypted.</"
+"p><p>The part will be encrypted for the recipients of this message.</p>"
+msgstr ""
+"<p>Επιλέξτε αυτή την επιλογή αν επιθυμείτε την κρυπτογράφηση του συνημμένου."
+"</p><p>Το συνημμένο θα κρυπτογραφηθεί για τους παραλήπτες του μηνύματος.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:306
+#: attachment/attachmentpropertiesdialog.cpp:321
+#, kde-format
+msgctxt "@title:window"
+msgid "Attachment Properties"
+msgstr "Ιδιότητες συνημμένου"
+
+#: attachment/attachmentupdatejob.cpp:40
+#, kde-format
+msgid "URL is empty."
+msgstr "Το URL είναι κενό."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: attachment/ui/attachmentpropertiesdialog.ui:39
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:60
+#, kde-format
+msgctxt "MIME type of this attachment"
+msgid "Type:"
+msgstr "Τύπος:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: attachment/ui/attachmentpropertiesdialog.ui:82
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:87
+#, kde-format
+msgctxt "size of the attachment"
+msgid "Size:"
+msgstr "Μέγεθος:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: attachment/ui/attachmentpropertiesdialog.ui:109
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:114
+#, kde-format
+msgctxt "file name of the attachment"
+msgid "Name:"
+msgstr "Όνομα:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: attachment/ui/attachmentpropertiesdialog.ui:139
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:134
+#, kde-format
+msgctxt "description of the attachment"
+msgid "Description:"
+msgstr "Περιγραφή:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: attachment/ui/attachmentpropertiesdialog.ui:169
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:154
+#, kde-format
+msgctxt "encoding of the attachment"
+msgid "Encoding:"
+msgstr "Κωδικοποίηση:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoDisplay)
+#: attachment/ui/attachmentpropertiesdialog.ui:187
+#, kde-format
+msgid "Suggest automatic display"
+msgstr "Προτείνετε την αυτόματη εμφάνιση"
+
+#. i18n: ectx: property (text), widget (QCheckBox, encrypt)
+#: attachment/ui/attachmentpropertiesdialog.ui:194
+#, kde-format
+msgid "Encrypt this attachment"
+msgstr "Κρυπτογραφείστε αυτό το συνημμένο"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sign)
+#: attachment/ui/attachmentpropertiesdialog.ui:201
+#, kde-format
+msgid "Sign this attachment"
+msgstr "Υπογράψτε αυτό το συνημμένο"
+
+#. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
+#: settings/messagecore.kcfg:34
+#, kde-format
+msgid ""
+"Changing this from its default 'Auto' will force the use of the specified "
+"encoding for all emails, regardless of what they specify themselves."
+msgstr ""
+"Αλλάζοντάς το από το προκαθορισμένο «Αυτόματο» θα εξαναγκάσει την χρήση της "
+"καθορισμένης κωδικοποίησης για όλα τα μηνύματα αλληλογραφίας, ανεξαρτήτου "
+"από τι καθορίζουν αυτά τα ίδια."
+
+#. i18n: ectx: label, entry (QuotedText3), group (Reader)
+#: settings/messagecore.kcfg:37
+#, kde-format
+msgid "This is the color used in the 3rd level of quoted text"
+msgstr ""
+"Αυτό είναι το χρώμα που χρησιμοποιείται στο 3ο επίπεδο του κειμένου παράθεσης"
+
+#. i18n: ectx: label, entry (QuotedText2), group (Reader)
+#: settings/messagecore.kcfg:41
+#, kde-format
+msgid "This is the color used in the 2nd level of quoted text"
+msgstr ""
+"Αυτό είναι το χρώμα που χρησιμοποιείται στο 2ο επίπεδο του κειμένου παράθεσης"
+
+#. i18n: ectx: label, entry (QuotedText1), group (Reader)
+#: settings/messagecore.kcfg:45
+#, kde-format
+msgid "This is the color used in the 1st level of quoted text"
+msgstr ""
+"Αυτό είναι το χρώμα που χρησιμοποιείται στο 1ο επίπεδο του κειμένου παράθεσης"
+
+#. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
+#: settings/messagecore.kcfg:56
+#, kde-format
+msgid "Replace recognized prefi&x with \"Re:\""
+msgstr "Αντικατάσταση αναγνωρισμένου προθέματο&ς με «Re:»"
+
+#. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
+#: settings/messagecore.kcfg:64
+#, kde-format
+msgid "Replace recognized prefix with \"&Fwd:\""
+msgstr "Αντικατάσταση αναγνωρισμένου προθέματος με «&Re:»"
+
+#. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
+#: settings/messagecore.kcfg:69
+#, kde-format
+msgid ""
+"The maximum size in bits that email attachments are allowed to have (-1 for "
+"no limit)"
+msgstr ""
+"Το μέγιστο μέγεθος σε bit που επιτρέπεται να έχει η επισύναψη σε μηνύματα "
+"αλληλογραφίας (-1 για χωρίς όριο)"
+
+#: utils/stringutil.cpp:418
+#, kde-format
+msgctxt "signal that this email is defined in my identity"
+msgid "Me"
+msgstr "Εγώ"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "This is the color used to highlight misspelled words"
+#~ msgstr ""
+#~ "Αυτό είναι το χρώμα που χρησιμοποιείται για την επισήμανση των λέξεων με "
+#~ "ορθογραφικά λάθη"
+
+#~ msgid "Specifies the font to use for the message body"
+#~ msgstr ""
+#~ "Καθορίζει την γραμματοσειρά που θα χρησιμοποιηθεί στο σώμα του μηνύματος"
+
+#~ msgid "Specifies the font to use for printing"
+#~ msgstr "Καθορίζει την γραμματοσειρά που θα χρησιμοποιηθεί για την εκτύπωση"
+
+#~ msgid "This is the color used for highlighting all signed messages"
+#~ msgstr ""
+#~ "Αυτό είναι το χρώμα που χρησιμοποιείται για την επισήμανση όλων των "
+#~ "υπογεγραμμένων μηνυμάτων"
+
+#~ msgid "This is the color used for highlighting all encrypted messages"
+#~ msgstr ""
+#~ "Αυτό είναι το χρώμα που χρησιμοποιείται για την επισήμανση όλων των "
+#~ "κρυπτογραφημένων μηνυμάτων"
+
+#~ msgid ""
+#~ "Disregard the user's umask setting and use \"read-write for the user only"
+#~ "\" instead"
+#~ msgstr ""
+#~ "Αγνόηση του umask του χρήστη και χρησιμοποίηση του «ανάγνωση-εγγραφή για "
+#~ "το χρήστη μόνο» αντί αυτού."
+
+#~ msgid ""
+#~ "Some emails, especially those generated automatically, do not specify the "
+#~ "character encoding which needs to be used to properly display them. In "
+#~ "such cases a fallback character encoding will be used, which you can "
+#~ "configure here. Set it to the character encoding most commonly used in "
+#~ "your part of the world. As a default the encoding configured for the "
+#~ "whole system is used."
+#~ msgstr ""
+#~ "Μερικά μηνύματα αλληλογραφίας, και ειδικά αυτά που δημιουργούνται "
+#~ "αυτόματα, δεν καθορίζουν την κωδικοποίηση των χαρακτήρων που απαιτείται "
+#~ "για την σωστή προβολή τους. Σε τέτοιες περιπτώσεις χρησιμοποιείται μια "
+#~ "ανακατεύθυνση (fallback) κωδικοποίησης χαρακτήρων που θα χρησιμοποιηθεί, "
+#~ "την οποία μπορείτε να διαμορφώσετε εδώ. Ορίστε την στην πιο συνηθισμένη "
+#~ "κωδικοποίηση χαρακτήρων που χρησιμοποιείται στον κόσμο. Ως προεπιλογή "
+#~ "χρησιμοποιείται η κωδικοποίηση που έχει διαμορφωθεί για όλο το σύστημα."
+
+#~ msgid "Could not read file %1."
+#~ msgstr "Δεν ήταν δυνατή η ανάγνωση του αρχείου %1."
+
+#~ msgid "Edit Note"
+#~ msgstr "Επεξεργασία σημείωσης"
+
+#~ msgid "Delete Note"
+#~ msgstr "Διαγραφή σημείωσης"
+
+#~ msgid "Add Note"
+#~ msgstr "Προσθήκη σημείωσης"
+
+#~ msgid "Enter the text that should be stored as a note to the mail:"
+#~ msgstr ""
+#~ "Πληκτρολογήστε το κείμενο για να αποθηκευτεί ως σημείωση στην "
+#~ "αλληλογραφία:"
+
+#~ msgid "Do you really want to delete this note?"
+#~ msgstr "Επιθυμείτε πραγματικά τη διαγραφή αυτής της σημείωσης;"
+
+#~ msgid "Delete Note?"
+#~ msgstr "Διαγραφή της σημείωσης;"
+
+#~ msgid "Delete"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "Open Address Book"
+#~ msgstr "Άνοιγμα βιβλίου διευθύνσεων"

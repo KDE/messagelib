@@ -1,0 +1,3207 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sairan Kikkarin <sairan@computer.org>, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2013-10-10 05:09+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: attachment/attachmentcontrollerbase.cpp:168
+#, kde-format
+msgid "Failed to compress attachment"
+msgstr "Тіркемені сығу жаңылысы"
+
+#: attachment/attachmentcontrollerbase.cpp:179
+#, kde-format
+msgid ""
+"The compressed attachment is larger than the original. Do you want to keep "
+"the original one?"
+msgstr "Сығылған тіркеме сығылмағаннан үлкен. Сығылмай қала берсін бе?"
+
+#: attachment/attachmentcontrollerbase.cpp:182
+#, kde-format
+msgctxt "Do not compress"
+msgid "Keep"
+msgstr "Қала берісн"
+
+#: attachment/attachmentcontrollerbase.cpp:183
+#, kde-format
+msgid "Compress"
+msgstr "Сығу"
+
+#: attachment/attachmentcontrollerbase.cpp:202
+#, kde-format
+msgid "Failed to attach file"
+msgstr "Файлды тіркемелеу жаңылысы"
+
+#: attachment/attachmentcontrollerbase.cpp:275
+#, fuzzy, kde-format
+#| msgid "Failed to compress attachment"
+msgid "Failed to reload attachment"
+msgstr "Тіркемені сығу жаңылысы"
+
+#: attachment/attachmentcontrollerbase.cpp:322
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr "Мынамен &ашу"
+
+#: attachment/attachmentcontrollerbase.cpp:342
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr "&Басқа..."
+
+#: attachment/attachmentcontrollerbase.cpp:344
+#: attachment/attachmentcontrollerbase.cpp:352
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr "Мынамен &ашу..."
+
+#: attachment/attachmentcontrollerbase.cpp:378
+#, kde-format
+msgid "Failed to attach public key"
+msgstr "Ашық кілтті тіркемелеу жаңылысы"
+
+#: attachment/attachmentcontrollerbase.cpp:392
+#, fuzzy, kde-format
+#| msgid "Failed to attach file"
+msgid "Failed to attach vCard"
+msgstr "Файлды тіркемелеу жаңылысы"
+
+#: attachment/attachmentcontrollerbase.cpp:405
+#, fuzzy, kde-format
+#| msgid "Failed to attach file"
+msgid "Failed to attach text from clipboard"
+msgstr "Файлды тіркемелеу жаңылысы"
+
+#: attachment/attachmentcontrollerbase.cpp:453
+#, kde-format
+msgid "Attach &Public Key..."
+msgstr "&Ашық кілтті тіркемелеу..."
+
+#: attachment/attachmentcontrollerbase.cpp:456
+#, kde-format
+msgid "Attach &My Public Key"
+msgstr "Ашық кілті&мді тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:459
+#: attachment/attachmentcontrollerbase.cpp:464
+#: attachment/attachmentcontrollerbase.cpp:470
+#: attachment/attachmentcontrollerbase.cpp:479
+#, kde-format
+msgid "Attach"
+msgstr "Тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:463
+#: composer/composerviewbase.cpp:1908
+#, kde-format
+msgid "&Attach File..."
+msgstr "&Файлды тіркемелеу..."
+
+#: attachment/attachmentcontrollerbase.cpp:465
+#, kde-format
+msgid "Add Attachment..."
+msgstr "Тіркемені қосу..."
+
+#: attachment/attachmentcontrollerbase.cpp:469
+#, fuzzy, kde-format
+#| msgid "Attach directory"
+msgid "&Attach Directory..."
+msgstr "Қапшықты тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:473
+#, fuzzy, kde-format
+#| msgid "Attach Own Vcard"
+msgid "Attach Own vCard"
+msgstr "Өзінің vcard-дың тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:474
+#, fuzzy, kde-format
+#| msgid "Own Vcard"
+msgid "Own vCard"
+msgstr "Өзінің vcard-ы"
+
+#: attachment/attachmentcontrollerbase.cpp:478
+#, fuzzy, kde-format
+#| msgid "Attach directory"
+msgid "&Attach vCards..."
+msgstr "Қапшықты тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:482
+#, fuzzy, kde-format
+#| msgid "Attach directory"
+msgid "&Attach Text From Clipboard..."
+msgstr "Қапшықты тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:483
+#, fuzzy, kde-format
+#| msgid "Attach Own Vcard"
+msgid "Attach Text From Clipboard"
+msgstr "Өзінің vcard-дың тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:495
+#, kde-format
+msgid "&Remove Attachment"
+msgstr "Тіркемені ө&шіру"
+
+#: attachment/attachmentcontrollerbase.cpp:496
+#, kde-format
+msgid "Remove"
+msgstr "Өшіру"
+
+#: attachment/attachmentcontrollerbase.cpp:504
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Ашу"
+
+#: attachment/attachmentcontrollerbase.cpp:509
+#, kde-format
+msgctxt "to view"
+msgid "View"
+msgstr "Көру"
+
+#: attachment/attachmentcontrollerbase.cpp:514
+#, kde-format
+msgctxt "to edit"
+msgid "Edit"
+msgstr "Өңдеу"
+
+#: attachment/attachmentcontrollerbase.cpp:519
+#, kde-format
+msgid "Edit With..."
+msgstr "Мынамен өңдеу..."
+
+#: attachment/attachmentcontrollerbase.cpp:524
+#, kde-format
+msgid "&Save Attachment As..."
+msgstr "Тіркемені былай &сақтау..."
+
+#: attachment/attachmentcontrollerbase.cpp:525
+#, kde-format
+msgid "Save As..."
+msgstr "Былай сақтау..."
+
+#: attachment/attachmentcontrollerbase.cpp:533
+#, kde-format
+msgid "Attachment Pr&operties..."
+msgstr "Тіркеменің қ&асиеттері..."
+
+#: attachment/attachmentcontrollerbase.cpp:534
+#, kde-format
+msgid "Properties"
+msgstr "Қасиеттері"
+
+#: attachment/attachmentcontrollerbase.cpp:542
+#, kde-format
+msgid "Select All"
+msgstr "Бүкілін таңдау"
+
+#: attachment/attachmentcontrollerbase.cpp:545
+#, kde-format
+msgid "Reload"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:702
+#: attachment/attachmentcontrollerbase.cpp:751
+#, kde-format
+msgid "KMail was unable to write the attachment to a temporary file."
+msgstr "KMail тіркемені уақытша файлға жаза алмады."
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:702
+#, kde-format
+msgid "Unable to open attachment"
+msgstr "Тіркеме ашылмады"
+
+#: attachment/attachmentcontrollerbase.cpp:711
+#, kde-format
+msgid "KMail was unable to open the attachment."
+msgstr "KMail тіркемені аша алмады."
+
+#: attachment/attachmentcontrollerbase.cpp:751
+#, kde-format
+msgid "Unable to edit attachment"
+msgstr "Тіркемені өңдеу мүмкін емес."
+
+#: attachment/attachmentcontrollerbase.cpp:792
+#, kde-format
+msgid "unnamed"
+msgstr "атаусыз"
+
+#: attachment/attachmentcontrollerbase.cpp:795
+#, kde-format
+msgid "Save Attachment As"
+msgstr "Тіркемені былай &сақтау"
+
+#: attachment/attachmentcontrollerbase.cpp:818
+#, kde-format
+msgid ""
+"File %1 exists.\n"
+"Do you want to replace it?"
+msgstr ""
+"%1 деген файл бар екен.\n"
+"Оны ауыстырмақсыз ба?"
+
+#: attachment/attachmentcontrollerbase.cpp:819
+#, kde-format
+msgid "Save to File"
+msgstr "Файлға сақтау"
+
+#: attachment/attachmentcontrollerbase.cpp:820
+#, kde-format
+msgid "&Replace"
+msgstr "&Ауыстыру"
+
+#: attachment/attachmentcontrollerbase.cpp:847
+#: attachment/attachmentcontrollerbase.cpp:905
+#, fuzzy, kde-format
+#| msgid "Do you really want to attach this directory \"%1\" ?"
+msgid "Do you really want to attach this directory \"%1\"?"
+msgstr "\"%1\" қапшығын шын тіркемелексіз бе?"
+
+#: attachment/attachmentcontrollerbase.cpp:848
+#: attachment/attachmentcontrollerbase.cpp:906
+#, fuzzy, kde-format
+#| msgid "Attach directory"
+msgctxt "@title:window"
+msgid "Attach directory"
+msgstr "Қапшықты тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:849
+#: attachment/attachmentcontrollerbase.cpp:907
+#, fuzzy, kde-format
+#| msgid "Attach"
+msgctxt "@action:button"
+msgid "Attach"
+msgstr "Тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:884
+#, fuzzy, kde-format
+#| msgid "Attach directory"
+msgctxt "@title:window"
+msgid "Attach Directory"
+msgstr "Қапшықты тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:893
+#, fuzzy, kde-format
+#| msgid "Attach File"
+msgctxt "@title:window"
+msgid "Attach File"
+msgstr "Файлды тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:936
+#, fuzzy, kde-format
+#| msgid "Failed to attach file"
+msgctxt "@title:window"
+msgid "Failed to attach file"
+msgstr "Файлды тіркемелеу жаңылысы"
+
+#: attachment/attachmentcontrollerbase.cpp:960
+#, kde-format
+msgid "Attach Public OpenPGP Key"
+msgstr "&Ашық OpenPGP кілтін тіркемелеу"
+
+#: attachment/attachmentcontrollerbase.cpp:961
+#, kde-format
+msgid "Select the public key which should be attached."
+msgstr "Тіркемелейтін ашық кілтті таңдау."
+
+#: attachment/attachmentmodel.cpp:122
+#, kde-format
+msgid "unnamed attachment"
+msgstr "аталмаған тіркеме"
+
+#: attachment/attachmentmodel.cpp:256
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
+msgstr ""
+
+#: attachment/attachmentmodel.cpp:439
+#, kde-format
+msgctxt "@title column attachment name."
+msgid "Name"
+msgstr "Атауы"
+
+#: attachment/attachmentmodel.cpp:441
+#, kde-format
+msgctxt "@title column attachment size."
+msgid "Size"
+msgstr "Өлшемі"
+
+#: attachment/attachmentmodel.cpp:443
+#, kde-format
+msgctxt "@title column attachment encoding."
+msgid "Encoding"
+msgstr "Кодтамасы"
+
+#: attachment/attachmentmodel.cpp:445
+#, kde-format
+msgctxt "@title column attachment type."
+msgid "Type"
+msgstr "Түрі"
+
+#: attachment/attachmentmodel.cpp:447
+#, kde-format
+msgctxt "@title column attachment compression checkbox."
+msgid "Compress"
+msgstr "Сығу"
+
+#: attachment/attachmentmodel.cpp:449
+#, kde-format
+msgctxt "@title column attachment encryption checkbox."
+msgid "Encrypt"
+msgstr "Шифрлау"
+
+#: attachment/attachmentmodel.cpp:451
+#, kde-format
+msgctxt "@title column attachment signed checkbox."
+msgid "Sign"
+msgstr "Қолтаңбалау"
+
+#: attachment/attachmentmodel.cpp:453
+#, kde-format
+msgctxt "@title column attachment inlined checkbox."
+msgid "Suggest Automatic Display"
+msgstr "Автоматты қөрсету ұсынылсын"
+
+#: composer/composer.cpp:276
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Алушыларға арналған кілт дерегі жоқ."
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not sign/encrypt"
+msgstr "Бегілеуін &сақтау, қолтаңбаламау/шифрламау"
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not encrypt"
+msgstr "Бегілеуін &сақтау, шифрламау"
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not sign"
+msgstr "Бегілеуін &сақтау, қолтаңбаламау"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Sign/Encrypt (delete markup)"
+msgstr "Қолтаңбалау/шифрлау (белгілеуін кетіру)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Encrypt (delete markup)"
+msgstr "Шифрлау (белгілеуін кетіру)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Sign (delete markup)"
+msgstr "Қолтаңбалау (белгілеуін кетіру)"
+
+#: composer/composerviewbase.cpp:331
+#, kde-format
+msgid ""
+"<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
+"you want to delete your markup?</p></qt>"
+msgstr ""
+"<qt><p>HTML пішімелген хаттарды құрамында қолтаңбалау/шифрлауға болмайды;</"
+"p><p>пішімдеу беглілері өшірілсін бе?</p></qt>"
+
+#: composer/composerviewbase.cpp:333
+#, kde-format
+msgid "Sign/Encrypt Message?"
+msgstr "Хат шифрланып қолтаңбалансын ба?"
+
+#: composer/composerviewbase.cpp:514
+#, kde-format
+msgid "It was not possible to create a message composer."
+msgstr "Хат құрастарғышын құруы болмады."
+
+#: composer/composerviewbase.cpp:524
+#, kde-format
+msgid "Do you want to resize images?"
+msgstr "Кескін өлшемін өзгертуін қалайсыз ба?"
+
+#: composer/composerviewbase.cpp:525
+#, kde-format
+msgid "Auto Resize Images"
+msgstr "Кескіндер өлшемін автоөзгертсін"
+
+#: composer/composerviewbase.cpp:526
+#, fuzzy, kde-format
+#| msgid "Auto Resize Images"
+msgctxt "@action:button"
+msgid "Auto Resize"
+msgstr "Кескіндер өлшемін автоөзгертсін"
+
+#: composer/composerviewbase.cpp:527
+#, fuzzy, kde-format
+#| msgid "Do &Not Sign"
+msgctxt "@action:button"
+msgid "Do Not Resize"
+msgstr "Қолтаңбала&мау"
+
+#: composer/composerviewbase.cpp:737
+#, kde-format
+msgid "OpenPGP Key Expired"
+msgstr "OpenPGP кілті ескірген"
+
+#: composer/composerviewbase.cpp:737
+#, kde-format
+msgid "S/MIME Certificate Expired"
+msgstr "S/MIME куәлігі ескірген"
+
+#: composer/composerviewbase.cpp:739
+#, kde-format
+msgid "OpenPGP Key Expires Soon"
+msgstr "OpenPGP кілті жақында ескіреді"
+
+#: composer/composerviewbase.cpp:739
+#, kde-format
+msgid "S/MIME Certificate Expires Soon"
+msgstr "S/MIME куәлігі жақында ескіреді"
+
+#: composer/composerviewbase.cpp:814 composer/composerviewbase.cpp:828
+#: composer/composerviewbase.cpp:860
+#, kde-format
+msgid "Failed to resolve keys. Please report a bug."
+msgstr "Кілтті тану жаңылсы. Қате туралы хабарлаңыз."
+
+#: composer/composerviewbase.cpp:1066 composer/composerviewbase.cpp:1331
+#, kde-format
+msgid "Job cancelled by the user"
+msgstr "Тапсырманы пайдаланушы доғарған"
+
+#: composer/composerviewbase.cpp:1071
+#, kde-format
+msgid ""
+"Could not compose message: %1 \n"
+" Please report this bug."
+msgstr ""
+"Хат құрастрылмады: %1\n"
+" Қате туралы хабарлаңыз."
+
+#: composer/composerviewbase.cpp:1073
+#, kde-format
+msgid "Could not compose message: %1"
+msgstr "Хат құрастрылмады: %1"
+
+#: composer/composerviewbase.cpp:1170
+#, kde-format
+msgid "There were problems trying to queue the message for sending: %1"
+msgstr "Хатты жіберу кезегіне қою кезінде бір мәселелер туды: %1"
+
+#: composer/composerviewbase.cpp:1334
+#, kde-format
+msgid "Could not autosave message: %1"
+msgstr "Хат автосақталмады: %1"
+
+#: composer/composerviewbase.cpp:1353
+#, kde-format
+msgid "Could not write all data to file."
+msgstr "Дерек файлға толық түрде жазылмады."
+
+#: composer/composerviewbase.cpp:1356
+#, kde-format
+msgid "Could not finalize the file."
+msgstr "Файл бітіруге болмады."
+
+#: composer/composerviewbase.cpp:1360
+#, kde-format
+msgid "Could not open file."
+msgstr "Файл ашылмады."
+
+#: composer/composerviewbase.cpp:1367
+#, kde-format
+msgid ""
+"Autosaving the message as %1 failed.\n"
+"%2\n"
+"Reason: %3"
+msgstr ""
+"Хатты %1 ретінде автосақтау жаңылысы.\n"
+"%2\n"
+"Себебі: %3"
+
+#: composer/composerviewbase.cpp:1373
+#, kde-format
+msgid "Autosaving Message Failed"
+msgstr "Хатты автосақтау жаңылысы"
+
+#: composer/composerviewbase.cpp:1486
+#, kde-format
+msgid "Failed to save the message: %1"
+msgstr "Хатты сақтау жаңылысы: %1"
+
+#: composer/composerviewbase.cpp:1904
+#, kde-format
+msgid ""
+"The message you have composed seems to refer to an attached file but you "
+"have not attached anything.\n"
+"Do you want to attach a file to your message?"
+msgstr ""
+"Жазылған хатқа тіркеме жалғану тиіс сияқты, бірақ ештеңе тіркеленген жоқ. "
+"Файлды тіркемелеуін қалайсыз ба?"
+
+#: composer/composerviewbase.cpp:1907
+#, kde-format
+msgid "File Attachment Reminder"
+msgstr "Файлды тіркемелеуді еске салу"
+
+#: composer/composerviewbase.cpp:1909
+#, kde-format
+msgid "&Send as Is"
+msgstr "&Бар түрінде жіберу"
+
+#: composer/composerviewbase.cpp:1961
+#, kde-format
+msgid ""
+"Examination of the recipient's signing preferences yielded that you be asked "
+"whether or not to sign this message.\n"
+"Sign this message?"
+msgstr ""
+"Алушыларға қолтаңбалап жіберу параметрлері, қолтанба бар ма, жоқ па, "
+"бәрібір, ол сұралады екенді көрсетеді.\n"
+"Қолтаңбалайсыз ба?"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgid "Sign Message?"
+msgstr "Қолтаңбалансын ба?"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgctxt "to sign"
+msgid "&Sign"
+msgstr "Қ&олтаңбалау"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgid "Do &Not Sign"
+msgstr "Қолтаңбала&мау"
+
+#: composer/composerviewbase.cpp:1987
+#, kde-format
+msgid ""
+"There are conflicting signing preferences for these recipients.\n"
+"Sign this message?"
+msgstr ""
+"Бұл алушыларға қолтаңбалап жіберу параметрлері қайшылықты.\n"
+"Бұны қолтаңбалайсыз ба?"
+
+#: composer/composerviewbase.cpp:2011
+#, kde-format
+msgid ""
+"You have requested to sign this message, but no valid signing keys have been "
+"configured for this identity."
+msgstr ""
+"Бұл хатты қолтаңбалауы сұралды, бірақ бұл іс-әлпеті үшін дұрыс қолтаңбалау "
+"кілтері бапталмаған."
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgid "Send Unsigned?"
+msgstr "Қолтаңбасыз жіберу ме?"
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgid "Send &Unsigned"
+msgstr "Қолтаңбасыз жіберу"
+
+#: composer/composerviewbase.cpp:2028
+#, kde-format
+msgid ""
+"Some parts of this message will not be signed.\n"
+"Sending only partially signed messages might violate site policy.\n"
+"Sign all parts instead?"
+msgstr ""
+"Хаттың кейбір бөліктері қолтаңбаланбаған.\n"
+"Бұндайы сайттың саясатына қайшы болуы мүмкін.\n"
+"Барлық бөліктері қолтаңбалансын ба?"
+
+#: composer/composerviewbase.cpp:2032
+#, kde-format
+msgid ""
+"This message will not be signed.\n"
+"Sending unsigned message might violate site policy.\n"
+"Sign message instead?"
+msgstr ""
+"Хат қолтаңбаланбаған.\n"
+"Бұндайы сайттың саясатына қайшы болуы мүмкін.\n"
+"Қолтаңбалансын ба?"
+
+#: composer/composerviewbase.cpp:2035
+#, kde-format
+msgid "&Sign All Parts"
+msgstr "Бүкіл бөліктерін қ&олтаңбалау"
+
+#: composer/composerviewbase.cpp:2035
+#, kde-format
+msgid "&Sign"
+msgstr "Қ&олтаңбалау"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "Unsigned-Message Warning"
+msgstr "Қолтаңбаламаған туралы ескерту"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "Send &As Is"
+msgstr "Бар түрінде жіберу"
+
+#: composer/composerviewbase.cpp:2084
+#, kde-format
+msgid ""
+"Valid trusted encryption keys were found for all recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"Барлық алушылар үшін дұрыс сенім артылған шифрлау кіттер бар.\n"
+"Шифрлансын ба?"
+
+#: composer/composerviewbase.cpp:2087
+#, kde-format
+msgid ""
+"Examination of the recipient's encryption preferences yielded that you be "
+"asked whether or not to encrypt this message.\n"
+"Encrypt this message?"
+msgstr ""
+"Алушыларға шифрлап жіберу параметрлері, шифрлауы бар ма, жоқ па, бәрібір, ол "
+"сұралады екенді көрсетеді.\n"
+"Шифрлайсыз ба?"
+
+#: composer/composerviewbase.cpp:2093 composer/composerviewbase.cpp:2119
+#, kde-format
+msgid "Encrypt Message?"
+msgstr "Хат шифрлансын ба?"
+
+#: composer/composerviewbase.cpp:2094
+#, kde-format
+msgid "Sign && &Encrypt"
+msgstr "Қолтаңбалау және шифрлау"
+
+#: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2119
+#: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1317
+#: composer/keyresolver.cpp:1353
+#, kde-format
+msgid "&Encrypt"
+msgstr "&Шифрлау"
+
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#, kde-format
+msgid "&Sign Only"
+msgstr "Тек қ&олтаңбалау"
+
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#, kde-format
+msgid "&Send As-Is"
+msgstr "&Бар түрінде жіберу"
+
+#: composer/composerviewbase.cpp:2116
+#, kde-format
+msgid ""
+"There are conflicting encryption preferences for these recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"Бұл алушыларға шифрлап жіберу параметрлері қайшылықты.\n"
+"Бұны шифрлайсыз ба?"
+
+#: composer/composerviewbase.cpp:2119
+#, kde-format
+msgid "Do &Not Encrypt"
+msgstr "Шифрламау"
+
+#: composer/composerviewbase.cpp:2139
+#, kde-format
+msgid ""
+"You have requested to encrypt this message, and to encrypt a copy to "
+"yourself, but no valid trusted encryption keys have been configured for this "
+"identity."
+msgstr ""
+"Бұл хатты шифрлауы және көшірмесін өзіне шифрлауы сұралды, бірақ бұл іс-"
+"әлпеті үшін дұрыс сенім артылған шифрлау кілтері бапталмаған."
+
+#: composer/composerviewbase.cpp:2143
+#, kde-format
+msgid "Send Unencrypted?"
+msgstr "Шифрламай жіберілсін бе?"
+
+#: composer/composerviewbase.cpp:2143 composer/keyresolver.cpp:1339
+#, kde-format
+msgid "Send &Unencrypted"
+msgstr "Шифрла&май жіберу"
+
+#: composer/composerviewbase.cpp:2157
+#, kde-format
+msgid ""
+"Some parts of this message will not be encrypted.\n"
+"Sending only partially encrypted messages might violate site policy and/or "
+"leak sensitive information.\n"
+"Encrypt all parts instead?"
+msgstr ""
+"Хаттың кейбір бөліктері шифрланбаған\n"
+"Бұндайы сайттың саясатына қайшы болуы және сырларыңыз ашылып қалуы мүмкін.\n"
+"Барлық бөліктері шифрлансын ба?"
+
+#: composer/composerviewbase.cpp:2162
+#, kde-format
+msgid ""
+"This message will not be encrypted.\n"
+"Sending unencrypted messages might violate site policy and/or leak sensitive "
+"information.\n"
+"Encrypt messages instead?"
+msgstr ""
+"Хат шифрланбаған\n"
+"Бұндайы сайттың саясатына қайшы болуы және сырларыңыз ашылып қалуы мүмкін.\n"
+"Хат шифрлансын ба?"
+
+#: composer/composerviewbase.cpp:2166
+#, kde-format
+msgid "&Encrypt All Parts"
+msgstr "Бүкіл бөліктерін &шифрлау"
+
+#: composer/composerviewbase.cpp:2169
+#, kde-format
+msgid "Unencrypted Message Warning"
+msgstr "Шифрламаған туралы ескерту"
+
+#: composer/keyresolver.cpp:302
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not fully trusted for encryption."
+msgstr ""
+"Бір не бірнеше бапталған OpenPGP кілттеріңіз не S/MIME куәліктеріңіз шифрлау "
+"үшін әбден сенімді емес."
+
+#: composer/keyresolver.cpp:306
+#, kde-format
+msgid ""
+"One or more of the OpenPGP encryption keys or S/MIME certificates for "
+"recipient \"%1\" is not fully trusted for encryption."
+msgstr ""
+"Бір не бірнеше OpenPGP кілт не S/MIME куәлік \"%1\" алушыға шифрлау үшін "
+"әбден сенімді емес."
+
+#: composer/keyresolver.cpp:313
+#, kde-format
+msgid ""
+"\n"
+"The following keys are only marginally trusted: \n"
+msgstr ""
+"\n"
+"Келесі кілттер шала сенімді: \n"
+
+#: composer/keyresolver.cpp:317
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates have unknown trust level: \n"
+msgstr ""
+"\n"
+"Келесі кілттер не куәліктерінің сенімділігі беймәлім: \n"
+
+#: composer/keyresolver.cpp:321
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates are <b>revoked</b>: \n"
+msgstr ""
+"\n"
+"Келесі кілттер не куәліктерінің күші жойылған: \n"
+
+#: composer/keyresolver.cpp:327
+#, kde-format
+msgid "Not Fully Trusted Encryption Keys"
+msgstr "Толық сенім артылмаған шифрлау кіттер"
+
+#: composer/keyresolver.cpp:645
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not usable for encryption. Please reconfigure your "
+"encryption keys and certificates for this identity in the identity "
+"configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"Бір не бірнеше бапталған OpenPGP шифрлау кілттеріңіз не S/MIME куәліктеріңіз "
+"шифрлауға жарамайды. Іс-әлпеттін баптау диалогы көмегімен іс-әлпетіңіздің "
+"кілттер мен куәліктерді дұрыстап алыңыз.\n"
+"Жәй жалғастырсаңыз, онда кілттер керек болғанда олар бәрібір сұралады."
+
+#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
+#: composer/keyresolver.cpp:1037
+#, kde-format
+msgid "Unusable Encryption Keys"
+msgstr "Жарамсыз шифрлау кілттері"
+
+#: composer/keyresolver.cpp:687
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP signing keys or S/MIME signing "
+"certificates is not usable for signing. Please reconfigure your signing keys "
+"and certificates for this identity in the identity configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"Бір не бірнеше бапталған OpenPGP қолтаңбалау кілттеріңіз не S/MIME қолтаңба "
+"куәліктеріңіз шифрлауға жарамайды. Іс-әлпеттін баптау диалогы көмегімен іс-"
+"әлпетіңіздің кілттер мен куәліктерді дұрыстап алыңыз.\n"
+"Жәй жалғастырсаңыз, онда кілттер керек болғанда олар бәрібір сұралады."
+
+#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
+#: composer/keyresolver.cpp:1084
+#, kde-format
+msgid "Unusable Signing Keys"
+msgstr "Жарамсыз қолтаңбалау кілттері"
+
+#: composer/keyresolver.cpp:998
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid trusted OpenPGP encryption keys for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"Алушыларға шифрлау параметрлері кемінде бірнеше адресатқа OpenPGP-шифрланған "
+"хат жіберілмек дегенді көрсетеді, алайда, іс-әлпетінде сенімді OpenPGP "
+"шифрлау кілттер бапталмаған.\n"
+"Өзіңіз үшін шифрламай жалғастыра беруге болады, бірақ, байқаңыз, онда "
+"өзіңіздің хатттарын оқи алмай қаласыз."
+
+#: composer/keyresolver.cpp:1027
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME encryption certificates for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"Алушыларға шифрлау параметрлері кемінде бірнеше адресатқа S/MIME-шифрланған "
+"хат жіберілмек дегенді көрсетеді, алайда, іс-әлпетінде сенімді S/MIME "
+"шифрлау куәлітер бапталмаған.\n"
+"Өзіңіз үшін шифрламай жалғастыра беруге болады, бірақ, байқаңыз, онда "
+"өзіңіздің хатттарын оқи алмай қаласыз."
+
+#: composer/keyresolver.cpp:1059
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid OpenPGP signing certificates for this "
+"identity."
+msgstr ""
+"Алушыларға қолтаңбалап жіберу параметрлері кемінде бірнеше адресатқа OpenPGP-"
+"қолтаңбалаған хат жіберілмек дегенді көрсетеді, алайда, іс-әлпетінде дұрыс "
+"OpenPGP қолтаңбалау куәліктер бапталмаған."
+
+#: composer/keyresolver.cpp:1067
+#, kde-format
+msgid "Do Not OpenPGP-Sign"
+msgstr "OpenPGP-қолтаңбаламау"
+
+#: composer/keyresolver.cpp:1077
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME signing certificates for this "
+"identity."
+msgstr ""
+"Алушыларға қолтаңбалап жіберу параметрлері кемінде бірнеше адресатқа S/MIME-"
+"қолтаңбалаған хат жіберілмек дегенді көрсетеді, алайда, іс-әлпетінде дұрыс S/"
+"MIME қолтаңбалау куәліктер бапталмаған."
+
+#: composer/keyresolver.cpp:1085
+#, kde-format
+msgid "Do Not S/MIME-Sign"
+msgstr "S/MIME-қолтаңбаламау"
+
+#: composer/keyresolver.cpp:1147
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences showed no common type of "
+"signature matching your available signing keys.\n"
+"Send message without signing?"
+msgstr ""
+"Алушыларға қолтаңбалап жіберу параметрлері, олармен ортақ қолтаңба түрі жоқ "
+"екенді көрсетеді.\n"
+"Қолтаңбаламай жібермексіз бе?"
+
+#: composer/keyresolver.cpp:1151
+#, kde-format
+msgid "No signing possible"
+msgstr "Қолтаңбалау мүмкін емес"
+
+#: composer/keyresolver.cpp:1314
+#, kde-format
+msgid ""
+"You did not select an encryption key for yourself (encrypt to self). You "
+"will not be able to decrypt your own message if you encrypt it."
+msgstr ""
+"Сіз өзіңіз үшін шифрлау кілтін таңдап алмадыңыз, Хатты шифрлансаңыз, "
+"өзіңіздің хаттын шифрын шеше алмайсыз."
+
+#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
+#: composer/keyresolver.cpp:1353
+#, kde-format
+msgid "Missing Key Warning"
+msgstr "Кілт жетіспеу туралы ескерту"
+
+#: composer/keyresolver.cpp:1332
+#, kde-format
+msgid ""
+"You did not select an encryption key for the recipient of this message; "
+"therefore, the message will not be encrypted."
+msgstr ""
+"Сіз осы хатты алу үшін шифрлау кілтін таңдап алмадыңыз, хат шифрланбайды."
+
+#: composer/keyresolver.cpp:1336
+#, kde-format
+msgid ""
+"You did not select an encryption key for any of the recipients of this "
+"message; therefore, the message will not be encrypted."
+msgstr ""
+"Сіз осы хатты алушылар үшін шифрлау кілтін таңдап алмадыңыз, хат "
+"шифрланбайды."
+
+#: composer/keyresolver.cpp:1345
+#, kde-format
+msgid ""
+"You did not select an encryption key for one of the recipients: this person "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"Сіз осы хатты алушылардың біреуі үшін шифрлау кілтін таңдап алмадыңыз, ол "
+"хат шифрланса оның шифрын шеше алмайды."
+
+#: composer/keyresolver.cpp:1349
+#, kde-format
+msgid ""
+"You did not select encryption keys for some of the recipients: these persons "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"Сіз осы хатты алушылардың кейбіреуі үшін шифрлау кілтін таңдап алмадыңыз, "
+"олар хат шифрланса оның шифрын шеше алмайды."
+
+#: composer/keyresolver.cpp:1425
+#, kde-format
+msgid "Encryption Key Selection"
+msgstr "Шифрлау кілтін таңдау"
+
+#: composer/keyresolver.cpp:1469
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"There is a problem with the encryption certificate(s) for \"%1\".\n"
+"\n"
+"Please re-select the certificate(s) which should be used for this recipient."
+msgstr ""
+"\"%1\" дегеннің кілт(тер) мәселесі.\n"
+"\n"
+"Осы алушы үшін қолданатын кілтт(ерд)і қайта таңдаңыз."
+
+#: composer/keyresolver.cpp:1543
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"<qt>No valid and trusted encryption certificate was found for \"%1\".<br/"
+"><br/>Select the certificate(s) which should be used for this recipient. If "
+"there is no suitable certificate in the list you can also search for "
+"external certificates by clicking the button: search for external "
+"certificates.</qt>"
+msgstr ""
+"<qt>\"%1\".үшін жарамды және сенімді шифрлау куәлігі табылмады.<br/><br/>Осы "
+"алушы үшін колданатын куәлікт(ерд)і таңдап беріңіз. Егер тізімінен жарайтыны "
+"табылмаса, оларды, тиісті батырмасын басып, сырт көздерден іздеп көруге "
+"болады.</qt>"
+
+#: composer/keyresolver.cpp:1553
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"More than one certificate matches \"%1\".\n"
+"\n"
+"Select the certificate(s) which should be used for this recipient."
+msgstr ""
+"\"%1\" үшін бірнеше кілт жарайды.\n"
+"\n"
+"Осы алушы үшін қай кілтт(ерд)і қолданатынын таңдаңыз."
+
+#: composer/nearexpirychecker.cpp:82
+#, kde-format
+msgid ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Мына OpenPGP қолтаңбалау кілтіңіз:</p><p align=center><b>%2</b> (KeyID 0x"
+"%3)</p><p>бұдан %1 күн бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:88
+#, kde-format
+msgid ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Мына OpenPGP қолтңабалау кілтіңіз:</p><p align=center><b>%2</b> (KeyID 0x"
+"%3)</p><p>бұдан %1 күн бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:94
+#, kde-format
+msgid ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p align=center><b>%2</b> үшін қолданатын (KeyID 0x%3)</p><p>OpenPGP кілті</"
+"p><p>бұдан %1 күн бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:103
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#| "%3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#| "%3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%2</b> (KeyID 0x%3)</p><p>OpenPGP қолтаңбалау "
+"кілтіңіз </p><p>%1 күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:109
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#| "%3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
+#| "%3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%2</b> (KeyID 0x%3)</p><p>OpenPGP шифрлау кілтіңіз </"
+"p><p>%1 күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:115
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+#| "p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
+#| "p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%2</b> үшін қолданатын (KeyID 0x%3)</p><p>OpenPGP "
+"кілті</p><p>%1 күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:135
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p align=center><b>%4</b></p><p align=center><b>%2</b> (тізбекті нөмірі: "
+"%3)</p><p>S/MIME қолтаңбалау куәлгіңіздің</p><p>түбір куәлігі</p><p>бұдан %1 "
+"күн бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:143
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p align=center><b>%4</b></p><p align=center><b>%2</b> (тізбекті нөмірі: "
+"%3)</p><p>S/MIME шифрлау куәлгіңіздің</p><p>түбір куәлігі</p><p>бұдан %1 күн "
+"бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:151
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+"less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired %1 "
+"days ago.</p>"
+msgstr[0] ""
+"<p align=center><b>%4</b></p><p align=center><b>%2</b> (тізбекті нөмірі: "
+"%3)</p><p>S/MIME куәлгінің</p><p>түбір куәлігі</p><p>бұдан %1 күн бұрын "
+"ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:161
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p align=center><b>%4</b></p><p align=center><b>%2</b> (тізбекті нөмірі: "
+"%3)</p><p>S/MIME қолтаңбалау куәлгіңіздің</p><p>арадағы Куәландыру "
+"орталығының куәлігі</p><p>бұдан %1 күн бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:169
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p align=center><b>%4</b></p><p align=center><b>%2</b> (тізбекті нөмірі: "
+"%3)</p><p>S/MIME шифрлау куәлгіңіздің</p><p>арадағы Куәландыру орталығының "
+"куәлігі</p><p>бұдан %1 күн бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:177
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p align=center><b>%4</b></p><p align=center><b>%2</b> (тізбекті нөмірі: "
+"%3)</p><p>S/MIME қолтаңбалау куәлгінің</p><p>арадағы Куәландыру орталығының "
+"куәлігі</p><p>бұдан %1 күн бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:193
+#, kde-format
+msgid ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p align=center><b>%2</b> (тізбекті нөмірі: %3)</p><p>S/MIME қолтаңбалау "
+"куәлгіңіз</p><p>бұдан %1 күн бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:199
+#, kde-format
+msgid ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p align=center><b>%2</b> (тізбекті нөмірі: %3)</p><p>S/MIME шифрлау "
+"куәлгіңіз</p><p>бұдан %1 күн бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:205
+#, kde-format
+msgid ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p align=center><b>%2</b> үшін қолданатын (тізбекті нөмірі: %3)</p><p>S/MIME "
+"қолтаңбалау куәлгі</p><p>бұдан %1 күн бұрын ескірген.</p>"
+
+#: composer/nearexpirychecker.cpp:218
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
+#| "MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number "
+#| "%3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
+#| "MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number "
+#| "%3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%4</b></p><p align=\"center\"><b>%2</b> (тізбекті "
+"нөмірі: %3)</p><p>S/MIME қолтаңбалау куәлгіңіздің</p><p>түбір куәлігі</p><p>"
+"%1 күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:226
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
+#| "MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your S/"
+#| "MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%4</b></p><p align=\"center\"><b>%2</b> (тізбекті "
+"нөмірі: %3)</p><p>S/MIME шифрлау куәлгіңіздің</p><p>түбір куәлігі</p><p>%1 "
+"күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:234
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/MIME "
+#| "certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
+#| "p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/MIME "
+#| "certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
+#| "p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
+"in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
+"in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%4</b></p><p align=\"center\"><b>%2</b> (тізбекті "
+"нөмірі: %3)</p><p>S/MIME қолтаңбалау куәлгінің</p><p>түбір куәлігі</p><p>%1 "
+"күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:244
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%4</b></p><p align=\"center\"><b>%2</b> (тізбекті "
+"нөмірі: %3)</p><p>S/MIME қолтаңбалау куәлгіңіздің</p><p>арадағы Куәландыру "
+"орталығының куәлігі</p><p>%1 күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:252
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</"
+#| "b> (serial number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</"
+#| "b> (serial number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%4</b></p><p align=\"center\"><b>%2</b> (тізбекті "
+"нөмірі: %3)</p><p>S/MIME шифлау куәлгіңіздің</p><p>арадағы Куәландыру "
+"орталығының куәлігі</p><p>%1 күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:260
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
+#| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%4</b></p><p align=\"center\"><b>%2</b> (тізбекті "
+"нөмірі: %3)</p><p>S/MIME куәлгінің</p><p>арадағы Куәландыру орталығының "
+"куәлігі</p><p>%1 күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:276
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%2</b> (тізбекті нөмірі: %3)</p><p>S/MIME қолтаңбалау "
+"куәлгіңіз</p><p>%1 күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:282
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
+#| "(serial number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%2</b> (тізбекті нөмірі: %3)</p><p>S/MIME шифрлау "
+"куәлгіңіз</p><p>%1 күннен кейін ескіреді.</p>"
+
+#: composer/nearexpirychecker.cpp:288
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than a day.</p>"
+#| msgid_plural ""
+#| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
+#| "number %3)</p><p>expires in less than %1 days.</p>"
+msgid ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p align=\"center\"><b>%2</b> үшін қолданатын (тізбекті нөмірі: %3)</p><p>S/"
+"MIME қолтаңбалау куәлгі</p><p>%1 күннен кейін ескіреді.</p>"
+
+#: followupreminder/followupremindercreatejob.cpp:76
+#, kde-format
+msgid "Wait answer from \"%1\" send to \"%2\""
+msgstr ""
+
+#: followupreminder/followupremindercreatejob.cpp:99
+#, kde-format
+msgid ""
+"Failed to store a new reminder: an error occurred while trying to create a "
+"new to-do in your calendar: %1"
+msgstr ""
+
+#: followupreminder/followupremindercreatejob.cpp:131
+#, fuzzy, kde-format
+#| msgid "Failed to save the message: %1"
+msgid "Failed to store a new reminder: %1"
+msgstr "Хатты сақтау жаңылысы: %1"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:35
+#, fuzzy, kde-format
+#| msgid "Select"
+msgctxt "@title:window"
+msgid "Select Date"
+msgstr "Таңдау"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:63
+#, kde-format
+msgid "Date:"
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:71
+#, kde-format
+msgid "Store to-do in:"
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "The selected date must be greater than the current date."
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "Invalid date"
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "The selected folder is not valid."
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "Invalid folder"
+msgstr ""
+
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#, kde-format
+msgid "forwarded message"
+msgstr "басқаға жіберілген хат"
+
+#: helper/messagefactoryng.cpp:575
+#, kde-format
+msgid "Receipt: "
+msgstr "Алған туралы:"
+
+#: helper/messagefactoryng.cpp:702
+#, kde-format
+msgid ""
+"\n"
+"This is a MIME digest forward. The content of the message is contained in "
+"the attachment(s).\n"
+"\n"
+"\n"
+msgstr ""
+"\n"
+"Бұл жіберу MIME-дайджесті. Хаттың өзі - тіркеме(лер)де.\n"
+"\n"
+"\n"
+
+#: imagescaling/imagescalingselectformat.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Image Format"
+msgstr "Кескін пішімін таңдау"
+
+#: imagescaling/imagescalingselectformat.cpp:94
+#, kde-format
+msgid "Select Format..."
+msgstr "Пішімін таңдау..."
+
+#: imagescaling/imagescalingwidget.cpp:113
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">Бұл қалай істейді?</a>"
+
+#: imagescaling/imagescalingwidget.cpp:123
+#, kde-format
+msgid ""
+"<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
+"current time</li><li>%d set current date</li><li>%n original filename</"
+"li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
+msgstr ""
+"<qt><p>Мұнда кескіннің файл атауын таңдауға болады. Мынаны қолдана аласыз: </"
+"p><ul><li>%t, қазіргі уақытты беру үшін </li><li>%d, бүгінгі күнін беру "
+"үшін</li><li>%n, бастапқы файл атауы үшін</li><li>%e, бастапқы жұрнағы үшін "
+"</li><li>%x, жаңа жұрнақты беру үшін</li></ul></qt>"
+
+#: imagescaling/imagescalingwidget.cpp:193
+#, kde-format
+msgid "Custom"
+msgstr "Өзгеше"
+
+#: imagescaling/imagescalingwidget.cpp:321
+#, kde-format
+msgid "Please verify minimum and maximum values."
+msgstr "Минимум және максимум мәндерін тексеру керек."
+
+#: imagescaling/imagescalingwidget.cpp:321
+#, kde-format
+msgid "Error in minimum Maximum value"
+msgstr "Минимум не максимум мәні қате"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
+#: imagescaling/ui/imagescalingwidget.ui:17
+#, kde-format
+msgid "Automatically resize images"
+msgstr "Кескіндер өлшемін автоөзгертсін"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: imagescaling/ui/imagescalingwidget.ui:28
+#, kde-format
+msgid "General"
+msgstr "Жалпы"
+
+#. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
+#: imagescaling/ui/imagescalingwidget.ui:34
+#, kde-format
+msgid "Keep ratio"
+msgstr "Ара қатынасын сақтап"
+
+#. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
+#: imagescaling/ui/imagescalingwidget.ui:41
+#, kde-format
+msgid "Ask before resizing"
+msgstr "Сұрап өлшемі өзгертілсін"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: imagescaling/ui/imagescalingwidget.ui:50
+#, kde-format
+msgid "Fallback to format:"
+msgstr ""
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: imagescaling/ui/imagescalingwidget.ui:89
+#, kde-format
+msgid "Image"
+msgstr "Кескін"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ReduceImageToMaximum)
+#: imagescaling/ui/imagescalingwidget.ui:95
+#, kde-format
+msgid "Reduce image to maximum dimension:"
+msgstr "Кескін өлшемдерінің үлкеніне дейін кішірейтілсін:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: imagescaling/ui/imagescalingwidget.ui:109
+#, kde-format
+msgid "Maximum width:"
+msgstr "Макс. ені:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: imagescaling/ui/imagescalingwidget.ui:116
+#, kde-format
+msgid "Maximum height:"
+msgstr "Макс. биіктігі:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumHeight)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumHeight)
+#: imagescaling/ui/imagescalingwidget.ui:133
+#: imagescaling/ui/imagescalingwidget.ui:146
+#: imagescaling/ui/imagescalingwidget.ui:198
+#: imagescaling/ui/imagescalingwidget.ui:211
+#, kde-format
+msgid " px"
+msgstr " пкс"
+
+#. i18n: ectx: property (text), widget (QCheckBox, EnlargeImageToMinimum)
+#: imagescaling/ui/imagescalingwidget.ui:163
+#, kde-format
+msgid "Enlarge image to minimum dimension"
+msgstr "Кескін өлшемдерінің кішісіне дейін ұлғайтылсын"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: imagescaling/ui/imagescalingwidget.ui:174
+#, kde-format
+msgid "Minimum width:"
+msgstr "Мин. ені:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: imagescaling/ui/imagescalingwidget.ui:181
+#, kde-format
+msgid "Minimum height:"
+msgstr "Мин. биіктігі:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, skipImageSizeLower)
+#: imagescaling/ui/imagescalingwidget.ui:230
+#, kde-format
+msgid "Skip image whose size of the source file is lower than:"
+msgstr "Бастапқы файл өлшемі мынадан кем болса, тастап кету:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
+#: imagescaling/ui/imagescalingwidget.ui:237
+#, kde-format
+msgid " KiB"
+msgstr " КиБ"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: imagescaling/ui/imagescalingwidget.ui:263
+#, kde-format
+msgid "Filename"
+msgstr "Файл атауы"
+
+#. i18n: ectx: property (title), widget (QGroupBox, filterSourceGroupBox)
+#: imagescaling/ui/imagescalingwidget.ui:269
+#, kde-format
+msgid "Source filter"
+msgstr "Бастапқы файл сүзгісі"
+
+#. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
+#: imagescaling/ui/imagescalingwidget.ui:275
+#, kde-format
+msgid "Do not filter (All files are included)"
+msgstr "Сүзгілемеу (Бүкіл файлдар кіреді)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:285
+#, kde-format
+msgid "Include all files whose names contains one of the patterns"
+msgstr "Атауыда өрнектің біреуі бар бүкіл файлдары кірсін"
+
+#. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:292
+#, kde-format
+msgid "Exclude all files whose names contains one of the patterns"
+msgstr "Атауыда өрнектің біреуі бар бүкіл файлдары кірмесін"
+
+#. i18n: ectx: property (text), widget (QLabel, patternLabel)
+#: imagescaling/ui/imagescalingwidget.ui:301
+#, kde-format
+msgid "Pattern:"
+msgstr "Өрнек:"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, pattern)
+#: imagescaling/ui/imagescalingwidget.ui:308
+#, kde-format
+msgid "This line allows to define several pattern. Separate them with ';'."
+msgstr "Бұл жолда бірнеше өрнекті келтіруге болады. Оларды ';' деп бөліңіз."
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, doNotResizePattern)
+#: imagescaling/ui/imagescalingwidget.ui:311
+#: imagescaling/ui/imagescalingwidget.ui:419
+#: imagescaling/ui/imagescalingwidget.ui:443
+#, kde-format
+msgid "Specify patterns separate with ';'"
+msgstr " Өрнектерді ';' деп бөліңіз"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: imagescaling/ui/imagescalingwidget.ui:326
+#, kde-format
+msgid "Image Format"
+msgstr "Кескіннің пішімі"
+
+#. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
+#: imagescaling/ui/imagescalingwidget.ui:332
+#, kde-format
+msgid "Resize all images with one of these formats"
+msgstr "Осы бір пішімдегі кескіндер өлшемі өзгертілсін"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: imagescaling/ui/imagescalingwidget.ui:345
+#, kde-format
+msgid "Resize filename"
+msgstr "Өлшемі өзгертілген файл атауы"
+
+#. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
+#: imagescaling/ui/imagescalingwidget.ui:371
+#, kde-format
+msgid "Rename resized images with following pattern:"
+msgstr "Өлшемі өзгертілген кескіндердің атын өзгерту өрнегі:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
+#: imagescaling/ui/imagescalingwidget.ui:389
+#, kde-format
+msgid "Recipients"
+msgstr "Алушылар"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotFilterRecipients)
+#: imagescaling/ui/imagescalingwidget.ui:395
+#, kde-format
+msgid "Do not filter (All recipients are allowed)"
+msgstr "Сүзгілемеу (Бүкіл алушылар рұқсатты)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:405
+#, kde-format
+msgid "Resize if each emails address contains one of the pattern"
+msgstr "Әр эл.пошта адресінде өрнектің біреуі болса, өлшемі өзгертілсін"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:412
+#, kde-format
+msgid "Resize if one emails address contains one of the pattern"
+msgstr "Бір эл.пошта адресінде өрнектің біреуі болса, өлшемі өзгертілсін"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:429
+#, kde-format
+msgid "Do not resize if each emails address contains one of the pattern"
+msgstr "Әр эл.пошта адресінде өрнектің біреуі болса, өлшемі өзгертілмесін"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:436
+#, kde-format
+msgid "Do not resize if one emails address contains one of the pattern"
+msgstr "Бір эл.пошта адресінде өрнектің біреуі болса, өлшемі өзгертілмесін"
+
+#: job/attachmentclipboardjob.cpp:42
+#, kde-format
+msgid "No text found in Clipboard"
+msgstr ""
+
+#: job/attachmentclipboardjob.cpp:46
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgid "Define Attachment Name"
+msgstr "Файлды тіркемелеуді еске салу"
+
+#: job/attachmentclipboardjob.cpp:46
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgid "Attachment Name:"
+msgstr "Файлды тіркемелеуді еске салу"
+
+#: job/attachmentclipboardjob.cpp:49
+#, kde-format
+msgid "Clipboard Text"
+msgstr ""
+
+#: job/attachmentfrompublickeyjob.cpp:50
+#, kde-format
+msgid "OpenPGP key 0x%1"
+msgstr "OpenPGP 0x%1 кілті"
+
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#, kde-format
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>%1</b></p>"
+msgstr ""
+"<p>Орындаушы бағдарламадан кілтті экспорттау кезде бір қате орын алды:</p> "
+"<p><b>%1</b></p>"
+
+#: job/attachmentfrompublickeyjob.cpp:107
+#, kde-format
+msgid "Exporting key..."
+msgstr "Кілтті экспорттау..."
+
+#: job/attachmentvcardfromaddressbookjob.cpp:75
+#, kde-format
+msgid "Unknown Contact Type"
+msgstr ""
+
+#: job/attachmentvcardfromaddressbookjob.cpp:86
+#, kde-format
+msgid "Invalid Contact"
+msgstr ""
+
+#: job/attachmentvcardfromaddressbookjob.cpp:102
+#, kde-format
+msgid "Impossible to generate vCard."
+msgstr ""
+
+#: job/autocryptheadersjob.cpp:104
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>An error occurred while trying to export the key from the backend:</"
+#| "p><p><b>%1</b></p>"
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>No valid key found for user %1 (%2)</b></p>"
+msgstr ""
+"<p>Орындаушы бағдарламадан кілтті экспорттау кезде бір қате орын алды:</p> "
+"<p><b>%1</b></p>"
+
+#: job/maintextjob.cpp:60
+#, kde-format
+msgid "Asked to use word wrapping, but not given wrapped plain text."
+msgstr ""
+"Сөздерді тасымалдауды қолдану сұралған, бірақ тасымалданған жәй мәтін "
+"берілмеген. ."
+
+#: job/maintextjob.cpp:67
+#, kde-format
+msgid "Asked not to use word wrapping, but not given clean plain text."
+msgstr ""
+"Сөздерді тасымалдауды қолдану сұралмаған, бірақ тасымалданбаған жәй мәтін "
+"берілмеген. ."
+
+#: job/maintextjob.cpp:82
+#, kde-format
+msgid ""
+"No charsets were available for encoding. Please check your configuration and "
+"make sure it contains at least one charset for sending."
+msgstr ""
+"Кодтау үшін кодтамалары жоқ. Онатылымын түгелдеп, жіберуғе жарайтын кемінде "
+"бір кодтамасын қамтамасыз етіңіз."
+
+#: job/maintextjob.cpp:100
+#, kde-format
+msgid ""
+"Encoding the message with %1 will lose some characters.\n"
+"Do you want to continue?"
+msgstr ""
+"Бұл хатты %1 кодтамасымен кодтаса, кейбір символдар жоғалады.\n"
+"Жалғастыра бермексіз бе?"
+
+#: job/maintextjob.cpp:103
+#, kde-format
+msgid "Some Characters Will Be Lost"
+msgstr "Бірнеше таңбасы жоғалмақ"
+
+#: job/maintextjob.cpp:104
+#, kde-format
+msgid "Lose Characters"
+msgstr "Таңбаларды жоғалту"
+
+#: job/maintextjob.cpp:105
+#, kde-format
+msgid "Change Encoding"
+msgstr "Кодтамасын өзгерту"
+
+#: job/maintextjob.cpp:108
+#, kde-format
+msgid "User decided to change the encoding."
+msgstr "Пайдаланушы кодтаманы ауыстыруды ұйғарды."
+
+#: job/maintextjob.cpp:118
+#, kde-format
+msgid "The selected encoding (%1) cannot fully encode the message."
+msgstr "Таңдалған (%1) кодтама хатты кодтауын толығымен қамтамасыз етпейді."
+
+#: job/maintextjob.cpp:143
+#, kde-format
+msgid "Could not get text codec for charset \"%1\"."
+msgstr "\"%1\" кодтамасының мәтін кодек құралы шақырылмады."
+
+#: job/savecontactpreferencejob.cpp:51
+#, kde-format
+msgid "Name Selection"
+msgstr "Атауын таңдау"
+
+#: job/savecontactpreferencejob.cpp:52
+#, kde-format
+msgid "Which name shall the contact '%1' have in your address book?"
+msgstr "Адрестік кітапшаңызда '%1' контакты қалай аталтын болады?"
+
+#: job/savecontactpreferencejob.cpp:64
+#, kde-format
+msgid "Select the address book folder to store the new contact in:"
+msgstr "Жаңа контактты сақтайтын адрестік кітапша қапшығы:"
+
+#: job/singlepartjob.cpp:67
+#, kde-format
+msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
+msgstr "%1 Content-Transfer-Encoding бұл хатты дұрыс кодтай алмады."
+
+#: mdn/mdnadvicedialog.cpp:21
+#, kde-format
+msgctxt "@title:window"
+msgid "Message Disposition Notification Request"
+msgstr ""
+
+#: mdn/mdnadvicedialog.cpp:30
+#, fuzzy, kde-format
+#| msgid "Send &Unsigned"
+msgid "Send \"&denied\""
+msgstr "Қолтаңбасыз жіберу"
+
+#: mdn/mdnadvicedialog.cpp:32
+#, kde-format
+msgid "&Ignore"
+msgstr ""
+
+#: mdn/mdnadvicedialog.cpp:34
+#, fuzzy, kde-format
+#| msgid "&Send as Is"
+msgid "&Send"
+msgstr "&Бар түрінде жіберу"
+
+#: mdn/mdnadvicehelper.cpp:27
+msgid ""
+"This message contains a request to return a notification about your "
+"reception of the message.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+
+#: mdn/mdnadvicehelper.cpp:33
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message.\n"
+"It contains a processing instruction that is marked as \"required\", but "
+"which is unknown to the mail program.\n"
+"You can either ignore the request or let the mail program send a \"failed\" "
+"response."
+msgstr ""
+
+#: mdn/mdnadvicehelper.cpp:41
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but it is requested to send the notification to more than one address.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+
+#: mdn/mdnadvicehelper.cpp:49
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but there is no return-path set.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+
+#: mdn/mdnadvicehelper.cpp:56
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but the return-path address differs from the address the notification was "
+"requested to be sent to.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Distribution List"
+msgstr "Тарату тізімін сақтау"
+
+#: recipient/distributionlistdialog.cpp:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List"
+msgstr "Тзімін сақтау"
+
+#: recipient/distributionlistdialog.cpp:121
+#, kde-format
+msgctxt "@label:textbox Name of the distribution list."
+msgid "&Name:"
+msgstr "&Атауы:"
+
+#: recipient/distributionlistdialog.cpp:125
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Distribution List"
+msgid "Name of Distribution List"
+msgstr "Жаңа тарату тізімі"
+
+#: recipient/distributionlistdialog.cpp:132
+#, kde-format
+msgctxt "@title:column Name of the recipient"
+msgid "Name"
+msgstr "Атауы"
+
+#: recipient/distributionlistdialog.cpp:133
+#, kde-format
+msgctxt "@title:column Email of the recipient"
+msgid "Email"
+msgstr "Эл.пошта"
+
+#: recipient/distributionlistdialog.cpp:240
+#, kde-format
+msgctxt "@info"
+msgid ""
+"There are no recipients in your list. First select some recipients, then try "
+"again."
+msgstr "Тізіміңізде алушылар жоқ. Алушыларды таңдап, қайталап көріңіз."
+
+#: recipient/distributionlistdialog.cpp:251
+#, kde-format
+msgctxt "@title:window"
+msgid "New Distribution List"
+msgstr "Жаңа тарату тізімі"
+
+#: recipient/distributionlistdialog.cpp:252
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Please enter name:"
+msgstr "Атауын келтіріңіз:"
+
+#: recipient/distributionlistdialog.cpp:276
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Distribution list with the given name <resource>%1</resource> already "
+"exists. Please select a different name.</para>"
+msgstr ""
+"<para><resource>%1</resource> деп аталған тарату тізім бар екен. Басқаша "
+"атаңыз.</para>"
+
+#: recipient/distributionlistdialog.cpp:285
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Address Book"
+msgstr "Адрестік кітапшаны таңдау"
+
+#: recipient/distributionlistdialog.cpp:286
+#, kde-format
+msgid "Select the address book folder to store the contact group in:"
+msgstr "Бұл контакттар тобын сақтайтын адрестік кітапша қапшығы:"
+
+#: recipient/distributionlistdialog.cpp:322
+#, kde-format
+msgid "Unable to create distribution list: %1"
+msgstr "Алушыларын тарату тізімі құрылмады: %1"
+
+#: recipient/recipient.cpp:99
+#, kde-format
+msgctxt "@label:listbox Recipient of an email message."
+msgid "To"
+msgstr "Кімге"
+
+#: recipient/recipient.cpp:101
+#, kde-format
+msgctxt "@label:listbox Carbon Copy recipient of an email message."
+msgid "CC"
+msgstr "Көшірме кімге"
+
+#: recipient/recipient.cpp:103
+#, kde-format
+msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+msgid "BCC"
+msgstr "Жасырып кімге"
+
+#: recipient/recipient.cpp:105
+#, kde-format
+msgctxt "@label:listbox Reply-To recipient of an email message."
+msgid "Reply-To"
+msgstr ""
+
+#: recipient/recipient.cpp:110
+#, kde-kuit-format
+msgctxt "@label:listbox"
+msgid "<placeholder>Undefined Recipient Type</placeholder>"
+msgstr "<placeholder>Анықталмаған алушы түрі</placeholder>"
+
+#: recipient/recipientline.cpp:70
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Select type of recipient"
+msgstr "Алушы түрін таңдаңыз"
+
+#: recipient/recipientline.cpp:72
+#, kde-format
+msgid "Set the list of email addresses to receive this message"
+msgstr "Осы хатты алатын эл.пошта адрестерін келтіріңіз."
+
+#: recipient/recipientseditor.cpp:115
+#, kde-format
+msgctxt "@info:status"
+msgid "Truncating recipients list to %2 of %1 entry."
+msgid_plural "Truncating recipients list to %2 of %1 entries."
+msgstr[0] "Тізімде %1 адресте(рде)н %2 қалдыру"
+
+#: recipient/recipientseditorsidewidget.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List..."
+msgstr "Тзімін сақтау..."
+
+#: recipient/recipientseditorsidewidget.cpp:45
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "Алушыларын тарату тізім қылып сақтау"
+
+#: recipient/recipientseditorsidewidget.cpp:47
+#, kde-format
+msgctxt "@action:button Open recipient selection dialog."
+msgid "Se&lect..."
+msgstr "Т&аңдау..."
+
+#: recipient/recipientseditorsidewidget.cpp:50
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select recipients from address book"
+msgstr "Алушыларын адрестік кітапшадан таңдау"
+
+#: recipient/recipientseditorsidewidget.cpp:77
+#, kde-format
+msgctxt "@info:status No recipients selected"
+msgid "No recipients"
+msgstr "Алушылары көрсетілмеген"
+
+#: recipient/recipientseditorsidewidget.cpp:79
+#, kde-format
+msgctxt "@info:status Number of recipients selected"
+msgid "1 recipient"
+msgid_plural "%1 recipients"
+msgstr[0] "%1 алушы"
+
+#: recipient/recipientseditorsidewidget.cpp:129
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "To:%1"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:131
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "CC:%1"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:134
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "BCC:%1"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:137
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "Reply-To:%1"
+msgstr ""
+
+#: recipient/recipientspicker.cpp:42
+#, fuzzy, kde-format
+#| msgid "Select Recipient"
+msgctxt "@title:window"
+msgid "Select Recipient"
+msgstr "Алушыны таңдау"
+
+#: recipient/recipientspicker.cpp:54
+#, kde-format
+msgid "Search &Directory Service"
+msgstr "Каталог &қызметінде іздеу"
+
+#: recipient/recipientspicker.cpp:77
+#, fuzzy, kde-format
+#| msgid "Add as &To"
+msgid "Add as &Reply-To"
+msgstr "&Кімге деп қосу"
+
+#: recipient/recipientspicker.cpp:78
+#, kde-format
+msgid "Add as &To"
+msgstr "&Кімге деп қосу"
+
+#: recipient/recipientspicker.cpp:79
+#, kde-format
+msgid "Add as CC"
+msgstr "Көшірмесі кімге деп көсу"
+
+#: recipient/recipientspicker.cpp:80
+#, kde-format
+msgid "Add as &BCC"
+msgstr "&Жасырып кімге деп қосу"
+
+#: recipient/recipientspicker.cpp:103
+#, kde-format
+msgid "%1 selected email"
+msgid_plural "%1 selected emails"
+msgstr[0] ""
+
+#: recipient/recipientspicker.cpp:170
+#, fuzzy, kde-format
+#| msgid ""
+#| "You selected 1 recipient. The maximum supported number of recipients is "
+#| "%2. Please adapt the selection."
+#| msgid_plural ""
+#| "You selected %1 recipients. The maximum supported number of recipients is "
+#| "%2. Please adapt the selection."
+msgid ""
+"You selected 1 recipient. The maximum supported number of recipients is %2.\n"
+"Please adapt the selection."
+msgid_plural ""
+"You selected %1 recipients. The maximum supported number of recipients is "
+"%2.\n"
+"Please adapt the selection."
+msgstr[0] "%1 алушы таңдадыңыз. Рұқсатты шегі - %2. Қысқартыңыз."
+
+#: recipient/recipientspicker.cpp:187
+#, fuzzy, kde-format
+#| msgid "No key data for recipients found."
+msgid "You can not add more recipients."
+msgstr "Алушыларға арналған кілт дерегі жоқ."
+
+#: sendlater/sendlatercreatejob.cpp:33
+#, fuzzy, kde-format
+#| msgid "Failed to save the message: %1"
+msgid "Failed to schedule message for sending later: %1"
+msgstr "Хатты сақтау жаңылысы: %1"
+
+#: sendlater/sendlaterdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Send Later"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:48
+#, kde-format
+msgid "Send Later"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:49
+#, kde-format
+msgid "Delay"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Days"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Weeks"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Months"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Years"
+msgstr ""
+
+#: sendlater/sendlaterjob.cpp:32
+#, kde-format
+msgid "The Send Later agent is not running."
+msgstr ""
+
+#: sendlater/sendlaterremovejob.cpp:27
+#, kde-format
+msgid "Failed to removed message from send later schedule: %1"
+msgstr ""
+
+#: sendlater/sendlatertimedatewidget.cpp:35
+#, kde-format
+msgid "You cannot select a date prior to the current date."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, mLabel)
+#: sendlater/ui/sendlaterwidget.ui:29
+#, fuzzy, kde-format
+#| msgid "&Send as Is"
+msgid "Send at:"
+msgstr "&Бар түрінде жіберу"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
+#: sendlater/ui/sendlaterwidget.ui:39
+#, kde-format
+msgid "Repeat every:"
+msgstr ""
+
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Тек таңдалған мәтін ғана жауапқа дәйексөз ретінде келтірілсін"
+
+#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:23
+#, kde-format
+msgid "Keep original charset when replying or forwarding if possible"
+msgstr "Жауап немесе басқаға жібергенде кодтама (мейілінше) сақталсын"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:32
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "Қолтаңба авт&оматты түрде қосылсын"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:36
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Қолтаңба дәйексөзден жоғары қойылсын"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:40
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Қолтаңбаның алдында бөлгіш қойылсын"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:45
+#, fuzzy, kde-format
+#| msgid "Use recent addresses for autocompletion"
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "Автотолтыру үшін жуырдағы адрестер қолданылсын"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:46
+#, fuzzy, kde-format
+#| msgid ""
+#| "Disable this option if you do not want recently used addresses to appear "
+#| "in the autocompletion list in the composer's address fields."
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Кұрастырғыш адрес өрісіне автотолтыру үшін жуырдағы адрестер қолданылмасын "
+"десеңіз - бұл белгіні алып тастаңыз."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:52
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr "Нүктелі үтір (';') хат өңдегішінде бөлгіш ретінде қолданылсын"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:55
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Автотолтыру үшін жуырдағы адрестер қолданылсын"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:56
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"Кұрастырғыш адрес өрісіне автотолтыру үшін жуырдағы адрестер қолданылмасын "
+"десеңіз - бұл белгіні алып тастаңыз."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:61
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "Алушы жазулар санның шегі:"
+
+#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:66
+#, kde-format
+msgid "Outlook-compatible attachment naming"
+msgstr "Тіркеме атауы Outlook-пен үйлесімді болсын"
+
+#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:67
+#, kde-format
+msgid ""
+"Turn this option on to make Outlook &#8482; understand attachment names "
+"containing non-English characters"
+msgstr ""
+"Outlook &#8482; түсінетіндей тіркеме атауларында латын әліппеге жатпайтын "
+"таңбаларын колдану үшін осы белгіні қойыңыз"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:71
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "Жолды қай б&ағаннан асырмау:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:81
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "HTML хабарламаның жәй мәтінді нұсқасын жақсарту"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:85
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Шифрланбаған хаттарды жіберуі алдында ескертілсін"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:89
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Қолтаңбаланбаған хаттарды жіберуі алдында ескертілсін"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:93
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Куәлік/кілттердің мерзімі жақында бітетіні ескертілсін (неше күн бұрын - "
+"төменде)"
+
+#. i18n: ectx: label, entry (CryptoWarnSignKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:97
+#, kde-format
+msgid ""
+"The minimum number of days that the signature certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Қолтаңбалау куәлігі күшінде болып, ешбір ескертусіз қолданатын күн санын "
+"төменгі шегі"
+
+#. i18n: ectx: label, entry (CryptoWarnSignChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:101
+#, kde-format
+msgid ""
+"The minimum number of days that the CA certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Куәландыру орталығының куәлігі күшінде болып, ешбір ескертусіз қолданатын "
+"күн санын төменгі шегі"
+
+#. i18n: ectx: label, entry (CryptoWarnSignRootNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:105
+#: settings/messagecomposer.kcfg.cmake:117
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Түбір куәлігі күшінде болып, ешбір ескертусіз қолданатын күн санын төменгі "
+"шегі"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:109
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Шифрлау куәлігі күшінде болып, ешбір ескертусіз қолданатын күн санын төменгі "
+"шегі"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:113
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Бүкіл куәліктер тізбегі күшінде болып, ешбір ескертусіз қолданатын күн санын "
+"төменгі шегі"
+
+#. i18n: ectx: label, entry (CryptoEncryptToSelf), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:121
+#, kde-format
+msgid ""
+"When encrypting emails, always also encrypt to the certificate of my own "
+"identity"
+msgstr "Поштаны шифрланғанда, менің кілтімен де шифрлансын"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:125
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr "Әрқашан, қолдануға біреуін таңдау үшін шифрлау кілттер көрсетілсін"
+
+#: snippet/convertsnippetvariablemenu.cpp:27
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox Recipient of an email message."
+#| msgid "To"
+msgid "To"
+msgstr "Кімге"
+
+#: snippet/convertsnippetvariablemenu.cpp:28
+#, kde-format
+msgid "To Field Address"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:31
+#, kde-format
+msgid "To Field Last Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:34
+#, kde-format
+msgid "To Field First Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:37
+#, kde-format
+msgid "To Field Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:42
+#, kde-format
+msgid "From"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:43
+#, kde-format
+msgid "From Field Address"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:46
+#, kde-format
+msgid "From Field Last Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:49
+#, kde-format
+msgid "From Field First Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:52
+#, kde-format
+msgid "From Field Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox Carbon Copy recipient of an email message."
+#| msgid "CC"
+msgid "CC"
+msgstr "Көшірме кімге"
+
+#: snippet/convertsnippetvariablemenu.cpp:58
+#, kde-format
+msgid "CC Field Address"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:61
+#, kde-format
+msgid "CC Field Last Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:64
+#, kde-format
+msgid "CC Field First Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:67
+#, kde-format
+msgid "CC Field Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:73
+#, kde-format
+msgid "Bcc"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:74
+#, kde-format
+msgid "BCC Field Address"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:77
+#, kde-format
+msgid "BCC Field Last Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:80
+#, kde-format
+msgid "BCC Field First Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:83
+#, kde-format
+msgid "BCC Field Name"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:89
+#, fuzzy, kde-format
+#| msgid "File Attachment Reminder"
+msgid "Attachment"
+msgstr "Файлды тіркемелеуді еске салу"
+
+#: snippet/convertsnippetvariablemenu.cpp:90
+#, fuzzy, kde-format
+#| msgid "&Remove Attachment"
+msgid "Number Of Attachments"
+msgstr "Тіркемені ө&шіру"
+
+#: snippet/convertsnippetvariablemenu.cpp:93
+#, fuzzy, kde-format
+#| msgctxt "@title column attachment name."
+#| msgid "Name"
+msgid "Names"
+msgstr "Атауы"
+
+#: snippet/convertsnippetvariablemenu.cpp:96
+#, fuzzy, kde-format
+#| msgid "Filename"
+msgid "Filenames"
+msgstr "Файл атауы"
+
+#: snippet/convertsnippetvariablemenu.cpp:99
+#, kde-format
+msgid "Names and Sizes"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:103
+#: snippet/convertsnippetvariablemenu.cpp:123
+#, kde-format
+msgid "Date/Time"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:104
+#: snippet/convertsnippetvariablemenu.cpp:151
+#, kde-format
+msgid "Day Of Week (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:107
+#, kde-format
+msgid "Date (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:110
+#, kde-format
+msgid "Long Date (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:113
+#, kde-format
+msgid "Short Time (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:116
+#, kde-format
+msgid "Time (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:119
+#, kde-format
+msgid "Year (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:127
+#, kde-format
+msgid "Last Year (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:130
+#, kde-format
+msgid "Next Year (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:133
+#, kde-format
+msgid "Month Number (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:136
+#, kde-format
+msgid "Day Of Month (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:139
+#, kde-format
+msgid "Week Number (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:142
+#, kde-format
+msgid "Month Name Short (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:145
+#, kde-format
+msgid "Month Name Long (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:148
+#, kde-format
+msgid "Last Month Name Long (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:154
+#, kde-format
+msgid "Day Of Week Name Short (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, kde-format
+msgid "Day Of Week Name Long (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:160
+#, kde-format
+msgid "Year Last Month (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:165
+#, kde-format
+msgid "Misc"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:166
+#, kde-format
+msgid "Subject"
+msgstr ""
+
+#: utils/util.cpp:260
+#, kde-format
+msgctxt ""
+"comma-separated list of keywords that are used to detect whether the user "
+"forgot to attach his attachment. Do not add space between words."
+msgid "attachment,attached"
+msgstr "attachment,attached,тіркеме,тіркемесі,тіркемеленген "
+
+#: utils/util.cpp:293
+#, kde-format
+msgid ""
+"The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
+"create a mail dispatcher?"
+msgstr ""
+"Пошта реттеуші орнатылмаған, пошта жіберлілмейді. Пошта реттеуші құрылсын ба?"
+
+#: utils/util.cpp:294
+#, kde-format
+msgid "No mail dispatcher."
+msgstr "Пошта реттеуші жоқ."
+
+#: utils/util.cpp:295
+#, fuzzy, kde-format
+#| msgid "No mail dispatcher."
+msgctxt "@action:button"
+msgid "Create Mail Dispatcher"
+msgstr "Пошта реттеуші жоқ."
+
+#: utils/util.cpp:310
+#, kde-format
+msgid ""
+"The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
+"it online?"
+msgstr "Пошта реттеуш желіден тыс, пошта жіберлілмейді. Желіге қосылсын ба?"
+
+#: utils/util.cpp:311
+#, kde-format
+msgid "Mail dispatcher offline."
+msgstr "Пошта реттеуш желіден тыс."
+
+#: utils/util.cpp:312
+#, kde-format
+msgctxt "@action:button"
+msgid "Set Online"
+msgstr ""
+
+#, fuzzy
+#~| msgctxt "@info:status"
+#~| msgid "Truncating recipients list to %2 of %1 entry."
+#~| msgid_plural "Truncating recipients list to %2 of %1 entries."
+#~ msgctxt "@info:status"
+#~ msgid "Truncating recipients list to %1."
+#~ msgstr "Тізімде %1 адресте(рде)н %2 қалдыру"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>To:</interface><nl/>%1"
+#~ msgstr "<interface>Кімге</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>CC:</interface><nl/>%1"
+#~ msgstr "<interface>Көшірме кімге:</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>BCC:</interface><nl/>%1"
+#~ msgstr "<interface>Жасырып кімге:</interface><nl/>:%1"
+
+#~ msgid "Warn if the receiver's address is not in the certificate"
+#~ msgstr "Куәлікте алушының эл.пошта адресі болмаса, ескертілсін"
+
+#~ msgid "Replace recognized prefi&x with \"Re:\""
+#~ msgstr "Танылған преф&иксі \"Re:\" дегенмен ауыстырылсын"
+
+#~ msgid "Replace recognized prefix with \"&Fwd:\""
+#~ msgstr "Танылған префиксі \"F&wd:\" дегенмен ауыстырылсын"
+
+#, fuzzy
+#~| msgid "Use recent addresses for autocompletion"
+#~ msgid "Use Baloo search for autocompletion"
+#~ msgstr "Автотолтыру үшін жуырдағы адрестер қолданылсын"
+
+#, fuzzy
+#~| msgid ""
+#~| "Disable this option if you do not want recently used addresses to appear "
+#~| "in the autocompletion list in the composer's address fields."
+#~ msgid ""
+#~ "Disable this option if you do not want baloo search addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Кұрастырғыш адрес өрісіне автотолтыру үшін жуырдағы адрестер "
+#~ "қолданылмасын десеңіз - бұл белгіні алып тастаңыз."
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Select Image Format"
+#~ msgid "Select email from contact"
+#~ msgstr "Кескін пішімін таңдау"
+
+#~ msgid "vCard Import Failed"
+#~ msgstr "vCard-ты импорттау қатесі "
+
+#~ msgid "<qt>Unable to access <b>%1</b>.</qt>"
+#~ msgstr "<qt><b>%1</b> қатынауға келмеді.</qt>"
+
+#, fuzzy
+#~| msgid "Automatically resize images"
+#~ msgid "Automatically expand groups"
+#~ msgstr "Кескіндер өлшемін автоөзгертсін"
+
+#~ msgid "Recent Addresses"
+#~ msgstr "Жуырдағы адрестер"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "&Insert"
+#~ msgctxt "@title:window"
+#~ msgid "Insert HTML"
+#~ msgstr "&Ендіру"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "&Insert"
+#~ msgctxt "@action:button"
+#~ msgid "Insert"
+#~ msgstr "&Ендіру"
+
+#, fuzzy
+#~| msgid "Height:"
+#~ msgctxt "@label right justify"
+#~ msgid "Right"
+#~ msgstr "Биіктігі:"
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Insert File"
+#~ msgctxt "@action"
+#~ msgid "Insert Rule Line"
+#~ msgstr "Файлды ендіру"
+
+#, fuzzy
+#~| msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+#~| msgid "BCC"
+#~ msgctxt "@item:inmenu uppercase abc lists"
+#~ msgid "ABC"
+#~ msgstr "Жасырып кімге"
+
+#, fuzzy
+#~| msgid "Lose Characters"
+#~ msgid "Add &Quote Characters"
+#~ msgstr "Таңбаларды жоғалту"
+
+#, fuzzy
+#~| msgid "Lose Characters"
+#~ msgid "Re&move Quote Characters"
+#~ msgstr "Таңбаларды жоғалту"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgid "Add Image"
+#~ msgstr "Кескін"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "&Insert"
+#~ msgid "Insert HTML"
+#~ msgstr "&Ендіру"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgctxt "Start of the filename for an image"
+#~ msgid "image"
+#~ msgstr "Кескін"
+
+#~ msgid "External editor cannot be started. Please verify command \"%1\""
+#~ msgstr "Сыртқы өңдегіш іске кірмеді. \"%1\" командасын тексеріңіз"
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "External Editor Running"
+#~ msgid "External Editor Closed"
+#~ msgstr "Сыртқы өңдегіш жегілген"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The external editor is still running.<nl/>Do you want to stop the editor "
+#~ "or keep it running?<nl/><warning>Stopping the editor will cause all your "
+#~ "unsaved changes to be lost.</warning>"
+#~ msgstr ""
+#~ "Сыртқы өңдегіш жегіліп тұр.<nl/>Оны доғаруын қалайсыз ба?<nl/> "
+#~ "<warning>Доғарғанда бүкіл сақталмаған өзгерістеріңіз жоғалады.</warning>"
+
+#~ msgctxt "@title:window"
+#~ msgid "External Editor Running"
+#~ msgstr "Сыртқы өңдегіш жегілген"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop Editor"
+#~ msgstr "Өңдегішті доғару"
+
+#~ msgctxt "@action:button"
+#~ msgid "Keep Editor Running"
+#~ msgstr "Қала берсін"
+
+#~ msgid "Write to format"
+#~ msgstr "Келесі пішімінде жазу:"
+
+#, fuzzy
+#~| msgid "Add Autocorrection Entry"
+#~ msgid "Add New Autocorrect"
+#~ msgstr "Автотүзету жазуын қосу"
+
+#~ msgctxt "@title:window"
+#~ msgid "Insert File"
+#~ msgstr "Файлды ендіру"
+
+#~ msgid "Edit Recent Addresses..."
+#~ msgstr "Жуырдағы адрестерді өңдеу..."
+
+#~ msgid "&Attach"
+#~ msgstr "&Тіркемелеу"
+
+#~ msgid ""
+#~ "The maximum size in bits that email attachments are allowed to have (-1 "
+#~ "for no limit)"
+#~ msgstr ""
+#~ "Тіркеменің рұқсат етілген өлшмінің биттердегі шегі (-1 деген - шексіз) "
+
+#~ msgid "LibreOffice Autocorrection"
+#~ msgstr "LibreOffice автотүзетуі"
+
+#~ msgid "KMail/Calligra Autocorrection"
+#~ msgstr "KMail/Calligra автотүзетуі"
+
+#~ msgid "\"Replace\" string is the same as \"Find\" string."
+#~ msgstr "\"Ауыстыру\" мәтін жолы \"Табу\" дегенмен бірдей."
+
+#~ msgid "&Modify"
+#~ msgstr "&Өзгерту"
+
+#~ msgid "&Add"
+#~ msgstr "Қ&осу"
+
+#~ msgid "Import LibreOffice Autocorrection"
+#~ msgstr "LibreOffice автотүзетуін импорттау"
+
+#~ msgid "Import KMail Autocorrection"
+#~ msgstr "KMail автотүзетуін импорттау"
+
+#~ msgid ""
+#~ "Language was changed, do you want to save config for previous language?"
+#~ msgstr "Тіл өзгертілген. Алдындағы тілдің баптауын сақсайсыз ба?"
+
+#~ msgid "Save config"
+#~ msgstr "Баптауын сақтау"
+
+#~ msgid "Export Autocorrection File"
+#~ msgstr "Автотүзету файлын экспорттау"
+
+#~ msgid "Archive cannot be opened in read mode."
+#~ msgstr "Архив окитын күйде ашылмады."
+
+#~ msgid "Import LibreOffice Autocorrection File"
+#~ msgstr "LibreOffice автотүзету файлын импорттау"
+
+#~ msgid "Enable autocorrection"
+#~ msgstr "Автотүзету болсын"
+
+#~ msgid "Replacement and exception for language:"
+#~ msgstr "Тілдің ауыстырулар мен ерекшеліктері"
+
+#~ msgid "Si&mple Autocorrection"
+#~ msgstr "Қа&рапайым автотүзету"
+
+#~ msgid ""
+#~ "Detect when a new sentence is started and always ensure that the first "
+#~ "character is an uppercase character"
+#~ msgstr "Жаңа сөйлем бастауын байқап, алғашқы әріпі үлкен болуын қадағалау"
+
+#~ msgid ""
+#~ "Convert &first letter of a sentence automatically to uppercase\n"
+#~ "(e.g. \"my house. in this town\" to \"my house. In this town\")"
+#~ msgstr ""
+#~ "Сөйлемінің &алғашқы әріпі автоматты түрде үлкен болсын\n"
+#~ "(мысалы, \"менің үйім. осы қалада\" деген \"менің үйім. Осы қалада\"\n"
+#~ "деп түзеледі)"
+
+#~ msgid ""
+#~ "All words are checked for the common mistake of holding the shift key "
+#~ "down a bit too long. If some words must have two uppercase characters, "
+#~ "then those exceptions should be added in the 'Exceptions' tab."
+#~ msgstr ""
+#~ "Барлық сөздер екі үлкен әріптен басталу қатесіне тексеріледі. Бұл shift "
+#~ "перенесін тым ұзақ басып ұстағаннан пайда болатын, жиі кездесетін қате. "
+#~ "Кейбір сөздер шынымен екі бас әріптен басталатын болса - оларды "
+#~ "'Ерекшеліктер' қойындысында белгілеп қойыңыз."
+
+#~ msgid ""
+#~ "Convert &two uppercase characters to one uppercase and one lowercase "
+#~ "character\n"
+#~ " (e.g. PErfect to Perfect)"
+#~ msgstr ""
+#~ "Сөйлемдің алғашқы &екі бас әріпі үлкен және кіші әріптерге ауыстырылсын\n"
+#~ "(мысалы, \"МӘселен\" деген \"Мәселен\" деп түзеледі)"
+
+#~ msgid ""
+#~ "Make sure that more than one space cannot be typed, as this is a common "
+#~ "mistake which is quite hard to find in formatted text."
+#~ msgstr ""
+#~ "Екі қатар бос орын ендірілмесін деп қадағалау. Бұл жиі кездесетін бірақ "
+#~ "пішімделген мәтінде көзге оңай ілекпейтін қате."
+
+#~ msgid "&Suppress double spaces"
+#~ msgstr "Қатар бос орындарды &болмасын"
+
+#~ msgid "Most standard fraction notations will be converted when available"
+#~ msgstr "Жиі пайдаланатын бөлшектер өз таңбаларымен ауыстырылады"
+
+#~ msgid "Re&place 1/2... with ½..."
+#~ msgstr "1/2... деген ½... деп а&уыстырылсын"
+
+#~ msgid "Capitalize name of days"
+#~ msgstr "Апта күндер атауын үлкен әріптермен жазылсын"
+
+#~ msgid ""
+#~ "Detect when a URL (Uniform Resource Locator) is typed and provide "
+#~ "formatting that matches the way an Internet browser would show a URL."
+#~ msgstr ""
+#~ "URL (Uniform Resource Locator сілтемесі) терілгенін байқап, ол Интернет "
+#~ "шолғыш пайдаланатын URL пішіміне келтіріледі."
+
+#~ msgid "Autoformat &URLs (HTML mode)"
+#~ msgstr "&URL-дер автопішімделсін (HTML күйі)"
+
+#~ msgid ""
+#~ "When you use _underline_ or *bold*, the text between the underscores or "
+#~ "asterisks will be converted to underlined or bold text."
+#~ msgstr ""
+#~ "_астын сызу_ және *қалың* деп жазғанда, асты сызықтар мен жұлдызшалар "
+#~ "арасындағы мәтін асты сызық немесе қалың мәтінге айналады."
+
+#~ msgid ""
+#~ "Automatically do &bold, strikeout and underline formatting (HTML mode)"
+#~ msgstr ""
+#~ "Қа&лың қылу, сызып тастау және астын сызу автопішімдеу болсын (HTML күйі)"
+
+#~ msgid "Replace 1st... with 1^st... (HTML mode)"
+#~ msgstr "1st деген 1^st дегенмен ауыстырылсын (HTML күйі)"
+
+#~ msgid "Custom &Quotes"
+#~ msgstr "Өзгеше &тырнақшалар"
+
+#~ msgid "Replace &single quotes with typographical quotes"
+#~ msgstr "Жа&лғыз тырнақшалар типографикалық таңбасымен ауыстырылсын"
+
+#~ msgid "Replace &double quotes with typographical quotes"
+#~ msgstr "Қ&ос тырнақшалар типографикалық таңбасымен ауыстырылсын"
+
+#~ msgid "Default"
+#~ msgstr "Әдетті"
+
+#~ msgid ""
+#~ "Add non breaking space before specific punctuation marks in french text"
+#~ msgstr ""
+#~ "Француз мәтінде ерекше тыныс белгілердің алдында үзілмейтін аралықты "
+#~ "ендіру"
+
+#~ msgid "Ad&vanced Autocorrection"
+#~ msgstr "Же&телеген автотүзету"
+
+#~ msgid "&Enable word replacement"
+#~ msgstr "Сөз алмастыруы &болсын"
+
+#~ msgid "&Find"
+#~ msgstr "&Табу"
+
+#~ msgid "Re&place"
+#~ msgstr "&Ауыстыру"
+
+#~ msgid "Find"
+#~ msgstr "Табу"
+
+#~ msgid "Replace"
+#~ msgstr "Ауыстыру"
+
+#~ msgid "E&xceptions"
+#~ msgstr "Ерек&шеліктер"
+
+#~ msgid "Do not treat as the end of a sentence:"
+#~ msgstr "Келесі сөйлемнің соңы деп саналмасын:"
+
+#~ msgid "R&emove"
+#~ msgstr "Өші&ру"
+
+#~ msgid "Accept two uppercase letters in:"
+#~ msgstr "Келесіде екі бас әріп рұқсат етіледі:"
+
+#, fuzzy
+#~| msgid "&Add"
+#~ msgid "Add"
+#~ msgstr "Қ&осу"
+
+#~ msgid "Export..."
+#~ msgstr "Экспорт..."
+
+#~ msgid "Import..."
+#~ msgstr "Импорт..."
+
+#~ msgid "A&dd"
+#~ msgstr "Қ&осу"
+
+#~ msgid " pt"
+#~ msgstr " пт"
+
+#~ msgid "Enabled Auto Resize Image"
+#~ msgstr "Кескін өлшемін автоөзгертуі болсын"
+
+#~ msgctxt "@title:window"
+#~ msgid "Resize Image"
+#~ msgstr "Кескін өлшемін өзгерту"
+
+#~ msgctxt "@action:button"
+#~ msgid "Resize"
+#~ msgstr "Өлшемін өзгерту"
+
+#~ msgid "Keep Original Size"
+#~ msgstr "Өз өлшемі қалсын"
+
+#~ msgid "Width:"
+#~ msgstr "Ені:"
+
+#~ msgid "Select Special Characters"
+#~ msgstr "Арнаулы таңбаларды таңдау"
+
+#, fuzzy
+#~| msgid "Could not open file."
+#~ msgid "Do not filter"
+#~ msgstr "Файл ашылмады."
+
+#~ msgid "&Cancel"
+#~ msgstr "Қ&айту"

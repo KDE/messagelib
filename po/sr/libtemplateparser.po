@@ -1,0 +1,1087 @@
+# Translation of libtemplateparser.po into Serbian.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2011, 2012, 2013, 2015, 2016, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: libtemplateparser\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-05-31 18:11+0200\n"
+"PO-Revision-Date: 2017-09-28 18:00+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+# >> @item
+#: customtemplates.cpp:83 customtemplates.cpp:137
+#, kde-format
+msgctxt "Message->"
+msgid "Universal"
+msgstr "универзална"
+
+# >> @item
+#: customtemplates.cpp:84 customtemplates.cpp:143
+#, kde-format
+msgctxt "Message->"
+msgid "Reply"
+msgstr "одговор"
+
+# >> @item
+#: customtemplates.cpp:85 customtemplates.cpp:146
+#, kde-format
+msgctxt "Message->"
+msgid "Reply to All"
+msgstr "одговор свима"
+
+# >> @item
+#: customtemplates.cpp:86 customtemplates.cpp:149
+#, kde-format
+msgctxt "Message->"
+msgid "Forward"
+msgstr "прослеђена"
+
+#: customtemplates.cpp:88 templatesconfiguration.cpp:90
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">Како ово ради?</a>"
+
+#: customtemplates.cpp:99
+#, kde-format
+msgid ""
+"<qt><p>Here you can add, edit, and delete custom message templates to use "
+"when you compose a reply or forwarding message. Create the custom template "
+"by typing the name into the input box and press the '+' button. Also, you "
+"can bind a keyboard combination to the template for faster operations.</"
+"p><p>Message templates support substitution commands, by simply typing them "
+"or selecting them from the <i>Insert command</i> menu.</p><p>There are four "
+"types of custom templates: used to <i>Reply</i>, <i>Reply to All</i>, "
+"<i>Forward</i>, and <i>Universal</i> which can be used for all kinds of "
+"operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
+"templates.</p></qt>"
+msgstr ""
+"<qt><p>Овде можете додавати, уређивати и брисати посебне шаблоне за поруке, "
+"који се користе за састављање одговора или прослеђивање поруке. Посебан "
+"шаблон правите тако што унесете име у поље за текст и притиснете дугме „+“. "
+"Такође можете свезати шаблон са комбинацијом тастера, ради бржег позивања.</"
+"p><p>Шаблони порука подржавају наредбе за смену, тако што их једноставно "
+"укуцате или изаберете их из менија <i>Уметни наредбу</i>.</p><p>Постоје "
+"четири врсте посебних шаблона: за поруке типа <i>одговор</i>, <i>одговор "
+"свима</i>, <i>прослеђена</i> и <i>универзална</i>, које можете користити за "
+"све врсте радњи. Не можете задати пречицу тастера за универзалне шаблоне.</"
+"p></qt>"
+
+# >> @item
+#: customtemplates.cpp:152
+#, kde-format
+msgctxt "Message->"
+msgid "Unknown"
+msgstr "непозната"
+
+#: customtemplates.cpp:269
+#, kde-format
+msgid "A template with same name already exists."
+msgstr "Истоимени шаблон већ постоји."
+
+#: customtemplates.cpp:270
+#, kde-format
+msgid "Cannot create template"
+msgstr "Не могу да направим шаблон"
+
+#: customtemplates.cpp:367
+#, kde-format
+msgctxt "@info"
+msgid "Do you really want to remove template \"%1\"?"
+msgstr "Желите ли заиста да уклоните шаблон „%1“?"
+
+#: customtemplates.cpp:368
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Template?"
+msgstr "Уклонити шаблон?"
+
+#: customtemplatesmenu.cpp:63
+#, kde-format
+msgid "With Custom Template"
+msgstr "Посебним шаблоном"
+
+#: customtemplatesmenu.cpp:67
+#, kde-format
+msgid "Reply With Custom Template"
+msgstr "Одговори посебним шаблоном"
+
+#: customtemplatesmenu.cpp:71
+#, kde-format
+msgid "Reply to All With Custom Template"
+msgstr "Одговори свима посебним шаблоном"
+
+#: customtemplatesmenu.cpp:198 customtemplatesmenu.cpp:204
+#: customtemplatesmenu.cpp:210
+#, kde-format
+msgid "(no custom templates)"
+msgstr "(нема посебних шаблона)"
+
+#: defaulttemplates.cpp:29
+#, kde-format
+msgid "Default new message template"
+msgstr "Подразумевани шаблон за нову поруку"
+
+#: defaulttemplates.cpp:35
+#, kde-format
+msgid "Default reply template"
+msgstr "Подразумевани шаблон за одговор"
+
+#: defaulttemplates.cpp:39
+#, kde-format
+msgctxt ""
+"Default reply template.%1: date of original message, %2: time of original "
+"message, %3: quoted text of original message, %4: cursor Position"
+msgid ""
+"On %1 %2 you wrote:\n"
+"%3\n"
+"%4"
+msgstr ""
+"Дана %1 у %2, написасте:\n"
+"%3\n"
+"%4"
+
+#: defaulttemplates.cpp:47
+#, kde-format
+msgid "Default reply all template"
+msgstr "Подразумевани шаблон за одговор свима"
+
+#: defaulttemplates.cpp:50
+#, kde-format
+msgctxt ""
+"Default reply all template: %1: date, %2: time, %3: name of original sender, "
+"%4: quoted text of original message, %5: cursor position"
+msgid ""
+"On %1 %2 %3 wrote:\n"
+"%4\n"
+"%5"
+msgstr ""
+"Дана %1 у %2, %3 написа:\n"
+"%4\n"
+"%5"
+
+#: defaulttemplates.cpp:59
+#, kde-format
+msgid "Default forward template"
+msgstr "Подразумевани шаблон за прослеђивање"
+
+#: defaulttemplates.cpp:65
+#, kde-format
+msgctxt ""
+"Default forward template: %1: subject of original message, %2: date of "
+"original message, %3: time of original message, %4: mail address of original "
+"sender, %5: original message text"
+msgid ""
+"\n"
+"----------  Forwarded Message  ----------\n"
+"\n"
+"Subject: %1\n"
+"Date: %2, %3\n"
+"From: %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-----------------------------------------"
+msgstr ""
+"\n"
+"----------  прослеђена порука  ----------\n"
+"\n"
+"Тема: %1\n"
+"Датум: %2, %3\n"
+"Од: %4\n"
+"%OADDRESSEESADDR\n"
+"\n"
+"%5\n"
+"-----------------------------------------"
+
+#. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:13
+#, kde-format
+msgid "Template content"
+msgstr "Садржај шаблона"
+
+#. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:17
+#, kde-format
+msgid "Template shortcut"
+msgstr "Пречица шаблона"
+
+#. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
+#: settings/customtemplates_kfg.kcfg:21
+#, kde-format
+msgid "Template type"
+msgstr "Тип шаблона"
+
+#. i18n: ectx: label, entry (StripSignature), group (TemplateParser)
+#: settings/templateparser.kcfg:11
+#, kde-format
+msgid "Remove the signature when replying"
+msgstr "Уклони потпис при одговарању"
+
+#. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
+#: settings/templateparser.kcfg:15
+#, kde-format
+msgid "Use smart &quoting"
+msgstr "Паметно &цитирање"
+
+#. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
+#: settings/templateparser.kcfg:19
+#, fuzzy, kde-format
+#| msgid "Reply or forward using HTML if present"
+msgid "Reply or forward using HTML based on Visual Format"
+msgstr "Одговор или прослеђивање са ХТМЛ‑ом ако га има"
+
+#. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
+#: settings/templateparser.kcfg:26
+#, kde-format
+msgid "Message template for new message"
+msgstr "Шаблон поруке за нову поруку"
+
+#. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
+#: settings/templateparser.kcfg:30
+#, kde-format
+msgid "Message template for reply"
+msgstr "Шаблон поруке за одговор"
+
+#. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
+#: settings/templateparser.kcfg:34
+#, kde-format
+msgid "Message template for reply to all"
+msgstr "Шаблон поруке за одговор свима"
+
+#. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
+#: settings/templateparser.kcfg:38
+#, kde-format
+msgid "Message template for forward"
+msgstr "Шаблон поруке за прослеђивање"
+
+#. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
+#: settings/templateparser.kcfg:42
+#, kde-format
+msgid "Quote characters"
+msgstr "Знакови цитирања"
+
+#: templateparserjob.cpp:356
+#, kde-format
+msgctxt "@info"
+msgid "Cannot insert content from file %1: %2"
+msgstr "Не могу да уметнем садржај из фајла %1: %2"
+
+#: templateparserjob.cpp:535
+#, kde-format
+msgctxt "@item:intext email To"
+msgid "To:"
+msgstr "За:"
+
+#: templateparserjob.cpp:546
+#, kde-format
+msgctxt "@item:intext email CC"
+msgid "CC:"
+msgstr "ЦЦ:"
+
+#: templateparserjob.cpp:1212
+#, kde-format
+msgctxt "@item:intext"
+msgid "Attachment %1"
+msgstr "прилог %1"
+
+#: templateparserjob.cpp:1422
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Pipe command <command>%1</command> failed."
+msgstr "Цевна наредба <command>%1</command> није успела."
+
+# >> @item
+#: templatescommandmenu.cpp:45
+#, kde-format
+msgid "Quoted Message Text"
+msgstr "цитирани текст поруке"
+
+# >> @item
+#: templatescommandmenu.cpp:50
+#, kde-format
+msgid "Message Text as Is"
+msgstr "сирови текст поруке"
+
+# >> @item
+#: templatescommandmenu.cpp:55
+#, kde-format
+msgid "Message Id"
+msgstr "ИД поруке"
+
+# >> @item
+#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:194
+#, kde-format
+msgid "Date"
+msgstr "датум"
+
+# >> @item
+#: templatescommandmenu.cpp:65 templatescommandmenu.cpp:199
+#, kde-format
+msgid "Date in Short Format"
+msgstr "датум у кратком формату"
+
+# >> @item
+#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:204
+#, kde-format
+msgid "Date in C Locale"
+msgstr "датум у Ц локалитету"
+
+# >> @item
+#: templatescommandmenu.cpp:75 templatescommandmenu.cpp:209
+#, kde-format
+msgid "Day of Week"
+msgstr "дан у седмици"
+
+# >> @item
+#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:214
+#, kde-format
+msgid "Time"
+msgstr "време"
+
+# >> @item
+#: templatescommandmenu.cpp:85 templatescommandmenu.cpp:219
+#, kde-format
+msgid "Time in Long Format"
+msgstr "време у дугачком формату"
+
+# >> @item
+#: templatescommandmenu.cpp:90 templatescommandmenu.cpp:224
+#, kde-format
+msgid "Time in C Locale"
+msgstr "време у Ц локалитету"
+
+# >> @item
+#: templatescommandmenu.cpp:95 templatescommandmenu.cpp:228
+#, kde-format
+msgid "To Field Address"
+msgstr "адреса примаоца"
+
+# >> @item
+#: templatescommandmenu.cpp:100 templatescommandmenu.cpp:233
+#, kde-format
+msgid "To Field Name"
+msgstr "име и презиме у пољу „За:“"
+
+# >> @item
+#: templatescommandmenu.cpp:105 templatescommandmenu.cpp:238
+#, kde-format
+msgid "To Field First Name"
+msgstr "име у пољу „За:“"
+
+# >> @item
+#: templatescommandmenu.cpp:110 templatescommandmenu.cpp:243
+#, kde-format
+msgid "To Field Last Name"
+msgstr "презиме у пољу „За:“"
+
+# >> @item
+#: templatescommandmenu.cpp:115 templatescommandmenu.cpp:248
+#, kde-format
+msgid "CC Field Address"
+msgstr "адреса у пољу „ЦЦ:“"
+
+# >> @item
+#: templatescommandmenu.cpp:120 templatescommandmenu.cpp:253
+#, kde-format
+msgid "CC Field Name"
+msgstr "име и презиме у пољу „ЦЦ:“"
+
+# >> @item
+#: templatescommandmenu.cpp:125 templatescommandmenu.cpp:258
+#, kde-format
+msgid "CC Field First Name"
+msgstr "име у пољу „ЦЦ:“"
+
+# >> @item
+#: templatescommandmenu.cpp:130 templatescommandmenu.cpp:263
+#, kde-format
+msgid "CC Field Last Name"
+msgstr "презиме у пољу „ЦЦ:“"
+
+# >> @item
+#: templatescommandmenu.cpp:135 templatescommandmenu.cpp:268
+#, kde-format
+msgid "From Field Address"
+msgstr "адреса у пољу „Од:“"
+
+# >> @item
+#: templatescommandmenu.cpp:140
+#, kde-format
+msgid "From Field Name"
+msgstr "име и презиме у пољу „Од:“"
+
+# >> @item
+#: templatescommandmenu.cpp:145 templatescommandmenu.cpp:278
+#, kde-format
+msgid "From Field First Name"
+msgstr "име у пољу „Од:“"
+
+# >> @item
+#: templatescommandmenu.cpp:150 templatescommandmenu.cpp:283
+#, kde-format
+msgid "From Field Last Name"
+msgstr "презиме у пољу „Од:“"
+
+# >> @item
+#: templatescommandmenu.cpp:155
+#, kde-format
+msgid "Addresses of all recipients"
+msgstr "адресе свих прималаца"
+
+# >> @item
+#: templatescommandmenu.cpp:160
+#, kde-format
+msgctxt "Template value for subject of the message"
+msgid "Subject"
+msgstr "тема"
+
+# >> @item
+#: templatescommandmenu.cpp:165
+#, kde-format
+msgid "Quoted Headers"
+msgstr "цитирана заглавља"
+
+# >> @item
+#: templatescommandmenu.cpp:170
+#, kde-format
+msgid "Headers as Is"
+msgstr "сирова заглавља"
+
+# >> @item
+#: templatescommandmenu.cpp:175 templatescommandmenu.cpp:293
+#, kde-format
+msgid "Header Content"
+msgstr "садржај заглавља"
+
+# >> @item
+#: templatescommandmenu.cpp:180
+#, kde-format
+msgid "Reply as Quoted Plain Text"
+msgstr "цитат у одговору као обични текст"
+
+# >> @item
+#: templatescommandmenu.cpp:185
+#, kde-format
+msgid "Reply as Quoted HTML Text"
+msgstr "цитат у одговору као ХТМЛ текст"
+
+# >> @item
+#: templatescommandmenu.cpp:273
+#, kde-format
+msgid "From field Name"
+msgstr "име и презиме у пољу „Од:“"
+
+# >> @item
+#: templatescommandmenu.cpp:288
+#, kde-format
+msgctxt "Template subject command."
+msgid "Subject"
+msgstr "тема"
+
+# >> @item
+#: templatescommandmenu.cpp:301
+#, kde-format
+msgid "Pipe Original Message Body and Insert Result as Quoted Text"
+msgstr "провлачење тела изворне поруке и уметање резултата као цитирани текст"
+
+# >> @item
+#: templatescommandmenu.cpp:306
+#, kde-format
+msgid "Pipe Original Message Body and Insert Result as Is"
+msgstr "провлачење тела изворне поруке и уметање сировог резултата"
+
+# >> @item
+#: templatescommandmenu.cpp:311
+#, kde-format
+msgid "Pipe Original Message with Headers and Insert Result as Is"
+msgstr "провлачење изворне поруке са заглављима и уметање сировог резултата"
+
+# >> @item
+#: templatescommandmenu.cpp:316
+#, kde-format
+msgid "Pipe Current Message Body and Insert Result as Is"
+msgstr "провлачење тела текуће поруке и уметање сировог резултата"
+
+# >> @item
+#: templatescommandmenu.cpp:321
+#, kde-format
+msgid "Pipe Current Message Body and Replace with Result"
+msgstr "провлачење тела текуће поруке и замена резултатом"
+
+# >> @item
+#: templatescommandmenu.cpp:331
+#, kde-format
+msgctxt "Inserts user signature, also known as footer, into message"
+msgid "Signature"
+msgstr "потпис"
+
+# >> @item
+#: templatescommandmenu.cpp:336
+#, kde-format
+msgid "Insert File Content"
+msgstr "уметање садржаја фајла"
+
+# >> @item
+#: templatescommandmenu.cpp:343
+#, kde-format
+msgctxt ""
+"All characters, up to and including the next newline, are discarded without "
+"performing any macro expansion"
+msgid "Discard to Next Line"
+msgstr "одбацивање до следећег реда"
+
+# >> @item
+#: templatescommandmenu.cpp:348
+#, kde-format
+msgid "Template Comment"
+msgstr "коментар у шаблону"
+
+# >> @item
+#: templatescommandmenu.cpp:353
+#, kde-format
+msgid "No Operation"
+msgstr "без обраде"
+
+# >> @item
+#: templatescommandmenu.cpp:358
+#, kde-format
+msgid "Clear Generated Message"
+msgstr "уклањање генерисане поруке"
+
+# skip-rule: t-pointer
+# >> @item
+#: templatescommandmenu.cpp:362
+#, kde-format
+msgid "Cursor position"
+msgstr "положај курсора"
+
+# >> @item
+#: templatescommandmenu.cpp:367
+#, kde-format
+msgid "Blank text"
+msgstr "празан текст"
+
+# >> @item
+#: templatescommandmenu.cpp:372
+#, kde-format
+msgid "Dictionary Language"
+msgstr "језик речника"
+
+# >> @item
+#: templatescommandmenu.cpp:376
+#, kde-format
+msgid "Language"
+msgstr "језик"
+
+# >> @item
+#: templatescommandmenu.cpp:385
+#, kde-format
+msgid "Turn Debug On"
+msgstr "укључивање исправљања"
+
+# >> @item
+#: templatescommandmenu.cpp:390
+#, kde-format
+msgid "Turn Debug Off"
+msgstr "искључивање исправљања"
+
+#: templatescommandmenu.cpp:428
+#, kde-format
+msgid "Insert Command"
+msgstr "Уметни наредбу"
+
+# >> @item:inmenu Insert Command
+#: templatescommandmenu.cpp:441
+#, kde-format
+msgid "Original Message"
+msgstr "изворна порука"
+
+# >> @item:inmenu Insert Command
+#: templatescommandmenu.cpp:455
+#, kde-format
+msgid "Current Message"
+msgstr "текућа порука"
+
+# >> @item:inmenu Insert Command
+#: templatescommandmenu.cpp:468
+#, kde-format
+msgid "Process with External Programs"
+msgstr "обрада спољашњим програмима"
+
+# >> @item:inmenu Insert Command
+#: templatescommandmenu.cpp:481
+#, kde-format
+msgctxt "Miscellaneous template commands menu"
+msgid "Miscellaneous"
+msgstr "разно"
+
+#: templatescommandmenu.cpp:495
+#, kde-format
+msgctxt "Debug template commands menu"
+msgid "Debug"
+msgstr ""
+
+#: templatesconfiguration.cpp:67
+#, kde-format
+msgid ""
+"<p>Here you can create and manage templates to use when composing new "
+"messages, replies or forwarded messages.</p><p>The message templates support "
+"substitution commands, either simply type them or select them from the "
+"<i>Insert command</i> menu.</p>"
+msgstr ""
+"<p>Овде можете правити и управљати шаблонима које користите при састављању "
+"одговора или прослеђивању порука.</p><p>Шаблони порука подржавају наредбе за "
+"смену, тако што их једноставно укуцате или изаберете из менија <i>Уметни "
+"наредбу</i>.</p>"
+
+#: templatesconfiguration.cpp:75
+#, kde-format
+msgid ""
+"<p>Templates specified here are folder-specific. They override both global "
+"templates and per-identity templates.</p>"
+msgstr ""
+"<p>Овде наведени шаблони посебни су за ову фасциклу. Они имају приоритет и "
+"над глобалним шаблонима и над шаблонима према идентитету.</p>"
+
+#: templatesconfiguration.cpp:80
+#, kde-format
+msgid ""
+"<p>Templates specified here are identity-specific. They override global "
+"templates, but can be overridden by per-folder templates if they are "
+"specified.</p>"
+msgstr ""
+"<p>Овде наведени шаблони посебни су за овај идентитет. Они имају приоритет "
+"над глобалним шаблонима али их могу потиснути шаблони по фасцикли, ако су "
+"наведени.</p>"
+
+#: templatesconfiguration.cpp:85
+#, kde-format
+msgid ""
+"<p>These are global (default) templates. They can be overridden by per-"
+"identity templates or per-folder templates if they are specified.</p>"
+msgstr ""
+"<p>Ово су глобални (подразумевани) шаблони. Они могу бити потиснути "
+"шаблонима по идентитету или по фасцикли, ако су наведени.</p>"
+
+#: templatesconfiguration.cpp:127
+#, kde-format
+msgid "Do you want to reset current template or all templates to default?"
+msgstr "Желите ли да вратите текући шаблон или све шаблоне на подразумевано?"
+
+# >> @title:window
+#: templatesconfiguration.cpp:128
+#, kde-format
+msgid "Reset to default"
+msgstr "Враћање на подразумевано"
+
+# skip-rule: t-reset
+#: templatesconfiguration.cpp:129
+#, kde-format
+msgid "Reset Current Template"
+msgstr "Врати текући шаблон"
+
+# skip-rule: t-reset
+#: templatesconfiguration.cpp:130
+#, kde-format
+msgid "Reset All Templates"
+msgstr "Врати све шаблоне"
+
+#: templatesconfiguration.cpp:389
+#, kde-format
+msgid ""
+"Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
+"not correct. Use only one of the aforementioned commands with \" Reply as "
+"Quoted Message command\" as per your need\n"
+"(a)Reply using plain text for quotes to be strictly in plain text\n"
+"(b)Reply using HTML text for quotes being in HTML format if present"
+msgstr ""
+"Није исправно заједно задати и „цитат у одговору као обични текст“ и „цитат "
+"у одговору као ХТМЛ текст“. Задајте само једну од ових наредби према томе да "
+"ли желите\n"
+"(а) да у одговору који је обични текст цитати буду строго обични текст\n"
+"(б) да у одговору који садржи ХТМЛ цитати буду ХТМЛ ако га има"
+
+#: templatesinsertcommandpushbutton.cpp:31
+#, kde-format
+msgid "&Insert Command"
+msgstr "&Уметни наредбу"
+
+#: templatesinsertcommandpushbutton.cpp:42
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select a command to insert into the template"
+msgstr "Изаберите наредбу за уметање у шаблон."
+
+# switch-rule: t-pointer > t-cursor
+#: templatesinsertcommandpushbutton.cpp:45
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Traverse this menu to find a command to insert into the current template "
+"being edited.  The command will be inserted at the cursor location, so you "
+"want to move your cursor to the desired insertion point first."
+msgstr ""
+"Прођите кроз овај мени да нађете наредбу за уметање у шаблон који тренутно "
+"уређујете. Наредба ће бити уметнута на месту курсора, па га претходно "
+"померите на жељену тачку уметања."
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
+#: ui/customtemplates_base.ui:86
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Enter a name for the custom template"
+msgstr "Унесите име посебног шаблона."
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mName)
+#: ui/customtemplates_base.ui:89
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"To create a custom template, first enter a name for that template and press "
+"the '+' button."
+msgstr ""
+"За стварање посебног шаблона, прво унесите његово име и кликните на дугме "
+"„+“."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
+#: ui/customtemplates_base.ui:96
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Add a new custom template"
+msgstr "Додајте нови посебни шаблон."
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mAdd)
+#: ui/customtemplates_base.ui:99
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to create a new custom template with the "
+"specified name"
+msgstr ""
+"Кликните на ово дугме ако желите да направите нови посебни шаблон задатог "
+"имена."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
+#: ui/customtemplates_base.ui:106
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove the selected custom template"
+msgstr "Уклоните изабрани посебни шаблон."
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mRemove)
+#: ui/customtemplates_base.ui:109
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to remove the currently selected custom "
+"template"
+msgstr ""
+"Кликните на ово дугме ако желите да уклоните тренутно изабрани посебни "
+"шаблон."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
+#: ui/customtemplates_base.ui:116
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Duplicate the selected custom template"
+msgstr "Удвостручите изабрани посебни шаблон."
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mDuplicate)
+#: ui/customtemplates_base.ui:119
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Press this button if you want to duplicate the currently selected custom "
+"template"
+msgstr ""
+"Кликните на ово дугме ако желите да удвостручите тренутно изабрани посебни "
+"шаблон."
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:134
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "List of custom templates available"
+msgstr "Списак доступних посебних шаблона."
+
+#. i18n: ectx: property (whatsThis), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:137
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This is a list of all the custom templates available."
+msgstr "Ово је списак свих посебних шаблона на располагању."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:147
+#, kde-format
+msgctxt "@title:column Type of custom template"
+msgid "Type"
+msgstr "тип"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, mList)
+#: ui/customtemplates_base.ui:152
+#, kde-format
+msgctxt "@title:column Name of the custom template."
+msgid "Name"
+msgstr "име"
+
+#. i18n: ectx: property (text), widget (QLabel, mToLabel)
+#: ui/customtemplates_base.ui:195
+#, kde-format
+msgctxt "@label:textbox Recipient mail address"
+msgid "To:"
+msgstr "За:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCCLabel)
+#: ui/customtemplates_base.ui:202
+#, kde-format
+msgctxt "@label"
+msgid "CC:"
+msgstr "ЦЦ:"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
+#: ui/customtemplates_base.ui:219
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Additional recipients of the message"
+msgstr "Додатни примаоци поруке."
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
+#: ui/customtemplates_base.ui:222
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"When using this template, the default recipients are those you enter here.  "
+"This is a comma-separated list of mail addresses."
+msgstr ""
+"Када користите овај шаблон, подразумевани примаоци биће они које унесете "
+"овде. Ово је списак адреса е‑поште раздвојених запетом."
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
+#: ui/customtemplates_base.ui:235
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Additional recipients who get a copy of the message"
+msgstr "Додатни примаоци који ће добити копију поруке."
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
+#: ui/customtemplates_base.ui:238
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"When using this template, the recipients you enter here will by default get "
+"a copy of this message.  This is a comma-separated list of mail addresses."
+msgstr ""
+"Када користите овај шаблон, примаоци које унесете овде подразумевано ће "
+"добити копију ове поруке. Ово је списак адреса е‑поште раздвојених запетом."
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
+#: ui/customtemplates_base.ui:255
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The custom template"
+msgstr "Посебни шаблон."
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, mEdit)
+#: ui/customtemplates_base.ui:258
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "This area contains the associated custom template."
+msgstr "Ова зона садржи придружени посебни шаблон."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:283
+#, kde-format
+msgctxt "@item:inlistbox Universal custom template type."
+msgid "Universal"
+msgstr "универзални"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:288
+#, kde-format
+msgctxt "@item:inlistbox Custom template type for message replies"
+msgid "Reply"
+msgstr "одговор"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:293
+#, kde-format
+msgctxt "@item:inlistbox Custom template type for reply-to-all messages"
+msgid "Reply to All"
+msgstr "одговор свима"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, mType)
+#: ui/customtemplates_base.ui:298
+#, kde-format
+msgctxt "@item:inlistbox Custom template type for messsage forwards"
+msgid "Forward"
+msgstr "прослеђивање"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: ui/customtemplates_base.ui:306
+#, kde-format
+msgctxt "@label"
+msgid "Shortc&ut:"
+msgstr "&Пречица:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: ui/customtemplates_base.ui:325
+#, kde-format
+msgctxt "@label"
+msgid "&Template type:"
+msgstr "&Тип шаблона:"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, TemplatesConfigurationBase)
+#: ui/templatesconfiguration_base.ui:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Template Configuration"
+msgstr "Подешавање шаблона"
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_new)
+#: ui/templatesconfiguration_base.ui:77
+#, kde-format
+msgctxt "@title Message template"
+msgid "New Message"
+msgstr "Нова порука"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
+#: ui/templatesconfiguration_base.ui:89
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for new messages"
+msgstr "Направите шаблон за нову поруку."
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
+#: ui/templatesconfiguration_base.ui:92
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for new email messages.  For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"У овој зони правите шаблон за нове поруке е‑поште. За више детаља о стварању "
+"шаблона кликните на везу „Како ово ради?“ у овом дијалогу."
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_reply)
+#: ui/templatesconfiguration_base.ui:108
+#, kde-format
+msgctxt "@title Message template"
+msgid "Reply to Sender"
+msgstr "Одговор пошиљаоцу"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
+#: ui/templatesconfiguration_base.ui:146
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for message replies"
+msgstr "Направите шаблон поруке за нову поруку."
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
+#: ui/templatesconfiguration_base.ui:149
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for messages replies. For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"У овој зони правите шаблон за одговоре на поруке. За више детаља о стварању "
+"шаблона кликните на везу „Како ово ради?“ у овом дијалогу."
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
+#: ui/templatesconfiguration_base.ui:165
+#, kde-format
+msgctxt "@title Message template"
+msgid "Reply to All / Reply to List"
+msgstr "Одговор свима и одговор на листу"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
+#: ui/templatesconfiguration_base.ui:203
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for replying to all recipients or to a mailing list"
+msgstr "Направите шаблон за одговарање свим примаоцима или на поштанску листу."
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
+#: ui/templatesconfiguration_base.ui:206
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for reply-to-all messages or replies to "
+"a mailing list.  For more information about how to create the template, "
+"press the \"How does this work?\" link on this dialog."
+msgstr ""
+"У овој зони правите шаблон за поруке типа одговор-свима и одговоре на "
+"поштанску листу. За више детаља о стварању шаблона кликните на везу „Како "
+"ово ради?“ у овом дијалогу."
+
+#. i18n: ectx: attribute (label), widget (QWidget, page_forward)
+#: ui/templatesconfiguration_base.ui:222
+#, kde-format
+msgctxt "@title Message template"
+msgid "Forward Message"
+msgstr "Прослеђена порука"
+
+#. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
+#: ui/templatesconfiguration_base.ui:260
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create the template for message forwards"
+msgstr "Направите шаблон за прослеђивање порука."
+
+#. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
+#: ui/templatesconfiguration_base.ui:263
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"In this area you create the template for message forwards.  For more "
+"information about how to create the template, press the \"How does this work?"
+"\" link on this dialog."
+msgstr ""
+"У овој зони правите шаблон за прослеђивање порука. За више детаља о стварању "
+"шаблона кликните на везу „Како ово ради?“ у овом дијалогу."
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: ui/templatesconfiguration_base.ui:303
+#, kde-format
+msgctxt "@label:textbox Prefix for quoted message lines"
+msgid "&Quote indicator:"
+msgstr "Показатељ &цитата:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
+#: ui/templatesconfiguration_base.ui:316
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Set the Prefix for quoted message lines"
+msgstr "Поставите префикс за цитиране редове поруке."
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
+#: ui/templatesconfiguration_base.ui:326
+#, no-c-format, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"\n"
+"             <qt>The following placeholders are supported in the quote "
+"indicator:\n"
+"             <ul>\n"
+"             <li>%f: sender's initials</li>\n"
+"             <li>%%: percent sign</li>\n"
+"             <li>%_: space</li>\n"
+"             </ul></qt>\n"
+"           "
+msgstr ""
+"\n"
+"<qt>Местодржачи подржани у показатељу цитата:<ul><li>%f: иницијали "
+"пошиљаоца</li><li>%%: знак за проценат</li><li>%_: размак</li></ul></qt>"

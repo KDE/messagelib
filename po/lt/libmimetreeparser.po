@@ -1,0 +1,1757 @@
+# translation of kmail.po to Lithuanian
+# Ričardas Čepas <rch@online.lt>, 2003.
+# Donatas Glodenis <dgvirtual@akl.lt>, 2004-2009.
+# Andrius Štikonas <andrius@stikonas.eu>, 2008-2009.
+# Remigijus Jarmalavičius, 2011.
+# Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2011, 2012, 2013, 2014.
+# Liudas Alisauskas <liudas@akmc.lt>, 2013.
+# Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessageviewer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2015-12-29 23:01+0200\n"
+"Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
+"Language-Team: lt <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Nepavadintas"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Blogas šifravimo priedas."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Nerastas tinkamas šifravimo priedas."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "Nerastas %1 priedas."
+
+#: src/messagepart.cpp:798
+#, fuzzy, kde-format
+#| msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "Šifravimo priedas %1 negali patikrinti parašų."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"Laiškas pasirašytas, tačiau parašo galiojimas negali būti patikrintas.<br /"
+">Priežastis: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Šifravimo priedas „%1“ negali iššifruoti jokių laiškų."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Šifravimo priedas „%1“ negali iššifruoti duomenų."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Klaida: %1"
+
+#, fuzzy
+#~| msgid "Sorry, certificate could not be imported.<br />Reason: %1"
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "Deja liudijimo importuoti nepavyko.<br />Priežastis: %1"
+
+#~ msgid "Reason: %1"
+#~ msgstr "Priežastis: %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Atsiprašome, šiam laiškui liudijimų nerasta"
+
+#~ msgid "Certificate import status:"
+#~ msgstr "Liudijimų importo būsena:"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "Importuotas %1 naujas liudijimas."
+#~ msgstr[1] "Importuoti %1 nauji liudijimai."
+#~ msgstr[2] "Importuota %1 naujų liudijimų."
+#~ msgstr[3] "Importuotas %1 naujas liudijimas."
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "%1 liudijimas liko nepakeistas."
+#~ msgstr[1] "%1 liudijimai liko nepakeisti."
+#~ msgstr[2] "%1 liudijimų liko nepakeista."
+#~ msgstr[3] "%1 liudijimas liko nepakeistas."
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "Importuotas %1 naujas slaptasis raktas."
+#~ msgstr[1] "Importuoti %1 nauji slaptieji raktai."
+#~ msgstr[2] "Importuota %1 naujų slaptųjų raktų."
+#~ msgstr[3] "Importuotas %1 naujas slaptasis raktas."
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "%1 slaptas raktas liko nepakeistas."
+#~ msgstr[1] "%1 slapti raktai liko nepakeisti."
+#~ msgstr[2] "%1 slaptų raktų liko nepakeista."
+#~ msgstr[3] "%1 slaptas raktas liko nepakeistas."
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr "Deja, nėra jokių detalių apie liudijimų importavimą."
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Liudijimų importo detalės:"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Nepavyko: %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "Įdėtas viduje laiškas"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "Įdėto laiško pabaiga"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "Šis laiškas yra užšifruotas."
+
+#~ msgid "Decrypt Message"
+#~ msgstr "Dešifruoti laišką"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Prašome palaukti kol iššifruojamas laiškas..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "Šifruotas laiškas"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "Užšifruotas laiškas (iššifravimas negalimas)"
+
+#, fuzzy
+#~| msgid "Reason: %1"
+#~ msgid "Reason: "
+#~ msgstr "Priežastis: %1"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Nepavyko iššifruoti duomenų."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "Šifruoto laiško pabaiga"
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~| "HTML code is shown. If you trust the sender of this message then you can "
+#~| "activate formatted HTML display for this message <a href=\"kmail:showHTML"
+#~| "\">by clicking here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~ "HTML code is shown. If you trust the sender of this message then you can "
+#~ "activate formatted HTML display for this message <a href=kmail:"
+#~ "showHTML>by clicking here</a>."
+#~ msgstr ""
+#~ "<b>Pastaba:</b> Tai yra HTML laiškas.  Saugumo sumetimais rodomas tik "
+#~ "HTML kodas. Jei pasitikite laiško siuntėju, galite aktyvuoti formatuoto "
+#~ "HTML rodymą šiam laiškui <a href=\"kmail:showHTML\">spragtelėdami čia</a>."
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This HTML message may contain external references to images "
+#~| "etc. For security/privacy reasons external references are not loaded. If "
+#~| "you trust the sender of this message then you can load the external "
+#~| "references for this message <a href=\"kmail:loadExternal\">by clicking "
+#~| "here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This HTML message may contain external references to images "
+#~ "etc. For security/privacy reasons external references are not loaded. If "
+#~ "you trust the sender of this message then you can load the external "
+#~ "references for this message <a href=kmail:loadExternal>by clicking here</"
+#~ "a>."
+#~ msgstr ""
+#~ "<b>Pastaba:</b> Šiame HTML laiške gali būti nuorodų į išorinius "
+#~ "paveikslėlius ir pan. Saugumo/privatumo sumetimais šie objektai iš išorės "
+#~ "neįkeliami.  Jei pasitikite laiško siuntėju, galite įkelti išorinius "
+#~ "objektus šiam laiškui <a href=\"kmail:loadExternal\">spragtelėdami čia</"
+#~ "a>."
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Prašome palaukti kol parašas bus patikrintas..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Neužtenka informacijos parašo tikrinimui. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Laišką pasirašė %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Laiškas buvo pasirašytas nežinomu raktu."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Laiškas buvo pasirašytas naudojant raktą %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Laiškas buvo pasirašytas %1 data %3 asmens raktu %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Laiškas buvo pasirašytas %1 raktu %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Laišką pasirašė %1 raktu %2."
+
+#~ msgid "Status: "
+#~ msgstr "Būsena: "
+
+#~ msgid "Hide Details"
+#~ msgstr "Slėpti detales"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Laiškas pasirašytas %1 nežinomu raktu %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Laiškas pasirašytas nežinomu raktu %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Parašo galiojimas negali būti patikrintas."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Laiškas pasirašytas %2 (rakto ID: %1)."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Parašas yra teisingas, bet rakto patikimumas nežinomas."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Parašas yra geras, o raktas sąlyginai patikimas."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Parašas yra geras, o raktas visiškai patikimas."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Parašas yra geras, o raktas yra absoliučiai patikimas."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Parašas yra geras, bet raktas yra nepatikimas."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Įspėjimas: Blogas parašas"
+
+#~ msgid "Invalid signature."
+#~ msgstr "Parašas negalioja."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "Neužtenka informacijos parašo galiojimo patikrinimui."
+
+#, fuzzy
+#~| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#~ msgid "Signed by <a href=mailto:%1>%2</a>."
+#~ msgstr "Pasirašė <a href=\"mailto:%1\">%2</a>."
+
+#~ msgid "Signature is valid."
+#~ msgstr "Parašas galioja."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Nežinoma parašo būsena"
+
+#~ msgid "Show Details"
+#~ msgstr "Rodyti detales"
+
+#~ msgid "End of signed message"
+#~ msgstr "Pasirašyto laiško pabaiga"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Klaida: parašas nepatikrintas"
+
+#~ msgid "Good signature"
+#~ msgstr "Geras parašas"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Blogas</b> parašas"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Nėra viešo rakto parašo tikrinimui"
+
+#~ msgid "No signature found"
+#~ msgstr "Nerasta parašo"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Klaida tikrinant parašą"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Skirtingi rezultatai parašams"
+
+#~ msgid "No status information available."
+#~ msgstr "Nėra būsenos informacijos."
+
+#~ msgid "Good signature."
+#~ msgstr "Geras parašas."
+
+#~ msgid "One key has expired."
+#~ msgstr "Vieno rakto galiojimas baigėsi."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Parašo galiojimas baigėsi."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Neįmanoma patikrinti: trūksta rakto."
+
+#~ msgid "CRL not available."
+#~ msgstr "Neprieinamas CRL."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Prieinamas CRL per senas."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Taisyklės neatitikimas."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Įvyko sistemos klaida."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Vienas raktas buvo atšauktas."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Blogas</b> parašas."
+
+#~ msgid "certificate"
+#~ msgstr "liudijimas"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Dėmesio:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "Siuntėjo pašto adresas nėra išsaugotas %1, naudojamame pasirašymui."
+
+#~ msgid "sender: "
+#~ msgstr "siuntėjas: "
+
+#~ msgid "stored: "
+#~ msgstr "išsaugota: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Pašto adresas nėra išsaugotas %1, naudojamame pasirašymui, todėl mes "
+#~ "negalime sulyginti jo su siuntėjo adresu %2."
+
+#~ msgid "Subject:"
+#~ msgstr "Tema:"
+
+#~ msgid "To:"
+#~ msgstr "Kam:"
+
+#~ msgid "Reply to:"
+#~ msgstr "Kam atsakyti:"
+
+#~ msgid "CC:"
+#~ msgstr "Kopija:"
+
+#~ msgid "BCC:"
+#~ msgstr "BCC:"
+
+#~ msgid "From:"
+#~ msgstr "Nuo:"
+
+#~ msgid "Spam Status:"
+#~ msgstr "Šlamšto statusas:"
+
+#~ msgid "Date:"
+#~ msgstr "Nuo:"
+
+#, fuzzy
+#~| msgid "(resent from %1)"
+#~ msgid "resent from"
+#~ msgstr "(tęsti nuo %1)"
+
+#~ msgid "Printing mode"
+#~ msgstr "Spausdinimo būdas"
+
+#~ msgid "[vcard]"
+#~ msgstr "[vcard]"
+
+#~ msgctxt "Unknown date"
+#~ msgid "Unknown"
+#~ msgstr "Nežinoma"
+
+#~ msgid "No Subject"
+#~ msgstr "Nėra temos"
+
+#, fuzzy
+#~ msgid ""
+#~ "%1% probability of being spam with confidence %3%.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2\n"
+#~ "Confidence=%4"
+#~ msgstr ""
+#~ "%1% tikimybė, kad tai - šlamštas.\n"
+#~ "\n"
+#~ "Visas pranešimas:\n"
+#~ "%2"
+
+#~ msgid ""
+#~ "%1% probability of being spam.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2"
+#~ msgstr ""
+#~ "%1% tikimybė, kad tai - šlamštas.\n"
+#~ "\n"
+#~ "Pilna ataskaita:\n"
+#~ "Tikimybė=%2"
+
+#~ msgid "No Spam agent"
+#~ msgstr "Nėra brukalo agento"
+
+#~ msgid "Threshold not a valid number"
+#~ msgstr "Netinkamas skaičius slenksčiai"
+
+#, fuzzy
+#~| msgid "Loading message..."
+#~ msgid "Error evaluating spam score"
+#~ msgstr "Įkeliamas laiškas..."
+
+#~ msgid ""
+#~ "%1.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1.\n"
+#~ "\n"
+#~ "Pilna ataskaita:\n"
+#~ "%2"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Perkelti į šiukšlinę"
+
+#, fuzzy
+#~| msgid "Reply to:"
+#~ msgid "Reply"
+#~ msgstr "Kam atsakyti:"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply to All"
+#~ msgstr "Kam atsakyti: "
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "New Message"
+#~ msgstr "Įrašyti laišką"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview"
+#~ msgstr "Įrašyti laišką"
+
+#~ msgctxt "View->"
+#~ msgid "&Headers"
+#~ msgstr "&Antraštės"
+
+#~ msgid "Choose display style of message headers"
+#~ msgstr "Pasirinkite laiško antraščių rodymo stilių"
+
+#~ msgid "Date: "
+#~ msgstr "Data: "
+
+#~ msgid "From: "
+#~ msgstr "Nuo: "
+
+#~ msgid "[vCard]"
+#~ msgstr "[vCard]"
+
+#~ msgctxt "To-field of the mailheader."
+#~ msgid "To: "
+#~ msgstr "Kam: "
+
+#~ msgid "CC: "
+#~ msgstr "CC: "
+
+#~ msgid "BCC: "
+#~ msgstr "BCC: "
+
+#~ msgid "Reply to: "
+#~ msgstr "Kam atsakyti: "
+
+#~ msgid "Edit Attachment"
+#~ msgstr "Keisti priedą"
+
+#~ msgid "Edit"
+#~ msgstr "Keisti"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "&Standartinės antraštės"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "Rodyti standartinį laiškų antraščių sąrašą"
+
+#~ msgid "Details"
+#~ msgstr "Informacija"
+
+#~ msgid "Details:"
+#~ msgstr "Detalės:"
+
+#, fuzzy
+#~| msgid "Show &expand/collapse quote marks"
+#~ msgid ""
+#~ "Respect expand/collapse quote mark which is defined in settings during "
+#~ "printing."
+#~ msgstr "Rodyti citatų žymių suskleidimą/išskleidimą"
+
+#, fuzzy
+#~| msgid "Show HTML status bar"
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "Rodyti HTML būsenos juostą"
+
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "Rodyti brukalo būseną Įmantriose antraštėse"
+
+#~ msgid "Replace smileys by emoticons"
+#~ msgstr "Pakeisti šypsenėles emotikonais"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enable this if you want smileys like :-) appearing in the message text to "
+#~ "be replaced by emoticons (small pictures)."
+#~ msgstr ""
+#~ "Įgalinkite šią parinktį jei norite kad šypsenėlės, tokios, kaip :-) , "
+#~ "būtų laiškuose rodomos kaip „emocijos“ (maži paveikslėliai)."
+
+#~ msgid "Show expand/collapse quote marks"
+#~ msgstr "Rodyti citatų sutraukimo/išplėtimo žymes"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enable this option to show different levels of quoted text. Disable to "
+#~ "hide the levels of quoted text."
+#~ msgstr ""
+#~ "Įgalinkite šią parinktį jei norite, kad būtų matomi skirtingi cituojamo "
+#~ "teksto lygiai. Išjunkite norėdami paslėpti skirtingus cituojamo teksto "
+#~ "lygius."
+
+#~ msgid "Automatic collapse level:"
+#~ msgstr "Automatinio sutraukimo lygmuo:"
+
+#~ msgid "Reduce font size for quoted text"
+#~ msgstr "Sumažinti cituojamo teksto šrifto dydį"
+
+#~ msgid "Enable this option to show quoted text with a smaller font."
+#~ msgstr ""
+#~ "Įgalinkite šią parinktį jei norite, kad cituojamas  tekstas būtų rodomas "
+#~ "smulkesniu šriftu."
+
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "Įmantriose antraštėse rodyti siuntėjo programos pavadinimą"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enable this option to get the User-Agent and X-Mailer header lines "
+#~ "displayed when using fancy headers."
+#~ msgstr ""
+#~ "Įjunkite šią parinktį jei norite matyti „User-Agent“ ir „X-Mailer“ laiško "
+#~ "eilutes įmantriose antraštėse."
+
+#~ msgid "Allow to edit attachments of existing mails."
+#~ msgstr "Leisti redaguoti esamų laiškų priedus."
+
+#~ msgid "Always decrypt messages when viewing or ask before decrypting"
+#~ msgstr ""
+#~ "Visuomet dešifruoti laiškus peržiūrint, arba klausti prieš dešifruojant"
+
+#~ msgid "Message Structure Viewer"
+#~ msgstr "Žinūtės struktūros žiūryklė"
+
+#~ msgid "Show never"
+#~ msgstr "Nerodyti niekada"
+
+#~ msgid "Show always"
+#~ msgstr "Visada rodyti"
+
+#~ msgid "Prefer HTML to plain text"
+#~ msgstr "Pirmenybė HTML prieš įprastą tekstą"
+
+#~ msgid "Allow messages to load external references from the Internet"
+#~ msgstr "Leisti laiškams įkelti išorines nuorodas iš interneto"
+
+#~ msgid "How attachments are shown"
+#~ msgstr "Kaip rodomi priedai"
+
+#, fuzzy
+#~| msgid "&Enable Ad Block"
+#~ msgid "Enabled ad block"
+#~ msgstr "Į&galinti reklamų blokavimą"
+
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "Nesiųsti PLP atsakant į šifruotus laiškus"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr ""
+#~ "Nustato numatytas naudotinas taisykles laiškams būdingiems pranešimams "
+#~ "(tik vidiniam naudojimui)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr ""
+#~ "Nustato numatytą naudotiną citavimo veiksmą, kai atsakoma į laišką (tik "
+#~ "vidiniam naudojimui)"
+
+#, fuzzy
+#~| msgid "&Mangle From:/To: headers in replies to invitations"
+#~ msgid "Mangle From:/To: headers in replies to replies"
+#~ msgstr "&Atskirti Nuo:/Kam: antraštes atsakymuose į kvietimus"
+
+#~ msgid "Send groupware invitations in the mail body"
+#~ msgstr "Siųsti grupinius kvietimus laiške"
+
+#~ msgid "Exchange-compatible invitation naming"
+#~ msgstr "Su Outlook suderinami &pakvietimų pavadinimai"
+
+#~ msgid "Show invitation update differences in the Outlook style"
+#~ msgstr "Rodyti kvietimo atnaujinimo skirtumus Outlook stiliuje"
+
+#, fuzzy
+#~| msgid "Show invitation update differences in the Outlook style"
+#~ msgid ""
+#~ "When viewing invitation updates, show the differences in the Microsoft "
+#~ "Outlook style."
+#~ msgstr "Rodyti kvietimo atnaujinimo skirtumus Outlook stiliuje"
+
+#~ msgid "Automatic invitation sending"
+#~ msgstr "Automatinis kvietimų siuntimas"
+
+#~ msgid "Delete invitation emails after the reply to them has been sent"
+#~ msgstr "Ištrinti kvietimo el. laiškus kai atsakymas jiems buvo išsiųstas"
+
+#~ msgid "Use Fi&xed Font"
+#~ msgstr "Naudoti ne&kintamo pločio šriftą"
+
+#~ msgid "Groupware Compatibility && Legacy Options"
+#~ msgstr "Grupinės įrangos suderinamumo &ir legalumo nuostatos"
+
+#~ msgid "&Mangle From:/To: headers in replies to invitations"
+#~ msgstr "&Atskirti Nuo:/Kam: antraštes atsakymuose į kvietimus"
+
+#~ msgid "Send &invitations in the mail body"
+#~ msgstr "Siųsti kvietimus laiške"
+
+#~ msgid "Exchange-compatible invitation &naming"
+#~ msgstr "Su Outlook suderinami &pakvietimų pavadinimai"
+
+#, fuzzy
+#~| msgid "Show invitation update differences in the Outlook style"
+#~ msgid ""
+#~ "Display invitation update differences in the Microsoft Outlook(tm) style."
+#~ msgstr "Rodyti kvietimo atnaujinimo skirtumus Outlook stiliuje"
+
+#~ msgid "&Automatic invitation sending"
+#~ msgstr "&Automatinis kvietimų siuntimas"
+
+#~ msgid "Options"
+#~ msgstr "Nuostatos"
+
+#, fuzzy
+#~| msgid "Show &expand/collapse quote marks"
+#~ msgid "Respect &expand/collapse quote marks settings"
+#~ msgstr "Rodyti citatų žymių suskleidimą/išskleidimą"
+
+#, fuzzy
+#~| msgid "&Override character encoding:"
+#~ msgid "O&verride character encoding:"
+#~ msgstr "&Nepaisyti esamos koduotės:"
+
+#, fuzzy
+#~| msgid "Show &HTML status bar"
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "Rodyti &HTML būsenos juostą"
+
+#~ msgid "Replace smileys &by emoticons"
+#~ msgstr "Pakeisti šypsenėles &emotikonais"
+
+#~ msgid "Reduce font size for &quoted text"
+#~ msgstr "Sumažinti cituojamo teksto šrifto dydį"
+
+#~ msgid "Show &expand/collapse quote marks"
+#~ msgstr "Rodyti citatų žymių suskleidimą/išskleidimą"
+
+#, fuzzy
+#~| msgid "Automatic collapse level:"
+#~ msgid "Automatic collapse &level:"
+#~ msgstr "Automatinio sutraukimo lygmuo:"
+
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "Rodyti &brukalo būseną įmantriose antraštėse"
+
+#, fuzzy
+#~| msgid "Minimum font size:"
+#~ msgid "&Minimum font size:"
+#~ msgstr "Minimalus šrifto dydis:"
+
+#~ msgid ""
+#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr "Failas pavadinimu „%1“ jau yra. Ar norite jį perrašyti?"
+
+#~ msgid "Overwrite File?"
+#~ msgstr "Perrašyti failą?"
+
+#~ msgid "Save Attachments To"
+#~ msgstr "Įrašyti priedą į"
+
+#~ msgctxt "filename for an unnamed attachment"
+#~ msgid "attachment.1"
+#~ msgstr "priedas.1"
+
+#~ msgid "Save Attachment"
+#~ msgstr "Išsaugoti priedą"
+
+#~ msgctxt "filename for the %1-th unnamed attachment"
+#~ msgid "attachment.%1"
+#~ msgstr "priedas.%1"
+
+#~ msgid ""
+#~ "The part %1 of the message is encrypted. Do you want to keep the "
+#~ "encryption when saving?"
+#~ msgstr ""
+#~ "Laiško dalis %1 yra šifruota.  Ar Jūs norite ją išsaugoti šifruotame "
+#~ "pavidale?"
+
+#~ msgid "KMail Question"
+#~ msgstr "KMail klausimas"
+
+#~ msgid "Keep Encryption"
+#~ msgstr "Išlaikyti šifravimą"
+
+#~ msgid "Do Not Keep"
+#~ msgstr "Neišlaikyti"
+
+#~ msgid ""
+#~ "The part %1 of the message is signed. Do you want to keep the signature "
+#~ "when saving?"
+#~ msgstr ""
+#~ "Laiško dalis %1 yra pasirašyta.  Ar Jūs norite ją išsaugoti su parašu?"
+
+#~ msgid "Keep Signature"
+#~ msgstr "Išlaikyti parašą"
+
+#~ msgid "Error saving attachment"
+#~ msgstr "Klaida išsaugant priedą"
+
+#~ msgid "Found no attachments to save."
+#~ msgstr "Neradau priedų išsaugojimui."
+
+#~ msgid "message"
+#~ msgstr "laiškas"
+
+#, fuzzy
+#~| msgid ""
+#~| "*.mbox|email messages (*.mbox)\n"
+#~| "*|all files (*)"
+#~ msgid "email messages (*.mbox);;all files (*)"
+#~ msgstr ""
+#~ "*.mbox|el. žinutės (*.mbox)\n"
+#~ "*|visi failai (*)"
+
+#~ msgid "Save Message"
+#~ msgid_plural "Save Messages"
+#~ msgstr[0] "Įrašyti laišką"
+#~ msgstr[1] "&Išsaugoti laišką"
+#~ msgstr[2] "&Išsaugoti laišką"
+#~ msgstr[3] "&Išsaugoti laišką"
+
+#, fuzzy
+#~| msgid "The message could not be decrypted."
+#~ msgid "File %1 could not be loaded."
+#~ msgstr "Nepavyko iššifruoti laiško."
+
+#, fuzzy
+#~| msgid "Loading message..."
+#~ msgid "Error loading message"
+#~ msgstr "Įkeliamas laiškas..."
+
+#, fuzzy
+#~| msgid "The message could not be decrypted."
+#~ msgid "File %1 could not be created."
+#~ msgstr "%1: Nepavyko sukurti faulo"
+
+#, fuzzy
+#~| msgid "Error saving attachment"
+#~ msgid "Error saving message"
+#~ msgstr "Klaida išsaugant priedą"
+
+#, fuzzy
+#~| msgid "End of signed message"
+#~ msgid "We cannot save message."
+#~ msgstr "Pasirašyto laiško pabaiga"
+
+#~ msgid "Open &with %1"
+#~ msgstr "Atverti &su %1"
+
+#~ msgid "Edit with:"
+#~ msgstr "Redaguoti su:"
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "Negalima keisti priedo"
+
+#~ msgid "body part"
+#~ msgstr "laiško kūno dalis"
+
+#~ msgid "Description"
+#~ msgstr "Aprašymas"
+
+#~ msgid "Type"
+#~ msgstr "Tipas"
+
+#~ msgid "Size"
+#~ msgstr "Dydis"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "Bevardis papildinys"
+
+#~ msgid "No description available"
+#~ msgstr "Nėra aprašymo"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgid "Move To Trash"
+#~ msgstr "Perkelti į šiukšlinę"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply To All"
+#~ msgstr "Kam atsakyti: "
+
+#, fuzzy
+#~| msgid "Decrypt Message"
+#~ msgid "Print Message"
+#~ msgstr "Dešifruoti laišką"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview Message"
+#~ msgstr "Įrašyti laišką"
+
+#~ msgid "Turn on HTML rendering for this message."
+#~ msgstr "Įjungti laiško HTML formatavimą."
+
+#~ msgid "Load external references from the Internet for this message."
+#~ msgstr "Įkelti išorines nuorodas iš Interneto šiam laiškui."
+
+#~ msgid "Work online."
+#~ msgstr "Dirbti atsijungus."
+
+#~ msgid "Decrypt message."
+#~ msgstr "Dešifruoti laišką."
+
+#~ msgid "Show signature details."
+#~ msgstr "Rodyti parašo detales."
+
+#~ msgid "Hide signature details."
+#~ msgstr "Slėpti parašo detales."
+
+#~ msgid "Show attachment list."
+#~ msgstr "Rodyti priedų sąrašą."
+
+#~ msgid "Hide attachment list."
+#~ msgstr "Slėpti priedų sąrašą."
+
+#~ msgid "Show full \"To\" list"
+#~ msgstr "Rodyti visą „Kam“ sąrašą"
+
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "Slėpti visą „Kam“ sąrašą"
+
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "Rodyti visą „Cs“ sąrašą"
+
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "Slėpti visą „Cc“ sąrašą"
+
+#~ msgid "Expand all quoted text."
+#~ msgstr "Išskleisti visą cituojamą tekstą."
+
+#~ msgid "Collapse quoted text."
+#~ msgstr "Sutraukti cituojamą tekstą."
+
+#~ msgid "Could not start certificate manager. Please check your installation."
+#~ msgstr ""
+#~ "Nepavyko startuoti sertifikavimo tvarkyklės. Patikrinkite, ar ji įdiegta."
+
+#~ msgid "KMail Error"
+#~ msgstr "KMail klaida"
+
+#~ msgid "Show certificate 0x%1"
+#~ msgstr "Rodyti liudijimą 0x%1"
+
+#~ msgid "&Open in Address Book"
+#~ msgstr "&Atverti su adresų knygele"
+
+#~ msgid "&Copy Email Address"
+#~ msgstr "&Kopijuoti el. pašto adresą"
+
+#~ msgid "Address copied to clipboard."
+#~ msgstr "Adresas nukopijuotas į talpyklę."
+
+#, fuzzy
+#~| msgid "&Open in Address Book"
+#~ msgid "Lookup the contact in KAddressbook"
+#~ msgstr "&Atverti su adresų knygele"
+
+#~ msgid "Attachment: %1"
+#~ msgstr "Priedas: %1"
+
+#, fuzzy
+#~ msgid "Encapsulated Message (Subject: %1)"
+#~ msgstr "Įdėtas viduje laiškas"
+
+#~ msgid "Encapsulated Message"
+#~ msgstr "Sutrumpintas laiškas"
+
+#~ msgid "Unnamed attachment"
+#~ msgstr "Bevardis priedas"
+
+#~ msgid "Opening URL..."
+#~ msgstr "Atveriamas URL..."
+
+#~ msgctxt "@info"
+#~ msgid "Do you really want to execute <filename>%1</filename>?"
+#~ msgstr "Ar Jūs tikrai norite vykdyti <filename>%1</filename>? "
+
+#~ msgid "Execute"
+#~ msgstr "Vykdyti"
+
+#~ msgid "Loading message..."
+#~ msgstr "Įkeliamas laiškas..."
+
+#~ msgid "Delete Attachment"
+#~ msgstr "Trinti priedą"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Atverti su"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Kita..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Atverti su..."
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "Atverti"
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "Žiūrėti"
+
+#~ msgid "Scroll To"
+#~ msgstr "Slinkti į"
+
+#~ msgid "Save As..."
+#~ msgstr "Įrašyti kaip..."
+
+#~ msgid "Copy"
+#~ msgstr "Kopijuoti"
+
+#~ msgid "Properties"
+#~ msgstr "Savybės"
+
+#, fuzzy
+#~| msgid "KMail Error"
+#~ msgid "KMail"
+#~ msgstr "KMail klaida"
+
+#, fuzzy
+#~| msgid "The KDE email client."
+#~ msgid "The KDE Mail Client"
+#~ msgstr "KDE elektroninio pašto klientas."
+
+#~ msgid "View Attachment: %1"
+#~ msgstr "Rodyti priedą: %1"
+
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "&Priedai"
+
+#~ msgid "Choose display style of attachments"
+#~ msgstr "Pasirinkite priedų rodymo stilių"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&As Icons"
+#~ msgstr "Ž&enkliukai"
+
+#~ msgid "Show all attachments as icons. Click to see them."
+#~ msgstr ""
+#~ "Rodyti visus priedus kaip ženkliukus. Ženkliuko spragtelėjimas parodo "
+#~ "priedą."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Smart"
+#~ msgstr "&Išmoningai"
+
+#~ msgid "Show attachments as suggested by sender."
+#~ msgstr "Rodyti priedus taip, kaip rekomenduoja siuntėjas."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Inline"
+#~ msgstr "Į&dėtas tekste"
+
+#~ msgid "Show all attachments inline (if possible)"
+#~ msgstr "Rodyti visus priedus laiško tekste (jei įmanoma)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "&Slėpti"
+
+#~ msgid "Do not show attachments in the message viewer"
+#~ msgstr "Nerodyti priedų laiškų žiūriklėje"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "In Header Only"
+#~ msgstr "Tik antraštėje"
+
+#~ msgid "Show Attachments only in the header of the mail"
+#~ msgstr "Rodyti priedus tik laiško antraštėje"
+
+#~ msgid "&Set Encoding"
+#~ msgstr "Nus&tatyti koduotę"
+
+#~ msgid "Auto"
+#~ msgstr "Automatiškai"
+
+#~ msgid "Select All Text"
+#~ msgstr "Žymėti visą tekstą"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Kopijuoti nuorodos adresą"
+
+#~ msgid "Open URL"
+#~ msgstr "Atverti URL"
+
+#~ msgid "Show Message Structure"
+#~ msgstr "Rodyti laiško struktūrą"
+
+#~ msgid "&View Source"
+#~ msgstr "R&odyti išeities tekstą"
+
+#~ msgid "&Save message..."
+#~ msgstr "&Išsaugoti laišką..."
+
+#~ msgid "Scroll Message Up"
+#~ msgstr "Slinkti laišką aukštyn"
+
+#~ msgid "Scroll Message Down"
+#~ msgstr "Slinkti laišką žemyn"
+
+#~ msgid "Scroll Message Up (More)"
+#~ msgstr "Slinkti laišką aukštyn (daugiau)"
+
+#~ msgid "Scroll Message Down (More)"
+#~ msgstr "Slinkti laišką žemyn (mažiau)"
+
+#~ msgid "Toggle HTML Display Mode"
+#~ msgstr "Perjungti HTML ekrano veikseną"
+
+#~ msgid "Toggle display mode between HTML and plain text"
+#~ msgstr "Perjungti ekrano veikseną tarp HTML ir paprasto teksto"
+
+#~ msgid "Load external references"
+#~ msgstr "Įkelti nuorodas iš išorės"
+
+#~ msgid "Speak Text"
+#~ msgstr "Kalbėti tekstą"
+
+#~ msgid "Copy Image Location"
+#~ msgstr "Kopijuoti piešinio vietą"
+
+#~ msgid "&Find in Message..."
+#~ msgstr "&Rasti laiške..."
+
+#~ msgid "Save &As..."
+#~ msgstr "Įrašyti &kaip..."
+
+#~ msgid "Open With..."
+#~ msgstr "Atverti su..."
+
+#~ msgid "Save All Attachments..."
+#~ msgstr "Įrašyti visus priedus..."
+
+#~ msgid "Copy Email Address"
+#~ msgstr "Kopijuoti el. pašto adresą"
+
+#~ msgid "Message as Plain Text"
+#~ msgstr "Laiškas įprastu tekstu"
+
+#~ msgid "Attachments:"
+#~ msgstr "Priedai:"
+
+#~ msgid "URL copied to clipboard."
+#~ msgstr "URL nukopijuotas į talpyklę."
+
+#~ msgid "Hide full address list"
+#~ msgstr "Slėpti visą adresatų sąrašą"
+
+#~ msgid "Show full address list"
+#~ msgstr "Rodyti visą adresatų sąrašą"
+
+#~ msgid "Message loading failed: %1."
+#~ msgstr "Nepavyko įkelti laiško: %1."
+
+#~ msgid "Message not found."
+#~ msgstr "Laiškas nerastas."
+
+#~ msgid ""
+#~ "Open attachment '%1'?\n"
+#~ "Note that opening an attachment may compromise your system's security."
+#~ msgstr ""
+#~ "Ar atverti priedą „%1“?\n"
+#~ "Atminkite, kad atverdami priedą, galite pažeisti sistemos saugumą."
+
+#~ msgid "Open Attachment?"
+#~ msgstr "Atverti priedą?"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr "&Atverti su „%1“"
+
+#~ msgid "&Open With..."
+#~ msgstr "&Atverti su..."
+
+#~ msgid "Do not ask again"
+#~ msgstr "Daugiau nebeklausti"
+
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+#~ msgstr ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />L<br />a<br />i<br /"
+#~ ">š<br />k<br />a<br />s</b></qt>"
+
+#~ msgctxt "'No HTML Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#~ ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#~ msgstr ""
+#~ "<qt><br />N<br />e<br /><br />H<br />T<br />M<br />l<br /> <br />l<br /"
+#~ ">a<br />i<br />š<br />k<br />a<br />s</qt>"
+
+#~ msgctxt "'Plain Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e<br /></qt>"
+#~ msgstr ""
+#~ "<qt><br />P<br />a<br />p<br />r<br />a<br />s<br />t<br />a<br />s<br /> "
+#~ "<br />l<br />a<br />i<br />š<br />k<br />a<br />s<br /></qt>"
+
+#~ msgid "Click to toggle between HTML and plain text."
+#~ msgstr "Paspauskite, jei norite perjungti tarp HTML ir paprasto teksto."
+
+#~ msgctxt "Unchanged mail message"
+#~ msgid "Raw Source"
+#~ msgstr "Pilnas šaltinis"
+
+#~ msgctxt "Mail message as shown, in HTML format"
+#~ msgid "HTML Source"
+#~ msgstr "HTML šaltinis"
+
+#, fuzzy
+#~| msgid "VCard Viewer"
+#~ msgid "vCard Viewer"
+#~ msgstr "vCard žiūryklė"
+
+#~ msgid "&Import"
+#~ msgstr "S&varbus"
+
+#, fuzzy
+#~| msgid "&Next Card"
+#~ msgid "&Next Card"
+#~ msgstr "&Kita kortelė"
+
+#, fuzzy
+#~| msgid "&Previous Card"
+#~ msgid "&Previous Card"
+#~ msgstr "&Ankstesnė kortelė"
+
+#~ msgid "&Zoom In"
+#~ msgstr "&Padidinti"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "Su&mažinti"
+
+#~ msgid "Reset"
+#~ msgstr "Atstatyti"
+
+#, fuzzy
+#~| msgid "&Zoom In"
+#~ msgid "Zoom"
+#~ msgstr "&Padidinti"
+
+#~ msgid "Close"
+#~ msgstr "Užverti"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "Rasti:"
+
+#~ msgid "Text to search for"
+#~ msgstr "Tekstas paieškai"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Kitas"
+
+#~ msgid "Jump to next match"
+#~ msgstr "Eiti prie kito sutapimo"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Ankstesnis"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "Eiti prie ankstesnio sutapimo"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "Keisti paieškos elgseną"
+
+#~ msgid "Case sensitive"
+#~ msgstr "Skirti raidžių dydį"
+
+#, fuzzy
+#~| msgid "Message not found."
+#~ msgid "Phrase not found"
+#~ msgstr "Laiškas nerastas."
+
+#~ msgid "Blockable Items"
+#~ msgstr "Blokuojami objektai"
+
+#~ msgid "Filter"
+#~ msgstr "Filtras"
+
+#~ msgid "Address"
+#~ msgstr "Adresas"
+
+#~ msgid "Search..."
+#~ msgstr "Ieškoti..."
+
+#~ msgid "Image"
+#~ msgstr "Paveikslėlis"
+
+#~ msgid "Script"
+#~ msgstr "Scenarijus"
+
+#~ msgid "Stylesheet"
+#~ msgstr "Stiliaus aprašas"
+
+#~ msgid "Font"
+#~ msgstr "Šriftas"
+
+#~ msgid "Frame"
+#~ msgstr "Kadras"
+
+#~ msgid "Object"
+#~ msgstr "Objektas"
+
+#~ msgid "Audio/Video"
+#~ msgstr "Garsas / vaizdas"
+
+#~ msgid "Unknown"
+#~ msgstr "Nežinomas"
+
+#~ msgid "Copy url"
+#~ msgstr "Kopijuoti URL"
+
+#~ msgid "Copy filter"
+#~ msgstr "Kopijuoti filtrą"
+
+#~ msgid "Open"
+#~ msgstr "Atverti"
+
+#~ msgid "Remove filter"
+#~ msgstr "Pašalinti filtrą"
+
+#~ msgid "Add subscription"
+#~ msgstr "Pridėti užsakymą"
+
+#, fuzzy
+#~ msgid "Show List"
+#~ msgstr "Rodyti sąrašą"
+
+#~ msgid "Use default"
+#~ msgstr "Naudoti numatytąjį"
+
+#~ msgid "Yes"
+#~ msgstr "Taip"
+
+#~ msgid "Not"
+#~ msgstr "Ne"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Not subscription added..."
+#~ msgstr "Aprašymas"
+
+#~ msgid ""
+#~ "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">more information</a>):"
+#~ msgstr ""
+#~ "<qt>Filtro išraiška (pavyzdžiui <tt>http://www.example.com/ad/*</tt>, <a "
+#~ "href=\"filterhelp\">daugiau informacijos</a>):"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " diena"
+#~ msgstr[1] " dienos"
+#~ msgstr[2] " dienų"
+#~ msgstr[3] " diena"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~| "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~| "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~| "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~| "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~| "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes "
+#~| "priority over any blacklist (blocking) filter."
+#~ msgid ""
+#~ "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~ "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~ "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~ "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~ "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~ "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes priority "
+#~ "over any blacklist (blocking) filter.<br><a href='%1'>%2</a></qt>"
+#~ msgstr ""
+#~ "<qt><p>Įveskite filtro išraišką. Filtrus galima aprašyti kaip:"
+#~ "<ul><li>apvalkalo šablonus, pavyzdžiui <tt>http://www.example.com/ads*</"
+#~ "tt>, gali būti naudojami šablonai <tt>*?[]</tt></li><li>pilnas reguliarus "
+#~ "reiškinys, apgaubtas simboliais '<tt>/</tt>', pavyzdžiui <tt>/\\/(ad|"
+#~ "banner)\\./</tt></li></ul><p>Prieš kiekvieną filtro eilutę galima rašyti "
+#~ "'<tt>@@</tt>', norite leisti rodyti atitinkantį URL ir tai yra aukštesnio "
+#~ "prioriteto nurodymas nei draudimas."
+
+#~ msgid "Delete current list"
+#~ msgstr "Pašalinti dabartinį sąrašą"
+
+#, fuzzy
+#~| msgid "*|all files (*)"
+#~ msgid "All Files (*)"
+#~ msgstr "*|visi failai (*)"
+
+#, fuzzy
+#~| msgid "Import Filters..."
+#~ msgid "Import Filters"
+#~ msgstr "Importuoti filtrus..."
+
+#, fuzzy
+#~| msgid "Export filters..."
+#~ msgid "Export Filters"
+#~ msgstr "Eksportuoti filtrus..."
+
+#~ msgid "Show adblock list"
+#~ msgstr "Rodyti adblock sąrašą"
+
+#, fuzzy
+#~| msgid "Delete current list"
+#~ msgid "Delete List"
+#~ msgstr "Pašalinti dabartinį sąrašą"
+
+#~ msgid "Download..."
+#~ msgstr "Atsisiųsti..."
+
+#~ msgid "Filters:"
+#~ msgstr "Filtrai:"
+
+#, fuzzy
+#~| msgid "Blocked by ad filter"
+#~ msgid "&Blocking filter"
+#~ msgstr "Užblokavo reklamų filtras"
+
+#~ msgid "Pattern"
+#~ msgstr "Šablonas"
+
+#~ msgid "custom"
+#~ msgstr "pasirinktinis"
+
+#~ msgid "Match case"
+#~ msgstr "Skirti didžiąsias ir mažąsias raides"
+
+#~ msgid "Apply to:"
+#~ msgstr "Kam pritaikyti:"
+
+#, fuzzy
+#~| msgid "Collapse quoted text."
+#~ msgid "Collapse blocked:"
+#~ msgstr "Sutraukti cituojamą tekstą."
+
+#~ msgid "&Hide filtered elements"
+#~ msgstr "&Slėpti filtruojamus elementus"
+
+#~ msgid "Automatic Filters"
+#~ msgstr "Automatiniai filtrai"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Remove subscription"
+#~ msgstr "&Panaikinti prenumeratą"
+
+#~ msgid "Update enabled automatic filters every:"
+#~ msgstr "Atnaujinti įjungtus automatinius filtrus kas:"
+
+#, fuzzy
+#~ msgid "Show List..."
+#~ msgstr "Rodyti sąrašą"
+
+#~ msgid "Manual Filters"
+#~ msgstr "Rankiniai filtrai"
+
+#~ msgid "Add filter expression"
+#~ msgstr "Pridėti filtro išraišką"
+
+#~ msgid "Import Filters..."
+#~ msgstr "Importuoti filtrus..."
+
+#~ msgid "Export filters..."
+#~ msgstr "Eksportuoti filtrus..."
+
+#~ msgid "Search:"
+#~ msgstr "Ieškoti:"
+
+#~ msgid "Remove filter expression"
+#~ msgstr "Pašalinti filtro išraišką"
+
+#~ msgid "Remove Filter"
+#~ msgstr "Šalinti filtrą"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "Paryškinti visus atitikmenis"
+
+#~ msgid "Block image"
+#~ msgstr "Blokuoti paveikslėlį"
+
+#~ msgid "Blocked by ad filter"
+#~ msgstr "Užblokavo reklamų filtras"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "Didinti tik tekstą"
+
+#~ msgid "No Audit Log available"
+#~ msgstr "Nepasiekiamas audito žurnalas"
+
+#~ msgid "Error Retrieving Audit Log: %1"
+#~ msgstr "Klaida gaunant audito ataskaitą: %1"
+
+#~ msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+#~ msgid "Show Audit Log"
+#~ msgstr "Rodyti audito ataskaitą"
+
+#~ msgid "The crypto engine returned no cleartext data."
+#~ msgstr "Šifravimo variklis negrąžino atviro teksto duomenų."
+
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "(nežinoma)"
+
+#~ msgid "New or changed: %1 (secret key available)"
+#~ msgstr "Nauja ar pakeista: %1 (yra slaptas raktas)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "Nauja ar pakeista: %1"
+
+#~ msgid "Crypto plug-in \"%1\" is not initialized."
+#~ msgstr "Šifravimo priedas %1 negali nėra paleistas."
+
+#~ msgid "Headers:"
+#~ msgstr "Antraštės:"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Custom Headers"
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "&Savitos antraštės"
+
+#~ msgid "A&dd..."
+#~ msgstr "Pridėti..."
+
+#~ msgid "Remo&ve"
+#~ msgstr "Pašalinti"
+
+#~ msgid "&Modify..."
+#~ msgstr "&Keisti..."
+
+#~ msgid "Header:"
+#~ msgstr "Antraštė:"
+
+#, fuzzy
+#~| msgid "Create To-do"
+#~ msgid "Create ToDo"
+#~ msgstr "Kurti priminimą"
+
+#, fuzzy
+#~| msgid "Create To-do"
+#~ msgid "Create To-Do"
+#~ msgstr "Kurti priminimą"
+
+#~ msgid "Au&tomatic collapse level:"
+#~ msgstr "Au&tomatinio sutraukimo lygmuo:"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "&Visos antraštės"
+
+#~ msgid "Show all message headers"
+#~ msgstr "Rodyti visas laiško antraštes"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "&Trumpos antraštės"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "Rodyti trumpą laiškų antraščių sąrašą"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "&Savitos antraštės"
+
+#~ msgid "Show custom headers"
+#~ msgstr "Rodyti savitas antraštes"
+
+#~ msgid "To: "
+#~ msgstr "Kam: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "&Įmonės antraštės"
+
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "Rodyti antraščių sąrašą įmantriu formatu"
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(tęsti nuo %1)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Kam: "
+
+#~ msgid "User-Agent: "
+#~ msgstr "Programa:"
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-Mailer: "
+
+#~ msgid "Bugzilla: "
+#~ msgstr "Bugzilla: "
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "MDN To: "
+#~ msgstr "Kam: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "Į&mantrios antraštės"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "Rodyti antraščių sąrašą įmantriu formatu"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "&Ilgos antraštės"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "Rodyti ilgą laiškų antraščių sąrašą"
+
+#, fuzzy
+#~| msgid "sent: "
+#~ msgid "Event:"
+#~ msgstr "išsiųstas: "
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Open &editor..."
+#~ msgstr "Atverti su..."
+
+#, fuzzy
+#~| msgid "Create To-do"
+#~ msgid "Create Event..."
+#~ msgstr "Kurti priminimą"
+
+#, fuzzy
+#~| msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgid "Allows you to create a calendar Event"
+#~ msgstr ""
+#~ "Leis sukurti kalendoriaus darbo įrašą arba priminimą iš šios žinutės"
+
+#, fuzzy
+#~| msgid "Edit with:"
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "Redaguoti su:"
+
+#, fuzzy
+#~| msgid "Create To-do"
+#~ msgctxt "create a new note out of this message"
+#~ msgid "Create Note"
+#~ msgstr "Kurti priminimą"
+
+#, fuzzy
+#~| msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgid "Allows you to create a note from this message"
+#~ msgstr ""
+#~ "Leis sukurti kalendoriaus darbo įrašą arba priminimą iš šios žinutės"
+
+#~ msgid "Todo:"
+#~ msgstr "Atlikti:"
+
+#~ msgid "Reply to \"%1\""
+#~ msgstr "Kam atsakyti: „%1“"
+
+#~ msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgstr ""
+#~ "Leis sukurti kalendoriaus darbo įrašą arba priminimą iš šios žinutės"
+
+#~ msgid "Translate..."
+#~ msgstr "Versti..."
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-obtain-keys\" function. Please "
+#~ "report this bug."
+#~ msgstr ""
+#~ "Chiasmus programinė sąsaja nepateikia „x-obtain-keys“ funkcijos. Prašome "
+#~ "pranešti apie šią programos programos klaidą."
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "Chiasmus programinės sąsajos klaida"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-obtain-keys\" "
+#~ "function did not return a string list. Please report this bug."
+#~ msgstr ""
+#~ "Netikėta reikšmė iš Chiasmus programinės sąsajos: „x-obtain-keys“ "
+#~ "funkcija nepateikė eilučių sąrašo. Prašome pranešti apie šią programos "
+#~ "klaidą."
+
+#~ msgid ""
+#~ "No keys have been found. Please check that a valid key path has been set "
+#~ "in the Chiasmus configuration."
+#~ msgstr ""
+#~ "Raktų nerasta. Prašome patikrinti, ar Chiasmus konfigūracijoje nurodytas "
+#~ "teisingas kelias iki raktų."
+
+#~ msgid "Chiasmus Decryption Key Selection"
+#~ msgstr "Chiasmus šifravimo rakto pasirinkimas"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-decrypt\" function. Please report "
+#~ "this bug."
+#~ msgstr ""
+#~ "Chiasmus programinė sąsaja nepateikia „x-decrypt“ funkcijos. Prašome "
+#~ "pranešti apie šią programos klaidą."
+
+#~ msgid ""
+#~ "The \"x-decrypt\" function does not accept the expected parameters. "
+#~ "Please report this bug."
+#~ msgstr ""
+#~ "„x-decrypt“ funkcija nepriima lauktų parametrų. Prašome pranešti apie šią "
+#~ "ydą."
+
+#~ msgid "Chiasmus Decryption Error"
+#~ msgstr "Chiasmus dešifravimo klaida"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-decrypt\" function "
+#~ "did not return a byte array. Please report this bug."
+#~ msgstr ""
+#~ "Netikėta reikšmė iš Chiasmus programinės sąsajos: „x-decrypt“ funkcija "
+#~ "nepateikė baitų masyvo. Prašome pranešti apie šią programos klaidą."
+
+#~ msgid "Please select the Chiasmus key file to use:"
+#~ msgstr "Prašom pasirinkti naudojimui Chiasmus rakto failą:"
+
+#~ msgid "Additional arguments for chiasmus:"
+#~ msgstr "Papildomi Chiasmus argumentai:"
+
+#~ msgid "Decrypt With Chiasmus..."
+#~ msgstr "Dešifruoti naudojant Chiasmus..."
+
+#, fuzzy
+#~| msgid "Use default"
+#~ msgid "Use Default Image"
+#~ msgstr "Naudoti numatytąjį"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgctxt "add space before image"
+#~ msgid " image"
+#~ msgid_plural " images"
+#~ msgstr[0] "Paveikslėlis"
+#~ msgstr[1] "Paveikslėlis"
+#~ msgstr[2] "Paveikslėlis"
+#~ msgstr[3] "Paveikslėlis"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Custom Headers"
+#~ msgid "Configure..."
+#~ msgstr "&Savitos antraštės"
+
+#~ msgid "Allow to delete attachments of existing mails."
+#~ msgstr "Leisti trinti esamų laiškų priedus."
+
+#~ msgid "Message Structure Viewer Placement"
+#~ msgstr "Laiško struktūros žiūryklės rodymo vieta"
+
+#, fuzzy
+#~ msgid "Above the message pane"
+#~ msgstr "Vi&rš laiško"
+
+#, fuzzy
+#~ msgid "Below the message pane"
+#~ msgstr "Že&miau laiško lango"
+
+#~ msgid "Fallback character e&ncoding:"
+#~ msgstr "Atsarginė simbolių koduotė:"
+
+#~ msgid "Show Raw Message"
+#~ msgstr "Rodyti pilną laišką"
+
+#, fuzzy
+#~| msgid "*|all files (*)"
+#~ msgid "all files (*)"
+#~ msgstr "*|visi failai (*)"
+
+#, fuzzy
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Nepavyko paleisti Jovie (teksto vertimo į kalbą) tarnybos"
+
+#~ msgid "sent: "
+#~ msgstr "išsiųstas: "

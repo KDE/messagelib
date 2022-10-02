@@ -1,0 +1,2334 @@
+# Bosnian translation for kdepim
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kdepim package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdepim\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2014-01-31 19:13+0100\n"
+"Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2014-01-03 06:21+0000\n"
+"X-Generator: Launchpad (build 16877)\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Neimenovan"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Pogrešan Kripto dodatak!"
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Nije pronađen odgovarajući kripto dodatak."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "Nije pronađen %1 dodatak."
+
+#: src/messagepart.cpp:798
+#, fuzzy, kde-format
+#| msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "Kripto dodatak \"%1\" ne može provjeravati potpise."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"Poruka je potpisana, ali ispravnost potpisa ne može biti potvrđena.<br /"
+">Razlog: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Kripto dodatak \"%1\" ne može dešifrovati poruke."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Kripto dodatak \"%1\" ne može dešifrovati podatke."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Greška: %1"
+
+#, fuzzy
+#~| msgid "Sorry, certificate could not be imported.<br />Reason: %1"
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "Žao nam je, potvrda se ne može uvesti <br />Razlog: %1"
+
+#~ msgid "Reason: %1"
+#~ msgstr "Razlog: %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Žalim, u ovoj poruci nije pronađen nijedan certifikat."
+
+#~ msgid "Certificate import status:"
+#~ msgstr "Status uvoza certifikata:"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "%1 certifikat je uvezen."
+#~ msgstr[1] "%1 certifikata su uvezena."
+#~ msgstr[2] "%1 certifikata je uvezeno."
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "%1 certifikat nije promijenjen."
+#~ msgstr[1] "%1 certifikata nisu promijenjena."
+#~ msgstr[2] "%1 certifikata nije promijenjeno."
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "%1 tajni ključ je uvezen."
+#~ msgstr[1] "%1 tajna ključa su uvezena."
+#~ msgstr[2] "%1 tajnih ključeva je uvezeno."
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "%1 tajni ključ nije promijenjen."
+#~ msgstr[1] "%1 tajna ključa nisu promijenjena."
+#~ msgstr[2] "%1 tajnih ključeva nije promijenjeno."
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr "Žalim, nisu dostupni detalji za uvoz certifikata."
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Detalji uvoza certifikata:"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Nije uspjelo: %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "Enkapsulirana poruka"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "Kraj enkapsulirane poruke"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "Poruka je šifrovana."
+
+#~ msgid "Decrypt Message"
+#~ msgstr "Dešifruj poruku"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Molimo pričekajte dok se poruka dešifruje..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "Šifrirana poruka"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "Šifrovana poruka (dešifrovanje nije moguće)"
+
+#, fuzzy
+#~| msgid "Reason: %1"
+#~ msgid "Reason: "
+#~ msgstr "Razlog: %1"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Ne mogu dekriptirati podatke."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "Kraj šifrirane poruke"
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~| "HTML code is shown. If you trust the sender of this message then you can "
+#~| "activate formatted HTML display for this message <a href=\"kmail:showHTML"
+#~| "\">by clicking here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~ "HTML code is shown. If you trust the sender of this message then you can "
+#~ "activate formatted HTML display for this message <a href=kmail:"
+#~ "showHTML>by clicking here</a>."
+#~ msgstr ""
+#~ "<b>Napomena:</b> Ovo je HTML poruka. Iz sigurnosnih razloga, prikazan je "
+#~ "samo sirovi HTML kod. Ako vjerujete pošiljaocu ove poruke onda možete "
+#~ "aktivirati formatirani HTML prikaz za ovu poruku klikajući <a href="
+#~ "\"kmail:showHTML\">ovdje</a>."
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This HTML message may contain external references to images "
+#~| "etc. For security/privacy reasons external references are not loaded. If "
+#~| "you trust the sender of this message then you can load the external "
+#~| "references for this message <a href=\"kmail:loadExternal\">by clicking "
+#~| "here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This HTML message may contain external references to images "
+#~ "etc. For security/privacy reasons external references are not loaded. If "
+#~ "you trust the sender of this message then you can load the external "
+#~ "references for this message <a href=kmail:loadExternal>by clicking here</"
+#~ "a>."
+#~ msgstr ""
+#~ "<b>Napomena:</b> Ova HTML poruka može sadržati spoljne reference ka "
+#~ "slikama i sl. Iz razloga bezbijednosti i privatnosti spoljne reference "
+#~ "nisu učitane. Ako vjerujete pošiljaocu ove poruke, možete učitati spoljne "
+#~ "reference <a href=\"kmail:loadExternal\">klikom ovde</a>."
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Molimo pričekajte dok se potpis ovjeri ..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Nemam dovoljno informacija da provjerim potpis. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Poruku je potpisao %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Poruka je potpisana nepoznatim ključem."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Poruka je potpisana ključem %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Poruku je potpisao %3 dana %1 ključem %2."
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Poruka je potpisana na dan %1 ključem %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Poruku je potpisao %2 ključem %1."
+
+#~ msgid "Status: "
+#~ msgstr "Status: "
+
+#~ msgid "Hide Details"
+#~ msgstr "Sakrij detalje"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Poruka je potpisana dana %1 nepoznatim ključem %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Poruka je potpisana nepoznatim ključem %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Ispravnost potpisa ne može biti potvrđena."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Poruku je potpisao %2 (ID ključa: %1)."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Potpis je ispravan, ali ispravnost ključa je nepoznata."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Potpis je ispravan i ključu se može marginalno vjerovati."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Potpis je ispravan i ključu se može potpuno vjerovati."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Potpis je ispravan i ključu se može krajnje vjerovati."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Potpis je ispravan, ali ključu se ne može vjerovati."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Upozorenje: Potpis je neispravan."
+
+#~ msgid "Invalid signature."
+#~ msgstr "Neispravan potpis."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "Nema dovoljno informacija za ovjeru potpisa."
+
+#, fuzzy
+#~| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#~ msgid "Signed by <a href=mailto:%1>%2</a>."
+#~ msgstr "Potpisnik: <a href=\"mailto:%1\">%2</a>."
+
+#~ msgid "Signature is valid."
+#~ msgstr "Potpis je ispravan."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Nepoznato stanje potpisa"
+
+#~ msgid "Show Details"
+#~ msgstr "Prikaži detalje"
+
+#~ msgid "End of signed message"
+#~ msgstr "Kraj potpisane poruke"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Greška: Potpis nije provjeren"
+
+#~ msgid "Good signature"
+#~ msgstr "Dobar potpis"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Loš</b> potpis"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Nema javnog ključa za provjeru potpisa"
+
+#~ msgid "No signature found"
+#~ msgstr "Nije pronađen potpis"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Greška pri provjeri potpisa"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Različiti rezultati za potpise"
+
+#~ msgid "No status information available."
+#~ msgstr "Statusne informacije nisu dostupne."
+
+#~ msgid "Good signature."
+#~ msgstr "Dobar potpis."
+
+#~ msgid "One key has expired."
+#~ msgstr "Jedan ključ je istekao."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Potpis je istekao."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Ne mogu provjeriti: nedostaje ključ."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL nije dostupan."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Dostupni CRL je previše star."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Pravilo nije zadovoljeno."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Došlo je do sistemske greške."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Jedan ključ je povučen."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Loš</b> potpis."
+
+#~ msgid "certificate"
+#~ msgstr "certifikat"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Upozorenje:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "E-mail adresa pošiljaoca nije smještena u %1 koji je korišten za "
+#~ "potpisivanje."
+
+#~ msgid "sender: "
+#~ msgstr "pošiljalac: "
+
+#~ msgid "stored: "
+#~ msgstr "spremljeno: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "E-mail adresa nije smještena u %1 koji je korišten za potpisivanje, tako "
+#~ "da je ne možemo uporediti sa adresom pošiljaoca %2."
+
+#~ msgid "Grantlee theme \"%1\" is not valid."
+#~ msgstr "Grentl  tema \"%1\" nije vazeca."
+
+#~ msgid "Subject:"
+#~ msgstr "Tema:"
+
+#~ msgid "To:"
+#~ msgstr "Za:"
+
+#~ msgid "Reply to:"
+#~ msgstr "Odgovor na:"
+
+#~ msgid "CC:"
+#~ msgstr "CC:"
+
+#~ msgid "BCC:"
+#~ msgstr "BCC:"
+
+#~ msgid "From:"
+#~ msgstr "Od:"
+
+#~ msgid "Spam Status:"
+#~ msgstr "Status spama:"
+
+#~ msgid "Date:"
+#~ msgstr "Datum:"
+
+#~ msgid "resent from"
+#~ msgstr "zamjeram iz"
+
+#~ msgid "receiver was"
+#~ msgid_plural "receivers were"
+#~ msgstr[0] "prijemnik je"
+#~ msgstr[1] "prijemnik je"
+#~ msgstr[2] "prijemnici su"
+
+#~ msgid "Printing mode"
+#~ msgstr "Režim štampe"
+
+#~ msgid "[vcard]"
+#~ msgstr "[vcard]"
+
+#~ msgctxt "Unknown date"
+#~ msgid "Unknown"
+#~ msgstr "Nepoznato"
+
+#~ msgid "No Subject"
+#~ msgstr "Nema teme"
+
+#~ msgid ""
+#~ "%1% probability of being spam with confidence %3%.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2\n"
+#~ "Confidence=%4"
+#~ msgstr ""
+#~ "%1% vjerovatnost za početak spama sa povjerenjem %3%.\n"
+#~ "Cijeli izvještaj:\n"
+#~ "Vjerovatnost=%2\n"
+#~ "Povjerenje=%4"
+
+#~ msgid ""
+#~ "%1% probability of being spam.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2"
+#~ msgstr ""
+#~ "%1% vjerovatnost za početak spama.\n"
+#~ "Cijeli izvještaj:\n"
+#~ "Vjerovatnost=%2"
+
+#~ msgid "No Spam agent"
+#~ msgstr "Nema agenta spama"
+
+#~ msgid "Spam filter score not a number"
+#~ msgstr "Rezultat spam filtera nije broj"
+
+#~ msgid "Threshold not a valid number"
+#~ msgstr "Prag nije ispravan broj"
+
+#~ msgid "Spam filter score could not be extracted from header"
+#~ msgstr "Rezultat spam filtera nije mogao biti izvađen iz zaglavlja"
+
+#~ msgid "Threshold could not be extracted from header"
+#~ msgstr "Prag nije mogao biti izvađen iz zaglavlja"
+
+#~ msgid "Error evaluating spam score"
+#~ msgstr "Pogreška ocjenjivanja spam rezultata"
+
+#~ msgid ""
+#~ "%1.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1\n"
+#~ "Cijeli izvještaj:\n"
+#~ "%2"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Premjesti u smeće"
+
+#, fuzzy
+#~| msgid "Reply to:"
+#~ msgid "Reply"
+#~ msgstr "Odgovor na:"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply to All"
+#~ msgstr "Odgovori na: "
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "New Message"
+#~ msgstr "Snimi poruku"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview"
+#~ msgstr "Snimi poruku"
+
+#~ msgctxt "View->"
+#~ msgid "&Headers"
+#~ msgstr "&Zaglavlje"
+
+#~ msgid "Choose display style of message headers"
+#~ msgstr "Izaberite način prikaza zaglavlja poruke"
+
+#~ msgid "Date: "
+#~ msgstr "Datum: "
+
+#~ msgid "From: "
+#~ msgstr "Od: "
+
+#~ msgid "[vCard]"
+#~ msgstr "[vCard]"
+
+#~ msgctxt "To-field of the mailheader."
+#~ msgid "To: "
+#~ msgstr "Za: "
+
+#~ msgid "CC: "
+#~ msgstr "CC: "
+
+#~ msgid "BCC: "
+#~ msgstr "BCC: "
+
+#~ msgid "Reply to: "
+#~ msgstr "Odgovori na: "
+
+#~ msgid ""
+#~ "Modifying an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr ""
+#~ "Izmjena priloga može iskvariti digitalni potpis poruke, ako postoji."
+
+#~ msgid "Edit Attachment"
+#~ msgstr "Izmijeni prilog"
+
+#~ msgid "Edit"
+#~ msgstr "Izmijeni"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "&Standardno zaglavlje"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "Prikaži standardnu listu zaglavlja poruke"
+
+#~ msgid "Details"
+#~ msgstr "Detalji"
+
+#~ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
+#~ msgstr ""
+#~ "Ova poruka moze biti prijevara. <a href=\"detalji o prijevari"
+#~ "\">(Detalji...)</a>"
+
+#~ msgid "I confirm it's not a scam"
+#~ msgstr "Ja potvrdjujem nije prijevara"
+
+#~ msgid "Add email to whitelist"
+#~ msgstr "Dodaj email na bijeloj listi"
+
+#~ msgid "Disable scam detection for all messages"
+#~ msgstr "Iskljucite scam detekciju za sve poruke"
+
+#~ msgid "Details:"
+#~ msgstr "Detalji:"
+
+#~ msgid ""
+#~ "This email contains a link which reads as '%1' in the text, but actually "
+#~ "points to '%2'. This is often the case in scam emails to mislead the "
+#~ "recipient"
+#~ msgstr ""
+#~ "Ova e-posta sadrzi vezu koja se cita kao '%1'  u  tekstu, ali zapravo "
+#~ "pokazuje na '%2'. Ovo je cest slucaj u podvalji vačkim email koiji "
+#~ "obmanuju primaoca"
+
+#~ msgid ""
+#~ "This email contains a link which points to a numerical IP address (%1) "
+#~ "instead of a typical textual website address. This is often the case in "
+#~ "scam emails."
+#~ msgstr ""
+#~ "Ova e-posta sadrzi vezu koja pokazuje na numericku IP adresu(%1) umjesto "
+#~ "na tipicnu tekstualnu website adresu. Ovo je čest slučaj  u podvalama  e-"
+#~ "poste."
+
+#~ msgid ""
+#~ "This email contains a link which points to a hexadecimal IP address (%1) "
+#~ "instead of a typical textual website address. This is often the case in "
+#~ "scam emails."
+#~ msgstr ""
+#~ "Ova e-posta sardzi link koja pokazuje na heksadecimalnu IP adresu (%1) "
+#~ "umjesto na tipicnu tekstualnu website adresu. Ovo je čest slučaj u "
+#~ "podvalama e-pošte."
+
+#~ msgid "This email contains a link (%1) which has a redirection"
+#~ msgstr "Ovaj e-mail sadrzi link (%1) koji ima preusmijerenje"
+
+#~ msgid ""
+#~ "This email contains a link (%1) which contains multiple http://. This is "
+#~ "often the case in scam emails."
+#~ msgstr ""
+#~ "Ovaj e-mail sadrzi link (%1) koji sadrzi vise  http://. Ovo je cest "
+#~ "slucaj u preijevari e-poste"
+
+#~ msgid ""
+#~ "This email contains a shorturl (%1). It can redirect to another server."
+#~ msgstr ""
+#~ "Ova pošta sadrži kratki url  (%1), On može obaviti redirekciju na drugi"
+
+#~ msgid ""
+#~ "Message contains form element. This is often the case in scam emails."
+#~ msgstr "Poruka sadrži element. To je često slučaj u prijevari e-pošte."
+
+#~ msgid "No network connection detected, we cannot expand url."
+#~ msgstr "Nema prepoznate mrežne konekcije, ne možemo raširiti url,"
+
+#~ msgid "Short url '%1' redirects to '%2'."
+#~ msgstr "Kratki url '%1' preusmjerava na '%2'."
+
+#~ msgid "Only print selected text in viewer"
+#~ msgstr "Samo printaj odabrani tekst iz preglednika"
+
+#, fuzzy
+#~| msgid "Respect expand collapse quote mark defined settings when printing"
+#~ msgid ""
+#~ "Respect expand/collapse quote mark which is defined in settings during "
+#~ "printing."
+#~ msgstr ""
+#~ "Poštovanje proširiti kolaps navodnike definirane postavke pri ispisu"
+
+#~ msgid ""
+#~ "Specifies whether the background color and images are also drawn when the "
+#~ "page is printed."
+#~ msgstr ""
+#~ "Naznaci da li  pozadinska boja i slike su takodjer iscrtane kada stranica "
+#~ "bude printana"
+
+#~ msgid "When we render html do not use font size inferior to minimum size."
+#~ msgstr ""
+#~ "Kada se iscrtava HTML ne koriste se veličine fontova manje od minimalne."
+
+#, fuzzy
+#~| msgid "Show HTML status bar"
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "Pokaži HTML statusnu traku"
+
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "Pokaži spam status u elegantnom zaglavlju"
+
+#~ msgid "Replace smileys by emoticons"
+#~ msgstr "Zamijeni smiješkove emotikonima"
+
+#~ msgid ""
+#~ "Enable this if you want smileys like :-) appearing in the message text to "
+#~ "be replaced by emoticons (small pictures)."
+#~ msgstr ""
+#~ "Uključite ovo ako želite da se smješko kao :-) koji se pojavljuju u "
+#~ "tekstu zamjene emotikonima (malim slikama)."
+
+#~ msgid "Show expand/collapse quote marks"
+#~ msgstr "Prikaži otvorene/zatvorene navodnike"
+
+#~ msgid ""
+#~ "Enable this option to show different levels of quoted text. Disable to "
+#~ "hide the levels of quoted text."
+#~ msgstr ""
+#~ "Uključite ovu opciju da bi se prikazivali različiti nivoi citiranog "
+#~ "teksta. Isključite da biste ih sakrili."
+
+#~ msgid "Automatic collapse level:"
+#~ msgstr "Nivo automatskog sažimanja:"
+
+#~ msgid "Reduce font size for quoted text"
+#~ msgstr "Smanji veličinu fonta za citiran tekst"
+
+#~ msgid "Enable this option to show quoted text with a smaller font."
+#~ msgstr ""
+#~ "Uključite ovu opciju da bi se citirani tekst prikazivao sa manjim fontom."
+
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "Prikaži korisnički agent u pomodnim zaglavljima"
+
+#~ msgid ""
+#~ "Enable this option to get the User-Agent and X-Mailer header lines "
+#~ "displayed when using fancy headers."
+#~ msgstr ""
+#~ "Uključite ovu opciju ako želite da se linije zaglavlja User-Agent i X-"
+#~ "Mailer prikazuju u pomodnim zaglavljima."
+
+#~ msgid "Allow to edit attachments of existing mails."
+#~ msgstr "Omogući uređivanje priloga postojećih poruka."
+
+#~ msgid "Always decrypt messages when viewing or ask before decrypting"
+#~ msgstr ""
+#~ "Uvijek dekriptirati poruke prilikom pregleda ili pitati prije dešifriranja"
+
+#~ msgid "Message Structure Viewer"
+#~ msgstr "Preglednik strukture poruke"
+
+#~ msgid "Show never"
+#~ msgstr "Nikad prikazati"
+
+#~ msgid "Show always"
+#~ msgstr "Uvijek prikazati"
+
+#~ msgid "What style of headers should be displayed"
+#~ msgstr "Kakav oblik zaglavlja bi trebao biti prikazan"
+
+#~ msgid "How much of headers should be displayed"
+#~ msgstr "Koliko zaglavlja bi trebalo biti prikazano"
+
+#~ msgid "Prefer HTML to plain text"
+#~ msgstr "Koristi HTML umjesto običnog teksta"
+
+#~ msgid "Allow messages to load external references from the Internet"
+#~ msgstr "Dozvoli porukama da učitaju vanjske reference sa Mreže"
+
+#~ msgid "How attachments are shown"
+#~ msgstr "Kako su prilozi prikazani"
+
+#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+#~ msgstr ""
+#~ "Navodi da li će se ponovo koristiti boja citiranja iza trećeg nivoa."
+
+#~ msgid "Activate Access Key"
+#~ msgstr "Aktiviraj pristupni ključ"
+
+#~ msgid ""
+#~ "KMail can analyze messages for suspected email scams by looking for "
+#~ "common techniques used to deceive you"
+#~ msgstr ""
+#~ "Kmail može analizirati poruke na sumnjive prevare prepoznajući uobičajene "
+#~ "tehnike koje se koriste da vas navuku."
+
+#~ msgid "List of emails in scam white list"
+#~ msgstr "Popis e-pošte u scam bijeloj listi"
+
+#~ msgid "Enabled ad block"
+#~ msgstr "Uključeno blokiranje reklama"
+
+#~ msgid "Hide advertisement enabled"
+#~ msgstr "Sakrij oglašavanje omogućeno"
+
+#~ msgid "Update interval list of adblock"
+#~ msgstr "Vrijeme nadogradnje popisa blokiranja reklama"
+
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "Nemoj slati MDN kao odgovor na šifrovanu poruku"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr ""
+#~ "Definiše podrazumijevana pravila za upotrebu za informacije o "
+#~ "razmještanju poruka (samo za internu upotrebu)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr ""
+#~ "Određuje podrazumijevanu akciju citiranja pri odgovoru na poruku (samo za "
+#~ "internu upotrebu)"
+
+#~ msgid "Mangle From:/To: headers in replies to replies"
+#~ msgstr "Zamijeni Od:/Za: polja u zaglavlju u odgovoru na poziv"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your replies, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook ima veći broj nedostataka u svojoj implementaciji "
+#~ "iCalendar standarda. Ova opcija zaobilazi jedan od njih. Ako imate "
+#~ "problema sa korisnicima Outlooka koji ne mogu dobiti vaše pozivnice, "
+#~ "probajte podesiti ovu opciju."
+
+#~ msgid "Send groupware invitations in the mail body"
+#~ msgstr "Šalji groupware pozivnice u tijelu poruke"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your invitations, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook ima niz nedostataka u provedbi iCalendar stadarda; ova "
+#~ "opciju radi oko jedne od njih. Ako imate problema s korisnicima programa "
+#~ "Outlook koji nisu u mogućnosti da dobiju vaše pozivnice, pokušajte "
+#~ "postaviti ovu opciju."
+
+#~ msgid "Exchange-compatible invitation naming"
+#~ msgstr "Imenovanje kompatibilno s Exchange pozivnivama"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server, has a problem understanding standards-compliant groupware email. "
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "Microsoft Outlook, kada se koristi u kombinaciji s poslužiteljem "
+#~ "Microsoft Exchange, ima problem razumijevanje standardah groupware e-"
+#~ "pošte. Uključite ovu opciju za slanje groupware pozivnice na način da "
+#~ "Microsoft Exchange razumije."
+
+#~ msgid "Outlook compatible invitation reply comments"
+#~ msgstr "Komentari na Outlook kompatibilan odgovor na poziv"
+
+#~ msgid ""
+#~ "When replying to invitations, send the reply comment in way that "
+#~ "Microsoft Outlook understands."
+#~ msgstr ""
+#~ "Kada odgovarate na pozive, pošaljite odgovor na komentar na način da "
+#~ "Microsoft Outlook razumije."
+
+#~ msgid "Show invitation update differences in the Outlook style"
+#~ msgstr "Prikazuje razlike u promjenama pozivnica u Outlook stilu"
+
+#~ msgid ""
+#~ "When viewing invitation updates, show the differences in the Microsoft "
+#~ "Outlook style."
+#~ msgstr ""
+#~ "Kada se gledaju izmjene pozivnica, prikazuju se razlike u Outlook stilu"
+
+#~ msgid "Automatic invitation sending"
+#~ msgstr "Automatsko slanje pozivnica"
+
+#~ msgid ""
+#~ "When this is checked, you will not see the mail composer window. Instead, "
+#~ "all invitation mails are sent automatically. If you want to see the mail "
+#~ "before sending it, you can uncheck this option. However, be aware that "
+#~ "the text in the composer window is in iCalendar syntax, and you should "
+#~ "not try modifying it by hand."
+#~ msgstr ""
+#~ "Kada je ovo uključeno, nećete vidjeti prozor sastavljača poruke. Umjesto "
+#~ "toga, sve poruke sa pozivnicama šalju se automatski. Ako želite da vidite "
+#~ "poruku prije slanja, možete isključiti ovu opciju. Međutim, budite "
+#~ "svjesni da je tekst u prozoru sastavljača napisan po sintaksi iCalendar-"
+#~ "a, zbog čega ne bi trebalo ručno da ga mijenjate."
+
+#~ msgid "Delete invitation emails after the reply to them has been sent"
+#~ msgstr "Obriši pozivnice pošto se pošalje odgovor na njih"
+
+#~ msgid ""
+#~ "When this is checked, received invitation emails that have been replied "
+#~ "to will be moved to the Trash folder, once the reply has been "
+#~ "successfully sent."
+#~ msgstr ""
+#~ "Ako je uključeno, primljene e-poruke pozivnica na koje se se odgovori "
+#~ "premještaju se u fascikl smeća, čim se odgovor uspješno pošalje."
+
+#~ msgid "Use Fi&xed Font"
+#~ msgstr "K&oristi fiksni font"
+
+#~ msgid "Groupware Compatibility && Legacy Options"
+#~ msgstr "Opcije kompatibilnosti sa groupware i starim programima"
+
+#~ msgid ""
+#~ "Turn this option on in order to make Outlook(tm) understand your answers "
+#~ "to invitation replies"
+#~ msgstr ""
+#~ "Uključite ovu opciju kako biste postigli da Outlook(tm) razumije vaše "
+#~ "odgovore na pozive"
+
+#~ msgid "&Mangle From:/To: headers in replies to invitations"
+#~ msgstr "&Sakrij Od:/Do: zaglavlja u odgovorimana pozive"
+
+#~ msgid ""
+#~ "Turn this option on in order to make Outlook(tm) understand your answers "
+#~ "to invitations"
+#~ msgstr ""
+#~ "Uključite ovu opciju kako biste postigli da Outlook(tm) razumije vaše "
+#~ "odgovore na pozive"
+
+#~ msgid "Send &invitations in the mail body"
+#~ msgstr "Pošalji pozivnice u tiljelo e-pošte"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server,\n"
+#~ "has a problem understanding standards-compliant groupware email.\n"
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "Microsoft Outlook, kada se koristi u kombinaciji sa Microsoft Exchange "
+#~ "serverom,\n"
+#~ "ima problem pri razumijevanju standarda u skladu grupisane e-pošte.\n"
+#~ "Upalite ovu opciju da pošaljete grupisane pozivnice na način da "
+#~ "gaMicrosoft Exchange razumije."
+
+#~ msgid "Exchange-compatible invitation &naming"
+#~ msgstr "Ime&novanje poziva kompatibilno sa Exchange"
+
+#~ msgid ""
+#~ "Send invitation reply comments in a way that Microsoft Outlook(tm) "
+#~ "understands."
+#~ msgstr ""
+#~ "Pošalji komentare poziva na odgovora na način da Microsoft Outlook(tm) "
+#~ "razumije."
+
+#~ msgid ""
+#~ "Display invitation update differences in the Microsoft Outlook(tm) style."
+#~ msgstr "Prikaži razlike u promjenama pozivnica u Microsoft Outlook stilu"
+
+#~ msgid ""
+#~ "When this is on, the user will not see the mail composer window. "
+#~ "Invitation mails are sent automatically."
+#~ msgstr ""
+#~ "Kada je ovo uključeno, korisnik neće vidjeti prozor za pisanje e-pošte. "
+#~ "Pozivna e-pošta je poslana automatski."
+
+#~ msgid "&Automatic invitation sending"
+#~ msgstr "&Automatsko slanje pozivnice"
+
+#~ msgid "Options"
+#~ msgstr "Opcije"
+
+#~ msgid "Print only selected text"
+#~ msgstr "Isprintaj samo naznaceni tekst"
+
+#~ msgid "Respect &expand/collapse quote marks settings"
+#~ msgstr "Poštovanje i proširiti / kolapsa navodnika postavke"
+
+#~ msgid "Print background color and images"
+#~ msgstr "Isprintaj pozadinsku boju i slike"
+
+#~ msgid "Viewer settings"
+#~ msgstr "Postavke preglednika"
+
+#, fuzzy
+#~| msgid "&Override character encoding:"
+#~ msgid "O&verride character encoding:"
+#~ msgstr "Alternativno &kodiranje znakova:"
+
+#~ msgid "Enable access key"
+#~ msgstr "Ukljuci pristupni kljuc"
+
+#, fuzzy
+#~| msgid "Show &HTML status bar"
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "Pokaži statusnu traku &HTMLa"
+
+#~ msgid "Replace smileys &by emoticons"
+#~ msgstr "Zamijenite smajlije &emotikonima"
+
+#~ msgid "Reduce font size for &quoted text"
+#~ msgstr "Smanjivanje veličine fonta za &citirani tekst"
+
+#~ msgid "Show &expand/collapse quote marks"
+#~ msgstr "Prikaži proširen&e/sažete navodnike"
+
+#, fuzzy
+#~| msgid "Automatic collapse level:"
+#~ msgid "Automatic collapse &level:"
+#~ msgstr "Nivo automatskog sažimanja:"
+
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "Pokaži spam status &u elegantnom zaglavlju"
+
+#, fuzzy
+#~| msgid "Minimum font size:"
+#~ msgid "&Minimum font size:"
+#~ msgstr "Najmanja veličina fonta:"
+
+#~ msgid ""
+#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr ""
+#~ "Dokument pod imenom \"%1\" već postoji. Da li ga želite da prepišem preko "
+#~ "njega?"
+
+#~ msgid "Overwrite File?"
+#~ msgstr "Prebrisati datoteku?"
+
+#~ msgid "Save Attachments To"
+#~ msgstr "Snimi prilog kao"
+
+#~ msgctxt "filename for an unnamed attachment"
+#~ msgid "attachment.1"
+#~ msgstr "prilog.1"
+
+#~ msgid "Save Attachment"
+#~ msgstr "Sačuvaj prilog"
+
+#~ msgctxt "filename for the %1-th unnamed attachment"
+#~ msgid "attachment.%1"
+#~ msgstr "prilog.%1"
+
+#~ msgid ""
+#~ "The part %1 of the message is encrypted. Do you want to keep the "
+#~ "encryption when saving?"
+#~ msgstr ""
+#~ "Dio %1 poruke je šifrovan. Želite li zadržati enkripciju prilikom "
+#~ "snimanja?"
+
+#~ msgid "KMail Question"
+#~ msgstr "KMail pitanje"
+
+#~ msgid "Keep Encryption"
+#~ msgstr "Očuvaj šifrovanje"
+
+#~ msgid "Do Not Keep"
+#~ msgstr "Ne čuvaj"
+
+#~ msgid ""
+#~ "The part %1 of the message is signed. Do you want to keep the signature "
+#~ "when saving?"
+#~ msgstr ""
+#~ "Dio %1 poruke je potpisan. Želite li zadržati potpis prilikom snimanja?"
+
+#~ msgid "Keep Signature"
+#~ msgstr "Zadrži potpis"
+
+#~ msgctxt "1 = file name, 2 = error string"
+#~ msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
+#~ msgstr "<qt>Ne mogu pisati u datoteku<br><filename>%1</filename><br><br>%2"
+
+#~ msgid "Error saving attachment"
+#~ msgstr "Pogreška spremanja priloga"
+
+#~ msgid "Found no attachments to save."
+#~ msgstr "Nisam pronašao priloge koje bi trebalo snimiti."
+
+#~ msgid "message"
+#~ msgstr "poruka"
+
+#, fuzzy
+#~| msgid ""
+#~| "*.mbox|email messages (*.mbox)\n"
+#~| "*|all files (*)"
+#~ msgid "email messages (*.mbox);;all files (*)"
+#~ msgstr ""
+#~ "*.mbox|email poruke (*.mbox)\n"
+#~ "*|sve datoteke (*)"
+
+#~ msgid "Save Message"
+#~ msgid_plural "Save Messages"
+#~ msgstr[0] "Snimi poruku"
+#~ msgstr[1] "Snimi poruke"
+#~ msgstr[2] "Snimi poruke"
+
+#~ msgid "File %1 could not be loaded."
+#~ msgstr "Fajl %1 nije učitana."
+
+#~ msgid "Error loading message"
+#~ msgstr "Greška pri učitavanju poruke"
+
+#~ msgid "File %1 could not be created."
+#~ msgstr "Fajl %1 nije kreiran."
+
+#~ msgid "Error saving message"
+#~ msgstr "Greška pri snimanju poruke"
+
+#~ msgid "We cannot save message."
+#~ msgstr "Ne mozemo spasiti poruku"
+
+#~ msgid "Open &with %1"
+#~ msgstr "Otvori &sa %1"
+
+#~ msgctxt "@item:inmenu Open With, %1 is application name"
+#~ msgid "%1"
+#~ msgstr "%1"
+
+#~ msgid "Edit with:"
+#~ msgstr "Izmijeni sa:"
+
+#~ msgid ""
+#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
+#~ "loss, editing the attachment will be aborted."
+#~ msgstr ""
+#~ "Kmail se ne moze otkriti kada je izabrani editor zatvoren.Kako biste "
+#~ "izbjegli gubitak podataka,uređivanje priloga će se prekinuti."
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "Ne mogu da uredim prilog"
+
+#~ msgid "body part"
+#~ msgstr "dio tijela"
+
+#~ msgid "Description"
+#~ msgstr "Opis"
+
+#~ msgid "Type"
+#~ msgstr "Vrsta"
+
+#~ msgid "Size"
+#~ msgstr "Veličina"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "Plugin bez naziva"
+
+#~ msgid "No description available"
+#~ msgstr "Opis nije dostupan"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgid "Move To Trash"
+#~ msgstr "Premjesti u smeće"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply To All"
+#~ msgstr "Odgovori na: "
+
+#, fuzzy
+#~| msgid "Decrypt Message"
+#~ msgid "Print Message"
+#~ msgstr "Dešifruj poruku"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview Message"
+#~ msgstr "Snimi poruku"
+
+#~ msgid "Turn on HTML rendering for this message."
+#~ msgstr "Uključi HTML crtanje za ovu poruku."
+
+#~ msgid "Load external references from the Internet for this message."
+#~ msgstr "Učitaj spoljne reference sa Interneta za ovu poruku."
+
+#~ msgid "Work online."
+#~ msgstr "Radi na vezi."
+
+#~ msgid "Make account online."
+#~ msgstr "Stavi nalog na mrežu"
+
+#~ msgid "Decrypt message."
+#~ msgstr "Dešifruj poruku."
+
+#~ msgid "Show signature details."
+#~ msgstr "Prikaži detalje potpisa."
+
+#~ msgid "Hide signature details."
+#~ msgstr "Sakrij detalje potpisa."
+
+#~ msgid "Show attachment list."
+#~ msgstr "Prikaži listu priloga."
+
+#~ msgid "Hide attachment list."
+#~ msgstr "Sakrij  listu priloga."
+
+#~ msgid "Show full \"To\" list"
+#~ msgstr "Prikaži punu \"Za\" listu"
+
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "Sakrij punu \"Za\" listu"
+
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "Pokaži punu \"Cc\" listu"
+
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "Sakrij punu \"Cc\" listu"
+
+#~ msgid "Expand all quoted text."
+#~ msgstr "Raširi sav citirani tekst."
+
+#~ msgid "Collapse quoted text."
+#~ msgstr "Sažmi citirani tekst."
+
+#~ msgid "Could not start certificate manager. Please check your installation."
+#~ msgstr ""
+#~ "Ne mogu pokrenuti upravitelj certifikatima. Molim provjerite vašu "
+#~ "instalaciju."
+
+#~ msgid "KMail Error"
+#~ msgstr "KMail greška"
+
+#~ msgid "Show certificate 0x%1"
+#~ msgstr "Pokaži certifikat 0x%1"
+
+#~ msgid "&Open in Address Book"
+#~ msgstr "&Otvori u adresaru"
+
+#~ msgid "&Copy Email Address"
+#~ msgstr "&Kopiraj adresu e‑pošte"
+
+#~ msgid "Address copied to clipboard."
+#~ msgstr "Adresa kopirana na clipboard."
+
+#~ msgid "Lookup the contact in KAddressbook"
+#~ msgstr "Gledaj kontakt u KAddressbook"
+
+#~ msgid "Attachment: %1"
+#~ msgstr "Prilog: %1"
+
+#~ msgid "Encapsulated Message (Subject: %1)"
+#~ msgstr "Enkapsulirana poruka (Tema: %1)"
+
+#~ msgid "Encapsulated Message"
+#~ msgstr "Enkapsulirana poruka"
+
+#~ msgid "Unnamed attachment"
+#~ msgstr "Neimenovani prilog"
+
+#~ msgid "Show GnuPG Audit Log for this operation"
+#~ msgstr "Prikaži dnevnik revizije GnuPG-a za ovu operaciju"
+
+#~ msgid "Opening URL..."
+#~ msgstr "Otvaram URL..."
+
+#~ msgctxt "@info"
+#~ msgid "Do you really want to execute <filename>%1</filename>?"
+#~ msgstr "Da li stvarno želite da izvršite <filename>%1</filename>?"
+
+#~ msgid "Execute"
+#~ msgstr "Izvrši"
+
+#~ msgid "Loading message..."
+#~ msgstr "Učitavam poruku..."
+
+#~ msgid ""
+#~ "Deleting an attachment from an encrypted or old-style mailman message is "
+#~ "not supported."
+#~ msgstr ""
+#~ "Brisanje priloga za šifrovanu ili staru mailman poruku nije podržano."
+
+#~ msgid "Delete Attachment"
+#~ msgstr "Obriši prilog"
+
+#~ msgid ""
+#~ "Deleting an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr ""
+#~ "Brisanje priloga može iskvariti digitalni potpis poruke, ako postoji."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Otvori pomoću"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Drugo..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Otvori pomoću..."
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "Otvori"
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "Pogled"
+
+#~ msgid "Scroll To"
+#~ msgstr "Pomaknite se na"
+
+#~ msgid "Save As..."
+#~ msgstr "Sačuvaj kao..."
+
+#~ msgid "Copy"
+#~ msgstr "Kopiraj"
+
+#~ msgid "Properties"
+#~ msgstr "Svojstva"
+
+#, fuzzy
+#~| msgid "KMail Error"
+#~ msgid "KMail"
+#~ msgstr "KMail greška"
+
+#, fuzzy
+#~| msgid "The KDE email client."
+#~ msgid "The KDE Mail Client"
+#~ msgstr "KDE klijent elektronske pošte."
+
+#~ msgid "View Attachment: %1"
+#~ msgstr "Pogledaj prilog: %1"
+
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "&Prilozi"
+
+#~ msgid "Choose display style of attachments"
+#~ msgstr "Izaberite način prikaza priloga"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&As Icons"
+#~ msgstr "&Kao ikone"
+
+#~ msgid "Show all attachments as icons. Click to see them."
+#~ msgstr "Prikaži sve priloge kao ikone. Klik za gledanje priloga."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Smart"
+#~ msgstr "&Pametno"
+
+#~ msgid "Show attachments as suggested by sender."
+#~ msgstr "Prikaži priloge kako je pošiljalac sugerisao."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Inline"
+#~ msgstr "&U sastavu poruke"
+
+#~ msgid "Show all attachments inline (if possible)"
+#~ msgstr "Prikaži sve priloge u sastavu poruke (ako je moguće)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "&Sakrij"
+
+#~ msgid "Do not show attachments in the message viewer"
+#~ msgstr "Ne prikazuj priloge u pregledu poruke"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "In Header Only"
+#~ msgstr "Samo u zaglavlju"
+
+#~ msgid "Show Attachments only in the header of the mail"
+#~ msgstr "Prikaži priloge samo u zaglavlju pošte"
+
+#~ msgid "&Set Encoding"
+#~ msgstr "Podesi &kodiranje"
+
+#~ msgid "Auto"
+#~ msgstr "Automatski"
+
+#~ msgid "Select All Text"
+#~ msgstr "Odaberi sav tekst"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Kopiraj adresu veze"
+
+#~ msgid "Open URL"
+#~ msgstr "Otvori URL"
+
+#~ msgid "Show Message Structure"
+#~ msgstr "Prikaži strukturu poruke"
+
+#~ msgid "&View Source"
+#~ msgstr "Pogledaj &izvorni kod"
+
+#~ msgid "&Save message..."
+#~ msgstr "&Sačuvaj poruku..."
+
+#~ msgid "&Save Display Format"
+#~ msgstr "&Spremi Ekranski Format"
+
+#~ msgid "&Reset Display Format"
+#~ msgstr "&Resetuj ekranski format"
+
+#~ msgid "Scroll Message Up"
+#~ msgstr "Pomjeri poruku gore"
+
+#~ msgid "Scroll Message Down"
+#~ msgstr "Zapisati poruku dolje"
+
+#~ msgid "Scroll Message Up (More)"
+#~ msgstr "Pomjeri poruku gore (više)"
+
+#~ msgid "Scroll Message Down (More)"
+#~ msgstr "Pomjeri poruku dolje (više)"
+
+#~ msgid "Toggle HTML Display Mode"
+#~ msgstr "Preklopi HTML prikaz"
+
+#~ msgid "Toggle display mode between HTML and plain text"
+#~ msgstr "Preklop prikaza između HTML i običnog teksta"
+
+#~ msgid "Load external references"
+#~ msgstr "Učitaj vanjske reference"
+
+#~ msgid "Speak Text"
+#~ msgstr "Izgovori tekst"
+
+#~ msgid "Copy Image Location"
+#~ msgstr "Kopiraj lokaciju slike"
+
+#~ msgid "&Find in Message..."
+#~ msgstr "&Nađi u poruci..."
+
+#~ msgid "Save &As..."
+#~ msgstr "Snimi k&ao..."
+
+#~ msgid "Open With..."
+#~ msgstr "Otvori sa..."
+
+#~ msgid "Save All Attachments..."
+#~ msgstr "Snimi sve priloge..."
+
+#~ msgid "Copy Email Address"
+#~ msgstr "Kopiraj e-mail adresu"
+
+#~ msgid "Message as Plain Text"
+#~ msgstr "Poruka kao čisti tekst"
+
+#~ msgid "Attachments:"
+#~ msgstr "Prilozi:"
+
+#~ msgid "URL copied to clipboard."
+#~ msgstr "URL kopiran na clipboard."
+
+#~ msgid "Hide full address list"
+#~ msgstr "Sakrij puni spisak adresa"
+
+#~ msgid "Show full address list"
+#~ msgstr "Prikaži puni spisak adresa"
+
+#~ msgid "Message loading failed: %1."
+#~ msgstr "Učitavanje poruke neuspjlo: %1."
+
+#~ msgid "Message not found."
+#~ msgstr "Poruka nije nađena."
+
+#~ msgid ""
+#~ "Open attachment '%1'?\n"
+#~ "Note that opening an attachment may compromise your system's security."
+#~ msgstr ""
+#~ "Da otvorim prilog '%1'?\n"
+#~ "Imajte na umu da otvaranje priloga može ugroziti sigurnost vašeg sistema."
+
+#~ msgid "Open Attachment?"
+#~ msgstr "Otvori prilog?"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr "&Otvori sa '%1'"
+
+#~ msgid "&Open With..."
+#~ msgstr "&Otvori sa..."
+
+#~ msgid "Do not ask again"
+#~ msgstr "Ne pitaj ponovo"
+
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+#~ msgstr ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+
+#~ msgctxt "'No HTML Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#~ ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#~ msgstr ""
+#~ "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#~ ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+
+#~ msgctxt "'Plain Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e<br /></qt>"
+#~ msgstr ""
+#~ "<qt><br />Č<br />i<br />s<br />t<br />i<br /> <br />T<br />e<br />k<br /"
+#~ ">s<br />t<br /></qt>"
+
+#~ msgid "Click to toggle between HTML and plain text."
+#~ msgstr "Pritisnite za preklop između HTML i običnog teksta."
+
+#~ msgid ""
+#~ "<qt>Invitations are normally sent as attachments to a mail. This switch "
+#~ "changes the invitation mails to be sent in the text of the mail instead; "
+#~ "this is necessary to send invitations and replies to Microsoft Outlook."
+#~ "<br />But, when you do this, you no longer get descriptive text that mail "
+#~ "programs can read; so, to people who have email programs that do not "
+#~ "understand the invitations, the resulting messages look very odd.<br /"
+#~ ">People that have email programs that do understand invitations will "
+#~ "still be able to work with this.</qt>"
+#~ msgstr ""
+#~ "<qt>Pozivnice se obično šalju kao dodaci e-pošte. Taj prekidač mijenja "
+#~ "poziv nu poštu koja će biti poslana u tekstu pošte umjesto toga. To je "
+#~ "potrebno radi slanja pozivnica i odgovora na Microsoft Outlook.<br />Ali, "
+#~ "kada to učinite, vi više ne nećete dobijati opisni tekst koji mail "
+#~ "programi mogu čitati. Stoga, za ljude koji imaju programe e-pošte koji ne "
+#~ "razumiju pozivnice, rezultujuća poruka će izgledati vrlo čudno.<br /"
+#~ ">Ljudi koji imaju programe e-pošte koji ne razumiju pozivnice će i dalje "
+#~ "biti u mogućnosti da rade s njima.</qt>"
+
+#~ msgctxt "Unchanged mail message"
+#~ msgid "Raw Source"
+#~ msgstr "Sirovi izvor"
+
+#~ msgid ""
+#~ "Raw, unmodified mail as it is stored on the filesystem or on the server"
+#~ msgstr ""
+#~ "Sirova neizmijenjena pošta kako je smještena u datotečnom sistemu ili na "
+#~ "serveru"
+
+#~ msgctxt "Mail message as shown, in HTML format"
+#~ msgid "HTML Source"
+#~ msgstr "HTML izvor"
+
+#~ msgid "HTML code for displaying the message to the user"
+#~ msgstr "HTML kod za prikaz poruke korisniku"
+
+#~ msgid "vCard Viewer"
+#~ msgstr "vCard Preglednik"
+
+#~ msgid "&Import"
+#~ msgstr "&Uvezi"
+
+#, fuzzy
+#~| msgid "&Next Card"
+#~ msgid "&Next Card"
+#~ msgstr "&Sljedeća kartica"
+
+#, fuzzy
+#~| msgid "&Previous Card"
+#~ msgid "&Previous Card"
+#~ msgstr "&Prethodna kartica"
+
+#~ msgid "&Zoom In"
+#~ msgstr "&Uvećaj"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "&Umanji"
+
+#~ msgid "Reset"
+#~ msgstr "Resetuj"
+
+#, fuzzy
+#~| msgid "&Zoom In"
+#~ msgid "Zoom"
+#~ msgstr "&Uvećaj"
+
+#~ msgid "Close"
+#~ msgstr "Zatvori"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "&Nađi:"
+
+#~ msgid "Text to search for"
+#~ msgstr "Tekst koji treba potražiti"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Sljedeći"
+
+#~ msgid "Jump to next match"
+#~ msgstr "Skoči na sljedeće poklapanje"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Prethodni"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "Skoči na prethodno poklapanje"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "Podesi ponašanje pretrage"
+
+#~ msgid "Case sensitive"
+#~ msgstr "Razlikuj veličinu slova"
+
+#, fuzzy
+#~| msgid "Message not found."
+#~ msgid "Phrase not found"
+#~ msgstr "Poruka nije nađena."
+
+#~ msgid "Blockable Items"
+#~ msgstr "Blockable Stavke"
+
+#~ msgid "Filter"
+#~ msgstr "Filtar"
+
+#~ msgid "Address"
+#~ msgstr "Adresa"
+
+#~ msgid "Search..."
+#~ msgstr "Traži..."
+
+#~ msgid "Image"
+#~ msgstr "Slika"
+
+#~ msgid "Script"
+#~ msgstr "Skripta"
+
+#~ msgid "Stylesheet"
+#~ msgstr "Lista stilova"
+
+#~ msgid "Font"
+#~ msgstr "Vrsta slova"
+
+#~ msgid "Frame"
+#~ msgstr "Kadar"
+
+#~ msgid "XML Request"
+#~ msgstr "XML Zahtijev"
+
+#~ msgid "Object"
+#~ msgstr "Objekt"
+
+#~ msgid "Audio/Video"
+#~ msgstr "Audio/Video"
+
+#~ msgid "Popup window"
+#~ msgstr "Iskočni prozor"
+
+#~ msgid "Unknown"
+#~ msgstr "Nepoznato"
+
+#~ msgid "Copy url"
+#~ msgstr "Kopiraj url"
+
+#~ msgid "Copy filter"
+#~ msgstr "Kopiraj filter"
+
+#~ msgid "Block item..."
+#~ msgstr "Blokiraj predmet..."
+
+#~ msgid "Open"
+#~ msgstr "Otvori"
+
+#~ msgid "Remove filter"
+#~ msgstr "Ukloni filter"
+
+#~ msgid "Download new ad-block list was failed."
+#~ msgstr "Preuzimanje nove liste za blokiranje reklama je neuspjelo"
+
+#~ msgid "Download new ad-block list was done."
+#~ msgstr "Preuzimanje nove liste za blokiranje reklama je završeno."
+
+#~ msgid "Add subscription"
+#~ msgstr "Dodaj pretplatu"
+
+#~ msgid "Select List:"
+#~ msgstr "Selektuj listu"
+
+#, fuzzy
+#~| msgid "Show List..."
+#~ msgid "Show List"
+#~ msgstr "Prikazi listu..."
+
+#~ msgid "Use default"
+#~ msgstr "Koristi podrazumjevano"
+
+#~ msgid "Yes"
+#~ msgstr "Da"
+
+#~ msgid "Not"
+#~ msgstr "Nije"
+
+#~ msgid "Not subscription added..."
+#~ msgstr "Pretplata nije dodana..."
+
+#~ msgid ""
+#~ "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">more information</a>):"
+#~ msgstr ""
+#~ "<qt>Filterski izraz (npr. <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">više detalja</a>):</qt>"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " dan"
+#~ msgstr[1] " dana"
+#~ msgstr[2] " dana"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~| "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~| "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~| "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~| "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~| "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes "
+#~| "priority over any blacklist (blocking) filter."
+#~ msgid ""
+#~ "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~ "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~ "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~ "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~ "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~ "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes priority "
+#~ "over any blacklist (blocking) filter.<br><a href='%1'>%2</a></qt>"
+#~ msgstr ""
+#~ "<qt><p>Unesite filterski izraz. Filteri se mogu definisati</p><ul><li>sa "
+#~ "džokerima u stilu školjke, npr. <tt>http://www.example.com/ads*</tt>, "
+#~ "gdje su poznati džokeri <tt>*?[]</tt>, ili</li><li>kao puni regularni "
+#~ "izrazi, tako što se niska zagradi sa ‘<tt>/</tt>’, npr. <tt>/\\/(ad|"
+#~ "banner)\\./</tt>.</li></ul><p>Na početku svakog filtera može se dodati "
+#~ "<tt>@@</tt> za stavljanje poklopljenog URL‑a na belu listu (propuštanje). "
+#~ "Ovo ima prioritet nad svim filterima za crnu listu (blokiranje).</p></qt>"
+
+#~ msgid "Do you want to delete list \"%1\"?"
+#~ msgstr "Da li zelite da izbrišete ovaj list \"%1\"?"
+
+#~ msgid "Delete current list"
+#~ msgstr "Izbrišite trenutnu listu"
+
+#, fuzzy
+#~| msgid "*|all files (*)"
+#~ msgid "All Files (*)"
+#~ msgstr "*|sve datoteke (*)"
+
+#, fuzzy
+#~| msgid "Import Filters..."
+#~ msgid "Import Filters"
+#~ msgstr "Uvezi filtere..."
+
+#, fuzzy
+#~| msgid "Export filters..."
+#~ msgid "Export Filters"
+#~ msgstr "Izvezi filtere..."
+
+#~ msgid "Show adblock list"
+#~ msgstr "Prikaži adblock listu"
+
+#, fuzzy
+#~| msgid "Delete current list"
+#~ msgid "Delete List"
+#~ msgstr "Izbrišite trenutnu listu"
+
+#~ msgid "Download..."
+#~ msgstr "Preuzimanje..."
+
+#~ msgid "An error occurs during download list: \"%1\""
+#~ msgstr "Dogodila se jedna greska tokom preuzimanja liste: \"%1\""
+
+#~ msgid "Filters:"
+#~ msgstr "Filteri:"
+
+#, fuzzy
+#~| msgid "Blocking filter"
+#~ msgid "&Blocking filter"
+#~ msgstr "Blokiranje filter"
+
+#~ msgid "Exception Filter"
+#~ msgstr "Iznimka filter"
+
+#~ msgid "Pattern"
+#~ msgstr "Uzorak"
+
+#~ msgid "custom"
+#~ msgstr "proizvoljno"
+
+#~ msgid "Accept pattern only"
+#~ msgstr "Prihvati uzorak samo"
+
+#~ msgid "At the beginning of the address"
+#~ msgstr "Na početku adrese"
+
+#~ msgid "At the end of address"
+#~ msgstr "Na kraju adrese"
+
+#~ msgid "First-part only"
+#~ msgstr "Prvi-dio samo"
+
+#~ msgid "Match case"
+#~ msgstr "Razlikuj velika i mala slova"
+
+#~ msgid "Restrict to domain"
+#~ msgstr "Ograničiti na domeni"
+
+#~ msgid "Apply to:"
+#~ msgstr "Primjeni za:"
+
+#~ msgid "Collapse blocked:"
+#~ msgstr "Collapse blokiran:"
+
+#~ msgid "&Enable Ad Block"
+#~ msgstr "&Aktiviraj Adblok"
+
+#~ msgid "&Hide filtered elements"
+#~ msgstr "&Sakrij filtriranje elemente"
+
+#~ msgid "Automatic Filters"
+#~ msgstr "Automatski filteri"
+
+#~ msgid "Add Filters subscriptions..."
+#~ msgstr "Dodaj filtri pretplate ..."
+
+#~ msgid "Remove subscription"
+#~ msgstr "Uklonite pretplatu"
+
+#~ msgid "Update enabled automatic filters every:"
+#~ msgstr "Ažuriranje omogućeno automatski filteri:"
+
+#~ msgid "Show List..."
+#~ msgstr "Prikazi listu..."
+
+#~ msgid "Manual Filters"
+#~ msgstr "Ručni filteri"
+
+#~ msgid "Add filter expression"
+#~ msgstr "Dodaj filterski izraz"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Import Filters..."
+#~ msgstr "Uvezi filtere..."
+
+#~ msgid "Export filters..."
+#~ msgstr "Izvezi filtere..."
+
+#~ msgid "Search:"
+#~ msgstr "Traži:"
+
+#~ msgid "Remove filter expression"
+#~ msgstr "Ukloni filterski izraz"
+
+#~ msgid "Remove Filter"
+#~ msgstr "Ukloni filter"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "Označi sva poklapanja"
+
+#~ msgid "Zoom only text"
+#~ msgstr "Uvećaj samo tekst"
+
+#~ msgid "Block image"
+#~ msgstr "Blokiranje slika"
+
+#~ msgid "Open Blockable Items..."
+#~ msgstr "Otvorite Blockable artikle ..."
+
+#~ msgid "Blocked by ad filter"
+#~ msgstr "Blokirao filter reklama"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "Uvećaj samo tekst"
+
+#~ msgid "No Audit Log available"
+#~ msgstr "Dnevnik revizije nije dostupan"
+
+#~ msgid "Error Retrieving Audit Log: %1"
+#~ msgstr "Pogreška u preuzimanju dnevnika praćenja:%1"
+
+#~ msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+#~ msgid "Show Audit Log"
+#~ msgstr "Prikažite dnevnik praćenja grešaka"
+
+#~ msgid "The crypto engine returned no cleartext data."
+#~ msgstr "Kripto dodatak nije vratio podatke u vidu čistog teksta."
+
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "(nepoznat)"
+
+#~ msgid "New or changed: %1 (secret key available)"
+#~ msgstr "Novi ili promijenjen: %1 (dostupan tajni ključ)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "Novi ili promijenjen: %1"
+
+#~ msgid "Crypto plug-in \"%1\" is not initialized."
+#~ msgstr "Kripto dodatak \"%1\" nije inicijalizovan."
+
+#~ msgid "Expand Short URL"
+#~ msgstr "Raširi kratki URL"
+
+#~ msgid "Headers:"
+#~ msgstr "Zaglavlje:"
+
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "Konfiguracija vlastitog zaglavlja ..."
+
+#~ msgid "Only show the headers listed below"
+#~ msgstr "Prikaži samo zaglavlja navedene u nastavku"
+
+#~ msgid "Show all but hide the headers listed below"
+#~ msgstr "Pokazati sve, ali sakriti zaglavlja navedene u nastavku"
+
+#~ msgid "A&dd..."
+#~ msgstr "&Dodaj..."
+
+#~ msgid "Remo&ve"
+#~ msgstr "&Ukloni"
+
+#~ msgid "&Modify..."
+#~ msgstr "&Izmijeni..."
+
+#~ msgid "Header:"
+#~ msgstr "Zaglavlje:"
+
+#~ msgid "Au&tomatic collapse level:"
+#~ msgstr "Nivo au&tomatskog kolapsiranja:"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "Sv&a zaglavlja"
+
+#~ msgid "Show all message headers"
+#~ msgstr "Prikaži sva zaglavlja poruka"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "&Kratko zaglavlje"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "Prikaži kratku listu zaglavlja poruke"
+
+#~ msgid "%1: "
+#~ msgstr "%1: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "&Prilagođena Zaglavlja"
+
+#~ msgid "Show custom headers"
+#~ msgstr "Prikazi prilagodjena zaglavlja"
+
+#~ msgid "To: "
+#~ msgstr "Za: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "&Preduzetnička zaglavlja"
+
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "Prikaži listu zaglavlja u Enterprise stilu"
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(poslano ponovo iz %1)"
+
+#~ msgid "(receiver was %1)"
+#~ msgstr "(prijemnik je %1)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Za: "
+
+#~ msgid "User-Agent: "
+#~ msgstr "Korisnički-agent: "
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-poštar: "
+
+#~ msgid "Bugzilla: "
+#~ msgstr "Bugzilla: "
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "MDN To: "
+#~ msgstr "Za: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "&Lijepa zaglavlja"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "Pokaži listu zaglavlja u kičastom obliku"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "&Dugo zaglavlje"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "Prikaži dugu listu zaglavlja poruke"
+
+#, fuzzy
+#~| msgid "sent: "
+#~ msgid "Event:"
+#~ msgstr "Poslano: "
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Open &editor..."
+#~ msgstr "Otvori sa..."
+
+#, fuzzy
+#~| msgid "Edit with:"
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "Izmijeni sa:"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply to \"%1\""
+#~ msgstr "Odgovori na: "
+
+#~ msgid "Translate..."
+#~ msgstr "Prevedi..."
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-obtain-keys\" function. Please "
+#~ "report this bug."
+#~ msgstr ""
+#~ "Chiasmus-ov pozadinski program ne nudi funkciju „x-obtain-keys“. "
+#~ "Prijavite ovu grešku."
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "Greška pozadinskog programa Chiasmus-a"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-obtain-keys\" "
+#~ "function did not return a string list. Please report this bug."
+#~ msgstr ""
+#~ "Pozadinski program Chiasmus-a je vratio neočekivanu vrijednost: Funkcija "
+#~ "„x-obtain-keys“ nije vratila listu znakovnog niza. Prijavite ovu grešku."
+
+#~ msgid ""
+#~ "No keys have been found. Please check that a valid key path has been set "
+#~ "in the Chiasmus configuration."
+#~ msgstr ""
+#~ "Nisu pronađeni nikakvi ključevi. Provjerite da li je postavljena ispravna "
+#~ "putanja ključa u podešavanjima Chiasmus-a."
+
+#~ msgid "Chiasmus Decryption Key Selection"
+#~ msgstr "Izbor Chiasmus-ovog ključa za dešifrovanje"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-decrypt\" function. Please report "
+#~ "this bug."
+#~ msgstr ""
+#~ "Pozadinski program Chiasmus-a ne nudi „x-decrypt“ funkciju. Prijavite ovu "
+#~ "grešku."
+
+#~ msgid ""
+#~ "The \"x-decrypt\" function does not accept the expected parameters. "
+#~ "Please report this bug."
+#~ msgstr ""
+#~ "Funkcija „x-decrypt“ ne prihvata očekivane parametre. Prijavite ovu "
+#~ "grešku."
+
+#~ msgid "Chiasmus Decryption Error"
+#~ msgstr "Chiasmus-ova greška dešifrovanja"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-decrypt\" function "
+#~ "did not return a byte array. Please report this bug."
+#~ msgstr ""
+#~ "Pozadinski program Chiasmus-a je vratio neočekivanu vrijednost: Funkcija "
+#~ "„x-decrypt“ nije vratila bajtni niz. Prijavite ovu grešku."
+
+#~ msgid "Please select the Chiasmus key file to use:"
+#~ msgstr "Izaberite datoteka Chiasmus ključa koji se koristi:"
+
+#~ msgid "Additional arguments for chiasmus:"
+#~ msgstr "Dodatni argumenti za chiasmus:"
+
+#~ msgid "Decrypt With Chiasmus..."
+#~ msgstr "Dešifruj pomoću Chiasmus-a..."
+
+#, fuzzy
+#~| msgid "Use default"
+#~ msgid "Use Default Image"
+#~ msgstr "Koristi podrazumjevano"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgctxt "add space before image"
+#~ msgid " image"
+#~ msgid_plural " images"
+#~ msgstr[0] "Slika"
+#~ msgstr[1] "Slika"
+#~ msgstr[2] "Slika"
+
+#, fuzzy
+#~| msgid "Configure Custom Headers..."
+#~ msgid "Configure..."
+#~ msgstr "Konfiguracija vlastitog zaglavlja ..."
+
+#~ msgid "Toggle Caret Browsing"
+#~ msgstr "(De)aktiviraj pregled tekstualnim kursorom"
+
+#~ msgid "Caret Browsing will be activated. Switch off with F7 shortcut."
+#~ msgstr ""
+#~ "Pregled tekstualnim kursorom će biti aktiviran. Isključite tasterom F7"
+
+#~ msgid "Activate Caret Browsing"
+#~ msgstr "Aktiviraj pregled tekstualnim kursorom"
+
+#~ msgid "Allow to delete attachments of existing mails."
+#~ msgstr "Omogući brisanje priloga postojećih poruka."
+
+#~ msgid "Message Structure Viewer Placement"
+#~ msgstr "Smještaj preglednika strukture poruke"
+
+#~ msgid "Above the message pane"
+#~ msgstr "Iznad okna poruke"
+
+#~ msgid "Below the message pane"
+#~ msgstr "Ispod okna poruke"
+
+#~ msgid "Number of addresses to show before collapsing"
+#~ msgstr "Broj prikazanih adresa prije sažimanja"
+
+#~ msgid "Fallback character e&ncoding:"
+#~ msgstr "Alternativ&no kodiranje:"
+
+#~ msgid ""
+#~ "When encountering a Toltec scheduling message, display a custom "
+#~ "replacement text for it."
+#~ msgstr ""
+#~ "Pri prijemu Toltecove poruke za raspored, prikaži odgovarajući zamjenski "
+#~ "tekst za nju"
+
+#~ msgid ""
+#~ "The text that will be displayed as a replacement when encountering Toltec "
+#~ "scheduling messages."
+#~ msgstr ""
+#~ "Tekst koji će se prikazati pri prijemu Toltecove poruke za raspored."
+
+#~ msgid ""
+#~ "This message is a <i>Toltec</i> Groupware object, it can only be viewed "
+#~ "with Microsoft Outlook in combination with the Toltec connector."
+#~ msgstr ""
+#~ "Ova poruka je <i>Toltec</i> grupni objekt, može se gledati samo sa "
+#~ "Microsoft Outlook u kombinaciji s Toltec konektorom."
+
+#~ msgid "Show Raw Message"
+#~ msgstr "Prikaži sirovu poruku"
+
+#, fuzzy
+#~| msgid "*|all files (*)"
+#~ msgid "all files (*)"
+#~ msgstr "*|sve datoteke (*)"
+
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Pokretanje Jovie tekst u govor dodatka nije uspjelo"
+
+#~ msgid "sent: "
+#~ msgstr "Poslano: "
+
+#~ msgid "Encrypted data not shown"
+#~ msgstr "Šifriranje podataka koji nisu prikazani"
+
+#~ msgid ""
+#~ "Beginning of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Dosegnut početak poruke.\n"
+#~ "Fraza '%1' se ne može naći."
+
+#~ msgid ""
+#~ "End of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Dosegnut kraj poruke.\n"
+#~ "Fraza '%1' se ne može naći."
+
+#~ msgid "Expand Short Url..."
+#~ msgstr "Pro"
+
+#~ msgid "The message could not be decrypted."
+#~ msgstr "Poruka nije mogla biti dešifrovana."
+
+#~ msgid ""
+#~ "Could not write the file %1:\n"
+#~ "\"%2\" is the detailed error description."
+#~ msgstr ""
+#~ "Ne mogu pisati datoteku %1:\n"
+#~ "\"%2\" je detaljan opis poruke."
+
+#~ msgid "View Source Error"
+#~ msgstr "Pogledaj izvornu grešku"
+
+#~ msgid "File Already Exists"
+#~ msgstr "Datoteka već postoji"
+
+#~ msgid ""
+#~ "A file named <filename>%1</filename> already exists. Do you want to "
+#~ "overwrite it?"
+#~ msgstr ""
+#~ "Datoteka<filename>%1</filename> već postoji. Da li je želite prepisati?"
+
+#~ msgid "Suggest New &Name"
+#~ msgstr "Predloži Novo &Ime"
+
+#~ msgid "&Overwrite"
+#~ msgstr "&Prebriši"
+
+#~ msgid "&Ignore"
+#~ msgstr "&Ignoriši"
+
+#~ msgid "&Rename"
+#~ msgstr "&Preimenuj"
+
+#~ msgid "Appl&y to All"
+#~ msgstr "Primijeni na &sve"
+
+#~ msgid "Detect language"
+#~ msgstr "Otkrij jezik"
+
+#~ msgid "English"
+#~ msgstr "Engleski"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "Kineski (pojednostavljeni)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "Kineski (tradicionalni)"
+
+#~ msgid "Dutch"
+#~ msgstr "Holandski"
+
+#~ msgid "French"
+#~ msgstr "Francuski"
+
+#~ msgid "German"
+#~ msgstr "njemački"
+
+#~ msgid "Greek"
+#~ msgstr "grčki"
+
+#~ msgid "Italian"
+#~ msgstr "Italijanski"
+
+#~ msgid "Japanese"
+#~ msgstr "Japanski"
+
+#~ msgid "Korean"
+#~ msgstr "Korejanski"
+
+#~ msgid "Portuguese"
+#~ msgstr "Portugalski"
+
+#~ msgid "Russian"
+#~ msgstr "Ruski"
+
+#~ msgid "Spanish"
+#~ msgstr "Španski"
+
+#~ msgid "Afrikaans"
+#~ msgstr "Afrikaans"
+
+#~ msgid "Albanian"
+#~ msgstr "Albanski"
+
+#~ msgid "Arabic"
+#~ msgstr "arapski"
+
+#~ msgid "Armenian"
+#~ msgstr "jermenski|/|$[svojstva pismo 'jermensko']"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "Azerbejdžanski"
+
+#~ msgid "Basque"
+#~ msgstr "Baskijski"
+
+#~ msgid "Belarusian"
+#~ msgstr "Bjeloruski"
+
+#~ msgid "Bulgarian"
+#~ msgstr "Bugarski"
+
+#~ msgid "Catalan"
+#~ msgstr "Katalonski"
+
+#~ msgid "Croatian"
+#~ msgstr "Hrvatski"
+
+#~ msgid "Czech"
+#~ msgstr "Češki"
+
+#~ msgid "Danish"
+#~ msgstr "Danski"
+
+#~ msgid "Estonian"
+#~ msgstr "Estonski"
+
+#~ msgid "Filipino"
+#~ msgstr "Filipinski"
+
+#~ msgid "Finnish"
+#~ msgstr "Finski"
+
+#~ msgid "Galician"
+#~ msgstr "Galicijski"
+
+#~ msgid "Georgian"
+#~ msgstr "gruzijski"
+
+#~ msgid "Haitian Creole"
+#~ msgstr "Haićanski kreol"
+
+#~ msgid "Hebrew"
+#~ msgstr "hebrejski"
+
+#~ msgid "Hindi"
+#~ msgstr "Hindi"
+
+#~ msgid "Hungarian"
+#~ msgstr "Mađarski"
+
+#~ msgid "Icelandic"
+#~ msgstr "Islandski"
+
+#~ msgid "Indonesian"
+#~ msgstr "Indonezijski"
+
+#~ msgid "Irish"
+#~ msgstr "Irski"
+
+#~ msgid "Latvian"
+#~ msgstr "Latvijski"
+
+#~ msgid "Lithuanian"
+#~ msgstr "Litvanski"
+
+#~ msgid "Macedonian"
+#~ msgstr "Makedonski"
+
+#~ msgid "Malay"
+#~ msgstr "Malajski"
+
+#~ msgid "Maltese"
+#~ msgstr "Malteški"
+
+#~ msgid "Norwegian"
+#~ msgstr "Norveški"
+
+#~ msgid "Persian"
+#~ msgstr "Perzijski"
+
+#~ msgid "Polish"
+#~ msgstr "Poljski"
+
+#~ msgid "Romanian"
+#~ msgstr "Rumunski"
+
+#~ msgid "Serbian"
+#~ msgstr "Srpski"
+
+#~ msgid "Slovak"
+#~ msgstr "Slovački"
+
+#~ msgid "Slovenian"
+#~ msgstr "Slovenački"
+
+#~ msgid "Swahili"
+#~ msgstr "Svahili"
+
+#~ msgid "Swedish"
+#~ msgstr "Švedski"
+
+#~ msgid "Thai"
+#~ msgstr "tajlandski"
+
+#~ msgid "Turkish"
+#~ msgstr "Turski"
+
+#~ msgid "Ukrainian"
+#~ msgstr "Ukrajinski"
+
+#~ msgid "Urdu"
+#~ msgstr "Urdu"
+
+#~ msgid "Vietnamese"
+#~ msgstr "Vijetnamski"
+
+#~ msgid "Welsh"
+#~ msgstr "Velški"
+
+#~ msgid "Yiddish"
+#~ msgstr "Jidiš"
+
+#~ msgctxt ""
+#~ "Invert language choices so that from becomes to and to becomes from"
+#~ msgid "Invert"
+#~ msgstr "Invertuj"
+
+#~ msgid "Clear"
+#~ msgstr "Očisti"
+
+#~ msgid "Translate"
+#~ msgstr "Prevedi"
+
+#~ msgid "Drag text that you want to translate."
+#~ msgstr "Dovucite tekst koji zelite prevesti."

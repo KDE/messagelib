@@ -1,0 +1,304 @@
+# Translation of kmail.po to Finnish
+# KDE Finnish translation sprint participants:
+# Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2003.
+# Eero Häkkinen <eero.hakkinen@iki.fi>, 2003.
+# Kim Enkovaara <kim.enkovaara@iki.fi>, 2003, 2005, 2006.
+# Teemu Rytilahti <teemu.rytilahti@kde-fi.org>, 2003, 2004.
+# Tapio Kautto <eleknader@phnet.fi>, 2004.
+# Ilpo Kantonen <ilpo@iki.fi>, 2005, 2006.
+# Santtu Pajukanta <japsu@iki.fi>, 2006.
+# Santtu Pajukanta <santtu@pajukanta.fi>, 2006.
+# Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>, 2007.
+# Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
+# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2012, 2013, 2015, 2017.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2010, 2012, 2013, 2014, 2015, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessageviewer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2017-12-25 20:43+0200\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:25:13+0000\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Nimetön"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Väärä salauslaajennus."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Salauslaajennusasetuksia ei löytynyt."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "%1-laajennusta ei löytynyt."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "Salauslaajennus ”%1” ei voi todentaa allekirjoituksia."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"Viesti on allekirjoitettu, mutta allekirjoituksen aitoutta ei voitu "
+"varmistaa.<br />Syy: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Salauslaajennus ”%1” ei osaa purkaa viestejä."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Salauslaajennus ”%1” ei osannut purkaa salausta."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Virhe: %1"
+
+#~ msgid "Reason: %1"
+#~ msgstr "Syy: %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Varmenteita ei löydetty tästä viestistä."
+
+#~ msgid "Certificate import status:"
+#~ msgstr "Varmenteen tuontitilanne:"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "1 uusi varmenne tuotiin."
+#~ msgstr[1] "%1 uutta varmennetta tuotiin."
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "Yksi varmenne pysyi ennallaan."
+#~ msgstr[1] "%1 varmennetta pysyi ennallaan."
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "1 salainen avain tuotiin."
+#~ msgstr[1] "%1 salaista avainta tuotiin."
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "Yhtä salaista avainta ei ole muutettu."
+#~ msgstr[1] "%1 salaista avainta ei ole muutettu."
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr "Varmenteen tuonnista ei ole yksityiskohtia saatavilla."
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Varmenteen tuonnin yksityiskohdat:"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Epäonnistui: %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "Sisällytetty viesti"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "Sisällytetyn viestin loppu"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "Viestiä ei ole salattu."
+
+#~ msgid "Decrypt Message"
+#~ msgstr "Pura viestin salaus"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Viestin salausta puretaan, odota…"
+
+#~ msgid "Encrypted message"
+#~ msgstr "Salattu viesti"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "Salattu viesti (purkaminen ei ole mahdollista)"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Salausta ei saanut puretuksi."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "Salatun viestin loppu"
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Viestin allekirjoitusta tarkistetaan, odota…"
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Ei tarpeeksi tietoa allekirjoituksen tarkistamiseen. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Viestin allekirjoitti %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Viesti on allekirjoitettu tuntemattomalla avaimella."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Viesti allekirjoitettiin avaimella %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Viesti allekirjoitettiin %1 avaimella %2, sen allekirjoitti %3"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Viesti allekirjoitettiin %1 avaimella %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Viestin allekirjoitti %2 avaimella %1."
+
+#~ msgid "Status: "
+#~ msgstr "Tila:"
+
+#~ msgid "Hide Details"
+#~ msgstr "Piilota yksityiskohdat"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Viesti allekirjoitettiin %1 tuntemattomalla avaimella %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Viesti allekirjoitettiin tuntemattomalla avaimella %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Allekirjoituksen aitoutta ei voitu tarkistaa."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Viestin allekirjoitti %2 (Avain-ID: %1)."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Allekirjoitus on kelvollinen, mutta avaimen aitous ei ole selvillä."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Allekirjoitus on aito ja avain on osittain luotettava."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Allekirjoitus on aito ja avain on täysin luotettava."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Allekirjoitus on aito ja avain on perusteellisesti luotettu."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Allekirjoitus on aito, mutta avain on epäluotettava."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Varoitus: Allekirjoitus on kelvoton."
+
+#~ msgid "Invalid signature."
+#~ msgstr "Virheellinen allekirjoitus."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "Ei tarpeeksi tietoa allekirjoituksen varmistamiseksi."
+
+#~ msgid "Signature is valid."
+#~ msgstr "Allekirjoitus on kelvollinen."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Tuntematon allekirjoituksen tila"
+
+#~ msgid "Show Details"
+#~ msgstr "Näytä yksityiskohdat"
+
+#~ msgid "End of signed message"
+#~ msgstr "Allekirjoitetun viestin loppu"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Virhe: Allekirjoitusta ei tarkistettu"
+
+#~ msgid "Good signature"
+#~ msgstr "Hyvä allekirjoitus"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Kelvoton</b> allekirjoitus."
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Ei julkista avainta allekirjoituksen tarkistamiseen"
+
+#~ msgid "No signature found"
+#~ msgstr "Yhtään allekirjoitusta ei löytynyt"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Virhe tarkistettaessa allekirjoitusta"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Erilaiset tulokset allekirjoituksille "
+
+#~ msgid "No status information available."
+#~ msgstr "Ei tilatietoa saatavilla."
+
+#~ msgid "Good signature."
+#~ msgstr "Hyvä allekirjoitus."
+
+#~ msgid "One key has expired."
+#~ msgstr "Yksi avain on vanhentunut."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Allekirjoitus on vanhentunut."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Ei voida tarkistaa: avain puuttuu."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL ei käytettävissä."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Saatavilla oleva CRL on liian vanha."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Ei vastaa hyväksyttyä käytäntöä."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Tapahtui järjestelmävirhe."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Yksi avaimista on kumottu."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Kelvoton</b> allekirjoitus."
+
+#~ msgid "certificate"
+#~ msgstr "varmenne"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Varoitus:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "Lähettäjän sähköpostiosoitetta ei ole tallennettu allekirjoitukseen "
+#~ "käytettyyn varmenteeseen %1."
+
+#~ msgid "sender: "
+#~ msgstr "lähettäjä:"
+
+#~ msgid "stored: "
+#~ msgstr "tallennettu:"
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Allekirjoitukseen käytettyyn varmenteeseen %1 ei ole liitetty yhtäkään "
+#~ "sähköpostiosoitetta, joten emme voi verrata sitä lähettäjän osoitteeseen "
+#~ "%2."

@@ -1,0 +1,331 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2016-06-01 18:34+0100\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Namnlös"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Felaktigt kryptoinsticksprogram."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Inget lämpligt kryptoinsticksprogram hittades."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "Inget %1-insticksprogram hittades."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "Kryptoinsticksprogrammet \"%1\" kan inte verifiera signaturer."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"Brevet är signerat, men signaturens giltighet kan inte kontrolleras.<br/> "
+"Orsak: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Kryptoinsticksprogrammet \"%1\" kan inte dekryptera några brev."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Kryptoinsticksprogrammet \"%1\" kunde inte dekryptera data."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Fel: %1"
+
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "Tyvärr kunde inte certifikatet importeras."
+
+#~ msgid "Reason: %1"
+#~ msgstr "Orsak: %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Tyvärr hittades inga certifikat i det här brevet."
+
+#~ msgid "Certificate import status:"
+#~ msgstr "Importstatus för certifikat:"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "1 nytt certifikat har importerats."
+#~ msgstr[1] "%1 nya certifikat har importerats."
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "1 certifikat är oförändrat."
+#~ msgstr[1] "%1 certifikat är oförändrade."
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "1 ny hemlig nyckel har importerats."
+#~ msgstr[1] "%1 nya hemliga nycklar har importerats."
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "1 hemlig nyckel är oförändrad."
+#~ msgstr[1] "%1 hemliga nycklar är oförändrade."
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr "Tyvärr är ingen information om import av certifikat tillgänglig."
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Information om import av certifikat:"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Misslyckades: %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "Inbäddat brev"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "Slut på inbäddat brev"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "Brevet är krypterat"
+
+#~ msgid "Decrypt Message"
+#~ msgstr "Avkoda brevet"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Vänta medan brevet avkodas..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "Krypterat brev"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "Krypterat brev (kryptering inte möjlig)"
+
+#~ msgid "Reason: "
+#~ msgstr "Orsak: "
+
+#~ msgid ""
+#~ "No secret key found to encrypt the message. It is encrypted for following "
+#~ "keys:"
+#~ msgstr ""
+#~ "Ingen hemlig nyckel hittades för att kryptera brevet. Det är krypterat "
+#~ "för följande nycklar:"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Kunde inte dekryptera data."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "Slut på krypterat brev"
+
+#~ msgid ""
+#~ "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~ "HTML code is shown. If you trust the sender of this message then you can "
+#~ "activate formatted HTML display for this message <a href=kmail:"
+#~ "showHTML>by clicking here</a>."
+#~ msgstr ""
+#~ "<b>Observera:</b> Det här är ett HTML-brev. Av säkerhetsskäl visas endast "
+#~ "den obehandlade HTML-koden. Om du litar på avsändaren av brevet kan du "
+#~ "aktivera formaterad HTML-visning för brevet <a href=kmail:showHTML>genom "
+#~ "att klicka här</a>."
+
+#~ msgid ""
+#~ "<b>Note:</b> This HTML message may contain external references to images "
+#~ "etc. For security/privacy reasons external references are not loaded. If "
+#~ "you trust the sender of this message then you can load the external "
+#~ "references for this message <a href=kmail:loadExternal>by clicking here</"
+#~ "a>."
+#~ msgstr ""
+#~ "<b>Observera:</b> Det här HTML-brevet kan innehålla externa referenser "
+#~ "till bilder, etc. Av säkerhets- och integritetsskäl laddas inte externa "
+#~ "referenser. Om du litar på avsändaren av brevet kan du ladda externa "
+#~ "referenser i brevet <a href=kmail:loadExternal>genom att klicka här</a>."
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Vänta medan signaturen kontrolleras..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Inte tillräcklig information för att kontrollera signatur: %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Brevet var signerat av %1."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Brevet var signerat med en okänd nyckel."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Brevet var signerat med nyckeln %1."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Brevet signerades av %3 den %1 med nyckeln %2"
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Brevet signerades den %1 med nyckeln %2."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Brevet signerades av %2 med nyckeln %1."
+
+#~ msgid "Status: "
+#~ msgstr "Status:"
+
+#~ msgid "Hide Details"
+#~ msgstr "Dölj detaljinformation"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Brevet signerades den %1 med en okänd nyckel %2."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Brevet signerades med en okänd nyckel %1."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Signaturens giltighet kan inte kontrolleras."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Brevet var signerat av %2 (nyckel-ID: %1)."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Signaturen är giltig, men nyckelns giltighet är okänd."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Signaturen är giltig och nyckeln är möjligen pålitlig."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Signaturen är giltig och nyckeln är pålitlig."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Signaturen är giltig och nyckeln är fullständigt pålitlig."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Signaturen är giltig, men nyckeln är opålitlig."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Varning: Felaktig signatur."
+
+#~ msgid "Invalid signature."
+#~ msgstr "Ogiltig signatur."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr ""
+#~ "Inte tillräcklig information för att kontrollera signaturens giltighet."
+
+#~ msgid "Signed by <a href=mailto:%1>%2</a>."
+#~ msgstr "Signerad av <a href=mailto:%1>%2</a>."
+
+#~ msgid "Signature is valid."
+#~ msgstr "Signaturen är giltig."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "Okänt signaturtillstånd"
+
+#~ msgid "Show Details"
+#~ msgstr "Visa detaljinformation"
+
+#~ msgid "End of signed message"
+#~ msgstr "Slut på signerat brev"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Fel: Signatur ej verifierad"
+
+#~ msgid "Good signature"
+#~ msgstr "Bra signatur"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Felaktig</b> signatur"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Ingen öppen nyckel för att verifiera signaturen"
+
+#~ msgid "No signature found"
+#~ msgstr "Ingen signatur hittades"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Fel vid verifiering av signatur"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Olika resultat för signaturerna"
+
+#~ msgid "No status information available."
+#~ msgstr "Ingen statusinformation tillgänglig."
+
+#~ msgid "Good signature."
+#~ msgstr "Bra signatur."
+
+#~ msgid "One key has expired."
+#~ msgstr "En nyckel har gått ut."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Den här signaturen har gått ut."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Kan inte verifiera: nyckel saknas."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL Inte tillgänglig."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Tillgänglig CRL är för gammal."
+
+#~ msgid "A policy was not met."
+#~ msgstr "En princip följdes inte."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Ett systemfel uppstod."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "En nyckel har återkallats."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Felaktig</b> signatur."
+
+#~ msgid "certificate"
+#~ msgstr "certifikat"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Varning:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr ""
+#~ "Avsändarens e-postadress är inte lagrad i %1 som används för signering."
+
+#~ msgid "sender: "
+#~ msgstr "avsändare: "
+
+#~ msgid "stored: "
+#~ msgstr "lagrad: "
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "Ingen e-postadress är lagrad i %1 som används för signering, det går inte "
+#~ "att jämföra den med avsändarens adress %2."

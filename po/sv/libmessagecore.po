@@ -1,0 +1,393 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2009, 2010.
+# Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2011, 2013, 2014, 2015, 2016, 2018, 2019.
+# Arve Eriksson <031299870@telia.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2019-12-17 19:02+0100\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Asserhäll"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stefan.asserhall@bredband.net"
+
+#: attachment/attachmentcompressjob.cpp:50
+#, kde-format
+msgid "Could not initiate attachment compression."
+msgstr "Kunde inte inleda komprimering av bilaga."
+
+#: attachment/attachmentcompressjob.cpp:60
+#, kde-format
+msgid "Could not compress the attachment."
+msgstr "Kunde inte komprimera bilagan."
+
+#: attachment/attachmentfromfolderjob.cpp:51
+#, kde-format
+msgid "Could not create compressed file."
+msgstr "Kunde inte skapa komprimerad fil."
+
+#: attachment/attachmentfromfolderjob.cpp:90
+#, kde-format
+msgid ""
+"The resulting attachment would be larger than the maximum allowed size, "
+"aborting."
+msgstr ""
+"Den skapade bilagan skulle vara större än den maximalt tillåtna storleken, "
+"avbryter."
+
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
+#, kde-format
+msgid "Could not add %1 to the archive"
+msgstr "Kunde inte lägga till %1 i arkivet"
+
+#: attachment/attachmentfromfolderjob.cpp:113
+#, kde-format
+msgid "Could not open %1 for reading."
+msgstr "Kunde inte öppna %1 för läsning."
+
+#: attachment/attachmentfromurljob.cpp:69
+#, kde-format
+msgctxt "a file called 'unknown.ext'"
+msgid "unknown%1"
+msgstr "okänd%1"
+
+#: attachment/attachmentfromurljob.cpp:71
+#, kde-format
+msgctxt "a file called 'unknown'"
+msgid "unknown"
+msgstr "okänd"
+
+#: attachment/attachmentfromurljob.cpp:103
+#, kde-format
+msgid "\"%1\" not found. Please specify the full path."
+msgstr "\"%1\" hittades inte. Ange fullständig sökväg."
+
+#: attachment/attachmentfromurljob.cpp:112
+#, kde-format
+msgid "You may not attach files bigger than %1. Share it with storage service."
+msgstr ""
+"Du får inte bilägga filer större än %1. Dela den med en lagringstjänst."
+
+#: attachment/attachmentpropertiesdialog.cpp:133
+#, kde-format
+msgid ""
+"<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
+"touch this setting, since the type of the file is automatically checked; "
+"but, sometimes, %1 may not detect the type correctly -- here is where you "
+"can fix that.</p>"
+msgstr ""
+"<p>Filens <em>Mime-typ</em>.</p><p>Normalt behöver du inte röra den här "
+"inställningen, eftersom filens typ kontrolleras automatiskt. Men ibland "
+"kanske %1 inte hanterar typen riktigt. Här kan du korrigera detta.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:141
+#, kde-format
+msgid ""
+"<p>The estimated size of the attachment:</p><p>Note that, in an email "
+"message, a binary file encoded with base64 will take up four thirds the "
+"actual size of the file.</p>"
+msgstr ""
+"<p>Bilagans uppskattade storlek.</p><p>Observera att en binärfil i ett e-"
+"postbrev kodad med base64 kommer att uppta fyra tredjedelar av filens "
+"verkliga storlek.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:146
+#, kde-format
+msgid ""
+"<p>The file name of the part:</p><p>Although this defaults to the name of "
+"the attached file, it does not specify the file to be attached; rather, it "
+"suggests a file name to be used by the recipient's mail agent when saving "
+"the part to disk.</p>"
+msgstr ""
+"<p>Delens filnamn.</p><p>Även om det här som standard får namnet på den "
+"bifogade filen, anger det inte filen som ska bifogas, utan föreslår i "
+"stället ett filnamn som ska användas av mottagarens e-postklient när delen "
+"sparas till disk.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:153
+#, kde-format
+msgid ""
+"<p>A description of the part:</p><p>This is just an informational "
+"description of the part, much like the Subject is for the whole message; "
+"most mail agents will show this information in their message previews "
+"alongside the attachment's icon.</p>"
+msgstr ""
+"<p>En beskrivning av delen.</p><p>Det här är endast en beskrivning med "
+"information om delen, som liknar rubriken för hela brevet. De flesta e-"
+"postklienter visar den här informationen vid förhandsgranskning av brevet, "
+"intill bilagans ikon.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:160
+#, kde-format
+msgid ""
+"<p>The transport encoding of this part:</p><p>Normally, you do not need to "
+"change this, since %1 will use a decent default encoding, depending on the "
+"MIME type; yet, sometimes, you can significantly reduce the size of the "
+"resulting message, e.g. if a PostScript file does not contain binary data, "
+"but consists of pure text -- in this case, choosing \"quoted-printable\" "
+"over the default \"base64\" will save up to 25% in resulting message size.</"
+"p>"
+msgstr ""
+"<p>Överföringskodningen av den här delen.</p><p>Normalt behöver du inte "
+"ändra den här, eftersom %1 använder en rätt bra förvald kodning, beroende på "
+"Mime-typen. Men ibland kan du minska storleken på resultatet avsevärt, t ex "
+"om en Postscript-fil inte innehåller binärdata, utan endast består av ren "
+"text. I detta fall sparas upp till 25 % av resultatets storlek genom att "
+"välja \"quoted-printable\" i stället för den normala kodningen \"base64\".</"
+"p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:171
+#, kde-format
+msgid ""
+"<p>Check this option if you want to suggest to the recipient the automatic "
+"(inline) display of this part in the message preview, instead of the default "
+"icon view;</p><p>Technically, this is carried out by setting this part's "
+"<em>Content-Disposition</em> header field to \"inline\" instead of the "
+"default \"attachment\".</p>"
+msgstr ""
+"<p>Markera det här alternativet om du vill föreslå för mottagaren att den "
+"här delen av brevet ska visas automatiskt (inne i brevet) i stället för den "
+"normala ikonen.</p><p>Tekniskt sett utförs det här genom att ställa in den "
+"här delens huvudfält <em>Content-Disposition</em> till \"inline\" istället "
+"för det normala värdet \"attachment\".</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:179
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be signed.</p><p>The "
+"signature will be made with the key that you associated with the currently-"
+"selected identity.</p>"
+msgstr ""
+"<p>Markera det här alternativet om du vill att den här delen av brevet ska "
+"signeras.</p><p>Signaturen görs med nyckeln som hör ihop med identiteten som "
+"är vald för närvarande.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:185
+#, kde-format
+msgid ""
+"<p>Check this option if you want this message part to be encrypted.</"
+"p><p>The part will be encrypted for the recipients of this message.</p>"
+msgstr ""
+"<p>Markera det här alternativet om du vill att den här delen av brevet ska "
+"krypteras.</p><p>Den här delen krypteras för mottagarna av brevet.</p>"
+
+#: attachment/attachmentpropertiesdialog.cpp:306
+#: attachment/attachmentpropertiesdialog.cpp:321
+#, kde-format
+msgctxt "@title:window"
+msgid "Attachment Properties"
+msgstr "Egenskaper för bilagor"
+
+#: attachment/attachmentupdatejob.cpp:40
+#, kde-format
+msgid "URL is empty."
+msgstr "Webbadressen är tom."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: attachment/ui/attachmentpropertiesdialog.ui:39
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:60
+#, kde-format
+msgctxt "MIME type of this attachment"
+msgid "Type:"
+msgstr "Typ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: attachment/ui/attachmentpropertiesdialog.ui:82
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:87
+#, kde-format
+msgctxt "size of the attachment"
+msgid "Size:"
+msgstr "Storlek:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: attachment/ui/attachmentpropertiesdialog.ui:109
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:114
+#, kde-format
+msgctxt "file name of the attachment"
+msgid "Name:"
+msgstr "Namn:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: attachment/ui/attachmentpropertiesdialog.ui:139
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:134
+#, kde-format
+msgctxt "description of the attachment"
+msgid "Description:"
+msgstr "Beskrivning:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: attachment/ui/attachmentpropertiesdialog.ui:169
+#: attachment/ui/attachmentpropertiesdialog_readonly.ui:154
+#, kde-format
+msgctxt "encoding of the attachment"
+msgid "Encoding:"
+msgstr "Kodning:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoDisplay)
+#: attachment/ui/attachmentpropertiesdialog.ui:187
+#, kde-format
+msgid "Suggest automatic display"
+msgstr "Föreslå automatisk visning"
+
+#. i18n: ectx: property (text), widget (QCheckBox, encrypt)
+#: attachment/ui/attachmentpropertiesdialog.ui:194
+#, kde-format
+msgid "Encrypt this attachment"
+msgstr "Kryptera bilagan"
+
+#. i18n: ectx: property (text), widget (QCheckBox, sign)
+#: attachment/ui/attachmentpropertiesdialog.ui:201
+#, kde-format
+msgid "Sign this attachment"
+msgstr "Signera bilagan"
+
+#. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
+#: settings/messagecore.kcfg:34
+#, kde-format
+msgid ""
+"Changing this from its default 'Auto' will force the use of the specified "
+"encoding for all emails, regardless of what they specify themselves."
+msgstr ""
+"Att ändra den från det förvalda värde \"Automatisk\" tvingar användning av "
+"den angivna kodningen för alla brev, oavsett om vad de själva anger."
+
+#. i18n: ectx: label, entry (QuotedText3), group (Reader)
+#: settings/messagecore.kcfg:37
+#, kde-format
+msgid "This is the color used in the 3rd level of quoted text"
+msgstr "Det här är färgen som används i tredje nivån citerad text"
+
+#. i18n: ectx: label, entry (QuotedText2), group (Reader)
+#: settings/messagecore.kcfg:41
+#, kde-format
+msgid "This is the color used in the 2nd level of quoted text"
+msgstr "Det här är färgen som används i andra nivån citerad text"
+
+#. i18n: ectx: label, entry (QuotedText1), group (Reader)
+#: settings/messagecore.kcfg:45
+#, kde-format
+msgid "This is the color used in the 1st level of quoted text"
+msgstr "Det här är färgen som används i första nivån citerad text"
+
+#. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
+#: settings/messagecore.kcfg:56
+#, kde-format
+msgid "Replace recognized prefi&x with \"Re:\""
+msgstr "Ersätt identifierade prefi&x med \"Re:\""
+
+#. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
+#: settings/messagecore.kcfg:64
+#, kde-format
+msgid "Replace recognized prefix with \"&Fwd:\""
+msgstr "Ersätt identifierade prefix med \"&Fwd:\""
+
+#. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
+#: settings/messagecore.kcfg:69
+#, kde-format
+msgid ""
+"The maximum size in bits that email attachments are allowed to have (-1 for "
+"no limit)"
+msgstr ""
+"Den maximala storleken i bitar som e-postbilagor tillåts ha (-1 för ingen "
+"gräns)"
+
+#: utils/stringutil.cpp:418
+#, kde-format
+msgctxt "signal that this email is defined in my identity"
+msgid "Me"
+msgstr "Mig"
+
+#~ msgid "TextLabel"
+#~ msgstr "Textetikett"
+
+#~ msgid "This is the color used to highlight misspelled words"
+#~ msgstr "Det här är färgen som används för att markera felstavade ord"
+
+#~ msgid "Specifies the font to use for the message body"
+#~ msgstr "Anger teckensnitt att använda för brevtexten"
+
+#~ msgid "Specifies the font to use for printing"
+#~ msgstr "Anger teckensnitt att använda för utskrift"
+
+#~ msgid "This is the color used for highlighting all signed messages"
+#~ msgstr "Det här är färgen som används för att markera alla signerade brev"
+
+#~ msgid "This is the color used for highlighting all encrypted messages"
+#~ msgstr "Det här är färgen som används för att markera alla krypterade brev"
+
+#~ msgid ""
+#~ "Disregard the user's umask setting and use \"read-write for the user only"
+#~ "\" instead"
+#~ msgstr ""
+#~ "Bortse från användarens inställning av umask och använd istället \"läs-"
+#~ "skriv bara för användaren\""
+
+#~ msgid ""
+#~ "Some emails, especially those generated automatically, do not specify the "
+#~ "character encoding which needs to be used to properly display them. In "
+#~ "such cases a fallback character encoding will be used, which you can "
+#~ "configure here. Set it to the character encoding most commonly used in "
+#~ "your part of the world. As a default the encoding configured for the "
+#~ "whole system is used."
+#~ msgstr ""
+#~ "Vissa brev, särskilt de som skapas automatiskt, anger inte teckenkodning "
+#~ "som behövs för att visa dem på ett riktigt sätt. I sådan fall används en "
+#~ "reservteckenkodning, som du kan ställa in här. Ställ in den till "
+#~ "teckenkodningen som oftast används i din del av världen. Som förval "
+#~ "används teckenkodningen som är inställd för hela systemet."
+
+#~ msgid "Could not read file %1."
+#~ msgstr "Kunde inte läsa fil %1."
+
+#~ msgid "Edit Note"
+#~ msgstr "Redigera anteckning"
+
+#~ msgid "Delete Note"
+#~ msgstr "Ta bort anteckning"
+
+#~ msgid "Add Note"
+#~ msgstr "Lägg till anteckning"
+
+#~ msgid "Enter the text that should be stored as a note to the mail:"
+#~ msgstr "Ange texten som ska lagras som en anteckning i brevet:"
+
+#~ msgid "Note type:"
+#~ msgstr "Anteckningstyp:"
+
+#~ msgid "Private note"
+#~ msgstr "Privat anteckning"
+
+#~ msgid "Shared note"
+#~ msgstr "Delad anteckning"
+
+#~ msgid "Do you really want to delete this note?"
+#~ msgstr "Vill du verkligen ta bort den här anteckningen?"
+
+#~ msgid "Delete Note?"
+#~ msgstr "Ta bort anteckning?"
+
+#~ msgid "Delete"
+#~ msgstr "Ta bort"
+
+#~ msgid "Open Address Book"
+#~ msgstr "Öppna adressbok"

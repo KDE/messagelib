@@ -1,0 +1,3267 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Geoffray Levasseur <geoffray.levasseurbrandin@numericable.fr>, 2010, 2011, 2012, 2013, 2014.
+# xavier <xavier.besnard@neuf.fr>, 2012, 2020, 2021, 2022.
+# Sebastien Renard <renard@kde.org>, 2013, 2014.
+# Ludovic Grossard <grossard@kde.org>, 2014.
+# Vincent Pinon <vpinon@kde.org>, 2017, 2018, 2019.
+# Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2022-05-18 18:07+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 22.04.1\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: attachment/attachmentcontrollerbase.cpp:168
+#, kde-format
+msgid "Failed to compress attachment"
+msgstr "Impossible de compresser la pièce jointe"
+
+#: attachment/attachmentcontrollerbase.cpp:179
+#, kde-format
+msgid ""
+"The compressed attachment is larger than the original. Do you want to keep "
+"the original one?"
+msgstr ""
+"La pièce jointe compressée est plus volumineuse que l'originale. Voulez-vous "
+"conserver la version originale ?"
+
+#: attachment/attachmentcontrollerbase.cpp:182
+#, kde-format
+msgctxt "Do not compress"
+msgid "Keep"
+msgstr "Conserver"
+
+#: attachment/attachmentcontrollerbase.cpp:183
+#, kde-format
+msgid "Compress"
+msgstr "Compresser"
+
+#: attachment/attachmentcontrollerbase.cpp:202
+#, kde-format
+msgid "Failed to attach file"
+msgstr "Impossible de joindre le fichier"
+
+#: attachment/attachmentcontrollerbase.cpp:275
+#, kde-format
+msgid "Failed to reload attachment"
+msgstr "Impossible de recharger la pièce jointe"
+
+#: attachment/attachmentcontrollerbase.cpp:322
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr "&Ouvrir avec"
+
+#: attachment/attachmentcontrollerbase.cpp:342
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr "A&utre..."
+
+#: attachment/attachmentcontrollerbase.cpp:344
+#: attachment/attachmentcontrollerbase.cpp:352
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr "&Ouvrir avec..."
+
+#: attachment/attachmentcontrollerbase.cpp:378
+#, kde-format
+msgid "Failed to attach public key"
+msgstr "Impossible de joindre une clé publique"
+
+#: attachment/attachmentcontrollerbase.cpp:392
+#, kde-format
+msgid "Failed to attach vCard"
+msgstr "Impossible de joindre la vCard"
+
+#: attachment/attachmentcontrollerbase.cpp:405
+#, kde-format
+msgid "Failed to attach text from clipboard"
+msgstr "Impossible de joindre le texte du presse-papiers"
+
+#: attachment/attachmentcontrollerbase.cpp:453
+#, kde-format
+msgid "Attach &Public Key..."
+msgstr "Joindre une clé &publique..."
+
+#: attachment/attachmentcontrollerbase.cpp:456
+#, kde-format
+msgid "Attach &My Public Key"
+msgstr "Joindre &ma clé publique"
+
+#: attachment/attachmentcontrollerbase.cpp:459
+#: attachment/attachmentcontrollerbase.cpp:464
+#: attachment/attachmentcontrollerbase.cpp:470
+#: attachment/attachmentcontrollerbase.cpp:479
+#, kde-format
+msgid "Attach"
+msgstr "Joindre"
+
+#: attachment/attachmentcontrollerbase.cpp:463
+#: composer/composerviewbase.cpp:1908
+#, kde-format
+msgid "&Attach File..."
+msgstr "&Joindre un fichier..."
+
+#: attachment/attachmentcontrollerbase.cpp:465
+#, kde-format
+msgid "Add Attachment..."
+msgstr "Ajouter une pièce jointe"
+
+#: attachment/attachmentcontrollerbase.cpp:469
+#, kde-format
+msgid "&Attach Directory..."
+msgstr "&Joindre un dossier…"
+
+#: attachment/attachmentcontrollerbase.cpp:473
+#, kde-format
+msgid "Attach Own vCard"
+msgstr "Joindre votre vCard"
+
+#: attachment/attachmentcontrollerbase.cpp:474
+#, kde-format
+msgid "Own vCard"
+msgstr "vCard personnelle"
+
+#: attachment/attachmentcontrollerbase.cpp:478
+#, kde-format
+msgid "&Attach vCards..."
+msgstr "&Joindre des vCards…"
+
+#: attachment/attachmentcontrollerbase.cpp:482
+#, kde-format
+msgid "&Attach Text From Clipboard..."
+msgstr "Joindre le texte du presse-p&apiers…"
+
+#: attachment/attachmentcontrollerbase.cpp:483
+#, kde-format
+msgid "Attach Text From Clipboard"
+msgstr "Joindre le texte du presse-papiers"
+
+#: attachment/attachmentcontrollerbase.cpp:495
+#, kde-format
+msgid "&Remove Attachment"
+msgstr "Enle&ver la pièce jointe"
+
+#: attachment/attachmentcontrollerbase.cpp:496
+#, kde-format
+msgid "Remove"
+msgstr "Effacer"
+
+#: attachment/attachmentcontrollerbase.cpp:504
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr "Ouvrir"
+
+#: attachment/attachmentcontrollerbase.cpp:509
+#, kde-format
+msgctxt "to view"
+msgid "View"
+msgstr "Affichage"
+
+#: attachment/attachmentcontrollerbase.cpp:514
+#, kde-format
+msgctxt "to edit"
+msgid "Edit"
+msgstr "Éditer"
+
+#: attachment/attachmentcontrollerbase.cpp:519
+#, kde-format
+msgid "Edit With..."
+msgstr "Éditer avec..."
+
+#: attachment/attachmentcontrollerbase.cpp:524
+#, kde-format
+msgid "&Save Attachment As..."
+msgstr "Enregistrer la pièce jointe &sous..."
+
+#: attachment/attachmentcontrollerbase.cpp:525
+#, kde-format
+msgid "Save As..."
+msgstr "Enregistrer sous..."
+
+#: attachment/attachmentcontrollerbase.cpp:533
+#, kde-format
+msgid "Attachment Pr&operties..."
+msgstr "Pr&opriétés de la la pièce jointe..."
+
+#: attachment/attachmentcontrollerbase.cpp:534
+#, kde-format
+msgid "Properties"
+msgstr "Propriétés"
+
+#: attachment/attachmentcontrollerbase.cpp:542
+#, kde-format
+msgid "Select All"
+msgstr "Tout sélectionner"
+
+#: attachment/attachmentcontrollerbase.cpp:545
+#, kde-format
+msgid "Reload"
+msgstr "Recharger"
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:702
+#: attachment/attachmentcontrollerbase.cpp:751
+#, kde-format
+msgid "KMail was unable to write the attachment to a temporary file."
+msgstr ""
+"KMail n'a pas réussi à écrire la pièce jointe dans un fichier temporaire."
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:702
+#, kde-format
+msgid "Unable to open attachment"
+msgstr "Impossible d'ouvrir la pièce jointe"
+
+#: attachment/attachmentcontrollerbase.cpp:711
+#, kde-format
+msgid "KMail was unable to open the attachment."
+msgstr "KMail n'a pas réussi à ouvrir la pièce jointe."
+
+#: attachment/attachmentcontrollerbase.cpp:751
+#, kde-format
+msgid "Unable to edit attachment"
+msgstr "Impossible d'éditer la pièce jointe"
+
+#: attachment/attachmentcontrollerbase.cpp:792
+#, kde-format
+msgid "unnamed"
+msgstr "sans nom"
+
+#: attachment/attachmentcontrollerbase.cpp:795
+#, kde-format
+msgid "Save Attachment As"
+msgstr "Enregistrer la pièce jointe sous"
+
+#: attachment/attachmentcontrollerbase.cpp:818
+#, kde-format
+msgid ""
+"File %1 exists.\n"
+"Do you want to replace it?"
+msgstr ""
+"Le fichier %1 existe.\n"
+"Voulez-vous le remplacer ?"
+
+#: attachment/attachmentcontrollerbase.cpp:819
+#, kde-format
+msgid "Save to File"
+msgstr "Enregistrer dans un fichier"
+
+#: attachment/attachmentcontrollerbase.cpp:820
+#, kde-format
+msgid "&Replace"
+msgstr "&Remplacer"
+
+#: attachment/attachmentcontrollerbase.cpp:847
+#: attachment/attachmentcontrollerbase.cpp:905
+#, kde-format
+msgid "Do you really want to attach this directory \"%1\"?"
+msgstr "Voulez-vous vraiment joindre ce dossier « %1 » ?"
+
+#: attachment/attachmentcontrollerbase.cpp:848
+#: attachment/attachmentcontrollerbase.cpp:906
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach directory"
+msgstr "Joindre un dossier"
+
+#: attachment/attachmentcontrollerbase.cpp:849
+#: attachment/attachmentcontrollerbase.cpp:907
+#, kde-format
+msgctxt "@action:button"
+msgid "Attach"
+msgstr "Joindre"
+
+#: attachment/attachmentcontrollerbase.cpp:884
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach Directory"
+msgstr "Joindre un dossier"
+
+#: attachment/attachmentcontrollerbase.cpp:893
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach File"
+msgstr "Joindre un fichier"
+
+#: attachment/attachmentcontrollerbase.cpp:936
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to attach file"
+msgstr "Impossible de joindre le fichier"
+
+#: attachment/attachmentcontrollerbase.cpp:960
+#, kde-format
+msgid "Attach Public OpenPGP Key"
+msgstr "Joindre une clé publique OpenGPG"
+
+#: attachment/attachmentcontrollerbase.cpp:961
+#, kde-format
+msgid "Select the public key which should be attached."
+msgstr "Sélectionner la clé publique qui devrait être jointe."
+
+#: attachment/attachmentmodel.cpp:122
+#, kde-format
+msgid "unnamed attachment"
+msgstr "pièce jointe sans nom"
+
+#: attachment/attachmentmodel.cpp:256
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
+msgstr "Nom : %1<br>Taille : %2<br>Encodage : %3<br>Type MIME=%4"
+
+#: attachment/attachmentmodel.cpp:439
+#, kde-format
+msgctxt "@title column attachment name."
+msgid "Name"
+msgstr "Nom"
+
+#: attachment/attachmentmodel.cpp:441
+#, kde-format
+msgctxt "@title column attachment size."
+msgid "Size"
+msgstr "Taille"
+
+#: attachment/attachmentmodel.cpp:443
+#, kde-format
+msgctxt "@title column attachment encoding."
+msgid "Encoding"
+msgstr "Chiffrage"
+
+#: attachment/attachmentmodel.cpp:445
+#, kde-format
+msgctxt "@title column attachment type."
+msgid "Type"
+msgstr "Type"
+
+#: attachment/attachmentmodel.cpp:447
+#, kde-format
+msgctxt "@title column attachment compression checkbox."
+msgid "Compress"
+msgstr "Compresser"
+
+#: attachment/attachmentmodel.cpp:449
+#, kde-format
+msgctxt "@title column attachment encryption checkbox."
+msgid "Encrypt"
+msgstr "Chiffrer"
+
+#: attachment/attachmentmodel.cpp:451
+#, kde-format
+msgctxt "@title column attachment signed checkbox."
+msgid "Sign"
+msgstr "Signer"
+
+#: attachment/attachmentmodel.cpp:453
+#, kde-format
+msgctxt "@title column attachment inlined checkbox."
+msgid "Suggest Automatic Display"
+msgstr "Suggérer l'affichage automatique"
+
+#: composer/composer.cpp:276
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Aucune donnée de clé pour le destinataire n'a été trouvé."
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not sign/encrypt"
+msgstr "&Conserver le marquage, ne pas signer / chiffrer"
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not encrypt"
+msgstr "&Conserver le marquage, ne pas chiffrer"
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid "&Keep markup, do not sign"
+msgstr "&Conserver le marquage, ne pas signer"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Sign/Encrypt (delete markup)"
+msgstr "Signer / chiffrer (supprimer le marquage)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Encrypt (delete markup)"
+msgstr "Chiffrer (supprimer le marquage)"
+
+#: composer/composerviewbase.cpp:329
+#, kde-format
+msgid "Sign (delete markup)"
+msgstr "Signer (supprimer le marquage)"
+
+#: composer/composerviewbase.cpp:331
+#, kde-format
+msgid ""
+"<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
+"you want to delete your markup?</p></qt>"
+msgstr ""
+"<qt><p>La signature / chiffrage intégré de messages HTML est impossible.</"
+"p><p>Voulez-vous effacer votre marquage ?</p></qt>"
+
+#: composer/composerviewbase.cpp:333
+#, kde-format
+msgid "Sign/Encrypt Message?"
+msgstr "Signer / chiffrer le message ?"
+
+#: composer/composerviewbase.cpp:514
+#, kde-format
+msgid "It was not possible to create a message composer."
+msgstr "Il a été impossible de créer un éditeur de message."
+
+#: composer/composerviewbase.cpp:524
+#, kde-format
+msgid "Do you want to resize images?"
+msgstr "Voulez-vous redimensionner les images ?"
+
+#: composer/composerviewbase.cpp:525
+#, kde-format
+msgid "Auto Resize Images"
+msgstr "Redimensionner automatiquement les images"
+
+#: composer/composerviewbase.cpp:526
+#, kde-format
+msgctxt "@action:button"
+msgid "Auto Resize"
+msgstr "Redimensionner automatiquement"
+
+#: composer/composerviewbase.cpp:527
+#, kde-format
+msgctxt "@action:button"
+msgid "Do Not Resize"
+msgstr "Ne pas redimensionner"
+
+#: composer/composerviewbase.cpp:737
+#, kde-format
+msgid "OpenPGP Key Expired"
+msgstr "Clé OpenPGP expirée"
+
+#: composer/composerviewbase.cpp:737
+#, kde-format
+msgid "S/MIME Certificate Expired"
+msgstr "Certificat S/MIME expiré"
+
+#: composer/composerviewbase.cpp:739
+#, kde-format
+msgid "OpenPGP Key Expires Soon"
+msgstr "La clé OpenPGP expire bientôt"
+
+#: composer/composerviewbase.cpp:739
+#, kde-format
+msgid "S/MIME Certificate Expires Soon"
+msgstr "Le certificat S/MIME expire bientôt"
+
+#: composer/composerviewbase.cpp:814 composer/composerviewbase.cpp:828
+#: composer/composerviewbase.cpp:860
+#, kde-format
+msgid "Failed to resolve keys. Please report a bug."
+msgstr "Impossible de résoudre les clés. Veuillez rapporter un bogue."
+
+#: composer/composerviewbase.cpp:1066 composer/composerviewbase.cpp:1331
+#, kde-format
+msgid "Job cancelled by the user"
+msgstr "Travail interrompu par l'utilisateur"
+
+#: composer/composerviewbase.cpp:1071
+#, kde-format
+msgid ""
+"Could not compose message: %1 \n"
+" Please report this bug."
+msgstr ""
+"Impossible d'éditer le message : %1 \n"
+" Veuillez rapporter ce bogue."
+
+#: composer/composerviewbase.cpp:1073
+#, kde-format
+msgid "Could not compose message: %1"
+msgstr "Impossible d'éditer le message : %1"
+
+#: composer/composerviewbase.cpp:1170
+#, kde-format
+msgid "There were problems trying to queue the message for sending: %1"
+msgstr ""
+"Il y a eu des problèmes en essayant de mettre en file le message pour "
+"envoi : %1"
+
+#: composer/composerviewbase.cpp:1334
+#, kde-format
+msgid "Could not autosave message: %1"
+msgstr "Impossible de sauvegarder automatiquement le message : %1"
+
+#: composer/composerviewbase.cpp:1353
+#, kde-format
+msgid "Could not write all data to file."
+msgstr "Impossible d'écrire toutes les données dans le fichier."
+
+#: composer/composerviewbase.cpp:1356
+#, kde-format
+msgid "Could not finalize the file."
+msgstr "Impossible de finaliser le fichier."
+
+#: composer/composerviewbase.cpp:1360
+#, kde-format
+msgid "Could not open file."
+msgstr "Impossible d'ouvrir le fichier."
+
+#: composer/composerviewbase.cpp:1367
+#, kde-format
+msgid ""
+"Autosaving the message as %1 failed.\n"
+"%2\n"
+"Reason: %3"
+msgstr ""
+"Enregistrement automatique du message comme %1 échoué.\n"
+"%2\n"
+"Motif : %3"
+
+#: composer/composerviewbase.cpp:1373
+#, kde-format
+msgid "Autosaving Message Failed"
+msgstr "Échec de l'enregistrement automatique"
+
+#: composer/composerviewbase.cpp:1486
+#, kde-format
+msgid "Failed to save the message: %1"
+msgstr "Impossible d'enregistrer le message : %1"
+
+#: composer/composerviewbase.cpp:1904
+#, kde-format
+msgid ""
+"The message you have composed seems to refer to an attached file but you "
+"have not attached anything.\n"
+"Do you want to attach a file to your message?"
+msgstr ""
+"Le message que vous avez écrit semble faire référence à une pièce jointe "
+"mais vous n'avez rien joint.\n"
+"Voulez-vous joindre un fichier à votre message ?"
+
+#: composer/composerviewbase.cpp:1907
+#, kde-format
+msgid "File Attachment Reminder"
+msgstr "Rappel de fichier joint"
+
+#: composer/composerviewbase.cpp:1909
+#, kde-format
+msgid "&Send as Is"
+msgstr "En&voyez tel quel"
+
+#: composer/composerviewbase.cpp:1961
+#, kde-format
+msgid ""
+"Examination of the recipient's signing preferences yielded that you be asked "
+"whether or not to sign this message.\n"
+"Sign this message?"
+msgstr ""
+"L'examen des préférences de signature des destinataires a montré qu'il vous "
+"sera demandé s'il faut signer ou non ce message.\n"
+"Signer ce message ?"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgid "Sign Message?"
+msgstr "Signer le message ?"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgctxt "to sign"
+msgid "&Sign"
+msgstr "&Signer"
+
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#, kde-format
+msgid "Do &Not Sign"
+msgstr "&Ne pas signer"
+
+#: composer/composerviewbase.cpp:1987
+#, kde-format
+msgid ""
+"There are conflicting signing preferences for these recipients.\n"
+"Sign this message?"
+msgstr ""
+"Il y a des préférences de signature conflictuelles pour ces destinataires.\n"
+"Signer ce message ?"
+
+#: composer/composerviewbase.cpp:2011
+#, kde-format
+msgid ""
+"You have requested to sign this message, but no valid signing keys have been "
+"configured for this identity."
+msgstr ""
+"Vous avez demandé de signer ce message, mais aucune clé de signature valable "
+"n'a été configurée pour cette identité."
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgid "Send Unsigned?"
+msgstr "Envoyer non signé ?"
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgid "Send &Unsigned"
+msgstr "Envoyer &non signé"
+
+#: composer/composerviewbase.cpp:2028
+#, kde-format
+msgid ""
+"Some parts of this message will not be signed.\n"
+"Sending only partially signed messages might violate site policy.\n"
+"Sign all parts instead?"
+msgstr ""
+"Certaines parties de ce message ne seront pas signées.\n"
+"L'envoi de messages seulement partiellement signés pourrait violer la "
+"politique du site.\n"
+"Signer toutes les parties à la place ?"
+
+#: composer/composerviewbase.cpp:2032
+#, kde-format
+msgid ""
+"This message will not be signed.\n"
+"Sending unsigned message might violate site policy.\n"
+"Sign message instead?"
+msgstr ""
+"Ce message ne sera pas signé.\n"
+"L'envoi de messages non signés pourrait violer la politique du site.\n"
+"Signer le message à la place ?"
+
+#: composer/composerviewbase.cpp:2035
+#, kde-format
+msgid "&Sign All Parts"
+msgstr "&Signer toutes les parties"
+
+#: composer/composerviewbase.cpp:2035
+#, kde-format
+msgid "&Sign"
+msgstr "&Signer"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "Unsigned-Message Warning"
+msgstr "Avertissement de message non signé"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "Send &As Is"
+msgstr "En&voyez tel quel"
+
+#: composer/composerviewbase.cpp:2084
+#, kde-format
+msgid ""
+"Valid trusted encryption keys were found for all recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"Des clés de chiffrement valables ont été trouvées pour tous les "
+"destinataires.\n"
+"Voulez-vous chiffrer ce message ?"
+
+#: composer/composerviewbase.cpp:2087
+#, kde-format
+msgid ""
+"Examination of the recipient's encryption preferences yielded that you be "
+"asked whether or not to encrypt this message.\n"
+"Encrypt this message?"
+msgstr ""
+"L'examen des préférence de chiffrement des destinataires a montré qu'il vous "
+"sera demandé s'il faut chiffrer ou non ce message.\n"
+"Chiffrer ce message ?"
+
+#: composer/composerviewbase.cpp:2093 composer/composerviewbase.cpp:2119
+#, kde-format
+msgid "Encrypt Message?"
+msgstr "Chiffrer ce message ?"
+
+#: composer/composerviewbase.cpp:2094
+#, kde-format
+msgid "Sign && &Encrypt"
+msgstr "Signer et chiffr&er"
+
+#: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2119
+#: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1317
+#: composer/keyresolver.cpp:1353
+#, kde-format
+msgid "&Encrypt"
+msgstr "&Chiffrer"
+
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#, kde-format
+msgid "&Sign Only"
+msgstr "&Signer seulement"
+
+#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#, kde-format
+msgid "&Send As-Is"
+msgstr "En&voyez tel quel"
+
+#: composer/composerviewbase.cpp:2116
+#, kde-format
+msgid ""
+"There are conflicting encryption preferences for these recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"Il y a des préférences de chiffrement conflictuelles pour ces "
+"destinataires.\n"
+"Signer ce message ?"
+
+#: composer/composerviewbase.cpp:2119
+#, kde-format
+msgid "Do &Not Encrypt"
+msgstr "&Ne pas chiffrer"
+
+#: composer/composerviewbase.cpp:2139
+#, kde-format
+msgid ""
+"You have requested to encrypt this message, and to encrypt a copy to "
+"yourself, but no valid trusted encryption keys have been configured for this "
+"identity."
+msgstr ""
+"Vous avez demandé de chiffrer ce message et d'en chiffrer une copie pour "
+"vous-même, mais aucune clé de chiffrement de confiance valable n'a été "
+"configurée pour cette identité."
+
+#: composer/composerviewbase.cpp:2143
+#, kde-format
+msgid "Send Unencrypted?"
+msgstr "Envoyer non chiffré ?"
+
+#: composer/composerviewbase.cpp:2143 composer/keyresolver.cpp:1339
+#, kde-format
+msgid "Send &Unencrypted"
+msgstr "Envoyer &non-chiffré"
+
+#: composer/composerviewbase.cpp:2157
+#, kde-format
+msgid ""
+"Some parts of this message will not be encrypted.\n"
+"Sending only partially encrypted messages might violate site policy and/or "
+"leak sensitive information.\n"
+"Encrypt all parts instead?"
+msgstr ""
+"Certaines parties de ce message ne seront pas chiffrées.\n"
+"L'envoi de messages seulement partiellement chiffrés pourrait violer la "
+"politique du site et / ou faire fuir des informations sensibles.\n"
+"Chiffrer toutes les parties à la place ?"
+
+#: composer/composerviewbase.cpp:2162
+#, kde-format
+msgid ""
+"This message will not be encrypted.\n"
+"Sending unencrypted messages might violate site policy and/or leak sensitive "
+"information.\n"
+"Encrypt messages instead?"
+msgstr ""
+"Ce message ne sera pas chiffrées.\n"
+"L'envoi de messages non chiffrés pourrait violer la politique du site et / "
+"ou faire fuir des informations sensibles.\n"
+"Chiffrer le message à la place ?"
+
+#: composer/composerviewbase.cpp:2166
+#, kde-format
+msgid "&Encrypt All Parts"
+msgstr "&Chiffrer toutes les parties"
+
+#: composer/composerviewbase.cpp:2169
+#, kde-format
+msgid "Unencrypted Message Warning"
+msgstr "Avertissement de message non chiffré"
+
+#: composer/keyresolver.cpp:302
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not fully trusted for encryption."
+msgstr ""
+"Une ou plusieurs de vos clés de chiffrage OpenPGP ou de vos certificats S/"
+"MIME configurés ne sont pas suffisamment de confiance pour le chiffrage."
+
+#: composer/keyresolver.cpp:306
+#, kde-format
+msgid ""
+"One or more of the OpenPGP encryption keys or S/MIME certificates for "
+"recipient \"%1\" is not fully trusted for encryption."
+msgstr ""
+"Une ou plusieurs de vos clés de chiffrage OpenPGP ou de vos certificats S/"
+"MIME pour le destinataire « %1 » ne sont pas suffisamment de confiance pour "
+"le chiffrage."
+
+#: composer/keyresolver.cpp:313
+#, kde-format
+msgid ""
+"\n"
+"The following keys are only marginally trusted: \n"
+msgstr ""
+"\n"
+"Les clés suivantes ne sont que partiellement de confiance : \n"
+
+#: composer/keyresolver.cpp:317
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates have unknown trust level: \n"
+msgstr ""
+"\n"
+"Les clés ou certificats suivants ont un niveau de confiance inconnu : \n"
+
+#: composer/keyresolver.cpp:321
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates are <b>revoked</b>: \n"
+msgstr ""
+"\n"
+"Les clés ou certificats suivants sont <b>révoqués</b> : \n"
+
+#: composer/keyresolver.cpp:327
+#, kde-format
+msgid "Not Fully Trusted Encryption Keys"
+msgstr "Clés de chiffrage de confiance limitée"
+
+#: composer/keyresolver.cpp:645
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not usable for encryption. Please reconfigure your "
+"encryption keys and certificates for this identity in the identity "
+"configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"Une ou plusieurs de vos clés OpenPGP ou de vos certificats S/MIME configurés "
+"ne sont pas utilisables pour le chiffrage. Veuillez reconfigurer vos clés de "
+"chiffrage ou vos certificats pour cette identité dans la boîte de dialogue "
+"de configuration des identités.\n"
+"Si vous choisissez de continuer, et que les clés sont requises plus tard, il "
+"vous sera demandé de préciser les clés à utiliser."
+
+#: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
+#: composer/keyresolver.cpp:1037
+#, kde-format
+msgid "Unusable Encryption Keys"
+msgstr "Clés de chiffrage inutilisables"
+
+#: composer/keyresolver.cpp:687
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP signing keys or S/MIME signing "
+"certificates is not usable for signing. Please reconfigure your signing keys "
+"and certificates for this identity in the identity configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"Une ou plusieurs de vos clés OpenPGP ou de vos certificats S/MIME configurés "
+"ne sont pas utilisables pour la signature. Veuillez reconfigurer vos clés de "
+"signature ou vos certificats pour cette identité dans la boîte de dialogue "
+"de configuration des identités.\n"
+"Si vous choisissez de continuer, et que les clés sont requises plus tard, il "
+"vous sera demandé de préciser les clés à utiliser."
+
+#: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
+#: composer/keyresolver.cpp:1084
+#, kde-format
+msgid "Unusable Signing Keys"
+msgstr "Clés de signature inutilisables"
+
+#: composer/keyresolver.cpp:998
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid trusted OpenPGP encryption keys for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"L'examen des préférences de chiffrage des destinataires a montré que le "
+"message devrait être chiffré avec OpenPGP, au moins pour certains des "
+"destinataires.\n"
+"Vous pouvez continuer sans chiffrage pour vous-même mais soyez avertis que "
+"vous ne serez pas capable de lire vos propres messages si vous faites ainsi."
+
+#: composer/keyresolver.cpp:1027
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME encryption certificates for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"L'examen des préférences de chiffrage des destinataires a montré que le "
+"message devrait être chiffré avec S/MIME, au moins pour certains des "
+"destinataires.\n"
+"Vous pouvez continuer sans chiffrage pour vous-même mais soyez avertis que "
+"vous ne serez pas capable de lire vos propres messages si vous faites ainsi."
+
+#: composer/keyresolver.cpp:1059
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid OpenPGP signing certificates for this "
+"identity."
+msgstr ""
+"L'examen des préférences de signature des destinataires a montré que le "
+"message devrait être signé avec OpenPGP, au moins pour certains des "
+"destinataires ;\n"
+"Cependant vous n'avez pas configuré de certificats de signature OpenGPG "
+"valable pour cette identité."
+
+#: composer/keyresolver.cpp:1067
+#, kde-format
+msgid "Do Not OpenPGP-Sign"
+msgstr "Ne pas signer avec OpenGPG"
+
+#: composer/keyresolver.cpp:1077
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME signing certificates for this "
+"identity."
+msgstr ""
+"L'examen des préférences de signature des destinataires a montré que le "
+"message devrait être chiffré avec S/MIME, au moins pour certains des "
+"destinataires ;\n"
+"Cependant vous n'avez pas configuré de certificats de signature S/MIME "
+"valable pour cette identité."
+
+#: composer/keyresolver.cpp:1085
+#, kde-format
+msgid "Do Not S/MIME-Sign"
+msgstr "Ne pas signer avec S/MIME"
+
+#: composer/keyresolver.cpp:1147
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences showed no common type of "
+"signature matching your available signing keys.\n"
+"Send message without signing?"
+msgstr ""
+"L'examen des préférences de signature des destinataires a montré qu'il n'y a "
+"pas de type commun de signature correspondant à vos clés de signature "
+"disponibles.\n"
+"Envoyer le message sans le signer ?"
+
+#: composer/keyresolver.cpp:1151
+#, kde-format
+msgid "No signing possible"
+msgstr "Pas de signature possible"
+
+#: composer/keyresolver.cpp:1314
+#, kde-format
+msgid ""
+"You did not select an encryption key for yourself (encrypt to self). You "
+"will not be able to decrypt your own message if you encrypt it."
+msgstr ""
+"Vous n'avez pas sélectionné de clé de chiffrage pour vous-même (auto-"
+"chiffrage). Vous ne pourrez pas déchiffrer vos propres messages si vous les "
+"chiffrez."
+
+#: composer/keyresolver.cpp:1317 composer/keyresolver.cpp:1339
+#: composer/keyresolver.cpp:1353
+#, kde-format
+msgid "Missing Key Warning"
+msgstr "Avertissement de clé manquante"
+
+#: composer/keyresolver.cpp:1332
+#, kde-format
+msgid ""
+"You did not select an encryption key for the recipient of this message; "
+"therefore, the message will not be encrypted."
+msgstr ""
+"Vous n'avez pas sélectionné de clé de chiffrage pour le destinataire de ce "
+"message ; par conséquent le message ne sera pas chiffré."
+
+#: composer/keyresolver.cpp:1336
+#, kde-format
+msgid ""
+"You did not select an encryption key for any of the recipients of this "
+"message; therefore, the message will not be encrypted."
+msgstr ""
+"Vous n'avez pas sélectionné de clé de chiffrage pour aucun des destinataires "
+"de ce message ; par conséquent le message ne sera pas chiffré."
+
+#: composer/keyresolver.cpp:1345
+#, kde-format
+msgid ""
+"You did not select an encryption key for one of the recipients: this person "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"Vous n'avez pas sélectionné de clé de chiffrage pour l'un des destinataires "
+"de ce message : cette personne ne pourra pas déchiffrer le message si vous "
+"le chiffrez."
+
+#: composer/keyresolver.cpp:1349
+#, kde-format
+msgid ""
+"You did not select encryption keys for some of the recipients: these persons "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"Vous n'avez pas sélectionné de clé de chiffrage pour certains des "
+"destinataires de ce message : ces personnes ne pourront pas déchiffrer le "
+"message si vous le chiffrez."
+
+#: composer/keyresolver.cpp:1425
+#, kde-format
+msgid "Encryption Key Selection"
+msgstr "Sélection de la clé de chiffrage"
+
+#: composer/keyresolver.cpp:1469
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"There is a problem with the encryption certificate(s) for \"%1\".\n"
+"\n"
+"Please re-select the certificate(s) which should be used for this recipient."
+msgstr ""
+"Il y a un problème avec le ou les certificats de chiffrage de « %1 ».\n"
+"\n"
+"Veuillez re-sélectionner le ou les certificats qui devraient être utilisées "
+"pour ce destinataire."
+
+#: composer/keyresolver.cpp:1543
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"<qt>No valid and trusted encryption certificate was found for \"%1\".<br/"
+"><br/>Select the certificate(s) which should be used for this recipient. If "
+"there is no suitable certificate in the list you can also search for "
+"external certificates by clicking the button: search for external "
+"certificates.</qt>"
+msgstr ""
+"<qt>Aucun certificat de chiffrage valable et de confiance n'a été trouvé "
+"pour « %1 ».<br/><br/>Sélectionnez le ou les certificats qui devraient être "
+"utilisées pour ce destinataire. S'il n'y a aucun certificat approprié dans "
+"la liste, vous pouvez également en chercher dans les certificats externes en "
+"cliquant sur ce bouton : rechercher des certificats externes.</qt>"
+
+#: composer/keyresolver.cpp:1553
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"More than one certificate matches \"%1\".\n"
+"\n"
+"Select the certificate(s) which should be used for this recipient."
+msgstr ""
+"Il y a plus d'un certificat correspondant à « %1 ».\n"
+"\n"
+"Sélectionner le ou les certificats qui devraient être utilisées pour ce "
+"destinataire."
+
+#: composer/nearexpirychecker.cpp:82
+#, kde-format
+msgid ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Votre clé de signature OpenPGP</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>a expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Votre clé de signature OpenPGP</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>a expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:88
+#, kde-format
+msgid ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Votre clé de chiffrage OpenPGP</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>a expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Votre clé de chiffrage OpenPGP</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>a expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:94
+#, kde-format
+msgid ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>La clé OpenPGP pour</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>a "
+"expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>La clé OpenPGP pour</p><p align=center><b>%2</b> (KeyID 0x%3)</p><p>a "
+"expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:103
+#, kde-format
+msgid ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Votre clé « OpenPGP » de signature</p><p align=center><b>%2</b> (KeyID 0x"
+"%3)</p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Votre clé « OpenPGP » de signature</p><p align=center><b>%2</b> (KeyID 0x"
+"%3)</p><p>expire dans moins de %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:109
+#, kde-format
+msgid ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Votre clé « OpenPGP » de chiffrage</p><p align=center><b>%2</b> (KeyID 0x"
+"%3)</p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Votre clé « OpenPGP » de chiffrage</p><p align=center><b>%2</b> (KeyID 0x"
+"%3)</p><p>expire dans moins de %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:115
+#, kde-format
+msgid ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>La clé « OpenPGP » pour</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>La clé OpenPGP pour</p><p align=center><b>%2</b> (KeyID 0x%3)</"
+"p><p>expire dans %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:135
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro de série "
+"%3)</p><p>a expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro de série "
+"%3)</p><p>a expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:143
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro de série "
+"%3)</p><p>a expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro de série "
+"%3)</p><p>a expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:151
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
+"less than a day ago.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired %1 "
+"days ago.</p>"
+msgstr[0] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
+"certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</p><p>a "
+"expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
+"certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</p><p>a "
+"expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:161
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro de série "
+"%3)</p><p>a expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro de série "
+"%3)</p><p>a expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:169
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro de série "
+"%3)</p><p>a expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro de série "
+"%3)</p><p>a expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:177
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
+"p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour le "
+"certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</p><p>a "
+"expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Le certificat intermédiaire</p><p align=center><b>%4</b></p><p>pour le "
+"certificat S/MIME</p><p align=center><b>%2</b> (numéro de série %3)</p><p>a "
+"expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:193
+#, kde-format
+msgid ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Votre certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro "
+"de série %3)<p><p>a expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Votre certificat de signature S/MIME</p><p align=center><b>%2</b> (numéro "
+"de série %3)<p><p>a expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:199
+#, kde-format
+msgid ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Votre certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro "
+"de série %3)<p><p>a expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Votre certificat de chiffrage S/MIME</p><p align=center><b>%2</b> (numéro "
+"de série %3)<p><p>a expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:205
+#, kde-format
+msgid ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired less than a day ago.</p>"
+msgid_plural ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3)</p><p>expired %1 days ago.</p>"
+msgstr[0] ""
+"<p>Le certificat S/MIME pour</p><p align=center><b>%2</b> (numéro de série "
+"%3)<p><p>a expiré il y a moins d'une journée.</p>"
+msgstr[1] ""
+"<p>Le certificat S/MIME pour</p><p align=center><b>%2</b> (numéro de série "
+"%3)<p><p>a expiré il y a %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:218
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"signing certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat « S / MIME » de signature </p><p align=center><b>%2</b> (numéro "
+"de série %3)</p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Le certificat racine</p><p align=\"center\"><b>%4</b></p><p>pour votre "
+"certificat de signature S/MIME</p><p align=\"center\"><b>%2</b> (numéro de "
+"série %3)</p><p>expire dans %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:226
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
+"encryption certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat « S / MIME » de chiffrage </p><p align=center><b>%2</b> (numéro "
+"de série %3) ;</p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour votre "
+"certificat « S / MIME » de chiffrage</p><p align=center><b>%2</b> (numéro de "
+"série %3)</p><p>expire dans %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:234
+#, kde-format
+msgid ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
+"in less than a day.</p>"
+msgid_plural ""
+"<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
+"certificate</p><p align=center><b>%2</b> (serial number %3);</p><p>expires "
+"in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
+"certificat « S / MIME »</p><p align=center><b>%2</b> (numéro de série %3)</"
+"p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Le certificat racine</p><p align=center><b>%4</b></p><p>pour le "
+"certificat « S / MIME »</p><p align=center><b>%2</b> (numéro de série %3)</"
+"p><p>expire dans moins de %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:244
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+"p><p>pour votre certificat « S / MIME » de signature</p><p align=center><b>"
+"%2</b> (numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+"p><p>pour votre certificat « S / MIME » de signature</p><p align=center><b>"
+"%2</b> (numéro de série %3)</p><p>expire dans moins de %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:252
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
+"your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+"p><p>pour votre certificat « S / MIME » de chiffrage</p><p align=center><b>"
+"%2</b> (numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+"p><p>pour votre certificat « S / MIME » de chiffrage</p><p align=center><b>"
+"%2</b> (numéro de série %3)</p><p>expire dans moins de %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:260
+#, kde-format
+msgid ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
+"MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
+"p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+"p><p>pour le certificat « S / MIME »</p><p align=center><b>%2</b> (numéro de "
+"série %3)</p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Le certificat intermédiaire « CA »</p><p align=center><b>%4</b></"
+"p><p>pour le certificat « S / MIME »</p><p align=center><b>%2</b> (numéro de "
+"série %3)</p><p>expire dans moins de %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:276
+#, kde-format
+msgid ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Votre certificat « S / MIME » de signature</p><p align=center><b>%2</b> "
+"(numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Votre certificat « S / MIME » de signature</p><p align=center><b>%2</b> "
+"(numéro de série %3)</p><p>expire dans moins de %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:282
+#, kde-format
+msgid ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
+"number %3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Votre certificat « S / MIME » de chiffrage</p><p align=center><b>%2</b> "
+"(numéro de série %3)</p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Votre certificat « S / MIME » de chiffrage</p><p align=center><b>%2</b> "
+"(numéro de série %3)</p><p>expire dans moins de %1 jours.</p>"
+
+#: composer/nearexpirychecker.cpp:288
+#, kde-format
+msgid ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than a day.</p>"
+msgid_plural ""
+"<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
+"%3);</p><p>expires in less than %1 days.</p>"
+msgstr[0] ""
+"<p>Le certificat « S / MIME » pour</p><p align=center><b>%2</b> (numéro de "
+"série %3)</p><p>expire dans moins d'un jour.</p>"
+msgstr[1] ""
+"<p>Le certificat « S / MIME » pour</p><p align=center><b>%2</b> (numéro de "
+"série %3)</p><p>expire dans moins de %1 jours.</p>"
+
+#: followupreminder/followupremindercreatejob.cpp:76
+#, kde-format
+msgid "Wait answer from \"%1\" send to \"%2\""
+msgstr "En attente d'une réponse depuis « %1 » envoyée à « %2 »"
+
+#: followupreminder/followupremindercreatejob.cpp:99
+#, kde-format
+msgid ""
+"Failed to store a new reminder: an error occurred while trying to create a "
+"new to-do in your calendar: %1"
+msgstr ""
+"Impossible d'enregistrer un nouveau rappel : une erreur est survenue en "
+"tentant de créer une nouvel tâche à faire dans votre agenda : %1"
+
+#: followupreminder/followupremindercreatejob.cpp:131
+#, kde-format
+msgid "Failed to store a new reminder: %1"
+msgstr "Impossible d'enregistrer un nouveau rappel : %1"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Date"
+msgstr "Sélectionner la date"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:63
+#, kde-format
+msgid "Date:"
+msgstr "Date :"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:71
+#, kde-format
+msgid "Store to-do in:"
+msgstr "Enregistrer les tâches à faire dans : "
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "The selected date must be greater than the current date."
+msgstr "La date choisie doit être dans le futur."
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "Invalid date"
+msgstr "Date non valable"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "The selected folder is not valid."
+msgstr "Le dossier sélectionné n'est pas valable."
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "Invalid folder"
+msgstr "Dossier non valable"
+
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
+#, kde-format
+msgid "forwarded message"
+msgstr "message suivi"
+
+#: helper/messagefactoryng.cpp:575
+#, kde-format
+msgid "Receipt: "
+msgstr "Reçu : "
+
+#: helper/messagefactoryng.cpp:702
+#, kde-format
+msgid ""
+"\n"
+"This is a MIME digest forward. The content of the message is contained in "
+"the attachment(s).\n"
+"\n"
+"\n"
+msgstr ""
+"\n"
+"Ceci est un suivit résumé MIME. Le contenu du message est contenu dans la ou "
+"les pièces jointes.\n"
+"\n"
+"\n"
+
+#: imagescaling/imagescalingselectformat.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Image Format"
+msgstr "Sélectionner le format de l'image"
+
+#: imagescaling/imagescalingselectformat.cpp:94
+#, kde-format
+msgid "Select Format..."
+msgstr "Sélectionner le format..."
+
+#: imagescaling/imagescalingwidget.cpp:113
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">Comment cela fonctionne ?</a>"
+
+#: imagescaling/imagescalingwidget.cpp:123
+#, kde-format
+msgid ""
+"<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
+"current time</li><li>%d set current date</li><li>%n original filename</"
+"li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
+msgstr ""
+"<qt><p>Vous pouvez définir ici les noms d'images. Vous pouvez utiliser :</"
+"p><ul><li>%t fixe l'heure actuelle</li><li>%d fixe la date actuelle</li> <li>"
+"%n le nom de fichier d'origine</li><li>%e l'extension d'origine</li> <li>%x "
+"la nouvelle extension</li> </ul></qt>"
+
+#: imagescaling/imagescalingwidget.cpp:193
+#, kde-format
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: imagescaling/imagescalingwidget.cpp:321
+#, kde-format
+msgid "Please verify minimum and maximum values."
+msgstr "Veuillez vérifier les valeurs maximales et minimales."
+
+#: imagescaling/imagescalingwidget.cpp:321
+#, kde-format
+msgid "Error in minimum Maximum value"
+msgstr "Erreur avec la valeur minimum du maximum"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
+#: imagescaling/ui/imagescalingwidget.ui:17
+#, kde-format
+msgid "Automatically resize images"
+msgstr "Redimensionner automatiquement les images"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: imagescaling/ui/imagescalingwidget.ui:28
+#, kde-format
+msgid "General"
+msgstr "Général"
+
+#. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
+#: imagescaling/ui/imagescalingwidget.ui:34
+#, kde-format
+msgid "Keep ratio"
+msgstr "Conserver les proportions"
+
+#. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
+#: imagescaling/ui/imagescalingwidget.ui:41
+#, kde-format
+msgid "Ask before resizing"
+msgstr "Demander avant de redimensionner"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: imagescaling/ui/imagescalingwidget.ui:50
+#, kde-format
+msgid "Fallback to format:"
+msgstr "Revenir au format de secours :"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: imagescaling/ui/imagescalingwidget.ui:89
+#, kde-format
+msgid "Image"
+msgstr "Image"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ReduceImageToMaximum)
+#: imagescaling/ui/imagescalingwidget.ui:95
+#, kde-format
+msgid "Reduce image to maximum dimension:"
+msgstr "Réduire l'image aux dimensions maximales :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: imagescaling/ui/imagescalingwidget.ui:109
+#, kde-format
+msgid "Maximum width:"
+msgstr "Largeur maximale :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: imagescaling/ui/imagescalingwidget.ui:116
+#, kde-format
+msgid "Maximum height:"
+msgstr "Hauteur maximale :"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumHeight)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumHeight)
+#: imagescaling/ui/imagescalingwidget.ui:133
+#: imagescaling/ui/imagescalingwidget.ui:146
+#: imagescaling/ui/imagescalingwidget.ui:198
+#: imagescaling/ui/imagescalingwidget.ui:211
+#, kde-format
+msgid " px"
+msgstr " px"
+
+#. i18n: ectx: property (text), widget (QCheckBox, EnlargeImageToMinimum)
+#: imagescaling/ui/imagescalingwidget.ui:163
+#, kde-format
+msgid "Enlarge image to minimum dimension"
+msgstr "Agrandir l'image aux dimensions minimales"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: imagescaling/ui/imagescalingwidget.ui:174
+#, kde-format
+msgid "Minimum width:"
+msgstr "Largeur minimale :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: imagescaling/ui/imagescalingwidget.ui:181
+#, kde-format
+msgid "Minimum height:"
+msgstr "Hauteur minimale :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, skipImageSizeLower)
+#: imagescaling/ui/imagescalingwidget.ui:230
+#, kde-format
+msgid "Skip image whose size of the source file is lower than:"
+msgstr ""
+"Sauter les images dont la taille du fichier d'origine est inférieure à :"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
+#: imagescaling/ui/imagescalingwidget.ui:237
+#, kde-format
+msgid " KiB"
+msgstr " Kio"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: imagescaling/ui/imagescalingwidget.ui:263
+#, kde-format
+msgid "Filename"
+msgstr "Nom du fichier"
+
+#. i18n: ectx: property (title), widget (QGroupBox, filterSourceGroupBox)
+#: imagescaling/ui/imagescalingwidget.ui:269
+#, kde-format
+msgid "Source filter"
+msgstr "Filtre de source"
+
+#. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
+#: imagescaling/ui/imagescalingwidget.ui:275
+#, kde-format
+msgid "Do not filter (All files are included)"
+msgstr "Ne pas filtrer (tous les fichiers seront inclus)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:285
+#, kde-format
+msgid "Include all files whose names contains one of the patterns"
+msgstr "Inclure tous les fichiers dont le nom contient l'un de ces motifs"
+
+#. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:292
+#, kde-format
+msgid "Exclude all files whose names contains one of the patterns"
+msgstr "Exclure tous les fichiers dont le nom contient l'un de ces motifs"
+
+#. i18n: ectx: property (text), widget (QLabel, patternLabel)
+#: imagescaling/ui/imagescalingwidget.ui:301
+#, kde-format
+msgid "Pattern:"
+msgstr "Motif :"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, pattern)
+#: imagescaling/ui/imagescalingwidget.ui:308
+#, kde-format
+msgid "This line allows to define several pattern. Separate them with ';'."
+msgstr ""
+"Cette ligne permet de définir plusieurs motifs. Séparez les avec « ; »."
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, doNotResizePattern)
+#: imagescaling/ui/imagescalingwidget.ui:311
+#: imagescaling/ui/imagescalingwidget.ui:419
+#: imagescaling/ui/imagescalingwidget.ui:443
+#, kde-format
+msgid "Specify patterns separate with ';'"
+msgstr "Spécifiez les motifs séparés par « ; »"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: imagescaling/ui/imagescalingwidget.ui:326
+#, kde-format
+msgid "Image Format"
+msgstr "Format de l'image"
+
+#. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
+#: imagescaling/ui/imagescalingwidget.ui:332
+#, kde-format
+msgid "Resize all images with one of these formats"
+msgstr "Redimensionner toute les images avec l'un de ces formats"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: imagescaling/ui/imagescalingwidget.ui:345
+#, kde-format
+msgid "Resize filename"
+msgstr "Nom du fichier redimensionné"
+
+#. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
+#: imagescaling/ui/imagescalingwidget.ui:371
+#, kde-format
+msgid "Rename resized images with following pattern:"
+msgstr "Renommer les images redimensionnées avec le motif suivant :"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
+#: imagescaling/ui/imagescalingwidget.ui:389
+#, kde-format
+msgid "Recipients"
+msgstr "Destinataires"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotFilterRecipients)
+#: imagescaling/ui/imagescalingwidget.ui:395
+#, kde-format
+msgid "Do not filter (All recipients are allowed)"
+msgstr "Ne pas filtrer (tous les destinataires seront autorisés)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:405
+#, kde-format
+msgid "Resize if each emails address contains one of the pattern"
+msgstr "Redimensionner si chaque adresse de courriel contient un de ces motifs"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:412
+#, kde-format
+msgid "Resize if one emails address contains one of the pattern"
+msgstr "Redimensionner si une adresse de courriel contient un de ces motifs"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:429
+#, kde-format
+msgid "Do not resize if each emails address contains one of the pattern"
+msgstr ""
+"Ne pas redimensionner si chaque adresse de courriel contient un de ces motifs"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:436
+#, kde-format
+msgid "Do not resize if one emails address contains one of the pattern"
+msgstr ""
+"Ne pas redimensionner si une adresse de courriel contient un de ces motifs"
+
+#: job/attachmentclipboardjob.cpp:42
+#, kde-format
+msgid "No text found in Clipboard"
+msgstr "Aucun texte dans le presse-papiers"
+
+#: job/attachmentclipboardjob.cpp:46
+#, kde-format
+msgid "Define Attachment Name"
+msgstr "Définissez le nom de la pièce jointe"
+
+#: job/attachmentclipboardjob.cpp:46
+#, kde-format
+msgid "Attachment Name:"
+msgstr "Nom de la pièce jointe :"
+
+#: job/attachmentclipboardjob.cpp:49
+#, kde-format
+msgid "Clipboard Text"
+msgstr "Texte du presse-papier"
+
+#: job/attachmentfrompublickeyjob.cpp:50
+#, kde-format
+msgid "OpenPGP key 0x%1"
+msgstr "Clé OpenPGP 0x%1"
+
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:91
+#, kde-format
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>%1</b></p>"
+msgstr ""
+"<p>Une erreur est survenue pendant la tentative d'exportation de la clé avec "
+"le moteur :</p><p><b>%1</b></p>"
+
+#: job/attachmentfrompublickeyjob.cpp:107
+#, kde-format
+msgid "Exporting key..."
+msgstr "Exportation de la clé..."
+
+#: job/attachmentvcardfromaddressbookjob.cpp:75
+#, kde-format
+msgid "Unknown Contact Type"
+msgstr "Type de contact inconnu"
+
+#: job/attachmentvcardfromaddressbookjob.cpp:86
+#, kde-format
+msgid "Invalid Contact"
+msgstr "Contact non valable"
+
+#: job/attachmentvcardfromaddressbookjob.cpp:102
+#, kde-format
+msgid "Impossible to generate vCard."
+msgstr "Impossible de générer la vCard."
+
+#: job/autocryptheadersjob.cpp:104
+#, kde-format
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>No valid key found for user %1 (%2)</b></p>"
+msgstr ""
+"<p>Une erreur est survenue pendant la tentative d'exportation de la clé à "
+"partir du moteur : </p><p><b>Aucune clé valable n'a été trouvée pour "
+"l'utilisateur %1 (%2)</b></p>"
+
+#: job/maintextjob.cpp:60
+#, kde-format
+msgid "Asked to use word wrapping, but not given wrapped plain text."
+msgstr ""
+"Le retours à la ligne a été demandé, mais aucun texte brut enveloppé n'a été "
+"fourni."
+
+#: job/maintextjob.cpp:67
+#, kde-format
+msgid "Asked not to use word wrapping, but not given clean plain text."
+msgstr ""
+"Le retours à la ligne n'a pas été demandé, mais aucun texte brut clair n'a "
+"été fourni."
+
+#: job/maintextjob.cpp:82
+#, kde-format
+msgid ""
+"No charsets were available for encoding. Please check your configuration and "
+"make sure it contains at least one charset for sending."
+msgstr ""
+"Aucune table de caractères n'est disponible pour l'encodage. Veuillez "
+"vérifier votre configuration et assurez vous qu'elle contient au moins une "
+"table de caractère pour l'envoi."
+
+#: job/maintextjob.cpp:100
+#, kde-format
+msgid ""
+"Encoding the message with %1 will lose some characters.\n"
+"Do you want to continue?"
+msgstr ""
+"L'encodage du message en %1 entraînera la perte de certains caractères..\n"
+"Voulez-vous continuer ?"
+
+#: job/maintextjob.cpp:103
+#, kde-format
+msgid "Some Characters Will Be Lost"
+msgstr "Certains caractères seront perdus"
+
+#: job/maintextjob.cpp:104
+#, kde-format
+msgid "Lose Characters"
+msgstr "Perdre des caractères"
+
+#: job/maintextjob.cpp:105
+#, kde-format
+msgid "Change Encoding"
+msgstr "Changer d'encodage"
+
+#: job/maintextjob.cpp:108
+#, kde-format
+msgid "User decided to change the encoding."
+msgstr "L'utilisateur a décidé de changer d'encodage."
+
+#: job/maintextjob.cpp:118
+#, kde-format
+msgid "The selected encoding (%1) cannot fully encode the message."
+msgstr "L'encodage sélectionné (%1) ne peut complètement encoder le message."
+
+#: job/maintextjob.cpp:143
+#, kde-format
+msgid "Could not get text codec for charset \"%1\"."
+msgstr ""
+"Impossible d'obtenir la codification du texte pour le jeu de caractère "
+"« %1 »."
+
+#: job/savecontactpreferencejob.cpp:51
+#, kde-format
+msgid "Name Selection"
+msgstr "Sélection de nom"
+
+#: job/savecontactpreferencejob.cpp:52
+#, kde-format
+msgid "Which name shall the contact '%1' have in your address book?"
+msgstr ""
+"Quel nom le contact « %1 » devrait-il avoir dans votre carnet d'adresse ?"
+
+#: job/savecontactpreferencejob.cpp:64
+#, kde-format
+msgid "Select the address book folder to store the new contact in:"
+msgstr ""
+"Sélectionnez le dossier de carnet d'adresse où stocker le nouveau contact :"
+
+#: job/singlepartjob.cpp:67
+#, kde-format
+msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
+msgstr "%1 Contenu-Transfert-Encodage ne peut correctement encoder ce message."
+
+#: mdn/mdnadvicedialog.cpp:21
+#, kde-format
+msgctxt "@title:window"
+msgid "Message Disposition Notification Request"
+msgstr "Demande de notification pour la suppression d'un message"
+
+#: mdn/mdnadvicedialog.cpp:30
+#, kde-format
+msgid "Send \"&denied\""
+msgstr "Envoyer « re&fusé »"
+
+#: mdn/mdnadvicedialog.cpp:32
+#, kde-format
+msgid "&Ignore"
+msgstr "&Ignorer"
+
+#: mdn/mdnadvicedialog.cpp:34
+#, kde-format
+msgid "&Send"
+msgstr "Envoye&r"
+
+#: mdn/mdnadvicehelper.cpp:27
+msgid ""
+"This message contains a request to return a notification about your "
+"reception of the message.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"Ce message contient une demande d'envoi de notification concernant votre "
+"réception du message.\n"
+"Vous pouvez soit ignorer la demande, soit laisser le programme de messagerie "
+"envoyer une réponse « refusée » ou normale."
+
+#: mdn/mdnadvicehelper.cpp:33
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message.\n"
+"It contains a processing instruction that is marked as \"required\", but "
+"which is unknown to the mail program.\n"
+"You can either ignore the request or let the mail program send a \"failed\" "
+"response."
+msgstr ""
+"Ce message contient une demande d'envoi d'une notification concernant la "
+"réception du message.\n"
+"Il contient une instruction de traitement marquée comme « Demandé » mais qui "
+"est inconnue du\n"
+"programme de messagerie. Vous pouvez soit ignorer la demande, soit laisser "
+"le programme de messagerie envoyer une réponse « Échoué » ou normale."
+
+#: mdn/mdnadvicehelper.cpp:41
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but it is requested to send the notification to more than one address.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"Ce message contient une demande d'envoi d'une notification concernant la "
+"réception du message,\n"
+"mais il est demandé d'envoyer la notification à plus d'une adresse.\n"
+"Vous pouvez soit ignorer la demande, soit laisser le programme de messagerie "
+"envoyer une réponse « Refusé » ou normale."
+
+#: mdn/mdnadvicehelper.cpp:49
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but there is no return-path set.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"Ce message contient une demande d'envoi d'une notification concernant la "
+"réception du message\n"
+"mais il n'y a aucun chemin de retour défini.\n"
+"Vous pouvez soit ignorer la demande, soit laisser le programme de messagerie "
+"envoyer une réponse « Refusé » ou normale."
+
+#: mdn/mdnadvicehelper.cpp:56
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but the return-path address differs from the address the notification was "
+"requested to be sent to.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"Ce message contient une demande d'envoi d'une notification concernant la "
+"réception du message,\n"
+"mais l'adresse de retour est différente de l'adresse à laquelle la "
+"notification a été renvoyée.\n"
+"Vous pouvez soit ignorer la demande, soit laisser le programme de messagerie "
+"envoyer une réponse « Refusé » ou normale."
+
+#: recipient/distributionlistdialog.cpp:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Distribution List"
+msgstr "Enregistrer la liste de distribution"
+
+#: recipient/distributionlistdialog.cpp:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List"
+msgstr "Enregistrer la liste"
+
+#: recipient/distributionlistdialog.cpp:121
+#, kde-format
+msgctxt "@label:textbox Name of the distribution list."
+msgid "&Name:"
+msgstr "&Nom :"
+
+#: recipient/distributionlistdialog.cpp:125
+#, kde-format
+msgid "Name of Distribution List"
+msgstr "Nom de la liste de distribution"
+
+#: recipient/distributionlistdialog.cpp:132
+#, kde-format
+msgctxt "@title:column Name of the recipient"
+msgid "Name"
+msgstr "Nom"
+
+#: recipient/distributionlistdialog.cpp:133
+#, kde-format
+msgctxt "@title:column Email of the recipient"
+msgid "Email"
+msgstr "Courriel"
+
+#: recipient/distributionlistdialog.cpp:240
+#, kde-format
+msgctxt "@info"
+msgid ""
+"There are no recipients in your list. First select some recipients, then try "
+"again."
+msgstr ""
+"Il n'y a pas de destinataire dans votre liste. Sélectionnez d'abord des "
+"destinataires puis réessayez."
+
+#: recipient/distributionlistdialog.cpp:251
+#, kde-format
+msgctxt "@title:window"
+msgid "New Distribution List"
+msgstr "Nouvelle liste de distribution"
+
+#: recipient/distributionlistdialog.cpp:252
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Please enter name:"
+msgstr "Veuillez saisir un nom :"
+
+#: recipient/distributionlistdialog.cpp:276
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Distribution list with the given name <resource>%1</resource> already "
+"exists. Please select a different name.</para>"
+msgstr ""
+"<para>Une liste de distribution avec le nom <resource>%1</resource> existe "
+"déjà. Veuillez choisir un nom différent.</para>"
+
+#: recipient/distributionlistdialog.cpp:285
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Address Book"
+msgstr "Sélectionner le carnet d'adresses"
+
+#: recipient/distributionlistdialog.cpp:286
+#, kde-format
+msgid "Select the address book folder to store the contact group in:"
+msgstr ""
+"Choisissez le dossier de carnet d'adresses pour y enregistrer le groupe de "
+"contact :"
+
+#: recipient/distributionlistdialog.cpp:322
+#, kde-format
+msgid "Unable to create distribution list: %1"
+msgstr "Impossible de créer la liste de distribution : %1"
+
+#: recipient/recipient.cpp:99
+#, kde-format
+msgctxt "@label:listbox Recipient of an email message."
+msgid "To"
+msgstr "À"
+
+#: recipient/recipient.cpp:101
+#, kde-format
+msgctxt "@label:listbox Carbon Copy recipient of an email message."
+msgid "CC"
+msgstr "CC"
+
+#: recipient/recipient.cpp:103
+#, kde-format
+msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+msgid "BCC"
+msgstr "BCC"
+
+#: recipient/recipient.cpp:105
+#, kde-format
+msgctxt "@label:listbox Reply-To recipient of an email message."
+msgid "Reply-To"
+msgstr "Répondre à"
+
+#: recipient/recipient.cpp:110
+#, kde-kuit-format
+msgctxt "@label:listbox"
+msgid "<placeholder>Undefined Recipient Type</placeholder>"
+msgstr "<placeholder>Type de destinataire indéfini</placeholder>"
+
+#: recipient/recipientline.cpp:70
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Select type of recipient"
+msgstr "Sélectionnez le type de destinataire"
+
+#: recipient/recipientline.cpp:72
+#, kde-format
+msgid "Set the list of email addresses to receive this message"
+msgstr "Faites la liste des adresses de courriel pour réception de ce message"
+
+#: recipient/recipientseditor.cpp:115
+#, kde-format
+msgctxt "@info:status"
+msgid "Truncating recipients list to %2 of %1 entry."
+msgid_plural "Truncating recipients list to %2 of %1 entries."
+msgstr[0] "Troncature de la liste des destinataires à %2 de %1 entrée."
+msgstr[1] "Troncature de la liste des destinataires à %2 de %1 entrées."
+
+#: recipient/recipientseditorsidewidget.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List..."
+msgstr "Enregistrer la liste..."
+
+#: recipient/recipientseditorsidewidget.cpp:45
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr "Enregistrer les destinataires comme liste de distribution"
+
+#: recipient/recipientseditorsidewidget.cpp:47
+#, kde-format
+msgctxt "@action:button Open recipient selection dialog."
+msgid "Se&lect..."
+msgstr "Sé&lectionner..."
+
+#: recipient/recipientseditorsidewidget.cpp:50
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select recipients from address book"
+msgstr "Sélectionnez les destinataires depuis le carnet d'adresses"
+
+#: recipient/recipientseditorsidewidget.cpp:77
+#, kde-format
+msgctxt "@info:status No recipients selected"
+msgid "No recipients"
+msgstr "Pas de destinataire"
+
+#: recipient/recipientseditorsidewidget.cpp:79
+#, kde-format
+msgctxt "@info:status Number of recipients selected"
+msgid "1 recipient"
+msgid_plural "%1 recipients"
+msgstr[0] "1 destinataire"
+msgstr[1] "%1 destinataires"
+
+#: recipient/recipientseditorsidewidget.cpp:129
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "To:%1"
+msgstr "À : %1"
+
+#: recipient/recipientseditorsidewidget.cpp:131
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "CC:%1"
+msgstr "Copie : %1"
+
+#: recipient/recipientseditorsidewidget.cpp:134
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "BCC:%1"
+msgstr "Copie cachée : %1"
+
+#: recipient/recipientseditorsidewidget.cpp:137
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "Reply-To:%1"
+msgstr "Répondre à : %1"
+
+#: recipient/recipientspicker.cpp:42
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Recipient"
+msgstr "Sélectionner le destinataire"
+
+#: recipient/recipientspicker.cpp:54
+#, kde-format
+msgid "Search &Directory Service"
+msgstr "Chercher un service &de catalogue"
+
+#: recipient/recipientspicker.cpp:77
+#, kde-format
+msgid "Add as &Reply-To"
+msgstr "Ajouter comme destinataire de &réponse"
+
+#: recipient/recipientspicker.cpp:78
+#, kde-format
+msgid "Add as &To"
+msgstr "Ajouter comme des&tinataire"
+
+#: recipient/recipientspicker.cpp:79
+#, kde-format
+msgid "Add as CC"
+msgstr "Ajouter en CC"
+
+#: recipient/recipientspicker.cpp:80
+#, kde-format
+msgid "Add as &BCC"
+msgstr "Ajouter en &BCC"
+
+#: recipient/recipientspicker.cpp:103
+#, kde-format
+msgid "%1 selected email"
+msgid_plural "%1 selected emails"
+msgstr[0] "Courriel %1 sélectionné"
+msgstr[1] "%1 courriels %1 sélectionnés"
+
+#: recipient/recipientspicker.cpp:170
+#, kde-format
+msgid ""
+"You selected 1 recipient. The maximum supported number of recipients is %2.\n"
+"Please adapt the selection."
+msgid_plural ""
+"You selected %1 recipients. The maximum supported number of recipients is "
+"%2.\n"
+"Please adapt the selection."
+msgstr[0] ""
+"Vous avez sélectionné 1 destinataire. Le nombre maximum de destinataires "
+"pris en charge est de %2. \n"
+"Veuillez adapter votre sélection."
+msgstr[1] ""
+"Vous avez sélectionné %1 destinataires. Le nombre maximum de destinataires "
+"pris en charge est de %2. \n"
+"Veuillez adapter votre sélection."
+
+#: recipient/recipientspicker.cpp:187
+#, kde-format
+msgid "You can not add more recipients."
+msgstr "Il vous est impossible d'ajouter plus de destinataires."
+
+#: sendlater/sendlatercreatejob.cpp:33
+#, kde-format
+msgid "Failed to schedule message for sending later: %1"
+msgstr "Impossible de faire les envois différés du message : %1"
+
+#: sendlater/sendlaterdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Send Later"
+msgstr "Envoyer plus tard"
+
+#: sendlater/sendlaterdialog.cpp:48
+#, kde-format
+msgid "Send Later"
+msgstr "Envoyer plus tard"
+
+#: sendlater/sendlaterdialog.cpp:49
+#, kde-format
+msgid "Delay"
+msgstr "Retarder"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Days"
+msgstr "Jours"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Weeks"
+msgstr "Semaines"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Months"
+msgstr "Mois"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Years"
+msgstr "Années"
+
+#: sendlater/sendlaterjob.cpp:32
+#, kde-format
+msgid "The Send Later agent is not running."
+msgstr "L'agent d'envoi différé n'est pas lancé."
+
+#: sendlater/sendlaterremovejob.cpp:27
+#, kde-format
+msgid "Failed to removed message from send later schedule: %1"
+msgstr ""
+"Échec de la suppression d'un message dans la liste des envois différés : %1"
+
+#: sendlater/sendlatertimedatewidget.cpp:35
+#, kde-format
+msgid "You cannot select a date prior to the current date."
+msgstr "La date choisie doit être au delà de la date courante."
+
+#. i18n: ectx: property (text), widget (QLabel, mLabel)
+#: sendlater/ui/sendlaterwidget.ui:29
+#, kde-format
+msgid "Send at:"
+msgstr "Envoyer à :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
+#: sendlater/ui/sendlaterwidget.ui:39
+#, kde-format
+msgid "Repeat every:"
+msgstr " Répéter chaque :"
+
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "Ne citer que le texte sélectionné lors de réponses"
+
+#. i18n: ectx: label, entry (ForceReplyCharset), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:23
+#, kde-format
+msgid "Keep original charset when replying or forwarding if possible"
+msgstr ""
+"Conserver la table de caractère originale en répondant ou en faisant suivre "
+"quand cela est possible"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:32
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "Insérer a&utomatiquement la signature"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:36
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "Insérer la signature au dessus du texte cité"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:40
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "Faire précéder le séparateur à la signature"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:45
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr ""
+"Utiliser les adresses indexées à partir des messages pour l'auto-complètement"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:46
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"Désactivez cette option si vous voulez que seules les adresses de votre "
+"carnet apparaissent dans la liste d'auto-complètement dans le champs "
+"d'adresses de l'éditeur."
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:52
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr ""
+"Autoriser le point- virgule (« ; ») à être utilisé comme séparateur dans "
+"l'éditeur de messages"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:55
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "Utiliser les adresses récentes pour l'auto-complètement"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:56
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"Désactivez cette option si vous ne voulez pas que les adresses récemment "
+"utilisés apparaissent dans la liste d'auto-complètement dans le champs "
+"d'adresses de l'éditeur."
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:61
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "Nombre maximum d'entrées de destinataires :"
+
+#. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:66
+#, kde-format
+msgid "Outlook-compatible attachment naming"
+msgstr "Nom des pièces jointes compatible avec Outlook"
+
+#. i18n: ectx: whatsthis, entry (OutlookCompatibleAttachments), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:67
+#, kde-format
+msgid ""
+"Turn this option on to make Outlook &#8482; understand attachment names "
+"containing non-English characters"
+msgstr ""
+"Activez cette option pour que Outlook &#8482; comprenne les noms des pièces "
+"jointes qui contiennent des caractères non anglais"
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:71
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "&Passage à la ligne à la colonne :"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:81
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "Améliorer la version du texte brut du message HTML"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:85
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "Avertir avant d'envoyer des messages non chiffrés"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:89
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "Avertir avant d'envoyer des messages non signés"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:93
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"Avertir si les certificats ou les clés expire bientôt (configurez le seuil "
+"ci-dessous)"
+
+#. i18n: ectx: label, entry (CryptoWarnSignKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:97
+#, kde-format
+msgid ""
+"The minimum number of days that the signature certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Le nombre minimum de jours pour lesquels le certificat de signature devrait "
+"être valable avant l'émission d'un avertissement"
+
+#. i18n: ectx: label, entry (CryptoWarnSignChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:101
+#, kde-format
+msgid ""
+"The minimum number of days that the CA certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Le nombre minimum de jours pour lesquels le certificat CA devrait être "
+"valable avant l'émission d'un avertissement"
+
+#. i18n: ectx: label, entry (CryptoWarnSignRootNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:105
+#: settings/messagecomposer.kcfg.cmake:117
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr ""
+"Le nombre minimum de jours pour lesquels le certificat racine devrait être "
+"valable avant l'émission d'un avertissement"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:109
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr ""
+"Le nombre minimum de jours pour lesquels le certificat de chiffrage devrait "
+"être valable avant l'émission d'un avertissement"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:113
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"Le nombre minimum de jours pour lesquels tous les certificats de la chaîne "
+"devrait être valable avant l'émission d'un avertissement"
+
+#. i18n: ectx: label, entry (CryptoEncryptToSelf), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:121
+#, kde-format
+msgid ""
+"When encrypting emails, always also encrypt to the certificate of my own "
+"identity"
+msgstr ""
+"Lors du chiffrement de courriels, toujours chiffrer également le certificat "
+"de ma propre identité"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:125
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr ""
+"Toujours afficher la liste des clés de chiffrement pour choisir celle que "
+"vous voudrez utiliser"
+
+#: snippet/convertsnippetvariablemenu.cpp:27
+#, kde-format
+msgid "To"
+msgstr "À"
+
+#: snippet/convertsnippetvariablemenu.cpp:28
+#, kde-format
+msgid "To Field Address"
+msgstr "Adresse du champ « À »"
+
+#: snippet/convertsnippetvariablemenu.cpp:31
+#, kde-format
+msgid "To Field Last Name"
+msgstr "Nom de famille du champ « À »"
+
+#: snippet/convertsnippetvariablemenu.cpp:34
+#, kde-format
+msgid "To Field First Name"
+msgstr "Prénom du champ « À »"
+
+#: snippet/convertsnippetvariablemenu.cpp:37
+#, kde-format
+msgid "To Field Name"
+msgstr "Nom du champ « À »"
+
+#: snippet/convertsnippetvariablemenu.cpp:42
+#, kde-format
+msgid "From"
+msgstr "De"
+
+#: snippet/convertsnippetvariablemenu.cpp:43
+#, kde-format
+msgid "From Field Address"
+msgstr "Adresse du champ « De »"
+
+#: snippet/convertsnippetvariablemenu.cpp:46
+#, kde-format
+msgid "From Field Last Name"
+msgstr "Nom de famille du champ « De »"
+
+#: snippet/convertsnippetvariablemenu.cpp:49
+#, kde-format
+msgid "From Field First Name"
+msgstr "Prénom du champ « De »"
+
+#: snippet/convertsnippetvariablemenu.cpp:52
+#, kde-format
+msgid "From Field Name"
+msgstr "Nom du champ « De »"
+
+#: snippet/convertsnippetvariablemenu.cpp:57
+#, kde-format
+msgid "CC"
+msgstr "CC"
+
+#: snippet/convertsnippetvariablemenu.cpp:58
+#, kde-format
+msgid "CC Field Address"
+msgstr "Adresse du champ « CC »"
+
+#: snippet/convertsnippetvariablemenu.cpp:61
+#, kde-format
+msgid "CC Field Last Name"
+msgstr "Nom de famille du champ « CC »"
+
+#: snippet/convertsnippetvariablemenu.cpp:64
+#, kde-format
+msgid "CC Field First Name"
+msgstr "Prénom du champ « CC »"
+
+#: snippet/convertsnippetvariablemenu.cpp:67
+#, kde-format
+msgid "CC Field Name"
+msgstr "Prénom du champ « CC »"
+
+#: snippet/convertsnippetvariablemenu.cpp:73
+#, kde-format
+msgid "Bcc"
+msgstr "BCC"
+
+#: snippet/convertsnippetvariablemenu.cpp:74
+#, kde-format
+msgid "BCC Field Address"
+msgstr "Adresse dans le champ « BCC »"
+
+#: snippet/convertsnippetvariablemenu.cpp:77
+#, kde-format
+msgid "BCC Field Last Name"
+msgstr "Nom de famille dans le champ « BCC »"
+
+#: snippet/convertsnippetvariablemenu.cpp:80
+#, kde-format
+msgid "BCC Field First Name"
+msgstr "Prénom dans le champ « BCC »"
+
+#: snippet/convertsnippetvariablemenu.cpp:83
+#, kde-format
+msgid "BCC Field Name"
+msgstr "Nom dans le champ « BCC »"
+
+#: snippet/convertsnippetvariablemenu.cpp:89
+#, kde-format
+msgid "Attachment"
+msgstr "Pièce jointe"
+
+#: snippet/convertsnippetvariablemenu.cpp:90
+#, kde-format
+msgid "Number Of Attachments"
+msgstr "Nombre de pièces jointes"
+
+#: snippet/convertsnippetvariablemenu.cpp:93
+#, kde-format
+msgid "Names"
+msgstr "Noms"
+
+#: snippet/convertsnippetvariablemenu.cpp:96
+#, kde-format
+msgid "Filenames"
+msgstr "Noms de fichiers"
+
+#: snippet/convertsnippetvariablemenu.cpp:99
+#, kde-format
+msgid "Names and Sizes"
+msgstr "Noms et tailles"
+
+#: snippet/convertsnippetvariablemenu.cpp:103
+#: snippet/convertsnippetvariablemenu.cpp:123
+#, kde-format
+msgid "Date/Time"
+msgstr "Date / Heure"
+
+#: snippet/convertsnippetvariablemenu.cpp:104
+#: snippet/convertsnippetvariablemenu.cpp:151
+#, kde-format
+msgid "Day Of Week (%1)"
+msgstr "Jour de la semaine (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:107
+#, kde-format
+msgid "Date (%1)"
+msgstr "Date (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:110
+#, kde-format
+msgid "Long Date (%1)"
+msgstr "Date au format long (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:113
+#, kde-format
+msgid "Short Time (%1)"
+msgstr "Heure au format court (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:116
+#, kde-format
+msgid "Time (%1)"
+msgstr "Heure (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:119
+#, kde-format
+msgid "Year (%1)"
+msgstr "Année (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:127
+#, kde-format
+msgid "Last Year (%1)"
+msgstr "Année dernière (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:130
+#, kde-format
+msgid "Next Year (%1)"
+msgstr "Année prochaine (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:133
+#, kde-format
+msgid "Month Number (%1)"
+msgstr "Numéro du mois (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:136
+#, kde-format
+msgid "Day Of Month (%1)"
+msgstr "Jour du mois (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:139
+#, kde-format
+msgid "Week Number (%1)"
+msgstr "Numéro de la semaine (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:142
+#, kde-format
+msgid "Month Name Short (%1)"
+msgstr "Nom de mois abrégé (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:145
+#, kde-format
+msgid "Month Name Long (%1)"
+msgstr "Nom de mois complet (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:148
+#, kde-format
+msgid "Last Month Name Long (%1)"
+msgstr "Nom de mois précédent complet (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:154
+#, kde-format
+msgid "Day Of Week Name Short (%1)"
+msgstr "Nom de jour de la semaine abrégé (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, kde-format
+msgid "Day Of Week Name Long (%1)"
+msgstr "Nom du jour de la semaine complet (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:160
+#, kde-format
+msgid "Year Last Month (%1)"
+msgstr "Mois de l'année précédente (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:165
+#, kde-format
+msgid "Misc"
+msgstr "Divers"
+
+#: snippet/convertsnippetvariablemenu.cpp:166
+#, kde-format
+msgid "Subject"
+msgstr "Objet"
+
+#: utils/util.cpp:260
+#, kde-format
+msgctxt ""
+"comma-separated list of keywords that are used to detect whether the user "
+"forgot to attach his attachment. Do not add space between words."
+msgid "attachment,attached"
+msgstr "pièce jointe,pièces jointes,joint"
+
+#: utils/util.cpp:293
+#, kde-format
+msgid ""
+"The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
+"create a mail dispatcher?"
+msgstr ""
+"Le répartiteur de messagerie n'est pas configuré, aucun courriel ne peut "
+"être envoyé. Voulez-vous en créer un nouveau ?"
+
+#: utils/util.cpp:294
+#, kde-format
+msgid "No mail dispatcher."
+msgstr "Pas de répartiteur de messagerie."
+
+#: utils/util.cpp:295
+#, kde-format
+msgctxt "@action:button"
+msgid "Create Mail Dispatcher"
+msgstr "Créer un répartiteur de messagerie"
+
+#: utils/util.cpp:310
+#, kde-format
+msgid ""
+"The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
+"it online?"
+msgstr ""
+"Le répartiteur de messagerie est hors-ligne, aucun courriel ne peut être "
+"envoyé. Voulez-vous le faire passer en ligne ?"
+
+#: utils/util.cpp:311
+#, kde-format
+msgid "Mail dispatcher offline."
+msgstr "Répartiteur de messagerie hors-ligne."
+
+#: utils/util.cpp:312
+#, kde-format
+msgctxt "@action:button"
+msgid "Set Online"
+msgstr "Définir en ligne"
+
+#, fuzzy
+#~| msgctxt "@info:status"
+#~| msgid "Truncating recipients list to %2 of %1 entry."
+#~| msgid_plural "Truncating recipients list to %2 of %1 entries."
+#~ msgctxt "@info:status"
+#~ msgid "Truncating recipients list to %1."
+#~ msgstr "Troncature de la liste des destinataires à %2 de %1 entrée."
+
+#~ msgid "Year"
+#~ msgstr "Année"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>To:</interface><nl/>%1"
+#~ msgstr "<interface>À :</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>CC:</interface><nl/>%1"
+#~ msgstr "<interface>CC :</interface><nl/>%1"
+
+#~ msgctxt "@info:tooltip %1 list of emails"
+#~ msgid "<interface>BCC:</interface><nl/>%1"
+#~ msgstr "<interface>BCC :</interface><nl/>%1"
+
+#~ msgid "Warn if the receiver's address is not in the certificate"
+#~ msgstr "Avertir si l'adresse du receveur n'est pas dans le certificat"
+
+#~ msgid "Replace recognized prefi&x with \"Re:\""
+#~ msgstr "Remplacer le préfi&xe reconnu par « Re :  »"
+
+#~ msgid "Replace recognized prefix with \"&Fwd:\""
+#~ msgstr "Remplacer le préfixe reconnu par « &Fwd :  »"
+
+#~ msgid "AutoDetect Language"
+#~ msgstr "Détecter automatiquement la langue"
+
+#, fuzzy
+#~| msgid "Use recent addresses for autocompletion"
+#~ msgid "Use Baloo search for autocompletion"
+#~ msgstr "Utiliser les adresses récentes pour l'auto-complètement"
+
+#, fuzzy
+#~| msgid ""
+#~| "Disable this option if you do not want recently used addresses to appear "
+#~| "in the autocompletion list in the composer's address fields."
+#~ msgid ""
+#~ "Disable this option if you do not want baloo search addresses to appear "
+#~ "in the autocompletion list in the composer's address fields."
+#~ msgstr ""
+#~ "Désactivez cette option si vous ne voulez pas que les adresses récemment "
+#~ "utilisés apparaissent dans la liste d'auto-complètement dans le champs "
+#~ "d'adresses de l'éditeur."
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Select Image Format"
+#~ msgid "Select email from contact"
+#~ msgstr "Sélectionner le format de l'image"
+
+#~ msgid "vCard Import Failed"
+#~ msgstr "Échec d'importation de la vCard"
+
+#~ msgid "<qt>Unable to access <b>%1</b>.</qt>"
+#~ msgstr "<qt>Impossible d'accéder à <b>%1</b>.</qt>"
+
+#, fuzzy
+#~| msgid "Automatically resize images"
+#~ msgid "Automatically expand groups"
+#~ msgstr "Redimensionner automatiquement les images"
+
+#~ msgid "Recent Addresses"
+#~ msgstr "Adresses récentes"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "&Insert"
+#~ msgctxt "@title:window"
+#~ msgid "Insert HTML"
+#~ msgstr "&Insérer"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "&Insert"
+#~ msgctxt "@action:button"
+#~ msgid "Insert"
+#~ msgstr "&Insérer"
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Insert File"
+#~ msgctxt "@action"
+#~ msgid "Insert Rule Line"
+#~ msgstr "Insérer un fichier"
+
+#, fuzzy
+#~| msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+#~| msgid "BCC"
+#~ msgctxt "@item:inmenu uppercase abc lists"
+#~ msgid "ABC"
+#~ msgstr "BCC"
+
+#, fuzzy
+#~| msgid "Lose Characters"
+#~ msgid "Add &Quote Characters"
+#~ msgstr "Perdre des caractères"
+
+#, fuzzy
+#~| msgid "Lose Characters"
+#~ msgid "Re&move Quote Characters"
+#~ msgstr "Perdre des caractères"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgid "Add Image"
+#~ msgstr "Image"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "&Insert"
+#~ msgid "Insert HTML"
+#~ msgstr "&Insérer"
+
+#~ msgid "I've linked 1 file to this email:"
+#~ msgstr "J'ai associé 1 fichier à ce courriel :"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgctxt "Start of the filename for an image"
+#~ msgid "image"
+#~ msgstr "Image"
+
+#~ msgid "External editor cannot be started. Please verify command \"%1\""
+#~ msgstr ""
+#~ "L'éditeur externe n'a pas pu être démarré. Veuillez vérifier la commande "
+#~ "« %1 »"
+
+#~ msgid "Error was found when we started external editor."
+#~ msgstr "Une erreur a été rencontrée en démarrant l'éditeur externe."
+
+#~ msgid "External Editor Closed"
+#~ msgstr "Éditeur externe fermé"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The external editor is still running.<nl/>Do you want to stop the editor "
+#~ "or keep it running?<nl/><warning>Stopping the editor will cause all your "
+#~ "unsaved changes to be lost.</warning>"
+#~ msgstr ""
+#~ "L'éditeur externe est toujours ouvert.<nl/>Voulez-vous arrêter l'éditeur "
+#~ "ou le laisser ouvert ?<nl/><warning>L'arrêt de l'éditeur entraînera la "
+#~ "perte de toute les données qui ne sont pas enregistré.</warning>"
+
+#~ msgctxt "@title:window"
+#~ msgid "External Editor Running"
+#~ msgstr "Éditeur externe ouvert"
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop Editor"
+#~ msgstr "Arrêter l'éditeur"
+
+#~ msgctxt "@action:button"
+#~ msgid "Keep Editor Running"
+#~ msgstr "Conserver l'éditeur ouvert"
+
+#~ msgid "Write to format"
+#~ msgstr "Écrire dans le format"
+
+#, fuzzy
+#~| msgid "Add Autocorrection Entry"
+#~ msgid "Add New Autocorrect"
+#~ msgstr "Ajouter une entrée d'autocorrection"
+
+#~ msgctxt "@title:window"
+#~ msgid "Insert File"
+#~ msgstr "Insérer un fichier"
+
+#~ msgid "Edit Recent Addresses..."
+#~ msgstr "Éditer les adresses récentes..."
+
+#~ msgid "&Attach"
+#~ msgstr "Join&dre"
+
+#~ msgid ""
+#~ "The maximum size in bits that email attachments are allowed to have (-1 "
+#~ "for no limit)"
+#~ msgstr ""
+#~ "La taille maximale en octets que les pièces jointes de courrier "
+#~ "électronique sont autorisés à avoir (-1 pour pas de limite)"
+
+#~ msgid "LibreOffice Autocorrection"
+#~ msgstr "Autocorrection de LibreOffice"
+
+#~ msgid "KMail/Calligra Autocorrection"
+#~ msgstr "Autocorrection de KMail / Calligra"
+
+#~ msgid "\"Replace\" string is the same as \"Find\" string."
+#~ msgstr "La chaine de remplacement est la même que celle à chercher."
+
+#~ msgid "&Modify"
+#~ msgstr "&Modifier"
+
+#~ msgid "&Add"
+#~ msgstr "&Ajouter"
+
+#~ msgid "Import LibreOffice Autocorrection"
+#~ msgstr "Importer l'autocorrection de LibreOffice"
+
+#~ msgid "Import KMail Autocorrection"
+#~ msgstr "Importer l'autocorrection de KMail"
+
+#~ msgid ""
+#~ "Language was changed, do you want to save config for previous language?"
+#~ msgstr ""
+#~ "La langue a été modifiée. Voulez-vous enregistrer la configuration de la "
+#~ "langue précédente ?"
+
+#~ msgid "Save config"
+#~ msgstr "Enregistrer la configuration"
+
+#~ msgid "Export Autocorrection File"
+#~ msgstr "Exporter le fichier d'autocorrection"
+
+#~ msgid "Archive cannot be opened in read mode."
+#~ msgstr "L'archive ne peut être ouverte en lecture."
+
+#~ msgid "Import LibreOffice Autocorrection File"
+#~ msgstr "Importer un fichier d'autocorrection de LibreOffice"
+
+#~ msgid "Enable autocorrection"
+#~ msgstr "Activer l'autocorrection"
+
+#~ msgid "Replacement and exception for language:"
+#~ msgstr "Exception et langue de remplacement :"
+
+#~ msgid "Si&mple Autocorrection"
+#~ msgstr "Autocorrection si&mple"
+
+#~ msgid ""
+#~ "Detect when a new sentence is started and always ensure that the first "
+#~ "character is an uppercase character"
+#~ msgstr ""
+#~ "Détecte si on commence une nouvelle phrase et s'assure toujours que son "
+#~ "premier caractère est une majuscule"
+
+#~ msgid ""
+#~ "Convert &first letter of a sentence automatically to uppercase\n"
+#~ "(e.g. \"my house. in this town\" to \"my house. In this town\")"
+#~ msgstr ""
+#~ "Convertir automatiquement la &première lettre d'une phrase en une "
+#~ "majuscule\n"
+#~ "(par ex. « ma souris. dans cette ville » en « ma souris. Dans cette "
+#~ "ville »)"
+
+#~ msgid ""
+#~ "All words are checked for the common mistake of holding the shift key "
+#~ "down a bit too long. If some words must have two uppercase characters, "
+#~ "then those exceptions should be added in the 'Exceptions' tab."
+#~ msgstr ""
+#~ "Tous les mots sont vérifiés pour une faute commune provoqué par le "
+#~ "maintien de la touche majuscule un peut trop long. Si certains mots "
+#~ "doivent commencer par deux majuscules, ces exceptions devraient être "
+#~ "ajoutées dans l'onglet « Exceptions »."
+
+#~ msgid ""
+#~ "Convert &two uppercase characters to one uppercase and one lowercase "
+#~ "character\n"
+#~ " (e.g. PErfect to Perfect)"
+#~ msgstr ""
+#~ "Convertir &deux caractères en majuscule en un caractère en majuscule puis "
+#~ "un autre en minuscule\n"
+#~ " (par ex. « BIentôt » en « Bientôt »)"
+
+#~ msgid ""
+#~ "Make sure that more than one space cannot be typed, as this is a common "
+#~ "mistake which is quite hard to find in formatted text."
+#~ msgstr ""
+#~ "S'assure qu'il n'y a jamais plus d'un espace, puisqu'il s'agit d'une "
+#~ "faute commune qui est particulièrement difficile à trouver dans les "
+#~ "textes formatés."
+
+#~ msgid "&Suppress double spaces"
+#~ msgstr "&Supprimer les espaces doubles"
+
+#~ msgid "Most standard fraction notations will be converted when available"
+#~ msgstr ""
+#~ "Les notations fractionnelles les plus fréquentes seront converties quand "
+#~ "cela sera possible"
+
+#~ msgid "Re&place 1/2... with ½..."
+#~ msgstr "Rem&placer 1/2 par ½..."
+
+#~ msgid "Capitalize name of days"
+#~ msgstr "Capitaliser le nom des jours"
+
+#~ msgid ""
+#~ "Detect when a URL (Uniform Resource Locator) is typed and provide "
+#~ "formatting that matches the way an Internet browser would show a URL."
+#~ msgstr ""
+#~ "Détecte la saisie d'une URL (Localisateur de Ressource Uniforme) et "
+#~ "fourni et formatage qui correspond à la manière dont les navigateurs "
+#~ "internet affichent une URL."
+
+#~ msgid "Autoformat &URLs (HTML mode)"
+#~ msgstr "Formatage automatique des URL (mode HTML)"
+
+#~ msgid ""
+#~ "When you use _underline_ or *bold*, the text between the underscores or "
+#~ "asterisks will be converted to underlined or bold text."
+#~ msgstr ""
+#~ "Quand vous saisissez _souligner_ ou *gras*, le texte entre tirets bas ou "
+#~ "entre astérisques sera automatiquement converti en texte souligné ou gras."
+
+#~ msgid ""
+#~ "Automatically do &bold, strikeout and underline formatting (HTML mode)"
+#~ msgstr "Formatage gras, &barré et souligné automatique (mode HTML)"
+
+#~ msgid "Replace 1st... with 1^st... (HTML mode)"
+#~ msgstr "Remplacer 1er... avec 1^er... (HTML mode)"
+
+#~ msgid "Custom &Quotes"
+#~ msgstr "Guillemets personnalisés"
+
+#~ msgid "Replace &single quotes with typographical quotes"
+#~ msgstr "Remplacer les guillemets simples en guillemets typographiques"
+
+#~ msgid "Replace &double quotes with typographical quotes"
+#~ msgstr "Remplacer les guillemets doubles en guillemets typographiques"
+
+#~ msgid "Default"
+#~ msgstr "Par défaut"
+
+#~ msgid ""
+#~ "Add non breaking space before specific punctuation marks in french text"
+#~ msgstr ""
+#~ "Ajouter des espaces insécables avant chaque ponctuation spécifique à la "
+#~ "langue française"
+
+#~ msgid "Ad&vanced Autocorrection"
+#~ msgstr "Autocorrection a&vancée"
+
+#~ msgid "&Enable word replacement"
+#~ msgstr "Activ&er le remplacement de mot"
+
+#~ msgid "&Find"
+#~ msgstr "&Rechercher"
+
+#~ msgid "Re&place"
+#~ msgstr "Rem&placer"
+
+#~ msgid "Find"
+#~ msgstr "Chercher"
+
+#~ msgid "Replace"
+#~ msgstr "Remplacer"
+
+#~ msgid "E&xceptions"
+#~ msgstr "E&xceptions"
+
+#~ msgid "Do not treat as the end of a sentence:"
+#~ msgstr "Ne pas considérer comme fin de phrase :"
+
+#~ msgid "R&emove"
+#~ msgstr "&Effacer"
+
+#~ msgid "Accept two uppercase letters in:"
+#~ msgstr "Autoriser deux lettres majuscules avec :"
+
+#~ msgid "A&dd"
+#~ msgstr "A&jouter"
+
+#~ msgid "Export..."
+#~ msgstr "Exporter..."
+
+#~ msgid "Import..."
+#~ msgstr "Importer..."
+
+#~ msgid "Enabled Auto Resize Image"
+#~ msgstr "Redimensionnement automatique des images activé"
+
+#, fuzzy
+#~| msgid "Lose Characters"
+#~ msgid "Select Special Characters"
+#~ msgstr "Perdre des caractères"
+
+#, fuzzy
+#~| msgid "Could not open file."
+#~ msgid "Do not filter"
+#~ msgstr "Impossible d'ouvrir le fichier."
+
+#~ msgid "&Cancel"
+#~ msgstr "&Annuler"
+
+#, fuzzy
+#~ msgid "No default collection for %1"
+#~ msgstr "Pas de collection par défaut pour %1"
+
+#~ msgid "No charsets were available for encoding."
+#~ msgstr "Aucun jeu de caractère n'est disponible pour l'encodage."
+
+#~ msgid "Expanding email addresses in message failed: %1"
+#~ msgstr ""
+#~ "L'expansion des adresses de messagerie dans le message a échoué : %1"

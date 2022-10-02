@@ -1,0 +1,6064 @@
+# UTF-8 test:äëïöü
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail 3_3_branch\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"PO-Revision-Date: 2004-11-10 16:33+0200\n"
+"Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
+"Language-Team: AFRIKAANS <AF@lia.org.za>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: core/aggregation.cpp:178
+#, fuzzy, kde-format
+msgctxt "No grouping of messages"
+msgid "None"
+msgstr "Klaar"
+
+#: core/aggregation.cpp:179
+#, kde-format
+msgid "By Exact Date (of Thread Leaders)"
+msgstr ""
+
+#: core/aggregation.cpp:180
+#, kde-format
+msgid "By Smart Date Ranges (of Thread Leaders)"
+msgstr ""
+
+#: core/aggregation.cpp:181 core/sortorder.cpp:70
+#, fuzzy, kde-format
+#| msgid "Sender/Receiver"
+msgid "By Smart Sender/Receiver"
+msgstr "Stuurder/Ontvanger"
+
+#: core/aggregation.cpp:182 core/sortorder.cpp:68
+#, fuzzy, kde-format
+#| msgid "Sender"
+msgid "By Sender"
+msgstr "Stuurder"
+
+#: core/aggregation.cpp:183 core/sortorder.cpp:69
+#, fuzzy, kde-format
+#| msgid "Receiver"
+msgid "By Receiver"
+msgstr "Ontvanger"
+
+#: core/aggregation.cpp:192
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "&Expand Thread"
+msgid "Never Expand Groups"
+msgstr "Vou gesprekslyn uit"
+
+#: core/aggregation.cpp:194
+#, fuzzy, kde-format
+#| msgid "Expand the current thread"
+msgid "Expand Recent Groups"
+msgstr "Vou die huidige gesprekslyn uit"
+
+#: core/aggregation.cpp:196
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "&Expand Thread"
+msgid "Always Expand Groups"
+msgstr "Vou gesprekslyn uit"
+
+#: core/aggregation.cpp:202
+#, fuzzy, kde-format
+msgctxt "No threading of messages"
+msgid "None"
+msgstr "Klaar"
+
+#: core/aggregation.cpp:203
+#, kde-format
+msgid "Perfect Only"
+msgstr ""
+
+#: core/aggregation.cpp:204
+#, kde-format
+msgid "Perfect and by References"
+msgstr ""
+
+#: core/aggregation.cpp:205
+#, kde-format
+msgid "Perfect, by References and by Subject"
+msgstr ""
+
+#: core/aggregation.cpp:214
+#, fuzzy, kde-format
+msgid "Topmost Message"
+msgstr "Redigeer Boodksap"
+
+#: core/aggregation.cpp:218
+#, fuzzy, kde-format
+msgid "Most Recent Message"
+msgstr "Vee Boodskappe Uit"
+
+#: core/aggregation.cpp:228
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "&Expand Thread"
+msgid "Never Expand Threads"
+msgstr "Vou gesprekslyn uit"
+
+#: core/aggregation.cpp:229
+#, fuzzy, kde-format
+msgid "Expand Threads With Unread Messages"
+msgstr "Volgende ongeleesde boodskap"
+
+#: core/aggregation.cpp:230
+#, fuzzy, kde-format
+msgid "Expand Threads With Unread or Important Messages"
+msgstr "Volgende ongeleesde boodskap"
+
+#: core/aggregation.cpp:231
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "&Expand Thread"
+msgid "Always Expand Threads"
+msgstr "Vou gesprekslyn uit"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Interactivity"
+msgstr ""
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Speed"
+msgstr ""
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Batch Job (No Interactivity)"
+msgstr ""
+
+#: core/item.cpp:252 core/messageitem.cpp:538
+#, fuzzy, kde-format
+msgctxt "Status of an item"
+msgid "Read"
+msgstr "Ongelees"
+
+#: core/item.cpp:254 core/messageitem.cpp:538
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgctxt "Status of an item"
+msgid "Unread"
+msgstr "Ongelees"
+
+#: core/item.cpp:258
+#, fuzzy, kde-format
+msgctxt "Status of an item"
+msgid "Has Attachment"
+msgstr "Stoor Aanhangsels..."
+
+#: core/item.cpp:262
+#, fuzzy, kde-format
+#| msgid "Remove &Important Message Mark"
+msgctxt "Status of an item"
+msgid "Action Item"
+msgstr "Verwyder boodskap merk: belangrik"
+
+#: core/item.cpp:266 core/messageitem.cpp:536
+#, fuzzy, kde-format
+msgctxt "Status of an item"
+msgid "Replied"
+msgstr "Vervang"
+
+#: core/item.cpp:270
+#, fuzzy, kde-format
+msgctxt "Status of an item"
+msgid "Forwarded"
+msgstr "Stuur aan"
+
+#: core/item.cpp:274
+#, fuzzy, kde-format
+msgctxt "Status of an item"
+msgid "Sent"
+msgstr "Stuurder"
+
+#: core/item.cpp:278
+#, fuzzy, kde-format
+#| msgid "&Import Messages..."
+msgctxt "Status of an item"
+msgid "Important"
+msgstr "Voer Boodskappe In..."
+
+#: core/item.cpp:282
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Spam"
+msgctxt "Status of an item"
+msgid "Spam"
+msgstr "Spam"
+
+#: core/item.cpp:286
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Ham"
+msgctxt "Status of an item"
+msgid "Ham"
+msgstr "Ham"
+
+#: core/item.cpp:290
+#, fuzzy, kde-format
+msgctxt "Status of an item"
+msgid "Watched"
+msgstr "Hou gesprekslyn dop"
+
+#: core/item.cpp:294
+#, fuzzy, kde-format
+msgctxt "Status of an item"
+msgid "Ignored"
+msgstr "Ignoreer gesprekslyn"
+
+#: core/manager.cpp:38 core/model.cpp:332
+#, fuzzy, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr "Stuur aan"
+
+#: core/manager.cpp:206
+#, kde-format
+msgid "Current Activity, Threaded"
+msgstr ""
+
+#: core/manager.cpp:207
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are threaded. So for "
+"example, in \"Today\" you will find all the messages arrived today and all "
+"the threads that have been active today."
+msgstr ""
+
+#: core/manager.cpp:219
+#, kde-format
+msgid "Current Activity, Flat"
+msgstr ""
+
+#: core/manager.cpp:220
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are not threaded. So for "
+"example, in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+
+#: core/manager.cpp:231
+#, kde-format
+msgid "Activity by Date, Threaded"
+msgstr ""
+
+#: core/manager.cpp:232
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are threaded. So for example, in "
+"\"Today\" you will find all the messages arrived today and all the threads "
+"that have been active today."
+msgstr ""
+
+#: core/manager.cpp:244
+#, kde-format
+msgid "Activity by Date, Flat"
+msgstr ""
+
+#: core/manager.cpp:245
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are not threaded. So for example, "
+"in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+
+#: core/manager.cpp:256
+#, kde-format
+msgid "Standard Mailing List"
+msgstr ""
+
+#: core/manager.cpp:257
+#, kde-format
+msgid ""
+"This is a plain and old mailing list view: no groups and heavy threading."
+msgstr ""
+
+#: core/manager.cpp:266
+#, kde-format
+msgid "Flat Date View"
+msgstr ""
+
+#: core/manager.cpp:267
+#, kde-format
+msgid ""
+"This is a plain and old list of messages sorted by date: no groups and no "
+"threading."
+msgstr ""
+
+#: core/manager.cpp:278
+#, fuzzy, kde-format
+#| msgid "Sender/Receiver"
+msgid "Senders/Receivers, Flat"
+msgstr "Stuurder/Ontvanger"
+
+#: core/manager.cpp:279
+#, kde-format
+msgid ""
+"This view groups the messages by senders or receivers (depending on the "
+"folder type). Messages are not threaded."
+msgstr ""
+
+#: core/manager.cpp:290
+#, fuzzy, kde-format
+msgid "Thread Starters"
+msgstr "Vervang"
+
+#: core/manager.cpp:291
+#, kde-format
+msgid ""
+"This view groups the messages in threads and then groups the threads by the "
+"starting user."
+msgstr ""
+
+#: core/manager.cpp:567
+#, kde-format
+msgctxt "Default theme name"
+msgid "Classic"
+msgstr ""
+
+#: core/manager.cpp:567
+#, kde-format
+msgid "A simple, backward compatible, single row theme"
+msgstr ""
+
+#: core/manager.cpp:571
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "@title:column Subject of messages"
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: core/manager.cpp:607 core/theme.cpp:113
+#, fuzzy, kde-format
+#| msgid "Sender/Receiver"
+msgid "Sender/Receiver"
+msgstr "Stuurder/Ontvanger"
+
+#: core/manager.cpp:614
+#, fuzzy, kde-format
+#| msgid "Sender"
+msgctxt "Sender of a message"
+msgid "Sender"
+msgstr "Stuurder"
+
+#: core/manager.cpp:616
+#, fuzzy, kde-format
+#| msgid "Receiver"
+msgctxt "Receiver of a message"
+msgid "Receiver"
+msgstr "Ontvanger"
+
+#: core/manager.cpp:622
+#, fuzzy, kde-format
+#| msgid "Date"
+msgctxt "Date of a message"
+msgid "Date"
+msgstr "Datum"
+
+#: core/manager.cpp:624
+#, fuzzy, kde-format
+msgid "Most Recent Date"
+msgstr "Vee Boodskappe Uit"
+
+#: core/manager.cpp:630
+#, fuzzy, kde-format
+#| msgid "Size"
+msgctxt "Size of a message"
+msgid "Size"
+msgstr "Grootte"
+
+#: core/manager.cpp:632
+#, fuzzy, kde-format
+msgctxt "Attachment indication"
+msgid "Attachment"
+msgstr "Verwyder lêer aanhangsel"
+
+#: core/manager.cpp:638
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "Read/Unread"
+msgstr "Ongelees"
+
+#: core/manager.cpp:643
+#, fuzzy, kde-format
+msgid "Replied"
+msgstr "Vervang"
+
+#: core/manager.cpp:645
+#, fuzzy, kde-format
+#| msgid "&Import Messages..."
+msgctxt "Message importance indication"
+msgid "Important"
+msgstr "Voer Boodskappe In..."
+
+#: core/manager.cpp:651
+#, fuzzy, kde-format
+#| msgid "Remove &Important Message Mark"
+msgid "Action Item"
+msgstr "Verwyder boodskap merk: belangrik"
+
+#: core/manager.cpp:657
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Spam"
+msgid "Spam/Ham"
+msgstr "Spam"
+
+#: core/manager.cpp:663
+#, fuzzy, kde-format
+msgid "Watched/Ignored"
+msgstr "Hou gesprekslyn dop"
+
+#: core/manager.cpp:669
+#, kde-format
+msgid "Encryption"
+msgstr ""
+
+#: core/manager.cpp:675
+#, fuzzy, kde-format
+msgid "Signature"
+msgstr "Heg Handtekening Aan"
+
+#: core/manager.cpp:680
+#, fuzzy, kde-format
+msgid "Tag List"
+msgstr "Skep Filter"
+
+#: core/manager.cpp:688
+#, fuzzy, kde-format
+#| msgctxt "View->attachments->"
+#| msgid "&Smart"
+msgid "Smart"
+msgstr "Intelligent"
+
+#: core/manager.cpp:688
+#, kde-format
+msgid "A smart multiline and multi item theme"
+msgstr ""
+
+#: core/manager.cpp:692
+#, fuzzy, kde-format
+#| msgid "&Message"
+msgid "Message"
+msgstr "Boodskap"
+
+#: core/manager.cpp:776
+#, kde-format
+msgid "Smart with Clickable Status"
+msgstr ""
+
+#: core/manager.cpp:777
+#, kde-format
+msgid "A smart multiline and multi item theme with a clickable status column"
+msgstr ""
+
+#: core/manager.cpp:781 core/view.cpp:2263 core/view.cpp:2267
+#, fuzzy, kde-format
+msgid "Status"
+msgstr "Status:"
+
+#: core/model.cpp:330
+#, fuzzy, kde-format
+msgid "Today"
+msgstr "Aan: "
+
+#: core/model.cpp:331
+#, kde-format
+msgid "Yesterday"
+msgstr ""
+
+#: core/model.cpp:333
+#, kde-format
+msgid "Last Week"
+msgstr ""
+
+#: core/model.cpp:334
+#, kde-format
+msgid "Two Weeks Ago"
+msgstr ""
+
+#: core/model.cpp:335
+#, kde-format
+msgid "Three Weeks Ago"
+msgstr ""
+
+#: core/model.cpp:336
+#, kde-format
+msgid "Four Weeks Ago"
+msgstr ""
+
+#: core/model.cpp:337
+#, kde-format
+msgid "Five Weeks Ago"
+msgstr ""
+
+#: core/model.cpp:550 utils/themeeditor.cpp:185
+#, fuzzy, kde-format
+#| msgid "Receiver"
+msgid "Receiver"
+msgstr "Ontvanger"
+
+#: core/model.cpp:552 utils/themeeditor.cpp:184
+#, kde-format
+msgid "Sender"
+msgstr "Stuurder"
+
+#: core/model.cpp:1367
+#, fuzzy, kde-format
+#| msgid "Mail"
+msgctxt "Message Aggregation Group Header: Month name and Year number"
+msgid "%1 %2"
+msgstr "Pos"
+
+#: core/model.cpp:3787
+#, fuzzy, kde-format
+msgid "Processed 1 Message of %2"
+msgid_plural "Processed %1 Messages of %2"
+msgstr[0] "Gesprekslyn boodskappe"
+msgstr[1] "Gesprekslyn boodskappe"
+
+#: core/model.cpp:3793 core/model.cpp:3799
+#, fuzzy, kde-format
+msgid "Threaded 1 Message of %2"
+msgid_plural "Threaded %1 Messages of %2"
+msgstr[0] "Gesprekslyn boodskappe"
+msgstr[1] "Gesprekslyn boodskappe"
+
+#: core/model.cpp:3805
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "&Expand Thread"
+msgid "Grouped 1 Thread of %2"
+msgid_plural "Grouped %1 Threads of %2"
+msgstr[0] "Vou gesprekslyn uit"
+msgstr[1] "Vou gesprekslyn uit"
+
+#: core/model.cpp:3811
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "&Expand Thread"
+msgid "Updated 1 Group of %2"
+msgid_plural "Updated %1 Groups of %2"
+msgstr[0] "Vou gesprekslyn uit"
+msgstr[1] "Vou gesprekslyn uit"
+
+#: core/model.cpp:3903
+#, fuzzy, kde-format
+msgctxt "@info:status Finished view fill"
+msgid "Ready"
+msgstr "Ongelees"
+
+#. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:11
+#, fuzzy, kde-format
+#| msgid "Choose display style of message headers"
+msgid "Display tooltips for messages and group headers"
+msgstr "Kies vertoon styl van boodskap opskrifte"
+
+#. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:12
+#, kde-format
+msgid ""
+"Enable this option to display tooltips when hovering over an item in the "
+"message list."
+msgstr ""
+
+#: core/sortorder.cpp:63 core/sortorder.cpp:107
+#, kde-format
+msgid "None (Storage Order)"
+msgstr ""
+
+#: core/sortorder.cpp:64
+#, kde-format
+msgid "By Date/Time"
+msgstr ""
+
+#: core/sortorder.cpp:66
+#, kde-format
+msgid "By Date/Time of Most Recent in Subtree"
+msgstr ""
+
+#: core/sortorder.cpp:71
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgid "By Subject"
+msgstr "Onderwerp"
+
+#: core/sortorder.cpp:72
+#, fuzzy, kde-format
+#| msgid "Size"
+msgid "By Size"
+msgstr "Grootte"
+
+#: core/sortorder.cpp:73
+#, fuzzy, kde-format
+#| msgid "Remove &Important Message Mark"
+msgid "By Action Item Status"
+msgstr "Verwyder boodskap merk: belangrik"
+
+#: core/sortorder.cpp:74
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "By Unread Status"
+msgstr "Ongelees"
+
+#: core/sortorder.cpp:75
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "By Important Status"
+msgstr "Ongelees"
+
+#: core/sortorder.cpp:76
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "By Attachment Status"
+msgstr "Ongelees"
+
+#: core/sortorder.cpp:88 core/sortorder.cpp:130
+#, fuzzy, kde-format
+msgid "Least Recent on Top"
+msgstr "Versteekte Ontvangers"
+
+#: core/sortorder.cpp:89 core/sortorder.cpp:131
+#, fuzzy, kde-format
+msgid "Most Recent on Top"
+msgstr "Vee Boodskappe Uit"
+
+#: core/sortorder.cpp:93
+#, fuzzy, kde-format
+msgctxt "Sort order for messages"
+msgid "Ascending"
+msgstr "Stuurder"
+
+#: core/sortorder.cpp:94
+#, fuzzy, kde-format
+msgctxt "Sort order for messages"
+msgid "Descending"
+msgstr "Stuurder"
+
+#: core/sortorder.cpp:105
+#, kde-format
+msgid "by Date/Time"
+msgstr ""
+
+#: core/sortorder.cpp:108
+#, fuzzy, kde-format
+msgid "by Date/Time of Most Recent Message in Group"
+msgstr "Vee Boodskappe Uit"
+
+#: core/sortorder.cpp:112
+#, fuzzy, kde-format
+#| msgid "Sender/Receiver"
+msgid "by Sender/Receiver"
+msgstr "Stuurder/Ontvanger"
+
+#: core/sortorder.cpp:114
+#, fuzzy, kde-format
+#| msgid "Sender"
+msgid "by Sender"
+msgstr "Stuurder"
+
+#: core/sortorder.cpp:116
+#, fuzzy, kde-format
+#| msgid "Receiver"
+msgid "by Receiver"
+msgstr "Ontvanger"
+
+#: core/sortorder.cpp:134
+#, fuzzy, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Ascending"
+msgstr "Stuurder"
+
+#: core/sortorder.cpp:135
+#, fuzzy, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Descending"
+msgstr "Stuurder"
+
+#: core/theme.cpp:107
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgctxt "Description of Type Subject"
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: core/theme.cpp:110
+#, fuzzy, kde-format
+#| msgid "Date"
+msgctxt "Description of Type Date"
+msgid "Date"
+msgstr "Datum"
+
+#: core/theme.cpp:116
+#, fuzzy, kde-format
+#| msgid "Sender"
+msgctxt "Description of Type Sender"
+msgid "Sender"
+msgstr "Stuurder"
+
+#: core/theme.cpp:119
+#, fuzzy, kde-format
+#| msgid "Receiver"
+msgctxt "Description of Type Receiver"
+msgid "Receiver"
+msgstr "Ontvanger"
+
+#: core/theme.cpp:122
+#, fuzzy, kde-format
+#| msgid "Size"
+msgctxt "Description of Type Size"
+msgid "Size"
+msgstr "Grootte"
+
+#: core/theme.cpp:125
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "Unread/Read Icon"
+msgstr "Ongelees"
+
+#: core/theme.cpp:128
+#, fuzzy, kde-format
+msgid "Attachment Icon"
+msgstr "Verwyder lêer aanhangsel"
+
+#: core/theme.cpp:131
+#, kde-format
+msgid "Replied/Forwarded Icon"
+msgstr ""
+
+#: core/theme.cpp:134
+#, kde-format
+msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
+msgstr ""
+
+#: core/theme.cpp:137
+#, fuzzy, kde-format
+#| msgid "Remove &Important Message Mark"
+msgid "Action Item Icon"
+msgstr "Verwyder boodskap merk: belangrik"
+
+#: core/theme.cpp:140
+#, fuzzy, kde-format
+#| msgid "&Import Messages..."
+msgid "Important Icon"
+msgstr "Voer Boodskappe In..."
+
+#: core/theme.cpp:143
+#, fuzzy, kde-format
+#| msgid "Remove Header"
+msgid "Group Header Label"
+msgstr "Verwyder Opskrif"
+
+#: core/theme.cpp:146
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Spam"
+msgid "Spam/Ham Icon"
+msgstr "Spam"
+
+#: core/theme.cpp:149
+#, fuzzy, kde-format
+msgid "Watched/Ignored Icon"
+msgstr "Hou gesprekslyn dop"
+
+#: core/theme.cpp:152
+#, kde-format
+msgid "Group Header Expand/Collapse Icon"
+msgstr ""
+
+#: core/theme.cpp:155
+#, fuzzy, kde-format
+#| msgid "Remove &Important Message Mark"
+msgid "Encryption State Icon"
+msgstr "Verwyder boodskap merk: belangrik"
+
+#: core/theme.cpp:158
+#, fuzzy, kde-format
+msgid "Signature State Icon"
+msgstr "Heg Handtekening Aan"
+
+#: core/theme.cpp:161
+#, kde-format
+msgid "Vertical Separation Line"
+msgstr ""
+
+#: core/theme.cpp:164
+#, kde-format
+msgid "Horizontal Spacer"
+msgstr ""
+
+#: core/theme.cpp:167
+#, fuzzy, kde-format
+#| msgid "Date"
+msgid "Max Date"
+msgstr "Datum"
+
+#: core/theme.cpp:170
+#, fuzzy, kde-format
+#| msgid "&Message"
+msgid "Message Tags"
+msgstr "Boodskap"
+
+#: core/theme.cpp:173
+#, fuzzy, kde-format
+#| msgid "Remove &Important Message Mark"
+msgid "Note Icon"
+msgstr "Verwyder boodskap merk: belangrik"
+
+#: core/theme.cpp:175
+#, fuzzy, kde-format
+#| msgid "&Import Messages..."
+msgid "Invitation Icon"
+msgstr "Voer Boodskappe In..."
+
+#: core/theme.cpp:177
+#, fuzzy, kde-format
+#| msgid "Folder"
+msgctxt "Description of Type Folder"
+msgid "Folder"
+msgstr "Gids"
+
+#: core/theme.cpp:179
+#, fuzzy, kde-format
+msgctxt "Description for an Unknown Type"
+msgid "Unknown"
+msgstr "Stuur aan"
+
+#: core/theme.cpp:853
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "Unread"
+msgstr "Ongelees"
+
+#: core/theme.cpp:1047
+#, fuzzy, kde-format
+#| msgid "Receiver"
+msgid "Never Show"
+msgstr "Ontvanger"
+
+#: core/theme.cpp:1047
+#, kde-format
+msgid "Always Show"
+msgstr ""
+
+#: core/theme.cpp:1052
+#, kde-format
+msgid "Plain Rectangles"
+msgstr ""
+
+#: core/theme.cpp:1053
+#, kde-format
+msgid "Plain Joined Rectangle"
+msgstr ""
+
+#: core/theme.cpp:1054
+#, kde-format
+msgid "Rounded Rectangles"
+msgstr ""
+
+#: core/theme.cpp:1055
+#, kde-format
+msgid "Rounded Joined Rectangle"
+msgstr ""
+
+#: core/theme.cpp:1056
+#, kde-format
+msgid "Gradient Rectangles"
+msgstr ""
+
+#: core/theme.cpp:1057
+#, kde-format
+msgid "Gradient Joined Rectangle"
+msgstr ""
+
+#: core/theme.cpp:1058
+#, kde-format
+msgid "Styled Rectangles"
+msgstr ""
+
+#: core/theme.cpp:1059
+#, kde-format
+msgid "Styled Joined Rectangles"
+msgstr ""
+
+#: core/view.cpp:682
+#, kde-format
+msgid "No result found"
+msgstr ""
+
+#: core/view.cpp:766
+#, kde-format
+msgid "Adjust Column Sizes"
+msgstr ""
+
+#: core/view.cpp:770
+#, fuzzy, kde-format
+#| msgctxt "EMAIL OF TRANSLATORS"
+#| msgid "Your emails"
+msgid "Show Default Columns"
+msgstr "frix@expertron.co.za"
+
+#: core/view.cpp:775
+#, fuzzy, kde-format
+msgid "Display Tooltips"
+msgstr "Aan"
+
+#: core/view.cpp:2244 core/view.cpp:2248 core/widgets/searchlinestatus.cpp:324
+#, fuzzy, kde-format
+#| msgid "From: "
+msgid "From"
+msgstr "Vanaf: "
+
+#: core/view.cpp:2245 core/view.cpp:2249
+#, fuzzy, kde-format
+msgctxt "Receiver of the email"
+msgid "To"
+msgstr "Aan"
+
+#: core/view.cpp:2246 core/view.cpp:2250
+#, kde-format
+msgid "Date"
+msgstr "Datum"
+
+#: core/view.cpp:2264 core/view.cpp:2268
+#, kde-format
+msgid "Size"
+msgstr "Grootte"
+
+#: core/view.cpp:2265 core/view.cpp:2269 utils/themeeditor.cpp:187
+#, kde-format
+msgid "Folder"
+msgstr "Gids"
+
+#: core/view.cpp:2274 core/view.cpp:2276
+#, fuzzy, kde-format
+#| msgid "Notes"
+msgid "Note"
+msgstr "Notas"
+
+#: core/view.cpp:2283 core/view.cpp:2285
+#, fuzzy, kde-format
+#| msgid "&Previous Message"
+msgid "Preview"
+msgstr "Volgende boodskap"
+
+#: core/view.cpp:2302
+#, kde-format
+msgid "<b>%1</b> reply"
+msgid_plural "<b>%1</b> replies"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/view.cpp:2305
+#, kde-format
+msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/view.cpp:2342
+#, fuzzy, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
+msgid "Threads started on %1"
+msgstr "Gesprekslyn boodskappe"
+
+#: core/view.cpp:2344
+#, fuzzy, kde-format
+msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
+msgid "Threads started %1"
+msgstr "Gesprekslyn boodskappe"
+
+#: core/view.cpp:2348
+#, fuzzy, kde-format
+msgid "Threads with messages dated %1"
+msgstr "Gesprekslyn boodskappe"
+
+#: core/view.cpp:2358
+#, fuzzy, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
+msgid "Messages sent on %1"
+msgstr "Boodskap"
+
+#: core/view.cpp:2361
+#, fuzzy, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
+msgid "Messages received on %1"
+msgstr "Boodskap"
+
+#: core/view.cpp:2365
+#, fuzzy, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
+msgid "Messages sent %1"
+msgstr "Boodskap"
+
+#: core/view.cpp:2367
+#, fuzzy, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
+msgid "Messages received %1"
+msgstr "Boodskap"
+
+#: core/view.cpp:2376
+#, kde-format
+msgid "Threads started within %1"
+msgstr ""
+
+#: core/view.cpp:2379
+#, fuzzy, kde-format
+msgid "Threads containing messages with dates within %1"
+msgstr "Gesprekslyn boodskappe"
+
+#: core/view.cpp:2387
+#, fuzzy, kde-format
+msgid "Messages sent within %1"
+msgstr "Boodskap"
+
+#: core/view.cpp:2389
+#, fuzzy, kde-format
+msgid "Messages received within %1"
+msgstr "Boodskap"
+
+#: core/view.cpp:2398
+#, fuzzy, kde-format
+msgid "Threads started by %1"
+msgstr "Gesprekslyn boodskappe"
+
+#: core/view.cpp:2401
+#, fuzzy, kde-format
+msgid "Threads with most recent message by %1"
+msgstr "Gesprekslyn boodskappe"
+
+#: core/view.cpp:2410 core/view.cpp:2434
+#, fuzzy, kde-format
+msgid "Messages sent to %1"
+msgstr "Boodskap"
+
+#: core/view.cpp:2412
+#, fuzzy, kde-format
+msgid "Messages sent by %1"
+msgstr "Boodskap"
+
+#: core/view.cpp:2415
+#, fuzzy, kde-format
+msgid "Messages received from %1"
+msgstr "Boodskap"
+
+#: core/view.cpp:2423
+#, fuzzy, kde-format
+msgid "Threads directed to %1"
+msgstr "Gesprekslyn boodskappe"
+
+#: core/view.cpp:2426
+#, fuzzy, kde-format
+msgid "Threads with most recent message directed to %1"
+msgstr "Gesprekslyn boodskappe"
+
+#: core/view.cpp:2436
+#, fuzzy, kde-format
+#| msgid "Messages moved successfully"
+msgid "Messages received by %1"
+msgstr "Boodskappe suksesvol geskuif"
+
+#: core/view.cpp:2462
+#, kde-format
+msgid "<b>%1</b> thread"
+msgid_plural "<b>%1</b> threads"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/view.cpp:2467
+#, kde-format
+msgid "<b>%1</b> message (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/widgetbase.cpp:186
+#, kde-format
+msgid "Any filter defined."
+msgstr ""
+
+#: core/widgetbase.cpp:186
+#, fuzzy, kde-format
+#| msgid "&Create Filter"
+msgid "Create Filter"
+msgstr "Skep Filter"
+
+#: core/widgetbase.cpp:408 messagelistutil.cpp:114
+#, kde-format
+msgid "Theme"
+msgstr ""
+
+#: core/widgetbase.cpp:429 core/widgetbase.cpp:519
+#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
+#: utils/themeconfigbutton.cpp:46
+#, fuzzy, kde-format
+msgid "Configure..."
+msgstr "Stel KMail op..."
+
+#: core/widgetbase.cpp:498 messagelistutil.cpp:109
+#, kde-format
+msgid "Aggregation"
+msgstr ""
+
+#: core/widgetbase.cpp:581
+#, fuzzy, kde-format
+#| msgid "Message Body"
+msgid "Message Sort Order"
+msgstr "Boodskap Lyf"
+
+#: core/widgetbase.cpp:603
+#, fuzzy, kde-format
+msgid "Message Sort Direction"
+msgstr "Boodskap"
+
+#: core/widgetbase.cpp:620
+#, fuzzy, kde-format
+#| msgid "Delete Folder"
+msgid "Group Sort Order"
+msgstr "Vee Gids uit"
+
+#: core/widgetbase.cpp:637
+#, fuzzy, kde-format
+msgid "Group Sort Direction"
+msgstr "Boodskap"
+
+#: core/widgetbase.cpp:652
+#, kde-format
+msgid "Folder Always Uses This Sort Order"
+msgstr ""
+
+#: core/widgets/configurefiltersdialog.cpp:24
+#, fuzzy, kde-format
+#| msgid "Configure &Filters..."
+msgctxt "@title:window"
+msgid "Configure Filter"
+msgstr "Stel Filters op..."
+
+#: core/widgets/configurefilterswidget.cpp:78
+#, fuzzy, kde-format
+msgid "Remove"
+msgstr "Verwyder Opskrif"
+
+#: core/widgets/configurefilterswidget.cpp:81
+#, kde-format
+msgid "Do you want to delete this filter?"
+msgstr ""
+
+#: core/widgets/configurefilterswidget.cpp:82
+#, fuzzy, kde-format
+msgid "Remove Filter"
+msgstr "Skep Filter"
+
+#: core/widgets/filternamedialog.cpp:19
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Edit Filter"
+msgstr "Skep Filter"
+
+#: core/widgets/filternamewidget.cpp:31
+#, fuzzy, kde-format
+msgid "Name:"
+msgstr "Vee boodskappe uit"
+
+#: core/widgets/filtersavedmenu.cpp:16
+#, fuzzy, kde-format
+msgid "Save Filter..."
+msgstr "Skep Filter"
+
+#: core/widgets/quicksearchline.cpp:40
+#, fuzzy, kde-format
+msgctxt "Search for messages."
+msgid "Search"
+msgstr "Soek:"
+
+#: core/widgets/quicksearchwarning.cpp:20
+#, kde-format
+msgid "The words less than 3 letters are ignored."
+msgstr ""
+
+#: core/widgets/quicksearchwarning.cpp:21
+#, fuzzy, kde-format
+#| msgid "Do not show attachments in the message viewer"
+msgid "Do not show again"
+msgstr "Moet nie aanhangsels indie boodskap venster vertoon nie"
+
+#: core/widgets/searchcollectionindexingwarning.cpp:33
+#, kde-format
+msgid ""
+"Some of the search folders in this query are still being indexed or are "
+"excluded from indexing completely. The results below may be incomplete."
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:78
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Prevent the quick search field from being cleared when changing folders"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Clear the quick search field when changing folders"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:101
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Toggle this button if you want to keep your quick search locked when moving "
+"to other folders or when narrowing the search by message status."
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:112
+#, fuzzy, kde-format
+#| msgid "Any Status"
+msgid "Filter Mails by Status"
+msgstr "Enige status"
+
+#: core/widgets/searchlinestatus.cpp:116
+#, fuzzy, kde-format
+msgid "Saved Filter"
+msgstr "Skep Filter"
+
+#: core/widgets/searchlinestatus.cpp:215
+#, fuzzy, kde-format
+#| msgid "&Create Filter"
+msgid "Clear Filter"
+msgstr "Skep Filter"
+
+#: core/widgets/searchlinestatus.cpp:221
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "Ongelees"
+
+#: core/widgets/searchlinestatus.cpp:225
+#, fuzzy, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "Vervang"
+
+#: core/widgets/searchlinestatus.cpp:229
+#, fuzzy, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr "Stuur aan"
+
+#: core/widgets/searchlinestatus.cpp:233
+#, fuzzy, kde-format
+#| msgid "&Import Messages..."
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr "Voer Boodskappe In..."
+
+#: core/widgets/searchlinestatus.cpp:237
+#, fuzzy, kde-format
+#| msgid "Remove &Important Message Mark"
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr "Verwyder boodskap merk: belangrik"
+
+#: core/widgets/searchlinestatus.cpp:241
+#, fuzzy, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr "Hou gesprekslyn dop"
+
+#: core/widgets/searchlinestatus.cpp:245
+#, fuzzy, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr "Ignoreer gesprekslyn"
+
+#: core/widgets/searchlinestatus.cpp:249
+#, fuzzy, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr "Stoor Aanhangsels..."
+
+#: core/widgets/searchlinestatus.cpp:253
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:257
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Spam"
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr "Spam"
+
+#: core/widgets/searchlinestatus.cpp:261
+#, fuzzy, kde-format
+#| msgctxt "msg status"
+#| msgid "Ham"
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr "Ham"
+
+#: core/widgets/searchlinestatus.cpp:271
+#, fuzzy, kde-format
+msgid "Full Message"
+msgstr "1 boodskap, %2"
+
+#: core/widgets/searchlinestatus.cpp:278
+#, kde-format
+msgid "Body"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:283
+#, fuzzy, kde-format
+#| msgid "Subject"
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: core/widgets/searchlinestatus.cpp:294
+#, fuzzy, kde-format
+msgid "BCC"
+msgstr "BCC"
+
+#: core/widgets/searchlinestatus.cpp:322
+#, fuzzy, kde-format
+msgid "To"
+msgstr "Aan"
+
+#: core/widgets/searchlinestatus.cpp:404
+#, fuzzy, kde-format
+#| msgid "&Create Filter"
+msgid "Clear History"
+msgstr "Skep Filter"
+
+#: core/widgets/tablockedwarning.cpp:17
+#, kde-format
+msgid "Current Tab is locked."
+msgstr ""
+
+#: core/widgets/tablockedwarning.cpp:17
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "(Unlock it)"
+msgstr "Vou alle gesprekslyne in"
+
+#: messagelistutil.cpp:104
+#, fuzzy, kde-format
+#| msgid "Subscription..."
+msgid "Sorting"
+msgstr "Intekening..."
+
+#: pane.cpp:123
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open a new tab"
+msgstr ""
+
+#: pane.cpp:125
+#, kde-format
+msgid "New tab"
+msgstr ""
+
+#: pane.cpp:135
+#, fuzzy, kde-format
+#| msgid "Collapse the current thread"
+msgctxt "@info:tooltip"
+msgid "Close the current tab"
+msgstr "Vou die huidige gesprekslyn in"
+
+#: pane.cpp:137
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Close tab"
+msgstr "Vou alle gesprekslyne in"
+
+#: pane.cpp:179
+#, kde-format
+msgid "Activate Tab %1"
+msgstr ""
+
+#: pane.cpp:199
+#, fuzzy, kde-format
+#| msgid "Show Quick Search"
+msgid "Show Quick Search Bar"
+msgstr "Vertoon Vinnige Soek"
+
+#: pane.cpp:220
+#, fuzzy, kde-format
+msgid "Message List"
+msgstr "Boodskap"
+
+#: pane.cpp:226
+#, fuzzy, kde-format
+msgid "Create New Tab"
+msgstr "Redigeer Identiteit"
+
+#: pane.cpp:257
+#, kde-format
+msgid "Activate Next Tab"
+msgstr ""
+
+#: pane.cpp:267
+#, kde-format
+msgid "Activate Previous Tab"
+msgstr ""
+
+#: pane.cpp:279
+#, kde-format
+msgid "Move Tab Left"
+msgstr ""
+
+#: pane.cpp:287
+#, kde-format
+msgid "Move Tab Right"
+msgstr ""
+
+#: pane.cpp:297
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Close Tab"
+msgstr "Vou alle gesprekslyne in"
+
+#: pane.cpp:517 pane.cpp:798
+#, fuzzy, kde-format
+msgctxt "@title:tab Empty messagelist"
+msgid "Empty"
+msgstr "Leeg"
+
+#: pane.cpp:702
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close Tab"
+msgstr ""
+
+#: pane.cpp:705
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgctxt "@action:inmenu"
+msgid "Close All Other Tabs"
+msgstr "Vou alle gesprekslyne in"
+
+#: pane.cpp:708
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgctxt "@action:inmenu"
+msgid "Unlock Tab"
+msgstr "Vou alle gesprekslyne in"
+
+#: pane.cpp:708
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Lock Tab"
+msgstr ""
+
+#: storagemodel.cpp:219
+#, fuzzy, kde-format
+#| msgid "No Subject"
+msgctxt "displayed as subject when the subject of a mail is empty"
+msgid "No Subject"
+msgstr "Geen onderwerp"
+
+#: storagemodel.cpp:220
+#, fuzzy, kde-format
+#| msgid "Unknown"
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: utils/aggregationeditor.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "&Expand Thread"
+msgid "Groups && Threading"
+msgstr "Vou gesprekslyn uit"
+
+#: utils/aggregationeditor.cpp:35
+#, kde-format
+msgid "Grouping:"
+msgstr ""
+
+#: utils/aggregationeditor.cpp:41
+#, kde-format
+msgid "Group expand policy:"
+msgstr ""
+
+#: utils/aggregationeditor.cpp:45
+#, fuzzy, kde-format
+msgid "Threading:"
+msgstr "Ongelees"
+
+#: utils/aggregationeditor.cpp:51
+#, fuzzy, kde-format
+msgid "Thread leader:"
+msgstr "Vervang"
+
+#: utils/aggregationeditor.cpp:55
+#, fuzzy, kde-format
+msgid "Thread expand policy:"
+msgstr "Vervang"
+
+#: utils/aggregationeditor.cpp:64
+#, fuzzy, kde-format
+msgctxt "@title:tab Advanced settings tab for aggregation mode"
+msgid "Advanced"
+msgstr "Kaneleer"
+
+#: utils/aggregationeditor.cpp:68
+#, kde-format
+msgid "Fill view strategy:"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Customize Message Aggregation Modes"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:118
+#: utils/configureaggregationsdialog.cpp:357
+#, fuzzy, kde-format
+msgid "New Aggregation"
+msgstr "Vee Uit"
+
+#: utils/configureaggregationsdialog.cpp:126
+#, fuzzy, kde-format
+msgid "Clone Aggregation"
+msgstr "Vee Uit"
+
+#: utils/configureaggregationsdialog.cpp:139
+#, fuzzy, kde-format
+msgid "Export Aggregation..."
+msgstr "Vee Uit"
+
+#: utils/configureaggregationsdialog.cpp:146
+#, fuzzy, kde-format
+msgid "Import Aggregation..."
+msgstr "Vee Uit"
+
+#: utils/configureaggregationsdialog.cpp:157
+#, fuzzy, kde-format
+msgid "Delete Aggregation"
+msgstr "Vee Uit"
+
+#: utils/configureaggregationsdialog.cpp:340
+#, fuzzy, kde-format
+msgid "Unnamed Aggregation"
+msgstr "Vee Uit"
+
+#: utils/configureaggregationsdialog.cpp:409
+#, fuzzy, kde-format
+msgid "Import Aggregation"
+msgstr "Vee Uit"
+
+#: utils/configureaggregationsdialog.cpp:442
+#, fuzzy, kde-format
+msgid "Export Aggregation"
+msgstr "Vee Uit"
+
+#: utils/configureaggregationsdialog.cpp:442
+#: utils/configurethemesdialog.cpp:465
+#, fuzzy, kde-format
+#| msgid "&All Fields"
+msgid "All Files (*)"
+msgstr "Alle Velde"
+
+#: utils/configurethemesdialog.cpp:96
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Customize Themes"
+msgstr "Vervang"
+
+#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#, fuzzy, kde-format
+#| msgid "New Message"
+msgid "New Theme"
+msgstr "Nuwe boodskap"
+
+#: utils/configurethemesdialog.cpp:122
+#, fuzzy, kde-format
+#| msgid "New Message"
+msgid "Clone Theme"
+msgstr "Nuwe boodskap"
+
+#: utils/configurethemesdialog.cpp:135
+#, fuzzy, kde-format
+#| msgid "&Expire"
+msgid "Export Theme..."
+msgstr "Verstryk"
+
+#: utils/configurethemesdialog.cpp:142
+#, fuzzy, kde-format
+#| msgid "&Import Messages..."
+msgid "Import Theme..."
+msgstr "Voer Boodskappe In..."
+
+#: utils/configurethemesdialog.cpp:153
+#, fuzzy, kde-format
+msgid "Delete Theme"
+msgstr "Vee Uit"
+
+#: utils/configurethemesdialog.cpp:332
+#, fuzzy, kde-format
+#| msgid "Unnamed"
+msgid "Unnamed Theme"
+msgstr "Onbenoem"
+
+#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#, fuzzy, kde-format
+#| msgid "View Columns"
+msgid "New Column"
+msgstr "Besigtig Kolomme"
+
+#: utils/configurethemesdialog.cpp:404
+#, kde-format
+msgid "Do you want to delete selected themes?"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:404
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:405
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Delete Theme"
+msgstr "Vee Uit"
+
+#: utils/configurethemesdialog.cpp:431
+#, fuzzy, kde-format
+#| msgid "&Import Messages..."
+msgid "Import Theme"
+msgstr "Voer Boodskappe In..."
+
+#: utils/configurethemesdialog.cpp:465
+#, fuzzy, kde-format
+#| msgid "&Create Filter"
+msgid "Export Theme"
+msgstr "Skep Filter"
+
+#: utils/optionseteditor.cpp:27
+#, fuzzy, kde-format
+msgctxt "@title:tab General options of a view mode"
+msgid "General"
+msgstr "Beantwoord"
+
+#: utils/optionseteditor.cpp:31
+#, fuzzy, kde-format
+msgctxt "@label:textbox Name of the option"
+msgid "Name:"
+msgstr "Vee boodskappe uit"
+
+#: utils/optionseteditor.cpp:40
+#, fuzzy, kde-format
+#| msgid "Subscription"
+msgctxt "@label:textbox Description of the option"
+msgid "Description:"
+msgstr "Intekenings"
+
+#: utils/themeeditor.cpp:69
+#, fuzzy, kde-format
+msgctxt "@label:textbox Property name"
+msgid "Name:"
+msgstr "Vee boodskappe uit"
+
+#: utils/themeeditor.cpp:73
+#, kde-format
+msgid "The label that will be displayed in the column header."
+msgstr ""
+
+#: utils/themeeditor.cpp:76
+#, fuzzy, kde-format
+#| msgid "Remove Duplicate Messages"
+msgid "Header click sorts messages:"
+msgstr "Verwyder duplikaat boodskappe"
+
+#: utils/themeeditor.cpp:80
+#, kde-format
+msgid "The sorting order that clicking on this column header will switch to."
+msgstr ""
+
+#: utils/themeeditor.cpp:83
+#, kde-format
+msgid "Visible by default"
+msgstr ""
+
+#: utils/themeeditor.cpp:84
+#, kde-format
+msgid "Check this if this column should be visible when the theme is selected."
+msgstr ""
+
+#: utils/themeeditor.cpp:87
+#, kde-format
+msgid "Contains \"Sender or Receiver\" field"
+msgstr ""
+
+#: utils/themeeditor.cpp:88
+#, kde-format
+msgid ""
+"Check this if this column label should be updated depending on the folder "
+"\"inbound\"/\"outbound\" type."
+msgstr ""
+
+#: utils/themeeditor.cpp:108
+#, fuzzy, kde-format
+#| msgid "Unnamed"
+msgid "Unnamed Column"
+msgstr "Onbenoem"
+
+#: utils/themeeditor.cpp:173
+#, fuzzy, kde-format
+#| msgid "Message Body"
+msgid "Message Group"
+msgstr "Boodskap Lyf"
+
+#: utils/themeeditor.cpp:177 utils/themeeditor.cpp:186
+#, kde-format
+msgid ""
+"Very long subject very long subject very long subject very long subject very "
+"long subject very long"
+msgstr ""
+
+#: utils/themeeditor.cpp:192
+#, fuzzy, kde-format
+msgid "Sample Tag 1"
+msgstr "Boodskap"
+
+#: utils/themeeditor.cpp:193
+#, fuzzy, kde-format
+msgid "Sample Tag 2"
+msgstr "Boodskap"
+
+#: utils/themeeditor.cpp:194
+#, fuzzy, kde-format
+msgid "Sample Tag 3"
+msgstr "Boodskap"
+
+#: utils/themeeditor.cpp:409
+#, kde-format
+msgctxt "Indicates whether or not a header label is visible"
+msgid "Visible"
+msgstr ""
+
+#: utils/themeeditor.cpp:851
+#, fuzzy, kde-format
+msgctxt "@action:inmenu soften the text color"
+msgid "Soften"
+msgstr "Stuurder"
+
+#: utils/themeeditor.cpp:858
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Bold"
+msgstr ""
+
+#: utils/themeeditor.cpp:862
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Italic"
+msgstr ""
+
+#: utils/themeeditor.cpp:869
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgid "Font"
+msgstr "Inhoud"
+
+#: utils/themeeditor.cpp:877
+#, fuzzy, kde-format
+#| msgid "Delete Folder"
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Default"
+msgstr "Vee Gids uit"
+
+#: utils/themeeditor.cpp:882
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Custom..."
+msgstr ""
+
+#: utils/themeeditor.cpp:890
+#, kde-format
+msgid "Foreground Color"
+msgstr ""
+
+#: utils/themeeditor.cpp:899
+#, fuzzy, kde-format
+#| msgctxt "View->attachments->"
+#| msgid "&Hide"
+msgctxt ""
+"Hide a mark if the mail does not have the attribute, e.g. Important mark on "
+"a non important mail"
+msgid "Hide"
+msgstr "Steek weg"
+
+#: utils/themeeditor.cpp:906
+#, kde-format
+msgctxt ""
+"Keep a empty space in the list if the mail does not have the attribute, e.g. "
+"Important mark on a non important mail"
+msgid "Keep Empty Space"
+msgstr ""
+
+#: utils/themeeditor.cpp:913
+#, kde-format
+msgctxt ""
+"Show the icon softened in the list if the mail does not have the attribute, "
+"e.g. Important mark on a non important mail"
+msgid "Keep Softened Icon"
+msgstr ""
+
+#: utils/themeeditor.cpp:921
+#, kde-format
+msgid "When Disabled"
+msgstr ""
+
+#: utils/themeeditor.cpp:927
+#, fuzzy, kde-format
+#| msgid "Remove Header"
+msgid "Group Header"
+msgstr "Verwyder Opskrif"
+
+#: utils/themeeditor.cpp:934
+#, fuzzy, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "None"
+msgstr "Klaar"
+
+#: utils/themeeditor.cpp:939
+#, fuzzy, kde-format
+#| msgid "Auto"
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Automatic"
+msgstr "Outo"
+
+#: utils/themeeditor.cpp:944
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Custom..."
+msgstr ""
+
+#: utils/themeeditor.cpp:952
+#, kde-format
+msgid "Background Color"
+msgstr ""
+
+#: utils/themeeditor.cpp:972
+#, kde-format
+msgid "Background Style"
+msgstr ""
+
+#: utils/themeeditor.cpp:1158
+#, fuzzy, kde-format
+msgid "Column Properties..."
+msgstr "Eienskappe"
+
+#: utils/themeeditor.cpp:1161
+#, fuzzy, kde-format
+#| msgid "Add Attachment..."
+msgid "Add Column..."
+msgstr "Voeg aangangesl by..."
+
+#: utils/themeeditor.cpp:1164
+#, fuzzy, kde-format
+#| msgid "Delete Folder"
+msgid "Delete Column"
+msgstr "Vee Gids uit"
+
+#: utils/themeeditor.cpp:1170
+#, kde-format
+msgid "Move Column to Left"
+msgstr ""
+
+#: utils/themeeditor.cpp:1174
+#, kde-format
+msgid "Move Column to Right"
+msgstr ""
+
+#: utils/themeeditor.cpp:1223
+#, fuzzy, kde-format
+#| msgid "View Columns"
+msgid "Add New Column"
+msgstr "Besigtig Kolomme"
+
+#: utils/themeeditor.cpp:1247
+#, fuzzy, kde-format
+msgid "Column Properties"
+msgstr "Eienskappe"
+
+#: utils/themeeditor.cpp:1289
+#, kde-format
+msgid "Appearance"
+msgstr ""
+
+#: utils/themeeditor.cpp:1293
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgid "Content Items"
+msgstr "Inhoud"
+
+#: utils/themeeditor.cpp:1425
+#, kde-format
+msgid ""
+"Right click on the header to add or modify columns. Drag the content items "
+"and drop them on the columns in order to compose your theme. Right click on "
+"the items inside the view for more options."
+msgstr ""
+
+#: utils/themeeditor.cpp:1435
+#, fuzzy, kde-format
+msgctxt "@title:tab Advanced theme settings"
+msgid "Advanced"
+msgstr "Kaneleer"
+
+#: utils/themeeditor.cpp:1439
+#, fuzzy, kde-format
+msgid "Header:"
+msgstr "Voeg Opskrif By"
+
+#: utils/themeeditor.cpp:1445
+#, fuzzy, kde-format
+#| msgid "Size"
+msgid "Icon size:"
+msgstr "Grootte"
+
+#: utils/themeeditor.cpp:1451
+#, kde-format
+msgctxt "suffix in a spinbox"
+msgid " pixel"
+msgid_plural " pixels"
+msgstr[0] ""
+msgstr[1] ""
+
+#: widget.cpp:220
+#, kde-format
+msgctxt "Item in list of Akonadi tags, to show all e-mails"
+msgid "All"
+msgstr ""
+
+#: widget.cpp:345
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse Group"
+msgstr "Vou alle gesprekslyne in"
+
+#: widget.cpp:348
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand Group"
+msgstr "Vou alle gesprekslyne uit"
+
+#: widget.cpp:354
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "Ex&pand All Threads"
+msgid "Expand All Groups"
+msgstr "Vou alle gesprekslyne uit"
+
+#: widget.cpp:357
+#, fuzzy, kde-format
+#| msgctxt "View->"
+#| msgid "C&ollapse All Threads"
+msgid "Collapse All Groups"
+msgstr "Vou alle gesprekslyne in"
+
+#: widget.cpp:413
+#, kde-format
+msgid "&Move Here"
+msgstr "Beweeg hierna"
+
+#: widget.cpp:414
+#, kde-format
+msgid "&Copy Here"
+msgstr "Kopiëer hierna"
+
+#: widget.cpp:416
+#, kde-format
+msgid "C&ancel"
+msgstr "Kaneleer"
+
+#, fuzzy
+#~ msgid "Rename..."
+#~ msgstr "Verwyder Opskrif"
+
+#, fuzzy
+#~ msgid "Rename Filter"
+#~ msgstr "Skep Filter"
+
+#, fuzzy
+#~| msgid "unnamed"
+#~ msgid "name"
+#~ msgstr "onbenoem"
+
+#, fuzzy
+#~ msgid "Filter Name"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~| msgid "A&pply Filter"
+#~ msgid "Quick Filter:"
+#~ msgstr "Wend Filters Aan"
+
+#, fuzzy
+#~ msgid "More..."
+#~ msgstr "Stel KMail op..."
+
+#, fuzzy
+#~| msgid "Delete Folder"
+#~ msgctxt "@action:inmenu Font setting"
+#~ msgid "Default"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~ msgid "Open Full Search"
+#~ msgstr "Versteekte Ontvangers"
+
+#~ msgid "Any Status"
+#~ msgstr "Enige status"
+
+#, fuzzy
+#~ msgid "Expand Threads With New Messages"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@title column attachment size."
+#~ msgid "Size"
+#~ msgstr "Grootte"
+
+#, fuzzy
+#~| msgid "Encoding"
+#~ msgctxt "@title column attachment encoding."
+#~ msgid "Encoding"
+#~ msgstr "Enkodering"
+
+#, fuzzy
+#~| msgid "Encrypt"
+#~ msgctxt "@title column attachment encryption checkbox."
+#~ msgid "Encrypt"
+#~ msgstr "Enkripteer"
+
+#, fuzzy
+#~| msgid "Sign"
+#~ msgctxt "@title column attachment signed checkbox."
+#~ msgid "Sign"
+#~ msgstr "Onderteken"
+
+#, fuzzy
+#~ msgctxt "Unit suffix where units are days."
+#~ msgid " days"
+#~ msgstr "in proses"
+
+#, fuzzy
+#~ msgid "<qt>Error while creating file <b>%1</b>:<br />%2</qt>"
+#~ msgstr "Kon nie gids skep nie"
+
+#~ msgid "Failed to create folder"
+#~ msgstr "Kon nie gids skep nie"
+
+#, fuzzy
+#~ msgctxt "@label:spinbox Set the size of the logfile to unlimited."
+#~ msgid "unlimited"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~| msgctxt "MDN type"
+#~| msgid "Failed"
+#~ msgid "Friend"
+#~ msgstr "Gevaal"
+
+#, fuzzy
+#~| msgid "Date"
+#~ msgid "Later"
+#~ msgstr "Datum"
+
+#, fuzzy
+#~| msgid "unknown"
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "onbekend"
+
+#, fuzzy
+#~ msgid "This message is encrypted."
+#~ msgstr "Merk gekose boodskappe as ongelees"
+
+#, fuzzy
+#~ msgid "Decrypt Message"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Merk gekose boodskappe as ongelees"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Unnamed"
+#~ msgctxt "display name for an unnamed attachment"
+#~ msgid "Unnamed"
+#~ msgstr "Onbenoem"
+
+#, fuzzy
+#~| msgid "Append S&ignature"
+#~ msgid "Invalid signature."
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~ msgid "Signature is valid."
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~| msgctxt "EMAIL OF TRANSLATORS"
+#~| msgid "Your emails"
+#~ msgid "Show Details"
+#~ msgstr "frix@expertron.co.za"
+
+#, fuzzy
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Merk gekose boodskappe as ongelees"
+
+#, fuzzy
+#~ msgid "certificate"
+#~ msgstr "Sertifikaat Bestuurder..."
+
+#, fuzzy
+#~ msgid "The message could not be decrypted."
+#~ msgstr "Merk gekose boodskappe as ongelees"
+
+#, fuzzy
+#~ msgid "Location:"
+#~ msgstr "Dokumentasie"
+
+#, fuzzy
+#~ msgid "Account Wizard"
+#~ msgstr "Jou naam:"
+
+#, fuzzy
+#~ msgid "E-mail address:"
+#~ msgstr "E-pos adres:"
+
+#, fuzzy
+#~ msgid "Organization:"
+#~ msgstr "Organisiasie"
+
+#, fuzzy
+#~ msgid "Account Information"
+#~ msgstr "Jou naam:"
+
+#, fuzzy
+#~ msgid "Login name:"
+#~ msgstr "Jou naam:"
+
+#, fuzzy
+#~ msgid "Choose..."
+#~ msgstr "Verander..."
+
+#, fuzzy
+#~| msgid "Unnamed"
+#~ msgctxt "Default name for new email accounts/identities."
+#~ msgid "Unnamed"
+#~ msgstr "Onbenoem"
+
+#, fuzzy
+#~| msgid "Edit Identity"
+#~ msgid "Edit with:"
+#~ msgstr "Redigeer Identiteit"
+
+#, fuzzy
+#~ msgid "Unable to edit attachment"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#, fuzzy
+#~ msgid "New Folder"
+#~ msgstr "Nuwe Gids..."
+
+#, fuzzy
+#~ msgid "New Subfolder of %1"
+#~ msgstr "Nuwe Subgids..."
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "type of folder content"
+#~ msgid "Mail"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Calendar"
+#~ msgctxt "type of folder content"
+#~ msgid "Calendar"
+#~ msgstr "Kalender"
+
+#, fuzzy
+#~| msgid "Contacts"
+#~ msgctxt "type of folder content"
+#~ msgid "Contacts"
+#~ msgstr "Inhoud"
+
+#, fuzzy
+#~| msgid "Tasks"
+#~ msgctxt "type of folder content"
+#~ msgid "Tasks"
+#~ msgstr "Take"
+
+#, fuzzy
+#~| msgid "Journal"
+#~ msgctxt "type of folder content"
+#~ msgid "Journal"
+#~ msgstr "Joernaal"
+
+#, fuzzy
+#~ msgid "<qt>Failed to create folder <b>%1</b>.</qt> "
+#~ msgstr "Kon nie gids skep nie"
+
+#~ msgid "&New Subfolder..."
+#~ msgstr "Nuwe Subgids..."
+
+#~ msgid "&New Folder..."
+#~ msgstr "Nuwe Gids..."
+
+#, fuzzy
+#~ msgid "&Copy Folders To"
+#~ msgstr "Skuif boodskappe na gids"
+
+#, fuzzy
+#~ msgid "&Copy Folder To"
+#~ msgstr "Skuif boodskappe na gids"
+
+#, fuzzy
+#~ msgid "&Move Folders To"
+#~ msgstr "Skuif boodskappe na gids"
+
+#, fuzzy
+#~ msgid "&Move Folder To"
+#~ msgstr "Skuif boodskappe na gids"
+
+#, fuzzy
+#~| msgid "Failed to create folder"
+#~ msgid "Add to Favorite Folders"
+#~ msgstr "Kon nie gids skep nie"
+
+#~ msgid "Copy to This Folder"
+#~ msgstr "Kopiëer na hierdie gids"
+
+#, fuzzy
+#~ msgid "Move or copy folder to %2"
+#~ msgid_plural "Move or copy %1 folders to %2"
+#~ msgstr[0] "Skuif boodskappe na gids"
+#~ msgstr[1] "Skuif boodskappe na gids"
+
+#, fuzzy
+#~ msgid "Order folder above %2"
+#~ msgid_plural "Order %1 folders above %2"
+#~ msgstr[0] "Nuwe Subgids..."
+#~ msgstr[1] "Nuwe Subgids..."
+
+#, fuzzy
+#~ msgid "Order folder below %2"
+#~ msgid_plural "Order %1 folders below %2"
+#~ msgstr[0] "Nuwe Subgids..."
+#~ msgstr[1] "Nuwe Subgids..."
+
+#, fuzzy
+#~ msgid "KMail - There are no unread messages"
+#~ msgstr "Gaan na die vorige ongeleesde boodskap"
+
+#, fuzzy
+#~ msgid "KMail - 1 unread message"
+#~ msgid_plural "KMail - %1 unread messages"
+#~ msgstr[0] "Volgende ongeleesde boodskap"
+#~ msgstr[1] "Volgende ongeleesde boodskap"
+
+#, fuzzy
+#~ msgid "Find Messages"
+#~ msgstr "Soek Boodskappe..."
+
+#, fuzzy
+#~ msgctxt "@action:button Search for messags"
+#~ msgid "&Search"
+#~ msgstr "Soek:"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "@title:column Subject of the found message."
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#, fuzzy
+#~| msgid "Sender/Receiver"
+#~ msgctxt "@title:column Sender of the found message."
+#~ msgid "Sender/Receiver"
+#~ msgstr "Stuurder/Ontvanger"
+
+#, fuzzy
+#~| msgid "Date"
+#~ msgctxt "@title:column date of receival ofthe found message."
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#, fuzzy
+#~| msgid "Folder"
+#~ msgctxt "@title:column Folder in which the message is found."
+#~ msgid "Folder"
+#~ msgstr "Gids"
+
+#, fuzzy
+#~ msgid "Op&en Search Folder"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~| msgid "Open Message"
+#~ msgid "Open &Message"
+#~ msgstr "Maak Boodskap Oop"
+
+#, fuzzy
+#~ msgctxt "@info:status finished searching."
+#~ msgid "Ready."
+#~ msgstr "Ongelees"
+
+#~ msgid "&Reply..."
+#~ msgstr "Beantwoord..."
+
+#~ msgid "Reply to &All..."
+#~ msgstr "Beantwoord aan almal..."
+
+#~ msgid "Reply to Mailing-&List..."
+#~ msgstr "Beantwoord aan Pos-Lys..."
+
+#~ msgctxt "Message->"
+#~ msgid "&Forward"
+#~ msgstr "Stuur aan"
+
+#, fuzzy
+#~| msgid "&Inline..."
+#~ msgctxt "@action:inmenu Forward message inline."
+#~ msgid "&Inline..."
+#~ msgstr "Inlyn..."
+
+#~ msgctxt "Message->Forward->"
+#~ msgid "As &Attachment..."
+#~ msgstr "As aanhangsel..."
+
+#~ msgid "Save Attachments..."
+#~ msgstr "Stoor Aanhangsels..."
+
+#, fuzzy
+#~ msgctxt "Search finished."
+#~ msgid "Done"
+#~ msgstr "Klaar"
+
+#, fuzzy
+#~ msgid "%1 message processed"
+#~ msgid_plural "%1 messages processed"
+#~ msgstr[0] "1 boodskap, %2"
+#~ msgstr[1] "%1 boodskappe, %2"
+
+#, fuzzy
+#~ msgid "%1 match (%2)"
+#~ msgid_plural "%1 matches (%2)"
+#~ msgstr[0] "1 boodskap, %2"
+#~ msgstr[1] "%1 boodskappe, %2"
+
+#, fuzzy
+#~ msgid "%1 match so far (%2)"
+#~ msgid_plural "%1 matches so far (%2)"
+#~ msgstr[0] "1 boodskap, %2"
+#~ msgstr[1] "%1 boodskappe, %2"
+
+#~ msgid "&Copy To"
+#~ msgstr "Kopiëer Na"
+
+#~ msgid "&Move To"
+#~ msgstr "Skuif Na"
+
+#, fuzzy
+#~| msgid "&Send Now"
+#~ msgid "Send Anyway"
+#~ msgstr "Stuur Nou"
+
+#, fuzzy
+#~| msgid "Auto-Detect"
+#~ msgid "Auto-Detect Encoding"
+#~ msgstr "Outo-Naspeur"
+
+#~ msgid "No Subject"
+#~ msgstr "Geen onderwerp"
+
+#~ msgid "[vCard]"
+#~ msgstr "[vKaart]"
+
+#~ msgid "CC: "
+#~ msgstr "CC:"
+
+#~ msgid "BCC: "
+#~ msgstr "BCC:"
+
+#~ msgid "Date: "
+#~ msgstr "Datum: "
+
+#~ msgid "From: "
+#~ msgstr "Vanaf: "
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgctxt "To-field of the mailheader."
+#~ msgid "To: "
+#~ msgstr "Aan: "
+
+#~ msgid "Reply to: "
+#~ msgstr "Beantwoord aan: "
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Aan: "
+
+#, fuzzy
+#~ msgid "User-Agent: "
+#~ msgstr "Dringend"
+
+#, fuzzy
+#~ msgid "Spam Status:"
+#~ msgstr "Status:"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgctxt "To field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Aan: "
+
+#~ msgid "Encoding"
+#~ msgstr "Enkodering"
+
+#~ msgid "Save &As..."
+#~ msgstr "Stoor As..."
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "Maak oop"
+
+#~ msgid "Open With..."
+#~ msgstr "Maak oop met..."
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "Bekyk"
+
+#, fuzzy
+#~ msgid "Copy"
+#~ msgstr "Kopiëer Na"
+
+#, fuzzy
+#~| msgid "&Remove Attachment"
+#~ msgid "Delete Attachment"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#, fuzzy
+#~ msgid "Edit Attachment"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#, fuzzy
+#~ msgid "Properties"
+#~ msgstr "Eienskappe"
+
+#~ msgid "Open Attachment?"
+#~ msgstr "Maak aanhangsel oop?"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr "Maak oop met '%1'"
+
+#~ msgid "&Open With..."
+#~ msgstr "Maak oop met..."
+
+#, fuzzy
+#~| msgid "Show Quick Search"
+#~ msgid "Set Focus to Quick Search"
+#~ msgstr "Vertoon Vinnige Soek"
+
+#, fuzzy
+#~ msgid "Extend Selection to Previous Message"
+#~ msgstr "Volgende boodskap"
+
+#, fuzzy
+#~ msgid "Extend Selection to Next Message"
+#~ msgstr "Volgende Boodskap"
+
+#, fuzzy
+#~| msgid "Folder"
+#~ msgid "Old Folders"
+#~ msgstr "Gids"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "@info/plain Displayed grayed-out inside the textbox, verb to search"
+#~ msgid "Search"
+#~ msgstr "Soek:"
+
+#, fuzzy
+#~| msgid "Folder"
+#~ msgid "Folders"
+#~ msgstr "Gids"
+
+#, fuzzy
+#~ msgid "Favorite Folders"
+#~ msgstr "Nuwe Gids..."
+
+#~ msgid "Remove Duplicate Messages"
+#~ msgstr "Verwyder duplikaat boodskappe"
+
+#~ msgid "Move Message to Folder"
+#~ msgstr "Skuif boodskappe na gids"
+
+#~ msgid "Copy Message to Folder"
+#~ msgstr "Kopiëer boodskappe na gids"
+
+#, fuzzy
+#~ msgid "Jump to Folder..."
+#~ msgstr "Kopiëer na hierdie gids"
+
+#, fuzzy
+#~ msgid "Focus on Next Message"
+#~ msgstr "Volgende Boodskap"
+
+#, fuzzy
+#~ msgid "Focus on Previous Message"
+#~ msgstr "Volgende boodskap"
+
+#, fuzzy
+#~ msgid "Select Message with Focus"
+#~ msgstr "Kies Boodskap Teks"
+
+#, fuzzy
+#~| msgid "New mail arrived"
+#~ msgctxt "%1 is a list of the number of new messages per folder"
+#~ msgid "<b>New mail arrived</b><br />%1"
+#~ msgstr "Nuwe pos heg gearriveer"
+
+#~ msgid "New mail arrived"
+#~ msgstr "Nuwe pos heg gearriveer"
+
+#, fuzzy
+#~ msgid "(no templates)"
+#~ msgstr "Vervang"
+
+#~ msgid "&Expire"
+#~ msgstr "Verstryk"
+
+#~ msgid "Empty Trash"
+#~ msgstr "Maak Asblik leeg"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Beweeg na Gemors"
+
+#, fuzzy
+#~ msgid "Delete Search"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgctxt "@action:button Delete search"
+#~ msgid "&Delete"
+#~ msgstr "Vee Uit"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~ msgctxt "@action:button Delete folder"
+#~ msgid "&Delete"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~ msgid "Delete Messages"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "Delete Message"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~| msgid "Moving messages"
+#~ msgid "Moving messages..."
+#~ msgstr "Skuif boodskappe"
+
+#, fuzzy
+#~| msgid "Deleting messages"
+#~ msgid "Deleting messages..."
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "Messages deleted successfully."
+#~ msgstr "Boodskappe suksesvol geskuif"
+
+#, fuzzy
+#~| msgid "Messages moved successfully"
+#~ msgid "Messages moved successfully."
+#~ msgstr "Boodskappe suksesvol geskuif"
+
+#, fuzzy
+#~ msgid "Deleting messages failed."
+#~ msgstr "Boodskap skuif het gevaal."
+
+#, fuzzy
+#~ msgid "Deleting messages canceled."
+#~ msgstr "Skuif van boodskappe gekanseleer."
+
+#~ msgid "Moving messages failed."
+#~ msgstr "Boodskap skuif het gevaal."
+
+#~ msgid "Moving messages canceled."
+#~ msgstr "Skuif van boodskappe gekanseleer."
+
+#, fuzzy
+#~ msgid "Move Messages to Folder"
+#~ msgstr "Skuif boodskappe na gids"
+
+#, fuzzy
+#~| msgid "Moving messages"
+#~ msgid "Copying messages..."
+#~ msgstr "Skuif boodskappe"
+
+#, fuzzy
+#~| msgid "Messages moved successfully"
+#~ msgid "Messages copied successfully."
+#~ msgstr "Boodskappe suksesvol geskuif"
+
+#, fuzzy
+#~| msgid "Moving messages failed."
+#~ msgid "Copying messages failed."
+#~ msgstr "Boodskap skuif het gevaal."
+
+#, fuzzy
+#~| msgid "Moving messages canceled."
+#~ msgid "Copying messages canceled."
+#~ msgstr "Skuif van boodskappe gekanseleer."
+
+#, fuzzy
+#~| msgid "Copy Message to Folder"
+#~ msgid "Copy Messages to Folder"
+#~ msgstr "Kopiëer boodskappe na gids"
+
+#, fuzzy
+#~| msgid "Move message to trashcan"
+#~ msgid "Moving messages to trash..."
+#~ msgstr "Beweeg boodskap na asblik"
+
+#, fuzzy
+#~| msgid "Messages moved successfully"
+#~ msgid "Messages moved to trash successfully."
+#~ msgstr "Boodskappe suksesvol geskuif"
+
+#, fuzzy
+#~| msgid "Moving messages failed."
+#~ msgid "Moving messages to trash failed."
+#~ msgstr "Boodskap skuif het gevaal."
+
+#, fuzzy
+#~| msgid "Moving messages canceled."
+#~ msgid "Moving messages to trash canceled."
+#~ msgstr "Skuif van boodskappe gekanseleer."
+
+#, fuzzy
+#~ msgid "Jump to Folder"
+#~ msgstr "Kopiëer na hierdie gids"
+
+#, fuzzy
+#~ msgid "Filtering message %1 of %2"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~| msgid "Subscription..."
+#~ msgctxt "tab title when loading an IMAP folder"
+#~ msgid "Loading..."
+#~ msgstr "Intekening..."
+
+#~ msgid "&Compact All Folders"
+#~ msgstr "Kompakteer Alle Gidse"
+
+#~ msgid "&Expire All Folders"
+#~ msgstr "Verstryk Alle Gidse"
+
+#~ msgid "&Refresh Local IMAP Cache"
+#~ msgstr "Vervris plaaslike IMAP Kas"
+
+#~ msgid "Empty All &Trash Folders"
+#~ msgstr "Maak alle Gemors Gidse skoon"
+
+#~ msgid "Check &Mail"
+#~ msgstr "Kyk vir nuwe pos"
+
+#, fuzzy
+#~| msgid "Check Mail &in This Folder"
+#~ msgid "Check Mail in Favorite Folders"
+#~ msgstr "Kyk vir nuwe pos in hierdie gids"
+
+#, fuzzy
+#~| msgid "Check Mail &In"
+#~ msgid "Check Mail In"
+#~ msgstr "Kyk vir nuwe pos in"
+
+#, fuzzy
+#~| msgid "Check &Mail"
+#~ msgid "Check Mail"
+#~ msgstr "Kyk vir nuwe pos"
+
+#~ msgid "&Send Queued Messages"
+#~ msgstr "Stuur Boodskappe in Wagtou"
+
+#, fuzzy
+#~ msgid "Send Queued Messages Via"
+#~ msgstr "Stuur Boodskappe in Wagtou"
+
+#~ msgid "&Address Book"
+#~ msgstr "Adresboek"
+
+#, fuzzy
+#~| msgid "Certificate Manager..."
+#~ msgid "Certificate Manager"
+#~ msgstr "Sertifikaat Bestuurder..."
+
+#, fuzzy
+#~| msgid "GnuPG Log Viewer..."
+#~ msgid "GnuPG Log Viewer"
+#~ msgstr "GnuPG Log Blaaier..."
+
+#~ msgid "Filter &Log Viewer..."
+#~ msgstr "Filter Log Blaaier..."
+
+#~ msgid "&Anti-Spam Wizard..."
+#~ msgstr "Anti-Spam Assistent..."
+
+#~ msgid "&Anti-Virus Wizard..."
+#~ msgstr "Anti-Virus Assistent..."
+
+#, fuzzy
+#~| msgid "&Anti-Spam Wizard..."
+#~ msgid "&Account Wizard..."
+#~ msgstr "Anti-Spam Assistent..."
+
+#~ msgid "Edit \"Out of Office\" Replies..."
+#~ msgstr "Redigeer \"Buite die Kantoor\" Antwoorde..."
+
+#~ msgid "&Move to Trash"
+#~ msgstr "Beweeg na Gemors"
+
+#, fuzzy
+#~| msgid "trash"
+#~ msgctxt "@action:intoolbar Move to Trash"
+#~ msgid "Trash"
+#~ msgstr "gemors"
+
+#~ msgid "Move message to trashcan"
+#~ msgstr "Beweeg boodskap na asblik"
+
+#, fuzzy
+#~ msgctxt "@action Hard delete, bypassing trash"
+#~ msgid "&Delete"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~ msgid "M&ove Thread to Trash"
+#~ msgstr "Beweeg na Gemors"
+
+#, fuzzy
+#~ msgid "Move thread to trashcan"
+#~ msgstr "Beweeg boodskap na asblik"
+
+#, fuzzy
+#~ msgid "Delete T&hread"
+#~ msgstr "Vee Uit"
+
+#~ msgid "&Find Messages..."
+#~ msgstr "Soek Boodskappe..."
+
+#~ msgid "&Find in Message..."
+#~ msgstr "Soek in Boodskap..."
+
+#~ msgid "Select &All Messages"
+#~ msgstr "Kies Alle Boodskappe"
+
+#~ msgid "&Properties"
+#~ msgstr "Eienskappe"
+
+#, fuzzy
+#~ msgid "&Mailing List Management..."
+#~ msgstr "Sertifikaat Bestuurder..."
+
+#~ msgid "Mark All Messages as &Read"
+#~ msgstr "Merk alle boodskappe as gelees"
+
+#, fuzzy
+#~ msgid "&Compact Folder"
+#~ msgstr "Kompakteer Alle Gidse"
+
+#~ msgid "Check Mail &in This Folder"
+#~ msgstr "Kyk vir nuwe pos in hierdie gids"
+
+#~ msgid "Prefer &HTML to Plain Text"
+#~ msgstr "Verkies HTML bo Skoon Teks"
+
+#, fuzzy
+#~ msgid "Copy Folder"
+#~ msgstr "Kopiëer na hierdie gids"
+
+#, fuzzy
+#~ msgid "Cut Folder"
+#~ msgstr "Gids"
+
+#, fuzzy
+#~ msgid "Paste Folder"
+#~ msgstr "Nuwe Gids..."
+
+#, fuzzy
+#~ msgid "Copy Messages"
+#~ msgstr "Redigeer Boodksap"
+
+#, fuzzy
+#~ msgid "Cut Messages"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "Paste Messages"
+#~ msgstr "Vee boodskappe uit"
+
+#~ msgid "&New Message..."
+#~ msgstr "Nuwe Boodskap..."
+
+#, fuzzy
+#~ msgid "Message From &Template"
+#~ msgstr "Kies Boodskap Teks"
+
+#~ msgid "New Message t&o Mailing-List..."
+#~ msgstr "Nuwe boodskap aan Pos-Lys..."
+
+#~ msgid "Send A&gain..."
+#~ msgstr "Stuur Weer..."
+
+#~ msgid "Filter on &Subject..."
+#~ msgstr "Filter op Onderwerp..."
+
+#~ msgid "Filter on &From..."
+#~ msgstr "Filter op Vanaf..."
+
+#~ msgid "Filter on &To..."
+#~ msgstr "Filter op Na..."
+
+#~ msgid "Filter on Mailing-&List..."
+#~ msgstr "Filter op Pos-lys..."
+
+#, fuzzy
+#~ msgid "New Message From &Template"
+#~ msgstr "Kies Boodskap Teks"
+
+#~ msgid "Mark &Thread"
+#~ msgstr "Merk gesprekslyn"
+
+#~ msgid "Mark Thread as &Read"
+#~ msgstr "Merk gesprekslyn as gelees"
+
+#~ msgid "Mark all messages in the selected thread as read"
+#~ msgstr "Merk al die boodskappe in die gekose gesprekslyn as gelees"
+
+#~ msgid "Mark Thread as &New"
+#~ msgstr "Merk gesprekslyn as nuut"
+
+#~ msgid "Mark all messages in the selected thread as new"
+#~ msgstr "Merk al die boodskappe in die gekose gesprekslyn as nuut"
+
+#~ msgid "Mark Thread as &Unread"
+#~ msgstr "Merk gesprekslyn as ongelees"
+
+#~ msgid "Mark all messages in the selected thread as unread"
+#~ msgstr "Merk al die boodskappe in die gekose gesprekslyn as ongelees"
+
+#~ msgid "Mark Thread as &Important"
+#~ msgstr "Merk gesprekslyn as belangrik"
+
+#~ msgid "Remove &Important Thread Mark"
+#~ msgstr "Verwyder gesprekslyn merk: belangrik"
+
+#, fuzzy
+#~| msgid "Mark Thread as &New"
+#~ msgid "Mark Thread as &Action Item"
+#~ msgstr "Merk gesprekslyn as nuut"
+
+#, fuzzy
+#~| msgid "Remove &Important Message Mark"
+#~ msgid "Remove &Action Item Thread Mark"
+#~ msgstr "Verwyder boodskap merk: belangrik"
+
+#~ msgid "&Watch Thread"
+#~ msgstr "Hou gesprekslyn dop"
+
+#~ msgid "&Ignore Thread"
+#~ msgstr "Ignoreer gesprekslyn"
+
+#~ msgid "Save A&ttachments..."
+#~ msgstr "Stoor aangangsels..."
+
+#, fuzzy
+#~ msgid "Appl&y All Filters"
+#~ msgstr "Wend Filters Aan"
+
+#~ msgid "A&pply Filter"
+#~ msgstr "Wend Filters Aan"
+
+#~ msgctxt "View->"
+#~ msgid "&Expand Thread"
+#~ msgstr "Vou gesprekslyn uit"
+
+#~ msgid "Expand the current thread"
+#~ msgstr "Vou die huidige gesprekslyn uit"
+
+#~ msgctxt "View->"
+#~ msgid "&Collapse Thread"
+#~ msgstr "Vou gesprekslyn in"
+
+#~ msgid "Collapse the current thread"
+#~ msgstr "Vou die huidige gesprekslyn in"
+
+#~ msgctxt "View->"
+#~ msgid "Ex&pand All Threads"
+#~ msgstr "Vou alle gesprekslyne uit"
+
+#~ msgid "Expand all threads in the current folder"
+#~ msgstr "Vou al die gesprekslyn in die huidige gids uit"
+
+#~ msgctxt "View->"
+#~ msgid "C&ollapse All Threads"
+#~ msgstr "Vou alle gesprekslyne in"
+
+#~ msgid "Collapse all threads in the current folder"
+#~ msgstr "Vou al die gesprekslyn in die huidige gids in"
+
+#~ msgid "&View Source"
+#~ msgstr "Besigtig Bronkode"
+
+#, fuzzy
+#~ msgid "&Display Message"
+#~ msgstr "Redigeer Boodksap"
+
+#~ msgid "&Next Message"
+#~ msgstr "Volgende Boodskap"
+
+#~ msgid "Go to the next message"
+#~ msgstr "Gaan na die volgende boodskap"
+
+#~ msgid "Next &Unread Message"
+#~ msgstr "Volgende ongeleesde boodskap"
+
+#~ msgid "Go to the next unread message"
+#~ msgstr "Gaan na die volgende ongeleesde boodskap"
+
+#~ msgid "&Previous Message"
+#~ msgstr "Volgende boodskap"
+
+#~ msgid "Go to the previous message"
+#~ msgstr "Gaan na die vorige boodskap"
+
+#~ msgid "Previous Unread &Message"
+#~ msgstr "Vorige ongeleesde boodskap"
+
+#~ msgid "Go to the previous unread message"
+#~ msgstr "Gaan na die vorige ongeleesde boodskap"
+
+#~ msgid "Next Unread &Folder"
+#~ msgstr "Volgende ongeleesde gids"
+
+#~ msgid "Go to the next folder with unread messages"
+#~ msgstr "Gaan na die volgende gids met ongeleesde boodskappe"
+
+#~ msgid "Previous Unread F&older"
+#~ msgstr "Vorige ongeleesde gids"
+
+#~ msgid "Go to the previous folder with unread messages"
+#~ msgstr "Gaan na die vorige gids met ongeleesde boodskappe"
+
+#~ msgctxt "Go->"
+#~ msgid "Next Unread &Text"
+#~ msgstr "Volgende ongeleesde teks"
+
+#~ msgid "Go to the next unread text"
+#~ msgstr "Gaan na die volgende ongeleesde teks"
+
+#~ msgid ""
+#~ "Scroll down current message. If at end of current message, go to next "
+#~ "unread message."
+#~ msgstr ""
+#~ "Rol af in huidige boodskap. Gaan na die volgende ongeleesde boodskap "
+#~ "sodra die einde van die huidige boodskap bereik word."
+
+#~ msgid "Configure &POP Filters..."
+#~ msgstr "Stel POP Filters op..."
+
+#~ msgid "KMail &Introduction"
+#~ msgstr "KMail Inleiding"
+
+#~ msgid "Display KMail's Welcome Page"
+#~ msgstr "Vertoon KMail se Verwelkoming bladsy"
+
+#~ msgid "Configure &Notifications..."
+#~ msgstr "Stel Inkennistellings op..."
+
+#~ msgid "&Configure KMail..."
+#~ msgstr "Stel KMail op..."
+
+#~ msgid "E&mpty Trash"
+#~ msgstr "Maak asblik leeg"
+
+#~ msgid "&Move All Messages to Trash"
+#~ msgstr "Beweeg alle boodskappe na Gemors"
+
+#, fuzzy
+#~ msgid "&Delete Search"
+#~ msgstr "Vee Gids Uit"
+
+#~ msgid "&Delete Folder"
+#~ msgstr "Vee Gids Uit"
+
+#, fuzzy
+#~ msgid "Toggle Message Tag %1"
+#~ msgstr "Redigeer Boodksap"
+
+#, fuzzy
+#~ msgid "Message Tag %1"
+#~ msgstr "Boodskap"
+
+#~ msgid "Removed %1 duplicate message."
+#~ msgid_plural "Removed %1 duplicate messages."
+#~ msgstr[0] "Het %1 duplikaat boodskap verwyder."
+#~ msgstr[1] "Het %1 duplikaat boodskappe verwyder."
+
+#~ msgid "No duplicate messages found."
+#~ msgstr "Geen duplikaat boodskappe gevind nie."
+
+#~ msgid "Filter %1"
+#~ msgstr "Filter %1"
+
+#~ msgid "Subscription"
+#~ msgstr "Intekenings"
+
+#, fuzzy
+#~ msgid "Local Subscription"
+#~ msgstr "Intekenings"
+
+#, fuzzy
+#~| msgid "Edit \"Out of Office\" Replies..."
+#~ msgid "Out of office reply active"
+#~ msgstr "Redigeer \"Buite die Kantoor\" Antwoorde..."
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "Verwyder Opskrif"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgctxt ""
+#~ "@title:tab Tab page where the user configures accounts to receive mail"
+#~ msgid "Receiving"
+#~ msgstr "Ontvanger"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "@title:tab Tab page where the user configures accounts to send mail"
+#~ msgid "Sending"
+#~ msgstr "Stuurder"
+
+#, fuzzy
+#~| msgid "Contacts"
+#~ msgid "Fonts"
+#~ msgstr "Inhoud"
+
+#, fuzzy
+#~ msgid "Message Window"
+#~ msgstr "Boodskap Lyf"
+
+#~ msgid "Message Body"
+#~ msgstr "Boodskap Lyf"
+
+#, fuzzy
+#~ msgid "Message List - New Messages"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "Message List - Unread Messages"
+#~ msgstr "Volgende ongeleesde boodskap"
+
+#, fuzzy
+#~ msgid "Message List - Important Messages"
+#~ msgstr "Merk boodskap as belangrik"
+
+#, fuzzy
+#~ msgid "Message List - Action Item Messages"
+#~ msgstr "Vee boodskappe uit"
+
+#~ msgid "New Message"
+#~ msgstr "Nuwe boodskap"
+
+#, fuzzy
+#~| msgid "Remove &Important Message Mark"
+#~ msgid "Action Item Message"
+#~ msgstr "Verwyder boodskap merk: belangrik"
+
+#, fuzzy
+#~| msgid "Show Quick Search"
+#~ msgid "Show folder quick search field"
+#~ msgstr "Vertoon Vinnige Soek"
+
+#, fuzzy
+#~| msgid "Folder"
+#~ msgid "Folder Tooltips"
+#~ msgstr "Gids"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgid "Never"
+#~ msgstr "Ontvanger"
+
+#, fuzzy
+#~ msgid "C&ustom format:"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgctxt "General options for the message list."
+#~ msgid "General"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~ msgid "Default Aggregation:"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~ msgid "Default Theme:"
+#~ msgstr "Vee Uit"
+
+#~ msgid "Auto"
+#~ msgstr "Outo"
+
+#, fuzzy
+#~| msgid "Remove Duplicate Messages"
+#~ msgid "Remove selected tag"
+#~ msgstr "Verwyder duplikaat boodskappe"
+
+#, fuzzy
+#~ msgid "Ta&g Settings"
+#~ msgstr "Stel Enkodering"
+
+#, fuzzy
+#~ msgid "Message tag &icon:"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~ msgid "Shortc&ut:"
+#~ msgstr "Wys:"
+
+#, fuzzy
+#~ msgctxt "General settings for the composer."
+#~ msgid "General"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~ msgid "Standard Templates"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "Custom Templates"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "Settings regarding the subject when composing a message."
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#, fuzzy
+#~| msgid "Cha&rset"
+#~ msgid "Charset"
+#~ msgstr "Karakterstel"
+
+#, fuzzy
+#~ msgid "Headers"
+#~ msgstr "Voeg Opskrif By"
+
+#, fuzzy
+#~| msgctxt "Config->Composer->Attachments"
+#~| msgid "A&ttachments"
+#~ msgctxt "Config->Composer->Attachments"
+#~ msgid "Attachments"
+#~ msgstr "Aanhangsels"
+
+#, fuzzy
+#~| msgid "Delete Folder"
+#~ msgid "Default Forwarding Type:"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~| msgctxt "View->attachments->"
+#~| msgid "&Inline"
+#~ msgctxt "@item:inlistbox Inline mail forwarding"
+#~ msgid "Inline"
+#~ msgstr "Inlyn"
+
+#, fuzzy
+#~ msgid "As Attachment"
+#~ msgstr "Stoor Aanhangsels..."
+
+#, fuzzy
+#~| msgid "Configure &Filters..."
+#~ msgid "Configure Completion Order..."
+#~ msgstr "Stel Filters op..."
+
+#, fuzzy
+#~ msgid "Reading"
+#~ msgstr "Ongelees"
+
+#~ msgid "Edit Identity"
+#~ msgstr "Redigeer Identiteit"
+
+#, fuzzy
+#~ msgctxt "@title:tab General identity settings."
+#~ msgid "General"
+#~ msgstr "Beantwoord"
+
+#~ msgid "&Your name:"
+#~ msgstr "Jou naam:"
+
+#~ msgid "Organi&zation:"
+#~ msgstr "Organisiasie"
+
+#~ msgid "&Email address:"
+#~ msgstr "E-pos adres:"
+
+#~ msgid "Chang&e..."
+#~ msgstr "Verander..."
+
+#, fuzzy
+#~ msgctxt "@title:tab Advanced identity settings."
+#~ msgid "Advanced"
+#~ msgstr "Kaneleer"
+
+#, fuzzy
+#~ msgid "&Templates folder:"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "&Copy Global Templates"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "Picture"
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~ msgid "Retrieving Namespaces"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgctxt "Unknown subject."
+#~ msgid "<placeholder>unknown</placeholder>"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgctxt "Unknown sender."
+#~ msgid "<placeholder>unknown</placeholder>"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgid "The destination folder was: <b>%1</b>."
+#~ msgstr "Nuwe Subgids..."
+
+#~ msgctxt "msg status"
+#~ msgid "Spam"
+#~ msgstr "Spam"
+
+#~ msgctxt "msg status"
+#~ msgid "Ham"
+#~ msgstr "Ham"
+
+#, fuzzy
+#~| msgid "Remove &Important Message Mark"
+#~ msgctxt "msg status"
+#~ msgid "Action Item"
+#~ msgstr "Verwyder boodskap merk: belangrik"
+
+#, fuzzy
+#~| msgid "Add Header"
+#~ msgid "Add Tag"
+#~ msgstr "Voeg Opskrif By"
+
+#~ msgid "Send Fake MDN"
+#~ msgstr "Stuur Vervalsde MDN"
+
+#~ msgctxt "MDN type"
+#~ msgid "Ignore"
+#~ msgstr "Ignoreer"
+
+#~ msgctxt "MDN type"
+#~ msgid "Displayed"
+#~ msgstr "Vertoon"
+
+#~ msgctxt "MDN type"
+#~ msgid "Deleted"
+#~ msgstr "Uitgevee"
+
+#~ msgctxt "MDN type"
+#~ msgid "Dispatched"
+#~ msgstr "Gestuur"
+
+#~ msgctxt "MDN type"
+#~ msgid "Processed"
+#~ msgstr "Verwerk"
+
+#~ msgctxt "MDN type"
+#~ msgid "Denied"
+#~ msgstr "Verwerp"
+
+#~ msgctxt "MDN type"
+#~ msgid "Failed"
+#~ msgstr "Gevaal"
+
+#~ msgid "Remove Header"
+#~ msgstr "Verwyder Opskrif"
+
+#~ msgid "Add Header"
+#~ msgstr "Voeg Opskrif By"
+
+#~ msgid "With value:"
+#~ msgstr "Met waarde:"
+
+#~ msgid "Rewrite Header"
+#~ msgstr "Herskryf Opskrif"
+
+#, fuzzy
+#~ msgid "Move Into Folder"
+#~ msgstr "Skuif boodskappe na gids"
+
+#, fuzzy
+#~ msgid "Copy Into Folder"
+#~ msgstr "Kopiëer na hierdie gids"
+
+#, fuzzy
+#~ msgid "Default Template"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~ msgid "The template used when forwarding"
+#~ msgstr "Merk boodskap as nie aangestuur"
+
+#, fuzzy
+#~ msgid "Forward to %1 with default template"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "Forward to %1 with template %2"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "<placeholder>Default</placeholder>"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~| msgid "From: "
+#~ msgctxt "Email sender"
+#~ msgid "From"
+#~ msgstr "Vanaf: "
+
+#, fuzzy
+#~ msgctxt "Email recipient"
+#~ msgid "To"
+#~ msgstr "Aan"
+
+#, fuzzy
+#~ msgid "CC"
+#~ msgstr "CC"
+
+#, fuzzy
+#~ msgid "in addressbook"
+#~ msgstr "Adresboek"
+
+#, fuzzy
+#~ msgctxt "Continue search button."
+#~ msgid "&Search"
+#~ msgstr "Soek:"
+
+#, fuzzy
+#~| msgid "&New Folder..."
+#~ msgid "Add Favorite Folder..."
+#~ msgstr "Nuwe Gids..."
+
+#, fuzzy
+#~| msgid "&New Folder..."
+#~ msgid "Rename Favorite..."
+#~ msgstr "Nuwe Gids..."
+
+#, fuzzy
+#~| msgid "Failed to create folder"
+#~ msgid "Add Folders to Favorites"
+#~ msgstr "Kon nie gids skep nie"
+
+#, fuzzy
+#~ msgid "Insert Folders Above %1"
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~ msgid "Add Favorite Folder"
+#~ msgstr "Nuwe Gids..."
+
+#, fuzzy
+#~| msgid "Show attachments as suggested by sender."
+#~ msgid "This attachment has been deleted."
+#~ msgstr "Vertoon aanhangsels soos voorgestel deur die stuurder."
+
+#, fuzzy
+#~| msgid "&Import Messages..."
+#~ msgctxt "message status"
+#~ msgid "Important"
+#~ msgstr "Voer Boodskappe In..."
+
+#, fuzzy
+#~| msgid "Unread"
+#~ msgctxt "message status"
+#~ msgid "Unread"
+#~ msgstr "Ongelees"
+
+#, fuzzy
+#~ msgctxt "message status"
+#~ msgid "Read"
+#~ msgstr "Ongelees"
+
+#, fuzzy
+#~ msgctxt "message status"
+#~ msgid "Deleted"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~ msgctxt "message status"
+#~ msgid "Replied"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgctxt "message status"
+#~ msgid "Forwarded"
+#~ msgstr "Stuur aan"
+
+#, fuzzy
+#~ msgctxt "message status"
+#~ msgid "Queued"
+#~ msgstr "Wagtou"
+
+#, fuzzy
+#~ msgctxt "message status"
+#~ msgid "Sent"
+#~ msgstr "Stuurder"
+
+#, fuzzy
+#~ msgctxt "message status"
+#~ msgid "Watched"
+#~ msgstr "Hou gesprekslyn dop"
+
+#, fuzzy
+#~ msgctxt "message status"
+#~ msgid "Ignored"
+#~ msgstr "Ignoreer gesprekslyn"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Spam"
+#~ msgctxt "message status"
+#~ msgid "Spam"
+#~ msgstr "Spam"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Ham"
+#~ msgctxt "message status"
+#~ msgid "Ham"
+#~ msgstr "Ham"
+
+#, fuzzy
+#~ msgctxt "message status"
+#~ msgid "Has Attachment"
+#~ msgstr "Stoor Aanhangsels..."
+
+#, fuzzy
+#~ msgid "Decrypt message."
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~| msgctxt "EMAIL OF TRANSLATORS"
+#~| msgid "Your emails"
+#~ msgid "Show signature details."
+#~ msgstr "frix@expertron.co.za"
+
+#, fuzzy
+#~| msgid "Append S&ignature"
+#~ msgid "Hide signature details."
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~| msgid "Save Attachment As"
+#~ msgid "Show attachment list."
+#~ msgstr "Stoor aanhangsel as"
+
+#, fuzzy
+#~| msgid "Save Attachment As"
+#~ msgid "Hide attachment list."
+#~ msgstr "Stoor aanhangsel as"
+
+#, fuzzy
+#~| msgctxt "EMAIL OF TRANSLATORS"
+#~| msgid "Your emails"
+#~ msgid "Show full \"To\" list"
+#~ msgstr "frix@expertron.co.za"
+
+#, fuzzy
+#~| msgctxt "EMAIL OF TRANSLATORS"
+#~| msgid "Your emails"
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "frix@expertron.co.za"
+
+#, fuzzy
+#~ msgid "Default new message template"
+#~ msgstr "Kies Boodskap Teks"
+
+#, fuzzy
+#~| msgid "Unread"
+#~ msgctxt "@title:column Column showing the number of unread email messages."
+#~ msgid "Unread"
+#~ msgstr "Ongelees"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgctxt "@title:column Column showing the total number of messages"
+#~ msgid "Total"
+#~ msgstr "Totaal"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@title:column Size of the folder."
+#~ msgid "Size"
+#~ msgstr "Grootte"
+
+#, fuzzy
+#~ msgid "Total Messages"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~| msgid "&Thread Messages"
+#~ msgid "Unread Messages"
+#~ msgstr "Gesprekslyn boodskappe"
+
+#, fuzzy
+#~ msgid "Quota"
+#~ msgstr "Totaal"
+
+#, fuzzy
+#~ msgid "Storage Size"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "Icon Size"
+#~ msgstr "Grootte"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgctxt "@action:inmenu Never display tooltips."
+#~ msgid "Never"
+#~ msgstr "Ontvanger"
+
+#, fuzzy
+#~| msgid "Subscription..."
+#~ msgid "Serverside Subscription..."
+#~ msgstr "Intekening..."
+
+#, fuzzy
+#~ msgid "Local Subscription..."
+#~ msgstr "Intekening..."
+
+#~ msgid "Refresh Folder List"
+#~ msgstr "Verfris gids lys"
+
+#, fuzzy
+#~ msgid "Expire..."
+#~ msgstr "Verstryk"
+
+#, fuzzy
+#~ msgid "Multiple Folders"
+#~ msgstr "Gids"
+
+#, fuzzy
+#~ msgid "Go to Next Unread Message"
+#~ msgstr "Gaan na die volgende ongeleesde boodskap"
+
+#, fuzzy
+#~ msgid "Go To"
+#~ msgstr "Kopiëer Na"
+
+#, fuzzy
+#~ msgid "Copy or Move Messages to %1"
+#~ msgstr "Skuif boodskappe na gids"
+
+#, fuzzy
+#~ msgid "Select Recipient"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgid "Address book:"
+#~ msgstr "Adresboek"
+
+#, fuzzy
+#~ msgctxt "@title:column Email of the recipient."
+#~ msgid "Email"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~ msgctxt "Search for recipient."
+#~ msgid "Search:"
+#~ msgstr "Soek:"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "Kaneleer"
+
+#, fuzzy
+#~ msgid "Selected Recipients"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~| msgid "&Address Book"
+#~ msgid "Address Books"
+#~ msgstr "Adresboek"
+
+#, fuzzy
+#~ msgid "&Send picture with every message"
+#~ msgstr "Vee Boodskappe Uit"
+
+#, fuzzy
+#~ msgid "Select File..."
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~ msgid "Set From Address Book"
+#~ msgstr "Adresboek"
+
+#, fuzzy
+#~ msgid "Enable Subscriptions?"
+#~ msgstr "Intekenings"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Save List"
+#~ msgstr "Skep Filter"
+
+#, fuzzy
+#~ msgctxt "@title:column Email of the recipient"
+#~ msgid "Email"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~ msgctxt "@label:textbox"
+#~ msgid "Please enter name:"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~ msgctxt "@title:tab General settings for a folder."
+#~ msgid "General"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~| msgctxt "to view something"
+#~| msgid "View"
+#~ msgctxt "@title:tab View settings for a folder."
+#~ msgid "View"
+#~ msgstr "Bekyk"
+
+#, fuzzy
+#~| msgid "Maintainer"
+#~ msgid "Maintenance"
+#~ msgstr "Onderhouer"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "type of folder content"
+#~ msgid "Unknown"
+#~ msgstr "Onbekend"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "type of folder storage"
+#~ msgid "Mailbox"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "type of folder storage"
+#~ msgid "Maildir"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~ msgctxt "type of folder storage"
+#~ msgid "Search"
+#~ msgstr "Soek:"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "type of folder storage"
+#~ msgid "Unknown"
+#~ msgstr "Onbekend"
+
+#, fuzzy
+#~ msgid "Act on new/unread mail in this folder"
+#~ msgstr "Kyk vir nuwe pos in hierdie gids"
+
+#, fuzzy
+#~| msgid "&Identity"
+#~ msgid "Use &default identity"
+#~ msgstr "Identiteit"
+
+#, fuzzy
+#~ msgid "&Sender identity:"
+#~ msgstr "Redigeer Identiteit"
+
+#, fuzzy
+#~ msgid "Admins of This Folder"
+#~ msgstr "Kopiëer na hierdie gids"
+
+#, fuzzy
+#~ msgid "All Readers of This Folder"
+#~ msgstr "Kopiëer na hierdie gids"
+
+#, fuzzy
+#~| msgid "Unread"
+#~ msgctxt "Icon used for folders which do have unread messages."
+#~ msgid "&Unread:"
+#~ msgstr "Ongelees"
+
+#, fuzzy
+#~ msgid "Sho&w column:"
+#~ msgstr "Besigtig Kolomme"
+
+#, fuzzy
+#~| msgid "Delete Folder"
+#~ msgctxt "@item:inlistbox Show default value."
+#~ msgid "Default"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~| msgid "Sender"
+#~ msgctxt "@item:inlistbox Show sender."
+#~ msgid "Sender"
+#~ msgstr "Stuurder"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgctxt "@item:inlistbox Show receiver."
+#~ msgid "Receiver"
+#~ msgstr "Ontvanger"
+
+#, fuzzy
+#~ msgid "Use default aggregation"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~ msgid "Use default theme"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Gevaal"
+
+#, fuzzy
+#~| msgid "Folder"
+#~ msgid "Folder type:"
+#~ msgstr "Gids"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "Size:"
+#~ msgstr "Grootte"
+
+#, fuzzy
+#~| msgid "&Refresh Local IMAP Cache"
+#~ msgid "Rebuild Local IMAP Cache"
+#~ msgstr "Vervris plaaslike IMAP Kas"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Messages"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~ msgid "Total messages:"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~| msgid "&Thread Messages"
+#~ msgid "Unread messages:"
+#~ msgstr "Gesprekslyn boodskappe"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "compaction status"
+#~ msgid "Unknown"
+#~ msgstr "Onbekend"
+
+#, fuzzy
+#~ msgid "Compaction:"
+#~ msgstr "Dokumentasie"
+
+#, fuzzy
+#~ msgid "Compact Now"
+#~ msgstr "Kompakteer Alle Gidse"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgid "%1 (%2)"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Really compact folder?"
+#~ msgstr "Kompakteer Alle Gidse"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Compact Folder"
+#~ msgstr "Kompakteer Alle Gidse"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></"
+#~| "qt>"
+#~ msgid ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+#~ msgstr ""
+#~ "<qt><b><br>H<br>T<br>M<br>L<br> <br>B<br>o<br>o<br>d<br>s<br>k<br>a<br>p</"
+#~ "b></qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><br>N<br>o<br> <br>H<br>T<br>M<br>L<br> "
+#~| "<br>M<br>e<br>s<br>s<br>a<br>g<br>e</qt>"
+#~ msgid ""
+#~ "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#~ ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#~ msgstr ""
+#~ "<qt><br>G<br>e<br>e<br>n<br> <br>H<br>T<br>M<br>L<br> "
+#~ "<br>B<br>o<br>o<br>d<br>s<br>k<br>a<br>p</b></qt>"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "@title:column Column containing message subjects"
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#, fuzzy
+#~| msgid "Sender"
+#~ msgctxt "@title:column"
+#~ msgid "Sender"
+#~ msgstr "Stuurder"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgctxt "@title:column"
+#~ msgid "Receiver"
+#~ msgstr "Ontvanger"
+
+#, fuzzy
+#~| msgid "Date"
+#~ msgctxt "@title:column"
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@title:column"
+#~ msgid "Size"
+#~ msgstr "Grootte"
+
+#, fuzzy
+#~| msgid "Show all message headers"
+#~ msgctxt "@action:button"
+#~ msgid "Download all messages now"
+#~ msgstr "Vertoon al die boodskap opskrifte"
+
+#, fuzzy
+#~| msgid "Show all message headers"
+#~ msgctxt "@action:button"
+#~ msgid "Download all messages later"
+#~ msgstr "Vertoon al die boodskap opskrifte"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Delete all messages"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "Download Later"
+#~ msgstr "Klaar"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "Delete"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~| msgid "Filter %1"
+#~ msgctxt "@title:window"
+#~ msgid "POP Filter"
+#~ msgstr "Filter %1"
+
+#, fuzzy
+#~ msgctxt "@title:group"
+#~ msgid "Messages Exceeding Size"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~ msgctxt "@title:group"
+#~ msgid "Ruleset Filtered Messages: %1"
+#~ msgstr "Volgende ongeleesde boodskap"
+
+#, fuzzy
+#~| msgid "No Subject"
+#~ msgctxt "@item:intext"
+#~ msgid "No Subject"
+#~ msgstr "Geen onderwerp"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "@item:intext Sender of message is unknown"
+#~ msgid "Unknown"
+#~ msgstr "Onbekend"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "@item:intext Receiver of message is unknown"
+#~ msgid "Unknown"
+#~ msgstr "Onbekend"
+
+#, fuzzy
+#~ msgid "Do not send vacation replies to spam messages"
+#~ msgstr "Gaan na die volgende boodskap"
+
+#~ msgid "Message with subject: "
+#~ msgstr "Boodskap met onderwerp: "
+
+#, fuzzy
+#~ msgid "1 message waiting to be filtered"
+#~ msgid_plural "%1 messages waiting to be filtered"
+#~ msgstr[0] "Merk gekose boodskappe as ongelees"
+#~ msgstr[1] "Merk gekose boodskappe as ongelees"
+
+#, fuzzy
+#~ msgid "Moving message %1 of %2 from %3."
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "With Custom Template"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "Reply With Custom Template"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "Reply to All With Custom Template"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgctxt "Message->"
+#~ msgid "Universal"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~ msgctxt "Message->"
+#~ msgid "Reply"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~ msgctxt "Message->"
+#~ msgid "Reply to All"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~ msgctxt "Message->"
+#~ msgid "Forward"
+#~ msgstr "Stuur aan"
+
+#, fuzzy
+#~ msgctxt "Message->"
+#~ msgid "Unknown"
+#~ msgstr "Stuur aan"
+
+#, fuzzy
+#~| msgid "Remove Header"
+#~ msgctxt "shortcut for expanding the header of a group in the message list"
+#~ msgid "Expand Group Header"
+#~ msgstr "Verwyder Opskrif"
+
+#, fuzzy
+#~| msgid "Remove Header"
+#~ msgctxt "shortcut for collapsing the header of a group in the message list"
+#~ msgid "Collapse Group Header"
+#~ msgstr "Verwyder Opskrif"
+
+#, fuzzy
+#~ msgid "Default Theme"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~ msgid "Default Aggregation"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~ msgid "Redirect Message"
+#~ msgstr "Vee Boodskappe Uit"
+
+#~ msgid "&Send Now"
+#~ msgstr "Stuur Nou"
+
+#, fuzzy
+#~ msgctxt "@label:listbox General group for often used snippets in mail."
+#~ msgid "General"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~| msgctxt "Message->"
+#~| msgid "&Reply"
+#~ msgid "&Apply"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~ msgid "Edit Snippet"
+#~ msgstr "Intekening..."
+
+#, fuzzy
+#~ msgid "Edit &group..."
+#~ msgstr "Intekening..."
+
+#, fuzzy
+#~| msgid "Date"
+#~ msgid "&Paste"
+#~ msgstr "Datum"
+
+#, fuzzy
+#~ msgid "&Edit..."
+#~ msgstr "Intekening..."
+
+#, fuzzy
+#~ msgid "&Add Snippet..."
+#~ msgstr "Intekening..."
+
+#, fuzzy
+#~ msgid "Select Transport"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~| msgid "Failed to create folder"
+#~ msgid "Could Not Create Folder"
+#~ msgstr "Kon nie gids skep nie"
+
+#~ msgid "New &Window"
+#~ msgstr "Nuwe Venster"
+
+#, fuzzy
+#~| msgid "Subscription..."
+#~ msgid "Starting..."
+#~ msgstr "Intekening..."
+
+#, fuzzy
+#~ msgctxt "message encoding type"
+#~ msgid "Quoted Printable"
+#~ msgstr "Vertoon al die boodskap opskrifte"
+
+#, fuzzy
+#~ msgid "Select Font"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~ msgid "Select Size"
+#~ msgstr "Vee Gids uit"
+
+#~ msgctxt "name used for a virgin filter"
+#~ msgid "unknown"
+#~ msgstr "onbekend"
+
+#, fuzzy
+#~ msgid "Template content"
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~ msgid "Template shortcut"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "Template type"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Gevaal"
+
+#, fuzzy
+#~ msgid "&View"
+#~ msgstr "Bekyk"
+
+#~ msgid "&Go"
+#~ msgstr "Gaan"
+
+#~ msgid "F&older"
+#~ msgstr "Gids"
+
+#~ msgid "&Message"
+#~ msgstr "Boodskap"
+
+#~ msgid "&Forward"
+#~ msgstr "Stuur aan"
+
+#, fuzzy
+#~ msgid "&Tools"
+#~ msgstr "Aan"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "Stel Enkodering"
+
+#, fuzzy
+#~ msgid "&Help"
+#~ msgstr "Biep"
+
+#~ msgid "&Attach"
+#~ msgstr "Heg aan"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Frikkie Thirion"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "frix@expertron.co.za"
+
+#~ msgid "Signing"
+#~ msgstr "Ondertekening"
+
+#, fuzzy
+#~ msgid "&Automatically sign messages"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~| msgid "Encrypt"
+#~ msgid "Encrypting"
+#~ msgstr "Enkripteer"
+
+#, fuzzy
+#~ msgid "Store sent messages encry&pted"
+#~ msgstr "Merk gekose boodskappe as ongelees"
+
+#, fuzzy
+#~ msgid "Check to store messages encrypted "
+#~ msgstr "Merk gekose boodskappe as ongelees"
+
+#, fuzzy
+#~ msgctxt "@title:tab General settings"
+#~ msgid "General"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~ msgid "Account &name:"
+#~ msgstr "Jou naam:"
+
+#, fuzzy
+#~ msgid "&Port:"
+#~ msgstr "Wys:"
+
+#, fuzzy
+#~ msgid "&Login:"
+#~ msgstr "Jou naam:"
+
+#, fuzzy
+#~| msgid "Check &Mail"
+#~ msgid "Check inter&val:"
+#~ msgstr "Kyk vir nuwe pos"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "IMAP Settings"
+#~ msgstr "Stel Enkodering"
+
+#, fuzzy
+#~| msgid "Show attachments as suggested by sender."
+#~ msgid "Load attach&ments on demand"
+#~ msgstr "Vertoon aanhangsels soos voorgestel deur die stuurder."
+
+#, fuzzy
+#~ msgid "Trash folder:"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~| msgid "&Identity"
+#~ msgid "Use the default identity for this account"
+#~ msgstr "Identiteit"
+
+#, fuzzy
+#~| msgid "&Identity:"
+#~ msgid "Identity:"
+#~ msgstr "Identiteit:"
+
+#, fuzzy
+#~ msgid "&None"
+#~ msgstr "Klaar"
+
+#, fuzzy
+#~ msgid "Clear te&xt"
+#~ msgstr "Kalender"
+
+#, fuzzy
+#~ msgid "&Warn when trying to send unencrypted messages"
+#~ msgstr "Gaan na die volgende boodskap"
+
+#, fuzzy
+#~| msgid "Signing"
+#~ msgid "For Signing"
+#~ msgstr "Ondertekening"
+
+#, fuzzy
+#~ msgid "For Encryption"
+#~ msgstr "Enkripteer"
+
+#, fuzzy
+#~ msgid "For root certificates:"
+#~ msgstr "Sertifikaat Bestuurder..."
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "POP Settings"
+#~ msgstr "Stel Enkodering"
+
+#, fuzzy
+#~ msgctxt "Number of days that the message will be left on the server."
+#~ msgid " days"
+#~ msgstr "in proses"
+
+#, fuzzy
+#~ msgid " messages"
+#~ msgstr "Skuif boodskappe"
+
+#, fuzzy
+#~ msgid "Des&tination folder:"
+#~ msgstr "Nuwe Subgids..."
+
+#, fuzzy
+#~ msgid "Add a new identity"
+#~ msgstr "Redigeer Identiteit"
+
+#, fuzzy
+#~| msgid "Remove Duplicate Messages"
+#~ msgid "Rename the selected identity"
+#~ msgstr "Verwyder duplikaat boodskappe"
+
+#, fuzzy
+#~| msgid "Remove Duplicate Messages"
+#~ msgid "Remove the selected identity"
+#~ msgstr "Verwyder duplikaat boodskappe"
+
+#, fuzzy
+#~ msgid "Set as &Default"
+#~ msgstr "Skep Filter"
+
+#, fuzzy
+#~ msgid "HTML Messages"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~| msgid "Prefer &HTML to Plain Text"
+#~ msgid "Prefer HTML to plain text"
+#~ msgstr "Verkies HTML bo Skoon Teks"
+
+#, fuzzy
+#~ msgid "Encrypted Messages"
+#~ msgstr "Soek Boodskappe..."
+
+#, fuzzy
+#~ msgid "Message Disposition Notifications"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~| msgctxt "MDN type"
+#~| msgid "Ignore"
+#~ msgid "Ignore"
+#~ msgstr "Ignoreer"
+
+#, fuzzy
+#~ msgid "Quote original message:"
+#~ msgstr "Vertoon al die boodskap opskrifte"
+
+#, fuzzy
+#~| msgid "<any header>"
+#~ msgid "Only headers"
+#~ msgstr "<enige opskrif>"
+
+#, fuzzy
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "Gaan na die volgende boodskap"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgctxt "@label:textbox Recipient mail address"
+#~ msgid "To:"
+#~ msgstr "Aan: "
+
+#, fuzzy
+#~| msgid "CC: "
+#~ msgid "CC:"
+#~ msgstr "CC:"
+
+#, fuzzy
+#~ msgctxt "Universal custom template type."
+#~ msgid "Universal"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~ msgid "Reply"
+#~ msgstr "Antwoord Aan"
+
+#, fuzzy
+#~ msgid "Reply to All"
+#~ msgstr "Beantwoord aan almal..."
+
+#, fuzzy
+#~ msgctxt "Template type for forwarding messages."
+#~ msgid "Forward"
+#~ msgstr "Stuur aan"
+
+#, fuzzy
+#~ msgid "&Template type:"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "Add Snippet"
+#~ msgstr "Intekening..."
+
+#, fuzzy
+#~ msgid "&Snippet:"
+#~ msgstr "Intekening..."
+
+#, fuzzy
+#~ msgid "Sh&ortcut:"
+#~ msgstr "Wys:"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Template Configuration"
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~| msgid "New Message"
+#~ msgctxt "@title Message template"
+#~ msgid "New Message"
+#~ msgstr "Nuwe boodskap"
+
+#, fuzzy
+#~ msgctxt "@title Message template"
+#~ msgid "Reply to Sender"
+#~ msgstr "Beantwoord aan: "
+
+#, fuzzy
+#~ msgctxt "@title Message template"
+#~ msgid "Reply to All / Reply to List"
+#~ msgstr "Beantwoord aan almal..."
+
+#, fuzzy
+#~ msgctxt "@title Message template"
+#~ msgid "Forward Message"
+#~ msgstr "Redigeer Boodksap"
+
+#, fuzzy
+#~ msgctxt "@label:textbox Prefix for quoted message lines"
+#~ msgid "&Quote indicator:"
+#~ msgstr "Skuif boodskappe"
+
+#, fuzzy
+#~| msgid "Append S&ignature"
+#~ msgid "OCSP responder signature:"
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~ msgid "File location:"
+#~ msgstr "Dokumentasie"
+
+#, fuzzy
+#~ msgid "Choo&se..."
+#~ msgstr "Verander..."
+
+#, fuzzy
+#~ msgid "Destination folder:"
+#~ msgstr "Nuwe Subgids..."
+
+#, fuzzy
+#~ msgctxt "@item:inlistbox Adjective, language"
+#~ msgid "German"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~| msgctxt "MDN type"
+#~| msgid "Failed"
+#~ msgctxt "@item:inlistbox Adjective, language"
+#~ msgid "French"
+#~ msgstr "Gevaal"
+
+#~ msgid "Chec&k mail on startup"
+#~ msgstr "Kyk vir nuwe pos tydens opstart"
+
+#~ msgid "New Mail Notification"
+#~ msgstr "Nuwe pos inkennisstelling"
+
+#~ msgid "&Beep"
+#~ msgstr "Biep"
+
+#, fuzzy
+#~| msgid "Go to the next folder with unread messages"
+#~ msgid "Show for each  folder the number of newly arrived messages"
+#~ msgstr "Gaan na die volgende gids met ongeleesde boodskappe"
+
+#, fuzzy
+#~ msgid "Folder location:"
+#~ msgstr "Dokumentasie"
+
+#, fuzzy
+#~| msgid "Go to the next unread message"
+#~ msgctxt ""
+#~ "to be continued with \"do not loop\", \"loop in current folder\", and "
+#~ "\"loop in all folders\""
+#~ msgid "&When trying to find unread messages:"
+#~ msgstr "Gaan na die volgende ongeleesde boodskap"
+
+#, fuzzy
+#~ msgid "Loop in Current Folder"
+#~ msgstr "Kon nie gids skep nie"
+
+#, fuzzy
+#~| msgid "&Expire All Folders"
+#~ msgid "Loop in All Folders"
+#~ msgstr "Verstryk Alle Gidse"
+
+#, fuzzy
+#~| msgid "&Expire All Folders"
+#~ msgid "Loop in All Marked Folders"
+#~ msgstr "Verstryk Alle Gidse"
+
+#, fuzzy
+#~| msgid "&Import Messages..."
+#~ msgid "Jump to First New Message"
+#~ msgstr "Voer Boodskappe In..."
+
+#, fuzzy
+#~ msgid "Jump to First Unread or New Message"
+#~ msgstr "Gaan na die volgende ongeleesde boodskap"
+
+#, fuzzy
+#~ msgid "Jump to Last Selected Message"
+#~ msgstr "Vee Boodskappe Uit"
+
+#, fuzzy
+#~| msgid "Mark selected messages as read"
+#~ msgid "Mar&k selected message as read after"
+#~ msgstr "Merk gekose boodskappe as gelees"
+
+#, fuzzy
+#~ msgid "Empty local &trash folder on program exit"
+#~ msgstr "Maak alle Gemors Gidse skoon"
+
+#, fuzzy
+#~| msgid "New Mail Notification"
+#~ msgid "Verbose new mail notification"
+#~ msgstr "Nuwe pos inkennisstelling"
+
+#, fuzzy
+#~| msgid "Show Quick Search"
+#~ msgid "Show folder quick search line edit"
+#~ msgstr "Vertoon Vinnige Soek"
+
+#, fuzzy
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "Word &wrap at column:"
+#~ msgstr "Besigtig Kolomme"
+
+#~ msgid "Use Fi&xed Font"
+#~ msgstr "Gebruik vaste grootte skrif tipe"
+
+#, fuzzy
+#~ msgid "Automatically request &message disposition notifications"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~| msgid "Check &Mail"
+#~ msgid "Autosave interval:"
+#~ msgstr "Kyk vir nuwe pos"
+
+#, fuzzy
+#~| msgid "Append S&ignature"
+#~ msgid "Prepend separator to signature"
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~ msgid "Long folder list"
+#~ msgstr "Verwyder Opskrif"
+
+#, fuzzy
+#~| msgid "Refresh Folder List"
+#~ msgid "Short folder list"
+#~ msgstr "Verfris gids lys"
+
+#, fuzzy
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "Vertoon al die boodskap opskrifte"
+
+#, fuzzy
+#~| msgid "Move message to trashcan"
+#~ msgid "Above the message pane"
+#~ msgstr "Beweeg boodskap na asblik"
+
+#, fuzzy
+#~ msgid "Below the message pane"
+#~ msgstr "Kies Boodskap Teks"
+
+#, fuzzy
+#~| msgctxt "EMAIL OF TRANSLATORS"
+#~| msgid "Your emails"
+#~ msgid "Show always"
+#~ msgstr "frix@expertron.co.za"
+
+#, fuzzy
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "Vertoon al die boodskap opskrifte"
+
+#, fuzzy
+#~| msgid "Save Attachment As"
+#~ msgid "How attachments are shown"
+#~ msgstr "Stoor aanhangsel as"
+
+#, fuzzy
+#~ msgid "Send Message Disposition Notifications with an empty sender."
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~ msgid "Message template for new message"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "Message template for reply"
+#~ msgstr "Merk boodskap as nie aangestuur"
+
+#, fuzzy
+#~ msgid "Message template for reply to all"
+#~ msgstr "Merk boodskap as nie aangestuur"
+
+#, fuzzy
+#~ msgid "Message template for forward"
+#~ msgstr "Merk boodskap as nie aangestuur"
+
+#, fuzzy
+#~ msgid "Quote characters"
+#~ msgstr "Skuif boodskappe"
+
+#, fuzzy
+#~ msgid "Quoted Message Text"
+#~ msgstr "Skuif boodskappe"
+
+#, fuzzy
+#~ msgid "Message Text as Is"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~ msgid "Message Id"
+#~ msgstr "Boodskap Lyf"
+
+#, fuzzy
+#~ msgid "To Field Address"
+#~ msgstr "E-pos adres:"
+
+#, fuzzy
+#~ msgid "To Field Name"
+#~ msgstr "E-pos adres:"
+
+#, fuzzy
+#~ msgid "CC Field Address"
+#~ msgstr "E-pos adres:"
+
+#, fuzzy
+#~ msgid "CC Field Name"
+#~ msgstr "E-pos adres:"
+
+#, fuzzy
+#~ msgid "From Field Address"
+#~ msgstr "E-pos adres:"
+
+#, fuzzy
+#~ msgid "From Field Name"
+#~ msgstr "E-pos adres:"
+
+#, fuzzy
+#~ msgid "From Field First Name"
+#~ msgstr "E-pos adres:"
+
+#, fuzzy
+#~ msgid "From Field Last Name"
+#~ msgstr "E-pos adres:"
+
+#, fuzzy
+#~| msgid "Additional Recipients"
+#~ msgid "Addresses of all recipients"
+#~ msgstr "Addisionele Ontvangers"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "Template value for subject of the message"
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#, fuzzy
+#~ msgid "Quoted Headers"
+#~ msgstr "Skuif boodskappe"
+
+#, fuzzy
+#~ msgid "Headers as Is"
+#~ msgstr "Voeg Opskrif By"
+
+#, fuzzy
+#~ msgid "Header Content"
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~ msgid "From field Name"
+#~ msgstr "E-pos adres:"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "Template subject command."
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#, fuzzy
+#~ msgctxt "Inserts user signature, also known as footer, into message"
+#~ msgid "Signature"
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~ msgid "Insert File Content"
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~ msgid "Template Comment"
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~ msgid "Clear Generated Message"
+#~ msgstr "Gaan na die vorige ongeleesde boodskap"
+
+#, fuzzy
+#~ msgid "&Insert Command"
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~ msgid "Insert Command"
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~ msgid "Original Message"
+#~ msgstr "Vertoon al die boodskap opskrifte"
+
+#, fuzzy
+#~ msgid "Current Message"
+#~ msgstr "Skuif boodskappe"
+
+#, fuzzy
+#~ msgid "Downgrade"
+#~ msgstr "Klaar"
+
+#, fuzzy
+#~ msgid "Only Current Folder"
+#~ msgstr "Kon nie gids skep nie"
+
+#, fuzzy
+#~ msgid "All Folders of This Account"
+#~ msgstr "Kopiëer na hierdie gids"
+
+#, fuzzy
+#~| msgid "&Refresh Local IMAP Cache"
+#~ msgid "Refresh &Cache"
+#~ msgstr "Vervris plaaslike IMAP Kas"
+
+#, fuzzy
+#~| msgid "C&ancel"
+#~ msgid "Canceled"
+#~ msgstr "Kaneleer"
+
+#, fuzzy
+#~ msgid "Move"
+#~ msgstr "Skuif Na"
+
+#, fuzzy
+#~ msgid "Add as &Attachment"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#, fuzzy
+#~ msgid "Name of the attachment:"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#, fuzzy
+#~ msgid "Add as &Text"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#, fuzzy
+#~ msgctxt "@label:listbox Recipient of an email message."
+#~ msgid "To"
+#~ msgstr "Aan"
+
+#, fuzzy
+#~ msgctxt "@label:listbox Carbon Copy recipient of an email message."
+#~ msgid "CC"
+#~ msgstr "CC"
+
+#, fuzzy
+#~ msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+#~ msgid "BCC"
+#~ msgstr "BCC"
+
+#, fuzzy
+#~ msgctxt "@label:listbox"
+#~ msgid "<placeholder>Undefined Recipient Type</placeholder>"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgctxt "@label:listbox"
+#~ msgid "Select type of recipient"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgctxt "@action:button Open recipient selection dialog."
+#~ msgid "Se&lect..."
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select recipients from address book"
+#~ msgstr "Adresboek"
+
+#, fuzzy
+#~ msgctxt "@info:status No recipients selected"
+#~ msgid "No recipients"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgctxt "@info:status Number of recipients selected"
+#~ msgid "1 recipient"
+#~ msgid_plural "%1 recipients"
+#~ msgstr[0] "1 ongestuur"
+#~ msgstr[1] "%1 ongestuur"
+
+#~ msgid "Maintainer"
+#~ msgstr "Onderhouer"
+
+#~ msgid "Original author"
+#~ msgstr "Oorspronklike outeur"
+
+#~ msgid "Former maintainer"
+#~ msgstr "Vorige onderhouer"
+
+#, fuzzy
+#~| msgid "Former maintainer"
+#~ msgid "Former co-maintainer"
+#~ msgstr "Vorige onderhouer"
+
+#~ msgid "Core developer"
+#~ msgstr "Hoof ontwikkelaar"
+
+#, fuzzy
+#~| msgid "Core developer"
+#~ msgid "Former core developer"
+#~ msgstr "Hoof ontwikkelaar"
+
+#~ msgid "Documentation"
+#~ msgstr "Dokumentasie"
+
+#~ msgid "system tray notification"
+#~ msgstr "stelsel laai inkennisstelling"
+
+#~ msgid "PGP 6 support and further enhancements of the encryption support"
+#~ msgstr ""
+#~ "PGP 6 ondersteuning en verdere verbeteringe van die enkripsie "
+#~ "ondersteuning"
+
+#, fuzzy
+#~| msgid ""
+#~| "Original encryption support\n"
+#~| "PGP 2 and PGP 5 support"
+#~ msgid "Original encryption support<br/>PGP 2 and PGP 5 support"
+#~ msgstr ""
+#~ "Oorspronklike enkripsie ondersteuning\n"
+#~ "PGP 2 en PGP 5 ondersteuning"
+
+#~ msgid "outbox"
+#~ msgstr "uitboks"
+
+#~ msgid "sent-mail"
+#~ msgstr "gestuurde pos"
+
+#~ msgid "trash"
+#~ msgstr "gemors"
+
+#~ msgid "drafts"
+#~ msgstr "in proses"
+
+#, fuzzy
+#~ msgid "templates"
+#~ msgstr "Vervang"
+
+#~ msgid "Save to File"
+#~ msgstr "Stoor na Lêer"
+
+#~ msgid "&Replace"
+#~ msgstr "Vervang"
+
+#~ msgctxt "View->"
+#~ msgid "&Headers"
+#~ msgstr "Opskrifte"
+
+#~ msgid "Choose display style of message headers"
+#~ msgstr "Kies vertoon styl van boodskap opskrifte"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Brief Headers"
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "Opgesomde Opskrifte"
+
+#, fuzzy
+#~| msgid "Show the list of headers in a fancy format"
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "Vertoon die lys van opskrifte in 'n deftige formaat"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "Deftige Opskrifte"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "Vertoon die lys van opskrifte in 'n deftige formaat"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "Opgesomde Opskrifte"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "Vertoon 'n opgesomde lys van boodskap opskrifte"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "Standaard Opskrifte"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "Vertoon die standaard lys van boodskap opskrifte"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "Uitgebreide Opskrifte"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "Vertoon die uitgebreide lys van boodskap opskrifte"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "Alle Opskrifte"
+
+#~ msgid "Show all message headers"
+#~ msgstr "Vertoon al die boodskap opskrifte"
+
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "Aanhangsels"
+
+#~ msgid "Choose display style of attachments"
+#~ msgstr "Kies vertoon styl van aanhangsels"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&As Icons"
+#~ msgstr "As Ikone"
+
+#~ msgid "Show all attachments as icons. Click to see them."
+#~ msgstr ""
+#~ "Vertoon al die aanhangsels as ikone. Kliek op ikoon om dit te vertoon."
+
+#~ msgid "Show attachments as suggested by sender."
+#~ msgstr "Vertoon aanhangsels soos voorgestel deur die stuurder."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Inline"
+#~ msgstr "Inlyn"
+
+#~ msgid "Show all attachments inline (if possible)"
+#~ msgstr "Vertoon die aanhangsels inlyn (indien moontlik)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "Steek weg"
+
+#~ msgid "Do not show attachments in the message viewer"
+#~ msgstr "Moet nie aanhangsels indie boodskap venster vertoon nie"
+
+#~ msgid "&Set Encoding"
+#~ msgstr "Stel Enkodering"
+
+#~ msgid "New Message To..."
+#~ msgstr "Nuwe boodskap aan..."
+
+#, fuzzy
+#~ msgid "Select All Text"
+#~ msgstr "Kies Alle Boodskappe"
+
+#, fuzzy
+#~ msgid "Copy Link Address"
+#~ msgstr "E-pos adres:"
+
+#~ msgid "Open URL"
+#~ msgstr "Maak URL oop"
+
+#~ msgid "Bookmark This Link"
+#~ msgstr "Boekmerk hierdie skakel"
+
+#~ msgid "Save Link As..."
+#~ msgstr "Stoor skakel as"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Show Message Structure"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~| msgid "Select &All Messages"
+#~ msgid "Scroll Message Up"
+#~ msgstr "Kies Alle Boodskappe"
+
+#, fuzzy
+#~| msgid "Select &All Messages"
+#~ msgid "Scroll Message Down"
+#~ msgstr "Kies Alle Boodskappe"
+
+#, fuzzy
+#~ msgid "Save As..."
+#~ msgstr "Stoor As..."
+
+#~ msgid "View Attachment: %1"
+#~ msgstr "Kyk na aanhangsel: %1"
+
+#, fuzzy
+#~| msgctxt "Config->Composer->Attachments"
+#~| msgid "A&ttachments"
+#~ msgid "Attachments:"
+#~ msgstr "Aanhangsels"
+
+#~ msgid "Open Message"
+#~ msgstr "Maak Boodskap Oop"
+
+#, fuzzy
+#~ msgid "The file does not contain a message."
+#~ msgstr "Gaan na die vorige ongeleesde boodskap"
+
+#, fuzzy
+#~ msgid "Send As Digest"
+#~ msgstr "Skep Filter"
+
+#~ msgid "Moving messages"
+#~ msgstr "Skuif boodskappe"
+
+#~ msgid "Deleting messages"
+#~ msgstr "Vee boodskappe uit"
+
+#~ msgid "Opening URL..."
+#~ msgstr "Maak URL oop..."
+
+#, fuzzy
+#~| msgid "Save Attachment As"
+#~ msgid "Save Attachment"
+#~ msgstr "Stoor aanhangsel as"
+
+#~ msgid "File Already Exists"
+#~ msgstr "Die lêer bestaan alreeds"
+
+#, fuzzy
+#~ msgid "&Overwrite"
+#~ msgstr "Oorskryf"
+
+#, fuzzy
+#~ msgid "Overwrite &All"
+#~ msgstr "Oorskryf"
+
+#, fuzzy
+#~ msgid "Keep Encryption"
+#~ msgstr "Enkripteer"
+
+#, fuzzy
+#~ msgid "Keep Signature"
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~ msgid "Error saving attachment"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgid "Mail: %1"
+#~ msgstr "Pos"
+
+#~ msgid "&Identity:"
+#~ msgstr "Identiteit:"
+
+#~ msgid "&Dictionary:"
+#~ msgstr "Woordeboek:"
+
+#~ msgid "&Reply to:"
+#~ msgstr "Antwoord aan:"
+
+#, fuzzy
+#~ msgctxt "@label:textbox Subject of email."
+#~ msgid "S&ubject:"
+#~ msgstr "Onderwerp"
+
+#, fuzzy
+#~ msgid ""
+#~ "Autosaving the message as %1 failed.\n"
+#~ "Reason: %2"
+#~ msgstr "Boodskap skuif het gevaal."
+
+#, fuzzy
+#~ msgid "Autosaving Failed"
+#~ msgstr "Boodskap skuif het gevaal."
+
+#, fuzzy
+#~ msgid "&Send Mail"
+#~ msgstr "Stuur Nou"
+
+#, fuzzy
+#~ msgid "Send"
+#~ msgstr "Stuurder"
+
+#, fuzzy
+#~ msgid "Send &Later Via"
+#~ msgstr "Stuurder"
+
+#, fuzzy
+#~ msgid "Queue"
+#~ msgstr "Wagtou"
+
+#, fuzzy
+#~ msgid "Save as &Draft"
+#~ msgstr "Skep Filter"
+
+#, fuzzy
+#~ msgid "Save as &Template"
+#~ msgstr "Vervang"
+
+#~ msgid "&Insert File..."
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~ msgid "&Insert File Recent"
+#~ msgstr "Voeg lêer by..."
+
+#~ msgid "&New Composer"
+#~ msgstr "Nuwe Brief"
+
+#, fuzzy
+#~ msgid "Select &Recipients..."
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgid "Paste as Attac&hment"
+#~ msgstr "Stoor Aanhangsels..."
+
+#, fuzzy
+#~| msgid "&Urgent"
+#~ msgctxt "@action:inmenu Mark the email as urgent."
+#~ msgid "&Urgent"
+#~ msgstr "Dringend"
+
+#~ msgid "Se&t Encoding"
+#~ msgstr "Stel Enkodering"
+
+#~ msgid "&Wordwrap"
+#~ msgstr "Woord omvloei"
+
+#~ msgid "&Automatic Spellchecking"
+#~ msgstr "Outimatiese Speltoetsing"
+
+#~ msgid "Auto-Detect"
+#~ msgstr "Outo-Naspeur"
+
+#~ msgid "Formatting (HTML)"
+#~ msgstr "Formateering (HTML)"
+
+#~ msgid "&Identity"
+#~ msgstr "Identiteit"
+
+#, fuzzy
+#~ msgid "&Sent-Mail Folder"
+#~ msgstr "Vee Gids Uit"
+
+#~ msgid "&Reply To"
+#~ msgstr "Antwoord Aan"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Show the subject in the composer window."
+#~ msgid "S&ubject"
+#~ msgstr "Onderwerp"
+
+#~ msgid "Append S&ignature"
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~| msgid "Append S&ignature"
+#~ msgid "Pr&epend Signature"
+#~ msgstr "Heg Handtekening Aan"
+
+#~ msgid "Attach &Public Key..."
+#~ msgstr "Heg Publieke Sleutel aan..."
+
+#~ msgid "Attach &My Public Key"
+#~ msgstr "Heg my publieke sleutel aan"
+
+#~ msgid "&Attach File..."
+#~ msgstr "Voeg lêer aanhangsel by..."
+
+#, fuzzy
+#~| msgid "&Attach"
+#~ msgid "Attach"
+#~ msgstr "Heg aan"
+
+#~ msgid "&Remove Attachment"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#~ msgid "&Save Attachment As..."
+#~ msgstr "Stoor lêer aanhangsel as..."
+
+#, fuzzy
+#~ msgid "Encrypt Message with Chiasmus..."
+#~ msgstr "Kies Boodskap Teks"
+
+#~ msgid "Encrypt"
+#~ msgstr "Enkripteer"
+
+#~ msgid "Sign"
+#~ msgstr "Onderteken"
+
+#, fuzzy
+#~ msgid "Reset Font"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~ msgid "Configure KMail..."
+#~ msgstr "Stel KMail op..."
+
+#, fuzzy
+#~ msgid "Re&save as Template"
+#~ msgstr "Vervang"
+
+#~ msgid "Attach File"
+#~ msgstr "Heg lêer aan"
+
+#~ msgctxt "to view"
+#~ msgid "View"
+#~ msgstr "Bekyk"
+
+#, fuzzy
+#~ msgid "Edit With..."
+#~ msgstr "Intekening..."
+
+#~ msgid "Add Attachment..."
+#~ msgstr "Voeg aangangesl by..."
+
+#, fuzzy
+#~ msgctxt "Do not compress"
+#~ msgid "Keep"
+#~ msgstr "Biep"
+
+#~ msgid "Save Attachment As"
+#~ msgstr "Stoor aanhangsel as"
+
+#, fuzzy
+#~ msgid "Insert clipboard text as attachment"
+#~ msgstr "Stoor Aanhangsels..."
+
+#, fuzzy
+#~ msgid "Too many recipients"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~| msgid "Additional Recipients"
+#~ msgid "&Edit Recipients"
+#~ msgstr "Addisionele Ontvangers"
+
+#, fuzzy
+#~| msgid "Formatting (HTML)"
+#~ msgid "Lose Formatting"
+#~ msgstr "Formateering (HTML)"
+
+#, fuzzy
+#~| msgid "Message with subject: "
+#~ msgid "Message will be signed"
+#~ msgstr "Boodskap met onderwerp: "
+
+#, fuzzy
+#~| msgid "Message with subject: "
+#~ msgid "Message will not be signed"
+#~ msgstr "Boodskap met onderwerp: "
+
+#, fuzzy
+#~ msgid "Message will be encrypted"
+#~ msgstr "Merk gekose boodskappe as ongelees"
+
+#, fuzzy
+#~ msgid "Message will not be encrypted"
+#~ msgstr "Merk gekose boodskappe as ongelees"
+
+#, fuzzy
+#~ msgctxt "General mail filter settings."
+#~ msgid "General"
+#~ msgstr "Beantwoord"
+
+#, fuzzy
+#~ msgctxt "Advanced mail filter settings."
+#~ msgid "Advanced"
+#~ msgstr "Kaneleer"
+
+#, fuzzy
+#~ msgid "Account Name"
+#~ msgstr "Jou naam:"
+
+#, fuzzy
+#~ msgctxt "Move selected filter down."
+#~ msgid "Down"
+#~ msgstr "Klaar"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "Vee Uit"
+
+#, fuzzy
+#~| msgctxt "MDN type"
+#~| msgid "Displayed"
+#~ msgid "Discard"
+#~ msgstr "Vertoon"
+
+#, fuzzy
+#~ msgid "Select Folder"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~ msgid "Unknown folder '%1'"
+#~ msgstr "Nuwe Subgids..."
+
+#, fuzzy
+#~ msgid "Please select a folder"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~ msgid "Mail Expiry Properties"
+#~ msgstr "Eienskappe"
+
+#, fuzzy
+#~ msgctxt "Expire messages after %1"
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] "in proses"
+#~ msgstr[1] "in proses"
+
+#, fuzzy
+#~ msgid "Expire unread messages after"
+#~ msgstr "Gaan na die vorige ongeleesde boodskap"
+
+#, fuzzy
+#~| msgid "Moving messages"
+#~ msgid "Move expired messages to:"
+#~ msgstr "Skuif boodskappe"
+
+#, fuzzy
+#~ msgid "Delete expired messages permanently"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "Filtering"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgctxt "Placeholder for the case that there is no folder."
+#~ msgid "<placeholder>none</placeholder>"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgid " message"
+#~ msgid_plural " messages"
+#~ msgstr[0] "1 boodskap, %2"
+#~ msgstr[1] "%1 boodskappe, %2"
+
+#, fuzzy
+#~ msgid "Fetching Namespaces..."
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgctxt "Empty namespace string."
+#~ msgid "Empty"
+#~ msgstr "Leeg"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>Messages classified as spam are marked as read.<br />Spam messages are "
+#~ "moved into the folder named <i>%1</i>.</p>"
+#~ msgstr "Merk al die boodskappe in die gekose gesprekslyn as gelees"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>Messages classified as spam are marked as read.<br />Spam messages are "
+#~ "not moved into a certain folder.</p>"
+#~ msgstr "Merk al die boodskappe in die gekose gesprekslyn as gelees"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>Messages classified as spam are not marked as read.<br />Spam messages "
+#~ "are moved into the folder named <i>%1</i>.</p>"
+#~ msgstr "Merk al die boodskappe in die gekose gesprekslyn as gelees"
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>Messages classified as spam are not marked as read.<br />Spam messages "
+#~ "are not moved into a certain folder.</p>"
+#~ msgstr "Merk al die boodskappe in die gekose gesprekslyn as gelees"
+
+#, fuzzy
+#~ msgid "&Mark detected spam messages as read"
+#~ msgstr "Merk gekose boodskappe as gelees"
+
+#, fuzzy
+#~ msgid "Mark messages which have been classified as spam as read."
+#~ msgstr "Merk al die boodskappe in die gekose gesprekslyn as gelees"
+
+#~ msgctxt "Message->"
+#~ msgid "&Reply"
+#~ msgstr "Beantwoord"
+
+#~ msgid "Reply to A&uthor..."
+#~ msgstr "Beantwoord aan Outeur..."
+
+#~ msgid "Reply Without &Quote..."
+#~ msgstr "Beantwoord sonder Aanhalingstekens..."
+
+#~ msgid "Mar&k Message"
+#~ msgstr "Merk Boodskap"
+
+#~ msgid "Mark Message as &Read"
+#~ msgstr "Merk boodskap as gelees"
+
+#~ msgid "Mark selected messages as read"
+#~ msgstr "Merk gekose boodskappe as gelees"
+
+#~ msgid "Mark Message as &New"
+#~ msgstr "Merk boodskap as nuut"
+
+#~ msgid "Mark selected messages as new"
+#~ msgstr "Merk gekose boodskappe as nuut"
+
+#~ msgid "Mark Message as &Unread"
+#~ msgstr "Merk boodskap as ongelees"
+
+#~ msgid "Mark selected messages as unread"
+#~ msgstr "Merk gekose boodskappe as ongelees"
+
+#~ msgid "Mark Message as &Important"
+#~ msgstr "Merk boodskap as belangrik"
+
+#~ msgid "Remove &Important Message Mark"
+#~ msgstr "Verwyder boodskap merk: belangrik"
+
+#, fuzzy
+#~| msgid "Mark Message as &New"
+#~ msgid "Mark Message as &Action Item"
+#~ msgstr "Merk boodskap as nuut"
+
+#, fuzzy
+#~| msgid "Remove &Important Message Mark"
+#~ msgid "Remove &Action Item Message Mark"
+#~ msgstr "Verwyder boodskap merk: belangrik"
+
+#~ msgid "&Edit Message"
+#~ msgstr "Redigeer Boodksap"
+
+#, fuzzy
+#~| msgctxt "Message->Forward->"
+#~| msgid "As &Attachment..."
+#~ msgctxt "@action:inmenu Message->Forward->"
+#~ msgid "As &Attachment..."
+#~ msgstr "As aanhangsel..."
+
+#, fuzzy
+#~| msgid "&Inline..."
+#~ msgctxt "@action:inmenu Message->Forward->"
+#~ msgid "&Inline..."
+#~ msgstr "Inlyn..."
+
+#~ msgctxt "Message->Forward->"
+#~ msgid "&Redirect..."
+#~ msgstr "Herlei"
+
+#, fuzzy
+#~ msgid "Sending failed"
+#~ msgstr "Stuur Nou"
+
+#, fuzzy
+#~ msgid "Select Filters"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Import Filters"
+#~ msgstr "Skep Filter"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "calendar|tasks|contacts=%2 belonging to %1"
+#~ msgid "%1's %2"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "folder name (folder storage name)"
+#~ msgid "%1 (%2)"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "My Calendar"
+#~ msgid "My %1"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "My Contacts"
+#~ msgid "My %1"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "My Journal"
+#~ msgid "My %1"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "My Notes"
+#~ msgid "My %1"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "My Tasks"
+#~ msgid "My %1"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Delete Folder"
+#~ msgid "Default folder"
+#~ msgstr "Vee Gids uit"
+
+#, fuzzy
+#~ msgid "Complete Message"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "Body of Message"
+#~ msgstr "Redigeer Boodksap"
+
+#, fuzzy
+#~| msgid "Rewrite Header"
+#~ msgid "Anywhere in Headers"
+#~ msgstr "Herskryf Opskrif"
+
+#, fuzzy
+#~| msgid "Additional Recipients"
+#~ msgid "All Recipients"
+#~ msgstr "Addisionele Ontvangers"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Message Status"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Message Tag"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "Subject of an email."
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#, fuzzy
+#~ msgctxt "Receiver of an email."
+#~ msgid "To"
+#~ msgstr "Aan"
+
+#~ msgid "Configure \"Out of Office\" Replies"
+#~ msgstr "Stel \"Buite die Kantoor\" Antwoorde op"
+
+#, fuzzy
+#~ msgid "Removing folder"
+#~ msgstr "Verwyder Opskrif"
+
+#, fuzzy
+#~ msgid "Destination folder: %1"
+#~ msgstr "Nuwe Subgids..."
+
+#, fuzzy
+#~ msgid "<qt>Unable to access <b>%1</b>.</qt>"
+#~ msgstr "Kon nie gids skep nie"
+
+#, fuzzy
+#~ msgid "Fetched 1 message from mailbox %2."
+#~ msgid_plural "Fetched %1 messages from mailbox %2."
+#~ msgstr[0] "1 boodskap, %2"
+#~ msgstr[1] "%1 boodskappe, %2"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "To:"
+#~ msgstr "Aan: "
+
+#, fuzzy
+#~ msgid "Delete Script"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgid "Edit Script..."
+#~ msgstr "Intekening..."
+
+#, fuzzy
+#~ msgid "Deactivate Script"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgid "New Script..."
+#~ msgstr "Intekening..."
+
+#, fuzzy
+#~ msgid "Overwrite File?"
+#~ msgstr "Oorskryf"
+
+#, fuzzy
+#~| msgid "&Address Book"
+#~ msgid "Open Address Book"
+#~ msgstr "Adresboek"
+
+#~ msgid "Date (Order of Arrival)"
+#~ msgstr "Datum (In arriveer volgorde)"
+
+#, fuzzy
+#~ msgctxt "Number of unsent messages"
+#~ msgid "1 unsent"
+#~ msgid_plural "%1 unsent"
+#~ msgstr[0] "1 ongestuur"
+#~ msgstr[1] "%1 ongestuur"
+
+#, fuzzy
+#~ msgid "0 unsent"
+#~ msgstr "1 ongestuur"
+
+#, fuzzy
+#~ msgctxt "Number of unread messages"
+#~ msgid "1 unread"
+#~ msgid_plural "%1 unread"
+#~ msgstr[0] "1 ongelees"
+#~ msgstr[1] "%1 ongelees"
+
+#, fuzzy
+#~ msgctxt "No unread messages"
+#~ msgid "0 unread"
+#~ msgstr "Ongelees"
+
+#, fuzzy
+#~ msgctxt "Number of unread messages"
+#~ msgid "1 message, %2."
+#~ msgid_plural "%1 messages, %2."
+#~ msgstr[0] "1 boodskap, %2"
+#~ msgstr[1] "%1 boodskappe, %2"
+
+#, fuzzy
+#~ msgctxt "No unread messages"
+#~ msgid "0 messages"
+#~ msgstr "Skuif boodskappe"
+
+#, fuzzy
+#~| msgid "Folder"
+#~ msgid "Form"
+#~ msgstr "Gids"
+
+#, fuzzy
+#~| msgid "Check &Mail"
+#~ msgid "Check Ma&il"
+#~ msgstr "Kyk vir nuwe pos"
+
+#, fuzzy
+#~ msgid "Show Columns"
+#~ msgstr "Besigtig Kolomme"
+
+#, fuzzy
+#~| msgid "Folder"
+#~ msgctxt "@title:column Mail account destination folder"
+#~ msgid "Folder"
+#~ msgstr "Gids"
+
+#, fuzzy
+#~ msgctxt "@title:tab Advanced settings"
+#~ msgid "Advanced"
+#~ msgstr "Kaneleer"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@title collumn attachment size."
+#~ msgid "Size"
+#~ msgstr "Grootte"
+
+#, fuzzy
+#~| msgid "Encoding"
+#~ msgctxt "@title collumn attachment encoding."
+#~ msgid "Encoding"
+#~ msgstr "Enkodering"
+
+#, fuzzy
+#~| msgid "Encrypt"
+#~ msgctxt "@title collumn attachment encryption checkbox."
+#~ msgid "Encrypt"
+#~ msgstr "Enkripteer"
+
+#, fuzzy
+#~| msgid "Sign"
+#~ msgctxt "@title collumn attachment signed checkbox."
+#~ msgid "Sign"
+#~ msgstr "Onderteken"
+
+#, fuzzy
+#~ msgid "Insert Result of Command"
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgid "My %1 (%2)"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Subscription"
+#~ msgid "Subscription..."
+#~ msgstr "Intekenings"
+
+#, fuzzy
+#~ msgid "day"
+#~ msgid_plural "days"
+#~ msgstr[0] "in proses"
+#~ msgstr[1] "in proses"
+
+#, fuzzy
+#~| msgid "&Inline..."
+#~ msgctxt "@action:inmenu Forward current message inline."
+#~ msgid "&Inline..."
+#~ msgstr "Inlyn..."
+
+#, fuzzy
+#~ msgid "Choo&se.."
+#~ msgstr "Verander..."
+
+#, fuzzy
+#~ msgctxt ""
+#~ "Number of days the signature certificate should be valid without issuing "
+#~ "a warning. "
+#~ msgid " days"
+#~ msgstr "in proses"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "the minimum number of days the encryption certificate should be valid "
+#~ "without issuing a warning."
+#~ msgid " days"
+#~ msgstr "in proses"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "The minimum number of days all certificates in the chain should be valid"
+#~ msgid " days"
+#~ msgstr "in proses"
+
+#, fuzzy
+#~ msgctxt "The minimum number of days the CA certificate should be valid"
+#~ msgid " days"
+#~ msgstr "in proses"
+
+#, fuzzy
+#~ msgctxt "The minimum number of days the root certificate should be valid"
+#~ msgid " days"
+#~ msgstr "in proses"
+
+#, fuzzy
+#~ msgctxt "the minimum number of days the root certificate should be valid"
+#~ msgid " days"
+#~ msgstr "in proses"
+
+#, fuzzy
+#~| msgid "&Expire"
+#~ msgid "Export to HTML..."
+#~ msgstr "Verstryk"
+
+#, fuzzy
+#~ msgid "Export the selected messages to a HTML file"
+#~ msgstr "Merk gekose boodskappe as gelees"
+
+#, fuzzy
+#~ msgid "Message Sorting:"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~ msgid "Message Sort Direction:"
+#~ msgstr "Boodskap"
+
+#, fuzzy
+#~ msgid "To Do"
+#~ msgstr "Aan: "
+
+#, fuzzy
+#~ msgid "To Do Icon"
+#~ msgstr "Aan: "
+
+#, fuzzy
+#~| msgid "Any Status"
+#~ msgid "by To Do Status"
+#~ msgstr "Enige status"
+
+#, fuzzy
+#~ msgctxt "Status of an item"
+#~ msgid "ToDo"
+#~ msgstr "Aan: "
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "@item {FOLDER} on {MAIL ACCOUNT}"
+#~ msgid "%1 on %2"
+#~ msgstr "Pos"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "Unknown mail header."
+#~ msgid "Unknown"
+#~ msgstr "Onbekend"
+
+#~ msgid "Stat&us:"
+#~ msgstr "Status:"
+
+#, fuzzy
+#~| msgid "View Columns"
+#~ msgctxt "Column that shows the size"
+#~ msgid "Size Column"
+#~ msgstr "Besigtig Kolomme"
+
+#, fuzzy
+#~| msgid "&Import Messages..."
+#~ msgctxt "@action:inmenu Mark message as important."
+#~ msgid "Important"
+#~ msgstr "Voer Boodskappe In..."
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "@title:column Subject of message."
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "@title:column Subject of email."
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#~ msgid " (Status)"
+#~ msgstr " (Status)"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "@title:column Subject of the email."
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#, fuzzy
+#~| msgid "Unread"
+#~ msgctxt "@title:column Number of unread messages."
+#~ msgid "Unread"
+#~ msgstr "Ongelees"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgctxt "@title:column Total number of messages."
+#~ msgid "Total"
+#~ msgstr "Totaal"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@title:column Size of the messages."
+#~ msgid "Size"
+#~ msgstr "Grootte"
+
+#~ msgid "Thread Messages also by &Subject"
+#~ msgstr "Gesprekslyn Boodskappe ook volgens onderwerp"
+
+#~ msgctxt "View->"
+#~ msgid "&Unread Count"
+#~ msgstr "Ongeleesde Telling"
+
+#~ msgid "Choose how to display the count of unread messages"
+#~ msgstr "Kies hoe om die aantal ongeleesde boodskappe se teller te vertoon"
+
+#~ msgctxt "View->Unread Count"
+#~ msgid "View in &Separate Column"
+#~ msgstr "Vertoon in aparte kolom"
+
+#~ msgctxt "View->Unread Count"
+#~ msgid "View After &Folder Name"
+#~ msgstr "Vertoon agteraan die gids naam"
+
+#~ msgctxt "View->"
+#~ msgid "&Total Column"
+#~ msgstr "Totaal Kolom"
+
+#~ msgid ""
+#~ "Toggle display of column showing the total number of messages in folders."
+#~ msgstr ""
+#~ "Wissel die vertoon van die kolom, wat die totale aantal boodskappe in die "
+#~ "gids bevat"
+
+#, fuzzy
+#~| msgid "View Columns"
+#~ msgctxt "View->"
+#~ msgid "&Size Column"
+#~ msgstr "Besigtig Kolomme"
+
+#, fuzzy
+#~| msgid ""
+#~| "Toggle display of column showing the total number of messages in folders."
+#~ msgid ""
+#~ "Toggle display of column showing the total size of messages in folders."
+#~ msgstr ""
+#~ "Wissel die vertoon van die kolom, wat die totale aantal boodskappe in die "
+#~ "gids bevat"
+
+#, fuzzy
+#~ msgctxt "Placeholder for the case that there is no folder."
+#~ msgid "<none>"
+#~ msgstr "Klaar"
+
+#~ msgid "&Subject"
+#~ msgstr "Onderwerp"
+
+#, fuzzy
+#~ msgid "&Templates"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "comma-separated list of keywords that are used to detect whether the user "
+#~ "forgot to attach his attachment"
+#~ msgid "attachment,attached"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#, fuzzy
+#~ msgid "Message List - Todo Messages"
+#~ msgstr "Vee boodskappe uit"
+
+#, fuzzy
+#~ msgid "Remove &To-do Thread Mark"
+#~ msgstr "Verwyder gesprekslyn merk: belangrik"
+
+#~ msgid "Adopter and co-maintainer"
+#~ msgstr "Mede onderhouers"
+
+#~ msgid "&Address Book..."
+#~ msgstr "Adresboek..."
+
+#, fuzzy
+#~| msgid "Sender"
+#~ msgid "Center"
+#~ msgstr "Stuurder"
+
+#, fuzzy
+#~| msgid "Save Link As..."
+#~ msgid "Manage Link..."
+#~ msgstr "Stoor skakel as"
+
+#, fuzzy
+#~ msgid "Shortc&ut"
+#~ msgstr "Wys:"
+
+#, fuzzy
+#~ msgid "Remove &To-do Message Mark"
+#~ msgstr "Verwyder boodskap merk: belangrik"
+
+#, fuzzy
+#~ msgid "Snippet Settings"
+#~ msgstr "Stel Enkodering"
+
+#, fuzzy
+#~ msgid "Mark Message as &To-do"
+#~ msgstr "Merk boodskap as gelees"
+
+#, fuzzy
+#~ msgid "Mark Thread as &To-do"
+#~ msgstr "Merk gesprekslyn as gestuur"
+
+#~ msgid "no subject"
+#~ msgstr "geen onderwerk"
+
+#~ msgid "<message>"
+#~ msgstr "<boodskap>"
+
+#~ msgid "<body>"
+#~ msgstr "<lyf>"
+
+#~ msgid "<any header>"
+#~ msgstr "<enige opskrif>"
+
+#~ msgid "Primary Recipients"
+#~ msgstr "Primêre Ontvanger"
+
+#~ msgid "&Copy to (CC):"
+#~ msgstr "Kopiëer aan (CC):"
+
+#~ msgid "&Blind copy to (BCC):"
+#~ msgstr "Versteekte kopie aan (BCC):"
+
+#~ msgid "Hidden Recipients"
+#~ msgstr "Versteekte Ontvangers"
+
+#~ msgid "&To"
+#~ msgstr "Aan"
+
+#~ msgid "&CC"
+#~ msgstr "CC"
+
+#~ msgid "&BCC"
+#~ msgstr "BCC"
+
+#, fuzzy
+#~ msgid "&To-do"
+#~ msgstr "Aan: "
+
+#, fuzzy
+#~ msgid "Shortcut conflict"
+#~ msgstr "Wys:"
+
+#, fuzzy
+#~ msgid "&Insert"
+#~ msgstr "Voeg lêer by..."
+
+#, fuzzy
+#~ msgid "Replace"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "Replace &All"
+#~ msgstr "Vervang"
+
+#, fuzzy
+#~ msgid "Replace with:"
+#~ msgstr "Vervang"
+
+#~ msgid "Chat &With..."
+#~ msgstr "Praat met..."
+
+#, fuzzy
+#~ msgid "Encr&ypt all message parts"
+#~ msgstr "Vertoon al die boodskap opskrifte"
+
+#, fuzzy
+#~ msgid "Sign all message &parts"
+#~ msgstr "Vertoon al die boodskap opskrifte"
+
+#~ msgid " Initializing..."
+#~ msgstr "Initsialiseer..."
+
+#, fuzzy
+#~ msgid "Move to:"
+#~ msgstr "Skuif Na"
+
+#, fuzzy
+#~| msgid "Mark Message as &Read"
+#~ msgid "Classify Message as &Spam"
+#~ msgstr "Merk boodskap as gelees"
+
+#, fuzzy
+#~| msgid "Remove &Important Message Mark"
+#~ msgid "Remove &Spam Classification"
+#~ msgstr "Verwyder boodskap merk: belangrik"
+
+#, fuzzy
+#~| msgid "Mark Message as &Read"
+#~ msgid "Classify Message as &Ham"
+#~ msgstr "Merk boodskap as gelees"
+
+#, fuzzy
+#~ msgid "Remove &Ham Classification"
+#~ msgstr "Verwyder boodskap merk: belangrik"
+
+#, fuzzy
+#~ msgid "Remove recipient line"
+#~ msgstr "Versteekte Ontvangers"
+
+#, fuzzy
+#~ msgid "Attaching Image Failed"
+#~ msgstr "Boodskap skuif het gevaal."
+
+#~ msgid "S&earch:"
+#~ msgstr "Soek:"
+
+#, fuzzy
+#~ msgctxt "Message->Forward->"
+#~ msgid "As Di&gest..."
+#~ msgstr "As aanhangsel..."
+
+#, fuzzy
+#~ msgid "%1 message"
+#~ msgid_plural "%1 messages"
+#~ msgstr[0] "1 boodskap, %2"
+#~ msgstr[1] "%1 boodskappe, %2"

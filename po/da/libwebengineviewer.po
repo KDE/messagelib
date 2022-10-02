@@ -1,0 +1,177 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Martin Schlander <mschlander@opensuse.org>, 2016, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-30 00:47+0000\n"
+"PO-Revision-Date: 2017-03-22 17:35+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: developertool/developertooldialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Developer Tool"
+msgstr ""
+
+#: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "Luk"
+
+#: findbar/findbarbase.cpp:48
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "F&ind:"
+
+#: findbar/findbarbase.cpp:53
+#, kde-format
+msgid "Text to search for"
+msgstr "Tekst at søge efter"
+
+#: findbar/findbarbase.cpp:58
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "Næste"
+
+#: findbar/findbarbase.cpp:59
+#, kde-format
+msgid "Jump to next match"
+msgstr "Gå til næste fund"
+
+#: findbar/findbarbase.cpp:64
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "Forrige"
+
+#: findbar/findbarbase.cpp:65
+#, kde-format
+msgid "Jump to previous match"
+msgstr "Gå til forrige fund"
+
+#: findbar/findbarbase.cpp:71
+#, kde-format
+msgid "Options"
+msgstr "Indstillinger"
+
+#: findbar/findbarbase.cpp:72
+#, kde-format
+msgid "Modify search behavior"
+msgstr "Ændr søgeopførsel"
+
+#: findbar/findbarbase.cpp:74
+#, kde-format
+msgid "Case sensitive"
+msgstr "Versalfølsom"
+
+#: findbar/findbarbase.cpp:91
+#, kde-format
+msgid "Phrase not found"
+msgstr "Udtryk ikke fundet"
+
+#: webenginepage.cpp:78
+#, kde-format
+msgid "Save HTML Page"
+msgstr "Gem HTML-side"
+
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:21
+#, kde-format
+msgid "Submit form is not allowed in mailer. Please open url in a browser."
+msgstr ""
+
+#: widgets/tracking/trackingdetailsdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr ""
+
+#: widgets/tracking/trackingwarningwidget.cpp:20
+#, kde-format
+msgid ""
+"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+"\">(Details...)"
+msgstr ""
+
+#: widgets/tracking/trackingwarningwidget.cpp:39
+#, kde-format
+msgid "Details:"
+msgstr ""
+
+#: widgets/tracking/trackingwarningwidget.cpp:45
+#, kde-format
+msgid "1 tracker from the company %2 (%3)"
+msgid_plural "%1 trackers from the company %2 (%3)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: widgets/zoomactionmenu.cpp:127
+#, kde-format
+msgid "Zoom"
+msgstr "Zoom"
+
+#~ msgid "Reset"
+#~ msgstr "Nulstil"
+
+#~ msgid "&Zoom In"
+#~ msgstr "&Zoom ind"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "Zoom &ud"
+
+#~ msgid "Print Status Information"
+#~ msgstr "Udskriv statusinformation"
+
+#~ msgid ""
+#~ "WebEngine printing support is limited for the moment. An external browser "
+#~ "will be used for printing."
+#~ msgstr ""
+#~ "WebEngines understøttelse af udskrift er begrænset i øjeblikket. Der vil "
+#~ "blive brugt en ekstern webbrowser til at udskrive."
+
+#~ msgid "Open In Browser"
+#~ msgstr "Åbn i browser"
+
+#~ msgid "Print Setup"
+#~ msgstr "Udskriftsopsætning"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Print Layout: %1, %2"
+#~ msgstr "Udskriv layout: %1, %2"
+
+#~ msgid "Portrait"
+#~ msgstr "Stående"
+
+#~ msgid "Landscape"
+#~ msgstr "Liggende"
+
+#~ msgid "Preview"
+#~ msgstr "Forhåndsvisning"
+
+#~ msgid "Print"
+#~ msgstr "Udskriv"
+
+#~ msgid "Page:"
+#~ msgstr "Side:"
+
+#~ msgid "Unable to open file \"%1\""
+#~ msgstr "Kan ikke åbne filen \"%1\""
+
+#~ msgid "Page %1"
+#~ msgstr "Side %1"
+
+#~ msgid "Print Preview"
+#~ msgstr "Vis udskrift"

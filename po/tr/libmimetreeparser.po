@@ -1,0 +1,78 @@
+# translation of kmail.po to Turkish
+# Copyright (C) 2000,2003, 2004, 2005, 2008 Free Software Foundation, Inc.
+# Mehmet TARIMCI <mehmet@gelecek.com.tr>, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Barış Metin <baris@uludag.org.tr>, 2004.
+# Yaşar ŞENTÜRK <yasar@kde.org.tr>, 2005.
+# Adem Alp Yıldız <ademalp@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009, 2012.
+# H. İbrahim Güngör <h.ibrahim.gungor@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010, 2011.
+# Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2015.
+# Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
+# Emir SARI <emir_sari@icloud.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2022-05-15 11:28+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 22.04.0\n"
+"X-POOTLE-MTIME: 1413111326.000000\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Adsız"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "Yanlış Şifreleme Eklentisi."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "Uygun bir şifreleme eklentisi bulunamadı."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "%1 eklentisi bulunamadı."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "Şifreleme eklentisi \"%1\" imzaları doğrulayamıyor."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"Bu ileti imzalanmış; ancak imzanın geçerliliği doğrulanamadı.<br/>Neden: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "\"%1\" şifreleme eklentisi iletileri deşifre edemiyor."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Şifreleme eklentisi \"%1\" veriyi açamadı."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Hata: %1"

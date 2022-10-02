@@ -1,0 +1,934 @@
+# Uyghur translation for libmessageviewer.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Sahran <sahran.ug@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libmessageviewer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2013-09-08 07:05+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "ئاتسىز"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr ""
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr ""
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr ""
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr ""
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr ""
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr ""
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "خاتالىق: %1"
+
+#, fuzzy
+#~| msgid "Encrypted message"
+#~ msgid "Encapsulated message"
+#~ msgstr "شىفىرلانغان ئۇچۇر"
+
+#, fuzzy
+#~| msgid "End of signed message"
+#~ msgid "End of encapsulated message"
+#~ msgstr "ئىمزالىق ئۇچۇرنىڭ ئاخىرى"
+
+#, fuzzy
+#~| msgid "Encrypted message"
+#~ msgid "Decrypt Message"
+#~ msgstr "شىفىرلانغان ئۇچۇر"
+
+#~ msgid "Encrypted message"
+#~ msgstr "شىفىرلانغان ئۇچۇر"
+
+#, fuzzy
+#~| msgid "Encrypted message"
+#~ msgid "End of encrypted message"
+#~ msgstr "شىفىرلانغان ئۇچۇر"
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message was signed by %1."
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message was signed with key %1."
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#, fuzzy
+#~| msgid "Status: "
+#~ msgid "Status: "
+#~ msgstr "ھالىتى: "
+
+#~ msgid "Hide Details"
+#~ msgstr "تەپسىلاتلارنى يوشۇر"
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#, fuzzy
+#~| msgid "The signature is valid, but the key is untrusted."
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "ئىمزا ئىناۋەتلىك بىراق ئاچقۇچ ئىشەنچسىز."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "ئىمزا ئىناۋەتلىك شۇنداقلا ئاچقۇچمۇ مەلۇم دەرىجىدە ئىشەنچلىك."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "ئىمزا ئىناۋەتلىك شۇنداقلا ئاچقۇچمۇ ئىشەنچلىك."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "ئىمزا ئىناۋەتلىك شۇنداقلا ئاچقۇچمۇ مۇتلەق ئىشەنچلىك."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "ئىمزا ئىناۋەتلىك بىراق ئاچقۇچ ئىشەنچسىز."
+
+#, fuzzy
+#~| msgid "Warning: The signature is bad."
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "ئاگاھلاندۇرۇش: بولمىغۇر ئىمزا."
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Invalid signature."
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Warning: The signature is bad."
+#~ msgid "Signature is valid."
+#~ msgstr "ئاگاھلاندۇرۇش: بولمىغۇر ئىمزا."
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Unknown signature state"
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Details"
+#~ msgid "Show Details"
+#~ msgstr "تەپسىلاتلار"
+
+#, fuzzy
+#~| msgid "Encrypted message"
+#~ msgid "End of signed message"
+#~ msgstr "شىفىرلانغان ئۇچۇر"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "خاتالىق: ئىمزا دەلىللەنمىگەن"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Good signature"
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Error saving attachment"
+#~ msgid "No public key to verify the signature"
+#~ msgstr "قوشۇلمىنى ساقلاشتا خاتالىق كۆرۈلدى"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "No signature found"
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Error saving attachment"
+#~ msgid "Error verifying the signature"
+#~ msgstr "قوشۇلمىنى ساقلاشتا خاتالىق كۆرۈلدى"
+
+#, fuzzy
+#~| msgid "No description available"
+#~ msgid "No status information available."
+#~ msgstr "چۈشەندۈرۈشى يوق"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Good signature."
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Warning: The signature is bad."
+#~ msgid "One key has expired."
+#~ msgstr "ئاگاھلاندۇرۇش: بولمىغۇر ئىمزا."
+
+#, fuzzy
+#~| msgid "Warning: The signature is bad."
+#~ msgid "The signature has expired."
+#~ msgstr "ئاگاھلاندۇرۇش: بولمىغۇر ئىمزا."
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "certificate"
+#~ msgid "certificate"
+#~ msgstr "گۇۋاھنامە"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "ئاگاھلاندۇرۇش:"
+
+#, fuzzy
+#~| msgid "Header:"
+#~ msgid "sender: "
+#~ msgstr "قاش"
+
+#~ msgid "Subject:"
+#~ msgstr "تېما:"
+
+#~ msgid "To:"
+#~ msgstr "خەت تاپشۇرۇۋالغۇچى："
+
+#, fuzzy
+#~| msgid "Appl&y to All"
+#~ msgid "Reply to:"
+#~ msgstr "ھەممىگە قوللان(&Y)"
+
+#~ msgid "CC:"
+#~ msgstr "CC:"
+
+#~ msgid "BCC:"
+#~ msgstr "BCC:"
+
+#~ msgid "From:"
+#~ msgstr "ئەۋەتكۈچى:"
+
+#~ msgid "Date:"
+#~ msgstr "چېسلا:"
+
+#~ msgctxt "Unknown date"
+#~ msgid "Unknown"
+#~ msgstr "نامەلۇم"
+
+#~ msgid "No Subject"
+#~ msgstr "تېما يوق"
+
+#~ msgid "Move to Trash"
+#~ msgstr "ئەخلەتخانىغا يۆتكە"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "New Message"
+#~ msgstr "ئۇچۇر ساقلا"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview"
+#~ msgstr "ئۇچۇر ساقلا"
+
+#~ msgctxt "View->"
+#~ msgid "&Headers"
+#~ msgstr "قاشلار(&H)"
+
+#, fuzzy
+#~| msgid "Show all message headers"
+#~ msgid "Choose display style of message headers"
+#~ msgstr "ھەممە خەت بېشىنى كۆرسەت"
+
+#~ msgid "Date: "
+#~ msgstr "چېسلا: "
+
+#~ msgid "From: "
+#~ msgstr "ئەۋەتكۈچى: "
+
+#~ msgctxt "To-field of the mailheader."
+#~ msgid "To: "
+#~ msgstr "خەت تاپشۇرۇۋالغۇچى： "
+
+#~ msgid "CC: "
+#~ msgstr "CC: "
+
+#~ msgid "BCC: "
+#~ msgstr "BCC: "
+
+#, fuzzy
+#~| msgid "Appl&y to All"
+#~ msgid "Reply to: "
+#~ msgstr "ھەممىگە قوللان(&Y)"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "Edit Attachment"
+#~ msgstr "قوشۇلمىلار:"
+
+#~ msgid "Edit"
+#~ msgstr "تەھرىرلەش"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "ئۆلچەملىك قاشلار(&S)"
+
+#, fuzzy
+#~| msgid "Show all message headers"
+#~ msgid "Show standard list of message headers"
+#~ msgstr "ھەممە خەت بېشىنى كۆرسەت"
+
+#~ msgid "Details:"
+#~ msgstr "تەپسىلاتى:"
+
+#, fuzzy
+#~| msgid "Show all message headers"
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "ھەممە خەت بېشىنى كۆرسەت"
+
+#~ msgid "Reduce font size for quoted text"
+#~ msgstr "نەقىل قىلىنغان تېكىستنىڭ خەت نۇسخىسىنى كىچىكلەت"
+
+#, fuzzy
+#~| msgid "Show all message headers"
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "ھەممە خەت بېشىنى كۆرسەت"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Show always"
+#~ msgstr "تەپسىلاتلارنى كۆرسەت"
+
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "شىفىرلانغان ئۇچۇرلارغا جاۋابەن MDNs نى ئەۋەتمە"
+
+#, fuzzy
+#~| msgid "Automatic invitation sending"
+#~ msgid "Exchange-compatible invitation naming"
+#~ msgstr "ئاپتوماتىك تەكلىپ ئەۋەتىش"
+
+#~ msgid "Automatic invitation sending"
+#~ msgstr "ئاپتوماتىك تەكلىپ ئەۋەتىش"
+
+#~ msgid "Use Fi&xed Font"
+#~ msgstr "تەڭ كەڭلىكتىكى خەت نۇسخىسى(&X)"
+
+#, fuzzy
+#~| msgid "Automatic invitation sending"
+#~ msgid "Exchange-compatible invitation &naming"
+#~ msgstr "ئاپتوماتىك تەكلىپ ئەۋەتىش"
+
+#, fuzzy
+#~| msgid "Automatic invitation sending"
+#~ msgid "&Automatic invitation sending"
+#~ msgstr "ئاپتوماتىك تەكلىپ ئەۋەتىش"
+
+#~ msgid "Options"
+#~ msgstr "تاللانما"
+
+#, fuzzy
+#~| msgid "Reduce font size for quoted text"
+#~ msgid "Reduce font size for &quoted text"
+#~ msgstr "نەقىل قىلىنغان تېكىستنىڭ خەت نۇسخىسىنى كىچىكلەت"
+
+#, fuzzy
+#~| msgid "Minimum font size:"
+#~ msgid "&Minimum font size:"
+#~ msgstr "ئەڭ كىچىك خەت چوڭلۇقى:"
+
+#~ msgid ""
+#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr "\"%1\" ئاتلىق ھۆججەت مەۋجۇت. ئۇنى راستلا قاپلىۋېتەمسىز؟"
+
+#~ msgid "Overwrite File?"
+#~ msgstr "ھۆججەت قاپلامسىز؟"
+
+#~ msgid "Save Attachments To"
+#~ msgstr "قوشۇلمىلارنى ساقلايدىغان ئورۇن"
+
+#~ msgctxt "filename for an unnamed attachment"
+#~ msgid "attachment.1"
+#~ msgstr "قوشۇلما.1"
+
+#~ msgid "Save Attachment"
+#~ msgstr "قوشۇلمىنى ساقلا"
+
+#, fuzzy
+#~| msgctxt "filename for an unnamed attachment"
+#~| msgid "attachment.1"
+#~ msgctxt "filename for the %1-th unnamed attachment"
+#~ msgid "attachment.%1"
+#~ msgstr "قوشۇلما.1"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Keep Encryption"
+#~ msgstr "چۈشەندۈرۈش"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Keep Signature"
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Error saving attachment"
+#~ msgstr "قوشۇلمىنى ساقلا"
+
+#~ msgid "message"
+#~ msgstr "ئۇچۇرلار"
+
+#, fuzzy
+#~| msgid ""
+#~| "*.mbox|email messages (*.mbox)\n"
+#~| "*|all files (*)"
+#~ msgid "email messages (*.mbox);;all files (*)"
+#~ msgstr ""
+#~ "*.mbox|ئېلخەتلەر (*.mbox)\n"
+#~ "*|بارلىق ھۆججەتلەر (*)"
+
+#~ msgid "Save Message"
+#~ msgid_plural "Save Messages"
+#~ msgstr[0] "ئۇچۇر ساقلا"
+
+#, fuzzy
+#~| msgid "End of signed message"
+#~ msgid "Error loading message"
+#~ msgstr "ئىمزالىق ئۇچۇرنىڭ ئاخىرى"
+
+#, fuzzy
+#~| msgid "End of signed message"
+#~ msgid "Error saving message"
+#~ msgstr "ئىمزالىق ئۇچۇرنىڭ ئاخىرى"
+
+#, fuzzy
+#~| msgid "Encrypted message"
+#~ msgid "We cannot save message."
+#~ msgstr "شىفىرلانغان ئۇچۇر"
+
+#~ msgid "Open &with %1"
+#~ msgstr "%1 دا ئاچ(&O)"
+
+#~ msgctxt "@item:inmenu Open With, %1 is application name"
+#~ msgid "%1"
+#~ msgstr "%1"
+
+#~ msgid "Edit with:"
+#~ msgstr "ئىشلىتىدىغان تەھرىرلىگۈچ:"
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "قوشۇلمىنى تەھرىرلىگىلى بولمىدى"
+
+#~ msgid "Description"
+#~ msgstr "چۈشەندۈرۈش"
+
+#~ msgid "Type"
+#~ msgstr "تىپى"
+
+#~ msgid "Size"
+#~ msgstr "چوڭلۇقى"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "ئاتسىز قىستۇرما"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgid "Move To Trash"
+#~ msgstr "ئەخلەتخانىغا يۆتكە"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Message"
+#~ msgstr "ئۇچۇر ساقلا"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview Message"
+#~ msgstr "ئۇچۇر ساقلا"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Hide signature details."
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgctxt "filename for an unnamed attachment"
+#~| msgid "attachment.1"
+#~ msgid "Show attachment list."
+#~ msgstr "قوشۇلما.1"
+
+#, fuzzy
+#~| msgctxt "filename for an unnamed attachment"
+#~| msgid "attachment.1"
+#~ msgid "Hide attachment list."
+#~ msgstr "قوشۇلما.1"
+
+#~ msgid "KMail Error"
+#~ msgstr "KMail  خاتالىقى"
+
+#~ msgid "&Open in Address Book"
+#~ msgstr "ئادرېس دەپتىرىدە ئاچ(&O)"
+
+#~ msgid "&Copy Email Address"
+#~ msgstr "ئېلخەت ئادرېسىنى كۆچۈر(&C)"
+
+#, fuzzy
+#~| msgid "&Open in Address Book"
+#~ msgid "Lookup the contact in KAddressbook"
+#~ msgstr "ئادرېس دەپتىرىدە ئاچ(&O)"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "Attachment: %1"
+#~ msgstr "قوشۇلمىلار:"
+
+#, fuzzy
+#~| msgid "Encrypted message"
+#~ msgid "Encapsulated Message (Subject: %1)"
+#~ msgstr "شىفىرلانغان ئۇچۇر"
+
+#, fuzzy
+#~| msgid "Unable to edit attachment"
+#~ msgid "Unnamed attachment"
+#~ msgstr "قوشۇلمىنى تەھرىرلىگىلى بولمىدى"
+
+#, fuzzy
+#~| msgid "Open URL"
+#~ msgid "Opening URL..."
+#~ msgstr "URL ئاچ"
+
+#~ msgid "Execute"
+#~ msgstr "ئىجرا قىل"
+
+#, fuzzy
+#~| msgid "&Find in Message..."
+#~ msgid "Loading message..."
+#~ msgstr "خەتتىن تاپ(&F)…"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Delete Attachment"
+#~ msgstr "قوشۇلمىنى ساقلا"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "بۇنىڭدا ئاچ(&O)"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "باشقا(&O)..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "بۇنىڭدا ئاچ(&O)…"
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "ئاچ"
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "كۆرۈنۈش"
+
+#~ msgid "Save As..."
+#~ msgstr "باشقا ئاتتا ساقلا…"
+
+#~ msgid "Copy"
+#~ msgstr "كۆچۈر"
+
+#~ msgid "Properties"
+#~ msgstr "خاسلىق"
+
+#, fuzzy
+#~| msgid "KMail Error"
+#~ msgid "KMail"
+#~ msgstr "KMail  خاتالىقى"
+
+#, fuzzy
+#~| msgid "Attachments:"
+#~ msgid "View Attachment: %1"
+#~ msgstr "قوشۇلمىلار:"
+
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "قوشۇلمىلار(&A)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Inline"
+#~ msgstr "سىڭدۈر(&I)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "يوشۇر(&H)"
+
+#~ msgid "Auto"
+#~ msgstr "ئاپتوماتىك"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "ئۇلانما ئادرېسىنى كۆچۈر"
+
+#~ msgid "Open URL"
+#~ msgstr "URL ئاچ"
+
+#~ msgid "&View Source"
+#~ msgstr "مەنبەنى كۆرۈش(&V)"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "&Save message..."
+#~ msgstr "ئۇچۇر ساقلا"
+
+#, fuzzy
+#~| msgid "Encrypted message"
+#~ msgid "Scroll Message Up"
+#~ msgstr "شىفىرلانغان ئۇچۇر"
+
+#~ msgid "Speak Text"
+#~ msgstr "تېكىستنى ئوقۇ"
+
+#~ msgid "Copy Image Location"
+#~ msgstr "سۈرەت ئورنىنى كۆچۈر"
+
+#~ msgid "&Find in Message..."
+#~ msgstr "خەتتىن تاپ(&F)…"
+
+#~ msgid "Save &As..."
+#~ msgstr "باشقا ئاتتا ساقلا(&A)…"
+
+#~ msgid "Open With..."
+#~ msgstr "بۇنىڭدا ئېچىش…"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Save All Attachments..."
+#~ msgstr "قوشۇلمىنى ساقلا"
+
+#~ msgid "Copy Email Address"
+#~ msgstr "ئېلخەت ئادرېسنى كۆچۈر"
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message as Plain Text"
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#~ msgid "Attachments:"
+#~ msgstr "قوشۇلمىلار:"
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message loading failed: %1."
+#~ msgstr "ئۇچۇرغا %1  ئىمزا قويغان."
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Open Attachment?"
+#~ msgstr "قوشۇلمىنى ساقلا"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr "'%1' دا ئاچقۇز(&O)"
+
+#~ msgid "&Open With..."
+#~ msgstr "بۇنىڭدا ئاچ(&O)…"
+
+#~ msgid "Do not ask again"
+#~ msgstr "قايتا سورىما"
+
+#, fuzzy
+#~| msgid "&View Source"
+#~ msgctxt "Unchanged mail message"
+#~ msgid "Raw Source"
+#~ msgstr "مەنبەنى كۆرۈش(&V)"
+
+#~ msgctxt "Mail message as shown, in HTML format"
+#~ msgid "HTML Source"
+#~ msgstr "HTML ئەسلى كودى"
+
+#~ msgid "&Import"
+#~ msgstr "ئەكىر(&I)"
+
+#, fuzzy
+#~| msgctxt "Find and go to the next search match"
+#~| msgid "Next"
+#~ msgid "&Next Card"
+#~ msgstr "كېيىنكى"
+
+#, fuzzy
+#~| msgctxt "Find and go to the previous search match"
+#~| msgid "Previous"
+#~ msgid "&Previous Card"
+#~ msgstr "ئالدىنقى"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "كىچىكلەت(&O)"
+
+#~ msgid "Reset"
+#~ msgstr "ئەسلىگە قايتۇرۇش"
+
+#, fuzzy
+#~| msgid "Zoom &Out"
+#~ msgid "Zoom"
+#~ msgstr "كىچىكلەت(&O)"
+
+#~ msgid "Close"
+#~ msgstr "ياپ"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "ئىزدە(&I)"
+
+#~ msgid "Text to search for"
+#~ msgstr "ئىزدەيدىغان تېكىست"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "كېيىنكى"
+
+#~ msgid "Jump to next match"
+#~ msgstr "كېيىنكى ماس كەلگەندە ئاتلا"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "ئالدىنقى"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "ئالدىنقى ماس كەلگەندە ئاتلا"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "ئىزدەش ئۇسۇلىنى ئۆزگەرت"
+
+#~ msgid "Case sensitive"
+#~ msgstr "چوڭ كىچىك يېزىلىشنى پەرقلەندۈر"
+
+#, fuzzy
+#~| msgid "Subject:"
+#~ msgid "Object"
+#~ msgstr "تېما:"
+
+#, fuzzy
+#~| msgctxt "Unknown date"
+#~| msgid "Unknown"
+#~ msgid "Unknown"
+#~ msgstr "نامەلۇم"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copy url"
+#~ msgstr "كۆچۈر"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Copy filter"
+#~ msgstr "چىقىرىۋەت(&V)"
+
+#, fuzzy
+#~| msgctxt "to open"
+#~| msgid "Open"
+#~ msgid "Open"
+#~ msgstr "ئاچ"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Remove filter"
+#~ msgstr "چىقىرىۋەت(&V)"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Add subscription"
+#~ msgstr "چۈشەندۈرۈش"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Show List"
+#~ msgstr "تەپسىلاتلارنى كۆرسەت"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Not subscription added..."
+#~ msgstr "چۈشەندۈرۈش"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Import Filters"
+#~ msgstr "چىقىرىۋەت(&V)"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Remove subscription"
+#~ msgstr "چۈشەندۈرۈش"
+
+#, fuzzy
+#~| msgid "A&dd..."
+#~ msgid "..."
+#~ msgstr "قوش(&D)…"
+
+#, fuzzy
+#~| msgid "Remo&ve"
+#~ msgid "Remove Filter"
+#~ msgstr "چىقىرىۋەت(&V)"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "ماس كەلگەن تۈرنى يورۇت"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "خەتنىلا چوڭايت"
+
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "(نامەلۇم)"
+
+#~ msgid "A&dd..."
+#~ msgstr "قوش(&D)…"
+
+#~ msgid "Remo&ve"
+#~ msgstr "چىقىرىۋەت(&V)"
+
+#~ msgid "&Modify..."
+#~ msgstr "ئۆزگەرت(&M)..."
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "بارلىق قاشلار(&A)"
+
+#~ msgid "%1: "
+#~ msgstr "%1: "
+
+#~ msgid "To: "
+#~ msgstr "خەت تاپشۇرۇۋالغۇچى： "
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "خەت تاپشۇرۇۋالغۇچى： "
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "MDN To: "
+#~ msgstr "خەت تاپشۇرۇۋالغۇچى： "
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Open &editor..."
+#~ msgstr "بۇنىڭدا ئېچىش…"
+
+#, fuzzy
+#~| msgid "Edit with:"
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "ئىشلىتىدىغان تەھرىرلىگۈچ:"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-obtain-keys\" function. Please "
+#~ "report this bug."
+#~ msgstr ""
+#~ "Chiasmus ئارقا ئۇچى «x-obtain-keys» ئىقتىدارىنى تەمىنلىمەيدۇ. بۇ كەمتۈكنى "
+#~ "مەلۇم قىلىڭ."
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "Chiasmus ئارقا ئۇچ خاتالىقى"
+
+#~ msgid ""
+#~ "No keys have been found. Please check that a valid key path has been set "
+#~ "in the Chiasmus configuration."
+#~ msgstr ""
+#~ "ئاچقۇچ تېپىلمىدى. Chiasmus نىڭ سەپلىمىسىدە ئاچقۇچنىڭ بەلگىلەنگەن "
+#~ "ئاچقۇچنىڭ يولى ئىناۋەتلىكمۇ تەكشۈرۈڭ."
+
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Jovie تېكىست ئوقۇغۇ مۇلازىمېتىرنى باشلاش مەغلۇپ بولدى"
+
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "Header to show:"
+#~ msgstr "قاشلار(&H)"
+
+#~| msgid "Show Details"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "تەپسىلاتىنى كۆرسەت"
+
+#~ msgid "File Already Exists"
+#~ msgstr "ھۆججەت مەۋجۇت"
+
+#~ msgid "Suggest New &Name"
+#~ msgstr "يېڭى ئات تەۋسىيە(&N)"
+
+#~ msgid "&Overwrite"
+#~ msgstr "قاپلا(&O)"
+
+#~ msgid "&Ignore"
+#~ msgstr "پەرۋا قىلما(&I)"
+
+#~ msgid "&Rename"
+#~ msgstr "ئات ئۆزگەرت(&R)"

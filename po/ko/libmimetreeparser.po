@@ -1,0 +1,2429 @@
+# Translation of kmail to Korean.
+# Copyright (C) 2000,2001,2002,2003,2004,2007 Free Software Foundation, Inc.
+# LinuxKorea Co. <kde@linuxkorea.co.kr>, 2000.
+# Louis JANG <louis@mizi.com>, 2001.
+# KIM KyungHeon <tody@teoal.net>, 2002, 2003, 2004.
+# Shinjo Park <kde@peremen.name>, 2007, 2009, 2013, 2014, 2015, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2016-12-11 23:06+0100\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: src/messagepart.cpp:432
+#, kde-format
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "이름 없음"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr "잘못된 암호화 플러그인입니다."
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr "적절한 암호화 플러그인을 찾을 수 없습니다."
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr "%1 플러그인을 찾을 수 없습니다."
+
+#: src/messagepart.cpp:798
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "암호화 플러그인 \"%1\"에서 서명을 검사할 수 없습니다."
+
+#: src/messagepart.cpp:801
+#, kde-format
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr ""
+"메시지가 서명되어 있지만 서명의 유효성을 검증할 수 없습니다.<br />이유: %1"
+
+#: src/messagepart.cpp:1275
+#, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "암호화 플러그인 \"%1\"에서 메시지를 복호화할 수 없습니다."
+
+#: src/messagepart.cpp:1277
+#, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "암호화 플러그인 \"%1\"에서 데이터를 복호화할 수 없습니다."
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "오류: %1"
+
+#, fuzzy
+#~| msgid "Sorry, certificate could not be imported.<br />Reason: %1"
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "인증서를 가져올 수 없습니다.<br />이유: %1"
+
+#~ msgid "Reason: %1"
+#~ msgstr "이유: %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "이 메시지에서 인증서를 찾을 수 없었습니다."
+
+#~ msgid "Certificate import status:"
+#~ msgstr "인증서 불러오기 상태:"
+
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "새 인증서 %1개를 가져왔습니다."
+
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "인증서 %1개는 바뀌지 않았습니다."
+
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "새 비밀 키 %1개를 가져왔습니다."
+
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "비밀 키 %1개는 바뀌지 않았습니다."
+
+#~ msgid "Sorry, no details on certificate import available."
+#~ msgstr "인증서 가져오기 정보가 없습니다."
+
+#~ msgid "Certificate import details:"
+#~ msgstr "인증서 가져오기 결과:"
+
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "실패: %1 (%2)"
+
+#~ msgid "Encapsulated message"
+#~ msgstr "캡슐화된 메시지"
+
+#~ msgid "End of encapsulated message"
+#~ msgstr "캡슐화된 메시지 끝"
+
+#~ msgid "This message is encrypted."
+#~ msgstr "메시지가 암호화되어 있습니다."
+
+#~ msgid "Decrypt Message"
+#~ msgstr "메시지 복호화"
+
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "메시지를 복호화하는 동안 기다려 주십시오..."
+
+#~ msgid "Encrypted message"
+#~ msgstr "암호화된 메시지"
+
+#~ msgid "Encrypted message (decryption not possible)"
+#~ msgstr "암호화된 메시지 (복호화할 수 없음)"
+
+#, fuzzy
+#~| msgid "Reason: %1"
+#~ msgid "Reason: "
+#~ msgstr "이유: %1"
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "복호화할 수 없습니다."
+
+#~ msgid "End of encrypted message"
+#~ msgstr "암호화된 메시지 끝"
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~| "HTML code is shown. If you trust the sender of this message then you can "
+#~| "activate formatted HTML display for this message <a href=\"kmail:showHTML"
+#~| "\">by clicking here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This is an HTML message. For security reasons, only the raw "
+#~ "HTML code is shown. If you trust the sender of this message then you can "
+#~ "activate formatted HTML display for this message <a href=kmail:"
+#~ "showHTML>by clicking here</a>."
+#~ msgstr ""
+#~ "<b>메모:</b> 이 메시지는 HTML 메시지입니다. 따라서 원본 코드만 표시합니"
+#~ "다. 이 메시지를 보낸 사람을 믿을 수 있다면 <a href=\"kmail:showHTML\">여기"
+#~ "</a>를 눌러서 HTML 렌더링 결과를 표시할 수 있습니다."
+
+#, fuzzy
+#~| msgid ""
+#~| "<b>Note:</b> This HTML message may contain external references to images "
+#~| "etc. For security/privacy reasons external references are not loaded. If "
+#~| "you trust the sender of this message then you can load the external "
+#~| "references for this message <a href=\"kmail:loadExternal\">by clicking "
+#~| "here</a>."
+#~ msgid ""
+#~ "<b>Note:</b> This HTML message may contain external references to images "
+#~ "etc. For security/privacy reasons external references are not loaded. If "
+#~ "you trust the sender of this message then you can load the external "
+#~ "references for this message <a href=kmail:loadExternal>by clicking here</"
+#~ "a>."
+#~ msgstr ""
+#~ "<b>메모:</b> 이 HTML 메시지는 외부 그림 및 데이터를 포함합니다. 보안 및 개"
+#~ "인 정보 보호 때문에 이 외부 데이터를 불러오지 않았습니다. 이 메시지를 보"
+#~ "낸 사람을 믿을 수 있다면 <a href=\"kmail:loadExternal\">여기</a>를 눌러서 "
+#~ "외부 데이터를 불러올 수 있습니다."
+
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "서명을 검사하는 동안 기다려 주십시오..."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "서명을 검사하는 데 충분한 정보가 없습니다. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "%1이(가) 메시지에 서명했습니다."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "메시지가 알 수 없는 키로 서명되었습니다."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "키 %1(으)로 메시지에 서명했습니다."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "%3이(가) %1에 키 %2(으)로 메시지에 서명했습니다."
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "%1에 키 %2(으)로 메시지에 서명했습니다."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "키 %1(으)로 %2이(가) 메시지에 서명했습니다."
+
+#~ msgid "Status: "
+#~ msgstr "상태: "
+
+#~ msgid "Hide Details"
+#~ msgstr "자세한 정보 숨기기"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "알 수 없는 키 %2(으)로 %1에 메시지에 서명했습니다."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "알 수 없는 키 %1(으)로 메시지가 서명되었습니다."
+
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "서명의 유효성을 검사할 수 없습니다."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "%2이(가) 메시지에 서명했습니다. (키 ID: %1)"
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "서명이 올바르지만 키의 유효성을 검증할 수 없습니다."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "서명이 올바르지만 키를 거의 믿지 않습니다."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "서명이 올바르고 키를 믿을 수 있습니다."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "서명이 올바르고 키를 완전히 믿습니다."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "서명은 올바르지만 이 키를 믿을 수 없습니다."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "경고: 이 서명은 잘못되었습니다."
+
+#~ msgid "Invalid signature."
+#~ msgstr "유효하지 않은 서명입니다."
+
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "서명 유효성을 검증할 수 있는 정보가 충분하지 않습니다."
+
+#, fuzzy
+#~| msgid "Signed by <a href=\"mailto:%1\">%2</a>."
+#~ msgid "Signed by <a href=mailto:%1>%2</a>."
+#~ msgstr "<a href=\"mailto:%1\">%2</a>이(가) 서명했습니다."
+
+#~ msgid "Signature is valid."
+#~ msgstr "서명이 올바릅니다."
+
+#~ msgid "Unknown signature state"
+#~ msgstr "서명 상태 알 수 없음"
+
+#~ msgid "Show Details"
+#~ msgstr "자세히 보기"
+
+#~ msgid "End of signed message"
+#~ msgstr "서명된 메시지 끝"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "오류: 서명이 인증되지 않았습니다"
+
+#~ msgid "Good signature"
+#~ msgstr "좋은 서명입니다"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>잘못된</b> 서명"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "서명을 검증할 수 있는 공개 키가 없습니다"
+
+#~ msgid "No signature found"
+#~ msgstr "서명이 없습니다"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "서명을 검사하는 중 오류가 발생했습니다"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "서명의 결과가 다름"
+
+#~ msgid "No status information available."
+#~ msgstr "상태 정보를 알 수 없습니다."
+
+#~ msgid "Good signature."
+#~ msgstr "좋은 서명입니다."
+
+#~ msgid "One key has expired."
+#~ msgstr "한 키가 만료되었습니다."
+
+#~ msgid "The signature has expired."
+#~ msgstr "서명이 만료되었습니다."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "검증할 수 없습니다: 키가 없습니다."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL이 없습니다."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "CRL이 너무 오래되었습니다."
+
+#~ msgid "A policy was not met."
+#~ msgstr "정책이 충분하지 않습니다."
+
+#~ msgid "A system error occurred."
+#~ msgstr "시스템 오류가 발생했습니다."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "한 키가 취소되었습니다."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>잘못된</b> 서명입니다."
+
+#~ msgid "certificate"
+#~ msgstr "인증서"
+
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "경고:"
+
+#~ msgid "Sender's mail address is not stored in the %1 used for signing."
+#~ msgstr "보낸 사람의 메일 주소가 서명에 사용된 %1에 없습니다."
+
+#~ msgid "sender: "
+#~ msgstr "보낸 사람:"
+
+#~ msgid "stored: "
+#~ msgstr "저장된 값:"
+
+#~ msgid ""
+#~ "No mail address is stored in the %1 used for signing, so we cannot "
+#~ "compare it to the sender's address %2."
+#~ msgstr ""
+#~ "보낸 사람의 메일 주소가 서명에 사용된 %1에 없으므로 보낸 사람의 주소 %2와"
+#~ "(과) 비교할 수 없습니다."
+
+#~ msgid "Grantlee theme \"%1\" is not valid."
+#~ msgstr "Grantlee 테마 \"%1\"이(가) 올바르지 않습니다."
+
+#~ msgid "Subject:"
+#~ msgstr "제목:"
+
+#~ msgid "To:"
+#~ msgstr "받는 사람:"
+
+#~ msgid "Reply to:"
+#~ msgstr "답장 주소:"
+
+#~ msgid "CC:"
+#~ msgstr "참조:"
+
+#~ msgid "BCC:"
+#~ msgstr "숨은 참조:"
+
+#~ msgid "From:"
+#~ msgstr "보낸 사람:"
+
+#~ msgid "Spam Status:"
+#~ msgstr "스팸 상태:"
+
+#~ msgid "Date:"
+#~ msgstr "날짜:"
+
+#~ msgid "resent from"
+#~ msgstr "다음에서 다시 전송됨:"
+
+#~ msgid "receiver was"
+#~ msgid_plural "receivers were"
+#~ msgstr[0] "수신자가"
+
+#~ msgid "Printing mode"
+#~ msgstr "인쇄 모드"
+
+#~ msgid "[vcard]"
+#~ msgstr "[vcard]"
+
+#~ msgctxt "Unknown date"
+#~ msgid "Unknown"
+#~ msgstr "알 수 없음"
+
+#~ msgid "No Subject"
+#~ msgstr "제목 없음"
+
+#~ msgid ""
+#~ "%1% probability of being spam with confidence %3%.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2\n"
+#~ "Confidence=%4"
+#~ msgstr ""
+#~ "스팸일 확률은 %1%이며, %3% 확신합니다.\n"
+#~ "\n"
+#~ "전체 보고서:\n"
+#~ "Probability=%2\n"
+#~ "Confidence=%4"
+
+#~ msgid ""
+#~ "%1% probability of being spam.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "Probability=%2"
+#~ msgstr ""
+#~ "스팸일 확률은 %1%입니다.\n"
+#~ "\n"
+#~ "전체 보고서:\n"
+#~ "Probability=%2"
+
+#~ msgid "No Spam agent"
+#~ msgstr "스팸 에이전트 없음"
+
+#~ msgid "Spam filter score not a number"
+#~ msgstr "스팸 필터 점수가 숫자가 아님"
+
+#~ msgid "Threshold not a valid number"
+#~ msgstr "한계치가 올바른 숫자가 아님"
+
+#~ msgid "Spam filter score could not be extracted from header"
+#~ msgstr "스팸 필터 점수를 헤더에서 추출할 수 없음"
+
+#~ msgid "Threshold could not be extracted from header"
+#~ msgstr "한계치를 헤더에서 추출할 수 없음"
+
+#~ msgid "Error evaluating spam score"
+#~ msgstr "스팸 점수 계산 오류"
+
+#~ msgid ""
+#~ "%1.\n"
+#~ "\n"
+#~ "Full report:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1.\n"
+#~ "\n"
+#~ "전체 보고서:\n"
+#~ "%2"
+
+#~ msgid "Move to Trash"
+#~ msgstr "휴지통으로 이동"
+
+#, fuzzy
+#~| msgid "Reply to:"
+#~ msgid "Reply"
+#~ msgstr "답장 주소:"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply to All"
+#~ msgstr "답장 주소: "
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "New Message"
+#~ msgstr "메시지 저장"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview"
+#~ msgstr "메시지 저장"
+
+#~ msgctxt "View->"
+#~ msgid "&Headers"
+#~ msgstr "헤더(&H)"
+
+#~ msgid "Choose display style of message headers"
+#~ msgstr "메시지 헤더 표시 형식 선택"
+
+#~ msgid "Date: "
+#~ msgstr "날짜: "
+
+#~ msgid "From: "
+#~ msgstr "보낸 사람:"
+
+#~ msgid "[vCard]"
+#~ msgstr "[vCard]"
+
+#~ msgctxt "To-field of the mailheader."
+#~ msgid "To: "
+#~ msgstr "받는 사람:"
+
+#~ msgid "CC: "
+#~ msgstr "참조:"
+
+#~ msgid "BCC: "
+#~ msgstr "숨은 참조:"
+
+#~ msgid "Reply to: "
+#~ msgstr "답장 주소: "
+
+#~ msgid ""
+#~ "Modifying an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr ""
+#~ "첨부 파일을 편집하면 이 메시지의 디지털 서명을 무효화할 수도 있습니다."
+
+#~ msgid "Edit Attachment"
+#~ msgstr "첨부 파일 편집"
+
+#~ msgid "Edit"
+#~ msgstr "편집"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "표준 헤더(&S)"
+
+#~ msgid "Show standard list of message headers"
+#~ msgstr "메시지 헤더의 표준 목록 보이기"
+
+#~ msgid "Details"
+#~ msgstr "자세히"
+
+#~ msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
+#~ msgstr ""
+#~ "이 메시지는 사기일 수 있습니다. <a href=\"scamdetails\">(자세히...)</a>"
+
+#~ msgid "I confirm it's not a scam"
+#~ msgstr "사기가 아님"
+
+#~ msgid "Add email to whitelist"
+#~ msgstr "허용 목록에 이메일 추가"
+
+#~ msgid "Disable scam detection for all messages"
+#~ msgstr "모든 메시지의 사기 감지 끄기"
+
+#~ msgid "Details:"
+#~ msgstr "자세한 정보:"
+
+#~ msgid ""
+#~ "This email contains a link which reads as '%1' in the text, but actually "
+#~ "points to '%2'. This is often the case in scam emails to mislead the "
+#~ "recipient"
+#~ msgstr ""
+#~ "이 메일 메시지에 포함된 링크 중 텍스트 상으로는 '%1'처럼 보이지만 실제로 "
+#~ "'%2'(으)로 가는 링크가 있습니다. 이는 사기 메일에서 자주 사용하는 수법으"
+#~ "로 수신자를 혼동시킵니다"
+
+#~ msgid ""
+#~ "This email contains a link which points to a numerical IP address (%1) "
+#~ "instead of a typical textual website address. This is often the case in "
+#~ "scam emails."
+#~ msgstr ""
+#~ "이 메일 메시지에 포함된 링크 중 일반적인 문자열로 구성된 웹 사이트가 아닌 "
+#~ "숫자로 구성된 IP 주소(%1)로 가는 링크가 있습니다. 이는 사기 메일에서 자주 "
+#~ "사용하는 수법입니다."
+
+#~ msgid ""
+#~ "This email contains a link which points to a hexadecimal IP address (%1) "
+#~ "instead of a typical textual website address. This is often the case in "
+#~ "scam emails."
+#~ msgstr ""
+#~ "이 메일 메시지에 포함된 링크 중 일반적인 문자열로 구성된 웹 사이트가 아닌 "
+#~ "16진수로 구성된 IP 주소(%1)로 가는 링크가 있습니다. 이는 사기 메일에서 자"
+#~ "주 사용하는 수법입니다."
+
+#~ msgid "This email contains a link (%1) which has a redirection"
+#~ msgstr "이 메일 메시지는 넘겨주기 링크(%1)를 포함함"
+
+#~ msgid ""
+#~ "This email contains a link (%1) which contains multiple http://. This is "
+#~ "often the case in scam emails."
+#~ msgstr ""
+#~ "이 메일 메시지는 http://가 여러 번 들어간 링크(%1)를 포함합니다. 이는 사"
+#~ "기 메일에서 자주 사용하는 수법입니다."
+
+#~ msgid ""
+#~ "This email contains a shorturl (%1). It can redirect to another server."
+#~ msgstr ""
+#~ "이 메일 메시지는 단축 URL(%1)을 포함합니다. 다른 서버로 넘겨질 수 있습니"
+#~ "다."
+
+#~ msgid ""
+#~ "Message contains form element. This is often the case in scam emails."
+#~ msgstr "메시지가 폼을 포함합니다. 사기 메일에서 자주 사용하는 수법입니다."
+
+#~ msgid "No network connection detected, we cannot expand url."
+#~ msgstr "네트워크에 연결되지 않아서 URL을 확장할 수 없습니다."
+
+#~ msgid "Short url '%1' redirects to '%2'."
+#~ msgstr "단축 URL '%1'이(가) '%2'을(를) 가리킵니다."
+
+#~ msgid "Only print selected text in viewer"
+#~ msgstr "뷰어에 선택한 텍스트만 출력"
+
+#~ msgid ""
+#~ "Respect expand/collapse quote mark which is defined in settings during "
+#~ "printing."
+#~ msgstr "인쇄할 때 인용 부호 접기/펴기 설정을 고려합니다."
+
+#~ msgid ""
+#~ "Specifies whether the background color and images are also drawn when the "
+#~ "page is printed."
+#~ msgstr "페이지를 인쇄할 때 배경색과 그림을 같이 인쇄할 지 여부입니다."
+
+#~ msgid "When we render html do not use font size inferior to minimum size."
+#~ msgstr "HTML을 표시할 때 최소 글꼴 크기 이하로 출력하지 않습니다."
+
+#~ msgid "Specifies the font to use for the message body"
+#~ msgstr "메시지 본문에 사용할 글꼴 지정"
+
+#~ msgid "Specifies the font to use for printing"
+#~ msgstr "인쇄할 때 사용할 글꼴 지정"
+
+#, fuzzy
+#~| msgid "Show HTML status bar"
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "HTML 상태 표시줄 보이기"
+
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "보기 좋은 헤더에서 스팸 상태 보이기"
+
+#~ msgid "Replace smileys by emoticons"
+#~ msgstr "텍스트 이모티콘을 그래픽으로 대체"
+
+#~ msgid ""
+#~ "Enable this if you want smileys like :-) appearing in the message text to "
+#~ "be replaced by emoticons (small pictures)."
+#~ msgstr ""
+#~ "메시지 텍스트에 나타나는 :-)과 같은 텍스트 이모티콘을 그래픽 이모티콘으로 "
+#~ "대체하려면 선택하십시오."
+
+#~ msgid "Show expand/collapse quote marks"
+#~ msgstr "단계별 인용 부호 보이기"
+
+#~ msgid ""
+#~ "Enable this option to show different levels of quoted text. Disable to "
+#~ "hide the levels of quoted text."
+#~ msgstr ""
+#~ "단계별 인용 부호를 보려면 선택하십시오. 선택하지 않으면 인용문 단계를 표시"
+#~ "하지 않습니다."
+
+#~ msgid "Automatic collapse level:"
+#~ msgstr "자동 접기 단계:"
+
+#~ msgid "Reduce font size for quoted text"
+#~ msgstr "인용문의 글꼴 크기 줄이기"
+
+#~ msgid "Enable this option to show quoted text with a smaller font."
+#~ msgstr "이 옵션을 선택하면 인용문의 크기를 줄여서 표시합니다."
+
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "보기 좋은 헤더에서 사용자 에이전트 보이기"
+
+#~ msgid ""
+#~ "Enable this option to get the User-Agent and X-Mailer header lines "
+#~ "displayed when using fancy headers."
+#~ msgstr ""
+#~ "보기 좋은 헤더를 사용할 때 User-Agent 및 X-Mailer 헤더를 보이려면 선택하십"
+#~ "시오."
+
+#~ msgid "Allow to edit attachments of existing mails."
+#~ msgstr "존재하는 메일의 첨부 파일을 편집할 수 있도록 합니다."
+
+#~ msgid "Always decrypt messages when viewing or ask before decrypting"
+#~ msgstr "메시지를 볼 때 항상 복호화하거나 복호화하기 전에 묻기"
+
+#~ msgid "Message Structure Viewer"
+#~ msgstr "메시지 구조 뷰어"
+
+#~ msgid "Show never"
+#~ msgstr "보이지 않음"
+
+#~ msgid "Show always"
+#~ msgstr "항상 보임"
+
+#~ msgid "What style of headers should be displayed"
+#~ msgstr "표시할 헤더 스타일"
+
+#~ msgid "How much of headers should be displayed"
+#~ msgstr "표시할 헤더 분량"
+
+#~ msgid "Prefer HTML to plain text"
+#~ msgstr "일반 텍스트보다 HTML 선호"
+
+#~ msgid "Allow messages to load external references from the Internet"
+#~ msgstr "메시지 외부 참조를 인터넷에서 부를 수 있도록 허용"
+
+#~ msgid "How attachments are shown"
+#~ msgstr "첨부 파일 표시 방식"
+
+#~ msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
+#~ msgstr "3단계 이상 인용문에 색을 다시 사용할 지 여부입니다"
+
+#~ msgid "Activate Access Key"
+#~ msgstr "액세스 키 활성화"
+
+#~ msgid ""
+#~ "KMail can analyze messages for suspected email scams by looking for "
+#~ "common techniques used to deceive you"
+#~ msgstr ""
+#~ "KMail은 자주 사용되는 속임수를 탐지하여 사기 메일인지 판별할 수 있습니다"
+
+#~ msgid "List of emails in scam white list"
+#~ msgstr "사기 허용 목록의 이메일 주소"
+
+#~ msgid "Enabled ad block"
+#~ msgstr "광고 차단 활성화"
+
+#~ msgid "Hide advertisement enabled"
+#~ msgstr "광고 차단 활성화됨"
+
+#~ msgid "Update interval list of adblock"
+#~ msgstr "광고 차단 목록 업데이트 주기"
+
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "암호화된 메시지에는 읽음 확인을 보내지 않음"
+
+#~ msgid ""
+#~ "Specifies the default policy to use, for the Message Disposition "
+#~ "Notifications (for internal use only)"
+#~ msgstr "메시지 읽음 확인에 대한 기본 정책을 지정합니다 (내부용)"
+
+#~ msgid ""
+#~ "Specifies the default quoting action to take, when replying to a message "
+#~ "(for internal use only)"
+#~ msgstr "메시지에 답장할 때 취할 기본 인용 동작을 지정합니다 (내부용)"
+
+#~ msgid "Mangle From:/To: headers in replies to replies"
+#~ msgstr "답장에 대한 답장의 From:/To: 헤더 변형"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your replies, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook의 iCalendar 표준 구현은 여러 문제가 있으므로, 이 옵션은 "
+#~ "문제 중 하나를 우회합니다. Outlook 사용자가 답장을 읽어보지 못한다고 하면 "
+#~ "이 옵션을 사용해 보십시오."
+
+#~ msgid "Send groupware invitations in the mail body"
+#~ msgstr "메일 본문으로 그룹웨어 초대장 보내기"
+
+#~ msgid ""
+#~ "Microsoft Outlook has a number of shortcomings in its implementation of "
+#~ "the iCalendar standard; this option works around one of them. If you have "
+#~ "problems with Outlook users not being able to get your invitations, try "
+#~ "setting this option."
+#~ msgstr ""
+#~ "Microsoft Outlook의 iCalendar 표준 구현은 여러 문제가 있으므로, 이 옵션은 "
+#~ "문제 중 하나를 우회합니다. Outlook 사용자가 초대장을 읽어보지 못한다고 하"
+#~ "면 이 옵션을 사용해 보십시오."
+
+#~ msgid "Exchange-compatible invitation naming"
+#~ msgstr "Exchange 호환 초대장 이름 사용"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server, has a problem understanding standards-compliant groupware email. "
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "Microsoft Exchange 서버와 연결된 Microsoft Outlook을 사용하는 경우표준 준"
+#~ "수 그룹웨어 이메일을 제대로 처리하지 못할 수도 있습니다.이 옵션을 사용하"
+#~ "면 Microsoft Exchange가 이해하는 형태로 그룹웨어 초대장을 보냅니다."
+
+#~ msgid "Outlook compatible invitation reply comments"
+#~ msgstr "Outlook 호환 초대장 답장 설명 사용"
+
+#~ msgid ""
+#~ "When replying to invitations, send the reply comment in way that "
+#~ "Microsoft Outlook understands."
+#~ msgstr ""
+#~ "초대장에 답장할 때 답장 설명을 Microsoft Outlook이 이해할 수 있는 형태로 "
+#~ "보냅니다."
+
+#~ msgid "Show invitation update differences in the Outlook style"
+#~ msgstr "Outlook 스타일로 초대장 업데이트 차이 보이기"
+
+#~ msgid ""
+#~ "When viewing invitation updates, show the differences in the Microsoft "
+#~ "Outlook style."
+#~ msgstr ""
+#~ "초대장 업데이트를 볼 때 차이점을 Microsoft Outlook 스타일로 표시합니다."
+
+#~ msgid "Automatic invitation sending"
+#~ msgstr "자동으로 초대장 보내기"
+
+#~ msgid ""
+#~ "When this is checked, you will not see the mail composer window. Instead, "
+#~ "all invitation mails are sent automatically. If you want to see the mail "
+#~ "before sending it, you can uncheck this option. However, be aware that "
+#~ "the text in the composer window is in iCalendar syntax, and you should "
+#~ "not try modifying it by hand."
+#~ msgstr ""
+#~ "이 옵션을 선택하면 메시지 작성기 창을 볼 수 없습니다. 그 대신 모든 초대장 "
+#~ "메일을 자동으로 보냅니다. 만약 메일을 보내기 전에 보고 싶으면 이 옵션을 선"
+#~ "택하지 않으면 됩니다. 작성기 창의 텍스트는 iCalendar 문법이므로 직접 수정"
+#~ "하기 어려울 수도 있습니다."
+
+#~ msgid "Delete invitation emails after the reply to them has been sent"
+#~ msgstr "답장한 후 초대장 메일을 삭제합니다"
+
+#~ msgid ""
+#~ "When this is checked, received invitation emails that have been replied "
+#~ "to will be moved to the Trash folder, once the reply has been "
+#~ "successfully sent."
+#~ msgstr ""
+#~ "이 옵션을 선택하면 받은 초대 메일에 성공적으로 답장했을 때 초대 메일을 휴"
+#~ "지통으로 이동합니다."
+
+#~ msgid "Use Fi&xed Font"
+#~ msgstr "고정폭 글꼴 사용하기(&X)"
+
+#~ msgid "The most recent selected folder using for Todo."
+#~ msgstr "할 일 목록에 사용할 가장 최근에 선택된 폴더입니다."
+
+#~ msgid "The most recent selected folder using for Event."
+#~ msgstr "이벤트 목록에 사용할 가장 최근에 선택된 폴더입니다."
+
+#~ msgid "The most recent selected folder using for Notes."
+#~ msgstr "메모에 사용할 가장 최근에 선택된 폴더입니다."
+
+#~ msgid "Groupware Compatibility && Legacy Options"
+#~ msgstr "그룹웨어 호환성 및 과거 옵션"
+
+#~ msgid ""
+#~ "Turn this option on in order to make Outlook(tm) understand your answers "
+#~ "to invitation replies"
+#~ msgstr "Outlook(tm) 사용자가 초대장에 응답할 수 있도록 하려면 설정하십시오"
+
+#~ msgid "&Mangle From:/To: headers in replies to invitations"
+#~ msgstr "초대장 답장의 From:/To: 헤더 변형(&M)"
+
+#~ msgid ""
+#~ "Turn this option on in order to make Outlook(tm) understand your answers "
+#~ "to invitations"
+#~ msgstr ""
+#~ "Outlook(tm) 사용자가 초대장에 대한 응답을 읽을 수 있도록 하려면 설정하십시"
+#~ "오"
+
+#~ msgid "Send &invitations in the mail body"
+#~ msgstr "메일 본문으로 초대장 보내기(&I)"
+
+#~ msgid ""
+#~ "Microsoft Outlook, when used in combination with a Microsoft Exchange "
+#~ "server,\n"
+#~ "has a problem understanding standards-compliant groupware email.\n"
+#~ "Turn this option on to send groupware invitations in a way that Microsoft "
+#~ "Exchange understands."
+#~ msgstr ""
+#~ "Microsoft Exchange 서버와 연결된 Microsoft Outlook을 사용하는 경우\n"
+#~ "표준 준수 그룹웨어 이메일을 제대로 처리하지 못할 수도 있습니다.\n"
+#~ "이 옵션을 사용하면 Microsoft Exchange가 이해하는 형태로 그룹웨어 초대장을 "
+#~ "보냅니다."
+
+#~ msgid "Exchange-compatible invitation &naming"
+#~ msgstr "Exchange 호환 초대장 이름 사용(&N)"
+
+#~ msgid ""
+#~ "Send invitation reply comments in a way that Microsoft Outlook(tm) "
+#~ "understands."
+#~ msgstr ""
+#~ "Microsoft Outlook(tm)에서 읽을 수 있는 형태로 초대장 답장 설명을 보냅니다."
+
+#~ msgid ""
+#~ "Display invitation update differences in the Microsoft Outlook(tm) style."
+#~ msgstr "초대장 업데이트 차이를 Microsoft Outlook(tm) 스타일로 표시합니다."
+
+#~ msgid ""
+#~ "When this is on, the user will not see the mail composer window. "
+#~ "Invitation mails are sent automatically."
+#~ msgstr ""
+#~ "이 옵션을 사용하면 사용자가 메일 작성기 창을 보지 못합니다. 초대장 메일을 "
+#~ "자동으로 보냅니다."
+
+#~ msgid "&Automatic invitation sending"
+#~ msgstr "자동으로 초대장 보내기(&A)"
+
+#~ msgid "Options"
+#~ msgstr "옵션"
+
+#~ msgid "Print only selected text"
+#~ msgstr "선택한 텍스트만 인쇄"
+
+#~ msgid "Respect &expand/collapse quote marks settings"
+#~ msgstr "인용 부호 접기/펴기 설정 존중(&E)"
+
+#~ msgid "Print background color and images"
+#~ msgstr "배경색 및 그림 인쇄"
+
+#~ msgid "Viewer settings"
+#~ msgstr "뷰어 설정"
+
+#, fuzzy
+#~| msgid "&Override character encoding:"
+#~ msgid "O&verride character encoding:"
+#~ msgstr "문자 인코딩 재정의(&O):"
+
+#~ msgid "Enable access key"
+#~ msgstr "액세스 키 활성화"
+
+#, fuzzy
+#~| msgid "Show &HTML status bar"
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "HTML 상태 표시줄 보이기(&H)"
+
+#~ msgid "Replace smileys &by emoticons"
+#~ msgstr "텍스트 이모티콘을 그래픽으로 대체(&B)"
+
+#~ msgid "Reduce font size for &quoted text"
+#~ msgstr "인용문의 글꼴 크기 줄이기(&Q)"
+
+#~ msgid "Show &expand/collapse quote marks"
+#~ msgstr "단계별 인용 부호 보이기(&E)"
+
+#, fuzzy
+#~| msgid "Automatic collapse level:"
+#~ msgid "Automatic collapse &level:"
+#~ msgstr "자동 접기 단계:"
+
+#~ msgid "Show spam status &in fancy headers"
+#~ msgstr "보기 좋은 헤더에서 스팸 상태 보이기(&I)"
+
+#, fuzzy
+#~| msgid "Minimum font size:"
+#~ msgid "&Minimum font size:"
+#~ msgstr "최소 글꼴 크기:"
+
+#~ msgid ""
+#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr "파일 \"%1\"이(가) 이미 존재합니다. 덮어쓰시겠습니까?"
+
+#~ msgid "Overwrite File?"
+#~ msgstr "파일을 덮어쓰시겠습니까?"
+
+#~ msgid "Save Attachments To"
+#~ msgstr "첨부 파일을 다음에 저장"
+
+#~ msgctxt "filename for an unnamed attachment"
+#~ msgid "attachment.1"
+#~ msgstr "첨부.1"
+
+#~ msgid "Save Attachment"
+#~ msgstr "첨부 파일 저장"
+
+#~ msgctxt "filename for the %1-th unnamed attachment"
+#~ msgid "attachment.%1"
+#~ msgstr "첨부.%1"
+
+#~ msgid ""
+#~ "The part %1 of the message is encrypted. Do you want to keep the "
+#~ "encryption when saving?"
+#~ msgstr ""
+#~ "메시지의 부분 %1이(가) 암호화되었습니다. 저장할 때 암호화를 유지하시겠습니"
+#~ "까?"
+
+#~ msgid "KMail Question"
+#~ msgstr "KMail 질문"
+
+#~ msgid "Keep Encryption"
+#~ msgstr "암호화 유지"
+
+#~ msgid "Do Not Keep"
+#~ msgstr "유지하지 않음"
+
+#~ msgid ""
+#~ "The part %1 of the message is signed. Do you want to keep the signature "
+#~ "when saving?"
+#~ msgstr ""
+#~ "메시지의 부분 %1이(가) 서명되었습니다 저장할 때 서명을 유지하시겠습니까?"
+
+#~ msgid "Keep Signature"
+#~ msgstr "서명 유지"
+
+#~ msgctxt "1 = file name, 2 = error string"
+#~ msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
+#~ msgstr "<qt>파일 <filename>%1에</filename><br>저장할 수 없음:<br><br>%2"
+
+#~ msgid "Error saving attachment"
+#~ msgstr "첨부 파일 저장 오류"
+
+#~ msgid "Found no attachments to save."
+#~ msgstr "저장할 첨부 파일이 없습니다."
+
+#~ msgid "message"
+#~ msgstr "메시지"
+
+#~ msgid "email messages (*.mbox);;all files (*)"
+#~ msgstr "이메일 메시지 (*.mbox);;모든 파일 (*)"
+
+#~ msgid "Save Message"
+#~ msgid_plural "Save Messages"
+#~ msgstr[0] "메시지 저장"
+
+#~ msgid "File %1 could not be loaded."
+#~ msgstr "파일 %1을(를) 불러올 수 없습니다."
+
+#~ msgid "Error loading message"
+#~ msgstr "메시지 불러오기 오류"
+
+#~ msgid "File %1 could not be created."
+#~ msgstr "파일 %1을(를) 만들 수 없습니다."
+
+#~ msgid "Error saving message"
+#~ msgstr "메시지 저장 오류"
+
+#~ msgid "We cannot save message."
+#~ msgstr "메시지를 저장할 수 없습니다."
+
+#~ msgid "Open &with %1"
+#~ msgstr "%1(으)로 열기(&W)"
+
+#~ msgctxt "@item:inmenu Open With, %1 is application name"
+#~ msgid "%1"
+#~ msgstr "%1"
+
+#~ msgid "Edit with:"
+#~ msgstr "다음으로 편집:"
+
+#~ msgid ""
+#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
+#~ "loss, editing the attachment will be aborted."
+#~ msgstr ""
+#~ "KMail에서 선택한 편집기가 닫힌 시점을 알 수 없습니다. 데이터 손실을 막기 "
+#~ "위해서 첨부 파일 편집을 중단합니다."
+
+#~ msgid "Unable to edit attachment"
+#~ msgstr "첨부 파일을 편집할 수 없음"
+
+#~ msgid "body part"
+#~ msgstr "본문 부분"
+
+#~ msgid "Description"
+#~ msgstr "설명"
+
+#~ msgid "Type"
+#~ msgstr "형식"
+
+#~ msgid "Size"
+#~ msgstr "크기"
+
+#~ msgid "Unnamed plugin"
+#~ msgstr "이름 없는 플러그인"
+
+#~ msgid "No description available"
+#~ msgstr "설명 없음"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgid "Move To Trash"
+#~ msgstr "휴지통으로 이동"
+
+#, fuzzy
+#~| msgid "Reply to: "
+#~ msgid "Reply To All"
+#~ msgstr "답장 주소: "
+
+#, fuzzy
+#~| msgid "Decrypt Message"
+#~ msgid "Print Message"
+#~ msgstr "메시지 복호화"
+
+#, fuzzy
+#~| msgid "Save Message"
+#~| msgid_plural "Save Messages"
+#~ msgid "Print Preview Message"
+#~ msgstr "메시지 저장"
+
+#~ msgid "Turn on HTML rendering for this message."
+#~ msgstr "이 메시지의 HTML 렌더링을 사용합니다."
+
+#~ msgid "Load external references from the Internet for this message."
+#~ msgstr "이 메시지의 외부 참조를 인터넷에서 불러옵니다."
+
+#~ msgid "Work online."
+#~ msgstr "온라인으로 작업 중입니다."
+
+#~ msgid "Make account online."
+#~ msgstr "계정을 온라인으로 설정합니다."
+
+#~ msgid "Decrypt message."
+#~ msgstr "메시지를 복호화합니다."
+
+#~ msgid "Show signature details."
+#~ msgstr "서명 정보를 표시합니다."
+
+#~ msgid "Hide signature details."
+#~ msgstr "서명 정보를 숨깁니다."
+
+#~ msgid "Show attachment list."
+#~ msgstr "첨부 파일 목록을 보입니다."
+
+#~ msgid "Hide attachment list."
+#~ msgstr "첨부 파일 목록을 숨깁니다."
+
+#~ msgid "Show full \"To\" list"
+#~ msgstr "전체 받는 사람 목록 보이기"
+
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "전체 받는 사람 목록 숨기기"
+
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "전체 참조 목록 보이기"
+
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "전체 참조 목록 숨기기"
+
+#~ msgid "Expand all quoted text."
+#~ msgstr "모든 인용문을 펼칩니다."
+
+#~ msgid "Collapse quoted text."
+#~ msgstr "모든 인용문을 접습니다."
+
+#~ msgid "Could not start certificate manager. Please check your installation."
+#~ msgstr "인증서 관리자를 시작할 수 없습니다. 설치 상태를 확인하십시오."
+
+#~ msgid "KMail Error"
+#~ msgstr "KMail 오류"
+
+#~ msgid "Show certificate 0x%1"
+#~ msgstr "인증서 0x%1 보기"
+
+#~ msgid "&Open in Address Book"
+#~ msgstr "주소록에서 열기(&O)"
+
+#~ msgid "&Copy Email Address"
+#~ msgstr "이메일 주소 복사(&C)"
+
+#~ msgid "Address copied to clipboard."
+#~ msgstr "클립보드에 주소를 복사했습니다."
+
+#~ msgid "Lookup the contact in KAddressbook"
+#~ msgstr "KAddressBook에서 연락처 찾기"
+
+#~ msgid "Attachment: %1"
+#~ msgstr "첨부: %1"
+
+#~ msgid "Encapsulated Message (Subject: %1)"
+#~ msgstr "캡슐화된 메시지 (제목: %1) "
+
+#~ msgid "Encapsulated Message"
+#~ msgstr "캡슐화된 메시지"
+
+#~ msgid "Unnamed attachment"
+#~ msgstr "이름 없는 첨부"
+
+#~ msgid "Show GnuPG Audit Log for this operation"
+#~ msgstr "이 작업의 GnuPG 감사 기록 보기"
+
+#~ msgid "Opening URL..."
+#~ msgstr "URL 여는 중..."
+
+#~ msgctxt "@info"
+#~ msgid "Do you really want to execute <filename>%1</filename>?"
+#~ msgstr "<filename>%1</filename>을(를) 정말로 실행하시겠습니까?"
+
+#~ msgid "Execute"
+#~ msgstr "실행"
+
+#~ msgid "Loading message..."
+#~ msgstr "메시지 불러오는 중..."
+
+#~ msgid ""
+#~ "Deleting an attachment from an encrypted or old-style mailman message is "
+#~ "not supported."
+#~ msgstr ""
+#~ "암호화되거나 구식 mailman 메시지에서는 첨부 파일을 삭제할 수 없습니다."
+
+#~ msgid "Delete Attachment"
+#~ msgstr "첨부 파일 지우기"
+
+#~ msgid ""
+#~ "Deleting an attachment might invalidate any digital signature on this "
+#~ "message."
+#~ msgstr ""
+#~ "첨부 파일을 지우면 이 메시지의 디지털 서명을 무효화할 수도 있습니다."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "다음으로 열기(&O)"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "기타(&O)..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "다음으로 열기(&O)..."
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "열기"
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "보기"
+
+#~ msgid "Scroll To"
+#~ msgstr "다음으로 스크롤"
+
+#~ msgid "Save As..."
+#~ msgstr "다른 이름으로 저장..."
+
+#~ msgid "Copy"
+#~ msgstr "복사"
+
+#~ msgid "Properties"
+#~ msgstr "속성"
+
+#~ msgid "KMail"
+#~ msgstr "KMail"
+
+#~ msgid "The KDE Mail Client"
+#~ msgstr "KDE 메일 클라이언트"
+
+#~ msgid "View Attachment: %1"
+#~ msgstr "첨부 파일 보기: %1"
+
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "첨부(&A)"
+
+#~ msgid "Choose display style of attachments"
+#~ msgstr "첨부 파일의 표시 형식 선택"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&As Icons"
+#~ msgstr "아이콘으로(&A)"
+
+#~ msgid "Show all attachments as icons. Click to see them."
+#~ msgstr "첨부 파일을 아이콘으로 표시합니다. 누르면 볼 수 있습니다."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Smart"
+#~ msgstr "스마트(&S)"
+
+#~ msgid "Show attachments as suggested by sender."
+#~ msgstr "보낸 사람이 제안한 형태로 첨부 파일을 봅니다."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Inline"
+#~ msgstr "인라인(&I)"
+
+#~ msgid "Show all attachments inline (if possible)"
+#~ msgstr "모든 첨부 파일을 인라인으로 봅니다 (가능한 경우)"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "숨기기(&H)"
+
+#~ msgid "Do not show attachments in the message viewer"
+#~ msgstr "메시지 뷰어에서 첨부 파일을 숨깁니다"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "In Header Only"
+#~ msgstr "헤더에만"
+
+#~ msgid "Show Attachments only in the header of the mail"
+#~ msgstr "메일 헤더에만 첨부 파일을 보입니다"
+
+#~ msgid "&Set Encoding"
+#~ msgstr "인코딩 설정(&S)"
+
+#~ msgid "Auto"
+#~ msgstr "자동"
+
+#~ msgid "Select All Text"
+#~ msgstr "모든 텍스트 선택"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "링크 주소 복사"
+
+#~ msgid "Open URL"
+#~ msgstr "URL 열기"
+
+#~ msgid "Show Message Structure"
+#~ msgstr "메시지 구조 보기"
+
+#~ msgid "&View Source"
+#~ msgstr "소스 보기(&V)..."
+
+#~ msgid "&Save message..."
+#~ msgstr "메시지 저장(&S)..."
+
+#~ msgid "&Save Display Format"
+#~ msgstr "표시 형식 저장(&S)"
+
+#~ msgid "&Reset Display Format"
+#~ msgstr "표시 형식 초기화(&R)"
+
+#~ msgid "Scroll Message Up"
+#~ msgstr "메시지 위로 스크롤"
+
+#~ msgid "Scroll Message Down"
+#~ msgstr "메시지 아래로 스크롤"
+
+#~ msgid "Scroll Message Up (More)"
+#~ msgstr "메시지 위로 스크롤 (더)"
+
+#~ msgid "Scroll Message Down (More)"
+#~ msgstr "메시지 아래로 스크롤 (더)"
+
+#~ msgid "Toggle HTML Display Mode"
+#~ msgstr "HTML 디스플레이 모드 전환"
+
+#~ msgid "Toggle display mode between HTML and plain text"
+#~ msgstr "HTML 및 일반 텍스트 표시 모드 전환"
+
+#~ msgid "Load external references"
+#~ msgstr "외부 참조 불러오기"
+
+#~ msgid "Speak Text"
+#~ msgstr "텍스트 말하기"
+
+#~ msgid "Copy Image Location"
+#~ msgstr "그림 주소 복사"
+
+#~ msgid "&Find in Message..."
+#~ msgstr "메시지에서 찾기(&F)..."
+
+#~ msgid "Save &As..."
+#~ msgstr "다른 이름으로 저장(&A)..."
+
+#~ msgid "Open With..."
+#~ msgstr "다음으로 열기..."
+
+#~ msgid "Save All Attachments..."
+#~ msgstr "모든 첨부 파일 저장..."
+
+#~ msgid "Copy Email Address"
+#~ msgstr "이메일 주소 복사"
+
+#~ msgid "Message as Plain Text"
+#~ msgstr "메시지를 일반 텍스트로"
+
+#~ msgid "Attachments:"
+#~ msgstr "첨부:"
+
+#~ msgid "URL copied to clipboard."
+#~ msgstr "클립보드에 URL을 복사했습니다."
+
+#~ msgid "Hide full address list"
+#~ msgstr "전체 주소 목록 숨기기"
+
+#~ msgid "Show full address list"
+#~ msgstr "전체 주소 목록 보이기"
+
+#~ msgid "Message loading failed: %1."
+#~ msgstr "메시지 불러오기 실패: %1."
+
+#~ msgid "Message not found."
+#~ msgstr "메시지를 찾을 수 없습니다."
+
+#~ msgid ""
+#~ "Open attachment '%1'?\n"
+#~ "Note that opening an attachment may compromise your system's security."
+#~ msgstr ""
+#~ "첨부 파일 '%1'을(를) 여시겠습니까?\n"
+#~ "첨부 파일을 열면 시스템의 보안에 영향을 줄 수도 있습니다."
+
+#~ msgid "Open Attachment?"
+#~ msgstr "첨부 파일을 여시겠습니까?"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr "'%1'(으)로 열기(&O)..."
+
+#~ msgid "&Open With..."
+#~ msgstr "다음 프로그램으로 열기(&O)..."
+
+#~ msgid "Do not ask again"
+#~ msgstr "다시 묻지 않기"
+
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+#~ msgstr ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />메<br />시<br />지</b></"
+#~ "qt>"
+
+#~ msgctxt "'No HTML Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#~ ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#~ msgstr ""
+#~ "<qt><br />H<br />T<br />M<br />L<br /> <br />메<br />시<br />지<br /> "
+#~ "<br />아<br />님</qt>"
+
+#~ msgctxt "'Plain Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e<br /></qt>"
+#~ msgstr "<qt><br />일<br />반<br /> <br />메<br />시<br />지<br /></qt>"
+
+#~ msgid "Click to toggle between HTML and plain text."
+#~ msgstr "HTML과 일반 텍스트를 전환하려면 누르십시오."
+
+#~ msgid ""
+#~ "<qt>Invitations are normally sent as attachments to a mail. This switch "
+#~ "changes the invitation mails to be sent in the text of the mail instead; "
+#~ "this is necessary to send invitations and replies to Microsoft Outlook."
+#~ "<br />But, when you do this, you no longer get descriptive text that mail "
+#~ "programs can read; so, to people who have email programs that do not "
+#~ "understand the invitations, the resulting messages look very odd.<br /"
+#~ ">People that have email programs that do understand invitations will "
+#~ "still be able to work with this.</qt>"
+#~ msgstr ""
+#~ "<qt>초대장은 메일 첨부 파일로 보내집니다. 이 스위치는 초대장 메일을 첨부 "
+#~ "대신 메일 본문으로 보내며, Microsoft Outlook으로 초대장을 보내고 받으려면 "
+#~ "필요합니다.<br />이 스위치를 켜면 초대장을 읽을 수 없는 메일 프로그램 사용"
+#~ "자들에게는 메시지가 이상하게 보일 수도 있습니다.<br />초대장을 읽을 수 있"
+#~ "는 메일 프로그램 사용자는 정상적으로 처리할 수 있습니다.</qt>"
+
+#~ msgctxt "Unchanged mail message"
+#~ msgid "Raw Source"
+#~ msgstr "원본 소스"
+
+#~ msgid ""
+#~ "Raw, unmodified mail as it is stored on the filesystem or on the server"
+#~ msgstr "파일 시스템이나 서버에 저장된 형태의 수정되지 않은 원본 메일 보기"
+
+#~ msgctxt "Mail message as shown, in HTML format"
+#~ msgid "HTML Source"
+#~ msgstr "HTML 소스"
+
+#~ msgid "HTML code for displaying the message to the user"
+#~ msgstr "사용자에게 메시지를 표시할 때 사용하는 HTML 코드"
+
+#~ msgid "Open folder where attachment was saved"
+#~ msgstr "첨부 파일이 저장된 폴더 열기"
+
+#~ msgid "vCard Viewer"
+#~ msgstr "vCard 뷰어"
+
+#~ msgid "&Import"
+#~ msgstr "가져오기(&I)"
+
+#~ msgid "&Next Card"
+#~ msgstr "다음 카드(&N)"
+
+#~ msgid "&Previous Card"
+#~ msgstr "이전 카드(&P)"
+
+#~ msgid "&Zoom In"
+#~ msgstr "확대(&Z)"
+
+#~ msgid "Zoom &Out"
+#~ msgstr "축소(&O)"
+
+#~ msgid "Reset"
+#~ msgstr "초기화"
+
+#, fuzzy
+#~| msgid "&Zoom In"
+#~ msgid "Zoom"
+#~ msgstr "확대(&Z)"
+
+#~ msgid "Close"
+#~ msgstr "닫기"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "찾기(&F):"
+
+#~ msgid "Text to search for"
+#~ msgstr "찾을 텍스트"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "다음"
+
+#~ msgid "Jump to next match"
+#~ msgstr "다음 일치로 이동"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "이전"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "이전 일치로 이동"
+
+#~ msgid "Modify search behavior"
+#~ msgstr "검색 행동 수정"
+
+#~ msgid "Case sensitive"
+#~ msgstr "대소문자 구분"
+
+#~ msgid "Phrase not found"
+#~ msgstr "검색어를 찾을 수 없음"
+
+#~ msgid "Blockable Items"
+#~ msgstr "차단 가능한 항목"
+
+#~ msgid "No blockable element found."
+#~ msgstr "차단할 수 있는 구성 요소가 없습니다."
+
+#~ msgid "Filter"
+#~ msgstr "필터"
+
+#~ msgid "Address"
+#~ msgstr "주소"
+
+#~ msgid "Search..."
+#~ msgstr "찾기..."
+
+#~ msgid "Image"
+#~ msgstr "그림"
+
+#~ msgid "Script"
+#~ msgstr "스크립트"
+
+#~ msgid "Stylesheet"
+#~ msgstr "스타일시트"
+
+#~ msgid "Font"
+#~ msgstr "글꼴"
+
+#~ msgid "Frame"
+#~ msgstr "프레임"
+
+#~ msgid "XML Request"
+#~ msgstr "XML 요청"
+
+#~ msgid "Object"
+#~ msgstr "개체"
+
+#~ msgid "Audio/Video"
+#~ msgstr "오디오/비디오"
+
+#~ msgid "Popup window"
+#~ msgstr "팝업 창"
+
+#~ msgid "Unknown"
+#~ msgstr "알 수 없음"
+
+#~ msgid "Copy url"
+#~ msgstr "URL 복사"
+
+#~ msgid "Copy filter"
+#~ msgstr "필터 복사"
+
+#~ msgid "Block item..."
+#~ msgstr "항목 차단..."
+
+#~ msgid "Open"
+#~ msgstr "열기"
+
+#~ msgid "Remove filter"
+#~ msgstr "필터 삭제"
+
+#~ msgid "Download new ad-block list was failed."
+#~ msgstr "새 광고 차단 목록을 다운로드할 수 없습니다."
+
+#~ msgid "Download new ad-block list was done."
+#~ msgstr "새 광고 차단 목록을 다운로드했습니다."
+
+#~ msgid "Add subscription"
+#~ msgstr "구독 추가"
+
+#~ msgid "Select List:"
+#~ msgstr "목록 선택:"
+
+#, fuzzy
+#~| msgid "Show List..."
+#~ msgid "Show List"
+#~ msgstr "목록 보이기..."
+
+#~ msgid "Use default"
+#~ msgstr "기본값으로 사용"
+
+#~ msgid "Yes"
+#~ msgstr "예"
+
+#~ msgid "Not"
+#~ msgstr "부정"
+
+#~ msgid "Not subscription added..."
+#~ msgstr "부정 구독 추가됨..."
+
+#~ msgid ""
+#~ "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">more information</a>):"
+#~ msgstr ""
+#~ "<qt>필터 표현식 (예: <tt>http://www.example.com/ad/*</tt>, <a href="
+#~ "\"filterhelp\">더 많은 정보</a>):"
+
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] "일"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~| "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~| "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~| "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~| "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~| "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes "
+#~| "priority over any blacklist (blocking) filter."
+#~ msgid ""
+#~ "<qt><p>Enter an expression to filter. Filters can be defined as either:"
+#~ "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</"
+#~ "tt>, the wildcards <tt>*?[]</tt> may be used</li><li>a full regular "
+#~ "expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|"
+#~ "banner)\\./</tt></li></ul><p>Any filter string can be preceded by "
+#~ "'<tt>@@</tt>' to whitelist (allow) any matching URL, which takes priority "
+#~ "over any blacklist (blocking) filter.<br><a href='%1'>%2</a></qt>"
+#~ msgstr ""
+#~ "<qt><p>필터 표현식을 입력하십시오. 필터는 다음과 같이 정의할 수 있습니다: "
+#~ "<ul><li>셸 형식 와일드카드. 예: <tt>http://www.example.com/ads*</tt>, 와일"
+#~ "드카드 문자열로 <tt>*?[]</tt>를 사용할 수 있습니다</li><li>문자열을 '<tt>/"
+#~ "</tt>' 기호로 둘러싼 완전한 정규 표현식. 예: <tt>/\\/(ad|banner)\\./</tt> "
+#~ "</li></ul><p>차단 필터를 적용하기 전 허용 필터가 먼저 적용되며, 필터 문자"
+#~ "열 맨 앞에 '<tt>@@</tt>' 기호를 추가하면 허용 필터로 분류됩니다."
+
+#~ msgid "Do you want to delete list \"%1\"?"
+#~ msgstr "목록 \"%1\"을(를) 삭제하시겠습니까?"
+
+#~ msgid "Delete current list"
+#~ msgstr "현재 목록 삭제"
+
+#~ msgid "All Files (*)"
+#~ msgstr "모든 파일 (*)"
+
+#~ msgid "Import Filters"
+#~ msgstr "필터 가져오기"
+
+#~ msgid "Export Filters"
+#~ msgstr "필터 내보내기"
+
+#~ msgid "Show adblock list"
+#~ msgstr "광고 차단 목록 보이기"
+
+#~ msgid "Delete List"
+#~ msgstr "목록 삭제"
+
+#~ msgid "Download..."
+#~ msgstr "다운로드..."
+
+#~ msgid "An error occurs during download list: \"%1\""
+#~ msgstr "목록을 다운로드하는 중 오류 발생: \"%1\""
+
+#~ msgid "Filters:"
+#~ msgstr "필터:"
+
+#, fuzzy
+#~| msgid "Blocking filter"
+#~ msgid "&Blocking filter"
+#~ msgstr "차단 필터"
+
+#~ msgid "Exception Filter"
+#~ msgstr "예외 필터"
+
+#~ msgid "Pattern"
+#~ msgstr "패턴"
+
+#~ msgid "custom"
+#~ msgstr "사용자 정의"
+
+#~ msgid "Accept pattern only"
+#~ msgstr "패턴만 취급"
+
+#~ msgid "At the beginning of the address"
+#~ msgstr "주소 시작"
+
+#~ msgid "At the end of address"
+#~ msgstr "주소 끝"
+
+#~ msgid "First-part only"
+#~ msgstr "첫 부분만"
+
+#~ msgid "Match case"
+#~ msgstr "대소문자 구별"
+
+#~ msgid "Restrict to domain"
+#~ msgstr "다음 도메인으로 제한"
+
+#~ msgid "Apply to:"
+#~ msgstr "다음에 적용:"
+
+#~ msgid "Collapse blocked:"
+#~ msgstr "연쇄 차단됨:"
+
+#~ msgid "&Enable Ad Block"
+#~ msgstr "광고 차단 사용(&E)"
+
+#~ msgid "&Hide filtered elements"
+#~ msgstr "필터된 구성 요소 숨기기(&H)"
+
+#~ msgid "Automatic Filters"
+#~ msgstr "자동 필터"
+
+#~ msgid "Add Filters subscriptions..."
+#~ msgstr "필터 구독 추가..."
+
+#~ msgid "Remove subscription"
+#~ msgstr "구독 삭제"
+
+#~ msgid "Update enabled automatic filters every:"
+#~ msgstr "자동 필터 갱신 주기:"
+
+#~ msgid "Show List..."
+#~ msgstr "목록 보이기..."
+
+#~ msgid "Manual Filters"
+#~ msgstr "수동 필터"
+
+#~ msgid "Add filter expression"
+#~ msgstr "필터 표현식 추가"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Import Filters..."
+#~ msgstr "필터 가져오기..."
+
+#~ msgid "Export filters..."
+#~ msgstr "필터 내보내기..."
+
+#~ msgid "Search:"
+#~ msgstr "찾기:"
+
+#~ msgid "Remove filter expression"
+#~ msgstr "필터 표현식 삭제"
+
+#~ msgid "Remove Filter"
+#~ msgstr "필터 삭제"
+
+#~ msgid "Highlight all matches"
+#~ msgstr "모두 강조"
+
+#~ msgid "Zoom only text"
+#~ msgstr "텍스트만 확대"
+
+#~ msgid "Block image"
+#~ msgstr "그림 차단"
+
+#~ msgid "Open Blockable Items..."
+#~ msgstr "차단 가능한 항목 열기..."
+
+#~ msgid "Blocked by ad filter"
+#~ msgstr "광고 필터에 의해 차단됨"
+
+#~ msgid "Zoom Text Only"
+#~ msgstr "텍스트만 확대/축소"
+
+#~ msgid "No Audit Log available"
+#~ msgstr "감사 로그 없음"
+
+#~ msgid "Error Retrieving Audit Log: %1"
+#~ msgstr "감사 로그 가져오는 중 오류 발생: %1"
+
+#~ msgctxt "The Audit Log is a detailed error log from the gnupg backend"
+#~ msgid "Show Audit Log"
+#~ msgstr "감사 로그 보이기"
+
+#~ msgid "The crypto engine returned no cleartext data."
+#~ msgstr "암호화 엔진에서 평문 데이터를 되돌려주지 않았습니다."
+
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "(알 수 없음)"
+
+#~ msgid "New or changed: %1 (secret key available)"
+#~ msgstr "새로 가져왔거나 변경됨: %1 (비밀 키 사용 가능)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "새로 가져왔거나 변경됨: %1"
+
+#~ msgid "Crypto plug-in \"%1\" is not initialized."
+#~ msgstr "암호화 플러그인 \"%1\"이(가) 초기화되지 않았습니다."
+
+#~ msgid "Expand Short URL"
+#~ msgstr "단축 URL 확장"
+
+#~ msgid "Headers:"
+#~ msgstr "헤더:"
+
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "사용자 정의 헤더 설정..."
+
+#~ msgid "Only show the headers listed below"
+#~ msgstr "다음에 표시된 헤더만 보기"
+
+#~ msgid "Show all but hide the headers listed below"
+#~ msgstr "다음에 표시된 헤더를 제외하고 보기"
+
+#~ msgid "A&dd..."
+#~ msgstr "추가(&D)..."
+
+#~ msgid "Remo&ve"
+#~ msgstr "삭제(&V)"
+
+#~ msgid "&Modify..."
+#~ msgstr "수정(&M)..."
+
+#~ msgid "Header:"
+#~ msgstr "헤더:"
+
+#, fuzzy
+#~| msgid "Create Todo"
+#~ msgid "Create ToDo"
+#~ msgstr "할 일 만들기"
+
+#, fuzzy
+#~| msgid "Create Todo"
+#~ msgid "Create To-Do"
+#~ msgstr "할 일 만들기"
+
+#~ msgid ""
+#~ "Show HTML colored quote (It can take some time on specific html email)"
+#~ msgstr ""
+#~ "색깔 있는 HTML 인용문 표시(일부 HTML 이메일에서 시간이 걸릴 수도 있음)"
+
+#~ msgid "Au&tomatic collapse level:"
+#~ msgstr "자동 접기 단계(&T):"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "모든 헤더(&A)"
+
+#~ msgid "Show all message headers"
+#~ msgstr "모든 메시지 헤더 보이기"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "간단한 헤더(&B)"
+
+#~ msgid "Show brief list of message headers"
+#~ msgstr "메시지 헤더의 간단한 목록 보이기"
+
+#~ msgid "%1: "
+#~ msgstr "%1: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "사용자 정의 헤더(&C)"
+
+#~ msgid "Show custom headers"
+#~ msgstr "사용자 헤더 보이기"
+
+#~ msgid "To: "
+#~ msgstr "받는 사람: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "기업식 헤더(&E)"
+
+#~ msgid "Show the list of headers in Enterprise style"
+#~ msgstr "메시지 헤더를 기업 스타일로 나타내기"
+
+#~ msgid "(resent from %1)"
+#~ msgstr "(%1의 최근 항목)"
+
+#~ msgid "(receiver was %1)"
+#~ msgstr "(수신자가 %1임)"
+
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "받는 사람: "
+
+#~ msgid "User-Agent: "
+#~ msgstr "사용자 에이전트: "
+
+#~ msgid "X-Mailer: "
+#~ msgstr "X-Mailer: "
+
+#~ msgid "Bugzilla: "
+#~ msgstr "Bugzilla: "
+
+#~ msgid "MDN To: "
+#~ msgstr "MDN 받는 사람: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "보기 좋은 헤더(&F)"
+
+#~ msgid "Show the list of headers in a fancy format"
+#~ msgstr "메시지 헤더를 보기 좋게 나타내기"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "긴 헤더(&L)"
+
+#~ msgid "Show long list of message headers"
+#~ msgstr "메시지 헤더의 긴 목록 보이기"
+
+#~ msgid "Event:"
+#~ msgstr "이벤트:"
+
+#~ msgid "Calendar where the new event will be stored."
+#~ msgstr "이벤트를 저장할 달력입니다."
+
+#~ msgid "Calendar where the new event will be stored"
+#~ msgstr "이벤트를 저장할 달력입니다"
+
+#~ msgid "Start:"
+#~ msgstr "시작:"
+
+#~ msgid "Select start time for event."
+#~ msgstr "이벤트 시작 시간을 선택하십시오."
+
+#~ msgid "End:"
+#~ msgstr "끝:"
+
+#~ msgid "Select end time for event."
+#~ msgstr "이벤트 끝 시간을 선택하십시오."
+
+#~ msgid "&Save"
+#~ msgstr "저장(&S)"
+
+#~ msgid "Create new event and close this widget."
+#~ msgstr "새 이벤트를 만들고 이 위젯을 닫습니다."
+
+#~ msgid "Open &editor..."
+#~ msgstr "편집기 열기(&E)..."
+
+#~ msgid "Open event editor, where more details can be changed."
+#~ msgstr "더 많은 정보를 볼 수 있는 이벤트 편집기를 엽니다."
+
+#~ msgid "Close the widget for creating new events."
+#~ msgstr "새 할 일 생성 위젯을 닫습니다."
+
+#~ msgid "Create Event..."
+#~ msgstr "이벤트 만들기..."
+
+#~ msgid "Create Event"
+#~ msgstr "이벤트 만들기"
+
+#~ msgid "Allows you to create a calendar Event"
+#~ msgstr "이 메시지에서 달력에 이벤트 만들기"
+
+#~ msgid "Note:"
+#~ msgstr "메모:"
+
+#~ msgid "Create new note and close this widget."
+#~ msgstr "새 메모를 만들고 이 위젯을 닫습니다."
+
+#~ msgid "Close the widget for creating new notes."
+#~ msgstr "새 메모 생성 위젯을 닫습니다."
+
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "메모 편집"
+
+#~ msgctxt "create a new note out of this message"
+#~ msgid "Create Note"
+#~ msgstr "메모 만들기"
+
+#~ msgid "Allows you to create a note from this message"
+#~ msgstr "이 메시지에서 메모 만들기"
+
+#~ msgid ""
+#~ "This option starts an editor to create a note. Then you can edit the note "
+#~ "to your liking before saving it."
+#~ msgstr ""
+#~ "이 옵션은 편집기를 열어서 메모를 만듭니다. 저장하기 전에 메모를 편집할 수 "
+#~ "있습니다."
+
+#~ msgid "Todo:"
+#~ msgstr "할 일:"
+
+#~ msgid "Todo list where the new task will be stored."
+#~ msgstr "새 할 일을 저장할 할 일 목록입니다."
+
+#~ msgid "Todo list where the new task will be stored"
+#~ msgstr "새 작업을 저장할 할 일 목록입니다"
+
+#~ msgid "Create new todo and close this widget."
+#~ msgstr "새 할 일을 만들고 이 위젯을 닫습니다."
+
+#~ msgid "Open todo editor, where more details can be changed."
+#~ msgstr "더 많은 정보를 볼 수 있는 할 일 편집기를 엽니다."
+
+#~ msgid "Close the widget for creating new todos."
+#~ msgstr "새 할 일 생성 위젯을 닫습니다."
+
+#~ msgid "Reply to \"%1\""
+#~ msgstr "\"%1\"에게 답장 쓰기"
+
+#~ msgctxt ""
+#~ "%1 is summary of the todo, %2 is name of the folder in which it is stored"
+#~ msgid "New todo '%1' was added to task list '%2'"
+#~ msgstr "작업 목록 '%2'에 새 할 일 '%1' 추가됨"
+
+#~ msgid "Create To-do"
+#~ msgstr "할 일 만들기"
+
+#~ msgid "Allows you to create a calendar to-do or reminder from this message"
+#~ msgstr "이 메시지에서 할 일이나 알림 메시지 만들기"
+
+#~ msgid ""
+#~ "This option starts the KOrganizer to-do editor with initial values taken "
+#~ "from the currently selected message. Then you can edit the to-do to your "
+#~ "liking before saving it to your calendar."
+#~ msgstr ""
+#~ "이 옵션은 KOrganizer의 할 일 편집기를 열어서 현재 선택한 메시지에서 초기 "
+#~ "값을 입력합니다. 달력에 저장하기 전에 필요한 대로 수정할 수 있습니다."
+
+#~ msgid "Translate..."
+#~ msgstr "번역..."
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-obtain-keys\" function. Please "
+#~ "report this bug."
+#~ msgstr ""
+#~ "백엔드에서 \"x-obtain-keys\" 함수를 지원하지 않습니다. 버그를 보고해 주십"
+#~ "시오."
+
+#~ msgid "Chiasmus Backend Error"
+#~ msgstr "Chiasmus 백엔드 오류"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-obtain-keys\" "
+#~ "function did not return a string list. Please report this bug."
+#~ msgstr ""
+#~ "Chiasmus 백엔드에서 예상치 못한 결과를 돌려 주었습니다. \"x-obtain-keys\" "
+#~ "함수에서 문자열 목록을 돌려 주지 않았습니다. 버그를 보고해 주십시오."
+
+#~ msgid ""
+#~ "No keys have been found. Please check that a valid key path has been set "
+#~ "in the Chiasmus configuration."
+#~ msgstr ""
+#~ "키를 찾을 수 없습니다. Chiasmus 설정에서 올바른 키 경로를 지정했는지 확인"
+#~ "하십시오."
+
+#~ msgid "Chiasmus Decryption Key Selection"
+#~ msgstr "Chiasmus 복호화 키 선택"
+
+#~ msgid ""
+#~ "Chiasmus backend does not offer the \"x-decrypt\" function. Please report "
+#~ "this bug."
+#~ msgstr ""
+#~ "Chiasmus 백엔드에서 \"x-decrypt\" 함수를 제공하지 않습니다. 버그를 보고해 "
+#~ "주십시오."
+
+#~ msgid ""
+#~ "The \"x-decrypt\" function does not accept the expected parameters. "
+#~ "Please report this bug."
+#~ msgstr ""
+#~ "\"x-decrypt\" 함수에서 요청한 인자를 받아들이지 않습니다. 버그를 보고해 주"
+#~ "십시오."
+
+#~ msgid "Chiasmus Decryption Error"
+#~ msgstr "Chiasmus 복호화 오류"
+
+#~ msgid ""
+#~ "Unexpected return value from Chiasmus backend: The \"x-decrypt\" function "
+#~ "did not return a byte array. Please report this bug."
+#~ msgstr ""
+#~ "Chiasmus 백엔드에서 예상하지 못한 결과를 돌려 주었습니다. \"x-decrypt\" 함"
+#~ "수에서 바이트 배열을 되돌려주지 않았습니다. 버그를 보고해 주십시오."
+
+#~ msgid "Please select the Chiasmus key file to use:"
+#~ msgstr "사용할 Chiasmus 키를 선택해 주십시오:"
+
+#~ msgid "Additional arguments for chiasmus:"
+#~ msgstr "chiasmus의 추가 인자:"
+
+#~ msgid "Decrypt With Chiasmus..."
+#~ msgstr "Chiasmus로 복호화..."
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgid "Configure Gravatar"
+#~ msgstr "설정"
+
+#~ msgid "Use Default Image"
+#~ msgstr "기본 그림 사용"
+
+#~ msgid "Use Libravatar"
+#~ msgstr "Libravatar 사용"
+
+#~ msgid "Fallback to Gravatar"
+#~ msgstr "Gravater로 폴백"
+
+#~ msgid "Gravatar Cache Size:"
+#~ msgstr "Gravater 캐시 크기:"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgctxt "add space before image"
+#~ msgid " image"
+#~ msgid_plural " images"
+#~ msgstr[0] "그림"
+
+#~ msgid "Clear Gravatar Cache"
+#~ msgstr "Gravatar 캐시 비우기"
+
+#~ msgid "Enable Gravatar Support"
+#~ msgstr "Gravatar 지원 사용"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgid "Configure..."
+#~ msgstr "설정"
+
+#~ msgid "Toggle Caret Browsing"
+#~ msgstr "캐럿 브라우징 설정/해제"
+
+#~ msgid "Caret Browsing will be activated. Switch off with F7 shortcut."
+#~ msgstr "캐럿 브라우징을 설정합니다. F7 키를 누르면 해제합니다."
+
+#~ msgid "Activate Caret Browsing"
+#~ msgstr "캐럿 브라우징 활성화"
+
+#~ msgid "Allow to delete attachments of existing mails."
+#~ msgstr "존재하는 메일의 첨부 파일을 삭제할 수 있도록 합니다."
+
+#~ msgid "Message Structure Viewer Placement"
+#~ msgstr "메시지 구조 뷰어 위치"
+
+#~ msgid "Above the message pane"
+#~ msgstr "메시지 패널 위에"
+
+#~ msgid "Below the message pane"
+#~ msgstr "메시지 패널 아래에"
+
+#~ msgid "Number of addresses to show before collapsing"
+#~ msgstr "접기 전에 표시할 주소 수"
+
+#~ msgid "Fallback character e&ncoding:"
+#~ msgstr "폴백 문자 인코딩(&N):"
+
+#~ msgid ""
+#~ "When encountering a Toltec scheduling message, display a custom "
+#~ "replacement text for it."
+#~ msgstr ""
+#~ "Toltec 스케줄링 메시지를 읽었을 때 사용자 정의 대체 텍스트를 표시합니다."
+
+#~ msgid ""
+#~ "The text that will be displayed as a replacement when encountering Toltec "
+#~ "scheduling messages."
+#~ msgstr "Toltec 스케줄링 메시지를 읽었을 때 표시할 대체 텍스트입니다."
+
+#~ msgid ""
+#~ "This message is a <i>Toltec</i> Groupware object, it can only be viewed "
+#~ "with Microsoft Outlook in combination with the Toltec connector."
+#~ msgstr ""
+#~ "이 메시지는 <i>Toltec</i> 그룹웨어 객체로, Microsoft Outlook과 Toltec 커넥"
+#~ "터를 같이 사용해야 볼 수 있습니다."
+
+#~ msgid "Show Raw Message"
+#~ msgstr "메시지 원본 보기"
+
+#, fuzzy
+#~| msgid "*|all files (*)"
+#~ msgid "all files (*)"
+#~ msgstr "*|모든 파일 (*)"
+
+#~ msgid "Starting Jovie Text-to-Speech Service Failed"
+#~ msgstr "Jovie TTS 서비스를 시작할 수 없습니다"
+
+#~ msgid "sent: "
+#~ msgstr "보낸 시간: "
+
+#~ msgid "Encrypted data not shown"
+#~ msgstr "암호화된 데이터 숨겨짐"
+
+#~ msgid ""
+#~ "Beginning of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "메시지의 처음에 도달했습니다.\n"
+#~ "'%1'을(를) 찾을 수 없습니다."
+
+#~ msgid ""
+#~ "End of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "메시지의 끝에 도달했습니다.\n"
+#~ "'%1'을(를) 찾을 수 없습니다."
+
+#, fuzzy
+#~| msgid "The most recent selected folder using for Todo."
+#~ msgid "The most recently selected folder used for Events."
+#~ msgstr "할 일 목록에 사용할 가장 최근에 선택된 폴더입니다."
+
+#, fuzzy
+#~| msgid "The most recent selected folder using for Todo."
+#~ msgid "The most recently selected folder used for Todos."
+#~ msgstr "할 일 목록에 사용할 가장 최근에 선택된 폴더입니다."
+
+#~ msgid "Select collection where Todo will stored."
+#~ msgstr "할 일 목록을 저장할 모음집입니다."
+
+#~ msgid "The message could not be decrypted."
+#~ msgstr "메시지를 복호화할 수 없습니다."
+
+#~ msgid ""
+#~ "Could not write the file %1:\n"
+#~ "\"%2\" is the detailed error description."
+#~ msgstr ""
+#~ "파일 %1에 쓸 수 없습니다.\n"
+#~ "자세한 오류 정보: \"%2\""
+
+#~ msgid "View Source Error"
+#~ msgstr "소스 보기 오류"
+
+#, fuzzy
+#~| msgctxt "View->"
+#~| msgid "&Headers"
+#~ msgid "Header to show:"
+#~ msgstr "헤더(&H)"
+
+#, fuzzy
+#~| msgid "Message Structure Viewer Placement"
+#~ msgid "Message contains form element"
+#~ msgstr "메시지 구조 뷰어 위치"
+
+#, fuzzy
+#~| msgid "This message is encrypted."
+#~ msgid "This message may be a scam."
+#~ msgstr "메시지가 암호화되어 있습니다."
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "자세히 보기"
+
+#~ msgid "File Already Exists"
+#~ msgstr "파일이 존재합니다"
+
+#~ msgid ""
+#~ "A file named <filename>%1</filename> already exists. Do you want to "
+#~ "overwrite it?"
+#~ msgstr "파일 <filename>%1</filename>이(가) 이미 있습니다. 덮어쓰시겠습니까?"
+
+#~ msgid "Suggest New &Name"
+#~ msgstr "새 이름 제안(&N)"
+
+#~ msgid "&Overwrite"
+#~ msgstr "덮어쓰기(&O)"
+
+#~ msgid "&Ignore"
+#~ msgstr "무시(&I)"
+
+#~ msgid "&Rename"
+#~ msgstr "이름 바꾸기(&R)"
+
+#~ msgid "Appl&y to All"
+#~ msgstr "모두 적용(&Y)"
+
+#~ msgid "Detect language"
+#~ msgstr "언어 감지"
+
+#~ msgid "English"
+#~ msgstr "영어"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "중국어 (간체)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "중국어 (번체)"
+
+#~ msgid "Dutch"
+#~ msgstr "네덜란드어"
+
+#~ msgid "French"
+#~ msgstr "프랑스어"
+
+#~ msgid "German"
+#~ msgstr "독일어"
+
+#~ msgid "Greek"
+#~ msgstr "그리스어"
+
+#~ msgid "Italian"
+#~ msgstr "이탈리아어"
+
+#~ msgid "Japanese"
+#~ msgstr "일본어"
+
+#~ msgid "Korean"
+#~ msgstr "한국어"
+
+#~ msgid "Portuguese"
+#~ msgstr "포르투갈어"
+
+#~ msgid "Russian"
+#~ msgstr "러시아어"
+
+#~ msgid "Spanish"
+#~ msgstr "스페인어"
+
+#~ msgid "Afrikaans"
+#~ msgstr "아프리칸스어"
+
+#~ msgid "Albanian"
+#~ msgstr "알바니아어"
+
+#~ msgid "Arabic"
+#~ msgstr "아랍어"
+
+#~ msgid "Armenian"
+#~ msgstr "아르메니아어"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "아제르바이잔어"
+
+#~ msgid "Basque"
+#~ msgstr "바스크어"
+
+#~ msgid "Belarusian"
+#~ msgstr "벨라루스어"
+
+#~ msgid "Bulgarian"
+#~ msgstr "불가리아어"
+
+#~ msgid "Catalan"
+#~ msgstr "카탈루냐어"
+
+#~ msgid "Croatian"
+#~ msgstr "크로아티아어"
+
+#~ msgid "Czech"
+#~ msgstr "체코어"
+
+#~ msgid "Danish"
+#~ msgstr "덴마크어"
+
+#~ msgid "Estonian"
+#~ msgstr "에스토니아어"
+
+#~ msgid "Filipino"
+#~ msgstr "타갈로그어"
+
+#~ msgid "Finnish"
+#~ msgstr "핀란드어"
+
+#~ msgid "Galician"
+#~ msgstr "갈리시아어"
+
+#~ msgid "Georgian"
+#~ msgstr "조지아어"
+
+#~ msgid "Haitian Creole"
+#~ msgstr "아이티 크리올어"
+
+#~ msgid "Hebrew"
+#~ msgstr "히브리어"
+
+#~ msgid "Hindi"
+#~ msgstr "힌디어"
+
+#~ msgid "Hungarian"
+#~ msgstr "헝가리어"
+
+#~ msgid "Icelandic"
+#~ msgstr "아이슬란드어"
+
+#~ msgid "Indonesian"
+#~ msgstr "인도네시아어"
+
+#~ msgid "Irish"
+#~ msgstr "아일랜드어"
+
+#~ msgid "Latvian"
+#~ msgstr "라트비아어"
+
+#~ msgid "Lithuanian"
+#~ msgstr "리투아니아어"
+
+#~ msgid "Macedonian"
+#~ msgstr "마케도니아어"
+
+#~ msgid "Malay"
+#~ msgstr "말레이어"
+
+#~ msgid "Maltese"
+#~ msgstr "몰타어"
+
+#~ msgid "Norwegian"
+#~ msgstr "노르웨이어"
+
+#~ msgid "Persian"
+#~ msgstr "페르시아어"
+
+#~ msgid "Polish"
+#~ msgstr "폴란드어"
+
+#~ msgid "Romanian"
+#~ msgstr "루마니아어"
+
+#~ msgid "Serbian"
+#~ msgstr "세르비아어"
+
+#~ msgid "Slovak"
+#~ msgstr "슬로바키아어"
+
+#~ msgid "Slovenian"
+#~ msgstr "슬로베니아어"
+
+#~ msgid "Swahili"
+#~ msgstr "스와힐리어"
+
+#~ msgid "Swedish"
+#~ msgstr "스웨덴어"
+
+#~ msgid "Thai"
+#~ msgstr "타이어"
+
+#~ msgid "Turkish"
+#~ msgstr "터키어"
+
+#~ msgid "Ukrainian"
+#~ msgstr "우크라이나어"
+
+#~ msgid "Urdu"
+#~ msgstr "우르두어"
+
+#~ msgid "Vietnamese"
+#~ msgstr "베트남어"
+
+#~ msgid "Welsh"
+#~ msgstr "웨일스어"
+
+#~ msgid "Yiddish"
+#~ msgstr "이디시어"
+
+#~ msgctxt ""
+#~ "Invert language choices so that from becomes to and to becomes from"
+#~ msgid "Invert"
+#~ msgstr "반전"
+
+#~ msgid "Clear"
+#~ msgstr "지우기"
+
+#~ msgid "Translate"
+#~ msgstr "번역"
+
+#~ msgid "Drag text that you want to translate."
+#~ msgstr "번역할 텍스트를 끌어 놓으십시오."

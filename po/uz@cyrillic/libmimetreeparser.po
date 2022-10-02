@@ -1,0 +1,8169 @@
+# translation of kmail.po to
+# Copyright (C) 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
+#
+# Mashrab Kuvatov <kmashrab@uni-bremen.de>, 2003, 2004, 2005, 2006.
+# Abdurahmonov Nurali <mavnur@gmail.com>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"PO-Revision-Date: 2006-12-17 13:32+0000\n"
+"Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
+"Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
+"Language: uz@cyrillic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/messagepart.cpp:432
+#, fuzzy, kde-format
+#| msgid "Unnamed"
+msgctxt "display name for an unnamed attachment"
+msgid "Unnamed"
+msgstr "Номсиз"
+
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#, kde-format
+msgid "Wrong Crypto Plug-In."
+msgstr ""
+
+#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#, kde-format
+msgid "No appropriate crypto plug-in was found."
+msgstr ""
+
+#: src/messagepart.cpp:795
+#, kde-format
+msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
+msgid "No %1 plug-in was found."
+msgstr ""
+
+#: src/messagepart.cpp:798
+#, fuzzy, kde-format
+msgid "Crypto plug-in \"%1\" cannot verify signatures."
+msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#: src/messagepart.cpp:801
+#, fuzzy, kde-format
+#| msgid "The validity of the signature cannot be verified."
+msgid ""
+"The message is signed, but the validity of the signature cannot be verified."
+"<br />Reason: %1"
+msgstr "Имзонинг ҳақиқийлигини текшириб бўлмади."
+
+#: src/messagepart.cpp:1275
+#, fuzzy, kde-format
+msgid "Crypto plug-in \"%1\" cannot decrypt messages."
+msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#: src/messagepart.cpp:1277
+#, fuzzy, kde-format
+msgid "Crypto plug-in \"%1\" could not decrypt the data."
+msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#: src/messagepart.cpp:1278
+#, kde-format
+msgid "Error: %1"
+msgstr "Хато: %1"
+
+#, fuzzy
+#~| msgid "Sorry, certificate could not be imported.<br>Reason: %1"
+#~ msgid "Sorry, certificate could not be imported."
+#~ msgstr "Узр, сертификатни импорт қилиб бўлмади.<br>Сабаби: %1"
+
+#~ msgid "Reason: %1"
+#~ msgstr "Сабаби: %1"
+
+#~ msgid "Sorry, no certificates were found in this message."
+#~ msgstr "Узр, ушбу хабарда сертификат топилмади."
+
+#, fuzzy
+#~ msgid "Certificate import status:"
+#~ msgstr "Сертификатлар"
+
+#, fuzzy
+#~| msgid "Certificate import details:"
+#~ msgid "1 new certificate was imported."
+#~ msgid_plural "%1 new certificates were imported."
+#~ msgstr[0] "Сертификат импорти тафсилотлари:"
+
+#, fuzzy
+#~| msgid "Certificate Manager..."
+#~ msgid "1 certificate was unchanged."
+#~ msgid_plural "%1 certificates were unchanged."
+#~ msgstr[0] "Сертификат бошқарувчиси"
+
+#, fuzzy
+#~| msgid "The signature has expired."
+#~ msgid "1 new secret key was imported."
+#~ msgid_plural "%1 new secret keys were imported."
+#~ msgstr[0] "Имзонинг муддати ўтган."
+
+#, fuzzy
+#~| msgid "Certificate Manager..."
+#~ msgid "1 secret key was unchanged."
+#~ msgid_plural "%1 secret keys were unchanged."
+#~ msgstr[0] "Сертификат бошқарувчиси"
+
+#~ msgid "Certificate import details:"
+#~ msgstr "Сертификат импорти тафсилотлари:"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "Certificate import failed."
+#~ msgid "Failed: %1 (%2)"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Unread Message"
+#~ msgid "Encapsulated message"
+#~ msgstr "Ўқилмаган хабар"
+
+#, fuzzy
+#~| msgid "Unread Message"
+#~ msgid "End of encapsulated message"
+#~ msgstr "Ўқилмаган хабар"
+
+#, fuzzy
+#~ msgid "This message is encrypted."
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#, fuzzy
+#~| msgid "Delete Message"
+#~ msgid "Decrypt Message"
+#~ msgstr "Хатни ўчириш"
+
+#, fuzzy
+#~ msgid "Please wait while the message is being decrypted..."
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#, fuzzy
+#~| msgid "Delete Message"
+#~ msgid "Encrypted message"
+#~ msgstr "Хатни ўчириш"
+
+#, fuzzy
+#~| msgid "Reason: %1"
+#~ msgid "Reason: "
+#~ msgstr "Сабаби: %1"
+
+#, fuzzy
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#, fuzzy
+#~| msgid "End of signed message"
+#~ msgid "End of encrypted message"
+#~ msgstr "Имзоланган хабарнинг охири"
+
+#, fuzzy
+#~| msgid "The validity of the signature cannot be verified."
+#~ msgid "Please wait while the signature is being verified..."
+#~ msgstr "Имзонинг ҳақиқийлигини текшириб бўлмади."
+
+#~ msgid "Not enough information to check signature. %1"
+#~ msgstr "Имзони текширишга етарли маълумот йўқ. %1"
+
+#~ msgid "Message was signed by %1."
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#~ msgid "Message was signed with unknown key."
+#~ msgstr "Хабар номаълум калит билан имзоланган."
+
+#~ msgid "Message was signed with key %1."
+#~ msgstr "Хабар %1 калити билан имзоланган."
+
+#~ msgid "Message was signed by %3 on %1 with key %2"
+#~ msgstr "Хабар %3 томонидан %1 %2 калити билан имзоланган."
+
+#~ msgid "Message was signed on %1 with key %2."
+#~ msgstr "Хабар %1 %2 калити билан имзоланган."
+
+#~ msgid "Message was signed by %2 with key %1."
+#~ msgstr "Хабар %2 томонидан %1 калити билан имзоланган."
+
+#, fuzzy
+#~| msgid "Stat&us:"
+#~ msgid "Status: "
+#~ msgstr "Ҳо&лати:"
+
+#, fuzzy
+#~| msgid "[Details]"
+#~ msgid "Hide Details"
+#~ msgstr "[Тафсилотлар]"
+
+#~ msgid "Message was signed on %1 with unknown key %2."
+#~ msgstr "Хабар %1 номаълум %2 калити билан имзоланган."
+
+#~ msgid "Message was signed with unknown key %1."
+#~ msgstr "Хабар номаълум %1 калити билан имзоланган."
+
+#, fuzzy
+#~| msgid "The validity of the signature cannot be verified."
+#~ msgid "The validity of the signature cannot be verified."
+#~ msgstr "Имзонинг ҳақиқийлигини текшириб бўлмади."
+
+#~ msgid "Message was signed by %2 (Key ID: %1)."
+#~ msgstr "Хабар %2 томонидан (калит: %1) имзоланган."
+
+#~ msgid "The signature is valid, but the key's validity is unknown."
+#~ msgstr "Имзо ҳақиқий, аммо калитнинг ҳақиқийлиги номаълум."
+
+#~ msgid "The signature is valid and the key is marginally trusted."
+#~ msgstr "Имзо ҳақиқий ва калитга ўртача ишонса бўлади."
+
+#~ msgid "The signature is valid and the key is fully trusted."
+#~ msgstr "Имзо ҳақиқий ва калитга тўлиқ ишонса бўлади."
+
+#~ msgid "The signature is valid and the key is ultimately trusted."
+#~ msgstr "Имзо ҳақиқий ва калитга чексиз ишонса бўлади."
+
+#~ msgid "The signature is valid, but the key is untrusted."
+#~ msgstr "Имзо ҳақиқий, аммо калитга ишониб бўлмайди."
+
+#~ msgid "Warning: The signature is bad."
+#~ msgstr "Диққат: Имзо ҳақиқий эмас."
+
+#, fuzzy
+#~| msgid "&Enable signature"
+#~ msgid "Invalid signature."
+#~ msgstr "Им&зони ёқиш"
+
+#, fuzzy
+#~| msgid "Not enough information to check signature. %1"
+#~ msgid "Not enough information to check signature validity."
+#~ msgstr "Имзони текширишга етарли маълумот йўқ. %1"
+
+#, fuzzy
+#~| msgid "Signatures"
+#~ msgid "Signature is valid."
+#~ msgstr "Имзолар"
+
+#, fuzzy
+#~| msgid "No signature found"
+#~ msgid "Unknown signature state"
+#~ msgstr "Имзо топилмади"
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Show Details"
+#~ msgstr "Ҳар &доим кўрсатиш"
+
+#~ msgid "End of signed message"
+#~ msgstr "Имзоланган хабарнинг охири"
+
+#~ msgid "Good signature"
+#~ msgstr "Тўғри имзо"
+
+#~ msgid "<b>Bad</b> signature"
+#~ msgstr "<b>Хато</b> имзо"
+
+#, fuzzy
+#~| msgid "Error verifying the signature"
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Имзони текшириш хатоси"
+
+#~ msgid "No signature found"
+#~ msgstr "Имзо топилмади"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Имзони текшириш хатоси"
+
+#, fuzzy
+#~ msgid "No status information available."
+#~ msgstr "Жилд маълумотларини олишда хато рўй берди."
+
+#~ msgid "Good signature."
+#~ msgstr "Тўғри имзо."
+
+#, fuzzy
+#~| msgid "The signature has expired."
+#~ msgid "One key has expired."
+#~ msgstr "Имзонинг муддати ўтган."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Имзонинг муддати ўтган."
+
+#, fuzzy
+#~| msgid "Not available."
+#~ msgid "CRL not available."
+#~ msgstr "Мавжуд эмас."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Тизим хатоси рўй берди."
+
+#, fuzzy
+#~| msgid "The signature has expired."
+#~ msgid "One key has been revoked."
+#~ msgstr "Имзонинг муддати ўтган."
+
+#~ msgid "<b>Bad</b> signature."
+#~ msgstr "<b>Хато</b> имзо."
+
+#, fuzzy
+#~| msgid "Certificates"
+#~ msgid "certificate"
+#~ msgstr "Сертификатлар"
+
+#, fuzzy
+#~| msgid "Warning:"
+#~ msgctxt "Start of warning message."
+#~ msgid "Warning:"
+#~ msgstr "Огоҳнома:"
+
+#~ msgid "sender: "
+#~ msgstr "жўнатувчи:"
+
+#, fuzzy
+#~| msgid "S&ubject:"
+#~ msgid "Subject:"
+#~ msgstr "&Мавзу:"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "To:"
+#~ msgstr "Кимга: "
+
+#, fuzzy
+#~| msgid "Repl&y to all:"
+#~ msgid "Reply to:"
+#~ msgstr "Ҳаммага ж&авоб бериш:"
+
+#, fuzzy
+#~| msgid "CC: "
+#~ msgid "CC:"
+#~ msgstr "Нусха: "
+
+#, fuzzy
+#~| msgid "From: "
+#~ msgid "From:"
+#~ msgstr "Кимдан:"
+
+#~ msgid "Spam Status:"
+#~ msgstr "Спэм ҳолати:"
+
+#, fuzzy
+#~| msgid "Date: "
+#~ msgid "Date:"
+#~ msgstr "Сана:"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgid "receiver was"
+#~ msgid_plural "receivers were"
+#~ msgstr[0] "Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "[vCard]"
+#~ msgid "[vcard]"
+#~ msgstr "[vCard]"
+
+#, fuzzy
+#~ msgctxt "Unknown date"
+#~ msgid "Unknown"
+#~ msgstr "&Узатиш"
+
+#~ msgid "No Subject"
+#~ msgstr "Мавзусиз"
+
+#, fuzzy
+#~| msgid "Error while uploading message"
+#~ msgid "Error evaluating spam score"
+#~ msgstr "Хабарни ёзиб қўйишда хато рўй берди"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Чиқиндилар қутисига кўчириш"
+
+#, fuzzy
+#~ msgid "Reply"
+#~ msgstr "&Жавоб бериш"
+
+#, fuzzy
+#~ msgid "Reply to All"
+#~ msgstr "&Жавоб бериш"
+
+#, fuzzy
+#~ msgid "Forward"
+#~ msgstr "&Узатиш"
+
+#~ msgid "New Message"
+#~ msgstr "Янги хабар"
+
+#, fuzzy
+#~| msgid "&Previous Message"
+#~ msgid "Print Preview"
+#~ msgstr "&Олдинги хабар"
+
+#~ msgctxt "View->"
+#~ msgid "&Headers"
+#~ msgstr "&Сарлавҳалар"
+
+#, fuzzy
+#~| msgid "Choose display style of attachments"
+#~ msgid "Choose display style of message headers"
+#~ msgstr "Иловаларни кўрсатиш услубини танлаш"
+
+#~ msgid "Date: "
+#~ msgstr "Сана:"
+
+#~ msgid "From: "
+#~ msgstr "Кимдан:"
+
+#~ msgid "[vCard]"
+#~ msgstr "[vCard]"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgctxt "To-field of the mailheader."
+#~ msgid "To: "
+#~ msgstr "Кимга: "
+
+#~ msgid "CC: "
+#~ msgstr "Нусха: "
+
+#, fuzzy
+#~| msgid "CC: "
+#~ msgid "BCC: "
+#~ msgstr "Нусха: "
+
+#, fuzzy
+#~| msgid "Repl&y to all:"
+#~ msgid "Reply to: "
+#~ msgstr "Ҳаммага ж&авоб бериш:"
+
+#, fuzzy
+#~| msgid "Attachment"
+#~ msgid "Edit Attachment"
+#~ msgstr "Илова"
+
+#, fuzzy
+#~ msgid "Edit"
+#~ msgstr "Чиқиш"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Standard Headers"
+#~ msgstr "&Андоза сарлавҳалар"
+
+#, fuzzy
+#~ msgid "Show standard list of message headers"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#, fuzzy
+#~| msgid "[Details]"
+#~ msgid "Details"
+#~ msgstr "[Тафсилотлар]"
+
+#, fuzzy
+#~| msgid "Delete Messages"
+#~ msgid "Disable scam detection for all messages"
+#~ msgstr "Хатларни ўчириш"
+
+#, fuzzy
+#~| msgid "[Details]"
+#~ msgid "Details:"
+#~ msgstr "[Тафсилотлар]"
+
+#, fuzzy
+#~| msgid "Use HTML"
+#~ msgid "Show HTML Side Bar"
+#~ msgstr "HTML'дан фойдаланиш"
+
+#, fuzzy
+#~ msgid "Show spam status in fancy headers"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#, fuzzy
+#~ msgid "Show user agent in fancy headers"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Message Structure Viewer"
+#~ msgstr "&Хабар"
+
+#, fuzzy
+#~| msgid "Show &never"
+#~ msgid "Show never"
+#~ msgstr "Ҳамиша &бекитиш"
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Show always"
+#~ msgstr "Ҳар &доим кўрсатиш"
+
+#, fuzzy
+#~| msgid "Show attachment icon"
+#~ msgid "How attachments are shown"
+#~ msgstr "Илованинг нишончасини кўрсатиш"
+
+#, fuzzy
+#~ msgid "Do not send MDNs in response to encrypted messages"
+#~ msgstr "Кейинги хабарга ўтиш"
+
+#~ msgid "Use Fi&xed Font"
+#~ msgstr "Эни ўзгармайдиган &шрифтни қўллаш"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Умумий параметрлар"
+
+#, fuzzy
+#~| msgid "Alternative Background Color"
+#~ msgid "Print background color and images"
+#~ msgstr "Қўшимча орқа фон ранги"
+
+#, fuzzy
+#~ msgid "Viewer settings"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~ msgid "O&verride character encoding:"
+#~ msgstr "Кодлаш усули"
+
+#, fuzzy
+#~| msgid "Use HTML"
+#~ msgid "Show &HTML Side Bar"
+#~ msgstr "HTML'дан фойдаланиш"
+
+#~ msgid ""
+#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr "\"%1\" номли файл аллақачон мавжуд. Уни алмаштиришни истайсизми?"
+
+#~ msgid "Overwrite File?"
+#~ msgstr "Файлни алмаштиришни истайсизми?"
+
+#~ msgid "Save Attachments To"
+#~ msgstr "Иловани сақлаш"
+
+#~ msgctxt "filename for an unnamed attachment"
+#~ msgid "attachment.1"
+#~ msgstr "илова.1"
+
+#, fuzzy
+#~| msgid "Save Attachment As"
+#~ msgid "Save Attachment"
+#~ msgstr "Иловани сақлаш"
+
+#~ msgctxt "filename for the %1-th unnamed attachment"
+#~ msgid "attachment.%1"
+#~ msgstr "илова.%1"
+
+#~ msgid "KMail Question"
+#~ msgstr "KMail саволи"
+
+#, fuzzy
+#~| msgid "Encryption"
+#~ msgid "Keep Encryption"
+#~ msgstr "Кодлаш"
+
+#~ msgid "Do Not Keep"
+#~ msgstr "Қолдирилмасин"
+
+#~ msgid "Keep Signature"
+#~ msgstr "Имзони қолдириш"
+
+#, fuzzy
+#~| msgid "Could not write the file %1."
+#~ msgctxt "1 = file name, 2 = error string"
+#~ msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
+#~ msgstr "%1 файлини ёзиб бўлмади."
+
+#, fuzzy
+#~| msgid "has an attachment"
+#~ msgid "Error saving attachment"
+#~ msgstr "иловали"
+
+#~ msgid "Found no attachments to save."
+#~ msgstr "Сақлаш учун илова топилмади."
+
+#, fuzzy
+#~| msgid "0 messages"
+#~ msgid "message"
+#~ msgstr "0 хат"
+
+#, fuzzy
+#~ msgid "Save Message"
+#~ msgid_plural "Save Messages"
+#~ msgstr[0] "1 хат, %2."
+
+#, fuzzy
+#~ msgid "File %1 could not be loaded."
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#, fuzzy
+#~| msgid "Error while uploading message"
+#~ msgid "Error loading message"
+#~ msgstr "Хабарни ёзиб қўйишда хато рўй берди"
+
+#, fuzzy
+#~ msgid "File %1 could not be created."
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#, fuzzy
+#~| msgid "Moving messages"
+#~ msgid "Error saving message"
+#~ msgstr "Хабарларни кўчириш"
+
+#, fuzzy
+#~| msgid "End of signed message"
+#~ msgid "We cannot save message."
+#~ msgstr "Имзоланган хабарнинг охири"
+
+#, fuzzy
+#~| msgid "&Open with '%1'"
+#~ msgid "Open &with %1"
+#~ msgstr "'%1' билан &очиш"
+
+#, fuzzy
+#~| msgid "Edit Identity"
+#~ msgid "Edit with:"
+#~ msgstr "Шахсиятни таҳрирлаш"
+
+#, fuzzy
+#~| msgid "Name of the attachment:"
+#~ msgid "Unable to edit attachment"
+#~ msgstr "Илова номи:"
+
+#~ msgid "Description"
+#~ msgstr "Таърифи"
+
+#~ msgid "Type"
+#~ msgstr "Тури"
+
+#~ msgid "Size"
+#~ msgstr "Ҳажми"
+
+#, fuzzy
+#~| msgid "Unread Column"
+#~ msgid "Unnamed plugin"
+#~ msgstr "Ўқилмаган устуни"
+
+#, fuzzy
+#~| msgid "Not available"
+#~ msgid "No description available"
+#~ msgstr "Мавжуд эмас"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgid "Move To Trash"
+#~ msgstr "Чиқиндилар қутисига кўчириш"
+
+#, fuzzy
+#~ msgid "Reply To All"
+#~ msgstr "&Жавоб бериш"
+
+#, fuzzy
+#~ msgid "Print Message"
+#~ msgstr "Хабарни очиш"
+
+#, fuzzy
+#~| msgid "&Previous Message"
+#~ msgid "Print Preview Message"
+#~ msgstr "&Олдинги хабар"
+
+#, fuzzy
+#~| msgid "Work online"
+#~ msgid "Work online."
+#~ msgstr "Онлайнда ишлаш"
+
+#, fuzzy
+#~| msgid "&Enable signature"
+#~ msgid "Show signature details."
+#~ msgstr "Им&зони ёқиш"
+
+#, fuzzy
+#~| msgid "&Enable signature"
+#~ msgid "Hide signature details."
+#~ msgstr "Им&зони ёқиш"
+
+#, fuzzy
+#~| msgid "Show attachment icon"
+#~ msgid "Show attachment list."
+#~ msgstr "Илованинг нишончасини кўрсатиш"
+
+#, fuzzy
+#~| msgid "Save Attachment As"
+#~ msgid "Hide attachment list."
+#~ msgstr "Иловани сақлаш"
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Show full \"To\" list"
+#~ msgstr "Ҳар &доим кўрсатиш"
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Hide full \"To\" list"
+#~ msgstr "Ҳар &доим кўрсатиш"
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Show full \"Cc\" list"
+#~ msgstr "Ҳар &доим кўрсатиш"
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Hide full \"Cc\" list"
+#~ msgstr "Ҳар &доим кўрсатиш"
+
+#, fuzzy
+#~| msgid "Documentation"
+#~ msgid "Open Documentation"
+#~ msgstr "Қўлланмалар"
+
+#, fuzzy
+#~| msgid "Remove Header"
+#~ msgid "Collapse quoted text."
+#~ msgstr "Сарлавҳани олиб ташлаш"
+
+#~ msgid "KMail Error"
+#~ msgstr "KMail хато"
+
+#, fuzzy
+#~| msgid "Open in Address Book"
+#~ msgid "&Open in Address Book"
+#~ msgstr "Манзиллар дафтарида очиш"
+
+#, fuzzy
+#~| msgid "Email Address"
+#~ msgid "&Copy Email Address"
+#~ msgstr "Электрон почта"
+
+#~ msgid "Address copied to clipboard."
+#~ msgstr "Электрон почта манзилидан хотирага нусха олинди."
+
+#, fuzzy
+#~| msgid "Open in Address Book"
+#~ msgid "Lookup the contact in KAddressbook"
+#~ msgstr "Манзиллар дафтарида очиш"
+
+#~ msgid "Attachment: %1"
+#~ msgstr "Илова: %1"
+
+#, fuzzy
+#~| msgid "Unread Message"
+#~ msgid "Encapsulated Message (Subject: %1)"
+#~ msgstr "Ўқилмаган хабар"
+
+#, fuzzy
+#~| msgid "Name of the attachment:"
+#~ msgid "Unnamed attachment"
+#~ msgstr "Илова номи:"
+
+#~ msgid "Opening URL..."
+#~ msgstr "URL очилмоқда..."
+
+#, fuzzy
+#~| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
+#~ msgctxt "@info"
+#~ msgid "Do you really want to execute <filename>%1</filename>?"
+#~ msgstr "<qt>Ростдан <b>%1</b>'ни ишга туширишни истайсизми?</qt>"
+
+#~ msgid "Execute"
+#~ msgstr "Ишга тушириш"
+
+#, fuzzy
+#~| msgid "Moving messages"
+#~ msgid "Loading message..."
+#~ msgstr "Хабарларни кўчириш"
+
+#, fuzzy
+#~| msgid "&Remove Attachment"
+#~ msgid "Delete Attachment"
+#~ msgstr "Иловани &олиб ташлаш"
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "...би&лан очиш"
+
+#, fuzzy
+#~| msgid "Other Actio&ns"
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Бошқа амаллар"
+
+#, fuzzy
+#~| msgid "&Open With..."
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "...би&лан очиш"
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "Очиш"
+
+#~ msgctxt "to view something"
+#~ msgid "View"
+#~ msgstr "Кўриш"
+
+#, fuzzy
+#~ msgid "Save As..."
+#~ msgstr "...сифатида с&ақлаш"
+
+#, fuzzy
+#~ msgid "Copy"
+#~ msgstr "&Нусха олиш"
+
+#, fuzzy
+#~ msgid "Properties"
+#~ msgstr "&Хоссалари"
+
+#~ msgid "KMail"
+#~ msgstr "KMail"
+
+#, fuzzy
+#~| msgid "KDE Email Client"
+#~ msgid "The KDE Mail Client"
+#~ msgstr "KDE учун хат-хабар дастури"
+
+#~ msgid "View Attachment: %1"
+#~ msgstr "Иловани кўриш: %1"
+
+#~ msgctxt "View->"
+#~ msgid "&Attachments"
+#~ msgstr "&Иловалар"
+
+#~ msgid "Choose display style of attachments"
+#~ msgstr "Иловаларни кўрсатиш услубини танлаш"
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&As Icons"
+#~ msgstr "&Нишонча сифатида"
+
+#~ msgid "Show all attachments as icons. Click to see them."
+#~ msgstr ""
+#~ "Ҳамма иловаларни нишонча сифатида кўрсатиш. Кўриш учун уларни босиш керак."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Smart"
+#~ msgstr "&Ихчам"
+
+#, fuzzy
+#~| msgid "Show attachment icon"
+#~ msgid "Show attachments as suggested by sender."
+#~ msgstr "Илованинг нишончасини кўрсатиш"
+
+#, fuzzy
+#~| msgid "&Insert File..."
+#~ msgctxt "View->attachments->"
+#~ msgid "&Inline"
+#~ msgstr "&Файлдан қўйиш"
+
+#, fuzzy
+#~| msgid "Show all attachments as icons. Click to see them."
+#~ msgid "Show all attachments inline (if possible)"
+#~ msgstr ""
+#~ "Ҳамма иловаларни нишонча сифатида кўрсатиш. Кўриш учун уларни босиш керак."
+
+#~ msgctxt "View->attachments->"
+#~ msgid "&Hide"
+#~ msgstr "&Бекитиш"
+
+#~ msgid "Do not show attachments in the message viewer"
+#~ msgstr "Иловаларни хабар кўрувчида бекитиш"
+
+#, fuzzy
+#~| msgid "Show all attachments as icons. Click to see them."
+#~ msgid "Show Attachments only in the header of the mail"
+#~ msgstr ""
+#~ "Ҳамма иловаларни нишонча сифатида кўрсатиш. Кўриш учун уларни босиш керак."
+
+#~ msgid "&Set Encoding"
+#~ msgstr "&Кодлаш усулини танлаш"
+
+#~ msgid "Auto"
+#~ msgstr "Авто"
+
+#~ msgid "Select All Text"
+#~ msgstr "Ҳамма матнни танлаш"
+
+#~ msgid "Copy Link Address"
+#~ msgstr "Боғ манзилидан нусха олиш"
+
+#~ msgid "Open URL"
+#~ msgstr "URL'ни очиш"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Show Message Structure"
+#~ msgstr "&Хабар"
+
+#~ msgid "&View Source"
+#~ msgstr "Манбани &кўриш"
+
+#, fuzzy
+#~ msgid "&Save message..."
+#~ msgstr "1 хат, %2."
+
+#, fuzzy
+#~| msgid "Date Display"
+#~ msgid "&Save Display Format"
+#~ msgstr "Санани кўрсатиш"
+
+#, fuzzy
+#~| msgid "Date Display"
+#~ msgid "&Reset Display Format"
+#~ msgstr "Санани кўрсатиш"
+
+#, fuzzy
+#~| msgid "Select &All Messages"
+#~ msgid "Scroll Message Up"
+#~ msgstr "Ҳамма хабарларни &танлаш"
+
+#, fuzzy
+#~| msgid "Select &All Messages"
+#~ msgid "Scroll Message Down"
+#~ msgstr "Ҳамма хабарларни &танлаш"
+
+#, fuzzy
+#~| msgid "Select &All Messages"
+#~ msgid "Scroll Message Up (More)"
+#~ msgstr "Ҳамма хабарларни &танлаш"
+
+#, fuzzy
+#~| msgid "Select &All Messages"
+#~ msgid "Scroll Message Down (More)"
+#~ msgstr "Ҳамма хабарларни &танлаш"
+
+#, fuzzy
+#~| msgid "Choose Location"
+#~ msgid "Copy Image Location"
+#~ msgstr "Манзилни танланг"
+
+#~ msgid "&Find in Message..."
+#~ msgstr "Хабарларда &қидириш"
+
+#~ msgid "Save &As..."
+#~ msgstr "...сифатида с&ақлаш"
+
+#~ msgid "Open With..."
+#~ msgstr "...билан очиш"
+
+#~ msgid "Save All Attachments..."
+#~ msgstr "Ҳамма иловаларни сақлаш"
+
+#, fuzzy
+#~| msgid "Email Address"
+#~ msgid "Copy Email Address"
+#~ msgstr "Электрон почта"
+
+#, fuzzy
+#~ msgid "Message as Plain Text"
+#~ msgstr "Хабарлар рўйхати"
+
+#, fuzzy
+#~| msgctxt "Config->Composer->Attachments"
+#~| msgid "A&ttachments"
+#~ msgid "Attachments:"
+#~ msgstr "&Иловалар"
+
+#~ msgid "URL copied to clipboard."
+#~ msgstr "URL'дан хотирага нусха олинди."
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Hide full address list"
+#~ msgstr "Ҳар &доим кўрсатиш"
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Show full address list"
+#~ msgstr "Ҳар &доим кўрсатиш"
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message loading failed: %1."
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message not found."
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#~ msgid "Open Attachment?"
+#~ msgstr "Иловани очайми?"
+
+#~ msgid "&Open with '%1'"
+#~ msgstr "'%1' билан &очиш"
+
+#~ msgid "&Open With..."
+#~ msgstr "...би&лан очиш"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></"
+#~| "qt>"
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid ""
+#~ "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e</b></qt>"
+#~ msgstr "<qt><b>Х<br>а<br>б<br>а<br>р<b><br><br>H<br>T<br>M<br>L</b></qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><br>N<br>o<br> <br>H<br>T<br>M<br>L<br> "
+#~| "<br>M<br>e<br>s<br>s<br>a<br>g<br>e</qt>"
+#~ msgctxt "'No HTML Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
+#~ ">e<br />s<br />s<br />a<br />g<br />e</qt>"
+#~ msgstr ""
+#~ "<qt><b>Х<br>а<br>б<br>а<br>р<b><br><br>H<br>T<br>M<br>L<br><br>э<br>м<br>а<br>с</"
+#~ "b></qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></"
+#~| "qt>"
+#~ msgctxt "'Plain Message' with html linebreaks between each letter."
+#~ msgid ""
+#~ "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
+#~ ">s<br />a<br />g<br />e<br /></qt>"
+#~ msgstr "<qt><b>Х<br>а<br>б<br>а<br>р<b><br><br>H<br>T<br>M<br>L</b></qt>"
+
+#, fuzzy
+#~| msgid "&View Source"
+#~ msgctxt "Unchanged mail message"
+#~ msgid "Raw Source"
+#~ msgstr "Манбани &кўриш"
+
+#, fuzzy
+#~| msgid "&View Source"
+#~ msgctxt "Mail message as shown, in HTML format"
+#~ msgid "HTML Source"
+#~ msgstr "Манбани &кўриш"
+
+#, fuzzy
+#~| msgid "VCard Viewer"
+#~ msgid "vCard Viewer"
+#~ msgstr "VCard кўрувчи"
+
+#~ msgid "&Import"
+#~ msgstr "&Импорт қилиш"
+
+#, fuzzy
+#~ msgid "&Next Card"
+#~ msgstr "&Кейинги хабар"
+
+#, fuzzy
+#~ msgid "&Previous Card"
+#~ msgstr "&Олдинги хабар"
+
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "Жилдни танлаш"
+
+#, fuzzy
+#~| msgid "Color&s"
+#~ msgid "Close"
+#~ msgstr "&Ранглар"
+
+#, fuzzy
+#~| msgid "French"
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "Французча"
+
+#, fuzzy
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "&Олдинги хабар"
+
+#, fuzzy
+#~| msgid "Go to the previous message"
+#~ msgid "Jump to previous match"
+#~ msgstr "Олдинги хабарга ўтиш"
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Phrase not found"
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~| msgid "No duplicate messages found."
+#~ msgid "No blockable element found."
+#~ msgstr "Бир хил хабарлар топилмади."
+
+#, fuzzy
+#~| msgid "Filter %1"
+#~ msgid "Filter"
+#~ msgstr "Филтер %1"
+
+#, fuzzy
+#~| msgid "&Address Book"
+#~ msgid "Address"
+#~ msgstr "Манзиллар &дафтари"
+
+#, fuzzy
+#~ msgid "Search..."
+#~ msgstr "&Қидириш"
+
+#, fuzzy
+#~| msgid "New Script..."
+#~ msgid "Script"
+#~ msgstr "Янги скрипт..."
+
+#, fuzzy
+#~| msgid "Contacts"
+#~ msgid "Font"
+#~ msgstr "Алоқалар"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgid "Object"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~ msgid "Unknown"
+#~ msgstr "&Узатиш"
+
+#, fuzzy
+#~| msgid "&Copy Here"
+#~ msgid "Copy url"
+#~ msgstr "Шу ерга &нусха олиш"
+
+#, fuzzy
+#~ msgid "Copy filter"
+#~ msgstr "Жилдга нусха олиш"
+
+#, fuzzy
+#~| msgctxt "to open"
+#~| msgid "Open"
+#~ msgid "Open"
+#~ msgstr "Очиш"
+
+#, fuzzy
+#~| msgid "Rename Filter"
+#~ msgid "Remove filter"
+#~ msgstr "Филтер номини ўзгартириш"
+
+#, fuzzy
+#~ msgid "Add subscription"
+#~ msgstr "Таърифи"
+
+#, fuzzy
+#~ msgid "Select List:"
+#~ msgstr "Жилдни танлаш"
+
+#, fuzzy
+#~| msgid "Save List..."
+#~ msgid "Show List"
+#~ msgstr "Рўйхатни сақлаш"
+
+#, fuzzy
+#~| msgid "Delete T&hread"
+#~ msgid "Use default"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#, fuzzy
+#~| msgid "Notes"
+#~ msgid "Not"
+#~ msgstr "Ёзма хотира"
+
+#, fuzzy
+#~ msgid "Not subscription added..."
+#~ msgstr "Таърифи"
+
+#, fuzzy
+#~| msgid " days"
+#~ msgid " day"
+#~ msgid_plural " days"
+#~ msgstr[0] " кун"
+
+#, fuzzy
+#~| msgid "Server Information"
+#~ msgid "More information"
+#~ msgstr "Сервер ҳақида маълумот"
+
+#, fuzzy
+#~| msgid "Delete Script"
+#~ msgid "Delete current list"
+#~ msgstr "Скриптни олиб ташлаш"
+
+#, fuzzy
+#~| msgid "&All Fields"
+#~ msgid "All Files (*)"
+#~ msgstr "Ҳамма &майдонлар"
+
+#, fuzzy
+#~| msgid "vCard Import Failed"
+#~ msgid "Import Filters"
+#~ msgstr "vCard'ни импорт қилиб бўлмади"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Export Filters"
+#~ msgstr "Ф&илтер яратиш"
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Show adblock list"
+#~ msgstr "Ҳар &доим кўрсатиш"
+
+#, fuzzy
+#~| msgid "Delete Script"
+#~ msgid "Delete List"
+#~ msgstr "Скриптни олиб ташлаш"
+
+#, fuzzy
+#~| msgid "&Download mail"
+#~ msgid "Download..."
+#~ msgstr "Хатни ё&зиб олиш"
+
+#, fuzzy
+#~| msgid "Filter %1"
+#~ msgid "Filters:"
+#~ msgstr "Филтер %1"
+
+#, fuzzy
+#~ msgid "&Blocking filter"
+#~ msgstr "Жилднинг номи ўзгартирилмоқда"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Exception Filter"
+#~ msgstr "Ф&илтер яратиш"
+
+#, fuzzy
+#~| msgid "Repl&y to all:"
+#~ msgid "Apply to:"
+#~ msgstr "Ҳаммага ж&авоб бериш:"
+
+#, fuzzy
+#~| msgid "Never Automatically"
+#~ msgid "Automatic Filters"
+#~ msgstr "Ҳеч қачон автоматик эмас"
+
+#, fuzzy
+#~ msgid "Add Filters subscriptions..."
+#~ msgstr "Таърифи"
+
+#, fuzzy
+#~ msgid "Remove subscription"
+#~ msgstr "Таърифи"
+
+#, fuzzy
+#~| msgid "Save List..."
+#~ msgid "Show List..."
+#~ msgstr "Рўйхатни сақлаш"
+
+#, fuzzy
+#~| msgid "Available Filters"
+#~ msgid "Manual Filters"
+#~ msgstr "Мавжуд филтерлар"
+
+#, fuzzy
+#~| msgid "Add..."
+#~ msgid "..."
+#~ msgstr "Қўшиш..."
+
+#, fuzzy
+#~| msgid "vCard Import Failed"
+#~ msgid "Import Filters..."
+#~ msgstr "vCard'ни импорт қилиб бўлмади"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Export filters..."
+#~ msgstr "Ф&илтер яратиш"
+
+#, fuzzy
+#~| msgid "&Search:"
+#~ msgid "Search:"
+#~ msgstr "&Қидириш:"
+
+#, fuzzy
+#~| msgid "Rename Filter"
+#~ msgid "Remove Filter"
+#~ msgstr "Филтер номини ўзгартириш"
+
+#, fuzzy
+#~| msgid "Not available"
+#~ msgid "No Audit Log available"
+#~ msgstr "Мавжуд эмас"
+
+#, fuzzy
+#~ msgid "Error Retrieving Audit Log: %1"
+#~ msgstr "Сервердан хабарларни олишда хато рўй берди."
+
+#, fuzzy
+#~| msgid "(unknown)"
+#~ msgctxt "Status of message unknown."
+#~ msgid "(unknown)"
+#~ msgstr "(номаълум)"
+
+#~ msgid "New or changed: %1"
+#~ msgstr "Янги ёки ўзгарган: %1"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Expand Short URL"
+#~ msgstr "Ф&илтер яратиш"
+
+#, fuzzy
+#~| msgid "H&eaders"
+#~ msgid "Headers:"
+#~ msgstr "&Сарлавҳалар"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Long Headers"
+#~ msgid "Configure Custom Headers..."
+#~ msgstr "&Узун сарлавҳалар"
+
+#~ msgid "A&dd..."
+#~ msgstr "Қў&шиш"
+
+#~ msgid "Remo&ve"
+#~ msgstr "&Олиб ташлаш"
+
+#~ msgid "&Modify..."
+#~ msgstr "Ўзгар&тириш"
+
+#, fuzzy
+#~| msgid "H&eaders"
+#~ msgid "Header:"
+#~ msgstr "&Сарлавҳалар"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Create ToDo"
+#~ msgstr "Ф&илтер яратиш"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Create To-Do"
+#~ msgstr "Ф&илтер яратиш"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&All Headers"
+#~ msgstr "&Ҳамма сарлавҳалар"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Brief Headers"
+#~ msgstr "&Қисқа сарлавҳалар"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Long Headers"
+#~ msgctxt "View->headers->"
+#~ msgid "&Custom Headers"
+#~ msgstr "&Узун сарлавҳалар"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "To: "
+#~ msgstr "Кимга: "
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Brief Headers"
+#~ msgctxt "View->headers->"
+#~ msgid "&Enterprise Headers"
+#~ msgstr "&Қисқа сарлавҳалар"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgctxt "To-field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Кимга: "
+
+#, fuzzy
+#~ msgid "User-Agent: "
+#~ msgstr "&Зарур"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgid "MDN To: "
+#~ msgstr "Кимга: "
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Fancy Headers"
+#~ msgstr "&Чиройли сарлавҳалар"
+
+#~ msgctxt "View->headers->"
+#~ msgid "&Long Headers"
+#~ msgstr "&Узун сарлавҳалар"
+
+#, fuzzy
+#~| msgid "sender: "
+#~ msgid "Event:"
+#~ msgstr "жўнатувчи:"
+
+#, fuzzy
+#~ msgid "Select start time for event."
+#~ msgstr "<қабул қилувчилар>"
+
+#, fuzzy
+#~ msgid "Select end time for event."
+#~ msgstr "<қабул қилувчилар>"
+
+#, fuzzy
+#~| msgid "Open With..."
+#~ msgid "Open &editor..."
+#~ msgstr "...билан очиш"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Create Event..."
+#~ msgstr "Ф&илтер яратиш"
+
+#, fuzzy
+#~| msgid "&Create Filter"
+#~ msgid "Create Event"
+#~ msgstr "Ф&илтер яратиш"
+
+#, fuzzy
+#~| msgid "Edit Identity"
+#~ msgctxt "edit a note on this message"
+#~ msgid "Edit Note"
+#~ msgstr "Шахсиятни таҳрирлаш"
+
+#, fuzzy
+#~| msgid "Repl&y to all:"
+#~ msgid "Reply to \"%1\""
+#~ msgstr "Ҳаммага ж&авоб бериш:"
+
+#~ msgid "Please select the Chiasmus key file to use:"
+#~ msgstr "Илтимос қўллаш учун Chiasmus калит файлини танланг:"
+
+#~ msgid "Additional arguments for chiasmus:"
+#~ msgstr "Сhiasmus учун қўшимча аргументлар:"
+
+#, fuzzy
+#~ msgid "Configure Gravatar"
+#~ msgstr "KMail мослама&си"
+
+#, fuzzy
+#~| msgid "Delete T&hread"
+#~ msgid "Use Default Image"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#, fuzzy
+#~| msgid "Use HTML"
+#~ msgid "Use HTTPS"
+#~ msgstr "HTML'дан фойдаланиш"
+
+#, fuzzy
+#~ msgid "Gravatar Cache Size:"
+#~ msgstr "Ўқилмаган хабар йўқ"
+
+#, fuzzy
+#~ msgid "Clear Gravatar Cache"
+#~ msgstr "Ўқилмаган хабар йўқ"
+
+#, fuzzy
+#~ msgid "Configure..."
+#~ msgstr "KMail мослама&си"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Message Structure Viewer Placement"
+#~ msgstr "&Хабар"
+
+#, fuzzy
+#~ msgid "Above the message pane"
+#~ msgstr "Хабарнинг &ҳажмини кўрсатиш"
+
+#, fuzzy
+#~ msgid "Below the message pane"
+#~ msgstr "Хабарнинг &ҳажмини кўрсатиш"
+
+#, fuzzy
+#~ msgid "Fallback character e&ncoding:"
+#~ msgstr "Кодлаш усули"
+
+#, fuzzy
+#~ msgid "Show Raw Message"
+#~ msgstr "Узатилган хабар"
+
+#, fuzzy
+#~| msgid "sender: "
+#~ msgid "sent: "
+#~ msgstr "жўнатувчи:"
+
+#, fuzzy
+#~| msgid "Encryption"
+#~ msgid "Encrypted data not shown"
+#~ msgstr "Кодлаш"
+
+#, fuzzy
+#~ msgid "&Cancel"
+#~ msgstr "&Бекор қилиш"
+
+#, fuzzy
+#~ msgid "The message could not be decrypted."
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Ad Block Settings"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~| msgid "&View Source"
+#~ msgid "View Source Error"
+#~ msgstr "Манбани &кўриш"
+
+#, fuzzy
+#~| msgid "Download mail la&ter"
+#~ msgid "Download New Themes..."
+#~ msgstr "Хатни &кейинроқ ёзиб олиш"
+
+#, fuzzy
+#~ msgid "Header to show:"
+#~ msgstr "&Сарлавҳалар"
+
+#, fuzzy
+#~| msgid "H&eaders"
+#~ msgid "Header to hide:"
+#~ msgstr "&Сарлавҳалар"
+
+#, fuzzy
+#~ msgid "Message contains form element"
+#~ msgstr "Хабарлар рўйхати - Янги хабарлар"
+
+#, fuzzy
+#~ msgid "This message may be a scam."
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Машраб Қуватов, Нурали Абдураҳмонов"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kmashrab@uni-bremen.de, mavnur@gmail.com"
+
+#, fuzzy
+#~| msgid "N&ormal:"
+#~ msgid "F&ormat"
+#~ msgstr "Од&дий:"
+
+#, fuzzy
+#~| msgid "Align Center"
+#~ msgid "&Alignment"
+#~ msgstr "Марказда"
+
+#, fuzzy
+#~| msgid "HTML Toolbar"
+#~ msgid "Text Toolbar"
+#~ msgstr "HTML асбоблар панели"
+
+#, fuzzy
+#~ msgid "Format Toolbar"
+#~ msgstr "HTML асбоблар панели"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgid "General"
+#~ msgstr "Умумий"
+
+#~ msgid "File Already Exists"
+#~ msgstr "Файл аллақачон мавжуд"
+
+#, fuzzy
+#~| msgid "A file named %1 already exists. Do you want to overwrite it?"
+#~ msgid ""
+#~ "A file named <filename>%1</filename> already exists. Do you want to "
+#~ "overwrite it?"
+#~ msgstr "%1 номли файл аллақачон мавжуд. Уни алмаштиришни истайсизми?"
+
+#~ msgid "&Overwrite"
+#~ msgstr "&Алмаштириш"
+
+#~ msgid "&Ignore"
+#~ msgstr "&Эътибор берилмасин"
+
+#~ msgid "&Rename"
+#~ msgstr "&Номини ўзгартириш"
+
+#, fuzzy
+#~ msgid "Appl&y to All"
+#~ msgstr "Ҳаммага ж&авоб бериш"
+
+#, fuzzy
+#~| msgid "New Language"
+#~ msgid "Detect language"
+#~ msgstr "Янги тил"
+
+#, fuzzy
+#~| msgid "English"
+#~ msgid "English"
+#~ msgstr "Инглизча"
+
+#, fuzzy
+#~| msgid "Dutch"
+#~ msgid "Dutch"
+#~ msgstr "Голландча"
+
+#, fuzzy
+#~| msgid "French"
+#~ msgid "French"
+#~ msgstr "Французча"
+
+#, fuzzy
+#~| msgid "German"
+#~ msgid "German"
+#~ msgstr "Олмонча"
+
+#, fuzzy
+#~| msgid "&Italic"
+#~ msgid "Italian"
+#~ msgstr "&Қия"
+
+#, fuzzy
+#~| msgid "Personal"
+#~ msgid "Persian"
+#~ msgstr "Шахсий"
+
+#, fuzzy
+#~| msgid "English"
+#~ msgid "Polish"
+#~ msgstr "Инглизча"
+
+#, fuzzy
+#~ msgid "Clear"
+#~ msgstr "Календар"
+
+#, fuzzy
+#~| msgid "Overwrite File?"
+#~ msgid "Overwrite &All"
+#~ msgstr "Файлни алмаштиришни истайсизми?"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></"
+#~| "qt>"
+#~ msgctxt ""
+#~ "'HTML Message' with html linebreaks between each letter and in bold text."
+#~ msgid "<b><br />M<br />e<br />s<br />s<br />a<br />g<br />e</b></qt>"
+#~ msgstr "<qt><b>Х<br>а<br>б<br>а<br>р<b><br><br>H<br>T<br>M<br>L</b></qt>"
+
+#, fuzzy
+#~ msgid "Viewertest_Gui"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgid "Mailreader"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgctxt "To field of the mail header."
+#~ msgid "To: "
+#~ msgstr "Кимга: "
+
+#, fuzzy
+#~| msgid "Select Address"
+#~ msgid "Select Address Book"
+#~ msgstr "Манзилни танланг"
+
+#, fuzzy
+#~ msgid "Failed to parse vCard."
+#~ msgstr "Жилдни яратиб бўлмади"
+
+#~ msgid "The email client for the K Desktop Environment."
+#~ msgstr "KDE учун электрон почта дастури."
+
+#~ msgid "Attachment #%1 (unnamed)"
+#~ msgstr "Илова #%1 (номсиз)"
+
+#, fuzzy
+#~ msgctxt "message encoding type"
+#~ msgid "Quoted Printable"
+#~ msgstr "Им&зо қўйиш"
+
+#, fuzzy
+#~| msgid "&Name:"
+#~ msgctxt "file name of the attachment."
+#~ msgid "&Name:"
+#~ msgstr "&Номи:"
+
+#~ msgid "&Description:"
+#~ msgstr "&Таърифи:"
+
+#~ msgid "&Encoding:"
+#~ msgstr "&Кодлаш усули:"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "@title column attachment name."
+#~ msgid "Name"
+#~ msgstr "Номи"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@title column attachment size."
+#~ msgid "Size"
+#~ msgstr "Ҳажми"
+
+#, fuzzy
+#~| msgid "Encoding"
+#~ msgctxt "@title column attachment encoding."
+#~ msgid "Encoding"
+#~ msgstr "Кодлаш усули"
+
+#, fuzzy
+#~| msgid "Type"
+#~ msgctxt "@title column attachment type."
+#~ msgid "Type"
+#~ msgstr "Тури"
+
+#, fuzzy
+#~| msgid "Compress"
+#~ msgctxt "@title column attachment compression checkbox."
+#~ msgid "Compress"
+#~ msgstr "Қисиш"
+
+#, fuzzy
+#~| msgid "Encryption"
+#~ msgctxt "@title column attachment encryption checkbox."
+#~ msgid "Encrypt"
+#~ msgstr "Кодлаш"
+
+#, fuzzy
+#~| msgid "Sign"
+#~ msgctxt "@title column attachment signed checkbox."
+#~ msgid "Sign"
+#~ msgstr "Имзо"
+
+#~ msgid "contains"
+#~ msgstr "бор"
+
+#~ msgid "does not contain"
+#~ msgstr "йўқ"
+
+#~ msgid "equals"
+#~ msgstr "тенг"
+
+#~ msgid "does not equal"
+#~ msgstr "тенг эмас"
+
+#~ msgid "is in address book"
+#~ msgstr "манзиллар дафтарида мавжуд"
+
+#~ msgid "is not in address book"
+#~ msgstr "манзиллар дафтарида мавжуд эмас"
+
+#~ msgid "is in category"
+#~ msgstr "туркумда мавжуд"
+
+#~ msgid "is not in category"
+#~ msgstr "туркумда мавжуд эмас"
+
+#~ msgid "has an attachment"
+#~ msgstr "иловали"
+
+#~ msgid "has no attachment"
+#~ msgstr "иловали эмас"
+
+#, fuzzy
+#~ msgid "is"
+#~ msgstr "Хар ҳил"
+
+#, fuzzy
+#~ msgid "is not"
+#~ msgstr "жўнатилган"
+
+#, fuzzy
+#~ msgid "is equal to"
+#~ msgstr "га тенг ё кичик"
+
+#, fuzzy
+#~ msgid "is not equal to"
+#~ msgstr "га тенг ё кичик"
+
+#~ msgid "is greater than"
+#~ msgstr "дан катта"
+
+#~ msgid "is less than or equal to"
+#~ msgstr "га тенг ё кичик"
+
+#~ msgid "is less than"
+#~ msgstr "дан кичик"
+
+#~ msgid "is greater than or equal to"
+#~ msgstr "дан катта ё тенг"
+
+#~ msgid " bytes"
+#~ msgstr " байт"
+
+#, fuzzy
+#~| msgid " days"
+#~ msgctxt "Unit suffix where units are days."
+#~ msgid " days"
+#~ msgstr " кун"
+
+#, fuzzy
+#~| msgid "<qt>Failed to create folder <b>%1</b>.</qt> "
+#~ msgid "<qt>Error while creating file <b>%1</b>:<br />%2</qt>"
+#~ msgstr "<qt><b>%1</b> жилдини яратиш муваффақиятсиз тугади.</qt>"
+
+#~ msgid "Failed to create folder"
+#~ msgstr "Жилдни яратиб бўлмади"
+
+#, fuzzy
+#~| msgid "OpenPGP key 0x%1"
+#~ msgid "OpenPGP Key Expired"
+#~ msgstr "OpenPGP калити 0х%1"
+
+#~ msgid "Name Selection"
+#~ msgstr "Ном танлаш"
+
+#, fuzzy
+#~| msgid "unlimited"
+#~ msgctxt "@label:spinbox Set the size of the logfile to unlimited."
+#~ msgid "unlimited"
+#~ msgstr "чексиз"
+
+#, fuzzy
+#~| msgid "Send Later"
+#~ msgid "Later"
+#~ msgstr "Кейинроқ жўнатиш"
+
+#~ msgid "KWallet Not Available"
+#~ msgstr "KWallet мавжуд эмас"
+
+#~ msgid "Store Password"
+#~ msgstr "Махфий сўзни сақлаш"
+
+#~ msgid "Do Not Store Password"
+#~ msgstr "Махфий сўз эслаб қолинмасин"
+
+#~ msgid "Location:"
+#~ msgstr "Манзили:"
+
+#~ msgid "Incoming server:"
+#~ msgstr "Қабул қилиш сервери:"
+
+#, fuzzy
+#~| msgid "Welcome to the KMail Anti-Spam Wizard"
+#~ msgid "Welcome to KMail's account wizard"
+#~ msgstr "KMail антиспам ёрдамчисига марҳамат"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>It seems you have started KMail for the first time. You can use this "
+#~| "wizard to setup your mail accounts. Just enter the connection data that "
+#~| "you received from your email provider into the following pages.</qt>"
+#~ msgid ""
+#~ "<qt>It seems you have started KMail for the first time.<br/>You can use "
+#~ "this wizard to setup your mail accounts. Just enter the connection data "
+#~ "that you received from your email provider into the following pages.</qt>"
+#~ msgstr ""
+#~ "<qt>Сиз KMail'ни биринчи марта ишлатмоқдасиз. Почта ҳисобларингизни "
+#~ "мослаш учун ушбу ёрдамчидан фойдаланишингиз мумкин. Электрон почта "
+#~ "провайдерингиз билан ўрнатиладиган алоқа маълумотларини навбатдаги "
+#~ "ойналарга киритинг.</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>It seems you have started KMail for the first time. You can use this "
+#~| "wizard to setup your mail accounts. Just enter the connection data that "
+#~| "you received from your email provider into the following pages.</qt>"
+#~ msgid ""
+#~ "<qt>You can use this wizard to setup your mail accounts.<br/>Just enter "
+#~ "the connection data that you received from your email provider into the "
+#~ "following pages.</qt>"
+#~ msgstr ""
+#~ "<qt>Сиз KMail'ни биринчи марта ишлатмоқдасиз. Почта ҳисобларингизни "
+#~ "мослаш учун ушбу ёрдамчидан фойдаланишингиз мумкин. Электрон почта "
+#~ "провайдерингиз билан ўрнатиладиган алоқа маълумотларини навбатдаги "
+#~ "ойналарга киритинг.</qt>"
+
+#, fuzzy
+#~| msgid "&Sender identity:"
+#~ msgid "Create a new identity"
+#~ msgstr "&Жўнатувчи шахсияти:"
+
+#, fuzzy
+#~| msgid "Account Name"
+#~ msgid "Account Wizard"
+#~ msgstr "Ҳисобнинг номи"
+
+#~ msgid "Select what kind of account you would like to create"
+#~ msgstr "Яратмоқчи бўлган ҳисоб турини танланг"
+
+#~ msgid "Account Type"
+#~ msgstr "Ҳисобнинг тури"
+
+#~ msgid "Real name:"
+#~ msgstr "Исми-шарифи:"
+
+#~ msgid "E-mail address:"
+#~ msgstr "Электрон почта:"
+
+#~ msgid "Organization:"
+#~ msgstr "Ташкилот:"
+
+#~ msgid "Account Information"
+#~ msgstr "Ҳисоб ҳақида маълумот"
+
+#~ msgid "Login name:"
+#~ msgstr "Фойдаланувчи:"
+
+#~ msgid "Password:"
+#~ msgstr "Махфий сўз:"
+
+#~ msgid "Login Information"
+#~ msgstr "Фойдаланувчи маълумотлари"
+
+#~ msgid "Choose..."
+#~ msgstr "Танлаш"
+
+#~ msgid "Outgoing server:"
+#~ msgstr "Жўнатадиган сервер:"
+
+#~ msgid "Use local delivery"
+#~ msgstr "Локал жўнатишни қўллаш"
+
+#, fuzzy
+#~| msgid "Unnamed"
+#~ msgctxt "Default name for new email accounts/identities."
+#~ msgid "Unnamed"
+#~ msgstr "Номсиз"
+
+#~ msgid "Sendmail"
+#~ msgstr "Sendmail"
+
+#~ msgid "Local Account"
+#~ msgstr "Локал ҳисоб"
+
+#~ msgid ""
+#~ "(Account is not an IMAP account)\n"
+#~ "\n"
+#~ msgstr ""
+#~ "(Бу ҳисоб IMAP ҳисоби эмас)\n"
+#~ "\n"
+
+#, fuzzy
+#~ msgid "Available Sieve scripts:\n"
+#~ msgstr "Мавжуд филтерлар"
+
+#~ msgid "New Folder"
+#~ msgstr "Янги жилд"
+
+#, fuzzy
+#~ msgid "New Subfolder of %1"
+#~ msgstr "&Янги жилд"
+
+#, fuzzy
+#~| msgid "&Name:"
+#~ msgctxt "@label:textbox Name of the new folder."
+#~ msgid "&Name:"
+#~ msgstr "&Номи:"
+
+#~ msgid "Enter a name for the new folder."
+#~ msgstr "Янги жилд учун ном киритинг."
+
+#~ msgid "Mailbox &format:"
+#~ msgstr "Почта қутиси &формати:"
+
+#~ msgid "Folder &contains:"
+#~ msgstr "Жилд &таркиби:"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "type of folder content"
+#~ msgid "Mail"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Calendar"
+#~ msgctxt "type of folder content"
+#~ msgid "Calendar"
+#~ msgstr "Календар"
+
+#, fuzzy
+#~| msgid "Contacts"
+#~ msgctxt "type of folder content"
+#~ msgid "Contacts"
+#~ msgstr "Алоқалар"
+
+#, fuzzy
+#~| msgid "Tasks"
+#~ msgctxt "type of folder content"
+#~ msgid "Tasks"
+#~ msgstr "Вазифалар"
+
+#, fuzzy
+#~| msgid "Journal"
+#~ msgctxt "type of folder content"
+#~ msgid "Journal"
+#~ msgstr "Кундалик"
+
+#, fuzzy
+#~ msgid "No Name Specified"
+#~ msgstr "Мавзу аниқланмаган"
+
+#~ msgid "<qt>Failed to create folder <b>%1</b>, folder already exists.</qt>"
+#~ msgstr ""
+#~ "<qt><b>%1</b> жилдини яратиш муваффақиятсиз тугади. У аллақачон мавжуд.</"
+#~ "qt>"
+
+#~ msgid "<qt>Failed to create folder <b>%1</b>.</qt> "
+#~ msgstr "<qt><b>%1</b> жилдини яратиш муваффақиятсиз тугади.</qt>"
+
+#~ msgid "Add Entry..."
+#~ msgstr "Қўшиш..."
+
+#~ msgid "Modify Entry..."
+#~ msgstr "Ўзгартириш"
+
+#~ msgid "Connecting to server %1, please wait..."
+#~ msgstr "%1 сервери билан алоқа ўрнатилмоқда. Илтимос кутиб туринг..."
+
+#~ msgid "Error connecting to server %1"
+#~ msgstr "%1 сервери билан алоқа ўрнатишда хато рўй берди."
+
+#, fuzzy
+#~ msgid "Remove"
+#~ msgstr "&Олиб ташлаш"
+
+#~ msgid "&New Subfolder..."
+#~ msgstr "&Янги туб жилд..."
+
+#~ msgid "&New Folder..."
+#~ msgstr "&Янги жилд"
+
+#, fuzzy
+#~ msgid "&Copy Folders To"
+#~ msgstr "Жилдни &кўчириш"
+
+#, fuzzy
+#~ msgid "&Copy Folder To"
+#~ msgstr "Жилдни &кўчириш"
+
+#, fuzzy
+#~| msgid "&Move Folder To"
+#~ msgid "&Move Folders To"
+#~ msgstr "Жилдни &кўчириш"
+
+#~ msgid "&Move Folder To"
+#~ msgstr "Жилдни &кўчириш"
+
+#, fuzzy
+#~| msgid "Failed to create folder"
+#~ msgid "Add to Favorite Folders"
+#~ msgstr "Жилдни яратиб бўлмади"
+
+#~ msgid "Move to This Folder"
+#~ msgstr "Ушбу жилдга кўчириш"
+
+#~ msgid "Copy to This Folder"
+#~ msgstr "Ушбу жилдга нусха олиш"
+
+#, fuzzy
+#~| msgid "&Move Folder To"
+#~ msgid "Move or copy folder to %2"
+#~ msgid_plural "Move or copy %1 folders to %2"
+#~ msgstr[0] "Жилдни &кўчириш"
+
+#, fuzzy
+#~ msgid "Order folder above %2"
+#~ msgid_plural "Order %1 folders above %2"
+#~ msgstr[0] "&Янги жилд"
+
+#, fuzzy
+#~ msgid "Order folder below %2"
+#~ msgid_plural "Order %1 folders below %2"
+#~ msgstr[0] "&Янги жилд"
+
+#~ msgid "New Messages In"
+#~ msgstr "Янги хабар"
+
+#, fuzzy
+#~| msgid "There are no unread messages"
+#~ msgid "KMail - There are no unread messages"
+#~ msgstr "Ўқилмаган хабар йўқ"
+
+#, fuzzy
+#~ msgid "KMail - 1 unread message"
+#~ msgid_plural "KMail - %1 unread messages"
+#~ msgstr[0] "1 ўқилмаган хабар."
+
+#~ msgid "Find Messages"
+#~ msgstr "Хабарларни қидириш"
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgctxt "@action:button Search for messags"
+#~ msgid "&Search"
+#~ msgstr "&Қидириш"
+
+#~ msgid "Search in &all local folders"
+#~ msgstr "Ҳам&ма локал жилдларда қидириш"
+
+#~ msgid "Search &only in:"
+#~ msgstr "&Фақат бу ердан қидириш:"
+
+#~ msgid "I&nclude sub-folders"
+#~ msgstr "&Туб жилдларни қўшиш"
+
+#, fuzzy
+#~| msgid "Sender/Receiver"
+#~ msgctxt "@title:column Sender of the found message."
+#~ msgid "Sender/Receiver"
+#~ msgstr "Жўнатувчи/Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Date"
+#~ msgctxt "@title:column date of receival ofthe found message."
+#~ msgid "Date"
+#~ msgstr "Сана"
+
+#, fuzzy
+#~| msgid "Folder"
+#~ msgctxt "@title:column Folder in which the message is found."
+#~ msgid "Folder"
+#~ msgstr "Жилд"
+
+#~ msgid "Search folder &name:"
+#~ msgstr "Қидирув жилди &номи:"
+
+#~ msgid "Last Search"
+#~ msgstr "Охирги қидирув"
+
+#, fuzzy
+#~| msgid "Delete Search"
+#~ msgid "Op&en Search Folder"
+#~ msgstr "Қидирувни олиб ташлаш"
+
+#, fuzzy
+#~| msgid "Open Message"
+#~ msgid "Open &Message"
+#~ msgstr "Хабарни очиш"
+
+#, fuzzy
+#~| msgid "Ready."
+#~ msgctxt "@info:status finished searching."
+#~ msgid "Ready."
+#~ msgstr "Тайёр."
+
+#~ msgid "&Reply..."
+#~ msgstr "&Жавоб бериш"
+
+#~ msgid "Reply to &All..."
+#~ msgstr "Ҳаммага ж&авоб бериш"
+
+#~ msgctxt "Message->"
+#~ msgid "&Forward"
+#~ msgstr "&Узатиш"
+
+#, fuzzy
+#~| msgid "&Insert File..."
+#~ msgctxt "@action:inmenu Forward message inline."
+#~ msgid "&Inline..."
+#~ msgstr "&Файлдан қўйиш"
+
+#~ msgctxt "Message->Forward->"
+#~ msgid "As &Attachment..."
+#~ msgstr "&Илова сифатида"
+
+#~ msgid "Save Attachments..."
+#~ msgstr "Иловаларни сақлаш"
+
+#, fuzzy
+#~ msgctxt "Search finished."
+#~ msgid "Done"
+#~ msgstr "Тайёр"
+
+#, fuzzy
+#~ msgid "%1 message processed"
+#~ msgid_plural "%1 messages processed"
+#~ msgstr[0] "1 хат, %2."
+
+#, fuzzy
+#~ msgid "%1 match (%2)"
+#~ msgid_plural "%1 matches (%2)"
+#~ msgstr[0] "1 янги хат, %2."
+
+#, fuzzy
+#~ msgid "Search canceled"
+#~ msgstr "Қидириш бекор қилинди"
+
+#, fuzzy
+#~ msgid "%1 match so far (%2)"
+#~ msgid_plural "%1 matches so far (%2)"
+#~ msgstr[0] "1 янги хат, %2."
+
+#~ msgid "&Copy To"
+#~ msgstr "&Нусха олиш"
+
+#~ msgid "&Move To"
+#~ msgstr "&Кўчириш"
+
+#~ msgid "Folder"
+#~ msgstr "Жилд"
+
+#~ msgid "Sign Message?"
+#~ msgstr "Хабарни имзолаш"
+
+#~ msgctxt "to sign"
+#~ msgid "&Sign"
+#~ msgstr "&Имзолаш"
+
+#~ msgid "Do &Not Sign"
+#~ msgstr "Имзол&анмасин"
+
+#~ msgid "Send Unsigned?"
+#~ msgstr "Имзоламасдан жўнатиш"
+
+#~ msgid "Send &Unsigned"
+#~ msgstr "&Имзоламасдан жўнатиш"
+
+#~ msgid "&Sign"
+#~ msgstr "&Имзо"
+
+#~ msgid "Send &As Is"
+#~ msgstr "&Шундай жўнатиш"
+
+#~ msgid "&Send As-Is"
+#~ msgstr "&Шундай жўнатиш"
+
+#, fuzzy
+#~ msgid "Do &Not Encrypt"
+#~ msgstr "Кейинги хабарга ўтиш"
+
+#, fuzzy
+#~| msgid "Send Now"
+#~ msgid "Send Anyway"
+#~ msgstr "Дарҳол жўнатиш"
+
+#, fuzzy
+#~| msgid "Auto-Detect"
+#~ msgid "Auto-Detect Encoding"
+#~ msgstr "Авто-аниқлаш"
+
+#~ msgid "Encoding"
+#~ msgstr "Кодлаш усули"
+
+#~ msgid "Error while renaming a folder."
+#~ msgstr "Жилднинг номини ўзгартиришда хато рўй берди."
+
+#, fuzzy
+#~ msgid ""
+#~ "Error retrieving quota information from server\n"
+#~ "%1"
+#~ msgstr "Сервердан хабарларни олишда хато рўй берди."
+
+#, fuzzy
+#~| msgid "Select Recipient"
+#~ msgid "Test Recipient Editor"
+#~ msgstr "Қабул қилувчини танлаш"
+
+#~ msgid "Error while deleting messages on the server: "
+#~ msgstr "Сервердаги хабарни ўчиришда хато рўй берди: "
+
+#~ msgid "Error while retrieving message on the server: "
+#~ msgstr "Сервердан хабарни олишда хато рўй берди: "
+
+#~ msgid "Error while uploading folder"
+#~ msgstr "Жилдни ёзиб қўйишда хато рўй берди"
+
+#~ msgid "Could not make the folder <b>%1</b> on the server."
+#~ msgstr "Серверда <b>%1</b> жилдини яратиб бўлмади."
+
+#~ msgid "Error while deleting folder %1 on the server: "
+#~ msgstr "Сервердаги %1 жилдини ўчиришда хато рўй берди: "
+
+#~ msgid "Error while reading folder %1 on the server: "
+#~ msgstr "Сервердаги %1 жилдини ўқишда хато рўй берди: "
+
+#~ msgid "Error while trying to rename folder %1"
+#~ msgstr "%1 жилдини номини ўзгартиришда хато рўй берди"
+
+#, fuzzy
+#~| msgid "Reset Quick Search"
+#~ msgid "Set Focus to Quick Search"
+#~ msgstr "Қидириш панелини тозалаш"
+
+#, fuzzy
+#~| msgid "Go to the previous message"
+#~ msgid "Extend Selection to Previous Message"
+#~ msgstr "Олдинги хабарга ўтиш"
+
+#, fuzzy
+#~| msgid "&Folders"
+#~ msgid "Old Folders"
+#~ msgstr "&Жилдлар"
+
+#, fuzzy
+#~| msgid "&Folders"
+#~ msgid "Folders"
+#~ msgstr "&Жилдлар"
+
+#, fuzzy
+#~ msgid "Favorite Folders"
+#~ msgstr "Янги жилд"
+
+#~ msgid "Remove Duplicate Messages"
+#~ msgstr "Бир ҳил хабарларни ўчириш"
+
+#~ msgid "Move Message to Folder"
+#~ msgstr "Хабарни жилга кўчириш"
+
+#~ msgid "Copy Message to Folder"
+#~ msgstr "Хабардан жилдга нусха олиш"
+
+#, fuzzy
+#~ msgid "Jump to Folder..."
+#~ msgstr "Жилдга нусха олиш"
+
+#~ msgid "Abort Current Operation"
+#~ msgstr "Жорий амални бекор қилиш"
+
+#, fuzzy
+#~ msgid "1 new message in %2"
+#~ msgid_plural "%1 new messages in %2"
+#~ msgstr[0] "1 янги хат, %2."
+
+#, fuzzy
+#~| msgctxt "%1 is a list of the number of new messages per folder"
+#~| msgid "<b>New mail arrived</b><br>%1"
+#~ msgctxt "%1 is a list of the number of new messages per folder"
+#~ msgid "<b>New mail arrived</b><br />%1"
+#~ msgstr "<b>Янги хат келди</b><br>%1"
+
+#~ msgid "New mail arrived"
+#~ msgstr "Янги хабар келди"
+
+#, fuzzy
+#~ msgid "(no templates)"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#~ msgid "Properties of Folder %1"
+#~ msgstr "%1 жилднинг хоссалари"
+
+#~ msgid "Empty Trash"
+#~ msgstr "Чиқиндилар қутисини бўшатиш"
+
+#~ msgid "Are you sure you want to empty the trash folder?"
+#~ msgstr "Чиқиндилар қутисини бўшатишга ишончингиз комилми?"
+
+#~ msgid ""
+#~ "<qt>Are you sure you want to move all messages from folder <b>%1</b> to "
+#~ "the trash?</qt>"
+#~ msgstr ""
+#~ "<qt>Ҳамма хабарларни <b>%1</b> жилдидан чиқиндилар қутисига кўчиришга "
+#~ "ишончингиз комилми?</qt>"
+
+#~ msgid "Moved all messages to the trash"
+#~ msgstr "Ҳамма хабарлар чиқиндилар қутисига кўчирилди"
+
+#~ msgid "Delete Search"
+#~ msgstr "Қидирувни олиб ташлаш"
+
+#, fuzzy
+#~ msgctxt "@action:button Delete search"
+#~ msgid "&Delete"
+#~ msgstr "Ўчирилган"
+
+#~ msgid "Delete Folder"
+#~ msgstr "Жилдни ўчириш"
+
+#~ msgid "<qt>Are you sure you want to delete the empty folder <b>%1</b>?</qt>"
+#~ msgstr "<qt>Ростдан <b>%1</b> номли бўш жилдни ўчиришни истайсизми?</qt>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt>Are you sure you want to delete the empty folder <b>%1</b> and all "
+#~| "its subfolders? Those subfolders might not be empty and their contents "
+#~| "will be discarded as well. <p><b>Beware</b> that discarded messages are "
+#~| "not saved into your Trash folder and are permanently deleted.</qt>"
+#~ msgid ""
+#~ "<qt>Are you sure you want to delete the empty folder <resource>%1</"
+#~ "resource> and all its subfolders? Those subfolders might not be empty and "
+#~ "their contents will be discarded as well. <p><b>Beware</b> that discarded "
+#~ "messages are not saved into your Trash folder and are permanently deleted."
+#~ "</p></qt>"
+#~ msgstr ""
+#~ "<qt>Ростдан <b>%1</b> номли бўш жилдни унинг туб жилдлари билан бирга "
+#~ "ўчиришни истайсизми? Ушбу туб жилдлар бўш бўлмаслиги мумкин ва у ердаги "
+#~ "нарсалар ҳам ўчирилади.<p><b>Эсингизда турсин</b>, ўчириладиган хабарлар "
+#~ "чиқиндилар қутисига сақланмасдан бутунлай ўчирилади.</qt>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Are you sure you want to delete the folder <resource>%1</resource>, "
+#~ "discarding its contents? <p><b>Beware</b> that discarded messages are not "
+#~ "saved into your Trash folder and are permanently deleted.</p></qt>"
+#~ msgstr ""
+#~ "<qt>Ростдан <b>%1</b> номли бўш жилдни унинг туб жилдлари билан бирга "
+#~ "ўчиришни истайсизми? Ушбу туб жилдлар бўш бўлмаслиги мумкин ва у ердаги "
+#~ "нарсалар ҳам ўчирилади.</qt>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Are you sure you want to delete the folder <resource>%1</resource> "
+#~ "and all its subfolders, discarding their contents? <p><b>Beware</b> that "
+#~ "discarded messages are not saved into your Trash folder and are "
+#~ "permanently deleted.</p></qt>"
+#~ msgstr ""
+#~ "<qt>Ростдан <b>%1</b> номли бўш жилдни унинг туб жилдлари билан бирга "
+#~ "ўчиришни истайсизми? Ушбу туб жилдлар бўш бўлмаслиги мумкин ва у ердаги "
+#~ "нарсалар ҳам ўчирилади.</qt>"
+
+#, fuzzy
+#~ msgctxt "@action:button Delete folder"
+#~ msgid "&Delete"
+#~ msgstr "Ўчирилган"
+
+#~ msgid "&Refresh"
+#~ msgstr "&Янгилаш"
+
+#~ msgid "Security Warning"
+#~ msgstr "Хавфсизлик огоҳномаси"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Do you really want to delete the selected message?<br />Once deleted, "
+#~ "it cannot be restored.</qt>"
+#~ msgid_plural ""
+#~ "<qt>Do you really want to delete the %1 selected messages?<br />Once "
+#~ "deleted, they cannot be restored.</qt>"
+#~ msgstr[0] ""
+#~ "<qt>Ростдан танланган хабарни ўчиришни истайсизми?<br>Ўчирилгандан кейин "
+#~ "уни тиклаб бўлмайди.</qt><qt>Ростдан танланган %1 хабарни ўчиришни "
+#~ "истайсизми?<br>Ўчирилгандан кейин уларни тиклаб бўлмайди.</qt>"
+
+#~ msgid "Delete Messages"
+#~ msgstr "Хатларни ўчириш"
+
+#~ msgid "Delete Message"
+#~ msgstr "Хатни ўчириш"
+
+#, fuzzy
+#~| msgid "Deleting messages"
+#~ msgid "Deleting messages..."
+#~ msgstr "Хабарларни ўчириш"
+
+#, fuzzy
+#~| msgid "Messages deleted successfully."
+#~ msgid "Messages deleted successfully."
+#~ msgstr "Хабарлар муваффақиятли ўчирилди."
+
+#, fuzzy
+#~| msgid "Messages moved successfully"
+#~ msgid "Messages moved successfully."
+#~ msgstr "Хабарлар муваффақиятли кўчирилди."
+
+#~ msgid "Deleting messages failed."
+#~ msgstr "Хатларни ўчириш муваффақиятсиз тугади."
+
+#~ msgid "Deleting messages canceled."
+#~ msgstr "Хатларни ўчириш бекор қилинди."
+
+#~ msgid "Moving messages failed."
+#~ msgstr "Хатларни кўчириш муваффақиятсиз тугади."
+
+#~ msgid "Moving messages canceled."
+#~ msgstr "Хатларни кўчириш бекор қилинди."
+
+#~ msgid "Move Messages to Folder"
+#~ msgstr "Хабарларни жилга кўчириш"
+
+#, fuzzy
+#~| msgid "Moving messages"
+#~ msgid "Copying messages..."
+#~ msgstr "Хабарларни кўчириш"
+
+#, fuzzy
+#~| msgid "Messages moved successfully"
+#~ msgid "Messages copied successfully."
+#~ msgstr "Хабарлар муваффақиятли кўчирилди."
+
+#, fuzzy
+#~| msgid "Moving messages failed."
+#~ msgid "Copying messages failed."
+#~ msgstr "Хатларни кўчириш муваффақиятсиз тугади."
+
+#, fuzzy
+#~| msgid "Moving messages canceled."
+#~ msgid "Copying messages canceled."
+#~ msgstr "Хатларни кўчириш бекор қилинди."
+
+#, fuzzy
+#~| msgid "Copy Message to Folder"
+#~ msgid "Copy Messages to Folder"
+#~ msgstr "Хабардан жилдга нусха олиш"
+
+#, fuzzy
+#~| msgid "Move message to trashcan"
+#~ msgid "Moving messages to trash..."
+#~ msgstr "Хабарни чиқиндилар қутисига кўчириш"
+
+#, fuzzy
+#~| msgid "Messages moved successfully"
+#~ msgid "Messages moved to trash successfully."
+#~ msgstr "Хабарлар муваффақиятли кўчирилди."
+
+#, fuzzy
+#~| msgid "Moving messages failed."
+#~ msgid "Moving messages to trash failed."
+#~ msgstr "Хатларни кўчириш муваффақиятсиз тугади."
+
+#, fuzzy
+#~| msgid "Moving messages canceled."
+#~ msgid "Moving messages to trash canceled."
+#~ msgstr "Хатларни кўчириш бекор қилинди."
+
+#, fuzzy
+#~ msgid "Jump to Folder"
+#~ msgstr "Жилдга нусха олиш"
+
+#, fuzzy
+#~ msgid "Filtering messages"
+#~ msgstr "Хабарларни ўчириш"
+
+#, fuzzy
+#~ msgid "Filtering message %1 of %2"
+#~ msgstr "Хабарларни ўчириш"
+
+#~ msgid "Work Offline"
+#~ msgstr "Офлайнда ишлаш"
+
+#~ msgid "Work Online"
+#~ msgstr "Онлайнда ишлаш"
+
+#, fuzzy
+#~ msgctxt "tab title when loading an IMAP folder"
+#~ msgid "Loading..."
+#~ msgstr "&Жўнатиш"
+
+#~ msgid "Empty All &Trash Folders"
+#~ msgstr "Ҳамма &чиқиндилар қутисини бўшатиш"
+
+#~ msgid "Check &Mail"
+#~ msgstr "Почтани &текшириш"
+
+#, fuzzy
+#~| msgid "Check Mail &in This Folder"
+#~ msgid "Check Mail in Favorite Folders"
+#~ msgstr "Шу жилдда &почтани текшириш"
+
+#, fuzzy
+#~| msgid "Check Mail &In"
+#~ msgid "Check Mail In"
+#~ msgstr "...да &почтани текшириш"
+
+#, fuzzy
+#~| msgid "Check &Mail"
+#~ msgid "Check Mail"
+#~ msgstr "Почтани &текшириш"
+
+#~ msgid "&Send Queued Messages"
+#~ msgstr "&Навбатдаги хабарларни жўнатиш"
+
+#, fuzzy
+#~ msgid "Online status (unknown)"
+#~ msgstr "Онлайн ҳолати (номаълум)"
+
+#, fuzzy
+#~ msgid "Send Queued Messages Via"
+#~ msgstr "&Навбатдаги хабарларни жўнатиш"
+
+#, fuzzy
+#~| msgid "&Import Messages..."
+#~ msgid "&Import Messages"
+#~ msgstr "Хабарларни &импорт қилиш"
+
+#~ msgid "&Anti-Spam Wizard..."
+#~ msgstr "Анти&спэм ёрдамчиси"
+
+#~ msgid "&Anti-Virus Wizard..."
+#~ msgstr "Анти&вирус ёрдамчиси"
+
+#, fuzzy
+#~| msgid "&Anti-Spam Wizard..."
+#~ msgid "&Account Wizard..."
+#~ msgstr "Анти&спэм ёрдамчиси"
+
+#~ msgid "&Move to Trash"
+#~ msgstr "Чиқиндилар қ&утисига кўчириш"
+
+#, fuzzy
+#~| msgid "trash"
+#~ msgctxt "@action:intoolbar Move to Trash"
+#~ msgid "Trash"
+#~ msgstr "Чиқиндилар қутиси"
+
+#~ msgid "Move message to trashcan"
+#~ msgstr "Хабарни чиқиндилар қутисига кўчириш"
+
+#, fuzzy
+#~ msgctxt "@action Hard delete, bypassing trash"
+#~ msgid "&Delete"
+#~ msgstr "Ўчирилган"
+
+#~ msgid "M&ove Thread to Trash"
+#~ msgstr "Кетма-кет&ликни чиқиндилар қутисига кўчириш"
+
+#~ msgid "Move thread to trashcan"
+#~ msgstr "Кетма-кетликни чиқиндилар қутисига кўчириш"
+
+#~ msgid "Delete T&hread"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#~ msgid "&Find Messages..."
+#~ msgstr "Хабарларни &қидириш"
+
+#~ msgid "Select &All Messages"
+#~ msgstr "Ҳамма хабарларни &танлаш"
+
+#~ msgid "&Properties"
+#~ msgstr "&Хоссалари"
+
+#~ msgid "Mark All Messages as &Read"
+#~ msgstr "Ҳамма х&абарларни ўқилган деб белгилаш"
+
+#~ msgid "&Expiration Settings"
+#~ msgstr "Муддати ўтиш &мосламалар"
+
+#~ msgid "Check Mail &in This Folder"
+#~ msgstr "Шу жилдда &почтани текшириш"
+
+#, fuzzy
+#~ msgid "Cut Folder"
+#~ msgstr "Жилд"
+
+#, fuzzy
+#~ msgid "Paste Folder"
+#~ msgstr "Янги жилд"
+
+#, fuzzy
+#~ msgid "Copy Messages"
+#~ msgstr "Хабарни очиш"
+
+#, fuzzy
+#~ msgid "Cut Messages"
+#~ msgstr "Хатларни ўчириш"
+
+#, fuzzy
+#~ msgid "Paste Messages"
+#~ msgstr "Хатларни ўчириш"
+
+#~ msgid "&New Message..."
+#~ msgstr "&Янги хабар"
+
+#, fuzzy
+#~| msgid "New"
+#~ msgctxt "@action:intoolbar New Empty Message"
+#~ msgid "New"
+#~ msgstr "Янги"
+
+#, fuzzy
+#~ msgid "Message From &Template"
+#~ msgstr "Серверда янги хабар йўқ"
+
+#~ msgid "Send A&gain..."
+#~ msgstr "&Қайтадан жўнатиш"
+
+#, fuzzy
+#~ msgid "New Message From &Template"
+#~ msgstr "Серверда янги хабар йўқ"
+
+#~ msgid "Mark &Thread"
+#~ msgstr "Кетма-ке&тликни белгилаш"
+
+#~ msgid "Mark Thread as &Read"
+#~ msgstr "Ўқил&ган"
+
+#~ msgid "Mark all messages in the selected thread as read"
+#~ msgstr "Танланган кетма-кетликдаги ҳамма хабарларни ўқилган деб белгилаш"
+
+#~ msgid "Mark Thread as &New"
+#~ msgstr "&Янги"
+
+#~ msgid "Mark all messages in the selected thread as new"
+#~ msgstr "Танланган кетма-кетликдаги ҳамма хабарларни янги деб белгилаш"
+
+#~ msgid "Mark Thread as &Unread"
+#~ msgstr "&Ўқилмаган"
+
+#~ msgid "Mark all messages in the selected thread as unread"
+#~ msgstr "Танланган кетма-кетликдаги ҳамма хабарларни ўқилмаган деб белгилаш"
+
+#~ msgid "Mark Thread as &Important"
+#~ msgstr "&Муҳим"
+
+#, fuzzy
+#~ msgid "Remove &Important Thread Mark"
+#~ msgstr "Муҳим хабар"
+
+#, fuzzy
+#~| msgid "Mark Thread as &New"
+#~ msgid "Mark Thread as &Action Item"
+#~ msgstr "&Янги"
+
+#, fuzzy
+#~ msgid "Remove &Action Item Thread Mark"
+#~ msgstr "Муҳим хабар"
+
+#~ msgid "&Watch Thread"
+#~ msgstr "Кетма-кетликни на&зорат қилиш"
+
+#~ msgid "&Ignore Thread"
+#~ msgstr "Кетма-кетликка &эътибор берилмасин"
+
+#~ msgid "Save A&ttachments..."
+#~ msgstr "Иловаларни &сақлаш"
+
+#~ msgid "Appl&y All Filters"
+#~ msgstr "Ҳам&ма филтерларни қўллаш"
+
+#~ msgid "A&pply Filter"
+#~ msgstr "Фил&терни қўллаш"
+
+#~ msgid "&Display Message"
+#~ msgstr "Ха&барни кўрсатиш"
+
+#~ msgid "&Next Message"
+#~ msgstr "&Кейинги хабар"
+
+#~ msgid "Go to the next message"
+#~ msgstr "Кейинги хабарга ўтиш"
+
+#~ msgid "Next &Unread Message"
+#~ msgstr "Кейинги ўқи&лмаган хабар"
+
+#~ msgid "Go to the next unread message"
+#~ msgstr "Кейинги ўқилмаган хабарга ўтиш"
+
+#~ msgid "Previous Unread &Message"
+#~ msgstr "&Олдинги ўқилмаган хабар"
+
+#~ msgid "Go to the previous unread message"
+#~ msgstr "Олдинги ўқилмаган хабарга ўтиш"
+
+#~ msgid "Next Unread &Folder"
+#~ msgstr "Кейинги ўқилмаган &жилд"
+
+#~ msgid "Go to the next folder with unread messages"
+#~ msgstr "Ўқилмаган хабар бор кейинги жилдга ўтиш"
+
+#~ msgid "Previous Unread F&older"
+#~ msgstr "Олди&нги ўқилмаган жилд"
+
+#~ msgctxt "Go->"
+#~ msgid "Next Unread &Text"
+#~ msgstr "&Кейинги ўқилмаган матн"
+
+#~ msgid "Go to the next unread text"
+#~ msgstr "Кейинги ўқилмаган матнга ўтиш"
+
+#~ msgid "Configure &Filters..."
+#~ msgstr "&Филтерларни мослаш"
+
+#~ msgid "Configure &POP Filters..."
+#~ msgstr "POP филте&рларни мослаш"
+
+#~ msgid "KMail &Introduction"
+#~ msgstr "KMail'га &кириш"
+
+#~ msgid "Display KMail's Welcome Page"
+#~ msgstr "KMail қутлов ойнасини кўрсатиш"
+
+#~ msgid "Configure &Notifications..."
+#~ msgstr "&Хабар беришни мослаш"
+
+#~ msgid "&Configure KMail..."
+#~ msgstr "KMail мослама&си"
+
+#~ msgid "E&mpty Trash"
+#~ msgstr "&Чиқиндилар қутисини бўшатиш"
+
+#~ msgid "&Move All Messages to Trash"
+#~ msgstr "Ҳамма ха&барларни чиқиндилар қутисига кўчириш"
+
+#~ msgid "&Delete Search"
+#~ msgstr "Қидирувни &олиб ташлаш"
+
+#~ msgid "&Delete Folder"
+#~ msgstr "Жилдни ўч&ириш"
+
+#, fuzzy
+#~ msgid "Message Tag %1"
+#~ msgstr "Хабарлар рўйхати"
+
+#~ msgid "<qt>Do you really want to remove the identity named <b>%1</b>?</qt>"
+#~ msgstr "<qt><b>%1</b> номли шахсиятни ростдан ўчиришни истайсизми?</qt>"
+
+#~ msgid "Remove Identity"
+#~ msgstr "Шахсиятни олиб ташлаш"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&Олиб ташлаш"
+
+#~ msgid "Add..."
+#~ msgstr "Қўшиш..."
+
+#~ msgid "Modify..."
+#~ msgstr "Ўзгартириш"
+
+#~ msgid "Set as Default"
+#~ msgstr "Андоза деб белгилаш"
+
+#, fuzzy
+#~| msgid "&Receiving"
+#~ msgctxt ""
+#~ "@title:tab Tab page where the user configures accounts to receive mail"
+#~ msgid "Receiving"
+#~ msgstr "Қа&бул қилиш"
+
+#, fuzzy
+#~| msgid "&Sending"
+#~ msgctxt ""
+#~ "@title:tab Tab page where the user configures accounts to send mail"
+#~ msgid "Sending"
+#~ msgstr "&Жўнатиш"
+
+#~ msgid "Common Options"
+#~ msgstr "Умумий параметрлар"
+
+#~ msgid "Confirm &before send"
+#~ msgstr "Жўнатишдан олдин &тасдиқлаш"
+
+#~ msgid "Never Automatically"
+#~ msgstr "Ҳеч қачон автоматик эмас"
+
+#~ msgid "On Manual Mail Checks"
+#~ msgstr "Почтани қўлбола текширишда"
+
+#~ msgid "Send Now"
+#~ msgstr "Дарҳол жўнатиш"
+
+#~ msgid "Send Later"
+#~ msgstr "Кейинроқ жўнатиш"
+
+#~ msgid "Send &messages in outbox folder:"
+#~ msgstr "&Хабарларни жўнатиш қутисига юбориш:"
+
+#~ msgid "Defa&ult send method:"
+#~ msgstr "Жўнатиш &усули:"
+
+#~ msgid "Message &property:"
+#~ msgstr "Хабарнинг &хоссаси:"
+
+#~ msgid "Defaul&t domain:"
+#~ msgstr "Андо&за домен:"
+
+#~ msgid "Unable to create account"
+#~ msgstr "Ҳисобни яратиб бўлмади"
+
+#~ msgid "Add Account"
+#~ msgstr "Ҳисобни қўшиш"
+
+#~ msgid "Modify Account"
+#~ msgstr "Ҳисобни ўзгартириш"
+
+#, fuzzy
+#~| msgid "Contacts"
+#~ msgid "Fonts"
+#~ msgstr "Алоқалар"
+
+#~ msgid "Message List"
+#~ msgstr "Хабарлар рўйхати"
+
+#, fuzzy
+#~| msgid "Message W&indow"
+#~ msgid "Message Window"
+#~ msgstr "Хабарнинг &ойнаси"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Message Tags"
+#~ msgstr "&Хабар"
+
+#~ msgid "Message Body"
+#~ msgstr "Хабар таркиби"
+
+#~ msgid "Message List - New Messages"
+#~ msgstr "Хабарлар рўйхати - Янги хабарлар"
+
+#~ msgid "Message List - Unread Messages"
+#~ msgstr "Хабарлар рўйхати - Ўқилмаган хабарлар"
+
+#~ msgid "Message List - Important Messages"
+#~ msgstr "Хабарлар рўйхати - Муҳим хабарлар"
+
+#, fuzzy
+#~| msgid "Message List - New Messages"
+#~ msgid "Message List - Action Item Messages"
+#~ msgstr "Хабарлар рўйхати - Янги хабарлар"
+
+#~ msgid "Folder List"
+#~ msgstr "Жилдлар рўйхати"
+
+#~ msgid "Composer"
+#~ msgstr "Хабар яратиш"
+
+#~ msgid "&Use custom fonts"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#~ msgid "Link"
+#~ msgstr "Боғ"
+
+#~ msgid "Followed Link"
+#~ msgstr "Кўрилган боғ"
+
+#~ msgid "Misspelled Words"
+#~ msgstr "Нотўғри ёзилган сўзлар"
+
+#~ msgid "Unread Message"
+#~ msgstr "Ўқилмаган хабар"
+
+#~ msgid "Important Message"
+#~ msgstr "Муҳим хабар"
+
+#, fuzzy
+#~ msgid "Action Item Message"
+#~ msgstr "Муҳим хабар"
+
+#~ msgid "OpenPGP Message - Encrypted"
+#~ msgstr "OpenPGP хабар - кодланган"
+
+#~ msgid "OpenPGP Message - Unchecked Signature"
+#~ msgstr "OpenPGP хабарини очиш - Текширилмаган имзо"
+
+#~ msgid "OpenPGP Message - Bad Signature"
+#~ msgstr "OpenPGP хабарини очиш - Хато имзо"
+
+#~ msgid "&Use custom colors"
+#~ msgstr "&Бошқа рангларни ишлатиш"
+
+#, fuzzy
+#~| msgid "Shor&t folder list"
+#~ msgid "Show favorite folder view"
+#~ msgstr "&Қисқа жилдлар рўйхати"
+
+#, fuzzy
+#~| msgid "Show Quick Search"
+#~ msgid "Show folder quick search field"
+#~ msgstr "Қидириш панелини кўрсатиш"
+
+#, fuzzy
+#~| msgid "Folder List"
+#~ msgid "Folder Tooltips"
+#~ msgstr "Жилдлар рўйхати"
+
+#, fuzzy
+#~| msgid "Always"
+#~ msgid "Always"
+#~ msgstr "Ҳамиша"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgid "Never"
+#~ msgstr "Қабул қилувчи"
+
+#~ msgid "Sta&ndard format (%1)"
+#~ msgstr "&Андоза формат (%1)"
+
+#~ msgid "Fancy for&mat (%1)"
+#~ msgstr "&Чиройли формат (%1)"
+
+#, fuzzy
+#~| msgid "&Use custom fonts"
+#~ msgid "C&ustom format:"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#, fuzzy
+#~| msgid "Delete T&hread"
+#~ msgid "Default Aggregation:"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#, fuzzy
+#~| msgid "Delete T&hread"
+#~ msgid "Default Theme:"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#, fuzzy
+#~| msgid "Available Filters"
+#~ msgid "A&vailable Tags"
+#~ msgstr "Мавжуд филтерлар"
+
+#, fuzzy
+#~| msgid "Remove Duplicate Messages"
+#~ msgid "Remove selected tag"
+#~ msgstr "Бир ҳил хабарларни ўчириш"
+
+#, fuzzy
+#~ msgid "Ta&g Settings"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label:listbox Name of the tag"
+#~ msgid "Name:"
+#~ msgstr "Номи:"
+
+#, fuzzy
+#~| msgid "Text Color..."
+#~ msgid "Change te&xt color:"
+#~ msgstr "Матннинг ранги"
+
+#, fuzzy
+#~ msgid "Change fo&nt:"
+#~ msgstr "Кодлашни ўзгартириш"
+
+#, fuzzy
+#~ msgid "Message tag &icon:"
+#~ msgstr "Хабарлар рўйхати"
+
+#, fuzzy
+#~ msgid "Shortc&ut:"
+#~ msgstr "Тугмалар бирикмаси:"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "General settings for the composer."
+#~ msgid "General"
+#~ msgstr "Умумий"
+
+#, fuzzy
+#~ msgid "Standard Templates"
+#~ msgstr "&Алмаштириш"
+
+#, fuzzy
+#~ msgid "Custom Templates"
+#~ msgstr "&Алмаштириш"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "Settings regarding the subject when composing a message."
+#~ msgid "Subject"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~| msgid "Cha&rset"
+#~ msgid "Charset"
+#~ msgstr "&Кодлаш усули"
+
+#, fuzzy
+#~| msgctxt "Config->Composer->Attachments"
+#~| msgid "A&ttachments"
+#~ msgctxt "Config->Composer->Attachments"
+#~ msgid "Attachments"
+#~ msgstr "&Иловалар"
+
+#~ msgid "No autosave"
+#~ msgstr "Авто сақлаш йўқ"
+
+#~ msgid " min"
+#~ msgstr " дақ"
+
+#, fuzzy
+#~| msgid "Defaul&t domain:"
+#~ msgid "Default Forwarding Type:"
+#~ msgstr "Андо&за домен:"
+
+#, fuzzy
+#~| msgid "Has Attachment"
+#~ msgid "As Attachment"
+#~ msgstr "Иловали"
+
+#, fuzzy
+#~| msgid "Configure &Filters..."
+#~ msgid "Configure Completion Order..."
+#~ msgstr "&Филтерларни мослаш"
+
+#~ msgid "Edit Recent Addresses..."
+#~ msgstr "Яқинда қўлланган манзилларни таҳрирлаш..."
+
+#~ msgid "External Editor"
+#~ msgstr "Ташқи таҳрирчи"
+
+#~ msgid "Re&move"
+#~ msgstr "&Олиб ташлаш"
+
+#~ msgid "Mod&ify..."
+#~ msgstr "Ў&згартириш"
+
+#~ msgid "Enter charset:"
+#~ msgstr "Кодлаш усулини киритинг:"
+
+#~ msgid "This charset is not supported."
+#~ msgstr "Ушбу кодлаш усули қўлланилмайди."
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "@title:column Name of the mime header."
+#~ msgid "Name"
+#~ msgstr "Номи"
+
+#, fuzzy
+#~| msgid "Value"
+#~ msgctxt "@title:column Value of the mimeheader."
+#~ msgid "Value"
+#~ msgstr "Қиймати"
+
+#, fuzzy
+#~| msgid "Ne&w"
+#~ msgctxt "@action:button Add new mime header field."
+#~ msgid "Ne&w"
+#~ msgstr "&Янги"
+
+#, fuzzy
+#~| msgid "&Name:"
+#~ msgctxt "@label:textbox Name of the mime header."
+#~ msgid "&Name:"
+#~ msgstr "&Номи:"
+
+#~ msgid "&Value:"
+#~ msgstr "&Қиймати:"
+
+#~ msgid "Enter new key word:"
+#~ msgstr "Янги калит сўзни киритинг:"
+
+#, fuzzy
+#~| msgid "&Reading"
+#~ msgid "Reading"
+#~ msgstr "Ўқ&иш"
+
+#~ msgid "Composing"
+#~ msgstr "Яратиш"
+
+#~ msgid "Warnings"
+#~ msgstr "Огоҳномалар"
+
+#~ msgid "no proxy"
+#~ msgstr "проксисиз"
+
+#~ msgid "(Current system setting: %1)"
+#~ msgstr "(Жорий тизим мосламаси: %1)"
+
+#, fuzzy
+#~| msgid "Advanced Options"
+#~ msgid "Invitations"
+#~ msgstr "Қўшимча параметрлар"
+
+#~ msgid "<Choose a Folder>"
+#~ msgstr "<Жилдни танланг>"
+
+#~ msgid "Edit Identity"
+#~ msgstr "Шахсиятни таҳрирлаш"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "@title:tab General identity settings."
+#~ msgid "General"
+#~ msgstr "Умумий"
+
+#~ msgid "&Your name:"
+#~ msgstr "И&смингиз:"
+
+#~ msgid "Organi&zation:"
+#~ msgstr "&Ташкилот:"
+
+#~ msgid "&Email address:"
+#~ msgstr "&Электрон почта:"
+
+#~ msgid "Chang&e..."
+#~ msgstr "Ўзг&артириш"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "@title:tab Advanced identity settings."
+#~ msgid "Advanced"
+#~ msgstr "Қўшимча"
+
+#~ msgid "D&ictionary:"
+#~ msgstr "&Луғат:"
+
+#~ msgid "Sent-mail &folder:"
+#~ msgstr "\"Жўнатилган\" ж&илди:"
+
+#, fuzzy
+#~ msgid "&Templates folder:"
+#~ msgstr "&Чиқиндилар қутиси:"
+
+#, fuzzy
+#~ msgid "&Use custom message templates for this identity"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#, fuzzy
+#~ msgid "&Copy Global Templates"
+#~ msgstr "&Алмаштириш"
+
+#~ msgid "Signature"
+#~ msgstr "Имзо"
+
+#, fuzzy
+#~| msgid "&Picture"
+#~ msgid "Picture"
+#~ msgstr "&Расм"
+
+#~ msgid "Invalid Email Address"
+#~ msgstr "Хато электрон почта манзили"
+
+#~ msgid "Edit Identity \"%1\""
+#~ msgstr "\"%1\" шахсиятини таҳрирлаш"
+
+#~ msgid "Account:"
+#~ msgstr "Ҳисоб:"
+
+#, fuzzy
+#~ msgid "Retrieving Namespaces"
+#~ msgstr "Хабарнинг асл нусхаси:"
+
+#, fuzzy
+#~ msgid "The destination folder was: <b>%1</b>."
+#~ msgstr "Мўлжал жилди: "
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Хато: %1"
+
+#, fuzzy
+#~| msgid "Only check for new mail"
+#~ msgid "Error while checking account %1 for new mail:%2"
+#~ msgstr "Фақат янги хабарга текшириш"
+
+#~ msgid "retrieving folders"
+#~ msgstr "жилдлар олинмоқда"
+
+#, fuzzy
+#~ msgid "Set Identity To"
+#~ msgstr "Янги шахсият"
+
+#~ msgid "Mark As"
+#~ msgstr "Белгилаш"
+
+#~ msgctxt "msg status"
+#~ msgid "Important"
+#~ msgstr "Муҳим"
+
+#~ msgctxt "msg status"
+#~ msgid "Read"
+#~ msgstr "Ўқилган"
+
+#~ msgctxt "msg status"
+#~ msgid "Unread"
+#~ msgstr "Ўқилмаган"
+
+#~ msgctxt "msg status"
+#~ msgid "Replied"
+#~ msgstr "Жавоб берилган"
+
+#~ msgctxt "msg status"
+#~ msgid "Forwarded"
+#~ msgstr "Узатилган"
+
+#~ msgctxt "msg status"
+#~ msgid "Old"
+#~ msgstr "Эски"
+
+#~ msgctxt "msg status"
+#~ msgid "New"
+#~ msgstr "Янги"
+
+#~ msgctxt "msg status"
+#~ msgid "Watched"
+#~ msgstr "Назоратда"
+
+#~ msgctxt "msg status"
+#~ msgid "Ignored"
+#~ msgstr "Эътибор берилмаган"
+
+#~ msgctxt "msg status"
+#~ msgid "Spam"
+#~ msgstr "Спэм"
+
+#~ msgctxt "msg status"
+#~ msgid "Ham"
+#~ msgstr "Хэм"
+
+#, fuzzy
+#~ msgctxt "msg status"
+#~ msgid "Action Item"
+#~ msgstr "Муҳим хабар"
+
+#, fuzzy
+#~| msgid "Add Header"
+#~ msgid "Add Tag"
+#~ msgstr "Сарлавҳа қўшиш"
+
+#, fuzzy
+#~ msgid "Send Fake MDN"
+#~ msgstr "Кейинроқ жўнатиш"
+
+#~ msgctxt "MDN type"
+#~ msgid "Ignore"
+#~ msgstr "Эътибор берилмасин"
+
+#~ msgctxt "MDN type"
+#~ msgid "Deleted"
+#~ msgstr "Ўчирилган"
+
+#~ msgid "Remove Header"
+#~ msgstr "Сарлавҳани олиб ташлаш"
+
+#~ msgid "Add Header"
+#~ msgstr "Сарлавҳа қўшиш"
+
+#~ msgid "With value:"
+#~ msgstr "Қиймат билан:"
+
+#~ msgid "Replace:"
+#~ msgstr "Алмаштириш:"
+
+#~ msgid "With:"
+#~ msgstr "Билан:"
+
+#~ msgid "Move Into Folder"
+#~ msgstr "Жилдга кўчириш"
+
+#~ msgid "Copy Into Folder"
+#~ msgstr "Жилдга нусха олиш"
+
+#~ msgid "Forward To"
+#~ msgstr "Узатиш"
+
+#, fuzzy
+#~| msgid "Delete T&hread"
+#~ msgid "Default Template"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#, fuzzy
+#~ msgid "The template used when forwarding"
+#~ msgstr "Хабарлар рўйхати - Янги хабарлар"
+
+#, fuzzy
+#~ msgid "Forward to %1 with default template"
+#~ msgstr "&Алмаштириш"
+
+#, fuzzy
+#~ msgid "Forward to %1 with template %2"
+#~ msgstr "&Алмаштириш"
+
+#~ msgid "Execute Command"
+#~ msgstr "Буйруқни бажариш"
+
+#~ msgid "Play Sound"
+#~ msgstr "Товушни ўйнаш"
+
+#~ msgid "Add to Address Book"
+#~ msgstr "Манзиллар дафтарига қўшиш"
+
+#, fuzzy
+#~| msgid "&From"
+#~ msgctxt "Email sender"
+#~ msgid "From"
+#~ msgstr "&Кимдан"
+
+#, fuzzy
+#~| msgid "To"
+#~ msgctxt "Email recipient"
+#~ msgid "To"
+#~ msgstr "Кимга"
+
+#~ msgid "CC"
+#~ msgstr "Нусха"
+
+#, fuzzy
+#~| msgid "BCC"
+#~ msgid "BCC"
+#~ msgstr "BCC"
+
+#, fuzzy
+#~| msgid "is in category"
+#~ msgid "with category"
+#~ msgstr "туркумда мавжуд"
+
+#, fuzzy
+#~| msgid "is in address book"
+#~ msgid "in addressbook"
+#~ msgstr "манзиллар дафтарида мавжуд"
+
+#~ msgid "Continue Search"
+#~ msgstr "Қидиришни давом этиш"
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgctxt "Continue search button."
+#~ msgid "&Search"
+#~ msgstr "&Қидириш"
+
+#~ msgid "Downloading emails from IMAP server"
+#~ msgstr "Хабарлар IMAP сервердан олинмоқда"
+
+#~ msgid "Error while searching."
+#~ msgstr "Қидиришда хато рўй берди."
+
+#~ msgid "Local Folders"
+#~ msgstr "Локал жилдлар"
+
+#, fuzzy
+#~| msgid "&New Folder..."
+#~ msgid "Add Favorite Folder..."
+#~ msgstr "&Янги жилд"
+
+#, fuzzy
+#~| msgid "Rename Filter"
+#~ msgid "Rename Favorite..."
+#~ msgstr "Филтер номини ўзгартириш"
+
+#, fuzzy
+#~| msgid "Failed to create folder"
+#~ msgid "Add Folders to Favorites"
+#~ msgstr "Жилдни яратиб бўлмади"
+
+#, fuzzy
+#~ msgid "Insert Folders Above %1"
+#~ msgstr "&Файлдан қўйиш"
+
+#, fuzzy
+#~| msgctxt "continuation of \"obtain picture from\""
+#~| msgid "Input Field Below"
+#~ msgid "Insert Folders Below %1"
+#~ msgstr "Қуйида киритиш"
+
+#, fuzzy
+#~ msgid "Add Favorite Folder"
+#~ msgstr "Янги жилд"
+
+#, fuzzy
+#~| msgid "Rename Filter"
+#~ msgid "Rename Favorite"
+#~ msgstr "Филтер номини ўзгартириш"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label:textbox New name of the folder."
+#~ msgid "Name:"
+#~ msgstr "Номи:"
+
+#, fuzzy
+#~| msgid "Load attach&ments on demand"
+#~ msgid "This attachment has been deleted."
+#~ msgstr "&Иловаларни талабга биноан юклаш"
+
+#, fuzzy
+#~| msgid "Important"
+#~ msgctxt "message status"
+#~ msgid "Important"
+#~ msgstr "Муҳим"
+
+#, fuzzy
+#~| msgid "New"
+#~ msgctxt "message status"
+#~ msgid "New"
+#~ msgstr "Янги"
+
+#, fuzzy
+#~| msgid "Unread"
+#~ msgctxt "message status"
+#~ msgid "Unread"
+#~ msgstr "Ўқилмаган"
+
+#, fuzzy
+#~| msgid "Read"
+#~ msgctxt "message status"
+#~ msgid "Read"
+#~ msgstr "Ўқилган"
+
+#, fuzzy
+#~| msgid "Deleted"
+#~ msgctxt "message status"
+#~ msgid "Deleted"
+#~ msgstr "Ўчирилган"
+
+#, fuzzy
+#~| msgid "Replied"
+#~ msgctxt "message status"
+#~ msgid "Replied"
+#~ msgstr "Жавоб берилган"
+
+#, fuzzy
+#~| msgid "Forwarded"
+#~ msgctxt "message status"
+#~ msgid "Forwarded"
+#~ msgstr "Узатилган"
+
+#, fuzzy
+#~| msgid "Queued"
+#~ msgctxt "message status"
+#~ msgid "Queued"
+#~ msgstr "Навбатда"
+
+#, fuzzy
+#~| msgid "Sent"
+#~ msgctxt "message status"
+#~ msgid "Sent"
+#~ msgstr "Жўнатилган"
+
+#, fuzzy
+#~| msgid "Watched"
+#~ msgctxt "message status"
+#~ msgid "Watched"
+#~ msgstr "Назоратда"
+
+#, fuzzy
+#~| msgid "Ignored"
+#~ msgctxt "message status"
+#~ msgid "Ignored"
+#~ msgstr "Эътибор берилмади"
+
+#, fuzzy
+#~| msgid "Spam"
+#~ msgctxt "message status"
+#~ msgid "Spam"
+#~ msgstr "Спэм"
+
+#, fuzzy
+#~| msgid "Ham"
+#~ msgctxt "message status"
+#~ msgid "Ham"
+#~ msgstr "Хэм"
+
+#, fuzzy
+#~| msgid "Has Attachment"
+#~ msgctxt "message status"
+#~ msgid "Has Attachment"
+#~ msgstr "Иловали"
+
+#, fuzzy
+#~ msgid "Default new message template"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#, fuzzy
+#~| msgid "On %D, you wrote:"
+#~ msgctxt ""
+#~ "Default reply template.%1: date of original message, %2: time of original "
+#~ "message, %3: quoted text of original message, %4: cursor Position"
+#~ msgid ""
+#~ "On %1 %2 you wrote:\n"
+#~ "%3\n"
+#~ "%4"
+#~ msgstr "%D, Сиз ёзгансиз:"
+
+#, fuzzy
+#~| msgid "On %D, %F wrote:"
+#~ msgctxt ""
+#~ "Default reply all template: %1: date, %2: time, %3: name of original "
+#~ "sender, %4: quoted text of original message, %5: cursor position"
+#~ msgid ""
+#~ "On %1 %2 %3 wrote:\n"
+#~ "%4\n"
+#~ "%5"
+#~ msgstr "%D, %F ёзган:"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Unread"
+#~ msgctxt "@title:column Column showing the number of unread email messages."
+#~ msgid "Unread"
+#~ msgstr "Ўқилмаган"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgctxt "@title:column Column showing the total number of messages"
+#~ msgid "Total"
+#~ msgstr "Жами"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@title:column Size of the folder."
+#~ msgid "Size"
+#~ msgstr "Ҳажми"
+
+#~ msgid "Searches"
+#~ msgstr "Қидирувлар"
+
+#, fuzzy
+#~ msgid "Total Messages"
+#~ msgstr "Хатларни ўчириш"
+
+#, fuzzy
+#~| msgid "Unread Message"
+#~ msgid "Unread Messages"
+#~ msgstr "Ўқилмаган хабар"
+
+#, fuzzy
+#~ msgid "Quota"
+#~ msgstr "Жами"
+
+#, fuzzy
+#~ msgid "Storage Size"
+#~ msgstr "Услубни танлаш"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "Icon Size"
+#~ msgstr "Ҳажми"
+
+#, fuzzy
+#~ msgid "Display Tooltips"
+#~ msgstr "К&имга"
+
+#, fuzzy
+#~| msgid "Always"
+#~ msgctxt "@action:inmenu Always display tooltips"
+#~ msgid "Always"
+#~ msgstr "Ҳамиша"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgctxt "@action:inmenu Never display tooltips."
+#~ msgid "Never"
+#~ msgstr "Қабул қилувчи"
+
+#~ msgid "Refresh Folder List"
+#~ msgstr "Жилдлар рўйхатини янгилаш"
+
+#, fuzzy
+#~ msgid "Expire..."
+#~ msgstr "Таҳрирлаш"
+
+#, fuzzy
+#~ msgid "Multiple Folders"
+#~ msgstr "Жилд"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Cannot move or copy folder <b>%1</b> here because a folder with the "
+#~ "same name already exists.</qt>"
+#~ msgstr ""
+#~ "<qt><b>%1</b> жилдини яратиш муваффақиятсиз тугади. У аллақачон мавжуд.</"
+#~ "qt>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Cannot move or copy folder <b>%1</b> into a subfolder below itself.</"
+#~ "qt>"
+#~ msgstr ""
+#~ "<qt><b>%1</b> жилдини яратиш муваффақиятсиз тугади. У аллақачон мавжуд.</"
+#~ "qt>"
+
+#~ msgid "<qt>Go to the next unread message in folder <b>%1</b>?</qt>"
+#~ msgstr ""
+#~ "<qt><b>%1</b> жилдидаги кейинги ўқилмаган хабарга ўтишни истайсизми?</qt>"
+
+#~ msgid "Go to Next Unread Message"
+#~ msgstr "Кейинги ўқилмаган хабарга ўтиш"
+
+#~ msgid "Go To"
+#~ msgstr "Ўтиш"
+
+#~ msgid "&Move Here"
+#~ msgstr "Шу ерга &кўчириш"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Бекор қилиш"
+
+#, fuzzy
+#~| msgid "Move Messages to Folder"
+#~ msgid "Copy or Move Messages to %1"
+#~ msgstr "Хабарларни жилга кўчириш"
+
+#~ msgid "Select Recipient"
+#~ msgstr "Қабул қилувчини танлаш"
+
+#~ msgid "Address book:"
+#~ msgstr "Манзиллар дафтари:"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "@title:column Name of the recipient."
+#~ msgid "Name"
+#~ msgstr "Номи"
+
+#, fuzzy
+#~| msgid "Email"
+#~ msgctxt "@title:column Email of the recipient."
+#~ msgid "Email"
+#~ msgstr "Электрон почта"
+
+#, fuzzy
+#~ msgid "Add as &To"
+#~ msgstr "Ҳисобни қўшиш"
+
+#, fuzzy
+#~ msgid "Add as CC"
+#~ msgstr "Ҳисобни қўшиш"
+
+#, fuzzy
+#~ msgid "Add as &BCC"
+#~ msgstr "Ҳисобни қўшиш"
+
+#, fuzzy
+#~| msgid "All"
+#~ msgctxt "All collections containing recipients."
+#~ msgid "All"
+#~ msgstr "Ҳаммаси"
+
+#~ msgid "Selected Recipients"
+#~ msgstr "Танланган қабул қилувчилар"
+
+#, fuzzy
+#~| msgid "&Address Book"
+#~ msgid "Address Books"
+#~ msgstr "Манзиллар &дафтари"
+
+#~ msgid "Recent Addresses"
+#~ msgstr "Яқинда қўлланган манзиллар"
+
+#~ msgid "<qt>Cannot enter folder <b>%1</b>.</qt>"
+#~ msgstr "<qt><b>%1</b> жилдига кириб бўлмади.</qt>"
+
+#~ msgid "<qt>Folder <b>%1</b> is unreadable.</qt>"
+#~ msgstr "<qt><b>%1</b> ўқиб бўлмайдиган жилд.</qt>"
+
+#, fuzzy
+#~ msgid "MB"
+#~ msgstr " Мб"
+
+#~ msgid "&Send picture with every message"
+#~ msgstr "Ҳамма хабарга р&асм қўшиб жўнатиш"
+
+#~ msgid "This is a preview of the picture selected/entered below."
+#~ msgstr "Бу танланган/киритилган расмнинг кўриниши."
+
+#~ msgctxt "continuation of \"obtain picture from\""
+#~ msgid "External Source"
+#~ msgstr "Ташқи манба"
+
+#~ msgctxt "continuation of \"obtain picture from\""
+#~ msgid "Input Field Below"
+#~ msgstr "Қуйида киритиш"
+
+#~ msgid "Obtain pic&ture from:"
+#~ msgstr "Расм &манбаси:"
+
+#~ msgid "Select File..."
+#~ msgstr "Файлни танлаш"
+
+#~ msgid "Set From Address Book"
+#~ msgstr "Манзиллар дафтаридан"
+
+#~ msgid "No Picture"
+#~ msgstr "Расмсиз"
+
+#, fuzzy
+#~| msgid "Exit"
+#~ msgctxt "Do not start another kmail instance."
+#~ msgid "Exit"
+#~ msgstr "Чиқиш"
+
+#~ msgid "inbox"
+#~ msgstr "Қабул қилиш қутиси"
+
+#, fuzzy
+#~ msgid "Enable Subscriptions?"
+#~ msgstr "Таърифи"
+
+#~ msgid "Enable"
+#~ msgstr "Ёқиш"
+
+#, fuzzy
+#~ msgid "Do Not Enable"
+#~ msgstr "Кейинги хабарга ўтиш"
+
+#, fuzzy
+#~| msgid "Save List"
+#~ msgctxt "@action:button"
+#~ msgid "Save List"
+#~ msgstr "Рўйхатни сақлаш"
+
+#, fuzzy
+#~| msgid "&Name:"
+#~ msgctxt "@label:textbox Name of the distribution list."
+#~ msgid "&Name:"
+#~ msgstr "&Номи:"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "@title:column Name of the recipient"
+#~ msgid "Name"
+#~ msgstr "Номи"
+
+#, fuzzy
+#~| msgid "Email"
+#~ msgctxt "@title:column Email of the recipient"
+#~ msgid "Email"
+#~ msgstr "Электрон почта"
+
+#, fuzzy
+#~| msgid "Please enter name:"
+#~ msgctxt "@label:textbox"
+#~ msgid "Please enter name:"
+#~ msgstr "Илтимос номини киритинг:"
+
+#~ msgid "New Identity"
+#~ msgstr "Янги шахсият"
+
+#~ msgid "&New identity:"
+#~ msgstr "Янги &шахсият:"
+
+#~ msgid "&With empty fields"
+#~ msgstr "&Бўш майдонлар билан"
+
+#~ msgid "&Use Control Center settings"
+#~ msgstr "Бошқарув маркази мосламасини &қўллаш"
+
+#~ msgid "&Duplicate existing identity"
+#~ msgstr "&Мавжуд шахсиятнинг нусхаси"
+
+#~ msgid "&Existing identities:"
+#~ msgstr "Мавжуд &шахсиятлар:"
+
+#~ msgid "New entry:"
+#~ msgstr "Янги ёзув:"
+
+#~ msgid "&Add..."
+#~ msgstr "&Қўшиш..."
+
+#~ msgid "New Value"
+#~ msgstr "Янги қиймат"
+
+#~ msgid "Change Value"
+#~ msgstr "Қийматни ўзгартириш"
+
+#, fuzzy
+#~ msgid "Mailinglist Folder Properties"
+#~ msgstr "Жилднинг хоссалари"
+
+#~ msgid "Detect Automatically"
+#~ msgstr "Авто-аниқлаш"
+
+#, fuzzy
+#~ msgid "Mailing list description:"
+#~ msgstr "Филтер амал&ларни қўллаш"
+
+#~ msgid "Browser"
+#~ msgstr "Браузер"
+
+#~ msgid "&Address type:"
+#~ msgstr "&Манзил тури:"
+
+#~ msgid "Not available"
+#~ msgstr "Мавжуд эмас"
+
+#, fuzzy
+#~ msgid "Permissions (ACL)"
+#~ msgstr "Ўқилган"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "@title:tab General settings for a folder."
+#~ msgid "General"
+#~ msgstr "Умумий"
+
+#, fuzzy
+#~| msgctxt "to view something"
+#~| msgid "View"
+#~ msgctxt "@title:tab View settings for a folder."
+#~ msgid "View"
+#~ msgstr "Кўриш"
+
+#, fuzzy
+#~| msgid "Maintainer"
+#~ msgid "Maintenance"
+#~ msgstr "Таъминловчи"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "type of folder content"
+#~ msgid "Unknown"
+#~ msgstr "Номаълум"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "type of folder storage"
+#~ msgid "Mailbox"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Disconnected IMAP"
+#~ msgctxt "type of folder storage"
+#~ msgid "Disconnected IMAP"
+#~ msgstr "Узилган IMAP"
+
+#, fuzzy
+#~| msgid "IMAP"
+#~ msgctxt "type of folder storage"
+#~ msgid "IMAP"
+#~ msgstr "IMAP"
+
+#, fuzzy
+#~ msgctxt "type of folder storage"
+#~ msgid "Search"
+#~ msgstr "&Қидириш"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "type of folder storage"
+#~ msgid "Unknown"
+#~ msgstr "Номаълум"
+
+#, fuzzy
+#~| msgid "&Name:"
+#~ msgctxt "@label:textbox Name of the folder."
+#~ msgid "&Name:"
+#~ msgstr "&Номи:"
+
+#~ msgid "unnamed"
+#~ msgstr "номсиз"
+
+#, fuzzy
+#~ msgid "Include this folder in mail checks"
+#~ msgstr "&Почтани маълум вақт оралиғида текшириш"
+
+#~ msgid "Keep replies in this folder"
+#~ msgstr "Жавобларни шу жилдда сақлаш"
+
+#, fuzzy
+#~| msgid "Use the Address-Selection Dialog"
+#~ msgid "Hide this folder in the folder selection dialog"
+#~ msgstr "Манзил танлаш ойнасини ишлатиш"
+
+#, fuzzy
+#~| msgid "Remove Identity"
+#~ msgid "Use &default identity"
+#~ msgstr "Шахсиятни олиб ташлаш"
+
+#~ msgid "&Sender identity:"
+#~ msgstr "&Жўнатувчи шахсияти:"
+
+#~ msgid "&Folder contents:"
+#~ msgstr "&Жилд таркиби:"
+
+#~ msgid "Nobody"
+#~ msgstr "Ҳеч ким"
+
+#~ msgid "Use custom &icons"
+#~ msgstr "&Бошқа нишончаларни ишлатиш"
+
+#, fuzzy
+#~| msgid "&Normal:"
+#~ msgctxt "Icon used for folders with no unread messages."
+#~ msgid "&Normal:"
+#~ msgstr "Од&дий:"
+
+#, fuzzy
+#~| msgid "&Unread:"
+#~ msgctxt "Icon used for folders which do have unread messages."
+#~ msgid "&Unread:"
+#~ msgstr "&Ўқилмаган:"
+
+#~ msgid "Sho&w column:"
+#~ msgstr "Устунни к&ўрсатиш:"
+
+#, fuzzy
+#~ msgctxt "@item:inlistbox Show default value."
+#~ msgid "Default"
+#~ msgstr "Андоза деб белгилаш"
+
+#, fuzzy
+#~| msgid "Sender"
+#~ msgctxt "@item:inlistbox Show sender."
+#~ msgid "Sender"
+#~ msgstr "Жўнатувчи"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgctxt "@item:inlistbox Show receiver."
+#~ msgid "Receiver"
+#~ msgstr "Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Delete T&hread"
+#~ msgid "Use default aggregation"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#, fuzzy
+#~| msgid "Suggestions"
+#~ msgid "Aggregation"
+#~ msgstr "Таклифлар"
+
+#, fuzzy
+#~ msgid "&Use custom message templates in this folder"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#, fuzzy
+#~| msgctxt "continuation of \"obtain signature text from\""
+#~| msgid "File"
+#~ msgid "Files"
+#~ msgstr "Файл"
+
+#, fuzzy
+#~| msgid "Contacts"
+#~ msgctxt "@label:textbox Folder content type (eg. Mail)"
+#~ msgid "Contents:"
+#~ msgstr "Алоқалар"
+
+#, fuzzy
+#~| msgid "Folder List"
+#~ msgid "Folder type:"
+#~ msgstr "Жилдлар рўйхати"
+
+#, fuzzy
+#~| msgid "Not available"
+#~ msgctxt "folder size"
+#~ msgid "Not available"
+#~ msgstr "Мавжуд эмас"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "Size:"
+#~ msgstr "Ҳажми"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Messages"
+#~ msgstr "&Хабар"
+
+#, fuzzy
+#~ msgid "Total messages:"
+#~ msgstr "Хатларни ўчириш"
+
+#, fuzzy
+#~| msgid "Unread Message"
+#~ msgid "Unread messages:"
+#~ msgstr "Ўқилмаган хабар"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "compaction status"
+#~ msgid "Unknown"
+#~ msgstr "Номаълум"
+
+#, fuzzy
+#~| msgid "Location:"
+#~ msgid "Compaction:"
+#~ msgstr "Манзили:"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgid "%1 (%2)"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Delete Folder"
+#~ msgctxt "@title"
+#~ msgid "Really compact folder?"
+#~ msgstr "Жилдни ўчириш"
+
+#, fuzzy
+#~ msgctxt "@action:button"
+#~ msgid "Compact Folder"
+#~ msgstr "Жилдга нусха олиш"
+
+#~ msgid "&Alternate URL:"
+#~ msgstr "&Қўшимча URL:"
+
+#~ msgid "Create a new subfolder under the currently selected folder"
+#~ msgstr "Танланган жорий жилдда янги туб жилд яратиш"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "@title:column Column containing message subjects"
+#~ msgid "Subject"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~| msgid "Sender"
+#~ msgctxt "@title:column"
+#~ msgid "Sender"
+#~ msgstr "Жўнатувчи"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgctxt "@title:column"
+#~ msgid "Receiver"
+#~ msgstr "Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Date"
+#~ msgctxt "@title:column"
+#~ msgid "Date"
+#~ msgstr "Сана"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@title:column"
+#~ msgid "Size"
+#~ msgstr "Ҳажми"
+
+#, fuzzy
+#~| msgid "Downloading message data"
+#~ msgctxt "@action:button"
+#~ msgid "Download all messages now"
+#~ msgstr "Хабар маълумотлари ёзиб олинлмоқда"
+
+#, fuzzy
+#~| msgid "Downloading message data"
+#~ msgctxt "@action:button"
+#~ msgid "Download all messages later"
+#~ msgstr "Хабар маълумотлари ёзиб олинлмоқда"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "Delete"
+#~ msgstr "Ўчирилган"
+
+#, fuzzy
+#~| msgid "POP Filter"
+#~ msgctxt "@title:window"
+#~ msgid "POP Filter"
+#~ msgstr "POP филтер"
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgctxt "@title:group"
+#~ msgid "Messages Exceeding Size"
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~| msgid "Message List - Unread Messages"
+#~ msgctxt "@title:group"
+#~ msgid "Ruleset Filtered Messages: %1"
+#~ msgstr "Хабарлар рўйхати - Ўқилмаган хабарлар"
+
+#, fuzzy
+#~| msgid "No Subject"
+#~ msgctxt "@item:intext"
+#~ msgid "No Subject"
+#~ msgstr "Мавзусиз"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "@item:intext Sender of message is unknown"
+#~ msgid "Unknown"
+#~ msgstr "Номаълум"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "@item:intext Receiver of message is unknown"
+#~ msgid "Unknown"
+#~ msgstr "Номаълум"
+
+#, fuzzy
+#~ msgid "Do not send vacation replies to spam messages"
+#~ msgstr "Кейинги хабарга ўтиш"
+
+#~ msgid "Uploading message data"
+#~ msgstr "Хабар маълумотлари ёзиб қўйилмоқда"
+
+#~ msgid "Server operation"
+#~ msgstr "Сервер амали"
+
+#~ msgid "Downloading message data"
+#~ msgstr "Хабар маълумотлари ёзиб олинлмоқда"
+
+#~ msgid "Message with subject: "
+#~ msgstr "Хабар сарлавҳаси:"
+
+#~ msgid "Error while retrieving messages from the server."
+#~ msgstr "Сервердан хабарларни олишда хато рўй берди."
+
+#~ msgid "Uploading message data failed."
+#~ msgstr "Хабар маълумотини ёзиб қўйиш муваффақиятсиз тугади."
+
+#~ msgid "Uploading message data completed."
+#~ msgstr "Хабар маълумотини ёзиб қўйиш якунланди."
+
+#~ msgid "Error while copying messages."
+#~ msgstr "Хабарлардан нусха олишда хато рўй берди."
+
+#, fuzzy
+#~ msgid "1 message waiting to be filtered"
+#~ msgid_plural "%1 messages waiting to be filtered"
+#~ msgstr[0] "&Хабарларни жўнатиш қутисига юбориш:"
+
+#, fuzzy
+#~ msgid "<b>Evaluating filter rules:</b> "
+#~ msgstr "<b>Вақтинчалик филтер қоидалари:</b> "
+
+#, fuzzy
+#~ msgid "<b>Applying filter action:</b> %1"
+#~ msgstr "Филтер амал&ларни қўллаш"
+
+#~ msgid "<qt>Cannot open folder <b>%1</b>.</qt>"
+#~ msgstr "<qt><b>%1</b> жилдини очиб бўлмади.</qt>"
+
+#, fuzzy
+#~ msgid "Moving message %1 of %2 from %3."
+#~ msgstr "Хабарларни ўчириш"
+
+#, fuzzy
+#~ msgid "Fetched 1 message from maildir folder %2."
+#~ msgid_plural "Fetched %1 messages from maildir folder %2."
+#~ msgstr[0] "%2 жилдидан 1 эски хабар ўчирлди."
+
+#, fuzzy
+#~ msgid "With Custom Template"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#, fuzzy
+#~ msgid "Reply With Custom Template"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#, fuzzy
+#~ msgid "Reply to All With Custom Template"
+#~ msgstr "&Бошқа шрифтларни ишлатиш"
+
+#, fuzzy
+#~ msgctxt "Message->"
+#~ msgid "Universal"
+#~ msgstr "&Жавоб бериш"
+
+#, fuzzy
+#~ msgctxt "Message->"
+#~ msgid "Reply"
+#~ msgstr "&Жавоб бериш"
+
+#, fuzzy
+#~| msgid "Additional arguments for chiasmus:"
+#~ msgid "Additional recipients of the message"
+#~ msgstr "Сhiasmus учун қўшимча аргументлар:"
+
+#, fuzzy
+#~ msgctxt "Message->"
+#~ msgid "Unknown"
+#~ msgstr "&Узатиш"
+
+#~ msgid "Show Quick Search"
+#~ msgstr "Қидириш панелини кўрсатиш"
+
+#, fuzzy
+#~| msgid "Remove Header"
+#~ msgctxt "shortcut for expanding the header of a group in the message list"
+#~ msgid "Expand Group Header"
+#~ msgstr "Сарлавҳани олиб ташлаш"
+
+#, fuzzy
+#~| msgid "Delete T&hread"
+#~ msgid "Default Theme"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#, fuzzy
+#~| msgid "Delete T&hread"
+#~ msgid "Default Aggregation"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#, fuzzy
+#~| msgid "Delete Folder"
+#~ msgid "Default Sort Order"
+#~ msgstr "Жилдни ўчириш"
+
+#, fuzzy
+#~| msgid "Empty"
+#~ msgctxt "@title:tab Empty messagelist"
+#~ msgid "Empty"
+#~ msgstr "Бўш"
+
+#, fuzzy
+#~| msgid "No Subject"
+#~ msgctxt "displayed as subject when the subject of a mail is empty"
+#~ msgid "No Subject"
+#~ msgstr "Мавзусиз"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "displayed when a mail has unknown sender, receiver or date"
+#~ msgid "Unknown"
+#~ msgstr "Номаълум"
+
+#, fuzzy
+#~ msgid "Redirect Message"
+#~ msgstr "Хабарларни ўчириш"
+
+#~ msgid "Use the Address-Selection Dialog"
+#~ msgstr "Манзил танлаш ойнасини ишлатиш"
+
+#~ msgid "&Send Now"
+#~ msgstr "&Дарҳол жўнатиш"
+
+#~ msgid "Send &Later"
+#~ msgstr "&Кейинроқ жўнатиш"
+
+#, fuzzy
+#~ msgid "Empty Redirection Address"
+#~ msgstr "Манзиллар дафтарида очиш"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "@label:listbox General group for often used snippets in mail."
+#~ msgid "General"
+#~ msgstr "Умумий"
+
+#, fuzzy
+#~| msgid "Add Account"
+#~ msgid "Add Group"
+#~ msgstr "Ҳисобни қўшиш"
+
+#, fuzzy
+#~| msgid "<qt>Do you really want to remove the identity named <b>%1</b>?</qt>"
+#~ msgid "Do you really want to remove this group and all its snippets?"
+#~ msgstr "<qt><b>%1</b> номли шахсиятни ростдан ўчиришни истайсизми?</qt>"
+
+#, fuzzy
+#~| msgctxt "Message->"
+#~| msgid "&Reply"
+#~ msgid "&Apply"
+#~ msgstr "&Жавоб бериш"
+
+#, fuzzy
+#~| msgid "Edit Script..."
+#~ msgid "Edit Snippet"
+#~ msgstr "Скриптни таҳрирлаш..."
+
+#, fuzzy
+#~| msgid "Edit Script..."
+#~ msgid "Edit &group..."
+#~ msgstr "Скриптни таҳрирлаш..."
+
+#, fuzzy
+#~| msgid "Date"
+#~ msgid "&Paste"
+#~ msgstr "Сана"
+
+#, fuzzy
+#~| msgid "Edit..."
+#~ msgid "&Edit..."
+#~ msgstr "Таҳрирлаш"
+
+#, fuzzy
+#~| msgid "Add Entry..."
+#~ msgid "&Add Snippet..."
+#~ msgstr "Қўшиш..."
+
+#, fuzzy
+#~| msgid "Add Entry..."
+#~ msgid "Add G&roup..."
+#~ msgstr "Қўшиш..."
+
+#, fuzzy
+#~| msgid "Set as &Default"
+#~ msgid "Make value &default"
+#~ msgstr "&Андоза деб белгилаш"
+
+#, fuzzy
+#~ msgid "Select Transport"
+#~ msgstr "Жилдни танлаш"
+
+#, fuzzy
+#~| msgid "sender: "
+#~ msgid "Answer: "
+#~ msgstr "жўнатувчи:"
+
+#, fuzzy
+#~| msgid " Line: %1 "
+#~ msgctxt "Not able to attend."
+#~ msgid "Declined: %1"
+#~ msgstr " Сатр: %1 "
+
+#, fuzzy
+#~| msgid "Account %1"
+#~ msgctxt "Accepted the invitation."
+#~ msgid "Accepted: %1"
+#~ msgstr "Ҳисоб %1"
+
+#, fuzzy
+#~| msgid "Failed to create folder"
+#~ msgid "Could Not Create Folder"
+#~ msgstr "Жилдни яратиб бўлмади"
+
+#~ msgid "New &Window"
+#~ msgstr "&Янги ойна"
+
+#, fuzzy
+#~ msgid "Starting..."
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~ msgid "Select Size"
+#~ msgstr "Услубни танлаш"
+
+#~ msgctxt "name used for a virgin filter"
+#~ msgid "unknown"
+#~ msgstr "номаълум"
+
+#, fuzzy
+#~ msgid "Template content"
+#~ msgstr "&Жилд таркиби:"
+
+#, fuzzy
+#~ msgid "Template shortcut"
+#~ msgstr "&Алмаштириш"
+
+#, fuzzy
+#~ msgid "Template type"
+#~ msgstr "&Алмаштириш"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Файл"
+
+#, fuzzy
+#~| msgid "New"
+#~ msgctxt "@title:menu for new-message and new-from-template"
+#~ msgid "New"
+#~ msgstr "Янги"
+
+#, fuzzy
+#~ msgid "&Edit"
+#~ msgstr "Чиқиш"
+
+#, fuzzy
+#~ msgid "&View"
+#~ msgstr "Кўриш"
+
+#~ msgid "&Go"
+#~ msgstr "Ў&тиш"
+
+#~ msgid "F&older"
+#~ msgstr "&Жилд"
+
+#~ msgid "&Message"
+#~ msgstr "&Хабар"
+
+#~ msgid "&Forward"
+#~ msgstr "&Узатиш"
+
+#, fuzzy
+#~ msgid "&Tools"
+#~ msgstr "К&имга"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~ msgid "&Help"
+#~ msgstr "&Бип"
+
+#, fuzzy
+#~ msgid "&Options"
+#~ msgstr "Умумий параметрлар"
+
+#~ msgid "&Attach"
+#~ msgstr "&Илова"
+
+#, fuzzy
+#~| msgid "New"
+#~ msgctxt "@title:menu New message, folder or new window."
+#~ msgid "New"
+#~ msgstr "Янги"
+
+#~ msgid "Signing"
+#~ msgstr "Имзолаш"
+
+#~ msgid "&Automatically sign messages"
+#~ msgstr "Хабарларни &автоматик имзолаш"
+
+#, fuzzy
+#~| msgid "Encryption"
+#~ msgid "Encrypting"
+#~ msgstr "Кодлаш"
+
+#, fuzzy
+#~ msgid "Store sent messages encry&pted"
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#, fuzzy
+#~ msgid "Check to store messages encrypted "
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#, fuzzy
+#~| msgid "&Automatically sign messages"
+#~ msgid "Automatically encrypt &messages whenever possible"
+#~ msgstr "Хабарларни &автоматик имзолаш"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "@title:tab General settings"
+#~ msgid "General"
+#~ msgstr "Умумий"
+
+#~ msgid "Account &name:"
+#~ msgstr "Ҳисобнинг &номи:"
+
+#, fuzzy
+#~| msgid "Incoming server:"
+#~ msgid "Incoming mail &server:"
+#~ msgstr "Қабул қилиш сервери:"
+
+#, fuzzy
+#~| msgid "D&elete mail from server"
+#~ msgid "Address of the mail server"
+#~ msgstr "Хатни &сервердан ўчириш"
+
+#~ msgid "&Port:"
+#~ msgstr "&Порт:"
+
+#~ msgid ""
+#~ "Your Internet Service Provider gave you a <em>user name</em> which is "
+#~ "used to authenticate you with their servers. It usually is the first part "
+#~ "of your email address (the part before <em>@</em>)."
+#~ msgstr ""
+#~ "Сизнинг Интернет хизмат провайдерингиз сизга ўз сервери билан боғланиш "
+#~ "учун <em>фойдаланувчи</em> беради. Бу одатда электрон почтангизни биринчи "
+#~ "қисми бўлади (<em>@</em> белгисидан олдинги қисм)."
+
+#~ msgid "&Login:"
+#~ msgstr "&Фойдаланувчи:"
+
+#~ msgid "P&assword:"
+#~ msgstr "&Махфий сўз:"
+
+#, fuzzy
+#~| msgid "Sto&re IMAP password"
+#~ msgid "Sto&re IMAP Password"
+#~ msgstr "IMAP махфий сўзини &эслаб қолиш"
+
+#, fuzzy
+#~ msgid "Include in manual mail chec&k"
+#~ msgstr "&Почтани маълум вақт оралиғида текшириш"
+
+#~ msgid "Enable &interval mail checking"
+#~ msgstr "&Почтани маълум вақт оралиғида текшириш"
+
+#~ msgid "Check inter&val:"
+#~ msgstr "Текшириш &оралиғи:"
+
+#~ msgid "Sho&w hidden folders"
+#~ msgstr "Яширилган &жилдларни кўрсатиш"
+
+#, fuzzy
+#~| msgid "Show only s&ubscribed folders"
+#~ msgid "Show only serverside s&ubscribed folders"
+#~ msgstr "Фақат а&ъзо бўлинган жилдларни кўрсатиш"
+
+#, fuzzy
+#~ msgid "Show only &locally subscribed folders"
+#~ msgstr "Фақат а&ъзо бўлинган жилдларни кўрсатиш"
+
+#~ msgid "Load attach&ments on demand"
+#~ msgstr "&Иловаларни талабга биноан юклаш"
+
+#~ msgid "List only open folders"
+#~ msgstr "Фақат очилган жилдларни кўрсатиш"
+
+#, fuzzy
+#~| msgid "&Trash folder:"
+#~ msgid "Trash folder:"
+#~ msgstr "&Чиқиндилар қутиси:"
+
+#, fuzzy
+#~| msgid "Remove Identity"
+#~ msgid "Use the default identity for this account"
+#~ msgstr "Шахсиятни олиб ташлаш"
+
+#, fuzzy
+#~| msgid "&Identity:"
+#~ msgid "Identity:"
+#~ msgstr "Ша&хсият:"
+
+#, fuzzy
+#~| msgid "Replace:"
+#~ msgid "Namespaces:"
+#~ msgstr "Алмаштириш:"
+
+#, fuzzy
+#~| msgid "Personal"
+#~ msgctxt "Personal namespaces for imap account."
+#~ msgid "Personal:"
+#~ msgstr "Шахсий"
+
+#, fuzzy
+#~| msgid "Other Users"
+#~ msgid "Other users:"
+#~ msgstr "Бошқа фойдаланувчилар"
+
+#, fuzzy
+#~ msgid "These namespaces include the shared folders."
+#~ msgstr "Ушбу серверда хатни қолдириш"
+
+#, fuzzy
+#~| msgid "Shared"
+#~ msgid "Shared:"
+#~ msgstr "Бўлишилган"
+
+#, fuzzy
+#~| msgid "S&ecurity"
+#~ msgid "Security"
+#~ msgstr "&Хавсизлик"
+
+#~ msgid "&None"
+#~ msgstr "&Йўқ"
+
+#~ msgid "Use &SSL for secure mail download"
+#~ msgstr "Хатларни хавфсиз олиш учун &SSL'дан фойдаланиш"
+
+#~ msgid "Use &TLS for secure mail download"
+#~ msgstr "Хатларни хавфсиз олиш учун &TLS'дан фойдаланиш"
+
+#~ msgid "Authentication Method"
+#~ msgstr "Тасдиқлаш усули"
+
+#~ msgid "Clear te&xt"
+#~ msgstr "Оддий &матн"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "Please translate this authentication method only if you have a good "
+#~| "reason"
+#~| msgid "&LOGIN"
+#~ msgid "&LOGIN"
+#~ msgstr "&LOGIN"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "Please translate this authentication method only if you have a good "
+#~| "reason"
+#~| msgid "&PLAIN"
+#~ msgid "&PLAIN"
+#~ msgstr "&PLAIN"
+
+#~ msgid "CRAM-MD&5"
+#~ msgstr "CRAM-MD&5"
+
+#~ msgid "&DIGEST-MD5"
+#~ msgstr "&DIGEST-MD5"
+
+#~ msgid "&NTLM"
+#~ msgstr "&NTLM"
+
+#~ msgid "&GSSAPI"
+#~ msgstr "&GSSAPI"
+
+#~ msgid "&Anonymous"
+#~ msgstr "&Аноним"
+
+#~ msgid "Check &What the Server Supports"
+#~ msgstr "Сервер қайси усулни қўллашини &текшириш"
+
+#, fuzzy
+#~ msgid "&Warn when trying to send unencrypted messages"
+#~ msgstr "Кейинги хабарга ўтиш"
+
+#, fuzzy
+#~| msgid "Signing"
+#~ msgid "For Signing"
+#~ msgstr "Имзолаш"
+
+#, fuzzy
+#~ msgid "For Encryption"
+#~ msgstr "Кодлаш"
+
+#, fuzzy
+#~| msgid "&Do not send certificates"
+#~ msgid "For root certificates:"
+#~ msgstr "Сертификатлар &жўнатилмасин"
+
+#, fuzzy
+#~| msgid "&Do not send certificates"
+#~ msgid "For intermediate CA certificates:"
+#~ msgstr "Сертификатлар &жўнатилмасин"
+
+#, fuzzy
+#~| msgid "&Do not send certificates"
+#~ msgid "For end-user certificates/keys:"
+#~ msgstr "Сертификатлар &жўнатилмасин"
+
+#~ msgid "Account Type: POP Account"
+#~ msgstr "Ҳисобнинг тури: POP ҳисоб"
+
+#~ msgid "Sto&re POP password"
+#~ msgstr "POP махфий сўзини &эслаб қолиш"
+
+#, fuzzy
+#~ msgid "Include in man&ual mail check"
+#~ msgstr "&Почтани маълум вақт оралиғида текшириш"
+
+#~ msgid "Chec&k interval:"
+#~ msgstr "Текшириш &оралиғи:"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "POP Settings"
+#~ msgstr "&Жўнатиш"
+
+#~ msgid "Lea&ve fetched messages on the server"
+#~ msgstr "Олинган хатлар нусхасини серверда &қолдириш"
+
+#, fuzzy
+#~ msgid "Leave messages on the server for"
+#~ msgstr "Ушбу серверда хатни қолдириш"
+
+#, fuzzy
+#~| msgid " days"
+#~ msgctxt "Number of days that the message will be left on the server."
+#~ msgid " days"
+#~ msgstr " кун"
+
+#, fuzzy
+#~| msgid "Lea&ve fetched messages on the server"
+#~ msgid "Only the x most recent messages are kept on the server"
+#~ msgstr "Олинган хатлар нусхасини серверда &қолдириш"
+
+#, fuzzy
+#~| msgid "Keep only the last"
+#~ msgid "Keep onl&y the last"
+#~ msgstr "Фақат охиригисини қолдириш"
+
+#~ msgid "Keep only the last"
+#~ msgstr "Фақат охиригисини қолдириш"
+
+#~ msgid " MB"
+#~ msgstr " Мб"
+
+#~ msgid ""
+#~ "If you select this option, POP Filters will be used to decide what to do "
+#~ "with messages. You can then select to download, delete or keep them on "
+#~ "the server."
+#~ msgstr ""
+#~ "Белгиланса, POP филтрлари хатлар билан нима қилишни белгилайди. Кейин "
+#~ "уларни сервердан олиш, ўчириш ёки қолдириш имкониятини танлашингиз мумкин."
+
+#~ msgid "&Filter messages if they are greater than"
+#~ msgstr "Кўрсатилган ҳажмдан &ортиқ хатларни филтрлаш"
+
+#~ msgid "Des&tination folder:"
+#~ msgstr "Мўлжа&лланган жилд:"
+
+#, fuzzy
+#~ msgid "Pre-com&mand:"
+#~ msgstr "&Буйруқни кўрсатиш:"
+
+#, fuzzy
+#~| msgid "Use &SSL for secure mail download"
+#~ msgid "&Use pipelining for faster mail download"
+#~ msgstr "Хатларни хавфсиз олиш учун &SSL'дан фойдаланиш"
+
+#, fuzzy
+#~| msgid "&NTLM"
+#~ msgid "NTL&M"
+#~ msgstr "&NTLM"
+
+#~ msgid "&APOP"
+#~ msgstr "&APOP"
+
+#, fuzzy
+#~| msgid "&Sender identity:"
+#~ msgid "Add a new identity"
+#~ msgstr "&Жўнатувчи шахсияти:"
+
+#, fuzzy
+#~| msgid "Remove Duplicate Messages"
+#~ msgid "Rename the selected identity"
+#~ msgstr "Бир ҳил хабарларни ўчириш"
+
+#, fuzzy
+#~| msgid "Remove Duplicate Messages"
+#~ msgid "Remove the selected identity"
+#~ msgstr "Бир ҳил хабарларни ўчириш"
+
+#~ msgid "Set as &Default"
+#~ msgstr "&Андоза деб белгилаш"
+
+#~ msgid "HTML Messages"
+#~ msgstr "HTML хабарлар"
+
+#, fuzzy
+#~ msgid "Message Disposition Notifications"
+#~ msgstr "Хабарлар рўйхати"
+
+#~ msgid "Send policy:"
+#~ msgstr "Жўнатиш қоидаси:"
+
+#, fuzzy
+#~| msgctxt "MDN type"
+#~| msgid "Ignore"
+#~ msgid "Ignore"
+#~ msgstr "Эътибор берилмасин"
+
+#, fuzzy
+#~| msgid "As&k"
+#~ msgid "Ask"
+#~ msgstr "&Сўраш"
+
+#, fuzzy
+#~| msgid "&Deny"
+#~ msgid "Deny"
+#~ msgstr "&Рухсат берилмасин"
+
+#, fuzzy
+#~| msgid "Al&ways send"
+#~ msgid "Always send"
+#~ msgstr "&Ҳамиша жўнатиш"
+
+#, fuzzy
+#~ msgid "Quote original message:"
+#~ msgstr "Им&зо қўйиш"
+
+#, fuzzy
+#~| msgid "Nothin&g"
+#~ msgid "Nothing"
+#~ msgstr "Ҳеч &нарса"
+
+#, fuzzy
+#~| msgid "&Full message"
+#~ msgid "Full message"
+#~ msgstr "&Бутун хабар"
+
+#, fuzzy
+#~| msgid "Onl&y headers"
+#~ msgid "Only headers"
+#~ msgstr "&Фақат сарлавҳалар"
+
+#, fuzzy
+#~| msgid "Automatically import keys and certificates"
+#~ msgid "Automatically import keys and certificate"
+#~ msgstr "Калит ва сертификатларни автоматик импорт қилиш"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "Name of the custom template."
+#~ msgid "Name"
+#~ msgstr "Номи"
+
+#, fuzzy
+#~| msgid "To: "
+#~ msgctxt "@label:textbox Recipient mail address"
+#~ msgid "To:"
+#~ msgstr "Кимга: "
+
+#, fuzzy
+#~ msgctxt "Universal custom template type."
+#~ msgid "Universal"
+#~ msgstr "Умумий"
+
+#, fuzzy
+#~ msgctxt "Template type for forwarding messages."
+#~ msgid "Forward"
+#~ msgstr "&Узатиш"
+
+#, fuzzy
+#~ msgid "&Template type:"
+#~ msgstr "&Алмаштириш"
+
+#, fuzzy
+#~| msgid "Add Entry..."
+#~ msgid "Add Snippet"
+#~ msgstr "Қўшиш..."
+
+#~ msgid "&Name:"
+#~ msgstr "&Номи:"
+
+#, fuzzy
+#~| msgid "Add Account"
+#~ msgctxt "Group to which the snippet belongs."
+#~ msgid "Group:"
+#~ msgstr "Ҳисобни қўшиш"
+
+#, fuzzy
+#~| msgid "Edit Script..."
+#~ msgid "&Snippet:"
+#~ msgstr "Скриптни таҳрирлаш..."
+
+#, fuzzy
+#~| msgid "Shortcut:"
+#~ msgid "Sh&ortcut:"
+#~ msgstr "Тугмалар бирикмаси:"
+
+#, fuzzy
+#~| msgid "&Add..."
+#~ msgid "&Add"
+#~ msgstr "&Қўшиш..."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Template Configuration"
+#~ msgstr "Жўнатишни тасдиқлаш"
+
+#, fuzzy
+#~| msgid "New Message"
+#~ msgctxt "@title Message template"
+#~ msgid "New Message"
+#~ msgstr "Янги хабар"
+
+#, fuzzy
+#~ msgctxt "@title Message template"
+#~ msgid "Reply to Sender"
+#~ msgstr "&Жўнатувчига жавоб бериш:"
+
+#, fuzzy
+#~ msgctxt "@title Message template"
+#~ msgid "Reply to All / Reply to List"
+#~ msgstr "Ҳаммага ж&авоб бериш"
+
+#, fuzzy
+#~ msgctxt "@label:textbox Prefix for quoted message lines"
+#~ msgid "&Quote indicator:"
+#~ msgstr "Хабарлар жўнатилмоқда"
+
+#, fuzzy
+#~ msgid "Online Certificate Validation"
+#~ msgstr "Ҳеч қандай сертификат топилмади"
+
+#, fuzzy
+#~| msgid "Append S&ignature"
+#~ msgid "OCSP responder signature:"
+#~ msgstr "&Имзо қўйиш"
+
+#, fuzzy
+#~| msgid "&Do not send certificates"
+#~ msgid "Ignore service URL of certificates"
+#~ msgstr "Сертификатлар &жўнатилмасин"
+
+#~ msgid "Do not check certificate policies"
+#~ msgstr "Сертификат қоидалари текширилмасин"
+
+#, fuzzy
+#~| msgid "&Do not send certificates"
+#~ msgid "Fetch missing issuer certificates"
+#~ msgstr "Сертификатлар &жўнатилмасин"
+
+#~ msgid "Account Type: Local Account"
+#~ msgstr "Ҳисобнинг тури: Локал ҳисоб"
+
+#, fuzzy
+#~| msgid "File &location:"
+#~ msgid "File location:"
+#~ msgstr "Файл &манзили:"
+
+#~ msgid "Choo&se..."
+#~ msgstr "&Танлаш"
+
+#~ msgid "Locking Method"
+#~ msgstr "Қулфлаш усули"
+
+#~ msgid "&FCNTL"
+#~ msgstr "&FCNTL"
+
+#~ msgid "Non&e (use with care)"
+#~ msgstr "&Йўқ (эҳтиёт билан ишлатинг)"
+
+#, fuzzy
+#~ msgid "Include in m&anual mail check"
+#~ msgstr "&Почтани маълум вақт оралиғида текшириш"
+
+#, fuzzy
+#~| msgid "&Destination folder:"
+#~ msgid "Destination folder:"
+#~ msgstr "&Мўлжалланган жилд:"
+
+#, fuzzy
+#~ msgid "&Pre-command"
+#~ msgstr "&Буйруқни кўрсатиш:"
+
+#~ msgid "Set the language of the folder names"
+#~ msgstr "Жилд номлари учун тилни кўрсатиш"
+
+#, fuzzy
+#~| msgid "Set the language of the folder names"
+#~ msgid "&Language of the groupware folders:"
+#~ msgstr "Жилд номлари учун тилни кўрсатиш"
+
+#~ msgid "R&emove"
+#~ msgstr "&Олиб ташлаш"
+
+#~ msgid "Chec&k mail on startup"
+#~ msgstr "Ишга тушганда почтани те&кшириш"
+
+#~ msgid "New Mail Notification"
+#~ msgstr "Янги хабарга огоҳлантириш"
+
+#~ msgid "&Beep"
+#~ msgstr "&Бип"
+
+#, fuzzy
+#~| msgid "Show for each folder the number of newly arrived messages"
+#~ msgid "Show for each  folder the number of newly arrived messages"
+#~ msgstr "Ҳар бир жилд учун янги келган хабарлар сонини кўрсатиш"
+
+#~ msgid "Deta&iled new mail notification"
+#~ msgstr "Тафсилот&ли янги хабар огоҳлантириши"
+
+#~ msgid "Account Type: Maildir Account"
+#~ msgstr "Ҳисобнинг тури: Maildir ҳисоб"
+
+#, fuzzy
+#~| msgid "Folder &location:"
+#~ msgid "Folder location:"
+#~ msgstr "Жилд &манзили:"
+
+#, fuzzy
+#~ msgid "Include in &manual mail check"
+#~ msgstr "&Почтани маълум вақт оралиғида текшириш"
+
+#, fuzzy
+#~ msgid "&Pre-command:"
+#~ msgstr "&Буйруқни кўрсатиш:"
+
+#, fuzzy
+#~| msgid "Go to the next unread message"
+#~ msgctxt ""
+#~ "to be continued with \"do not loop\", \"loop in current folder\", and "
+#~ "\"loop in all folders\""
+#~ msgid "&When trying to find unread messages:"
+#~ msgstr "Кейинги ўқилмаган хабарга ўтиш"
+
+#, fuzzy
+#~| msgid "Do Not Move"
+#~ msgid "Do not Loop"
+#~ msgstr "Кўчирилмасин"
+
+#, fuzzy
+#~ msgid "Loop in Current Folder"
+#~ msgstr "Фақат очилган жилдларни кўрсатиш"
+
+#, fuzzy
+#~| msgid "Local Folders"
+#~ msgid "Loop in All Folders"
+#~ msgstr "Локал жилдлар"
+
+#, fuzzy
+#~| msgid "Local Folders"
+#~ msgid "Loop in All Marked Folders"
+#~ msgstr "Локал жилдлар"
+
+#, fuzzy
+#~| msgid "Error while renaming a folder."
+#~ msgctxt ""
+#~ "to be continued with \"jump to first new message\", \"jump to first "
+#~ "unread or new message\", and \"jump to last selected message\""
+#~ msgid "When ente&ring a folder:"
+#~ msgstr "Жилднинг номини ўзгартиришда хато рўй берди."
+
+#, fuzzy
+#~| msgid "&Import Messages..."
+#~ msgid "Jump to First New Message"
+#~ msgstr "Хабарларни &импорт қилиш"
+
+#, fuzzy
+#~| msgid "Go to Next Unread Message"
+#~ msgid "Jump to First Unread or New Message"
+#~ msgstr "Кейинги ўқилмаган хабарга ўтиш"
+
+#, fuzzy
+#~ msgid "Jump to Last Selected Message"
+#~ msgstr "Хабарларни ўчириш"
+
+#, fuzzy
+#~| msgid "Mark selected messages as read"
+#~ msgid "Mar&k selected message as read after"
+#~ msgstr "Танланган хабарларни ўқилган деб белгилаш"
+
+#~ msgid " sec"
+#~ msgstr " сония"
+
+#, fuzzy
+#~| msgid "Mailbox &format:"
+#~ msgid "Flat Files (\"mbox\" format)"
+#~ msgstr "Почта қутиси &формати:"
+
+#, fuzzy
+#~| msgid "Open this folder on startup:"
+#~ msgid "Open this folder on &startup:"
+#~ msgstr "Дастур ишга тушганда очиладиган жилд:"
+
+#~ msgid "Empty local &trash folder on program exit"
+#~ msgstr "Дастурдан чиқишда локал &чиқиндилар қутисини бўшатиш"
+
+#, fuzzy
+#~ msgid "Send queued mail on mail check"
+#~ msgstr "&Почтани маълум вақт оралиғида текшириш"
+
+#, fuzzy
+#~| msgid "Deta&iled new mail notification"
+#~ msgid "Verbose new mail notification"
+#~ msgstr "Тафсилот&ли янги хабар огоҳлантириши"
+
+#~ msgid "Specify e&ditor:"
+#~ msgstr "Таҳрирчини &кўрсатиш:"
+
+#, fuzzy
+#~| msgid "Show Quick Search"
+#~ msgid "Show folder quick search line edit"
+#~ msgstr "Қидириш панелини кўрсатиш"
+
+#, fuzzy
+#~| msgid "&Automatically sign messages"
+#~ msgid "A&utomatically insert signature"
+#~ msgstr "Хабарларни &автоматик имзолаш"
+
+#, fuzzy
+#~| msgid "Sho&w column:"
+#~ msgid "Word &wrap at column:"
+#~ msgstr "Устунни к&ўрсатиш:"
+
+#, fuzzy
+#~ msgid "Automatically request &message disposition notifications"
+#~ msgstr "Хабарлар рўйхати"
+
+#~ msgid "Autosave interval:"
+#~ msgstr "Авто-сақлаш оралиғи:"
+
+#, fuzzy
+#~| msgid "Append S&ignature"
+#~ msgid "Prepend separator to signature"
+#~ msgstr "&Имзо қўйиш"
+
+#, fuzzy
+#~| msgid "Do not show attachments in the message viewer"
+#~ msgid "Do not show a message preview pane"
+#~ msgstr "Иловаларни хабар кўрувчида бекитиш"
+
+#, fuzzy
+#~| msgid "Shor&t folder list"
+#~ msgid "Long folder list"
+#~ msgstr "&Қисқа жилдлар рўйхати"
+
+#, fuzzy
+#~| msgid "Shor&t folder list"
+#~ msgid "Short folder list"
+#~ msgstr "&Қисқа жилдлар рўйхати"
+
+#, fuzzy
+#~ msgid "Send Message Disposition Notifications with an empty sender."
+#~ msgstr "Хабарлар рўйхати"
+
+#, fuzzy
+#~ msgid "Message template for new message"
+#~ msgstr "Хабарлар рўйхати - Янги хабарлар"
+
+#, fuzzy
+#~ msgid "Message template for reply to all"
+#~ msgstr "Хабарлар рўйхати - Янги хабарлар"
+
+#, fuzzy
+#~ msgid "Message template for forward"
+#~ msgstr "Хабарлар рўйхати - Янги хабарлар"
+
+#, fuzzy
+#~ msgid "Quote characters"
+#~ msgstr "Хабарлар жўнатилмоқда"
+
+#, fuzzy
+#~ msgid "Quoted Message Text"
+#~ msgstr "Хабарлар жўнатилмоқда"
+
+#, fuzzy
+#~ msgid "Message Id"
+#~ msgstr "Хабар таркиби"
+
+#~ msgid "Date"
+#~ msgstr "Сана"
+
+#, fuzzy
+#~ msgid "To Field Address"
+#~ msgstr "&Электрон почта:"
+
+#, fuzzy
+#~ msgid "To Field Name"
+#~ msgstr "Исми-шарифи:"
+
+#, fuzzy
+#~ msgid "To Field First Name"
+#~ msgstr "Исми-шарифи:"
+
+#, fuzzy
+#~ msgid "To Field Last Name"
+#~ msgstr "Исми-шарифи:"
+
+#, fuzzy
+#~ msgid "CC Field Address"
+#~ msgstr "&Электрон почта:"
+
+#, fuzzy
+#~ msgid "CC Field Name"
+#~ msgstr "Исми-шарифи:"
+
+#, fuzzy
+#~ msgid "CC Field First Name"
+#~ msgstr "Исми-шарифи:"
+
+#, fuzzy
+#~ msgid "CC Field Last Name"
+#~ msgstr "Исми-шарифи:"
+
+#, fuzzy
+#~ msgid "From Field Address"
+#~ msgstr "&Электрон почта:"
+
+#, fuzzy
+#~ msgid "From Field Name"
+#~ msgstr "&Электрон почта:"
+
+#, fuzzy
+#~ msgid "From Field First Name"
+#~ msgstr "&Электрон почта:"
+
+#, fuzzy
+#~ msgid "From Field Last Name"
+#~ msgstr "&Электрон почта:"
+
+#, fuzzy
+#~| msgid "Additional Recipients"
+#~ msgid "Addresses of all recipients"
+#~ msgstr "Қўшимча қабул қилувчилар"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "Template value for subject of the message"
+#~ msgid "Subject"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~ msgid "Quoted Headers"
+#~ msgstr "Хабарлар жўнатилмоқда"
+
+#, fuzzy
+#~ msgid "Header Content"
+#~ msgstr "&Жилд таркиби:"
+
+#, fuzzy
+#~ msgid "From field Name"
+#~ msgstr "&Электрон почта:"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "Template subject command."
+#~ msgid "Subject"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~| msgid "Signature"
+#~ msgctxt "Inserts user signature, also known as footer, into message"
+#~ msgid "Signature"
+#~ msgstr "Имзо"
+
+#, fuzzy
+#~ msgid "Insert File Content"
+#~ msgstr "&Файлдан қўйиш"
+
+#, fuzzy
+#~ msgid "Template Comment"
+#~ msgstr "&Жилд таркиби:"
+
+#, fuzzy
+#~ msgid "No Operation"
+#~ msgstr "Сервер амали"
+
+#, fuzzy
+#~ msgid "&Insert Command"
+#~ msgstr "&Файлдан қўйиш"
+
+#, fuzzy
+#~ msgid "Insert Command"
+#~ msgstr "&Файлдан қўйиш"
+
+#, fuzzy
+#~ msgid "Original Message"
+#~ msgstr "Им&зо қўйиш"
+
+#, fuzzy
+#~ msgctxt "Miscellaneous template commands menu"
+#~ msgid "Miscellaneous"
+#~ msgstr "Нотўғри ёзилган сўзлар"
+
+#, fuzzy
+#~ msgid "Downgrade"
+#~ msgstr "Пастга"
+
+#, fuzzy
+#~ msgid "Only Current Folder"
+#~ msgstr "Фақат очилган жилдларни кўрсатиш"
+
+#, fuzzy
+#~| msgid "&Refresh"
+#~ msgid "Refresh &Cache"
+#~ msgstr "&Янгилаш"
+
+#~ msgid "You must synchronize with the server before renaming IMAP folders."
+#~ msgstr ""
+#~ "IMAP жилдларнинг номини ўзгартиришдан олдин сервер билан тенглаштириш "
+#~ "керак."
+
+#~ msgid "Synchronizing"
+#~ msgstr "Тенглаштирилмоқда"
+
+#~ msgid "Connecting to %1"
+#~ msgstr "%1 билан алоқа ўрнатилмоқда"
+
+#~ msgid "Checking permissions"
+#~ msgstr "Ҳуқуқлар текширилмоқда"
+
+#~ msgid "Renaming folder"
+#~ msgstr "Жилднинг номи ўзгартирилмоқда"
+
+#~ msgid "Deleting folders from server"
+#~ msgstr "Жилдлар сервердан ўчирилмоқда"
+
+#~ msgid "Retrieving message list"
+#~ msgstr "Хабарлар рўйхати олинмоқда"
+
+#~ msgid "No messages to delete..."
+#~ msgstr "Ўчирилиши керак бўлган хабар йўқ..."
+
+#~ msgid "Retrieving new messages"
+#~ msgstr "Янги хабарлар олинмоқда"
+
+#~ msgid "No new messages from server"
+#~ msgstr "Серверда янги хабар йўқ"
+
+#~ msgid "Setting permissions"
+#~ msgstr "Ҳуқуқлар мосланмоқда"
+
+#, fuzzy
+#~ msgid "Getting quota information"
+#~ msgstr "Жилд маълумотларини олишда хато рўй берди."
+
+#~ msgid "Updating cache file"
+#~ msgstr "Кэш файли янгиланмоқда"
+
+#~ msgid "Synchronization done"
+#~ msgstr "Тенглаштириш бажарилди"
+
+#~ msgid "Uploading messages to server"
+#~ msgstr "Хабарлар серверга ёзиб қўйилмоқда"
+
+#~ msgid "No messages to upload to server"
+#~ msgstr "Серверга ёзиб қўйиладиган хабарлар йўқ"
+
+#~ msgid "Creating subfolders on server"
+#~ msgstr "Серверда туб жилдлар яратилмоқда"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt><p>Mails on the server in folder <b>%1</b> were deleted. Do you want "
+#~ "to delete them locally?</p><p>UIDs: %2</p></qt>"
+#~ msgstr ""
+#~ "<qt><p><b>%1</b> жилди ўчирилганга ўхшайди. Уни сервердан ҳам ўчиришни "
+#~ "истайсизми?</p></qt>"
+
+#~ msgid "Deleting removed messages from server"
+#~ msgstr "Олиб ташланган хабарлар сервердан ўчирилмоқда"
+
+#~ msgid ""
+#~ "<qt><p>It seems that the folder <b>%1</b> was deleted. Do you want to "
+#~ "delete it from the server?</p></qt>"
+#~ msgstr ""
+#~ "<qt><p><b>%1</b> жилди ўчирилганга ўхшайди. Уни сервердан ҳам ўчиришни "
+#~ "истайсизми?</p></qt>"
+
+#, fuzzy
+#~| msgid "C&ancel"
+#~ msgid "Canceled"
+#~ msgstr "&Бекор қилиш"
+
+#, fuzzy
+#~ msgid "Move"
+#~ msgstr "Кўчириш:"
+
+#~ msgid "Do Not Move"
+#~ msgstr "Кўчирилмасин"
+
+#, fuzzy
+#~| msgid "Only check for new mail"
+#~ msgid ""
+#~ "Error while checking account %1 for new mail:\n"
+#~ "%2"
+#~ msgstr "Фақат янги хабарга текшириш"
+
+#~ msgctxt ""
+#~ "%1: identity name. Used in the config dialog, section Identity, to "
+#~ "indicate the default identity"
+#~ msgid "%1 (Default)"
+#~ msgstr "%1 (Андоза)"
+
+#~ msgid "Identity Name"
+#~ msgstr "Шахсият номи"
+
+#~ msgid "Email Address"
+#~ msgstr "Электрон почта"
+
+#, fuzzy
+#~| msgid "Add as Attachment"
+#~ msgid "Add as &Attachment"
+#~ msgstr "Илова сифатида қўшиш"
+
+#~ msgid "Name of the attachment:"
+#~ msgstr "Илова номи:"
+
+#, fuzzy
+#~| msgid "Add as Text"
+#~ msgid "Add as &Text"
+#~ msgstr "Матн сифатида қўшиш"
+
+#, fuzzy
+#~| msgid "To"
+#~ msgctxt "@label:listbox Recipient of an email message."
+#~ msgid "To"
+#~ msgstr "Кимга"
+
+#, fuzzy
+#~| msgid "CC"
+#~ msgctxt "@label:listbox Carbon Copy recipient of an email message."
+#~ msgid "CC"
+#~ msgstr "Нусха"
+
+#, fuzzy
+#~| msgid "BCC"
+#~ msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+#~ msgid "BCC"
+#~ msgstr "BCC"
+
+#, fuzzy
+#~| msgid "Se&lect..."
+#~ msgctxt "@action:button Open recipient selection dialog."
+#~ msgid "Se&lect..."
+#~ msgstr "&Танлаш"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "Select recipients from address book"
+#~ msgstr "Манзиллар дафтарига қўшиш"
+
+#, fuzzy
+#~ msgctxt "@info:status No recipients selected"
+#~ msgid "No recipients"
+#~ msgstr "<қабул қилувчилар>"
+
+#, fuzzy
+#~ msgctxt "@info:status Number of recipients selected"
+#~ msgid "1 recipient"
+#~ msgid_plural "%1 recipients"
+#~ msgstr[0] "1 қабул қилувчи"
+
+#~ msgid "Maintainer"
+#~ msgstr "Таъминловчи"
+
+#~ msgid "Original author"
+#~ msgstr "Биринчи муаллиф"
+
+#~ msgid "Former maintainer"
+#~ msgstr "Олдинги таъминловчи"
+
+#, fuzzy
+#~| msgid "Former maintainer"
+#~ msgid "Former co-maintainer"
+#~ msgstr "Олдинги таъминловчи"
+
+#~ msgid "Core developer"
+#~ msgstr "Асосий тузувчи"
+
+#, fuzzy
+#~| msgid "Core developer"
+#~ msgid "Former core developer"
+#~ msgstr "Асосий тузувчи"
+
+#, fuzzy
+#~| msgid "No messages to delete..."
+#~ msgid "New message list and new folder tree"
+#~ msgstr "Ўчирилиши керак бўлган хабар йўқ..."
+
+#~ msgid "Anti-virus support"
+#~ msgstr "Антивирус қўлайлиги"
+
+#~ msgid "POP filters"
+#~ msgstr "POP филтерлар"
+
+#, fuzzy
+#~| msgid "(c) 1997-2005, The KMail developers"
+#~ msgid "(c) 1997-2009, The KMail developers"
+#~ msgstr "(C) 1997-2005, KMail тузувчилари"
+
+#~ msgid "Certificate Signature Request"
+#~ msgstr "Сертификат имзоси талаб қилинади"
+
+#~ msgid "KMail is currently in offline mode. How do you want to proceed?"
+#~ msgstr "KMail ҳозир офлайн ҳолатида. Қандай давом этмоқчисиз?"
+
+#~ msgid "Online/Offline"
+#~ msgstr "Онлайн/офлайн"
+
+#~ msgid "outbox"
+#~ msgstr "Жўнатиш қутиси"
+
+#~ msgid "sent-mail"
+#~ msgstr "Жўнатилган"
+
+#~ msgid "trash"
+#~ msgstr "Чиқиндилар қутиси"
+
+#, fuzzy
+#~ msgid "templates"
+#~ msgstr "&Алмаштириш"
+
+#~ msgid ""
+#~ "File %1 exists.\n"
+#~ "Do you want to replace it?"
+#~ msgstr ""
+#~ "%1 файли аллақачон мавжуд.\n"
+#~ "Уни алмаштиришни истайсизми?"
+
+#~ msgid "Save to File"
+#~ msgstr "Файлга сақлаш"
+
+#~ msgid "&Replace"
+#~ msgstr "&Алмаштириш"
+
+#~ msgid "Are you sure you want to empty the trash folders of all accounts?"
+#~ msgstr ""
+#~ "Чиқиндилар қутисини ҳамма ҳисоблар учун бўшатишга ишончингиз комилми?"
+
+#~ msgid "New Message To..."
+#~ msgstr "Хат жўнатиш"
+
+#~ msgid "Reply To..."
+#~ msgstr "Жавоб бериш"
+
+#~ msgid "Forward To..."
+#~ msgstr "... га узатиш"
+
+#~ msgid "Bookmark This Link"
+#~ msgstr "Боғни хатчўпларга сақлаш"
+
+#~ msgid "Save Link As..."
+#~ msgstr "Боғни сақлаш"
+
+#~ msgid ""
+#~ "<h2 style='margin-top: 0px;'>Retrieving Folder Contents</h2><p>Please "
+#~ "wait . . .</p>&nbsp;"
+#~ msgstr ""
+#~ "<h2 style='margin-top: 0px;'>Жилднинг таркиби олинмоқда</h2><p>Илтимос "
+#~ "кутиб туринг. . .</p>&nbsp;"
+
+#~ msgid "Could not send MDN."
+#~ msgstr "MDN жўнатиб бўлмади."
+
+#~ msgid "Please wait"
+#~ msgstr "Илтимос кутиб туринг"
+
+#, fuzzy
+#~| msgid "<qt>File <b>%1</b> exists.<br>Do you want to replace it?</qt>"
+#~ msgctxt "@info"
+#~ msgid "File <filename>%1</filename> exists.<nl/>Do you want to replace it?"
+#~ msgstr ""
+#~ "<qt><b>%1</b> номли файл мавжуд.<br>Уни алмаштиришни истайсизми?</qt>"
+
+#~ msgid "Open Message"
+#~ msgstr "Хабарни очиш"
+
+#~ msgid "The file does not contain a message."
+#~ msgstr "Файл таркибида хабар мавжуд эмас."
+
+#, fuzzy
+#~ msgid "Send As Digest"
+#~ msgstr "Имзоламасдан жўнатиш"
+
+#~ msgid "Not enough free disk space?"
+#~ msgstr "Дискда бўш жой етишмаяптими?"
+
+#~ msgid "Deleting messages"
+#~ msgstr "Хабарларни ўчириш"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgid "Mail: %1"
+#~ msgstr "Хат"
+
+#~ msgid "&Identity:"
+#~ msgstr "Ша&хсият:"
+
+#~ msgid "&Dictionary:"
+#~ msgstr "&Луғат:"
+
+#~ msgid "&Sent-Mail folder:"
+#~ msgstr "Жўнатилган ж&илди:"
+
+#~ msgctxt "sender address field"
+#~ msgid "&From:"
+#~ msgstr "&Кимдан:"
+
+#, fuzzy
+#~| msgid "Sticky"
+#~ msgctxt "@option:check Sticky identity."
+#~ msgid "Sticky"
+#~ msgstr "Ёпишқоқ"
+
+#~ msgid ""
+#~ "Autosaving the message as %1 failed.\n"
+#~ "Reason: %2"
+#~ msgstr ""
+#~ "Хабарни \"%1\" сифатида авто-сақлаш муваффақиятсиз тугади.\n"
+#~ "Сабаби: %2"
+
+#~ msgid "Autosaving Failed"
+#~ msgstr "Авто-сақлаш муваффақиятсиз тугади"
+
+#~ msgid "&Send Mail"
+#~ msgstr "Хатни &жўнатиш"
+
+#, fuzzy
+#~ msgid "&Send Mail Via"
+#~ msgstr "&Sendmail"
+
+#, fuzzy
+#~ msgid "Send"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~ msgid "Send &Later Via"
+#~ msgstr "&Кейинроқ жўнатиш"
+
+#, fuzzy
+#~| msgid "Queued"
+#~ msgid "Queue"
+#~ msgstr "Навбатда"
+
+#, fuzzy
+#~ msgid "Save as &Draft"
+#~ msgstr "&Андоза деб белгилаш"
+
+#, fuzzy
+#~ msgid "Save as &Template"
+#~ msgstr "&Алмаштириш"
+
+#~ msgid "&Insert File..."
+#~ msgstr "&Файлдан қўйиш"
+
+#, fuzzy
+#~ msgid "&Insert File Recent"
+#~ msgstr "&Файлдан қўйиш"
+
+#~ msgid "&New Composer"
+#~ msgstr "&Янги хабар яратувчи"
+
+#~ msgid "New Main &Window"
+#~ msgstr "Янг асосий &ойна"
+
+#~ msgid "Select &Recipients..."
+#~ msgstr "Қабул қилувчи&ларни танлаш"
+
+#~ msgid "Paste as Attac&hment"
+#~ msgstr "&Илова сифатида қўйиш"
+
+#~ msgid "Cl&ean Spaces"
+#~ msgstr "Бўш жойларни ўчи&риш"
+
+#, fuzzy
+#~| msgid "&Urgent"
+#~ msgctxt "@action:inmenu Mark the email as urgent."
+#~ msgid "&Urgent"
+#~ msgstr "&Зарур"
+
+#~ msgid "Se&t Encoding"
+#~ msgstr "&Кодлаш усулини танлаш"
+
+#~ msgid "&Automatic Spellchecking"
+#~ msgstr "&Имлони авто-текшириш"
+
+#~ msgid "Auto-Detect"
+#~ msgstr "Авто-аниқлаш"
+
+#~ msgid "Formatting (HTML)"
+#~ msgstr "Форматлаш (HTML)"
+
+#, fuzzy
+#~| msgid "Use HTML"
+#~ msgid "HTML"
+#~ msgstr "HTML'дан фойдаланиш"
+
+#~ msgid "&Identity"
+#~ msgstr "&Шахсият"
+
+#~ msgid "&Dictionary"
+#~ msgstr "&Луғат"
+
+#~ msgid "&Sent-Mail Folder"
+#~ msgstr "Жўнатилган ж&илди"
+
+#~ msgid "&From"
+#~ msgstr "&Кимдан"
+
+#, fuzzy
+#~| msgid "S&ubject"
+#~ msgctxt "@action:inmenu Show the subject in the composer window."
+#~ msgid "S&ubject"
+#~ msgstr "&Мавзу"
+
+#~ msgid "Append S&ignature"
+#~ msgstr "&Имзо қўйиш"
+
+#, fuzzy
+#~| msgid "Append S&ignature"
+#~ msgid "Pr&epend Signature"
+#~ msgstr "&Имзо қўйиш"
+
+#~ msgid "&Attach File..."
+#~ msgstr "Файлни &илова қилиш"
+
+#, fuzzy
+#~| msgid "&Attach"
+#~ msgid "Attach"
+#~ msgstr "&Илова"
+
+#~ msgid "&Remove Attachment"
+#~ msgstr "Иловани &олиб ташлаш"
+
+#~ msgid "&Save Attachment As..."
+#~ msgstr "Иловани &сақлаш"
+
+#~ msgid "Attachment Pr&operties"
+#~ msgstr "Илованинг &хоссалари"
+
+#~ msgid "&Spellchecker..."
+#~ msgstr "&Имлони текшириш"
+
+#~ msgid "Spellchecker"
+#~ msgstr "Имлони текшириш"
+
+#~ msgid "&Sign Message"
+#~ msgstr "Им&зо қўйиш"
+
+#~ msgid "Sign"
+#~ msgstr "Имзо"
+
+#~ msgid "Reset Font Settings"
+#~ msgstr "Шрифт мосламаларини тиклаш"
+
+#, fuzzy
+#~ msgid "Configure KMail..."
+#~ msgstr "KMail мослама&си"
+
+#, fuzzy
+#~ msgid " Spellcheck: %1 "
+#~ msgstr "Имлони текшириш"
+
+#~ msgid " Column: %1 "
+#~ msgstr " Устун: %1 "
+
+#, fuzzy
+#~| msgid " Line: %1 "
+#~ msgctxt "Shows the linenumber of the cursor position."
+#~ msgid " Line: %1 "
+#~ msgstr " Сатр: %1 "
+
+#, fuzzy
+#~ msgid "Re&save as Template"
+#~ msgstr "&Алмаштириш"
+
+#~ msgid "Close Composer"
+#~ msgstr "Хабар яратувчини ёпиш"
+
+#~ msgid "&Send as Is"
+#~ msgstr "&Шундай жўнатиш"
+
+#~ msgid "Attach File"
+#~ msgstr "Файлни илова қилиш"
+
+#~ msgid "OpenPGP key 0x%1"
+#~ msgstr "OpenPGP калити 0х%1"
+
+#~ msgctxt "to view"
+#~ msgid "View"
+#~ msgstr "Кўриш"
+
+#, fuzzy
+#~| msgid "Edit Script..."
+#~ msgid "Edit With..."
+#~ msgstr "Скриптни таҳрирлаш..."
+
+#~ msgid "Add Attachment..."
+#~ msgstr "Илова қўшиш"
+
+#, fuzzy
+#~| msgid "Keep"
+#~ msgctxt "Do not compress"
+#~ msgid "Keep"
+#~ msgstr "Қолдириш"
+
+#~ msgid "Compress"
+#~ msgstr "Қисиш"
+
+#~ msgid "Save Attachment As"
+#~ msgstr "Иловани сақлаш"
+
+#, fuzzy
+#~| msgid "Paste as Attac&hment"
+#~ msgid "Insert clipboard text as attachment"
+#~ msgstr "&Илова сифатида қўйиш"
+
+#, fuzzy
+#~ msgid ""
+#~ "KMail is currently in offline mode. Your messages will be kept in the "
+#~ "outbox until you go online."
+#~ msgstr "KMail ҳозир офлайн ҳолатида. Қандай давом этмоқчисиз?"
+
+#, fuzzy
+#~ msgid "To: field is empty. Send message anyway?"
+#~ msgstr "Сиз мавзуни аниқламадингиз. Бунга қарамасдан хабарни жўнатайми?"
+
+#, fuzzy
+#~ msgid "No To: specified"
+#~ msgstr "Мавзу аниқланмаган"
+
+#~ msgid "You did not specify a subject. Send message anyway?"
+#~ msgstr "Сиз мавзуни аниқламадингиз. Бунга қарамасдан хабарни жўнатайми?"
+
+#~ msgid "No Subject Specified"
+#~ msgstr "Мавзу аниқланмаган"
+
+#~ msgid "&Specify the Subject"
+#~ msgstr "&Мавзуни кўрсатиш"
+
+#, fuzzy
+#~ msgid "Sign (delete markup)"
+#~ msgstr "Жилдни ўч&ириш"
+
+#~ msgid "About to send email..."
+#~ msgstr "Хабар жўнатилиш арафасида..."
+
+#~ msgid "Send Confirmation"
+#~ msgstr "Жўнатишни тасдиқлаш"
+
+#, fuzzy
+#~ msgid "Too many recipients"
+#~ msgstr "<қабул қилувчилар>"
+
+#, fuzzy
+#~| msgid "Additional Recipients"
+#~ msgid "&Edit Recipients"
+#~ msgstr "Қўшимча қабул қилувчилар"
+
+#, fuzzy
+#~| msgid "Login Information"
+#~ msgid "Lose Formatting"
+#~ msgstr "Фойдаланувчи маълумотлари"
+
+#, fuzzy
+#~ msgid "Spellcheck: on"
+#~ msgstr "Имлони текшириш"
+
+#, fuzzy
+#~ msgid "Spellcheck: off"
+#~ msgstr "Имлони текшириш"
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message will be signed"
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Message will not be signed"
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~ msgid "Message will be encrypted"
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#, fuzzy
+#~ msgid "Message will not be encrypted"
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#~ msgid "POP3 Filter Rules"
+#~ msgstr "POP3 филтер қоидалари"
+
+#~ msgid "Filter Rules"
+#~ msgstr "Филтер қоидалари"
+
+#, fuzzy
+#~| msgid "&Import"
+#~ msgid "Import..."
+#~ msgstr "&Импорт қилиш"
+
+#, fuzzy
+#~| msgid "&Import"
+#~ msgid "Export..."
+#~ msgstr "&Импорт қилиш"
+
+#~ msgid "Available Filters"
+#~ msgstr "Мавжуд филтерлар"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "General mail filter settings."
+#~ msgid "General"
+#~ msgstr "Умумий"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "Advanced mail filter settings."
+#~ msgid "Advanced"
+#~ msgstr "Қўшимча"
+
+#~ msgid "Filter Action"
+#~ msgstr "Филтер амали"
+
+#~ msgid "Global Options"
+#~ msgstr "Умумий параметрлар"
+
+#~ msgid "Filter Actions"
+#~ msgstr "Филтер амаллари"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Қўшимча параметрлар"
+
+#~ msgid "Apply this filter to incoming messages:"
+#~ msgstr "Ушбу филтерни олиндаган хабарларга қўллаш:"
+
+#~ msgid "from all accounts"
+#~ msgstr "ҳамма ҳисоблардан"
+
+#~ msgid "Account Name"
+#~ msgstr "Ҳисобнинг номи"
+
+#, fuzzy
+#~| msgid "Apply this filter to &sent messages"
+#~ msgid "Apply this filter &before sending messages"
+#~ msgstr "Ушбу филтерни &жўнатиладиган хабарларга қўллаш"
+
+#~ msgid "Apply this filter to &sent messages"
+#~ msgstr "Ушбу филтерни &жўнатиладиган хабарларга қўллаш"
+
+#~ msgid "Apply this filter on manual &filtering"
+#~ msgstr "Ушбу филтерни қўл&бола филтерлашда қўллаш"
+
+#~ msgid "If this filter &matches, stop processing here"
+#~ msgstr "Агар ушбу филтр &мос келса, филтерлашни тўхтатиш"
+
+#~ msgid "Shortcut:"
+#~ msgstr "Тугмалар бирикмаси:"
+
+#~ msgid "Icon for this filter:"
+#~ msgstr "Бу филтер учун нишонча:"
+
+#, fuzzy
+#~| msgid "Up"
+#~ msgctxt "Move selected filter up."
+#~ msgid "Up"
+#~ msgstr "Юқорига"
+
+#, fuzzy
+#~| msgid "Down"
+#~ msgctxt "Move selected filter down."
+#~ msgid "Down"
+#~ msgstr "Пастга"
+
+#~ msgid "Rename..."
+#~ msgstr "Номини ўзгартириш"
+
+#, fuzzy
+#~| msgid "New"
+#~ msgctxt "@action:button in filter list manipulator"
+#~ msgid "New"
+#~ msgstr "Янги"
+
+#, fuzzy
+#~ msgid "Delete"
+#~ msgstr "Ўчирилган"
+
+#~ msgid "Please select an action."
+#~ msgstr "Илтимос амални танланг."
+
+#~ msgid "&Download mail"
+#~ msgstr "Хатни ё&зиб олиш"
+
+#~ msgid "Download mail la&ter"
+#~ msgstr "Хатни &кейинроқ ёзиб олиш"
+
+#~ msgid "D&elete mail from server"
+#~ msgstr "Хатни &сервердан ўчириш"
+
+#~ msgid "Edit..."
+#~ msgstr "Таҳрирлаш"
+
+#~ msgid "Select Folder"
+#~ msgstr "Жилдни танлаш"
+
+#~ msgid "Unknown folder '%1'"
+#~ msgstr "'%1' ноаниқ жилд"
+
+#, fuzzy
+#~ msgid "Please select a folder"
+#~ msgstr "Илтимос амални танланг."
+
+#, fuzzy
+#~ msgid "Mail Expiry Properties"
+#~ msgstr "Жилднинг хоссалари"
+
+#, fuzzy
+#~| msgid "There are no unread messages"
+#~ msgid "Expire unread messages after"
+#~ msgstr "Ўқилмаган хабар йўқ"
+
+#, fuzzy
+#~| msgid "Moving messages"
+#~ msgid "Move expired messages to:"
+#~ msgstr "Хабарларни кўчириш"
+
+#, fuzzy
+#~| msgid "Delete permanently"
+#~ msgid "Delete expired messages permanently"
+#~ msgstr "Бутунлай ўчириш"
+
+#~ msgid "No Folder Selected"
+#~ msgstr "Жилд танланмаган"
+
+#~ msgid "Account type is not supported."
+#~ msgstr "Ҳисоб тури қўлланилмайди."
+
+#~ msgid "Configure Account"
+#~ msgstr "Ҳисобни мослаш"
+
+#~ msgid "Account Type: Disconnected IMAP Account"
+#~ msgstr "Ҳисоб тури: Узилган IMAP ҳисоби"
+
+#~ msgid "Account Type: IMAP Account"
+#~ msgstr "Ҳисобнинг тури: IMAP ҳисоби"
+
+#, fuzzy
+#~| msgid "&Filtering"
+#~ msgid "Filtering"
+#~ msgstr "&Филтерлаш"
+
+#~ msgid "Please specify a server and port on the General tab first."
+#~ msgstr "Илтимос олдин Умумий табда сервер ва портни кўрсатинг."
+
+#~ msgid "Only local files are currently supported."
+#~ msgstr "Ҳозирча фақат локал файллар қўлланилади."
+
+#, fuzzy
+#~ msgid "Fetching Namespaces..."
+#~ msgstr "Хабарларни ўчириш"
+
+#, fuzzy
+#~| msgid "Empty"
+#~ msgctxt "Empty namespace string."
+#~ msgid "Empty"
+#~ msgstr "Бўш"
+
+#, fuzzy
+#~| msgid "Other Users"
+#~ msgctxt "Namespace accessible for others."
+#~ msgid "Other Users"
+#~ msgstr "Бошқа фойдаланувчилар"
+
+#~ msgid "Shared"
+#~ msgstr "Бўлишилган"
+
+#~ msgid "Anti-Spam Wizard"
+#~ msgstr "Антиспам ёрдамчиси"
+
+#~ msgid "Anti-Virus Wizard"
+#~ msgstr "Антивирус ёрдамчиси"
+
+#~ msgid "Welcome to the KMail Anti-Spam Wizard"
+#~ msgstr "KMail антиспам ёрдамчисига марҳамат"
+
+#~ msgid "Welcome to the KMail Anti-Virus Wizard"
+#~ msgstr "KMail антивирус ёрдамчисига марҳамат"
+
+#~ msgid "Summary of changes to be made by this wizard"
+#~ msgstr "Ушбу ёрдамчи томонидан қилинадиган ўзгартиришлар ҳисоботи"
+
+#, fuzzy
+#~| msgid "Classify as spam"
+#~ msgid "Classify as Spam"
+#~ msgstr "Спам деб туркумлаш"
+
+#~ msgid "Spam"
+#~ msgstr "Спэм"
+
+#, fuzzy
+#~| msgid "Classify as NOT spam"
+#~ msgid "Classify as NOT Spam"
+#~ msgstr "Спам эмас деб туркумлаш"
+
+#~ msgid "Ham"
+#~ msgstr "Хэм"
+
+#~ msgid "Scanning for %1..."
+#~ msgstr "%1 қидирилмоқда..."
+
+#~ msgid "Scanning for anti-spam tools finished."
+#~ msgstr "Антиспам воситаларини қидириш якунланди."
+
+#~ msgid "Scanning for anti-virus tools finished."
+#~ msgstr "Антивирус воситаларини қидириш якунланди."
+
+#, fuzzy
+#~ msgid ""
+#~ "<p>Sorry, no spam detection tools have been found. Install your spam "
+#~ "detection software and re-run this wizard.</p>"
+#~ msgstr ""
+#~ "<p>Спамни аниқлаш воситалари топилмади. Уларни ўрнатиб ушбу ёрдамчини "
+#~ "қайта ишга туширинг.</p>"
+
+#~ msgid "Scanning complete. No anti-virus tools found."
+#~ msgstr "Қидириш тугади. Антивирус воситалари топилмади."
+
+#, fuzzy
+#~| msgid "<br>Spam messages are moved into the folder named <i>"
+#~ msgid ""
+#~ "<p>Messages classified as spam are marked as read.<br />Spam messages are "
+#~ "moved into the folder named <i>%1</i>.</p>"
+#~ msgstr "<br>Спам хабарлари қуйидаги жилдга кўчирилди <i>"
+
+#, fuzzy
+#~| msgid "<br>Spam messages are not moved into a certain folder.</p>"
+#~ msgid ""
+#~ "<p>Messages classified as spam are marked as read.<br />Spam messages are "
+#~ "not moved into a certain folder.</p>"
+#~ msgstr "<br>Спам хабарлар белгиланган жилдга кўчирилмади.</p>"
+
+#, fuzzy
+#~| msgid "<br>Spam messages are moved into the folder named <i>"
+#~ msgid ""
+#~ "<p>Messages classified as spam are not marked as read.<br />Spam messages "
+#~ "are moved into the folder named <i>%1</i>.</p>"
+#~ msgstr "<br>Спам хабарлари қуйидаги жилдга кўчирилди <i>"
+
+#, fuzzy
+#~| msgid "<br>Spam messages are not moved into a certain folder.</p>"
+#~ msgid ""
+#~ "<p>Messages classified as spam are not marked as read.<br />Spam messages "
+#~ "are not moved into a certain folder.</p>"
+#~ msgstr "<br>Спам хабарлар белгиланган жилдга кўчирилмади.</p>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>The folder for messages classified as unsure (probably spam) is <i>"
+#~ msgid ""
+#~ "<p>The folder for messages classified as unsure (probably spam) is <i>%1</"
+#~ "i>.</p>"
+#~ msgstr "<p>Ишончсиз (спам бўлиши мумкин) хабарлар учун жилд <i>"
+
+#, fuzzy
+#~| msgid "<p>The wizard will create the following filters:<ul>"
+#~ msgid "<p>The wizard will create the following filters:<ul>%1</ul></p>"
+#~ msgstr "<p>Ёрдамчи қуйидаги филтрларни яратади:<ul>"
+
+#, fuzzy
+#~| msgid "<p>The wizard will replace the following filters:<ul>"
+#~ msgid "<p>The wizard will replace the following filters:<ul>%1</ul></p>"
+#~ msgstr "<p>Ёрдамчи қуйидаги филтрларни алмаштиради:<ul>"
+
+#~ msgid ""
+#~ "The wizard will search for any tools to do spam detection\n"
+#~ "and setup KMail to work with them."
+#~ msgstr ""
+#~ "Ёрдамчи спамга текширувчи ҳар қандай воситани қидиради\n"
+#~ "ва KMail'ни улар билан ишлашга мослайди."
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>Please select the tools to be used for the spam detection and go to "
+#~| "the next page.</p>"
+#~ msgid ""
+#~ "<p>Please select the tools to be used for the detection and go to the "
+#~ "next page.</p>"
+#~ msgstr ""
+#~ "<p>Илтимос спам текширадиган воситани танланг ва кейинги ойнага ўтинг.</p>"
+
+#~ msgid "&Mark detected spam messages as read"
+#~ msgstr "Спам деб аниқланган хабарларни ўқилган деб &белгилаш"
+
+#~ msgid "Mark messages which have been classified as spam as read."
+#~ msgstr "Спам деб белгиланган хабарларни ўқилган деб белгилаш."
+
+#~ msgid "Move &known spam to:"
+#~ msgstr "&Аниқланган спамни бу ерга кўчириш:"
+
+#~ msgid ""
+#~ "The default folder for spam messages is the trash folder, but you may "
+#~ "change that in the folder view below."
+#~ msgstr ""
+#~ "Спам хабарлари учун андоза жилд чиқиндилар қутиси, лекин буни қуйидаги "
+#~ "жилдларга алмаштиришингиз мумкин."
+
+#, fuzzy
+#~ msgid "Move &probable spam to:"
+#~ msgstr "Янги хабар"
+
+#~ msgid "Check messages using the anti-virus tools"
+#~ msgstr "Хабарларни антивирус ёрдамида текшириш"
+
+#~ msgid "Move detected viral messages to the selected folder"
+#~ msgstr "Вирус бор деб аниқланган хабарларни танланган жилдга кўчириш"
+
+#, fuzzy
+#~ msgctxt "@info:status"
+#~ msgid "Checking account: %1"
+#~ msgstr "Ҳисоб текширилмоқда: "
+
+#, fuzzy
+#~| msgid " completed"
+#~ msgctxt "@info:status Number of emails retrieved."
+#~ msgid " completed"
+#~ msgstr " бажарилди"
+
+#~ msgid "Account %1"
+#~ msgstr "Ҳисоб %1"
+
+#~ msgid ""
+#~ "Account %1 has no mailbox defined:\n"
+#~ "mail checking aborted;\n"
+#~ "check your account settings."
+#~ msgstr ""
+#~ "%1 ҳисоби учун почта қутиси топилмади:\n"
+#~ "почтани текшириш тўхтатилди;\n"
+#~ "ҳисоб мосламасини текширинг."
+
+#~ msgid "Checking account %1 for new mail"
+#~ msgstr "Ҳисоб %1 янги хат борлигига текширилмоқда"
+
+#~ msgid "POP Account"
+#~ msgstr "POP ҳисоби"
+
+#~ msgid "IMAP Account"
+#~ msgstr "IMAP ҳисоби"
+
+#~ msgid ""
+#~ "You need to add an account in the network section of the settings in "
+#~ "order to receive mail."
+#~ msgstr ""
+#~ "Почта қабул қилиш учун мосламаларнинг тармоқ қисмига ҳисоб қўшишингиз "
+#~ "керак."
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt ""
+#~ "%1: name; %2: number appended to it to make it uniqueamong a list of names"
+#~ msgid "%1 #%2"
+#~ msgstr "Хат"
+
+#~ msgctxt "Message->"
+#~ msgid "&Reply"
+#~ msgstr "&Жавоб бериш"
+
+#~ msgid "Reply to A&uthor..."
+#~ msgstr "Муаллифга ж&авоб бериш"
+
+#~ msgid "Mar&k Message"
+#~ msgstr "Хабарни &белгилаш"
+
+#~ msgid "Mark Message as &Read"
+#~ msgstr "Ўқи&лган"
+
+#~ msgid "Mark selected messages as read"
+#~ msgstr "Танланган хабарларни ўқилган деб белгилаш"
+
+#~ msgid "Mark Message as &New"
+#~ msgstr "&Янги"
+
+#~ msgid "Mark selected messages as new"
+#~ msgstr "Танланган хабарларни янги деб белгилаш"
+
+#~ msgid "Mark Message as &Unread"
+#~ msgstr "&Ўқилмаган"
+
+#~ msgid "Mark selected messages as unread"
+#~ msgstr "Танланган хабарларни ўқилмаган деб белгилаш"
+
+#~ msgid "Mark Message as &Important"
+#~ msgstr "&Муҳим"
+
+#, fuzzy
+#~ msgid "Remove &Important Message Mark"
+#~ msgstr "Муҳим хабар"
+
+#, fuzzy
+#~| msgid "Mark Message as &New"
+#~ msgid "Mark Message as &Action Item"
+#~ msgstr "&Янги"
+
+#, fuzzy
+#~ msgid "Remove &Action Item Message Mark"
+#~ msgstr "Муҳим хабар"
+
+#~ msgid "&Edit Message"
+#~ msgstr "Хабарни &таҳрирлаш"
+
+#, fuzzy
+#~| msgctxt "Message->Forward->"
+#~| msgid "As &Attachment..."
+#~ msgctxt "@action:inmenu Message->Forward->"
+#~ msgid "As &Attachment..."
+#~ msgstr "&Илова сифатида"
+
+#, fuzzy
+#~| msgid "&Insert File..."
+#~ msgctxt "@action:inmenu Message->Forward->"
+#~ msgid "&Inline..."
+#~ msgstr "&Файлдан қўйиш"
+
+#~ msgid "Cannot add message to outbox folder"
+#~ msgstr "Хабарни жўнатиш қутисига қўшиб бўлмади"
+
+#~ msgid "%1 queued message successfully sent."
+#~ msgid_plural "%1 queued messages successfully sent."
+#~ msgstr[0] "навбатдаги %1 хабар муваффақиятли жўнатилди."
+
+#~ msgid "%1 of %2 queued messages successfully sent."
+#~ msgstr "навбатдаги %2 хабардан %1 хабар муваффақиятли жўнатилди."
+
+#~ msgid "Sending messages"
+#~ msgstr "Хабарлар жўнатилмоқда"
+
+#, fuzzy
+#~| msgid "Sending aborted."
+#~ msgid "Sending failed"
+#~ msgstr "Жўнатиш бекор қилинди."
+
+#~ msgid "Sending aborted."
+#~ msgstr "Жўнатиш бекор қилинди."
+
+#~ msgid "Continue Sending"
+#~ msgstr "Жўнатишни давом этиш"
+
+#~ msgid "&Continue Sending"
+#~ msgstr "Жўнатишни давом &этиш"
+
+#~ msgid "&Abort Sending"
+#~ msgstr "Жўнатишни &бекор қилиш"
+
+#, fuzzy
+#~| msgid "Select Folder"
+#~ msgid "Select Filters"
+#~ msgstr "Жилдни танлаш"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "calendar|tasks|contacts=%2 belonging to %1"
+#~ msgid "%1's %2"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "folder name (folder storage name)"
+#~ msgid "%1 (%2)"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "My Calendar"
+#~ msgid "My %1"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "My Contacts"
+#~ msgid "My %1"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "My Journal"
+#~ msgid "My %1"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "My Notes"
+#~ msgid "My %1"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "My Tasks"
+#~ msgid "My %1"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~ msgid "%1: no folder found, will create it"
+#~ msgstr "%1: жилд топилмади. Янгиси яратилади."
+
+#, fuzzy
+#~| msgid "Delete Folder"
+#~ msgid "Default folder"
+#~ msgstr "Жилдни ўчириш"
+
+#, fuzzy
+#~| msgid "Delete Message"
+#~ msgid "Complete Message"
+#~ msgstr "Хатни ўчириш"
+
+#, fuzzy
+#~ msgid "Body of Message"
+#~ msgstr "Хабарларни ўчириш"
+
+#, fuzzy
+#~| msgctxt "View->headers->"
+#~| msgid "&Fancy Headers"
+#~ msgid "Anywhere in Headers"
+#~ msgstr "&Чиройли сарлавҳалар"
+
+#, fuzzy
+#~| msgid "Additional Recipients"
+#~ msgid "All Recipients"
+#~ msgstr "Қўшимча қабул қилувчилар"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Message Status"
+#~ msgstr "&Хабар"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Message Tag"
+#~ msgstr "&Хабар"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "Subject of an email."
+#~ msgid "Subject"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~| msgid "&From"
+#~ msgid "From"
+#~ msgstr "&Кимдан"
+
+#, fuzzy
+#~| msgid "To"
+#~ msgctxt "Receiver of an email."
+#~ msgid "To"
+#~ msgstr "Кимга"
+
+#, fuzzy
+#~ msgid "Removing 1 old message from folder %2..."
+#~ msgid_plural "Removing %1 old messages from folder %2..."
+#~ msgstr[0] "%2 жилдидан 1 эски хабар ўчирлмоқда..."
+
+#, fuzzy
+#~ msgid "Removed 1 old message from folder %2."
+#~ msgid_plural "Removed %1 old messages from folder %2."
+#~ msgstr[0] "%2 жилдидан 1 эски хабар ўчирлди."
+
+#~ msgid "Moving old messages from folder %1 to folder %2 failed."
+#~ msgstr ""
+#~ "Эски хабарларни %1 жилдидан %2 жилдга кўчириш муваффақиятсиз тугади."
+
+#~ msgid "Removing old messages from folder %1 was canceled."
+#~ msgstr "Эски хабарларни %1 жилдидан олиб ташлаш бекор қилинди."
+
+#~ msgid "Moving old messages from folder %1 to folder %2 was canceled."
+#~ msgstr "Эски хабарларни %1 жилдидан %2 жилдга кўчириш бекор қилинди."
+
+#~ msgid ""
+#~ "Cannot open file \"%1\":\n"
+#~ "%2"
+#~ msgstr ""
+#~ "\"%1\" файлини очиб бўлмади:\n"
+#~ "%2"
+
+#~ msgid "Set subject of message"
+#~ msgstr "Хабар мавзусини кўрсатиш"
+
+#~ msgid "Add 'header' to message"
+#~ msgstr "Хабарга сарлавҳа қўшиш"
+
+#~ msgid "Read message body from 'file'"
+#~ msgstr "Хабар таркибини файлдан ўқиш"
+
+#, fuzzy
+#~ msgid "Set body of message"
+#~ msgstr "Хабарларни ўчириш"
+
+#~ msgid "Add an attachment to the mail. This can be repeated"
+#~ msgstr "Хабарга илова қўшиш. Буни такрорлаш мумкин."
+
+#~ msgid "Only check for new mail"
+#~ msgstr "Фақат янги хабарга текшириш"
+
+#~ msgid "Only open composer window"
+#~ msgstr "Фақат хабар яратиш ойнасини очиш"
+
+#, fuzzy
+#~ msgid "View the given message file"
+#~ msgstr "Хабарнинг &ҳажмини кўрсатиш"
+
+#~ msgid "Error while removing a folder."
+#~ msgstr "Жилдни олиб ташлашда хато рўй берди."
+
+#, fuzzy
+#~ msgid "Destination folder: %1"
+#~ msgstr "Мўлжал жилди: "
+
+#, fuzzy
+#~| msgid " completed"
+#~ msgctxt "@info:status Number of folders for which update is completed."
+#~ msgid " completed"
+#~ msgstr " бажарилди"
+
+#~ msgid "checking"
+#~ msgstr "текширилмоқда"
+
+#~ msgid "Retrieving messages"
+#~ msgstr "Хабарлар олинмоқда"
+
+#, fuzzy
+#~ msgid "Error while listing the contents of the folder %1."
+#~ msgstr "Жилдни яратиб бўлмади"
+
+#~ msgid "Error while retrieving messages."
+#~ msgstr "Хабарни олишда хато рўй берди."
+
+#~ msgid "Error while creating a folder."
+#~ msgstr "Жилд яратишда хато рўй берди."
+
+#, fuzzy
+#~ msgid "updating message counts"
+#~ msgstr "Хабарнинг асл нусхаси:"
+
+#~ msgid "Error while getting folder information."
+#~ msgstr "Жилд маълумотларини олишда хато рўй берди."
+
+#, fuzzy
+#~ msgid "Shortcut for Folder %1"
+#~ msgstr "&Қисқа жилдлар рўйхати"
+
+#, fuzzy
+#~ msgid "Select Shortcut for Folder"
+#~ msgstr "&Қисқа жилдлар рўйхати"
+
+#~ msgid "vCard Import Failed"
+#~ msgstr "vCard'ни импорт қилиб бўлмади"
+
+#~ msgid "<qt>Unable to access <b>%1</b>.</qt>"
+#~ msgstr "<qt><b>%1</b>'га мурожаат қилиб бўлмади.</qt>"
+
+#~ msgid "Cannot open file:"
+#~ msgstr "Файлни очиб бўлмади:"
+
+#, fuzzy
+#~| msgid "<qt>Cannot open folder <b>%1</b>.</qt>"
+#~ msgid "<qt>Cannot remove mail from mailbox <b>%1</b>:<br />%2</qt>"
+#~ msgstr "<qt><b>%1</b> жилдини очиб бўлмади.</qt>"
+
+#, fuzzy
+#~ msgid "Fetched 1 message from mailbox %2."
+#~ msgid_plural "Fetched %1 messages from mailbox %2."
+#~ msgstr[0] "%2 почта қутисидан 1 хабар хабар олинди."
+
+#, fuzzy
+#~ msgctxt "@info:status"
+#~ msgid "Cannot insert content from file %1: %2"
+#~ msgstr ""
+#~ "\"%1\" файлини очиб бўлмади:\n"
+#~ "%2"
+
+#~ msgid "Available Scripts"
+#~ msgstr "Мавжуд скриптлар"
+
+#~ msgid "Edit Script..."
+#~ msgstr "Скриптни таҳрирлаш..."
+
+#, fuzzy
+#~| msgid "Delete Script"
+#~ msgid "Deactivate Script"
+#~ msgstr "Скриптни олиб ташлаш"
+
+#, fuzzy
+#~| msgid "Open in Address Book"
+#~ msgid "Open Address Book"
+#~ msgstr "Манзиллар дафтарида очиш"
+
+#~ msgid "Select Sound File"
+#~ msgstr "Товуш файлини танлаш"
+
+#, fuzzy
+#~| msgid "Sender"
+#~ msgid "By Sender"
+#~ msgstr "Жўнатувчи"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgid "By Receiver"
+#~ msgstr "Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Sender/Receiver"
+#~ msgid "By Smart Sender/Receiver"
+#~ msgstr "Жўнатувчи/Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgid "By Subject"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "By Size"
+#~ msgstr "Ҳажми"
+
+#, fuzzy
+#~ msgid "By Action Item Status"
+#~ msgstr "Муҳим хабар"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Unread"
+#~ msgid "By New/Unread Status"
+#~ msgstr "Ўқилмаган"
+
+#, fuzzy
+#~| msgid "&Sending"
+#~ msgctxt "Sort order for messages"
+#~ msgid "Ascending"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~| msgid "&Sending"
+#~ msgctxt "Sort order for messages"
+#~ msgid "Descending"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~| msgid "Sender/Receiver"
+#~ msgid "by Sender/Receiver"
+#~ msgstr "Жўнатувчи/Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Sender"
+#~ msgid "by Sender"
+#~ msgstr "Жўнатувчи"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgid "by Receiver"
+#~ msgstr "Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "&Sending"
+#~ msgctxt "Sort order for mail groups"
+#~ msgid "Ascending"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~| msgid "&Sending"
+#~ msgctxt "Sort order for mail groups"
+#~ msgid "Descending"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~| msgid "Sender/Receiver"
+#~ msgid "Senders/Receivers, Flat"
+#~ msgstr "Жўнатувчи/Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "@title:column Subject of messages"
+#~ msgid "Subject"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~| msgid "Sender/Receiver"
+#~ msgid "Sender/Receiver"
+#~ msgstr "Жўнатувчи/Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Sender"
+#~ msgctxt "Sender of a message"
+#~ msgid "Sender"
+#~ msgstr "Жўнатувчи"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgctxt "Receiver of a message"
+#~ msgid "Receiver"
+#~ msgstr "Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Date"
+#~ msgctxt "Date of a message"
+#~ msgid "Date"
+#~ msgstr "Сана"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "Size of a message"
+#~ msgid "Size"
+#~ msgstr "Ҳажми"
+
+#, fuzzy
+#~| msgid "Attachment"
+#~ msgctxt "Attachement indication"
+#~ msgid "Attachment"
+#~ msgstr "Илова"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Unread"
+#~ msgid "New/Unread"
+#~ msgstr "Ўқилмаган"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Replied"
+#~ msgid "Replied"
+#~ msgstr "Жавоб берилган"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Important"
+#~ msgctxt "Message importance indication"
+#~ msgid "Important"
+#~ msgstr "Муҳим"
+
+#, fuzzy
+#~ msgid "Action Item"
+#~ msgstr "Муҳим хабар"
+
+#~ msgid "Spam/Ham"
+#~ msgstr "Спэм/Хэм"
+
+#~ msgid "Watched/Ignored"
+#~ msgstr "Назоратда/Эътибор берилмаган"
+
+#, fuzzy
+#~| msgid "Save List"
+#~ msgid "Tag List"
+#~ msgstr "Рўйхатни сақлаш"
+
+#, fuzzy
+#~| msgid "&Message"
+#~ msgid "Message"
+#~ msgstr "&Хабар"
+
+#~ msgid "Status"
+#~ msgstr "Ҳолати"
+
+#, fuzzy
+#~ msgid "New Aggregation"
+#~ msgstr "Таклифлар"
+
+#, fuzzy
+#~| msgid "Delete T&hread"
+#~ msgid "Delete Aggregation"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#, fuzzy
+#~ msgid "Customize Themes"
+#~ msgstr "&Алмаштириш"
+
+#, fuzzy
+#~| msgid "New Message"
+#~ msgid "New Theme"
+#~ msgstr "Янги хабар"
+
+#, fuzzy
+#~| msgid "Delete T&hread"
+#~ msgid "Delete Theme"
+#~ msgstr "Кетма-кетликни ўч&ириш"
+
+#, fuzzy
+#~| msgid "Unnamed"
+#~ msgid "Unnamed Theme"
+#~ msgstr "Номсиз"
+
+#, fuzzy
+#~| msgid "View Columns"
+#~ msgid "New Column"
+#~ msgstr "Кўринадиган устунлар"
+
+#, fuzzy
+#~| msgid "Todo"
+#~ msgid "Today"
+#~ msgstr "Вазифа"
+
+#, fuzzy
+#~| msgid "Last Search"
+#~ msgid "Last Week"
+#~ msgstr "Охирги қидирув"
+
+#~ msgid "Sender"
+#~ msgstr "Жўнатувчи"
+
+#, fuzzy
+#~ msgid "Processed 1 Message of %2"
+#~ msgid_plural "Processed %1 Messages of %2"
+#~ msgstr[0] "Хабарнинг асл нусхаси:"
+
+#, fuzzy
+#~ msgid "Threaded 1 Message of %2"
+#~ msgid_plural "Threaded %1 Messages of %2"
+#~ msgstr[0] "Хабарнинг асл нусхаси:"
+
+#, fuzzy
+#~| msgid "&Reading"
+#~ msgid "Grouped 1 Thread of %2"
+#~ msgid_plural "Grouped %1 Threads of %2"
+#~ msgstr[0] "Ўқ&иш"
+
+#, fuzzy
+#~| msgid "Ready."
+#~ msgctxt "@info:status Finished view fill"
+#~ msgid "Ready"
+#~ msgstr "Тайёр."
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "Description of Type Subject"
+#~ msgid "Subject"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~| msgid "Date"
+#~ msgctxt "Description of Type Date"
+#~ msgid "Date"
+#~ msgstr "Сана"
+
+#, fuzzy
+#~| msgid "Sender"
+#~ msgctxt "Description of Type Sender"
+#~ msgid "Sender"
+#~ msgstr "Жўнатувчи"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgctxt "Description of Type Receiver"
+#~ msgid "Receiver"
+#~ msgstr "Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "Description of Type Size"
+#~ msgid "Size"
+#~ msgstr "Ҳажми"
+
+#, fuzzy
+#~| msgid "Attachment"
+#~ msgid "Attachment Icon"
+#~ msgstr "Илова"
+
+#, fuzzy
+#~ msgid "Action Item Icon"
+#~ msgstr "Муҳим хабар"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Important"
+#~ msgid "Important Icon"
+#~ msgstr "Муҳим"
+
+#, fuzzy
+#~| msgid "Spam/Ham"
+#~ msgid "Spam/Ham Icon"
+#~ msgstr "Спэм/Хэм"
+
+#, fuzzy
+#~| msgid "Watched/Ignored"
+#~ msgid "Watched/Ignored Icon"
+#~ msgstr "Назоратда/Эътибор берилмаган"
+
+#, fuzzy
+#~| msgid "Encryption"
+#~ msgid "Encryption State Icon"
+#~ msgstr "Кодлаш"
+
+#, fuzzy
+#~| msgid "Signature"
+#~ msgid "Signature State Icon"
+#~ msgstr "Имзо"
+
+#, fuzzy
+#~| msgid "Date"
+#~ msgid "Max Date"
+#~ msgstr "Сана"
+
+#, fuzzy
+#~ msgctxt "Description for an Unknown Type"
+#~ msgid "Unknown"
+#~ msgstr "&Узатиш"
+
+#, fuzzy
+#~| msgid "Receiver"
+#~ msgid "Never Show"
+#~ msgstr "Қабул қилувчи"
+
+#, fuzzy
+#~| msgid "Always"
+#~ msgid "Always Show"
+#~ msgstr "Ҳамиша"
+
+#, fuzzy
+#~ msgctxt "Search for messages."
+#~ msgid "Search"
+#~ msgstr "&Қидириш"
+
+#, fuzzy
+#~| msgid "Delete Search"
+#~ msgid "Open Full Search"
+#~ msgstr "Қидирувни олиб ташлаш"
+
+#~ msgid "Any Status"
+#~ msgstr "Истаган"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "New"
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "New"
+#~ msgstr "Янги"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Unread"
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "Unread"
+#~ msgstr "Ўқилмаган"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Replied"
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "Replied"
+#~ msgstr "Жавоб берилган"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Forwarded"
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "Forwarded"
+#~ msgstr "Узатилган"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Important"
+#~ msgctxt "@action:inmenu Status of a message"
+#~ msgid "Important"
+#~ msgstr "Муҳим"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Watched"
+#~ msgid "Watched"
+#~ msgstr "Назоратда"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Ignored"
+#~ msgid "Ignored"
+#~ msgstr "Эътибор берилмаган"
+
+#, fuzzy
+#~| msgid "Has Attachment"
+#~ msgid "Has Attachment"
+#~ msgstr "Иловали"
+
+#, fuzzy
+#~| msgid "Message Body"
+#~ msgid "Message Sort Order"
+#~ msgstr "Хабар таркиби"
+
+#, fuzzy
+#~ msgid "Message Sort Direction"
+#~ msgstr "Хабарлар рўйхати"
+
+#, fuzzy
+#~| msgid "None"
+#~ msgctxt "No grouping of messages"
+#~ msgid "None"
+#~ msgstr "Йўқ"
+
+#, fuzzy
+#~| msgid "None"
+#~ msgctxt "No threading of messages"
+#~ msgid "None"
+#~ msgstr "Йўқ"
+
+#, fuzzy
+#~ msgid "Topmost Message"
+#~ msgstr "Хатларни ўчириш"
+
+#, fuzzy
+#~ msgid "Most Recent Message"
+#~ msgstr "Хабарларни ўчириш"
+
+#, fuzzy
+#~| msgid "Message List - New Messages"
+#~ msgid "Expand Threads With New Messages"
+#~ msgstr "Хабарлар рўйхати - Янги хабарлар"
+
+#, fuzzy
+#~| msgid "Message List - Unread Messages"
+#~ msgid "Expand Threads With Unread Messages"
+#~ msgstr "Хабарлар рўйхати - Ўқилмаган хабарлар"
+
+#, fuzzy
+#~| msgid "Message List - Unread Messages"
+#~ msgid "Expand Threads With Unread or Important Messages"
+#~ msgstr "Хабарлар рўйхати - Ўқилмаган хабарлар"
+
+#, fuzzy
+#~| msgid "&Reading"
+#~ msgid "Groups && Threading"
+#~ msgstr "Ўқ&иш"
+
+#, fuzzy
+#~| msgid "Add Account"
+#~ msgid "Grouping:"
+#~ msgstr "Ҳисобни қўшиш"
+
+#, fuzzy
+#~| msgid "Send policy:"
+#~ msgid "Group expand policy:"
+#~ msgstr "Жўнатиш қоидаси:"
+
+#, fuzzy
+#~| msgid "&Reading"
+#~ msgid "Threading:"
+#~ msgstr "Ўқ&иш"
+
+#, fuzzy
+#~| msgid "&Trash folder:"
+#~ msgid "Thread leader:"
+#~ msgstr "&Чиқиндилар қутиси:"
+
+#, fuzzy
+#~| msgid "Send policy:"
+#~ msgid "Thread expand policy:"
+#~ msgstr "Жўнатиш қоидаси:"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "@title:tab Advanced settings tab for aggregation mode"
+#~ msgid "Advanced"
+#~ msgstr "Қўшимча"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "New"
+#~ msgctxt "Status of an item"
+#~ msgid "New"
+#~ msgstr "Янги"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Unread"
+#~ msgctxt "Status of an item"
+#~ msgid "Unread"
+#~ msgstr "Ўқилмаган"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Read"
+#~ msgctxt "Status of an item"
+#~ msgid "Read"
+#~ msgstr "Ўқилган"
+
+#, fuzzy
+#~| msgid "Has Attachment"
+#~ msgctxt "Status of an item"
+#~ msgid "Has Attachment"
+#~ msgstr "Иловали"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Replied"
+#~ msgctxt "Status of an item"
+#~ msgid "Replied"
+#~ msgstr "Жавоб берилган"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Forwarded"
+#~ msgctxt "Status of an item"
+#~ msgid "Forwarded"
+#~ msgstr "Узатилган"
+
+#, fuzzy
+#~| msgid "Sent"
+#~ msgctxt "Status of an item"
+#~ msgid "Sent"
+#~ msgstr "Жўнатилган"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Important"
+#~ msgctxt "Status of an item"
+#~ msgid "Important"
+#~ msgstr "Муҳим"
+
+#, fuzzy
+#~ msgctxt "Status of an item"
+#~ msgid "Action Item"
+#~ msgstr "Муҳим хабар"
+
+#, fuzzy
+#~| msgid "Spam"
+#~ msgctxt "Status of an item"
+#~ msgid "Spam"
+#~ msgstr "Спэм"
+
+#, fuzzy
+#~| msgid "Ham"
+#~ msgctxt "Status of an item"
+#~ msgid "Ham"
+#~ msgstr "Хэм"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Watched"
+#~ msgctxt "Status of an item"
+#~ msgid "Watched"
+#~ msgstr "Назоратда"
+
+#, fuzzy
+#~| msgctxt "msg status"
+#~| msgid "Ignored"
+#~ msgctxt "Status of an item"
+#~ msgid "Ignored"
+#~ msgstr "Эътибор берилмаган"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label:textbox Property name"
+#~ msgid "Name:"
+#~ msgstr "Номи:"
+
+#, fuzzy
+#~| msgid "Remove Duplicate Messages"
+#~ msgid "Header click sorts messages:"
+#~ msgstr "Бир ҳил хабарларни ўчириш"
+
+#, fuzzy
+#~| msgid "Set as Default"
+#~ msgid "Visible by default"
+#~ msgstr "Андоза деб белгилаш"
+
+#, fuzzy
+#~| msgid "Message Body"
+#~ msgid "Message Group"
+#~ msgstr "Хабар таркиби"
+
+#, fuzzy
+#~ msgid "Sample Tag 1"
+#~ msgstr "Хабарлар рўйхати"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu soften the text color"
+#~ msgid "Soften"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Font setting"
+#~ msgid "Default"
+#~ msgstr "Андоза деб белгилаш"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu Foreground color setting"
+#~ msgid "Default"
+#~ msgstr "Андоза деб белгилаш"
+
+#, fuzzy
+#~| msgid "Alternative Background Color"
+#~ msgid "Foreground Color"
+#~ msgstr "Қўшимча орқа фон ранги"
+
+#, fuzzy
+#~| msgctxt "View->attachments->"
+#~| msgid "&Hide"
+#~ msgctxt ""
+#~ "Hide a mark if the mail does not have the attribute, e.g. Important mark "
+#~ "on a non important mail"
+#~ msgid "Hide"
+#~ msgstr "&Бекитиш"
+
+#, fuzzy
+#~| msgid "Remove Header"
+#~ msgid "Group Header"
+#~ msgstr "Сарлавҳани олиб ташлаш"
+
+#, fuzzy
+#~| msgid "None"
+#~ msgctxt "@action:inmenu Group header background color setting"
+#~ msgid "None"
+#~ msgstr "Йўқ"
+
+#, fuzzy
+#~| msgid "Alternative Background Color"
+#~ msgid "Background Color"
+#~ msgstr "Қўшимча орқа фон ранги"
+
+#, fuzzy
+#~| msgid "Folder Properties"
+#~ msgid "Column Properties"
+#~ msgstr "Жилднинг хоссалари"
+
+#, fuzzy
+#~| msgid "Add Entry..."
+#~ msgid "Add Column..."
+#~ msgstr "Қўшиш..."
+
+#, fuzzy
+#~| msgid "Delete Folder"
+#~ msgid "Delete Column"
+#~ msgstr "Жилдни ўчириш"
+
+#, fuzzy
+#~| msgid "View Columns"
+#~ msgid "Add New Column"
+#~ msgstr "Кўринадиган устунлар"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "@title:tab Advanced theme settings"
+#~ msgid "Advanced"
+#~ msgstr "Қўшимча"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgid "Icon size:"
+#~ msgstr "Ҳажми"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "@title:tab General options of a view mode"
+#~ msgid "General"
+#~ msgstr "Умумий"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@label:textbox Name of the option"
+#~ msgid "Name:"
+#~ msgstr "Номи:"
+
+#, fuzzy
+#~| msgid "&Description:"
+#~ msgctxt "@label:textbox Description of the option"
+#~ msgid "Description:"
+#~ msgstr "&Таърифи:"
+
+#, fuzzy
+#~| msgid "Show alway&s"
+#~ msgid "Show Default Columns"
+#~ msgstr "Ҳар &доим кўрсатиш"
+
+#, fuzzy
+#~| msgid "Nothin&g"
+#~ msgid "Sorting"
+#~ msgstr "Ҳеч &нарса"
+
+#, fuzzy
+#~| msgid "To"
+#~ msgctxt "Receiver of the emial"
+#~ msgid "To"
+#~ msgstr "Кимга"
+
+#, fuzzy
+#~ msgid "Threads with messages dated %1"
+#~ msgstr "Хабарнинг асл нусхаси:"
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgctxt ""
+#~ "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
+#~ msgid "Messages received on %1"
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~ msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
+#~ msgid "Messages sent %1"
+#~ msgstr "Хабарлар рўйхати"
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgctxt ""
+#~ "@info:tooltip Formats to something like 'Messages received Yesterday'"
+#~ msgid "Messages received %1"
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~| msgid "Message was signed with key %1."
+#~ msgid "Messages sent within %1"
+#~ msgstr "Хабар %1 калити билан имзоланган."
+
+#, fuzzy
+#~| msgid "Message was signed with key %1."
+#~ msgid "Messages received within %1"
+#~ msgstr "Хабар %1 калити билан имзоланган."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Messages sent to %1"
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Messages sent by %1"
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Messages received from %1"
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~| msgid "Message was signed by %1."
+#~ msgid "Messages received by %1"
+#~ msgstr "Хабар %1 томонидан имзоланган."
+
+#, fuzzy
+#~| msgid "<b>Bad</b> signature"
+#~ msgid "<b>%1</b> thread"
+#~ msgid_plural "<b>%1</b> threads"
+#~ msgstr[0] "<b>Хато</b> имзо"
+
+#~ msgid "Date (Order of Arrival)"
+#~ msgstr "Сана (келган вақти бўйича)"
+
+#, fuzzy
+#~ msgctxt "Number of unsent messages"
+#~ msgid "1 unsent"
+#~ msgid_plural "%1 unsent"
+#~ msgstr[0] "1 жўнатилмаган"
+
+#~ msgid "0 unsent"
+#~ msgstr "0 жўнатилмаган"
+
+#, fuzzy
+#~| msgid "1 unread"
+#~| msgid_plural "%1 unread"
+#~ msgctxt "Number of unread messages"
+#~ msgid "1 unread"
+#~ msgid_plural "%1 unread"
+#~ msgstr[0] "%1 ўқилмаган"
+
+#, fuzzy
+#~| msgid "0 unread"
+#~ msgctxt "No unread messages"
+#~ msgid "0 unread"
+#~ msgstr "0 ўқилмаган"
+
+#, fuzzy
+#~ msgctxt "Number of unread messages"
+#~ msgid "1 message, %2."
+#~ msgid_plural "%1 messages, %2."
+#~ msgstr[0] "1 хат, %2."
+
+#, fuzzy
+#~| msgid "0 messages"
+#~ msgctxt "No unread messages"
+#~ msgid "0 messages"
+#~ msgstr "0 хат"
+
+#~ msgctxt "%1 = n messages, m unread."
+#~ msgid "%1 Folder is read-only."
+#~ msgstr "%1 Жилд фақат ўқиш учун."
+
+#, fuzzy
+#~ msgid "Change Encoding"
+#~ msgstr "Кодлашни ўзгартириш"
+
+#, fuzzy
+#~| msgid "&From"
+#~ msgid "Form"
+#~ msgstr "&Кимдан"
+
+#, fuzzy
+#~| msgid "Check &Mail"
+#~ msgid "Check Ma&il"
+#~ msgstr "Почтани &текшириш"
+
+#, fuzzy
+#~| msgid "Filter Rules"
+#~ msgid "Filter by Status"
+#~ msgstr "Филтер қоидалари"
+
+#, fuzzy
+#~| msgid "Sho&w column:"
+#~ msgid "Show Columns"
+#~ msgstr "Устунни к&ўрсатиш:"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "@title:column Mail account name"
+#~ msgid "Name"
+#~ msgstr "Номи"
+
+#, fuzzy
+#~| msgid "Type"
+#~ msgctxt "@title:column Mail account type (eg. POP3)"
+#~ msgid "Type"
+#~ msgstr "Тури"
+
+#, fuzzy
+#~| msgid "Folder"
+#~ msgctxt "@title:column Mail account destination folder"
+#~ msgid "Folder"
+#~ msgstr "Жилд"
+
+#, fuzzy
+#~ msgid "Change Sort Order"
+#~ msgstr "Кодлашни ўзгартириш"
+
+#~ msgid "&Load Profile..."
+#~ msgstr "&Профилни юклаш"
+
+#~ msgid "Load Profile"
+#~ msgstr "Профилни юклаш"
+
+#~ msgid "Available Profiles"
+#~ msgstr "Мавжуд профиллар"
+
+#~ msgctxt "Missing profile name placeholder"
+#~ msgid "Unnamed"
+#~ msgstr "Номсиз"
+
+#~ msgctxt "Missing profile description placeholder"
+#~ msgid "Not available"
+#~ msgstr "Мавжуд эмас"
+
+#~ msgid "Aborted"
+#~ msgstr "Тўхтатилди"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgctxt "@title:tab Advanced settings"
+#~ msgid "Advanced"
+#~ msgstr "Қўшимча"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgctxt "@title collumn attachment name."
+#~ msgid "Name"
+#~ msgstr "Номи"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@title collumn attachment size."
+#~ msgid "Size"
+#~ msgstr "Ҳажми"
+
+#, fuzzy
+#~| msgid "Encoding"
+#~ msgctxt "@title collumn attachment encoding."
+#~ msgid "Encoding"
+#~ msgstr "Кодлаш усули"
+
+#, fuzzy
+#~| msgid "Type"
+#~ msgctxt "@title collumn attachment type."
+#~ msgid "Type"
+#~ msgstr "Тури"
+
+#, fuzzy
+#~| msgid "Compress"
+#~ msgctxt "@title collumn attachment compression checkbox."
+#~ msgid "Compress"
+#~ msgstr "Қисиш"
+
+#, fuzzy
+#~| msgid "Sign"
+#~ msgctxt "@title collumn attachment signed checkbox."
+#~ msgid "Sign"
+#~ msgstr "Имзо"
+
+#~ msgid "&Send"
+#~ msgstr "&Жўнатиш"
+
+#, fuzzy
+#~ msgid "Insert Result of Command"
+#~ msgstr "&Файлдан қўйиш"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgid "My %1 (%2)"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgid "Folder Properties"
+#~ msgid "Column Properties..."
+#~ msgstr "Жилднинг хоссалари"
+
+#, fuzzy
+#~| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
+#~ msgctxt "@info"
+#~ msgid "Unable to load image <filename>%1</filename>."
+#~ msgstr "<qt>Ростдан <b>%1</b>'ни ишга туширишни истайсизми?</qt>"
+
+#, fuzzy
+#~| msgid "days"
+#~ msgid "day"
+#~ msgid_plural "days"
+#~ msgstr[0] "кун"
+
+#~ msgid "Ho&st:"
+#~ msgstr "&Хост:"
+
+#, fuzzy
+#~| msgid "&Insert File..."
+#~ msgctxt "@action:inmenu Forward current message inline."
+#~ msgid "&Inline..."
+#~ msgstr "&Файлдан қўйиш"
+
+#, fuzzy
+#~| msgid "Choo&se..."
+#~ msgid "Choo&se.."
+#~ msgstr "&Танлаш"
+
+#, fuzzy
+#~| msgid " days"
+#~ msgctxt ""
+#~ "Number of days the signature certificate should be valid without issuing "
+#~ "a warning. "
+#~ msgid " days"
+#~ msgstr " кун"
+
+#, fuzzy
+#~| msgid " days"
+#~ msgctxt ""
+#~ "the minimum number of days the encryption certificate should be valid "
+#~ "without issuing a warning."
+#~ msgid " days"
+#~ msgstr " кун"
+
+#, fuzzy
+#~| msgid " days"
+#~ msgctxt ""
+#~ "The minimum number of days all certificates in the chain should be valid"
+#~ msgid " days"
+#~ msgstr " кун"
+
+#, fuzzy
+#~| msgid " days"
+#~ msgctxt "The minimum number of days the CA certificate should be valid"
+#~ msgid " days"
+#~ msgstr " кун"
+
+#, fuzzy
+#~| msgid " days"
+#~ msgctxt "The minimum number of days the root certificate should be valid"
+#~ msgid " days"
+#~ msgstr " кун"
+
+#, fuzzy
+#~| msgid " days"
+#~ msgctxt "the minimum number of days the root certificate should be valid"
+#~ msgid " days"
+#~ msgstr " кун"
+
+#, fuzzy
+#~| msgid "&Import"
+#~ msgid "Export to HTML..."
+#~ msgstr "&Импорт қилиш"
+
+#, fuzzy
+#~ msgid "Export the selected messages to a HTML file"
+#~ msgstr "Танланган хабарларни ўқилган деб белгилаш"
+
+#, fuzzy
+#~| msgid "Could not write the file %1."
+#~ msgid "Could not run application associated to file %1."
+#~ msgstr "%1 файлини ёзиб бўлмади."
+
+#, fuzzy
+#~| msgid "Message &property:"
+#~ msgid "Message Sorting:"
+#~ msgstr "Хабарнинг &хоссаси:"
+
+#, fuzzy
+#~ msgid "Message Sort Direction:"
+#~ msgstr "Хабарлар рўйхати"
+
+#~ msgid "&General"
+#~ msgstr "&Умумий"
+
+#~ msgid "&Advanced"
+#~ msgstr "Қўшимч&а"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgid "Gene&ral"
+#~ msgstr "Умумий"
+
+#, fuzzy
+#~| msgid "To Do"
+#~ msgid "To Do"
+#~ msgstr "Вазифа"
+
+#, fuzzy
+#~| msgid "To Do"
+#~ msgid "To Do Icon"
+#~ msgstr "Вазифа"
+
+#, fuzzy
+#~| msgid "Any Status"
+#~ msgid "by To Do Status"
+#~ msgstr "Истаган"
+
+#, fuzzy
+#~| msgid "To Do"
+#~ msgctxt "Status of an item"
+#~ msgid "ToDo"
+#~ msgstr "Вазифа"
+
+#~ msgid "Display messa&ge sizes"
+#~ msgstr "Хабарнинг &ҳажмини кўрсатиш"
+
+#, fuzzy
+#~| msgid "Local mailbox"
+#~ msgid "Local Inbox"
+#~ msgstr "Локал почта қутиси"
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "@item {FOLDER} on {MAIL ACCOUNT}"
+#~ msgid "%1 on %2"
+#~ msgstr "Хат"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "%1: identity name. Used in the config dialog, section Identity, to "
+#~| "indicate the default identity"
+#~| msgid "%1 (Default)"
+#~ msgctxt "@item Local folder."
+#~ msgid "%1 (local)"
+#~ msgstr "%1 (Андоза)"
+
+#, fuzzy
+#~| msgid "Unknown"
+#~ msgctxt "Unknown mail header."
+#~ msgid "Unknown"
+#~ msgstr "Номаълум"
+
+#~ msgid "Total Column"
+#~ msgstr "Жами устуни"
+
+#, fuzzy
+#~| msgid "View Columns"
+#~ msgctxt "Column that shows the size"
+#~ msgid "Size Column"
+#~ msgstr "Кўринадиган устунлар"
+
+#, fuzzy
+#~| msgid "Unread"
+#~ msgctxt "@title:column Collumn showing the number of unread email messages."
+#~ msgid "Unread"
+#~ msgstr "Ўқилмаган"
+
+#, fuzzy
+#~| msgid "Important"
+#~ msgctxt "@action:inmenu Mark message as important."
+#~ msgid "Important"
+#~ msgstr "Муҳим"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "@title:column Subject of message."
+#~ msgid "Subject"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "@title:column Subject of email."
+#~ msgid "Subject"
+#~ msgstr "Мавзу"
+
+#~ msgid " (Status)"
+#~ msgstr " (Ҳолат)"
+
+#, fuzzy
+#~| msgid "Subject"
+#~ msgctxt "@title:column Subject of the email."
+#~ msgid "Subject"
+#~ msgstr "Мавзу"
+
+#, fuzzy
+#~| msgid "Unread"
+#~ msgctxt "@title:column Number of unread messages."
+#~ msgid "Unread"
+#~ msgstr "Ўқилмаган"
+
+#, fuzzy
+#~| msgid "Total"
+#~ msgctxt "@title:column Total number of messages."
+#~ msgid "Total"
+#~ msgstr "Жами"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@title:column Size of the messages."
+#~ msgid "Size"
+#~ msgstr "Ҳажми"
+
+#~ msgctxt "View->"
+#~ msgid "&Unread Count"
+#~ msgstr "Ўқилма&ган устуни"
+
+#~ msgctxt "View->Unread Count"
+#~ msgid "View in &Separate Column"
+#~ msgstr "&Алоҳида устунда кўрсатиш"
+
+#~ msgctxt "View->Unread Count"
+#~ msgid "View After &Folder Name"
+#~ msgstr "&Жилд номининг ёнида кўрсатиш"
+
+#~ msgctxt "View->"
+#~ msgid "&Total Column"
+#~ msgstr "&Жами устуни"
+
+#, fuzzy
+#~| msgid "View Columns"
+#~ msgctxt "View->"
+#~ msgid "&Size Column"
+#~ msgstr "Кўринадиган устунлар"
+
+#~ msgid "<unknown>"
+#~ msgstr "<номаълум>"
+
+#~ msgid "On %D, you wrote:"
+#~ msgstr "%D, Сиз ёзгансиз:"
+
+#~ msgid "On %D, %F wrote:"
+#~ msgstr "%D, %F ёзган:"
+
+#~ msgid "Forwarded Message"
+#~ msgstr "Узатилган хабар"
+
+#, fuzzy
+#~| msgid "<none>"
+#~ msgctxt "Placeholder for the case that there is no folder."
+#~ msgid "<none>"
+#~ msgstr "<йўқ>"
+
+#~ msgid "<p>Messages classified as spam are marked as read."
+#~ msgstr "<p>Спам деб туркумланган хабарлар ўқилган деб белгиланди."
+
+#~ msgid "<p>Messages classified as spam are not marked as read."
+#~ msgstr "<p>Спам деб туркумланган хабарлар ўқилган деб белгиланмади."
+
+#~ msgid "M&essage List"
+#~ msgstr "Хабар&лар рўйхати"
+
+#~ msgid "&Subject"
+#~ msgstr "&Мавзу"
+
+#~ msgid "&Templates"
+#~ msgstr "&Намуналар"
+
+#~ msgid "&Signature"
+#~ msgstr "&Имзо"
+
+#~ msgid "A&dvanced"
+#~ msgstr "Қўшимч&а"
+
+#~ msgid "Lang&uage:"
+#~ msgstr "&Тил:"
+
+#~ msgid "Reply to se&nder:"
+#~ msgstr "&Жўнатувчига жавоб бериш:"
+
+#~ msgid "&Forward:"
+#~ msgstr "&Узатиш:"
+
+#~ msgid ">%_"
+#~ msgstr ">%_"
+
+#~ msgid "Choose &language:"
+#~ msgstr "Тилни &танлаш:"
+
+#~ msgid "No More Languages Available"
+#~ msgstr "Бошқа тиллар мавжуд эмас"
+
+#, fuzzy
+#~| msgid "attachment"
+#~ msgctxt ""
+#~ "comma-separated list of keywords that are used to detect whether the user "
+#~ "forgot to attach his attachment"
+#~ msgid "attachment,attached"
+#~ msgstr "илова"
+
+#~ msgid "attached"
+#~ msgstr "илова қилинган"
+
+#~ msgid "Welcome to KMail"
+#~ msgstr "KMail дастурига марҳамат"
+
+#~ msgid "Welcome"
+#~ msgstr "Марҳамат"
+
+#~ msgid "Op&en"
+#~ msgstr "&Очиш"
+
+#~ msgid "General Options"
+#~ msgstr "Умумий параметрлар"
+
+#~ msgid "C&ustom format (Shift+F1 for help):"
+#~ msgstr "&Бошқа формат:"
+
+#, fuzzy
+#~ msgid "Remove &To-do Thread Mark"
+#~ msgstr "Муҳим хабар"
+
+#, fuzzy
+#~| msgid "Old"
+#~ msgctxt "message status"
+#~ msgid "Old"
+#~ msgstr "Эски"
+
+#~ msgid "Composer Background"
+#~ msgstr "Хабар яратувчи орқа фони"
+
+#~ msgid "Normal Text"
+#~ msgstr "Оддий матн"
+
+#~ msgid "&Address Book..."
+#~ msgstr "Манзиллар &дафтари"
+
+#~ msgid "KMail Error Message"
+#~ msgstr "Хато ҳақида KMail хабари"
+
+#, fuzzy
+#~| msgid ""
+#~| "Your Internet Service Provider gave you a <em>user name</em> which is "
+#~| "used to authenticate you with their servers. It usually is the first "
+#~| "part of your email address (the part before <em>@</em>)."
+#~ msgid ""
+#~ "Your Internet Service Provider gave you a <em>user name</em> which is "
+#~ "used to authenticate you with their servers. It usually is3      the "
+#~ "first part of your email address (the part before <em>@</em>)."
+#~ msgstr ""
+#~ "Сизнинг Интернет хизмат провайдерингиз сизга ўз сервери билан боғланиш "
+#~ "учун <em>фойдаланувчи</em> беради. Бу одатда электрон почтангизни биринчи "
+#~ "қисми бўлади (<em>@</em> белгисидан олдинги қисм)."
+
+#~ msgid "&Extras"
+#~ msgstr "&Қўшимча"
+
+#~ msgid "Select Style"
+#~ msgstr "Услубни танлаш"
+
+#~ msgid "Align Left"
+#~ msgstr "Чапга"
+
+#~ msgid "Align Right"
+#~ msgstr "Ўнгда"
+
+#, fuzzy
+#~| msgid "Align Right"
+#~ msgid "Right"
+#~ msgstr "Ўнгда"
+
+#, fuzzy
+#~| msgid "Align Center"
+#~ msgid "Center"
+#~ msgstr "Марказда"
+
+#~ msgid "&Bold"
+#~ msgstr "Қал&ин"
+
+#~ msgid "&Underline"
+#~ msgstr "&Тагини чизиш"
+
+#~ msgid "Text Color..."
+#~ msgstr "Матннинг ранги"
+
+#, fuzzy
+#~| msgid "Text Color..."
+#~ msgid "Text Color"
+#~ msgstr "Матннинг ранги"
+
+#, fuzzy
+#~| msgid "Save Link As..."
+#~ msgid "Manage Link..."
+#~ msgstr "Боғни сақлаш"
+
+#, fuzzy
+#~| msgid "Link"
+#~ msgctxt "Short toolbar text for the \"Manage Link...\" action"
+#~ msgid "Link"
+#~ msgstr "Боғ"
+
+#~ msgid "&Enable signature"
+#~ msgstr "Им&зони ёқиш"
+
+#~ msgctxt "continuation of \"obtain signature text from\""
+#~ msgid "Input Field Below"
+#~ msgstr "Қуйида киритиш"
+
+#, fuzzy
+#~| msgid "Use HTML"
+#~ msgid "&Use HTML"
+#~ msgstr "HTML'дан фойдаланиш"
+
+#~ msgid "S&pecify file:"
+#~ msgstr "&Файлни кўрсатиш:"
+
+#~ msgid "Edit &File"
+#~ msgstr "&Файлни таҳрирлаш"
+
+#~ msgid "Opens the specified file in a text editor."
+#~ msgstr "Танланган файлни матн таҳрирчида очиш."
+
+#~ msgid "S&pecify command:"
+#~ msgstr "&Буйруқни кўрсатиш:"
+
+#, fuzzy
+#~ msgid "Shortc&ut"
+#~ msgstr "Тугмалар бирикмаси:"
+
+#~ msgid "Clear Past"
+#~ msgstr "Тарихни тозалаш"
+
+#~ msgid "Use secure connection (SSL)"
+#~ msgstr "Хавфсиз уланишни (SSL) қўллаш"
+
+#, fuzzy
+#~ msgid "Remove &To-do Message Mark"
+#~ msgstr "Муҳим хабар"
+
+#~ msgid "Unable to start external editor."
+#~ msgstr "Ташқи таҳрирчини ишга тушириб бўлмади."
+
+#~ msgid " Spell check canceled."
+#~ msgstr " Имлони текшириш бекор қилинди."
+
+#~ msgid " Spell check stopped."
+#~ msgstr " Имлони текшириш тўхтатилди."
+
+#~ msgid " Spell check complete."
+#~ msgstr " Имлони текшириш тугади."
+
+#, fuzzy
+#~| msgid "unlimited"
+#~ msgid "Delimiter:"
+#~ msgstr "чексиз"
+
+#~ msgid "Mark Message as &To-do"
+#~ msgstr "&Вазифа"
+
+#~ msgid "Mark Thread as &To-do"
+#~ msgstr "&Вазифа"
+
+#~ msgid "no subject"
+#~ msgstr "мавзусиз"
+
+#~ msgid "unknown"
+#~ msgstr "номаълум"
+
+#~ msgid "<message>"
+#~ msgstr "<хабар>"
+
+#~ msgid "<recipients>"
+#~ msgstr "<қабул қилувчилар>"
+
+#~ msgid "<status>"
+#~ msgstr "<ҳолати>"
+
+#~ msgid "Select email address(es)"
+#~ msgstr "Электрон почта(лар)ни танлаш"
+
+#~ msgctxt "recipient address field"
+#~ msgid "&To:"
+#~ msgstr "К&имга:"
+
+#~ msgid "&To"
+#~ msgstr "К&имга"
+
+#~ msgid "&CC"
+#~ msgstr "&Нусха"
+
+#~ msgid "&BCC"
+#~ msgstr "&BCC"
+
+#, fuzzy
+#~| msgid "Important"
+#~ msgid "&Important"
+#~ msgstr "Муҳим"
+
+#, fuzzy
+#~| msgid "Todo"
+#~ msgid "&To-do"
+#~ msgstr "Вазифа"
+
+#, fuzzy
+#~ msgid "Shortcut conflict"
+#~ msgstr "Тугмалар бирикмаси:"
+
+#, fuzzy
+#~ msgid "&Insert"
+#~ msgstr "Файлдан қўйиш"
+
+#~ msgid "Insert File"
+#~ msgstr "Файлдан қўйиш"
+
+#, fuzzy
+#~ msgid "Replace"
+#~ msgstr "&Алмаштириш"
+
+#, fuzzy
+#~ msgid "Replace &All"
+#~ msgstr "&Алмаштириш"
+
+#, fuzzy
+#~ msgid "Replace with:"
+#~ msgstr "Алмаштириш:"
+
+#, fuzzy
+#~ msgid "Go to line:"
+#~ msgstr "Онлайнда ишлаш"
+
+#~ msgid "Standard"
+#~ msgstr "Андоза"
+
+#~ msgid "Spellcheck - KMail"
+#~ msgstr "Имлони текшириш - KMail"
+
+#~ msgid "No misspellings encountered."
+#~ msgstr "Имло хатоси топилмади."
+
+#~ msgid "Chat &With..."
+#~ msgstr "Хабар &алмашиш"
+
+#~ msgid "Do no&t sign messages"
+#~ msgstr "Хабарлар &имзоланмасин"
+
+#~ msgid "POP3"
+#~ msgstr "POP3"
+
+#~ msgid "&Local mailbox"
+#~ msgstr "&Локал почта қутиси"
+
+#~ msgid "&POP3"
+#~ msgstr "&POP3"
+
+#~ msgid "&IMAP"
+#~ msgstr "&IMAP"
+
+#~ msgid "&Disconnected IMAP"
+#~ msgstr "&Узилган IMAP"
+
+#~ msgid "Unknown account type selected"
+#~ msgstr "Танланган ҳисобнинг тури номаълум"
+
+#~ msgid " Initializing..."
+#~ msgstr " Ишга тайёрланмоқда..."
+
+#~ msgid "Move to:"
+#~ msgstr "Кўчириш:"
+
+#~ msgid "Set Default"
+#~ msgstr "Андоза деб белгилаш"
+
+#~ msgid "smtp (Default)"
+#~ msgstr "smtp (Андоза)"
+
+#~ msgid "sendmail (Default)"
+#~ msgstr "sendmail (Андоза)"
+
+#~ msgctxt ""
+#~ "%1: type of transport. Result used in Configure->Accounts->Sending "
+#~ "listview, \"type\" column, first row, to indicate that this is the "
+#~ "default transport"
+#~ msgid "%1 (Default)"
+#~ msgstr "%1 (Андоза)"
+
+#~ msgid ""
+#~ "You need to supply a username and a password to use this SMTP server."
+#~ msgstr ""
+#~ "SMTP серверидан фойдаланиш учун фойдаланувчи ва махфий сўзни киритиш "
+#~ "керак."
+
+#~ msgid "SM&TP"
+#~ msgstr "SM&TP"
+
+#~ msgid "&Sendmail"
+#~ msgstr "&Sendmail"
+
+#~ msgid "&Location:"
+#~ msgstr "&Манзил:"
+
+#~ msgid "Choos&e..."
+#~ msgstr "&Танлаш"
+
+#~ msgid "&Host:"
+#~ msgstr "К&омпьютернинг номи:"
+
+#~ msgid "Server &requires authentication"
+#~ msgstr "Сервер &тасдиқлашни талаб қилади"
+
+#~ msgid "&Store SMTP password"
+#~ msgstr "SMTP махфий сўзини &эслаб қолиш"
+
+#~ msgid "Hos&tname:"
+#~ msgstr "Компьютернинг &номи:"
+
+#~ msgid "&SSL"
+#~ msgstr "&SSL"
+
+#~ msgid "&TLS"
+#~ msgstr "&TLS"
+
+#, fuzzy
+#~| msgid "Mark Message as &Read"
+#~ msgid "Classify Message as &Spam"
+#~ msgstr "Ўқи&лган"
+
+#, fuzzy
+#~ msgid "Remove &Spam Classification"
+#~ msgstr "Муҳим хабар"
+
+#, fuzzy
+#~| msgid "Mark Message as &Read"
+#~ msgid "Classify Message as &Ham"
+#~ msgstr "Ўқи&лган"
+
+#, fuzzy
+#~ msgid "Remove &Ham Classification"
+#~ msgstr "Муҳим хабар"
+
+#~ msgid "Synchronization skipped"
+#~ msgstr "Тенглаштириш ўтказиб юборилди"
+
+#, fuzzy
+#~ msgid "Remove recipient line"
+#~ msgstr "<қабул қилувчилар>"
+
+#~ msgid "Unr&ead:"
+#~ msgstr "Ў&қилмаган:"
+
+#~ msgid "Day(s)"
+#~ msgstr "Кун"
+
+#~ msgid "Week(s)"
+#~ msgstr "Ҳафта"
+
+#~ msgid "Month(s)"
+#~ msgstr "Ой"
+
+#~ msgid "Sender identit&y:"
+#~ msgstr "Жўнатувчи &шахсияти:"
+
+#~ msgid "Edit Recent Addresses"
+#~ msgstr "Яқинда қўлланган манзилларни таҳрирлаш"
+
+#~ msgid "Unknown error trying to save image."
+#~ msgstr "Расмни сақлашда номаълум хато рўй берди."
+
+#~ msgid "Attaching Image Failed"
+#~ msgstr "Расмни илова қилиш муваффақиятсиз тугади"
+
+#~ msgid "S&earch:"
+#~ msgstr "&Қидириш:"
+
+#, fuzzy
+#~ msgctxt "Message->Forward->"
+#~ msgid "As Di&gest..."
+#~ msgstr "&Илова сифатида"
+
+#~ msgid "Offline mode"
+#~ msgstr "Офлайн"
+
+#~ msgid "Automatically delete older mails on POP servers"
+#~ msgstr "POP сервердан эски хабарларни автоматик олиб ташлаш"
+
+#, fuzzy
+#~ msgid "%1 message"
+#~ msgid_plural "%1 messages"
+#~ msgstr[0] "1 хат, %2."
