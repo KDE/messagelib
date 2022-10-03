@@ -843,7 +843,7 @@ msgstr ""
 "vostres claus i certificats d'encriptació per a esta identitat en el diàleg "
 "de configuració de la identitat.\n"
 "Si trieu continuar, i més tard es necessiten les claus, se vos preguntarà "
-"que indiqueu les claus a utilitzar."
+"que indiqueu les claus que s'utilitzaran."
 
 #: composer/keyresolver.cpp:655 composer/keyresolver.cpp:1008
 #: composer/keyresolver.cpp:1037
@@ -865,7 +865,7 @@ msgstr ""
 "certificats de signatura per a esta identitat en el diàleg de configuració "
 "de la identitat.\n"
 "Si trieu continuar, i més tard es necessiten les claus, se vos preguntarà "
-"que indiqueu les claus a utilitzar."
+"que indiqueu les claus que s'utilitzaran."
 
 #: composer/keyresolver.cpp:697 composer/keyresolver.cpp:1066
 #: composer/keyresolver.cpp:1084

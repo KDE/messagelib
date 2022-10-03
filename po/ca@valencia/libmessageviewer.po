@@ -2055,7 +2055,7 @@ msgstr "Mostra el certificat 0x%1"
 #: viewer/urlhandlermanager.cpp:600
 #, kde-format
 msgid "&Open in Address Book"
-msgstr "&Obri a la llibreta d'adreces"
+msgstr "&Obri en la llibreta d'adreces"
 
 #: viewer/urlhandlermanager.cpp:602
 #, kde-format
