@@ -16,6 +16,7 @@
 
 #include "bodyformatter/utils.h"
 
+#include <Libkleo/KeyCache>
 #include <KMime/Content>
 
 #include <QGpgME/DN>
