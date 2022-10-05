@@ -63,6 +63,8 @@ target_sources( KF5MessageComposer PRIVATE
     composer/composerattachmentinterface.cpp
     contactpreference/contactpreference.cpp
     contactpreference/savecontactpreferencejob.cpp
+    contactpreference/contactpreference.h
+    contactpreference/savecontactpreferencejob.h
     draftstatus/draftstatus.cpp
     recipient/recipientspicker.cpp
     recipient/recipient.cpp
