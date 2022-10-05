@@ -6,7 +6,6 @@
 
 #include "webenginepage.h"
 #include "webhittest.h"
-#include "webhittestresult.h"
 
 #include <KLocalizedString>
 
