@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2022-05-16 08:12+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -107,7 +107,7 @@ msgid "Attach"
 msgstr "Долучити"
 
 #: attachment/attachmentcontrollerbase.cpp:463
-#: composer/composerviewbase.cpp:1908
+#: composer/composerviewbase.cpp:1905
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Долучити файл…"
@@ -445,38 +445,38 @@ msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Не змінювати розмірів"
 
-#: composer/composerviewbase.cpp:737
+#: composer/composerviewbase.cpp:734
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "Ключ OpenPGP застарів"
 
-#: composer/composerviewbase.cpp:737
+#: composer/composerviewbase.cpp:734
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME сертифікат застарів"
 
-#: composer/composerviewbase.cpp:739
+#: composer/composerviewbase.cpp:736
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "Ключ OpenPGP скоро застаріє"
 
-#: composer/composerviewbase.cpp:739
+#: composer/composerviewbase.cpp:736
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME сертифікат скоро застаріє"
 
-#: composer/composerviewbase.cpp:814 composer/composerviewbase.cpp:828
-#: composer/composerviewbase.cpp:860
+#: composer/composerviewbase.cpp:811 composer/composerviewbase.cpp:825
+#: composer/composerviewbase.cpp:857
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Не вдалося визначити ключі. Будь ласка, повідомте про ваду."
 
-#: composer/composerviewbase.cpp:1066 composer/composerviewbase.cpp:1331
+#: composer/composerviewbase.cpp:1063 composer/composerviewbase.cpp:1328
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Завдання скасовано користувачем"
 
-#: composer/composerviewbase.cpp:1071
+#: composer/composerviewbase.cpp:1068
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -485,38 +485,38 @@ msgstr ""
 "Не вдалося створити повідомлення: %1 \n"
 "Будь ласка, повідомте про цю помилку."
 
-#: composer/composerviewbase.cpp:1073
+#: composer/composerviewbase.cpp:1070
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Не вдалося створити повідомлення: %1"
 
-#: composer/composerviewbase.cpp:1170
+#: composer/composerviewbase.cpp:1167
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
 "Під час спроби додати повідомлення до черги надсилання виникли проблеми: %1"
 
-#: composer/composerviewbase.cpp:1334
+#: composer/composerviewbase.cpp:1331
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Не вдалося автоматично зберегти повідомлення: %1"
 
-#: composer/composerviewbase.cpp:1353
+#: composer/composerviewbase.cpp:1350
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Не вдалося записати до файла всі дані."
 
-#: composer/composerviewbase.cpp:1356
+#: composer/composerviewbase.cpp:1353
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Не вдалося завершити запис файла."
 
-#: composer/composerviewbase.cpp:1360
+#: composer/composerviewbase.cpp:1357
 #, kde-format
 msgid "Could not open file."
 msgstr "Не вдалося відкрити файл."
 
-#: composer/composerviewbase.cpp:1367
+#: composer/composerviewbase.cpp:1364
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -527,17 +527,17 @@ msgstr ""
 "%2\n"
 "Причина: %3"
 
-#: composer/composerviewbase.cpp:1373
+#: composer/composerviewbase.cpp:1370
 #, kde-format
 msgid "Autosaving Message Failed"
 msgstr "Помилка автозбереження повідомлення"
 
-#: composer/composerviewbase.cpp:1486
+#: composer/composerviewbase.cpp:1483
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Не вдалося зберегти повідомлення: %1"
 
-#: composer/composerviewbase.cpp:1904
+#: composer/composerviewbase.cpp:1901
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -548,17 +548,17 @@ msgstr ""
 "не долучили жодного файла.\n"
 "Бажаєте долучити файл?"
 
-#: composer/composerviewbase.cpp:1907
+#: composer/composerviewbase.cpp:1904
 #, kde-format
 msgid "File Attachment Reminder"
 msgstr "Нагадування про долучення файла"
 
-#: composer/composerviewbase.cpp:1909
+#: composer/composerviewbase.cpp:1906
 #, kde-format
 msgid "&Send as Is"
 msgstr "Надіслати &як є"
 
-#: composer/composerviewbase.cpp:1961
+#: composer/composerviewbase.cpp:1958
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -569,23 +569,23 @@ msgstr ""
 "виявлено, що слід визначитися, чи варто підписувати це повідомлення.\n"
 "Підписати це повідомлення?"
 
-#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#: composer/composerviewbase.cpp:1963 composer/composerviewbase.cpp:1988
 #, kde-format
 msgid "Sign Message?"
 msgstr "Підписати повідомлення?"
 
-#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#: composer/composerviewbase.cpp:1963 composer/composerviewbase.cpp:1988
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Підписати"
 
-#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1991
+#: composer/composerviewbase.cpp:1963 composer/composerviewbase.cpp:1988
 #, kde-format
 msgid "Do &Not Sign"
 msgstr "&Не підписувати"
 
-#: composer/composerviewbase.cpp:1987
+#: composer/composerviewbase.cpp:1984
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -595,7 +595,7 @@ msgstr ""
 "надісланих до них.\n"
 "Підписати це повідомлення?"
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2008
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -604,17 +604,17 @@ msgstr ""
 "Ви запитали на підписування цього повідомлення, але для цього профілю не "
 "вказано жодного ключа для підписування."
 
-#: composer/composerviewbase.cpp:2014
+#: composer/composerviewbase.cpp:2011
 #, kde-format
 msgid "Send Unsigned?"
 msgstr "Надіслати без підпису?"
 
-#: composer/composerviewbase.cpp:2014
+#: composer/composerviewbase.cpp:2011
 #, kde-format
 msgid "Send &Unsigned"
 msgstr "Надіслати &без підпису"
 
-#: composer/composerviewbase.cpp:2028
+#: composer/composerviewbase.cpp:2025
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -626,7 +626,7 @@ msgstr ""
 "листування.\n"
 "Підписати всі частини?"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2029
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -637,27 +637,27 @@ msgstr ""
 "Надсилання непідписаних повідомлень може порушити правила листування.\n"
 "Підписати повідомлення?"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2032
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Підписати всі частини"
 
-#: composer/composerviewbase.cpp:2035
+#: composer/composerviewbase.cpp:2032
 #, kde-format
 msgid "&Sign"
 msgstr "&Підписати"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid "Unsigned-Message Warning"
 msgstr "Попередження щодо непідписаного повідомлення"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2034
 #, kde-format
 msgid "Send &As Is"
 msgstr "Надіслати &як є"
 
-#: composer/composerviewbase.cpp:2084
+#: composer/composerviewbase.cpp:2081
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -666,7 +666,7 @@ msgstr ""
 "Для всіх адресатів було знайдено дійсні ключі, що мають довіру.\n"
 "Чи зашифрувати це повідомлення?"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -677,34 +677,34 @@ msgstr ""
 "виявлено, що слід визначитися, чи слід шифрувати це повідомлення.\n"
 "Зашифрувати це повідомлення?"
 
-#: composer/composerviewbase.cpp:2093 composer/composerviewbase.cpp:2119
+#: composer/composerviewbase.cpp:2090 composer/composerviewbase.cpp:2116
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Зашифрувати повідомлення?"
 
-#: composer/composerviewbase.cpp:2094
+#: composer/composerviewbase.cpp:2091
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Підписати та &зашифрувати"
 
-#: composer/composerviewbase.cpp:2094 composer/composerviewbase.cpp:2119
-#: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1317
+#: composer/composerviewbase.cpp:2091 composer/composerviewbase.cpp:2116
+#: composer/composerviewbase.cpp:2163 composer/keyresolver.cpp:1317
 #: composer/keyresolver.cpp:1353
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Зашифрувати"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#: composer/composerviewbase.cpp:2092 composer/composerviewbase.cpp:2168
 #, kde-format
 msgid "&Sign Only"
 msgstr "Т&ільки підписати"
 
-#: composer/composerviewbase.cpp:2095 composer/composerviewbase.cpp:2171
+#: composer/composerviewbase.cpp:2092 composer/composerviewbase.cpp:2168
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&Надіслати як є"
 
-#: composer/composerviewbase.cpp:2116
+#: composer/composerviewbase.cpp:2113
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -714,12 +714,12 @@ msgstr ""
 "надісланих до них.\n"
 "Зашифрувати це повідомлення?"
 
-#: composer/composerviewbase.cpp:2119
+#: composer/composerviewbase.cpp:2116
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "&Не зашифровувати"
 
-#: composer/composerviewbase.cpp:2139
+#: composer/composerviewbase.cpp:2136
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -730,17 +730,17 @@ msgstr ""
 "але для цього профілю не встановлено чинних ключів для шифрування, що мають "
 "довіру."
 
-#: composer/composerviewbase.cpp:2143
+#: composer/composerviewbase.cpp:2140
 #, kde-format
 msgid "Send Unencrypted?"
 msgstr "Надіслати незашифрованим?"
 
-#: composer/composerviewbase.cpp:2143 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2140 composer/keyresolver.cpp:1339
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Надіслати &незашифрованим"
 
-#: composer/composerviewbase.cpp:2157
+#: composer/composerviewbase.cpp:2154
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -753,7 +753,7 @@ msgstr ""
 "листування.\n"
 "Зашифрувати всі частини?"
 
-#: composer/composerviewbase.cpp:2162
+#: composer/composerviewbase.cpp:2159
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -765,12 +765,12 @@ msgstr ""
 "Надсилання незашифрованих повідомлень може порушити правила листування.\n"
 "Зашифрувати повідомлення?"
 
-#: composer/composerviewbase.cpp:2166
+#: composer/composerviewbase.cpp:2163
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Зашифровувати всі частини"
 
-#: composer/composerviewbase.cpp:2169
+#: composer/composerviewbase.cpp:2166
 #, kde-format
 msgid "Unencrypted Message Warning"
 msgstr "Попередження щодо незашифрованогоповідомлення"
@@ -1029,7 +1029,7 @@ msgstr ""
 "\n"
 "Будь ласка, виберіть ще раз сертифікати для цього отримувача."
 
-#: composer/keyresolver.cpp:1543
+#: composer/keyresolver.cpp:1541
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1046,7 +1046,7 @@ msgstr ""
 "списку немає належного сертифіката, ви можете виконати пошук зовнішніх "
 "сертифікатів натисканням кнопки пошуку зовнішніх сертифікатів.</qt>"
 
-#: composer/keyresolver.cpp:1553
+#: composer/keyresolver.cpp:1551
 #, kde-format
 msgctxt ""
 "if in your language something like 'certificate(s)' is not possible please "
@@ -1636,6 +1636,22 @@ msgstr[3] ""
 "<p>Ваш S/MIME сертифікат</p><p align=center><b>%2</b> (серійний номер %3)</"
 "p><p>застаріє менше, ніж через %1 день.</p>"
 
+#: contactpreference/savecontactpreferencejob.cpp:70
+#, kde-format
+msgid "Name Selection"
+msgstr "Вибір назви"
+
+#: contactpreference/savecontactpreferencejob.cpp:71
+#, kde-format
+msgid "Which name shall the contact '%1' have in your address book?"
+msgstr "Яку назву повинен мати запис контакту «%1» у вашій адресній книзі?"
+
+#: contactpreference/savecontactpreferencejob.cpp:83
+#, kde-format
+msgid "Select the address book folder to store the new contact in:"
+msgstr ""
+"Виберіть теку адресної книги, у якій слід зберегти новий запис контакту:"
+
 #: followupreminder/followupremindercreatejob.cpp:76
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
@@ -2098,22 +2114,6 @@ msgstr "Вибране кодування (%1) непридатне для по�
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Не вдалося викликати інструмент кодування для набору символів «%1»."
-
-#: job/savecontactpreferencejob.cpp:51
-#, kde-format
-msgid "Name Selection"
-msgstr "Вибір назви"
-
-#: job/savecontactpreferencejob.cpp:52
-#, kde-format
-msgid "Which name shall the contact '%1' have in your address book?"
-msgstr "Яку назву повинен мати запис контакту «%1» у вашій адресній книзі?"
-
-#: job/savecontactpreferencejob.cpp:64
-#, kde-format
-msgid "Select the address book folder to store the new contact in:"
-msgstr ""
-"Виберіть теку адресної книги, у якій слід зберегти новий запис контакту:"
 
 #: job/singlepartjob.cpp:67
 #, kde-format

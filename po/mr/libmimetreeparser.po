@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2013-04-12 15:14+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -23,12 +23,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "निनावी"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr ""
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#: src/messagepart.cpp:793 src/messagepart.cpp:1239
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr ""
@@ -51,17 +51,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr ""
 
-#: src/messagepart.cpp:1275
+#: src/messagepart.cpp:1241
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr ""
 
-#: src/messagepart.cpp:1277
+#: src/messagepart.cpp:1243
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr ""
 
-#: src/messagepart.cpp:1278
+#: src/messagepart.cpp:1244
 #, kde-format
 msgid "Error: %1"
 msgstr "त्रुटी : %1"

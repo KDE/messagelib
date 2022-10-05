@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2016-06-03 21:25+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -23,12 +23,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Unbenannt"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Falsches Kryptografie-Modul."
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#: src/messagepart.cpp:793 src/messagepart.cpp:1239
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Es wurde kein geeignetes Kryptografie-Modul gefunden."
@@ -53,17 +53,17 @@ msgstr ""
 "Die Nachricht ist signiert, aber die Gültigkeit der Signatur kann nicht "
 "überprüft werden.<br />Grund: %1"
 
-#: src/messagepart.cpp:1275
+#: src/messagepart.cpp:1241
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Das Kryptografie-Modul „%1“ kann keine Nachrichten entschlüsseln."
 
-#: src/messagepart.cpp:1277
+#: src/messagepart.cpp:1243
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Das Kryptografie-Modul „%1“ kann die Daten nicht entschlüsseln."
 
-#: src/messagepart.cpp:1278
+#: src/messagepart.cpp:1244
 #, kde-format
 msgid "Error: %1"
 msgstr "Fehler: %1"

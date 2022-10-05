@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -29,12 +29,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Неименувано"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr ""
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#: src/messagepart.cpp:793 src/messagepart.cpp:1239
 #, fuzzy, kde-format
 #| msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 #| msgid "No %1 plug-in was found."
@@ -62,17 +62,17 @@ msgstr ""
 "Пораката е потпишана, но валидноста на потписот не може да се верификува."
 "<br />Причина: %1"
 
-#: src/messagepart.cpp:1275
+#: src/messagepart.cpp:1241
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Крипто-приклучокот „%1“ не може да декриптира пораки."
 
-#: src/messagepart.cpp:1277
+#: src/messagepart.cpp:1243
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Крипто-приклучокот „%1“ не можеше да ги декриптира податоците."
 
-#: src/messagepart.cpp:1278
+#: src/messagepart.cpp:1244
 #, kde-format
 msgid "Error: %1"
 msgstr "Грешка: %1"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -28,12 +28,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Heb ei enwi"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
 #, fuzzy, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Rhaglennig Celu Anghywir!"
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#: src/messagepart.cpp:793 src/messagepart.cpp:1239
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Ni chanfuwyd rhaglennig celu addas."
@@ -57,17 +57,17 @@ msgid ""
 msgstr ""
 "Llofnodir y neges, ond ni ellir gwirio dilysrwydd y llofnod.<br />Rheswm: %1"
 
-#: src/messagepart.cpp:1275
+#: src/messagepart.cpp:1241
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Ni all y rhaglennig celu \"%1\" ddatgelu negeseuon."
 
-#: src/messagepart.cpp:1277
+#: src/messagepart.cpp:1243
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Methodd y rhaglennig celu \"%1\" ddatgelu'r data."
 
-#: src/messagepart.cpp:1278
+#: src/messagepart.cpp:1244
 #, kde-format
 msgid "Error: %1"
 msgstr "Gwall: %1"

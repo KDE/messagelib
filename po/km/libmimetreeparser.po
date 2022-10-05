@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-11-24 00:29+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -25,12 +25,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "គ្មានឈ្មោះ"
 
-#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1065
+#: src/messagepart.cpp:702 src/messagepart.cpp:735 src/messagepart.cpp:1042
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "ខុស​កម្មវិធី​ជំនួយ Crypto ។"
 
-#: src/messagepart.cpp:793 src/messagepart.cpp:1273
+#: src/messagepart.cpp:793 src/messagepart.cpp:1239
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "គ្មាន​រកឃើញ​កម្មវិធី​ជំនួយ​​ដែល​សមរម្យ​ឡើយ ។"
@@ -56,17 +56,17 @@ msgstr ""
 "សារ​ត្រូវបាន​ចុះហត្ថលេខា​ ប៉ុន្តែ​សុពលភាព​របស់​ហត្ថលេខា​​មិនអាច​ត្រូវបាន​ផ្ទៀងផ្ទាត់​បានទេ ។<br /"
 ">មូលហេតុ ៖ %1"
 
-#: src/messagepart.cpp:1275
+#: src/messagepart.cpp:1241
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "កម្មវិធី​ជំនួយ Crypto \"%1\" មិនអាច​ឌិគ្រីប​សារ​បានឡើយ ។"
 
-#: src/messagepart.cpp:1277
+#: src/messagepart.cpp:1243
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "កម្មវិធី​ជំនួយ Crypto \"%1\" មិន​អាច​ឌិគ្រីប​ទិន្នន័យ​បាន​ឡើយ ។"
 
-#: src/messagepart.cpp:1278
+#: src/messagepart.cpp:1244
 #, kde-format
 msgid "Error: %1"
 msgstr "​កំហុស ៖ %1"
