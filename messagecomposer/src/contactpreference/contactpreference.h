@@ -12,22 +12,23 @@
 
 namespace KContacts
 {
-    class Addressee;
+class Addressee;
 }
 
 namespace MessageComposer
 {
-    class MESSAGECOMPOSER_EXPORT ContactPreference {
-    public:
-        ContactPreference();
-    
-        void fillFromAddressee(const KContacts::Addressee &contact);
-        void fillAddressee(KContacts::Addressee &contact) const;
+class MESSAGECOMPOSER_EXPORT ContactPreference
+{
+public:
+    ContactPreference();
 
-        Kleo::EncryptionPreference encryptionPreference = Kleo::UnknownPreference;
-        Kleo::SigningPreference signingPreference = Kleo::UnknownSigningPreference;
-        Kleo::CryptoMessageFormat cryptoMessageFormat = Kleo::AutoFormat;
-        QStringList pgpKeyFingerprints;
-        QStringList smimeCertFingerprints;
-    };
+    void fillFromAddressee(const KContacts::Addressee &contact);
+    void fillAddressee(KContacts::Addressee &contact) const;
+
+    Kleo::EncryptionPreference encryptionPreference = Kleo::UnknownPreference;
+    Kleo::SigningPreference signingPreference = Kleo::UnknownSigningPreference;
+    Kleo::CryptoMessageFormat cryptoMessageFormat = Kleo::AutoFormat;
+    QStringList pgpKeyFingerprints;
+    QStringList smimeCertFingerprints;
+};
 }
