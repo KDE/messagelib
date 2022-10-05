@@ -10,20 +10,15 @@
 
 using namespace MessageComposer;
 
-ContactPreference::ContactPreference()
-    : encryptionPreference(Kleo::UnknownPreference)
-    , signingPreference(Kleo::UnknownSigningPreference)
-    , cryptoMessageFormat(Kleo::AutoFormat)
-{
-}
+ContactPreference::ContactPreference() = default;
 
 void ContactPreference::fillFromAddressee(const KContacts::Addressee& contact)
 {
-    QString encryptPref = contact.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOENCRYPTPREF"));
+    const QString encryptPref = contact.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOENCRYPTPREF"));
     encryptionPreference = Kleo::stringToEncryptionPreference(encryptPref);
-    QString signPref = contact.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOSIGNPREF"));
+    const QString signPref = contact.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOSIGNPREF"));
     signingPreference = Kleo::stringToSigningPreference(signPref);
-    QString cryptoFormats = contact.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOPROTOPREF"));
+    const QString cryptoFormats = contact.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOPROTOPREF"));
     cryptoMessageFormat = Kleo::stringToCryptoMessageFormat(cryptoFormats);
     pgpKeyFingerprints = contact.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("OPENPGPFP")).split(QLatin1Char(','), Qt::SkipEmptyParts);
     smimeCertFingerprints = contact.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("SMIMEFP")).split(QLatin1Char(','), Qt::SkipEmptyParts);

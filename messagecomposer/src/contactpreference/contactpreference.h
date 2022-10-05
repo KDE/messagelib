@@ -23,10 +23,10 @@ namespace MessageComposer
     
         void fillFromAddressee(const KContacts::Addressee &contact);
         void fillAddressee(KContacts::Addressee &contact) const;
-        
-        Kleo::EncryptionPreference encryptionPreference;
-        Kleo::SigningPreference signingPreference;
-        Kleo::CryptoMessageFormat cryptoMessageFormat;
+
+        Kleo::EncryptionPreference encryptionPreference = Kleo::UnknownPreference;
+        Kleo::SigningPreference signingPreference = Kleo::UnknownSigningPreference;
+        Kleo::CryptoMessageFormat cryptoMessageFormat = Kleo::AutoFormat;
         QStringList pgpKeyFingerprints;
         QStringList smimeCertFingerprints;
     };
