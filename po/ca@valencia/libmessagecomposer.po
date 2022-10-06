@@ -60,20 +60,20 @@ msgstr "No s'ha pogut tornar a carregar l'adjunt"
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr "&Obri amb"
+msgstr "O&bri amb"
 
 #: attachment/attachmentcontrollerbase.cpp:342
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&Altres..."
+msgstr "Al&tres..."
 
 #: attachment/attachmentcontrollerbase.cpp:344
 #: attachment/attachmentcontrollerbase.cpp:352
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Obri amb..."
+msgstr "O&bri amb..."
 
 #: attachment/attachmentcontrollerbase.cpp:378
 #, kde-format
@@ -262,7 +262,7 @@ msgstr "Guarda a un fitxer"
 #: attachment/attachmentcontrollerbase.cpp:820
 #, kde-format
 msgid "&Replace"
-msgstr "&Substituïx"
+msgstr "Su&bstituïx"
 
 #: attachment/attachmentcontrollerbase.cpp:847
 #: attachment/attachmentcontrollerbase.cpp:905
@@ -379,17 +379,17 @@ msgstr "No s'han trobat dades de les claus per als destinataris."
 #: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
-msgstr "&Mantín els marcadors, no signes/encriptes"
+msgstr "Man&tín els marcadors, no signes/encriptes"
 
 #: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "&Keep markup, do not encrypt"
-msgstr "&Mantín els marcadors, no encriptes"
+msgstr "Man&tín els marcadors, no encriptes"
 
 #: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "&Keep markup, do not sign"
-msgstr "&Mantín els marcadors, no signes"
+msgstr "Man&tín els marcadors, no signes"
 
 #: composer/composerviewbase.cpp:329
 #, kde-format
@@ -2798,7 +2798,7 @@ msgstr "Any del mes passat (%1)"
 #: snippet/convertsnippetvariablemenu.cpp:165
 #, kde-format
 msgid "Misc"
-msgstr "Miscelànea"
+msgstr "Miscel·lània"
 
 #: snippet/convertsnippetvariablemenu.cpp:166
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-30 00:47+0000\n"
+"POT-Creation-Date: 2022-10-06 00:47+0000\n"
 "PO-Revision-Date: 2021-01-23 14:22+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -81,7 +81,7 @@ msgstr "Kis- és nagybetűérzékeny"
 msgid "Phrase not found"
 msgstr "A kifejezés nem található"
 
-#: webenginepage.cpp:78
+#: webenginepage.cpp:77
 #, kde-format
 msgid "Save HTML Page"
 msgstr "HTML-oldal mentése"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-30 00:47+0000\n"
+"POT-Creation-Date: 2022-10-06 00:47+0000\n"
 "PO-Revision-Date: 2018-01-31 19:35+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -82,7 +82,7 @@ msgstr "حسّاس للحالة"
 msgid "Phrase not found"
 msgstr "لم توجد العبارة"
 
-#: webenginepage.cpp:78
+#: webenginepage.cpp:77
 #, kde-format
 msgid "Save HTML Page"
 msgstr "احفظ صفحة HTML"

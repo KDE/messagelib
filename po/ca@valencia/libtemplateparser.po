@@ -530,7 +530,7 @@ msgstr "Processa amb programes externs"
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
-msgstr "Miscelànea"
+msgstr "Miscel·lània"
 
 #: templatescommandmenu.cpp:268
 #, kde-format

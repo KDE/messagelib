@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-30 00:47+0000\n"
+"POT-Creation-Date: 2022-10-06 00:47+0000\n"
 "PO-Revision-Date: 2022-08-30 12:28+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -81,7 +81,7 @@ msgstr "Hoofdlettergevoelig"
 msgid "Phrase not found"
 msgstr "Uitdrukking niet gevonden"
 
-#: webenginepage.cpp:78
+#: webenginepage.cpp:77
 #, kde-format
 msgid "Save HTML Page"
 msgstr "HTML-pagina opslaan"

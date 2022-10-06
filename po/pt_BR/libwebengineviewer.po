@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-30 00:47+0000\n"
+"POT-Creation-Date: 2022-10-06 00:47+0000\n"
 "PO-Revision-Date: 2021-04-14 13:52-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -83,7 +83,7 @@ msgstr "Diferenciar maiúsculas de minúsculas"
 msgid "Phrase not found"
 msgstr "Frase não encontrada"
 
-#: webenginepage.cpp:78
+#: webenginepage.cpp:77
 #, kde-format
 msgid "Save HTML Page"
 msgstr "Salvar página HTML"

@@ -2055,7 +2055,7 @@ msgstr "Mostra el certificat 0x%1"
 #: viewer/urlhandlermanager.cpp:600
 #, kde-format
 msgid "&Open in Address Book"
-msgstr "&Obri en la llibreta d'adreces"
+msgstr "O&bri en la llibreta d'adreces"
 
 #: viewer/urlhandlermanager.cpp:602
 #, kde-format
@@ -2146,19 +2146,19 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr "&Obri amb"
+msgstr "O&bri amb"
 
 #: viewer/viewer_p.cpp:465
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&Altres..."
+msgstr "Al&tres..."
 
 #: viewer/viewer_p.cpp:467 viewer/viewer_p.cpp:480
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Obri amb..."
+msgstr "O&bri amb..."
 
 #: viewer/viewer_p.cpp:544 viewer/viewer_p.cpp:1704
 #, kde-format
@@ -2403,7 +2403,7 @@ msgstr "Desactiva les emoticones"
 #: viewer/viewer_p.cpp:1701
 #, kde-format
 msgid "Save &As..."
-msgstr "&Anomena i guarda..."
+msgstr "Anomena i gu&arda..."
 
 #: viewer/viewer_p.cpp:1709
 #, kde-format
@@ -2491,7 +2491,7 @@ msgstr "Voleu obrir l'adjunt?"
 #: widgets/attachmentdialog.cpp:39
 #, kde-format
 msgid "&Open With '%1'"
-msgstr "&Obri amb «%1»"
+msgstr "O&bri amb «%1»"
 
 #: widgets/attachmentdialog.cpp:46
 #, kde-format
