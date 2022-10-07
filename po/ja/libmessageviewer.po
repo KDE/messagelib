@@ -2703,8 +2703,3 @@ msgstr "次のカード(&N)"
 #, kde-format
 msgid "&Previous Card"
 msgstr "前のカード(&P)"
-
-#, fuzzy
-#~| msgid "Reply to: "
-#~ msgid "Reply From:"
-#~ msgstr "返信先: "
