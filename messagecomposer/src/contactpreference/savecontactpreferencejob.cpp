@@ -33,7 +33,7 @@ public:
 
     SaveContactPreferenceJob *q_ptr;
     Q_DECLARE_PUBLIC(SaveContactPreferenceJob)
-    
+
     const QString mEmail;
     const ContactPreference mPref;
 };
@@ -49,7 +49,7 @@ SaveContactPreferenceJob::~SaveContactPreferenceJob() = default;
 void SaveContactPreferenceJob::start()
 {
     Q_D(SaveContactPreferenceJob);
-    
+
     auto job = new Akonadi::ContactSearchJob(this);
     connect(job, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotSearchContact);
     job->setLimit(1);
@@ -114,7 +114,6 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
         connect(itemModifyJob, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
     }
 }
-
 
 void SaveContactPreferenceJob::slotModifyCreateItem(KJob *job)
 {

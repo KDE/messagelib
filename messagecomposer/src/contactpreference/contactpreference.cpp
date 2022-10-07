@@ -12,7 +12,7 @@ using namespace MessageComposer;
 
 ContactPreference::ContactPreference() = default;
 
-void ContactPreference::fillFromAddressee(const KContacts::Addressee& contact)
+void ContactPreference::fillFromAddressee(const KContacts::Addressee &contact)
 {
     const QString encryptPref = contact.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOENCRYPTPREF"));
     encryptionPreference = Kleo::stringToEncryptionPreference(encryptPref);
@@ -24,17 +24,13 @@ void ContactPreference::fillFromAddressee(const KContacts::Addressee& contact)
     smimeCertFingerprints = contact.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("SMIMEFP")).split(QLatin1Char(','), Qt::SkipEmptyParts);
 }
 
-void ContactPreference::fillAddressee(KContacts::Addressee& contact) const
+void ContactPreference::fillAddressee(KContacts::Addressee &contact) const
 {
     contact.insertCustom(QStringLiteral("KADDRESSBOOK"),
                          QStringLiteral("CRYPTOENCRYPTPREF"),
                          QLatin1String(Kleo::encryptionPreferenceToString(encryptionPreference)));
-    contact.insertCustom(QStringLiteral("KADDRESSBOOK"),
-                         QStringLiteral("CRYPTOSIGNPREF"),
-                         QLatin1String(Kleo::signingPreferenceToString(signingPreference)));
-    contact.insertCustom(QStringLiteral("KADDRESSBOOK"),
-                         QStringLiteral("CRYPTOPROTOPREF"),
-                         QLatin1String(cryptoMessageFormatToString(cryptoMessageFormat)));
+    contact.insertCustom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOSIGNPREF"), QLatin1String(Kleo::signingPreferenceToString(signingPreference)));
+    contact.insertCustom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("CRYPTOPROTOPREF"), QLatin1String(cryptoMessageFormatToString(cryptoMessageFormat)));
     contact.insertCustom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("OPENPGPFP"), pgpKeyFingerprints.join(QLatin1Char(',')));
     contact.insertCustom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("SMIMEFP"), smimeCertFingerprints.join(QLatin1Char(',')));
 }

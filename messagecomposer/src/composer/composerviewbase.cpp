@@ -2236,12 +2236,12 @@ KMime::Message::Ptr ComposerViewBase::msg() const
 NearExpiryChecker::Ptr ComposerViewBase::nearExpiryChecker()
 {
     if (!mNearExpiryChecker) {
-     mNearExpiryChecker = NearExpiryChecker::Ptr(new NearExpiryChecker(encryptKeyNearExpiryWarningThresholdInDays(),
-                                                signingKeyNearExpiryWarningThresholdInDays(),
-                                                encryptRootCertNearExpiryWarningThresholdInDays(),
-                                                signingRootCertNearExpiryWarningThresholdInDays(),
-                                                encryptChainCertNearExpiryWarningThresholdInDays(),
-                                                signingChainCertNearExpiryWarningThresholdInDays()));
+        mNearExpiryChecker = NearExpiryChecker::Ptr(new NearExpiryChecker(encryptKeyNearExpiryWarningThresholdInDays(),
+                                                                          signingKeyNearExpiryWarningThresholdInDays(),
+                                                                          encryptRootCertNearExpiryWarningThresholdInDays(),
+                                                                          signingRootCertNearExpiryWarningThresholdInDays(),
+                                                                          encryptChainCertNearExpiryWarningThresholdInDays(),
+                                                                          signingChainCertNearExpiryWarningThresholdInDays()));
     }
     return mNearExpiryChecker;
 }

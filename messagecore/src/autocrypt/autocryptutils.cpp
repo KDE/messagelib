@@ -67,14 +67,13 @@ void MessageCore::processAutocryptfromMail(const HeaderMixupNodeHelper &mixup)
     auto storage = AutocryptStorage::self();
 
     QByteArray messageid = "<NO Message-ID header>";
-    if  (mixup.mailHeaderAsBase("Message-ID")) {
+    if (mixup.mailHeaderAsBase("Message-ID")) {
         messageid = mixup.mailHeaderAsBase("Message-ID")->as7BitString(false);
     }
 
     const auto fromAddr = mixup.mailHeaderAsAddressList("from");
     if (fromAddr->addresses().size() != 1) {
-        qInfo(AUTOCRYPT_LOG) << "Don't update Autocrypt storage, none or multiple From headers found in "
-                             << messageid;
+        qInfo(AUTOCRYPT_LOG) << "Don't update Autocrypt storage, none or multiple From headers found in " << messageid;
         return;
     }
 
@@ -113,18 +112,15 @@ void MessageCore::processAutocryptfromMail(const HeaderMixupNodeHelper &mixup)
             const auto params = paramsFromAutocryptHeader(header);
             auto recipient = storage->addRecipient(params.value("addr"));
             recipient->updateFromMessage(mixup, header);
-            qInfo(AUTOCRYPT_LOG) << "Update Autocrypt information for " << recipient->addr() << " from "
-                                 << messageid;
+            qInfo(AUTOCRYPT_LOG) << "Update Autocrypt information for " << recipient->addr() << " from " << messageid;
         } else {
-            qInfo(AUTOCRYPT_LOG) << "Don't update Autocrypt storage, because we have multiple valid Autocrypt headers found in "
-                                 << messageid;
+            qInfo(AUTOCRYPT_LOG) << "Don't update Autocrypt storage, because we have multiple valid Autocrypt headers found in " << messageid;
         }
     } else {
         auto recipient = storage->getRecipient(fromAddr->addresses().value(0));
         if (recipient) {
             recipient->updateFromMessage(mixup, nullptr);
-            qInfo(AUTOCRYPT_LOG) << "Update Autocrypt information for " << recipient->addr() << " from "
-                                 << messageid;
+            qInfo(AUTOCRYPT_LOG) << "Update Autocrypt information for " << recipient->addr() << " from " << messageid;
         }
     }
 
@@ -141,8 +137,7 @@ void MessageCore::processAutocryptfromMail(const HeaderMixupNodeHelper &mixup)
                 const auto params = paramsFromAutocryptHeader(header);
                 auto recipient = storage->addRecipient(params.value("addr"));
                 recipient->updateFromGossip(mixup, header);
-                qInfo(AUTOCRYPT_LOG) << "Update Autocrypt Gossip information for" << recipient->addr() << " from "
-                                     << messageid;
+                qInfo(AUTOCRYPT_LOG) << "Update Autocrypt Gossip information for" << recipient->addr() << " from " << messageid;
             }
         }
     }

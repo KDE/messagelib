@@ -16,8 +16,8 @@
 
 #include "bodyformatter/utils.h"
 
-#include <Libkleo/KeyCache>
 #include <KMime/Content>
+#include <Libkleo/KeyCache>
 
 #include <QGpgME/DN>
 #include <QGpgME/ImportJob>
@@ -862,7 +862,7 @@ void SignedMessagePart::sigStatusToMetaData()
         if (key.numUserIDs() > 0 && key.userID(0).id()) {
             partMetaData()->signer = prettifyDN(key.userID(0).id());
         }
-        for (const auto &uid: key.userIDs()) {
+        for (const auto &uid : key.userIDs()) {
             // The following if /should/ always result in TRUE but we
             // won't trust implicitly the plugin that gave us these data.
             if (uid.email()) {
