@@ -284,7 +284,6 @@ target_link_libraries(KF5MessageComposer
     KF5::PimCommonAkonadi
     KF5::KIOCore
     KF5::I18n
-    KF5::KIOWidgets     # for KIO::JobUiDelegate
     KF5::KIOFileWidgets # for KEncodingDialog
     KF5::XmlGui         # for KActionCollection
     KF5::SonnetUi
