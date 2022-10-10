@@ -9,9 +9,7 @@
 #include "kwindowpositioner.h"
 
 #include "messagecomposer_debug.h"
-
-#include <QApplication>
-#include <QDesktopWidget>
+#include <QScreen>
 
 using namespace MessageComposer;
 KWindowPositioner::KWindowPositioner(QWidget *master, QWidget *slave, Mode mode)
@@ -35,7 +33,7 @@ void KWindowPositioner::reposition()
     QPoint pos = mMaster->mapToGlobal(relativePos);
 
     // fix position to avoid hiding parts of the window (needed especially when not using KWin)
-    const QRect desktopRect(qApp->desktop()->availableGeometry(mMaster));
+    const QRect desktopRect(mMaster->screen()->availableGeometry());
     if ((pos.x() + mSlave->frameGeometry().width()) > desktopRect.width()) {
         pos.setX(desktopRect.width() - mSlave->frameGeometry().width());
     }
