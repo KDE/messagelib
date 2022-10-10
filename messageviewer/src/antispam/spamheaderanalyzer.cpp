@@ -15,6 +15,8 @@
 #include <KMime/Headers>
 #include <KMime/KMimeMessage>
 
+#include <QRegularExpression>
+
 using namespace MessageViewer;
 
 // static
@@ -50,9 +52,9 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
 
         if ((*it).scoreType() != SpamAgentBool) {
             // Can we extract the score?
-            QRegExp scorePattern = (*it).scorePattern();
-            if (scorePattern.indexIn(mField) != -1) {
-                scoreString = scorePattern.cap(1);
+            QRegularExpression scorePattern = (*it).scorePattern();
+            if (scorePattern.match(mField).hasMatch()) {
+                scoreString = scorePattern.match(mField).captured(1);
                 scoreValid = true;
             }
         } else {
@@ -70,7 +72,7 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
                 break;
 
             case SpamAgentBool:
-                if ((*it).scorePattern().indexIn(mField) == -1) {
+                if ((*it).scorePattern().match(mField).hasMatch()) {
                     score = 0.0;
                 } else {
                     score = 100.0;
@@ -105,9 +107,9 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
 
                 // Find the threshold value.
                 QString thresholdString;
-                const QRegExp thresholdPattern = (*it).thresholdPattern();
-                if (thresholdPattern.indexIn(mField) != -1) {
-                    thresholdString = thresholdPattern.cap(1);
+                const QRegularExpression thresholdPattern = (*it).thresholdPattern();
+                if (thresholdPattern.match(mField).hasMatch()) {
+                    thresholdString = thresholdPattern.match(mField).captured(1);
                 } else {
                     spamError = couldNotFindTheThresholdField;
                     qCDebug(MESSAGEVIEWER_LOG) << "Threshold could not be extracted from header '" << mField << "'";
@@ -147,9 +149,9 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
                 mCField = cHeader->asUnicodeString();
                 if (!mCField.isEmpty()) {
                     // Can we extract the confidence?
-                    QRegExp cScorePattern = (*it).confidencePattern();
-                    if (cScorePattern.indexIn(mCField) != -1) {
-                        confidenceString = cScorePattern.cap(1);
+                    QRegularExpression cScorePattern = (*it).confidencePattern();
+                    if (cScorePattern.match(mCField).hasMatch()) {
+                        confidenceString = cScorePattern.match(mCField).captured(1);
                     }
                     confidence = confidenceString.toFloat(&confidenceValid);
                     if (!confidenceValid) {

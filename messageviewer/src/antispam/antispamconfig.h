@@ -10,8 +10,7 @@
 
 #pragma once
 
-#include "messageviewer_export.h"
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QVector>
 
 class QString;
@@ -39,9 +38,9 @@ public:
               SpamAgentTypes type,
               const QByteArray &field,
               const QByteArray &cfield,
-              const QRegExp &score,
-              const QRegExp &threshold,
-              const QRegExp &confidence)
+              const QRegularExpression &score,
+              const QRegularExpression &threshold,
+              const QRegularExpression &confidence)
         : mName(name)
         , mType(type)
         , mField(field)
@@ -72,17 +71,17 @@ public:
         return mConfidenceField;
     }
 
-    Q_REQUIRED_RESULT QRegExp scorePattern() const
+    Q_REQUIRED_RESULT QRegularExpression scorePattern() const
     {
         return mScore;
     }
 
-    Q_REQUIRED_RESULT QRegExp thresholdPattern() const
+    Q_REQUIRED_RESULT QRegularExpression thresholdPattern() const
     {
         return mThreshold;
     }
 
-    Q_REQUIRED_RESULT QRegExp confidencePattern() const
+    Q_REQUIRED_RESULT QRegularExpression confidencePattern() const
     {
         return mConfidence;
     }
@@ -92,9 +91,9 @@ private:
     SpamAgentTypes mType;
     QByteArray mField;
     QByteArray mConfidenceField;
-    QRegExp mScore;
-    QRegExp mThreshold;
-    QRegExp mConfidence;
+    QRegularExpression mScore;
+    QRegularExpression mThreshold;
+    QRegularExpression mConfidence;
 };
 using SpamAgents = QVector<SpamAgent>;
 
