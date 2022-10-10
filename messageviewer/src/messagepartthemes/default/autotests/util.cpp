@@ -8,7 +8,8 @@
 #include <QFile>
 #include <QProcess>
 #include <QTest>
-KMime::Message::Ptr MessageViewer::Test::readAndParseMail(const QString &mailFile)
+using namespace MessageViewer;
+KMime::Message::Ptr Test::readAndParseMail(const QString &mailFile)
 {
     QFile file(QStringLiteral(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     const bool openFile = file.open(QIODevice::ReadOnly);
@@ -21,7 +22,7 @@ KMime::Message::Ptr MessageViewer::Test::readAndParseMail(const QString &mailFil
     return msg;
 }
 
-void MessageViewer::Test::compareFile(const QString &outFile, const QString &referenceFile)
+void Test::compareFile(const QString &outFile, const QString &referenceFile)
 {
     QVERIFY(QFile::exists(outFile));
 
