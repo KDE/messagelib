@@ -64,6 +64,9 @@
 #include <QMenu>
 #include <QMimeData>
 #include <QTemporaryDir>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QKeyCombination>
+#endif
 
 // Qt includes
 #include <QActionGroup>
@@ -1560,8 +1563,12 @@ void ViewerPrivate::createActions()
     mToggleMimePartTreeAction = new KToggleAction(i18n("Show Message Structure"), this);
     ac->addAction(QStringLiteral("toggle_mimeparttree"), mToggleMimePartTreeAction);
     connect(mToggleMimePartTreeAction, &QAction::toggled, this, &ViewerPrivate::slotToggleMimePartTree);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     ac->setDefaultShortcut(mToggleMimePartTreeAction, QKeySequence(Qt::Key_D | Qt::CTRL | Qt::ALT));
-
+#else
+    QKeyCombination combinationKeys(Qt::CTRL | Qt::ALT, Qt::Key_D);
+    ac->setDefaultShortcut(mToggleMimePartTreeAction, combinationKeys);
+#endif
     mViewSourceAction = new QAction(i18n("&View Source"), this);
     ac->addAction(QStringLiteral("view_source"), mViewSourceAction);
     connect(mViewSourceAction, &QAction::triggered, this, &ViewerPrivate::slotShowMessageSource);
