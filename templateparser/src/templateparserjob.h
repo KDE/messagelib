@@ -355,6 +355,7 @@ private:
      */
     void makeValidHtml(QString &body);
 
+    friend class ::TemplateParserJobTest;
     std::unique_ptr<TemplateParserJobPrivate> d;
 };
 }
