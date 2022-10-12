@@ -9,6 +9,7 @@
 
 #include <KIdentityManagement/Signature>
 
+#include <QRegularExpression>
 #include <QTextBlock>
 using namespace MessageComposer;
 
@@ -20,7 +21,7 @@ public:
     {
     }
 
-    void cleanWhitespaceHelper(const QRegExp &regExp, const QString &newText, const KIdentityManagement::Signature &sig);
+    void cleanWhitespaceHelper(const QRegularExpression &regExp, const QString &newText, const KIdentityManagement::Signature &sig);
     Q_REQUIRED_RESULT QVector<QPair<int, int>> signaturePositions(const KIdentityManagement::Signature &sig) const;
     RichTextComposerNg *const richTextComposer;
 };
@@ -33,7 +34,7 @@ RichTextComposerSignatures::RichTextComposerSignatures(MessageComposer::RichText
 
 RichTextComposerSignatures::~RichTextComposerSignatures() = default;
 
-void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitespaceHelper(const QRegExp &regExp,
+void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitespaceHelper(const QRegularExpression &regExp,
                                                                                           const QString &newText,
                                                                                           const KIdentityManagement::Signature &sig)
 {
@@ -42,19 +43,19 @@ void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitesp
     for (;;) {
         // Find the text
         const QString text = richTextComposer->document()->toPlainText();
-        const int currentMatch = regExp.indexIn(text, currentSearchPosition);
-        currentSearchPosition = currentMatch;
-        if (currentMatch == -1) {
+        const auto currentMatch = regExp.match(text, currentSearchPosition);
+        if (!currentMatch.hasMatch()) {
             break;
         }
+        currentSearchPosition = currentMatch.capturedStart();
 
         // Select the text
         QTextCursor cursor(richTextComposer->document());
-        cursor.setPosition(currentMatch);
-        cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, regExp.matchedLength());
+        cursor.setPosition(currentSearchPosition);
+        cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, currentMatch.capturedLength());
         // Skip quoted text
         if (richTextComposer->isLineQuoted(cursor.block().text())) {
-            currentSearchPosition += regExp.matchedLength();
+            currentSearchPosition += currentMatch.capturedLength();
             continue;
         }
         // Skip text inside signatures
@@ -66,7 +67,7 @@ void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitesp
             }
         }
         if (insideSignature) {
-            currentSearchPosition += regExp.matchedLength();
+            currentSearchPosition += currentMatch.capturedLength();
             continue;
         }
 
@@ -83,13 +84,13 @@ void RichTextComposerSignatures::cleanWhitespace(const KIdentityManagement::Sign
     cursor.beginEditBlock();
 
     // Squeeze tabs and spaces
-    d->cleanWhitespaceHelper(QRegExp(QLatin1String("[\t ]+")), QStringLiteral(" "), sig);
+    d->cleanWhitespaceHelper(QRegularExpression(QLatin1String("[\t ]+")), QStringLiteral(" "), sig);
 
     // Remove trailing whitespace
-    d->cleanWhitespaceHelper(QRegExp(QLatin1String("[\t ][\n]")), QStringLiteral("\n"), sig);
+    d->cleanWhitespaceHelper(QRegularExpression(QLatin1String("[\t ][\n]")), QStringLiteral("\n"), sig);
 
     // Single space lines
-    d->cleanWhitespaceHelper(QRegExp(QLatin1String("[\n]{3,}")), QStringLiteral("\n\n"), sig);
+    d->cleanWhitespaceHelper(QRegularExpression(QLatin1String("[\n]{3,}")), QStringLiteral("\n\n"), sig);
 
     if (!d->richTextComposer->textCursor().hasSelection()) {
         d->richTextComposer->textCursor().clearSelection();
