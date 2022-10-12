@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"POT-Creation-Date: 2022-10-12 00:47+0000\n"
 "PO-Revision-Date: 2022-05-16 00:02+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1571,7 +1571,7 @@ msgstr ""
 "으로 이동합니다."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1554
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1557
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "고정폭 글꼴 사용하기(&X)"
@@ -1925,7 +1925,7 @@ msgstr "크기"
 msgid "Turn on HTML rendering for this message."
 msgstr "이 메시지의 HTML 렌더링을 사용합니다."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1623
+#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "이 메시지의 외부 참조를 인터넷에서 불러옵니다."
@@ -2005,7 +2005,7 @@ msgstr "주소록에서 열기(&O)"
 msgid "&Copy Email Address"
 msgstr "이메일 주소 복사(&C)"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2713
+#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2720
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "클립보드에 주소를 복사했습니다."
@@ -2061,352 +2061,352 @@ msgstr "실행"
 msgid "Loading message..."
 msgstr "메시지 불러오는 중..."
 
-#: viewer/viewer_p.cpp:358
+#: viewer/viewer_p.cpp:361
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr "암호화되거나 구식 mailman 메시지에서는 첨부 파일을 삭제할 수 없습니다."
 
-#: viewer/viewer_p.cpp:359 viewer/viewer_p.cpp:366 viewer/viewer_p.cpp:588
-#: viewer/viewer_p.cpp:1726
+#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:369 viewer/viewer_p.cpp:591
+#: viewer/viewer_p.cpp:1733
 #, kde-format
 msgid "Delete Attachment"
 msgstr "첨부 파일 지우기"
 
-#: viewer/viewer_p.cpp:365
+#: viewer/viewer_p.cpp:368
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr "첨부 파일을 지우면 이 메시지의 디지털 서명을 무효화할 수도 있습니다."
 
-#: viewer/viewer_p.cpp:447
+#: viewer/viewer_p.cpp:450
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "다음으로 열기(&O)"
 
-#: viewer/viewer_p.cpp:465
+#: viewer/viewer_p.cpp:468
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "기타(&O)..."
 
-#: viewer/viewer_p.cpp:467 viewer/viewer_p.cpp:480
+#: viewer/viewer_p.cpp:470 viewer/viewer_p.cpp:483
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "다음으로 열기(&O)..."
 
-#: viewer/viewer_p.cpp:544 viewer/viewer_p.cpp:1704
+#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1711
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "열기"
 
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1718
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "보기"
 
-#: viewer/viewer_p.cpp:566
+#: viewer/viewer_p.cpp:569
 #, kde-format
 msgid "Scroll To"
 msgstr "다음으로 스크롤"
 
-#: viewer/viewer_p.cpp:571
+#: viewer/viewer_p.cpp:574
 #, kde-format
 msgid "Save As..."
 msgstr "다른 이름으로 저장..."
 
-#: viewer/viewer_p.cpp:577 viewer/viewer_p.cpp:1721
+#: viewer/viewer_p.cpp:580 viewer/viewer_p.cpp:1728
 #, kde-format
 msgid "Copy"
 msgstr "복사"
 
-#: viewer/viewer_p.cpp:599
+#: viewer/viewer_p.cpp:602
 #, kde-format
 msgid "Reply To Author"
 msgstr "작성자에게 답장 쓰기"
 
-#: viewer/viewer_p.cpp:607
+#: viewer/viewer_p.cpp:610
 #, kde-format
 msgid "Reply To All"
 msgstr "전체 답장"
 
-#: viewer/viewer_p.cpp:613 viewer/viewer_p.cpp:1731
+#: viewer/viewer_p.cpp:616 viewer/viewer_p.cpp:1738
 #, kde-format
 msgid "Properties"
 msgstr "속성"
 
-#: viewer/viewer_p.cpp:750
+#: viewer/viewer_p.cpp:753
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:751
+#: viewer/viewer_p.cpp:754
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE 메일 클라이언트"
 
-#: viewer/viewer_p.cpp:1287
+#: viewer/viewer_p.cpp:1290
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "첨부 파일 보기: %1"
 
-#: viewer/viewer_p.cpp:1475
+#: viewer/viewer_p.cpp:1478
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "첨부(&A)"
 
-#: viewer/viewer_p.cpp:1477
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "첨부 파일의 표시 형식 선택"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "아이콘으로(&A)"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "첨부 파일을 아이콘으로 표시합니다. 클릭하면 볼 수 있습니다."
 
-#: viewer/viewer_p.cpp:1487
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "스마트(&S)"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "보낸 사람이 제안한 형태로 첨부 파일을 봅니다."
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1497
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "인라인(&I)"
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "모든 첨부 파일을 인라인으로 봅니다 (가능한 경우)"
 
-#: viewer/viewer_p.cpp:1501
+#: viewer/viewer_p.cpp:1504
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "숨기기(&H)"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "메시지 뷰어에서 첨부 파일을 숨깁니다"
 
-#: viewer/viewer_p.cpp:1508
+#: viewer/viewer_p.cpp:1511
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "헤더에만"
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "메일 헤더에만 첨부 파일을 보입니다"
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1519
 #, kde-format
 msgid "&Set Encoding"
 msgstr "인코딩 설정(&S)"
 
-#: viewer/viewer_p.cpp:1521 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "자동"
 
-#: viewer/viewer_p.cpp:1531
+#: viewer/viewer_p.cpp:1534
 #, kde-format
 msgid "Copy Text"
 msgstr "텍스트 복사"
 
-#: viewer/viewer_p.cpp:1538
+#: viewer/viewer_p.cpp:1541
 #, kde-format
 msgid "Select All Text"
 msgstr "모든 텍스트 선택"
 
-#: viewer/viewer_p.cpp:1544 viewer/viewer_p.cpp:2025
+#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2032
 #, kde-format
 msgid "Copy Link Address"
 msgstr "링크 주소 복사"
 
-#: viewer/viewer_p.cpp:1549
+#: viewer/viewer_p.cpp:1552
 #, kde-format
 msgid "Open URL"
 msgstr "URL 열기"
 
-#: viewer/viewer_p.cpp:1560
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "Show Message Structure"
 msgstr "메시지 구조 보기"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1572
 #, kde-format
 msgid "&View Source"
 msgstr "소스 보기(&V)..."
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1577
 #, kde-format
 msgid "&Save Message..."
 msgstr "메시지 저장(&S)..."
 
-#: viewer/viewer_p.cpp:1576
+#: viewer/viewer_p.cpp:1583
 #, kde-format
 msgid "&Save Display Format"
 msgstr "표시 형식 저장(&S)"
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1587
 #, kde-format
 msgid "&Reset Display Format"
 msgstr "표시 형식 초기화(&R)"
 
-#: viewer/viewer_p.cpp:1587
+#: viewer/viewer_p.cpp:1594
 #, kde-format
 msgid "Scroll Message Up"
 msgstr "메시지 위로 스크롤"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1599
 #, kde-format
 msgid "Scroll Message Down"
 msgstr "메시지 아래로 스크롤"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1604
 #, kde-format
 msgid "Scroll Message Up (More)"
 msgstr "메시지 위로 스크롤 (더)"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1609
 #, kde-format
 msgid "Scroll Message Down (More)"
 msgstr "메시지 아래로 스크롤 (더)"
 
-#: viewer/viewer_p.cpp:1612
+#: viewer/viewer_p.cpp:1619
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML 디스플레이 모드 전환"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "HTML 및 일반 텍스트 표시 모드 전환"
 
-#: viewer/viewer_p.cpp:1619
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Load external references"
 msgstr "외부 참조 불러오기"
 
-#: viewer/viewer_p.cpp:1625 widgets/mailsourceviewtextbrowserwidget.cpp:136
+#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:136
 #, kde-format
 msgid "Speak Text"
 msgstr "텍스트 말하기"
 
-#: viewer/viewer_p.cpp:1631
+#: viewer/viewer_p.cpp:1638
 #, kde-format
 msgid "Share Text..."
 msgstr "텍스트 공유..."
 
-#: viewer/viewer_p.cpp:1637
+#: viewer/viewer_p.cpp:1644
 #, kde-format
 msgid "Copy Image Location"
 msgstr "그림 주소 복사"
 
-#: viewer/viewer_p.cpp:1643
+#: viewer/viewer_p.cpp:1650
 #, kde-format
 msgid "&Find in Message..."
 msgstr "메시지에서 찾기(&F)..."
 
-#: viewer/viewer_p.cpp:1652
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "이모티콘 비활성화"
 
-#: viewer/viewer_p.cpp:1701
+#: viewer/viewer_p.cpp:1708
 #, kde-format
 msgid "Save &As..."
 msgstr "다른 이름으로 저장(&A)..."
 
-#: viewer/viewer_p.cpp:1709
+#: viewer/viewer_p.cpp:1716
 #, kde-format
 msgid "Open With..."
 msgstr "다음으로 열기..."
 
-#: viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:1723
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "모든 첨부 파일 저장..."
 
-#: viewer/viewer_p.cpp:1945
+#: viewer/viewer_p.cpp:1952
 #, kde-format
 msgid "The network is broken."
 msgstr "네트워크를 사용할 수 없습니다."
 
-#: viewer/viewer_p.cpp:1945 viewer/viewer_p.cpp:1948
+#: viewer/viewer_p.cpp:1952 viewer/viewer_p.cpp:1955
 #, kde-format
 msgid "Check Phishing URL"
 msgstr "피싱 URL 확인"
 
-#: viewer/viewer_p.cpp:1948
+#: viewer/viewer_p.cpp:1955
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1이(가) 올바르지 않습니다."
 
-#: viewer/viewer_p.cpp:1968
+#: viewer/viewer_p.cpp:1975
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "이 웹사이트에 멀웨어가 있습니다. 그래도 여시겠습니까?"
 
-#: viewer/viewer_p.cpp:1969
+#: viewer/viewer_p.cpp:1976
 #, kde-format
 msgid "Malware"
 msgstr "멀웨어"
 
-#: viewer/viewer_p.cpp:2023
+#: viewer/viewer_p.cpp:2030
 #, kde-format
 msgid "Copy Email Address"
 msgstr "이메일 주소 복사"
 
-#: viewer/viewer_p.cpp:2104
+#: viewer/viewer_p.cpp:2111
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "메시지를 일반 텍스트로"
 
-#: viewer/viewer_p.cpp:2305
+#: viewer/viewer_p.cpp:2312
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "문서 인쇄"
 
-#: viewer/viewer_p.cpp:2719
+#: viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "클립보드에 URL을 복사했습니다."
 
-#: viewer/viewer_p.cpp:2871
+#: viewer/viewer_p.cpp:2878
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "메시지 불러오기 실패: %1."
 
-#: viewer/viewer_p.cpp:2876
+#: viewer/viewer_p.cpp:2883
 #, kde-format
 msgid "Message not found."
 msgstr "메시지를 찾을 수 없습니다."
