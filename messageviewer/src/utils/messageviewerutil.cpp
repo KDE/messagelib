@@ -761,6 +761,25 @@ QByteArray Util::htmlCodec(const QByteArray &data, const QByteArray &codec)
     // qDebug() << " codec ******************************************: " << codec << " currentCodec : " <<currentCodec;
     return currentCodec;
 }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+QStringConverter::Encoding Util::htmlEncoding(const QByteArray &data, const QByteArray &codec)
+{
+    QByteArray currentCodec = codec;
+    if (currentCodec.isEmpty()) {
+        return QStringConverter::Utf8;
+    }
+    if (currentCodec == QByteArray("us-ascii")) {
+        return QStringConverter::Latin1;
+    }
+    if (data.contains("charset=\"utf-8\"") || data.contains("charset=\"UTF-8\"") || data.contains("charset=UTF-8")) {
+        return QStringConverter::Utf8;
+    }
+
+    // qDebug() << " codec ******************************************: " << codec << " currentCodec : " <<currentCodec;
+    // TODO verify
+    return QStringConverter::System;
+}
+#endif
 
 QDebug operator<<(QDebug d, const Util::HtmlMessageInfo &t)
 {
