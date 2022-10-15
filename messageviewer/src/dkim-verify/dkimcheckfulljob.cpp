@@ -14,6 +14,7 @@
 #include "messageviewer_dkimcheckerdebug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <kwidgetsaddons_version.h>
 using namespace MessageViewer;
 
 DKIMCheckFullJob::DKIMCheckFullJob(QObject *parent)
@@ -114,12 +115,20 @@ void DKIMCheckFullJob::storeInKeyManager(const QString &key, const QString &doma
             if (keyStored != key) {
                 // qDebug() << "storeInKeyManager : keyStored  " << keyStored << " key " << key;
                 // qDebug() << "domain " << domain << " selector " << selector;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                const int answer = KMessageBox::warningTwoActions(nullptr,
+#else
                 const int answer = KMessageBox::warningYesNo(nullptr,
-                                                             i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"),
-                                                             i18n("Key Changed"),
-                                                             KGuiItem(i18nc("@action:button", "Store")),
-                                                             KStandardGuiItem::discard());
+#endif
+                                                                  i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"),
+                                                                  i18n("Key Changed"),
+                                                                  KGuiItem(i18nc("@action:button", "Store")),
+                                                                  KStandardGuiItem::discard());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                if (answer == KMessageBox::ButtonCode::SecondaryAction) {
+#else
                 if (answer == KMessageBox::No) {
+#endif
                     return;
                 }
             }

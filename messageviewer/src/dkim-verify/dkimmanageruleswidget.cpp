@@ -17,6 +17,7 @@
 #include <QPointer>
 #include <QTreeWidget>
 #include <QVBoxLayout>
+#include <kwidgetsaddons_version.h>
 using namespace MessageViewer;
 DKIMManageRulesWidgetItem::DKIMManageRulesWidgetItem(QTreeWidget *parent)
     : QTreeWidgetItem(parent)
@@ -205,12 +206,20 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
         });
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            const int answer = KMessageBox::warningTwoActions(this,
+#else
             const int answer = KMessageBox::warningYesNo(this,
-                                                         i18n("Do you want to delete this rule?"),
-                                                         i18n("Delete Rule"),
-                                                         KStandardGuiItem::del(),
-                                                         KStandardGuiItem::cancel());
+#endif
+                                                              i18n("Do you want to delete this rule?"),
+                                                              i18n("Delete Rule"),
+                                                              KStandardGuiItem::del(),
+                                                              KStandardGuiItem::cancel());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            if (answer == KMessageBox::ButtonCode::PrimaryAction) {
+#else
             if (answer == KMessageBox::Yes) {
+#endif
                 delete item;
                 emitUpdateExportButton();
             }
@@ -219,12 +228,20 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
     if (mTreeWidget->topLevelItemCount() > 0) {
         menu.addSeparator();
         menu.addAction(i18n("Delete All"), this, [this]() {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            const int answer = KMessageBox::warningTwoActions(this,
+#else
             const int answer = KMessageBox::warningYesNo(this,
-                                                         i18n("Do you want to delete all the rules?"),
-                                                         i18n("Delete Rules"),
-                                                         KStandardGuiItem::del(),
-                                                         KStandardGuiItem::cancel());
+#endif
+                                                              i18n("Do you want to delete all the rules?"),
+                                                              i18n("Delete Rules"),
+                                                              KStandardGuiItem::del(),
+                                                              KStandardGuiItem::cancel());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            if (answer == KMessageBox::ButtonCode::PrimaryAction) {
+#else
             if (answer == KMessageBox::Yes) {
+#endif
                 mTreeWidget->clear();
                 emitUpdateExportButton();
             }

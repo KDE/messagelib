@@ -18,6 +18,7 @@
 #include <QGridLayout>
 #include <QMap>
 #include <QPushButton>
+#include <kwidgetsaddons_version.h>
 
 #include <KConfig>
 #include <KConfigGroup>
@@ -402,8 +403,17 @@ void ConfigureThemesDialog::ConfigureThemesDialogPrivate::deleteThemeButtonClick
         return;
     }
     const QString question = list.count() > 1 ? i18n("Do you want to delete selected themes?") : i18n("Do you want to delete \"%1\"?", list.first()->text());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    const int answer =
+        KMessageBox::questionTwoActions(q, question, i18nc("@title:window", "Delete Theme"), KStandardGuiItem::del(), KStandardGuiItem::cancel());
+#else
     const int answer = KMessageBox::questionYesNo(q, question, i18nc("@title:window", "Delete Theme"), KStandardGuiItem::del(), KStandardGuiItem::cancel());
+#endif
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    if (answer == KMessageBox::ButtonCode::PrimaryAction) {
+#else
     if (answer == KMessageBox::Yes) {
+#endif
         mEditor->editTheme(nullptr); // forget it
         for (QListWidgetItem *it : list) {
             auto item = dynamic_cast<ThemeListWidgetItem *>(it);

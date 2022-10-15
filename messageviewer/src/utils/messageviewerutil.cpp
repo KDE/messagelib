@@ -68,6 +68,7 @@
 #include <QRegularExpression>
 #include <QTemporaryFile>
 #include <QWidget>
+#include <kwidgetsaddons_version.h>
 
 using namespace MessageViewer;
 /** Checks whether @p str contains external references. To be precise,
@@ -349,20 +350,34 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
     bool bEncryptedParts = mNodeHelper->encryptionState(content)
                            != MimeTreeParser::KMMsgNotEncrypted;
     if (bEncryptedParts) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        if (KMessageBox::questionTwoActions(parent,
+#else
         if (KMessageBox::questionYesNo(parent,
+
+#endif
                                        i18n(
                                            "The part %1 of the message is encrypted. Do you want to keep the encryption when saving?",
                                            url.fileName()),
                                        i18n("KMail Question"), KGuiItem(i18n("Keep Encryption")),
                                        KGuiItem(i18n("Do Not Keep")))
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            == KMessageBox::ButtonCode::PrimaryAction) {
+#else
             == KMessageBox::Yes) {
+#endif
             bSaveEncrypted = true;
         }
     }
 
     bool bSaveWithSig = true;
     if (mNodeHelper->signatureState(content) != MessageViewer::MimeTreeParser::KMMsgNotSigned) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        if (KMessageBox::questionTwoActions(parent,
+#else
         if (KMessageBox::questionYesNo(parent,
+
+#endif
                                        i18n(
                                            "The part %1 of the message is signed. Do you want to keep the signature when saving?",
                                            url.fileName()),
