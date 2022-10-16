@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-26 00:45+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2021-09-23 12:12+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -41,7 +41,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "Reexpedi"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#: customtemplates.cpp:77 templatesconfiguration.cpp:74
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Como il functiona?</a>"
@@ -530,7 +530,7 @@ msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "Cribra (debug)"
 
-#: templatesconfiguration.cpp:50
+#: templatesconfiguration.cpp:51
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -543,7 +543,7 @@ msgstr ""
 "supporta commandos de substitution, o simplemente typa los o selige los ab "
 "le menu de <i>Inserta commando</i>.</p>"
 
-#: templatesconfiguration.cpp:58
+#: templatesconfiguration.cpp:59
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -552,7 +552,7 @@ msgstr ""
 "<p>Patronos specificate hic es specific de dossier. Illos ultrapassa e "
 "patronos global e patronos per-identitate.</p>"
 
-#: templatesconfiguration.cpp:63
+#: templatesconfiguration.cpp:64
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -563,7 +563,7 @@ msgstr ""
 "patronos global, ma pote esser ultrapassate per patronos per dossier si "
 "illos es specificate.</p>"
 
-#: templatesconfiguration.cpp:68
+#: templatesconfiguration.cpp:69
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -572,28 +572,28 @@ msgstr ""
 "<p>Istos ed patronos (predefinite) global. Illos pote esser ultrapassate per "
 "patronos per identitate o per dossier si illos es specificate.</p>"
 
-#: templatesconfiguration.cpp:100
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 "Tu vole refixar le patrono currente o tote patronos a valores predefinite?"
 
-#: templatesconfiguration.cpp:101
+#: templatesconfiguration.cpp:106
 #, kde-format
 msgid "Reset to default"
 msgstr "Retorna a valores predefinite"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:107
 #, kde-format
 msgid "Reset Current Template"
 msgstr "Refixa patrono currente"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:108
 #, kde-format
 msgid "Reset All Templates"
 msgstr "Refixa omne patronos"
 
-#: templatesconfiguration.cpp:361
+#: templatesconfiguration.cpp:370
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-12 00:47+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -303,56 +303,56 @@ msgstr "Njeznaty staw podpisma"
 msgid "End of signed message"
 msgstr "Kónc podpisaneje powěsće"
 
-#: dkim-verify/dkimcheckfulljob.cpp:118
+#: dkim-verify/dkimcheckfulljob.cpp:123
 #, kde-format
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
 
-#: dkim-verify/dkimcheckfulljob.cpp:119
+#: dkim-verify/dkimcheckfulljob.cpp:124
 #, kde-format
 msgid "Key Changed"
 msgstr "Změnjeny kluč"
 
-#: dkim-verify/dkimcheckfulljob.cpp:120
+#: dkim-verify/dkimcheckfulljob.cpp:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Store"
 msgstr "Zawěsćić"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanagerkeywidget.cpp:32
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeywidget.cpp:32
 #, fuzzy, kde-format
 msgid "Selector"
 msgstr "Zapisk zničić"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeywidget.cpp:32
 #, kde-format
 msgid "DKIM Key"
 msgstr "DKIM kluč"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeywidget.cpp:32
 #, kde-format
 msgid "Inserted"
 msgstr "Zasunjeny"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:31
+#: dkim-verify/dkimmanagerkeywidget.cpp:32
 #, kde-format
 msgid "Last Used"
 msgstr "Posledni raz wuži so"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:64
+#: dkim-verify/dkimmanagerkeywidget.cpp:65
 #, kde-format
 msgid "Copy Key"
 msgstr "Kluč kopěrować"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:70
+#: dkim-verify/dkimmanagerkeywidget.cpp:71
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
@@ -361,7 +361,7 @@ msgstr[1] "&Zničić"
 msgstr[2] "&Zničić"
 msgstr[3] "&Zničić"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:75
+#: dkim-verify/dkimmanagerkeywidget.cpp:81
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
@@ -370,7 +370,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:76
+#: dkim-verify/dkimmanagerkeywidget.cpp:82
 #, fuzzy, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
@@ -379,19 +379,19 @@ msgstr[1] "Z&ničić"
 msgstr[2] "Z&ničić"
 msgstr[3] "Z&ničić"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:89
-#: dkim-verify/dkimmanageruleswidget.cpp:221
+#: dkim-verify/dkimmanagerkeywidget.cpp:99
+#: dkim-verify/dkimmanageruleswidget.cpp:230
 #, fuzzy, kde-format
 msgid "Delete All"
 msgstr "Z&ničić"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:91
+#: dkim-verify/dkimmanagerkeywidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete all keys?"
 msgstr "Chceće woprawdźe wšitke stare powěsće zničić?"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:92
+#: dkim-verify/dkimmanagerkeywidget.cpp:106
 #, fuzzy, kde-format
 msgid "Delete Keys"
 msgstr "Z&ničić"
@@ -459,80 +459,80 @@ msgstr "Prawidła importować"
 msgid "No rules imported."
 msgstr "Žana signatura"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
-#: remote-content/remotecontentconfigurewidget.cpp:51
+#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Domain"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Active"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "List-ID"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Wot"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Rule type"
 msgstr "Družina prawidła"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:72
+#: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "Priority"
 msgstr "Priorita"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:194
-#: remote-content/remotecontentconfigurewidget.cpp:78
+#: dkim-verify/dkimmanageruleswidget.cpp:195
+#: remote-content/remotecontentconfigurewidget.cpp:79
 #, kde-format
 msgid "Add..."
 msgstr "Dodać..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:199
-#: remote-content/remotecontentconfigurewidget.cpp:81
+#: dkim-verify/dkimmanageruleswidget.cpp:200
+#: remote-content/remotecontentconfigurewidget.cpp:82
 #, kde-format
 msgid "Modify..."
 msgstr "Změnić..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:203
+#: dkim-verify/dkimmanageruleswidget.cpp:204
 #, kde-format
 msgid "Duplicate Rule"
 msgstr "Prawidło duplicěrować"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:207
-#: remote-content/remotecontentconfigurewidget.cpp:85
+#: dkim-verify/dkimmanageruleswidget.cpp:208
+#: remote-content/remotecontentconfigurewidget.cpp:86
 #, kde-format
 msgid "Remove Rule"
 msgstr "Prawidło wotstronić"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:209
+#: dkim-verify/dkimmanageruleswidget.cpp:214
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete this rule?"
 msgstr "Chceće woprawdźe wšitke stare powěsće zničić?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:210
-#: remote-content/remotecontentconfigurewidget.cpp:88
+#: dkim-verify/dkimmanageruleswidget.cpp:215
+#: remote-content/remotecontentconfigurewidget.cpp:93
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Delete Rule"
 msgstr "Prawidło zničić"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:223
+#: dkim-verify/dkimmanageruleswidget.cpp:236
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete all the rules?"
 msgstr "Chceće woprawdźe wšitke stare powěsće zničić?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:224
+#: dkim-verify/dkimmanageruleswidget.cpp:237
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Delete Rules"
@@ -1137,35 +1137,35 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "Piktogramy za zapiski"
 
-#: remote-content/remotecontentconfigurewidget.cpp:51
+#: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
 msgid "Status"
 msgstr "Staw"
 
-#: remote-content/remotecontentconfigurewidget.cpp:87
+#: remote-content/remotecontentconfigurewidget.cpp:92
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete this rule '%1'?"
 msgstr "Chceće woprawdźe wšitke stare powěsće zničić?"
 
-#: remote-content/remotecontentconfigurewidget.cpp:105
+#: remote-content/remotecontentconfigurewidget.cpp:114
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "Piktogramy za zapiski"
 
-#: remote-content/remotecontentconfigurewidget.cpp:121
+#: remote-content/remotecontentconfigurewidget.cpp:130
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "Piktogramy za zapiski"
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:139
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:130
+#: remote-content/remotecontentconfigurewidget.cpp:139
 #, kde-format
 msgid "Add new Url"
 msgstr "URL dodać"
@@ -1583,7 +1583,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1557
+#: settings/messageviewer.kcfg.cmake:230 viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Wužiwaj pismo z &krutej šěrokosću"
@@ -1747,75 +1747,75 @@ msgstr ""
 msgid "&Minimum font size:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:156
+#: utils/messageviewerutil.cpp:157
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Dataja %1 eksistuje? Chceće ju woprawdźe přepisać?"
 
-#: utils/messageviewerutil.cpp:159
+#: utils/messageviewerutil.cpp:160
 #, kde-format
 msgid "Overwrite File?"
 msgstr "Dataju přepisać?"
 
-#: utils/messageviewerutil.cpp:209
+#: utils/messageviewerutil.cpp:210
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Přiwěšk zawěsćić do"
 
-#: utils/messageviewerutil.cpp:226
+#: utils/messageviewerutil.cpp:227
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "přiwěšk. 1"
 
-#: utils/messageviewerutil.cpp:232
+#: utils/messageviewerutil.cpp:233
 #, kde-format
 msgid "Save Attachment"
 msgstr "Přiwěšk zawěsćić"
 
-#: utils/messageviewerutil.cpp:256
+#: utils/messageviewerutil.cpp:257
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "přiwěšk. %1"
 
-#: utils/messageviewerutil.cpp:354
+#: utils/messageviewerutil.cpp:360
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:356 utils/messageviewerutil.cpp:369
+#: utils/messageviewerutil.cpp:362 utils/messageviewerutil.cpp:384
 #, kde-format
 msgid "KMail Question"
 msgstr "KMail prašenje"
 
-#: utils/messageviewerutil.cpp:356
+#: utils/messageviewerutil.cpp:362
 #, kde-format
 msgid "Keep Encryption"
 msgstr "Šifrowanje wobchować"
 
-#: utils/messageviewerutil.cpp:357 utils/messageviewerutil.cpp:370
+#: utils/messageviewerutil.cpp:363 utils/messageviewerutil.cpp:385
 #, kde-format
 msgid "Do Not Keep"
 msgstr "Njewobchować"
 
-#: utils/messageviewerutil.cpp:367
+#: utils/messageviewerutil.cpp:382
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:369
+#: utils/messageviewerutil.cpp:384
 #, kde-format
 msgid "Keep Signature"
 msgstr "Podpismo wobchować"
 
-#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:451
-#: utils/messageviewerutil.cpp:469 utils/messageviewerutil.cpp:588
+#: utils/messageviewerutil.cpp:448 utils/messageviewerutil.cpp:466
+#: utils/messageviewerutil.cpp:484 utils/messageviewerutil.cpp:603
 #, fuzzy, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1825,29 +1825,29 @@ msgstr ""
 "Njemóžach do dataje pisać:\n"
 "%1"
 
-#: utils/messageviewerutil.cpp:436 utils/messageviewerutil.cpp:454
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:451 utils/messageviewerutil.cpp:469
+#: utils/messageviewerutil.cpp:487
 #, fuzzy, kde-format
 msgid "Error saving attachment"
 msgstr "Přiwěšk: "
 
-#: utils/messageviewerutil.cpp:485
+#: utils/messageviewerutil.cpp:500
 #, fuzzy, kde-format
 msgid "Found no attachments to save."
 msgstr "Njepokazuje přiwěški w powěsći samej"
 
-#: utils/messageviewerutil.cpp:500
+#: utils/messageviewerutil.cpp:515
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "žane powěsće"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:537
 #, kde-format
 msgid "email messages (*.mbox);;all files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:533
+#: utils/messageviewerutil.cpp:548
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1856,40 +1856,40 @@ msgstr[1] "Powěsći zawěsćić"
 msgstr[2] "Powěsće zawěsćić"
 msgstr[3] "Powěsće zawěsćić"
 
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:573
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "PGP-ŝifrowana powěsć"
 
-#: utils/messageviewerutil.cpp:558
+#: utils/messageviewerutil.cpp:573
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgid "Error loading message"
 msgstr "Zmylk při pósłanju powěsće na server"
 
-#: utils/messageviewerutil.cpp:560
+#: utils/messageviewerutil.cpp:575
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "PGP-ŝifrowana powěsć"
 
-#: utils/messageviewerutil.cpp:560 utils/messageviewerutil.cpp:571
-#: utils/messageviewerutil.cpp:591
+#: utils/messageviewerutil.cpp:575 utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:606
 #, fuzzy, kde-format
 msgid "Error saving message"
 msgstr "Přesuwam powěsć %3 z %2 wot %1."
 
-#: utils/messageviewerutil.cpp:571
+#: utils/messageviewerutil.cpp:586
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Kónc podpisaneje powěsće"
 
-#: utils/messageviewerutil.cpp:612
+#: utils/messageviewerutil.cpp:627
 #, fuzzy, kde-format
 msgid "Open &with %1"
 msgstr "Přiwěšk %1 wočinić?"
 
-#: utils/messageviewerutil.cpp:614
+#: utils/messageviewerutil.cpp:629
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1933,152 +1933,152 @@ msgstr "Družina"
 msgid "Size"
 msgstr "Wulkosć"
 
-#: viewer/urlhandlermanager.cpp:405
+#: viewer/urlhandlermanager.cpp:406
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Zaswěć HTML, zo by tutu powěsć čitał."
 
-#: viewer/urlhandlermanager.cpp:407 viewer/viewer_p.cpp:1630
+#: viewer/urlhandlermanager.cpp:408 viewer/viewer_p.cpp:1631
 #, fuzzy, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Powěsćam dowolić, e&ksterne linki z interneta začitać"
 
-#: viewer/urlhandlermanager.cpp:409
+#: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Work online."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:411
+#: viewer/urlhandlermanager.cpp:412
 #, kde-format
 msgid "Make account online."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:414
 #, fuzzy, kde-format
 #| msgid "&Encrypt Message"
 msgid "Decrypt message."
 msgstr "Šifrowanj&e"
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:416
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Show signature details."
 msgstr "Signatura w porjadku."
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:418
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Hide signature details."
 msgstr "Signatura w porjadku."
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:420
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Show encryption details."
 msgstr "Signatura w porjadku."
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:422
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Hide encryption details."
 msgstr "Signatura w porjadku."
 
-#: viewer/urlhandlermanager.cpp:426
+#: viewer/urlhandlermanager.cpp:427
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Open Documentation"
 msgstr "Dokumentacija"
 
-#: viewer/urlhandlermanager.cpp:460
+#: viewer/urlhandlermanager.cpp:461
 #, kde-format
 msgid "Expand all quoted text."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:462
+#: viewer/urlhandlermanager.cpp:463
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Collapse Thread"
 msgid "Collapse quoted text."
 msgstr "&Skupinu sćahnyć"
 
-#: viewer/urlhandlermanager.cpp:524
+#: viewer/urlhandlermanager.cpp:525
 #, fuzzy, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Njemóžach certifikatowy manager startować. Prošu přepruwujće swoju "
 "instalaciju!"
 
-#: viewer/urlhandlermanager.cpp:526
+#: viewer/urlhandlermanager.cpp:527
 #, kde-format
 msgid "KMail Error"
 msgstr "Zmylk w kmailu"
 
-#: viewer/urlhandlermanager.cpp:541
+#: viewer/urlhandlermanager.cpp:542
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Pokaž certifikat 0x%1"
 
-#: viewer/urlhandlermanager.cpp:600
+#: viewer/urlhandlermanager.cpp:601
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "W&očinić w adresniku"
 
-#: viewer/urlhandlermanager.cpp:602
+#: viewer/urlhandlermanager.cpp:603
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "Emailowu adresu &kopěrować"
 
-#: viewer/urlhandlermanager.cpp:615 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:616 viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresa bu do zapisnika kopěrowana."
 
-#: viewer/urlhandlermanager.cpp:626
+#: viewer/urlhandlermanager.cpp:627
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "Wočinić w adresniku"
 
-#: viewer/urlhandlermanager.cpp:802
+#: viewer/urlhandlermanager.cpp:803
 #, fuzzy, kde-format
 msgid "Attachment: %1"
 msgstr "Přiwěšk: "
 
-#: viewer/urlhandlermanager.cpp:805
+#: viewer/urlhandlermanager.cpp:806
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Zasunjena powěsć"
 
-#: viewer/urlhandlermanager.cpp:807
+#: viewer/urlhandlermanager.cpp:808
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "Zasunjena powěsć"
 
-#: viewer/urlhandlermanager.cpp:810
+#: viewer/urlhandlermanager.cpp:811
 #, fuzzy, kde-format
 msgid "Unnamed attachment"
 msgstr "Přiwěšk: "
 
-#: viewer/urlhandlermanager.cpp:845
+#: viewer/urlhandlermanager.cpp:846
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:885
+#: viewer/urlhandlermanager.cpp:886
 #, kde-format
 msgid "Opening URL..."
 msgstr "Wočinjam URL..."
 
-#: viewer/urlhandlermanager.cpp:893
+#: viewer/urlhandlermanager.cpp:900
 #, fuzzy, kde-kuit-format
 #| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>Chceće woprawdźe <b>%1</b> startować?</qt>"
 
-#: viewer/urlhandlermanager.cpp:895
+#: viewer/urlhandlermanager.cpp:902
 #, kde-format
 msgid "Execute"
 msgstr "Wuwjesć"
@@ -2088,361 +2088,361 @@ msgstr "Wuwjesć"
 msgid "Loading message..."
 msgstr "Čitam powěsć..."
 
-#: viewer/viewer_p.cpp:361
+#: viewer/viewer_p.cpp:362
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
 
-#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:369 viewer/viewer_p.cpp:591
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:363 viewer/viewer_p.cpp:370 viewer/viewer_p.cpp:592
+#: viewer/viewer_p.cpp:1734
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Přiwěšk zničić"
 
-#: viewer/viewer_p.cpp:368
+#: viewer/viewer_p.cpp:369
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:450
+#: viewer/viewer_p.cpp:451
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "W&očinić z"
 
-#: viewer/viewer_p.cpp:468
+#: viewer/viewer_p.cpp:469
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Něšto druhe..."
 
-#: viewer/viewer_p.cpp:470 viewer/viewer_p.cpp:483
+#: viewer/viewer_p.cpp:471 viewer/viewer_p.cpp:484
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "W&očinić z ..."
 
-#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1711
+#: viewer/viewer_p.cpp:548 viewer/viewer_p.cpp:1712
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Wočinić"
 
-#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1718
+#: viewer/viewer_p.cpp:562 viewer/viewer_p.cpp:1719
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Napohlad"
 
-#: viewer/viewer_p.cpp:569
+#: viewer/viewer_p.cpp:570
 #, kde-format
 msgid "Scroll To"
 msgstr ""
 
-#: viewer/viewer_p.cpp:574
+#: viewer/viewer_p.cpp:575
 #, kde-format
 msgid "Save As..."
 msgstr "Zawěsćić jako ..."
 
-#: viewer/viewer_p.cpp:580 viewer/viewer_p.cpp:1728
+#: viewer/viewer_p.cpp:581 viewer/viewer_p.cpp:1729
 #, kde-format
 msgid "Copy"
 msgstr "Kopěrować"
 
-#: viewer/viewer_p.cpp:602
+#: viewer/viewer_p.cpp:603
 #, kde-format
 msgid "Reply To Author"
 msgstr "Awtorej wotmołwić"
 
-#: viewer/viewer_p.cpp:610
+#: viewer/viewer_p.cpp:611
 #, kde-format
 msgid "Reply To All"
 msgstr "Wšěm wotmołwić"
 
-#: viewer/viewer_p.cpp:616 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:617 viewer/viewer_p.cpp:1739
 #, kde-format
 msgid "Properties"
 msgstr "Swójstwa"
 
-#: viewer/viewer_p.cpp:753
+#: viewer/viewer_p.cpp:754
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:754
+#: viewer/viewer_p.cpp:755
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE emailowy program"
 
-#: viewer/viewer_p.cpp:1290
+#: viewer/viewer_p.cpp:1291
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Pokaž přiwěšk: %1"
 
-#: viewer/viewer_p.cpp:1478
+#: viewer/viewer_p.cpp:1479
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Přiwěški"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1481
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Wubjerće stil pokazowanja přiwěškow"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1484
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "jako &piktogramy"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Pokaže wšitke přiwěški jako piktogramy. Klikńće na nje, zo byšće je widźeli."
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1491
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&mudrje"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1494
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Pokazuje přiwěški kaž wot wotpósłarja namjetowane."
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1498
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&w powěsći"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1501
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Pokazuje wšitke přiwěški w powěsći (jeli móžno)"
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1505
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&schować"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1508
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Přiwěški w powěsći samej njepokazać"
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1512
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1515
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
 msgstr ""
 "Pokaže wšitke přiwěški jako piktogramy. Klikńće na nje, zo byšće je widźeli."
 
-#: viewer/viewer_p.cpp:1519
+#: viewer/viewer_p.cpp:1520
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Kodowanje po&stajić"
 
-#: viewer/viewer_p.cpp:1524 widgets/configurewidget.cpp:43
+#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:43
 #: widgets/configurewidget.cpp:77
 #, kde-format
 msgid "Auto"
 msgstr "Awtomatisce"
 
-#: viewer/viewer_p.cpp:1534
+#: viewer/viewer_p.cpp:1535
 #, kde-format
 msgid "Copy Text"
 msgstr "Tekst kopěrować"
 
-#: viewer/viewer_p.cpp:1541
+#: viewer/viewer_p.cpp:1542
 #, kde-format
 msgid "Select All Text"
 msgstr "Cyły tekst wubrać"
 
-#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2032
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2038
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Adresu wotkaza kopěrować"
 
-#: viewer/viewer_p.cpp:1552
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
 msgstr "URL wočinić"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Strukturu powěsće pokazać"
 
-#: viewer/viewer_p.cpp:1572
+#: viewer/viewer_p.cpp:1573
 #, kde-format
 msgid "&View Source"
 msgstr "&Pokaž žórło"
 
-#: viewer/viewer_p.cpp:1577
+#: viewer/viewer_p.cpp:1578
 #, kde-format
 msgid "&Save Message..."
 msgstr "Powě&sć zawěsćić..."
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1584
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Save Display Format"
 msgstr "Jako &naćisk zawěsćić"
 
-#: viewer/viewer_p.cpp:1587
+#: viewer/viewer_p.cpp:1588
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgid "&Reset Display Format"
 msgstr "Jako &naćisk zawěsćić"
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1595
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up"
 msgstr "&Wšitke powěsće wubrać"
 
-#: viewer/viewer_p.cpp:1599
+#: viewer/viewer_p.cpp:1600
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down"
 msgstr "&Wšitke powěsće wubrać"
 
-#: viewer/viewer_p.cpp:1604
+#: viewer/viewer_p.cpp:1605
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Up (More)"
 msgstr "&Wšitke powěsće wubrać"
 
-#: viewer/viewer_p.cpp:1609
+#: viewer/viewer_p.cpp:1610
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgid "Scroll Message Down (More)"
 msgstr "&Wšitke powěsće wubrać"
 
-#: viewer/viewer_p.cpp:1619
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1624
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Mjez HTML a prostym tekstom tam a sem šaltować"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1627
 #, kde-format
 msgid "Load external references"
 msgstr "Eksterne wotkazy začitać"
 
-#: viewer/viewer_p.cpp:1632 widgets/mailsourceviewtextbrowserwidget.cpp:136
+#: viewer/viewer_p.cpp:1633 widgets/mailsourceviewtextbrowserwidget.cpp:136
 #, kde-format
 msgid "Speak Text"
 msgstr "Tekst přečitać"
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1639
 #, kde-format
 msgid "Share Text..."
 msgstr "Tekst zdźělić..."
 
-#: viewer/viewer_p.cpp:1644
+#: viewer/viewer_p.cpp:1645
 #, kde-format
 msgid "Copy Image Location"
 msgstr "Městno wobraza kopěrować"
 
-#: viewer/viewer_p.cpp:1650
+#: viewer/viewer_p.cpp:1651
 #, kde-format
 msgid "&Find in Message..."
 msgstr "W powěsći &pytać..."
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Emodźije hasnyć"
 
-#: viewer/viewer_p.cpp:1708
+#: viewer/viewer_p.cpp:1709
 #, kde-format
 msgid "Save &As..."
 msgstr "Z&awěsćić jako..."
 
-#: viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:1717
 #, kde-format
 msgid "Open With..."
 msgstr "Wočinić z ..."
 
-#: viewer/viewer_p.cpp:1723
+#: viewer/viewer_p.cpp:1724
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Wšitke powěsće zawěsćić..."
 
-#: viewer/viewer_p.cpp:1952
+#: viewer/viewer_p.cpp:1953
 #, kde-format
 msgid "The network is broken."
 msgstr "Syć njefunguje."
 
-#: viewer/viewer_p.cpp:1952 viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1953 viewer/viewer_p.cpp:1956
 #, kde-format
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1955
+#: viewer/viewer_p.cpp:1956
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL '%1' njeje walidny."
 
-#: viewer/viewer_p.cpp:1975
+#: viewer/viewer_p.cpp:1981
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1976
+#: viewer/viewer_p.cpp:1982
 #, kde-format
 msgid "Malware"
 msgstr "Malware"
 
-#: viewer/viewer_p.cpp:2030
+#: viewer/viewer_p.cpp:2036
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Emailowu adresu kopěrować"
 
-#: viewer/viewer_p.cpp:2111
+#: viewer/viewer_p.cpp:2117
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Powěsć jako prosty tekst"
 
-#: viewer/viewer_p.cpp:2312
+#: viewer/viewer_p.cpp:2318
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Dokument wućišćeć"
 
-#: viewer/viewer_p.cpp:2726
+#: viewer/viewer_p.cpp:2732
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL do zapisknika kopěrowany."
 
-#: viewer/viewer_p.cpp:2878
+#: viewer/viewer_p.cpp:2884
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Njemóžach powěsć začitać: %1."
 
-#: viewer/viewer_p.cpp:2883
+#: viewer/viewer_p.cpp:2889
 #, kde-format
 msgid "Message not found."
 msgstr "Njejsym powěsć namakał"

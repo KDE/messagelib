@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -1161,7 +1161,7 @@ msgid "Theme"
 msgstr ""
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
-#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/configurefilterswidget.cpp:75
 #: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
 #: utils/themeconfigbutton.cpp:46
 #, fuzzy, kde-format
@@ -1208,18 +1208,18 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "Ffurfweddu &Hidlau..."
 
-#: core/widgets/configurefilterswidget.cpp:78
+#: core/widgets/configurefilterswidget.cpp:79
 #, fuzzy, kde-format
 msgid "Remove"
 msgstr "Gware&du"
 
-#: core/widgets/configurefilterswidget.cpp:81
+#: core/widgets/configurefilterswidget.cpp:86
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to empty the trash folder?"
 msgid "Do you want to delete this filter?"
 msgstr "Ydych wir eisiau gwagu'r blygell sbwriel?"
 
-#: core/widgets/configurefilterswidget.cpp:82
+#: core/widgets/configurefilterswidget.cpp:87
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
 msgid "Remove Filter"
@@ -1659,82 +1659,82 @@ msgid "Export Aggregation"
 msgstr "Awgrymiadau"
 
 #: utils/configureaggregationsdialog.cpp:442
-#: utils/configurethemesdialog.cpp:465
+#: utils/configurethemesdialog.cpp:475
 #, fuzzy, kde-format
 #| msgid "&All Fields"
 msgid "All Files (*)"
 msgstr "&Pob Maes"
 
-#: utils/configurethemesdialog.cpp:96
+#: utils/configurethemesdialog.cpp:97
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "&Amnewid"
 
-#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#: utils/configurethemesdialog.cpp:115 utils/configurethemesdialog.cpp:351
 #, fuzzy, kde-format
 #| msgid "New Message"
 msgid "New Theme"
 msgstr "Neges Newydd"
 
-#: utils/configurethemesdialog.cpp:122
+#: utils/configurethemesdialog.cpp:123
 #, fuzzy, kde-format
 #| msgid "New Message"
 msgid "Clone Theme"
 msgstr "Neges Newydd"
 
-#: utils/configurethemesdialog.cpp:135
+#: utils/configurethemesdialog.cpp:136
 #, fuzzy, kde-format
 #| msgid "Expire"
 msgid "Export Theme..."
 msgstr "Darfod"
 
-#: utils/configurethemesdialog.cpp:142
+#: utils/configurethemesdialog.cpp:143
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgid "Import Theme..."
 msgstr "&Mewnforio"
 
-#: utils/configurethemesdialog.cpp:153
+#: utils/configurethemesdialog.cpp:154
 #, fuzzy, kde-format
 msgid "Delete Theme"
 msgstr "wedi'u dileu"
 
-#: utils/configurethemesdialog.cpp:332
+#: utils/configurethemesdialog.cpp:333
 #, fuzzy, kde-format
 #| msgid "Unnamed"
 msgid "Unnamed Theme"
 msgstr "Heb ei enwi"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:353 utils/themeeditor.cpp:1217
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgid "New Column"
 msgstr "Gwled Colofnau"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:405
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:405
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:405
+#: utils/configurethemesdialog.cpp:408 utils/configurethemesdialog.cpp:410
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "wedi'u dileu"
 
-#: utils/configurethemesdialog.cpp:431
+#: utils/configurethemesdialog.cpp:441
 #, fuzzy, kde-format
 #| msgid "&Import Messages..."
 msgid "Import Theme"
 msgstr "&Mewnforio Negeseuon..."
 
-#: utils/configurethemesdialog.cpp:465
+#: utils/configurethemesdialog.cpp:475
 #, fuzzy, kde-format
 #| msgid "Expire Folder"
 msgid "Export Theme"

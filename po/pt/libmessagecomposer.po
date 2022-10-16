@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2022-05-16 14:26+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -53,12 +53,12 @@ msgstr ""
 "X-POFile-SpellExtra: Encoding PErfeito Locator Resource Uniform\n"
 "X-POFile-SpellExtra: LibreOffice pt KiB mantê Baloo vCards ii abc iii\n"
 
-#: attachment/attachmentcontrollerbase.cpp:168
+#: attachment/attachmentcontrollerbase.cpp:169
 #, kde-format
 msgid "Failed to compress attachment"
 msgstr "Não é possível comprimir o anexo"
 
-#: attachment/attachmentcontrollerbase.cpp:179
+#: attachment/attachmentcontrollerbase.cpp:184
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
@@ -66,217 +66,217 @@ msgid ""
 msgstr ""
 "O ficheiro comprimido é maior que o original. Deseja manter o original?"
 
-#: attachment/attachmentcontrollerbase.cpp:182
+#: attachment/attachmentcontrollerbase.cpp:187
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Manter"
 
-#: attachment/attachmentcontrollerbase.cpp:183
+#: attachment/attachmentcontrollerbase.cpp:188
 #, kde-format
 msgid "Compress"
 msgstr "Comprimir"
 
-#: attachment/attachmentcontrollerbase.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:211
 #, kde-format
 msgid "Failed to attach file"
 msgstr "Não foi possível anexar o ficheiro"
 
-#: attachment/attachmentcontrollerbase.cpp:275
+#: attachment/attachmentcontrollerbase.cpp:284
 #, kde-format
 msgid "Failed to reload attachment"
 msgstr "Não foi possível recarregar o anexo"
 
-#: attachment/attachmentcontrollerbase.cpp:322
+#: attachment/attachmentcontrollerbase.cpp:331
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "A&brir Com"
 
-#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:351
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Outro..."
 
-#: attachment/attachmentcontrollerbase.cpp:344
-#: attachment/attachmentcontrollerbase.cpp:352
+#: attachment/attachmentcontrollerbase.cpp:353
+#: attachment/attachmentcontrollerbase.cpp:361
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Abrir C&om..."
 
-#: attachment/attachmentcontrollerbase.cpp:378
+#: attachment/attachmentcontrollerbase.cpp:387
 #, kde-format
 msgid "Failed to attach public key"
 msgstr "Não foi possível anexar a chave pública"
 
-#: attachment/attachmentcontrollerbase.cpp:392
+#: attachment/attachmentcontrollerbase.cpp:401
 #, kde-format
 msgid "Failed to attach vCard"
 msgstr "Não foi possível anexar o vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:405
+#: attachment/attachmentcontrollerbase.cpp:414
 #, kde-format
 msgid "Failed to attach text from clipboard"
 msgstr "Não foi possível anexar o texto da área de transferência"
 
-#: attachment/attachmentcontrollerbase.cpp:453
+#: attachment/attachmentcontrollerbase.cpp:462
 #, kde-format
 msgid "Attach &Public Key..."
 msgstr "Anexar uma Chave &Pública..."
 
-#: attachment/attachmentcontrollerbase.cpp:456
+#: attachment/attachmentcontrollerbase.cpp:465
 #, kde-format
 msgid "Attach &My Public Key"
 msgstr "Anexar a &Minha Chave Pública"
 
-#: attachment/attachmentcontrollerbase.cpp:459
-#: attachment/attachmentcontrollerbase.cpp:464
-#: attachment/attachmentcontrollerbase.cpp:470
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:473
 #: attachment/attachmentcontrollerbase.cpp:479
+#: attachment/attachmentcontrollerbase.cpp:488
 #, kde-format
 msgid "Attach"
 msgstr "Anexar"
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:472
 #: composer/composerviewbase.cpp:1905
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Anexar um Ficheiro..."
 
-#: attachment/attachmentcontrollerbase.cpp:465
+#: attachment/attachmentcontrollerbase.cpp:474
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Adicionar um Anexo..."
 
-#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "&Anexar a Pasta..."
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "Attach Own vCard"
 msgstr "Anexar o Próprio vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:483
 #, kde-format
 msgid "Own vCard"
 msgstr "Próprio vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:487
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "&Anexar os vCards..."
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:491
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr "&Anexar o Texto da Área de Transferência..."
 
-#: attachment/attachmentcontrollerbase.cpp:483
+#: attachment/attachmentcontrollerbase.cpp:492
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "Anexar o Texto da Área de Transferência"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:504
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "&Remover o Anexo"
 
-#: attachment/attachmentcontrollerbase.cpp:496
+#: attachment/attachmentcontrollerbase.cpp:505
 #, kde-format
 msgid "Remove"
 msgstr "Remover"
 
-#: attachment/attachmentcontrollerbase.cpp:504
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Abrir"
 
-#: attachment/attachmentcontrollerbase.cpp:509
+#: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Ver"
 
-#: attachment/attachmentcontrollerbase.cpp:514
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Editar"
 
-#: attachment/attachmentcontrollerbase.cpp:519
+#: attachment/attachmentcontrollerbase.cpp:528
 #, kde-format
 msgid "Edit With..."
 msgstr "Editar Com..."
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Gravar o Anexo Como..."
 
-#: attachment/attachmentcontrollerbase.cpp:525
+#: attachment/attachmentcontrollerbase.cpp:534
 #, kde-format
 msgid "Save As..."
 msgstr "Gravar Como..."
 
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:542
 #, kde-format
 msgid "Attachment Pr&operties..."
 msgstr "Pr&opriedades do Anexo..."
 
-#: attachment/attachmentcontrollerbase.cpp:534
+#: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
 msgid "Properties"
 msgstr "Propriedades"
 
-#: attachment/attachmentcontrollerbase.cpp:542
+#: attachment/attachmentcontrollerbase.cpp:551
 #, kde-format
 msgid "Select All"
 msgstr "Seleccionar Tudo"
 
-#: attachment/attachmentcontrollerbase.cpp:545
+#: attachment/attachmentcontrollerbase.cpp:554
 #, kde-format
 msgid "Reload"
 msgstr "Recarregar"
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:702
-#: attachment/attachmentcontrollerbase.cpp:751
+#: attachment/attachmentcontrollerbase.cpp:687
+#: attachment/attachmentcontrollerbase.cpp:711
+#: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "O KMail não conseguiu gravar o anexo num ficheiro temporário."
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:702
+#: attachment/attachmentcontrollerbase.cpp:687
+#: attachment/attachmentcontrollerbase.cpp:711
 #, kde-format
 msgid "Unable to open attachment"
 msgstr "Não é possível abrir o anexo"
 
-#: attachment/attachmentcontrollerbase.cpp:711
+#: attachment/attachmentcontrollerbase.cpp:720
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "O KMail não conseguiu abrir o anexo."
 
-#: attachment/attachmentcontrollerbase.cpp:751
+#: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format
 msgid "Unable to edit attachment"
 msgstr "Não é possível editar o anexo"
 
-#: attachment/attachmentcontrollerbase.cpp:792
+#: attachment/attachmentcontrollerbase.cpp:801
 #, kde-format
 msgid "unnamed"
 msgstr "sem nome"
 
-#: attachment/attachmentcontrollerbase.cpp:795
+#: attachment/attachmentcontrollerbase.cpp:804
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Gravar o Anexo Como"
 
-#: attachment/attachmentcontrollerbase.cpp:818
+#: attachment/attachmentcontrollerbase.cpp:827
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -285,60 +285,60 @@ msgstr ""
 "O ficheiro %1 já existe.\n"
 "Deseja substituí-lo?"
 
-#: attachment/attachmentcontrollerbase.cpp:819
+#: attachment/attachmentcontrollerbase.cpp:828
 #, kde-format
 msgid "Save to File"
 msgstr "Gravar para um Ficheiro"
 
-#: attachment/attachmentcontrollerbase.cpp:820
+#: attachment/attachmentcontrollerbase.cpp:829
 #, kde-format
 msgid "&Replace"
 msgstr "Substitui&r"
 
-#: attachment/attachmentcontrollerbase.cpp:847
-#: attachment/attachmentcontrollerbase.cpp:905
+#: attachment/attachmentcontrollerbase.cpp:860
+#: attachment/attachmentcontrollerbase.cpp:926
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Deseja mesmo anexar esta pasta \"%1\"?"
 
-#: attachment/attachmentcontrollerbase.cpp:848
-#: attachment/attachmentcontrollerbase.cpp:906
+#: attachment/attachmentcontrollerbase.cpp:861
+#: attachment/attachmentcontrollerbase.cpp:927
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Anexar a pasta"
 
-#: attachment/attachmentcontrollerbase.cpp:849
-#: attachment/attachmentcontrollerbase.cpp:907
+#: attachment/attachmentcontrollerbase.cpp:862
+#: attachment/attachmentcontrollerbase.cpp:928
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Anexar"
 
-#: attachment/attachmentcontrollerbase.cpp:884
+#: attachment/attachmentcontrollerbase.cpp:901
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Anexar a Pasta"
 
-#: attachment/attachmentcontrollerbase.cpp:893
+#: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Anexar um Ficheiro"
 
-#: attachment/attachmentcontrollerbase.cpp:936
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Não foi possível anexar o ficheiro"
 
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Anexar Uma Chave Pública de OpenPGP"
 
-#: attachment/attachmentcontrollerbase.cpp:961
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Seleccione a chave pública que deve ser anexada."
@@ -1913,21 +1913,21 @@ msgstr ""
 "p><p><b>Não foi encontrada nenhuma chave válida para o utilizador %1 (%2)</"
 "b></p>"
 
-#: job/maintextjob.cpp:60
+#: job/maintextjob.cpp:61
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
 "Foi pedido o uso da mudança de linha, mas não foi indicado qualquer texto "
 "simples repartido."
 
-#: job/maintextjob.cpp:67
+#: job/maintextjob.cpp:68
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 "Foi pedido o não-uso da mudança de linha, mas não foi indicado qualquer "
 "texto simples."
 
-#: job/maintextjob.cpp:82
+#: job/maintextjob.cpp:83
 #, kde-format
 msgid ""
 "No charsets were available for encoding. Please check your configuration and "
@@ -1937,7 +1937,7 @@ msgstr ""
 "codificação. Verifique por favor a sua configuração e certifique-se que "
 "contém pelo menos uma codificação para enviar."
 
-#: job/maintextjob.cpp:100
+#: job/maintextjob.cpp:105
 #, kde-format
 msgid ""
 "Encoding the message with %1 will lose some characters.\n"
@@ -1946,34 +1946,34 @@ msgstr ""
 "Se codificar a mensagem com o %1, irá perder alguns caracteres.\n"
 "Deseja continuar?"
 
-#: job/maintextjob.cpp:103
+#: job/maintextjob.cpp:108
 #, kde-format
 msgid "Some Characters Will Be Lost"
 msgstr "Alguns Caracteres Serão Perdidos"
 
-#: job/maintextjob.cpp:104
+#: job/maintextjob.cpp:109
 #, kde-format
 msgid "Lose Characters"
 msgstr "Perder os Caracteres"
 
-#: job/maintextjob.cpp:105
+#: job/maintextjob.cpp:110
 #, kde-format
 msgid "Change Encoding"
 msgstr "Mudar a Codificação"
 
-#: job/maintextjob.cpp:108
+#: job/maintextjob.cpp:117
 #, kde-format
 msgid "User decided to change the encoding."
 msgstr "O utilizador optou por mudar a codificação."
 
-#: job/maintextjob.cpp:118
+#: job/maintextjob.cpp:127
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
 msgstr ""
 "A codificação seleccionada (%1) não suporta completamente o texto da "
 "mensagem."
 
-#: job/maintextjob.cpp:143
+#: job/maintextjob.cpp:152
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Não foi possível obter a codificação de texto para o \"%1\"."
@@ -2825,7 +2825,7 @@ msgstr "Diversos"
 msgid "Subject"
 msgstr "Assunto"
 
-#: utils/util.cpp:260
+#: utils/util.cpp:261
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2833,7 +2833,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "anexo,anexado"
 
-#: utils/util.cpp:293
+#: utils/util.cpp:299
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2842,18 +2842,18 @@ msgstr ""
 "O agente de encaminhamento do correio não está configurado; como tal, não é "
 "possível enviar os e-mails. Deseja criar um agente?"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:300
 #, kde-format
 msgid "No mail dispatcher."
 msgstr "Não existe nenhum agente de encaminhamento de correio."
 
-#: utils/util.cpp:295
+#: utils/util.cpp:301
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Criar um Agente de Encaminhamento de Correio"
 
-#: utils/util.cpp:310
+#: utils/util.cpp:324
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2862,12 +2862,12 @@ msgstr ""
 "O agente de encaminhamento do correio está desligado; como tal, não é "
 "possível enviar os e-mails. Deseja ligá-lo?"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:325
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "O agente de encaminhamento de correio está desligado."
 
-#: utils/util.cpp:312
+#: utils/util.cpp:326
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2021-10-07 15:57+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1061,7 +1061,7 @@ msgid "Theme"
 msgstr "Tema"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
-#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/configurefilterswidget.cpp:75
 #: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
 #: utils/themeconfigbutton.cpp:46
 #, kde-format
@@ -1104,17 +1104,17 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "Configurar filtro"
 
-#: core/widgets/configurefilterswidget.cpp:78
+#: core/widgets/configurefilterswidget.cpp:79
 #, kde-format
 msgid "Remove"
 msgstr "Eliminar"
 
-#: core/widgets/configurefilterswidget.cpp:81
+#: core/widgets/configurefilterswidget.cpp:86
 #, kde-format
 msgid "Do you want to delete this filter?"
 msgstr "¿Desea borrar este filtro?"
 
-#: core/widgets/configurefilterswidget.cpp:82
+#: core/widgets/configurefilterswidget.cpp:87
 #, kde-format
 msgid "Remove Filter"
 msgstr "Eliminar filtro"
@@ -1508,74 +1508,74 @@ msgid "Export Aggregation"
 msgstr "Exportar agregación"
 
 #: utils/configureaggregationsdialog.cpp:442
-#: utils/configurethemesdialog.cpp:465
+#: utils/configurethemesdialog.cpp:475
 #, kde-format
 msgid "All Files (*)"
 msgstr "Todos los archivos (*)"
 
-#: utils/configurethemesdialog.cpp:96
+#: utils/configurethemesdialog.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Personalizar temas"
 
-#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#: utils/configurethemesdialog.cpp:115 utils/configurethemesdialog.cpp:351
 #, kde-format
 msgid "New Theme"
 msgstr "Nuevo tema"
 
-#: utils/configurethemesdialog.cpp:122
+#: utils/configurethemesdialog.cpp:123
 #, kde-format
 msgid "Clone Theme"
 msgstr "Clonar tema"
 
-#: utils/configurethemesdialog.cpp:135
+#: utils/configurethemesdialog.cpp:136
 #, kde-format
 msgid "Export Theme..."
 msgstr "Exportar tema..."
 
-#: utils/configurethemesdialog.cpp:142
+#: utils/configurethemesdialog.cpp:143
 #, kde-format
 msgid "Import Theme..."
 msgstr "Importar tema..."
 
-#: utils/configurethemesdialog.cpp:153
+#: utils/configurethemesdialog.cpp:154
 #, kde-format
 msgid "Delete Theme"
 msgstr "Borrar tema"
 
-#: utils/configurethemesdialog.cpp:332
+#: utils/configurethemesdialog.cpp:333
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Tema sin nombre"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:353 utils/themeeditor.cpp:1217
 #, kde-format
 msgid "New Column"
 msgstr "Nueva columna"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:405
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr "¿Desea borrar los temas seleccionados?"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:405
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr "¿Desea borrar «%1»?"
 
-#: utils/configurethemesdialog.cpp:405
+#: utils/configurethemesdialog.cpp:408 utils/configurethemesdialog.cpp:410
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "Borrar tema"
 
-#: utils/configurethemesdialog.cpp:431
+#: utils/configurethemesdialog.cpp:441
 #, kde-format
 msgid "Import Theme"
 msgstr "Importar tema"
 
-#: utils/configurethemesdialog.cpp:465
+#: utils/configurethemesdialog.cpp:475
 #, kde-format
 msgid "Export Theme"
 msgstr "Exportar tema"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-26 00:45+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2021-07-12 10:30+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -43,7 +43,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "Προώθηση"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#: customtemplates.cpp:77 templatesconfiguration.cpp:74
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis:\">Πώς δουλεύει αυτό;</a>"
@@ -544,7 +544,7 @@ msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "Αποσφαλμάτωση"
 
-#: templatesconfiguration.cpp:50
+#: templatesconfiguration.cpp:51
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -558,7 +558,7 @@ msgstr ""
 "μπορείτε είτε απλά να τις πληκτρολογήσετε είτε να τις επιλέξετε από το μενού "
 "<i>Εισαγωγή εντολής</i>.</p>"
 
-#: templatesconfiguration.cpp:58
+#: templatesconfiguration.cpp:59
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -567,7 +567,7 @@ msgstr ""
 "<p>Τα πρότυπα που ορίζονται εδώ ισχύουν μόνο για ένα φάκελο. Υπερισχύουν "
 "τόσο των καθολικών προτύπων όσο και των προτύπων ταυτότητας.</p>"
 
-#: templatesconfiguration.cpp:63
+#: templatesconfiguration.cpp:64
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -578,7 +578,7 @@ msgstr ""
 "Υπερισχύουν των καθολικών προτύπων, αλλά όχι και των προτύπων που έχουν "
 "καθοριστεί ανά φάκελο.</p>"
 
-#: templatesconfiguration.cpp:68
+#: templatesconfiguration.cpp:69
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -587,28 +587,28 @@ msgstr ""
 "<p>Αυτά είναι τα καθολικά (προκαθορισμένα) πρότυπα. Αν έχουν καθοριστεί "
 "πρότυπα ανά ταυτότητα ή ανά φάκελο, τότε αυτά υπερισχύουν των καθολικών.</p>"
 
-#: templatesconfiguration.cpp:100
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 "Θέλετε να επαναφέρετε στο προκαθορισμένο το τρέχον πρότυπο ή όλα τα πρότυπα;"
 
-#: templatesconfiguration.cpp:101
+#: templatesconfiguration.cpp:106
 #, kde-format
 msgid "Reset to default"
 msgstr "Επαναφορά στο προκαθορισμένο"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:107
 #, kde-format
 msgid "Reset Current Template"
 msgstr "Επαναφορά τρέχοντος προτύπου"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:108
 #, kde-format
 msgid "Reset All Templates"
 msgstr "Επαναφορά όλων των προτύπων"
 
-#: templatesconfiguration.cpp:361
+#: templatesconfiguration.cpp:370
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2022-05-16 21:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "X-Generator: Lokalize 20.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: attachment/attachmentcontrollerbase.cpp:168
+#: attachment/attachmentcontrollerbase.cpp:169
 #, kde-format
 msgid "Failed to compress attachment"
 msgstr "Misslyckades komprimera bilaga"
 
-#: attachment/attachmentcontrollerbase.cpp:179
+#: attachment/attachmentcontrollerbase.cpp:184
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
@@ -32,217 +32,217 @@ msgid ""
 msgstr ""
 "Den komprimerade bilagan är större än originalet. Vill du behålla originalet?"
 
-#: attachment/attachmentcontrollerbase.cpp:182
+#: attachment/attachmentcontrollerbase.cpp:187
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Behåll"
 
-#: attachment/attachmentcontrollerbase.cpp:183
+#: attachment/attachmentcontrollerbase.cpp:188
 #, kde-format
 msgid "Compress"
 msgstr "Komprimera"
 
-#: attachment/attachmentcontrollerbase.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:211
 #, kde-format
 msgid "Failed to attach file"
 msgstr "Misslyckades bifoga fil"
 
-#: attachment/attachmentcontrollerbase.cpp:275
+#: attachment/attachmentcontrollerbase.cpp:284
 #, kde-format
 msgid "Failed to reload attachment"
 msgstr "Misslyckades läsa in bilaga igen"
 
-#: attachment/attachmentcontrollerbase.cpp:322
+#: attachment/attachmentcontrollerbase.cpp:331
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "Öppna &med"
 
-#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:351
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Annat..."
 
-#: attachment/attachmentcontrollerbase.cpp:344
-#: attachment/attachmentcontrollerbase.cpp:352
+#: attachment/attachmentcontrollerbase.cpp:353
+#: attachment/attachmentcontrollerbase.cpp:361
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Öppna &med..."
 
-#: attachment/attachmentcontrollerbase.cpp:378
+#: attachment/attachmentcontrollerbase.cpp:387
 #, kde-format
 msgid "Failed to attach public key"
 msgstr "Misslyckades bifoga öppen nyckel"
 
-#: attachment/attachmentcontrollerbase.cpp:392
+#: attachment/attachmentcontrollerbase.cpp:401
 #, kde-format
 msgid "Failed to attach vCard"
 msgstr "Misslyckades bifoga visitkort"
 
-#: attachment/attachmentcontrollerbase.cpp:405
+#: attachment/attachmentcontrollerbase.cpp:414
 #, kde-format
 msgid "Failed to attach text from clipboard"
 msgstr "Misslyckades bifoga text från klippbordet"
 
-#: attachment/attachmentcontrollerbase.cpp:453
+#: attachment/attachmentcontrollerbase.cpp:462
 #, kde-format
 msgid "Attach &Public Key..."
 msgstr "Bifoga ö&ppen nyckel..."
 
-#: attachment/attachmentcontrollerbase.cpp:456
+#: attachment/attachmentcontrollerbase.cpp:465
 #, kde-format
 msgid "Attach &My Public Key"
 msgstr "Bifoga &min öppna nyckel"
 
-#: attachment/attachmentcontrollerbase.cpp:459
-#: attachment/attachmentcontrollerbase.cpp:464
-#: attachment/attachmentcontrollerbase.cpp:470
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:473
 #: attachment/attachmentcontrollerbase.cpp:479
+#: attachment/attachmentcontrollerbase.cpp:488
 #, kde-format
 msgid "Attach"
 msgstr "Bifoga"
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:472
 #: composer/composerviewbase.cpp:1905
 #, kde-format
 msgid "&Attach File..."
 msgstr "Bifog&a fil..."
 
-#: attachment/attachmentcontrollerbase.cpp:465
+#: attachment/attachmentcontrollerbase.cpp:474
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Lägg till bilaga..."
 
-#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "Bifoga k&atalog..."
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "Attach Own vCard"
 msgstr "Bifoga eget visitkort"
 
-#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:483
 #, kde-format
 msgid "Own vCard"
 msgstr "Eget visitkort"
 
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:487
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "&Bifoga visitkort..."
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:491
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr "&Bifoga text från klippbordet..."
 
-#: attachment/attachmentcontrollerbase.cpp:483
+#: attachment/attachmentcontrollerbase.cpp:492
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "Bifoga text från klippbordet"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:504
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "Ta &bort bilaga"
 
-#: attachment/attachmentcontrollerbase.cpp:496
+#: attachment/attachmentcontrollerbase.cpp:505
 #, kde-format
 msgid "Remove"
 msgstr "Ta bort"
 
-#: attachment/attachmentcontrollerbase.cpp:504
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Öppna"
 
-#: attachment/attachmentcontrollerbase.cpp:509
+#: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Visa"
 
-#: attachment/attachmentcontrollerbase.cpp:514
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Redigera"
 
-#: attachment/attachmentcontrollerbase.cpp:519
+#: attachment/attachmentcontrollerbase.cpp:528
 #, kde-format
 msgid "Edit With..."
 msgstr "Redigera med..."
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Spara bilaga som..."
 
-#: attachment/attachmentcontrollerbase.cpp:525
+#: attachment/attachmentcontrollerbase.cpp:534
 #, kde-format
 msgid "Save As..."
 msgstr "Spara som..."
 
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:542
 #, kde-format
 msgid "Attachment Pr&operties..."
 msgstr "&Egenskaper hos bilaga..."
 
-#: attachment/attachmentcontrollerbase.cpp:534
+#: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
 msgid "Properties"
 msgstr "Egenskaper"
 
-#: attachment/attachmentcontrollerbase.cpp:542
+#: attachment/attachmentcontrollerbase.cpp:551
 #, kde-format
 msgid "Select All"
 msgstr "Markera alla"
 
-#: attachment/attachmentcontrollerbase.cpp:545
+#: attachment/attachmentcontrollerbase.cpp:554
 #, kde-format
 msgid "Reload"
 msgstr "Uppdatera"
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:702
-#: attachment/attachmentcontrollerbase.cpp:751
+#: attachment/attachmentcontrollerbase.cpp:687
+#: attachment/attachmentcontrollerbase.cpp:711
+#: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "Kmail kunde inte skriva bilagan i en tillfällig fil."
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:702
+#: attachment/attachmentcontrollerbase.cpp:687
+#: attachment/attachmentcontrollerbase.cpp:711
 #, kde-format
 msgid "Unable to open attachment"
 msgstr "Kan inte öppna bilaga"
 
-#: attachment/attachmentcontrollerbase.cpp:711
+#: attachment/attachmentcontrollerbase.cpp:720
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "Kmail kunde inte öppna bilagan."
 
-#: attachment/attachmentcontrollerbase.cpp:751
+#: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format
 msgid "Unable to edit attachment"
 msgstr "Kan inte redigera bilagan"
 
-#: attachment/attachmentcontrollerbase.cpp:792
+#: attachment/attachmentcontrollerbase.cpp:801
 #, kde-format
 msgid "unnamed"
 msgstr "namnlös"
 
-#: attachment/attachmentcontrollerbase.cpp:795
+#: attachment/attachmentcontrollerbase.cpp:804
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Spara bilaga som"
 
-#: attachment/attachmentcontrollerbase.cpp:818
+#: attachment/attachmentcontrollerbase.cpp:827
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -251,60 +251,60 @@ msgstr ""
 "Filen %1 finns.\n"
 "Vill du ersätta den?"
 
-#: attachment/attachmentcontrollerbase.cpp:819
+#: attachment/attachmentcontrollerbase.cpp:828
 #, kde-format
 msgid "Save to File"
 msgstr "Spara till fil"
 
-#: attachment/attachmentcontrollerbase.cpp:820
+#: attachment/attachmentcontrollerbase.cpp:829
 #, kde-format
 msgid "&Replace"
 msgstr "E&rsätt"
 
-#: attachment/attachmentcontrollerbase.cpp:847
-#: attachment/attachmentcontrollerbase.cpp:905
+#: attachment/attachmentcontrollerbase.cpp:860
+#: attachment/attachmentcontrollerbase.cpp:926
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Vill du verkligen bifoga katalogen  \"%1\"?"
 
-#: attachment/attachmentcontrollerbase.cpp:848
-#: attachment/attachmentcontrollerbase.cpp:906
+#: attachment/attachmentcontrollerbase.cpp:861
+#: attachment/attachmentcontrollerbase.cpp:927
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Bifoga katalog"
 
-#: attachment/attachmentcontrollerbase.cpp:849
-#: attachment/attachmentcontrollerbase.cpp:907
+#: attachment/attachmentcontrollerbase.cpp:862
+#: attachment/attachmentcontrollerbase.cpp:928
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Bifoga"
 
-#: attachment/attachmentcontrollerbase.cpp:884
+#: attachment/attachmentcontrollerbase.cpp:901
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Bifoga katalog"
 
-#: attachment/attachmentcontrollerbase.cpp:893
+#: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Bifoga fil"
 
-#: attachment/attachmentcontrollerbase.cpp:936
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Misslyckades bifoga fil"
 
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Bifoga öppen OpenPGP-nyckel"
 
-#: attachment/attachmentcontrollerbase.cpp:961
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Välj den öppna nyckel som ska bifogas."
@@ -1871,21 +1871,21 @@ msgstr ""
 "<p>Ett fel uppstod vid försök att exportera nyckeln från bakgrundsprogrammet:"
 "</p><p><b>Ingen giltig nyckel hittades för användare %1 (%2)</b></p>"
 
-#: job/maintextjob.cpp:60
+#: job/maintextjob.cpp:61
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
 "Att använda radbrytning begärdes, men ingen radbruten vanlig text "
 "tillhandahölls."
 
-#: job/maintextjob.cpp:67
+#: job/maintextjob.cpp:68
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 "Att inte använda radbrytning begärdes, men ingen ren vanlig text "
 "tillhandahölls."
 
-#: job/maintextjob.cpp:82
+#: job/maintextjob.cpp:83
 #, kde-format
 msgid ""
 "No charsets were available for encoding. Please check your configuration and "
@@ -1895,7 +1895,7 @@ msgstr ""
 "konfiguration och se till att den innehåller minst en teckenuppsättning för "
 "utskick."
 
-#: job/maintextjob.cpp:100
+#: job/maintextjob.cpp:105
 #, kde-format
 msgid ""
 "Encoding the message with %1 will lose some characters.\n"
@@ -1904,32 +1904,32 @@ msgstr ""
 "Kodning av brevet med %1 gör att vissa tecken går förlorade.\n"
 "Vill du fortsätta?"
 
-#: job/maintextjob.cpp:103
+#: job/maintextjob.cpp:108
 #, kde-format
 msgid "Some Characters Will Be Lost"
 msgstr "Vissa tecken kommer att gå förlorade"
 
-#: job/maintextjob.cpp:104
+#: job/maintextjob.cpp:109
 #, kde-format
 msgid "Lose Characters"
 msgstr "Låt tecken gå förlorade"
 
-#: job/maintextjob.cpp:105
+#: job/maintextjob.cpp:110
 #, kde-format
 msgid "Change Encoding"
 msgstr "Ändra kodning"
 
-#: job/maintextjob.cpp:108
+#: job/maintextjob.cpp:117
 #, kde-format
 msgid "User decided to change the encoding."
 msgstr "Användaren bestämde att kodningen skulle ändras."
 
-#: job/maintextjob.cpp:118
+#: job/maintextjob.cpp:127
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
 msgstr "Den valda kodningen (%1) kan inte koda hela brevet."
 
-#: job/maintextjob.cpp:143
+#: job/maintextjob.cpp:152
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Kunde inte hämta textkodare för teckenuppsättningen \"%1\"."
@@ -2776,7 +2776,7 @@ msgstr "Diverse"
 msgid "Subject"
 msgstr "Rubrik"
 
-#: utils/util.cpp:260
+#: utils/util.cpp:261
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2784,7 +2784,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "bilaga,bilagda"
 
-#: utils/util.cpp:293
+#: utils/util.cpp:299
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2793,18 +2793,18 @@ msgstr ""
 "E-postsändningsmodulen är inte inställd, och e-post kan inte skickas. Vill "
 "du skapa en e-postsändningsmodul?"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:300
 #, kde-format
 msgid "No mail dispatcher."
 msgstr "Ingen e-postsändningsmodul"
 
-#: utils/util.cpp:295
+#: utils/util.cpp:301
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Skapa e-postsändningsmodul"
 
-#: utils/util.cpp:310
+#: utils/util.cpp:324
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2813,12 +2813,12 @@ msgstr ""
 "E-postsändningsmodulen är nerkopplad, och e-post kan inte skickas. Vill du "
 "koppla upp den?"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:325
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "E-postsändningsmodulen nerkopplad."
 
-#: utils/util.cpp:312
+#: utils/util.cpp:326
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

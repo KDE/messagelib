@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2021-12-19 19:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1081,7 +1081,7 @@ msgid "Theme"
 msgstr "السمة"
 
 #: core/widgetbase.cpp:429 core/widgetbase.cpp:519
-#: core/widgets/configurefilterswidget.cpp:74
+#: core/widgets/configurefilterswidget.cpp:75
 #: core/widgets/filtersavedmenu.cpp:17 utils/aggregationconfigbutton.cpp:32
 #: utils/themeconfigbutton.cpp:46
 #, kde-format
@@ -1125,18 +1125,18 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "هييء ال&مرشحات..."
 
-#: core/widgets/configurefilterswidget.cpp:78
+#: core/widgets/configurefilterswidget.cpp:79
 #, fuzzy, kde-format
 msgid "Remove"
 msgstr "أزل"
 
-#: core/widgets/configurefilterswidget.cpp:81
+#: core/widgets/configurefilterswidget.cpp:86
 #, fuzzy, kde-format
 #| msgid "Do you want to delete \"%1\"?"
 msgid "Do you want to delete this filter?"
 msgstr "أتريد حذف ”%1“؟"
 
-#: core/widgets/configurefilterswidget.cpp:82
+#: core/widgets/configurefilterswidget.cpp:87
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
 msgid "Remove Filter"
@@ -1527,75 +1527,75 @@ msgid "Export Aggregation"
 msgstr ""
 
 #: utils/configureaggregationsdialog.cpp:442
-#: utils/configurethemesdialog.cpp:465
+#: utils/configurethemesdialog.cpp:475
 #, kde-format
 msgid "All Files (*)"
 msgstr "كلّ الملفّات (*)"
 
-#: utils/configurethemesdialog.cpp:96
+#: utils/configurethemesdialog.cpp:97
 #, fuzzy, kde-format
 #| msgid "Customize Themes"
 msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "خصّص السّمات"
 
-#: utils/configurethemesdialog.cpp:114 utils/configurethemesdialog.cpp:350
+#: utils/configurethemesdialog.cpp:115 utils/configurethemesdialog.cpp:351
 #, kde-format
 msgid "New Theme"
 msgstr "سمة جديدة"
 
-#: utils/configurethemesdialog.cpp:122
+#: utils/configurethemesdialog.cpp:123
 #, kde-format
 msgid "Clone Theme"
 msgstr "استنسخ السّمة"
 
-#: utils/configurethemesdialog.cpp:135
+#: utils/configurethemesdialog.cpp:136
 #, kde-format
 msgid "Export Theme..."
 msgstr "صدّر السّمة..."
 
-#: utils/configurethemesdialog.cpp:142
+#: utils/configurethemesdialog.cpp:143
 #, kde-format
 msgid "Import Theme..."
 msgstr "استورد سمة..."
 
-#: utils/configurethemesdialog.cpp:153
+#: utils/configurethemesdialog.cpp:154
 #, kde-format
 msgid "Delete Theme"
 msgstr "احذف السّمة"
 
-#: utils/configurethemesdialog.cpp:332
+#: utils/configurethemesdialog.cpp:333
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "سمة غير مسمّاة"
 
-#: utils/configurethemesdialog.cpp:352 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:353 utils/themeeditor.cpp:1217
 #, kde-format
 msgid "New Column"
 msgstr "عمود جديد"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:405
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr "أتريد حذف السّمات المحدّدة؟"
 
-#: utils/configurethemesdialog.cpp:404
+#: utils/configurethemesdialog.cpp:405
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr "أتريد حذف ”%1“؟"
 
-#: utils/configurethemesdialog.cpp:405
+#: utils/configurethemesdialog.cpp:408 utils/configurethemesdialog.cpp:410
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "حذف السّمة"
 
-#: utils/configurethemesdialog.cpp:431
+#: utils/configurethemesdialog.cpp:441
 #, kde-format
 msgid "Import Theme"
 msgstr "استورد سمة"
 
-#: utils/configurethemesdialog.cpp:465
+#: utils/configurethemesdialog.cpp:475
 #, kde-format
 msgid "Export Theme"
 msgstr "صدّر السّمة"

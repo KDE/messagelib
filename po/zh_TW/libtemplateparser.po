@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-26 00:45+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2018-12-21 19:37+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -44,7 +44,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "轉寄"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#: customtemplates.cpp:77 templatesconfiguration.cpp:74
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">這是怎麼運作的？</a>"
@@ -523,7 +523,7 @@ msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "偵錯"
 
-#: templatesconfiguration.cpp:50
+#: templatesconfiguration.cpp:51
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -534,7 +534,7 @@ msgstr ""
 "<p>您可以在此建立與管理用於編寫、回覆與轉寄信件時的信件樣本。</p> <p>信件樣本"
 "支援替代指令，只要輸入或從選單中選取<i>插入指令</i>即可。</p>"
 
-#: templatesconfiguration.cpp:58
+#: templatesconfiguration.cpp:59
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -543,7 +543,7 @@ msgstr ""
 "<p>在此指定的樣本為個別資料夾指定的樣本。它們會覆蓋全域樣本與每個身份的樣本的"
 "設定。</p>"
 
-#: templatesconfiguration.cpp:63
+#: templatesconfiguration.cpp:64
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -553,7 +553,7 @@ msgstr ""
 "<p>在此指定的樣本為個別身份指定的樣本。它們會覆蓋全域樣本與每個資料夾的樣本的"
 "設定。</p>"
 
-#: templatesconfiguration.cpp:68
+#: templatesconfiguration.cpp:69
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -562,27 +562,27 @@ msgstr ""
 "<p>在此指定的樣本為全域（預設）樣本。它們會被每個資料夾與每個身份的樣本的設定"
 "覆蓋掉。</p>"
 
-#: templatesconfiguration.cpp:100
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr "您確定要重置目前的樣本或所有的樣本回到預設值嗎？"
 
-#: templatesconfiguration.cpp:101
+#: templatesconfiguration.cpp:106
 #, kde-format
 msgid "Reset to default"
 msgstr "重置到預設值"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:107
 #, kde-format
 msgid "Reset Current Template"
 msgstr "重置目前的樣本"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:108
 #, kde-format
 msgid "Reset All Templates"
 msgstr "重置所有的樣本"
 
-#: templatesconfiguration.cpp:361
+#: templatesconfiguration.cpp:370
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
