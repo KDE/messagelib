@@ -2055,7 +2055,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Distribution List"
-msgstr "Guardada de la llista de distribució"
+msgstr "Guardeu la llista de distribució"
 
 #: recipient/distributionlistdialog.cpp:107
 #, kde-format

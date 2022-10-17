@@ -44,7 +44,7 @@ msgstr "Bu&sca:"
 #: findbar/findbarbase.cpp:53
 #, kde-format
 msgid "Text to search for"
-msgstr "Text que cal buscar"
+msgstr "Text que s'ha de buscar"
 
 #: findbar/findbarbase.cpp:58
 #, kde-format

@@ -1504,8 +1504,8 @@ msgid ""
 "Specifies the default policy to use, for the Message Disposition "
 "Notifications (for internal use only)"
 msgstr ""
-"Especifica la política predeterminada a utilitzar, per a les notificacions "
-"de processament del missatge -MDN- (només per a ús intern)"
+"Especifica la política predeterminada que s'utilitzarà, per a les "
+"notificacions de processament del missatge -MDN- (només per a ús intern)"
 
 #. i18n: ectx: label, entry (QuoteMessage), group (MDN)
 #: settings/messageviewer.kcfg.cmake:165
@@ -1881,7 +1881,7 @@ msgstr "S'ha produït un error en guardar l'adjunt"
 #: utils/messageviewerutil.cpp:500
 #, kde-format
 msgid "Found no attachments to save."
-msgstr "No s'ha trobat cap adjunt a guardar."
+msgstr "No s'ha trobat cap adjunt per a guardar."
 
 #: utils/messageviewerutil.cpp:515
 #, kde-format

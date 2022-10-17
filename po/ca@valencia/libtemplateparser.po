@@ -66,7 +66,7 @@ msgid ""
 "templates.</p></qt>"
 msgstr ""
 "<qt><p>Ací podeu afegir, editar i suprimir plantilles de missatge "
-"personalitzades a utilitzar en redactar una resposta o en reenviar un "
+"personalitzades que s'utilitzaran en redactar una resposta o en reenviar un "
 "missatge. Creeu la plantilla personalitzada escrivint el nom al quadro "
 "d'entrada de text i premeu el botó «+». També podeu assignar una combinació "
 "de teclat a la plantilla per a operacions més ràpides.</p><p>Les plantilles "
@@ -628,7 +628,7 @@ msgstr "&Inserix una ordre"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
-msgstr "Seleccioneu una ordre a inserir en la plantilla"
+msgstr "Seleccioneu una ordre que s'ha d'inserir en la plantilla"
 
 #: templatesinsertcommandpushbutton.cpp:30
 #, kde-format
@@ -638,9 +638,9 @@ msgid ""
 "being edited.  The command will be inserted at the cursor location, so you "
 "want to move your cursor to the desired insertion point first."
 msgstr ""
-"Passeu per este menú per a trobar una ordre a inserir a la plantilla que "
-"s'està editant. L'ordre s'inserirà a la posició del cursor, per tant, abans "
-"desitjareu moure el cursor al punt d'inserció desitjat."
+"Passeu per este menú per a trobar una ordre que s'inserirà a la plantilla "
+"que s'està editant. L'ordre s'inserirà a la posició del cursor, per tant, "
+"abans desitjareu moure el cursor al punt d'inserció desitjat."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:86
