@@ -69,6 +69,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QSaveFile>
+#include <kwidgetsaddons_version.h>
 
 #include <QDir>
 #include <QStandardPaths>
@@ -327,16 +328,24 @@ void ComposerViewBase::send(MessageComposer::MessageSender::SendMethod method, M
         const QString keepBtnText =
             m_encrypt ? m_sign ? i18n("&Keep markup, do not sign/encrypt") : i18n("&Keep markup, do not encrypt") : i18n("&Keep markup, do not sign");
         const QString yesBtnText = m_encrypt ? m_sign ? i18n("Sign/Encrypt (delete markup)") : i18n("Encrypt (delete markup)") : i18n("Sign (delete markup)");
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        int ret = KMessageBox::warningTwoActionsCancel(m_parentWidget,
+#else
         int ret = KMessageBox::warningYesNoCancel(m_parentWidget,
-                                                  i18n("<qt><p>Inline signing/encrypting of HTML messages is not possible;</p>"
-                                                       "<p>do you want to delete your markup?</p></qt>"),
-                                                  i18n("Sign/Encrypt Message?"),
-                                                  KGuiItem(yesBtnText),
-                                                  KGuiItem(keepBtnText));
+#endif
+                                                       i18n("<qt><p>Inline signing/encrypting of HTML messages is not possible;</p>"
+                                                            "<p>do you want to delete your markup?</p></qt>"),
+                                                       i18n("Sign/Encrypt Message?"),
+                                                       KGuiItem(yesBtnText),
+                                                       KGuiItem(keepBtnText));
         if (KMessageBox::Cancel == ret) {
             return;
         }
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        if (KMessageBox::ButtonCode::SecondaryAction == ret) {
+#else
         if (KMessageBox::No == ret) {
+#endif
             m_encrypt = false;
             m_sign = false;
         } else {
@@ -520,12 +529,20 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
             if (m_attachmentModel) {
                 MessageComposer::Utils resizeUtils;
                 if (resizeUtils.containsImage(m_attachmentModel->attachments())) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                    const int rc = KMessageBox::warningTwoActions(m_parentWidget,
+#else
                     const int rc = KMessageBox::warningYesNo(m_parentWidget,
-                                                             i18n("Do you want to resize images?"),
-                                                             i18n("Auto Resize Images"),
-                                                             KGuiItem(i18nc("@action:button", "Auto Resize")),
-                                                             KGuiItem(i18nc("@action:button", "Do Not Resize")));
+#endif
+                                                                  i18n("Do you want to resize images?"),
+                                                                  i18n("Auto Resize Images"),
+                                                                  KGuiItem(i18nc("@action:button", "Auto Resize")),
+                                                                  KGuiItem(i18nc("@action:button", "Do Not Resize")));
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                    if (rc == KMessageBox::ButtonCode::PrimaryAction) {
+#else
                     if (rc == KMessageBox::Yes) {
+#endif
                         autoresizeImage = true;
                     } else {
                         autoresizeImage = false;
@@ -1897,17 +1914,26 @@ ComposerViewBase::MissingAttachment ComposerViewBase::checkForMissingAttachments
     if (!hasMissingAttachments(attachmentKeywords)) {
         return NoMissingAttachmentFound;
     }
-    int rc = KMessageBox::warningYesNoCancel(m_editor,
-                                             i18n("The message you have composed seems to refer to an "
-                                                  "attached file but you have not attached anything.\n"
-                                                  "Do you want to attach a file to your message?"),
-                                             i18n("File Attachment Reminder"),
-                                             KGuiItem(i18n("&Attach File..."), QLatin1String("mail-attachment")),
-                                             KGuiItem(i18n("&Send as Is"), QLatin1String("mail-send")));
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    const int rc = KMessageBox::warningTwoActionsCancel(m_editor,
+#else
+    const int rc = KMessageBox::warningYesNoCancel(m_editor,
+#endif
+
+                                                        i18n("The message you have composed seems to refer to an "
+                                                             "attached file but you have not attached anything.\n"
+                                                             "Do you want to attach a file to your message?"),
+                                                        i18n("File Attachment Reminder"),
+                                                        KGuiItem(i18n("&Attach File..."), QLatin1String("mail-attachment")),
+                                                        KGuiItem(i18n("&Send as Is"), QLatin1String("mail-send")));
     if (rc == KMessageBox::Cancel) {
         return FoundMissingAttachmentAndCancel;
     }
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    if (rc == KMessageBox::ButtonCode::PrimaryAction) {
+#else
     if (rc == KMessageBox::Yes) {
+#endif
         m_attachmentController->showAddAttachmentFileDialog();
         return FoundMissingAttachmentAndAddedAttachment;
     }
@@ -1959,16 +1985,32 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
             "yielded that you be asked whether or not to sign "
             "this message.\n"
             "Sign this message?");
-        switch (
-            KMessageBox::questionYesNoCancel(m_parentWidget, msg, i18n("Sign Message?"), KGuiItem(i18nc("to sign", "&Sign")), KGuiItem(i18n("Do &Not Sign")))) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        switch (KMessageBox::warningTwoActionsCancel(
+#else
+        switch (KMessageBox::questionYesNoCancel(
+#endif
+            m_parentWidget,
+            msg,
+            i18n("Sign Message?"),
+            KGuiItem(i18nc("to sign", "&Sign")),
+            KGuiItem(i18n("Do &Not Sign")))) {
         case KMessageBox::Cancel:
             result = false;
             canceled = true;
             return false;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        case KMessageBox::ButtonCode::PrimaryAction:
+#else
         case KMessageBox::Yes:
+#endif
             markAllAttachmentsForSigning(true);
             return true;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        case KMessageBox::ButtonCode::SecondaryAction:
+#else
         case KMessageBox::No:
+#endif
             markAllAttachmentsForSigning(false);
             return false;
         default:
@@ -1984,16 +2026,32 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
             "There are conflicting signing preferences "
             "for these recipients.\n"
             "Sign this message?");
-        switch (
-            KMessageBox::warningYesNoCancel(m_parentWidget, msg, i18n("Sign Message?"), KGuiItem(i18nc("to sign", "&Sign")), KGuiItem(i18n("Do &Not Sign")))) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        switch (KMessageBox::warningTwoActionsCancel(
+#else
+        switch (KMessageBox::questionYesNoCancel(
+#endif
+            m_parentWidget,
+            msg,
+            i18n("Sign Message?"),
+            KGuiItem(i18nc("to sign", "&Sign")),
+            KGuiItem(i18n("Do &Not Sign")))) {
         case KMessageBox::Cancel:
             result = false;
             canceled = true;
             return false;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        case KMessageBox::ButtonCode::PrimaryAction:
+#else
         case KMessageBox::Yes:
+#endif
             markAllAttachmentsForSigning(true);
             return true;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        case KMessageBox::ButtonCode::SecondaryAction:
+#else
         case KMessageBox::No:
+#endif
             markAllAttachmentsForSigning(false);
             return false;
         default:
@@ -2030,16 +2088,32 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
                                                               "Sending unsigned message might violate site policy.\n"
                                                               "Sign message instead?"); // oh, I hate this...
             const QString buttonText = sign && !doSignCompletely ? i18n("&Sign All Parts") : i18n("&Sign");
-            switch (
-                KMessageBox::warningYesNoCancel(m_parentWidget, msg, i18n("Unsigned-Message Warning"), KGuiItem(buttonText), KGuiItem(i18n("Send &As Is")))) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            switch (KMessageBox::warningTwoActionsCancel(
+#else
+            switch (KMessageBox::questionYesNoCancel(
+#endif
+                m_parentWidget,
+                msg,
+                i18n("Unsigned-Message Warning"),
+                KGuiItem(buttonText),
+                KGuiItem(i18n("Send &As Is")))) {
             case KMessageBox::Cancel:
                 result = false;
                 canceled = true;
                 return false;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            case KMessageBox::ButtonCode::PrimaryAction:
+#else
             case KMessageBox::Yes:
+#endif
                 markAllAttachmentsForSigning(true);
                 return true;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            case KMessageBox::ButtonCode::SecondaryAction:
+#else
             case KMessageBox::No:
+#endif
                 return sign || doSignCompletely;
             default:
                 qCWarning(MESSAGECOMPOSER_LOG) << "Unhandled MessageBox response";
@@ -2085,19 +2159,32 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
                                               "yielded that you be asked whether or not to encrypt "
                                               "this message.\n"
                                               "Encrypt this message?");
-        switch (KMessageBox::questionYesNoCancel(m_parentWidget,
-                                                 msg,
-                                                 i18n("Encrypt Message?"),
-                                                 KGuiItem(signSomething ? i18n("Sign && &Encrypt") : i18n("&Encrypt")),
-                                                 KGuiItem(signSomething ? i18n("&Sign Only") : i18n("&Send As-Is")))) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        switch (KMessageBox::warningTwoActionsCancel(
+#else
+        switch (KMessageBox::questionYesNoCancel(
+#endif
+            m_parentWidget,
+            msg,
+            i18n("Encrypt Message?"),
+            KGuiItem(signSomething ? i18n("Sign && &Encrypt") : i18n("&Encrypt")),
+            KGuiItem(signSomething ? i18n("&Sign Only") : i18n("&Send As-Is")))) {
         case KMessageBox::Cancel:
             result = false;
             canceled = true;
             return false;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        case KMessageBox::ButtonCode::PrimaryAction:
+#else
         case KMessageBox::Yes:
+#endif
             markAllAttachmentsForEncryption(true);
             return true;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        case KMessageBox::ButtonCode::SecondaryAction:
+#else
         case KMessageBox::No:
+#endif
             markAllAttachmentsForEncryption(false);
             return false;
         default:
@@ -2113,15 +2200,33 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
             "There are conflicting encryption preferences "
             "for these recipients.\n"
             "Encrypt this message?");
-        switch (KMessageBox::warningYesNoCancel(m_parentWidget, msg, i18n("Encrypt Message?"), KGuiItem(i18n("&Encrypt")), KGuiItem(i18n("Do &Not Encrypt")))) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        switch (KMessageBox::warningTwoActionsCancel(
+#else
+        switch (KMessageBox::questionYesNoCancel(
+#endif
+
+            m_parentWidget,
+            msg,
+            i18n("Encrypt Message?"),
+            KGuiItem(i18n("&Encrypt")),
+            KGuiItem(i18n("Do &Not Encrypt")))) {
         case KMessageBox::Cancel:
             result = false;
             canceled = true;
             return false;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        case KMessageBox::ButtonCode::PrimaryAction:
+#else
         case KMessageBox::Yes:
+#endif
             markAllAttachmentsForEncryption(true);
             return true;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        case KMessageBox::ButtonCode::SecondaryAction:
+#else
         case KMessageBox::No:
+#endif
             markAllAttachmentsForEncryption(false);
             return false;
         default:
@@ -2161,19 +2266,31 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
                                                          "leak sensitive information.\n"
                                                          "Encrypt messages instead?"); // oh, I hate this...
             const QString buttonText = !doEncryptCompletely ? i18n("&Encrypt All Parts") : i18n("&Encrypt");
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            switch (KMessageBox::warningTwoActionsCancel(m_parentWidget,
+#else
             switch (KMessageBox::warningYesNoCancel(m_parentWidget,
-                                                    msg,
-                                                    i18n("Unencrypted Message Warning"),
-                                                    KGuiItem(buttonText),
-                                                    KGuiItem(signSomething ? i18n("&Sign Only") : i18n("&Send As-Is")))) {
+#endif
+                                                         msg,
+                                                         i18n("Unencrypted Message Warning"),
+                                                         KGuiItem(buttonText),
+                                                         KGuiItem(signSomething ? i18n("&Sign Only") : i18n("&Send As-Is")))) {
             case KMessageBox::Cancel:
                 result = false;
                 canceled = true;
                 return false;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            case KMessageBox::ButtonCode::PrimaryAction:
+#else
             case KMessageBox::Yes:
+#endif
                 markAllAttachmentsForEncryption(true);
                 return true;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            case KMessageBox::ButtonCode::SecondaryAction:
+#else
             case KMessageBox::No:
+#endif
                 return encrypt || doEncryptCompletely;
             default:
                 qCWarning(MESSAGECOMPOSER_LOG) << "Unhandled MessageBox response";
