@@ -93,6 +93,10 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
         <label>Warn if certificates/keys expire soon (configure thresholds below)</label>
         <default>true</default>
     </entry>
+    <entry name="CryptoWarnOwnSignKeyNearExpiryThresholdDays" type="Int" key="crypto-warn-own-sign-key-near-expire-int">
+        <label>The minimum number of days that the signature certificate should be valid before issuing a warning</label>
+        <default>30</default>
+    </entry>
     <entry name="CryptoWarnSignKeyNearExpiryThresholdDays" type="Int" key="crypto-warn-sign-key-near-expire-int">
         <label>The minimum number of days that the signature certificate should be valid before issuing a warning</label>
         <default>14</default>
@@ -104,6 +108,10 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     <entry name="CryptoWarnSignRootNearExpiryThresholdDays" type="Int" key="crypto-warn-sign-root-near-expire-int">
         <label>The minimum number of days that the root certificate should be valid before issuing a warning</label>
         <default>14</default>
+    </entry>
+    <entry name="CryptoWarnOwnEncrKeyNearExpiryThresholdDays" type="Int" key="crypto-warn-own-encr-key-near-expire-int">
+        <label>The minimum number of days that the encryption certificate should be valid before issuing a warning</label>
+        <default>30</default>
     </entry>
     <entry name="CryptoWarnEncrKeyNearExpiryThresholdDays" type="Int" key="crypto-warn-encr-key-near-expire-int">
         <label>The minimum number of days that the encryption certificate should be valid before issuing a warning</label>

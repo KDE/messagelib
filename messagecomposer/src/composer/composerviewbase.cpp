@@ -569,6 +569,24 @@ namespace
 {
 // helper methods for reading encryption settings
 
+inline int encryptOwnKeyNearExpiryWarningThresholdInDays()
+{
+    if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
+        return -1;
+    }
+    const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnOwnEncrKeyNearExpiryThresholdDays();
+    return qMax(1, num);
+}
+
+inline int signingOwnKeyNearExpiryWarningThresholdInDays()
+{
+    if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
+        return -1;
+    }
+    const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnOwnSignKeyNearExpiryThresholdDays();
+    return qMax(1, num);
+}
+
 inline int encryptKeyNearExpiryWarningThresholdInDays()
 {
     if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
@@ -2353,7 +2371,9 @@ KMime::Message::Ptr ComposerViewBase::msg() const
 NearExpiryChecker::Ptr ComposerViewBase::nearExpiryChecker()
 {
     if (!mNearExpiryChecker) {
-        mNearExpiryChecker = NearExpiryChecker::Ptr(new NearExpiryChecker(encryptKeyNearExpiryWarningThresholdInDays(),
+        mNearExpiryChecker = NearExpiryChecker::Ptr(new NearExpiryChecker(encryptOwnKeyNearExpiryWarningThresholdInDays(),
+                                                                          signingOwnKeyNearExpiryWarningThresholdInDays(),
+                                                                          encryptKeyNearExpiryWarningThresholdInDays(),
                                                                           signingKeyNearExpiryWarningThresholdInDays(),
                                                                           encryptRootCertNearExpiryWarningThresholdInDays(),
                                                                           signingRootCertNearExpiryWarningThresholdInDays(),

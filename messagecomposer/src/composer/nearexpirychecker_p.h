@@ -16,6 +16,8 @@ namespace MessageComposer
 class NearExpiryCheckerPrivate
 {
 public:
+    int encryptOwnKeyNearExpiryWarningThreshold;
+    int signingOwnKeyNearExpiryWarningThreshold;
     int encryptKeyNearExpiryWarningThreshold;
     int signingKeyNearExpiryWarningThreshold;
     int encryptRootCertNearExpiryWarningThreshold;

@@ -22,7 +22,9 @@
 
 using namespace MessageComposer;
 
-NearExpiryChecker::NearExpiryChecker(int encrKeyNearExpiryThresholdDays,
+NearExpiryChecker::NearExpiryChecker(int encrOwnKeyNearExpiryThresholdDays,
+                                     int signOwnKeyNearExpiryThresholdDays,
+                                     int encrKeyNearExpiryThresholdDays,
                                      int signKeyNearExpiryThresholdDays,
                                      int encrRootCertNearExpiryThresholdDays,
                                      int signRootCertNearExpiryThresholdDays,
@@ -30,6 +32,8 @@ NearExpiryChecker::NearExpiryChecker(int encrKeyNearExpiryThresholdDays,
                                      int signChainCertNearExpiryThresholdDays)
     : d(new NearExpiryCheckerPrivate)
 {
+    d->encryptOwnKeyNearExpiryWarningThreshold = encrOwnKeyNearExpiryThresholdDays;
+    d->signingOwnKeyNearExpiryWarningThreshold = signOwnKeyNearExpiryThresholdDays;
     d->encryptKeyNearExpiryWarningThreshold = encrKeyNearExpiryThresholdDays;
     d->signingKeyNearExpiryWarningThreshold = signKeyNearExpiryThresholdDays;
     d->encryptRootCertNearExpiryWarningThreshold = encrRootCertNearExpiryThresholdDays;
@@ -39,6 +43,16 @@ NearExpiryChecker::NearExpiryChecker(int encrKeyNearExpiryThresholdDays,
 }
 
 NearExpiryChecker::~NearExpiryChecker() = default;
+
+int NearExpiryChecker::encryptOwnKeyNearExpiryWarningThresholdInDays() const
+{
+    return d->encryptOwnKeyNearExpiryWarningThreshold;
+}
+
+int NearExpiryChecker::signingOwnKeyNearExpiryWarningThresholdInDays() const
+{
+    return d->signingOwnKeyNearExpiryWarningThreshold;
+}
 
 int NearExpiryChecker::encryptKeyNearExpiryWarningThresholdInDays() const
 {
@@ -329,7 +343,8 @@ void NearExpiryChecker::checkKeyNearExpiry(const GpgME::Key &key, bool isOwnKey,
         const int threshold = ca
             ? (key.isRoot() ? (isSigningKey ? signingRootCertNearExpiryWarningThresholdInDays() : encryptRootCertNearExpiryWarningThresholdInDays())
                             : (isSigningKey ? signingChainCertNearExpiryWarningThresholdInDays() : encryptChainCertNearExpiryWarningThresholdInDays()))
-            : (isSigningKey ? signingKeyNearExpiryWarningThresholdInDays() : encryptKeyNearExpiryWarningThresholdInDays());
+            : (isSigningKey ? (isOwnKey ? signingOwnKeyNearExpiryWarningThresholdInDays() : signingKeyNearExpiryWarningThresholdInDays())
+                            : (isOwnKey ? encryptOwnKeyNearExpiryWarningThresholdInDays() : encryptKeyNearExpiryWarningThresholdInDays()));
         if (threshold > -1 && daysTillExpiry <= threshold) {
             const QString msg = key.protocol() == GpgME::OpenPGP ? formatOpenPGPMessage(key, secsTillExpiry, isOwnKey, isSigningKey)
                                                                  : formatSMIMEMessage(key, orig_key, secsTillExpiry, isOwnKey, isSigningKey, ca);

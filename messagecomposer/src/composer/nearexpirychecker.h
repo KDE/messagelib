@@ -25,7 +25,9 @@ class MESSAGECOMPOSER_EXPORT NearExpiryChecker : public QObject
     Q_OBJECT
 public:
     using Ptr = QSharedPointer<NearExpiryChecker>;
-    explicit NearExpiryChecker(int encrKeyNearExpiryThresholdDays,
+    explicit NearExpiryChecker(int encrOwnKeyNearExpiryThresholdDays,
+                               int signOwnKeyNearExpiryThresholdDays,
+                               int encrKeyNearExpiryThresholdDays,
                                int signKeyNearExpiryThresholdDays,
                                int encrRootCertNearExpNearExpiryCheckerPrivateiryThresholdDays,
                                int signRootCertNearExpiryThresholdDays,
@@ -33,6 +35,9 @@ public:
                                int signChainCertNearExpiryThresholdDays);
 
     ~NearExpiryChecker();
+
+    int encryptOwnKeyNearExpiryWarningThresholdInDays() const;
+    int signingOwnKeyNearExpiryWarningThresholdInDays() const;
 
     int encryptKeyNearExpiryWarningThresholdInDays() const;
     int signingKeyNearExpiryWarningThresholdInDays() const;
