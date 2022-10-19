@@ -81,6 +81,14 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <label>Improve plain text version of HTML message</label>
       <default>true</default>
     </entry>
+    <entry name="CryptoAutoSign" type="Bool" key="crypto-auto-sign">
+        <label>Sign all messages, if possible</label>
+        <default>false</default>
+    </entry>
+    <entry name="CryptoAutoEncrypt" type="Bool" key="crypto-auto-encrypt">
+        <label>Enable encrpytion, if we found keys for all recipients</label>
+        <default>false</default>
+    </entry>
     <entry name="CryptoWarningUnencrypted" type="Bool" key="crypto-warning-unencrypted">
         <label>Warn before sending unencrypted messages</label>
         <default>false</default>
