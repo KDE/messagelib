@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-19 00:47+0000\n"
-"PO-Revision-Date: 2022-10-02 15:49\n"
+"PO-Revision-Date: 2022-10-19 13:23\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1336,7 +1336,7 @@ msgstr ""
 #: followupreminder/followupremindercreatejob.cpp:131
 #, kde-format
 msgid "Failed to store a new reminder: %1"
-msgstr ""
+msgstr "保存新建提醒失败：%1"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:35
 #, kde-format
@@ -1784,12 +1784,12 @@ msgstr ""
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr ""
+msgstr "&忽略"
 
 #: mdn/mdnadvicedialog.cpp:34
 #, kde-format
 msgid "&Send"
-msgstr ""
+msgstr "&发送"
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""

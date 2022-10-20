@@ -3,27 +3,27 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2016.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2021.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-06 00:47+0000\n"
-"PO-Revision-Date: 2021-04-14 13:52-0300\n"
+"PO-Revision-Date: 2022-10-19 15:38-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: developertool/developertooldialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
-msgstr ""
+msgstr "Ferramenta do desenvolvedor"
 
 #: findbar/findbarbase.cpp:39 findbar/findbarbase.cpp:42
 #, kde-format

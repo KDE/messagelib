@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2022-10-02 15:49\n"
+"PO-Revision-Date: 2022-10-19 13:23\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -283,12 +283,12 @@ msgstr "签名信件结束"
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
-msgstr ""
+msgstr "已存储的 DKIM 密钥不同于当前密钥。您还想要存储这个密钥吗？"
 
 #: dkim-verify/dkimcheckfulljob.cpp:124
 #, kde-format
 msgid "Key Changed"
-msgstr ""
+msgstr "密钥已更改"
 
 #: dkim-verify/dkimcheckfulljob.cpp:125
 #, kde-format
@@ -325,7 +325,7 @@ msgstr ""
 #: dkim-verify/dkimmanagerkeywidget.cpp:65
 #, kde-format
 msgid "Copy Key"
-msgstr ""
+msgstr "复制密钥"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:71
 #, kde-format
@@ -498,13 +498,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
-msgstr ""
+msgstr "添加规则"
 
 #: dkim-verify/dkimruledialog.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
-msgstr ""
+msgstr "修改规则"
 
 #: dkim-verify/dkimrulewidget.cpp:18
 #, kde-format
@@ -946,13 +946,13 @@ msgstr "回复地址："
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr ""
+msgstr "忽略"
 
 #: mdn/mdnwarningwidget.cpp:15
 #, kde-format
 msgctxt "@action"
 msgid "Send"
-msgstr ""
+msgstr "发送"
 
 #: mdn/mdnwarningwidget.cpp:16
 #, kde-format
