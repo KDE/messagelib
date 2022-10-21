@@ -52,7 +52,7 @@ private:
 
     std::unique_ptr<NearExpiryCheckerPrivate> const d;
 
-    double calculateSecsTillExpiriy(const GpgME::Subkey &key) const;
+    Q_REQUIRED_RESULT double calculateSecsTillExpiriy(const GpgME::Subkey &key) const;
 
     void checkKeyNearExpiry(const GpgME::Key &key,
                             bool isOwnKey,
