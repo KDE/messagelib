@@ -578,15 +578,6 @@ inline int encryptOwnKeyNearExpiryWarningThresholdInDays()
     return qMax(1, num);
 }
 
-inline int signingOwnKeyNearExpiryWarningThresholdInDays()
-{
-    if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
-    }
-    const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnOwnSignKeyNearExpiryThresholdDays();
-    return qMax(1, num);
-}
-
 inline int encryptKeyNearExpiryWarningThresholdInDays()
 {
     if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
@@ -596,14 +587,6 @@ inline int encryptKeyNearExpiryWarningThresholdInDays()
     return qMax(1, num);
 }
 
-inline int signingKeyNearExpiryWarningThresholdInDays()
-{
-    if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
-    }
-    const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnSignKeyNearExpiryThresholdDays();
-    return qMax(1, num);
-}
 
 inline int encryptRootCertNearExpiryWarningThresholdInDays()
 {
@@ -614,30 +597,12 @@ inline int encryptRootCertNearExpiryWarningThresholdInDays()
     return qMax(1, num);
 }
 
-inline int signingRootCertNearExpiryWarningThresholdInDays()
-{
-    if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
-    }
-    const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnSignRootNearExpiryThresholdDays();
-    return qMax(1, num);
-}
-
 inline int encryptChainCertNearExpiryWarningThresholdInDays()
 {
     if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
         return -1;
     }
     const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnEncrChaincertNearExpiryThresholdDays();
-    return qMax(1, num);
-}
-
-inline int signingChainCertNearExpiryWarningThresholdInDays()
-{
-    if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
-    }
-    const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnSignChaincertNearExpiryThresholdDays();
     return qMax(1, num);
 }
 
@@ -2367,13 +2332,9 @@ NearExpiryChecker::Ptr ComposerViewBase::nearExpiryChecker()
 {
     if (!mNearExpiryChecker) {
         mNearExpiryChecker = NearExpiryChecker::Ptr(new NearExpiryChecker(encryptOwnKeyNearExpiryWarningThresholdInDays(),
-                                                                          signingOwnKeyNearExpiryWarningThresholdInDays(),
                                                                           encryptKeyNearExpiryWarningThresholdInDays(),
-                                                                          signingKeyNearExpiryWarningThresholdInDays(),
                                                                           encryptRootCertNearExpiryWarningThresholdInDays(),
-                                                                          signingRootCertNearExpiryWarningThresholdInDays(),
-                                                                          encryptChainCertNearExpiryWarningThresholdInDays(),
-                                                                          signingChainCertNearExpiryWarningThresholdInDays()));
+                                                                          encryptChainCertNearExpiryWarningThresholdInDays()));
     }
     return mNearExpiryChecker;
 }

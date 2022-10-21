@@ -26,27 +26,16 @@ class MESSAGECOMPOSER_EXPORT NearExpiryChecker : public QObject
 public:
     using Ptr = QSharedPointer<NearExpiryChecker>;
     explicit NearExpiryChecker(int encrOwnKeyNearExpiryThresholdDays,
-                               int signOwnKeyNearExpiryThresholdDays,
                                int encrKeyNearExpiryThresholdDays,
-                               int signKeyNearExpiryThresholdDays,
                                int encrRootCertNearExpNearExpiryCheckerPrivateiryThresholdDays,
-                               int signRootCertNearExpiryThresholdDays,
-                               int encrChainCertNearExpiryThresholdDays,
-                               int signChainCertNearExpiryThresholdDays);
+                               int encrChainCertNearExpiryThresholdDays);
 
     ~NearExpiryChecker();
 
-    int encryptOwnKeyNearExpiryWarningThresholdInDays() const;
-    int signingOwnKeyNearExpiryWarningThresholdInDays() const;
-
-    int encryptKeyNearExpiryWarningThresholdInDays() const;
-    int signingKeyNearExpiryWarningThresholdInDays() const;
-
-    int encryptRootCertNearExpiryWarningThresholdInDays() const;
-    int signingRootCertNearExpiryWarningThresholdInDays() const;
-
-    int encryptChainCertNearExpiryWarningThresholdInDays() const;
-    int signingChainCertNearExpiryWarningThresholdInDays() const;
+    Q_REQUIRED_RESULT int encryptOwnKeyNearExpiryWarningThresholdInDays() const;
+    Q_REQUIRED_RESULT int encryptKeyNearExpiryWarningThresholdInDays() const;
+    Q_REQUIRED_RESULT int encryptRootCertNearExpiryWarningThresholdInDays() const;
+    Q_REQUIRED_RESULT int encryptChainCertNearExpiryWarningThresholdInDays() const;
 
     enum ExpiryInformation { OwnKeyExpired, OwnKeyNearExpiry, OtherKeyExpired, OtherKeyNearExpiry };
     Q_ENUM(ExpiryInformation)

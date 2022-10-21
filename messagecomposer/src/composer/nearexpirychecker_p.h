@@ -17,13 +17,9 @@ class NearExpiryCheckerPrivate
 {
 public:
     int encryptOwnKeyNearExpiryWarningThreshold;
-    int signingOwnKeyNearExpiryWarningThreshold;
     int encryptKeyNearExpiryWarningThreshold;
-    int signingKeyNearExpiryWarningThreshold;
     int encryptRootCertNearExpiryWarningThreshold;
-    int signingRootCertNearExpiryWarningThreshold;
     int encryptChainCertNearExpiryWarningThreshold;
-    int signingChainCertNearExpiryWarningThreshold;
 
     std::set<QByteArray> alreadyWarnedFingerprints;
     bool testMode = false;

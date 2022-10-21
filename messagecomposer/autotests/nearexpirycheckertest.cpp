@@ -92,7 +92,7 @@ private Q_SLOTS:
         QFETCH(GpgME::Key, key);
         QFETCH(int, difftime);
 
-        NearExpiryChecker checker(1, 1, 1, 1, 1, 1, 1, 1);
+        NearExpiryChecker checker(1, 1, 1, 1);
         QSignalSpy spy(&checker, &NearExpiryChecker::expiryMessage);
         checker.d->testMode = true;
         checker.d->difftime = difftime;
@@ -144,7 +144,7 @@ private Q_SLOTS:
         QFETCH(QString, msgOwnKey);
         QFETCH(QString, msgOwnSigningKey);
 
-        NearExpiryChecker checker(1, 1, 1, 1, 1, 1, 1, 1);
+        NearExpiryChecker checker(1, 1, 1, 1);
         checker.d->testMode = true;
         checker.d->difftime = -1;
         {
@@ -222,7 +222,7 @@ private Q_SLOTS:
         QFETCH(QString, msgOwnSigningKey);
 
         {
-            NearExpiryChecker checker(1, 1, 10, 1, 1, 1, 1, 1);
+            NearExpiryChecker checker(1, 10, 1, 1);
             checker.d->testMode = true;
             checker.d->difftime = 5 * 24 * 3600; // 5 days
             QSignalSpy spy(&checker, &NearExpiryChecker::expiryMessage);
@@ -237,14 +237,13 @@ private Q_SLOTS:
             QCOMPARE(arguments.at(2).value<NearExpiryChecker::ExpiryInformation>(), NearExpiryChecker::OtherKeyNearExpiry);
         }
         {
-            NearExpiryChecker checker(10, 1, 1, 1, 1, 1, 1, 1);
+            NearExpiryChecker checker(10, 1, 1, 1);
             checker.d->testMode = true;
             checker.d->difftime = 5 * 24 * 3600; // 5 days
             QSignalSpy spy(&checker, &NearExpiryChecker::expiryMessage);
             // Test if the correct treshold is taken
             checker.checkKey(key);
             checker.checkOwnKey(key);
-            checker.checkOwnSigningKey(key);
             QCOMPARE(spy.count(), 1);
             QList<QVariant> arguments = spy.takeFirst();
             QCOMPARE(arguments.at(0).value<GpgME::Key>().keyID(), key.keyID());
@@ -252,13 +251,12 @@ private Q_SLOTS:
             QCOMPARE(arguments.at(2).value<NearExpiryChecker::ExpiryInformation>(), NearExpiryChecker::OwnKeyNearExpiry);
         }
         {
-            NearExpiryChecker checker(1, 10, 1, 1, 1, 1, 1, 1);
+            NearExpiryChecker checker(10, 1, 1, 1);
             checker.d->testMode = true;
             checker.d->difftime = 5 * 24 * 3600; // 5 days
             QSignalSpy spy(&checker, &NearExpiryChecker::expiryMessage);
             // Test if the correct treshold is taken
             checker.checkKey(key);
-            checker.checkOwnKey(key);
             checker.checkOwnSigningKey(key);
             QCOMPARE(spy.count(), 1);
             QList<QVariant> arguments = spy.takeFirst();
