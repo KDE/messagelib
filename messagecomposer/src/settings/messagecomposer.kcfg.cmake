@@ -83,7 +83,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     </entry>
     <entry name="CryptoAutoSign" type="Bool" key="crypto-auto-sign">
         <label>Sign all messages, if possible</label>
-        <default>false</default>
+        <default>true</default>
     </entry>
     <entry name="CryptoAutoEncrypt" type="Bool" key="crypto-auto-encrypt">
         <label>Enable encrpytion, if we found keys for all recipients</label>
