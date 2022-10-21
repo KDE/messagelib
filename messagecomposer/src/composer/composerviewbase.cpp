@@ -641,11 +641,6 @@ inline int signingChainCertNearExpiryWarningThresholdInDays()
     return qMax(1, num);
 }
 
-inline bool encryptToSelf()
-{
-    return MessageComposer::MessageComposerSettings::self()->cryptoEncryptToSelf();
-}
-
 inline bool showKeyApprovalDialog()
 {
     return MessageComposer::MessageComposerSettings::self()->cryptoShowKeysForApproval();
@@ -777,7 +772,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
             });
 
     QScopedPointer<Kleo::KeyResolver> keyResolver(
-        new Kleo::KeyResolver(encryptToSelf(), showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, nearExpiryChecker()));
+        new Kleo::KeyResolver(true, showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, nearExpiryChecker()));
 
     keyResolver->setAutocryptEnabled(autocryptEnabled());
     keyResolver->setAkonadiLookupEnabled(m_akonadiLookupEnabled);
