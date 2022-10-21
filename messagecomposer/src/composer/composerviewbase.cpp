@@ -610,6 +610,22 @@ inline bool showKeyApprovalDialog()
 {
     return MessageComposer::MessageComposerSettings::self()->cryptoShowKeysForApproval();
 }
+
+inline bool cryptoWarningUnsigned(const KIdentityManagement::Identity &identity)
+{
+    if (identity.encryptionOverride()) {
+        return identity.warnNotSign();
+    }
+    return MessageComposer::MessageComposerSettings::self()->cryptoWarningUnsigned();
+}
+
+inline bool cryptoWarningUnencrypted(const KIdentityManagement::Identity &identity)
+{
+    if (identity.encryptionOverride()) {
+        return identity.warnNotEncrypt();
+    }
+    return MessageComposer::MessageComposerSettings::self()->cryptoWarningUnencrypted();
+}
 } // nameless namespace
 
 bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
@@ -2055,7 +2071,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
     }
 
     if (!sign || !doSignCompletely) {
-        if (MessageComposer::MessageComposerSettings::self()->cryptoWarningUnsigned()) {
+        if (cryptoWarningUnsigned(currentIdentity())) {
             KCursorSaver saver(Qt::WaitCursor);
             const QString msg = sign && !doSignCompletely ? i18n(
                                     "Some parts of this message will not be signed.\n"
@@ -2231,7 +2247,7 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
     }
 
     if (!encrypt || !doEncryptCompletely) {
-        if (MessageComposer::MessageComposerSettings::self()->cryptoWarningUnencrypted()) {
+        if (cryptoWarningUnencrypted(currentIdentity())) {
             KCursorSaver saver(Qt::WaitCursor);
             const QString msg = !doEncryptCompletely ? i18n(
                                     "Some parts of this message will not be encrypted.\n"
