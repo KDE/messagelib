@@ -25,23 +25,17 @@ class MESSAGECOMPOSER_EXPORT NearExpiryChecker : public QObject
     Q_OBJECT
 public:
     using Ptr = QSharedPointer<NearExpiryChecker>;
-    explicit NearExpiryChecker(int encrKeyNearExpiryThresholdDays,
-                               int signKeyNearExpiryThresholdDays,
+    explicit NearExpiryChecker(int encrOwnKeyNearExpiryThresholdDays,
+                               int encrKeyNearExpiryThresholdDays,
                                int encrRootCertNearExpNearExpiryCheckerPrivateiryThresholdDays,
-                               int signRootCertNearExpiryThresholdDays,
-                               int encrChainCertNearExpiryThresholdDays,
-                               int signChainCertNearExpiryThresholdDays);
+                               int encrChainCertNearExpiryThresholdDays);
 
     ~NearExpiryChecker();
 
-    int encryptKeyNearExpiryWarningThresholdInDays() const;
-    int signingKeyNearExpiryWarningThresholdInDays() const;
-
-    int encryptRootCertNearExpiryWarningThresholdInDays() const;
-    int signingRootCertNearExpiryWarningThresholdInDays() const;
-
-    int encryptChainCertNearExpiryWarningThresholdInDays() const;
-    int signingChainCertNearExpiryWarningThresholdInDays() const;
+    Q_REQUIRED_RESULT int encryptOwnKeyNearExpiryWarningThresholdInDays() const;
+    Q_REQUIRED_RESULT int encryptKeyNearExpiryWarningThresholdInDays() const;
+    Q_REQUIRED_RESULT int encryptRootCertNearExpiryWarningThresholdInDays() const;
+    Q_REQUIRED_RESULT int encryptChainCertNearExpiryWarningThresholdInDays() const;
 
     enum ExpiryInformation { OwnKeyExpired, OwnKeyNearExpiry, OtherKeyExpired, OtherKeyNearExpiry };
     Q_ENUM(ExpiryInformation)
@@ -58,7 +52,7 @@ private:
 
     std::unique_ptr<NearExpiryCheckerPrivate> const d;
 
-    double calculateSecsTillExpiriy(const GpgME::Subkey &key) const;
+    Q_REQUIRED_RESULT double calculateSecsTillExpiriy(const GpgME::Subkey &key) const;
 
     void checkKeyNearExpiry(const GpgME::Key &key,
                             bool isOwnKey,

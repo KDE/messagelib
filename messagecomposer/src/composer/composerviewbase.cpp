@@ -569,6 +569,15 @@ namespace
 {
 // helper methods for reading encryption settings
 
+inline int encryptOwnKeyNearExpiryWarningThresholdInDays()
+{
+    if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
+        return -1;
+    }
+    const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnOwnEncrKeyNearExpiryThresholdDays();
+    return qMax(1, num);
+}
+
 inline int encryptKeyNearExpiryWarningThresholdInDays()
 {
     if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
@@ -578,14 +587,6 @@ inline int encryptKeyNearExpiryWarningThresholdInDays()
     return qMax(1, num);
 }
 
-inline int signingKeyNearExpiryWarningThresholdInDays()
-{
-    if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
-    }
-    const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnSignKeyNearExpiryThresholdDays();
-    return qMax(1, num);
-}
 
 inline int encryptRootCertNearExpiryWarningThresholdInDays()
 {
@@ -593,15 +594,6 @@ inline int encryptRootCertNearExpiryWarningThresholdInDays()
         return -1;
     }
     const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnEncrRootNearExpiryThresholdDays();
-    return qMax(1, num);
-}
-
-inline int signingRootCertNearExpiryWarningThresholdInDays()
-{
-    if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
-    }
-    const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnSignRootNearExpiryThresholdDays();
     return qMax(1, num);
 }
 
@@ -614,23 +606,25 @@ inline int encryptChainCertNearExpiryWarningThresholdInDays()
     return qMax(1, num);
 }
 
-inline int signingChainCertNearExpiryWarningThresholdInDays()
-{
-    if (!MessageComposer::MessageComposerSettings::self()->cryptoWarnWhenNearExpire()) {
-        return -1;
-    }
-    const int num = MessageComposer::MessageComposerSettings::self()->cryptoWarnSignChaincertNearExpiryThresholdDays();
-    return qMax(1, num);
-}
-
-inline bool encryptToSelf()
-{
-    return MessageComposer::MessageComposerSettings::self()->cryptoEncryptToSelf();
-}
-
 inline bool showKeyApprovalDialog()
 {
     return MessageComposer::MessageComposerSettings::self()->cryptoShowKeysForApproval();
+}
+
+inline bool cryptoWarningUnsigned(const KIdentityManagement::Identity &identity)
+{
+    if (identity.encryptionOverride()) {
+        return identity.warnNotSign();
+    }
+    return MessageComposer::MessageComposerSettings::self()->cryptoWarningUnsigned();
+}
+
+inline bool cryptoWarningUnencrypted(const KIdentityManagement::Identity &identity)
+{
+    if (identity.encryptionOverride()) {
+        return identity.warnNotEncrypt();
+    }
+    return MessageComposer::MessageComposerSettings::self()->cryptoWarningUnencrypted();
 }
 } // nameless namespace
 
@@ -759,7 +753,7 @@ QVector<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bo
             });
 
     QScopedPointer<Kleo::KeyResolver> keyResolver(
-        new Kleo::KeyResolver(encryptToSelf(), showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, nearExpiryChecker()));
+        new Kleo::KeyResolver(true, showKeyApprovalDialog(), id.pgpAutoEncrypt(), m_cryptoMessageFormat, nearExpiryChecker()));
 
     keyResolver->setAutocryptEnabled(autocryptEnabled());
     keyResolver->setAkonadiLookupEnabled(m_akonadiLookupEnabled);
@@ -2077,7 +2071,7 @@ bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyRe
     }
 
     if (!sign || !doSignCompletely) {
-        if (MessageComposer::MessageComposerSettings::self()->cryptoWarningUnsigned()) {
+        if (cryptoWarningUnsigned(currentIdentity())) {
             KCursorSaver saver(Qt::WaitCursor);
             const QString msg = sign && !doSignCompletely ? i18n(
                                     "Some parts of this message will not be signed.\n"
@@ -2253,7 +2247,7 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely,
     }
 
     if (!encrypt || !doEncryptCompletely) {
-        if (MessageComposer::MessageComposerSettings::self()->cryptoWarningUnencrypted()) {
+        if (cryptoWarningUnencrypted(currentIdentity())) {
             KCursorSaver saver(Qt::WaitCursor);
             const QString msg = !doEncryptCompletely ? i18n(
                                     "Some parts of this message will not be encrypted.\n"
@@ -2353,12 +2347,10 @@ KMime::Message::Ptr ComposerViewBase::msg() const
 NearExpiryChecker::Ptr ComposerViewBase::nearExpiryChecker()
 {
     if (!mNearExpiryChecker) {
-        mNearExpiryChecker = NearExpiryChecker::Ptr(new NearExpiryChecker(encryptKeyNearExpiryWarningThresholdInDays(),
-                                                                          signingKeyNearExpiryWarningThresholdInDays(),
+        mNearExpiryChecker = NearExpiryChecker::Ptr(new NearExpiryChecker(encryptOwnKeyNearExpiryWarningThresholdInDays(),
+                                                                          encryptKeyNearExpiryWarningThresholdInDays(),
                                                                           encryptRootCertNearExpiryWarningThresholdInDays(),
-                                                                          signingRootCertNearExpiryWarningThresholdInDays(),
-                                                                          encryptChainCertNearExpiryWarningThresholdInDays(),
-                                                                          signingChainCertNearExpiryWarningThresholdInDays()));
+                                                                          encryptChainCertNearExpiryWarningThresholdInDays()));
     }
     return mNearExpiryChecker;
 }

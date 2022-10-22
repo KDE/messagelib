@@ -43,7 +43,7 @@ void KeyResolverTest::cleanup()
 void KeyResolverTest::testAutocrypt()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
-    NearExpiryChecker::Ptr nearExpiryChecker(new NearExpiryChecker(0, 0, 0, 0, 0, 0));
+    NearExpiryChecker::Ptr nearExpiryChecker(new NearExpiryChecker(0, 0, 0, 0));
     KeyResolver keyResolver(true, false, true, Kleo::OpenPGPMIMEFormat, nearExpiryChecker);
     keyResolver.setAkonadiLookupEnabled(false);
 
