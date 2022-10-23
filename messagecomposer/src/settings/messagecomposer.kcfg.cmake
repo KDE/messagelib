@@ -86,7 +86,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
         <default>true</default>
     </entry>
     <entry name="CryptoAutoEncrypt" type="Bool" key="crypto-auto-encrypt">
-        <label>Enable encrpytion, if we found keys for all recipients</label>
+        <label>Enable encryption, if we found keys for all recipients</label>
         <default>false</default>
     </entry>
     <entry name="CryptoWarningUnencrypted" type="Bool" key="crypto-warning-unencrypted">
