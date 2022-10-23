@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-19 00:47+0000\n"
+"POT-Creation-Date: 2022-10-23 00:44+0000\n"
 "PO-Revision-Date: 2022-05-24 20:18+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -110,7 +110,7 @@ msgid "Attach"
 msgstr "Allega"
 
 #: attachment/attachmentcontrollerbase.cpp:472
-#: composer/composerviewbase.cpp:1927
+#: composer/composerviewbase.cpp:1921
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Allega file..."
@@ -449,38 +449,38 @@ msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Non ridimensionare"
 
-#: composer/composerviewbase.cpp:751
+#: composer/composerviewbase.cpp:745
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "La chiave OpenPGP è scaduta"
 
-#: composer/composerviewbase.cpp:751
+#: composer/composerviewbase.cpp:745
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "Il certificato S/MIME è scaduto"
 
-#: composer/composerviewbase.cpp:753
+#: composer/composerviewbase.cpp:747
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "La chiave OpenPGP scade tra breve"
 
-#: composer/composerviewbase.cpp:753
+#: composer/composerviewbase.cpp:747
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "Il certificato S/MIME scade tra breve"
 
-#: composer/composerviewbase.cpp:828 composer/composerviewbase.cpp:842
-#: composer/composerviewbase.cpp:874
+#: composer/composerviewbase.cpp:822 composer/composerviewbase.cpp:836
+#: composer/composerviewbase.cpp:868
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Impossibile risolvere le chiavi. Segnala l'errore."
 
-#: composer/composerviewbase.cpp:1080 composer/composerviewbase.cpp:1345
+#: composer/composerviewbase.cpp:1074 composer/composerviewbase.cpp:1339
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "L'operazione è stato annullata dall'utente"
 
-#: composer/composerviewbase.cpp:1085
+#: composer/composerviewbase.cpp:1079
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -489,39 +489,39 @@ msgstr ""
 "Impossibile preparare il messaggio: %1 \n"
 "Segnala questo bug."
 
-#: composer/composerviewbase.cpp:1087
+#: composer/composerviewbase.cpp:1081
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Impossibile preparare il messaggio: %1"
 
-#: composer/composerviewbase.cpp:1184
+#: composer/composerviewbase.cpp:1178
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
 "Si è verificato un problema durante l'accodamento del messaggio per la "
 "spedizione. %1"
 
-#: composer/composerviewbase.cpp:1348
+#: composer/composerviewbase.cpp:1342
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Impossibile salvare automaticamente il messaggio: %1"
 
-#: composer/composerviewbase.cpp:1367
+#: composer/composerviewbase.cpp:1361
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Impossibile scrivere tutti i dati nel file."
 
-#: composer/composerviewbase.cpp:1370
+#: composer/composerviewbase.cpp:1364
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Impossibile completare le operazioni sul file."
 
-#: composer/composerviewbase.cpp:1374
+#: composer/composerviewbase.cpp:1368
 #, kde-format
 msgid "Could not open file."
 msgstr "Impossibile aprire il file."
 
-#: composer/composerviewbase.cpp:1381
+#: composer/composerviewbase.cpp:1375
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -532,17 +532,17 @@ msgstr ""
 "%2\n"
 "Motivo: %3"
 
-#: composer/composerviewbase.cpp:1387
+#: composer/composerviewbase.cpp:1381
 #, kde-format
 msgid "Autosaving Message Failed"
 msgstr "Salvataggio automatico del messaggio non riuscito"
 
-#: composer/composerviewbase.cpp:1500
+#: composer/composerviewbase.cpp:1494
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Impossibile salvare il messaggio: %1"
 
-#: composer/composerviewbase.cpp:1923
+#: composer/composerviewbase.cpp:1917
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -553,17 +553,17 @@ msgstr ""
 "hai allegato nulla.\n"
 "Vuoi allegare un file a questo messaggio?"
 
-#: composer/composerviewbase.cpp:1926
+#: composer/composerviewbase.cpp:1920
 #, kde-format
 msgid "File Attachment Reminder"
 msgstr "Promemoria file allegato"
 
-#: composer/composerviewbase.cpp:1928
+#: composer/composerviewbase.cpp:1922
 #, kde-format
 msgid "&Send as Is"
 msgstr "&Spedisci così com'è"
 
-#: composer/composerviewbase.cpp:1984
+#: composer/composerviewbase.cpp:1978
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -574,23 +574,23 @@ msgstr ""
 "sia chiesto se firmare o no il messaggio.\n"
 "Vuoi firmare questo messaggio?"
 
-#: composer/composerviewbase.cpp:1995 composer/composerviewbase.cpp:2036
+#: composer/composerviewbase.cpp:1989 composer/composerviewbase.cpp:2030
 #, kde-format
 msgid "Sign Message?"
 msgstr "Firma il messaggio?"
 
-#: composer/composerviewbase.cpp:1996 composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:1990 composer/composerviewbase.cpp:2031
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Firma"
 
-#: composer/composerviewbase.cpp:1997 composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:1991 composer/composerviewbase.cpp:2032
 #, kde-format
 msgid "Do &Not Sign"
 msgstr "&Non firmare"
 
-#: composer/composerviewbase.cpp:2026
+#: composer/composerviewbase.cpp:2020
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -599,7 +599,7 @@ msgstr ""
 "Le preferenze di firma per questi destinatari entrano in conflitto.\n"
 "Vuoi firmare questo messaggio?"
 
-#: composer/composerviewbase.cpp:2066
+#: composer/composerviewbase.cpp:2060
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -608,17 +608,17 @@ msgstr ""
 "Hai richiesto di firmare questo messaggio, ma non è stata configurata "
 "nessuna chiave di firma per questa identità."
 
-#: composer/composerviewbase.cpp:2069
+#: composer/composerviewbase.cpp:2063
 #, kde-format
 msgid "Send Unsigned?"
 msgstr "Spedisci senza firma?"
 
-#: composer/composerviewbase.cpp:2069
+#: composer/composerviewbase.cpp:2063
 #, kde-format
 msgid "Send &Unsigned"
 msgstr "Spedisci &senza firma"
 
-#: composer/composerviewbase.cpp:2083
+#: composer/composerviewbase.cpp:2077
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -630,7 +630,7 @@ msgstr ""
 "sito.\n"
 "Vuoi firmare tutte le parti?"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2081
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -641,27 +641,27 @@ msgstr ""
 "Spedire un messaggio non firmato può violare la politica del sito.\n"
 "Vuoi firmarlo?"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Firma tutte le parti"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign"
 msgstr "&Firma"
 
-#: composer/composerviewbase.cpp:2098
+#: composer/composerviewbase.cpp:2092
 #, kde-format
 msgid "Unsigned-Message Warning"
 msgstr "Avvertimento di messaggio non firmato"
 
-#: composer/composerviewbase.cpp:2100
+#: composer/composerviewbase.cpp:2094
 #, kde-format
 msgid "Send &As Is"
 msgstr "Spedisci così &com'è"
 
-#: composer/composerviewbase.cpp:2155
+#: composer/composerviewbase.cpp:2149
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -671,7 +671,7 @@ msgstr ""
 "destinatario.\n"
 "Vuoi cifrare questo messaggio?"
 
-#: composer/composerviewbase.cpp:2158
+#: composer/composerviewbase.cpp:2152
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -682,34 +682,34 @@ msgstr ""
 "ti sia chiesto se cifrare o no il messaggio.\n"
 "Vuoi cifrare questo messaggio?"
 
-#: composer/composerviewbase.cpp:2169 composer/composerviewbase.cpp:2211
+#: composer/composerviewbase.cpp:2163 composer/composerviewbase.cpp:2205
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Cifrare il messaggio?"
 
-#: composer/composerviewbase.cpp:2170
+#: composer/composerviewbase.cpp:2164
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Firma e &cifra"
 
-#: composer/composerviewbase.cpp:2170 composer/composerviewbase.cpp:2212
-#: composer/composerviewbase.cpp:2268 composer/keyresolver.cpp:1317
+#: composer/composerviewbase.cpp:2164 composer/composerviewbase.cpp:2206
+#: composer/composerviewbase.cpp:2262 composer/keyresolver.cpp:1317
 #: composer/keyresolver.cpp:1353
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Cifra"
 
-#: composer/composerviewbase.cpp:2171 composer/composerviewbase.cpp:2277
+#: composer/composerviewbase.cpp:2165 composer/composerviewbase.cpp:2271
 #, kde-format
 msgid "&Sign Only"
 msgstr "Solo &firma"
 
-#: composer/composerviewbase.cpp:2171 composer/composerviewbase.cpp:2277
+#: composer/composerviewbase.cpp:2165 composer/composerviewbase.cpp:2271
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&Spedisci così com'è"
 
-#: composer/composerviewbase.cpp:2200
+#: composer/composerviewbase.cpp:2194
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -718,12 +718,12 @@ msgstr ""
 "Le preferenze di crittografia per questi destinatari entrano in conflitto.\n"
 "Vuoi firmare questo messaggio?"
 
-#: composer/composerviewbase.cpp:2213
+#: composer/composerviewbase.cpp:2207
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "&Non cifrare"
 
-#: composer/composerviewbase.cpp:2241
+#: composer/composerviewbase.cpp:2235
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -734,17 +734,17 @@ msgstr ""
 "stesso, ma non è stata configurata nessuna chiave di cifratura affidabile "
 "per questa identità."
 
-#: composer/composerviewbase.cpp:2245
+#: composer/composerviewbase.cpp:2239
 #, kde-format
 msgid "Send Unencrypted?"
 msgstr "Spedisci senza cifratura?"
 
-#: composer/composerviewbase.cpp:2245 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2239 composer/keyresolver.cpp:1339
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Spedisci &non cifrato"
 
-#: composer/composerviewbase.cpp:2259
+#: composer/composerviewbase.cpp:2253
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -757,7 +757,7 @@ msgstr ""
 "sito oppure rivelare informazioni riservate.\n"
 "Vuoi cifrare tutte le parti?"
 
-#: composer/composerviewbase.cpp:2264
+#: composer/composerviewbase.cpp:2258
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -770,12 +770,12 @@ msgstr ""
 "rivelare informazioni riservate.\n"
 "Vuoi cifrarlo?"
 
-#: composer/composerviewbase.cpp:2268
+#: composer/composerviewbase.cpp:2262
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Cifra tutte le parti"
 
-#: composer/composerviewbase.cpp:2275
+#: composer/composerviewbase.cpp:2269
 #, kde-format
 msgid "Unencrypted Message Warning"
 msgstr "Avvertimento di messaggio non cifrato"
@@ -1065,7 +1065,7 @@ msgstr ""
 "\n"
 "Scegli il/i certificato/i da usare per questo destinatario."
 
-#: composer/nearexpirychecker.cpp:82
+#: composer/nearexpirychecker.cpp:68
 #, kde-format
 msgid ""
 "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1080,7 +1080,7 @@ msgstr[1] ""
 "<p>La tua chiave di firma OpenPGP</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 "p><p>è scaduta %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:88
+#: composer/nearexpirychecker.cpp:74
 #, kde-format
 msgid ""
 "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1095,7 +1095,7 @@ msgstr[1] ""
 "<p>La tua chiave di cifratura OpenPGP</p><p align=center><b>%2</b> (KeyID 0x"
 "%3)</p><p>è scaduta %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:94
+#: composer/nearexpirychecker.cpp:80
 #, kde-format
 msgid ""
 "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1110,7 +1110,7 @@ msgstr[1] ""
 "<p>La tua chiave OpenPGP per</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 "p><p>è scaduta %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:103
+#: composer/nearexpirychecker.cpp:89
 #, kde-format
 msgid ""
 "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1125,7 +1125,7 @@ msgstr[1] ""
 "<p>La tua chiave di firma OpenPGP</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 "p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:109
+#: composer/nearexpirychecker.cpp:95
 #, kde-format
 msgid ""
 "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1140,7 +1140,7 @@ msgstr[1] ""
 "<p>La tua chiave di cifratura OpenPGP</p><p align=center><b>%2</b> (KeyID 0x"
 "%3)</p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:115
+#: composer/nearexpirychecker.cpp:101
 #, kde-format
 msgid ""
 "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1155,7 +1155,7 @@ msgstr[1] ""
 "<p>La tua chiave OpenPGP per</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 "p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:135
+#: composer/nearexpirychecker.cpp:121
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1174,7 +1174,7 @@ msgstr[1] ""
 "certificato di firma S/MIME</p><p align=center><b>%2</b> (numero seriale "
 "%3)</p><p>è scaduto %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:143
+#: composer/nearexpirychecker.cpp:129
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1193,7 +1193,7 @@ msgstr[1] ""
 "certificato di cifratura S/MIME</p><p align=center><b>%2</b> (numero seriale "
 "%3)</p><p>è scaduto %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:151
+#: composer/nearexpirychecker.cpp:137
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
@@ -1212,7 +1212,7 @@ msgstr[1] ""
 "certificato S/MIME</p><p align=center><b>%2</b> (numero seriale %3)</p><p>è "
 "scaduto %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:161
+#: composer/nearexpirychecker.cpp:147
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1231,7 +1231,7 @@ msgstr[1] ""
 "tuo certificato di firma S/MIME</p><p align=center><b>%2</b> (numero seriale "
 "%3)</p><p>è scaduto %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:169
+#: composer/nearexpirychecker.cpp:155
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1250,7 +1250,7 @@ msgstr[1] ""
 "tuo certificato di cifratura S/MIME</p><p align=center><b>%2</b> (numero "
 "seriale %3)</p><p>è scaduto %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:177
+#: composer/nearexpirychecker.cpp:163
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
@@ -1269,7 +1269,7 @@ msgstr[1] ""
 "tuo certificato S/MIME</p><p align=center><b>%2</b> (numero seriale %3)</"
 "p><p>è scaduto %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:193
+#: composer/nearexpirychecker.cpp:179
 #, kde-format
 msgid ""
 "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
@@ -1284,7 +1284,7 @@ msgstr[1] ""
 "<p>Il tuo certificato di firma S/MIME</p><p align=center><b>%2</b> (numero "
 "seriale %3)</p><p>è scaduto %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:199
+#: composer/nearexpirychecker.cpp:185
 #, kde-format
 msgid ""
 "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
@@ -1299,7 +1299,7 @@ msgstr[1] ""
 "<p>Il tuo certificato di cifratura S/MIME</p><p align=center><b>%2</b> "
 "(numero seriale %3)</p><p>è scaduto %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:205
+#: composer/nearexpirychecker.cpp:191
 #, kde-format
 msgid ""
 "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
@@ -1314,7 +1314,7 @@ msgstr[1] ""
 "<p>Il tuo certificato S/MIME per</p><p align=center><b>%2</b> (numero "
 "seriale %3)</p><p>è scaduto %1 giorni fa.</p>"
 
-#: composer/nearexpirychecker.cpp:218
+#: composer/nearexpirychecker.cpp:204
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1333,7 +1333,7 @@ msgstr[1] ""
 "certificato di firma S/MIME</p><p align=center><b>%2</b> (numero seriale %3);"
 "</p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:226
+#: composer/nearexpirychecker.cpp:212
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1352,7 +1352,7 @@ msgstr[1] ""
 "certificato di cifratura S/MIME</p><p align=center><b>%2</b> (numero seriale "
 "%3);</p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:234
+#: composer/nearexpirychecker.cpp:220
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
@@ -1371,7 +1371,7 @@ msgstr[1] ""
 "certificato S/MIME</p><p align=center><b>%2</b> (numero seriale %3);</"
 "p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:244
+#: composer/nearexpirychecker.cpp:230
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1390,7 +1390,7 @@ msgstr[1] ""
 "tuo certificato di firma S/MIME</p><p align=center><b>%2</b> (numero seriale "
 "%3);</p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:252
+#: composer/nearexpirychecker.cpp:238
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1409,7 +1409,7 @@ msgstr[1] ""
 "tuo certificato di cifratura S/MIME</p><p align=center><b>%2</b> (numero "
 "seriale %3);</p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:260
+#: composer/nearexpirychecker.cpp:246
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
@@ -1428,7 +1428,7 @@ msgstr[1] ""
 "tuo certificato S/MIME</p><p align=center><b>%2</b> (numero seriale %3);</"
 "p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:276
+#: composer/nearexpirychecker.cpp:262
 #, kde-format
 msgid ""
 "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
@@ -1443,7 +1443,7 @@ msgstr[1] ""
 "<p>Il tuo certificato di firma S/MIME</p><p align=center><b>%2</b> (numero "
 "seriale %3);</p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:282
+#: composer/nearexpirychecker.cpp:268
 #, kde-format
 msgid ""
 "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
@@ -1458,7 +1458,7 @@ msgstr[1] ""
 "<p>Il tuo certificato di cifratura S/MIME</p><p align=center><b>%2</b> "
 "(numero seriale %3);</p><p>scade fra meno di %1 giorni.</p>"
 
-#: composer/nearexpirychecker.cpp:288
+#: composer/nearexpirychecker.cpp:274
 #, kde-format
 msgid ""
 "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
@@ -2490,58 +2490,47 @@ msgstr "A &capo automatico alla colonna:"
 msgid "Improve plain text version of HTML message"
 msgstr "Migliora la versione in testo semplice del messaggio in formato HTML"
 
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:85
+#, fuzzy, kde-format
+#| msgid "Show all attachments inline (if possible)"
+msgid "Sign all messages, if possible"
+msgstr "Mostra tutti gli allegati in linea (se possibile)"
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:89
+#, fuzzy, kde-format
+#| msgid ""
+#| "Valid trusted encryption keys were found for all recipients.\n"
+#| "Encrypt this message?"
+msgid "Enable encrpytion, if we found keys for all recipients"
+msgstr ""
+"Sono state trovate delle chiavi di cifratura affidabili per ogni "
+"destinatario.\n"
+"Vuoi cifrare questo messaggio?"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:93
 #, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr "Avverti prima di spedire messaggi non cifrati"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
+#: settings/messagecomposer.kcfg.cmake:97
 #, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr "Avverti prima di spedire messaggi non firmati"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
+#: settings/messagecomposer.kcfg.cmake:101
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
 "Avverti se i certificati/chiavi scadono a breve (configuralo qui sotto)"
 
-#. i18n: ectx: label, entry (CryptoWarnSignKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid ""
-"The minimum number of days that the signature certificate should be valid "
-"before issuing a warning"
-msgstr ""
-"Il numero minimo di giorni in cui il certificato di firma deve essere valido "
-"prima di mostrare un avviso"
-
-#. i18n: ectx: label, entry (CryptoWarnSignChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid ""
-"The minimum number of days that the CA certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"Il numero minimo di giorni in cui il certificato CA deve essere valido prima "
-"di mostrare un avviso"
-
-#. i18n: ectx: label, entry (CryptoWarnSignRootNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"Il numero minimo di giorni in cui il certificato radice deve essere valido "
-"prima di mostrare un avviso"
-
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:105
 #: settings/messagecomposer.kcfg.cmake:109
 #, kde-format
 msgid ""
@@ -2561,18 +2550,18 @@ msgstr ""
 "Il numero minimo di giorni in cui tutti i certificati nella catena devono "
 "essere validi prima di mostrare un avviso"
 
-#. i18n: ectx: label, entry (CryptoEncryptToSelf), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:117
 #, kde-format
 msgid ""
-"When encrypting emails, always also encrypt to the certificate of my own "
-"identity"
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
 msgstr ""
-"Quando cifri i messaggi di posta, cifra sempre anche usando il certificato "
-"collegato alla mia identità"
+"Il numero minimo di giorni in cui il certificato radice deve essere valido "
+"prima di mostrare un avviso"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:125
+#: settings/messagecomposer.kcfg.cmake:121
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
@@ -2855,6 +2844,27 @@ msgstr "L'agente per l'invio della posta è fuori linea."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Imposta in linea"
+
+#~ msgid ""
+#~ "The minimum number of days that the signature certificate should be valid "
+#~ "before issuing a warning"
+#~ msgstr ""
+#~ "Il numero minimo di giorni in cui il certificato di firma deve essere "
+#~ "valido prima di mostrare un avviso"
+
+#~ msgid ""
+#~ "The minimum number of days that the CA certificate should be valid before "
+#~ "issuing a warning"
+#~ msgstr ""
+#~ "Il numero minimo di giorni in cui il certificato CA deve essere valido "
+#~ "prima di mostrare un avviso"
+
+#~ msgid ""
+#~ "When encrypting emails, always also encrypt to the certificate of my own "
+#~ "identity"
+#~ msgstr ""
+#~ "Quando cifri i messaggi di posta, cifra sempre anche usando il "
+#~ "certificato collegato alla mia identità"
 
 #, fuzzy
 #~| msgctxt "@info:status"
@@ -10989,9 +10999,6 @@ msgstr "Imposta in linea"
 #~ msgctxt "View->attachments->"
 #~ msgid "&Inline"
 #~ msgstr "&In linea"
-
-#~ msgid "Show all attachments inline (if possible)"
-#~ msgstr "Mostra tutti gli allegati in linea (se possibile)"
 
 #~ msgctxt "View->attachments->"
 #~ msgid "&Hide"

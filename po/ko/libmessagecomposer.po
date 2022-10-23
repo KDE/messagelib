@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-19 00:47+0000\n"
+"POT-Creation-Date: 2022-10-23 00:44+0000\n"
 "PO-Revision-Date: 2022-07-13 12:17+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -103,7 +103,7 @@ msgid "Attach"
 msgstr "첨부"
 
 #: attachment/attachmentcontrollerbase.cpp:472
-#: composer/composerviewbase.cpp:1927
+#: composer/composerviewbase.cpp:1921
 #, kde-format
 msgid "&Attach File..."
 msgstr "파일 첨부(&A)..."
@@ -441,38 +441,38 @@ msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "크기 조정하지 않음"
 
-#: composer/composerviewbase.cpp:751
+#: composer/composerviewbase.cpp:745
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP 키 만료됨"
 
-#: composer/composerviewbase.cpp:751
+#: composer/composerviewbase.cpp:745
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME 인증서 만료됨"
 
-#: composer/composerviewbase.cpp:753
+#: composer/composerviewbase.cpp:747
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP 키가 곧 만료됨"
 
-#: composer/composerviewbase.cpp:753
+#: composer/composerviewbase.cpp:747
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME 인증서가 곧 만료됨"
 
-#: composer/composerviewbase.cpp:828 composer/composerviewbase.cpp:842
-#: composer/composerviewbase.cpp:874
+#: composer/composerviewbase.cpp:822 composer/composerviewbase.cpp:836
+#: composer/composerviewbase.cpp:868
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "키를 찾을 수 없습니다. 버그를 보고해 주십시오."
 
-#: composer/composerviewbase.cpp:1080 composer/composerviewbase.cpp:1345
+#: composer/composerviewbase.cpp:1074 composer/composerviewbase.cpp:1339
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "사용자가 작업을 취소함"
 
-#: composer/composerviewbase.cpp:1085
+#: composer/composerviewbase.cpp:1079
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -481,37 +481,37 @@ msgstr ""
 "메시지를 작성할 수 없음: %1\n"
 " 버그를 보고해 주십시오."
 
-#: composer/composerviewbase.cpp:1087
+#: composer/composerviewbase.cpp:1081
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "메시지를 작성할 수 없음: %1"
 
-#: composer/composerviewbase.cpp:1184
+#: composer/composerviewbase.cpp:1178
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "보낼 메시지를 대기열에 등록할 수 없음: %1"
 
-#: composer/composerviewbase.cpp:1348
+#: composer/composerviewbase.cpp:1342
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "메시지를 자동으로 저장할 수 없음: %1"
 
-#: composer/composerviewbase.cpp:1367
+#: composer/composerviewbase.cpp:1361
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "모든 데이터를 파일로 저장할 수 없습니다."
 
-#: composer/composerviewbase.cpp:1370
+#: composer/composerviewbase.cpp:1364
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "파일을 끝마칠 수 없습니다."
 
-#: composer/composerviewbase.cpp:1374
+#: composer/composerviewbase.cpp:1368
 #, kde-format
 msgid "Could not open file."
 msgstr "파일을 열 수 없습니다."
 
-#: composer/composerviewbase.cpp:1381
+#: composer/composerviewbase.cpp:1375
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -522,17 +522,17 @@ msgstr ""
 "%2\n"
 "이유: %3"
 
-#: composer/composerviewbase.cpp:1387
+#: composer/composerviewbase.cpp:1381
 #, kde-format
 msgid "Autosaving Message Failed"
 msgstr "메시지를 자동으로 저장할 수 없음"
 
-#: composer/composerviewbase.cpp:1500
+#: composer/composerviewbase.cpp:1494
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "메시지를 저장할 수 없음: %1"
 
-#: composer/composerviewbase.cpp:1923
+#: composer/composerviewbase.cpp:1917
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -542,17 +542,17 @@ msgstr ""
 "작성한 메시지에서 첨부 파일을 언급했으나 실제 첨부된 파일이 없습니다.\n"
 "메시지에 파일을 첨부하시겠습니까?"
 
-#: composer/composerviewbase.cpp:1926
+#: composer/composerviewbase.cpp:1920
 #, kde-format
 msgid "File Attachment Reminder"
 msgstr "파일 첨부 알림"
 
-#: composer/composerviewbase.cpp:1928
+#: composer/composerviewbase.cpp:1922
 #, kde-format
 msgid "&Send as Is"
 msgstr "그대로 보내기(&S)"
 
-#: composer/composerviewbase.cpp:1984
+#: composer/composerviewbase.cpp:1978
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -562,23 +562,23 @@ msgstr ""
 "받는 사람의 서명 선호도에 의하면 서명 여부를 선택할 수 있습니다.\n"
 "이 메시지에 서명하시겠습니까?"
 
-#: composer/composerviewbase.cpp:1995 composer/composerviewbase.cpp:2036
+#: composer/composerviewbase.cpp:1989 composer/composerviewbase.cpp:2030
 #, kde-format
 msgid "Sign Message?"
 msgstr "메시지에 서명하기?"
 
-#: composer/composerviewbase.cpp:1996 composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:1990 composer/composerviewbase.cpp:2031
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "서명(&S)"
 
-#: composer/composerviewbase.cpp:1997 composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:1991 composer/composerviewbase.cpp:2032
 #, kde-format
 msgid "Do &Not Sign"
 msgstr "서명하지 않음(&N)"
 
-#: composer/composerviewbase.cpp:2026
+#: composer/composerviewbase.cpp:2020
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -587,24 +587,24 @@ msgstr ""
 "다음 수신자에 대한 서명 선호가 충돌합니다.\n"
 "이 메시지에 서명하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2066
+#: composer/composerviewbase.cpp:2060
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
 "configured for this identity."
 msgstr "메시지 서명을 요청했지만 프로필에 대한 올바른 서명 키가 없습니다."
 
-#: composer/composerviewbase.cpp:2069
+#: composer/composerviewbase.cpp:2063
 #, kde-format
 msgid "Send Unsigned?"
 msgstr "서명하지 않고 보내기?"
 
-#: composer/composerviewbase.cpp:2069
+#: composer/composerviewbase.cpp:2063
 #, kde-format
 msgid "Send &Unsigned"
 msgstr "서명하지 않고 보내기(&U)"
 
-#: composer/composerviewbase.cpp:2083
+#: composer/composerviewbase.cpp:2077
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -615,7 +615,7 @@ msgstr ""
 "부분적으로 서명한 메시지는 사이트 정책을 위반할 수도 있습니다.\n"
 "모든 부분에 서명하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2081
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -626,27 +626,27 @@ msgstr ""
 "서명하지 않은 메시지는 사이트 정책을 위반할 수도 있습니다.\n"
 "메시지에 서명하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "모두 서명하기(&S)"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign"
 msgstr "서명(&S)"
 
-#: composer/composerviewbase.cpp:2098
+#: composer/composerviewbase.cpp:2092
 #, kde-format
 msgid "Unsigned-Message Warning"
 msgstr "서명 없는 메시지 경고"
 
-#: composer/composerviewbase.cpp:2100
+#: composer/composerviewbase.cpp:2094
 #, kde-format
 msgid "Send &As Is"
 msgstr "그대로 보내기(&A)"
 
-#: composer/composerviewbase.cpp:2155
+#: composer/composerviewbase.cpp:2149
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -655,7 +655,7 @@ msgstr ""
 "모든 수신자의 올바른 신뢰할 수 있는 암호 키를 찾았습니다.\n"
 "메시지를 암호화하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2158
+#: composer/composerviewbase.cpp:2152
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -665,34 +665,34 @@ msgstr ""
 "받는 사람의 암호화 선호도에 의하면 암호화 여부를 선택할 수 있습니다.\n"
 "이 메시지를 암호화하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2169 composer/composerviewbase.cpp:2211
+#: composer/composerviewbase.cpp:2163 composer/composerviewbase.cpp:2205
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "메시지 암호화?"
 
-#: composer/composerviewbase.cpp:2170
+#: composer/composerviewbase.cpp:2164
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "서명 및 암호화"
 
-#: composer/composerviewbase.cpp:2170 composer/composerviewbase.cpp:2212
-#: composer/composerviewbase.cpp:2268 composer/keyresolver.cpp:1317
+#: composer/composerviewbase.cpp:2164 composer/composerviewbase.cpp:2206
+#: composer/composerviewbase.cpp:2262 composer/keyresolver.cpp:1317
 #: composer/keyresolver.cpp:1353
 #, kde-format
 msgid "&Encrypt"
 msgstr "암호화(&E)"
 
-#: composer/composerviewbase.cpp:2171 composer/composerviewbase.cpp:2277
+#: composer/composerviewbase.cpp:2165 composer/composerviewbase.cpp:2271
 #, kde-format
 msgid "&Sign Only"
 msgstr "서명만(&S)"
 
-#: composer/composerviewbase.cpp:2171 composer/composerviewbase.cpp:2277
+#: composer/composerviewbase.cpp:2165 composer/composerviewbase.cpp:2271
 #, kde-format
 msgid "&Send As-Is"
 msgstr "그대로 보내기(&S)"
 
-#: composer/composerviewbase.cpp:2200
+#: composer/composerviewbase.cpp:2194
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -701,12 +701,12 @@ msgstr ""
 "다음 수신자에 대한 암호화 선호가 충돌합니다.\n"
 "이 메시지를 암호화하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2213
+#: composer/composerviewbase.cpp:2207
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "암호화하지 않음(&N)"
 
-#: composer/composerviewbase.cpp:2241
+#: composer/composerviewbase.cpp:2235
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -716,17 +716,17 @@ msgstr ""
 "메시지 암호화를 요청했고 자기 자신에게 복사본을 보내기로 했지만 이 프로필에 "
 "대한 올바른 신뢰할 수 있는 암호화 키를 찾지 못했습니다."
 
-#: composer/composerviewbase.cpp:2245
+#: composer/composerviewbase.cpp:2239
 #, kde-format
 msgid "Send Unencrypted?"
 msgstr "암호화하지 않고 보내기?"
 
-#: composer/composerviewbase.cpp:2245 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2239 composer/keyresolver.cpp:1339
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "암호화하지 않고 보냄(&U)"
 
-#: composer/composerviewbase.cpp:2259
+#: composer/composerviewbase.cpp:2253
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -739,7 +739,7 @@ msgstr ""
 "수 있습니다.\n"
 "모든 부분을 암호화하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2264
+#: composer/composerviewbase.cpp:2258
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -752,12 +752,12 @@ msgstr ""
 "있습니다.\n"
 "메시지를 암호화하시겠습니까?"
 
-#: composer/composerviewbase.cpp:2268
+#: composer/composerviewbase.cpp:2262
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "모두 암호화(&E)"
 
-#: composer/composerviewbase.cpp:2275
+#: composer/composerviewbase.cpp:2269
 #, kde-format
 msgid "Unencrypted Message Warning"
 msgstr "암호화되지 않은 메시지 경고"
@@ -1037,7 +1037,7 @@ msgstr ""
 "\n"
 "이 수신자의 인증서를 선택하십시오."
 
-#: composer/nearexpirychecker.cpp:82
+#: composer/nearexpirychecker.cpp:68
 #, kde-format
 msgid ""
 "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1049,7 +1049,7 @@ msgstr[0] ""
 "<p>OpenPGP 서명 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) %1 "
 "전에 만료되었습니다.</p>"
 
-#: composer/nearexpirychecker.cpp:88
+#: composer/nearexpirychecker.cpp:74
 #, kde-format
 msgid ""
 "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1061,7 +1061,7 @@ msgstr[0] ""
 "<p>OpenPGP 암호화 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) "
 "%1 전에 만료되었습니다.</p>"
 
-#: composer/nearexpirychecker.cpp:94
+#: composer/nearexpirychecker.cpp:80
 #, kde-format
 msgid ""
 "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1073,7 +1073,7 @@ msgstr[0] ""
 "<p>OpenPGP 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) %1 전에 "
 "만료되었습니다.</p>"
 
-#: composer/nearexpirychecker.cpp:103
+#: composer/nearexpirychecker.cpp:89
 #, kde-format
 msgid ""
 "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1085,7 +1085,7 @@ msgstr[0] ""
 "<p>OpenPGP 서명 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) %1"
 "일 안에 만료됩니다.</p>"
 
-#: composer/nearexpirychecker.cpp:109
+#: composer/nearexpirychecker.cpp:95
 #, kde-format
 msgid ""
 "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1097,7 +1097,7 @@ msgstr[0] ""
 "<p>OpenPGP 암호화 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) %1"
 "일 안에 만료됩니다.</p>"
 
-#: composer/nearexpirychecker.cpp:115
+#: composer/nearexpirychecker.cpp:101
 #, kde-format
 msgid ""
 "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1109,7 +1109,7 @@ msgstr[0] ""
 "<p>OpenPGP 키</p><p align=center><b>%2</b>(키 ID 0x%3)</p><p>이(가) %1일 안"
 "에 만료됩니다.</p>"
 
-#: composer/nearexpirychecker.cpp:135
+#: composer/nearexpirychecker.cpp:121
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1124,7 +1124,7 @@ msgstr[0] ""
 "한 루트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료되었습"
 "니다.</p>"
 
-#: composer/nearexpirychecker.cpp:143
+#: composer/nearexpirychecker.cpp:129
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1139,7 +1139,7 @@ msgstr[0] ""
 "대한 루트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료되었"
 "습니다.</p>"
 
-#: composer/nearexpirychecker.cpp:151
+#: composer/nearexpirychecker.cpp:137
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
@@ -1154,7 +1154,7 @@ msgstr[0] ""
 "트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료되었습니다."
 "</p>"
 
-#: composer/nearexpirychecker.cpp:161
+#: composer/nearexpirychecker.cpp:147
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1169,7 +1169,7 @@ msgstr[0] ""
 "한 중간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료되"
 "었습니다.</p>"
 
-#: composer/nearexpirychecker.cpp:169
+#: composer/nearexpirychecker.cpp:155
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1184,7 +1184,7 @@ msgstr[0] ""
 "대한 중간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료"
 "되었습니다.</p>"
 
-#: composer/nearexpirychecker.cpp:177
+#: composer/nearexpirychecker.cpp:163
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
@@ -1199,7 +1199,7 @@ msgstr[0] ""
 "간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 전에 만료되었습니"
 "다.</p>"
 
-#: composer/nearexpirychecker.cpp:193
+#: composer/nearexpirychecker.cpp:179
 #, kde-format
 msgid ""
 "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
@@ -1211,7 +1211,7 @@ msgstr[0] ""
 "<p>S/MIME 서명 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이"
 "(가) %1일 전에 만료되었습니다.</p>"
 
-#: composer/nearexpirychecker.cpp:199
+#: composer/nearexpirychecker.cpp:185
 #, kde-format
 msgid ""
 "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
@@ -1223,7 +1223,7 @@ msgstr[0] ""
 "<p>S/MIME 암호화 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이"
 "(가) %1일 전에 만료되었습니다.</p>"
 
-#: composer/nearexpirychecker.cpp:205
+#: composer/nearexpirychecker.cpp:191
 #, kde-format
 msgid ""
 "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
@@ -1235,7 +1235,7 @@ msgstr[0] ""
 "<p>S/MIME 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이(가) %1"
 "일 전에 만료되었습니다.</p>"
 
-#: composer/nearexpirychecker.cpp:218
+#: composer/nearexpirychecker.cpp:204
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1250,7 +1250,7 @@ msgstr[0] ""
 "한 루트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료됩니"
 "다.</p>"
 
-#: composer/nearexpirychecker.cpp:226
+#: composer/nearexpirychecker.cpp:212
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1265,7 +1265,7 @@ msgstr[0] ""
 "대한 루트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료됩니"
 "다.</p>"
 
-#: composer/nearexpirychecker.cpp:234
+#: composer/nearexpirychecker.cpp:220
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
@@ -1279,7 +1279,7 @@ msgstr[0] ""
 "<p>S/MIME 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>에 대한 루"
 "트 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료됩니다.</p>"
 
-#: composer/nearexpirychecker.cpp:244
+#: composer/nearexpirychecker.cpp:230
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1294,7 +1294,7 @@ msgstr[0] ""
 "한 중간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료됩"
 "니다.</p>"
 
-#: composer/nearexpirychecker.cpp:252
+#: composer/nearexpirychecker.cpp:238
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1309,7 +1309,7 @@ msgstr[0] ""
 "대한 중간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료"
 "됩니다.</p>"
 
-#: composer/nearexpirychecker.cpp:260
+#: composer/nearexpirychecker.cpp:246
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
@@ -1324,7 +1324,7 @@ msgstr[0] ""
 "간 CA 인증서</p><p align=center><b>%4</b></p><p>이(가) %1일 안에 만료됩니다."
 "</p>"
 
-#: composer/nearexpirychecker.cpp:276
+#: composer/nearexpirychecker.cpp:262
 #, kde-format
 msgid ""
 "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
@@ -1336,7 +1336,7 @@ msgstr[0] ""
 "<p>S/MIME 서명 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이"
 "(가) %1일 안에 만료됩니다.</p>"
 
-#: composer/nearexpirychecker.cpp:282
+#: composer/nearexpirychecker.cpp:268
 #, kde-format
 msgid ""
 "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
@@ -1348,7 +1348,7 @@ msgstr[0] ""
 "<p>S/MIME 암호화 인증서</p><p align=center><b>%2</b>(일련 번호 %3)</p><p>이"
 "(가) %1일 안에 만료됩니다.</p>"
 
-#: composer/nearexpirychecker.cpp:288
+#: composer/nearexpirychecker.cpp:274
 #, kde-format
 msgid ""
 "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
@@ -2332,51 +2332,44 @@ msgstr "다음 열에서 자동 줄 바꿈(&W):"
 msgid "Improve plain text version of HTML message"
 msgstr "HTML 메시지의 텍스트 버전 개선"
 
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:85
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr ""
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:89
+#, fuzzy, kde-format
+#| msgid ""
+#| "Valid trusted encryption keys were found for all recipients.\n"
+#| "Encrypt this message?"
+msgid "Enable encrpytion, if we found keys for all recipients"
+msgstr ""
+"모든 수신자의 올바른 신뢰할 수 있는 암호 키를 찾았습니다.\n"
+"메시지를 암호화하시겠습니까?"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:93
 #, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr "암호화되지 않은 메시지를 보내기 전에 알림"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
+#: settings/messagecomposer.kcfg.cmake:97
 #, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr "서명되지 않은 메시지를 보내기 전에 알림"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
+#: settings/messagecomposer.kcfg.cmake:101
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr "인증서나 키가 곧 만료될 때 알림(아래에서 기한 설정)"
 
-#. i18n: ectx: label, entry (CryptoWarnSignKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid ""
-"The minimum number of days that the signature certificate should be valid "
-"before issuing a warning"
-msgstr "서명 인증서 만료를 표시할 최소 날짜 수"
-
-#. i18n: ectx: label, entry (CryptoWarnSignChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid ""
-"The minimum number of days that the CA certificate should be valid before "
-"issuing a warning"
-msgstr "CA 인증서 만료를 표시할 최소 날짜 수"
-
-#. i18n: ectx: label, entry (CryptoWarnSignRootNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr "루트 인증서 만료를 표시할 최소 날짜 수"
-
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:105
 #: settings/messagecomposer.kcfg.cmake:109
 #, kde-format
 msgid ""
@@ -2392,16 +2385,16 @@ msgid ""
 "valid before issuing a warning"
 msgstr "인증서 체인의 모든 인증서 만료를 표시할 최소 날짜 수"
 
-#. i18n: ectx: label, entry (CryptoEncryptToSelf), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:117
 #, kde-format
 msgid ""
-"When encrypting emails, always also encrypt to the certificate of my own "
-"identity"
-msgstr "메일을 암호화할 때 내 프로필에 있는 인증서로 같이 암호화"
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr "루트 인증서 만료를 표시할 최소 날짜 수"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:125
+#: settings/messagecomposer.kcfg.cmake:121
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
@@ -2681,6 +2674,21 @@ msgstr "메일 전송기 오프라인."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "온라인으로 설정"
+
+#~ msgid ""
+#~ "The minimum number of days that the signature certificate should be valid "
+#~ "before issuing a warning"
+#~ msgstr "서명 인증서 만료를 표시할 최소 날짜 수"
+
+#~ msgid ""
+#~ "The minimum number of days that the CA certificate should be valid before "
+#~ "issuing a warning"
+#~ msgstr "CA 인증서 만료를 표시할 최소 날짜 수"
+
+#~ msgid ""
+#~ "When encrypting emails, always also encrypt to the certificate of my own "
+#~ "identity"
+#~ msgstr "메일을 암호화할 때 내 프로필에 있는 인증서로 같이 암호화"
 
 #, fuzzy
 #~| msgctxt "@info:status"

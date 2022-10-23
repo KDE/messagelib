@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-19 00:47+0000\n"
+"POT-Creation-Date: 2022-10-23 00:44+0000\n"
 "PO-Revision-Date: 2022-06-05 20:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -108,7 +108,7 @@ msgid "Attach"
 msgstr "Liitä"
 
 #: attachment/attachmentcontrollerbase.cpp:472
-#: composer/composerviewbase.cpp:1927
+#: composer/composerviewbase.cpp:1921
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Liitä tiedosto…"
@@ -448,38 +448,38 @@ msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Älä muuta kokoa"
 
-#: composer/composerviewbase.cpp:751
+#: composer/composerviewbase.cpp:745
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP-avain vanhentunut"
 
-#: composer/composerviewbase.cpp:751
+#: composer/composerviewbase.cpp:745
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME-varmenne vanhentunut"
 
-#: composer/composerviewbase.cpp:753
+#: composer/composerviewbase.cpp:747
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP-avain vanhenee pian"
 
-#: composer/composerviewbase.cpp:753
+#: composer/composerviewbase.cpp:747
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME-varmenne vanhenee pian"
 
-#: composer/composerviewbase.cpp:828 composer/composerviewbase.cpp:842
-#: composer/composerviewbase.cpp:874
+#: composer/composerviewbase.cpp:822 composer/composerviewbase.cpp:836
+#: composer/composerviewbase.cpp:868
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Avaimia ei saatu ratkaistuksi: ilmoita viasta."
 
-#: composer/composerviewbase.cpp:1080 composer/composerviewbase.cpp:1345
+#: composer/composerviewbase.cpp:1074 composer/composerviewbase.cpp:1339
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Käyttäjä perui työn"
 
-#: composer/composerviewbase.cpp:1085
+#: composer/composerviewbase.cpp:1079
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -488,37 +488,37 @@ msgstr ""
 "Viestiä ei voi luoda: %1 \n"
 " Ilmoita tämä virheenä."
 
-#: composer/composerviewbase.cpp:1087
+#: composer/composerviewbase.cpp:1081
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Viestiä ei voitu luoda: %1"
 
-#: composer/composerviewbase.cpp:1184
+#: composer/composerviewbase.cpp:1178
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "Viestin asettamisessa jonoon sattui virheitä: %1"
 
-#: composer/composerviewbase.cpp:1348
+#: composer/composerviewbase.cpp:1342
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Viestiä ei voitu automaattitallentaa: %1"
 
-#: composer/composerviewbase.cpp:1367
+#: composer/composerviewbase.cpp:1361
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Kaikkea dataa ei voitu kirjoittaa tiedostoon."
 
-#: composer/composerviewbase.cpp:1370
+#: composer/composerviewbase.cpp:1364
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Tiedostoa ei voitu viimeistellä."
 
-#: composer/composerviewbase.cpp:1374
+#: composer/composerviewbase.cpp:1368
 #, kde-format
 msgid "Could not open file."
 msgstr "Tiedostoa ei voitu avata."
 
-#: composer/composerviewbase.cpp:1381
+#: composer/composerviewbase.cpp:1375
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -529,17 +529,17 @@ msgstr ""
 "%2\n"
 "Syy: %3"
 
-#: composer/composerviewbase.cpp:1387
+#: composer/composerviewbase.cpp:1381
 #, kde-format
 msgid "Autosaving Message Failed"
 msgstr "Viestin automaattitallennus epäonnistui"
 
-#: composer/composerviewbase.cpp:1500
+#: composer/composerviewbase.cpp:1494
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Viestiä ei voitu tallentaa: %1"
 
-#: composer/composerviewbase.cpp:1923
+#: composer/composerviewbase.cpp:1917
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -550,17 +550,17 @@ msgstr ""
 "mitään.\n"
 "Haluatko liittää tiedoston viestiisi?"
 
-#: composer/composerviewbase.cpp:1926
+#: composer/composerviewbase.cpp:1920
 #, kde-format
 msgid "File Attachment Reminder"
 msgstr "Tiedostoliitemuistutus"
 
-#: composer/composerviewbase.cpp:1928
+#: composer/composerviewbase.cpp:1922
 #, kde-format
 msgid "&Send as Is"
 msgstr "&Lähetä sellaisenaan"
 
-#: composer/composerviewbase.cpp:1984
+#: composer/composerviewbase.cpp:1978
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -571,23 +571,23 @@ msgstr ""
 "päättää, allekirjoittaako viesti.\n"
 "Allekirjoitetaanko viesti?"
 
-#: composer/composerviewbase.cpp:1995 composer/composerviewbase.cpp:2036
+#: composer/composerviewbase.cpp:1989 composer/composerviewbase.cpp:2030
 #, kde-format
 msgid "Sign Message?"
 msgstr "Allekirjoitetaanko viesti?"
 
-#: composer/composerviewbase.cpp:1996 composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:1990 composer/composerviewbase.cpp:2031
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Allekirjoita"
 
-#: composer/composerviewbase.cpp:1997 composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:1991 composer/composerviewbase.cpp:2032
 #, kde-format
 msgid "Do &Not Sign"
 msgstr "&Älä allekirjoita"
 
-#: composer/composerviewbase.cpp:2026
+#: composer/composerviewbase.cpp:2020
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -596,7 +596,7 @@ msgstr ""
 "Vastaanottajien allekirjoitusasetuksissa on ristiriitoja.\n"
 "Allekirjoitetaanko viesti?"
 
-#: composer/composerviewbase.cpp:2066
+#: composer/composerviewbase.cpp:2060
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -605,17 +605,17 @@ msgstr ""
 "Olet pyytänyt allekirjoittaa viestin, mutta tälle henkilöydelle ei ole "
 "määritetty kelvollisia allekirjoitusavaimia."
 
-#: composer/composerviewbase.cpp:2069
+#: composer/composerviewbase.cpp:2063
 #, kde-format
 msgid "Send Unsigned?"
 msgstr "Lähetetäänkö allekirjoittamatta?"
 
-#: composer/composerviewbase.cpp:2069
+#: composer/composerviewbase.cpp:2063
 #, kde-format
 msgid "Send &Unsigned"
 msgstr "Lähetä &allekirjoittamatta"
 
-#: composer/composerviewbase.cpp:2083
+#: composer/composerviewbase.cpp:2077
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -627,7 +627,7 @@ msgstr ""
 "palvelinkäytänteiden vastaista.\n"
 "Allekirjoitetaanko siis kaikki osat?"
 
-#: composer/composerviewbase.cpp:2087
+#: composer/composerviewbase.cpp:2081
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -639,27 +639,27 @@ msgstr ""
 "vastaista.\n"
 "Allekirjoitetaanko siis viesti?"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Allekirjoita kaikki osat"
 
-#: composer/composerviewbase.cpp:2090
+#: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign"
 msgstr "Allekirjoita"
 
-#: composer/composerviewbase.cpp:2098
+#: composer/composerviewbase.cpp:2092
 #, kde-format
 msgid "Unsigned-Message Warning"
 msgstr "Varoitus allekirjoittamattomasta viestistä"
 
-#: composer/composerviewbase.cpp:2100
+#: composer/composerviewbase.cpp:2094
 #, kde-format
 msgid "Send &As Is"
 msgstr "Lähetä &sellaisenaan"
 
-#: composer/composerviewbase.cpp:2155
+#: composer/composerviewbase.cpp:2149
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -668,7 +668,7 @@ msgstr ""
 "Kaikille vastaanottajille löytyi kelvollinen luotettava salausavain.\n"
 "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2158
+#: composer/composerviewbase.cpp:2152
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -679,34 +679,34 @@ msgstr ""
 "päättää, salataanko viesti.\n"
 "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2169 composer/composerviewbase.cpp:2211
+#: composer/composerviewbase.cpp:2163 composer/composerviewbase.cpp:2205
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2170
+#: composer/composerviewbase.cpp:2164
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Allekirjoita ja salaa"
 
-#: composer/composerviewbase.cpp:2170 composer/composerviewbase.cpp:2212
-#: composer/composerviewbase.cpp:2268 composer/keyresolver.cpp:1317
+#: composer/composerviewbase.cpp:2164 composer/composerviewbase.cpp:2206
+#: composer/composerviewbase.cpp:2262 composer/keyresolver.cpp:1317
 #: composer/keyresolver.cpp:1353
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Salaa"
 
-#: composer/composerviewbase.cpp:2171 composer/composerviewbase.cpp:2277
+#: composer/composerviewbase.cpp:2165 composer/composerviewbase.cpp:2271
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Vain allekirjoita"
 
-#: composer/composerviewbase.cpp:2171 composer/composerviewbase.cpp:2277
+#: composer/composerviewbase.cpp:2165 composer/composerviewbase.cpp:2271
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Lähetä &sellaisenaan"
 
-#: composer/composerviewbase.cpp:2200
+#: composer/composerviewbase.cpp:2194
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -715,12 +715,12 @@ msgstr ""
 "Vastaanottajien salausasetuksissa on ristiriitoja.\n"
 "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2213
+#: composer/composerviewbase.cpp:2207
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "&Älä salaa"
 
-#: composer/composerviewbase.cpp:2241
+#: composer/composerviewbase.cpp:2235
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -730,17 +730,17 @@ msgstr ""
 "Olet pyytänyt salata viestin ja kopion itsellesi, mutta tälle henkilöydelle "
 "ei ole määritetty kelvollisia salausavaimia."
 
-#: composer/composerviewbase.cpp:2245
+#: composer/composerviewbase.cpp:2239
 #, kde-format
 msgid "Send Unencrypted?"
 msgstr "Lähetetäänkö salaamattomana?"
 
-#: composer/composerviewbase.cpp:2245 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2239 composer/keyresolver.cpp:1339
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Lähetä salaamatt&omana"
 
-#: composer/composerviewbase.cpp:2259
+#: composer/composerviewbase.cpp:2253
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -753,7 +753,7 @@ msgstr ""
 "vastaista ja aiheuttaa tietovuodon.\n"
 "Salataanko siis kaikki osat?"
 
-#: composer/composerviewbase.cpp:2264
+#: composer/composerviewbase.cpp:2258
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -766,12 +766,12 @@ msgstr ""
 "ja aiheuttaa tietovuodon.\n"
 "Salataanko viesti kuitenkin?"
 
-#: composer/composerviewbase.cpp:2268
+#: composer/composerviewbase.cpp:2262
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Salaa kaikki osat"
 
-#: composer/composerviewbase.cpp:2275
+#: composer/composerviewbase.cpp:2269
 #, kde-format
 msgid "Unencrypted Message Warning"
 msgstr "Varoitus salaamattomasta viestistä"
@@ -1058,7 +1058,7 @@ msgstr ""
 "\n"
 "Valitse varmenne tai varmenteet, joita tälle vastaanottajalle tulisi käyttää."
 
-#: composer/nearexpirychecker.cpp:82
+#: composer/nearexpirychecker.cpp:68
 #, kde-format
 msgid ""
 "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1073,7 +1073,7 @@ msgstr[1] ""
 "<p>OpenPGP-allekirjoitusavaimesi</p><p align=center><b>%2</b> (avaimen "
 "tunniste 0x%3)</p><p>vanheni %1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:88
+#: composer/nearexpirychecker.cpp:74
 #, kde-format
 msgid ""
 "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1088,7 +1088,7 @@ msgstr[1] ""
 "<p>OpenPGP-salausavaimesi</p><p align=center><b>%2</b> (avaimen tunniste 0x"
 "%3)</p><p>vanheni %1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:94
+#: composer/nearexpirychecker.cpp:80
 #, kde-format
 msgid ""
 "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1103,7 +1103,7 @@ msgstr[1] ""
 "<p>OpenPGP-avaimesi vastaanottajalle</p><p align=center><b>%2</b> (avaimen "
 "tunniste 0x%3)</p><p>vanheni %1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:103
+#: composer/nearexpirychecker.cpp:89
 #, kde-format
 msgid ""
 "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1118,7 +1118,7 @@ msgstr[1] ""
 "<p>OpenPGP-allekirjoitusavaimesi</p><p align=\"center\"><b>%2</b> (avaimen "
 "tunniste 0x%3)</p><p>vanhenee %1 päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:109
+#: composer/nearexpirychecker.cpp:95
 #, kde-format
 msgid ""
 "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1133,7 +1133,7 @@ msgstr[1] ""
 "<p>Vastaanottajan</p><p align=\"center\"><b>%2</b> (avaintunniste 0x%3)</"
 "p><p>OpenPGP-salausavaimesi vanhenee %1 päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:115
+#: composer/nearexpirychecker.cpp:101
 #, kde-format
 msgid ""
 "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1148,7 +1148,7 @@ msgstr[1] ""
 "<p>Vastaanottajan</p><p align=\"center\"><b>%2</b> (avaintunniste 0x%3)</"
 "p><p>OpenPGP-avain vanhenee %1 päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:135
+#: composer/nearexpirychecker.cpp:121
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1167,7 +1167,7 @@ msgstr[1] ""
 "(sarjanumero %3)</p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></"
 "p><p>vanheni %1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:143
+#: composer/nearexpirychecker.cpp:129
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1185,7 +1185,7 @@ msgstr[1] ""
 "<p>S/MIME-salausvarmenteesi</p><p align=center><b>%2</b> (sarjanumero %3)</"
 "p> <p>juurivarmenne</p><p align=center>%4</p><p>vanheni %1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:151
+#: composer/nearexpirychecker.cpp:137
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
@@ -1204,7 +1204,7 @@ msgstr[1] ""
 "<p>juurivarmenne</p><p align=center><b>%4</b></p><p>vanheni %1 päivää sitten."
 "</p>"
 
-#: composer/nearexpirychecker.cpp:161
+#: composer/nearexpirychecker.cpp:147
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1223,7 +1223,7 @@ msgstr[1] ""
 "%3)</p><p>välillinen CA-varmenne</p><p align=center<b>%4</b></p> <p>vanheni "
 "alle %1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:169
+#: composer/nearexpirychecker.cpp:155
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1242,7 +1242,7 @@ msgstr[1] ""
 "p><p>välillinen CA-varmenne</p><p align=center><b>%4</b></p><p>vanheni alle "
 "%1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:177
+#: composer/nearexpirychecker.cpp:163
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
@@ -1261,7 +1261,7 @@ msgstr[1] ""
 "p><p>välillinen CA-varmenne</p><p align=center><b>%4</b></p><p>vanheni alle "
 "%1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:193
+#: composer/nearexpirychecker.cpp:179
 #, kde-format
 msgid ""
 "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
@@ -1276,7 +1276,7 @@ msgstr[1] ""
 "<p>S/MIME-allekirjoitusvarmenteesi</p><p align=center><b>%2</b> (sarjanumero "
 "%3)</p><p>vanheni alle %1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:199
+#: composer/nearexpirychecker.cpp:185
 #, kde-format
 msgid ""
 "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
@@ -1291,7 +1291,7 @@ msgstr[1] ""
 "<p>S/MIME-salausvarmenteesi</p><p align=center><b>%2</b> (sarjanumero %3)</"
 "p><p>vanheni alle %1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:205
+#: composer/nearexpirychecker.cpp:191
 #, kde-format
 msgid ""
 "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
@@ -1306,7 +1306,7 @@ msgstr[1] ""
 "<p>S/MIME-varmenteesi vastaanottajalle</p><p align=center><b>%2</b> "
 "(sarjanumero %3)</p><p>vanheni %1 päivää sitten.</p>"
 
-#: composer/nearexpirychecker.cpp:218
+#: composer/nearexpirychecker.cpp:204
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1325,7 +1325,7 @@ msgstr[1] ""
 "(sarjanumero %3)</p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></"
 "p><p>vanhenee %1 päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:226
+#: composer/nearexpirychecker.cpp:212
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1344,7 +1344,7 @@ msgstr[1] ""
 "%3)</p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></p><p>vanhenee "
 "vuorokauden %1 päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:234
+#: composer/nearexpirychecker.cpp:220
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
@@ -1363,7 +1363,7 @@ msgstr[1] ""
 "p><p>juurivarmenne</p><p align=\"center\"><b>%4</b></p><p>vanhenee %1 "
 "päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:244
+#: composer/nearexpirychecker.cpp:230
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1382,7 +1382,7 @@ msgstr[1] ""
 "(sarjanumero %3)</p><p>välillinen CA-varmenne</p><p align=\"center\"><b>%4</"
 "b></p><p>vanhenee vuorokauden %1 päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:252
+#: composer/nearexpirychecker.cpp:238
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1401,7 +1401,7 @@ msgstr[1] ""
 "%3)</p><p>välillinen CA-varmenne</p><p align=\"center\"><b>%4</b></"
 "p><p>vanhenee %1 päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:260
+#: composer/nearexpirychecker.cpp:246
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
@@ -1420,7 +1420,7 @@ msgstr[1] ""
 "p><p>välillinen CA-varmenne</p><p align=\"center\"><b>%4</b></p><p>vanhenee "
 "%1 päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:276
+#: composer/nearexpirychecker.cpp:262
 #, kde-format
 msgid ""
 "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
@@ -1435,7 +1435,7 @@ msgstr[1] ""
 "<p>S/MIME-allekirjoitusvarmenteesi</p><p align=\"center\"><b>%2</b> "
 "(sarjanumero %3)</p><p>vanhenee %1 päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:282
+#: composer/nearexpirychecker.cpp:268
 #, kde-format
 msgid ""
 "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
@@ -1450,7 +1450,7 @@ msgstr[1] ""
 "<p>S/MIME-salausvarmenteesi</p><p align=\"center\"><b>%2</b> (sarjanumero "
 "%3)</p><p>vanhenee %1 päivässä.</p>"
 
-#: composer/nearexpirychecker.cpp:288
+#: composer/nearexpirychecker.cpp:274
 #, kde-format
 msgid ""
 "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
@@ -2453,57 +2453,45 @@ msgstr "&Rivinvaihto sarakkeessa:"
 msgid "Improve plain text version of HTML message"
 msgstr "Kohenna HTML-viestin tekstiversiota"
 
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:85
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr ""
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:89
+#, fuzzy, kde-format
+#| msgid ""
+#| "Valid trusted encryption keys were found for all recipients.\n"
+#| "Encrypt this message?"
+msgid "Enable encrpytion, if we found keys for all recipients"
+msgstr ""
+"Kaikille vastaanottajille löytyi kelvollinen luotettava salausavain.\n"
+"Salataanko viesti?"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:93
 #, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr "Varoita ennen salaamattomien viestien lähettämistä"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
+#: settings/messagecomposer.kcfg.cmake:97
 #, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr "Varoita ennen allekirjoittamattomien viestien lähettämistä"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
+#: settings/messagecomposer.kcfg.cmake:101
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
 "Varoita, jos varmenteet/avaimet vanhentuvat pian (aseta kynnysarvot alla)"
 
-#. i18n: ectx: label, entry (CryptoWarnSignKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid ""
-"The minimum number of days that the signature certificate should be valid "
-"before issuing a warning"
-msgstr ""
-"Allekirjoitusvarmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
-"antamista"
-
-#. i18n: ectx: label, entry (CryptoWarnSignChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid ""
-"The minimum number of days that the CA certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"CA-varmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen antamista"
-
-#. i18n: ectx: label, entry (CryptoWarnSignRootNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"Juurivarmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
-"antamista"
-
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:105
 #: settings/messagecomposer.kcfg.cmake:109
 #, kde-format
 msgid ""
@@ -2523,17 +2511,18 @@ msgstr ""
 "Ketjun kaikkien varmenteiden kelpoisuuden vähimmäisaika päivinä ennen "
 "varoituksen antamista"
 
-#. i18n: ectx: label, entry (CryptoEncryptToSelf), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:117
 #, kde-format
 msgid ""
-"When encrypting emails, always also encrypt to the certificate of my own "
-"identity"
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
 msgstr ""
-"Salattaessa sähköposteja salaa aina myös oman henkilöyteni varmenteeseen"
+"Juurivarmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
+"antamista"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:125
+#: settings/messagecomposer.kcfg.cmake:121
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
@@ -2814,6 +2803,26 @@ msgstr "Viestinvälitys ei toiminnassa."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Aseta verkkoon"
+
+#~ msgid ""
+#~ "The minimum number of days that the signature certificate should be valid "
+#~ "before issuing a warning"
+#~ msgstr ""
+#~ "Allekirjoitusvarmenteen kelpoisuuden vähimmäisaika päivinä ennen "
+#~ "varoituksen antamista"
+
+#~ msgid ""
+#~ "The minimum number of days that the CA certificate should be valid before "
+#~ "issuing a warning"
+#~ msgstr ""
+#~ "CA-varmenteen kelpoisuuden vähimmäisaika päivinä ennen varoituksen "
+#~ "antamista"
+
+#~ msgid ""
+#~ "When encrypting emails, always also encrypt to the certificate of my own "
+#~ "identity"
+#~ msgstr ""
+#~ "Salattaessa sähköposteja salaa aina myös oman henkilöyteni varmenteeseen"
 
 #, fuzzy
 #~| msgctxt "@info:status"
