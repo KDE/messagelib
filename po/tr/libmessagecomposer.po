@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-23 00:44+0000\n"
-"PO-Revision-Date: 2022-05-16 15:43+0300\n"
+"POT-Creation-Date: 2022-10-24 00:49+0000\n"
+"PO-Revision-Date: 2022-10-23 11:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 22.08.1\n"
 "X-POOTLE-MTIME: 1413111292.000000\n"
 
 #: attachment/attachmentcontrollerbase.cpp:169
@@ -2125,13 +2125,13 @@ msgstr "Kime"
 #, kde-format
 msgctxt "@label:listbox Carbon Copy recipient of an email message."
 msgid "CC"
-msgstr "CC"
+msgstr "Kopya"
 
 #: recipient/recipient.cpp:103
 #, kde-format
 msgctxt "@label:listbox Blind carbon copy recipient of an email message."
 msgid "BCC"
-msgstr "BCC"
+msgstr "Gizli Kopya"
 
 #: recipient/recipient.cpp:105
 #, kde-format
@@ -2250,12 +2250,12 @@ msgstr "&Kime olarak ekle"
 #: recipient/recipientspicker.cpp:79
 #, kde-format
 msgid "Add as CC"
-msgstr "CC olarak ekle"
+msgstr "Kopya olarak ekle"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &BCC"
-msgstr "&BCC olarak ekle"
+msgstr "&Gizli Kopya olarak ekle"
 
 #: recipient/recipientspicker.cpp:103
 #, kde-format
@@ -2431,7 +2431,7 @@ msgstr ""
 #: settings/messagecomposer.kcfg.cmake:61
 #, kde-format
 msgid "Maximum number of recipient entries:"
-msgstr "Azami alıcı girdisi sayısı:"
+msgstr "En yüksek alıcı girdisi sayısı:"
 
 #. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:66
@@ -2465,18 +2465,14 @@ msgstr "HTML iletisinin düz metin sürümünü iyileştir"
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Olanaklıysa tüm iletileri imzala"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
 #, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
-msgid "Enable encrpytion, if we found keys for all recipients"
-msgstr ""
-"Tüm alıcılar için geçerli güvenilir şifreleme anahtarları bulundu.\n"
-"Bu ileti şifrelensin mi?"
+#| msgid "Enable encrpytion, if we found keys for all recipients"
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr "Tüm alıcılar için anahtarlar varsa şifrelemeyi etkinleştir"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93

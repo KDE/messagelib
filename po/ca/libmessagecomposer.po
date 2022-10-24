@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-23 00:44+0000\n"
-"PO-Revision-Date: 2022-05-16 09:53+0200\n"
+"POT-Creation-Date: 2022-10-24 00:49+0000\n"
+"PO-Revision-Date: 2022-10-23 10:04+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2489,18 +2489,15 @@ msgstr "Millora la versió de text net del missatge en HTML"
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Signa tots els missatges, si és possible"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
 #, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
-msgid "Enable encrpytion, if we found keys for all recipients"
+#| msgid "Enable encrpytion, if we found keys for all recipients"
+msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
-"S'han trobat claus d'encriptatge vàlides per a tots els destinataris.\n"
-"Encripto aquest missatge?"
+"Activa l'encriptatge, si s'han trobat les claus de tots els destinataris"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93

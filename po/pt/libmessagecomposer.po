@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-23 00:44+0000\n"
-"PO-Revision-Date: 2022-05-16 14:26+0100\n"
+"POT-Creation-Date: 2022-10-24 00:49+0000\n"
+"PO-Revision-Date: 2022-10-23 17:11+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -2511,19 +2511,15 @@ msgstr "Melhorar a versão em texto simples da mensagem HTML"
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Assinar todas as mensagens se possível"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
 #, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
-msgid "Enable encrpytion, if we found keys for all recipients"
+#| msgid "Enable encrpytion, if we found keys for all recipients"
+msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
-"Foram encontradas chaves fidedignas de encriptação para todos os "
-"destinatários.\n"
-"Deseja encriptar esta mensagem?"
+"Activar a encriptação se forem encontradas chaves para todos os destinatários"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93
@@ -2860,24 +2856,3 @@ msgstr "O agente de encaminhamento de correio está desligado."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Mudar para Ligado"
-
-#~ msgid ""
-#~ "The minimum number of days that the signature certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr ""
-#~ "O número mínimo de dias de validade do certificado de assinatura antes de "
-#~ "emitir um aviso"
-
-#~ msgid ""
-#~ "The minimum number of days that the CA certificate should be valid before "
-#~ "issuing a warning"
-#~ msgstr ""
-#~ "O número mínimo de dias de validade do certificado da AC antes de emitir "
-#~ "um aviso"
-
-#~ msgid ""
-#~ "When encrypting emails, always also encrypt to the certificate of my own "
-#~ "identity"
-#~ msgstr ""
-#~ "Ao encriptar os e-mails, encriptar também sempre para o certificado da "
-#~ "minha identidade"

@@ -10,15 +10,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-23 00:44+0000\n"
-"PO-Revision-Date: 2022-05-16 04:52+0200\n"
+"POT-Creation-Date: 2022-10-24 00:49+0000\n"
+"PO-Revision-Date: 2022-10-23 20:56+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:169
@@ -2489,18 +2489,15 @@ msgstr "Mejorar la versión de texto sin formato del mensaje HTML"
 #: settings/messagecomposer.kcfg.cmake:85
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Firmar todos los mensajes, si es posible"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
 #, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
-msgid "Enable encrpytion, if we found keys for all recipients"
+#| msgid "Enable encrpytion, if we found keys for all recipients"
+msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
-"Se encontraron claves de firmas confiables para todos los destinatarios.\n"
-"¿Cifrar este mensaje?"
+"Activar el cifrado, si se encuentran claves para todos los destinatarios"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93
