@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-24 00:49+0000\n"
-"PO-Revision-Date: 2022-10-23 10:04+0200\n"
+"PO-Revision-Date: 2022-10-24 10:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2493,8 +2493,7 @@ msgstr "Signa tots els missatges, si és possible"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
-#, fuzzy, kde-format
-#| msgid "Enable encrpytion, if we found keys for all recipients"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
 "Activa l'encriptatge, si s'han trobat les claus de tots els destinataris"
@@ -2834,24 +2833,3 @@ msgstr "El distribuïdor de correu està fora de línia."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Connecta"
-
-#~ msgid ""
-#~ "The minimum number of days that the signature certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr ""
-#~ "El nombre mínim de dies que el certificat de la signatura hauria de ser "
-#~ "vàlid abans d'emetre un avís"
-
-#~ msgid ""
-#~ "The minimum number of days that the CA certificate should be valid before "
-#~ "issuing a warning"
-#~ msgstr ""
-#~ "El nombre mínim de dies que el certificat de la CA hauria de ser vàlid "
-#~ "abans d'emetre un avís"
-
-#~ msgid ""
-#~ "When encrypting emails, always also encrypt to the certificate of my own "
-#~ "identity"
-#~ msgstr ""
-#~ "En encriptar els correus, també encripta sempre amb el certificat de la "
-#~ "meva pròpia identitat"

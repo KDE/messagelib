@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-24 00:49+0000\n"
-"PO-Revision-Date: 2022-10-23 17:11+0100\n"
+"PO-Revision-Date: 2022-10-24 10:58+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -2515,8 +2515,7 @@ msgstr "Assinar todas as mensagens se possível"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
-#, fuzzy, kde-format
-#| msgid "Enable encrpytion, if we found keys for all recipients"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
 "Activar a encriptação se forem encontradas chaves para todos os destinatários"

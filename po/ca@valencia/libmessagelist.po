@@ -1615,8 +1615,7 @@ msgstr "Un clic en la capçalera ordena els missatges:"
 #, kde-format
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
-"En clicar en la capçalera de la columna s'utilitzarà com a criteri "
-"d'ordenació."
+"Clicant en la capçalera de la columna s'utilitzarà com a criteri d'ordenació."
 
 #: utils/themeeditor.cpp:83
 #, kde-format
