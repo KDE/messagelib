@@ -65,7 +65,7 @@ void RichTextComposerNg::setAutocorrection(PimCommon::AutoCorrection *autocorrec
 void RichTextComposerNg::setAutocorrectionLanguage(const QString &lang)
 {
     if (d->autoCorrection) {
-        PimCommon::AutoCorrectionSettings settings;
+        PimCommon::AutoCorrectionSettings settings = d->autoCorrection->autoCorrectionSettings();
         settings.setLanguage(lang);
         d->autoCorrection->setAutoCorrectionSettings(settings);
     }
