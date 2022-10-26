@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-24 00:49+0000\n"
-"PO-Revision-Date: 2022-05-17 21:28+0530\n"
+"PO-Revision-Date: 2022-10-25 19:51+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:169
 #, kde-format
@@ -969,6 +969,9 @@ msgid ""
 "\n"
 "Please re-select the certificate(s) which should be used for this recipient."
 msgstr ""
+"\"%1\" என்பவரின் சான்றிதழ்கள் சரியாயல்ல.\n"
+"\n"
+"இப்பெறுநருக்கு பயன்படுத்தவேண்டிய சான்றிதழ்களை மீண்டும் தேர்ந்தெடுங்கள்."
 
 #: composer/keyresolver.cpp:1541
 #, kde-format
@@ -1883,21 +1886,19 @@ msgid "Message Disposition Notification Request"
 msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgid "Send \"&denied\""
-msgstr "&கையொப்பமிடாமல் அனுப்பு"
+msgstr "\"&மறுக்கப்பட்டது\" என பதிலனுப்பு"
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr ""
+msgstr "&பொருட்படுத்தாதே"
 
 #: mdn/mdnadvicedialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "&Send"
-msgstr "&அப்படியே அனுப்பு"
+msgstr "&அனுப்பு"
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""

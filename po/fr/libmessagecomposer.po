@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-24 00:49+0000\n"
-"PO-Revision-Date: 2022-10-24 13:32+0200\n"
+"PO-Revision-Date: 2022-10-25 15:44+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -2506,15 +2506,10 @@ msgstr "Signer tous les messages, si possible"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
-"Des clés de chiffrement valables ont été trouvées pour tous les "
-"destinataires.\n"
-"Voulez-vous chiffrer ce message ?"
+"Activer le chiffrement si des clés sont trouvées pour tous les destinataires."
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:93

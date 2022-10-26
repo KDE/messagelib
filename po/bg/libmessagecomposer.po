@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-24 00:49+0000\n"
-"PO-Revision-Date: 2022-10-23 09:50+0200\n"
+"PO-Revision-Date: 2022-10-25 08:48+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -2481,8 +2481,7 @@ msgstr "Подписване на всички съобщения, ако е в�
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:89
-#, fuzzy, kde-format
-#| msgid "Enable encrpytion, if we found keys for all recipients"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
 "Активиране на  криптирането, ако са намерени ключове за всички получатели"
