@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-24 00:49+0000\n"
 "PO-Revision-Date: 2014-09-19 22:44+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: attachment/attachmentcontrollerbase.cpp:168
+#: attachment/attachmentcontrollerbase.cpp:169
 #, kde-format
 msgid "Failed to compress attachment"
 msgstr "Klarte ikke å komprimere vedlegg"
 
-#: attachment/attachmentcontrollerbase.cpp:179
+#: attachment/attachmentcontrollerbase.cpp:184
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
@@ -33,217 +33,217 @@ msgstr ""
 "Det komprimerte vedlegget er større enn originalen. Vil du beholde "
 "originalen?"
 
-#: attachment/attachmentcontrollerbase.cpp:182
+#: attachment/attachmentcontrollerbase.cpp:187
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Behold"
 
-#: attachment/attachmentcontrollerbase.cpp:183
+#: attachment/attachmentcontrollerbase.cpp:188
 #, kde-format
 msgid "Compress"
 msgstr "Komprimer"
 
-#: attachment/attachmentcontrollerbase.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:211
 #, kde-format
 msgid "Failed to attach file"
 msgstr "klarte ikke legge ved fil"
 
-#: attachment/attachmentcontrollerbase.cpp:275
+#: attachment/attachmentcontrollerbase.cpp:284
 #, kde-format
 msgid "Failed to reload attachment"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:322
+#: attachment/attachmentcontrollerbase.cpp:331
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Åpne med"
 
-#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:351
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Annet …"
 
-#: attachment/attachmentcontrollerbase.cpp:344
-#: attachment/attachmentcontrollerbase.cpp:352
+#: attachment/attachmentcontrollerbase.cpp:353
+#: attachment/attachmentcontrollerbase.cpp:361
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Åpne med …"
 
-#: attachment/attachmentcontrollerbase.cpp:378
+#: attachment/attachmentcontrollerbase.cpp:387
 #, kde-format
 msgid "Failed to attach public key"
 msgstr "Klarte ikke å legge ved offentlig nøkkel"
 
-#: attachment/attachmentcontrollerbase.cpp:392
+#: attachment/attachmentcontrollerbase.cpp:401
 #, kde-format
 msgid "Failed to attach vCard"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:405
+#: attachment/attachmentcontrollerbase.cpp:414
 #, kde-format
 msgid "Failed to attach text from clipboard"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:453
+#: attachment/attachmentcontrollerbase.cpp:462
 #, kde-format
 msgid "Attach &Public Key..."
 msgstr "Legg ved &offentlig nøkkel …"
 
-#: attachment/attachmentcontrollerbase.cpp:456
+#: attachment/attachmentcontrollerbase.cpp:465
 #, kde-format
 msgid "Attach &My Public Key"
 msgstr "Legg ved &min offentlige nøkkel"
 
-#: attachment/attachmentcontrollerbase.cpp:459
-#: attachment/attachmentcontrollerbase.cpp:464
-#: attachment/attachmentcontrollerbase.cpp:470
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:473
 #: attachment/attachmentcontrollerbase.cpp:479
+#: attachment/attachmentcontrollerbase.cpp:488
 #, kde-format
 msgid "Attach"
 msgstr "Legg ved"
 
-#: attachment/attachmentcontrollerbase.cpp:463
-#: composer/composerviewbase.cpp:1905
+#: attachment/attachmentcontrollerbase.cpp:472
+#: composer/composerviewbase.cpp:1921
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Legg ved fil …"
 
-#: attachment/attachmentcontrollerbase.cpp:465
+#: attachment/attachmentcontrollerbase.cpp:474
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Legg ved …"
 
-#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "&Attach Directory..."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "Attach Own vCard"
 msgstr "Legg ved eget vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:483
 #, kde-format
 msgid "Own vCard"
 msgstr "Eget vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:487
 #, kde-format
 msgid "&Attach vCards..."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:491
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:483
+#: attachment/attachmentcontrollerbase.cpp:492
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:504
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "&Fjern vedlegg"
 
-#: attachment/attachmentcontrollerbase.cpp:496
+#: attachment/attachmentcontrollerbase.cpp:505
 #, kde-format
 msgid "Remove"
 msgstr "Fjern"
 
-#: attachment/attachmentcontrollerbase.cpp:504
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Åpne"
 
-#: attachment/attachmentcontrollerbase.cpp:509
+#: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Vis"
 
-#: attachment/attachmentcontrollerbase.cpp:514
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Rediger"
 
-#: attachment/attachmentcontrollerbase.cpp:519
+#: attachment/attachmentcontrollerbase.cpp:528
 #, kde-format
 msgid "Edit With..."
 msgstr "Rediger med …"
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Lagre vedlegg som …"
 
-#: attachment/attachmentcontrollerbase.cpp:525
+#: attachment/attachmentcontrollerbase.cpp:534
 #, kde-format
 msgid "Save As..."
 msgstr "Lagre som …"
 
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:542
 #, kde-format
 msgid "Attachment Pr&operties..."
 msgstr "&Egenskaper for vedlegg …"
 
-#: attachment/attachmentcontrollerbase.cpp:534
+#: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
 msgid "Properties"
 msgstr "Egenskaper"
 
-#: attachment/attachmentcontrollerbase.cpp:542
+#: attachment/attachmentcontrollerbase.cpp:551
 #, kde-format
 msgid "Select All"
 msgstr "Velg alt"
 
-#: attachment/attachmentcontrollerbase.cpp:545
+#: attachment/attachmentcontrollerbase.cpp:554
 #, kde-format
 msgid "Reload"
 msgstr "Last på nytt"
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:702
-#: attachment/attachmentcontrollerbase.cpp:751
+#: attachment/attachmentcontrollerbase.cpp:687
+#: attachment/attachmentcontrollerbase.cpp:711
+#: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail klarte ikke skrive vedlegget til en midlertidig fil."
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:702
+#: attachment/attachmentcontrollerbase.cpp:687
+#: attachment/attachmentcontrollerbase.cpp:711
 #, kde-format
 msgid "Unable to open attachment"
 msgstr "Kan ikke åpne vedlegg"
 
-#: attachment/attachmentcontrollerbase.cpp:711
+#: attachment/attachmentcontrollerbase.cpp:720
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "KMail klarte ikke åpne vedlegget."
 
-#: attachment/attachmentcontrollerbase.cpp:751
+#: attachment/attachmentcontrollerbase.cpp:760
 #, kde-format
 msgid "Unable to edit attachment"
 msgstr "Kan ikke redigere vedlegg"
 
-#: attachment/attachmentcontrollerbase.cpp:792
+#: attachment/attachmentcontrollerbase.cpp:801
 #, kde-format
 msgid "unnamed"
 msgstr "uten navn"
 
-#: attachment/attachmentcontrollerbase.cpp:795
+#: attachment/attachmentcontrollerbase.cpp:804
 #, kde-format
 msgid "Save Attachment As"
 msgstr "Lagre vedlegg som"
 
-#: attachment/attachmentcontrollerbase.cpp:818
+#: attachment/attachmentcontrollerbase.cpp:827
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -252,60 +252,60 @@ msgstr ""
 "Fila %1 finnes fra før.\n"
 "Vil du erstatte den?"
 
-#: attachment/attachmentcontrollerbase.cpp:819
+#: attachment/attachmentcontrollerbase.cpp:828
 #, kde-format
 msgid "Save to File"
 msgstr "Lagre til fil"
 
-#: attachment/attachmentcontrollerbase.cpp:820
+#: attachment/attachmentcontrollerbase.cpp:829
 #, kde-format
 msgid "&Replace"
 msgstr "&Erstatt"
 
-#: attachment/attachmentcontrollerbase.cpp:847
-#: attachment/attachmentcontrollerbase.cpp:905
+#: attachment/attachmentcontrollerbase.cpp:860
+#: attachment/attachmentcontrollerbase.cpp:926
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:848
-#: attachment/attachmentcontrollerbase.cpp:906
+#: attachment/attachmentcontrollerbase.cpp:861
+#: attachment/attachmentcontrollerbase.cpp:927
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:849
-#: attachment/attachmentcontrollerbase.cpp:907
+#: attachment/attachmentcontrollerbase.cpp:862
+#: attachment/attachmentcontrollerbase.cpp:928
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:884
+#: attachment/attachmentcontrollerbase.cpp:901
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:893
+#: attachment/attachmentcontrollerbase.cpp:910
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:936
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Legg ved min offentlige OpenPGP-nøkkel"
 
-#: attachment/attachmentcontrollerbase.cpp:961
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Velg den offentlige nøkkelen som skal legges ved."
@@ -374,37 +374,37 @@ msgstr "Foreslå automatisk visning"
 msgid "No key data for recipients found."
 msgstr "Fant ingen nøkkeldata for mottakere."
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:329
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "Behold formateringa, ikke signer/&krypter"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:329
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "Behold formateringa, ikke &krypter"
 
-#: composer/composerviewbase.cpp:328
+#: composer/composerviewbase.cpp:329
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "&Behold formateringa, ikke signer"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "Signering/Kryptering (slett formateringa)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "Krypter (slett formateringa)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "Signer (slett formateringa)"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:336
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -413,70 +413,70 @@ msgstr ""
 "<qt><p>Integrert signering/kryptering av HTML-meldinger er ikke mulig.</"
 "p><p>Vil du slette formateringa?</p></qt>"
 
-#: composer/composerviewbase.cpp:333
+#: composer/composerviewbase.cpp:338
 #, kde-format
 msgid "Sign/Encrypt Message?"
 msgstr "Vil du signere/kryptere meldinga?"
 
-#: composer/composerviewbase.cpp:514
+#: composer/composerviewbase.cpp:523
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "Det var ikke mulig å opprette en meldingsredigering"
 
-#: composer/composerviewbase.cpp:524
+#: composer/composerviewbase.cpp:537
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "Vil du endre størrelse på bilder?"
 
-#: composer/composerviewbase.cpp:525
+#: composer/composerviewbase.cpp:538
 #, kde-format
 msgid "Auto Resize Images"
 msgstr "Endre størrelse på bilder automatisk"
 
-#: composer/composerviewbase.cpp:526
+#: composer/composerviewbase.cpp:539
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr ""
 
-#: composer/composerviewbase.cpp:527
+#: composer/composerviewbase.cpp:540
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr ""
 
-#: composer/composerviewbase.cpp:734
+#: composer/composerviewbase.cpp:745
 #, kde-format
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP-nøkkel utløpt"
 
-#: composer/composerviewbase.cpp:734
+#: composer/composerviewbase.cpp:745
 #, kde-format
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME-sertifikat utløpt"
 
-#: composer/composerviewbase.cpp:736
+#: composer/composerviewbase.cpp:747
 #, kde-format
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP-nøkkel utløper snart"
 
-#: composer/composerviewbase.cpp:736
+#: composer/composerviewbase.cpp:747
 #, kde-format
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME-sertifikat utløper snart"
 
-#: composer/composerviewbase.cpp:811 composer/composerviewbase.cpp:825
-#: composer/composerviewbase.cpp:857
+#: composer/composerviewbase.cpp:822 composer/composerviewbase.cpp:836
+#: composer/composerviewbase.cpp:868
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Klarte ikke å slå opp nøkler. Meld inn feilen."
 
-#: composer/composerviewbase.cpp:1063 composer/composerviewbase.cpp:1328
+#: composer/composerviewbase.cpp:1074 composer/composerviewbase.cpp:1339
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Jobben ble avbrutt av brukeren"
 
-#: composer/composerviewbase.cpp:1068
+#: composer/composerviewbase.cpp:1079
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -485,37 +485,37 @@ msgstr ""
 "Klarte ikke lage melding: %1\n"
 "Meld inn denne feilen."
 
-#: composer/composerviewbase.cpp:1070
+#: composer/composerviewbase.cpp:1081
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Klarte ikke lage melding: %1"
 
-#: composer/composerviewbase.cpp:1167
+#: composer/composerviewbase.cpp:1178
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "En feil oppsto ved forsøk på å legge meldinga i kø for sending %1"
 
-#: composer/composerviewbase.cpp:1331
+#: composer/composerviewbase.cpp:1342
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Klarte ikke autolagre melding: %1"
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1361
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Klarte ikke skrive alle data til fil."
 
-#: composer/composerviewbase.cpp:1353
+#: composer/composerviewbase.cpp:1364
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Klarte ikke ferdigstille fila."
 
-#: composer/composerviewbase.cpp:1357
+#: composer/composerviewbase.cpp:1368
 #, kde-format
 msgid "Could not open file."
 msgstr "Kunne ikke åpne fila."
 
-#: composer/composerviewbase.cpp:1364
+#: composer/composerviewbase.cpp:1375
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -526,17 +526,17 @@ msgstr ""
 "%2\n"
 "Årsak: %3"
 
-#: composer/composerviewbase.cpp:1370
+#: composer/composerviewbase.cpp:1381
 #, kde-format
 msgid "Autosaving Message Failed"
 msgstr "En feil oppstod under autolagring av melding"
 
-#: composer/composerviewbase.cpp:1483
+#: composer/composerviewbase.cpp:1494
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Klarte ikke å lagre meldinga: %1"
 
-#: composer/composerviewbase.cpp:1901
+#: composer/composerviewbase.cpp:1917
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -547,17 +547,17 @@ msgstr ""
 "ikke lagt ved noe.\n"
 "Vil du legge ved en fil?"
 
-#: composer/composerviewbase.cpp:1904
+#: composer/composerviewbase.cpp:1920
 #, kde-format
 msgid "File Attachment Reminder"
 msgstr "Påminnelse om filvedlegg"
 
-#: composer/composerviewbase.cpp:1906
+#: composer/composerviewbase.cpp:1922
 #, kde-format
 msgid "&Send as Is"
 msgstr "Send &uten endring"
 
-#: composer/composerviewbase.cpp:1958
+#: composer/composerviewbase.cpp:1978
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -568,23 +568,23 @@ msgstr ""
 "vil signere denne meldinga.\n"
 "Vil du signere denne meldinga?"
 
-#: composer/composerviewbase.cpp:1963 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1989 composer/composerviewbase.cpp:2030
 #, kde-format
 msgid "Sign Message?"
 msgstr "Signer melding?"
 
-#: composer/composerviewbase.cpp:1963 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1990 composer/composerviewbase.cpp:2031
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Signer"
 
-#: composer/composerviewbase.cpp:1963 composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1991 composer/composerviewbase.cpp:2032
 #, kde-format
 msgid "Do &Not Sign"
 msgstr "&Ikke signer"
 
-#: composer/composerviewbase.cpp:1984
+#: composer/composerviewbase.cpp:2020
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -593,7 +593,7 @@ msgstr ""
 "Disse mottakerne har motstridende preferanser for signering.\n"
 "Signere denne meldinga?"
 
-#: composer/composerviewbase.cpp:2008
+#: composer/composerviewbase.cpp:2060
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -602,17 +602,17 @@ msgstr ""
 "Du vil signere denne meldinga, men det er ikke satt opp noen gyldige "
 "signeringsnøkler for denne identiteten."
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2063
 #, kde-format
 msgid "Send Unsigned?"
 msgstr "Send usignert?"
 
-#: composer/composerviewbase.cpp:2011
+#: composer/composerviewbase.cpp:2063
 #, kde-format
 msgid "Send &Unsigned"
 msgstr "Send &usignert"
 
-#: composer/composerviewbase.cpp:2025
+#: composer/composerviewbase.cpp:2077
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -623,7 +623,7 @@ msgstr ""
 "Det kan stride mot pålagt praksis å sende delvis signerte meldinger.\n"
 "Vil du signere alle delene i stedet?"
 
-#: composer/composerviewbase.cpp:2029
+#: composer/composerviewbase.cpp:2081
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -634,27 +634,27 @@ msgstr ""
 "Det kan stride mot pålagt praksis å sende usignerte meldinger.\n"
 "Vil du signere meldinga i stedet?"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Signer alle deler"
 
-#: composer/composerviewbase.cpp:2032
+#: composer/composerviewbase.cpp:2084
 #, kde-format
 msgid "&Sign"
 msgstr "&Signer"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2092
 #, kde-format
 msgid "Unsigned-Message Warning"
 msgstr "Advarsel om usignert melding"
 
-#: composer/composerviewbase.cpp:2034
+#: composer/composerviewbase.cpp:2094
 #, kde-format
 msgid "Send &As Is"
 msgstr "Send &som den er"
 
-#: composer/composerviewbase.cpp:2081
+#: composer/composerviewbase.cpp:2149
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -663,7 +663,7 @@ msgstr ""
 "Det ble funnet gyldige, tiltrodde krypteringsnøkler for alle mottakere.\n"
 "Skal meldinga krypteres?"
 
-#: composer/composerviewbase.cpp:2084
+#: composer/composerviewbase.cpp:2152
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -674,34 +674,34 @@ msgstr ""
 "meldinga skulle krypteres.\n"
 "Vil du kryptere denne meldinga?"
 
-#: composer/composerviewbase.cpp:2090 composer/composerviewbase.cpp:2116
+#: composer/composerviewbase.cpp:2163 composer/composerviewbase.cpp:2205
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Krypter melding?"
 
-#: composer/composerviewbase.cpp:2091
+#: composer/composerviewbase.cpp:2164
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Signer og &Krypter"
 
-#: composer/composerviewbase.cpp:2091 composer/composerviewbase.cpp:2116
-#: composer/composerviewbase.cpp:2163 composer/keyresolver.cpp:1317
+#: composer/composerviewbase.cpp:2164 composer/composerviewbase.cpp:2206
+#: composer/composerviewbase.cpp:2262 composer/keyresolver.cpp:1317
 #: composer/keyresolver.cpp:1353
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Krypter"
 
-#: composer/composerviewbase.cpp:2092 composer/composerviewbase.cpp:2168
+#: composer/composerviewbase.cpp:2165 composer/composerviewbase.cpp:2271
 #, kde-format
 msgid "&Sign Only"
 msgstr "Bare &signer"
 
-#: composer/composerviewbase.cpp:2092 composer/composerviewbase.cpp:2168
+#: composer/composerviewbase.cpp:2165 composer/composerviewbase.cpp:2271
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Send som &den er"
 
-#: composer/composerviewbase.cpp:2113
+#: composer/composerviewbase.cpp:2194
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -710,12 +710,12 @@ msgstr ""
 "Disse mottakerne har motstridende preferanser for kryptering.\n"
 "Kryptere denne meldinga?"
 
-#: composer/composerviewbase.cpp:2116
+#: composer/composerviewbase.cpp:2207
 #, kde-format
 msgid "Do &Not Encrypt"
 msgstr "&Ikke krypter"
 
-#: composer/composerviewbase.cpp:2136
+#: composer/composerviewbase.cpp:2235
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -726,17 +726,17 @@ msgstr ""
 "ikke satt opp noen gyldige, tiltrodde krypteringsnøkler for denne "
 "identiteten."
 
-#: composer/composerviewbase.cpp:2140
+#: composer/composerviewbase.cpp:2239
 #, kde-format
 msgid "Send Unencrypted?"
 msgstr "Send ukryptert?"
 
-#: composer/composerviewbase.cpp:2140 composer/keyresolver.cpp:1339
+#: composer/composerviewbase.cpp:2239 composer/keyresolver.cpp:1339
 #, kde-format
 msgid "Send &Unencrypted"
 msgstr "Send &ukryptert"
 
-#: composer/composerviewbase.cpp:2154
+#: composer/composerviewbase.cpp:2253
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -749,7 +749,7 @@ msgstr ""
 "eller lekke følsomme opplysninger.\n"
 "Vil du kryptere alle delene i stedet?"
 
-#: composer/composerviewbase.cpp:2159
+#: composer/composerviewbase.cpp:2258
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -762,12 +762,12 @@ msgstr ""
 "lekke følsomme opplysninger.\n"
 "Vil du kryptere meldinger i stedet?"
 
-#: composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2262
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Krypter alle deler"
 
-#: composer/composerviewbase.cpp:2166
+#: composer/composerviewbase.cpp:2269
 #, kde-format
 msgid "Unencrypted Message Warning"
 msgstr "Advarsel om ukryptert melding"
@@ -1053,7 +1053,7 @@ msgstr ""
 "\n"
 "Velg hvilke(t) sertifikat(er) som skal brukes for denne mottakeren."
 
-#: composer/nearexpirychecker.cpp:82
+#: composer/nearexpirychecker.cpp:68
 #, kde-format
 msgid ""
 "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1068,7 +1068,7 @@ msgstr[1] ""
 "<p>Din signeringsnøkkel for OpenPGP</p><p align=center><b>%2</b>(Nøkkel ID 0x"
 "%3)</p><p>utløp for %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:88
+#: composer/nearexpirychecker.cpp:74
 #, kde-format
 msgid ""
 "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1083,7 +1083,7 @@ msgstr[1] ""
 "<p>Din krypteringsnøkkel for OpenPGP</p><p align=center><b>%2</b>(Nøkkel ID "
 "0x%3)</p><p>utløp for %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:94
+#: composer/nearexpirychecker.cpp:80
 #, kde-format
 msgid ""
 "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1098,7 +1098,7 @@ msgstr[1] ""
 "<p>OpenPGP nøkkelen for</p><p align=center><b>%2</b>(Nøkkel ID 0x%3)</"
 "p><p>utløp for %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:103
+#: composer/nearexpirychecker.cpp:89
 #, kde-format
 msgid ""
 "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1109,7 +1109,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:109
+#: composer/nearexpirychecker.cpp:95
 #, kde-format
 msgid ""
 "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1120,7 +1120,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:115
+#: composer/nearexpirychecker.cpp:101
 #, kde-format
 msgid ""
 "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
@@ -1131,7 +1131,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:135
+#: composer/nearexpirychecker.cpp:121
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1150,7 +1150,7 @@ msgstr[1] ""
 "signeringssertifikatet ditt</p><p align=center><b>%2</b> (serienummer %3)</"
 "p><p>utløp for %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:143
+#: composer/nearexpirychecker.cpp:129
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1169,7 +1169,7 @@ msgstr[1] ""
 "krypteringssertifikatet ditt</p><p align=center><b>%2</b> (serienummer %3)</"
 "p><p>utløp for  %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:151
+#: composer/nearexpirychecker.cpp:137
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
@@ -1188,7 +1188,7 @@ msgstr[1] ""
 "sertifikatet</p><p align=center><b>%2</b> (serienummer %3></p><p>utløp "
 "for %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:161
+#: composer/nearexpirychecker.cpp:147
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1207,7 +1207,7 @@ msgstr[1] ""
 "signeringssertifikatet ditt</p><p align=center><b>%2</b> (serienummer %3)</"
 "p><p>utløp for %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:169
+#: composer/nearexpirychecker.cpp:155
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1226,7 +1226,7 @@ msgstr[1] ""
 "krypteringssertifikatet ditt</p><p align=center><b>%2</b> (serienummer %3)</"
 "p><p>utløp for  %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:177
+#: composer/nearexpirychecker.cpp:163
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
@@ -1245,7 +1245,7 @@ msgstr[1] ""
 "sertifikatet ditt</p><p align=center><b>%2</b> (serienummer %3)</p><p>utløp "
 "for  %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:193
+#: composer/nearexpirychecker.cpp:179
 #, kde-format
 msgid ""
 "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
@@ -1260,7 +1260,7 @@ msgstr[1] ""
 "<p>S/MIME-signeringssertifikatet ditt</p><p align=center><b>%2</b> "
 "(serienummer %3)</p><p>utløp for %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:199
+#: composer/nearexpirychecker.cpp:185
 #, kde-format
 msgid ""
 "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
@@ -1275,7 +1275,7 @@ msgstr[1] ""
 "<p>S/MIME-krypteringssertifikatet ditt</p><p align=center><b>%2</b> "
 "(serienummer %3)</p><p>utløp for %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:205
+#: composer/nearexpirychecker.cpp:191
 #, kde-format
 msgid ""
 "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
@@ -1290,7 +1290,7 @@ msgstr[1] ""
 "<p>S/MIME-sertifikatet for</p><p align=center><b>%2</b> (serienummer %3)</"
 "p><p>utløp for %1 dager siden.</p>"
 
-#: composer/nearexpirychecker.cpp:218
+#: composer/nearexpirychecker.cpp:204
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1303,7 +1303,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:226
+#: composer/nearexpirychecker.cpp:212
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/MIME "
@@ -1316,7 +1316,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:234
+#: composer/nearexpirychecker.cpp:220
 #, kde-format
 msgid ""
 "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
@@ -1329,7 +1329,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:244
+#: composer/nearexpirychecker.cpp:230
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1342,7 +1342,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:252
+#: composer/nearexpirychecker.cpp:238
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
@@ -1355,7 +1355,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:260
+#: composer/nearexpirychecker.cpp:246
 #, kde-format
 msgid ""
 "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for S/"
@@ -1368,7 +1368,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:276
+#: composer/nearexpirychecker.cpp:262
 #, kde-format
 msgid ""
 "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
@@ -1379,7 +1379,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:282
+#: composer/nearexpirychecker.cpp:268
 #, kde-format
 msgid ""
 "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
@@ -1390,7 +1390,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: composer/nearexpirychecker.cpp:288
+#: composer/nearexpirychecker.cpp:274
 #, kde-format
 msgid ""
 "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
@@ -1805,17 +1805,17 @@ msgid ""
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr ""
 
-#: job/maintextjob.cpp:60
+#: job/maintextjob.cpp:61
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr "Bedt om å bruke ordbryting, men fikk ikke klartekst som var brutt."
 
-#: job/maintextjob.cpp:67
+#: job/maintextjob.cpp:68
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr "Bedt om ikke å bruke ordbryting, men fikk ikke ren klartekst."
 
-#: job/maintextjob.cpp:82
+#: job/maintextjob.cpp:83
 #, kde-format
 msgid ""
 "No charsets were available for encoding. Please check your configuration and "
@@ -1824,7 +1824,7 @@ msgstr ""
 "Ingen tilgjengelige tegnsett for innkoding. Kontroller oppsettet og se til "
 "at det inneholder minst ett tegnsett for sending."
 
-#: job/maintextjob.cpp:100
+#: job/maintextjob.cpp:105
 #, kde-format
 msgid ""
 "Encoding the message with %1 will lose some characters.\n"
@@ -1833,32 +1833,32 @@ msgstr ""
 "Om meldingen kodes med %1 går noen tegn tapt.\n"
 "Vil du fortsette?"
 
-#: job/maintextjob.cpp:103
+#: job/maintextjob.cpp:108
 #, kde-format
 msgid "Some Characters Will Be Lost"
 msgstr "Noen tegn vil gå tapt"
 
-#: job/maintextjob.cpp:104
+#: job/maintextjob.cpp:109
 #, kde-format
 msgid "Lose Characters"
 msgstr "Mist tegn"
 
-#: job/maintextjob.cpp:105
+#: job/maintextjob.cpp:110
 #, kde-format
 msgid "Change Encoding"
 msgstr "Endre koding"
 
-#: job/maintextjob.cpp:108
+#: job/maintextjob.cpp:117
 #, kde-format
 msgid "User decided to change the encoding."
 msgstr "Bruker bestemte at kodingen skal endres."
 
-#: job/maintextjob.cpp:118
+#: job/maintextjob.cpp:127
 #, kde-format
 msgid "The selected encoding (%1) cannot fully encode the message."
 msgstr "Den valgte tegnkodingen (%1) kan ikke kode meldingen fullstendig."
 
-#: job/maintextjob.cpp:143
+#: job/maintextjob.cpp:152
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Klarte ikke skaffe tekstkodek for tegnsett «%1»."
@@ -2354,57 +2354,41 @@ msgstr "&Tekstbryting ved kolonne:"
 msgid "Improve plain text version of HTML message"
 msgstr "Forbedre enkel tekst-versjon av HTML-melding"
 
-#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.cmake:85
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr ""
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:89
+#, kde-format
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr ""
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:93
 #, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr "Advar før ukrypterte meldinger sendes"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:89
+#: settings/messagecomposer.kcfg.cmake:97
 #, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr "Advar før usignerte meldinger sendes"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:93
+#: settings/messagecomposer.kcfg.cmake:101
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
 "Gi varsel hvis sertifikater/nøkler blir foreldet snart (sett opp grenser "
 "nedenfor)"
 
-#. i18n: ectx: label, entry (CryptoWarnSignKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:97
-#, kde-format
-msgid ""
-"The minimum number of days that the signature certificate should be valid "
-"before issuing a warning"
-msgstr ""
-"Minste antall dager signatursertifikatet skal være gyldig uten å gi en "
-"advarsel"
-
-#. i18n: ectx: label, entry (CryptoWarnSignChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:101
-#, kde-format
-msgid ""
-"The minimum number of days that the CA certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"Minste antall dager CA-sertifikatet skal være gyldig uten å gi en advarsel"
-
-#. i18n: ectx: label, entry (CryptoWarnSignRootNearExpiryThresholdDays), group (Composer)
-#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:105
-#: settings/messagecomposer.kcfg.cmake:117
-#, kde-format
-msgid ""
-"The minimum number of days that the root certificate should be valid before "
-"issuing a warning"
-msgstr ""
-"Minste antall dager root-sertifikatet skal være gyldig uten å gi en advarsel"
-
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:105
 #: settings/messagecomposer.kcfg.cmake:109
 #, kde-format
 msgid ""
@@ -2424,18 +2408,17 @@ msgstr ""
 "Minste antall dager som alle sertifikater i kjeden skal være gyldige uten å "
 "gi en advarsel"
 
-#. i18n: ectx: label, entry (CryptoEncryptToSelf), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:121
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.cmake:117
 #, kde-format
 msgid ""
-"When encrypting emails, always also encrypt to the certificate of my own "
-"identity"
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
 msgstr ""
-"Når e-post krypteres, krypter alltid også til et sertifikat for min egen "
-"identitet"
+"Minste antall dager root-sertifikatet skal være gyldig uten å gi en advarsel"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.cmake:125
+#: settings/messagecomposer.kcfg.cmake:121
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
@@ -2669,7 +2652,7 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: utils/util.cpp:260
+#: utils/util.cpp:261
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2679,7 +2662,7 @@ msgstr ""
 "vedlegg,vedlegga,vedleggene,vedlegget,vedlagt,vedlagte,lagt ved,attachment,"
 "attached"
 
-#: utils/util.cpp:293
+#: utils/util.cpp:299
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2688,18 +2671,18 @@ msgstr ""
 "E-postsenderen er ikke satt opp, e-poster kan ikke sendes. Vil du opprette "
 "en e-postsender?"
 
-#: utils/util.cpp:294
+#: utils/util.cpp:300
 #, kde-format
 msgid "No mail dispatcher."
 msgstr "Ingen e-postsender."
 
-#: utils/util.cpp:295
+#: utils/util.cpp:301
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr ""
 
-#: utils/util.cpp:310
+#: utils/util.cpp:324
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2708,12 +2691,12 @@ msgstr ""
 "E-postsenderen er frakoblet, e-poster kan ikke sendes. Vil du sette den "
 "tilkoblet?"
 
-#: utils/util.cpp:311
+#: utils/util.cpp:325
 #, kde-format
 msgid "Mail dispatcher offline."
 msgstr "E.postsender frakoblet."
 
-#: utils/util.cpp:312
+#: utils/util.cpp:326
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

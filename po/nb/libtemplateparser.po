@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-26 00:45+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2013-09-30 09:50+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -43,7 +43,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "Forover"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#: customtemplates.cpp:77 templatesconfiguration.cpp:74
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Hvordan virker dette?</a>"
@@ -528,7 +528,7 @@ msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr ""
 
-#: templatesconfiguration.cpp:50
+#: templatesconfiguration.cpp:51
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -541,7 +541,7 @@ msgstr ""
 "I meldingsmalene kan du bruke utdata fra kommandoer enten ved å taste dem "
 "inn eller ved å velge dem fra menyen <i>Sett inn kommando</i>.</p>"
 
-#: templatesconfiguration.cpp:58
+#: templatesconfiguration.cpp:59
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -550,7 +550,7 @@ msgstr ""
 "<p>Maler som oppgis her er spesielle for mappa. De overstyrer både globale "
 "maler og identitetsmaler hvis de er oppgitt.</p>"
 
-#: templatesconfiguration.cpp:63
+#: templatesconfiguration.cpp:64
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -560,7 +560,7 @@ msgstr ""
 "<p>Maler som oppgis her er spesielle for identiteten. De overstyrer globale "
 "maler, men kan overstyres av mappemaler hvis de er oppgitt.</p>"
 
-#: templatesconfiguration.cpp:68
+#: templatesconfiguration.cpp:69
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -569,27 +569,27 @@ msgstr ""
 "<p>Dette er globale (standard-) mapper. De kan overstyres av identitetsmaler "
 "eller mappemaler dersom de er oppgitt.</p>"
 
-#: templatesconfiguration.cpp:100
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr "Vil du nullstille gjeldende mal eller alle maler til standardverdier?"
 
-#: templatesconfiguration.cpp:101
+#: templatesconfiguration.cpp:106
 #, kde-format
 msgid "Reset to default"
 msgstr "Tilbakestill til standard"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:107
 #, kde-format
 msgid "Reset Current Template"
 msgstr "Tilbakestill gjeldende mal"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:108
 #, kde-format
 msgid "Reset All Templates"
 msgstr "Tilbakestill alle maler"
 
-#: templatesconfiguration.cpp:361
+#: templatesconfiguration.cpp:370
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
