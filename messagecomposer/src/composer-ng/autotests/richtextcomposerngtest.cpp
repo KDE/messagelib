@@ -51,9 +51,9 @@ void RichTextComposerNgTest::shouldForceAutoCorrection()
 
     richtextComposerNg.setPlainText(original);
     PimCommon::AutoCorrection autocorrection;
-    PimCommon::AutoCorrectionSettings settings;
-    settings.setEnabledAutoCorrection(true);
-    settings.setUppercaseFirstCharOfSentence(true);
+    auto settings = new PimCommon::AutoCorrectionSettings;
+    settings->setEnabledAutoCorrection(true);
+    settings->setUppercaseFirstCharOfSentence(true);
     autocorrection.setAutoCorrectionSettings(settings);
     richtextComposerNg.setAutocorrection(&autocorrection);
     richtextComposerNg.forceAutoCorrection(false);
@@ -90,10 +90,10 @@ void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
     cur.setPosition(selectionEnd, QTextCursor::KeepAnchor);
     richtextComposerNg.setTextCursor(cur);
     PimCommon::AutoCorrection autocorrection;
-    PimCommon::AutoCorrectionSettings settings;
-    settings.setEnabledAutoCorrection(true);
-    settings.setUppercaseFirstCharOfSentence(true);
-    settings.setFixTwoUppercaseChars(true);
+    auto settings = new PimCommon::AutoCorrectionSettings;
+    settings->setEnabledAutoCorrection(true);
+    settings->setUppercaseFirstCharOfSentence(true);
+    settings->setFixTwoUppercaseChars(true);
     autocorrection.setAutoCorrectionSettings(settings);
     richtextComposerNg.setAutocorrection(&autocorrection);
     richtextComposerNg.forceAutoCorrection(true);
