@@ -13,7 +13,7 @@
 
 class RichTextComposerNgTest;
 
-namespace PimCommon
+namespace PimCommonAutoCorrection
 {
 class AutoCorrection;
 }
@@ -34,8 +34,8 @@ public:
     explicit RichTextComposerNg(QWidget *parent = nullptr);
     ~RichTextComposerNg() override;
 
-    Q_REQUIRED_RESULT PimCommon::AutoCorrection *autocorrection() const;
-    void setAutocorrection(PimCommon::AutoCorrection *autocorrect);
+    Q_REQUIRED_RESULT PimCommonAutoCorrection::AutoCorrection *autocorrection() const;
+    void setAutocorrection(PimCommonAutoCorrection::AutoCorrection *autocorrect);
     void setAutocorrectionLanguage(const QString &lang);
 
     void fillComposerTextPart(MessageComposer::TextPart *textPart);

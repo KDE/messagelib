@@ -12,7 +12,7 @@
 #include <KPIMTextEdit/RichTextComposerControler>
 #include <KPIMTextEdit/RichTextComposerImages>
 #include <KPIMTextEdit/TextHTMLBuilder>
-#include <PimCommon/AutoCorrection>
+#include <PimCommonAutoCorrection/AutoCorrection>
 #include <part/textpart.h>
 
 #include <KMessageBox>
@@ -34,7 +34,7 @@ public:
 
     void fixHtmlFontSize(QString &cleanHtml) const;
     Q_REQUIRED_RESULT QString toCleanHtml() const;
-    PimCommon::AutoCorrection *autoCorrection = nullptr;
+    PimCommonAutoCorrection::AutoCorrection *autoCorrection = nullptr;
     RichTextComposerNg *const richtextComposer;
     MessageComposer::RichTextComposerSignatures *richTextComposerSignatures = nullptr;
 };
@@ -52,12 +52,12 @@ MessageComposer::RichTextComposerSignatures *RichTextComposerNg::composerSignatu
     return d->richTextComposerSignatures;
 }
 
-PimCommon::AutoCorrection *RichTextComposerNg::autocorrection() const
+PimCommonAutoCorrection::AutoCorrection *RichTextComposerNg::autocorrection() const
 {
     return d->autoCorrection;
 }
 
-void RichTextComposerNg::setAutocorrection(PimCommon::AutoCorrection *autocorrect)
+void RichTextComposerNg::setAutocorrection(PimCommonAutoCorrection::AutoCorrection *autocorrect)
 {
     d->autoCorrection = autocorrect;
 }
@@ -65,7 +65,7 @@ void RichTextComposerNg::setAutocorrection(PimCommon::AutoCorrection *autocorrec
 void RichTextComposerNg::setAutocorrectionLanguage(const QString &lang)
 {
     if (d->autoCorrection) {
-        PimCommon::AutoCorrectionSettings *settings = d->autoCorrection->autoCorrectionSettings();
+        PimCommonAutoCorrection::AutoCorrectionSettings *settings = d->autoCorrection->autoCorrectionSettings();
         settings->setLanguage(lang);
         d->autoCorrection->setAutoCorrectionSettings(settings);
     }
