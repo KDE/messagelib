@@ -11,7 +11,7 @@
 #include <KActionCollection>
 #include <KPIMTextEdit/RichTextComposerControler>
 
-#include <PimCommon/AutoCorrection>
+#include <PimCommonAutoCorrection/AutoCorrection>
 #include <QStandardPaths>
 #include <QTest>
 
@@ -50,8 +50,8 @@ void RichTextComposerNgTest::shouldForceAutoCorrection()
     MessageComposer::RichTextComposerNg richtextComposerNg;
 
     richtextComposerNg.setPlainText(original);
-    PimCommon::AutoCorrection autocorrection;
-    auto settings = new PimCommon::AutoCorrectionSettings;
+    PimCommonAutoCorrection::AutoCorrection autocorrection;
+    auto settings = new PimCommonAutoCorrection::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setUppercaseFirstCharOfSentence(true);
     autocorrection.setAutoCorrectionSettings(settings);
@@ -89,8 +89,8 @@ void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
     cur.setPosition(selectionStart);
     cur.setPosition(selectionEnd, QTextCursor::KeepAnchor);
     richtextComposerNg.setTextCursor(cur);
-    PimCommon::AutoCorrection autocorrection;
-    auto settings = new PimCommon::AutoCorrectionSettings;
+    PimCommonAutoCorrection::AutoCorrection autocorrection;
+    auto settings = new PimCommonAutoCorrection::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setUppercaseFirstCharOfSentence(true);
     settings->setFixTwoUppercaseChars(true);

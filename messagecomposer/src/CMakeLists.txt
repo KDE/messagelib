@@ -269,6 +269,7 @@ target_link_libraries(KF5MessageComposer
     KF5::Mime
     KF5::MessageCore
     KF5::PimCommonAkonadi
+    KF5::PimCommonAutoCorrection
     KF5::AkonadiCore
     KF5::IdentityManagementWidgets
     KF5::PimTextEdit
