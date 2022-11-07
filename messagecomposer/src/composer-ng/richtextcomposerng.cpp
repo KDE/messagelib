@@ -65,8 +65,8 @@ void RichTextComposerNg::setAutocorrection(PimCommon::AutoCorrection *autocorrec
 void RichTextComposerNg::setAutocorrectionLanguage(const QString &lang)
 {
     if (d->autoCorrection) {
-        PimCommon::AutoCorrectionSettings settings = d->autoCorrection->autoCorrectionSettings();
-        settings.setLanguage(lang);
+        PimCommon::AutoCorrectionSettings *settings = d->autoCorrection->autoCorrectionSettings();
+        settings->setLanguage(lang);
         d->autoCorrection->setAutoCorrectionSettings(settings);
     }
 }
@@ -79,7 +79,7 @@ static bool isSpecial(const QTextCharFormat &charFormat)
 
 bool RichTextComposerNg::processModifyText(QKeyEvent *e)
 {
-    if (d->autoCorrection && d->autoCorrection->autoCorrectionSettings().isEnabledAutoCorrection()) {
+    if (d->autoCorrection && d->autoCorrection->autoCorrectionSettings()->isEnabledAutoCorrection()) {
         if ((e->key() == Qt::Key_Space) || (e->key() == Qt::Key_Enter) || (e->key() == Qt::Key_Return)) {
             if (!isLineQuoted(textCursor().block().text()) && !textCursor().hasSelection()) {
                 const QTextCharFormat initialTextFormat = textCursor().charFormat();
@@ -393,7 +393,7 @@ void RichTextComposerNg::forceAutoCorrection(bool selectedText)
     if (document()->isEmpty()) {
         return;
     }
-    if (d->autoCorrection && d->autoCorrection->autoCorrectionSettings().isEnabledAutoCorrection()) {
+    if (d->autoCorrection && d->autoCorrection->autoCorrectionSettings()->isEnabledAutoCorrection()) {
         const bool richText = (textMode() == RichTextComposer::Rich);
         const int initialPosition = textCursor().position();
         QTextCursor cur = textCursor();
