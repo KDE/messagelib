@@ -1006,10 +1006,3 @@ msgstr ""
 "             <li>%_: espai</li>\n"
 "             </ul></qt>\n"
 "           "
-
-#~ msgctxt "@item:inlistbox Custom template type for messsage forwards"
-#~ msgid "Forward"
-#~ msgstr "Reenvia"
-
-#~ msgid "Reply or forward using HTML based on Visual Format"
-#~ msgstr "Respon o reenvia usant HTML basat en el format visual"

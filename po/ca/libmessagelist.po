@@ -1906,15 +1906,3 @@ msgstr "Co&pia aquí"
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancel·la"
-
-#~ msgid "Rename..."
-#~ msgstr "Reanomena..."
-
-#~ msgid "Rename Filter"
-#~ msgstr "Reanomena el filtre"
-
-#~ msgid "name"
-#~ msgstr "nom"
-
-#~ msgid "Filter Name"
-#~ msgstr "Nom del filtre"
