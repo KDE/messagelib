@@ -1604,7 +1604,7 @@ msgstr "Nom:"
 #: utils/themeeditor.cpp:73
 #, kde-format
 msgid "The label that will be displayed in the column header."
-msgstr "L'etiqueta que es visualitzarà a la capçalera de la columna."
+msgstr "L'etiqueta que es visualitzarà en la capçalera de la columna."
 
 #: utils/themeeditor.cpp:76
 #, kde-format
@@ -1836,7 +1836,7 @@ msgid ""
 "and drop them on the columns in order to compose your theme. Right click on "
 "the items inside the view for more options."
 msgstr ""
-"Cliqueu amb el botó dret a la capçalera per a afegir o modificar les "
+"Cliqueu amb el botó dret damunt de la capçalera per a afegir o modificar les "
 "columnes. Arrossegueu els elements de contingut i deixeu-los anar a les "
 "columnes per tal de compondre el vostre tema. Feu clic amb el botó dret en "
 "els elements dins la vista per a més opcions."
