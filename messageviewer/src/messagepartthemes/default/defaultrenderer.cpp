@@ -42,11 +42,11 @@
 #include <grantlee/template.h>
 #include <grantlee/templateloader.h>
 #else
-#include <KTextTemplate/context.h>
-#include <KTextTemplate/engine.h>
-#include <KTextTemplate/metatype.h>
-#include <KTextTemplate/template.h>
-#include <KTextTemplate/templateloader.h>
+#include <KTextTemplate/Context>
+#include <KTextTemplate/Engine>
+#include <KTextTemplate/MetaType>
+#include <KTextTemplate/Template>
+#include <KTextTemplate/TemplateLoader>
 #endif
 
 using namespace MimeTreeParser;

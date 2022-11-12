@@ -11,8 +11,8 @@
 #include <grantlee/node.h>
 #include <grantlee/taglibraryinterface.h>
 #else
-#include <KTextTemplate/node.h>
-#include <KTextTemplate/taglibraryinterface.h>
+#include <KTextTemplate/Node>
+#include <KTextTemplate/TagLibraryInterface>
 #endif
 
 #include <functional>

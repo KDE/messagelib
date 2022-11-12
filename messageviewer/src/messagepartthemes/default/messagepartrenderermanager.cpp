@@ -23,10 +23,10 @@
 #include <grantlee/metatype.h>
 #include <grantlee/templateloader.h>
 #else
-#include <KTextTemplate/context.h>
-#include <KTextTemplate/engine.h>
-#include <KTextTemplate/metatype.h>
-#include <KTextTemplate/templateloader.h>
+#include <KTextTemplate/Context>
+#include <KTextTemplate/Engine>
+#include <KTextTemplate/MetaType>
+#include <KTextTemplate/TemplateLoader>
 #endif
 
 #include <QGuiApplication>

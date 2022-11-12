@@ -23,8 +23,8 @@
 #include <grantlee/engine.h>
 #include <grantlee/metatype.h>
 #else
-#include <KTextTemplate/engine.h>
-#include <KTextTemplate/metatype.h>
+#include <KTextTemplate/Engine>
+#include <KTextTemplate/MetaType>
 #endif
 
 using namespace MessageCore;
