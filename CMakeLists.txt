@@ -100,7 +100,7 @@ find_package(KF5GuiAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5Notifications ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
 if (QT_MAJOR_VERSION STREQUAL "5")
-    find_package(Grantlee5 "5.2" CONFIG REQUIRED)
+    find_package(Grantlee5 "5.3" CONFIG REQUIRED)
     set(TEMPLATES_LIB Grantlee5::Templates)
 else()
     find_package(KF6TextTemplate ${KF5_MIN_VERSION} CONFIG REQUIRED)
@@ -125,7 +125,7 @@ find_package(KF5Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG REQUIRED)
 set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://invent.kde.org/pim/akonadi-search" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
 
-ecm_set_disabled_deprecation_versions(QT 5.14.0  KF 5.100.0)
+ecm_set_disabled_deprecation_versions(QT 5.15.0  KF 5.100.0)
 
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
