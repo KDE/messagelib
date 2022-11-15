@@ -16,7 +16,6 @@
 #include <QMenu>
 #include <QTreeWidget>
 #include <QVBoxLayout>
-#include <kwidgetsaddons_version.h>
 
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
@@ -71,22 +70,13 @@ void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
                        i18np("Remove Key", "Remove Keys", selectedItemsCount),
                        this,
                        [this, selectedItemsCount]() {
-                           const int answer =
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
-                               KMessageBox::questionTwoActions(
-                                   this,
-#else
-                                                    KMessageBox::warningYesNo(this,
-#endif
-                                   i18np("Do you want to delete this key?", "Do you want to delete these keys?", selectedItemsCount),
-                                   i18np("Delete Key", "Delete Keys", selectedItemsCount),
-                                   KStandardGuiItem::del(),
-                                   KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                           const int answer = KMessageBox::questionTwoActions(
+                               this,
+                               i18np("Do you want to delete this key?", "Do you want to delete these keys?", selectedItemsCount),
+                               i18np("Delete Key", "Delete Keys", selectedItemsCount),
+                               KStandardGuiItem::del(),
+                               KStandardGuiItem::cancel());
                            if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-                           if (answer == KMessageBox::Yes) {
-#endif
                                const auto selectedItems = mTreeWidget->selectedItems();
                                for (QTreeWidgetItem *item : selectedItems) {
                                    delete item;
@@ -97,20 +87,12 @@ void DKIMManagerKeyWidget::slotCustomContextMenuRequested(const QPoint &pos)
     }
     if (mTreeWidget->topLevelItemCount() > 0) {
         menu.addAction(i18n("Delete All"), this, [this]() {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             const int answer = KMessageBox::warningTwoActions(this,
-#else
-            const int answer = KMessageBox::warningYesNo(this,
-#endif
                                                               i18n("Do you want to delete all keys?"),
                                                               i18n("Delete Keys"),
                                                               KStandardGuiItem::del(),
                                                               KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-            if (answer == KMessageBox::Yes) {
-#endif
                 mTreeWidget->clear();
             }
         });

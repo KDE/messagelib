@@ -12,7 +12,6 @@
 #include <QMenu>
 #include <QPointer>
 #include <QVBoxLayout>
-#include <kwidgetsaddons_version.h>
 using namespace MessageList::Core;
 ConfigureFiltersWidget::ConfigureFiltersWidget(QWidget *parent)
     : QWidget(parent)
@@ -78,20 +77,12 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this, [this, item]() {
             const QString identifier = item->identifier();
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             const int answer = KMessageBox::questionTwoActions(this,
-#else
-            const int answer = KMessageBox::questionYesNo(this,
-#endif
                                                                i18n("Do you want to delete this filter?"),
                                                                i18n("Remove Filter"),
                                                                KStandardGuiItem::del(),
                                                                KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-            if (answer == KMessageBox::Yes) {
-#endif
                 removeFilterInfo(identifier);
                 delete item;
             }

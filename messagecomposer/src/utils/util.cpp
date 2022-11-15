@@ -32,7 +32,6 @@
 #include <KMime/Headers>
 #include <MailTransportAkonadi/MessageQueueJob>
 #include <MessageCore/StringUtil>
-#include <kwidgetsaddons_version.h>
 
 KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
 {
@@ -290,22 +289,14 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
 {
     Akonadi::AgentInstance instance = Akonadi::AgentManager::self()->instance(QStringLiteral("akonadi_maildispatcher_agent"));
     if (!instance.isValid()) {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         const int rc =
             KMessageBox::warningTwoActions(parent,
-#else
-        const int rc = KMessageBox::warningYesNo(parent,
-#endif
                                            i18n("The mail dispatcher is not set up, so mails cannot be sent. Do you want to create a mail dispatcher?"),
                                            i18n("No mail dispatcher."),
                                            KGuiItem(i18nc("@action:button", "Create Mail Dispatcher")),
                                            KStandardGuiItem::cancel(),
                                            QStringLiteral("no_maildispatcher"));
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         if (rc == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-        if (rc == KMessageBox::Yes) {
-#endif
             const Akonadi::AgentType type = Akonadi::AgentManager::self()->type(QStringLiteral("akonadi_maildispatcher_agent"));
             Q_ASSERT(type.isValid());
             auto job = new Akonadi::AgentInstanceCreateJob(type); // async. We'll have to try again later.
@@ -316,21 +307,13 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
     if (instance.isOnline()) {
         return true;
     } else {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         const int rc = KMessageBox::warningTwoActions(parent,
-#else
-        const int rc = KMessageBox::warningYesNo(parent,
-#endif
                                                       i18n("The mail dispatcher is offline, so mails cannot be sent. Do you want to make it online?"),
                                                       i18n("Mail dispatcher offline."),
                                                       KGuiItem(i18nc("@action:button", "Set Online")),
                                                       KStandardGuiItem::cancel(),
                                                       QStringLiteral("maildispatcher_put_online"));
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         if (rc == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-        if (rc == KMessageBox::Yes) {
-#endif
             instance.setIsOnline(true);
             return true;
         }

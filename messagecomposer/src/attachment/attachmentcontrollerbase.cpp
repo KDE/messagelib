@@ -31,7 +31,6 @@
 #include <QMenu>
 #include <QPointer>
 #include <QTreeView>
-#include <kwidgetsaddons_version.h>
 
 #include "messagecomposer_debug.h"
 #include <KActionCollection>
@@ -176,21 +175,13 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::compressJobResul
     AttachmentPart::Ptr compressedPart = ajob->compressedPart();
 
     if (ajob->isCompressedPartLarger()) {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         const int result = KMessageBox::questionTwoActions(wParent,
-#else
-        const int result = KMessageBox::questionYesNo(wParent,
-#endif
                                                            i18n("The compressed attachment is larger than the original. "
                                                                 "Do you want to keep the original one?"),
                                                            QString(/*caption*/),
                                                            KGuiItem(i18nc("Do not compress", "Keep")),
                                                            KGuiItem(i18n("Compress")));
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         if (result == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-        if (result == KMessageBox::Yes) {
-#endif
             // The user has chosen to keep the uncompressed file.
             return;
         }
@@ -852,20 +843,12 @@ void AttachmentControllerBase::attachmentProperties(const AttachmentPart::Ptr &p
 
 void AttachmentControllerBase::attachDirectory(const QUrl &url)
 {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     const int rc = KMessageBox::warningTwoActions(d->wParent,
-#else
-    const int rc = KMessageBox::warningYesNo(d->wParent,
-#endif
                                                   i18n("Do you really want to attach this directory \"%1\"?", url.toLocalFile()),
                                                   i18nc("@title:window", "Attach directory"),
                                                   KGuiItem(i18nc("@action:button", "Attach")),
                                                   KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     if (rc == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-    if (rc == KMessageBox::Yes) {
-#endif
         addAttachment(url);
     }
 }
@@ -918,20 +901,12 @@ void AttachmentControllerBase::showAddAttachmentFileDialog()
             QMimeDatabase mimeDb;
             const auto mimeType = mimeDb.mimeTypeForUrl(urlWithEncoding);
             if (mimeType.name() == QLatin1String("inode/directory")) {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
                 const int rc = KMessageBox::warningTwoActions(d->wParent,
-#else
-                const int rc = KMessageBox::warningYesNo(d->wParent,
-#endif
                                                               i18n("Do you really want to attach this directory \"%1\"?", url.toLocalFile()),
                                                               i18nc("@title:window", "Attach directory"),
                                                               KGuiItem(i18nc("@action:button", "Attach")),
                                                               KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
                 if (rc == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-                if (rc == KMessageBox::Yes) {
-#endif
                     addAttachment(urlWithEncoding);
                 }
             } else {

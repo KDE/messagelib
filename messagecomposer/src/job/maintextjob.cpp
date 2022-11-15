@@ -21,7 +21,6 @@
 #include <KMessageBox>
 
 #include <KMime/Content>
-#include <kwidgetsaddons_version.h>
 
 using namespace MessageComposer;
 
@@ -97,22 +96,14 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
         // No good charset was found.
         if (q->globalPart()->isGuiEnabled() && textPart->warnBadCharset()) {
             // Warn the user and give them a chance to go back.
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             int result = KMessageBox::warningTwoActions(q->globalPart()->parentWidgetForGui(),
-#else
-            int result = KMessageBox::warningYesNo(q->globalPart()->parentWidgetForGui(),
-#endif
                                                         i18n("Encoding the message with %1 will lose some characters.\n"
                                                              "Do you want to continue?",
                                                              QString::fromLatin1(charsets.first())),
                                                         i18n("Some Characters Will Be Lost"),
                                                         KGuiItem(i18n("Lose Characters")),
                                                         KGuiItem(i18n("Change Encoding")));
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             if (result == KMessageBox::ButtonCode::SecondaryAction) {
-#else
-            if (result == KMessageBox::No) {
-#endif
                 q->setError(JobBase::UserCancelledError);
                 q->setErrorText(i18n("User decided to change the encoding."));
                 return false;

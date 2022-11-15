@@ -15,7 +15,6 @@
 #include <KMessageBox>
 
 #include <QWhatsThis>
-#include <kwidgetsaddons_version.h>
 
 using namespace TemplateParser;
 class TemplateParser::TemplatesConfigurationPrivate
@@ -97,11 +96,7 @@ void TemplatesConfiguration::slotTextChanged()
 
 void TemplatesConfiguration::resetToDefault()
 {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     const int choice = KMessageBox::questionTwoActionsCancel(nullptr,
-#else
-    const int choice = KMessageBox::questionYesNoCancel(nullptr,
-#endif
                                                              i18n("Do you want to reset current template or all templates to default?"),
                                                              i18n("Reset to default"),
                                                              KGuiItem(i18n("Reset Current Template")),
@@ -110,11 +105,7 @@ void TemplatesConfiguration::resetToDefault()
 
     if (choice == KMessageBox::Cancel) {
         return;
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     } else if (choice == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-    } else if (choice == KMessageBox::Yes) {
-#endif
         const int toolboxCurrentIndex(toolBox1->currentIndex());
         if (toolBox1->widget(toolboxCurrentIndex) == page_new) {
             textEdit_new->setPlainText(DefaultTemplates::defaultNewMessage());

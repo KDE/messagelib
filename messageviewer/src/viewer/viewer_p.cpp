@@ -157,7 +157,7 @@
 
 #include "remote-content/remotecontentmenu.h"
 #include <chrono>
-#include <kwidgetsaddons_version.h>
+
 using namespace std::chrono_literals;
 using namespace MailTransport;
 using namespace MessageViewer;
@@ -1971,13 +1971,8 @@ void ViewerPrivate::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::Che
 
 bool ViewerPrivate::urlIsAMalwareButContinue()
 {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     if (KMessageBox::ButtonCode::SecondaryAction
         == KMessageBox::warningTwoActions(mMainWindow,
-#else
-    if (KMessageBox::No
-        == KMessageBox::warningYesNo(mMainWindow,
-#endif
                                           i18n("This web site is a malware, do you want to continue to show it?"),
                                           i18n("Malware"),
                                           KStandardGuiItem::cont(),

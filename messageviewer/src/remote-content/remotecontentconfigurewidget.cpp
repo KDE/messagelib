@@ -16,7 +16,6 @@
 #include <QPointer>
 #include <QTreeWidget>
 #include <QVBoxLayout>
-#include <kwidgetsaddons_version.h>
 
 using namespace MessageViewer;
 
@@ -84,20 +83,12 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
         });
         menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             const int answer = KMessageBox::warningTwoActions(this,
-#else
-            const int answer = KMessageBox::warningYesNo(this,
-#endif
                                                               i18n("Do you want to delete this rule '%1'?", item->text(0)),
                                                               i18n("Delete Rule"),
                                                               KStandardGuiItem::del(),
                                                               KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-            if (answer == KMessageBox::Yes) {
-#endif
                 delete item;
             }
         });

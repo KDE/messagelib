@@ -54,7 +54,6 @@
 
 #include <Libkleo/MessageBox>
 #include <chrono>
-#include <kwidgetsaddons_version.h>
 
 using namespace std::chrono_literals;
 
@@ -890,22 +889,13 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         auto mime = mimeDb.mimeTypeForUrl(url);
         if (mime.name() == QLatin1String("application/x-desktop") || mime.name() == QLatin1String("application/x-executable")
             || mime.name() == QLatin1String("application/x-ms-dos-executable") || mime.name() == QLatin1String("application/x-shellscript")) {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
             if (KMessageBox::warningTwoActions(
                     nullptr,
-#else
-            if (KMessageBox::warningYesNo(nullptr,
-
-#endif
                     xi18nc("@info", "Do you really want to execute <filename>%1</filename>?", url.toDisplayString(QUrl::PreferLocalFile)),
                     QString(),
                     KGuiItem(i18n("Execute")),
                     KStandardGuiItem::cancel())
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
                 != KMessageBox::ButtonCode::PrimaryAction) {
-#else
-                != KMessageBox::Yes) {
-#endif
                 return true;
             }
         }
